@@ -540,20 +540,39 @@
     ? CFG.scriptOptions
     : null;
   let genScriptKey = SCRIPT_OPTIONS ? SCRIPT_OPTIONS[0].key : null;
-  const STROKE = CFG.strokeWidth || 9;
+  /* Letterform picker for the SINGLE-CHARACTER surface (CFG.charStyles).
+     Mutable for the same reason FONT is: the A-Z picker, the alphabet sheet
+     and the tiled batch all read FONT / STROKE / LETTER_SPACING fresh on
+     every call, so reassigning them here repaints all three. Pages that do
+     not set CFG.charStyles never call setCharStyle(), so these stay exactly
+     as constant as they have always been.
+
+     Why it exists: /printables/graffiti-letters/ shipped with CFG.font set
+     to Fredoka, which is /printables/bubble-letters/'s own face. The first
+     thing a visitor met on a graffiti page was therefore a bubble letter,
+     while the page's four real graffiti faces were already loading and were
+     bound to the name input alone. `charStyles: true` reuses that same
+     nameStyles array rather than restating it, so the two surfaces cannot
+     drift apart. */
+  const CHAR_STYLES = CFG.charStyles === true
+    ? (Array.isArray(CFG.nameStyles) && CFG.nameStyles.length ? CFG.nameStyles : null)
+    : (Array.isArray(CFG.charStyles) && CFG.charStyles.length ? CFG.charStyles : null);
+  let charStyleKey = CHAR_STYLES ? CHAR_STYLES[0].key : null;
+  let STROKE = CFG.strokeWidth || 9;
   const NOUN = CFG.noun || "letter";                // "bubble letter", "block letter"…
   // Extra space between letters in multi-letter (word/name) output, expressed
   // as a fraction of the font size (em). Puffy, non-connecting outlines
   // (bubble, block) read better with a little breathing room so each letter
   // can be traced and colored on its own; connected glyphs (cursive) leave
   // this at 0 so their joins stay intact.
-  const LETTER_SPACING = Number(CFG.letterSpacing) || 0;
+  let LETTER_SPACING = Number(CFG.letterSpacing) || 0;
   const PNG_PREFIX = CFG.pngPrefix || "printable";
   const GLYPH_STYLE = CFG.glyphStyle || "";         // primary registry style (glyph mode)
   const INK = "#1a1a2e";
 
   const el = {
     strip: $("#pt-strip"),
+    charStyles: $("#pt-char-styles"),
     panel: $("#pt-panel"),
     alphaGrid: $("#pt-alphabet-grid"),
     alphaPrint: $("#pt-alphabet-print"),
@@ -730,7 +749,18 @@
     text.setAttribute("font-size", "210");
     text.setAttribute("fill", "#ffffff");
     text.setAttribute("stroke", INK);
-    text.setAttribute("stroke-width", String(o.small ? Math.max(4, STROKE - 2) : STROKE));
+    /* o.strokeScale thins the outline as the printed glyph gets physically
+       smaller. In vector terms it would not need to: the SVG scales as a
+       unit, so a stroke held at a fixed fraction of the type never closes a
+       counter. The sheet is rasterised though, and a 2in tile gets a quarter
+       of the pixels an 8in single letter does, so the two walls of a narrow
+       counter anti-alias into one another and fill. Measured on
+       block-letters' G, whose spur notch went solid on the tiled sheet while
+       staying clean at single-letter size in both render paths. The floor of
+       4 is the weight the old binary `small` branch settled on and is where
+       the outline stops reading as an outline. */
+    const strokeScale = o.strokeScale != null ? o.strokeScale : (o.small ? (STROKE > 6 ? (STROKE - 2) / STROKE : 1) : 1);
+    text.setAttribute("stroke-width", String(Math.max(4, STROKE * strokeScale)));
     text.setAttribute("stroke-linejoin", "round");
     text.setAttribute("paint-order", "stroke");
     text.textContent = ch;
@@ -765,7 +795,18 @@
     text.setAttribute("font-size", String(fontSize));
     text.setAttribute("fill", o.solid ? (o.fill || INK) : "#ffffff");
     text.setAttribute("stroke", o.solid ? (o.strokeColor || "none") : (o.strokeColor || "#8b93a7"));
-    text.setAttribute("stroke-width", o.solid ? String(o.strokeColor ? (o.strokeWidth != null ? o.strokeWidth : 4) : 0) : String(o.strokeWidth != null ? o.strokeWidth : 3));
+    /* o.strokeWidth arrives quoted in outlineSVG()'s units (font-size 210) --
+       it comes from CFG.strokeWidth or a nameStyles entry, the same field the
+       single-letter surface reads. This function draws at font-size 150, so
+       the number has to be converted or the same style renders a stroke 40%
+       fatter relative to the type on a name than on a letter. Measured on the
+       graffiti Spray face, whose outline is all contour: at 4/150 (2.67% of
+       the type) the speckles merge into a smear, while the canvas export drew
+       the same style at 2% and stayed legible. Same control state, two
+       products. WORD_OUTLINE_STROKE is this constant's inverse and exists for
+       the same reason. */
+    const wordStroke = o.strokeWidth != null ? o.strokeWidth * fontSize / OUTLINE_SVG_FONT : 3;
+    text.setAttribute("stroke-width", o.solid ? String(o.strokeColor ? (o.strokeWidth != null ? wordStroke : 4) : 0) : String(wordStroke));
     text.setAttribute("stroke-linejoin", "round");
     text.setAttribute("paint-order", "stroke");
     // Nudge the anchor left by half a letter-gap so the trailing space SVG adds
@@ -1048,15 +1089,57 @@
      a future decision to hang off, and one event so the rate is a number
      rather than a guess. */
   let fontFallbackReported = false;
+  function reportFontFallback(fam, reason) {
+    if (fontFallbackReported) return;
+    fontFallbackReported = true;
+    document.documentElement.classList.add("pt-font-fallback");
+    trackPrintableEvent("printable_font_fallback", { printable_font: fam, printable_font_reason: reason });
+  }
+
   function noteFontAvailability(fam) {
     if (fontFallbackReported || !fam) return;
     if (!document.fonts || !document.fonts.check) return;
     let loaded = true;
     try { loaded = document.fonts.check("700 200px " + fam); } catch (err) { return; }
     if (loaded) return;
-    fontFallbackReported = true;
-    document.documentElement.classList.add("pt-font-fallback");
-    trackPrintableEvent("printable_font_fallback", { printable_font: fam });
+    reportFontFallback(fam, "not_loaded");
+  }
+
+  /* The family-name check above cannot see the real failure on a glyph-mode
+     page. There the letterform is a Unicode math alphanumeric produced by
+     renderGlyph(), and it is set in the page's body font -- Plus Jakarta
+     Sans, which always loads. So document.fonts.check() answers "yes" about a
+     font containing not one of the codepoints actually on the sheet, and
+     printable_font_fallback could never fire on the 69 pages whose letterform
+     is 100% substitution. A check that reports nothing is indistinguishable
+     from a check that passes.
+
+     What the platform does expose is an advance width. Measure the glyph in
+     the declared stack, then in a bare generic: if the two agree, the
+     generic's own fallback drew it both times and the declared family
+     contributed nothing. Reported with its own reason so a transient network
+     failure and a page that never had a face for its letterform stay two
+     different numbers. */
+  let measureCtx = null;
+  function glyphAdvance(text, family) {
+    if (!measureCtx) {
+      const c = document.createElement("canvas");
+      measureCtx = c.getContext ? c.getContext("2d") : null;
+    }
+    if (!measureCtx) return null;
+    measureCtx.font = "700 200px " + family;
+    try { return measureCtx.measureText(text).width; } catch (err) { return null; }
+  }
+
+  function noteGlyphCoverage(sample, fam) {
+    if (fontFallbackReported || !sample) return;
+    const declared = glyphAdvance(sample, fam);
+    const generic = glyphAdvance(sample, "sans-serif");
+    if (declared == null || generic == null) return;
+    // A tolerance, not equality: sub-pixel metric differences are normal even
+    // when the same physical face draws both.
+    if (Math.abs(declared - generic) > 0.5) return;
+    reportFontFallback(fam, "no_coverage");
   }
 
   function withFont(cb, famOverride) {
@@ -1356,6 +1439,7 @@
     if (el.genCase && el.genCase.value && el.genCase.value !== "as-typed") p.case = el.genCase.value;
     if (typeof nameStyleKey !== "undefined" && nameStyleKey) p.style = nameStyleKey;
     if (typeof genScriptKey !== "undefined" && genScriptKey) p.script = genScriptKey;
+    if (CHAR_STYLES && charStyleKey) p.cstyle = charStyleKey;
     if (el.sizeControl && alphaSizeKey !== "full") p.size = alphaSizeKey;
     const heading = firstEl([el.designHeading, el.puzzleHeading]);
     if (heading && heading.value.trim()) p.heading = heading.value.trim();
@@ -1409,6 +1493,8 @@
     if (style && typeof setNameStyle === "function" && typeof NAME_STYLES !== "undefined" && NAME_STYLES && NAME_STYLES.some((x) => x.key === style)) setNameStyle(style);
     const script = presetGet("script");
     if (script && typeof setGenScript === "function" && typeof SCRIPT_OPTIONS !== "undefined" && SCRIPT_OPTIONS && SCRIPT_OPTIONS.some((x) => x.key === script)) setGenScript(script);
+    const cstyle = presetGet("cstyle");
+    if (cstyle && typeof setCharStyle === "function" && CHAR_STYLES && CHAR_STYLES.some((x) => x.key === cstyle)) setCharStyle(cstyle);
     const size = presetGet("size");
     if (size && el.sizeControl && SIZE_PRESETS.some((x) => x.key === size)) {
       alphaSizeKey = size;
@@ -1959,12 +2045,17 @@
           ctx.strokeText(out, width / 2, height * 0.52);
         }
       } else if (RENDER === "outline") {
-        // Hollow outline, matching wordOutlineSVG(): its stroke-width default
-        // is 3 against font-size 150, i.e. 2% of the type. On a transparent
-        // canvas a white interior would read as a white slab, so the fill is
-        // skipped and the interior stays a real hole.
+        /* Hollow outline, matching wordOutlineSVG(). Its stroke-width default
+           is 3 against font-size 150, i.e. 2% of the type, which
+           WORD_OUTLINE_STROKE restates in outlineSVG's 210 units. A page that
+           supplies its own weight (a nameStyles entry) already quotes it in
+           those units, so it passes straight through; hardcoding the default
+           here was why a styled name exported at one weight and previewed at
+           another. On a transparent canvas a white interior would read as a
+           white slab, so the fill is skipped and the interior stays a real
+           hole. */
         paintOutlineText(ctx, out, width / 2, height * 0.52, fontSize, {
-          strokeWidth: WORD_OUTLINE_STROKE,
+          strokeWidth: o.strokeWidth != null ? o.strokeWidth : WORD_OUTLINE_STROKE,
           strokeColor: o.strokeColor,
           hollow: !!o.transparent
         });
@@ -2345,6 +2436,42 @@
      --------------------------------------------------------------- */
 
   let activeChar = "A";
+
+  /* Switch the letterform the single-character surface draws in. Reassigns
+     the shared FONT / STROKE / LETTER_SPACING, so the detail panel, the
+     printable alphabet sheet, the tiled batch and every PNG repaint in the
+     new face without any of them knowing this function exists. Mirrors
+     setGenScript() exactly; the chips are page-authored inside
+     #pt-char-styles so they stay crawlable and translated, same as the
+     handwriting script picker and the name-style designer. */
+  function activeCharStyle() {
+    if (!CHAR_STYLES) return null;
+    return CHAR_STYLES.find((s) => s.key === charStyleKey) || CHAR_STYLES[0];
+  }
+
+  function setCharStyle(key, opts) {
+    if (!CHAR_STYLES) return;
+    const style = CHAR_STYLES.find((s) => s.key === key) || CHAR_STYLES[0];
+    charStyleKey = style.key;
+    if (style.font) FONT = style.font;
+    if (style.strokeWidth != null) STROKE = style.strokeWidth;
+    if (style.letterSpacing != null) LETTER_SPACING = style.letterSpacing;
+    if (el.charStyles) {
+      $$(".pt-char-style-opt", el.charStyles).forEach((b) => {
+        const on = b.dataset.style === charStyleKey;
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+    }
+    // The alphabet sheet is built once at init and cached in the DOM, so it
+    // has to be rebuilt rather than merely repainted.
+    if (!(opts && opts.quiet)) {
+      withFont(() => {
+        paintAlphabetGrid();
+        if (activeChar) selectChar(activeChar);
+      });
+    }
+  }
 
   function selectChar(ch, opts) {
     activeChar = ch;
@@ -2847,6 +2974,17 @@
   // bigGlyphForPrint) and the same printWrap print call as every other
   // multi-page job in this file — just a new size-driven grid layout, no new
   // render primitive and no new print mechanism.
+  /* Reference height for a printed single letter: one glyph on a portrait
+     sheet inside the default margins. A tile at that height keeps the page's
+     own stroke; anything smaller is thinned on a square-root curve, which
+     holds visual weight far better than scaling linearly while still opening
+     the counters back up. 2in -> 0.5, 4in -> 0.71, 8in -> 1. */
+  const TILE_STROKE_REF_IN = 8;
+  function tileStrokeScale(heightIn) {
+    const h = Math.max(0.5, Number(heightIn) || TILE_STROKE_REF_IN);
+    return Math.min(1, Math.sqrt(h / TILE_STROKE_REF_IN));
+  }
+
   function printAlphabetTiled(sizeKey) {
     const preset = SIZE_PRESETS.filter((p) => p.key === sizeKey)[0] || SIZE_PRESETS[1];
     const heightIn = preset.heightIn || 4;
@@ -2881,7 +3019,7 @@
         const cell = document.createElement("div");
         cell.className = "pt-tile-cell";
         cell.style.height = heightIn.toFixed(2) + "in";
-        cell.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch, { small: small }) : outlineSVG(ch, { small: small })));
+        cell.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch, { small: small }) : outlineSVG(ch, { small: small, strokeScale: tileStrokeScale(heightIn) })));
         grid.appendChild(cell);
       });
       page.appendChild(grid);
@@ -3013,7 +3151,17 @@
         buildBookRangeControl(bookBtn);
       }
     }
+    paintAlphabetGrid();
+  }
+
+  /* The cells alone, separated from the one-time wiring above so a letterform
+     change can repaint them. buildAlphabetGrid() binds click handlers to
+     #pt-alphabet-print and inserts the book button next to it, so calling the
+     whole thing twice would double-bind the print action and grow a second
+     button; this half clears first and is safe to call on every repaint. */
+  function paintAlphabetGrid() {
     if (!el.alphaGrid) return;
+    el.alphaGrid.innerHTML = "";
     CHARS.forEach((ch) => {
       const cell = document.createElement("button");
       cell.type = "button";
@@ -5915,6 +6063,17 @@
     loadQrModule();
     applyPresetInputs();
     initStrokeToggle();
+    /* Before the first paint, not after: setCharStyle() reassigns the FONT
+       every surface below reads, so wiring it here means the picker and the
+       alphabet sheet are drawn in the chosen letterform once instead of
+       drawn in the page default and then repainted. `quiet` skips the
+       repaint for exactly that reason. */
+    if (CHAR_STYLES && el.charStyles) {
+      $$(".pt-char-style-opt", el.charStyles).forEach((b) => {
+        b.addEventListener("click", () => setCharStyle(b.dataset.style));
+      });
+      setCharStyle(charStyleKey, { quiet: true });
+    }
     buildStrip();
     buildAlphabetGrid();
     buildSpokeBatch();
@@ -5972,6 +6131,18 @@
     convertPrintButtonsToPdf();
     wireGenerateEvents();
     applyPresetState();
+    /* Glyph-mode pages draw a Unicode math alphanumeric, so their letterform
+       is whatever the OS substitutes; the family-name check can never see it.
+       Once after the declared faces have settled, measure whether the family
+       draws the codepoint at all. See noteGlyphCoverage(). */
+    if (RENDER === "glyph" && document.fonts && document.fonts.ready) {
+      const sample = renderGlyph("A");
+      if (sample && sample !== "A") {
+        document.fonts.ready
+          .then(() => noteGlyphCoverage(sample, primaryFontName()))
+          .catch(() => { /* measurement is best-effort */ });
+      }
+    }
   }
 
   /* Keyed on "complete", not on "loading" — the idiom symbol-explorer.js

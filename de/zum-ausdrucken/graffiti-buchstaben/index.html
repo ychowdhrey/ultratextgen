@@ -183,6 +183,16 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <section class="bubble-az" aria-labelledby="ptPickHeading">
       <h2 class="bubble-az-heading" id="ptPickHeading">Graffiti-Buchstaben auswählen</h2>
       <p class="bubble-az-intro">Tippe auf einen Buchstaben (A–Z) oder eine Ziffer (0–9), um den Graffiti-Umriss groß zu sehen, ihn auszudrucken, nachzuzeichnen oder als PNG zu laden.</p>
+      <div class="pt-size-field">
+        <p class="pt-size-field-label">Graffiti-Style</p>
+        <div class="pt-segment" id="pt-char-styles" role="radiogroup" aria-label="Graffiti-Style">
+          <button type="button" class="pt-gen-preset pt-char-style-opt" data-style="tag" aria-pressed="true">Tag <small>schnelle Signatur</small></button>
+          <button type="button" class="pt-gen-preset pt-char-style-opt" data-style="marker" aria-pressed="false">Marker <small>Strich wie von Hand</small></button>
+          <button type="button" class="pt-gen-preset pt-char-style-opt" data-style="throwup" aria-pressed="false">Throw-up <small>dicker, runder Umriss</small></button>
+          <button type="button" class="pt-gen-preset pt-char-style-opt" data-style="spray" aria-pressed="false">Spray <small>Sprühdosen-Textur</small></button>
+          <button type="button" class="pt-gen-preset pt-char-style-opt" data-style="block" aria-pressed="false">Blockbuster <small>schwere Blockbuchstaben</small></button>
+        </div>
+      </div>
       <div class="bubble-strip" id="pt-strip" role="tablist" aria-label="Graffiti-Buchstaben oder Ziffer auswählen"></div>
       <div class="bubble-letter-panel" id="pt-panel" aria-live="polite"></div>
       <p class="bubble-az-intro">Du willst das komplette Graffiti-Alphabet? Drucke A–Z und 0–9 auf einmal: als ein Blatt, oder als Übungsheft mit einem Buchstaben pro Seite über „Als PDF speichern“ im Druckdialog.</p>
@@ -203,9 +213,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <input type="text" class="main-input pt-name-input" id="pt-name-input" placeholder="Wort eingeben … z. B. KIEZ" maxlength="40">
         </div>
         <div class="pt-segment" id="pt-name-styles" role="radiogroup" aria-label="Graffiti-Style">
-          <button type="button" class="pt-gen-preset pt-name-style-opt" data-style="throwup" aria-pressed="true">Throw-up <small>dicker, runder Umriss</small></button>
-          <button type="button" class="pt-gen-preset pt-name-style-opt" data-style="tag" aria-pressed="false">Tag <small>schnelle Signatur</small></button>
+          <button type="button" class="pt-gen-preset pt-name-style-opt" data-style="tag" aria-pressed="true">Tag <small>schnelle Signatur</small></button>
           <button type="button" class="pt-gen-preset pt-name-style-opt" data-style="marker" aria-pressed="false">Marker <small>Strich wie von Hand</small></button>
+          <button type="button" class="pt-gen-preset pt-name-style-opt" data-style="throwup" aria-pressed="false">Throw-up <small>dicker, runder Umriss</small></button>
           <button type="button" class="pt-gen-preset pt-name-style-opt" data-style="spray" aria-pressed="false">Spray <small>Sprühdosen-Textur</small></button>
           <button type="button" class="pt-gen-preset pt-name-style-opt" data-style="block" aria-pressed="false">Blockbuster <small>schwere Blockbuchstaben</small></button>
         </div>
@@ -362,10 +372,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       variantFamily: "bubble",
       glyphStyle: "Ultra Bubble",
       nameDemo: "KIEZ",
+      charStyles: true,
       nameStyles: [
-        { key: "throwup", font: "Fredoka, 'Arial Black', sans-serif", strokeWidth: 10, letterSpacing: 0.06 },
         { key: "tag", font: "'Sedgwick Ave Display', cursive", strokeWidth: 5, letterSpacing: 0.04 },
         { key: "marker", font: "'Permanent Marker', cursive", strokeWidth: 5, letterSpacing: 0.05 },
+        { key: "throwup", font: "Fredoka, 'Arial Black', sans-serif", strokeWidth: 10, letterSpacing: 0.06 },
         { key: "spray", font: "'Rubik Spray Paint', cursive", strokeWidth: 4, letterSpacing: 0.04 },
         { key: "block", font: "'Archivo Black', 'Arial Black', sans-serif", strokeWidth: 8, letterSpacing: 0.05 }
       ],

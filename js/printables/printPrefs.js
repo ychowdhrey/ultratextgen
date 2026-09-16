@@ -99,7 +99,14 @@
     orient: "portrait",
     margin: "normal",
     ink: "normal",
-    quality: "normal"
+    /* 288 DPI by default, not 192. The print dialog used to be the primary
+       route and the browser rendered vector text at the printer's own
+       resolution; since 2026-09-15 every sheet action writes a raster PDF, so
+       the render scale IS the resolution of the thing the visitor gets, and
+       "normal" was handing a 169x175 DPI image to someone about to print and
+       cut it. Kept behind the same one-line switch rather than removed, and
+       renderPages() drops long batch jobs back to 2 on its own. */
+    quality: "high"
   };
 
   try {

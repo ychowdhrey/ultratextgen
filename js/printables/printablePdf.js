@@ -188,7 +188,7 @@
   }
 
   // Elements a page cut must never pass through.
-  const ATOMS = ".cursive-print-row, .pt-name-row, .pt-gen-row, .pt-tile-cell, .pt-glyph-cell, .bubble-outline, .pt-word-outline, .pt-trace-svg, .pt-puzzle-sheet, .bubble-print-single, .pt-banner-cell, .pt-banner-gap, h2, h3, p, li";
+  const ATOMS = ".cursive-print-row, .pt-name-row, .pt-gen-row, .pt-tile-cell, .pt-glyph-cell, .bubble-outline, .pt-word-outline, .pt-trace-svg, .pt-puzzle-sheet, .bubble-print-single, .pt-banner-cell, .pt-banner-gap, .pt-credit, h2, h3, p, li";
   const PAGES = ".pt-sheet-page, .bubble-print-book-page, .pt-tile-page, .pt-banner-page";
   // How far past the page box a wrap may run and still be treated as one
   // page, scaled to fit rather than cut. 6% of US Letter is ~0.66in: larger
@@ -221,15 +221,48 @@
     return cuts;
   }
 
+  /* A page cut must never leave the credit block alone on a sheet of its own.
+     Measured on the name and design PDFs: the trailing page came out at
+     0.59-0.65% ink against 3.31% on page one -- a whole sheet of paper, per
+     use, carrying a URL and a QR code and nothing else. The credit is page
+     furniture rather than content, so when the final cut begins at or after
+     it, fold it back into the previous page; the caller then scales that page
+     down to fit. Only the LAST cut is eligible: a credit that somehow sat
+     mid-document is real content in that position and is left alone. */
+  function foldTrailingCredit(root, cuts, total) {
+    if (cuts.length < 2) return cuts;
+    const credit = root.querySelector(".pt-credit");
+    if (!credit) return cuts;
+    const r = credit.getBoundingClientRect();
+    if (!r.height) return cuts;
+    const top = r.top - root.getBoundingClientRect().top;
+    const last = cuts[cuts.length - 1];
+    if (last[0] < top - 1) return cuts;
+    const merged = cuts.slice(0, -1);
+    merged[merged.length - 1] = [merged[merged.length - 1][0], total];
+    return merged;
+  }
+
+  /* Above this many pages a job stops being "the sheet I am about to print"
+     and becomes a batch, where the file size of every page at 288 DPI costs
+     more than the sharpness of any one of them returns. Measured rather than
+     guessed; see the numbers recorded beside HI_DPI_PAGE_BUDGET's use in
+     docs/. Below it, the sheet gets the full requested scale. */
+  const HI_DPI_PAGE_BUDGET = 4;
+  function effectiveScale(base, pageCount) {
+    return pageCount > HI_DPI_PAGE_BUDGET ? Math.min(base, 2) : base;
+  }
+
   async function renderPages(root, opts) {
     const o = opts || {};
-    const scale = o.scale || 2;
+    const baseScale = o.scale || 3;
     const widthPx = o.widthPx || Math.round(root.getBoundingClientRect().width);
     const pageH = o.pageHeightPx || Math.round(widthPx * 11 / 8.5);
     if (document.fonts && document.fonts.ready) { try { await document.fonts.ready; } catch (err) { /* proceed */ } }
     const out = [];
     const explicit = Array.from(root.querySelectorAll(PAGES)).filter((p) => !p.parentElement.closest(PAGES));
     if (explicit.length) {
+      const scale = effectiveScale(baseScale, explicit.length);
       for (const page of explicit) {
         const h = Math.ceil(page.getBoundingClientRect().height);
         const img = await subtreeToImage(page, widthPx, h);
@@ -261,6 +294,7 @@
        below a real second page (which overruns by ~100%), so a genuinely
        multi-page wrap still paginates. */
     if (total > pageH && total <= pageH * (1 + SINGLE_PAGE_TOLERANCE)) {
+      const scale = baseScale;
       const fit = pageH / total;
       const canvas = blankCanvas(widthPx * scale, pageH * scale);
       const ctx = canvas.getContext("2d");
@@ -269,13 +303,19 @@
       ctx.getImageData(0, 0, 1, 1);
       return [canvas];
     }
-    const cuts = cutPoints(root, total, pageH);
+    const cuts = foldTrailingCredit(root, cutPoints(root, total, pageH), total);
+    const scale = effectiveScale(baseScale, cuts.length);
     for (const [start, end] of cuts) {
+      const h = end - start;
+      // A folded-in credit can push the last page past the box; scale it to
+      // fit rather than spill, the same thing both branches above already do.
+      const fit = Math.min(1, pageH / h);
       const canvas = blankCanvas(widthPx * scale, pageH * scale);
       const ctx = canvas.getContext("2d");
-      ctx.drawImage(img, 0, start, widthPx, end - start, 0, 0, widthPx * scale, (end - start) * scale);
+      const dw = widthPx * fit * scale, dh = h * fit * scale;
+      ctx.drawImage(img, 0, start, widthPx, h, (canvas.width - dw) / 2, 0, dw, dh);
       ctx.getImageData(0, 0, 1, 1);
-      canvas.ptPlacement = { mode: "flow", el: root, start: start, end: end, scale: scale, widthPx: widthPx };
+      canvas.ptPlacement = { mode: "flow", el: root, start: start, end: end, scale: scale, fit: fit, widthPx: widthPx };
       out.push(canvas);
     }
     return out;
@@ -334,10 +374,14 @@
       w = r.width * p.scale * p.fit;
       h = r.height * p.scale * p.fit;
     } else {
-      x = (r.left - base.left) * p.scale;
-      y = ((r.top - base.top) - p.start) * p.scale;
-      w = r.width * p.scale;
-      h = r.height * p.scale;
+      // `fit` is 1 on an ordinary flow page and below 1 only where the
+      // trailing credit was folded in and the page scaled down to hold it.
+      const fit = p.fit != null ? p.fit : 1;
+      const dw = p.widthPx * fit * p.scale;
+      x = (canvas.width - dw) / 2 + (r.left - base.left) * p.scale * fit;
+      y = ((r.top - base.top) - p.start) * p.scale * fit;
+      w = r.width * p.scale * fit;
+      h = r.height * p.scale * fit;
     }
     if (y + h <= 0 || y >= canvas.height) return null;
     // Clamp rather than trust: a block that straddles a page break would
