@@ -9830,3 +9830,8 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
    rows above it — otherwise a 4-up page squeezes its cards to make room. */
 .bubble-print-book-page.is-2up { grid-template-rows: 1fr 1fr auto; }
 .bubble-print-book-page.is-4up { grid-template-rows: 1fr 1fr auto; grid-template-columns: 1fr 1fr; }
+
+/* Case toggle on the dot-to-dot pages (2026-09-16). Both chips are the
+   character itself, so the control carries no translated label; its group
+   takes an accessible name from the locale's own word for "letter". */
+.pt-dot-case { margin: 0.55rem 0 0; }

@@ -1820,7 +1820,7 @@
         // Same generous ~9% margin as singleDotSVG so number labels near the
         // box edges (e.g. a wide M/W) don't clip against the canvas edge.
         const pad = Math.round(size * 0.0875);
-        drawDotWordCanvas(ctx, ch.toUpperCase(), dotPageState.level, { x: pad, y: pad, w: size - pad * 2, h: size - pad * 2 }, CFG.dotHint !== false, dotPageState.numbers);
+        drawDotWordCanvas(ctx, dotCase(ch), dotPageState.level, { x: pad, y: pad, w: size - pad * 2, h: size - pad * 2 }, CFG.dotHint !== false, dotPageState.numbers);
         drawCredit(ctx, size, size);
         downloadCanvas(canvas, PNG_PREFIX + "-" + charSlug(ch) + "-" + dotPageState.level + (dotPageState.numbers ? "" : "-no-numbers") + ".png", "character");
         return;
@@ -2531,12 +2531,36 @@
   /* Accept anything this page actually prints, not [A-Z0-9]: CFG.chars takes
      an arbitrary array, so a lowercase or symbol page is config rather than
      code, and a hardcoded class would silently reject every character such a
-     page is about. */
+     page is about.
+
+     Ranges ("A-E", "M-P") are parsed as well as plain runs ("ABC", "MIA"),
+     which is what makes arbitrary letter GROUPS possible without a chip for
+     each one. A chip needs a label, and "consonants" is a word this site has
+     in no language -- a typed range needs none, works for any group a teacher
+     actually wants, and the separator may be a hyphen or an en dash because
+     both are what people type. Endpoints are resolved against CHARS order, so
+     "A-E" means the first five characters THIS page prints rather than five
+     codepoints it may not have. */
   function parseRange(text) {
-    const printable = new Set(CHARS.map((c) => c.toUpperCase()));
+    const order = CHARS.map((c) => c.toUpperCase());
+    const printable = new Set(order);
+    const raw = String(text || "").toUpperCase();
     const set = [];
-    for (const ch of String(text || "").toUpperCase()) {
-      if (printable.has(ch) && !set.includes(ch)) set.push(ch);
+    const add = (ch) => { if (printable.has(ch) && !set.includes(ch)) set.push(ch); };
+    let i = 0;
+    while (i < raw.length) {
+      const ch = raw[i];
+      const sep = raw[i + 1];
+      const end = raw[i + 2];
+      if (printable.has(ch) && (sep === "-" || sep === "\u2013") && end && printable.has(end)) {
+        let a = order.indexOf(ch), b = order.indexOf(end);
+        if (a > b) { const t = a; a = b; b = t; }
+        for (let k = a; k <= b; k++) add(order[k]);
+        i += 3;
+        continue;
+      }
+      add(ch);
+      i += 1;
     }
     return set.length ? set : null;
   }
@@ -2545,7 +2569,10 @@
     { key: "all", label: "A\u2013Z 0\u20139", chars: null },
     { key: "az",  label: "A\u2013Z", chars: "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("") },
     { key: "num", label: "0\u20139", chars: "0123456789".split("") },
-    { key: "vow", label: "AEIOU", chars: ["A", "E", "I", "O", "U"] }
+    { key: "vow", label: "AEIOU", chars: ["A", "E", "I", "O", "U"] },
+    // Not a letter group in itself -- it is the hint that the field beside it
+    // takes one. "A-E" is the shape a teacher types for "this week's letters".
+    { key: "first5", label: "A\u2013E", chars: ["A", "B", "C", "D", "E"] }
   ];
 
   function buildBookRangeControl(bookBtn) {
@@ -2587,7 +2614,7 @@
     custom.type = "text";
     custom.className = "pt-book-range-input";
     custom.maxLength = 40;
-    custom.placeholder = "ABC";
+    custom.placeholder = "A-E";
     // An input with only a placeholder is an unlabelled form control, which is
     // one of the accessibility gate's blocking classes. This is its real name.
     custom.setAttribute("aria-label", T.letterWord);
@@ -4140,8 +4167,28 @@
      --------------------------------------------------------------- */
   const dotPageState = {
     level: CFG.dotDifficulty || "medium",
-    numbers: true
+    numbers: true,
+    /* "upper" | "lower". The tracer has always force-uppercased, because a
+       capital silhouette (A L E X) is far more iconic than a lowercase one --
+       but a child learning to write learns lowercase second, and the tracer
+       handles it: measured after the corner fix, 24 of 26 lowercase letters
+       reproduce within 8% of their height at medium, and the two that do not
+       (m, s) are the same shape problem their capitals have at easy.
+
+       This is a toggle on the existing page rather than a lowercase PAGE, and
+       that was a measured call, not a preference: Semrush US puts "lowercase
+       dot to dot" at 0/mo and "dot to dot lowercase letters" at 20, against
+       110 for the head term this page already owns. It fails the site's own
+       spoke test on standalone demand, so a separate URL would have been a
+       thin page competing with its own parent. */
+    case: "upper"
   };
+  // Applied at the RENDER boundary only. CHARS, the picker, every data-char
+  // and the book range all stay uppercase, so nothing that addresses a
+  // character by name has to know about this.
+  function dotCase(ch) {
+    return dotPageState.case === "lower" ? String(ch).toLowerCase() : String(ch).toUpperCase();
+  }
   // viewBox is 4x outlineSVG's 200x240 (same 5:6 aspect; on-screen size is
   // unchanged since CSS scales the SVG to width:100%). dotR/numF are clamped
   // to an ABSOLUTE unit range (see layoutDotWord), so a small viewBox makes
@@ -4155,7 +4202,7 @@
     svg.setAttribute("class", "bubble-outline" + (o.small ? " is-small" : ""));
     svg.setAttribute("role", "img");
     svg.setAttribute("aria-label", T.dotToDot + " " + charLabel(ch));
-    addDotWordSVG(svg, ch.toUpperCase(), dotPageState.level, { x: 70, y: 70, w: 660, h: 820 }, CFG.dotHint !== false, dotPageState.numbers);
+    addDotWordSVG(svg, dotCase(ch), dotPageState.level, { x: 70, y: 70, w: 660, h: 820 }, CFG.dotHint !== false, dotPageState.numbers);
     return svg;
   }
 
@@ -4194,6 +4241,40 @@
       group.appendChild(b);
     });
     wrap.appendChild(group);
+
+    /* Case. Both chips are the character itself, so the control needs no
+       translated label in any of the eight languages; the group takes its
+       accessible name from T.letterWord, which every locale already ships.
+       Digits have no case, so the toggle is hidden on a digits-only page. */
+    if (CHARS.some((c) => /[a-z]/i.test(c))) {
+      const caseRow = document.createElement("div");
+      caseRow.className = "pt-choice-row pt-dot-case";
+      caseRow.setAttribute("role", "radiogroup");
+      caseRow.setAttribute("aria-label", T.letterWord);
+      const caseChips = [];
+      [["upper", "A"], ["lower", "a"]].forEach((pair) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "pt-choice pt-choice-sm";
+        b.textContent = pair[1];
+        b.setAttribute("role", "radio");
+        const on = pair[0] === dotPageState.case;
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-checked", on ? "true" : "false");
+        b.addEventListener("click", () => {
+          dotPageState.case = pair[0];
+          caseChips.forEach((x) => {
+            const sel = x === b;
+            x.classList.toggle("is-active", sel);
+            x.setAttribute("aria-checked", sel ? "true" : "false");
+          });
+          selectChar(activeChar, { silent: true });
+        });
+        caseChips.push(b);
+        caseRow.appendChild(b);
+      });
+      wrap.appendChild(caseRow);
+    }
 
     const toggle = document.createElement("label");
     toggle.className = "pt-dot-numbers-toggle";
