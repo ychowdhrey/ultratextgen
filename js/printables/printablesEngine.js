@@ -72,7 +72,6 @@
     en: {
       letterWord: "letter", numberWord: "number",
       copied: "Copied!",
-      printThisLetter: "Print this letter", printThisNumber: "Print this number",
       downloadPng: "Download PNG",
       copyPaste: "Copy-paste", copy: "Copy", howToDraw: "How to draw it", lowerSuffix: " · lower",
       level: "Level", nameLabel: "Name:", dateLabel: "Date:", space: "space",
@@ -126,7 +125,6 @@
     fr: {
       letterWord: "lettre", numberWord: "chiffre",
       copied: "Copié !",
-      printThisLetter: "Imprimer cette lettre", printThisNumber: "Imprimer ce chiffre",
       downloadPng: "Télécharger le PNG",
       copyPaste: "Copier-coller", copy: "Copier", howToDraw: "Comment la dessiner", lowerSuffix: " · min.",
       level: "Niveau", nameLabel: "Prénom :", dateLabel: "Date :", space: "espace",
@@ -175,7 +173,6 @@
     es: {
       letterWord: "letra", numberWord: "número",
       copied: "¡Copiado!",
-      printThisLetter: "Imprimir esta letra", printThisNumber: "Imprimir este número",
       downloadPng: "Descargar PNG",
       copyPaste: "Copiar y pegar", copy: "Copiar", howToDraw: "Cómo dibujarla", lowerSuffix: " · min.",
       level: "Nivel", nameLabel: "Nombre:", dateLabel: "Fecha:", space: "espacio",
@@ -224,7 +221,6 @@
     pt: {
       letterWord: "letra", numberWord: "número",
       copied: "Copiado!",
-      printThisLetter: "Imprimir esta letra", printThisNumber: "Imprimir este número",
       downloadPng: "Baixar PNG",
       copyPaste: "Copiar e colar", copy: "Copiar", howToDraw: "Como desenhar", lowerSuffix: " · min.",
       level: "Nível", nameLabel: "Nome:", dateLabel: "Data:", space: "espaço",
@@ -273,7 +269,6 @@
     it: {
       letterWord: "lettera", numberWord: "numero",
       copied: "Copiato!",
-      printThisLetter: "Stampa questa lettera", printThisNumber: "Stampa questo numero",
       downloadPng: "Scarica PNG",
       copyPaste: "Copia e incolla", copy: "Copia", howToDraw: "Come disegnarla", lowerSuffix: " · min.",
       level: "Livello", nameLabel: "Nome:", dateLabel: "Data:", space: "spazio",
@@ -322,7 +317,6 @@
     pl: {
       letterWord: "litera", numberWord: "cyfra",
       copied: "Skopiowano!",
-      printThisLetter: "Wydrukuj tę literę", printThisNumber: "Wydrukuj tę cyfrę",
       downloadPng: "Pobierz PNG",
       copyPaste: "Kopiuj i wklej", copy: "Kopiuj", howToDraw: "Jak ją narysować", lowerSuffix: " · mała",
       level: "Poziom", nameLabel: "Imię:", dateLabel: "Data:", space: "spacja",
@@ -373,7 +367,6 @@
     de: {
       letterWord: "Buchstabe", numberWord: "Zahl",
       copied: "Kopiert!",
-      printThisLetter: "Diesen Buchstaben drucken", printThisNumber: "Diese Zahl drucken",
       downloadPng: "PNG herunterladen",
       copyPaste: "Kopieren", copy: "Kopieren", howToDraw: "So wird er gezeichnet", lowerSuffix: " · klein",
       level: "Stufe", nameLabel: "Name:", dateLabel: "Datum:", space: "Leerzeichen",
@@ -431,7 +424,6 @@
     id: {
       letterWord: "huruf", numberWord: "angka",
       copied: "Tersalin!",
-      printThisLetter: "Cetak huruf ini", printThisNumber: "Cetak angka ini",
       downloadPng: "Unduh PNG",
       copyPaste: "Salin-tempel", copy: "Salin", howToDraw: "Cara menulisnya", lowerSuffix: " \u00b7 kecil",
       level: "Tingkat", nameLabel: "Nama:", dateLabel: "Tanggal:", space: "spasi",
