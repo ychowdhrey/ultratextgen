@@ -57,7 +57,7 @@ for (const file of files) {
   // makes this idempotent AND makes it repair order, which a
   // skip-if-present pass could not.
   let next = html;
-  for (const src of [L.SHARE_CORE, L.SAVED_ITEMS]) {
+  for (const src of [L.PRINT_PREFS, L.SHARE_CORE, L.SAVED_ITEMS]) {
     const re = new RegExp(`[ \\t]*<script src="${src.replace(/[/.]/g, '\\$&')}"[^>]*></script>\\n?`, 'g');
     next = next.replace(re, '');
   }
@@ -74,7 +74,7 @@ for (const file of files) {
   if (!m) { noAnchor.push(path.relative(L.ROOT, file)); continue; }
 
   const indent = m[1] || '';
-  const block = [L.SHARE_CORE, L.SAVED_ITEMS].map((src) => `${indent}${L.tagFor(src)}\n`).join('');
+  const block = L.modulesFor(next).map((src) => `${indent}${L.tagFor(src)}\n`).join('');
   next = next.replace(hostTagRe, `${block}${m[0]}`);
 
   if (next === html) { alreadyComplete++; continue; }

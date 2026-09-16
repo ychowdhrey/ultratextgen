@@ -1056,52 +1056,31 @@
     en: ["Print"], fr: ["Imprimer"], es: ["Imprimir"], pt: ["Imprimir"],
     it: ["Stampa"], pl: ["Wydrukuj", "Drukuj"], id: ["Cetak"], de: []
   };
-  const PRINT_PREF_KEY = "utg_print_prefs";
   const RECENT_KEY = "utg_printables_recent";
   const ROSTER_KEY = "utg_printables_roster:" + window.location.pathname;
   const RECENT_MAX = 6;
-  // Usable print area per paper (inches), after the default browser margin
-  // and the sheet title. "auto" keeps the historical 7.0 x 9.3 in budget that
-  // is safe on both Letter and A4 without choosing.
-  const PAPERS = {
-    auto:   { css: null,     w: 7.0,  h: 9.3 },
-    letter: { css: "letter", w: 7.5,  h: 10.0 },
-    a4:     { css: "A4",     w: 7.27, h: 10.7 },
-    legal:  { css: "legal",  w: 7.5,  h: 13.0 }
-  };
-  // Full sheet sizes, for the PDF page box; the content areas above stay
-  // the layout budget so a PDF page matches the printed one.
-  const PAPER_FULL = {
-    auto:   { w: 8.5,  h: 11.0 },
-    letter: { w: 8.5,  h: 11.0 },
-    a4:     { w: 8.27, h: 11.69 },
-    legal:  { w: 8.5,  h: 14.0 }
-  };
-  function paperFull() {
-    const p = PAPER_FULL[printPrefs.paper] || PAPER_FULL.auto;
-    return printPrefs.orient === "landscape" ? { w: p.h, h: p.w } : { w: p.w, h: p.h };
+  /* Sheet setup (paper, orientation, margins, ink saver, render scale) is
+     owned by js/printables/printPrefs.js, so this engine, monogramEngine and
+     crossStitchEngine cannot disagree about what page a sheet is written on.
+     The names below are the local aliases the rest of this file already uses;
+     `printPrefs` is a REFERENCE to the shared object, never a copy, so a panel
+     edit is visible to every reader of it immediately. */
+  const PP = window.UltraTextGen && window.UltraTextGen.printPrefs;
+  if (!PP) {
+    // Never fail silently: without the module every sheet would quietly fall
+    // back to one hardcoded page size, which looks exactly like a working
+    // panel whose controls do nothing.
+    console.warn("[printables] printPrefs.js has not loaded; sheet setup is unavailable. Check that /js/printables/printPrefs.js is tagged before this engine.");
   }
-  const MARGINS = { normal: "0.5in", narrow: "0.25in" };
-  const printPrefs = { paper: "auto", orient: "portrait", margin: "normal", ink: "normal" };
-  try {
-    const saved = JSON.parse(localStorage.getItem(PRINT_PREF_KEY) || "null");
-    if (saved && typeof saved === "object") {
-      if (PAPERS[saved.paper]) printPrefs.paper = saved.paper;
-      if (saved.orient === "landscape" || saved.orient === "portrait") printPrefs.orient = saved.orient;
-      if (MARGINS[saved.margin]) printPrefs.margin = saved.margin;
-      if (saved.ink === "saver" || saved.ink === "normal") printPrefs.ink = saved.ink;
-    }
-  } catch (err) { /* private mode or corrupt value: defaults apply */ }
-  function savePrintPrefs() {
-    try { localStorage.setItem(PRINT_PREF_KEY, JSON.stringify(printPrefs)); } catch (err) { /* optional */ }
-  }
+  const PAPERS = PP ? PP.PAPERS : { letter: { css: "letter", w: 7.5, h: 10.0 } };
+  const MARGINS = PP ? PP.MARGINS : { normal: "0.5in", narrow: "0.25in" };
+  const printPrefs = PP ? PP.values : { paper: "letter", orient: "portrait", margin: "normal", ink: "normal", quality: "normal" };
+  const paperFull = PP ? PP.paperFull : (() => ({ w: 8.5, h: 11.0 }));
+  const savePrintPrefs = PP ? PP.save : (() => {});
+  const renderScale = PP ? PP.scale : (() => 2);
   // The @page rule is injected only for the duration of a print job, so a
   // visitor's saved preference never leaks into another page's print CSS.
-  function pageStyleCss() {
-    const paper = PAPERS[printPrefs.paper] || PAPERS.auto;
-    const size = paper.css ? paper.css + " " + printPrefs.orient : printPrefs.orient;
-    return "@page { size: " + size + "; margin: " + (MARGINS[printPrefs.margin] || MARGINS.normal) + "; }";
-  }
+  const pageStyleCss = PP ? PP.pageStyleCss : (() => "@page { margin: 0.5in; }");
   function applyPageStyle() {
     removePageStyle();
     const st = document.createElement("style");
@@ -1279,6 +1258,7 @@
   // and reset by exportCanvas, so every builder stays a one-liner.
   let exportMode = "download";
   let pdfMode = false;
+  let pngMode = false;
 
   // Preset URL: the page's own inputs as query parameters, so "here is the
   // sheet I made" is a link that reopens the same sheet. The parameters are
@@ -1481,28 +1461,6 @@
     b.addEventListener("click", onClick);
     return b;
   }
-  function choiceRow(labelText, options, current, onPick) {
-    const row = document.createElement("div");
-    row.className = "pt-print-opt";
-    const lab = document.createElement("span");
-    lab.className = "pt-print-opt-label"; lab.textContent = labelText;
-    row.appendChild(lab);
-    const group = document.createElement("div");
-    group.className = "pt-choice-row pt-print-opt-choices";
-    group.setAttribute("role", "radiogroup"); group.setAttribute("aria-label", labelText);
-    options.forEach((o) => {
-      const b = makeBtn("pt-choice pt-choice-sm", o.label, () => {
-        onPick(o.key);
-        $$(".pt-choice", group).forEach((x) => { const on = x === b; x.classList.toggle("is-active", on); x.setAttribute("aria-checked", on ? "true" : "false"); });
-      });
-      b.setAttribute("role", "radio");
-      const on = o.key === current;
-      b.classList.toggle("is-active", on); b.setAttribute("aria-checked", on ? "true" : "false");
-      group.appendChild(b);
-    });
-    row.appendChild(group);
-    return row;
-  }
   // Mount the print-settings panel, the share row and the recent-sheets
   // strip once per page, above the first print action the page carries (or
   // into an explicit #pt-print-options mount).
@@ -1516,32 +1474,13 @@
     wrap.className = "pt-print-tools";
     wrap.id = "pt-print-settings";
 
-    const details = document.createElement("details");
-    details.className = "pt-print-options";
-    const summary = document.createElement("summary");
-    summary.textContent = PO.settings;
-    details.appendChild(summary);
-    // Every one of these repaints the preview. Without that the panel is a
-    // set of controls with no visible consequence, which is the report this
-    // block was rebuilt for: "the print settings don't change the display".
-    const changed = () => { savePrintPrefs(); paintPaperPreview(); };
-    details.appendChild(choiceRow(PO.paper, [
-      { key: "auto", label: PO.auto }, { key: "letter", label: PO.letter }, { key: "a4", label: PO.a4 }, { key: "legal", label: PO.legal }
-    ], printPrefs.paper, (k) => { printPrefs.paper = k; changed(); }));
-    details.appendChild(choiceRow(PO.orientation, [
-      { key: "portrait", label: PO.portrait }, { key: "landscape", label: PO.landscape }
-    ], printPrefs.orient, (k) => { printPrefs.orient = k; changed(); }));
-    details.appendChild(choiceRow(PO.margins, [
-      { key: "normal", label: PO.normal }, { key: "narrow", label: PO.narrow }
-    ], printPrefs.margin, (k) => { printPrefs.margin = k; changed(); }));
-    const ink = document.createElement("label");
-    ink.className = "pt-print-opt pt-print-ink";
-    const inkBox = document.createElement("input");
-    inkBox.type = "checkbox"; inkBox.checked = printPrefs.ink === "saver";
-    inkBox.addEventListener("change", () => { printPrefs.ink = inkBox.checked ? "saver" : "normal"; changed(); });
-    ink.appendChild(inkBox); ink.appendChild(document.createTextNode(" " + PO.inkSaver));
-    details.appendChild(ink);
-    wrap.appendChild(details);
+    /* The panel itself is built by printPrefs.js so the two standalone tools
+       (monogram, cross-stitch) get the identical control set instead of no
+       panel at all. Labels stay this engine's own strings -- nothing is
+       translated at the module boundary. Every edit repaints the preview:
+       without that the panel is a set of controls with no visible
+       consequence, which is the report it was rebuilt for on 2026-09-13. */
+    if (PP) wrap.appendChild(PP.buildPanel({ labels: PO, onChange: paintPaperPreview }));
 
     if (explicit) explicit.appendChild(wrap);
     else anchor.parentNode.insertBefore(wrap, anchor);
@@ -1632,6 +1571,23 @@
       // duplicate of the button beside it.
       const sib = btn.nextElementSibling;
       if (sib && sib.classList && sib.classList.contains("pt-pdf-btn")) sib.remove();
+    });
+    /* The alphabet and practice sheets get the Download PNG their siblings
+       already have. Injected here rather than added to 57 page files: the
+       button is identical on every one of them, and a runtime injection keeps
+       this out of the parity, locale-translation and em-dash gates exactly as
+       the 2026-09-15 relabelling did. Multi-sheet actions are deliberately
+       excluded below -- a 36-page A-Z book is not a PNG. */
+    [[el.alphaPrint, "alphabet_sheet"], [el.practicePrint, "practice_sheet"]].forEach((pair) => {
+      const btn = pair[0];
+      if (!btn || btn.dataset.ptPng) return;
+      btn.dataset.ptPng = "1";
+      const png = document.createElement("button");
+      png.type = "button";
+      png.className = "bubble-btn";
+      png.textContent = T.downloadPng;
+      png.addEventListener("click", () => { pngMode = true; btn.click(); });
+      btn.insertAdjacentElement("afterend", png);
     });
     // The multi-sheet actions keep their own object ("all 7 levels", "the
     // A-Z + 0-9 book") and swap only the verb, per the owner's rule that
@@ -1957,6 +1913,92 @@
   // Rasterise the mounted print surface and write the PDF. Resolves true on
   // success; false means "use the print dialog instead" (module missing,
   // an unsupported browser, a tainted canvas on Safari).
+  /* One canvas for the whole sheet, not one per page: a PNG of a worksheet
+     is the worksheet, so pagination is deliberately defeated by handing the
+     rasteriser a page height nothing can exceed. Returns false when the
+     writer cannot run (a tainted canvas on Safari), and the caller then falls
+     back to the same PDF hint every other export path uses -- rather than
+     failing silently, which looks exactly like a button that does nothing. */
+  /* Chromium and Safari both refuse a canvas dimension past 32,767px, and a
+     refused canvas comes back unusable rather than throwing where you can see
+     it. Held just under. */
+  const MAX_CANVAS_PX = 32000;
+
+  function stitchCanvases(pages) {
+    const w = Math.max(...pages.map((c) => c.width));
+    const h = pages.reduce((t, c) => t + c.height, 0);
+    const out = document.createElement("canvas");
+    out.width = w; out.height = h;
+    const ctx = out.getContext("2d");
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, w, h);
+    let y = 0;
+    pages.forEach((c) => { ctx.drawImage(c, 0, y); y += c.height; });
+    return out;
+  }
+
+  async function pngFromWrap(wrap, sheet) {
+    let P = null;
+    try { P = await loadPdfModule(); } catch (err) { return false; }
+    if (!P || !P.supported()) return false;
+    const full = paperFull();
+    const marginIn = PP ? PP.marginIn() : 0.5;
+    const widthPx = Math.round((full.w - 2 * marginIn) * 96);
+    document.body.classList.add("pt-pdf-rendering");
+    document.body.classList.toggle("pt-ink-saver", printPrefs.ink === "saver");
+    el.printRoot.style.width = widthPx + "px";
+    let pages = null;
+    try {
+      /* The page height has to be the real content height, measured INSIDE
+         the rendering state -- the print surface is display:none outside it
+         and every rectangle reads zero. It cannot simply be a large number:
+         renderPages allocates a canvas pageHeightPx * scale tall in every
+         branch, so asking for 100000 asked Chromium for a 200,000px canvas,
+         which it refuses. That failed silently and returned no pages, which
+         is indistinguishable from a button that does nothing.
+         For a sheet built from explicit page units (the tiled alphabet) the
+         tallest unit is the page height; for ordinary flow content it is the
+         whole wrap, which yields exactly one canvas. */
+      const units = wrap.querySelectorAll(PT_PAGE_UNITS);
+      let contentH = 0;
+      if (units.length) units.forEach((u) => { contentH = Math.max(contentH, Math.ceil(u.getBoundingClientRect().height)); });
+      else contentH = Math.ceil(wrap.getBoundingClientRect().height);
+      const maxH = Math.floor(MAX_CANVAS_PX / renderScale());
+      const pageHeightPx = Math.max(200, Math.min(contentH, maxH));
+      pages = await P.renderPages(wrap, { widthPx: widthPx, pageHeightPx: pageHeightPx, scale: renderScale() });
+    } catch (err) {
+      pages = null;
+    } finally {
+      document.body.classList.remove("pt-pdf-rendering");
+      document.body.classList.remove("pt-ink-saver");
+      el.printRoot.style.width = "";
+    }
+    if (!pages || !pages.length) return false;
+    /* The tiled alphabet ("bulletin board" sizes) renders explicit .pt-tile-page
+       units, so it comes back as several canvases however tall a page we ask
+       for. Taking pages[0] would hand the visitor a PNG missing most of its
+       letters and say nothing, so the pages are stitched into one tall image
+       instead -- which is what a PNG of a multi-page sheet is. */
+    const stitchedH = pages.reduce((t, c) => t + c.height, 0);
+    if (pages.length > 1 && stitchedH > MAX_CANVAS_PX) return false;
+    const canvas = pages.length === 1 ? pages[0] : stitchCanvases(pages);
+    await new Promise((resolve) => {
+      canvas.toBlob((blob) => {
+        if (!blob) { resolve(); return; }
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = PNG_PREFIX + "-" + sheet.replace(/_/g, "-") + ".png";
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        trackPrintable("download_png", sheet);
+        rememberSheet(sheet);
+        resolve();
+      }, "image/png");
+    });
+    return true;
+  }
+
   async function pdfFromWrap(wrap, sheet) {
     let P = null;
     try { P = await loadPdfModule(); } catch (err) { return false; }
@@ -1976,7 +2018,7 @@
     let pages = null;
     let links = [];
     try {
-      pages = await P.renderPages(wrap, { widthPx: widthPx, pageHeightPx: pageHPx, scale: 2 });
+      pages = await P.renderPages(wrap, { widthPx: widthPx, pageHeightPx: pageHPx, scale: renderScale() });
       // Measure the credit blocks HERE, inside the rendering state: the print
       // surface is display:none the moment pt-pdf-rendering comes off, and
       // every rectangle then reads zero. The rects are computed by the PDF
@@ -2001,11 +2043,35 @@
     }
     if (!pages || !pages.length) return false;
     try {
+      /* A multi-page PDF gets an outline, derived from the page units' own
+         headings rather than passed in by each caller: renderPages records
+         which element produced each canvas, so the 36-page A-Z book names its
+         letters and the level ladders name their levels without any of them
+         having to know about bookmarks. A single-page file gets none -- an
+         outline with one entry is clutter. */
+      const marks = [];
+      if (pages.length > 1) {
+        pages.forEach((c, i) => {
+          const src = c.ptPlacement && c.ptPlacement.mode === "explicit" && c.ptPlacement.el;
+          if (!src) return;
+          /* A flashcard page carries several headings, so the bookmark names
+             all of them: the first in full, then each further card's last
+             word, giving "Dot-to-dot letter A · B" rather than a list of
+             four near-identical sentences -- or, worse, only the first card,
+             which makes half the book unreachable from the outline. */
+          const hs = [...src.querySelectorAll(".bubble-print-title, .pt-sheet-title, h2, h3")]
+            .map((h) => h.textContent.trim()).filter(Boolean);
+          if (!hs.length) return;
+          const rest = hs.slice(1).map((t) => t.split(/\s+/).pop());
+          marks.push({ page: i, title: rest.length ? hs[0] + " \u00b7 " + rest.join(" \u00b7 ") : hs[0] });
+        });
+      }
       const blob = await P.fromCanvases(pages, {
         paperIn: full,
         marginIn: { x: marginIn, y: marginIn },
         title: document.title,
-        links: links
+        links: links,
+        bookmarks: marks
       });
       P.download(blob, pdfFilename(sheet));
     } catch (err) {
@@ -2034,8 +2100,14 @@
   }
 
   function printWrap(titleText, bodyNode, sheet) {
-    const wantPdf = pdfMode;
+    /* The PNG button works by re-clicking the section's own PDF button, and
+       that button carries [data-pt-pdf], whose capture-phase handler sets
+       pdfMode on the way through. So both flags are set on a PNG click and
+       the precedence is stated here rather than left to branch order. */
+    const wantPng = pngMode;
+    const wantPdf = pdfMode && !wantPng;
     pdfMode = false;
+    pngMode = false;
     /* Only a real print attempt counts as "print". Until 2026-09-15 this line
        sat above the pdfMode read and fired for PDF clicks too -- the PDF
        button works by invoking this same path -- so `print` counted prints
@@ -2044,7 +2116,7 @@
        PDF side. Now that the UI offers no print button, a `print` event means
        the PDF writer handed off to the dialog: a fallback rate, which is the
        number worth watching. */
-    if (!wantPdf) trackPrintable("print", sheet);
+    if (!wantPdf && !wantPng) trackPrintable("print", sheet);
     rememberSheet(sheet);
     if (!el.printRoot) { applyPageStyle(); window.print(); removePageStyle(); return; }
     el.printRoot.innerHTML = "";
@@ -2066,6 +2138,22 @@
     applySheetMetrics(el.printRoot);
     attachCredit(wrap);
     el.printRoot.appendChild(wrap);
+
+    /* Download PNG for the sheets that have no canvas builder of their own
+       (the A-Z alphabet sheet and the practice sheet). Every other section
+       rasterises a word or a letter it drew itself; these two only ever
+       existed as DOM handed to printWrap, which is why they shipped as the
+       only two jobs on the site offering one output where their siblings
+       offer two. The rasteriser that writes the PDF turns the same DOM into
+       a canvas, so the PNG comes from it rather than from a second drawing
+       path that could drift from the printed sheet. */
+    if (wantPng) {
+      pngFromWrap(wrap, sheet).then((ok) => {
+        el.printRoot.innerHTML = "";
+        if (!ok) { markPdfFallback(); showToast(PO.pdfToast); }
+      });
+      return;
+    }
 
     // Save as PDF writes the file itself (printablePdf.js); the browser's
     // print dialog is the fallback, with the destination named in a toast.
@@ -2389,27 +2477,163 @@
   // sheet-mode pages keep the sheet there and get an auto-added secondary
   // book button beside it. An optional #pt-book-print button anywhere else
   // on the page (e.g. a promo card) triggers the same book print.
+  /* Which characters the A-Z book prints. The whole set is the default and
+     the historical behaviour; the control below narrows it.
+
+     This is the one thing a PDF makes newly possible that the print dialog
+     never did well -- "just the vowels", "just the letters in my name" -- and
+     the forum-evidenced ask behind it is a parent who wants five pages, not
+     thirty-six. A print dialog's page range cannot do it, because the reader
+     does not know which page carries which letter.
+
+     Every VISIBLE string in the control is character data (A-Z, 0-9, a typed
+     run of letters), so it needs no translation in any of the eight languages
+     these pages ship in. The accessible name is T.letterWord, which is
+     already translated in all of them. Nothing here is authored copy. */
+  let bookRange = null;   // null = the whole set
+  /* Cards per page. 1 is the book (the historical behaviour); 2 and 4 turn the
+     same pages into flashcards, which is the forum-evidenced ask this reuses
+     the book for rather than building a separate sheet type. The chips are
+     numerals, so nothing about it needs translating, and the cut instruction
+     is T.puzzleCut -- the sentence the name-puzzle sheet already ships in all
+     eight languages, about cutting along the dashed lines to separate each
+     letter piece, which is exactly what these are. */
+  let bookPerPage = 1;
+
+  function bookChars() {
+    if (!bookRange) return CHARS;
+    const want = new Set(bookRange);
+    const picked = CHARS.filter((ch) => want.has(ch.toUpperCase()));
+    // Never render an empty book: an unmatched filter falls back to the whole
+    // set rather than producing a zero-page PDF, which reads as a broken button.
+    return picked.length ? picked : CHARS;
+  }
+
+  function parseRange(text) {
+    const up = String(text || "").toUpperCase();
+    const set = [];
+    for (const ch of up) if (/[A-Z0-9]/.test(ch) && !set.includes(ch)) set.push(ch);
+    return set.length ? set : null;
+  }
+
+  const BOOK_PRESETS = [
+    { key: "all", label: "A\u2013Z 0\u20139", chars: null },
+    { key: "az",  label: "A\u2013Z", chars: "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("") },
+    { key: "num", label: "0\u20139", chars: "0123456789".split("") },
+    { key: "vow", label: "AEIOU", chars: ["A", "E", "I", "O", "U"] }
+  ];
+
+  function buildBookRangeControl(bookBtn) {
+    if (!bookBtn || document.getElementById("pt-book-range")) return;
+    const wrap = document.createElement("div");
+    wrap.className = "pt-choice-row pt-book-range";
+    wrap.id = "pt-book-range";
+    wrap.setAttribute("role", "radiogroup");
+    wrap.setAttribute("aria-label", T.letterWord);
+    const custom = document.createElement("input");
+    const chips = [];
+    const select = (key) => {
+      chips.forEach((c) => {
+        const on = c.dataset.key === key;
+        c.classList.toggle("is-active", on);
+        c.setAttribute("aria-checked", on ? "true" : "false");
+      });
+    };
+    BOOK_PRESETS.forEach((preset) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pt-choice pt-choice-sm";
+      b.dataset.key = preset.key;
+      b.textContent = preset.label;
+      b.setAttribute("role", "radio");
+      const on = preset.key === "all";
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.addEventListener("click", () => { bookRange = preset.chars; custom.value = ""; select(preset.key); });
+      chips.push(b);
+      wrap.appendChild(b);
+    });
+    custom.type = "text";
+    custom.className = "pt-book-range-input";
+    custom.maxLength = 40;
+    custom.placeholder = "ABC";
+    // An input with only a placeholder is an unlabelled form control, which is
+    // one of the accessibility gate's blocking classes. This is its real name.
+    custom.setAttribute("aria-label", T.letterWord);
+    custom.addEventListener("input", () => {
+      bookRange = parseRange(custom.value);
+      select(custom.value.trim() ? null : "all");
+    });
+    wrap.appendChild(custom);
+
+    /* Cards per page, its own radiogroup so the two axes are not conflated.
+       Its accessible name is T.pageCount.one -- the locale's own word for
+       "page", already translated in all eight. */
+    const perWrap = document.createElement("div");
+    perWrap.className = "pt-choice-row pt-book-per";
+    perWrap.setAttribute("role", "radiogroup");
+    perWrap.setAttribute("aria-label", T.pageCount.one);
+    const perChips = [];
+    [1, 2, 4].forEach((n) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pt-choice pt-choice-sm";
+      b.textContent = String(n);
+      b.setAttribute("role", "radio");
+      const on = n === 1;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.addEventListener("click", () => {
+        bookPerPage = n;
+        perChips.forEach((c) => {
+          const sel = c === b;
+          c.classList.toggle("is-active", sel);
+          c.setAttribute("aria-checked", sel ? "true" : "false");
+        });
+      });
+      perChips.push(b);
+      perWrap.appendChild(b);
+    });
+    wrap.appendChild(perWrap);
+    bookBtn.parentNode.insertBefore(wrap, bookBtn);
+  }
+
   function printAlphabetBook() {
     const book = document.createElement("div");
     book.className = "bubble-print-book";
-    CHARS.forEach((ch) => {
+    const chars = bookChars();
+    const per = bookPerPage;
+    for (let i = 0; i < chars.length; i += per) {
       const page = document.createElement("div");
-      page.className = "bubble-print-book-page";
-      const t = document.createElement("h3");
-      t.className = "bubble-print-title";
-      // The credit lives in the footer block now (attachCredit), with a QR
-      // beside it, so the heading stops repeating the URL.
-      t.textContent = cap(NOUN) + " " + charLabel(ch);
-      page.appendChild(t);
-      // The figure gets its own box so the page can flex: title and credit
-      // take their natural height, this absorbs the rest. Same reason the
-      // single-character print has one — see .pt-fill-page in style.css.
-      const figure = document.createElement("div");
-      figure.className = "bubble-figure";
-      figure.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
-      page.appendChild(figure);
+      page.className = "bubble-print-book-page" + (per > 1 ? " is-" + per + "up" : "");
+      chars.slice(i, i + per).forEach((ch) => {
+        // At one per page the card IS the page, so the single-page layout is
+        // byte-for-byte what it always was and needs no new CSS to hold up.
+        const card = per > 1 ? document.createElement("div") : page;
+        if (per > 1) card.className = "pt-card";
+        const t = document.createElement("h3");
+        t.className = "bubble-print-title";
+        // The credit lives in the footer block now (attachCredit), with a QR
+        // beside it, so the heading stops repeating the URL.
+        t.textContent = cap(NOUN) + " " + charLabel(ch);
+        card.appendChild(t);
+        // The figure gets its own box so the page can flex: title and credit
+        // take their natural height, this absorbs the rest. Same reason the
+        // single-character print has one — see .pt-fill-page in style.css.
+        const figure = document.createElement("div");
+        figure.className = "bubble-figure";
+        figure.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
+        card.appendChild(figure);
+        if (per > 1) page.appendChild(card);
+      });
+      if (per > 1) {
+        const cut = document.createElement("p");
+        cut.className = "pt-cut-hint";
+        cut.textContent = T.puzzleCut;
+        page.appendChild(cut);
+      }
       book.appendChild(page);
-    });
+    }
     printWrap("", book, "alphabet_book");
   }
 
@@ -2605,6 +2829,7 @@
       printAlphabetBook();
     });
     actions.appendChild(book);
+    buildBookRangeControl(book);
     wrap.appendChild(actions);
     wrap.appendChild(makePdfHint());
 
@@ -2614,7 +2839,10 @@
 
   function buildAlphabetGrid() {
     buildSizeControl();
-    if (el.bookPrint) el.bookPrint.addEventListener("click", printAlphabetBook);
+    if (el.bookPrint) {
+      el.bookPrint.addEventListener("click", printAlphabetBook);
+      buildBookRangeControl(el.bookPrint);
+    }
     if (el.alphaPrint) {
       const bookMode = CFG.alphabetPrint === "book";
       const printDefault = bookMode ? printAlphabetBook : printAlphabetSheet;
@@ -2630,6 +2858,7 @@
         bookBtn.textContent = T.printBook;
         bookBtn.addEventListener("click", printAlphabetBook);
         el.alphaPrint.insertAdjacentElement("afterend", bookBtn);
+        buildBookRangeControl(bookBtn);
       }
     }
     if (!el.alphaGrid) return;

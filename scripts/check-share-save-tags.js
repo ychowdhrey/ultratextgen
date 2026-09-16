@@ -26,7 +26,7 @@ const { globSync } = require('glob');
 const L = require('./lib/share-save-tags.js');
 
 if (!L.modulesExist()) {
-  console.error(`Missing shared module on disk:\n  ${L.SHARE_CORE}\n  ${L.SAVED_ITEMS}`);
+  console.error(`Missing shared module on disk:\n  ${L.SHARE_CORE}\n  ${L.SAVED_ITEMS}\n  ${L.PRINT_PREFS}`);
   console.error('Every page tagged for them would 404 its own JavaScript.');
   process.exit(1);
 }
