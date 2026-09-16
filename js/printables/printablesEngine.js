@@ -4547,7 +4547,21 @@
            under a group vaguely labelled "letter". Every one of the sixteen
            words is harvested from that locale's own pages -- Kleinbuchstaben
            94 uses, minuscules 492, minúsculas 645, huruf kecil 368 -- not
-           authored here. */
+           authored here.
+
+           Checked against native children's-worksheet publishers as well,
+           because harvesting proves a word is not invented and nothing more
+           (2026-09-16): de Grundschulkönig and Twinkl.de use "Groß und
+           Kleinbuchstaben" on tracing sheets; fr Nathan, Tipirate and
+           Caboucadin use "lettres majuscules et minuscules"; it
+           PianetaBambini and Maestra Chiara use "lettere maiuscole /
+           minuscole", which settles the one form that was a judgement call
+           here -- plural feminine, agreeing with lettere; pl childdevelop.pl
+           uses "wielkie i małe litery"; id lembarkerjaanak.com titles a sheet
+           "Menebalkan Huruf Besar dan Kecil A-Z", the same phrase as this
+           site's own id/printables/menebalkan-huruf/. es and pt were not
+           searched: mayúsculas / minúsculas and maiúsculas / minúsculas are
+           unambiguous and already carry 645 and 294 uses here. */
         b.setAttribute("aria-label", pair[0] === "upper" ? T.caseUpper : T.caseLower);
         const on = pair[0] === dotPageState.case;
         b.classList.toggle("is-active", on);
