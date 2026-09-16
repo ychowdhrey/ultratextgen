@@ -6661,8 +6661,13 @@ body.dark-mode .pt-design-preview { background: #1c2030; }
   align-items: start;
   margin-top: 1.25rem;
 }
-.pt-studio-controls { min-width: 0; }
-.pt-studio-preview { min-width: 0; position: sticky; top: 1rem; }
+/* The preview is FIRST in source so it leads on a phone (see the 900px
+   block below), but the desktop grid's first column is the narrow 380px one
+   and the sheet belongs in the wide one. Explicit order puts the controls
+   back in column 1 without moving the markup. Pages whose markup already
+   ran controls-then-preview are unaffected, since that is this same order. */
+.pt-studio-controls { min-width: 0; order: 1; }
+.pt-studio-preview { min-width: 0; position: sticky; top: 1rem; order: 2; }
 
 /* Grouped control fields */
 .pt-field { margin-bottom: 1.35rem; }
@@ -6870,7 +6875,13 @@ body.dark-mode .pt-paper { background: #fff; border-color: var(--border-light); 
 /* Single-column studio + non-sticky preview on narrow screens */
 @media (max-width: 900px) {
   .pt-studio { grid-template-columns: 1fr; gap: 1.4rem; }
-  .pt-studio-preview { position: static; }
+  /* order: -1 hoists the live preview above the controls once the grid goes
+     single-column. Measured on a 390x844 phone beforehand: the control column
+     was 1016px tall and the preview started 1038px below its top, so the sheet
+     the tool exists to show sat a full screen past the fold and every swatch
+     tap cost a scroll down and back. Source order is unchanged, so the desktop
+     two-column layout is untouched. */
+  .pt-studio-preview { position: static; order: -1; }
   .pt-paper { max-height: none; }
   .pt-studio-preview .pt-design-sheet-svg { max-height: none; }
 }
@@ -9777,6 +9788,75 @@ body.pt-pdf-rendering .pt-puzzle-print-holder .pt-puzzle-sheet {
 body.pt-pdf-rendering .pt-banner-grid { grid-template-columns: repeat(3, 1fr); }
 body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
 
+/* MERGE 2026-09-16: two independent additions at the same place, kept in
+   full. Above: the coloring studio's visible budgets and switched-off
+   states (PR #891). Below: the A-Z book range, the 2-up/4-up flashcard
+   layouts and the dot-to-dot case toggle (PR #889). Verified disjoint --
+   no selector appears in both. */
+
+/* ============================================================
+   Coloring studio: visible budgets and switched-off states
+   ------------------------------------------------------------
+   A control that silently stops working is indistinguishable from one that
+   is working, which is what a maxlength truncation and a difficulty ladder
+   that rendered four identical sheets both looked like. The budget is shown,
+   and anything the current word cannot carry is visibly off with the page's
+   own sentence saying why.
+   ============================================================ */
+.pt-field-count {
+  float: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: none;
+  letter-spacing: 0;
+}
+.pt-field-count.is-full { color: var(--accent-purple); }
+.pt-field-hint,
+.pt-field-note {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin: 0.4rem 0 0;
+}
+.pt-field-note { color: var(--accent-purple); font-weight: 600; }
+.pt-swatch.is-disabled,
+.pt-choice.is-disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+  filter: grayscale(1);
+}
+.pt-swatch.is-disabled:hover,
+.pt-choice.is-disabled:hover {
+  border-color: var(--border-light);
+  transform: none;
+}
+/* The word field holds up to two lines, so it cannot take the fixed 54px
+   height the single-line inputs share. */
+.pt-studio textarea.pt-design-input {
+  height: auto;
+  min-height: 92px;
+  resize: vertical;
+  line-height: 1.5;
+}
+/* "One sheet" / "Whole class" is an audience, not a step: steps 1-3 are the
+   same work either way, so the toggle sits apart from them rather than
+   pretending to be a fourth one. */
+.pt-audience-field {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-light);
+}
+.pt-audience-field .pt-choice { flex: 1 1 auto; }
+.pt-class-fields { margin-top: 0.9rem; }
+.pt-class-fields textarea { min-height: 104px; resize: vertical; }
+.pt-more-field { margin-top: 1.2rem; }
+.pt-more-field summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+.pt-more-field > .pt-field { margin-top: 0.85rem; }
 /* A-Z book page range (2026-09-16): pick which letters the book prints.
    Every visible label is character data, so nothing here needs translating;
    the group and the free-text field take their accessible name from the

@@ -592,6 +592,12 @@
     // Coloring-sheet designer (optional; gated on its own mounts)
     designInput: $("#pt-design-input"),
     designInput2: $("#pt-design-input2"),
+    designCount: $("#pt-design-count"),
+    designFillNote: $("#pt-design-fill-note"),
+    designAudienceGroup: $("#pt-design-audience"),
+    designClassFields: $("#pt-design-class-fields"),
+    designPreviewMeta: $("#pt-design-preview-meta"),
+    designSettingsMount: $("#pt-design-settings-mount"),
     designHeading: $("#pt-design-heading"),
     designRoster: $("#pt-design-roster"),
     designFill: $("#pt-design-fill"),
@@ -604,6 +610,7 @@
     designFillField: $("#pt-design-fill-field"),
     designDotsOptions: $("#pt-design-dots-options"),
     designDensityGroup: $("#pt-design-density-group"),
+    designDensityNote: $("#pt-design-density-note"),
     designHint: $("#pt-design-hint"),
     designPreview: $("#pt-design-preview"),
     designPrint: $("#pt-design-print"),
@@ -804,6 +811,9 @@
     return parts.join(" · ");
   }
   function paintPaperPreview() {
+    // The designer's own "paper" strip is repainted from here too, so one
+    // panel change updates every surface that names the paper.
+    if (typeof syncDesignPreviewMeta === "function") syncDesignPreviewMeta();
     // No isConnected guard: paperPreview() paints once while the holder is
     // still detached (selectChar appends it afterwards), and an isConnected
     // check there silently skipped that first paint — the sheet took the
@@ -1276,6 +1286,27 @@
   // PDF. Give each page unit its own; the wrap gets one only when there are
   // none. Same selector as that module's own PAGES, kept in step by name.
   const PT_PAGE_UNITS = ".pt-sheet-page, .bubble-print-book-page, .pt-tile-page, .pt-banner-page";
+
+  /* One sheet is still a page, and it has to SAY so.
+
+     renderPages() has two branches: explicit page units become one canvas
+     each, and a body with none is measured as a flowed column and cut at
+     page height. Every tool here wrapped its class set in .pt-sheet-page and
+     its single sheet in nothing, so the single sheet took the flow branch,
+     where attachCredit's ~92px credit block is part of the measured column.
+     Measured on the coloring page maker: the sheet is 952px inside a 960px
+     box, the credit takes it to 1068px, and 11.3% is past the 6% single-page
+     tolerance -- so a PDF of one coloring page came out as two, the second
+     carrying nothing but the credit. Same arithmetic on the dot-to-dot name
+     sheet (1068px), the name worksheet (1053px) and the handwriting
+     generator sheet (1114px); the name puzzle sheet escaped at 999px only
+     because it is shorter than the tolerance, not because it differs. */
+  function sheetPageNode(node) {
+    const page = document.createElement("div");
+    page.className = "pt-sheet-page";
+    page.appendChild(node);
+    return page;
+  }
   function attachCredit(wrap) {
     const pages = $$(PT_PAGE_UNITS, wrap).filter((p) => !p.parentElement.closest(PT_PAGE_UNITS));
     if (pages.length) { pages.forEach((p) => p.appendChild(creditNode())); return pages; }
@@ -1748,6 +1779,19 @@
      retyping what it says, and the QR removes that step for anyone holding a
      phone. Scaled off the canvas rather than fixed, because this same
      function signs a 1024px square letter and a 1600x520 word strip. */
+  /* Height of the credit strip appended below a sheet that fills its own
+     canvas edge to edge.
+
+     drawCredit() puts the QR in the bottom-right CORNER, which is right for a
+     single big glyph but lands on the furniture of a full sheet: on the
+     coloring sheet the corner box (x 838-958, y 1238-1358) covers the end of
+     the Date rule and two symbols of the bottom border row. So those sheets
+     get a strip below them instead, which is also what the PRINTED page looks
+     like -- attachCredit() appends its credit block beneath the sheet rather
+     than inside it. 170 clears the 162 units drawCredit reserves (a 120 QR
+     plus its 42 pad) with a little air above. */
+  const PNG_CREDIT_BAND = 170;
+
   function drawCredit(ctx, w, h, light) {
     const url = creditUrl();
     const qrNs = qrModule();
@@ -2175,13 +2219,20 @@
     // computed figure height. Marked here because CSS cannot ask "does this
     // wrap contain a single-character print".
     if (sheet === "character") wrap.classList.add("pt-fill-page");
+    wrap.appendChild(bodyNode);
     if (titleText) {
       const h = document.createElement("h2");
       h.className = "bubble-print-title";
       h.textContent = titleText;
-      wrap.appendChild(h);
+      /* renderPages rasterises explicit page units and drops everything
+         outside them, so on a job that is exactly one page the title has to
+         live inside the unit or it prints from the dialog and is missing
+         from the PDF. Scoped to the single-unit case on purpose: a multi-page
+         job's title placement is unchanged, so no existing PDF moves. */
+      const units = $$(PT_PAGE_UNITS, wrap).filter((u) => !u.parentElement.closest(PT_PAGE_UNITS));
+      if (units.length === 1) units[0].insertBefore(h, units[0].firstChild);
+      else wrap.insertBefore(h, wrap.firstChild);
     }
-    wrap.appendChild(bodyNode);
     // Size the sheet to the paper the visitor chose, then sign it. Both have
     // to happen before anything measures or rasterises the surface.
     applySheetMetrics(el.printRoot);
@@ -2345,11 +2396,19 @@
        strip that confirms it renders 303px further down the page. Measured,
        not assumed: it did write to the shared store.
 
-       Save as PDF went with it. A PDF is still one step away — the print
-       dialog's own Save as PDF destination — and the credit line on that
-       sheet is a real <a>, so the browser's own writer makes it clickable.
-       addPdfButtons() still serves the alphabet-book and generator print
-       buttons on the other printable families; only this row lost it. */
+       Save as PDF went with it, on the reasoning that a PDF was one step
+       away through the print dialog's own Save as PDF destination, that the
+       credit line on that sheet is a real <a> so the browser's own writer
+       makes it clickable, and that the other printable families kept their
+       own print buttons.
+
+       Superseded 2026-09-15 (owner decision; see CLAUDE.md, "Print settings
+       drive the printed sheet"). Every sheet action writes a PDF and the
+       print dialog is the fallback only. So the pair that survives here is
+       Save as PDF + Download PNG rather than Print + PNG, no printable
+       family offers a print button any more, and the helper that added them
+       to the other families no longer exists. The paragraph above is the
+       record of what was decided on 09-13, not a description of this row. */
     actions.appendChild(printBtn);
     actions.appendChild(pngBtn);
     figure.appendChild(actions);
@@ -3140,7 +3199,7 @@
       printWrap(names.length + " " + T.sheets + " — tracing worksheets", set, "name_worksheet");
       return;
     }
-    printWrap(nameValue() + " — tracing worksheet", nameSheetNode(), "name_worksheet");
+    printWrap(nameValue() + " — tracing worksheet", sheetPageNode(nameSheetNode()), "name_worksheet");
   }
 
   function nameRow(name, kind) {
@@ -3442,7 +3501,7 @@
       printWrap(names.length + " " + T.sheets + " — " + spec.label + " · " + siteCredit(), set, "generator_sheet");
       return;
     }
-    printWrap(genValue() + " — " + spec.label + " worksheet", genSheetNode(), "generator_sheet");
+    printWrap(genValue() + " — " + spec.label + " worksheet", sheetPageNode(genSheetNode()), "generator_sheet");
   }
 
   // The whole difficulty ladder as one print job — one sheet per level,
@@ -3578,6 +3637,30 @@
 
   const DESIGN = CFG.designer || {};
   const DESIGN_DEMO = DESIGN.demo || CFG.nameDemo || "Hello";
+
+  /* Character budgets. Measured on the printed sheet (US Letter portrait,
+     1 SVG unit = 0.175mm), not chosen by eye:
+
+       chars   colourable interior (median)   verdict
+         1-7            6.9 - 8.8 mm          a crayon tip (6-8mm) fits
+           9                  3.6 mm          pencil only
+       14-24            2.0 - 2.9 mm          a line to trace, not a region
+
+     The interior HALVES between 7 and 9 characters, so `maxChars` caps the
+     word where the sheet still does the job it claims to. Separately, the
+     interior fill pattern tile is a fixed 8.41mm regardless of letter size,
+     so past ~8 characters a letter is narrower than one tile and "Hearts"
+     renders heart fragments rather than hearts -- `fillMaxChars` is that
+     tighter, second limit on the same field. `headingMaxChars` is the width
+     the heading band actually fits (~26 at 62px on a 1000-unit sheet); the
+     field used to allow 48 and ran off both edges of the paper.
+     All three are per-page config; the defaults keep every page that has not
+     opted in rendering exactly as before. */
+  const DESIGN_MAX = Math.max(1, DESIGN.maxChars || 24);
+  const DESIGN_FILL_MAX = Math.max(1, DESIGN.fillMaxChars || DESIGN_MAX);
+  const DESIGN_HEADING_MAX = Math.max(1, DESIGN.headingMaxChars || 48);
+  // A roster heading carries this token where each child's name goes.
+  const DESIGN_NAME_TOKEN = "{name}";
   const FILL_KINDS = ["plain", "dots", "stripes", "hearts", "stars"];
   const BORDER_SETS = Object.assign({
     none: "",
@@ -3595,7 +3678,7 @@
   //   mode:    "outline" (colorable letters) | "dots" (numbered dot-to-dot)
   //   density: dot-to-dot difficulty key (see DOT_LEVELS)
   //   hint:    show the faint guide line through the dots
-  const designState = { fill: "plain", border: "none", mode: "outline", density: "medium", hint: true };
+  const designState = { fill: "plain", border: "none", mode: "outline", density: "medium", hint: true, audience: "one" };
 
   function svgMake(tag, attrs, parent) {
     const node = document.createElementNS(SVGNS, tag);
@@ -3623,18 +3706,44 @@
       " C" + (cx + s) + " " + y + " " + cx + " " + y + " " + cx + " " + (y + s * 0.35) + " Z";
   }
 
-  function designText() {
+  /* The word field is authored either as one <textarea> holding up to two
+     lines, or (older pages) as two separate <input>s. Both shapes resolve
+     here so the rest of the designer never has to know which it is: two
+     fields labelled "Name or word" and "Second line" were two answers to one
+     question, which is the repetition this field set was collapsed to remove. */
+  function designLines() {
     const raw = el.designInput ? el.designInput.value : "";
-    return (raw && raw.trim()) ? raw.trim().slice(0, 24) : DESIGN_DEMO;
+    const parts = (el.designInput && el.designInput.tagName === "TEXTAREA")
+      ? String(raw).split(/\r?\n/)
+      : [raw, el.designInput2 ? el.designInput2.value : ""];
+    return parts.map((x) => String(x || "").trim().slice(0, DESIGN_MAX)).filter(Boolean).slice(0, 2);
   }
-  // Optional second line ("Happy Birthday" / "Emma") — empty string when the
-  // page has no line-2 mount or it's blank.
+  function designText() {
+    const lines = designLines();
+    return lines.length ? lines[0] : DESIGN_DEMO;
+  }
+  // Optional second line ("Happy Birthday" / "Emma"): empty string when the
+  // page has no second line or it is blank.
   function designLine2() {
-    const raw = el.designInput2 ? el.designInput2.value : "";
-    return raw ? raw.trim().slice(0, 24) : "";
+    const lines = designLines();
+    return lines.length > 1 ? lines[1] : "";
   }
   function designHeadingText() {
-    return el.designHeading ? el.designHeading.value.trim().slice(0, 48) : "";
+    return el.designHeading ? el.designHeading.value.trim().slice(0, DESIGN_HEADING_MAX) : "";
+  }
+  // The heading a given sheet carries. On a class set the heading is a
+  // per-child string, not a constant: typing "Emma's Coloring Page" (which is
+  // exactly what the placeholder suggested) and pasting a roster used to
+  // print every child's sheet headed "Emma's". A {name} token wins where the
+  // author used one; otherwise the Step-1 word is substituted, which is the
+  // case a placeholder-follower actually lands in.
+  function headingForName(heading, name) {
+    if (!heading || !name) return heading;
+    if (heading.indexOf(DESIGN_NAME_TOKEN) !== -1) return heading.split(DESIGN_NAME_TOKEN).join(name);
+    const word = designText();
+    if (!word) return heading;
+    const esc = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    return heading.replace(new RegExp(esc, "gi"), name);
   }
   function designFillKind() {
     const v = el.designFillGroup ? designState.fill : (el.designFill ? el.designFill.value : "plain");
@@ -3756,21 +3865,46 @@
   // the whole-word budgets all exceed the per-letter clamp for one character,
   // so without it every level would render a single letter identically (which
   // is why the per-letter pages historically hid the picker).
+  /* Difficulty is DOTS PER LETTER, not dots per word, and that distinction is
+     the whole fix. `total` was a whole-word budget divided across the letters
+     while DOT_MIN floored each letter at 5, so on a long word the floor beat
+     the budget and the levels collapsed into each other: measured, Easy and
+     Medium rendered BYTE-IDENTICAL sheets from 11 characters up, and all four
+     levels sat within 4% of each other by 20. The same arithmetic inverted
+     the labels, since Easy on a 24-letter word produced 120 dots against
+     Expert's 76 on a 4-letter one. Per-letter figures are calibrated to what
+     each level drew for a 4-letter name before this change, so a short name
+     looks the way it always did. `single` still drives the one-character
+     pages, which were never affected. `total` is kept for any caller that
+     still wants the old whole-word reading. */
   const DOT_LEVELS = [
-    /* easy was 12 until 2026-09-16, which could not draw a letter with more
-       than a dozen corners: measured across all 62 glyphs, 16 reproduced worse
-       than 10% of their height, and m, s and a were visibly mangled -- m lost
-       a whole stem. 14 fixes all three on inspection and takes the count over
-       10% from 16 to 8, while staying clearly below medium's 16 so the ladder
-       still means something. Raising it further was tried and rejected: 15
-       sits one dot under medium and the picker stops distinguishing them.
-       `total` (the shared budget for a whole word) is deliberately unchanged;
-       that is a different surface and was not measured here. */
-    { key: "easy",   label: T.dot.easy.label,   total: 26, single: 14, hint: T.dot.easy.hint },
-    { key: "medium", label: T.dot.medium.label, total: 42, single: 16, hint: T.dot.medium.hint },
-    { key: "hard",   label: T.dot.hard.label,   total: 60, single: 19, hint: T.dot.hard.hint },
-    { key: "expert", label: T.dot.expert.label, total: 84, single: 22, hint: T.dot.expert.hint }
+    /* MERGE 2026-09-16 (PR #891 x PR #889): both sides changed this table for
+       different surfaces and both changes are kept.
+
+       `perLetter` is #891's: the shared whole-word `total` made the levels
+       indistinguishable on long words (within 4% of each other by 20
+       characters) and inverted the labels, so a word now gets a per-letter
+       budget instead. `single` is #889's, and its easy value is the measured
+       one: at 12 dots, 16 of 62 glyphs reproduced worse than 10% of their
+       height and m, s and a were visibly mangled -- m lost a whole stem. 14
+       fixes all three while staying clearly below medium's 16, so the ladder
+       still means something; 15 was tried and rejected for sitting one dot
+       under medium. #891 did not touch `single` (its own note says the
+       one-character pages "were never affected"), so taking #889's numbers
+       here loses nothing from either side. */
+    { key: "easy",   label: T.dot.easy.label,   total: 26, perLetter: 7,  single: 14, hint: T.dot.easy.hint },
+    { key: "medium", label: T.dot.medium.label, total: 42, perLetter: 10, single: 16, hint: T.dot.medium.hint },
+    { key: "hard",   label: T.dot.hard.label,   total: 60, perLetter: 14, single: 19, hint: T.dot.hard.hint },
+    { key: "expert", label: T.dot.expert.label, total: 84, perLetter: 19, single: 22, hint: T.dot.expert.hint }
   ];
+  /* The smallest number face worth printing, in sheet units. A sheet unit is
+     0.175mm on US Letter, so 17 units is about 8.5pt -- the point below which
+     a dot-to-dot stops being usable by the child it is drawn for. Measured
+     before this change: the old code let the face fall to its 12-unit clamp
+     (6.0pt) with dots 1.12mm across and 0.83mm apart, i.e. overlapping. The
+     count is now reduced until the numbers fit, rather than the numbers being
+     shrunk until they do not. */
+  const DOT_NUM_MIN = 17;
   /* What a level actually yields for one character, so the picker can say the
      real number instead of the nominal floor. Memoised per character and font
      because it traces, and the trace is the expensive half of a render. */
@@ -3859,7 +3993,11 @@
   function dotDirIndex(dx, dy) { for (let i = 0; i < 8; i++) if (DOT_N8[i][0] === dx && DOT_N8[i][1] === dy) return i; return 4; }
 
   // Rasterize one character to a black-on-white bitmap and return an ink mask.
+  // Rasters are pure functions of the character and the font, and the ceiling
+  // search below lays the same word out several times, so cache them.
+  const dotRasterCache = Object.create(null);
   function dotRasterChar(ch) {
+    if (dotRasterCache[ch]) return dotRasterCache[ch];
     const probe = document.createElement("canvas").getContext("2d");
     probe.font = "700 " + DOT_FS + "px " + FONT;
     const adv = Math.max(DOT_FS * 0.28, probe.measureText(ch).width);
@@ -3876,7 +4014,8 @@
     const data = ctx.getImageData(0, 0, w, h).data;
     const mask = new Uint8Array(w * h);
     for (let i = 0; i < w * h; i++) mask[i] = data[i * 4] < 128 ? 1 : 0;
-    return { mask: mask, w: w, h: h, adv: adv };
+    dotRasterCache[ch] = { mask: mask, w: w, h: h, adv: adv };
+    return dotRasterCache[ch];
   }
 
   // Label 8-connected ink components (flood fill). Returns labels + per-component
@@ -4216,7 +4355,15 @@
      page switch script), and a different face has different corner counts --
      which is also why dotCountCache keys on FONT. Do not read a passing sheet
      as evidence that this code path works; it is currently unreachable. */
-  function dotWordGeometry(text, total, singleMode) {
+  /* MERGE 2026-09-16: the third parameter meant different things on the two
+     sides and both are needed, so both are here. `perLetterMode` (#891) gives
+     each letter of a WORD its own budget; `singleMode` (#889) applies the
+     corner floor above, and only ever to a ONE-character sheet -- as #889's
+     note says, a per-letter floor would blow a shared word budget. They are
+     mutually exclusive by construction: dotBudgetFor() sets one or the other.
+     `singleMode` is last so dotCeiling()'s existing 4-argument call still
+     reads correctly. */
+  function dotWordGeometry(text, budget, perLetterMode, singleMode) {
     const chars = [...String(text)];
     const raw = [];
     let xoff = 0;
@@ -4275,9 +4422,17 @@
       xoff += R.adv * (1 + DOT_TRACKING);
     });
     const totalPerim = raw.reduce((s, r) => s + r.perim, 0) || 1;
+    // Per-letter mode shares the budget around the MEAN letter, so a letter
+    // with more outline than its neighbours still gets proportionally more
+    // dots while the average stays at the level the visitor picked.
+    const meanPerim = totalPerim / (raw.length || 1);
     const letters = [];
     raw.forEach((r) => {
-      let n = Math.round((r.perim / totalPerim) * total);
+      let n = perLetterMode
+        ? Math.round(budget * (r.perim / meanPerim))
+        : Math.round((r.perim / totalPerim) * budget);
+      // #889's corner floor: a letter gets at least as many dots as it has
+      // corners, so easy means "the fewest dots that still draw this letter".
       if (singleMode) n = Math.max(n, dotCornerIndices(r.boundary, DOT_CORNER_DEGS[1]).length);
       n = Math.max(DOT_MIN, Math.min(DOT_MAX, n));
       /* The level's count is the OUTLINE's count, and every further contour
@@ -4317,10 +4472,18 @@
   // Fit the traced geometry into a target box and produce final, output-ready
   // dots (with numbers) + closed hint loops. Consumed by both SVG and Canvas
   // so the preview, print and PNG stay identical.
-  function layoutDotWord(text, level, box) {
-    const lvl = dotLevel(level);
-    const drawn = [...String(text)].filter((c) => c !== " ").length;
-    const geom = dotWordGeometry(text, drawn === 1 ? lvl.single : lvl.total, drawn === 1);
+  /* One pass at a given budget. Split out of layoutDotWord so the budget can
+     be reduced and the pass re-run until the printed numbers are legible --
+     see DOT_NUM_MIN. `med` is returned because it is what decides that.
+
+     MERGE 2026-09-16: #889's own layoutDotWord() is superseded by this plus
+     dotBudgetFor() below, which already branches on a one-character sheet.
+     Keeping both definitions would have left two functions of the same name
+     in one scope, the second silently shadowing the first. #889's behaviour
+     is not lost -- its single-character branch is dotBudgetFor's `drawn <= 1`
+     case and its corner floor rides `singleMode` into dotWordGeometry. */
+  function layoutDotWordAt(text, budget, perLetterMode, box, singleMode) {
+    const geom = dotWordGeometry(text, budget, perLetterMode, singleMode);
     const b = geom.bbox;
     const bw = Math.max(1, b.maxx - b.minx), bh = Math.max(1, b.maxy - b.miny);
     const scale = Math.min(box.w / bw, box.h / bh);
@@ -4359,7 +4522,66 @@
     const med = nn.length ? nn[Math.floor(nn.length / 2)] : 40;
     const dotR = Math.max(3.2, Math.min(11, med * 0.17));
     const numF = Math.max(12, Math.min(30, med * 0.6));
-    return { letters: letters, dotR: dotR, numF: numF };
+    return { letters: letters, dotR: dotR, numF: numF, med: med };
+  }
+
+  /* The most dots per letter this word can carry in this box before the
+     printed numbers fall below DOT_NUM_MIN. Computed ONCE per word, not per
+     level, and that is the point: the first version searched down from each
+     level's own starting budget and the search was not monotonic, so at ten
+     characters Medium and Hard switched off while Expert came back with MORE
+     dots than either. A single ceiling every level is clamped against cannot
+     invert. Spacing is inversely proportional to the count, so one corrective
+     step from a reference layout lands close and a second refines it. */
+  const dotCeilCache = { key: "", value: 0 };
+  function dotCeiling(text, box) {
+    const key = text + "|" + [box.x, box.y, box.w, box.h].join(",");
+    if (dotCeilCache.key === key) return dotCeilCache.value;
+    const need = DOT_NUM_MIN / 0.6;
+    let per = DOT_MAX;
+    // Every pass must make progress, or a Newton step that rounds back to
+    // where it started stalls and the search returns a budget it has not
+    // actually shown to be legible -- which is how Hard still printed 7.4pt
+    // numbers after the first version of this loop said it was fine.
+    for (let pass = 0; pass < 8 && per > DOT_MIN; pass++) {
+      const trial = layoutDotWordAt(text, per, true, box);
+      if (trial.med >= need) break;
+      const step = Math.floor(per * (trial.med / need));
+      per = Math.max(DOT_MIN, Math.min(per - 1, step));
+    }
+    dotCeilCache.key = key;
+    dotCeilCache.value = per;
+    return per;
+  }
+
+  /* What a given level actually delivers here. Returned separately from the
+     layout so the UI can switch off a level it cannot draw instead of
+     silently rendering a sheet identical to the level below. */
+  function dotBudgetFor(text, level, box) {
+    const lvl = dotLevel(level);
+    const chars = [...String(text)].filter((c) => c !== " ");
+    const drawn = chars.length;
+    if (drawn <= 1) {
+      /* MERGE 2026-09-16: the one-character branch reports the FLOORED count,
+         not the nominal one, so the picker's number is the number the sheet
+         actually draws. That is #889's dotCountFor() reading, kept here rather
+         than in its own layoutDotWord(); dotWordGeometry applies the same
+         floor via singleMode, and max(max(n,c),c) === max(n,c), so the two
+         agree by construction instead of by coincidence. */
+      const budget = dotCountFor(chars[0] || CHARS[0], lvl.single);
+      return { budget: budget, perLetterMode: false, singleMode: true, capped: false, wanted: lvl.single };
+    }
+    const wanted = lvl.perLetter;
+    const budget = Math.max(DOT_MIN, Math.min(wanted, dotCeiling(text, box)));
+    return { budget: budget, perLetterMode: true, singleMode: false, capped: budget < wanted, wanted: wanted };
+  }
+
+  function layoutDotWord(text, level, box) {
+    const plan = dotBudgetFor(text, level, box);
+    const lay = layoutDotWordAt(text, plan.budget, plan.perLetterMode, box, plan.singleMode);
+    lay.budget = plan.budget;
+    lay.capped = plan.capped;
+    return lay;
   }
 
   // Offset a number label radially outward from its letter centroid so it sits
@@ -4610,20 +4832,52 @@
 
   function designModeIsDots() { return designState.mode === "dots"; }
 
+  /* Sheet geometry. The decorative border's bottom row and the credit line
+     both used to be placed by a hand-picked y, and they collided: measured on
+     the live preview, the border glyphs spanned 1320.5-1358.8 and the credit
+     text 1355.7-1380.5, with a border symbol sitting at x=500 directly on top
+     of the centred URL. The relationship is expressed here instead so it
+     cannot drift again -- the border row is derived FROM the credit band. */
+  const SHEET_W = 1000, SHEET_H = 1400, SHEET_M = 70;
+  const CREDIT_FS = 22;
+  const CREDIT_BASE = SHEET_H - 24;
+  // Measured ascent of the credit face at font-size 22: 0.92em above baseline.
+  const CREDIT_TOP = CREDIT_BASE - CREDIT_FS * 0.92;
+  const BORDER_FS = 34;
+  // Measured descent of the border face at font-size 34 is about 0.20em below
+  // the baseline, but the face varies with the page's own font stack, so the
+  // daylight allowance is 12 units rather than a hairline: at 6 the measured
+  // clearance came out at 4 units (0.7mm), which is closer than a decorative
+  // row should ever sit to the line that carries the page address. The SVG
+  // sheet no longer draws that line, but the PNG export still does, at this
+  // same baseline, so the band stays reserved for both.
+  const BORDER_BOTTOM_Y = Math.round(CREDIT_TOP - BORDER_FS * 0.20 - 12);
+  const BORDER_TOP_Y = 78;
+
+  // Exact text width on the sheet, in sheet units, via the same Canvas
+  // measurer the PNG path already uses -- so the SVG heading and the PNG
+  // heading can never disagree about whether a title fits.
+  let sheetProbe = null;
+  function sheetTextWidth(str, weight, fs) {
+    if (!sheetProbe) sheetProbe = document.createElement("canvas").getContext("2d");
+    sheetProbe.font = weight + " " + fs + "px " + FONT;
+    return sheetProbe.measureText(String(str)).width;
+  }
+
   // The whole designed sheet as one portrait SVG (1000x1400). `textOverride`
   // is the class-set print path (one roster name per sheet — always a single
   // line); interactive use reads the input fields, including the optional
   // second line.
   function designSheetSVG(textOverride) {
-    const text = textOverride != null ? String(textOverride).slice(0, 24) : designText();
+    const text = textOverride != null ? String(textOverride).slice(0, DESIGN_MAX) : designText();
     const line2 = textOverride != null ? "" : designLine2();
     const lines = line2 ? [text, line2] : [text];
-    const heading = designHeadingText();
+    const heading = headingForName(designHeadingText(), textOverride != null ? String(textOverride) : null);
     const fill = designFillKind();
     const borderSym = designBorderSym();
     const footer = designFooterOn();
     const uid = ++designUid;
-    const W = 1000, H = 1400, M = 70;
+    const W = SHEET_W, H = SHEET_H, M = SHEET_M;
 
     const svg = svgMake("svg", { viewBox: "0 0 " + W + " " + H, class: "pt-design-sheet-svg", role: "img", "aria-label": (heading || lines.join(" ")) + " coloring sheet" });
     const defs = svgMake("defs", null, svg);
@@ -4632,12 +4886,21 @@
 
     if (borderSym) {
       const strip = borderSym.split(" ").filter(Boolean);
-      addBorderRow(svg, strip, 78);
-      addBorderRow(svg, strip, H - 48);
+      addBorderRow(svg, strip, BORDER_TOP_Y);
+      addBorderRow(svg, strip, BORDER_BOTTOM_Y);
     }
 
     if (heading) {
-      const h = svgMake("text", { x: W / 2, y: 168, "text-anchor": "middle", "font-family": FONT, "font-weight": 700, "font-size": 62, fill: INK }, svg);
+      const hFs = 62;
+      const attrs = { x: W / 2, y: 168, "text-anchor": "middle", "font-family": FONT, "font-weight": 700, "font-size": hFs, fill: INK };
+      // The heading band is capped at DESIGN_HEADING_MAX characters, but a
+      // run of wide glyphs can still overrun it, so compress rather than let
+      // the title walk off the edge of the paper the way it used to.
+      if (sheetTextWidth(heading, 700, hFs) > W - M * 2) {
+        attrs.textLength = W - M * 2;
+        attrs.lengthAdjust = "spacingAndGlyphs";
+      }
+      const h = svgMake("text", attrs, svg);
       h.textContent = heading;
     }
 
@@ -4690,21 +4953,95 @@
 
     if (footer) addFooter(svg, H - 150);
 
-    const cred = svgMake("text", { x: W / 2, y: H - 24, "text-anchor": "middle", "font-family": FONT, "font-size": 22, fill: "#aeb4c0" }, svg);
-    cred.textContent = siteCredit();
+    /* No credit line inside the sheet. attachCredit() puts the real one on
+       every printed page unit, as the page path plus the same URL as a QR,
+       so a printed sheet carried the address FOUR times: this line, the
+       credit block's text, its link href and the QR payload. The block is
+       the one that scans and the one the PDF lays a /Link annotation over,
+       so this is the copy that goes. The PNG export is a different artifact
+       and draws its own credit at the same y (designPNG), which is why
+       CREDIT_TOP still reserves the band and the border row still clears it. */
     return svg;
+  }
+
+  // The band the dot-to-dot word is laid into, mirroring designSheetSVG's own
+  // arithmetic so a difficulty judged deliverable here is the one that is
+  // actually drawn there.
+  function designDotBox() {
+    const heading = !!designHeadingText();
+    const footer = designFooterOn();
+    const twoLine = !!designLine2();
+    const cy = heading ? 720 : 690;
+    const half = Math.min(cy - (heading ? 250 : 200), (footer ? SHEET_H - 250 : SHEET_H - 150) - cy);
+    // A second line splits the band in two, so each line gets half the height.
+    return { x: SHEET_M, y: cy - half, w: SHEET_W - SHEET_M * 2, h: twoLine ? half - 18 : half * 2 };
+  }
+
+  /* The exact string the dot sheet draws. designSheetSVG uppercases the word
+     for the iconic silhouette, so anything that judges how many dots fit has
+     to measure the SAME string: measuring "Benjamin" while the sheet drew
+     "BENJAMIN" made the difficulty pass and the renderer disagree, and two
+     levels that rendered identical sheets both stayed switched on. With a
+     second line the longer of the two is what binds. */
+  function designDotText() {
+    const a = String(designText()).toUpperCase();
+    const b = String(designLine2() || "").toUpperCase();
+    return ([...b].length > [...a].length) ? b : a;
+  }
+
+  /* A difficulty level that cannot draw more dots than the level below it is
+     not a difficulty level, it is a button that does nothing -- which is
+     exactly what Easy and Medium became at 11 characters. Rather than keep
+     rendering four identical sheets, the levels this word cannot carry are
+     switched off and the page's own sentence says why. */
+  function syncDesignDensity() {
+    if (!el.designDensityGroup) return false;
+    const text = designDotText();
+    const box = designDotBox();
+    const delivered = {};
+    DOT_LEVELS.forEach((lvl) => { delivered[lvl.key] = dotBudgetFor(text, lvl.key, box).budget; });
+    const enabled = {};
+    let floor = 0;
+    DOT_LEVELS.forEach((lvl) => {
+      const ok = delivered[lvl.key] > floor;
+      enabled[lvl.key] = ok;
+      if (ok) floor = delivered[lvl.key];
+    });
+    const anyOff = DOT_LEVELS.some((lvl) => !enabled[lvl.key]);
+    if (el.designDensityNote) el.designDensityNote.hidden = !anyOff;
+    let moved = false;
+    if (!enabled[designState.density]) {
+      const best = DOT_LEVELS.filter((lvl) => enabled[lvl.key]).pop();
+      if (best) { designState.density = best.key; moved = true; }
+    }
+    $$(".pt-choice", el.designDensityGroup).forEach((b) => {
+      const off = enabled[b.dataset.value] === false;
+      b.disabled = off;
+      b.classList.toggle("is-disabled", off);
+      b.setAttribute("aria-disabled", off ? "true" : "false");
+      const on = !off && b.dataset.value === designState.density;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+    });
+    return moved;
   }
 
   function renderDesignPreview() {
     if (!el.designPreview) return;
+    if (designModeIsDots()) syncDesignDensity();
+    // In class mode the preview is the FIRST CHILD'S sheet, not the Step-1
+    // word: it is the only place the per-child heading is visible before 30
+    // sheets are committed to paper, and showing the typed word there is how
+    // a roster of 30 used to print silently headed with one child's name.
+    const names = designIsClassMode() ? rosterNames(el.designRoster) : [];
     el.designPreview.innerHTML = "";
-    el.designPreview.appendChild(designSheetSVG());
+    el.designPreview.appendChild(names.length >= 2 ? designSheetSVG(names[0]) : designSheetSVG());
   }
 
   function printDesign() {
     const holder = document.createElement("div");
     holder.className = "pt-design-print-holder";
-    const names = rosterNames(el.designRoster);
+    const names = designIsClassMode() ? rosterNames(el.designRoster) : [];
     if (names.length >= 2) {
       holder.classList.add("pt-class-set");
       names.forEach((n) => {
@@ -4716,7 +5053,7 @@
       printWrap("", holder, "design");
       return;
     }
-    holder.appendChild(designSheetSVG());
+    holder.appendChild(sheetPageNode(designSheetSVG()));
     printWrap("", holder, "design");
   }
 
@@ -4727,7 +5064,19 @@
     const holder = document.createElement("div");
     holder.className = "pt-design-print-holder pt-class-set";
     const picked = designState.density;
-    DOT_LEVELS.forEach((lvl) => {
+    // Only the levels this word can actually carry. Printing all four for a
+    // nine-letter name used to hand back four sheets that were identical
+    // apart from the label on the page you never see.
+    const box = designDotBox();
+    const text = designDotText();
+    let floor = 0;
+    const levels = DOT_LEVELS.filter((lvl) => {
+      const got = dotBudgetFor(text, lvl.key, box).budget;
+      if (got <= floor) return false;
+      floor = got;
+      return true;
+    });
+    levels.forEach((lvl) => {
       designState.density = lvl.key;
       const page = document.createElement("div");
       page.className = "pt-sheet-page";
@@ -4753,12 +5102,16 @@
   // saves the clean outline, which is what most "download" users reuse.
   function designPNG() {
     withFont(() => {
-      const W = 1000, H = 1400, scale = 2;
+      const W = SHEET_W, H = SHEET_H, scale = 2;
+      // The sheet keeps its own 1000x1400 geometry; the canvas is taller by
+      // the credit strip, so nothing on the sheet moves and the PNG carries
+      // the same QR the printed page and every other export already do.
+      const canvasH = H + PNG_CREDIT_BAND;
       const canvas = document.createElement("canvas");
-      canvas.width = W * scale; canvas.height = H * scale;
+      canvas.width = W * scale; canvas.height = canvasH * scale;
       const ctx = canvas.getContext("2d");
       ctx.scale(scale, scale);
-      ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, W, H);
+      ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, W, canvasH);
       ctx.strokeStyle = "#e2e6ee"; ctx.lineWidth = 3;
       roundRectPath(ctx, 18, 18, W - 36, H - 36, 26); ctx.stroke();
 
@@ -4770,15 +5123,20 @@
       if (borderSym) {
         const strip = borderSym.split(" ").filter(Boolean);
         const count = 11, gap = (W - 120) / (count - 1);
-        ctx.font = "34px " + FONT; ctx.fillStyle = "#c8ccd6";
+        ctx.font = BORDER_FS + "px " + FONT; ctx.fillStyle = "#c8ccd6";
         for (let i = 0; i < count; i++) {
-          ctx.fillText(strip[i % strip.length], 60 + i * gap, 78);
-          ctx.fillText(strip[i % strip.length], 60 + i * gap, H - 48);
+          ctx.fillText(strip[i % strip.length], 60 + i * gap, BORDER_TOP_Y);
+          ctx.fillText(strip[i % strip.length], 60 + i * gap, BORDER_BOTTOM_Y);
         }
       }
 
       const hasHeading = !!heading;
-      if (hasHeading) { ctx.font = "700 62px " + FONT; ctx.fillStyle = INK; ctx.fillText(heading, W / 2, 168); }
+      if (hasHeading) {
+        ctx.font = "700 62px " + FONT; ctx.fillStyle = INK;
+        // fillText's maxWidth condenses the glyphs, which is the Canvas
+        // equivalent of the SVG path's lengthAdjust="spacingAndGlyphs".
+        ctx.fillText(heading, W / 2, 168, W - SHEET_M * 2);
+      }
 
       if (designModeIsDots()) {
         const footerOn = designFooterOn();
@@ -4820,7 +5178,7 @@
         ctx.textAlign = "center";
       }
 
-      ctx.font = "22px " + FONT; ctx.fillStyle = "#aeb4c0"; ctx.fillText(siteCredit(), W / 2, H - 24);
+      drawCredit(ctx, W, canvasH);
       downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(lines.join(" ")) || "sheet") + ".png", "design");
     });
   }
@@ -4884,18 +5242,83 @@
     if (el.designFillField) el.designFillField.hidden = dots;
   }
 
+  // Longest line the sheet has to render, which is what every budget below
+  // is actually about: a two-line sheet is sized by its longer line.
+  function designLongestLine() {
+    const lines = designLines();
+    return lines.length ? Math.max.apply(null, lines.map((x) => [...x].length)) : 0;
+  }
+
+  /* The word field carries a visible budget rather than silently truncating
+     at maxlength, and the patterned fills switch off past their own tighter
+     limit with the page's own sentence saying why. Both numbers are measured
+     (see DESIGN_MAX): a control that quietly stops working is the failure
+     this whole pass exists to remove. */
+  function syncDesignBudget() {
+    const used = designLongestLine();
+    if (el.designCount) {
+      el.designCount.textContent = used + " / " + DESIGN_MAX;
+      el.designCount.classList.toggle("is-full", used >= DESIGN_MAX);
+    }
+    if (!el.designFillGroup) return;
+    const gated = used > DESIGN_FILL_MAX;
+    if (el.designFillNote) el.designFillNote.hidden = !gated;
+    let forced = false;
+    $$(".pt-swatch", el.designFillGroup).forEach((b) => {
+      const off = gated && b.dataset.value !== "plain";
+      b.disabled = off;
+      b.classList.toggle("is-disabled", off);
+      b.setAttribute("aria-disabled", off ? "true" : "false");
+      if (off && b.classList.contains("is-active")) forced = true;
+    });
+    if (forced) {
+      designState.fill = "plain";
+      $$(".pt-swatch", el.designFillGroup).forEach((b) => {
+        const on = b.dataset.value === "plain";
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-checked", on ? "true" : "false");
+      });
+    }
+  }
+
+  // "One sheet" vs "Whole class" is an audience, not a step: steps 1-3 are
+  // the same work for a parent and a teacher, and only the batch is extra.
+  function designIsClassMode() {
+    return el.designAudienceGroup ? designState.audience === "class" : true;
+  }
+  function syncDesignAudience() {
+    if (el.designClassFields) el.designClassFields.hidden = !designIsClassMode();
+  }
+
+  /* The strip above the sheet used to read a hardcoded "US Letter", so
+     choosing A4 in the print-settings panel left the tool asserting the paper
+     the visitor had just changed away from. paperCaption() is the same
+     composer the per-character paper preview already uses, built from the
+     panel's own localized strings, so the label cannot drift from the setting
+     or need a translation of its own. */
+  function syncDesignPreviewMeta() {
+    if (el.designPreviewMeta) el.designPreviewMeta.textContent = paperCaption();
+  }
+
   function buildDesigner() {
     if (!el.designInput || !el.designPreview) return;
     let timer = null;
     const schedule = () => { if (timer) clearTimeout(timer); timer = setTimeout(renderDesignPreview, 120); };
-    el.designInput.addEventListener("input", schedule);
-    if (el.designInput2) el.designInput2.addEventListener("input", schedule);
-    if (el.designHeading) el.designHeading.addEventListener("input", schedule);
+    const onWordInput = () => { syncDesignBudget(); schedule(); };
+    if (DESIGN.maxChars) el.designInput.setAttribute("maxlength", String(DESIGN_MAX * 2 + 1));
+    el.designInput.addEventListener("input", onWordInput);
+    if (el.designInput2) el.designInput2.addEventListener("input", onWordInput);
+    if (el.designHeading) {
+      if (DESIGN.headingMaxChars) el.designHeading.setAttribute("maxlength", String(DESIGN_HEADING_MAX));
+      el.designHeading.addEventListener("input", schedule);
+    }
     wireSwatchGroup(el.designFillGroup, "fill", fillSwatchSVG, designState, renderDesignPreview);
     wireSwatchGroup(el.designBorderGroup, "border", borderSwatchSVG, designState, renderDesignPreview);
     // Dot-to-dot mode toggle + difficulty ladder + hint switch (all optional).
     wireChoiceGroup(el.designModeGroup, "mode", syncDesignMode);
     wireChoiceGroup(el.designDensityGroup, "density");
+    wireChoiceGroup(el.designAudienceGroup, "audience", syncDesignAudience);
+    if (el.designRoster) el.designRoster.addEventListener("input", schedule);
     if (el.designHint) {
       designState.hint = el.designHint.checked;
       el.designHint.addEventListener("change", () => { designState.hint = el.designHint.checked; renderDesignPreview(); });
@@ -4905,6 +5328,9 @@
     if (el.designLadder) el.designLadder.addEventListener("click", printDesignLadder);
     if (el.designPng) el.designPng.addEventListener("click", designPNG);
     syncDesignMode();
+    syncDesignAudience();
+    syncDesignBudget();
+    syncDesignPreviewMeta();
     renderDesignPreview();
   }
 
@@ -5344,7 +5770,7 @@
       printWrap("", holder, "puzzle");
       return;
     }
-    holder.appendChild(puzzleSheetNode());
+    holder.appendChild(sheetPageNode(puzzleSheetNode()));
     printWrap("", holder, "puzzle");
   }
 
@@ -5363,11 +5789,15 @@
       const W = Math.max(1000, chars.length * 140 + 240);
       const H = 900;
       const pad = 70;
+      // Same as the coloring sheet: the puzzle keeps its own geometry and the
+      // canvas is taller by the credit strip, so the QR has somewhere to sit
+      // that is not on top of the Name and Date rules.
+      const canvasH = H + PNG_CREDIT_BAND;
       const canvas = document.createElement("canvas");
-      canvas.width = W; canvas.height = H;
+      canvas.width = W; canvas.height = canvasH;
       const ctx = canvas.getContext("2d");
       ctx.fillStyle = "#ffffff";
-      ctx.fillRect(0, 0, W, H);
+      ctx.fillRect(0, 0, W, canvasH);
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.lineJoin = "round";
@@ -5427,9 +5857,7 @@
         ctx.textAlign = "center";
       }
 
-      ctx.font = "22px " + FONT;
-      ctx.fillStyle = "#aeb4c0";
-      ctx.fillText(siteCredit(), W / 2, 860);
+      drawCredit(ctx, W, canvasH);
 
       downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(word) || "puzzle") + ".png", "puzzle");
     });
