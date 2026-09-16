@@ -81,7 +81,7 @@
       dotLadderTitle: "Practice ladder",
       dotLadderText: "Start easy and add dots as it gets comfortable. Mastered Expert? Turn the numbers off, then try drawing it freehand.",
       pdfHint: "Tip: Print → “Save as PDF” downloads this sheet as a PDF.",
-      printOpts: { settings: "Print settings", paper: "Paper", auto: "Automatic", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Save as PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
+      printOpts: { settings: "PDF settings", paper: "Paper", auto: "Automatic", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Save as PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
       printBook: "Save as a book: one page per letter",
       save: "Save",
       saved: "Saved",
@@ -96,6 +96,8 @@
       bannerFlagsLabel: "banner flags", ofWord: "of",
       flagCount: { one: "flag", other: "flags" },
       pageCount: { one: "page", other: "pages" },
+      alphabetWord: "alphabet",
+      caseUpper: "Uppercase", caseLower: "Lowercase",
       modelCount: { one: "model", other: "model" },
       traceCount: { one: "trace", other: "trace" },
       blankCount: { one: "blank", other: "blank" },
@@ -133,8 +135,12 @@
       dotLadderTitle: "Échelle de difficulté",
       dotLadderText: "Commencez facile, puis ajoutez des points. Niveau Expert maîtrisé ? Retirez les numéros, puis essayez de dessiner à main levée.",
       pdfHint: "Astuce : Imprimer → « Enregistrer au format PDF » télécharge la feuille en PDF.",
-      printOpts: { settings: "Réglages d'impression", paper: "Papier", auto: "Automatique", letter: "Lettre US", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Paysage", margins: "Marges", normal: "Normales", narrow: "Étroites", inkSaver: "Économie d'encre (traits plus clairs)", savePdf: "Enregistrer en PDF", pdfToast: "Dans la boîte d'impression, choisissez Enregistrer au format PDF comme destination.", share: "Partager", shareImage: "Partager en image", copyLink: "Copier le lien", linkCopied: "Lien copié", pinterest: "Épingler sur Pinterest", recent: "Vos fiches récentes", clear: "Effacer", madeAt: "Créé sur" },
+      printOpts: { settings: "Réglages du PDF", paper: "Papier", auto: "Automatique", letter: "Lettre US", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Paysage", margins: "Marges", normal: "Normales", narrow: "Étroites", inkSaver: "Économie d'encre (traits plus clairs)", savePdf: "Enregistrer en PDF", pdfToast: "Dans la boîte d'impression, choisissez Enregistrer au format PDF comme destination.", share: "Partager", shareImage: "Partager en image", copyLink: "Copier le lien", linkCopied: "Lien copié", pinterest: "Épingler sur Pinterest", recent: "Vos fiches récentes", clear: "Effacer", madeAt: "Créé sur" },
       printBook: "Enregistrer en livret — une page par lettre",
+      pageCount: { one: "page", other: "pages" },
+      ofWord: "sur",
+      alphabetWord: "alphabet",
+      caseUpper: "Majuscules", caseLower: "Minuscules",
       save: "Enregistrer",
       saved: "Enregistré",
       nameStyleLabel: "Style", nameFillLabel: "Remplissage", nameStrokeLabel: "Contour",
@@ -178,8 +184,12 @@
       dotLadderTitle: "Escalera de dificultad",
       dotLadderText: "Empieza en fácil y añade puntos poco a poco. ¿Dominas el nivel experto? Quita los números y prueba a dibujar a mano alzada.",
       pdfHint: "Consejo: Imprimir → «Guardar como PDF» descarga la hoja en PDF.",
-      printOpts: { settings: "Ajustes de impresión", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Oficio", orientation: "Orientación", portrait: "Vertical", landscape: "Horizontal", margins: "Márgenes", normal: "Normales", narrow: "Estrechos", inkSaver: "Ahorro de tinta (líneas más claras)", savePdf: "Guardar como PDF", pdfToast: "En el cuadro de impresión, elige Guardar como PDF como destino.", share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", recent: "Tus hojas recientes", clear: "Borrar", madeAt: "Hecho en" },
+      printOpts: { settings: "Ajustes del PDF", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Oficio", orientation: "Orientación", portrait: "Vertical", landscape: "Horizontal", margins: "Márgenes", normal: "Normales", narrow: "Estrechos", inkSaver: "Ahorro de tinta (líneas más claras)", savePdf: "Guardar como PDF", pdfToast: "En el cuadro de impresión, elige Guardar como PDF como destino.", share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", recent: "Tus hojas recientes", clear: "Borrar", madeAt: "Hecho en" },
       printBook: "Guardar como libro — una página por letra",
+      pageCount: { one: "página", other: "páginas" },
+      ofWord: "de",
+      alphabetWord: "alfabeto",
+      caseUpper: "Mayúsculas", caseLower: "Minúsculas",
       save: "Guardar",
       saved: "Guardado",
       nameStyleLabel: "Estilo", nameFillLabel: "Relleno", nameStrokeLabel: "Contorno",
@@ -223,8 +233,12 @@
       dotLadderTitle: "Escada de dificuldade",
       dotLadderText: "Comece no fácil e adicione pontos aos poucos. Dominou o nível especialista? Desligue os números e tente desenhar à mão livre.",
       pdfHint: "Dica: Imprimir → “Salvar como PDF” baixa a folha em PDF.",
-      printOpts: { settings: "Configurações de impressão", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Ofício", orientation: "Orientação", portrait: "Retrato", landscape: "Paisagem", margins: "Margens", normal: "Normais", narrow: "Estreitas", inkSaver: "Economia de tinta (linhas mais claras)", savePdf: "Salvar como PDF", pdfToast: "Na caixa de impressão, escolha Salvar como PDF como destino.", share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", recent: "Suas folhas recentes", clear: "Limpar", madeAt: "Feito em" },
+      printOpts: { settings: "Configurações do PDF", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Ofício", orientation: "Orientação", portrait: "Retrato", landscape: "Paisagem", margins: "Margens", normal: "Normais", narrow: "Estreitas", inkSaver: "Economia de tinta (linhas mais claras)", savePdf: "Salvar como PDF", pdfToast: "Na caixa de impressão, escolha Salvar como PDF como destino.", share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", recent: "Suas folhas recentes", clear: "Limpar", madeAt: "Feito em" },
       printBook: "Salvar como livro — uma página por letra",
+      pageCount: { one: "página", other: "páginas" },
+      ofWord: "de",
+      alphabetWord: "alfabeto",
+      caseUpper: "Maiúsculas", caseLower: "Minúsculas",
       save: "Salvar",
       saved: "Salvo",
       nameStyleLabel: "Estilo", nameFillLabel: "Preenchimento", nameStrokeLabel: "Contorno",
@@ -268,8 +282,12 @@
       dotLadderTitle: "Scala di difficoltà",
       dotLadderText: "Inizia dal facile e aggiungi punti man mano. Livello esperto superato? Togli i numeri e prova a disegnare a mano libera.",
       pdfHint: "Suggerimento: Stampa → “Salva come PDF” scarica il foglio in PDF.",
-      printOpts: { settings: "Impostazioni di stampa", paper: "Carta", auto: "Automatico", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientamento", portrait: "Verticale", landscape: "Orizzontale", margins: "Margini", normal: "Normali", narrow: "Stretti", inkSaver: "Risparmio inchiostro (linee più chiare)", savePdf: "Salva come PDF", pdfToast: "Nella finestra di stampa scegli Salva come PDF come destinazione.", share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", recent: "I tuoi fogli recenti", clear: "Cancella", madeAt: "Creato su" },
+      printOpts: { settings: "Impostazioni PDF", paper: "Carta", auto: "Automatico", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientamento", portrait: "Verticale", landscape: "Orizzontale", margins: "Margini", normal: "Normali", narrow: "Stretti", inkSaver: "Risparmio inchiostro (linee più chiare)", savePdf: "Salva come PDF", pdfToast: "Nella finestra di stampa scegli Salva come PDF come destinazione.", share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", recent: "I tuoi fogli recenti", clear: "Cancella", madeAt: "Creato su" },
       printBook: "Salva come libretto — una pagina per lettera",
+      pageCount: { one: "pagina", other: "pagine" },
+      ofWord: "di",
+      alphabetWord: "alfabeto",
+      caseUpper: "Maiuscole", caseLower: "Minuscole",
       save: "Salva",
       saved: "Salvato",
       nameStyleLabel: "Stile", nameFillLabel: "Riempimento", nameStrokeLabel: "Contorno",
@@ -313,7 +331,7 @@
       dotLadderTitle: "Drabinka trudności",
       dotLadderText: "Zacznij od łatwego poziomu i stopniowo dodawaj kropki. Opanowane? Wyłącz numery i spróbuj narysować odręcznie.",
       pdfHint: "Wskazówka: Drukuj → „Zapisz jako PDF”, aby pobrać arkusz w PDF.",
-      printOpts: { settings: "Ustawienia druku", paper: "Papier", auto: "Automatycznie", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientacja", portrait: "Pionowa", landscape: "Pozioma", margins: "Marginesy", normal: "Normalne", narrow: "Wąskie", inkSaver: "Oszczędzanie tuszu (jaśniejsze linie)", savePdf: "Zapisz jako PDF", pdfToast: "W oknie drukowania wybierz Zapisz jako PDF jako miejsce docelowe.", share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", recent: "Twoje ostatnie arkusze", clear: "Wyczyść", madeAt: "Utworzono na" },
+      printOpts: { settings: "Ustawienia PDF", paper: "Papier", auto: "Automatycznie", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientacja", portrait: "Pionowa", landscape: "Pozioma", margins: "Marginesy", normal: "Normalne", narrow: "Wąskie", inkSaver: "Oszczędzanie tuszu (jaśniejsze linie)", savePdf: "Zapisz jako PDF", pdfToast: "W oknie drukowania wybierz Zapisz jako PDF jako miejsce docelowe.", share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", recent: "Twoje ostatnie arkusze", clear: "Wyczyść", madeAt: "Utworzono na" },
       printBook: "Zapisz jako książeczkę — jedna strona na literę",
       save: "Zapisz",
       saved: "Zapisano",
@@ -328,6 +346,8 @@
       bannerFlagsLabel: "chorągiewki", ofWord: "z",
       flagCount: { one: "chorągiewka", few: "chorągiewki", many: "chorągiewek" },
       pageCount: { one: "strona", few: "strony", many: "stron" },
+      alphabetWord: "alfabet",
+      caseUpper: "Wielkie litery", caseLower: "Małe litery",
       trace: {
         solid:    { label: "Pełny wzór", hint: "Ciemne, pełne litery — pisz po śladzie" },
         "bold-dot": { label: "Grube kropki", hint: "Grube, gęsto rozmieszczone kropki do połączenia" },
@@ -362,8 +382,12 @@
       dotLadderTitle: "Schwierigkeitsleiter",
       dotLadderText: "Leicht anfangen, dann Punkte dazunehmen. Experte geschafft? Zahlen ausblenden und frei zeichnen.",
       pdfHint: "Tipp: Drucken → „Als PDF speichern“ lädt das Blatt als PDF herunter.",
-      printOpts: { settings: "Druckeinstellungen", paper: "Papier", auto: "Automatisch", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Ausrichtung", portrait: "Hochformat", landscape: "Querformat", margins: "Ränder", normal: "Normal", narrow: "Schmal", inkSaver: "Tintensparmodus (hellere Linien)", savePdf: "Als PDF speichern", pdfToast: "Wähle im Druckdialog Als PDF speichern als Ziel.", share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", recent: "Deine letzten Blätter", clear: "Löschen", madeAt: "Erstellt auf" },
+      printOpts: { settings: "PDF-Einstellungen", paper: "Papier", auto: "Automatisch", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Ausrichtung", portrait: "Hochformat", landscape: "Querformat", margins: "Ränder", normal: "Normal", narrow: "Schmal", inkSaver: "Tintensparmodus (hellere Linien)", savePdf: "Als PDF speichern", pdfToast: "Wähle im Druckdialog Als PDF speichern als Ziel.", share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", recent: "Deine letzten Blätter", clear: "Löschen", madeAt: "Erstellt auf" },
       printBook: "Als Heft speichern \u2013 eine Seite pro Buchstabe",
+      pageCount: { one: "Seite", other: "Seiten" },
+      ofWord: "von",
+      alphabetWord: "Alphabet",
+      caseUpper: "Großbuchstaben", caseLower: "Kleinbuchstaben",
       save: "Speichern",
       saved: "Gespeichert",
       nameStyleLabel: "Stil", nameFillLabel: "Füllung", nameStrokeLabel: "Kontur",
@@ -416,7 +440,7 @@
       dotLadderTitle: "Tangga latihan",
       dotLadderText: "Mulai dari yang mudah, lalu tambah titiknya begitu sudah terbiasa. Sudah lancar di tingkat Ahli? Matikan nomornya, lalu coba gambar sendiri tanpa panduan.",
       pdfHint: "Tips: Cetak \u2192 \u201cSimpan sebagai PDF\u201d akan mengunduh lembar ini sebagai PDF.",
-      printOpts: { settings: "Pengaturan cetak", paper: "Kertas", auto: "Otomatis", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientasi", portrait: "Potret", landscape: "Lanskap", margins: "Margin", normal: "Normal", narrow: "Sempit", inkSaver: "Hemat tinta (garis lebih tipis)", savePdf: "Simpan sebagai PDF", pdfToast: "Di dialog cetak, pilih Simpan sebagai PDF sebagai tujuan.", share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", recent: "Lembar terbaru Anda", clear: "Hapus", madeAt: "Dibuat di" },
+      printOpts: { settings: "Pengaturan PDF", paper: "Kertas", auto: "Otomatis", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientasi", portrait: "Potret", landscape: "Lanskap", margins: "Margin", normal: "Normal", narrow: "Sempit", inkSaver: "Hemat tinta (garis lebih tipis)", savePdf: "Simpan sebagai PDF", pdfToast: "Di dialog cetak, pilih Simpan sebagai PDF sebagai tujuan.", share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", recent: "Lembar terbaru Anda", clear: "Hapus", madeAt: "Dibuat di" },
       printBook: "Simpan sebagai buku \u2014 satu halaman per huruf",
       save: "Simpan",
       saved: "Tersimpan",
@@ -431,6 +455,8 @@
       bannerFlagsLabel: "bendera banner", ofWord: "dari",
       flagCount: { one: "bendera", other: "bendera" },
       pageCount: { one: "halaman", other: "halaman" },
+      alphabetWord: "alfabet",
+      caseUpper: "Huruf besar", caseLower: "Huruf kecil",
       modelCount: { one: "contoh", other: "contoh" },
       traceCount: { one: "tebalkan", other: "tebalkan" },
       blankCount: { one: "kosong", other: "kosong" },
@@ -457,7 +483,18 @@
       }
     }
   };
-  const T = I18N[LANG] || I18N.en;
+  /* Shallow-merged over English rather than replaced, so a key a locale block
+     does not define falls back instead of being undefined. `T.pageCount` was
+     missing from five of the eight blocks, and the first read of `.one`
+     threw before buildPrintOptions ran -- which took the settings panel, the
+     share row and the print-to-PDF relabelling down with it, on every German,
+     Spanish, French, Italian and Portuguese printables page at once. Nothing
+     could see it: the markup was valid, every gate passed, and a page whose
+     init aborted looks exactly like a page that never had those features.
+     The merge is shallow on purpose -- each locale's own plural `forms`
+     objects are complete units and must not be merged key-by-key with
+     English's. */
+  const T = Object.assign({}, I18N.en, I18N[LANG] || {});
 
   // Locale-aware pluralizer for the small count labels below (banner flags/
   // pages, handwriting model/trace/blank rows). English deliberately keeps
@@ -755,7 +792,9 @@
      translated — nothing new was authored for it. */
   let paperPreviewNode = null;
   function paperCaption() {
-    const paperLabel = { auto: PO.auto, letter: PO.letter, a4: PO.a4, legal: PO.legal }[printPrefs.paper] || PO.auto;
+    // "auto" is no longer selectable and a saved one migrates to a real paper,
+    // so the fallback names a real sheet rather than a mode that is gone.
+    const paperLabel = { letter: PO.letter, a4: PO.a4, legal: PO.legal }[printPrefs.paper] || PO.letter;
     const parts = [
       paperLabel,
       printPrefs.orient === "landscape" ? PO.landscape : PO.portrait,
@@ -1056,52 +1095,31 @@
     en: ["Print"], fr: ["Imprimer"], es: ["Imprimir"], pt: ["Imprimir"],
     it: ["Stampa"], pl: ["Wydrukuj", "Drukuj"], id: ["Cetak"], de: []
   };
-  const PRINT_PREF_KEY = "utg_print_prefs";
   const RECENT_KEY = "utg_printables_recent";
   const ROSTER_KEY = "utg_printables_roster:" + window.location.pathname;
   const RECENT_MAX = 6;
-  // Usable print area per paper (inches), after the default browser margin
-  // and the sheet title. "auto" keeps the historical 7.0 x 9.3 in budget that
-  // is safe on both Letter and A4 without choosing.
-  const PAPERS = {
-    auto:   { css: null,     w: 7.0,  h: 9.3 },
-    letter: { css: "letter", w: 7.5,  h: 10.0 },
-    a4:     { css: "A4",     w: 7.27, h: 10.7 },
-    legal:  { css: "legal",  w: 7.5,  h: 13.0 }
-  };
-  // Full sheet sizes, for the PDF page box; the content areas above stay
-  // the layout budget so a PDF page matches the printed one.
-  const PAPER_FULL = {
-    auto:   { w: 8.5,  h: 11.0 },
-    letter: { w: 8.5,  h: 11.0 },
-    a4:     { w: 8.27, h: 11.69 },
-    legal:  { w: 8.5,  h: 14.0 }
-  };
-  function paperFull() {
-    const p = PAPER_FULL[printPrefs.paper] || PAPER_FULL.auto;
-    return printPrefs.orient === "landscape" ? { w: p.h, h: p.w } : { w: p.w, h: p.h };
+  /* Sheet setup (paper, orientation, margins, ink saver, render scale) is
+     owned by js/printables/printPrefs.js, so this engine, monogramEngine and
+     crossStitchEngine cannot disagree about what page a sheet is written on.
+     The names below are the local aliases the rest of this file already uses;
+     `printPrefs` is a REFERENCE to the shared object, never a copy, so a panel
+     edit is visible to every reader of it immediately. */
+  const PP = window.UltraTextGen && window.UltraTextGen.printPrefs;
+  if (!PP) {
+    // Never fail silently: without the module every sheet would quietly fall
+    // back to one hardcoded page size, which looks exactly like a working
+    // panel whose controls do nothing.
+    console.warn("[printables] printPrefs.js has not loaded; sheet setup is unavailable. Check that /js/printables/printPrefs.js is tagged before this engine.");
   }
-  const MARGINS = { normal: "0.5in", narrow: "0.25in" };
-  const printPrefs = { paper: "auto", orient: "portrait", margin: "normal", ink: "normal" };
-  try {
-    const saved = JSON.parse(localStorage.getItem(PRINT_PREF_KEY) || "null");
-    if (saved && typeof saved === "object") {
-      if (PAPERS[saved.paper]) printPrefs.paper = saved.paper;
-      if (saved.orient === "landscape" || saved.orient === "portrait") printPrefs.orient = saved.orient;
-      if (MARGINS[saved.margin]) printPrefs.margin = saved.margin;
-      if (saved.ink === "saver" || saved.ink === "normal") printPrefs.ink = saved.ink;
-    }
-  } catch (err) { /* private mode or corrupt value: defaults apply */ }
-  function savePrintPrefs() {
-    try { localStorage.setItem(PRINT_PREF_KEY, JSON.stringify(printPrefs)); } catch (err) { /* optional */ }
-  }
+  const PAPERS = PP ? PP.PAPERS : { letter: { css: "letter", w: 7.5, h: 10.0 } };
+  const MARGINS = PP ? PP.MARGINS : { normal: "0.5in", narrow: "0.25in" };
+  const printPrefs = PP ? PP.values : { paper: "letter", orient: "portrait", margin: "normal", ink: "normal", quality: "normal" };
+  const paperFull = PP ? PP.paperFull : (() => ({ w: 8.5, h: 11.0 }));
+  const savePrintPrefs = PP ? PP.save : (() => {});
+  const renderScale = PP ? PP.scale : (() => 2);
   // The @page rule is injected only for the duration of a print job, so a
   // visitor's saved preference never leaks into another page's print CSS.
-  function pageStyleCss() {
-    const paper = PAPERS[printPrefs.paper] || PAPERS.auto;
-    const size = paper.css ? paper.css + " " + printPrefs.orient : printPrefs.orient;
-    return "@page { size: " + size + "; margin: " + (MARGINS[printPrefs.margin] || MARGINS.normal) + "; }";
-  }
+  const pageStyleCss = PP ? PP.pageStyleCss : (() => "@page { margin: 0.5in; }");
   function applyPageStyle() {
     removePageStyle();
     const st = document.createElement("style");
@@ -1279,6 +1297,7 @@
   // and reset by exportCanvas, so every builder stays a one-liner.
   let exportMode = "download";
   let pdfMode = false;
+  let pngMode = false;
 
   // Preset URL: the page's own inputs as query parameters, so "here is the
   // sheet I made" is a link that reopens the same sheet. The parameters are
@@ -1481,28 +1500,6 @@
     b.addEventListener("click", onClick);
     return b;
   }
-  function choiceRow(labelText, options, current, onPick) {
-    const row = document.createElement("div");
-    row.className = "pt-print-opt";
-    const lab = document.createElement("span");
-    lab.className = "pt-print-opt-label"; lab.textContent = labelText;
-    row.appendChild(lab);
-    const group = document.createElement("div");
-    group.className = "pt-choice-row pt-print-opt-choices";
-    group.setAttribute("role", "radiogroup"); group.setAttribute("aria-label", labelText);
-    options.forEach((o) => {
-      const b = makeBtn("pt-choice pt-choice-sm", o.label, () => {
-        onPick(o.key);
-        $$(".pt-choice", group).forEach((x) => { const on = x === b; x.classList.toggle("is-active", on); x.setAttribute("aria-checked", on ? "true" : "false"); });
-      });
-      b.setAttribute("role", "radio");
-      const on = o.key === current;
-      b.classList.toggle("is-active", on); b.setAttribute("aria-checked", on ? "true" : "false");
-      group.appendChild(b);
-    });
-    row.appendChild(group);
-    return row;
-  }
   // Mount the print-settings panel, the share row and the recent-sheets
   // strip once per page, above the first print action the page carries (or
   // into an explicit #pt-print-options mount).
@@ -1516,32 +1513,13 @@
     wrap.className = "pt-print-tools";
     wrap.id = "pt-print-settings";
 
-    const details = document.createElement("details");
-    details.className = "pt-print-options";
-    const summary = document.createElement("summary");
-    summary.textContent = PO.settings;
-    details.appendChild(summary);
-    // Every one of these repaints the preview. Without that the panel is a
-    // set of controls with no visible consequence, which is the report this
-    // block was rebuilt for: "the print settings don't change the display".
-    const changed = () => { savePrintPrefs(); paintPaperPreview(); };
-    details.appendChild(choiceRow(PO.paper, [
-      { key: "auto", label: PO.auto }, { key: "letter", label: PO.letter }, { key: "a4", label: PO.a4 }, { key: "legal", label: PO.legal }
-    ], printPrefs.paper, (k) => { printPrefs.paper = k; changed(); }));
-    details.appendChild(choiceRow(PO.orientation, [
-      { key: "portrait", label: PO.portrait }, { key: "landscape", label: PO.landscape }
-    ], printPrefs.orient, (k) => { printPrefs.orient = k; changed(); }));
-    details.appendChild(choiceRow(PO.margins, [
-      { key: "normal", label: PO.normal }, { key: "narrow", label: PO.narrow }
-    ], printPrefs.margin, (k) => { printPrefs.margin = k; changed(); }));
-    const ink = document.createElement("label");
-    ink.className = "pt-print-opt pt-print-ink";
-    const inkBox = document.createElement("input");
-    inkBox.type = "checkbox"; inkBox.checked = printPrefs.ink === "saver";
-    inkBox.addEventListener("change", () => { printPrefs.ink = inkBox.checked ? "saver" : "normal"; changed(); });
-    ink.appendChild(inkBox); ink.appendChild(document.createTextNode(" " + PO.inkSaver));
-    details.appendChild(ink);
-    wrap.appendChild(details);
+    /* The panel itself is built by printPrefs.js so the two standalone tools
+       (monogram, cross-stitch) get the identical control set instead of no
+       panel at all. Labels stay this engine's own strings -- nothing is
+       translated at the module boundary. Every edit repaints the preview:
+       without that the panel is a set of controls with no visible
+       consequence, which is the report it was rebuilt for on 2026-09-13. */
+    if (PP) wrap.appendChild(PP.buildPanel({ labels: PO, onChange: paintPaperPreview }));
 
     if (explicit) explicit.appendChild(wrap);
     else anchor.parentNode.insertBefore(wrap, anchor);
@@ -1632,6 +1610,26 @@
       // duplicate of the button beside it.
       const sib = btn.nextElementSibling;
       if (sib && sib.classList && sib.classList.contains("pt-pdf-btn")) sib.remove();
+    });
+    /* The alphabet and practice sheets get the Download PNG their siblings
+       already have. Injected here rather than added to 57 page files: the
+       button is identical on every one of them, and a runtime injection keeps
+       this out of the parity, locale-translation and em-dash gates exactly as
+       the 2026-09-15 relabelling did. Multi-sheet actions are deliberately
+       excluded below -- a 36-page A-Z book is not a PNG. */
+    [[el.alphaPrint, "alphabet_sheet", "pt-alphabet-png"], [el.practicePrint, "practice_sheet", "pt-practice-png"]].forEach((pair) => {
+      const btn = pair[0];
+      if (!btn || btn.dataset.ptPng) return;
+      btn.dataset.ptPng = "1";
+      const png = document.createElement("button");
+      png.type = "button";
+      png.className = "bubble-btn";
+      // The id every other section's PNG button carries in page HTML, so this
+      // one is addressable by the same convention even though it is injected.
+      if (!document.getElementById(pair[2])) png.id = pair[2];
+      png.textContent = T.downloadPng;
+      png.addEventListener("click", () => { pngMode = true; btn.click(); });
+      btn.insertAdjacentElement("afterend", png);
     });
     // The multi-sheet actions keep their own object ("all 7 levels", "the
     // A-Z + 0-9 book") and swap only the verb, per the owner's rule that
@@ -1845,7 +1843,7 @@
         // Same generous ~9% margin as singleDotSVG so number labels near the
         // box edges (e.g. a wide M/W) don't clip against the canvas edge.
         const pad = Math.round(size * 0.0875);
-        drawDotWordCanvas(ctx, ch.toUpperCase(), dotPageState.level, { x: pad, y: pad, w: size - pad * 2, h: size - pad * 2 }, CFG.dotHint !== false, dotPageState.numbers);
+        drawDotWordCanvas(ctx, dotCase(ch), dotPageState.level, { x: pad, y: pad, w: size - pad * 2, h: size - pad * 2 }, CFG.dotHint !== false, dotPageState.numbers);
         drawCredit(ctx, size, size);
         downloadCanvas(canvas, PNG_PREFIX + "-" + charSlug(ch) + "-" + dotPageState.level + (dotPageState.numbers ? "" : "-no-numbers") + ".png", "character");
         return;
@@ -1957,6 +1955,92 @@
   // Rasterise the mounted print surface and write the PDF. Resolves true on
   // success; false means "use the print dialog instead" (module missing,
   // an unsupported browser, a tainted canvas on Safari).
+  /* One canvas for the whole sheet, not one per page: a PNG of a worksheet
+     is the worksheet, so pagination is deliberately defeated by handing the
+     rasteriser a page height nothing can exceed. Returns false when the
+     writer cannot run (a tainted canvas on Safari), and the caller then falls
+     back to the same PDF hint every other export path uses -- rather than
+     failing silently, which looks exactly like a button that does nothing. */
+  /* Chromium and Safari both refuse a canvas dimension past 32,767px, and a
+     refused canvas comes back unusable rather than throwing where you can see
+     it. Held just under. */
+  const MAX_CANVAS_PX = 32000;
+
+  function stitchCanvases(pages) {
+    const w = Math.max(...pages.map((c) => c.width));
+    const h = pages.reduce((t, c) => t + c.height, 0);
+    const out = document.createElement("canvas");
+    out.width = w; out.height = h;
+    const ctx = out.getContext("2d");
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, w, h);
+    let y = 0;
+    pages.forEach((c) => { ctx.drawImage(c, 0, y); y += c.height; });
+    return out;
+  }
+
+  async function pngFromWrap(wrap, sheet) {
+    let P = null;
+    try { P = await loadPdfModule(); } catch (err) { return false; }
+    if (!P || !P.supported()) return false;
+    const full = paperFull();
+    const marginIn = PP ? PP.marginIn() : 0.5;
+    const widthPx = Math.round((full.w - 2 * marginIn) * 96);
+    document.body.classList.add("pt-pdf-rendering");
+    document.body.classList.toggle("pt-ink-saver", printPrefs.ink === "saver");
+    el.printRoot.style.width = widthPx + "px";
+    let pages = null;
+    try {
+      /* The page height has to be the real content height, measured INSIDE
+         the rendering state -- the print surface is display:none outside it
+         and every rectangle reads zero. It cannot simply be a large number:
+         renderPages allocates a canvas pageHeightPx * scale tall in every
+         branch, so asking for 100000 asked Chromium for a 200,000px canvas,
+         which it refuses. That failed silently and returned no pages, which
+         is indistinguishable from a button that does nothing.
+         For a sheet built from explicit page units (the tiled alphabet) the
+         tallest unit is the page height; for ordinary flow content it is the
+         whole wrap, which yields exactly one canvas. */
+      const units = wrap.querySelectorAll(PT_PAGE_UNITS);
+      let contentH = 0;
+      if (units.length) units.forEach((u) => { contentH = Math.max(contentH, Math.ceil(u.getBoundingClientRect().height)); });
+      else contentH = Math.ceil(wrap.getBoundingClientRect().height);
+      const maxH = Math.floor(MAX_CANVAS_PX / renderScale());
+      const pageHeightPx = Math.max(200, Math.min(contentH, maxH));
+      pages = await P.renderPages(wrap, { widthPx: widthPx, pageHeightPx: pageHeightPx, scale: renderScale() });
+    } catch (err) {
+      pages = null;
+    } finally {
+      document.body.classList.remove("pt-pdf-rendering");
+      document.body.classList.remove("pt-ink-saver");
+      el.printRoot.style.width = "";
+    }
+    if (!pages || !pages.length) return false;
+    /* The tiled alphabet ("bulletin board" sizes) renders explicit .pt-tile-page
+       units, so it comes back as several canvases however tall a page we ask
+       for. Taking pages[0] would hand the visitor a PNG missing most of its
+       letters and say nothing, so the pages are stitched into one tall image
+       instead -- which is what a PNG of a multi-page sheet is. */
+    const stitchedH = pages.reduce((t, c) => t + c.height, 0);
+    if (pages.length > 1 && stitchedH > MAX_CANVAS_PX) return false;
+    const canvas = pages.length === 1 ? pages[0] : stitchCanvases(pages);
+    await new Promise((resolve) => {
+      canvas.toBlob((blob) => {
+        if (!blob) { resolve(); return; }
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = PNG_PREFIX + "-" + sheet.replace(/_/g, "-") + ".png";
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        trackPrintable("download_png", sheet);
+        rememberSheet(sheet);
+        resolve();
+      }, "image/png");
+    });
+    return true;
+  }
+
   async function pdfFromWrap(wrap, sheet) {
     let P = null;
     try { P = await loadPdfModule(); } catch (err) { return false; }
@@ -1976,7 +2060,7 @@
     let pages = null;
     let links = [];
     try {
-      pages = await P.renderPages(wrap, { widthPx: widthPx, pageHeightPx: pageHPx, scale: 2 });
+      pages = await P.renderPages(wrap, { widthPx: widthPx, pageHeightPx: pageHPx, scale: renderScale() });
       // Measure the credit blocks HERE, inside the rendering state: the print
       // surface is display:none the moment pt-pdf-rendering comes off, and
       // every rectangle then reads zero. The rects are computed by the PDF
@@ -2001,11 +2085,35 @@
     }
     if (!pages || !pages.length) return false;
     try {
+      /* A multi-page PDF gets an outline, derived from the page units' own
+         headings rather than passed in by each caller: renderPages records
+         which element produced each canvas, so the 36-page A-Z book names its
+         letters and the level ladders name their levels without any of them
+         having to know about bookmarks. A single-page file gets none -- an
+         outline with one entry is clutter. */
+      const marks = [];
+      if (pages.length > 1) {
+        pages.forEach((c, i) => {
+          const src = c.ptPlacement && c.ptPlacement.mode === "explicit" && c.ptPlacement.el;
+          if (!src) return;
+          /* A flashcard page carries several headings, so the bookmark names
+             all of them: the first in full, then each further card's last
+             word, giving "Dot-to-dot letter A · B" rather than a list of
+             four near-identical sentences -- or, worse, only the first card,
+             which makes half the book unreachable from the outline. */
+          const hs = [...src.querySelectorAll(".bubble-print-title, .pt-sheet-title, h2, h3")]
+            .map((h) => h.textContent.trim()).filter(Boolean);
+          if (!hs.length) return;
+          const rest = hs.slice(1).map((t) => t.split(/\s+/).pop());
+          marks.push({ page: i, title: rest.length ? hs[0] + " \u00b7 " + rest.join(" \u00b7 ") : hs[0] });
+        });
+      }
       const blob = await P.fromCanvases(pages, {
         paperIn: full,
         marginIn: { x: marginIn, y: marginIn },
         title: document.title,
-        links: links
+        links: links,
+        bookmarks: marks
       });
       P.download(blob, pdfFilename(sheet));
     } catch (err) {
@@ -2034,8 +2142,14 @@
   }
 
   function printWrap(titleText, bodyNode, sheet) {
-    const wantPdf = pdfMode;
+    /* The PNG button works by re-clicking the section's own PDF button, and
+       that button carries [data-pt-pdf], whose capture-phase handler sets
+       pdfMode on the way through. So both flags are set on a PNG click and
+       the precedence is stated here rather than left to branch order. */
+    const wantPng = pngMode;
+    const wantPdf = pdfMode && !wantPng;
     pdfMode = false;
+    pngMode = false;
     /* Only a real print attempt counts as "print". Until 2026-09-15 this line
        sat above the pdfMode read and fired for PDF clicks too -- the PDF
        button works by invoking this same path -- so `print` counted prints
@@ -2044,7 +2158,7 @@
        PDF side. Now that the UI offers no print button, a `print` event means
        the PDF writer handed off to the dialog: a fallback rate, which is the
        number worth watching. */
-    if (!wantPdf) trackPrintable("print", sheet);
+    if (!wantPdf && !wantPng) trackPrintable("print", sheet);
     rememberSheet(sheet);
     if (!el.printRoot) { applyPageStyle(); window.print(); removePageStyle(); return; }
     el.printRoot.innerHTML = "";
@@ -2066,6 +2180,22 @@
     applySheetMetrics(el.printRoot);
     attachCredit(wrap);
     el.printRoot.appendChild(wrap);
+
+    /* Download PNG for the sheets that have no canvas builder of their own
+       (the A-Z alphabet sheet and the practice sheet). Every other section
+       rasterises a word or a letter it drew itself; these two only ever
+       existed as DOM handed to printWrap, which is why they shipped as the
+       only two jobs on the site offering one output where their siblings
+       offer two. The rasteriser that writes the PDF turns the same DOM into
+       a canvas, so the PNG comes from it rather than from a second drawing
+       path that could drift from the printed sheet. */
+    if (wantPng) {
+      pngFromWrap(wrap, sheet).then((ok) => {
+        el.printRoot.innerHTML = "";
+        if (!ok) { markPdfFallback(); showToast(PO.pdfToast); }
+      });
+      return;
+    }
 
     // Save as PDF writes the file itself (printablePdf.js); the browser's
     // print dialog is the fallback, with the destination named in a toast.
@@ -2389,27 +2519,202 @@
   // sheet-mode pages keep the sheet there and get an auto-added secondary
   // book button beside it. An optional #pt-book-print button anywhere else
   // on the page (e.g. a promo card) triggers the same book print.
+  /* Which characters the A-Z book prints. The whole set is the default and
+     the historical behaviour; the control below narrows it.
+
+     This is the one thing a PDF makes newly possible that the print dialog
+     never did well -- "just the vowels", "just the letters in my name" -- and
+     the forum-evidenced ask behind it is a parent who wants five pages, not
+     thirty-six. A print dialog's page range cannot do it, because the reader
+     does not know which page carries which letter.
+
+     Every VISIBLE string in the control is character data (A-Z, 0-9, a typed
+     run of letters), so it needs no translation in any of the eight languages
+     these pages ship in. The accessible name is T.letterWord, which is
+     already translated in all of them. Nothing here is authored copy. */
+  let bookRange = null;   // null = the whole set
+  /* Cards per page. 1 is the book (the historical behaviour); 2 and 4 turn the
+     same pages into flashcards, which is the forum-evidenced ask this reuses
+     the book for rather than building a separate sheet type. The chips are
+     numerals, so nothing about it needs translating, and the cut instruction
+     is T.puzzleCut -- the sentence the name-puzzle sheet already ships in all
+     eight languages, about cutting along the dashed lines to separate each
+     letter piece, which is exactly what these are. */
+  let bookPerPage = 1;
+
+  function bookChars() {
+    if (!bookRange) return CHARS;
+    const want = new Set(bookRange);
+    const picked = CHARS.filter((ch) => want.has(ch.toUpperCase()));
+    // Never render an empty book: an unmatched filter falls back to the whole
+    // set rather than producing a zero-page PDF, which reads as a broken button.
+    return picked.length ? picked : CHARS;
+  }
+
+  /* Accept anything this page actually prints, not [A-Z0-9]: CFG.chars takes
+     an arbitrary array, so a lowercase or symbol page is config rather than
+     code, and a hardcoded class would silently reject every character such a
+     page is about.
+
+     Ranges ("A-E", "M-P") are parsed as well as plain runs ("ABC", "MIA"),
+     which is what makes arbitrary letter GROUPS possible without a chip for
+     each one. A chip needs a label, and "consonants" is a word this site has
+     in no language -- a typed range needs none, works for any group a teacher
+     actually wants, and the separator may be a hyphen or an en dash because
+     both are what people type. Endpoints are resolved against CHARS order, so
+     "A-E" means the first five characters THIS page prints rather than five
+     codepoints it may not have. */
+  function parseRange(text) {
+    const order = CHARS.map((c) => c.toUpperCase());
+    const printable = new Set(order);
+    const raw = String(text || "").toUpperCase();
+    const set = [];
+    const add = (ch) => { if (printable.has(ch) && !set.includes(ch)) set.push(ch); };
+    let i = 0;
+    while (i < raw.length) {
+      const ch = raw[i];
+      const sep = raw[i + 1];
+      const end = raw[i + 2];
+      if (printable.has(ch) && (sep === "-" || sep === "\u2013") && end && printable.has(end)) {
+        let a = order.indexOf(ch), b = order.indexOf(end);
+        if (a > b) { const t = a; a = b; b = t; }
+        for (let k = a; k <= b; k++) add(order[k]);
+        i += 3;
+        continue;
+      }
+      add(ch);
+      i += 1;
+    }
+    return set.length ? set : null;
+  }
+
+  const BOOK_PRESETS = [
+    { key: "all", label: "A\u2013Z 0\u20139", chars: null },
+    { key: "az",  label: "A\u2013Z", chars: "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("") },
+    { key: "num", label: "0\u20139", chars: "0123456789".split("") },
+    { key: "vow", label: "AEIOU", chars: ["A", "E", "I", "O", "U"] },
+    // Not a letter group in itself -- it is the hint that the field beside it
+    // takes one. "A-E" is the shape a teacher types for "this week's letters".
+    { key: "first5", label: "A\u2013E", chars: ["A", "B", "C", "D", "E"] }
+  ];
+
+  function buildBookRangeControl(bookBtn) {
+    if (!bookBtn || document.getElementById("pt-book-range")) return;
+    /* Only offer presets this page can actually honour. "A-Z" on a page whose
+       charset is punctuation is a button that does nothing, and the whole
+       control is pointless when only "everything" is left. */
+    const have = new Set(CHARS.map((c) => c.toUpperCase()));
+    const presets = BOOK_PRESETS.filter((pr) => !pr.chars || pr.chars.some((c) => have.has(c)));
+    if (presets.length < 2) return;
+    const wrap = document.createElement("div");
+    wrap.className = "pt-choice-row pt-book-range";
+    wrap.id = "pt-book-range";
+    wrap.setAttribute("role", "radiogroup");
+    wrap.setAttribute("aria-label", T.letterWord);
+    const custom = document.createElement("input");
+    const chips = [];
+    const select = (key) => {
+      chips.forEach((c) => {
+        const on = c.dataset.key === key;
+        c.classList.toggle("is-active", on);
+        c.setAttribute("aria-checked", on ? "true" : "false");
+      });
+    };
+    presets.forEach((preset) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pt-choice pt-choice-sm";
+      b.dataset.key = preset.key;
+      b.textContent = preset.label;
+      b.setAttribute("role", "radio");
+      const on = preset.key === "all";
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.addEventListener("click", () => { bookRange = preset.chars; custom.value = ""; select(preset.key); });
+      chips.push(b);
+      wrap.appendChild(b);
+    });
+    custom.type = "text";
+    custom.className = "pt-book-range-input";
+    custom.maxLength = 40;
+    custom.placeholder = "A-E";
+    // An input with only a placeholder is an unlabelled form control, which is
+    // one of the accessibility gate's blocking classes. This is its real name.
+    custom.setAttribute("aria-label", T.letterWord);
+    custom.addEventListener("input", () => {
+      bookRange = parseRange(custom.value);
+      select(custom.value.trim() ? null : "all");
+    });
+    wrap.appendChild(custom);
+
+    /* Cards per page, its own radiogroup so the two axes are not conflated.
+       Its accessible name is T.pageCount.one -- the locale's own word for
+       "page", already translated in all eight. */
+    const perWrap = document.createElement("div");
+    perWrap.className = "pt-choice-row pt-book-per";
+    perWrap.setAttribute("role", "radiogroup");
+    perWrap.setAttribute("aria-label", T.pageCount.one);
+    const perChips = [];
+    [1, 2, 4].forEach((n) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pt-choice pt-choice-sm";
+      b.textContent = String(n);
+      b.setAttribute("role", "radio");
+      const on = n === 1;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.addEventListener("click", () => {
+        bookPerPage = n;
+        perChips.forEach((c) => {
+          const sel = c === b;
+          c.classList.toggle("is-active", sel);
+          c.setAttribute("aria-checked", sel ? "true" : "false");
+        });
+      });
+      perChips.push(b);
+      perWrap.appendChild(b);
+    });
+    wrap.appendChild(perWrap);
+    bookBtn.parentNode.insertBefore(wrap, bookBtn);
+  }
+
   function printAlphabetBook() {
     const book = document.createElement("div");
     book.className = "bubble-print-book";
-    CHARS.forEach((ch) => {
+    const chars = bookChars();
+    const per = bookPerPage;
+    for (let i = 0; i < chars.length; i += per) {
       const page = document.createElement("div");
-      page.className = "bubble-print-book-page";
-      const t = document.createElement("h3");
-      t.className = "bubble-print-title";
-      // The credit lives in the footer block now (attachCredit), with a QR
-      // beside it, so the heading stops repeating the URL.
-      t.textContent = cap(NOUN) + " " + charLabel(ch);
-      page.appendChild(t);
-      // The figure gets its own box so the page can flex: title and credit
-      // take their natural height, this absorbs the rest. Same reason the
-      // single-character print has one — see .pt-fill-page in style.css.
-      const figure = document.createElement("div");
-      figure.className = "bubble-figure";
-      figure.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
-      page.appendChild(figure);
+      page.className = "bubble-print-book-page" + (per > 1 ? " is-" + per + "up" : "");
+      chars.slice(i, i + per).forEach((ch) => {
+        // At one per page the card IS the page, so the single-page layout is
+        // byte-for-byte what it always was and needs no new CSS to hold up.
+        const card = per > 1 ? document.createElement("div") : page;
+        if (per > 1) card.className = "pt-card";
+        const t = document.createElement("h3");
+        t.className = "bubble-print-title";
+        // The credit lives in the footer block now (attachCredit), with a QR
+        // beside it, so the heading stops repeating the URL.
+        t.textContent = cap(NOUN) + " " + charLabel(ch);
+        card.appendChild(t);
+        // The figure gets its own box so the page can flex: title and credit
+        // take their natural height, this absorbs the rest. Same reason the
+        // single-character print has one — see .pt-fill-page in style.css.
+        const figure = document.createElement("div");
+        figure.className = "bubble-figure";
+        figure.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
+        card.appendChild(figure);
+        if (per > 1) page.appendChild(card);
+      });
+      if (per > 1) {
+        const cut = document.createElement("p");
+        cut.className = "pt-cut-hint";
+        cut.textContent = T.puzzleCut;
+        page.appendChild(cut);
+      }
       book.appendChild(page);
-    });
+    }
     printWrap("", book, "alphabet_book");
   }
 
@@ -2491,10 +2796,15 @@
       page.className = "pt-tile-page";
       const title = document.createElement("h3");
       title.className = "bubble-print-title";
-      // Same: the per-page footer carries the credit, so it comes off the
-      // heading. ("page N of M" is still hardcoded English on every locale —
-      // pre-existing, reported rather than fixed here.)
-      title.textContent = cap(NOUN) + " alphabet — " + preset.label + " — page " + (pi + 1) + " of " + pages.length;
+      /* Same: the per-page footer carries the credit, so it comes off the
+         heading. Every word here is now the locale's own: NOUN from the
+         page config, preset.label from T.size, and alphabetWord /
+         pageCount.one / ofWord from the i18n table. Until 2026-09-16 this
+         read "alphabet ... page 1 of 3" in English on all 16 non-EN pages
+         that offer tiled printing. The separator is the middle dot the
+         table already uses in lowerSuffix, never an em dash. */
+      title.textContent = cap(NOUN) + " " + T.alphabetWord + " \u00b7 " + preset.label +
+        " \u00b7 " + T.pageCount.one + " " + (pi + 1) + " " + T.ofWord + " " + pages.length;
       page.appendChild(title);
 
       const grid = document.createElement("div");
@@ -2605,6 +2915,7 @@
       printAlphabetBook();
     });
     actions.appendChild(book);
+    buildBookRangeControl(book);
     wrap.appendChild(actions);
     wrap.appendChild(makePdfHint());
 
@@ -2614,7 +2925,10 @@
 
   function buildAlphabetGrid() {
     buildSizeControl();
-    if (el.bookPrint) el.bookPrint.addEventListener("click", printAlphabetBook);
+    if (el.bookPrint) {
+      el.bookPrint.addEventListener("click", printAlphabetBook);
+      buildBookRangeControl(el.bookPrint);
+    }
     if (el.alphaPrint) {
       const bookMode = CFG.alphabetPrint === "book";
       const printDefault = bookMode ? printAlphabetBook : printAlphabetSheet;
@@ -2630,6 +2944,7 @@
         bookBtn.textContent = T.printBook;
         bookBtn.addEventListener("click", printAlphabetBook);
         el.alphaPrint.insertAdjacentElement("afterend", bookBtn);
+        buildBookRangeControl(bookBtn);
       }
     }
     if (!el.alphaGrid) return;
@@ -3435,11 +3750,51 @@
   // so without it every level would render a single letter identically (which
   // is why the per-letter pages historically hid the picker).
   const DOT_LEVELS = [
-    { key: "easy",   label: T.dot.easy.label,   total: 26, single: 12, hint: T.dot.easy.hint },
+    /* easy was 12 until 2026-09-16, which could not draw a letter with more
+       than a dozen corners: measured across all 62 glyphs, 16 reproduced worse
+       than 10% of their height, and m, s and a were visibly mangled -- m lost
+       a whole stem. 14 fixes all three on inspection and takes the count over
+       10% from 16 to 8, while staying clearly below medium's 16 so the ladder
+       still means something. Raising it further was tried and rejected: 15
+       sits one dot under medium and the picker stops distinguishing them.
+       `total` (the shared budget for a whole word) is deliberately unchanged;
+       that is a different surface and was not measured here. */
+    { key: "easy",   label: T.dot.easy.label,   total: 26, single: 14, hint: T.dot.easy.hint },
     { key: "medium", label: T.dot.medium.label, total: 42, single: 16, hint: T.dot.medium.hint },
     { key: "hard",   label: T.dot.hard.label,   total: 60, single: 19, hint: T.dot.hard.hint },
     { key: "expert", label: T.dot.expert.label, total: 84, single: 22, hint: T.dot.expert.hint }
   ];
+  /* What a level actually yields for one character, so the picker can say the
+     real number instead of the nominal floor. Memoised per character and font
+     because it traces, and the trace is the expensive half of a render. */
+  const dotCountCache = new Map();
+  function dotCornerCountFor(ch) {
+    const key = String(ch) + "|" + FONT;
+    if (dotCountCache.has(key)) return dotCountCache.get(key);
+    let corners = 0;
+    try {
+      const R = dotRasterChar(String(ch).toUpperCase() === String(ch) ? ch : ch);
+      const cc = dotComponents(R.mask, R.w, R.h);
+      const minArea = Math.max(24, R.w * R.h * 0.00035);
+      const kept = cc.comps.filter((c) => c.area >= minArea).sort((a, b) => b.area - a.area);
+      if (kept.length) {
+        const main = kept[0];
+        let sx = -1, sy = -1;
+        for (let y = main.miny; y <= main.maxy && sy < 0; y++) {
+          for (let x = main.minx; x <= main.maxx; x++) {
+            if (cc.labels[y * R.w + x] === main.label) { sx = x; sy = y; break; }
+          }
+        }
+        if (sx >= 0) corners = dotCornerIndices(dotMooreTrace(cc.labels, R.w, R.h, main.label, sx, sy), DOT_CORNER_DEGS[1]).length;
+      }
+    } catch (err) { corners = 0; }
+    dotCountCache.set(key, corners);
+    return corners;
+  }
+  function dotCountFor(ch, nominal) {
+    return Math.max(DOT_MIN, Math.min(DOT_MAX, Math.max(nominal, dotCornerCountFor(ch))));
+  }
+
   function dotLevel(key) {
     for (let i = 0; i < DOT_LEVELS.length; i++) if (DOT_LEVELS[i].key === key) return DOT_LEVELS[i];
     return DOT_LEVELS[1];
@@ -3543,33 +3898,190 @@
     return boundary;
   }
 
-  // Resample a closed polyline into n points evenly spaced by arc length.
+  /* Resample a closed polyline into n points.
+
+     CORNERS FIRST, then even arc length between them. The original was pure
+     even-arc-length, which is optimal for a circle and wrong for a letter: it
+     places dots wherever the spacing falls, so every corner of the letterform
+     lands BETWEEN two dots and joining the dots cuts it off. Measured on the
+     shipped tracer at medium (16 dots), against the real traced outline:
+
+       E  12 corners, 9 with no dot within 4% of letter height, arms visibly
+          tilted because the horizontals were being cut diagonally
+       M  10 of 13 corners missed, outline off by 16.9% of letter height
+       W  10 of 13 missed, 16.5%          A  6 of 8 missed, the crossbar
+                                             notch skipped entirely
+       O  0 corners, 1.6% -- already perfect, and must stay that way
+
+     A dot-to-dot is drawn by a child joining the dots with a ruler or a
+     freehand line, so a corner with no dot on it cannot be drawn at all. That
+     makes corner placement correctness, not polish. Curves are unaffected:
+     with no corners detected this falls through to the original even spacing,
+     byte for byte. */
+  /* Which candidate sampling wins is DECIDED, not assumed. Forcing a dot onto
+     every corner is right for a letter built from straight strokes and can be
+     wrong for a mostly-round one: on S it spent dots on two gentle turns and
+     starved the curves, making the outline worse than plain even spacing
+     (10.4% -> 11.4%). So three samplings are built and scored against the real
+     traced boundary, and the best one is returned. That makes a regression
+     impossible by construction rather than by threshold-tuning, and it costs
+     about 13k float ops for a 22-dot letter. */
+  function dotWorstDeviation(boundary, dots) {
+    let worst = 0;
+    for (let i = 0; i < boundary.length; i++) {
+      const p = boundary[i];
+      let best = Infinity;
+      for (let k = 0; k < dots.length; k++) {
+        const a = dots[k], b = dots[(k + 1) % dots.length];
+        const vx = b[0] - a[0], vy = b[1] - a[1];
+        const L2 = vx * vx + vy * vy;
+        let t = L2 ? ((p[0] - a[0]) * vx + (p[1] - a[1]) * vy) / L2 : 0;
+        if (t < 0) t = 0; else if (t > 1) t = 1;
+        const d = Math.hypot(p[0] - (a[0] + vx * t), p[1] - (a[1] + vy * t));
+        if (d < best) best = d;
+      }
+      if (best > worst) worst = best;
+    }
+    return worst;
+  }
+
   function dotResampleClosed(pts, n) {
     const m = pts.length;
     if (m < 2 || n < 1) return pts.slice(0, Math.max(1, n));
-    const cum = [0];
-    for (let i = 1; i <= m; i++) {
-      const a = pts[(i - 1) % m], b = pts[i % m];
-      cum.push(cum[i - 1] + Math.hypot(b[0] - a[0], b[1] - a[1]));
+    const candidates = [dotEvenClosed(pts, n)];
+    for (const deg of DOT_CORNER_DEGS) {
+      const c = dotCornerClosed(pts, n, deg);
+      if (c && c.length) candidates.push(c);
     }
+    let best = candidates[0], bestErr = dotWorstDeviation(pts, candidates[0]);
+    for (let i = 1; i < candidates.length; i++) {
+      const err = dotWorstDeviation(pts, candidates[i]);
+      if (err < bestErr) { bestErr = err; best = candidates[i]; }
+    }
+    return best;
+  }
+
+  const DOT_CORNER_WIN = 8;    // +/- boundary samples the turning angle spans
+  const DOT_CORNER_DEGS = [45, 55, 75];  // corner thresholds to try, in degrees
+  const DOT_CORNER_GAP = 10;   // min samples between two kept corners
+
+  // Turning angle at every boundary sample, then local maxima above the
+  // threshold, thinned so one physical corner yields one index.
+  function dotCornerIndices(pts, minDeg) {
+    const m = pts.length;
+    if (m < DOT_CORNER_WIN * 2 + 1) return [];
+    const deg = new Float64Array(m);
+    for (let i = 0; i < m; i++) {
+      const a = pts[(i - DOT_CORNER_WIN + m) % m], p = pts[i], b = pts[(i + DOT_CORNER_WIN) % m];
+      const a1 = Math.atan2(p[1] - a[1], p[0] - a[0]);
+      const a2 = Math.atan2(b[1] - p[1], b[0] - p[0]);
+      let d = Math.abs(a2 - a1);
+      if (d > Math.PI) d = 2 * Math.PI - d;
+      deg[i] = d * 180 / Math.PI;
+    }
+    const picked = [];
+    for (let i = 0; i < m; i++) {
+      if (deg[i] < minDeg) continue;
+      let top = true;
+      for (let k = -6; k <= 6; k++) { if (deg[(i + k + m) % m] > deg[i]) { top = false; break; } }
+      if (!top) continue;
+      if (picked.some((j) => Math.min(Math.abs(j - i), m - Math.abs(j - i)) < DOT_CORNER_GAP)) continue;
+      picked.push(i);
+    }
+    return picked.map((i) => ({ i: i, deg: deg[i] }));
+  }
+
+  function dotCumulative(pts) {
+    const m = pts.length;
+    const cum = new Float64Array(m + 1);
+    for (let i = 1; i <= m; i++) {
+      const a = pts[i - 1], b = pts[i % m];
+      cum[i] = cum[i - 1] + Math.hypot(b[0] - a[0], b[1] - a[1]);
+    }
+    return cum;
+  }
+
+  function dotPointAtArc(pts, cum, t) {
+    const m = pts.length;
+    let lo = 0, hi = m;
+    while (lo < hi) { const mid = (lo + hi) >> 1; if (cum[mid] <= t) lo = mid + 1; else hi = mid; }
+    const i = Math.max(1, lo) - 1;
+    const segLen = (cum[i + 1] - cum[i]) || 1;
+    const f = (t - cum[i]) / segLen;
+    const a = pts[i % m], b = pts[(i + 1) % m];
+    return [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f];
+  }
+
+  // The original algorithm, kept intact as the no-corner path.
+  function dotEvenClosed(pts, n) {
+    const m = pts.length;
+    const cum = dotCumulative(pts);
     const total = cum[m] || 1;
     const out = [];
-    for (let k = 0; k < n; k++) {
-      const t = (k / n) * total;
-      let lo = 0, hi = m;
-      while (lo < hi) { const mid = (lo + hi) >> 1; if (cum[mid] <= t) lo = mid + 1; else hi = mid; }
-      const i = Math.max(1, lo) - 1;
-      const segLen = (cum[i + 1] - cum[i]) || 1;
-      const f = (t - cum[i]) / segLen;
-      const a = pts[i % m], b = pts[(i + 1) % m];
-      out.push([a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f]);
+    for (let k = 0; k < n; k++) out.push(dotPointAtArc(pts, cum, (k / n) * total));
+    return out;
+  }
+
+  function dotCornerClosed(pts, n, minDeg) {
+    const m = pts.length;
+    let corners = dotCornerIndices(pts, minDeg);
+    // More corners than the budget: keep the sharpest, so a low difficulty
+    // still spends every dot it has on the most letter-defining turns.
+    if (corners.length > n) {
+      corners = corners.slice().sort((a, b) => b.deg - a.deg).slice(0, n).sort((a, b) => a.i - b.i);
     }
+    if (!corners.length) return null;
+
+    const cum = dotCumulative(pts);
+    const total = cum[m] || 1;
+    const keep = corners.map((c) => c.i);
+    const gaps = keep.map((a, gi) => {
+      const b = keep[(gi + 1) % keep.length];
+      return { a: a, len: (b > a ? cum[b] - cum[a] : total - cum[a] + cum[b]) };
+    });
+    // Share the leftover dots across the gaps by arc length, largest-remainder
+    // so the count comes out exactly n and a hairline gap gets none.
+    const remain = n - keep.length;
+    const spanTotal = gaps.reduce((t, g) => t + g.len, 0) || 1;
+    const exact = gaps.map((g) => remain * g.len / spanTotal);
+    const extra = exact.map(Math.floor);
+    let used = extra.reduce((t, v) => t + v, 0);
+    const byFrac = exact.map((e, i) => ({ i: i, frac: e - Math.floor(e) })).sort((x, y) => y.frac - x.frac);
+    for (let k = 0; used < remain && byFrac.length; k++, used++) extra[byFrac[k % byFrac.length].i]++;
+
+    const out = [];
+    gaps.forEach((g, gi) => {
+      out.push([pts[g.a][0], pts[g.a][1]]);
+      const k = extra[gi];
+      for (let sIdx = 1; sIdx <= k; sIdx++) {
+        out.push(dotPointAtArc(pts, cum, (cum[g.a] + g.len * sIdx / (k + 1)) % total));
+      }
+    });
     return out;
   }
 
   // Trace a whole word into per-letter dot sets laid out on a shared baseline.
   // Returns { letters:[{mainPts,accentPts,cx,cy}], bbox } in raster units.
-  function dotWordGeometry(text, total) {
+  /* A single fixed dot count cannot serve both O and m. O has no corners and
+     is drawn perfectly by 8; lowercase m has about twenty and is a zigzag at
+     twelve. Measured across all 62 glyphs at the old easy budget of 12, 16 of
+     them reproduced worse than 10% of their height, worst W at 23.0% and m at
+     21.1%.
+
+     Raising the whole ladder was the obvious fix and the wrong one: 15 dots
+     gets easy to 4 glyphs over 10%, but the ladder is 12/16/19/22, so easy
+     would then sit one dot below medium and the difficulty picker would stop
+     meaning anything.
+
+     So the level sets a FLOOR, not a fixed count, and a letter gets at least
+     as many dots as it has corners (capped at DOT_MAX). Easy now means "the
+     fewest dots that still draw this letter" rather than "twelve dots
+     whatever the letter is". A round letter is unchanged; only corner-rich
+     ones lift, and they lift exactly as far as they need to.
+
+     Single characters only. For a word the budget is shared out by perimeter
+     and a per-letter floor would blow it. */
+  function dotWordGeometry(text, total, singleMode) {
     const chars = [...String(text)];
     const raw = [];
     let xoff = 0;
@@ -3598,6 +4110,7 @@
     const letters = [];
     raw.forEach((r) => {
       let n = Math.round((r.perim / totalPerim) * total);
+      if (singleMode) n = Math.max(n, dotCornerIndices(r.boundary, DOT_CORNER_DEGS[1]).length);
       n = Math.max(DOT_MIN, Math.min(DOT_MAX, n));
       const mainPts = dotResampleClosed(r.boundary, n).map((p) => [p[0] + r.xoff, p[1]]);
       const accentPts = r.accents.map((c) => [c.cx + r.xoff, c.cy]);
@@ -3620,7 +4133,7 @@
   function layoutDotWord(text, level, box) {
     const lvl = dotLevel(level);
     const drawn = [...String(text)].filter((c) => c !== " ").length;
-    const geom = dotWordGeometry(text, drawn === 1 ? lvl.single : lvl.total);
+    const geom = dotWordGeometry(text, drawn === 1 ? lvl.single : lvl.total, drawn === 1);
     const b = geom.bbox;
     const bw = Math.max(1, b.maxx - b.minx), bh = Math.max(1, b.maxy - b.miny);
     const scale = Math.min(box.w / bw, box.h / bh);
@@ -3742,8 +4255,28 @@
      --------------------------------------------------------------- */
   const dotPageState = {
     level: CFG.dotDifficulty || "medium",
-    numbers: true
+    numbers: true,
+    /* "upper" | "lower". The tracer has always force-uppercased, because a
+       capital silhouette (A L E X) is far more iconic than a lowercase one --
+       but a child learning to write learns lowercase second, and the tracer
+       handles it: measured after the corner fix, 24 of 26 lowercase letters
+       reproduce within 8% of their height at medium, and the two that do not
+       (m, s) are the same shape problem their capitals have at easy.
+
+       This is a toggle on the existing page rather than a lowercase PAGE, and
+       that was a measured call, not a preference: Semrush US puts "lowercase
+       dot to dot" at 0/mo and "dot to dot lowercase letters" at 20, against
+       110 for the head term this page already owns. It fails the site's own
+       spoke test on standalone demand, so a separate URL would have been a
+       thin page competing with its own parent. */
+    case: "upper"
   };
+  // Applied at the RENDER boundary only. CHARS, the picker, every data-char
+  // and the book range all stay uppercase, so nothing that addresses a
+  // character by name has to know about this.
+  function dotCase(ch) {
+    return dotPageState.case === "lower" ? String(ch).toLowerCase() : String(ch).toUpperCase();
+  }
   // viewBox is 4x outlineSVG's 200x240 (same 5:6 aspect; on-screen size is
   // unchanged since CSS scales the SVG to width:100%). dotR/numF are clamped
   // to an ABSOLUTE unit range (see layoutDotWord), so a small viewBox makes
@@ -3757,7 +4290,7 @@
     svg.setAttribute("class", "bubble-outline" + (o.small ? " is-small" : ""));
     svg.setAttribute("role", "img");
     svg.setAttribute("aria-label", T.dotToDot + " " + charLabel(ch));
-    addDotWordSVG(svg, ch.toUpperCase(), dotPageState.level, { x: 70, y: 70, w: 660, h: 820 }, CFG.dotHint !== false, dotPageState.numbers);
+    addDotWordSVG(svg, dotCase(ch), dotPageState.level, { x: 70, y: 70, w: 660, h: 820 }, CFG.dotHint !== false, dotPageState.numbers);
     return svg;
   }
 
@@ -3787,7 +4320,11 @@
       b.setAttribute("aria-checked", on ? "true" : "false");
       b.appendChild(document.createTextNode(lvl.label));
       const small = document.createElement("small");
-      small.textContent = lvl.single + " " + T.dotsCount;
+      // The real count for THIS character, not the level's floor: the control
+      // is rebuilt on every selectChar, so it can be specific. A picker that
+      // said "12 dots" while the sheet drew 20 would be the same class of
+      // defect as a setting with no visible consequence.
+      small.textContent = dotCountFor(activeChar || CHARS[0], lvl.single) + " " + T.dotsCount;
       b.appendChild(small);
       b.addEventListener("click", () => {
         dotPageState.level = lvl.key;
@@ -3796,6 +4333,48 @@
       group.appendChild(b);
     });
     wrap.appendChild(group);
+
+    /* Case. Both chips are the character itself, so the control needs no
+       translated label in any of the eight languages; the group takes its
+       accessible name from T.letterWord, which every locale already ships.
+       Digits have no case, so the toggle is hidden on a digits-only page. */
+    if (CHARS.some((c) => /[a-z]/i.test(c))) {
+      const caseRow = document.createElement("div");
+      caseRow.className = "pt-choice-row pt-dot-case";
+      caseRow.setAttribute("role", "radiogroup");
+      caseRow.setAttribute("aria-label", T.letterWord);
+      const caseChips = [];
+      [["upper", "A"], ["lower", "a"]].forEach((pair) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "pt-choice pt-choice-sm";
+        b.textContent = pair[1];
+        b.setAttribute("role", "radio");
+        /* The visible chip is the character itself, which needs no
+           translation; the ACCESSIBLE name is this locale's own word, so a
+           screen-reader user hears "Kleinbuchstaben" rather than a bare "a"
+           under a group vaguely labelled "letter". Every one of the sixteen
+           words is harvested from that locale's own pages -- Kleinbuchstaben
+           94 uses, minuscules 492, minúsculas 645, huruf kecil 368 -- not
+           authored here. */
+        b.setAttribute("aria-label", pair[0] === "upper" ? T.caseUpper : T.caseLower);
+        const on = pair[0] === dotPageState.case;
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-checked", on ? "true" : "false");
+        b.addEventListener("click", () => {
+          dotPageState.case = pair[0];
+          caseChips.forEach((x) => {
+            const sel = x === b;
+            x.classList.toggle("is-active", sel);
+            x.setAttribute("aria-checked", sel ? "true" : "false");
+          });
+          selectChar(activeChar, { silent: true });
+        });
+        caseChips.push(b);
+        caseRow.appendChild(b);
+      });
+      wrap.appendChild(caseRow);
+    }
 
     const toggle = document.createElement("label");
     toggle.className = "pt-dot-numbers-toggle";

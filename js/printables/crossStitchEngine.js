@@ -15,6 +15,13 @@
      Note stitchOne/stitchMany are whole words, not a suffix: English pluralises
      "stitch" -> "stitches" by appending, Spanish needs "puntada"/"puntadas". */
   const CS_CFG = window.UTG_CROSS_STITCH || {};
+  /* Sheet setup + the shared action-row strings, from
+     js/printables/printPrefs.js. The page's own config still wins; the
+     fallback is this locale's own string rather than English, which is what
+     fr/imprimables/alphabet-point-de-croix needed -- it supplies none of
+     them and was rendering an English share row under a French panel. */
+  const PP = window.UltraTextGen && window.UltraTextGen.printPrefs;
+  const SL = PP ? PP.shareLabels() : { share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", savePdf: "Save as PDF" };
   const T = {
     printTitle:      CS_CFG.printTitle      || "Cross-Stitch Pattern — ",
     chartAriaPrefix: CS_CFG.chartAriaPrefix || "Cross-stitch chart for ",
@@ -27,13 +34,15 @@
     /* Share row + PDF (2026-09-10). Harvested from printablesEngine.js's
        printOpts per locale; a translated page overrides them from its own
        config like the keys above. */
-    share:           CS_CFG.share           || "Share",
-    shareImage:      CS_CFG.shareImage      || "Share as image",
-    copyLink:        CS_CFG.copyLink        || "Copy link",
-    linkCopied:      CS_CFG.linkCopied      || "Link copied",
-    pinterest:       CS_CFG.pinterest       || "Save to Pinterest",
-    savePdf:         CS_CFG.savePdf         || "Save as PDF"
+    share:           CS_CFG.share           || SL.share,
+    shareImage:      CS_CFG.shareImage      || SL.shareImage,
+    copyLink:        CS_CFG.copyLink        || SL.copyLink,
+    linkCopied:      CS_CFG.linkCopied      || SL.linkCopied,
+    pinterest:       CS_CFG.pinterest       || SL.pinterest,
+    savePdf:         CS_CFG.savePdf         || SL.savePdf
   };
+  const INK_SAVER_ALPHA = 0.72;   // the value style.css already prints at
+  const inkSaverOn = () => !!(PP && PP.values.ink === "saver");
 
   /* ── The 5×7 stitch alphabet ──────────────────────────────────────
      Each glyph is 7 rows of a 5-character string: '1' = a stitch,
@@ -246,6 +255,9 @@
 
     const label = state.text.trim().replace(/"/g, "”");
     chart.innerHTML = buildChartSVG(model.rows, state.color, state.style, label);
+    // Ink saver is visible on screen, not only in the export: a control with
+    // no on-screen consequence is indistinguishable from one that does nothing.
+    chart.style.opacity = inkSaverOn() ? String(INK_SAVER_ALPHA) : "";
     if (legend) legend.innerHTML = legendHTML(model.rows, state.color, state.style);
   }
 
@@ -334,14 +346,21 @@
     const canvasW = Math.max(chartW + margin * 2, 520);
     const canvasH = titleH + chartH + legendH + margin;
 
+    /* DPI is applied by scaling the CONTEXT, not the layout constants: every
+       measurement below stays in logical units, so the chart cannot drift
+       between the two quality settings. */
+    const q = (PP && PP.values.quality === "high") ? 1.5 : 1;
     const canvas = document.createElement("canvas");
-    canvas.width = canvasW;
-    canvas.height = canvasH;
+    canvas.width = Math.round(canvasW * q);
+    canvas.height = Math.round(canvasH * q);
     const ctx = canvas.getContext("2d");
+    if (q !== 1) ctx.scale(q, q);
 
     // White page.
     ctx.fillStyle = "#ffffff";
     ctx.fillRect(0, 0, canvasW, canvasH);
+    // After the white fill, so the paper stays white and only the ink fades.
+    if (inkSaverOn()) ctx.globalAlpha = INK_SAVER_ALPHA;
 
     // Title (the word).
     const word = state.text.toUpperCase().trim();
@@ -436,7 +455,9 @@
     if (!canvas) return;
     loadPdfModule().then(function (P) {
       if (!P || !P.supported()) { printPattern(); return; }
-      return P.fromCanvases([canvas], { paperIn: { w: 8.5, h: 11 }, marginIn: { x: 0.6, y: 0.75 }, title: document.title })
+      const paper = PP ? PP.paperFull() : { w: 8.5, h: 11 };
+      const m = PP ? PP.marginIn() : 0.5;
+      return P.fromCanvases([canvas], { paperIn: paper, marginIn: { x: Math.max(0.6, m), y: Math.max(0.75, m) }, title: document.title })
         .then(function (blob) { P.download(blob, exportName() + ".pdf"); trackPrintable("download_pdf", "cross_stitch"); });
     }).catch(function () { printPattern(); });
   }
@@ -580,12 +601,28 @@
     const printBtn = $("#cs-print");
     if (printBtn) {
       printBtn.textContent = T.savePdf;
-      printBtn.classList.add("pt-pdf-btn");
+      // Primary, like monogram's and every sheet section's: this is the page's
+      // one main action and it was the only one rendering as a secondary.
+      printBtn.classList.add("pt-pdf-btn", "bubble-btn-primary");
       printBtn.addEventListener("click", savePdf);
     }
 
     const pngBtn = $("#cs-png");
     if (pngBtn) pngBtn.addEventListener("click", downloadPNG);
+
+    /* Sheet setup, above the action row exactly as printablesEngine mounts
+       it. Only the controls this tool honours are rendered. */
+    const actionRow = (printBtn || pngBtn) && (printBtn || pngBtn).parentNode;
+    if (PP && actionRow && !document.getElementById("pt-print-settings")) {
+      const tools = document.createElement("div");
+      tools.className = "pt-print-tools";
+      tools.id = "pt-print-settings";
+      tools.appendChild(PP.buildPanel({
+        only: ["paper", "orientation", "margins", "ink", "quality"],
+        onChange: render
+      }));
+      actionRow.parentNode.insertBefore(tools, actionRow);
+    }
 
     // Share row (share-core's builder, shared with the sheet engine) under
     // the action buttons; a share link reopens this exact chart.
@@ -599,7 +636,9 @@
         surface: "printables",
         itemType: "printable",
         labels: { share: T.share, shareImage: T.shareImage, copyLink: T.copyLink, linkCopied: T.linkCopied, pinterest: T.pinterest },
-        onShareImage: shareImage,
+        /* Only where the OS can take the file; otherwise share-core falls
+           through to a plain download and this is a second "Download PNG". */
+        onShareImage: (ns.canShareFiles && ns.canShareFiles()) ? shareImage : null,
         pinMedia: function () { return og ? og.getAttribute("content") : ""; }
       }));
     } else if (!(ns && ns.buildShareRow)) {

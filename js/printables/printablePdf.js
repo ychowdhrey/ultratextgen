@@ -365,6 +365,17 @@
     // covers the screen.
     const links = Array.isArray(o.links) ? o.links.filter((l) => l && l.rect && l.url) : [];
     const annotNum = (i) => 4 + canvases.length * 3 + i;
+    /* o.bookmarks: [{ page, title }] becomes a PDF outline, so a 36-page A-Z
+       book opens with a navigable list of its letters instead of asking the
+       reader to scrub. Allocated AFTER the annotations because the object
+       numbering here is positional -- every number is derived arithmetically
+       from the page and link counts, and inserting in the middle would shift
+       every xref offset. */
+    const marks = Array.isArray(o.bookmarks)
+      ? o.bookmarks.filter((b) => b && b.title != null && b.page >= 0 && b.page < canvases.length)
+      : [];
+    const outlineRoot = 4 + canvases.length * 3 + links.length;
+    const markNum = (i) => outlineRoot + 1 + i;
 
     const parts = []; let offset = 0; const offsets = [];
     const push = (x) => { const b = typeof x === "string" ? enc.encode(x) : x; parts.push(b); offset += b.length; };
@@ -374,7 +385,8 @@
     push("%PDF-1.4\n"); push(new Uint8Array([0x25, 0xE2, 0xE3, 0xCF, 0xD3, 0x0A]));
     const n = canvases.length;
     const pageNum = (i) => 4 + i * 3, contentNum = (i) => 5 + i * 3, imageNum = (i) => 6 + i * 3;
-    obj(1, "<< /Type /Catalog /Pages 2 0 R >>");
+    obj(1, "<< /Type /Catalog /Pages 2 0 R" +
+      (marks.length ? " /Outlines " + outlineRoot + " 0 R /PageMode /UseOutlines" : "") + " >>");
     obj(2, "<< /Type /Pages /Kids [" + canvases.map((c, i) => pageNum(i) + " 0 R").join(" ") + "] /Count " + n + " >>");
     const d = new Date();
     const stamp = "D:" + d.getUTCFullYear() + String(d.getUTCMonth() + 1).padStart(2, "0") + String(d.getUTCDate()).padStart(2, "0") +
@@ -416,7 +428,21 @@
     for (let li = 0; li < links.length; li++) {
       if (offsets[annotNum(li)] == null) obj(annotNum(li), "<< /Type /Annot /Subtype /Link /Rect [0 0 0 0] /Border [0 0 0] >>");
     }
-    const count = 4 + n * 3 + links.length;
+    /* The outline: a root whose /Count is positive so readers open the panel
+       expanded, then one item per bookmark in a doubly linked list. /Fit puts
+       the whole page in view, which is what a worksheet wants -- a /XYZ
+       destination would land the reader at an arbitrary zoom. */
+    if (marks.length) {
+      obj(outlineRoot, "<< /Type /Outlines /First " + markNum(0) + " 0 R /Last " +
+        markNum(marks.length - 1) + " 0 R /Count " + marks.length + " >>");
+      marks.forEach((b, i) => {
+        const prev = i > 0 ? " /Prev " + markNum(i - 1) + " 0 R" : "";
+        const next = i < marks.length - 1 ? " /Next " + markNum(i + 1) + " 0 R" : "";
+        obj(markNum(i), "<< /Title " + pdfHexString(String(b.title)) + " /Parent " + outlineRoot +
+          " 0 R" + prev + next + " /Dest [" + pageNum(b.page) + " 0 R /Fit] >>");
+      });
+    }
+    const count = 4 + n * 3 + links.length + (marks.length ? 1 + marks.length : 0);
     const xref = offset;
     let table = "xref\n0 " + count + "\n0000000000 65535 f \n";
     for (let k = 1; k < count; k++) table += String(offsets[k]).padStart(10, "0") + " 00000 n \n";

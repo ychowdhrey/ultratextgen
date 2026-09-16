@@ -34,6 +34,11 @@
      English default — which is exactly what a locale needs when its layout
      names already read as a complete phrase and no trailing noun belongs. */
   const pick = (v, dflt) => (v === undefined || v === null ? dflt : v);
+  /* Sheet setup + the shared action-row strings, from
+     js/printables/printPrefs.js. Before 2026-09-16 this tool wrote a
+     hardcoded 8.5x11in page with no way to ask for A4. */
+  const PP = window.UltraTextGen && window.UltraTextGen.printPrefs;
+  const SL = PP ? PP.shareLabels() : { share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", savePdf: "Save as PDF" };
   const T = {
     noun:        pick(CFG.noun, "Monogram"),
     typeInitials:pick(CFG.typeInitials, "Type initials"),
@@ -43,16 +48,19 @@
        it must be mapped before it reaches a user-facing label. */
     layoutNames: CFG.layoutNames || { classic: "classic", stacked: "stacked", circle: "circle" },
     printTitle:  pick(CFG.printTitle, "Monogram — "),
-    /* Share row + PDF (2026-09-10). Harvested from printablesEngine.js's
-       printOpts for each locale; a translated page overrides them from its
-       own config like every other key here. */
-    share:       pick(CFG.share, "Share"),
-    shareImage:  pick(CFG.shareImage, "Share as image"),
-    copyLink:    pick(CFG.copyLink, "Copy link"),
-    linkCopied:  pick(CFG.linkCopied, "Link copied"),
-    pinterest:   pick(CFG.pinterest, "Save to Pinterest"),
-    savePdf:     pick(CFG.savePdf, "Save as PDF")
+    /* Share row + PDF. The page's own config still wins; the fallback is no
+       longer English but this locale's own string from printPrefs.js's
+       SHARE_I18N, so a translated page that omits them gets its own language
+       rather than an English share row under a translated panel. */
+    share:       pick(CFG.share, SL.share),
+    shareImage:  pick(CFG.shareImage, SL.shareImage),
+    copyLink:    pick(CFG.copyLink, SL.copyLink),
+    linkCopied:  pick(CFG.linkCopied, SL.linkCopied),
+    pinterest:   pick(CFG.pinterest, SL.pinterest),
+    savePdf:     pick(CFG.savePdf, SL.savePdf)
   };
+  const INK_SAVER_ALPHA = 0.72;   // the value style.css already prints at
+  const inkSaverOn = () => !!(PP && PP.values.ink === "saver");
   const WEIGHT = "700";
   const VB = 400; // SVG viewBox is 0 0 400 400
 
@@ -200,7 +208,11 @@
     const host = byId("mono-preview");
     if (!host) return;
     host.innerHTML = "";
-    host.appendChild(buildMonogramSVG());
+    const svg = buildMonogramSVG();
+    // Ink saver has to be visible here, not only on the sheet: a checkbox
+    // with no on-screen consequence is the report the panel was rebuilt for.
+    if (inkSaverOn()) svg.setAttribute("opacity", String(INK_SAVER_ALPHA));
+    host.appendChild(svg);
   }
 
   let debounceTimer = null;
@@ -306,8 +318,11 @@
   function withCanvas(cb) {
     whenFontReady(function () {
       const v = vals();
-      const size = 1600;
-      const s = size / VB; // 4x
+      /* 1600px over the printed ~6.5in is already ~246dpi; the DPI control
+         lifts it to ~369. The canvas is a fixed square, so quality is a size
+         here rather than the rasteriser scale printablesEngine passes. */
+      const size = (PP && PP.values.quality === "high") ? 2400 : 1600;
+      const s = size / VB;
       const canvas = document.createElement("canvas");
       canvas.width = size;
       canvas.height = size;
@@ -316,6 +331,8 @@
       ctx.fillRect(0, 0, size, size);
       ctx.textAlign = "center";
       ctx.lineJoin = "round";
+      // After the white fill, so the paper stays white and only the ink fades.
+      if (inkSaverOn()) ctx.globalAlpha = INK_SAVER_ALPHA;
 
       if (v.l || v.c || v.r) {
         if (state.layout === "stacked") drawStackedCanvas(ctx, s, v);
@@ -386,7 +403,12 @@
     withCanvas(function (canvas, slug) {
       loadPdfModule().then(function (P) {
         if (!P || !P.supported()) { printMonogram(); return; }
-        return P.fromCanvases([canvas], { paperIn: { w: 8.5, h: 11 }, marginIn: { x: 0.75, y: 1.0 }, title: document.title })
+        /* The page the visitor chose, not a hardcoded US Letter. The margin
+           keeps its generous square inset -- a monogram is a display piece,
+           not a worksheet -- but never less than the panel's own margin. */
+        const paper = PP ? PP.paperFull() : { w: 8.5, h: 11 };
+        const m = PP ? PP.marginIn() : 0.5;
+        return P.fromCanvases([canvas], { paperIn: paper, marginIn: { x: Math.max(0.75, m), y: Math.max(1.0, m) }, title: document.title })
           .then(function (blob) { P.download(blob, "monogram-" + slug + ".pdf"); trackPrintable("download_pdf", "monogram"); });
       }).catch(function () { printMonogram(); });
     });
@@ -568,6 +590,23 @@
     const pngBtn = byId("mono-png");
     if (pngBtn) pngBtn.addEventListener("click", downloadPNG);
 
+    /* Sheet setup, above the action row exactly as printablesEngine mounts
+       it: choosing the page is a pre-export decision. Only the four controls
+       this tool actually honours are rendered -- it rasterises one fixed
+       square canvas, so paper, orientation, margins, ink saver and DPI all
+       apply, but nothing else would. */
+    const actionRow = (printBtn || pngBtn) && (printBtn || pngBtn).parentNode;
+    if (PP && actionRow && !byId("pt-print-settings")) {
+      const tools = document.createElement("div");
+      tools.className = "pt-print-tools";
+      tools.id = "pt-print-settings";
+      tools.appendChild(PP.buildPanel({
+        only: ["paper", "orientation", "margins", "ink", "quality"],
+        onChange: render
+      }));
+      actionRow.parentNode.insertBefore(tools, actionRow);
+    }
+
     // Share row (share-core's builder, the same one the sheet engine uses)
     // under the action buttons; a share link reopens this exact monogram.
     const ns = window.UltraTextGen;
@@ -580,7 +619,12 @@
         surface: "printables",
         itemType: "printable",
         labels: { share: T.share, shareImage: T.shareImage, copyLink: T.copyLink, linkCopied: T.linkCopied, pinterest: T.pinterest },
-        onShareImage: shareImage,
+        /* Only where the OS can actually take the file. Without the gate
+           share-core's shareImageBlob falls through to a plain download, so
+           on desktop this button was a second "Download PNG" sitting beside
+           the first -- the exact duplication printablesEngine.js gates
+           against, missed here when the row was added on 2026-09-10. */
+        onShareImage: (ns.canShareFiles && ns.canShareFiles()) ? shareImage : null,
         pinMedia: function () { return og ? og.getAttribute("content") : ""; }
       }));
     } else if (!(ns && ns.buildShareRow)) {
