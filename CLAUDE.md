@@ -12,7 +12,13 @@ Copy-paste Unicode is still the front door and satisfies the job fastest. Visual
 
 **Scope note (updated):** the earlier "text-only, no image generator" boundary has been intentionally lifted. UltraTextGen now *does* generate images — but only **client-side, on demand, as SVG/PNG built with native Canvas/SVG**. This is not a reversal of the philosophy; it's the same philosophy applied to a new job.
 
-**Printables scope boundary (added 2026-07-10):** "visual asset" does not mean "any kids' worksheet." The line is **typography-native**: a printable belongs in this repo only if the thing being rendered is text — a letter, a word, a name, a phrase (bubble/cursive/block letters, coloring pages, tracing sheets, a dot-to-dot of a *name*, name puzzles, banners spelling a word). Generic worksheet/activity content that isn't fundamentally text — shape-only tracing (circle/square/triangle with no letters), pre-writing motor-skill strokes, mazes, word searches, math worksheets — is **out of scope here**, even though `printablesEngine.js` could technically render it. That demand is real but belongs to a possible future, separate property once this site is more established — do not build it under the UltraTextGen brand. Quick test: could a user type a word/name into the feature and see *that word* rendered? If no, it's not a printable for this repo.
+**Printables scope boundary (added 2026-07-10, amended 2026-09-16):** "visual asset" does not mean "any kids' worksheet." The line is **typography-native**: a printable belongs in this repo only if the thing being rendered is text — a letter, a word, a name, a phrase (bubble/cursive/block letters, coloring pages, tracing sheets, a dot-to-dot of a *name*, name puzzles, banners spelling a word). Generic worksheet/activity content that isn't fundamentally text — shape-only tracing (circle/square/triangle with no letters), pre-writing motor-skill strokes, mazes, math worksheets — is **out of scope here**, even though `printablesEngine.js` could technically render it. That demand is real but belongs to a possible future, separate property once this site is more established — do not build it under the UltraTextGen brand. Quick test: could a user type a word/name into the feature and see *that word* rendered? If no, it's not a printable for this repo.
+
+**The test governs, and `word searches` left the exclusion list (owner decision, 2026-09-16).** The rule stated the boundary two ways in one paragraph and they disagreed. `docs/research/printables-opportunity-research-2026-09-12.md` §2 measured the contradiction: a word search built from a teacher's own spelling list **passes the test cleanly** — the user types words and sees *those words* rendered, hidden in a grid — and was simultaneously **named in the exclusion list**. That is the largest demand in that document (~81,200/mo across the head terms) sitting on both sides of one sentence.
+
+The test wins. Where the two disagree, ask whether the visitor's own typed text is what gets rendered; the examples are illustrations of that test, never a second rule. So a word search, a crossword and a word scramble built from typed words are **in scope**; a maze, a shape-tracing sheet and a math worksheet are still out, because nothing the visitor types appears in them.
+
+**Two constraints came with the decision and are part of it.** Enter on the **long tail and the anti-copying batch feature, never the head terms** — `word search maker` is 27,100/mo at KD 72 and `crossword puzzle maker` 22,200 at KD 56, which are not winnable from here; the realistic entry is `super teacher worksheets word search generator` (1,600, KD 29) and the differentiator is generating N different versions of one list so neighbours cannot copy, which is the one thing this lane has that tracing sheets cannot (a tracing sheet has no order to vary). And nothing here bypasses the rest of this file: a new URL still goes through the Hub-vs-Spoke test, "check who already owns it", the English-Parent Rule and the Kill list in the 09-10 business review.
 
 **Core philosophy**: Fast > Fancy, Clean > Clever, Useful > Impressive. **Client-side only is a hard line:** visual generation must use native SVG/Canvas in the browser — never a server-side renderer, an image-processing library, or bundled font binaries.
 
@@ -4600,9 +4606,12 @@ Standing protocol:
 - Do not make a visual/printable feature the *default* answer for a query that copy-paste
   Unicode already serves — visual assets are the higher-intent follow-up, gated on real demand
 - Do not build generic (non-text) worksheet/activity content under this brand — shape-only
-  tracing, mazes, word searches, math worksheets, pre-writing motor strokes with no letterform.
+  tracing, mazes, math worksheets, pre-writing motor strokes with no letterform.
   See "Printables scope boundary" above. This demand is real but tracked for a possible future,
-  separate property — not this repo.
+  separate property — not this repo. **Word searches are no longer on this list** (owner
+  decision, 2026-09-16): one built from a typed word list passes the boundary's own test, which
+  governs. Entry is the long tail and the anti-copying batch feature, never the KD 56-72 head
+  terms, and a new URL still goes through Hub-vs-Spoke and "check who already owns it".
 - Do not put a query string in a `_redirects` source path. This is Cloudflare
   Pages, not Netlify: Pages matches the **path only** and silently drops the
   query, so `/?lang=fr  /fr/  301` is read as `/  /fr/  301` and 301s the
