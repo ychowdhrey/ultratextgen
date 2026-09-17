@@ -6174,10 +6174,16 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
   color: var(--accent-purple);
 }
 
-/* Selected-character figure in glyph mode (cursive) */
+/* Selected-character figure in glyph mode (cursive).
+   The family comes from the page's own CFG.font, published as
+   --pt-glyph-family by printablesEngine's init(). Without it these elements
+   inherited the body sans and the declared stack never applied -- see OUT-06.
+   The `inherit` fallback keeps every page that publishes nothing exactly as it
+   was. */
 .pt-glyph-figure {
   margin: 0;
   text-align: center;
+  font-family: var(--pt-glyph-family, inherit);
   font-size: 4.5rem;
   line-height: 1.1;
   color: var(--text-primary);
@@ -6185,6 +6191,7 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
 .pt-glyph-print {
   margin: 0;
   text-align: center;
+  font-family: var(--pt-glyph-family, inherit);
   font-size: 6rem;
   line-height: 1.2;
   color: #1a1a2e;

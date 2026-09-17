@@ -2111,6 +2111,7 @@
      plus its 42 pad) with a little air above. */
   const PNG_CREDIT_BAND = 170;
 
+  const CREDIT_FONT = "'Plus Jakarta Sans', system-ui, -apple-system, sans-serif";
   function drawCredit(ctx, w, h, light) {
     const url = creditUrl();
     const qrNs = qrModule();
@@ -2133,7 +2134,13 @@
     ctx.textAlign = "center";
     ctx.textBaseline = "alphabetic";
     if ("letterSpacing" in ctx) ctx.letterSpacing = "0px";
-    ctx.font = (light ? "18px " : "22px ") + FONT;
+    /* The credit is an address to be READ and retyped, not a specimen, so on a
+       glyph-mode page it does not take the page's own face. OUT-06 made FONT a
+       joined school hand on the cursive pages and a blackletter on the
+       calligraphy ones, and a URL set in blackletter cannot be retyped off
+       paper -- which is the whole job this line has when the QR is out of
+       reach. Every other family keeps the face it always had. */
+    ctx.font = (light ? "18px " : "22px ") + (RENDER === "glyph" ? CREDIT_FONT : FONT);
     ctx.fillStyle = light ? "#c9ced8" : "#aeb4c0";
     // The page path, not just the domain: a sheet that gets forwarded should
     // open the same tool (2026-09-10 share pass). It stays centred on the
@@ -7233,6 +7240,23 @@
 
   function init() {
     loadQrModule();
+    /* OUT-06 -- publish the page's own face to the glyph surfaces.
+
+       CFG.font reached the SVG paths and the canvas export, and NEVER reached
+       .pt-glyph-figure / .pt-glyph-print, which are plain <p> elements styled
+       by style.css and so inherited Plus Jakarta Sans. That is the whole
+       mechanism behind the finding that these 69 pages showed "identical
+       advance width in all 5 declared stacks": the declared stack was not
+       being applied at all, so the Unicode script characters fell to whatever
+       the OS happened to have. It also meant the PNG export and the page
+       disagreed, because the export already used FONT.
+
+       Published as a custom property rather than set on each element, so the
+       three creation sites -- and any fourth -- pick it up without knowing
+       this exists, the way --pt-glyph-ratio and --pt-paper-aspect already do. */
+    if (RENDER === "glyph" && CFG.font) {
+      document.documentElement.style.setProperty("--pt-glyph-family", CFG.font);
+    }
     /* Before applyPresetInputs(), which fills a roster from ?roster= and
        therefore has to find one. el is built at module scope, so a roster
        created here is written back onto it rather than re-queried everywhere. */
