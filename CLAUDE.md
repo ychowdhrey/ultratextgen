@@ -3442,12 +3442,18 @@ every PNG. If it has not arrived, the sheet degrades to the text credit and
 **says so in the console**; a sheet that quietly loses its QR looks exactly like
 one that never had it.
 
-### Reported, not fixed
+### Reported, not fixed — both closed, and kept as the record
 
-* `printAlphabetTiled` writes `"page N of M"` as hardcoded English into the
-  print title on every locale.
-* The per-character row and the book row now differ: one offers a PDF button and
-  the other does not (see the scope note above).
+* ~~`printAlphabetTiled` writes `"page N of M"` as hardcoded English into the
+  print title on every locale.~~ **Fixed 2026-09-16** (`ba287b686`, on `main`):
+  the tiled title reads `T.pageCount.one` and `T.ofWord`, which all eight
+  locales ship.
+* ~~The per-character row and the book row now differ: one offers a PDF button
+  and the other does not.~~ **Fixed 2026-09-15** (`231712e55`, on `main`) when
+  every sheet action became a PDF write. Measured on both families rather than
+  read: the per-character row is `Save as PDF` + `Download PNG`, the book row's
+  own button is converted in place, and no button on either page still says
+  Print in any of the eight languages.
 
 ---
 

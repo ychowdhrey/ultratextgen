@@ -4562,75 +4562,76 @@
      count is now reduced until the numbers fit, rather than the numbers being
      shrunk until they do not. */
   const DOT_NUM_MIN = 17;
-  /* What a level actually yields for one character, so the picker can say the
-     real number instead of the nominal floor. Memoised per character and font
-     because it traces, and the trace is the expensive half of a render. */
-  const dotCountCache = new Map();
-  function dotCornerCountFor(ch) {
+  /* TWO numbers, and conflating them is what broke this.
+
+     `dotOutlineBudgetFor` is the BUDGET: how many dots the outline gets, the
+     level's nominal floored up to the glyph's corner count. It is what
+     dotBudgetFor() hands the geometry.
+
+     `dotCountFor` is the LABEL: how many dots the sheet actually draws, which
+     is that outline plus every counter, second shape and accent laid on top
+     of it. It is what the picker prints and nothing else reads.
+
+     They were one function after the #889/#891 merge, so the total came back
+     as the budget and the geometry added the counters to it a second time.
+     The merge note reasoned about the corner floor, where max(max(n,c),c) ===
+     max(n,c) really does make the two agree, and did not notice that #889 had
+     also made the same function additive. Measured on the merged main: the
+     picker said 23 on O where the sheet drew 36, on 26 of the 36 characters
+     and at three of the four levels.
+
+     The label counts the geometry the sheet is drawn from rather than working
+     out again which contours survive. A parallel copy of that selection is
+     what it used to be, and it drifted the moment the render path carried a
+     branch the copy did not: a tittle is not a contour, it is an accent dot
+     placed at the component's centroid and numbered like any other, so
+     lowercase i and j drew one more dot than the picker promised. Counting
+     the real geometry cannot go out of step with it.
+
+     Both memoised per character and font because they trace, and the trace is
+     the expensive half of a render. */
+  const dotBudgetCache = new Map();
+  function dotOutlineBudgetFor(ch, nominal) {
     const key = String(ch) + "|" + FONT;
-    if (dotCountCache.has(key)) return dotCountCache.get(key);
-    let corners = 0;
-    try {
-      const R = dotRasterChar(ch);
-      const cc = dotComponents(R.mask, R.w, R.h);
-      const minArea = Math.max(24, R.w * R.h * 0.00035);
-      const kept = cc.comps.filter((c) => c.area >= minArea).sort((a, b) => b.area - a.area);
-      if (kept.length) {
-        const main = kept[0];
-        let sx = -1, sy = -1;
-        for (let y = main.miny; y <= main.maxy && sy < 0; y++) {
-          for (let x = main.minx; x <= main.maxx; x++) {
-            if (cc.labels[y * R.w + x] === main.label) { sx = x; sy = y; break; }
+    let corners = dotBudgetCache.get(key);
+    if (corners === undefined) {
+      corners = 0;
+      try {
+        const R = dotRasterChar(ch);
+        const cc = dotComponents(R.mask, R.w, R.h);
+        const minArea = Math.max(24, R.w * R.h * 0.00035);
+        const kept = cc.comps.filter((c) => c.area >= minArea).sort((a, b) => b.area - a.area);
+        if (kept.length) {
+          const main = kept[0];
+          let sx = -1, sy = -1;
+          for (let y = main.miny; y <= main.maxy && sy < 0; y++) {
+            for (let x = main.minx; x <= main.maxx; x++) {
+              if (cc.labels[y * R.w + x] === main.label) { sx = x; sy = y; break; }
+            }
           }
+          if (sx >= 0) corners = dotCornerIndices(dotMooreTrace(cc.labels, R.w, R.h, main.label, sx, sy), DOT_CORNER_DEGS[1]).length;
         }
-        if (sx >= 0) corners = dotCornerIndices(dotMooreTrace(cc.labels, R.w, R.h, main.label, sx, sy), DOT_CORNER_DEGS[1]).length;
-      }
-    } catch (err) { corners = 0; }
-    dotCountCache.set(key, corners);
-    return corners;
-  }
-  function dotCountFor(ch, nominal) {
-    const outer = Math.max(DOT_MIN, Math.min(DOT_MAX, Math.max(nominal, dotCornerCountFor(ch))));
-    return outer + dotExtraCountFor(ch, outer);
+      } catch (err) { corners = 0; }
+      dotBudgetCache.set(key, corners);
+    }
+    return Math.max(DOT_MIN, Math.min(DOT_MAX, Math.max(nominal, corners)));
   }
 
-  /* Dots the counters and second shapes add on top of the outline, so the
-     picker reports what the sheet actually draws: an O is its outline plus a
-     ring, not just the outline. */
-  const dotExtraCache = new Map();
-  function dotExtraCountFor(ch, outerN) {
-    const key = String(ch) + "|" + FONT + "|" + outerN;
-    if (dotExtraCache.has(key)) return dotExtraCache.get(key);
-    let extra = 0;
+  const dotCountCache = new Map();
+  function dotCountFor(ch, nominal) {
+    const key = String(ch) + "|" + FONT + "|" + nominal;
+    if (dotCountCache.has(key)) return dotCountCache.get(key);
+    const budget = dotOutlineBudgetFor(ch, nominal);
+    let n = budget;
     try {
-      const R = dotRasterChar(ch);
-      const cc = dotComponents(R.mask, R.w, R.h);
-      const minArea = Math.max(24, R.w * R.h * 0.00035);
-      const kept = cc.comps.filter((c) => c.area >= minArea).sort((a, b) => b.area - a.area);
-      if (kept.length) {
-        const main = kept[0];
-        let sx = -1, sy = -1;
-        for (let y = main.miny; y <= main.maxy && sy < 0; y++) {
-          for (let x = main.minx; x <= main.maxx; x++) { if (cc.labels[y * R.w + x] === main.label) { sx = x; sy = y; break; } }
-        }
-        if (sx >= 0) {
-          const base = dotPerimeter(dotMooreTrace(cc.labels, R.w, R.h, main.label, sx, sy)) || 1;
-          const rest = [];
-          if (CFG.dotHoles !== false) dotHoleBoundaries(R.mask, R.w, R.h, main.area * DOT_HOLE_RATIO).forEach((b) => rest.push(b));
-          kept.slice(1).forEach((cmp) => {
-            if (cmp.area < main.area * DOT_SHAPE_RATIO) return;
-            let ax = -1, ay = -1;
-            for (let y = cmp.miny; y <= cmp.maxy && ay < 0; y++) {
-              for (let x = cmp.minx; x <= cmp.maxx; x++) { if (cc.labels[y * R.w + x] === cmp.label) { ax = x; ay = y; break; } }
-            }
-            if (ax >= 0) rest.push(dotMooreTrace(cc.labels, R.w, R.h, cmp.label, ax, ay));
-          });
-          rest.forEach((b) => { extra += Math.max(DOT_LOOP_MIN, Math.min(DOT_MAX, Math.round(outerN * dotPerimeter(b) / base))); });
-        }
-      }
-    } catch (err) { extra = 0; }
-    dotExtraCache.set(key, extra);
-    return extra;
+      // Exactly the plan dotBudgetFor() builds for a one-character sheet:
+      // budget, perLetterMode false, singleMode true.
+      const g = dotWordGeometry(String(ch), budget, false, true);
+      const drawn = g.letters.reduce((t, L) => t + L.loops.reduce((s, lp) => s + lp.length, 0) + L.accentPts.length, 0);
+      if (drawn > 0) n = drawn;
+    } catch (err) { n = budget; }
+    dotCountCache.set(key, n);
+    return n;
   }
 
   function dotLevel(key) {
@@ -5225,13 +5226,17 @@
     const chars = [...String(text)].filter((c) => c !== " ");
     const drawn = chars.length;
     if (drawn <= 1) {
-      /* MERGE 2026-09-16: the one-character branch reports the FLOORED count,
-         not the nominal one, so the picker's number is the number the sheet
-         actually draws. That is #889's dotCountFor() reading, kept here rather
-         than in its own layoutDotWord(); dotWordGeometry applies the same
-         floor via singleMode, and max(max(n,c),c) === max(n,c), so the two
-         agree by construction instead of by coincidence. */
-      const budget = dotCountFor(chars[0] || CHARS[0], lvl.single);
+      /* The one-character branch hands over the FLOORED count rather than
+         the nominal one, so the outline gets at least as many dots as the
+         glyph has corners. dotWordGeometry applies the same floor again via
+         singleMode, and max(max(n,c),c) === max(n,c), so the two agree by
+         construction instead of by coincidence.
+
+         It must be the BUDGET, never the picker's label: the label is that
+         budget plus the counters and accents the geometry lays on top, and
+         feeding it back in here made the geometry add them a second time.
+         See dotOutlineBudgetFor / dotCountFor for the measurement. */
+      const budget = dotOutlineBudgetFor(chars[0] || CHARS[0], lvl.single);
       return { budget: budget, perLetterMode: false, singleMode: true, capped: false, wanted: lvl.single };
     }
     const wanted = lvl.perLetter;
