@@ -178,15 +178,21 @@
      panel above an English share row. It also keeps EN's "Pin on Pinterest"
      (chosen 2026-09-15, because "Save to" collided with the Save buttons)
      from drifting back to "Save to Pinterest" on the two standalone tools. */
+  /* savePdf here and PO.savePdf in printablesEngine.js are two tables for one
+     label. Both read "Download PDF" (2026-09-17): "Save as PDF" sat beside
+     "Download PNG", two verbs for one kind of action. Each locale's string is
+     derived from that locale's own downloadPng, not translated. Change one and
+     you must change the other, or the monogram and cross-stitch tools drift
+     from the 297 sheet pages. */
   const SHARE_I18N = {
-    en:  { share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", savePdf: "Save as PDF" },
-    fr:  { share: "Partager", shareImage: "Partager en image", copyLink: "Copier le lien", linkCopied: "Lien copié", pinterest: "Épingler sur Pinterest", savePdf: "Enregistrer en PDF" },
-    es:  { share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", savePdf: "Guardar como PDF" },
-    pt:  { share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", savePdf: "Salvar como PDF" },
-    it:  { share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", savePdf: "Salva come PDF" },
-    pl:  { share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", savePdf: "Zapisz jako PDF" },
-    de:  { share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", savePdf: "Als PDF speichern" },
-    id:  { share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", savePdf: "Simpan sebagai PDF" },
+    en:  { share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", savePdf: "Download PDF" },
+    fr:  { share: "Partager", shareImage: "Partager en image", copyLink: "Copier le lien", linkCopied: "Lien copié", pinterest: "Épingler sur Pinterest", savePdf: "Télécharger le PDF" },
+    es:  { share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", savePdf: "Descargar PDF" },
+    pt:  { share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", savePdf: "Baixar PDF" },
+    it:  { share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", savePdf: "Scarica PDF" },
+    pl:  { share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", savePdf: "Pobierz PDF" },
+    de:  { share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", savePdf: "PDF herunterladen" },
+    id:  { share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", savePdf: "Unduh PDF" },
   };
   function shareLabels() {
     const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
