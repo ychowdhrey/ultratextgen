@@ -810,8 +810,14 @@
     text.setAttribute("font-family", o.font || FONT);
     text.setAttribute("font-weight", "700");
     text.setAttribute("font-size", String(fontSize));
+    /* The name-tracing family draws its rows here rather than through
+       levelSpec, so high contrast has to be applied again: its trace outline
+       is #8b93a7 at width 3, which is exactly the light grey a copier
+       dithers away. Only the hollow rows change -- a solid model row is
+       already INK. */
+    const hc = highContrastOn();
     text.setAttribute("fill", o.solid ? (o.fill || INK) : "#ffffff");
-    text.setAttribute("stroke", o.solid ? (o.strokeColor || "none") : (o.strokeColor || "#8b93a7"));
+    text.setAttribute("stroke", o.solid ? (o.strokeColor || "none") : (hc ? CONTRAST_INK : (o.strokeColor || "#8b93a7")));
     /* o.strokeWidth arrives quoted in outlineSVG()'s units (font-size 210) --
        it comes from CFG.strokeWidth or a nameStyles entry, the same field the
        single-letter surface reads. This function draws at font-size 150, so
@@ -823,7 +829,7 @@
        products. WORD_OUTLINE_STROKE is this constant's inverse and exists for
        the same reason. */
     const wordStroke = o.strokeWidth != null ? o.strokeWidth * fontSize / OUTLINE_SVG_FONT : 3;
-    text.setAttribute("stroke-width", o.solid ? String(o.strokeColor ? (o.strokeWidth != null ? wordStroke : 4) : 0) : String(wordStroke));
+    text.setAttribute("stroke-width", o.solid ? String(o.strokeColor ? (o.strokeWidth != null ? wordStroke : 4) : 0) : String(hc ? contrastStroke(fontSize, wordStroke) : wordStroke));
     text.setAttribute("stroke-linejoin", "round");
     text.setAttribute("paint-order", "stroke");
     // Nudge the anchor left by half a letter-gap so the trailing space SVG adds
@@ -868,6 +874,10 @@
       printPrefs.margin === "narrow" ? PO.narrow : PO.normal
     ];
     if (printPrefs.ink === "saver") parts.push(PO.inkSaver);
+    // English-only like the control itself; printPrefs.buildPanel resets a
+    // stored "contrast" on any other locale, so this can never be the one
+    // English word in a translated caption.
+    if (printPrefs.ink === "contrast") parts.push("High contrast");
     return parts.join(" · ");
   }
   function paintPaperPreview() {
@@ -896,6 +906,7 @@
       sheet.style.setProperty("--pt-glyph-ratio", String(GLYPH_RATIO));
     }
     node.classList.toggle("is-ink-saver", printPrefs.ink === "saver");
+    node.classList.toggle("is-high-contrast", printPrefs.ink === "contrast");
     node.classList.toggle("is-narrow", printPrefs.margin === "narrow");
     const cap = $(".pt-paper-caption", node);
     if (cap) cap.textContent = paperCaption();
@@ -2243,6 +2254,7 @@
     const widthPx = Math.round((full.w - 2 * marginIn) * 96);
     document.body.classList.add("pt-pdf-rendering");
     document.body.classList.toggle("pt-ink-saver", printPrefs.ink === "saver");
+    document.body.classList.toggle("pt-high-contrast", printPrefs.ink === "contrast");
     el.printRoot.style.width = widthPx + "px";
     let pages = null;
     try {
@@ -2268,6 +2280,7 @@
     } finally {
       document.body.classList.remove("pt-pdf-rendering");
       document.body.classList.remove("pt-ink-saver");
+      document.body.classList.remove("pt-high-contrast");
       el.printRoot.style.width = "";
     }
     if (!pages || !pages.length) return false;
@@ -2311,6 +2324,7 @@
     const pageHPx = Math.round(area.h * 96);
     document.body.classList.add("pt-pdf-rendering");
     document.body.classList.toggle("pt-ink-saver", printPrefs.ink === "saver");
+    document.body.classList.toggle("pt-high-contrast", printPrefs.ink === "contrast");
     el.printRoot.style.width = widthPx + "px";
     let pages = null;
     let links = [];
@@ -2336,6 +2350,7 @@
     } finally {
       document.body.classList.remove("pt-pdf-rendering");
       document.body.classList.remove("pt-ink-saver");
+      document.body.classList.remove("pt-high-contrast");
       el.printRoot.style.width = "";
     }
     if (!pages || !pages.length) return false;
@@ -2510,6 +2525,7 @@
     document.body.classList.add("is-printing");
     hideEverythingButPrintRoot();
     document.body.classList.toggle("pt-ink-saver", printPrefs.ink === "saver");
+    document.body.classList.toggle("pt-high-contrast", printPrefs.ink === "contrast");
 
     // Tear the print surface down when the dialog closes, not when
     // window.print() returns: on desktop the two coincide, on iOS/Android
@@ -2527,6 +2543,7 @@
       window.removeEventListener("focus", onVisible);
       document.body.classList.remove("is-printing");
       document.body.classList.remove("pt-ink-saver");
+      document.body.classList.remove("pt-high-contrast");
       restoreAfterPrint();
       removePageStyle();
       el.printRoot.innerHTML = "";
@@ -4016,9 +4033,53 @@
       blank: true }
   ];
 
+  /* PR-13 / PR-32 -- the photocopy case is the OPPOSITE of the ink saver, and
+     the two had been treated as one axis. A copier smooths light shades toward
+     white and renders grey only by dithering, so the rungs that survive the
+     machine a classroom actually uses are pure black at a real line weight.
+     Every guide colour on these sheets is grey -- FAINT #d7dbe4, GUIDE
+     #9aa2b1, GUIDE_MID #c7ccd8, GHOST #c3c9d6 -- and the faint rung is 2 units
+     wide with a 0.1/22 dash, which is the first thing a copier drops.
+
+     Applied at levelSpec() and addGuide() rather than by CSS selector, because
+     what has to change differs per rung: a GHOST FILL cannot simply go black
+     (a child would be tracing over a solid letter), so it is redrawn as the
+     outline of the same letter, while a stroked rung keeps its own dash and
+     only gains colour and a weight floor. The solid model row is INK already
+     and is left alone. */
+  function highContrastOn() { return printPrefs.ink === "contrast"; }
+  const CONTRAST_INK = "#000000";
+  /* ~3 units at the 132-unit trace type size, held as a FRACTION of type size
+     so the same weight lands on the word surface, which draws at 150. On a
+     7in-wide sheet whose viewBox is ~552 units, one unit is about 0.9pt, so
+     this is the 1-2pt line the guidance asks for rather than a number picked
+     to look right on screen. A floor, never a rewrite: a rung already heavier
+     than this keeps its own weight. */
+  const CONTRAST_MIN_EM = 3 / 132;
+  function contrastStroke(fontSize, sw) {
+    return Math.max(fontSize * CONTRAST_MIN_EM, Number(sw) || 0);
+  }
+
+  function contrastSpec(spec) {
+    if (spec.blank) return spec;
+    const out = Object.assign({}, spec);
+    out.opacity = 1;
+    if (spec.fill && spec.fill !== "none" && spec.fill !== INK) {
+      out.fill = "none";
+      out.stroke = CONTRAST_INK;
+      out.sw = contrastStroke(TRACE_FONT_SIZE, spec.sw);
+      out.cap = spec.cap || "round";
+    } else if (spec.stroke && spec.stroke !== "none") {
+      out.stroke = CONTRAST_INK;
+      out.sw = contrastStroke(TRACE_FONT_SIZE, spec.sw);
+    }
+    return out;
+  }
+
   function levelSpec(level) {
     const i = Math.max(0, Math.min(TRACE_LEVELS.length - 1, (level || 1) - 1));
-    return TRACE_LEVELS[i];
+    const spec = TRACE_LEVELS[i];
+    return highContrastOn() ? contrastSpec(spec) : spec;
   }
 
   // Ruled guideline (top / midline / baseline) inside a worksheet SVG.
@@ -4028,8 +4089,9 @@
     l.setAttribute("x2", String(w - 8));
     l.setAttribute("y1", String(y));
     l.setAttribute("y2", String(y));
-    l.setAttribute("stroke", dashed ? GUIDE_MID : GUIDE);
-    l.setAttribute("stroke-width", dashed ? "1.5" : "2");
+    const hc = highContrastOn();
+    l.setAttribute("stroke", hc ? CONTRAST_INK : (dashed ? GUIDE_MID : GUIDE));
+    l.setAttribute("stroke-width", hc ? (dashed ? "2" : "2.5") : (dashed ? "1.5" : "2"));
     if (dashed) l.setAttribute("stroke-dasharray", "6 8");
     svg.appendChild(l);
   }
@@ -4388,7 +4450,7 @@
         ctx.beginPath();
         ctx.setLineDash(dashed ? [6, 8] : []);
         ctx.lineWidth = dashed ? 1.5 : 2;
-        ctx.strokeStyle = dashed ? GUIDE_MID : GUIDE;
+        ctx.strokeStyle = highContrastOn() ? CONTRAST_INK : (dashed ? GUIDE_MID : GUIDE);
         ctx.moveTo(pad * 0.5, y); ctx.lineTo(width - pad * 0.5, y); ctx.stroke();
       };
       drawGuide(base, false);

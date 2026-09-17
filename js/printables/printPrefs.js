@@ -126,11 +126,22 @@
       else if (PAPERS[saved.paper]) values.paper = saved.paper;
       if (saved.orient === "landscape" || saved.orient === "portrait") values.orient = saved.orient;
       if (MARGINS[saved.margin]) values.margin = saved.margin;
-      if (saved.ink === "saver" || saved.ink === "normal") values.ink = saved.ink;
+      if (saved.ink === "saver" || saved.ink === "normal" || saved.ink === "contrast") values.ink = saved.ink;
+      /* One localStorage key serves every page, so a visitor who turns high
+         contrast on in English and then opens a locale page would carry a mode
+         with no control to see or clear it. Cleared HERE rather than when the
+         panel is built, because the paper preview is painted first: resetting
+         later left the German caption reading "High contrast" over a sheet
+         that was not. */
+      if (values.ink === "contrast" && !docIsEnglish()) values.ink = "normal";
       if (SCALES[saved.quality]) values.quality = saved.quality;
     }
   } catch (err) { /* private mode or corrupt value: defaults apply */ }
 
+  function docIsEnglish() {
+    const el = document.documentElement;
+    return ((el && el.getAttribute("lang")) || "en").slice(0, 2).toLowerCase() === "en";
+  }
   function save() {
     try { localStorage.setItem(KEY, JSON.stringify(values)); } catch (err) { /* optional */ }
   }
@@ -295,9 +306,41 @@
         { key: "normal", label: L.normal || "Normal" },
         { key: "narrow", label: L.narrow || "Narrow" }
       ], values.margin, (k) => { values.margin = k; changed(); }));
-      if (wants("ink")) details.appendChild(checkRow(L.inkSaver || "Ink saver (lighter lines)",
-        values.ink === "saver",
-        (on) => { values.ink = on ? "saver" : "normal"; changed(); }, "pt-print-ink"));
+      if (wants("ink")) {
+        const saverRow = checkRow(L.inkSaver || "Ink saver (lighter lines)",
+          values.ink === "saver",
+          (on) => {
+            values.ink = on ? "saver" : "normal";
+            const other = details.querySelector(".pt-print-contrast input");
+            if (on && other) other.checked = false;
+            changed();
+          }, "pt-print-ink");
+        details.appendChild(saverRow);
+        /* PR-13 -- the photocopy case is the OPPOSITE of the ink saver, and it
+           had no control at all: `ink` was a two-value enum where both values
+           are "normal or lighter". A classroom copier drops the faint dotted
+           guides these sheets are built from, so the sheet that reaches thirty
+           children is the one this setting renders.
+
+           ENGLISH ONLY, and not for want of trying. Unlike "300 DPI" above
+           there is no numeral or international unit that says this, and unlike
+           every other label on this panel there is no already-shipped string
+           to reuse: neither printablesEngine's I18N table nor locales/*.json
+           carries a word for contrast or for photocopying in any of the eight.
+           Eight invented strings is not something this repo does, so the seven
+           other locales keep the panel they have until a native reading or
+           corpus evidence exists. Per the owner's decision of 2026-09-17. */
+        if (docIsEnglish()) {
+          details.appendChild(checkRow("High contrast (for photocopying)",
+            values.ink === "contrast",
+            (on) => {
+              values.ink = on ? "contrast" : "normal";
+              const other = details.querySelector(".pt-print-ink input");
+              if (on && other) other.checked = false;
+              changed();
+            }, "pt-print-contrast"));
+        }
+      }
       /* Deliberately labelled with a numeral and an international unit rather
          than a translated phrase. There is no word for "quality" attested
          anywhere on this site in any of the eight languages these pages ship

@@ -10104,3 +10104,31 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
 .pt-sp-demo.is-sp-widest { letter-spacing: 0.35em; }
 
 @media print { .pt-spacing-field { display: none; } }
+
+/* PR-13 -- high contrast for photocopying, the opposite axis to the ink
+   saver above. The rungs and ruled guides are darkened in the engine, where
+   what has to change differs per rung; this covers the two glyph surfaces
+   that print as CSS-coloured text rather than as SVG attributes. A literal
+   #000 rather than a theme token on purpose: the point is the single-channel
+   black a copier reproduces without dithering, which is a property of the
+   machine, not of the palette -- the same reason the sheet's own background
+   is a literal #fff. */
+body.is-printing.pt-high-contrast #pt-print-root .pt-glyph-print,
+body.is-printing.pt-high-contrast #pt-print-root .pt-name-glyph,
+body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-glyph-print,
+body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
+  color: #000;
+}
+
+/* The paper preview has to show the mode, or the control is indistinguishable
+   from one that does nothing -- the report the panel was rebuilt for on
+   2026-09-13. Ink saver fades the sheet above; high contrast does the
+   opposite, so the preview figure goes single-channel black and gains the
+   same weight floor the printed rungs do. */
+.pt-paper.is-high-contrast .pt-paper-sheet {
+  color: #000;
+}
+
+.pt-paper.is-high-contrast .pt-paper-sheet svg text {
+  stroke: #000;
+}
