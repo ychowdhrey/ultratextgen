@@ -1488,6 +1488,7 @@
     if (typeof genScriptKey !== "undefined" && genScriptKey) p.script = genScriptKey;
     if (CHAR_STYLES && charStyleKey) p.cstyle = charStyleKey;
     if (nameCase !== "as-typed") p.ncase = nameCase;
+    if (nUp > 1) p.nup = String(nUp);
     if (el.sizeControl && alphaSizeKey !== "full") p.size = alphaSizeKey;
     const heading = firstEl([el.designHeading, el.puzzleHeading]);
     if (heading && heading.value.trim()) p.heading = heading.value.trim();
@@ -1559,6 +1560,8 @@
       const chip = $("#pt-name-case [data-case=\"" + ncase + "\"]");
       if (chip) chip.click();
     }
+    const nup = parseInt(presetGet("nup"), 10);
+    if (NUP_CHOICES.indexOf(nup) !== -1) setNUp(nup);
     const cstyle = presetGet("cstyle");
     if (cstyle && typeof setCharStyle === "function" && CHAR_STYLES && CHAR_STYLES.some((x) => x.key === cstyle)) setCharStyle(cstyle);
     const size = presetGet("size");
@@ -3497,7 +3500,10 @@
     if (!host) return;
     const roster = primaryRoster();
     const n = roster ? rosterEntries(roster).length : 0;
-    let pages = 0;
+    // A roster's own page count, which the line never reported: at 1 it is
+    // the number every teacher was already paying, and it is what makes the
+    // N chips above legible without a sentence.
+    let pages = n > 1 ? Math.ceil(n / (nUp > 1 ? nUp : 1)) : 0;
     if (el.sizeControl && alphaSizeKey !== "full") {
       const preset = SIZE_PRESETS.filter((x) => x.key === alphaSizeKey)[0];
       if (preset && preset.heightIn) {
@@ -3523,6 +3529,102 @@
     o.value = "1";
     o.textContent = "1";
     sel.insertBefore(o, sel.firstChild);
+  }
+
+  /* PR-11 -- N-per-sheet. A 30-name class set cost 30 sheets of paper, on a
+     family whose own community evidence is "we can only afford printer ink a
+     couple times a year". Every sheet builder below already emitted one
+     .pt-sheet-page per item, so grouping them is the whole feature.
+
+     1 and 4, never 2, and that is geometry rather than an omission. A portrait
+     sheet dropped unrotated into half a portrait page scales by 0.5 -- the
+     same factor a 2x2 grid uses -- so unrotated 2-up prints the SAME letter
+     size on twice the paper and is strictly dominated by 4-up. A 2-up worth
+     offering has to rotate the sheet 90 degrees and derive its scale from
+     printArea(); that is its own piece of work, not a third chip here.
+
+     The chips are digits, so this adds no string in any language -- the same
+     reasoning addLowDensityOption already records. What explains them is the
+     sheet-cost line directly beneath, which is already localized and now
+     reports a roster's page count at whatever N is selected: 30 sheets / 30
+     pages at 1, 30 sheets / 8 pages at 4. */
+  const NUP_CHOICES = [1, 4];
+  let nUp = 1;
+
+  function appendSheetPages(container, items, makeNode) {
+    const per = nUp > 1 ? nUp : 1;
+    for (let i = 0; i < items.length; i += per) {
+      const chunk = items.slice(i, i + per);
+      const page = document.createElement("div");
+      page.className = "pt-sheet-page";
+      if (per === 1) {
+        page.appendChild(makeNode(chunk[0], i));
+      } else {
+        page.classList.add("is-nup", "is-nup-" + per);
+        /* The cells live in their own grid rather than directly on the page,
+           because the page also carries chrome it does not control: printWrap
+           inserts the job title into the unit when a job is exactly one page,
+           and attachCredit appends the credit to every unit. Both were landing
+           in grid cells -- measured, the title took cell 1 and pushed the
+           fourth sheet into the credit's auto row at 0px tall, and its
+           min-content width split the columns 504/205 instead of in half.
+           A flex column with the grid as its one growing child lets the title
+           and the credit claim their natural height and the sheets take what
+           is left, so nothing here has to know how tall a heading is. */
+        const grid = document.createElement("div");
+        grid.className = "pt-nup-grid";
+        chunk.forEach((it, j) => {
+          const cell = document.createElement("div");
+          cell.className = "pt-nup-cell";
+          cell.appendChild(makeNode(it, i + j));
+          grid.appendChild(cell);
+        });
+        page.appendChild(grid);
+      }
+      container.appendChild(page);
+    }
+  }
+
+  function setNUp(n) {
+    nUp = NUP_CHOICES.indexOf(n) === -1 ? 1 : n;
+    const row = $("#pt-nup-row");
+    if (row) $$(".pt-choice", row).forEach((b) => {
+      const on = Number(b.dataset.nup) === nUp;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
+    });
+    updateSheetCost();
+  }
+
+  /* Only where a roster exists: N-per-sheet changes nothing on a page that
+     prints one sheet, and a control with no consequence is the defect the
+     print-settings panel already records. Named by T.classSet, which ships in
+     all eight languages and is the thing being configured. */
+  function mountNUp() {
+    if ($("#pt-nup-row") || !primaryRoster()) return;
+    const host = $("#pt-sheet-cost");
+    if (!host) return;
+    const row = document.createElement("div");
+    row.id = "pt-nup-row";
+    row.className = "pt-choice-row pt-nup-row";
+    row.setAttribute("role", "radiogroup");
+    row.setAttribute("aria-label", T.classSet);
+    NUP_CHOICES.forEach((n) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pt-choice";
+      b.dataset.nup = String(n);
+      b.textContent = String(n);
+      b.setAttribute("role", "radio");
+      const on = n === nUp;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
+      b.addEventListener("click", () => setNUp(n));
+      row.appendChild(b);
+    });
+    host.insertAdjacentElement("beforebegin", row);
   }
 
   function mountSheetCost() {
@@ -3697,12 +3799,7 @@
     if (names.length >= 2) {
       const set = document.createElement("div");
       set.className = "pt-class-set";
-      names.forEach((n) => {
-        const page = document.createElement("div");
-        page.className = "pt-sheet-page";
-        page.appendChild(nameSheetNode(applyNameCase(n)));
-        set.appendChild(page);
-      });
+      appendSheetPages(set, names, (n) => nameSheetNode(applyNameCase(n)));
       printWrap(joinWords([names.length + " " + T.sheets, "·", cap(NOUN)]), set, "name_worksheet");
       return;
     }
@@ -4139,12 +4236,7 @@
     if (entries.length >= 2) {
       const set = document.createElement("div");
       set.className = "pt-class-set";
-      entries.forEach((e) => {
-        const page = document.createElement("div");
-        page.className = "pt-sheet-page";
-        page.appendChild(genSheetNode(e.name, e.level));
-        set.appendChild(page);
-      });
+      appendSheetPages(set, entries, (e) => genSheetNode(e.name, e.level));
       // A mixed set has no one level to name, so the title says how many
       // sheets rather than asserting a level that is only true of some.
       const mixed = entries.some((e) => e.level != null && e.level !== genLevel());
@@ -4161,12 +4253,7 @@
     const word = genValue();
     const set = document.createElement("div");
     set.className = "pt-class-set";
-    TRACE_LEVELS.forEach((spec, i) => {
-      const page = document.createElement("div");
-      page.className = "pt-sheet-page";
-      page.appendChild(genSheetNode(word, i + 1));
-      set.appendChild(page);
-    });
+    appendSheetPages(set, TRACE_LEVELS, (spec, i) => genSheetNode(word, i + 1));
     printWrap(joinWords([word, "\u00b7", TRACE_LEVELS.length + " " + T.sheets, "\u00b7", siteCredit()]), set, "generator_ladder");
   }
 
@@ -5788,12 +5875,7 @@
     const names = designIsClassMode() ? rosterNames(el.designRoster) : [];
     if (names.length >= 2) {
       holder.classList.add("pt-class-set");
-      names.forEach((n) => {
-        const page = document.createElement("div");
-        page.className = "pt-sheet-page";
-        page.appendChild(designSheetSVG(n));
-        holder.appendChild(page);
-      });
+      appendSheetPages(holder, names, (n) => designSheetSVG(n));
       printWrap("", holder, "design");
       return;
     }
@@ -5820,12 +5902,9 @@
       floor = got;
       return true;
     });
-    levels.forEach((lvl) => {
+    appendSheetPages(holder, levels, (lvl) => {
       designState.density = lvl.key;
-      const page = document.createElement("div");
-      page.className = "pt-sheet-page";
-      page.appendChild(designSheetSVG());
-      holder.appendChild(page);
+      return designSheetSVG();
     });
     designState.density = picked;
     printWrap("", holder, "design_ladder");
@@ -6509,12 +6588,7 @@
     const names = rosterNames(el.puzzleRoster);
     if (names.length >= 2) {
       holder.classList.add("pt-class-set");
-      names.forEach((n) => {
-        const page = document.createElement("div");
-        page.className = "pt-sheet-page";
-        page.appendChild(puzzleSheetNode(n));
-        holder.appendChild(page);
-      });
+      appendSheetPages(holder, names, (n) => puzzleSheetNode(n));
       printWrap("", holder, "puzzle");
       return;
     }
@@ -6666,7 +6740,6 @@
        created here is written back onto it rather than re-queried everywhere. */
     mountNameCase();
     mountLeftHanded();
-    mountSheetCost();
     [el.nameRows, el.genRows].forEach(addLowDensityOption);
     /* After load, not here: footer.js is deferred and sits AFTER this file in
        document order, so at init() the footer this reads its labels from does
@@ -6680,6 +6753,15 @@
         if (made) el[kind + "Roster"] = made;
       });
     }
+    /* AFTER mountRoster, not before it. Both of these read primaryRoster():
+       the cost line binds its input listener to one, and the N chips exist
+       only where one does. el.*Roster is captured at module scope, so on the
+       nine locale pages that take CFG.roster === true it is still null when
+       init starts -- which left those pages with a cost line that never
+       updated as you typed, and would have left them with no N control at
+       all. Measured on de/zum-ausdrucken/namen-schreiben before the move. */
+    mountSheetCost();
+    mountNUp();
     applyPresetInputs();
     initStrokeToggle();
     /* Before the first paint, not after: setCharStyle() reassigns the FONT

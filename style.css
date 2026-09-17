@@ -10032,3 +10032,59 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
   line-height: 1.35;
   color: var(--text-secondary);
 }
+
+/* PR-11 -- N sheets per page.
+
+   The page is a flex column of the real printable height (--pt-page-h,
+   published by applySheetMetrics at print time). Its chrome -- the job title
+   printWrap inserts into a single-page unit, and the credit attachCredit
+   appends to every unit -- takes its natural height, and .pt-nup-grid takes
+   what is left. Nothing here estimates how tall a heading is.
+
+   Each sheet is absolutely positioned at twice its cell in both axes and
+   scaled by half. Absolute inside a position:relative parent is the pairing
+   the print-settings work already settled on: it makes the percentage height
+   resolve AND takes the sheet out of flow, so a 200%-wide child cannot push
+   the track it sits in. minmax(0, 1fr) rather than 1fr for the same reason a
+   grid item gets min-width:0 -- an auto minimum is what split the columns
+   504/205 on the first attempt. */
+.pt-sheet-page.is-nup {
+  display: flex;
+  flex-direction: column;
+  height: var(--pt-page-h, 9.6in);
+}
+
+.pt-nup-grid {
+  flex: 1 1 auto;
+  display: grid;
+  gap: 0.12in;
+  min-height: 0;
+}
+
+.pt-sheet-page.is-nup-4 .pt-nup-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.pt-nup-cell {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+}
+
+.pt-nup-cell > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: top left;
+}
+
+.pt-nup-row {
+  margin-top: 0.5rem;
+}
+
+@media print { .pt-nup-row { display: none; } }
