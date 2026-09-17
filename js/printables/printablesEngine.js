@@ -795,7 +795,7 @@
     const o = opts || {};
     const chars = [...String(word)];
     const fontSize = 150;
-    const spacing = fontSize * (o.spacing != null ? o.spacing : LETTER_SPACING);
+    const spacing = fontSize * ((o.spacing != null ? o.spacing : LETTER_SPACING) + spacingBoost);
     const w = Math.max(200, chars.length * 118 + 80 + Math.max(0, chars.length - 1) * spacing);
     const svg = document.createElementNS(SVGNS, "svg");
     svg.setAttribute("viewBox", "0 0 " + w + " 200");
@@ -1489,6 +1489,7 @@
     if (CHAR_STYLES && charStyleKey) p.cstyle = charStyleKey;
     if (nameCase !== "as-typed") p.ncase = nameCase;
     if (nUp > 1) p.nup = String(nUp);
+    if (spacingKey !== "normal") p.sp = spacingKey;
     if (el.sizeControl && alphaSizeKey !== "full") p.size = alphaSizeKey;
     const heading = firstEl([el.designHeading, el.puzzleHeading]);
     if (heading && heading.value.trim()) p.heading = heading.value.trim();
@@ -1560,6 +1561,8 @@
       const chip = $("#pt-name-case [data-case=\"" + ncase + "\"]");
       if (chip) chip.click();
     }
+    const sp = presetGet("sp");
+    if (sp && SPACING_STEPS.some((x) => x.key === sp)) setSpacing(sp, { quiet: true });
     const nup = parseInt(presetGet("nup"), 10);
     if (NUP_CHOICES.indexOf(nup) !== -1) setNUp(nup);
     const cstyle = presetGet("cstyle");
@@ -2112,7 +2115,7 @@
   function wordPNG(text, opts) {
     const o = opts || {};
     const fam = o.font || FONT;
-    const spacingEm = o.spacing != null ? o.spacing : LETTER_SPACING;
+    const spacingEm = (o.spacing != null ? o.spacing : LETTER_SPACING) + spacingBoost;
     withFont(() => {
       const width = 1600, height = 520, pad = 90;
       const canvas = document.createElement("canvas");
@@ -3855,6 +3858,97 @@
     const host = rows.closest(".pt-field, .pt-opt, .pt-name-rows-field") || rows.parentElement;
     host.insertAdjacentElement("afterend", wrap);
   }
+  /* PR-31 -- letter spacing as a control.
+
+     CFG.letterSpacing has always existed as a per-page config value and was
+     exposed nowhere, so the one formatting change with primary evidence behind
+     it could not be made by the person printing the sheet. The steps are the
+     British Dyslexia Association Style Guide's own quantification: tracking
+     "ideally around 35% of the average letter width".
+
+     It is offered as A FORMATTING OPTION AND NOTHING ELSE. No label, hint or
+     aria string here names a condition, a reading outcome or a study; this
+     site is not qualified to make that claim and the audit that asked for the
+     control said so in the same sentence that asked for it.
+
+     A boost added to whatever the active style says, never a replacement for
+     it: setCharStyle() and the name-style designer both write LETTER_SPACING /
+     opts.spacing, and overwriting either would silently undo a chosen
+     letterform's own tracking.
+
+     English only, the same bail mountCarryRow and mountLeftHanded already
+     take. "Letter spacing" is a new string and the site's own corpus does not
+     attest a translation of it in six of the seven other locales (de, it and
+     pl have none at all; fr, es and pt have one page each), so there is
+     nothing to harvest and nothing here will be invented. */
+  const SPACING_STEPS = [
+    { key: "normal", em: 0, label: "Normal" },
+    { key: "wide", em: 0.12, label: "Wide" },
+    { key: "widest", em: 0.35, label: "Extra wide" }
+  ];
+  let spacingBoost = 0;
+  let spacingKey = "normal";
+
+  function repaintWordSurfaces() {
+    if (el.nameInput || el.namePreview) renderNamePreview();
+    if (el.genInput || el.genPreview) renderGenPreview();
+  }
+
+  function setSpacing(key, opts) {
+    const step = SPACING_STEPS.filter((x) => x.key === key)[0] || SPACING_STEPS[0];
+    spacingKey = step.key;
+    spacingBoost = step.em;
+    const row = $("#pt-spacing-row");
+    if (row) $$(".pt-choice", row).forEach((b) => {
+      const on = b.dataset.spacing === spacingKey;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
+    });
+    if (!(opts && opts.quiet)) repaintWordSurfaces();
+  }
+
+  function mountSpacing() {
+    const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
+    if (lang !== "en") return;
+    const rows = el.nameRows || el.genRows;
+    if (!rows || $("#pt-spacing-row")) return;
+    const field = document.createElement("div");
+    field.className = "pt-spacing-field";
+    const lab = document.createElement("span");
+    lab.className = "pt-field-label";
+    lab.textContent = "Letter spacing";
+    field.appendChild(lab);
+    const row = document.createElement("div");
+    row.id = "pt-spacing-row";
+    row.className = "pt-choice-row pt-spacing-row";
+    row.setAttribute("role", "radiogroup");
+    row.setAttribute("aria-label", "Letter spacing");
+    SPACING_STEPS.forEach((step) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pt-choice";
+      b.dataset.spacing = step.key;
+      // The chip IS the demonstration: the same two letters at the tracking
+      // it sets, so the difference is visible before anything is printed.
+      const demo = document.createElement("span");
+      demo.className = "pt-sp-demo is-sp-" + step.key;
+      demo.textContent = "Aa";
+      b.appendChild(demo);
+      b.setAttribute("role", "radio");
+      b.setAttribute("aria-label", step.label);
+      const on = step.key === spacingKey;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
+      b.addEventListener("click", () => setSpacing(step.key));
+      row.appendChild(b);
+    });
+    field.appendChild(row);
+    const host = rows.closest(".pt-field, .pt-opt, .pt-name-rows-field") || rows.parentElement;
+    host.insertAdjacentElement("afterend", field);
+  }
+
   // A small second copy of the model at the right-hand end of a trace row.
   function leftyModel(node) {
     const aside = document.createElement("span");
@@ -3949,7 +4043,14 @@
     const o = opts || {};
     const spec = levelSpec(level);
     const chars = [...String(word)];
-    const w = Math.max(360, chars.length * 116 + 120);
+    // The trace rows had no tracking at all, so a spacing choice that moved
+    // the name preview would have left the sheet under it unchanged. The
+    // viewBox grows with the gap, or a wider word is clipped instead of set.
+    // track:false opts out, which the difficulty-ladder legend takes: those
+    // samples illustrate fill, stroke and dash, and are built once at init,
+    // so a spacing change must neither move them nor leave them stale.
+    const trackPx = o.track === false ? 0 : TRACE_FONT_SIZE * spacingBoost;
+    const w = Math.max(360, chars.length * (116 + trackPx) + 120);
     const svg = document.createElementNS(SVGNS, "svg");
     svg.setAttribute("viewBox", "0 0 " + w + " " + TRACE_H);
     svg.setAttribute("class", "pt-trace-svg");
@@ -3968,6 +4069,13 @@
       t.setAttribute("font-family", FONT);
       t.setAttribute("font-weight", "700");
       t.setAttribute("font-size", String(TRACE_FONT_SIZE));
+      if (trackPx) {
+        // dx pulls back half the trailing gap letter-spacing adds after the
+        // final glyph, so a centred word stays centred -- the same correction
+        // wordOutlineSVG already makes.
+        t.setAttribute("letter-spacing", String(trackPx));
+        t.setAttribute("dx", String(-trackPx / 2));
+      }
       t.setAttribute("fill", spec.fill);
       if (spec.stroke && spec.stroke !== "none") {
         t.setAttribute("stroke", spec.stroke);
@@ -3979,7 +4087,7 @@
       if (spec.opacity != null && spec.opacity !== 1) t.setAttribute("opacity", String(spec.opacity));
       t.textContent = word;
       svg.appendChild(t);
-      if (o.overlay) addWordStrokeOverlay(svg, word, TRACE_FONT_SIZE, 0, TRACE_BASE, "alphabetic", w);
+      if (o.overlay) addWordStrokeOverlay(svg, word, TRACE_FONT_SIZE, trackPx, TRACE_BASE, "alphabetic", w);
     }
     return svg;
   }
@@ -4182,7 +4290,7 @@
       addGuide(svg, 120, 42, false);
       return svg;
     }
-    const svg = traceWordSVG("Aa", level, { guides: false });
+    const svg = traceWordSVG("Aa", level, { guides: false, track: false });
     svg.setAttribute("class", "pt-trace-svg pt-level-sample");
     svg.setAttribute("aria-hidden", "true");
     return svg;
@@ -6740,6 +6848,7 @@
        created here is written back onto it rather than re-queried everywhere. */
     mountNameCase();
     mountLeftHanded();
+    mountSpacing();
     [el.nameRows, el.genRows].forEach(addLowDensityOption);
     /* After load, not here: footer.js is deferred and sits AFTER this file in
        document order, so at init() the footer this reads its labels from does

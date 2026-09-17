@@ -10088,3 +10088,19 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
 }
 
 @media print { .pt-nup-row { display: none; } }
+
+/* PR-31 -- letter spacing as a control. The chip is its own demonstration:
+   the same two letters set at the tracking it applies. Values match
+   SPACING_STEPS in printablesEngine.js. */
+.pt-spacing-field {
+  margin-top: 0.75rem;
+}
+
+.pt-sp-demo {
+  font-weight: 700;
+}
+
+.pt-sp-demo.is-sp-wide { letter-spacing: 0.12em; }
+.pt-sp-demo.is-sp-widest { letter-spacing: 0.35em; }
+
+@media print { .pt-spacing-field { display: none; } }
