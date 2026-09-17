@@ -10132,3 +10132,16 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
 .pt-paper.is-high-contrast .pt-paper-sheet svg text {
   stroke: #000;
 }
+
+/* OUT-15 -- the bridged-stencil toggle. Same shape as the left-handed field
+   beside it; the mode itself is drawn in the SVG, not here. */
+.pt-stencil-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+@media print { .pt-stencil-field { display: none; } }

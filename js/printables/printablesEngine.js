@@ -747,6 +747,119 @@
      --------------------------------------------------------------- */
 
   // A single character as a rounded, traceable SVG outline (outline mode).
+  /* OUT-15 -- bridged stencils.
+
+     /printables/block-letters/ is titled "Block Letters & Letter Stencils",
+     its how-to step 2 says "cut along the border for a reusable stencil", and
+     cutting along the border of A B D O P Q R 0 4 6 8 9 drops the counter on
+     the floor. Twelve of its thirty-six characters could not be made into the
+     thing the page is named after.
+
+     The bridges are found from the glyph, by js/printables/stencil.js, rather
+     than from a per-letter table: a table would be tuned to one typeface and
+     silently wrong for the next, and a page here can choose its own face.
+
+     ADDITIVE AND OFF BY DEFAULT. This page is the site's largest single
+     revenue URL and its registry action is PROTECT/additive-only, so the
+     ordinary outline is byte-for-byte what it was and the stencil is a second
+     mode behind a control the visitor has to turn on.
+
+     Geometry is mapped INK BOX TO INK BOX, never by assuming the two
+     rasterisers agree about baselines: canvas has no equivalent of SVG's
+     dominant-baseline:central, so the mask is measured from its own pixels
+     and the stencil variant places its text by an explicitly computed ink
+     box. That is also why the stencil variant sits fractionally differently
+     from the plain outline -- it is centred on its ink rather than on the
+     font's central axis. */
+  const STENCIL_TYPE_PX = 200;        // canvas type size the mask is drawn at
+  const STENCIL_BRIDGE_EM = 0.055;    // strip width, as a fraction of ink height
+  let stencilOnFlag = false;
+  let stencilWarned = false;
+
+  function stencilModule() {
+    const ns = window.UltraTextGen && window.UltraTextGen.stencil;
+    if (!ns && !stencilWarned) {
+      stencilWarned = true;
+      console.warn("[printables] js/printables/stencil.js has not loaded; the stencil mode draws the plain outline, with no bridges.");
+    }
+    return ns || null;
+  }
+  function loadStencilModule() {
+    if (window.UltraTextGen && window.UltraTextGen.stencil) return;
+    if (document.querySelector("script[data-pt-stencil]")) return;
+    const sc = document.createElement("script");
+    sc.src = "/js/printables/stencil.js";
+    sc.async = true;
+    sc.setAttribute("data-pt-stencil", "");
+    sc.onerror = () => console.warn("[printables] js/printables/stencil.js failed to load; the stencil mode draws the plain outline.");
+    document.head.appendChild(sc);
+  }
+  function stencilOn() { return stencilOnFlag && CFG.stencil === true && RENDER === "outline"; }
+
+  /* The glyph as a bitmap, plus the ink box measured from the bitmap itself
+     and the type metrics the caller needs to place the same glyph elsewhere.
+     Returns null for a character with no ink (a space) or before the face has
+     loaded, and the caller then draws the plain outline. */
+  function stencilMask(ch) {
+    const probe = document.createElement("canvas").getContext("2d");
+    if (!probe) return null;
+    const M = STENCIL_TYPE_PX;
+    probe.font = "700 " + M + "px " + FONT;
+    const m = probe.measureText(ch);
+    const left = -m.actualBoundingBoxLeft, right = m.actualBoundingBoxRight;
+    const top = -m.actualBoundingBoxAscent, bottom = m.actualBoundingBoxDescent;
+    const iw = right - left, ih = bottom - top;
+    if (!(iw > 1 && ih > 1)) return null;
+    const pad = Math.ceil(Math.max(iw, ih) * 0.1) + 4;
+    const canvas = document.createElement("canvas");
+    canvas.width = Math.ceil(iw) + pad * 2;
+    canvas.height = Math.ceil(ih) + pad * 2;
+    const g = canvas.getContext("2d");
+    g.font = "700 " + M + "px " + FONT;
+    g.textAlign = "left";
+    g.textBaseline = "alphabetic";
+    g.fillStyle = "#000000";
+    g.fillText(ch, pad - left, pad - top);
+    const data = g.getImageData(0, 0, canvas.width, canvas.height).data;
+    const mask = new Uint8Array(canvas.width * canvas.height);
+    let minX = canvas.width, minY = canvas.height, maxX = -1, maxY = -1;
+    for (let i = 0, j = 0; i < data.length; i += 4, j++) {
+      if (data[i + 3] <= 128) continue;
+      mask[j] = 1;
+      const x = j % canvas.width, y = (j - x) / canvas.width;
+      if (x < minX) minX = x;
+      if (x > maxX) maxX = x;
+      if (y < minY) minY = y;
+      if (y > maxY) maxY = y;
+    }
+    if (maxX < 0) return null;
+    return {
+      mask: mask, w: canvas.width, h: canvas.height,
+      box: { x: minX, y: minY, w: maxX - minX + 1, h: maxY - minY + 1 },
+      M: M, left: left, right: right, top: top, bottom: bottom
+    };
+  }
+
+  /* Bridge rectangles in a destination ink box. strokePx is the outline's own
+     stroke weight in destination units, so the strip is wide enough to cover
+     the cut line on both sides of the wall rather than leaving two hairlines
+     the scissors follow anyway. */
+  function stencilRects(geo, dst, strokePx) {
+    const sten = stencilModule();
+    if (!sten || !geo) return [];
+    const toDst = dst.h / geo.box.h;
+    const width = Math.max(2, Math.round(dst.h * STENCIL_BRIDGE_EM / toDst));
+    const pad = Math.max(1, Math.round((strokePx || 0) / toDst));
+    const rects = sten.findBridges(geo.mask, geo.w, geo.h, { width: width, pad: pad });
+    const sx = dst.w / geo.box.w, sy = dst.h / geo.box.h;
+    return rects.map((r) => ({
+      x: dst.x + (r.x - geo.box.x) * sx,
+      y: dst.y + (r.y - geo.box.y) * sy,
+      w: r.w * sx,
+      h: r.h * sy
+    }));
+  }
+
   function outlineSVG(ch, opts) {
     const o = opts || {};
     const svg = document.createElementNS(SVGNS, "svg");
@@ -782,6 +895,38 @@
     if (skew) text.setAttribute("transform", skew);
     text.textContent = ch;
     svg.appendChild(text);
+    /* The stencil variant re-places the glyph on its own ink box so the
+       bridges can be mapped onto it exactly, and then breaks the cut line
+       where the walls are thinnest. A character with no counter gets no
+       rects, which is why nothing had to enumerate which twelve they are. */
+    const wantStencil = o.stencil != null ? o.stencil : stencilOn();
+    if (wantStencil && !skew) {
+      const geo = stencilMask(ch);
+      if (geo) {
+        const k = 210 / geo.M;
+        const dst = {
+          w: (geo.right - geo.left) * k,
+          h: (geo.bottom - geo.top) * k,
+          x: 0, y: 0
+        };
+        dst.x = 100 - dst.w / 2;
+        dst.y = 120 - dst.h / 2;
+        text.setAttribute("text-anchor", "start");
+        text.setAttribute("dominant-baseline", "alphabetic");
+        text.setAttribute("x", String(dst.x - geo.left * k));
+        text.setAttribute("y", String(dst.y - geo.top * k));
+        const sw = Math.max(4, STROKE * strokeScale);
+        stencilRects(geo, dst, sw).forEach((r) => {
+          const rect = document.createElementNS(SVGNS, "rect");
+          rect.setAttribute("x", String(r.x));
+          rect.setAttribute("y", String(r.y));
+          rect.setAttribute("width", String(r.w));
+          rect.setAttribute("height", String(r.h));
+          rect.setAttribute("fill", "#ffffff");
+          svg.appendChild(rect);
+        });
+      }
+    }
     if (o.overlay) addStrokeOverlay(svg, ch);
     return svg;
   }
@@ -1501,6 +1646,7 @@
     if (nameCase !== "as-typed") p.ncase = nameCase;
     if (nUp > 1) p.nup = String(nUp);
     if (spacingKey !== "normal") p.sp = spacingKey;
+    if (stencilOnFlag) p.st = "1";
     if (el.sizeControl && alphaSizeKey !== "full") p.size = alphaSizeKey;
     const heading = firstEl([el.designHeading, el.puzzleHeading]);
     if (heading && heading.value.trim()) p.heading = heading.value.trim();
@@ -1571,6 +1717,10 @@
     if (ncase === "upper" || ncase === "lower") {
       const chip = $("#pt-name-case [data-case=\"" + ncase + "\"]");
       if (chip) chip.click();
+    }
+    if (presetGet("st") === "1") {
+      const stBox = $("#pt-stencil");
+      if (stBox) { stBox.checked = true; stencilOnFlag = true; }
     }
     const sp = presetGet("sp");
     if (sp && SPACING_STEPS.some((x) => x.key === sp)) setSpacing(sp, { quiet: true });
@@ -2078,6 +2228,28 @@
       ctx.font = "700 " + letterFs + "px " + FONT;
       if (RENDER === "outline") {
         paintOutlineText(ctx, glyph, size / 2, size * 0.5, letterFs);
+        /* The PNG is the one artifact that leaves the site, so a stencil
+           downloaded as an image has to carry its bridges too. The ink box is
+           read from measureText under the SAME textAlign/textBaseline the
+           glyph was drawn with, so this needs no assumption about where
+           "middle" puts the em box -- it maps ink box to ink box exactly as
+           the SVG path does. */
+        if (stencilOn()) {
+          const geo = stencilMask(glyph);
+          if (geo) {
+            const mm = ctx.measureText(glyph);
+            const dst = {
+              x: size / 2 - mm.actualBoundingBoxLeft,
+              y: size * 0.5 - mm.actualBoundingBoxAscent,
+              w: mm.actualBoundingBoxLeft + mm.actualBoundingBoxRight,
+              h: mm.actualBoundingBoxAscent + mm.actualBoundingBoxDescent
+            };
+            ctx.fillStyle = "#ffffff";
+            stencilRects(geo, dst, outlineLineWidth(letterFs)).forEach((r) => {
+              ctx.fillRect(r.x, r.y, r.w, r.h);
+            });
+          }
+        }
       } else {
         ctx.fillStyle = INK;
         ctx.fillText(glyph, size / 2, size * 0.54);
@@ -3964,6 +4136,34 @@
     field.appendChild(row);
     const host = rows.closest(".pt-field, .pt-opt, .pt-name-rows-field") || rows.parentElement;
     host.insertAdjacentElement("afterend", field);
+  }
+
+  /* OUT-15's control. ENGLISH ONLY, the same bail mountCarryRow and
+     mountLeftHanded take: "bridged stencil" is a new string and neither the
+     engine's I18N table nor locales/*.json carries a word for a stencil
+     bridge in any of the eight, so the four locale siblings keep today's
+     behaviour until a native reading exists. Per the owner's decision of
+     2026-09-17 on the label-blocked items. Off by default on a PROTECT page. */
+  function mountStencilToggle() {
+    const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
+    if (lang !== "en" || CFG.stencil !== true || RENDER !== "outline") return;
+    const host = el.sizeControl ? el.sizeControl.parentNode : (el.alphaPrint && el.alphaPrint.closest(".bubble-actions, .pt-actions"));
+    if (!host || $("#pt-stencil")) return;
+    const wrap = document.createElement("label");
+    wrap.className = "pt-stencil-field";
+    const box = document.createElement("input");
+    box.type = "checkbox";
+    box.id = "pt-stencil";
+    box.addEventListener("change", () => {
+      stencilOnFlag = box.checked;
+      withFont(() => {
+        paintAlphabetGrid();
+        if (activeChar) selectChar(activeChar);
+      });
+    });
+    wrap.appendChild(box);
+    wrap.appendChild(document.createTextNode(" Bridged stencil (counters stay attached when cut)"));
+    host.insertAdjacentElement("afterend", wrap);
   }
 
   // A small second copy of the model at the right-hand end of a trace row.
@@ -6911,6 +7111,8 @@
     mountNameCase();
     mountLeftHanded();
     mountSpacing();
+    if (CFG.stencil === true) loadStencilModule();
+    mountStencilToggle();
     [el.nameRows, el.genRows].forEach(addLowDensityOption);
     /* After load, not here: footer.js is deferred and sits AFTER this file in
        document order, so at init() the footer this reads its labels from does
