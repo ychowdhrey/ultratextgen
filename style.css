@@ -9930,3 +9930,79 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
    character itself, so the control carries no translated label; its group
    takes an accessible name from the locale's own word for "letter". */
 .pt-dot-case { margin: 0.55rem 0 0; }
+
+/* Name and Date line on the collected practice sheets (name tracing, letter
+   tracing, handwriting, sight words). Tokens only, per the CSS conventions;
+   the rule is a border rather than an <hr> so it prints as one hairline. */
+.pt-sheet-footer {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.4rem;
+  padding-top: 0.25rem;
+}
+.pt-sheet-footer-field {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  flex: 1 1 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.pt-sheet-footer-rule {
+  flex: 1 1 auto;
+  border-bottom: 2px solid var(--border-light);
+  height: 0.9em;
+}
+@media print {
+  .pt-sheet-footer-field { color: #1a1a2e; }
+  .pt-sheet-footer-rule { border-bottom-color: #9aa3b2; }
+}
+
+/* "Same word, another sheet" -- the journey links under a generator input.
+   Screen only: a printed sheet has nowhere to click. */
+.pt-carry-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 0.75rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+.pt-carry-label { color: var(--text-secondary); font-weight: 600; }
+.pt-carry-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 1px;
+}
+.pt-carry-link:hover, .pt-carry-link:focus-visible { border-bottom-color: currentColor; }
+@media print { .pt-carry-row { display: none; } }
+
+/* How many sheets this print will cost, before it is pressed. Screen only. */
+.pt-sheet-cost {
+  margin: 0.5rem 0 0;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+@media print { .pt-sheet-cost { display: none; } }
+
+/* Left-handed mode: a small second model at the right end of each trace row,
+   so the model stays visible under a left hand travelling left to right. */
+.pt-lefty-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+.pt-name-row .pt-lefty-model,
+.pt-gen-row .pt-lefty-model {
+  flex: 0 0 auto;
+  width: 14%;
+  align-self: center;
+  opacity: 0.75;
+}
+.pt-lefty-model svg { width: 100%; height: auto; display: block; }
+@media print { .pt-lefty-field { display: none; } }

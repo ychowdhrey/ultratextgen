@@ -99,12 +99,26 @@
     orient: "portrait",
     margin: "normal",
     ink: "normal",
-    quality: "normal"
+    /* 288 DPI by default, not 192. The print dialog used to be the primary
+       route and the browser rendered vector text at the printer's own
+       resolution; since 2026-09-15 every sheet action writes a raster PDF, so
+       the render scale IS the resolution of the thing the visitor gets, and
+       "normal" was handing a 169x175 DPI image to someone about to print and
+       cut it. Kept behind the same one-line switch rather than removed, and
+       renderPages() drops long batch jobs back to 2 on its own. */
+    quality: "high"
   };
 
+  /* Whether this visitor has print settings of their own. A shared preset
+     carries the SENDER's paper, and paper is a property of the recipient's
+     printer rather than of the sheet -- an A4 teacher opening a US colleague's
+     link was being handed US Letter. So a link may seed paper for someone who
+     has never chosen, and never overrides someone who has. */
+  let stored = false;
   try {
     const saved = JSON.parse(localStorage.getItem(KEY) || "null");
     if (saved && typeof saved === "object") {
+      stored = true;
       /* A stored "auto" is a pref from before this module existed. Resolve it
          to the detected paper rather than dropping it: the visitor never
          chose Letter, the old default chose it for them. */
@@ -240,6 +254,16 @@
     paperFull: paperFull,
     marginIn: marginIn,
     scale: scale,
+    hasStored: function () { return stored; },
+    /* The chosen paper's own name, in this page's language. The printables
+       preview meta printed a hardcoded "US Letter" on every page in every
+       locale, which stopped being true the moment paper became a control --
+       the same "a control with no visible consequence" defect from the other
+       end, where the display asserts a setting nobody chose. */
+    paperLabel: function () {
+      const L = panelLabels();
+      return L[values.paper] || L.letter || "US Letter";
+    },
     pageStyleCss: pageStyleCss,
     save: save,
     /* o.only, when given, lists the controls this caller actually honours.

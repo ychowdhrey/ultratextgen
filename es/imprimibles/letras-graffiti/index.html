@@ -231,6 +231,16 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <section class="bubble-az" aria-labelledby="ptPickHeading">
       <h2 class="bubble-az-heading" id="ptPickHeading">Elige una letra de graffiti</h2>
       <p class="bubble-az-intro">Toca una letra (A–Z) o un número (0–9) para ver su contorno de graffiti a tamaño grande, imprimirlo, calcarlo o descargarlo en PNG.</p>
+      <div class="pt-size-field">
+        <p class="pt-size-field-label">Estilo de graffiti</p>
+        <div class="pt-segment" id="pt-char-styles" role="radiogroup" aria-label="Estilo de graffiti">
+          <button type="button" class="pt-gen-preset pt-char-style-opt" data-style="tag" aria-pressed="true">Tag <small>firma callejera rápida</small></button>
+          <button type="button" class="pt-gen-preset pt-char-style-opt" data-style="marker" aria-pressed="false">Rotulador <small>trazo a mano</small></button>
+          <button type="button" class="pt-gen-preset pt-char-style-opt" data-style="throwup" aria-pressed="false">Throw-up <small>contorno gordo y redondeado</small></button>
+          <button type="button" class="pt-gen-preset pt-char-style-opt" data-style="spray" aria-pressed="false">Spray <small>textura de aerosol</small></button>
+          <button type="button" class="pt-gen-preset pt-char-style-opt" data-style="block" aria-pressed="false">Blockbuster <small>mayúsculas de bloque</small></button>
+        </div>
+      </div>
       <div class="bubble-strip" id="pt-strip" role="tablist" aria-label="Elegir una letra o un número de graffiti"></div>
       <div class="bubble-letter-panel" id="pt-panel" aria-live="polite"></div>
       <p class="bubble-az-intro">¿Quieres el abecedario de grafiti completo? Imprime la A–Z y los números 0–9 de una vez — en una sola hoja, o como cuaderno de práctica con una letra por página (elige “Guardar como PDF” en el diálogo de impresión).</p>
@@ -248,9 +258,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <input type="text" class="main-input pt-name-input" id="pt-name-input" placeholder="Escribe una palabra… p. ej. BARRIO" maxlength="40">
         </div>
         <div class="pt-segment" id="pt-name-styles" role="radiogroup" aria-label="Estilo de graffiti">
-          <button type="button" class="pt-gen-preset pt-name-style-opt" data-style="throwup" aria-pressed="true">Throw-up <small>contorno gordo y redondeado</small></button>
-          <button type="button" class="pt-gen-preset pt-name-style-opt" data-style="tag" aria-pressed="false">Tag <small>firma callejera rápida</small></button>
+          <button type="button" class="pt-gen-preset pt-name-style-opt" data-style="tag" aria-pressed="true">Tag <small>firma callejera rápida</small></button>
           <button type="button" class="pt-gen-preset pt-name-style-opt" data-style="marker" aria-pressed="false">Rotulador <small>trazo a mano</small></button>
+          <button type="button" class="pt-gen-preset pt-name-style-opt" data-style="throwup" aria-pressed="false">Throw-up <small>contorno gordo y redondeado</small></button>
           <button type="button" class="pt-gen-preset pt-name-style-opt" data-style="spray" aria-pressed="false">Spray <small>textura de aerosol</small></button>
           <button type="button" class="pt-gen-preset pt-name-style-opt" data-style="block" aria-pressed="false">Blockbuster <small>mayúsculas de bloque</small></button>
         </div>
@@ -410,14 +420,16 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       letterSpacing: 0.06,
       charset: "alnum",
       variantFamily: "bubble",
+      variantNoun: "",
       glyphStyle: "Ultra Bubble",
       nameDemo: "BARRIO",
+      charStyles: true,
       nameStyles: [
-        { key: "throwup", font: "Fredoka, 'Arial Black', sans-serif", strokeWidth: 10, letterSpacing: 0.06 },
         { key: "tag", font: "'Sedgwick Ave Display', cursive", strokeWidth: 5, letterSpacing: 0.04 },
         { key: "marker", font: "'Permanent Marker', cursive", strokeWidth: 5, letterSpacing: 0.05 },
+        { key: "throwup", font: "Fredoka, 'Arial Black', sans-serif", strokeWidth: 10, letterSpacing: 0.06 },
         { key: "spray", font: "'Rubik Spray Paint', cursive", strokeWidth: 4, letterSpacing: 0.04 },
-        { key: "block", font: "'Archivo Black', 'Arial Black', sans-serif", strokeWidth: 8, letterSpacing: 0.05 }
+        { key: "block", font: "'Archivo Black', 'Arial Black', sans-serif", strokeWidth: 8, letterSpacing: 0.05, skew: -10 }
       ],
       howto: {
         title: "Cómo dibujar la {ch} en graffiti",
