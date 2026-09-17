@@ -690,6 +690,19 @@ jobs:
         continue-on-error: true
         run: npm run check:country-flags -- --base origin/${{ github.base_ref || 'main' }} | tee country-flags.log
 
+      # printablesEngine mounts a tool wherever the right element id appears, so
+      # giving page B a tool page A already owns is a one-line change — which is
+      # how /printables/alphabet-coloring-pages/ grew a name coloring tool that
+      # /printables/coloring-page-maker/ already owned (2026-09-13, 458b62584).
+      # No other gate could see it: parity reads links and section counts, the
+      # locale gate reads strings, the image gates read assets. Diff-scoped on
+      # newly-introduced pairs, so the site's legitimate pre-existing collisions
+      # (the seven "in cursive" spokes) can never make it permanently red.
+      - name: Run printable tool duplication check
+        id: tool_duplication
+        continue-on-error: true
+        run: npm run check:tool-duplication -- --base origin/${{ github.base_ref || 'main' }} | tee tool-duplication.log
+
       # Gating, zero backlog: unit tests over the CTA routing table and the
       # in-place pass that applies it. Three things they pin down, each a
       # silent defect rather than a crash: no <lang>/ page may ever route (no
@@ -947,6 +960,11 @@ jobs:
             cat country-flags.log
             echo '```'
             echo ""
+            echo "### Printable tool duplication — \`${{ steps.tool_duplication.outcome }}\`"
+            echo '```'
+            cat tool-duplication.log
+            echo '```'
+            echo ""
             echo "### CTA routing tests — \`${{ steps.cta_routing_tests.outcome }}\`"
             echo '```'
             cat cta-routing-tests.log
@@ -1025,6 +1043,7 @@ jobs:
           steps.accessibility.outcome == 'failure' ||
           steps.collection_grids.outcome == 'failure' ||
           steps.country_flags.outcome == 'failure' ||
+          steps.tool_duplication.outcome == 'failure' ||
           steps.cta_routing_tests.outcome == 'failure' ||
           steps.library_hub_parity.outcome == 'failure'
         run: |

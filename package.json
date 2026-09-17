@@ -24,6 +24,8 @@
     "check:accessibility": "node scripts/check-accessibility.js",
     "check:collection-grids": "node scripts/check-collection-grid-prerender.js",
     "check:country-flags": "node scripts/check-country-flag-prerender.js",
+    "audit:tool-duplication": "node scripts/audit-printable-tool-duplication.js",
+    "check:tool-duplication": "node scripts/check-printable-tool-duplication.js",
     "audit:css": "node scripts/audit-css.js",
     "check:gtm": "node scripts/check-gtm.js",
     "check:ads": "node scripts/check-ads.js",
