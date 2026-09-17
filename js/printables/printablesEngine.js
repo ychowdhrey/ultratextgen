@@ -4283,17 +4283,122 @@
   }
 
   // Ruled guideline (top / midline / baseline) inside a worksheet SVG.
-  function addGuide(svg, w, y, dashed) {
+  /* PR-21 -- ruled-line models.
+
+     These sheets shipped ONE ruling into every market. France and Germany both
+     have a national school ruling, and a French or German worksheet drawn on a
+     US three-line rule is the wrong exercise book, not a style preference --
+     which is why this follows the page's own language rather than sitting
+     behind a control. It also means it needs no label in any language: there
+     was no word to harvest for "Seyes", "Lineatur" or "standard ruling", and
+     a control is not what the finding asked for.
+
+     Both models are sourced, not eyeballed:
+
+     SEYES (fr) -- Wikipedia, "Ruled paper": heavy lines 8 mm apart with
+     "three lighter lines ... spaced 2 mm apart between each pair of heavy
+     lines", plus the heavy verticals at the same 8 mm pitch. So the ascender
+     band IS the 8 mm unit and 2 mm is a quarter of it.
+
+     LINEATUR 1 (de) -- the Klasse-1 Schreiblernlineatur: "vier Linien pro
+     Zeile, je 5 mm Abstand" (Staehlin, Grundschul-Guide), marking three equal
+     zones -- Oberlange, Mittelband, Unterlange -- with a Kontrastlineatur
+     shading "der Bereich zwischen Grund- und Mittellinie", the band small
+     letters live in. Equal 5 mm zones map to equal half-bands here, and the
+     row grows downward because a Lineatur row carries a fourth line for the
+     Unterlange that a three-line rule does not.
+
+     Everything else keeps the ruling it has: Spain, Poland and the rest have
+     their own conventions and this had no source for them, and inventing one
+     would be worse than the single rule it replaces. CFG.ruling overrides the
+     language default on any page that wants to. */
+  function rulingKey() {
+    if (CFG.ruling && RULINGS[CFG.ruling]) return CFG.ruling;
+    const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
+    if (lang === "fr") return "seyes";
+    if (lang === "de") return "lineatur";
+    return "standard";
+  }
+  /* `at` is measured UPWARD from the baseline as a fraction of the ascender
+     band, so one table serves the SVG sheet and the canvas PNG, which do not
+     share a coordinate system. `extra` is how far below the baseline the row
+     has to grow, in the same units. */
+  const RULINGS = {
+    standard: {
+      lines: [{ at: 0 }, { at: 0.5, faint: true, dashed: true }, { at: 1 }],
+      band: null, verticals: 0, extra: 0
+    },
+    seyes: {
+      lines: [{ at: 0 }, { at: 0.25, faint: true }, { at: 0.5, faint: true },
+              { at: 0.75, faint: true }, { at: 1 }],
+      band: null, verticals: 1, extra: 0
+    },
+    lineatur: {
+      lines: [{ at: 1 }, { at: 0.5, faint: true, dashed: true }, { at: 0 }, { at: -0.5 }],
+      band: { from: 0, to: 0.5 }, verticals: 0, extra: 0.5
+    }
+  };
+  function ruling() { return RULINGS[rulingKey()] || RULINGS.standard; }
+
+  /* `faint` and `dashed` are separate properties. The house three-line rule
+     draws its midline dashed, but a Seyes interline is lighter and SOLID --
+     the source calls them "three lighter lines", not broken ones -- and
+     drawing them dashed made the French ruling look like three midlines. */
+  function addGuide(svg, w, y, dashed, faint) {
     const l = document.createElementNS(SVGNS, "line");
     l.setAttribute("x1", "8");
     l.setAttribute("x2", String(w - 8));
     l.setAttribute("y1", String(y));
     l.setAttribute("y2", String(y));
     const hc = highContrastOn();
-    l.setAttribute("stroke", hc ? CONTRAST_INK : (dashed ? GUIDE_MID : GUIDE));
-    l.setAttribute("stroke-width", hc ? (dashed ? "2" : "2.5") : (dashed ? "1.5" : "2"));
+    const light = dashed || faint;
+    l.setAttribute("stroke", hc ? CONTRAST_INK : (light ? GUIDE_MID : GUIDE));
+    l.setAttribute("stroke-width", hc ? (light ? "2" : "2.5") : (light ? "1.5" : "2"));
     if (dashed) l.setAttribute("stroke-dasharray", "6 8");
     svg.appendChild(l);
+  }
+
+  // The band a ruling is measured against: baseline up to the top line.
+  function traceBand() { return TRACE_BASE - TRACE_TOP; }
+  // How tall one row has to be for the active ruling. A Lineatur row carries a
+  // fourth line below the baseline that a three-line rule does not, so the row
+  // grows rather than the Unterlange falling off the bottom of the viewBox.
+  function traceRowHeight() {
+    const r = ruling();
+    return Math.max(TRACE_H, Math.round(TRACE_BASE + r.extra * traceBand() + 10));
+  }
+
+  function addRuling(svg, w) {
+    const r = ruling();
+    const band = traceBand();
+    const y = (at) => TRACE_BASE - at * band;
+    // The shaded Mittelband goes down first so every line still reads over it.
+    if (r.band) {
+      const top = y(r.band.to), bottom = y(r.band.from);
+      const rect = document.createElementNS(SVGNS, "rect");
+      rect.setAttribute("x", "8");
+      rect.setAttribute("y", String(top));
+      rect.setAttribute("width", String(Math.max(0, w - 16)));
+      rect.setAttribute("height", String(Math.max(0, bottom - top)));
+      rect.setAttribute("fill", GUIDE_MID);
+      rect.setAttribute("opacity", highContrastOn() ? "0.28" : "0.16");
+      svg.appendChild(rect);
+    }
+    if (r.verticals) {
+      const step = r.verticals * band;
+      const hc = highContrastOn();
+      for (let x = 8 + step; x < w - 8; x += step) {
+        const l = document.createElementNS(SVGNS, "line");
+        l.setAttribute("x1", String(x));
+        l.setAttribute("x2", String(x));
+        l.setAttribute("y1", String(y(1)));
+        l.setAttribute("y2", String(y(r.extra ? -r.extra : 0)));
+        l.setAttribute("stroke", hc ? CONTRAST_INK : GUIDE_MID);
+        l.setAttribute("stroke-width", hc ? "2" : "1.5");
+        svg.appendChild(l);
+      }
+    }
+    r.lines.forEach((line) => addGuide(svg, w, y(line.at), !!line.dashed, !!line.faint));
   }
 
   // A word rendered at a difficulty level, on a ruled baseline. The single
@@ -4314,14 +4419,12 @@
     const trackPx = o.track === false ? 0 : TRACE_FONT_SIZE * spacingBoost;
     const w = Math.max(360, chars.length * (116 + trackPx) + 120);
     const svg = document.createElementNS(SVGNS, "svg");
-    svg.setAttribute("viewBox", "0 0 " + w + " " + TRACE_H);
+    svg.setAttribute("viewBox", "0 0 " + w + " " + traceRowHeight());
     svg.setAttribute("class", "pt-trace-svg");
     svg.setAttribute("role", "img");
     svg.setAttribute("aria-label", word + " — " + spec.label);
     if (o.guides !== false) {
-      addGuide(svg, w, TRACE_TOP, false);
-      addGuide(svg, w, TRACE_MID, true);
-      addGuide(svg, w, TRACE_BASE, false);
+      addRuling(svg, w);
     }
     if (!spec.blank) {
       const t = document.createElementNS(SVGNS, "text");
@@ -4646,16 +4749,41 @@
       }
       const base = Math.round(height * 0.72);
       // Ruled guides.
-      const drawGuide = (y, dashed) => {
+      const drawGuide = (y, dashed, faint) => {
+        const light = dashed || faint;
         ctx.beginPath();
         ctx.setLineDash(dashed ? [6, 8] : []);
-        ctx.lineWidth = dashed ? 1.5 : 2;
-        ctx.strokeStyle = highContrastOn() ? CONTRAST_INK : (dashed ? GUIDE_MID : GUIDE);
+        ctx.lineWidth = light ? 1.5 : 2;
+        ctx.strokeStyle = highContrastOn() ? CONTRAST_INK : (light ? GUIDE_MID : GUIDE);
         ctx.moveTo(pad * 0.5, y); ctx.lineTo(width - pad * 0.5, y); ctx.stroke();
       };
-      drawGuide(base, false);
-      drawGuide(base - Math.round(fontSize * 0.52), true);
-      drawGuide(base - Math.round(fontSize * 0.74), false);
+      // Same RULINGS table as the SVG sheet, so a French PNG and a French
+      // printout cannot disagree about what a French exercise book looks like.
+      const gBand = Math.round(fontSize * 0.74);
+      const gr = ruling();
+      const gy = (at) => Math.round(base - at * gBand);
+      if (gr.band) {
+        ctx.save();
+        ctx.globalAlpha = 0.16;
+        ctx.fillStyle = GUIDE_MID;
+        ctx.fillRect(pad * 0.5, gy(gr.band.to), width - pad, gy(gr.band.from) - gy(gr.band.to));
+        ctx.restore();
+      }
+      if (gr.verticals) {
+        const step = gr.verticals * gBand;
+        ctx.save();
+        ctx.setLineDash([]);
+        ctx.lineWidth = 1.5;
+        ctx.strokeStyle = highContrastOn() ? CONTRAST_INK : GUIDE_MID;
+        for (let x = pad * 0.5 + step; x < width - pad * 0.5; x += step) {
+          ctx.beginPath();
+          ctx.moveTo(x, gy(1));
+          ctx.lineTo(x, gy(gr.extra ? -gr.extra : 0));
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+      gr.lines.forEach((l) => drawGuide(gy(l.at), !!l.dashed, !!l.faint));
 
       if (!spec.blank) {
         ctx.font = "700 " + fontSize + "px " + FONT;
