@@ -263,9 +263,9 @@ def render_hub(spec):
             "How do I print the whole ABC alphabet at once?",
             "Scroll to the <strong>Printable alphabet</strong> section and press "
             "<strong>Print the alphabet</strong> to send all 26 letter outlines to your "
-            "printer on one sheet — handy for a classroom set or a rainy-day activity.",
+            "printer on one sheet, handy for a classroom set or a rainy-day activity.",
             "Scroll to the Printable alphabet section and press Print the alphabet to send "
-            "all 26 letter outlines to your printer on one sheet — handy for a classroom "
+            "all 26 letter outlines to your printer on one sheet, handy for a classroom "
             "set or a rainy-day activity.",
         ),
         (
@@ -282,10 +282,10 @@ def render_hub(spec):
             "These coloring pages use thin, clean single-line outlines that are easy to color "
             "inside. <a href=\"/printables/bubble-letters/\">Bubble letters</a> are rounded and "
             "puffy, and <a href=\"/printables/block-letters/\">block letters</a> are bold "
-            "stencils to cut out. All three are free printable outlines — pick the look you want.",
+            "stencils to cut out. All three are free printable outlines: pick the look you want.",
             "These coloring pages use thin, clean single-line outlines that are easy to color "
             "inside. Bubble letters are rounded and puffy, and block letters are bold stencils "
-            "to cut out. All three are free printable outlines — pick the look you want.",
+            "to cut out. All three are free printable outlines: pick the look you want.",
         ),
     ]
 
@@ -392,7 +392,7 @@ def render_hub(spec):
     <!-- Real, crawlable per-letter links -->
     <section class="editorial-section" aria-labelledby="ptListHeading">
       <h2 id="ptListHeading">A–Z letter coloring pages</h2>
-      <p class="bubble-az-intro">Every letter has its own coloring page with a big outline and an example word — great when you searched for one exact letter.</p>
+      <p class="bubble-az-intro">Every letter has its own coloring page with a big outline and an example word, great when you searched for one exact letter.</p>
       <div class="pt-az-links">
 {az_links}
       </div>
@@ -402,7 +402,7 @@ def render_hub(spec):
     <section class="editorial-section">
       <h2>Ways to use alphabet coloring pages</h2>
       <ul class="compat-list">
-        <li><span class="ts-pill-safe">Learn</span> Say the letter and its example word aloud while coloring — a simple way to link letters to sounds.</li>
+        <li><span class="ts-pill-safe">Learn</span> Say the letter and its example word aloud while coloring: a simple way to link letters to sounds.</li>
         <li><span class="ts-pill-safe">Color</span> The thin outlines leave lots of room for crayons, markers, and colored pencils.</li>
         <li><span class="ts-pill-safe">Classroom</span> Print the whole alphabet for a center activity, or one letter for the letter of the week.</li>
       </ul>
@@ -414,24 +414,18 @@ def render_hub(spec):
     </section>
 
     <div class="cta-card">
-      <h3>Want a name or word coloring page?</h3>
-      <p>Type any name or word and make your own coloring page — with a heading, a name-and-date line, cute borders, and dotted or starry fills to color.</p>
-      <a class="cta-btn" href="/printables/coloring-page-maker/">Open the coloring page maker →</a>
-    </div>
-
-    <div class="cta-card">
       <h3>Want a puzzle before the coloring?</h3>
-      <p>Every letter also has a numbered dot-to-dot version — connect the dots in order to reveal the letter, then color it in.</p>
+      <p>Every letter also has a numbered dot-to-dot version. Connect the dots in order to reveal the letter, then color it in.</p>
       <a class="cta-btn" href="/printables/dot-to-dot-alphabet/">Open dot-to-dot alphabet →</a>
     </div>
 
     <div class="cta-card">
       <h3>Looking for handwriting practice instead?</h3>
-      <p>Type any name and print a tracing worksheet with model and trace rows — perfect for preschool and kindergarten.</p>
+      <p>Type any name and print a tracing worksheet with model and trace rows, perfect for preschool and kindergarten.</p>
       <a class="cta-btn" href="/printables/name-tracing/">Open name tracing worksheets →</a>
     </div>
 
-      <h2 class="faq-category">Alphabet Coloring Pages — FAQ</h2>
+      <h2 class="faq-category">Alphabet Coloring Pages FAQ</h2>
 
 {faq_accordion(faqs)}
 
