@@ -80,7 +80,7 @@
       dotLadderTitle: "Practice ladder",
       dotLadderText: "Start easy and add dots as it gets comfortable. Mastered Expert? Turn the numbers off, then try drawing it freehand.",
       pdfHint: "Tip: Print → “Save as PDF” downloads this sheet as a PDF.",
-      printOpts: { settings: "PDF settings", paper: "Paper", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Save as PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
+      printOpts: { settings: "PDF settings", paper: "Paper", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Download PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
       printBook: "Save as a book: one page per letter",
       save: "Save",
       saved: "Saved",
@@ -133,7 +133,7 @@
       dotLadderTitle: "Échelle de difficulté",
       dotLadderText: "Commencez facile, puis ajoutez des points. Niveau Expert maîtrisé ? Retirez les numéros, puis essayez de dessiner à main levée.",
       pdfHint: "Astuce : Imprimer → « Enregistrer au format PDF » télécharge la feuille en PDF.",
-      printOpts: { settings: "Réglages du PDF", paper: "Papier", letter: "Lettre US", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Paysage", margins: "Marges", normal: "Normales", narrow: "Étroites", inkSaver: "Économie d'encre (traits plus clairs)", savePdf: "Enregistrer en PDF", pdfToast: "Dans la boîte d'impression, choisissez Enregistrer au format PDF comme destination.", share: "Partager", shareImage: "Partager en image", copyLink: "Copier le lien", linkCopied: "Lien copié", pinterest: "Épingler sur Pinterest", recent: "Vos fiches récentes", clear: "Effacer", madeAt: "Créé sur" },
+      printOpts: { settings: "Réglages du PDF", paper: "Papier", letter: "Lettre US", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Paysage", margins: "Marges", normal: "Normales", narrow: "Étroites", inkSaver: "Économie d'encre (traits plus clairs)", savePdf: "Télécharger le PDF", pdfToast: "Dans la boîte d'impression, choisissez Enregistrer au format PDF comme destination.", share: "Partager", shareImage: "Partager en image", copyLink: "Copier le lien", linkCopied: "Lien copié", pinterest: "Épingler sur Pinterest", recent: "Vos fiches récentes", clear: "Effacer", madeAt: "Créé sur" },
       printBook: "Enregistrer en livret — une page par lettre",
       pageCount: { one: "page", other: "pages" },
       ofWord: "sur",
@@ -181,7 +181,7 @@
       dotLadderTitle: "Escalera de dificultad",
       dotLadderText: "Empieza en fácil y añade puntos poco a poco. ¿Dominas el nivel experto? Quita los números y prueba a dibujar a mano alzada.",
       pdfHint: "Consejo: Imprimir → «Guardar como PDF» descarga la hoja en PDF.",
-      printOpts: { settings: "Ajustes del PDF", paper: "Papel", letter: "Carta", a4: "A4", legal: "Oficio", orientation: "Orientación", portrait: "Vertical", landscape: "Horizontal", margins: "Márgenes", normal: "Normales", narrow: "Estrechos", inkSaver: "Ahorro de tinta (líneas más claras)", savePdf: "Guardar como PDF", pdfToast: "En el cuadro de impresión, elige Guardar como PDF como destino.", share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", recent: "Tus hojas recientes", clear: "Borrar", madeAt: "Hecho en" },
+      printOpts: { settings: "Ajustes del PDF", paper: "Papel", letter: "Carta", a4: "A4", legal: "Oficio", orientation: "Orientación", portrait: "Vertical", landscape: "Horizontal", margins: "Márgenes", normal: "Normales", narrow: "Estrechos", inkSaver: "Ahorro de tinta (líneas más claras)", savePdf: "Descargar PDF", pdfToast: "En el cuadro de impresión, elige Guardar como PDF como destino.", share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", recent: "Tus hojas recientes", clear: "Borrar", madeAt: "Hecho en" },
       printBook: "Guardar como libro — una página por letra",
       pageCount: { one: "página", other: "páginas" },
       ofWord: "de",
@@ -229,7 +229,7 @@
       dotLadderTitle: "Escada de dificuldade",
       dotLadderText: "Comece no fácil e adicione pontos aos poucos. Dominou o nível especialista? Desligue os números e tente desenhar à mão livre.",
       pdfHint: "Dica: Imprimir → “Salvar como PDF” baixa a folha em PDF.",
-      printOpts: { settings: "Configurações do PDF", paper: "Papel", letter: "Carta", a4: "A4", legal: "Ofício", orientation: "Orientação", portrait: "Retrato", landscape: "Paisagem", margins: "Margens", normal: "Normais", narrow: "Estreitas", inkSaver: "Economia de tinta (linhas mais claras)", savePdf: "Salvar como PDF", pdfToast: "Na caixa de impressão, escolha Salvar como PDF como destino.", share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", recent: "Suas folhas recentes", clear: "Limpar", madeAt: "Feito em" },
+      printOpts: { settings: "Configurações do PDF", paper: "Papel", letter: "Carta", a4: "A4", legal: "Ofício", orientation: "Orientação", portrait: "Retrato", landscape: "Paisagem", margins: "Margens", normal: "Normais", narrow: "Estreitas", inkSaver: "Economia de tinta (linhas mais claras)", savePdf: "Baixar PDF", pdfToast: "Na caixa de impressão, escolha Salvar como PDF como destino.", share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", recent: "Suas folhas recentes", clear: "Limpar", madeAt: "Feito em" },
       printBook: "Salvar como livro — uma página por letra",
       pageCount: { one: "página", other: "páginas" },
       ofWord: "de",
@@ -277,7 +277,7 @@
       dotLadderTitle: "Scala di difficoltà",
       dotLadderText: "Inizia dal facile e aggiungi punti man mano. Livello esperto superato? Togli i numeri e prova a disegnare a mano libera.",
       pdfHint: "Suggerimento: Stampa → “Salva come PDF” scarica il foglio in PDF.",
-      printOpts: { settings: "Impostazioni PDF", paper: "Carta", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientamento", portrait: "Verticale", landscape: "Orizzontale", margins: "Margini", normal: "Normali", narrow: "Stretti", inkSaver: "Risparmio inchiostro (linee più chiare)", savePdf: "Salva come PDF", pdfToast: "Nella finestra di stampa scegli Salva come PDF come destinazione.", share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", recent: "I tuoi fogli recenti", clear: "Cancella", madeAt: "Creato su" },
+      printOpts: { settings: "Impostazioni PDF", paper: "Carta", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientamento", portrait: "Verticale", landscape: "Orizzontale", margins: "Margini", normal: "Normali", narrow: "Stretti", inkSaver: "Risparmio inchiostro (linee più chiare)", savePdf: "Scarica PDF", pdfToast: "Nella finestra di stampa scegli Salva come PDF come destinazione.", share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", recent: "I tuoi fogli recenti", clear: "Cancella", madeAt: "Creato su" },
       printBook: "Salva come libretto – una pagina per lettera",
       pageCount: { one: "pagina", other: "pagine" },
       ofWord: "di",
@@ -325,7 +325,7 @@
       dotLadderTitle: "Drabinka trudności",
       dotLadderText: "Zacznij od łatwego poziomu i stopniowo dodawaj kropki. Opanowane? Wyłącz numery i spróbuj narysować odręcznie.",
       pdfHint: "Wskazówka: Drukuj → „Zapisz jako PDF”, aby pobrać arkusz w PDF.",
-      printOpts: { settings: "Ustawienia PDF", paper: "Papier", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientacja", portrait: "Pionowa", landscape: "Pozioma", margins: "Marginesy", normal: "Normalne", narrow: "Wąskie", inkSaver: "Oszczędzanie tuszu (jaśniejsze linie)", savePdf: "Zapisz jako PDF", pdfToast: "W oknie drukowania wybierz Zapisz jako PDF jako miejsce docelowe.", share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", recent: "Twoje ostatnie arkusze", clear: "Wyczyść", madeAt: "Utworzono na" },
+      printOpts: { settings: "Ustawienia PDF", paper: "Papier", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientacja", portrait: "Pionowa", landscape: "Pozioma", margins: "Marginesy", normal: "Normalne", narrow: "Wąskie", inkSaver: "Oszczędzanie tuszu (jaśniejsze linie)", savePdf: "Pobierz PDF", pdfToast: "W oknie drukowania wybierz Zapisz jako PDF jako miejsce docelowe.", share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", recent: "Twoje ostatnie arkusze", clear: "Wyczyść", madeAt: "Utworzono na" },
       printBook: "Zapisz jako książeczkę — jedna strona na literę",
       save: "Zapisz",
       saved: "Zapisano",
@@ -375,7 +375,7 @@
       dotLadderTitle: "Schwierigkeitsleiter",
       dotLadderText: "Leicht anfangen, dann Punkte dazunehmen. Experte geschafft? Zahlen ausblenden und frei zeichnen.",
       pdfHint: "Tipp: Drucken → „Als PDF speichern“ lädt das Blatt als PDF herunter.",
-      printOpts: { settings: "PDF-Einstellungen", paper: "Papier", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Ausrichtung", portrait: "Hochformat", landscape: "Querformat", margins: "Ränder", normal: "Normal", narrow: "Schmal", inkSaver: "Tintensparmodus (hellere Linien)", savePdf: "Als PDF speichern", pdfToast: "Wähle im Druckdialog Als PDF speichern als Ziel.", share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", recent: "Deine letzten Blätter", clear: "Löschen", madeAt: "Erstellt auf" },
+      printOpts: { settings: "PDF-Einstellungen", paper: "Papier", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Ausrichtung", portrait: "Hochformat", landscape: "Querformat", margins: "Ränder", normal: "Normal", narrow: "Schmal", inkSaver: "Tintensparmodus (hellere Linien)", savePdf: "PDF herunterladen", pdfToast: "Wähle im Druckdialog Als PDF speichern als Ziel.", share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", recent: "Deine letzten Blätter", clear: "Löschen", madeAt: "Erstellt auf" },
       printBook: "Als Heft speichern \u2013 eine Seite pro Buchstabe",
       pageCount: { one: "Seite", other: "Seiten" },
       ofWord: "von",
@@ -432,7 +432,7 @@
       dotLadderTitle: "Tangga latihan",
       dotLadderText: "Mulai dari yang mudah, lalu tambah titiknya begitu sudah terbiasa. Sudah lancar di tingkat Ahli? Matikan nomornya, lalu coba gambar sendiri tanpa panduan.",
       pdfHint: "Tips: Cetak \u2192 \u201cSimpan sebagai PDF\u201d akan mengunduh lembar ini sebagai PDF.",
-      printOpts: { settings: "Pengaturan PDF", paper: "Kertas", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientasi", portrait: "Potret", landscape: "Lanskap", margins: "Margin", normal: "Normal", narrow: "Sempit", inkSaver: "Hemat tinta (garis lebih tipis)", savePdf: "Simpan sebagai PDF", pdfToast: "Di dialog cetak, pilih Simpan sebagai PDF sebagai tujuan.", share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", recent: "Lembar terbaru Anda", clear: "Hapus", madeAt: "Dibuat di" },
+      printOpts: { settings: "Pengaturan PDF", paper: "Kertas", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientasi", portrait: "Potret", landscape: "Lanskap", margins: "Margin", normal: "Normal", narrow: "Sempit", inkSaver: "Hemat tinta (garis lebih tipis)", savePdf: "Unduh PDF", pdfToast: "Di dialog cetak, pilih Simpan sebagai PDF sebagai tujuan.", share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", recent: "Lembar terbaru Anda", clear: "Hapus", madeAt: "Dibuat di" },
       printBook: "Simpan sebagai buku \u2014 satu halaman per huruf",
       save: "Simpan",
       saved: "Tersimpan",
@@ -2478,26 +2478,16 @@
      1280x90 and a node appended to <html> at 1280x60, both landing in the
      printed sheet. CSS cannot win that cascade, so the hide is inline here
      and unwound when the dialog closes. */
-  let printHidden = [];
+  // Print isolation is header.js's (UltraTextGen.hideForPrint/restorePrint),
+  // shared with the cursive, kana and huruf print surfaces so the four cannot
+  // drift. See that file for why the hide has to be inline rather than CSS.
   function hideEverythingButPrintRoot() {
-    printHidden = [];
-    const keep = el.printRoot;
-    const hide = (node) => {
-      if (!node || node === keep || node.contains && keep && node.contains(keep)) return;
-      const tag = node.tagName;
-      if (tag === "HEAD" || tag === "SCRIPT" || tag === "STYLE" || tag === "LINK" || tag === "TITLE" || tag === "META") return;
-      printHidden.push([node, node.style.getPropertyValue("display"), node.style.getPropertyPriority("display")]);
-      node.style.setProperty("display", "none", "important");
-    };
-    Array.prototype.forEach.call(document.body.children, hide);
-    Array.prototype.forEach.call(document.documentElement.children, hide);
+    const ns = window.UltraTextGen;
+    if (ns && ns.hideForPrint) ns.hideForPrint(el.printRoot);
   }
   function restoreAfterPrint() {
-    printHidden.forEach((row) => {
-      if (row[1]) row[0].style.setProperty("display", row[1], row[2]);
-      else row[0].style.removeProperty("display");
-    });
-    printHidden = [];
+    const ns = window.UltraTextGen;
+    if (ns && ns.restorePrint) ns.restorePrint();
   }
   function openPrintDialog(sheet, wantPdf) {
     applyPageStyle();
