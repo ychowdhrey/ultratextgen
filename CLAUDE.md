@@ -4620,6 +4620,46 @@ against the live pages, never by memory.
   merged, or that `git branch -r --contains <commit>` includes
   `origin/master`.
 
+### Who else is touching these files right now (added 2026-09-19)
+
+Git's conflict detection is textual and per-hunk, so two sessions can edit one
+module in one week and merge without a conflict. This file already records the
+cost twice: the fire-on-success fix and a `share_destination` branch were both
+written into `js/share/share-core.js` on **2026-09-13** by two sessions, and the
+second was still carrying a redundant copy of the refactor six days later; and
+the peer-link and hub-coverage passes have rediscovered each other's work for
+the same reason. In every case the information existed — it was in another open
+PR — and nothing asked for it.
+
+**`npm run check:pr-overlap`** asks. It takes the files a branch changes and
+reports which other pull requests, open now or merged inside a recent window
+(default 14 days), touch any of the same ones. Nothing is stored and nothing is
+configured: the answer is the PR list and the diff, both of which GitHub already
+has.
+
+**It never gates**, and that is deliberate rather than cautious. Two branches
+touching `style.css` is normal most weeks, and a check that failed a PR for it
+is one people would learn to ignore — the failure this file documents against
+its own gates more than any other. It prints to the job summary, where the
+author reads it.
+
+**It fails closed in what it says.** No token, a rate limit, a shallow checkout
+with no merge base: it prints `UNKNOWN` and the reason, never "no overlaps". An
+informational check is not exempt from *a check that reports nothing is
+indistinguishable from a check that passes* — an author who reads "no overlaps"
+from a check that never ran is worse off than one who reads nothing.
+
+Two details worth knowing: `--pulls-json <file>` supplies the PR list from disk
+instead of the API, which is what makes the comparison testable against a real
+fixture; and `sitemap.xml`, `data/sitemap-lastmod-cache.json` and
+`package-lock.json` are excluded, because a generated file every branch touches
+would put every PR in every overlap report.
+
+Verified by replaying the real case: given the 2026-09-13 commit as an open PR
+and the 2026-09-19 `share_destination` commit as the branch under test, it names
+`js/share/share-core.js` among the shared files. Its first live run found a real
+one too — two concurrent branches both editing this file.
+
 ### Parallel sessions build the same thing under different names
 
 Multiple AI sessions often work this repo concurrently, and translation
@@ -4962,6 +5002,13 @@ Standing protocol:
   cleanup pass to backfill it — see "New pages must ship with their hero/OG/
   Twitter art in the same change" above. Run `npm run check:new-page-images`
   before opening the PR.
+- Do not rewrite a shared module without checking who else is in it. Git merges
+  two sessions' edits to one file without a conflict, which is how
+  `js/share/share-core.js` was refactored twice on the same day by two sessions
+  that could not see each other. `npm run check:pr-overlap` names every other
+  open or recently-merged PR touching your files; it runs in CI as an
+  informational step and reports `UNKNOWN` rather than "no overlaps" when it
+  could not compare. See "Who else is touching these files right now" above.
 - Do not upload (or hand-author) a pin CSV in any schema other than Pinterest's.
   The internal inventory CSVs (`data/*_pins.csv`) are NOT importable. Only the
   `data/*_upload.csv` files are — generated solely via `scripts/pinterest_csv.py`

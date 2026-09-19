@@ -170,6 +170,22 @@ jobs:
         continue-on-error: true
         run: npm run check:images | tee image-assets.log
 
+      # Who else is touching these files right now? Git merges two sessions'
+      # edits to one module without a conflict, and nothing asked the question
+      # — which is how the fire-on-success fix and a share_destination branch
+      # were both written into js/share/share-core.js on 2026-09-13 and only
+      # noticed six days later. Informational by design: two branches touching
+      # one file is normal, and a gate that failed on it is one people would
+      # learn to ignore. It reports UNKNOWN rather than "no overlaps" whenever
+      # it could not actually compare.
+      - name: Run PR file-overlap check (informational only)
+        id: pr_overlap
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: npm run check:pr-overlap -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee pr-overlap.log
+
       - name: Run new-page image asset check
         id: new_images
         continue-on-error: true
@@ -811,14 +827,24 @@ jobs:
             cat share-save-tags.log explorer-strings.log saved-items-tests.log indexnow-tests.log share-core-tests.log
             echo '```'
             echo ""
-            echo "### Counter claim-consistency check — \`${{ steps.counter_claims.outcome }}\`"
+            echo "### Funding Choices tag check — \`${{ steps.funding_choices.outcome }}\`"
             echo '```'
             cat funding-choices.log
+            echo '```'
+            echo ""
+            echo "### Counter claim-consistency check — \`${{ steps.counter_claims.outcome }}\`"
+            echo '```'
+            cat counter-claims.log
             echo '```'
             echo ""
             echo "### Image asset check (whole-site audit, informational) — \`${{ steps.images.outcome }}\`"
             echo '```'
             cat image-assets.log
+            echo '```'
+            echo ""
+            echo "### PR file-overlap check (informational) — \`${{ steps.pr_overlap.outcome }}\`"
+            echo '```'
+            cat pr-overlap.log
             echo '```'
             echo ""
             echo "### New-page image asset check — \`${{ steps.new_images.outcome }}\`"
