@@ -57,12 +57,66 @@ const { execFileSync } = require('child_process');
 const REPO = process.env.GITHUB_REPOSITORY || 'ychowdhrey/ultratextgen';
 const API = process.env.GITHUB_API_URL || 'https://api.github.com';
 
-/** Files so widely shared that naming them in every overlap is noise. */
+/**
+ * Generated files every branch touches. Excluded outright because an overlap on
+ * one carries no information at all — nobody wrote them.
+ *
+ * This set is deliberately SMALL. The first CI run showed the real noise is
+ * elsewhere and cannot be listed: 22 of 46 PRs "overlapped", almost all on
+ * `.github/workflows/validate.yml`, `CLAUDE.md` and `package.json`, which
+ * nearly every change here touches. Adding those three to this list would have
+ * deleted the signal — the live collision that run found was `CLAUDE.md`, my
+ * branch against the one other OPEN PR. A hand-maintained noise list also goes
+ * stale the moment the repo grows a new shared file. So frequency is MEASURED
+ * instead; see `rank()`.
+ */
 const UBIQUITOUS = new Set([
   'sitemap.xml',
   'data/sitemap-lastmod-cache.json',
   'package-lock.json',
 ]);
+
+/**
+ * Order overlaps by their RAREST shared file, not by how many they share.
+ *
+ * Sorting by count is backwards, and the first real run proved it: it put seven
+ * PRs sharing {validate.yml, CLAUDE.md, package.json} at the top and buried the
+ * only OPEN PR — sharing one file — at position 13 of 22. A file half the
+ * repo's PRs touch says nothing; a file one other PR touches is the whole
+ * point.
+ *
+ * Frequency is counted across the PRs actually compared, so it needs no list
+ * and cannot go stale.
+ *
+ * OPEN outranks rarity, and that ordering was corrected after watching the
+ * first version get it wrong. A merged PR overlapping your files is history:
+ * useful context ("someone just rewrote this"), nothing to coordinate. An open
+ * one is a live collision that may still conflict at merge time. Ranking by
+ * rarity alone left the only open PR — sharing just `CLAUDE.md`, the most
+ * common file of all — at the very bottom, which is the case the whole check
+ * exists for. So: open first, then rarest.
+ *
+ * An open PR is never truncated out of the list for the same reason.
+ */
+function rank(overlaps, compared) {
+  const freq = new Map();
+  for (const pull of overlaps) {
+    for (const f of pull.shared) freq.set(f, (freq.get(f) || 0) + 1);
+  }
+  for (const pull of overlaps) {
+    pull.shared.sort((a, b) => (freq.get(a) - freq.get(b)) || a.localeCompare(b));
+    pull.rarest = freq.get(pull.shared[0]);
+    pull.freq = Object.fromEntries(pull.shared.map((f) => [f, freq.get(f)]));
+  }
+  overlaps.sort((a, b) =>
+    (a.state === 'open' ? 0 : 1) - (b.state === 'open' ? 0 : 1)
+    || a.rarest - b.rarest
+    || b.shared.length - a.shared.length);
+  return freq;
+}
+
+/** How many overlaps to print in full. Open PRs are always shown on top of it. */
+const LIST_CAP = 10;
 
 function arg(name, fallback) {
   const i = process.argv.indexOf(name);
@@ -197,6 +251,7 @@ async function main() {
 
   const overlaps = [];
   let unreadable = 0;
+  let freq = new Map();
   for (const pull of pulls) {
     let files;
     if (Array.isArray(pull.files)) {
@@ -212,12 +267,12 @@ async function main() {
     const shared = files.filter((f) => mineSet.has(f));
     if (shared.length) overlaps.push({ ...pull, shared });
   }
-  overlaps.sort((a, b) => b.shared.length - a.shared.length);
+  freq = rank(overlaps, pulls.length);
 
   if (asJson) {
     console.log(JSON.stringify(
       { state: unreadable ? 'partial' : 'ok', files: mineSet.size, compared: pulls.length,
-        unreadable, overlaps }, null, 2));
+        unreadable, file_frequency: Object.fromEntries(freq), overlaps }, null, 2));
     return 0;
   }
 
@@ -233,11 +288,31 @@ async function main() {
     console.log('No other PR in the window touches these files.');
     return 0;
   }
-  console.log(`${overlaps.length} PR(s) touch the same files:\n`);
-  for (const pull of overlaps) {
+  // A plain display cap rather than a "routine file" threshold. The first
+  // draft collapsed PRs whose every shared file was touched by >50% of those
+  // compared — and measured against the real run, nothing reached that, so it
+  // was a guessed number that never fired. The ordering above already sinks
+  // the noise; this just stops the tail being scrolled. Every open PR is shown
+  // regardless, because openCount is the number that needs acting on.
+  const shown = overlaps.filter((p, i) => i < LIST_CAP || p.state === 'open');
+  const rest = overlaps.filter((p) => !shown.includes(p));
+
+  const openCount = overlaps.filter((p) => p.state === 'open').length;
+  console.log(`${overlaps.length} PR(s) touch the same files`
+    + (openCount ? `, ${openCount} of them still OPEN` : '') + '.');
+  console.log('Open first, then rarest shared file: an open PR can still conflict, and a');
+  console.log('file most of these PRs touch says nothing where a file one touches does.\n');
+  for (const pull of shown) {
     console.log(`  #${pull.number} [${pull.state}] ${pull.title}`);
-    console.log(`      ${pull.shared.length} shared file(s): ${pull.shared.slice(0, 6).join(', ')}`
+    console.log('      ' + pull.shared.slice(0, 6)
+      .map((f) => `${f} (${pull.freq[f]}/${pulls.length})`).join(', ')
       + (pull.shared.length > 6 ? ` … +${pull.shared.length - 6}` : ''));
+  }
+  if (rest.length) {
+    const floor = Math.min(...rest.map((p) => p.rarest));
+    console.log(`\n  ${rest.length} more, all merged and none sharing a file fewer than`
+      + ` ${floor} of the compared PRs touch:`);
+    console.log('      ' + rest.map((p) => `#${p.number}`).join(' '));
   }
   console.log('');
   console.log('This is information, not a defect — two branches touching one file is normal.');

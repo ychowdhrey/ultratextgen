@@ -4649,11 +4649,31 @@ informational check is not exempt from *a check that reports nothing is
 indistinguishable from a check that passes* — an author who reads "no overlaps"
 from a check that never ran is worse off than one who reads nothing.
 
-Two details worth knowing: `--pulls-json <file>` supplies the PR list from disk
-instead of the API, which is what makes the comparison testable against a real
-fixture; and `sitemap.xml`, `data/sitemap-lastmod-cache.json` and
-`package-lock.json` are excluded, because a generated file every branch touches
-would put every PR in every overlap report.
+**Ordering is the whole usability of it, and the first CI run proved the first
+draft had it backwards.** That run reported **22 of 46 PRs overlapping**, sorted
+by how many files each shared — which put seven PRs sharing
+`{validate.yml, CLAUDE.md, package.json}` at the top and buried the one that
+mattered, the only OPEN PR, at position 13. So:
+
+* **Open before merged.** A merged PR overlapping your files is history — useful
+  context, nothing to coordinate. An open one can still conflict at merge time.
+  The headline states how many are open, and an open PR is never truncated away.
+* **Then rarest shared file first**, with each file's frequency printed
+  (`_redirects (1/46)` against `CLAUDE.md (15/46)`). A file a third of the
+  repo's PRs touch says nothing; a file one other PR touches is the point.
+  Frequency is **measured across the PRs compared**, so there is no noise list
+  to maintain and none to go stale — the three genuinely ubiquitous files here
+  could not have been listed in advance anyway, and listing them would have
+  deleted the live `CLAUDE.md` collision the run found.
+
+A second draft collapsed PRs whose every shared file exceeded a >50% threshold;
+measured against the real run **nothing reached it**, so that was a guessed
+number that never fired, and it was replaced with a plain display cap. Only
+generated files nobody writes — `sitemap.xml`, the sitemap cache and
+`package-lock.json` — are excluded outright.
+
+`--pulls-json <file>` supplies the PR list from disk instead of the API, which
+is what makes all of this testable against a real fixture.
 
 Verified by replaying the real case: given the 2026-09-13 commit as an open PR
 and the 2026-09-19 `share_destination` commit as the branch under test, it names
