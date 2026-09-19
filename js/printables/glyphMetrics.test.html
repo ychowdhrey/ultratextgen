@@ -3,7 +3,9 @@
 <head>
 <meta charset="utf-8">
 <title>glyphMetrics tests</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap">
+<!-- Self-hosted since 2026-09-19; see strokeRoute.test.html for why the
+     test reads the same stylesheet the pages do. -->
+<link rel="stylesheet" href="/style.css">
 <style>
   body { font: 14px/1.5 system-ui, sans-serif; margin: 20px; max-width: 900px; }
   .pass { color: #0a7d32; } .fail { color: #b3261e; font-weight: 700; }
@@ -19,6 +21,7 @@ Quicksand face. Open it and read the panel, or drive it headlessly and read
 <div id="summary">running…</div>
 <pre id="out"></pre>
 
+<script src="/js/printables/faceProbe.test.js"></script>
 <script src="/js/printables/strokeDirectionData.js"></script>
 <script src="/js/printables/glyphMetrics.js"></script>
 <script>
@@ -144,7 +147,10 @@ Quicksand face. Open it and read the panel, or drive it headlessly and read
   function boot() {
     const want = "700 210px Quicksand";
     const done = function () {
-      if (document.fonts && !document.fonts.check(want)) {
+      /* Not document.fonts.check(): it answers true for a family that was
+         never fetched, so it cannot tell a loaded face from a missing one.
+         See js/printables/faceProbe.test.js for the measurement. */
+      if (!window.UTG_FACE_PROBE.available("Quicksand", 700, 210)) {
         document.getElementById("summary").className = "fail";
         document.getElementById("summary").textContent =
           "ABORTED — Quicksand 700 did not load; every metric would be the fallback face's.";
