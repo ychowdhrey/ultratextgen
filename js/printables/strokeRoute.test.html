@@ -3,7 +3,10 @@
 <head>
 <meta charset="utf-8">
 <title>stroke route tests</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap">
+<!-- The site self-hosts its letterform faces (assets/fonts/), so the sheet a
+     child prints is set in the file style.css serves, not in whatever a
+     Google Fonts link happens to return. Measure that file. -->
+<link rel="stylesheet" href="/style.css">
 <style>
   body { font: 14px/1.5 system-ui, sans-serif; margin: 20px; max-width: 980px; }
   .pass { color: #0a7d32; } .fail { color: #b3261e; font-weight: 700; }
@@ -13,7 +16,7 @@
 </style>
 </head>
 <body>
-<h1>Writing route: does the skeleton land on the letter?</h1>
+<h1>Writing route: does the skeleton land on the letter, and can you read its numbers?</h1>
 <p>Needs a browser: it rasterises each glyph and tests the fitted route against
 that raster. Open it and read the panel, or drive it headlessly and read
 <code>window.__UTG_TEST</code>.</p>
@@ -21,6 +24,7 @@ that raster. Open it and read the panel, or drive it headlessly and read
 <pre id="out"></pre>
 <canvas id="stage" width="400" height="480"></canvas>
 
+<script src="/js/printables/faceProbe.test.js"></script>
 <script src="/js/printables/strokeDirectionData.js"></script>
 <script src="/js/printables/glyphMetrics.js"></script>
 <script>
@@ -98,8 +102,15 @@ that raster. Open it and read the panel, or drive it headlessly and read
 
     /* Measuring the wrong face passes by coincidence on the letters whose
        schematic happens to suit a fallback sans and fails on the rest, which
-       is worse than not running. */
-    const have = document.fonts && document.fonts.check('700 ' + SIZE + 'px "' + FAM + '"');
+       is worse than not running.
+
+       This asked document.fonts.check() until 2026-09-19. That returns TRUE
+       for a family that was never fetched — measured with the stylesheet
+       blocked, an empty document.fonts still answered true — so the guard
+       could not tell a loaded face from a missing one. UTG_FACE_PROBE asks
+       whether naming the family changes what canvas draws, which is the only
+       thing that distinguishes them. */
+    const have = window.UTG_FACE_PROBE.available(FAM, 700, SIZE);
     if (!have) {
       lines.push("ABORT  " + FAM + " is not available — every number below would be meaningless.");
       fail++; finish(); return;
@@ -196,18 +207,122 @@ that raster. Open it and read the panel, or drive it headlessly and read
     ok(lPos > 33 && lPos < 67, "that column sits in the middle third of the stem",
        "at " + lPos.toFixed(0) + "% of the stem width");
 
+    badgeTests(gm, DATA, stem);
     finish();
+  }
+
+  /* ---- the numbered badges ------------------------------------------
+     A badge is a disc of radius BADGE_R; two of them are readable only while
+     their centres are at least 2*BADGE_R apart. Drawn on the start point they
+     are not, and on A B D P R and p the two strokes start at the SAME point,
+     so one numeral covered the other completely and the sheet showed a "2"
+     with no "1". That has now been introduced, removed and reintroduced in
+     this repo three times — most recently as a side effect of deleting the
+     lead-in segments that had been holding the dots apart — which is why it
+     is measured here rather than looked at.
+
+     The functions under test are the shipped ones, sliced out of
+     printablesEngine.js between its @stroke-badges markers. A second copy
+     would drift from the first. */
+  function sliceBadges() {
+    const src = window.__PT_ENGINE_SRC || "";
+    const a = src.indexOf("/* @stroke-badges:begin");
+    const b = src.indexOf("/* @stroke-badges:end */");
+    if (a < 0 || b < 0) return null;
+    return new Function(src.slice(a, b) +
+      "\nreturn { badgePositions, tailPath, polyLength, pointAt, strokePolylines," +
+      " BADGE_R, BADGE_GAP, BADGE_SLIDE_CAP };")();
+  }
+
+  function badgeTests(gm, DATA, stem) {
+    lines.push("");
+    const BADGES = sliceBadges();
+    if (!BADGES) {
+      ok(false, "the @stroke-badges block was sliced out of printablesEngine.js",
+         "markers not found — the block moved or was renamed");
+      return;
+    }
+    const need = 2 * BADGES.BADGE_R + BADGES.BADGE_GAP;
+    const collisions = [], strays = [], offGlyph = [], tails = [];
+    Object.keys(DATA).forEach(function (ch) {
+      const i = gm.ink(ch, F, SIZE, 700);
+      if (!i || !i.exact) return;
+      const originX = CX - i.advance / 2;
+      const box = { x: originX + i.left, y: BASE + i.top, w: i.width, h: i.height };
+      const fit = gm.fitSkeleton(DATA[ch].strokes, box, { inset: stem / 2 });
+      if (!fit) return;
+      const polys = BADGES.strokePolylines(fit.d);
+      if (!polys) { strays.push(ch + " no polylines"); return; }
+      const pts = BADGES.badgePositions(fit.d, polys);
+      const hit = raster(ch);
+      /* Distance to the nearest ink, not a bare on/off pixel test. R-010's
+         own instrument was the bare test, and over all 52 letters it calls
+         three points "off the glyph" that are 1.0, 5.5 and 1.0 units from
+         ink at an em of 210 — an antialiased edge, not a miss. The tolerance
+         is half a stem because that is the inset fitSkeleton is already
+         called with: a point within it is on the stroke by the same yardstick
+         the fit uses. The defect this has to keep catching was 24.8 units. */
+      const tol = stem / 2;
+      const near = function (x, y) {
+        if (hit(x, y)) return 0;
+        for (let r = 1; r <= tol; r += 0.5) {
+          for (let t = 0; t < 32; t++) {
+            const a = t / 32 * 2 * Math.PI;
+            if (hit(x + Math.cos(a) * r, y + Math.sin(a) * r)) return r;
+          }
+        }
+        return Infinity;
+      };
+      pts.forEach(function (q, k) {
+        // still labels its own stroke: never further from its start than the cap
+        const st = polys[k][0];
+        const moved = Math.hypot(q[0] - st[0], q[1] - st[1]);
+        if (moved > BADGES.BADGE_SLIDE_CAP + 0.6) {
+          strays.push(ch + " #" + (k + 1) + " moved " + moved.toFixed(1));
+        }
+        if (near(st[0], st[1]) === Infinity) offGlyph.push(ch + " dot #" + (k + 1));
+        if (near(q[0], q[1]) === Infinity) offGlyph.push(ch + " badge #" + (k + 1));
+        for (let j = k + 1; j < pts.length; j++) {
+          const d = Math.hypot(q[0] - pts[j][0], q[1] - pts[j][1]);
+          if (d < need - 0.01) {
+            collisions.push(ch + " " + (k + 1) + "/" + (j + 1) + " " + d.toFixed(1));
+          }
+        }
+      });
+      // the arrow tail must END where its stroke ends, or the arrowhead lies
+      fit.d.forEach(function (d, k) {
+        const t = BADGES.tailPath(polys[k], 18);
+        if (!t) { tails.push(ch + " #" + (k + 1) + " none"); return; }
+        const last = polys[k][polys[k].length - 1];
+        const m = /([\d.\-]+),([\d.\-]+)\s*$/.exec(t);
+        if (!m || Math.hypot(parseFloat(m[1]) - last[0], parseFloat(m[2]) - last[1]) > 0.01) {
+          tails.push(ch + " #" + (k + 1) + " ends off the stroke");
+        }
+      });
+    });
+    ok(collisions.length === 0, "no two numbered badges overlap on any letter",
+       collisions.join(", "));
+    ok(strays.length === 0, "every badge stays within the slide cap of its own start dot",
+       strays.join(", "));
+    ok(offGlyph.length === 0,
+       "every start dot and every badge is on the letter, within half a stem",
+       offGlyph.join(", "));
+    ok(tails.length === 0, "every arrow tail ends where its stroke ends", tails.join(", "));
   }
 
   /* Canvas measureText does NOT pull a webfont in, so asking for it explicitly
      is the only way to be measuring the face the sheet will actually print. */
+  /* The engine is fetched rather than <script>-tagged: it is an IIFE that
+     mounts against a printables page's markup, and this page has none. Only
+     the marked block is evaluated. */
   function boot() {
-    const load = document.fonts && document.fonts.load
-      ? document.fonts.load('700 ' + SIZE + 'px "' + FAM + '"').catch(function () {})
-      : Promise.resolve();
-    load.then(function () { return document.fonts ? document.fonts.ready : null; })
-        .catch(function () {})
-        .then(run, run);
+    Promise.all([
+      window.UTG_FACE_PROBE.load(FAM, 700, SIZE),
+      fetch("/js/printables/printablesEngine.js")
+        .then(function (r) { return r.text(); })
+        .then(function (t) { window.__PT_ENGINE_SRC = t; })
+        .catch(function () { window.__PT_ENGINE_SRC = ""; })
+    ]).then(run, run);
   }
   if (document.readyState === "complete") boot();
   else window.addEventListener("load", boot);

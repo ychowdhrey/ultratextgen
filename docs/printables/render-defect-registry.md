@@ -11,8 +11,13 @@ Every number below was measured, not estimated. Where a first reading was wrong 
 recorded as a correction rather than removed, because the wrong reading is the one a future
 audit will repeat.
 
-**Fix status (2026-09-19).** Eight entries are closed, each with the same instrument re-run
-against the same input: R-001, R-002, R-003, R-004, R-005, R-006, R-007, R-010. A closed entry
+**Fix status (2026-09-19).** Eleven entries are closed, each with the same instrument re-run
+against the same input: R-001 through R-007, R-010, and R-018 / R-019 / R-020 — plus R-013's
+tracing half, which its own "partly fixed" block had left open.
+
+Three of those were not found by this audit. R-018 was **created** by R-001's fix and is only
+visible on a rendered sheet; R-019 and R-020 were reported by the owner against the live
+generator. A closed entry is not a closed area, and a fix can be the next entry's cause. A closed entry
 keeps its original measurement above a **Fixed** block carrying the after-number — the before is
 what a future audit needs in order to recognise the defect returning. Nothing here is marked
 fixed on the strength of a code change alone.
@@ -415,6 +420,53 @@ space. The number above is measured against a solid-filled copy, which is the me
 `fitSkeleton` the tracing route uses, rather than dropped on unfitted. Same instrument: **12 of 12**
 start dots land on the letter body on `name-tracing` (`Emma`) and **7 of 7** on
 `handwriting-worksheet-generator` (`mom`), against 7 of 12 off before.
+
+**Reopened and closed again, 2026-09-19 (same day).** Two things that entry did not cover.
+
+*The numerals collided.* A badge is a disc of radius 11, so two are legible only while their
+centres are 22 units apart. Measured across all 52 letters fitted to Quicksand 700, **eleven pairs
+collide**, and on **A B D P R and p the two strokes start at exactly the same point** — badge 2
+covered badge 1 completely, so the sheet showed a "2" and no "1" at all:
+
+| letter | centre distance | overlap |
+|---|---|---|
+| A B D P R p | **0.0** | 22.0 — the first numeral is invisible |
+| a | 14.1 | 7.9 |
+| F | 16.3 | 5.7 |
+| E | 16.8 | 5.2 |
+| M | 21.5 | 0.5 |
+| N | 22.0 | 0.0 |
+
+Six of those were caused by the fix above: `B D P R` and `a` carried a lead-in segment whose only
+job was to hold the two start dots apart, and removing it (correctly — it drew a spur off the
+letter) brought the occlusion back. Moving an authored start point is not available either: it is
+the claim the overlay exists to make.
+
+So the **start dot stays on the start point and the numeral moves**, sliding along its own stroke
+until nothing overlaps — the one direction that cannot leave the letter, and the one that labels
+the stroke it belongs to. After: **0 colliding pairs across all 52 letters**, worst slide 28.5
+units of arc (`A`, ~18% of a limb), 41 letters unmoved and rendering exactly as before.
+
+*The arrows.* This entry also says "on `E` all three arm arrows overshoot past the right edge of
+the letter", and the fix above never re-measured it. Measured now, with the arrow tip at the path
+end plus the marker's 4-unit lead: **3 of 103 strokes** end off the ink (`c`, `e`, `u`), each
+within 5–6 units. The fit had already carried it; recorded here so the sentence above is not read
+as still-open.
+
+*Method correction.* R-010's instrument was a bare on/off pixel test against a solid raster. Over
+all 52 letters that test calls three start points "off the glyph" which are **1.0, 5.5 and 1.0
+units** from ink at an em of 210 — an antialiased edge, not a miss. `js/printables/strokeRoute.test.html`
+now measures the distance and allows half a stem, which is the inset `fitSkeleton` is already
+called with. The defect this has to keep catching was 24.8 units.
+
+**Guarded.** `strokeRoute.test.html` drives the shipped `badgePositions`/`tailPath`, sliced out of
+`printablesEngine.js` between its `@stroke-badges` markers, and asserts: no two badges overlap,
+every badge stays within the slide cap of its own start, every start dot and badge is on the
+letter, every arrow tail ends where its stroke ends. Verified against five differently-shaped
+broken inputs (the real regression re-injected; a badge let loose past the cap; a start point in
+the counter of `o`, where the fit cannot rescue it; a tail stopping short; the markers renamed) —
+each exits 1 — with a restored-tree control at 0. Browser test, not CI-gated, same as its siblings.
+
 ---
 
 ## R-011 — Cursive and calligraphy sheets are Unicode maths characters in a font stack that has none of them
@@ -518,6 +570,30 @@ Related, on the tracing side: the printed handwriting worksheet's practice rules
 **3.61in of a 7.5in printable width** on five of its seven pages (page 1 spans 5.13in). Under half
 the available writing space is used, on a sheet whose purpose is writing space.
 
+**The tracing half is fixed, 2026-09-19** — it was left open by the partial fix below, which
+addressed the design sheet only. Re-measured on the PDF this tool actually writes (`Emma`, level
+2, default paper and margins): the practice rules spanned **3.07in of an 8.5in page**, 41% of the
+6.13in printable box. They now span **6.13in — the whole of it** (measured off the rasterised PDF
+at 110dpi: 674 of 674 px), with the letters unchanged in size and the rows unchanged in height.
+
+The cause was not composition but `preserveAspectRatio`. A trace row is
+`<svg viewBox="0 0 w 210">` with `width:100%` and a `max-height`, and `w` is measured from the
+**word** — so the row's aspect is the word's, and on any sheet wider than that aspect the height
+cap wins and the whole row, rules included, is letterboxed into the middle. A root `<svg>` clips
+to its *viewport*, not to its viewBox, so the fix is to draw the rules past the viewBox and let
+the element's own edge — which is the paper's writing width — cut them off. A horizontal rule
+extended horizontally is still a horizontal rule, so nothing is distorted, and the word does not
+move or shrink; choosing a wider viewBox aspect instead would have shrunk it by ~30% in portrait.
+
+It also closes a preview/print disagreement rather than opening one: the rules already spanned
+97% of the row in the live preview and 50% of the printable width in print. Both are now full
+width. (The word is still drawn proportionally larger in the preview than it prints — that is
+R-017's height cap, untouched here.)
+
+Still open, and a product decision rather than a defect: the word is centred on the full-width
+rule, so a short name now leaves practice space on both sides of itself rather than continuing
+from the left margin.
+
 **Partly fixed 2026-09-19.** The type is measured rather than counted: one probe at font-size
 100 through the same hidden-canvas measurer the heading already trusted, scaled linearly. The
 three-step cliff is gone — the size is continuous across the entry's own inputs (360 / 360 / 312 /
@@ -594,6 +670,94 @@ geometry is not altered, so this is a preview-fidelity defect rather than a layo
 so a 584 × 210 viewBox is presented in a 1752 × 93 box. `preserveAspectRatio` then letterboxes the
 content and the on-screen row is not a scale model of the printed one. Noted during measurement,
 which had to render the markup standalone to get true geometry.
+
+---
+
+## R-018 — The stroke overlay erases the letter it annotates on every dotted row
+
+**Severity** R1 · **Root cause** PATH_GENERATION · **Screen** FAIL · **Print** FAIL · **PNG** FAIL
+**Affects** `handwriting-worksheet-generator`, `letter-tracing`, `sight-word-tracing`
+
+Introduced by R-001's fix, and only visible because of it. The stroked levels now draw the
+writing centreline — `fitSkeleton` over `strokeDirectionData.js` — and the stroke-direction
+overlay draws *the same call's output* on top, solid, 6 units wide, at 0.9 opacity, with the
+letter's dots underneath at `routeSw` 7 and a `0.1 19` dash.
+
+Before R-001 the two were different geometry (contour vs skeleton) and the overlay read as an
+annotation across the letter. After it they are identical, so the overlay does not annotate the
+letter, it **replaces** it: at level 3 the fine dots a child is meant to join are completely
+covered by a blue line of exactly their own shape. Every trace row on the sheet, not just one.
+
+No gate could see it. The row's markup, strings, schema, assets and structure are all unchanged;
+the defect is one path painted over another, and nothing in this repo compares two paths in one
+SVG.
+
+**Fixed 2026-09-19.** `traceWordSVG` passes `routeDrawn` when the row has already drawn these
+paths, and the overlay then contributes only what the row lacks: the numbered start dot and a
+short arrow at the end of each stroke (18 units, or 34% of a short stroke, at stroke-width 4
+instead of 6). The full route is still drawn on a solid or ghost row, where the letter is not the
+skeleton. Measured on `E`, whose fitted arms are ~55 units: the arrow plus the badge covered 65%
+of an arm at the first attempt and 46% at the shipped size.
+
+---
+
+## R-019 — The N-per-sheet chips are an orphan control, wedged into the button row
+
+**Severity** R3 · **Root cause** CSS_LAYOUT · **Screen** FAIL · **Print** N/A · **PNG** N/A
+**Affects** `coloring-page-maker`, `dot-to-dot-name`, `handwriting-worksheet-generator`,
+`letter-tracing`, `name-puzzle-maker`, `sight-word-tracing`
+
+Reported by the owner as "there is something missing here" on the generator page, which is
+exactly what it looks like: two bare digits, **1** and **4**, with no label, sitting *between*
+Download PDF and Save all 7 levels in the middle of the primary action row.
+
+Two causes, and the second is the one that makes it unreadable.
+
+`mountSheetCost()` anchors on `btn.closest(".bubble-actions, .pt-actions")`. Six of the seven
+roster tools mark that row `.pt-preview-actions`, which is in neither selector, so `closest()`
+returned null, the fallback inserted after the *button* rather than after the row, and the chips
+`mountNUp()` puts above the cost line landed inside it. `name-tracing` looked right only because
+it happens to use `.bubble-actions`.
+
+And the chips carry no visible label by design — the engine's own note says "the chips are
+digits, so this adds no string in any language… what explains them is the sheet-cost line
+directly beneath". That line is `hidden` until the roster holds two names. `mountNUp()` read
+"a roster exists" as "the textarea exists", which is true on load, so the default state of the
+page was the chips with their entire explanation hidden.
+
+**Fixed 2026-09-19.** `.pt-preview-actions` added to the anchor list, so the line and the chips
+sit under the whole row on all seven tools (verified by reading the DOM order on each). The chips
+follow the same rule as the line that explains them: hidden until the roster holds enough names
+for N-per-sheet to change anything, `updateSheetCost()` owning both. `.pt-choice` is
+`flex: 1 1 auto` for labelled ladders, so the two digits are sized to their content once the row
+is on its own line.
+
+**Not fixed, and it needs a decision.** Even with the cost line present the chips are two bare
+digits. No existing translated string fits: `T.classSet` is "Class set: one sheet per name",
+which contradicts the 4 chip, and `T.sheets`/`T.pageCount` are nouns. A visible label needs a new
+string in eight languages, which is a copy decision rather than a render fix.
+
+---
+
+## R-020 — The generator's PNG export carries neither the overlay nor the credit
+
+**Severity** R2 · **Root cause** EXPORT_PIPELINE · **Screen** N/A · **Print** N/A · **PNG** FAIL
+**Affects** `handwriting-worksheet-generator`, `letter-tracing`, `sight-word-tracing`
+
+Same family as R-008 and R-009: the preview and the export disagree.
+
+`strokeOverlayImage()` was added so the numbered start dots and arrows would survive into "the one
+artifact that leaves the site", and wired into `wordPNG`. `genWordPNG` — the word export of the
+*generator*, on the page whose whole subject is stroke order — was not given it, so with **Show
+stroke direction** on the preview and the PDF carried the numbering and the PNG did not.
+
+`genWordPNG` also never called `drawCredit`, alone among this engine's PNG paths, so that download
+left the site with no URL and no QR on it.
+
+**Fixed 2026-09-19.** Both wired, using the geometry the canvas beside them already draws
+(alphabetic baseline, no tracking) and `routeDrawn` set from whether the level drew the route, so
+the PNG follows the same rule as the screen. Verified by downloading `handwriting-emma-L3.png`
+headlessly and reading it.
 
 ---
 

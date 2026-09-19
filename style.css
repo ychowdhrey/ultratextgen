@@ -10638,6 +10638,15 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
 .pt-nup-row {
   margin-top: 0.5rem;
 }
+/* .pt-choice is `flex: 1 1 auto` so a ladder of labelled options fills its
+   row. These two are single digits, and once the row moved out of the button
+   strip and onto its own line they stretched to half the column each and read
+   as two more buttons. Sized to their content instead. */
+.pt-nup-row .pt-choice {
+  flex: 0 0 auto;
+  min-width: 2.75rem;
+  padding: 0.4rem 0.7rem;
+}
 
 @media print { .pt-nup-row { display: none; } }
 
