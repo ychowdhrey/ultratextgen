@@ -727,11 +727,11 @@
         "source": "library/symbol page template"
       },
       {
-        "text": "Everything runs in your browser — no app or sign-up.",
+        "text": "Everything runs in your browser: no app or sign-up.",
         "pages": 184,
         "variety": 0.05,
         "source": "shared trust line",
-        "note": "Also carries an em dash, so one upstream edit clears 184 pages of EFR-F-001 backlog at once. This is the highest-leverage single fix on the site."
+        "note": "Carried an em dash until 2026-09-19, when the dash became a colon across every page that reproduces it. The observation that made it worth recording stands: one edit to a shared string cleared 609 em dashes at once, and the two generators that would have reprinted it (generate_bubble_letters_pages.py, generate_bubble_numbers_pages.py) were fixed in the same change. Left here rather than deleted because the string is still a shared template line and still the shape this block exists to record."
       },
       {
         "text": "Free, no sign-up.",

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>glyphMetrics tests</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap">
+<style>
+  body { font: 14px/1.5 system-ui, sans-serif; margin: 20px; max-width: 900px; }
+  .pass { color: #0a7d32; } .fail { color: #b3261e; font-weight: 700; }
+  h1 { font-size: 18px; } pre { background: #f5f6f8; padding: 10px; overflow: auto; }
+  #summary { font-weight: 700; margin: 12px 0; padding: 8px; background: #f0f1f4; }
+</style>
+</head>
+<body>
+<h1>glyphMetrics: DOM tests</h1>
+<p>Needs a browser: canvas <code>TextMetrics.actualBoundingBox*</code> and the real
+Quicksand face. Open it and read the panel, or drive it headlessly and read
+<code>window.__UTG_TEST</code>.</p>
+<div id="summary">running…</div>
+<pre id="out"></pre>
+
+<script src="/js/printables/strokeDirectionData.js"></script>
+<script src="/js/printables/glyphMetrics.js"></script>
+<script>
+(function () {
+  "use strict";
+  const lines = [];
+  let pass = 0, fail = 0;
+  function ok(cond, label, detail) {
+    if (cond) { pass++; lines.push("PASS  " + label); }
+    else { fail++; lines.push("FAIL  " + label + (detail ? "   " + detail : "")); }
+  }
+  function near(a, b, tol, label) {
+    const d = Math.abs(a - b);
+    ok(d <= tol, label, "got " + (+a.toFixed(2)) + " want " + b + " +/-" + tol + " (off " + (+d.toFixed(2)) + ")");
+  }
+
+  const F = "Quicksand, 'Plus Jakarta Sans', sans-serif";
+
+  function run() {
+    const gm = window.UltraTextGen.glyphMetrics;
+    gm.reset();
+
+    // --- ink is real ink, not the em box ---------------------------------
+    // The defect this module exists for: getBBox() reports the same box for
+    // "A" and "a". Ink must not.
+    const A = gm.ink("A", F, 210), a = gm.ink("a", F, 210);
+    ok(A.exact, "canvas reports exact ink bounds (actualBoundingBox*)");
+    ok(Math.abs(A.top - a.top) > 20, "ink top differs between A and a",
+       "A " + A.top.toFixed(1) + " vs a " + a.top.toFixed(1));
+    ok(A.bottom <= 2, "A sits on the baseline (no descender)", "bottom " + A.bottom.toFixed(1));
+
+    // --- descenders go below the baseline --------------------------------
+    const g = gm.ink("g", F, 210);
+    ok(g.bottom > 20, "g descends below the baseline", "bottom " + g.bottom.toFixed(1));
+
+    // --- face metrics match the audit's rasterised ratios ----------------
+    // Audit measured cap 0.699em and x-height 0.544em by scanning pixels of a
+    // STROKED glyph, so these run a little smaller; 0.02 covers the stroke.
+    const fm = gm.faceMetrics(F, 132);
+    near(fm.capHeight / 132, 0.699, 0.02, "cap height ratio matches audit");
+    near(fm.xHeight / 132, 0.544, 0.02, "x-height ratio matches audit");
+    ok(fm.ascender >= fm.capHeight, "ascender is at least cap height");
+    ok(fm.xHeight < fm.capHeight, "x-height is below cap height");
+
+    // --- centring: the numbers the audit measured independently ----------
+    // E lands +3.5 units right of centre at fs 210, Q +6.7. Those were read
+    // off a raster; the module must derive them from metrics alone.
+    const box = { w: 200, h: 240 };
+    const cE = gm.centreOffsets("E", F, 210, box);
+    const cQ = gm.centreOffsets("Q", F, 210, box);
+    near(-cE.dx, 3.5, 1.0, "E ink sits right of the advance centre (audit: +3.5)");
+    near(-cQ.dx, 6.7, 1.0, "Q ink sits right of the advance centre (audit: +6.7)");
+
+    // --- centring actually centres ---------------------------------------
+    ["A", "O", "E", "W", "g", "p", "x", "Q"].forEach(function (ch) {
+      const c = gm.centreOffsets(ch, F, 210, box);
+      const i = c.ink;
+      const inkTop = c.baselineY + i.top, inkBot = c.baselineY + i.bottom;
+      const centre = (inkTop + inkBot) / 2;
+      near(centre, box.h / 2, 0.5, "ink of '" + ch + "' centres vertically in the tile");
+      ok(inkTop >= 0 && inkBot <= box.h, "ink of '" + ch + "' stays inside the tile",
+         "top " + inkTop.toFixed(1) + " bottom " + inkBot.toFixed(1));
+    });
+
+    // --- shared baseline keeps a tiled set on one line -------------------
+    const AZ = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    const bA = gm.centreOffsets("A", F, 210, box, 700, { shareBaselineWith: AZ }).baselineY;
+    const bg = gm.centreOffsets("g", F, 210, box, 700, { shareBaselineWith: AZ }).baselineY;
+    near(bA, bg, 0.01, "shared baseline is identical for A and g");
+    const bSolo = gm.centreOffsets("A", F, 210, box).baselineY;
+    ok(Math.abs(bSolo - bA) > 1, "solo baseline differs from shared baseline",
+       "solo " + bSolo.toFixed(1) + " shared " + bA.toFixed(1));
+    // and the whole set still fits
+    let worstTop = Infinity, worstBot = -Infinity;
+    Array.from(AZ).forEach(function (ch) {
+      const i = gm.ink(ch, F, 210);
+      worstTop = Math.min(worstTop, bA + i.top);
+      worstBot = Math.max(worstBot, bA + i.bottom);
+    });
+    ok(worstTop >= 0 && worstBot <= box.h, "whole A-Z set fits the tile on the shared baseline",
+       "top " + worstTop.toFixed(1) + " bottom " + worstBot.toFixed(1));
+
+    // --- skeleton geometry ------------------------------------------------
+    const D = window.UTG_STROKE_DIRECTION_DATA;
+    ok(Object.keys(D).length === 52, "skeleton covers 52 letters");
+    const bE = gm.strokesBox(D.E.strokes);
+    ok(bE && bE.w > 0 && bE.h > 0, "skeleton bbox for E is non-degenerate", JSON.stringify(bE));
+    near(bE.y, 55, 1, "skeleton E starts at the documented cap top (y 55)");
+    near(bE.y + bE.h, 198, 1, "skeleton E ends at the documented baseline (y 198)");
+
+    // --- fitTransform maps one box onto another, uniformly ---------------
+    const t = gm.fitTransform({ x: 0, y: 0, w: 100, h: 200 }, { x: 10, y: 20, w: 50, h: 100 });
+    near(t.scale, 0.5, 0.001, "fitTransform scale is uniform min-fit");
+    near(t.tx, 10, 0.001, "fitTransform tx places the box");
+    near(t.ty, 20, 0.001, "fitTransform ty places the box");
+    // aspect mismatch must letterbox, not stretch
+    const t2 = gm.fitTransform({ x: 0, y: 0, w: 100, h: 100 }, { x: 0, y: 0, w: 200, h: 100 });
+    near(t2.scale, 1, 0.001, "fitTransform never stretches to fill both axes");
+    near(t2.tx, 50, 0.001, "fitTransform centres on the slack axis");
+
+    // --- caching must not survive a font swap ----------------------------
+    const before = gm.ink("A", F, 210).width;
+    gm.reset();
+    const after = gm.ink("A", F, 210).width;
+    near(after, before, 0.01, "reset() then re-measure is stable");
+
+    const summary = fail === 0
+      ? ("ALL " + pass + " ASSERTIONS PASSED")
+      : (fail + " FAILED, " + pass + " passed");
+    document.getElementById("summary").textContent = summary;
+    document.getElementById("summary").className = fail === 0 ? "pass" : "fail";
+    document.getElementById("out").textContent = lines.join("\n");
+    window.__UTG_TEST = { pass: pass, fail: fail, lines: lines, summary: summary };
+  }
+
+  /* Canvas measureText does NOT trigger webfont loading, and this page renders
+     no Quicksand in the DOM, so document.fonts.ready alone resolves against a
+     face the browser has never fetched and every metric below is the fallback's.
+     It fails loudly for Q (+6.7 in Quicksand, -0.2 in a generic sans) and passes
+     by coincidence for E, which is the worst possible failure mode: a green run
+     measuring the wrong font. Ask for the face explicitly, then verify it
+     actually arrived before asserting anything. */
+  function boot() {
+    const want = "700 210px Quicksand";
+    const done = function () {
+      if (document.fonts && !document.fonts.check(want)) {
+        document.getElementById("summary").className = "fail";
+        document.getElementById("summary").textContent =
+          "ABORTED — Quicksand 700 did not load; every metric would be the fallback face's.";
+        window.__UTG_TEST = { pass: 0, fail: 1, lines: ["FAIL  webfont Quicksand 700 unavailable"],
+                              summary: "ABORTED — webfont missing" };
+        return;
+      }
+      run();
+    };
+    if (document.fonts && document.fonts.load) {
+      Promise.all([document.fonts.load(want), document.fonts.load("700 132px Quicksand")])
+        .then(done, done);
+    } else {
+      window.addEventListener("load", done);
+    }
+  }
+  boot();
+})();
+</script>
+</body>
+</html>
