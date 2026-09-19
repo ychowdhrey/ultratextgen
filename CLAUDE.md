@@ -2794,6 +2794,90 @@ rollout could not be read: `share_text` previously recorded only its method
 actually work on*, and that is the whole question this change exists to settle.
 `style_name` is still set for styles, so nothing downstream breaks.
 
+### `share_destination`, and the rule that a row fires on success
+
+Two changes, made a week apart by two sessions that could not see each other.
+Both are in `js/share/share-core.js`, whose `pushShare()` is the **only** writer
+of a `share_text` row.
+
+**The event used to fire before the share happened (fixed 2026-09-13).** Every
+push ran *before* the `await`, and `share_method` came from
+`navigator.share ? … : …` — which API existed, not what happened. So a visitor
+who opened the OS sheet and closed it again, one who completed the share, and a
+native share that errored into the clipboard fallback produced **byte-identical
+rows**. A cancel now pushes nothing. Anyone comparing a `share_text` series
+across 2026-09-13 must read it as a **definition change, not a traffic change**:
+counts after that date are strictly lower for the same behaviour.
+
+**`share_destination` answers what `share_method` cannot (added 2026-09-19).**
+The method is HOW the text left the page; the destination is WHERE it went:
+
+| what happened | `share_method` | `share_destination` |
+|---|---|---|
+| native share completed | `native` | `native_share` |
+| **native share cancelled** | — | **no row at all** |
+| copy-link path (the button says "Copy link" where `navigator.share` is absent) | `link_copy` | `clipboard` |
+| image shared through the sheet | `image` | `native_share` |
+| image downloaded instead | `image_download` | `download` |
+| Pinterest | `pinterest` | `pinterest` |
+
+**The two are only accidentally one-to-one today**, which is the reason the call
+site states the destination rather than having it inferred. The first explicit
+platform button — a WhatsApp link, a Reddit submit link — will share a method
+with the copy-link path and differ precisely in this field.
+`DESTINATION_FOR_METHOD` exists only as a floor for the exported
+`UTG.pushShare`, which shipped as `(method, creation)` and still accepts that
+shape; it is never a substitute for naming the destination.
+
+**`native_share` is deliberately opaque and must stay that way.** The Web Share
+API never tells the page which app the user picked — the sheet belongs to the
+OS, not to us — so a guessed destination is a fabricated dimension, and a
+fabricated one is worse than an honest unknown because it reads as measured.
+
+**Pinterest is the one destination recorded on intent rather than completion:**
+the pin is composed on pinterest.com in a new tab and nothing returns to the
+page. Leaving the click unrecorded would lose the surface entirely, which is the
+worse error. It is the exception, not a precedent.
+
+`SHARE_DESTINATIONS` also reserves `whatsapp`, `facebook`, `telegram`, `x`,
+`reddit` and `email`. **No explicit platform share button exists on this site**
+(audited 2026-09-19: the only platform-named links in the tree are `mailto:`
+contact addresses). They are named so the first one built takes the spelling the
+vocabulary already has instead of inventing `Twitter`, `tg` or `mail`.
+
+`locale` was added in the same pass, derived the way `script.js` derives it for
+`generate_text` (two-letter, so a `zh-TW` page reports `zh`) so the one GA4
+`locale` dimension means one thing across both events; `header.js`'s
+`cta_source_locale` is a separate, differently-named field and keeps the full tag.
+
+**`npm run test:share-core`** (`js/share/shareCore.test.js`) gates both halves in
+`validate.yml` — 148 headless assertions, no backlog to be red against, same call
+as `test:saved-items`. Its last case asserts the **single-writer invariant across
+the whole tree**: no file but `share-core.js` contains the string `share_text`.
+That is what keeps the vocabulary from forking, because a page pushing its own
+literal is invisible in review.
+
+**This section exists because the two halves were built twice.** The
+fire-on-success fix and a `share_destination` branch were written on 2026-09-13
+by two sessions, in the same file, on the same day; only one merged, and the
+other was still carrying a redundant copy of the refactor six days later. That is
+"Parallel sessions build the same thing under different names" arriving in a
+shared module instead of a locale slug — git merged nothing cleanly and nothing
+flagged it. **A code comment is not a record**: the 2026-09-13 change documented
+itself only in `share-core.js`, so the second session had no way to find it
+without reading the file.
+
+Verified per this file's own rule against seven differently-shaped broken inputs
+— the push moved back before `navigator.share`, `share_destination` dropped,
+`locale` dropped, `native_share` guessed as an app name, a download recorded as
+`native_share`, the derived fallback removed, and a second file pushing its own
+`share_text` — each exits 1, with a restored-tree control at 0. And driven in
+headless Chromium on real pages (English and German library pages, the
+generator, printables): 27 assertions, 0 page errors. **Note for anyone
+repeating this:** read the probe's exit status from `node` directly, never
+through `| head` or `| tail` — that reports the pager's status, the pipefail
+trap this file records three times elsewhere.
+
 ### Verified against deliberately broken inputs before being trusted
 
 Per this file's own rule. The tag gate **exits 1** on the pre-injection tree
@@ -4678,6 +4762,16 @@ Standing protocol:
   them run before `DOMContentLoaded`, so the first breaks the generator outright
   and the second silently attaches nothing. Both shipped and were caught only by
   driving a browser.
+- Do not push a `share_text` event from anywhere but `js/share/share-core.js`,
+  and do not push one before the share has succeeded. `pushShare()` is the one
+  writer; a surface that grows an explicit platform button calls it with the
+  matching `UTG.SHARE_DESTINATIONS` value rather than inventing a spelling, and
+  never infers the destination from the method — the two are only accidentally
+  one-to-one today. A cancelled native share and a refused clipboard write
+  record nothing. And never guess which app a native share reached:
+  `navigator.share` does not say, so it is always `native_share`. See
+  "`share_destination`, and the rule that a row fires on success" above —
+  `npm run test:share-core` gates both halves.
 - Do not hand-author a UI string for `symbol-explorer.js`'s locale table. Every
   one already ships translated in `locales/<lang>.json` — run
   `npm run sync:explorer-strings`, which `npm run check:explorer-strings` gates.
