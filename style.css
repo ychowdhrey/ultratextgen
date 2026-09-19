@@ -6794,10 +6794,17 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
    it 65px tall and a 65px strip cannot show whether the sheet is right, on the
    device most likely to be used. Audit 2026-09-17, R-016.
 
-   The fix keeps the preview a SCALE MODEL -- the letter is sized by height and
-   the box scrolls sideways, so the scale stays uniform on both axes. Capping
-   by height and letting width overflow is the opposite of R-017's defect,
-   where width was held at 100% and height capped, which letterboxes. */
+   The fix sizes the letter by HEIGHT and lets the box scroll sideways. An
+   <svg> always draws its content uniformly, at min(sx, sy), so the element
+   being wider than its viewBox ratio was never the defect -- the defect was
+   that sy was the smaller of the two and the width set the scale. Sizing by
+   height makes sy the binding one, which is what actually enlarges the
+   letter: 0.324 to 0.55, 65px of ink to 104px.
+
+   Worth knowing before editing this: a taller element ALONE changes nothing.
+   Two attempts produced a 300x110 box with the letter still at 0.324 inside
+   it, because a flex item shrinks to fit even after max-content has sized it.
+   Measure the ink, not the box. Audit 2026-09-17, R-016. */
 @media (max-width: 640px) {
   .pt-name-preview {
     overflow-x: auto;

@@ -21,7 +21,7 @@ Sources: [`render-defect-registry.md`](render-defect-registry.md),
 | Item 1 — VisibleBounds + OpticalCenter | **shipped** as `js/printables/glyphMetrics.js`. Closes R-002, R-005, R-006, R-010. |
 | Item 2 — PatternFill | **shipped.** Closes R-004. |
 | Item 3 — PaperLayout | **shipped** as `sheetGeom()`. Closes R-007. |
-| Item 4 — one layout object | not started. R-008, R-009, R-014, R-015 remain open. |
+| Item 4 — one layout object | **shipped** as `wordOutlineGeom()` + `paintPreviewInk()`. Closes R-008, R-009, R-014 and the duplication half of R-015. |
 | Item 5 — PrintableCanvas fit | **shipped** for the measured-type half. Closes R-003, most of R-013. |
 | Item 6 — stroke skeletons | **shipped**, and far cheaper than this document estimated. Closes R-001 and the rest of R-010. |
 
@@ -244,7 +244,7 @@ authoring work does not touch the layout path until it lands.
 | 1 | R-002, R-005, R-006, most of R-010 | 11 | no |
 | 2 | R-004 | 1 | no |
 | 3 | R-007 | 3 | no |
-| 4 | R-008, R-009, R-014, R-015 | all exporting tools | no |
+| 4 | R-008, R-009, R-014, R-015 duplication | all exporting tools | no |
 | 5 | R-003, R-013 | 4 | no |
 | 6 | R-001, R-012, rest of R-010 | 4 | **yes** |
 
@@ -252,6 +252,26 @@ Unassigned: R-011 (cursive sheets are Unicode maths characters with no cursive f
 R-016/R-017 (preview fidelity). R-011 is not a render bug to fix but a product decision — ship a
 real joined cursive face, or stop describing these pages as cursive practice. It should be raised
 with the owner alongside Item 0.
+
+**All three of those are closed now (2026-09-19), and two of them not by this work.** R-011 was
+taken the way this paragraph proposed: `main` moved the cursive and calligraphy pages to
+`render: "glyph"` with a real joined face, and the 2026-09-19 self-hosting pass put that face in
+`assets/fonts/` where Cloudflare Fonts cannot silently drop it. R-017 was closed by `main`'s own
+row-layout changes. R-016 is fixed here. Each is re-measured in the registry rather than assumed
+from the commit that appears to have done it.
+
+**What is left after this pass, and neither is an unfixed render defect:**
+
+* **R-012** (dot-to-dot word mode) — measured again, unchanged, and deliberately not fixed. The
+  per-letter budget it reports is the output of a decision taken at `DOT_LEVELS` on 2026-09-16
+  with its own measurements attached; the obvious fix collapses `easy` and `medium` to the same
+  sheet, which is the regression that comment exists to prevent. Item 6 shipped without it, so the
+  "Item 6 closes R-012" row above is superseded: Item 6 closed R-001 and R-010 only. It belongs
+  with Item 0, as an owner decision about the difficulty ladder.
+* **R-015 alignment** — the centred credit URL beside a corner QR is a recorded 2026-09-10
+  decision in `drawCredit()`, not an oversight. Reopening it is a conversation, not a patch.
+* **R-013's remainder** — a short word on a wide sheet, which is a cap-policy question rather than
+  a fit bug.
 
 ## Regression cover
 
