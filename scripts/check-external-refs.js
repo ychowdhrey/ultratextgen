@@ -35,13 +35,36 @@ const PATTERNS = [
   { rx: ['private', 'research', 'repo'].join(' '), why: 'points at an unpublished source' },
   { rx: ['private', 'research', 'tooling'].join(' '), why: 'points at unpublished tooling' },
   { rx: ['internal', 'docs/'].join(' '), why: 'points at documentation outside this repo' },
+  // A document FILENAME is a pointer too, and the three patterns above cannot
+  // see one: they match a repository name or a descriptive phrase, never a
+  // bare `SOME-ANALYSIS-2026-01-01.md`. That gap let five such citations sit
+  // in the tree for 55 days, across CLAUDE.md, _redirects and a data file,
+  // each reading as an ordinary source note and each pointing somewhere no
+  // reader of this repo can follow.
+  //
+  // Shape rather than a name list, so it cannot go stale as documents are
+  // added: a SCREAMING-KEBAB or SCREAMING_SNAKE `.md` filename. Case-SENSITIVE
+  // and regex — case-folded it would match every ordinary lowercase doc
+  // reference in this repo (`locale-parent-governance.md` and the rest), which
+  // is why `ci: false` exists at all.
+  {
+    rx: '\\b[A-Z][A-Z0-9]+([-_][A-Z0-9]+)+\\.md\\b',
+    re: true,
+    ci: false,
+    why: 'cites a document filename that is not published in this repo',
+    // `YYYY-MM-DD.md` in docs/infra-review/README.md is a filename TEMPLATE,
+    // not a citation. It is the only shape this matches that is not a pointer.
+    except: /^[YMD]+([-_][YMD]+)+\.md$/,
+  },
 ];
 
 // This file is excluded from its own scan.
 const SELF = 'scripts/check-external-refs.js';
 
-function grep(pattern, stagedOnly) {
-  const args = ['grep', '-n', '-I', '-i', '--no-color'];
+function grep(pattern, stagedOnly, opts = {}) {
+  const args = ['grep', '-n', '-I', '--no-color'];
+  if (opts.ci !== false) args.push('-i');
+  if (opts.re) args.push('-E');
   if (stagedOnly) args.push('--cached');
   args.push('-e', pattern, '--', '.', `:!${SELF}`, ':!node_modules');
   try {
@@ -59,11 +82,17 @@ function main() {
   const stagedOnly = process.argv.includes('--staged');
   const seen = new Map();
 
-  for (const { rx, why } of PATTERNS) {
-    for (const line of grep(rx, stagedOnly)) {
+  for (const { rx, why, re, ci, except } of PATTERNS) {
+    for (const line of grep(rx, stagedOnly, { re, ci })) {
       // format: path:lineno:content
       const m = line.match(/^([^:]+):(\d+):(.*)$/);
       if (!m) continue;
+      if (except) {
+        // Re-run the pattern over the matched line and keep it only if at
+        // least one hit is a real citation rather than a template.
+        const found = m[3].match(new RegExp(rx.replace(/\\\\/g, '\\'), 'g')) || [];
+        if (found.length && found.every((f) => except.test(f))) continue;
+      }
       const key = `${m[1]}:${m[2]}`;
       if (!seen.has(key)) {
         seen.set(key, { file: m[1], line: m[2], why, text: m[3].trim().slice(0, 120) });
