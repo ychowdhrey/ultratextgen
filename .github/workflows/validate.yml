@@ -469,6 +469,18 @@ jobs:
         id: static_footer
         continue-on-error: true
         run: npm run check:static-footer | tee static-footer.log
+      # Gating, zero backlog: docs/README.md's blocking-gate enumeration is
+      # GENERATED from this file by scripts/build-gate-inventory.py, which
+      # reuses run-ci-gates.py's own parser, so the doc and CI cannot disagree
+      # about what gates. It replaces a hand-maintained sentence that went
+      # stale and was hand-corrected on nine consecutive weekly review cycles
+      # (37 -> 46 -> 49 against a real 54), because the review that finds it is
+      # mandated to make a small additive diff and so could never build the fix.
+      # Fix is always `npm run build:gate-inventory`.
+      - name: Run gate inventory check
+        id: gate_inventory
+        continue-on-error: true
+        run: pip install pyyaml >/dev/null && npm run check:gate-inventory | tee gate-inventory.log
       # Gating, and with no backlog to be red against: the accent notice's copy
       # either matches data/accent_notice_copy.json or it doesn't, and
       # `npm run build:accent-notice` closes any gap in one idempotent run. The
@@ -844,6 +856,11 @@ jobs:
             cat static-footer.log
             echo '```'
             echo ""
+            echo "### Gate inventory check — \`${{ steps.gate_inventory.outcome }}\`"
+            echo '```'
+            cat gate-inventory.log
+            echo '```'
+            echo ""
             echo "### Accent notice check — \`${{ steps.accent_notice.outcome }}\`"
             echo '```'
             cat accent-notice.log
@@ -1084,6 +1101,7 @@ jobs:
           steps.tile_codepoints.outcome == 'failure' ||
           steps.document_head.outcome == 'failure' ||
           steps.static_footer.outcome == 'failure' ||
+          steps.gate_inventory.outcome == 'failure' ||
           steps.accent_notice.outcome == 'failure' ||
           steps.library_directory.outcome == 'failure' ||
           steps.locale_library_directory.outcome == 'failure' ||
