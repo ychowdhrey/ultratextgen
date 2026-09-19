@@ -80,6 +80,23 @@
       dotLadderTitle: "Practice ladder",
       dotLadderText: "Start easy and add dots as it gets comfortable. Mastered Expert? Turn the numbers off, then try drawing it freehand.",
       pdfHint: "Tip: Print → “Save as PDF” downloads this sheet as a PDF.",
+      /* Word search maker. English only for now: no locale build of this page
+         exists, so nothing can render these in the wrong language. When one
+         ships, harvest each string per docs/em-dash-policy.md's sibling rule
+         and attest it with npm run audit:locale-attestation. */
+      wordSearch: {
+        heading: "Word Search",
+        findAll: "Find all",
+        wordsWord: "words",
+        answerKey: "Answer key",
+        forWhom: "for",
+        tooLong: "Too long for the grid:",
+        needWords: "Type a few words to build a grid.",
+        gridOf: "Word search grid",
+        lettersBy: "letters by",
+        versions: "different grids, one per name",
+        oneGrid: "One grid"
+      },
       printOpts: { settings: "PDF settings", paper: "Paper", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Download PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
       printBook: "Save as a book: one page per letter",
       save: "Save",
@@ -665,6 +682,16 @@
     puzzlePreview: $("#pt-puzzle-preview"),
     puzzlePrint: $("#pt-puzzle-print"),
     puzzlePng: $("#pt-puzzle-png"),
+    // Word search maker (optional; gated on its own mounts)
+    searchInput: $("#pt-search-input"),
+    searchRoster: $("#pt-search-roster"),
+    searchHeading: $("#pt-search-heading"),
+    searchLevelGroup: $("#pt-search-level"),
+    searchAnswer: $("#pt-search-answer"),
+    searchPreview: $("#pt-search-preview"),
+    searchMeta: $("#pt-search-meta"),
+    searchPrint: $("#pt-search-print"),
+    searchPng: $("#pt-search-png"),
     printRoot: $("#pt-print-root")
   };
 
@@ -1629,7 +1656,14 @@
   // typed here is ever sent to analytics (see header.js trackPrintable).
   function firstEl(list) { return list.filter(Boolean)[0] || null; }
   function primaryInput() { return firstEl([el.nameInput, el.genInput, el.designInput, el.bannerInput, el.puzzleInput]); }
-  function primaryRoster() { return firstEl([el.nameRoster, el.genRoster, el.designRoster, el.puzzleRoster]); }
+  function primaryRoster() { return firstEl([el.nameRoster, el.genRoster, el.designRoster, el.puzzleRoster, el.searchRoster]); }
+  /* presetParams() is defined above the word-search section, so it reaches the
+     module through this rather than through searchBuild(). The fallback keeps a
+     share link working (minus its word list) if the module has not arrived. */
+  function WS_NS() {
+    const ns = window.UltraTextGen && window.UltraTextGen.wordSearch;
+    return ns || { normalizeWords: () => [] };
+  }
   function presetParams() {
     const p = {};
     const input = primaryInput();
@@ -1648,8 +1682,12 @@
     if (spacingKey !== "normal") p.sp = spacingKey;
     if (stencilOnFlag) p.st = "1";
     if (el.sizeControl && alphaSizeKey !== "full") p.size = alphaSizeKey;
-    const heading = firstEl([el.designHeading, el.puzzleHeading]);
+    const heading = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading]);
     if (heading && heading.value.trim()) p.heading = heading.value.trim();
+    if (el.searchInput && el.searchInput.value.trim()) {
+      p.words = WS_NS().normalizeWords(el.searchInput.value).map((w) => w.display).join("|");
+      if (searchState.level !== "medium") p.wslevel = searchState.level;
+    }
     if (el.strip && activeChar && !CFG.initialChar) p.ch = activeChar;
     /* Paper travels, but only as a suggestion -- see the read side, which
        ignores it for a visitor who has chosen their own. The old guard tested
@@ -1687,7 +1725,13 @@
     if (rows && rowsEl && /^[1-8]$/.test(rows)) rowsEl.value = rows;
     const cs = presetGet("case");
     if (cs && el.genCase && ["as-typed", "upper", "lower", "title"].indexOf(cs) !== -1) el.genCase.value = cs;
-    const heading = presetGet("heading"); const headingEl = firstEl([el.designHeading, el.puzzleHeading]);
+    const words = presetGet("words");
+    if (words && el.searchInput) {
+      el.searchInput.value = String(words).split("|").map((x) => x.trim()).filter(Boolean).join("\n");
+    }
+    const wslevel = presetGet("wslevel");
+    if (wslevel && ["easy", "medium", "hard"].indexOf(wslevel) !== -1) searchState.level = wslevel;
+    const heading = presetGet("heading"); const headingEl = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading]);
     if (heading && headingEl) headingEl.value = String(heading).slice(0, 60);
     /* A link's paper seeds a visitor who has never chosen, and never
        overrides one who has. Paper is a property of the recipient's printer,
@@ -1958,7 +2002,7 @@
      HTML changes, so no locale page is "touched" for the parity, translation
      or em-dash gates. */
   function convertPrintButtonsToPdf() {
-    [el.alphaPrint, el.practicePrint, el.namePrint, el.genPrint, el.designPrint, el.bannerPrint, el.puzzlePrint].filter(Boolean).forEach((btn) => {
+    [el.alphaPrint, el.practicePrint, el.namePrint, el.genPrint, el.designPrint, el.bannerPrint, el.puzzlePrint, el.searchPrint].filter(Boolean).forEach((btn) => {
       if (btn.dataset.ptPdf) return;
       btn.dataset.ptPdf = "1";
       btn.textContent = PO.savePdf;
@@ -3818,7 +3862,7 @@
 
   function mountSheetCost() {
     if ($("#pt-sheet-cost")) return;
-    const btn = el.namePrint || el.genPrint || el.designPrint || el.puzzlePrint || el.alphaPrint;
+    const btn = el.namePrint || el.genPrint || el.designPrint || el.puzzlePrint || el.searchPrint || el.alphaPrint;
     if (!btn) return;
     const out = document.createElement("p");
     out.id = "pt-sheet-cost";
@@ -7199,6 +7243,240 @@
   }
 
   /* ---------------------------------------------------------------
+     Section: word search maker
+     A teacher pastes her own spelling list and gets one grid — or, with a
+     class roster, ONE DIFFERENT GRID PER CHILD from the same list, so
+     neighbours cannot copy. That last part is the whole reason this page
+     exists; every competitor found offers the grid and none offers the batch.
+
+     Almost nothing here is new machinery. The roster, its per-device memory,
+     N-up, multi-page printing, the PDF writer, the QR credit and the sheet-cost
+     line were all already shipped and are simply composed: the roster stops
+     meaning "one sheet per name" and starts meaning "one SEED per name", which
+     is the same loop pointed at a different output.
+
+     The grid itself is js/printables/wordSearch.js — pure, seeded and tested
+     (wordSearch.test.js), because a clue list naming a word the grid does not
+     contain is an unsolvable sheet that looks exactly like a solvable one.
+
+     No canvas painter. printWrap's pngFromWrap() rasterises this same DOM, so
+     the PNG cannot drift from the printed page — see the comment there.
+
+     Gated on #pt-search-input + #pt-search-preview, so no other page changes.
+     --------------------------------------------------------------- */
+
+  const SEARCH_DEMO = CFG.searchDemo
+    || "because\nfriend\npeople\nschool\nwater\nthere\nwhich\nwould\ncould\nabout";
+  const searchState = { level: "medium" };
+
+  let wsWarned = false;
+  function wordSearchModule() {
+    const ns = window.UltraTextGen && window.UltraTextGen.wordSearch;
+    if (!ns && !wsWarned) {
+      wsWarned = true;
+      console.warn("[printables] js/printables/wordSearch.js has not loaded; the grid cannot be built.");
+    }
+    return ns || null;
+  }
+  function loadWordSearchModule() {
+    if (!el.searchInput || !el.searchPreview) return;
+    if (window.UltraTextGen && window.UltraTextGen.wordSearch) return;
+    if (document.querySelector("script[data-pt-wordsearch]")) return;
+    const sc = document.createElement("script");
+    sc.src = "/js/printables/wordSearch.js";
+    sc.async = true;
+    sc.setAttribute("data-pt-wordsearch", "");
+    sc.onload = () => { renderSearchPreview(); };
+    sc.onerror = () => console.warn("[printables] js/printables/wordSearch.js failed to load.");
+    document.head.appendChild(sc);
+  }
+
+  function searchWordsText() {
+    const raw = el.searchInput ? el.searchInput.value : "";
+    return (raw && raw.trim()) ? raw : SEARCH_DEMO;
+  }
+  function searchHeadingText() {
+    return el.searchHeading ? el.searchHeading.value.trim().slice(0, 48) : "";
+  }
+  function searchAnswerOn() {
+    return !!(el.searchAnswer && el.searchAnswer.checked);
+  }
+
+  /* One grid. `seed` is what makes two children's sheets differ — a name from
+     the roster, or the word list itself when there is no roster, so the
+     preview is stable while the visitor types options rather than words. */
+  function searchBuild(seed) {
+    const ns = wordSearchModule();
+    if (!ns) return null;
+    const text = searchWordsText();
+    return ns.build({ words: text, level: searchState.level, seed: seed || text });
+  }
+
+  function searchGridNode(built, showAnswer) {
+    const grid = document.createElement("div");
+    grid.className = "pt-search-grid" + (showAnswer ? " is-answer" : "");
+    grid.style.setProperty("--pt-search-cols", String(built.size));
+    /* role="img" with a label, deliberately. A word search is a visual puzzle
+       and cannot be solved from a linear reading, so announcing 484 random
+       letters one by one is hostile rather than accessible. The clue list
+       below is the page's real content and is fully readable. */
+    grid.setAttribute("role", "img");
+    grid.setAttribute("aria-label",
+      T.wordSearch.gridOf + ", " + built.size + " " + T.wordSearch.lettersBy + " " + built.size);
+    for (let r = 0; r < built.size; r++) {
+      for (let c = 0; c < built.size; c++) {
+        const cell = document.createElement("span");
+        cell.className = "pt-search-cell";
+        if (showAnswer && !built.solution[r][c]) cell.classList.add("is-fill");
+        cell.textContent = built.grid[r][c];
+        grid.appendChild(cell);
+      }
+    }
+    return grid;
+  }
+
+  function searchWordListNode(built) {
+    const list = document.createElement("ul");
+    list.className = "pt-search-words";
+    built.words.forEach((w) => {
+      if (!w.placed) return;
+      const li = document.createElement("li");
+      li.textContent = w.display;
+      list.appendChild(li);
+    });
+    return list;
+  }
+
+  /* The whole sheet as one DOM node — the single primitive behind the live
+     preview, the print, the PDF and the PNG, so what is on screen is what
+     prints. `seedName` is the child this copy belongs to. */
+  function searchSheetNode(seedName, showAnswer) {
+    const built = searchBuild(seedName);
+    const sheet = document.createElement("div");
+    sheet.className = "pt-search-sheet";
+    if (!built) return sheet;
+
+    const h = document.createElement("h3");
+    h.className = "pt-search-heading-text";
+    const title = searchHeadingText() || T.wordSearch.heading;
+    h.textContent = seedName
+      ? title + " " + T.wordSearch.forWhom + " " + seedName
+      : title;
+    if (showAnswer) h.textContent += " · " + T.wordSearch.answerKey;
+    sheet.appendChild(h);
+
+    sheet.appendChild(searchGridNode(built, showAnswer));
+
+    const placed = built.words.filter((w) => w.placed).length;
+    const note = document.createElement("p");
+    note.className = "pt-search-note";
+    note.textContent = T.wordSearch.findAll + " " + placed + " " + T.wordSearch.wordsWord + ":";
+    sheet.appendChild(note);
+
+    sheet.appendChild(searchWordListNode(built));
+
+    const row = document.createElement("div");
+    row.className = "pt-search-footer-row";
+    [T.nameLabel, T.dateLabel].forEach((label) => {
+      const f = document.createElement("span");
+      f.className = "pt-search-footer-field";
+      const l = document.createElement("span");
+      l.textContent = label;
+      const line = document.createElement("span");
+      line.className = "pt-search-footer-line";
+      f.appendChild(l); f.appendChild(line);
+      row.appendChild(f);
+    });
+    sheet.appendChild(row);
+    return sheet;
+  }
+
+  /* What the visitor cannot see from the grid: a word that did not fit. It is
+     reported rather than dropped — a list quietly one word short is the same
+     class of silent failure the module's own test exists for. */
+  function renderSearchMeta(built) {
+    if (!el.searchMeta) return;
+    const bits = [];
+    if (built) {
+      const names = rosterNames(el.searchRoster);
+      bits.push(names.length >= 2
+        ? names.length + " " + T.wordSearch.versions
+        : T.wordSearch.oneGrid);
+      if (built.unplaced.length) {
+        bits.push(T.wordSearch.tooLong + " " + built.unplaced.map((w) => w.display).join(", "));
+      }
+    } else {
+      bits.push(T.wordSearch.needWords);
+    }
+    el.searchMeta.textContent = bits.join(" · ");
+  }
+
+  function renderSearchPreview() {
+    if (!el.searchPreview) return;
+    const built = searchBuild(null);
+    el.searchPreview.innerHTML = "";
+    if (built) el.searchPreview.appendChild(searchSheetNode(null, false));
+    renderSearchMeta(built);
+    updateSheetCost();
+  }
+
+  function printSearch() {
+    const holder = document.createElement("div");
+    holder.className = "pt-search-print-holder";
+    const answer = searchAnswerOn();
+    const names = rosterNames(el.searchRoster);
+    if (names.length >= 2) {
+      holder.classList.add("pt-class-set");
+      /* Each child's puzzle, then — when asked for — every answer key after
+         them. The keys are grouped at the end rather than interleaved because
+         a teacher prints the stack once and keeps the keys; a key behind each
+         child's sheet is a key handed to that child. */
+      appendSheetPages(holder, names, (n) => searchSheetNode(n, false));
+      if (answer) appendSheetPages(holder, names, (n) => searchSheetNode(n, true));
+      printWrap("", holder, "word_search");
+      return;
+    }
+    holder.appendChild(sheetPageNode(searchSheetNode(null, false)));
+    if (answer) holder.appendChild(sheetPageNode(searchSheetNode(null, true)));
+    printWrap("", holder, "word_search");
+  }
+
+  function wireSearchLevel() {
+    const group = el.searchLevelGroup;
+    if (!group) return;
+    const buttons = $$(".pt-choice", group);
+    const paint = () => buttons.forEach((b) => {
+      const on = b.dataset.level === searchState.level;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
+    });
+    buttons.forEach((b) => b.addEventListener("click", () => {
+      if (!b.dataset.level) return;
+      searchState.level = b.dataset.level;
+      paint();
+      renderSearchPreview();
+    }));
+    paint();
+  }
+
+  function buildSearch() {
+    if (!el.searchInput || !el.searchPreview) return;
+    let timer = null;
+    const schedule = () => { if (timer) clearTimeout(timer); timer = setTimeout(renderSearchPreview, 160); };
+    el.searchInput.addEventListener("input", schedule);
+    if (el.searchHeading) el.searchHeading.addEventListener("input", schedule);
+    if (el.searchRoster) el.searchRoster.addEventListener("input", schedule);
+    if (el.searchAnswer) el.searchAnswer.addEventListener("change", renderSearchPreview);
+    wireSearchLevel();
+    if (el.searchPrint) el.searchPrint.addEventListener("click", printSearch);
+    // The PNG comes from the same DOM the print does (pngFromWrap), so there is
+    // no second drawing path to drift.
+    if (el.searchPng) el.searchPng.addEventListener("click", () => { pngMode = true; printSearch(); });
+    renderSearchPreview();
+  }
+
+  /* ---------------------------------------------------------------
      Wiring
      --------------------------------------------------------------- */
 
@@ -7235,6 +7513,7 @@
 
   function init() {
     loadQrModule();
+    loadWordSearchModule();
     /* OUT-06 -- publish the page's own face to the glyph surfaces.
 
        CFG.font reached the SVG paths and the canvas export, and NEVER reached
@@ -7302,6 +7581,7 @@
     buildDesigner();
     buildBanner();
     buildPuzzle();
+    buildSearch();
 
     if (el.practicePrint) el.practicePrint.addEventListener("click", buildPracticeSheet);
 
