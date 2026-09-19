@@ -112,7 +112,8 @@
     "check:ci-gates": "python3 scripts/run-ci-gates.py",
     "test:indexnow": "node scripts/lib/indexnow.test.js",
     "check:gate-inventory": "python3 scripts/build-gate-inventory.py",
-    "build:gate-inventory": "python3 scripts/build-gate-inventory.py --write"
+    "build:gate-inventory": "python3 scripts/build-gate-inventory.py --write",
+    "check:stranded-work": "python3 scripts/check-stranded-work.py"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

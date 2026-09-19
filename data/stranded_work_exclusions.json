@@ -1,0 +1,4 @@
+{
+  "_readme": "Branches deliberately left carrying commits that no open PR tracks. Same bar as every other ledger here: entries are discussed decisions, never added to make a check pass. The default fix for a flagged branch is to open a PR from it as it stands. Ships empty.",
+  "_shape": { "origin/claude/example-branch": { "reason": "why this work is abandoned rather than untracked", "date": "YYYY-MM-DD" } }
+}
