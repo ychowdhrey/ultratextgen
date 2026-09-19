@@ -1002,76 +1002,106 @@
   // outline mode). Width scales with the word so long names stay readable.
   // opts.font / opts.spacing / opts.fill / opts.strokeColor / opts.strokeWidth
   // override the page defaults — the name-style designer path; every default
-  // preserves the original behaviour for pages without a designer.
-  function wordOutlineSVG(word, opts) {
+  /* The word-outline surface's size and its resolved paint, in one place.
+
+     The SVG preview and the PNG export are the same picture, and a visitor
+     judges the file from the screen. Each function used to carry its own
+     fallbacks instead, and they disagreed on both axes (audit 2026-09-17):
+
+       R-008  the preview stroked #8b93a7 and the export INK from the SAME
+              control state, so a mid-grey outline on screen downloaded as a
+              near-black one. Measured on bubble-letters, block-letters and
+              name-tracing; graffiti-letters was the one tool internally
+              consistent, because it passes an explicit strokeColor.
+       R-009  the preview viewBox grew with the word (200x200 for "I" up to
+              1037x200 for "Christopher") while the canvas stayed 1600x520 for
+              every input, so "I" previewed square and exported as a wide
+              banner with the letter adrift in it, and a set of name cards came
+              out with letters differing in size by a third.
+
+     Both are the same defect: two renderers of one picture, each deciding for
+     itself. Neither number below is new -- they are the SVG's own, lifted out
+     so the canvas can read them rather than restate them. */
+  const WORD_OUTLINE_H = 200;       // the viewBox height both surfaces use
+  const WORD_OUTLINE_FS = 150;      // the font-size the SVG draws at
+  const WORD_OUTLINE_PAD = 80;      // breathing room around the word
+  const WORD_OUTLINE_ANCHOR_Y = 112;
+  const WORD_TRACE_STROKE = "#8b93a7";
+
+  function wordOutlineGeom(word, opts) {
     const o = opts || {};
+    const font = o.font || FONT;
     const chars = [...String(word)];
-    const fontSize = 150;
-    /* spacingBoost is main's letter-spacing step control; the measurement
-       below has to include it or the box is sized for tracking the word does
-       not have. */
-    const spacing = fontSize * ((o.spacing != null ? o.spacing : LETTER_SPACING) + spacingBoost);
+    const spacing = WORD_OUTLINE_FS * ((o.spacing != null ? o.spacing : LETTER_SPACING) + spacingBoost);
     /* Size the box from the text, not from a per-character constant.
 
        `chars.length * 118 + 80` reserved 118 units for every character
        whatever it was. "W" and "M" are wider than that, so the text ran
        outside the viewBox and an SVG root clips by default: "WMWMWM" spanned
        -43 to 831 in a 788-unit box on block-letters, losing 43 units off both
-       ends, and the same string clipped on bubble-letters and name-tracing.
-       The same constant over-reserved in the other direction -- a fifth of the
-       sheet width was padding on "Christopher". Audit 2026-09-17, R-006.
+       ends. The same constant over-reserved in the other direction -- a fifth
+       of the sheet width was padding on "Christopher". Audit 2026-09-17,
+       R-006.
 
        Measuring the INK rather than the advance matters here: a tail like "Q"
        and an italic skew both put ink outside the advance, which is exactly
-       the case a width estimate cannot see. PAD keeps the old breathing room
-       around the word. */
+       the case a width estimate cannot see. */
     const GMW = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
-    const font = o.font || FONT;
-    const PAD = 80;
+    const im = GMW ? GMW.ink(String(word), font, WORD_OUTLINE_FS, 700) : null;
     let w;
-    const im = GMW ? GMW.ink(String(word), font, fontSize, 700) : null;
     if (im) {
       const track = Math.max(0, chars.length - 1) * spacing;
-      /* Ink can start left of the origin and end right of the advance; take
-         whichever of ink and advance is wider so neither case clips. */
       const inkW = Math.max(im.right, im.advance) - Math.min(0, im.left);
-      w = Math.max(200, Math.ceil(inkW + track + PAD));
+      w = Math.max(200, Math.ceil(inkW + track + WORD_OUTLINE_PAD));
     } else {
-      w = Math.max(200, chars.length * 118 + PAD + Math.max(0, chars.length - 1) * spacing);
+      w = Math.max(200, chars.length * 118 + WORD_OUTLINE_PAD + Math.max(0, chars.length - 1) * spacing);
     }
+    const hc = highContrastOn();
+    /* o.strokeWidth arrives quoted in outlineSVG()'s units (font-size 210) --
+       it comes from CFG.strokeWidth or a nameStyles entry, the same field the
+       single-letter surface reads. This surface draws at font-size 150, so the
+       number has to be converted or the same style renders a stroke 40% fatter
+       relative to the type on a name than on a letter. */
+    const wordStroke = o.strokeWidth != null ? o.strokeWidth * WORD_OUTLINE_FS / OUTLINE_SVG_FONT : 3;
+    return {
+      w: w, h: WORD_OUTLINE_H, fontSize: WORD_OUTLINE_FS, font: font, spacing: spacing,
+      anchorY: WORD_OUTLINE_ANCHOR_Y,
+      fill: o.solid ? (o.fill || INK) : "#ffffff",
+      /* The name-tracing family draws its rows here rather than through
+         levelSpec, so high contrast has to be applied again: its trace outline
+         is #8b93a7 at width 3, which is exactly the light grey a copier
+         dithers away. Only the hollow rows change -- a solid model row is
+         already INK. */
+      stroke: o.solid ? (o.strokeColor || "none") : (hc ? CONTRAST_INK : (o.strokeColor || WORD_TRACE_STROKE)),
+      strokeWidth: o.solid
+        ? (o.strokeColor ? (o.strokeWidth != null ? wordStroke : 4) : 0)
+        : (hc ? contrastStroke(WORD_OUTLINE_FS, wordStroke) : wordStroke)
+    };
+  }
+
+  // preserves the original behaviour for pages without a designer.
+  function wordOutlineSVG(word, opts) {
+    const o = opts || {};
+    /* Geometry and paint both come from wordOutlineGeom, so this preview and
+       the PNG export of the same word cannot disagree about either. */
+    const g = wordOutlineGeom(word, o);
+    const w = g.w, fontSize = g.fontSize, spacing = g.spacing;
     const svg = document.createElementNS(SVGNS, "svg");
-    svg.setAttribute("viewBox", "0 0 " + w + " 200");
+    svg.setAttribute("viewBox", "0 0 " + w + " " + g.h);
     svg.setAttribute("class", "pt-word-outline");
     svg.setAttribute("role", "img");
     svg.setAttribute("aria-label", word);
     const text = document.createElementNS(SVGNS, "text");
     text.setAttribute("x", String(w / 2));
-    text.setAttribute("y", "112");
+    text.setAttribute("y", String(g.anchorY));
     text.setAttribute("text-anchor", "middle");
     text.setAttribute("dominant-baseline", "central");
-    text.setAttribute("font-family", o.font || FONT);
+    text.setAttribute("font-family", g.font);
     text.setAttribute("font-weight", "700");
     text.setAttribute("font-size", String(fontSize));
-    /* The name-tracing family draws its rows here rather than through
-       levelSpec, so high contrast has to be applied again: its trace outline
-       is #8b93a7 at width 3, which is exactly the light grey a copier
-       dithers away. Only the hollow rows change -- a solid model row is
-       already INK. */
-    const hc = highContrastOn();
-    text.setAttribute("fill", o.solid ? (o.fill || INK) : "#ffffff");
-    text.setAttribute("stroke", o.solid ? (o.strokeColor || "none") : (hc ? CONTRAST_INK : (o.strokeColor || "#8b93a7")));
-    /* o.strokeWidth arrives quoted in outlineSVG()'s units (font-size 210) --
-       it comes from CFG.strokeWidth or a nameStyles entry, the same field the
-       single-letter surface reads. This function draws at font-size 150, so
-       the number has to be converted or the same style renders a stroke 40%
-       fatter relative to the type on a name than on a letter. Measured on the
-       graffiti Spray face, whose outline is all contour: at 4/150 (2.67% of
-       the type) the speckles merge into a smear, while the canvas export drew
-       the same style at 2% and stayed legible. Same control state, two
-       products. WORD_OUTLINE_STROKE is this constant's inverse and exists for
-       the same reason. */
-    const wordStroke = o.strokeWidth != null ? o.strokeWidth * fontSize / OUTLINE_SVG_FONT : 3;
-    text.setAttribute("stroke-width", o.solid ? String(o.strokeColor ? (o.strokeWidth != null ? wordStroke : 4) : 0) : String(hc ? contrastStroke(fontSize, wordStroke) : wordStroke));
+    text.setAttribute("fill", g.fill);
+    text.setAttribute("stroke", g.stroke);
+    text.setAttribute("stroke-width", String(g.strokeWidth));
     text.setAttribute("stroke-linejoin", "round");
     text.setAttribute("paint-order", "stroke");
     // Nudge the anchor left by half a letter-gap so the trailing space SVG adds
@@ -1126,6 +1156,7 @@
     // The designer's own "paper" strip is repainted from here too, so one
     // panel change updates every surface that names the paper.
     if (typeof syncDesignPreviewMeta === "function") syncDesignPreviewMeta();
+    paintPreviewInk();
     /* The designed sheet takes the paper's aspect (sheetGeom), so a paper or
        orientation change re-lays it out — and a preview that did not repaint
        would be a control with no visible consequence, which is the exact
@@ -1157,6 +1188,28 @@
     node.classList.toggle("is-narrow", printPrefs.margin === "narrow");
     const cap = $(".pt-paper-caption", node);
     if (cap) cap.textContent = paperCaption();
+  }
+
+  /* Ink saver used to change the PDF and nothing on screen: its rules were
+     scoped to body.is-printing and body.pt-pdf-rendering, so a visitor could
+     not see that the setting worked. Measured on coloring-page-maker: the PDF
+     went from a darkest pixel of luminance 28 to 90 while the preview stayed
+     at stroke #1a1a2e, 5px, unchanged. The setting works and is invisible,
+     which is the same class of defect the panel was rebuilt for on 2026-09-13
+     when paper, orientation and margin were wired to the preview and this one
+     was left behind. Audit 2026-09-17, R-014.
+
+     The paper thumbnail above already carries these classes; this puts them on
+     the big previews too. 0.72 is the print path's own number, not a new one,
+     so what the screen dims by is what the page dims by. */
+  function paintPreviewInk() {
+    const saver = printPrefs.ink === "saver";
+    const contrast = printPrefs.ink === "contrast";
+    [el.designPreview, el.genPreview, el.namePreview, el.puzzlePreview].forEach((n) => {
+      if (!n) return;
+      n.classList.toggle("is-ink-saver", saver);
+      n.classList.toggle("is-high-contrast", contrast);
+    });
   }
   function paperPreview(ch) {
     const holder = document.createElement("div");
@@ -2491,63 +2544,74 @@
     const fam = o.font || FONT;
     const spacingEm = (o.spacing != null ? o.spacing : LETTER_SPACING) + spacingBoost;
     withFont(() => {
-      const width = 1600, height = 520, pad = 90;
+      const out = RENDER === "glyph" ? renderGlyph(text) : text;
+      /* The canvas is the preview's own box, scaled. It used to be a fixed
+         1600x520 whatever the word was, so "I" previewed square and exported
+         as a wide banner with the letter adrift in it, and a set of name cards
+         came out with letters differing in size by a third because the ink
+         filled between 60.6% and 90.5% of a constant canvas. Audit
+         2026-09-17, R-009.
+
+         Scaling by HEIGHT rather than width is what makes the letters one
+         size across a set: the type is WORD_OUTLINE_FS * PNG_SCALE in every
+         export, and only the canvas gets wider for a longer name. */
+      const g = wordOutlineGeom(out, o);
+      const PNG_SCALE = 2.6;                       // 150 -> 390px type
+      const width = Math.round(g.w * PNG_SCALE);
+      const height = Math.round(g.h * PNG_SCALE);
+      const canvasH = o.transparent ? height : height + PNG_CREDIT_BAND;
       const canvas = document.createElement("canvas");
-      canvas.width = width; canvas.height = height;
+      canvas.width = width; canvas.height = canvasH;
       const ctx = canvas.getContext("2d");
       if (!o.transparent) {
         ctx.fillStyle = "#ffffff";
-        ctx.fillRect(0, 0, width, height);
+        ctx.fillRect(0, 0, width, canvasH);
       }
       ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
       ctx.lineJoin = "round";
-      const out = RENDER === "glyph" ? renderGlyph(text) : text;
-      // Match the on-screen/print letter spacing (em fraction of the font size).
-      const applySpacing = (px) => {
-        if (spacingEm && "letterSpacing" in ctx) ctx.letterSpacing = px + "px";
-      };
-      let fontSize = 300;
+      const fontSize = g.fontSize * PNG_SCALE;
       ctx.font = "700 " + fontSize + "px " + fam;
-      applySpacing(fontSize * spacingEm);
-      const measured = ctx.measureText(out).width;
-      if (measured > width - pad * 2) {
-        fontSize = Math.max(54, Math.floor(fontSize * (width - pad * 2) / measured));
-        ctx.font = "700 " + fontSize + "px " + fam;
-        applySpacing(fontSize * spacingEm);
-      }
+      // Match the on-screen/print letter spacing (em fraction of the font size).
+      if (spacingEm && "letterSpacing" in ctx) ctx.letterSpacing = (fontSize * spacingEm) + "px";
+      /* The SVG anchors on dominant-baseline="central", which aligns the
+         FONT's em box rather than the alphabetic baseline, so the canvas has
+         to be told where that put the baseline instead of guessing with
+         textBaseline="middle". */
+      const central = centralBaselineY(g.anchorY * PNG_SCALE, fontSize);
+      ctx.textBaseline = central == null ? "middle" : "alphabetic";
+      const baseY = central == null ? g.anchorY * PNG_SCALE : central;
       if (o.solid) {
-        ctx.fillStyle = o.fill || INK;
-        ctx.fillText(out, width / 2, height * 0.52);
-        if (o.strokeColor) {
-          ctx.lineWidth = Math.max(4, Math.round(fontSize * 0.025));
-          ctx.strokeStyle = o.strokeColor;
-          ctx.strokeText(out, width / 2, height * 0.52);
+        ctx.fillStyle = g.fill;
+        ctx.fillText(out, width / 2, baseY);
+        if (g.stroke && g.stroke !== "none" && g.strokeWidth) {
+          ctx.lineWidth = g.strokeWidth * PNG_SCALE;
+          ctx.strokeStyle = g.stroke;
+          ctx.strokeText(out, width / 2, baseY);
         }
       } else if (RENDER === "outline") {
-        /* Hollow outline, matching wordOutlineSVG(). Its stroke-width default
-           is 3 against font-size 150, i.e. 2% of the type, which
-           WORD_OUTLINE_STROKE restates in outlineSVG's 210 units. A page that
-           supplies its own weight (a nameStyles entry) already quotes it in
-           those units, so it passes straight through; hardcoding the default
-           here was why a styled name exported at one weight and previewed at
-           another. On a transparent canvas a white interior would read as a
-           white slab, so the fill is skipped and the interior stays a real
-           hole. */
-        paintOutlineText(ctx, out, width / 2, height * 0.52, fontSize, {
-          strokeWidth: o.strokeWidth != null ? o.strokeWidth : WORD_OUTLINE_STROKE,
-          strokeColor: o.strokeColor,
-          hollow: !!o.transparent
-        });
+        /* Hollow outline, matching wordOutlineSVG(). Both take their colour
+           and weight from wordOutlineGeom now: each function used to carry its
+           own fallback, and they disagreed -- the preview stroked #8b93a7 and
+           this export stroked INK from the same control state, so a mid-grey
+           outline on screen downloaded near-black (R-008). On a transparent
+           canvas a white interior would read as a white slab, so the fill is
+           skipped and the interior stays a real hole. */
+        ctx.lineWidth = Math.max(1, g.strokeWidth * PNG_SCALE);
+        ctx.strokeStyle = g.stroke === "none" ? INK : g.stroke;
+        ctx.strokeText(out, width / 2, baseY);
+        if (!o.transparent) {
+          ctx.fillStyle = g.fill;
+          ctx.fillText(out, width / 2, baseY);
+        }
       } else {
         ctx.fillStyle = INK;
-        ctx.fillText(out, width / 2, height * 0.52);
+        ctx.fillText(out, width / 2, baseY);
       }
-      if (!o.transparent) drawCredit(ctx, width, height, RENDER === "glyph");
+      if (!o.transparent) drawCredit(ctx, width, canvasH, RENDER === "glyph");
       const finish = () => downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(text) || "word") + ".png", "word");
       if (RENDER === "outline" && strokeOverlayOn()) {
-        strokeOverlayImage(out, width, height, fontSize, spacingEm ? fontSize * spacingEm : 0, height * 0.52)
-          .then((img) => { if (img) ctx.drawImage(img, 0, 0, width, height); finish(); })
+        strokeOverlayImage(out, width, canvasH, fontSize, spacingEm ? fontSize * spacingEm : 0, baseY)
+          .then((img) => { if (img) ctx.drawImage(img, 0, 0, width, canvasH); finish(); })
           .catch(finish);
       } else {
         finish();

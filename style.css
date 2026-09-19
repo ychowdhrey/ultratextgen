@@ -4870,6 +4870,21 @@ button.clear-decoration {
 /* Ink saver prints lighter lines (body.pt-ink-saver in the print CSS below);
    showing that here is the difference between a checkbox and a preview. */
 .pt-paper.is-ink-saver .pt-paper-sheet { opacity: 0.62; }
+
+/* Ink saver on the big previews, not only on the paper thumbnail and the
+   export. 0.72 is the print path's own number (see the body.is-printing rules
+   near the end of this file), so what the screen dims by is what the page
+   dims by — the setting used to change the PDF and nothing on screen, which
+   is indistinguishable from a setting that does nothing. Audit 2026-09-17,
+   R-014. */
+/* Keyed on the class the engine toggles rather than on each container's own
+   class: #pt-gen-preview is a .pt-paper, #pt-name-preview is a
+   .pt-name-preview, and a selector naming the container would silently miss
+   whichever one gets renamed next. */
+.is-ink-saver .pt-design-sheet-svg,
+.is-ink-saver .pt-trace-svg,
+.is-ink-saver .pt-word-outline,
+.is-ink-saver .pt-puzzle-sheet { opacity: 0.72; }
 .pt-paper-caption {
   margin: 0;
   font-size: 0.8rem;
