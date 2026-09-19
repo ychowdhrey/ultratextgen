@@ -272,6 +272,19 @@ jobs:
         continue-on-error: true
         run: npm run test:saved-items | tee saved-items-tests.log
 
+      # share-core.js's analytics contract, headless. Gating, no backlog: a
+      # share_text row either carries its six parameters or it does not.
+      # It asserts the half no visual check and no other gate can see — that a
+      # row fires only on the branch that SUCCEEDED, so a cancelled sheet and a
+      # completed share are not one number. Its last case asserts the
+      # single-writer invariant across the tree: no file but share-core.js
+      # writes share_text, which is what keeps the destination vocabulary from
+      # forking where review cannot see it.
+      - name: Run share-core analytics tests
+        id: share_core_tests
+        continue-on-error: true
+        run: npm run test:share-core | tee share-core-tests.log
+
       # Gating, no backlog: this decides WHAT GETS ANNOUNCED to Bing, Naver,
       # Seznam, Yandex and Yep. It replaced Cloudflare Crawler Hints, which
       # submitted 115,020 URLs in six months against a real change rate of
@@ -756,9 +769,10 @@ jobs:
             echo "### Share/Save module tag check — \`${{ steps.share_save_tags.outcome }}\`"
             echo "### symbol-explorer string sync check — \`${{ steps.explorer_strings.outcome }}\`"
             echo "### Saved-items store tests — \`${{ steps.saved_items_tests.outcome }}\`"
+            echo "### share-core analytics tests — \`${{ steps.share_core_tests.outcome }}\`"
             echo "### IndexNow submission-policy tests — \`${{ steps.indexnow_tests.outcome }}\`"
             echo '```'
-            cat share-save-tags.log explorer-strings.log saved-items-tests.log indexnow-tests.log
+            cat share-save-tags.log explorer-strings.log saved-items-tests.log indexnow-tests.log share-core-tests.log
             echo '```'
             echo ""
             echo "### Counter claim-consistency check — \`${{ steps.counter_claims.outcome }}\`"
@@ -1018,6 +1032,7 @@ jobs:
           steps.share_save_tags.outcome == 'failure' ||
           steps.explorer_strings.outcome == 'failure' ||
           steps.saved_items_tests.outcome == 'failure' ||
+          steps.share_core_tests.outcome == 'failure' ||
           steps.indexnow_tests.outcome == 'failure' ||
           steps.new_images.outcome == 'failure' ||
           steps.new_symbol_peer_links.outcome == 'failure' ||

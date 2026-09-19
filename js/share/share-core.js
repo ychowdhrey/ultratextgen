@@ -90,12 +90,77 @@
 
      Anyone comparing a series across 2026-09-13 must treat it as a
      definition change, not a traffic change -- counts after this date are
-     strictly lower for the same behaviour. */
-  function pushShare(method, c) {
+     strictly lower for the same behaviour.
+
+     share_destination (2026-09-19) answers the question share_method cannot.
+     share_method is HOW the text left the page; the destination is WHERE it
+     went, and the two are only accidentally one-to-one today. The moment an
+     explicit platform button exists -- a WhatsApp link, a Reddit submit link
+     -- it shares a method with the copy-link path and differs precisely in
+     the field being added here, which is why the call site states it rather
+     than having it inferred from the method.
+
+     locale is derived exactly the way script.js derives it for generate_text
+     (two-letter, so a zh-TW page reports zh), so the one GA4 `locale`
+     dimension means one thing across both events. header.js's
+     cta_source_locale is a separate, differently-named field and keeps the
+     full tag. */
+
+  /* native_share is DELIBERATELY OPAQUE and must stay that way. The Web
+     Share API never tells the page which app the user picked -- the sheet
+     belongs to the OS, not to us -- so a guessed destination would be a
+     fabricated dimension, and a fabricated one is worse than an honest
+     unknown because it reads as measured. */
+  const SHARE_DESTINATIONS = {
+    NATIVE: "native_share",
+    CLIPBOARD: "clipboard",   // the copy-link path, however it was labelled
+    DOWNLOAD: "download",     // an image saved to the device: no share target
+    PINTEREST: "pinterest",
+    // Defined, not yet used: no explicit platform share button exists on this
+    // site today (audited 2026-09-19 -- the only platform-named links in the
+    // tree are mailto: contact addresses). They are named here so the first
+    // one built takes the spelling this vocabulary already has, instead of
+    // inventing "Twitter", "tg" or "mail" at the call site.
+    WHATSAPP: "whatsapp",
+    FACEBOOK: "facebook",
+    TELEGRAM: "telegram",
+    X: "x",
+    REDDIT: "reddit",
+    EMAIL: "email"
+  };
+  UTG.SHARE_DESTINATIONS = SHARE_DESTINATIONS;
+
+  /* Every method in use today has one honest destination, so an omitted one
+     is derived rather than left undefined. This is a floor for the exported
+     UTG.pushShare (which shipped as `(method, creation)` on 2026-09-13 and
+     is on a public namespace), never a substitute for stating it: a platform
+     button's destination is exactly the thing this map cannot know. */
+  const DESTINATION_FOR_METHOD = {
+    native: SHARE_DESTINATIONS.NATIVE,
+    link_copy: SHARE_DESTINATIONS.CLIPBOARD,
+    image: SHARE_DESTINATIONS.NATIVE,
+    image_download: SHARE_DESTINATIONS.DOWNLOAD,
+    pinterest: SHARE_DESTINATIONS.PINTEREST
+  };
+
+  // Read lazily rather than cached at load: costs nothing on a click, and
+  // cannot be wrong if this module is ever evaluated before <html lang> is
+  // settled on some future surface.
+  function pageLocale() {
+    const el = document.documentElement;
+    return String((el && el.lang) || "en").slice(0, 2).toLowerCase();
+  }
+
+  //   pushShare(method, destination, creation)
+  //   pushShare(method, creation)            <- the 2026-09-13 shape, still valid
+  function pushShare(method, destination, c) {
+    if (destination && typeof destination === "object") { c = destination; destination = null; }
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: "share_text",
+      locale: pageLocale(),
       share_method: method,
+      share_destination: destination || DESTINATION_FOR_METHOD[method] || null,
       share_surface: (c && c.surface) || "generator",
       share_item_type: (c && c.itemType) || "style"
     });
@@ -138,7 +203,7 @@
         // text — the recipient sees the creation, not just a bare link.
         if (c.output) payload.text = c.output;
         await navigator.share(payload);
-        pushShare("native", c);
+        pushShare("native", SHARE_DESTINATIONS.NATIVE, c);
         return "native";
       } catch (err) {
         if (err && err.name === "AbortError") return "aborted"; // user closed the sheet: not a share
@@ -147,7 +212,7 @@
     }
     try {
       await navigator.clipboard.writeText(url);
-      pushShare("link_copy", c);
+      pushShare("link_copy", SHARE_DESTINATIONS.CLIPBOARD, c);
       return "copied";
     } catch (err) {
       console.error("Share failed:", err);
@@ -358,7 +423,7 @@
           title: c.title || document.title,
           text: c.url || UTG.buildShareUrl(c)
         });
-        pushShare("image", c);
+        pushShare("image", SHARE_DESTINATIONS.NATIVE, c);
         return "image";
       } catch (err) {
         if (err && err.name === "AbortError") return "aborted";
@@ -373,7 +438,7 @@
       a.click();
       a.remove();
       setTimeout(() => URL.revokeObjectURL(a.href), 4000);
-      pushShare("image_download", c);
+      pushShare("image_download", SHARE_DESTINATIONS.DOWNLOAD, c);
       return "image_download";
     } catch (err) {
       console.error("Image share failed:", err);
@@ -453,7 +518,7 @@
         const payload = { files: [file], title: o.title || document.title };
         if (o.text) payload.text = o.text;
         await navigator.share(payload);
-        pushShare("image", o);
+        pushShare("image", SHARE_DESTINATIONS.NATIVE, o);
         return "native";
       } catch (err) {
         if (err && err.name === "AbortError") return "aborted";
@@ -464,7 +529,7 @@
     a.href = url; a.download = filename;
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
     setTimeout(() => URL.revokeObjectURL(url), 1000);
-    pushShare("image_download", o);
+    pushShare("image_download", SHARE_DESTINATIONS.DOWNLOAD, o);
     return "downloaded";
   };
 
@@ -560,7 +625,7 @@
       pin.addEventListener("click", () => {
         pin.href = "https://www.pinterest.com/pin/create/button/?url=" + encodeURIComponent(urlOf()) +
           "&media=" + encodeURIComponent(o.pinMedia() || "") + "&description=" + encodeURIComponent(titleOf());
-        pushShare("pinterest", { surface: surface, itemType: itemType });
+        pushShare("pinterest", SHARE_DESTINATIONS.PINTEREST, { surface: surface, itemType: itemType });
         if (o.onShared) o.onShared("pinterest");
       });
       row.appendChild(pin);
