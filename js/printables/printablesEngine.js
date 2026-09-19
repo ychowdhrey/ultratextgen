@@ -537,6 +537,30 @@
     : (CFG.charset === "alnum") ? LETTERS.concat(DIGITS) : LETTERS.slice();
 
   const RENDER = CFG.render || "outline";           // "outline" | "glyph"
+  /* A script page (RENDER === "glyph") prints its letter as solid ink, which
+     is a CHART -- you can read it, you cannot trace or colour it. `traceable`
+     draws the same letter pair hollow through the word surface instead, so the
+     page keeps its Unicode variants, its A-Z strip and its upper/lower pair
+     and gains an outline a child can work inside.
+
+     Measured before it was offered, at outlineSVG's font-size of 210, on the
+     narrowest 10% of ink runs (the stems the stroke has to fit inside):
+
+       Playwrite US Trad   400   stem 18   channel 14 at stroke 4
+       UnifrakturMaguntia  400   stem  8   channel  4 at stroke 4, -1 at 9
+
+     So the default stroke of 9 CLOSES blackletter's hairline connectors to
+     solid black, and a script page must set strokeWidth with the face in view
+     rather than inherit it. Quicksand 700 on /printables/letter-tracing/ ships
+     at stroke 4 with a channel of 19, which is the working reference. */
+  const TRACEABLE = CFG.traceable === true;
+  /* Handwriting guidelines on the name/word rows. Opt-in per page, never
+     global: a ruled row is right for a child practising a name and wrong for
+     the teenager making graffiti name art on /printables/graffiti-letters/,
+     which this file already records as a framing mistake worth not repeating.
+     Where it IS on, WHICH ruling is the page language's own -- rulingKey()
+     already answers Seyes for fr and Lineatur for de. */
+  const RULED_ROWS = CFG.ruledRows === true;
   // Mutable (not const): pages that set CFG.scriptOptions let the visitor
   // switch the active font at runtime (e.g. choosing which German school
   // handwriting standard to practice). Every render function below reads
@@ -545,6 +569,26 @@
   // function needs to change. Pages that don't set scriptOptions never call
   // setGenScript(), so FONT stays exactly as constant as it always was.
   let FONT = CFG.font || "'Plus Jakarta Sans', 'Segoe UI Symbol', sans-serif";
+  /* The weight every outline surface asks FONT for. 700 is the historical
+     hardcode and stays the default, but it is wrong for a face that ships one
+     weight: the browser then SYNTHESISES bold by smearing the 400 outline, and
+     a synthetic smear is both non-deterministic across engines and additive to
+     the stroke this file draws on top of it.
+
+     Measured at font-size 210 (outlineSVG's own unit), narrowest 10% of ink
+     runs, real 400 file vs the synthetic 700 the code was asking for:
+
+       Playwrite US Trad   400 -> stem 18   |  "700" -> 25
+       UnifrakturMaguntia  400 -> stem  8   |  "700" -> 15
+
+     Unifraktur is the case that matters. Its hairline connectors are 6-8 units
+     at the 5th percentile, so the default 9-unit stroke centred on the contour
+     closes them to solid black -- the letter stops being an outline exactly
+     where blackletter is most recognisable. A page whose face ships one weight
+     declares it here and gets the real file. Mutable for the same reason FONT
+     is: a charStyles or scriptOptions entry may swap in a face with a
+     different weight, and every surface reads it fresh. */
+  let FONT_WEIGHT = CFG.fontWeight || 700;
   const SCRIPT_OPTIONS = Array.isArray(CFG.scriptOptions) && CFG.scriptOptions.length
     ? CFG.scriptOptions
     : null;
@@ -835,7 +879,7 @@
     const probe = document.createElement("canvas").getContext("2d");
     if (!probe) return null;
     const M = STENCIL_TYPE_PX;
-    probe.font = "700 " + M + "px " + FONT;
+    probe.font = FONT_WEIGHT + " " + M + "px " + FONT;
     const m = probe.measureText(ch);
     const left = -m.actualBoundingBoxLeft, right = m.actualBoundingBoxRight;
     const top = -m.actualBoundingBoxAscent, bottom = m.actualBoundingBoxDescent;
@@ -846,7 +890,7 @@
     canvas.width = Math.ceil(iw) + pad * 2;
     canvas.height = Math.ceil(ih) + pad * 2;
     const g = canvas.getContext("2d");
-    g.font = "700 " + M + "px " + FONT;
+    g.font = FONT_WEIGHT + " " + M + "px " + FONT;
     g.textAlign = "left";
     g.textBaseline = "alphabetic";
     g.fillStyle = "#000000";
@@ -918,7 +962,7 @@
     const TILE = { w: 200, h: 240 };
     let place = null;
     if (GM) {
-      place = GM.centreOffsets(ch, FONT, 210, TILE, 700,
+      place = GM.centreOffsets(ch, FONT, 210, TILE, FONT_WEIGHT,
         o.small ? { shareBaselineWith: TILE_BASELINE_SET } : null);
     }
     if (place && place.ink) {
@@ -931,7 +975,7 @@
     }
     text.setAttribute("text-anchor", "middle");
     text.setAttribute("font-family", FONT);
-    text.setAttribute("font-weight", "700");
+    text.setAttribute("font-weight", String(FONT_WEIGHT));
     text.setAttribute("font-size", "210");
     text.setAttribute("fill", "#ffffff");
     text.setAttribute("stroke", INK);
@@ -1055,6 +1099,47 @@
   const WORD_OUTLINE_ANCHOR_Y = 112;
   const WORD_TRACE_STROKE = "#8b93a7";
 
+  /* The word surface draws its <text> with dominant-baseline="central" at
+     WORD_OUTLINE_ANCHOR_Y, so the baseline is NOT that number -- central
+     aligns the FONT's em box, and the baseline sits half the ascent/descent
+     difference below its centre. glyphMetrics exposes emAscent/emDescent for
+     exactly this caller (see its own comment). Without them, 0.3em is the
+     conventional (0.8 - 0.2) / 2 and is only ever a degraded fallback. */
+  function wordBaselineY(font, fontSize, anchorY) {
+    const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
+    const im = GM ? GM.ink("Hxbgp", font, fontSize, FONT_WEIGHT) : null;
+    if (!im || im.emAscent == null || im.emDescent == null) return anchorY + fontSize * 0.3;
+    return anchorY + (im.emAscent - im.emDescent) / 2;
+  }
+  /* Which band a ruling is measured against depends on the ruling, and the two
+     answers are not interchangeable.
+
+     `standard` IS the face: its lines are the baseline, the x-height and the
+     ascender (rulingGuides reads them), so its band has to be the face's own
+     ascender or the lines land somewhere the letters are not. Measured on the
+     English name sheet: cap top 62 against an ascender line at 57, x-height
+     top 87 against a midline at 87 -- exact.
+
+     Seyes and Lineatur are national standards whose zones are fixed fractions
+     of the band because the exercise book says so, not because of the type set
+     between them. Deriving their band from the face instead put the German
+     Mittelband at 112.5 while the x-height sat at 87, so the shaded zone
+     covered the bottom half of the lowercase letters. They take the trace
+     surface's own band-to-type ratio, so one Lineatur is drawn on both
+     surfaces rather than two that disagree. */
+  function wordRulingGeom(font, fontSize, anchorY) {
+    const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
+    const r = ruling();
+    let band;
+    if (r.faceDerived) {
+      const fm = GM && GM.faceMetrics(font, fontSize, FONT_WEIGHT);
+      band = (fm && fm.exact && fm.ascender) ? fm.ascender : fontSize * 0.75;
+    } else {
+      band = fontSize * (TRACE_BASE - TRACE_TOP) / TRACE_FONT_SIZE;
+    }
+    return { base: wordBaselineY(font, fontSize, anchorY), band: band, fontPx: fontSize };
+  }
+
   function wordOutlineGeom(word, opts) {
     const o = opts || {};
     const font = o.font || FONT;
@@ -1074,7 +1159,7 @@
        and an italic skew both put ink outside the advance, which is exactly
        the case a width estimate cannot see. */
     const GMW = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
-    const im = GMW ? GMW.ink(String(word), font, WORD_OUTLINE_FS, 700) : null;
+    const im = GMW ? GMW.ink(String(word), font, WORD_OUTLINE_FS, FONT_WEIGHT) : null;
     let w;
     if (im) {
       const track = Math.max(0, chars.length - 1) * spacing;
@@ -1090,9 +1175,20 @@
        number has to be converted or the same style renders a stroke 40% fatter
        relative to the type on a name than on a letter. */
     const wordStroke = o.strokeWidth != null ? o.strokeWidth * WORD_OUTLINE_FS / OUTLINE_SVG_FONT : 3;
+    /* A ruled row is taller than an unruled one only where the ruling itself
+       reaches below the baseline -- German Lineatur carries a fourth line for
+       the Unterlange that a three-line rule does not, which is the same reason
+       traceRowHeight() exists on the trace surface. Without this the line is
+       drawn outside the viewBox and an SVG root clips by default. */
+    const gRul = o.guides ? wordRulingGeom(font, WORD_OUTLINE_FS, WORD_OUTLINE_ANCHOR_Y) : null;
+    let h = WORD_OUTLINE_H;
+    if (gRul) {
+      const r = ruling();
+      h = Math.max(h, Math.ceil(gRul.base + (r.extra || 0) * gRul.band + 10));
+    }
     return {
-      w: w, h: WORD_OUTLINE_H, fontSize: WORD_OUTLINE_FS, font: font, spacing: spacing,
-      anchorY: WORD_OUTLINE_ANCHOR_Y,
+      w: w, h: h, fontSize: WORD_OUTLINE_FS, font: font, spacing: spacing,
+      anchorY: WORD_OUTLINE_ANCHOR_Y, guides: gRul,
       fill: o.solid ? (o.fill || INK) : "#ffffff",
       /* The name-tracing family draws its rows here rather than through
          levelSpec, so high contrast has to be applied again: its trace outline
@@ -1118,13 +1214,25 @@
     svg.setAttribute("class", "pt-word-outline");
     svg.setAttribute("role", "img");
     svg.setAttribute("aria-label", word);
+    /* Guides go down FIRST so the letters read over them, the same order
+       addRuling already relies on for its shaded Mittelband. */
+    if (g.guides) addRuling(svg, w, g.guides);
+    /* A blank practice row wants the ruling and no word, at the same width as
+       the rows above it -- so it is this function with the text left off,
+       never a bare <div> that would carry a different rule. */
+    if (o.blank) {
+      svg.setAttribute("aria-hidden", "true");
+      svg.removeAttribute("role");
+      svg.removeAttribute("aria-label");
+      return svg;
+    }
     const text = document.createElementNS(SVGNS, "text");
     text.setAttribute("x", String(w / 2));
     text.setAttribute("y", String(g.anchorY));
     text.setAttribute("text-anchor", "middle");
     text.setAttribute("dominant-baseline", "central");
     text.setAttribute("font-family", g.font);
-    text.setAttribute("font-weight", "700");
+    text.setAttribute("font-weight", String(FONT_WEIGHT));
     text.setAttribute("font-size", String(fontSize));
     text.setAttribute("fill", g.fill);
     text.setAttribute("stroke", g.stroke);
@@ -1264,6 +1372,9 @@
 
   function figureNode(ch) {
     if (RENDER === "glyph") {
+      /* Same guides as the printed sheet: a preview that drops them is the
+         defect the Print settings panel already taught this file. */
+      if (TRACEABLE) return glyphPairOutline(ch, { guides: RULED_ROWS });
       const p = document.createElement("p");
       p.className = "pt-glyph-figure";
       const u = renderGlyph(ch.toUpperCase());
@@ -1411,7 +1522,7 @@
   // kerning/rounding drift between the per-char and whole-word measurements).
   function charAdvanceCenters(word, fontPx) {
     const ctx = getStrokeMeasureCtx();
-    ctx.font = "700 " + fontPx + "px " + FONT;
+    ctx.font = FONT_WEIGHT + " " + fontPx + "px " + FONT;
     const chars = [...String(word)];
     const widths = chars.map((c) => ctx.measureText(c).width);
     const rawTotal = widths.reduce((a, b) => a + b, 0) || 1;
@@ -2513,8 +2624,8 @@
         ? (/[0-9]/.test(ch) ? renderGlyph(ch.toUpperCase()) : (renderGlyph(ch.toUpperCase()) + renderGlyph(ch.toLowerCase())))
         : ch;
       const letterFs = Math.round(size * (RENDER === "glyph" ? 0.4 : 0.66));
-      ctx.font = "700 " + letterFs + "px " + FONT;
-      if (RENDER === "outline") {
+      ctx.font = FONT_WEIGHT + " " + letterFs + "px " + FONT;
+      if (RENDER === "outline" || TRACEABLE) {
         paintOutlineText(ctx, glyph, size / 2, size * 0.5, letterFs);
         /* The PNG is the one artifact that leaves the site, so a stencil
            downloaded as an image has to carry its bridges too. The ink box is
@@ -2614,7 +2725,7 @@
       ctx.textAlign = "center";
       ctx.lineJoin = "round";
       const fontSize = g.fontSize * PNG_SCALE;
-      ctx.font = "700 " + fontSize + "px " + fam;
+      ctx.font = FONT_WEIGHT + " " + fontSize + "px " + fam;
       // Match the on-screen/print letter spacing (em fraction of the font size).
       if (spacingEm && "letterSpacing" in ctx) ctx.letterSpacing = (fontSize * spacingEm) + "px";
       /* The SVG anchors on dominant-baseline="central", which aligns the
@@ -2632,7 +2743,7 @@
           ctx.strokeStyle = g.stroke;
           ctx.strokeText(out, width / 2, baseY);
         }
-      } else if (RENDER === "outline") {
+      } else if (RENDER === "outline" || TRACEABLE) {
         /* Hollow outline, matching wordOutlineSVG(). Both take their colour
            and weight from wordOutlineGeom now: each function used to carry its
            own fallback, and they disagreed -- the preview stroked #8b93a7 and
@@ -3045,6 +3156,7 @@
     const style = CHAR_STYLES.find((s) => s.key === key) || CHAR_STYLES[0];
     charStyleKey = style.key;
     if (style.font) FONT = style.font;
+    if (style.fontWeight != null) FONT_WEIGHT = style.fontWeight;
     if (style.strokeWidth != null) STROKE = style.strokeWidth;
     if (style.letterSpacing != null) LETTER_SPACING = style.letterSpacing;
     CFG.skew = style.skew;
@@ -3213,7 +3325,26 @@
 
   function cap(s) { return String(s).charAt(0).toUpperCase() + String(s).slice(1); }
 
+  /* The upper/lower pair a script page shows, drawn hollow. It goes through
+     wordOutlineSVG rather than outlineSVG because outlineSVG draws ONE
+     character in a 200x240 tile, and losing the lowercase is not a trade worth
+     making on a cursive page -- lowercase joined script is the thing people
+     practise. INK rather than the word surface's grey default: this is the
+     colouring-book outline, not a trace ghost. */
+  function glyphPairOutline(ch, opts) {
+    const o = opts || {};
+    const u = renderGlyph(ch.toUpperCase());
+    const l = renderGlyph(ch.toLowerCase());
+    const pair = /[0-9]/.test(ch) ? u : (u + " " + l);
+    const svg = wordOutlineSVG(pair, {
+      solid: false, strokeColor: INK, strokeWidth: STROKE, guides: !!o.guides
+    });
+    svg.setAttribute("aria-label", NOUN + " " + charLabel(ch));
+    return svg;
+  }
+
   function bigGlyphForPrint(ch) {
+    if (TRACEABLE) return glyphPairOutline(ch, { guides: RULED_ROWS });
     const p = document.createElement("p");
     p.className = "pt-glyph-print";
     const u = renderGlyph(ch.toUpperCase());
@@ -4212,7 +4343,7 @@
     if (!el.namePreview) return;
     const name = nameValue();
     el.namePreview.innerHTML = "";
-    if (RENDER === "glyph") {
+    if (RENDER === "glyph" && !TRACEABLE) {
       const p = document.createElement("p");
       p.className = "pt-glyph-figure pt-name-glyph";
       p.textContent = renderGlyph(name);
@@ -4220,9 +4351,12 @@
     } else if (NAME_STYLES) {
       const o = nameRenderOpts("preview");
       o.overlay = strokeOverlayOn();
+      o.guides = RULED_ROWS;
       el.namePreview.appendChild(wordOutlineSVG(name, o));
     } else {
-      el.namePreview.appendChild(wordOutlineSVG(name, { solid: false, overlay: strokeOverlayOn() }));
+      el.namePreview.appendChild(wordOutlineSVG(name, {
+        solid: false, guides: RULED_ROWS, overlay: strokeOverlayOn()
+      }));
     }
   }
 
@@ -4464,11 +4598,25 @@
     return aside;
   }
 
+  /* A script page used to take the first branch here and render its trace rows
+     as a <span> of solid text at 0.85 grey. That is a faded letter, not a
+     hollow one: there is nothing to write INSIDE, which is what a page titled
+     "name tracing" promises. It also skipped the left-handed model below, so
+     PR-09 silently did nothing on every cursive and calligraphy page.
+
+     TRACEABLE sends those pages down the same wordOutlineSVG path every other
+     printables page uses, so one surface renders every name and the two cannot
+     drift. RULED_ROWS is separate on purpose -- hollow letters and handwriting
+     guidelines answer different jobs, and graffiti name art wants the first
+     without the second. */
   function nameRow(name, kind) {
     const row = document.createElement("div");
-    row.className = "pt-name-row pt-name-" + kind;
-    if (kind === "blank") return row;
-    if (RENDER === "glyph") {
+    row.className = "pt-name-row pt-name-" + kind + (RULED_ROWS ? " has-guides" : "");
+    if (kind === "blank") {
+      if (RULED_ROWS) row.appendChild(wordOutlineSVG(name, { blank: true, guides: true }));
+      return row;
+    }
+    if (RENDER === "glyph" && !TRACEABLE) {
       const span = document.createElement("span");
       span.className = "pt-name-word" + (kind === "trace" ? " is-trace" : "");
       span.textContent = renderGlyph(name);
@@ -4476,11 +4624,14 @@
     } else if (NAME_STYLES) {
       const o = nameRenderOpts(kind);
       o.overlay = strokeOverlayOn();
+      o.guides = RULED_ROWS;
       row.appendChild(wordOutlineSVG(name, o));
     } else {
-      row.appendChild(wordOutlineSVG(name, { solid: kind === "model", overlay: strokeOverlayOn() }));
+      row.appendChild(wordOutlineSVG(name, {
+        solid: kind === "model", guides: RULED_ROWS, overlay: strokeOverlayOn()
+      }));
     }
-    if (leftHanded && kind === "trace" && RENDER !== "glyph") {
+    if (leftHanded && kind === "trace" && !(RENDER === "glyph" && !TRACEABLE)) {
       row.appendChild(leftyModel(wordOutlineSVG(name, { solid: true })));
     }
     return row;
@@ -4673,10 +4824,16 @@
     return Math.max(TRACE_H, Math.round(TRACE_BASE + r.extra * traceBand() + 10));
   }
 
-  function addRuling(svg, w) {
+  /* `geo` lets a surface that is not the trace row draw the SAME ruling in its
+     own coordinate space: {base, band, fontPx}. Omitted, it is the trace row's
+     own geometry and every existing caller is unchanged. One owner, because a
+     Seyes rule drawn two ways is two rules. */
+  function addRuling(svg, w, geo) {
     const r = ruling();
-    const band = traceBand();
-    const y = (at) => TRACE_BASE - at * band;
+    const band = geo && geo.band != null ? geo.band : traceBand();
+    const BASE = geo && geo.base != null ? geo.base : TRACE_BASE;
+    const FPX = geo && geo.fontPx != null ? geo.fontPx : TRACE_FONT_SIZE;
+    const y = (at) => BASE - at * band;
     // The shaded Mittelband goes down first so every line still reads over it.
     if (r.band) {
       const top = y(r.band.to), bottom = y(r.band.from);
@@ -4703,7 +4860,7 @@
         svg.appendChild(l);
       }
     }
-    rulingGuides(TRACE_BASE, band, TRACE_FONT_SIZE)
+    rulingGuides(BASE, band, FPX)
       .forEach((line) => addGuide(svg, w, line.y, line.dashed, line.faint));
   }
 
@@ -4741,7 +4898,7 @@
     const size = fontPx == null ? TRACE_FONT_SIZE : fontPx;
     const band = bandPx == null ? traceBand() : bandPx;
     const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
-    const fm = GM && GM.faceMetrics(FONT, size, 700);
+    const fm = GM && GM.faceMetrics(FONT, size, FONT_WEIGHT);
     if (!fm || !fm.exact || !fm.xHeight || !fm.ascender) {
       return { top: base - band, mid: base - band * 0.5, base: base };
     }
@@ -4866,7 +5023,7 @@
       t.setAttribute("y", String(TRACE_BASE));
       t.setAttribute("text-anchor", "middle");
       t.setAttribute("font-family", FONT);
-      t.setAttribute("font-weight", "700");
+      t.setAttribute("font-weight", String(FONT_WEIGHT));
       t.setAttribute("font-size", String(TRACE_FONT_SIZE));
       if (trackPx) {
         // dx pulls back half the trailing gap letter-spacing adds after the
@@ -4933,6 +5090,7 @@
     const opt = SCRIPT_OPTIONS.find((o) => o.key === key) || SCRIPT_OPTIONS[0];
     genScriptKey = opt.key;
     FONT = opt.font;
+    if (opt.fontWeight != null) FONT_WEIGHT = opt.fontWeight;
     if (el.genScript) {
       $$(".pt-gen-script-opt", el.genScript).forEach((b) => {
         const on = b.dataset.script === genScriptKey;
@@ -5176,7 +5334,7 @@
       ctx.fillRect(0, 0, width, height);
 
       let fontSize = 300;
-      ctx.font = "700 " + fontSize + "px " + FONT;
+      ctx.font = FONT_WEIGHT + " " + fontSize + "px " + FONT;
       const measured = ctx.measureText(word).width;
       if (measured > width - pad * 2) {
         fontSize = Math.max(60, Math.floor(fontSize * (width - pad * 2) / measured));
@@ -5228,7 +5386,7 @@
       rulingGuides(base, gBand, fontSize).forEach((g) => drawGuide(g.y, g.dashed, g.faint));
 
       if (!spec.blank) {
-        ctx.font = "700 " + fontSize + "px " + FONT;
+        ctx.font = FONT_WEIGHT + " " + fontSize + "px " + FONT;
         ctx.textAlign = "center";
         ctx.textBaseline = "alphabetic";
         ctx.lineJoin = "round";
@@ -5753,7 +5911,7 @@
   function dotRasterChar(ch) {
     if (dotRasterCache[ch]) return dotRasterCache[ch];
     const probe = document.createElement("canvas").getContext("2d");
-    probe.font = "700 " + DOT_FS + "px " + FONT;
+    probe.font = FONT_WEIGHT + " " + DOT_FS + "px " + FONT;
     const adv = Math.max(DOT_FS * 0.28, probe.measureText(ch).width);
     const padX = Math.round(DOT_FS * 0.22);
     const w = Math.round(adv + padX * 2), h = DOT_CANVAS_H;
@@ -5763,7 +5921,7 @@
     ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, w, h);
     ctx.fillStyle = "#000000";
     ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
-    ctx.font = "700 " + DOT_FS + "px " + FONT;
+    ctx.font = FONT_WEIGHT + " " + DOT_FS + "px " + FONT;
     ctx.fillText(ch, padX, DOT_BASELINE);
     const data = ctx.getImageData(0, 0, w, h).data;
     const mask = new Uint8Array(w * h);
@@ -6492,7 +6650,7 @@
         ctx.fillStyle = INK; ctx.fill();
         if (!numbered) return;
         const lp = d.labelPos;
-        ctx.font = "700 " + lay.numF.toFixed(1) + "px " + FONT;
+        ctx.font = FONT_WEIGHT + " " + lay.numF.toFixed(1) + "px " + FONT;
         ctx.lineWidth = lay.numF * 0.16; ctx.strokeStyle = "#ffffff"; ctx.lineJoin = "round";
         ctx.strokeText(String(d.label), lp.x, lp.y);
         ctx.fillStyle = INK; ctx.fillText(String(d.label), lp.x, lp.y);
@@ -7127,7 +7285,7 @@
         };
         const fs = Math.max(G.fsFloor(twoP), Math.min(G.fsCap(twoP), Math.min(G.bandH(twoP),
           Math.floor(Math.min.apply(null, lines.map(fitP))))));
-        ctx.font = "700 " + fs + "px " + FONT;
+        ctx.font = FONT_WEIGHT + " " + fs + "px " + FONT;
         ctx.lineJoin = "round";
         const drawLine = (str, y) => paintOutlineText(ctx, str, W / 2, y, fs);
         if (lines.length === 2) {
@@ -7802,7 +7960,7 @@
           const ch = /[a-z]/i.test(rawCh) ? rawCh.toUpperCase() : rawCh;
           const cx = x + w / 2, cy = rowTop + rowH / 2;
           const fs = Math.min(rowH * 0.8, w * 0.85);
-          ctx.font = "700 " + Math.round(fs) + "px " + FONT;
+          ctx.font = FONT_WEIGHT + " " + Math.round(fs) + "px " + FONT;
           paintOutlineText(ctx, ch, cx, cy, fs);
           if (x > pad) boundaries.push(x);
         }

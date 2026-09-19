@@ -7086,6 +7086,12 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
   border-bottom: 1px solid #94a3b8;
 }
 .pt-name-row.pt-name-blank { min-height: 92px; }
+/* A ruled row draws its own baseline inside the SVG, at the place the FACE
+   actually sits rather than at the bottom of the box, so the CSS border below
+   would be a second line a few pixels under the first. Guides only: an unruled
+   name row keeps the single border it has always had. */
+.pt-name-row.has-guides { border-bottom: none; }
+.pt-name-row.has-guides .pt-word-outline { width: 100%; max-height: none; }
 .pt-name-row .pt-word-outline { width: 100%; max-height: 120px; }
 .pt-name-word {
   font-size: 3.2rem;
