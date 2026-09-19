@@ -7658,6 +7658,88 @@ body.dark-mode .pt-banner-index { color: var(--text-secondary); }
 .pt-puzzle-print-holder { text-align: center; }
 .pt-puzzle-print-holder .pt-puzzle-sheet { max-width: 900px; margin: 0 auto; }
 
+/* Word search maker (printables/word-search-maker)
+   ------------------------------------------------------------------
+   Paper colours are hardcoded here, as they are on every .pt-*-sheet above:
+   these represent ink on a white page, not the site's light/dark theme, so a
+   theme token would be the wrong abstraction and would invert the sheet in
+   dark mode. The grid is square and column-driven — the engine publishes
+   --pt-search-cols, and the cell type size divides by it, so an 8x8 and a
+   22x22 both fill the same box with letters that fit their own cell. */
+.pt-search-sheet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+}
+.pt-search-heading-text {
+  margin: 0;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+.pt-search-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--pt-search-cols, 12), 1fr);
+  width: 100%;
+  max-width: 34rem;
+  aspect-ratio: 1;
+  padding: 0.5rem;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+}
+.pt-search-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #1a1a2e;
+  /* Division by a unitless custom property: 10 columns give 1.9rem letters,
+     22 give 0.86rem, and neither overflows its cell. */
+  font-size: calc(19rem / var(--pt-search-cols, 12));
+}
+/* The answer key is the same grid with the filler dropped back, so the words
+   read as the only thing on the page. Never a second grid to fall out of step
+   with the first. */
+.pt-search-grid.is-answer .pt-search-cell.is-fill {
+  color: #cdd2dc;
+  font-weight: 400;
+}
+.pt-search-note {
+  margin: 0;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+.pt-search-words {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 34rem;
+  columns: 3 8rem;
+  column-gap: 1.25rem;
+  font-size: 0.95rem;
+  color: #1a1a2e;
+}
+.pt-search-words li {
+  break-inside: avoid;
+  padding: 0.1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.pt-search-footer-row { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+.pt-search-footer-field { display: inline-flex; align-items: baseline; gap: 0.5rem; font-size: 0.9rem; font-weight: 600; color: #1a1a2e; }
+.pt-search-footer-line { display: inline-block; width: 180px; height: 1px; border-bottom: 2px solid #9aa3b2; }
+.pt-search-meta { margin: 0.5rem 0 0; font-size: 0.85rem; color: var(--text-muted); }
+.pt-search-print-holder { text-align: center; }
+.pt-search-print-holder .pt-search-sheet { max-width: 900px; margin: 0 auto; }
+
 /* ============================================================
    Contextual decoration showcase — static, crawlable SEO block
    Injected as the final section of <main> on decorator pages.
@@ -10352,7 +10434,8 @@ body.dark-mode .source-note {
    stay printable for tracing; the fill-heavy coloring cells stay white. */
 body.is-printing.pt-ink-saver #pt-print-root svg { opacity: 0.72; }
 body.is-printing.pt-ink-saver #pt-print-root .pt-glyph-print,
-body.is-printing.pt-ink-saver #pt-print-root .pt-name-glyph { opacity: 0.72; }
+body.is-printing.pt-ink-saver #pt-print-root .pt-name-glyph,
+body.is-printing.pt-ink-saver #pt-print-root .pt-search-grid { opacity: 0.72; }
 
 @media print {
   .pt-print-tools, .pt-share-tools, .pt-spoke-batch, .pt-toast, .pt-recent { display: none !important; }
@@ -10370,6 +10453,8 @@ body.is-printing.pt-ink-saver #pt-print-root .pt-name-glyph { opacity: 0.72; }
   .pt-tile-cell,
   .pt-name-row,
   .pt-puzzle-sheet,
+  .pt-search-grid,
+  .pt-search-words,
   .cursive-print-row {
     page-break-inside: avoid;
     break-inside: avoid;
@@ -10394,7 +10479,8 @@ body.pt-pdf-rendering #pt-print-root {
 }
 body.pt-pdf-rendering.pt-ink-saver #pt-print-root svg,
 body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-glyph-print,
-body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-name-glyph { opacity: 0.72; }
+body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-name-glyph,
+body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-search-grid { opacity: 0.72; }
 body.pt-pdf-rendering .bubble-print-wrap .pt-name-sheet {
   min-height: 9.2in;
   justify-content: space-between;
@@ -10404,6 +10490,24 @@ body.pt-pdf-rendering .pt-puzzle-print-holder .pt-puzzle-sheet {
   justify-content: center;
   gap: 1.4rem;
 }
+body.pt-pdf-rendering .pt-search-print-holder .pt-search-sheet {
+  min-height: 9.2in;
+  justify-content: flex-start;
+  gap: 1.2rem;
+}
+/* On paper the grid gets the full content width rather than the screen cap,
+   and the type size divides by the same column count. */
+body.pt-pdf-rendering .pt-search-grid,
+body.is-printing #pt-print-root .pt-search-grid {
+  max-width: 6.4in;
+  border-color: #94a3b8;
+}
+body.pt-pdf-rendering .pt-search-cell,
+body.is-printing #pt-print-root .pt-search-cell {
+  font-size: calc(4.6in / var(--pt-search-cols, 12));
+}
+body.pt-pdf-rendering .pt-search-words,
+body.is-printing #pt-print-root .pt-search-words { max-width: 6.4in; }
 body.pt-pdf-rendering .pt-banner-grid { grid-template-columns: repeat(3, 1fr); }
 body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
 

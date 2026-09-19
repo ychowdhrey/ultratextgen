@@ -1232,6 +1232,45 @@ def m_trace_rows(p, sample="Emma"):
     <line x1="70" y1="250" x2="290" y2="250" stroke="{SUB}" stroke-width="3"/>"""
 
 
+def m_word_grid(p, accent=PURPLE):
+    """A letter grid with one word ringed on the diagonal — the word search maker.
+
+    Plain Latin capitals only, so they need no spanned()/_resolve_family() wrapper:
+    Liberation covers A-Z, and the rule that motif text must go through the
+    resolver applies to glyphs it does not cover. The ringed diagonal spells the
+    found word, which is the one thing that says "word search" rather than
+    "grid of letters".
+    """
+    cols = ["W", "O", "R", "D", "S"]
+    rows = [
+        ["F", "K", "T", "M", "R"],
+        ["S", "I", "B", "Q", "V"],
+        ["Y", "P", "N", "L", "H"],
+        ["C", "X", "A", "D", "J"],
+        ["G", "Z", "U", "E", "S"],
+    ]
+    # The word runs down the diagonal; every other cell is filler.
+    out = []
+    x0, y0, step = 78, 118, 46
+    for r in range(5):
+        for c in range(5):
+            ch = cols[r] if r == c else rows[r][c]
+            on = r == c
+            out.append(
+                f'<text x="{x0 + c * step}" y="{y0 + r * step}" font-family="{SANS}" '
+                f'font-size="{34 if on else 30}" font-weight="{"800" if on else "500"}" '
+                f'fill="{"url(#g" + p + ")" if on else SUB}" text-anchor="middle" '
+                f'opacity="{1 if on else 0.45}">{ch}</text>'
+            )
+    # The ring: a rotated capsule over the diagonal run.
+    out.append(
+        f'<rect x="-14" y="-24" width="292" height="48" rx="24" fill="none" '
+        f'stroke="{PURPLE}" stroke-width="5" opacity="0.85" '
+        f'transform="translate(78 106) rotate(45)"/>'
+    )
+    return "\n    " + "\n    ".join(out)
+
+
 def m_puzzle(p, accent=PURPLE):
     """Two interlocking jigsaw pieces — name-puzzle maker."""
     return f"""
@@ -2953,6 +2992,7 @@ PAGES.update({
 "printables-handwriting-worksheet-generator": ("Handwriting Worksheet Generator", "Dial dotted-to-blank tracing difficulty for any word", m_pencil_ruled, K_PRINT),
 "printables": ("Printable Letters & Alphabets", "Bubble letters, cursive sheets, tracing pages and more", m_grid, K_PRINT),
 "printables-name-puzzle-maker": ("Name Puzzle Maker", "Any name becomes a cut-apart letter jigsaw puzzle", m_puzzle, K_PRINT),
+"printables-word-search-maker": ("Word Search Maker", "One spelling list, a different grid for every child", m_word_grid, K_PRINT),
 "printables-letter-tracing": ("Letter Tracing Worksheets", "Every letter A to Z and number 0 to 9, at seven difficulty levels", P(m_trace_rows, sample="Aa"), K_PRINT),
 "printables-name-tracing": ("Name Tracing Worksheets", "Model row, faded trace rows and blank practice lines", P(m_trace_rows, sample="Emma"), K_PRINT),
 "printables-sight-word-tracing": ("Sight Word Tracing Worksheets", "Dolch sight words to trace at adjustable difficulty", P(m_trace_rows, sample="said"), K_PRINT),

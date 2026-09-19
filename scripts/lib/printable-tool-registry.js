@@ -63,6 +63,12 @@ const WORD_SURFACES = {
   banner: 'pt-banner-input',
   puzzle: 'pt-puzzle-input',
   gen: 'pt-gen-input',
+  /* The word-search list. It is a textarea rather than an <input>, and it takes
+     a LIST rather than one word — but it is still the visitor's own typed text
+     becoming the sheet, which is what this registry measures. Leaving it out
+     would have made a second word-search page invisible to the duplication
+     gate, which is the exact class of miss that gate exists for. */
+  search: 'pt-search-input',
 };
 
 const CONFIG_RE = /window\.UTG_PRINTABLE\s*=\s*\{([\s\S]*?)\n\s*\};/;
