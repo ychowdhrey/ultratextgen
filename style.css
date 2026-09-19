@@ -6640,11 +6640,21 @@ body.dark-mode .pt-az-link-letter { color: var(--accent-blue); }
 /* Keep the designer preview light in dark mode so the white sheet reads */
 body.dark-mode .pt-design-preview { background: #1c2030; }
 
-/* Print: the designed sheet fills the page on its own */
+/* Print: the designed sheet fills the page on its own.
+
+   A flat 680px cap letterboxed the sheet on a landscape page, which is the
+   visible half of R-007 — the paper setting was honoured by the page box and
+   the artwork got smaller. The sheet now carries the paper's own aspect
+   (sheetGeom() in printablesEngine.js), so it only needs to be fitted inside
+   the printable box: auto on both axes lets the SVG keep its intrinsic ratio,
+   and the two maxima shrink it to whichever bound it meets first. --pt-page-h
+   is the measured printable height applySheetMetrics() publishes. */
 .pt-design-print-holder { text-align: center; }
 .pt-design-print-holder .pt-design-sheet-svg {
   width: 100%;
-  max-width: 680px;
+  max-width: none;
+  height: auto;
+  max-height: var(--pt-page-h, 9.4in);
   margin: 0 auto;
   box-shadow: none;
 }

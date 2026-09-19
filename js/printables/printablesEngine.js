@@ -963,6 +963,11 @@
     // The designer's own "paper" strip is repainted from here too, so one
     // panel change updates every surface that names the paper.
     if (typeof syncDesignPreviewMeta === "function") syncDesignPreviewMeta();
+    /* The designed sheet takes the paper's aspect (sheetGeom), so a paper or
+       orientation change re-lays it out — and a preview that did not repaint
+       would be a control with no visible consequence, which is the exact
+       report this whole panel was rebuilt for. */
+    if (el.designPreview && typeof renderDesignPreview === "function") renderDesignPreview();
     // No isConnected guard: paperPreview() paints once while the holder is
     // still detached (selectChar appends it afterwards), and an isConnected
     // check there silently skipped that first paint — the sheet took the
@@ -4829,11 +4834,17 @@
     }
   }
 
-  function addFooter(svg, y) {
+  /* `sheetW` is the sheet this footer is being drawn on. The x positions are
+     shares of the original 1000-unit sheet, so the name and date rules stay
+     where they were on a portrait sheet and spread properly on a wider one
+     rather than being stranded mid-page. */
+  function addFooter(svg, y, sheetW) {
+    const W = sheetW || 1000;
+    const at = (u) => Math.round(W * u / 1000);
     const field = (x, label, lineEnd) => {
-      const t = svgMake("text", { x: x, y: y, "font-family": FONT, "font-size": 30, "font-weight": 600, fill: INK }, svg);
+      const t = svgMake("text", { x: at(x), y: y, "font-family": FONT, "font-size": 30, "font-weight": 600, fill: INK }, svg);
       t.textContent = label;
-      svgMake("line", { x1: x + 110, y1: y + 6, x2: lineEnd, y2: y + 6, stroke: "#9aa3b2", "stroke-width": 2 }, svg);
+      svgMake("line", { x1: at(x) + 110, y1: y + 6, x2: at(lineEnd), y2: y + 6, stroke: "#9aa3b2", "stroke-width": 2 }, svg);
     };
     field(90, T.nameLabel, 470);
     field(560, T.dateLabel, 910);
@@ -5940,21 +5951,74 @@
      text 1355.7-1380.5, with a border symbol sitting at x=500 directly on top
      of the centred URL. The relationship is expressed here instead so it
      cannot drift again -- the border row is derived FROM the credit band. */
-  const SHEET_W = 1000, SHEET_H = 1400, SHEET_M = 70;
+  /* The sheet was authored at a fixed 1000x1400 and fitted to whatever page
+     box the visitor chose, so on a landscape page it was fitted by HEIGHT and
+     choosing landscape made the artwork smaller. Measured on the rendered PDF
+     (coloring-page-maker, "Emma"): Letter portrait left 1.90in / right 1.88in
+     and 30.5% ink coverage; Letter landscape left 3.74in / right 3.72in and
+     17.1%. Three and a half inches of wasted paper on each side of an 11-inch
+     page, from a setting that is offered, is honoured by the page box, and
+     makes the output worse. Audit 2026-09-17, R-007.
+
+     The sheet now takes the PAPER's aspect, so every orientation and every
+     paper size re-lays-out rather than letterboxing. Area is held at the
+     original 1000x1400, which is what keeps the type the same PHYSICAL size
+     across settings: a landscape Letter sheet is 1366x1025 units on a 10x7.5in
+     box, so a unit is 0.00732in against portrait's 0.00714 — under 3% — and
+     the absolute font sizes below need no scaling. What does scale is the
+     vertical rhythm, by H/1400, so the heading band, the artwork band and the
+     footer keep their proportions on a shorter page. */
+  const SHEET_BASE_W = 1000, SHEET_BASE_H = 1400;
+  const SHEET_AREA = SHEET_BASE_W * SHEET_BASE_H;
+
+  function sheetGeom() {
+    const PP = window.UltraTextGen && window.UltraTextGen.printPrefs;
+    let aspect = SHEET_BASE_W / SHEET_BASE_H;
+    if (PP && PP.paperFull) {
+      const p = PP.paperFull();
+      const m = PP.marginIn ? PP.marginIn() : 0.5;
+      const cw = p.w - m * 2, ch = p.h - m * 2;
+      if (cw > 0.5 && ch > 0.5) aspect = cw / ch;
+    }
+    const W = Math.round(Math.sqrt(SHEET_AREA * aspect));
+    const H = Math.round(Math.sqrt(SHEET_AREA / aspect));
+    const k = H / SHEET_BASE_H;          // vertical rhythm
+    const kw = W / SHEET_BASE_W;         // horizontal rhythm
+    const creditBase = H - Math.round(24 * k);
+    // Measured ascent of the credit face at font-size 22: 0.92em above baseline.
+    const creditTop = creditBase - CREDIT_FS * 0.92;
+    return {
+      W: W, H: H, k: k,
+      M: Math.round(70 * kw),
+      creditBase: creditBase,
+      creditTop: creditTop,
+      /* Measured descent of the border face at font-size 34 is about 0.20em
+         below the baseline, but the face varies with the page's own font
+         stack, so the daylight allowance is 12 units rather than a hairline:
+         at 6 the measured clearance came out at 4 units (0.7mm), which is
+         closer than a decorative row should ever sit to the line that carries
+         the page address. The SVG sheet no longer draws that line, but the PNG
+         export still does, at this same baseline, so the band stays reserved
+         for both. */
+      borderBottomY: Math.round(creditTop - BORDER_FS * 0.20 - 12),
+      borderTopY: Math.round(78 * k),
+      headingY: Math.round(168 * k),
+      footerY: H - Math.round(150 * k),
+      /* Every band and cap below is the portrait number scaled by k, so a
+         portrait sheet of the original proportion renders exactly as before
+         and every other paper keeps the same proportions. */
+      dotCy: function (heading) { return Math.round((heading ? 720 : 690) * k); },
+      dotPad: function (heading) { return Math.round((heading ? 250 : 200) * k); },
+      dotFloor: function (footer) { return H - Math.round((footer ? 250 : 150) * k); },
+      inkCy: function (heading) { return Math.round((heading ? 740 : 700) * k); },
+      bandH: function (two) { return Math.round((two ? 260 : 470) * k); },
+      fsCap: function (two) { return Math.round((two ? 230 : 360) * k); },
+      fsFloor: function (two) { return Math.round((two ? 90 : 110) * k); }
+    };
+  }
+
   const CREDIT_FS = 22;
-  const CREDIT_BASE = SHEET_H - 24;
-  // Measured ascent of the credit face at font-size 22: 0.92em above baseline.
-  const CREDIT_TOP = CREDIT_BASE - CREDIT_FS * 0.92;
   const BORDER_FS = 34;
-  // Measured descent of the border face at font-size 34 is about 0.20em below
-  // the baseline, but the face varies with the page's own font stack, so the
-  // daylight allowance is 12 units rather than a hairline: at 6 the measured
-  // clearance came out at 4 units (0.7mm), which is closer than a decorative
-  // row should ever sit to the line that carries the page address. The SVG
-  // sheet no longer draws that line, but the PNG export still does, at this
-  // same baseline, so the band stays reserved for both.
-  const BORDER_BOTTOM_Y = Math.round(CREDIT_TOP - BORDER_FS * 0.20 - 12);
-  const BORDER_TOP_Y = 78;
 
   // Exact text width on the sheet, in sheet units, via the same Canvas
   // measurer the PNG path already uses -- so the SVG heading and the PNG
@@ -5980,7 +6044,8 @@
     const borderSym = designBorderSym();
     const footer = designFooterOn();
     const uid = ++designUid;
-    const W = SHEET_W, H = SHEET_H, M = SHEET_M;
+    const G = sheetGeom();
+    const W = G.W, H = G.H, M = G.M;
 
     const svg = svgMake("svg", { viewBox: "0 0 " + W + " " + H, class: "pt-design-sheet-svg", role: "img", "aria-label": (heading || lines.join(" ")) + " coloring sheet" });
     const defs = svgMake("defs", null, svg);
@@ -5989,13 +6054,13 @@
 
     if (borderSym) {
       const strip = borderSym.split(" ").filter(Boolean);
-      addBorderRow(svg, strip, BORDER_TOP_Y);
-      addBorderRow(svg, strip, BORDER_BOTTOM_Y);
+      addBorderRow(svg, strip, G.borderTopY);
+      addBorderRow(svg, strip, G.borderBottomY);
     }
 
     if (heading) {
       const hFs = 62;
-      const attrs = { x: W / 2, y: 168, "text-anchor": "middle", "font-family": FONT, "font-weight": 700, "font-size": hFs, fill: INK };
+      const attrs = { x: W / 2, y: G.headingY, "text-anchor": "middle", "font-family": FONT, "font-weight": 700, "font-size": hFs, fill: INK };
       // The heading band is capped at DESIGN_HEADING_MAX characters, but a
       // run of wide glyphs can still overrun it, so compress rather than let
       // the title walk off the edge of the paper the way it used to.
@@ -6016,8 +6081,8 @@
       // Dot-to-dot: numbered dots along each letter's outline (uppercased for
       // iconic silhouettes). Sits in the same central band the outline would;
       // with a second line the band is split into two stacked half-bands.
-      const cy = heading ? 720 : 690;
-      const half = Math.min(cy - (heading ? 250 : 200), (footer ? H - 250 : H - 150) - cy);
+      const cy = G.dotCy(heading);
+      const half = Math.min(cy - G.dotPad(heading), G.dotFloor(footer) - cy);
       if (lines.length === 2) {
         const bandH = half - 18;
         const next = addDotWordSVG(svg, String(lines[0]).toUpperCase(), designState.density, { x: M, y: cy - half, w: availW, h: bandH }, designState.hint);
@@ -6029,7 +6094,7 @@
       // Interior: plain white (open to color), or a tiled pattern painted as
       // the glyph fill. Plain keeps stroke under fill (thin clean edge); a
       // pattern draws stroke on top so the letter boundary stays crisp.
-      const cy = heading ? 740 : 700;
+      const cy = G.inkCy(heading);
       /* A single line longer than the band is designed for goes to the second
          band rather than off the end of the string. */
       lines = autoWrapLines(text, lines, DESIGN_MAX + 1);
@@ -6042,9 +6107,10 @@
          4.4% of the sheet. sheetTextWidth() is the same hidden-canvas probe the
          heading above already trusts, and width scales linearly with size, so
          one measurement gives the exact fit. Audit 2026-09-17, R-013. */
-      const cap = lines.length === 2 ? 230 : 360;
-      const floor = lines.length === 2 ? 90 : 110;
-      const bandH = lines.length === 2 ? 260 : 470;
+      const two = lines.length === 2;
+      const cap = G.fsCap(two);
+      const floor = G.fsFloor(two);
+      const bandH = G.bandH(two);
       const fit = (str) => {
         const probe = 100;
         const w = sheetTextWidth(str, 700, probe);
@@ -6114,7 +6180,7 @@
       });
     }
 
-    if (footer) addFooter(svg, H - 150);
+    if (footer) addFooter(svg, G.footerY, W);
 
     /* No credit line inside the sheet. attachCredit() puts the real one on
        every printed page unit, as the page path plus the same URL as a QR,
@@ -6123,7 +6189,8 @@
        the one that scans and the one the PDF lays a /Link annotation over,
        so this is the copy that goes. The PNG export is a different artifact
        and draws its own credit at the same y (designPNG), which is why
-       CREDIT_TOP still reserves the band and the border row still clears it. */
+       sheetGeom().creditTop still reserves the band and the border row still
+       clears it. */
     return svg;
   }
 
@@ -6134,10 +6201,11 @@
     const heading = !!designHeadingText();
     const footer = designFooterOn();
     const twoLine = !!designLine2();
-    const cy = heading ? 720 : 690;
-    const half = Math.min(cy - (heading ? 250 : 200), (footer ? SHEET_H - 250 : SHEET_H - 150) - cy);
+    const G = sheetGeom();
+    const cy = G.dotCy(heading);
+    const half = Math.min(cy - G.dotPad(heading), G.dotFloor(footer) - cy);
     // A second line splits the band in two, so each line gets half the height.
-    return { x: SHEET_M, y: cy - half, w: SHEET_W - SHEET_M * 2, h: twoLine ? half - 18 : half * 2 };
+    return { x: G.M, y: cy - half, w: G.W - G.M * 2, h: twoLine ? half - 18 : half * 2 };
   }
 
   /* The exact string the dot sheet draws. designSheetSVG uppercases the word
@@ -6265,7 +6333,8 @@
   // saves the clean outline, which is what most "download" users reuse.
   function designPNG() {
     withFont(() => {
-      const W = SHEET_W, H = SHEET_H, scale = 2;
+      const G = sheetGeom();
+      const W = G.W, H = G.H, scale = 2;
       // The sheet keeps its own 1000x1400 geometry; the canvas is taller by
       // the credit strip, so nothing on the sheet moves and the PNG carries
       // the same QR the printed page and every other export already do.
@@ -6289,8 +6358,8 @@
         const count = 11, gap = (W - 120) / (count - 1);
         ctx.font = BORDER_FS + "px " + FONT; ctx.fillStyle = "#c8ccd6";
         for (let i = 0; i < count; i++) {
-          ctx.fillText(strip[i % strip.length], 60 + i * gap, BORDER_TOP_Y);
-          ctx.fillText(strip[i % strip.length], 60 + i * gap, BORDER_BOTTOM_Y);
+          ctx.fillText(strip[i % strip.length], 60 + i * gap, G.borderTopY);
+          ctx.fillText(strip[i % strip.length], 60 + i * gap, G.borderBottomY);
         }
       }
 
@@ -6299,7 +6368,7 @@
         ctx.font = "700 62px " + FONT; ctx.fillStyle = INK;
         // fillText's maxWidth condenses the glyphs, which is the Canvas
         // equivalent of the SVG path's lengthAdjust="spacingAndGlyphs".
-        ctx.fillText(heading, W / 2, 168, W - SHEET_M * 2);
+        ctx.fillText(heading, W / 2, G.headingY, W - G.M * 2);
       }
 
       if (designModeIsDots()) {
@@ -6307,24 +6376,32 @@
         lines = dotAutoLines(text, lines);
         wrapped = lines.length !== beforeC;
         const footerOn = designFooterOn();
-        const cyD = hasHeading ? 720 : 690;
-        const half = Math.min(cyD - (hasHeading ? 250 : 200), (footerOn ? H - 250 : H - 150) - cyD);
+        const cyD = G.dotCy(hasHeading);
+        const half = Math.min(cyD - G.dotPad(hasHeading), G.dotFloor(footerOn) - cyD);
+        const availD = W - G.M * 2;
         if (lines.length === 2) {
           const bandH = half - 18;
-          const next = drawDotWordCanvas(ctx, String(lines[0]).toUpperCase(), designState.density, { x: 70, y: cyD - half, w: W - 140, h: bandH }, designState.hint);
-          drawDotWordCanvas(ctx, String(lines[1]).toUpperCase(), designState.density, { x: 70, y: cyD + 18, w: W - 140, h: bandH }, designState.hint, undefined, wrapped ? next : 1);
+          const next = drawDotWordCanvas(ctx, String(lines[0]).toUpperCase(), designState.density, { x: G.M, y: cyD - half, w: availD, h: bandH }, designState.hint);
+          drawDotWordCanvas(ctx, String(lines[1]).toUpperCase(), designState.density, { x: G.M, y: cyD + 18, w: availD, h: bandH }, designState.hint, undefined, wrapped ? next : 1);
         } else {
-          drawDotWordCanvas(ctx, String(text).toUpperCase(), designState.density, { x: 70, y: cyD - half, w: W - 140, h: half * 2 }, designState.hint);
+          drawDotWordCanvas(ctx, String(text).toUpperCase(), designState.density, { x: G.M, y: cyD - half, w: availD, h: half * 2 }, designState.hint);
         }
       } else {
-        const cy = hasHeading ? 740 : 700;
-        const maxLen = Math.max(1, ...lines.map((s) => [...s].length));
-        let fs = lines.length === 2
-          ? Math.max(90, Math.min(230, Math.round((W - 140) * 1.3 / maxLen)))
-          : Math.max(110, Math.min(360, Math.round((W - 140) * 1.3 / maxLen)));
+        const cy = G.inkCy(hasHeading);
+        /* The same measured fit the SVG sheet uses. This branch kept the
+           character-count ladder R-013 replaced there — `(W-140)*1.3/maxLen`
+           clamped into three steps — so the downloaded PNG and the preview
+           sized the same word differently, which is the one thing an export
+           must never do. */
+        const twoP = lines.length === 2;
+        const availP = W - G.M * 2;
+        const fitP = (str) => {
+          const w0 = sheetTextWidth(str, 700, 100);
+          return w0 > 0 ? (availP / w0) * 100 : G.fsCap(twoP);
+        };
+        const fs = Math.max(G.fsFloor(twoP), Math.min(G.fsCap(twoP), Math.min(G.bandH(twoP),
+          Math.floor(Math.min.apply(null, lines.map(fitP))))));
         ctx.font = "700 " + fs + "px " + FONT;
-        const widest = Math.max(...lines.map((s) => ctx.measureText(s).width));
-        if (widest > W - 140) { fs = Math.floor(fs * (W - 140) / widest); ctx.font = "700 " + fs + "px " + FONT; }
         ctx.lineJoin = "round";
         const drawLine = (str, y) => paintOutlineText(ctx, str, W / 2, y, fs);
         if (lines.length === 2) {
@@ -6337,11 +6414,15 @@
 
       if (designFooterOn()) {
         ctx.textAlign = "left"; ctx.font = "600 30px " + FONT; ctx.fillStyle = INK;
-        const fy = H - 150;
-        ctx.fillText(T.nameLabel, 90, fy); ctx.fillText(T.dateLabel, 560, fy);
+        const fy = G.footerY;
+        /* The footer's own x positions were absolute in a 1000-unit sheet, so
+           a wider sheet left the rules stranded mid-page. Expressed as shares
+           of W, they land in the same place on every paper. */
+        const fx = (u) => Math.round(W * u / 1000);
+        ctx.fillText(T.nameLabel, fx(90), fy); ctx.fillText(T.dateLabel, fx(560), fy);
         ctx.strokeStyle = "#9aa3b2"; ctx.lineWidth = 2;
-        ctx.beginPath(); ctx.moveTo(200, fy + 16); ctx.lineTo(470, fy + 16);
-        ctx.moveTo(670, fy + 16); ctx.lineTo(910, fy + 16); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(fx(200), fy + 16); ctx.lineTo(fx(470), fy + 16);
+        ctx.moveTo(fx(670), fy + 16); ctx.lineTo(fx(910), fy + 16); ctx.stroke();
         ctx.textAlign = "center";
       }
 
