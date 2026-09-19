@@ -31,16 +31,35 @@ Two families are deliberately **not** here:
 * **Noto Sans Symbols 2** — a symbol font rather than a letterform, already
   served, and the `symbols` subset its two chess pages would need is 373 KB.
 
+## Which subsets, and why vietnamese is in and the others are not
+
+Each family carries `latin`, `latin-ext` and `vietnamese` (whichever of those
+Google serves for it), plus the unsplit `fallback` block the Playwrite families
+ship instead of subsets.
+
+**`vietnamese` is here for a measured reason, not for completeness.** Vietnamese
+words are mostly Latin with a few characters *outside* latin-ext, so without that
+subset a name renders half in the webfont and half in the system fallback:
+`Nguyễn` came out as **Nguy** + a fallback **ễ** + **n**, one letter in a
+different typeface mid-name, on a tracing sheet. `vi` is a live locale here.
+
+**Cyrillic, Hebrew and Devanagari are deliberately absent.** They share no
+characters with latin, so text in them falls back whole and consistently — which
+looks correct, just not in the display face. Adding them would cost 562 KB
+(devanagari), 196 KB (cyrillic) and 61 KB (hebrew) to fix a problem that does not
+have the mixed-rendering shape. Revisit if one of those locales grows printables
+pages.
+
 ## Inventory
 
 | Family | Weights | Subsets | Files | Size | Licence |
 |---|---|---|---|---|---|
 | Archivo Black | 400 | latin, latin-ext | 2 | 32 KB | OFL-1.1 |
-| Baloo 2 | 400, 500, 600, 700, 800 | latin, latin-ext | 10 | 296 KB | OFL-1.1 |
+| Baloo 2 | 400, 500, 600, 700, 800 | latin, latin-ext, vietnamese | 15 | 344 KB | OFL-1.1 |
 | Comic Neue | 700 | latin | 1 | 19 KB | OFL-1.1 |
 | Fredoka | 400, 500, 600, 700 | latin, latin-ext | 8 | 134 KB | OFL-1.1 |
 | Permanent Marker | 400 | latin | 1 | 29 KB | Apache-2.0 |
-| Playfair Display | 500, 600, 700, 900 | latin, latin-ext | 8 | 233 KB | OFL-1.1 |
+| Playfair Display | 500, 600, 700, 900 | latin, latin-ext, vietnamese | 12 | 268 KB | OFL-1.1 |
 | Playwrite DE Grund | 400 | fallback | 1 | 20 KB | OFL-1.1 |
 | Playwrite DE SAS | 400 | fallback | 1 | 40 KB | OFL-1.1 |
 | Playwrite DE VA | 400 | fallback | 1 | 37 KB | OFL-1.1 |
@@ -51,13 +70,13 @@ Two families are deliberately **not** here:
 | Playwrite PL | 400 | fallback | 1 | 37 KB | OFL-1.1 |
 | Playwrite PT | 400 | fallback | 1 | 41 KB | OFL-1.1 |
 | Playwrite US Trad | 400 | fallback | 1 | 42 KB | OFL-1.1 |
-| Quicksand | 500, 600, 700 | latin, latin-ext | 6 | 161 KB | OFL-1.1 |
+| Quicksand | 500, 600, 700 | latin, latin-ext, vietnamese | 9 | 187 KB | OFL-1.1 |
 | Rubik Spray Paint | 400 | latin, latin-ext | 2 | 178 KB | OFL-1.1 |
-| Sedgwick Ave Display | 400 | latin, latin-ext | 2 | 58 KB | OFL-1.1 |
+| Sedgwick Ave Display | 400 | latin, latin-ext, vietnamese | 3 | 67 KB | OFL-1.1 |
 | UnifrakturCook | 700 | latin | 1 | 17 KB | OFL-1.1 |
 | UnifrakturMaguntia | 400 | latin | 1 | 26 KB | OFL-1.1 |
 
-**Total: 52 files, 1556 KB.** A visitor downloads far less than that —
+**Total: 65 files, 1675 KB.** A visitor downloads far less than that —
 every `@font-face` carries the `unicode-range` Google served it with, so an
 English page fetches one `latin` file of one weight.
 

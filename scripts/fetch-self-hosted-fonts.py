@@ -11,8 +11,15 @@ Run scripts/build-font-face-css.py --write afterwards to regenerate the CSS.
 
 The Chrome user agent is what makes the API serve woff2; with the default
 urllib agent it serves ttf, which is both larger and the format CLAUDE.md's
-build-time rule is about. Subsets are limited to the Latin ranges this site
-sets letters in, plus the unsplit 'fallback' block some families ship instead.
+build-time rule is about.
+
+KEEP is the subset list. 'vietnamese' is in it for a measured reason rather
+than for completeness: Vietnamese words are mostly Latin with a few characters
+OUTSIDE latin-ext, so without it a name renders half in the webfont and half in
+the fallback -- "Nguyen" in Baloo 2 with the one accented letter in a system
+face, mid-word, on a tracing sheet. Cyrillic, Hebrew and Devanagari share no
+characters with latin, so they fall back whole and consistently, which is why
+they are not here (and why devanagari alone would cost 562 KB).
 """
 import argparse, hashlib, json, os, re, sys, urllib.parse, urllib.request
 
@@ -22,7 +29,7 @@ LICDIR = os.path.join(FONTDIR, "licenses")
 MANIFEST = os.path.join(FONTDIR, "manifest.json")
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/140.0 Safari/537.36")
-KEEP = {"latin", "latin-ext", "fallback"}
+KEEP = {"latin", "latin-ext", "vietnamese", "fallback"}
 
 
 def get(url):

@@ -4143,7 +4143,7 @@ Four things about how this was found are worth carrying forward:
   Fonts links, so a same-origin `@font-face` is untouched by it, by a change to
   its bundle, or by the setting being toggled.
 
-**What is and is not self-hosted.** 21 letterform families, 52 files, 1.5 MB, in
+**What is and is not self-hosted.** 21 letterform families, 65 files, 1.6 MB, in
 `assets/fonts/` with their licences and a manifest recording each file's source
 URL and SHA-256. `Plus Jakarta Sans` and `Space Mono` keep their Google link —
 body and mono chrome, both in Cloudflare's bundle, both serving. `Noto Sans
@@ -4153,6 +4153,17 @@ chess pages would need is 373 KB on its own.
 **Repo size is not what a visitor downloads.** Every generated `@font-face`
 carries the `unicode-range` Google served it with, so an English page fetches
 one `latin` file of one weight — typically 20–43 KB, the same as before.
+
+**Subsets are `latin`, `latin-ext` and `vietnamese`, and that last one is a
+measured choice rather than completeness.** Vietnamese words are mostly Latin
+with a few characters *outside* latin-ext, so without it a name renders half in
+the webfont and half in the fallback: `Nguyễn` as **Nguy** + a fallback **ễ** +
+**n**, one letter in a different typeface mid-name, on a tracing sheet. Cyrillic,
+Hebrew and Devanagari share no characters with latin, so they fall back whole and
+consistently — the reason they are left out is that shape, not their size, though
+devanagari alone would also cost 562 KB against `hi`'s nine-page corpus. The
+rule to carry forward: **a subset earns its bytes when its script MIXES with one
+already loaded, not when a locale merely exists.**
 
 **This amends two recorded rules rather than stepping over them**, and both
 carry the dated note: CLAUDE.md's "no bundled font binaries" (written for the
