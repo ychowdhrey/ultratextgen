@@ -80,7 +80,7 @@
       dotLadderTitle: "Practice ladder",
       dotLadderText: "Start easy and add dots as it gets comfortable. Mastered Expert? Turn the numbers off, then try drawing it freehand.",
       pdfHint: "Tip: Print → “Save as PDF” downloads this sheet as a PDF.",
-      printOpts: { settings: "PDF settings", paper: "Paper", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Save as PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
+      printOpts: { settings: "PDF settings", paper: "Paper", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Download PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
       printBook: "Save as a book: one page per letter",
       save: "Save",
       saved: "Saved",
@@ -133,7 +133,7 @@
       dotLadderTitle: "Échelle de difficulté",
       dotLadderText: "Commencez facile, puis ajoutez des points. Niveau Expert maîtrisé ? Retirez les numéros, puis essayez de dessiner à main levée.",
       pdfHint: "Astuce : Imprimer → « Enregistrer au format PDF » télécharge la feuille en PDF.",
-      printOpts: { settings: "Réglages du PDF", paper: "Papier", letter: "Lettre US", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Paysage", margins: "Marges", normal: "Normales", narrow: "Étroites", inkSaver: "Économie d'encre (traits plus clairs)", savePdf: "Enregistrer en PDF", pdfToast: "Dans la boîte d'impression, choisissez Enregistrer au format PDF comme destination.", share: "Partager", shareImage: "Partager en image", copyLink: "Copier le lien", linkCopied: "Lien copié", pinterest: "Épingler sur Pinterest", recent: "Vos fiches récentes", clear: "Effacer", madeAt: "Créé sur" },
+      printOpts: { settings: "Réglages du PDF", paper: "Papier", letter: "Lettre US", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Paysage", margins: "Marges", normal: "Normales", narrow: "Étroites", inkSaver: "Économie d'encre (traits plus clairs)", savePdf: "Télécharger le PDF", pdfToast: "Dans la boîte d'impression, choisissez Enregistrer au format PDF comme destination.", share: "Partager", shareImage: "Partager en image", copyLink: "Copier le lien", linkCopied: "Lien copié", pinterest: "Épingler sur Pinterest", recent: "Vos fiches récentes", clear: "Effacer", madeAt: "Créé sur" },
       printBook: "Enregistrer en livret — une page par lettre",
       pageCount: { one: "page", other: "pages" },
       ofWord: "sur",
@@ -181,7 +181,7 @@
       dotLadderTitle: "Escalera de dificultad",
       dotLadderText: "Empieza en fácil y añade puntos poco a poco. ¿Dominas el nivel experto? Quita los números y prueba a dibujar a mano alzada.",
       pdfHint: "Consejo: Imprimir → «Guardar como PDF» descarga la hoja en PDF.",
-      printOpts: { settings: "Ajustes del PDF", paper: "Papel", letter: "Carta", a4: "A4", legal: "Oficio", orientation: "Orientación", portrait: "Vertical", landscape: "Horizontal", margins: "Márgenes", normal: "Normales", narrow: "Estrechos", inkSaver: "Ahorro de tinta (líneas más claras)", savePdf: "Guardar como PDF", pdfToast: "En el cuadro de impresión, elige Guardar como PDF como destino.", share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", recent: "Tus hojas recientes", clear: "Borrar", madeAt: "Hecho en" },
+      printOpts: { settings: "Ajustes del PDF", paper: "Papel", letter: "Carta", a4: "A4", legal: "Oficio", orientation: "Orientación", portrait: "Vertical", landscape: "Horizontal", margins: "Márgenes", normal: "Normales", narrow: "Estrechos", inkSaver: "Ahorro de tinta (líneas más claras)", savePdf: "Descargar PDF", pdfToast: "En el cuadro de impresión, elige Guardar como PDF como destino.", share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", recent: "Tus hojas recientes", clear: "Borrar", madeAt: "Hecho en" },
       printBook: "Guardar como libro — una página por letra",
       pageCount: { one: "página", other: "páginas" },
       ofWord: "de",
@@ -229,7 +229,7 @@
       dotLadderTitle: "Escada de dificuldade",
       dotLadderText: "Comece no fácil e adicione pontos aos poucos. Dominou o nível especialista? Desligue os números e tente desenhar à mão livre.",
       pdfHint: "Dica: Imprimir → “Salvar como PDF” baixa a folha em PDF.",
-      printOpts: { settings: "Configurações do PDF", paper: "Papel", letter: "Carta", a4: "A4", legal: "Ofício", orientation: "Orientação", portrait: "Retrato", landscape: "Paisagem", margins: "Margens", normal: "Normais", narrow: "Estreitas", inkSaver: "Economia de tinta (linhas mais claras)", savePdf: "Salvar como PDF", pdfToast: "Na caixa de impressão, escolha Salvar como PDF como destino.", share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", recent: "Suas folhas recentes", clear: "Limpar", madeAt: "Feito em" },
+      printOpts: { settings: "Configurações do PDF", paper: "Papel", letter: "Carta", a4: "A4", legal: "Ofício", orientation: "Orientação", portrait: "Retrato", landscape: "Paisagem", margins: "Margens", normal: "Normais", narrow: "Estreitas", inkSaver: "Economia de tinta (linhas mais claras)", savePdf: "Baixar PDF", pdfToast: "Na caixa de impressão, escolha Salvar como PDF como destino.", share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", recent: "Suas folhas recentes", clear: "Limpar", madeAt: "Feito em" },
       printBook: "Salvar como livro — uma página por letra",
       pageCount: { one: "página", other: "páginas" },
       ofWord: "de",
@@ -277,7 +277,7 @@
       dotLadderTitle: "Scala di difficoltà",
       dotLadderText: "Inizia dal facile e aggiungi punti man mano. Livello esperto superato? Togli i numeri e prova a disegnare a mano libera.",
       pdfHint: "Suggerimento: Stampa → “Salva come PDF” scarica il foglio in PDF.",
-      printOpts: { settings: "Impostazioni PDF", paper: "Carta", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientamento", portrait: "Verticale", landscape: "Orizzontale", margins: "Margini", normal: "Normali", narrow: "Stretti", inkSaver: "Risparmio inchiostro (linee più chiare)", savePdf: "Salva come PDF", pdfToast: "Nella finestra di stampa scegli Salva come PDF come destinazione.", share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", recent: "I tuoi fogli recenti", clear: "Cancella", madeAt: "Creato su" },
+      printOpts: { settings: "Impostazioni PDF", paper: "Carta", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientamento", portrait: "Verticale", landscape: "Orizzontale", margins: "Margini", normal: "Normali", narrow: "Stretti", inkSaver: "Risparmio inchiostro (linee più chiare)", savePdf: "Scarica PDF", pdfToast: "Nella finestra di stampa scegli Salva come PDF come destinazione.", share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", recent: "I tuoi fogli recenti", clear: "Cancella", madeAt: "Creato su" },
       printBook: "Salva come libretto – una pagina per lettera",
       pageCount: { one: "pagina", other: "pagine" },
       ofWord: "di",
@@ -325,7 +325,7 @@
       dotLadderTitle: "Drabinka trudności",
       dotLadderText: "Zacznij od łatwego poziomu i stopniowo dodawaj kropki. Opanowane? Wyłącz numery i spróbuj narysować odręcznie.",
       pdfHint: "Wskazówka: Drukuj → „Zapisz jako PDF”, aby pobrać arkusz w PDF.",
-      printOpts: { settings: "Ustawienia PDF", paper: "Papier", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientacja", portrait: "Pionowa", landscape: "Pozioma", margins: "Marginesy", normal: "Normalne", narrow: "Wąskie", inkSaver: "Oszczędzanie tuszu (jaśniejsze linie)", savePdf: "Zapisz jako PDF", pdfToast: "W oknie drukowania wybierz Zapisz jako PDF jako miejsce docelowe.", share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", recent: "Twoje ostatnie arkusze", clear: "Wyczyść", madeAt: "Utworzono na" },
+      printOpts: { settings: "Ustawienia PDF", paper: "Papier", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientacja", portrait: "Pionowa", landscape: "Pozioma", margins: "Marginesy", normal: "Normalne", narrow: "Wąskie", inkSaver: "Oszczędzanie tuszu (jaśniejsze linie)", savePdf: "Pobierz PDF", pdfToast: "W oknie drukowania wybierz Zapisz jako PDF jako miejsce docelowe.", share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", recent: "Twoje ostatnie arkusze", clear: "Wyczyść", madeAt: "Utworzono na" },
       printBook: "Zapisz jako książeczkę — jedna strona na literę",
       save: "Zapisz",
       saved: "Zapisano",
@@ -375,7 +375,7 @@
       dotLadderTitle: "Schwierigkeitsleiter",
       dotLadderText: "Leicht anfangen, dann Punkte dazunehmen. Experte geschafft? Zahlen ausblenden und frei zeichnen.",
       pdfHint: "Tipp: Drucken → „Als PDF speichern“ lädt das Blatt als PDF herunter.",
-      printOpts: { settings: "PDF-Einstellungen", paper: "Papier", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Ausrichtung", portrait: "Hochformat", landscape: "Querformat", margins: "Ränder", normal: "Normal", narrow: "Schmal", inkSaver: "Tintensparmodus (hellere Linien)", savePdf: "Als PDF speichern", pdfToast: "Wähle im Druckdialog Als PDF speichern als Ziel.", share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", recent: "Deine letzten Blätter", clear: "Löschen", madeAt: "Erstellt auf" },
+      printOpts: { settings: "PDF-Einstellungen", paper: "Papier", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Ausrichtung", portrait: "Hochformat", landscape: "Querformat", margins: "Ränder", normal: "Normal", narrow: "Schmal", inkSaver: "Tintensparmodus (hellere Linien)", savePdf: "PDF herunterladen", pdfToast: "Wähle im Druckdialog Als PDF speichern als Ziel.", share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", recent: "Deine letzten Blätter", clear: "Löschen", madeAt: "Erstellt auf" },
       printBook: "Als Heft speichern \u2013 eine Seite pro Buchstabe",
       pageCount: { one: "Seite", other: "Seiten" },
       ofWord: "von",
@@ -432,7 +432,7 @@
       dotLadderTitle: "Tangga latihan",
       dotLadderText: "Mulai dari yang mudah, lalu tambah titiknya begitu sudah terbiasa. Sudah lancar di tingkat Ahli? Matikan nomornya, lalu coba gambar sendiri tanpa panduan.",
       pdfHint: "Tips: Cetak \u2192 \u201cSimpan sebagai PDF\u201d akan mengunduh lembar ini sebagai PDF.",
-      printOpts: { settings: "Pengaturan PDF", paper: "Kertas", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientasi", portrait: "Potret", landscape: "Lanskap", margins: "Margin", normal: "Normal", narrow: "Sempit", inkSaver: "Hemat tinta (garis lebih tipis)", savePdf: "Simpan sebagai PDF", pdfToast: "Di dialog cetak, pilih Simpan sebagai PDF sebagai tujuan.", share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", recent: "Lembar terbaru Anda", clear: "Hapus", madeAt: "Dibuat di" },
+      printOpts: { settings: "Pengaturan PDF", paper: "Kertas", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientasi", portrait: "Potret", landscape: "Lanskap", margins: "Margin", normal: "Normal", narrow: "Sempit", inkSaver: "Hemat tinta (garis lebih tipis)", savePdf: "Unduh PDF", pdfToast: "Di dialog cetak, pilih Simpan sebagai PDF sebagai tujuan.", share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", recent: "Lembar terbaru Anda", clear: "Hapus", madeAt: "Dibuat di" },
       printBook: "Simpan sebagai buku \u2014 satu halaman per huruf",
       save: "Simpan",
       saved: "Tersimpan",
@@ -751,6 +751,119 @@
   const TILE_BASELINE_SET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
   // A single character as a rounded, traceable SVG outline (outline mode).
+  /* OUT-15 -- bridged stencils.
+
+     /printables/block-letters/ is titled "Block Letters & Letter Stencils",
+     its how-to step 2 says "cut along the border for a reusable stencil", and
+     cutting along the border of A B D O P Q R 0 4 6 8 9 drops the counter on
+     the floor. Twelve of its thirty-six characters could not be made into the
+     thing the page is named after.
+
+     The bridges are found from the glyph, by js/printables/stencil.js, rather
+     than from a per-letter table: a table would be tuned to one typeface and
+     silently wrong for the next, and a page here can choose its own face.
+
+     ADDITIVE AND OFF BY DEFAULT. This page is the site's largest single
+     revenue URL and its registry action is PROTECT/additive-only, so the
+     ordinary outline is byte-for-byte what it was and the stencil is a second
+     mode behind a control the visitor has to turn on.
+
+     Geometry is mapped INK BOX TO INK BOX, never by assuming the two
+     rasterisers agree about baselines: canvas has no equivalent of SVG's
+     dominant-baseline:central, so the mask is measured from its own pixels
+     and the stencil variant places its text by an explicitly computed ink
+     box. That is also why the stencil variant sits fractionally differently
+     from the plain outline -- it is centred on its ink rather than on the
+     font's central axis. */
+  const STENCIL_TYPE_PX = 200;        // canvas type size the mask is drawn at
+  const STENCIL_BRIDGE_EM = 0.055;    // strip width, as a fraction of ink height
+  let stencilOnFlag = false;
+  let stencilWarned = false;
+
+  function stencilModule() {
+    const ns = window.UltraTextGen && window.UltraTextGen.stencil;
+    if (!ns && !stencilWarned) {
+      stencilWarned = true;
+      console.warn("[printables] js/printables/stencil.js has not loaded; the stencil mode draws the plain outline, with no bridges.");
+    }
+    return ns || null;
+  }
+  function loadStencilModule() {
+    if (window.UltraTextGen && window.UltraTextGen.stencil) return;
+    if (document.querySelector("script[data-pt-stencil]")) return;
+    const sc = document.createElement("script");
+    sc.src = "/js/printables/stencil.js";
+    sc.async = true;
+    sc.setAttribute("data-pt-stencil", "");
+    sc.onerror = () => console.warn("[printables] js/printables/stencil.js failed to load; the stencil mode draws the plain outline.");
+    document.head.appendChild(sc);
+  }
+  function stencilOn() { return stencilOnFlag && CFG.stencil === true && RENDER === "outline"; }
+
+  /* The glyph as a bitmap, plus the ink box measured from the bitmap itself
+     and the type metrics the caller needs to place the same glyph elsewhere.
+     Returns null for a character with no ink (a space) or before the face has
+     loaded, and the caller then draws the plain outline. */
+  function stencilMask(ch) {
+    const probe = document.createElement("canvas").getContext("2d");
+    if (!probe) return null;
+    const M = STENCIL_TYPE_PX;
+    probe.font = "700 " + M + "px " + FONT;
+    const m = probe.measureText(ch);
+    const left = -m.actualBoundingBoxLeft, right = m.actualBoundingBoxRight;
+    const top = -m.actualBoundingBoxAscent, bottom = m.actualBoundingBoxDescent;
+    const iw = right - left, ih = bottom - top;
+    if (!(iw > 1 && ih > 1)) return null;
+    const pad = Math.ceil(Math.max(iw, ih) * 0.1) + 4;
+    const canvas = document.createElement("canvas");
+    canvas.width = Math.ceil(iw) + pad * 2;
+    canvas.height = Math.ceil(ih) + pad * 2;
+    const g = canvas.getContext("2d");
+    g.font = "700 " + M + "px " + FONT;
+    g.textAlign = "left";
+    g.textBaseline = "alphabetic";
+    g.fillStyle = "#000000";
+    g.fillText(ch, pad - left, pad - top);
+    const data = g.getImageData(0, 0, canvas.width, canvas.height).data;
+    const mask = new Uint8Array(canvas.width * canvas.height);
+    let minX = canvas.width, minY = canvas.height, maxX = -1, maxY = -1;
+    for (let i = 0, j = 0; i < data.length; i += 4, j++) {
+      if (data[i + 3] <= 128) continue;
+      mask[j] = 1;
+      const x = j % canvas.width, y = (j - x) / canvas.width;
+      if (x < minX) minX = x;
+      if (x > maxX) maxX = x;
+      if (y < minY) minY = y;
+      if (y > maxY) maxY = y;
+    }
+    if (maxX < 0) return null;
+    return {
+      mask: mask, w: canvas.width, h: canvas.height,
+      box: { x: minX, y: minY, w: maxX - minX + 1, h: maxY - minY + 1 },
+      M: M, left: left, right: right, top: top, bottom: bottom
+    };
+  }
+
+  /* Bridge rectangles in a destination ink box. strokePx is the outline's own
+     stroke weight in destination units, so the strip is wide enough to cover
+     the cut line on both sides of the wall rather than leaving two hairlines
+     the scissors follow anyway. */
+  function stencilRects(geo, dst, strokePx) {
+    const sten = stencilModule();
+    if (!sten || !geo) return [];
+    const toDst = dst.h / geo.box.h;
+    const width = Math.max(2, Math.round(dst.h * STENCIL_BRIDGE_EM / toDst));
+    const pad = Math.max(1, Math.round((strokePx || 0) / toDst));
+    const rects = sten.findBridges(geo.mask, geo.w, geo.h, { width: width, pad: pad });
+    const sx = dst.w / geo.box.w, sy = dst.h / geo.box.h;
+    return rects.map((r) => ({
+      x: dst.x + (r.x - geo.box.x) * sx,
+      y: dst.y + (r.y - geo.box.y) * sy,
+      w: r.w * sx,
+      h: r.h * sy
+    }));
+  }
+
   function outlineSVG(ch, opts) {
     const o = opts || {};
     const svg = document.createElementNS(SVGNS, "svg");
@@ -813,11 +926,48 @@
     if (skew) text.setAttribute("transform", skew);
     text.textContent = ch;
     svg.appendChild(text);
+    /* The stencil variant re-places the glyph on its own ink box so the
+       bridges can be mapped onto it exactly, and then breaks the cut line
+       where the walls are thinnest. A character with no counter gets no
+       rects, which is why nothing had to enumerate which twelve they are. */
+    const wantStencil = o.stencil != null ? o.stencil : stencilOn();
+    let stencilled = false;
+    if (wantStencil && !skew) {
+      const geo = stencilMask(ch);
+      if (geo) {
+        const k = 210 / geo.M;
+        const dst = {
+          w: (geo.right - geo.left) * k,
+          h: (geo.bottom - geo.top) * k,
+          x: 0, y: 0
+        };
+        dst.x = 100 - dst.w / 2;
+        dst.y = 120 - dst.h / 2;
+        text.setAttribute("text-anchor", "start");
+        text.setAttribute("dominant-baseline", "alphabetic");
+        text.setAttribute("x", String(dst.x - geo.left * k));
+        text.setAttribute("y", String(dst.y - geo.top * k));
+        stencilled = true;
+        const sw = Math.max(4, STROKE * strokeScale);
+        stencilRects(geo, dst, sw).forEach((r) => {
+          const rect = document.createElementNS(SVGNS, "rect");
+          rect.setAttribute("x", String(r.x));
+          rect.setAttribute("y", String(r.y));
+          rect.setAttribute("width", String(r.w));
+          rect.setAttribute("height", String(r.h));
+          rect.setAttribute("fill", "#ffffff");
+          svg.appendChild(rect);
+        });
+      }
+    }
     if (o.overlay) {
       /* This tile places the letter by its own measured ink (see the R-005
          note above), so the overlay is fitted to exactly that placement
-         rather than to the recipe's nominal 100/128. */
-      const fitted = place && place.ink
+         rather than to the recipe's nominal 100/128. The stencil branch
+         above re-anchors the same <text> on its own mask, so a stencilled
+         tile is no longer at `place` and falls back to the unfitted paths
+         rather than to a fit of where the letter used to be. */
+      const fitted = (!stencilled && place && place.ink)
         ? fittedStrokesFor(ch, OUTLINE_SVG_FONT, 100 + place.dx, place.baselineY, "advance")
         : null;
       addStrokeOverlay(svg, ch, fitted);
@@ -857,7 +1007,10 @@
     const o = opts || {};
     const chars = [...String(word)];
     const fontSize = 150;
-    const spacing = fontSize * (o.spacing != null ? o.spacing : LETTER_SPACING);
+    /* spacingBoost is main's letter-spacing step control; the measurement
+       below has to include it or the box is sized for tracking the word does
+       not have. */
+    const spacing = fontSize * ((o.spacing != null ? o.spacing : LETTER_SPACING) + spacingBoost);
     /* Size the box from the text, not from a per-character constant.
 
        `chars.length * 118 + 80` reserved 118 units for every character
@@ -899,8 +1052,14 @@
     text.setAttribute("font-family", o.font || FONT);
     text.setAttribute("font-weight", "700");
     text.setAttribute("font-size", String(fontSize));
+    /* The name-tracing family draws its rows here rather than through
+       levelSpec, so high contrast has to be applied again: its trace outline
+       is #8b93a7 at width 3, which is exactly the light grey a copier
+       dithers away. Only the hollow rows change -- a solid model row is
+       already INK. */
+    const hc = highContrastOn();
     text.setAttribute("fill", o.solid ? (o.fill || INK) : "#ffffff");
-    text.setAttribute("stroke", o.solid ? (o.strokeColor || "none") : (o.strokeColor || "#8b93a7"));
+    text.setAttribute("stroke", o.solid ? (o.strokeColor || "none") : (hc ? CONTRAST_INK : (o.strokeColor || "#8b93a7")));
     /* o.strokeWidth arrives quoted in outlineSVG()'s units (font-size 210) --
        it comes from CFG.strokeWidth or a nameStyles entry, the same field the
        single-letter surface reads. This function draws at font-size 150, so
@@ -912,7 +1071,7 @@
        products. WORD_OUTLINE_STROKE is this constant's inverse and exists for
        the same reason. */
     const wordStroke = o.strokeWidth != null ? o.strokeWidth * fontSize / OUTLINE_SVG_FONT : 3;
-    text.setAttribute("stroke-width", o.solid ? String(o.strokeColor ? (o.strokeWidth != null ? wordStroke : 4) : 0) : String(wordStroke));
+    text.setAttribute("stroke-width", o.solid ? String(o.strokeColor ? (o.strokeWidth != null ? wordStroke : 4) : 0) : String(hc ? contrastStroke(fontSize, wordStroke) : wordStroke));
     text.setAttribute("stroke-linejoin", "round");
     text.setAttribute("paint-order", "stroke");
     // Nudge the anchor left by half a letter-gap so the trailing space SVG adds
@@ -957,6 +1116,10 @@
       printPrefs.margin === "narrow" ? PO.narrow : PO.normal
     ];
     if (printPrefs.ink === "saver") parts.push(PO.inkSaver);
+    // English-only like the control itself; printPrefs.buildPanel resets a
+    // stored "contrast" on any other locale, so this can never be the one
+    // English word in a translated caption.
+    if (printPrefs.ink === "contrast") parts.push("High contrast");
     return parts.join(" · ");
   }
   function paintPaperPreview() {
@@ -990,6 +1153,7 @@
       sheet.style.setProperty("--pt-glyph-ratio", String(GLYPH_RATIO));
     }
     node.classList.toggle("is-ink-saver", printPrefs.ink === "saver");
+    node.classList.toggle("is-high-contrast", printPrefs.ink === "contrast");
     node.classList.toggle("is-narrow", printPrefs.margin === "narrow");
     const cap = $(".pt-paper-caption", node);
     if (cap) cap.textContent = paperCaption();
@@ -1664,6 +1828,9 @@
     if (typeof genScriptKey !== "undefined" && genScriptKey) p.script = genScriptKey;
     if (CHAR_STYLES && charStyleKey) p.cstyle = charStyleKey;
     if (nameCase !== "as-typed") p.ncase = nameCase;
+    if (nUp > 1) p.nup = String(nUp);
+    if (spacingKey !== "normal") p.sp = spacingKey;
+    if (stencilOnFlag) p.st = "1";
     if (el.sizeControl && alphaSizeKey !== "full") p.size = alphaSizeKey;
     const heading = firstEl([el.designHeading, el.puzzleHeading]);
     if (heading && heading.value.trim()) p.heading = heading.value.trim();
@@ -1735,6 +1902,14 @@
       const chip = $("#pt-name-case [data-case=\"" + ncase + "\"]");
       if (chip) chip.click();
     }
+    if (presetGet("st") === "1") {
+      const stBox = $("#pt-stencil");
+      if (stBox) { stBox.checked = true; stencilOnFlag = true; }
+    }
+    const sp = presetGet("sp");
+    if (sp && SPACING_STEPS.some((x) => x.key === sp)) setSpacing(sp, { quiet: true });
+    const nup = parseInt(presetGet("nup"), 10);
+    if (NUP_CHOICES.indexOf(nup) !== -1) setNUp(nup);
     const cstyle = presetGet("cstyle");
     if (cstyle && typeof setCharStyle === "function" && CHAR_STYLES && CHAR_STYLES.some((x) => x.key === cstyle)) setCharStyle(cstyle);
     const size = presetGet("size");
@@ -2120,6 +2295,7 @@
      plus its 42 pad) with a little air above. */
   const PNG_CREDIT_BAND = 170;
 
+  const CREDIT_FONT = "'Plus Jakarta Sans', system-ui, -apple-system, sans-serif";
   function drawCredit(ctx, w, h, light) {
     const url = creditUrl();
     const qrNs = qrModule();
@@ -2142,7 +2318,13 @@
     ctx.textAlign = "center";
     ctx.textBaseline = "alphabetic";
     if ("letterSpacing" in ctx) ctx.letterSpacing = "0px";
-    ctx.font = (light ? "18px " : "22px ") + FONT;
+    /* The credit is an address to be READ and retyped, not a specimen, so on a
+       glyph-mode page it does not take the page's own face. OUT-06 made FONT a
+       joined school hand on the cursive pages and a blackletter on the
+       calligraphy ones, and a URL set in blackletter cannot be retyped off
+       paper -- which is the whole job this line has when the QR is out of
+       reach. Every other family keeps the face it always had. */
+    ctx.font = (light ? "18px " : "22px ") + (RENDER === "glyph" ? CREDIT_FONT : FONT);
     ctx.fillStyle = light ? "#c9ced8" : "#aeb4c0";
     // The page path, not just the domain: a sheet that gets forwarded should
     // open the same tool (2026-09-10 share pass). It stays centred on the
@@ -2237,6 +2419,28 @@
       ctx.font = "700 " + letterFs + "px " + FONT;
       if (RENDER === "outline") {
         paintOutlineText(ctx, glyph, size / 2, size * 0.5, letterFs);
+        /* The PNG is the one artifact that leaves the site, so a stencil
+           downloaded as an image has to carry its bridges too. The ink box is
+           read from measureText under the SAME textAlign/textBaseline the
+           glyph was drawn with, so this needs no assumption about where
+           "middle" puts the em box -- it maps ink box to ink box exactly as
+           the SVG path does. */
+        if (stencilOn()) {
+          const geo = stencilMask(glyph);
+          if (geo) {
+            const mm = ctx.measureText(glyph);
+            const dst = {
+              x: size / 2 - mm.actualBoundingBoxLeft,
+              y: size * 0.5 - mm.actualBoundingBoxAscent,
+              w: mm.actualBoundingBoxLeft + mm.actualBoundingBoxRight,
+              h: mm.actualBoundingBoxAscent + mm.actualBoundingBoxDescent
+            };
+            ctx.fillStyle = "#ffffff";
+            stencilRects(geo, dst, outlineLineWidth(letterFs)).forEach((r) => {
+              ctx.fillRect(r.x, r.y, r.w, r.h);
+            });
+          }
+        }
       } else {
         ctx.fillStyle = INK;
         ctx.fillText(glyph, size / 2, size * 0.54);
@@ -2285,7 +2489,7 @@
   function wordPNG(text, opts) {
     const o = opts || {};
     const fam = o.font || FONT;
-    const spacingEm = o.spacing != null ? o.spacing : LETTER_SPACING;
+    const spacingEm = (o.spacing != null ? o.spacing : LETTER_SPACING) + spacingBoost;
     withFont(() => {
       const width = 1600, height = 520, pad = 90;
       const canvas = document.createElement("canvas");
@@ -2413,6 +2617,7 @@
     const widthPx = Math.round((full.w - 2 * marginIn) * 96);
     document.body.classList.add("pt-pdf-rendering");
     document.body.classList.toggle("pt-ink-saver", printPrefs.ink === "saver");
+    document.body.classList.toggle("pt-high-contrast", printPrefs.ink === "contrast");
     el.printRoot.style.width = widthPx + "px";
     let pages = null;
     try {
@@ -2438,6 +2643,7 @@
     } finally {
       document.body.classList.remove("pt-pdf-rendering");
       document.body.classList.remove("pt-ink-saver");
+      document.body.classList.remove("pt-high-contrast");
       el.printRoot.style.width = "";
     }
     if (!pages || !pages.length) return false;
@@ -2481,6 +2687,7 @@
     const pageHPx = Math.round(area.h * 96);
     document.body.classList.add("pt-pdf-rendering");
     document.body.classList.toggle("pt-ink-saver", printPrefs.ink === "saver");
+    document.body.classList.toggle("pt-high-contrast", printPrefs.ink === "contrast");
     el.printRoot.style.width = widthPx + "px";
     let pages = null;
     let links = [];
@@ -2506,6 +2713,7 @@
     } finally {
       document.body.classList.remove("pt-pdf-rendering");
       document.body.classList.remove("pt-ink-saver");
+      document.body.classList.remove("pt-high-contrast");
       el.printRoot.style.width = "";
     }
     if (!pages || !pages.length) return false;
@@ -2654,32 +2862,23 @@
      1280x90 and a node appended to <html> at 1280x60, both landing in the
      printed sheet. CSS cannot win that cascade, so the hide is inline here
      and unwound when the dialog closes. */
-  let printHidden = [];
+  // Print isolation is header.js's (UltraTextGen.hideForPrint/restorePrint),
+  // shared with the cursive, kana and huruf print surfaces so the four cannot
+  // drift. See that file for why the hide has to be inline rather than CSS.
   function hideEverythingButPrintRoot() {
-    printHidden = [];
-    const keep = el.printRoot;
-    const hide = (node) => {
-      if (!node || node === keep || node.contains && keep && node.contains(keep)) return;
-      const tag = node.tagName;
-      if (tag === "HEAD" || tag === "SCRIPT" || tag === "STYLE" || tag === "LINK" || tag === "TITLE" || tag === "META") return;
-      printHidden.push([node, node.style.getPropertyValue("display"), node.style.getPropertyPriority("display")]);
-      node.style.setProperty("display", "none", "important");
-    };
-    Array.prototype.forEach.call(document.body.children, hide);
-    Array.prototype.forEach.call(document.documentElement.children, hide);
+    const ns = window.UltraTextGen;
+    if (ns && ns.hideForPrint) ns.hideForPrint(el.printRoot);
   }
   function restoreAfterPrint() {
-    printHidden.forEach((row) => {
-      if (row[1]) row[0].style.setProperty("display", row[1], row[2]);
-      else row[0].style.removeProperty("display");
-    });
-    printHidden = [];
+    const ns = window.UltraTextGen;
+    if (ns && ns.restorePrint) ns.restorePrint();
   }
   function openPrintDialog(sheet, wantPdf) {
     applyPageStyle();
     document.body.classList.add("is-printing");
     hideEverythingButPrintRoot();
     document.body.classList.toggle("pt-ink-saver", printPrefs.ink === "saver");
+    document.body.classList.toggle("pt-high-contrast", printPrefs.ink === "contrast");
 
     // Tear the print surface down when the dialog closes, not when
     // window.print() returns: on desktop the two coincide, on iOS/Android
@@ -2697,6 +2896,7 @@
       window.removeEventListener("focus", onVisible);
       document.body.classList.remove("is-printing");
       document.body.classList.remove("pt-ink-saver");
+      document.body.classList.remove("pt-high-contrast");
       restoreAfterPrint();
       removePageStyle();
       el.printRoot.innerHTML = "";
@@ -3673,7 +3873,10 @@
     if (!host) return;
     const roster = primaryRoster();
     const n = roster ? rosterEntries(roster).length : 0;
-    let pages = 0;
+    // A roster's own page count, which the line never reported: at 1 it is
+    // the number every teacher was already paying, and it is what makes the
+    // N chips above legible without a sentence.
+    let pages = n > 1 ? Math.ceil(n / (nUp > 1 ? nUp : 1)) : 0;
     if (el.sizeControl && alphaSizeKey !== "full") {
       const preset = SIZE_PRESETS.filter((x) => x.key === alphaSizeKey)[0];
       if (preset && preset.heightIn) {
@@ -3699,6 +3902,102 @@
     o.value = "1";
     o.textContent = "1";
     sel.insertBefore(o, sel.firstChild);
+  }
+
+  /* PR-11 -- N-per-sheet. A 30-name class set cost 30 sheets of paper, on a
+     family whose own community evidence is "we can only afford printer ink a
+     couple times a year". Every sheet builder below already emitted one
+     .pt-sheet-page per item, so grouping them is the whole feature.
+
+     1 and 4, never 2, and that is geometry rather than an omission. A portrait
+     sheet dropped unrotated into half a portrait page scales by 0.5 -- the
+     same factor a 2x2 grid uses -- so unrotated 2-up prints the SAME letter
+     size on twice the paper and is strictly dominated by 4-up. A 2-up worth
+     offering has to rotate the sheet 90 degrees and derive its scale from
+     printArea(); that is its own piece of work, not a third chip here.
+
+     The chips are digits, so this adds no string in any language -- the same
+     reasoning addLowDensityOption already records. What explains them is the
+     sheet-cost line directly beneath, which is already localized and now
+     reports a roster's page count at whatever N is selected: 30 sheets / 30
+     pages at 1, 30 sheets / 8 pages at 4. */
+  const NUP_CHOICES = [1, 4];
+  let nUp = 1;
+
+  function appendSheetPages(container, items, makeNode) {
+    const per = nUp > 1 ? nUp : 1;
+    for (let i = 0; i < items.length; i += per) {
+      const chunk = items.slice(i, i + per);
+      const page = document.createElement("div");
+      page.className = "pt-sheet-page";
+      if (per === 1) {
+        page.appendChild(makeNode(chunk[0], i));
+      } else {
+        page.classList.add("is-nup", "is-nup-" + per);
+        /* The cells live in their own grid rather than directly on the page,
+           because the page also carries chrome it does not control: printWrap
+           inserts the job title into the unit when a job is exactly one page,
+           and attachCredit appends the credit to every unit. Both were landing
+           in grid cells -- measured, the title took cell 1 and pushed the
+           fourth sheet into the credit's auto row at 0px tall, and its
+           min-content width split the columns 504/205 instead of in half.
+           A flex column with the grid as its one growing child lets the title
+           and the credit claim their natural height and the sheets take what
+           is left, so nothing here has to know how tall a heading is. */
+        const grid = document.createElement("div");
+        grid.className = "pt-nup-grid";
+        chunk.forEach((it, j) => {
+          const cell = document.createElement("div");
+          cell.className = "pt-nup-cell";
+          cell.appendChild(makeNode(it, i + j));
+          grid.appendChild(cell);
+        });
+        page.appendChild(grid);
+      }
+      container.appendChild(page);
+    }
+  }
+
+  function setNUp(n) {
+    nUp = NUP_CHOICES.indexOf(n) === -1 ? 1 : n;
+    const row = $("#pt-nup-row");
+    if (row) $$(".pt-choice", row).forEach((b) => {
+      const on = Number(b.dataset.nup) === nUp;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
+    });
+    updateSheetCost();
+  }
+
+  /* Only where a roster exists: N-per-sheet changes nothing on a page that
+     prints one sheet, and a control with no consequence is the defect the
+     print-settings panel already records. Named by T.classSet, which ships in
+     all eight languages and is the thing being configured. */
+  function mountNUp() {
+    if ($("#pt-nup-row") || !primaryRoster()) return;
+    const host = $("#pt-sheet-cost");
+    if (!host) return;
+    const row = document.createElement("div");
+    row.id = "pt-nup-row";
+    row.className = "pt-choice-row pt-nup-row";
+    row.setAttribute("role", "radiogroup");
+    row.setAttribute("aria-label", T.classSet);
+    NUP_CHOICES.forEach((n) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pt-choice";
+      b.dataset.nup = String(n);
+      b.textContent = String(n);
+      b.setAttribute("role", "radio");
+      const on = n === nUp;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
+      b.addEventListener("click", () => setNUp(n));
+      row.appendChild(b);
+    });
+    host.insertAdjacentElement("beforebegin", row);
   }
 
   function mountSheetCost() {
@@ -3873,12 +4172,7 @@
     if (names.length >= 2) {
       const set = document.createElement("div");
       set.className = "pt-class-set";
-      names.forEach((n) => {
-        const page = document.createElement("div");
-        page.className = "pt-sheet-page";
-        page.appendChild(nameSheetNode(applyNameCase(n)));
-        set.appendChild(page);
-      });
+      appendSheetPages(set, names, (n) => nameSheetNode(applyNameCase(n)));
       printWrap(joinWords([names.length + " " + T.sheets, "·", cap(NOUN)]), set, "name_worksheet");
       return;
     }
@@ -3934,6 +4228,125 @@
     const host = rows.closest(".pt-field, .pt-opt, .pt-name-rows-field") || rows.parentElement;
     host.insertAdjacentElement("afterend", wrap);
   }
+  /* PR-31 -- letter spacing as a control.
+
+     CFG.letterSpacing has always existed as a per-page config value and was
+     exposed nowhere, so the one formatting change with primary evidence behind
+     it could not be made by the person printing the sheet. The steps are the
+     British Dyslexia Association Style Guide's own quantification: tracking
+     "ideally around 35% of the average letter width".
+
+     It is offered as A FORMATTING OPTION AND NOTHING ELSE. No label, hint or
+     aria string here names a condition, a reading outcome or a study; this
+     site is not qualified to make that claim and the audit that asked for the
+     control said so in the same sentence that asked for it.
+
+     A boost added to whatever the active style says, never a replacement for
+     it: setCharStyle() and the name-style designer both write LETTER_SPACING /
+     opts.spacing, and overwriting either would silently undo a chosen
+     letterform's own tracking.
+
+     English only, the same bail mountCarryRow and mountLeftHanded already
+     take. "Letter spacing" is a new string and the site's own corpus does not
+     attest a translation of it in six of the seven other locales (de, it and
+     pl have none at all; fr, es and pt have one page each), so there is
+     nothing to harvest and nothing here will be invented. */
+  const SPACING_STEPS = [
+    { key: "normal", em: 0, label: "Normal" },
+    { key: "wide", em: 0.12, label: "Wide" },
+    { key: "widest", em: 0.35, label: "Extra wide" }
+  ];
+  let spacingBoost = 0;
+  let spacingKey = "normal";
+
+  function repaintWordSurfaces() {
+    if (el.nameInput || el.namePreview) renderNamePreview();
+    if (el.genInput || el.genPreview) renderGenPreview();
+  }
+
+  function setSpacing(key, opts) {
+    const step = SPACING_STEPS.filter((x) => x.key === key)[0] || SPACING_STEPS[0];
+    spacingKey = step.key;
+    spacingBoost = step.em;
+    const row = $("#pt-spacing-row");
+    if (row) $$(".pt-choice", row).forEach((b) => {
+      const on = b.dataset.spacing === spacingKey;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
+    });
+    if (!(opts && opts.quiet)) repaintWordSurfaces();
+  }
+
+  function mountSpacing() {
+    const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
+    if (lang !== "en") return;
+    const rows = el.nameRows || el.genRows;
+    if (!rows || $("#pt-spacing-row")) return;
+    const field = document.createElement("div");
+    field.className = "pt-spacing-field";
+    const lab = document.createElement("span");
+    lab.className = "pt-field-label";
+    lab.textContent = "Letter spacing";
+    field.appendChild(lab);
+    const row = document.createElement("div");
+    row.id = "pt-spacing-row";
+    row.className = "pt-choice-row pt-spacing-row";
+    row.setAttribute("role", "radiogroup");
+    row.setAttribute("aria-label", "Letter spacing");
+    SPACING_STEPS.forEach((step) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pt-choice";
+      b.dataset.spacing = step.key;
+      // The chip IS the demonstration: the same two letters at the tracking
+      // it sets, so the difference is visible before anything is printed.
+      const demo = document.createElement("span");
+      demo.className = "pt-sp-demo is-sp-" + step.key;
+      demo.textContent = "Aa";
+      b.appendChild(demo);
+      b.setAttribute("role", "radio");
+      b.setAttribute("aria-label", step.label);
+      const on = step.key === spacingKey;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
+      b.addEventListener("click", () => setSpacing(step.key));
+      row.appendChild(b);
+    });
+    field.appendChild(row);
+    const host = rows.closest(".pt-field, .pt-opt, .pt-name-rows-field") || rows.parentElement;
+    host.insertAdjacentElement("afterend", field);
+  }
+
+  /* OUT-15's control. ENGLISH ONLY, the same bail mountCarryRow and
+     mountLeftHanded take: "bridged stencil" is a new string and neither the
+     engine's I18N table nor locales/*.json carries a word for a stencil
+     bridge in any of the eight, so the four locale siblings keep today's
+     behaviour until a native reading exists. Per the owner's decision of
+     2026-09-17 on the label-blocked items. Off by default on a PROTECT page. */
+  function mountStencilToggle() {
+    const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
+    if (lang !== "en" || CFG.stencil !== true || RENDER !== "outline") return;
+    const host = el.sizeControl ? el.sizeControl.parentNode : (el.alphaPrint && el.alphaPrint.closest(".bubble-actions, .pt-actions"));
+    if (!host || $("#pt-stencil")) return;
+    const wrap = document.createElement("label");
+    wrap.className = "pt-stencil-field";
+    const box = document.createElement("input");
+    box.type = "checkbox";
+    box.id = "pt-stencil";
+    box.addEventListener("change", () => {
+      stencilOnFlag = box.checked;
+      withFont(() => {
+        paintAlphabetGrid();
+        if (activeChar) selectChar(activeChar);
+      });
+    });
+    wrap.appendChild(box);
+    wrap.appendChild(document.createTextNode(" Bridged stencil (counters stay attached when cut)"));
+    host.insertAdjacentElement("afterend", wrap);
+  }
+
   // A small second copy of the model at the right-hand end of a trace row.
   function leftyModel(node) {
     const aside = document.createElement("span");
@@ -4014,22 +4427,176 @@
       blank: true }
   ];
 
+  /* PR-13 / PR-32 -- the photocopy case is the OPPOSITE of the ink saver, and
+     the two had been treated as one axis. A copier smooths light shades toward
+     white and renders grey only by dithering, so the rungs that survive the
+     machine a classroom actually uses are pure black at a real line weight.
+     Every guide colour on these sheets is grey -- FAINT #d7dbe4, GUIDE
+     #9aa2b1, GUIDE_MID #c7ccd8, GHOST #c3c9d6 -- and the faint rung is 2 units
+     wide with a 0.1/22 dash, which is the first thing a copier drops.
+
+     Applied at levelSpec() and addGuide() rather than by CSS selector, because
+     what has to change differs per rung: a GHOST FILL cannot simply go black
+     (a child would be tracing over a solid letter), so it is redrawn as the
+     outline of the same letter, while a stroked rung keeps its own dash and
+     only gains colour and a weight floor. The solid model row is INK already
+     and is left alone. */
+  function highContrastOn() { return printPrefs.ink === "contrast"; }
+  const CONTRAST_INK = "#000000";
+  /* ~3 units at the 132-unit trace type size, held as a FRACTION of type size
+     so the same weight lands on the word surface, which draws at 150. On a
+     7in-wide sheet whose viewBox is ~552 units, one unit is about 0.9pt, so
+     this is the 1-2pt line the guidance asks for rather than a number picked
+     to look right on screen. A floor, never a rewrite: a rung already heavier
+     than this keeps its own weight. */
+  const CONTRAST_MIN_EM = 3 / 132;
+  function contrastStroke(fontSize, sw) {
+    return Math.max(fontSize * CONTRAST_MIN_EM, Number(sw) || 0);
+  }
+
+  function contrastSpec(spec) {
+    if (spec.blank) return spec;
+    const out = Object.assign({}, spec);
+    out.opacity = 1;
+    if (spec.fill && spec.fill !== "none" && spec.fill !== INK) {
+      out.fill = "none";
+      out.stroke = CONTRAST_INK;
+      out.sw = contrastStroke(TRACE_FONT_SIZE, spec.sw);
+      out.cap = spec.cap || "round";
+    } else if (spec.stroke && spec.stroke !== "none") {
+      out.stroke = CONTRAST_INK;
+      out.sw = contrastStroke(TRACE_FONT_SIZE, spec.sw);
+    }
+    return out;
+  }
+
   function levelSpec(level) {
     const i = Math.max(0, Math.min(TRACE_LEVELS.length - 1, (level || 1) - 1));
-    return TRACE_LEVELS[i];
+    const spec = TRACE_LEVELS[i];
+    return highContrastOn() ? contrastSpec(spec) : spec;
   }
 
   // Ruled guideline (top / midline / baseline) inside a worksheet SVG.
-  function addGuide(svg, w, y, dashed) {
+  /* PR-21 -- ruled-line models.
+
+     These sheets shipped ONE ruling into every market. France and Germany both
+     have a national school ruling, and a French or German worksheet drawn on a
+     US three-line rule is the wrong exercise book, not a style preference --
+     which is why this follows the page's own language rather than sitting
+     behind a control. It also means it needs no label in any language: there
+     was no word to harvest for "Seyes", "Lineatur" or "standard ruling", and
+     a control is not what the finding asked for.
+
+     Both models are sourced, not eyeballed:
+
+     SEYES (fr) -- Wikipedia, "Ruled paper": heavy lines 8 mm apart with
+     "three lighter lines ... spaced 2 mm apart between each pair of heavy
+     lines", plus the heavy verticals at the same 8 mm pitch. So the ascender
+     band IS the 8 mm unit and 2 mm is a quarter of it.
+
+     LINEATUR 1 (de) -- the Klasse-1 Schreiblernlineatur: "vier Linien pro
+     Zeile, je 5 mm Abstand" (Staehlin, Grundschul-Guide), marking three equal
+     zones -- Oberlange, Mittelband, Unterlange -- with a Kontrastlineatur
+     shading "der Bereich zwischen Grund- und Mittellinie", the band small
+     letters live in. Equal 5 mm zones map to equal half-bands here, and the
+     row grows downward because a Lineatur row carries a fourth line for the
+     Unterlange that a three-line rule does not.
+
+     Everything else keeps the ruling it has: Spain, Poland and the rest have
+     their own conventions and this had no source for them, and inventing one
+     would be worse than the single rule it replaces. CFG.ruling overrides the
+     language default on any page that wants to. */
+  function rulingKey() {
+    if (CFG.ruling && RULINGS[CFG.ruling]) return CFG.ruling;
+    const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
+    if (lang === "fr") return "seyes";
+    if (lang === "de") return "lineatur";
+    return "standard";
+  }
+  /* `at` is measured UPWARD from the baseline as a fraction of the ascender
+     band, so one table serves the SVG sheet and the canvas PNG, which do not
+     share a coordinate system. `extra` is how far below the baseline the row
+     has to grow, in the same units. */
+  const RULINGS = {
+    standard: {
+      lines: [{ at: 0 }, { at: 0.5, faint: true, dashed: true }, { at: 1 }],
+      /* The three `at` values above are the fallback for a browser with no ink
+         metrics; rulingGuides() reads the face instead wherever it can. */
+      faceDerived: true,
+      band: null, verticals: 0, extra: 0
+    },
+    seyes: {
+      lines: [{ at: 0 }, { at: 0.25, faint: true }, { at: 0.5, faint: true },
+              { at: 0.75, faint: true }, { at: 1 }],
+      band: null, verticals: 1, extra: 0
+    },
+    lineatur: {
+      lines: [{ at: 1 }, { at: 0.5, faint: true, dashed: true }, { at: 0 }, { at: -0.5 }],
+      band: { from: 0, to: 0.5 }, verticals: 0, extra: 0.5
+    }
+  };
+  function ruling() { return RULINGS[rulingKey()] || RULINGS.standard; }
+
+  /* `faint` and `dashed` are separate properties. The house three-line rule
+     draws its midline dashed, but a Seyes interline is lighter and SOLID --
+     the source calls them "three lighter lines", not broken ones -- and
+     drawing them dashed made the French ruling look like three midlines. */
+  function addGuide(svg, w, y, dashed, faint) {
     const l = document.createElementNS(SVGNS, "line");
     l.setAttribute("x1", "8");
     l.setAttribute("x2", String(w - 8));
     l.setAttribute("y1", String(y));
     l.setAttribute("y2", String(y));
-    l.setAttribute("stroke", dashed ? GUIDE_MID : GUIDE);
-    l.setAttribute("stroke-width", dashed ? "1.5" : "2");
+    const hc = highContrastOn();
+    const light = dashed || faint;
+    l.setAttribute("stroke", hc ? CONTRAST_INK : (light ? GUIDE_MID : GUIDE));
+    l.setAttribute("stroke-width", hc ? (light ? "2" : "2.5") : (light ? "1.5" : "2"));
     if (dashed) l.setAttribute("stroke-dasharray", "6 8");
     svg.appendChild(l);
+  }
+
+  // The band a ruling is measured against: baseline up to the top line.
+  function traceBand() { return TRACE_BASE - TRACE_TOP; }
+  // How tall one row has to be for the active ruling. A Lineatur row carries a
+  // fourth line below the baseline that a three-line rule does not, so the row
+  // grows rather than the Unterlange falling off the bottom of the viewBox.
+  function traceRowHeight() {
+    const r = ruling();
+    return Math.max(TRACE_H, Math.round(TRACE_BASE + r.extra * traceBand() + 10));
+  }
+
+  function addRuling(svg, w) {
+    const r = ruling();
+    const band = traceBand();
+    const y = (at) => TRACE_BASE - at * band;
+    // The shaded Mittelband goes down first so every line still reads over it.
+    if (r.band) {
+      const top = y(r.band.to), bottom = y(r.band.from);
+      const rect = document.createElementNS(SVGNS, "rect");
+      rect.setAttribute("x", "8");
+      rect.setAttribute("y", String(top));
+      rect.setAttribute("width", String(Math.max(0, w - 16)));
+      rect.setAttribute("height", String(Math.max(0, bottom - top)));
+      rect.setAttribute("fill", GUIDE_MID);
+      rect.setAttribute("opacity", highContrastOn() ? "0.28" : "0.16");
+      svg.appendChild(rect);
+    }
+    if (r.verticals) {
+      const step = r.verticals * band;
+      const hc = highContrastOn();
+      for (let x = 8 + step; x < w - 8; x += step) {
+        const l = document.createElementNS(SVGNS, "line");
+        l.setAttribute("x1", String(x));
+        l.setAttribute("x2", String(x));
+        l.setAttribute("y1", String(y(1)));
+        l.setAttribute("y2", String(y(r.extra ? -r.extra : 0)));
+        l.setAttribute("stroke", hc ? CONTRAST_INK : GUIDE_MID);
+        l.setAttribute("stroke-width", hc ? "2" : "1.5");
+        svg.appendChild(l);
+      }
+    }
+    rulingGuides(TRACE_BASE, band, TRACE_FONT_SIZE)
+      .forEach((line) => addGuide(svg, w, line.y, line.dashed, line.faint));
   }
 
   // A word rendered at a difficulty level, on a ruled baseline. The single
@@ -4061,18 +4628,44 @@
      nothing. The top rule goes to the ascender rather than the cap height:
      ascenders are the taller class in every face here, and a rule that
      capitals overshoot would be worse than one they fall just under. */
-  function traceGuides() {
+  function traceGuides(baseY, fontPx, bandPx) {
+    const base = baseY == null ? TRACE_BASE : baseY;
+    const size = fontPx == null ? TRACE_FONT_SIZE : fontPx;
+    const band = bandPx == null ? traceBand() : bandPx;
     const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
-    const fm = GM && GM.faceMetrics(FONT, TRACE_FONT_SIZE, 700);
+    const fm = GM && GM.faceMetrics(FONT, size, 700);
     if (!fm || !fm.exact || !fm.xHeight || !fm.ascender) {
-      return { top: TRACE_TOP, mid: TRACE_MID, base: TRACE_BASE };
+      return { top: base - band, mid: base - band * 0.5, base: base };
     }
-    const top = TRACE_BASE - fm.ascender;
-    const mid = TRACE_BASE - fm.xHeight;
+    const top = base - fm.ascender;
+    const mid = base - fm.xHeight;
     /* A face with an unusually tall ascender could push the top rule off the
        row; keep it inside and never let the two rules cross. */
-    const safeTop = Math.max(6, top);
-    return { top: safeTop, mid: Math.max(safeTop + 8, mid), base: TRACE_BASE };
+    const safeTop = Math.max(base - band * 1.5, top);
+    return { top: safeTop, mid: Math.max(safeTop + band * 0.074, mid), base: base };
+  }
+
+  /* Where one ruling's lines go, in whatever space the caller draws in.
+
+     The house three-line rule is derived from the FACE: its lines ARE the
+     baseline, the x-height and the ascender, which is the whole of R-002.
+     Seyes and Lineatur are national standards whose geometry is defined as
+     fractions of the band rather than by the type set between them -- a Seyes
+     interline is a quarter of the band because the exercise book says so --
+     so those keep the fractions and only `standard` reads the face. */
+  function rulingGuides(baseY, bandPx, fontPx) {
+    const r = ruling();
+    if (!r.faceDerived) {
+      return r.lines.map((l) => ({
+        y: baseY - l.at * bandPx, dashed: !!l.dashed, faint: !!l.faint
+      }));
+    }
+    const G = traceGuides(baseY, fontPx, bandPx);
+    return [
+      { y: G.base, dashed: false, faint: false },
+      { y: G.mid, dashed: true, faint: true },
+      { y: G.top, dashed: false, faint: false }
+    ];
   }
 
   /* The writing route for a whole word, in the row's own coordinates.
@@ -4108,27 +4701,37 @@
     const o = opts || {};
     const spec = levelSpec(level);
     const chars = [...String(word)];
+    // The trace rows had no tracking at all, so a spacing choice that moved
+    // the name preview would have left the sheet under it unchanged. The
+    // viewBox grows with the gap, or a wider word is clipped instead of set.
+    // track:false opts out, which the difficulty-ladder legend takes: those
+    // samples illustrate fill, stroke and dash, and are built once at init,
+    // so a spacing change must neither move them nor leave them stale.
+    const trackPx = o.track === false ? 0 : TRACE_FONT_SIZE * spacingBoost;
     /* Measured, not counted -- the same defect as wordOutlineSVG's box, in a
        second copy: `chars.length * 116 + 120` reserves the same width for "W"
-       and "i". */
+       and "i". The tracking is added on top of the measured ink, the way the
+       count-based estimate added it on top of the count. */
     const GMT = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
     const tm = GMT ? GMT.ink(String(word), FONT, TRACE_FONT_SIZE, 700) : null;
+    const track = Math.max(0, chars.length - 1) * trackPx;
     const w = tm
-      ? Math.max(360, Math.ceil(Math.max(tm.right, tm.advance) - Math.min(0, tm.left) + 120))
-      : Math.max(360, chars.length * 116 + 120);
-    const G = traceGuides();
+      ? Math.max(360, Math.ceil(Math.max(tm.right, tm.advance) - Math.min(0, tm.left) + track + 120))
+      : Math.max(360, chars.length * (116 + trackPx) + 120);
     const svg = document.createElementNS(SVGNS, "svg");
-    svg.setAttribute("viewBox", "0 0 " + w + " " + TRACE_H);
+    svg.setAttribute("viewBox", "0 0 " + w + " " + traceRowHeight());
     svg.setAttribute("class", "pt-trace-svg");
     svg.setAttribute("role", "img");
     svg.setAttribute("aria-label", word + " — " + spec.label);
     if (o.guides !== false) {
-      addGuide(svg, w, G.top, false);
-      addGuide(svg, w, G.mid, true);
-      addGuide(svg, w, G.base, false);
+      addRuling(svg, w);
     }
+    /* R-001: the stroked levels draw the writing centreline, not the glyph
+       contour. traceRoutePaths returns null unless every non-space character
+       has a route, so a word carrying a digit keeps one consistent rendering
+       instead of mixing centrelines and contours in the same row. */
     const routed = (!spec.blank && spec.fill === "none" && spec.routeSw)
-      ? traceRoutePaths(word, TRACE_FONT_SIZE, 0, TRACE_BASE, w)
+      ? traceRoutePaths(word, TRACE_FONT_SIZE, trackPx, TRACE_BASE, w)
       : null;
     if (routed) {
       const g = document.createElementNS(SVGNS, "g");
@@ -4146,7 +4749,7 @@
         g.appendChild(path);
       });
       svg.appendChild(g);
-      if (o.overlay) addWordStrokeOverlay(svg, word, TRACE_FONT_SIZE, 0, TRACE_BASE, "alphabetic", w);
+      if (o.overlay) addWordStrokeOverlay(svg, word, TRACE_FONT_SIZE, trackPx, TRACE_BASE, "alphabetic", w);
       return svg;
     }
     if (!spec.blank) {
@@ -4157,6 +4760,13 @@
       t.setAttribute("font-family", FONT);
       t.setAttribute("font-weight", "700");
       t.setAttribute("font-size", String(TRACE_FONT_SIZE));
+      if (trackPx) {
+        // dx pulls back half the trailing gap letter-spacing adds after the
+        // final glyph, so a centred word stays centred -- the same correction
+        // wordOutlineSVG already makes.
+        t.setAttribute("letter-spacing", String(trackPx));
+        t.setAttribute("dx", String(-trackPx / 2));
+      }
       t.setAttribute("fill", spec.fill);
       if (spec.stroke && spec.stroke !== "none") {
         t.setAttribute("stroke", spec.stroke);
@@ -4168,7 +4778,7 @@
       if (spec.opacity != null && spec.opacity !== 1) t.setAttribute("opacity", String(spec.opacity));
       t.textContent = word;
       svg.appendChild(t);
-      if (o.overlay) addWordStrokeOverlay(svg, word, TRACE_FONT_SIZE, 0, TRACE_BASE, "alphabetic", w);
+      if (o.overlay) addWordStrokeOverlay(svg, word, TRACE_FONT_SIZE, trackPx, TRACE_BASE, "alphabetic", w);
     }
     return svg;
   }
@@ -4371,7 +4981,7 @@
       addGuide(svg, 120, 42, false);
       return svg;
     }
-    const svg = traceWordSVG("Aa", level, { guides: false });
+    const svg = traceWordSVG("Aa", level, { guides: false, track: false });
     svg.setAttribute("class", "pt-trace-svg pt-level-sample");
     svg.setAttribute("aria-hidden", "true");
     return svg;
@@ -4425,12 +5035,7 @@
     if (entries.length >= 2) {
       const set = document.createElement("div");
       set.className = "pt-class-set";
-      entries.forEach((e) => {
-        const page = document.createElement("div");
-        page.className = "pt-sheet-page";
-        page.appendChild(genSheetNode(e.name, e.level));
-        set.appendChild(page);
-      });
+      appendSheetPages(set, entries, (e) => genSheetNode(e.name, e.level));
       // A mixed set has no one level to name, so the title says how many
       // sheets rather than asserting a level that is only true of some.
       const mixed = entries.some((e) => e.level != null && e.level !== genLevel());
@@ -4447,12 +5052,7 @@
     const word = genValue();
     const set = document.createElement("div");
     set.className = "pt-class-set";
-    TRACE_LEVELS.forEach((spec, i) => {
-      const page = document.createElement("div");
-      page.className = "pt-sheet-page";
-      page.appendChild(genSheetNode(word, i + 1));
-      set.appendChild(page);
-    });
+    appendSheetPages(set, TRACE_LEVELS, (spec, i) => genSheetNode(word, i + 1));
     printWrap(joinWords([word, "\u00b7", TRACE_LEVELS.length + " " + T.sheets, "\u00b7", siteCredit()]), set, "generator_ladder");
   }
 
@@ -4475,28 +5075,49 @@
       }
       const base = Math.round(height * 0.72);
       // Ruled guides.
-      const drawGuide = (y, dashed) => {
+      const drawGuide = (y, dashed, faint) => {
+        const light = dashed || faint;
         ctx.beginPath();
         ctx.setLineDash(dashed ? [6, 8] : []);
-        ctx.lineWidth = dashed ? 1.5 : 2;
-        ctx.strokeStyle = dashed ? GUIDE_MID : GUIDE;
+        ctx.lineWidth = light ? 1.5 : 2;
+        ctx.strokeStyle = highContrastOn() ? CONTRAST_INK : (light ? GUIDE_MID : GUIDE);
         ctx.moveTo(pad * 0.5, y); ctx.lineTo(width - pad * 0.5, y); ctx.stroke();
       };
-      /* The same metrics the SVG row uses, so the downloaded PNG and the
-         preview cannot rule their lines differently.
-
-         The 0.52 and 0.74 these replace were approximations of exactly these
-         two numbers, and close ones for Quicksand (0.538 and 0.742 measured),
-         which is the curiosity worth recording: the export's guides were
-         nearer the truth than the preview's fixed 104/50, so the two paths
-         disagreed and the one nobody was looking at was the better of them. */
-      const GMC = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
-      const fmc = GMC && GMC.faceMetrics(FONT, fontSize, 700);
-      const xR = (fmc && fmc.exact && fmc.xHeight) ? fmc.xHeight / fontSize : 0.52;
-      const aR = (fmc && fmc.exact && fmc.ascender) ? fmc.ascender / fontSize : 0.74;
-      drawGuide(base, false);
-      drawGuide(base - Math.round(fontSize * xR), true);
-      drawGuide(base - Math.round(fontSize * aR), false);
+      // Same RULINGS table as the SVG sheet, so a French PNG and a French
+      // printout cannot disagree about what a French exercise book looks like.
+      const gBand = Math.round(fontSize * 0.74);
+      const gr = ruling();
+      const gy = (at) => Math.round(base - at * gBand);
+      if (gr.band) {
+        ctx.save();
+        ctx.globalAlpha = 0.16;
+        ctx.fillStyle = GUIDE_MID;
+        ctx.fillRect(pad * 0.5, gy(gr.band.to), width - pad, gy(gr.band.from) - gy(gr.band.to));
+        ctx.restore();
+      }
+      if (gr.verticals) {
+        const step = gr.verticals * gBand;
+        ctx.save();
+        ctx.setLineDash([]);
+        ctx.lineWidth = 1.5;
+        ctx.strokeStyle = highContrastOn() ? CONTRAST_INK : GUIDE_MID;
+        for (let x = pad * 0.5 + step; x < width - pad * 0.5; x += step) {
+          ctx.beginPath();
+          ctx.moveTo(x, gy(1));
+          ctx.lineTo(x, gy(gr.extra ? -gr.extra : 0));
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+      /* The house three-line rule reads its two upper lines from the FACE
+         (R-002), through the same traceGuides() the SVG row uses, so the
+         downloaded PNG and the preview cannot rule their lines differently.
+         The 0.52/0.74 ratios that used to sit here were approximations of
+         exactly those two numbers, and close ones for Quicksand (0.538 and
+         0.742 measured) -- the export's guides were nearer the truth than the
+         preview's fixed 104/50, so the two paths disagreed and the one nobody
+         was looking at was the better of them. */
+      rulingGuides(base, gBand, fontSize).forEach((g) => drawGuide(g.y, g.dashed, g.faint));
 
       if (!spec.blank) {
         ctx.font = "700 " + fontSize + "px " + FONT;
@@ -4929,75 +5550,76 @@
      count is now reduced until the numbers fit, rather than the numbers being
      shrunk until they do not. */
   const DOT_NUM_MIN = 17;
-  /* What a level actually yields for one character, so the picker can say the
-     real number instead of the nominal floor. Memoised per character and font
-     because it traces, and the trace is the expensive half of a render. */
-  const dotCountCache = new Map();
-  function dotCornerCountFor(ch) {
+  /* TWO numbers, and conflating them is what broke this.
+
+     `dotOutlineBudgetFor` is the BUDGET: how many dots the outline gets, the
+     level's nominal floored up to the glyph's corner count. It is what
+     dotBudgetFor() hands the geometry.
+
+     `dotCountFor` is the LABEL: how many dots the sheet actually draws, which
+     is that outline plus every counter, second shape and accent laid on top
+     of it. It is what the picker prints and nothing else reads.
+
+     They were one function after the #889/#891 merge, so the total came back
+     as the budget and the geometry added the counters to it a second time.
+     The merge note reasoned about the corner floor, where max(max(n,c),c) ===
+     max(n,c) really does make the two agree, and did not notice that #889 had
+     also made the same function additive. Measured on the merged main: the
+     picker said 23 on O where the sheet drew 36, on 26 of the 36 characters
+     and at three of the four levels.
+
+     The label counts the geometry the sheet is drawn from rather than working
+     out again which contours survive. A parallel copy of that selection is
+     what it used to be, and it drifted the moment the render path carried a
+     branch the copy did not: a tittle is not a contour, it is an accent dot
+     placed at the component's centroid and numbered like any other, so
+     lowercase i and j drew one more dot than the picker promised. Counting
+     the real geometry cannot go out of step with it.
+
+     Both memoised per character and font because they trace, and the trace is
+     the expensive half of a render. */
+  const dotBudgetCache = new Map();
+  function dotOutlineBudgetFor(ch, nominal) {
     const key = String(ch) + "|" + FONT;
-    if (dotCountCache.has(key)) return dotCountCache.get(key);
-    let corners = 0;
-    try {
-      const R = dotRasterChar(ch);
-      const cc = dotComponents(R.mask, R.w, R.h);
-      const minArea = Math.max(24, R.w * R.h * 0.00035);
-      const kept = cc.comps.filter((c) => c.area >= minArea).sort((a, b) => b.area - a.area);
-      if (kept.length) {
-        const main = kept[0];
-        let sx = -1, sy = -1;
-        for (let y = main.miny; y <= main.maxy && sy < 0; y++) {
-          for (let x = main.minx; x <= main.maxx; x++) {
-            if (cc.labels[y * R.w + x] === main.label) { sx = x; sy = y; break; }
+    let corners = dotBudgetCache.get(key);
+    if (corners === undefined) {
+      corners = 0;
+      try {
+        const R = dotRasterChar(ch);
+        const cc = dotComponents(R.mask, R.w, R.h);
+        const minArea = Math.max(24, R.w * R.h * 0.00035);
+        const kept = cc.comps.filter((c) => c.area >= minArea).sort((a, b) => b.area - a.area);
+        if (kept.length) {
+          const main = kept[0];
+          let sx = -1, sy = -1;
+          for (let y = main.miny; y <= main.maxy && sy < 0; y++) {
+            for (let x = main.minx; x <= main.maxx; x++) {
+              if (cc.labels[y * R.w + x] === main.label) { sx = x; sy = y; break; }
+            }
           }
+          if (sx >= 0) corners = dotCornerIndices(dotMooreTrace(cc.labels, R.w, R.h, main.label, sx, sy), DOT_CORNER_DEGS[1]).length;
         }
-        if (sx >= 0) corners = dotCornerIndices(dotMooreTrace(cc.labels, R.w, R.h, main.label, sx, sy), DOT_CORNER_DEGS[1]).length;
-      }
-    } catch (err) { corners = 0; }
-    dotCountCache.set(key, corners);
-    return corners;
-  }
-  function dotCountFor(ch, nominal) {
-    const outer = Math.max(DOT_MIN, Math.min(DOT_MAX, Math.max(nominal, dotCornerCountFor(ch))));
-    return outer + dotExtraCountFor(ch, outer);
+      } catch (err) { corners = 0; }
+      dotBudgetCache.set(key, corners);
+    }
+    return Math.max(DOT_MIN, Math.min(DOT_MAX, Math.max(nominal, corners)));
   }
 
-  /* Dots the counters and second shapes add on top of the outline, so the
-     picker reports what the sheet actually draws: an O is its outline plus a
-     ring, not just the outline. */
-  const dotExtraCache = new Map();
-  function dotExtraCountFor(ch, outerN) {
-    const key = String(ch) + "|" + FONT + "|" + outerN;
-    if (dotExtraCache.has(key)) return dotExtraCache.get(key);
-    let extra = 0;
+  const dotCountCache = new Map();
+  function dotCountFor(ch, nominal) {
+    const key = String(ch) + "|" + FONT + "|" + nominal;
+    if (dotCountCache.has(key)) return dotCountCache.get(key);
+    const budget = dotOutlineBudgetFor(ch, nominal);
+    let n = budget;
     try {
-      const R = dotRasterChar(ch);
-      const cc = dotComponents(R.mask, R.w, R.h);
-      const minArea = Math.max(24, R.w * R.h * 0.00035);
-      const kept = cc.comps.filter((c) => c.area >= minArea).sort((a, b) => b.area - a.area);
-      if (kept.length) {
-        const main = kept[0];
-        let sx = -1, sy = -1;
-        for (let y = main.miny; y <= main.maxy && sy < 0; y++) {
-          for (let x = main.minx; x <= main.maxx; x++) { if (cc.labels[y * R.w + x] === main.label) { sx = x; sy = y; break; } }
-        }
-        if (sx >= 0) {
-          const base = dotPerimeter(dotMooreTrace(cc.labels, R.w, R.h, main.label, sx, sy)) || 1;
-          const rest = [];
-          if (CFG.dotHoles !== false) dotHoleBoundaries(R.mask, R.w, R.h, main.area * DOT_HOLE_RATIO).forEach((b) => rest.push(b));
-          kept.slice(1).forEach((cmp) => {
-            if (cmp.area < main.area * DOT_SHAPE_RATIO) return;
-            let ax = -1, ay = -1;
-            for (let y = cmp.miny; y <= cmp.maxy && ay < 0; y++) {
-              for (let x = cmp.minx; x <= cmp.maxx; x++) { if (cc.labels[y * R.w + x] === cmp.label) { ax = x; ay = y; break; } }
-            }
-            if (ax >= 0) rest.push(dotMooreTrace(cc.labels, R.w, R.h, cmp.label, ax, ay));
-          });
-          rest.forEach((b) => { extra += Math.max(DOT_LOOP_MIN, Math.min(DOT_MAX, Math.round(outerN * dotPerimeter(b) / base))); });
-        }
-      }
-    } catch (err) { extra = 0; }
-    dotExtraCache.set(key, extra);
-    return extra;
+      // Exactly the plan dotBudgetFor() builds for a one-character sheet:
+      // budget, perLetterMode false, singleMode true.
+      const g = dotWordGeometry(String(ch), budget, false, true);
+      const drawn = g.letters.reduce((t, L) => t + L.loops.reduce((s, lp) => s + lp.length, 0) + L.accentPts.length, 0);
+      if (drawn > 0) n = drawn;
+    } catch (err) { n = budget; }
+    dotCountCache.set(key, n);
+    return n;
   }
 
   function dotLevel(key) {
@@ -5592,13 +6214,17 @@
     const chars = [...String(text)].filter((c) => c !== " ");
     const drawn = chars.length;
     if (drawn <= 1) {
-      /* MERGE 2026-09-16: the one-character branch reports the FLOORED count,
-         not the nominal one, so the picker's number is the number the sheet
-         actually draws. That is #889's dotCountFor() reading, kept here rather
-         than in its own layoutDotWord(); dotWordGeometry applies the same
-         floor via singleMode, and max(max(n,c),c) === max(n,c), so the two
-         agree by construction instead of by coincidence. */
-      const budget = dotCountFor(chars[0] || CHARS[0], lvl.single);
+      /* The one-character branch hands over the FLOORED count rather than
+         the nominal one, so the outline gets at least as many dots as the
+         glyph has corners. dotWordGeometry applies the same floor again via
+         singleMode, and max(max(n,c),c) === max(n,c), so the two agree by
+         construction instead of by coincidence.
+
+         It must be the BUDGET, never the picker's label: the label is that
+         budget plus the counters and accents the geometry lays on top, and
+         feeding it back in here made the geometry add them a second time.
+         See dotOutlineBudgetFor / dotCountFor for the measurement. */
+      const budget = dotOutlineBudgetFor(chars[0] || CHARS[0], lvl.single);
       return { budget: budget, perLetterMode: false, singleMode: true, capped: false, wanted: lvl.single };
     }
     const wanted = lvl.perLetter;
@@ -6275,12 +6901,7 @@
     const names = designIsClassMode() ? rosterNames(el.designRoster) : [];
     if (names.length >= 2) {
       holder.classList.add("pt-class-set");
-      names.forEach((n) => {
-        const page = document.createElement("div");
-        page.className = "pt-sheet-page";
-        page.appendChild(designSheetSVG(n));
-        holder.appendChild(page);
-      });
+      appendSheetPages(holder, names, (n) => designSheetSVG(n));
       printWrap("", holder, "design");
       return;
     }
@@ -6307,12 +6928,9 @@
       floor = got;
       return true;
     });
-    levels.forEach((lvl) => {
+    appendSheetPages(holder, levels, (lvl) => {
       designState.density = lvl.key;
-      const page = document.createElement("div");
-      page.className = "pt-sheet-page";
-      page.appendChild(designSheetSVG());
-      holder.appendChild(page);
+      return designSheetSVG();
     });
     designState.density = picked;
     printWrap("", holder, "design_ladder");
@@ -7009,12 +7627,7 @@
     const names = rosterNames(el.puzzleRoster);
     if (names.length >= 2) {
       holder.classList.add("pt-class-set");
-      names.forEach((n) => {
-        const page = document.createElement("div");
-        page.className = "pt-sheet-page";
-        page.appendChild(puzzleSheetNode(n));
-        holder.appendChild(page);
-      });
+      appendSheetPages(holder, names, (n) => puzzleSheetNode(n));
       printWrap("", holder, "puzzle");
       return;
     }
@@ -7161,12 +7774,31 @@
 
   function init() {
     loadQrModule();
+    /* OUT-06 -- publish the page's own face to the glyph surfaces.
+
+       CFG.font reached the SVG paths and the canvas export, and NEVER reached
+       .pt-glyph-figure / .pt-glyph-print, which are plain <p> elements styled
+       by style.css and so inherited Plus Jakarta Sans. That is the whole
+       mechanism behind the finding that these 69 pages showed "identical
+       advance width in all 5 declared stacks": the declared stack was not
+       being applied at all, so the Unicode script characters fell to whatever
+       the OS happened to have. It also meant the PNG export and the page
+       disagreed, because the export already used FONT.
+
+       Published as a custom property rather than set on each element, so the
+       three creation sites -- and any fourth -- pick it up without knowing
+       this exists, the way --pt-glyph-ratio and --pt-paper-aspect already do. */
+    if (RENDER === "glyph" && CFG.font) {
+      document.documentElement.style.setProperty("--pt-glyph-family", CFG.font);
+    }
     /* Before applyPresetInputs(), which fills a roster from ?roster= and
        therefore has to find one. el is built at module scope, so a roster
        created here is written back onto it rather than re-queried everywhere. */
     mountNameCase();
     mountLeftHanded();
-    mountSheetCost();
+    mountSpacing();
+    if (CFG.stencil === true) loadStencilModule();
+    mountStencilToggle();
     [el.nameRows, el.genRows].forEach(addLowDensityOption);
     /* After load, not here: footer.js is deferred and sits AFTER this file in
        document order, so at init() the footer this reads its labels from does
@@ -7180,6 +7812,15 @@
         if (made) el[kind + "Roster"] = made;
       });
     }
+    /* AFTER mountRoster, not before it. Both of these read primaryRoster():
+       the cost line binds its input listener to one, and the N chips exist
+       only where one does. el.*Roster is captured at module scope, so on the
+       nine locale pages that take CFG.roster === true it is still null when
+       init starts -- which left those pages with a cost line that never
+       updated as you typed, and would have left them with no N control at
+       all. Measured on de/zum-ausdrucken/namen-schreiben before the move. */
+    mountSheetCost();
+    mountNUp();
     applyPresetInputs();
     initStrokeToggle();
     /* Before the first paint, not after: setCharStyle() reassigns the FONT

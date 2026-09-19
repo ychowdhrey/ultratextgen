@@ -21,7 +21,7 @@
      fr/imprimables/alphabet-point-de-croix needed -- it supplies none of
      them and was rendering an English share row under a French panel. */
   const PP = window.UltraTextGen && window.UltraTextGen.printPrefs;
-  const SL = PP ? PP.shareLabels() : { share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", savePdf: "Save as PDF" };
+  const SL = PP ? PP.shareLabels() : { share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", savePdf: "Download PDF" };
   const T = {
     printTitle:      CS_CFG.printTitle      || "Cross-Stitch Pattern — ",
     chartAriaPrefix: CS_CFG.chartAriaPrefix || "Cross-stitch chart for ",

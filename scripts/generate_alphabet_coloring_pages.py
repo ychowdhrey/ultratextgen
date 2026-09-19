@@ -320,7 +320,10 @@ def render_hub(spec):
         [ldjson(breadcrumb), ldjson(collection_ld), ldjson(faqpage_ld(faqs))]
     )
 
-    config = config_script(cfg)
+    # The hub ships 26 letter spokes AND 10 number spokes and links all 36 from
+    # its own list, so its picker has to offer the digits too. Without this the
+    # engine defaults to "alpha" and the ten number pages have no tile.
+    config = config_script(cfg, extra_lines=['      charset: "alnum",'])
 
     return f"""<!DOCTYPE html><html lang="en"><head>
 {funding_choices_tag()}
@@ -373,9 +376,9 @@ def render_hub(spec):
 
     <!-- Picker + selected-letter detail -->
     <section class="bubble-az" aria-labelledby="ptPickHeading">
-      <h2 class="bubble-az-heading" id="ptPickHeading">Pick a letter to color</h2>
-      <p class="bubble-az-intro">Tap any letter A–Z to see its big coloring outline, print it, or download a PNG. Want the letter's own page with an example word? Open it from the A–Z list below.</p>
-      <div class="bubble-strip" id="pt-strip" role="tablist" aria-label="Choose a letter to color"></div>
+      <h2 class="bubble-az-heading" id="ptPickHeading">Pick a letter or number to color</h2>
+      <p class="bubble-az-intro">Tap any letter A–Z, or any number 0–9, to see its big coloring outline, print it, or download a PNG. Want that character's own page with an example word? Open it from the A–Z &amp; 0–9 list below.</p>
+      <div class="bubble-strip" id="pt-strip" role="tablist" aria-label="Choose a letter or number to color"></div>
       <div class="bubble-letter-panel" id="pt-panel" aria-live="polite"></div>
     </section>
 

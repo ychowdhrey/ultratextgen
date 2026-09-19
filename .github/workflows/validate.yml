@@ -314,6 +314,20 @@ jobs:
         continue-on-error: true
         run: npm run test:qr | tee qr-tests.log
 
+      # Gating, and no backlog to be red against: every counter either attaches
+      # or it does not. The bridge finder's one failure mode is silence — an
+      # empty array reads exactly like a letter that needed no bridge, on
+      # screen and on paper, and the person only finds out after cutting. So
+      # the test asserts the property rather than the output: cut the bridges
+      # out of the glyph and NOTHING may still be enclosed. That is what caught
+      # the real off-by-one, where a wall crossed leftwards or upwards kept its
+      # last ink pixel and sealed the counter shut while the bridge looked
+      # perfectly well placed.
+      - name: Run stencil bridge tests
+        id: stencil_tests
+        continue-on-error: true
+        run: npm run test:stencil | tee stencil-tests.log
+
       # Diff-scoped and gating. Fails a PR that corrects a number on one page of
       # an hreflang cluster and leaves a sibling asserting the old value — the
       # 2026-09-01 Unicode 18.0 case, where 13,047 -> 13,007 shipped in English
@@ -701,6 +715,19 @@ jobs:
         continue-on-error: true
         run: npm run check:country-flags -- --base origin/${{ github.base_ref || 'main' }} | tee country-flags.log
 
+      # printablesEngine mounts a tool wherever the right element id appears, so
+      # giving page B a tool page A already owns is a one-line change — which is
+      # how /printables/alphabet-coloring-pages/ grew a name coloring tool that
+      # /printables/coloring-page-maker/ already owned (2026-09-13, 458b62584).
+      # No other gate could see it: parity reads links and section counts, the
+      # locale gate reads strings, the image gates read assets. Diff-scoped on
+      # newly-introduced pairs, so the site's legitimate pre-existing collisions
+      # (the seven "in cursive" spokes) can never make it permanently red.
+      - name: Run printable tool duplication check
+        id: tool_duplication
+        continue-on-error: true
+        run: npm run check:tool-duplication -- --base origin/${{ github.base_ref || 'main' }} | tee tool-duplication.log
+
       # Gating, zero backlog: unit tests over the CTA routing table and the
       # in-place pass that applies it. Three things they pin down, each a
       # silent defect rather than a crash: no <lang>/ page may ever route (no
@@ -822,6 +849,7 @@ jobs:
             echo '```'
             echo ""
             echo "### QR encoder tests — \`${{ steps.qr_tests.outcome }}\`"
+            echo "### Stencil bridge tests — \`${{ steps.stencil_tests.outcome }}\`"
             echo '```'
             cat qr-tests.log
             echo '```'
@@ -959,6 +987,11 @@ jobs:
             cat country-flags.log
             echo '```'
             echo ""
+            echo "### Printable tool duplication — \`${{ steps.tool_duplication.outcome }}\`"
+            echo '```'
+            cat tool-duplication.log
+            echo '```'
+            echo ""
             echo "### CTA routing tests — \`${{ steps.cta_routing_tests.outcome }}\`"
             echo '```'
             cat cta-routing-tests.log
@@ -1014,6 +1047,7 @@ jobs:
           steps.redirects.outcome == 'failure' ||
           steps.zalgo_engine_tests.outcome == 'failure' ||
           steps.qr_tests.outcome == 'failure' ||
+          steps.stencil_tests.outcome == 'failure' ||
           steps.numeric_parity.outcome == 'failure' ||
           steps.updates_verification.outcome == 'failure' ||
           steps.external_refs.outcome == 'failure' ||
@@ -1038,6 +1072,7 @@ jobs:
           steps.accessibility.outcome == 'failure' ||
           steps.collection_grids.outcome == 'failure' ||
           steps.country_flags.outcome == 'failure' ||
+          steps.tool_duplication.outcome == 'failure' ||
           steps.cta_routing_tests.outcome == 'failure' ||
           steps.library_hub_parity.outcome == 'failure'
         run: |
