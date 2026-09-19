@@ -4284,6 +4284,120 @@ a synthetic `italic` that obliques an already-slanted joined hand.
 - **`assets/fonts/README.md`** — the inventory, the provenance and the reasoning.
 
 
+## A script page's letters are traceable, and its rows are ruled (added 2026-09-19)
+
+The webfonts fix above made `/printables/cursive-alphabet/` set its letters in
+Playwrite. It did not make them **traceable**: `RENDER === "glyph"` drew solid
+ink, which is a chart. You can read a chart; you cannot trace or colour one,
+and "trace or colour one" is the job of a page called *Cursive Letter A
+printable*.
+
+**The name surface was the sharper case, because the page says what it is.**
+`nameRow()` took a `RENDER === "glyph"` branch that produced
+`<span class="pt-name-word is-trace">` — grey solid text, nothing to write
+inside — and the very next line read
+`if (leftHanded && kind === "trace" && RENDER !== "glyph")`, so **PR-09's
+left-handed model silently did nothing on all 15 of those pages**.
+
+### The stroke is a measurement, not a taste
+
+The caveat this started from was *"hollowing a thin monoline hand gives two
+hairlines"*, and measuring **inverted it**. At `outlineSVG`'s own font-size of
+210, over the narrowest 10% of ink runs (the stems a centred stroke has to fit
+inside), with the white channel a stroke of N leaves:
+
+| face | ships | stem p05 | stem p10 | channel @4 | channel @9 |
+|---|---|---|---|---|---|
+| Archivo Black | 400 | 39 | 41 | 37 | 32 |
+| Fredoka | 700 | 28 | 35 | 31 | 26 |
+| Baloo 2 | 700 | 25 | 29 | 25 | 20 |
+| Quicksand | 700 | 21 | 23 | **19** | 14 |
+| **Playwrite US Trad** | **400** | 17 | 18 | 14 | 9 |
+| **UnifrakturMaguntia** | **400** | **6** | **8** | 4 | **-1** |
+
+Quicksand at stroke 4 is the working reference: `/printables/letter-tracing/`
+ships it, channel 19. Playwrite at 14 is comfortably inside that. The face that
+actually breaks is the **blackletter**, whose hairline connectors between fat
+stems are 6 units at the 5th percentile — the default stroke of **9 closes them
+to solid black**, and the letter stops being an outline exactly where blackletter
+is most recognisable. Both script pages ship `strokeWidth: 4`.
+
+**Both faces ship weight 400 only**, so `outlineSVG`'s hardcoded
+`font-weight: 700` was asking for **synthetic bold** — the browser smearing a
+400 outline, non-deterministic across engines and additive to the stroke drawn
+over it. `CFG.fontWeight` replaces that literal at the three SVG sites and the
+twelve `ctx.font` ones, defaulting to 700 so no existing page moves, and the
+`glyphMetrics` probes were moved onto it in the same pass: **measuring one weight
+and drawing another misplaces the ink box**, which is the whole reason those
+probes exist.
+
+**Reported, not fixed: `Archivo Black` ships 400 only too**, so
+`/printables/block-letters/` and `/printables/spanish-alphabet-chart/` are
+rendering synthetic bold today (measured: p10 stem 41 → 48, ~17% fatter). The
+one-line fix is `fontWeight: 400` on those pages, but it changes the appearance
+of shipping pages and is an owner call, not a drive-by.
+
+### Two flags, because hollow and ruled are different jobs
+
+`CFG.traceable` sends a script page's letters through `wordOutlineSVG` hollow.
+It goes through the **word** surface rather than `outlineSVG` because
+`outlineSVG` draws ONE character in a 200x240 tile, and losing the lowercase is
+not a trade worth making on a cursive page — joined lowercase script is the
+thing people practise. The page keeps its Unicode variant chips, its A–Z strip
+and its upper/lower pair.
+
+`CFG.ruledRows` puts handwriting guidelines behind the name and letter rows.
+**It is deliberately separate and opt-in**: a ruled row is right for a child
+practising a name and wrong for the teenager making graffiti name art, which
+this file already records as a framing mistake worth not repeating. Today:
+cursive (40) and the name-tracing cluster (7) are ruled; calligraphy (29) is
+hollow and unruled.
+
+### The Seyès ruling existed for months and nothing drew it
+
+`addRuling()` is called from exactly one place, `traceWordSVG()`, which only the
+`#pt-gen-*` surface mounts — **3 English pages, 2 German, 1 Indonesian, and no
+French page at all**. So `rulingKey()` has answered `seyes` for `lang === "fr"`
+since it was written and the lines were never drawn. German reached `lineatur`
+only because two German pages happen to mount that surface.
+
+The fix is not a new French page. `addRuling` now takes optional geometry, the
+name/word surface passes its own, and the existing French page whose job this
+is — `fr/imprimables/prenom-a-tracer/`, plus `fr/imprimables/alphabet-cursif/` —
+renders Seyès. Measured in the browser: **fr 5 horizontals + 4 verticals, de 4
+horizontals + the shaded Mittelband, en 3.**
+
+**A fixed-fraction ruling takes the TRACE surface's band-to-type ratio, never
+the face's ascender**, and that distinction is load-bearing. `standard` *is* the
+face — `rulingGuides` reads the baseline, x-height and ascender off it, and on
+the English sheet cap top 62 lands against an ascender line at 57 and x-height
+top 87 against a midline at 87, exactly. Seyès and Lineatur are national
+standards whose zones are fixed fractions *because the exercise book says so*;
+deriving their band from the face put the German Mittelband at 112.5 while the
+x-height sat at 87, shading the bottom half of the lowercase letters. They now
+reproduce the trace surface's proportions, so one Lineatur is drawn on both
+surfaces rather than two that disagree.
+
+### `wordBaselineY` — where a `dominant-baseline="central"` text actually sits
+
+The word surface anchors at `WORD_OUTLINE_ANCHOR_Y` with
+`dominant-baseline="central"`, which aligns the **font's em box**, so the
+baseline is not that number: it sits half the ascent/descent difference below
+the box centre. `glyphMetrics.ink()` exposes `emAscent`/`emDescent` for exactly
+this caller and says so in its own comment. Guessing 0.3em instead is only ever
+the degraded fallback for a browser with no `actualBoundingBox` support.
+
+### Verified against the unmodified tree
+
+Per this file's own rule, nine page types this change does **not** target —
+bubble, block, graffiti, alphabet-coloring, letter-tracing, the handwriting
+generator, dot-to-dot, coloring-page-maker and the German generator — were
+driven in headless Chromium against a git worktree of `origin/main` served
+alongside the working tree. Panel markup, name preview and figure markup are
+identical on all nine, 0 page errors on both sides. That is what makes the
+twelve `ctx.font` edits safe to believe: they are no-ops at the default weight,
+and the run proves it rather than asserting it.
+
 ## SEO & Structured Data
 
 Every page includes JSON-LD for:
@@ -4889,6 +5003,20 @@ Standing protocol:
   encoder is `js/printables/qr.js` and `npm run test:qr` gates it; the footer is
   `creditNode()`/`attachCredit()`, and it goes inside each page unit because the
   PDF writer drops anything outside them.
+- Do not give a printables page a hollow outline without measuring the face's
+  stem width first, and do not let `outlineSVG` ask a 400-only file for weight
+  700. The default stroke of 9 closes UnifrakturMaguntia's hairline connectors
+  to solid black (stem 6 at the 5th percentile), and synthetic bold is
+  non-deterministic across engines and additive to the stroke drawn over it. Set
+  `CFG.strokeWidth` and `CFG.fontWeight` from the measurement — see "A script
+  page's letters are traceable" above for the table and the method.
+- Do not turn handwriting guidelines on globally, and do not add a second copy
+  of a ruling. `CFG.ruledRows` is opt-in per page because a ruled row is right
+  for a child practising a name and wrong for graffiti name art, and
+  `addRuling()` is the one owner — a surface that needs the ruling in its own
+  coordinates passes geometry to it rather than drawing its own lines. A
+  fixed-fraction ruling (Seyès, Lineatur) takes the trace surface's
+  band-to-type ratio; only `standard` reads the face.
 - Do not add npm packages that run in the browser
 - Do not introduce a JavaScript framework or bundler
 - Do not generate images server-side or with an image-processing library. Visual/printable
