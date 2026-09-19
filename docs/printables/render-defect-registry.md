@@ -21,6 +21,11 @@ block had left open — and open on the design sheet's side margins, which is a 
 **R-015** is fixed on duplication and reported rather than fixed on alignment; and **R-012 is
 measured and deliberately not fixed**, for a reason recorded in its own entry.
 
+**R-017 is counted as closed and carries a same-day correction**: its close-out reasoned from
+`sx === sy`, which proves a row is not distorted and not that it is a scale model of the printed
+one. Measured, the word is 1.9x larger relative to its line on screen than it prints. Reported
+there rather than fixed.
+
 Three entries were not found by this audit at all. R-018 was **created** by R-001's fix and is
 only visible on a rendered sheet; R-019 and R-020 were reported by the owner against the live
 generator. A closed entry is not a closed area, and a fix can be the next entry's cause.
@@ -686,8 +691,8 @@ move or shrink; choosing a wider viewBox aspect instead would have shrunk it by 
 
 It also closes a preview/print disagreement rather than opening one: the rules already spanned
 97% of the row in the live preview and 50% of the printable width in print. Both are now full
-width. (The word is still drawn proportionally larger in the preview than it prints — that is
-R-017's height cap, untouched here.)
+width. The word is still drawn 1.9× larger relative to its line on screen than it prints — that
+is the height cap, measured in R-017's own correction note and untouched here.
 
 Still open, and a product decision rather than a defect: the word is centred on the full-width
 rule, so a short name now leaves practice space on both sides of itself rather than continuing
@@ -900,6 +905,27 @@ page rather than standalone:
 `sx === sy` on all three, so each row is a scale model of its printed self. The row layout changed
 on `main` while this audit was in flight; nothing in this branch touches it, and it is recorded
 here so a future pass does not re-derive the original reading from a stale entry.
+
+**Correction, same day: `sx === sy` proves the row is not DISTORTED, which is a different claim.**
+A row can be undistorted and still not be a scale model of the printed one, because the two are
+capped at different heights against different container widths — `max-height: 92px` in `.pt-paper`
+against `150px` in the sheet. Measured on `Emma` at level 2, as the word's ink width over the
+ruled line it sits on:
+
+| surface | word ink | rule | word / rule |
+|---|---|---|---|
+| live preview | 227.5 | 455 | **73.6%** |
+| printed PDF | 259 | 674 | **38.4%** |
+
+The word is drawn **1.9× larger relative to its line on screen than it prints**, so the entry's
+original observation stands on this axis even though the letterboxing it named is gone. Reported
+rather than fixed here: matching them means expressing the preview row's height as a fraction of
+its own width rather than in absolute pixels, which is this entry's own subject and a CSS change
+across the three trace tools, not R-013's.
+
+Note this is measured **after** R-013's rule bleed, which moved the two surfaces closer rather
+than further apart: the rules spanned 97% of the row on screen against 50% of the printable width
+in print before it, and both are now full width.
 
 ---
 
