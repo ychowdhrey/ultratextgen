@@ -16,9 +16,7 @@ Recorded instances in this repository alone:
     PR #894  ->  9 backlog items after    ->  recovered by #896
     PR #904  ->  2 commits after          ->  recovered by #909, ~4 hours
 
-and 52 commits across 33 branches in the research workspace, one of which was
-a from-memory reconstruction of work stranded the same way -- the originals had
-been sitting on the branch the whole time.
+Two of those sat undetected for two months.
 
 Two design constraints, both learned from getting them wrong
 ------------------------------------------------------------
