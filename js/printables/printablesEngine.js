@@ -813,7 +813,15 @@
     if (skew) text.setAttribute("transform", skew);
     text.textContent = ch;
     svg.appendChild(text);
-    if (o.overlay) addStrokeOverlay(svg, ch);
+    if (o.overlay) {
+      /* This tile places the letter by its own measured ink (see the R-005
+         note above), so the overlay is fitted to exactly that placement
+         rather than to the recipe's nominal 100/128. */
+      const fitted = place && place.ink
+        ? fittedStrokesFor(ch, OUTLINE_SVG_FONT, 100 + place.dx, place.baselineY, "advance")
+        : null;
+      addStrokeOverlay(svg, ch, fitted);
+    }
     return svg;
   }
 
@@ -1052,12 +1060,64 @@
     return (table && table[ch]) ? table[ch] : null;
   }
 
+  /* Where one character's INK sits, in whatever space the caller is drawing
+     in. `anchor` says what `cx` means, and the two callers mean different
+     things by it: a single tile centres the letter's own ink on cx, while a
+     word overlay places each letter by its ADVANCE centre because that is
+     where the one unbroken <text> node actually put it.
+
+     Returns null when the face has not loaded or the browser has no ink
+     metrics, and every caller falls back to what it drew before. */
+  function glyphInkBox(ch, fontPx, cx, baselineY, anchor) {
+    const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
+    if (!GM) return null;
+    const i = GM.ink(ch, FONT, fontPx, 700);
+    if (!i || !i.exact || !(i.width > 0)) return null;
+    const originX = anchor === "ink" ? cx - (i.left + i.right) / 2 : cx - i.advance / 2;
+    return {
+      x: originX + i.left, y: baselineY + i.top,
+      w: i.width, h: i.height
+    };
+  }
+
+  /* The skeleton for `ch`, fitted onto that character's rendered ink.
+
+     strokeDirectionData.js is authored against a generic sans, and no shipped
+     face lands on its numbers, so dropping the paths on unfitted is what left
+     7 of 12 start dots off the glyph (audit 2026-09-17, R-010). Fitting is
+     measured: across all 52 letters against Quicksand 700, 99.3% of each
+     route lands on the letter, nothing below 90%. */
+  function fittedStrokesFor(ch, fontPx, cx, baselineY, anchor) {
+    const data = strokeDataFor(ch);
+    if (!data || !data.strokes || !data.strokes.length) return null;
+    const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
+    if (!GM || !GM.fitSkeleton) return null;
+    const box = glyphInkBox(ch, fontPx, cx, baselineY, anchor);
+    if (!box) return null;
+    const fit = GM.fitSkeleton(data.strokes, box, { inset: GM.stemWidth(FONT, fontPx, 700) / 2 });
+    return fit ? fit.d : null;
+  }
+
+  /* A <text dominant-baseline="central"> is aligned on the FONT's em box, so
+     its baseline sits below the anchor by half the box's imbalance. Needed to
+     place anything against wordOutlineSVG's word, which still draws that way. */
+  function centralBaselineY(anchorY, fontPx) {
+    const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
+    const i = GM && GM.ink("H", FONT, fontPx, 700);
+    if (!i || i.emAscent == null || i.emDescent == null) return null;
+    return anchorY + (i.emAscent - i.emDescent) / 2;
+  }
+
   // Numbered start-dot + direction arrow for every stroke of one letter,
   // drawn directly into `parent`'s own coordinate space (the 200x240 unit
   // box, or a <g> already transformed into an equivalent local box).
-  function addStrokeOverlay(parent, ch) {
+  function addStrokeOverlay(parent, ch, fitted) {
     const data = strokeDataFor(ch);
     if (!data || !data.strokes || !data.strokes.length) return;
+    /* Fitted paths when the caller could measure the glyph, the authored ones
+       otherwise — a page serving a cached script, or a browser with no ink
+       metrics, keeps exactly the rendering it had. */
+    const paths = (fitted && fitted.length === data.strokes.length) ? fitted : data.strokes;
     const uid = "ptsd" + (++strokeOverlayUid);
     const g = svgMake("g", { class: "pt-stroke-overlay", "aria-hidden": "true" }, parent);
     const defs = svgMake("defs", null, g);
@@ -1071,7 +1131,7 @@
     }, defs);
     svgMake("path", { d: "M0,0 L10,5 L0,10 Z", fill: STROKE_COLOR }, marker);
 
-    data.strokes.forEach((d, i) => {
+    paths.forEach((d, i) => {
       svgMake("path", {
         d: d, fill: "none", stroke: STROKE_COLOR,
         "stroke-width": 6, "stroke-linecap": "round", "stroke-linejoin": "round",
@@ -1131,24 +1191,41 @@
     const tx = cx - 100 * scale;
     const ty = anchorY - anchorUnitY * scale;
     const g = svgMake("g", { transform: "translate(" + tx.toFixed(2) + "," + ty.toFixed(2) + ") scale(" + scale.toFixed(4) + ")" }, parent);
-    addStrokeOverlay(g, ch);
+    /* Fit inside the authoring box, not in the row: the dot radius, the label
+       and the arrowhead are all sized in 210-unit terms, so the <g> above has
+       to stay. The box is measured at 210 for the same reason. */
+    const unitBaseline = mode === "alphabetic"
+      ? STROKE_BASELINE_UNIT_Y
+      : centralBaselineY(anchorUnitY, OUTLINE_SVG_FONT);
+    const fitted = unitBaseline == null
+      ? null
+      : fittedStrokesFor(ch, OUTLINE_SVG_FONT, 100, unitBaseline, "advance");
+    addStrokeOverlay(g, ch, fitted);
   }
 
   // Overlays every letter of a word/name rendered as a single centered
   // <text> (wordOutlineSVG / traceWordSVG) without touching that <text>
   // node itself. `spacingPx` mirrors the `letter-spacing` attribute those
   // functions may set so the overlay tracks the same extra gaps.
-  function addWordStrokeOverlay(svg, word, fontPx, spacingPx, anchorY, mode, totalW) {
+  /* Where each character of a centred one-node word actually sits. Shared by
+     the stroke overlay and the dotted tracing route so the two can never
+     disagree about a letter's position. */
+  function wordCellCentres(word, fontPx, spacingPx, totalW) {
     const measured = charAdvanceCenters(word, fontPx);
     const extra = spacingPx ? spacingPx * (measured.centers.length - 1) : 0;
-    const fullWidth = measured.total + extra;
+    const leftEdge = totalW / 2 - (measured.total + extra) / 2;
     let runningExtra = 0;
-    const leftEdge = totalW / 2 - fullWidth / 2;
-    measured.centers.forEach((c, i) => {
+    return measured.centers.map((c) => {
       const cx = leftEdge + c.cx + runningExtra;
       if (spacingPx) runningExtra += spacingPx;
+      return { ch: c.ch, cx: cx };
+    });
+  }
+
+  function addWordStrokeOverlay(svg, word, fontPx, spacingPx, anchorY, mode, totalW) {
+    wordCellCentres(word, fontPx, spacingPx, totalW).forEach((c) => {
       if (!/[A-Za-z]/.test(c.ch)) return;
-      letterOverlayCell(svg, c.ch, cx, anchorY, fontPx, mode);
+      letterOverlayCell(svg, c.ch, c.cx, anchorY, fontPx, mode);
     });
   }
 
@@ -3902,19 +3979,32 @@
 
   // Level 1 (easiest) → 7 (hardest). Round caps + a near-zero dash render
   // the stroke as a row of dots; longer dashes read as a broken guideline.
+  /* `sw`/`dash` draw the glyph's CONTOUR and are the fallback. `routeSw`/
+     `routeDash` draw the writing centreline and are what a page with stroke
+     data actually renders (see traceRoutePaths).
+
+     The centreline is heavier because it carries half the ink: a contour
+     crosses a stem twice per scanline and a centreline once, so holding the
+     old width would have halved the visible trail. Gaps grow with the dots so
+     the dot COUNT along a stroke stays what it was; at the old 11-unit period
+     an 11-wide dot would have closed up into a line. */
   const TRACE_LEVELS = [
     { key: "solid",    label: T.trace.solid.label,      hint: T.trace.solid.hint,
       fill: INK,   stroke: "none", sw: 0, dash: "",        cap: "round", opacity: 1 },
     { key: "bold-dot", label: T.trace["bold-dot"].label, hint: T.trace["bold-dot"].hint,
-      fill: "none", stroke: INK,   sw: 8, dash: "0.1 11",  cap: "round", opacity: 1 },
+      fill: "none", stroke: INK,   sw: 8, dash: "0.1 11",  cap: "round", opacity: 1,
+      routeSw: 11, routeDash: "0.1 17" },
     { key: "fine-dot", label: T.trace["fine-dot"].label, hint: T.trace["fine-dot"].hint,
-      fill: "none", stroke: INK,   sw: 5, dash: "0.1 16",  cap: "round", opacity: 0.92 },
+      fill: "none", stroke: INK,   sw: 5, dash: "0.1 16",  cap: "round", opacity: 0.92,
+      routeSw: 7, routeDash: "0.1 19" },
     { key: "dashed",   label: T.trace.dashed.label,     hint: T.trace.dashed.hint,
-      fill: "none", stroke: INK,   sw: 4, dash: "15 15",   cap: "butt",  opacity: 0.85 },
+      fill: "none", stroke: INK,   sw: 4, dash: "15 15",   cap: "butt",  opacity: 0.85,
+      routeSw: 6, routeDash: "14 12" },
     { key: "faded",    label: T.trace.faded.label,      hint: T.trace.faded.hint,
       fill: GHOST,  stroke: "none", sw: 0, dash: "",        cap: "round", opacity: 1 },
     { key: "faint",    label: T.trace.faint.label,      hint: T.trace.faint.hint,
-      fill: "none", stroke: FAINT, sw: 2, dash: "0.1 22",  cap: "round", opacity: 1 },
+      fill: "none", stroke: FAINT, sw: 2, dash: "0.1 22",  cap: "round", opacity: 1,
+      routeSw: 3, routeDash: "0.1 22" },
     { key: "blank",    label: T.trace.blank.label,      hint: T.trace.blank.hint,
       blank: true }
   ];
@@ -3942,20 +4032,117 @@
   const TRACE_FONT_SIZE = 132;
   const TRACE_BASE = 158, TRACE_MID = 104, TRACE_TOP = 50, TRACE_H = 210;
 
+  /* Where the three ruled lines actually go.
+
+     TRACE_MID and TRACE_TOP above are a fixed 2:1 split of a 108-unit band,
+     chosen with no reference to the face being written between them, and the
+     type is a fixed 132 chosen with no reference to the lines. Only the
+     baseline agreed. Measured on Quicksand 700 at 132 (audit 2026-09-17,
+     R-002):
+
+       capitals   ink top 65.0-65.5   top rule 50    15.0-15.5 units SHORT
+       ascenders  ink top 60.3        top rule 50    10.3 units SHORT
+       x-height   ink top 86.0-87.3   midline 104    17-18 units OVER
+       baseline   ink bottom ~158     baseline 158   correct
+
+     So nothing ever touched the top rule, and lowercase was a third too tall
+     for the band the midline marked out -- on a sheet whose whole purpose is
+     teaching a child which line a letter reaches.
+
+     The lines are derived from the face instead. The baseline and the font
+     size both stay put, because the band height is what a child writes in and
+     shrinking the type to fit a guessed band would trade one wrong number for
+     a smaller letter; what moves is the two lines that were describing
+     nothing. The top rule goes to the ascender rather than the cap height:
+     ascenders are the taller class in every face here, and a rule that
+     capitals overshoot would be worse than one they fall just under. */
+  function traceGuides() {
+    const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
+    const fm = GM && GM.faceMetrics(FONT, TRACE_FONT_SIZE, 700);
+    if (!fm || !fm.exact || !fm.xHeight || !fm.ascender) {
+      return { top: TRACE_TOP, mid: TRACE_MID, base: TRACE_BASE };
+    }
+    const top = TRACE_BASE - fm.ascender;
+    const mid = TRACE_BASE - fm.xHeight;
+    /* A face with an unusually tall ascender could push the top rule off the
+       row; keep it inside and never let the two rules cross. */
+    const safeTop = Math.max(6, top);
+    return { top: safeTop, mid: Math.max(safeTop + 8, mid), base: TRACE_BASE };
+  }
+
+  /* The writing route for a whole word, in the row's own coordinates.
+
+     R-001: both dotted levels were produced by stroking the glyph OUTLINE with
+     a near-zero dash, and stroke-dasharray walks the contour. A bold face has
+     two contour edges per stem, so every stem got two parallel columns of dots
+     and none down its middle, and a closed letter became two concentric rings
+     with nothing to say which one to follow. Measured on "minimum" at the
+     x-height: 15 real stems, 22 dot runs, stem 1 dotted at x=183 and x=199 and
+     nothing at 191. A child connecting those dots draws the perimeter of a
+     bubble letter, which is the opposite of the motor path a tracing sheet
+     exists to teach. Audit 2026-09-17.
+
+     Returns null unless EVERY non-space character has a route, so a word with
+     a digit or an accented letter keeps one consistent rendering rather than
+     mixing centrelines and contours in one row. */
+  function traceRoutePaths(word, fontPx, spacingPx, baselineY, totalW) {
+    if (!window.UTG_STROKE_DIRECTION_DATA) return null;
+    const cells = wordCellCentres(word, fontPx, spacingPx, totalW);
+    const out = [];
+    for (let i = 0; i < cells.length; i++) {
+      const c = cells[i];
+      if (/\s/.test(c.ch)) continue;
+      const d = fittedStrokesFor(c.ch, fontPx, c.cx, baselineY, "advance");
+      if (!d) return null;
+      for (let k = 0; k < d.length; k++) out.push(d[k]);
+    }
+    return out.length ? out : null;
+  }
+
   function traceWordSVG(word, level, opts) {
     const o = opts || {};
     const spec = levelSpec(level);
     const chars = [...String(word)];
-    const w = Math.max(360, chars.length * 116 + 120);
+    /* Measured, not counted -- the same defect as wordOutlineSVG's box, in a
+       second copy: `chars.length * 116 + 120` reserves the same width for "W"
+       and "i". */
+    const GMT = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
+    const tm = GMT ? GMT.ink(String(word), FONT, TRACE_FONT_SIZE, 700) : null;
+    const w = tm
+      ? Math.max(360, Math.ceil(Math.max(tm.right, tm.advance) - Math.min(0, tm.left) + 120))
+      : Math.max(360, chars.length * 116 + 120);
+    const G = traceGuides();
     const svg = document.createElementNS(SVGNS, "svg");
     svg.setAttribute("viewBox", "0 0 " + w + " " + TRACE_H);
     svg.setAttribute("class", "pt-trace-svg");
     svg.setAttribute("role", "img");
     svg.setAttribute("aria-label", word + " — " + spec.label);
     if (o.guides !== false) {
-      addGuide(svg, w, TRACE_TOP, false);
-      addGuide(svg, w, TRACE_MID, true);
-      addGuide(svg, w, TRACE_BASE, false);
+      addGuide(svg, w, G.top, false);
+      addGuide(svg, w, G.mid, true);
+      addGuide(svg, w, G.base, false);
+    }
+    const routed = (!spec.blank && spec.fill === "none" && spec.routeSw)
+      ? traceRoutePaths(word, TRACE_FONT_SIZE, 0, TRACE_BASE, w)
+      : null;
+    if (routed) {
+      const g = document.createElementNS(SVGNS, "g");
+      g.setAttribute("class", "pt-trace-route");
+      if (spec.opacity != null && spec.opacity !== 1) g.setAttribute("opacity", String(spec.opacity));
+      routed.forEach((d) => {
+        const path = document.createElementNS(SVGNS, "path");
+        path.setAttribute("d", d);
+        path.setAttribute("fill", "none");
+        path.setAttribute("stroke", spec.stroke);
+        path.setAttribute("stroke-width", String(spec.routeSw));
+        path.setAttribute("stroke-dasharray", spec.routeDash);
+        path.setAttribute("stroke-linecap", spec.cap || "round");
+        path.setAttribute("stroke-linejoin", "round");
+        g.appendChild(path);
+      });
+      svg.appendChild(g);
+      if (o.overlay) addWordStrokeOverlay(svg, word, TRACE_FONT_SIZE, 0, TRACE_BASE, "alphabetic", w);
+      return svg;
     }
     if (!spec.blank) {
       const t = document.createElementNS(SVGNS, "text");
@@ -4290,9 +4477,21 @@
         ctx.strokeStyle = dashed ? GUIDE_MID : GUIDE;
         ctx.moveTo(pad * 0.5, y); ctx.lineTo(width - pad * 0.5, y); ctx.stroke();
       };
+      /* The same metrics the SVG row uses, so the downloaded PNG and the
+         preview cannot rule their lines differently.
+
+         The 0.52 and 0.74 these replace were approximations of exactly these
+         two numbers, and close ones for Quicksand (0.538 and 0.742 measured),
+         which is the curiosity worth recording: the export's guides were
+         nearer the truth than the preview's fixed 104/50, so the two paths
+         disagreed and the one nobody was looking at was the better of them. */
+      const GMC = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
+      const fmc = GMC && GMC.faceMetrics(FONT, fontSize, 700);
+      const xR = (fmc && fmc.exact && fmc.xHeight) ? fmc.xHeight / fontSize : 0.52;
+      const aR = (fmc && fmc.exact && fmc.ascender) ? fmc.ascender / fontSize : 0.74;
       drawGuide(base, false);
-      drawGuide(base - Math.round(fontSize * 0.52), true);
-      drawGuide(base - Math.round(fontSize * 0.74), false);
+      drawGuide(base - Math.round(fontSize * xR), true);
+      drawGuide(base - Math.round(fontSize * aR), false);
 
       if (!spec.blank) {
         ctx.font = "700 " + fontSize + "px " + FONT;
@@ -4306,12 +4505,30 @@
           ctx.fillText(word, width / 2, base);
         }
         if (spec.stroke && spec.stroke !== "none") {
+          /* The export draws whatever the preview drew. traceRoutePaths works
+             in the coordinates it is handed, so the same call that produced
+             the SVG row produces canvas-space paths here; Path2D strokes them
+             without this file owning a second path parser. Falling back to
+             strokeText keeps the old contour rendering for a word the route
+             cannot cover, exactly as the preview does. */
+          const routedPng = (spec.fill === "none" && spec.routeSw && typeof Path2D !== "undefined")
+            ? traceRoutePaths(word, fontSize, 0, base, width)
+            : null;
           ctx.strokeStyle = spec.stroke;
-          ctx.lineWidth = Math.max(1, spec.sw * scale);
           ctx.lineCap = spec.cap || "round";
-          const dash = (spec.dash || "").split(/\s+/).filter(Boolean).map((n) => Math.max(0.01, parseFloat(n) * scale));
-          ctx.setLineDash(dash.length ? dash : []);
-          ctx.strokeText(word, width / 2, base);
+          const dashOf = (str) => (str || "").split(/\s+/).filter(Boolean)
+            .map((n) => Math.max(0.01, parseFloat(n) * scale));
+          if (routedPng) {
+            ctx.lineWidth = Math.max(1, spec.routeSw * scale);
+            const rd = dashOf(spec.routeDash);
+            ctx.setLineDash(rd.length ? rd : []);
+            routedPng.forEach((d) => ctx.stroke(new Path2D(d)));
+          } else {
+            ctx.lineWidth = Math.max(1, spec.sw * scale);
+            const dash = dashOf(spec.dash);
+            ctx.setLineDash(dash.length ? dash : []);
+            ctx.strokeText(word, width / 2, base);
+          }
           ctx.setLineDash([]);
         }
         ctx.globalAlpha = 1;

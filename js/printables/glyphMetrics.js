@@ -91,7 +91,13 @@
       out = {
         left: left, right: right, top: top, bottom: bottom,
         width: right - left, height: bottom - top,
-        advance: m.width, exact: true
+        advance: m.width, exact: true,
+        /* The FONT's box, not the letter's. Only one caller needs it: a
+           <text dominant-baseline="central"> is aligned on this box, so
+           placing anything against such a node means knowing where its
+           baseline actually landed. */
+        emAscent: typeof m.fontBoundingBoxAscent === "number" ? m.fontBoundingBoxAscent : null,
+        emDescent: typeof m.fontBoundingBoxDescent === "number" ? m.fontBoundingBoxDescent : null
       };
     } else {
       /* No actualBoundingBox support. Fall back to the advance width and the
@@ -224,12 +230,9 @@
 
   /* Uniform scale + translate mapping `fromBox` onto `toBox`, centred.
 
-     Uniform on purpose: the skeleton and the glyph are the same letter but not
-     the same typeface, so their aspect ratios differ slightly. Stretching to
-     fill both axes would skew the letterform — an "o" drawn as an ellipse the
-     font never had. Fitting uniformly and centring keeps the skeleton's shape
-     and accepts a small margin on one axis, which is the error that does not
-     look wrong. */
+     Uniform, which is right when the two boxes describe the same drawing at
+     two sizes. It is NOT right for fitting the skeleton to a glyph — see
+     fitSkeleton below, where it was measured and loses 5 points of accuracy. */
   function fitTransform(fromBox, toBox) {
     if (!fromBox || !toBox || !fromBox.w || !fromBox.h) return { scale: 1, tx: 0, ty: 0 };
     const s = Math.min(toBox.w / fromBox.w, toBox.h / fromBox.h);
@@ -238,10 +241,131 @@
     return { scale: s, tx: tx, ty: ty };
   }
 
+
+  /* Flatten a skeleton path into point runs. Only M, L and C appear in
+     strokeDirectionData.js, and only in absolute form, so this covers it; an
+     unrecognised command is skipped rather than guessed at.
+
+     Flattening matters for the BOX. pathPoints above returns control points
+     too, and a cubic's hull is bigger than the cubic, so a hull box fits the
+     skeleton smaller than the glyph. The curve's own box is what fitSkeleton
+     uses; the output paths keep their C commands, because an axis-aligned
+     scale + translate maps a cubic's control points exactly. */
+  function flattenPath(d, step) {
+    const toks = String(d).match(/[MLC]|-?\d*\.?\d+/g);
+    if (!toks) return [];
+    const n = step == null ? 16 : Math.max(4, step);
+    const runs = [];
+    let run = null, i = 0, cx = 0, cy = 0, cmd = null;
+    const num = function () { return parseFloat(toks[i++]); };
+    while (i < toks.length) {
+      const t = toks[i];
+      if (t === "M" || t === "L" || t === "C") { cmd = t; i++; }
+      if (cmd === "M") {
+        cx = num(); cy = num();
+        run = [[cx, cy]]; runs.push(run);
+        cmd = "L";                       /* SVG: pairs after an M are implicit L */
+      } else if (cmd === "L") {
+        cx = num(); cy = num();
+        if (run) run.push([cx, cy]);
+      } else if (cmd === "C") {
+        const x1 = num(), y1 = num(), x2 = num(), y2 = num(), x = num(), y = num();
+        for (let k = 1; k <= n; k++) {
+          const u = k / n, v = 1 - u;
+          if (run) run.push([
+            v*v*v*cx + 3*v*v*u*x1 + 3*v*u*u*x2 + u*u*u*x,
+            v*v*v*cy + 3*v*v*u*y1 + 3*v*u*u*y2 + u*u*u*y
+          ]);
+        }
+        cx = x; cy = y;
+      } else { i++; }
+    }
+    return runs;
+  }
+
+  function flattenStrokes(strokes, step) {
+    let runs = [];
+    for (let i = 0; i < strokes.length; i++) runs = runs.concat(flattenPath(strokes[i], step));
+    return runs;
+  }
+
+  function runsBox(runs) {
+    let all = [];
+    for (let i = 0; i < runs.length; i++) all = all.concat(runs[i]);
+    return boxOf(all);
+  }
+
+  /* Rewrite every coordinate pair of a path under x -> x*sx+tx, y -> y*sy+ty,
+     leaving the command letters alone. Exact for M/L/C under an axis-aligned
+     affine map. */
+  function mapPath(d, sx, sy, tx, ty) {
+    let odd = false;
+    return String(d).replace(/-?\d*\.?\d+/g, function (m) {
+      const v = parseFloat(m);
+      odd = !odd;
+      return String(Math.round((odd ? v * sx + tx : v * sy + ty) * 100) / 100);
+    });
+  }
+
+  /* One stem of the face, measured rather than assumed: in a sans with no
+     serifs the ink width of a plain vertical IS one stem. Three probes and the
+     minimum of them, because a face can serif exactly one of them — Baloo 2
+     draws "I" at more than twice the width of its own "l". */
+  const stemCache = new Map();
+  function stemWidth(font, size, weight) {
+    const key = font + "|" + size + "|" + (weight || 700);
+    const hit = stemCache.get(key);
+    if (hit != null) return hit;
+    let best = Infinity;
+    const probes = ["l", "I", "i"];
+    for (let k = 0; k < probes.length; k++) {
+      const m = ink(probes[k], font, size, weight);
+      if (m && m.exact && m.width > 0 && m.width < best) best = m.width;
+    }
+    const out = best === Infinity ? size * 0.13 : best;
+    stemCache.set(key, out);
+    return out;
+  }
+
+  /* Fit a centreline skeleton onto the glyph it describes.
+
+     `inkBox` is the glyph's ink in whatever space the caller wants the paths
+     back in. `opts.inset` shrinks it first, because the skeleton's extremes
+     are stroke CENTRES while the ink box's are stroke EDGES — without it every
+     route sits half a stem outside the letter on all four sides.
+
+     PER-AXIS, not uniform, and that was measured rather than argued. Across
+     all 52 letters against Quicksand 700, scoring the share of each route that
+     lands on the rendered glyph: per-axis 99.3% mean with nothing below 90%,
+     uniform 94.5% with seven letters below 80% (W 55, E 59, L 66, B 66). The
+     schematic's width-to-height proportion is simply not the face's, and the
+     letter the reader sees is the face's.
+
+     A degenerate axis (l, i, and any other single vertical) keeps scale 1 and
+     centres instead, since there is no width to match. */
+  function fitSkeleton(strokes, inkBox, opts) {
+    if (!strokes || !strokes.length || !inkBox) return null;
+    const runs = flattenStrokes(strokes, 12);
+    const sb = runsBox(runs);
+    if (!sb) return null;
+    const inset = (opts && opts.inset) || 0;
+    const t = {
+      x: inkBox.x + inset, y: inkBox.y + inset,
+      w: Math.max(1, inkBox.w - 2 * inset), h: Math.max(1, inkBox.h - 2 * inset)
+    };
+    let sx = 1, tx = t.x + t.w / 2 - sb.x;
+    let sy = 1, ty = t.y + t.h / 2 - sb.y;
+    if (sb.w > 0.5) { sx = t.w / sb.w; tx = t.x - sb.x * sx; }
+    if (sb.h > 0.5) { sy = t.h / sb.h; ty = t.y - sb.y * sy; }
+    const out = [];
+    for (let i = 0; i < strokes.length; i++) out.push(mapPath(strokes[i], sx, sy, tx, ty));
+    return { d: out, sx: sx, sy: sy, tx: tx, ty: ty };
+  }
+
   /* Cheap invalidation hook: webfonts arrive after first paint, and a metric
      measured against the fallback face is wrong for every caller that cached
      it. The engine calls this once document.fonts.ready settles. */
-  function reset() { inkCache.clear(); faceCache.clear(); }
+  function reset() { inkCache.clear(); faceCache.clear(); stemCache.clear(); }
 
   UTG.glyphMetrics = {
     ink: ink,
@@ -250,6 +374,12 @@
     pathBox: pathBox,
     strokesBox: strokesBox,
     fitTransform: fitTransform,
+    flattenPath: flattenPath,
+    flattenStrokes: flattenStrokes,
+    runsBox: runsBox,
+    mapPath: mapPath,
+    stemWidth: stemWidth,
+    fitSkeleton: fitSkeleton,
     reset: reset
   };
 })();
