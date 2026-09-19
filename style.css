@@ -6788,6 +6788,43 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
   overflow: hidden;
 }
 .pt-name-preview .pt-word-outline { max-height: 120px; }
+
+/* On a phone the preview is width-bound, and a long name is inherently a wide
+   short strip: "Christopher" has a 4.6:1 viewBox, so a 300px container renders
+   it 65px tall and a 65px strip cannot show whether the sheet is right, on the
+   device most likely to be used. Audit 2026-09-17, R-016.
+
+   The fix keeps the preview a SCALE MODEL -- the letter is sized by height and
+   the box scrolls sideways, so the scale stays uniform on both axes. Capping
+   by height and letting width overflow is the opposite of R-017's defect,
+   where width was held at 100% and height capped, which letterboxes. */
+@media (max-width: 640px) {
+  .pt-name-preview {
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* `safe` is the whole point: plain centring puts the overflow of a long
+       name half off each end, and the left half of a scroll container is
+       unreachable, so "Christopher" would lose its C permanently. `safe center`
+       centres a short name that fits and falls back to start alignment the
+       moment it does not. */
+    justify-content: safe center;
+  }
+  .pt-name-preview .pt-word-outline {
+    height: 110px;
+    max-height: none;
+    /* Three declarations, and all three are load-bearing. `width: max-content`
+       because an <svg> carrying only a viewBox has an intrinsic RATIO and NO
+       intrinsic width, so `width: auto` stretches it to the container instead.
+       `max-width: none` because the stylesheet's own image default would clamp
+       it back. And `flex: none` because a flex item still SHRINKS to fit after
+       max-content sizes it -- without it the element measures 300x110 with the
+       letter drawn at 0.324 and letterboxed, which is the original defect
+       wearing a taller box. */
+    width: max-content;
+    max-width: none;
+    flex: none;
+  }
+}
 .pt-name-glyph { color: #1a1a2e; }
 .pt-name-actions { margin-top: 0.25rem; }
 .pt-alpha-print-row { margin-top: 0.9rem; }
@@ -7596,7 +7633,6 @@ body.dark-mode .pt-banner-index { color: var(--text-secondary); }
 .pt-puzzle-gap { min-width: 0.75rem; }
 
 .pt-puzzle-caption { margin: 0; text-align: center; font-size: 0.8rem; color: var(--text-muted); }
-.pt-puzzle-credit { margin: 0; text-align: center; font-size: 0.75rem; color: #aeb4c0; }
 
 .pt-puzzle-footer-row { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
 .pt-puzzle-footer-field { display: inline-flex; align-items: baseline; gap: 0.5rem; font-size: 0.9rem; font-weight: 600; color: #1a1a2e; }

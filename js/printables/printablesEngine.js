@@ -7671,11 +7671,17 @@
     if (footer) sheet.appendChild(puzzleFooterRow());
     if (strip.length) sheet.appendChild(puzzleBorderStripSVG(strip));
 
-    const cred = document.createElement("p");
-    cred.className = "pt-puzzle-credit";
-    cred.textContent = siteCredit();
-    sheet.appendChild(cred);
+    /* No credit line inside the sheet, for the reason designSheetSVG already
+       records: attachCredit() puts the real one on every printed page unit,
+       as the page path plus the same URL as a QR, and the PDF lays a /Link
+       annotation over that block. Carrying both printed the address twice on
+       one sheet -- once under the cut instruction and again beside the QR at
+       the foot of the page. The block is the one that scans, so this is the
+       copy that goes. Audit 2026-09-17, R-015; same treatment the design
+       sheet had on 2026-09-13, applied to the surface that was missed.
 
+       The PNG export is a different artifact and draws its own credit
+       (puzzlePNG), which is why nothing about that path changes here. */
     return sheet;
   }
 
