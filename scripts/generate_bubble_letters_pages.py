@@ -559,7 +559,7 @@ def render_spoke(spec, index):
 
     <div class="cta-card">
       <h3>Want bubble letter {esc(L)} for a bio or caption?</h3>
-      <p>These outlines are for paper. For copy-paste Unicode bubble text that pastes anywhere — no image needed — use the bubble fonts generator.</p>
+      <p>These outlines are for paper. For copy-paste Unicode bubble text that pastes anywhere (no image needed), use the bubble fonts generator.</p>
       <a class="cta-btn" href="/category/bubble-fonts/">Open the bubble fonts generator →</a>
     </div>
 
