@@ -4584,12 +4584,17 @@
     host.insertAdjacentElement("afterend", wrap);
   }
 
-  // A small second copy of the model at the right-hand end of a trace row.
+  /* A small second copy of the model at the right-hand end of a trace row.
+     `node` may be null, which reserves the column without drawing anything —
+     the rows that get no model still have to end where the ones that do end,
+     or the sheet prints with a ragged right margin. Measured on the printed
+     PDF before that: 6.12in lines on the model and blank rows against 5.19in
+     on the three trace rows, a 0.92in step three times down the page. */
   function leftyModel(node) {
     const aside = document.createElement("span");
     aside.className = "pt-lefty-model";
     aside.setAttribute("aria-hidden", "true");
-    aside.appendChild(node);
+    if (node) aside.appendChild(node);
     return aside;
   }
 
@@ -5229,20 +5234,51 @@
     sheet.className = "pt-gen-sheet";
     // A solid model row on top so the target is always visible (unless the
     // chosen level already IS the solid model, or the user turned it off).
-    if (genModelOn() && level !== 1) sheet.appendChild(genRow(word, 1));
+    /* Whether this sheet reserves the left-handed model column at all. Decided
+       once, here, because the answer is a property of the sheet rather than of
+       a row: only the trace rows carry a model, they are all at `level`, and
+       at level 7 they are blank — so a level-7 sheet would otherwise give up
+       14% of every line's writing width to a column that never shows
+       anything. */
+    const lefty = leftHanded && RENDER !== "glyph" && !levelSpec(level).blank;
+    if (genModelOn() && level !== 1) sheet.appendChild(genRow(word, 1, "model", lefty));
     const traceCount = genRowCount();
-    for (let i = 0; i < traceCount; i++) sheet.appendChild(genRow(word, level));
+    for (let i = 0; i < traceCount; i++) sheet.appendChild(genRow(word, level, "trace", lefty));
     // Finish on blank ruled lines for independent writing (skip if already blank).
     const blanks = level === TRACE_LEVELS.length ? 0 : 2;
-    for (let i = 0; i < blanks; i++) sheet.appendChild(genRow(word, TRACE_LEVELS.length));
+    for (let i = 0; i < blanks; i++) sheet.appendChild(genRow(word, TRACE_LEVELS.length, "blank", lefty));
     sheet.appendChild(nameDateRow());
     return sheet;
   }
 
-  function genRow(word, level) {
+  /* `kind` is what the row is FOR, which the level alone does not say: the
+     same level 1 builds the model row on top and every trace row when level 1
+     is what the visitor picked, and TRACE_LEVELS.length builds both the
+     closing blank lines and the trace rows at level 7. nameRow() has always
+     taken it; genRow() did not, which is the reason the left-handed model
+     below could not be attached here. */
+  function genRow(word, level, kind, lefty) {
     const row = document.createElement("div");
     row.className = "pt-gen-row";
     row.appendChild(traceWordSVG(word, level, { guides: true, overlay: strokeOverlayOn() }));
+    /* A left-hander writing left to right covers what they have just written,
+       so the model at the START of the line is under their hand by the time
+       they need it. The second copy at the right-hand end is the whole point
+       of the setting, and until now genRow() never read the flag — the
+       checkbox mounted on this tool, re-rendered the preview and changed
+       nothing, which is the "control with no consequence" this engine's own
+       comments call a defect (R-019, R-014). nameRow() has carried it since
+       the setting shipped and style.css has always carried the .pt-gen-row
+       rule for it; only this line was missing.
+
+       Trace rows only, and never a blank one: a row whose whole job is
+       writing from memory must not be handed a model. Every OTHER row still
+       reserves the column, empty, so all seven lines end at the same x. */
+    if (lefty) {
+      const show = kind === "trace";
+      row.classList.add("has-lefty");
+      row.appendChild(leftyModel(show ? traceWordSVG(word, 1, { guides: false, track: false }) : null));
+    }
     return row;
   }
 

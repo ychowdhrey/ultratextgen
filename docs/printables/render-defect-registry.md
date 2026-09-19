@@ -11,10 +11,10 @@ Every number below was measured, not estimated. Where a first reading was wrong 
 recorded as a correction rather than removed, because the wrong reading is the one a future
 audit will repeat.
 
-**Fix status (2026-09-19).** Twenty entries; **seventeen are closed**, each with the same
+**Fix status (2026-09-19).** Twenty-one entries; **eighteen are closed**, each with the same
 instrument re-run against the same input: R-001 through R-011, R-014, R-016, R-017 and
-R-018 / R-019 / R-020. Two of those (R-011, R-017) were closed by `main` itself while this audit
-was in flight and are marked as such rather than claimed.
+R-018 / R-019 / R-020 / R-021. Two of those (R-011, R-017) were closed by `main` itself while this
+audit was in flight and are marked as such rather than claimed.
 
 Of the remaining three: **R-013** is closed on its tracing half — the part its own "partly fixed"
 block had left open — and open on the design sheet's side margins, which is a product decision;
@@ -26,9 +26,10 @@ measured and deliberately not fixed**, for a reason recorded in its own entry.
 one. Measured, the word is 1.9x larger relative to its line on screen than it prints. Reported
 there rather than fixed.
 
-Three entries were not found by this audit at all. R-018 was **created** by R-001's fix and is
+Four entries were not found by this audit at all. R-018 was **created** by R-001's fix and is
 only visible on a rendered sheet; R-019 and R-020 were reported by the owner against the live
-generator. A closed entry is not a closed area, and a fix can be the next entry's cause.
+generator; R-021 turned up while measuring R-019, as a second control on the same page that also
+did nothing. A closed entry is not a closed area, and a fix can be the next entry's cause.
 
 A closed entry keeps its original measurement above a **Fixed** block carrying the after-number —
 the before is what a future audit needs in order to recognise the defect returning. Nothing here
@@ -1014,6 +1015,87 @@ left the site with no URL and no QR on it.
 (alphabetic baseline, no tracking) and `routeDrawn` set from whether the level drew the route, so
 the PNG follows the same rule as the screen. Verified by downloading `handwriting-emma-L3.png`
 headlessly and reading it.
+
+---
+
+## R-021 — "Left-handed (model on both sides)" is an inert control on three of the four tools that show it
+
+**Severity** R2 · **Root cause** CSS_LAYOUT · **Screen** FAIL · **Print** FAIL · **PNG** N/A
+**Affects** `handwriting-worksheet-generator`, `letter-tracing`, `sight-word-tracing`
+
+A left-hander writing left to right covers what they have just written, so the model at the
+*start* of the line is under their own hand by the time they need it. The second copy at the
+right-hand end is the whole point of the setting.
+
+`mountLeftHanded()` mounts the checkbox on any English page with `el.nameRows || el.genRows`, so
+it appears on all four tracing tools, and its handler calls `renderGenPreview()`. But `leftHanded`
+was read in exactly one place — `nameRow()`. `genRow()`, which builds every row of the generator's
+sheet, never consulted it. The preview re-rendered and nothing changed.
+
+Measured before, ticking the box in a browser and counting `.pt-lefty-model` in the live preview
+and in `#pt-print-root` as the print job is built:
+
+| tool | preview | print rows | models in print |
+|---|---|---|---|
+| handwriting-worksheet-generator | 0 | 6 | **0 of 3 trace rows** |
+| letter-tracing | 0 | 6 | **0 of 3** |
+| sight-word-tracing | 0 | 6 | **0 of 3** |
+| name-tracing | n/a (its preview is one word, not rows) | 6 | 3 of 3 |
+
+This is an unfinished implementation rather than a decision: `style.css` has shipped
+`.pt-name-row .pt-lefty-model, .pt-gen-row .pt-lefty-model { … width: 14% … }` all along, and the
+second half of that selector was dead. It is the same class as R-014 and R-019 — a control with no
+consequence.
+
+**Fixed 2026-09-19.** `genRow()` takes the `kind` argument `nameRow()` has always had (the level
+alone cannot say what a row is *for*: level 1 builds both the model row and every trace row when
+level 1 is what the visitor picked, and level 7 builds both the closing blanks and the trace
+rows), and appends the aside on trace rows. Measured after, same instrument: **3 of 3 trace rows
+on each of the three tools**, in the preview and in the print job, with `name-tracing` unchanged
+at 3 and no `has-lefty` rows of its own.
+
+`.pt-gen-row` is not a flex container — `.pt-name-row` is, which is why the shared 14% rule worked
+on one and would have stacked the model *under* the line on the other. The flex layout is scoped
+to a `.has-lefty` modifier, so a row without an aside keeps exactly the block layout it had;
+verified, with the setting off the default sheet still prints its rules at 6.13in of a 6.13in
+printable box, unchanged.
+
+**Two things the rendered sheet decided, which reading the code would not have.**
+
+*The right margin went ragged.* With the aside on trace rows only, those rows end where the model
+begins and every other row runs full width. Measured on the printed PDF: **6.12in on the model and
+blank rows against 5.19in on the three trace rows — a 0.92in step, three times down one page.**
+It reads as a rendering fault rather than a layout. Every row in a left-handed sheet now reserves
+the column, empty where there is no model, and all four PDFs measured (`handwriting` L2 and L7,
+`letter-tracing` L5, `sight-word-tracing` L3) come back with every ruled line ending within 1px of
+the same x.
+
+*A level-7 sheet reserves nothing.* Its trace rows are blank lines, so no model is ever drawn, and
+a gutter there would give up 14% of every line for a column that stays empty. Whether the sheet
+has the column is therefore decided once in `genSheetNode()` from the chosen level, not per row.
+Verified across levels 1, 2, 3, 5 and 7 with the setting on and off: gutters and models appear on
+1/2/3/5, neither appears on 7, and the line right-edges are uniform in all ten states.
+
+**The PNG deliberately does not carry it.** `genWordPNG` renders one word on a 1600x460 canvas —
+there is no row and no ruled line for a model to sit beside, and a second copy of the word inside
+a one-word image is a duplicate rather than an aid. `wordPNG`, the name tool's own export, has
+never carried it either, so the two stay consistent.
+
+**Not fixed:** with the setting on, the live preview's sheet grows from 229 to 394 CSS px, because
+`.pt-paper` centres a shrink-to-fit sheet and the flex row's max-content width now includes the
+aside. The printed sheet is unaffected. Making the preview's width independent of its content is
+R-017's subject, not this entry's.
+
+**What should have caught it, and why nothing did.** The dead half of the CSS selector is the one
+mechanically visible symptom, and `audit-css.js` cannot see it by design: it resolves class
+*names* against the JS as well as the HTML, precisely so JS-driven CSS is not called dead, and
+`pt-lefty-model` genuinely is used — by `nameRow()`. What was dead is the *combination*
+`.pt-gen-row .pt-lefty-model`, whose two halves both exist and never co-occurred. Catching that
+needs every page rendered in every control state, which is not a static check and would be noisy
+enough to be ignored. Three entries now share the shape — R-014 (ink saver changed the PDF and
+nothing on screen), R-019 (chips with their explanation hidden), R-021 — and all three were found
+by driving the control in a browser and looking at what changed. That, not a gate, is the
+instrument for this class.
 
 ---
 
