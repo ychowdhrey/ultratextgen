@@ -746,6 +746,10 @@
      Glyph builders (SVG for outline mode, text for glyph mode)
      --------------------------------------------------------------- */
 
+  /* The set a tiled sheet shares a baseline across. Digits are in it because
+     the alphabet books print 0-9 alongside A-Z on the same grid. */
+  const TILE_BASELINE_SET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
   // A single character as a rounded, traceable SVG outline (outline mode).
   function outlineSVG(ch, opts) {
     const o = opts || {};
@@ -755,10 +759,37 @@
     svg.setAttribute("role", "img");
     svg.setAttribute("aria-label", NOUN + " " + charLabel(ch));
     const text = document.createElementNS(SVGNS, "text");
-    text.setAttribute("x", "100");
-    text.setAttribute("y", "128");
+    /* Place the letter by its visible INK, not by the font's em box.
+
+       x=100 / y=128 / dominant-baseline=central centred two things that are
+       not the letter: the advance width (which carries asymmetric side
+       bearings) and the ascent-to-descent box (which reserves descender space
+       a capital never uses). Measured across three tools, every capital sat
+       13.0-15.3 units below the tile centre with the top gap about twice the
+       bottom, "E" landed 3.5-4.5 units right of centre and "Q" 6.7, and
+       "g", "p" and "Q" bottomed out at y=239.7 in a 240-unit box -- 0.3 units
+       from the edge. Audit 2026-09-17, R-005.
+
+       `o.small` is the tiled sheet, where every cell must share one baseline
+       or the grid visibly jitters; a single big letter centres on its own ink.
+       Without glyphMetrics the old attributes stand, so a page serving a
+       cached script degrades to the previous rendering rather than to nothing. */
+    const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
+    const TILE = { w: 200, h: 240 };
+    let place = null;
+    if (GM) {
+      place = GM.centreOffsets(ch, FONT, 210, TILE, 700,
+        o.small ? { shareBaselineWith: TILE_BASELINE_SET } : null);
+    }
+    if (place && place.ink) {
+      text.setAttribute("x", String(+(100 + place.dx).toFixed(2)));
+      text.setAttribute("y", String(+place.baselineY.toFixed(2)));
+    } else {
+      text.setAttribute("x", "100");
+      text.setAttribute("y", "128");
+      text.setAttribute("dominant-baseline", "central");
+    }
     text.setAttribute("text-anchor", "middle");
-    text.setAttribute("dominant-baseline", "central");
     text.setAttribute("font-family", FONT);
     text.setAttribute("font-weight", "700");
     text.setAttribute("font-size", "210");
@@ -778,12 +809,35 @@
     text.setAttribute("stroke-width", String(Math.max(4, STROKE * strokeScale)));
     text.setAttribute("stroke-linejoin", "round");
     text.setAttribute("paint-order", "stroke");
-    const skew = skewTransform(o.skew != null ? o.skew : CFG.skew, 128);
+    const skew = skewTransform(o.skew != null ? o.skew : CFG.skew, 120);
     if (skew) text.setAttribute("transform", skew);
     text.textContent = ch;
     svg.appendChild(text);
     if (o.overlay) addStrokeOverlay(svg, ch);
     return svg;
+  }
+
+  /* Re-place every tile already in the DOM from freshly measured metrics.
+     Used once, after the real face loads; see the note in init(). Reads the
+     same recipe outlineSVG() writes, so the two cannot disagree about where a
+     letter belongs. */
+  function reflowGlyphTiles() {
+    const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
+    if (!GM) return;
+    const TILE = { w: 200, h: 240 };
+    document.querySelectorAll("svg.bubble-outline").forEach((svg) => {
+      const t = svg.querySelector("text");
+      if (!t) return;
+      const ch = t.textContent;
+      if (!ch) return;
+      const small = /is-small/.test(svg.getAttribute("class") || "");
+      const place = GM.centreOffsets(ch, FONT, 210, TILE, 700,
+        small ? { shareBaselineWith: TILE_BASELINE_SET } : null);
+      if (!place || !place.ink) return;
+      t.setAttribute("x", String(+(100 + place.dx).toFixed(2)));
+      t.setAttribute("y", String(+place.baselineY.toFixed(2)));
+      t.removeAttribute("dominant-baseline");
+    });
   }
 
   // A whole word as one rounded outline SVG (used by the name worksheet in
@@ -796,7 +850,34 @@
     const chars = [...String(word)];
     const fontSize = 150;
     const spacing = fontSize * (o.spacing != null ? o.spacing : LETTER_SPACING);
-    const w = Math.max(200, chars.length * 118 + 80 + Math.max(0, chars.length - 1) * spacing);
+    /* Size the box from the text, not from a per-character constant.
+
+       `chars.length * 118 + 80` reserved 118 units for every character
+       whatever it was. "W" and "M" are wider than that, so the text ran
+       outside the viewBox and an SVG root clips by default: "WMWMWM" spanned
+       -43 to 831 in a 788-unit box on block-letters, losing 43 units off both
+       ends, and the same string clipped on bubble-letters and name-tracing.
+       The same constant over-reserved in the other direction -- a fifth of the
+       sheet width was padding on "Christopher". Audit 2026-09-17, R-006.
+
+       Measuring the INK rather than the advance matters here: a tail like "Q"
+       and an italic skew both put ink outside the advance, which is exactly
+       the case a width estimate cannot see. PAD keeps the old breathing room
+       around the word. */
+    const GMW = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
+    const font = o.font || FONT;
+    const PAD = 80;
+    let w;
+    const im = GMW ? GMW.ink(String(word), font, fontSize, 700) : null;
+    if (im) {
+      const track = Math.max(0, chars.length - 1) * spacing;
+      /* Ink can start left of the origin and end right of the advance; take
+         whichever of ink and advance is wider so neither case clips. */
+      const inkW = Math.max(im.right, im.advance) - Math.min(0, im.left);
+      w = Math.max(200, Math.ceil(inkW + track + PAD));
+    } else {
+      w = Math.max(200, chars.length * 118 + PAD + Math.max(0, chars.length - 1) * spacing);
+    }
     const svg = document.createElementNS(SVGNS, "svg");
     svg.setAttribute("viewBox", "0 0 " + w + " 200");
     svg.setAttribute("class", "pt-word-outline");
@@ -1119,7 +1200,7 @@
     if (fontFallbackReported || !fam) return;
     if (!document.fonts || !document.fonts.check) return;
     let loaded = true;
-    try { loaded = document.fonts.check("700 200px " + fam); } catch (err) { return; }
+    try { loaded = document.fonts.check('700 200px "' + fam + '"'); } catch (err) { return; }
     if (loaded) return;
     reportFontFallback(fam, "not_loaded");
   }
@@ -1161,11 +1242,24 @@
     reportFontFallback(fam, "no_coverage");
   }
 
+  /* The family is QUOTED. An unquoted family name is only valid CSS when every
+     part is an identifier, and "Baloo 2" is not one: a bare word may not start
+     with a digit. document.fonts.load("700 200px Baloo 2") therefore throws a
+     SyntaxError, the .catch below fires immediately, and the callback runs as
+     if the face had loaded when nothing had even been requested.
+
+     That was silent because both callers treat it as best-effort: the fallback
+     telemetry below simply recorded nothing, and once glyphMetrics started
+     measuring here it re-measured the FALLBACK face and cached that. Measured
+     on alphabet-coloring-pages/letter-a, whose face is Baloo 2 -- ink top read
+     -145 against the real -129, placing every tile 9 units low. Quicksand and
+     Fredoka pages were unaffected, which is why it survived: a single-word
+     family name quotes identically either way. */
   function withFont(cb, famOverride) {
     const fam = famOverride || primaryFontName();
     if (fam && document.fonts && document.fonts.load) {
       const done = () => { noteFontAvailability(fam); cb(); };
-      document.fonts.load("700 200px " + fam).then(done).catch(done);
+      document.fonts.load('700 200px "' + fam + '"').then(done).catch(done);
     } else {
       cb();
     }
@@ -4368,12 +4462,26 @@
      here so the rest of the designer never has to know which it is: two
      fields labelled "Name or word" and "Second line" were two answers to one
      question, which is the repetition this field set was collapsed to remove. */
+  /* DESIGN_MAX is the length the sheet is DESIGNED around, not a content
+     limit, and slicing to it here threw text away twice over. The field
+     accepts DESIGN_MAX*2+1 characters (two lines plus a newline), so a
+     26-character single line was legal input that rendered as 14 characters
+     with no ellipsis, no warning and no layout cue -- 12 characters gone.
+     It also silently disarmed the budget counter above, which reads its
+     "used" number from this function and therefore could never display a
+     figure above DESIGN_MAX however much was typed.
+
+     The hard cap that remains is a sanity bound on pathological paste, far
+     above anything the sheet lays out; overflow past DESIGN_MAX is handled
+     where it belongs, by wrapping to the second line and then by measured
+     compression. Audit 2026-09-17, R-003. */
+  const DESIGN_HARD_MAX = DESIGN_MAX * 4;
   function designLines() {
     const raw = el.designInput ? el.designInput.value : "";
     const parts = (el.designInput && el.designInput.tagName === "TEXTAREA")
       ? String(raw).split(/\r?\n/)
       : [raw, el.designInput2 ? el.designInput2.value : ""];
-    return parts.map((x) => String(x || "").trim().slice(0, DESIGN_MAX)).filter(Boolean).slice(0, 2);
+    return parts.map((x) => String(x || "").trim().slice(0, DESIGN_HARD_MAX)).filter(Boolean).slice(0, 2);
   }
   function designText() {
     const lines = designLines();
@@ -4450,18 +4558,49 @@
   // fill (fill="url(#pattern)") so it paints only inside the letters —
   // no clipPath needed (text-as-clip is unreliable across renderers).
   // Each little shape is a region a child colors -> multi-color / fine-motor.
-  function addFillPattern(defs, kind, uid) {
+  /* `anchor` is the artwork's own ink centre {cx, cy}, and `scale` sizes the
+     motif against the type rather than against nothing.
+
+     Both arguments are the fix for R-004 (audit 2026-09-17). patternUnits
+     "userSpaceOnUse" with no transform ties the tile lattice to (0,0) of the
+     1000x1400 sheet, so the decoration a letter received was decided by where
+     that letter happened to land: the identical letter "A" took tile phase
+     4.6 / 33.2 / 13.8 / 0.2 as the word grew from one A to four, the two A's
+     in "AA" were decorated differently from each other, and hearts were cut at
+     whatever point the glyph edge crossed a lattice line.
+
+     Translating the lattice so a motif centre lands on the artwork's ink
+     centre makes the decoration symmetric about the letters and stable for a
+     given input. One <text> node shares one pattern, so per-letter alignment
+     would mean one node per letter — which loses kerning and the textLength
+     compression, and is not worth it; centring the set is the proportionate
+     fix. Scaling with the type is what stops a 360px letter and a 104px letter
+     getting the same 48-unit motif. */
+  function addFillPattern(defs, kind, uid, anchor, scale) {
     const isStripe = kind === "stripes";
+    const k = Math.max(0.55, Math.min(1.6, scale || 1));
+    const base = isStripe ? 30 : 48;
+    const T = Math.round(base * k);
+    const half = T / 2;
+    /* Put a motif centre on the anchor: the lattice origin goes half a tile
+       before it. Without an anchor this is a no-op and the old page-origin
+       behaviour stands, so a caller that cannot measure degrades rather than
+       breaks. */
+    let xf = "";
+    if (anchor && isFinite(anchor.cx) && isFinite(anchor.cy)) {
+      xf = "translate(" + (anchor.cx - half).toFixed(2) + " " + (anchor.cy - half).toFixed(2) + ")";
+    }
+    if (isStripe) xf = (xf ? xf + " " : "") + "rotate(45)";
     const pat = svgMake("pattern", {
       id: "ptpat" + uid, patternUnits: "userSpaceOnUse",
-      width: isStripe ? 30 : 48, height: isStripe ? 30 : 48,
-      patternTransform: isStripe ? "rotate(45)" : ""
+      width: T, height: T, patternTransform: xf
     }, defs);
-    const col = "#9aa3b2", sw = 3;
-    if (kind === "dots") svgMake("circle", { cx: 24, cy: 24, r: 12, fill: "none", stroke: col, "stroke-width": sw }, pat);
-    else if (kind === "stripes") svgMake("line", { x1: 15, y1: 0, x2: 15, y2: 30, stroke: col, "stroke-width": 6 }, pat);
-    else if (kind === "hearts") svgMake("path", { d: heartPath(24, 24, 13), fill: "none", stroke: col, "stroke-width": sw }, pat);
-    else if (kind === "stars") svgMake("path", { d: starPath(24, 25, 15, 7, 5), fill: "none", stroke: col, "stroke-width": sw }, pat);
+    const col = "#9aa3b2", sw = Math.max(2, 3 * k);
+    const c = half;
+    if (kind === "dots") svgMake("circle", { cx: c, cy: c, r: 12 * k, fill: "none", stroke: col, "stroke-width": sw }, pat);
+    else if (kind === "stripes") svgMake("line", { x1: c, y1: 0, x2: c, y2: T, stroke: col, "stroke-width": 6 * k }, pat);
+    else if (kind === "hearts") svgMake("path", { d: heartPath(c, c, 13 * k), fill: "none", stroke: col, "stroke-width": sw }, pat);
+    else if (kind === "stars") svgMake("path", { d: starPath(c, c + k, 15 * k, 7 * k, 5), fill: "none", stroke: col, "stroke-width": sw }, pat);
     return "url(#ptpat" + uid + ")";
   }
 
@@ -5285,11 +5424,17 @@
      and a visitor who typed their own second line is never overridden. The
      break prefers a space, so "Anna Marie" splits where a person would. */
   const DOT_WRAP_MIN = 6;
-  function dotAutoLines(text, lines) {
+  function dotAutoLines(text, lines) { return autoWrapLines(text, lines, DOT_WRAP_MIN); }
+
+  /* Split one over-long line across the sheet's two bands, at a space when
+     there is a usable one and mid-string when there is not. Shared by the
+     dot-to-dot band and the outline band so the two cannot disagree about
+     where a name breaks. */
+  function autoWrapLines(text, lines, minLen) {
     if (lines.length !== 1) return lines;
     const str = String(text);
     const chars = [...str];
-    if (chars.length < DOT_WRAP_MIN) return lines;
+    if (chars.length < minLen) return lines;
     const sp = str.lastIndexOf(" ", Math.ceil(str.length / 2) + 2);
     const cut = sp > 0 && sp < str.length - 1 ? sp : Math.ceil(chars.length / 2);
     const a = chars.slice(0, cut).join("").trim();
@@ -5667,32 +5812,89 @@
       // Interior: plain white (open to color), or a tiled pattern painted as
       // the glyph fill. Plain keeps stroke under fill (thin clean edge); a
       // pattern draws stroke on top so the letter boundary stays crisp.
-      const fillRef = (fill !== "plain") ? addFillPattern(defs, fill, uid) : "#ffffff";
       const cy = heading ? 740 : 700;
-      const maxLen = Math.max(1, ...lines.map((s) => [...s].length));
-      // Two lines get a tighter size cap so both fit the central band.
-      const fs = lines.length === 2
-        ? Math.max(90, Math.min(230, Math.round(availW * 1.3 / maxLen)))
-        : Math.max(110, Math.min(360, Math.round(availW * 1.3 / maxLen)));
-      const addOutlineLine = (str, y) => {
+      /* A single line longer than the band is designed for goes to the second
+         band rather than off the end of the string. */
+      lines = autoWrapLines(text, lines, DESIGN_MAX + 1);
+      /* Size the type by measuring it, not by a character count.
+
+         `availW * 1.3 / maxLen` assumed every glyph is the same width and then
+         clamped into a three-step ladder -- 360 for one or two characters, 280
+         for four, 110 for eleven -- so "Emma" printed at 280 and "Christopher"
+         at 110, a 2.5x cliff with nothing in between, and a single "I" covered
+         4.4% of the sheet. sheetTextWidth() is the same hidden-canvas probe the
+         heading above already trusts, and width scales linearly with size, so
+         one measurement gives the exact fit. Audit 2026-09-17, R-013. */
+      const cap = lines.length === 2 ? 230 : 360;
+      const floor = lines.length === 2 ? 90 : 110;
+      const bandH = lines.length === 2 ? 260 : 470;
+      const fit = (str) => {
+        const probe = 100;
+        const w = sheetTextWidth(str, 700, probe);
+        return w > 0 ? (availW / w) * probe : cap;
+      };
+      const fs = Math.max(floor, Math.min(cap, Math.min(bandH,
+        Math.floor(Math.min.apply(null, lines.map(fit))))));
+      /* Place the type by its INK rather than by its em box, and work out
+         where that ink lands BEFORE building the pattern, so the pattern can
+         be anchored to it (R-004) rather than to the corner of the page.
+
+         dominant-baseline="central" centres the font's ascent-to-descent box,
+         which reserves descender space a word like "Emma" never uses, so the
+         artwork sat low in its band. glyphMetrics measures the real thing;
+         where it is unavailable the old attribute is kept, so an uncached page
+         degrades to the previous rendering instead of to nothing. */
+      const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
+      const rows = lines.length === 2 ? lines : [text];
+      const yOf = (i) => rows.length === 2 ? (cy + (i === 0 ? -fs * 0.68 : fs * 0.68)) : cy;
+
+      let anchor = null;
+      const placed = rows.map((str, i) => {
+        const bandCentre = yOf(i);
+        if (!GM) return { str: str, x: W / 2, y: bandCentre, central: true };
+        const m = GM.ink(str, FONT, fs, 700);
+        if (!m) return { str: str, x: W / 2, y: bandCentre, central: true };
+        /* centreOffsets wants a box; the band here is a point, so centre the
+           ink on that point directly. */
+        const baselineY = bandCentre - (m.top + m.bottom) / 2;
+        const dx = -((m.left + m.right) / 2 - m.advance / 2);
+        return { str: str, x: W / 2 + dx, y: baselineY, central: false, m: m, bandCentre: bandCentre };
+      });
+      if (GM && placed.every((p) => !p.central)) {
+        let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+        placed.forEach((p) => {
+          x0 = Math.min(x0, p.x + p.m.left - p.m.advance / 2);
+          x1 = Math.max(x1, p.x + p.m.right - p.m.advance / 2);
+          y0 = Math.min(y0, p.y + p.m.top);
+          y1 = Math.max(y1, p.y + p.m.bottom);
+        });
+        anchor = { cx: (x0 + x1) / 2, cy: (y0 + y1) / 2 };
+      }
+      const fillRef = (fill !== "plain")
+        ? addFillPattern(defs, fill, uid, anchor, fs / 280)
+        : "#ffffff";
+
+      placed.forEach((p) => {
         const fontAttrs = {
-          x: W / 2, y: y, "text-anchor": "middle", "dominant-baseline": "central",
+          x: p.x, y: p.y, "text-anchor": "middle",
           "font-family": FONT, "font-weight": 700, "font-size": fs, "stroke-linejoin": "round"
         };
+        if (p.central) fontAttrs["dominant-baseline"] = "central";
         // Guarantee the word fits the width; only compress when it would overflow.
-        if ([...str].length * fs * 0.66 > availW) { fontAttrs.textLength = availW; fontAttrs.lengthAdjust = "spacingAndGlyphs"; }
+        const wide = p.m ? p.m.advance > availW : ([...p.str].length * fs * 0.66 > availW);
+        if (wide) { fontAttrs.textLength = availW; fontAttrs.lengthAdjust = "spacingAndGlyphs"; }
+        /* paint-order:stroke keeps the outline under the fill so only its outer
+           half shows — a thin, clean edge. It used to be dropped for patterned
+           fills, which made the same letter's outline visibly heavier the
+           moment a pattern was chosen. The pattern is strokes on transparency,
+           so there is nothing for the outline to hide behind and no reason to
+           treat the two cases differently. */
         const outline = svgMake("text", Object.assign({}, fontAttrs, {
           fill: fillRef, stroke: INK, "stroke-width": Math.max(4, STROKE),
-          "paint-order": (fill === "plain") ? "stroke" : ""
+          "paint-order": "stroke"
         }), svg);
-        outline.textContent = str;
-      };
-      if (lines.length === 2) {
-        addOutlineLine(lines[0], cy - fs * 0.68);
-        addOutlineLine(lines[1], cy + fs * 0.68);
-      } else {
-        addOutlineLine(text, cy);
-      }
+        outline.textContent = p.str;
+      });
     }
 
     if (footer) addFooter(svg, H - 150);
@@ -6750,6 +6952,44 @@
     convertPrintButtonsToPdf();
     wireGenerateEvents();
     applyPresetState();
+
+    /* Canvas measureText does NOT trigger webfont loading.
+
+       glyphMetrics places every letter from the face's real ink extents, and
+       on first paint that face has usually not arrived: the SVG text in the
+       DOM starts the download, but the canvas probe answers immediately from
+       whatever is already available, which is the fallback. The letter is then
+       positioned with the wrong font's metrics and stays there.
+
+       Measured on alphabet-coloring-pages/letter-q, whose face is Fredoka: the
+       tile was placed for a baseline of 174 and rendered its ink 22 units off,
+       because the numbers behind that 174 were Plus Jakarta Sans's. Every
+       cap-height letter looked fine, which is what makes this worth a comment
+       -- only a glyph whose descender differs between the two faces shows it.
+
+       withFont() already asks for the face explicitly (it exists for the
+       fallback telemetry below). Once it resolves, drop the cache and redraw:
+       the second measurement is the real one. Cheap, because every render
+       function here is already idempotent and re-run on each input change. */
+    const GMI = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
+    if (GMI) {
+      withFont(() => {
+        GMI.reset();
+        /* Tiles are re-placed in the DOM rather than rebuilt. The single-letter
+           figure is assembled inside selectChar(), which also moves scroll and
+           history, so calling it again to fix a coordinate would be the wrong
+           tool. Every tile is the same 200x240 recipe whatever built it, so
+           recomputing x/y covers all of them at once. */
+        reflowGlyphTiles();
+        /* The word surfaces do need a rebuild: their viewBox width is measured
+           too, so a re-measure changes the box and not just the text inside it. */
+        [renderNamePreview, renderGenPreview, renderDesignPreview,
+         renderBannerPreview, renderPuzzlePreview].forEach((fn) => {
+          if (typeof fn === "function") { try { fn(); } catch (e) { /* surface absent on this page */ } }
+        });
+      });
+    }
+
     /* Glyph-mode pages draw a Unicode math alphanumeric, so their letterform
        is whatever the OS substitutes; the family-name check can never see it.
        Once after the declared faces have settled, measure whether the family
