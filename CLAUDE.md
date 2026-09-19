@@ -3134,6 +3134,92 @@ becoming visible to a client that runs no JavaScript, on pages where 195 of the
 
 ---
 
+## Two pages, one tool — the duplication nobody could see (added 2026-09-17)
+
+`printablesEngine.js` mounts a surface whenever the page happens to carry the
+right element id, and every surface reads the same `window.UTG_PRINTABLE` block.
+That makes "page B should have the tool page A has" a one-line change, and on
+2026-09-13 it was one: `458b62584` gave `/printables/alphabet-coloring-pages/` a
+type-a-name coloring tool because block-letters had one. But
+`/printables/coloring-page-maker/` already owned that job by its own title,
+*"Coloring Page Maker: Print a Name Coloring Page Free"*. Two of our own URLs
+targeting one query, which is the Hub-vs-Spoke Rule 3 cannibalisation this file
+already documents, arriving through a mechanism nothing was watching.
+
+**Every gate was right to pass it**, for the same reason as the collection-grid
+and numeric-parity cases: none of them measures *which pages mount the same
+tool*. Parity reads links and section counts; the locale gate reads strings; the
+image gates read assets; the accessibility gate reads markup that rendered. A
+duplicated tool moves none of those. The tool arrived, the de-confliction step
+did not, and the hub went on targeting the spoke's term.
+
+### The signature is `(locale, noun, render, font)`, and it was measured
+
+`noun` is what the sheet *is*, in the page's own words, and the engine already
+uses it in aria-labels and PNG filenames: `coloring page`, `dot-to-dot`,
+`puzzle piece`. It is localized per page (`Ausmalbild`, `kolorowanka`), so
+grouping by locale plus noun works across all seven printables languages with
+nothing translated in the checker.
+
+Against the tree as it stood before the repair this reports **5 collisions and
+zero false positives**, and the discrimination is the point: `coloring-page-maker`,
+`dot-to-dot-name` and `name-puzzle-maker` all render a typed word in Baloo 2
+outline and are **not** flagged, because their nouns differ. Same typeface,
+three different products.
+
+Two coarser signatures were tried against the same corpus and rejected:
+
+| signature | result |
+|---|---|
+| mount id alone | **misses the real defect** — the pair mounts `name` on one page and `design` on the other |
+| `(render, font)` | flags the Baloo 2 trio above: 3 false positives |
+
+**The A–Z character picker (`#pt-strip`) is deliberately not a surface here.**
+Every alphabet page has one, they are not competing for one query, and including
+it would flag 54 pages that work as intended.
+
+### Tooling
+
+- **`npm run audit:tool-duplication`** — whole-site dashboard, `--full`,
+  `--locale`, `--json`. **Informational, never gating**: the site carries real
+  standing collisions (the seven "in cursive" one-word spokes share one surface
+  by design; the tracing family shares another) and a permanently-red check is
+  one people learn to ignore.
+- **`npm run check:tool-duplication`** — the **diff-scoped gate**, wired into
+  `.github/workflows/validate.yml`. **It measures the delta, not the state**,
+  the same call as `check-locale-translation.js` and for the same reason: a
+  collision *pair* counts only if it did not exist at the merge base.
+  Pre-existing pairs are reported, never silenced, and resolved ones are named.
+- **`data/printable_tool_duplication_exclusions.json`** — one discussed pair per
+  entry. Ships empty. Same bar as every other ledger here: never added
+  unilaterally, never to make a PR pass.
+- Both share **`scripts/lib/printable-tool-registry.js`**, so the audit and the
+  gate can never disagree about what the same tool is.
+
+**The fix is never to delete the older page.** It is Rule 3: whichever page owns
+the query keeps the tool, the other keeps a one-line pointer to it.
+
+### Two traps when probing this, both hit on the first attempt
+
+* **Re-injecting the real regression against `origin/main` exits 0, correctly** —
+  the pair is still live on main, so it reads as pre-existing. Replay it against
+  a base that does *not* carry it. This is the same "build the probe as a real
+  pair" lesson `check-locale-translation.js` records.
+* **`run-ci-gates.py` prefixes `origin/`**, so `--base HEAD` silently becomes
+  `origin/HEAD`. A break that is new relative to `origin/main` is what actually
+  exercises the gate there.
+
+Verified per this file's own rule against six differently-shaped inputs: the real
+2026-09-13 regression replayed (exit 1), a new page duplicating an existing tool
+(exit 1), a new **German** page colliding with two existing German pages (exit 1,
+so the rule is not EN-only), the same pair excused by the ledger (1 → 0), a
+genuine variant sharing font and renderer but not `noun` (exit 0), and a page
+edited without gaining a mount (exit 0), plus a clean-tree control. And verified
+that CI *gates* on it rather than merely running it: `run-ci-gates.py --only
+tool_duplication` returns 1 on a broken tree and 0 on a clean one.
+
+---
+
 ## The platform-preview modal was restored, not built (added 2026-09-10)
 
 `script.js` has carried `openPreview()`, `buildMockup()`, `updatePreview()`, a
@@ -4544,6 +4630,15 @@ Standing protocol:
   the superseded builder and now skips all 19 locale hubs; it is still gated on,
   but it is not the tool that fixes one. The static markup and the runtime markup
   come from the same code over the same source precisely so they cannot drift.
+- Do not give one page a printable tool another page in the same language already
+  owns. `printablesEngine.js` mounts a surface from an element id, so it is a
+  one-line change, and no other gate can see it: that is how the alphabet coloring
+  hub grew a name tool the Coloring Page Maker already owned. See "Two pages, one
+  tool" above. `npm run check:tool-duplication` gates every pair a PR introduces;
+  `npm run audit:tool-duplication` is the whole-site picture. The fix is Hub-vs-Spoke
+  Rule 3, never deleting the older page, and a genuinely intended pair goes in
+  `data/printable_tool_duplication_exclusions.json` with a reason, never to make a
+  PR pass.
 - Do not ship a page that renders a copy-paste collection grid without its
   pre-rendered block. All 898 such pages carry one; the section is the page's
   payload and a crawler that runs no JavaScript sees an empty container without

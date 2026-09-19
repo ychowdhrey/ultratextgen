@@ -689,13 +689,47 @@ def r_spoke_outline(page, fd):
     return sheet(svg_text(x, baseline, ch, fam, size, weight_for(fam), "#ffffff", INK, sw))
 
 
+def grid_cols(n):
+    """Columns for an n-character alphabet grid.
+
+    The historical rule is `7 if n <= 28 else 9`, and it is kept as the default
+    because it is what every committed grid was rendered with: 26 letters land
+    5/7 on the last row, 27 land 6/7, and 36 fill 9/9 exactly.
+
+    It breaks down on counts that leave the last row nearly empty. The Spanish
+    coloring alphabet is 37 (A-N, N-tilde, O-Z, 0-9) and the default puts ONE
+    glyph alone on a fifth row, which is a worse version of the ragged gap this
+    grid was fixed for in the first place.
+
+    So: keep the default unless it strands a last row under half full, and in
+    that case take the candidate with the fullest last row (ties going to the
+    fewest rows). For 37 that is 10 columns: 4 rows, last row 7/10.
+
+    Deliberately narrow. Measured against the 27 alphabet-grid landing pages on
+    the site, this returns the historical answer for every one of them, so no
+    existing preview changes. A general "minimise raggedness" rule would move
+    the six 26-character pages from 7 columns to 9 and rewrite art nobody asked
+    to change.
+    """
+    default = 7 if n <= 28 else 9
+    if n % default == 0 or n % default >= default / 2:
+        return default
+    best = default
+    for c in (8, 9, 10):
+        fill = n % c or c
+        best_fill = n % best or best
+        if (fill, -math.ceil(n / c)) > (best_fill, -math.ceil(n / best)):
+            best = c
+    return best
+
+
 def r_alphabet_grid(page, fd):
     fam = page["family"]
     met = metrics(fd, fam)
     chars = page["chars"] or list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
     if not page["chars"] and page["charset"] == "alnum":
         chars += list("0123456789")
-    cols = 7 if len(chars) <= 28 else 9
+    cols = grid_cols(len(chars))
     rows = math.ceil(len(chars) / cols)
     margin_x, top, bottom = 50, 40, 70
     cell_w = (W - 2 * margin_x) / cols
