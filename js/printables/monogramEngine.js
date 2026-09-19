@@ -38,7 +38,7 @@
      js/printables/printPrefs.js. Before 2026-09-16 this tool wrote a
      hardcoded 8.5x11in page with no way to ask for A4. */
   const PP = window.UltraTextGen && window.UltraTextGen.printPrefs;
-  const SL = PP ? PP.shareLabels() : { share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", savePdf: "Save as PDF" };
+  const SL = PP ? PP.shareLabels() : { share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", savePdf: "Download PDF" };
   const T = {
     noun:        pick(CFG.noun, "Monogram"),
     typeInitials:pick(CFG.typeInitials, "Type initials"),

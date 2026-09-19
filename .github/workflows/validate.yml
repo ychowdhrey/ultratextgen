@@ -303,6 +303,20 @@ jobs:
         continue-on-error: true
         run: npm run test:qr | tee qr-tests.log
 
+      # Gating, and no backlog to be red against: every counter either attaches
+      # or it does not. The bridge finder's one failure mode is silence — an
+      # empty array reads exactly like a letter that needed no bridge, on
+      # screen and on paper, and the person only finds out after cutting. So
+      # the test asserts the property rather than the output: cut the bridges
+      # out of the glyph and NOTHING may still be enclosed. That is what caught
+      # the real off-by-one, where a wall crossed leftwards or upwards kept its
+      # last ink pixel and sealed the counter shut while the bridge looked
+      # perfectly well placed.
+      - name: Run stencil bridge tests
+        id: stencil_tests
+        continue-on-error: true
+        run: npm run test:stencil | tee stencil-tests.log
+
       # Diff-scoped and gating. Fails a PR that corrects a number on one page of
       # an hreflang cluster and leaves a sibling asserting the old value — the
       # 2026-09-01 Unicode 18.0 case, where 13,047 -> 13,007 shipped in English
@@ -823,6 +837,7 @@ jobs:
             echo '```'
             echo ""
             echo "### QR encoder tests — \`${{ steps.qr_tests.outcome }}\`"
+            echo "### Stencil bridge tests — \`${{ steps.stencil_tests.outcome }}\`"
             echo '```'
             cat qr-tests.log
             echo '```'
@@ -1019,6 +1034,7 @@ jobs:
           steps.redirects.outcome == 'failure' ||
           steps.zalgo_engine_tests.outcome == 'failure' ||
           steps.qr_tests.outcome == 'failure' ||
+          steps.stencil_tests.outcome == 'failure' ||
           steps.numeric_parity.outcome == 'failure' ||
           steps.updates_verification.outcome == 'failure' ||
           steps.external_refs.outcome == 'failure' ||

@@ -126,11 +126,22 @@
       else if (PAPERS[saved.paper]) values.paper = saved.paper;
       if (saved.orient === "landscape" || saved.orient === "portrait") values.orient = saved.orient;
       if (MARGINS[saved.margin]) values.margin = saved.margin;
-      if (saved.ink === "saver" || saved.ink === "normal") values.ink = saved.ink;
+      if (saved.ink === "saver" || saved.ink === "normal" || saved.ink === "contrast") values.ink = saved.ink;
+      /* One localStorage key serves every page, so a visitor who turns high
+         contrast on in English and then opens a locale page would carry a mode
+         with no control to see or clear it. Cleared HERE rather than when the
+         panel is built, because the paper preview is painted first: resetting
+         later left the German caption reading "High contrast" over a sheet
+         that was not. */
+      if (values.ink === "contrast" && !docIsEnglish()) values.ink = "normal";
       if (SCALES[saved.quality]) values.quality = saved.quality;
     }
   } catch (err) { /* private mode or corrupt value: defaults apply */ }
 
+  function docIsEnglish() {
+    const el = document.documentElement;
+    return ((el && el.getAttribute("lang")) || "en").slice(0, 2).toLowerCase() === "en";
+  }
   function save() {
     try { localStorage.setItem(KEY, JSON.stringify(values)); } catch (err) { /* optional */ }
   }
@@ -178,15 +189,21 @@
      panel above an English share row. It also keeps EN's "Pin on Pinterest"
      (chosen 2026-09-15, because "Save to" collided with the Save buttons)
      from drifting back to "Save to Pinterest" on the two standalone tools. */
+  /* savePdf here and PO.savePdf in printablesEngine.js are two tables for one
+     label. Both read "Download PDF" (2026-09-17): "Save as PDF" sat beside
+     "Download PNG", two verbs for one kind of action. Each locale's string is
+     derived from that locale's own downloadPng, not translated. Change one and
+     you must change the other, or the monogram and cross-stitch tools drift
+     from the 297 sheet pages. */
   const SHARE_I18N = {
-    en:  { share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", savePdf: "Save as PDF" },
-    fr:  { share: "Partager", shareImage: "Partager en image", copyLink: "Copier le lien", linkCopied: "Lien copié", pinterest: "Épingler sur Pinterest", savePdf: "Enregistrer en PDF" },
-    es:  { share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", savePdf: "Guardar como PDF" },
-    pt:  { share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", savePdf: "Salvar como PDF" },
-    it:  { share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", savePdf: "Salva come PDF" },
-    pl:  { share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", savePdf: "Zapisz jako PDF" },
-    de:  { share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", savePdf: "Als PDF speichern" },
-    id:  { share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", savePdf: "Simpan sebagai PDF" },
+    en:  { share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", savePdf: "Download PDF" },
+    fr:  { share: "Partager", shareImage: "Partager en image", copyLink: "Copier le lien", linkCopied: "Lien copié", pinterest: "Épingler sur Pinterest", savePdf: "Télécharger le PDF" },
+    es:  { share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", savePdf: "Descargar PDF" },
+    pt:  { share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", savePdf: "Baixar PDF" },
+    it:  { share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", savePdf: "Scarica PDF" },
+    pl:  { share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", savePdf: "Pobierz PDF" },
+    de:  { share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", savePdf: "PDF herunterladen" },
+    id:  { share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", savePdf: "Unduh PDF" },
   };
   function shareLabels() {
     const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
@@ -295,9 +312,41 @@
         { key: "normal", label: L.normal || "Normal" },
         { key: "narrow", label: L.narrow || "Narrow" }
       ], values.margin, (k) => { values.margin = k; changed(); }));
-      if (wants("ink")) details.appendChild(checkRow(L.inkSaver || "Ink saver (lighter lines)",
-        values.ink === "saver",
-        (on) => { values.ink = on ? "saver" : "normal"; changed(); }, "pt-print-ink"));
+      if (wants("ink")) {
+        const saverRow = checkRow(L.inkSaver || "Ink saver (lighter lines)",
+          values.ink === "saver",
+          (on) => {
+            values.ink = on ? "saver" : "normal";
+            const other = details.querySelector(".pt-print-contrast input");
+            if (on && other) other.checked = false;
+            changed();
+          }, "pt-print-ink");
+        details.appendChild(saverRow);
+        /* PR-13 -- the photocopy case is the OPPOSITE of the ink saver, and it
+           had no control at all: `ink` was a two-value enum where both values
+           are "normal or lighter". A classroom copier drops the faint dotted
+           guides these sheets are built from, so the sheet that reaches thirty
+           children is the one this setting renders.
+
+           ENGLISH ONLY, and not for want of trying. Unlike "300 DPI" above
+           there is no numeral or international unit that says this, and unlike
+           every other label on this panel there is no already-shipped string
+           to reuse: neither printablesEngine's I18N table nor locales/*.json
+           carries a word for contrast or for photocopying in any of the eight.
+           Eight invented strings is not something this repo does, so the seven
+           other locales keep the panel they have until a native reading or
+           corpus evidence exists. Per the owner's decision of 2026-09-17. */
+        if (docIsEnglish()) {
+          details.appendChild(checkRow("High contrast (for photocopying)",
+            values.ink === "contrast",
+            (on) => {
+              values.ink = on ? "contrast" : "normal";
+              const other = details.querySelector(".pt-print-ink input");
+              if (on && other) other.checked = false;
+              changed();
+            }, "pt-print-contrast"));
+        }
+      }
       /* Deliberately labelled with a numeral and an international unit rather
          than a translated phrase. There is no word for "quality" attested
          anywhere on this site in any of the eight languages these pages ship

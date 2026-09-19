@@ -938,7 +938,48 @@
     return "ultratextgen.com" + (path || "");
   }
 
+  /* Print isolation, shared by every surface that prints a sheet.
+
+     style.css hides the page during printing with
+     `body.is-printing > *:not(#pt-print-root)...`, which covers only DIRECT
+     children of <body> and, being a stylesheet rule, LOSES to an inline
+     `!important` -- which is how a bottom-anchored ad unit styles itself.
+     Measured in Chromium: an in-content ad is hidden correctly, while a body
+     child carrying inline `display:block !important` renders at 1280x90 and a
+     node appended to <html> at 1280x60, both landing in the printed sheet.
+     CSS cannot win that cascade, so the hide is inline, at the same priority,
+     and unwound when the dialog closes.
+
+     It lives in header.js because header.js loads on every page: the five
+     print surfaces (printables, cursive, kana, huruf and the dead
+     bubbleExplorer) would otherwise each carry their own copy, and a second
+     copy of this logic would drift from the first -- the failure CLAUDE.md
+     documents repeatedly. Callers pass the element to KEEP visible. */
+  var printHidden = [];
+  function hideForPrint(keep) {
+    printHidden = [];
+    function hide(node) {
+      if (!node || node === keep) return;
+      if (keep && node.contains && node.contains(keep)) return;
+      var tag = node.tagName;
+      if (tag === "HEAD" || tag === "SCRIPT" || tag === "STYLE" || tag === "LINK" || tag === "TITLE" || tag === "META") return;
+      printHidden.push([node, node.style.getPropertyValue("display"), node.style.getPropertyPriority("display")]);
+      node.style.setProperty("display", "none", "important");
+    }
+    Array.prototype.forEach.call(document.body.children, hide);
+    Array.prototype.forEach.call(document.documentElement.children, hide);
+  }
+  function restorePrint() {
+    printHidden.forEach(function (row) {
+      if (row[1]) row[0].style.setProperty("display", row[1], row[2]);
+      else row[0].style.removeProperty("display");
+    });
+    printHidden = [];
+  }
+
   var ns = (window.UltraTextGen = window.UltraTextGen || {});
+  ns.hideForPrint = hideForPrint;
+  ns.restorePrint = restorePrint;
   ns.copyIdentity = copyIdentity;
   ns.trackCopy = trackCopy;
   ns.trackPrintable = trackPrintable;
