@@ -187,6 +187,15 @@ that raster. Open it and read the panel, or drive it headlessly and read
        "a stem's route is one column, not its two contour edges",
        "spread " + (Math.max.apply(null, lx) - Math.min.apply(null, lx)).toFixed(2));
 
+    /* G-22: and that column is down the MIDDLE of the stem. On the contour it
+       sat at 0% and 100% of the stem width; a centreline has to sit near 50%,
+       which is what a child is being asked to follow. */
+    const li = gm.ink("l", F, SIZE, 700);
+    const lLeft = CX - li.advance / 2 + li.left;
+    const lPos = 100 * ((lx[0] - lLeft) / li.width);
+    ok(lPos > 33 && lPos < 67, "that column sits in the middle third of the stem",
+       "at " + lPos.toFixed(0) + "% of the stem width");
+
     finish();
   }
 
