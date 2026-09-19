@@ -4870,6 +4870,21 @@ button.clear-decoration {
 /* Ink saver prints lighter lines (body.pt-ink-saver in the print CSS below);
    showing that here is the difference between a checkbox and a preview. */
 .pt-paper.is-ink-saver .pt-paper-sheet { opacity: 0.62; }
+
+/* Ink saver on the big previews, not only on the paper thumbnail and the
+   export. 0.72 is the print path's own number (see the body.is-printing rules
+   near the end of this file), so what the screen dims by is what the page
+   dims by — the setting used to change the PDF and nothing on screen, which
+   is indistinguishable from a setting that does nothing. Audit 2026-09-17,
+   R-014. */
+/* Keyed on the class the engine toggles rather than on each container's own
+   class: #pt-gen-preview is a .pt-paper, #pt-name-preview is a
+   .pt-name-preview, and a selector naming the container would silently miss
+   whichever one gets renamed next. */
+.is-ink-saver .pt-design-sheet-svg,
+.is-ink-saver .pt-trace-svg,
+.is-ink-saver .pt-word-outline,
+.is-ink-saver .pt-puzzle-sheet { opacity: 0.72; }
 .pt-paper-caption {
   margin: 0;
   font-size: 0.8rem;
@@ -6773,6 +6788,50 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
   overflow: hidden;
 }
 .pt-name-preview .pt-word-outline { max-height: 120px; }
+
+/* On a phone the preview is width-bound, and a long name is inherently a wide
+   short strip: "Christopher" has a 4.6:1 viewBox, so a 300px container renders
+   it 65px tall and a 65px strip cannot show whether the sheet is right, on the
+   device most likely to be used. Audit 2026-09-17, R-016.
+
+   The fix sizes the letter by HEIGHT and lets the box scroll sideways. An
+   <svg> always draws its content uniformly, at min(sx, sy), so the element
+   being wider than its viewBox ratio was never the defect -- the defect was
+   that sy was the smaller of the two and the width set the scale. Sizing by
+   height makes sy the binding one, which is what actually enlarges the
+   letter: 0.324 to 0.55, 65px of ink to 104px.
+
+   Worth knowing before editing this: a taller element ALONE changes nothing.
+   Two attempts produced a 300x110 box with the letter still at 0.324 inside
+   it, because a flex item shrinks to fit even after max-content has sized it.
+   Measure the ink, not the box. Audit 2026-09-17, R-016. */
+@media (max-width: 640px) {
+  .pt-name-preview {
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* `safe` is the whole point: plain centring puts the overflow of a long
+       name half off each end, and the left half of a scroll container is
+       unreachable, so "Christopher" would lose its C permanently. `safe center`
+       centres a short name that fits and falls back to start alignment the
+       moment it does not. */
+    justify-content: safe center;
+  }
+  .pt-name-preview .pt-word-outline {
+    height: 110px;
+    max-height: none;
+    /* Three declarations, and all three are load-bearing. `width: max-content`
+       because an <svg> carrying only a viewBox has an intrinsic RATIO and NO
+       intrinsic width, so `width: auto` stretches it to the container instead.
+       `max-width: none` because the stylesheet's own image default would clamp
+       it back. And `flex: none` because a flex item still SHRINKS to fit after
+       max-content sizes it -- without it the element measures 300x110 with the
+       letter drawn at 0.324 and letterboxed, which is the original defect
+       wearing a taller box. */
+    width: max-content;
+    max-width: none;
+    flex: none;
+  }
+}
 .pt-name-glyph { color: #1a1a2e; }
 .pt-name-actions { margin-top: 0.25rem; }
 .pt-alpha-print-row { margin-top: 0.9rem; }
@@ -7581,7 +7640,6 @@ body.dark-mode .pt-banner-index { color: var(--text-secondary); }
 .pt-puzzle-gap { min-width: 0.75rem; }
 
 .pt-puzzle-caption { margin: 0; text-align: center; font-size: 0.8rem; color: var(--text-muted); }
-.pt-puzzle-credit { margin: 0; text-align: center; font-size: 0.75rem; color: #aeb4c0; }
 
 .pt-puzzle-footer-row { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
 .pt-puzzle-footer-field { display: inline-flex; align-items: baseline; gap: 0.5rem; font-size: 0.9rem; font-weight: 600; color: #1a1a2e; }

@@ -11,16 +11,28 @@ Every number below was measured, not estimated. Where a first reading was wrong 
 recorded as a correction rather than removed, because the wrong reading is the one a future
 audit will repeat.
 
-**Fix status (2026-09-19).** Eleven entries are closed, each with the same instrument re-run
-against the same input: R-001 through R-007, R-010, and R-018 / R-019 / R-020 — plus R-013's
-tracing half, which its own "partly fixed" block had left open.
+**Fix status (2026-09-19).** Twenty entries; **seventeen are closed**, each with the same
+instrument re-run against the same input: R-001 through R-011, R-014, R-016, R-017 and
+R-018 / R-019 / R-020. Two of those (R-011, R-017) were closed by `main` itself while this audit
+was in flight and are marked as such rather than claimed.
 
-Three of those were not found by this audit. R-018 was **created** by R-001's fix and is only
-visible on a rendered sheet; R-019 and R-020 were reported by the owner against the live
-generator. A closed entry is not a closed area, and a fix can be the next entry's cause. A closed entry
-keeps its original measurement above a **Fixed** block carrying the after-number — the before is
-what a future audit needs in order to recognise the defect returning. Nothing here is marked
-fixed on the strength of a code change alone.
+Of the remaining three: **R-013** is closed on its tracing half — the part its own "partly fixed"
+block had left open — and open on the design sheet's side margins, which is a product decision;
+**R-015** is fixed on duplication and reported rather than fixed on alignment; and **R-012 is
+measured and deliberately not fixed**, for a reason recorded in its own entry.
+
+Three entries were not found by this audit at all. R-018 was **created** by R-001's fix and is
+only visible on a rendered sheet; R-019 and R-020 were reported by the owner against the live
+generator. A closed entry is not a closed area, and a fix can be the next entry's cause.
+
+A closed entry keeps its original measurement above a **Fixed** block carrying the after-number —
+the before is what a future audit needs in order to recognise the defect returning. Nothing here
+is marked fixed on the strength of a code change alone.
+
+Two entries record a correction to this audit's own framing, where the defect turned out to sit on
+top of a decision somebody had already taken and written down: see R-012 and R-015. A dated
+reasoning comment in the engine is an active decision, and an audit that reverses one without
+saying so is not an audit.
 
 ---
 
@@ -346,6 +358,25 @@ would make deliberately. `graffiti-letters` is the one tool that is internally c
 Stroke **weight** is inconsistent across the same family at the same font-size 210:
 bubble 9, block 7, graffiti 5, name-tracing 4, alphabet-coloring 4.
 
+**Fixed 2026-09-19.** `wordOutlineGeom()` resolves the fill, the stroke and the stroke width once
+and both `wordOutlineSVG()` and `wordPNG()` read the result, so the two cannot disagree by
+construction rather than by being kept in step. Same instrument, same inputs, measuring the
+downloaded file:
+
+| tool | preview stroke | PNG darkest stroke luminance | before |
+|---|---|---|---|
+| bubble-letters | `#8b93a7` | **144** | 27 |
+| name-tracing | `#8b93a7` | **144** | 27 |
+| block-letters | `#8b93a7` | **144** | 27 |
+
+144 against the preview's own 147 is the same grey, off by the antialiasing of a stroked edge.
+The word preview and its export now show the same colour on all three tools at `I`, `Emma` and
+`Christopher`.
+
+The single-tile-vs-word half of the entry is closed by the same change: both paths take their
+paint from `wordOutlineGeom`, so a letter cannot be near-black alone and mid-grey in a word.
+Stroke weight per tool is unchanged and is a per-family design value, not a defect.
+
 ---
 
 ## R-009 — Preview and PNG export disagree on canvas shape
@@ -373,6 +404,32 @@ bubble-letters 3.1%, monogram-maker 0.0% (the one that matches).
 **Correction:** first-pass deltas for `cross-stitch-letters` (58.2%) and `name-puzzle-maker`
 (6.5%) are void — the selector matched a 24×24 nav icon rather than the artwork. Those two are
 untested on this axis.
+
+**Fixed 2026-09-19.** The PNG canvas is derived from the same measured geometry the preview is:
+`wordPNG()` sizes itself `g.w x g.h` at a fixed 2.6x, plus the credit band, instead of fitting the
+word into a 1600 x 520 frame. Measured on the downloaded files, credit band excluded:
+
+| input | preview aspect | PNG aspect | PNG size | delta |
+|---|---|---|---|---|
+| `I` | 1.000 | 1.000 | 520 x 520 | **0.0%** |
+| `Emma` | 2.685 | 2.685 | 1396 x 520 | **0.0%** |
+| `Christopher` | 4.625 | 4.625 | 2405 x 520 | **0.0%** |
+
+0.0% on all three inputs across bubble-letters, name-tracing and block-letters, against a PNG
+that was 1600 x 520 for every one of them before.
+
+The before-deltas in the table at the top of this entry are **not** recomputed against these
+numbers and should not be: R-006's fix changed the preview viewBox as well (`Christopher` on
+name-tracing is 925 wide now, 1378 before), so the two columns are measured on different
+previews. What is comparable is the claim itself, and it is the same claim either way: the canvas
+tracked the word or it did not.
+
+The teacher's name-card case is fixed in the direction the entry describes, and the ink heights
+say so more precisely than the aspect does. Before, `Christopher` exported with **193px** of ink
+against `Emma`'s 203 — *shorter*, though it carries two ascenders and a descender, because the
+long word was being squeezed into a fixed canvas. After, it is **374px** against `Emma`'s 285:
+taller, which is what those ascenders and that descender should produce. The letters are drawn at
+one size and the canvas grows with the word.
 
 ---
 
@@ -503,6 +560,21 @@ The repository already knows about runtime font substitution generally (`reportF
 added 2026-09-13). This is a different problem: not a font that failed to load, but a font that was
 never requested.
 
+**Fixed on `main`, not by this audit.** OUT-06 gave these pages `render: "glyph"` with a declared
+face, and the 2026-09-19 self-hosting pass put that face in `assets/fonts/` where Cloudflare Fonts
+cannot drop it. Re-measured in a browser on 2026-09-19, which is the only place both halves of
+this defect are visible at once:
+
+| page | rendered text | codepoints | resolved family | face loaded |
+|---|---|---|---|---|
+| cursive-alphabet | `A a` | U+41, U+61 | `Playwrite US Trad` | yes |
+| calligraphy-alphabet | `A a` | U+41, U+61 | `UnifrakturMaguntia` | yes |
+| mom-in-cursive | `Mom` | U+4D, U+6F, U+6D | `Playwrite US Trad` | yes |
+
+No Mathematical Alphanumeric or Letterlike codepoint survives on any of the three, so the
+two-faces-in-one-word measurement has nothing left to measure: the letterform is now ordinary
+Latin text in a real joined hand, which is what a practice sheet needs it to be.
+
 ---
 
 ## R-012 — Dot-to-dot word mode reduces letters below recognisability and drops counters
@@ -542,6 +614,33 @@ generous proximity threshold, not a collision. Inspection of the render shows la
 placed beside their dots. Withdrawn.
 
 **Evidence** `evidence/R-012-dot-to-dot-word-mode.png`.
+
+**Measured again 2026-09-19 and deliberately NOT fixed.** Re-run unchanged: `Emma` still gives
+`[9, 13, 13, 6]` points per letter with a gap ratio of 16.4, and `Christopher` gives
+`[7, 9, 7, 5, 8, 6, 5, 5, 8, 10, 6]` at a ratio of 30.6. The dot and number sizes moved a little
+with R-013's type fix (2.60mm and 3.29mm on `Emma`, against 2.59 and 3.20) but not materially.
+
+**Correction to this audit's own framing.** The entry reads as an unnoticed defect. It is not: the
+per-letter budget it measures is the deliberate output of a decision taken three days earlier and
+written down in the engine, at `DOT_LEVELS`. That table was merged on 2026-09-16 out of two PRs
+that had each changed it for a different surface, and its comment carries the measurement behind
+every number — including why the word path uses a `perLetter` budget at all (a shared whole-word
+`total` made the four difficulty levels indistinguishable beyond twenty characters and inverted
+their labels) and why `single` is 14 (at 12, sixteen of sixty-two glyphs reproduced worse than 10%
+of their height; 15 was tried and rejected for sitting one dot under medium). `easy`'s
+`perLetter: 7` is exactly what produces the six-point `a`.
+
+The obvious fix was tried and reverted. Raising the floor so a closed letter keeps its counter
+collapsed `Emma`'s easy and medium sheets to the same 46 dots, which is the regression that
+comment exists to prevent. Two of the entry's four secondary metrics are also already owned
+elsewhere: `DOT_NUM_MIN` sets a printable floor for the number face and reduces the dot count
+until the numbers fit rather than shrinking them, and `dotOutlineBudgetFor` floors the outline to
+the glyph's own corner count.
+
+What is left is a genuine product trade-off — recognisability per letter against the total dot
+count a child will actually finish — and it belongs to whoever owns the difficulty ladder, not to
+a render audit. The "lift your pencil" cue between letters is the one part of this entry that is
+neither fixed nor decided against, and it is additive rather than a re-tune: it changes no budget.
 
 ---
 
@@ -628,6 +727,24 @@ The setting works. The visitor cannot see that it works, which is the same class
 engine's own comments record fixing for paper, orientation and margin: those three now drive the
 preview and ink saver was left behind.
 
+**Fixed 2026-09-19.** `paintPreviewInk()` toggles `is-ink-saver` on every preview container, and
+it is called from `paintPaperPreview()` **above** that function's own `if (!node) return` guard —
+the guard covers the paper sheet, which not every tool has, and putting the call under it is why
+the first attempt worked on one page and silently did nothing on the other three.
+
+Measured in a browser by toggling the real control and reading the computed style:
+
+| tool | preview opacity, normal -> saver | class after |
+|---|---|---|
+| coloring-page-maker | 1 -> **0.72** | `pt-design-preview is-ink-saver` |
+| handwriting-worksheet-generator | 1 -> **0.72** | `pt-paper is-ink-saver` |
+| name-tracing | 1 -> **0.72** | `pt-name-preview is-ink-saver` |
+| name-puzzle-maker | 1 -> **0.72** | `pt-paper is-ink-saver` |
+
+The CSS keys on the toggled class rather than on a container class, which matters because
+`#pt-gen-preview` is itself a `.pt-paper`: a rule written against the container would have matched
+the paper sheet on two of these four whether ink saver was on or not.
+
 ---
 
 ## R-015 — Attribution block is duplicated and internally misaligned
@@ -641,6 +758,37 @@ the cut instruction and again beside the QR at the foot of the page.
 In the PNG exports the credit URL is centre-aligned on the canvas while the QR sits hard right, on
 a different baseline, with no alignment relationship between them. On a short input the two are
 the only marks in the lower half of the file and read as two unrelated stamps.
+
+**Duplication fixed 2026-09-19.** `puzzleSheetNode()` no longer appends its own
+`.pt-puzzle-credit` line. `attachCredit()` was already putting the real credit block, with its QR,
+on every page unit, and the puzzle sheet was signing itself a second time underneath the cut
+instruction. Measured on the print surface itself, snapshotted through a `MutationObserver`
+because the surface is torn down as soon as the PDF is written:
+
+| | before | after |
+|---|---|---|
+| page units | 1 | 1 |
+| `.pt-puzzle-credit` lines | **1** | **0** |
+| `.pt-credit` blocks | 1 | 1 |
+| QR inside the credit block | 1 | 1 |
+| `ultratextgen.com` on the sheet | **3** | **2** |
+
+The surviving two are the one block's own halves — the QR's encoded URL and the visible path
+beside it. The block is the copy that scans, so it is the copy that stays. `puzzlePNG()` draws its
+own credit band on its own canvas and is untouched. The on-page preview loses the duplicate too
+(1 -> 0), which is correct: the preview is meant to be the sheet.
+
+**Alignment: correction to this audit, and reported rather than fixed.** The centred URL beside a
+corner QR is not an oversight. `drawCredit()` carries a dated comment from the 2026-09-10 share
+pass stating the choice and its reason: the text *"stays centred on the canvas rather than moving
+to make room for the QR — the QR sits in the corner, and re-centring the text on the remaining
+width would shift the credit line on every existing export for no gain."* That is an active
+decision with a cost attached, and this entry did not check for one before calling it a defect.
+
+It is still worth revisiting, because the reason given is about *not moving* an existing line and
+the audit's observation is about the pair reading as two unrelated stamps on a short input — those
+are different questions. But it is a decision to reopen with whoever took it, not a render bug to
+patch.
 
 ---
 
@@ -659,6 +807,75 @@ the only marks in the lower half of the file and read as two unrelated stamps.
 geometry is not altered, so this is a preview-fidelity defect rather than a layout break, but a
 39px strip cannot show whether the sheet is right, on the device most likely to be used.
 
+**Fixed 2026-09-19.** Below 640px the preview is sized by HEIGHT and scrolls sideways, so the
+scale is set by the height rather than by the container's width. Measured on `name-tracing` with
+input `Christopher`:
+
+| viewport | element box | effective scale | ink height | scrolls |
+|---|---|---|---|---|
+| desktop 1400 | 810 x 120 | 0.600 | 113px | no |
+| tablet 820 | 730 x 120 | 0.600 | 113px | no |
+| mobile 390 | **509 x 110** | **0.550** | **104px** | yes |
+| small 360 | 509 x 110 | 0.550 | 104px | yes |
+
+Against **300 x 65 at 0.324** immediately before the fix: the letter is 1.7x larger on a phone,
+and desktop and tablet are untouched. `document.scrollWidth` does not exceed the viewport on
+either phone width, so the sideways scroll is inside the preview box and the page itself does not
+grow one.
+
+That 300 x 65 is not the 300 x 39 in the table above, and both are right. The table is the
+original audit reading; R-006's fix changed the word viewBox in between, which changed the height
+a 300px-wide box produces. The two are measurements of the same defect at two dates, not a
+discrepancy.
+
+Swept across tools rather than measured on one, because the twelve pages that mount
+`#pt-name-input` differ in face, stroke and viewBox width: name-tracing 509 x 110, bubble-letters
+570 x 110, block-letters 573 x 110, graffiti-letters 464 x 110 — all at an effective 0.55, all
+scrolling inside the box, none growing a document-level scrollbar.
+
+**Effective scale, not the element box, is the number that matters here**, and reading the wrong
+one cost this fix two attempts. An `<svg>` letterboxes its own content under `preserveAspectRatio`,
+so the letter is always drawn uniformly at `min(sx, sy)` however non-square the element is. A
+first attempt raised the element to 300 x 110 and reported success; the ink was still 0.324 and
+still 65px, in a taller white box. Measure the ink.
+
+Three declarations carry the rule and all three were necessary:
+
+* `width: max-content` — an `<svg>` carrying only a `viewBox` has an intrinsic **ratio** and no
+  intrinsic width, so `width: auto` stretches it to the container instead of to its content. Same
+  family as the percentage-height trap CLAUDE.md records for the print figure.
+* `max-width: none` — the stylesheet's own default clamps it back otherwise.
+* `flex: none` — a flex item still **shrinks to fit** after `max-content` has sized it. Without
+  this the element measured 300 x 110 again, which is the two-attempt failure above.
+
+`justify-content: safe center` rather than `flex-start`: the left half of a scroll container is
+unreachable, so plain centring would put the `C` of `Christopher` permanently off-screen, while
+`flex-start` would left-align a short name that fits. Verified both: `Al` measures 119px with
+111px of gap on each side and does not scroll; `Christopher` starts 21px from the left edge and
+does.
+
+**The glyph-mode pages were a second surface, and they gained something this entry did not set out
+to fix.** `cursive-alphabet` and `calligraphy-alphabet` render `render: "glyph"`, so their name
+preview is a `<p class="pt-glyph-figure">` of real text rather than an outline SVG: the type is
+sized by `font-size`, never by the container, so R-016's scale defect never applied to them. What
+did apply was the container's `overflow: hidden`. Measured on both, before and after:
+
+| | overflow-x | overflow | reachable by the reader |
+|---|---|---|---|
+| before | `hidden` | 77px | no — clipped |
+| after | `auto` | 155px | yes |
+
+The overflow doubling is the clearest evidence for `safe center` in this whole entry: before, the
+content was centred, so 77px of the 155 hung off **each** side and the left half was unreachable
+by construction. Start-aligning it puts the whole 155 on the right, where a scroll can get to it.
+
+**Correction, and the reason it is written down.** The first probe here asked
+`scrollWidth > clientWidth` and reported `true` on both sides, which reads as "it already
+scrolled, nothing changed". It does not mean that: an `overflow: hidden` box reports the same
+overflow and is simply clipped. The predicate that separates clipped from scrollable is whether
+`scrollLeft` moves for the reader, i.e. the computed `overflow-x`. Same class of mis-predicate as
+the `896 of 898` miscount CLAUDE.md records — a bigger sample would not have helped.
+
 ---
 
 ## R-017 — Preview is height-capped, so on-screen proportions are not the sheet's
@@ -670,6 +887,19 @@ geometry is not altered, so this is a preview-fidelity defect rather than a layo
 so a 584 × 210 viewBox is presented in a 1752 × 93 box. `preserveAspectRatio` then letterboxes the
 content and the on-screen row is not a scale model of the printed one. Noted during measurement,
 which had to render the markup standalone to get true geometry.
+
+**Fixed on `main`, not by this audit.** Re-measured 2026-09-19 on all three affected tools, in the
+page rather than standalone:
+
+| tool | element box | viewBox | sx | sy | letterboxed |
+|---|---|---|---|---|---|
+| handwriting-worksheet-generator | 300 x 73 | 864 x 210 | 0.347 | 0.347 | **0%** |
+| letter-tracing | 158 x 92 | 360 x 210 | 0.438 | 0.438 | **0%** |
+| sight-word-tracing | 285 x 92 | 650 x 210 | 0.438 | 0.438 | **0%** |
+
+`sx === sy` on all three, so each row is a scale model of its printed self. The row layout changed
+on `main` while this audit was in flight; nothing in this branch touches it, and it is recorded
+here so a future pass does not re-derive the original reading from a stale entry.
 
 ---
 
