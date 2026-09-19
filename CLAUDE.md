@@ -20,7 +20,7 @@ The test wins. Where the two disagree, ask whether the visitor's own typed text 
 
 **Two constraints came with the decision and are part of it.** Enter on the **long tail and the anti-copying batch feature, never the head terms** — `word search maker` is 27,100/mo at KD 72 and `crossword puzzle maker` 22,200 at KD 56, which are not winnable from here; the realistic entry is `super teacher worksheets word search generator` (1,600, KD 29) and the differentiator is generating N different versions of one list so neighbours cannot copy, which is the one thing this lane has that tracing sheets cannot (a tracing sheet has no order to vary). And nothing here bypasses the rest of this file: a new URL still goes through the Hub-vs-Spoke test, "check who already owns it", the English-Parent Rule and the Kill list in the 09-10 business review.
 
-**Core philosophy**: Fast > Fancy, Clean > Clever, Useful > Impressive. **Client-side only is a hard line:** visual generation must use native SVG/Canvas in the browser — never a server-side renderer, an image-processing library, or bundled font binaries.
+**Core philosophy**: Fast > Fancy, Clean > Clever, Useful > Impressive. **Client-side only is a hard line:** visual generation must use native SVG/Canvas in the browser — never a server-side renderer, an image-processing library, or bundled font binaries. *(Clarified 2026-09-19: "bundled font binaries" means binaries feeding a renderer, which is the case this rule was written for. A `.woff2` the browser downloads to set text in is webfont delivery, not image generation; the site self-hosts 21 such families from `assets/fonts/` — see "Webfonts are self-hosted" below.)*
 
 **Flair note (updated):** "Fast > Fancy" governs *complexity*, not *ambition*. On a plain text page (e.g. bold), a random name generator or heavy per-character transform would be scope creep. But on a **game/platform name page, matching that game's aesthetic *is* the copy-paste job, done end to end** — a decorated Free Fire name framed in ꧁༒…꧂, a name that fits the field's limit, a name generated to a theme. There, richer and even **generative flair is in-scope and on-brand** (the hand-authored "Ready-Made Names" lists are proof of the demand; a generator just does it dynamically). What stays a hard line is the *output*, never the ambition: flair is **paste-safe Unicode composed from building blocks client-side via native APIs** (`Intl.Segmenter`, etc.) — never an image, a bundled font, or a dependency, and only the *selection* may be random. The flair layer is a real engine (`js/flair/flair-engine.js` + `applyDecoration`/`window.UTG_DECORATIONS`), meant to expand: packs, modes (`wrap`/`space`/`interleave`), and a checker that counts what the player will actually paste.
 
@@ -4104,6 +4104,91 @@ recording as evidence it works: adding the step without echoing its outcome into
 the job summary failed `npm run check:workflows` with *"can fail the job but is
 never printed to the job summary — a red build with a green summary."*
 
+---
+
+## Webfonts are self-hosted, because Cloudflare was dropping them (added 2026-09-19)
+
+Every printables and category page declares the face its letters are set in —
+`Playwrite US Trad` for English cursive, `UnifrakturMaguntia` for calligraphy,
+`Fredoka` for bubble letters, `Archivo Black` for block, the five-face graffiti
+set — and requested them from `fonts.googleapis.com`. **17 of the 24 families
+this site asks for were not being served at all.**
+
+**The mechanism, measured on production rather than assumed.** The Cloudflare
+zone has **Cloudflare Fonts** enabled. It rewrites a Google Fonts `<link>` into
+inline `@font-face` rules pointing at Cloudflare's own bundle
+(`/cf-fonts/v/<family>/<version>/...`) — and a family absent from that bundle is
+**dropped, not left on the original link**. So the page ends up declaring a
+family that nothing ever loads. `/printables/cursive-alphabet/` set its letters
+in Playwrite US Trad with no Playwrite font loaded; `/printables/graffiti-letters/`
+asked for five display faces and got none.
+
+Four things about how this was found are worth carrying forward:
+
+* **It is invisible to every gate here, and to this repo's own verification
+  habit.** `ultratextgen.pages.dev` serves the Google link untouched and the
+  fonts load correctly, so OUT-06 was verified in a real browser, on a real
+  page, and passed — on the one surface where the bug does not exist. **A
+  branch-preview check is not a production check for anything the zone
+  rewrites.**
+* **Three plausible causes were wrong before the right one.** Not positional
+  (the chess page carries three families and all three are served); not a
+  per-family support list (`Playwrite ID` is served and `Playwrite US Trad` is
+  not); not a cold-cache effect (stable across five runs of each URL). The
+  answer came from reading the inlined `src:` URL, which names the bundle.
+* **`curl` on `www.` returns a 301 stub**, and grepping that stub for a font
+  name finds nothing — which reads exactly like the defect. Follow redirects to
+  the apex, or the diagnosis is a measurement of the redirect.
+* **The fix is immune to the cause.** Cloudflare Fonts only rewrites Google
+  Fonts links, so a same-origin `@font-face` is untouched by it, by a change to
+  its bundle, or by the setting being toggled.
+
+**What is and is not self-hosted.** 21 letterform families, 52 files, 1.5 MB, in
+`assets/fonts/` with their licences and a manifest recording each file's source
+URL and SHA-256. `Plus Jakarta Sans` and `Space Mono` keep their Google link —
+body and mono chrome, both in Cloudflare's bundle, both serving. `Noto Sans
+Symbols 2` likewise: it is already served, and the `symbols` subset its two
+chess pages would need is 373 KB on its own.
+
+**Repo size is not what a visitor downloads.** Every generated `@font-face`
+carries the `unicode-range` Google served it with, so an English page fetches
+one `latin` file of one weight — typically 20–43 KB, the same as before.
+
+**This amends two recorded rules rather than stepping over them**, and both
+carry the dated note: CLAUDE.md's "no bundled font binaries" (written for the
+build-time rasteriser, which still keeps its TTF cache outside the repo) and
+`.gitignore`'s `*.woff2` (a belt-and-braces sweep from the same commit,
+`1c5b82eb1`). `.ttf` and `.otf` stay ignored everywhere, `assets/fonts/*.woff2`
+is unignored, and nothing about the client-side-only rendering rule changes.
+
+### The practice sheet was never asking for the face either
+
+Separately from Cloudflare: `.cursive-print-model` and `.cursive-print-trace`
+declared no `font-family` at all, so the 26-row cursive practice sheet printed
+in the body sans — measured on production, both computed to
+`"Plus Jakarta Sans", -apple-system, sans-serif` while `.pt-glyph-figure` on the
+same page correctly computed to Playwrite. OUT-06 published `--pt-glyph-family`
+and wired the two glyph surfaces; the practice sheet is a third and was missed.
+Both rules now read that property, with `inherit` leaving every outline-mode
+page untouched.
+
+Two things were fixed with it, both visible in a rendered sheet and in neither
+the markup nor any gate: the trace column was **1.4rem against the model's
+1.6rem**, so a child was not tracing the letter the sheet showed, and it carried
+a synthetic `italic` that obliques an already-slanted joined hand.
+
+### Tooling
+
+- **`python3 scripts/fetch-self-hosted-fonts.py --family "<Name>" [--axes …]`** —
+  fetches the woff2 (a Chrome UA is what makes the API serve woff2 rather than
+  ttf), the family's licence from `google/fonts`, and its manifest rows.
+  `--verify` re-hashes every file against the manifest.
+- **`python3 scripts/build-font-face-css.py`** — regenerates the `@font-face`
+  block in `style.css` from the manifest. No flag reports staleness and exits 1;
+  `--write` applies. Idempotent.
+- **`assets/fonts/README.md`** — the inventory, the provenance and the reasoning.
+
+
 ## SEO & Structured Data
 
 Every page includes JSON-LD for:
@@ -4703,7 +4788,17 @@ Standing protocol:
 - Do not introduce a JavaScript framework or bundler
 - Do not generate images server-side or with an image-processing library. Visual/printable
   output (bubble/cursive sheets, curved text, etc.) is **client-side SVG/Canvas → SVG/PNG only**,
-  built with native browser APIs, and must not bundle `.ttf`/`.otf` font binaries.
+  built with native browser APIs, and must not bundle `.ttf`/`.otf` font binaries. Build-time
+  rasterisers (`generate-printables-previews.py`) keep their font cache outside the repo, which
+  is what `.gitignore`'s `*.ttf`/`*.otf` rule protects. **A served `.woff2` under
+  `assets/fonts/` is a different thing and is allowed** — see "Webfonts are self-hosted" below.
+- Do not add a family to a `fonts.googleapis.com` link and assume it will be served. Cloudflare
+  Fonts rewrites that link into its own bundle and **drops any family the bundle lacks**, which
+  is how 17 of 24 families were silently missing in production. Fetch it with
+  `python3 scripts/fetch-self-hosted-fonts.py --family "<Name>"`, then
+  `python3 scripts/build-font-face-css.py --write`. Never hand-write an `@font-face` rule in
+  `style.css`: the block between the `@self-hosted-fonts` markers is generated from
+  `assets/fonts/manifest.json` so the CSS and the files on disk cannot drift.
 - Do not make a visual/printable feature the *default* answer for a query that copy-paste
   Unicode already serves — visual assets are the higher-intent follow-up, gated on real demand
 - Do not build generic (non-text) worksheet/activity content under this brand — shape-only
