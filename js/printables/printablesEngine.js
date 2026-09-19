@@ -1424,9 +1424,8 @@
      shared rather than loaded onto one badge. Returns one point per stroke —
      the start point itself wherever nothing collided, which is every stroke
      on 41 of the 52 letters. */
-  function badgePositions(paths, polys) {
-    const starts = polys.map((P) => P[0]);
-    if (!polys || polys.length < 2) return starts;
+  function badgePositions(polys) {
+    if (!polys || polys.length < 2) return (polys || []).map((P) => P[0]);
     const need = 2 * BADGE_R + BADGE_GAP;
     const caps = polys.map((P) => Math.min(BADGE_SLIDE_CAP, polyLength(P) * BADGE_SLIDE_FRAC));
     const off = polys.map(() => 0);
@@ -1485,11 +1484,15 @@
     svgMake("path", { d: "M0,0 L10,5 L0,10 Z", fill: STROKE_COLOR }, marker);
 
     const polys = strokePolylines(paths);
-    const starts = paths.map((d) => {
+    /* Read the start off the polyline where there is one, so the dot and the
+       badge it sits under cannot disagree by a rounding step; the regex is
+       the fallback for a browser with no ink metrics, which never reaches
+       badgePositions either. */
+    const starts = polys ? polys.map((P) => P[0]) : paths.map((d) => {
       const m = /M\s*([\d.\-]+)[,\s]+([\d.\-]+)/.exec(d);
       return m ? [parseFloat(m[1]), parseFloat(m[2])] : null;
     });
-    const badges = polys ? badgePositions(paths, polys) : starts;
+    const badges = polys ? badgePositions(polys) : starts;
 
     /* Strokes first, then every dot, then every numeral — so a later stroke
        can never be painted across an earlier letter's badge, which the single

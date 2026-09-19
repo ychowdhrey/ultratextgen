@@ -253,7 +253,7 @@ that raster. Open it and read the panel, or drive it headlessly and read
       if (!fit) return;
       const polys = BADGES.strokePolylines(fit.d);
       if (!polys) { strays.push(ch + " no polylines"); return; }
-      const pts = BADGES.badgePositions(fit.d, polys);
+      const pts = BADGES.badgePositions(polys);
       const hit = raster(ch);
       /* Distance to the nearest ink, not a bare on/off pixel test. R-010's
          own instrument was the bare test, and over all 52 letters it calls
