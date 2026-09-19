@@ -7105,6 +7105,15 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
 .pt-gen-sheet { display: flex; flex-direction: column; gap: 0.55rem; }
 .pt-gen-row { width: 100%; }
 .pt-gen-row .pt-trace-svg { width: 100%; max-height: 150px; }
+/* Left-handed mode only. .pt-name-row is a flex container and .pt-gen-row is
+   not, which is why the shared 14% .pt-lefty-model rule below worked on one
+   and would have stacked the model UNDER the line on the other. Scoped to a
+   modifier so a row without the aside — every row on every sheet when the
+   setting is off — keeps exactly the block layout it had. The child
+   combinator matters: the aside carries a .pt-trace-svg of its own, and it is
+   not a flex item of this row. */
+.pt-gen-row.has-lefty { display: flex; align-items: center; gap: 0.5rem; }
+.pt-gen-row.has-lefty > .pt-trace-svg { flex: 1 1 auto; min-width: 0; }
 
 /* Dark-mode: keep print-preview cards light so white-fill outlines stay visible */
 body.dark-mode .pt-name-preview { background: #fff; border-color: var(--border-light); }
@@ -10799,6 +10808,15 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
 
 .pt-nup-row {
   margin-top: 0.5rem;
+}
+/* .pt-choice is `flex: 1 1 auto` so a ladder of labelled options fills its
+   row. These two are single digits, and once the row moved out of the button
+   strip and onto its own line they stretched to half the column each and read
+   as two more buttons. Sized to their content instead. */
+.pt-nup-row .pt-choice {
+  flex: 0 0 auto;
+  min-width: 2.75rem;
+  padding: 0.4rem 0.7rem;
 }
 
 @media print { .pt-nup-row { display: none; } }

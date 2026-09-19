@@ -11,12 +11,25 @@ Every number below was measured, not estimated. Where a first reading was wrong 
 recorded as a correction rather than removed, because the wrong reading is the one a future
 audit will repeat.
 
-**Fix status (2026-09-19).** Thirteen of the seventeen entries are closed, each with the same
-instrument re-run against the same input: R-001, R-002, R-003, R-004, R-005, R-006, R-007, R-008,
-R-009, R-010, R-011, R-014, R-016, R-017. Two of those (R-011, R-017) were closed by `main` itself
-while this audit was in flight and are marked as such rather than claimed. R-013 is partly fixed
-and R-015 half fixed, both with the remainder stated. **R-012 is measured and deliberately not
-fixed**, for a reason recorded in its own entry.
+**Fix status (2026-09-19).** Twenty-one entries; **eighteen are closed**, each with the same
+instrument re-run against the same input: R-001 through R-011, R-014, R-016, R-017 and
+R-018 / R-019 / R-020 / R-021. Two of those (R-011, R-017) were closed by `main` itself while this
+audit was in flight and are marked as such rather than claimed.
+
+Of the remaining three: **R-013** is closed on its tracing half — the part its own "partly fixed"
+block had left open — and open on the design sheet's side margins, which is a product decision;
+**R-015** is fixed on duplication and reported rather than fixed on alignment; and **R-012 is
+measured and deliberately not fixed**, for a reason recorded in its own entry.
+
+**R-017 is counted as closed and carries a same-day correction**: its close-out reasoned from
+`sx === sy`, which proves a row is not distorted and not that it is a scale model of the printed
+one. Measured, the word is 1.9x larger relative to its line on screen than it prints. Reported
+there rather than fixed.
+
+Four entries were not found by this audit at all. R-018 was **created** by R-001's fix and is
+only visible on a rendered sheet; R-019 and R-020 were reported by the owner against the live
+generator; R-021 turned up while measuring R-019, as a second control on the same page that also
+did nothing. A closed entry is not a closed area, and a fix can be the next entry's cause.
 
 A closed entry keeps its original measurement above a **Fixed** block carrying the after-number —
 the before is what a future audit needs in order to recognise the defect returning. Nothing here
@@ -470,6 +483,53 @@ space. The number above is measured against a solid-filled copy, which is the me
 `fitSkeleton` the tracing route uses, rather than dropped on unfitted. Same instrument: **12 of 12**
 start dots land on the letter body on `name-tracing` (`Emma`) and **7 of 7** on
 `handwriting-worksheet-generator` (`mom`), against 7 of 12 off before.
+
+**Reopened and closed again, 2026-09-19 (same day).** Two things that entry did not cover.
+
+*The numerals collided.* A badge is a disc of radius 11, so two are legible only while their
+centres are 22 units apart. Measured across all 52 letters fitted to Quicksand 700, **eleven pairs
+collide**, and on **A B D P R and p the two strokes start at exactly the same point** — badge 2
+covered badge 1 completely, so the sheet showed a "2" and no "1" at all:
+
+| letter | centre distance | overlap |
+|---|---|---|
+| A B D P R p | **0.0** | 22.0 — the first numeral is invisible |
+| a | 14.1 | 7.9 |
+| F | 16.3 | 5.7 |
+| E | 16.8 | 5.2 |
+| M | 21.5 | 0.5 |
+| N | 22.0 | 0.0 |
+
+Six of those were caused by the fix above: `B D P R` and `a` carried a lead-in segment whose only
+job was to hold the two start dots apart, and removing it (correctly — it drew a spur off the
+letter) brought the occlusion back. Moving an authored start point is not available either: it is
+the claim the overlay exists to make.
+
+So the **start dot stays on the start point and the numeral moves**, sliding along its own stroke
+until nothing overlaps — the one direction that cannot leave the letter, and the one that labels
+the stroke it belongs to. After: **0 colliding pairs across all 52 letters**, worst slide 28.5
+units of arc (`A`, ~18% of a limb), 41 letters unmoved and rendering exactly as before.
+
+*The arrows.* This entry also says "on `E` all three arm arrows overshoot past the right edge of
+the letter", and the fix above never re-measured it. Measured now, with the arrow tip at the path
+end plus the marker's 4-unit lead: **3 of 103 strokes** end off the ink (`c`, `e`, `u`), each
+within 5–6 units. The fit had already carried it; recorded here so the sentence above is not read
+as still-open.
+
+*Method correction.* R-010's instrument was a bare on/off pixel test against a solid raster. Over
+all 52 letters that test calls three start points "off the glyph" which are **1.0, 5.5 and 1.0
+units** from ink at an em of 210 — an antialiased edge, not a miss. `js/printables/strokeRoute.test.html`
+now measures the distance and allows half a stem, which is the inset `fitSkeleton` is already
+called with. The defect this has to keep catching was 24.8 units.
+
+**Guarded.** `strokeRoute.test.html` drives the shipped `badgePositions`/`tailPath`, sliced out of
+`printablesEngine.js` between its `@stroke-badges` markers, and asserts: no two badges overlap,
+every badge stays within the slide cap of its own start, every start dot and badge is on the
+letter, every arrow tail ends where its stroke ends. Verified against five differently-shaped
+broken inputs (the real regression re-injected; a badge let loose past the cap; a start point in
+the counter of `o`, where the fit cannot rescue it; a tail stopping short; the markers renamed) —
+each exits 1 — with a restored-tree control at 0. Browser test, not CI-gated, same as its siblings.
+
 ---
 
 ## R-011 — Cursive and calligraphy sheets are Unicode maths characters in a font stack that has none of them
@@ -614,6 +674,30 @@ above** the artwork against 0.59in below it, a 7.4 : 1 imbalance, with 30.5% ink
 Related, on the tracing side: the printed handwriting worksheet's practice rules span only
 **3.61in of a 7.5in printable width** on five of its seven pages (page 1 spans 5.13in). Under half
 the available writing space is used, on a sheet whose purpose is writing space.
+
+**The tracing half is fixed, 2026-09-19** — it was left open by the partial fix below, which
+addressed the design sheet only. Re-measured on the PDF this tool actually writes (`Emma`, level
+2, default paper and margins): the practice rules spanned **3.07in of an 8.5in page**, 41% of the
+6.13in printable box. They now span **6.13in — the whole of it** (measured off the rasterised PDF
+at 110dpi: 674 of 674 px), with the letters unchanged in size and the rows unchanged in height.
+
+The cause was not composition but `preserveAspectRatio`. A trace row is
+`<svg viewBox="0 0 w 210">` with `width:100%` and a `max-height`, and `w` is measured from the
+**word** — so the row's aspect is the word's, and on any sheet wider than that aspect the height
+cap wins and the whole row, rules included, is letterboxed into the middle. A root `<svg>` clips
+to its *viewport*, not to its viewBox, so the fix is to draw the rules past the viewBox and let
+the element's own edge — which is the paper's writing width — cut them off. A horizontal rule
+extended horizontally is still a horizontal rule, so nothing is distorted, and the word does not
+move or shrink; choosing a wider viewBox aspect instead would have shrunk it by ~30% in portrait.
+
+It also closes a preview/print disagreement rather than opening one: the rules already spanned
+97% of the row in the live preview and 50% of the printable width in print. Both are now full
+width. The word is still drawn 1.9× larger relative to its line on screen than it prints — that
+is the height cap, measured in R-017's own correction note and untouched here.
+
+Still open, and a product decision rather than a defect: the word is centred on the full-width
+rule, so a short name now leaves practice space on both sides of itself rather than continuing
+from the left margin.
 
 **Partly fixed 2026-09-19.** The type is measured rather than counted: one probe at font-size
 100 through the same hidden-canvas measurer the heading already trusted, scaled linearly. The
@@ -822,6 +906,196 @@ page rather than standalone:
 `sx === sy` on all three, so each row is a scale model of its printed self. The row layout changed
 on `main` while this audit was in flight; nothing in this branch touches it, and it is recorded
 here so a future pass does not re-derive the original reading from a stale entry.
+
+**Correction, same day: `sx === sy` proves the row is not DISTORTED, which is a different claim.**
+A row can be undistorted and still not be a scale model of the printed one, because the two are
+capped at different heights against different container widths — `max-height: 92px` in `.pt-paper`
+against `150px` in the sheet. Measured on `Emma` at level 2, as the word's ink width over the
+ruled line it sits on:
+
+| surface | word ink | rule | word / rule |
+|---|---|---|---|
+| live preview | 227.5 | 455 | **73.6%** |
+| printed PDF | 259 | 674 | **38.4%** |
+
+The word is drawn **1.9× larger relative to its line on screen than it prints**, so the entry's
+original observation stands on this axis even though the letterboxing it named is gone. Reported
+rather than fixed here: matching them means expressing the preview row's height as a fraction of
+its own width rather than in absolute pixels, which is this entry's own subject and a CSS change
+across the three trace tools, not R-013's.
+
+Note this is measured **after** R-013's rule bleed, which moved the two surfaces closer rather
+than further apart: the rules spanned 97% of the row on screen against 50% of the printable width
+in print before it, and both are now full width.
+
+---
+
+## R-018 — The stroke overlay erases the letter it annotates on every dotted row
+
+**Severity** R1 · **Root cause** PATH_GENERATION · **Screen** FAIL · **Print** FAIL · **PNG** FAIL
+**Affects** `handwriting-worksheet-generator`, `letter-tracing`, `sight-word-tracing`
+
+Introduced by R-001's fix, and only visible because of it. The stroked levels now draw the
+writing centreline — `fitSkeleton` over `strokeDirectionData.js` — and the stroke-direction
+overlay draws *the same call's output* on top, solid, 6 units wide, at 0.9 opacity, with the
+letter's dots underneath at `routeSw` 7 and a `0.1 19` dash.
+
+Before R-001 the two were different geometry (contour vs skeleton) and the overlay read as an
+annotation across the letter. After it they are identical, so the overlay does not annotate the
+letter, it **replaces** it: at level 3 the fine dots a child is meant to join are completely
+covered by a blue line of exactly their own shape. Every trace row on the sheet, not just one.
+
+No gate could see it. The row's markup, strings, schema, assets and structure are all unchanged;
+the defect is one path painted over another, and nothing in this repo compares two paths in one
+SVG.
+
+**Fixed 2026-09-19.** `traceWordSVG` passes `routeDrawn` when the row has already drawn these
+paths, and the overlay then contributes only what the row lacks: the numbered start dot and a
+short arrow at the end of each stroke (18 units, or 34% of a short stroke, at stroke-width 4
+instead of 6). The full route is still drawn on a solid or ghost row, where the letter is not the
+skeleton. Measured on `E`, whose fitted arms are ~55 units: the arrow plus the badge covered 65%
+of an arm at the first attempt and 46% at the shipped size.
+
+---
+
+## R-019 — The N-per-sheet chips are an orphan control, wedged into the button row
+
+**Severity** R3 · **Root cause** CSS_LAYOUT · **Screen** FAIL · **Print** N/A · **PNG** N/A
+**Affects** `coloring-page-maker`, `dot-to-dot-name`, `handwriting-worksheet-generator`,
+`letter-tracing`, `name-puzzle-maker`, `sight-word-tracing`
+
+Reported by the owner as "there is something missing here" on the generator page, which is
+exactly what it looks like: two bare digits, **1** and **4**, with no label, sitting *between*
+Download PDF and Save all 7 levels in the middle of the primary action row.
+
+Two causes, and the second is the one that makes it unreadable.
+
+`mountSheetCost()` anchors on `btn.closest(".bubble-actions, .pt-actions")`. Six of the seven
+roster tools mark that row `.pt-preview-actions`, which is in neither selector, so `closest()`
+returned null, the fallback inserted after the *button* rather than after the row, and the chips
+`mountNUp()` puts above the cost line landed inside it. `name-tracing` looked right only because
+it happens to use `.bubble-actions`.
+
+And the chips carry no visible label by design — the engine's own note says "the chips are
+digits, so this adds no string in any language… what explains them is the sheet-cost line
+directly beneath". That line is `hidden` until the roster holds two names. `mountNUp()` read
+"a roster exists" as "the textarea exists", which is true on load, so the default state of the
+page was the chips with their entire explanation hidden.
+
+**Fixed 2026-09-19.** `.pt-preview-actions` added to the anchor list, so the line and the chips
+sit under the whole row on all seven tools (verified by reading the DOM order on each). The chips
+follow the same rule as the line that explains them: hidden until the roster holds enough names
+for N-per-sheet to change anything, `updateSheetCost()` owning both. `.pt-choice` is
+`flex: 1 1 auto` for labelled ladders, so the two digits are sized to their content once the row
+is on its own line.
+
+**Not fixed, and it needs a decision.** Even with the cost line present the chips are two bare
+digits. No existing translated string fits: `T.classSet` is "Class set: one sheet per name",
+which contradicts the 4 chip, and `T.sheets`/`T.pageCount` are nouns. A visible label needs a new
+string in eight languages, which is a copy decision rather than a render fix.
+
+---
+
+## R-020 — The generator's PNG export carries neither the overlay nor the credit
+
+**Severity** R2 · **Root cause** EXPORT_PIPELINE · **Screen** N/A · **Print** N/A · **PNG** FAIL
+**Affects** `handwriting-worksheet-generator`, `letter-tracing`, `sight-word-tracing`
+
+Same family as R-008 and R-009: the preview and the export disagree.
+
+`strokeOverlayImage()` was added so the numbered start dots and arrows would survive into "the one
+artifact that leaves the site", and wired into `wordPNG`. `genWordPNG` — the word export of the
+*generator*, on the page whose whole subject is stroke order — was not given it, so with **Show
+stroke direction** on the preview and the PDF carried the numbering and the PNG did not.
+
+`genWordPNG` also never called `drawCredit`, alone among this engine's PNG paths, so that download
+left the site with no URL and no QR on it.
+
+**Fixed 2026-09-19.** Both wired, using the geometry the canvas beside them already draws
+(alphabetic baseline, no tracking) and `routeDrawn` set from whether the level drew the route, so
+the PNG follows the same rule as the screen. Verified by downloading `handwriting-emma-L3.png`
+headlessly and reading it.
+
+---
+
+## R-021 — "Left-handed (model on both sides)" is an inert control on three of the four tools that show it
+
+**Severity** R2 · **Root cause** CSS_LAYOUT · **Screen** FAIL · **Print** FAIL · **PNG** N/A
+**Affects** `handwriting-worksheet-generator`, `letter-tracing`, `sight-word-tracing`
+
+A left-hander writing left to right covers what they have just written, so the model at the
+*start* of the line is under their own hand by the time they need it. The second copy at the
+right-hand end is the whole point of the setting.
+
+`mountLeftHanded()` mounts the checkbox on any English page with `el.nameRows || el.genRows`, so
+it appears on all four tracing tools, and its handler calls `renderGenPreview()`. But `leftHanded`
+was read in exactly one place — `nameRow()`. `genRow()`, which builds every row of the generator's
+sheet, never consulted it. The preview re-rendered and nothing changed.
+
+Measured before, ticking the box in a browser and counting `.pt-lefty-model` in the live preview
+and in `#pt-print-root` as the print job is built:
+
+| tool | preview | print rows | models in print |
+|---|---|---|---|
+| handwriting-worksheet-generator | 0 | 6 | **0 of 3 trace rows** |
+| letter-tracing | 0 | 6 | **0 of 3** |
+| sight-word-tracing | 0 | 6 | **0 of 3** |
+| name-tracing | n/a (its preview is one word, not rows) | 6 | 3 of 3 |
+
+This is an unfinished implementation rather than a decision: `style.css` has shipped
+`.pt-name-row .pt-lefty-model, .pt-gen-row .pt-lefty-model { … width: 14% … }` all along, and the
+second half of that selector was dead. It is the same class as R-014 and R-019 — a control with no
+consequence.
+
+**Fixed 2026-09-19.** `genRow()` takes the `kind` argument `nameRow()` has always had (the level
+alone cannot say what a row is *for*: level 1 builds both the model row and every trace row when
+level 1 is what the visitor picked, and level 7 builds both the closing blanks and the trace
+rows), and appends the aside on trace rows. Measured after, same instrument: **3 of 3 trace rows
+on each of the three tools**, in the preview and in the print job, with `name-tracing` unchanged
+at 3 and no `has-lefty` rows of its own.
+
+`.pt-gen-row` is not a flex container — `.pt-name-row` is, which is why the shared 14% rule worked
+on one and would have stacked the model *under* the line on the other. The flex layout is scoped
+to a `.has-lefty` modifier, so a row without an aside keeps exactly the block layout it had;
+verified, with the setting off the default sheet still prints its rules at 6.13in of a 6.13in
+printable box, unchanged.
+
+**Two things the rendered sheet decided, which reading the code would not have.**
+
+*The right margin went ragged.* With the aside on trace rows only, those rows end where the model
+begins and every other row runs full width. Measured on the printed PDF: **6.12in on the model and
+blank rows against 5.19in on the three trace rows — a 0.92in step, three times down one page.**
+It reads as a rendering fault rather than a layout. Every row in a left-handed sheet now reserves
+the column, empty where there is no model, and all four PDFs measured (`handwriting` L2 and L7,
+`letter-tracing` L5, `sight-word-tracing` L3) come back with every ruled line ending within 1px of
+the same x.
+
+*A level-7 sheet reserves nothing.* Its trace rows are blank lines, so no model is ever drawn, and
+a gutter there would give up 14% of every line for a column that stays empty. Whether the sheet
+has the column is therefore decided once in `genSheetNode()` from the chosen level, not per row.
+Verified across levels 1, 2, 3, 5 and 7 with the setting on and off: gutters and models appear on
+1/2/3/5, neither appears on 7, and the line right-edges are uniform in all ten states.
+
+**The PNG deliberately does not carry it.** `genWordPNG` renders one word on a 1600x460 canvas —
+there is no row and no ruled line for a model to sit beside, and a second copy of the word inside
+a one-word image is a duplicate rather than an aid. `wordPNG`, the name tool's own export, has
+never carried it either, so the two stay consistent.
+
+**Not fixed:** with the setting on, the live preview's sheet grows from 229 to 394 CSS px, because
+`.pt-paper` centres a shrink-to-fit sheet and the flex row's max-content width now includes the
+aside. The printed sheet is unaffected. Making the preview's width independent of its content is
+R-017's subject, not this entry's.
+
+**What should have caught it, and why nothing did.** The dead half of the CSS selector is the one
+mechanically visible symptom, and `audit-css.js` cannot see it by design: it resolves class
+*names* against the JS as well as the HTML, precisely so JS-driven CSS is not called dead, and
+`pt-lefty-model` genuinely is used — by `nameRow()`. What was dead is the *combination*
+`.pt-gen-row .pt-lefty-model`, whose two halves both exist and never co-occurred. Catching that
+needs every page rendered in every control state, which is not a static check and would be noisy
+enough to be ignored. Three entries now share the shape — R-014 (ink saver changed the PDF and
+nothing on screen), R-019 (chips with their explanation hidden), R-021 — and all three were found
+by driving the control in a browser and looking at what changed. That, not a gate, is the
+instrument for this class.
 
 ---
 

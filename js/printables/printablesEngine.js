@@ -1357,10 +1357,140 @@
     return anchorY + (i.emAscent - i.emDescent) / 2;
   }
 
+  /* The numeral badge, and the rule that keeps two of them apart.
+
+     A badge is a disc of radius BADGE_R, so two of them are legible only
+     while their centres are at least 2*BADGE_R apart. Drawn on the start
+     point, they are not: measured across all 52 letters fitted to Quicksand
+     700, ELEVEN pairs collide, and on A B D P R and p the two strokes start
+     at exactly the same point, so badge 2 covered badge 1 completely — the
+     sheet showed a "2" and no "1" at all, which teaches the wrong order
+     rather than none.
+
+     Six of those were self-inflicted. B D P R and "a" used to carry a
+     lead-in segment in strokeDirectionData.js whose only job was to hold the
+     two start dots apart; 2026-09-19 removed it because it drew a spur off
+     the letter, and the occlusion came back with it. Moving the authored
+     start point is not available either: it is the claim the overlay exists
+     to make.
+
+     So the START DOT stays exactly where the stroke starts and the NUMERAL
+     moves — the split every published stroke-order chart makes. The numeral
+     slides ALONG ITS OWN STROKE, which is the one direction that cannot put
+     it off the letter (the route is on the glyph by construction: 99.4% of
+     it, per js/printables/strokeRoute.test.html) and which labels the stroke
+     it belongs to rather than floating beside it. */
+  /* @stroke-badges:begin — js/printables/strokeRoute.test.html slices this
+     block out and drives the real functions, the technique
+     scripts/lib/zalgo-engine.js and scripts/lib/collection-grid-engine.js
+     already use. A copy of this geometry in the test would drift from the
+     one that ships, and the defect it guards has now been introduced,
+     removed and reintroduced here three times. Keep the markers with the
+     code if it moves. */
+  const BADGE_R = 11;
+  const BADGE_GAP = 1;                 // white between two rings, so they read as two
+  const BADGE_SLIDE_STEP = 0.5;
+  const BADGE_SLIDE_CAP = 40;          // worst real requirement is A at 28.5 units
+  const BADGE_SLIDE_FRAC = 0.35;       // ...and never more than this much of a short stroke
+  /* The arrowhead is 20 units long on its own, so the tail only has to carry
+     it. On a row that already draws the route, every unit of tail is a unit
+     of the child's dotted guide painted over — measured on "E", whose arms
+     are ~55 units fitted, a 28-unit tail plus the badge covered 65% of the
+     arm. Short tail, lighter line, and the head does the talking. */
+  const ARROW_TAIL = 18;
+  const ARROW_TAIL_FRAC = 0.34;        // ...or this much of a short stroke, whichever is less
+
+  /* Polylines for a fitted stroke list, in the coordinates they are drawn in.
+     glyphMetrics owns path flattening; a second copy here would drift from
+     it, which is the failure this file records in four other places. */
+  function strokePolylines(paths) {
+    const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
+    if (!GM || !GM.flattenStrokes) return null;
+    const runs = paths.map((d) => GM.flattenStrokes([d], 2)[0] || []);
+    return runs.some((r) => r.length < 2) ? null : runs;
+  }
+
+  function polyLength(P) {
+    let n = 0;
+    for (let i = 1; i < P.length; i++) n += Math.hypot(P[i][0] - P[i - 1][0], P[i][1] - P[i - 1][1]);
+    return n;
+  }
+
+  // The point `s` units of arc from the start of polyline P.
+  function pointAt(P, s) {
+    let acc = 0;
+    for (let i = 1; i < P.length; i++) {
+      const seg = Math.hypot(P[i][0] - P[i - 1][0], P[i][1] - P[i - 1][1]);
+      if (acc + seg >= s) {
+        const f = seg ? (s - acc) / seg : 0;
+        return [P[i - 1][0] + (P[i][0] - P[i - 1][0]) * f, P[i - 1][1] + (P[i][1] - P[i - 1][1]) * f];
+      }
+      acc += seg;
+    }
+    return P[P.length - 1];
+  }
+
+  // The last `want` units of P, as an SVG path — the arrow on its own, for
+  // rows that already draw the route and must not have it drawn over.
+  function tailPath(P, want) {
+    const total = polyLength(P);
+    const from = Math.max(0, total - Math.min(want, total * ARROW_TAIL_FRAC));
+    const pts = [pointAt(P, from)];
+    let acc = 0;
+    for (let i = 1; i < P.length; i++) {
+      acc += Math.hypot(P[i][0] - P[i - 1][0], P[i][1] - P[i - 1][1]);
+      if (acc > from) pts.push(P[i]);
+    }
+    if (pts.length < 2) return null;
+    return "M" + pts.map((q) => q[0].toFixed(2) + "," + q[1].toFixed(2)).join(" L");
+  }
+
+  /* Slide the numerals along their own strokes until no two discs overlap.
+     Greedy and deterministic: repeatedly take the worst-overlapping pair and
+     advance whichever of the two has moved least, so the displacement is
+     shared rather than loaded onto one badge. Returns one point per stroke —
+     the start point itself wherever nothing collided, which is every stroke
+     on 41 of the 52 letters. */
+  function badgePositions(polys) {
+    if (!polys || polys.length < 2) return (polys || []).map((P) => P[0]);
+    const need = 2 * BADGE_R + BADGE_GAP;
+    const caps = polys.map((P) => Math.min(BADGE_SLIDE_CAP, polyLength(P) * BADGE_SLIDE_FRAC));
+    const off = polys.map(() => 0);
+    const at = () => off.map((s, k) => pointAt(polys[k], s));
+    const worst = (pts) => {
+      let ov = 0, a = -1, b = -1;
+      for (let i = 0; i < pts.length; i++) {
+        for (let j = i + 1; j < pts.length; j++) {
+          const gap = need - Math.hypot(pts[i][0] - pts[j][0], pts[i][1] - pts[j][1]);
+          if (gap > ov) { ov = gap; a = i; b = j; }
+        }
+      }
+      return { ov: ov, a: a, b: b };
+    };
+    let pts = at(), w = worst(pts), guard = 0;
+    while (w.ov > 0 && guard++ < 400) {
+      const k = off[w.a] <= off[w.b] ? w.a : w.b;
+      const other = k === w.a ? w.b : w.a;
+      // Whichever can still move; if neither can, stop rather than spin.
+      const pick = off[k] + BADGE_SLIDE_STEP <= caps[k] ? k
+        : (off[other] + BADGE_SLIDE_STEP <= caps[other] ? other : -1);
+      if (pick === -1) break;
+      off[pick] += BADGE_SLIDE_STEP;
+      pts = at();
+      w = worst(pts);
+    }
+    return pts;
+  }
+
+  /* @stroke-badges:end */
+
   // Numbered start-dot + direction arrow for every stroke of one letter,
   // drawn directly into `parent`'s own coordinate space (the 200x240 unit
   // box, or a <g> already transformed into an equivalent local box).
-  function addStrokeOverlay(parent, ch, fitted) {
+  // opts.routeDrawn: the caller has ALREADY drawn these exact paths as the
+  // letter the child traces, so only the arrow and the numbering are added.
+  function addStrokeOverlay(parent, ch, fitted, opts) {
+    const o = opts || {};
     const data = strokeDataFor(ch);
     if (!data || !data.strokes || !data.strokes.length) return;
     /* Fitted paths when the caller could measure the glyph, the authored ones
@@ -1376,22 +1506,45 @@
     // userSpaceOnUse so the arrowhead size stays fixed and predictable.
     const marker = svgMake("marker", {
       id: markerId, viewBox: "0 0 10 10", refX: 8, refY: 5, markerUnits: "userSpaceOnUse",
-      markerWidth: 20, markerHeight: 20, orient: "auto"
+      markerWidth: 16, markerHeight: 16, orient: "auto"
     }, defs);
     svgMake("path", { d: "M0,0 L10,5 L0,10 Z", fill: STROKE_COLOR }, marker);
 
+    const polys = strokePolylines(paths);
+    /* Read the start off the polyline where there is one, so the dot and the
+       badge it sits under cannot disagree by a rounding step; the regex is
+       the fallback for a browser with no ink metrics, which never reaches
+       badgePositions either. */
+    const starts = polys ? polys.map((P) => P[0]) : paths.map((d) => {
+      const m = /M\s*([\d.\-]+)[,\s]+([\d.\-]+)/.exec(d);
+      return m ? [parseFloat(m[1]), parseFloat(m[2])] : null;
+    });
+    const badges = polys ? badgePositions(polys) : starts;
+
+    /* Strokes first, then every dot, then every numeral — so a later stroke
+       can never be painted across an earlier letter's badge, which the single
+       interleaved pass allowed. */
     paths.forEach((d, i) => {
+      const line = o.routeDrawn && polys ? tailPath(polys[i], ARROW_TAIL) : d;
+      if (!line) return;
       svgMake("path", {
-        d: d, fill: "none", stroke: STROKE_COLOR,
-        "stroke-width": 6, "stroke-linecap": "round", "stroke-linejoin": "round",
+        d: line, fill: "none", stroke: STROKE_COLOR,
+        "stroke-width": o.routeDrawn ? 4 : 6,
+        "stroke-linecap": "round", "stroke-linejoin": "round",
         "marker-end": "url(#" + markerId + ")", opacity: 0.9
       }, g);
-      const m = /M\s*([\d.\-]+)[,\s]+([\d.\-]+)/.exec(d);
-      if (!m) return;
-      const sx = parseFloat(m[1]), sy = parseFloat(m[2]);
-      svgMake("circle", { cx: sx, cy: sy, r: 11, fill: "#ffffff", stroke: STROKE_COLOR, "stroke-width": 2.5 }, g);
+    });
+    /* The truth of the overlay: where the pencil goes down. Drawn for every
+       stroke, and invisible under its own badge wherever the badge did not
+       have to move — which is why 41 letters render exactly as before. */
+    starts.forEach((p) => {
+      if (p) svgMake("circle", { cx: p[0], cy: p[1], r: 4.5, fill: STROKE_COLOR }, g);
+    });
+    badges.forEach((p, i) => {
+      if (!p) return;
+      svgMake("circle", { cx: p[0], cy: p[1], r: BADGE_R, fill: "#ffffff", stroke: STROKE_COLOR, "stroke-width": 2.5 }, g);
       const label = svgMake("text", {
-        x: sx, y: sy + 0.5, "text-anchor": "middle", "dominant-baseline": "central",
+        x: p[0], y: p[1] + 0.5, "text-anchor": "middle", "dominant-baseline": "central",
         "font-family": "'Plus Jakarta Sans', sans-serif", "font-weight": 700,
         "font-size": 13, fill: STROKE_COLOR
       }, g);
@@ -1433,7 +1586,7 @@
   // (cx, anchorY): "central" (box center, matching wordOutlineSVG's own
   // dominant-baseline:central text) or "alphabetic" (the type baseline,
   // matching traceWordSVG's default alphabetic-baseline text).
-  function letterOverlayCell(parent, ch, cx, anchorY, emPx, mode) {
+  function letterOverlayCell(parent, ch, cx, anchorY, emPx, mode, opts) {
     if (!strokeDataFor(ch)) return;
     const scale = emPx / 210;
     const anchorUnitY = mode === "alphabetic" ? STROKE_BASELINE_UNIT_Y : 128;
@@ -1449,7 +1602,7 @@
     const fitted = unitBaseline == null
       ? null
       : fittedStrokesFor(ch, OUTLINE_SVG_FONT, 100, unitBaseline, "advance");
-    addStrokeOverlay(g, ch, fitted);
+    addStrokeOverlay(g, ch, fitted, opts);
   }
 
   // Overlays every letter of a word/name rendered as a single centered
@@ -1471,10 +1624,10 @@
     });
   }
 
-  function addWordStrokeOverlay(svg, word, fontPx, spacingPx, anchorY, mode, totalW) {
+  function addWordStrokeOverlay(svg, word, fontPx, spacingPx, anchorY, mode, totalW, opts) {
     wordCellCentres(word, fontPx, spacingPx, totalW).forEach((c) => {
       if (!/[A-Za-z]/.test(c.ch)) return;
-      letterOverlayCell(svg, c.ch, c.cx, anchorY, fontPx, mode);
+      letterOverlayCell(svg, c.ch, c.cx, anchorY, fontPx, mode, opts);
     });
   }
 
@@ -2562,13 +2715,13 @@
      geometry would drift from the first, which is the failure this file
      documents in four other places, and the SVG path data is the only source
      of the stroke shapes anyway. */
-  function strokeOverlayImage(word, width, height, fontSize, spacingPx, anchorY) {
+  function strokeOverlayImage(word, width, height, fontSize, spacingPx, anchorY, mode, opts) {
     const svg = document.createElementNS(SVGNS, "svg");
     svg.setAttribute("xmlns", SVGNS);
     svg.setAttribute("viewBox", "0 0 " + width + " " + height);
     svg.setAttribute("width", width);
     svg.setAttribute("height", height);
-    addWordStrokeOverlay(svg, word, fontSize, spacingPx, anchorY, "central", width);
+    addWordStrokeOverlay(svg, word, fontSize, spacingPx, anchorY, mode || "central", width, opts);
     if (!svg.querySelector("path")) return Promise.resolve(null);
     const blob = new Blob([new XMLSerializer().serializeToString(svg)], { type: "image/svg+xml;charset=utf-8" });
     const url = URL.createObjectURL(blob);
@@ -3995,6 +4148,9 @@
     const text = sheetCostText(n, pages);
     host.textContent = text;
     host.hidden = !text;
+    // The chips and the line that explains them appear and disappear together.
+    const row = $("#pt-nup-row");
+    if (row) row.hidden = n < 2;
   }
   /* PR-33 -- "give students fewer items per page or line" is a named
      accommodation (Understood.org states it twice), and the row count was the
@@ -4081,7 +4237,15 @@
   /* Only where a roster exists: N-per-sheet changes nothing on a page that
      prints one sheet, and a control with no consequence is the defect the
      print-settings panel already records. Named by T.classSet, which ships in
-     all eight languages and is the thing being configured. */
+     all eight languages and is the thing being configured.
+
+     "A roster exists" was read as "the textarea exists", which is true the
+     moment the page loads. So a visitor who had typed nothing met two bare
+     digits, 1 and 4, with no label and — because the sheet-cost line that is
+     their entire explanation only appears at two names or more — nothing
+     under them either. The chips followed the same rule as the line they are
+     explained by: hidden until the roster holds enough names for N-per-sheet
+     to change anything. updateSheetCost() owns both. */
   function mountNUp() {
     if ($("#pt-nup-row") || !primaryRoster()) return;
     const host = $("#pt-sheet-cost");
@@ -4089,6 +4253,7 @@
     const row = document.createElement("div");
     row.id = "pt-nup-row";
     row.className = "pt-choice-row pt-nup-row";
+    row.hidden = true;
     row.setAttribute("role", "radiogroup");
     row.setAttribute("aria-label", T.classSet);
     NUP_CHOICES.forEach((n) => {
@@ -4117,7 +4282,15 @@
     out.className = "pt-sheet-cost";
     out.setAttribute("aria-live", "polite");
     out.hidden = true;
-    (btn.closest(".bubble-actions, .pt-actions") || btn).insertAdjacentElement("afterend", out);
+    /* .pt-preview-actions was missing from this list, so on the six tools that
+       use it — coloring-page-maker, dot-to-dot-name, handwriting-worksheet-
+       generator, letter-tracing, name-puzzle-maker, sight-word-tracing —
+       closest() returned null and the line (and the N chips mountNUp puts
+       above it) landed after the Download PDF BUTTON, wedged between two
+       buttons in the middle of the action row. name-tracing looked right only
+       because it happens to use .bubble-actions. */
+    (btn.closest(".bubble-actions, .pt-actions, .pt-preview-actions") || btn)
+      .insertAdjacentElement("afterend", out);
     const roster = primaryRoster();
     if (roster) roster.addEventListener("input", () => updateSheetCost());
     updateSheetCost();
@@ -4455,12 +4628,17 @@
     host.insertAdjacentElement("afterend", wrap);
   }
 
-  // A small second copy of the model at the right-hand end of a trace row.
+  /* A small second copy of the model at the right-hand end of a trace row.
+     `node` may be null, which reserves the column without drawing anything —
+     the rows that get no model still have to end where the ones that do end,
+     or the sheet prints with a ragged right margin. Measured on the printed
+     PDF before that: 6.12in lines on the model and blank rows against 5.19in
+     on the three trace rows, a 0.92in step three times down the page. */
   function leftyModel(node) {
     const aside = document.createElement("span");
     aside.className = "pt-lefty-model";
     aside.setAttribute("aria-hidden", "true");
-    aside.appendChild(node);
+    if (node) aside.appendChild(node);
     return aside;
   }
 
@@ -4649,10 +4827,35 @@
      draws its midline dashed, but a Seyes interline is lighter and SOLID --
      the source calls them "three lighter lines", not broken ones -- and
      drawing them dashed made the French ruling look like three midlines. */
-  function addGuide(svg, w, y, dashed, faint) {
+  /* How far past the viewBox the practice rules are drawn, in viewBox units.
+
+     A trace row is `<svg viewBox="0 0 w 210">` with `width:100%` and a
+     max-height, and w is measured from the WORD. So the row's aspect is the
+     word's, and on a sheet wider than that aspect the height cap wins and
+     preserveAspectRatio letterboxes the whole thing — including the ruled
+     lines, which then stop well short of the paper. Measured on the printed
+     PDF for "Emma": the practice rules span 3.07in of an 8.5in page, 41% of
+     the 7.5in printable width, on a sheet whose purpose is writing space.
+     (R-013 recorded 3.61in of 7.5in on the same defect and it was left open.)
+
+     A root <svg> clips to its VIEWPORT, not to its viewBox, so content drawn
+     outside the viewBox still paints across the letterboxed margin and is cut
+     off at the element's own edge — which is exactly the paper's writing
+     width. A horizontal rule extended horizontally is still a horizontal
+     rule, so nothing is distorted and, crucially, the word's size and
+     position do not move: this widens the lines without shrinking the
+     letters, which choosing a wider viewBox aspect would have done.
+
+     1600 units covers the widest case this can meet — a landscape sheet at
+     narrow margins, where the viewport is about 6.7x the row height, i.e.
+     1411 units against a 522-unit box for a four-letter name. */
+  const RULE_OVERHANG = 1600;
+
+  function addGuide(svg, w, y, dashed, faint, bleed) {
+    const over = bleed ? RULE_OVERHANG : 0;
     const l = document.createElementNS(SVGNS, "line");
-    l.setAttribute("x1", "8");
-    l.setAttribute("x2", String(w - 8));
+    l.setAttribute("x1", String(8 - over));
+    l.setAttribute("x2", String(w - 8 + over));
     l.setAttribute("y1", String(y));
     l.setAttribute("y2", String(y));
     const hc = highContrastOn();
@@ -4676,14 +4879,15 @@
   function addRuling(svg, w) {
     const r = ruling();
     const band = traceBand();
+    const over = RULE_OVERHANG;
     const y = (at) => TRACE_BASE - at * band;
     // The shaded Mittelband goes down first so every line still reads over it.
     if (r.band) {
       const top = y(r.band.to), bottom = y(r.band.from);
       const rect = document.createElementNS(SVGNS, "rect");
-      rect.setAttribute("x", "8");
+      rect.setAttribute("x", String(8 - over));
       rect.setAttribute("y", String(top));
-      rect.setAttribute("width", String(Math.max(0, w - 16)));
+      rect.setAttribute("width", String(Math.max(0, w - 16 + over * 2)));
       rect.setAttribute("height", String(Math.max(0, bottom - top)));
       rect.setAttribute("fill", GUIDE_MID);
       rect.setAttribute("opacity", highContrastOn() ? "0.28" : "0.16");
@@ -4692,7 +4896,11 @@
     if (r.verticals) {
       const step = r.verticals * band;
       const hc = highContrastOn();
-      for (let x = 8 + step; x < w - 8; x += step) {
+      /* Same phase as before — anchored on 8 + step — continued out to the
+         overhang in both directions so a Lineatur's slant guides reach the
+         paper's edge with its rules rather than stopping with the word. */
+      const first = 8 + step - Math.ceil((over + step) / step) * step;
+      for (let x = first; x < w - 8 + over; x += step) {
         const l = document.createElementNS(SVGNS, "line");
         l.setAttribute("x1", String(x));
         l.setAttribute("x2", String(x));
@@ -4704,7 +4912,7 @@
       }
     }
     rulingGuides(TRACE_BASE, band, TRACE_FONT_SIZE)
-      .forEach((line) => addGuide(svg, w, line.y, line.dashed, line.faint));
+      .forEach((line) => addGuide(svg, w, line.y, line.dashed, line.faint, true));
   }
 
   // A word rendered at a difficulty level, on a ruled baseline. The single
@@ -4857,7 +5065,16 @@
         g.appendChild(path);
       });
       svg.appendChild(g);
-      if (o.overlay) addWordStrokeOverlay(svg, word, TRACE_FONT_SIZE, trackPx, TRACE_BASE, "alphabetic", w);
+      /* routeDrawn: the dotted/dashed letter above IS the overlay's own
+         skeleton, fitted by the same call. Drawing the route again on top of
+         it — solid, 6 units wide, at 0.9 opacity — did not annotate the
+         letter, it ERASED it: at level 3 the fine dots the child is meant to
+         join were completely covered by a blue line of the same shape. The
+         arrow and the numbering are what this row still needs. */
+      if (o.overlay) {
+        addWordStrokeOverlay(svg, word, TRACE_FONT_SIZE, trackPx, TRACE_BASE, "alphabetic", w,
+                             { routeDrawn: true });
+      }
       return svg;
     }
     if (!spec.blank) {
@@ -5061,20 +5278,51 @@
     sheet.className = "pt-gen-sheet";
     // A solid model row on top so the target is always visible (unless the
     // chosen level already IS the solid model, or the user turned it off).
-    if (genModelOn() && level !== 1) sheet.appendChild(genRow(word, 1));
+    /* Whether this sheet reserves the left-handed model column at all. Decided
+       once, here, because the answer is a property of the sheet rather than of
+       a row: only the trace rows carry a model, they are all at `level`, and
+       at level 7 they are blank — so a level-7 sheet would otherwise give up
+       14% of every line's writing width to a column that never shows
+       anything. */
+    const lefty = leftHanded && RENDER !== "glyph" && !levelSpec(level).blank;
+    if (genModelOn() && level !== 1) sheet.appendChild(genRow(word, 1, "model", lefty));
     const traceCount = genRowCount();
-    for (let i = 0; i < traceCount; i++) sheet.appendChild(genRow(word, level));
+    for (let i = 0; i < traceCount; i++) sheet.appendChild(genRow(word, level, "trace", lefty));
     // Finish on blank ruled lines for independent writing (skip if already blank).
     const blanks = level === TRACE_LEVELS.length ? 0 : 2;
-    for (let i = 0; i < blanks; i++) sheet.appendChild(genRow(word, TRACE_LEVELS.length));
+    for (let i = 0; i < blanks; i++) sheet.appendChild(genRow(word, TRACE_LEVELS.length, "blank", lefty));
     sheet.appendChild(nameDateRow());
     return sheet;
   }
 
-  function genRow(word, level) {
+  /* `kind` is what the row is FOR, which the level alone does not say: the
+     same level 1 builds the model row on top and every trace row when level 1
+     is what the visitor picked, and TRACE_LEVELS.length builds both the
+     closing blank lines and the trace rows at level 7. nameRow() has always
+     taken it; genRow() did not, which is the reason the left-handed model
+     below could not be attached here. */
+  function genRow(word, level, kind, lefty) {
     const row = document.createElement("div");
     row.className = "pt-gen-row";
     row.appendChild(traceWordSVG(word, level, { guides: true, overlay: strokeOverlayOn() }));
+    /* A left-hander writing left to right covers what they have just written,
+       so the model at the START of the line is under their hand by the time
+       they need it. The second copy at the right-hand end is the whole point
+       of the setting, and until now genRow() never read the flag — the
+       checkbox mounted on this tool, re-rendered the preview and changed
+       nothing, which is the "control with no consequence" this engine's own
+       comments call a defect (R-019, R-014). nameRow() has carried it since
+       the setting shipped and style.css has always carried the .pt-gen-row
+       rule for it; only this line was missing.
+
+       Trace rows only, and never a blank one: a row whose whole job is
+       writing from memory must not be handed a model. Every OTHER row still
+       reserves the column, empty, so all seven lines end at the same x. */
+    if (lefty) {
+      const show = kind === "trace";
+      row.classList.add("has-lefty");
+      row.appendChild(leftyModel(show ? traceWordSVG(word, 1, { guides: false, track: false }) : null));
+    }
     return row;
   }
 
@@ -5227,6 +5475,7 @@
          was looking at was the better of them. */
       rulingGuides(base, gBand, fontSize).forEach((g) => drawGuide(g.y, g.dashed, g.faint));
 
+      let routedPng = null;
       if (!spec.blank) {
         ctx.font = "700 " + fontSize + "px " + FONT;
         ctx.textAlign = "center";
@@ -5245,7 +5494,7 @@
              without this file owning a second path parser. Falling back to
              strokeText keeps the old contour rendering for a word the route
              cannot cover, exactly as the preview does. */
-          const routedPng = (spec.fill === "none" && spec.routeSw && typeof Path2D !== "undefined")
+          routedPng = (spec.fill === "none" && spec.routeSw && typeof Path2D !== "undefined")
             ? traceRoutePaths(word, fontSize, 0, base, width)
             : null;
           ctx.strokeStyle = spec.stroke;
@@ -5267,7 +5516,26 @@
         }
         ctx.globalAlpha = 1;
       }
-      downloadCanvas(canvas, (PNG_PREFIX || "handwriting") + "-" + (slugify(word) || "word") + "-L" + level + ".png", "generator_word");
+      /* Every other PNG this engine exports carries the credit block, and a
+         printed worksheet with no route back to the site is the case the
+         QR exists for. This path never called it. */
+      drawCredit(ctx, width, height);
+      const save = () => downloadCanvas(canvas,
+        (PNG_PREFIX || "handwriting") + "-" + (slugify(word) || "word") + "-L" + level + ".png",
+        "generator_word");
+      /* The overlay was on the screen and on the printed sheet and absent
+         from the PNG — the one artifact that leaves the site. wordPNG was
+         given it when the export was added; this export, on the page whose
+         whole subject is stroke order, was missed. Same geometry the canvas
+         above just drew: alphabetic baseline at `base`, no tracking. */
+      if (!spec.blank && strokeOverlayOn()) {
+        strokeOverlayImage(word, width, height, fontSize, 0, base, "alphabetic",
+                           { routeDrawn: !!routedPng })
+          .then((img) => { if (img) ctx.drawImage(img, 0, 0, width, height); save(); })
+          .catch(save);
+      } else {
+        save();
+      }
     });
   }
 
