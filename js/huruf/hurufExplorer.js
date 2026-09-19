@@ -125,8 +125,13 @@
     wrap.appendChild(sheet);
     printRoot.appendChild(wrap);
     document.body.classList.add("is-printing");
+    // Hide the page inline as well: the stylesheet rule cannot beat an
+    // inline !important (an ad anchor unit), so without this the printed
+    // sheet carries the page's ads. Shared with printablesEngine.js.
+    if (window.UltraTextGen && window.UltraTextGen.hideForPrint) window.UltraTextGen.hideForPrint(printRoot);
     window.print();
     document.body.classList.remove("is-printing");
+    if (window.UltraTextGen && window.UltraTextGen.restorePrint) window.UltraTextGen.restorePrint();
     printRoot.innerHTML = "";
   }
 

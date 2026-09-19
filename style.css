@@ -4527,11 +4527,16 @@ button.clear-decoration {
 .bubble-print-sheet .bubble-outline { width: 100%; }
 
 @media print {
-  body.is-printing > *:not(#bubblePrintRoot):not(#cursivePrintRoot):not(#pt-print-root):not(#kana-print-root) { display: none !important; }
+  /* #hurufPrintRoot was missing from this list until 2026-09-17, so the huruf
+     page hid its own print surface along with the rest of the page and printed
+     a blank sheet. The JS half (UltraTextGen.hideForPrint) skips the element it
+     is told to keep, but a stylesheet rule still reached this one. */
+  body.is-printing > *:not(#bubblePrintRoot):not(#cursivePrintRoot):not(#pt-print-root):not(#kana-print-root):not(#hurufPrintRoot) { display: none !important; }
   body.is-printing #bubblePrintRoot { display: block !important; padding: 1rem; }
   body.is-printing #cursivePrintRoot { display: block !important; padding: 1rem; }
   body.is-printing #pt-print-root { display: block !important; padding: 1rem; }
   body.is-printing #kana-print-root { display: block !important; padding: 1rem; }
+  body.is-printing #hurufPrintRoot { display: block !important; padding: 1rem; }
 }
 
 /* ===========================================================
