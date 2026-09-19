@@ -19,6 +19,13 @@ letter class teaches the child the wrong relationship.
 Most of the rest traces to three shared mechanisms rather than to individual pages, which is the
 more useful finding and is the subject of the systemic document.
 
+**Fix status, 2026-09-19.** Eight of the seventeen entries are closed, including all three R1s,
+each re-measured with the instrument that found it: R-001, R-002, R-003, R-004, R-005, R-006,
+R-007 and R-010. The per-entry after-numbers are in the registry. Two readings in this audit were
+wrong and are corrected there rather than deleted — R-007's affected-tools list (name-puzzle-maker
+is not built on the design surface) and the 7.4 : 1 top-to-bottom imbalance R-007 and R-013 both
+cite (it is the ink bounding box, which reaches the footer, not the artwork's placement).
+
 ---
 
 ## How this was measured

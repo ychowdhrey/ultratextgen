@@ -13,6 +13,38 @@ Sources: [`render-defect-registry.md`](render-defect-registry.md),
 
 ---
 
+## Status, 2026-09-19
+
+| item | state |
+|---|---|
+| Item 0 — decide on the dotted levels | **moot.** Item 6 was built, so there is nothing to decide in the meantime. None of the three options was taken. |
+| Item 1 — VisibleBounds + OpticalCenter | **shipped** as `js/printables/glyphMetrics.js`. Closes R-002, R-005, R-006, R-010. |
+| Item 2 — PatternFill | **shipped.** Closes R-004. |
+| Item 3 — PaperLayout | **shipped** as `sheetGeom()`. Closes R-007. |
+| Item 4 — one layout object | not started. R-008, R-009, R-014, R-015 remain open. |
+| Item 5 — PrintableCanvas fit | **shipped** for the measured-type half. Closes R-003, most of R-013. |
+| Item 6 — stroke skeletons | **shipped**, and far cheaper than this document estimated. Closes R-001 and the rest of R-010. |
+
+**Item 6's estimate was wrong and the correction is the useful part.** This document scoped it as
+"52 letters x 3 faces, plus digits… the expensive item", on the premise that no centreline
+representation existed. One did: `js/printables/strokeDirectionData.js` has held a hand-authored
+skeleton for all 52 letters since the stroke-direction overlay shipped, and this document cites
+that file three paragraphs earlier without noticing that what it holds *is* the missing object.
+
+What the work actually took was a **fit** — the skeleton is authored against a generic sans and
+no shipped face lands on its numbers — plus corrections to 16 letters, each driven by a measured
+miss rather than by eye. And the "x 3 faces" multiplier does not exist: all three tools that load
+the data use Quicksand. Measured against the others for the record — Fredoka 98.5%, Archivo Black
+98.9%, Plus Jakarta Sans 97.0% mean route coverage, with `y` the one genuine letterform fork
+(Quicksand draws it as a u with a descender, the others as a v with a tail). A face-specific
+variant becomes necessary the day a non-Quicksand page loads the file, and not before.
+
+**The estimate was not idle.** It is why Item 0 existed at all — a product decision about
+shipping a known-wrong surface, justified by "the proper fix is weeks of work". Check whether the
+object you need already exists under another name before pricing the work that would create it.
+
+---
+
 ## Item 0 — Decide what to do about the dotted tracing levels, now
 
 **Blocks nothing. Should happen before the next printables push.** Not an engineering task.

@@ -11,6 +11,12 @@ Every number below was measured, not estimated. Where a first reading was wrong 
 recorded as a correction rather than removed, because the wrong reading is the one a future
 audit will repeat.
 
+**Fix status (2026-09-19).** Eight entries are closed, each with the same instrument re-run
+against the same input: R-001, R-002, R-003, R-004, R-005, R-006, R-007, R-010. A closed entry
+keeps its original measurement above a **Fixed** block carrying the after-number — the before is
+what a future audit needs in order to recognise the defect returning. Nothing here is marked
+fixed on the strength of a code change alone.
+
 ---
 
 ## R-001 — Dotted tracing samples the glyph OUTLINE, not a writing centreline
@@ -52,6 +58,20 @@ the two rings to follow.
 **Evidence** `evidence/R-001-dotted-samples-outline.png` (input `mom`, solid vs bold-dotted vs
 fine-dotted at the generator's own geometry).
 
+**Fixed 2026-09-19.** The stroked levels draw the writing centreline instead of the contour,
+from the skeleton `js/printables/strokeDirectionData.js` already held for all 52 letters, fitted
+per character onto that character's measured ink (`glyphMetrics.fitSkeleton`). Same instrument,
+same input `minimum`: every one of the 15 stems now carries a **single** column of dots, centred
+at 45-52% of its width, against two edge columns or none before. The PNG export strokes the same
+paths through `Path2D`, so the download and the preview cannot disagree.
+
+Fifteen letters needed their data corrected first, each from a measured miss. The route's fit was
+verified across all 52 letters against Quicksand: 99.4% of each route lands on the rendered
+letter, worst letter 92%. The assertion lives in `js/printables/strokeRoute.test.html`.
+
+A word containing a character with no skeleton (a digit, an accented letter) keeps the old
+contour rendering for the whole row rather than mixing the two — and `sight-word-tracing`, which
+rendered the levels without loading the stroke data, now loads it like its two siblings.
 ---
 
 ## R-002 — Ruled-line registration is wrong for every letter class except the baseline
@@ -85,6 +105,13 @@ The arithmetic: Quicksand's x-height is 0.544em and its cap height 0.699em. To r
 must be solved from the band (54 / 0.544 = font-size 99.3) and the cap line placed from the result
 (158 − 0.699 × 99.3 = y 88.6), rather than both numbers being fixed in advance.
 
+**Fixed 2026-09-19.** `traceGuides()` derives the top rule from the face's ascender and the
+midline from its x-height (`glyphMetrics.faceMetrics`) rather than splitting a guessed band.
+Measured on Quicksand 700 at 132, same probes: ascenders 10.3 units short of the top rule ->
+**0.3**; x-height 17-18 over the midline -> **within 1.0**; capitals 15.0-15.5 short -> **5.3**,
+which is Quicksand's real cap-versus-ascender difference rather than an error. The canvas
+export's own 0.52/0.74 ratios now read the same `faceMetrics`, so the PNG and the preview cannot
+rule their lines differently.
 ---
 
 ## R-003 — Silent truncation at 14 characters
@@ -105,6 +132,10 @@ ellipsis, no warning and no layout cue.
 A parent typing a long name, or anyone using the page's own suggestion to print an alphabet
 strip, gets a sheet missing half the text and nothing tells them.
 
+**Fixed 2026-09-19.** `DESIGN_HARD_MAX` (4x the soft cap) replaces the silent
+`.slice(0, DESIGN_MAX)`, and a line too long for its band wraps to the second band rather than
+falling off the end of the string. Re-run over the six stress inputs the entry measured:
+**0 of 6** lose characters, against 3 of 6 before.
 ---
 
 ## R-004 — Pattern fills are anchored to the page origin, not the glyph
@@ -139,6 +170,11 @@ tile's vertical phase (27.7 → 43.9).
 **Not in scope of this defect:** counters are correctly preserved (the `A` counter stays white),
 and the pattern does respect the glyph's fill rule. The defect is placement, not clipping.
 
+**Fixed 2026-09-19.** The pattern's `patternTransform` is anchored to the artwork's own ink
+centre, computed before the pattern is created, and the tile scales with the type
+(`k = clamp(fs/280, 0.55, 1.6)`). Re-run over the same four inputs: tile phase at the ink origin
+is **0.00** for every one, against 4.6 / 33.2 / 13.8 / 0.2 before, and the motif-centre error is
+0.00.
 ---
 
 ## R-005 — `dominant-baseline="central"` centres the em box, so every tile sits low
@@ -176,6 +212,18 @@ Two consequences ride along:
 Monogram shows the same signature: every three-letter monogram's ink centre sits **11.2 units**
 above the sheet centre of a 400×400 sheet (`ABC`, `III`, `MIM`, `OQO` all −11.2).
 
+**Fixed 2026-09-19.** `outlineSVG()` places the letter by `glyphMetrics.centreOffsets`
+— its measured ink — instead of `dominant-baseline="central"` and a nominal anchor. Re-run over
+the same ten glyphs: worst vertical error **0.7** units against 15.2 before, and worst edge
+clearance **35.7** against 0.3. A tiled A-Z sheet shares one baseline across the set
+(`shareBaselineWith`) so the grid does not jitter.
+
+Found while fixing it, and the reason the first numbers were wrong three times: `withFont()`
+called `document.fonts.load("700 200px Baloo 2")`, which is invalid CSS because a bare font
+family may not start with a digit. It threw, the `.catch` fired immediately, and the callback ran
+as though the face had arrived — silently disabling the engine's own font-fallback telemetry on
+every Baloo 2 page. Quicksand and Fredoka were unaffected because a single-word family quotes
+identically, which is why it survived. The family is quoted now.
 ---
 
 ## R-006 — Word viewBox width is a character-count estimate, so wide letters clip
@@ -209,6 +257,10 @@ narrower; the mechanism is identical and one face change puts it over.
 monogram-maker. Measurement shows it fits (42.5 … 355.5 in 400); the apparent clipping was an
 artifact of how the capture resized the element. Only `WWW` overflows.
 
+**Fixed 2026-09-19.** The word viewBox is measured (`glyphMetrics.ink` over the whole
+string, taking whichever of ink and advance is wider) rather than estimated from a character
+count. Re-run over five tools x six inputs: **zero** clipping, and "Christopher" now reserves a
+1041-unit box against 1378 before — a fifth of the sheet width that had been padding.
 ---
 
 ## R-007 — Landscape does not re-lay-out the sheet, it letterboxes the portrait one
@@ -238,6 +290,31 @@ artwork, 0.59in below it), which is R-013.
 
 **Evidence** `evidence/R-007-landscape-letterboxed.png`.
 
+**Fixed 2026-09-19.** `sheetGeom()` derives the sheet from the paper's own printable box,
+holding the area at 1000x1400 so a unit stays the same physical size across settings. Same
+instrument, same input:
+
+| setting | coverage before | after | side margins before | after |
+|---|---|---|---|---|
+| Letter portrait | 30.5% | **36.0%** | 1.90 / 1.88 | **1.50 / 1.50** |
+| A4 portrait | 33.7% | **36.1%** | 1.63 / 1.60 | **1.45 / 1.44** |
+| Legal portrait | 29.7% | **36.2%** | 1.64 / 1.61 | **1.43 / 1.43** |
+| Letter landscape | 17.1% | **22.1%** | 3.74 / 3.72 | **3.31 / 3.31** |
+
+Landscape still reads lower than portrait here because "Emma" is a short word on a wide page, not
+because the sheet is letterboxed: on `dot-to-dot-name`, where the artwork fills its band, landscape
+now reads **43.5%** against portrait's 41.1%.
+
+**Correction to this entry's own Affects line.** `name-puzzle-maker` is not built on the
+1000x1400 surface — `puzzleSheetNode()` is a flex column of DOM that already filled the printable
+width — so it was never affected and is not changed. The measurement above was taken on
+`coloring-page-maker` and the affected list was inferred from it rather than checked, which is the
+reading a future audit should not repeat.
+
+**Correction to the 7.4 : 1 imbalance noted at the end of this entry.** That is the ink bounding
+box, which spans from the top of the artwork to the footer rules at the bottom of the sheet, not
+the artwork's own placement. The artwork is centred in its band. The number is real and its
+reading was wrong; it is not evidence for R-013.
 ---
 
 ## R-008 — Preview and PNG export disagree on outline colour
@@ -334,6 +411,10 @@ space. The number above is measured against a solid-filled copy, which is the me
 
 **Evidence** `evidence/R-010-stroke-overlay-misregistered.png`.
 
+**Fixed 2026-09-19.** The overlay is fitted to the glyph it annotates by the same
+`fitSkeleton` the tracing route uses, rather than dropped on unfitted. Same instrument: **12 of 12**
+start dots land on the letter body on `name-tracing` (`Emma`) and **7 of 7** on
+`handwriting-worksheet-generator` (`mom`), against 7 of 12 off before.
 ---
 
 ## R-011 — Cursive and calligraphy sheets are Unicode maths characters in a font stack that has none of them
@@ -436,6 +517,20 @@ above** the artwork against 0.59in below it, a 7.4 : 1 imbalance, with 30.5% ink
 Related, on the tracing side: the printed handwriting worksheet's practice rules span only
 **3.61in of a 7.5in printable width** on five of its seven pages (page 1 spans 5.13in). Under half
 the available writing space is used, on a sheet whose purpose is writing space.
+
+**Partly fixed 2026-09-19.** The type is measured rather than counted: one probe at font-size
+100 through the same hidden-canvas measurer the heading already trusted, scaled linearly. The
+three-step cliff is gone — the size is continuous across the entry's own inputs (360 / 360 / 312 /
+160 / 104 / 117) and "Christopher" now covers **86%** of the page width against 59.1%. R-007's
+fix carries the rest: every paper and orientation now uses its whole printable box.
+
+What is **not** fixed, and is a product decision rather than a render defect: a short word on a
+wide sheet still leaves the sides empty, because the size cap is a share of the sheet (26% of its
+height, the same proportion in every orientation) rather than a limit the word could grow past.
+
+**Correction.** The 7.4 : 1 top-to-bottom imbalance this entry cites from R-007 is the ink
+bounding box — top of the artwork to the footer rules at the bottom of the sheet — not the
+artwork's placement. The artwork is centred in its band. It is not evidence for this entry.
 
 ---
 

@@ -8,6 +8,25 @@ Written to this repository's existing testing conventions: no framework, no runn
 you `node` or open, in the idiom of `js/counter/counterRules.test.js` (pure logic) and
 `js/counter/counter.test.html` (DOM, driven headlessly, read from `window.__UTG_TEST`).
 
+**Status, 2026-09-19.** The first assertion group is live, in this plan's own idiom:
+`js/printables/strokeRoute.test.html` (driven headlessly, read from `window.__UTG_TEST`) plus the
+existing `js/printables/glyphMetrics.test.html`. Between them they cover **G-20** and **G-22** —
+and cover them better than the plan specified, by measuring the route against a raster of the
+glyph across all 52 letters rather than counting clusters on one scanline of one word. A
+scanline count answers "is there one column here"; the raster answers "is the route on the
+letter", which is the claim R-001 and R-010 both rest on.
+
+**G-21 is deliberately not asserted, and the reason is a real measurement.** The plan asks that
+every stem crossed by the x-height scanline contain at least one dot cluster. Measured after the
+fix on `minimum`: 8 of the 15 stems carry a dot at exactly y=122, because a dot trail is discrete
+and a single scanline falls in a gap about half the time. The dots are evenly spaced along each
+stroke by construction (`stroke-dasharray`), so the property the plan wanted is real but a
+scanline is the wrong instrument for it. Asserting it as written would make the check fail on
+correct output, which is how a gate gets ignored.
+
+Neither test is wired into `validate.yml`. Both need a browser and a webfont, the same reason
+`js/counter/counter.test.html` and `js/share/shareSave.test.html` are not in CI either.
+
 ---
 
 ## The design decision that matters
