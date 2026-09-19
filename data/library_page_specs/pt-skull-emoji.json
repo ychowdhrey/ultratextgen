@@ -6,7 +6,7 @@
   "hero_h1": "Emoji Caveira",
   "hero_tagline": "💀 nos seus dois sentidos: o literal e o que hoje quase sempre se quer dizer.",
   "intro": "Na internet 💀 quase nunca significa «morte», e sim «não aguento de tanto rir». Esta página separa as duas leituras: primeiro as caveiras em si, depois o contexto do riso, por fim os símbolos de perigo de verdade. Clique para copiar.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "core",
@@ -132,6 +132,55 @@
     {
       "h2": "Como a Caveira Virou uma Risada",
       "body": "A virada de sentido é recente e bem documentada: por volta de 2020, no TikTok, 💀 passou a significar «foi tão engraçado que eu morri», justamente porque 😂 tinha virado marca de uma geração anterior. O nome Unicode continua sendo apenas «Skull» — o sentido que as pessoas trocam entre si não está em nenhuma tabela de caracteres. Para a leitura literal, ☠ é a melhor escolha: ele não acompanhou essa mudança."
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Conjuntos de combos",
+    "h2": "Combos de emoji caveira",
+    "intro": "Copie um combo de caveira inteiro com um clique e cole direto em um comentário, legenda ou resposta."
+  },
+  "collection_container_id": "skullSetsContainer",
+  "collections": [
+    {
+      "name": "Morri de rir",
+      "flags": ["💀", "😂", "🤣"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Zona de perigo",
+      "flags": ["☠️", "☣️", "☢️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Modo pirata",
+      "flags": ["☠️", "🏴‍☠️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Completamente morto",
+      "flags": ["💀", "⚰️", "🪦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Caveira de Halloween",
+      "flags": ["💀", "🎃", "👻"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tão engraçado que morri",
+      "flags": ["💀", "💯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "De gelar os ossos",
+      "flags": ["💀", "🦴"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "RIP eu",
+      "flags": ["💀", "⚰️"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

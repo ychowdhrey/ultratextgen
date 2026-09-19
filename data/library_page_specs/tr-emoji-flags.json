@@ -6,7 +6,7 @@
   "hero_h1": "Bayrak Emoji — Ülke Bayrakları Kopyala",
   "hero_tagline": "Bayrağa dokun, anında kopyalansın: Türk bayrağı, Azerbaycan, Almanya ve her ülke. Oyun ismine, bio'ya, başlığa veya mesaja yapıştır — uygulama gerekmez.",
   "intro": "Her ülkenin bayrağı tek dokunuş uzağında. Yaklaşık 200 ülkenin bayrağını gez, kıtaya göre filtrele, istediğin bayrak emojisini anında kopyala. Bayrak emojileri resim değil, gerçek Unicode karakteridir — bu yüzden Instagram, WhatsApp, TikTok, Discord ve Telegram gönderilerine, bio'na ve oyun isim alanına düz yazı gibi yapışır. Sayfanın başında Türk bayrağı ve en çok aranan bayraklar hazır duruyor; aşağıda ise Avrupa Birliği, G20 veya Orta Doğu gibi bütün bir seti tek tuşla kopyalayabilirsin.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "s1",
@@ -160,6 +160,50 @@
     {
       "h2": "🇹🇷 aslında bir bayrak karakteri değil",
       "body": "🇹🇷 diye bir karakter yok: Ⓣ + Ⓡ, iki bölge gösterge harfi var; bayrağı fontun kendisi çizer. Windows'ta iki harf görmenin sebebi bu. Unicode, hangi toprağın ülke sayılacağına karar vermemek için ISO kodlarını ödünç aldı — bazı bayrakların hiç olmaması da bundan."
+    }
+  ],
+  "collection_section": {
+    "id": "flag-grids",
+    "label": "Bayrak setleri",
+    "h2": "Bölgeye göre bayrak setleri",
+    "intro": "Bir gönderi, liste ya da başlık için bütün bir bayrak setini tek seferde kopyala."
+  },
+  "collection_container_id": "flagGridContainer",
+  "collections": [
+    {
+      "name": "Avrupa Birliği üyeleri",
+      "flags": ["🇦🇹", "🇧🇪", "🇧🇬", "🇭🇷", "🇨🇾", "🇨🇿", "🇩🇰", "🇪🇪", "🇫🇮", "🇫🇷", "🇩🇪", "🇬🇷", "🇭🇺", "🇮🇪", "🇮🇹", "🇱🇻", "🇱🇹", "🇱🇺", "🇲🇹", "🇳🇱", "🇵🇱", "🇵🇹", "🇷🇴", "🇸🇰", "🇸🇮", "🇪🇸", "🇸🇪"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "ASEAN ülkeleri",
+      "flags": ["🇸🇬", "🇲🇾", "🇮🇩", "🇹🇭", "🇵🇭", "🇻🇳", "🇧🇳", "🇰🇭", "🇱🇦", "🇲🇲"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Orta Doğu",
+      "flags": ["🇸🇦", "🇦🇪", "🇶🇦", "🇰🇼", "🇧🇭", "🇴🇲", "🇮🇱", "🇯🇴", "🇱🇧", "🇮🇶", "🇮🇷", "🇾🇪"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "G20 ülkeleri",
+      "flags": ["🇦🇷", "🇦🇺", "🇧🇷", "🇨🇦", "🇨🇳", "🇫🇷", "🇩🇪", "🇮🇳", "🇮🇩", "🇮🇹", "🇯🇵", "🇲🇽", "🇷🇺", "🇸🇦", "🇿🇦", "🇰🇷", "🇹🇷", "🇬🇧", "🇺🇸"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "İskandinav ülkeleri",
+      "flags": ["🇩🇰", "🇫🇮", "🇮🇸", "🇳🇴", "🇸🇪"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Güney Asya",
+      "flags": ["🇮🇳", "🇵🇰", "🇧🇩", "🇱🇰", "🇳🇵", "🇧🇹", "🇲🇻", "🇦🇫"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Doğu Asya",
+      "flags": ["🇨🇳", "🇯🇵", "🇰🇷", "🇹🇼", "🇲🇳", "🇭🇰", "🇲🇴"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

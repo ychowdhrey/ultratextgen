@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/underscore-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/underscore-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/underscore-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/underscore-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/underscore-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/underscore-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,9 +37,18 @@
       "h2": "Dấu Gạch Dưới, Chiều Rộng Đầy Đủ & Gạch Đôi",
       "intro": "Dấu gạch dưới bàn phím thông thường cùng hai biến thể chiều rộng của nó — dạng chiều rộng đầy đủ dùng trong dàn trang chữ Đông Á và dấu gạch dưới khoảng cách kép. Sẵn sàng để dán ở bất cứ đâu.",
       "symbols": [
-        { "char": "_", "label": "Dấu Gạch Dưới / Low Line (U+005F)" },
-        { "char": "＿", "label": "Dấu Gạch Dưới Chiều Rộng Đầy Đủ (U+FF3F)" },
-        { "char": "‗", "label": "Dấu Gạch Dưới Đôi (U+2017)" }
+        {
+          "char": "_",
+          "label": "Dấu Gạch Dưới / Low Line (U+005F)"
+        },
+        {
+          "char": "＿",
+          "label": "Dấu Gạch Dưới Chiều Rộng Đầy Đủ (U+FF3F)"
+        },
+        {
+          "char": "‗",
+          "label": "Dấu Gạch Dưới Đôi (U+2017)"
+        }
       ]
     },
     {
@@ -39,8 +57,14 @@
       "h2": "Dấu Gạch Trên: Cùng Nét Gạch, Nhưng Ở Phía Trên",
       "intro": "Dấu gạch trên là ảnh gương của dấu gạch dưới — cùng nét gạch ngang nhưng đặt phía trên văn bản thay vì bên dưới, đó là lý do hai dấu này hay bị nhầm là đối lập nhau. Dấu vĩ tuyến là dấu gạch ngắn mà mọi người thường gõ khi ý họ là dấu gạch trên.",
       "symbols": [
-        { "char": "‾", "label": "Dấu Gạch Trên / Spacing Overscore (U+203E)" },
-        { "char": "¯", "label": "Dấu Vĩ Tuyến (U+00AF)" }
+        {
+          "char": "‾",
+          "label": "Dấu Gạch Trên / Spacing Overscore (U+203E)"
+        },
+        {
+          "char": "¯",
+          "label": "Dấu Vĩ Tuyến (U+00AF)"
+        }
       ]
     },
     {
@@ -49,17 +73,40 @@
       "h2": "Dấu Gạch Dưới So Với Họ Gạch Nối & Gạch Ngang",
       "intro": "Trong URL, tên người dùng và tên tệp, dấu gạch dưới và dấu gạch nối liên tục bị hoán đổi cho nhau — nhưng chúng nằm ở độ cao khác nhau, mã điểm khác nhau, và mỗi dấu đảm nhận một công việc khác nhau.",
       "symbols": [
-        { "char": "-", "label": "Dấu Gạch Nối-Trừ / Gạch Nối Bàn Phím (U+002D)" },
-        { "char": "‐", "label": "Dấu Gạch Nối (U+2010)" },
-        { "char": "–", "label": "Dấu Gạch Ngang Ngắn (U+2013)" },
-        { "char": "−", "label": "Dấu Trừ (U+2212)" }
+        {
+          "char": "-",
+          "label": "Dấu Gạch Nối-Trừ / Gạch Nối Bàn Phím (U+002D)"
+        },
+        {
+          "char": "‐",
+          "label": "Dấu Gạch Nối (U+2010)"
+        },
+        {
+          "char": "–",
+          "label": "Dấu Gạch Ngang Ngắn (U+2013)"
+        },
+        {
+          "char": "−",
+          "label": "Dấu Trừ (U+2212)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/keyboard-symbols/", "title": "Ký Hiệu Bàn Phím", "desc": "Dấu gạch dưới, gạch nối, dấu sao và phần còn lại của các ký tự dấu câu, phím Shift trên bàn phím tiêu chuẩn." },
-    { "href": "/library/punctuation-symbols/", "title": "Ký Hiệu Dấu Câu", "desc": "Dấu gạch ngang, dấu ngoặc, dấu ngoặc kép và dấu câu thông thường của Unicode trong một trang tra cứu." },
-    { "href": "/vi/symbol/at-symbol/", "title": "Ký Hiệu At (@)", "desc": "Ký tự đặc biệt khác nằm ở trung tâm địa chỉ thư điện tử và tên người dùng mạng xã hội, nơi dấu gạch dưới là ký tự phân cách an toàn khoảng trắng." }
+    {
+      "href": "/library/keyboard-symbols/",
+      "title": "Ký Hiệu Bàn Phím",
+      "desc": "Dấu gạch dưới, gạch nối, dấu sao và phần còn lại của các ký tự dấu câu, phím Shift trên bàn phím tiêu chuẩn."
+    },
+    {
+      "href": "/library/punctuation-symbols/",
+      "title": "Ký Hiệu Dấu Câu",
+      "desc": "Dấu gạch ngang, dấu ngoặc, dấu ngoặc kép và dấu câu thông thường của Unicode trong một trang tra cứu."
+    },
+    {
+      "href": "/vi/symbol/at-symbol/",
+      "title": "Ký Hiệu At (@)",
+      "desc": "Ký tự đặc biệt khác nằm ở trung tâm địa chỉ thư điện tử và tên người dùng mạng xã hội, nơi dấu gạch dưới là ký tự phân cách an toàn khoảng trắng."
+    }
   ]
 }

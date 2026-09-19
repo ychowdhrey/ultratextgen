@@ -16,23 +16,23 @@
       "symbols": [
         {
           "char": "&amp;",
-          "label": "&amp; — Kaufmännisches Und"
+          "label": "&amp;: Kaufmännisches Und"
         },
         {
           "char": "&lt;",
-          "label": "< — Kleiner-als-Zeichen"
+          "label": "<: Kleiner-als-Zeichen"
         },
         {
           "char": "&gt;",
-          "label": "> — Größer-als-Zeichen"
+          "label": ">: Größer-als-Zeichen"
         },
         {
           "char": "&quot;",
-          "label": "\" — Anführungszeichen"
+          "label": "\": Anführungszeichen"
         },
         {
           "char": "&#x27;",
-          "label": "&apos; — Apostroph"
+          "label": "&apos;: Apostroph"
         }
       ]
     },
@@ -44,55 +44,55 @@
       "symbols": [
         {
           "char": " ",
-          "label": "  — Geschütztes Leerzeichen (erscheint leer)"
+          "label": " : Geschütztes Leerzeichen (erscheint leer)"
         },
         {
           "char": "–",
-          "label": "&ndash; — Halbgeviertstrich"
+          "label": "&ndash;: Halbgeviertstrich"
         },
         {
           "char": "—",
-          "label": "&mdash; — Geviertstrich"
+          "label": "&mdash;: Geviertstrich"
         },
         {
           "char": "…",
-          "label": "&hellip; — Auslassungspunkte"
+          "label": "&hellip;: Auslassungspunkte"
         },
         {
           "char": "•",
-          "label": "&bull; — Aufzählungspunkt"
+          "label": "&bull;: Aufzählungspunkt"
         },
         {
           "char": "§",
-          "label": "&sect; — Paragrafzeichen"
+          "label": "&sect;: Paragrafzeichen"
         },
         {
           "char": "¶",
-          "label": "&para; — Absatzzeichen"
+          "label": "&para;: Absatzzeichen"
         },
         {
           "char": "“",
-          "label": "&ldquo; — Linkes doppeltes Anführungszeichen"
+          "label": "&ldquo;: Linkes doppeltes Anführungszeichen"
         },
         {
           "char": "”",
-          "label": "&rdquo; — Rechtes doppeltes Anführungszeichen"
+          "label": "&rdquo;: Rechtes doppeltes Anführungszeichen"
         },
         {
           "char": "‘",
-          "label": "&lsquo; — Linkes einfaches Anführungszeichen"
+          "label": "&lsquo;: Linkes einfaches Anführungszeichen"
         },
         {
           "char": "’",
-          "label": "&rsquo; — Rechtes einfaches Anführungszeichen"
+          "label": "&rsquo;: Rechtes einfaches Anführungszeichen"
         },
         {
           "char": "«",
-          "label": "&laquo; — Linke Guillemets"
+          "label": "&laquo;: Linke Guillemets"
         },
         {
           "char": "»",
-          "label": "&raquo; — Rechte Guillemets"
+          "label": "&raquo;: Rechte Guillemets"
         }
       ]
     },
@@ -104,31 +104,31 @@
       "symbols": [
         {
           "char": "©",
-          "label": "&copy; — Copyright-Zeichen"
+          "label": "&copy;: Copyright-Zeichen"
         },
         {
           "char": "®",
-          "label": "&reg; — Eingetragene-Marke-Zeichen"
+          "label": "&reg;: Eingetragene-Marke-Zeichen"
         },
         {
           "char": "™",
-          "label": "&trade; — Markenzeichen"
+          "label": "&trade;: Markenzeichen"
         },
         {
           "char": "€",
-          "label": "&euro; — Euro-Zeichen"
+          "label": "&euro;: Euro-Zeichen"
         },
         {
           "char": "£",
-          "label": "&pound; — Pfund-Zeichen"
+          "label": "&pound;: Pfund-Zeichen"
         },
         {
           "char": "¥",
-          "label": "&yen; — Yen-Zeichen"
+          "label": "&yen;: Yen-Zeichen"
         },
         {
           "char": "¢",
-          "label": "&cent; — Cent-Zeichen"
+          "label": "&cent;: Cent-Zeichen"
         }
       ]
     },
@@ -140,59 +140,59 @@
       "symbols": [
         {
           "char": "×",
-          "label": "&times; — Malzeichen"
+          "label": "&times;: Malzeichen"
         },
         {
           "char": "÷",
-          "label": "&divide; — Geteiltzeichen"
+          "label": "&divide;: Geteiltzeichen"
         },
         {
           "char": "±",
-          "label": "&plusmn; — Plusminuszeichen"
+          "label": "&plusmn;: Plusminuszeichen"
         },
         {
           "char": "½",
-          "label": "&frac12; — Bruch ein Halb"
+          "label": "&frac12;: Bruch ein Halb"
         },
         {
           "char": "¼",
-          "label": "&frac14; — Bruch ein Viertel"
+          "label": "&frac14;: Bruch ein Viertel"
         },
         {
           "char": "¾",
-          "label": "&frac34; — Bruch drei Viertel"
+          "label": "&frac34;: Bruch drei Viertel"
         },
         {
           "char": "°",
-          "label": "&deg; — Gradzeichen"
+          "label": "&deg;: Gradzeichen"
         },
         {
           "char": "µ",
-          "label": "&micro; — Mikro-Zeichen"
+          "label": "&micro;: Mikro-Zeichen"
         },
         {
           "char": "∞",
-          "label": "&infin; — Unendlichzeichen"
+          "label": "&infin;: Unendlichzeichen"
         },
         {
           "char": "≈",
-          "label": "&asymp; — Ungefähr gleich"
+          "label": "&asymp;: Ungefähr gleich"
         },
         {
           "char": "≠",
-          "label": "&ne; — Ungleich"
+          "label": "&ne;: Ungleich"
         },
         {
           "char": "≤",
-          "label": "&le; — Kleiner oder gleich"
+          "label": "&le;: Kleiner oder gleich"
         },
         {
           "char": "≥",
-          "label": "&ge; — Größer oder gleich"
+          "label": "&ge;: Größer oder gleich"
         },
         {
           "char": "√",
-          "label": "&radic; — Wurzelzeichen"
+          "label": "&radic;: Wurzelzeichen"
         }
       ]
     },
@@ -204,47 +204,47 @@
       "symbols": [
         {
           "char": "←",
-          "label": "&larr; — Pfeil nach links"
+          "label": "&larr;: Pfeil nach links"
         },
         {
           "char": "→",
-          "label": "&rarr; — Pfeil nach rechts"
+          "label": "&rarr;: Pfeil nach rechts"
         },
         {
           "char": "↑",
-          "label": "&uarr; — Pfeil nach oben"
+          "label": "&uarr;: Pfeil nach oben"
         },
         {
           "char": "↓",
-          "label": "&darr; — Pfeil nach unten"
+          "label": "&darr;: Pfeil nach unten"
         },
         {
           "char": "↔",
-          "label": "&harr; — Pfeil nach links und rechts"
+          "label": "&harr;: Pfeil nach links und rechts"
         },
         {
           "char": "♥",
-          "label": "&hearts; — Herz (Kartenfarbe)"
+          "label": "&hearts;: Herz (Kartenfarbe)"
         },
         {
           "char": "♦",
-          "label": "&diams; — Karo (Kartenfarbe)"
+          "label": "&diams;: Karo (Kartenfarbe)"
         },
         {
           "char": "♣",
-          "label": "&clubs; — Kreuz (Kartenfarbe)"
+          "label": "&clubs;: Kreuz (Kartenfarbe)"
         },
         {
           "char": "♠",
-          "label": "&spades; — Pik (Kartenfarbe)"
+          "label": "&spades;: Pik (Kartenfarbe)"
         },
         {
           "char": "★",
-          "label": "&starf; — Gefüllter Stern"
+          "label": "&starf;: Gefüllter Stern"
         },
         {
           "char": "☆",
-          "label": "&star; — Umrissener Stern"
+          "label": "&star;: Umrissener Stern"
         }
       ]
     },
@@ -256,43 +256,43 @@
       "symbols": [
         {
           "char": "é",
-          "label": "&eacute; — E mit Akut"
+          "label": "&eacute;: E mit Akut"
         },
         {
           "char": "è",
-          "label": "&egrave; — E mit Gravis"
+          "label": "&egrave;: E mit Gravis"
         },
         {
           "char": "ê",
-          "label": "&ecirc; — E mit Zirkumflex"
+          "label": "&ecirc;: E mit Zirkumflex"
         },
         {
           "char": "ñ",
-          "label": "&ntilde; — N mit Tilde"
+          "label": "&ntilde;: N mit Tilde"
         },
         {
           "char": "ü",
-          "label": "&uuml; — U mit Umlaut"
+          "label": "&uuml;: U mit Umlaut"
         },
         {
           "char": "ç",
-          "label": "&ccedil; — C mit Cedille"
+          "label": "&ccedil;: C mit Cedille"
         },
         {
           "char": "å",
-          "label": "&aring; — A mit Ring"
+          "label": "&aring;: A mit Ring"
         },
         {
           "char": "ø",
-          "label": "&oslash; — O mit Schrägstrich"
+          "label": "&oslash;: O mit Schrägstrich"
         },
         {
           "char": "æ",
-          "label": "&aelig; — Ligatur AE"
+          "label": "&aelig;: Ligatur AE"
         },
         {
           "char": "ß",
-          "label": "&szlig; — Scharfes S (Eszett)"
+          "label": "&szlig;: Scharfes S (Eszett)"
         }
       ]
     }

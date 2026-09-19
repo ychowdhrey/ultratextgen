@@ -28,8 +28,8 @@
       "h2": "Dwa Znaki Zwane „Znakiem Peso” — ₱ i $",
       "intro": "Oba te znaki nazywa się znakiem peso. ₱ to własny znak peso filipińskiego; $ to symbol używany przez niemal każde inne peso — bo sam znak dolara prawdopodobnie zaczynał jako skrót hiszpańskiego peso. Czy wywodzi się z odręcznego „Ps”, czy z owiniętych literą S Słupów Herkulesa na hiszpańskich monetach dolarowych, wciąż jest przedmiotem sporu historyków.",
       "symbols": [
-        { "char": "₱", "label": "Znak Peso (U+20B1) — dedykowany glif peso filipińskiego" },
-        { "char": "$", "label": "Znak Dolara (U+0024) — znak, którego naprawdę używa niemal każde inne peso" }
+        { "char": "₱", "label": "Znak Peso (U+20B1): dedykowany glif peso filipińskiego" },
+        { "char": "$", "label": "Znak Dolara (U+0024): znak, którego naprawdę używa niemal każde inne peso" }
       ]
     },
     {
@@ -38,12 +38,12 @@
       "h2": "Rodzina Walut z Przekreśloną Literą",
       "intro": "Znak peso to wielka litera P przekreślona dwiema równoległymi kreskami — ten sam przepis stoi za całym pokoleniem nowoczesnych znaków walut, z których każdy to krajowa litera przekreślona jedną lub dwiema liniami. Gotowe do wklejenia gdziekolwiek.",
       "symbols": [
-        { "char": "₹", "label": "Znak Rupii Indyjskiej (U+20B9) — przekreślone R, oficjalnie przyjęte w 2010 roku" },
-        { "char": "₩", "label": "Znak Wona (U+20A9) — W z dwiema kreskami" },
-        { "char": "₦", "label": "Znak Nairy (U+20A6) — przekreślone N (Nigeria)" },
-        { "char": "₴", "label": "Znak Hrywny (U+20B4) — przekreślona litera dla Ukrainy" },
-        { "char": "₫", "label": "Znak Donga (U+20AB) — przekreślone d (Wietnam)" },
-        { "char": "€", "label": "Znak Euro (U+20AC) — zaokrąglone E z dwiema kreskami" }
+        { "char": "₹", "label": "Znak Rupii Indyjskiej (U+20B9): przekreślone R, oficjalnie przyjęte w 2010 roku" },
+        { "char": "₩", "label": "Znak Wona (U+20A9): W z dwiema kreskami" },
+        { "char": "₦", "label": "Znak Nairy (U+20A6): przekreślone N (Nigeria)" },
+        { "char": "₴", "label": "Znak Hrywny (U+20B4): przekreślona litera dla Ukrainy" },
+        { "char": "₫", "label": "Znak Donga (U+20AB): przekreślone d (Wietnam)" },
+        { "char": "€", "label": "Znak Euro (U+20AC): zaokrąglone E z dwiema kreskami" }
       ]
     },
     {
@@ -52,15 +52,15 @@
       "h2": "Znaki Podobne, Mylone z ₱",
       "intro": "Ponieważ ₱ to zasadniczo przekreślone P, bywa zastępowane innymi znakami w kształcie P — w tym jednym, który jest zupełnie inną walutą. Każdy z nich to osobny punkt kodowy Unicode, nie stylistyczny wariant.",
       "symbols": [
-        { "char": "₽", "label": "Znak Rubla (U+20BD) — waluta Rosji, też przekreślone P, ale inną kreską" },
-        { "char": "P", "label": "Zwykła Wielka Litera P (U+0050) — prosty zamiennik często wpisywany zamiast peso" },
-        { "char": "Ᵽ", "label": "Wielka Litera P z Przekreśleniem (U+2C63) — używana w lingwistyce, nie w walutach" },
-        { "char": "Ρ", "label": "Wielka Grecka Litera Ro (U+03A1) — wygląda jak P" },
-        { "char": "Р", "label": "Cyrylicka Wielka Litera Er (U+0420) — kolejny sobowtór P" }
+        { "char": "₽", "label": "Znak Rubla (U+20BD): waluta Rosji, też przekreślone P, ale inną kreską" },
+        { "char": "P", "label": "Zwykła Wielka Litera P (U+0050): prosty zamiennik często wpisywany zamiast peso" },
+        { "char": "Ᵽ", "label": "Wielka Litera P z Przekreśleniem (U+2C63): używana w lingwistyce, nie w walutach" },
+        { "char": "Ρ", "label": "Wielka Grecka Litera Ro (U+03A1): wygląda jak P" },
+        { "char": "Р", "label": "Cyrylicka Wielka Litera Er (U+0420): kolejny sobowtór P" }
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/library/currency-symbols/",

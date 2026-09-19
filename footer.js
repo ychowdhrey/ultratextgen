@@ -571,7 +571,14 @@
     nl: {
       home: { label: "Home", href: "/nl/" },
       explore: [
-        { label: "Guides", href: "/nl/guide/" },
+        // "Gidsen", not "Guides": every other locale translates this label
+        // (de Ratgeber, es Guías, pl Poradniki, sv/no Guider), and the only
+        // two that keep the English spelling — fr and da — do so because
+        // "guides" is a real word in both and are ledgered in
+        // data/translation_identical_strings.json. Dutch is not, so this was
+        // the single most-repeated untranslated string on the site: 197 pages,
+        // ~33% of the whole English-leakage backlog, from this one entry.
+        { label: "Gidsen", href: "/nl/guide/" },
         { label: "Antwoorden", href: "/nl/answers/" },
         { label: "Toepassingen", href: "/nl/usecase/" },
         { label: "Categorieën", href: "/category/" },
@@ -1196,12 +1203,16 @@
         '<a href="/printables/dot-to-dot-alphabet/" class="footer-link">Dot-to-Dot Alphabet</a>' +
         '<a href="/printables/cursive-alphabet/" class="footer-link">Cursive Alphabet</a>' +
         '<a href="/printables/block-letters/" class="footer-link">Block Letters &amp; Stencils</a>' +
+        '<a href="/printables/calligraphy-alphabet/" class="footer-link">Calligraphy Alphabet</a>' +
+        '<a href="/printables/graffiti-letters/" class="footer-link">Graffiti Letters</a>' +
       '</div>' +
       '<div class="footer-col">' +
         '<span class="footer-col-title">Generators</span>' +
         '<a href="/printables/handwriting-worksheet-generator/" class="footer-link">Handwriting Worksheets</a>' +
         '<a href="/printables/coloring-page-maker/" class="footer-link">Coloring Page Maker</a>' +
         '<a href="/printables/name-tracing/" class="footer-link">Name Tracing</a>' +
+        '<a href="/printables/sight-word-tracing/" class="footer-link">Sight Word Tracing</a>' +
+        '<a href="/printables/name-puzzle-maker/" class="footer-link">Name Puzzle Maker</a>' +
         '<a href="/printables/dot-to-dot-name/" class="footer-link">Dot-to-Dot Name</a>' +
         '<a href="/printables/banner-maker/" class="footer-link">Banner Maker</a>' +
         '<a href="/printables/monogram-maker/" class="footer-link">Monogram Maker</a>' +

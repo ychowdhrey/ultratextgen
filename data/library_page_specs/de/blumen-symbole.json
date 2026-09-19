@@ -17,11 +17,19 @@
   "library_url": "https://ultratextgen.com/de/library/",
   "collection_container_id": "blumenCollectionsContainer",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/flower-symbols/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/library/blumen-symbole/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/flower-symbols/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/flower-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/blumen-symbole/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/flower-symbols/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
   "related": [
     {
       "href": "/de/library/herz-symbole/",
@@ -46,17 +54,50 @@
       "h2": "Klassische Blumen-Emojis",
       "intro": "Bunte und schöne Blumen-Emojis für jede Nachricht oder Bio.",
       "symbols": [
-        { "char": "🌸", "label": "Kirschblüte" },
-        { "char": "🌹", "label": "Rose" },
-        { "char": "🌺", "label": "Hibiskus" },
-        { "char": "🌻", "label": "Sonnenblume" },
-        { "char": "🌼", "label": "Blüte" },
-        { "char": "🌷", "label": "Tulpe" },
-        { "char": "💐", "label": "Blumenstrauß" },
-        { "char": "🏵", "label": "Rosette" },
-        { "char": "🪷", "label": "Lotus" },
-        { "char": "🪻", "label": "Hyazinthe" },
-        { "char": "💮", "label": "Weiße Blume" }
+        {
+          "char": "🌸",
+          "label": "Kirschblüte"
+        },
+        {
+          "char": "🌹",
+          "label": "Rose"
+        },
+        {
+          "char": "🌺",
+          "label": "Hibiskus"
+        },
+        {
+          "char": "🌻",
+          "label": "Sonnenblume"
+        },
+        {
+          "char": "🌼",
+          "label": "Blüte"
+        },
+        {
+          "char": "🌷",
+          "label": "Tulpe"
+        },
+        {
+          "char": "💐",
+          "label": "Blumenstrauß"
+        },
+        {
+          "char": "🏵",
+          "label": "Rosette"
+        },
+        {
+          "char": "🪷",
+          "label": "Lotus"
+        },
+        {
+          "char": "🪻",
+          "label": "Hyazinthe"
+        },
+        {
+          "char": "💮",
+          "label": "Weiße Blume"
+        }
       ]
     },
     {
@@ -65,16 +106,46 @@
       "h2": "Pflanzen- & Blattsymbole",
       "intro": "Laub- und Pflanzen-Emojis für frisches, natürliches und erdiges Flair.",
       "symbols": [
-        { "char": "🌿", "label": "Kraut" },
-        { "char": "🍀", "label": "Vierblättriges Kleeblatt" },
-        { "char": "🍁", "label": "Ahornblatt" },
-        { "char": "🍂", "label": "Herbstblatt" },
-        { "char": "🌱", "label": "Setzling" },
-        { "char": "🪴", "label": "Topfpflanze" },
-        { "char": "☘", "label": "Shamrock" },
-        { "char": "🌾", "label": "Reisähre" },
-        { "char": "🍃", "label": "Wehendes Blatt" },
-        { "char": "🎍", "label": "Kadomatsu-Dekoration" }
+        {
+          "char": "🌿",
+          "label": "Kraut"
+        },
+        {
+          "char": "🍀",
+          "label": "Vierblättriges Kleeblatt"
+        },
+        {
+          "char": "🍁",
+          "label": "Ahornblatt"
+        },
+        {
+          "char": "🍂",
+          "label": "Herbstblatt"
+        },
+        {
+          "char": "🌱",
+          "label": "Setzling"
+        },
+        {
+          "char": "🪴",
+          "label": "Topfpflanze"
+        },
+        {
+          "char": "☘",
+          "label": "Shamrock"
+        },
+        {
+          "char": "🌾",
+          "label": "Reisähre"
+        },
+        {
+          "char": "🍃",
+          "label": "Wehendes Blatt"
+        },
+        {
+          "char": "🎍",
+          "label": "Kadomatsu-Dekoration"
+        }
       ]
     },
     {
@@ -83,14 +154,38 @@
       "h2": "Baum-Symbole",
       "intro": "Baum-Emojis für Wald-, Wildnis- und Saison-Inhalte.",
       "symbols": [
-        { "char": "🌲", "label": "Nadelbaum" },
-        { "char": "🌳", "label": "Laubbaum" },
-        { "char": "🌴", "label": "Palme" },
-        { "char": "🎋", "label": "Tanabata-Baum" },
-        { "char": "🎄", "label": "Weihnachtsbaum" },
-        { "char": "🪵", "label": "Holzscheit" },
-        { "char": "🪹", "label": "Leeres Nest" },
-        { "char": "🪺", "label": "Nest mit Eiern" }
+        {
+          "char": "🌲",
+          "label": "Nadelbaum"
+        },
+        {
+          "char": "🌳",
+          "label": "Laubbaum"
+        },
+        {
+          "char": "🌴",
+          "label": "Palme"
+        },
+        {
+          "char": "🎋",
+          "label": "Tanabata-Baum"
+        },
+        {
+          "char": "🎄",
+          "label": "Weihnachtsbaum"
+        },
+        {
+          "char": "🪵",
+          "label": "Holzscheit"
+        },
+        {
+          "char": "🪹",
+          "label": "Leeres Nest"
+        },
+        {
+          "char": "🪺",
+          "label": "Nest mit Eiern"
+        }
       ]
     },
     {
@@ -99,16 +194,46 @@
       "h2": "Unicode-Blütenzeichen",
       "intro": "Klassische Unicode-Blüten und Blumenornamente für dekorative Textgestaltung.",
       "symbols": [
-        { "char": "✿", "label": "Schwarze Blüte" },
-        { "char": "❀", "label": "Weiße Blüte" },
-        { "char": "❁", "label": "Achtblättrige Blüte" },
-        { "char": "❃", "label": "Kräftige Blüte" },
-        { "char": "✾", "label": "Sechsblättrige schwarze Blüte" },
-        { "char": "⚘", "label": "Blume" },
-        { "char": "❋", "label": "Kräftige achtblättrige Blüte" },
-        { "char": "✻", "label": "Tropfen-Sternchen" },
-        { "char": "❊", "label": "Eingekreiste weiße Punktrose" },
-        { "char": "❉", "label": "Ballon-Speichen-Sternchen" }
+        {
+          "char": "✿",
+          "label": "Schwarze Blüte"
+        },
+        {
+          "char": "❀",
+          "label": "Weiße Blüte"
+        },
+        {
+          "char": "❁",
+          "label": "Achtblättrige Blüte"
+        },
+        {
+          "char": "❃",
+          "label": "Kräftige Blüte"
+        },
+        {
+          "char": "✾",
+          "label": "Sechsblättrige schwarze Blüte"
+        },
+        {
+          "char": "⚘",
+          "label": "Blume"
+        },
+        {
+          "char": "❋",
+          "label": "Kräftige achtblättrige Blüte"
+        },
+        {
+          "char": "✻",
+          "label": "Tropfen-Sternchen"
+        },
+        {
+          "char": "❊",
+          "label": "Eingekreiste weiße Punktrose"
+        },
+        {
+          "char": "❉",
+          "label": "Ballon-Speichen-Sternchen"
+        }
       ]
     },
     {
@@ -117,15 +242,42 @@
       "h2": "Saisonale Natursymbole",
       "intro": "Landschafts- und Saison-Emojis für Reise-, Wetter- und Umwelt-Posts.",
       "symbols": [
-        { "char": "🌅", "label": "Sonnenaufgang" },
-        { "char": "🌊", "label": "Welle" },
-        { "char": "⛰", "label": "Berg" },
-        { "char": "🏔", "label": "Schneebedeckter Berg" },
-        { "char": "🌋", "label": "Vulkan" },
-        { "char": "🌈", "label": "Regenbogen" },
-        { "char": "🌄", "label": "Sonnenaufgang über Bergen" },
-        { "char": "🌇", "label": "Sonnenuntergang über der Stadt" },
-        { "char": "🌃", "label": "Nacht mit Sternen" }
+        {
+          "char": "🌅",
+          "label": "Sonnenaufgang"
+        },
+        {
+          "char": "🌊",
+          "label": "Welle"
+        },
+        {
+          "char": "⛰",
+          "label": "Berg"
+        },
+        {
+          "char": "🏔",
+          "label": "Schneebedeckter Berg"
+        },
+        {
+          "char": "🌋",
+          "label": "Vulkan"
+        },
+        {
+          "char": "🌈",
+          "label": "Regenbogen"
+        },
+        {
+          "char": "🌄",
+          "label": "Sonnenaufgang über Bergen"
+        },
+        {
+          "char": "🌇",
+          "label": "Sonnenuntergang über der Stadt"
+        },
+        {
+          "char": "🌃",
+          "label": "Nacht mit Sternen"
+        }
       ]
     },
     {
@@ -134,16 +286,46 @@
       "h2": "Garten- & Wachstumssymbole",
       "intro": "Gartenelemente und Wachstumssymbole für Wellness-, Nachhaltigkeits- und Naturthemen.",
       "symbols": [
-        { "char": "🌱", "label": "Setzling" },
-        { "char": "🪻", "label": "Hyazinthe" },
-        { "char": "🪷", "label": "Lotus" },
-        { "char": "🌵", "label": "Kaktus" },
-        { "char": "🎑", "label": "Mondbetrachtungsfest" },
-        { "char": "🪨", "label": "Stein" },
-        { "char": "🪸", "label": "Koralle" },
-        { "char": "🍄", "label": "Pilz" },
-        { "char": "🌰", "label": "Kastanie" },
-        { "char": "🥀", "label": "Verwelkte Blume" }
+        {
+          "char": "🌱",
+          "label": "Setzling"
+        },
+        {
+          "char": "🪻",
+          "label": "Hyazinthe"
+        },
+        {
+          "char": "🪷",
+          "label": "Lotus"
+        },
+        {
+          "char": "🌵",
+          "label": "Kaktus"
+        },
+        {
+          "char": "🎑",
+          "label": "Mondbetrachtungsfest"
+        },
+        {
+          "char": "🪨",
+          "label": "Stein"
+        },
+        {
+          "char": "🪸",
+          "label": "Koralle"
+        },
+        {
+          "char": "🍄",
+          "label": "Pilz"
+        },
+        {
+          "char": "🌰",
+          "label": "Kastanie"
+        },
+        {
+          "char": "🥀",
+          "label": "Verwelkte Blume"
+        }
       ]
     },
     {
@@ -152,14 +334,38 @@
       "h2": "Blumen-Trenner & Ästhetik-Bio-Sets",
       "intro": "Fertige florale Trenner und Blüten-Bio-Dekorationen für Instagram, Profile und Captions. Klick auf ein Set, um die gesamte Anordnung auf einmal zu kopieren.",
       "symbols": [
-        { "char": "✿•°•❀•°•✿", "label": "Blumen-Trenner" },
-        { "char": "·°✿°·", "label": "Blüten-Punkt" },
-        { "char": "⋆｡˚❀˚｡⋆", "label": "Glitzer-Blume" },
-        { "char": "꒰❀꒱", "label": "Klammer-Blume" },
-        { "char": "ʚ🌸ɞ", "label": "Blüte in Flügeln" },
-        { "char": "˗ˏˋ🌷ˎˊ˗", "label": "Tulpen-Akzent" },
-        { "char": "❀ ━━━ ❀", "label": "Linien-Trenner" },
-        { "char": "✾ ｡ﾟ❀ ｡ﾟ✾", "label": "Blüten-Cluster" }
+        {
+          "char": "✿•°•❀•°•✿",
+          "label": "Blumen-Trenner"
+        },
+        {
+          "char": "·°✿°·",
+          "label": "Blüten-Punkt"
+        },
+        {
+          "char": "⋆｡˚❀˚｡⋆",
+          "label": "Glitzer-Blume"
+        },
+        {
+          "char": "꒰❀꒱",
+          "label": "Klammer-Blume"
+        },
+        {
+          "char": "ʚ🌸ɞ",
+          "label": "Blüte in Flügeln"
+        },
+        {
+          "char": "˗ˏˋ🌷ˎˊ˗",
+          "label": "Tulpen-Akzent"
+        },
+        {
+          "char": "❀ ━━━ ❀",
+          "label": "Linien-Trenner"
+        },
+        {
+          "char": "✾ ｡ﾟ❀ ｡ﾟ✾",
+          "label": "Blüten-Cluster"
+        }
       ]
     }
   ],
@@ -170,11 +376,67 @@
     "intro": "Fertige florale Trenner und Blüten-Bio-Sets zum direkten Einfügen in Bio, Caption oder Nutzername — kopiere die gesamte Anordnung mit einem Klick."
   },
   "collections": [
-    { "name": "Blüten-Bio-Rahmen", "flags": ["✿", "❀", "❁", "❀", "✿"], "defaultFormat": "inline" },
-    { "name": "Blüten-Punkt-Trenner", "flags": ["✾", "·", "❀", "·", "✾"], "defaultFormat": "inline" },
-    { "name": "Garten-Blüten-Set", "flags": ["🌷", "🌸", "🌼", "🌻", "🌹"], "defaultFormat": "inline" },
-    { "name": "Klammer-Blumen-Kombo", "flags": ["꒰❀꒱"], "defaultFormat": "inline" },
-    { "name": "Kräftige Blüten-Linie", "flags": ["❋", "❃", "❋", "❃", "❋"], "defaultFormat": "inline" },
-    { "name": "Sanfte Blüten-Caption", "flags": ["❀", "🌿", "🌸", "🌿", "❀"], "defaultFormat": "inline" }
+    {
+      "name": "Blüten-Bio-Rahmen",
+      "flags": [
+        "✿",
+        "❀",
+        "❁",
+        "❀",
+        "✿"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Blüten-Punkt-Trenner",
+      "flags": [
+        "✾",
+        "·",
+        "❀",
+        "·",
+        "✾"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Garten-Blüten-Set",
+      "flags": [
+        "🌷",
+        "🌸",
+        "🌼",
+        "🌻",
+        "🌹"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Klammer-Blumen-Kombo",
+      "flags": [
+        "꒰❀꒱"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kräftige Blüten-Linie",
+      "flags": [
+        "❋",
+        "❃",
+        "❋",
+        "❃",
+        "❋"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sanfte Blüten-Caption",
+      "flags": [
+        "❀",
+        "🌿",
+        "🌸",
+        "🌿",
+        "❀"
+      ],
+      "defaultFormat": "inline"
+    }
   ]
 }

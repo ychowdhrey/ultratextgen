@@ -1,6 +1,6 @@
 {
   "slug": "simbolos-para-instagram",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "title": "Símbolos para Instagram ✨ ♡ — Copiar e Colar para Bio e Legendas | UltraTextGen",
   "meta_description": "Símbolos para Instagram copiar e colar: enfeites de bio, divisores, corações, estrelas e símbolos para capa de destaque. Clique para copiar.",
   "hero_h1": "Símbolos para Instagram",
@@ -272,6 +272,45 @@
     }
   ],
   "faq_h2": "Perguntas frequentes sobre símbolos para Instagram",
+  "collection_section": {
+    "id": "instagram-collections",
+    "label": "Coleções do Instagram",
+    "h2": "Combos de bio e legenda para Instagram",
+    "intro": "Sequências prontas para colar direto na bio, na legenda ou no story — copie o combo inteiro com um clique."
+  },
+  "collection_container_id": "instagramCollectionsContainer",
+  "collections": [
+    {
+      "name": "Divisória de bio do Instagram",
+      "flags": ["✦", "⊹", "˚", "✧", "˚", "⊹", "✦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Combo de legenda brilhante",
+      "flags": ["✨", "•", "✨", "🌟", "✨", "•", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Separador floral de bio",
+      "flags": ["✿", "─", "✿", "─", "✿"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Espaçador de bio pontilhado",
+      "flags": ["·", "◦", "·", "◦", "·"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Legenda de lua e nuvem",
+      "flags": ["🌙", "☁️", "˖", "✦", "˖", "☁️", "🌙"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Combo de legenda com olhos de coração",
+      "flags": ["♡", "˖", "😍", "˖", "♡"],
+      "defaultFormat": "inline"
+    }
+  ],
   "related": [
     {
       "href": "/pt/library/simbolos/",

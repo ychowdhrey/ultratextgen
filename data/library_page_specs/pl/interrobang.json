@@ -28,8 +28,8 @@
       "h2": "Interrobang — ‽ i ⸘",
       "intro": "Sam znak i jego lustrzane odbicie: standardowy interrobang zamykający zdumione pytanie oraz odwrócona forma zaprojektowana, by je otwierać.",
       "symbols": [
-        { "char": "‽", "label": "Interrobang (U+203D) — Pytanie i Wykrzyknienie w Jednym Glifie" },
-        { "char": "⸘", "label": "Odwrócony Interrobang (U+2E18) — Bliźniak Otwierający Zdanie" }
+        { "char": "‽", "label": "Interrobang (U+203D): Pytanie i Wykrzyknienie w Jednym Glifie" },
+        { "char": "⸘", "label": "Odwrócony Interrobang (U+2E18): Bliźniak Otwierający Zdanie" }
       ]
     },
     {
@@ -58,7 +58,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/library/symbole-punktowania/",

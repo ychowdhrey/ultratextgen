@@ -16,6 +16,18 @@ the single sources of truth — exactly as generate-es-pins.py does.
 
 Requires: cairosvg, plus a font covering the Mathematical Alphanumeric block
           (Symbola) — apt: fonts-symbola fonts-noto-core fonts-noto-extra.
+
+Local fallback (added 2026-09-10): when R2 credentials are not available in
+the environment, `build_board(..., local_dir=<path>)` or `PIN_LOCAL_DIR=<path>`
+renders the same 1000x1500 PNGs into that directory instead of uploading, and
+writes a `manual-upload.csv` beside them (filename, title, description, link,
+keywords, alt_text, board) so the owner can upload the pins by hand in the
+Pinterest UI. Nothing else changes: the inventory CSV still records the R2
+object key the pin WOULD have, and the importer CSV is still built through
+build_pinterest_upload.py, so once the PNGs reach R2 the normal bulk-upload
+path works unchanged. The directory must be OUTSIDE the repo tree -- pins are
+never committed (see docs/pinterest-r2-migration.md) -- and the kit refuses
+anything under ROOT.
 """
 import csv
 import importlib.util
@@ -152,9 +164,30 @@ COLUMNS = ["slug", "image_path", "width", "height", "board", "pin_title",
            "pin_description", "pin_keywords", "pin_alt_text",
            "destination_url", "utm_destination_url"]
 
+# Hand-upload sheet written next to locally rendered PNGs (local fallback only).
+MANUAL_COLUMNS = ["filename", "title", "description", "link", "keywords",
+                  "alt_text", "board"]
+
+
+def _resolve_local_dir(local_dir):
+    """Validate the local-render directory: explicit arg wins over the
+    PIN_LOCAL_DIR env var; must lie outside the repo tree."""
+    local_dir = local_dir or os.environ.get("PIN_LOCAL_DIR")
+    if not local_dir:
+        return None
+    local_dir = os.path.abspath(local_dir)
+    root = os.path.abspath(ROOT)
+    if os.path.commonpath([local_dir, root]) == root:
+        raise SystemExit(
+            f"_locale_pin_kit: local_dir {local_dir} is inside the repo -- pin "
+            f"PNGs are never written into the tree (assets/ least of all). Use "
+            f"a scratch directory outside the checkout.")
+    os.makedirs(local_dir, exist_ok=True)
+    return local_dir
+
 
 def build_board(locale, pins, board, dest, campaign, cta, url_suffix,
-                describe, alt):
+                describe, alt, local_dir=None):
     """Render every pin, write the inventory CSV, and build the importer CSV.
 
     locale       e.g. "de" -> pinterest/boards/de/ on R2, data/de_pinterest_pins.csv
@@ -167,18 +200,28 @@ def build_board(locale, pins, board, dest, campaign, cta, url_suffix,
     url_suffix   path shown after the wordmark, e.g. "/de"
     describe     fn(pin) -> native pin description
     alt          fn(pin) -> native alt text
+    local_dir    optional; render PNGs here instead of uploading to R2 (also
+                 settable via PIN_LOCAL_DIR). Default None = upload to R2.
     """
     import sys
     sys.path.insert(0, os.path.join(ROOT, "scripts", "lib"))
     import r2_pinterest as R2
     csv_out = os.path.join(ROOT, "data", f"{locale}_pinterest_pins.csv")
+    local_dir = _resolve_local_dir(local_dir)
 
     out = []
+    manual = []
     uploaded = 0
     for pin in pins:
         svg = pin_svg(pin, cta, url_suffix)
         r2_key = f"pinterest/boards/{locale}/{pin['slug']}.png"
-        _, status = R2.render_and_upload(svg, r2_key, PIN_W, PIN_H)
+        if local_dir:
+            png = R2.render_svg_png(svg, PIN_W, PIN_H)
+            with open(os.path.join(local_dir, f"{pin['slug']}.png"), "wb") as f:
+                f.write(png)
+            status = "local"
+        else:
+            _, status = R2.render_and_upload(svg, r2_key, PIN_W, PIN_H)
         if status != "skipped-identical":
             uploaded += 1
         pin_dest = pin.get("dest", dest)
@@ -194,12 +237,30 @@ def build_board(locale, pins, board, dest, campaign, cta, url_suffix,
             "destination_url": pin_dest,
             "utm_destination_url": _utm(pin_dest, campaign, pin["slug"]),
         })
+        manual.append({
+            "filename": f"{pin['slug']}.png",
+            "title": pin["title"],
+            "description": describe(pin),
+            "link": _utm(pin_dest, campaign, pin["slug"]),
+            "keywords": ", ".join(pin["kw"]),
+            "alt_text": alt(pin),
+            "board": board,
+        })
     with open(csv_out, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=COLUMNS)
         w.writeheader()
         w.writerows(out)
-    print(f"uploaded {uploaded}/{len(out)} {locale} pins -> R2 "
-          f"{R2.public_base_url()}/pinterest/boards/{locale}/")
+    if local_dir:
+        sheet = os.path.join(local_dir, "manual-upload.csv")
+        with open(sheet, "w", newline="", encoding="utf-8-sig") as f:
+            w = csv.DictWriter(f, fieldnames=MANUAL_COLUMNS)
+            w.writeheader()
+            w.writerows(manual)
+        print(f"rendered {uploaded}/{len(out)} {locale} pins locally -> "
+              f"{local_dir}/ (R2 not used; upload by hand with {sheet})")
+    else:
+        print(f"uploaded {uploaded}/{len(out)} {locale} pins -> R2 "
+              f"{R2.public_base_url()}/pinterest/boards/{locale}/")
     print(f"wrote inventory -> data/{locale}_pinterest_pins.csv")
 
     # build the Pinterest-importer CSV through the shared pipeline

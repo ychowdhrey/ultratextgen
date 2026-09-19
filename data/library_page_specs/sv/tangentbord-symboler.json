@@ -1,0 +1,160 @@
+{
+ "slug": "tangentbord-symboler",
+ "lang": "sv",
+ "page_type": "library",
+ "title": "Tangentbordssymboler att kopiera ⌘ ⌥ ⇧ – Mac- och PC-tangenter",
+ "meta_description": "Kopiera tangentbordssymboler – Mac-kombinationstangenter (⌘ ⌥ ⇧ ⌃), redigeringstangenter (⏎ ⌫ ⇥) och pil- och specialtangenter. Klicka på valfri symbol för att kopiera den direkt.",
+ "breadcrumb": "Tangentbordssymboler",
+ "hero_h1": "Tangentbordssymboler",
+ "hero_tagline": "Kommando, alternativ, skift och alla andra tangentsymboler för Mac och PC – perfekt för att skriva tydliga kortkommandon. Klicka på valfri symbol för att kopiera den direkt.",
+ "intro": "Att dokumentera kortkommandon blir mycket tydligare med de riktiga tangentsymbolerna än med utskrivna namn. Det här biblioteket samlar Mac-kombinationstangenterna som kommando (⌘), alternativ (⌥), skift (⇧) och kontroll (⌃); redigerings- och navigeringstangenterna som retur, backsteg och tabb; samt pil- och specialtangenterna som kompletterar ett kortkommando. Klicka på valfritt tecken för att kopiera det till dokumentation, guider eller appgränssnitt.",
+ "date_published": "2026-09-10",
+ "date_modified": "2026-09-10",
+ "copy_pattern": "single",
+ "canonical": "https://ultratextgen.com/sv/library/tangentbord-symboler/",
+ "home_url": "https://ultratextgen.com/sv/",
+ "crumb_home": "Startsida",
+ "crumb_library": "Bibliotek",
+ "library_url": "https://ultratextgen.com/sv/library/",
+ "hreflang": [
+  {
+   "lang": "sv",
+   "href": "https://ultratextgen.com/sv/library/tangentbord-symboler/"
+  },
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/keyboard-symbols/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/keyboard-symbols/"
+  }
+ ],
+ "related": [
+  {
+   "href": "/sv/library/skiljetecken/",
+   "title": "Skiljetecken",
+   "desc": "Citationstecken, utropstecken, kors, stycketecken, interrobang och upp-och-nedvända tecken – skiljetecknen som inte finns på tangentbordet. Klicka på."
+  },
+  {
+   "href": "/sv/library/matematiska-symboler/",
+   "title": "Matematiska symboler",
+   "desc": "Kopiera och klistra in matematiska Unicode-tecken – operatorer, grekiska bokstäver, mängdlära, kalkyl och mer. Klicka på en symbol för att kopiera."
+  },
+  {
+   "href": "/sv/library/pil-symboler/",
+   "title": "Pilsymboler",
+   "desc": "En referenssamling med pil-tecken för alla riktningar och stilar – raka, böjda, dubbla, triangelformade och emoji-pilar. Klicka på en symbol för att."
+  }
+ ],
+ "sections": [
+  {
+   "id": "mac-modifier-keys",
+   "label": "Mac-kombinationstangenter",
+   "h2": "Mac-kombinationstangenter",
+   "intro": "Symbolerna för kombinationstangenterna som är tryckta på Apples tangentbord och används i macOS-menyer.",
+   "symbols": [
+    {
+     "char": "⌘",
+     "label": "Kommando-tangent (Cmd)"
+    },
+    {
+     "char": "⌥",
+     "label": "Alternativ-tangent (Option/Alt)"
+    },
+    {
+     "char": "⇧",
+     "label": "Skift-tangent (Shift)"
+    },
+    {
+     "char": "⌃",
+     "label": "Kontroll-tangent (Ctrl)"
+    },
+    {
+     "char": "⇪",
+     "label": "Caps Lock (versallås)"
+    },
+    {
+     "char": "⏏",
+     "label": "Mata ut-tangent (Eject)"
+    },
+    {
+     "char": "⎋",
+     "label": "Escape-tangent (Esc)"
+    }
+   ]
+  },
+  {
+   "id": "editing-navigation-keys",
+   "label": "Redigerings- och navigeringstangenter",
+   "h2": "Redigerings- och navigeringstangenter",
+   "intro": "Retur, delete, tabb och blanksteg för redigeringskortkommandon.",
+   "symbols": [
+    {
+     "char": "⏎",
+     "label": "Retur-tangent (Enter)"
+    },
+    {
+     "char": "↵",
+     "label": "Radbrytningspil (Return)"
+    },
+    {
+     "char": "⌫",
+     "label": "Backsteg (Backspace)"
+    },
+    {
+     "char": "⌦",
+     "label": "Delete framåt (Forward Delete)"
+    },
+    {
+     "char": "⇥",
+     "label": "Tabb-tangent (Tab)"
+    },
+    {
+     "char": "⇤",
+     "label": "Bakåt-tabb (Back-Tab)"
+    },
+    {
+     "char": "␣",
+     "label": "Blanksteg (Space)"
+    }
+   ]
+  },
+  {
+   "id": "arrows-special-keys",
+   "label": "Pil- och specialtangenter",
+   "h2": "Pil- och specialtangenter",
+   "intro": "Riktningspilarna och de återstående specialtangenterna.",
+   "symbols": [
+    {
+     "char": "↑",
+     "label": "Uppåtpil"
+    },
+    {
+     "char": "↓",
+     "label": "Nedåtpil"
+    },
+    {
+     "char": "←",
+     "label": "Vänsterpil"
+    },
+    {
+     "char": "→",
+     "label": "Högerpil"
+    },
+    {
+     "char": "⌨",
+     "label": "Tangentbord"
+    },
+    {
+     "char": "⎈",
+     "label": "Kontroll-tangent (rattsymbol)"
+    },
+    {
+     "char": "⎙",
+     "label": "Print Screen (skärmdump)"
+    }
+   ]
+  }
+ ]
+}

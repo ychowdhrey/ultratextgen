@@ -16,11 +16,19 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/theta-symbol/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-theta/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/theta-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/theta-symbol/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-theta/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/theta-symbol/"
+    }
   ],
   "sections": [
     {
@@ -29,10 +37,22 @@
       "h2": "Il Simbolo Theta — θ, Θ e ϑ",
       "intro": "Theta si presenta in tre glifi che si copiano davvero: la θ minuscola di uso comune, la Θ maiuscola e la variante ad anello aperto ϑ riservata a matematica e fisica. Esiste anche una quarta forma, maiuscola e sbarrata, usata solo come simbolo matematico.",
       "symbols": [
-        { "char": "θ", "label": "Lettera Greca Minuscola Theta (U+03B8) — Il Simbolo dell'Angolo" },
-        { "char": "Θ", "label": "Lettera Greca Maiuscola Theta (U+0398) — Notazione Big-Theta" },
-        { "char": "ϑ", "label": "Simbolo Greco Theta (U+03D1) — La Variante Matematica ad Anello Aperto" },
-        { "char": "ϴ", "label": "Simbolo Greco Theta Maiuscolo (U+03F4) — La Variante Sbarrata" }
+        {
+          "char": "θ",
+          "label": "Lettera Greca Minuscola Theta (U+03B8): Il Simbolo dell'Angolo"
+        },
+        {
+          "char": "Θ",
+          "label": "Lettera Greca Maiuscola Theta (U+0398): Notazione Big-Theta"
+        },
+        {
+          "char": "ϑ",
+          "label": "Simbolo Greco Theta (U+03D1): La Variante Matematica ad Anello Aperto"
+        },
+        {
+          "char": "ϴ",
+          "label": "Simbolo Greco Theta Maiuscolo (U+03F4): La Variante Sbarrata"
+        }
       ]
     },
     {
@@ -41,10 +61,22 @@
       "h2": "Theta in Matematica e Informatica",
       "intro": "Due compiti molto diversi condividono la stessa lettera. La θ minuscola è il nome di riferimento per un angolo; la Θ maiuscola è il limite stretto nell'analisi della complessità, posizionato tra il Big-O (limite superiore) e il Big-Omega (limite inferiore).",
       "symbols": [
-        { "char": "θ", "label": "Theta Minuscola (U+03B8) — Angolo in Trigonometria e Geometria" },
-        { "char": "Θ", "label": "Theta Maiuscola (U+0398) — Big-Theta, il Limite Stretto" },
-        { "char": "Ω", "label": "Omega Maiuscola (U+03A9) — Big-Omega, il Limite Inferiore" },
-        { "char": "ϑ", "label": "Simbolo Theta (U+03D1) — La Variante Tipografica della Fisica" }
+        {
+          "char": "θ",
+          "label": "Theta Minuscola (U+03B8): Angolo in Trigonometria e Geometria"
+        },
+        {
+          "char": "Θ",
+          "label": "Theta Maiuscola (U+0398): Big-Theta, il Limite Stretto"
+        },
+        {
+          "char": "Ω",
+          "label": "Omega Maiuscola (U+03A9): Big-Omega, il Limite Inferiore"
+        },
+        {
+          "char": "ϑ",
+          "label": "Simbolo Theta (U+03D1): La Variante Tipografica della Fisica"
+        }
       ]
     },
     {
@@ -53,10 +85,22 @@
       "h2": "Lettere Greche Correlate",
       "intro": "Theta è l'ottava lettera dell'alfabeto greco. Ecco le lettere vicine che le persone cercano e copiano più spesso insieme a lei.",
       "symbols": [
-        { "char": "Ω", "label": "Lettera Greca Maiuscola Omega" },
-        { "char": "Δ", "label": "Lettera Greca Maiuscola Delta" },
-        { "char": "π", "label": "Lettera Greca Minuscola Pi" },
-        { "char": "α", "label": "Lettera Greca Minuscola Alfa" }
+        {
+          "char": "Ω",
+          "label": "Lettera Greca Maiuscola Omega"
+        },
+        {
+          "char": "Δ",
+          "label": "Lettera Greca Maiuscola Delta"
+        },
+        {
+          "char": "π",
+          "label": "Lettera Greca Minuscola Pi"
+        },
+        {
+          "char": "α",
+          "label": "Lettera Greca Minuscola Alfa"
+        }
       ]
     }
   ],

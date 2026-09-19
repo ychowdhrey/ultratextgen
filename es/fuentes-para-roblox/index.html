@@ -129,7 +129,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "¿Usar un generador de fuentes para Roblox va contra las reglas?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No — darle estilo Unicode al nombre para mostrar es un uso normal de un campo que Roblox diseñó para aceptarlo. Esta herramienta sirve para darle estilo a tu nombre, no para saltarte el filtro de chat ni la moderación. Usar caracteres especiales para evadir el filtro de contenido de Roblox va contra sus Términos de Servicio y no es para lo que está pensado este generador."
+        "text": "No, darle estilo Unicode al nombre para mostrar es un uso normal de un campo que Roblox diseñó para aceptarlo. Esta herramienta sirve para darle estilo a tu nombre, no para saltarte el filtro de chat ni la moderación. Usar caracteres especiales para evadir el filtro de contenido de Roblox va contra sus Términos de Servicio y no es para lo que está pensado este generador."
       }
     },
     {
@@ -187,6 +187,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="input-wrapper">
         <textarea class="main-input" id="mainInput" placeholder="Escribe tu nombre aquí..." maxlength="300" autofocus=""></textarea>
         <span class="char-count"><span id="charCount">0</span>/300</span>
+      </div>
+
+      <!-- Accent-aware hint: shows only when the input contains diacritics -->
+      <div class="accent-notice" id="accentNotice" role="note" hidden>
+        <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+        <span class="accent-notice-text">Tu texto lleva tildes. Negrita, cursiva, gótica y casi todos los demás estilos conservan ahora <b>á</b>, <b>é</b> y <b>ñ</b> con su tilde. La excepción es el texto al revés: ahí las letras con tilde pasan sin voltearse y quedan derechas. <a href="/guide/fancy-fonts-and-accents/">Qué estilos conservan las tildes →</a></span>
+        <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Cerrar">✕</button>
       </div>
       <div class="decoration-section">
         <div class="decoration-label">Añadir símbolos y marcos al resultado</div>
@@ -259,7 +266,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="faq-item"><button class="faq-question" type="button">¿Qué significa que una fuente sea "compatible con Roblox"?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Significa que supera tres obstáculos por separado: se ve bien en el dispositivo de quien lo lee (no como cuadraditos), pasa el validador de nombres de Roblox al guardar (sin el error de "caracteres no compatibles") y se lee como texto decorado normal. Los estilos de sustitución Unicode simples —negrita, cursiva, versalitas, gótica— y los símbolos sueltos cumplen los tres de forma más fiable.</div></div>
     <div class="faq-item"><button class="faq-question" type="button">¿Por qué mi fuente de Roblox se ve como cuadraditos (□)?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Es un problema del dispositivo, no una regla de Roblox: el teléfono u ordenador de quien lo ve no tiene una fuente que dibuje ese rango Unicode. No tiene relación con si Roblox aceptó el nombre. La negrita y las versalitas se ven bien en el mayor número de dispositivos.</div></div>
     <div class="faq-item"><button class="faq-question" type="button">¿Por qué Roblox rechaza mi nombre con "caracteres no compatibles"?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Es distinto del problema de los cuadraditos: es el validador de Roblox rechazando ciertos caracteres al guardar, de forma constante en web, móvil y apps. Prueba con algo más simple (negrita, cursiva, versalitas) o un símbolo suelto, y revisa antes de confirmar — el nombre para mostrar solo se cambia gratis una vez cada 7 días.</div></div>
-    <div class="faq-item"><button class="faq-question" type="button">¿Usar un generador de fuentes para Roblox va contra las reglas?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">No — darle estilo Unicode al nombre para mostrar es un uso normal de un campo pensado para aceptarlo. Esta herramienta sirve para darle estilo a tu nombre, no para saltarte el filtro de chat ni la moderación. Usar caracteres especiales para evadir el filtro de Roblox va contra sus Términos de Servicio.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">¿Usar un generador de fuentes para Roblox va contra las reglas?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">No, darle estilo Unicode al nombre para mostrar es un uso normal de un campo pensado para aceptarlo. Esta herramienta sirve para darle estilo a tu nombre, no para saltarte el filtro de chat ni la moderación. Usar caracteres especiales para evadir el filtro de Roblox va contra sus Términos de Servicio.</div></div>
     <div class="faq-item"><button class="faq-question" type="button">¿Puedo usar estas fuentes en mi @nombredeusuario?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">No. El @nombredeusuario solo admite letras, números y un guion bajo — nada de Unicode con estilo. Las fuentes van en el nombre para mostrar, la bio o la descripción del grupo, que sí aceptan Unicode y son gratis de cambiar.</div></div>
 
     <!-- Language Switcher -->
@@ -284,7 +291,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
 <script src="/script.js" defer=""></script>
+<script src="/i18n.js" defer></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/symbol-explorer.js"></script>
 <script src="/footer.js"></script>
 </body></html>

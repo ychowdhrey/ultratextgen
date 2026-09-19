@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-de-menor-ou-igual/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/simbolo-de-menor-ou-igual/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
   "sections": [
     {
       "id": "less-than-or-equal-to",
@@ -29,8 +37,14 @@
       "h2": "Menor ou Igual, na Matemática e no Código",
       "intro": "O símbolo matemático, e o substituto de dois caracteres que a maioria das linguagens de programação usa em seu lugar, já que o ≤ em si nunca fez parte do ASCII.",
       "symbols": [
-        { "char": "≤", "label": "Menor ou Igual a (Matemática)" },
-        { "char": "<=", "label": "Menor ou Igual a (Código — C, Python, JavaScript, Java, SQL)" }
+        {
+          "char": "≤",
+          "label": "Menor ou Igual a (Matemática)"
+        },
+        {
+          "char": "<=",
+          "label": "Menor ou Igual a (Código: C, Python, JavaScript, Java, SQL)"
+        }
       ]
     },
     {
@@ -39,10 +53,22 @@
       "h2": "Símbolos Frequentemente Confundidos com ≤",
       "intro": "Todos significam mais ou menos a mesma coisa, mas são caracteres Unicode distintos, vindos de tradições tipográficas diferentes.",
       "symbols": [
-        { "char": "≦", "label": "Menor-Que Sobre Igual (U+2266)" },
-        { "char": "⩽", "label": "Menor-Que ou Igual Inclinado (U+2A7D) — a forma preferida pela ISO 31-11" },
-        { "char": "≲", "label": "Menor-Que ou Equivalente a (U+2272)" },
-        { "char": "≪", "label": "Muito Menor Que (U+226A) — uma relação diferente, não uma variante do ≤" }
+        {
+          "char": "≦",
+          "label": "Menor-Que Sobre Igual (U+2266)"
+        },
+        {
+          "char": "⩽",
+          "label": "Menor-Que ou Igual Inclinado (U+2A7D): a forma preferida pela ISO 31-11"
+        },
+        {
+          "char": "≲",
+          "label": "Menor-Que ou Equivalente a (U+2272)"
+        },
+        {
+          "char": "≪",
+          "label": "Muito Menor Que (U+226A): uma relação diferente, não uma variante do ≤"
+        }
       ]
     },
     {
@@ -51,11 +77,26 @@
       "h2": "Símbolos de Comparação Relacionados",
       "intro": "Os outros símbolos de relação com que o ≤ se combina em desigualdades e notação de conjuntos.",
       "symbols": [
-        { "char": "≥", "label": "Maior-Que ou Igual a (U+2265)" },
-        { "char": "<", "label": "Menor Que" },
-        { "char": ">", "label": "Maior Que" },
-        { "char": "≠", "label": "Diferente de" },
-        { "char": "=", "label": "Sinal de Igual" }
+        {
+          "char": "≥",
+          "label": "Maior-Que ou Igual a (U+2265)"
+        },
+        {
+          "char": "<",
+          "label": "Menor Que"
+        },
+        {
+          "char": ">",
+          "label": "Maior Que"
+        },
+        {
+          "char": "≠",
+          "label": "Diferente de"
+        },
+        {
+          "char": "=",
+          "label": "Sinal de Igual"
+        }
       ]
     }
   ],

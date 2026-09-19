@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/saudi-riyal-sign/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/saudi-riyal-sign/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/saudi-riyal-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/saudi-riyal-sign/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/saudi-riyal-sign/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/saudi-riyal-sign/"
+    }
   ],
   "sections": [
     {
@@ -28,7 +37,10 @@
       "h2": "Ký Hiệu Riyal Saudi",
       "intro": "Ký tự đã được phê chuẩn chính thức — mã hóa trong Unicode 17.0, có thể sao chép ngay hôm nay, dù phần lớn phông chữ vẫn chưa hiển thị được.",
       "symbols": [
-        { "char": "⃁", "label": "Ký Hiệu Riyal Saudi (U+20C1, chính thức từ Unicode 17.0)" }
+        {
+          "char": "⃁",
+          "label": "Ký Hiệu Riyal Saudi (U+20C1, chính thức từ Unicode 17.0)"
+        }
       ]
     },
     {
@@ -37,9 +49,18 @@
       "h2": "Các Ký Hiệu Tiền Tệ Vùng Vịnh Mới Khác",
       "intro": "Ba đồng tiền khu vực khác cũng nhận được ký hiệu Unicode riêng ở phiên bản tiếp theo, Unicode 18.0 — vẫn còn trong giai đoạn beta tính đến thời điểm viết bài này.",
       "symbols": [
-        { "char": "⃃", "label": "Ký Hiệu Dirham UAE (U+20C3, bản beta Unicode 18.0)" },
-        { "char": "⃄", "label": "Ký Hiệu Rial Oman (U+20C4, bản beta Unicode 18.0)" },
-        { "char": "⃂", "label": "Ký Hiệu Rufiyaa Maldives (U+20C2, bản beta Unicode 18.0)" }
+        {
+          "char": "⃃",
+          "label": "Ký Hiệu Dirham UAE (U+20C3, bản beta Unicode 18.0)"
+        },
+        {
+          "char": "⃄",
+          "label": "Ký Hiệu Rial Oman (U+20C4, bản beta Unicode 18.0)"
+        },
+        {
+          "char": "⃂",
+          "label": "Ký Hiệu Rufiyaa Maldives (U+20C2, bản beta Unicode 18.0)"
+        }
       ]
     },
     {
@@ -48,15 +69,32 @@
       "h2": "Ký Hiệu Tiền Tệ Trung Đông Đã Dùng Được Khắp Nơi",
       "intro": "Để so sánh — các ký hiệu tiền tệ khu vực đã vượt qua khoảng cách từ chuẩn hóa đến phông chữ từ nhiều năm trước và hiển thị được trên hầu hết mọi thiết bị ngày nay.",
       "symbols": [
-        { "char": "₪", "label": "Ký Hiệu Shekel Mới Israel" },
-        { "char": "₺", "label": "Ký Hiệu Lira Thổ Nhĩ Kỳ" }
+        {
+          "char": "₪",
+          "label": "Ký Hiệu Shekel Mới Israel"
+        },
+        {
+          "char": "₺",
+          "label": "Ký Hiệu Lira Thổ Nhĩ Kỳ"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/currency-symbols/", "title": "Ký Hiệu Tiền Tệ", "desc": "Mọi ký hiệu tiền tệ thế giới mà bạn đã có thể sao chép và dán ngay hôm nay." },
-    { "href": "/vi/symbol/dirham-sign/", "title": "Ký Hiệu Dirham", "desc": "Ký hiệu tiền tệ mới của UAE — chậm hơn một phiên bản Unicode, vẫn còn trong giai đoạn beta." },
-    { "href": "/vi/symbol/omani-rial-sign/", "title": "Ký Hiệu Rial Oman", "desc": "Một ký hiệu tiền tệ vùng Vịnh khác đang ra mắt trong cùng bản beta Unicode 18.0." }
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Ký Hiệu Tiền Tệ",
+      "desc": "Mọi ký hiệu tiền tệ thế giới mà bạn đã có thể sao chép và dán ngay hôm nay."
+    },
+    {
+      "href": "/vi/symbol/dirham-sign/",
+      "title": "Ký Hiệu Dirham",
+      "desc": "Ký hiệu tiền tệ mới của UAE — chậm hơn một phiên bản Unicode, vẫn còn trong giai đoạn beta."
+    },
+    {
+      "href": "/vi/symbol/omani-rial-sign/",
+      "title": "Ký Hiệu Rial Oman",
+      "desc": "Một ký hiệu tiền tệ vùng Vịnh khác đang ra mắt trong cùng bản beta Unicode 18.0."
+    }
   ]
 }

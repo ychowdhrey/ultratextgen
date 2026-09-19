@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/emoji-de-borboleta-monarca/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/emoji-de-borboleta-monarca/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
   "sections": [
     {
       "id": "monarch-butterfly",
@@ -29,7 +37,10 @@
       "h2": "Emoji de Borboleta Monarca",
       "intro": "O caractere rascunho em si — já copiável hoje como código, mesmo que nenhuma fonte consiga renderizá-lo ainda.",
       "symbols": [
-        { "char": "🫌", "label": "Monarch Butterfly (rascunho, U+1FACC)" }
+        {
+          "char": "🫌",
+          "label": "Monarch Butterfly (rascunho, U+1FACC)"
+        }
       ]
     },
     {
@@ -38,7 +49,10 @@
       "h2": "O Emoji com que É Confundido",
       "intro": "O emoji genérico já codificado do qual a Monarch Butterfly foi separada, e o vizinho com que costuma ser renderizada por engano.",
       "symbols": [
-        { "char": "🦋", "label": "Butterfly — a espécie genérica da qual a Monarch Butterfly foi separada" }
+        {
+          "char": "🦋",
+          "label": "Butterfly: a espécie genérica da qual a Monarch Butterfly foi separada"
+        }
       ]
     },
     {
@@ -47,9 +61,18 @@
       "h2": "Outros Candidatos Rascunho do Emoji 18.0",
       "intro": "Monarch Butterfly não é o único caractere ainda não aprovado deste lançamento — estes foram propostos junto com ela, igualmente sem renderização até a decisão de setembro de 2026.",
       "symbols": [
-        { "char": "🫫", "label": "Cracking Face (rascunho, U+1FAEB) — venceu a votação pública" },
-        { "char": "🫝", "label": "Pickle (rascunho, U+1FADD)" },
-        { "char": "🪋", "label": "Meteor (rascunho, U+1FA8B)" }
+        {
+          "char": "🫫",
+          "label": "Cracking Face (rascunho, U+1FAEB): venceu a votação pública"
+        },
+        {
+          "char": "🫝",
+          "label": "Pickle (rascunho, U+1FADD)"
+        },
+        {
+          "char": "🪋",
+          "label": "Meteor (rascunho, U+1FA8B)"
+        }
       ]
     }
   ],

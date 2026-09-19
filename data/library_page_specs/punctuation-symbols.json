@@ -52,6 +52,60 @@
         { "char": "⁉", "label": "Exclamation Question Mark" },
         { "char": "⁈", "label": "Question Exclamation Mark" }
       ]
+    },
+    {
+      "id": "question-mark-symbol",
+      "label": "Question Mark Symbol",
+      "h2": "Question Mark, Exclamation & Semicolon",
+      "intro": "Copy the question mark and exclamation point with their inverted Spanish forms and the semicolon often searched alongside them.",
+      "symbols": [
+        { "char": "?", "label": "Question Mark" },
+        { "char": "!", "label": "Exclamation Mark" },
+        { "char": ";", "label": "Semicolon" },
+        { "char": "？", "label": "Fullwidth Question Mark" },
+        { "char": "！", "label": "Fullwidth Exclamation Mark" }
+      ]
+    },
+    {
+      "id": "colon-symbol",
+      "label": "Colon Symbol",
+      "h2": "Colon & Underscore",
+      "intro": "Copy the colon, underscore, and related connector and separator marks used in text, code, and usernames.",
+      "symbols": [
+        { "char": ":", "label": "Colon" },
+        { "char": "_", "label": "Underscore" },
+        { "char": "：", "label": "Fullwidth Colon" },
+        { "char": "﹍", "label": "Dashed Low Line" },
+        { "char": "‿", "label": "Undertie" }
+      ]
+    },
+    {
+      "id": "comma-symbol",
+      "label": "Comma Symbol",
+      "h2": "Comma & Parentheses",
+      "intro": "Copy the comma with parentheses and related bracket and separator marks for clean text formatting — see the full ideographic comma page → for why CJK writing separates the list comma 、 from the clause comma ，.",
+      "symbols": [
+        { "char": ",", "label": "Comma" },
+        { "char": "(", "label": "Left Parenthesis" },
+        { "char": ")", "label": "Right Parenthesis" },
+        { "char": "，", "label": "Fullwidth Comma" },
+        { "char": "、", "label": "Ideographic Comma" },
+        { "char": "（", "label": "Fullwidth Left Paren" },
+        { "char": "）", "label": "Fullwidth Right Paren" }
+      ]
+    },
+    {
+      "id": "quotation-marks",
+      "label": "Quotation Marks",
+      "h2": "Quotation Marks",
+      "intro": "Straight, curly, and guillemet quote styles — see the full quotation mark page → for history, alt codes, and the code-breaking curly-quote gotcha.",
+      "symbols": [
+        { "char": "\"", "label": "Quotation Mark" },
+        { "char": "“", "label": "Left Double Quotation Mark" },
+        { "char": "”", "label": "Right Double Quotation Mark" },
+        { "char": "«", "label": "Guillemet (French Quote)" },
+        { "char": "»", "label": "Guillemet (French Quote)" }
+      ]
     }
   ],
   "related": [

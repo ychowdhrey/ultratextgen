@@ -1,0 +1,25 @@
+{
+  "_readme": [
+    "Pairs of pages that deliberately offer the same typed-word printable tool.",
+    "",
+    "Read by scripts/check-printable-tool-duplication.js. An entry stops that gate",
+    "billing one pair; it does not hide the pair, which every run still prints.",
+    "",
+    "SAME BAR AS EVERY OTHER LEDGER IN THIS REPO (translation_parity_exceptions.json,",
+    "english_parent_exceptions.json, library_hub_exclusions.json): an entry is a",
+    "discussed decision between the agent and the owner, never added unilaterally and",
+    "never added to make a PR pass. If the gate flags a pair, the default fix is",
+    "Hub-vs-Spoke Rule 3 — the page that owns the query keeps the tool, the other keeps",
+    "a one-line pointer to it.",
+    "",
+    "Ships empty on purpose. The site's existing collisions (the seven 'in cursive'",
+    "one-word spokes, and the de/pl alphabet-coloring pairs awaiting a locale decision)",
+    "are pre-existing at the merge base, so the gate already reports rather than bills",
+    "them and they need no entry.",
+    "",
+    "Entry shape:",
+    "  { \"pages\": [\"printables/a\", \"printables/b\"], \"reason\": \"...\", \"decided\": \"YYYY-MM-DD\", \"owner\": \"...\" }",
+    "  `pages` are routes as the gate prints them: no leading slash, no /index.html."
+  ],
+  "exceptions": []
+}

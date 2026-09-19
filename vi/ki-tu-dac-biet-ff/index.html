@@ -244,8 +244,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <h2>Kí tự khoảng trống</h2>
     <p class="u-secondary-tight">Free Fire từ chối dấu cách thường — chèn kí tự trống ẩn này vào giữa hai chữ là tên nhìn như có dấu cách. Nút trông trống trơn là đúng: kí tự vô hình mà.</p>
     <div class="flag-rows">
-      <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="ㅤ" aria-label="Sao chép Hangul Filler — U+3164">ㅤ</button><span class="flag-label">Hangul Filler — U+3164 (Liên Quân, PUBG; người chơi cho biết FF đã chặn từ bản OB43)</span></div>
-      <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="​" aria-label="Sao chép Zero Width Space — U+200B">​</button><span class="flag-label">Zero Width Space — U+200B (rộng 0, nối chữ sát nhau)</span></div>
+      <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="ㅤ" aria-label="Sao chép Hangul Filler: U+3164">ㅤ</button><span class="flag-label">Hangul Filler: U+3164 (Liên Quân, PUBG; người chơi cho biết FF đã chặn từ bản OB43)</span></div>
+      <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="​" aria-label="Sao chép Zero Width Space: U+200B">​</button><span class="flag-label">Zero Width Space: U+200B (rộng 0, nối chữ sát nhau)</span></div>
       <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="⠀" aria-label="Sao chép Braille Trống — U+2800">⠀</button><span class="flag-label">Braille Trống — U+2800 (khoảng cách rõ)</span></div>
     </div>
     <p class="u-mt-15">Lưu ý: mỗi bản cập nhật OB của Free Fire đôi khi chặn bớt một vài kí tự khoảng trống — nếu tên bị từ chối, đổi sang kí tự trống khác trong danh sách. Muốn đủ bộ hơn 10 kiểu kí tự trống, qua trang <a href="/vi/ky-tu-vo-hinh/">kí tự vô hình</a>.</p>
@@ -297,6 +297,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <section class="hero"><div class="hero-inner"><div class="hero-card">
     <div class="decoration-label">Ghép thử tên: gõ tên của bạn, chọn font, bọc khung — copy nguyên cụm</div>
     <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="Gõ tên FF của bạn…" maxlength="100"></textarea><span class="char-count"><span id="charCount">0</span>/100</span></div>
+
+    <!-- Accent-aware hint: shows only when the input contains diacritics -->
+    <div class="accent-notice" id="accentNotice" role="note" hidden>
+      <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+      <span class="accent-notice-text">Văn bản của bạn có dấu. Chữ đậm, chữ viết tay, gothic và hầu hết các kiểu khác giờ giữ nguyên <b>ế</b>, <b>ữ</b> và <b>ạ</b> cùng dấu — một vài kiểu (chữ ngược, và <b>đ</b> vốn không có dạng mang dấu) trở về chữ thường. <a href="/guide/fancy-fonts-and-accents/">Kiểu nào giữ được dấu →</a></span>
+      <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Đóng">✕</button>
+    </div>
     <div class="decoration-section namecheck-inline"><div class="decoration-label">Kiểm tra tên FF — trực tiếp khi bạn gõ</div><div id="ffNameChecker"></div></div>
     <div class="decoration-section"><div class="decoration-label">Thêm kí hiệu, khung viền vào kết quả</div><button class="surprise-btn" id="surpriseBtn" type="button">🎲 Ngẫu nhiên</button><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Kí hiệu</button><button class="decoration-tab" data-deco-tab="frames">Khung viền</button><button class="decoration-tab" data-deco-tab="minimal">Tối giản</button><button class="decoration-tab" data-deco-tab="emojis">Emoji</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
   </div></div></section>
@@ -405,7 +412,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 </script>
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
 <script src="/script.js" defer=""></script>
+<script src="/i18n.js" defer></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/symbol-explorer.js"></script>
 <script src="/js/gamename/game-rules.js" defer></script>
 <script>

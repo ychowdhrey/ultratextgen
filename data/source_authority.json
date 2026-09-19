@@ -1,0 +1,38 @@
+{
+  "_readme": "Authority tier for every external domain this site cites. Read by scripts/lib/source-attribution.js, which decides a citation link's rel attribute from it. TIERS: 'primary' = the organisation that owns the fact (a standards body, the bank that designed the symbol, the platform's own changelog, the issue tracker the request lives in) -> rel=\"noopener\", a followed link, because citing an authority is the case Google's own guidance says nofollow is NOT for. 'secondary' = press, third-party reference works and user-generated community threads -> rel=\"nofollow noopener\". A domain that is not listed here is treated as secondary and reported by npm run audit:source-attribution, so an unclassified source fails safe. Same bar as every other ledger in this repo: entries are discussed decisions, never added to make a page pass. Adding a domain as 'primary' is a claim that the domain owns the fact being cited - not that it is reputable.",
+  "_fields": {
+    "tier": "primary | secondary",
+    "publisher": "How the organisation is named in prose, for the audit's report.",
+    "why": "What makes this domain the tier it is, for the source being cited."
+  },
+  "domains": {
+    "unicode.org": { "tier": "primary", "publisher": "Unicode Consortium", "why": "The standards body itself: pipeline, UTC minutes, L2 proposals, version pages." },
+    "blog.unicode.org": { "tier": "primary", "publisher": "Unicode Consortium", "why": "The Consortium's own announcement blog." },
+    "cbo.gov.om": { "tier": "primary", "publisher": "Central Bank of Oman", "why": "The bank that designed the Omani rial sign and publishes its guidelines." },
+    "telegram.org": { "tier": "primary", "publisher": "Telegram", "why": "Telegram's own blog announcing its own feature." },
+    "xbox.com": { "tier": "primary", "publisher": "Xbox", "why": "Xbox's own site for its own gamertag rules." },
+    "news.xbox.com": { "tier": "primary", "publisher": "Xbox Wire", "why": "Microsoft's own newsroom for Xbox console updates." },
+    "roblox.com": { "tier": "primary", "publisher": "Roblox", "why": "Roblox's own site for its own product." },
+    "en.help.roblox.com": { "tier": "primary", "publisher": "Roblox Support", "why": "Roblox's own support documentation and Terms of Service." },
+    "minecraft.net": { "tier": "primary", "publisher": "Minecraft", "why": "Mojang's own account pages for its own username rules." },
+    "apple.com": { "tier": "primary", "publisher": "Apple", "why": "Apple Newsroom, for the iCal launch date the calendar emoji depicts." },
+    "lienquan.garena.vn": { "tier": "primary", "publisher": "Garena", "why": "The publisher's own patch notes for its own naming penalties." },
+    "fonts.google.com": { "tier": "primary", "publisher": "Google Fonts", "why": "The distributor's own specimen pages for the typefaces named." },
+    "github.com": { "tier": "primary", "publisher": "GitHub", "why": "The issue trackers the font requests and platform bugs actually live in (notofonts, ValveSoftware) - the request itself, not a report of it." },
+    "grillitype.com": { "tier": "primary", "publisher": "Grilli Type", "why": "The foundry's own commission page for the typeface it made for Pinterest." },
+    "emojipedia.org": { "tier": "secondary", "publisher": "Emojipedia", "why": "Third-party reference work. Authoritative in practice, but Unicode is the source of the facts it reports." },
+    "blog.emojipedia.org": { "tier": "secondary", "publisher": "Emojipedia", "why": "Emojipedia's editorial blog, including its own polls - reporting and opinion, not the standard." },
+    "symbl.cc": { "tier": "secondary", "publisher": "symbl.cc", "why": "Third-party Unicode reference blog." },
+    "thenationalnews.com": { "tier": "secondary", "publisher": "The National", "why": "Press coverage." },
+    "timeoutdubai.com": { "tier": "secondary", "publisher": "Time Out Dubai", "why": "Press coverage." },
+    "macrumors.com": { "tier": "secondary", "publisher": "MacRumors", "why": "Press coverage." },
+    "9to5google.com": { "tier": "secondary", "publisher": "9to5Google", "why": "Press coverage." },
+    "techcrunch.com": { "tier": "secondary", "publisher": "TechCrunch", "why": "Press coverage." },
+    "businesstoday.in": { "tier": "secondary", "publisher": "Business Today", "why": "Press coverage." },
+    "windowscentral.com": { "tier": "secondary", "publisher": "Windows Central", "why": "Press coverage." },
+    "purexbox.com": { "tier": "secondary", "publisher": "Pure Xbox", "why": "Press coverage." },
+    "racinggames.gg": { "tier": "secondary", "publisher": "RacingGames", "why": "Press coverage." },
+    "devforum.roblox.com": { "tier": "secondary", "publisher": "Roblox Developer Forum", "why": "Roblox-operated but user-generated: forum posts, not Roblox's documentation." },
+    "steamcommunity.com": { "tier": "secondary", "publisher": "Steam Community", "why": "User-generated discussion threads." }
+  }
+}

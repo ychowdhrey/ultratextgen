@@ -28,8 +28,8 @@
       "h2": "Chi-Rho, Xmas & the Christian Monogram",
       "intro": "Because capital Χ opens Χριστός (\"Christ\"), it became a centuries-old shorthand for the name — the source of both the Chi-Rho monogram Constantine flew as a battle standard and the modern \"Xmas.\" Paste the pieces of that story here.",
       "symbols": [
-        { "char": "☧", "label": "Chi Rho (U+2627) — the ΧΡ Christogram / labarum" },
-        { "char": "Χ", "label": "Greek Capital Letter Chi (U+03A7) — the Χ that starts Χριστός" },
+        { "char": "☧", "label": "Chi Rho (U+2627): the ΧΡ Christogram / labarum" },
+        { "char": "Χ", "label": "Greek Capital Letter Chi (U+03A7): the Χ that starts Χριστός" },
         { "char": "X", "label": "Latin Capital Letter X (U+0058) — the X in \"Xmas\"" }
       ]
     },
@@ -39,9 +39,9 @@
       "h2": "Chi-Squared (χ²) in Statistics & Science",
       "intro": "Lowercase χ is a scientific workhorse: the χ² goodness-of-fit test Karl Pearson introduced in 1900, plus the Euler characteristic in topology and magnetic susceptibility in physics. Grab the letter and a superscript two to compose χ² yourself.",
       "symbols": [
-        { "char": "χ", "label": "Greek Small Letter Chi (U+03C7) — the χ² test statistic" },
-        { "char": "²", "label": "Superscript Two (U+00B2) — to compose χ²" },
-        { "char": "Χ", "label": "Greek Capital Letter Chi (U+03A7) — also names random variables" }
+        { "char": "χ", "label": "Greek Small Letter Chi (U+03C7): the χ² test statistic" },
+        { "char": "²", "label": "Superscript Two (U+00B2): to compose χ²" },
+        { "char": "Χ", "label": "Greek Capital Letter Chi (U+03A7): also names random variables" }
       ]
     },
     {

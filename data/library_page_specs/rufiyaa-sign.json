@@ -32,15 +32,15 @@
       "symbols": [
         {
           "char": "ރ",
-          "label": "Thaana letter Raa (U+7B0) — the letter the sign is derived from"
+          "label": "Thaana letter Raa (U+7B0): the letter the sign is derived from"
         },
         {
           "char": "₨",
-          "label": "Rupee Sign (U+20A8) — a common stand-in, but not the rufiyaa sign"
+          "label": "Rupee Sign (U+20A8): a common stand-in, but not the rufiyaa sign"
         },
         {
           "char": "¤",
-          "label": "Generic Currency Sign (U+00A4) — a neutral placeholder"
+          "label": "Generic Currency Sign (U+00A4): a neutral placeholder"
         }
       ]
     },

@@ -37,8 +37,8 @@
       "h2": "Inne Symbole Walut do Odróżnienia",
       "intro": "Inne znaki walut, obok których pojawia się rupia w treściach finansowych.",
       "symbols": [
-        { "char": "€", "label": "Znak Euro (U+20AC) — kolejny celowo zaprojektowany, współczesny symbol waluty" },
-        { "char": "£", "label": "Znak Funta (U+00A3) — liczący sobie ponad 1000 lat, wywodzący się z łaciny libra" }
+        { "char": "€", "label": "Znak Euro (U+20AC): kolejny celowo zaprojektowany, współczesny symbol waluty" },
+        { "char": "£", "label": "Znak Funta (U+00A3): liczący sobie ponad 1000 lat, wywodzący się z łaciny libra" }
       ]
     },
     {
@@ -53,7 +53,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/symbol/znak-dolara/",

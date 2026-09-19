@@ -23,6 +23,7 @@ built from vector primitives + raster-safe system-font glyphs only. Colour
 emoji, runic and hieroglyph code points do NOT rasterize in the bundled fonts,
 so those themes use hand-drawn vector motifs instead of baked glyphs.
 """
+import json
 import io
 import os
 import re
@@ -45,6 +46,11 @@ PANEL2 = "#F2F1FB"
 SANS = "Liberation Sans, DejaVu Sans, sans-serif"
 SERIF = "Georgia, 'Liberation Serif', 'DejaVu Serif', serif"
 SYM = "DejaVu Sans, sans-serif"  # raster-safe symbol coverage
+# The one installed family covering Mathematical Fraktur / Script
+# (U+1D504.., U+1D49C..). cairosvg has no per-glyph fallback -- it takes the
+# first matched family and draws tofu for anything that family lacks -- so a
+# Fraktur sample has to lead with FreeSerif, not fall back to it.
+FRAKTUR = "FreeSerif, Georgia, serif"
 SYM_PRIMARY = "DejaVu Sans"      # SYM's first family; see spanned()
 
 # ---------------------------------------------------------------- shared defs
@@ -973,10 +979,40 @@ def m_letter_bubble(p, letter="A"):
           fill="#fff" text-anchor="middle">{esc(letter)}</text>"""
 
 
+def m_letter_graffiti(p, letter="G"):
+    """A slanted throw-up letter with a white keyline and a hard offset shadow
+    - graffiti printables.
+
+    OUT-09: these pages shared m_letter_stencil with block-letters, so the card
+    for the site's graffiti alphabet was a plain sans G inside a dashed CUT
+    LINE - a stencil job, on the one printable family that is not one. Slant, a
+    heavy keyline and an offset drop shadow are the three marks of a throw-up,
+    and none of them needs a graffiti typeface, which this pipeline has no way
+    to load: it draws in Liberation and DejaVu, never in a page's own webfont.
+    """
+    l = esc(letter)
+    return f"""
+    <g transform="translate(180 200) skewX(-12) translate(-180 -200)">
+      <text x="194" y="256" font-family="{SANS}" font-size="205" font-weight="800"
+            fill="{INK}" opacity="0.22" text-anchor="middle">{l}</text>
+      <text x="180" y="244" font-family="{SANS}" font-size="205" font-weight="800"
+            fill="url(#g{p})" stroke="#fff" stroke-width="16" paint-order="stroke"
+            stroke-linejoin="round" text-anchor="middle">{l}</text>
+    </g>"""
+
+
 def m_letter_cursive(p, letter="A"):
     """Capital + lowercase pair in italic serif — cursive per-letter printables.
     Italic serif is the raster-safe stand-in for script glyphs (the Unicode
-    Mathematical Script block does not rasterize in the bundled fonts)."""
+    Mathematical Script block does not rasterize in the bundled fonts).
+
+    Correction, 2026-09-17: that parenthesis is no longer true. FreeSerif, which
+    this file already lists among its fallback faces, covers U+1D49C.. and
+    U+1D504..; measured by rendering, the calligraphy card now draws real
+    Fraktur through it (see FRAKTUR). These 26 per-letter cards are left on
+    italic serif DELIBERATELY rather than by that constraint: changing them is a
+    26-page re-render on a live cluster and a letterform decision, not a
+    rasterisation fact."""
     return f"""
     <rect x="40" y="90" width="280" height="200" rx="36" fill="url(#g{p})"/>
     <line x1="70" y1="252" x2="290" y2="252" stroke="#fff" stroke-width="3" opacity="0.55" stroke-dasharray="2 7"/>
@@ -1196,6 +1232,45 @@ def m_trace_rows(p, sample="Emma"):
     <line x1="70" y1="250" x2="290" y2="250" stroke="{SUB}" stroke-width="3"/>"""
 
 
+def m_word_grid(p, accent=PURPLE):
+    """A letter grid with one word ringed on the diagonal — the word search maker.
+
+    Plain Latin capitals only, so they need no spanned()/_resolve_family() wrapper:
+    Liberation covers A-Z, and the rule that motif text must go through the
+    resolver applies to glyphs it does not cover. The ringed diagonal spells the
+    found word, which is the one thing that says "word search" rather than
+    "grid of letters".
+    """
+    cols = ["W", "O", "R", "D", "S"]
+    rows = [
+        ["F", "K", "T", "M", "R"],
+        ["S", "I", "B", "Q", "V"],
+        ["Y", "P", "N", "L", "H"],
+        ["C", "X", "A", "D", "J"],
+        ["G", "Z", "U", "E", "S"],
+    ]
+    # The word runs down the diagonal; every other cell is filler.
+    out = []
+    x0, y0, step = 78, 118, 46
+    for r in range(5):
+        for c in range(5):
+            ch = cols[r] if r == c else rows[r][c]
+            on = r == c
+            out.append(
+                f'<text x="{x0 + c * step}" y="{y0 + r * step}" font-family="{SANS}" '
+                f'font-size="{34 if on else 30}" font-weight="{"800" if on else "500"}" '
+                f'fill="{"url(#g" + p + ")" if on else SUB}" text-anchor="middle" '
+                f'opacity="{1 if on else 0.45}">{ch}</text>'
+            )
+    # The ring: a rotated capsule over the diagonal run.
+    out.append(
+        f'<rect x="-14" y="-24" width="292" height="48" rx="24" fill="none" '
+        f'stroke="{PURPLE}" stroke-width="5" opacity="0.85" '
+        f'transform="translate(78 106) rotate(45)"/>'
+    )
+    return "\n    " + "\n    ".join(out)
+
+
 def m_puzzle(p, accent=PURPLE):
     """Two interlocking jigsaw pieces — name-puzzle maker."""
     return f"""
@@ -1410,6 +1485,47 @@ PAGES = {
   "cs-specialni-znaky": ("Speciální Znaky", "Symboly na kopírování", m_grid, K_LIB),
   "hr-generator-nadimaka": ("Generator Nadimaka", "Fensi nadimci za igre", m_trophy, K_USE),
   "hr-posebni-znakovi": ("Posebni Znakovi", "Simboli za kopiranje", m_grid, K_LIB),
+
+  # ---- de/nl library expansion, demand-backed (2026-08-16) ----
+  "de-library-emoji-bedeutung": ("Emoji Bedeutung", "Was jedes Emoji wirklich heißt", m_grid, K_LIB),
+  "de-library-waschsymbole": ("Waschsymbole", "Waschen, Trocknen, Bügeln — alle Pflegezeichen", m_grid, K_LIB),
+  "nl-library-wassymbolen": ("Wassymbolen", "Wassen, drogen, strijken — alle wastekens", m_grid, K_LIB),
+  "de-library-daumen-hoch-emoji": ("Daumen hoch Emoji", "👍 in allen Hauttönen zum Kopieren", m_grid, K_LIB),
+  "de-library-lach-emoji": ("Lach-Emoji", "Von Schmunzeln bis Lachkrampf", m_grid, K_LIB),
+
+  "de-library-ascii-kunst": ("ASCII-Kunst", "Rahmen, Blöcke und Braille für Bilder aus Zeichen", m_grid, K_LIB),
+  "de-library-elektro-symbole": ("Elektro-Symbole", "Schaltzeichen, Einheiten und Logikgatter", m_grid, K_LIB),
+  "de-library-hochzeitssymbole": ("Hochzeitssymbole", "Ringe, Brautpaar und Glückwünsche", m_grid, K_LIB),
+  "de-library-feuer-emoji": ("Feuer-Emoji", "🔥 und die passenden Kombinationen", m_grid, K_LIB),
+  "de-library-party-emojis": ("Party-Emojis", "Konfetti, Sekt, Torte und Feuerwerk", m_grid, K_LIB),
+  "de-library-satzzeichen": ("Satzzeichen", "Kreuz, Paragraf, Absatzzeichen, Interrobang", m_grid, K_LIB),
+
+  "de-library-raketen-emoji": ("Raketen-Emoji", "🚀 Mond, Sterne und Kurs-Kombinationen", m_grid, K_LIB),
+  "de-library-wuetendes-emoji": ("Wütendes Emoji", "Von genervt bis Tisch umwerfen", m_grid, K_LIB),
+  "de-library-mittelfinger-emoji": ("Mittelfinger-Emoji", "🖕 in allen Hauttönen", m_grid, K_LIB),
+  "de-library-nerd-emoji": ("Nerd-Emoji", "🤓 Brillen, Bücher und „Also eigentlich“", m_grid, K_LIB),
+
+  "de-library-latex-symbole": ("LaTeX-Symbole", "Befehl und Zeichen nebeneinander", m_grid, K_LIB),
+  "de-library-email-symbole": ("E-Mail-Symbole", "Aufzählungen, Trenner und Signatur", m_grid, K_LIB),
+  "de-library-wikinger-symbole": ("Wikinger-Symbole", "Futhark-Runen mit ihrer Bedeutung", m_grid, K_LIB),
+  "de-library-okkulte-symbole": ("Okkulte Symbole", "Pentagramme, Planeten, Alchemie", m_grid, K_LIB),
+  "de-library-uhr-symbole": ("Uhr-Symbole", "Alle Zifferblätter, Wecker und Sanduhr", m_grid, K_LIB),
+  "de-library-wiedergabe-symbole": ("Wiedergabe-Symbole", "Play, Pause, Stop und Ein/Aus", m_grid, K_LIB),
+  "de-library-mond-symbole": ("Mond-Symbole", "Alle Mondphasen und Himmelszeichen", m_grid, K_LIB),
+  "de-library-glitzer-symbole": ("Glitzer-Symbole", "Funkeln, Sternchen und Ornamente", m_grid, K_LIB),
+
+  "de-library-betende-haende-emoji": ("Betende Hände Emoji", "🙏 Danke, Bitte oder Gebet", m_grid, K_LIB),
+  "de-library-gluecklich-emoji": ("Glückliches Emoji", "Von leisem Lächeln bis Begeisterung", m_grid, K_LIB),
+  "de-library-kackhaufen-emoji": ("Kackhaufen-Emoji", "💩 und warum er ein Gesicht hat", m_grid, K_LIB),
+  "de-library-schock-emoji": ("Schock-Emoji", "Von Überraschung bis Fassungslosigkeit", m_grid, K_LIB),
+  "de-library-high-five-emoji": ("High-Five-Emoji", "Welches Zeichen wirklich passt", m_grid, K_LIB),
+  "de-library-handschlag-emoji": ("Handschlag-Emoji", "🤝 Einigung, Gruß und Partnerschaft", m_grid, K_LIB),
+  "de-library-klatschen-emoji": ("Klatschen-Emoji", "Applaus und Betonung zwischen Wörtern", m_grid, K_LIB),
+  "de-library-muskel-emoji": ("Muskel-Emoji", "💪 Training, Durchhalten und Erfolg", m_grid, K_LIB),
+  "de-library-salutieren-emoji": ("Salutieren-Emoji", "🫡 und die Textvariante o7", m_grid, K_LIB),
+  "de-library-oster-symbole": ("Oster-Symbole", "Hase und Ei, Kreuz und Taube", m_grid, K_LIB),
+
+  "de-library-regenbogen-symbole": ("Regenbogen-Symbole", "Pride-Flaggen und Identitätszeichen", m_grid, K_LIB),
 
   # ---- half/full-width converter pair (ja/ko, 2026-08-15) ----
   "ja-hankaku-zenkaku": ("半角・全角変換", "英数字・カタカナ・記号を一括変換", m_transform, K_USE),
@@ -1681,6 +1797,10 @@ PAGES = {
         m_tree, K_LIB),
   "id-library-emoji-hewan": ("Emoji Hewan", "Peliharaan, satwa liar, burung, dan hewan laut",
         m_paw, K_LIB),
+  "de-library-fortnite-zeichen": ("Fortnite Zeichen", "Sonderzeichen für deinen Spielernamen",
+        glyphs("ツ", "亗", "乂", "★", "⌖"), K_LIB),
+  "it-library-caratteri-speciali-fortnite": ("Caratteri Speciali Fortnite", "Simboli per il tuo nome di gioco",
+        glyphs("ツ", "亗", "乂", "★", "⌖"), K_LIB),
   "es-library-simbolos-para-fortnite": ("Símbolos para Fortnite", "Signos para tu nombre de jugador",
         m_gamepad, K_LIB),
   "usecase-clan-tag-generator": ("Clan Tag Generator", "Stylish [TAG] maker with a shareable team template",
@@ -2052,6 +2172,14 @@ PAGES = {
   "symbol-monarch-butterfly-emoji": ("Monarch Butterfly Emoji", "Draft Emoji 18.0 candidate, not live yet", m_paw, K_SYM),
   "symbol-thumb-sign-emoji": ("Thumb Sign Emoji", "Draft Emoji 18.0 candidate, not live yet",
         glyphs("☝", "☞", "☜", "☟", "✌"), K_SYM),
+  # Emoji 17.0, live on phones since iOS 26.4 (2026-03-24). Each is registered
+  # against a DRAWN motif rather than its own glyph: no font on the build box
+  # covers U+1FACD/U+1FA8A/U+1FA8E/U+1FAEF yet, and spanned() drops what it
+  # cannot draw, so selecting the emoji would render an empty card.
+  "symbol-orca-emoji": ("Orca Emoji", "U+1FACD, and why it is filed with the dolphins", m_paw, K_SYM),
+  "symbol-trombone-emoji": ("Trombone Emoji", "U+1FA8A, the slide that earned its own glyph", m_note, K_SYM),
+  "symbol-treasure-chest-emoji": ("Treasure Chest Emoji", "U+1FA8E, filed under money, not objects", m_coin, K_SYM),
+  "symbol-fight-cloud-emoji": ("Fight Cloud Emoji", "U+1FAEF, a century-old cartoon shorthand", m_burst_angry, K_SYM),
   "symbol-dirham-sign": ("Dirham Sign", "Frozen for Unicode 18.0 publication", m_coin, K_SYM),
   "symbol-omani-rial-sign": ("Omani Rial Sign", "Frozen for Unicode 18.0 publication", m_coin, K_SYM),
   "symbol-saudi-riyal-sign": ("Saudi Riyal Sign", "Final since Unicode 17.0", m_coin, K_SYM),
@@ -2143,6 +2271,8 @@ PAGES = {
         glyphs("❦", "⁂", "§", "Ⅰ", "⟪"), K_LIB),
   "library-dash-hyphen-symbols": ("Dash & Hyphen Symbols", "Em, en and every dash between",
         glyphs("—", "–", "―", "·", "‐"), K_LIB),
+  "library-kakaotalk-symbols": ("KakaoTalk Symbols", "Name frames, status accents and jamo",
+      glyphs("ʰ", "♡", "⋆", "‹", "‹"), K_LIB),
   "library-discord-symbols": ("Discord Symbols", "Symbols that paste cleanly in Discord",
         glyphs("✦", "★", "⚔", "♥", "➤"), K_LIB),
   "library-divider-kaomoji": ("Kaomoji Dividers", "Cute text dividers & spacers", m_kaomoji, K_LIB),
@@ -2841,6 +2971,7 @@ PAGES.update({
 "events-july-4th": ("4th of July Fonts & Emoji Generator", "Fireworks, flags, and Independence Day captions", m_firework, K_USE),
 "events-graduation": ("Graduation Text & Symbol Generator", "Cap, scroll, and congratulations messages", m_gradcap, K_USE),
 "events-chinese-new-year": ("Chinese New Year Text & Symbol Generator", "Lanterns, fireworks, and Lunar New Year phrases", m_lantern, K_USE),
+"id-events-imlek": ("Generator Teks & Simbol Imlek", "Lampion, angpau, dan ucapan Tahun Baru Imlek", m_lantern, K_USE),
 "events-christmas": ("Christmas Fonts & Emoji Generator", "Style greetings with tree, Santa, and snow emoji", m_tree, K_USE),
 "events-diwali": ("Diwali Fonts & Symbol Generator", "Diya, fireworks, and festival-of-lights phrases", m_lamp, K_USE),
 "events-easter": ("Easter Fonts & Emoji Generator", "Bunny, egg, and chick emoji for spring greetings", m_bunny, K_USE),
@@ -2854,13 +2985,15 @@ PAGES.update({
 "events-valentines-day": ("Valentine's Day Text Generator", "Hearts, roses, and Be My Valentine phrases to style", m_heart, K_USE),
 "printables-banner-maker": ("Printable Banner Maker", "One flag per letter, cut and strung to spell any word", m_banner, K_PRINT),
 "printables-block-letters": ("Printable Block Letters & Stencils", "Bold hollow A-Z & 0-9 stencils to trace, cut and use", P(m_letter_stencil, letter="B"), K_PRINT),
-"printables-calligraphy-alphabet": ("Calligraphy Alphabet", "Blackletter and script letters to trace and print", P(m_typo, sample="Aa", ff=SERIF, weight="800", style="italic", size=90, label="blackletter & script"), K_PRINT),
+"printables-calligraphy-alphabet": ("Calligraphy Alphabet", "Blackletter and script letters to trace and print", P(m_typo, sample="\U0001D504\U0001D51E", ff=FRAKTUR, weight="400", style="normal", size=104, label="blackletter & script"), K_PRINT),
 "printables-coloring-page-maker": ("Coloring Page Maker", "Any name or word becomes a colorable outline to print", m_crayons, K_PRINT),
 "printables-dot-to-dot-name": ("Dot-to-Dot Name Generator", "Any name becomes a personalized connect-the-dots", P(m_letter_dots, letter="Em"), K_PRINT),
 "printables-cursive-alphabet": ("Cursive Alphabet", "Cursive A-Z practice sheets to trace and print", P(m_typo, sample="Aa", ff=SERIF, style="italic", weight="400", size=92, label="cursive practice"), K_PRINT),
 "printables-handwriting-worksheet-generator": ("Handwriting Worksheet Generator", "Dial dotted-to-blank tracing difficulty for any word", m_pencil_ruled, K_PRINT),
 "printables": ("Printable Letters & Alphabets", "Bubble letters, cursive sheets, tracing pages and more", m_grid, K_PRINT),
 "printables-name-puzzle-maker": ("Name Puzzle Maker", "Any name becomes a cut-apart letter jigsaw puzzle", m_puzzle, K_PRINT),
+"printables-word-search-maker": ("Word Search Maker", "One spelling list, a different grid for every child", m_word_grid, K_PRINT),
+"printables-letter-tracing": ("Letter Tracing Worksheets", "Every letter A to Z and number 0 to 9, at seven difficulty levels", P(m_trace_rows, sample="Aa"), K_PRINT),
 "printables-name-tracing": ("Name Tracing Worksheets", "Model row, faded trace rows and blank practice lines", P(m_trace_rows, sample="Emma"), K_PRINT),
 "printables-sight-word-tracing": ("Sight Word Tracing Worksheets", "Dolch sight words to trace at adjustable difficulty", P(m_trace_rows, sample="said"), K_PRINT),
 
@@ -2882,14 +3015,19 @@ PAGES.update({
 "it-da-stampare-alfabeto-spagnolo": ("Alfabeto Spagnolo da Stampare", "Tutte le 27 lettere, A-Z più la Ñ, una scheda", P(m_letter_stencil, letter="Ñ"), K_PRINT),
 "es-imprimibles-monograma": ("Monograma para Imprimir", "Hasta tres iniciales, clasico o marco circular", P(m_circled_letter, letter="M"), K_PRINT),
 "es-imprimibles-letras-punto-de-cruz": ("Letras de Punto de Cruz", "Cualquier palabra como patron de puntadas", m_grid, K_PRINT),
+"fr-imprimables-alphabet-point-de-croix": ("Alphabet Point de Croix", "N'importe quel mot en grille de points", m_grid, K_PRINT),
 "es-imprimibles-letras-punteadas": ("Letras Punteadas para Imprimir", "Abecedario A-Z en puntos numerados para unir", P(m_letter_dots, letter="A"), K_PRINT),
 # 2026-08-12 ES printables gap-fill + graffiti EN parent.
-"printables-graffiti-letters": ("Printable Graffiti Letters", "Throw-up alphabet A-Z to trace, outline and colour", P(m_letter_stencil, letter="G"), K_PRINT),
-"es-imprimibles-letras-graffiti": ("Letras de Graffiti para Imprimir", "Abecedario throw-up A-Z para calcar y colorear", P(m_letter_stencil, letter="G"), K_PRINT),
+"printables-graffiti-letters": ("Printable Graffiti Letters", "Throw-up alphabet A-Z to trace, outline and colour", P(m_letter_graffiti, letter="G"), K_PRINT),
+"es-imprimibles-letras-graffiti": ("Letras de Graffiti para Imprimir", "Abecedario throw-up A-Z para calcar y colorear", P(m_letter_graffiti, letter="G"), K_PRINT),
+"de-zum-ausdrucken-graffiti-buchstaben": ("Graffiti-Buchstaben zum Ausdrucken", "Throw-up-Alphabet A-Z zum Nachzeichnen und Ausmalen", P(m_letter_graffiti, letter="G"), K_PRINT),
+"fr-imprimables-lettres-graffiti": ("Lettres Graffiti à Imprimer", "Alphabet throw-up A-Z à décalquer et à colorier", P(m_letter_graffiti, letter="G"), K_PRINT),
 # 2026-08-13 graffiti-generator pass: ID translation of the graffiti EN parent.
-"id-printables-grafiti-nama": ("Grafiti Nama", "Generator grafiti nama + huruf grafiti A-Z untuk dicetak", P(m_letter_stencil, letter="G"), K_PRINT),
+"id-printables-grafiti-nama": ("Grafiti Nama", "Generator grafiti nama + huruf grafiti A-Z untuk dicetak", P(m_letter_graffiti, letter="G"), K_PRINT),
 "es-imprimibles-caligrafia": ("Caligrafia: Abecedario A-Z", "Cursiva inglesa, gotica y script para imprimir", P(m_typo, sample="Aa", ff=SERIF, weight="800", style="italic", size=90, label="caligrafia A-Z"), K_PRINT),
 "es-imprimibles-moldes-de-letras": ("Moldes de Letras para Imprimir", "Plantillas huecas A-Z y 0-9 para recortar y pintar", P(m_letter_stencil, letter="M"), K_PRINT),
+"de-zum-ausdrucken-buchstaben-vorlagen": ("Buchstaben zum Ausdrucken", "Hohle Vorlagen A-Z und 0-9 zum Ausschneiden", P(m_letter_stencil, letter="B"), K_PRINT),
+"fr-imprimables-lettres-a-imprimer": ("Lettres à Imprimer et à Découper", "Contours creux A-Z et 0-9 à découper et à colorier", P(m_letter_stencil, letter="L"), K_PRINT),
 "es-imprimibles-ejercicios-de-caligrafia": ("Ejercicios de Caligrafia", "Fichas con linea modelo, repaso y renglon en blanco", P(m_trace_rows, sample="Mateo"), K_PRINT),
 "printables-best-friend-in-cursive": ("Best Friend in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Friends"), K_PRINT),
 "printables-dad-in-cursive": ("Dad in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Dad"), K_PRINT),
@@ -2990,9 +3128,41 @@ def hero_svg(slug, title, motif, kicker, a=PURPLE, b=BLUE):
 </svg>"""
 
 
+# The card's title block holds at most this many lines. Four is a geometric
+# limit, not a taste call: the block is centred on y=250 and grows upward by 33
+# per line, so at four lines the first line's ascender sits at y=106, clearing
+# the kicker baseline at y=96, and at five it sits at y=73 and collides with it.
+# Anything past the cap cannot be drawn, so `_fit_title` reports it rather than
+# dropping it.
+OG_TITLE_MAX_LINES = 4
+
+# Titles that overflowed during this run: (slug, title, lines, dropped words).
+# Collected rather than raised so one run reports every offender at once.
+TITLE_OVERFLOWS = []
+
+
+def _fit_title(slug, title, native):
+    """Wrap a card title to the lines the layout can actually draw.
+
+    This used to be a bare `[:3]`, which discarded the remainder in silence. An
+    answer-first title is longer than the ones the card was tuned for, and a run
+    that retitled nine pages truncated seven of them mid-phrase with nothing in
+    the output to say so -- 'Middle East Currency Symbols: 5 Have Their Own,'
+    with the answer cut off. The 24 pages already in that state when this was
+    added are why the overflow is reported rather than fatal by default: a check
+    that is red regardless of your change is one people learn to ignore. Pass
+    --strict-titles to make it fatal.
+    """
+    lines = smart_wrap(title, wrap_width_for(title, native))
+    if len(lines) > OG_TITLE_MAX_LINES:
+        TITLE_OVERFLOWS.append((slug, title, len(lines), lines[OG_TITLE_MAX_LINES:]))
+        lines = lines[:OG_TITLE_MAX_LINES]
+    return lines
+
+
 def og_png_svg(slug, title, sub, motif, kicker, a=PURPLE, b=BLUE, native=None):
     p = "o" + slug.replace("-", "")[:8]
-    wrapped = smart_wrap(title, wrap_width_for(title, native))[:3]
+    wrapped = _fit_title(slug, title, native)
     tspans = ""
     y0 = 250 - (len(wrapped) - 1) * 33
     for i, line in enumerate(wrapped):
@@ -3027,33 +3197,34 @@ def _native_for_slug(slug):
 PAGES.update({
 "updates": ("UltraTextGen Updates", "What changed, and why your Check may too", m_doc, K_UPDATE),
 "updates-unicode-17-new-emoji-rollout": ("Unicode 17.0's New Emoji: Rollout Tracker", "8 new emoji, tracked platform by platform", m_doc, K_UPDATE),
-"updates-uae-dirham-symbol-unicode-18": ("UAE Dirham Symbol Approved for Unicode 18.0", "Approved for encoding, not on keyboards yet", m_doc, K_UPDATE),
-"ar-updates-uae-dirham-symbol-unicode-18": ("رمز الدرهم الإماراتي يُعتمد في يونيكود 18.0", "معتمد للترميز، وليس على لوحات المفاتيح بعد", m_doc, K_UPDATE),
-"de-updates-vae-dirham-symbol-unicode-18": ("VAE-Dirham-Symbol für Unicode 18.0 genehmigt", "Zur Kodierung genehmigt, noch nicht auf Tastaturen", m_doc, K_UPDATE),
-"es-updates-simbolo-dirham-emiratos-unicode-18": ("Símbolo del Dirham de los EAU Aprobado para Unicode 18.0", "Aprobado para codificación, aún no en teclados", m_doc, K_UPDATE),
-"it-updates-simbolo-dirham-unicode-18": ("Simbolo del Dirham degli Emirati Arabi Uniti Approvato per Unicode 18.0", "Approvato per la codifica, non ancora sulle tastiere", m_doc, K_UPDATE),
-"ko-updates-dirham-giho-unicode-18": ("UAE 디르함 기호, 유니코드 18.0 인코딩 승인", "인코딩 승인, 아직 키보드엔 없음", m_doc, K_UPDATE),
-"nl-updates-dirham-symbool-unicode-18": ("VAE-dirhamsymbool goedgekeurd voor Unicode 18.0", "Goedgekeurd voor codering, nog niet op toetsenborden", m_doc, K_UPDATE),
-"sv-updates-dirham-symbol-unicode-18": ("Förenade Arabemiratens dirhamsymbol godkänd för Unicode 18.0", "Godkänd för kodning, ännu inte på tangentbord", m_doc, K_UPDATE),
-"tr-updates-dirhem-sembolu-unicode-18": ("BAE Dirhemi Sembolü Unicode 18.0 İçin Onaylandı", "Kodlama için onaylandı, henüz klavyelerde değil", m_doc, K_UPDATE),
-"updates-middle-east-currency-symbols-scorecard": ("Middle East Currency Symbols in Unicode: The Scorecard", "5 have their own sign, 3 share one, 7 have none", m_doc, K_UPDATE),
-"ar-updates-middle-east-currency-symbols-scorecard": ("رموز عملات الشرق الأوسط في يونيكود: البطاقة التقييمية بعد إصدار 18.0", "5 عملات لها رمزها الخاص. 3 تتشارك رمزاً عاماً. 7 على الأقل بلا رمز.", m_doc, K_UPDATE),
-"de-updates-naher-osten-waehrungssymbole-unicode-18": ("Währungssymbole im Nahen Osten in Unicode: Die Bilanz nach 18.0", "5 Währungen haben ein eigenes Zeichen. 3 teilen sich eins. Mindestens 7 haben keins.", m_doc, K_UPDATE),
-"es-updates-simbolos-moneda-oriente-medio-unicode-18": ("Símbolos de Moneda de Oriente Medio en Unicode: El Marcador Tras la 18.0", "5 monedas tienen su propio signo. 3 comparten uno genérico. Al menos 7 no tienen ninguno.", m_doc, K_UPDATE),
-"it-updates-simboli-valuta-medio-oriente-unicode-18": ("I Simboli di Valuta del Medio Oriente in Unicode: Il Bilancio Dopo Unicode 18.0", "5 valute hanno un proprio segno. 3 ne condividono uno. Almeno 7 non ne hanno nessuno.", m_doc, K_UPDATE),
-"ko-updates-jungdong-hwapye-giho-unicode-18": ("유니코드 속 중동 화폐 기호: 18.0 이후 현황표", "5개 통화는 전용 기호를 갖췄습니다. 3개는 공용 기호를 씁니다. 최소 7개는 기호가 없습니다.", m_doc, K_UPDATE),
-"nl-updates-valutasymbolen-midden-oosten-unicode-18": ("Valutasymbolen Midden-Oosten in Unicode: het scorebord na versie 18.0", "5 valuta's hebben een eigen teken. 3 delen er een. Minstens 7 hebben er geen.", m_doc, K_UPDATE),
-"sv-updates-valutasymboler-mellanostern-unicode-18": ("Mellanösterns valutasymboler i Unicode: Lägesrapporten efter 18.0", "5 valutor har ett eget tecken. 3 delar ett. Minst 7 saknar helt.", m_doc, K_UPDATE),
-"tr-updates-orta-dogu-para-birimi-sembolleri-unicode-18": ("Unicode'da Orta Doğu Para Birimi Sembolleri: 18.0 Sonrası Karne", "5 para birimi kendi sembolüne sahip. 3'ü ortak sembol kullanıyor. En az 7'sinde sembol yok.", m_doc, K_UPDATE),
-"updates-unicode-18-beta-review-opens": ("Unicode 18.0 Beta Review Opens: What's Shipping", "13,047 new characters, four scripts, 9 draft emoji", m_doc, K_UPDATE),
-"ar-updates-unicode-18-beta-review-opens": ("انطلاق المراجعة التجريبية ليونيكود 18.0: ما الجديد", "13,047 حرفاً جديداً، أربع كتابات، 9 إيموجي أولية", m_doc, K_UPDATE),
-"de-updates-unicode-18-beta-startet": ("Unicode 18.0 Beta startet: Was jetzt kommt", "13.047 neue Zeichen, vier Schriftsysteme, 9 Entwurfs-Emojis", m_doc, K_UPDATE),
-"es-updates-unicode-18-beta-comienza-revision": ("Se Abre la Revisión Beta de Unicode 18.0: Qué Trae", "13.047 caracteres nuevos, cuatro escrituras, 9 emojis provisionales", m_doc, K_UPDATE),
-"it-updates-revisione-beta-unicode-18": ("Revisione Beta di Unicode 18.0 al Via: Cosa Sta Arrivando", "13.047 nuovi caratteri, quattro scritture, 9 emoji provvisorie", m_doc, K_UPDATE),
-"ko-updates-unicode-18-beta-sijak": ("유니코드 18.0 베타 심사 시작: 이번에 추가되는 것들", "새 문자 13,047개, 4종 문자 체계, 초안 이모지 9종", m_doc, K_UPDATE),
-"nl-updates-unicode-18-beta-van-start": ("Unicode 18.0-bèta van start: wat erin zit", "13.047 nieuwe tekens, vier schriftsystemen, 9 concept-emoji", m_doc, K_UPDATE),
-"sv-updates-unicode-18-betagranskning-oppnar": ("Unicode 18.0:s betagranskning öppnar: Det här ingår", "13 047 nya tecken, fyra skriftsystem, 9 utkastemoji", m_doc, K_UPDATE),
-"tr-updates-unicode-18-beta-inceleme-basliyor": ("Unicode 18.0 Beta İncelemesi Başlıyor: Neler Geliyor", "13.047 yeni karakter, dört yazı sistemi, 9 taslak emoji", m_doc, K_UPDATE),
+"updates-uae-dirham-symbol-unicode-18": ("UAE Dirham Symbol: Coming September 2026", "Official Sept 16, 2026 \u00b7 phones during 2027, our estimate", m_doc, K_UPDATE),
+"ar-updates-uae-dirham-symbol-unicode-18": ("رمز الدرهم الإماراتي: سبتمبر 2026", "رسمي في 16 سبتمبر 2026 · الهواتف خلال 2027، تقديرنا", m_doc, K_UPDATE),
+"de-updates-vae-dirham-symbol-unicode-18": ("VAE-Dirham-Symbol: September 2026", "Offiziell am 16.9.2026 · Handys 2027, unsere Schätzung", m_doc, K_UPDATE),
+"es-updates-simbolo-dirham-emiratos-unicode-18": ("Dírham de los EAU: septiembre de 2026", "Oficial el 16/9/2026 · móviles en 2027, estimación nuestra", m_doc, K_UPDATE),
+"it-updates-simbolo-dirham-unicode-18": ("Dirham degli EAU: settembre 2026", "Ufficiale il 16/9/2026 · telefoni nel 2027, nostra stima", m_doc, K_UPDATE),
+"ko-updates-dirham-giho-unicode-18": ("UAE 디르함 기호: 2026년 9월", "2026년 9월 16일 정식 · 휴대폰은 2027년, 저희 추정", m_doc, K_UPDATE),
+"nl-updates-dirham-symbool-unicode-18": ("VAE-dirhamsymbool: september 2026", "Officieel op 16-9-2026 · telefoons in 2027, onze schatting", m_doc, K_UPDATE),
+"sv-updates-dirham-symbol-unicode-18": ("Dirhamsymbolen: september 2026", "Officiell 16 sep 2026 · telefoner 2027, vår uppskattning", m_doc, K_UPDATE),
+"tr-updates-dirhem-sembolu-unicode-18": ("BAE Dirhemi Sembolü: Eylül 2026", "16 Eylül 2026’da resmî · telefonlar 2027, tahminimiz", m_doc, K_UPDATE),
+"updates-omani-rial-symbol-unicode-18": ("Omani Rial Symbol: Coming September 16, 2026", "Official Sept 16, 2026 \u00b7 fonts during 2027, our estimate", m_doc, K_UPDATE),
+"updates-middle-east-currency-symbols-scorecard": ("Middle East Currency Symbols", "5 own signs \u00b7 3 shared \u00b7 7 none \u00b7 every row copies", m_doc, K_UPDATE),
+"ar-updates-middle-east-currency-symbols-scorecard": ("رموز عملات الشرق الأوسط", "5 خاصة · 3 مشتركة · 7 بلا رمز · كل صف ينسخ", m_doc, K_UPDATE),
+"de-updates-naher-osten-waehrungssymbole-unicode-18": ("Währungssymbole im Nahen Osten", "5 eigene · 3 geteilte · 7 ohne · jede Zeile kopiert", m_doc, K_UPDATE),
+"es-updates-simbolos-moneda-oriente-medio-unicode-18": ("Símbolos de moneda de Oriente Medio", "5 propios · 3 compartidos · 7 ninguno · cada fila se copia", m_doc, K_UPDATE),
+"it-updates-simboli-valuta-medio-oriente-unicode-18": ("Simboli di valuta del Medio Oriente", "5 propri · 3 condivisi · 7 assenti · ogni riga si copia", m_doc, K_UPDATE),
+"ko-updates-jungdong-hwapye-giho-unicode-18": ("중동 화폐 기호", "전용 5 · 공용 3 · 없음 7 · 모든 행 복사", m_doc, K_UPDATE),
+"nl-updates-valutasymbolen-midden-oosten-unicode-18": ("Valutasymbolen Midden-Oosten", "5 eigen · 3 gedeeld · 7 zonder · elke rij kopieert", m_doc, K_UPDATE),
+"sv-updates-valutasymboler-mellanostern-unicode-18": ("Valutasymboler i Mellanöstern", "5 egna · 3 delade · 7 utan · varje rad kopieras", m_doc, K_UPDATE),
+"tr-updates-orta-dogu-para-birimi-sembolleri-unicode-18": ("Orta Doğu para birimi sembolleri", "5 kendi · 3 ortak · 7 sembolsüz · her satır kopyalanır", m_doc, K_UPDATE),
+"updates-unicode-18-beta-review-opens": ("What's New in Unicode 18.0", "13,007 characters, three historical scripts, 9 emoji", m_doc, K_UPDATE),
+"ar-updates-unicode-18-beta-review-opens": ("ما الجديد في يونيكود 18.0", "13,007 محرف، ثلاث كتابات تاريخية، 9 إيموجي", m_doc, K_UPDATE),
+"de-updates-unicode-18-beta-startet": ("Was ist neu in Unicode 18.0", "13.007 Zeichen, drei historische Schriften, 9 Emojis", m_doc, K_UPDATE),
+"es-updates-unicode-18-beta-comienza-revision": ("Qué trae Unicode 18.0", "13.007 caracteres, tres escrituras históricas, 9 emojis", m_doc, K_UPDATE),
+"it-updates-revisione-beta-unicode-18": ("Cosa c'è in Unicode 18.0", "13.007 caratteri, tre scritture storiche, 9 emoji", m_doc, K_UPDATE),
+"ko-updates-unicode-18-beta-sijak": ("유니코드 18.0에 뭐가 들어가나", "13,007자, 역사 문자 3종, 이모지 9개", m_doc, K_UPDATE),
+"nl-updates-unicode-18-beta-van-start": ("Wat er in Unicode 18.0 zit", "13.007 tekens, drie historische schriften, 9 emoji", m_doc, K_UPDATE),
+"sv-updates-unicode-18-betagranskning-oppnar": ("Det här finns i Unicode 18.0", "13 007 tecken, tre historiska skriftsystem, 9 emojier", m_doc, K_UPDATE),
+"tr-updates-unicode-18-beta-inceleme-basliyor": ("Unicode 18.0'da neler var", "13.007 karakter, üç tarihî yazı, 9 emoji", m_doc, K_UPDATE),
 "updates-unicode-18-release-date-confirmed": ("Unicode 18.0 Date Confirmed", "September 16, 2026 — and one script got cut", m_doc, K_UPDATE),
 "ar-updates-unicode-18-release-date-confirmed": ("تأكيد موعد إصدار يونيكود 18.0", "16 سبتمبر 2026 — وكتابة واحدة حُذفت", m_doc, K_UPDATE),
 "de-updates-unicode-18-erscheinungsdatum-bestaetigt": ("Unicode 18.0: Datum bestätigt", "16. September 2026 — eine Schrift gestrichen", m_doc, K_UPDATE),
@@ -3077,18 +3248,18 @@ PAGES.update({
 "th-updates-unicode-18-release-date-confirmed": ("ยืนยันวันปล่อย Unicode 18.0", "16 กันยายน 2026 — ตัดอักษรออกหนึ่งชุด", m_doc, K_UPDATE),
 "tr-updates-unicode-18-cikis-tarihi-onaylandi": ("Unicode 18.0 çıkış tarihi onaylandı", "16 Eylül 2026 — bir yazı çıkarıldı", m_doc, K_UPDATE),
 "updates-unicode-18-most-anticipated-emoji": ("Unicode 18.0's New Emoji: Cracking Face Wins the Vote", "Pickle and Meteor round out the public's top 3", m_doc, K_UPDATE),
-"ar-updates-unicode-18-most-anticipated-emoji": ("إيموجي يونيكود 18.0 الجديدة: الوجه المتصدّع يفوز بالتصويت العام", "مخلل وشهاب يكملان المراكز الثلاثة الأولى", m_doc, K_UPDATE),
-"de-updates-unicode-18-emoji-abstimmung": ("Unicode 18.0: Neue Emojis – Berstendes Gesicht gewinnt die Abstimmung", "Essiggurke und Meteor komplettieren die Top 3", m_doc, K_UPDATE),
+"ar-updates-unicode-18-most-anticipated-emoji": ("إيموجي يونيكود 18.0 الجديدة", "الوجه المتصدّع يفوز بالتصويت العام، ثم المخلل والشهاب", m_doc, K_UPDATE),
+"de-updates-unicode-18-emoji-abstimmung": ("Unicode 18.0: Die neuen Emojis", "Berstendes Gesicht gewinnt die Abstimmung, dahinter Essiggurke und Meteor", m_doc, K_UPDATE),
 "es-updates-unicode-18-nuevos-emojis-votacion": ("Los Nuevos Emojis de Unicode 18.0: Cara Agrietada Gana la Votación", "Pepinillo y Meteoro completan el top 3", m_doc, K_UPDATE),
 "fr-updates-unicode-18-nouveaux-emojis-vote": ("Nouveaux Emoji Unicode 18.0 : Visage Fissuré Remporte le Vote", "Cornichon et Météore complètent le top 3", m_doc, K_UPDATE),
 "id-updates-unicode-18-emoji-baru-voting": ("Emoji Baru Unicode 18.0: Cracking Face Menang Voting", "Pickle dan Meteor melengkapi 3 besar", m_doc, K_UPDATE),
 "ja-updates-unicode-18-most-anticipated-emoji": ("Unicode 18.0の新絵文字：「ひび割れ顔」が投票で1位に", "ピクルスと流れ星が続く", m_doc, K_UPDATE),
-"ko-updates-unicode-18-imoji-tupyo": ("유니코드 18.0 신규 이모지: 공개 투표 1위는 Cracking Face", "Pickle과 Meteor가 2, 3위", m_doc, K_UPDATE),
+"ko-updates-unicode-18-imoji-tupyo": ("유니코드 18.0 신규 이모지", "공개 투표 1위 Cracking Face, 2·3위 Pickle과 Meteor", m_doc, K_UPDATE),
 "nl-updates-unicode-18-nieuwe-emoji-stemming": ("Nieuwe emoji in Unicode 18.0: Cracking Face wint de stemming", "Pickle en Meteor maken de top 3 compleet", m_doc, K_UPDATE),
-"pl-updates-unicode-18-nowe-emoji-glosowanie": ("Nowe Emoji Unicode 18.0: Pękająca Twarz Wygrywa Głosowanie", "Kiszony Ogórek i Meteor uzupełniają podium", m_doc, K_UPDATE),
+"pl-updates-unicode-18-nowe-emoji-glosowanie": ("Nowe emoji w Unicode 18.0", "Pękająca Twarz wygrywa głosowanie, dalej Kiszony Ogórek i Meteor", m_doc, K_UPDATE),
 "pt-updates-unicode-18-novos-emojis-votacao": ("Novos Emojis do Unicode 18.0: Rosto Rachando Vence a Votação", "Picles e Meteoro completam o top 3", m_doc, K_UPDATE),
-"ru-updates-unicode-18-most-anticipated-emoji": ("Новые эмодзи Unicode 18.0: «Трескающееся лицо» побеждает в голосовании", "Солёный огурец и Метеор замыкают тройку лидеров", m_doc, K_UPDATE),
-"th-updates-unicode-18-most-anticipated-emoji": ("อีโมจิใหม่ Unicode 18.0: ใบหน้าแตกร้าวคว้าอันดับ 1 โหวต", "แตงกวาดองและดาวตกครองอันดับ 2-3", m_doc, K_UPDATE),
+"ru-updates-unicode-18-most-anticipated-emoji": ("Новые эмодзи Unicode 18.0", "«Трескающееся лицо» побеждает в голосовании, за ним огурец и метеор", m_doc, K_UPDATE),
+"th-updates-unicode-18-most-anticipated-emoji": ("อีโมจิใหม่ใน Unicode 18.0", "ใบหน้าแตกร้าวคว้าอันดับ 1 จากโหวต ตามด้วยแตงกวาดองและดาวตก", m_doc, K_UPDATE),
 "tr-updates-unicode-18-yeni-emoji-oylama": ("Unicode 18.0'ın Yeni Emojileri: Oylamayı Cracking Face Kazandı", "Pickle ve Meteor ilk 3'ü tamamlıyor", m_doc, K_UPDATE),
 "updates-forza-horizon-6-gamertag-rules": ("Forza Horizon 6: Gamertag and Driver Name Split", "Two name fields, two very different rule sets", m_doc, K_UPDATE),
 "updates-whatsapp-usernames-rollout": ("WhatsApp Usernames: The New @Handle Rules, Explained", "3-35 characters, lowercase only, no styled Unicode", m_doc, K_UPDATE),
@@ -3218,6 +3389,7 @@ PAGES.update({
   "es-answers-what-font-does-whatsapp-use": ("¿Qué fuente usa WhatsApp?", "En resumen: el logo usa Helvetica Neue, pero el chat no tiene una fuen", m_qa, K_ANS),
   "fr-answers-what-font-does-pinterest-use": ("Quelle Police Utilise Pinterest ?", "La réponse courte, l'histoire de Pinterest Sans, et l'alternative grat", m_qa, K_ANS),
   "fr-answers-what-font-does-whatsapp-use": ("Quelle police utilise WhatsApp ?", "En bref : le logo est en Helvetica Neue, mais l'interface de chat n'ut", m_qa, K_ANS),
+  "id-answers-kata-kata-ucapan-imlek": ("Kata-Kata Ucapan Imlek yang Bagus", "Ucapan mana untuk siapa, dan kenapa banyak yang campur bahasa", m_qa, K_ANS),
   "id-answers-what-font-does-pinterest-use": ("Font Apa yang Digunakan Pinterest?", "Jawaban singkatnya, kisah di balik Pinterest Sans, dan font gratis mir", m_qa, K_ANS),
   "id-answers-what-font-does-whatsapp-use": ("Font Apa yang Digunakan WhatsApp?", "Singkatnya: logo WhatsApp menggunakan Helvetica Neue, tapi tampilan ch", m_qa, K_ANS),
   "it-answers-what-font-does-pinterest-use": ("Che Font Usa Pinterest?", "In breve: Pinterest usa un typeface proprietario chiamato Pinterest Sa", m_qa, K_ANS),
@@ -3517,6 +3689,12 @@ def main():
     ap.add_argument("--no-page-motifs", action="store_true",
                     help="disable deriving a page's motif from its own copy-tiles "
                          "(see motif_from_page) and use the registered motif as-is.")
+    ap.add_argument("--strict-titles", action="store_true",
+                    help="exit non-zero if any card title needs more lines than the "
+                         "layout can draw. Off by default because 24 registered pages "
+                         "were already in that state when the check was added, and a "
+                         "check that is red regardless of your change is one people "
+                         "learn to ignore.")
     ap.add_argument("--force", action="store_true",
                     help="re-render pages whose art already exists. Without this, an "
                          "existing hero+OG pair is left alone — so a run only fills gaps "
@@ -3571,6 +3749,14 @@ def main():
         selected = keep
 
     if a.dry_run:
+        # og_png_svg never runs on a dry run, so fit the titles here — that makes
+        # `--dry-run --all --strict-titles` a whole-site title check costing no
+        # rasterisation.
+        # over `selected + already`, not `selected`: whether a title fits is a
+        # property of the registry, not of whether a PNG happens to be on disk,
+        # and without `already` a dry run of a finished tree measures nothing.
+        for slug in selected + already:
+            _fit_title(slug, PAGES[slug][0], _native_for_slug(slug))
         if already:
             print(f"[dry-run] {len(already)} page(s) already have their art — skipping "
                   f"(use --force to re-render).")
@@ -3580,7 +3766,7 @@ def main():
         if a.all:
             print(f"  assets/hero/{HOME_CARD}.svg  +  assets/og/{HOME_CARD}.png")
             print(f"  + {len(LOCALIZED_HOME)} localized homepage card(s)")
-        return 0
+        return report_title_overflows(a.strict_titles)
 
     if already and not a.dry_run:
         print(f"{len(already)} page(s) already have their art — skipped "
@@ -3605,7 +3791,7 @@ def main():
     # business rewriting the homepage's art.
     if not a.all:
         print(f"wrote {n} hero SVG + OG PNG pair(s) (scoped to: {', '.join(prefixes)})")
-        return 0
+        return report_title_overflows(a.strict_titles)
 
     with open(os.path.join(HERO, f"{HOME_CARD}.svg"), "w", encoding="utf-8") as f:
         f.write(hero_svg(HOME_CARD, "Fancy Text Generator", m_brand, K_SITE))
@@ -3633,6 +3819,31 @@ def main():
     print("\nNOTE: a full run rewrites every asset. Review `git status` and revert any "
           "file whose only change is a re-render before committing.")
     report_orphan_keys()
+    return report_title_overflows(a.strict_titles)
+
+
+def report_title_overflows(strict):
+    """Print every title this run could not draw in full, and say what was lost.
+
+    Reported by default, fatal under --strict-titles. The distinction matters:
+    24 registered titles already overflowed when this was added, so a hard
+    failure would have been red on every run regardless of the change being
+    made. Same call, and same reasoning, as check-image-assets.py being
+    informational while check-new-page-image-assets.py gates.
+    """
+    if not TITLE_OVERFLOWS:
+        return 0
+    print(f"\n{len(TITLE_OVERFLOWS)} card title(s) need more than "
+          f"{OG_TITLE_MAX_LINES} lines and were cut:")
+    for slug, title, n_lines, dropped in TITLE_OVERFLOWS:
+        print(f"  {slug}  ({n_lines} lines, {OG_TITLE_MAX_LINES} fit)")
+        print(f"      title:   {title}")
+        print(f"      dropped: {' '.join(dropped)}")
+    print("  Fix: put the head term in the card title and the rest in the sub line, "
+          "which does not wrap.")
+    if strict:
+        print("  --strict-titles: failing.")
+        return 1
     return 0
 
 
@@ -3782,6 +3993,38 @@ PAGES.update({
     "fr-library-emojis-animaux": ("Emojis Animaux", "Compagnie, faune sauvage, mer et mythes",
         glyphs("\U0001f436", "\U0001f981", "\U0001f43c", "\U0001f419", "\U0001f98a"), K_LIB),
 })
+
+
+# ---------------------------------------------------------------------------
+# Generated-page art registry.
+#
+# PAGES above is a hand-maintained literal, and main() refuses any slug that is
+# not in it ("error: no registered page matches"). That made art impossible for
+# a page created by scripts/generate_library_page_from_spec.py without someone
+# first hand-editing this file — so generated pages shipped with og:image
+# pointing at art nobody had made, which is exactly what
+# check-new-page-image-assets.py exists to stop.
+#
+# data/generated_page_art.json lets the page generator register its own page.
+# Merged AFTER every hand-written entry above and with `setdefault`, so a
+# hand-tuned entry always wins over a generated one — the generator can add a
+# page, never silently restyle one someone already art-directed.
+_GEN_ART = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                        "data", "generated_page_art.json")
+try:
+    with open(_GEN_ART, encoding="utf-8") as _fh:
+        _KICKERS = {"LIB": K_LIB, "SYM": K_SYM, "CAT": K_CAT, "USE": K_USE,
+                    "ANS": K_ANS, "PLAT": K_PLAT, "PRINT": K_PRINT, "SITE": K_SITE}
+        for _slug, _e in (json.load(_fh).get("entries") or {}).items():
+            PAGES.setdefault(_slug, (
+                _e["title"], _e.get("sub", ""),
+                glyphs(*_e["glyphs"]) if _e.get("glyphs") else m_grid,
+                _KICKERS.get(_e.get("kicker", "LIB"), K_LIB),
+            ))
+except FileNotFoundError:
+    pass
+except Exception as _exc:  # noqa: BLE001 - a malformed side file must not break art generation
+    sys.stderr.write(f"[warn] could not merge {_GEN_ART}: {_exc}\n")
 
 if __name__ == "__main__":
     sys.exit(main())

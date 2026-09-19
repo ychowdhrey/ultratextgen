@@ -16,11 +16,26 @@
       "h2": "Sparkling Face Kaomoji",
       "intro": "Bright faces with sparkle eyes and shine accents.",
       "symbols": [
-        { "char": "(★ω★)", "label": "Star Eyes" },
-        { "char": "(✧ω✧)", "label": "Sparkle Eyes" },
-        { "char": "✧(•̀ᴗ•́)✧", "label": "Determined Sparkle" },
-        { "char": "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧", "label": "Throwing Sparkles" },
-        { "char": "(☆▽☆)", "label": "Shining Eyes" }
+        {
+          "char": "(★ω★)",
+          "label": "Star Eyes"
+        },
+        {
+          "char": "(✧ω✧)",
+          "label": "Sparkle Eyes"
+        },
+        {
+          "char": "✧(•̀ᴗ•́)✧",
+          "label": "Determined Sparkle"
+        },
+        {
+          "char": "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧",
+          "label": "Throwing Sparkles"
+        },
+        {
+          "char": "(☆▽☆)",
+          "label": "Shining Eyes"
+        }
       ]
     },
     {
@@ -29,10 +44,22 @@
       "h2": "Star Kaomoji",
       "intro": "Star-eyed and star-accented faces for a starry look.",
       "symbols": [
-        { "char": "(★≧▽≦)", "label": "Starstruck" },
-        { "char": "(≧▽≦)/☆", "label": "Catching a Star" },
-        { "char": "☆ﾐ(o*･ω･)ﾉ", "label": "Star Wave" },
-        { "char": "⋆｡˚☽˚｡⋆", "label": "Starry Night" }
+        {
+          "char": "(★≧▽≦)",
+          "label": "Starstruck"
+        },
+        {
+          "char": "(≧▽≦)/☆",
+          "label": "Catching a Star"
+        },
+        {
+          "char": "☆ﾐ(o*･ω･)ﾉ",
+          "label": "Star Wave"
+        },
+        {
+          "char": "⋆｡˚☽˚｡⋆",
+          "label": "Starry Night"
+        }
       ]
     },
     {
@@ -41,10 +68,22 @@
       "h2": "Magic & Glitter Kaomoji",
       "intro": "Dreamy, magical faces with glitter and shine.",
       "symbols": [
-        { "char": "(＊♡∀♡)", "label": "Dazzled" },
-        { "char": "(∩˃o˂∩)♡", "label": "Sparkle Hug" },
-        { "char": "٩(✧ω✧)۶", "label": "Sparkle Cheer" },
-        { "char": "(´｡• ω •｡`) ✧", "label": "Soft Sparkle" }
+        {
+          "char": "(＊♡∀♡)",
+          "label": "Dazzled"
+        },
+        {
+          "char": "(∩˃o˂∩)♡",
+          "label": "Sparkle Hug"
+        },
+        {
+          "char": "٩(✧ω✧)۶",
+          "label": "Sparkle Cheer"
+        },
+        {
+          "char": "(´｡• ω •｡`) ✧",
+          "label": "Soft Sparkle"
+        }
       ]
     },
     {
@@ -53,17 +92,41 @@
       "h2": "Throwing Sparkles Kaomoji",
       "intro": "Faces flinging sparkles and stars for a magical flourish.",
       "symbols": [
-        { "char": "(∩^o^)⊃━☆ﾟ.*", "label": "Casting Sparkles" },
-        { "char": "(ﾉ>ω<)ﾉ", "label": "Tossing Up" },
-        { "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆", "label": "Surrounded by Stars" }
+        {
+          "char": "(∩^o^)⊃━☆ﾟ.*",
+          "label": "Casting Sparkles"
+        },
+        {
+          "char": "(ﾉ>ω<)ﾉ",
+          "label": "Tossing Up"
+        },
+        {
+          "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆",
+          "label": "Surrounded by Stars"
+        }
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
   "related": [
-    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
-    { "href": "/library/cute-kaomoji/", "title": "Cute Kaomoji", "desc": "Cute and kawaii text faces with sparkly eyes and blushing cheeks." },
-    { "href": "/library/sparkle-symbols/", "title": "Sparkle Symbols", "desc": "Sparkles, glitter, and shine characters for aesthetic text." },
-    { "href": "/library/star-symbols/", "title": "Star Symbols", "desc": "Star characters and symbols in every style to copy and paste." }
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji hub — every mood of Japanese text face in one place."
+    },
+    {
+      "href": "/library/cute-kaomoji/",
+      "title": "Cute Kaomoji",
+      "desc": "Cute and kawaii text faces with sparkly eyes and blushing cheeks."
+    },
+    {
+      "href": "/library/sparkle-symbols/",
+      "title": "Sparkle Symbols",
+      "desc": "Sparkles, glitter, and shine characters for aesthetic text."
+    },
+    {
+      "href": "/library/star-symbols/",
+      "title": "Star Symbols",
+      "desc": "Star characters and symbols in every style to copy and paste."
+    }
   ]
 }

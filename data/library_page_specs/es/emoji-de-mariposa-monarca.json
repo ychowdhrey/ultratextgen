@@ -33,7 +33,7 @@
       "h2": "El Emoji con el que se Confunde",
       "intro": "El emoji genérico ya codificado del que se separa Mariposa Monarca, y el vecino con el que más se renderiza por error.",
       "symbols": [
-        { "char": "🦋", "label": "Mariposa — la especie genérica de la que se separa Mariposa Monarca" }
+        { "char": "🦋", "label": "Mariposa: la especie genérica de la que se separa Mariposa Monarca" }
       ]
     },
     {
@@ -42,7 +42,7 @@
       "h2": "Otros Candidatos en Borrador de Emoji 18.0",
       "intro": "Mariposa Monarca no es el único carácter sin aprobar de esta versión — estos están en borrador junto a ella, igual de sin renderizar hasta la decisión de septiembre de 2026.",
       "symbols": [
-        { "char": "🫫", "label": "Cara Agrietada (borrador, U+1FAEB) — ganó la votación pública" },
+        { "char": "🫫", "label": "Cara Agrietada (borrador, U+1FAEB): ganó la votación pública" },
         { "char": "🫝", "label": "Pepinillo (borrador, U+1FADD)" },
         { "char": "🪋", "label": "Meteoro (borrador, U+1FA8B)" }
       ]

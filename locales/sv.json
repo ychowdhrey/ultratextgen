@@ -117,6 +117,22 @@
       "unsaveTitle": "Ta bort från sparade stilar",
       "empty": "Skriv något ovan...",
       "noStyles": "Inga stilar hittades. Prova ett annat filter eller sökord."
+    },
+    "formatControl": {
+      "label": "Lägg till formatering",
+      "groupAriaLabel": "Lägg understrykning eller genomstrykning på varje stil"
+    },
+    "platformChips": {
+      "all": "Fungerar överallt"
+    },
+    "categoryLoad": {
+      "failed": "Det gick inte att läsa in kategorierna. Alla teckensnitt visas."
+    },
+    "stylePreview": {
+      "title": "Förhandsvisning",
+      "titleFor": "Förhandsvisning: {style}",
+      "dialogAriaLabel": "Plattformsförhandsvisning",
+      "closeAriaLabel": "Stäng förhandsvisning"
     }
   },
   "useCases": {

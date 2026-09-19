@@ -117,6 +117,22 @@
       "unsaveTitle": "Fjern fra gemte stile",
       "empty": "Skriv noget ovenfor...",
       "noStyles": "Ingen stile fundet. Prøv et andet filter eller søgeord."
+    },
+    "formatControl": {
+      "label": "Tilføj formatering",
+      "groupAriaLabel": "Læg understregning eller gennemstregning på hver stil"
+    },
+    "platformChips": {
+      "all": "Virker overalt"
+    },
+    "categoryLoad": {
+      "failed": "Kategorierne kunne ikke indlæses. Alle skrifttyper vises."
+    },
+    "stylePreview": {
+      "title": "Forhåndsvisning",
+      "titleFor": "Forhåndsvisning: {style}",
+      "dialogAriaLabel": "Platformsforhåndsvisning",
+      "closeAriaLabel": "Luk forhåndsvisning"
     }
   },
   "useCases": {

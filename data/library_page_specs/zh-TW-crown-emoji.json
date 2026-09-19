@@ -6,7 +6,7 @@
   "hero_h1": "皇冠 Emoji",
   "hero_tagline": "👑 和它的周邊：皇室成員、「queen」用法、勝利，以及配件。",
   "intro": "皇冠 emoji 很少單獨出現，多半跟著「queen／king」的說法，或是跟著贏了的語氣。下面四組就是照這些用法分的。點一下即可複製。",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "royal",
@@ -164,6 +164,55 @@
     {
       "h2": "皇冠怎麼變成一句稱讚",
       "body": "早期的 emoji 裡，👑 就是字面意思：皇室、童話、君主。今天的用法不是從那裡延伸來的，而是來自 ballroom 文化裡的「queen」這個說法，被社群平台接手之後，用來讚美一個人的姿態而不是頭銜。所以現在跟皇冠擺在一起的 💅 💯 🙌 一點皇室味都沒有——它們屬於稱讚的語彙，不屬於皇冠的語彙。"
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "組合套組",
+    "h2": "皇冠表情符號組合",
+    "intro": "現成的皇冠組合 — 一鍵複製整組，直接貼到自我介紹、貼文說明或留言裡。"
+  },
+  "collection_container_id": "crownSetsContainer",
+  "collections": [
+    {
+      "name": "炫耀皇冠",
+      "flags": ["👑", "💯", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "女王氣場",
+      "flags": ["👑", "💅", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "王者風範",
+      "flags": ["👑", "😎", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "很有我的風格",
+      "flags": ["👑", "💅", "😌"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "冠軍到手",
+      "flags": ["👑", "🏆", "🥇"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "史上最強",
+      "flags": ["👑", "🐐", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "皇家級蛻變",
+      "flags": ["👑", "✨", "💎"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "加冕模式",
+      "flags": ["👑", "🎉", "🥂"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

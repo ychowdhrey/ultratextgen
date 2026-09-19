@@ -88,8 +88,19 @@ const LANG_SWITCHER = {
 
 const EN_CTA = {
   h3: 'Transform text with Unicode fonts',
-  p: 'Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ ' +
-     'other Unicode font styles — free and instant.',
+  // Both wordings, and that is the point. The shared default in
+  // scripts/generate_library_page_from_spec.py (SHARED_CTA_DEFAULTS) lost its
+  // em dash when the em-dash policy landed; this table kept the old sentence.
+  // Since the swap below is an exact string match, the fixer then matched
+  // nothing on every freshly generated page while still reporting success —
+  // "0 CTA card(s)" read as "none needed" when it meant "none found". Keep the
+  // historical form here as long as any page on disk still carries it.
+  p: [
+    'Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ ' +
+      'other Unicode font styles. Free and instant.',
+    'Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ ' +
+      'other Unicode font styles — free and instant.'
+  ],
   btn: 'Open UltraTextGen →'
 };
 
@@ -101,52 +112,52 @@ const EN_CTA = {
 // is registered in data/translation_identical_strings.json instead.
 const CTA = {
   ar: { h3: 'حوّل نصك بخطوط يونيكود',
-        p: 'استخدم UltraTextGen لتحويل النص العادي إلى خط عريض ومائل وخط يد وأكثر من 100 نمط يونيكود آخر — مجاناً وفوراً.',
+        p: 'استخدم UltraTextGen لتحويل النص العادي إلى خط عريض ومائل وخط يد وأكثر من 100 نمط يونيكود آخر، مجاناً وفوراً.',
         btn: 'افتح UltraTextGen ←' },
   de: { h3: 'Text mit Unicode-Schriftarten verwandeln',
-        p: 'Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.',
+        p: 'Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.',
         btn: 'UltraTextGen öffnen →' },
   es: { h3: 'Transforma texto con fuentes Unicode',
-        p: 'Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode — gratis y al instante.',
+        p: 'Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode. Gratis y al instante.',
         btn: 'Abrir UltraTextGen →' },
   fr: { h3: 'Transformez votre texte avec des polices Unicode',
-        p: 'Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.',
+        p: 'Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode. Gratuit et instantané.',
         btn: 'Ouvrir UltraTextGen →' },
   id: { h3: 'Ubah teks dengan font Unicode',
-        p: 'Pakai UltraTextGen buat ubah teks biasa jadi huruf tebal, miring, sambung, dan 100+ gaya Unicode lain — gratis dan instan.',
+        p: 'Pakai UltraTextGen buat ubah teks biasa jadi huruf tebal, miring, sambung, dan 100+ gaya Unicode lain. Gratis dan instan.',
         btn: 'Buka UltraTextGen →' },
   it: { h3: 'Trasforma il testo con i font Unicode',
-        p: 'Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all’istante.',
+        p: 'Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode. Gratis e all’istante.',
         btn: 'Apri UltraTextGen →' },
   ja: { h3: 'Unicodeフォントで文字を変換',
-        p: 'UltraTextGen なら、普通のテキストを太字・斜体・筆記体など100種類以上のUnicodeフォントスタイルに変換できます — 無料ですぐに使えます。',
+        p: 'UltraTextGen なら、普通のテキストを太字・斜体・筆記体など100種類以上のUnicodeフォントスタイルに変換できます。無料ですぐに使えます。',
         btn: 'UltraTextGenを開く →' },
   ko: { h3: '유니코드 폰트로 텍스트를 변환해보세요',
         p: 'UltraTextGen을 쓰면 평범한 텍스트가 볼드체, 필기체 등 100가지가 넘는 유니코드 스타일로 무료로 즉시 바뀝니다.',
         btn: 'UltraTextGen 열기 →' },
   nl: { h3: 'Zet tekst om met Unicode-lettertypes',
-        p: 'Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.',
+        p: 'Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes. Gratis en direct.',
         btn: null },
   pl: { h3: 'Zamień tekst na czcionki Unicode',
-        p: 'Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i natychmiast.',
+        p: 'Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i natychmiast.',
         btn: 'Otwórz UltraTextGen →' },
   pt: { h3: 'Transforme texto com fontes Unicode',
-        p: 'Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.',
+        p: 'Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode. Grátis e na hora.',
         btn: 'Abrir o UltraTextGen →' },
   ru: { h3: 'Преобразуйте текст в необычные шрифты Unicode',
-        p: 'Используйте UltraTextGen, чтобы превратить обычный текст в жирный, курсивный, рукописный и 100+ других стилей Unicode — бесплатно и мгновенно.',
+        p: 'Используйте UltraTextGen, чтобы превратить обычный текст в жирный, курсивный, рукописный и 100+ других стилей Unicode. Бесплатно и мгновенно.',
         btn: 'Открыть UltraTextGen →' },
   th: { h3: 'แปลงข้อความด้วยฟอนต์ Unicode',
-        p: 'ใช้ UltraTextGen เปลี่ยนข้อความธรรมดาให้เป็นฟอนต์ Unicode ตัวหนา ตัวเอียง ลายมือ และอีกกว่า 100 แบบ — ฟรีและทันที',
+        p: 'ใช้ UltraTextGen เปลี่ยนข้อความธรรมดาให้เป็นฟอนต์ Unicode ตัวหนา ตัวเอียง ลายมือ และอีกกว่า 100 แบบ ฟรีและทันที',
         btn: 'เปิด UltraTextGen →' },
   tr: { h3: 'Metni Unicode fontlarla dönüştür',
         p: 'UltraTextGen ile düz metni kalın, italik, el yazısı ve 100’den fazla Unicode yazı stiline anında ve ücretsiz çevir.',
         btn: 'UltraTextGen’i Aç →' },
   vi: { h3: 'Chuyển đổi văn bản bằng phông chữ Unicode',
-        p: 'Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.',
+        p: 'Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.',
         btn: 'Mở UltraTextGen →' },
   'zh-tw': { h3: '用 Unicode 字體轉換文字',
-        p: '用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體——免費、即時。',
+        p: '用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體，免費、即時。',
         btn: '開啟 UltraTextGen →' }
 };
 
@@ -288,7 +299,7 @@ for (const loc of locales) {
             touched = true;
           };
           swap(`<h3>${EN_CTA.h3}</h3>`, `<h3>${cta.h3}</h3>`);
-          swap(`<p>${EN_CTA.p}</p>`, `<p>${cta.p}</p>`);
+          for (const enP of EN_CTA.p) swap(`<p>${enP}</p>`, `<p>${cta.p}</p>`);
           swap(`>${EN_CTA.btn}</a>`, `>${cta.btn}</a>`);
           if (touched) stat.cta++;
           return out;

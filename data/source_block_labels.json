@@ -1,0 +1,29 @@
+{
+  "_readme": "The Sources section label, per locale. Read by scripts/lib/source-attribution.js (which re-exports it as LOCALE_LABELS) and by scripts/generate_library_page_from_spec.py. It lives in data/ rather than inside either one so that Node and Python read the SAME table: a second copy in the generator would drift from the checker, which is the failure docs/source-attribution.md and CLAUDE.md both document at length. The FIRST entry for a locale is canonical — what the generator writes and what the fixer migrates to. Later entries are legacy forms still recognised on read, so the audit can name a page that needs migrating instead of failing to recognise its block at all. Wording is each locale's own, taken from what the site had already shipped, never invented or machine-translated: see _decisions below for the two that needed one. A locale absent from this table has no registered label, and the checker reports that rather than guessing.",
+  "_decisions": {
+    "ja": "Shipped as both 情報源 ('information source', journalistic) and 出典 ('citation', what Japanese reference works use for a sources list). Chose 出典 on 2026-09-03. Both were already on the site; this is a choice between published forms, not an invention.",
+    "th": "Shipped as both แหล่งข้อมูล ('information source') and แหล่งอ้างอิง ('reference source', unambiguous for citations). Chose แหล่งอ้างอิง on 2026-09-03, same basis as ja.",
+    "_note": "A native reader can reverse either by reordering that locale's array and re-running scripts/fix-source-attribution.js --write, which migrates every page's label."
+  },
+  "labels": {
+    "en": ["Sources"],
+    "ar": ["المصادر"],
+    "de": ["Quellen"],
+    "es": ["Fuentes"],
+    "fr": ["Sources"],
+    "id": ["Sumber"],
+    "it": ["Fonti"],
+    "ja": ["出典", "情報源"],
+    "ko": ["출처"],
+    "ms": ["Sumber"],
+    "nl": ["Bronnen"],
+    "pl": ["Źródła"],
+    "pt": ["Fontes"],
+    "ru": ["Источники"],
+    "sv": ["Källor"],
+    "th": ["แหล่งอ้างอิง", "แหล่งข้อมูล"],
+    "tr": ["Kaynaklar"],
+    "vi": ["Nguồn"],
+    "zh-tw": ["資料來源"]
+  }
+}

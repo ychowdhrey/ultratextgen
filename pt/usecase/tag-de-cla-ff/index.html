@@ -129,7 +129,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "O gerador de tag de clã é grátis?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim — totalmente grátis, sem cadastro, sem app. Tudo roda no seu navegador e nada do que você digita é enviado pra nenhum servidor. O único custo possível é o Cartão de Mudança de Nome do próprio Free Fire, se você já usou sua troca grátis — isso é regra do jogo, não desta página."
+        "text": "Sim, totalmente grátis, sem cadastro, sem app. Tudo roda no seu navegador e nada do que você digita é enviado pra nenhum servidor. O único custo possível é o Cartão de Mudança de Nome do próprio Free Fire, se você já usou sua troca grátis — isso é regra do jogo, não desta página."
       }
     }
   ]
@@ -195,6 +195,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- GENERATOR -->
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="Digite a tag do seu clã (3–6 letras)…" maxlength="100">RAPOSA</textarea></div>
+
+  <!-- Accent-aware hint: shows only when the input contains diacritics -->
+  <div class="accent-notice" id="accentNotice" role="note" hidden>
+    <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+    <span class="accent-notice-text">O seu texto tem acentos. Negrito, cursiva, gótico e quase todos os outros estilos mantêm agora <b>ã</b>, <b>ç</b> e <b>é</b> com o acento. A exceção é o texto ao contrário: aí as letras acentuadas passam sem virar e ficam direitas. <a href="/guide/fancy-fonts-and-accents/">Que estilos mantêm os acentos →</a></span>
+    <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Fechar">✕</button>
+  </div>
 </div></div></section>
 
 <!-- INTRO -->
@@ -353,7 +360,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </details>
   <details class="faq-item">
     <summary class="faq-question">O gerador de tag de clã é grátis?</summary>
-    <p class="faq-answer">Sim — totalmente grátis, sem cadastro, sem app. Tudo roda no seu navegador e nada do que você digita é enviado pra nenhum servidor. O único custo possível é o Cartão de Mudança de Nome do próprio Free Fire, se você já usou sua troca grátis — isso é regra do jogo, não desta página.</p>
+    <p class="faq-answer">Sim, totalmente grátis, sem cadastro, sem app. Tudo roda no seu navegador e nada do que você digita é enviado pra nenhum servidor. O único custo possível é o Cartão de Mudança de Nome do próprio Free Fire, se você já usou sua troca grátis — isso é regra do jogo, não desta página.</p>
   </details>
 </section>
 
@@ -365,8 +372,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- Generator scripts (Tag Studio is the engine — no generic generator UI) -->
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
+<script src="/accent-notice.js" defer></script>
 
 <!-- Symbol explorer + live tag studio -->
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
 <script src="/symbol-explorer.js" defer></script>
 <script src="/js/tag-studio.js"></script>
 <script>

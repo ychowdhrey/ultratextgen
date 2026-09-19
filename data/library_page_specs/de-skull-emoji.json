@@ -6,7 +6,7 @@
   "hero_h1": "Totenkopf Emoji",
   "hero_tagline": "💀 in seinen zwei Bedeutungen: die wörtliche und die, die heute viel häufiger gemeint ist.",
   "intro": "💀 heißt online fast nie „Tod“, sondern „ich kann nicht mehr“. Diese Seite trennt beide Lesarten: erst die Totenkopf-Emojis selbst, dann das Lach-Umfeld, dann die echten Gefahrenzeichen. Zum Kopieren anklicken.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "core",
@@ -132,6 +132,55 @@
     {
       "h2": "Wie aus dem Totenkopf ein Lachen Wurde",
       "body": "Der Bedeutungswandel ist gut dokumentiert und ziemlich jung: Um 2020 begann 💀 auf TikTok, „das war so lustig, dass ich gestorben bin“ zu heißen, ausgerechnet weil 😂 zum Zeichen einer älteren Generation geworden war. Der Unicode-Name lautet weiterhin schlicht „Skull“ — die Bedeutung, die die Leute meinen, steht in keiner Zeichentabelle. Wer die wörtliche Lesart braucht, ist mit ☠ besser bedient, das diesen Wandel nicht mitgemacht hat."
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Kombi-Sets",
+    "h2": "Totenkopf-Emoji-Kombis",
+    "intro": "Eine ganze Totenkopf-Kombi mit einem Klick kopieren und direkt in Kommentar, Caption oder Antwort einfügen."
+  },
+  "collection_container_id": "skullSetsContainer",
+  "collections": [
+    {
+      "name": "Totgelacht",
+      "flags": ["💀", "😂", "🤣"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Gefahrenzone",
+      "flags": ["☠️", "☣️", "☢️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Piratenmodus",
+      "flags": ["☠️", "🏴‍☠️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Vollkommen erledigt",
+      "flags": ["💀", "⚰️", "🪦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Halloween-Totenkopf",
+      "flags": ["💀", "🎃", "👻"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "So lustig, ich sterbe",
+      "flags": ["💀", "💯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Eiskalt",
+      "flags": ["💀", "🦴"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "RIP ich",
+      "flags": ["💀", "⚰️"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

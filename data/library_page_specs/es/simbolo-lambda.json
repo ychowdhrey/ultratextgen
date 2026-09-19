@@ -34,7 +34,7 @@
       "h2": "Lambda como Símbolo de la Liberación Gay",
       "intro": "La Gay Activists Alliance de Nueva York adoptó la λ minúscula en 1970, y el Congreso Internacional por los Derechos Gais la declaró símbolo internacional de los derechos gais y lésbicos en 1974 — uno de los primeros emblemas del movimiento. Pégala junto a los glifos del orgullo con los que hoy convive.",
       "symbols": [
-        { "char": "λ", "label": "Letra Griega Lambda Minúscula (U+03BB) — el Signo de la Liberación Gay" },
+        { "char": "λ", "label": "Letra Griega Lambda Minúscula (U+03BB): el Signo de la Liberación Gay" },
         { "char": "🏳️‍🌈", "label": "Bandera Arcoíris" },
         { "char": "⚧", "label": "Símbolo Transgénero (U+26A7)" }
       ]
@@ -45,9 +45,9 @@
       "h2": "Lambda en Código, Matemáticas y Física",
       "intro": "La vida técnica de la letra. La λ minúscula marca las funciones anónimas — desde el cálculo lambda de Alonzo Church hasta la palabra clave lambda de Python y AWS Lambda — y representa la longitud de onda en física; la Λ mayúscula es la constante cosmológica del modelo ΛCDM.",
       "symbols": [
-        { "char": "λ", "label": "Letra Griega Lambda Minúscula (U+03BB) — Longitud de Onda y Cálculo Lambda" },
-        { "char": "Λ", "label": "Letra Griega Lambda Mayúscula (U+039B) — Constante Cosmológica" },
-        { "char": "𝜆", "label": "Lambda Itálica Matemática (U+1D706) — la Variante para Ecuaciones" }
+        { "char": "λ", "label": "Letra Griega Lambda Minúscula (U+03BB): Longitud de Onda y Cálculo Lambda" },
+        { "char": "Λ", "label": "Letra Griega Lambda Mayúscula (U+039B): Constante Cosmológica" },
+        { "char": "𝜆", "label": "Lambda Itálica Matemática (U+1D706): la Variante para Ecuaciones" }
       ]
     },
     {

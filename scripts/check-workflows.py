@@ -182,6 +182,21 @@ def check_file(path):
                     J(f"{label}: `continue-on-error: true` but `steps.{sid}.outcome` is "
                       f"never referenced — this check cannot fail the job")
 
+    # --- invisible gates ---------------------------------------------------
+    # A step that can FAIL the job must also be REPORTED in the job summary.
+    # Real case (2026-08-16): `steps.locale_spec` was in the gating condition
+    # but had no line in the summary block, so a PR failed on it while the
+    # summary it pointed at read all-green — the one visible `failure` was an
+    # informational check that is deliberately not gated. That is the same
+    # shape as the two incidents above: the evidence of health was the absence
+    # of a complaint, and the real complaint had nowhere to appear.
+    gated = set(re.findall(r"steps\.(\w+)\.outcome\s*==\s*'failure'", raw))
+    reported = set(re.findall(r"\$\{\{\s*steps\.(\w+)\.outcome\s*\}\}", raw))
+    for sid in sorted(gated - reported):
+        errs.append(f"{os.path.basename(path)}: `steps.{sid}.outcome` can fail the job "
+                    f"but is never printed to the job summary — a red build with a "
+                    f"green summary. Add a line for it where the other steps are echoed.")
+
     return errs, warns
 
 

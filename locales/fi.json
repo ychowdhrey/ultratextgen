@@ -93,6 +93,22 @@
       "more": "Lisää",
       "less": "Vähemmän"
     },
-    "demoText": "Tervetuloa UltraTextGeniin.\nKirjoita mitä tahansa. Tee siitä upeaa."
+    "demoText": "Tervetuloa UltraTextGeniin.\nKirjoita mitä tahansa. Tee siitä upeaa.",
+    "formatControl": {
+      "label": "Lisää muotoilu",
+      "groupAriaLabel": "Lisää alleviivaus tai yliviivaus jokaiseen tyyliin"
+    },
+    "platformChips": {
+      "all": "Toimii kaikkialla"
+    },
+    "categoryLoad": {
+      "failed": "Luokkien lataus epäonnistui. Näytetään kaikki fontit."
+    },
+    "stylePreview": {
+      "title": "Esikatselu",
+      "titleFor": "Esikatselu: {style}",
+      "dialogAriaLabel": "Alustan esikatselu",
+      "closeAriaLabel": "Sulje esikatselu"
+    }
   }
 }

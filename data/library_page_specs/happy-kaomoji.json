@@ -16,13 +16,34 @@
       "h2": "Smiling Kaomoji",
       "intro": "Gentle, friendly smiles for everyday happy messages.",
       "symbols": [
-        { "char": "(◠‿◠)", "label": "Soft Smile" },
-        { "char": "(^▽^)", "label": "Big Smile" },
-        { "char": "(≧◡≦)", "label": "Happy Eyes" },
-        { "char": "( ´ ▽ ` )", "label": "Relaxed Smile" },
-        { "char": "(＾▽＾)", "label": "Bright Smile" },
-        { "char": "(｡◕‿◕｡)", "label": "Sweet Smile" },
-        { "char": "(•‿•)", "label": "Simple Smile" }
+        {
+          "char": "(◠‿◠)",
+          "label": "Soft Smile"
+        },
+        {
+          "char": "(^▽^)",
+          "label": "Big Smile"
+        },
+        {
+          "char": "(≧◡≦)",
+          "label": "Happy Eyes"
+        },
+        {
+          "char": "( ´ ▽ ` )",
+          "label": "Relaxed Smile"
+        },
+        {
+          "char": "(＾▽＾)",
+          "label": "Bright Smile"
+        },
+        {
+          "char": "(｡◕‿◕｡)",
+          "label": "Sweet Smile"
+        },
+        {
+          "char": "(•‿•)",
+          "label": "Simple Smile"
+        }
       ]
     },
     {
@@ -31,11 +52,26 @@
       "h2": "Excited & Joyful Kaomoji",
       "intro": "Arms-up, high-energy faces for excitement and celebration.",
       "symbols": [
-        { "char": "ヽ(•‿•)ノ", "label": "Cheering" },
-        { "char": "٩(◕‿◕)۶", "label": "Hooray" },
-        { "char": "＼(≧▽≦)／", "label": "So Happy" },
-        { "char": "ヽ(>∀<☆)ノ", "label": "Thrilled" },
-        { "char": "(★^O^★)", "label": "Star Eyes Joy" }
+        {
+          "char": "ヽ(•‿•)ノ",
+          "label": "Cheering"
+        },
+        {
+          "char": "٩(◕‿◕)۶",
+          "label": "Hooray"
+        },
+        {
+          "char": "＼(≧▽≦)／",
+          "label": "So Happy"
+        },
+        {
+          "char": "ヽ(>∀<☆)ノ",
+          "label": "Thrilled"
+        },
+        {
+          "char": "(★^O^★)",
+          "label": "Star Eyes Joy"
+        }
       ]
     },
     {
@@ -44,10 +80,22 @@
       "h2": "Content & Pleased Kaomoji",
       "intro": "Calm, satisfied faces for a quietly good mood.",
       "symbols": [
-        { "char": "(─‿─)", "label": "Pleased" },
-        { "char": "(｡•̀ᴗ-)✧", "label": "Confident Wink" },
-        { "char": "( ˙▿˙ )", "label": "Content" },
-        { "char": "(✯◡✯)", "label": "Sparkly Happy" }
+        {
+          "char": "(─‿─)",
+          "label": "Pleased"
+        },
+        {
+          "char": "(｡•̀ᴗ-)✧",
+          "label": "Confident Wink"
+        },
+        {
+          "char": "( ˙▿˙ )",
+          "label": "Content"
+        },
+        {
+          "char": "(✯◡✯)",
+          "label": "Sparkly Happy"
+        }
       ]
     },
     {
@@ -56,18 +104,45 @@
       "h2": "Celebrating & Dancing Kaomoji",
       "intro": "Dancing and celebrating faces for wins and good news.",
       "symbols": [
-        { "char": "ヽ(´▽`)/", "label": "Joyful Cheer" },
-        { "char": "⊂(´• ω •`⊂)", "label": "Happy Dance" },
-        { "char": "♪┏(・o･)┛♪", "label": "Dancing" },
-        { "char": "＼(^o^)／", "label": "Celebration" }
+        {
+          "char": "ヽ(´▽`)/",
+          "label": "Joyful Cheer"
+        },
+        {
+          "char": "⊂(´• ω •`⊂)",
+          "label": "Happy Dance"
+        },
+        {
+          "char": "♪┏(・o･)┛♪",
+          "label": "Dancing"
+        },
+        {
+          "char": "＼(^o^)／",
+          "label": "Celebration"
+        }
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
   "related": [
-    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
-    { "href": "/library/love-kaomoji/", "title": "Love & Heart Kaomoji", "desc": "Hearts, kisses, and hugs in cute Japanese text-face form." },
-    { "href": "/library/cute-kaomoji/", "title": "Cute Kaomoji", "desc": "Cute and kawaii text faces with sparkly eyes and blushing cheeks." },
-    { "href": "/library/happy-emoji/", "title": "Happy Emoji", "desc": "Smiling and joyful emoji to copy and paste for any happy moment." }
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji hub — every mood of Japanese text face in one place."
+    },
+    {
+      "href": "/library/love-kaomoji/",
+      "title": "Love & Heart Kaomoji",
+      "desc": "Hearts, kisses, and hugs in cute Japanese text-face form."
+    },
+    {
+      "href": "/library/cute-kaomoji/",
+      "title": "Cute Kaomoji",
+      "desc": "Cute and kawaii text faces with sparkly eyes and blushing cheeks."
+    },
+    {
+      "href": "/library/happy-emoji/",
+      "title": "Happy Emoji",
+      "desc": "Smiling and joyful emoji to copy and paste for any happy moment."
+    }
   ]
 }

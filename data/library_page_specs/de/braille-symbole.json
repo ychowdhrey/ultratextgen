@@ -16,11 +16,19 @@
   "crumb_library": "Bibliothek",
   "library_url": "https://ultratextgen.com/de/library/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/braille-pattern-symbols/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/library/braille-symbole/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/braille-pattern-symbols/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/braille-pattern-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/braille-symbole/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/braille-pattern-symbols/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
   "sections": [
     {
       "id": "blank-light-patterns",
@@ -28,13 +36,34 @@
       "h2": "Leere & leichte Muster",
       "intro": "Das unsichtbare leere Braille-Muster und schrittweise gefüllte Punktreihen. Das leere Zeichen wird als leerer Raum dargestellt, zählt aber als sichtbares Glyph — deshalb ist es ein beliebter Platzhalter.",
       "symbols": [
-        { "char": "⠀", "label": "Leeres Braille-Muster (unsichtbarer Platzhalter)" },
-        { "char": "⠁", "label": "Braille-Muster Punkte-1" },
-        { "char": "⠃", "label": "Braille-Muster Punkte-12" },
-        { "char": "⠇", "label": "Braille-Muster Punkte-123" },
-        { "char": "⠏", "label": "Braille-Muster Punkte-1234" },
-        { "char": "⠟", "label": "Braille-Muster Punkte-12345" },
-        { "char": "⠿", "label": "Braille-Muster Punkte-123456" }
+        {
+          "char": "⠀",
+          "label": "Leeres Braille-Muster (unsichtbarer Platzhalter)"
+        },
+        {
+          "char": "⠁",
+          "label": "Braille-Muster Punkte-1"
+        },
+        {
+          "char": "⠃",
+          "label": "Braille-Muster Punkte-12"
+        },
+        {
+          "char": "⠇",
+          "label": "Braille-Muster Punkte-123"
+        },
+        {
+          "char": "⠏",
+          "label": "Braille-Muster Punkte-1234"
+        },
+        {
+          "char": "⠟",
+          "label": "Braille-Muster Punkte-12345"
+        },
+        {
+          "char": "⠿",
+          "label": "Braille-Muster Punkte-123456"
+        }
       ]
     },
     {
@@ -43,13 +72,34 @@
       "h2": "Dichte & volle Füllungen",
       "intro": "Acht-Punkt-Muster, die wie gefüllte Blöcke wirken. Das volle Muster (⣿) ist das dichteste Braille-Glyph und eignet sich gut für Balken und Schattierungen.",
       "symbols": [
-        { "char": "⣿", "label": "Braille-Muster Punkte-12345678 (Vollblock)" },
-        { "char": "⡿", "label": "Braille-Muster Punkte-1234567" },
-        { "char": "⢿", "label": "Braille-Muster Punkte-1234568" },
-        { "char": "⣟", "label": "Braille-Muster Punkte-1234578" },
-        { "char": "⣯", "label": "Braille-Muster Punkte-1234678" },
-        { "char": "⣷", "label": "Braille-Muster Punkte-1235678" },
-        { "char": "⣾", "label": "Braille-Muster Punkte-2345678" }
+        {
+          "char": "⣿",
+          "label": "Braille-Muster Punkte-12345678 (Vollblock)"
+        },
+        {
+          "char": "⡿",
+          "label": "Braille-Muster Punkte-1234567"
+        },
+        {
+          "char": "⢿",
+          "label": "Braille-Muster Punkte-1234568"
+        },
+        {
+          "char": "⣟",
+          "label": "Braille-Muster Punkte-1234578"
+        },
+        {
+          "char": "⣯",
+          "label": "Braille-Muster Punkte-1234678"
+        },
+        {
+          "char": "⣷",
+          "label": "Braille-Muster Punkte-1235678"
+        },
+        {
+          "char": "⣾",
+          "label": "Braille-Muster Punkte-2345678"
+        }
       ]
     },
     {
@@ -58,16 +108,46 @@
       "h2": "Punktpositionen & Platzhalter",
       "intro": "Einzelne Punkte und kleine Cluster, die du kombinieren kannst, um eigene Braille-Formen, gepunktete Trenner und Texturen zu zeichnen.",
       "symbols": [
-        { "char": "⠂", "label": "Braille-Muster Punkte-2" },
-        { "char": "⠄", "label": "Braille-Muster Punkte-3" },
-        { "char": "⠈", "label": "Braille-Muster Punkte-4" },
-        { "char": "⠐", "label": "Braille-Muster Punkte-5" },
-        { "char": "⠠", "label": "Braille-Muster Punkte-6" },
-        { "char": "⡀", "label": "Braille-Muster Punkte-7" },
-        { "char": "⢀", "label": "Braille-Muster Punkte-8" },
-        { "char": "⠒", "label": "Braille-Muster Punkte-25" },
-        { "char": "⠤", "label": "Braille-Muster Punkte-36" },
-        { "char": "⠶", "label": "Braille-Muster Punkte-2356" }
+        {
+          "char": "⠂",
+          "label": "Braille-Muster Punkte-2"
+        },
+        {
+          "char": "⠄",
+          "label": "Braille-Muster Punkte-3"
+        },
+        {
+          "char": "⠈",
+          "label": "Braille-Muster Punkte-4"
+        },
+        {
+          "char": "⠐",
+          "label": "Braille-Muster Punkte-5"
+        },
+        {
+          "char": "⠠",
+          "label": "Braille-Muster Punkte-6"
+        },
+        {
+          "char": "⡀",
+          "label": "Braille-Muster Punkte-7"
+        },
+        {
+          "char": "⢀",
+          "label": "Braille-Muster Punkte-8"
+        },
+        {
+          "char": "⠒",
+          "label": "Braille-Muster Punkte-25"
+        },
+        {
+          "char": "⠤",
+          "label": "Braille-Muster Punkte-36"
+        },
+        {
+          "char": "⠶",
+          "label": "Braille-Muster Punkte-2356"
+        }
       ]
     }
   ],

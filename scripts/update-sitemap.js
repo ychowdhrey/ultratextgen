@@ -2,13 +2,21 @@
 
 const fs   = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
-const { significanceHash } = require('./lib/content-significance');
+const { execSync, execFileSync } = require('child_process');
+const { significanceHash, pickSignificantDate } = require('./lib/content-significance');
+const indexnow = require('./lib/indexnow');
 
 const BASE_URL     = 'https://ultratextgen.com';
 const SITEMAP_PATH = path.resolve(__dirname, '..', 'sitemap.xml');
 const REPO_ROOT    = path.resolve(__dirname, '..');
 const LASTMOD_CACHE = path.resolve(__dirname, '..', 'data', 'sitemap-lastmod-cache.json');
+
+// IndexNow announcement is OPT-IN per run and off by default, so `npm run
+// prebuild` on a laptop can never announce anything. Only update-sitemap.yml
+// passes the flag. See scripts/lib/indexnow.js for why this replaced
+// Cloudflare Crawler Hints.
+const SUBMIT_INDEXNOW = process.argv.includes('--submit-indexnow');
+const INDEXNOW_FORCE  = process.argv.includes('--indexnow-force');
 
 const EXCLUDED_FOLDERS = [
   'assets', 'css', 'js', 'images', 'img',
@@ -62,7 +70,14 @@ const ALT_RE = /\balt=["']([^"']*)["']/i;
 // deliberately a property of the markup rather than a hardcoded path: any future
 // content image described well enough to deserve indexing qualifies on its own,
 // and nothing here needs updating when one is added.
-function getContentImages(html) {
+//
+// Each entry carries the image's `loc` and, as `title`, the alt text that
+// qualified it. The alt is the one description of the image the page already
+// commits to, so declaring it as <image:title> costs nothing to maintain and
+// gives Bing (which still reads the tag; Google ignored it from 2022) the same
+// words the page shows a screen reader. getContentImages() keeps returning bare
+// URLs for callers that only want the list.
+function getContentImageEntries(html) {
   const out = [];
   for (const tag of html.replace(DECORATIVE_FIGURE_RE, '').match(IMG_TAG_RE) || []) {
     if (/\baria-hidden=["']true["']/i.test(tag)) continue;
@@ -71,20 +86,53 @@ function getContentImages(html) {
     const src = tag.match(SRC_RE);
     if (!src) continue;
     const url = src[1].trim();
+    const title = decodeEntities(alt[1].trim());
     // Same-origin only. A data: URI has no URL to index, and an image we do not
     // host is not ours to declare. `//host/path` is protocol-relative and points
     // at another origin despite its leading slash — prefixing it would produce
     // https://ultratextgen.com//cdn.example.com/... and declare an image that
     // 404s. Caught by update-sitemap.test.js rather than by review.
     if (url.startsWith('//')) continue;
-    if (url.startsWith('/')) out.push(`${BASE_URL}${url}`);
-    else if (url.startsWith(`${BASE_URL}/`)) out.push(url);
+    if (url.startsWith('/')) out.push({ loc: `${BASE_URL}${url}`, title });
+    else if (url.startsWith(`${BASE_URL}/`)) out.push({ loc: url, title });
   }
   return out;
 }
 
-// Every image this page wants indexed, og:image first, de-duplicated. A page may
+function getContentImages(html) {
+  return getContentImageEntries(html).map(e => e.loc);
+}
+
+// The alt attribute is HTML; the sitemap is XML. Decode what HTML allows in an
+// attribute value, then escapeXml() re-encodes the five XML specials on output,
+// so `&amp;` in a page becomes `&` here and `&amp;` again in the sitemap
+// rather than the double-encoded `&amp;amp;`.
+function decodeEntities(s) {
+  return s
+    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+    .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(parseInt(d, 10)))
+    .replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'")
+    .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+}
+
+function escapeXml(s) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+}
+
+// Every image this page wants indexed, de-duplicated by URL. A page may
 // legitimately declare several — the sitemap spec allows up to 1,000 per URL.
+// Entries are {loc, title?}; the og:image has no title because the page states
+// none for it.
+//
+// Described content images come FIRST, the og:image last (changed 2026-09-13).
+// The og card is a branded 1200x630 banner that restates the title; a content
+// image is the thing the page is about, and it is the one carrying an
+// <image:title>. Leading with the card told Google Images that the brand
+// banner was each page's principal image — on the 297 printables pages, a
+// purple card with the page title on it ranked ahead of a picture of the
+// actual printable sheet, in a cluster whose SERP is 99% image pack. A page
+// with no content image is unaffected: the card is then its only entry.
 function getPageImages(filePath) {
   let html;
   try {
@@ -93,10 +141,17 @@ function getPageImages(filePath) {
     return [];
   }
   const images = [];
+  const seen = new Set();
+  for (const entry of getContentImageEntries(html)) {
+    if (seen.has(entry.loc)) continue;
+    seen.add(entry.loc);
+    images.push(entry);
+  }
   const og = html.match(OG_IMAGE_RE);
-  if (og && og[1] !== LOGO_FALLBACK) images.push(og[1]);
-  images.push(...getContentImages(html));
-  return [...new Set(images)];
+  if (og && og[1] !== LOGO_FALLBACK && !seen.has(og[1])) {
+    images.push({ loc: og[1] });
+  }
+  return images;
 }
 
 // A sitemap is a list of pages we WANT indexed — advertising a noindex page
@@ -162,6 +217,55 @@ function todayDate() {
   return new Date().toISOString().slice(0, 10);
 }
 
+// ─── Significant lastmod: date the change a reader can see ───────────────────
+//
+// getGitLastMod() returns the newest commit that TOUCHED the file. On this site
+// that is usually the wrong date: a mesh pass, a static-footer rebuild or a
+// template fix lands on thousands of pages after their real edit, so 2,000
+// pages would all report the same day. So for a page whose hash moved, walk its
+// recent commits newest-first, hash each blob, and take the newest commit whose
+// hash differs from the one before it (scripts/lib/content-significance.js,
+// pickSignificantDate). Only bumped pages pay for the walk; a held page costs
+// nothing, as before.
+
+const SIGNIFICANT_WALK_LIMIT = 15;
+
+function gitTouches(filePath, limit) {
+  try {
+    // execFileSync, not execSync: the format string carries a `|`, which a
+    // shell would read as a pipe and silently return nothing — every page
+    // would then date as today, which is the failure this walk exists to fix.
+    const out = execFileSync('git', ['log', '-n', String(limit), '--format=%H|%cI', '--', filePath],
+      { cwd: REPO_ROOT, encoding: 'utf8' }).trim();
+    if (!out) return [];
+    return out.split('\n').map((line) => {
+      const [sha, iso] = line.split('|');
+      return { sha, date: iso.split('T')[0] };
+    });
+  } catch {
+    return [];
+  }
+}
+
+function blobHash(sha, filePath) {
+  try {
+    return significanceHash(execFileSync('git', ['show', `${sha}:${filePath}`],
+      { cwd: REPO_ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }));
+  } catch {
+    return null;
+  }
+}
+
+function getSignificantLastMod(filePath, currentHash) {
+  const touches = gitTouches(filePath, SIGNIFICANT_WALK_LIMIT);
+  if (!touches.length) return todayDate();
+  const entries = touches.map((t) => ({ date: t.date, hash: blobHash(t.sha, filePath) }));
+  // The edit is still only in the working tree (HEAD's blob hashes differently):
+  // git cannot date it, so today is the honest answer — same rule as before.
+  if (entries[0].hash !== null && entries[0].hash !== currentHash) return todayDate();
+  return pickSignificantDate(entries) || touches[0].date;
+}
+
 // ─── lastmod significance cache ───────────────────────────────────────────────
 //
 // <lastmod> must mean "the content meaningfully changed", not "some byte in the
@@ -218,7 +322,10 @@ function buildUrlBlock(url, lastmod, changefreq, priority, images) {
     `    <priority>${priority}</priority>`,
   ];
   for (const image of images || []) {
-    lines.push('    <image:image>', `      <image:loc>${image}</image:loc>`, '    </image:image>');
+    const entry = typeof image === 'string' ? { loc: image } : image;
+    lines.push('    <image:image>', `      <image:loc>${entry.loc}</image:loc>`);
+    if (entry.title) lines.push(`      <image:title>${escapeXml(entry.title)}</image:title>`);
+    lines.push('    </image:image>');
   }
   lines.push('  </url>');
   return lines.join('\n');
@@ -260,6 +367,7 @@ function generateSitemap() {
   const cache      = priorCache || {};
   const seed       = priorCache ? null : seedFromExistingSitemap();
   const nextCache  = {};
+  const bumpedUrls = [];
   let bumped = 0;
   let held   = 0;
 
@@ -281,20 +389,20 @@ function generateSitemap() {
       lastmod = seed[url];                    // first run — inherit, never mass-bump
       held++;
     } else {
-      // Real change, or a genuinely new page. getGitLastMod is right in CI, where
-      // the sitemap job runs after the commit lands. But if the edit is still only
-      // in the working tree, git reports the PREVIOUS commit's date — older than
-      // the date we already cached — and lastmod would silently fail to advance
-      // even though the content moved. Fall back to today in exactly that case.
-      const gitDate = getGitLastMod(filePath);
-      lastmod = (prev && gitDate <= prev.lastmod) ? todayDate() : gitDate;
+      // Real change, or a genuinely new page. Date it by the newest commit that
+      // changed what a reader sees, not the newest commit that touched the file
+      // (see getSignificantLastMod). A date can never move backwards: if the walk
+      // lands before the date already published, keep the published one.
+      const sigDate = getSignificantLastMod(filePath, hash);
+      lastmod = (prev && sigDate < prev.lastmod) ? prev.lastmod : sigDate;
       bumped++;
+      bumpedUrls.push(`${BASE_URL}${url}`);
     }
     nextCache[url] = { hash, lastmod };
     return lastmod;
   };
 
-  generateSitemap._report = () => ({ bumped, held, nextCache });
+  generateSitemap._report = () => ({ bumped, held, nextCache, bumpedUrls });
 
   const discovered = findIndexFiles(REPO_ROOT);
   const indexFiles = discovered.filter(f => !isNoindex(f));
@@ -318,7 +426,7 @@ function generateSitemap() {
 
   fs.writeFileSync(SITEMAP_PATH, xml, 'utf8');
 
-  const { bumped: b, held: h, nextCache: nc } = generateSitemap._report();
+  const { bumped: b, held: h, nextCache: nc, bumpedUrls: changed } = generateSitemap._report();
   saveLastmodCache(nc);
 
   console.log(`   URLs written:     ${urlEntries.length}`);
@@ -326,17 +434,66 @@ function generateSitemap() {
   console.log(`   lastmod held:     ${h}  (no meaningful change)`);
   console.log(`   Output path:      ${SITEMAP_PATH}`);
   console.log('✅ sitemap.xml fully regenerated.');
+
+  return { changed, total: urlEntries.length };
+}
+
+// ─── IndexNow ────────────────────────────────────────────────────────────────
+//
+// Announce the pages whose <lastmod> just advanced, and only those. Runs AFTER
+// the sitemap and cache are written, and can never prevent either: an engine
+// being unreachable must not cost us the cache, because a lost cache makes the
+// next run read all 4,679 URLs as changed — the mass bump this whole system
+// exists to avoid.
+async function announceToIndexNow({ changed, total }) {
+  const { key, file, reason } = indexnow.discoverKey(REPO_ROOT, fs);
+  if (!key) {
+    console.log(`   IndexNow:         skipped (${reason})`);
+    return;
+  }
+
+  const plan = indexnow.planSubmission({
+    bumpedUrls: changed,
+    totalUrls: total,
+    baseUrl: BASE_URL,
+    key,
+    enabled: SUBMIT_INDEXNOW,
+    force: INDEXNOW_FORCE,
+  });
+
+  if (plan.action !== 'submit') {
+    // 'refuse' is a real finding, not a no-op — print it where a run's log is read.
+    const mark = plan.action === 'refuse' || plan.action === 'error' ? '⚠️ ' : '   ';
+    console.log(`${mark}IndexNow:         ${plan.action} — ${plan.reason}`);
+    return;
+  }
+
+  const results = await indexnow.submit({
+    urls: plan.urls,
+    host: new URL(BASE_URL).host,
+    key,
+    keyLocation: `${BASE_URL}/${file}`,
+  });
+  for (const r of results) {
+    console.log(`   IndexNow:         ${r.ok ? '✅' : '⚠️ '} ${r.count} URL(s) — ${r.note}`);
+  }
 }
 
 // ─── Entry point ──────────────────────────────────────────────────────────────
 
 if (require.main === module) {
+  let report;
   try {
-    generateSitemap();
+    report = generateSitemap();
   } catch (err) {
     console.error('❌ Sitemap generation failed:', err.message);
     process.exit(1);
   }
+  // Deliberately outside the try above: the sitemap is already written and the
+  // cache already saved, so an IndexNow failure is reported and never fatal.
+  announceToIndexNow(report).catch((err) => {
+    console.log(`⚠️  IndexNow:         announcement failed (${err.message}) — sitemap is unaffected`);
+  });
 }
 
-module.exports = { generateSitemap, getContentImages };
+module.exports = { generateSitemap, getContentImages, getContentImageEntries, getPageImages, buildUrlBlock, announceToIndexNow };

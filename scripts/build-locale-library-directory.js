@@ -155,7 +155,7 @@ function injectDirectory(html, markup) {
 }
 
 function main() {
-  let changed = 0, skipped = 0, drift = 0;
+  let changed = 0, skipped = 0, drift = 0, checked = 0;
 
   for (const file of localeIndexes()) {
     const rel  = path.relative(ROOT, file);
@@ -177,6 +177,7 @@ function main() {
       console.error(`ERROR ${rel} — render failed: ${markup.error}`);
       process.exit(1);
     }
+    checked++;
 
     const links = (markup.match(/href=/g) || []).length;
     const updated = injectDirectory(html, markup);
@@ -206,7 +207,27 @@ function main() {
       console.error(`\n${drift} locale hub(s) out of date. Run: node scripts/build-locale-library-directory.js`);
       process.exit(1);
     }
-    console.log('\nAll locale library hubs are pre-rendered and current.');
+    // A checker that skipped every one of its targets has verified nothing, and
+    // must not report success — "a check that reports nothing is
+    // indistinguishable from a check that passes" is a failure this repo has
+    // now shipped three times (validate.yml's missing pipefail, the
+    // unparseable workflow, and this). It bit here because the locale hubs
+    // migrated from a `const LIBRARY = [...]` array to `window.UTG_LIBRARY_HUB`
+    // and this builder only ever understood the former: all 19 hubs skipped,
+    // exit 0, "All locale library hubs are pre-rendered and current."
+    //
+    // scripts/build-library-hub.js understands the current format and is now
+    // the wired gate (npm run check:library-hub). This guard exists so that if
+    // THIS script is ever pointed at a format it cannot read again, it says so.
+    if (checked === 0 && skipped > 0) {
+      console.error(
+        `\nNothing was verified: all ${skipped} locale hub(s) were skipped, so this ` +
+        `check proves nothing. The hubs now use window.UTG_LIBRARY_HUB — ` +
+        `scripts/build-library-hub.js is the builder that reads it.`
+      );
+      process.exit(1);
+    }
+    console.log(`\nAll ${checked} locale library hub(s) are pre-rendered and current.`);
     return;
   }
 

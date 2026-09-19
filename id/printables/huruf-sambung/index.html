@@ -12,7 +12,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Huruf Sambung A–Z untuk Dicetak — Lembar Latihan Menulis Tegak Bersambung | UltraTextGen</title>
+  <title>Huruf Sambung A–Z untuk Dicetak: Lembar Latihan Gratis | UltraTextGen</title>
   <meta name="description" content="Huruf sambung A sampai Z siap cetak. Ketik nama atau kata apa pun, lihat bentuk huruf tegak bersambungnya, lalu cetak atau unduh PNG-nya. Gratis, tanpa daftar.">
   <link rel="canonical" href="https://ultratextgen.com/id/printables/huruf-sambung/">
   <link rel="alternate" hreflang="en" href="https://ultratextgen.com/printables/cursive-alphabet/">
@@ -125,6 +125,10 @@
     <p class="hero-tagline">Ketik nama atau kata apa pun, lihat bentuk huruf tegak bersambungnya, lalu cetak lembarnya atau unduh PNG-nya. Semuanya dibuat langsung di browser — gratis, tanpa daftar, dan tanpa mengunggah apa pun.</p>
   </div>
 </section>
+<figure class="guide-hero-figure pt-sheet-preview">
+  <img src="/assets/printables-previews/id-printables-huruf-sambung.png" width="1200" height="900"
+       alt="Huruf Sambung A–Z untuk Dicetak: pratinjau lembar cetak" loading="lazy">
+</figure>
 
 <section class="editorial-section">
   <h2>Pilih hurufnya</h2>
@@ -218,15 +222,18 @@
     render: "glyph",
     noun: "huruf sambung",
     pngPrefix: "huruf-sambung",
-    font: "'Plus Jakarta Sans', 'Segoe UI Symbol', 'Noto Sans Symbols 2', sans-serif",
+    font: "'Playwrite ID', 'Segoe Script', cursive",
     charset: "alpha",
-    glyphStyle: "Ultra Script",
     nameDemo: "Andra"
   };
 </script>
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
-<script src="/js/printables/printablesEngine.js"></script>
+<script src="/js/printables/printPrefs.js"></script>
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
+<script src="/js/printables/glyphMetrics.js"></script>
+<script src="/js/printables/printablesEngine.js" defer></script>
 <script>
 document.querySelectorAll('.faq-question').forEach(function(btn) {
   btn.addEventListener('click', function() {

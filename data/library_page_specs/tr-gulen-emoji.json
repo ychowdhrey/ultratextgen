@@ -1,300 +1,368 @@
 {
-  "slug": "gulen-emoji",
-  "title": "Gülen Emoji 😂 🤣 — Gülme Emojileri ve Kaomoji Kopyala Yapıştır | UltraTextGen",
-  "meta_description": "Gülen emoji 😂 🤣 😆, meme gülme tepkileri (💀) ve gülen kaomoji (≧▽≦) tek sayfada. Tıkla kopyala, sohbete yapıştır.",
-  "breadcrumb": "Gülen Emoji",
-  "hero_h1": "Gülen Emoji ve Kaomoji",
-  "hero_tagline": "Kıs kıs gülmekten yerlere yatmaya kadar bütün gülme ifadeleri, meme tepkileri ve karakterle kurulan gülen kaomoji.",
-  "intro": "Gülen emoji seçimi artık yaş grubu belli ediyor: 😂 hâlâ dünyanın en çok kullanılan emojisi ama genç kullanıcılar aynı tepkiyi 💀 ya da 😭 ile veriyor. Aşağıda klasik gülme yüzleri, meme tepkileri ve sırıtan ifadeler ayrı ayrı — üstüne tıkladığında panoya kopyalanır.",
-  "copy_pattern": "collection",
-  "sections": [
+ "slug": "gulen-emoji",
+ "title": "Gülen Emoji 😂 🤣 — Gülme Emojileri ve Kaomoji Kopyala Yapıştır | UltraTextGen",
+ "meta_description": "Gülen emoji 😂 🤣 😆, meme gülme tepkileri (💀) ve gülen kaomoji (≧▽≦) tek sayfada. Tıkla kopyala, sohbete yapıştır.",
+ "breadcrumb": "Gülen Emoji",
+ "hero_h1": "Gülen Emoji ve Kaomoji",
+ "hero_tagline": "Kıs kıs gülmekten yerlere yatmaya kadar bütün gülme ifadeleri, meme tepkileri ve karakterle kurulan gülen kaomoji.",
+ "intro": "Gülen emoji seçimi artık yaş grubu belli ediyor: 😂 hâlâ dünyanın en çok kullanılan emojisi ama genç kullanıcılar aynı tepkiyi 💀 ya da 😭 ile veriyor. Aşağıda klasik gülme yüzleri, meme tepkileri ve sırıtan ifadeler ayrı ayrı — üstüne tıkladığında panoya kopyalanır.",
+ "copy_pattern": "collection",
+ "sections": [
+  {
+   "id": "gulme-yuzleri",
+   "label": "Yüzler",
+   "h2": "Gülen Emoji Çeşitleri",
+   "intro": "Gülümsemeden kahkahaya, temel gülme yüzleri.",
+   "symbols": [
     {
-      "id": "gulme-yuzleri",
-      "label": "Yüzler",
-      "h2": "Gülen Emoji Çeşitleri",
-      "intro": "Gülümsemeden kahkahaya, temel gülme yüzleri.",
-      "symbols": [
-        {
-          "char": "😂",
-          "label": "Gülmekten Ağlayan Yüz"
-        },
-        {
-          "char": "🤣",
-          "label": "Yerlerde Yuvarlanarak Gülen Yüz"
-        },
-        {
-          "char": "😆",
-          "label": "Gözleri Kısılmış Gülen Yüz"
-        },
-        {
-          "char": "😄",
-          "label": "Gülen Gözlerle Sırıtan Yüz"
-        },
-        {
-          "char": "😁",
-          "label": "Işıldayan Gülen Yüz"
-        },
-        {
-          "char": "😅",
-          "label": "Soğuk Terleyen Gülen Yüz"
-        },
-        {
-          "char": "🤭",
-          "label": "Elini Ağzına Kapatan Yüz"
-        },
-        {
-          "char": "😹",
-          "label": "Gülmekten Ağlayan Kedi"
-        }
-      ]
+     "char": "😂",
+     "label": "Gülmekten Ağlayan Yüz"
     },
     {
-      "id": "meme-tepkileri",
-      "label": "Meme",
-      "h2": "Kurukafa ve Meme Gülme Tepkileri",
-      "intro": "😂 yerine geçen yeni nesil gülme tepkileri.",
-      "symbols": [
-        {
-          "char": "💀",
-          "label": "Kurukafa"
-        },
-        {
-          "char": "☠",
-          "label": "Kurukafa ve Çapraz Kemikler"
-        },
-        {
-          "char": "🪦",
-          "label": "Mezar Taşı"
-        },
-        {
-          "char": "🫵",
-          "label": "İzleyene Uzanan Parmak"
-        },
-        {
-          "char": "😵",
-          "label": "Gözleri Çarpı Olmuş Yüz"
-        },
-        {
-          "char": "😮‍💨",
-          "label": "Nefes Veren Yüz"
-        }
-      ]
+     "char": "🤣",
+     "label": "Yerlerde Yuvarlanarak Gülen Yüz"
     },
     {
-      "id": "sirit",
-      "label": "Sırıtma",
-      "h2": "Kıkırdayan, Sırıtan ve Muzip Yüzler",
-      "intro": "Kahkaha değil, muzipçe gülümseme anlatanlar.",
-      "symbols": [
-        {
-          "char": "😏",
-          "label": "Sırıtan Yüz"
-        },
-        {
-          "char": "😝",
-          "label": "Dilini Çıkarıp Gözlerini Kısan Yüz"
-        },
-        {
-          "char": "😜",
-          "label": "Göz Kırpıp Dilini Çıkaran Yüz"
-        },
-        {
-          "char": "🤪",
-          "label": "Çılgın Yüz"
-        },
-        {
-          "char": "😛",
-          "label": "Dilini Çıkaran Yüz"
-        },
-        {
-          "char": "🙃",
-          "label": "Ters Dönmüş Yüz"
-        },
-        {
-          "char": "😬",
-          "label": "Sırıtarak Dişlerini Gösteren Yüz"
-        }
-      ]
+     "char": "😆",
+     "label": "Gözleri Kısılmış Gülen Yüz"
     },
     {
-      "id": "gulen-kaomoji",
-      "label": "Kaomoji",
-      "h2": "Gülen Kaomoji ve Metin Yüzleri",
-      "intro": "Emoji desteklemeyen alanlarda da çalışan karakter yüzleri.",
-      "symbols": [
-        {
-          "char": "(≧▽≦)",
-          "label": "Gözleri Kısık Kahkaha Kaomoji"
-        },
-        {
-          "char": "ヽ(´▽`)/",
-          "label": "Kollar Havada Gülen Kaomoji"
-        },
-        {
-          "char": "(´∀｀)",
-          "label": "Rahat Sırıtış Kaomoji"
-        },
-        {
-          "char": "（＾ｖ＾）",
-          "label": "Muzip Gülümseme Kaomoji"
-        },
-        {
-          "char": "(＾ω＾)",
-          "label": "Mutlu Kıkırdama Kaomoji"
-        },
-        {
-          "char": "(≧∇≦)/",
-          "label": "El Sallayan Kahkaha Kaomoji"
-        },
-        {
-          "char": "ヾ(≧▽≦*)o",
-          "label": "Durdurulamayan Kahkaha Kaomoji"
-        },
-        {
-          "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆",
-          "label": "Parıltılı Kahkaha Kaomoji"
-        },
-        {
-          "char": "(¬‿¬)",
-          "label": "Kurnaz Sırıtış Kaomoji"
-        }
-      ]
+     "char": "😄",
+     "label": "Gülen Gözlerle Sırıtan Yüz"
+    },
+    {
+     "char": "😁",
+     "label": "Işıldayan Gülen Yüz"
+    },
+    {
+     "char": "😅",
+     "label": "Soğuk Terleyen Gülen Yüz"
+    },
+    {
+     "char": "🤭",
+     "label": "Elini Ağzına Kapatan Yüz"
+    },
+    {
+     "char": "😹",
+     "label": "Gülmekten Ağlayan Kedi"
+    },
+    {
+     "char": "🙂",
+     "label": "Hafif Gülümseyen Yüz"
+    },
+    {
+     "char": "😊",
+     "label": "Gülen Gözlerle Gülümseyen Yüz"
     }
-  ],
-  "editorial_sections": [
-    {
-      "id": "gulme-emoji-kusak",
-      "label": "Kullanım",
-      "h2": "Hangi Gülme Emojisi Kime Yazılır?",
-      "paragraphs": [
-        "😂 yıllardır dünyanın en çok kullanılan emojisi ama son birkaç yılda kuşak göstergesine dönüştü. Genç kullanıcılar arasında aynı tepki 💀 ya da 😭 ile veriliyor; 😂 kimi çevrelerde 'eskimiş' sayılıyor. Mesaj attığın kişiye göre seçmek, esprinin karşılığını bulup bulmamasını doğrudan etkiliyor.",
-        "😅 ile 😂 arasındaki fark da sık karışıyor. 😅 gülmekten çok mahcubiyet ve gerginlik anlatır — 'zor atlattım' ya da 'kusura bakma' derken kullanılır. Gerçekten komik bir şeye 😅 atmak, tedirgin olduğun izlenimi verebiliyor.",
-        "🤭 ise kibar bir kıkırdama: gülmemesi gereken bir yerde gülmek. Dedikodu, ufak bir yaramazlık ya da 'söylememem lazım ama' tonundaki mesajlarda oturur. Üçü de gülme emojisi ama üçü bambaşka bir ton taşır."
-      ]
-    }
-  ],
-  "faq_h2": "Gülen Emoji Hakkında Sık Sorulanlar",
-  "faq": [
-    {
-      "q": "😂 ile 🤣 arasındaki fark nedir?",
-      "a": "😂 gülmekten gözü dolmak, 🤣 ise yerlere yatarak gülmek — daha abartılı olanı 🤣. Günlük kullanımda 😂 daha yaygın, 🤣 gerçekten kontrolden çıkmış bir kahkaha için."
-    },
-    {
-      "q": "Neden herkes gülmek için 💀 kullanıyor?",
-      "a": "'Öldüm' esprisinden geliyor: bir şey çok komik olduğunda 'güldüm öldüm' demek yerine tek karakter atılıyor. Ölümle ilgisi yok, 😂'nin daha abartılı hâli."
-    },
-    {
-      "q": "😅 gülme emojisi mi?",
-      "a": "Tam olarak değil. 😅 gülümserken soğuk ter döküyor — mahcubiyet, gerginlik ya da 'ucuz atlattım' anlatır. Komik bir şeye tepki olarak 😂 ya da 😆 daha doğru okunur."
-    },
-    {
-      "q": "Gülen kaomoji'yi oyun sohbetinde kullanabilir miyim?",
-      "a": "Genelde evet, kaomoji'nin avantajı bu. Normal karakterlerden kurulu olduğu için emojiyi engelleyen oyun sohbetlerinde ve form alanlarında da görünür."
-    },
-    {
-      "q": "Gülen emoji her cihazda aynı mı görünüyor?",
-      "a": "Karakter aynı, çizim farklı. Apple, Google ve Samsung 😂'yi kendi setiyle çizer; gözyaşının yeri bile değişir ama anlam ve gönderilen kod sabit kalır."
-    }
-  ],
-  "faq_label": "SSS",
-  "related": [
-    {
-      "href": "/tr/library/yuz-emojileri/",
-      "title": "Yüz Emojileri",
-      "desc": "Bütün yüz ifadeleri tek listede."
-    },
-    {
-      "href": "/tr/library/kaomoji/",
-      "title": "Kaomoji",
-      "desc": "Karakterlerden kurulu yüz ifadeleri."
-    },
-    {
-      "href": "/tr/library/emoji-combos/",
-      "title": "Emoji Kombinasyonları",
-      "desc": "Hazır emoji dizilimleri."
-    },
-    {
-      "href": "/tr/library/cute-kaomoji/",
-      "title": "Sevimli Kaomoji",
-      "desc": "Tatlı ve minik karakter yüzleri."
-    }
-  ],
-  "canonical": "https://ultratextgen.com/tr/library/gulen-emoji/",
-  "date_published": "2026-08-08",
-  "date_modified": "2026-08-08",
-  "cta": "UltraTextGen ile düz yazını kalın, italik, el yazısı ve 100+ Unicode stiline çevir — ücretsiz, üyeliksiz, tek tıkla kopyala.",
-  "lang": "tr",
-  "page_type": "library",
-  "hreflang": [
-    {
-      "lang": "en",
-      "href": "https://ultratextgen.com/library/laughing-emoji/"
-    },
-    {
-      "lang": "tr",
-      "href": "https://ultratextgen.com/tr/library/gulen-emoji/"
-    },
-    {
-      "lang": "x-default",
-      "href": "https://ultratextgen.com/library/laughing-emoji/"
-    }
-  ],
-  "collection_section": {
-    "id": "hazir-setler",
-    "label": "Gülme Setleri",
-    "h2": "Hazır Gülme Setleri",
-    "intro": "Hazır kahkaha dizilimleri — klasiği de var, yeni nesli de."
+   ]
   },
-  "collection_container_id": "laughSetsContainer",
-  "collections": [
+  {
+   "id": "meme-tepkileri",
+   "label": "Meme",
+   "h2": "Kurukafa ve Meme Gülme Tepkileri",
+   "intro": "😂 yerine geçen yeni nesil gülme tepkileri.",
+   "symbols": [
     {
-      "name": "Klasik Kahkaha",
-      "flags": [
-        "😂",
-        "🤣",
-        "😆",
-        "😹"
-      ],
-      "defaultFormat": "inline"
+     "char": "💀",
+     "label": "Kurukafa"
     },
     {
-      "name": "Yeni Nesil",
-      "flags": [
-        "💀",
-        "☠",
-        "🫵",
-        "🪦"
-      ],
-      "defaultFormat": "inline"
+     "char": "☠",
+     "label": "Kurukafa ve Çapraz Kemikler"
     },
     {
-      "name": "Kıs Kıs",
-      "flags": [
-        "🤭",
-        "😏",
-        "😝",
-        "(¬‿¬)"
-      ],
-      "defaultFormat": "inline"
+     "char": "🪦",
+     "label": "Mezar Taşı"
     },
     {
-      "name": "Çılgın",
-      "flags": [
-        "🤪",
-        "😜",
-        "🙃",
-        "😵"
-      ],
-      "defaultFormat": "inline"
+     "char": "🫵",
+     "label": "İzleyene Uzanan Parmak"
     },
     {
-      "name": "Kaomoji Kahkaha",
-      "flags": [
-        "(≧▽≦)",
-        "ヽ(´▽`)/",
-        "(＾ω＾)"
-      ],
-      "defaultFormat": "inline"
+     "char": "😵",
+     "label": "Gözleri Çarpı Olmuş Yüz"
+    },
+    {
+     "char": "😮‍💨",
+     "label": "Nefes Veren Yüz"
+    },
+    {
+     "char": "⚰️",
+     "label": "Tabut"
+    },
+    {
+     "char": "😭",
+     "label": "Hıçkıra Hıçkıra Ağlayan Yüz"
+    },
+    {
+     "char": "🥲",
+     "label": "Gözyaşıyla Gülümseyen Yüz"
+    },
+    {
+     "char": "🫠",
+     "label": "Eriyen Yüz"
+    },
+    {
+     "char": "😵‍💫",
+     "label": "Spiral Gözlü Yüz"
+    },
+    {
+     "char": "🤡",
+     "label": "Palyaço Yüzü"
+    },
+    {
+     "char": "🗿",
+     "label": "Moai"
     }
-  ]
+   ]
+  },
+  {
+   "id": "sirit",
+   "label": "Sırıtma",
+   "h2": "Kıkırdayan, Sırıtan ve Muzip Yüzler",
+   "intro": "Kahkaha değil, muzipçe gülümseme anlatanlar.",
+   "symbols": [
+    {
+     "char": "😏",
+     "label": "Sırıtan Yüz"
+    },
+    {
+     "char": "😝",
+     "label": "Dilini Çıkarıp Gözlerini Kısan Yüz"
+    },
+    {
+     "char": "😜",
+     "label": "Göz Kırpıp Dilini Çıkaran Yüz"
+    },
+    {
+     "char": "🤪",
+     "label": "Çılgın Yüz"
+    },
+    {
+     "char": "😛",
+     "label": "Dilini Çıkaran Yüz"
+    },
+    {
+     "char": "🙃",
+     "label": "Ters Dönmüş Yüz"
+    },
+    {
+     "char": "😬",
+     "label": "Sırıtarak Dişlerini Gösteren Yüz"
+    },
+    {
+     "char": "😈",
+     "label": "Boynuzlu Gülümseyen Yüz"
+    },
+    {
+     "char": "🙈",
+     "label": "Gözlerini Kapatan Maymun"
+    }
+   ]
+  },
+  {
+   "id": "gulen-kaomoji",
+   "label": "Kaomoji",
+   "h2": "Gülen Kaomoji ve Metin Yüzleri",
+   "intro": "Emoji desteklemeyen alanlarda da çalışan karakter yüzleri.",
+   "symbols": [
+    {
+     "char": "(≧▽≦)",
+     "label": "Gözleri Kısık Kahkaha Kaomoji"
+    },
+    {
+     "char": "ヽ(´▽`)/",
+     "label": "Kollar Havada Gülen Kaomoji"
+    },
+    {
+     "char": "(´∀｀)",
+     "label": "Rahat Sırıtış Kaomoji"
+    },
+    {
+     "char": "（＾ｖ＾）",
+     "label": "Muzip Gülümseme Kaomoji"
+    },
+    {
+     "char": "(＾ω＾)",
+     "label": "Mutlu Kıkırdama Kaomoji"
+    },
+    {
+     "char": "(≧∇≦)/",
+     "label": "El Sallayan Kahkaha Kaomoji"
+    },
+    {
+     "char": "ヾ(≧▽≦*)o",
+     "label": "Durdurulamayan Kahkaha Kaomoji"
+    },
+    {
+     "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆",
+     "label": "Parıltılı Kahkaha Kaomoji"
+    },
+    {
+     "char": "(¬‿¬)",
+     "label": "Kurnaz Sırıtış Kaomoji"
+    },
+    {
+     "char": "(＾▽＾)",
+     "label": "Geniş Gülümseme Kaomoji"
+    },
+    {
+     "char": "( ˘ ³˘)",
+     "label": "Memnun Kaomoji"
+    },
+    {
+     "char": "ヽ(♡‿♡)ノ",
+     "label": "Hayran Kaomoji"
+    },
+    {
+     "char": "(ﾉ≧∀≦)ﾉ",
+     "label": "Coşkulu Kahkaha Kaomoji"
+    },
+    {
+     "char": "XD",
+     "label": "Klasik XD İfadesi"
+    },
+    {
+     "char": "(*≧ω≦*)",
+     "label": "Kıkırdayan Kaomoji"
+    }
+   ]
+  }
+ ],
+ "editorial_sections": [
+  {
+   "id": "gulme-emoji-kusak",
+   "label": "Kullanım",
+   "h2": "Hangi Gülme Emojisi Kime Yazılır?",
+   "paragraphs": [
+    "😂 yıllardır dünyanın en çok kullanılan emojisi ama son birkaç yılda kuşak göstergesine dönüştü. Genç kullanıcılar arasında aynı tepki 💀 ya da 😭 ile veriliyor; 😂 kimi çevrelerde 'eskimiş' sayılıyor. Mesaj attığın kişiye göre seçmek, esprinin karşılığını bulup bulmamasını doğrudan etkiliyor.",
+    "😅 ile 😂 arasındaki fark da sık karışıyor. 😅 gülmekten çok mahcubiyet ve gerginlik anlatır — 'zor atlattım' ya da 'kusura bakma' derken kullanılır. Gerçekten komik bir şeye 😅 atmak, tedirgin olduğun izlenimi verebiliyor.",
+    "🤭 ise kibar bir kıkırdama: gülmemesi gereken bir yerde gülmek. Dedikodu, ufak bir yaramazlık ya da 'söylememem lazım ama' tonundaki mesajlarda oturur. Üçü de gülme emojisi ama üçü bambaşka bir ton taşır."
+   ]
+  }
+ ],
+ "faq_h2": "Gülen Emoji Hakkında Sık Sorulanlar",
+ "faq": [
+  {
+   "q": "😂 ile 🤣 arasındaki fark nedir?",
+   "a": "😂 gülmekten gözü dolmak, 🤣 ise yerlere yatarak gülmek — daha abartılı olanı 🤣. Günlük kullanımda 😂 daha yaygın, 🤣 gerçekten kontrolden çıkmış bir kahkaha için."
+  },
+  {
+   "q": "Neden herkes gülmek için 💀 kullanıyor?",
+   "a": "'Öldüm' esprisinden geliyor: bir şey çok komik olduğunda 'güldüm öldüm' demek yerine tek karakter atılıyor. Ölümle ilgisi yok, 😂'nin daha abartılı hâli."
+  },
+  {
+   "q": "😅 gülme emojisi mi?",
+   "a": "Tam olarak değil. 😅 gülümserken soğuk ter döküyor — mahcubiyet, gerginlik ya da 'ucuz atlattım' anlatır. Komik bir şeye tepki olarak 😂 ya da 😆 daha doğru okunur."
+  },
+  {
+   "q": "Gülen kaomoji'yi oyun sohbetinde kullanabilir miyim?",
+   "a": "Genelde evet, kaomoji'nin avantajı bu. Normal karakterlerden kurulu olduğu için emojiyi engelleyen oyun sohbetlerinde ve form alanlarında da görünür."
+  },
+  {
+   "q": "Gülen emoji her cihazda aynı mı görünüyor?",
+   "a": "Karakter aynı, çizim farklı. Apple, Google ve Samsung 😂'yi kendi setiyle çizer; gözyaşının yeri bile değişir ama anlam ve gönderilen kod sabit kalır."
+  }
+ ],
+ "faq_label": "SSS",
+ "related": [
+  {
+   "href": "/tr/library/yuz-emojileri/",
+   "title": "Yüz Emojileri",
+   "desc": "Bütün yüz ifadeleri tek listede."
+  },
+  {
+   "href": "/tr/library/kaomoji/",
+   "title": "Kaomoji",
+   "desc": "Karakterlerden kurulu yüz ifadeleri."
+  },
+  {
+   "href": "/tr/library/emoji-combos/",
+   "title": "Emoji Kombinasyonları",
+   "desc": "Hazır emoji dizilimleri."
+  },
+  {
+   "href": "/tr/library/cute-kaomoji/",
+   "title": "Sevimli Kaomoji",
+   "desc": "Tatlı ve minik karakter yüzleri."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/tr/library/gulen-emoji/",
+ "date_published": "2026-08-08",
+ "date_modified": "2026-08-08",
+ "cta": "UltraTextGen ile düz yazını kalın, italik, el yazısı ve 100+ Unicode stiline çevir — ücretsiz, üyeliksiz, tek tıkla kopyala.",
+ "lang": "tr",
+ "page_type": "library",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/laughing-emoji/"
+  },
+  {
+   "lang": "tr",
+   "href": "https://ultratextgen.com/tr/library/gulen-emoji/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/laughing-emoji/"
+  }
+ ],
+ "collection_section": {
+  "id": "hazir-setler",
+  "label": "Gülme Setleri",
+  "h2": "Hazır Gülme Setleri",
+  "intro": "Hazır kahkaha dizilimleri — klasiği de var, yeni nesli de."
+ },
+ "collection_container_id": "laughSetsContainer",
+ "collections": [
+  {
+   "name": "Klasik Kahkaha",
+   "flags": [
+    "😂",
+    "🤣",
+    "😆",
+    "😹"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Yeni Nesil",
+   "flags": [
+    "💀",
+    "☠",
+    "🫵",
+    "🪦"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Kıs Kıs",
+   "flags": [
+    "🤭",
+    "😏",
+    "😝",
+    "(¬‿¬)"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Çılgın",
+   "flags": [
+    "🤪",
+    "😜",
+    "🙃",
+    "😵"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Kaomoji Kahkaha",
+   "flags": [
+    "(≧▽≦)",
+    "ヽ(´▽`)/",
+    "(＾ω＾)"
+   ],
+   "defaultFormat": "inline"
+  }
+ ]
 }

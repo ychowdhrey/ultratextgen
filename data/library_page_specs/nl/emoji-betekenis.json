@@ -16,13 +16,27 @@
   "date_published": "2026-08-16",
   "date_modified": "2026-08-16",
   "copy_pattern": "single",
-  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/emoji-meanings-guide/" },
-    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/emoji-anlamlari/" },
-    { "lang": "es", "href": "https://ultratextgen.com/es/library/significado-de-los-emojis/" },
-    { "lang": "nl", "href": "https://ultratextgen.com/nl/library/emoji-betekenis/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/emoji-meanings-guide/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/emoji-meanings-guide/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/emoji-anlamlari/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/significado-de-los-emojis/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/emoji-betekenis/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/emoji-meanings-guide/"
+    }
   ],
   "sections": [
     {
@@ -31,14 +45,38 @@
       "h2": "Betekenis van smiley- en gezichts-emoji's",
       "intro": "Wat de meest gebruikte gezichts-emoji's daadwerkelijk overbrengen in een gesprek.",
       "symbols": [
-        { "char": "😊", "label": "Glimlach — oprecht blij, vriendelijk" },
-        { "char": "😂", "label": "Zo hard lachen dat je huilt" },
-        { "char": "🥺", "label": "Smekend, puppyogen, iets vragen" },
-        { "char": "😏", "label": "Grijns — veelbetekenend, flirterig, zelfvoldaan" },
-        { "char": "🤔", "label": "Nadenkend, sceptisch, twijfelend" },
-        { "char": "😐", "label": "Neutraal gezicht — droog, niet onder de indruk" },
-        { "char": "🙄", "label": "Ogen rollen — geïrriteerd, klaar ermee" },
-        { "char": "😤", "label": "Gefrustreerd, triomfantelijk, vastberaden" }
+        {
+          "char": "😊",
+          "label": "Glimlach: oprecht blij, vriendelijk"
+        },
+        {
+          "char": "😂",
+          "label": "Zo hard lachen dat je huilt"
+        },
+        {
+          "char": "🥺",
+          "label": "Smekend, puppyogen, iets vragen"
+        },
+        {
+          "char": "😏",
+          "label": "Grijns: veelbetekenend, flirterig, zelfvoldaan"
+        },
+        {
+          "char": "🤔",
+          "label": "Nadenkend, sceptisch, twijfelend"
+        },
+        {
+          "char": "😐",
+          "label": "Neutraal gezicht: droog, niet onder de indruk"
+        },
+        {
+          "char": "🙄",
+          "label": "Ogen rollen: geïrriteerd, klaar ermee"
+        },
+        {
+          "char": "😤",
+          "label": "Gefrustreerd, triomfantelijk, vastberaden"
+        }
       ]
     },
     {
@@ -47,14 +85,38 @@
       "h2": "Betekenis van hand- en gebaren-emoji's",
       "intro": "Wat handgebaar-emoji's betekenen in context — sommige zijn ver van hun oorspronkelijke betekenis afgedreven.",
       "symbols": [
-        { "char": "👍", "label": "Duim omhoog — goedkeuring, akkoord" },
-        { "char": "👎", "label": "Duim omlaag — afkeuring, oneens" },
-        { "char": "🤝", "label": "Handdruk — afspraak, samenwerking" },
-        { "char": "🙏", "label": "Bidden of bedanken — dankbaarheid, alsjeblieft" },
-        { "char": "✌️", "label": "Victorie- of vredesteken, twee" },
-        { "char": "🤞", "label": "Duimen — hopen op geluk" },
-        { "char": "🤙", "label": "Bel me, relaxed, shaka" },
-        { "char": "👋", "label": "Zwaaien — hallo, dag" }
+        {
+          "char": "👍",
+          "label": "Duim omhoog: goedkeuring, akkoord"
+        },
+        {
+          "char": "👎",
+          "label": "Duim omlaag: afkeuring, oneens"
+        },
+        {
+          "char": "🤝",
+          "label": "Handdruk: afspraak, samenwerking"
+        },
+        {
+          "char": "🙏",
+          "label": "Bidden of bedanken: dankbaarheid, alsjeblieft"
+        },
+        {
+          "char": "✌️",
+          "label": "Victorie- of vredesteken, twee"
+        },
+        {
+          "char": "🤞",
+          "label": "Duimen: hopen op geluk"
+        },
+        {
+          "char": "🤙",
+          "label": "Bel me, relaxed, shaka"
+        },
+        {
+          "char": "👋",
+          "label": "Zwaaien: hallo, dag"
+        }
       ]
     },
     {
@@ -63,16 +125,46 @@
       "h2": "Betekenis van gekleurde hartjes",
       "intro": "Elke hartkleur draagt een andere emotionele nuance — dit is wat ze overbrengen. Op Snapchat zegt de hartkleur bovendien iets over je beste-vriendenstatus.",
       "symbols": [
-        { "char": "❤️", "label": "Rood — klassieke liefde, passie, romantiek" },
-        { "char": "🧡", "label": "Oranje — warmte, zorgzaamheid, vriendschap" },
-        { "char": "💛", "label": "Geel — blijdschap, vriendschap, optimisme" },
-        { "char": "💚", "label": "Groen — natuur, gezondheid, jaloezie" },
-        { "char": "💙", "label": "Blauw — vertrouwen, loyaliteit, platonische liefde" },
-        { "char": "💜", "label": "Paars — mededogen, mysterie, spiritueel" },
-        { "char": "🖤", "label": "Zwart — zwarte humor, rauw, verdriet" },
-        { "char": "🤍", "label": "Wit — puurheid, rust, clean esthetiek" },
-        { "char": "🤎", "label": "Bruin — warmte, geborgenheid, aards" },
-        { "char": "💗", "label": "Roze — genegenheid, schattig, groeiende liefde" }
+        {
+          "char": "❤️",
+          "label": "Rood: klassieke liefde, passie, romantiek"
+        },
+        {
+          "char": "🧡",
+          "label": "Oranje: warmte, zorgzaamheid, vriendschap"
+        },
+        {
+          "char": "💛",
+          "label": "Geel: blijdschap, vriendschap, optimisme"
+        },
+        {
+          "char": "💚",
+          "label": "Groen: natuur, gezondheid, jaloezie"
+        },
+        {
+          "char": "💙",
+          "label": "Blauw: vertrouwen, loyaliteit, platonische liefde"
+        },
+        {
+          "char": "💜",
+          "label": "Paars: mededogen, mysterie, spiritueel"
+        },
+        {
+          "char": "🖤",
+          "label": "Zwart: zwarte humor, rauw, verdriet"
+        },
+        {
+          "char": "🤍",
+          "label": "Wit: puurheid, rust, clean esthetiek"
+        },
+        {
+          "char": "🤎",
+          "label": "Bruin: warmte, geborgenheid, aards"
+        },
+        {
+          "char": "💗",
+          "label": "Roze: genegenheid, schattig, groeiende liefde"
+        }
       ]
     },
     {
@@ -81,12 +173,30 @@
       "h2": "Symboliek van dieren-emoji's",
       "intro": "Waar dieren-emoji's voor staan in popcultuur en online communicatie.",
       "symbols": [
-        { "char": "🦋", "label": "Vlinder — transformatie, vrijheid" },
-        { "char": "🐍", "label": "Slang — verraad, geslepenheid (Taylor Swift)" },
-        { "char": "🦊", "label": "Vos — slim, sluw, geslepen" },
-        { "char": "🐸", "label": "Kikker — memecultuur, niet mijn probleem" },
-        { "char": "🐝", "label": "Bij — druk, hardwerkend, Beyoncé" },
-        { "char": "🦄", "label": "Eenhoorn — zeldzaam, magisch, uniek" }
+        {
+          "char": "🦋",
+          "label": "Vlinder: transformatie, vrijheid"
+        },
+        {
+          "char": "🐍",
+          "label": "Slang: verraad, geslepenheid (Taylor Swift)"
+        },
+        {
+          "char": "🦊",
+          "label": "Vos: slim, sluw, geslepen"
+        },
+        {
+          "char": "🐸",
+          "label": "Kikker: memecultuur, niet mijn probleem"
+        },
+        {
+          "char": "🐝",
+          "label": "Bij: druk, hardwerkend, Beyoncé"
+        },
+        {
+          "char": "🦄",
+          "label": "Eenhoorn: zeldzaam, magisch, uniek"
+        }
       ]
     },
     {
@@ -95,12 +205,30 @@
       "h2": "Emoji's met een dubbele of verborgen betekenis",
       "intro": "Emoji's die er een tweede betekenis bij hebben gekregen, los van waar ze oorspronkelijk voor bedoeld waren.",
       "symbols": [
-        { "char": "🍑", "label": "Perzik — wordt ook suggestief gebruikt" },
-        { "char": "🍆", "label": "Aubergine — wordt ook suggestief gebruikt" },
-        { "char": "🔥", "label": "Vuur — vet, geweldig (Snapchat-streak)" },
-        { "char": "💀", "label": "Schedel — 'ik lig' (keihard lachen)" },
-        { "char": "🤡", "label": "Clown — dwaas gedrag of persoon" },
-        { "char": "🧢", "label": "Pet — liegen, 'no cap' betekent geen leugen" }
+        {
+          "char": "🍑",
+          "label": "Perzik: wordt ook suggestief gebruikt"
+        },
+        {
+          "char": "🍆",
+          "label": "Aubergine: wordt ook suggestief gebruikt"
+        },
+        {
+          "char": "🔥",
+          "label": "Vuur: vet, geweldig (Snapchat-streak)"
+        },
+        {
+          "char": "💀",
+          "label": "Schedel: 'ik lig' (keihard lachen)"
+        },
+        {
+          "char": "🤡",
+          "label": "Clown: dwaas gedrag of persoon"
+        },
+        {
+          "char": "🧢",
+          "label": "Pet: liegen, 'no cap' betekent geen leugen"
+        }
       ]
     }
   ],

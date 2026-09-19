@@ -6,7 +6,7 @@
   "hero_h1": "Emoji Bandiere",
   "hero_tagline": "Le bandiere più usate, per categoria — paesi, organizzazioni, regioni, identità e bandiere simboliche.",
   "intro": "Un'emoji bandiera non è un'immagine ma una coppia di lettere regionali che il sistema trasforma in bandiera. Ecco perché a volte si vedono due lettere al posto della bandiera. Clicca per copiare.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "country",
@@ -156,6 +156,50 @@
     {
       "h2": "Perché una Bandiera Non è Davvero un Carattere",
       "body": "🇮🇹 non esiste come carattere singolo: sono due «indicatori regionali», 🇮 e 🇹, che il sistema riconosce come codice paese e sostituisce con un'immagine. Unicode ha scelto questa strada apposta, per non dover decidere quali entità meritino una bandiera — l'elenco viene dallo standard ISO dei codici paese, non da una delibera del consorzio. Per questo una bandiera può apparire su un dispositivo e restare due lettere su un altro."
+    }
+  ],
+  "collection_section": {
+    "id": "flag-grids",
+    "label": "Set di Bandiere",
+    "h2": "Set di Bandiere Pronti da Copiare",
+    "intro": "Un clic copia tutto il gruppo: le 27 bandiere dell'UE, le 10 dell'ASEAN, l'intero G20."
+  },
+  "collection_container_id": "flagGridContainer",
+  "collections": [
+    {
+      "name": "Unione europea (UE)",
+      "flags": ["🇦🇹", "🇧🇪", "🇧🇬", "🇭🇷", "🇨🇾", "🇨🇿", "🇩🇰", "🇪🇪", "🇫🇮", "🇫🇷", "🇩🇪", "🇬🇷", "🇭🇺", "🇮🇪", "🇮🇹", "🇱🇻", "🇱🇹", "🇱🇺", "🇲🇹", "🇳🇱", "🇵🇱", "🇵🇹", "🇷🇴", "🇸🇰", "🇸🇮", "🇪🇸", "🇸🇪"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "ASEAN (Sud-est asiatico)",
+      "flags": ["🇸🇬", "🇲🇾", "🇮🇩", "🇹🇭", "🇵🇭", "🇻🇳", "🇧🇳", "🇰🇭", "🇱🇦", "🇲🇲"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Medio Oriente",
+      "flags": ["🇸🇦", "🇦🇪", "🇶🇦", "🇰🇼", "🇧🇭", "🇴🇲", "🇮🇱", "🇯🇴", "🇱🇧", "🇮🇶", "🇮🇷", "🇾🇪"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "G20",
+      "flags": ["🇦🇷", "🇦🇺", "🇧🇷", "🇨🇦", "🇨🇳", "🇫🇷", "🇩🇪", "🇮🇳", "🇮🇩", "🇮🇹", "🇯🇵", "🇲🇽", "🇷🇺", "🇸🇦", "🇿🇦", "🇰🇷", "🇹🇷", "🇬🇧", "🇺🇸"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Paesi nordici",
+      "flags": ["🇩🇰", "🇫🇮", "🇮🇸", "🇳🇴", "🇸🇪"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Asia meridionale",
+      "flags": ["🇮🇳", "🇵🇰", "🇧🇩", "🇱🇰", "🇳🇵", "🇧🇹", "🇲🇻", "🇦🇫"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Asia orientale",
+      "flags": ["🇨🇳", "🇯🇵", "🇰🇷", "🇹🇼", "🇲🇳", "🇭🇰", "🇲🇴"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

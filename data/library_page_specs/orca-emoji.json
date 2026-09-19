@@ -1,0 +1,93 @@
+{
+  "slug": "orca-emoji",
+  "page_type": "symbol",
+  "title": "Orca Emoji (🫍): Codepoint, Meaning & Why It Isn't a Whale",
+  "meta_description": "The orca emoji 🫍 (U+1FACD): its Unicode 17.0 codepoint, how to type it, which platforms draw it yet, and why Unicode files an orca beside the dolphins.",
+  "canonical": "https://ultratextgen.com/symbol/orca-emoji/",
+  "breadcrumb": "Orca Emoji",
+  "hero_h1": "Orca Emoji",
+  "hero_tagline": "The black-and-white orca 🫍 with its codepoint, its keyboard routes, the platforms that draw it so far, and the marine emoji people reached for before it existed. Tap the orca to copy it, or the whale and dolphin below to see exactly what it replaces.",
+  "intro": "🫍 ORCA (U+1FACD) arrived in Unicode 17.0 and reached most phones with iOS 26.4 in March 2026. Unicode files it under animal-marine, one shelf along from the dolphin rather than the whale, and that placement is taxonomically right: an orca is the largest of the dolphins, not a whale at all, despite \"killer whale\" being the name almost everyone types first. Until this codepoint existed, an orca had to be written as 🐋 or 🐬, and neither is the animal. This page gives the glyph, the input routes, and the near neighbours it is still confused with.",
+  "date_published": "2026-09-10",
+  "date_modified": "2026-09-10",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "orca-core",
+      "label": "The Glyph",
+      "h2": "Orca Emoji",
+      "intro": "The Unicode 17.0 codepoint itself, drawn black above and white below on every vendor so far.",
+      "symbols": [
+        {
+          "char": "🫍",
+          "label": "Orca (U+1FACD)"
+        }
+      ]
+    },
+    {
+      "id": "orca-stand-ins",
+      "label": "The Old Stand-Ins",
+      "h2": "What People Typed Before This Existed",
+      "intro": "Both of these were pressed into service for orcas for years, and both name a different animal.",
+      "symbols": [
+        {
+          "char": "🐋",
+          "label": "Whale (U+1F40B)"
+        },
+        {
+          "char": "🐳",
+          "label": "Spouting Whale (U+1F433)"
+        },
+        {
+          "char": "🐬",
+          "label": "Dolphin (U+1F42C)"
+        }
+      ]
+    },
+    {
+      "id": "orca-marine-shelf",
+      "label": "Marine Shelf",
+      "h2": "The Rest of the Ocean-Life Shelf",
+      "intro": "Unicode's animal-marine subgroup, where the orca now sits.",
+      "symbols": [
+        {
+          "char": "🦈",
+          "label": "Shark (U+1F988)"
+        },
+        {
+          "char": "🦭",
+          "label": "Seal (U+1F9AD)"
+        },
+        {
+          "char": "🐙",
+          "label": "Octopus (U+1F419)"
+        },
+        {
+          "char": "🦑",
+          "label": "Squid (U+1F991)"
+        },
+        {
+          "char": "🐡",
+          "label": "Blowfish (U+1F421)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/animal-emojis/",
+      "title": "Animal Emojis",
+      "desc": "Every animal emoji sorted by habitat, with the whole ocean-life shelf in one grid."
+    },
+    {
+      "href": "/symbol/distorted-face-emoji/",
+      "title": "Distorted Face Emoji",
+      "desc": "🫪, the Unicode 17.0 release's most-used new emoji, and the orca's release-mate."
+    },
+    {
+      "href": "/updates/unicode-17-new-emoji-rollout/",
+      "title": "Unicode 17.0 Rollout Tracker",
+      "desc": "All eight Unicode 17.0 emoji and which platforms have drawn them so far."
+    }
+  ]
+}

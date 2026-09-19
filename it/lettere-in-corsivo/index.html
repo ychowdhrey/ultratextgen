@@ -114,7 +114,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Il corsivo funziona su Instagram, WhatsApp e TikTok?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sì — il corsivo Unicode si incolla senza problemi nelle biografie e didascalie di Instagram, su TikTok, X, Facebook, WhatsApp, Discord e YouTube. Tieni però nomi utente e handle in testo semplice: molti campi username eliminano o rifiutano i caratteri speciali. Consulta la nostra pagina sui <a href=\"/instagram/\">font per Instagram</a> per consigli specifici."
+        "text": "Sì, il corsivo Unicode si incolla senza problemi nelle biografie e didascalie di Instagram, su TikTok, X, Facebook, WhatsApp, Discord e YouTube. Tieni però nomi utente e handle in testo semplice: molti campi username eliminano o rifiutano i caratteri speciali. Consulta la nostra pagina sui <a href=\"/instagram/\">font per Instagram</a> per consigli specifici."
       }
     },
     {
@@ -249,6 +249,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <div class="input-wrapper">
           <textarea class="main-input" id="mainInput" placeholder="Scrivi il tuo testo, una parola o un nome…" maxlength="500" autofocus></textarea>
           <span class="char-count"><span id="charCount">0</span>/500</span>
+        </div>
+
+        <!-- Accent-aware hint: shows only when the input contains diacritics -->
+        <div class="accent-notice" id="accentNotice" role="note" hidden>
+          <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+          <span class="accent-notice-text">Il tuo testo contiene lettere accentate. Grassetto, corsivo, gotico e quasi tutti gli altri stili ora mantengono <b>à</b>, <b>è</b> e <b>ù</b> con l’accento — solo alcuni (il testo capovolto, e lettere senza forma accentata come <b>ł đ ø ß</b>) tornano in lettere normali. <a href="/guide/fancy-fonts-and-accents/">Quali stili tengono gli accenti →</a></span>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Chiudi">✕</button>
         </div>
         <div class="cursive-quick-row" id="cursiveQuickRow" aria-label="Esempi rapidi"></div>
         <div class="vertical-fit-row" id="cursiveFitRow" hidden></div>
@@ -743,7 +750,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
   </button>
   <div class="faq-answer">
-    Sì — il corsivo Unicode si incolla senza problemi nelle biografie e didascalie di Instagram, su TikTok, X, Facebook, WhatsApp, Discord e YouTube. Tieni però nomi utente e handle in testo semplice: molti campi username eliminano o rifiutano i caratteri speciali. Consulta la nostra pagina sui <a href="/it/font-instagram/">font per Instagram</a> per consigli specifici.
+    Sì, il corsivo Unicode si incolla senza problemi nelle biografie e didascalie di Instagram, su TikTok, X, Facebook, WhatsApp, Discord e YouTube. Tieni però nomi utente e handle in testo semplice: molti campi username eliminano o rifiutano i caratteri speciali. Consulta la nostra pagina sui <a href="/it/font-instagram/">font per Instagram</a> per consigli specifici.
   </div>
 </div>
 
@@ -924,7 +931,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
   <script src="/js/cursive/cursiveData.js" defer></script>
+  <script src="/js/share/share-core.js" defer></script>
+  <script src="/js/saved/saved-items.js" defer></script>
   <script src="/script.js" defer></script>
+  <script src="/i18n.js" defer></script>
+  <script src="/accent-notice.js" defer></script>
   <script src="/js/cursive/cursivePageController.js" defer></script>
   <script src="/footer.js" defer></script>
 </body></html>

@@ -17,16 +17,46 @@
       "h2": "Chat & Rank Bracket Symbols",
       "intro": "Arrowheads and ornament brackets used around [Admin]-style rank tags and chat prefixes.",
       "symbols": [
-        { "char": "►", "label": "Black Right-Pointing Pointer" },
-        { "char": "◄", "label": "Black Left-Pointing Pointer" },
-        { "char": "▶", "label": "Black Right-Pointing Triangle" },
-        { "char": "◀", "label": "Black Left-Pointing Triangle" },
-        { "char": "«", "label": "Left-Pointing Double Angle Quotation Mark" },
-        { "char": "»", "label": "Right-Pointing Double Angle Quotation Mark" },
-        { "char": "❰", "label": "Heavy Left-Pointing Angle Bracket Ornament" },
-        { "char": "❱", "label": "Heavy Right-Pointing Angle Bracket Ornament" },
-        { "char": "〘", "label": "Left White Tortoise Shell Bracket" },
-        { "char": "〙", "label": "Right White Tortoise Shell Bracket" }
+        {
+          "char": "►",
+          "label": "Black Right-Pointing Pointer"
+        },
+        {
+          "char": "◄",
+          "label": "Black Left-Pointing Pointer"
+        },
+        {
+          "char": "▶",
+          "label": "Black Right-Pointing Triangle"
+        },
+        {
+          "char": "◀",
+          "label": "Black Left-Pointing Triangle"
+        },
+        {
+          "char": "«",
+          "label": "Left-Pointing Double Angle Quotation Mark"
+        },
+        {
+          "char": "»",
+          "label": "Right-Pointing Double Angle Quotation Mark"
+        },
+        {
+          "char": "❰",
+          "label": "Heavy Left-Pointing Angle Bracket Ornament"
+        },
+        {
+          "char": "❱",
+          "label": "Heavy Right-Pointing Angle Bracket Ornament"
+        },
+        {
+          "char": "〘",
+          "label": "Left White Tortoise Shell Bracket"
+        },
+        {
+          "char": "〙",
+          "label": "Right White Tortoise Shell Bracket"
+        }
       ]
     },
     {
@@ -35,18 +65,54 @@
       "h2": "Server List & MOTD Shading Blocks",
       "intro": "Solid and shaded block elements for MOTD banners, progress bars, and pixel-style dividers.",
       "symbols": [
-        { "char": "█", "label": "Full Block" },
-        { "char": "▓", "label": "Dark Shade" },
-        { "char": "▒", "label": "Medium Shade" },
-        { "char": "░", "label": "Light Shade" },
-        { "char": "▌", "label": "Left Half Block" },
-        { "char": "▐", "label": "Right Half Block" },
-        { "char": "■", "label": "Black Square" },
-        { "char": "□", "label": "White Square" },
-        { "char": "▪", "label": "Black Small Square" },
-        { "char": "▫", "label": "White Small Square" },
-        { "char": "◆", "label": "Black Diamond" },
-        { "char": "◇", "label": "White Diamond" }
+        {
+          "char": "█",
+          "label": "Full Block"
+        },
+        {
+          "char": "▓",
+          "label": "Dark Shade"
+        },
+        {
+          "char": "▒",
+          "label": "Medium Shade"
+        },
+        {
+          "char": "░",
+          "label": "Light Shade"
+        },
+        {
+          "char": "▌",
+          "label": "Left Half Block"
+        },
+        {
+          "char": "▐",
+          "label": "Right Half Block"
+        },
+        {
+          "char": "■",
+          "label": "Black Square"
+        },
+        {
+          "char": "□",
+          "label": "White Square"
+        },
+        {
+          "char": "▪",
+          "label": "Black Small Square"
+        },
+        {
+          "char": "▫",
+          "label": "White Small Square"
+        },
+        {
+          "char": "◆",
+          "label": "Black Diamond"
+        },
+        {
+          "char": "◇",
+          "label": "White Diamond"
+        }
       ]
     },
     {
@@ -55,18 +121,54 @@
       "h2": "Box-Drawing Lines for Chat UI",
       "intro": "Line and corner pieces for framing /help menus, hologram panels, and scoreboard borders.",
       "symbols": [
-        { "char": "─", "label": "Box Drawings Light Horizontal" },
-        { "char": "│", "label": "Box Drawings Light Vertical" },
-        { "char": "┌", "label": "Box Drawings Light Down and Right" },
-        { "char": "┐", "label": "Box Drawings Light Down and Left" },
-        { "char": "└", "label": "Box Drawings Light Up and Right" },
-        { "char": "┘", "label": "Box Drawings Light Up and Left" },
-        { "char": "╔", "label": "Box Drawings Double Down and Right" },
-        { "char": "╗", "label": "Box Drawings Double Down and Left" },
-        { "char": "╚", "label": "Box Drawings Double Up and Right" },
-        { "char": "╝", "label": "Box Drawings Double Up and Left" },
-        { "char": "═", "label": "Box Drawings Double Horizontal" },
-        { "char": "║", "label": "Box Drawings Double Vertical" }
+        {
+          "char": "─",
+          "label": "Box Drawings Light Horizontal"
+        },
+        {
+          "char": "│",
+          "label": "Box Drawings Light Vertical"
+        },
+        {
+          "char": "┌",
+          "label": "Box Drawings Light Down and Right"
+        },
+        {
+          "char": "┐",
+          "label": "Box Drawings Light Down and Left"
+        },
+        {
+          "char": "└",
+          "label": "Box Drawings Light Up and Right"
+        },
+        {
+          "char": "┘",
+          "label": "Box Drawings Light Up and Left"
+        },
+        {
+          "char": "╔",
+          "label": "Box Drawings Double Down and Right"
+        },
+        {
+          "char": "╗",
+          "label": "Box Drawings Double Down and Left"
+        },
+        {
+          "char": "╚",
+          "label": "Box Drawings Double Up and Right"
+        },
+        {
+          "char": "╝",
+          "label": "Box Drawings Double Up and Left"
+        },
+        {
+          "char": "═",
+          "label": "Box Drawings Double Horizontal"
+        },
+        {
+          "char": "║",
+          "label": "Box Drawings Double Vertical"
+        }
       ]
     },
     {
@@ -75,17 +177,50 @@
       "h2": "Game-Themed Icons",
       "intro": "Pickaxes, swords, hearts, and potions — icons that match Minecraft's tools and HUD.",
       "symbols": [
-        { "char": "⛏", "label": "Pick (Pickaxe)" },
-        { "char": "⚒", "label": "Hammer and Pick" },
-        { "char": "⚔", "label": "Crossed Swords" },
-        { "char": "🏹", "label": "Bow and Arrow" },
-        { "char": "🛡", "label": "Shield" },
-        { "char": "☠", "label": "Skull and Crossbones" },
-        { "char": "❤", "label": "Heavy Black Heart (Health)" },
-        { "char": "⚗", "label": "Alembic (Brewing Stand)" },
-        { "char": "💎", "label": "Gem Stone (Diamond)" },
-        { "char": "✦", "label": "Black Four-Pointed Star (XP Sparkle)" },
-        { "char": "🔥", "label": "Fire" }
+        {
+          "char": "⛏",
+          "label": "Pick (Pickaxe)"
+        },
+        {
+          "char": "⚒",
+          "label": "Hammer and Pick"
+        },
+        {
+          "char": "⚔",
+          "label": "Crossed Swords"
+        },
+        {
+          "char": "🏹",
+          "label": "Bow and Arrow"
+        },
+        {
+          "char": "🛡",
+          "label": "Shield"
+        },
+        {
+          "char": "☠",
+          "label": "Skull and Crossbones"
+        },
+        {
+          "char": "❤",
+          "label": "Heavy Black Heart (Health)"
+        },
+        {
+          "char": "⚗",
+          "label": "Alembic (Brewing Stand)"
+        },
+        {
+          "char": "💎",
+          "label": "Gem Stone (Diamond)"
+        },
+        {
+          "char": "✦",
+          "label": "Black Four-Pointed Star (XP Sparkle)"
+        },
+        {
+          "char": "🔥",
+          "label": "Fire"
+        }
       ]
     },
     {
@@ -94,18 +229,41 @@
       "h2": "Arrows, Checks & Warning Markers",
       "intro": "Pointer arrows and status marks for tutorials, votes, and warning broadcasts.",
       "symbols": [
-        { "char": "➤", "label": "Black Rightwards Arrowhead" },
-        { "char": "➜", "label": "Heavy Round-Tipped Rightwards Arrow" },
-        { "char": "→", "label": "Rightwards Arrow" },
-        { "char": "⇨", "label": "Rightwards White Arrow" },
-        { "char": "☛", "label": "Black Right Pointing Index" },
-        { "char": "✔", "label": "Heavy Check Mark" },
-        { "char": "✘", "label": "Heavy Ballot X" },
-        { "char": "⚠", "label": "Warning Sign" }
+        {
+          "char": "➤",
+          "label": "Black Rightwards Arrowhead"
+        },
+        {
+          "char": "➜",
+          "label": "Heavy Round-Tipped Rightwards Arrow"
+        },
+        {
+          "char": "→",
+          "label": "Rightwards Arrow"
+        },
+        {
+          "char": "⇨",
+          "label": "Rightwards White Arrow"
+        },
+        {
+          "char": "☛",
+          "label": "Black Right Pointing Index"
+        },
+        {
+          "char": "✔",
+          "label": "Heavy Check Mark"
+        },
+        {
+          "char": "✘",
+          "label": "Heavy Ballot X"
+        },
+        {
+          "char": "⚠",
+          "label": "Warning Sign"
+        }
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
   "related": [
     {
       "href": "/library/fortnite-symbols/",

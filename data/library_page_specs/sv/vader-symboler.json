@@ -1,0 +1,360 @@
+{
+ "slug": "vader-symboler",
+ "lang": "sv",
+ "page_type": "library",
+ "title": "Vädersymboler att kopiera ☀ – sol, moln, regn och månfaser",
+ "meta_description": "Vädersymboler och väder-emoji sorterade efter vädertyp: sol, moln, regn, snö, vind och månfaser. Klicka för att kopiera och klistra in i bio, bildtext eller väderrapport.",
+ "breadcrumb": "Vädersymboler och väder-emoji",
+ "hero_h1": "Vädersymboler och väder-emoji",
+ "hero_tagline": "En referenssamling med vädersymboler, månfaser och atmosfäriska Unicode-tecken. Klicka på valfri symbol för att kopiera den direkt.",
+ "intro": "Det här biblioteket innehåller väder-emoji, symboler för månens faser, atmosfäriska tecken och temperaturindikatorer samt relaterade Unicode-tecken. Symbolerna är ordnade efter vädertyp och kategori. Både färgglada emoji som ☀ 🌧 🌈 och enfärgade texttecken som ☁ ❄ ☂ är riktiga tecken och inte bilder, så du kan enkelt kopiera dem och klistra in dem överallt där text går att skriva.",
+ "date_published": "2026-09-10",
+ "date_modified": "2026-09-10",
+ "copy_pattern": "single",
+ "canonical": "https://ultratextgen.com/sv/library/vader-symboler/",
+ "home_url": "https://ultratextgen.com/sv/",
+ "crumb_home": "Startsida",
+ "crumb_library": "Bibliotek",
+ "library_url": "https://ultratextgen.com/sv/library/",
+ "hreflang": [
+  {
+   "lang": "sv",
+   "href": "https://ultratextgen.com/sv/library/vader-symboler/"
+  },
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/weather-symbols/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/weather-symbols/"
+  }
+ ],
+ "related": [
+  {
+   "href": "/sv/library/stjarntecken/",
+   "title": "Stjärntecken & astrologisymboler",
+   "desc": "En referenssamling med västerländska stjärntecken, planetsymboler, kinesiska stjärntecken och astronomiska tecken. Klicka på en symbol för att."
+  },
+  {
+   "href": "/sv/library/emoji-combos/",
+   "title": "Emoji-kombinationer",
+   "desc": "Söta emoji-kombinationer sorterade efter stämning: soft girl, stjärnhimmel, Y2K, kawaii, hav & strand och kärlek – ett klick kopierar hela kombon."
+  },
+  {
+   "href": "/sv/library/stjarna-symboler/",
+   "title": "Stjärnsymboler (att kopiera)",
+   "desc": "En samling stjärnsymboler, gnistertecken och asterisk-varianter i Unicode. Från enkla stjärnor och flertaggade stjärnor till betygsstjärnor – klicka."
+  }
+ ],
+ "sections": [
+  {
+   "id": "sun-clear-sky",
+   "label": "Symboler för sol och klar himmel",
+   "h2": "Symboler för sol och klar himmel",
+   "intro": "Symboler för soligt väder, klar himmel och dagsljus. För hela dygnssekvensen soluppgång → solnedgång → natt, se Sun Progression på moon-celestial-symbols.",
+   "symbols": [
+    {
+     "char": "☀",
+     "label": "Sol"
+    },
+    {
+     "char": "☼",
+     "label": "Sol med strålar"
+    },
+    {
+     "char": "🌞",
+     "label": "Sol med ansikte"
+    },
+    {
+     "char": "🌤",
+     "label": "Mestadels soligt"
+    },
+    {
+     "char": "🌅",
+     "label": "Soluppgång"
+    },
+    {
+     "char": "🌄",
+     "label": "Soluppgång över berg"
+    },
+    {
+     "char": "🌇",
+     "label": "Solnedgång"
+    }
+   ]
+  },
+  {
+   "id": "cloud-symbols",
+   "label": "Molnsymboler",
+   "h2": "Molnsymboler",
+   "intro": "Symboler för molnigt och mulet väder.",
+   "symbols": [
+    {
+     "char": "☁",
+     "label": "Moln"
+    },
+    {
+     "char": "⛅",
+     "label": "Delvis molnigt"
+    },
+    {
+     "char": "🌥",
+     "label": "Mestadels molnigt"
+    },
+    {
+     "char": "🌦",
+     "label": "Sol & regn"
+    },
+    {
+     "char": "🌁",
+     "label": "Dimmigt"
+    },
+    {
+     "char": "☁️",
+     "label": "Moln"
+    }
+   ]
+  },
+  {
+   "id": "rain-storm",
+   "label": "Symboler för regn och storm",
+   "h2": "Symboler för regn och storm",
+   "intro": "Symboler för nederbörd, oväder, blixtar och svåra väderförhållanden.",
+   "symbols": [
+    {
+     "char": "🌧",
+     "label": "Regn"
+    },
+    {
+     "char": "⛈",
+     "label": "Åskväder"
+    },
+    {
+     "char": "🌩",
+     "label": "Blixtmoln"
+    },
+    {
+     "char": "⚡",
+     "label": "Blixt"
+    },
+    {
+     "char": "🌂",
+     "label": "Hopfällt paraply"
+    },
+    {
+     "char": "☂",
+     "label": "Paraply"
+    },
+    {
+     "char": "☔",
+     "label": "Paraply med regn"
+    },
+    {
+     "char": "🌧️",
+     "label": "Regnmoln"
+    },
+    {
+     "char": "⛈️",
+     "label": "Stormmoln"
+    },
+    {
+     "char": "🌩️",
+     "label": "Blixtmoln"
+    },
+    {
+     "char": "☂️",
+     "label": "Paraply"
+    },
+    {
+     "char": "🥾",
+     "label": "Gummistövel"
+    }
+   ]
+  },
+  {
+   "id": "snow-cold",
+   "label": "Symboler för snö och kyla",
+   "h2": "Symboler för snö och kyla",
+   "intro": "Snöflingevarianter, snögubbar och vintersymboler för nederbörd.",
+   "symbols": [
+    {
+     "char": "🌨",
+     "label": "Snöfall"
+    },
+    {
+     "char": "❄",
+     "label": "Snöflinga"
+    },
+    {
+     "char": "❅",
+     "label": "Snöflinga alt"
+    },
+    {
+     "char": "❆",
+     "label": "Snöflinga tung"
+    },
+    {
+     "char": "⛄",
+     "label": "Snögubbe"
+    },
+    {
+     "char": "☃",
+     "label": "Snögubbe med snö"
+    },
+    {
+     "char": "🧊",
+     "label": "Is"
+    }
+   ]
+  },
+  {
+   "id": "wind-tornado",
+   "label": "Symboler för vind och tornado",
+   "h2": "Symboler för vind och tornado",
+   "intro": "Symboler för vind, tornados och rörelser i atmosfären.",
+   "symbols": [
+    {
+     "char": "🌬",
+     "label": "Vindansikte"
+    },
+    {
+     "char": "🌪",
+     "label": "Tornado"
+    },
+    {
+     "char": "🌀",
+     "label": "Cyklon"
+    },
+    {
+     "char": "💨",
+     "label": "Vind"
+    },
+    {
+     "char": "🌪️",
+     "label": "Tornado"
+    },
+    {
+     "char": "🌬️",
+     "label": "Vindansikte"
+    },
+    {
+     "char": "🍃",
+     "label": "Löv i vind"
+    },
+    {
+     "char": "🎐",
+     "label": "Vindspel"
+    }
+   ]
+  },
+  {
+   "id": "moon-night",
+   "label": "Symboler för måne och natt",
+   "h2": "Symboler för måne och natt",
+   "intro": "Symboler för månen, natten och månens faser.",
+   "symbols": [
+    {
+     "char": "🌙",
+     "label": "Månskära"
+    },
+    {
+     "char": "🌛",
+     "label": "Månansikte första kvarteret"
+    },
+    {
+     "char": "🌜",
+     "label": "Månansikte sista kvarteret"
+    },
+    {
+     "char": "🌝",
+     "label": "Fullmåneansikte"
+    },
+    {
+     "char": "🌑",
+     "label": "Nymåne"
+    },
+    {
+     "char": "🌒",
+     "label": "Tilltagande skära"
+    },
+    {
+     "char": "🌓",
+     "label": "Första kvarteret"
+    },
+    {
+     "char": "🌔",
+     "label": "Tilltagande gibbous"
+    },
+    {
+     "char": "🌕",
+     "label": "Fullmåne"
+    },
+    {
+     "char": "🌖",
+     "label": "Avtagande gibbous"
+    },
+    {
+     "char": "🌗",
+     "label": "Sista kvarteret"
+    },
+    {
+     "char": "🌘",
+     "label": "Avtagande skära"
+    }
+   ]
+  },
+  {
+   "id": "thermometer-measurement",
+   "label": "Termometer- och mätsymboler",
+   "h2": "Termometer- och mätsymboler",
+   "intro": "Symboler för vädermätning och temperatur.",
+   "symbols": [
+    {
+     "char": "🌡",
+     "label": "Termometer"
+    },
+    {
+     "char": "🔥",
+     "label": "Eld / hett"
+    },
+    {
+     "char": "°",
+     "label": "Gradtecken"
+    },
+    {
+     "char": "℃",
+     "label": "Celsius"
+    },
+    {
+     "char": "℉",
+     "label": "Fahrenheit"
+    }
+   ]
+  },
+  {
+   "id": "rainbow-special",
+   "label": "Regnbågs- och specialsymboler",
+   "h2": "Regnbågs- och specialsymboler",
+   "intro": "Regnbågar, kometer och andra atmosfäriska fenomen.",
+   "symbols": [
+    {
+     "char": "🌈",
+     "label": "Regnbåge"
+    },
+    {
+     "char": "☄",
+     "label": "Komet"
+    },
+    {
+     "char": "🌊",
+     "label": "Havsvåg"
+    },
+    {
+     "char": "💧",
+     "label": "Droppe"
+    }
+   ]
+  }
+ ]
+}

@@ -81,6 +81,7 @@ These run across page types rather than producing a type.
 | Locale mesh (hreflang reciprocity + locale-native link rewrites) | `sync-locale-mesh.js` (`--fix`) + `check-locale-mesh.js` (diff-scoped, gating) | `CLAUDE.md` "Locale Parent Governance" section + [`locale-parent-governance.md`](./locale-parent-governance.md) | CI (`validate.yml`, gating) + per-batch `--fix` |
 | Locale parent governance (Core Parent Set + Locale Tier registries — which parents mirror into which locales by default) | `check-locale-parent-tier.js` (pre-build lookup) + `audit-locale-parent-gap.js` (whole-site, informational) + `check-locale-parent-gap.js` (diff-scoped, gating) | `CLAUDE.md` "Locale Parent Governance" section + [`locale-parent-governance.md`](./locale-parent-governance.md) | CI (`validate.yml`, gating on new locale pages) + run before starting new locale work |
 | FAQ schema visibility (FAQPage/QAPage JSON-LD must mirror the visible page) | `audit-faq-schema.js` (whole-site, informational) + `check-faq-schema.js` (diff-scoped, gating) + `fix-faq-schema-visibility.js` (repair pass) | `CLAUDE.md` "FAQ schema must mirror visible page content" section | CI (`validate.yml`, gating) + per-batch audit/fix |
+| i18n runtime FAQ-schema guard (a **different** failure from the row above: `i18n.js`'s `updateFAQSchema()` rewrites a page's JSON-LD in the browser from the locale JSON it fetches, and the FAQ in a locale JSON is always the *homepage's* — so any non-homepage that loads `i18n.js` had its own visible FAQ questions silently replaced at runtime with ones it never renders, invisible to the static check above because the substitution happens after the page loads. Live on 11 `usecase/zalgo-text` locale builds) | `i18n.test.js` (`npm run test:i18n-faq-schema`) slices `updateFAQSchema()` out of the live `i18n.js` and drives it against a DOM stub, asserting it now no-ops unless the page itself renders `[data-i18n^="faq."]` | `CLAUDE.md` "The schema a gate reads is not always the schema Google renders" section | CI (`validate.yml`, gating unit test, zero backlog) — new this week (PR #873, 2026-09-05); named as a prerequisite for register item #74's plan to add `i18n.js` to ~390 more locale pages, which would otherwise have grown this from 11 pages to ~394 |
 | Local Language Intelligence (evidence-backed locally-native vocabulary per market) | ❌ none (data lives only in a separate workspace kept outside this repo — **not** synced into this repo as of 2026-08-19; `scripts/plan-library-locale-batch.py` reads that workspace's canonical CSV directly as a sibling checkout and fails loudly if it isn't attached) | `CLAUDE.md` "Local Language Intelligence" section + [`local-language-intelligence.md`](./local-language-intelligence.md) | as needed, continuous capture |
 | External reference check (no tracked file may point readers at a repo, doc, or tool that isn't published here — comments, docstrings, ledger evidence text) | `check-external-refs.js` | ❌ none (script's own header doc) | CI (`validate.yml`, gating, whole-site) — new this week (found + cleared ~35 hits across 28 files, 2026-08-06) |
 | Counter claim-consistency (a number written in prose/`<meta>` must match the code that produces it — structural validators can't see a figure inside a `<td>` or a description tag) | `check-counter-claims.js` | ❌ none (script's own header doc); see also Testing section for the counter's manual test suites | CI (`validate.yml`, gating) — new this week, born from the character-counter rebuild (PRs #719/#724 et al.) after two stale-number regressions shipped green |
@@ -90,10 +91,25 @@ These run across page types rather than producing a type.
 | Locale translation completeness (structure ≠ language — a locale page can pass every structural gate above and still carry untranslated English prose, tile labels, or clipboard payloads) | `audit-locale-translation.js` (whole-site, informational) + `check-locale-translation.js` (diff-scoped, gating) + shared `scripts/lib/locale-translation-audit.js`; ledger: `data/translation_identical_strings.json` | `CLAUDE.md` "Structure is not language" section (no dedicated `docs/` file) | CI (`validate.yml`, gating) + per-batch audit — **missing from this map until now**; gate wired 2026-08-15 (PR #767, same week as the last review but after it was authored — see Known gaps #16) |
 | Crawler visibility for non-rendering bots (`robots.txt` invites GPTBot/ClaudeBot/Amazonbot/Google-Extended/meta-externalagent, which fetch plain HTML and run no JS — content that only ever existed as JS-rendered output was invisible to them) | `build-static-footer.js` (bakes `footer.js`'s own output into every page's HTML; `--write` to build, no flag to check) + `fix-footer-nested-content.py` (moved 727 pages' FAQ sections out of `<footer>`, where content-extractors discard them as boilerplate) + `build-library-directory.js` (pre-renders the library hub's 336 spoke links as static HTML, `--check` to check) | ❌ none (PR bodies only — #789, #790) | CI (`validate.yml`, gating, whole-site, zero backlog) — new this week |
 | Library hub coverage & template parity (does every `<lang>/library/index.html` link every page that exists in its own `<lang>/library/` directory, and does every one of the 19 locale hubs carry the same browse UI — search/filter, pre-rendered `#libDirectory` — instead of a plain stub) | `check-library-hub-coverage.js` (diff-scoped, gating) + `audit-library-hub-coverage.js` (whole-site, informational) + `scripts/lib/library-hub-registry.js`, covering coverage; `check-library-hub-parity.js` (diff-scoped, gating; found 12/19 locale hubs shipped as plain stubs across several 2026-07-14/2026-08-10 batches, nobody having chosen that) + `build-library-hub.js` + `js/library/library-hub.js` (one shared browse module now migrated onto all 19 locale hubs) + `build-locale-library-directory.js` (`--check` gate: pre-renders each locale hub's static directory so it can't go stale against its own `LIBRARY` array), covering parity | `CLAUDE.md` "Library Hub Coverage" section (no dedicated `docs/` file) | CI (`validate.yml`, gating) + per-batch audit — new this week (PRs #789/#812/#814/#815) |
-| Editorial Footprint Risk (measures how templated the site's own prose reads — formulaic phrasing, repeated syntax, promotional vagueness, sameness across pages — as a 0–100 score; explicitly not an AI-detection signal) | `audit-editorial-footprint.js` (whole-site, informational) + `check-editorial-footprint.js` (diff-scoped, shadow-mode — reports and exits 0, not yet promoted to blocking) + `mine-editorial-phrases.js` (regenerates `data/editorial_phrase_bank.json` from the site's own corpus) + `scripts/lib/editorial-corpus.js`/`editorial-footprint.js`/`seo-snapshot.js` (the separate, always-blocking SEO Preservation Gate) | [`editorial-footprint-risk.md`](./editorial-footprint-risk.md) | CI (`validate.yml`; shadow-mode check + gating unit tests, `test:editorial-footprint`) — new this week (PR #810) |
+| Editorial Footprint Risk (measures how templated the site's own prose reads — formulaic phrasing, repeated syntax, promotional vagueness, sameness across pages — as a 0–100 score; explicitly not an AI-detection signal) | `audit-editorial-footprint.js` (whole-site, informational) + `check-editorial-footprint.js` (diff-scoped, shadow-mode for every rule but the forward-only per-locale em-dash ban and the English spaced-hyphen ban, which exit 1 and gate since 2026-09-02 — policy in `data/em_dash_locale_policy.json`, measured by `audit-em-dash.js`, see [`em-dash-policy.md`](./em-dash-policy.md)) + `mine-editorial-phrases.js` (regenerates `data/editorial_phrase_bank.json` from the site's own corpus) + `scripts/lib/editorial-corpus.js`/`editorial-footprint.js`/`seo-snapshot.js` (the separate, always-blocking SEO Preservation Gate) | [`editorial-footprint-risk.md`](./editorial-footprint-risk.md) | CI (`validate.yml`; shadow-mode check + gating unit tests, `test:editorial-footprint`) — new this week (PR #810) |
+| EFR Quality Gate (PASS / REVIEW / FAIL thresholds on the Editorial Footprint Risk score for `/updates/` (≤ 5.0) and `/guide/` (≤ 7.0), applied as a per-PR **ratchet** — new pages must meet PASS, existing pages may not get materially worse, improvements bought by deleting facts or links are not credited; a diagnostic and publishing quality-control metric, not an SEO ranking factor) | `check-efr.js` (diff-scoped, gating) + `audit-efr.js` (whole-site, informational; `report:efr` writes `docs/efr-quality-report.md`) + shared `scripts/lib/efr-gate.js`; ledger: `data/efr_exceptions.json` | [`efr-quality-gate.md`](./efr-quality-gate.md) | CI (`validate.yml`; gating check + gating unit tests, `test:efr`) — added 2026-09-02 |
 | Spec sentence-reuse gate (a `data/library_page_specs/*.json` spec pasting a sentence 3+ other specs already carry — a hand-written-once-per-spec surface nothing was comparing across specs) | `check-spec-sentence-reuse.py` (diff-scoped, gating) + `audit-spec-sentence-reuse.py` (whole-corpus, informational — `--audit` flag on the same script) | ❌ none (script's own header doc; cross-referenced from `CLAUDE.md`) | CI (`validate.yml`, gating) — new this week (PR #811), found 45 sentences repeated across 416 of 591 specs |
 | Zalgo example-card decode check (each of the six copy-paste zalgo cards on `usecase/zalgo-text` and its 11 locale siblings must decode back to its own plain-text label through the page's own codepoint-range unzalgo widget — an NFC-normalizing tool silently composes a card into different letters, which already happened to EN and IT) | `check-zalgo-decodes.js` | `CLAUDE.md` "Zalgo example cards must decode back to their own label" section | CI (`validate.yml`, gating, whole-site — no backlog, a card either decodes or it doesn't) — shipped 2026-08-22 but missed the review that same day; this is its first appearance on this map |
-| Printables generator parity tests (the four de-templated printables generators — alphabet coloring, bubble letters, bubble numbers, dot-to-dot — must not have their shared template regenerate over a page's own hand-shipped repairs) | `scripts/lib/printables_parity.py` + `printables_parity.test.py` (`test:printables-parity`) | ❌ none (script's own header doc) | CI (`validate.yml`, gating) — new this week (PR #811, "Batch A" of the printables de-templating; the shared SVG/PNG export helper this lane's Known gap #8 has asked for since 2026-07-11 is still open) |
+| Zalgo engine unit tests (the pure half of the generator — mark pools, the Thai Cascade generator added this week, the Extreme-amplitude preset, and the two-stage `decodeZalgo()` — sliced out of the shipped widget so the gate above and the tests below can drive the exact functions users run rather than a reimplementation) | `usecase/zalgo-text/zalgo-text.test.js` (`npm run test:zalgo-engine`), loaded via `scripts/lib/zalgo-engine.js` | `CLAUDE.md` Testing section, "The Thai cascade, and why the decoder is now a function" | CI (`validate.yml`, gating unit test, zero backlog) — new this week (PR #865, 2026-09-05); the gate above was extended in the same PR to require at least one Thai-cascade card on the EN page, since the decoder's second stage is otherwise never exercised |
+| Generator parity tests (a refuse-to-overwrite guard: a full-page generator must not silently delete another repair pass's work — the Funding Choices tag, the static footer, hreflang alternates, OG art — from a page it regenerates) | `scripts/lib/generator_parity.py` + `generator_parity.test.py` (`test:generator-parity`) | ❌ none (script's own header doc) | CI (`validate.yml`, gating) — shipped as `printables_parity.py`/`test:printables-parity` (PR #811, 2026-08-26, "Batch A" of the printables de-templating, 4 callers); renamed PR #849 (2026-09-02) after picking up a fifth caller, `generate_library_page_from_spec.py` — see Known gaps #8. The shared SVG/PNG export helper this lane's Known gap #8 has asked for since 2026-07-11 is still open |
+| Source Attribution (a page citing a fact it didn't originate carries one `.source-note` Sources block, in that locale's own word, with every citation's `rel` set by the cited domain's tier — a standards body or platform changelog is followed, press/reference works/forum threads are `nofollow`; projected into JSON-LD `citation` so the two can't drift) | `check-source-attribution.js` (diff-scoped, gating) + `audit-source-attribution.js` (whole-site, informational) + `fix-source-attribution.js -- --write` (repair pass) + shared `scripts/lib/source-attribution.js`; ledgers `data/source_authority.json` (domain tiers) + `data/source_resource_links.json` (destination links that aren't citations) | `CLAUDE.md` "Source Attribution" section (no dedicated `docs/` file) | CI (`validate.yml`, gating) — new this week (PR #861, 2026-09-03) |
+| Numeric Parity (correcting a number on one page of an hreflang cluster — a Unicode character count, a codepoint, a rule change date — without correcting its siblings in the same PR; structure/language/schema gates all pass a wrong number) | `check-numeric-parity.js` (diff-scoped, gating) + `audit-numeric-parity.js` (whole-site, informational) + shared `scripts/lib/numeric-parity.js`; ledger `data/numeric_parity_exceptions.json` | `CLAUDE.md` "Numeric Parity" section (no dedicated `docs/` file) | CI (`validate.yml`, gating) — new this week (PR #844, 2026-09-02), born from seven translations asserting a superseded Unicode 18.0 character count for a month while every other gate passed |
+| Locale combo-set (collection) parity (a `copy_pattern: "collection"` section renders at runtime through `UltraTextGen.buildGrids()` and leaves no static markup, so every structural/schema gate is blind to a locale page missing it) | `check-locale-collection-parity.py` (diff-scoped, gating) | ❌ none (script's own header doc) | CI (`validate.yml`, gating) — new this week (PR #822, 2026-09-01); found 61 locale pages missing the section outright and 32 more short some groups, a blind spot `check_locale_spec.py` alone couldn't see because 471 of 798 combo-set pages were hand-built with no spec |
+| Updates verification-date discipline (exactly one verification date per `/updates/` entry, as the last `guide-pill`, agreeing with `datePublished`; no stamp in body prose; a "no rollout date announced" qualifier stays inline, dated, as a different kind of statement) | `check-updates-verification.js` (gating) + `audit-updates-verification.js` (whole-pillar, informational) + shared `scripts/lib/updates-verification.js` | `CLAUDE.md` "One verification date per entry, in the pill" section | CI (`validate.yml`, gating) — new this week (PR #839, 2026-09-01/02; locale-pill rules for the 56 `<lang>/updates/` pages added same window, PR #846) |
+| CTA card routing (route each page's shared "Open UltraTextGen" CTA card to the tool that actually serves the reader's next job, not the homepage default — 214 English pages moved; no locale page routes, because no locale build of any destination tool exists yet) | `scripts/lib/cta_routing.py` (single owner of the routing table + card copy, read by the page generator too) + `route-cta-cards.py` (`npm run route:cta-cards -- --write`) + a `cta_click` tracking event fired from `header.js` + `test:cta-routing` (gating unit test) | `CLAUDE.md` "Routing the CTA card" section (no dedicated `docs/` file) | CI (`validate.yml`, gating unit tests) + per-batch `--write` — shipped 2026-08-26 but missing from this map until now; rebuilt and re-instrumented PR #849 (2026-09-02), the same PR that renamed the generator-parity guard above |
+| header.js analytics instrumentation (`trackCopy`/`copyIdentity` — item-identity on every copy surface, not just the generator button, bucketed into 109 Unicode-block `copy_item_group` values since the site's 8,806 distinct copy payloads exceed what GA4 keeps as distinct rows; plus `trackPrintable` on the printables family's two chokepoints, `printWrap`/`downloadCanvas`) | `header.js` (single owner — 4,635 of 4,647 pages load it, including the 3,608 symbol pages that never load `script.js`) | `CLAUDE.md` "Routing the CTA card" tooling list (no dedicated section; test description only) | CI (`validate.yml`, gating unit test, `test:header-analytics` — renamed from `test:cta-tracking` this week when the same file grew a second concern, 24 → 49 assertions) — new this week (PR #873, 2026-09-05); also fixed 311 dead invisible-character copy tiles across 41 pages/18 locales, found while verifying the bucketer against every real payload |
+| Accent notice consolidation (one sentence per locale, baked from `data/accent_notice_copy.json` into every generator page with a `#mainInput` whose locale has copy for it — replacing 47 hand-pasted, unevenly-placed copies across 8 locales) | `build-accent-notice.js` (`--write` to bake, `--check` gating in CI) | ❌ none (script's own header doc) | CI (`validate.yml`, gating) — new this week (PR #824, 2026-09-01) |
+| Copy, Save, Share, Share-image (one action set for every copy surface — Save/Share/Share-as-image lifted out of `script.js`, which loads on only 540 of 4,639 pages, into two dependency-free modules so the 3,605 `library`/`symbol` pages, 34% of all site copies, can offer them too) | `js/share/share-core.js` + `js/saved/saved-items.js` (the typed `{type, value, label, href, t}` store) + `symbol-explorer.js` (Save star, Share/Share-image per section, saved-symbols strip, `?symbol=` deep link) + `check-share-save-tags.js` (whole-site, gating — checks tag *position*, not just presence) + `inject-share-save-tags.js` (repair) + `sync-explorer-strings.js` (harvests the 28-locale UI table from `locales/*.json`; `check:explorer-strings` gates drift) | `CLAUDE.md` "Copy, Save, Share, Share-image" section (no dedicated `docs/` file) | CI (`validate.yml`, gating: `share_save_tags`, `explorer_strings`, `saved_items_tests`) + `js/share/shareSave.test.html` (manual browser test) — new this week (PR #867, 2026-09-05/06); found and fixed two `defer`-ordering bugs (one threw and zeroed the generator's result cards, one silently attached nothing) that were invisible to every existing gate |
+| Progressive-enhancement pre-rendering (a page's own inline script builds DOM at runtime — a copy-paste collection grid on 898 pages, or the 195-country flag-tile grid on 17 `emoji-flags` pages — and a crawler that runs no JavaScript saw an empty container under a heading; both are now baked into static HTML at build time by evaluating the page's own inline script against a capturing stub, so static and runtime markup share one source and can't drift) | `prerender-collection-grids.js` / `check-collection-grid-prerender.js` (`check:collection-grids`) + `prerender-country-flags.js` / `check-country-flag-prerender.js` (`check:country-flags`), both built on shared `scripts/lib/inline-script-capture.js` + `scripts/lib/collection-grid-engine.js` (which slice the real render functions out of `symbol-explorer.js`) | `CLAUDE.md` "Collection grids are pre-rendered, not built on load" + "Country flag tiles are pre-rendered too" sections | CI (`validate.yml`, gating, diff-scoped **state** checks — every affected page already carries a current block, so there's no backlog to be red against) — new this week (collection grids: PR #873, 2026-09-10; country flags: PR #876, 2026-09-10, +41.6 KB/page uncompressed, +3.6–5.2 KB gzipped, measured) |
+| Accessibility (this repo's first pass at whether a page can actually be used, not just whether it's structured/translated/schema-correct) | `audit-accessibility.js` (whole-site, informational) + `check-accessibility.js` (diff-scoped, gating **state** check — 11 blocking classes all measured at zero site-wide, so no backlog to be red against; heading-level skips are advisory only, an owner-decided design-system trade-off) + shared `scripts/lib/accessibility-audit.js` | `CLAUDE.md` "Accessibility — the axis nothing measured until 2026-09-05" section | CI (`validate.yml`, gating) — new this week (PR #873, 2026-09-06); found and fixed a live bug (duplicated `<main>` on `ko/index.html` silently orphaned the Korean homepage's real tab strip and results grid) |
+| Link health / link rot (does a cited external source in a Sources block still load — a separate question from whether the *fact* is still true, which the Updates verification-date row above owns) | `audit-link-rot.js` (whole-site, informational, network-dependent — classifies by cause: `ok`/`redirect`/`blocked`/`gone`/`unreachable`/`server`; only reports rot after 3 consecutive failing runs in `data/source_link_health.json`, so one bot-blocked fetch is never mistaken for a dead link) + `scripts/lib/link-health.test.js` (`npm run test:link-health` — gating unit tests on the pure classification logic only, no network call) | `CLAUDE.md` "Source Attribution" section, "Link rot is a separate instrument" (`docs/source-attribution.md` §10) | `.github/workflows/link-rot.yml` (`workflow_dispatch` only, deliberately never scheduled or gating — see Automated workflows below) + CI (`validate.yml`, gating unit test only) — new this week (PR #869, 2026-09-10) |
+| Redirects config validity (`_redirects` compiles into two Cloudflare Pages buckets — STATIC, cap 2,000, and DYNAMIC, cap 100 — and a rule is dynamic if it OR any rule above it contains a splat, so one `/cdn-cgi/*` mid-file silently pushed 108 rules below it into the small bucket; 8 retired-page redirects 404'd in production for a month past the cap while their correct 301s sat unreachable in the file) | `check-redirects.js` (`npm run check:redirects`, gating, whole-file — not diff-scoped, because the damage a splat does is to rules *elsewhere* in the file that the PR adding it never touches) + `scripts/lib/redirects-parse.js` (models Cloudflare's own compiler; calibrated against `npx wrangler pages dev` directly, not the docs — the model and the real parser agree exactly on both the broken and the repaired file) | `CLAUDE.md` "`_redirects` has two buckets, and one splat drops you into the small one" section (no dedicated `docs/` file) | CI (`validate.yml`, gating, whole-site) — new this week (PR #887, 2026-09-15) |
+| IndexNow submission (announces only the URLs whose `<lastmod>` genuinely advanced — via `update-sitemap.js`'s own significance hash — to Bing/Naver/Seznam/Yandex/Yep; replaces Cloudflare Crawler Hints, which fired on cache state rather than content and had been announcing ~1,398 URLs/day on a 4,679-URL site, the whole site every 3.3 days, against a real change rate of zero on a typical day) | `scripts/lib/indexnow.js` (a 40% mass-bump ceiling refuses to announce a template/mesh pass — sits between the largest genuine content day on record, 21.4%, and the smallest false mass bump, 55% — and reports the refusal loudly rather than skipping silently; `--indexnow-force` overrides it for a genuine large change) + `scripts/update-sitemap.js --submit-indexnow` (opt-in flag, CI-only — a local `npm run prebuild` never announces) + `npm run test:indexnow` | ❌ none (no dedicated `docs/` file, no `CLAUDE.md` section — the design reasoning currently lives only in the module's own header comment and the PR body) | daily (`update-sitemap.yml`, after the sitemap and its cache are written, so an unreachable engine can never cost the cache) + CI (`validate.yml`, gating unit test) — new this week (PR #885, 2026-09-15) |
 
 ---
 
@@ -101,7 +117,7 @@ These run across page types rather than producing a type.
 
 | Workflow | Trigger | Action |
 |---|---|---|
-| `update-sitemap.yml` | daily 00:00 UTC | regenerate `sitemap.xml` (`[skip ci]`) |
+| `update-sitemap.yml` | daily 00:00 UTC | regenerate `sitemap.xml` (`[skip ci]`), then announce the changed URLs to IndexNow (`--submit-indexnow`, opt-in flag — see the IndexNow submission row above; a local `npm run prebuild` never announces) |
 | `update_readme.yml` | weekly (Mon 03:00 UTC) | sync README from sitemap (`sync-readme.js`) |
 | `weekly-pr-digest.yml` | weekly (Mon 06:00 UTC) | classify merged PRs by lane → `docs/infra-review/<date>.md` + `latest.md` |
 | `tweet-queue.yml` | daily 09:00 UTC (+ manual) | post qualifying commits (`tweet_queue.py`) |
@@ -110,9 +126,10 @@ These run across page types rather than producing a type.
 | `schedule-cache-removal.yml` | annual (Apr 10) + manual | cache maintenance |
 | `pinterest-publish-test.yml` | manual (`workflow_dispatch`) | `scripts/publish-pinterest-pin.py` — single-pin Pinterest API v5 publish, deliberately a phase-3 proof of concept (no `schedule:` trigger, no looping over rows yet) |
 | `pinterest-insights.yml` | manual (`workflow_dispatch`) | `scripts/pinterest-insights.py` — read-only account/per-pin analytics from the real Pinterest account; never writes |
+| `link-rot.yml` | manual (`workflow_dispatch`) | `audit-link-rot.js` — checks whether a cited external source still loads; deliberately never scheduled or gating, because it depends on the public internet and hosts that rate-limit (new this week, PR #869) |
 | `ads-check.yml` | on `pull_request` (HTML/`header.js`/`package.json`/`ads.txt`/`scripts/check-ads.js`) | `check-ads.js` (AdSense loader deployed site-wide; also guards `ads.txt` against Journey lines reappearing) |
 | `workflow-lint.yml` | on `pull_request` + `push` (master/main) + manual, no path filter | `check-workflows.py` (gating, no `continue-on-error`) — lints every `.github/workflows/*.yml` for the shape Actions needs (trigger, `jobs`, `runs-on`, steps with `uses`/`run`), plus the two failure modes that hid past incidents: a step that pipes into `tee`/similar with no `pipefail` in effect, and a `continue-on-error: true` step whose `outcome` nobody reads. Added 2026-08-08 (PR #731) as a **second, deliberately separate** lint surface from `validate.yml`'s own copy of the same check — a step inside `validate.yml` can't catch `validate.yml` itself failing to parse (exactly what happened 2026-08-07), so this file exists to survive when the big one breaks; do not consolidate them. Was itself missing from this table with zero footprint until now, the same blind spot Known gaps #16 already tracks for the `validate.yml` row below. |
-| `validate.yml` | on `pull_request` (+ manual) | Its own copy of `check-workflows.py` runs first and is also gating. **Required, blocking gates (26):** `audit-hreflang.js`, `audit-hreflang-completeness.js`, `validate_library_pages.py`, `check-funding-choices.js`, `check-counter-claims.js`, `check-new-page-image-assets.py`, `check-new-symbol-peer-links.py`, `check-translation-parity.js`, `check-locale-mesh.js`, `check-locale-translation.js`, `check-document-head.py`, `check-tile-codepoints.py`, `check-faq-schema.js`, `check-locale-parent-gap.js`, `check_locale_spec.py`, `check-external-refs.js`, `build-static-footer.js` (`check:static-footer`), `build-library-directory.js` (`check:library-directory`), `build-locale-library-directory.js` (`check:locale-library-directory`), `check-zalgo-decodes.js`, `check-library-hub-coverage.js`, `check-library-hub-parity.js`, `check-spec-sentence-reuse.py`, plus three gating **unit-test** steps with no backlog to be red against: `test:editorial-footprint`, `test:printables-parity`, `test:spec-sentence-reuse`. Plus five whole-site audits that run every PR but are **informational only** (`continue-on-error`, never fail the job) because they carry a large, deliberately-paced backlog that would otherwise be permanently red: `check-image-assets.py` (Pinterest pins), `sync_symbol_spoke_links.py --check` (symbol peer-link dashboard), `audit-locale-parent-gap.js` (locale translation coverage), `audit-library-hub-coverage.js` (library hub coverage), and `check-editorial-footprint.js` (shadow mode — reports and exits 0 by design, not yet promoted to blocking). Supersedes the old path-filtered `image-assets-check.yml` (retired). **Historical caveat (found + fixed 2026-08-05/06, PRs #714/#715):** every step here pipes into `tee`, and a pipeline's exit status is its *last* command's — `tee` always succeeds, so `steps.<id>.outcome` was `'success'` regardless of the validator's own exit code until `defaults.run.shell: bash` (which enables `pipefail`) was added at the job level. Every gate listed above was **silently non-blocking from 2026-07-22 (when this workflow was written) until 2026-08-06** — **a green "Validate Site" check on any PR merged before that date carries no information; do not cite one as evidence a page passed anything.** Full writeup in the workflow file's own header comment and in `CLAUDE.md`. This row itself has now gone stale and been hand-corrected on **six** consecutive review cycles (2026-07-31, 2026-08-01, 2026-08-08, 2026-08-15, 2026-08-22, and this one — eight more gates found missing this time: `check-zalgo-decodes.js` [shipped 2026-08-22, the same day as the *prior* review, and missed by it — the one of the eight that predates this review's own window], `build-locale-library-directory.js`, `check-library-hub-coverage.js`, `check-library-hub-parity.js`, `check-spec-sentence-reuse.py`, and the three unit-test gates (`test:editorial-footprint`, `test:printables-parity`, `test:spec-sentence-reuse`) — the other seven all landed 2026-08-26/27 via PRs #810/#811/#814/#815) as gates were added without a matching edit here — see Known gaps #16, whose own text already said the *next* recurrence should be a generator, not another hand-edit; still hand-edited here because this review's mandate is a small, additive diff to this file only; flagging the escalation rather than unilaterally taking on a new tooling build. |
+| `validate.yml` | on `pull_request` (+ manual) | Its own copy of `check-workflows.py` runs first and is also gating. **Required, blocking gates (49):** `audit-hreflang.js`, `audit-hreflang-completeness.js`, `validate_library_pages.py`, `check-funding-choices.js`, `check-share-save-tags.js`, `check-explorer-strings.js`, `check-counter-claims.js`, `check-new-page-image-assets.py`, `check-new-symbol-peer-links.py`, `check-translation-parity.js`, `check-locale-mesh.js`, `check-source-attribution.js`, `check-locale-translation.js`, `check-locale-parent-gap.js`, `check_locale_spec.py`, `check-locale-collection-parity.py`, `check-faq-schema.js`, `check-zalgo-decodes.js`, `check-redirects.js`, `check-numeric-parity.js`, `check-updates-verification.js`, `check-external-refs.js`, `check-document-head.py`, `check-tile-codepoints.py`, `build-static-footer.js` (`check:static-footer`), `build-accent-notice.js` (`check:accent-notice`), `build-library-directory.js` (`check:library-directory`), `build-locale-library-directory.js` (`check:locale-library-directory`), `check-library-hub-coverage.js`, `check-editorial-footprint.js` (partially — see below), `check-efr.js` (`check:efr`), `check-spec-sentence-reuse.py`, `check-library-hub-parity.js`, `check-accessibility.js`, `check-collection-grid-prerender.js` (`check:collection-grids`), `check-country-flag-prerender.js` (`check:country-flags`), plus thirteen gating **unit-test** steps with no backlog to be red against: `test:editorial-footprint`, `test:efr`, `test:content-significance`, `test:generator-parity`, `test:spec-sentence-reuse`, `test:cta-routing`, `test:saved-items`, `test:zalgo-engine`, `test:link-health`, `test:header-analytics`, `test:i18n-faq-schema`, `test:indexnow`, `test:qr`. Plus four whole-site audits that run every PR but are **informational only** (`continue-on-error`, never fail the job) because they carry a large, deliberately-paced backlog that would otherwise be permanently red: `check-image-assets.py` (Pinterest pins), `sync_symbol_spoke_links.py --check` (symbol peer-link dashboard), `audit-locale-parent-gap.js` (locale translation coverage), and `audit-library-hub-coverage.js` (library hub coverage). **`check-editorial-footprint.js` is no longer purely informational** — since 2026-09-02 its step outcome is in the blocking `if:` list too, because the forward-only per-locale em-dash/spaced-hyphen rules now exit 1 (every other rule still reports and exits 0; see the Editorial Footprint Risk operational-tracks row and `CLAUDE.md`). Supersedes the old path-filtered `image-assets-check.yml` (retired). **Historical caveat (found + fixed 2026-08-05/06, PRs #714/#715):** every step here pipes into `tee`, and a pipeline's exit status is its *last* command's — `tee` always succeeds, so `steps.<id>.outcome` was `'success'` regardless of the validator's own exit code until `defaults.run.shell: bash` (which enables `pipefail`) was added at the job level. Every gate listed above was **silently non-blocking from 2026-07-22 (when this workflow was written) until 2026-08-06** — **a green "Validate Site" check on any PR merged before that date carries no information; do not cite one as evidence a page passed anything.** Full writeup in the workflow file's own header comment and in `CLAUDE.md`. This row itself has now gone stale and been hand-corrected on **eight** consecutive review cycles (2026-07-31, 2026-08-01, 2026-08-08, 2026-08-15, 2026-08-22, 2026-08-29, 2026-09-05, and this one — nine new gates found missing this time, all landed 2026-09-05/10 via PR #867 [`check-share-save-tags.js`, `check-explorer-strings.js`, `test:saved-items`], #865 [`test:zalgo-engine`], #869 [`test:link-health`], #873 [`test:i18n-faq-schema`, `check-accessibility.js`, and the rename of `test:cta-tracking` → `test:header-analytics` — same file, `header.test.js`, now also gating a `copy_text` item-identity engine, not just the `cta_click` classifiers], and #873/#876 [`check-collection-grid-prerender.js`, `check-country-flag-prerender.js`]) as gates were added without a matching edit here — see Known gaps #16, whose own text already said the *next* recurrence should be a generator, not another hand-edit; still hand-edited here because this review's mandate is a small, additive diff to this file only. This is the eighth consecutive cycle this row has gone stale, and the second in a row where the count of missing gates was in the double digits (eleven last cycle, nine this one); flagging the escalation again rather than unilaterally building the generator Known gaps #16 already proposed. **Ninth consecutive cycle, this review (2026-09-19):** three gates short this time — `check-redirects.js`, `test:indexnow`, `test:qr`, all landed 2026-09-15 in PRs #885–#887 — the smallest gap yet, but the ninth in a row regardless. Still not building the generator here, for the same reason as every prior occurrence (this review's mandate is a small, additive diff to this file); noting, again, that "still hand-edited" is no longer a status update at nine repetitions. |
 
 ### Scheduled routines (Claude Code on the web)
 
@@ -282,6 +299,44 @@ here so they aren't lost. Update as they're closed or new ones appear.
    four of the printables page types, not the whole lane — there's still
    no shared SVG/PNG *export* helper, and no governing doc or backlog
    integration. Worth tracking future batches here as they land.
+   **Update (2026-09-05):** PR #849 renamed the guard to
+   `scripts/lib/generator_parity.py`/`generator_parity.test.py`
+   (`npm run test:generator-parity`, replacing `test:printables-parity`
+   everywhere including `validate.yml`'s step id) because, per the file's
+   own header, "nothing in it was ever printables-specific; the name was" —
+   it picked up a fifth caller, `generate_library_page_from_spec.py`, so the
+   guard now also protects the site's highest-volume generator, not just the
+   four printables ones. Still scoped to refuse-to-overwrite regression
+   checks, not a shared export helper — that half of this gap is unchanged
+   and still open.
+   **Update (2026-09-19):** heaviest single week for this lane yet — 11 of
+   the week's 18 non-review PRs touch `printables/` (#880–#884, #886,
+   #888–#895): a new `printables/letter-tracing/` page (with Rule 3
+   de-targeting applied to `printables/name-tracing/`'s own competing
+   sections in the same change), DE/FR family-page expansion, a from-scratch
+   QR encoder (`js/printables/qr.js`) plus a print-credit footer and print
+   settings that now actually drive `printArea()` instead of hardcoded
+   8.4in/8.2in heights, a conversion of every print button to PDF-only
+   output, and a full UX rebuild of `coloring-page-maker` off a 27-item
+   audit. Real infra consolidation landed alongside the product work — the
+   QR/credit code and `applySheetMetrics()`'s measured (not estimated)
+   page-height custom properties are now shared across every printable
+   family that calls into `printablesEngine.js` — but there is still no
+   site-wide SVG/PNG *export* helper spanning the handful of engines that
+   don't (`monogramEngine.js`, `crossStitchEngine.js` each grew their own
+   QR wiring rather than sharing the printables one), and still no governing
+   doc. Separately, `data/core_parent_set.json` re-tiered `printables/*`
+   from `gated` to `core` on 2026-09-10 (D15, PR #881) after a revenue
+   precondition was met at scale (40.5% of ad revenue, 11.6x RPU), then
+   corrected its per-family-child carve-outs two days later (PR #883, user
+   decision): block/bubble/coloring/dot-to-dot children are legitimate
+   localizable products and mirror by default, while cursive/calligraphy
+   children stay `gated` because national handwriting models differ by
+   market. That is a real, load-bearing change to this whole page type's
+   default locale-mirroring behavior, decided entirely in the Locale Parent
+   Governance registry with no corresponding change to this map's Printables
+   row (maturity column still reads "backlog, no generator") — worth a
+   human look at whether that row should now say more than it does.
 9. **Ads / monetization track has no governing doc — and has now fully
    reversed once.** PRs #366–#368 stood up Journey ads (replacing AdSense);
    PR #508 (2026-07-12) switched back to Google AdSense; PR #544
@@ -527,6 +582,145 @@ here so they aren't lost. Update as they're closed or new ones appear.
       repo and still hasn't been made, four occurrences in — at this point
       it is the single most-repeated unresolved recommendation in this
       entire file and warrants doing rather than flagging a fifth time.
+    - **Both patterns recurred a fifth time this review (2026-09-05).** The
+      `validate.yml` row was found stale again — eleven gates short this
+      time, all landed 2026-09-01 through 2026-09-03 (see the Automated
+      workflows row above for the corrected list and per-gate PR
+      attribution) — so the entire gap accumulated inside one review
+      window rather than being missed across several. Separately,
+      `infra-review/latest.md` was still 2026-08-24 → 2026-08-31 (the last
+      Monday digest) when this review fired 2026-09-05 — five days stale
+      yet again, the same gap flagged on every review since 2026-08-08.
+      This review again reconstructed the true last-7-days PR set directly
+      from `git` (`git log --first-parent --merges` since the prior
+      review's merge commits, #816/#817; file lists per PR via
+      `git diff --name-only <parent1>...<parent2>` on each merge commit —
+      the triple-dot, merge-base form the fourth occurrence's note above
+      says to use) rather than reviewing the stale window: 44 merges
+      (#818–#862, plus two older branches merged out of order, #775 and
+      #819), 6 of them carrying a genuine Unclassified signal — a sharper
+      jump than the zero the fourth occurrence found, see Known gaps #17
+      and #18 below. The routine-cadence fix still lives outside this repo
+      and still hasn't been made — five occurrences in, and the prior
+      review already judged a sixth flagging not worth its weight, so this
+      one stays terse rather than repeating the case again.
+17. **New this week: `.claude/skills/` is a genuinely new, wholly undocumented
+    lane — and it's process infrastructure, not a page type.** PR #834 (two
+    commits: `feat: add a repo-level steward skill encoding the repository's
+    own operating rules`, then `feat: add locale-batch and ship-page workflow
+    skills alongside steward`) added `.claude/skills/steward/SKILL.md`,
+    `.claude/skills/locale-batch/SKILL.md`, and
+    `.claude/skills/ship-page/SKILL.md` — repo-scoped Claude Code skills
+    that encode this repo's own operating rules (steward) and two of its
+    recurring workflows (locale-batch, ship-page) directly into files a
+    Claude session loads before acting, rather than relying on a session
+    having read `CLAUDE.md` in full. This is exactly the kind of thing this
+    map exists to place: it surfaced as **Unclassified** on PR #834 (all 3
+    files), because `scripts/weekly_pr_digest.py`'s `LANE_RULES` has no rule
+    for `.claude/` at all. Not added to `LANE_RULES` in this pass — this
+    review's mandate is a small, additive diff to this file only — but the
+    fix is a one-line addition, `(".claude/skills/", "Repo-scoped Claude
+    skills")`, ordered before the `docs/` catch-all has any chance to
+    matter (it wouldn't match anyway, `.claude/` and `docs/` don't
+    overlap). Open question for a human: does this deserve its own
+    Operational tracks row (governing doc: the skill files themselves,
+    cross-referenced from CLAUDE.md's GitHub-integration section, which
+    already tells a PR-babysitting session to read `steward/SKILL.md` and
+    `babysit/SKILL.md` if either exists) — this map doesn't decide that
+    unilaterally, only places the signal.
+18. **New this week: two root-level test files unclassified — the counter
+    test convention extending beyond `js/`, and the classifier not learning
+    it.** PR #824 added `accent-notice.test.html` (repo root, alongside
+    `accent-notice.js`) and PR #849 added `header.test.js` (repo root,
+    alongside `header.js`) — both following the exact zero-dependency
+    `.test.js`/`.test.html` convention the Testing section already
+    documents for `js/counter/` and `js/vertical/`, just for two Core JS
+    modules that live at the repo root rather than under `js/`. Both
+    surfaced as **Unclassified** because `LANE_RULES` matches `accent-
+    notice.js` and `header.js` by prefix, and neither `accent-
+    notice.test.html` nor `header.test.js` starts with those strings.
+    Not fixed here for the same reason as #17 above (two explicit entries,
+    `("accent-notice.test.html", "Core JS")` and `("header.test.js", "Core
+    JS")`, would close it) — but worth naming the general shape rather than
+    only the two instances: this is the same "classifier hasn't learned a
+    path convention yet" gap `LOCALE_DIR_RE` was built to close for locale
+    directories (Known gaps #4) and `ROOT_VERIFICATION_RE` was built to
+    close for search-engine verification stubs — a pattern rule (any
+    `<name>.test.js`/`<name>.test.html` at the repo root inherits `<name>.js`'s
+    own lane, checked after the exact-match rules) would close this
+    permanently instead of one entry per new root-level test file. Not
+    urgent at two instances; worth it if a third shows up.
+19. **Self-corrected this week, worth a line so it isn't rediscovered from
+    scratch: a `node_modules` symlink was briefly committed to `main`, and
+    two parallel sessions fixed it independently.** PR #849's branch tip
+    (commit `8380aa483`) committed `node_modules` as a symlink pointing at a
+    sandbox container path (`/home/user/ultratextgen/node_modules`) —
+    almost certainly an `npm install` artifact swept up by a broad
+    `git add`. On any other checkout that path is self-referencing, so
+    `require(...)` fails with `MODULE_NOT_FOUND` for every npm-based CI gate
+    until `npm install` overwrites the tracked link. Caught and fixed the
+    same day (2026-09-02), by two different branches that had each pulled
+    the bad commit in independently: PR #856 landed the real fix (`994b8d693`
+    untracks the symlink, `495ede641` hardens `.gitignore` with a bare
+    `node_modules` line, since a symlink of that name isn't matched by the
+    conventional `node_modules/`-with-slash pattern, which only matches a
+    directory) and PR #857 landed a second, redundant untrack of the same
+    file (`5c7b7ee35`) — a no-op by the time it merged, but the same shape
+    as "Parallel sessions build the same thing under different names"
+    (`CLAUDE.md`), just for a one-line repo-hygiene fix instead of a page.
+    Confirmed not tracked on `main` as of this review. The only remaining
+    artifact is cosmetic: a few other PRs merged in the same window (#848,
+    #856, #857) show a spurious create/delete of `node_modules` in their own
+    `git diff <parent1>...<parent2>` file lists — the same "merge
+    origin/main into branch" reconciliation-commit artifact the fourth
+    occurrence's note under #16 already warns about, not a real regression.
+    No action needed; recorded for the next person who sees `node_modules`
+    in a diff and wonders if it shipped again.
+20. **`infra-review/latest.md` was stale again — sixth occurrence, terse per
+    the prior review's own note that a further flagging isn't worth its
+    weight.** It still held the 2026-08-31 → 2026-09-07 digest when this
+    review ran 2026-09-12, so the true last-7-days PR set (#865–#876) was
+    reconstructed directly from the GitHub API instead. The routine-cadence
+    fix still lives outside this repo and still hasn't been made.
+21. **New this week: a root-level module with no `LANE_RULES` entry —
+    `404.js`.** Known gap #18 named this exact shape for `accent-
+    notice.test.html`/`header.test.js` (both root-level `Core JS` modules
+    the classifier doesn't recognize because they don't start with an
+    existing rule's prefix) and proposed a pattern rule for `.test.js`/
+    `.test.html` specifically. `404.js` is a third instance but a different
+    shape — it's the page's actual production script, not a test file, so
+    that proposed pattern rule wouldn't cover it either. PR #873 touched it
+    (fixing a missing-`defer` bug that had left the 404 page's entire
+    interactive half dead on every locale) and it surfaced as
+    **Unclassified** alongside `accent-notice.test.html`. The fix is a
+    third one-line `LANE_RULES` entry, `("404.js", "Core JS")`, in the same
+    style as `accent-notice.js`/`header.js`/`footer.js`/`i18n.js` above it —
+    not added here per this review's own additive-diff-to-this-file mandate,
+    but worth naming since it's now three distinct root-level files the
+    classifier has missed in as many weeks.
+22. **New this week: a second root-level verification-stub shape the
+    classifier can't see, same root cause as #18/#21.** PR #885 added
+    `ad9fa2628bb77566a98c808d72c720c4.txt` — the IndexNow key file, which
+    the protocol requires to be a world-readable, hex-named file at the repo
+    root (see the IndexNow submission row above). `ROOT_VERIFICATION_RE` in
+    `LANE_RULES` was written for exactly this shape of file — Naver's own
+    verification stub, `naverfc08aab480545cfd1d61489b3536a5e6.html` — but the
+    regex is `^[a-z]+[0-9a-f]{12,}\.html$`, hardcoded to `.html`. A `.txt`
+    stub matches no `LANE_RULES` prefix and no locale-directory pattern
+    either, so it classifies as Unclassified. Not fixed here (this review's
+    mandate is a small, additive diff to this file only); the one-line fix
+    is widening the regex to `\.(html|txt)$`, which the file's own comment
+    already frames as "not another one-off entry per engine" — the same
+    lesson this exact regex was built to teach and has now needed to
+    generalize once already.
+23. **`infra-review/latest.md` stale again — seventh occurrence, terse as
+    the sixth's own note said a further flagging isn't worth its weight.**
+    It still held the 2026-09-07 → 2026-09-14 digest when this review ran
+    2026-09-19, so the true last-7-days PR set (#877–#878, #880–#895, 18 PRs
+    excluding this routine's own prior run, #879) was reconstructed directly
+    from the GitHub API instead. The routine-cadence fix (move the trigger
+    to Monday, after the digest's 06:00 UTC run) still lives outside this
+    repo and still hasn't been made.
 
 ---
 

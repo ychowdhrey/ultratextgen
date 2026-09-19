@@ -34,9 +34,9 @@
       "h2": "Chi-Ro, Xmas y el Monograma Cristiano",
       "intro": "Como la Χ mayúscula abre Χριστός («Cristo»), se convirtió en una abreviatura del nombre con siglos de antigüedad — el origen tanto del monograma Chi-Ro que Constantino enarboló como estandarte de batalla como del moderno «Xmas». Aquí tienes las piezas de esa historia para pegar.",
       "symbols": [
-        { "char": "☧", "label": "Chi Ro (U+2627) — el Cristograma / Lábaro ΧΡ" },
-        { "char": "Χ", "label": "Letra Griega Chi Mayúscula (U+03A7) — la Χ que Abre Χριστός" },
-        { "char": "X", "label": "Letra Latina X Mayúscula (U+0058) — la X de «Xmas»" }
+        { "char": "☧", "label": "Chi Ro (U+2627): el Cristograma / Lábaro ΧΡ" },
+        { "char": "Χ", "label": "Letra Griega Chi Mayúscula (U+03A7): la Χ que Abre Χριστός" },
+        { "char": "X", "label": "Letra Latina X Mayúscula (U+0058): la X de «Xmas»" }
       ]
     },
     {
@@ -45,9 +45,9 @@
       "h2": "Chi-Cuadrado (χ²) en Estadística y Ciencia",
       "intro": "La χ minúscula es un caballo de batalla científico: la prueba de bondad de ajuste χ² que Karl Pearson introdujo en 1900, además de la característica de Euler en topología y la susceptibilidad magnética en física. Toma la letra y un dos en superíndice para componer tú mismo χ².",
       "symbols": [
-        { "char": "χ", "label": "Letra Griega Chi Minúscula (U+03C7) — el Estadístico de Prueba χ²" },
-        { "char": "²", "label": "Dos en Superíndice (U+00B2) — para Componer χ²" },
-        { "char": "Χ", "label": "Letra Griega Chi Mayúscula (U+03A7) — también Nombra Variables Aleatorias" }
+        { "char": "χ", "label": "Letra Griega Chi Minúscula (U+03C7): el Estadístico de Prueba χ²" },
+        { "char": "²", "label": "Dos en Superíndice (U+00B2): para Componer χ²" },
+        { "char": "Χ", "label": "Letra Griega Chi Mayúscula (U+03A7): también Nombra Variables Aleatorias" }
       ]
     },
     {

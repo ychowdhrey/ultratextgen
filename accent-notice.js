@@ -29,9 +29,21 @@
   // (U+0300–U+036F), so one test covers á, ñ, ü, ữ, ế and the rest (İ included
   // — it decomposes to I + combining dot above). đ/Đ and Turkish dotless ı
   // have no decomposition and no combining mark, so they're checked explicitly.
+  // Every Latin letter that has NO Unicode decomposition, so NFD cannot turn it
+  // into base + combining mark and renderer.js's BASE_LETTER_FALLBACK folds it
+  // to a plain ASCII letter instead. Measured 2026-08-31: 63 of 106 non-redact
+  // styles do this, regardless of a style's own accentSafe flag, so the notice
+  // is the only thing that can warn the user. What it costs them:
+  //     Straße → Strase   (ß→s, not ss — a letter is lost)
+  //     cœur   → cour     (a different French word)
+  //     Paweł  → Pawel · æble → able · Đông → Dông · ışık → isik
+  // The original test covered only đ/Đ/ı, so ł ø ß æ œ þ ð ħ could never
+  // trigger it — silently, on the eight European locales that need it most.
+  var UNDECOMPOSABLE = /[łŁđĐıøØßẞæÆœŒðÐþÞħĦ]/;
+
   function hasAccentedText(value) {
     if (!value) return false;
-    if (/[đĐı]/.test(value)) return true;         // đ / Đ / ı
+    if (UNDECOMPOSABLE.test(value)) return true;
     return /[̀-ͯ]/.test(value.normalize('NFD'));  // combining marks
   }
 

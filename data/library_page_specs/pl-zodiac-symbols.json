@@ -6,7 +6,7 @@
   "hero_h1": "Symbole Znaków Zodiaku",
   "hero_tagline": "Wszystkie dwanaście znaków zodiaku jako znaki Unicode, a do tego planety, chińskie zwierzęta zodiaku i klasyczne aspekty.",
   "intro": "Symbole zodiaku to prawdziwe znaki Unicode, nie obrazki, i nie wymagają żadnej czcionki. Działają w bio na Instagramie, w nicku na Discordzie, w notatkach i wiadomościach. Kliknij symbol, aby go skopiować.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "western",
@@ -284,6 +284,30 @@
     {
       "h2": "Dlaczego Symbole Zodiaku w Ogóle Są Znakami Tekstowymi",
       "body": "Symbole zodiaku i planet pochodzą z rękopisów astronomicznych i alchemicznych, gdzie składano je na równi z literami. Właśnie dlatego trafiły do Unicode — nie jako ozdoba, lecz po to, by dało się składać teksty astronomiczne. To tłumaczy również rozbieżności w wyglądzie: jedne systemy uznają ♈ za literę i rysują na czarno, inne za piktogram i pokazują jako kolorowe emoji."
+    }
+  ],
+  "collection_section": {
+    "id": "zodiac-collections",
+    "label": "Zestawy zodiaku",
+    "h2": "Zestawy zodiaku i astrologii",
+    "intro": "Skopiuj cały zodiak oraz dziesięć planet współczesnej astrologii w kanonicznej kolejności."
+  },
+  "collection_container_id": "zodiacCollectionsContainer",
+  "collections": [
+    {
+      "name": "Zodiak zachodni (Baran → Ryby)",
+      "flags": ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Zodiak chiński (Szczur → Świnia)",
+      "flags": ["🐀", "🐂", "🐅", "🐇", "🐉", "🐍", "🐎", "🐐", "🐒", "🐓", "🐕", "🐖"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "10 planet współczesnej astrologii",
+      "flags": ["☉", "☽", "☿", "♀", "♂", "♃", "♄", "♅", "♆", "♇"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/asterisk-symbol/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-de-asterisco/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/asterisk-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/asterisk-symbol/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/simbolo-de-asterisco/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/asterisk-symbol/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
   "sections": [
     {
       "id": "the-asterisk",
@@ -29,11 +37,26 @@
       "h2": "O Asterisco e Suas Variantes de Exibição",
       "intro": "O asterisco comum do teclado, mais as formas de exibição mais robustas e o operador específico de matemática. Todos prontos para colar.",
       "symbols": [
-        { "char": "*", "label": "Asterisco (U+002A) — Nota de Rodapé, Coringa e Marca de Censura" },
-        { "char": "✱", "label": "Asterisco Pesado (U+2731)" },
-        { "char": "✳", "label": "Asterisco de Oito Pontas (U+2733)" },
-        { "char": "∗", "label": "Operador Asterisco (U+2217) — o Glifo de Multiplicação da Matemática" },
-        { "char": "＊", "label": "Asterisco de Largura Total (U+FF0A)" }
+        {
+          "char": "*",
+          "label": "Asterisco (U+002A): Nota de Rodapé, Coringa e Marca de Censura"
+        },
+        {
+          "char": "✱",
+          "label": "Asterisco Pesado (U+2731)"
+        },
+        {
+          "char": "✳",
+          "label": "Asterisco de Oito Pontas (U+2733)"
+        },
+        {
+          "char": "∗",
+          "label": "Operador Asterisco (U+2217): o Glifo de Multiplicação da Matemática"
+        },
+        {
+          "char": "＊",
+          "label": "Asterisco de Largura Total (U+FF0A)"
+        }
       ]
     },
     {
@@ -42,9 +65,18 @@
       "h2": "Asterismo e Marcas de Quebra de Seção",
       "intro": "Marcas editoriais construídas a partir do asterisco — o asterismo de três pontas que quebra seções, mais seus primos empilhados e rebaixados.",
       "symbols": [
-        { "char": "⁂", "label": "Asterismo (U+2042) — Três Asteriscos num Triângulo" },
-        { "char": "⁑", "label": "Dois Asteriscos Alinhados Verticalmente (U+2051)" },
-        { "char": "⁎", "label": "Asterisco Baixo (U+204E)" }
+        {
+          "char": "⁂",
+          "label": "Asterismo (U+2042): Três Asteriscos num Triângulo"
+        },
+        {
+          "char": "⁑",
+          "label": "Dois Asteriscos Alinhados Verticalmente (U+2051)"
+        },
+        {
+          "char": "⁎",
+          "label": "Asterisco Baixo (U+204E)"
+        }
       ]
     },
     {
@@ -53,11 +85,26 @@
       "h2": "Formas de Estrela com que É Confundido",
       "intro": "Glifos em forma de estrela que as pessoas usam quando querem dizer asterisco. São estrelas decorativas — um registro ornamental, não uma ferramenta de nota de rodapé ou pontuação.",
       "symbols": [
-        { "char": "★", "label": "Estrela Preta (U+2605)" },
-        { "char": "☆", "label": "Estrela Branca (U+2606)" },
-        { "char": "⭐", "label": "Estrela Média Branca (U+2B50) — o Emoji de Estrela Amarela" },
-        { "char": "✦", "label": "Estrela Preta de Quatro Pontas (U+2726)" },
-        { "char": "✧", "label": "Estrela Branca de Quatro Pontas (U+2727)" }
+        {
+          "char": "★",
+          "label": "Estrela Preta (U+2605)"
+        },
+        {
+          "char": "☆",
+          "label": "Estrela Branca (U+2606)"
+        },
+        {
+          "char": "⭐",
+          "label": "Estrela Média Branca (U+2B50): o Emoji de Estrela Amarela"
+        },
+        {
+          "char": "✦",
+          "label": "Estrela Preta de Quatro Pontas (U+2726)"
+        },
+        {
+          "char": "✧",
+          "label": "Estrela Branca de Quatro Pontas (U+2727)"
+        }
       ]
     }
   ],

@@ -117,6 +117,22 @@
       "unsaveTitle": "Elimină din stilurile salvate",
       "empty": "Scrie ceva mai sus...",
       "noStyles": "Niciun stil găsit. Încearcă un alt filtru sau termen de căutare."
+    },
+    "formatControl": {
+      "label": "Adaugă formatare",
+      "groupAriaLabel": "Aplică subliniere sau tăiere pe fiecare stil"
+    },
+    "platformChips": {
+      "all": "Funcționează peste tot"
+    },
+    "categoryLoad": {
+      "failed": "Categoriile nu au putut fi încărcate. Se afișează toate fonturile."
+    },
+    "stylePreview": {
+      "title": "Previzualizare",
+      "titleFor": "Previzualizare: {style}",
+      "dialogAriaLabel": "Previzualizare pe platforme",
+      "closeAriaLabel": "Închide previzualizarea"
     }
   },
   "useCases": {

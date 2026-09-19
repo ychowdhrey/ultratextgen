@@ -69,9 +69,42 @@
     variantSpires:           'Spires',
     variantRoots:            'Roots',
     variantStrike:           'Strikethrough',
-    variantTinyStack:        'Tiny Stack'
+    variantTinyStack:        'Tiny Stack',
+    // Cascade (Thai stack) mode. Its controls render only on pages that opt in
+    // with data-cascade on #zalgoControlPanel, so a locale page never shows
+    // these strings in English by accident (issue #864, criterion 12).
+    presetCascade:           'Thai Cascade',
+    controlCascade:          'Thai Cascade',
+    tooltipCascade:          'One Thai tone mark repeated many times on one carrier letter. Depending on the app and font it renders as a tall column, a diagonal, or gets clipped.',
+    cascadeDepth:            'Stack depth',
+    tooltipCascadeDepth:     'How many times the mark repeats (10 = short, 150 = the full internet spike)',
+    cascadePlacement:        'Placement',
+    cascadePrefix:           'Before text',
+    cascadeSuffix:           'After text',
+    cascadeEach:             'Every character',
+    cascadeMark:             'Mark',
+    cascadeMarkMaiEk:        'Mai Ek',
+    cascadeMarkMaiTho:       'Mai Tho',
+    cascadeMarkMaiTri:       'Mai Tri',
+    cascadeMarkMaiChattawa:  'Mai Chattawa',
+    cascadeAnchor:           'Carrier',
+    cascadeAnchorThai:       'Thai letter',
+    cascadeAnchorText:       'Your text',
+    cascadeNote:             'Direction and height vary by app and font. Every repeat counts as one character, screen readers announce each one, and some platforms truncate or reject the stack.',
+    cascadeCopyLabel:        'Copy Thai cascade output',
+    cascadeOutputLabel:      'Thai cascade output for: {text}',
+    // Extreme mode: classic marks with a far larger budget. Gated by
+    // data-extreme on #zalgoControlPanel for the same reason as the cascade.
+    presetExtreme:           'Extreme',
+    tooltipAmplitudeExtreme: 'Extreme mode: up to 100 marks stacked per character. Long text gets heavy; most apps clip it.'
   }, window.zalgoI18n || {});
 
+
+  /* @zalgo-engine:begin */
+  // Everything between the engine markers is pure: no DOM, no i18n, no
+  // state. scripts/lib/zalgo-engine.js slices this block out of the shipped
+  // file for the Node tests and the check-zalgo-decodes gate, so the pools,
+  // the cascade and the decoder exist in exactly one copy, the one users run.
 
   // ── Unicode Combining Mark Pools ────────────────────────────────
   // Only true combining diacritical marks (Mn category) that stack
@@ -297,6 +330,122 @@
     }).join('');
   }
 
+  // ── Cascade: the "side spike" (one script-specific mark, repeated) ──
+  // The viral effect is NOT classic zalgo at a higher amplitude. Classic
+  // zalgo scatters many DIFFERENT general combining marks (U+0300 block)
+  // around every letter. The cascade repeats ONE Thai tone mark dozens of
+  // times on ONE carrier glyph; the renderer's attempt to place every repeat
+  // relative to the same base is what produces the tall, often diagonal,
+  // trail. It is its own engine so the classic pools, presets and amplitude
+  // 1-20 stay exactly as they were, and so these marks never reach
+  // pickUnique(): they are real Thai orthography, not noise.
+  //
+  // Direction and height are renderer-dependent (font, shaping engine, line
+  // clipping). The UI says so; nothing here promises a diagonal.
+  const CASCADE_MARKS = [
+    { id: 'mai-ek',       char: '\u0E48', labelKey: 'cascadeMarkMaiEk' },       // THAI CHARACTER MAI EK
+    { id: 'mai-tho',      char: '\u0E49', labelKey: 'cascadeMarkMaiTho' },      // THAI CHARACTER MAI THO
+    { id: 'mai-tri',      char: '\u0E4A', labelKey: 'cascadeMarkMaiTri' },      // THAI CHARACTER MAI TRI
+    { id: 'mai-chattawa', char: '\u0E4B', labelKey: 'cascadeMarkMaiChattawa' }  // THAI CHARACTER MAI CHATTAWA
+  ];
+  const CASCADE_DEFAULT_MARK = 'mai-tho';   // U+0E49, the mark in the known example
+  const CASCADE_ANCHOR      = '\u0E01';     // THAI CHARACTER KO KAI, the carrier
+  const CASCADE_DEPTH       = { min: 10, max: 150, step: 1, default: 80 };
+  const CASCADE_PLACEMENTS  = ['prefix', 'suffix', 'each'];
+  const CASCADE_ANCHORS     = ['thai', 'text'];
+
+  // ── Extreme: the classic engine with a larger budget ─────────────
+  // Not a new algorithm: generateZalgo() with the same pools and the same
+  // pickUnique() cycling, so a 100-mark letter is the whole up pool twice
+  // over. It is a MODE rather than a wider default slider so classic
+  // presets and amplitude 1..20 stay exactly as they were (issue #864's
+  // rule), and the URL/slider clamp knows which range is in force.
+  const AMPLITUDE_CLASSIC = { min: 1, max: 20 };
+  const AMPLITUDE_EXTREME = { min: 1, max: 100, default: 50 };
+
+  function clampAmplitude(n, extreme) {
+    const range = extreme ? AMPLITUDE_EXTREME : AMPLITUDE_CLASSIC;
+    const a = parseInt(n, 10);
+    if (!Number.isFinite(a)) return extreme ? AMPLITUDE_EXTREME.default : 5;
+    return Math.min(range.max, Math.max(range.min, a));
+  }
+
+  function cascadeMark(id) {
+    return CASCADE_MARKS.find(m => m.id === id) ||
+           CASCADE_MARKS.find(m => m.id === CASCADE_DEFAULT_MARK);
+  }
+
+  function clampDepth(n) {
+    const d = parseInt(n, 10);
+    if (!Number.isFinite(d)) return CASCADE_DEPTH.default;
+    return Math.min(CASCADE_DEPTH.max, Math.max(CASCADE_DEPTH.min, d));
+  }
+
+  // Deterministic: the same options always give the same string, which is
+  // what makes it a shareable URL and a decodable example card.
+  //   prefix / suffix + 'thai' carrier:  "ก้้้…้ text"  /  "text ก้้้…้"
+  //   prefix / suffix + 'text' carrier:  "J้้้…้ust Ken" / "Just Ke้้้…้n"
+  //   each:                              every non-whitespace code point
+  function generateCascade(text, opts) {
+    const o = opts || {};
+    const stack     = cascadeMark(o.mark).char.repeat(clampDepth(o.depth));
+    const placement = CASCADE_PLACEMENTS.indexOf(o.placement) !== -1 ? o.placement : 'prefix';
+    const anchor    = CASCADE_ANCHORS.indexOf(o.anchor) !== -1 ? o.anchor : 'thai';
+    const src       = text == null ? '' : String(text);
+
+    if (placement === 'each') {
+      return [...src].map(ch => (/\s/.test(ch) ? ch : ch + stack)).join('');
+    }
+
+    if (anchor === 'text' && src) {
+      // Ride on the text's own first (prefix) or last (suffix) visible
+      // character. Support for Thai marks on a Latin base varies more than
+      // on the Thai carrier, which is why 'thai' is the default.
+      const chars = [...src];
+      const step  = placement === 'suffix' ? -1 : 1;
+      let i = placement === 'suffix' ? chars.length - 1 : 0;
+      while (i >= 0 && i < chars.length && /\s/.test(chars[i])) i += step;
+      if (i >= 0 && i < chars.length) {
+        chars[i] += stack;
+        return chars.join('');
+      }
+    }
+
+    const spike = CASCADE_ANCHOR + stack;
+    if (!src) return spike;
+    return placement === 'suffix' ? src + ' ' + spike : spike + ' ' + src;
+  }
+
+  // ── Decoder (unzalgo) ───────────────────────────────────────────
+  // Strips by codepoint RANGE, never by decomposition, which is why every
+  // example card on the site must stay base + combining mark (see
+  // scripts/check-zalgo-decodes.js). Two stages:
+  //   1. the classic combining-mark blocks, every occurrence;
+  //   2. cascade runs: the SAME Thai tone mark (U+0E48..U+0E4B) two or more
+  //      times in a row. Thai writes at most one tone mark per consonant, so
+  //      a repeat is never language; it is a stack. A single mark is left
+  //      alone, so "น้ำ" pasted into the box comes back as "น้ำ".
+  // The tool's own carrier (ก + run, standing apart from the text) goes with
+  // the separator space the tool inserted, so prefix and suffix output decode
+  // to exactly the text that went in. No lookbehind: older mobile Safari
+  // would refuse to parse the whole file.
+  const DECODE_CLASSIC      = /[\u0300-\u036f\u0488\u0489\u1AB0-\u1AFF\u1DC0-\u1DFF\u20D0-\u20FF\uFE20-\uFE2F]/g;
+  const DECODE_CASCADE_RUN  = /([\u0E48-\u0E4B])\1+/g;
+  const DECODE_SPIKE_PREFIX = /^(?:\u0E01([\u0E48-\u0E4B])\1+[ \t]?)+/;
+  const DECODE_SPIKE_SUFFIX = /(?:[ \t]?\u0E01([\u0E48-\u0E4B])\1+)+$/;
+  const DECODE_SPIKE_INLINE = /[ \t]\u0E01([\u0E48-\u0E4B])\1+(?=[ \t])/g;
+
+  function decodeZalgo(raw) {
+    const s = raw == null ? '' : String(raw);
+    return s
+      .replace(DECODE_CLASSIC, '')
+      .replace(DECODE_SPIKE_PREFIX, '')
+      .replace(DECODE_SPIKE_SUFFIX, '')
+      .replace(DECODE_SPIKE_INLINE, '')
+      .replace(DECODE_CASCADE_RUN, '');
+  }
+  /* @zalgo-engine:end */
+
   // ── Presets ─────────────────────────────────────────────────────
   // One-click starting points. Previews are pre-rendered (deterministic)
   // so the buttons read as a visual intensity scale at a glance.
@@ -312,6 +461,30 @@
     { id: 'tinystack', labelKey: 'presetTinyStack', preview: 'hͪeͦlͪlͯoͫ',
       settings: { charType: 'letters', position: 'up', shape: 'uniform', frequency: 1.0, amplitude: 1 } }
   ];
+
+  // The cascade is a mode, not a setting bundle: it switches the generator to
+  // generateCascade() and leaves the classic controls untouched underneath.
+  // Listed only when the page opts in (data-cascade on #zalgoControlPanel).
+  const CASCADE_PRESET = {
+    id: 'cascade', labelKey: 'presetCascade', cascade: true,
+    preview: CASCADE_ANCHOR + cascadeMark(CASCADE_DEFAULT_MARK).char.repeat(8)
+  };
+  // Extreme rides the classic engine. The preview is a real generateZalgo()
+  // render of "he" at amplitude 40 (generated, never hand-typed: see the
+  // zalgo-decodes rule in CLAUDE.md), stored so the button is stable.
+  const EXTREME_PRESET = {
+    id: 'extreme', labelKey: 'presetExtreme', extreme: true,
+    preview: 'h̷̶̜̗̯̺̝͈̳̼̰̖͍̏͌̈́͗̋̌̃́̅̓̂̑̈͊̓̄́̆͐͘͟͜͞͝ͅẹ̴̶̡̧̰̦͙̺͓͇̱̫̹͚̄̓̔͆̾̒̃̎͋̍͗̇̀͊͐͌́̈͘͠͝͡ͅ',
+    settings: { charType: 'all', position: 'all', shape: 'uniform', frequency: 1.0, amplitude: AMPLITUDE_EXTREME.default }
+  };
+  let cascadeAvailable = false;
+  let extremeAvailable = false;
+  function presetList() {
+    let list = PRESETS;
+    if (extremeAvailable) list = list.concat([EXTREME_PRESET]);
+    if (cascadeAvailable) list = list.concat([CASCADE_PRESET]);
+    return list;
+  }
 
   // ── Output Variants ─────────────────────────────────────────────
   // Fixed-flavour renders of the same input shown under the main
@@ -348,7 +521,15 @@
     frequency: 0.8,
     amplitude: 5,
     output:    '',
-    preset:    'classic'
+    preset:    'classic',
+    extreme:   false,
+    cascade: {
+      enabled:   false,
+      depth:     CASCADE_DEPTH.default,
+      placement: 'prefix',
+      mark:      CASCADE_DEFAULT_MARK,
+      anchor:    'thai'
+    }
   };
 
   // ── DOM References ──────────────────────────────────────────────
@@ -372,6 +553,71 @@
     return SHAPE_VISUALS[shapeId].map(h =>
       `<div class="bar" style="height:${h}px"></div>`
     ).join('');
+  }
+
+  // ── Cascade controls ───────────────────────────────────────────
+  // Rendered only when the page opts in; hidden until the Thai Cascade
+  // preset is picked. The Thai glyphs inside the mark pills are decorative
+  // (aria-hidden); the accessible name is the mark's own name.
+  function cascadeGroupHtml() {
+    const c = state.cascade;
+    const pills = (group, items) => `<div class="pill-group">${items.map(it =>
+      `<button type="button" class="pill${it.id === c[group] ? ' active' : ''}" data-cascade="${group}" data-value="${it.id}">${it.label}</button>`
+    ).join('')}</div>`;
+    return `
+      <div class="control-group cascade-group" id="cascadeGroup"${c.enabled ? '' : ' hidden'}>
+        <div class="control-label">
+          <span class="icon">⇈</span> ${i18n.controlCascade}
+          ${tooltip(i18n.tooltipCascade)}
+        </div>
+        <div class="cascade-grid">
+          <div class="cascade-field">
+            <div class="cascade-field-label">${i18n.cascadeDepth} ${tooltip(i18n.tooltipCascadeDepth)}</div>
+            <div class="slider-row">
+              <input type="range" class="slider-track" id="cascadeDepthSlider"
+                min="${CASCADE_DEPTH.min}" max="${CASCADE_DEPTH.max}" step="${CASCADE_DEPTH.step}"
+                value="${c.depth}" aria-label="${i18n.cascadeDepth}">
+              <span class="slider-value" id="cascadeDepthValue">${c.depth}</span>
+            </div>
+          </div>
+          <div class="cascade-field">
+            <div class="cascade-field-label">${i18n.cascadePlacement}</div>
+            ${pills('placement', [
+              { id: 'prefix', label: i18n.cascadePrefix },
+              { id: 'suffix', label: i18n.cascadeSuffix },
+              { id: 'each',   label: i18n.cascadeEach }
+            ])}
+          </div>
+          <div class="cascade-field">
+            <div class="cascade-field-label">${i18n.cascadeMark}</div>
+            ${pills('mark', CASCADE_MARKS.map(m => ({
+              id: m.id,
+              label: `<span class="cascade-glyph" aria-hidden="true">${CASCADE_ANCHOR}${m.char}</span>${i18n[m.labelKey]}`
+            })))}
+          </div>
+          <div class="cascade-field">
+            <div class="cascade-field-label">${i18n.cascadeAnchor}</div>
+            ${pills('anchor', [
+              { id: 'thai', label: i18n.cascadeAnchorThai },
+              { id: 'text', label: i18n.cascadeAnchorText }
+            ])}
+          </div>
+        </div>
+        <p class="cascade-note">${i18n.cascadeNote}</p>
+      </div>`;
+  }
+
+  // In cascade mode the classic controls do nothing, so they are disabled
+  // rather than left live and silent. The presets row stays active: that is
+  // the way back to classic zalgo.
+  function setClassicControlsMuted(muted) {
+    const panel = $('#zalgoControlPanel');
+    const controls = panel && panel.querySelector('.controls');
+    if (!controls) return;
+    controls.classList.toggle('is-muted', muted);
+    controls.querySelectorAll('.pill, .shape-option, .slider-track').forEach(el => {
+      el.disabled = muted;
+    });
   }
 
   // ── Build Controls ──────────────────────────────────────────────
@@ -413,7 +659,7 @@
           ${tooltip(i18n.tooltipPresets)}
         </div>
         <div class="preset-row">
-          ${PRESETS.map(p => `
+          ${presetList().map(p => `
             <button class="preset-option${state.preset === p.id ? ' active' : ''}" data-preset="${p.id}">
               <span class="preset-preview">${p.preview}</span>
               <span class="preset-name">${i18n[p.labelKey]}</span>
@@ -421,6 +667,7 @@
           `).join('')}
         </div>
       </div>
+      ${cascadeAvailable ? cascadeGroupHtml() : ''}
       <div class="controls">
         <!-- Characters -->
         <div class="control-group">
@@ -473,11 +720,11 @@
         <div class="control-group">
           <div class="control-label">
             <span class="icon">◉</span> ${i18n.controlAmplitude}
-            ${tooltip(i18n.tooltipAmplitude)}
+            ${tooltip(extremeAvailable ? i18n.tooltipAmplitude + ' ' + i18n.tooltipAmplitudeExtreme : i18n.tooltipAmplitude)}
           </div>
           <div class="slider-row">
             <input type="range" class="slider-track" id="amplitudeSlider"
-              min="1" max="20" step="1" value="${state.amplitude}">
+              min="${AMPLITUDE_CLASSIC.min}" max="${state.extreme ? AMPLITUDE_EXTREME.max : AMPLITUDE_CLASSIC.max}" step="1" value="${state.amplitude}">
             <span class="slider-value" id="amplitudeValue">${state.amplitude}</span>
           </div>
         </div>
@@ -618,13 +865,15 @@
       return;
     }
 
-    state.output = generateZalgo(text, {
-      charType:  state.charType,
-      position:  state.position,
-      shape:     state.shape,
-      frequency: state.frequency,
-      amplitude: state.amplitude
-    });
+    state.output = state.cascade.enabled
+      ? generateCascade(text, state.cascade)
+      : generateZalgo(text, {
+          charType:  state.charType,
+          position:  state.position,
+          shape:     state.shape,
+          frequency: state.frequency,
+          amplitude: state.amplitude
+        });
     updateOutput();
   }
 
@@ -644,6 +893,26 @@
 
     if (chars) chars.textContent = state.output.length + ' ' + i18n.outputChars;
     if (btn)   btn.disabled = !state.output;
+
+    // Cascade mode: clip the PREVIEW (never the copied string), keep the raw
+    // stack out of accessible names, and hide Regenerate, which would do
+    // nothing on a deterministic output.
+    const cascadeLive = !!(state.cascade.enabled && state.output);
+    body.classList.toggle('is-cascade', cascadeLive);
+    body.classList.toggle('is-extreme', !!(state.extreme && !state.cascade.enabled && state.output));
+    const regen = $('#regenBtn');
+    if (regen) regen.hidden = state.cascade.enabled;
+    if (cascadeLive) {
+      const input = $('#mainInput');
+      const plain = input ? input.value.trim() : '';
+      body.setAttribute('role', 'img');
+      body.setAttribute('aria-label', i18n.cascadeOutputLabel.replace('{text}', plain));
+      if (btn) btn.setAttribute('aria-label', i18n.cascadeCopyLabel);
+    } else {
+      body.removeAttribute('role');
+      body.removeAttribute('aria-label');
+      if (btn) btn.removeAttribute('aria-label');
+    }
 
     updatePlatformFit();
     updateVariants();
@@ -667,8 +936,24 @@
     if (freqValue)  freqValue.textContent = Math.round(state.frequency * 100) + '%';
     const ampSlider = $('#amplitudeSlider');
     const ampValue  = $('#amplitudeValue');
-    if (ampSlider) ampSlider.value = state.amplitude;
+    if (ampSlider) {
+      ampSlider.max = state.extreme ? AMPLITUDE_EXTREME.max : AMPLITUDE_CLASSIC.max;
+      ampSlider.value = state.amplitude;
+      ampSlider.setAttribute('aria-valuemax', ampSlider.max);
+    }
     if (ampValue)  ampValue.textContent = state.amplitude;
+
+    const group = $('#cascadeGroup');
+    if (group) {
+      group.hidden = !state.cascade.enabled;
+      group.querySelectorAll('.pill[data-cascade]').forEach(p =>
+        p.classList.toggle('active', p.dataset.value === String(state.cascade[p.dataset.cascade])));
+      const depthSlider = $('#cascadeDepthSlider');
+      const depthValue  = $('#cascadeDepthValue');
+      if (depthSlider) depthSlider.value = state.cascade.depth;
+      if (depthValue)  depthValue.textContent = state.cascade.depth;
+    }
+    setClassicControlsMuted(state.cascade.enabled);
   }
 
   function setActivePreset(id) {
@@ -693,13 +978,33 @@
       // Preset buttons
       const presetBtn = e.target.closest('.preset-option[data-preset]');
       if (presetBtn) {
-        const preset = PRESETS.find(p => p.id === presetBtn.dataset.preset);
+        const preset = presetList().find(p => p.id === presetBtn.dataset.preset);
         if (preset) {
-          Object.assign(state, preset.settings);
+          if (preset.cascade) {
+            state.cascade.enabled = true;
+          } else {
+            state.cascade.enabled = false;
+            state.extreme = !!preset.extreme;
+            Object.assign(state, preset.settings);
+            state.amplitude = clampAmplitude(state.amplitude, state.extreme);
+          }
           setActivePreset(preset.id);
           syncControlsToState();
           runGenerate();
+          trackPreset(preset);
         }
+        return;
+      }
+
+      // Cascade pills (placement / mark / carrier). The cascade preset stays
+      // active: it is the mode, and these are its settings.
+      const cascadePill = e.target.closest('.pill[data-cascade]');
+      if (cascadePill) {
+        const group = cascadePill.dataset.cascade;
+        state.cascade[group] = cascadePill.dataset.value;
+        panel.querySelectorAll(`.pill[data-cascade="${group}"]`).forEach(p =>
+          p.classList.toggle('active', p === cascadePill));
+        runGenerate();
         return;
       }
 
@@ -756,8 +1061,19 @@
     const ampValue  = $('#amplitudeValue');
     if (ampSlider) {
       ampSlider.addEventListener('input', () => {
-        state.amplitude = parseInt(ampSlider.value, 10);
+        state.amplitude = clampAmplitude(ampSlider.value, state.extreme);
         ampValue.textContent = state.amplitude;
+        runGenerate();
+      });
+    }
+
+    // Cascade depth slider
+    const depthSlider = $('#cascadeDepthSlider');
+    const depthValue  = $('#cascadeDepthValue');
+    if (depthSlider) {
+      depthSlider.addEventListener('input', () => {
+        state.cascade.depth = clampDepth(depthSlider.value);
+        if (depthValue) depthValue.textContent = state.cascade.depth;
         runGenerate();
       });
     }
@@ -809,7 +1125,7 @@
     if (decodeInput && decodeOutput) {
       decodeInput.addEventListener('input', () => {
         const raw = decodeInput.value;
-        const clean = raw.replace(/[\u0300-\u036f\u0488\u0489\u1AB0-\u1AFF\u1DC0-\u1DFF\u20D0-\u20FF\uFE20-\uFE2F]/g, '');
+        const clean = decodeZalgo(raw);
         decodedText = clean;
         if (clean) {
           decodeOutput.textContent = clean;
@@ -847,6 +1163,22 @@
         }
       });
     });
+  }
+
+  // Preset selection telemetry: dataLayer -> GTM -> GA4, same shape as
+  // header.js's cta_click. Exists so the cascade and extreme modes have a
+  // measurable adoption number for their readout (the one thing the
+  // game-name checker retro found genuinely missing was instrumentation).
+  function trackPreset(preset) {
+    try {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'zalgo_preset',
+        zalgo_preset: preset.id,
+        zalgo_mode: preset.cascade ? 'cascade' : (preset.extreme ? 'extreme' : 'classic'),
+        zalgo_source_path: window.location.pathname
+      });
+    } catch (e) { /* analytics must never break the generator */ }
   }
 
   // Shared clipboard helper with execCommand fallback + button feedback
@@ -893,7 +1225,23 @@
     if (params.has('pos'))       state.position  = params.get('pos');
     if (params.has('shape'))     state.shape     = params.get('shape');
     if (params.has('freq'))      state.frequency = parseFloat(params.get('freq'));
-    if (params.has('amp'))       state.amplitude = parseInt(params.get('amp'), 10);
+    if (extremeAvailable && params.get('extreme') === '1') {
+      state.extreme = true;
+      state.preset = 'extreme';
+    }
+    // The amplitude clamp follows the mode: an old link with amp=500 used to
+    // generate 500 marks per letter; now it is 20, or 100 in extreme mode.
+    if (params.has('amp'))       state.amplitude = clampAmplitude(params.get('amp'), state.extreme);
+    // Cascade settings round-trip only where the mode exists; a locale page
+    // that has not opted in ignores them rather than half-rendering the mode.
+    if (cascadeAvailable && params.get('cascade') === '1') {
+      state.cascade.enabled = true;
+      state.preset = 'cascade';
+      if (params.has('depth')) state.cascade.depth = clampDepth(params.get('depth'));
+      if (CASCADE_PLACEMENTS.indexOf(params.get('place')) !== -1)        state.cascade.placement = params.get('place');
+      if (CASCADE_MARKS.some(m => m.id === params.get('mark')))          state.cascade.mark      = params.get('mark');
+      if (CASCADE_ANCHORS.indexOf(params.get('anchor')) !== -1)          state.cascade.anchor    = params.get('anchor');
+    }
     if (params.has('variant') && VARIANTS.some(v => v.id === params.get('variant'))) {
       sharedVariant = params.get('variant');
     }
@@ -909,6 +1257,14 @@
     if (state.shape     !== 'uniform')     params.set('shape', state.shape);
     if (state.frequency !== 0.8)           params.set('freq',  state.frequency);
     if (state.amplitude !== 5)             params.set('amp',   state.amplitude);
+    if (state.extreme && !state.cascade.enabled) params.set('extreme', '1');
+    if (state.cascade.enabled) {
+      params.set('cascade', '1');
+      if (state.cascade.depth !== CASCADE_DEPTH.default)  params.set('depth',  state.cascade.depth);
+      if (state.cascade.placement !== 'prefix')           params.set('place',  state.cascade.placement);
+      if (state.cascade.mark !== CASCADE_DEFAULT_MARK)    params.set('mark',   state.cascade.mark);
+      if (state.cascade.anchor !== 'thai')                params.set('anchor', state.cascade.anchor);
+    }
 
     const qs = params.toString();
     const url = window.location.pathname + (qs ? '?' + qs : '');
@@ -1005,11 +1361,17 @@
   }
 
   function init() {
+    const panel = $('#zalgoControlPanel');
+    cascadeAvailable = !!(panel && panel.hasAttribute('data-cascade'));
+    extremeAvailable = !!(panel && panel.hasAttribute('data-extreme'));
     loadFromURL();
     buildControls();
     buildOutput();
     buildDecode();
     bindEvents();
+    // A cascade restored from the URL needs the classic controls muted and
+    // the cascade group shown; buildControls only knows the pill states.
+    syncControlsToState();
 
     // Override runGenerate calls to also sync URL
     // Re-bind slider & input events to use URL-syncing version

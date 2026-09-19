@@ -54,10 +54,10 @@
       "h2": "What a Pawn Can Become",
       "intro": "A pawn that reaches the opposite end of the board must promote — to a queen, rook, bishop, or knight of its own color. It can never become a king, and it cannot stay a pawn. The queen is the usual choice; anything else is an \"underpromotion.\"",
       "symbols": [
-        { "char": "♛", "label": "Black Chess Queen (U+265B) — the usual promotion" },
+        { "char": "♛", "label": "Black Chess Queen (U+265B): the usual promotion" },
         { "char": "♜", "label": "Black Chess Rook (U+265C)" },
         { "char": "♝", "label": "Black Chess Bishop (U+265D)" },
-        { "char": "♞", "label": "Black Chess Knight (U+265E) — an underpromotion" }
+        { "char": "♞", "label": "Black Chess Knight (U+265E): an underpromotion" }
       ]
     }
   ],

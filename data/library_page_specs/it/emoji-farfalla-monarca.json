@@ -16,11 +16,19 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/emoji-farfalla-monarca/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/emoji-farfalla-monarca/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/"
+    }
   ],
   "sections": [
     {
@@ -29,7 +37,10 @@
       "h2": "Emoji Farfalla Monarca",
       "intro": "Il carattere in bozza in sé — copiabile già oggi come codepoint, anche se nessun font può ancora renderizzarlo.",
       "symbols": [
-        { "char": "🫌", "label": "Monarch Butterfly (bozza, U+1FACC)" }
+        {
+          "char": "🫌",
+          "label": "Monarch Butterfly (bozza, U+1FACC)"
+        }
       ]
     },
     {
@@ -38,7 +49,10 @@
       "h2": "L'Emoji con Cui Viene Confusa",
       "intro": "L'emoji generica già codificata da cui Monarch Butterfly viene ritagliata, e la vicina con cui viene più spesso renderizzata per errore.",
       "symbols": [
-        { "char": "🦋", "label": "Farfalla — la specie generica da cui Monarch Butterfly viene ritagliata" }
+        {
+          "char": "🦋",
+          "label": "Farfalla: la specie generica da cui Monarch Butterfly viene ritagliata"
+        }
       ]
     },
     {
@@ -47,9 +61,18 @@
       "h2": "Altre Candidate in Bozza di Emoji 18.0",
       "intro": "Monarch Butterfly non è l'unico carattere non approvato di questa release — questi sono in bozza insieme a lei, ugualmente non renderizzati fino alla decisione di settembre 2026.",
       "symbols": [
-        { "char": "🫫", "label": "Cracking Face (bozza, U+1FAEB) — ha vinto il voto pubblico" },
-        { "char": "🫝", "label": "Pickle (bozza, U+1FADD)" },
-        { "char": "🪋", "label": "Meteor (bozza, U+1FA8B)" }
+        {
+          "char": "🫫",
+          "label": "Cracking Face (bozza, U+1FAEB): ha vinto il voto pubblico"
+        },
+        {
+          "char": "🫝",
+          "label": "Pickle (bozza, U+1FADD)"
+        },
+        {
+          "char": "🪋",
+          "label": "Meteor (bozza, U+1FA8B)"
+        }
       ]
     }
   ],

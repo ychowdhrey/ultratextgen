@@ -21,11 +21,11 @@
       "symbols": [
         {
           "char": "₱",
-          "label": "Peso Sign (U+20B1) — Filipin pezosunun kendi glifi"
+          "label": "Peso Sign (U+20B1): Filipin pezosunun kendi glifi"
         },
         {
           "char": "$",
-          "label": "Dollar Sign (U+0024) — Meksika, Arjantin ve diğer pezoların gerçekte kullandığı işaret"
+          "label": "Dollar Sign (U+0024): Meksika, Arjantin ve diğer pezoların gerçekte kullandığı işaret"
         }
       ]
     },
@@ -37,27 +37,27 @@
       "symbols": [
         {
           "char": "₹",
-          "label": "Indian Rupee Sign (U+20B9) — Çizgili bir R, 2010'da resmen benimsendi"
+          "label": "Indian Rupee Sign (U+20B9): Çizgili bir R, 2010'da resmen benimsendi"
         },
         {
           "char": "₩",
-          "label": "Won Sign (U+20A9) — İki çizgili bir W"
+          "label": "Won Sign (U+20A9): İki çizgili bir W"
         },
         {
           "char": "₦",
-          "label": "Naira Sign (U+20A6) — Çizgili bir N (Nijerya)"
+          "label": "Naira Sign (U+20A6): Çizgili bir N (Nijerya)"
         },
         {
           "char": "₴",
-          "label": "Hryvnia Sign (U+20B4) — Ukrayna için çizgili bir harf"
+          "label": "Hryvnia Sign (U+20B4): Ukrayna için çizgili bir harf"
         },
         {
           "char": "₫",
-          "label": "Dong Sign (U+20AB) — Çizgili bir d (Vietnam)"
+          "label": "Dong Sign (U+20AB): Çizgili bir d (Vietnam)"
         },
         {
           "char": "€",
-          "label": "Euro Sign (U+20AC) — İki çizgili yuvarlatılmış bir E"
+          "label": "Euro Sign (U+20AC): İki çizgili yuvarlatılmış bir E"
         }
       ]
     },
@@ -69,23 +69,23 @@
       "symbols": [
         {
           "char": "₽",
-          "label": "Ruble Sign (U+20BD) — Rusya'nın para birimi, o da çizgili bir P ama farklı bir çizgiyle"
+          "label": "Ruble Sign (U+20BD): Rusya'nın para birimi, o da çizgili bir P ama farklı bir çizgiyle"
         },
         {
           "char": "P",
-          "label": "Latin Capital Letter P (U+0050) — peso için sık sık yazılan düz yedek"
+          "label": "Latin Capital Letter P (U+0050): peso için sık sık yazılan düz yedek"
         },
         {
           "char": "Ᵽ",
-          "label": "Latin Capital P with Stroke (U+2C63) — dilbilimde kullanılan tek çizgili bir P, para birimi değil"
+          "label": "Latin Capital P with Stroke (U+2C63): dilbilimde kullanılan tek çizgili bir P, para birimi değil"
         },
         {
           "char": "Ρ",
-          "label": "Greek Capital Letter Rho (U+03A1) — P'ye benzer"
+          "label": "Greek Capital Letter Rho (U+03A1): P'ye benzer"
         },
         {
           "char": "Р",
-          "label": "Cyrillic Capital Letter Er (U+0420) — bir başka P benzeri"
+          "label": "Cyrillic Capital Letter Er (U+0420): bir başka P benzeri"
         }
       ]
     }

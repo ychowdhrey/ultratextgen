@@ -77,7 +77,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <meta name="twitter:image" content="https://ultratextgen.com/assets/og/es-imprimibles-abecedario-para-colorear.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Baloo+2:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 
 <script type="application/ld+json">
@@ -111,7 +111,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "¿Cómo imprimo todo el alfabeto ABC de una vez?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Desplázate hasta la sección Alfabeto para imprimir y pulsa Imprimir el alfabeto para enviar los 26 contornos de letras a tu impresora en una sola hoja — práctico para un juego de clase o una actividad de día lluvioso."
+        "text": "Desplázate hasta la sección Alfabeto para imprimir y pulsa Imprimir el alfabeto para enviar los 37 contornos de letras y números a tu impresora en una sola hoja — práctico para un juego de clase o una actividad de día lluvioso."
       }
     },
     {
@@ -395,15 +395,38 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
     <!-- Picker + selected-letter detail -->
     <section class="bubble-az" aria-labelledby="ptPickHeading">
-      <h2 class="bubble-az-heading" id="ptPickHeading">Elige una letra para colorear</h2>
-      <p class="bubble-az-intro">Toca cualquier letra A–Z para ver su gran contorno para colorear, imprimirlo o descargar un PNG.</p>
-      <div class="bubble-strip" id="pt-strip" role="tablist" aria-label="Elegir una letra para colorear"></div>
+      <h2 class="bubble-az-heading" id="ptPickHeading">Elige una letra o un número para colorear</h2>
+      <p class="bubble-az-intro">Toca cualquier letra A–Z, la Ñ o cualquier número 0–9 para ver su gran contorno para colorear, imprimirlo o descargar un PNG.</p>
+      <div class="bubble-strip" id="pt-strip" role="tablist" aria-label="Elegir una letra o un número para colorear"></div>
       <div class="bubble-letter-panel" id="pt-panel" aria-live="polite"></div>
-      <p class="bubble-az-intro">¿Quieres el alfabeto completo? Imprime los 26 contornos para colorear de una vez — en una sola hoja, o como libro con una página por letra.</p>
+      <p class="bubble-az-intro">¿Quieres el conjunto completo? Imprime los 37 contornos para colorear de una vez — las 27 letras y los 10 números — en una sola hoja, o como libro con una página por carácter.</p>
+      <div class="pt-size-field">
+        <div id="pt-size-control"></div>
+      </div>
       <div class="bubble-actions pt-batch-actions">
         <button class="bubble-btn bubble-btn-primary" type="button" id="pt-alphabet-print">Imprimir el alfabeto</button>
       </div>
     </section>
+
+    <!-- Name / word coloring sheet -->
+    <section class="bubble-alphabet" aria-labelledby="ptNameHeading">
+      <h2 id="ptNameHeading">Imprime un nombre para colorear</h2>
+      <p class="bubble-az-intro">Escribe un nombre o una palabra corta e imprímelo como grandes contornos para colorear.</p>
+      <div class="pt-name-tool">
+        <div class="input-wrapper">
+          <input type="text" class="main-input pt-name-input" id="pt-name-input" placeholder="Escribe un nombre… p. ej. Mia" maxlength="40">
+        </div>
+        <div class="pt-name-preview" id="pt-name-preview" aria-live="polite"></div>
+        <div class="bubble-actions pt-name-actions">
+          <button type="button" class="bubble-btn bubble-btn-primary" id="pt-name-print">Imprimir la hoja</button>
+          <button type="button" class="bubble-btn" id="pt-name-png">Descargar PNG</button>
+        </div>
+      </div>
+    </section>
+<figure class="guide-hero-figure pt-sheet-preview">
+  <img src="/assets/printables-previews/es-imprimibles-abecedario-para-colorear.png" width="1200" height="900"
+       alt="Abecedario y números para imprimir y colorear (A–Z y 0–9): vista previa de la hoja para imprimir" loading="lazy">
+</figure>
 
 
     <!-- Editorial -->
@@ -595,7 +618,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
         <div class="faq-answer">
-          Sí — cada abecedario para colorear aquí es totalmente gratis, sin registro, sin marca de agua y sin límites. Elige una letra para un gran contorno y usa <strong>Imprimir esta letra</strong> para enviarla a tu impresora o <strong>Descargar PNG</strong> para guardar una imagen en alta resolución.
+          Sí, cada abecedario para colorear aquí es totalmente gratis, sin registro, sin marca de agua y sin límites. Elige una letra para un gran contorno y usa <strong>Imprimir esta letra</strong> para enviarla a tu impresora o <strong>Descargar PNG</strong> para guardar una imagen en alta resolución.
         </div>
       </div>
 
@@ -605,7 +628,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
         <div class="faq-answer">
-          Desplázate hasta la sección <strong>Alfabeto para imprimir</strong> y pulsa <strong>Imprimir el alfabeto</strong> para enviar los 26 contornos de letras a tu impresora en una sola hoja — práctico para un juego de clase o una actividad de día lluvioso.
+          Desplázate hasta la sección <strong>Alfabeto para imprimir</strong> y pulsa <strong>Imprimir el alfabeto</strong> para enviar los 37 contornos de letras y números a tu impresora en una sola hoja — práctico para un juego de clase o una actividad de día lluvioso.
         </div>
       </div>
 
@@ -650,10 +673,22 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       pngPrefix: "colorear",
       font: "'Baloo 2', 'Plus Jakarta Sans', sans-serif",
       strokeWidth: 4,
+      // 37 spokes ship under this page: 26 letras, letra-enye and numero-0..9,
+      // all linked from its own list. `chars` carries the 27-letter Spanish
+      // alphabet (copied from es/imprimibles/abecedario-espanol, which already
+      // ships it) so the picker offers the N-tilde, and `charset` adds the digit
+      // row, which the engine gates separately. Without both, ten number pages
+      // and the N-tilde had no tile.
+      chars: ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"],
+      charset: "alnum",
     };
   </script>
   <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
+  <script src="/js/printables/printPrefs.js"></script>
+  <script src="/js/share/share-core.js" defer></script>
+  <script src="/js/saved/saved-items.js" defer></script>
+  <script src="/js/printables/glyphMetrics.js"></script>
   <script src="/js/printables/printablesEngine.js" defer></script>
 
   <!-- FAQ toggle -->

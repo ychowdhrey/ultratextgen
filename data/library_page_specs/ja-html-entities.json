@@ -16,23 +16,23 @@
       "symbols": [
         {
           "char": "&amp;",
-          "label": "&amp; — アンパサンド"
+          "label": "&amp;: アンパサンド"
         },
         {
           "char": "&lt;",
-          "label": "< — 小なり記号"
+          "label": "<: 小なり記号"
         },
         {
           "char": "&gt;",
-          "label": "> — 大なり記号"
+          "label": ">: 大なり記号"
         },
         {
           "char": "&quot;",
-          "label": "\" — 二重引用符"
+          "label": "\": 二重引用符"
         },
         {
           "char": "&#x27;",
-          "label": "&apos; — アポストロフィ"
+          "label": "&apos;: アポストロフィ"
         }
       ]
     },
@@ -44,55 +44,55 @@
       "symbols": [
         {
           "char": " ",
-          "label": "  — 改行しない空白（表示は空白）"
+          "label": " : 改行しない空白（表示は空白）"
         },
         {
           "char": "–",
-          "label": "&ndash; — 半角ダッシュ"
+          "label": "&ndash;: 半角ダッシュ"
         },
         {
           "char": "—",
-          "label": "&mdash; — 全角ダッシュ"
+          "label": "&mdash;: 全角ダッシュ"
         },
         {
           "char": "…",
-          "label": "&hellip; — 三点リーダー"
+          "label": "&hellip;: 三点リーダー"
         },
         {
           "char": "•",
-          "label": "&bull; — 中黒（箇条書きの点）"
+          "label": "&bull;: 中黒（箇条書きの点）"
         },
         {
           "char": "§",
-          "label": "&sect; — 節記号"
+          "label": "&sect;: 節記号"
         },
         {
           "char": "¶",
-          "label": "&para; — 段落記号"
+          "label": "&para;: 段落記号"
         },
         {
           "char": "“",
-          "label": "&ldquo; — 左二重引用符"
+          "label": "&ldquo;: 左二重引用符"
         },
         {
           "char": "”",
-          "label": "&rdquo; — 右二重引用符"
+          "label": "&rdquo;: 右二重引用符"
         },
         {
           "char": "‘",
-          "label": "&lsquo; — 左一重引用符"
+          "label": "&lsquo;: 左一重引用符"
         },
         {
           "char": "’",
-          "label": "&rsquo; — 右一重引用符"
+          "label": "&rsquo;: 右一重引用符"
         },
         {
           "char": "«",
-          "label": "&laquo; — 左向き二重山かっこ"
+          "label": "&laquo;: 左向き二重山かっこ"
         },
         {
           "char": "»",
-          "label": "&raquo; — 右向き二重山かっこ"
+          "label": "&raquo;: 右向き二重山かっこ"
         }
       ]
     },
@@ -104,31 +104,31 @@
       "symbols": [
         {
           "char": "©",
-          "label": "&copy; — 著作権記号"
+          "label": "&copy;: 著作権記号"
         },
         {
           "char": "®",
-          "label": "&reg; — 登録商標記号"
+          "label": "&reg;: 登録商標記号"
         },
         {
           "char": "™",
-          "label": "&trade; — 商標記号"
+          "label": "&trade;: 商標記号"
         },
         {
           "char": "€",
-          "label": "&euro; — ユーロ記号"
+          "label": "&euro;: ユーロ記号"
         },
         {
           "char": "£",
-          "label": "&pound; — ポンド記号"
+          "label": "&pound;: ポンド記号"
         },
         {
           "char": "¥",
-          "label": "&yen; — 円記号"
+          "label": "&yen;: 円記号"
         },
         {
           "char": "¢",
-          "label": "&cent; — セント記号"
+          "label": "&cent;: セント記号"
         }
       ]
     },
@@ -140,59 +140,59 @@
       "symbols": [
         {
           "char": "×",
-          "label": "&times; — 乗算記号"
+          "label": "&times;: 乗算記号"
         },
         {
           "char": "÷",
-          "label": "&divide; — 除算記号"
+          "label": "&divide;: 除算記号"
         },
         {
           "char": "±",
-          "label": "&plusmn; — プラスマイナス記号"
+          "label": "&plusmn;: プラスマイナス記号"
         },
         {
           "char": "½",
-          "label": "&frac12; — 分数 2分の1"
+          "label": "&frac12;: 分数 2分の1"
         },
         {
           "char": "¼",
-          "label": "&frac14; — 分数 4分の1"
+          "label": "&frac14;: 分数 4分の1"
         },
         {
           "char": "¾",
-          "label": "&frac34; — 分数 4分の3"
+          "label": "&frac34;: 分数 4分の3"
         },
         {
           "char": "°",
-          "label": "&deg; — 度記号"
+          "label": "&deg;: 度記号"
         },
         {
           "char": "µ",
-          "label": "&micro; — マイクロ記号"
+          "label": "&micro;: マイクロ記号"
         },
         {
           "char": "∞",
-          "label": "&infin; — 無限大"
+          "label": "&infin;: 無限大"
         },
         {
           "char": "≈",
-          "label": "&asymp; — ほぼ等しい"
+          "label": "&asymp;: ほぼ等しい"
         },
         {
           "char": "≠",
-          "label": "&ne; — 等しくない"
+          "label": "&ne;: 等しくない"
         },
         {
           "char": "≤",
-          "label": "&le; — 以下"
+          "label": "&le;: 以下"
         },
         {
           "char": "≥",
-          "label": "&ge; — 以上"
+          "label": "&ge;: 以上"
         },
         {
           "char": "√",
-          "label": "&radic; — 平方根"
+          "label": "&radic;: 平方根"
         }
       ]
     },
@@ -204,47 +204,47 @@
       "symbols": [
         {
           "char": "←",
-          "label": "&larr; — 左向き矢印"
+          "label": "&larr;: 左向き矢印"
         },
         {
           "char": "→",
-          "label": "&rarr; — 右向き矢印"
+          "label": "&rarr;: 右向き矢印"
         },
         {
           "char": "↑",
-          "label": "&uarr; — 上向き矢印"
+          "label": "&uarr;: 上向き矢印"
         },
         {
           "char": "↓",
-          "label": "&darr; — 下向き矢印"
+          "label": "&darr;: 下向き矢印"
         },
         {
           "char": "↔",
-          "label": "&harr; — 左右両向き矢印"
+          "label": "&harr;: 左右両向き矢印"
         },
         {
           "char": "♥",
-          "label": "&hearts; — ハート（トランプ）"
+          "label": "&hearts;: ハート（トランプ）"
         },
         {
           "char": "♦",
-          "label": "&diams; — ダイヤ（トランプ）"
+          "label": "&diams;: ダイヤ（トランプ）"
         },
         {
           "char": "♣",
-          "label": "&clubs; — クラブ（トランプ）"
+          "label": "&clubs;: クラブ（トランプ）"
         },
         {
           "char": "♠",
-          "label": "&spades; — スペード（トランプ）"
+          "label": "&spades;: スペード（トランプ）"
         },
         {
           "char": "★",
-          "label": "&starf; — 黒星"
+          "label": "&starf;: 黒星"
         },
         {
           "char": "☆",
-          "label": "&star; — 白星"
+          "label": "&star;: 白星"
         }
       ]
     },
@@ -256,43 +256,43 @@
       "symbols": [
         {
           "char": "é",
-          "label": "&eacute; — アキュートつき e"
+          "label": "&eacute;: アキュートつき e"
         },
         {
           "char": "è",
-          "label": "&egrave; — グレーヴつき e"
+          "label": "&egrave;: グレーヴつき e"
         },
         {
           "char": "ê",
-          "label": "&ecirc; — サーカムフレックスつき e"
+          "label": "&ecirc;: サーカムフレックスつき e"
         },
         {
           "char": "ñ",
-          "label": "&ntilde; — チルダつき n"
+          "label": "&ntilde;: チルダつき n"
         },
         {
           "char": "ü",
-          "label": "&uuml; — ウムラウトつき u"
+          "label": "&uuml;: ウムラウトつき u"
         },
         {
           "char": "ç",
-          "label": "&ccedil; — セディーユつき c"
+          "label": "&ccedil;: セディーユつき c"
         },
         {
           "char": "å",
-          "label": "&aring; — リングつき a"
+          "label": "&aring;: リングつき a"
         },
         {
           "char": "ø",
-          "label": "&oslash; — 斜線つき o"
+          "label": "&oslash;: 斜線つき o"
         },
         {
           "char": "æ",
-          "label": "&aelig; — 合字 ae"
+          "label": "&aelig;: 合字 ae"
         },
         {
           "char": "ß",
-          "label": "&szlig; — エスツェット（ドイツ語のß）"
+          "label": "&szlig;: エスツェット（ドイツ語のß）"
         }
       ]
     }

@@ -17,9 +17,18 @@
   "crumb_library": "Symboles",
   "library_url": "https://ultratextgen.com/fr/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/pickle-emoji/" },
-    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/emoji-cornichon/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pickle-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/pickle-emoji/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/emoji-cornichon/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/pickle-emoji/"
+    }
   ],
   "sections": [
     {
@@ -28,7 +37,10 @@
       "h2": "Emoji Cornichon",
       "intro": "Le caractère provisoire lui-même — copiable dès aujourd'hui en tant que code, même si aucune police ne peut encore l'afficher.",
       "symbols": [
-        { "char": "🫝", "label": "Cornichon (brouillon, U+1FADD)" }
+        {
+          "char": "🫝",
+          "label": "Cornichon (brouillon, U+1FADD)"
+        }
       ]
     },
     {
@@ -37,9 +49,18 @@
       "h2": "Les Emoji Auxquels on le Confond",
       "intro": "Des emoji de légumes déjà encodés auxquels on compare le plus souvent Cornichon, ou dont on l'accuse de faire doublon.",
       "symbols": [
-        { "char": "🥒", "label": "Concombre" },
-        { "char": "🍆", "label": "Aubergine" },
-        { "char": "🫑", "label": "Poivron" }
+        {
+          "char": "🥒",
+          "label": "Concombre"
+        },
+        {
+          "char": "🍆",
+          "label": "Aubergine"
+        },
+        {
+          "char": "🫑",
+          "label": "Poivron"
+        }
       ]
     },
     {
@@ -48,18 +69,46 @@
       "h2": "Les Autres Candidats Provisoires d'Emoji 18.0",
       "intro": "Cornichon n'est pas le seul caractère non approuvé de cette édition — ceux-ci sont retenus en même temps que lui, tout aussi invisibles jusqu'à la décision de septembre 2026.",
       "symbols": [
-        { "char": "🫫", "label": "Visage Fissuré (brouillon, U+1FAEB)" },
-        { "char": "🫌", "label": "Papillon Monarque (brouillon, U+1FACC)" },
-        { "char": "🛙", "label": "Phare (brouillon, U+1F6D9)" }
+        {
+          "char": "🫫",
+          "label": "Visage Fissuré (brouillon, U+1FAEB)"
+        },
+        {
+          "char": "🫌",
+          "label": "Papillon Monarque (brouillon, U+1FACC)"
+        },
+        {
+          "char": "🛙",
+          "label": "Phare (brouillon, U+1F6D9)"
+        }
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
   "related": [
-    { "href": "/library/food-drink-emojis/", "title": "Food & Drink Emojis", "desc": "Tous les emoji de snacks, de repas et de produits déjà encodés, prêts à copier-coller dès aujourd'hui (en anglais)." },
-    { "href": "/fr/symbol/emoji-visage-fissure/", "title": "Emoji Visage Fissuré", "desc": "Un autre candidat provisoire d'Emoji 18.0 — et celui qui a remporté le vote public." },
-    { "href": "/fr/symbol/emoji-meteore/", "title": "Emoji Météore", "desc": "Un autre candidat provisoire d'Emoji 18.0 — issu de la longue scission de rendu de Comète." },
-    { "href": "/fr/symbol/emoji-papillon-monarque/", "title": "Emoji Papillon Monarque", "desc": "Un autre candidat provisoire d'Emoji 18.0 — corrige une confusion multiplateforme sur l'emoji Papillon." },
-    { "href": "/fr/symbol/emoji-signe-du-pouce/", "title": "Emoji Signe du Pouce", "desc": "Une autre paire candidate d'Emoji 18.0 — un geste directionnel, pas une approbation." }
+    {
+      "href": "/library/food-drink-emojis/",
+      "title": "Food & Drink Emojis",
+      "desc": "Tous les emoji de snacks, de repas et de produits déjà encodés, prêts à copier-coller dès aujourd'hui (en anglais)."
+    },
+    {
+      "href": "/fr/symbol/emoji-visage-fissure/",
+      "title": "Emoji Visage Fissuré",
+      "desc": "Un autre candidat provisoire d'Emoji 18.0 — et celui qui a remporté le vote public."
+    },
+    {
+      "href": "/fr/symbol/emoji-meteore/",
+      "title": "Emoji Météore",
+      "desc": "Un autre candidat provisoire d'Emoji 18.0 — issu de la longue scission de rendu de Comète."
+    },
+    {
+      "href": "/fr/symbol/emoji-papillon-monarque/",
+      "title": "Emoji Papillon Monarque",
+      "desc": "Un autre candidat provisoire d'Emoji 18.0 — corrige une confusion multiplateforme sur l'emoji Papillon."
+    },
+    {
+      "href": "/fr/symbol/emoji-signe-du-pouce/",
+      "title": "Emoji Signe du Pouce",
+      "desc": "Une autre paire candidate d'Emoji 18.0 — un geste directionnel, pas une approbation."
+    }
   ]
 }

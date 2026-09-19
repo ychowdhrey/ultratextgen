@@ -1,25 +1,27 @@
 {
   "slug": "chinese-new-year",
   "event_name": "Chinese New Year",
-  "aliases": ["Lunar New Year", "CNY", "Spring Festival"],
-
+  "aliases": [
+    "Lunar New Year",
+    "CNY",
+    "Spring Festival"
+  ],
   "title": "Chinese New Year Fonts, Symbols & Kaomoji Generator | UltraTextGen",
   "meta_description": "Style a Chinese New Year greeting live, copy lantern and firework emoji, kaomoji, curated ASCII art, and ready-made phrases with native script, romanization, and translation.",
-
   "hero_h1": "Chinese New Year Text & Symbol Generator",
   "hero_tagline": "Type a name or wish and style it in curated festive fonts, then copy lanterns, luck characters, kaomoji, and ASCII art — or tap a ready-made greeting to style it instantly.",
-
   "intro": "Chinese New Year (Lunar New Year) is the biggest gifting-and-greeting occasion on the lunar calendar — red envelopes, reunion dinners, lion dances, and messages wishing family and friends luck, health, and prosperity for the year ahead. This page gathers everything for styling that greeting: curated fonts you can preview on your own text, the lanterns-and-firecrackers emoji people actually paste, the luck characters seen on doorways and banners, kaomoji for a celebratory chat message, a handful of original ASCII art pieces, and a phrase bank of real greetings — native script, romanization, and translation — that restyle instantly when you tap them.",
-
   "date_window": "on a different date each year, between late January and mid-February, set by the lunar calendar — a movable window of about 29 days",
-
   "sample_phrase": "Xin Nian Kuai Le",
-
   "canonical": "https://ultratextgen.com/events/chinese-new-year/",
-
   "native_section_heading": "Chinese New Year Greetings in Chinese Characters",
   "native_script_language": "Chinese",
-  "occurrence": {"type": "chinese", "month": 1, "day": 1, "calendar_name": "the Chinese lunisolar calendar"},
+  "occurrence": {
+    "type": "chinese",
+    "month": 1,
+    "day": 1,
+    "calendar_name": "the Chinese lunisolar calendar"
+  },
   "fonts": {
     "curated_keys": [
       "Ultra Bold",
@@ -34,33 +36,68 @@
       "Ultra Fullwidth"
     ]
   },
-
   "emoji_symbol_collections": [
     {
       "name": "Chinese New Year Emoji",
       "presentation_class": "emoji",
       "copy_pattern": "collection",
-      "flags": ["🧧", "🏮", "🧨", "🎆", "🎇", "✨", "🐉", "🍊", "🥟", "🦁", "💰", "🪙", "🎊"],
+      "flags": [
+        "🧧",
+        "🏮",
+        "🧨",
+        "🎆",
+        "🎇",
+        "✨",
+        "🐉",
+        "🍊",
+        "🥟",
+        "🦁",
+        "💰",
+        "🪙",
+        "🎊"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Luck & Fortune Characters",
       "presentation_class": "symbol",
       "copy_pattern": "collection",
-      "flags": ["福", "禧", "喜", "財", "春"],
+      "flags": [
+        "福",
+        "禧",
+        "喜",
+        "財",
+        "春"
+      ],
       "defaultFormat": "inline"
     }
   ],
-
   "kaomoji": [
-    { "text": "(๑•̀ㅂ•́)و✧", "label": "Excited Celebration" },
-    { "text": "ヽ(・∀・)ノ", "label": "Joyful Wave" },
-    { "text": "(◕‿◕)✿", "label": "Happy Blossom" },
-    { "text": "\\(^o^)/", "label": "Cheering Arms Up" },
-    { "text": "∩(・∀・)∩", "label": "Banzai Cheer" },
-    { "text": "(*≧▽≦)", "label": "Big Happy Laugh" }
+    {
+      "text": "(๑•̀ㅂ•́)و✧",
+      "label": "Excited Celebration"
+    },
+    {
+      "text": "ヽ(・∀・)ノ",
+      "label": "Joyful Wave"
+    },
+    {
+      "text": "(◕‿◕)✿",
+      "label": "Happy Blossom"
+    },
+    {
+      "text": "\\(^o^)/",
+      "label": "Cheering Arms Up"
+    },
+    {
+      "text": "∩(・∀・)∩",
+      "label": "Banzai Cheer"
+    },
+    {
+      "text": "(*≧▽≦)",
+      "label": "Big Happy Laugh"
+    }
   ],
-
   "ascii_art": {
     "items": [
       {
@@ -93,7 +130,6 @@
       }
     ]
   },
-
   "phrase_bank": [
     {
       "text": "Gong Xi Fa Cai",
@@ -265,9 +301,7 @@
       "translation": "Playful caption for outfit or decor photos."
     }
   ],
-
   "companion_answer_slug": "cny-greetings-what-to-say",
-
   "phrase_cta": "Not sure which greeting fits? Read <a href=\"{href}\">what to say for Chinese New Year</a> for the full breakdown of native script, romanization, and meaning.",
   "related": [
     {
@@ -290,5 +324,10 @@
       "title": "Happy Kaomoji",
       "desc": "More cheerful kaomoji faces for celebratory messages and chats."
     }
-  ]
+  ],
+  "hreflang": {
+    "en": "https://ultratextgen.com/events/chinese-new-year/",
+    "id": "https://ultratextgen.com/id/events/imlek/",
+    "x_default": "en"
+  }
 }

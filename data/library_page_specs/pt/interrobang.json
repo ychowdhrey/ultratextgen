@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/interrobang/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/interrobang/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/interrobang/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/interrobang/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/interrobang/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/interrobang/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
   "sections": [
     {
       "id": "the-interrobang",
@@ -29,8 +37,14 @@
       "h2": "O Interrobang — ‽ e ⸘",
       "intro": "O sinal em si e sua imagem espelhada: o interrobang padrão, que fecha uma pergunta de espanto, e a forma invertida, feita para abrir uma.",
       "symbols": [
-        { "char": "‽", "label": "Interrobang (U+203D) — Interrogação + Exclamação num Só Glifo" },
-        { "char": "⸘", "label": "Interrobang Invertido (U+2E18) — o Gêmeo de Abertura" }
+        {
+          "char": "‽",
+          "label": "Interrobang (U+203D): Interrogação + Exclamação num Só Glifo"
+        },
+        {
+          "char": "⸘",
+          "label": "Interrobang Invertido (U+2E18): o Gêmeo de Abertura"
+        }
       ]
     },
     {
@@ -39,11 +53,26 @@
       "h2": "A Interrogação e a Exclamação Que Ele Combina",
       "intro": "O interrobang comprime esses dois sinais do dia a dia num só. Quando o teclado não consegue produzi-lo, as pessoas digitam o par — ou recorrem às formas combinadas já prontas do Unicode.",
       "symbols": [
-        { "char": "?", "label": "Ponto de Interrogação (U+003F)" },
-        { "char": "!", "label": "Ponto de Exclamação (U+0021)" },
-        { "char": "⁉", "label": "Exclamação e Interrogação (U+2049)" },
-        { "char": "⁈", "label": "Interrogação e Exclamação (U+2048)" },
-        { "char": "⁇", "label": "Dupla Interrogação (U+2047)" }
+        {
+          "char": "?",
+          "label": "Ponto de Interrogação (U+003F)"
+        },
+        {
+          "char": "!",
+          "label": "Ponto de Exclamação (U+0021)"
+        },
+        {
+          "char": "⁉",
+          "label": "Exclamação e Interrogação (U+2049)"
+        },
+        {
+          "char": "⁈",
+          "label": "Interrogação e Exclamação (U+2048)"
+        },
+        {
+          "char": "⁇",
+          "label": "Dupla Interrogação (U+2047)"
+        }
       ]
     },
     {
@@ -52,10 +81,22 @@
       "h2": "Por Que Existe o Interrobang Invertido",
       "intro": "O espanhol e línguas próximas abrem uma pergunta com ¿ e uma exclamação com ¡; o interrobang invertido ⸘ funde esse par de abertura, espelhando no início da frase o que o ‽ faz no fim. A interrogação invertida ⸮ é uma marca totalmente separada — veja sua própria página.",
       "symbols": [
-        { "char": "¿", "label": "Interrogação Invertida em Espanhol (U+00BF)" },
-        { "char": "¡", "label": "Exclamação Invertida (U+00A1)" },
-        { "char": "⸘", "label": "Interrobang Invertido (U+2E18)" },
-        { "char": "⸮", "label": "Interrogação Invertida (U+2E2E)" }
+        {
+          "char": "¿",
+          "label": "Interrogação Invertida em Espanhol (U+00BF)"
+        },
+        {
+          "char": "¡",
+          "label": "Exclamação Invertida (U+00A1)"
+        },
+        {
+          "char": "⸘",
+          "label": "Interrobang Invertido (U+2E18)"
+        },
+        {
+          "char": "⸮",
+          "label": "Interrogação Invertida (U+2E2E)"
+        }
       ]
     }
   ],

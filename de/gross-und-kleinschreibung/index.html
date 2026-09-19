@@ -111,7 +111,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Schreibt Sentence case einfach nur den ersten Buchstaben meines Textes groß?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nein — ein simples „ersten Buchstaben großschreiben\" funktioniert bei mehreren Sätzen nicht. Sentence case in diesem Tool schreibt den ersten Buchstaben jedes einzelnen Satzes groß (nach Punkt, Fragezeichen oder Ausrufezeichen), nicht nur den allerersten Buchstaben des gesamten Textes."
+        "text": "Nein, ein simples „ersten Buchstaben großschreiben\" funktioniert bei mehreren Sätzen nicht. Sentence case in diesem Tool schreibt den ersten Buchstaben jedes einzelnen Satzes groß (nach Punkt, Fragezeichen oder Ausrufezeichen), nicht nur den allerersten Buchstaben des gesamten Textes."
       }
     },
     {
@@ -204,6 +204,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <textarea class="main-input" id="mainInput" placeholder="Text hier eingeben oder einfügen…" maxlength="5000"></textarea>
         <span class="char-count"><span id="charCount">0</span>/5000</span>
       </div>
+
+      <!-- Accent-aware hint: shows only when the input contains diacritics -->
+      <div class="accent-notice" id="accentNotice" role="note" hidden>
+        <span class="accent-notice-icon" aria-hidden="true">◌̈</span>
+        <span class="accent-notice-text">Dein Text enthält Umlaute oder Akzente. Fett, Schreibschrift, Fraktur und die meisten anderen Stile behalten <b>ä</b>, <b>ö</b> und <b>ü</b> jetzt mit dem Zeichen — nur wenige (Kopfüber-Text, und <b>ß</b>, das keine Form mit Zeichen hat) fallen auf einfache Buchstaben zurück. <a href="/guide/fancy-fonts-and-accents/">Welche Stile Umlaute behalten →</a></span>
+        <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Schließen">✕</button>
+      </div>
     </div>
   </div>
 </section>
@@ -234,7 +241,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           Schreibt Sentence case einfach nur den ersten Buchstaben meines Textes groß?
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="faq-answer">Nein — ein simples "ersten Buchstaben großschreiben" funktioniert bei mehreren Sätzen nicht. Sentence case in diesem Tool schreibt den ersten Buchstaben jedes einzelnen Satzes groß (nach Punkt, Fragezeichen oder Ausrufezeichen), nicht nur den allerersten Buchstaben des gesamten Textes.</div>
+        <div class="faq-answer">Nein, ein simples "ersten Buchstaben großschreiben" funktioniert bei mehreren Sätzen nicht. Sentence case in diesem Tool schreibt den ersten Buchstaben jedes einzelnen Satzes groß (nach Punkt, Fragezeichen oder Ausrufezeichen), nicht nur den allerersten Buchstaben des gesamten Textes.</div>
       </div>
 
       <div class="faq-item">
@@ -288,6 +295,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script>window.UTG_FAMILY = "case-converter";</script>
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
 <script src="/script.js" defer></script>
+<script src="/i18n.js" defer></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>

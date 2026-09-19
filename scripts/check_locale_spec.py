@@ -38,6 +38,9 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib"))
+from collection_sets import sets_in  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://ultratextgen.com"
 
@@ -54,6 +57,13 @@ ENGLISH_TELLS = re.compile(
     r"instantly|browse and copy|for your|of the)\b", re.I)
 
 
+def live_collection_sets(rel):
+    """containerId -> group count for a LIVE page. See scripts/lib/collection_sets.py
+    for why this is read from the page and not from a spec, and why groups are
+    counted by `flags:`."""
+    return sets_in(rd(rel))
+
+
 def rd(path):
     return io.open(os.path.join(ROOT, path), encoding="utf-8", errors="replace").read()
 
@@ -67,8 +77,21 @@ def en_parent_of(spec):
     return None, None
 
 
+# Markup written into a page by a build-time generator, not by its spec.
+# Counting it would compare a spec's authored sections against generated
+# inventory: pre-rendering the country flags took library/emoji-flags from 21
+# authored tiles to 216, which is not a spec that went stale. Same call as
+# editorial-corpus.js dropping .flag-grid-section, and for the same reason.
+# Keyed on the generators' own markers, so a future block is covered by adding
+# its name here rather than by a selector that silently stops matching.
+PRERENDERED_RE = re.compile(
+    r"<!--\s*BEGIN prerendered (?:country flags|collections)\b[\s\S]*?"
+    r"<!--\s*END prerendered (?:country flags|collections)\s*-->"
+)
+
+
 def live_tile_count(rel):
-    s = rd(rel)
+    s = PRERENDERED_RE.sub("", rd(rel))
     return len(re.findall(r'class="[^"]*symbol-tile', s))
 
 
@@ -145,6 +168,29 @@ def check(path, strict=False):
     if live != mine:
         E(f"tile count {mine} != live EN parent's {live} ({en_rel}) — "
           f"check the EN spec is not stale against its own page")
+
+    # --- combo-set parity with the LIVE EN page ------------------------------
+    # ERROR on absence, WARN on a count gap, deliberately different strengths.
+    # Absence is the defect that actually shipped (16 locale pages with no
+    # combo-set section at all) and has no backlog left, so it can gate. A
+    # group-count gap is a thin section, not a missing one, and 17 pairs carry
+    # it today — gating on that would make this permanently red, which is how
+    # a check gets ignored.
+    en_sets = live_collection_sets(en_rel)
+    mine_sets = spec.get("collections") or []
+    if en_sets and not mine_sets:
+        ids = ", ".join(sorted(en_sets))
+        E(f"EN parent {en_rel} renders a combo-set section (#{ids}, "
+          f"{sum(en_sets.values())} groups) but this spec declares no "
+          f"'collections' — those tiles are built at runtime by buildGrids(), "
+          f"so a page without the section still passes every tile count")
+    elif en_sets and mine_sets and spec.get("copy_pattern") != "collection":
+        E("declares 'collections' but copy_pattern is "
+          f"{spec.get('copy_pattern')!r} — the generator only emits the "
+          "section for copy_pattern 'collection'")
+    elif en_sets and mine_sets and sum(en_sets.values()) != len(mine_sets):
+        W(f"{len(mine_sets)} combo-set groups against the live EN parent's "
+          f"{sum(en_sets.values())} ({en_rel})")
 
     # --- the depth the id batch established as the floor ---------------------
     if not spec.get("faq"):

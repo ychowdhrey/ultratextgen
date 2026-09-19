@@ -8,7 +8,6 @@
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
-  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
   "slug": "kleiner-dan-of-gelijk-aan-teken",
   "title": "Kleiner Dan of Gelijk Aan: Kopieer en Plak ≤ — Betekenis, Alt-code & LaTeX",
   "meta_description": "Kopieer en plak het teken kleiner dan of gelijk aan ≤ (U+2264) — Alt+243, het LaTeX-commando \\leq, de HTML-entiteit en de verwarrende buurtekens ≦ ⩽ ≲. Klik om het direct te kopiëren.",
@@ -44,7 +43,7 @@
         },
         {
           "char": "<=",
-          "label": "Kleiner Dan of Gelijk Aan (Code — C, Python, JavaScript, Java, SQL)"
+          "label": "Kleiner Dan of Gelijk Aan (Code: C, Python, JavaScript, Java, SQL)"
         }
       ]
     },
@@ -60,7 +59,7 @@
         },
         {
           "char": "⩽",
-          "label": "Kleiner Dan of Schuin Gelijk Aan (U+2A7D) — de door ISO 31-11 geprefereerde vorm"
+          "label": "Kleiner Dan of Schuin Gelijk Aan (U+2A7D): de door ISO 31-11 geprefereerde vorm"
         },
         {
           "char": "≲",
@@ -68,7 +67,7 @@
         },
         {
           "char": "≪",
-          "label": "Veel Kleiner Dan (U+226A) — een andere relatie, geen variant van ≤"
+          "label": "Veel Kleiner Dan (U+226A): een andere relatie, geen variant van ≤"
         }
       ]
     },

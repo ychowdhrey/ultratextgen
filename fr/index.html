@@ -252,7 +252,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Je peux mettre du gras dans l'objet d'un mail ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui — et c'est un des usages les plus utiles. Les objets de mail sont en texte brut : le gras classique d'Outlook ou Gmail saute avant que le destinataire ne reçoive le message. Avec UltraTextGen, tu colles directement des lettres Unicode en gras dans l'objet, et elles s'affichent en gras dans la boîte de réception du destinataire. Exemple Objet normal : «Promo flash — 50 % aujourd'hui» Objet stylé : «𝗣𝗿𝗼𝗺𝗼 𝗳𝗹𝗮𝘀𝗵 — 𝟱𝟬 % 𝗮𝘂𝗷𝗼𝘂𝗿𝗱'𝗵𝘂𝗶» Ça se voit direct dans une boîte saturée. Gmail, Outlook et Apple Mail affichent tous les caractères Unicode sans souci."
+        "text": "Oui, et c'est un des usages les plus utiles. Les objets de mail sont en texte brut : le gras classique d'Outlook ou Gmail saute avant que le destinataire ne reçoive le message. Avec UltraTextGen, tu colles directement des lettres Unicode en gras dans l'objet, et elles s'affichent en gras dans la boîte de réception du destinataire. Exemple Objet normal : «Promo flash — 50 % aujourd'hui» Objet stylé : «𝗣𝗿𝗼𝗺𝗼 𝗳𝗹𝗮𝘀𝗵 — 𝟱𝟬 % 𝗮𝘂𝗷𝗼𝘂𝗿𝗱'𝗵𝘂𝗶» Ça se voit direct dans une boîte saturée. Gmail, Outlook et Apple Mail affichent tous les caractères Unicode sans souci."
       }
     },
     {
@@ -364,7 +364,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Vous ajoutez régulièrement des styles ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui — on ajoute régulièrement de nouvelles polices et de la déco. Pense à mettre le site en favori pour ne rien rater."
+        "text": "Oui, on ajoute régulièrement de nouvelles polices et de la déco. Pense à mettre le site en favori pour ne rien rater."
       }
     },
     {
@@ -403,6 +403,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <textarea class="main-input" id="mainInput" placeholder="Tape ton texte ici…" data-i18n-placeholder="ui.placeholder" maxlength="500" autofocus=""></textarea>
           <button class="input-clear-btn" id="inputClearBtn" aria-label="Effacer" hidden="">✕</button>
           <span class="char-count" id="charCountWrapper" hidden=""><span id="charCount">0</span>/500</span>
+        </div>
+
+        <!-- Accent-aware hint: shows only when the input contains diacritics -->
+        <div class="accent-notice" id="accentNotice" role="note" hidden>
+          <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+          <span class="accent-notice-text">Ton texte contient des accents. Gras, script, gothique et la plupart des autres styles gardent maintenant <b>é</b>, <b>à</b> et <b>ç</b> accentués — quelques-uns (le texte à l’envers, et des lettres sans forme accentuée comme <b>œ ł ø ß</b>) reviennent en lettres normales. <a href="/guide/fancy-fonts-and-accents/">Quels styles gardent les accents →</a></span>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Fermer">✕</button>
         </div>
 
         <!-- Decoration Selector -->
@@ -964,7 +971,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer" data-i18n-html="faq.categories.1.items.2.answer">Oui — et c'est un des usages les plus utiles. Les objets de mail sont en texte brut : le gras classique d'Outlook ou Gmail saute avant que le destinataire ne reçoive le message.
+  <div class="faq-answer" data-i18n-html="faq.categories.1.items.2.answer">Oui, et c'est un des usages les plus utiles. Les objets de mail sont en texte brut : le gras classique d'Outlook ou Gmail saute avant que le destinataire ne reçoive le message.
     <br><br>
     Avec UltraTextGen, tu colles directement des lettres Unicode en gras dans l'objet, et elles s'affichent en gras dans la boîte de réception du destinataire.
     <br><br>
@@ -1195,7 +1202,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer" data-i18n-html="faq.categories.7.items.1.answer">Oui — on ajoute régulièrement de nouvelles polices et de la déco. Pense à mettre le site en favori pour ne rien rater.</div>
+  <div class="faq-answer" data-i18n-html="faq.categories.7.items.1.answer">Oui, on ajoute régulièrement de nouvelles polices et de la déco. Pense à mettre le site en favori pour ne rien rater.</div>
 </div>
 
 <div class="faq-item">
@@ -1342,7 +1349,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
 <script src="/script.js" defer=""></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/i18n.js" defer></script>
 
 

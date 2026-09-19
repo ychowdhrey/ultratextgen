@@ -1,0 +1,158 @@
+'use strict';
+
+/**
+ * share-save-tags.js — the one definition of "which pages need the shared
+ * Save/Share modules, and which tags satisfy that".
+ *
+ * Read by scripts/inject-share-save-tags.js (the writer) and
+ * scripts/check-share-save-tags.js (the gate), so the injector and the check
+ * can never disagree about what a correctly-tagged page looks like. Same
+ * reason scripts/lib/faq-schema-audit.js and scripts/lib/content-fingerprint.js
+ * are shared by their own audit/fix/check trios.
+ *
+ * Background (2026-09-05). Copy is a site-wide capability: 37 JS modules in
+ * this repo write to the clipboard. Save and Share were not — both lived
+ * inside script.js, which 540 of 4,639 pages load. Splitting them out into
+ * /js/share/share-core.js and /js/saved/saved-items.js is what lets the other
+ * surfaces have them, and it means a page that used to get share "for free"
+ * by loading script.js now has to load the module too. This file encodes both
+ * halves of that obligation.
+ */
+
+const path = require('path');
+const fs = require('fs');
+
+const ROOT = path.resolve(__dirname, '..', '..');
+
+/** The two shared modules every copy-hosting page must load. */
+const SHARE_CORE = '/js/share/share-core.js';
+const SAVED_ITEMS = '/js/saved/saved-items.js';
+
+/** Sheet setup (paper, orientation, margins, ink saver, DPI), shared by all
+ *  three printables engines since 2026-09-16. Required only on printables
+ *  pages, unlike the two above, so it is tracked separately. */
+const PRINT_PREFS = '/js/printables/printPrefs.js';
+
+/** A page "hosts copy" if it loads one of the runtimes that renders the copy
+ *  targets Save/Share were attached to. */
+const HOST_SCRIPTS = {
+  /** The generator: builds result cards carrying Copy + Save + Share. */
+  generator: '/script.js',
+  /** Library and symbol pages: static tiles, enhanced at runtime. */
+  explorer: '/symbol-explorer.js',
+  /** Printables (2026-09-10): the sheet engines offer Share / Share-image /
+   *  Copy-link beside Print, through the same share-core. */
+  printables: '/js/printables/printablesEngine.js',
+  monogram: '/js/printables/monogramEngine.js',
+  crossStitch: '/js/printables/crossStitchEngine.js'
+};
+
+/**
+ * What a given page is missing.
+ *
+ * Deliberately NOT in this list: i18n.js. The first draft added it to every
+ * explorer page so the injected buttons could read window.UTG_I18N, on the
+ * assumption that generator pages already loaded it. They do not — 76 of 540
+ * do. And on the explorer side it would have meant a ~30KB locale-JSON fetch
+ * on 3,586 pages, the site's highest-traffic lane, to read five short strings.
+ * symbol-explorer.js reads them from its own 28-locale table instead, which
+ * scripts/sync-explorer-strings.js keeps in agreement with locales/*.json.
+ */
+function requiredTags(html) {
+  const hostsCopy = Object.values(HOST_SCRIPTS).some((src) => html.includes(`src="${src}"`));
+  if (!hostsCopy) return [];
+  const need = [SHARE_CORE, SAVED_ITEMS];
+  if (hostsPrintables(html)) need.push(PRINT_PREFS);
+  return need.filter((src) => !html.includes(`src="${src}"`));
+}
+
+/** The three sheet engines that read printPrefs.js. */
+const PRINTABLE_HOSTS = [HOST_SCRIPTS.printables, HOST_SCRIPTS.monogram, HOST_SCRIPTS.crossStitch];
+
+function hostsPrintables(html) {
+  return PRINTABLE_HOSTS.some((src) => html.includes(`src="${src}"`));
+}
+
+/** Which module tags a given page owes, in the order they must appear. */
+function modulesFor(html) {
+  return hostsPrintables(html) ? [PRINT_PREFS, SHARE_CORE, SAVED_ITEMS] : [SHARE_CORE, SAVED_ITEMS];
+}
+
+function hasTag(html, src) {
+  return html.includes(`src="${src}"`);
+}
+
+/**
+ * Where the modules have to go: before the FIRST host script on the page.
+ *
+ * 300 pages load both script.js and symbol-explorer.js, and on every one of
+ * them script.js comes first. Anchoring on the explorer (the first draft's
+ * rule when both were present) therefore placed the modules after script.js,
+ * whose init calls UTG.sharedStyleId() — TypeError, and the page's generator
+ * rendered nothing. No gate could see it: they check that a tag is present,
+ * not that it is in a position where it can do its job.
+ *
+ * Returns the index of the earliest host script tag, or -1.
+ */
+function firstHostIndex(html) {
+  const idx = Object.values(HOST_SCRIPTS)
+    .map((src) => html.indexOf(`src="${src}"`))
+    .filter((i) => i !== -1);
+  return idx.length ? Math.min(...idx) : -1;
+}
+
+/** True when every module tag precedes every host script that consumes it. */
+function tagsAreOrdered(html) {
+  const host = firstHostIndex(html);
+  if (host === -1) return true;
+  return modulesFor(html).every((src) => {
+    const i = html.indexOf(`src="${src}"`);
+    return i !== -1 && i < host;
+  });
+}
+
+/**
+ * printPrefs.js is tagged WITHOUT defer, and that is not a style choice.
+ *
+ * Nine Indonesian printables pages load printablesEngine.js as a classic
+ * script, so its top level runs during parsing -- before any deferred script
+ * on the page. The engine reads window.UltraTextGen.printPrefs at its top
+ * level, so a deferred module would not exist yet and all nine would silently
+ * fall back to one hardcoded page size. A classic script placed before the
+ * engine executes first whether the engine is deferred or not, which is the
+ * only rule that holds for both shapes. The module is dependency-free and
+ * ~7KB, the same trade js/flair/flair-engine.js already makes.
+ */
+function tagFor(src) {
+  return src === PRINT_PREFS
+    ? `<script src="${src}"></script>`
+    : `<script src="${src}" defer></script>`;
+}
+
+/** Pages excluded from the site's own tag passes, mirrored here so this
+ *  script's scope matches check-gtm.js / check-ads.js / the funding-choices
+ *  injector rather than inventing a third definition. */
+const SKIP_SEGMENTS = ['embed', 'widget', 'test', 'demo', '404', '_root'];
+const SKIP_DIRS = ['node_modules', 'reports', 'data', 'functions', 'fonts'];
+
+function shouldSkip(filePath) {
+  const rel = path.relative(ROOT, filePath).replace(/\\/g, '/');
+  for (const seg of rel.split('/')) {
+    const lower = seg.toLowerCase();
+    if (SKIP_SEGMENTS.includes(lower)) return true;
+    if (SKIP_DIRS.includes(lower)) return true;
+    if (/\.(test|demo|widget|embed)\b/i.test(seg)) return true;
+  }
+  return false;
+}
+
+/** Both modules must exist on disk, or every page we tag 404s its own JS. */
+function modulesExist() {
+  return [SHARE_CORE, SAVED_ITEMS, PRINT_PREFS].every((p) => fs.existsSync(path.join(ROOT, p.slice(1))));
+}
+
+module.exports = {
+  ROOT, SHARE_CORE, SAVED_ITEMS, PRINT_PREFS, HOST_SCRIPTS,
+  requiredTags, hasTag, tagFor, shouldSkip, modulesExist,
+  firstHostIndex, tagsAreOrdered, hostsPrintables, modulesFor
+};

@@ -16,11 +16,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/library/simbolos/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/card-suit-symbols/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/naipes-de-baralho/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/card-suit-symbols/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/card-suit-symbols/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/naipes-de-baralho/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/card-suit-symbols/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
   "sections": [
     {
       "id": "standard-suits",
@@ -28,10 +36,22 @@
       "h2": "Naipes de Baralho Padrão",
       "intro": "Os quatro símbolos de naipe preenchidos usados na maioria dos baralhos ocidentais.",
       "symbols": [
-        { "char": "♠", "label": "Espadas" },
-        { "char": "♥", "label": "Copas" },
-        { "char": "♦", "label": "Ouros" },
-        { "char": "♣", "label": "Paus" }
+        {
+          "char": "♠",
+          "label": "Espadas"
+        },
+        {
+          "char": "♥",
+          "label": "Copas"
+        },
+        {
+          "char": "♦",
+          "label": "Ouros"
+        },
+        {
+          "char": "♣",
+          "label": "Paus"
+        }
       ]
     },
     {
@@ -40,10 +60,22 @@
       "h2": "Naipes de Baralho Contornados",
       "intro": "Variantes contornadas (brancas) dos quatro naipes de baralho padrão.",
       "symbols": [
-        { "char": "♤", "label": "Espadas Branco" },
-        { "char": "♡", "label": "Copas Branco" },
-        { "char": "♢", "label": "Ouros Branco" },
-        { "char": "♧", "label": "Paus Branco" }
+        {
+          "char": "♤",
+          "label": "Espadas Branco"
+        },
+        {
+          "char": "♡",
+          "label": "Copas Branco"
+        },
+        {
+          "char": "♢",
+          "label": "Ouros Branco"
+        },
+        {
+          "char": "♧",
+          "label": "Paus Branco"
+        }
       ]
     },
     {
@@ -52,14 +84,38 @@
       "h2": "Naipes de Baralho — Preenchidos e Contornados (8)",
       "intro": "Os oito glifos Unicode de naipe juntos — preenchidos (♠ ♥ ♦ ♣) e contornados (♤ ♡ ♢ ♧) — o conjunto canônico para decoração com naipes de baralho.",
       "symbols": [
-        { "char": "♠", "label": "Espadas" },
-        { "char": "♥", "label": "Copas" },
-        { "char": "♦", "label": "Ouros" },
-        { "char": "♣", "label": "Paus" },
-        { "char": "♤", "label": "Espadas Branco" },
-        { "char": "♡", "label": "Copas Branco" },
-        { "char": "♢", "label": "Ouros Branco" },
-        { "char": "♧", "label": "Paus Branco" }
+        {
+          "char": "♠",
+          "label": "Espadas"
+        },
+        {
+          "char": "♥",
+          "label": "Copas"
+        },
+        {
+          "char": "♦",
+          "label": "Ouros"
+        },
+        {
+          "char": "♣",
+          "label": "Paus"
+        },
+        {
+          "char": "♤",
+          "label": "Espadas Branco"
+        },
+        {
+          "char": "♡",
+          "label": "Copas Branco"
+        },
+        {
+          "char": "♢",
+          "label": "Ouros Branco"
+        },
+        {
+          "char": "♧",
+          "label": "Paus Branco"
+        }
       ]
     },
     {
@@ -68,12 +124,30 @@
       "h2": "Faces de Dado",
       "intro": "Caracteres Unicode representando cada face de um dado padrão de seis lados.",
       "symbols": [
-        { "char": "⚀", "label": "Face de Dado 1" },
-        { "char": "⚁", "label": "Face de Dado 2" },
-        { "char": "⚂", "label": "Face de Dado 3" },
-        { "char": "⚃", "label": "Face de Dado 4" },
-        { "char": "⚄", "label": "Face de Dado 5" },
-        { "char": "⚅", "label": "Face de Dado 6" }
+        {
+          "char": "⚀",
+          "label": "Face de Dado 1"
+        },
+        {
+          "char": "⚁",
+          "label": "Face de Dado 2"
+        },
+        {
+          "char": "⚂",
+          "label": "Face de Dado 3"
+        },
+        {
+          "char": "⚃",
+          "label": "Face de Dado 4"
+        },
+        {
+          "char": "⚄",
+          "label": "Face de Dado 5"
+        },
+        {
+          "char": "⚅",
+          "label": "Face de Dado 6"
+        }
       ]
     },
     {
@@ -82,9 +156,18 @@
       "h2": "Emojis de Carta de Baralho",
       "intro": "Símbolos em estilo emoji de carta de baralho e jogos.",
       "symbols": [
-        { "char": "🃏", "label": "Coringa" },
-        { "char": "🎴", "label": "Cartas de Baralho Floridas" },
-        { "char": "🀄", "label": "Dragão Vermelho de Mahjong" }
+        {
+          "char": "🃏",
+          "label": "Coringa"
+        },
+        {
+          "char": "🎴",
+          "label": "Cartas de Baralho Floridas"
+        },
+        {
+          "char": "🀄",
+          "label": "Dragão Vermelho de Mahjong"
+        }
       ]
     },
     {
@@ -93,16 +176,46 @@
       "h2": "Símbolos de Cartas de Trunfo e Especiais",
       "intro": "Caracteres Unicode de cartas de baralho do bloco Playing Cards.",
       "symbols": [
-        { "char": "🂠", "label": "Verso de Carta" },
-        { "char": "🂡", "label": "Ás de Espadas" },
-        { "char": "🂢", "label": "Dois de Espadas" },
-        { "char": "🂮", "label": "Rei de Espadas" },
-        { "char": "🂱", "label": "Ás de Copas" },
-        { "char": "🂾", "label": "Rei de Copas" },
-        { "char": "🃁", "label": "Ás de Ouros" },
-        { "char": "🃎", "label": "Rei de Ouros" },
-        { "char": "🃑", "label": "Ás de Paus" },
-        { "char": "🃞", "label": "Rei de Paus" }
+        {
+          "char": "🂠",
+          "label": "Verso de Carta"
+        },
+        {
+          "char": "🂡",
+          "label": "Ás de Espadas"
+        },
+        {
+          "char": "🂢",
+          "label": "Dois de Espadas"
+        },
+        {
+          "char": "🂮",
+          "label": "Rei de Espadas"
+        },
+        {
+          "char": "🂱",
+          "label": "Ás de Copas"
+        },
+        {
+          "char": "🂾",
+          "label": "Rei de Copas"
+        },
+        {
+          "char": "🃁",
+          "label": "Ás de Ouros"
+        },
+        {
+          "char": "🃎",
+          "label": "Rei de Ouros"
+        },
+        {
+          "char": "🃑",
+          "label": "Ás de Paus"
+        },
+        {
+          "char": "🃞",
+          "label": "Rei de Paus"
+        }
       ]
     },
     {
@@ -111,10 +224,22 @@
       "h2": "Símbolos de Jogos",
       "intro": "Símbolos adicionais de jogos e recreação.",
       "symbols": [
-        { "char": "🎰", "label": "Caça-Níqueis" },
-        { "char": "🎲", "label": "Dado de Jogo" },
-        { "char": "🎯", "label": "Alvo" },
-        { "char": "🎱", "label": "Bola 8 de Sinuca" }
+        {
+          "char": "🎰",
+          "label": "Caça-Níqueis"
+        },
+        {
+          "char": "🎲",
+          "label": "Dado de Jogo"
+        },
+        {
+          "char": "🎯",
+          "label": "Alvo"
+        },
+        {
+          "char": "🎱",
+          "label": "Bola 8 de Sinuca"
+        }
       ]
     }
   ],

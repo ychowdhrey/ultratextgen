@@ -234,6 +234,10 @@
     </div>
   </div>
 </section>
+<figure class="guide-hero-figure pt-sheet-preview">
+  <img src="/assets/printables-previews/id-printables-menebalkan-huruf.png" width="1200" height="900"
+       alt="Menebalkan Huruf, Buat Lembar Latihannya Sendiri: pratinjau lembar cetak" loading="lazy">
+</figure>
 
 <div class="section-divider"></div>
 
@@ -302,6 +306,7 @@
 
 <script>
   window.UTG_PRINTABLE = {
+      roster: true,
     lang: "id",
     key: "handwriting-worksheet-generator",
     render: "outline",
@@ -315,7 +320,11 @@
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
 <script src="/js/printables/strokeDirectionData.js"></script>
-<script src="/js/printables/printablesEngine.js"></script>
+<script src="/js/printables/printPrefs.js"></script>
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
+<script src="/js/printables/glyphMetrics.js"></script>
+<script src="/js/printables/printablesEngine.js" defer></script>
 <script>
 document.querySelectorAll('.faq-question').forEach(function(btn) {
   btn.addEventListener('click', function() {

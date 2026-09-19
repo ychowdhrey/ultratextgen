@@ -1,6 +1,6 @@
 {
   "slug": "emoji-hoa",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "title": "Emoji Hoa 🌸 và Ký Tự Hoa ❀ — Sao Chép Dán | UltraTextGen",
   "meta_description": "Emoji hoa 🌸 🌹 🌻 và ký tự hoa ❀ ✿ sao chép dán: lá cây, cây cối, thiên nhiên và hoa văn trang trí tiểu sử. Nhấn để sao chép.",
   "hero_h1": "Emoji Hoa và Ký Tự Hoa",
@@ -327,6 +327,45 @@
           "label": "Chùm Hoa Văn"
         }
       ]
+    }
+  ],
+  "collection_section": {
+    "id": "flower-collections",
+    "label": "Bộ ký hiệu hoa",
+    "h2": "Bộ hoa cho bio và dòng phân cách",
+    "intro": "Các dòng phân cách và bộ bio hoa có sẵn, dán thẳng vào bio, chú thích hay tên người dùng — chép cả cụm chỉ với một cú nhấp."
+  },
+  "collection_container_id": "flowerCollectionsContainer",
+  "collections": [
+    {
+      "name": "Khung hoa cho bio",
+      "flags": ["✿", "❀", "❁", "❀", "✿"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Dòng phân cách hoa chấm",
+      "flags": ["✾", "·", "❀", "·", "✾"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bộ hoa vườn",
+      "flags": ["🌷", "🌸", "🌼", "🌻", "🌹"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cụm hoa trong ngoặc",
+      "flags": ["꒰❀꒱"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Dòng hoa đậm",
+      "flags": ["❋", "❃", "❋", "❃", "❋"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Chú thích hoa nhẹ nhàng",
+      "flags": ["❀", "🌿", "🌸", "🌿", "❀"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

@@ -38,9 +38,9 @@
       "h2": "Chi-Rho, Xmas i Chrześcijański Monogram",
       "intro": "Ponieważ wielkie Χ otwiera Χριστός („Chrystus”), stało się liczącym sobie wieki skrótem tego imienia — źródłem zarówno monogramu Chi-Rho, który Konstantyn niósł jako sztandar bitewny, jak i współczesnego „Xmas”. Wklej tu elementy tej historii.",
       "symbols": [
-        { "char": "☧", "label": "Chi Rho (U+2627) — Chrystogram/Labarum ΧΡ" },
-        { "char": "Χ", "label": "Wielka Grecka Litera Chi (U+03A7) — Χ Otwierające Χριστός" },
-        { "char": "X", "label": "Łacińska Wielka Litera X (U+0058) — X w „Xmas”" }
+        { "char": "☧", "label": "Chi Rho (U+2627): Chrystogram/Labarum ΧΡ" },
+        { "char": "Χ", "label": "Wielka Grecka Litera Chi (U+03A7): Χ Otwierające Χριστός" },
+        { "char": "X", "label": "Łacińska Wielka Litera X (U+0058): X w „Xmas”" }
       ]
     },
     {
@@ -49,9 +49,9 @@
       "h2": "Chi-Kwadrat (χ²) w Statystyce i Nauce",
       "intro": "Małe χ to koń roboczy nauki: test dobroci dopasowania χ², który Karl Pearson wprowadził w 1900 roku, a także charakterystyka Eulera w topologii i podatność magnetyczna w fizyce. Weź literę i górny indeks dwa, by samodzielnie złożyć χ².",
       "symbols": [
-        { "char": "χ", "label": "Mała Grecka Litera Chi (U+03C7) — Statystyka Testu χ²" },
-        { "char": "²", "label": "Górny Indeks Dwa (U+00B2) — do Złożenia χ²" },
-        { "char": "Χ", "label": "Wielka Grecka Litera Chi (U+03A7) — Oznacza Też Zmienne Losowe" }
+        { "char": "χ", "label": "Mała Grecka Litera Chi (U+03C7): Statystyka Testu χ²" },
+        { "char": "²", "label": "Górny Indeks Dwa (U+00B2): do Złożenia χ²" },
+        { "char": "Χ", "label": "Wielka Grecka Litera Chi (U+03A7): Oznacza Też Zmienne Losowe" }
       ]
     },
     {
@@ -79,7 +79,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/library/alfabet-grecki/",

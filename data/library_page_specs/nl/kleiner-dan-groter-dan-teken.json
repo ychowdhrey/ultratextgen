@@ -8,7 +8,6 @@
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
-  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
   "slug": "kleiner-dan-groter-dan-teken",
   "title": "Kleiner Dan (<) & Groter Dan (>): Kopieer en Plak Vergelijkingstekens",
   "meta_description": "Wat < en > betekenen, waarom ze HTML kunnen breken en hoe ze verschillen van hoekaanhalingstekens ‹ « ⟨. Klik om te kopiëren.",
@@ -56,19 +55,19 @@
       "symbols": [
         {
           "char": "‹",
-          "label": "Enkel Guillemet Links (U+2039) — een aanhalingsteken, geen vergelijking"
+          "label": "Enkel Guillemet Links (U+2039): een aanhalingsteken, geen vergelijking"
         },
         {
           "char": "«",
-          "label": "Dubbel Guillemet Links (U+00AB) — Franse/Duitse aanhalingstekens"
+          "label": "Dubbel Guillemet Links (U+00AB): Franse/Duitse aanhalingstekens"
         },
         {
           "char": "⟨",
-          "label": "Hoekige Haak Links (U+27E8) — gebruikt in bra-ket-notatie en vectoren, geen vergelijking"
+          "label": "Hoekige Haak Links (U+27E8): gebruikt in bra-ket-notatie en vectoren, geen vergelijking"
         },
         {
           "char": "≤",
-          "label": "Kleiner Dan of Gelijk Aan (U+2264) — de ‘of-gelijk’-variant"
+          "label": "Kleiner Dan of Gelijk Aan (U+2264): de ‘of-gelijk’-variant"
         }
       ]
     },

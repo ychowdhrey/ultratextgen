@@ -127,7 +127,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {
       "@type": "Question",
       "name": "Est-ce que Sentence case se contente de mettre une majuscule au début de mon texte ?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Non — une approche naïve qui capitalise juste le tout premier caractère casse dès que le texte contient plusieurs phrases. Le mode Sentence case de cet outil met une majuscule au premier mot de chaque phrase (après un point, un point d'interrogation ou d'exclamation), pas seulement à la toute première lettre du texte entier." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Non, une approche naïve qui capitalise juste le tout premier caractère casse dès que le texte contient plusieurs phrases. Le mode Sentence case de cet outil met une majuscule au premier mot de chaque phrase (après un point, un point d'interrogation ou d'exclamation), pas seulement à la toute première lettre du texte entier." }
     },
     {
       "@type": "Question",
@@ -179,6 +179,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <textarea class="main-input" id="mainInput" placeholder="Tape ou colle ton texte ici…" maxlength="5000"></textarea>
         <span class="char-count"><span id="charCount">0</span>/5000</span>
       </div>
+
+      <!-- Accent-aware hint: shows only when the input contains diacritics -->
+      <div class="accent-notice" id="accentNotice" role="note" hidden>
+        <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+        <span class="accent-notice-text">Ton texte contient des accents. Gras, script, gothique et la plupart des autres styles gardent maintenant <b>é</b>, <b>à</b> et <b>ç</b> accentués — quelques-uns (le texte à l’envers, et des lettres sans forme accentuée comme <b>œ ł ø ß</b>) reviennent en lettres normales. <a href="/guide/fancy-fonts-and-accents/">Quels styles gardent les accents →</a></span>
+        <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Fermer">✕</button>
+      </div>
     </div>
   </div>
 </section>
@@ -209,7 +216,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           Est-ce que Sentence case se contente de mettre une majuscule au début de mon texte ?
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="faq-answer">Non — une approche naïve qui capitalise juste le tout premier caractère casse dès que le texte contient plusieurs phrases. Le mode Sentence case de cet outil met une majuscule au premier mot de chaque phrase (après un point, un point d'interrogation ou d'exclamation), pas seulement à la toute première lettre du texte entier.</div>
+        <div class="faq-answer">Non, une approche naïve qui capitalise juste le tout premier caractère casse dès que le texte contient plusieurs phrases. Le mode Sentence case de cet outil met une majuscule au premier mot de chaque phrase (après un point, un point d'interrogation ou d'exclamation), pas seulement à la toute première lettre du texte entier.</div>
       </div>
 
       <div class="faq-item">
@@ -263,6 +270,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script>window.UTG_FAMILY = "case-converter";</script>
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
 <script src="/script.js" defer></script>
+<script src="/i18n.js" defer></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>

@@ -1,0 +1,296 @@
+{
+ "slug": "kors-symboler",
+ "lang": "sv",
+ "page_type": "library",
+ "title": "Kors- och X-symboler att kopiera – alla korstecken och kryss",
+ "meta_description": "Bläddra och kopiera alla kors- och X-symboler – multiplikationstecken, kryss, religiösa kors, daggertecken med mera. Klicka på en symbol för att kopiera den direkt.",
+ "breadcrumb": "Kors- och X-symboler",
+ "hero_h1": "Kors- och X-symboler",
+ "hero_tagline": "Alla korsformer i Unicode – multiplikationstecken, kryss-X, religiösa kors, dekorativa tjocka kors och daggertecken. Klicka på valfri symbol för att kopiera den direkt.",
+ "intro": "Det här biblioteket samlar alla korsformade symboler i Unicodes olika block – från det matematiska multiplikationstecknet till latinska kors, daggertecken och dekorativa korsmarkeringar. Obs: den här sidan fokuserar på korsens former och utseende; för sammanhang kopplat till specifika trosinriktningar, se bibliotekssidan för religiösa och andliga symboler.",
+ "date_published": "2026-09-10",
+ "date_modified": "2026-09-10",
+ "copy_pattern": "single",
+ "canonical": "https://ultratextgen.com/sv/library/kors-symboler/",
+ "home_url": "https://ultratextgen.com/sv/",
+ "crumb_home": "Startsida",
+ "crumb_library": "Bibliotek",
+ "library_url": "https://ultratextgen.com/sv/library/",
+ "hreflang": [
+  {
+   "lang": "sv",
+   "href": "https://ultratextgen.com/sv/library/kors-symboler/"
+  },
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/cross-x-symbols/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/cross-x-symbols/"
+  }
+ ],
+ "related": [
+  {
+   "href": "/sv/library/bock-symboler/",
+   "title": "Bocksymboler",
+   "desc": "En samling bockar, kryss, statuscirklar och checklistetecken – med den gröna bocken (✅) som de flesta faktiskt söker efter allra först. Klicka på ett."
+  },
+  {
+   "href": "/sv/library/matematiska-symboler/",
+   "title": "Matematiska symboler",
+   "desc": "Kopiera och klistra in matematiska Unicode-tecken – operatorer, grekiska bokstäver, mängdlära, kalkyl och mer. Klicka på en symbol för att kopiera."
+  },
+  {
+   "href": "/sv/library/skiljetecken/",
+   "title": "Skiljetecken",
+   "desc": "Citationstecken, utropstecken, kors, stycketecken, interrobang och upp-och-nedvända tecken – skiljetecknen som inte finns på tangentbordet. Klicka på."
+  }
+ ],
+ "sections": [
+  {
+   "id": "math-x",
+   "label": "Multiplikation och matematiskt X",
+   "h2": "Multiplikation och matematiskt X",
+   "intro": "Korsformade symboler som används i matematisk och vetenskaplig notation.",
+   "symbols": [
+    {
+     "char": "×",
+     "label": "Multiplikationstecken"
+    },
+    {
+     "char": "✕",
+     "label": "Multiplikations-X"
+    },
+    {
+     "char": "✖",
+     "label": "Tjockt multiplikations-X"
+    },
+    {
+     "char": "⨯",
+     "label": "Vektor- eller kryssprodukt"
+    },
+    {
+     "char": "⋇",
+     "label": "Division gånger"
+    },
+    {
+     "char": "⨰",
+     "label": "Multiplikationstecken med punkt över"
+    },
+    {
+     "char": "✖️",
+     "label": "Tjockt multiplikations-X"
+    }
+   ]
+  },
+  {
+   "id": "ballot-x",
+   "label": "Kryss- och markerings-X-tecken",
+   "h2": "Kryss- och markerings-X-tecken",
+   "intro": "X-markeringar som används i formulär, checklistor och gränssnitt – för att markera avbrott, borttagning eller ”nej”.",
+   "symbols": [
+    {
+     "char": "✗",
+     "label": "Kryss"
+    },
+    {
+     "char": "✘",
+     "label": "Tjockt kryss"
+    },
+    {
+     "char": "❌",
+     "label": "Kryss-emoji"
+    },
+    {
+     "char": "❎",
+     "label": "Kryssknapp-emoji"
+    },
+    {
+     "char": "☓",
+     "label": "Andreaskors (saltire)"
+    },
+    {
+     "char": "𐄂",
+     "label": "Egeiskt kryss"
+    }
+   ]
+  },
+  {
+   "id": "religious-crosses",
+   "label": "Religiösa korstecken",
+   "h2": "Religiösa korstecken",
+   "intro": "Korssymboler som används i religiösa och andliga sammanhang. För fullständiga samlingar ordnade efter trosinriktning, se bibliotekssidan för religiösa och andliga symboler.",
+   "symbols": [
+    {
+     "char": "✝",
+     "label": "Latinskt kors"
+    },
+    {
+     "char": "✞",
+     "label": "Skuggat vitt latinskt kors"
+    },
+    {
+     "char": "✟",
+     "label": "Konturerat latinskt kors"
+    },
+    {
+     "char": "✠",
+     "label": "Malteserkors"
+    },
+    {
+     "char": "☦",
+     "label": "Ortodoxt kors"
+    },
+    {
+     "char": "☧",
+     "label": "Kristusmonogram (Chi Rho)"
+    },
+    {
+     "char": "☨",
+     "label": "Lorrainekors"
+    }
+   ]
+  },
+  {
+   "id": "decorative-crosses",
+   "label": "Dekorativa och tjocka korstecken",
+   "h2": "Dekorativa och tjocka korstecken",
+   "intro": "Feta, dekorativa och stiliserade korsformer för betoning och visuell design.",
+   "symbols": [
+    {
+     "char": "✙",
+     "label": "Konturerat grekiskt kors"
+    },
+    {
+     "char": "✚",
+     "label": "Tjockt grekiskt kors"
+    },
+    {
+     "char": "✛",
+     "label": "Kors med öppen mitt"
+    },
+    {
+     "char": "✜",
+     "label": "Tjockt kors med öppen mitt"
+    },
+    {
+     "char": "✡",
+     "label": "Davidsstjärna"
+    },
+    {
+     "char": "✢",
+     "label": "Asterisk med fyra droppformade uddar"
+    },
+    {
+     "char": "✣",
+     "label": "Asterisk med fyra ballongformade uddar"
+    },
+    {
+     "char": "✤",
+     "label": "Tjock asterisk med fyra ballongformade uddar"
+    },
+    {
+     "char": "✥",
+     "label": "Asterisk med fyra klöverformade uddar"
+    }
+   ]
+  },
+  {
+   "id": "daggers",
+   "label": "Daggertecken",
+   "h2": "Daggertecken",
+   "intro": "Typografiska daggertecken som används för fotnoter, dödsnoteringar och särskild betoning.",
+   "symbols": [
+    {
+     "char": "†",
+     "label": "Daggertecken"
+    },
+    {
+     "char": "‡",
+     "label": "Dubbelt daggertecken"
+    },
+    {
+     "char": "⸵",
+     "label": "Vänt daggertecken"
+    },
+    {
+     "char": "⸸",
+     "label": "Upphöjd interpolationsmarkör"
+    },
+    {
+     "char": "🗡",
+     "label": "Dolk-emoji"
+    },
+    {
+     "char": "⚔",
+     "label": "Korsade svärd"
+    }
+   ]
+  },
+  {
+   "id": "special-cross",
+   "label": "Särskilda korstecken",
+   "h2": "Särskilda korstecken",
+   "intro": "Andra noterbara korsrelaterade tecken från olika Unicode-block.",
+   "symbols": [
+    {
+     "char": "╳",
+     "label": "Diagonalkors (ramritning)"
+    },
+    {
+     "char": "⨉",
+     "label": "N-ställig gånger-operator"
+    },
+    {
+     "char": "⦻",
+     "label": "Cirkel med överlagrat X"
+    },
+    {
+     "char": "⊗",
+     "label": "Cirklat gångertecken"
+    }
+   ]
+  },
+  {
+   "id": "warning-cancel",
+   "label": "Varnings-, avbryt- och fel-X",
+   "h2": "Varnings-, avbryt- och fel-X",
+   "intro": "Kors- och X-markeringar som används för ”nej”, ”avbruten”, ”fel” och ”ej tillåtet” i gränssnitt, formulär och statusmeddelanden – både enfärgade tecken och emoji i full färg.",
+   "symbols": [
+    {
+     "char": "❌",
+     "label": "Kryss"
+    },
+    {
+     "char": "❎",
+     "label": "Kryssknapp"
+    },
+    {
+     "char": "🚫",
+     "label": "Förbjudet"
+    },
+    {
+     "char": "⛔",
+     "label": "Förbjuden infart"
+    },
+    {
+     "char": "🛑",
+     "label": "Stopp"
+    },
+    {
+     "char": "⊘",
+     "label": "Förbudstecken"
+    },
+    {
+     "char": "✗",
+     "label": "Avvisad ✗"
+    },
+    {
+     "char": "✘ Avbruten",
+     "label": "Avbruten-rad"
+    }
+   ]
+  }
+ ]
+}

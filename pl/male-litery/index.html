@@ -47,7 +47,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
        crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generator Małych Liter — ᴍᴀłᴇ ʟɪᴛᴇʀʏ i kapitaliki do skopiowania | UltraTextGen</title>
+  <title>Generator Małych Liter: kapitaliki do skopiowania | UltraTextGen</title>
   <meta name="description" content="Darmowy generator małych liter: zamień tekst na mały tekst Unicode i kapitaliki do skopiowania i wklejenia — do bio na Instagramie, Discordzie, TikToku, X i nicków. Od razu, bez rejestracji.">
   <link rel="canonical" href="https://ultratextgen.com/pl/male-litery/">
   <link rel="alternate" hreflang="en" href="https://ultratextgen.com/category/small-text/">
@@ -75,7 +75,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <meta name="robots" content="index, follow">
   <meta property="og:site_name" content="UltraTextGen">
-  <meta property="og:title" content="Generator Małych Liter — ᴍᴀłᴇ ʟɪᴛᴇʀʏ i kapitaliki do skopiowania | UltraTextGen">
+  <meta property="og:title" content="Generator Małych Liter: kapitaliki do skopiowania | UltraTextGen">
   <meta property="og:description" content="Darmowy generator małych liter — mały tekst Unicode i kapitaliki do skopiowania i wklejenia na Instagram, TikTok, Discord i X. Od razu, bez rejestracji.">
   <meta property="og:url" content="https://ultratextgen.com/pl/male-litery/">
   <meta property="og:type" content="website">
@@ -83,9 +83,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/png">
-  <meta property="og:image:alt" content="Generator Małych Liter — ᴍᴀłᴇ ʟɪᴛᴇʀʏ i kapitaliki do skopiowania | UltraTextGen">
+  <meta property="og:image:alt" content="Generator Małych Liter: kapitaliki do skopiowania | UltraTextGen">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Generator Małych Liter — ᴍᴀłᴇ ʟɪᴛᴇʀʏ i kapitaliki do skopiowania | UltraTextGen">
+  <meta name="twitter:title" content="Generator Małych Liter: kapitaliki do skopiowania | UltraTextGen">
   <meta name="twitter:description" content="Darmowy generator małych liter — mały tekst Unicode i kapitaliki do skopiowania i wklejenia do social mediów, czatów i nicków.">
   <meta name="twitter:image" content="https://ultratextgen.com/assets/og/pl-male-litery.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -223,6 +223,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <div class="input-wrapper">
           <textarea class="main-input" id="mainInput" placeholder="Wpisz tekst, słowo lub imię…" maxlength="500" autofocus></textarea>
           <span class="char-count"><span id="charCount">0</span>/500</span>
+        </div>
+
+        <!-- Accent-aware hint: shows only when the input contains diacritics -->
+        <div class="accent-notice" id="accentNotice" role="note" hidden>
+          <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+          <span class="accent-notice-text">Twój tekst zawiera polskie znaki. Pogrubienie, kursywa, gotyk i większość innych stylów zachowują teraz <b>ą</b>, <b>ę</b> i <b>ś</b> ze znakiem — tylko nieliczne (tekst do góry nogami, oraz <b>ł</b>, które nie ma formy ze znakiem) wracają do zwykłych liter. <a href="/guide/fancy-fonts-and-accents/">Które style zachowują znaki diakrytyczne →</a></span>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Zamknij">✕</button>
         </div>
 
         <!-- Decoration Selector -->
@@ -371,6 +378,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </script>
   <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
+  <script src="/js/share/share-core.js" defer></script>
+  <script src="/js/saved/saved-items.js" defer></script>
   <script src="/script.js" defer></script>
+  <script src="/i18n.js" defer></script>
+  <script src="/accent-notice.js" defer></script>
   <script src="/footer.js" defer></script>
 </body></html>

@@ -821,11 +821,17 @@
         template_copy_count: activeTemplate ? getTemplateCopyCount(activeTemplate) : null,
         style_id: state.selectedStyleId
       });
-      window.dataLayer.push({
-        event: "copy_text",
-        copy_method: "main_bar",
-        template_id: activeTemplate ? activeTemplate.id : null
-      });
+      if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
+        window.UltraTextGen.trackCopy("main_bar", text, {
+          template_id: activeTemplate ? activeTemplate.id : null
+        });
+      } else {
+        window.dataLayer.push({
+          event: "copy_text",
+          copy_method: "main_bar",
+          template_id: activeTemplate ? activeTemplate.id : null
+        });
+      }
       showCopyToast("Copied!");
       setSelectionHint("Copied.");
     } catch (error) {

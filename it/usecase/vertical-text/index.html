@@ -50,7 +50,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generatore di Testo Verticale — Scrittura Verticale da Copiare | UltraTextGen</title>
+  <title>Generatore di Testo Verticale da Copiare e Incollare | UltraTextGen</title>
   <meta name="description" content="Generatore di testo verticale gratuito: scrittura verticale da copiare e incollare. Impila lettere verticali per bio Instagram, TikTok, Discord, WhatsApp e X.">
   <link rel="canonical" href="https://ultratextgen.com/it/usecase/vertical-text/">
   <link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/usecase/vertical-text/">
@@ -118,7 +118,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Posso combinare il testo verticale con gli stili di font?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sì — è esattamente ciò che fa questo generatore. Ogni scheda di stile mostra il tuo testo convertito in un font Unicode (grassetto, corsivo, gotico, a bolle, ecc.) e poi impilato in verticale. Scegli lo stile che rispecchia il tuo mood e copia la versione verticale."
+        "text": "Sì, è esattamente ciò che fa questo generatore. Ogni scheda di stile mostra il tuo testo convertito in un font Unicode (grassetto, corsivo, gotico, a bolle, ecc.) e poi impilato in verticale. Scegli lo stile che rispecchia il tuo mood e copia la versione verticale."
       }
     },
     {
@@ -242,6 +242,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <div class="input-wrapper">
           <textarea class="main-input" id="mainInput" placeholder="Digita il tuo testo qui…" maxlength="500"></textarea>
           <span class="char-count"><span id="charCount">0</span>/500</span>
+        </div>
+
+        <!-- Accent-aware hint: shows only when the input contains diacritics -->
+        <div class="accent-notice" id="accentNotice" role="note" hidden>
+          <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+          <span class="accent-notice-text">Il tuo testo contiene lettere accentate. Grassetto, corsivo, gotico e quasi tutti gli altri stili ora mantengono <b>à</b>, <b>è</b> e <b>ù</b> con l’accento — solo alcuni (il testo capovolto, e lettere senza forma accentata come <b>ł đ ø ß</b>) tornano in lettere normali. <a href="/guide/fancy-fonts-and-accents/">Quali stili tengono gli accenti →</a></span>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Chiudi">✕</button>
         </div>
 
         <!-- Pannello controlli verticale: popolato da verticalPageController.js -->
@@ -414,7 +421,7 @@ y   w</pre></div>
     </svg>
   </button>
   <div class="faq-answer">
-    Sì — è esattamente ciò che fa questo generatore. Ogni scheda di stile mostra il tuo testo convertito in un font Unicode (grassetto, corsivo, gotico, a bolle, ecc.) e poi impilato in verticale.
+    Sì, è esattamente ciò che fa questo generatore. Ogni scheda di stile mostra il tuo testo convertito in un font Unicode (grassetto, corsivo, gotico, a bolle, ecc.) e poi impilato in verticale.
     Scegli lo stile che rispecchia il tuo mood e copia la versione verticale.
   </div>
 </div>
@@ -705,7 +712,11 @@ y   w</pre></div>
   <script src="/js/vertical/verticalLayouts.js" defer></script>
   <script src="/js/vertical/verticalDecorators.js" defer></script>
   <script src="/js/vertical/verticalDecoratorData.js" defer></script>
+  <script src="/js/share/share-core.js" defer></script>
+  <script src="/js/saved/saved-items.js" defer></script>
   <script src="/script.js" defer></script>
+  <script src="/i18n.js" defer></script>
+  <script src="/accent-notice.js" defer></script>
   <script src="/js/vertical/verticalPageController.js" defer></script>
 
 <script src="/footer.js" defer></script>

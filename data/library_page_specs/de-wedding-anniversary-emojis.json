@@ -1,0 +1,345 @@
+{
+ "slug": "hochzeitssymbole",
+ "lang": "de",
+ "copy_pattern": "collection",
+ "title": "Hochzeitssymbole & Hochzeits-Emojis zum Kopieren — auch Silber- und Goldhochzeit | UltraTextGen",
+ "meta_description": "Hochzeitssymbole zum Kopieren: Ringe, Brautpaar, Herzen, Sektgläser und Blumen — für Einladung, Glückwunsch und die Jubiläen von Silber- bis Goldhochzeit.",
+ "breadcrumb": "Hochzeitssymbole",
+ "hero_h1": "Hochzeitssymbole",
+ "hero_tagline": "Ringe, Brautpaar, Herzen und Sekt — für Einladung, Glückwunsch und Hochzeitstag.",
+ "intro": "Ob Einladung, WhatsApp-Glückwunsch oder Beitrag zum Hochzeitstag: die passenden Zeichen sind fast immer dieselben — ein Ring, ein Paar, ein Herz, ein Glas. Diese Seite sammelt sie nach Anlass sortiert und schließt mit fertigen Kombinationen, die sich mit einem Klick kopieren lassen. Für die Jubiläen weiter unten ein eigener Abschnitt: Silberhochzeit und Goldhochzeit haben ihre eigene Bildsprache.",
+ "sections": [
+  {
+   "id": "ringe",
+   "label": "Ringe & Antrag",
+   "h2": "Ringe, Kirche und Antrag",
+   "intro": "Was den Anlass selbst bezeichnet.",
+   "symbols": [
+    {
+     "char": "💍",
+     "label": "Verlobungsring"
+    },
+    {
+     "char": "💎",
+     "label": "Edelstein"
+    },
+    {
+     "char": "💒",
+     "label": "Hochzeit"
+    },
+    {
+     "char": "⛪",
+     "label": "Kirche"
+    },
+    {
+     "char": "💌",
+     "label": "Liebesbrief"
+    },
+    {
+     "char": "🕊",
+     "label": "Taube"
+    }
+   ]
+  },
+  {
+   "id": "paar",
+   "label": "Brautpaar",
+   "h2": "Braut, Bräutigam und Paare",
+   "intro": "Alle Paarkonstellationen, die Unicode kennt.",
+   "symbols": [
+    {
+     "char": "👰",
+     "label": "Person mit Schleier"
+    },
+    {
+     "char": "🤵",
+     "label": "Person im Smoking"
+    },
+    {
+     "char": "💑",
+     "label": "Paar mit Herz"
+    },
+    {
+     "char": "💏",
+     "label": "Kuss"
+    },
+    {
+     "char": "👫",
+     "label": "Frau und Mann Hand in Hand"
+    },
+    {
+     "char": "👬",
+     "label": "Männer Hand in Hand"
+    },
+    {
+     "char": "👭",
+     "label": "Frauen Hand in Hand"
+    }
+   ]
+  },
+  {
+   "id": "herzen",
+   "label": "Herzen",
+   "h2": "Romantische Herzen",
+   "intro": "Die Herzen, die zu einer Hochzeit passen — nicht jedes tut das.",
+   "symbols": [
+    {
+     "char": "❤",
+     "label": "Rotes Herz"
+    },
+    {
+     "char": "💕",
+     "label": "Zwei Herzen"
+    },
+    {
+     "char": "💖",
+     "label": "Funkelndes Herz"
+    },
+    {
+     "char": "💘",
+     "label": "Herz mit Pfeil"
+    },
+    {
+     "char": "💝",
+     "label": "Herz mit Schleife"
+    },
+    {
+     "char": "💞",
+     "label": "Kreisende Herzen"
+    },
+    {
+     "char": "🤍",
+     "label": "Weißes Herz"
+    }
+   ]
+  },
+  {
+   "id": "feier",
+   "label": "Feier",
+   "h2": "Anstoßen, Glocken und Blumen",
+   "intro": "Für den Empfang und die Glückwünsche.",
+   "symbols": [
+    {
+     "char": "🥂",
+     "label": "Anstoßende Gläser"
+    },
+    {
+     "char": "🍾",
+     "label": "Sektflasche"
+    },
+    {
+     "char": "💐",
+     "label": "Blumenstrauß"
+    },
+    {
+     "char": "🌹",
+     "label": "Rose"
+    },
+    {
+     "char": "🌷",
+     "label": "Tulpe"
+    },
+    {
+     "char": "🔔",
+     "label": "Glocke"
+    },
+    {
+     "char": "🎊",
+     "label": "Konfettiball"
+    },
+    {
+     "char": "✨",
+     "label": "Funkeln"
+    }
+   ]
+  },
+  {
+   "id": "details",
+   "label": "Details",
+   "h2": "Kleid, Kerzen und Details",
+   "intro": "Die kleineren Zeichen, die eine Einladung schmücken.",
+   "symbols": [
+    {
+     "char": "👗",
+     "label": "Kleid"
+    },
+    {
+     "char": "🕯",
+     "label": "Kerze"
+    },
+    {
+     "char": "🎀",
+     "label": "Schleife"
+    },
+    {
+     "char": "🦢",
+     "label": "Schwan"
+    },
+    {
+     "char": "🌸",
+     "label": "Kirschblüte"
+    },
+    {
+     "char": "🍰",
+     "label": "Torte"
+    }
+   ]
+  }
+ ],
+ "collection_section": {
+  "id": "combo-sets",
+  "label": "Fertige Kombinationen",
+  "h2": "Fertige Hochzeits-Kombinationen",
+  "intro": "Komplette Kombinationen mit einem Klick kopieren — für Einladung, Glückwunsch und Jubiläum."
+ },
+ "collection_container_id": "weddingSetsContainer",
+ "collections": [
+  {
+   "name": "Herzlichen Glückwunsch",
+   "flags": [
+    "💍",
+    "❤",
+    "🥂"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Save the Date",
+   "flags": [
+    "💒",
+    "💍",
+    "✨"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Zur Vermählung",
+   "flags": [
+    "👰",
+    "🤵",
+    "💕"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Silberhochzeit",
+   "flags": [
+    "💍",
+    "🤍",
+    "🥂",
+    "✨"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Goldene Hochzeit",
+   "flags": [
+    "💍",
+    "💛",
+    "🔔",
+    "🌹"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Alles Liebe",
+   "flags": [
+    "💐",
+    "❤",
+    "🕊"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Auf das Brautpaar",
+   "flags": [
+    "🥂",
+    "🍾",
+    "🎊"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Standesamt",
+   "flags": [
+    "💍",
+    "💌",
+    "🌷"
+   ],
+   "defaultFormat": "inline"
+  }
+ ],
+ "faq_h2": "Häufige Fragen zu Hochzeitssymbolen",
+ "faq": [
+  {
+   "q": "Welche Symbole passen zur Silberhochzeit?",
+   "a": "25 Jahre werden mit Silber verbunden, also mit hellen, klaren Zeichen: 🤍 weißes Herz, ✨ Funkeln, 💍 Ring und 🥂. Ein rotes Herz wirkt eher nach Verliebtheit als nach fünfundzwanzig gemeinsamen Jahren — für Jubiläen sind die zurückhaltenden Zeichen die passenderen."
+  },
+  {
+   "q": "Und zur goldenen Hochzeit?",
+   "a": "50 Jahre: 💛 gelbes Herz, 👑, 🔔 und 💍. Die Farbe trägt hier die Bedeutung, deshalb ist das gelbe Herz das naheliegendste Zeichen — es meint in diesem Zusammenhang Gold, nicht Freundschaft."
+  },
+  {
+   "q": "Gibt es ein Emoji für Eheringe?",
+   "a": "Nur den einzelnen Ring 💍, und der zeigt einen Verlobungsring mit Stein. Ein Paar schlichter Trauringe existiert in Unicode nicht — üblich ist deshalb 💍 doppelt oder 💍 zusammen mit 💒."
+  },
+  {
+   "q": "Was bedeutet die Taube 🕊?",
+   "a": "Frieden im Allgemeinen, bei Hochzeiten aber Treue und Neuanfang — der Brauch, Tauben steigen zu lassen, steht dahinter. In Beileidsnachrichten trägt dasselbe Zeichen eine ganz andere Bedeutung, deshalb nie allein verschicken."
+  },
+  {
+   "q": "Kann ich die Zeichen auf eine gedruckte Einladung setzen?",
+   "a": "Im Layoutprogramm ja, aber Emojis werden im Druck oft schwarzweiß oder gar nicht ausgegeben. Für Gedrucktes sind die einfarbigen Unicode-Zeichen ❤ ✿ ❦ ✤ die sicherere Wahl; die bunten Emojis gehören auf den Bildschirm."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Warum die Farbe des Herzens den Anlass verrät",
+   "body": "Bei Hochzeitsglückwünschen trägt die Herzfarbe mehr Information, als den meisten bewusst ist. ❤ rot meint Verliebtheit und passt zur Trauung selbst. 🤍 weiß liest sich als Reinheit und Ruhe — die übliche Wahl für Silberhochzeit und für alles, was zurückhaltend wirken soll. 💛 gelb steht sonst für Freundschaft, im Jubiläumszusammenhang aber eindeutig für Gold. Und 💜 lila wird bei Hochzeiten selten verwendet, weil es stark mit Fankultur besetzt ist. Wer unsicher ist, nimmt ❤ zur Trauung und 🤍 zu jedem Jubiläum."
+  },
+  {
+   "h2": "Was Unicode bei Hochzeiten nicht abbildet",
+   "body": "Auffällig ist, was fehlt: es gibt kein Emoji für Trauringe als Paar, keines für einen Ehevertrag, keines für die Hochzeitstorte mit Figuren obendrauf (🍰 ist ein Tortenstück, 🎂 eine Geburtstagstorte mit Kerzen). Die Lücken kommen daher, dass der Emoji-Satz aus japanischen Mobilfunkzeichen der Neunzigerjahre gewachsen ist und westliche Hochzeitsbräuche darin nur am Rand vorkamen. In der Praxis wird deshalb kombiniert — 💒 plus 💍 plus 🥂 sagt zusammen, wofür es kein einzelnes Zeichen gibt."
+  }
+ ],
+ "related": [
+  {
+   "href": "/de/library/herz-symbole/",
+   "title": "Herz-Symbole",
+   "desc": "Herzen in allen Farben und Formen, dazu die Herz-Zeichen aus Unicode."
+  },
+  {
+   "href": "/de/library/blumen-symbole/",
+   "title": "Blumen-Symbole",
+   "desc": "Blüten, Sträuße und florale Ornamente zum Kopieren."
+  },
+  {
+   "href": "/de/library/party-emojis/",
+   "title": "Party- und Feier-Emojis",
+   "desc": "Konfetti, Sekt und Ballons für jeden Anlass."
+  },
+  {
+   "href": "/de/library/emoji-bedeutung/",
+   "title": "Emoji Bedeutung",
+   "desc": "Was die gebräuchlichsten Emojis wirklich aussagen."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/de/library/hochzeitssymbole/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/wedding-anniversary-emojis/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/hochzeitssymbole/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/wedding-anniversary-emojis/"
+  }
+ ],
+ "page_type": "library",
+ "date_published": "2026-08-16",
+ "date_modified": "2026-08-16"
+}

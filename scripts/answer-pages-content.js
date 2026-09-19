@@ -10,7 +10,7 @@ module.exports = [
   slug: 'do-fancy-fonts-work-on-iphone',
   crumb: 'Do Fancy Fonts Work on iPhone',
   pageTitle: 'Do Fancy Fonts Work on iPhone?',
-  metaDesc: "Yes — iPhones render bold, italic, script and small caps fine. But iOS shows the more decorative styles as empty boxes because it rarely falls back to another font. Here's what's safe.",
+  metaDesc: "Yes, iPhones render bold, italic, script and small caps fine. But iOS shows the more decorative styles as empty boxes because it rarely falls back to another font. Here's what's safe.",
   h1: 'Do Fancy Fonts Work on iPhone?',
   tagline: 'Mostly yes — but iOS is picky in one specific way that turns the fancier styles into empty boxes. Here’s what renders and what to avoid.',
   shortAnswer: 'Yes, for the common styles. iPhones ship fonts that cover <strong>bold, italic, sans, small caps and monospace</strong>, so those copy-and-paste fine into names, bios and Messages. The catch is that iOS is <strong>strict about fallback</strong>: if a style uses characters the system font doesn’t have, iOS often draws an empty box (□) instead of borrowing a glyph from another font. So the most decorative styles — fraktur, double-struck and obscure symbols — are the ones that break on iPhone.',
@@ -1023,11 +1023,11 @@ module.exports = [
           <tr><th scope="col">Where</th><th scope="col">Font</th><th scope="col">Colour &amp; effect</th></tr>
         </thead>
         <tbody>
-          <tr><td>Your profile / profile panel</td><td>Yes</td><td>Yes — the full style</td></tr>
+          <tr><td>Your profile / profile panel</td><td>Yes</td><td>Yes, the full style</td></tr>
           <tr><td>DM and group-chat member lists</td><td>Yes</td><td>Yes</td></tr>
           <tr><td>DM list (sidebar)</td><td>Yes</td><td>Hover to see it</td></tr>
           <tr><td>Message author names</td><td>Yes</td><td>Hover to see it</td></tr>
-          <tr><td>Inside a server</td><td>Yes</td><td><strong>No — your role colour wins</strong></td></tr>
+          <tr><td>Inside a server</td><td>Yes</td><td><strong>No, your role colour wins</strong></td></tr>
           <tr><td>Your <code>@username</code></td><td>No</td><td>No</td></tr>
         </tbody>
       </table>

@@ -1,0 +1,257 @@
+{
+ "slug": "wassymbolen",
+ "lang": "nl",
+ "title": "Wassymbolen & Wasvoorschriften — Betekenis van Alle Wasetiket-Tekens | UltraTextGen",
+ "meta_description": "Wassymbolen begrijpen: wassen, bleken, drogen, strijken en alle doorgestreepte tekens uitgelegd — met Unicode-tekens om te kopiëren voor etiketten, notities en berichten.",
+ "breadcrumb": "Wassymbolen",
+ "hero_h1": "Wassymbolen en hun betekenis",
+ "hero_tagline": "Wassen, bleken, drogen, strijken — de vijf tekengroepen op elk wasetiket, met Unicode-tekens om te kopiëren.",
+ "intro": "Op elk wasetiket staan dezelfde vijf families tekens: het wasteiltje, de bleekdriehoek, de droogcirkel, het strijkijzer en de cirkel voor de stomerij. Een kruis door een van die tekens betekent altijd „niet doen“. Deze pagina legt het systeem uit en geeft de Unicode-tekens waarmee je wasvoorschriften in gewone tekst kunt schrijven — voor een briefje in de wasruimte, een overdrachtslijst of een productomschrijving in een webshop.",
+ "sections": [
+  {
+   "id": "wassen",
+   "label": "Wassen",
+   "h2": "Wassen en water",
+   "intro": "Het wasteiltje staat voor de wasbeurt; het getal erin geeft de maximumtemperatuur, strepen eronder het fijnwasprogramma.",
+   "symbols": [
+    {
+     "char": "🧺",
+     "label": "Wasmand"
+    },
+    {
+     "char": "🧼",
+     "label": "Zeep"
+    },
+    {
+     "char": "🧴",
+     "label": "Fles wasmiddel"
+    },
+    {
+     "char": "💧",
+     "label": "Waterdruppel"
+    },
+    {
+     "char": "🚿",
+     "label": "Douche"
+    },
+    {
+     "char": "🛁",
+     "label": "Bad"
+    },
+    {
+     "char": "♨",
+     "label": "Warmwaterbron (heet wassen)"
+    },
+    {
+     "char": "🌊",
+     "label": "Golf"
+    }
+   ]
+  },
+  {
+   "id": "bleken",
+   "label": "Bleken",
+   "h2": "Bleken",
+   "intro": "Het bleekteken is een driehoek. Leeg betekent bleken toegestaan, doorgestreept betekent niet bleken.",
+   "symbols": [
+    {
+     "char": "△",
+     "label": "Witte driehoek (bleken mag)"
+    },
+    {
+     "char": "▲",
+     "label": "Zwarte driehoek"
+    },
+    {
+     "char": "⚠",
+     "label": "Waarschuwingsteken"
+    },
+    {
+     "char": "🧪",
+     "label": "Reageerbuis (chemicaliën)"
+    },
+    {
+     "char": "☣",
+     "label": "Biologisch gevaar"
+    },
+    {
+     "char": "🚫",
+     "label": "Verboden (niet bleken)"
+    }
+   ]
+  },
+  {
+   "id": "drogen",
+   "label": "Drogen",
+   "h2": "Drogen en de droger",
+   "intro": "De cirkel in het vierkant staat voor de wasdroger, de stippen erin voor de temperatuur. Zon en vierkant staan voor drogen aan de lijn.",
+   "symbols": [
+    {
+     "char": "☀",
+     "label": "Zon (drogen aan de lijn)"
+    },
+    {
+     "char": "🌞",
+     "label": "Zon met gezicht"
+    },
+    {
+     "char": "◯",
+     "label": "Grote cirkel (wasdroger)"
+    },
+    {
+     "char": "□",
+     "label": "Wit vierkant (liggend drogen)"
+    },
+    {
+     "char": "💨",
+     "label": "Luchtstroom (aan de lucht drogen)"
+    },
+    {
+     "char": "🧷",
+     "label": "Veiligheidsspeld (wasknijper)"
+    },
+    {
+     "char": "🌡",
+     "label": "Thermometer (droogtemperatuur)"
+    }
+   ]
+  },
+  {
+   "id": "strijken",
+   "label": "Strijken",
+   "h2": "Strijken en hitte",
+   "intro": "Eén, twee of drie stippen in het strijkijzer betekenen lage, gemiddelde en hoge temperatuur. Deze stiptekens geven dezelfde schaal weer.",
+   "symbols": [
+    {
+     "char": "🔥",
+     "label": "Vuur (hoge hitte)"
+    },
+    {
+     "char": "♨",
+     "label": "Warmwaterbron (stoom)"
+    },
+    {
+     "char": "•",
+     "label": "Eén stip (laag, tot 110 °C)"
+    },
+    {
+     "char": "‥",
+     "label": "Twee stippen (gemiddeld, tot 150 °C)"
+    },
+    {
+     "char": "…",
+     "label": "Drie stippen (hoog, tot 200 °C)"
+    },
+    {
+     "char": "♻",
+     "label": "Recycling (ecoprogramma)"
+    }
+   ]
+  },
+  {
+   "id": "verboden",
+   "label": "Doorgestreept",
+   "h2": "Doorgestreepte tekens: „niet doen“",
+   "intro": "Een kruis door een wasteken verbiedt de behandeling. Samen met de tekens hierboven schrijf je zo „niet wassen“, „niet bleken“, „niet drogen“ en „niet strijken“.",
+   "symbols": [
+    {
+     "char": "🚫",
+     "label": "Verbodsteken"
+    },
+    {
+     "char": "⛔",
+     "label": "Verboden toegang"
+    },
+    {
+     "char": "❌",
+     "label": "Kruisteken"
+    },
+    {
+     "char": "✗",
+     "label": "Kruisje (dun)"
+    },
+    {
+     "char": "✘",
+     "label": "Kruisje (vet)"
+    },
+    {
+     "char": "⊘",
+     "label": "Doorgestreepte cirkel"
+    }
+   ]
+  }
+ ],
+ "faq_h2": "Veelgestelde vragen over wassymbolen",
+ "faq": [
+  {
+   "q": "Wat betekent het droogsymbool met één stip?",
+   "a": "Een cirkel in een vierkant met één stip betekent: drogen in de wasdroger mag, maar op lage temperatuur. Twee stippen staan voor normale temperatuur, en een doorgestreepte cirkel in een vierkant betekent dat het kledingstuk niet in de droger mag."
+  },
+  {
+   "q": "Wat betekent het getal in het wasteiltje?",
+   "a": "De maximumtemperatuur in graden Celsius — 30, 40, 60 of 95. Eén streep onder het teiltje betekent een kortere, mildere cyclus, twee strepen fijnwas, en een hand in het teiltje handwas."
+  },
+  {
+   "q": "Hoe zie ik dat iets niet gewassen mag worden?",
+   "a": "Aan het doorgestreepte wasteiltje. Een kruis door een wasteken betekent altijd „niet doen“ — dat geldt voor alle vijf de tekenfamilies."
+  },
+  {
+   "q": "Wat betekent de cirkel zonder vierkant?",
+   "a": "De losse cirkel staat voor professionele reiniging (de stomerij), niet voor de droger. De letter erin (P of F) vertelt de stomerij welk oplosmiddel is toegestaan; voor thuisgebruik telt vooral of hij doorgestreept is."
+  },
+  {
+   "q": "Zijn dit de echte wassymbolen?",
+   "a": "Nee, en dat verschil is belangrijk. De genormeerde wassymbolen van GINETEX zijn beeldmerken en staan niet in Unicode. Wat hier staat zijn de dichtstbijzijnde Unicode-tekens waarmee je een wasvoorschrift in gewone tekst kunt uitdrukken — handig voor een briefje of een omschrijving, maar geen vervanging van een gedrukt etiket."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Vijf tekens, één systeem",
+   "body": "Een wasetiket oogt rommelig maar volgt een strakke logica: vijf grondtekens in steeds dezelfde volgorde — wasteiltje, driehoek, vierkant, strijkijzer, cirkel. Wat een teken preciezer maakt staat erin (een getal, een stip, een letter) of eronder (één streep voor mild, twee voor zeer mild). Wie die grammatica eenmaal doorheeft, hoeft geen enkel etiket meer uit het hoofd te leren: het teken noemt de behandeling, de inhoud noemt de grens, en het kruis verbiedt hem."
+  },
+  {
+   "h2": "Waarom deze tekens niet in Unicode staan",
+   "body": "De genormeerde wassymbolen zijn eigendom van GINETEX en beschermd als beeldmerk — Unicode neemt beschermde tekensystemen in principe niet op. Er bestaat dus geen teken voor „wasteiltje 40 graden“ dat je in een bericht kunt plakken. Voor lopende tekst blijft de omweg via de tekens hierboven: een waterdruppel met een temperatuur zegt hetzelfde als het etiket, alleen dan in woorden."
+  }
+ ],
+ "related": [
+  {
+   "href": "/nl/library/speciale-tekens/",
+   "title": "Speciale tekens kopiëren",
+   "desc": "Alle bijzondere tekens en symbolen op één plek, met één klik te kopiëren."
+  },
+  {
+   "href": "/nl/library/vinkje/",
+   "title": "Vinkjes en kruisjes",
+   "desc": "Vinkjes, kruisjes en verbodstekens voor lijstjes en tabellen."
+  },
+  {
+   "href": "/nl/library/pijl-symbolen/",
+   "title": "Pijlsymbolen",
+   "desc": "Pijlen in alle richtingen en stijlen om te kopiëren en plakken."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/nl/library/wassymbolen/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/laundry-care-symbols/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/waschsymbole/"
+  },
+  {
+   "lang": "nl",
+   "href": "https://ultratextgen.com/nl/library/wassymbolen/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/laundry-care-symbols/"
+  }
+ ],
+ "page_type": "library",
+ "copy_pattern": "single",
+ "date_published": "2026-08-16",
+ "date_modified": "2026-08-16"
+}

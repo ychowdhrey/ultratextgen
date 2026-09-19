@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/sunglasses-symbol/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/sonnenbrille-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/sunglasses-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/sunglasses-symbol/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/sonnenbrille-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/sunglasses-symbol/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
   "sections": [
     {
       "id": "die-glyphe",
@@ -29,8 +37,14 @@
       "h2": "Sonnenbrillen-Emoji",
       "intro": "Die zwei zentralen Unicode-Glyphen: das lächelnde Gesicht mit Sonnenbrille und das schlichte Sonnenbrillen-Objekt.",
       "symbols": [
-        { "char": "😎", "label": "Lächelndes Gesicht mit Sonnenbrille (U+1F60E)" },
-        { "char": "🕶️", "label": "Sonnenbrille (U+1F576)" }
+        {
+          "char": "😎",
+          "label": "Lächelndes Gesicht mit Sonnenbrille (U+1F60E)"
+        },
+        {
+          "char": "🕶️",
+          "label": "Sonnenbrille (U+1F576)"
+        }
       ]
     },
     {
@@ -39,9 +53,18 @@
       "h2": "Cool & selbstsichere Gesichter, mit denen es kombiniert wird",
       "intro": "Emojis mit ähnlich überlegenem, selbstsicherem oder unbeeindrucktem Ton.",
       "symbols": [
-        { "char": "😏", "label": "Süffisant lächelndes Gesicht" },
-        { "char": "🆒", "label": "Cool-Button" },
-        { "char": "💪", "label": "Angespannter Bizeps" }
+        {
+          "char": "😏",
+          "label": "Süffisant lächelndes Gesicht"
+        },
+        {
+          "char": "🆒",
+          "label": "Cool-Button"
+        },
+        {
+          "char": "💪",
+          "label": "Angespannter Bizeps"
+        }
       ]
     },
     {
@@ -50,8 +73,14 @@
       "h2": "Text- & Kaomoji-Alternativen",
       "intro": "Reine Textwege, um dieselbe coole, sonnenbebrillte Energie auszudrücken.",
       "symbols": [
-        { "char": "B-)", "label": "Sonnenbrillen-Smiley-Kaomoji" },
-        { "char": "(⌐■_■)", "label": "„Deal-with-it“-Kaomoji" }
+        {
+          "char": "B-)",
+          "label": "Sonnenbrillen-Smiley-Kaomoji"
+        },
+        {
+          "char": "(⌐■_■)",
+          "label": "„Deal-with-it“-Kaomoji"
+        }
       ]
     }
   ],

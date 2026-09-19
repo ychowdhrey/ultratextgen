@@ -1,0 +1,176 @@
+{
+ "slug": "copyright-tecken",
+ "lang": "sv",
+ "page_type": "library",
+ "title": "Copyright-tecken att kopiera © ® ™ – varumärke och upphovsrätt",
+ "meta_description": "Kopiera copyright-tecken och varumärkestecken – ©, ®, ™, ℠, ℗ samt paragraf-, stycke- och referenstecken. Klicka på ett tecken för att kopiera det direkt.",
+ "breadcrumb": "Copyright-tecken, varumärke & juridiska symboler",
+ "hero_h1": "Copyright-tecken, varumärke & juridiska symboler",
+ "hero_tagline": "Alla copyright-, varumärkes- och juridiska dokumenttecken i Unicode – ©, ®, ™, ℠, ℗ samt paragraf-, stycke- och referenstecken. Klicka på ett tecken för att kopiera det direkt.",
+ "intro": "Juridiska tecken och immaterialrättstecken markerar ägande, registrering och rättigheter, medan referensmärken strukturerar formella dokument. Det här biblioteket samlar copyright- och registreringstecken, varumärkes- och tjänstemärkestecken, numero- och kontorsförkortningar samt paragraf-, stycke-, kors- och referenstecken som används i avtal och källhänvisningar.",
+ "date_published": "2026-09-10",
+ "date_modified": "2026-09-10",
+ "copy_pattern": "single",
+ "canonical": "https://ultratextgen.com/sv/library/copyright-tecken/",
+ "home_url": "https://ultratextgen.com/sv/",
+ "crumb_home": "Startsida",
+ "crumb_library": "Bibliotek",
+ "library_url": "https://ultratextgen.com/sv/library/",
+ "hreflang": [
+  {
+   "lang": "sv",
+   "href": "https://ultratextgen.com/sv/library/copyright-tecken/"
+  },
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/copyright-trademark-symbols/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/copyright-trademark-symbols/"
+  }
+ ],
+ "related": [
+  {
+   "href": "/sv/library/skiljetecken/",
+   "title": "Skiljetecken",
+   "desc": "Citationstecken, utropstecken, kors, stycketecken, interrobang och upp-och-nedvända tecken – skiljetecknen som inte finns på tangentbordet. Klicka på."
+  },
+  {
+   "href": "/sv/library/tangentbord-symboler/",
+   "title": "Tangentbordssymboler",
+   "desc": "Kommando, alternativ, skift och alla andra tangentsymboler för Mac och PC – perfekt för att skriva tydliga kortkommandon. Klicka på valfri symbol för."
+  },
+  {
+   "href": "/sv/library/valuta-symboler/",
+   "title": "Valutasymboler",
+   "desc": "En samlad referens över valutatecken, penningsymboler och finansiella Unicode-tecken. Klicka på ett tecken för att kopiera det direkt."
+  }
+ ],
+ "sections": [
+  {
+   "id": "copyright-registered",
+   "label": "Copyright- & registreringstecken",
+   "h2": "Copyright- & registreringstecken",
+   "intro": "Ägandetecken: copyright, registrerat varumärke, ljudinspelningscopyright och inringade bokstavsvarianter i stora och små former.",
+   "symbols": [
+    {
+     "char": "©",
+     "label": "Copyright-tecken"
+    },
+    {
+     "char": "®",
+     "label": "Registreringstecken"
+    },
+    {
+     "char": "℗",
+     "label": "Ljudinspelningscopyright"
+    },
+    {
+     "char": "Ⓒ",
+     "label": "Inringat stort C"
+    },
+    {
+     "char": "Ⓡ",
+     "label": "Inringat stort R"
+    },
+    {
+     "char": "ⓒ",
+     "label": "Inringat litet c"
+    },
+    {
+     "char": "ⓡ",
+     "label": "Inringat litet r"
+    }
+   ]
+  },
+  {
+   "id": "trademark-service",
+   "label": "Varumärkes- & tjänstemärkestecken",
+   "h2": "Varumärkes- & tjänstemärkestecken",
+   "intro": "Varumärkes- och tjänstemärkestecken som markerar varumärkes- och tjänsteidentifierare.",
+   "symbols": [
+    {
+     "char": "™",
+     "label": "Varumärkestecken"
+    },
+    {
+     "char": "℠",
+     "label": "Tjänstemärke"
+    }
+   ]
+  },
+  {
+   "id": "office-numero",
+   "label": "Numero- & kontorstecken",
+   "h2": "Numero- & kontorstecken",
+   "intro": "Bokstavsliknande kontorsförkortningar och numerotecknet som används i formell korrespondens.",
+   "symbols": [
+    {
+     "char": "№",
+     "label": "Numerotecken"
+    },
+    {
+     "char": "℅",
+     "label": "Care of"
+    },
+    {
+     "char": "℀",
+     "label": "Account of"
+    },
+    {
+     "char": "℁",
+     "label": "Adresserat till mottagaren"
+    },
+    {
+     "char": "℆",
+     "label": "Cada una"
+    }
+   ]
+  },
+  {
+   "id": "section-reference",
+   "label": "Paragraf-, stycke- & referenstecken",
+   "h2": "Paragraf-, stycke- & referenstecken",
+   "intro": "Dokumenttecken för paragrafer, stycken, fotnoter och källhänvisningar.",
+   "symbols": [
+    {
+     "char": "§",
+     "label": "Paragraftecken"
+    },
+    {
+     "char": "¶",
+     "label": "Stycketecken (pilcrow)"
+    },
+    {
+     "char": "†",
+     "label": "Kors (dagger)"
+    },
+    {
+     "char": "‡",
+     "label": "Dubbelkors"
+    },
+    {
+     "char": "※",
+     "label": "Referensmärke"
+    },
+    {
+     "char": "‖",
+     "label": "Dubbelt lodstreck"
+    },
+    {
+     "char": "⁂",
+     "label": "Asterism"
+    },
+    {
+     "char": "⁑",
+     "label": "Två asterisker (vertikala)"
+    },
+    {
+     "char": "⸿",
+     "label": "Capitulum"
+    }
+   ]
+  }
+ ]
+}

@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/bitcoin-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/bitcoin-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/bitcoin-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/bitcoin-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/bitcoin-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/bitcoin-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Ký Hiệu Bitcoin",
       "intro": "Ký hiệu Bitcoin trong Unicode, sẵn sàng để dán vào tiểu sử, tên hiển thị, giá tiền hay dòng quyên góp.",
       "symbols": [
-        { "char": "₿", "label": "Ký Hiệu Bitcoin (U+20BF)" },
-        { "char": "Ƀ", "label": "Chữ B Hoa Có Gạch Ngang" }
+        {
+          "char": "₿",
+          "label": "Ký Hiệu Bitcoin (U+20BF)"
+        },
+        {
+          "char": "Ƀ",
+          "label": "Chữ B Hoa Có Gạch Ngang"
+        }
       ]
     },
     {
@@ -38,9 +53,18 @@
       "h2": "Ký Hiệu Dễ Nhầm Lẫn",
       "intro": "Những ký tự thường bị gõ nhầm thay cho ₿ — cùng hình dáng chữ B có vạch dọc, nhưng lại là các ký tự và mã điểm hoàn toàn khác nhau.",
       "symbols": [
-        { "char": "฿", "label": "Ký Hiệu Baht Thái (U+0E3F)" },
-        { "char": "Ƀ", "label": "Chữ B Hoa Có Gạch Ngang (U+0243)" },
-        { "char": "B", "label": "Chữ Latin Hoa B" }
+        {
+          "char": "฿",
+          "label": "Ký Hiệu Baht Thái (U+0E3F)"
+        },
+        {
+          "char": "Ƀ",
+          "label": "Chữ B Hoa Có Gạch Ngang (U+0243)"
+        },
+        {
+          "char": "B",
+          "label": "Chữ Latin Hoa B"
+        }
       ]
     },
     {
@@ -49,20 +73,52 @@
       "h2": "Các Ký Hiệu Tiền Tệ Khác",
       "intro": "Các ký hiệu tiền tệ khác của thế giới — «hàng xóm» của ₿ trong khối Currency Symbols và trong hầu hết các ô nhập giá.",
       "symbols": [
-        { "char": "$", "label": "Ký Hiệu Đô La" },
-        { "char": "¢", "label": "Ký Hiệu Cent" },
-        { "char": "€", "label": "Ký Hiệu Euro" },
-        { "char": "£", "label": "Ký Hiệu Bảng Anh" },
-        { "char": "¥", "label": "Ký Hiệu Yên" },
-        { "char": "₹", "label": "Ký Hiệu Rupee Ấn Độ" },
-        { "char": "₩", "label": "Ký Hiệu Won" }
+        {
+          "char": "$",
+          "label": "Ký Hiệu Đô La"
+        },
+        {
+          "char": "¢",
+          "label": "Ký Hiệu Cent"
+        },
+        {
+          "char": "€",
+          "label": "Ký Hiệu Euro"
+        },
+        {
+          "char": "£",
+          "label": "Ký Hiệu Bảng Anh"
+        },
+        {
+          "char": "¥",
+          "label": "Ký Hiệu Yên"
+        },
+        {
+          "char": "₹",
+          "label": "Ký Hiệu Rupee Ấn Độ"
+        },
+        {
+          "char": "₩",
+          "label": "Ký Hiệu Won"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/currency-symbols/", "title": "Ký Hiệu Tiền Tệ", "desc": "Đô la, euro, bảng Anh, yên, rupee và các ký hiệu tiền tệ khác trên thế giới." },
-    { "href": "/vi/symbol/euro-sign/", "title": "Ký Hiệu Euro", "desc": "Một ký hiệu tiền tệ khác được thiết kế có chủ đích trong thời hiện đại, vào năm 1996." },
-    { "href": "/vi/symbol/rupee-sign/", "title": "Ký Hiệu Rupee", "desc": "Một ký hiệu tiền tệ hiện đại, được chọn qua cuộc thi công khai năm 2010." }
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Ký Hiệu Tiền Tệ",
+      "desc": "Đô la, euro, bảng Anh, yên, rupee và các ký hiệu tiền tệ khác trên thế giới."
+    },
+    {
+      "href": "/vi/symbol/euro-sign/",
+      "title": "Ký Hiệu Euro",
+      "desc": "Một ký hiệu tiền tệ khác được thiết kế có chủ đích trong thời hiện đại, vào năm 1996."
+    },
+    {
+      "href": "/vi/symbol/rupee-sign/",
+      "title": "Ký Hiệu Rupee",
+      "desc": "Một ký hiệu tiền tệ hiện đại, được chọn qua cuộc thi công khai năm 2010."
+    }
   ]
 }

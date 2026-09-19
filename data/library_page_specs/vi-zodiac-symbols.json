@@ -6,7 +6,7 @@
   "hero_h1": "Ký Hiệu Cung Hoàng Đạo",
   "hero_tagline": "Đủ mười hai cung hoàng đạo dưới dạng ký tự Unicode, thêm hành tinh, 12 con giáp và các ký hiệu góc chiếu quen thuộc.",
   "intro": "Ký hiệu cung hoàng đạo là ký tự Unicode thật, không phải ảnh và không cần cài font. Dán được vào bio Instagram, tên Discord, ghi chú hay tin nhắn. Bấm vào ký hiệu để sao chép.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "western",
@@ -284,6 +284,30 @@
     {
       "h2": "Vì Sao Ký Hiệu Hoàng Đạo Lại Là Ký Tự Chữ",
       "body": "Ký hiệu hoàng đạo và hành tinh đến từ các bản chép tay thiên văn và giả kim, nơi chúng được sắp chữ ngang hàng với chữ cái. Đó cũng chính là lý do chúng có mặt trong Unicode: không phải để trang trí mà để in được văn bản thiên văn học. Điều này giải thích luôn chuyện hiển thị lệch nhau — có hệ thống coi ♈ là chữ nên vẽ màu đen, có hệ thống coi nó là hình nên vẽ thành emoji màu."
+    }
+  ],
+  "collection_section": {
+    "id": "zodiac-collections",
+    "label": "Bộ ký hiệu hoàng đạo",
+    "h2": "Bộ hoàng đạo và chiêm tinh",
+    "intro": "Chép trọn vòng hoàng đạo và mười hành tinh chiêm tinh hiện đại theo đúng thứ tự chuẩn."
+  },
+  "collection_container_id": "zodiacCollectionsContainer",
+  "collections": [
+    {
+      "name": "Hoàng đạo phương Tây (Bạch Dương → Song Ngư)",
+      "flags": ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Con giáp Trung Hoa (Tý → Hợi)",
+      "flags": ["🐀", "🐂", "🐅", "🐇", "🐉", "🐍", "🐎", "🐐", "🐒", "🐓", "🐕", "🐖"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "10 hành tinh chiêm tinh hiện đại",
+      "flags": ["☉", "☽", "☿", "♀", "♂", "♃", "♄", "♅", "♆", "♇"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

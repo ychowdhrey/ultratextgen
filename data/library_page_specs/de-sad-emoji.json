@@ -6,7 +6,7 @@
   "hero_h1": "Trauriges Emoji",
   "hero_tagline": "Alle Abstufungen von Traurigkeit: vom leicht verstimmten Gesicht bis zu Tränen, dazu traurige Kaomoji.",
   "intro": "„Traurig“ ist nicht ein Gefühl, und manchmal reicht ein Emoji nicht. Diese Seite ordnet die Gesichter vom leichtesten zum schwersten, ergänzt die Symbole, die man statt Worten setzt, und schließt mit Kaomoji für den Fall, dass ein rundes Gesicht nicht trifft, was gemeint ist. Zum Kopieren anklicken.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "faces",
@@ -192,6 +192,50 @@
     {
       "h2": "Warum Es So Viele Traurige Emojis Gibt",
       "body": "Unicode hat nicht aus Übermut fünfzehn traurige Gesichter aufgenommen — jedes kam für einen Zweck, den die vorhandenen nicht abdeckten. 😞 stammt aus den ersten japanischen Sätzen, wo es zum Entschuldigen diente. 🥺 kam viel später und wurde fast sofort eher zärtlich als traurig umgedeutet. 🫠 und 🫤 sind von 2021 und meinen Erschöpfung, nicht Kummer. Der Abstand zwischen dem, was der Unicode-Name ankündigt, und dem, was die Leute daraus machen, ist real — deshalb ordnet diese Seite nach Intensität statt nach Aufnahmedatum."
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Varianten des Traurigen Emojis",
+    "h2": "Varianten des Traurigen Emojis",
+    "intro": "Melancholie mit einem Klick — kopiere eine komplette traurige Kombi für Bio, Bildunterschrift oder Nachricht."
+  },
+  "collection_container_id": "sadSetsContainer",
+  "collections": [
+    {
+      "name": "Herzschmerz-Set",
+      "flags": ["💔", "😢", "🥀", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Regentag-Melancholie",
+      "flags": ["🌧", "😔", "☔", "🎧", "🕯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Traurige Nachtstunden",
+      "flags": ["🌙", "😔", "💭", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Enttäuschtes Seufzen",
+      "flags": ["😞", "😮‍💨", "🫤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Verwelkte Ästhetik",
+      "flags": ["🥀", "🍂", "🌫", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Du fehlst mir",
+      "flags": ["😢", "💌", "🌙", "💭"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Trauriges Kaomoji-Paket",
+      "flags": ["(μ_μ)", "(◞‸◟)", "(〒﹏〒)"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

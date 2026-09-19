@@ -122,7 +122,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Can I use fancy fonts in my Threads username?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No — your @username is shared with your linked Instagram account and only accepts plain letters, numbers, periods, and underscores, so styled characters won't save there. Unicode styling works in your bio and in the text of your posts and replies. Your profile name is also managed through your linked Instagram account — if a styled name is accepted there, it shows up on Threads too."
+        "text": "No, your @username is shared with your linked Instagram account and only accepts plain letters, numbers, periods, and underscores, so styled characters won't save there. Unicode styling works in your bio and in the text of your posts and replies. Your profile name is also managed through your linked Instagram account — if a styled name is accepted there, it shows up on Threads too."
       }
     },
     {
@@ -146,7 +146,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Is this Threads font generator free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — completely free, with no sign-up, no account, and no app to install. It runs entirely in your browser on desktop and mobile: type your text, copy a style, and paste it into the Threads app. There's no limit on how much text you generate."
+        "text": "Yes, completely free, with no sign-up, no account, and no app to install. It runs entirely in your browser on desktop and mobile: type your text, copy a style, and paste it into the Threads app. There's no limit on how much text you generate."
       }
     },
     {
@@ -231,6 +231,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <div class="input-wrapper">
           <textarea class="main-input" id="mainInput" placeholder="Type your text here..." maxlength="500"></textarea>
           <span class="char-count"><span id="charCount">0</span>/500</span>
+        </div>
+
+        <!-- Accent-aware hint: shows only when the input contains diacritics -->
+        <div class="accent-notice" id="accentNotice" role="note" hidden>
+          <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+          <span class="accent-notice-text">Your text has accent marks. Bold, script, gothic and most other styles now keep <b>é</b> and <b>ữ</b> styled — a few (upside-down, and letters like <b>ł đ ø ß</b> with no accent form) still fall back to plain. <a href="/guide/fancy-fonts-and-accents/">See which styles handle accents →</a></span>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Dismiss">✕</button>
         </div>
 
         <!-- Decoration Selector -->
@@ -397,7 +404,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </svg>
   </button>
   <div class="faq-answer">
-    No — your @username is shared with your linked Instagram account and only accepts plain letters, numbers, periods, and underscores, so styled characters won't save there. Unicode styling works in your bio and in the text of your posts and replies. Your profile name is also managed through your linked Instagram account — if a styled name is accepted there, it shows up on Threads too.
+    No, your @username is shared with your linked Instagram account and only accepts plain letters, numbers, periods, and underscores, so styled characters won't save there. Unicode styling works in your bio and in the text of your posts and replies. Your profile name is also managed through your linked Instagram account — if a styled name is accepted there, it shows up on Threads too.
   </div>
 </div>
 
@@ -443,7 +450,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </svg>
   </button>
   <div class="faq-answer">
-    Yes — completely free, with no sign-up, no account, and no app to install. It runs entirely in your browser on desktop and mobile: type your text, copy a style, and paste it into the Threads app. There's no limit on how much text you generate.
+    Yes, completely free, with no sign-up, no account, and no app to install. It runs entirely in your browser on desktop and mobile: type your text, copy a style, and paste it into the Threads app. There's no limit on how much text you generate.
   </div>
 </div>
 
@@ -478,7 +485,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <script src="/decorators.js"></script>
     <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
+  <script src="/js/share/share-core.js" defer></script>
+  <script src="/js/saved/saved-items.js" defer></script>
   <script src="/script.js" defer=""></script>
+<script src="/accent-notice.js" defer></script>
 
 
 

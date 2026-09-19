@@ -145,6 +145,14 @@ SOURCES = {
        for loc in ("fr_gaming", "fr_clavier", "fr_imprimables", "fr_tatouage",
                    "fr_esthetique", "fr_kaomoji", "fr_zodiaque",
                    "fr_style_reseau", "fr_outils")},
+    # English printables board (E1 cell, 2026-09-10) -- /printables/* pages,
+    # produced by scripts/generate-en-printables-pins.py via _locale_pin_kit.
+    "en_printables": dict(
+        inventory="en_printables_pinterest_pins.csv",
+        out="en_printables_pinterest_pins_upload.csv",
+        title="pin_title", image="image_path",
+        board="board", description="pin_description",
+        link="utm_destination_url", keywords="pin_keywords"),
 }
 
 

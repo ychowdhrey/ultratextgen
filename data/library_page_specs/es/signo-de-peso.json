@@ -24,8 +24,8 @@
       "h2": "Los Dos Símbolos Llamados «el Signo de Peso» — ₱ y $",
       "intro": "A ambos se les llama el signo de peso. ₱ es el carácter propio del peso filipino; $ es lo que usa casi cualquier otro peso — porque el propio signo de dólar probablemente empezó como abreviatura del peso español. Si vino de una «Ps» manuscrita o de las Columnas de Hércules envueltas en una S de las monedas españolas de a ocho sigue siendo, en realidad, un debate abierto entre historiadores.",
       "symbols": [
-        { "char": "₱", "label": "Signo de Peso (U+20B1) — el Glifo Propio del Peso Filipino" },
-        { "char": "$", "label": "Signo de Dólar (U+0024) — la Marca que Usan de Verdad el Peso Mexicano, el Argentino y el Resto" }
+        { "char": "₱", "label": "Signo de Peso (U+20B1): el Glifo Propio del Peso Filipino" },
+        { "char": "$", "label": "Signo de Dólar (U+0024): la Marca que Usan de Verdad el Peso Mexicano, el Argentino y el Resto" }
       ]
     },
     {
@@ -34,12 +34,12 @@
       "h2": "La Familia de Monedas de Letra Tachada",
       "intro": "El signo de peso es una P mayúscula cruzada por dos barras paralelas — la misma receta detrás de toda una generación de signos de moneda modernos, cada uno una letra nacional atravesada por una o dos líneas. Listos para pegar donde sea.",
       "symbols": [
-        { "char": "₹", "label": "Signo de la Rupia India (U+20B9) — una R tachada, adoptada oficialmente en 2010" },
-        { "char": "₩", "label": "Signo del Won (U+20A9) — una W con dos barras" },
-        { "char": "₦", "label": "Signo de la Naira (U+20A6) — una N tachada (Nigeria)" },
-        { "char": "₴", "label": "Signo de la Grivna (U+20B4) — una letra tachada para Ucrania" },
-        { "char": "₫", "label": "Signo del Dong (U+20AB) — una d con barra (Vietnam)" },
-        { "char": "€", "label": "Signo del Euro (U+20AC) — una E redondeada con dos trazos" }
+        { "char": "₹", "label": "Signo de la Rupia India (U+20B9): una R tachada, adoptada oficialmente en 2010" },
+        { "char": "₩", "label": "Signo del Won (U+20A9): una W con dos barras" },
+        { "char": "₦", "label": "Signo de la Naira (U+20A6): una N tachada (Nigeria)" },
+        { "char": "₴", "label": "Signo de la Grivna (U+20B4): una letra tachada para Ucrania" },
+        { "char": "₫", "label": "Signo del Dong (U+20AB): una d con barra (Vietnam)" },
+        { "char": "€", "label": "Signo del Euro (U+20AC): una E redondeada con dos trazos" }
       ]
     },
     {
@@ -48,11 +48,11 @@
       "h2": "Parecidos: Glifos que se Confunden con ₱",
       "intro": "Como ₱ es básicamente una P tachada, se intercambia con otros caracteres en forma de P — incluida una que es una moneda completamente distinta. Cada uno es su propio punto de código Unicode, no una variante de estilo.",
       "symbols": [
-        { "char": "₽", "label": "Signo del Rublo (U+20BD) — la moneda de Rusia, también una P tachada pero con una barra distinta" },
-        { "char": "P", "label": "Letra Latina P Mayúscula (U+0050) — el sustituto simple que se teclea a menudo para el peso" },
-        { "char": "Ᵽ", "label": "Letra Latina P con Trazo, Mayúscula (U+2C63) — una P de un solo trazo usada en lingüística, no en moneda" },
-        { "char": "Ρ", "label": "Letra Griega Ro Mayúscula (U+03A1) — parece una P" },
-        { "char": "Р", "label": "Letra Cirílica Er Mayúscula (U+0420) — otro parecido a la P" }
+        { "char": "₽", "label": "Signo del Rublo (U+20BD): la moneda de Rusia, también una P tachada pero con una barra distinta" },
+        { "char": "P", "label": "Letra Latina P Mayúscula (U+0050): el sustituto simple que se teclea a menudo para el peso" },
+        { "char": "Ᵽ", "label": "Letra Latina P con Trazo, Mayúscula (U+2C63): una P de un solo trazo usada en lingüística, no en moneda" },
+        { "char": "Ρ", "label": "Letra Griega Ro Mayúscula (U+03A1): parece una P" },
+        { "char": "Р", "label": "Letra Cirílica Er Mayúscula (U+0420): otro parecido a la P" }
       ]
     }
   ],

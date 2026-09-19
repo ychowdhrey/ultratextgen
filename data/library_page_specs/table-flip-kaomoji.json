@@ -16,8 +16,14 @@
       "h2": "Classic Table Flip Kaomoji",
       "intro": "The original rage-quit gesture and its most common variant.",
       "symbols": [
-        { "char": "(╯°□°）╯︵ ┻━┻", "label": "Table Flip" },
-        { "char": "(ノ°Д°)ノ︵ ┻━┻", "label": "Flip It" }
+        {
+          "char": "(╯°□°）╯︵ ┻━┻",
+          "label": "Table Flip"
+        },
+        {
+          "char": "(ノ°Д°)ノ︵ ┻━┻",
+          "label": "Flip It"
+        }
       ]
     },
     {
@@ -26,9 +32,18 @@
       "h2": "Angry Table Flip Kaomoji",
       "intro": "More rage in the flip, table and all.",
       "symbols": [
-        { "char": "(ノ`Д´)ノ彡┻━┻", "label": "Angry Flip" },
-        { "char": "┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻", "label": "Double Flip" },
-        { "char": "(╯‵□′)╯︵┻━┻", "label": "Rage Flip" }
+        {
+          "char": "(ノ`Д´)ノ彡┻━┻",
+          "label": "Angry Flip"
+        },
+        {
+          "char": "┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻",
+          "label": "Double Flip"
+        },
+        {
+          "char": "(╯‵□′)╯︵┻━┻",
+          "label": "Rage Flip"
+        }
       ]
     },
     {
@@ -37,15 +52,33 @@
       "h2": "Put the Table Back Kaomoji",
       "intro": "For once the rage passes and order is restored.",
       "symbols": [
-        { "char": "┬─┬ ノ( ゜-゜ノ)", "label": "Put It Back" }
+        {
+          "char": "┬─┬ ノ( ゜-゜ノ)",
+          "label": "Put It Back"
+        }
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
   "related": [
-    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
-    { "href": "/library/angry-kaomoji/", "title": "Angry Kaomoji", "desc": "Mad, annoyed, and fuming Japanese text faces, including these table flips." },
-    { "href": "/kaomoji-generator/", "title": "Kaomoji Generator", "desc": "Build your own text face — mix eyes, mouths, and arms, then copy it." },
-    { "href": "/ascii-art-generator/", "title": "ASCII Art Generator", "desc": "Turn a word or name into big block-letter ASCII art instantly." }
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji hub — every mood of Japanese text face in one place."
+    },
+    {
+      "href": "/library/angry-kaomoji/",
+      "title": "Angry Kaomoji",
+      "desc": "Mad, annoyed, and fuming Japanese text faces, including these table flips."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Kaomoji Generator",
+      "desc": "Build your own text face — mix eyes, mouths, and arms, then copy it."
+    },
+    {
+      "href": "/ascii-art-generator/",
+      "title": "ASCII Art Generator",
+      "desc": "Turn a word or name into big block-letter ASCII art instantly."
+    }
   ]
 }

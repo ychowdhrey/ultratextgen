@@ -193,6 +193,22 @@
           "faces": "คาโอโมจิ"
         }
       }
+    },
+    "formatControl": {
+      "label": "เพิ่มการจัดรูปแบบ",
+      "groupAriaLabel": "ใส่ขีดเส้นใต้หรือขีดฆ่าให้ทุกสไตล์"
+    },
+    "platformChips": {
+      "all": "ใช้ได้ทุกที่"
+    },
+    "categoryLoad": {
+      "failed": "โหลดหมวดหมู่ไม่สำเร็จ กำลังแสดงฟอนต์ทั้งหมด"
+    },
+    "stylePreview": {
+      "title": "ตัวอย่าง",
+      "titleFor": "ตัวอย่าง: {style}",
+      "dialogAriaLabel": "ตัวอย่างตามแพลตฟอร์ม",
+      "closeAriaLabel": "ปิดตัวอย่าง"
     }
   },
   "useCases": {

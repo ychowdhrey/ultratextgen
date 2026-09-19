@@ -37,7 +37,7 @@
       "h2": "Emoji yang Sering Tertukar dengan Mikrofon",
       "intro": "Beberapa emoji ini sering dikira mikrofon pegang biasa, padahal kode dan konteksnya berbeda.",
       "symbols": [
-        { "char": "🎙️", "label": "Mikrofon Studio (U+1F399) — mikrofon siaran/podcast berkaki tiga" },
+        { "char": "🎙️", "label": "Mikrofon Studio (U+1F399): mikrofon siaran/podcast berkaki tiga" },
         { "char": "🔊", "label": "Suara Kencang (U+1F50A)" },
         { "char": "🗣️", "label": "Kepala Berbicara (U+1F5E3 FE0F)" },
         { "char": "📢", "label": "Pengeras Suara (U+1F4E2)" }
@@ -72,7 +72,7 @@
     {
       "href": "/id/",
       "title": "Generator Tulisan Aesthetic",
-      "desc": "Ubah teks biasa menjadi font huruf aesthetic, keren, dan unik — gratis dan langsung jadi."
+      "desc": "Ubah teks biasa menjadi font huruf aesthetic, keren, dan unik. Gratis dan langsung jadi."
     }
   ]
 }

@@ -18,8 +18,8 @@
       "h2": "The Two Symbols Called \"the Peso Sign\" — ₱ and $",
       "intro": "Both of these get called the peso sign. ₱ is the Philippine peso's own character; $ is what nearly every other peso uses — because the dollar sign itself probably began as shorthand for the Spanish peso. Whether it came from a handwritten \"Ps\" or from the S-wrapped Pillars of Hercules on Spanish dollar coins is still genuinely debated among historians.",
       "symbols": [
-        { "char": "₱", "label": "Peso Sign (U+20B1) — the Philippine peso's dedicated glyph" },
-        { "char": "$", "label": "Dollar Sign (U+0024) — the mark the Mexican, Argentine and other pesos actually use" }
+        { "char": "₱", "label": "Peso Sign (U+20B1): the Philippine peso's dedicated glyph" },
+        { "char": "$", "label": "Dollar Sign (U+0024): the mark the Mexican, Argentine and other pesos actually use" }
       ]
     },
     {
@@ -28,12 +28,12 @@
       "h2": "The Struck-Letter Currency Family",
       "intro": "The peso sign is a capital P crossed by two parallel bars — the same recipe behind a whole generation of modern currency signs, each a national letter struck through with one or two lines. Ready to paste anywhere.",
       "symbols": [
-        { "char": "₹", "label": "Indian Rupee Sign (U+20B9) — a struck R, officially adopted in 2010" },
-        { "char": "₩", "label": "Won Sign (U+20A9) — a W with two bars" },
-        { "char": "₦", "label": "Naira Sign (U+20A6) — a struck N (Nigeria)" },
-        { "char": "₴", "label": "Hryvnia Sign (U+20B4) — a struck letter for Ukraine" },
-        { "char": "₫", "label": "Dong Sign (U+20AB) — a barred d (Vietnam)" },
-        { "char": "€", "label": "Euro Sign (U+20AC) — a rounded E with two strokes" }
+        { "char": "₹", "label": "Indian Rupee Sign (U+20B9): a struck R, officially adopted in 2010" },
+        { "char": "₩", "label": "Won Sign (U+20A9): a W with two bars" },
+        { "char": "₦", "label": "Naira Sign (U+20A6): a struck N (Nigeria)" },
+        { "char": "₴", "label": "Hryvnia Sign (U+20B4): a struck letter for Ukraine" },
+        { "char": "₫", "label": "Dong Sign (U+20AB): a barred d (Vietnam)" },
+        { "char": "€", "label": "Euro Sign (U+20AC): a rounded E with two strokes" }
       ]
     },
     {
@@ -42,11 +42,11 @@
       "h2": "Look-Alikes: Glyphs Mistaken for ₱",
       "intro": "Because ₱ is essentially a barred P, it gets swapped for other P-shaped characters — including one that is a completely different currency. Each is its own Unicode code point, not a stylistic variant.",
       "symbols": [
-        { "char": "₽", "label": "Ruble Sign (U+20BD) — Russia's currency, also a struck P but a different bar" },
-        { "char": "P", "label": "Latin Capital Letter P (U+0050) — the plain fallback often typed for the peso" },
-        { "char": "Ᵽ", "label": "Latin Capital P with Stroke (U+2C63) — a single-barred P used in linguistics, not currency" },
-        { "char": "Ρ", "label": "Greek Capital Letter Rho (U+03A1) — looks like a P" },
-        { "char": "Р", "label": "Cyrillic Capital Letter Er (U+0420) — another P look-alike" }
+        { "char": "₽", "label": "Ruble Sign (U+20BD): Russia's currency, also a struck P but a different bar" },
+        { "char": "P", "label": "Latin Capital Letter P (U+0050): the plain fallback often typed for the peso" },
+        { "char": "Ᵽ", "label": "Latin Capital P with Stroke (U+2C63): a single-barred P used in linguistics, not currency" },
+        { "char": "Ρ", "label": "Greek Capital Letter Rho (U+03A1): looks like a P" },
+        { "char": "Р", "label": "Cyrillic Capital Letter Er (U+0420): another P look-alike" }
       ]
     }
   ],

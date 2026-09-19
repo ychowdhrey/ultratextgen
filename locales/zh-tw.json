@@ -93,6 +93,22 @@
       "more": "更多",
       "less": "收合"
     },
-    "demoText": "歡迎使用 UltraTextGen。\n輸入任何文字，讓它與眾不同。"
+    "demoText": "歡迎使用 UltraTextGen。\n輸入任何文字，讓它與眾不同。",
+    "formatControl": {
+      "label": "加入格式",
+      "groupAriaLabel": "為所有樣式加上底線或刪除線"
+    },
+    "platformChips": {
+      "all": "到處都能用"
+    },
+    "categoryLoad": {
+      "failed": "無法載入分類，正在顯示所有字型。"
+    },
+    "stylePreview": {
+      "title": "預覽",
+      "titleFor": "{style} 預覽",
+      "dialogAriaLabel": "平台預覽",
+      "closeAriaLabel": "關閉預覽"
+    }
   }
 }

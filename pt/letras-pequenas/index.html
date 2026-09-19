@@ -47,7 +47,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
        crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Letra Pequena e Texto Pequeno (ʟᴇᴛʀᴀ ᴘᴇqᴜᴇɴᴀ) para Copiar e Colar | UltraTextGen</title>
+  <title>Letra Pequena e Texto Pequeno para Copiar e Colar | UltraTextGen</title>
   <meta name="description" content="Letra pequena, texto pequeno e letras minúsculas para copiar e colar na bio, no status e no nick de Free Fire. Grátis, sem app: digita, copia e cola.">
   <link rel="canonical" href="https://ultratextgen.com/pt/letras-pequenas/">
   <link rel="alternate" hreflang="en" href="https://ultratextgen.com/category/small-text/">
@@ -186,6 +186,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="input-wrapper">
         <textarea class="main-input" id="mainInput" placeholder="Digite seu texto aqui..." maxlength="500" autofocus=""></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
+      </div>
+
+      <!-- Accent-aware hint: shows only when the input contains diacritics -->
+      <div class="accent-notice" id="accentNotice" role="note" hidden>
+        <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+        <span class="accent-notice-text">O seu texto tem acentos. Negrito, cursiva, gótico e quase todos os outros estilos mantêm agora <b>ã</b>, <b>ç</b> e <b>é</b> com o acento. A exceção é o texto ao contrário: aí as letras acentuadas passam sem virar e ficam direitas. <a href="/guide/fancy-fonts-and-accents/">Que estilos mantêm os acentos →</a></span>
+        <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Fechar">✕</button>
       </div>
       <div class="decoration-section">
         <div class="decoration-label">Adicionar decoração ao resultado</div>
@@ -352,6 +359,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script>window.UTG_FAMILY = "small-text";</script>
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
 <script src="/script.js" defer=""></script>
+<script src="/i18n.js" defer></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/footer.js"></script>
 </body></html>

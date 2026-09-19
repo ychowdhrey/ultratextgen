@@ -1,0 +1,173 @@
+{
+ "slug": "wiedergabe-symbole",
+ "lang": "de",
+ "page_type": "library",
+ "copy_pattern": "single",
+ "title": "Wiedergabe-Symbole ▶ ⏸ ⏹ zum Kopieren — Play, Pause, Stop | UltraTextGen",
+ "meta_description": "Wiedergabe-Symbole zum Kopieren: Play ▶, Pause ⏸, Stop ⏹, Aufnahme, Vor- und Zurückspulen, Auswerfen sowie die Ein- und Ausschaltzeichen.",
+ "breadcrumb": "Wiedergabe-Symbole",
+ "hero_h1": "Wiedergabe-Symbole",
+ "hero_tagline": "Play, Pause, Stop, Aufnahme und die Ein-/Ausschaltzeichen — als echte Zeichen, nicht als Bild.",
+ "intro": "Die Zeichen für Play, Pause und Stop sind seit den Sechzigerjahren international genormt und stehen seit Unicode 7.0 als echte Textzeichen zur Verfügung. Das ist praktisch: In einer Anleitung, einem Menütext oder einer Tabelle lässt sich ▶ schreiben, ohne ein Bild einzubinden.",
+ "sections": [
+  {
+   "id": "wiedergabe",
+   "label": "Wiedergabe",
+   "h2": "Wiedergabe",
+   "intro": "Die Grundfunktionen jedes Abspielgeräts.",
+   "symbols": [
+    {
+     "char": "▶",
+     "label": "Wiedergabe (Play)"
+    },
+    {
+     "char": "⏸",
+     "label": "Pause"
+    },
+    {
+     "char": "⏹",
+     "label": "Stopp"
+    },
+    {
+     "char": "⏺",
+     "label": "Aufnahme"
+    },
+    {
+     "char": "⏯",
+     "label": "Wiedergabe/Pause"
+    },
+    {
+     "char": "◀",
+     "label": "Rückwärts"
+    }
+   ]
+  },
+  {
+   "id": "navigation",
+   "label": "Navigation",
+   "h2": "Navigation",
+   "intro": "Springen, Spulen und Auswerfen.",
+   "symbols": [
+    {
+     "char": "⏭",
+     "label": "Nächster Titel"
+    },
+    {
+     "char": "⏮",
+     "label": "Vorheriger Titel"
+    },
+    {
+     "char": "⏩",
+     "label": "Vorspulen"
+    },
+    {
+     "char": "⏪",
+     "label": "Zurückspulen"
+    },
+    {
+     "char": "⏫",
+     "label": "Schnell nach oben"
+    },
+    {
+     "char": "⏬",
+     "label": "Schnell nach unten"
+    },
+    {
+     "char": "⏏",
+     "label": "Auswerfen"
+    }
+   ]
+  },
+  {
+   "id": "power",
+   "label": "Ein und Aus",
+   "h2": "Ein und Aus",
+   "intro": "Die genormten Zeichen für Netzschalter und Bereitschaft.",
+   "symbols": [
+    {
+     "char": "⏻",
+     "label": "Ein-/Ausschalter"
+    },
+    {
+     "char": "⏼",
+     "label": "Ein-Aus-Schalter"
+    },
+    {
+     "char": "⏽",
+     "label": "Einschalten"
+    },
+    {
+     "char": "⏾",
+     "label": "Bereitschaft (Standby)"
+    },
+    {
+     "char": "⭘",
+     "label": "Ausschalten (Kreis)"
+    }
+   ]
+  }
+ ],
+ "faq_h2": "Häufige Fragen zu Wiedergabe-Symbolen",
+ "faq": [
+  {
+   "q": "Woher kommt das Play-Dreieck?",
+   "a": "Aus der Bandmaschinentechnik der Sechzigerjahre: Das Dreieck zeigte die Laufrichtung des Bands. Die Reihe wurde später in der Norm IEC 60417 festgeschrieben und von jedem Abspielgerät übernommen — vom Kassettenrekorder bis zum Streaming-Player."
+  },
+  {
+   "q": "Was ist der Unterschied zwischen ⏻ und ⭘?",
+   "a": "⏻ ist der Ein-/Ausschalter, der zwischen beiden Zuständen wechselt — Strich im Kreis. ⭘ ist der reine Kreis und steht für „aus“. Der senkrechte Strich ⏽ allein steht für „ein“. Die Kombination aus Strich und Kreis ist das, was heute auf fast jedem Gerät klebt."
+  },
+  {
+   "q": "Warum sehen die Zeichen mal eckig, mal rund aus?",
+   "a": "Weil einige Plattformen sie als Emoji zeichnen und andere als Textzeichen. ⏸ und ⏹ liegen im Bereich, den manche Systeme farbig darstellen. Ein nachgestelltes Variationszeichen (U+FE0E) erzwingt die einfarbige Textform, wird aber nicht überall beachtet."
+  },
+  {
+   "q": "Kann ich sie in Buttons verwenden?",
+   "a": "Ja, und das ist einer ihrer besten Einsatzzwecke — sie skalieren mit der Schriftgröße, brauchen keine Bilddatei und werden von Screenreadern vorgelesen. Wichtig ist ein aussagekräftiges aria-label, weil das Zeichen allein je nach Vorleseeinstellung als „schwarzes Dreieck“ angesagt wird."
+  },
+  {
+   "q": "Gibt es ein Zeichen für Lautstärke?",
+   "a": "Nicht in dieser Reihe. Lautsprecher-Symbole existieren als Emoji (🔈 🔉 🔊 🔇), gehören aber zu einer anderen Gruppe und werden meist farbig dargestellt."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Warum diese Zeichen so lange auf Unicode warten mussten",
+   "body": "Play, Pause und Stop gehören zu den bekanntesten Piktogrammen überhaupt, kamen aber erst 2014 mit Unicode 7.0 in den Zeichensatz — Jahrzehnte nachdem sie auf jedem Gerät standen. Der Grund ist die alte Trennlinie: Unicode kodiert Schrift, keine Bedienoberflächen, und Gerätesymbole galten lange als Grafik. Aufgenommen wurden sie schließlich mit dem Argument, dass sie in technischer Dokumentation längst als Text geschrieben wurden — behelfsmäßig mit Dreieck und Doppelstrich. Damit galten sie als Schriftzeichen im Gebrauch, und das genügte."
+  }
+ ],
+ "related": [
+  {
+   "href": "/de/library/geometrische-symbole/",
+   "title": "Geometrische Symbole",
+   "desc": "Dreiecke, Kreise und Quadrate in allen Varianten."
+  },
+  {
+   "href": "/de/library/pfeil-symbole/",
+   "title": "Pfeil-Symbole",
+   "desc": "Pfeile in alle Richtungen und Stilarten."
+  },
+  {
+   "href": "/de/library/musik-symbole/",
+   "title": "Musik-Symbole",
+   "desc": "Noten, Schlüssel und Vorzeichen zum Kopieren."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/de/library/wiedergabe-symbole/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/media-control-symbols/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/wiedergabe-symbole/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/media-control-symbols/"
+  }
+ ],
+ "date_published": "2026-08-16",
+ "date_modified": "2026-08-16"
+}

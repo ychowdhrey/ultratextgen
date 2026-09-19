@@ -29,7 +29,7 @@
       "intro": "Simbol matematikanya, dan cara penggantinya di berbagai bahasa pemrograman karena ≤ tidak pernah masuk ASCII.",
       "symbols": [
         { "char": "≤", "label": "Kurang Dari Sama Dengan (Matematika)" },
-        { "char": "<=", "label": "Kurang Dari Sama Dengan (Kode — C, Python, JavaScript, Java, SQL)" }
+        { "char": "<=", "label": "Kurang Dari Sama Dengan (Kode: C, Python, JavaScript, Java, SQL)" }
       ]
     },
     {
@@ -39,9 +39,9 @@
       "intro": "Artinya kurang lebih sama, tapi ini adalah karakter Unicode yang berbeda dari tradisi penulisan yang berbeda.",
       "symbols": [
         { "char": "≦", "label": "Kurang Dari di Atas Sama Dengan (U+2266)" },
-        { "char": "⩽", "label": "Kurang Dari atau Sama Dengan Miring (U+2A7D) — bentuk yang disarankan standar ISO 31-11" },
+        { "char": "⩽", "label": "Kurang Dari atau Sama Dengan Miring (U+2A7D): bentuk yang disarankan standar ISO 31-11" },
         { "char": "≲", "label": "Kurang Dari atau Setara (U+2272)" },
-        { "char": "≪", "label": "Jauh Lebih Kecil (U+226A) — relasi yang berbeda, bukan varian ≤" }
+        { "char": "≪", "label": "Jauh Lebih Kecil (U+226A): relasi yang berbeda, bukan varian ≤" }
       ]
     },
     {
@@ -73,7 +73,7 @@
     {
       "href": "/id/",
       "title": "Generator Tulisan Aesthetic",
-      "desc": "Ubah teks biasa menjadi font huruf aesthetic, keren, dan unik — gratis dan langsung jadi."
+      "desc": "Ubah teks biasa menjadi font huruf aesthetic, keren, dan unik. Gratis dan langsung jadi."
     }
   ]
 }

@@ -16,12 +16,23 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-minore-o-uguale/" },
-    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-kurang-dari-sama-dengan/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-minore-o-uguale/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/symbol/simbol-kurang-dari-sama-dengan/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/"
+    }
   ],
   "sections": [
     {
@@ -30,8 +41,14 @@
       "h2": "Minore o Uguale, in Matematica e nel Codice",
       "intro": "Il simbolo matematico, e i due caratteri usati al suo posto da quasi ogni linguaggio di programmazione, dato che ≤ non è mai stato parte dell'ASCII.",
       "symbols": [
-        { "char": "≤", "label": "Minore o Uguale (Matematica)" },
-        { "char": "<=", "label": "Minore o Uguale (Codice — C, Python, JavaScript, Java, SQL)" }
+        {
+          "char": "≤",
+          "label": "Minore o Uguale (Matematica)"
+        },
+        {
+          "char": "<=",
+          "label": "Minore o Uguale (Codice: C, Python, JavaScript, Java, SQL)"
+        }
       ]
     },
     {
@@ -40,10 +57,22 @@
       "h2": "Simboli Spesso Scambiati per ≤",
       "intro": "Significano tutti più o meno la stessa cosa ma sono caratteri Unicode distinti, nati da tradizioni tipografiche diverse.",
       "symbols": [
-        { "char": "≦", "label": "Less-Than Over Equal To (U+2266)" },
-        { "char": "⩽", "label": "Less-Than or Slanted Equal To (U+2A7D) — la forma preferita dallo standard ISO 31-11" },
-        { "char": "≲", "label": "Less-Than or Equivalent To (U+2272)" },
-        { "char": "≪", "label": "Molto Minore Di (U+226A) — una relazione diversa, non una variante di ≤" }
+        {
+          "char": "≦",
+          "label": "Less-Than Over Equal To (U+2266)"
+        },
+        {
+          "char": "⩽",
+          "label": "Less-Than or Slanted Equal To (U+2A7D): la forma preferita dallo standard ISO 31-11"
+        },
+        {
+          "char": "≲",
+          "label": "Less-Than or Equivalent To (U+2272)"
+        },
+        {
+          "char": "≪",
+          "label": "Molto Minore Di (U+226A): una relazione diversa, non una variante di ≤"
+        }
       ]
     },
     {
@@ -52,11 +81,26 @@
       "h2": "Simboli di Confronto Correlati",
       "intro": "Gli altri simboli di relazione con cui ≤ si accoppia nelle disuguaglianze e nella notazione degli insiemi.",
       "symbols": [
-        { "char": "≥", "label": "Maggiore o Uguale (U+2265)" },
-        { "char": "<", "label": "Minore Di" },
-        { "char": ">", "label": "Maggiore Di" },
-        { "char": "≠", "label": "Diverso Da" },
-        { "char": "=", "label": "Segno di Uguale" }
+        {
+          "char": "≥",
+          "label": "Maggiore o Uguale (U+2265)"
+        },
+        {
+          "char": "<",
+          "label": "Minore Di"
+        },
+        {
+          "char": ">",
+          "label": "Maggiore Di"
+        },
+        {
+          "char": "≠",
+          "label": "Diverso Da"
+        },
+        {
+          "char": "=",
+          "label": "Segno di Uguale"
+        }
       ]
     }
   ],

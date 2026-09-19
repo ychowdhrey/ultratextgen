@@ -77,7 +77,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <meta name="twitter:image" content="https://ultratextgen.com/assets/og/pt-imprimiveis-alfabeto-para-colorir.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Baloo+2:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 
 <script type="application/ld+json">
@@ -159,11 +159,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </p>
     </div>
   </section>
-<figure class="page-hero-figure" data-uthero aria-hidden="true">
-  <img src="/assets/hero/pt-imprimiveis-alfabeto-para-colorir.svg" width="1200" height="340"
-       fetchpriority="high" alt="">
-</figure>
-
 
   <main class="container">
 
@@ -174,10 +169,33 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="bubble-strip" id="pt-strip" role="tablist" aria-label="Escolher uma letra para colorir"></div>
       <div class="bubble-letter-panel" id="pt-panel" aria-live="polite"></div>
       <p class="bubble-az-intro">Quer o alfabeto completo? Imprima os 26 contornos para colorir de uma vez — em uma única folha, ou como livro com uma página por letra.</p>
+      <div class="pt-size-field">
+        <div id="pt-size-control"></div>
+      </div>
       <div class="bubble-actions pt-batch-actions">
         <button class="bubble-btn bubble-btn-primary" type="button" id="pt-alphabet-print">Imprimir o alfabeto</button>
       </div>
     </section>
+
+    <!-- Name / word coloring sheet -->
+    <section class="bubble-alphabet" aria-labelledby="ptNameHeading">
+      <h2 id="ptNameHeading">Imprima um nome para colorir</h2>
+      <p class="bubble-az-intro">Digite um nome ou uma palavra curta e imprima-o como grandes contornos para colorir.</p>
+      <div class="pt-name-tool">
+        <div class="input-wrapper">
+          <input type="text" class="main-input pt-name-input" id="pt-name-input" placeholder="Digite um nome… ex. Mia" maxlength="40">
+        </div>
+        <div class="pt-name-preview" id="pt-name-preview" aria-live="polite"></div>
+        <div class="bubble-actions pt-name-actions">
+          <button type="button" class="bubble-btn bubble-btn-primary" id="pt-name-print">Imprimir a folha</button>
+          <button type="button" class="bubble-btn" id="pt-name-png">Baixar PNG</button>
+        </div>
+      </div>
+    </section>
+<figure class="guide-hero-figure pt-sheet-preview">
+  <img src="/assets/printables-previews/pt-imprimiveis-alfabeto-para-colorir.png" width="1200" height="900"
+       alt="Alfabeto para colorir (A–Z): pré-visualização da folha para imprimir" loading="lazy">
+</figure>
 
 
     <!-- Editorial -->
@@ -213,7 +231,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
         <div class="faq-answer">
-          Sim — cada página do alfabeto para colorir aqui é totalmente grátis, sem cadastro, sem marca d'água e sem limite. Escolha uma letra para um grande contorno e use <strong>Imprimir esta letra</strong> para enviar à sua impressora ou <strong>Baixar PNG</strong> para salvar uma imagem em alta resolução.
+          Sim, cada página do alfabeto para colorir aqui é totalmente grátis, sem cadastro, sem marca d'água e sem limite. Escolha uma letra para um grande contorno e use <strong>Imprimir esta letra</strong> para enviar à sua impressora ou <strong>Baixar PNG</strong> para salvar uma imagem em alta resolução.
         </div>
       </div>
 
@@ -272,6 +290,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </script>
   <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
+  <script src="/js/printables/printPrefs.js"></script>
+  <script src="/js/share/share-core.js" defer></script>
+  <script src="/js/saved/saved-items.js" defer></script>
+  <script src="/js/printables/glyphMetrics.js"></script>
   <script src="/js/printables/printablesEngine.js" defer></script>
 
   <!-- FAQ toggle -->

@@ -74,7 +74,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <meta name="twitter:image" content="https://ultratextgen.com/assets/og/pl-do-druku-alfabet-do-kolorowania.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Baloo+2:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 
 <script type="application/ld+json">
@@ -166,10 +166,23 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="bubble-strip" id="pt-strip" role="tablist" aria-label="Wybierz literę do pokolorowania"></div>
       <div class="bubble-letter-panel" id="pt-panel" aria-live="polite"></div>
       <p class="bubble-az-intro">Chcesz cały alfabet? Wydrukuj wszystkie 26 konturów do pokolorowania naraz — na jednej kartce, albo jako książeczkę z jedną literą na stronę.</p>
+      <div class="pt-size-field">
+        <div id="pt-size-control"></div>
+      </div>
       <div class="bubble-actions pt-batch-actions">
         <button class="bubble-btn bubble-btn-primary" type="button" id="pt-alphabet-print">Drukuj alfabet</button>
       </div>
     </section>
+
+    <!-- Rule 3 de-confliction: name/word intent belongs to /pl/do-druku/pokoloruj-imie/ -->
+    <section class="bubble-alphabet" aria-labelledby="ptNameHeading">
+      <h2 id="ptNameHeading">Chcesz całe słowo zamiast jednej litery?</h2>
+      <p class="bubble-az-intro">Imiona i krótkie słowa jako duże kontury do kolorowania znajdziesz w <a href="/pl/do-druku/pokoloruj-imie/">Kolorowance z imieniem</a>. Więcej możliwości: wzory, ramki i lista klasy na jednej kartce.</p>
+    </section>
+<figure class="guide-hero-figure pt-sheet-preview">
+  <img src="/assets/printables-previews/pl-do-druku-alfabet-do-kolorowania.png" width="1200" height="900"
+       alt="Alfabet do kolorowania (A–Z): podgląd arkusza do druku" loading="lazy">
+</figure>
 
     <!-- Editorial -->
     <section class="editorial-section">
@@ -204,7 +217,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
         <div class="faq-answer">
-          Tak — każda strona alfabetu do kolorowania jest tu całkowicie darmowa, bez rejestracji, znaku wodnego i limitu. Wybierz literę,
+          Tak, każda strona alfabetu do kolorowania jest tu całkowicie darmowa, bez rejestracji, znaku wodnego i limitu. Wybierz literę,
           aby zobaczyć duży kontur, a następnie użyj <strong>Wydrukuj tę literę</strong>, aby wysłać ją do drukarki, albo
           <strong>Pobierz PNG</strong>, aby zapisać obraz w wysokiej rozdzielczości.
         </div>
@@ -268,6 +281,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </script>
   <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
+  <script src="/js/printables/printPrefs.js"></script>
+  <script src="/js/share/share-core.js" defer></script>
+  <script src="/js/saved/saved-items.js" defer></script>
+  <script src="/js/printables/glyphMetrics.js"></script>
   <script src="/js/printables/printablesEngine.js" defer></script>
 
   <!-- FAQ toggle -->

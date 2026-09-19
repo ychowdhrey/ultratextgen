@@ -17,18 +17,54 @@
       "h2": "Greek Letters",
       "intro": "The Greek letters used throughout mathematics and physics, with their LaTeX commands.",
       "symbols": [
-        { "char": "α", "label": "\\alpha — Greek Small Letter Alpha" },
-        { "char": "β", "label": "\\beta — Greek Small Letter Beta" },
-        { "char": "γ", "label": "\\gamma — Greek Small Letter Gamma" },
-        { "char": "δ", "label": "\\delta — Greek Small Letter Delta" },
-        { "char": "θ", "label": "\\theta — Greek Small Letter Theta" },
-        { "char": "λ", "label": "\\lambda — Greek Small Letter Lambda" },
-        { "char": "μ", "label": "\\mu — Greek Small Letter Mu" },
-        { "char": "π", "label": "\\pi — Greek Small Letter Pi" },
-        { "char": "σ", "label": "\\sigma — Greek Small Letter Sigma" },
-        { "char": "φ", "label": "\\varphi — Greek Small Letter Phi" },
-        { "char": "Δ", "label": "\\Delta — Greek Capital Letter Delta" },
-        { "char": "Ω", "label": "\\Omega — Greek Capital Letter Omega" }
+        {
+          "char": "α",
+          "label": "\\alpha: Greek Small Letter Alpha"
+        },
+        {
+          "char": "β",
+          "label": "\\beta: Greek Small Letter Beta"
+        },
+        {
+          "char": "γ",
+          "label": "\\gamma: Greek Small Letter Gamma"
+        },
+        {
+          "char": "δ",
+          "label": "\\delta: Greek Small Letter Delta"
+        },
+        {
+          "char": "θ",
+          "label": "\\theta: Greek Small Letter Theta"
+        },
+        {
+          "char": "λ",
+          "label": "\\lambda: Greek Small Letter Lambda"
+        },
+        {
+          "char": "μ",
+          "label": "\\mu: Greek Small Letter Mu"
+        },
+        {
+          "char": "π",
+          "label": "\\pi: Greek Small Letter Pi"
+        },
+        {
+          "char": "σ",
+          "label": "\\sigma: Greek Small Letter Sigma"
+        },
+        {
+          "char": "φ",
+          "label": "\\varphi: Greek Small Letter Phi"
+        },
+        {
+          "char": "Δ",
+          "label": "\\Delta: Greek Capital Letter Delta"
+        },
+        {
+          "char": "Ω",
+          "label": "\\Omega: Greek Capital Letter Omega"
+        }
       ]
     },
     {
@@ -37,18 +73,54 @@
       "h2": "Operators & Big Operators",
       "intro": "Sums, products, integrals, and the arithmetic operators of everyday math.",
       "symbols": [
-        { "char": "∑", "label": "\\sum — N-Ary Summation" },
-        { "char": "∏", "label": "\\prod — N-Ary Product" },
-        { "char": "∫", "label": "\\int — Integral" },
-        { "char": "∬", "label": "\\iint — Double Integral" },
-        { "char": "∮", "label": "\\oint — Contour Integral" },
-        { "char": "√", "label": "\\sqrt — Square Root" },
-        { "char": "∂", "label": "\\partial — Partial Differential" },
-        { "char": "∇", "label": "\\nabla — Nabla" },
-        { "char": "±", "label": "\\pm — Plus-Minus Sign" },
-        { "char": "×", "label": "\\times — Multiplication Sign" },
-        { "char": "÷", "label": "\\div — Division Sign" },
-        { "char": "⋅", "label": "\\cdot — Dot Operator" }
+        {
+          "char": "∑",
+          "label": "\\sum: N-Ary Summation"
+        },
+        {
+          "char": "∏",
+          "label": "\\prod: N-Ary Product"
+        },
+        {
+          "char": "∫",
+          "label": "\\int: Integral"
+        },
+        {
+          "char": "∬",
+          "label": "\\iint: Double Integral"
+        },
+        {
+          "char": "∮",
+          "label": "\\oint: Contour Integral"
+        },
+        {
+          "char": "√",
+          "label": "\\sqrt: Square Root"
+        },
+        {
+          "char": "∂",
+          "label": "\\partial: Partial Differential"
+        },
+        {
+          "char": "∇",
+          "label": "\\nabla: Nabla"
+        },
+        {
+          "char": "±",
+          "label": "\\pm: Plus-Minus Sign"
+        },
+        {
+          "char": "×",
+          "label": "\\times: Multiplication Sign"
+        },
+        {
+          "char": "÷",
+          "label": "\\div: Division Sign"
+        },
+        {
+          "char": "⋅",
+          "label": "\\cdot: Dot Operator"
+        }
       ]
     },
     {
@@ -57,14 +129,38 @@
       "h2": "Relations & Comparisons",
       "intro": "Equality, inequality, and equivalence relations with their commands.",
       "symbols": [
-        { "char": "≤", "label": "\\leq — Less-Than or Equal To" },
-        { "char": "≥", "label": "\\geq — Greater-Than or Equal To" },
-        { "char": "≠", "label": "\\neq — Not Equal To" },
-        { "char": "≈", "label": "\\approx — Almost Equal To" },
-        { "char": "≡", "label": "\\equiv — Identical To" },
-        { "char": "∼", "label": "\\sim — Tilde Operator" },
-        { "char": "≅", "label": "\\cong — Approximately Equal To" },
-        { "char": "∝", "label": "\\propto — Proportional To" }
+        {
+          "char": "≤",
+          "label": "\\leq: Less-Than or Equal To"
+        },
+        {
+          "char": "≥",
+          "label": "\\geq: Greater-Than or Equal To"
+        },
+        {
+          "char": "≠",
+          "label": "\\neq: Not Equal To"
+        },
+        {
+          "char": "≈",
+          "label": "\\approx: Almost Equal To"
+        },
+        {
+          "char": "≡",
+          "label": "\\equiv: Identical To"
+        },
+        {
+          "char": "∼",
+          "label": "\\sim: Tilde Operator"
+        },
+        {
+          "char": "≅",
+          "label": "\\cong: Approximately Equal To"
+        },
+        {
+          "char": "∝",
+          "label": "\\propto: Proportional To"
+        }
       ]
     },
     {
@@ -73,18 +169,54 @@
       "h2": "Set Theory & Logic",
       "intro": "Membership, subsets, unions, quantifiers, and logical connectives.",
       "symbols": [
-        { "char": "∈", "label": "\\in — Element Of" },
-        { "char": "∉", "label": "\\notin — Not an Element Of" },
-        { "char": "⊂", "label": "\\subset — Subset Of" },
-        { "char": "⊆", "label": "\\subseteq — Subset of or Equal To" },
-        { "char": "∪", "label": "\\cup — Union" },
-        { "char": "∩", "label": "\\cap — Intersection" },
-        { "char": "∅", "label": "\\emptyset — Empty Set" },
-        { "char": "∀", "label": "\\forall — For All" },
-        { "char": "∃", "label": "\\exists — There Exists" },
-        { "char": "¬", "label": "\\neg — Not Sign" },
-        { "char": "∧", "label": "\\land — Logical And" },
-        { "char": "∨", "label": "\\lor — Logical Or" }
+        {
+          "char": "∈",
+          "label": "\\in: Element Of"
+        },
+        {
+          "char": "∉",
+          "label": "\\notin: Not an Element Of"
+        },
+        {
+          "char": "⊂",
+          "label": "\\subset: Subset Of"
+        },
+        {
+          "char": "⊆",
+          "label": "\\subseteq: Subset of or Equal To"
+        },
+        {
+          "char": "∪",
+          "label": "\\cup: Union"
+        },
+        {
+          "char": "∩",
+          "label": "\\cap: Intersection"
+        },
+        {
+          "char": "∅",
+          "label": "\\emptyset: Empty Set"
+        },
+        {
+          "char": "∀",
+          "label": "\\forall: For All"
+        },
+        {
+          "char": "∃",
+          "label": "\\exists: There Exists"
+        },
+        {
+          "char": "¬",
+          "label": "\\neg: Not Sign"
+        },
+        {
+          "char": "∧",
+          "label": "\\land: Logical And"
+        },
+        {
+          "char": "∨",
+          "label": "\\lor: Logical Or"
+        }
       ]
     },
     {
@@ -93,12 +225,30 @@
       "h2": "Arrows & Maps",
       "intro": "Implication and mapping arrows used in proofs and function definitions.",
       "symbols": [
-        { "char": "→", "label": "\\rightarrow — Rightwards Arrow" },
-        { "char": "←", "label": "\\leftarrow — Leftwards Arrow" },
-        { "char": "↔", "label": "\\leftrightarrow — Left Right Arrow" },
-        { "char": "⇒", "label": "\\Rightarrow — Rightwards Double Arrow" },
-        { "char": "⇔", "label": "\\Leftrightarrow — Left Right Double Arrow" },
-        { "char": "↦", "label": "\\mapsto — Rightwards Arrow from Bar" }
+        {
+          "char": "→",
+          "label": "\\rightarrow: Rightwards Arrow"
+        },
+        {
+          "char": "←",
+          "label": "\\leftarrow: Leftwards Arrow"
+        },
+        {
+          "char": "↔",
+          "label": "\\leftrightarrow: Left Right Arrow"
+        },
+        {
+          "char": "⇒",
+          "label": "\\Rightarrow: Rightwards Double Arrow"
+        },
+        {
+          "char": "⇔",
+          "label": "\\Leftrightarrow: Left Right Double Arrow"
+        },
+        {
+          "char": "↦",
+          "label": "\\mapsto: Rightwards Arrow from Bar"
+        }
       ]
     },
     {
@@ -107,22 +257,57 @@
       "h2": "Miscellaneous Math Symbols",
       "intro": "Infinity, geometry marks, delimiters, and proof shorthand.",
       "symbols": [
-        { "char": "∞", "label": "\\infty — Infinity" },
-        { "char": "ℵ", "label": "\\aleph — Alef Symbol" },
-        { "char": "ℏ", "label": "\\hbar — Planck Constant Over Two Pi" },
-        { "char": "ℓ", "label": "\\ell — Script Small L" },
-        { "char": "⊥", "label": "\\perp — Up Tack (Perpendicular)" },
-        { "char": "∥", "label": "\\parallel — Parallel To" },
-        { "char": "∠", "label": "\\angle — Angle" },
-        { "char": "⌈", "label": "\\lceil — Left Ceiling" },
-        { "char": "⌋", "label": "\\rfloor — Right Floor" },
-        { "char": "⋯", "label": "\\cdots — Midline Horizontal Ellipsis" },
-        { "char": "∴", "label": "\\therefore — Therefore" },
-        { "char": "∵", "label": "\\because — Because" }
+        {
+          "char": "∞",
+          "label": "\\infty: Infinity"
+        },
+        {
+          "char": "ℵ",
+          "label": "\\aleph: Alef Symbol"
+        },
+        {
+          "char": "ℏ",
+          "label": "\\hbar: Planck Constant Over Two Pi"
+        },
+        {
+          "char": "ℓ",
+          "label": "\\ell: Script Small L"
+        },
+        {
+          "char": "⊥",
+          "label": "\\perp: Up Tack (Perpendicular)"
+        },
+        {
+          "char": "∥",
+          "label": "\\parallel: Parallel To"
+        },
+        {
+          "char": "∠",
+          "label": "\\angle: Angle"
+        },
+        {
+          "char": "⌈",
+          "label": "\\lceil: Left Ceiling"
+        },
+        {
+          "char": "⌋",
+          "label": "\\rfloor: Right Floor"
+        },
+        {
+          "char": "⋯",
+          "label": "\\cdots: Midline Horizontal Ellipsis"
+        },
+        {
+          "char": "∴",
+          "label": "\\therefore: Therefore"
+        },
+        {
+          "char": "∵",
+          "label": "\\because: Because"
+        }
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
   "related": [
     {
       "href": "/library/math-symbols/",

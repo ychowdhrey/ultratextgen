@@ -45,7 +45,7 @@
         { "char": "⭐", "label": "Star Emoji (U+2B50)" },
         { "char": "🌟", "label": "Glowing Star" },
         { "char": "✨", "label": "Sparkles" },
-        { "char": "*", "label": "Asterisk (U+002A) — Not a Star" },
+        { "char": "*", "label": "Asterisk (U+002A): Not a Star" },
         { "char": "✱", "label": "Heavy Asterisk (U+2731)" }
       ]
     }

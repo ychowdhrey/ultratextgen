@@ -27,6 +27,12 @@
         "added": "2026-08-21"
       },
       {
+        "string": "Samsung Galaxy",
+        "reason": "brand plus product-line name, cited in Latin script inside otherwise Arabic prose",
+        "found_on": "ar/updates/uae-dirham-symbol-unicode-18/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "The Rhetoric of Fonts",
         "reason": "the title of an English-language guide, cited as a work title rather than translated",
         "found_on": "ar/khat-snapchat/",
@@ -37,6 +43,12 @@
         "reason": "Unicode terminology cited as such — the character names are \"Zero Width Space/Joiner/Non-Joiner\"",
         "found_on": "ar/nas-ghayr-marii/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names, cited in Latin script inside otherwise Arabic prose",
+        "found_on": "ar/updates/uae-dirham-symbol-unicode-18/",
+        "added": "2026-09-01"
       }
     ],
     "bs": [
@@ -419,6 +431,18 @@
     ],
     "de": [
       {
+        "string": "Alkali",
+        "reason": "German mineral/substance name, spelled identically",
+        "found_on": "de/library/okkulte-symbole/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Alkali II",
+        "reason": "German mineral/substance name, spelled identically",
+        "found_on": "de/library/okkulte-symbole/",
+        "added": "2026-08-16"
+      },
+      {
         "string": "Alpha",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from de/library/mathe-symbole/ itself: the tiles around it are translated (Empty Set → Leere Menge; Intersection → Schnittmenge; Union → Vereinigung), so this one is kept because it genuinely matches.",
         "found_on": "de/library/mathe-symbole/",
@@ -441,6 +465,18 @@
         "reason": "proper noun from the tradition it names; this locale's own dedicated page uses the same word (nl \"Ankh (Sleutel van het Leven)\", vi \"Ankh (Chìa Khóa Sự Sống)\", id \"Ankh (Kunci Kehidupan)\")",
         "found_on": "de/library/kronen-symbol/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Aqua Vitae II",
+        "reason": "Latin alchemical term, used unchanged in German mineralogical and alchemical writing",
+        "found_on": "de/library/okkulte-symbole/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Auripigment",
+        "reason": "German mineral/substance name, spelled identically",
+        "found_on": "de/library/okkulte-symbole/",
+        "added": "2026-08-16"
       },
       {
         "string": "Austral",
@@ -473,6 +509,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Bjarkan",
+        "reason": "Old Norse rune name — a proper name, not translated in any language",
+        "found_on": "de/library/wikinger-symbole/",
+        "added": "2026-08-16"
+      },
+      {
         "string": "Breve",
         "reason": "character name that coincides with the English form in this language. Evidence from de/library/akzente-diakritische-zeichen/ itself: the tiles around it are translated (Macron → Makron; Dot Above → Punkt oben; Diaeresis → Trema), so this one is kept because it genuinely matches.",
         "found_on": "de/library/akzente-diakritische-zeichen/",
@@ -497,10 +539,22 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Ceres",
+        "reason": "Roman deity name carried by the asteroid, unchanged in German",
+        "found_on": "de/library/okkulte-symbole/",
+        "added": "2026-08-16"
+      },
+      {
         "string": "Chat",
         "reason": "the word this locale itself uses for the surface; it appears in this locale's own running prose, not only in the English-derived UI label",
         "found_on": "de/schriftarten-fuer-snapchat/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Chiron",
+        "reason": "Greek proper name of the centaur/minor planet, unchanged in German",
+        "found_on": "de/library/okkulte-symbole/",
+        "added": "2026-08-16"
       },
       {
         "string": "Clown Emoji &amp; Kaomoji",
@@ -635,6 +689,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Gold",
+        "reason": "German mineral/substance name, spelled identically",
+        "found_on": "de/library/okkulte-symbole/",
+        "added": "2026-08-16"
+      },
+      {
         "string": "Goth / Grunge",
         "reason": "aesthetic-subculture name borrowed whole; the card's own description on the same page is already in this language",
         "found_on": "de/library/aesthetische-symbole/",
@@ -653,6 +713,12 @@
         "added": "2026-08-30"
       },
       {
+        "string": "High Five",
+        "reason": "established English loanword in German (der High Five); the native 'Abklatschen' describes the act, not the greeting, and DE keyword data shows the loanword carrying the demand (high five emoji 2,400/mo) while 'abklatschen' is negligible",
+        "found_on": "de/library/high-five-emoji/",
+        "added": "2026-08-16"
+      },
+      {
         "string": "Hiragana",
         "reason": "Japanese script name, cited unchanged in this language",
         "found_on": "de/library/japanische-symbole/",
@@ -669,6 +735,12 @@
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from de/library/mathe-symbole/ itself: the tiles around it are translated (Double Integral → Doppelintegral; Triple Integral → Dreifachintegral; Contour Integral → Kurvenintegral), so this one is kept because it genuinely matches.",
         "found_on": "de/library/mathe-symbole/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Interrobang",
+        "reason": "the typographic mark's coined proper name; German uses 'Interrobang' unchanged (as do FR/ES/IT) — it has no German-language equivalent",
+        "found_on": "de/library/satzzeichen/",
+        "added": "2026-08-16"
       },
       {
         "string": "Interrobang (‽)",
@@ -693,6 +765,12 @@
         "reason": "loanword, spelled identically in German",
         "found_on": "de/library/geist-emoji/",
         "added": "2026-08-15"
+      },
+      {
+        "string": "Juno",
+        "reason": "Roman deity name carried by the asteroid, unchanged in German",
+        "found_on": "de/library/okkulte-symbole/",
+        "added": "2026-08-16"
       },
       {
         "string": "Jupiter",
@@ -725,6 +803,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Kaze: Wind",
+        "reason": "kanji gloss for 風. 'Wind' is the correct German noun and is spelled identically to the English. Evidence from de/library/fortnite-zeichen/ itself: every neighbouring gloss in the same section IS translated (Oni — Dämon, Ryu — Drache, Kaminari — Donner, Yami — Dunkelheit), so this one is kept because it genuinely matches.",
+        "found_on": "de/library/fortnite-zeichen/",
+        "added": "2026-08-31"
+      },
+      {
         "string": "Khanda",
         "reason": "proper noun from the tradition it names; this locale's own dedicated page uses the same word (nl \"Ankh (Sleutel van het Leven)\", vi \"Ankh (Chìa Khóa Sự Sống)\", id \"Ankh (Kunci Kehidupan)\")",
         "found_on": "de/symbol/om-symbol/",
@@ -735,6 +819,12 @@
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from de/library/mathe-symbole/ itself: the tiles around it are translated (Empty Set → Leere Menge; Intersection → Schnittmenge; Union → Vereinigung), so this one is kept because it genuinely matches.",
         "found_on": "de/library/mathe-symbole/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Laptop",
+        "reason": "loanword and the standard German term for the device (der Laptop); 'Notebook' is the only alternative and is also an English loanword",
+        "found_on": "de/library/nerd-emoji/",
+        "added": "2026-08-16"
       },
       {
         "string": "Lari",
@@ -761,6 +851,18 @@
         "added": "2026-08-25"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "de/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
+        "string": "Link",
+        "reason": "standard German term for a hyperlink (der Link); 'Verknüpfung' exists but is Windows-UI jargon, not what a signature line says",
+        "found_on": "de/library/email-symbole/",
+        "added": "2026-08-16"
+      },
+      {
         "string": "Lira",
         "reason": "currency name that coincides with the English form in this language. Evidence from de/library/waehrungssymbole/ itself: the tiles around it are translated (French Franc → Französischer Franc; Drachma → Drachme; Florin → Gulden), so this one is kept because it genuinely matches.",
         "found_on": "de/library/waehrungssymbole/",
@@ -779,10 +881,22 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Logr",
+        "reason": "Old Norse rune name — a proper name, not translated in any language",
+        "found_on": "de/library/wikinger-symbole/",
+        "added": "2026-08-16"
+      },
+      {
         "string": "Lotus",
         "reason": "animal or object name that coincides with the English form in this language. Evidence from de/library/blumen-symbole/ itself: the tiles around it are translated (Hyacinth → Hyazinthe; Bouquet → Blumenstrauß; White Flower → Weiße Blume), so this one is kept because it genuinely matches.",
         "found_on": "de/library/blumen-symbole/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Madr",
+        "reason": "Old Norse rune name — a proper name, not translated in any language",
+        "found_on": "de/library/wikinger-symbole/",
+        "added": "2026-08-16"
       },
       {
         "string": "Manat",
@@ -923,6 +1037,18 @@
         "added": "2026-08-25"
       },
       {
+        "string": "PNG (transparent)",
+        "reason": "\"transparent\" is the correct adjective in both German and French, so the button label coincides with the English. Not assumed: printablesEngine.js's own per-locale I18N table independently sets pngTransparent to \"PNG (transparent)\" for de and fr while setting it differently for es (transparente), it (trasparente), pl (przezroczyste tlo), pt (transparente) and id (transparan) - so the table made a per-locale decision rather than defaulting, and these two genuinely land on the English form. Attested against the locale's own corpus as well.",
+        "found_on": "de/zum-ausdrucken/graffiti-buchstaben/",
+        "added": "2026-09-12"
+      },
+      {
+        "string": "Pallas",
+        "reason": "Roman deity name carried by the asteroid, unchanged in German",
+        "found_on": "de/library/okkulte-symbole/",
+        "added": "2026-08-16"
+      },
+      {
         "string": "Party",
         "reason": "\"die Party\" is the ordinary German noun; the swatch names a party-coloured printable",
         "found_on": "de/zum-ausdrucken/name-ausmalen/",
@@ -953,6 +1079,42 @@
         "added": "2026-08-15"
       },
       {
+        "string": "Realgar",
+        "reason": "German mineral/substance name, spelled identically",
+        "found_on": "de/library/okkulte-symbole/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Realgar II",
+        "reason": "German mineral/substance name, spelled identically",
+        "found_on": "de/library/okkulte-symbole/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Regulus",
+        "reason": "Latin alchemical term, used unchanged in German mineralogical and alchemical writing",
+        "found_on": "de/library/okkulte-symbole/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Regulus II",
+        "reason": "Latin alchemical term, used unchanged in German mineralogical and alchemical writing",
+        "found_on": "de/library/okkulte-symbole/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Regulus III",
+        "reason": "Latin alchemical term, used unchanged in German mineralogical and alchemical writing",
+        "found_on": "de/library/okkulte-symbole/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Regulus IV",
+        "reason": "Latin alchemical term, used unchanged in German mineralogical and alchemical writing",
+        "found_on": "de/library/okkulte-symbole/",
+        "added": "2026-08-16"
+      },
+      {
         "string": "Rial",
         "reason": "currency name that coincides with the English form in this language. Evidence from de/library/waehrungssymbole/ itself: the tiles around it are translated (Shekel → Schekel; Rupee Sign → Rupie-Zeichen; Tugrik → Tögrög), so this one is kept because it genuinely matches.",
         "found_on": "de/library/waehrungssymbole/",
@@ -975,6 +1137,18 @@
         "reason": "character name that coincides with the English form in this language. Evidence from de/library/blumen-symbole/ itself: the tiles around it are translated (Bouquet → Blumenstrauß; Tulip → Tulpe; Hyacinth → Hyazinthe), so this one is kept because it genuinely matches.",
         "found_on": "de/library/blumen-symbole/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "de/updates/unicode-18-emoji-abstimmung/",
+        "added": "2026-09-01"
+      },
+      {
+        "string": "Samsung Galaxy",
+        "reason": "brand plus product-line name; no German form exists",
+        "found_on": "de/updates/vae-dirham-symbol-unicode-18/",
+        "added": "2026-09-01"
       },
       {
         "string": "Saturn",
@@ -1067,6 +1241,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "de/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "The Rhetoric of Fonts",
         "reason": "the title of an English-language guide, cited as a work title rather than translated",
         "found_on": "de/schriftarten-fuer-snapchat/",
@@ -1127,6 +1307,30 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Vesta",
+        "reason": "Roman deity name carried by the asteroid, unchanged in German",
+        "found_on": "de/library/okkulte-symbole/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Vitriol",
+        "reason": "Latin alchemical term, used unchanged in German mineralogical and alchemical writing",
+        "found_on": "de/library/okkulte-symbole/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Vitriol II",
+        "reason": "Latin alchemical term, used unchanged in German mineralogical and alchemical writing",
+        "found_on": "de/library/okkulte-symbole/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "de/updates/unicode-18-emoji-abstimmung/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Whisper / Subliminal",
         "reason": "aesthetic-subculture name borrowed whole; the card's own description on the same page is already in this language",
         "found_on": "de/library/aesthetische-symbole/",
@@ -1163,6 +1367,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "de/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Zero Width",
         "reason": "Unicode terminology cited as such — the character names are \"Zero Width Space/Joiner/Non-Joiner\"",
         "found_on": "de/unsichtbares-zeichen/",
@@ -1197,6 +1407,12 @@
         "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
         "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "de/updates/unicode-18-emoji-abstimmung/",
+        "added": "2026-09-01"
       },
       {
         "string": "iPhone Emojis",
@@ -1309,7 +1525,7 @@
     ],
     "es": [
       {
-        "string": "38 / 0x26 / 0b0100110 / 0o46 — Ampersand",
+        "string": "38 / 0x26 / 0b0100110 / 0o46: Ampersand",
         "reason": "Spanish for & is \"ampersand\" (RAE); the prefix is the ASCII code in four bases. nl/pl carry the identical form",
         "found_on": "es/library/tabla-ascii/",
         "added": "2026-08-30"
@@ -2251,6 +2467,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "es/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Lionel Messi",
         "reason": "footballer, club or national-team proper name, quoted as-is. Note on diacritics: this site renders every player name in ASCII site-wide (33 \"Mbappe\", 29 \"Suarez\", 29 \"Modric\", 39 \"Vinicius\", including in its own URL slugs and on the Portuguese pages), so the unaccented spelling here is the house convention rather than an untranslated English string. Spanish sports media does accent Mbappe and Suarez; whether to change the convention site-wide is an open question, not a translation defect, and \"Victor Osimhen\" is Nigerian and correctly carries no accent in any language.",
         "found_on": "es/library/adivina-el-futbolista-por-emojis/",
@@ -2647,6 +2869,18 @@
         "added": "2026-08-30"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "es/updates/unicode-18-nuevos-emojis-votacion/",
+        "added": "2026-09-01"
+      },
+      {
+        "string": "Samsung Galaxy",
+        "reason": "brand plus product-line name; no Spanish form exists",
+        "found_on": "es/updates/simbolo-dirham-emiratos-unicode-18/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Samurai Blue",
         "reason": "a supporters’ chant/nickname quoted in its own language on an emoji-set page; every locale cites it unchanged",
         "found_on": "es/library/emoji-japon/",
@@ -2807,6 +3041,12 @@
         "reason": "currency name that coincides with the English form in this language. Evidence from es/library/simbolos-de-moneda/ itself: the tiles around it are translated (Shekel → Séquel; Rupee Sign → Signo de rupia; Drachma → Dracma), so this one is kept because it genuinely matches.",
         "found_on": "es/library/simbolos-de-moneda/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "es/usecase/zalgo-text/",
+        "added": "2026-09-05"
       },
       {
         "string": "Theta",
@@ -3001,6 +3241,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "es/updates/unicode-18-nuevos-emojis-votacion/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "X/Twitter",
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "es/contador-de-palabras-y-caracteres/",
@@ -3067,6 +3313,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "es/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Zero Width",
         "reason": "Unicode terminology cited as such — the character names are \"Zero Width Space/Joiner/Non-Joiner\"",
         "found_on": "es/texto-invisible/",
@@ -3119,6 +3371,12 @@
         "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
         "found_on": "es/imprimibles/abecedario-espanol/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "es/updates/unicode-18-nuevos-emojis-votacion/",
+        "added": "2026-09-01"
       },
       {
         "string": "jota",
@@ -3287,7 +3545,7 @@
     ],
     "fr": [
       {
-        "string": "126 / 0x7E / 0b1111110 / 0o176 — Tilde",
+        "string": "126 / 0x7E / 0b1111110 / 0o176: Tilde",
         "reason": "French for ~ is \"tilde\"; the prefix is the ASCII code in four bases. de/it/nl carry the identical form",
         "found_on": "fr/library/table-ascii/",
         "added": "2026-08-30"
@@ -3299,7 +3557,7 @@
         "added": "2026-08-25"
       },
       {
-        "string": "39 / 0x27 / 0b0100111 / 0o47 — Apostrophe",
+        "string": "39 / 0x27 / 0b0100111 / 0o47: Apostrophe",
         "reason": "French for the mark is \"apostrophe\"; the prefix is the ASCII code in four bases",
         "found_on": "fr/library/table-ascii/",
         "added": "2026-08-30"
@@ -3629,6 +3887,12 @@
         "added": "2026-08-30"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "fr/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Lion",
         "reason": "French for 🦁 is \"lion\"; ar/es/id/th/tr each differ",
         "found_on": "fr/library/emojis-animaux/",
@@ -3749,6 +4013,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "PNG (transparent)",
+        "reason": "\"transparent\" is the correct adjective in both German and French, so the button label coincides with the English. Not assumed: printablesEngine.js's own per-locale I18N table independently sets pngTransparent to \"PNG (transparent)\" for de and fr while setting it differently for es (transparente), it (trasparente), pl (przezroczyste tlo), pt (transparente) and id (transparan) - so the table made a per-locale decision rather than defaulting, and these two genuinely land on the English form. Attested against the locale's own corpus as well.",
+        "found_on": "fr/imprimables/lettres-graffiti/",
+        "added": "2026-09-12"
+      },
+      {
         "string": "Pallas",
         "reason": "planet or asteroid name that coincides with the English form in this language. Evidence from fr/library/symboles-witchy-occult/ itself: the tiles around it are translated (Ceres → Cérès; Juno → Junon; Black Moon Lilith → Lune Noire Lilith), so this one is kept because it genuinely matches.",
         "found_on": "fr/library/symboles-witchy-occult/",
@@ -3837,6 +4107,12 @@
         "reason": "character name that coincides with the English form in this language. Evidence from fr/library/symboles-fleurs/ itself: the tiles around it are translated (Tulip → Tulipe; Hyacinth → Jacinthe; Blossom → Fleur épanouie), so this one is kept because it genuinely matches.",
         "found_on": "fr/library/symboles-fleurs/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "fr/updates/unicode-18-nouveaux-emojis-vote/",
+        "added": "2026-09-01"
       },
       {
         "string": "Saxophone",
@@ -3947,6 +4223,12 @@
         "added": "2026-08-31"
       },
       {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "fr/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "The Rhetoric of Fonts",
         "reason": "the title of an English-language guide, cited as a work title rather than translated",
         "found_on": "fr/police-snapchat/",
@@ -4019,6 +4301,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "fr/updates/unicode-18-nouveaux-emojis-vote/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "X/Twitter",
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "fr/compteur-de-mots-et-de-caracteres/",
@@ -4049,10 +4337,22 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "fr/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Zero Width",
         "reason": "Unicode terminology cited as such — the character names are \"Zero Width Space/Joiner/Non-Joiner\"",
         "found_on": "fr/texte-invisible/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "cascade",
+        "reason": "the French word for a cascade is \"cascade\" (same spelling, same meaning); it is the label of the Thai-cascade example card, which decodes to exactly this word",
+        "found_on": "fr/usecase/zalgo-text/",
+        "added": "2026-09-05"
       },
       {
         "string": "equis",
@@ -4077,6 +4377,12 @@
         "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
         "found_on": "fr/imprimables/alphabet-espagnol/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "fr/updates/unicode-18-nouveaux-emojis-vote/",
+        "added": "2026-09-01"
       },
       {
         "string": "jota",
@@ -4260,6 +4566,12 @@
       }
     ],
     "id": [
+      {
+        "string": "ASCII Art",
+        "reason": "loanword; Indonesian uses the English term for the form, and this page's own translated prose does too (\"ASCII Art Imlek\", \"Generator ASCII Art\"). Same class as the Emoji and Markdown entries already here.",
+        "found_on": "id/events/imlek/",
+        "added": "2026-09-10"
+      },
       {
         "string": "Alien",
         "reason": "food, animal or object name that coincides with the English form in this language. Evidence from id/library/emoji-wajah/ itself: the tiles around it are translated (Ghost → Hantu; Goblin → Goblin Tengu; Jack-O-Lantern → Labu Halloween), so this one is kept because it genuinely matches.",
@@ -4711,6 +5023,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "id/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Lira",
         "reason": "currency name that coincides with the English form in this language. Evidence from id/library/simbol-mata-uang/ itself: the tiles around it are translated (French Franc → Franc Prancis; Turkish Lira → Lira Turki; Ruble → Rubel), so this one is kept because it genuinely matches.",
         "found_on": "id/library/simbol-mata-uang/",
@@ -4969,6 +5287,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "id/updates/unicode-18-emoji-baru-voting/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Scorpio",
         "reason": "zodiac sign name that coincides with the English form in this language. Evidence from id/library/simbol-zodiak/ itself: the tiles around it are translated (Aries (Mar 21 – Apr 19) → Aries (21 Mar – 19 Apr); Taurus (Apr 20 – May 20) → Taurus (20 Apr – 20 Mei); Gemini (May 21 – Jun 20) → Gemini (21 Mei – 20 Jun)), so this one is kept because it genuinely matches.",
         "found_on": "id/library/simbol-zodiak/",
@@ -5015,6 +5339,12 @@
         "reason": "currency name that coincides with the English form in this language. Evidence from id/library/simbol-mata-uang/ itself: the tiles around it are translated (Shekel → Syekel; Rial → Riyal; Rupee Sign → Lambang Rupee), so this one is kept because it genuinely matches.",
         "found_on": "id/library/simbol-mata-uang/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "id/usecase/zalgo-text/",
+        "added": "2026-09-05"
       },
       {
         "string": "The Rhetoric of Fonts",
@@ -5113,6 +5443,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "id/updates/unicode-18-emoji-baru-voting/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Windows (Alt code)",
         "reason": "code or platform literal cited verbatim",
         "found_on": "id/symbol/simbol-kuadrat-kubik/",
@@ -5143,6 +5479,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "id/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Zebra",
         "reason": "food, animal or object name that coincides with the English form in this language. Evidence from id/library/emoji-hewan/ itself: the tiles around it are translated (Polar Bear → Beruang Kutub; Raccoon → Rakun; Speak-No-Evil Monkey → Monyet Tutup Mulut), so this one is kept because it genuinely matches.",
         "found_on": "id/library/emoji-hewan/",
@@ -5165,6 +5507,12 @@
         "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
         "found_on": "id/printables/alfabet-spanyol/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "id/updates/unicode-18-emoji-baru-voting/",
+        "added": "2026-09-01"
       },
       {
         "string": "jota",
@@ -5205,7 +5553,7 @@
     ],
     "it": [
       {
-        "string": "126 / 0x7E / 0b1111110 / 0o176 — Tilde",
+        "string": "126 / 0x7E / 0b1111110 / 0o176: Tilde",
         "reason": "a codepoint line; Tilde is also the Italian word",
         "found_on": "it/library/tabella-ascii/",
         "added": "2026-08-15"
@@ -5451,6 +5799,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "it/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Lira",
         "reason": "currency name that coincides with the English form in this language. Evidence from it/library/simboli-euro/ itself: the tiles around it are translated (French Franc → Franco Francese; Drachma → Dracma; Florin → Fiorino), so this one is kept because it genuinely matches.",
         "found_on": "it/library/simboli-euro/",
@@ -5625,6 +5979,12 @@
         "added": "2026-08-21"
       },
       {
+        "string": "Samsung Galaxy",
+        "reason": "brand plus product-line name; no Italian form exists",
+        "found_on": "it/updates/simbolo-dirham-unicode-18/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Shekel",
         "reason": "currency name that coincides with the English form in this language. Evidence from it/library/simboli-euro/ itself: the tiles around it are translated (Rupee Sign → Segno di Rupia; Tamil Rupee → Rupia Tamil; Cent → Centesimo), so this one is kept because it genuinely matches.",
         "found_on": "it/library/simboli-euro/",
@@ -5665,6 +6025,12 @@
         "reason": "currency name that coincides with the English form in this language. Evidence from it/library/simboli-euro/ itself: the tiles around it are translated (Rupee Sign → Segno di Rupia; Drachma → Dracma; Tamil Rupee → Rupia Tamil), so this one is kept because it genuinely matches.",
         "found_on": "it/library/simboli-euro/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "it/usecase/zalgo-text/",
+        "added": "2026-09-05"
       },
       {
         "string": "Theta",
@@ -5751,6 +6117,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "it/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Zero Width",
         "reason": "Unicode terminology cited as such — the character names are \"Zero Width Space/Joiner/Non-Joiner\"",
         "found_on": "it/testo-invisibile/",
@@ -5803,6 +6175,12 @@
         "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
         "found_on": "it/da-stampare/alfabeto-spagnolo/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no Italian form exists",
+        "found_on": "it/updates/simbolo-dirham-unicode-18/",
+        "added": "2026-09-01"
       },
       {
         "string": "jota",
@@ -5933,6 +6311,12 @@
         "added": "2026-08-21"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "ja/updates/unicode-18-most-anticipated-emoji/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "X/Twitter",
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "ja/mojisu-kaunto/",
@@ -5943,6 +6327,12 @@
         "reason": "an initialism, kept in Latin script in Japanese copy",
         "found_on": "ja/library/kisu-emoji/",
         "added": "2026-08-15"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "ja/updates/unicode-18-most-anticipated-emoji/",
+        "added": "2026-09-01"
       },
       {
         "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
@@ -6067,6 +6457,30 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "ko/updates/unicode-18-imoji-tupyo/",
+        "added": "2026-09-01"
+      },
+      {
+        "string": "Samsung Galaxy",
+        "reason": "brand plus product-line name; Korean tech coverage cites the Galaxy line by its Latin name",
+        "found_on": "ko/updates/dirham-giho-unicode-18/",
+        "added": "2026-09-01"
+      },
+      {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "ko/updates/unicode-18-imoji-tupyo/",
+        "added": "2026-09-01"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "ko/updates/unicode-18-imoji-tupyo/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
         "found_on": "ko/library/islam-gihou/",
@@ -6131,7 +6545,7 @@
     ],
     "nl": [
       {
-        "string": "126 / 0x7E / 0b1111110 / 0o176 — Tilde",
+        "string": "126 / 0x7E / 0b1111110 / 0o176: Tilde",
         "reason": "a codepoint line; Tilde is also the Dutch word",
         "found_on": "nl/library/ascii-tabel/",
         "added": "2026-08-15"
@@ -6143,7 +6557,7 @@
         "added": "2026-08-25"
       },
       {
-        "string": "38 / 0x26 / 0b0100110 / 0o46 — Ampersand",
+        "string": "38 / 0x26 / 0b0100110 / 0o46: Ampersand",
         "reason": "a codepoint line; Ampersand is also the Dutch word",
         "found_on": "nl/library/ascii-tabel/",
         "added": "2026-08-15"
@@ -6389,6 +6803,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "nl/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Lotus",
         "reason": "animal or object name that coincides with the English form in this language. Evidence from nl/library/religieuze-symbolen/ itself: the tiles around it are translated (Flute → Fluit; Diya Lamp → Diya-olielamp; Peacock Feather → Pauwenveer), so this one is kept because it genuinely matches.",
         "found_on": "nl/library/religieuze-symbolen/",
@@ -6563,6 +6983,18 @@
         "added": "2026-08-21"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no Dutch form exists",
+        "found_on": "nl/updates/unicode-18-nieuwe-emoji-stemming/",
+        "added": "2026-09-01"
+      },
+      {
+        "string": "Samsung Galaxy",
+        "reason": "brand plus product-line name; no Dutch form exists",
+        "found_on": "nl/updates/dirham-symbool-unicode-18/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Status",
         "reason": "social-platform surface name; this locale uses the English term for the feature",
         "found_on": "nl/updates/dirham-symbool-unicode-18/",
@@ -6573,6 +7005,12 @@
         "reason": "social-platform surface name; this locale uses the English term for the feature",
         "found_on": "nl/instagram-lettertype/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "nl/usecase/zalgo-text/",
+        "added": "2026-09-05"
       },
       {
         "string": "The Rhetoric of Fonts",
@@ -6623,6 +7061,12 @@
         "added": "2026-08-15"
       },
       {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in Dutch tech coverage",
+        "found_on": "nl/updates/unicode-18-nieuwe-emoji-stemming/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "X/Twitter",
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "nl/woorden-en-tekens-tellen/",
@@ -6647,16 +7091,34 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "nl/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Zero Width",
         "reason": "Unicode terminology cited as such — the character names are \"Zero Width Space/Joiner/Non-Joiner\"",
         "found_on": "nl/onzichtbare-tekst/",
         "added": "2026-08-25"
       },
       {
+        "string": "cascade",
+        "reason": "the Dutch word for a cascade is \"cascade\" (same spelling, same meaning); it is the label of the Thai-cascade example card, which decodes to exactly this word",
+        "found_on": "nl/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "glitch",
         "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Glitch Tekst\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
         "found_on": "nl/usecase/zalgo-text/",
         "added": "2026-08-21"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no Dutch form exists",
+        "found_on": "nl/updates/unicode-18-nieuwe-emoji-stemming/",
+        "added": "2026-09-01"
       },
       {
         "string": "« » Guillemets",
@@ -6831,7 +7293,7 @@
         "added": "2026-08-25"
       },
       {
-        "string": "38 / 0x26 / 0b0100110 / 0o46 — Ampersand",
+        "string": "38 / 0x26 / 0b0100110 / 0o46: Ampersand",
         "reason": "a codepoint line; Ampersand is the Polish term too",
         "found_on": "pl/library/tabela-ascii/",
         "added": "2026-08-15"
@@ -7047,6 +7509,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "pl/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Manat",
         "reason": "currency name that coincides with the English form in this language. Evidence from pl/library/symbole-walut/ itself: the tiles around it are translated (Lira → Lir; French Franc → Frank francuski; Florin → Floren), so this one is kept because it genuinely matches.",
         "found_on": "pl/library/symbole-walut/",
@@ -7197,6 +7665,12 @@
         "added": "2026-08-21"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "pl/updates/unicode-18-nowe-emoji-glosowanie/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Saturn",
         "reason": "planet or asteroid name that coincides with the English form in this language. Evidence from pl/library/symbole-witchy-occult/ itself: the tiles around it are translated (Jupiter → Jowisz; Earth → Ziemia; Uranus → Uran), so this one is kept because it genuinely matches.",
         "found_on": "pl/library/symbole-witchy-occult/",
@@ -7257,6 +7731,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "pl/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "The Rhetoric of Fonts",
         "reason": "the title of an English-language guide, cited as a work title rather than translated",
         "found_on": "pl/czcionki-na-snapchat/",
@@ -7273,6 +7753,12 @@
         "reason": "currency name that coincides with the English form in this language. Evidence from pl/library/symbole-walut/ itself: the tiles around it are translated (Shekel → Szekel; Rupee Sign → Znak rupii; Lira → Lir), so this one is kept because it genuinely matches.",
         "found_on": "pl/library/symbole-walut/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "pl/updates/unicode-18-nowe-emoji-glosowanie/",
+        "added": "2026-09-01"
       },
       {
         "string": "Whisper / Subliminal",
@@ -7297,6 +7783,12 @@
         "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
         "found_on": "pl/guide/bezpieczna-nazwa-na-discordzie/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "pl/usecase/zalgo-text/",
+        "added": "2026-09-05"
       },
       {
         "string": "Zero Width",
@@ -7333,6 +7825,12 @@
         "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
         "found_on": "pl/do-druku/alfabet-hiszpanski/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "pl/updates/unicode-18-nowe-emoji-glosowanie/",
+        "added": "2026-09-01"
       },
       {
         "string": "jota",
@@ -7595,6 +8093,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "pt/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Lira",
         "reason": "currency name that coincides with the English form in this language. Evidence from pt/library/simbolos-de-moeda/ itself: the tiles around it are translated (French Franc → Franco francês; Drachma → Dracma; Florin → Florim), so this one is kept because it genuinely matches.",
         "found_on": "pt/library/simbolos-de-moeda/",
@@ -7739,6 +8243,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "pt/updates/unicode-18-novos-emojis-votacao/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Shekel",
         "reason": "currency name that coincides with the English form in this language. Evidence from pt/library/simbolos-de-moeda/ itself: the tiles around it are translated (Rupee Sign → Sinal de rupia; Tamil Rupee → Rupia tâmil; Cent → Centavo), so this one is kept because it genuinely matches.",
         "found_on": "pt/library/simbolos-de-moeda/",
@@ -7793,6 +8303,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "pt/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Theta-Delta",
         "reason": "proper noun from the tradition it names; this locale's own dedicated page uses the same word (nl \"Ankh (Sleutel van het Leven)\", vi \"Ankh (Chìa Khóa Sự Sống)\", id \"Ankh (Kunci Kehidupan)\")",
         "found_on": "pt/library/simbolos-therian/",
@@ -7823,6 +8339,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "pt/updates/unicode-18-novos-emojis-votacao/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "X/Twitter",
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "pt/contador-de-palavras-e-caracteres/",
@@ -7839,6 +8361,12 @@
         "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
         "found_on": "pt/guide/nome-discord-sem-risco/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "pt/usecase/zalgo-text/",
+        "added": "2026-09-05"
       },
       {
         "string": "Zero Width",
@@ -7881,6 +8409,12 @@
         "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
         "found_on": "pt/imprimiveis/alfabeto-espanhol/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "pt/updates/unicode-18-novos-emojis-votacao/",
+        "added": "2026-09-01"
       },
       {
         "string": "jota",
@@ -8025,6 +8559,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "ru/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Markdown",
         "reason": "\"Markdown\" is the name of the format; every locale on this site cites it unchanged",
         "found_on": "ru/guide/formatirovanie-teksta-discord/",
@@ -8061,10 +8601,22 @@
         "added": "2026-08-21"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "ru/updates/unicode-18-most-anticipated-emoji/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Samsung, Google, JoyPixels, Mozilla",
         "reason": "four vendor names listed in one table cell",
         "found_on": "ru/symbol/emodzi-kalendarya/",
         "added": "2026-08-30"
+      },
+      {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "ru/zalgo-text/",
+        "added": "2026-09-05"
       },
       {
         "string": "Unicode 6.0 (2010) / Emoji 1.0",
@@ -8073,10 +8625,28 @@
         "added": "2026-08-25"
       },
       {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "ru/updates/unicode-18-most-anticipated-emoji/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "X/Twitter",
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "ru/schetchik-slov-i-simvolov/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "ru/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "ru/updates/unicode-18-most-anticipated-emoji/",
+        "added": "2026-09-01"
       },
       {
         "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
@@ -8229,10 +8799,22 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Capitulum",
+        "reason": "Latin name of the capitulum mark (⸿), cited unchanged in Swedish typography; the tiles around it on the same page are translated (\"Stycketecken\", \"Paragraftecken\")",
+        "found_on": "sv/library/copyright-tecken/",
+        "added": "2026-09-10"
+      },
+      {
         "string": "Cedi",
         "reason": "currency name that coincides with the English form in this language. Evidence from sv/library/valuta-symboler/ itself: the tiles around it are translated (French Franc → Fransk franc; Florin → Floren; Rupee Sign → Rupietecken), so this one is kept because it genuinely matches.",
         "found_on": "sv/library/valuta-symboler/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Celsius",
+        "reason": "unit name from the Swedish astronomer Anders Celsius; identical in Swedish. Its own section translates the tiles around it (\"Termometer\", \"Gradtecken\"). Same case nl already ledgers for nl/symbol/celsius-symbool/",
+        "found_on": "sv/library/vader-symboler/",
+        "added": "2026-09-10"
       },
       {
         "string": "Cent",
@@ -8313,6 +8895,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Fahrenheit",
+        "reason": "unit name from a surname; identical in Swedish, sitting beside the translated \"Termometer\" and \"Gradtecken\" in the same section",
+        "found_on": "sv/library/vader-symboler/",
+        "added": "2026-09-10"
+      },
+      {
         "string": "Gamma",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from sv/library/matematiska-symboler/ itself: the tiles around it are translated (Alpha → Alfa; Empty Set → Tomma mängden; Intersection → Snitt (intersektion)), so this one is kept because it genuinely matches.",
         "found_on": "sv/library/matematiska-symboler/",
@@ -8349,10 +8937,28 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Interrobang",
+        "reason": "name of the ‽ mark, borrowed whole into Swedish; the section around it is translated (\"Interrobang & omvända tecken\")",
+        "found_on": "sv/library/skiljetecken/",
+        "added": "2026-09-10"
+      },
+      {
         "string": "Iota",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from sv/library/matematiska-symboler/ itself: the tiles around it are translated (Omicron → Omikron; Alpha → Alfa; Phi → Fi), so this one is kept because it genuinely matches.",
         "found_on": "sv/library/matematiska-symboler/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Joker",
+        "reason": "loanword, spelled identically in Swedish card vocabulary; de and nl ledger the same string for their own card-suit pages",
+        "found_on": "sv/library/kortfarg-symboler/",
+        "added": "2026-09-10"
+      },
+      {
+        "string": "Jupiter",
+        "reason": "planet name, identical in Swedish. The tiles around it on the same page are translated (\"Merkurius\", \"Jorden\", \"Saturnus\", \"Neptunus\")",
+        "found_on": "sv/library/stjarntecken/",
+        "added": "2026-09-10"
       },
       {
         "string": "Kappa",
@@ -8403,6 +9009,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Mars",
+        "reason": "planet name, identical in Swedish; the same tile set translates Merkurius, Jorden, Saturnus and Neptunus",
+        "found_on": "sv/library/stjarntecken/",
+        "added": "2026-09-10"
+      },
+      {
         "string": "Minimal",
         "reason": "decoration-tab label; the word is identical in this language",
         "found_on": "sv/instagram-typsnitt/",
@@ -8433,6 +9045,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Opposition",
+        "reason": "name of the astrological aspect, identical in Swedish; its neighbours in the same section are translated (\"Konjunktion\", \"Kvadratur\", \"Trigon\")",
+        "found_on": "sv/library/stjarntecken/",
+        "added": "2026-09-10"
+      },
+      {
         "string": "Orange",
         "reason": "food, animal or object name that coincides with the English form in this language. Evidence from sv/library/hjarta-symboler/ itself: the tiles around it are translated (Red → Röd; Yellow → Gul; Rainbow → Regnbåge), so this one is kept because it genuinely matches.",
         "found_on": "sv/library/hjarta-symboler/",
@@ -8451,10 +9069,22 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Pluto",
+        "reason": "planet name, identical in Swedish, like Jupiter and Uranus in the same tile set",
+        "found_on": "sv/library/stjarntecken/",
+        "added": "2026-09-10"
+      },
+      {
         "string": "Rial",
         "reason": "currency name that coincides with the English form in this language. Evidence from sv/library/valuta-symboler/ itself: the tiles around it are translated (Rupee Sign → Rupietecken; Tamil Rupee → Tamilsk rupie; French Franc → Fransk franc), so this one is kept because it genuinely matches.",
         "found_on": "sv/library/valuta-symboler/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Samsung Galaxy",
+        "reason": "brand plus product-line name; no Swedish form exists",
+        "found_on": "sv/updates/dirham-symbol-unicode-18/",
+        "added": "2026-09-01"
       },
       {
         "string": "Shekel",
@@ -8541,6 +9171,18 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Tiger",
+        "reason": "Swedish for 🐅 is \"tiger\", the same spelling; the Chinese-zodiac tiles around it are translated (\"Råtta\", \"Kanin\", \"Drake\", \"Häst\")",
+        "found_on": "sv/library/stjarntecken/",
+        "added": "2026-09-10"
+      },
+      {
+        "string": "Tornado",
+        "reason": "weather term borrowed whole; identical in Swedish, while the tiles beside it in the same section are translated (\"Cyklon\", \"Vindansikte\", \"Löv i vind\", \"Vindspel\")",
+        "found_on": "sv/library/vader-symboler/",
+        "added": "2026-09-10"
+      },
+      {
         "string": "Tugrik",
         "reason": "currency name that coincides with the English form in this language. Evidence from sv/library/valuta-symboler/ itself: the tiles around it are translated (Rupee Sign → Rupietecken; French Franc → Fransk franc; Tamil Rupee → Tamilsk rupie), so this one is kept because it genuinely matches.",
         "found_on": "sv/library/valuta-symboler/",
@@ -8551,6 +9193,18 @@
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from sv/library/matematiska-symboler/ itself: the tiles around it are translated (Not a Superset Of → Inte en övermängd av; Intersection → Snitt (intersektion); Not a Subset Of → Inte en delmängd av), so this one is kept because it genuinely matches.",
         "found_on": "sv/library/matematiska-symboler/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Uranus",
+        "reason": "planet name, identical in Swedish, like Jupiter, Mars and Pluto in the same tile set",
+        "found_on": "sv/library/stjarntecken/",
+        "added": "2026-09-10"
+      },
+      {
+        "string": "Venus",
+        "reason": "planet name, identical in Swedish, like Jupiter, Mars, Pluto and Uranus in the same tile set; the tiles beside it translate to \"Merkurius\", \"Jorden\", \"Saturnus\" and \"Neptunus\"",
+        "found_on": "sv/library/stjarntecken/",
+        "added": "2026-09-10"
       },
       {
         "string": "Yen / Yuan",
@@ -8569,6 +9223,12 @@
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from sv/library/matematiska-symboler/ itself: the tiles around it are translated (Alpha → Alfa; Empty Set → Tomma mängden; Intersection → Snitt (intersektion)), so this one is kept because it genuinely matches.",
         "found_on": "sv/library/matematiska-symboler/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no Swedish form exists",
+        "found_on": "sv/updates/dirham-symbol-unicode-18/",
+        "added": "2026-09-01"
       },
       {
         "string": "— (text: BD / .د.ب)",
@@ -8639,10 +9299,22 @@
         "added": "2026-08-21"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "th/updates/unicode-18-most-anticipated-emoji/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Text Art",
         "reason": "the untranslated English \"text art\" is what this market actually searches for the picture-built-from-characters job — Semrush 1,000/mo in the TH database (directly-fetched, 2026-08-15). The obvious native alternatives denote stylised LETTERING, a different concept this locale already owns elsewhere, so renaming into them would be both semantically wrong and a hub-vs-spoke collision. Turkish is the control: it uses the native compound `yazı sanatı` and is not ledgered.",
         "found_on": "th/library/text-art/",
         "added": "2026-08-31"
+      },
+      {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "th/updates/unicode-18-most-anticipated-emoji/",
+        "added": "2026-09-01"
       },
       {
         "string": "X/Twitter",
@@ -8661,6 +9333,12 @@
         "reason": "Unicode terminology cited as such — the character names are \"Zero Width Space/Joiner/Non-Joiner\"",
         "found_on": "th/khokhwam-long-hon/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "th/updates/unicode-18-most-anticipated-emoji/",
+        "added": "2026-09-01"
       },
       {
         "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
@@ -8883,7 +9561,7 @@
     ],
     "tr": [
       {
-        "string": "126 / 0x7E / 0b1111110 / 0o176 — Tilde",
+        "string": "126 / 0x7E / 0b1111110 / 0o176: Tilde",
         "reason": "Turkish for ~ is \"tilde\"; the same table translates the neighbouring row to \"Kesme İşareti\"",
         "found_on": "tr/library/ascii-tablosu/",
         "added": "2026-08-30"
@@ -9129,6 +9807,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "tr/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Mango",
         "reason": "food, animal or object name that coincides with the English form in this language. Evidence from tr/library/yemek-emojileri/ itself: the tiles around it are translated (Peach → Şeftali; Pineapple → Ananas; Cherries → Kiraz), so this one is kept because it genuinely matches.",
         "found_on": "tr/library/yemek-emojileri/",
@@ -9315,6 +9999,18 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "tr/updates/unicode-18-yeni-emoji-oylama/",
+        "added": "2026-09-01"
+      },
+      {
+        "string": "Samsung Galaxy",
+        "reason": "brand plus product-line name; no Turkish form exists",
+        "found_on": "tr/updates/dirhem-sembolu-unicode-18/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Sauropod",
         "reason": "the clade name is \"sauropod\" in Turkish; the same page keeps \"T-Rex\" and translates 🦎/🐊 to Kertenkele/Timsah",
         "found_on": "tr/library/hayvan-emojileri/",
@@ -9331,6 +10027,12 @@
         "reason": "proper noun from the tradition it names; this locale's own dedicated page uses the same word (nl \"Ankh (Sleutel van het Leven)\", vi \"Ankh (Chìa Khóa Sự Sống)\", id \"Ankh (Kunci Kehidupan)\")",
         "found_on": "tr/symbol/yin-yang-sembolu/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "tr/usecase/zalgo-text/",
+        "added": "2026-09-05"
       },
       {
         "string": "The Rhetoric of Fonts",
@@ -9381,6 +10083,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "tr/updates/unicode-18-yeni-emoji-oylama/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "X/Twitter",
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "tr/karakter-sayaci/",
@@ -9405,6 +10113,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "tr/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Zebra",
         "reason": "food, animal or object name that coincides with the English form in this language. Evidence from tr/library/hayvan-emojileri/ itself: the tiles around it are translated (Polar Bear → Kutup Ayısı; Raccoon → Rakun; Speak-No-Evil Monkey → Konuşmayan Maymun), so this one is kept because it genuinely matches.",
         "found_on": "tr/library/hayvan-emojileri/",
@@ -9421,6 +10135,12 @@
         "reason": "the lowercase in-page anchor to the same section",
         "found_on": "tr/library/yuz-emojileri/",
         "added": "2026-08-30"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "tr/updates/unicode-18-yeni-emoji-oylama/",
+        "added": "2026-09-01"
       },
       {
         "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
@@ -9695,6 +10415,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "vi/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Lira",
         "reason": "currency name that coincides with the English form in this language. Evidence from vi/library/ky-hieu-tien-te/ itself: the tiles around it are translated (French Franc → Franc Pháp; Turkish Lira → Lira Thổ Nhĩ Kỳ; Kip → Kíp), so this one is kept because it genuinely matches.",
         "found_on": "vi/library/ky-hieu-tien-te/",
@@ -9809,6 +10535,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "vi/updates/emoji-moi-unicode-18/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Shekel",
         "reason": "currency name that coincides with the English form in this language. Evidence from vi/library/ky-hieu-tien-te/ itself: the tiles around it are translated (Rupee Sign → Ký hiệu rupee; Kip → Kíp; Dong → Đồng), so this one is kept because it genuinely matches.",
         "found_on": "vi/library/ky-hieu-tien-te/",
@@ -9851,6 +10583,12 @@
         "added": "2026-08-31"
       },
       {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "vi/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Theta",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from vi/library/math-symbols/ itself: the tiles around it are translated (Empty Set → Tập Rỗng; Intersection → Giao; Union → Hợp), so this one is kept because it genuinely matches.",
         "found_on": "vi/library/math-symbols/",
@@ -9875,6 +10613,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "vi/updates/emoji-moi-unicode-18/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Windows (Alt code)",
         "reason": "code or platform literal cited verbatim",
         "found_on": "vi/symbol/quotation-mark/",
@@ -9893,6 +10637,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "vi/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Zero Width",
         "reason": "Unicode terminology cited as such — the character names are \"Zero Width Space/Joiner/Non-Joiner\"",
         "found_on": "vi/ky-tu-vo-hinh/",
@@ -9909,6 +10659,12 @@
         "reason": "lowercase, in running prose and meta, for the same style name",
         "found_on": "vi/font-roblox/",
         "added": "2026-08-30"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "vi/updates/emoji-moi-unicode-18/",
+        "added": "2026-09-01"
       },
       {
         "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
@@ -9937,10 +10693,22 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "zh-tw/updates/unicode-18-xin-biaoqing-fuhao/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Zalgo",
         "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
         "found_on": "zh-tw/guide/discord-anquan-nicheng/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "zh-tw/updates/unicode-18-xin-biaoqing-fuhao/",
+        "added": "2026-09-01"
       },
       {
         "string": "☪️🌙 Ramadan Mubarak 🌙☪️",

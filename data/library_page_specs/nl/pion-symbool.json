@@ -8,7 +8,6 @@
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
-  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
   "slug": "pion-symbool",
   "title": "Pion-symbool: Kopieer en Plak ♟ ♙ — het Voetvolk dat Koningin kan Worden",
   "meta_description": "Kopieer en plak het pion-symbool — zwart ♟ (U+265F) en wit ♙ (U+2659) — het minst waardevolle schaakstuk, genoemd naar een voetsoldaat, dat kan promoveren tot koningin. Klik op een teken om het direct te kopiëren.",
@@ -112,7 +111,7 @@
       "symbols": [
         {
           "char": "♛",
-          "label": "Zwarte Schaakkoningin (U+265B) — de gebruikelijke promotie"
+          "label": "Zwarte Schaakkoningin (U+265B): de gebruikelijke promotie"
         },
         {
           "char": "♜",
@@ -124,7 +123,7 @@
         },
         {
           "char": "♞",
-          "label": "Zwart Schaakpaard (U+265E) — een onderpromotie"
+          "label": "Zwart Schaakpaard (U+265E): een onderpromotie"
         }
       ]
     }

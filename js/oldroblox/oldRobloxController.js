@@ -5,12 +5,17 @@
    js/curved/curvedTextController.js: direct SVG Blob download, and PNG via
    drawing the SVG into an Image, onto a <canvas>, then canvas.toBlob().
 
-   One addition the curved tool doesn't need: this page's presets use Google
+   One addition the curved tool doesn't need: this page's presets are set in
    webfonts (Comic Neue / Baloo 2), and an SVG rasterized through an <img>
-   cannot load external fonts. So before exporting, the Google Fonts CSS and
-   its woff2 files are fetched (native fetch, client-side only) and inlined
-   into the SVG as data: URIs — the download is self-contained without ever
-   bundling a font binary in this repo.
+   cannot load external fonts. So before exporting, the matching @font-face
+   rules are read out of the live stylesheet and their woff2 files inlined as
+   data: URIs (native fetch, client-side only), which makes the download
+   self-contained.
+
+   Those faces are served from this repo since 2026-09-19 (assets/fonts/ —
+   Cloudflare Fonts was dropping the families it does not carry), so the
+   fetches here are same-origin and this export no longer depends on
+   fonts.googleapis.com being reachable or on what Cloudflare rewrites.
 
    Requires (loaded before this): oldRobloxText.js.
    ========================================================================== */
@@ -22,10 +27,6 @@
   if (!Builder) return;
 
   const $ = function (sel, root) { return (root || document).querySelector(sel); };
-
-  // Only the weights the two presets actually use.
-  const FONT_CSS_URL =
-    "https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Baloo+2:wght@800&display=swap";
 
   const el = {};
   let lastSvg = "";
@@ -89,19 +90,62 @@
     }, 1600);
   }
 
-  /* Fetch the Google Fonts stylesheet once, replace each font URL with a
-     base64 data: URI, and cache the result. Falls back to an empty string
-     (export still works, in a fallback font) if the network fetch fails. */
+  /* The (family, weight) pairs the presets actually render, read from the
+     presets themselves so a preset change cannot leave this out of step. A
+     family with ten weights on the site contributes only the one weight the
+     SVG sets, which keeps nine unused woff2 files out of the download. */
+  function neededFaces() {
+    const want = [];
+    Object.keys(Builder.PRESETS).forEach(function (key) {
+      const preset = Builder.PRESETS[key];
+      const family = String(preset.fontFamily || "").split(",")[0].trim()
+        .replace(/^['"]|['"]$/g, "");
+      if (family) want.push(family.toLowerCase() + "|" + String(preset.fontWeight || "400"));
+    });
+    return want;
+  }
+
+  /* Collect those @font-face rules from the LIVE stylesheet rather than
+     naming files here, so this export can never reference a weight or a path
+     style.css does not actually serve. The self-hosted sheet is same-origin
+     and readable; a cross-origin sheet (the Google link this page still
+     carries for the body font) throws on .cssRules and is skipped. */
+  function fontFaceCssText() {
+    const want = neededFaces();
+    const out = [];
+    const sheets = document.styleSheets;
+    for (let i = 0; i < sheets.length; i++) {
+      let rules;
+      try { rules = sheets[i].cssRules; } catch (e) { continue; }
+      if (!rules) continue;
+      for (let j = 0; j < rules.length; j++) {
+        const rule = rules[j];
+        if (!rule || rule.type !== 5 /* CSSRule.FONT_FACE_RULE */) continue;
+        const family = (rule.style.getPropertyValue("font-family") || "").trim()
+          .replace(/^['"]|['"]$/g, "");
+        const weight = (rule.style.getPropertyValue("font-weight") || "400").trim();
+        if (want.indexOf(family.toLowerCase() + "|" + weight) === -1) continue;
+        out.push(rule.cssText);
+      }
+    }
+    return out.join("\n");
+  }
+
+  /* Read those rules once, replace each font URL with a base64 data: URI, and
+     cache the result. Falls back to an empty string (export still works, in a
+     fallback font) if a fetch fails. */
   function inlineFontCss() {
     if (!embeddedCssPromise) {
-      embeddedCssPromise = fetch(FONT_CSS_URL)
-        .then(function (res) {
-          if (!res.ok) throw new Error("font css " + res.status);
-          return res.text();
-        })
+      embeddedCssPromise = Promise.resolve(fontFaceCssText())
         .then(function (css) {
+          if (!css) throw new Error("no matching @font-face rules");
           const urls = [];
-          css.replace(/url\((https:[^)]+)\)/g, function (m, u) {
+          /* Chrome serialises cssText with the URL left RELATIVE
+             (url("/assets/fonts/x.woff2")), so this must not be anchored to a
+             scheme — measured, not assumed. Relative is fine for fetch(),
+             which resolves it against the page. */
+          css.replace(/url\(["']?([^)"']+)["']?\)/g, function (m, u) {
+            if (!/\.woff2?$/i.test(u)) return m;
             if (urls.indexOf(u) === -1) urls.push(u);
             return m;
           });

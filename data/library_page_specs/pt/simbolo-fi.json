@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/phi-symbol/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-fi/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/phi-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/phi-symbol/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/simbolo-fi/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/phi-symbol/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
   "sections": [
     {
       "id": "the-phi-symbol",
@@ -29,9 +37,18 @@
       "h2": "O Símbolo Fi — φ, Φ e ϕ",
       "intro": "As três formas que as pessoas chamam de «símbolo fi»: a letra minúscula do dia a dia, a maiúscula e a variante matemática dedicada. Cole a que você precisar.",
       "symbols": [
-        { "char": "φ", "label": "Letra Grega Minúscula Fi (U+03C6) — a Letra da Razão Áurea, Forma Aberta \"Arredondada\"" },
-        { "char": "Φ", "label": "Letra Grega Maiúscula Fi (U+03A6) — Fluxo Magnético na Física" },
-        { "char": "ϕ", "label": "Símbolo Grego Fi (U+03D5) — a Variante Matemática \"Fechada\", com Traço" }
+        {
+          "char": "φ",
+          "label": "Letra Grega Minúscula Fi (U+03C6) — a Letra da Razão Áurea, Forma Aberta \"Arredondada\""
+        },
+        {
+          "char": "Φ",
+          "label": "Letra Grega Maiúscula Fi (U+03A6): Fluxo Magnético na Física"
+        },
+        {
+          "char": "ϕ",
+          "label": "Símbolo Grego Fi (U+03D5) — a Variante Matemática \"Fechada\", com Traço"
+        }
       ]
     },
     {
@@ -40,10 +57,22 @@
       "h2": "Fi: a Razão Áurea e Usos Matemáticos",
       "intro": "A função mais buscada de fi. O φ minúsculo nomeia a razão áurea ≈ 1,618, definida como (1 + √5) / 2; desde o Unicode 3.0, o ϕ fechado (U+03D5) é o glifo recomendado para esse uso matemático, e o Φ maiúsculo marca o fluxo magnético.",
       "symbols": [
-        { "char": "φ", "label": "Fi Minúsculo (U+03C6) — Razão Áurea ≈ 1,6180339887" },
-        { "char": "ϕ", "label": "Símbolo Grego Fi (U+03D5) — o Glifo Fechado Preferido pela Matemática" },
-        { "char": "Φ", "label": "Fi Maiúsculo (U+03A6) — Fluxo Magnético" },
-        { "char": "√", "label": "Raiz Quadrada (U+221A) — Aparece na Fórmula de Fi (1 + √5) / 2" }
+        {
+          "char": "φ",
+          "label": "Fi Minúsculo (U+03C6): Razão Áurea ≈ 1,6180339887"
+        },
+        {
+          "char": "ϕ",
+          "label": "Símbolo Grego Fi (U+03D5): o Glifo Fechado Preferido pela Matemática"
+        },
+        {
+          "char": "Φ",
+          "label": "Fi Maiúsculo (U+03A6): Fluxo Magnético"
+        },
+        {
+          "char": "√",
+          "label": "Raiz Quadrada (U+221A): Aparece na Fórmula de Fi (1 + √5) / 2"
+        }
       ]
     },
     {
@@ -52,10 +81,22 @@
       "h2": "Letras Gregas Relacionadas",
       "intro": "Fi é a 21ª letra do alfabeto grego. Aqui estão as vizinhas e as constantes famosas mais buscadas junto com ela.",
       "symbols": [
-        { "char": "π", "label": "Letra Grega Minúscula Pi" },
-        { "char": "Σ", "label": "Letra Grega Maiúscula Sigma" },
-        { "char": "Ω", "label": "Letra Grega Maiúscula Ômega" },
-        { "char": "θ", "label": "Letra Grega Minúscula Teta" }
+        {
+          "char": "π",
+          "label": "Letra Grega Minúscula Pi"
+        },
+        {
+          "char": "Σ",
+          "label": "Letra Grega Maiúscula Sigma"
+        },
+        {
+          "char": "Ω",
+          "label": "Letra Grega Maiúscula Ômega"
+        },
+        {
+          "char": "θ",
+          "label": "Letra Grega Minúscula Teta"
+        }
       ]
     }
   ],

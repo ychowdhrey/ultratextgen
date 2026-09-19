@@ -37,9 +37,9 @@
       "h2": "Powiązane Symbole",
       "intro": "Znaki bliskie yin yang w kształcie albo w kontekście duchowym.",
       "symbols": [
-        { "char": "☰", "label": "Trigram I-Ching dla Nieba (U+2630) — pokrewny, lecz odrębny system symboli zbudowany z linii yin/yang" },
-        { "char": "🌗", "label": "Ostatnia Kwadra Księżyca (U+1F317) — wizualnie podobny podział jasne/ciemne, niezwiązane znaczenie" },
-        { "char": "☮", "label": "Symbol Pokoju (U+262E) — inny symbol, czasem łączony z obrazami yin-yang" }
+        { "char": "☰", "label": "Trigram I-Ching dla Nieba (U+2630): pokrewny, lecz odrębny system symboli zbudowany z linii yin/yang" },
+        { "char": "🌗", "label": "Ostatnia Kwadra Księżyca (U+1F317): wizualnie podobny podział jasne/ciemne, niezwiązane znaczenie" },
+        { "char": "☮", "label": "Symbol Pokoju (U+262E): inny symbol, czasem łączony z obrazami yin-yang" }
       ]
     },
     {
@@ -53,7 +53,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/symbol/symbol-pokoju/",

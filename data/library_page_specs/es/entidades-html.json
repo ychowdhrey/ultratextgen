@@ -38,23 +38,23 @@
       "symbols": [
         {
           "char": "&",
-          "label": "&amp; — Ampersand (y comercial)"
+          "label": "&amp;: Ampersand (y comercial)"
         },
         {
           "char": "<",
-          "label": "&lt; — Signo menor que"
+          "label": "&lt;: Signo menor que"
         },
         {
           "char": ">",
-          "label": "&gt; — Signo mayor que"
+          "label": "&gt;: Signo mayor que"
         },
         {
           "char": "\"",
-          "label": "&quot; — Comillas dobles"
+          "label": "&quot;: Comillas dobles"
         },
         {
           "char": "'",
-          "label": "&apos; — Apóstrofo"
+          "label": "&apos;: Apóstrofo"
         }
       ]
     },
@@ -66,55 +66,55 @@
       "symbols": [
         {
           "char": " ",
-          "label": "&nbsp; — Espacio de no separación (se ve en blanco)"
+          "label": "&nbsp;: Espacio de no separación (se ve en blanco)"
         },
         {
           "char": "–",
-          "label": "&ndash; — Raya corta (en dash)"
+          "label": "&ndash;: Raya corta (en dash)"
         },
         {
           "char": "—",
-          "label": "&mdash; — Raya larga (em dash)"
+          "label": "&mdash;: Raya larga (em dash)"
         },
         {
           "char": "…",
-          "label": "&hellip; — Puntos suspensivos"
+          "label": "&hellip;: Puntos suspensivos"
         },
         {
           "char": "•",
-          "label": "&bull; — Viñeta"
+          "label": "&bull;: Viñeta"
         },
         {
           "char": "§",
-          "label": "&sect; — Signo de sección"
+          "label": "&sect;: Signo de sección"
         },
         {
           "char": "¶",
-          "label": "&para; — Signo de párrafo"
+          "label": "&para;: Signo de párrafo"
         },
         {
           "char": "“",
-          "label": "&ldquo; — Comilla doble de apertura"
+          "label": "&ldquo;: Comilla doble de apertura"
         },
         {
           "char": "”",
-          "label": "&rdquo; — Comilla doble de cierre"
+          "label": "&rdquo;: Comilla doble de cierre"
         },
         {
           "char": "‘",
-          "label": "&lsquo; — Comilla simple de apertura"
+          "label": "&lsquo;: Comilla simple de apertura"
         },
         {
           "char": "’",
-          "label": "&rsquo; — Comilla simple de cierre"
+          "label": "&rsquo;: Comilla simple de cierre"
         },
         {
           "char": "«",
-          "label": "&laquo; — Comilla angular de apertura"
+          "label": "&laquo;: Comilla angular de apertura"
         },
         {
           "char": "»",
-          "label": "&raquo; — Comilla angular de cierre"
+          "label": "&raquo;: Comilla angular de cierre"
         }
       ]
     },
@@ -126,31 +126,31 @@
       "symbols": [
         {
           "char": "©",
-          "label": "&copy; — Signo de copyright"
+          "label": "&copy;: Signo de copyright"
         },
         {
           "char": "®",
-          "label": "&reg; — Signo de marca registrada"
+          "label": "&reg;: Signo de marca registrada"
         },
         {
           "char": "™",
-          "label": "&trade; — Signo de marca comercial"
+          "label": "&trade;: Signo de marca comercial"
         },
         {
           "char": "€",
-          "label": "&euro; — Signo de euro"
+          "label": "&euro;: Signo de euro"
         },
         {
           "char": "£",
-          "label": "&pound; — Signo de libra"
+          "label": "&pound;: Signo de libra"
         },
         {
           "char": "¥",
-          "label": "&yen; — Signo de yen"
+          "label": "&yen;: Signo de yen"
         },
         {
           "char": "¢",
-          "label": "&cent; — Signo de centavo"
+          "label": "&cent;: Signo de centavo"
         }
       ]
     },
@@ -162,59 +162,59 @@
       "symbols": [
         {
           "char": "×",
-          "label": "&times; — Signo de multiplicación"
+          "label": "&times;: Signo de multiplicación"
         },
         {
           "char": "÷",
-          "label": "&divide; — Signo de división"
+          "label": "&divide;: Signo de división"
         },
         {
           "char": "±",
-          "label": "&plusmn; — Signo de más-menos"
+          "label": "&plusmn;: Signo de más-menos"
         },
         {
           "char": "½",
-          "label": "&frac12; — Fracción un medio"
+          "label": "&frac12;: Fracción un medio"
         },
         {
           "char": "¼",
-          "label": "&frac14; — Fracción un cuarto"
+          "label": "&frac14;: Fracción un cuarto"
         },
         {
           "char": "¾",
-          "label": "&frac34; — Fracción tres cuartos"
+          "label": "&frac34;: Fracción tres cuartos"
         },
         {
           "char": "°",
-          "label": "&deg; — Signo de grado"
+          "label": "&deg;: Signo de grado"
         },
         {
           "char": "µ",
-          "label": "&micro; — Signo de micro"
+          "label": "&micro;: Signo de micro"
         },
         {
           "char": "∞",
-          "label": "&infin; — Infinito"
+          "label": "&infin;: Infinito"
         },
         {
           "char": "≈",
-          "label": "&asymp; — Aproximadamente igual a"
+          "label": "&asymp;: Aproximadamente igual a"
         },
         {
           "char": "≠",
-          "label": "&ne; — Distinto de"
+          "label": "&ne;: Distinto de"
         },
         {
           "char": "≤",
-          "label": "&le; — Menor o igual que"
+          "label": "&le;: Menor o igual que"
         },
         {
           "char": "≥",
-          "label": "&ge; — Mayor o igual que"
+          "label": "&ge;: Mayor o igual que"
         },
         {
           "char": "√",
-          "label": "&radic; — Raíz cuadrada"
+          "label": "&radic;: Raíz cuadrada"
         }
       ]
     },
@@ -226,47 +226,47 @@
       "symbols": [
         {
           "char": "←",
-          "label": "&larr; — Flecha hacia la izquierda"
+          "label": "&larr;: Flecha hacia la izquierda"
         },
         {
           "char": "→",
-          "label": "&rarr; — Flecha hacia la derecha"
+          "label": "&rarr;: Flecha hacia la derecha"
         },
         {
           "char": "↑",
-          "label": "&uarr; — Flecha hacia arriba"
+          "label": "&uarr;: Flecha hacia arriba"
         },
         {
           "char": "↓",
-          "label": "&darr; — Flecha hacia abajo"
+          "label": "&darr;: Flecha hacia abajo"
         },
         {
           "char": "↔",
-          "label": "&harr; — Flecha izquierda-derecha"
+          "label": "&harr;: Flecha izquierda-derecha"
         },
         {
           "char": "♥",
-          "label": "&hearts; — Corazón de baraja"
+          "label": "&hearts;: Corazón de baraja"
         },
         {
           "char": "♦",
-          "label": "&diams; — Diamante de baraja"
+          "label": "&diams;: Diamante de baraja"
         },
         {
           "char": "♣",
-          "label": "&clubs; — Trébol de baraja"
+          "label": "&clubs;: Trébol de baraja"
         },
         {
           "char": "♠",
-          "label": "&spades; — Pica de baraja"
+          "label": "&spades;: Pica de baraja"
         },
         {
           "char": "★",
-          "label": "&starf; — Estrella negra"
+          "label": "&starf;: Estrella negra"
         },
         {
           "char": "☆",
-          "label": "&star; — Estrella blanca"
+          "label": "&star;: Estrella blanca"
         }
       ]
     },
@@ -278,43 +278,43 @@
       "symbols": [
         {
           "char": "é",
-          "label": "&eacute; — E con acento agudo"
+          "label": "&eacute;: E con acento agudo"
         },
         {
           "char": "è",
-          "label": "&egrave; — E con acento grave"
+          "label": "&egrave;: E con acento grave"
         },
         {
           "char": "ê",
-          "label": "&ecirc; — E con circunflejo"
+          "label": "&ecirc;: E con circunflejo"
         },
         {
           "char": "ñ",
-          "label": "&ntilde; — Eñe (N con tilde)"
+          "label": "&ntilde;: Eñe (N con tilde)"
         },
         {
           "char": "ü",
-          "label": "&uuml; — U con diéresis"
+          "label": "&uuml;: U con diéresis"
         },
         {
           "char": "ç",
-          "label": "&ccedil; — C con cedilla"
+          "label": "&ccedil;: C con cedilla"
         },
         {
           "char": "å",
-          "label": "&aring; — A con anillo"
+          "label": "&aring;: A con anillo"
         },
         {
           "char": "ø",
-          "label": "&oslash; — O con barra"
+          "label": "&oslash;: O con barra"
         },
         {
           "char": "æ",
-          "label": "&aelig; — Ligadura AE"
+          "label": "&aelig;: Ligadura AE"
         },
         {
           "char": "ß",
-          "label": "&szlig; — S fuerte (Eszett)"
+          "label": "&szlig;: S fuerte (Eszett)"
         }
       ]
     }

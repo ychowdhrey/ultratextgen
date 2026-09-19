@@ -6,7 +6,7 @@
   "hero_h1": "Sternzeichen Symbole",
   "hero_tagline": "Alle zwölf Tierkreiszeichen als Unicode-Zeichen, dazu Planeten, chinesische Tierkreistiere und die klassischen Aspektsymbole.",
   "intro": "Die Tierkreiszeichen sind echte Unicode-Zeichen — kein Bild, keine Schriftart nötig. Sie funktionieren in der Instagram-Bio, im Discord-Namen, in Notizen und in Nachrichten. Zum Kopieren einfach antippen.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "western",
@@ -284,6 +284,30 @@
     {
       "h2": "Warum Tierkreiszeichen Überhaupt Textzeichen Sind",
       "body": "Die Tierkreis- und Planetenzeichen stammen aus astronomischen und alchemistischen Handschriften und wurden jahrhundertelang gesetzt wie Buchstaben. Genau deshalb sind sie in Unicode gelandet: nicht als Dekoration, sondern damit astronomische Fachtexte gesetzt werden können. Das erklärt auch, warum ♈ auf manchen Geräten nüchtern schwarz erscheint und auf anderen als farbiges Emoji — die einen behandeln es als Schriftzeichen, die anderen als Bildzeichen."
+    }
+  ],
+  "collection_section": {
+    "id": "zodiac-collections",
+    "label": "Sternzeichen-Sets",
+    "h2": "Sternzeichen- und Astrologie-Sets",
+    "intro": "Kopiere den kompletten Tierkreis und die zehn modernen Astrologie-Planeten in der üblichen Reihenfolge."
+  },
+  "collection_container_id": "zodiacCollectionsContainer",
+  "collections": [
+    {
+      "name": "Westlicher Tierkreis (Widder → Fische)",
+      "flags": ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Chinesischer Tierkreis (Ratte → Schwein)",
+      "flags": ["🐀", "🐂", "🐅", "🐇", "🐉", "🐍", "🐎", "🐐", "🐒", "🐓", "🐕", "🐖"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Die 10 modernen Astrologie-Planeten",
+      "flags": ["☉", "☽", "☿", "♀", "♂", "♃", "♄", "♅", "♆", "♇"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

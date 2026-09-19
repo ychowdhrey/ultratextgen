@@ -16,11 +16,19 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/calendar-emoji/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/emoji-calendario/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/calendar-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/calendar-emoji/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/emoji-calendario/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/calendar-emoji/"
+    }
   ],
   "sections": [
     {
@@ -29,7 +37,10 @@
       "h2": "Emoji Calendario",
       "intro": "Il glifo Unicode principale — un singolo foglio di calendario strappato.",
       "symbols": [
-        { "char": "📅", "label": "Calendar (U+1F4C5)" }
+        {
+          "char": "📅",
+          "label": "Calendar (U+1F4C5)"
+        }
       ]
     },
     {
@@ -38,8 +49,14 @@
       "h2": "Altre Emoji Calendario con Cui Viene Confusa",
       "intro": "Due glifi Unicode di calendario adiacenti, ciascuno raffigurante uno stile di calendario fisico diverso.",
       "symbols": [
-        { "char": "📆", "label": "Tear-Off Calendar (U+1F4C6)" },
-        { "char": "🗓️", "label": "Spiral Calendar (U+1F5D3)" }
+        {
+          "char": "📆",
+          "label": "Tear-Off Calendar (U+1F4C6)"
+        },
+        {
+          "char": "🗓️",
+          "label": "Spiral Calendar (U+1F5D3)"
+        }
       ]
     },
     {
@@ -48,9 +65,18 @@
       "h2": "Emoji di Pianificazione e Tempo Correlate",
       "intro": "Emoji che compaiono spesso accanto a un calendario in contesti di programmazione e promemoria.",
       "symbols": [
-        { "char": "⏰", "label": "Sveglia" },
-        { "char": "📌", "label": "Puntina" },
-        { "char": "✅", "label": "Pulsante Segno di Spunta" }
+        {
+          "char": "⏰",
+          "label": "Sveglia"
+        },
+        {
+          "char": "📌",
+          "label": "Puntina"
+        },
+        {
+          "char": "✅",
+          "label": "Pulsante Segno di Spunta"
+        }
       ]
     }
   ],

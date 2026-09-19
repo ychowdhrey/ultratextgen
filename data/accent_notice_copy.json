@@ -1,0 +1,131 @@
+{
+  "_readme": "Copy for the input-aware accent notice (accent-notice.js), one entry per locale, baked into pages by scripts/build-accent-notice.js. The string lives here rather than in 500 copies of the same sentence so it has one owner and one place to fix. A locale with no entry is NOT deployed — absence is the gate, and the builder reports every page it skipped and why. 'default' is for the shared generator; 'upsideDown' is for pages about upside-down text, where the shared sentence is false: measured, 'cafe Strasse' with accents renders as flipped text with the accented letters passing through UPRIGHT and unchanged, so nothing is 'kept styled' and nothing folds to plain. Each locale names the accented letters ITS OWN readers type, which is why these are translations rather than copies. Rebuild with: npm run build:accent-notice",
+  "guideUrl": "/guide/fancy-fonts-and-accents/",
+  "exclusions": {
+    "**/embed/**": "Embed widgets render inside other people's pages; an inline hint linking back to our guide belongs on our own page. None of the notice's original placements is an embed.",
+    "usecase/emoji-letters/**": "js/emoji/emoji-tool.js is a word-to-emoji lexicon and never calls renderAny(), so the notice's claim about styles keeping accents describes a surface this page does not have.",
+    "usecase/emoji-to-text/**": "Same tool as usecase/emoji-letters; see above.",
+    "usecase/text-to-emoji/**": "Same tool as usecase/emoji-letters; see above."
+  },
+  "locales": {
+    "ar": {
+      "dismiss": "إغلاق",
+      "default": "يحتوي نصّك على علامات تشكيل/لهجة. الأنماط العريضة والمخطوطة والقوطية ومعظم الأنماط الأخرى تحافظ الآن على حروف مثل <b>é</b> و<b>ç</b> بعلاماتها — وقليل منها (النص المقلوب، وحروف بلا صيغة بعلامة مثل <b>ł đ ø ß</b>) يعود إلى الحروف العادية. <a href=\"/guide/fancy-fonts-and-accents/\">أي الأنماط تحافظ على علامات اللهجة ←</a>",
+      "icon": "◌́",
+      "propagate": false,
+      "propagateNote": "Not propagated beyond the page it already ships on. Arabic harakat sit at U+064B..U+0652, outside the U+0300..U+036F combining range accent-notice.js tests, and the renderer's map styles leave Arabic unstyled — so on Arabic text the notice can neither fire nor be true. It stays on ar/index.html (where it already shipped, and where it is correct for an Arabic speaker typing an accented Latin name) rather than being removed unilaterally."
+    },
+    "bs": {
+      "icon": "◌̌",
+      "dismiss": "Zatvori",
+      "default": "Tvoj tekst sadrži dijakritičke znakove. Podebljano, rukopisno, gotičko i većina drugih stilova sada zadržavaju <b>č</b>, <b>ć</b> i <b>ž</b> sa znakom — tek nekoliko njih (obrnuti tekst i <b>đ</b>, koje nema oblik sa znakom) vraća se na obična slova. <a href=\"/guide/fancy-fonts-and-accents/\">Koji stilovi zadržavaju dijakritiku →</a>"
+    },
+    "cs": {
+      "icon": "◌̌",
+      "dismiss": "Zavřít",
+      "default": "Tvůj text obsahuje diakritiku. Tučné, psací, gotické a většina dalších stylů teď zachovají <b>á</b>, <b>č</b> i <b>ř</b> s čárkou nebo háčkem. Výjimkou je obrácený text: tam písmena s diakritikou zůstanou stát rovně. <a href=\"/guide/fancy-fonts-and-accents/\">Které styly zachovají diakritiku →</a>"
+    },
+    "da": {
+      "dismiss": "Luk",
+      "default": "Din tekst indeholder accenttegn. Fed, skrift, gotisk og de fleste andre stilarter bevarer nu <b>é</b> og <b>å</b> med tegnet — enkelte (omvendt tekst, og bogstaver uden accentform som <b>æ ø ł ß</b>) falder tilbage til almindelige bogstaver. <a href=\"/guide/fancy-fonts-and-accents/\">Hvilke stilarter bevarer accenter →</a>",
+      "icon": "◌́"
+    },
+    "de": {
+      "icon": "◌̈",
+      "dismiss": "Schließen",
+      "default": "Dein Text enthält Umlaute oder Akzente. Fett, Schreibschrift, Fraktur und die meisten anderen Stile behalten <b>ä</b>, <b>ö</b> und <b>ü</b> jetzt mit dem Zeichen — nur wenige (Kopfüber-Text, und <b>ß</b>, das keine Form mit Zeichen hat) fallen auf einfache Buchstaben zurück. <a href=\"/guide/fancy-fonts-and-accents/\">Welche Stile Umlaute behalten →</a>",
+      "upsideDown": "Dein Text enthält Umlaute oder Akzente. Kopfüber-Text hat für <b>ä ö ü ß</b> keine gedrehte Form — diese Buchstaben bleiben unverändert und stehen aufrecht im umgedrehten Text. Fett, Schreibschrift und Fraktur behalten die Zeichen. <a href=\"/guide/fancy-fonts-and-accents/\">Welche Stile Umlaute behalten →</a>"
+    },
+    "en": {
+      "dismiss": "Dismiss",
+      "default": "Your text has accent marks. Bold, script, gothic and most other styles now keep <b>é</b> and <b>ữ</b> styled — a few (upside-down, and letters like <b>ł đ ø ß</b> with no accent form) still fall back to plain. <a href=\"/guide/fancy-fonts-and-accents/\">See which styles handle accents →</a>",
+      "icon": "◌́",
+      "upsideDown": "Your text has accent marks. Upside-down text has no flipped form for <b>é ñ ß ł</b> — those letters pass through unchanged, so they stay upright inside the flipped text. Bold, script and gothic styles do keep their marks. <a href=\"/guide/fancy-fonts-and-accents/\">See which styles handle accents →</a>"
+    },
+    "es": {
+      "icon": "◌́",
+      "dismiss": "Cerrar",
+      "default": "Tu texto lleva tildes. Negrita, cursiva, gótica y casi todos los demás estilos conservan ahora <b>á</b>, <b>é</b> y <b>ñ</b> con su tilde. La excepción es el texto al revés: ahí las letras con tilde pasan sin voltearse y quedan derechas. <a href=\"/guide/fancy-fonts-and-accents/\">Qué estilos conservan las tildes →</a>",
+      "upsideDown": "Tu texto lleva tildes. El texto al revés no tiene forma volteada para <b>á é í ó ú ñ</b>: esas letras pasan sin cambios y quedan derechas dentro del texto volteado. Negrita, cursiva y gótica sí conservan la tilde. <a href=\"/guide/fancy-fonts-and-accents/\">Qué estilos conservan las tildes →</a>"
+    },
+    "fi": {
+      "icon": "◌̈",
+      "dismiss": "Sulje",
+      "default": "Tekstissäsi on ääkkösiä. Lihavoitu, kaunokirjoitus, goottilainen ja useimmat muut tyylit säilyttävät nyt <b>ä</b>, <b>ö</b> ja <b>å</b> pisteineen. Poikkeus on ylösalaisin käännetty teksti: siinä ääkköset jäävät kääntymättä pystyyn. <a href=\"/guide/fancy-fonts-and-accents/\">Mitkä tyylit säilyttävät ääkköset →</a>"
+    },
+    "fr": {
+      "dismiss": "Fermer",
+      "default": "Ton texte contient des accents. Gras, script, gothique et la plupart des autres styles gardent maintenant <b>é</b>, <b>à</b> et <b>ç</b> accentués — quelques-uns (le texte à l’envers, et des lettres sans forme accentuée comme <b>œ ł ø ß</b>) reviennent en lettres normales. <a href=\"/guide/fancy-fonts-and-accents/\">Quels styles gardent les accents →</a>",
+      "icon": "◌́"
+    },
+    "hr": {
+      "icon": "◌̌",
+      "dismiss": "Zatvori",
+      "default": "Tvoj tekst sadrži dijakritičke znakove. Podebljano, rukopisno, gotičko i većina drugih stilova sada zadržavaju <b>č</b>, <b>ć</b> i <b>ž</b> sa znakom — tek nekoliko njih (obrnuti tekst i <b>đ</b>, koje nema oblik sa znakom) vraća se na obična slova. <a href=\"/guide/fancy-fonts-and-accents/\">Koji stilovi zadržavaju dijakritiku →</a>"
+    },
+    "hu": {
+      "icon": "◌́",
+      "dismiss": "Bezárás",
+      "default": "A szövegedben ékezetes betűk vannak. A félkövér, az írott, a gót és a legtöbb más stílus mostantól megtartja az <b>á</b>, <b>ő</b> és <b>ű</b> ékezetét. Kivétel a fejjel lefelé fordított szöveg: ott az ékezetes betűk fordítás nélkül, állva maradnak. <a href=\"/guide/fancy-fonts-and-accents/\">Melyik stílus tartja meg az ékezeteket →</a>"
+    },
+    "it": {
+      "dismiss": "Chiudi",
+      "default": "Il tuo testo contiene lettere accentate. Grassetto, corsivo, gotico e quasi tutti gli altri stili ora mantengono <b>à</b>, <b>è</b> e <b>ù</b> con l’accento — solo alcuni (il testo capovolto, e lettere senza forma accentata come <b>ł đ ø ß</b>) tornano in lettere normali. <a href=\"/guide/fancy-fonts-and-accents/\">Quali stili tengono gli accenti →</a>",
+      "upsideDown": "Il tuo testo contiene lettere accentate. Alcune lettere come <b>à</b>, <b>è</b> o <b>ù</b> non hanno un gemello capovolto in Unicode e restano dritte. <a href=\"/guide/fancy-fonts-and-accents/\">Come si comportano gli accenti →</a>",
+      "icon": "◌́"
+    },
+    "nl": {
+      "dismiss": "Sluiten",
+      "default": "Je tekst bevat accenten of een trema. Vet, sierlijk, gotisch en bijna alle andere stijlen behouden nu <b>ë</b>, <b>é</b> en <b>ï</b> mét het teken — een enkele (omgekeerde tekst, en letters zonder accentvorm zoals <b>ł đ ø ß</b>) valt terug op gewone letters. <a href=\"/guide/fancy-fonts-and-accents/\">Welke stijlen accenten houden →</a>",
+      "icon": "◌̈"
+    },
+    "no": {
+      "dismiss": "Lukk",
+      "default": "Teksten din inneholder aksenttegn. Fet, skrift, gotisk og de fleste andre stilene beholder nå <b>é</b> og <b>å</b> med tegnet — noen få (opp-ned-tekst, og bokstaver uten aksentform som <b>æ ø ł ß</b>) faller tilbake til vanlige bokstaver. <a href=\"/guide/fancy-fonts-and-accents/\">Hvilke stiler beholder aksenter →</a>",
+      "icon": "◌́"
+    },
+    "pl": {
+      "dismiss": "Zamknij",
+      "default": "Twój tekst zawiera polskie znaki. Pogrubienie, kursywa, gotyk i większość innych stylów zachowują teraz <b>ą</b>, <b>ę</b> i <b>ś</b> ze znakiem — tylko nieliczne (tekst do góry nogami, oraz <b>ł</b>, które nie ma formy ze znakiem) wracają do zwykłych liter. <a href=\"/guide/fancy-fonts-and-accents/\">Które style zachowują znaki diakrytyczne →</a>",
+      "icon": "◌́",
+      "upsideDown": "Twój tekst zawiera polskie znaki. Tekst do góry nogami nie ma odwróconych odpowiedników dla <b>ą ę ś ł</b> — te litery przechodzą bez zmian i zostają w normalnej pozycji. Pogrubienie, kursywa i gotyk zachowują znaki. <a href=\"/guide/fancy-fonts-and-accents/\">Które style zachowują znaki diakrytyczne →</a>"
+    },
+    "pt": {
+      "icon": "◌́",
+      "dismiss": "Fechar",
+      "default": "O seu texto tem acentos. Negrito, cursiva, gótico e quase todos os outros estilos mantêm agora <b>ã</b>, <b>ç</b> e <b>é</b> com o acento. A exceção é o texto ao contrário: aí as letras acentuadas passam sem virar e ficam direitas. <a href=\"/guide/fancy-fonts-and-accents/\">Que estilos mantêm os acentos →</a>",
+      "upsideDown": "O seu texto tem acentos. O texto ao contrário não tem forma virada para <b>ã ç é õ</b>: essas letras passam sem mudar e ficam direitas dentro do texto virado. Negrito, cursiva e gótico mantêm o acento. <a href=\"/guide/fancy-fonts-and-accents/\">Que estilos mantêm os acentos →</a>"
+    },
+    "ro": {
+      "icon": "◌̆",
+      "dismiss": "Închide",
+      "default": "Textul tău conține diacritice. Bold, cursiv, gotic și majoritatea celorlalte stiluri păstrează acum <b>ă</b>, <b>ș</b> și <b>ț</b> cu semnul lor. Excepția este textul întors: acolo literele cu diacritice trec neîntoarse și rămân drepte. <a href=\"/guide/fancy-fonts-and-accents/\">Ce stiluri păstrează diacriticele →</a>"
+    },
+    "sk": {
+      "icon": "◌̌",
+      "dismiss": "Zavrieť",
+      "default": "Tvoj text obsahuje diakritiku. Tučné, písané, gotické a väčšina ďalších štýlov teraz zachovajú <b>á</b>, <b>č</b> aj <b>ľ</b> s dĺžňom alebo mäkčeňom. Výnimkou je obrátený text: tam písmená s diakritikou zostanú stáť rovno. <a href=\"/guide/fancy-fonts-and-accents/\">Ktoré štýly zachovajú diakritiku →</a>"
+    },
+    "sr": {
+      "icon": "◌̌",
+      "dismiss": "Zatvori",
+      "default": "Tvoj tekst sadrži dijakritičke znakove. Podebljano, rukopisno, gotičko i većina drugih stilova sada zadržavaju <b>č</b>, <b>ć</b> i <b>ž</b> sa znakom — tek nekoliko njih (obrnuti tekst i <b>đ</b>, koje nema oblik sa znakom) vraća se na obična slova. <a href=\"/guide/fancy-fonts-and-accents/\">Koji stilovi zadržavaju dijakritiku →</a>"
+    },
+    "sv": {
+      "dismiss": "Stäng",
+      "default": "Din text innehåller accenttecken. Fet, skrivstil, gotisk och de flesta andra stilar behåller nu <b>å</b>, <b>ä</b> och <b>ö</b> med tecknet — några få (upp-och-nedvänd text, och bokstäver utan accentform som <b>ł đ ø ß</b>) faller tillbaka till vanliga bokstäver. <a href=\"/guide/fancy-fonts-and-accents/\">Vilka stilar behåller accenter →</a>",
+      "icon": "◌́"
+    },
+    "tr": {
+      "icon": "◌́",
+      "dismiss": "Kapat",
+      "default": "Metninde Türkçe karakterler var. Kalın, el yazısı, gotik ve diğer stillerin çoğu artık <b>ç</b>, <b>ğ</b> ve <b>ş</b> harflerini işaretiyle koruyor — birkaçı (ters yazı ve işaretli biçimi olmayan <b>ı</b>) düz harfe dönüyor. <a href=\"/guide/fancy-fonts-and-accents/\">Hangi stiller Türkçe karakterleri koruyor →</a>"
+    },
+    "vi": {
+      "icon": "◌́",
+      "dismiss": "Đóng",
+      "default": "Văn bản của bạn có dấu. Chữ đậm, chữ viết tay, gothic và hầu hết các kiểu khác giờ giữ nguyên <b>ế</b>, <b>ữ</b> và <b>ạ</b> cùng dấu — một vài kiểu (chữ ngược, và <b>đ</b> vốn không có dạng mang dấu) trở về chữ thường. <a href=\"/guide/fancy-fonts-and-accents/\">Kiểu nào giữ được dấu →</a>",
+      "upsideDown": "Văn bản của bạn có dấu. Chữ ngược không có dạng lật cho <b>ế ữ ạ đ</b> — những chữ này giữ nguyên và đứng thẳng trong đoạn chữ đã lật. Chữ đậm, chữ viết tay và gothic thì vẫn giữ dấu. <a href=\"/guide/fancy-fonts-and-accents/\">Kiểu nào giữ được dấu →</a>"
+    }
+  }
+}

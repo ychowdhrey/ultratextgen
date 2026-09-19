@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>stroke route tests</title>
+<!-- The site self-hosts its letterform faces (assets/fonts/), so the sheet a
+     child prints is set in the file style.css serves, not in whatever a
+     Google Fonts link happens to return. Measure that file. -->
+<link rel="stylesheet" href="/style.css">
+<style>
+  body { font: 14px/1.5 system-ui, sans-serif; margin: 20px; max-width: 980px; }
+  .pass { color: #0a7d32; } .fail { color: #b3261e; font-weight: 700; }
+  h1 { font-size: 18px; } pre { background: #f5f6f8; padding: 10px; overflow: auto; }
+  #summary { font-weight: 700; margin: 12px 0; padding: 8px; background: #f0f1f4; }
+  canvas { border: 1px solid #ddd; }
+</style>
+</head>
+<body>
+<h1>Writing route: does the skeleton land on the letter, and can you read its numbers?</h1>
+<p>Needs a browser: it rasterises each glyph and tests the fitted route against
+that raster. Open it and read the panel, or drive it headlessly and read
+<code>window.__UTG_TEST</code>.</p>
+<div id="summary">running…</div>
+<pre id="out"></pre>
+<canvas id="stage" width="400" height="480"></canvas>
+
+<script src="/js/printables/faceProbe.test.js"></script>
+<script src="/js/printables/strokeDirectionData.js"></script>
+<script src="/js/printables/glyphMetrics.js"></script>
+<script>
+/*
+ * R-001 turned the dotted tracing levels from a stroked glyph CONTOUR into a
+ * writing centreline, and R-010 fitted the stroke-direction overlay the same
+ * way. Both stand on one claim that nothing else in this repo can check:
+ * the skeleton in strokeDirectionData.js, fitted to a glyph's measured ink,
+ * actually lies ON that glyph.
+ *
+ * It is not checkable by reading code or by a node test — the skeleton is
+ * hand-authored against a generic sans and the glyph is a real webfont, so
+ * the only honest answer is to draw the letter and look at the pixels. That
+ * is what this does: draw at the same size and baseline production uses, fit
+ * with the same fitSkeleton call, resample the route by arc length, and count
+ * the share of it that lands on ink.
+ *
+ * The threshold is 90% per letter and 97% mean. Measured when this was
+ * written: 99.3% mean, worst letter 90% (R). A letter that drifts below is a
+ * real regression in the data or in the fit, not noise — the measurement is
+ * deterministic.
+ */
+(function () {
+  "use strict";
+  const lines = [];
+  let pass = 0, fail = 0;
+  function ok(cond, label, detail) {
+    if (cond) { pass++; lines.push("PASS  " + label); }
+    else { fail++; lines.push("FAIL  " + label + (detail ? "   " + detail : "")); }
+  }
+
+  const FAM = "Quicksand";
+  const F = "Quicksand, 'Plus Jakarta Sans', sans-serif";
+  const SIZE = 210;          // outlineSVG's own font-size, the skeleton's unit
+  const BASE = 300;          // baseline inside the test canvas
+  const CX = 200;
+
+  function finish() {
+    document.getElementById("out").textContent = lines.join("\n");
+    const el = document.getElementById("summary");
+    el.textContent = pass + " passed, " + fail + " failed";
+    el.className = fail ? "fail" : "pass";
+    window.__UTG_TEST = { pass: pass, fail: fail, lines: lines, summary: el.textContent };
+  }
+
+  /* Draw one glyph and return an ink test. Production places the letter with
+     text-anchor=middle, so the raster is produced the same way and the ink box
+     handed to fitSkeleton is the one glyphMetrics computes — not one read back
+     off the raster. Testing the fit against a box derived from the same
+     measurement it uses would prove nothing; the raster is the independent
+     half. */
+  function raster(ch) {
+    const c = document.getElementById("stage");
+    const ctx = c.getContext("2d");
+    ctx.clearRect(0, 0, c.width, c.height);
+    ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, c.width, c.height);
+    ctx.font = "700 " + SIZE + "px " + F;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "alphabetic";
+    ctx.fillStyle = "#000";
+    ctx.fillText(ch, CX, BASE);
+    const d = ctx.getImageData(0, 0, c.width, c.height).data;
+    return function (x, y) {
+      const px = Math.round(x), py = Math.round(y);
+      if (px < 0 || py < 0 || px >= c.width || py >= c.height) return false;
+      const i = (py * c.width + px) * 4;
+      return (0.299 * d[i] + 0.587 * d[i + 1] + 0.114 * d[i + 2]) < 170;
+    };
+  }
+
+  function run() {
+    const gm = window.UltraTextGen.glyphMetrics;
+    const DATA = window.UTG_STROKE_DIRECTION_DATA;
+    gm.reset();
+
+    /* Measuring the wrong face passes by coincidence on the letters whose
+       schematic happens to suit a fallback sans and fails on the rest, which
+       is worse than not running.
+
+       This asked document.fonts.check() until 2026-09-19. That returns TRUE
+       for a family that was never fetched — measured with the stylesheet
+       blocked, an empty document.fonts still answered true — so the guard
+       could not tell a loaded face from a missing one. UTG_FACE_PROBE asks
+       whether naming the family changes what canvas draws, which is the only
+       thing that distinguishes them. */
+    const have = window.UTG_FACE_PROBE.available(FAM, 700, SIZE);
+    if (!have) {
+      lines.push("ABORT  " + FAM + " is not available — every number below would be meaningless.");
+      fail++; finish(); return;
+    }
+    ok(!!DATA && Object.keys(DATA).length === 52, "strokeDirectionData covers 52 letters",
+       "got " + (DATA ? Object.keys(DATA).length : 0));
+
+    // ---- the arithmetic, before the geometry ---------------------------
+    const mapped = gm.mapPath("M10,20 C30,40 50,60 70,80", 2, 3, 5, 7);
+    ok(mapped === "M25,67 C65,127 105,187 145,247", "mapPath scales and translates every pair",
+       "got " + mapped);
+    ok(/^M/.test(mapped) && mapped.indexOf("C") > 0, "mapPath keeps the command letters");
+
+    const stem = gm.stemWidth(F, SIZE, 700);
+    ok(stem > SIZE * 0.08 && stem < SIZE * 0.22, "stemWidth is a plausible stem at 210px",
+       "got " + stem.toFixed(1));
+
+    const runs = gm.flattenStrokes(["M0,0 C0,100 100,100 100,0"], 12);
+    const box = gm.runsBox(runs);
+    ok(box.h < 76 && box.h > 70, "flattenStrokes measures the CURVE, not its control hull",
+       "cubic peaks at 75 of a 100-unit hull; got " + box.h.toFixed(1));
+
+    /* A single vertical has no width to match, so the fit centres it instead
+       of scaling by zero — "l" and "i" are the whole class. */
+    const vert = gm.fitSkeleton(["M100,52 L100,198"], { x: 40, y: 20, w: 60, h: 200 }, { inset: 10 });
+    ok(vert && vert.sx === 1, "fitSkeleton keeps scale 1 on a degenerate axis");
+    ok(vert && Math.abs(gm.runsBox(gm.flattenStrokes(vert.d, 12)).x - 70) < 0.6,
+       "fitSkeleton centres a degenerate axis on the ink box");
+
+    // ---- the route lands on the letter ---------------------------------
+    const chars = Object.keys(DATA);
+    const scores = [];
+    chars.forEach(function (ch) {
+      const hit = raster(ch);
+      const i = gm.ink(ch, F, SIZE, 700);
+      if (!i || !i.exact) { scores.push({ ch: ch, pct: 0, note: "no ink metrics" }); return; }
+      const originX = CX - i.advance / 2;
+      const inkBox = { x: originX + i.left, y: BASE + i.top, w: i.width, h: i.height };
+      const fit = gm.fitSkeleton(DATA[ch].strokes, inkBox, { inset: stem / 2 });
+      if (!fit) { scores.push({ ch: ch, pct: 0, note: "no fit" }); return; }
+      /* Resampled by arc length, so a 24-segment curve and one straight line
+         do not weigh the same. */
+      const rs = gm.flattenStrokes(fit.d, 24);
+      let n = 0, on = 0;
+      rs.forEach(function (run) {
+        for (let k = 1; k < run.length; k++) {
+          const a = run[k - 1], b = run[k];
+          const len = Math.hypot(b[0] - a[0], b[1] - a[1]);
+          const steps = Math.max(1, Math.round(len / 1.5));
+          for (let s = 0; s <= steps; s++) {
+            const t = s / steps;
+            n++;
+            if (hit(a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t)) on++;
+          }
+        }
+      });
+      scores.push({ ch: ch, pct: n ? 100 * on / n : 0 });
+    });
+
+    const worst = scores.slice().sort(function (a, b) { return a.pct - b.pct; });
+    const mean = scores.reduce(function (s, r) { return s + r.pct; }, 0) / scores.length;
+    lines.push("");
+    lines.push("route on letter, worst 10: " + worst.slice(0, 10)
+      .map(function (r) { return r.ch + " " + r.pct.toFixed(0) + "%"; }).join("  "));
+    lines.push("mean " + mean.toFixed(1) + "%");
+    lines.push("");
+
+    ok(mean >= 97, "mean route coverage is at least 97%", "got " + mean.toFixed(1) + "%");
+    const below = scores.filter(function (r) { return r.pct < 90; });
+    ok(below.length === 0, "every letter's route is at least 90% on the glyph",
+       below.map(function (r) { return r.ch + " " + r.pct.toFixed(0) + "%"; }).join(", "));
+
+    /* The registry's own claim, as a shape rather than an average: a stem gets
+       ONE column of route, not one per contour edge. "l" is the clean case —
+       a single vertical, so every sample must share one x. */
+    const lFit = (function () {
+      const i = gm.ink("l", F, SIZE, 700);
+      const originX = CX - i.advance / 2;
+      return gm.fitSkeleton(DATA.l.strokes,
+        { x: originX + i.left, y: BASE + i.top, w: i.width, h: i.height }, { inset: stem / 2 });
+    })();
+    const lx = gm.flattenStrokes(lFit.d, 12).reduce(function (a, r) { return a.concat(r); }, [])
+      .map(function (p) { return p[0]; });
+    ok(Math.max.apply(null, lx) - Math.min.apply(null, lx) < 1,
+       "a stem's route is one column, not its two contour edges",
+       "spread " + (Math.max.apply(null, lx) - Math.min.apply(null, lx)).toFixed(2));
+
+    /* G-22: and that column is down the MIDDLE of the stem. On the contour it
+       sat at 0% and 100% of the stem width; a centreline has to sit near 50%,
+       which is what a child is being asked to follow. */
+    const li = gm.ink("l", F, SIZE, 700);
+    const lLeft = CX - li.advance / 2 + li.left;
+    const lPos = 100 * ((lx[0] - lLeft) / li.width);
+    ok(lPos > 33 && lPos < 67, "that column sits in the middle third of the stem",
+       "at " + lPos.toFixed(0) + "% of the stem width");
+
+    badgeTests(gm, DATA, stem);
+    finish();
+  }
+
+  /* ---- the numbered badges ------------------------------------------
+     A badge is a disc of radius BADGE_R; two of them are readable only while
+     their centres are at least 2*BADGE_R apart. Drawn on the start point they
+     are not, and on A B D P R and p the two strokes start at the SAME point,
+     so one numeral covered the other completely and the sheet showed a "2"
+     with no "1". That has now been introduced, removed and reintroduced in
+     this repo three times — most recently as a side effect of deleting the
+     lead-in segments that had been holding the dots apart — which is why it
+     is measured here rather than looked at.
+
+     The functions under test are the shipped ones, sliced out of
+     printablesEngine.js between its @stroke-badges markers. A second copy
+     would drift from the first. */
+  function sliceBadges() {
+    const src = window.__PT_ENGINE_SRC || "";
+    const a = src.indexOf("/* @stroke-badges:begin");
+    const b = src.indexOf("/* @stroke-badges:end */");
+    if (a < 0 || b < 0) return null;
+    return new Function(src.slice(a, b) +
+      "\nreturn { badgePositions, tailPath, polyLength, pointAt, strokePolylines," +
+      " BADGE_R, BADGE_GAP, BADGE_SLIDE_CAP };")();
+  }
+
+  function badgeTests(gm, DATA, stem) {
+    lines.push("");
+    const BADGES = sliceBadges();
+    if (!BADGES) {
+      ok(false, "the @stroke-badges block was sliced out of printablesEngine.js",
+         "markers not found — the block moved or was renamed");
+      return;
+    }
+    const need = 2 * BADGES.BADGE_R + BADGES.BADGE_GAP;
+    const collisions = [], strays = [], offGlyph = [], tails = [];
+    Object.keys(DATA).forEach(function (ch) {
+      const i = gm.ink(ch, F, SIZE, 700);
+      if (!i || !i.exact) return;
+      const originX = CX - i.advance / 2;
+      const box = { x: originX + i.left, y: BASE + i.top, w: i.width, h: i.height };
+      const fit = gm.fitSkeleton(DATA[ch].strokes, box, { inset: stem / 2 });
+      if (!fit) return;
+      const polys = BADGES.strokePolylines(fit.d);
+      if (!polys) { strays.push(ch + " no polylines"); return; }
+      const pts = BADGES.badgePositions(polys);
+      const hit = raster(ch);
+      /* Distance to the nearest ink, not a bare on/off pixel test. R-010's
+         own instrument was the bare test, and over all 52 letters it calls
+         three points "off the glyph" that are 1.0, 5.5 and 1.0 units from
+         ink at an em of 210 — an antialiased edge, not a miss. The tolerance
+         is half a stem because that is the inset fitSkeleton is already
+         called with: a point within it is on the stroke by the same yardstick
+         the fit uses. The defect this has to keep catching was 24.8 units. */
+      const tol = stem / 2;
+      const near = function (x, y) {
+        if (hit(x, y)) return 0;
+        for (let r = 1; r <= tol; r += 0.5) {
+          for (let t = 0; t < 32; t++) {
+            const a = t / 32 * 2 * Math.PI;
+            if (hit(x + Math.cos(a) * r, y + Math.sin(a) * r)) return r;
+          }
+        }
+        return Infinity;
+      };
+      pts.forEach(function (q, k) {
+        // still labels its own stroke: never further from its start than the cap
+        const st = polys[k][0];
+        const moved = Math.hypot(q[0] - st[0], q[1] - st[1]);
+        if (moved > BADGES.BADGE_SLIDE_CAP + 0.6) {
+          strays.push(ch + " #" + (k + 1) + " moved " + moved.toFixed(1));
+        }
+        if (near(st[0], st[1]) === Infinity) offGlyph.push(ch + " dot #" + (k + 1));
+        if (near(q[0], q[1]) === Infinity) offGlyph.push(ch + " badge #" + (k + 1));
+        for (let j = k + 1; j < pts.length; j++) {
+          const d = Math.hypot(q[0] - pts[j][0], q[1] - pts[j][1]);
+          if (d < need - 0.01) {
+            collisions.push(ch + " " + (k + 1) + "/" + (j + 1) + " " + d.toFixed(1));
+          }
+        }
+      });
+      // the arrow tail must END where its stroke ends, or the arrowhead lies
+      fit.d.forEach(function (d, k) {
+        const t = BADGES.tailPath(polys[k], 18);
+        if (!t) { tails.push(ch + " #" + (k + 1) + " none"); return; }
+        const last = polys[k][polys[k].length - 1];
+        const m = /([\d.\-]+),([\d.\-]+)\s*$/.exec(t);
+        if (!m || Math.hypot(parseFloat(m[1]) - last[0], parseFloat(m[2]) - last[1]) > 0.01) {
+          tails.push(ch + " #" + (k + 1) + " ends off the stroke");
+        }
+      });
+    });
+    ok(collisions.length === 0, "no two numbered badges overlap on any letter",
+       collisions.join(", "));
+    ok(strays.length === 0, "every badge stays within the slide cap of its own start dot",
+       strays.join(", "));
+    ok(offGlyph.length === 0,
+       "every start dot and every badge is on the letter, within half a stem",
+       offGlyph.join(", "));
+    ok(tails.length === 0, "every arrow tail ends where its stroke ends", tails.join(", "));
+  }
+
+  /* Canvas measureText does NOT pull a webfont in, so asking for it explicitly
+     is the only way to be measuring the face the sheet will actually print. */
+  /* The engine is fetched rather than <script>-tagged: it is an IIFE that
+     mounts against a printables page's markup, and this page has none. Only
+     the marked block is evaluated. */
+  function boot() {
+    Promise.all([
+      window.UTG_FACE_PROBE.load(FAM, 700, SIZE),
+      fetch("/js/printables/printablesEngine.js")
+        .then(function (r) { return r.text(); })
+        .then(function (t) { window.__PT_ENGINE_SRC = t; })
+        .catch(function () { window.__PT_ENGINE_SRC = ""; })
+    ]).then(run, run);
+  }
+  if (document.readyState === "complete") boot();
+  else window.addEventListener("load", boot);
+})();
+</script>
+</body>
+</html>

@@ -17,9 +17,18 @@
   "crumb_library": "Symboles",
   "library_url": "https://ultratextgen.com/fr/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/peso-sign/" },
-    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-peso/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/peso-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/peso-sign/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/symbole-peso/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/peso-sign/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Les Deux Symboles Appelés « le Symbole Peso » — ₱ et $",
       "intro": "Ces deux signes portent tous deux le nom de symbole peso. ₱ est le caractère propre au peso philippin ; $ est celui que presque tous les autres pesos utilisent — parce que le signe dollar lui-même serait probablement né comme abréviation du peso espagnol. Reste-t-il issu d'un « Ps » manuscrit ou des Colonnes d'Hercule enroulées d'un S sur les pièces de dollar espagnol, la question divise encore réellement les historiens.",
       "symbols": [
-        { "char": "₱", "label": "Symbole Peso (U+20B1) — le glyphe dédié du peso philippin" },
-        { "char": "$", "label": "Signe Dollar (U+0024) — le signe qu'utilisent réellement le peso mexicain, argentin et les autres" }
+        {
+          "char": "₱",
+          "label": "Symbole Peso (U+20B1): le glyphe dédié du peso philippin"
+        },
+        {
+          "char": "$",
+          "label": "Signe Dollar (U+0024): le signe qu'utilisent réellement le peso mexicain, argentin et les autres"
+        }
       ]
     },
     {
@@ -38,12 +53,30 @@
       "h2": "La Famille des Monnaies à Lettre Barrée",
       "intro": "Le symbole peso est un P majuscule traversé de deux barres parallèles — la même recette derrière toute une génération de symboles monétaires modernes, chacun une lettre nationale barrée d'une ou deux lignes. Prêts à coller n'importe où.",
       "symbols": [
-        { "char": "₹", "label": "Symbole de la Roupie Indienne (U+20B9) — un R barré, officiellement adopté en 2010" },
-        { "char": "₩", "label": "Symbole Won (U+20A9) — un W à deux barres" },
-        { "char": "₦", "label": "Symbole Naira (U+20A6) — un N barré (Nigeria)" },
-        { "char": "₴", "label": "Symbole Hryvnia (U+20B4) — une lettre barrée pour l'Ukraine" },
-        { "char": "₫", "label": "Symbole Dong (U+20AB) — un d barré (Vietnam)" },
-        { "char": "€", "label": "Symbole Euro (U+20AC) — un E arrondi à deux traits" }
+        {
+          "char": "₹",
+          "label": "Symbole de la Roupie Indienne (U+20B9): un R barré, officiellement adopté en 2010"
+        },
+        {
+          "char": "₩",
+          "label": "Symbole Won (U+20A9): un W à deux barres"
+        },
+        {
+          "char": "₦",
+          "label": "Symbole Naira (U+20A6): un N barré (Nigeria)"
+        },
+        {
+          "char": "₴",
+          "label": "Symbole Hryvnia (U+20B4): une lettre barrée pour l'Ukraine"
+        },
+        {
+          "char": "₫",
+          "label": "Symbole Dong (U+20AB): un d barré (Vietnam)"
+        },
+        {
+          "char": "€",
+          "label": "Symbole Euro (U+20AC): un E arrondi à deux traits"
+        }
       ]
     },
     {
@@ -52,18 +85,44 @@
       "h2": "Sosies : les Glyphes Confondus avec ₱",
       "intro": "Comme ₱ est essentiellement un P barré, on le confond avec d'autres caractères en forme de P — dont l'un désigne une monnaie totalement différente. Chacun est son propre point de code Unicode, pas une variante stylistique.",
       "symbols": [
-        { "char": "₽", "label": "Symbole du Rouble (U+20BD) — la monnaie de la Russie, elle aussi un P barré, mais d'une barre différente" },
-        { "char": "P", "label": "P Majuscule Latin (U+0050) — le repli en clavier ordinaire souvent tapé à la place du peso" },
-        { "char": "Ᵽ", "label": "P Majuscule Latin Barré (U+2C63) — un P à une seule barre utilisé en linguistique, pas en devise" },
-        { "char": "Ρ", "label": "Rho Majuscule Grec (U+03A1) — ressemble à un P" },
-        { "char": "Р", "label": "Er Majuscule Cyrillique (U+0420) — un autre sosie du P" }
+        {
+          "char": "₽",
+          "label": "Symbole du Rouble (U+20BD): la monnaie de la Russie, elle aussi un P barré, mais d'une barre différente"
+        },
+        {
+          "char": "P",
+          "label": "P Majuscule Latin (U+0050): le repli en clavier ordinaire souvent tapé à la place du peso"
+        },
+        {
+          "char": "Ᵽ",
+          "label": "P Majuscule Latin Barré (U+2C63): un P à une seule barre utilisé en linguistique, pas en devise"
+        },
+        {
+          "char": "Ρ",
+          "label": "Rho Majuscule Grec (U+03A1): ressemble à un P"
+        },
+        {
+          "char": "Р",
+          "label": "Er Majuscule Cyrillique (U+0420): un autre sosie du P"
+        }
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
   "related": [
-    { "href": "/library/currency-symbols/", "title": "Currency Symbols", "desc": "Parcours tous les symboles monétaires du monde — dollar, euro, livre, yen, roupie et peso — côte à côte dans une même grille (en anglais)." },
-    { "href": "/fr/symbol/symbole-dollar/", "title": "Symbole Dollar ($)", "desc": "Le signe qu'utilise en réalité presque chaque peso : seul le peso philippin a son propre ₱, quand les pesos mexicain, argentin et colombien s'écrivent tous avec $." },
-    { "href": "/fr/symbol/symbole-roupie/", "title": "Symbole de la Roupie (₹)", "desc": "Le ₹ indien — comme ₱, un symbole monétaire moderne officiellement décrété pour une seule nation et construit en barrant une lettre de traits parallèles." }
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Currency Symbols",
+      "desc": "Parcours tous les symboles monétaires du monde — dollar, euro, livre, yen, roupie et peso — côte à côte dans une même grille (en anglais)."
+    },
+    {
+      "href": "/fr/symbol/symbole-dollar/",
+      "title": "Symbole Dollar ($)",
+      "desc": "Le signe qu'utilise en réalité presque chaque peso : seul le peso philippin a son propre ₱, quand les pesos mexicain, argentin et colombien s'écrivent tous avec $."
+    },
+    {
+      "href": "/fr/symbol/symbole-roupie/",
+      "title": "Symbole de la Roupie (₹)",
+      "desc": "Le ₹ indien — comme ₱, un symbole monétaire moderne officiellement décrété pour une seule nation et construit en barrant une lettre de traits parallèles."
+    }
   ]
 }

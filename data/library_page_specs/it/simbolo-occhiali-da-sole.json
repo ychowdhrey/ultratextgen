@@ -16,11 +16,19 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/sunglasses-symbol/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-occhiali-da-sole/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/sunglasses-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/sunglasses-symbol/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-occhiali-da-sole/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/sunglasses-symbol/"
+    }
   ],
   "sections": [
     {
@@ -29,8 +37,14 @@
       "h2": "Emoji Occhiali da Sole",
       "intro": "I due glifi Unicode principali: la faccina sorridente con gli occhiali da sole, e l'oggetto occhiali da sole in versione semplice.",
       "symbols": [
-        { "char": "😎", "label": "Faccina Sorridente con Occhiali da Sole (U+1F60E)" },
-        { "char": "🕶️", "label": "Occhiali da Sole (U+1F576)" }
+        {
+          "char": "😎",
+          "label": "Faccina Sorridente con Occhiali da Sole (U+1F60E)"
+        },
+        {
+          "char": "🕶️",
+          "label": "Occhiali da Sole (U+1F576)"
+        }
       ]
     },
     {
@@ -39,9 +53,18 @@
       "h2": "Le Faccine Fiche e Sicure di Sé con Cui si Abbina",
       "intro": "Emoji che portano un tono simile — soddisfatto, sicuro di sé o imperturbabile.",
       "symbols": [
-        { "char": "😏", "label": "Faccina Soddisfatta" },
-        { "char": "🆒", "label": "Pulsante Cool" },
-        { "char": "💪", "label": "Bicipite Flesso" }
+        {
+          "char": "😏",
+          "label": "Faccina Soddisfatta"
+        },
+        {
+          "char": "🆒",
+          "label": "Pulsante Cool"
+        },
+        {
+          "char": "💪",
+          "label": "Bicipite Flesso"
+        }
       ]
     },
     {
@@ -50,8 +73,14 @@
       "h2": "Alternative Testuali e Kaomoji",
       "intro": "Modi in solo testo per esprimere la stessa energia fica, da occhiali scuri.",
       "symbols": [
-        { "char": "B-)", "label": "Kaomoji Faccina con Occhiali da Sole" },
-        { "char": "(⌐■_■)", "label": "Kaomoji \"Deal With It\"" }
+        {
+          "char": "B-)",
+          "label": "Kaomoji Faccina con Occhiali da Sole"
+        },
+        {
+          "char": "(⌐■_■)",
+          "label": "Kaomoji \"Deal With It\""
+        }
       ]
     }
   ],

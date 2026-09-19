@@ -37,8 +37,8 @@
       "h2": "Symbole Podobnie Wyglądające",
       "intro": "Znaki, z którymi bywa mylona strzałka w prawo — jeden to dekoracyjny wariant z innego bloku Unicode, drugi to trójkąt używany zamiennie.",
       "symbols": [
-        { "char": "➔", "label": "Wariant Strzałki z Dingbats — dekoracyjna typografia wyświetlania, inny blok Unicode" },
-        { "char": "▶", "label": "Czarny Trójkąt Wskazujący w Prawo (U+25B6) — często używany dekoracyjnie jako zamiennik „odtwórz”/strzałki" }
+        { "char": "➔", "label": "Wariant Strzałki z Dingbats: dekoracyjna typografia wyświetlania, inny blok Unicode" },
+        { "char": "▶", "label": "Czarny Trójkąt Wskazujący w Prawo (U+25B6): często używany dekoracyjnie jako zamiennik „odtwórz”/strzałki" }
       ]
     },
     {
@@ -53,7 +53,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/symbol/strzalka-w-lewo/",

@@ -1,0 +1,753 @@
+{
+  "_readme": "Health history for every externally cited URL on the site, written by npm run audit:link-rot. Generated — do not hand-edit; a hand-set lastGood is a claim nobody checked. consecutiveFailures counts runs that came back gone/unreachable/server, and a URL is only REPORTED AS ROTTED at 3, because one bad fetch is not a dead link: a live primary source behind bot protection (cbo.gov.om answers 503) and a host that does not exist can look identical in a single request. blocked/redirect never count as failures. See the header of scripts/lib/link-health.js for the measurements behind that rule, and docs/source-attribution.md §9.",
+  "urls": {
+    "https://9to5google.com/2026/06/29/whatsapp-usernames-launch-later-this-year-heres-how-to-get-yours-now/": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/whatsapp-usernames-rollout/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://blog.emojipedia.org/draft-emoji-list-for-2026-2027/": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "ar/updates/unicode-18-most-anticipated-emoji/index.html",
+        "de/updates/unicode-18-emoji-abstimmung/index.html",
+        "es/updates/unicode-18-nuevos-emojis-votacion/index.html",
+        "fr/updates/unicode-18-nouveaux-emojis-vote/index.html",
+        "id/updates/unicode-18-emoji-baru-voting/index.html",
+        "ja/updates/unicode-18-most-anticipated-emoji/index.html",
+        "ko/updates/unicode-18-imoji-tupyo/index.html",
+        "nl/updates/unicode-18-nieuwe-emoji-stemming/index.html",
+        "pl/updates/unicode-18-nowe-emoji-glosowanie/index.html",
+        "pt/updates/unicode-18-novos-emojis-votacao/index.html",
+        "ru/updates/unicode-18-most-anticipated-emoji/index.html",
+        "th/updates/unicode-18-most-anticipated-emoji/index.html",
+        "tr/updates/unicode-18-yeni-emoji-oylama/index.html",
+        "updates/unicode-18-most-anticipated-emoji/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://blog.emojipedia.org/google-debuts-emoji-17-0-support/": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/unicode-17-new-emoji-rollout/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://blog.emojipedia.org/google-debuts-noto-3d-emoji-overhaul-on-pixel-11/": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/unicode-17-new-emoji-rollout/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://blog.emojipedia.org/samsung-one-ui-8-5-emoji-changelog/": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/unicode-17-new-emoji-rollout/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://blog.emojipedia.org/the-most-anticipated-emoji-of-2026-is/": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "ar/updates/unicode-18-most-anticipated-emoji/index.html",
+        "de/updates/unicode-18-emoji-abstimmung/index.html",
+        "es/updates/unicode-18-nuevos-emojis-votacion/index.html",
+        "fr/updates/unicode-18-nouveaux-emojis-vote/index.html",
+        "id/updates/unicode-18-emoji-baru-voting/index.html",
+        "ja/updates/unicode-18-most-anticipated-emoji/index.html",
+        "ko/updates/unicode-18-imoji-tupyo/index.html",
+        "nl/updates/unicode-18-nieuwe-emoji-stemming/index.html",
+        "pl/updates/unicode-18-nowe-emoji-glosowanie/index.html",
+        "pt/updates/unicode-18-novos-emojis-votacao/index.html",
+        "ru/updates/unicode-18-most-anticipated-emoji/index.html",
+        "th/updates/unicode-18-most-anticipated-emoji/index.html",
+        "tr/updates/unicode-18-yeni-emoji-oylama/index.html",
+        "updates/unicode-18-most-anticipated-emoji/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://blog.emojipedia.org/windows-11-now-supports-emoji-17-0/": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/unicode-17-new-emoji-rollout/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://blog.unicode.org/2026/02/from-central-bank-to-code-point-roadmap.html": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "ar/updates/middle-east-currency-symbols-scorecard/index.html",
+        "de/updates/naher-osten-waehrungssymbole-unicode-18/index.html",
+        "es/updates/simbolos-moneda-oriente-medio-unicode-18/index.html",
+        "it/updates/simboli-valuta-medio-oriente-unicode-18/index.html",
+        "ko/updates/jungdong-hwapye-giho-unicode-18/index.html",
+        "nl/updates/valutasymbolen-midden-oosten-unicode-18/index.html",
+        "sv/updates/valutasymboler-mellanostern-unicode-18/index.html",
+        "tr/updates/orta-dogu-para-birimi-sembolleri-unicode-18/index.html",
+        "updates/middle-east-currency-symbols-scorecard/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://blog.unicode.org/2026/05/unicode-180-beta-review-opens-for.html": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "ar/updates/unicode-18-beta-review-opens/index.html",
+        "ar/updates/unicode-18-most-anticipated-emoji/index.html",
+        "de/updates/unicode-18-beta-startet/index.html",
+        "de/updates/unicode-18-emoji-abstimmung/index.html",
+        "es/updates/unicode-18-beta-comienza-revision/index.html",
+        "es/updates/unicode-18-nuevos-emojis-votacion/index.html",
+        "fr/updates/unicode-18-nouveaux-emojis-vote/index.html",
+        "id/updates/unicode-18-emoji-baru-voting/index.html",
+        "it/updates/revisione-beta-unicode-18/index.html",
+        "ja/updates/unicode-18-most-anticipated-emoji/index.html",
+        "ko/updates/unicode-18-beta-sijak/index.html",
+        "ko/updates/unicode-18-imoji-tupyo/index.html",
+        "nl/updates/unicode-18-beta-van-start/index.html",
+        "nl/updates/unicode-18-nieuwe-emoji-stemming/index.html",
+        "pl/updates/unicode-18-nowe-emoji-glosowanie/index.html",
+        "pt/updates/unicode-18-novos-emojis-votacao/index.html",
+        "ru/updates/unicode-18-most-anticipated-emoji/index.html",
+        "sv/updates/unicode-18-betagranskning-oppnar/index.html",
+        "th/updates/unicode-18-most-anticipated-emoji/index.html",
+        "tr/updates/unicode-18-beta-inceleme-basliyor/index.html",
+        "tr/updates/unicode-18-yeni-emoji-oylama/index.html",
+        "updates/unicode-18-beta-review-opens/index.html",
+        "updates/unicode-18-most-anticipated-emoji/index.html",
+        "updates/unicode-18-release-date-confirmed/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://cbo.gov.om/Style%20Library/CBO/downloads/The%20Omani%20Rial%20Sign%20Guidelines.pdf": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "blocked",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/omani-rial-symbol-unicode-18/index.html"
+      ],
+      "httpCode": 503,
+      "lastGood": null
+    },
+    "https://cbo.gov.om/omrsymbol": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "blocked",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/omani-rial-symbol-unicode-18/index.html"
+      ],
+      "httpCode": 503,
+      "lastGood": null
+    },
+    "https://devforum.roblox.com/t/unicode-characters-for-roblox-plus-premium-verified-and-robux/2175425": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "ar/library/roblox-symbols/index.html",
+        "es/library/simbolos-roblox/index.html",
+        "fr/library/symboles-roblox/index.html",
+        "id/library/simbol-roblox/index.html",
+        "it/library/simboli-roblox/index.html",
+        "ja/library/roblox-symbols/index.html",
+        "ko/library/roblox-giho/index.html",
+        "library/roblox-symbols/index.html",
+        "ms/library/simbol-roblox/index.html",
+        "nl/library/roblox-symbolen/index.html",
+        "pl/library/symbole-roblox/index.html",
+        "pt/library/simbolos-roblox/index.html",
+        "ru/library/simvoly-roblox/index.html",
+        "sv/library/roblox-symboler/index.html",
+        "th/library/roblox-symbols/index.html",
+        "tr/library/roblox-sembolleri/index.html",
+        "vi/ki-tu-roblox/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://emojipedia.org/emoji-18.0": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "vi/updates/emoji-moi-unicode-18/index.html",
+        "zh-tw/updates/unicode-18-xin-biaoqing-fuhao/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://en.help.roblox.com/hc/en-us/articles/203313410": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "blocked",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "roblox/name-generator/index.html"
+      ],
+      "httpCode": 403,
+      "lastGood": null
+    },
+    "https://en.help.roblox.com/hc/en-us/articles/204262550-Free-Robux-or-Subscription-Generators": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "roblox/name-generator/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://fonts.google.com/specimen/Poppins": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "answers/what-font-does-pinterest-use/index.html",
+        "ar/answers/what-font-does-pinterest-use/index.html",
+        "es/answers/what-font-does-pinterest-use/index.html",
+        "fr/answers/what-font-does-pinterest-use/index.html",
+        "id/answers/what-font-does-pinterest-use/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://fonts.google.com/specimen/Public+Sans": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "answers/what-font-does-snapchat-use/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://fonts.google.com/specimen/Source+Sans+3": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "answers/what-font-does-linkedin-use/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://github.com/ValveSoftware/steam-for-linux/issues/5426": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "library/steam-symbols/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://github.com/notofonts/arabic/issues/291": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/omani-rial-symbol-unicode-18/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://lienquan.garena.vn/cap-nhat-cac-hanh-vi-bi-xu-phat-va-thoi-han-khoa-tu-1-1-2026/": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/lienquan-mobile-name-penalty-update/index.html",
+        "vi/updates/lien-quan-khoa-doi-ten/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://news.xbox.com/en-us/2026/06/24/xbox-insiders-august-2026-console-features/": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/xbox-gamertag-15-character-limit/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://racinggames.gg/article/how-to-change-your-name-and-gamertag-in-forza-horizon-6": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/forza-horizon-6-gamertag-rules/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://steamcommunity.com/app/2483190/discussions/0/653730014598138276/": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/forza-horizon-6-gamertag-rules/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://symbl.cc/en/blog/what-s-coming-in-unicode-18-0-ancient-scripts-currency-symbols-and-new-emoji/": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "ar/updates/unicode-18-beta-review-opens/index.html",
+        "ar/updates/unicode-18-most-anticipated-emoji/index.html",
+        "de/updates/unicode-18-beta-startet/index.html",
+        "de/updates/unicode-18-emoji-abstimmung/index.html",
+        "es/updates/unicode-18-beta-comienza-revision/index.html",
+        "es/updates/unicode-18-nuevos-emojis-votacion/index.html",
+        "fr/updates/unicode-18-nouveaux-emojis-vote/index.html",
+        "id/updates/unicode-18-emoji-baru-voting/index.html",
+        "it/updates/revisione-beta-unicode-18/index.html",
+        "ja/updates/unicode-18-most-anticipated-emoji/index.html",
+        "ko/updates/unicode-18-beta-sijak/index.html",
+        "ko/updates/unicode-18-imoji-tupyo/index.html",
+        "nl/updates/unicode-18-beta-van-start/index.html",
+        "nl/updates/unicode-18-nieuwe-emoji-stemming/index.html",
+        "pl/updates/unicode-18-nowe-emoji-glosowanie/index.html",
+        "pt/updates/unicode-18-novos-emojis-votacao/index.html",
+        "ru/updates/unicode-18-most-anticipated-emoji/index.html",
+        "sv/updates/unicode-18-betagranskning-oppnar/index.html",
+        "th/updates/unicode-18-most-anticipated-emoji/index.html",
+        "tr/updates/unicode-18-beta-inceleme-basliyor/index.html",
+        "tr/updates/unicode-18-yeni-emoji-oylama/index.html",
+        "updates/unicode-18-beta-review-opens/index.html",
+        "updates/unicode-18-most-anticipated-emoji/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://techcrunch.com/2026/06/29/whatsapp-now-lets-you-reserve-usernames/": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/whatsapp-usernames-rollout/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://telegram.org/blog/communities-editor-invisible-messages": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/telegram-premium-message-limit/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://unicode.org/emoji/proposals.html": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "guide/unicode-symbol-approval-process/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://www.apple.com/newsroom/2002/07/17Apple-Introduces-iCal/": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "ar/symbol/ramz-taqweem/index.html",
+        "symbol/calendar-emoji/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://www.businesstoday.in/technology/news/story/whatsapp-username-rules-explained-allowed-characters-length-and-restrictions-you-need-to-know-539909-2026-06-30": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/whatsapp-usernames-rollout/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://www.grillitype.com/commissions/pinterest": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "answers/what-font-does-pinterest-use/index.html",
+        "ar/answers/what-font-does-pinterest-use/index.html",
+        "es/answers/what-font-does-pinterest-use/index.html",
+        "fr/answers/what-font-does-pinterest-use/index.html",
+        "id/answers/what-font-does-pinterest-use/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://www.macrumors.com/": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "vi/updates/emoji-moi-unicode-18/index.html",
+        "zh-tw/updates/unicode-18-xin-biaoqing-fuhao/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://www.macrumors.com/2026/01/09/new-unicode-emoji-18-coming-to-ios/": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "ar/updates/unicode-18-most-anticipated-emoji/index.html",
+        "de/updates/unicode-18-emoji-abstimmung/index.html",
+        "es/updates/unicode-18-nuevos-emojis-votacion/index.html",
+        "fr/updates/unicode-18-nouveaux-emojis-vote/index.html",
+        "id/updates/unicode-18-emoji-baru-voting/index.html",
+        "ja/updates/unicode-18-most-anticipated-emoji/index.html",
+        "ko/updates/unicode-18-imoji-tupyo/index.html",
+        "nl/updates/unicode-18-nieuwe-emoji-stemming/index.html",
+        "pl/updates/unicode-18-nowe-emoji-glosowanie/index.html",
+        "pt/updates/unicode-18-novos-emojis-votacao/index.html",
+        "ru/updates/unicode-18-most-anticipated-emoji/index.html",
+        "th/updates/unicode-18-most-anticipated-emoji/index.html",
+        "tr/updates/unicode-18-yeni-emoji-oylama/index.html",
+        "updates/unicode-18-most-anticipated-emoji/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://www.macrumors.com/2026/07/17/whatsapp-rolling-out-new-username-feature/": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/whatsapp-usernames-rollout/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://www.minecraft.net/en-us/msaprofile/mygames/editprofile": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "blocked",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "answers/how-to-change-minecraft-username/index.html"
+      ],
+      "httpCode": 503,
+      "lastGood": null
+    },
+    "https://www.purexbox.com/news/2026/07/longer-gamertags-are-now-available-for-everyone-plus-11-other-new-xbox-features": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/xbox-gamertag-15-character-limit/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://www.roblox.com": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "answers/how-to-change-roblox-username/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://www.thenationalnews.com/future/technology/2026/02/27/uae-dirham-symbol-keyboard-code-unicode/": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "ar/updates/uae-dirham-symbol-unicode-18/index.html",
+        "de/updates/vae-dirham-symbol-unicode-18/index.html",
+        "es/updates/simbolo-dirham-emiratos-unicode-18/index.html",
+        "it/updates/simbolo-dirham-unicode-18/index.html",
+        "ko/updates/dirham-giho-unicode-18/index.html",
+        "nl/updates/dirham-symbool-unicode-18/index.html",
+        "sv/updates/dirham-symbol-unicode-18/index.html",
+        "tr/updates/dirhem-sembolu-unicode-18/index.html",
+        "updates/uae-dirham-symbol-unicode-18/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://www.thenationalnews.com/future/technology/2026/05/27/uae-dirham-symbol-moves-closer-to-appearing-on-phone-and-computer-keyboards/": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "ar/updates/uae-dirham-symbol-unicode-18/index.html",
+        "de/updates/vae-dirham-symbol-unicode-18/index.html",
+        "es/updates/simbolo-dirham-emiratos-unicode-18/index.html",
+        "it/updates/simbolo-dirham-unicode-18/index.html",
+        "ko/updates/dirham-giho-unicode-18/index.html",
+        "nl/updates/dirham-symbool-unicode-18/index.html",
+        "sv/updates/dirham-symbol-unicode-18/index.html",
+        "tr/updates/dirhem-sembolu-unicode-18/index.html",
+        "updates/uae-dirham-symbol-unicode-18/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://www.timeoutdubai.com/news/uae-dirham-symbol-2026": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "blocked",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "ar/updates/uae-dirham-symbol-unicode-18/index.html",
+        "de/updates/vae-dirham-symbol-unicode-18/index.html",
+        "es/updates/simbolo-dirham-emiratos-unicode-18/index.html",
+        "it/updates/simbolo-dirham-unicode-18/index.html",
+        "ko/updates/dirham-giho-unicode-18/index.html",
+        "nl/updates/dirham-symbool-unicode-18/index.html",
+        "sv/updates/dirham-symbol-unicode-18/index.html",
+        "tr/updates/dirhem-sembolu-unicode-18/index.html",
+        "updates/uae-dirham-symbol-unicode-18/index.html"
+      ],
+      "httpCode": 405,
+      "lastGood": null
+    },
+    "https://www.unicode.org/L2/": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "guide/unicode-symbol-approval-process/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://www.unicode.org/L2/L2026/26003.htm": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/omani-rial-symbol-unicode-18/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://www.unicode.org/L2/L2026/26041-omani-rial.pdf": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/omani-rial-symbol-unicode-18/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://www.unicode.org/L2/L2026/26160r-rmg-report-utc188.pdf": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "ar/updates/unicode-18-release-date-confirmed/index.html",
+        "de/updates/unicode-18-erscheinungsdatum-bestaetigt/index.html",
+        "es/updates/unicode-18-fecha-lanzamiento-confirmada/index.html",
+        "fr/updates/unicode-18-date-de-sortie-confirmee/index.html",
+        "id/updates/tanggal-rilis-unicode-18-dipastikan/index.html",
+        "it/updates/data-di-uscita-unicode-18-confermata/index.html",
+        "ja/updates/unicode-18-release-date-confirmed/index.html",
+        "ko/updates/unicode-18-chulsi-il-hwakjeong/index.html",
+        "nl/updates/unicode-18-releasedatum-bevestigd/index.html",
+        "pl/updates/unicode-18-data-premiery-potwierdzona/index.html",
+        "pt/updates/data-de-lancamento-unicode-18-confirmada/index.html",
+        "ru/updates/unicode-18-release-date-confirmed/index.html",
+        "th/updates/unicode-18-release-date-confirmed/index.html",
+        "tr/updates/unicode-18-cikis-tarihi-onaylandi/index.html",
+        "updates/unicode-18-release-date-confirmed/index.html",
+        "vi/updates/unicode-18-xac-nhan-ngay-phat-hanh/index.html",
+        "zh-tw/updates/unicode-18-fabu-riqi-queren/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://www.unicode.org/alloc/Pipeline.html": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "ar/updates/middle-east-currency-symbols-scorecard/index.html",
+        "de/updates/naher-osten-waehrungssymbole-unicode-18/index.html",
+        "es/updates/simbolos-moneda-oriente-medio-unicode-18/index.html",
+        "it/updates/simboli-valuta-medio-oriente-unicode-18/index.html",
+        "ko/updates/jungdong-hwapye-giho-unicode-18/index.html",
+        "nl/updates/valutasymbolen-midden-oosten-unicode-18/index.html",
+        "sv/updates/valutasymboler-mellanostern-unicode-18/index.html",
+        "tr/updates/orta-dogu-para-birimi-sembolleri-unicode-18/index.html",
+        "updates/middle-east-currency-symbols-scorecard/index.html",
+        "updates/omani-rial-symbol-unicode-18/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://www.unicode.org/releases/": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/unicode-17-new-emoji-rollout/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://www.unicode.org/versions/Unicode18.0.0/": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "ar/updates/unicode-18-beta-review-opens/index.html",
+        "ar/updates/unicode-18-release-date-confirmed/index.html",
+        "de/updates/unicode-18-beta-startet/index.html",
+        "de/updates/unicode-18-erscheinungsdatum-bestaetigt/index.html",
+        "es/updates/unicode-18-beta-comienza-revision/index.html",
+        "es/updates/unicode-18-fecha-lanzamiento-confirmada/index.html",
+        "fr/updates/unicode-18-date-de-sortie-confirmee/index.html",
+        "id/updates/tanggal-rilis-unicode-18-dipastikan/index.html",
+        "it/updates/data-di-uscita-unicode-18-confermata/index.html",
+        "it/updates/revisione-beta-unicode-18/index.html",
+        "ja/updates/unicode-18-release-date-confirmed/index.html",
+        "ko/updates/unicode-18-beta-sijak/index.html",
+        "ko/updates/unicode-18-chulsi-il-hwakjeong/index.html",
+        "nl/updates/unicode-18-beta-van-start/index.html",
+        "nl/updates/unicode-18-releasedatum-bevestigd/index.html",
+        "pl/updates/unicode-18-data-premiery-potwierdzona/index.html",
+        "pt/updates/data-de-lancamento-unicode-18-confirmada/index.html",
+        "ru/updates/unicode-18-release-date-confirmed/index.html",
+        "sv/updates/unicode-18-betagranskning-oppnar/index.html",
+        "th/updates/unicode-18-release-date-confirmed/index.html",
+        "tr/updates/unicode-18-beta-inceleme-basliyor/index.html",
+        "tr/updates/unicode-18-cikis-tarihi-onaylandi/index.html",
+        "updates/omani-rial-symbol-unicode-18/index.html",
+        "updates/unicode-18-beta-review-opens/index.html",
+        "updates/unicode-18-release-date-confirmed/index.html",
+        "vi/updates/emoji-moi-unicode-18/index.html",
+        "vi/updates/unicode-18-xac-nhan-ngay-phat-hanh/index.html",
+        "zh-tw/updates/unicode-18-fabu-riqi-queren/index.html",
+        "zh-tw/updates/unicode-18-xin-biaoqing-fuhao/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://www.unicode.org/versions/beta-18.0.0.html": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/omani-rial-symbol-unicode-18/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://www.windowscentral.com/gaming/xbox/new-xbox-update-lets-you-make-your-gamertag-longer-so-it-feels-like-you": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "updates/xbox-gamertag-15-character-limit/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    },
+    "https://www.xbox.com": {
+      "firstSeen": "2026-09-06",
+      "lastChecked": "2026-09-06",
+      "lastStatus": "ok",
+      "consecutiveFailures": 0,
+      "citedBy": [
+        "answers/how-to-change-minecraft-username/index.html",
+        "usecase/xbox-name-generator/index.html"
+      ],
+      "httpCode": 200,
+      "lastGood": "2026-09-06"
+    }
+  }
+}

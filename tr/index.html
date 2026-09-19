@@ -356,7 +356,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Telefondan kullanılabiliyor mu?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Evet — iPhone, Android, iPad, tablet, her şey. Site mobile için optimize, indirilecek uygulama yok. Tarayıcıdan ultratextgen.com'a gir, yazını yaz, stili seç, kopyala. Instagram'a, WhatsApp'a, oyununa direkt yapıştır."
+        "text": "Evet, iPhone, Android, iPad, tablet, her şey. Site mobile için optimize, indirilecek uygulama yok. Tarayıcıdan ultratextgen.com'a gir, yazını yaz, stili seç, kopyala. Instagram'a, WhatsApp'a, oyununa direkt yapıştır."
       }
     },
     {
@@ -412,6 +412,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <span class="char-count" id="charCountWrapper" hidden=""><span id="charCount">0</span>/500</span>
         </div>
 
+        <!-- Accent-aware hint: shows only when the input contains diacritics -->
+        <div class="accent-notice" id="accentNotice" role="note" hidden>
+          <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+          <span class="accent-notice-text">Metninde Türkçe karakterler var. Kalın, el yazısı, gotik ve diğer stillerin çoğu artık <b>ç</b>, <b>ğ</b> ve <b>ş</b> harflerini işaretiyle koruyor — birkaçı (ters yazı ve işaretli biçimi olmayan <b>ı</b>) düz harfe dönüyor. <a href="/guide/fancy-fonts-and-accents/">Hangi stiller Türkçe karakterleri koruyor →</a></span>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Kapat">✕</button>
+        </div>
+
         <!-- Decoration Selector -->
         <div class="decoration-section">
           <div class="decoration-label">
@@ -453,11 +460,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <h2>Türkçe yazı araçları</h2>
     <p class="editorial-intro">Her stilin Türkçe hazırlanmış kendi sayfası var: hazır örnekler, kullanım ipuçları ve o stile ayarlanmış üretici. Yapmak istediğine uyan aracı seç:</p>
     <div class="tips-grid">
-      <a class="tip-card" href="/tr/sekilli-yazi/" aria-label="Şekilli yazı">
-        <div class="tip-icon">✨</div>
-        <h3>Şekilli Yazı</h3>
-        <p>Süslü, çerçeveli ve sembollü yazı oluşturucu — bio, durum ve nick için hazır örneklerle.</p>
-      </a>
       <a class="tip-card" href="/tr/" aria-label="Yazı stilleri">
         <div class="tip-icon">🔤</div>
         <h3>Yazı Stilleri</h3>
@@ -987,7 +989,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer" data-i18n-html="faq.categories.7.items.0.answer">Evet — iPhone, Android, iPad, tablet, her şey. Site mobile için optimize, indirilecek uygulama yok.
+  <div class="faq-answer" data-i18n-html="faq.categories.7.items.0.answer">Evet, iPhone, Android, iPad, tablet, her şey. Site mobile için optimize, indirilecek uygulama yok.
     <br><br>
     Tarayıcıdan ultratextgen.com'a gir, yazını yaz, stili seç, kopyala. Instagram'a, WhatsApp'a, oyununa direkt yapıştır.</div>
 </div>
@@ -1164,7 +1166,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <script src="/styles.js" defer=""></script>
 <script src="/renderer.js" defer=""></script>
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
 <script src="/script.js" defer=""></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/i18n.js" defer=""></script>
 
 

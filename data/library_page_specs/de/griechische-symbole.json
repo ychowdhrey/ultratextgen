@@ -16,11 +16,19 @@
   "crumb_library": "Bibliothek",
   "library_url": "https://ultratextgen.com/de/library/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/greek-letter-symbols/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/library/griechische-symbole/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/greek-letter-symbols/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/greek-letter-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/griechische-symbole/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/greek-letter-symbols/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
   "related": [
     {
       "href": "/de/symbol/grad-zeichen/",
@@ -45,30 +53,102 @@
       "h2": "Griechische Großbuchstaben",
       "intro": "Die 24 Großbuchstaben des griechischen Alphabets, von Alpha bis Omega.",
       "symbols": [
-        { "char": "Α", "label": "Griechischer Großbuchstabe Alpha" },
-        { "char": "Β", "label": "Griechischer Großbuchstabe Beta" },
-        { "char": "Γ", "label": "Griechischer Großbuchstabe Gamma" },
-        { "char": "Δ", "label": "Griechischer Großbuchstabe Delta" },
-        { "char": "Ε", "label": "Griechischer Großbuchstabe Epsilon" },
-        { "char": "Ζ", "label": "Griechischer Großbuchstabe Zeta" },
-        { "char": "Η", "label": "Griechischer Großbuchstabe Eta" },
-        { "char": "Θ", "label": "Griechischer Großbuchstabe Theta" },
-        { "char": "Ι", "label": "Griechischer Großbuchstabe Iota" },
-        { "char": "Κ", "label": "Griechischer Großbuchstabe Kappa" },
-        { "char": "Λ", "label": "Griechischer Großbuchstabe Lambda" },
-        { "char": "Μ", "label": "Griechischer Großbuchstabe My" },
-        { "char": "Ν", "label": "Griechischer Großbuchstabe Ny" },
-        { "char": "Ξ", "label": "Griechischer Großbuchstabe Xi" },
-        { "char": "Ο", "label": "Griechischer Großbuchstabe Omikron" },
-        { "char": "Π", "label": "Griechischer Großbuchstabe Pi" },
-        { "char": "Ρ", "label": "Griechischer Großbuchstabe Rho" },
-        { "char": "Σ", "label": "Griechischer Großbuchstabe Sigma" },
-        { "char": "Τ", "label": "Griechischer Großbuchstabe Tau" },
-        { "char": "Υ", "label": "Griechischer Großbuchstabe Ypsilon" },
-        { "char": "Φ", "label": "Griechischer Großbuchstabe Phi" },
-        { "char": "Χ", "label": "Griechischer Großbuchstabe Chi" },
-        { "char": "Ψ", "label": "Griechischer Großbuchstabe Psi" },
-        { "char": "Ω", "label": "Griechischer Großbuchstabe Omega" }
+        {
+          "char": "Α",
+          "label": "Griechischer Großbuchstabe Alpha"
+        },
+        {
+          "char": "Β",
+          "label": "Griechischer Großbuchstabe Beta"
+        },
+        {
+          "char": "Γ",
+          "label": "Griechischer Großbuchstabe Gamma"
+        },
+        {
+          "char": "Δ",
+          "label": "Griechischer Großbuchstabe Delta"
+        },
+        {
+          "char": "Ε",
+          "label": "Griechischer Großbuchstabe Epsilon"
+        },
+        {
+          "char": "Ζ",
+          "label": "Griechischer Großbuchstabe Zeta"
+        },
+        {
+          "char": "Η",
+          "label": "Griechischer Großbuchstabe Eta"
+        },
+        {
+          "char": "Θ",
+          "label": "Griechischer Großbuchstabe Theta"
+        },
+        {
+          "char": "Ι",
+          "label": "Griechischer Großbuchstabe Iota"
+        },
+        {
+          "char": "Κ",
+          "label": "Griechischer Großbuchstabe Kappa"
+        },
+        {
+          "char": "Λ",
+          "label": "Griechischer Großbuchstabe Lambda"
+        },
+        {
+          "char": "Μ",
+          "label": "Griechischer Großbuchstabe My"
+        },
+        {
+          "char": "Ν",
+          "label": "Griechischer Großbuchstabe Ny"
+        },
+        {
+          "char": "Ξ",
+          "label": "Griechischer Großbuchstabe Xi"
+        },
+        {
+          "char": "Ο",
+          "label": "Griechischer Großbuchstabe Omikron"
+        },
+        {
+          "char": "Π",
+          "label": "Griechischer Großbuchstabe Pi"
+        },
+        {
+          "char": "Ρ",
+          "label": "Griechischer Großbuchstabe Rho"
+        },
+        {
+          "char": "Σ",
+          "label": "Griechischer Großbuchstabe Sigma"
+        },
+        {
+          "char": "Τ",
+          "label": "Griechischer Großbuchstabe Tau"
+        },
+        {
+          "char": "Υ",
+          "label": "Griechischer Großbuchstabe Ypsilon"
+        },
+        {
+          "char": "Φ",
+          "label": "Griechischer Großbuchstabe Phi"
+        },
+        {
+          "char": "Χ",
+          "label": "Griechischer Großbuchstabe Chi"
+        },
+        {
+          "char": "Ψ",
+          "label": "Griechischer Großbuchstabe Psi"
+        },
+        {
+          "char": "Ω",
+          "label": "Griechischer Großbuchstabe Omega"
+        }
       ]
     },
     {
@@ -77,31 +157,106 @@
       "h2": "Griechische Kleinbuchstaben",
       "intro": "Die Kleinbuchstaben, einschließlich des Schluss-Sigma am Wortende.",
       "symbols": [
-        { "char": "α", "label": "Griechischer Kleinbuchstabe Alpha" },
-        { "char": "β", "label": "Griechischer Kleinbuchstabe Beta" },
-        { "char": "γ", "label": "Griechischer Kleinbuchstabe Gamma" },
-        { "char": "δ", "label": "Griechischer Kleinbuchstabe Delta" },
-        { "char": "ε", "label": "Griechischer Kleinbuchstabe Epsilon" },
-        { "char": "ζ", "label": "Griechischer Kleinbuchstabe Zeta" },
-        { "char": "η", "label": "Griechischer Kleinbuchstabe Eta" },
-        { "char": "θ", "label": "Griechischer Kleinbuchstabe Theta" },
-        { "char": "ι", "label": "Griechischer Kleinbuchstabe Iota" },
-        { "char": "κ", "label": "Griechischer Kleinbuchstabe Kappa" },
-        { "char": "λ", "label": "Griechischer Kleinbuchstabe Lambda" },
-        { "char": "μ", "label": "Griechischer Kleinbuchstabe My" },
-        { "char": "ν", "label": "Griechischer Kleinbuchstabe Ny" },
-        { "char": "ξ", "label": "Griechischer Kleinbuchstabe Xi" },
-        { "char": "ο", "label": "Griechischer Kleinbuchstabe Omikron" },
-        { "char": "π", "label": "Griechischer Kleinbuchstabe Pi" },
-        { "char": "ρ", "label": "Griechischer Kleinbuchstabe Rho" },
-        { "char": "σ", "label": "Griechischer Kleinbuchstabe Sigma" },
-        { "char": "ς", "label": "Griechischer Kleinbuchstabe Schluss-Sigma" },
-        { "char": "τ", "label": "Griechischer Kleinbuchstabe Tau" },
-        { "char": "υ", "label": "Griechischer Kleinbuchstabe Ypsilon" },
-        { "char": "φ", "label": "Griechischer Kleinbuchstabe Phi" },
-        { "char": "χ", "label": "Griechischer Kleinbuchstabe Chi" },
-        { "char": "ψ", "label": "Griechischer Kleinbuchstabe Psi" },
-        { "char": "ω", "label": "Griechischer Kleinbuchstabe Omega" }
+        {
+          "char": "α",
+          "label": "Griechischer Kleinbuchstabe Alpha"
+        },
+        {
+          "char": "β",
+          "label": "Griechischer Kleinbuchstabe Beta"
+        },
+        {
+          "char": "γ",
+          "label": "Griechischer Kleinbuchstabe Gamma"
+        },
+        {
+          "char": "δ",
+          "label": "Griechischer Kleinbuchstabe Delta"
+        },
+        {
+          "char": "ε",
+          "label": "Griechischer Kleinbuchstabe Epsilon"
+        },
+        {
+          "char": "ζ",
+          "label": "Griechischer Kleinbuchstabe Zeta"
+        },
+        {
+          "char": "η",
+          "label": "Griechischer Kleinbuchstabe Eta"
+        },
+        {
+          "char": "θ",
+          "label": "Griechischer Kleinbuchstabe Theta"
+        },
+        {
+          "char": "ι",
+          "label": "Griechischer Kleinbuchstabe Iota"
+        },
+        {
+          "char": "κ",
+          "label": "Griechischer Kleinbuchstabe Kappa"
+        },
+        {
+          "char": "λ",
+          "label": "Griechischer Kleinbuchstabe Lambda"
+        },
+        {
+          "char": "μ",
+          "label": "Griechischer Kleinbuchstabe My"
+        },
+        {
+          "char": "ν",
+          "label": "Griechischer Kleinbuchstabe Ny"
+        },
+        {
+          "char": "ξ",
+          "label": "Griechischer Kleinbuchstabe Xi"
+        },
+        {
+          "char": "ο",
+          "label": "Griechischer Kleinbuchstabe Omikron"
+        },
+        {
+          "char": "π",
+          "label": "Griechischer Kleinbuchstabe Pi"
+        },
+        {
+          "char": "ρ",
+          "label": "Griechischer Kleinbuchstabe Rho"
+        },
+        {
+          "char": "σ",
+          "label": "Griechischer Kleinbuchstabe Sigma"
+        },
+        {
+          "char": "ς",
+          "label": "Griechischer Kleinbuchstabe Schluss-Sigma"
+        },
+        {
+          "char": "τ",
+          "label": "Griechischer Kleinbuchstabe Tau"
+        },
+        {
+          "char": "υ",
+          "label": "Griechischer Kleinbuchstabe Ypsilon"
+        },
+        {
+          "char": "φ",
+          "label": "Griechischer Kleinbuchstabe Phi"
+        },
+        {
+          "char": "χ",
+          "label": "Griechischer Kleinbuchstabe Chi"
+        },
+        {
+          "char": "ψ",
+          "label": "Griechischer Kleinbuchstabe Psi"
+        },
+        {
+          "char": "ω",
+          "label": "Griechischer Kleinbuchstabe Omega"
+        }
       ]
     },
     {
@@ -110,16 +265,46 @@
       "h2": "Varianten- & Symbolformen",
       "intro": "Alternative Glyphenformen für mehrere griechische Buchstaben, die als eigenständige mathematische und wissenschaftliche Symbole verwendet werden.",
       "symbols": [
-        { "char": "ϑ", "label": "Griechisches Theta-Symbol" },
-        { "char": "ϕ", "label": "Griechisches Phi-Symbol" },
-        { "char": "ϖ", "label": "Griechisches Pi-Symbol" },
-        { "char": "ϱ", "label": "Griechisches Rho-Symbol" },
-        { "char": "ϵ", "label": "Griechisches lunates Epsilon-Symbol" },
-        { "char": "ϐ", "label": "Griechisches Beta-Symbol" },
-        { "char": "ϰ", "label": "Griechisches Kappa-Symbol" },
-        { "char": "ϴ", "label": "Griechisches Großbuchstabe-Theta-Symbol" },
-        { "char": "∇", "label": "Nabla (Del-Operator)" },
-        { "char": "∂", "label": "Partielles Differential" }
+        {
+          "char": "ϑ",
+          "label": "Griechisches Theta-Symbol"
+        },
+        {
+          "char": "ϕ",
+          "label": "Griechisches Phi-Symbol"
+        },
+        {
+          "char": "ϖ",
+          "label": "Griechisches Pi-Symbol"
+        },
+        {
+          "char": "ϱ",
+          "label": "Griechisches Rho-Symbol"
+        },
+        {
+          "char": "ϵ",
+          "label": "Griechisches lunates Epsilon-Symbol"
+        },
+        {
+          "char": "ϐ",
+          "label": "Griechisches Beta-Symbol"
+        },
+        {
+          "char": "ϰ",
+          "label": "Griechisches Kappa-Symbol"
+        },
+        {
+          "char": "ϴ",
+          "label": "Griechisches Großbuchstabe-Theta-Symbol"
+        },
+        {
+          "char": "∇",
+          "label": "Nabla (Del-Operator)"
+        },
+        {
+          "char": "∂",
+          "label": "Partielles Differential"
+        }
       ]
     }
   ]

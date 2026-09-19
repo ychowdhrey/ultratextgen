@@ -8,7 +8,6 @@
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
-  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
   "slug": "sterretje-teken",
   "title": "Sterretje (*): Kopieer en Plak * ⁂ ✱ — Van Voetnootteken tot Wildcard en Censuur-ster",
   "meta_description": "Kopieer en plak het sterretje (*), het asterisme ⁂ en het dikke ✱ — het voetnootteken dat ook wildcards laat werken en scheldwoorden censureert. Klik op een teken om het direct te kopiëren.",
@@ -40,7 +39,7 @@
       "symbols": [
         {
           "char": "*",
-          "label": "Sterretje (U+002A) — Voetnoot-, Wildcard- en Censuurteken"
+          "label": "Sterretje (U+002A): Voetnoot-, Wildcard- en Censuurteken"
         },
         {
           "char": "✱",
@@ -52,7 +51,7 @@
         },
         {
           "char": "∗",
-          "label": "Asterisk-Operator (U+2217) — Het Wiskundige Vermenigvuldigingsglyph"
+          "label": "Asterisk-Operator (U+2217): Het Wiskundige Vermenigvuldigingsglyph"
         },
         {
           "char": "＊",
@@ -68,7 +67,7 @@
       "symbols": [
         {
           "char": "⁂",
-          "label": "Asterisme (U+2042) — Drie Sterretjes in een Driehoek"
+          "label": "Asterisme (U+2042): Drie Sterretjes in een Driehoek"
         },
         {
           "char": "⁑",
@@ -96,7 +95,7 @@
         },
         {
           "char": "⭐",
-          "label": "Middelgrote Witte Ster (U+2B50) — De Gele Ster-emoji"
+          "label": "Middelgrote Witte Ster (U+2B50): De Gele Ster-emoji"
         },
         {
           "char": "✦",

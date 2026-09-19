@@ -17,16 +17,16 @@
       "h2": "Most-Used Alt Codes",
       "intro": "The everyday special characters people look up alt codes for most often.",
       "symbols": [
-        { "char": "©", "label": "Alt+0169 — Copyright Sign" },
-        { "char": "®", "label": "Alt+0174 — Registered Sign" },
-        { "char": "™", "label": "Alt+0153 — Trade Mark Sign" },
-        { "char": "°", "label": "Alt+0176 — Degree Sign" },
-        { "char": "±", "label": "Alt+0177 — Plus-Minus Sign" },
-        { "char": "µ", "label": "Alt+0181 — Micro Sign" },
-        { "char": "§", "label": "Alt+0167 — Section Sign" },
-        { "char": "¶", "label": "Alt+0182 — Pilcrow Sign" },
-        { "char": "•", "label": "Alt+0149 — Bullet" },
-        { "char": "…", "label": "Alt+0133 — Horizontal Ellipsis" }
+        { "char": "©", "label": "Alt+0169: Copyright Sign" },
+        { "char": "®", "label": "Alt+0174: Registered Sign" },
+        { "char": "™", "label": "Alt+0153: Trade Mark Sign" },
+        { "char": "°", "label": "Alt+0176: Degree Sign" },
+        { "char": "±", "label": "Alt+0177: Plus-Minus Sign" },
+        { "char": "µ", "label": "Alt+0181: Micro Sign" },
+        { "char": "§", "label": "Alt+0167: Section Sign" },
+        { "char": "¶", "label": "Alt+0182: Pilcrow Sign" },
+        { "char": "•", "label": "Alt+0149: Bullet" },
+        { "char": "…", "label": "Alt+0133: Horizontal Ellipsis" }
       ]
     },
     {
@@ -35,11 +35,11 @@
       "h2": "Currency Alt Codes",
       "intro": "Money symbols and their Windows alt codes.",
       "symbols": [
-        { "char": "¢", "label": "Alt+0162 — Cent Sign" },
-        { "char": "£", "label": "Alt+0163 — Pound Sign" },
-        { "char": "¥", "label": "Alt+0165 — Yen Sign" },
-        { "char": "€", "label": "Alt+0128 — Euro Sign" },
-        { "char": "ƒ", "label": "Alt+0131 — Florin Sign" }
+        { "char": "¢", "label": "Alt+0162: Cent Sign" },
+        { "char": "£", "label": "Alt+0163: Pound Sign" },
+        { "char": "¥", "label": "Alt+0165: Yen Sign" },
+        { "char": "€", "label": "Alt+0128: Euro Sign" },
+        { "char": "ƒ", "label": "Alt+0131: Florin Sign" }
       ]
     },
     {
@@ -48,19 +48,19 @@
       "h2": "Math & Fraction Alt Codes",
       "intro": "Mathematical operators, fractions, and superscripts — including classic codepage-437 codes.",
       "symbols": [
-        { "char": "×", "label": "Alt+0215 — Multiplication Sign" },
-        { "char": "÷", "label": "Alt+0247 — Division Sign" },
-        { "char": "¼", "label": "Alt+0188 — Fraction One Quarter" },
-        { "char": "½", "label": "Alt+0189 — Fraction One Half" },
-        { "char": "¾", "label": "Alt+0190 — Fraction Three Quarters" },
-        { "char": "²", "label": "Alt+0178 — Superscript Two" },
-        { "char": "³", "label": "Alt+0179 — Superscript Three" },
-        { "char": "π", "label": "Alt+227 — Greek Small Letter Pi" },
-        { "char": "∞", "label": "Alt+236 — Infinity" },
-        { "char": "√", "label": "Alt+251 — Square Root" },
-        { "char": "≥", "label": "Alt+242 — Greater-Than or Equal To" },
-        { "char": "≤", "label": "Alt+243 — Less-Than or Equal To" },
-        { "char": "≈", "label": "Alt+247 — Almost Equal To" }
+        { "char": "×", "label": "Alt+0215: Multiplication Sign" },
+        { "char": "÷", "label": "Alt+0247: Division Sign" },
+        { "char": "¼", "label": "Alt+0188: Fraction One Quarter" },
+        { "char": "½", "label": "Alt+0189: Fraction One Half" },
+        { "char": "¾", "label": "Alt+0190: Fraction Three Quarters" },
+        { "char": "²", "label": "Alt+0178: Superscript Two" },
+        { "char": "³", "label": "Alt+0179: Superscript Three" },
+        { "char": "π", "label": "Alt+227: Greek Small Letter Pi" },
+        { "char": "∞", "label": "Alt+236: Infinity" },
+        { "char": "√", "label": "Alt+251: Square Root" },
+        { "char": "≥", "label": "Alt+242: Greater-Than or Equal To" },
+        { "char": "≤", "label": "Alt+243: Less-Than or Equal To" },
+        { "char": "≈", "label": "Alt+247: Almost Equal To" }
       ]
     },
     {
@@ -69,17 +69,17 @@
       "h2": "Accented Letter Alt Codes",
       "intro": "Type Spanish, French, and Portuguese accents with these alt codes.",
       "symbols": [
-        { "char": "á", "label": "Alt+0225 — A with Acute" },
-        { "char": "é", "label": "Alt+0233 — E with Acute" },
-        { "char": "í", "label": "Alt+0237 — I with Acute" },
-        { "char": "ó", "label": "Alt+0243 — O with Acute" },
-        { "char": "ú", "label": "Alt+0250 — U with Acute" },
-        { "char": "ñ", "label": "Alt+0241 — N with Tilde" },
-        { "char": "Ñ", "label": "Alt+0209 — Capital N with Tilde" },
-        { "char": "ü", "label": "Alt+0252 — U with Diaeresis" },
-        { "char": "ç", "label": "Alt+0231 — C with Cedilla" },
-        { "char": "à", "label": "Alt+0224 — A with Grave" },
-        { "char": "è", "label": "Alt+0232 — E with Grave" }
+        { "char": "á", "label": "Alt+0225: A with Acute" },
+        { "char": "é", "label": "Alt+0233: E with Acute" },
+        { "char": "í", "label": "Alt+0237: I with Acute" },
+        { "char": "ó", "label": "Alt+0243: O with Acute" },
+        { "char": "ú", "label": "Alt+0250: U with Acute" },
+        { "char": "ñ", "label": "Alt+0241: N with Tilde" },
+        { "char": "Ñ", "label": "Alt+0209: Capital N with Tilde" },
+        { "char": "ü", "label": "Alt+0252: U with Diaeresis" },
+        { "char": "ç", "label": "Alt+0231: C with Cedilla" },
+        { "char": "à", "label": "Alt+0224: A with Grave" },
+        { "char": "è", "label": "Alt+0232: E with Grave" }
       ]
     },
     {
@@ -88,14 +88,14 @@
       "h2": "Punctuation & Quote Alt Codes",
       "intro": "Smart quotes, dashes, and inverted punctuation marks.",
       "symbols": [
-        { "char": "«", "label": "Alt+0171 — Left Guillemet" },
-        { "char": "»", "label": "Alt+0187 — Right Guillemet" },
-        { "char": "¿", "label": "Alt+0191 — Inverted Question Mark" },
-        { "char": "¡", "label": "Alt+0161 — Inverted Exclamation Mark" },
-        { "char": "“", "label": "Alt+0147 — Left Double Quotation Mark" },
-        { "char": "”", "label": "Alt+0148 — Right Double Quotation Mark" },
-        { "char": "–", "label": "Alt+0150 — En Dash" },
-        { "char": "—", "label": "Alt+0151 — Em Dash" }
+        { "char": "«", "label": "Alt+0171: Left Guillemet" },
+        { "char": "»", "label": "Alt+0187: Right Guillemet" },
+        { "char": "¿", "label": "Alt+0191: Inverted Question Mark" },
+        { "char": "¡", "label": "Alt+0161: Inverted Exclamation Mark" },
+        { "char": "“", "label": "Alt+0147: Left Double Quotation Mark" },
+        { "char": "”", "label": "Alt+0148: Right Double Quotation Mark" },
+        { "char": "–", "label": "Alt+0150: En Dash" },
+        { "char": "—", "label": "Alt+0151: Em Dash" }
       ]
     },
     {
@@ -104,19 +104,19 @@
       "h2": "Classic DOS Alt Codes (1–31)",
       "intro": "The original low-number alt codes from the IBM PC era — smileys, suits, and arrows.",
       "symbols": [
-        { "char": "☺", "label": "Alt+1 — White Smiling Face" },
-        { "char": "♥", "label": "Alt+3 — Black Heart Suit" },
-        { "char": "♦", "label": "Alt+4 — Black Diamond Suit" },
-        { "char": "♣", "label": "Alt+5 — Black Club Suit" },
-        { "char": "♠", "label": "Alt+6 — Black Spade Suit" },
-        { "char": "♪", "label": "Alt+13 — Eighth Note" },
-        { "char": "♫", "label": "Alt+14 — Beamed Eighth Notes" },
-        { "char": "☼", "label": "Alt+15 — White Sun with Rays" },
-        { "char": "►", "label": "Alt+16 — Black Right-Pointing Pointer" },
-        { "char": "↑", "label": "Alt+24 — Upwards Arrow" },
-        { "char": "↓", "label": "Alt+25 — Downwards Arrow" },
-        { "char": "→", "label": "Alt+26 — Rightwards Arrow" },
-        { "char": "←", "label": "Alt+27 — Leftwards Arrow" }
+        { "char": "☺", "label": "Alt+1: White Smiling Face" },
+        { "char": "♥", "label": "Alt+3: Black Heart Suit" },
+        { "char": "♦", "label": "Alt+4: Black Diamond Suit" },
+        { "char": "♣", "label": "Alt+5: Black Club Suit" },
+        { "char": "♠", "label": "Alt+6: Black Spade Suit" },
+        { "char": "♪", "label": "Alt+13: Eighth Note" },
+        { "char": "♫", "label": "Alt+14: Beamed Eighth Notes" },
+        { "char": "☼", "label": "Alt+15: White Sun with Rays" },
+        { "char": "►", "label": "Alt+16: Black Right-Pointing Pointer" },
+        { "char": "↑", "label": "Alt+24: Upwards Arrow" },
+        { "char": "↓", "label": "Alt+25: Downwards Arrow" },
+        { "char": "→", "label": "Alt+26: Rightwards Arrow" },
+        { "char": "←", "label": "Alt+27: Leftwards Arrow" }
       ]
     }
   ],

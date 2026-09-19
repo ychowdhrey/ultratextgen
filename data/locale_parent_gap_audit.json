@@ -708,281 +708,6 @@
     {
       "pattern": "answers/*",
       "locale": "vi",
-      "checkedDate": "2026-07-26",
-      "instruments": {
-        "competitorFootprintInLocale": null,
-        "keywordVolumeInLocaleMonthly": null,
-        "enGscImpressionsFromLocale": null
-      },
-      "verdict": "gate-fail",
-      "evidence": "Vietnamese forum evidence is genuinely strong (VOZ, boxcongnghe.com, kituvui.com, Lemon8, powerpoint.com.vn — multiple strong fetched rows across blank-name, tofu and name-rejection), so this is NOT a demand failure. Not built because vi carries an explicit locale-level hold in data/locale_qualification_tiers.json (hold: true — the gap is authority/indexing, not content). The hold overrides a passing demand signal. Revisit if and when the vi hold is lifted; the demand side is already cleared. Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
-      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
-    },
-    {
-      "pattern": "library/*",
-      "locale": "sv",
-      "checkedDate": "2026-07-26",
-      "instruments": {
-        "competitorFootprintInLocale": null,
-        "keywordVolumeInLocaleMonthly": null,
-        "enGscImpressionsFromLocale": null
-      },
-      "verdict": "gate-pass",
-      "evidence": "User-authorized exception, not a fresh per-locale instrument pull (no Semrush credits available this session). sv is registered in data/locale_qualification_tiers.json as Tier 3 (hold-stub, \"no spec mirroring until promoted\") — a firmer default than a gated-tail parent's normal per-check gate, same class of override as the zh-tw/tongxunlu-nicheng entry above. The gap was surfaced by an internal translation-coverage analysis (sv missing all of the site's top-4-traffic library/ cluster — discord-symbols, roblox-symbols, y2k-symbols, emoji-combos — while it already carries real content elsewhere, i.e. this is a partially-built locale, not a bootstrap-from-zero). The user was told sv is Tier 3 directly and asked to build this specific 4-page cluster anyway, and confirmed. This entry authorizes sv/library/discord-symboler, sv/library/roblox-symboler, sv/library/y2k-symboler, and sv/library/emoji-combos; it does not change sv's tier in data/locale_qualification_tiers.json and does not constitute general re-qualification of sv — future sv build decisions should still go through the Tier-3 default (raise with the user first) unless/until sv is promoted via the 7-point gate.",
-      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized"
-    },
-    {
-      "pattern": "category/*",
-      "locale": "fi",
-      "checkedDate": "2026-07-26",
-      "instruments": {
-        "competitorFootprintInLocale": true,
-        "keywordVolumeInLocaleMonthly": 140,
-        "enGscImpressionsFromLocale": null
-      },
-      "verdict": "gate-pass",
-      "evidence": "User-authorized new-locale launch, not a fresh per-locale Semrush pull (no API access this session). fi is a brand-new locale, added to data/locale_qualification_tiers.json as Tier 3 (hold-stub) in this same change, matching the hr/hu/da precedent of starting new Latin-script European locales at Tier 3 regardless of build depth. Real competitor-footprint evidence found via web search in place of Semrush: fi.piliapp.com (a dedicated Finnish subdomain of an existing multi-locale competitor already tracked elsewhere in this repo's research), cooltextmaker.com/fi/, urwatools.com/fi/, and adamfaliq.com/fi/bold-text-generator-suomi/ all independently serve Finnish-language \"fonttigeneraattori\"/\"tekstigeneraattori\" (font/text generator) content today. An internal language-expansion analysis separately scored Finnish as a Phase-1 candidate alongside ms/da/hu, all three already live. User explicitly asked for a full Finnish locale launch. This entry authorizes the category/* pages built in this launch (bold-fonts, italic-fonts, gothic-fonts, small-text Finnish translations). || BACKFILL 2026-08-02 (CLAUDE.md 'an all-instruments-null authorization is a bridge, not a pass'): real instrument data now exists (FI 100-keyword pull). The category terms this entry authorized all measure at or near zero demand in-locale. Recorded value is the highest of them. *** THE BACKFILL CONTRADICTS THIS ENTRY'S RECORDED VERDICT. *** Per the same rule the verdict is deliberately NOT flipped here: the pages are already live, so the call (fold / de-index / keep-and-retarget) is a discussion with the user, flagged with the data rather than decided unilaterally. Flagged internally; awaiting that decision.",
-      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized",
-      "backfilledDate": "2026-08-02"
-    },
-    {
-      "pattern": "guide/*",
-      "locale": "fi",
-      "checkedDate": "2026-07-26",
-      "instruments": {
-        "competitorFootprintInLocale": true,
-        "keywordVolumeInLocaleMonthly": null,
-        "enGscImpressionsFromLocale": null
-      },
-      "verdict": "gate-pass",
-      "evidence": "Same authorization and evidence as the category/*-locale-fi entry immediately above. Covers the standard 3-guide Discord trio (discord-text-formatting-explained, discord-where-fonts-work, discord-safe-name-styling) that every prior minimal-locale launch (hr, hu, da) has shipped alongside its core category/platform pages. || BACKFILL 2026-08-02 (CLAUDE.md 'an all-instruments-null authorization is a bridge, not a pass'): real instrument data now exists (FI 100-keyword pull). Every Discord term returned NO volume data at all — i.e. below the tool's reporting threshold, distinct from the explicit zeros this export returns elsewhere. keywordVolumeInLocaleMonthly stays null because no volume was measurable, NOT because the instrument was skipped; the instrument ran and found none. *** THE BACKFILL CONTRADICTS THIS ENTRY'S RECORDED VERDICT. *** Per the same rule the verdict is deliberately NOT flipped here: the pages are already live, so the call (fold / de-index / keep-and-retarget) is a discussion with the user, flagged with the data rather than decided unilaterally. Flagged internally; awaiting that decision.",
-      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized",
-      "backfilledDate": "2026-08-02"
-    },
-    {
-      "pattern": null,
-      "locale": "fi",
-      "checkedDate": "2026-07-26",
-      "instruments": {
-        "competitorFootprintInLocale": true,
-        "keywordVolumeInLocaleMonthly": 1900,
-        "enGscImpressionsFromLocale": null
-      },
-      "verdict": "gate-pass",
-      "evidence": "Same authorization and evidence as the category/*-locale-fi entry above. Covers fi/index.html, fi/discord-fontit/, and fi/instagram-fontit/, whose EN parents (index.html, discord/index.html, instagram/index.html) are bare top-level pages with no matching data/core_parent_set.json pattern, so scripts/lib/locale-parent-registry.js's classifyParent() reports them with pattern: null (tier \"unclassified\") rather than core/gated/never — the Tier-3-locale check (step 1 of decide()) still fires regardless of parent classification, hence this entry. Recorded as JSON null (not the string \"(unclassified)\" the console output displays as a fallback) to actually match scripts/check-locale-parent-gap.js's passingLedgerEntry() lookup, which compares the raw parentInfo.pattern value. Every prior minimal-locale launch (hr, hu, da, ms) shipped an equivalent homepage + top-level Discord/Instagram platform pages the same way. || BACKFILL 2026-08-02 (CLAUDE.md 'an all-instruments-null authorization is a bridge, not a pass'): real instrument data now exists (FI 100-keyword pull). Split result. The homepage's own head terms are dead, but 'fontti muunnin' measures real demand at low difficulty, so fi/index.html has a live retarget available and is NOT a candidate for retirement. The two platform pages this entry also covered do not: 'instagram fontit' and 'instagram bio fontti' both measure a hard 0. Recorded value is the surviving homepage term. *** THE BACKFILL CONTRADICTS THIS ENTRY'S RECORDED VERDICT. *** Per the same rule the verdict is deliberately NOT flipped here: the pages are already live, so the call (fold / de-index / keep-and-retarget) is a discussion with the user, flagged with the data rather than decided unilaterally. Flagged internally; awaiting that decision.",
-      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized",
-      "backfilledDate": "2026-08-02"
-    },
-    {
-      "pattern": "library/*",
-      "locale": "fi",
-      "checkedDate": "2026-08-02",
-      "instruments": {
-        "competitorFootprintInLocale": true,
-        "keywordVolumeInLocaleMonthly": 12100,
-        "enGscImpressionsFromLocale": null
-      },
-      "verdict": "mirror",
-      "evidence": "library/zodiac-symbols -> fi/library/horoskooppimerkit. 'horoskooppimerkit', Informational intent (FI keyword pull, 2026-08-02); broad-match adds 'horoskooppi symbolit' and 'horoskooppimerkit symbolit'. Highest-volume term in the entire 100-keyword FI request set. INSTRUMENT: FI-market bulk keyword overview, 100-keyword request list (FI keyword-volume request list, held internally), two exports 2026-08-02. AUTHORIZATION: fi is Tier 3 (hold-stub) in data/locale_qualification_tiers.json, so the registry's standing default is skip-stub-locale. The hold reasoning was presented to the user in full before they decided, and the user explicitly authorized this five-page batch. Per CLAUDE.md's vi precedent, the override is recorded here as a dated decision and fi's tier/hold flag is deliberately left untouched. Unlike the 2026-07-26 fi entries, this one carries real instrument data rather than nulls.",
-      "recordedBy": "claude-session-finnish-translation-pages-lrvw31-user-authorized"
-    },
-    {
-      "pattern": "category/*",
-      "locale": "fi",
-      "checkedDate": "2026-08-02",
-      "instruments": {
-        "competitorFootprintInLocale": true,
-        "keywordVolumeInLocaleMonthly": 5400,
-        "enGscImpressionsFromLocale": null
-      },
-      "verdict": "mirror",
-      "evidence": "category/cursive-fonts -> fi/kaunokirjoitus. 'kaunokirjoitus' plus its full cluster (kaunokirjaimet, kauno, kaunokirjoitus fontti). Resolves the FI-013 intent split: both terms return Informational intent on the same SERP type, so they are one cluster. Largest font-side opportunity in the locale; fi/kursivoitu-teksti correctly parents to category/italic-fonts, so cursive was genuinely unbuilt. INSTRUMENT: FI-market bulk keyword overview, 100-keyword request list (FI keyword-volume request list, held internally), two exports 2026-08-02. AUTHORIZATION: fi is Tier 3 (hold-stub) in data/locale_qualification_tiers.json, so the registry's standing default is skip-stub-locale. The hold reasoning was presented to the user in full before they decided, and the user explicitly authorized this five-page batch. Per CLAUDE.md's vi precedent, the override is recorded here as a dated decision and fi's tier/hold flag is deliberately left untouched. Unlike the 2026-07-26 fi entries, this one carries real instrument data rather than nulls.",
-      "recordedBy": "claude-session-finnish-translation-pages-lrvw31-user-authorized"
-    },
-    {
-      "pattern": "symbol/*",
-      "locale": "fi",
-      "checkedDate": "2026-08-02",
-      "instruments": {
-        "competitorFootprintInLocale": true,
-        "keywordVolumeInLocaleMonthly": 3600,
-        "enGscImpressionsFromLocale": null
-      },
-      "verdict": "mirror",
-      "evidence": "symbol/degree-symbol -> fi/symbol/asteen-merkki and symbol/euro-sign -> fi/symbol/euron-merkki, both evidenced by the FI keyword pull 2026-08-02. This is the FR /symbol/ blind spot repeating in Finnish, found by the instrument this ledger exists to require rather than by accident. INSTRUMENT: FI-market bulk keyword overview, 100-keyword request list (FI keyword-volume request list, held internally), two exports 2026-08-02. AUTHORIZATION: fi is Tier 3 (hold-stub) in data/locale_qualification_tiers.json, so the registry's standing default is skip-stub-locale. The hold reasoning was presented to the user in full before they decided, and the user explicitly authorized this five-page batch. Per CLAUDE.md's vi precedent, the override is recorded here as a dated decision and fi's tier/hold flag is deliberately left untouched. Unlike the 2026-07-26 fi entries, this one carries real instrument data rather than nulls.",
-      "recordedBy": "claude-session-finnish-translation-pages-lrvw31-user-authorized"
-    },
-    {
-      "pattern": "character-counter/*",
-      "locale": "fi",
-      "checkedDate": "2026-08-02",
-      "instruments": {
-        "competitorFootprintInLocale": true,
-        "keywordVolumeInLocaleMonthly": 2400,
-        "enGscImpressionsFromLocale": null
-      },
-      "verdict": "mirror",
-      "evidence": "character-counter -> fi/merkkilaskuri. 'merkkilaskuri' shows Commercial intent on a Related-searches-only SERP at low difficulty — the best effort-adjusted opportunity in the FI set. Note the invisible-character half of this parent ('nakymaton merkki', 'tyhja merkki') returned no volume data, so the FI page should lead on counting, not on the blank-character job. INSTRUMENT: FI-market bulk keyword overview, 100-keyword request list (FI keyword-volume request list, held internally), two exports 2026-08-02. AUTHORIZATION: fi is Tier 3 (hold-stub) in data/locale_qualification_tiers.json, so the registry's standing default is skip-stub-locale. The hold reasoning was presented to the user in full before they decided, and the user explicitly authorized this five-page batch. Per CLAUDE.md's vi precedent, the override is recorded here as a dated decision and fi's tier/hold flag is deliberately left untouched. Unlike the 2026-07-26 fi entries, this one carries real instrument data rather than nulls.",
-      "recordedBy": "claude-session-finnish-translation-pages-lrvw31-user-authorized"
-    },
-    {
-      "pattern": null,
-      "locale": "fi",
-      "checkedDate": "2026-07-26",
-      "instruments": {
-        "competitorFootprintInLocale": true,
-        "keywordVolumeInLocaleMonthly": 1900,
-        "enGscImpressionsFromLocale": null
-      },
-      "verdict": "gate-pass",
-      "evidence": "Same authorization and evidence as the category/*-locale-fi entry above. Covers fi/index.html, fi/discord-fontit/, and fi/instagram-fontit/, whose EN parents (index.html, discord/index.html, instagram/index.html) are bare top-level pages with no matching data/core_parent_set.json pattern, so scripts/lib/locale-parent-registry.js's classifyParent() reports them with pattern: null (tier \"unclassified\") rather than core/gated/never — the Tier-3-locale check (step 1 of decide()) still fires regardless of parent classification, hence this entry. Recorded as JSON null (not the string \"(unclassified)\" the console output displays as a fallback) to actually match scripts/check-locale-parent-gap.js's passingLedgerEntry() lookup, which compares the raw parentInfo.pattern value. Every prior minimal-locale launch (hr, hu, da, ms) shipped an equivalent homepage + top-level Discord/Instagram platform pages the same way.",
-      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized"
-    },
-    {
-      "pattern": "library/*",
-      "locale": "zh-tw",
-      "checkedDate": "2026-07-31",
-      "instruments": {
-        "competitorFootprintInLocale": true,
-        "keywordVolumeInLocaleMonthly": null,
-        "enGscImpressionsFromLocale": null
-      },
-      "verdict": "gate-pass",
-      "evidence": "zh-tw is Tier 3 hold-stub in data/locale_qualification_tiers.json, so the Tier-3 skip fires ahead of library/*'s own Core tier regardless — this entry is a user-authorized override of that hold for a specific, scoped slice of library/*, not a change to zh-tw's tier or hold flag. User was told directly that zh-tw is Tier 3/hold-stub and that its one proven first-party win is narrowly the game-name vertical (per the existing zh-tw entry in this ledger and data/locale_qualification_tiers.json's zh-tw notes) before authorizing this build. Competitor-footprint instrument (piliapp.com organic positions export, db=tw, pulled 2026-07-31) cleared for three specific library/* collection pages: the competitor's arrow, number and star symbol pages (each drawing substantial modeled TW traffic across many ranking keywords) — mapping to EN parents library/arrow-symbols/, library/number-symbols/, library/star-symbols/. No direct TW keyword-volume pull was run against the arrow/number/star terms specifically (the broad-match exports supplied this session were seeded on \"emoji\", \"字體\"/font, \"fb\", and \"表情符號\", not \"箭頭\"/\"數字\"/\"星星\"), so keywordVolumeInLocaleMonthly is left null rather than estimated — the competitor-footprint instrument alone is what's clearing the gated-tail threshold here. Scope is limited to these three library/* collection slugs; this is not a blanket library/* mirror decision for zh-tw (the existing zh-tw entry's \"deepen the game-name vertical, not blanket Core mirroring\" guidance still stands for the rest of library/* and all of symbol/*).",
-      "recordedBy": "claude-session-report-ranking-analysis-3t05b4-user-authorized"
-    },
-    {
-      "pattern": null,
-      "locale": "zh-tw",
-      "checkedDate": "2026-07-31",
-      "instruments": {
-        "competitorFootprintInLocale": true,
-        "keywordVolumeInLocaleMonthly": 105480,
-        "enGscImpressionsFromLocale": null
-      },
-      "verdict": "gate-pass",
-      "evidence": "Covers zh-tw/ig-ziti/, the translation of the EN instagram/ platform page (a bare top-level page with no data/core_parent_set.json pattern, so classifyParent() reports pattern: null / tier \"unclassified\"; the Tier-3-locale check still fires, hence this entry). User-authorized override of zh-tw's Tier 3 hold-stub default, presented before the decision, per the vi-override template — zh-tw's tier and hold flag left untouched. Keyword instrument: Semrush db=tw broad-match export (pulled 2026-07-31, seed \"字體\"), the IG/Instagram cluster is led by \"ig 字體\" — materially larger than \"英文字體\", the term the existing zh-tw/yingwen-ziti/ page targets. Competitor instrument: the competitor's Instagram fonts page is its 2nd-highest-traffic page site-wide, top keyword \"ig 字體\". zh-tw had no Instagram page of any kind before this build. Also records the Rule 3 de-confliction applied in the same change: zh-tw/yingwen-ziti/ had an IG-targeting FAQ answer, now reduced to a pointer link at the new page.",
-      "recordedBy": "claude-session-report-ranking-analysis-3t05b4-user-authorized"
-    },
-    {
-      "pattern": "category/*",
-      "locale": "zh-tw",
-      "checkedDate": "2026-07-31",
-      "instruments": {
-        "competitorFootprintInLocale": true,
-        "keywordVolumeInLocaleMonthly": 46570,
-        "enGscImpressionsFromLocale": null
-      },
-      "verdict": "gate-pass",
-      "evidence": "Covers zh-tw/shufa-ziti/ (translation of category/cursive-fonts/) and zh-tw/keai-ziti/ (translation of category/cute-fonts/). TWO overrides recorded together, both user-authorized after being presented: (1) zh-tw is Tier 3 hold-stub, same override shape as the entries above; (2) category/* is scriptIndependent:false — the registry's standing guidance is that Latin-transform category pages do NOT mirror into CJK locales, and that a script-appropriate Core subset be substituted instead. That second default is overridden here on direct evidence that the TW demand IS for Latin-script transforms, not Chinese-script ones: the top TW keyword on tw.piliapp.com/cool-text/cursive/ is \"英文草寫\" — literally \"English cursive\" — and that page draws substantial modeled traffic across many keywords. The same reasoning already underpins the ratified zh-tw/yingwen-ziti/ local-only page (a CJK-script-user tool for decorating Latin text). Both new pages state the Latin-only scope explicitly in their own copy rather than implying Chinese glyphs transform. Keyword instrument (Semrush db=tw broad-match, 2026-07-31): cursive cluster 書法 + 手寫 (head terms 書法字體, 手寫字體); cute cluster (head term 可愛字體) — a substantial combined opportunity. Competitor instrument for the cute page is weaker and recorded as such: piliapp has no dedicated cute-font page, ranking its IG page #1 for 可愛字體 instead.",
-      "recordedBy": "claude-session-report-ranking-analysis-3t05b4-user-authorized"
-    },
-    {
-      "pattern": "symbol/*",
-      "locale": "zh-tw",
-      "checkedDate": "2026-08-01",
-      "instruments": {
-        "competitorFootprintInLocale": true,
-        "keywordVolumeInLocaleMonthly": 238540,
-        "enGscImpressionsFromLocale": null
-      },
-      "verdict": "gate-pass",
-      "evidence": "Covers 27 zh-tw/symbol/* translations (currency 7, temperature/measurement 5, math 5, Greek 7, legal/editorial 3) plus the zh-tw/symbol/ pillar index that carries their breadcrumbs. zh-tw is Tier 3 hold-stub in data/locale_qualification_tiers.json, so the Tier-3 skip fires ahead of symbol/*'s own Core tier; this is a user-authorized override of that hold for this specific batch, not a change to zh-tw's tier or hold flag (both left untouched), same shape as the vi override template and as the three earlier zh-tw entries above. The hold reasoning and the standing Tier-3 default were presented to the user before they authorized the build. Competitor instrument (piliapp.com organic-positions export, db=tw, pulled 2026-07-31): 82 tw.piliapp.com/symbols/<x>/ single-item pages were mapped against UltraTextGen's 106 EN symbol/ parents; 27 matched a live EN parent and together draw substantial modeled TW traffic — led by celsius, plus-minus, degree, infinity, alpha, multiplication, not-equal, yen, omega and euro. Keyword instrument: the recorded figure is the SUM of each matched page's single top TW keyword volume. Recorded as a sum of per-slug head terms, NOT a modeled cluster total and NOT a full broad-match pull for each slug — it is an under-count of the clusters and an over-count of any single page's realistic ceiling; treat it as an order-of-magnitude floor on demand, not a forecast. zh-tw had 0 of 106 symbol/ parents translated before this build. The remaining 55 competitor single-item pages have no EN parent and are deliberately NOT built here — they are recorded in an internal opportunity backlog instead, per CLAUDE.md's English-Parent Rule.",
-      "recordedBy": "claude-session-report-ranking-analysis-3t05b4-user-authorized"
-    },
-    {
-      "pattern": "library/*",
-      "locale": "vi",
-      "checkedDate": "2026-08-01",
-      "instruments": {
-        "competitorFootprintInLocale": null,
-        "keywordVolumeInLocaleMonthly": null,
-        "enGscImpressionsFromLocale": null
-      },
-      "verdict": "gate-pass",
-      "evidence": "User-authorized override of vi's Tier-2 hold, for the seven mid-head library/* pages built 2026-08-01 (ky-hieu-tien-te, ky-tu-dac-biet-unicode, ky-hieu-am-nhac, ky-hieu-co-vua, ky-hieu-ton-giao, ky-hieu-hoi-giao, ky-tu-kawaii-de-thuong). Same shape as the 2026-07-25 symbol/* entry, with one difference worth recording: this time the hold's own premise was checked against data rather than simply overridden. vi is held because of an \"authority/indexing gap - not a content gap\", but an internal sitewide GSC pull of 2026-08-01 (window Jul 4-29) measures /vi/* at 163,411 impressions, 4,704 clicks, 2.88% CTR across 114 pages and 1,765 queries - indexed, ranked and converting, and 100x the 47-click figure the hold was originally reasoned from. The FF/gaming query family alone went from 19 impressions/2 clicks to 714/32 on the same aggregation method. The user was shown the hold and its reasoning before deciding, and chose to include vi. Instruments are null: this is an authorization plus a contradicted-premise finding, NOT a fresh Semrush/GSC per-cell pull. Per the 2026-08-01 CLAUDE.md rule, an all-null entry is a bridge, not a pass - it is complete only once instruments are backfilled or a dated veto is recorded. Re-check is logged in the internal review register. vi's tier and hold flag in data/locale_qualification_tiers.json are deliberately left untouched: the registry keeps stating the standing default, and this ledger carries the dated, attributed exception. If the hold's premise is now simply wrong, that is a separate registry decision to raise on its own evidence, not something to change as a side effect of shipping pages."
-    },
-    {
-      "pattern": "answers/*",
-      "locale": "id",
-      "checkedDate": "2026-08-05",
-      "instruments": {
-        "competitorFootprintInLocale": true,
-        "keywordVolumeInLocaleMonthly": 560,
-        "enGscImpressionsFromLocale": null
-      },
-      "verdict": "gate-pass",
-      "evidence": "Live Semrush pull (db=id, 2026-08-05) for the YouTube channel-name/handle answers cluster: 'nama channel youtube' 210, 'cara mengganti nama channel youtube' 140, 'handle youtube' 140, 'ganti nama youtube' 70 = ~560/mo. Corroborated first-party: GSC (3 months to 2026-08-05) shows ID-language YouTube name queries already earning impressions at pos 3-5 ('nama channel youtube aesthetic', 'nama youtube keren', 'ide nama channel youtube') on /id/usecase/nama-keren/ — a name-IDEAS page, which is a different intent from these two how-to/comparison answers, so Gate 1 (ownership) is clear: no existing id/ page targets the change-name or handle-vs-name queries. Competitor footprint: generic how-to blogs rank these in ID, no rules-aware tool page.",
-      "recordedBy": "claude-session-01K1n2SehzyRRGCV79cTWgTd-user-directed"
-    },
-    {
-      "pattern": "answers/*",
-      "locale": "tr",
-      "checkedDate": "2026-08-05",
-      "instruments": {
-        "competitorFootprintInLocale": true,
-        "keywordVolumeInLocaleMonthly": 510,
-        "enGscImpressionsFromLocale": null
-      },
-      "verdict": "gate-pass",
-      "evidence": "Live Semrush pull (db=tr, 2026-08-05): 'youtube kanal adi degistirme' 210, 'youtube kullanici adi degistirme' 210, 'youtube kanal ismi' 90 = ~510/mo. Gate 1 checked: no existing tr/ page targets these — tr/answers/ currently covers blank names, box-rendering, username-vs-display-name (generic, cross-platform) and rejected game names; none targets YouTube channel-name change or the YouTube handle/name split. Competitor footprint: Turkish how-to blogs and video results, no rules-aware tool page.",
-      "recordedBy": "claude-session-01K1n2SehzyRRGCV79cTWgTd-user-directed"
-    },
-    {
-      "pattern": "answers/*",
-      "locale": "pt",
-      "checkedDate": "2026-08-05",
-      "instruments": {
-        "competitorFootprintInLocale": true,
-        "keywordVolumeInLocaleMonthly": 380,
-        "enGscImpressionsFromLocale": null
-      },
-      "verdict": "gate-pass",
-      "evidence": "Live Semrush pull (db=br, 2026-08-05): 'como mudar o nome do canal do youtube' 140, 'nome de canal do youtube' 110, 'mudar nome youtube' 110, 'arroba youtube' 20 = ~380/mo. Gate 1 checked: no existing pt/ page targets these; pt/answers/ holds only the rejected-game-name answer, and pt/gerador-de-nomes/ is a name-ideas generator (different intent). Competitor footprint: Brazilian how-to blogs and video results, no rules-aware tool page.",
-      "recordedBy": "claude-session-01K1n2SehzyRRGCV79cTWgTd-user-directed"
-    },
-    {
-      "pattern": "answers/*",
-      "locale": "es",
-      "checkedDate": "2026-08-05",
-      "instruments": {
-        "competitorFootprintInLocale": true,
-        "keywordVolumeInLocaleMonthly": 60,
-        "enGscImpressionsFromLocale": null
-      },
-      "verdict": "gate-fail",
-      "evidence": "Live Semrush pull (db=es, 2026-08-05) for the same cluster returned ~60/mo total ('como cambiar el nombre de youtube' 30, 'cambiar nombre de canal de youtube' 20, 'arroba youtube' 10, 'nombre de canal de youtube' 0). Below threshold — recorded as a deliberate not-built, not an oversight. Re-check if ES demand moves.",
-      "recordedBy": "claude-session-01K1n2SehzyRRGCV79cTWgTd-user-directed"
-    },
-    {
-      "pattern": "answers/*",
-      "locale": "fr",
-      "checkedDate": "2026-08-05",
-      "instruments": {
-        "competitorFootprintInLocale": true,
-        "keywordVolumeInLocaleMonthly": 210,
-        "enGscImpressionsFromLocale": null
-      },
-      "verdict": "gate-fail",
-      "evidence": "Live Semrush pull (db=fr, 2026-08-05): 'pseudo youtube' 140, 'changer son nom youtube' 40, 'identifiant youtube' 30, 'changer nom de chaine youtube' 0 = ~210/mo — but two-thirds of that is 'pseudo youtube', which is name-GENERATOR intent, not the how-to/comparison intent these two answers pages serve. The answers-intent slice alone is ~70/mo. Recorded as not-built for this cluster; the 'pseudo youtube' demand is a separate question for a French name-generator page, which would need its own EN-parent and gate check.",
-      "recordedBy": "claude-session-01K1n2SehzyRRGCV79cTWgTd-user-directed"
-    },
-    {
-      "pattern": "answers/*",
-      "locale": "it",
-      "checkedDate": "2026-08-05",
-      "instruments": {
-        "competitorFootprintInLocale": true,
-        "keywordVolumeInLocaleMonthly": 150,
-        "enGscImpressionsFromLocale": null
-      },
-      "verdict": "gate-fail",
-      "evidence": "Live Semrush pull (db=it, 2026-08-05): 'cambiare nome youtube' 110, 'come cambiare nome canale youtube' 20, 'nome canale youtube' 20 = ~150/mo. Below the threshold the id/tr/pt cells cleared; recorded as a deliberate not-built rather than an unaudited gap.",
-      "recordedBy": "claude-session-01K1n2SehzyRRGCV79cTWgTd-user-directed"
-    },
-    {
-      "pattern": "answers/*",
-      "locale": "vi",
       "checkedDate": "2026-08-07",
       "instruments": {
         "competitorFootprintInLocale": null,
@@ -1011,30 +736,30 @@
       "locale": "pt",
       "checkedDate": "2026-08-07",
       "instruments": {
-        "competitorFootprintInLocale": null,
-        "keywordVolumeInLocaleMonthly": null,
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 9900,
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. ",
+      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. || BACKFILL 2026-09-07 (item #31 instrument backfill). Semrush db=br: 'nome invisivel' (invisible name) 9,900/mo -- clears this ledger's four-figure/mo floor cleanly, the strongest number of the six locales checked this pass by a wide margin. 'nome em branco' 320/mo, 'nome vazio' 170/mo. db=pt (Portugal) returns only 210/mo for the same head term -- confirms this demand is overwhelmingly Brazilian, not pan-Portuguese, matching a separate 508,860/mo figure (491,840 of it BR) sized independently in this site's research workspace nine days after this page shipped, on the same cluster. Organic SERP for 'nome invisivel' (br) is a dense, dedicated Brazilian competitor ecosystem: invisible-character.net/br/caractere-invisivel (position 1), plus FOUR separate .com.br domains built specifically around 'espaco invisivel' branding (espacoinvisivel.com.br, espacoinvisiveis.com.br, oespacoinvisivel.com.br, espaco-invisivel.com.br, positions 2/3/5/8), freefiremania.com.br/espaco-invisivel.html (a Free Fire community site, position 4), and editpad.org/tool/br/caractere-invisivel (position 6). WORTH FLAGGING, not resolved here: the retired pt/espaco-invisivel/ page (301'd into pt/texto-invisivel/ the same day this override was recorded) carried almost exactly this dominant competitor branding pattern ('espaco invisivel') in its own slug, while the surviving page's framing is 'texto invisivel' (invisible text) and the highest-volume query found here is 'nome invisivel' (invisible name) -- three related but distinct framings on one merged page. Not acted on unilaterally; a query-match check against pt/texto-invisivel's actual title/H1/copy is worth doing alongside the pending GSC pull for this page (flagged as a real gap when this cluster shipped, since the page was never baselined before the merge). enGscImpressionsFromLocale and the pt/texto-invisivel before/after pull remain unrun -- no Search Console connector this session. Verdict left at gate-pass.",
       "nextRecheck": "2026-09-07",
       "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
-      "scheduledRecheck": "invisible-text override backfill (2026-09-07)"
+      "scheduledRecheck": "demand-side backfill complete 2026-09-07 (keyword volume + competitor footprint, real Semrush data, strongest of the cluster); GSC-side (enGscImpressionsFromLocale + the pt/texto-invisivel before/after pull) still pending on Search Console connector availability, no fixed date"
     },
     {
       "pattern": "answers/*",
       "locale": "de",
       "checkedDate": "2026-08-07",
       "instruments": {
-        "competitorFootprintInLocale": null,
-        "keywordVolumeInLocaleMonthly": null,
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 110,
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. Supersedes the 2026-07-26 gate-fail for this cell, which recorded 'only 3 German rows, none strong' and stated explicitly that this was 'not a claim that German demand is absent — it is genuinely unaudited at the required strength'.",
+      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. Supersedes the 2026-07-26 gate-fail for this cell, which recorded 'only 3 German rows, none strong' and stated explicitly that this was 'not a claim that German demand is absent — it is genuinely unaudited at the required strength'. || BACKFILL 2026-09-07 (item #31 instrument backfill). Semrush db=de: 'unsichtbarer name' 110/mo, 'leerer name' 20/mo -- thin, below this ledger's four-figure/mo floor, but organic SERP for 'unsichtbarer name' returns six-plus direct on-topic competitors in the top 10 (textreverse.com/de/unsichtbarer-text.php, invisibletext.net/de, de.nickfinder.com/Invisible, invisible-character.net/de/unsichtbares-zeichen, editpad.org/tool/de/unsichtbarer-charakter, prepostseo.com/de/unsichtbares-zeichen) -- the densest, most concentrated competitor set of the five locales checked this pass. Positively confirms real, if modest, demand -- stronger than the superseded 2026-07-26 gate-fail's own characterization ('genuinely unaudited at the required strength, not a claim demand is absent'). enGscImpressionsFromLocale and the 30-day GSC pull for the shipped page remain unrun -- no Search Console connector this session. Verdict left at gate-pass.",
       "nextRecheck": "2026-09-07",
       "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
-      "scheduledRecheck": "invisible-text override backfill (2026-09-07)",
+      "scheduledRecheck": "demand-side backfill complete 2026-09-07 (keyword volume + competitor footprint, real Semrush data); GSC-side (enGscImpressionsFromLocale + the 30-day page-level pull) still pending on Search Console connector availability, no fixed date",
       "supersedes": "answers/* x de gate-fail dated 2026-07-26"
     },
     {
@@ -1042,30 +767,30 @@
       "locale": "nl",
       "checkedDate": "2026-08-07",
       "instruments": {
-        "competitorFootprintInLocale": null,
-        "keywordVolumeInLocaleMonthly": null,
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 110,
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. ",
+      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. || BACKFILL 2026-09-07 (item #31 instrument backfill). Semrush db=nl: 'onzichtbaar teken' 110/mo (the tool/character framing) -- 'onzichtbare naam' and 'lege naam' (the page's literal 'blank name' framing) returned no measurable volume in the same pull, so the page's own title framing is not the strongest query; the character/tool framing is. Organic SERP for 'onzichtbaar teken' is entirely on-topic competitors in the top 10 (blanktexts.com/nl/, nl.textstudio.com/invisible-text, sierletters.com/onzichtbare-letter/, charactercalculator.com/nl/invisible-character/, invisibletext.me/nl) -- no dictionary/definitional results at all, the cleanest competitor signal of the five locales checked. enGscImpressionsFromLocale and the 30-day GSC pull for the shipped page remain unrun -- no Search Console connector this session. Verdict left at gate-pass.",
       "nextRecheck": "2026-09-07",
       "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
-      "scheduledRecheck": "invisible-text override backfill (2026-09-07)"
+      "scheduledRecheck": "demand-side backfill complete 2026-09-07 (keyword volume + competitor footprint, real Semrush data); GSC-side (enGscImpressionsFromLocale + the 30-day page-level pull) still pending on Search Console connector availability, no fixed date"
     },
     {
       "pattern": "answers/*",
       "locale": "ko",
       "checkedDate": "2026-08-07",
       "instruments": {
-        "competitorFootprintInLocale": null,
-        "keywordVolumeInLocaleMonthly": null,
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 140,
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. Supersedes the 2026-07-26 gate-fail for this cell, which recorded ZERO Korean rows in the 248-row forum corpus — the check could not be run at all. This override therefore rests on user judgement alone, with no supporting demand evidence in either direction. The weakest of the seven; flagged as such to the user before it was authorised.",
+      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. Supersedes the 2026-07-26 gate-fail for this cell, which recorded ZERO Korean rows in the 248-row forum corpus — the check could not be run at all. This override therefore rests on user judgement alone, with no supporting demand evidence in either direction. The weakest of the seven; flagged as such to the user before it was authorised. || BACKFILL 2026-09-07 (item #31 instrument backfill, 31 days after ship). Semrush API units WERE available this session, contrary to this cluster's original assumption that a future session would lack them. db=kr: '투명 닉네임' (transparent nickname) 140/mo -- thin, below the four-figure/mo floor this ledger applies elsewhere, but genuinely on-target: phrase_organic for the same query surfaces two direct competitors on this exact job (charactercalculator.com/ko/invisible-character/ at position 3, exotictext.com/ko/invisible/ at position 6). A broader companion term, '공백 문자' (blank character), returned 12,100/mo but with mixed dictionary/definitional SERP intent (namu.wiki, Korean Wikipedia rank top) alongside tool competitors -- not used as the headline figure for that reason. This is the strongest evidence this cell has ever had: the superseded 2026-07-26 gate-fail found zero Korean rows in the forum corpus and could not run at all. enGscImpressionsFromLocale and the separate 30-day GSC pull for the shipped page remain unrun -- no Search Console connector in this session. Verdict left at gate-pass (the standing user authorization), consistent with this ledger's own ar/es/fr answers/* precedent where thin-but-real numbers did not override an explicit authorization.",
       "nextRecheck": "2026-09-07",
       "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
-      "scheduledRecheck": "invisible-text override backfill (2026-09-07)",
+      "scheduledRecheck": "demand-side backfill complete 2026-09-07 (keyword volume + competitor footprint, real Semrush data); GSC-side (enGscImpressionsFromLocale + the 30-day page-level pull) still pending on Search Console connector availability, no fixed date",
       "supersedes": "answers/* x ko gate-fail dated 2026-07-26"
     },
     {
@@ -1073,60 +798,60 @@
       "locale": "zh-tw",
       "checkedDate": "2026-08-07",
       "instruments": {
-        "competitorFootprintInLocale": null,
-        "keywordVolumeInLocaleMonthly": null,
+        "competitorFootprintInLocale": false,
+        "keywordVolumeInLocaleMonthly": 0,
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. No prior entry — zh-tw is Tier 3 (hold-stub), so this overrides a locale tier, not a recorded demand failure.",
+      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. No prior entry — zh-tw is Tier 3 (hold-stub), so this overrides a locale tier, not a recorded demand failure. || BACKFILL 2026-09-07 (item #31 instrument backfill). Semrush db=tw: genuinely ZERO measurable volume across four tried phrasings (空白名稱 blank name, 空白符號 blank symbol, 空白複製 blank copy, 隱形文字 invisible text) -- phrase_this/phrase_organic returned 'NOTHING FOUND' for every one, not just below-threshold. Qualitatively different from the other four locales checked this same pass, each of which returned at least one real number and real competitors. *** THE BACKFILL DOES NOT CONFIRM THIS ENTRY'S ORIGINAL DEMAND ASSUMPTION FOR ZH-TW. *** Per this ledger's own rule the verdict is deliberately NOT flipped here -- the pages are live, so fold/de-index/keep is a discussion with the user, flagged with this data, not a unilateral edit. Two caveats before over-reading this: Semrush's tw database may have thinner long-tail coverage than kr/de/nl/my, so zero here means 'not measurable in this instrument', not proven zero real searches; and the page targets the EN parent's 'invisible character' framing broadly, so a phrasing not yet tried may still carry real TW demand. competitorFootprintInLocale is recorded as false (checked and not found), not null (never checked) -- a confirmed-absent finding is being treated as exactly as valuable to record as a confirmed-present one. enGscImpressionsFromLocale and the 30-day GSC pull for the shipped page remain unrun -- no Search Console connector this session.",
       "nextRecheck": "2026-09-07",
       "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
-      "scheduledRecheck": "invisible-text override backfill (2026-09-07)"
+      "scheduledRecheck": "demand-side backfill complete 2026-09-07 (keyword volume + competitor footprint, real Semrush data); GSC-side (enGscImpressionsFromLocale + the 30-day page-level pull) still pending on Search Console connector availability, no fixed date"
     },
     {
       "pattern": "symbol/*",
       "locale": "zh-tw",
       "checkedDate": "2026-08-07",
       "instruments": {
-        "competitorFootprintInLocale": null,
-        "keywordVolumeInLocaleMonthly": null,
+        "competitorFootprintInLocale": false,
+        "keywordVolumeInLocaleMonthly": 0,
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. No prior entry — zh-tw is Tier 3 (hold-stub), so this overrides a locale tier, not a recorded demand failure.",
+      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. No prior entry — zh-tw is Tier 3 (hold-stub), so this overrides a locale tier, not a recorded demand failure. || BACKFILL 2026-09-07 (item #31 instrument backfill). Same Semrush pull and same finding as the answers/*-locale-zh-tw entry above (this page shares the identical 'invisible character' concept) -- genuinely ZERO measurable volume across every tried phrasing, zero organic SERP data. *** THE BACKFILL DOES NOT CONFIRM THIS ENTRY'S ORIGINAL DEMAND ASSUMPTION FOR ZH-TW. *** Verdict deliberately NOT flipped -- flagged for user discussion, not a unilateral edit. See the answers/*-locale-zh-tw entry's caveats (Semrush tw-database coverage, untried phrasings) before over-reading this as proof of zero demand. enGscImpressionsFromLocale remains unrun -- no Search Console connector this session.",
       "nextRecheck": "2026-09-07",
       "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
-      "scheduledRecheck": "invisible-text override backfill (2026-09-07)"
+      "scheduledRecheck": "demand-side backfill complete 2026-09-07 (keyword volume + competitor footprint, real Semrush data); GSC-side (enGscImpressionsFromLocale + the 30-day page-level pull) still pending on Search Console connector availability, no fixed date"
     },
     {
       "pattern": "symbol/*",
       "locale": "ms",
       "checkedDate": "2026-08-07",
       "instruments": {
-        "competitorFootprintInLocale": null,
-        "keywordVolumeInLocaleMonthly": null,
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 1000,
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. No prior entry — ms is Tier 3 (hold-stub), so this overrides a locale tier, not a recorded demand failure. ms already had a live answers/* page with no library or symbol parent beneath it; these pages close that orphan.",
+      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. No prior entry — ms is Tier 3 (hold-stub), so this overrides a locale tier, not a recorded demand failure. ms already had a live answers/* page with no library or symbol parent beneath it; these pages close that orphan. || BACKFILL 2026-09-07 (item #31 instrument backfill). Same Semrush pull and same ID-bleed caveat as the answers/*-locale-ms entry above ('teks kosong' 1,000/mo, top-8 organic results all /id/-locale competitor URLs; 'huruf kosong' 20/mo, more clearly MY-native but thin). See that entry for the full finding. Verdict left at gate-pass. enGscImpressionsFromLocale remains unrun -- no Search Console connector this session.",
       "nextRecheck": "2026-09-07",
       "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
-      "scheduledRecheck": "invisible-text override backfill (2026-09-07)"
+      "scheduledRecheck": "demand-side backfill complete 2026-09-07 (keyword volume + competitor footprint, real Semrush data); GSC-side (enGscImpressionsFromLocale + the 30-day page-level pull) still pending on Search Console connector availability, no fixed date"
     },
     {
       "pattern": "library/*",
       "locale": "ms",
       "checkedDate": "2026-08-07",
       "instruments": {
-        "competitorFootprintInLocale": null,
-        "keywordVolumeInLocaleMonthly": null,
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 1000,
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. No prior entry — ms is Tier 3 (hold-stub), so this overrides a locale tier, not a recorded demand failure. ms already had a live answers/* page with no library or symbol parent beneath it; these pages close that orphan.",
+      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. No prior entry — ms is Tier 3 (hold-stub), so this overrides a locale tier, not a recorded demand failure. ms already had a live answers/* page with no library or symbol parent beneath it; these pages close that orphan. || BACKFILL 2026-09-07 (item #31 instrument backfill). Same Semrush pull and same ID-bleed caveat as the answers/*-locale-ms entry above ('teks kosong' 1,000/mo, top-8 organic results all /id/-locale competitor URLs; 'huruf kosong' 20/mo, more clearly MY-native but thin). See that entry for the full finding. Verdict left at gate-pass. enGscImpressionsFromLocale remains unrun -- no Search Console connector this session.",
       "nextRecheck": "2026-09-07",
       "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
-      "scheduledRecheck": "invisible-text override backfill (2026-09-07)"
+      "scheduledRecheck": "demand-side backfill complete 2026-09-07 (keyword volume + competitor footprint, real Semrush data); GSC-side (enGscImpressionsFromLocale + the 30-day page-level pull) still pending on Search Console connector availability, no fixed date"
     },
     {
       "pattern": "printables/*",
@@ -1516,6 +1241,370 @@
       "verdict": "gate-fail",
       "evidence": "usecase/valorant-name-generator/ -- 7 impressions total (EN only) across the entire 40-day window; the id/tr locale builds (usecase/valorant-name-generator translations) register zero rows at all in either the 6-day or 40-day export. Complete dead zone across every version of this page, EN included. Recorded as a finding only -- no fold/retarget/de-index follows from this entry per user direction 2026-08-11 (see private lab repo review-register). Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
       "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "category/underline-text",
+      "locale": "id",
+      "checkedDate": "2026-09-10",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "veto",
+      "evidence": "POST-BUILD PERFORMANCE VETO (repurposed field use -- see note below), not a pre-build screen; the three named `instruments` fields don't fit this check's shape and are left null rather than mis-populated. Post-launch 4-week+ observation (built via public PR #741, merged 2026-08-12T03:32:10Z; review-register item 48). Real GSC Query x Landing Page x Country x Date export, user-supplied (lab repo data/raw-exports/gsc-query-page-country-2026-08-24_2026-09-07.csv, 24,602 rows, confirmed live -- id/library/simbol-love alone logs 250+ impressions/day in the same export, so this is a real zero, not an instrument outage). 1 impression / 0 clicks over 14d, on the branded query 'ultratextgen' (not a target-term match). Stop rule from the review-register item 48 build brief (<20 impressions after 4 weeks with confirmed indexing) applied; not extending the observation window. Google-side verdict only -- Bing Webmaster Tools data was not checked for this cell (2026-09-10 AdSense channel split: Bing 1.69 SGD RPM vs Google 0.46 SGD RPM, Google ~15% of blended ad revenue -- see docs/current-operating-priorities.md and docs/multi-surface-discovery-reorientation-2026-08-29.md in the lab repo); a Bing-side re-check is a legitimate future follow-up, not required to close this Google-scoped item.",
+      "recordedBy": "review-register-item-48-close-out"
+    },
+    {
+      "pattern": "category/underline-text",
+      "locale": "pt",
+      "checkedDate": "2026-09-10",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "veto",
+      "evidence": "POST-BUILD PERFORMANCE VETO (repurposed field use -- see note below), not a pre-build screen; the three named `instruments` fields don't fit this check's shape and are left null rather than mis-populated. Post-launch 4-week+ observation (built via public PR #741, merged 2026-08-12T03:32:10Z; review-register item 48). Real GSC Query x Landing Page x Country x Date export, user-supplied (lab repo data/raw-exports/gsc-query-page-country-2026-08-24_2026-09-07.csv, 24,602 rows, confirmed live -- id/library/simbol-love alone logs 250+ impressions/day in the same export, so this is a real zero, not an instrument outage). 0 impressions / 0 clicks over 14d. Stop rule from the review-register item 48 build brief (<20 impressions after 4 weeks with confirmed indexing) applied; not extending the observation window. Google-side verdict only -- Bing Webmaster Tools data was not checked for this cell (2026-09-10 AdSense channel split: Bing 1.69 SGD RPM vs Google 0.46 SGD RPM, Google ~15% of blended ad revenue -- see docs/current-operating-priorities.md and docs/multi-surface-discovery-reorientation-2026-08-29.md in the lab repo); a Bing-side re-check is a legitimate future follow-up, not required to close this Google-scoped item.",
+      "recordedBy": "review-register-item-48-close-out"
+    },
+    {
+      "pattern": "category/underline-text",
+      "locale": "de",
+      "checkedDate": "2026-09-10",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "veto",
+      "evidence": "POST-BUILD PERFORMANCE VETO (repurposed field use -- see note below), not a pre-build screen; the three named `instruments` fields don't fit this check's shape and are left null rather than mis-populated. Post-launch 4-week+ observation (built via public PR #741, merged 2026-08-12T03:32:10Z; review-register item 48). Real GSC Query x Landing Page x Country x Date export, user-supplied (lab repo data/raw-exports/gsc-query-page-country-2026-08-24_2026-09-07.csv, 24,602 rows, confirmed live -- id/library/simbol-love alone logs 250+ impressions/day in the same export, so this is a real zero, not an instrument outage). 0 impressions / 0 clicks over 14d. Stop rule from the review-register item 48 build brief (<20 impressions after 4 weeks with confirmed indexing) applied; not extending the observation window. Google-side verdict only -- Bing Webmaster Tools data was not checked for this cell (2026-09-10 AdSense channel split: Bing 1.69 SGD RPM vs Google 0.46 SGD RPM, Google ~15% of blended ad revenue -- see docs/current-operating-priorities.md and docs/multi-surface-discovery-reorientation-2026-08-29.md in the lab repo); a Bing-side re-check is a legitimate future follow-up, not required to close this Google-scoped item.",
+      "recordedBy": "review-register-item-48-close-out"
+    },
+    {
+      "pattern": "category/underline-text",
+      "locale": "fr",
+      "checkedDate": "2026-09-10",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "veto",
+      "evidence": "POST-BUILD PERFORMANCE VETO (repurposed field use -- see note below), not a pre-build screen; the three named `instruments` fields don't fit this check's shape and are left null rather than mis-populated. Post-launch 4-week+ observation (built via public PR #741, merged 2026-08-12T03:32:10Z; review-register item 48). Real GSC Query x Landing Page x Country x Date export, user-supplied (lab repo data/raw-exports/gsc-query-page-country-2026-08-24_2026-09-07.csv, 24,602 rows, confirmed live -- id/library/simbol-love alone logs 250+ impressions/day in the same export, so this is a real zero, not an instrument outage). 0 impressions / 0 clicks over 14d. Stop rule from the review-register item 48 build brief (<20 impressions after 4 weeks with confirmed indexing) applied; not extending the observation window. Google-side verdict only -- Bing Webmaster Tools data was not checked for this cell (2026-09-10 AdSense channel split: Bing 1.69 SGD RPM vs Google 0.46 SGD RPM, Google ~15% of blended ad revenue -- see docs/current-operating-priorities.md and docs/multi-surface-discovery-reorientation-2026-08-29.md in the lab repo); a Bing-side re-check is a legitimate future follow-up, not required to close this Google-scoped item.",
+      "recordedBy": "review-register-item-48-close-out"
+    },
+    {
+      "pattern": "category/underline-text",
+      "locale": "it",
+      "checkedDate": "2026-09-10",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "veto",
+      "evidence": "POST-BUILD PERFORMANCE VETO (repurposed field use -- see note below), not a pre-build screen; the three named `instruments` fields don't fit this check's shape and are left null rather than mis-populated. Post-launch 4-week+ observation (built via public PR #741, merged 2026-08-12T03:32:10Z; review-register item 48). Real GSC Query x Landing Page x Country x Date export, user-supplied (lab repo data/raw-exports/gsc-query-page-country-2026-08-24_2026-09-07.csv, 24,602 rows, confirmed live -- id/library/simbol-love alone logs 250+ impressions/day in the same export, so this is a real zero, not an instrument outage). 0 impressions / 0 clicks over 14d. Stop rule from the review-register item 48 build brief (<20 impressions after 4 weeks with confirmed indexing) applied; not extending the observation window. Google-side verdict only -- Bing Webmaster Tools data was not checked for this cell (2026-09-10 AdSense channel split: Bing 1.69 SGD RPM vs Google 0.46 SGD RPM, Google ~15% of blended ad revenue -- see docs/current-operating-priorities.md and docs/multi-surface-discovery-reorientation-2026-08-29.md in the lab repo); a Bing-side re-check is a legitimate future follow-up, not required to close this Google-scoped item.",
+      "recordedBy": "review-register-item-48-close-out"
+    },
+    {
+      "pattern": "category/underline-text",
+      "locale": "es",
+      "checkedDate": "2026-09-10",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "veto",
+      "evidence": "POST-BUILD PERFORMANCE VETO (repurposed field use -- see note below), not a pre-build screen; the three named `instruments` fields don't fit this check's shape and are left null rather than mis-populated. Post-launch 4-week+ observation (built via public PR #741, merged 2026-08-12T03:32:10Z; review-register item 48). Real GSC Query x Landing Page x Country x Date export, user-supplied (lab repo data/raw-exports/gsc-query-page-country-2026-08-24_2026-09-07.csv, 24,602 rows, confirmed live -- id/library/simbol-love alone logs 250+ impressions/day in the same export, so this is a real zero, not an instrument outage). 1 impression / 0 clicks over 14d, on 'palabra subrayada' (tangential to the page's own 'texto subrayado' target). Stop rule from the review-register item 48 build brief (<20 impressions after 4 weeks with confirmed indexing) applied; not extending the observation window. Google-side verdict only -- Bing Webmaster Tools data was not checked for this cell (2026-09-10 AdSense channel split: Bing 1.69 SGD RPM vs Google 0.46 SGD RPM, Google ~15% of blended ad revenue -- see docs/current-operating-priorities.md and docs/multi-surface-discovery-reorientation-2026-08-29.md in the lab repo); a Bing-side re-check is a legitimate future follow-up, not required to close this Google-scoped item.",
+      "recordedBy": "review-register-item-48-close-out"
+    },
+    {
+      "pattern": "category/underline-text",
+      "locale": "pl",
+      "checkedDate": "2026-09-10",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "veto",
+      "evidence": "POST-BUILD PERFORMANCE VETO (repurposed field use -- see note below), not a pre-build screen; the three named `instruments` fields don't fit this check's shape and are left null rather than mis-populated. Post-launch 4-week+ observation (built via public PR #741, merged 2026-08-12T03:32:10Z; review-register item 48). Real GSC Query x Landing Page x Country x Date export, user-supplied (lab repo data/raw-exports/gsc-query-page-country-2026-08-24_2026-09-07.csv, 24,602 rows, confirmed live -- id/library/simbol-love alone logs 250+ impressions/day in the same export, so this is a real zero, not an instrument outage). 0 impressions / 0 clicks over 14d. Stop rule from the review-register item 48 build brief (<20 impressions after 4 weeks with confirmed indexing) applied; not extending the observation window. Google-side verdict only -- Bing Webmaster Tools data was not checked for this cell (2026-09-10 AdSense channel split: Bing 1.69 SGD RPM vs Google 0.46 SGD RPM, Google ~15% of blended ad revenue -- see docs/current-operating-priorities.md and docs/multi-surface-discovery-reorientation-2026-08-29.md in the lab repo); a Bing-side re-check is a legitimate future follow-up, not required to close this Google-scoped item.",
+      "recordedBy": "review-register-item-48-close-out"
+    },
+    {
+      "pattern": "category/underline-text",
+      "locale": "nl",
+      "checkedDate": "2026-09-10",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "veto",
+      "evidence": "POST-BUILD PERFORMANCE VETO (repurposed field use -- see note below), not a pre-build screen; the three named `instruments` fields don't fit this check's shape and are left null rather than mis-populated. Post-launch 4-week+ observation (built via public PR #741, merged 2026-08-12T03:32:10Z; review-register item 48). Real GSC Query x Landing Page x Country x Date export, user-supplied (lab repo data/raw-exports/gsc-query-page-country-2026-08-24_2026-09-07.csv, 24,602 rows, confirmed live -- id/library/simbol-love alone logs 250+ impressions/day in the same export, so this is a real zero, not an instrument outage). 0 impressions / 0 clicks over 14d. Stop rule from the review-register item 48 build brief (<20 impressions after 4 weeks with confirmed indexing) applied; not extending the observation window. Google-side verdict only -- Bing Webmaster Tools data was not checked for this cell (2026-09-10 AdSense channel split: Bing 1.69 SGD RPM vs Google 0.46 SGD RPM, Google ~15% of blended ad revenue -- see docs/current-operating-priorities.md and docs/multi-surface-discovery-reorientation-2026-08-29.md in the lab repo); a Bing-side re-check is a legitimate future follow-up, not required to close this Google-scoped item.",
+      "recordedBy": "review-register-item-48-close-out"
+    },
+    {
+      "pattern": "category/aesthetic-fonts",
+      "locale": "tr",
+      "checkedDate": "2026-09-10",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "veto",
+      "evidence": "POST-BUILD PERFORMANCE VETO (repurposed field use -- see note below), not a pre-build screen; the three named `instruments` fields don't fit this check's shape and are left null rather than mis-populated. Post-launch 4-week+ observation (built via public PR #741, merged 2026-08-12T03:32:10Z; review-register item 48). Real GSC Query x Landing Page x Country x Date export, user-supplied (lab repo data/raw-exports/gsc-query-page-country-2026-08-24_2026-09-07.csv, 24,602 rows, confirmed live -- id/library/simbol-love alone logs 250+ impressions/day in the same export, so this is a real zero, not an instrument outage). 0 impressions / 0 clicks over 14d. Stop rule from the review-register item 48 build brief (<20 impressions after 4 weeks with confirmed indexing) applied; not extending the observation window. Google-side verdict only -- Bing Webmaster Tools data was not checked for this cell (2026-09-10 AdSense channel split: Bing 1.69 SGD RPM vs Google 0.46 SGD RPM, Google ~15% of blended ad revenue -- see docs/current-operating-priorities.md and docs/multi-surface-discovery-reorientation-2026-08-29.md in the lab repo); a Bing-side re-check is a legitimate future follow-up, not required to close this Google-scoped item.",
+      "recordedBy": "review-register-item-48-close-out"
+    },
+    {
+      "pattern": "category/gothic-fonts",
+      "locale": "tr",
+      "checkedDate": "2026-09-10",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "veto",
+      "evidence": "POST-BUILD PERFORMANCE VETO (repurposed field use -- see note below), not a pre-build screen; the three named `instruments` fields don't fit this check's shape and are left null rather than mis-populated. Post-launch 4-week+ observation (built via public PR #741, merged 2026-08-12T03:32:10Z; review-register item 48). Real GSC Query x Landing Page x Country x Date export, user-supplied (lab repo data/raw-exports/gsc-query-page-country-2026-08-24_2026-09-07.csv, 24,602 rows, confirmed live -- id/library/simbol-love alone logs 250+ impressions/day in the same export, so this is a real zero, not an instrument outage). 0 impressions / 0 clicks over 14d. Stop rule from the review-register item 48 build brief (<20 impressions after 4 weeks with confirmed indexing) applied; not extending the observation window. Google-side verdict only -- Bing Webmaster Tools data was not checked for this cell (2026-09-10 AdSense channel split: Bing 1.69 SGD RPM vs Google 0.46 SGD RPM, Google ~15% of blended ad revenue -- see docs/current-operating-priorities.md and docs/multi-surface-discovery-reorientation-2026-08-29.md in the lab repo); a Bing-side re-check is a legitimate future follow-up, not required to close this Google-scoped item.",
+      "recordedBy": "review-register-item-48-close-out"
+    },
+    {
+      "pattern": "category/gothic-fonts",
+      "locale": "nl",
+      "checkedDate": "2026-09-10",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "veto",
+      "evidence": "POST-BUILD PERFORMANCE VETO (repurposed field use -- see note below), not a pre-build screen; the three named `instruments` fields don't fit this check's shape and are left null rather than mis-populated. Post-launch 4-week+ observation (built via public PR #741, merged 2026-08-12T03:32:10Z; review-register item 48). Real GSC Query x Landing Page x Country x Date export, user-supplied (lab repo data/raw-exports/gsc-query-page-country-2026-08-24_2026-09-07.csv, 24,602 rows, confirmed live -- id/library/simbol-love alone logs 250+ impressions/day in the same export, so this is a real zero, not an instrument outage). 0 impressions / 0 clicks over 14d. Stop rule from the review-register item 48 build brief (<20 impressions after 4 weeks with confirmed indexing) applied; not extending the observation window. Google-side verdict only -- Bing Webmaster Tools data was not checked for this cell (2026-09-10 AdSense channel split: Bing 1.69 SGD RPM vs Google 0.46 SGD RPM, Google ~15% of blended ad revenue -- see docs/current-operating-priorities.md and docs/multi-surface-discovery-reorientation-2026-08-29.md in the lab repo); a Bing-side re-check is a legitimate future follow-up, not required to close this Google-scoped item.",
+      "recordedBy": "review-register-item-48-close-out"
+    },
+    {
+      "pattern": "category/strikethrough-text",
+      "locale": "fr",
+      "checkedDate": "2026-09-10",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "veto",
+      "evidence": "POST-BUILD PERFORMANCE VETO (repurposed field use -- see note below), not a pre-build screen; the three named `instruments` fields don't fit this check's shape and are left null rather than mis-populated. Post-launch 4-week+ observation (built via public PR #741, merged 2026-08-12T03:32:10Z; review-register item 48). Real GSC Query x Landing Page x Country x Date export, user-supplied (lab repo data/raw-exports/gsc-query-page-country-2026-08-24_2026-09-07.csv, 24,602 rows, confirmed live -- id/library/simbol-love alone logs 250+ impressions/day in the same export, so this is a real zero, not an instrument outage). 0 impressions / 0 clicks over 14d. Stop rule from the review-register item 48 build brief (<20 impressions after 4 weeks with confirmed indexing) applied; not extending the observation window. Google-side verdict only -- Bing Webmaster Tools data was not checked for this cell (2026-09-10 AdSense channel split: Bing 1.69 SGD RPM vs Google 0.46 SGD RPM, Google ~15% of blended ad revenue -- see docs/current-operating-priorities.md and docs/multi-surface-discovery-reorientation-2026-08-29.md in the lab repo); a Bing-side re-check is a legitimate future follow-up, not required to close this Google-scoped item.",
+      "recordedBy": "review-register-item-48-close-out"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "de",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 4010,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "USER-AUTHORIZED 2026-09-12 (\"I agree with all 4... Go ahead and build this\") AND independently cleared on two real instruments. Authorizes ONE page: de/zum-ausdrucken/buchstaben-vorlagen/, the DE translation of printables/block-letters/. WHY THIS CELL: GA4 2026-08-18..09-04 (docs/ad-revenue-recovery-alignment-2026-09-05.md §5) puts printables at 38.7% of site revenue on 4.7% of users with DE RPM 14.34, the highest of any locale, against ES 2.95; and block-letters is the single highest-RPM page on the site (35.57, 20.7% of all revenue in 18 days, 96% of it from Bing+Yahoo). The DE analogue did not exist. KEYWORD VOLUME: 4,010/mo print-intent cluster, Semrush db=de 2026-09-05 (§11a) - buchstaben zum ausdrucken 2,400 KD9 + abc zum ausdrucken 390 KD10 + alphabet zum ausdrucken 320 KD6 + buchstaben schablone zum ausdrucken 320 KD9 + grosse buchstaben zum ausdrucken 320 KD9 + buchstaben vorlagen zum ausdrucken 260 KD14. The whole DE printables family is ~11,000/mo at KD 6-16, the lowest difficulty recorded for a printables market in this repo. CORRECTION TO THE SOURCE DOC'S C2, made by this pass and worth carrying forward: C2 led its stencil cluster with 'buchstaben schablonen' 720 KD7. A phrase_organic pull on that bare term (db=de, 2026-09-12) returns an E-COMMERCE SERP for PHYSICAL stencils - margreiter-shop.de (Zinkblech), schablonenprofi.de, amazon.de, seton.de, kreativ-depot.de, stencilboy.de, hbm-schablonenshop.de, idealo.de price comparison - not one free-printable page. That is buying intent, and its low KD reflects a product SERP rather than a winnable one. Those 720 are EXCLUDED from the 4,010 above. Same shape as this ledger's own id entry finding banner-maker's 29,680/mo to be people looking for a local vinyl print shop: volume that looks right and serves the wrong job. COMPETITOR FOOTPRINT: yes, and it is the right kind. 'buchstaben zum ausdrucken' and 'buchstaben schablone zum ausdrucken' both return free-printable-template sites - kinder-malvorlagen.com, vorlagen-zum-ausdrucken.de (whose ranking page is literally 'Buchstaben zum Ausdrucken nur Kontur', i.e. outline-only, the same job), handletteringlernen.de, kribbelbunt.de, kidsweb.de, schulkreis.de, mal-o-mat.de, wunderbunt.de, plus Pinterest idea boards. Static-PDF and blog-post page types against a live generator. OWNERSHIP CHECK (Hub-vs-Spoke Rule 1/3): the 2,400 head term was claimed by de/zum-ausdrucken/alphabet-ausmalbilder/, a COLOURING page whose title read 'Alphabet-Ausmalbilder A-Z - kostenlose Buchstaben zum Ausdrucken'. De-targeted in this same change to 'zum Ausmalen und Ausdrucken', so exactly one DE page carries the head term. No other DE page targets the outline/cut-out job: de/zum-ausdrucken/ held 7 pages (colouring, bubble, name tracing, name colouring, Schreibschrift, Schreibuebungen, Spanish alphabet). ENGINE RISK NIL: the page renders A-Z and 0-9 Latin outlines from the shared printablesEngine; no umlaut or Grundschrift glyph work is required for the character set it ships. enGscImpressionsFromLocale NULL: no GSC export was available to this session. Per CLAUDE.md's 'all-instruments-null authorization is a bridge' rule this is NOT such a case - the entry clears on two real instruments independently - but the GSC cut (Germany x /printables/*) is still owed and is the check that would confirm whether the EN parent already draws German-language impressions. Lab review-register item 62 carries the 2026-10-16 readout for this cell.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f-user-authorized"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "fr",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 2180,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "USER-AUTHORIZED 2026-09-12 AND cleared on two real instruments. Authorizes ONE page: fr/imprimables/lettres-a-imprimer/, the FR translation of printables/block-letters/. WHY THIS CELL: GA4 2026-08-18..09-04 puts FR printables at RPM 11.18 on 135 users, second only to DE among locales, on a family that is 38.7% of site revenue; fr/imprimables/ (the hub alone) earned RPM 14.76 and grew +162% on Bing in-window. The FR build of the site's top-earning page did not exist. KEYWORD VOLUME: 2,180/mo, Semrush db=fr re-pulled 2026-09-12 - alphabet a imprimer 1,300 KD28 + lettres de l'alphabet a imprimer 390 KD20 + alphabet majuscule a imprimer 210 KD25 + lettres a imprimer 210 KD20 + lettres a decouper 70 KD24. Notably harder than the DE cell (4,010 at KD 6-14), which is why the page is framed on the cut-out/display job rather than competing head-on for the generic head term. POCHOIR EXCLUDED, same correction as the de entry: the source analysis led its FR stencil cluster with 'pochoir alphabet' 390 KD15 + 'pochoir lettres a imprimer' 110. A phrase_organic pull on the bare term (db=fr 2026-09-12) returns an E-COMMERCE SERP for physical stencils - cultura.com, botaniqueeditions (metal stencils), pochoirs-signalisation.com, leroymerlin.fr, lafourmicreative, amazon.fr, stylepochoir.fr, pochoirsdeco.fr, rougier-ple.fr. That is the SECOND language in which the stencil word names a product rather than a download; the German cell hit the identical trap with 'buchstaben schablonen'. Those 500/mo are excluded here. COMPETITOR FOOTPRINT: yes, and the right kind, on the terms actually targeted. 'alphabet a imprimer' returns dessinemoiunehistoire.net, memozor.com, teteamodeler (Ouest-France, ranking with a page called 'alphabet-grandes-lettres'), maitresselunicole.fr, moncoloriage.fr, hugolescargot (Journal des Femmes), lesclesdelecriture.fr ('alphabet mural a telecharger'), plus three Pinterest idea boards. Teacher blogs and static downloads against a live generator. OWNERSHIP CHECK: no Rule-3 de-target needed, and this was checked rather than assumed. fr/imprimables/coloriage-alphabet/ carries 'Alphabet a imprimer' twice, but both are the same FAQ answer naming an on-page section ('Faites defiler jusqu'a la section Alphabet a imprimer'), not a claim in its title, meta or H1 - its head term is 'coloriages alphabet'. The colouring job and the cut-out job stay on separate pages and now link to each other. enGscImpressionsFromLocale NULL: no GSC export available to this session; the France x /printables/* cut is still owed. Lab review-register item 62 carries the 2026-10-16 readout.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f-user-authorized"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "fr",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": false,
+        "keywordVolumeInLocaleMonthly": 40,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "NOT BUILT. Records the decision so the cell is not re-proposed. This covers a FR translation of printables/calligraphy-alphabet/ (a calligraphy PRACTICE-SHEET printable), which was authorized by the user on 2026-09-12 as part of 'FR stencil + calligraphy-alphabet' but does not survive its own instrument check. The authorization rested on the locale's RPM, not on this page's demand, which had never been measured: the 2026-09-05 FR/DE pull (ad-revenue-recovery-alignment §11a) contains no calligraphy row at all. KEYWORD VOLUME: 40/mo for the printable intent, Semrush db=fr 2026-09-12 - 'alphabet calligraphie a imprimer' 20, 'calligraphie a imprimer' 20. Both re-checked with correct accents after an accent-stripped first pull, because Semrush treats the accented and unaccented forms as different keywords and the stripped forms understate the cluster; the accented figures are the ones recorded here and they did not move. THE LARGER TERM IS A DIFFERENT JOB: 'calligraphie alphabet' draws 4,400/mo but its SERP is images, stock and tutorials - Pinterest, magnific, amazon.fr, a Faber-Castell technique tutorial, lacalligraphe.fr, letteringcreatif, MyFonts, Shutterstock, Etsy - plus lettering.org's COPY-PASTE calligraphy generator. It is not a practice-sheet SERP, so it cannot be used to justify a practice-sheet page. Reading that 4,400 as demand for this page would be the mirror of the pochoir error in the sibling entry: right word, wrong job. OWNERSHIP: fr/calligraphie/ already exists (a ratified local-only page, 'Calligraphie en ligne a copier-coller') and serves exactly the copy-paste job that the one generator on that SERP serves. A third FR page in the same lexical space would compete with it for no measured gain. REVISIT IF: a FR GSC pull shows the EN calligraphy parent already drawing French-language impressions, or the printable-intent terms grow past four figures. Neither is true today.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "de",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 12880,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "USER-AUTHORIZED 2026-09-12 (\"Okay go ahead and build this\", after being shown the 11-cell check plan and its expected yield). Part of a deliberate 11-cell instrument sweep across the only two locales with measured printables RPM (DE 14.34, FR 11.18); 4 cells failed on volume and 4 more were held, and those verdicts are recorded as sibling entries so the whole sweep is legible rather than only its winners. Authorizes de/zum-ausdrucken/graffiti-buchstaben/, the DE translation of printables/graffiti-letters/. KEYWORD VOLUME: 12,880/mo generator-intent, Semrush db=de 2026-09-12 - graffiti buchstaben 6,600 + graffiti alphabet 5,400 + graffiti namen 880. THE INTENT FILTER MATTERS AND IS NOT THE SAME AS THE STENCIL CELL'S: 'graffiti buchstaben zum ausdrucken' is 20/mo and 'graffiti vorlagen zum ausdrucken' 70, so a print-intent filter would read this cell as 90/mo and drop it. That filter is wrong here because the EN parent is a NAME GENERATOR, not a print sheet. Excluded separately: 'graffiti schrift' 14,800 and 'graffiti schriftarten' 1,000, which are copy-paste FONT intent and belong to the DE homepage generator, not to a printable. COMPETITOR FOOTPRINT: decisive. graffiti-empire.com's own GENERATOR ranks #1 for 'graffiti buchstaben', and its 'graffiti-buchstaben-a-z' page also ranks on page 1: the exact page type this site ships, twice, from a direct competitor. The rest of the SERP is Pinterest, Amazon, Adobe Stock, Etsy, Shutterstock and YouTube, i.e. stock imagery and marketplaces that do not serve the generate-your-name job at all. OWNERSHIP: no DE page targets graffiti. de/ has 29 top-level directories and none is a graffiti page; the term appears in no DE title, H1 or meta. No Rule-3 de-target needed. enGscImpressionsFromLocale NULL: no GSC export available to this session; the Germany x /printables/* cut is still owed and is tracked on lab review-register item 62 for the 2026-10-16 readout.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f-user-authorized"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "fr",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 4030,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "USER-AUTHORIZED 2026-09-12 (\"Okay go ahead and build this\", after being shown the 11-cell check plan and its expected yield). Part of a deliberate 11-cell instrument sweep across the only two locales with measured printables RPM (DE 14.34, FR 11.18); 4 cells failed on volume and 4 more were held, and those verdicts are recorded as sibling entries so the whole sweep is legible rather than only its winners. Authorizes fr/imprimables/lettres-graffiti/, the FR translation of printables/graffiti-letters/. KEYWORD VOLUME: 4,030/mo, Semrush db=fr 2026-09-12 - lettre graffiti 1,900 + alphabet graffiti 1,900 + ecriture graffiti 140 + graffiti prenom 90. COMPETITOR FOOTPRINT: yes, and the finding is a LANGUAGE GAP rather than a clear opening. The db=fr SERP is image- and video-led (Pinterest x2, Adobe Stock, Vecteezy, Shutterstock, magnific, YouTube x3) and the single right-page-type result is graffiti-empire.com's ENGLISH /graffiti-letters/ page ranking into a French SERP. So no French-language page serves this job today. Recorded as weaker than the DE cell rather than equivalent: Germany has a localized generator competitor at #1, France has an English one mid-page. OWNERSHIP: no FR page targets graffiti; fr/ has 32 top-level directories and none is a graffiti page. enGscImpressionsFromLocale NULL, as above.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f-user-authorized"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "fr",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 1180,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "USER-AUTHORIZED 2026-09-12 (\"Okay go ahead and build this\", after being shown the 11-cell check plan and its expected yield). Part of a deliberate 11-cell instrument sweep across the only two locales with measured printables RPM (DE 14.34, FR 11.18); 4 cells failed on volume and 4 more were held, and those verdicts are recorded as sibling entries so the whole sweep is legible rather than only its winners. Authorizes fr/imprimables/alphabet-point-de-croix/, the FR translation of printables/cross-stitch-letters/. The cleanest cell in the sweep on competitor evidence, despite being the smallest. KEYWORD VOLUME: 1,180/mo, Semrush db=fr 2026-09-12 - alphabet point de croix 880 + grille alphabet point de croix 210 + lettres point de croix 90. COMPETITOR FOOTPRINT: three of the top ten are French-language GENERATOR TOOLS doing exactly this job - stitchpoint.com/fra/tool/alph/_imprimer_grille_text.php at #2 (a printable-grid tool), creamagic.com's 'generateur d'alphabet a broder a la main gratuit' at #3, and a second stitchpoint grid page at #7. The rest is Pinterest x4, Etsy and two embroidery-kit shops. A live tool ranking in-language is the strongest signal in this sweep that the page type belongs on the SERP. OWNERSHIP: no FR page targets point de croix. enGscImpressionsFromLocale NULL, as above.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f-user-authorized"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "de",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 290,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "NOT BUILT. Records the decision so the cell is not re-proposed. Covers a de translation of printables/calligraphy-alphabet/. DE calligraphy printable. The concept term 'kalligraphie alphabet' draws 2,400/mo and the family 5,560 (kalligraphie buchstaben 1,300, schoenschrift alphabet 880, kalligraphie lernen 720, kalligraphie vorlagen 260), but the EN parent is literally 'Printable Practice Sheets', so PRINT intent is the right filter and it measures 290/mo: kalligraphie uebungsblaetter 210, kalligraphie vorlagen zum ausdrucken 20, kalligraphie alphabet zum ausdrucken 20, kalligraphie zum ausdrucken 20, schoenschrift ueben vorlagen 20. The db=de SERP confirms the split: 8 of 10 are tutorials, stock vectors and Wikipedia (Faber-Castell, edding, eschenbach-vision, magnific, onlineprinters, Pinterest, kallipos), with ONE genuine printable-practice competitor (irmalink.de's 'kalligraphie-buchstaben-vorlagen-zum-schreiben-ueben'). Better than the FR calligraphy cell, which measured 40/mo with zero printable competitors and was gate-failed the same day, but not enough to clear. Note the asymmetry with the graffiti cells in this same sweep, which is the method rather than an inconsistency: there the print filter is wrong because the parent is a generator. REVISIT IF the printable-intent terms reach four figures or a DE GSC cut shows the EN parent drawing German impressions.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "de",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 390,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "NOT BUILT. Records the decision so the cell is not re-proposed. Covers a de translation of printables/cross-stitch-letters/. DE cross-stitch printable. 390/mo concept (kreuzstich buchstaben 210, kreuzstich alphabet 110, stickvorlagen buchstaben 70) and 10/mo for the explicit print form. Thin against the FR sibling cell's 1,180, which cleared the same day, so this is a size verdict rather than a doubt about the page type. REVISIT after the FR page has run long enough to show whether the format earns its place in a European market.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "de",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 90,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "NOT BUILT. Records the decision so the cell is not re-proposed. Covers a de translation of printables/dot-to-dot-alphabet/. DE dot-to-dot alphabet. 90/mo total (buchstaben verbinden 50, punkte verbinden vorlagen 20, malen nach zahlen buchstaben 20) and 'punkte verbinden buchstaben' returns 0. Clear fail.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "de",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 0,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "NOT BUILT. Records the decision so the cell is not re-proposed. Covers a de translation of printables/dot-to-dot-name/. DE dot-to-dot name. No Semrush row for the German name-dot-to-dot formulation at all. Clear fail, and consistent with this ledger's own id entry, which recorded name-puzzle-maker at 0 matches in the Indonesian export.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "fr",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 40,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "NOT BUILT. Records the decision so the cell is not re-proposed. Covers a fr translation of printables/dot-to-dot-alphabet/. FR dot-to-dot alphabet. 'points a relier alphabet' 40/mo. Clear fail.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "fr",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 0,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "NOT BUILT. Records the decision so the cell is not re-proposed. Covers a fr translation of printables/dot-to-dot-name/. FR dot-to-dot name. 'points a relier prenom' returns 0. Clear fail.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "fr",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 1000,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "NOT BUILT. Records the decision so the cell is not re-proposed. Covers a fr translation of printables/coloring-page-maker/. FR colouring-page generator. 1,000/mo (coloriage personnalise 590, coloriage prenom 320, creer un coloriage 90) - real, and the only held cell in this sweep that failed on something other than size. Held rather than failed because its SERP was NOT checked and because fr/imprimables/coloriage-alphabet/ already occupies the FR colouring lane, so the ownership question (one page for alphabet colouring and a second for name colouring, or one page doing both) has to be settled before a page is built. REVISIT with a phrase_organic pull on 'coloriage prenom' and a read of what coloriage-alphabet currently targets.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "fr",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 450,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "NOT BUILT. Records the decision so the cell is not re-proposed. Covers a fr translation of printables/handwriting-worksheet-generator/. FR handwriting-worksheet generator. 450/mo (fiche d'ecriture cp 210, cahier d'ecriture a imprimer 110, modele ecriture cursive 90, exercice ecriture cp 20, fiche ecriture a imprimer 20). Thin. Worth noting for a future pass: the FR lexicon's FR-034 records 'lignage Seyes' as the most locally-binding French finding for handwriting sheets, and a page built without it would likely miss the intent regardless of volume. REVISIT together with FR-034.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f"
+    },
+    {
+      "pattern": null,
+      "locale": "id",
+      "checkedDate": "2026-09-10",
+      "instruments": {
+        "competitorFootprintInLocale": false,
+        "keywordVolumeInLocaleMonthly": 33100,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Real per-locale instrument pull (Semrush id database, 2026-09-10), not a user authorization in lieu of one. Volume, deduplicated by (keyword, country) and never summed: ucapan imlek 2026 33,100/mo (KD 28), gong xi fa cai 49,500/mo (KD 28), ucapan imlek 6,600/mo (KD 28), ucapan selamat imlek 3,600/mo (KD 25), kata kata ucapan imlek 320/mo. Trend arrays for all four head terms are distinct, so these are separate buckets rather than one bucket under several labels; every one is sharply single-month seasonal, which is what a lunar new year should look like. Competitor footprint: no text/symbol/copy-paste generator ranks for the job at all -- the top ten for `ucapan imlek` is generic listicles on off-topic domains (a university physics-department blog at #1, a travel site, a jobs board, two Instagram reels), i.e. a weak incumbent set. enGscImpressionsFromLocale is null because no GSC export is attached to this session; the other two instruments carried the check. The demand is decisively in the GREETINGS half, which is why this entry authorizes the events page and its companion answer page and nothing else: the generator-shaped terms are thin by comparison (emoji imlek 480, font imlek 260, simbol imlek 70). The pattern is null because events/ has no data/core_parent_set.json entry, so classifyParent() reports pattern: null / tier \"unclassified\" and a ledger entry must be keyed the same way to match -- same shape as the fi and zh-tw null-pattern entries above. The companion answer page is covered by the existing answers/*-locale-id cell, not by this entry. Origin: a 2026-07-10 branch (claude/cny-page-brainstorm-3toe0h) built six Indonesian pages in commits pushed AFTER its PRs #457 and #465 had merged; the Spanish half of that branch shipped and the Indonesian half never did. Authorizes exactly id/events/imlek/ and id/answers/kata-kata-ucapan-imlek/. The other four recovered pages (idul-fitri, idul-adha and their two answer pages) are NOT authorized and are not built: they declare no hreflang=\"en\" at all and have no English parent to translate from, which is an English-Parent Rule question rather than a demand question.",
+      "recordedBy": "claude-session-lucid-davinci-oi44ql-semrush-2026-09-10"
+    },
+    {
+      "pattern": "library/*",
+      "locale": "sv",
+      "checkedDate": "2026-09-10",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized per-batch exception, not a fresh per-locale instrument pull. sv remains Tier 3 (hold-stub) in data/locale_qualification_tiers.json; this entry does not promote it and does not re-qualify it generally, exactly like the 2026-07-26 four-page sv entry, whose own text reserved future sv decisions for the user. Origin of the batch: a 2026-07-12 branch (claude/sv-competitive-analysis-eub4hl) built 16 sv/library pages in commits pushed AFTER its PR #524 had already merged, so no open PR tracked them and they never reached main. A 2026-09-10 audit of that stranded work found 4 slugs since built independently on main (in larger, newer versions), 2 that would have landed as duplicate claimants under a second slug (grekiska-alfabetet against main's grekiska-bokstaver, kon-symboler against konssymboler, each pair claiming one EN parent), and 10 with live EN parents and no sv claimant of any kind. The user was shown the Tier-3 default and the limited scope of the 2026-07-26 entry, was told the call was theirs, and authorized building these 10. Authorizes exactly the nine that ship here: sv/library/copyright-tecken, japanska-tecken, kors-symboler, kortfarg-symboler, punkt-symboler, skiljetecken, stjarntecken, tangentbord-symboler, vader-symboler. The tenth recovered page, grader-tecken, is NOT authorized by this entry and is deliberately held back: its EN parent is symbol/degree-symbol, so the lane it inherits is symbol/ rather than library/, it matches the symbol/* pattern this entry does not cover, and sv has no symbol/ pillar -- shipping it would open a new lane for the locale with one orphan spoke and no sv/symbol/index.html hub. That is a pillar decision rather than a recovery, and it goes back to the user rather than being settled by widening this entry. Future sv builds still go through the Tier-3 default (raise with the user first) unless sv is promoted via the 7-point gate.",
+      "recordedBy": "claude-session-lucid-davinci-oi44ql-user-authorized"
     }
   ]
 }

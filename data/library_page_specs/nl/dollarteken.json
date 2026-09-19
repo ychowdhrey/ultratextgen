@@ -8,7 +8,6 @@
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
-  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
   "slug": "dollarteken",
   "title": "Dollarteken: Kopieer en Plak $ — De Omstreden Herkomst van 's Werelds Bekendste Valutateken",
   "meta_description": "Het bekendste valutateken ter wereld — en historici zijn het nog steeds niet eens over de herkomst. De 'U over S'-mythe, de Ps-theorie en de cifrão-variant, uitgelegd. Klik om direct te kopiëren.",
@@ -52,27 +51,27 @@
       "symbols": [
         {
           "char": "¢",
-          "label": "Centteken (U+00A2) — een honderdste van een dollar"
+          "label": "Centteken (U+00A2): een honderdste van een dollar"
         },
         {
           "char": "¤",
-          "label": "Algemeen Valutateken (U+00A4) — een plaatshouder, geen specifieke munt"
+          "label": "Algemeen Valutateken (U+00A4): een plaatshouder, geen specifieke munt"
         },
         {
           "char": "₱",
-          "label": "Filipijnse Pesoteken (U+20B1) — de moderne munt die afstamt van dezelfde 'peso' die $ zijn naam gaf"
+          "label": "Filipijnse Pesoteken (U+20B1): de moderne munt die afstamt van dezelfde 'peso' die $ zijn naam gaf"
         },
         {
           "char": "＄",
-          "label": "Dollarteken Volle Breedte (U+FF04) — de brede vorm uit Japans/Chinees/Koreaans zetwerk"
+          "label": "Dollarteken Volle Breedte (U+FF04): de brede vorm uit Japans/Chinees/Koreaans zetwerk"
         },
         {
           "char": "﹩",
-          "label": "Klein Dollarteken (U+FE69) — compacte vorm voor verticale CJK-tekst"
+          "label": "Klein Dollarteken (U+FE69): compacte vorm voor verticale CJK-tekst"
         },
         {
           "char": "💲",
-          "label": "Dollarteken-emoji (U+1F4B2) — een gekleurde emoji, niet het platte-tekst-teken $"
+          "label": "Dollarteken-emoji (U+1F4B2): een gekleurde emoji, niet het platte-tekst-teken $"
         }
       ]
     },

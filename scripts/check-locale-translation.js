@@ -127,6 +127,15 @@ function blobAt(rev, rel) {
  *
  * Restorations are REPORTED in their own section, never silenced.
  */
+/**
+ * The words of a string, with punctuation, case and spacing removed. Used only
+ * to decide whether a survivor is the SAME debt as one at the merge base — never
+ * to decide whether a string is English in the first place.
+ */
+function wordKey(s) {
+  return s.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+}
+
 const HISTORY_DEPTH = 200;
 function restoredFromHistory(rel, currentBlob) {
   let revs;
@@ -201,8 +210,23 @@ for (const rel of changedFiles) {
     }
   }
 
-  const introduced = result.survivors.filter((s) => !priorSurvivors.has(s));
-  const carried = result.survivors.filter((s) => priorSurvivors.has(s));
+  // Punctuation is not English. Re-punctuating a survivor — rewriting a tile
+  // label `Name — gloss` as `Name: gloss` — leaves exactly the same words
+  // untranslated on exactly the same page, but a set comparison sees a string
+  // that was not in the base set and reads the edit as an introduction. That is
+  // the third instance of the inversion this file already documents for reverts
+  // above, and it is measured the same way: on the thing the rule is about.
+  // Verified against the em-dash template pass that surfaced it — 9 pages whose
+  // flagged strings were byte-identical survivors at the merge base with one
+  // dash swapped for a colon.
+  //
+  // Scoped per page, so a survivor on one page can never excuse a new string on
+  // another, and the words must match exactly: any change to the English itself
+  // still fails.
+  const priorWords = new Set([...priorSurvivors].map(wordKey));
+  const isCarried = (s) => priorSurvivors.has(s) || priorWords.has(wordKey(s));
+  const introduced = result.survivors.filter((s) => !isCarried(s));
+  const carried = result.survivors.filter(isCarried);
   if (introduced.length) {
     const blob = git(['rev-parse', `HEAD:${rel}`], { stdio: ['ignore', 'pipe', 'ignore'] }).trim();
     const from = restoredFromHistory(rel, blob);

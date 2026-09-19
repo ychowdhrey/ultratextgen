@@ -24,10 +24,10 @@
       "h2": "El Asterisco y sus Variantes de Visualización",
       "intro": "El asterisco normal del teclado junto a las formas de visualización más marcadas y el operador específico de matemáticas. Todos listos para pegar.",
       "symbols": [
-        { "char": "*", "label": "Asterisco (U+002A) — Nota al Pie, Comodín y Marca de Censura" },
+        { "char": "*", "label": "Asterisco (U+002A): Nota al Pie, Comodín y Marca de Censura" },
         { "char": "✱", "label": "Asterisco Grueso (U+2731)" },
         { "char": "✳", "label": "Asterisco de Ocho Puntas (U+2733)" },
-        { "char": "∗", "label": "Operador Asterisco (U+2217) — el Glifo Matemático de Multiplicación" },
+        { "char": "∗", "label": "Operador Asterisco (U+2217): el Glifo Matemático de Multiplicación" },
         { "char": "＊", "label": "Asterisco de Ancho Completo (U+FF0A)" }
       ]
     },
@@ -37,7 +37,7 @@
       "h2": "Asterismo y Marcas de Separación de Sección",
       "intro": "Marcas editoriales construidas a partir del asterisco — el asterismo de tres en triángulo que separa secciones, más sus primos apilado y rebajado.",
       "symbols": [
-        { "char": "⁂", "label": "Asterismo (U+2042) — Tres Asteriscos en Triángulo" },
+        { "char": "⁂", "label": "Asterismo (U+2042): Tres Asteriscos en Triángulo" },
         { "char": "⁑", "label": "Dos Asteriscos Alineados Verticalmente (U+2051)" },
         { "char": "⁎", "label": "Asterisco Bajo (U+204E)" }
       ]
@@ -50,7 +50,7 @@
       "symbols": [
         { "char": "★", "label": "Estrella Negra (U+2605)" },
         { "char": "☆", "label": "Estrella Blanca (U+2606)" },
-        { "char": "⭐", "label": "Estrella Blanca Mediana (U+2B50) — el Emoji de Estrella Amarilla" },
+        { "char": "⭐", "label": "Estrella Blanca Mediana (U+2B50): el Emoji de Estrella Amarilla" },
         { "char": "✦", "label": "Estrella Negra de Cuatro Puntas (U+2726)" },
         { "char": "✧", "label": "Estrella Blanca de Cuatro Puntas (U+2727)" }
       ]

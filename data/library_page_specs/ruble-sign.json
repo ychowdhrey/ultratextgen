@@ -19,8 +19,8 @@
       "intro": "The mark itself and the Cyrillic letter it was built from. The winning design is the capital Er (Р) with an extra horizontal bar below the bowl — the small letter р is the one that appeared in the old ‘р.’ abbreviation.",
       "symbols": [
         { "char": "₽", "label": "Ruble Sign (U+20BD)" },
-        { "char": "Р", "label": "Cyrillic Capital Letter Er (U+0420) — The Base of the Sign" },
-        { "char": "р", "label": "Cyrillic Small Letter Er (U+0440) — Used in the Old ‘р.’ Abbreviation" }
+        { "char": "Р", "label": "Cyrillic Capital Letter Er (U+0420): The Base of the Sign" },
+        { "char": "р", "label": "Cyrillic Small Letter Er (U+0440): Used in the Old ‘р.’ Abbreviation" }
       ]
     },
     {
@@ -29,11 +29,11 @@
       "h2": "Other Newly Adopted Currency Signs",
       "intro": "The ruble sign has close neighbors in Unicode’s Currency Symbols block — a cluster of marks encoded only in the 2010s as post-Soviet and other states gave their currencies a dedicated glyph. India’s rupee sign, like the ruble, was picked through a public design contest.",
       "symbols": [
-        { "char": "₹", "label": "Indian Rupee Sign (U+20B9) — Chosen by Public Contest in 2010" },
-        { "char": "₺", "label": "Turkish Lira Sign (U+20BA) — Adopted 2012" },
-        { "char": "₸", "label": "Tenge Sign (U+20B8) — Kazakhstani Tenge" },
-        { "char": "₼", "label": "Manat Sign (U+20BC) — Azerbaijani Manat" },
-        { "char": "₾", "label": "Lari Sign (U+20BE) — Georgian Lari" }
+        { "char": "₹", "label": "Indian Rupee Sign (U+20B9): Chosen by Public Contest in 2010" },
+        { "char": "₺", "label": "Turkish Lira Sign (U+20BA): Adopted 2012" },
+        { "char": "₸", "label": "Tenge Sign (U+20B8): Kazakhstani Tenge" },
+        { "char": "₼", "label": "Manat Sign (U+20BC): Azerbaijani Manat" },
+        { "char": "₾", "label": "Lari Sign (U+20BE): Georgian Lari" }
       ]
     },
     {

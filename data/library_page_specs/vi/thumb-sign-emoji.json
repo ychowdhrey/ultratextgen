@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/thumb-sign-emoji/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/thumb-sign-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Ngón Cái Chỉ Trái & Chỉ Phải",
       "intro": "Hai ký tự bản nháp — sao chép được ngay hôm nay dưới dạng mã điểm, dù chưa phông chữ nào có thể hiển thị chúng.",
       "symbols": [
-        { "char": "🫹", "label": "Ngón Cái Chỉ Trái (bản nháp, U+1FAF9)" },
-        { "char": "🫺", "label": "Ngón Cái Chỉ Phải (bản nháp, U+1FAFA)" }
+        {
+          "char": "🫹",
+          "label": "Ngón Cái Chỉ Trái (bản nháp, U+1FAF9)"
+        },
+        {
+          "char": "🫺",
+          "label": "Ngón Cái Chỉ Phải (bản nháp, U+1FAFA)"
+        }
       ]
     },
     {
@@ -38,10 +53,22 @@
       "h2": "Các Emoji Thường Bị Nhầm Lẫn",
       "intro": "Những cử chỉ đã được mã hóa mà Thumb Sign thường bị so sánh hoặc bị cho là trùng lặp.",
       "symbols": [
-        { "char": "👍", "label": "Thumbs Up — tán thành theo chiều dọc, không phải chỉ hướng" },
-        { "char": "👎", "label": "Thumbs Down — phản đối theo chiều dọc, không phải chỉ hướng" },
-        { "char": "👈", "label": "Backhand Index Pointing Left" },
-        { "char": "👉", "label": "Backhand Index Pointing Right" }
+        {
+          "char": "👍",
+          "label": "Thumbs Up: tán thành theo chiều dọc, không phải chỉ hướng"
+        },
+        {
+          "char": "👎",
+          "label": "Thumbs Down: phản đối theo chiều dọc, không phải chỉ hướng"
+        },
+        {
+          "char": "👈",
+          "label": "Backhand Index Pointing Left"
+        },
+        {
+          "char": "👉",
+          "label": "Backhand Index Pointing Right"
+        }
       ]
     },
     {
@@ -50,18 +77,45 @@
       "h2": "Các Ứng Viên Bản Nháp Khác Của Emoji 18.0",
       "intro": "Thumb Sign không phải ký tự chưa được phê duyệt duy nhất trong đợt này — đây là những ứng viên được phác thảo cùng lúc, cũng chưa hiển thị được cho đến quyết định vào tháng 9/2026.",
       "symbols": [
-        { "char": "🫫", "label": "Cracking Face (bản nháp, U+1FAEB) — thắng cuộc bình chọn công khai" },
-        { "char": "🫝", "label": "Pickle (bản nháp, U+1FADD)" },
-        { "char": "🪋", "label": "Meteor (bản nháp, U+1FA8B)" },
-        { "char": "🫌", "label": "Monarch Butterfly (bản nháp, U+1FACC)" }
+        {
+          "char": "🫫",
+          "label": "Cracking Face (bản nháp, U+1FAEB): thắng cuộc bình chọn công khai"
+        },
+        {
+          "char": "🫝",
+          "label": "Pickle (bản nháp, U+1FADD)"
+        },
+        {
+          "char": "🪋",
+          "label": "Meteor (bản nháp, U+1FA8B)"
+        },
+        {
+          "char": "🫌",
+          "label": "Monarch Butterfly (bản nháp, U+1FACC)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/hand-symbols/", "title": "Ký Hiệu Cử Chỉ Tay", "desc": "Bàn tay chỉ hướng, cử chỉ tán thành và mọi ký tự bàn tay đã được mã hóa." },
-    { "href": "/vi/symbol/cracking-face-emoji/", "title": "Emoji Cracking Face", "desc": "Ứng viên bản nháp Emoji 18.0 đã thắng cuộc bình chọn công khai." },
-    { "href": "/vi/symbol/pickle-emoji/", "title": "Emoji Pickle", "desc": "Một ứng viên bản nháp khác của Emoji 18.0 — được chuyển từ một đề xuất Apple Core bị hoãn." },
-    { "href": "/updates/unicode-18-most-anticipated-emoji/", "title": "Các Emoji Mới Của Unicode 18.0", "desc": "Toàn bộ danh sách bản nháp gồm 9 ứng viên, xếp hạng theo bình chọn công khai." }
+    {
+      "href": "/library/hand-symbols/",
+      "title": "Ký Hiệu Cử Chỉ Tay",
+      "desc": "Bàn tay chỉ hướng, cử chỉ tán thành và mọi ký tự bàn tay đã được mã hóa."
+    },
+    {
+      "href": "/vi/symbol/cracking-face-emoji/",
+      "title": "Emoji Cracking Face",
+      "desc": "Ứng viên bản nháp Emoji 18.0 đã thắng cuộc bình chọn công khai."
+    },
+    {
+      "href": "/vi/symbol/pickle-emoji/",
+      "title": "Emoji Pickle",
+      "desc": "Một ứng viên bản nháp khác của Emoji 18.0 — được chuyển từ một đề xuất Apple Core bị hoãn."
+    },
+    {
+      "href": "/updates/unicode-18-most-anticipated-emoji/",
+      "title": "Các Emoji Mới Của Unicode 18.0",
+      "desc": "Toàn bộ danh sách bản nháp gồm 9 ứng viên, xếp hạng theo bình chọn công khai."
+    }
   ]
 }

@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/kleiner-gleich-zeichen/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/kleiner-gleich-zeichen/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
   "sections": [
     {
       "id": "kleiner-gleich",
@@ -29,8 +37,14 @@
       "h2": "Kleiner gleich, in Mathematik und Code",
       "intro": "Das Mathe-Zeichen und die zweizeichige Notlösung, auf die fast jede Programmiersprache zurückgreift, da ≤ selbst nie Teil von ASCII war.",
       "symbols": [
-        { "char": "≤", "label": "Kleiner-gleich (Mathematik)" },
-        { "char": "<=", "label": "Kleiner-gleich (Code — C, Python, JavaScript, Java, SQL)" }
+        {
+          "char": "≤",
+          "label": "Kleiner-gleich (Mathematik)"
+        },
+        {
+          "char": "<=",
+          "label": "Kleiner-gleich (Code: C, Python, JavaScript, Java, SQL)"
+        }
       ]
     },
     {
@@ -39,10 +53,22 @@
       "h2": "Zeichen, die oft mit ≤ verwechselt werden",
       "intro": "Diese bedeuten alle ungefähr dasselbe, sind aber eigenständige Unicode-Zeichen aus unterschiedlichen Schreibtraditionen.",
       "symbols": [
-        { "char": "≦", "label": "Kleiner-als über Gleichzeichen (U+2266)" },
-        { "char": "⩽", "label": "Kleiner-als oder schräges Gleichzeichen (U+2A7D) — die nach ISO 31-11 bevorzugte Form" },
-        { "char": "≲", "label": "Kleiner-als oder äquivalent (U+2272)" },
-        { "char": "≪", "label": "Viel kleiner als (U+226A) — eine andere Relation, keine Variante von ≤" }
+        {
+          "char": "≦",
+          "label": "Kleiner-als über Gleichzeichen (U+2266)"
+        },
+        {
+          "char": "⩽",
+          "label": "Kleiner-als oder schräges Gleichzeichen (U+2A7D): die nach ISO 31-11 bevorzugte Form"
+        },
+        {
+          "char": "≲",
+          "label": "Kleiner-als oder äquivalent (U+2272)"
+        },
+        {
+          "char": "≪",
+          "label": "Viel kleiner als (U+226A): eine andere Relation, keine Variante von ≤"
+        }
       ]
     },
     {
@@ -51,11 +77,26 @@
       "h2": "Verwandte Vergleichszeichen",
       "intro": "Die übrigen Relationszeichen, mit denen ≤ in Ungleichungen und Mengennotation gepaart wird.",
       "symbols": [
-        { "char": "≥", "label": "Größer-gleich (U+2265)" },
-        { "char": "<", "label": "Kleiner als" },
-        { "char": ">", "label": "Größer als" },
-        { "char": "≠", "label": "Ungleichzeichen" },
-        { "char": "=", "label": "Gleichheitszeichen" }
+        {
+          "char": "≥",
+          "label": "Größer-gleich (U+2265)"
+        },
+        {
+          "char": "<",
+          "label": "Kleiner als"
+        },
+        {
+          "char": ">",
+          "label": "Größer als"
+        },
+        {
+          "char": "≠",
+          "label": "Ungleichzeichen"
+        },
+        {
+          "char": "=",
+          "label": "Gleichheitszeichen"
+        }
       ]
     }
   ],

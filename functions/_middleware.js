@@ -19,10 +19,18 @@
 //   can produce (Pages matches _redirects on the path only). What
 //   changed between those two dates was never pinned down; what is
 //   certain is that Functions execute on production today.
-// - The `/  /index.html  200` rule in _redirects is the fallback that
-//   keeps `/` English if Functions are ever inert again (as they were
-//   during that 07-26 test). Keep both layers; do not delete either on
-//   the assumption that the other covers you.
+// - CORRECTION (2026-09-14): this banner used to say the
+//   `/  /index.html  200` rule in _redirects was a second layer keeping
+//   `/` English if Functions ever went inert again. It never was.
+//   Cloudflare's parser rejects that rule outright - "Infinite loop
+//   detected in this rule and has been ignored", because serving
+//   /index.html normalises back to / and re-triggers it - so the rule
+//   was dead from the day it was written, and the line has now been
+//   removed from _redirects rather than left reading as live. Verified
+//   with Cloudflare's own parser (npx wrangler pages dev .), where /
+//   still returns 200 with the English homepage and nothing else moved.
+//   This file is therefore the ONLY layer owning `/`. If a real fallback
+//   is wanted, it has to be built; do not re-add a rule the parser drops.
 //
 // Legacy ?lang= query-param URLs → path-based locale homepages.
 //

@@ -193,6 +193,22 @@
           "faces": "وجوه تعبيرية"
         }
       }
+    },
+    "formatControl": {
+      "label": "إضافة تنسيق",
+      "groupAriaLabel": "تطبيق التسطير أو التشطيب على كل نمط"
+    },
+    "platformChips": {
+      "all": "يعمل في كل مكان"
+    },
+    "categoryLoad": {
+      "failed": "تعذّر تحميل الفئات. يتم عرض كل الخطوط."
+    },
+    "stylePreview": {
+      "title": "معاينة",
+      "titleFor": "معاينة: {style}",
+      "dialogAriaLabel": "معاينة المنصات",
+      "closeAriaLabel": "إغلاق المعاينة"
     }
   },
   "useCases": {

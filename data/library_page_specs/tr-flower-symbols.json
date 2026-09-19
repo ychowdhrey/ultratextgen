@@ -1,6 +1,6 @@
 {
   "slug": "cicek-emojileri",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "title": "Çiçek Emojileri 🌸 ve Sembolleri ❀ — Kopyala Yapıştır | UltraTextGen",
   "meta_description": "Çiçek emojileri 🌸 🌹 🌻 ve çiçek sembolleri ❀ ✿ kopyala yapıştır: yapraklar, ağaçlar, doğa emojileri ve biyografi süsleri. Kopyalamak için tıkla.",
   "hero_h1": "Çiçek Emojileri ve Sembolleri",
@@ -327,6 +327,45 @@
           "label": "Çiçek Kümesi Süsü"
         }
       ]
+    }
+  ],
+  "collection_section": {
+    "id": "flower-collections",
+    "label": "Çiçek koleksiyonları",
+    "h2": "Biyografi ve ayraç çiçek setleri",
+    "intro": "Biyografine, açıklamana veya kullanıcı adına doğrudan yapıştırabileceğin hazır çiçek ayraçları ve setleri — tüm dizilimi tek tıkla kopyala."
+  },
+  "collection_container_id": "flowerCollectionsContainer",
+  "collections": [
+    {
+      "name": "Biyografi çiçek çerçevesi",
+      "flags": ["✿", "❀", "❁", "❀", "✿"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Noktalı çiçek ayracı",
+      "flags": ["✾", "·", "❀", "·", "✾"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bahçe çiçekleri seti",
+      "flags": ["🌷", "🌸", "🌼", "🌻", "🌹"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Parantezli çiçek kombinasyonu",
+      "flags": ["꒰❀꒱"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kalın çiçek çizgisi",
+      "flags": ["❋", "❃", "❋", "❃", "❋"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Yumuşak çiçekli açıklama",
+      "flags": ["❀", "🌿", "🌸", "🌿", "❀"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

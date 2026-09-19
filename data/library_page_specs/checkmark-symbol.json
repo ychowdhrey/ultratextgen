@@ -41,7 +41,7 @@
       "h2": "Marks the Check Mark Is Confused With",
       "intro": "Each of these gets typed in place of a check, and each means something else.",
       "symbols": [
-        { "char": "✗", "label": "Ballot X (U+2717) — Incorrect / No" },
+        { "char": "✗", "label": "Ballot X (U+2717): Incorrect / No" },
         { "char": "✘", "label": "Heavy Ballot X (U+2718)" },
         { "char": "√", "label": "Square Root Sign (U+221A)" },
         { "char": "✕", "label": "Multiplication X (U+2715)" },

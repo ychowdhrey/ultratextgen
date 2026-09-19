@@ -213,25 +213,29 @@ fetch is recorded before any later backfill lands.
 
 ---
 
-## Step 7 — Validate, then commit
+## Step 7 — Commit, then validate
 
-Run in this order. The diff-scoped gates only see **committed** work, so commit
-first, then run them:
+The diff-scoped gates only see **committed** work, so commit first, then run
+the gates:
 
 ```bash
 git add -A && git commit -m "feat(<locale>): translate N library pages"
 
-npm run check:new-page-images
-npm run check:faq-schema
-npm run check:translation-parity
-npm run check:locale-mesh
-npm run check:locale-parent-gap
-python3 scripts/validate_library_pages.py
-node scripts/audit-hreflang-completeness.js      # whole-site, blocking
+npm run check:ci-gates
 ```
 
-`validate_library_pages.py` is the one that catches lane mismatch (a page whose
-directory disagrees with its `hreflang="en"` counterpart's) and orphan spokes.
+*(Revised 2026-09-01: this step previously hand-listed seven gates. A prose
+gate list is exactly the drift `scripts/run-ci-gates.py` exists to end — the
+local list in CLAUDE.md drifted twice, once missing `check:locale-spec` and
+once missing `check:static-footer` — so this doc no longer enumerates them
+either. `check:ci-gates` parses `validate.yml` and runs exactly what CI gates
+on, including the two whole-site blocking checks the old list carried:
+`validate_library_pages.py` and `audit-hreflang-completeness.js`. Nothing the
+old list ran was dropped.)*
+
+Among what it runs, `validate_library_pages.py` is the one that catches lane
+mismatch (a page whose directory disagrees with its `hreflang="en"`
+counterpart's) and orphan spokes.
 
 **If `check:translation-parity` fires on siblings you did not touch:** that is the
 gate working. Either sync them in this batch or raise the divergence — never add

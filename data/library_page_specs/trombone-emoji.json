@@ -1,0 +1,89 @@
+{
+  "slug": "trombone-emoji",
+  "page_type": "symbol",
+  "title": "Trombone Emoji (🪊): Codepoint, Meaning & the Sad-Trombone Use",
+  "meta_description": "The trombone emoji 🪊 (U+1FA8A): its Unicode 17.0 codepoint, how to type it, and why the slide is the detail that made a separate emoji necessary.",
+  "canonical": "https://ultratextgen.com/symbol/trombone-emoji/",
+  "breadcrumb": "Trombone Emoji",
+  "hero_h1": "Trombone Emoji",
+  "hero_tagline": "The slide trombone 🪊 with its codepoint, its input routes, the brass and woodwind it sits beside, and the one comic cue it gets typed for most. Tap the trombone to copy it; the trumpet below is the glyph it kept getting substituted for.",
+  "intro": "🪊 TROMBONE (U+1FA8A) joined Unicode in version 17.0 and landed on most phones with iOS 26.4 in March 2026. The instrument shelf already held a trumpet, and the argument for a second brass glyph was the slide: a trombone changes pitch by moving a tube rather than pressing valves, which is both what a player sees and what the descending \"womp womp\" cue depends on. That cue is why this emoji gets typed far more often than any orchestral use would predict.",
+  "date_published": "2026-09-10",
+  "date_modified": "2026-09-10",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "trombone-core",
+      "label": "The Glyph",
+      "h2": "Trombone Emoji",
+      "intro": "The Unicode 17.0 codepoint, drawn with the slide extended on every vendor so far.",
+      "symbols": [
+        {
+          "char": "🪊",
+          "label": "Trombone (U+1FA8A)"
+        }
+      ]
+    },
+    {
+      "id": "trombone-brass",
+      "label": "The Brass Section",
+      "h2": "The Other Brass and Wind Emoji",
+      "intro": "What the instrument shelf held before the trombone was encoded.",
+      "symbols": [
+        {
+          "char": "🎺",
+          "label": "Trumpet (U+1F3BA)"
+        },
+        {
+          "char": "🎷",
+          "label": "Saxophone (U+1F3B7)"
+        },
+        {
+          "char": "🪈",
+          "label": "Flute (U+1FA88)"
+        },
+        {
+          "char": "🪗",
+          "label": "Accordion (U+1FA97)"
+        }
+      ]
+    },
+    {
+      "id": "trombone-cue",
+      "label": "The Comic Cue",
+      "h2": "Punchlines and Anticlimax",
+      "intro": "The glyphs that usually keep it company when the joke has not landed.",
+      "symbols": [
+        {
+          "char": "😬",
+          "label": "Grimacing Face (U+1F62C)"
+        },
+        {
+          "char": "🥁",
+          "label": "Drum (U+1F941)"
+        },
+        {
+          "char": "📉",
+          "label": "Chart Decreasing (U+1F4C9)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/music-symbols/",
+      "title": "Music Note Symbols",
+      "desc": "Notes, clefs, rests and the full musical-instrument emoji shelf, copy-paste ready."
+    },
+    {
+      "href": "/symbol/orca-emoji/",
+      "title": "Orca Emoji",
+      "desc": "🫍, another Unicode 17.0 addition, and the one that corrects a taxonomy people get wrong."
+    },
+    {
+      "href": "/updates/unicode-17-new-emoji-rollout/",
+      "title": "Unicode 17.0 Rollout Tracker",
+      "desc": "All eight Unicode 17.0 emoji and which platforms have drawn them so far."
+    }
+  ]
+}

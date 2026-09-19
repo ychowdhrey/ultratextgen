@@ -125,11 +125,34 @@
   </div>
 </section>
 
+    <!-- Name / word coloring sheet -->
+    <section class="bubble-alphabet" aria-labelledby="ptNameHeading">
+      <h2 id="ptNameHeading">Cetak nama untuk diwarnai</h2>
+      <p class="bubble-az-intro">Ketik nama atau kata pendek, lalu cetak sebagai huruf besar untuk diwarnai.</p>
+      <div class="pt-name-tool">
+        <div class="input-wrapper">
+          <input type="text" class="main-input pt-name-input" id="pt-name-input" placeholder="Ketik nama… mis. Rizky" maxlength="40">
+        </div>
+        <div class="pt-name-preview" id="pt-name-preview" aria-live="polite"></div>
+        <div class="bubble-actions pt-name-actions">
+          <button type="button" class="bubble-btn bubble-btn-primary" id="pt-name-print">Cetak lembarnya</button>
+          <button type="button" class="bubble-btn" id="pt-name-png">Unduh PNG</button>
+        </div>
+      </div>
+    </section>
+<figure class="guide-hero-figure pt-sheet-preview">
+  <img src="/assets/printables-previews/id-printables-mewarnai-huruf.png" width="1200" height="900"
+       alt="Mewarnai Huruf A–Z untuk Dicetak: pratinjau lembar cetak" loading="lazy">
+</figure>
+
 <section class="editorial-section">
   <h2>Pilih hurufnya</h2>
   <p class="bubble-az-intro">Ketuk sebuah huruf (A–Z) untuk melihat lembar mewarnainya dalam ukuran besar, mencetaknya, atau mengunduh PNG-nya.</p>
   <div class="bubble-strip" id="pt-strip" role="tablist" aria-label="Pilih huruf untuk diwarnai"></div>
   <div class="bubble-letter-panel" id="pt-panel" aria-live="polite"></div>
+      <div class="pt-size-field">
+        <div id="pt-size-control"></div>
+      </div>
 </section>
 
 <div class="section-divider"></div>
@@ -214,7 +237,11 @@
 </script>
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
-<script src="/js/printables/printablesEngine.js"></script>
+<script src="/js/printables/printPrefs.js"></script>
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
+<script src="/js/printables/glyphMetrics.js"></script>
+<script src="/js/printables/printablesEngine.js" defer></script>
 <script>
 document.querySelectorAll('.faq-question').forEach(function(btn) {
   btn.addEventListener('click', function() {

@@ -16,11 +16,19 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/spade-symbol/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-picche/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/spade-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/spade-symbol/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-picche/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/spade-symbol/"
+    }
   ],
   "sections": [
     {
@@ -29,9 +37,18 @@
       "h2": "Il Simbolo Picche — ♠ e ♤",
       "intro": "Il seme stesso, in entrambe le forme Unicode. Il ♠ pieno è la \"nera\" picche predefinita; ♤ è la versione \"bianca\" a contorno, e ♠️ è la forma con presentazione emoji e selettore di variazione. Pronto da incollare ovunque.",
       "symbols": [
-        { "char": "♠", "label": "Black Spade Suit (U+2660) — Piena / Riempita" },
-        { "char": "♤", "label": "White Spade Suit (U+2664) — Contorno" },
-        { "char": "♠️", "label": "Spade Suit Emoji (U+2660 U+FE0F)" }
+        {
+          "char": "♠",
+          "label": "Black Spade Suit (U+2660): Piena / Riempita"
+        },
+        {
+          "char": "♤",
+          "label": "White Spade Suit (U+2664): Contorno"
+        },
+        {
+          "char": "♠️",
+          "label": "Spade Suit Emoji (U+2660 U+FE0F)"
+        }
       ]
     },
     {
@@ -40,14 +57,38 @@
       "h2": "Tutti e Quattro i Semi — Pieni e a Contorno",
       "intro": "Unicode assegna a ogni seme francese un glifo \"nero\" pieno e uno \"bianco\" a contorno, in un'unica sequenza da U+2660 a U+2667. Nota la particolarità: picche e fiori sono pieni per impostazione predefinita, mentre cuori e quadri sono a contorno.",
       "symbols": [
-        { "char": "♠", "label": "Black Spade Suit (U+2660)" },
-        { "char": "♥", "label": "Black Heart Suit (U+2665)" },
-        { "char": "♦", "label": "Black Diamond Suit (U+2666)" },
-        { "char": "♣", "label": "Black Club Suit (U+2663)" },
-        { "char": "♤", "label": "White Spade Suit (U+2664)" },
-        { "char": "♡", "label": "White Heart Suit (U+2661)" },
-        { "char": "♢", "label": "White Diamond Suit (U+2662)" },
-        { "char": "♧", "label": "White Club Suit (U+2667)" }
+        {
+          "char": "♠",
+          "label": "Black Spade Suit (U+2660)"
+        },
+        {
+          "char": "♥",
+          "label": "Black Heart Suit (U+2665)"
+        },
+        {
+          "char": "♦",
+          "label": "Black Diamond Suit (U+2666)"
+        },
+        {
+          "char": "♣",
+          "label": "Black Club Suit (U+2663)"
+        },
+        {
+          "char": "♤",
+          "label": "White Spade Suit (U+2664)"
+        },
+        {
+          "char": "♡",
+          "label": "White Heart Suit (U+2661)"
+        },
+        {
+          "char": "♢",
+          "label": "White Diamond Suit (U+2662)"
+        },
+        {
+          "char": "♧",
+          "label": "White Club Suit (U+2667)"
+        }
       ]
     },
     {
@@ -56,11 +97,26 @@
       "h2": "L'Asso di Picche e i Glifi delle Carte da Gioco",
       "intro": "La carta più leggendaria del mazzo: l'Inghilterra ha marchiato l'Asso di Picche con un bollo fiscale dal 1712 e ne ha stampato il disegno ornato dello Stamp Office dopo il 1765, e una storia di guerra molto ripetuta (e molto discussa) racconta di truppe americane in Vietnam che lo usavano come \"carta della morte\". Il blocco Playing Cards di Unicode assegna a ogni carta il proprio glifo — ecco i quattro assi e il dorso della carta.",
       "symbols": [
-        { "char": "🂡", "label": "Playing Card Ace of Spades (U+1F0A1)" },
-        { "char": "🂱", "label": "Playing Card Ace of Hearts (U+1F0B1)" },
-        { "char": "🃁", "label": "Playing Card Ace of Diamonds (U+1F0C1)" },
-        { "char": "🃑", "label": "Playing Card Ace of Clubs (U+1F0D1)" },
-        { "char": "🂠", "label": "Playing Card Back (U+1F0A0)" }
+        {
+          "char": "🂡",
+          "label": "Playing Card Ace of Spades (U+1F0A1)"
+        },
+        {
+          "char": "🂱",
+          "label": "Playing Card Ace of Hearts (U+1F0B1)"
+        },
+        {
+          "char": "🃁",
+          "label": "Playing Card Ace of Diamonds (U+1F0C1)"
+        },
+        {
+          "char": "🃑",
+          "label": "Playing Card Ace of Clubs (U+1F0D1)"
+        },
+        {
+          "char": "🂠",
+          "label": "Playing Card Back (U+1F0A0)"
+        }
       ]
     }
   ],

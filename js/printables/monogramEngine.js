@@ -34,6 +34,11 @@
      English default — which is exactly what a locale needs when its layout
      names already read as a complete phrase and no trailing noun belongs. */
   const pick = (v, dflt) => (v === undefined || v === null ? dflt : v);
+  /* Sheet setup + the shared action-row strings, from
+     js/printables/printPrefs.js. Before 2026-09-16 this tool wrote a
+     hardcoded 8.5x11in page with no way to ask for A4. */
+  const PP = window.UltraTextGen && window.UltraTextGen.printPrefs;
+  const SL = PP ? PP.shareLabels() : { share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", savePdf: "Download PDF" };
   const T = {
     noun:        pick(CFG.noun, "Monogram"),
     typeInitials:pick(CFG.typeInitials, "Type initials"),
@@ -42,8 +47,20 @@
     /* state.layout holds the raw data-value ("classic"/"stacked"/"circle"), so
        it must be mapped before it reaches a user-facing label. */
     layoutNames: CFG.layoutNames || { classic: "classic", stacked: "stacked", circle: "circle" },
-    printTitle:  pick(CFG.printTitle, "Monogram — ")
+    printTitle:  pick(CFG.printTitle, "Monogram — "),
+    /* Share row + PDF. The page's own config still wins; the fallback is no
+       longer English but this locale's own string from printPrefs.js's
+       SHARE_I18N, so a translated page that omits them gets its own language
+       rather than an English share row under a translated panel. */
+    share:       pick(CFG.share, SL.share),
+    shareImage:  pick(CFG.shareImage, SL.shareImage),
+    copyLink:    pick(CFG.copyLink, SL.copyLink),
+    linkCopied:  pick(CFG.linkCopied, SL.linkCopied),
+    pinterest:   pick(CFG.pinterest, SL.pinterest),
+    savePdf:     pick(CFG.savePdf, SL.savePdf)
   };
+  const INK_SAVER_ALPHA = 0.72;   // the value style.css already prints at
+  const inkSaverOn = () => !!(PP && PP.values.ink === "saver");
   const WEIGHT = "700";
   const VB = 400; // SVG viewBox is 0 0 400 400
 
@@ -191,7 +208,11 @@
     const host = byId("mono-preview");
     if (!host) return;
     host.innerHTML = "";
-    host.appendChild(buildMonogramSVG());
+    const svg = buildMonogramSVG();
+    // Ink saver has to be visible here, not only on the sheet: a checkbox
+    // with no on-screen consequence is the report the panel was rebuilt for.
+    if (inkSaverOn()) svg.setAttribute("opacity", String(INK_SAVER_ALPHA));
+    host.appendChild(svg);
   }
 
   let debounceTimer = null;
@@ -205,6 +226,45 @@
   // Playfair Display arrives asynchronously via the page's Google Fonts <link>.
   // Canvas measuring/drawing before it loads would use fallback metrics, so we
   // re-run `cb` once the face is ready.
+  /* The QR encoder has ONE owner, js/printables/qr.js, and it is pulled in by
+     the engine rather than tagged on the page -- the same ownership
+     printablesEngine's loadQrModule() uses, so a locale build of this page
+     gets it without a markup change. Only the PLACEMENT is per-engine, because
+     the geometry differs: this canvas is a square with free corners, while the
+     coloring and puzzle sheets are full-bleed and take a strip underneath. */
+  function loadQrModule() {
+    if (window.UltraTextGen && window.UltraTextGen.qr) return;
+    if (document.querySelector('script[data-pt-qr]')) return;
+    const sc = document.createElement("script");
+    sc.src = "/js/printables/qr.js";
+    sc.async = true;
+    sc.setAttribute("data-pt-qr", "");
+    sc.onerror = function () { console.warn("[monogram] js/printables/qr.js failed to load; the sheet carries the text credit only."); };
+    document.head.appendChild(sc);
+  }
+  function qrModule() { return (window.UltraTextGen && window.UltraTextGen.qr) || null; }
+
+  /* How many canvas pixels the QR box needs so the PRINTED symbol clears the
+     ~0.5mm per module a phone camera can resolve.
+
+     Derived from the symbol actually encoded, never from a guessed version.
+     That distinction is the whole point: this shipped sized for a 33-module
+     version-4 symbol, which is what the English URL encodes to, and the French
+     cross-stitch URL is longer and encodes to version 5 at 37 modules. It
+     measured 0.210 mm/module and would not have scanned, while the English
+     page looked fine. `quiet` is qr.js's own default 4-module margin each
+     side, which is part of the drawn box but not of the symbol. */
+  function qrBoxPx(qrNs, url, canvasPx, printWidthIn) {
+    var MM_PER_MODULE = 0.59;   // the figure the coloring sheets measured at
+    var QUIET = 4;
+    var sym = qrNs.encode(url);
+    var modules = sym ? sym.size : 45;             // fail safe: assume large
+    var symbolIn = modules * MM_PER_MODULE / 25.4;
+    var boxIn = symbolIn * (modules + QUIET * 2) / modules;
+    return Math.round(boxIn / printWidthIn * canvasPx);
+  }
+
+
   function whenFontReady(cb) {
     if (document.fonts && document.fonts.load) {
       document.fonts.load('700 40px "Playfair Display"').then(cb).catch(cb);
@@ -217,11 +277,16 @@
 
   function inkCanvas(ctx, ch, x, y, px) {
     if (state.style === "outline") {
-      ctx.fillStyle = "#ffffff";
-      ctx.fillText(ch, x, y);
+      // The SVG above sets the same stroke-width with paint-order="stroke",
+      // so only its outer half shows. Canvas has no paint-order: stroke
+      // first, fill over it, or the PNG carries twice the SVG's ink.
+      // (Same class of defect as printablesEngine.js's letterPNG, 2026-09-13.)
       ctx.lineWidth = Math.max(3, px * 0.045);
       ctx.strokeStyle = INK;
+      ctx.lineJoin = "round";
       ctx.strokeText(ch, x, y);
+      ctx.fillStyle = "#ffffff";
+      ctx.fillText(ch, x, y);
     } else {
       ctx.fillStyle = INK;
       ctx.fillText(ch, x, y);
@@ -287,11 +352,16 @@
     drawRowCanvas(ctx, s, items, 200 * s, true);
   }
 
-  function downloadPNG() {
+  // The 1600x1600 canvas every export path draws: PNG download, image
+  // share and the PDF page all come from this one builder.
+  function withCanvas(cb) {
     whenFontReady(function () {
       const v = vals();
-      const size = 1600;
-      const s = size / VB; // 4x
+      /* 1600px over the printed ~6.5in is already ~246dpi; the DPI control
+         lifts it to ~369. The canvas is a fixed square, so quality is a size
+         here rather than the rasteriser scale printablesEngine passes. */
+      const size = (PP && PP.values.quality === "high") ? 2400 : 1600;
+      const s = size / VB;
       const canvas = document.createElement("canvas");
       canvas.width = size;
       canvas.height = size;
@@ -300,6 +370,8 @@
       ctx.fillRect(0, 0, size, size);
       ctx.textAlign = "center";
       ctx.lineJoin = "round";
+      // After the white fill, so the paper stays white and only the ink fades.
+      if (inkSaverOn()) ctx.globalAlpha = INK_SAVER_ALPHA;
 
       if (v.l || v.c || v.r) {
         if (state.layout === "stacked") drawStackedCanvas(ctx, s, v);
@@ -307,7 +379,38 @@
         else drawClassicCanvas(ctx, s, v);
       }
 
+      /* Site credit with the page path, low contrast, in the bottom margin:
+         the same line printablesEngine and crossStitchEngine draw, read from
+         header.js so the three cannot drift. The QR beside it carries the same
+         URL, because a PNG cannot carry a link.
+
+         Sized by qrBoxPx() from the symbol this page's own URL encodes to,
+         against the ~6.5in this sheet prints at. Measured on a real export,
+         the largest clear bottom-right square is 420px, so the box fits. */
+      const qrNs = qrModule();
+      if (qrNs) {
+        const qrSize = qrBoxPx(qrNs, creditUrl(), size, 6.5);
+        const qrPad = Math.round(qrSize * 0.35);
+        qrNs.drawQrOnCanvas(ctx, creditUrl(), size - qrSize - qrPad, size - qrSize - qrPad, qrSize, {
+          // The TEXT credit is deliberately low-contrast; the QR must not be.
+          // Drawn in #aeb4c0 first, its darkest pixel measured 171/255 and no
+          // decoder could read it -- a faint QR looks exactly like a QR.
+          dark: INK,
+          light: "#ffffff"
+        });
+      }
+      ctx.font = "22px 'Plus Jakarta Sans', system-ui, sans-serif";
+      ctx.fillStyle = "#aeb4c0";
+      ctx.textAlign = "center";
+      ctx.fillText(siteCredit(), size / 2, size - 24);
+
       const slug = (v.l + v.c + v.r).toLowerCase() || "initials";
+      cb(canvas, slug);
+    });
+  }
+
+  function downloadPNG() {
+    withCanvas(function (canvas, slug) {
       canvas.toBlob(function (blob) {
         if (!blob) return;
         const url = URL.createObjectURL(blob);
@@ -318,13 +421,107 @@
         a.click();
         document.body.removeChild(a);
         setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+        trackPrintable("download_png", "monogram");
       }, "image/png");
+    });
+  }
+
+  function shareImage() {
+    withCanvas(function (canvas, slug) {
+      canvas.toBlob(function (blob) {
+        if (!blob) return;
+        const ns = window.UltraTextGen;
+        if (ns && ns.shareImageBlob) {
+          ns.shareImageBlob(blob, { filename: "monogram-" + slug + ".png", title: document.title, text: presetUrl(), surface: "printables", itemType: "printable" });
+        }
+      }, "image/png");
+    });
+  }
+
+  // js/printables/printablePdf.js is fetched on first use, never on load.
+  let pdfModulePromise = null;
+  function loadPdfModule() {
+    const ns = window.UltraTextGen;
+    if (ns && ns.pdf) return Promise.resolve(ns.pdf);
+    if (pdfModulePromise) return pdfModulePromise;
+    pdfModulePromise = new Promise(function (resolve, reject) {
+      const sc = document.createElement("script");
+      sc.src = "/js/printables/printablePdf.js";
+      sc.async = true;
+      sc.onload = function () { resolve(window.UltraTextGen && window.UltraTextGen.pdf); };
+      sc.onerror = function () { pdfModulePromise = null; reject(new Error("pdf module failed to load")); };
+      document.head.appendChild(sc);
+    });
+    return pdfModulePromise;
+  }
+
+  function savePdf() {
+    withCanvas(function (canvas, slug) {
+      loadPdfModule().then(function (P) {
+        if (!P || !P.supported()) { printMonogram(); return; }
+        /* The page the visitor chose, not a hardcoded US Letter. The margin
+           keeps its generous square inset -- a monogram is a display piece,
+           not a worksheet -- but never less than the panel's own margin. */
+        const paper = PP ? PP.paperFull() : { w: 8.5, h: 11 };
+        const m = PP ? PP.marginIn() : 0.5;
+        return P.fromCanvases([canvas], { paperIn: paper, marginIn: { x: Math.max(0.75, m), y: Math.max(1.0, m) }, title: document.title })
+          .then(function (blob) { P.download(blob, "monogram-" + slug + ".pdf"); trackPrintable("download_pdf", "monogram"); });
+      }).catch(function () { printMonogram(); });
+    });
+  }
+
+  /* ---------- preset link (the share URL) ---------- */
+
+  function presetUrl() {
+    const v = vals();
+    const params = new URLSearchParams();
+    if (v.l) params.set("l", v.l);
+    if (v.c) params.set("c", v.c);
+    if (v.r) params.set("r", v.r);
+    if (state.layout !== "classic") params.set("layout", state.layout);
+    if (state.style !== "solid") params.set("style", state.style);
+    const qs = params.toString();
+    return window.location.origin + window.location.pathname + (qs ? "?" + qs : "");
+  }
+
+  function applyPreset() {
+    let q = null;
+    try { q = new URLSearchParams(window.location.search); } catch (err) { return; }
+    [["l", "mono-left"], ["c", "mono-center"], ["r", "mono-right"]].forEach(function (pair) {
+      const val = q.get(pair[0]);
+      const input = byId(pair[1]);
+      if (val != null && input) input.value = val.slice(0, 1).toUpperCase();
+    });
+    [["layout", "mono-layout-group"], ["style", "mono-style-group"]].forEach(function (pair) {
+      const val = q.get(pair[0]);
+      const group = byId(pair[1]);
+      if (!val || !group) return;
+      const btn = group.querySelector('[data-value="' + val.replace(/[^a-z-]/g, "") + '"]');
+      if (btn) btn.click();
     });
   }
 
   /* ---------- print (isolated #pt-print-root surface) ---------- */
 
+  // Printable output telemetry lives in header.js (window.UltraTextGen.
+  // trackPrintable) — this engine is a separate IIFE from printablesEngine.js
+  // and a second copy of the event's shape would drift from it.
+  function trackPrintable(action, sheet) {
+    if (window.UltraTextGen && window.UltraTextGen.trackPrintable) {
+      window.UltraTextGen.trackPrintable(action, sheet);
+    }
+  }
+
+  function siteCredit() {
+    if (window.UltraTextGen && window.UltraTextGen.printableCredit) return window.UltraTextGen.printableCredit();
+    return "ultratextgen.com";
+  }
+  // Same derivation printablesEngine uses, so the scanned URL and the printed
+  // line can never name different pages.
+  function creditUrl() { return "https://" + siteCredit() + "/"; }
+
   function printMonogram() {
+    trackPrintable("print", "monogram");
     const root = byId("pt-print-root");
     if (!root) { window.print(); return; }
     const v = vals();
@@ -432,25 +629,89 @@
   /* ---------- init ---------- */
 
   function init() {
+    loadQrModule();
     wireInput("mono-left");
     wireInput("mono-center");
     wireInput("mono-right");
     wireSwatchGroup(byId("mono-layout-group"), "layout", layoutIcon);
     wireSwatchGroup(byId("mono-style-group"), "style", styleIcon);
 
+    /* The primary action writes a PDF; savePdf() already falls back to
+       printMonogram() when the PDF module cannot run, so the print dialog
+       remains reachable without being offered as its own button (owner
+       decision 2026-09-15). Relabelled here rather than in the page so no
+       page HTML is touched, matching printablesEngine.js. */
     const printBtn = byId("mono-print");
-    if (printBtn) printBtn.addEventListener("click", printMonogram);
+    if (printBtn) {
+      printBtn.textContent = T.savePdf;
+      printBtn.classList.add("pt-pdf-btn");
+      printBtn.addEventListener("click", savePdf);
+    }
     const pngBtn = byId("mono-png");
     if (pngBtn) pngBtn.addEventListener("click", downloadPNG);
 
+    /* Sheet setup, above the action row exactly as printablesEngine mounts
+       it: choosing the page is a pre-export decision. Only the four controls
+       this tool actually honours are rendered -- it rasterises one fixed
+       square canvas, so paper, orientation, margins, ink saver and DPI all
+       apply, but nothing else would. */
+    const actionRow = (printBtn || pngBtn) && (printBtn || pngBtn).parentNode;
+    if (PP && actionRow && !byId("pt-print-settings")) {
+      const tools = document.createElement("div");
+      tools.className = "pt-print-tools";
+      tools.id = "pt-print-settings";
+      tools.appendChild(PP.buildPanel({
+        only: ["paper", "orientation", "margins", "ink", "quality"],
+        onChange: render
+      }));
+      actionRow.parentNode.insertBefore(tools, actionRow);
+    }
+
+    // Share row (share-core's builder, the same one the sheet engine uses)
+    // under the action buttons; a share link reopens this exact monogram.
+    const ns = window.UltraTextGen;
+    const actions = (pngBtn || printBtn) && (pngBtn || printBtn).parentNode;
+    if (ns && ns.buildShareRow && actions) {
+      const og = document.querySelector('meta[property="og:image"]');
+      actions.insertAdjacentElement("afterend", ns.buildShareRow({
+        className: "pt-share-row",
+        url: presetUrl,
+        surface: "printables",
+        itemType: "printable",
+        labels: { share: T.share, shareImage: T.shareImage, copyLink: T.copyLink, linkCopied: T.linkCopied, pinterest: T.pinterest },
+        /* Only where the OS can actually take the file. Without the gate
+           share-core's shareImageBlob falls through to a plain download, so
+           on desktop this button was a second "Download PNG" sitting beside
+           the first -- the exact duplication printablesEngine.js gates
+           against, missed here when the row was added on 2026-09-10. */
+        onShareImage: (ns.canShareFiles && ns.canShareFiles()) ? shareImage : null,
+        pinMedia: function () { return og ? og.getAttribute("content") : ""; }
+      }));
+    } else if (!(ns && ns.buildShareRow)) {
+      // Never fail silently: no share row looks identical to a page that
+      // never had one. See printablesEngine.js for the full note (2026-09-13).
+      console.warn("[printables] share-core.js has not loaded; the share row is not rendered. Check that /js/share/share-core.js is tagged before this engine.");
+    }
+
+    applyPreset();
     render();
     // Re-render once Playfair loads so measured positions are exact.
     whenFontReady(render);
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
+  /* Keyed on "complete", not on "loading" — the idiom symbol-explorer.js
+     settled on after shipping the bug. This file and the two modules it
+     depends on are all `defer`, and every deferred script runs BEFORE
+     DOMContentLoaded fires. During this file's own execution readyState is
+     already "interactive", so a `=== "loading"` guard runs init() immediately;
+     it worked only because share-core.js and saved-items.js happen to sit
+     earlier in document order on every page that loads this engine. Move a
+     tag and the share row and the saved-sheets strip stop rendering, with no
+     error and no failing check. Keying on "complete" makes the wiring
+     independent of tag order (2026-09-13). */
+  if (document.readyState === "complete") {
     init();
+  } else {
+    document.addEventListener("DOMContentLoaded", init);
   }
 })();

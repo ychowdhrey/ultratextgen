@@ -17,9 +17,18 @@
   "crumb_library": "Symboles",
   "library_url": "https://ultratextgen.com/fr/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/crescent-and-star/" },
-    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/croissant-et-etoile/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/crescent-and-star/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/crescent-and-star/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/croissant-et-etoile/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/crescent-and-star/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Le Symbole Croissant et Étoile — ☪ & ☪️",
       "intro": "Le croissant et l'étoile Unicode, prêt à coller dans une bio, un post ou un profil. Deux formes : le glyphe noir tout simple et l'emoji en pleine couleur.",
       "symbols": [
-        { "char": "☪", "label": "Croissant et Étoile (U+262A)" },
-        { "char": "☪️", "label": "Emoji Croissant et Étoile (U+262A U+FE0F)" }
+        {
+          "char": "☪",
+          "label": "Croissant et Étoile (U+262A)"
+        },
+        {
+          "char": "☪️",
+          "label": "Emoji Croissant et Étoile (U+262A U+FE0F)"
+        }
       ]
     },
     {
@@ -38,12 +53,30 @@
       "h2": "Pas la Même Chose qu'un Simple Croissant ou une Simple Étoile",
       "intro": "Le croissant et l'étoile forme un seul glyphe combiné. Les caractères séparés de croissant de lune et d'étoile, que l'on va souvent chercher à la place, ont chacun leur propre point de code et leur propre rôle.",
       "symbols": [
-        { "char": "☾", "label": "Dernier Quartier de Lune (U+263E) — Croissant Tout Simple" },
-        { "char": "☽", "label": "Premier Quartier de Lune (U+263D)" },
-        { "char": "🌙", "label": "Emoji Croissant de Lune (U+1F319)" },
-        { "char": "⭐", "label": "Étoile Blanche Moyenne (U+2B50)" },
-        { "char": "★", "label": "Étoile Noire (U+2605)" },
-        { "char": "☆", "label": "Étoile Blanche (U+2606)" }
+        {
+          "char": "☾",
+          "label": "Dernier Quartier de Lune (U+263E): Croissant Tout Simple"
+        },
+        {
+          "char": "☽",
+          "label": "Premier Quartier de Lune (U+263D)"
+        },
+        {
+          "char": "🌙",
+          "label": "Emoji Croissant de Lune (U+1F319)"
+        },
+        {
+          "char": "⭐",
+          "label": "Étoile Blanche Moyenne (U+2B50)"
+        },
+        {
+          "char": "★",
+          "label": "Étoile Noire (U+2605)"
+        },
+        {
+          "char": "☆",
+          "label": "Étoile Blanche (U+2606)"
+        }
       ]
     },
     {
@@ -52,20 +85,53 @@
       "h2": "Autres Symboles Religieux Auxquels on l'Associe",
       "intro": "Le croissant et l'étoile est généralement recherché et affiché aux côtés des symboles identitaires d'autres religions du monde. Voici ceux dont il se rapproche le plus souvent.",
       "symbols": [
-        { "char": "✡️", "label": "Étoile de David (U+2721)" },
-        { "char": "✝️", "label": "Croix Latine (U+271D)" },
-        { "char": "☸️", "label": "Roue du Dharma (U+2638)" },
-        { "char": "🕉️", "label": "Om (U+1F549)" },
-        { "char": "☯️", "label": "Yin et Yang (U+262F)" },
-        { "char": "☬", "label": "Khanda / Adi Shakti (U+262C)" }
+        {
+          "char": "✡️",
+          "label": "Étoile de David (U+2721)"
+        },
+        {
+          "char": "✝️",
+          "label": "Croix Latine (U+271D)"
+        },
+        {
+          "char": "☸️",
+          "label": "Roue du Dharma (U+2638)"
+        },
+        {
+          "char": "🕉️",
+          "label": "Om (U+1F549)"
+        },
+        {
+          "char": "☯️",
+          "label": "Yin et Yang (U+262F)"
+        },
+        {
+          "char": "☬",
+          "label": "Khanda / Adi Shakti (U+262C)"
+        }
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
   "related": [
-    { "href": "/library/religious-symbols/", "title": "Religious Symbols", "desc": "Les symboles de foi de chaque grande religion mondiale réunis dans une même référence à parcourir (en anglais)." },
-    { "href": "/library/islamic-symbols/", "title": "Islamic Symbols", "desc": "Le croissant et l'étoile aux côtés de la calligraphie « Allah », de la mosquée, de la prière et des autres symboles liés à l'islam (en anglais)." },
-    { "href": "/fr/symbol/etoile-de-david/", "title": "Étoile de David (✡)", "desc": "Un autre emblème de foi surtout connu via un drapeau national, à la géométrie partagée bien plus ancienne que la religion qu'il représente aujourd'hui." },
-    { "href": "/fr/symbol/symbole-hamsa/", "title": "Symbole Hamsa", "desc": "La Main de Fatima — un signe protecteur partagé entre l'islam et le judaïsme qui, comme le croissant et l'étoile, n'est pas d'origine scripturaire." }
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Les symboles de foi de chaque grande religion mondiale réunis dans une même référence à parcourir (en anglais)."
+    },
+    {
+      "href": "/library/islamic-symbols/",
+      "title": "Islamic Symbols",
+      "desc": "Le croissant et l'étoile aux côtés de la calligraphie « Allah », de la mosquée, de la prière et des autres symboles liés à l'islam (en anglais)."
+    },
+    {
+      "href": "/fr/symbol/etoile-de-david/",
+      "title": "Étoile de David (✡)",
+      "desc": "Un autre emblème de foi surtout connu via un drapeau national, à la géométrie partagée bien plus ancienne que la religion qu'il représente aujourd'hui."
+    },
+    {
+      "href": "/fr/symbol/symbole-hamsa/",
+      "title": "Symbole Hamsa",
+      "desc": "La Main de Fatima — un signe protecteur partagé entre l'islam et le judaïsme qui, comme le croissant et l'étoile, n'est pas d'origine scripturaire."
+    }
   ]
 }

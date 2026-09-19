@@ -260,7 +260,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Kann ich das auch für meinen Insta-Namen oder Gamer-Namen nehmen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja — und genau dafür wird's am häufigsten benutzt. Unicode-Zeichen zählen als normaler Text, also schluckt sie das Namensfeld bei Instagram, TikTok, Discord, Roblox, Steam oder CS in den meisten Fällen problemlos. Beispiel: aus „DarkWolf“ wird „𝔇𝔞𝔯𝔨𝔚𝔬𝔩𝔣“ (Gothic) oder „ⒹⓐⓡⓚⓌⓞⓛⓕ“ (Bubble). Tipp: Wenn ein Stil bei einer Plattform zickt (z. B. Zalgo bei Discord), probier einen Klassiker wie Bold oder Bubble — die haben fast überall freie Fahrt."
+        "text": "Ja, und genau dafür wird's am häufigsten benutzt. Unicode-Zeichen zählen als normaler Text, also schluckt sie das Namensfeld bei Instagram, TikTok, Discord, Roblox, Steam oder CS in den meisten Fällen problemlos. Beispiel: aus „DarkWolf“ wird „𝔇𝔞𝔯𝔨𝔚𝔬𝔩𝔣“ (Gothic) oder „ⒹⓐⓡⓚⓌⓞⓛⓕ“ (Bubble). Tipp: Wenn ein Stil bei einer Plattform zickt (z. B. Zalgo bei Discord), probier einen Klassiker wie Bold oder Bubble — die haben fast überall freie Fahrt."
       }
     },
     {
@@ -371,6 +371,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <textarea class="main-input" id="mainInput" placeholder="Hier deinen Text eintippen…" data-i18n-placeholder="ui.placeholder" maxlength="500" autofocus=""></textarea>
           <button class="input-clear-btn" id="inputClearBtn" aria-label="Clear input" hidden="">✕</button>
           <span class="char-count" id="charCountWrapper" hidden=""><span id="charCount">0</span>/500</span>
+        </div>
+
+        <!-- Accent-aware hint: shows only when the input contains diacritics -->
+        <div class="accent-notice" id="accentNotice" role="note" hidden>
+          <span class="accent-notice-icon" aria-hidden="true">◌̈</span>
+          <span class="accent-notice-text">Dein Text enthält Umlaute oder Akzente. Fett, Schreibschrift, Fraktur und die meisten anderen Stile behalten <b>ä</b>, <b>ö</b> und <b>ü</b> jetzt mit dem Zeichen — nur wenige (Kopfüber-Text, und <b>ß</b>, das keine Form mit Zeichen hat) fallen auf einfache Buchstaben zurück. <a href="/guide/fancy-fonts-and-accents/">Welche Stile Umlaute behalten →</a></span>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Schließen">✕</button>
         </div>
 
         <!-- Decoration Selector -->
@@ -953,7 +960,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer" data-i18n-html="faq.categories.3.items.1.answer">Ja — und genau dafür wird’s am häufigsten benutzt. Unicode-Zeichen zählen als normaler Text, also schluckt sie das Namensfeld bei Instagram, TikTok, Discord, Roblox, Steam oder CS in den meisten Fällen problemlos.
+  <div class="faq-answer" data-i18n-html="faq.categories.3.items.1.answer">Ja, und genau dafür wird’s am häufigsten benutzt. Unicode-Zeichen zählen als normaler Text, also schluckt sie das Namensfeld bei Instagram, TikTok, Discord, Roblox, Steam oder CS in den meisten Fällen problemlos.
     <br><br>
     <strong>Beispiel</strong><br>
     Normaler Name: „DarkWolf“<br>
@@ -1233,7 +1240,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
 <script src="/script.js" defer=""></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/i18n.js" defer></script>
 
 
