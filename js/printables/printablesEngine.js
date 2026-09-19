@@ -747,6 +747,119 @@
      --------------------------------------------------------------- */
 
   // A single character as a rounded, traceable SVG outline (outline mode).
+  /* OUT-15 -- bridged stencils.
+
+     /printables/block-letters/ is titled "Block Letters & Letter Stencils",
+     its how-to step 2 says "cut along the border for a reusable stencil", and
+     cutting along the border of A B D O P Q R 0 4 6 8 9 drops the counter on
+     the floor. Twelve of its thirty-six characters could not be made into the
+     thing the page is named after.
+
+     The bridges are found from the glyph, by js/printables/stencil.js, rather
+     than from a per-letter table: a table would be tuned to one typeface and
+     silently wrong for the next, and a page here can choose its own face.
+
+     ADDITIVE AND OFF BY DEFAULT. This page is the site's largest single
+     revenue URL and its registry action is PROTECT/additive-only, so the
+     ordinary outline is byte-for-byte what it was and the stencil is a second
+     mode behind a control the visitor has to turn on.
+
+     Geometry is mapped INK BOX TO INK BOX, never by assuming the two
+     rasterisers agree about baselines: canvas has no equivalent of SVG's
+     dominant-baseline:central, so the mask is measured from its own pixels
+     and the stencil variant places its text by an explicitly computed ink
+     box. That is also why the stencil variant sits fractionally differently
+     from the plain outline -- it is centred on its ink rather than on the
+     font's central axis. */
+  const STENCIL_TYPE_PX = 200;        // canvas type size the mask is drawn at
+  const STENCIL_BRIDGE_EM = 0.055;    // strip width, as a fraction of ink height
+  let stencilOnFlag = false;
+  let stencilWarned = false;
+
+  function stencilModule() {
+    const ns = window.UltraTextGen && window.UltraTextGen.stencil;
+    if (!ns && !stencilWarned) {
+      stencilWarned = true;
+      console.warn("[printables] js/printables/stencil.js has not loaded; the stencil mode draws the plain outline, with no bridges.");
+    }
+    return ns || null;
+  }
+  function loadStencilModule() {
+    if (window.UltraTextGen && window.UltraTextGen.stencil) return;
+    if (document.querySelector("script[data-pt-stencil]")) return;
+    const sc = document.createElement("script");
+    sc.src = "/js/printables/stencil.js";
+    sc.async = true;
+    sc.setAttribute("data-pt-stencil", "");
+    sc.onerror = () => console.warn("[printables] js/printables/stencil.js failed to load; the stencil mode draws the plain outline.");
+    document.head.appendChild(sc);
+  }
+  function stencilOn() { return stencilOnFlag && CFG.stencil === true && RENDER === "outline"; }
+
+  /* The glyph as a bitmap, plus the ink box measured from the bitmap itself
+     and the type metrics the caller needs to place the same glyph elsewhere.
+     Returns null for a character with no ink (a space) or before the face has
+     loaded, and the caller then draws the plain outline. */
+  function stencilMask(ch) {
+    const probe = document.createElement("canvas").getContext("2d");
+    if (!probe) return null;
+    const M = STENCIL_TYPE_PX;
+    probe.font = "700 " + M + "px " + FONT;
+    const m = probe.measureText(ch);
+    const left = -m.actualBoundingBoxLeft, right = m.actualBoundingBoxRight;
+    const top = -m.actualBoundingBoxAscent, bottom = m.actualBoundingBoxDescent;
+    const iw = right - left, ih = bottom - top;
+    if (!(iw > 1 && ih > 1)) return null;
+    const pad = Math.ceil(Math.max(iw, ih) * 0.1) + 4;
+    const canvas = document.createElement("canvas");
+    canvas.width = Math.ceil(iw) + pad * 2;
+    canvas.height = Math.ceil(ih) + pad * 2;
+    const g = canvas.getContext("2d");
+    g.font = "700 " + M + "px " + FONT;
+    g.textAlign = "left";
+    g.textBaseline = "alphabetic";
+    g.fillStyle = "#000000";
+    g.fillText(ch, pad - left, pad - top);
+    const data = g.getImageData(0, 0, canvas.width, canvas.height).data;
+    const mask = new Uint8Array(canvas.width * canvas.height);
+    let minX = canvas.width, minY = canvas.height, maxX = -1, maxY = -1;
+    for (let i = 0, j = 0; i < data.length; i += 4, j++) {
+      if (data[i + 3] <= 128) continue;
+      mask[j] = 1;
+      const x = j % canvas.width, y = (j - x) / canvas.width;
+      if (x < minX) minX = x;
+      if (x > maxX) maxX = x;
+      if (y < minY) minY = y;
+      if (y > maxY) maxY = y;
+    }
+    if (maxX < 0) return null;
+    return {
+      mask: mask, w: canvas.width, h: canvas.height,
+      box: { x: minX, y: minY, w: maxX - minX + 1, h: maxY - minY + 1 },
+      M: M, left: left, right: right, top: top, bottom: bottom
+    };
+  }
+
+  /* Bridge rectangles in a destination ink box. strokePx is the outline's own
+     stroke weight in destination units, so the strip is wide enough to cover
+     the cut line on both sides of the wall rather than leaving two hairlines
+     the scissors follow anyway. */
+  function stencilRects(geo, dst, strokePx) {
+    const sten = stencilModule();
+    if (!sten || !geo) return [];
+    const toDst = dst.h / geo.box.h;
+    const width = Math.max(2, Math.round(dst.h * STENCIL_BRIDGE_EM / toDst));
+    const pad = Math.max(1, Math.round((strokePx || 0) / toDst));
+    const rects = sten.findBridges(geo.mask, geo.w, geo.h, { width: width, pad: pad });
+    const sx = dst.w / geo.box.w, sy = dst.h / geo.box.h;
+    return rects.map((r) => ({
+      x: dst.x + (r.x - geo.box.x) * sx,
+      y: dst.y + (r.y - geo.box.y) * sy,
+      w: r.w * sx,
+      h: r.h * sy
+    }));
+  }
+
   function outlineSVG(ch, opts) {
     const o = opts || {};
     const svg = document.createElementNS(SVGNS, "svg");
@@ -782,6 +895,38 @@
     if (skew) text.setAttribute("transform", skew);
     text.textContent = ch;
     svg.appendChild(text);
+    /* The stencil variant re-places the glyph on its own ink box so the
+       bridges can be mapped onto it exactly, and then breaks the cut line
+       where the walls are thinnest. A character with no counter gets no
+       rects, which is why nothing had to enumerate which twelve they are. */
+    const wantStencil = o.stencil != null ? o.stencil : stencilOn();
+    if (wantStencil && !skew) {
+      const geo = stencilMask(ch);
+      if (geo) {
+        const k = 210 / geo.M;
+        const dst = {
+          w: (geo.right - geo.left) * k,
+          h: (geo.bottom - geo.top) * k,
+          x: 0, y: 0
+        };
+        dst.x = 100 - dst.w / 2;
+        dst.y = 120 - dst.h / 2;
+        text.setAttribute("text-anchor", "start");
+        text.setAttribute("dominant-baseline", "alphabetic");
+        text.setAttribute("x", String(dst.x - geo.left * k));
+        text.setAttribute("y", String(dst.y - geo.top * k));
+        const sw = Math.max(4, STROKE * strokeScale);
+        stencilRects(geo, dst, sw).forEach((r) => {
+          const rect = document.createElementNS(SVGNS, "rect");
+          rect.setAttribute("x", String(r.x));
+          rect.setAttribute("y", String(r.y));
+          rect.setAttribute("width", String(r.w));
+          rect.setAttribute("height", String(r.h));
+          rect.setAttribute("fill", "#ffffff");
+          svg.appendChild(rect);
+        });
+      }
+    }
     if (o.overlay) addStrokeOverlay(svg, ch);
     return svg;
   }
@@ -795,7 +940,7 @@
     const o = opts || {};
     const chars = [...String(word)];
     const fontSize = 150;
-    const spacing = fontSize * (o.spacing != null ? o.spacing : LETTER_SPACING);
+    const spacing = fontSize * ((o.spacing != null ? o.spacing : LETTER_SPACING) + spacingBoost);
     const w = Math.max(200, chars.length * 118 + 80 + Math.max(0, chars.length - 1) * spacing);
     const svg = document.createElementNS(SVGNS, "svg");
     svg.setAttribute("viewBox", "0 0 " + w + " 200");
@@ -810,8 +955,14 @@
     text.setAttribute("font-family", o.font || FONT);
     text.setAttribute("font-weight", "700");
     text.setAttribute("font-size", String(fontSize));
+    /* The name-tracing family draws its rows here rather than through
+       levelSpec, so high contrast has to be applied again: its trace outline
+       is #8b93a7 at width 3, which is exactly the light grey a copier
+       dithers away. Only the hollow rows change -- a solid model row is
+       already INK. */
+    const hc = highContrastOn();
     text.setAttribute("fill", o.solid ? (o.fill || INK) : "#ffffff");
-    text.setAttribute("stroke", o.solid ? (o.strokeColor || "none") : (o.strokeColor || "#8b93a7"));
+    text.setAttribute("stroke", o.solid ? (o.strokeColor || "none") : (hc ? CONTRAST_INK : (o.strokeColor || "#8b93a7")));
     /* o.strokeWidth arrives quoted in outlineSVG()'s units (font-size 210) --
        it comes from CFG.strokeWidth or a nameStyles entry, the same field the
        single-letter surface reads. This function draws at font-size 150, so
@@ -823,7 +974,7 @@
        products. WORD_OUTLINE_STROKE is this constant's inverse and exists for
        the same reason. */
     const wordStroke = o.strokeWidth != null ? o.strokeWidth * fontSize / OUTLINE_SVG_FONT : 3;
-    text.setAttribute("stroke-width", o.solid ? String(o.strokeColor ? (o.strokeWidth != null ? wordStroke : 4) : 0) : String(wordStroke));
+    text.setAttribute("stroke-width", o.solid ? String(o.strokeColor ? (o.strokeWidth != null ? wordStroke : 4) : 0) : String(hc ? contrastStroke(fontSize, wordStroke) : wordStroke));
     text.setAttribute("stroke-linejoin", "round");
     text.setAttribute("paint-order", "stroke");
     // Nudge the anchor left by half a letter-gap so the trailing space SVG adds
@@ -868,6 +1019,10 @@
       printPrefs.margin === "narrow" ? PO.narrow : PO.normal
     ];
     if (printPrefs.ink === "saver") parts.push(PO.inkSaver);
+    // English-only like the control itself; printPrefs.buildPanel resets a
+    // stored "contrast" on any other locale, so this can never be the one
+    // English word in a translated caption.
+    if (printPrefs.ink === "contrast") parts.push("High contrast");
     return parts.join(" · ");
   }
   function paintPaperPreview() {
@@ -896,6 +1051,7 @@
       sheet.style.setProperty("--pt-glyph-ratio", String(GLYPH_RATIO));
     }
     node.classList.toggle("is-ink-saver", printPrefs.ink === "saver");
+    node.classList.toggle("is-high-contrast", printPrefs.ink === "contrast");
     node.classList.toggle("is-narrow", printPrefs.margin === "narrow");
     const cap = $(".pt-paper-caption", node);
     if (cap) cap.textContent = paperCaption();
@@ -1488,6 +1644,9 @@
     if (typeof genScriptKey !== "undefined" && genScriptKey) p.script = genScriptKey;
     if (CHAR_STYLES && charStyleKey) p.cstyle = charStyleKey;
     if (nameCase !== "as-typed") p.ncase = nameCase;
+    if (nUp > 1) p.nup = String(nUp);
+    if (spacingKey !== "normal") p.sp = spacingKey;
+    if (stencilOnFlag) p.st = "1";
     if (el.sizeControl && alphaSizeKey !== "full") p.size = alphaSizeKey;
     const heading = firstEl([el.designHeading, el.puzzleHeading]);
     if (heading && heading.value.trim()) p.heading = heading.value.trim();
@@ -1559,6 +1718,14 @@
       const chip = $("#pt-name-case [data-case=\"" + ncase + "\"]");
       if (chip) chip.click();
     }
+    if (presetGet("st") === "1") {
+      const stBox = $("#pt-stencil");
+      if (stBox) { stBox.checked = true; stencilOnFlag = true; }
+    }
+    const sp = presetGet("sp");
+    if (sp && SPACING_STEPS.some((x) => x.key === sp)) setSpacing(sp, { quiet: true });
+    const nup = parseInt(presetGet("nup"), 10);
+    if (NUP_CHOICES.indexOf(nup) !== -1) setNUp(nup);
     const cstyle = presetGet("cstyle");
     if (cstyle && typeof setCharStyle === "function" && CHAR_STYLES && CHAR_STYLES.some((x) => x.key === cstyle)) setCharStyle(cstyle);
     const size = presetGet("size");
@@ -1944,6 +2111,7 @@
      plus its 42 pad) with a little air above. */
   const PNG_CREDIT_BAND = 170;
 
+  const CREDIT_FONT = "'Plus Jakarta Sans', system-ui, -apple-system, sans-serif";
   function drawCredit(ctx, w, h, light) {
     const url = creditUrl();
     const qrNs = qrModule();
@@ -1966,7 +2134,13 @@
     ctx.textAlign = "center";
     ctx.textBaseline = "alphabetic";
     if ("letterSpacing" in ctx) ctx.letterSpacing = "0px";
-    ctx.font = (light ? "18px " : "22px ") + FONT;
+    /* The credit is an address to be READ and retyped, not a specimen, so on a
+       glyph-mode page it does not take the page's own face. OUT-06 made FONT a
+       joined school hand on the cursive pages and a blackletter on the
+       calligraphy ones, and a URL set in blackletter cannot be retyped off
+       paper -- which is the whole job this line has when the QR is out of
+       reach. Every other family keeps the face it always had. */
+    ctx.font = (light ? "18px " : "22px ") + (RENDER === "glyph" ? CREDIT_FONT : FONT);
     ctx.fillStyle = light ? "#c9ced8" : "#aeb4c0";
     // The page path, not just the domain: a sheet that gets forwarded should
     // open the same tool (2026-09-10 share pass). It stays centred on the
@@ -2061,6 +2235,28 @@
       ctx.font = "700 " + letterFs + "px " + FONT;
       if (RENDER === "outline") {
         paintOutlineText(ctx, glyph, size / 2, size * 0.5, letterFs);
+        /* The PNG is the one artifact that leaves the site, so a stencil
+           downloaded as an image has to carry its bridges too. The ink box is
+           read from measureText under the SAME textAlign/textBaseline the
+           glyph was drawn with, so this needs no assumption about where
+           "middle" puts the em box -- it maps ink box to ink box exactly as
+           the SVG path does. */
+        if (stencilOn()) {
+          const geo = stencilMask(glyph);
+          if (geo) {
+            const mm = ctx.measureText(glyph);
+            const dst = {
+              x: size / 2 - mm.actualBoundingBoxLeft,
+              y: size * 0.5 - mm.actualBoundingBoxAscent,
+              w: mm.actualBoundingBoxLeft + mm.actualBoundingBoxRight,
+              h: mm.actualBoundingBoxAscent + mm.actualBoundingBoxDescent
+            };
+            ctx.fillStyle = "#ffffff";
+            stencilRects(geo, dst, outlineLineWidth(letterFs)).forEach((r) => {
+              ctx.fillRect(r.x, r.y, r.w, r.h);
+            });
+          }
+        }
       } else {
         ctx.fillStyle = INK;
         ctx.fillText(glyph, size / 2, size * 0.54);
@@ -2109,7 +2305,7 @@
   function wordPNG(text, opts) {
     const o = opts || {};
     const fam = o.font || FONT;
-    const spacingEm = o.spacing != null ? o.spacing : LETTER_SPACING;
+    const spacingEm = (o.spacing != null ? o.spacing : LETTER_SPACING) + spacingBoost;
     withFont(() => {
       const width = 1600, height = 520, pad = 90;
       const canvas = document.createElement("canvas");
@@ -2237,6 +2433,7 @@
     const widthPx = Math.round((full.w - 2 * marginIn) * 96);
     document.body.classList.add("pt-pdf-rendering");
     document.body.classList.toggle("pt-ink-saver", printPrefs.ink === "saver");
+    document.body.classList.toggle("pt-high-contrast", printPrefs.ink === "contrast");
     el.printRoot.style.width = widthPx + "px";
     let pages = null;
     try {
@@ -2262,6 +2459,7 @@
     } finally {
       document.body.classList.remove("pt-pdf-rendering");
       document.body.classList.remove("pt-ink-saver");
+      document.body.classList.remove("pt-high-contrast");
       el.printRoot.style.width = "";
     }
     if (!pages || !pages.length) return false;
@@ -2305,6 +2503,7 @@
     const pageHPx = Math.round(area.h * 96);
     document.body.classList.add("pt-pdf-rendering");
     document.body.classList.toggle("pt-ink-saver", printPrefs.ink === "saver");
+    document.body.classList.toggle("pt-high-contrast", printPrefs.ink === "contrast");
     el.printRoot.style.width = widthPx + "px";
     let pages = null;
     let links = [];
@@ -2330,6 +2529,7 @@
     } finally {
       document.body.classList.remove("pt-pdf-rendering");
       document.body.classList.remove("pt-ink-saver");
+      document.body.classList.remove("pt-high-contrast");
       el.printRoot.style.width = "";
     }
     if (!pages || !pages.length) return false;
@@ -2504,6 +2704,7 @@
     document.body.classList.add("is-printing");
     hideEverythingButPrintRoot();
     document.body.classList.toggle("pt-ink-saver", printPrefs.ink === "saver");
+    document.body.classList.toggle("pt-high-contrast", printPrefs.ink === "contrast");
 
     // Tear the print surface down when the dialog closes, not when
     // window.print() returns: on desktop the two coincide, on iOS/Android
@@ -2521,6 +2722,7 @@
       window.removeEventListener("focus", onVisible);
       document.body.classList.remove("is-printing");
       document.body.classList.remove("pt-ink-saver");
+      document.body.classList.remove("pt-high-contrast");
       restoreAfterPrint();
       removePageStyle();
       el.printRoot.innerHTML = "";
@@ -3497,7 +3699,10 @@
     if (!host) return;
     const roster = primaryRoster();
     const n = roster ? rosterEntries(roster).length : 0;
-    let pages = 0;
+    // A roster's own page count, which the line never reported: at 1 it is
+    // the number every teacher was already paying, and it is what makes the
+    // N chips above legible without a sentence.
+    let pages = n > 1 ? Math.ceil(n / (nUp > 1 ? nUp : 1)) : 0;
     if (el.sizeControl && alphaSizeKey !== "full") {
       const preset = SIZE_PRESETS.filter((x) => x.key === alphaSizeKey)[0];
       if (preset && preset.heightIn) {
@@ -3523,6 +3728,102 @@
     o.value = "1";
     o.textContent = "1";
     sel.insertBefore(o, sel.firstChild);
+  }
+
+  /* PR-11 -- N-per-sheet. A 30-name class set cost 30 sheets of paper, on a
+     family whose own community evidence is "we can only afford printer ink a
+     couple times a year". Every sheet builder below already emitted one
+     .pt-sheet-page per item, so grouping them is the whole feature.
+
+     1 and 4, never 2, and that is geometry rather than an omission. A portrait
+     sheet dropped unrotated into half a portrait page scales by 0.5 -- the
+     same factor a 2x2 grid uses -- so unrotated 2-up prints the SAME letter
+     size on twice the paper and is strictly dominated by 4-up. A 2-up worth
+     offering has to rotate the sheet 90 degrees and derive its scale from
+     printArea(); that is its own piece of work, not a third chip here.
+
+     The chips are digits, so this adds no string in any language -- the same
+     reasoning addLowDensityOption already records. What explains them is the
+     sheet-cost line directly beneath, which is already localized and now
+     reports a roster's page count at whatever N is selected: 30 sheets / 30
+     pages at 1, 30 sheets / 8 pages at 4. */
+  const NUP_CHOICES = [1, 4];
+  let nUp = 1;
+
+  function appendSheetPages(container, items, makeNode) {
+    const per = nUp > 1 ? nUp : 1;
+    for (let i = 0; i < items.length; i += per) {
+      const chunk = items.slice(i, i + per);
+      const page = document.createElement("div");
+      page.className = "pt-sheet-page";
+      if (per === 1) {
+        page.appendChild(makeNode(chunk[0], i));
+      } else {
+        page.classList.add("is-nup", "is-nup-" + per);
+        /* The cells live in their own grid rather than directly on the page,
+           because the page also carries chrome it does not control: printWrap
+           inserts the job title into the unit when a job is exactly one page,
+           and attachCredit appends the credit to every unit. Both were landing
+           in grid cells -- measured, the title took cell 1 and pushed the
+           fourth sheet into the credit's auto row at 0px tall, and its
+           min-content width split the columns 504/205 instead of in half.
+           A flex column with the grid as its one growing child lets the title
+           and the credit claim their natural height and the sheets take what
+           is left, so nothing here has to know how tall a heading is. */
+        const grid = document.createElement("div");
+        grid.className = "pt-nup-grid";
+        chunk.forEach((it, j) => {
+          const cell = document.createElement("div");
+          cell.className = "pt-nup-cell";
+          cell.appendChild(makeNode(it, i + j));
+          grid.appendChild(cell);
+        });
+        page.appendChild(grid);
+      }
+      container.appendChild(page);
+    }
+  }
+
+  function setNUp(n) {
+    nUp = NUP_CHOICES.indexOf(n) === -1 ? 1 : n;
+    const row = $("#pt-nup-row");
+    if (row) $$(".pt-choice", row).forEach((b) => {
+      const on = Number(b.dataset.nup) === nUp;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
+    });
+    updateSheetCost();
+  }
+
+  /* Only where a roster exists: N-per-sheet changes nothing on a page that
+     prints one sheet, and a control with no consequence is the defect the
+     print-settings panel already records. Named by T.classSet, which ships in
+     all eight languages and is the thing being configured. */
+  function mountNUp() {
+    if ($("#pt-nup-row") || !primaryRoster()) return;
+    const host = $("#pt-sheet-cost");
+    if (!host) return;
+    const row = document.createElement("div");
+    row.id = "pt-nup-row";
+    row.className = "pt-choice-row pt-nup-row";
+    row.setAttribute("role", "radiogroup");
+    row.setAttribute("aria-label", T.classSet);
+    NUP_CHOICES.forEach((n) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pt-choice";
+      b.dataset.nup = String(n);
+      b.textContent = String(n);
+      b.setAttribute("role", "radio");
+      const on = n === nUp;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
+      b.addEventListener("click", () => setNUp(n));
+      row.appendChild(b);
+    });
+    host.insertAdjacentElement("beforebegin", row);
   }
 
   function mountSheetCost() {
@@ -3697,12 +3998,7 @@
     if (names.length >= 2) {
       const set = document.createElement("div");
       set.className = "pt-class-set";
-      names.forEach((n) => {
-        const page = document.createElement("div");
-        page.className = "pt-sheet-page";
-        page.appendChild(nameSheetNode(applyNameCase(n)));
-        set.appendChild(page);
-      });
+      appendSheetPages(set, names, (n) => nameSheetNode(applyNameCase(n)));
       printWrap(joinWords([names.length + " " + T.sheets, "·", cap(NOUN)]), set, "name_worksheet");
       return;
     }
@@ -3758,6 +4054,125 @@
     const host = rows.closest(".pt-field, .pt-opt, .pt-name-rows-field") || rows.parentElement;
     host.insertAdjacentElement("afterend", wrap);
   }
+  /* PR-31 -- letter spacing as a control.
+
+     CFG.letterSpacing has always existed as a per-page config value and was
+     exposed nowhere, so the one formatting change with primary evidence behind
+     it could not be made by the person printing the sheet. The steps are the
+     British Dyslexia Association Style Guide's own quantification: tracking
+     "ideally around 35% of the average letter width".
+
+     It is offered as A FORMATTING OPTION AND NOTHING ELSE. No label, hint or
+     aria string here names a condition, a reading outcome or a study; this
+     site is not qualified to make that claim and the audit that asked for the
+     control said so in the same sentence that asked for it.
+
+     A boost added to whatever the active style says, never a replacement for
+     it: setCharStyle() and the name-style designer both write LETTER_SPACING /
+     opts.spacing, and overwriting either would silently undo a chosen
+     letterform's own tracking.
+
+     English only, the same bail mountCarryRow and mountLeftHanded already
+     take. "Letter spacing" is a new string and the site's own corpus does not
+     attest a translation of it in six of the seven other locales (de, it and
+     pl have none at all; fr, es and pt have one page each), so there is
+     nothing to harvest and nothing here will be invented. */
+  const SPACING_STEPS = [
+    { key: "normal", em: 0, label: "Normal" },
+    { key: "wide", em: 0.12, label: "Wide" },
+    { key: "widest", em: 0.35, label: "Extra wide" }
+  ];
+  let spacingBoost = 0;
+  let spacingKey = "normal";
+
+  function repaintWordSurfaces() {
+    if (el.nameInput || el.namePreview) renderNamePreview();
+    if (el.genInput || el.genPreview) renderGenPreview();
+  }
+
+  function setSpacing(key, opts) {
+    const step = SPACING_STEPS.filter((x) => x.key === key)[0] || SPACING_STEPS[0];
+    spacingKey = step.key;
+    spacingBoost = step.em;
+    const row = $("#pt-spacing-row");
+    if (row) $$(".pt-choice", row).forEach((b) => {
+      const on = b.dataset.spacing === spacingKey;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
+    });
+    if (!(opts && opts.quiet)) repaintWordSurfaces();
+  }
+
+  function mountSpacing() {
+    const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
+    if (lang !== "en") return;
+    const rows = el.nameRows || el.genRows;
+    if (!rows || $("#pt-spacing-row")) return;
+    const field = document.createElement("div");
+    field.className = "pt-spacing-field";
+    const lab = document.createElement("span");
+    lab.className = "pt-field-label";
+    lab.textContent = "Letter spacing";
+    field.appendChild(lab);
+    const row = document.createElement("div");
+    row.id = "pt-spacing-row";
+    row.className = "pt-choice-row pt-spacing-row";
+    row.setAttribute("role", "radiogroup");
+    row.setAttribute("aria-label", "Letter spacing");
+    SPACING_STEPS.forEach((step) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pt-choice";
+      b.dataset.spacing = step.key;
+      // The chip IS the demonstration: the same two letters at the tracking
+      // it sets, so the difference is visible before anything is printed.
+      const demo = document.createElement("span");
+      demo.className = "pt-sp-demo is-sp-" + step.key;
+      demo.textContent = "Aa";
+      b.appendChild(demo);
+      b.setAttribute("role", "radio");
+      b.setAttribute("aria-label", step.label);
+      const on = step.key === spacingKey;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
+      b.addEventListener("click", () => setSpacing(step.key));
+      row.appendChild(b);
+    });
+    field.appendChild(row);
+    const host = rows.closest(".pt-field, .pt-opt, .pt-name-rows-field") || rows.parentElement;
+    host.insertAdjacentElement("afterend", field);
+  }
+
+  /* OUT-15's control. ENGLISH ONLY, the same bail mountCarryRow and
+     mountLeftHanded take: "bridged stencil" is a new string and neither the
+     engine's I18N table nor locales/*.json carries a word for a stencil
+     bridge in any of the eight, so the four locale siblings keep today's
+     behaviour until a native reading exists. Per the owner's decision of
+     2026-09-17 on the label-blocked items. Off by default on a PROTECT page. */
+  function mountStencilToggle() {
+    const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
+    if (lang !== "en" || CFG.stencil !== true || RENDER !== "outline") return;
+    const host = el.sizeControl ? el.sizeControl.parentNode : (el.alphaPrint && el.alphaPrint.closest(".bubble-actions, .pt-actions"));
+    if (!host || $("#pt-stencil")) return;
+    const wrap = document.createElement("label");
+    wrap.className = "pt-stencil-field";
+    const box = document.createElement("input");
+    box.type = "checkbox";
+    box.id = "pt-stencil";
+    box.addEventListener("change", () => {
+      stencilOnFlag = box.checked;
+      withFont(() => {
+        paintAlphabetGrid();
+        if (activeChar) selectChar(activeChar);
+      });
+    });
+    wrap.appendChild(box);
+    wrap.appendChild(document.createTextNode(" Bridged stencil (counters stay attached when cut)"));
+    host.insertAdjacentElement("afterend", wrap);
+  }
+
   // A small second copy of the model at the right-hand end of a trace row.
   function leftyModel(node) {
     const aside = document.createElement("span");
@@ -3825,22 +4240,172 @@
       blank: true }
   ];
 
+  /* PR-13 / PR-32 -- the photocopy case is the OPPOSITE of the ink saver, and
+     the two had been treated as one axis. A copier smooths light shades toward
+     white and renders grey only by dithering, so the rungs that survive the
+     machine a classroom actually uses are pure black at a real line weight.
+     Every guide colour on these sheets is grey -- FAINT #d7dbe4, GUIDE
+     #9aa2b1, GUIDE_MID #c7ccd8, GHOST #c3c9d6 -- and the faint rung is 2 units
+     wide with a 0.1/22 dash, which is the first thing a copier drops.
+
+     Applied at levelSpec() and addGuide() rather than by CSS selector, because
+     what has to change differs per rung: a GHOST FILL cannot simply go black
+     (a child would be tracing over a solid letter), so it is redrawn as the
+     outline of the same letter, while a stroked rung keeps its own dash and
+     only gains colour and a weight floor. The solid model row is INK already
+     and is left alone. */
+  function highContrastOn() { return printPrefs.ink === "contrast"; }
+  const CONTRAST_INK = "#000000";
+  /* ~3 units at the 132-unit trace type size, held as a FRACTION of type size
+     so the same weight lands on the word surface, which draws at 150. On a
+     7in-wide sheet whose viewBox is ~552 units, one unit is about 0.9pt, so
+     this is the 1-2pt line the guidance asks for rather than a number picked
+     to look right on screen. A floor, never a rewrite: a rung already heavier
+     than this keeps its own weight. */
+  const CONTRAST_MIN_EM = 3 / 132;
+  function contrastStroke(fontSize, sw) {
+    return Math.max(fontSize * CONTRAST_MIN_EM, Number(sw) || 0);
+  }
+
+  function contrastSpec(spec) {
+    if (spec.blank) return spec;
+    const out = Object.assign({}, spec);
+    out.opacity = 1;
+    if (spec.fill && spec.fill !== "none" && spec.fill !== INK) {
+      out.fill = "none";
+      out.stroke = CONTRAST_INK;
+      out.sw = contrastStroke(TRACE_FONT_SIZE, spec.sw);
+      out.cap = spec.cap || "round";
+    } else if (spec.stroke && spec.stroke !== "none") {
+      out.stroke = CONTRAST_INK;
+      out.sw = contrastStroke(TRACE_FONT_SIZE, spec.sw);
+    }
+    return out;
+  }
+
   function levelSpec(level) {
     const i = Math.max(0, Math.min(TRACE_LEVELS.length - 1, (level || 1) - 1));
-    return TRACE_LEVELS[i];
+    const spec = TRACE_LEVELS[i];
+    return highContrastOn() ? contrastSpec(spec) : spec;
   }
 
   // Ruled guideline (top / midline / baseline) inside a worksheet SVG.
-  function addGuide(svg, w, y, dashed) {
+  /* PR-21 -- ruled-line models.
+
+     These sheets shipped ONE ruling into every market. France and Germany both
+     have a national school ruling, and a French or German worksheet drawn on a
+     US three-line rule is the wrong exercise book, not a style preference --
+     which is why this follows the page's own language rather than sitting
+     behind a control. It also means it needs no label in any language: there
+     was no word to harvest for "Seyes", "Lineatur" or "standard ruling", and
+     a control is not what the finding asked for.
+
+     Both models are sourced, not eyeballed:
+
+     SEYES (fr) -- Wikipedia, "Ruled paper": heavy lines 8 mm apart with
+     "three lighter lines ... spaced 2 mm apart between each pair of heavy
+     lines", plus the heavy verticals at the same 8 mm pitch. So the ascender
+     band IS the 8 mm unit and 2 mm is a quarter of it.
+
+     LINEATUR 1 (de) -- the Klasse-1 Schreiblernlineatur: "vier Linien pro
+     Zeile, je 5 mm Abstand" (Staehlin, Grundschul-Guide), marking three equal
+     zones -- Oberlange, Mittelband, Unterlange -- with a Kontrastlineatur
+     shading "der Bereich zwischen Grund- und Mittellinie", the band small
+     letters live in. Equal 5 mm zones map to equal half-bands here, and the
+     row grows downward because a Lineatur row carries a fourth line for the
+     Unterlange that a three-line rule does not.
+
+     Everything else keeps the ruling it has: Spain, Poland and the rest have
+     their own conventions and this had no source for them, and inventing one
+     would be worse than the single rule it replaces. CFG.ruling overrides the
+     language default on any page that wants to. */
+  function rulingKey() {
+    if (CFG.ruling && RULINGS[CFG.ruling]) return CFG.ruling;
+    const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
+    if (lang === "fr") return "seyes";
+    if (lang === "de") return "lineatur";
+    return "standard";
+  }
+  /* `at` is measured UPWARD from the baseline as a fraction of the ascender
+     band, so one table serves the SVG sheet and the canvas PNG, which do not
+     share a coordinate system. `extra` is how far below the baseline the row
+     has to grow, in the same units. */
+  const RULINGS = {
+    standard: {
+      lines: [{ at: 0 }, { at: 0.5, faint: true, dashed: true }, { at: 1 }],
+      band: null, verticals: 0, extra: 0
+    },
+    seyes: {
+      lines: [{ at: 0 }, { at: 0.25, faint: true }, { at: 0.5, faint: true },
+              { at: 0.75, faint: true }, { at: 1 }],
+      band: null, verticals: 1, extra: 0
+    },
+    lineatur: {
+      lines: [{ at: 1 }, { at: 0.5, faint: true, dashed: true }, { at: 0 }, { at: -0.5 }],
+      band: { from: 0, to: 0.5 }, verticals: 0, extra: 0.5
+    }
+  };
+  function ruling() { return RULINGS[rulingKey()] || RULINGS.standard; }
+
+  /* `faint` and `dashed` are separate properties. The house three-line rule
+     draws its midline dashed, but a Seyes interline is lighter and SOLID --
+     the source calls them "three lighter lines", not broken ones -- and
+     drawing them dashed made the French ruling look like three midlines. */
+  function addGuide(svg, w, y, dashed, faint) {
     const l = document.createElementNS(SVGNS, "line");
     l.setAttribute("x1", "8");
     l.setAttribute("x2", String(w - 8));
     l.setAttribute("y1", String(y));
     l.setAttribute("y2", String(y));
-    l.setAttribute("stroke", dashed ? GUIDE_MID : GUIDE);
-    l.setAttribute("stroke-width", dashed ? "1.5" : "2");
+    const hc = highContrastOn();
+    const light = dashed || faint;
+    l.setAttribute("stroke", hc ? CONTRAST_INK : (light ? GUIDE_MID : GUIDE));
+    l.setAttribute("stroke-width", hc ? (light ? "2" : "2.5") : (light ? "1.5" : "2"));
     if (dashed) l.setAttribute("stroke-dasharray", "6 8");
     svg.appendChild(l);
+  }
+
+  // The band a ruling is measured against: baseline up to the top line.
+  function traceBand() { return TRACE_BASE - TRACE_TOP; }
+  // How tall one row has to be for the active ruling. A Lineatur row carries a
+  // fourth line below the baseline that a three-line rule does not, so the row
+  // grows rather than the Unterlange falling off the bottom of the viewBox.
+  function traceRowHeight() {
+    const r = ruling();
+    return Math.max(TRACE_H, Math.round(TRACE_BASE + r.extra * traceBand() + 10));
+  }
+
+  function addRuling(svg, w) {
+    const r = ruling();
+    const band = traceBand();
+    const y = (at) => TRACE_BASE - at * band;
+    // The shaded Mittelband goes down first so every line still reads over it.
+    if (r.band) {
+      const top = y(r.band.to), bottom = y(r.band.from);
+      const rect = document.createElementNS(SVGNS, "rect");
+      rect.setAttribute("x", "8");
+      rect.setAttribute("y", String(top));
+      rect.setAttribute("width", String(Math.max(0, w - 16)));
+      rect.setAttribute("height", String(Math.max(0, bottom - top)));
+      rect.setAttribute("fill", GUIDE_MID);
+      rect.setAttribute("opacity", highContrastOn() ? "0.28" : "0.16");
+      svg.appendChild(rect);
+    }
+    if (r.verticals) {
+      const step = r.verticals * band;
+      const hc = highContrastOn();
+      for (let x = 8 + step; x < w - 8; x += step) {
+        const l = document.createElementNS(SVGNS, "line");
+        l.setAttribute("x1", String(x));
+        l.setAttribute("x2", String(x));
+        l.setAttribute("y1", String(y(1)));
+        l.setAttribute("y2", String(y(r.extra ? -r.extra : 0)));
+        l.setAttribute("stroke", hc ? CONTRAST_INK : GUIDE_MID);
+        l.setAttribute("stroke-width", hc ? "2" : "1.5");
+        svg.appendChild(l);
+      }
+    }
+    r.lines.forEach((line) => addGuide(svg, w, y(line.at), !!line.dashed, !!line.faint));
   }
 
   // A word rendered at a difficulty level, on a ruled baseline. The single
@@ -3852,16 +4417,21 @@
     const o = opts || {};
     const spec = levelSpec(level);
     const chars = [...String(word)];
-    const w = Math.max(360, chars.length * 116 + 120);
+    // The trace rows had no tracking at all, so a spacing choice that moved
+    // the name preview would have left the sheet under it unchanged. The
+    // viewBox grows with the gap, or a wider word is clipped instead of set.
+    // track:false opts out, which the difficulty-ladder legend takes: those
+    // samples illustrate fill, stroke and dash, and are built once at init,
+    // so a spacing change must neither move them nor leave them stale.
+    const trackPx = o.track === false ? 0 : TRACE_FONT_SIZE * spacingBoost;
+    const w = Math.max(360, chars.length * (116 + trackPx) + 120);
     const svg = document.createElementNS(SVGNS, "svg");
-    svg.setAttribute("viewBox", "0 0 " + w + " " + TRACE_H);
+    svg.setAttribute("viewBox", "0 0 " + w + " " + traceRowHeight());
     svg.setAttribute("class", "pt-trace-svg");
     svg.setAttribute("role", "img");
     svg.setAttribute("aria-label", word + " — " + spec.label);
     if (o.guides !== false) {
-      addGuide(svg, w, TRACE_TOP, false);
-      addGuide(svg, w, TRACE_MID, true);
-      addGuide(svg, w, TRACE_BASE, false);
+      addRuling(svg, w);
     }
     if (!spec.blank) {
       const t = document.createElementNS(SVGNS, "text");
@@ -3871,6 +4441,13 @@
       t.setAttribute("font-family", FONT);
       t.setAttribute("font-weight", "700");
       t.setAttribute("font-size", String(TRACE_FONT_SIZE));
+      if (trackPx) {
+        // dx pulls back half the trailing gap letter-spacing adds after the
+        // final glyph, so a centred word stays centred -- the same correction
+        // wordOutlineSVG already makes.
+        t.setAttribute("letter-spacing", String(trackPx));
+        t.setAttribute("dx", String(-trackPx / 2));
+      }
       t.setAttribute("fill", spec.fill);
       if (spec.stroke && spec.stroke !== "none") {
         t.setAttribute("stroke", spec.stroke);
@@ -3882,7 +4459,7 @@
       if (spec.opacity != null && spec.opacity !== 1) t.setAttribute("opacity", String(spec.opacity));
       t.textContent = word;
       svg.appendChild(t);
-      if (o.overlay) addWordStrokeOverlay(svg, word, TRACE_FONT_SIZE, 0, TRACE_BASE, "alphabetic", w);
+      if (o.overlay) addWordStrokeOverlay(svg, word, TRACE_FONT_SIZE, trackPx, TRACE_BASE, "alphabetic", w);
     }
     return svg;
   }
@@ -4085,7 +4662,7 @@
       addGuide(svg, 120, 42, false);
       return svg;
     }
-    const svg = traceWordSVG("Aa", level, { guides: false });
+    const svg = traceWordSVG("Aa", level, { guides: false, track: false });
     svg.setAttribute("class", "pt-trace-svg pt-level-sample");
     svg.setAttribute("aria-hidden", "true");
     return svg;
@@ -4139,12 +4716,7 @@
     if (entries.length >= 2) {
       const set = document.createElement("div");
       set.className = "pt-class-set";
-      entries.forEach((e) => {
-        const page = document.createElement("div");
-        page.className = "pt-sheet-page";
-        page.appendChild(genSheetNode(e.name, e.level));
-        set.appendChild(page);
-      });
+      appendSheetPages(set, entries, (e) => genSheetNode(e.name, e.level));
       // A mixed set has no one level to name, so the title says how many
       // sheets rather than asserting a level that is only true of some.
       const mixed = entries.some((e) => e.level != null && e.level !== genLevel());
@@ -4161,12 +4733,7 @@
     const word = genValue();
     const set = document.createElement("div");
     set.className = "pt-class-set";
-    TRACE_LEVELS.forEach((spec, i) => {
-      const page = document.createElement("div");
-      page.className = "pt-sheet-page";
-      page.appendChild(genSheetNode(word, i + 1));
-      set.appendChild(page);
-    });
+    appendSheetPages(set, TRACE_LEVELS, (spec, i) => genSheetNode(word, i + 1));
     printWrap(joinWords([word, "\u00b7", TRACE_LEVELS.length + " " + T.sheets, "\u00b7", siteCredit()]), set, "generator_ladder");
   }
 
@@ -4189,16 +4756,41 @@
       }
       const base = Math.round(height * 0.72);
       // Ruled guides.
-      const drawGuide = (y, dashed) => {
+      const drawGuide = (y, dashed, faint) => {
+        const light = dashed || faint;
         ctx.beginPath();
         ctx.setLineDash(dashed ? [6, 8] : []);
-        ctx.lineWidth = dashed ? 1.5 : 2;
-        ctx.strokeStyle = dashed ? GUIDE_MID : GUIDE;
+        ctx.lineWidth = light ? 1.5 : 2;
+        ctx.strokeStyle = highContrastOn() ? CONTRAST_INK : (light ? GUIDE_MID : GUIDE);
         ctx.moveTo(pad * 0.5, y); ctx.lineTo(width - pad * 0.5, y); ctx.stroke();
       };
-      drawGuide(base, false);
-      drawGuide(base - Math.round(fontSize * 0.52), true);
-      drawGuide(base - Math.round(fontSize * 0.74), false);
+      // Same RULINGS table as the SVG sheet, so a French PNG and a French
+      // printout cannot disagree about what a French exercise book looks like.
+      const gBand = Math.round(fontSize * 0.74);
+      const gr = ruling();
+      const gy = (at) => Math.round(base - at * gBand);
+      if (gr.band) {
+        ctx.save();
+        ctx.globalAlpha = 0.16;
+        ctx.fillStyle = GUIDE_MID;
+        ctx.fillRect(pad * 0.5, gy(gr.band.to), width - pad, gy(gr.band.from) - gy(gr.band.to));
+        ctx.restore();
+      }
+      if (gr.verticals) {
+        const step = gr.verticals * gBand;
+        ctx.save();
+        ctx.setLineDash([]);
+        ctx.lineWidth = 1.5;
+        ctx.strokeStyle = highContrastOn() ? CONTRAST_INK : GUIDE_MID;
+        for (let x = pad * 0.5 + step; x < width - pad * 0.5; x += step) {
+          ctx.beginPath();
+          ctx.moveTo(x, gy(1));
+          ctx.lineTo(x, gy(gr.extra ? -gr.extra : 0));
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+      gr.lines.forEach((l) => drawGuide(gy(l.at), !!l.dashed, !!l.faint));
 
       if (!spec.blank) {
         ctx.font = "700 " + fontSize + "px " + FONT;
@@ -5788,12 +6380,7 @@
     const names = designIsClassMode() ? rosterNames(el.designRoster) : [];
     if (names.length >= 2) {
       holder.classList.add("pt-class-set");
-      names.forEach((n) => {
-        const page = document.createElement("div");
-        page.className = "pt-sheet-page";
-        page.appendChild(designSheetSVG(n));
-        holder.appendChild(page);
-      });
+      appendSheetPages(holder, names, (n) => designSheetSVG(n));
       printWrap("", holder, "design");
       return;
     }
@@ -5820,12 +6407,9 @@
       floor = got;
       return true;
     });
-    levels.forEach((lvl) => {
+    appendSheetPages(holder, levels, (lvl) => {
       designState.density = lvl.key;
-      const page = document.createElement("div");
-      page.className = "pt-sheet-page";
-      page.appendChild(designSheetSVG());
-      holder.appendChild(page);
+      return designSheetSVG();
     });
     designState.density = picked;
     printWrap("", holder, "design_ladder");
@@ -6509,12 +7093,7 @@
     const names = rosterNames(el.puzzleRoster);
     if (names.length >= 2) {
       holder.classList.add("pt-class-set");
-      names.forEach((n) => {
-        const page = document.createElement("div");
-        page.className = "pt-sheet-page";
-        page.appendChild(puzzleSheetNode(n));
-        holder.appendChild(page);
-      });
+      appendSheetPages(holder, names, (n) => puzzleSheetNode(n));
       printWrap("", holder, "puzzle");
       return;
     }
@@ -6661,12 +7240,31 @@
 
   function init() {
     loadQrModule();
+    /* OUT-06 -- publish the page's own face to the glyph surfaces.
+
+       CFG.font reached the SVG paths and the canvas export, and NEVER reached
+       .pt-glyph-figure / .pt-glyph-print, which are plain <p> elements styled
+       by style.css and so inherited Plus Jakarta Sans. That is the whole
+       mechanism behind the finding that these 69 pages showed "identical
+       advance width in all 5 declared stacks": the declared stack was not
+       being applied at all, so the Unicode script characters fell to whatever
+       the OS happened to have. It also meant the PNG export and the page
+       disagreed, because the export already used FONT.
+
+       Published as a custom property rather than set on each element, so the
+       three creation sites -- and any fourth -- pick it up without knowing
+       this exists, the way --pt-glyph-ratio and --pt-paper-aspect already do. */
+    if (RENDER === "glyph" && CFG.font) {
+      document.documentElement.style.setProperty("--pt-glyph-family", CFG.font);
+    }
     /* Before applyPresetInputs(), which fills a roster from ?roster= and
        therefore has to find one. el is built at module scope, so a roster
        created here is written back onto it rather than re-queried everywhere. */
     mountNameCase();
     mountLeftHanded();
-    mountSheetCost();
+    mountSpacing();
+    if (CFG.stencil === true) loadStencilModule();
+    mountStencilToggle();
     [el.nameRows, el.genRows].forEach(addLowDensityOption);
     /* After load, not here: footer.js is deferred and sits AFTER this file in
        document order, so at init() the footer this reads its labels from does
@@ -6680,6 +7278,15 @@
         if (made) el[kind + "Roster"] = made;
       });
     }
+    /* AFTER mountRoster, not before it. Both of these read primaryRoster():
+       the cost line binds its input listener to one, and the N chips exist
+       only where one does. el.*Roster is captured at module scope, so on the
+       nine locale pages that take CFG.roster === true it is still null when
+       init starts -- which left those pages with a cost line that never
+       updated as you typed, and would have left them with no N control at
+       all. Measured on de/zum-ausdrucken/namen-schreiben before the move. */
+    mountSheetCost();
+    mountNUp();
     applyPresetInputs();
     initStrokeToggle();
     /* Before the first paint, not after: setCharStyle() reassigns the FONT

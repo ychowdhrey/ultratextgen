@@ -46,6 +46,7 @@
     "test:saved-items": "node js/saved/savedItems.test.js",
     "test:zalgo-engine": "node usecase/zalgo-text/zalgo-text.test.js",
     "test:qr": "node js/printables/qr.test.js",
+    "test:stencil": "node js/printables/stencil.test.js",
     "audit:numeric-parity": "node scripts/audit-numeric-parity.js",
     "check:numeric-parity": "node scripts/check-numeric-parity.js",
     "audit:link-rot": "node scripts/audit-link-rot.js",

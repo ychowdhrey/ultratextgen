@@ -46,6 +46,11 @@ PANEL2 = "#F2F1FB"
 SANS = "Liberation Sans, DejaVu Sans, sans-serif"
 SERIF = "Georgia, 'Liberation Serif', 'DejaVu Serif', serif"
 SYM = "DejaVu Sans, sans-serif"  # raster-safe symbol coverage
+# The one installed family covering Mathematical Fraktur / Script
+# (U+1D504.., U+1D49C..). cairosvg has no per-glyph fallback -- it takes the
+# first matched family and draws tofu for anything that family lacks -- so a
+# Fraktur sample has to lead with FreeSerif, not fall back to it.
+FRAKTUR = "FreeSerif, Georgia, serif"
 SYM_PRIMARY = "DejaVu Sans"      # SYM's first family; see spanned()
 
 # ---------------------------------------------------------------- shared defs
@@ -974,10 +979,40 @@ def m_letter_bubble(p, letter="A"):
           fill="#fff" text-anchor="middle">{esc(letter)}</text>"""
 
 
+def m_letter_graffiti(p, letter="G"):
+    """A slanted throw-up letter with a white keyline and a hard offset shadow
+    - graffiti printables.
+
+    OUT-09: these pages shared m_letter_stencil with block-letters, so the card
+    for the site's graffiti alphabet was a plain sans G inside a dashed CUT
+    LINE - a stencil job, on the one printable family that is not one. Slant, a
+    heavy keyline and an offset drop shadow are the three marks of a throw-up,
+    and none of them needs a graffiti typeface, which this pipeline has no way
+    to load: it draws in Liberation and DejaVu, never in a page's own webfont.
+    """
+    l = esc(letter)
+    return f"""
+    <g transform="translate(180 200) skewX(-12) translate(-180 -200)">
+      <text x="194" y="256" font-family="{SANS}" font-size="205" font-weight="800"
+            fill="{INK}" opacity="0.22" text-anchor="middle">{l}</text>
+      <text x="180" y="244" font-family="{SANS}" font-size="205" font-weight="800"
+            fill="url(#g{p})" stroke="#fff" stroke-width="16" paint-order="stroke"
+            stroke-linejoin="round" text-anchor="middle">{l}</text>
+    </g>"""
+
+
 def m_letter_cursive(p, letter="A"):
     """Capital + lowercase pair in italic serif — cursive per-letter printables.
     Italic serif is the raster-safe stand-in for script glyphs (the Unicode
-    Mathematical Script block does not rasterize in the bundled fonts)."""
+    Mathematical Script block does not rasterize in the bundled fonts).
+
+    Correction, 2026-09-17: that parenthesis is no longer true. FreeSerif, which
+    this file already lists among its fallback faces, covers U+1D49C.. and
+    U+1D504..; measured by rendering, the calligraphy card now draws real
+    Fraktur through it (see FRAKTUR). These 26 per-letter cards are left on
+    italic serif DELIBERATELY rather than by that constraint: changing them is a
+    26-page re-render on a live cluster and a letterform decision, not a
+    rasterisation fact."""
     return f"""
     <rect x="40" y="90" width="280" height="200" rx="36" fill="url(#g{p})"/>
     <line x1="70" y1="252" x2="290" y2="252" stroke="#fff" stroke-width="3" opacity="0.55" stroke-dasharray="2 7"/>
@@ -2911,7 +2946,7 @@ PAGES.update({
 "events-valentines-day": ("Valentine's Day Text Generator", "Hearts, roses, and Be My Valentine phrases to style", m_heart, K_USE),
 "printables-banner-maker": ("Printable Banner Maker", "One flag per letter, cut and strung to spell any word", m_banner, K_PRINT),
 "printables-block-letters": ("Printable Block Letters & Stencils", "Bold hollow A-Z & 0-9 stencils to trace, cut and use", P(m_letter_stencil, letter="B"), K_PRINT),
-"printables-calligraphy-alphabet": ("Calligraphy Alphabet", "Blackletter and script letters to trace and print", P(m_typo, sample="Aa", ff=SERIF, weight="800", style="italic", size=90, label="blackletter & script"), K_PRINT),
+"printables-calligraphy-alphabet": ("Calligraphy Alphabet", "Blackletter and script letters to trace and print", P(m_typo, sample="\U0001D504\U0001D51E", ff=FRAKTUR, weight="400", style="normal", size=104, label="blackletter & script"), K_PRINT),
 "printables-coloring-page-maker": ("Coloring Page Maker", "Any name or word becomes a colorable outline to print", m_crayons, K_PRINT),
 "printables-dot-to-dot-name": ("Dot-to-Dot Name Generator", "Any name becomes a personalized connect-the-dots", P(m_letter_dots, letter="Em"), K_PRINT),
 "printables-cursive-alphabet": ("Cursive Alphabet", "Cursive A-Z practice sheets to trace and print", P(m_typo, sample="Aa", ff=SERIF, style="italic", weight="400", size=92, label="cursive practice"), K_PRINT),
@@ -2943,12 +2978,12 @@ PAGES.update({
 "fr-imprimables-alphabet-point-de-croix": ("Alphabet Point de Croix", "N'importe quel mot en grille de points", m_grid, K_PRINT),
 "es-imprimibles-letras-punteadas": ("Letras Punteadas para Imprimir", "Abecedario A-Z en puntos numerados para unir", P(m_letter_dots, letter="A"), K_PRINT),
 # 2026-08-12 ES printables gap-fill + graffiti EN parent.
-"printables-graffiti-letters": ("Printable Graffiti Letters", "Throw-up alphabet A-Z to trace, outline and colour", P(m_letter_stencil, letter="G"), K_PRINT),
-"es-imprimibles-letras-graffiti": ("Letras de Graffiti para Imprimir", "Abecedario throw-up A-Z para calcar y colorear", P(m_letter_stencil, letter="G"), K_PRINT),
-"de-zum-ausdrucken-graffiti-buchstaben": ("Graffiti-Buchstaben zum Ausdrucken", "Throw-up-Alphabet A-Z zum Nachzeichnen und Ausmalen", P(m_letter_stencil, letter="G"), K_PRINT),
-"fr-imprimables-lettres-graffiti": ("Lettres Graffiti à Imprimer", "Alphabet throw-up A-Z à décalquer et à colorier", P(m_letter_stencil, letter="G"), K_PRINT),
+"printables-graffiti-letters": ("Printable Graffiti Letters", "Throw-up alphabet A-Z to trace, outline and colour", P(m_letter_graffiti, letter="G"), K_PRINT),
+"es-imprimibles-letras-graffiti": ("Letras de Graffiti para Imprimir", "Abecedario throw-up A-Z para calcar y colorear", P(m_letter_graffiti, letter="G"), K_PRINT),
+"de-zum-ausdrucken-graffiti-buchstaben": ("Graffiti-Buchstaben zum Ausdrucken", "Throw-up-Alphabet A-Z zum Nachzeichnen und Ausmalen", P(m_letter_graffiti, letter="G"), K_PRINT),
+"fr-imprimables-lettres-graffiti": ("Lettres Graffiti à Imprimer", "Alphabet throw-up A-Z à décalquer et à colorier", P(m_letter_graffiti, letter="G"), K_PRINT),
 # 2026-08-13 graffiti-generator pass: ID translation of the graffiti EN parent.
-"id-printables-grafiti-nama": ("Grafiti Nama", "Generator grafiti nama + huruf grafiti A-Z untuk dicetak", P(m_letter_stencil, letter="G"), K_PRINT),
+"id-printables-grafiti-nama": ("Grafiti Nama", "Generator grafiti nama + huruf grafiti A-Z untuk dicetak", P(m_letter_graffiti, letter="G"), K_PRINT),
 "es-imprimibles-caligrafia": ("Caligrafia: Abecedario A-Z", "Cursiva inglesa, gotica y script para imprimir", P(m_typo, sample="Aa", ff=SERIF, weight="800", style="italic", size=90, label="caligrafia A-Z"), K_PRINT),
 "es-imprimibles-moldes-de-letras": ("Moldes de Letras para Imprimir", "Plantillas huecas A-Z y 0-9 para recortar y pintar", P(m_letter_stencil, letter="M"), K_PRINT),
 "de-zum-ausdrucken-buchstaben-vorlagen": ("Buchstaben zum Ausdrucken", "Hohle Vorlagen A-Z und 0-9 zum Ausschneiden", P(m_letter_stencil, letter="B"), K_PRINT),
