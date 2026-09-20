@@ -7430,7 +7430,16 @@ body.dark-mode .pt-design-preview { background: #1c2030; }
   max-height: 66vh;
   overflow: auto;
 }
-.pt-paper .pt-gen-sheet { gap: 0.35rem; }
+/* The sheet is as wide as the paper, not as wide as the longest word.
+
+   .pt-paper centres its child, so the sheet was shrink-to-fit: with "Emma" in
+   it the preview was 229px inside a 444px card, every row exactly as wide as
+   its own viewBox, and nothing letterboxed. That made the preview disagree
+   with the print in composition and not only in scale — the printed rules run
+   the full printable width with the word at the left of them, and the preview
+   drew a short line that the word filled. Stretching the sheet makes the rows
+   the paper's width, which is what the row was always measured against. */
+.pt-paper .pt-gen-sheet { gap: 0.35rem; align-self: stretch; }
 .pt-paper .pt-gen-row .pt-trace-svg { max-height: 92px; }
 .pt-preview-actions { display: flex; gap: 0.6rem; margin-top: 0.9rem; }
 .pt-preview-actions .bubble-btn { padding: 0.72rem 1rem; font-size: 0.95rem; }
@@ -10812,8 +10821,17 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
   transform-origin: top left;
 }
 
+/* The chips and the label that names them, matching .pt-spacing-field's
+   shape — the other labelled chip row this engine mounts at runtime. */
+.pt-nup-field {
+  margin-top: 0.6rem;
+}
+.pt-nup-field .pt-field-label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
 .pt-nup-row {
-  margin-top: 0.5rem;
+  margin-top: 0;
 }
 /* .pt-choice is `flex: 1 1 auto` so a ladder of labelled options fills its
    row. These two are single digits, and once the row moved out of the button
@@ -10825,7 +10843,7 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
   padding: 0.4rem 0.7rem;
 }
 
-@media print { .pt-nup-row { display: none; } }
+@media print { .pt-nup-field { display: none; } }
 
 /* PR-31 -- letter spacing as a control. The chip is its own demonstration:
    the same two letters set at the tracking it applies. Values match

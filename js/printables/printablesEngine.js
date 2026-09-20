@@ -106,6 +106,7 @@
       pngTransparent: "PNG (transparent)",
       classSet: "Class set: one sheet per name", sheets: "sheets",
       classSetPngHint: "PNG downloads the current name; use Save as PDF for the whole set.",
+      sheetsPerPage: "Sheets per page",
       bannerInstr: "Cut each flag along its dashed line, punch a hole at each dot, then thread string or ribbon through in order (1, 2, 3…) to spell it out.",
       puzzleCut: "Cut along the dashed lines to separate each letter piece.",
       usLetter: "US Letter",
@@ -163,6 +164,7 @@
       pngTransparent: "PNG (transparent)",
       classSet: "Série pour la classe — une feuille par prénom", sheets: "feuilles",
       classSetPngHint: "Le PNG télécharge le prénom affiché ; utilisez Enregistrer en PDF pour toute la série.",
+      sheetsPerPage: "Feuilles par page",
       bannerInstr: "Découpez chaque fanion le long de sa ligne pointillée, percez un trou à chaque point, puis passez une ficelle ou un ruban dans l'ordre (1, 2, 3…) pour former le mot.",
       puzzleCut: "Découpez le long des lignes pointillées pour séparer chaque pièce-lettre.",
       trace: {
@@ -211,6 +213,7 @@
       pngTransparent: "PNG (transparente)",
       classSet: "Juego para la clase — una hoja por nombre", sheets: "hojas",
       classSetPngHint: "El PNG descarga el nombre actual; usa Guardar como PDF para el juego completo.",
+      sheetsPerPage: "Hojas por página",
       bannerInstr: "Recorta cada banderín por su línea punteada, haz un agujero en cada punto y pasa un cordel o cinta en orden (1, 2, 3…) para formar la palabra.",
       puzzleCut: "Recorta por las líneas punteadas para separar cada pieza-letra.",
       trace: {
@@ -259,6 +262,7 @@
       pngTransparent: "PNG (transparente)",
       classSet: "Conjunto para a turma — uma folha por nome", sheets: "folhas",
       classSetPngHint: "O PNG baixa o nome atual; use Salvar como PDF para o conjunto completo.",
+      sheetsPerPage: "Folhas por página",
       bannerInstr: "Recorte cada bandeirinha na linha pontilhada, faça um furo em cada ponto e passe um barbante ou fita na ordem (1, 2, 3…) para formar a palavra.",
       puzzleCut: "Recorte nas linhas pontilhadas para separar cada peça-letra.",
       trace: {
@@ -307,6 +311,7 @@
       pngTransparent: "PNG (trasparente)",
       classSet: "Set per la classe – un foglio per nome", sheets: "fogli",
       classSetPngHint: "Il PNG scarica il nome corrente; usa Salva come PDF per l'intero set.",
+      sheetsPerPage: "Fogli per pagina",
       bannerInstr: "Ritaglia ogni bandierina lungo la linea tratteggiata, fai un foro su ogni punto, poi infila uno spago o un nastro in ordine (1, 2, 3…) per comporre la parola.",
       puzzleCut: "Ritaglia lungo le linee tratteggiate per separare ogni pezzo-lettera.",
       trace: {
@@ -351,6 +356,7 @@
       pngTransparent: "PNG (przezroczyste tło)",
       classSet: "Zestaw dla klasy — jedna karta na imię", sheets: "kart",
       classSetPngHint: "PNG pobiera bieżące imię; użyj Zapisz jako PDF dla całego zestawu.",
+      sheetsPerPage: "Kart na stronę",
       bannerInstr: "Wytnij każdą chorągiewkę wzdłuż przerywanej linii, zrób dziurkę w każdym punkcie, a następnie przewlecz sznurek lub wstążkę po kolei (1, 2, 3…), aby ułożyć napis.",
       puzzleCut: "Tnij wzdłuż przerywanych linii, aby oddzielić każdy element-literę.",
       usLetter: "US Letter",
@@ -405,6 +411,7 @@
       pngTransparent: "PNG (transparent)",
       classSet: "Klassensatz – ein Blatt pro Name", sheets: "Blätter",
       classSetPngHint: "PNG lädt den aktuellen Namen; für den ganzen Satz Als PDF speichern verwenden.",
+      sheetsPerPage: "Blätter pro Seite",
       bannerInstr: "Schneide jeden Wimpel entlang der gestrichelten Linie aus, stich an jedem Punkt ein Loch und fädle eine Schnur oder ein Band der Reihe nach (1, 2, 3…) durch, um das Wort zu bilden.",
       puzzleCut: "Schneide entlang der gestrichelten Linien, um jedes Buchstaben-Teil zu trennen.",
       usLetter: "US Letter",
@@ -458,6 +465,7 @@
       pngTransparent: "PNG (transparan)",
       classSet: "Set kelas \u2014 satu lembar per nama", sheets: "lembar",
       classSetPngHint: "PNG mengunduh nama yang sedang tampil; pakai Simpan sebagai PDF untuk seluruh setnya.",
+      sheetsPerPage: "Lembar per halaman",
       bannerInstr: "Gunting tiap bendera mengikuti garis putus-putus, lubangi di setiap titik, lalu masukkan tali atau pita berurutan (1, 2, 3\u2026) sampai membentuk katanya.",
       puzzleCut: "Gunting mengikuti garis putus-putus untuk memisahkan tiap kepingan huruf.",
       usLetter: "US Letter",
@@ -2826,13 +2834,17 @@
      geometry would drift from the first, which is the failure this file
      documents in four other places, and the SVG path data is the only source
      of the stroke shapes anyway. */
-  function strokeOverlayImage(word, width, height, fontSize, spacingPx, anchorY, mode, opts) {
+  // `totalW` is the box the word is CENTRED IN, which is the canvas unless the
+  // caller left-aligned the word inside a narrower one; the SVG is still the
+  // full `width` so the overlay lands where the canvas drew the letters.
+  function strokeOverlayImage(word, width, height, fontSize, spacingPx, anchorY, mode, opts, totalW) {
     const svg = document.createElementNS(SVGNS, "svg");
     svg.setAttribute("xmlns", SVGNS);
     svg.setAttribute("viewBox", "0 0 " + width + " " + height);
     svg.setAttribute("width", width);
     svg.setAttribute("height", height);
-    addWordStrokeOverlay(svg, word, fontSize, spacingPx, anchorY, mode || "central", width, opts);
+    addWordStrokeOverlay(svg, word, fontSize, spacingPx, anchorY, mode || "central",
+                         totalW == null ? width : totalW, opts);
     if (!svg.querySelector("path")) return Promise.resolve(null);
     const blob = new Blob([new XMLSerializer().serializeToString(svg)], { type: "image/svg+xml;charset=utf-8" });
     const url = URL.createObjectURL(blob);
@@ -4279,9 +4291,10 @@
     const text = sheetCostText(n, pages);
     host.textContent = text;
     host.hidden = !text;
-    // The chips and the line that explains them appear and disappear together.
-    const row = $("#pt-nup-row");
-    if (row) row.hidden = n < 2;
+    // The chips, their label and the line beneath them appear and disappear
+    // together — the control does nothing until a roster holds two names.
+    const field = $(".pt-nup-field");
+    if (field) field.hidden = n < 2;
   }
   /* PR-33 -- "give students fewer items per page or line" is a named
      accommodation (Understood.org states it twice), and the row count was the
@@ -4381,12 +4394,34 @@
     if ($("#pt-nup-row") || !primaryRoster()) return;
     const host = $("#pt-sheet-cost");
     if (!host) return;
+    /* The chips shipped as two bare digits with no visible label, on the
+       reasoning that digits need no translating and the sheet-cost line below
+       them is the explanation. The line is a consequence, not a name: it reads
+       "30 sheets · 8 pages · US Letter" and never says what the 1 and the 4
+       are. T.classSet, the group's old accessible name, is worse than nothing
+       here — "Class set: one sheet per name" contradicts the 4 chip.
+
+       T.sheetsPerPage is what the control actually sets, in this engine's own
+       vocabulary: `sheets` is what it already calls one child's worksheet and
+       `pageCount` is what it already calls a side of paper, so the label and
+       the line beneath it use one word for one thing. Every word of all eight
+       is attested on this site's own pages in that language (audit:locale-
+       attestation, 2026-09-20), and the prepositions were taken from each
+       locale's existing classSet string rather than chosen. */
+    const field = document.createElement("div");
+    field.className = "pt-nup-field";
+    const lab = document.createElement("span");
+    lab.className = "pt-field-label";
+    lab.id = "pt-nup-label";
+    lab.textContent = T.sheetsPerPage;
+    field.appendChild(lab);
     const row = document.createElement("div");
     row.id = "pt-nup-row";
     row.className = "pt-choice-row pt-nup-row";
-    row.hidden = true;
+    // The visible label names the group, so a screen reader and the page say
+    // the same thing rather than two different ones.
     row.setAttribute("role", "radiogroup");
-    row.setAttribute("aria-label", T.classSet);
+    row.setAttribute("aria-labelledby", lab.id);
     NUP_CHOICES.forEach((n) => {
       const b = document.createElement("button");
       b.type = "button";
@@ -4401,7 +4436,9 @@
       b.addEventListener("click", () => setNUp(n));
       row.appendChild(b);
     });
-    host.insertAdjacentElement("beforebegin", row);
+    field.appendChild(row);
+    field.hidden = true;
+    host.insertAdjacentElement("beforebegin", field);
   }
 
   function mountSheetCost() {
@@ -5197,6 +5234,27 @@
     svg.setAttribute("role", "img");
     svg.setAttribute("aria-label", word + " — " + spec.label);
     if (o.guides !== false) {
+      /* The word starts at the left of the line it is written on, the way a
+         child writes and the way every ruled exercise book is laid out.
+
+         It could not, while the box was centred. `w` is measured from the
+         WORD, and R-013's fix draws the rules past that box out to the
+         element's own edge — so the rules reached the paper and the word
+         stayed in the middle of them, leaving practice space stranded on
+         BOTH sides of a short name. Measured on the printed PDF for "Emma":
+         1.4in of blank line before the word and 1.4in after it.
+
+         xMinYMid puts the viewBox against the left of the viewport instead of
+         centring it, which moves the word, its route and its stroke overlay
+         together and costs the type nothing — they are all positioned in
+         these same coordinates. What is left in front of the word is the
+         box's own padding, about 0.45in on Letter, which is the indent a
+         ruled page starts with anyway.
+
+         Ruled rows only. The difficulty-ladder chips and the left-handed
+         model pass guides:false, they are sized to their own box rather than
+         letterboxed inside a wider one, and centring is right for both. */
+      svg.setAttribute("preserveAspectRatio", "xMinYMid meet");
       addRuling(svg, w);
     }
     /* R-001: the stroked levels draw the writing centreline, not the glyph
@@ -5634,6 +5692,16 @@
       rulingGuides(base, gBand, fontSize).forEach((g) => drawGuide(g.y, g.dashed, g.faint));
 
       let routedPng = null;
+      /* The row is left-aligned here for the same reason it is on the sheet:
+         the rules span the canvas and a centred short word strands practice
+         space on both sides of itself. traceRoutePaths and the stroke overlay
+         both place the word from the total width they are handed, so the
+         three agree by being given ONE box — a virtual width whose centre
+         puts the word's left edge a pad past the rules' left end. */
+      const wordBoxW = (function () {
+        ctx.font = FONT_WEIGHT + " " + fontSize + "px " + FONT;
+        return Math.min(width, 2 * (pad * 1.5) + ctx.measureText(word).width);
+      })();
       if (!spec.blank) {
         ctx.font = FONT_WEIGHT + " " + fontSize + "px " + FONT;
         ctx.textAlign = "center";
@@ -5643,7 +5711,7 @@
         ctx.globalAlpha = spec.opacity == null ? 1 : spec.opacity;
         if (spec.fill && spec.fill !== "none") {
           ctx.fillStyle = spec.fill;
-          ctx.fillText(word, width / 2, base);
+          ctx.fillText(word, wordBoxW / 2, base);
         }
         if (spec.stroke && spec.stroke !== "none") {
           /* The export draws whatever the preview drew. traceRoutePaths works
@@ -5653,7 +5721,7 @@
              strokeText keeps the old contour rendering for a word the route
              cannot cover, exactly as the preview does. */
           routedPng = (spec.fill === "none" && spec.routeSw && typeof Path2D !== "undefined")
-            ? traceRoutePaths(word, fontSize, 0, base, width)
+            ? traceRoutePaths(word, fontSize, 0, base, wordBoxW)
             : null;
           ctx.strokeStyle = spec.stroke;
           ctx.lineCap = spec.cap || "round";
@@ -5668,7 +5736,7 @@
             ctx.lineWidth = Math.max(1, spec.sw * scale);
             const dash = dashOf(spec.dash);
             ctx.setLineDash(dash.length ? dash : []);
-            ctx.strokeText(word, width / 2, base);
+            ctx.strokeText(word, wordBoxW / 2, base);
           }
           ctx.setLineDash([]);
         }
@@ -5688,7 +5756,7 @@
          above just drew: alphabetic baseline at `base`, no tracking. */
       if (!spec.blank && strokeOverlayOn()) {
         strokeOverlayImage(word, width, height, fontSize, 0, base, "alphabetic",
-                           { routeDrawn: !!routedPng })
+                           { routeDrawn: !!routedPng }, wordBoxW)
           .then((img) => { if (img) ctx.drawImage(img, 0, 0, width, height); save(); })
           .catch(save);
       } else {
