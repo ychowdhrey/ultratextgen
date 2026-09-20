@@ -38,22 +38,39 @@ if (!adsTxt.includes('pub-8242324164413945')) {
 // Which files count as pages the site-wide infra tags must appear on — shared
 // with check-gtm.js / check-ads.js / check-funding-choices.js so the three can
 // never disagree about what a page is. See scripts/lib/page-infra-targets.js.
-const { shouldSkipPath, isVerificationStub } = require('./lib/page-infra-targets');
+const { shouldSkipPath, isVerificationStub, isAdFreePage } = require('./lib/page-infra-targets');
 
 const files = globSync('**/*.html', { cwd: ROOT, absolute: true });
 
 let passed = 0;
 let failed = 0;
 let skipped = 0;
+let adFree = 0;
 const errors = [];
 
 for (const file of files) {
+  const rel = path.relative(ROOT, file);
+
+  // The 404 page and the embed widget sources must carry NO loader — see
+  // isAdFreePage() for why. Checked before the skip rule on purpose: embed
+  // paths are skipped for the "must carry the tag" rule, and a skipped file
+  // is exactly where a loader would otherwise go unnoticed.
+  if (isAdFreePage(file, ROOT)) {
+    const content = fs.readFileSync(file, 'utf8');
+    if (content.includes(AD_CLIENT)) {
+      errors.push(`AdSense loader on an ad-free page (404/embed): ${rel}`);
+      failed++;
+    } else {
+      adFree++;
+    }
+    continue;
+  }
+
   if (shouldSkipPath(file, ROOT)) {
     skipped++;
     continue;
   }
 
-  const rel = path.relative(ROOT, file);
   const content = fs.readFileSync(file, 'utf8');
 
   if (isVerificationStub(content)) {
@@ -86,6 +103,7 @@ console.log(`  Checked : ${passed + failed}`);
 console.log(`  Passed  : ${passed}`);
 console.log(`  Failed  : ${failed}`);
 console.log(`  Skipped : ${skipped}`);
+console.log(`  Ad-free : ${adFree} (404 + embed sources, verified loader-free)`);
 
 if (errors.length > 0) {
   console.log('');
@@ -99,6 +117,6 @@ if (errors.length > 0 || !adsTxtOk) {
   process.exit(1);
 } else {
   console.log('');
-  console.log('All checked pages have the AdSense loader, and ads.txt is clean. ✓');
+  console.log('All checked pages have the AdSense loader, the 404/embed pages have none, and ads.txt is clean. ✓');
   process.exit(0);
 }

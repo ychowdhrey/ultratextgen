@@ -34,6 +34,35 @@ const SKIP_DIRS = ['node_modules', 'reports', 'data', 'functions', 'fonts'];
 // "<service>-site-verification: <filename>" line as the entire content.
 const VERIFICATION_STUB_RE = /^[\w-]+-site-verification:\s/;
 
+// Pages that must NOT carry the AdSense loader (added 2026-09-20). Two
+// classes, both checked by scripts/check-ads.js as "loader absent":
+//  - the 404 page. Google's placement policy disallows ads on screens without
+//    publisher content, with error pages as its standard example — and this
+//    site's /404 is its single most bot-hit URL (GA4 2026-09: Singapore
+//    datacenter traffic landing on it at a 0.03 ad-impression rate), so the
+//    loader there was ad requests from automation on a page that earns
+//    nothing.
+//  - the embed widget SOURCES — `<tool>/embed/index.html`, the documents the
+//    /embed/ documentation pages tell other sites to iframe (verified against
+//    those pages' own `<iframe src>` values, 2026-09-20). An ad request from
+//    inside a cross-domain iframe carries the host page's URL, which is not in
+//    this account's Sites list, so it can never fill — and ads inside iframes
+//    on other people's sites are a placement-policy exposure with no revenue
+//    on the other side. The /embed/… documentation pages themselves (leading
+//    `embed` segment) are ordinary indexable, sitemapped pages read directly
+//    by visitors and keep their loader; shouldSkipPath() merely stops the
+//    "must carry it" rule from demanding it there.
+// GTM and the Funding Choices tag are deliberately NOT removed from these
+// pages: the Funding Choices message is also the consent signal GA4 runs
+// under (consent mode for analytics is on), so it stays wherever GTM does.
+function isAdFreePage(filePath, root) {
+  const rel = path.relative(root, filePath).replace(/\\/g, '/');
+  if (rel === '404.html') return true;
+  const segs = rel.split('/');
+  // A non-leading `embed` directory is an iframe source; a leading one is docs.
+  return segs.slice(1, -1).some((seg) => seg.toLowerCase() === 'embed');
+}
+
 // Path-only test: does any segment of the file's path mark it as non-page
 // (an embed/widget/test/demo/404/_root file, or a build/helper directory)?
 function shouldSkipPath(filePath, root) {
@@ -62,5 +91,6 @@ module.exports = {
   SKIP_DIRS,
   VERIFICATION_STUB_RE,
   shouldSkipPath,
-  isVerificationStub
+  isVerificationStub,
+  isAdFreePage
 };
