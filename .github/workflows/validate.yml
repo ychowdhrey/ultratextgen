@@ -243,6 +243,29 @@ jobs:
         continue-on-error: true
         run: npm run check:zalgo-decodes | tee zalgo-decodes.log
 
+      # Whole-site and gating, same call as the zalgo decode check and
+      # check:static-footer: the llms.txt tree is committed output, so it is
+      # either current or it is not — there is no backlog for it to be
+      # permanently red against.
+      #
+      # Deliberately NOT diff-scoped, and that is the whole drift protection:
+      # a new locale, a new printable, a retired route, a page flipped to
+      # noindex or a page that lost its hero tagline all change bytes in files
+      # the PR never touched. The fix is always
+      # `npm run build:llms -- --write`, committed in the same PR.
+      - name: Run llms.txt index check
+        id: llms_index
+        continue-on-error: true
+        run: npm run check:llms | tee llms-index.log
+
+      # Gating, no backlog: the index publishes 4,692 claims about other pages
+      # (this URL resolves, is indexable, and this description belongs to it),
+      # so its rules are asserted rather than assumed.
+      - name: Run llms.txt index tests
+        id: llms_index_tests
+        continue-on-error: true
+        run: npm run test:llms | tee llms-index-tests.log
+
       # Whole-site and gating, same call as the zalgo decode check: the file
       # carries zero violations today, so there is no backlog to be permanently
       # red against. Deliberately NOT diff-scoped — the failure mode is a splat
@@ -919,6 +942,16 @@ jobs:
             cat zalgo-decodes.log
             echo '```'
             echo ""
+            echo "### llms.txt index check — \`${{ steps.llms_index.outcome }}\`"
+            echo '```'
+            cat llms-index.log
+            echo '```'
+            echo ""
+            echo "### llms.txt index tests — \`${{ steps.llms_index_tests.outcome }}\`"
+            echo '```'
+            cat llms-index-tests.log
+            echo '```'
+            echo ""
             echo "### _redirects rule check — \`${{ steps.redirects.outcome }}\`"
             echo '```'
             cat redirects.log
@@ -1129,6 +1162,8 @@ jobs:
           steps.faq_schema.outcome == 'failure' ||
           steps.zalgo_decodes.outcome == 'failure' ||
           steps.redirects.outcome == 'failure' ||
+          steps.llms_index.outcome == 'failure' ||
+          steps.llms_index_tests.outcome == 'failure' ||
           steps.zalgo_engine_tests.outcome == 'failure' ||
           steps.qr_tests.outcome == 'failure' ||
           steps.stencil_tests.outcome == 'failure' ||
