@@ -110,7 +110,11 @@
     "check:accent-notice": "node scripts/build-accent-notice.js",
     "fix:footer-nested-content": "python3 scripts/fix-footer-nested-content.py --write",
     "check:ci-gates": "python3 scripts/run-ci-gates.py",
-    "test:indexnow": "node scripts/lib/indexnow.test.js"
+    "test:indexnow": "node scripts/lib/indexnow.test.js",
+    "check:gate-inventory": "python3 scripts/build-gate-inventory.py",
+    "build:gate-inventory": "python3 scripts/build-gate-inventory.py --write",
+    "check:stranded-work": "python3 scripts/check-stranded-work.py",
+    "check:pr-overlap": "node scripts/check-pr-file-overlap.js"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

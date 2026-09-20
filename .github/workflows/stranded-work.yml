@@ -1,0 +1,74 @@
+name: Stranded work
+
+# Finds branches carrying commits that no open PR tracks — work that is
+# finished, gate-passing, and will never reach `main` because a merged PR
+# cannot track new work.
+#
+# NOT a PR gate, deliberately. The repository carries a real backlog of such
+# branches (16 at the time this shipped, the oldest 70 days), so a gating
+# version would be red on every PR regardless of what that PR did, which is
+# precisely how a check earns the right to be ignored. It runs on a schedule
+# and fails its own run instead, which is visible in the Actions tab without
+# blocking anyone's merge.
+#
+# fetch-depth: 0 is load-bearing, not hygiene. On a shallow checkout
+# `git merge-base` cannot resolve a common ancestor for most branches, and a
+# naive count then reports a branch's entire history as unmerged. The script
+# reports those as UNMEASURABLE rather than clean; on a full clone there are
+# none.
+
+on:
+  schedule:
+    - cron: '0 7 * * *'   # daily, 07:00 UTC — after the Monday digest's 06:00
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  stranded-work:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout (full history — see header)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch every remote branch
+        run: git fetch origin '+refs/heads/*:refs/remotes/origin/*' --prune
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Check for untracked work
+        id: stranded
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr list --state open --json number,headRefName --limit 300 \
+            > open-prs.json
+          python3 scripts/check-stranded-work.py --open-prs open-prs.json \
+            | tee stranded-work.log
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "### Stranded work — \`${{ steps.stranded.outcome }}\`"
+            echo '```'
+            cat stranded-work.log || echo "(no output — the check did not run)"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Fail the run if any branch carries untracked work
+        if: steps.stranded.outcome == 'failure'
+        run: |
+          echo "Branches carrying commits no open PR tracks — see the summary."
+          exit 1

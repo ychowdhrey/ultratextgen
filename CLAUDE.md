@@ -1081,8 +1081,8 @@ still lists a cluster the page has left is the same bug in the visible layer).
 
 **Ratified exception, `fr/calligraphie/`, `fr/changeur-de-police/`,
 `fr/police-d-ecriture/` (2026-07-26):** these three are three of the six
-`fr/` near-duplicate pages `ENGLISH-PARENT-RULE-AUDIT-2026-07-25.md` §2c
-flagged as no-EN-parent with no discussed exception. A query-level GSC pull
+`fr/` near-duplicate pages a 2026-07-25 English-Parent-Rule audit flagged as
+no-EN-parent with no discussed exception. A query-level GSC pull
 (France, 26 days) settled the other three (`fr/ecriture-style/`,
 `fr/generateur-de-texte/` retired via 301 to `fr/`; `fr/ecriture-speciale/`
 left as-is, negligible volume either way — see commit for the full
@@ -1099,14 +1099,14 @@ the exact same query).
 *not* a "no English speaker would search this" claim** — "font" and
 "calligraphy" are high-volume English concepts too. The actual reason no
 EN parent exists is a **market-specific SERP-consolidation difference**:
-the already-resolved "font converter" EN-parent question (`AUDIT-ACTIONS.md`
-row 17, closed by `GOLD-ANALYSIS-2026-07-25.md`/`LOCALE-OPPORTUNITY-HUNT-
-2026-07-25.md` §1c) found English/Spanish/Italian SERPs for that concept
+the already-resolved "font converter" EN-parent question (closed 2026-07-25
+on a pair of SERP-composition analyses) found English/Spanish/Italian SERPs
+for that concept
 pull the *same* competitor set as "font generator" — Google treats them as
 synonyms there, so a standalone EN page would cannibalize the EN homepage.
 The French GSC data above shows the opposite holds in the French market:
 `fr/index.html` doesn't compete on these queries at all. This EN-side
-synonym-consolidation read is inferred from the row-17 close-out, not
+synonym-consolidation read is inferred from that close-out, not
 independently verified against EN GSC for "font"/"calligraphy" specifically
 — worth a direct check before treating it as settled, but it's the reason
 these three stay unbuilt in EN rather than a claim that the underlying
@@ -4620,6 +4620,66 @@ against the live pages, never by memory.
   merged, or that `git branch -r --contains <commit>` includes
   `origin/master`.
 
+### Who else is touching these files right now (added 2026-09-19)
+
+Git's conflict detection is textual and per-hunk, so two sessions can edit one
+module in one week and merge without a conflict. This file already records the
+cost twice: the fire-on-success fix and a `share_destination` branch were both
+written into `js/share/share-core.js` on **2026-09-13** by two sessions, and the
+second was still carrying a redundant copy of the refactor six days later; and
+the peer-link and hub-coverage passes have rediscovered each other's work for
+the same reason. In every case the information existed — it was in another open
+PR — and nothing asked for it.
+
+**`npm run check:pr-overlap`** asks. It takes the files a branch changes and
+reports which other pull requests, open now or merged inside a recent window
+(default 14 days), touch any of the same ones. Nothing is stored and nothing is
+configured: the answer is the PR list and the diff, both of which GitHub already
+has.
+
+**It never gates**, and that is deliberate rather than cautious. Two branches
+touching `style.css` is normal most weeks, and a check that failed a PR for it
+is one people would learn to ignore — the failure this file documents against
+its own gates more than any other. It prints to the job summary, where the
+author reads it.
+
+**It fails closed in what it says.** No token, a rate limit, a shallow checkout
+with no merge base: it prints `UNKNOWN` and the reason, never "no overlaps". An
+informational check is not exempt from *a check that reports nothing is
+indistinguishable from a check that passes* — an author who reads "no overlaps"
+from a check that never ran is worse off than one who reads nothing.
+
+**Ordering is the whole usability of it, and the first CI run proved the first
+draft had it backwards.** That run reported **22 of 46 PRs overlapping**, sorted
+by how many files each shared — which put seven PRs sharing
+`{validate.yml, CLAUDE.md, package.json}` at the top and buried the one that
+mattered, the only OPEN PR, at position 13. So:
+
+* **Open before merged.** A merged PR overlapping your files is history — useful
+  context, nothing to coordinate. An open one can still conflict at merge time.
+  The headline states how many are open, and an open PR is never truncated away.
+* **Then rarest shared file first**, with each file's frequency printed
+  (`_redirects (1/46)` against `CLAUDE.md (15/46)`). A file a third of the
+  repo's PRs touch says nothing; a file one other PR touches is the point.
+  Frequency is **measured across the PRs compared**, so there is no noise list
+  to maintain and none to go stale — the three genuinely ubiquitous files here
+  could not have been listed in advance anyway, and listing them would have
+  deleted the live `CLAUDE.md` collision the run found.
+
+A second draft collapsed PRs whose every shared file exceeded a >50% threshold;
+measured against the real run **nothing reached it**, so that was a guessed
+number that never fired, and it was replaced with a plain display cap. Only
+generated files nobody writes — `sitemap.xml`, the sitemap cache and
+`package-lock.json` — are excluded outright.
+
+`--pulls-json <file>` supplies the PR list from disk instead of the API, which
+is what makes all of this testable against a real fixture.
+
+Verified by replaying the real case: given the 2026-09-13 commit as an open PR
+and the 2026-09-19 `share_destination` commit as the branch under test, it names
+`js/share/share-core.js` among the shared files. Its first live run found a real
+one too — two concurrent branches both editing this file.
+
 ### Parallel sessions build the same thing under different names
 
 Multiple AI sessions often work this repo concurrently, and translation
@@ -4962,6 +5022,13 @@ Standing protocol:
   cleanup pass to backfill it — see "New pages must ship with their hero/OG/
   Twitter art in the same change" above. Run `npm run check:new-page-images`
   before opening the PR.
+- Do not rewrite a shared module without checking who else is in it. Git merges
+  two sessions' edits to one file without a conflict, which is how
+  `js/share/share-core.js` was refactored twice on the same day by two sessions
+  that could not see each other. `npm run check:pr-overlap` names every other
+  open or recently-merged PR touching your files; it runs in CI as an
+  informational step and reports `UNKNOWN` rather than "no overlaps" when it
+  could not compare. See "Who else is touching these files right now" above.
 - Do not upload (or hand-author) a pin CSV in any schema other than Pinterest's.
   The internal inventory CSVs (`data/*_pins.csv`) are NOT importable. Only the
   `data/*_upload.csv` files are — generated solely via `scripts/pinterest_csv.py`

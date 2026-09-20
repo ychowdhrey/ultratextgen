@@ -76,9 +76,11 @@
 
 # retired 2026-07-26: near-duplicate of fr/index.html's own head term
 # ("écriture stylée" / "générateur de texte stylé" both restate the
-# homepage's own pitch), confirmed via query-level GSC — see
-# ENGLISH-PARENT-RULE-AUDIT-2026-07-25.md §2c and the fr/ six-page
-# GSC follow-up analysis
+# homepage's own pitch), confirmed via a query-level GSC pull over France
+# (26 days): neither page drew impressions on a query fr/index.html does
+# not already rank for. Four of the six pages that 2026-07-25 review
+# flagged survived as ratified exceptions — see CLAUDE.md's Localization
+# Workflow section.
 /fr/ecriture-style/          /fr/                   301
 /fr/ecriture-style          /fr/                   301
 /fr/generateur-de-texte/     /fr/                   301
