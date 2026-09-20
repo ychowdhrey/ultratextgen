@@ -786,7 +786,9 @@
     /* Copy toast */
     .copy-toast {
       position: fixed;
-      bottom: 24px;
+      /* --utg-anchor-h: height of a displayed bottom anchor ad, set by
+         header.js; 0px when there is none. Keeps the toast above it. */
+      bottom: calc(24px + var(--utg-anchor-h, 0px));
       left: 50%;
       transform: translateX(-50%) translateY(20px);
       background: var(--text-primary);
@@ -3326,7 +3328,7 @@ h3 + .section-subline {
 /* Toast notification */
 .symbol-toast {
   position: fixed;
-  bottom: 24px;
+  bottom: calc(24px + var(--utg-anchor-h, 0px)); /* see .copy-toast */
   left: 50%;
   transform: translateX(-50%) translateY(20px);
   background: var(--text-primary);
@@ -10497,7 +10499,7 @@ body.dark-mode .source-note {
 .pt-toast {
   position: fixed;
   left: 50%;
-  bottom: 1.5rem;
+  bottom: calc(1.5rem + var(--utg-anchor-h, 0px)); /* see .copy-toast */
   transform: translate(-50%, 1rem);
   max-width: min(92vw, 30rem);
   padding: 0.7rem 1rem;
