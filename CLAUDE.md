@@ -4331,11 +4331,68 @@ twelve `ctx.font` ones, defaulting to 700 so no existing page moves, and the
 and drawing another misplaces the ink box**, which is the whole reason those
 probes exist.
 
-**Reported, not fixed: `Archivo Black` ships 400 only too**, so
-`/printables/block-letters/` and `/printables/spanish-alphabet-chart/` are
-rendering synthetic bold today (measured: p10 stem 41 → 48, ~17% fatter). The
-one-line fix is `fontWeight: 400` on those pages, but it changes the appearance
-of shipping pages and is an owner call, not a drive-by.
+**~~Reported, not fixed: `Archivo Black` ships 400 only too~~ (RESOLVED
+2026-09-20 for the two pages named, in PR #913).** The paragraph said
+`/printables/block-letters/` and `/printables/spanish-alphabet-chart/` were
+rendering synthetic bold and called the one-line `fontWeight: 400` an owner
+call. The owner made it; both pages now carry `fontWeight: 400`. **The other
+surfaces were deliberately left, so this is resolved for two pages and open for
+73 others** (next section).
+
+Two things from that fix are worth keeping, because neither is visible in the
+one-line diff:
+
+* **A second engine is what proved it.** Chromium and Firefox drew the *same*
+  page, from the *same* font file, differently: stem p10 50 against 47, and the
+  counter in a lowercase `e` 334 against 436, a 23% divergence in the hole a
+  child colours in. After the fix both engines report p10 42 and counters within
+  3px of 2,000. Chromium alone could not have shown the defect, so a
+  synthetic-bold question needs two engines or it is not measured.
+* **The repo had already decided this once, on the other renderer.**
+  `scripts/generate-printables-previews.py` requests Archivo Black at 400 with
+  the comment *"a single-weight family is requested at 400 so fontconfig never
+  synthesises a bold that would double the outline's stroke"*. So the build-time
+  preview and the runtime sheet had been drawing different letterforms. When a
+  second renderer exists, check what it already does before treating a question
+  as open.
+
+### 73 printable surfaces still ask for a weight that is not shipped (added 2026-09-20)
+
+Measured by loading all 298 pages carrying `window.UTG_PRINTABLE` and reading
+the config **executed rather than parsed**, so faces nested in `nameStyles` and
+`scriptOptions` are counted, then comparing each primary family against
+`assets/fonts/manifest.json`. The count was **75 before PR #913 and 73 after**.
+A family this site does not self-host is reported as unknown rather than
+missing, so nothing here is inferred from a font we do not ship.
+
+| family | ships | surfaces | where |
+|---|---|---|---|
+| Archivo Black | 400 | **54** | `printables/block-letters/`'s 36 letter and number spokes, `banner-maker`, 12 locale pages, plus 5 graffiti pages carrying it as the `block` style option |
+| Sedgwick Ave Display | 400 | 5 | `printables/graffiti-letters/` and its de/es/fr/id twins, `nameStyles.0` |
+| Permanent Marker | 400 | 5 | the same five pages, `nameStyles.1` |
+| Rubik Spray Paint | 400 | 5 | the same five pages, `nameStyles.3` |
+| Playwrite DE Grund | 400 | 2 | `de/zum-ausdrucken/schreibschrift`, root and `scriptOptions.0` |
+| Playwrite DE SAS | 400 | 1 | the same page, `scriptOptions.1` |
+| Playwrite DE VA | 400 | 1 | the same page, `scriptOptions.2` |
+
+Two of those rows deserve a decision rather than a sweep. The **36 block-letter
+spokes** are the same cluster as the hub PR #913 fixed, so a spoke and its own
+hub now render the same letter differently; that is the strongest candidate for
+the next pass. And **`de/zum-ausdrucken/schreibschrift`** is a German cursive
+page the traceable work above never reached, because it sets its letters in the
+`Playwrite DE *` family rather than `Playwrite US Trad`, so the sweep that
+caught the English cursive pages passed over it.
+
+**The table is a measurement, not an inventory that maintains itself.** It was
+taken against `db196a189`, and it goes stale on the next printables batch: open
+PR #912, read on 2026-09-20, adds four block-letter pages (`it`, `nl`, `pl`,
+`pt`) that set Archivo Black with `fontWeight` unset, which takes the count to
+77 the moment it merges. Re-measure with the method above rather than trusting
+this table's age.
+
+**There is no gate for this, and adding one is not obviously right.** A check
+would be red on 73 surfaces from the day it shipped, which is the shape this
+file records people learning to ignore.
 
 ### Two flags, because hollow and ruled are different jobs
 
