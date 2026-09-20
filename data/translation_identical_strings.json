@@ -4217,6 +4217,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Text Art",
+        "reason": "the untranslated English \"text art\" is what this market actually searches for the picture-built-from-characters job — Semrush 590/mo in the FR database (directly-fetched, 2026-08-15). The obvious native alternatives denote stylised LETTERING, a different concept this locale already owns elsewhere, so renaming into them would be both semantically wrong and a hub-vs-spoke collision. Turkish is the control: it uses the native compound `yazı sanatı` and is not ledgered.",
+        "found_on": "fr/library/text-art/",
+        "added": "2026-08-31"
+      },
+      {
         "string": "TextGlitchGenerator",
         "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
         "found_on": "fr/usecase/zalgo-text/",
@@ -9299,6 +9305,12 @@
         "added": "2026-09-01"
       },
       {
+        "string": "Text Art",
+        "reason": "the untranslated English \"text art\" is what this market actually searches for the picture-built-from-characters job — Semrush 1,000/mo in the TH database (directly-fetched, 2026-08-15). The obvious native alternatives denote stylised LETTERING, a different concept this locale already owns elsewhere, so renaming into them would be both semantically wrong and a hub-vs-spoke collision. Turkish is the control: it uses the native compound `yazı sanatı` and is not ledgered.",
+        "found_on": "th/library/text-art/",
+        "added": "2026-08-31"
+      },
+      {
         "string": "WhatsApp (Android)",
         "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
         "found_on": "th/updates/unicode-18-most-anticipated-emoji/",
@@ -9391,6 +9403,36 @@
     ],
     "tl": [
       {
+        "string": "*italic* → italic",
+        "reason": "a Markdown syntax example: the literal source on the left and its rendered result on the right, both code rather than prose",
+        "found_on": "tl/guide/discord-text-formatting-paliwanag/",
+        "added": "2026-08-31"
+      },
+      {
+        "string": "About Me / bio",
+        "reason": "Discord's own product feature name, cited as such. Discord ships no Filipino locale (verified against Discord's own developer reference — 32 locales, no fil/tl), so this is the literal text a Filipino reader sees in the app. Matches the `Nitro Display Name Styles` entry already recorded for tl on this same page family, and the `it` entry for `Username (@handle)`; ms and id keep `Username (@)` while translating its neighbours. Used 7 times on the page, always in English.",
+        "found_on": "tl/guide/saan-gumagana-ang-font-sa-discord/",
+        "added": "2026-08-31"
+      },
+      {
+        "string": "Channel name (text)",
+        "reason": "Discord's own product feature name, cited as such. Discord ships no Filipino locale (verified against Discord's own developer reference — 32 locales, no fil/tl), so this is the literal text a Filipino reader sees in the app. Matches the `Nitro Display Name Styles` entry already recorded for tl on this same page family, and the `it` entry for `Username (@handle)`; ms and id keep `Username (@)` while translating its neighbours.",
+        "found_on": "tl/guide/saan-gumagana-ang-font-sa-discord/",
+        "added": "2026-08-31"
+      },
+      {
+        "string": "Channel topic",
+        "reason": "Discord's own product feature name, cited as such. Discord ships no Filipino locale (verified against Discord's own developer reference — 32 locales, no fil/tl), so this is the literal text a Filipino reader sees in the app. Matches the `Nitro Display Name Styles` entry already recorded for tl on this same page family, and the `it` entry for `Username (@handle)`; ms and id keep `Username (@)` while translating its neighbours.",
+        "found_on": "tl/guide/saan-gumagana-ang-font-sa-discord/",
+        "added": "2026-08-31"
+      },
+      {
+        "string": "Display name",
+        "reason": "Discord's own product feature name, cited as such. Discord ships no Filipino locale (verified against Discord's own developer reference — 32 locales, no fil/tl), so this is the literal text a Filipino reader sees in the app. Matches the `Nitro Display Name Styles` entry already recorded for tl on this same page family, and the `it` entry for `Username (@handle)`; ms and id keep `Username (@)` while translating its neighbours. The page's own running Tagalog prose uses \"display name\" 16 times.",
+        "found_on": "tl/guide/saan-gumagana-ang-font-sa-discord/",
+        "added": "2026-08-31"
+      },
+      {
         "string": "Emoji?",
         "reason": "\"Emoji\" is the loanword this locale itself uses in running prose on the same page",
         "found_on": "tl/guide/saan-gumagana-ang-font-sa-discord/",
@@ -9419,6 +9461,54 @@
         "reason": "\"Nitro Display Name Styles\" is Discord's own product feature name, cited as such",
         "found_on": "tl/guide/discord-text-formatting-paliwanag/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Nitro styles",
+        "reason": "\"Nitro\" is Discord's own product name and \"styles\" is cited with it; the sibling string `Nitro Display Name Styles` is already recorded for tl on this page.",
+        "found_on": "tl/guide/discord-text-formatting-paliwanag/",
+        "added": "2026-08-31"
+      },
+      {
+        "string": "Role name",
+        "reason": "Discord's own product feature name, cited as such. Discord ships no Filipino locale (verified against Discord's own developer reference — 32 locales, no fil/tl), so this is the literal text a Filipino reader sees in the app. Matches the `Nitro Display Name Styles` entry already recorded for tl on this same page family, and the `it` entry for `Username (@handle)`; ms and id keep `Username (@)` while translating its neighbours.",
+        "found_on": "tl/guide/saan-gumagana-ang-font-sa-discord/",
+        "added": "2026-08-31"
+      },
+      {
+        "string": "Server name",
+        "reason": "Discord's own product feature name, cited as such. Discord ships no Filipino locale (verified against Discord's own developer reference — 32 locales, no fil/tl), so this is the literal text a Filipino reader sees in the app. Matches the `Nitro Display Name Styles` entry already recorded for tl on this same page family, and the `it` entry for `Username (@handle)`; ms and id keep `Username (@)` while translating its neighbours.",
+        "found_on": "tl/guide/saan-gumagana-ang-font-sa-discord/",
+        "added": "2026-08-31"
+      },
+      {
+        "string": "Server nickname",
+        "reason": "Discord's own product feature name, cited as such. Discord ships no Filipino locale (verified against Discord's own developer reference — 32 locales, no fil/tl), so this is the literal text a Filipino reader sees in the app. Matches the `Nitro Display Name Styles` entry already recorded for tl on this same page family, and the `it` entry for `Username (@handle)`; ms and id keep `Username (@)` while translating its neighbours.",
+        "found_on": "tl/guide/saan-gumagana-ang-font-sa-discord/",
+        "added": "2026-08-31"
+      },
+      {
+        "string": "Unicode \"fonts\"",
+        "reason": "the loanword this locale itself uses in running prose on the same page — the page's own Tagalog meta description reads \"ang tatlong magkaibang text system ng Discord (Markdown, Unicode fonts, Nitro)\". Same reason as the `Markdown?` and `Emoji?` entries already recorded for tl on this row.",
+        "found_on": "tl/guide/discord-text-formatting-paliwanag/",
+        "added": "2026-08-31"
+      },
+      {
+        "string": "Unicode font + symbols",
+        "reason": "the loanword this locale itself uses in running prose on the same page — the page's own Tagalog meta description reads \"ang tatlong magkaibang text system ng Discord (Markdown, Unicode fonts, Nitro)\". Same reason as the `Markdown?` and `Emoji?` entries already recorded for tl on this row.",
+        "found_on": "tl/guide/discord-text-formatting-paliwanag/",
+        "added": "2026-08-31"
+      },
+      {
+        "string": "Unicode fonts?",
+        "reason": "the loanword this locale itself uses in running prose on the same page — the page's own Tagalog meta description reads \"ang tatlong magkaibang text system ng Discord (Markdown, Unicode fonts, Nitro)\". Same reason as the `Markdown?` and `Emoji?` entries already recorded for tl on this row.",
+        "found_on": "tl/guide/saan-gumagana-ang-font-sa-discord/",
+        "added": "2026-08-31"
+      },
+      {
+        "string": "Username (@handle)",
+        "reason": "Discord's own product feature name, cited as such. Discord ships no Filipino locale (verified against Discord's own developer reference — 32 locales, no fil/tl), so this is the literal text a Filipino reader sees in the app. Matches the `Nitro Display Name Styles` entry already recorded for tl on this same page family, and the `it` entry for `Username (@handle)`; ms and id keep `Username (@)` while translating its neighbours.",
+        "found_on": "tl/guide/saan-gumagana-ang-font-sa-discord/",
+        "added": "2026-08-31"
       },
       {
         "string": "Zalgo",
@@ -10485,6 +10575,12 @@
         "reason": "currency name that coincides with the English form in this language. Evidence from vi/library/ky-hieu-tien-te/ itself: the tiles around it are translated (Kip → Kíp; Rupee Sign → Ký hiệu rupee; Dong → Đồng), so this one is kept because it genuinely matches.",
         "found_on": "vi/library/ky-hieu-tien-te/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Text Art",
+        "reason": "the untranslated English \"text art\" is what this market actually searches for the picture-built-from-characters job — Semrush 480/mo in the VN database (directly-fetched, 2026-08-15). The obvious native alternatives denote stylised LETTERING, a different concept this locale already owns elsewhere, so renaming into them would be both semantically wrong and a hub-vs-spoke collision. Turkish is the control: it uses the native compound `yazı sanatı` and is not ledgered.",
+        "found_on": "vi/library/text-art/",
+        "added": "2026-08-31"
       },
       {
         "string": "TextGlitchGenerator",
