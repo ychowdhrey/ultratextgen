@@ -583,7 +583,7 @@
         { label: "Toepassingen", href: "/nl/usecase/" },
         { label: "Categorieën", href: "/category/" },
         { label: "Bibliotheek", href: "/nl/library/" },
-        { label: "Afdrukbaar", href: "/printables/" },
+        { label: "Afdrukbaar", href: "/nl/om-uit-te-printen/" },
         { label: "Evenementen", href: "/events/" }
       ],
       tools: [
