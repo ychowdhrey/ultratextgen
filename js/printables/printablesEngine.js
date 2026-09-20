@@ -97,6 +97,38 @@
         versions: "different grids, one per name",
         oneGrid: "One grid"
       },
+      /* Crossword and word scramble. English only, for the same reason and
+         under the same rule as wordSearch above: no locale build of either
+         page exists, so nothing can render these in the wrong language. When
+         one ships, harvest each string per docs/em-dash-policy.md's sibling
+         rule and attest it with npm run audit:locale-attestation. */
+      crossword: {
+        heading: "Crossword",
+        across: "Across",
+        down: "Down",
+        answerKey: "Answer key",
+        forWhom: "for",
+        clueBlank: "(write your own clue)",
+        wordBank: "Word bank",
+        noFit: "No room in the grid for:",
+        needWords: "Type a few words that share some letters.",
+        gridOf: "Crossword grid",
+        cellsBy: "squares by",
+        versions: "different layouts, one per name",
+        oneGrid: "One layout"
+      },
+      scramble: {
+        heading: "Word Scramble",
+        unscramble: "Unscramble each word.",
+        answerKey: "Answer key",
+        forWhom: "for",
+        startsWith: "starts with",
+        noScramble: "Too short to scramble:",
+        needWords: "Type a few words to scramble.",
+        versions: "different sheets, one per name",
+        oneSheet: "One sheet",
+        easy: "Easy", medium: "Medium", hard: "Hard"
+      },
       printOpts: { settings: "PDF settings", paper: "Paper", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Download PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
       printBook: "Save as a book: one page per letter",
       save: "Save",
@@ -736,6 +768,24 @@
     searchMeta: $("#pt-search-meta"),
     searchPrint: $("#pt-search-print"),
     searchPng: $("#pt-search-png"),
+    cwInput: $("#pt-cw-input"),
+    cwRoster: $("#pt-cw-roster"),
+    cwHeading: $("#pt-cw-heading"),
+    cwAnswer: $("#pt-cw-answer"),
+    cwPreview: $("#pt-cw-preview"),
+    cwMeta: $("#pt-cw-meta"),
+    cwPrint: $("#pt-cw-print"),
+    cwPng: $("#pt-cw-png"),
+    scInput: $("#pt-sc-input"),
+    scRoster: $("#pt-sc-roster"),
+    scHeading: $("#pt-sc-heading"),
+    scLevelGroup: $("#pt-sc-level"),
+    scHint: $("#pt-sc-hint"),
+    scAnswer: $("#pt-sc-answer"),
+    scPreview: $("#pt-sc-preview"),
+    scMeta: $("#pt-sc-meta"),
+    scPrint: $("#pt-sc-print"),
+    scPng: $("#pt-sc-png"),
     printRoot: $("#pt-print-root")
   };
 
@@ -2157,7 +2207,7 @@
   // typed here is ever sent to analytics (see header.js trackPrintable).
   function firstEl(list) { return list.filter(Boolean)[0] || null; }
   function primaryInput() { return firstEl([el.nameInput, el.genInput, el.designInput, el.bannerInput, el.puzzleInput]); }
-  function primaryRoster() { return firstEl([el.nameRoster, el.genRoster, el.designRoster, el.puzzleRoster, el.searchRoster]); }
+  function primaryRoster() { return firstEl([el.nameRoster, el.genRoster, el.designRoster, el.puzzleRoster, el.searchRoster, el.cwRoster, el.scRoster]); }
   /* presetParams() is defined above the word-search section, so it reaches the
      module through this rather than through searchBuild(). The fallback keeps a
      share link working (minus its word list) if the module has not arrived. */
@@ -2503,7 +2553,7 @@
      HTML changes, so no locale page is "touched" for the parity, translation
      or em-dash gates. */
   function convertPrintButtonsToPdf() {
-    [el.alphaPrint, el.practicePrint, el.namePrint, el.genPrint, el.designPrint, el.bannerPrint, el.puzzlePrint, el.searchPrint].filter(Boolean).forEach((btn) => {
+    [el.alphaPrint, el.practicePrint, el.namePrint, el.genPrint, el.designPrint, el.bannerPrint, el.puzzlePrint, el.searchPrint, el.cwPrint, el.scPrint].filter(Boolean).forEach((btn) => {
       if (btn.dataset.ptPdf) return;
       btn.dataset.ptPdf = "1";
       btn.textContent = PO.savePdf;
@@ -4406,7 +4456,7 @@
 
   function mountSheetCost() {
     if ($("#pt-sheet-cost")) return;
-    const btn = el.namePrint || el.genPrint || el.designPrint || el.puzzlePrint || el.searchPrint || el.alphaPrint;
+    const btn = el.namePrint || el.genPrint || el.designPrint || el.puzzlePrint || el.searchPrint || el.cwPrint || el.scPrint || el.alphaPrint;
     if (!btn) return;
     const out = document.createElement("p");
     out.id = "pt-sheet-cost";
@@ -8512,6 +8562,422 @@
   }
 
   /* ---------------------------------------------------------------
+     Crossword and word scramble
+     ---------------------------------------------------------------
+     Two more puzzles over the same word list, and deliberately the same
+     shape as the word search above: one seeded builder, one sheet node, one
+     print path, and the PNG rasterised from the very DOM that prints so the
+     two cannot drift.
+
+     The differentiator is identical too -- a roster gives one sheet per
+     child, seeded by their name, so neighbours cannot copy and a reprint
+     matches. It is honest about its own limit: a word list whose words share
+     almost no letters admits only one crossword, and every seed then returns
+     it. The grid varies where the list allows variation, which is why the
+     page's copy does not promise more than that.
+
+     The generators are js/printables/wordPuzzles.js -- pure, seeded and
+     tested (wordPuzzles.test.js), because a clue naming a word the grid does
+     not contain is an unsolvable sheet that looks exactly like a solvable one.
+
+     Gated on their own mount points, so no other page changes.
+     --------------------------------------------------------------- */
+
+  const CW_DEMO = CFG.crosswordDemo
+    || "island = Land with water all around it\nvalley = The low ground between hills\nharbour = Where ships shelter\ncapital = The city a country governs from\nriver = Water that flows to the sea\ndesert = Land that gets almost no rain";
+  const SC_DEMO = CFG.scrambleDemo
+    || "because\nfriend\npeople\nschool\nwater\nthere\nwhich\nwould";
+  const scrambleState = { level: "medium" };
+
+  let wpWarned = false;
+  function puzzleNs(name) {
+    const ns = window.UltraTextGen && window.UltraTextGen[name];
+    if (!ns && !wpWarned) {
+      wpWarned = true;
+      console.warn("[printables] js/printables/wordPuzzles.js has not loaded; the puzzle cannot be built.");
+    }
+    return ns || null;
+  }
+  function loadWordPuzzlesModule() {
+    if (!(el.cwInput && el.cwPreview) && !(el.scInput && el.scPreview)) return;
+    if (window.UltraTextGen && window.UltraTextGen.crossword) return;
+    if (document.querySelector("script[data-pt-wordpuzzles]")) return;
+    const sc = document.createElement("script");
+    sc.src = "/js/printables/wordPuzzles.js";
+    sc.async = true;
+    sc.setAttribute("data-pt-wordpuzzles", "");
+    sc.onload = () => { renderCwPreview(); renderScPreview(); };
+    sc.onerror = () => console.warn("[printables] js/printables/wordPuzzles.js failed to load.");
+    document.head.appendChild(sc);
+  }
+
+  function headingOf(input, fallback) {
+    const typed = input ? input.value.trim().slice(0, 48) : "";
+    return typed || fallback;
+  }
+  function sheetTitle(text, seedName, forWhom, showAnswer, answerKey) {
+    let out = seedName ? text + " " + forWhom + " " + seedName : text;
+    if (showAnswer) out += " · " + answerKey;
+    return out;
+  }
+  function footerRow(className) {
+    const row = document.createElement("div");
+    row.className = className;
+    [T.nameLabel, T.dateLabel].forEach((label) => {
+      const f = document.createElement("span");
+      f.className = "pt-search-footer-field";
+      const l = document.createElement("span");
+      l.textContent = label;
+      const line = document.createElement("span");
+      line.className = "pt-search-footer-line";
+      f.appendChild(l); f.appendChild(line);
+      row.appendChild(f);
+    });
+    return row;
+  }
+
+  /* ---- crossword ---- */
+
+  function cwWordsText() {
+    const raw = el.cwInput ? el.cwInput.value : "";
+    return (raw && raw.trim()) ? raw : CW_DEMO;
+  }
+  function cwAnswerOn() { return !!(el.cwAnswer && el.cwAnswer.checked); }
+
+  function cwBuild(seed) {
+    const ns = puzzleNs("crossword");
+    if (!ns) return null;
+    const text = cwWordsText();
+    return ns.build({ input: text, seed: seed || text });
+  }
+
+  /* The grid is a table of squares: a filled square carries its letter (or,
+     on the puzzle copy, nothing but its number) and a blank square is a
+     spacer. role="img" for the same reason the word search grid uses it -- a
+     crossword is solved visually and reading 200 squares aloud one at a time
+     is hostile rather than accessible. The clue list below is the real
+     content and is fully readable. */
+  function cwGridNode(built, showAnswer) {
+    const grid = document.createElement("div");
+    grid.className = "pt-cw-grid" + (showAnswer ? " is-answer" : "");
+    grid.style.setProperty("--pt-cw-cols", String(built.width));
+    grid.setAttribute("role", "img");
+    grid.setAttribute("aria-label",
+      T.crossword.gridOf + ", " + built.width + " " + T.crossword.cellsBy + " " + built.height);
+    for (let r = 0; r < built.height; r++) {
+      for (let c = 0; c < built.width; c++) {
+        const box = document.createElement("span");
+        const letter = built.grid[r][c];
+        box.className = "pt-cw-cell" + (letter ? "" : " is-blank");
+        if (letter) {
+          const num = built.numbers[r][c];
+          if (num) {
+            const n = document.createElement("i");
+            n.className = "pt-cw-num";
+            n.textContent = String(num);
+            box.appendChild(n);
+          }
+          if (showAnswer) {
+            const g = document.createElement("b");
+            g.className = "pt-cw-letter";
+            g.textContent = letter;
+            box.appendChild(g);
+          }
+        }
+        grid.appendChild(box);
+      }
+    }
+    return grid;
+  }
+
+  function cwClueListNode(built, dir, label) {
+    const entries = dir === "across" ? built.across : built.down;
+    if (!entries.length) return null;
+    const wrap = document.createElement("div");
+    wrap.className = "pt-cw-clues";
+    const h = document.createElement("h4");
+    h.className = "pt-cw-clues-title";
+    h.textContent = label;
+    wrap.appendChild(h);
+    const list = document.createElement("ol");
+    list.className = "pt-cw-clue-list";
+    entries.forEach((e) => {
+      const li = document.createElement("li");
+      li.value = e.number;
+      li.textContent = e.clue ? e.clue : T.crossword.clueBlank;
+      const len = document.createElement("span");
+      len.className = "pt-cw-len";
+      len.textContent = " (" + e.length + ")";
+      li.appendChild(len);
+      list.appendChild(li);
+    });
+    wrap.appendChild(list);
+    return wrap;
+  }
+
+  /* A word bank, but only when the list carried no clues at all. With clues
+     it would hand the solver every answer; without them the sheet would be
+     unsolvable, and "fill the grid from the bank" is the standard classroom
+     format for a spelling list that has no definitions attached. */
+  function cwWordBankNode(built) {
+    if (built.entries.some((e) => e.clue)) return null;
+    const wrap = document.createElement("div");
+    wrap.className = "pt-cw-bank";
+    const h = document.createElement("h4");
+    h.className = "pt-cw-clues-title";
+    h.textContent = T.crossword.wordBank;
+    wrap.appendChild(h);
+    const list = document.createElement("ul");
+    list.className = "pt-search-words";
+    built.words.filter((w) => w.placed).slice()
+      .sort((a, b) => a.key.localeCompare(b.key))
+      .forEach((w) => {
+        const li = document.createElement("li");
+        li.textContent = w.display;
+        list.appendChild(li);
+      });
+    wrap.appendChild(list);
+    return wrap;
+  }
+
+  function cwSheetNode(seedName, showAnswer) {
+    const built = cwBuild(seedName);
+    const sheet = document.createElement("div");
+    sheet.className = "pt-search-sheet pt-cw-sheet";
+    if (!built || !built.entries.length) return sheet;
+
+    const h = document.createElement("h3");
+    h.className = "pt-search-heading-text";
+    h.textContent = sheetTitle(headingOf(el.cwHeading, T.crossword.heading), seedName,
+      T.crossword.forWhom, showAnswer, T.crossword.answerKey);
+    sheet.appendChild(h);
+
+    sheet.appendChild(cwGridNode(built, showAnswer));
+
+    const bank = cwWordBankNode(built);
+    if (bank) sheet.appendChild(bank);
+
+    const cols = document.createElement("div");
+    cols.className = "pt-cw-clue-cols";
+    [["across", T.crossword.across], ["down", T.crossword.down]].forEach((pair) => {
+      const node = cwClueListNode(built, pair[0], pair[1]);
+      if (node) cols.appendChild(node);
+    });
+    sheet.appendChild(cols);
+    sheet.appendChild(footerRow("pt-search-footer-row"));
+    return sheet;
+  }
+
+  /* What the visitor cannot see from the grid: a word that would not cross
+     anything. Reported rather than dropped, because a list quietly one word
+     short is the same silent failure the module's own test exists for. */
+  function renderCwMeta(built) {
+    if (!el.cwMeta) return;
+    const bits = [];
+    if (built && built.entries.length) {
+      const names = rosterNames(el.cwRoster);
+      bits.push(names.length >= 2 ? names.length + " " + T.crossword.versions : T.crossword.oneGrid);
+      if (built.unplaced.length) {
+        bits.push(T.crossword.noFit + " " + built.unplaced.map((w) => w.display).join(", "));
+      }
+    } else {
+      bits.push(T.crossword.needWords);
+    }
+    el.cwMeta.textContent = bits.join(" · ");
+  }
+
+  function renderCwPreview() {
+    if (!el.cwPreview) return;
+    const built = cwBuild(null);
+    el.cwPreview.innerHTML = "";
+    if (built && built.entries.length) el.cwPreview.appendChild(cwSheetNode(null, false));
+    renderCwMeta(built);
+    updateSheetCost();
+  }
+
+  function printCrossword() {
+    const holder = document.createElement("div");
+    holder.className = "pt-search-print-holder";
+    const answer = cwAnswerOn();
+    const names = rosterNames(el.cwRoster);
+    if (names.length >= 2) {
+      holder.classList.add("pt-class-set");
+      /* Keys grouped after the whole class, not behind each child: a teacher
+         prints the stack once and keeps the keys, and a key behind a child's
+         sheet is a key handed to that child. */
+      appendSheetPages(holder, names, (n) => cwSheetNode(n, false));
+      if (answer) appendSheetPages(holder, names, (n) => cwSheetNode(n, true));
+      printWrap("", holder, "crossword");
+      return;
+    }
+    holder.appendChild(sheetPageNode(cwSheetNode(null, false)));
+    if (answer) holder.appendChild(sheetPageNode(cwSheetNode(null, true)));
+    printWrap("", holder, "crossword");
+  }
+
+  function buildCrosswordSurface() {
+    if (!el.cwInput || !el.cwPreview) return;
+    let timer = null;
+    const schedule = () => { if (timer) clearTimeout(timer); timer = setTimeout(renderCwPreview, 160); };
+    el.cwInput.addEventListener("input", schedule);
+    if (el.cwHeading) el.cwHeading.addEventListener("input", schedule);
+    if (el.cwRoster) el.cwRoster.addEventListener("input", schedule);
+    if (el.cwAnswer) el.cwAnswer.addEventListener("change", renderCwPreview);
+    if (el.cwPrint) el.cwPrint.addEventListener("click", printCrossword);
+    if (el.cwPng) el.cwPng.addEventListener("click", () => { pngMode = true; printCrossword(); });
+    renderCwPreview();
+  }
+
+  /* ---- word scramble ---- */
+
+  function scWordsText() {
+    const raw = el.scInput ? el.scInput.value : "";
+    return (raw && raw.trim()) ? raw : SC_DEMO;
+  }
+  function scAnswerOn() { return !!(el.scAnswer && el.scAnswer.checked); }
+  function scHintOn() { return !!(el.scHint && el.scHint.checked); }
+
+  function scBuild(seed) {
+    const ns = puzzleNs("wordScramble");
+    if (!ns) return null;
+    const text = scWordsText();
+    return ns.build({ input: text, level: scrambleState.level, seed: seed || text });
+  }
+
+  function scListNode(built, showAnswer) {
+    const list = document.createElement("ol");
+    list.className = "pt-sc-list";
+    built.words.forEach((w) => {
+      const li = document.createElement("li");
+      li.className = "pt-sc-item";
+
+      const puzzle = document.createElement("span");
+      puzzle.className = "pt-sc-scrambled";
+      /* Spaced letters, not a run. A scramble printed as one word reads as a
+         misspelling; spacing the letters is what makes it read as loose tiles
+         to rearrange, and it is how every paper worksheet sets it. */
+      puzzle.textContent = w.scrambled.join(" ");
+      li.appendChild(puzzle);
+
+      if (showAnswer) {
+        const ans = document.createElement("b");
+        ans.className = "pt-sc-answer";
+        ans.textContent = w.display;
+        li.appendChild(ans);
+      } else {
+        const line = document.createElement("span");
+        line.className = "pt-sc-line";
+        if (scHintOn()) {
+          const hint = document.createElement("i");
+          hint.className = "pt-sc-hint-letter";
+          hint.textContent = w.first;
+          line.appendChild(hint);
+        }
+        li.appendChild(line);
+      }
+      list.appendChild(li);
+    });
+    return list;
+  }
+
+  function scSheetNode(seedName, showAnswer) {
+    const built = scBuild(seedName);
+    const sheet = document.createElement("div");
+    sheet.className = "pt-search-sheet pt-sc-sheet";
+    if (!built || !built.words.length) return sheet;
+
+    const h = document.createElement("h3");
+    h.className = "pt-search-heading-text";
+    h.textContent = sheetTitle(headingOf(el.scHeading, T.scramble.heading), seedName,
+      T.scramble.forWhom, showAnswer, T.scramble.answerKey);
+    sheet.appendChild(h);
+
+    const note = document.createElement("p");
+    note.className = "pt-search-note";
+    note.textContent = showAnswer ? T.scramble.answerKey : T.scramble.unscramble;
+    sheet.appendChild(note);
+
+    sheet.appendChild(scListNode(built, showAnswer));
+    sheet.appendChild(footerRow("pt-search-footer-row"));
+    return sheet;
+  }
+
+  function renderScMeta(built) {
+    if (!el.scMeta) return;
+    const bits = [];
+    if (built && built.words.length) {
+      const names = rosterNames(el.scRoster);
+      bits.push(names.length >= 2 ? names.length + " " + T.scramble.versions : T.scramble.oneSheet);
+      if (built.unscrambled.length) {
+        bits.push(T.scramble.noScramble + " " + built.unscrambled.map((w) => w.display).join(", "));
+      }
+    } else {
+      bits.push(T.scramble.needWords);
+    }
+    el.scMeta.textContent = bits.join(" · ");
+  }
+
+  function renderScPreview() {
+    if (!el.scPreview) return;
+    const built = scBuild(null);
+    el.scPreview.innerHTML = "";
+    if (built && built.words.length) el.scPreview.appendChild(scSheetNode(null, false));
+    renderScMeta(built);
+    updateSheetCost();
+  }
+
+  function printScramble() {
+    const holder = document.createElement("div");
+    holder.className = "pt-search-print-holder";
+    const answer = scAnswerOn();
+    const names = rosterNames(el.scRoster);
+    if (names.length >= 2) {
+      holder.classList.add("pt-class-set");
+      appendSheetPages(holder, names, (n) => scSheetNode(n, false));
+      if (answer) appendSheetPages(holder, names, (n) => scSheetNode(n, true));
+      printWrap("", holder, "word_scramble");
+      return;
+    }
+    holder.appendChild(sheetPageNode(scSheetNode(null, false)));
+    if (answer) holder.appendChild(sheetPageNode(scSheetNode(null, true)));
+    printWrap("", holder, "word_scramble");
+  }
+
+  function wireScrambleLevel() {
+    const group = el.scLevelGroup;
+    if (!group) return;
+    const buttons = $$(".pt-choice", group);
+    const paint = () => buttons.forEach((b) => {
+      const on = b.dataset.level === scrambleState.level;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
+    });
+    buttons.forEach((b) => b.addEventListener("click", () => {
+      if (!b.dataset.level) return;
+      scrambleState.level = b.dataset.level;
+      paint();
+      renderScPreview();
+    }));
+    paint();
+  }
+
+  function buildScrambleSurface() {
+    if (!el.scInput || !el.scPreview) return;
+    let timer = null;
+    const schedule = () => { if (timer) clearTimeout(timer); timer = setTimeout(renderScPreview, 160); };
+    el.scInput.addEventListener("input", schedule);
+    if (el.scHeading) el.scHeading.addEventListener("input", schedule);
+    if (el.scRoster) el.scRoster.addEventListener("input", schedule);
+    if (el.scAnswer) el.scAnswer.addEventListener("change", renderScPreview);
+    if (el.scHint) el.scHint.addEventListener("change", renderScPreview);
+    wireScrambleLevel();
+    if (el.scPrint) el.scPrint.addEventListener("click", printScramble);
+    if (el.scPng) el.scPng.addEventListener("click", () => { pngMode = true; printScramble(); });
+    renderScPreview();
+  }
+
+  /* ---------------------------------------------------------------
      Wiring
      --------------------------------------------------------------- */
 
@@ -8549,6 +9015,7 @@
   function init() {
     loadQrModule();
     loadWordSearchModule();
+    loadWordPuzzlesModule();
     /* OUT-06 -- publish the page's own face to the glyph surfaces.
 
        CFG.font reached the SVG paths and the canvas export, and NEVER reached
@@ -8617,6 +9084,8 @@
     buildBanner();
     buildPuzzle();
     buildSearch();
+    buildCrosswordSurface();
+    buildScrambleSurface();
 
     if (el.practicePrint) el.practicePrint.addEventListener("click", buildPracticeSheet);
 

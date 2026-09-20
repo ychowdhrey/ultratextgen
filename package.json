@@ -53,6 +53,7 @@
     "test:qr": "node js/printables/qr.test.js",
     "test:stencil": "node js/printables/stencil.test.js",
     "test:word-search": "node js/printables/wordSearch.test.js",
+    "test:word-puzzles": "node js/printables/wordPuzzles.test.js",
     "audit:numeric-parity": "node scripts/audit-numeric-parity.js",
     "check:numeric-parity": "node scripts/check-numeric-parity.js",
     "audit:link-rot": "node scripts/audit-link-rot.js",

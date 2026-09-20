@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="ghprintabl" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvhprintabl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowhprintabl" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotshprintabl" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotshprintabl)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowhprintabl)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvhprintabl)"/>
+  <g transform="translate(740 -10) scale(1.02)">
+    <rect x="70" y="200" width="42" height="42" rx="5" fill="#fff" stroke="#8b5cf6" stroke-width="4"/>
+    <text x="91.0" y="233" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="28" font-weight="600" fill="#64748b" text-anchor="middle">P</text>
+    <rect x="116" y="200" width="42" height="42" rx="5" fill="#fff" stroke="#8b5cf6" stroke-width="4"/>
+    <text x="137.0" y="233" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="28" font-weight="800" fill="url(#ghprintabl)" text-anchor="middle">R</text>
+    <rect x="162" y="200" width="42" height="42" rx="5" fill="#fff" stroke="#8b5cf6" stroke-width="4"/>
+    <text x="183.0" y="233" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="28" font-weight="600" fill="#64748b" text-anchor="middle">I</text>
+    <rect x="208" y="200" width="42" height="42" rx="5" fill="#fff" stroke="#8b5cf6" stroke-width="4"/>
+    <text x="229.0" y="233" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="28" font-weight="600" fill="#64748b" text-anchor="middle">N</text>
+    <rect x="254" y="200" width="42" height="42" rx="5" fill="#fff" stroke="#8b5cf6" stroke-width="4"/>
+    <text x="275.0" y="233" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="28" font-weight="600" fill="#64748b" text-anchor="middle">T</text>
+    <rect x="116" y="108" width="42" height="42" rx="5" fill="#fff" stroke="#8b5cf6" stroke-width="4"/>
+    <text x="137.0" y="141" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="28" font-weight="600" fill="#64748b" text-anchor="middle">W</text>
+    <rect x="116" y="154" width="42" height="42" rx="5" fill="#fff" stroke="#8b5cf6" stroke-width="4"/>
+    <text x="137.0" y="187" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="28" font-weight="600" fill="#64748b" text-anchor="middle">O</text>
+    <rect x="116" y="246" width="42" height="42" rx="5" fill="#fff" stroke="#8b5cf6" stroke-width="4"/>
+    <text x="137.0" y="279" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="28" font-weight="600" fill="#64748b" text-anchor="middle">D</text>
+    <text x="122" y="123" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="14" font-weight="700" fill="#8b5cf6">1</text>
+    <text x="76" y="215" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="14" font-weight="700" fill="#8b5cf6">2</text></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+    <rect x="70" y="200" width="42" height="42" rx="5" fill="#fff" stroke="#8b5cf6" stroke-width="4"/>
+    <text x="91.0" y="233" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="28" font-weight="600" fill="#64748b" text-anchor="middle">P</text>
+    <rect x="116" y="200" width="42" height="42" rx="5" fill="#fff" stroke="#8b5cf6" stroke-width="4"/>
+    <text x="137.0" y="233" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="28" font-weight="800" fill="url(#ghprintabl)" text-anchor="middle">R</text>
+    <rect x="162" y="200" width="42" height="42" rx="5" fill="#fff" stroke="#8b5cf6" stroke-width="4"/>
+    <text x="183.0" y="233" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="28" font-weight="600" fill="#64748b" text-anchor="middle">I</text>
+    <rect x="208" y="200" width="42" height="42" rx="5" fill="#fff" stroke="#8b5cf6" stroke-width="4"/>
+    <text x="229.0" y="233" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="28" font-weight="600" fill="#64748b" text-anchor="middle">N</text>
+    <rect x="254" y="200" width="42" height="42" rx="5" fill="#fff" stroke="#8b5cf6" stroke-width="4"/>
+    <text x="275.0" y="233" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="28" font-weight="600" fill="#64748b" text-anchor="middle">T</text>
+    <rect x="116" y="108" width="42" height="42" rx="5" fill="#fff" stroke="#8b5cf6" stroke-width="4"/>
+    <text x="137.0" y="141" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="28" font-weight="600" fill="#64748b" text-anchor="middle">W</text>
+    <rect x="116" y="154" width="42" height="42" rx="5" fill="#fff" stroke="#8b5cf6" stroke-width="4"/>
+    <text x="137.0" y="187" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="28" font-weight="600" fill="#64748b" text-anchor="middle">O</text>
+    <rect x="116" y="246" width="42" height="42" rx="5" fill="#fff" stroke="#8b5cf6" stroke-width="4"/>
+    <text x="137.0" y="279" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="28" font-weight="600" fill="#64748b" text-anchor="middle">D</text>
+    <text x="122" y="123" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="14" font-weight="700" fill="#8b5cf6">1</text>
+    <text x="76" y="215" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="14" font-weight="700" fill="#8b5cf6">2</text></g>
+</svg>
