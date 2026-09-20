@@ -152,6 +152,60 @@ function isLoneSpecimen(node) {
   return kids.length === 1 && kids[0] === node && /^[\s—]*—[\s—]*$/.test(node.data);
 }
 
+/**
+ * KEEP THE JSON-LD MIRROR IN STEP WITH THE VISIBLE COPY.
+ *
+ * `script` is in DROP_SELECTORS, which is right for measurement — JSON-LD is
+ * metadata, not editorial copy — but a FAQPage block is a MIRROR of the
+ * visible FAQ, and CLAUDE.md is explicit that the two must match: "Never edit
+ * or trim a visible FAQ without updating the JSON-LD... Paraphrase is not a
+ * match." Converting only the visible half opened that split on 453 pages and
+ * 1,061 string pairs.
+ *
+ * `check-faq-schema` cannot see it: it measures CONTENT TOKENS with a 4-token
+ * tolerance, and punctuation is not a content token. So this is invisible to
+ * the gate by construction, which is precisely why it needs doing here.
+ *
+ * The rule is self-limiting and needs no slot model: convert a JSON-LD string
+ * ONLY when its en-dash twin is already present in the visible body. That
+ * converts exactly the strings whose visible half this pass changed, and
+ * leaves alone anything mirroring a held slot (title, meta description, h1),
+ * which would otherwise open a NEW split in the other direction.
+ */
+const LD_BLOCK = /(<script[^>]*type="application\/ld\+json"[^>]*>)([\s\S]*?)(<\/script>)/g;
+
+function syncJsonLdMirror(html, conv) {
+  const visible = html.replace(LD_BLOCK, ' ');
+  let changed = 0;
+  const out = html.replace(LD_BLOCK, (m, open, body, close) => {
+    const next = body.replace(/"(?:[^"\\]|\\.)*"/g, (lit) => {
+      if (!lit.includes('—')) return lit;
+      let parsed;
+      try { parsed = JSON.parse(lit); } catch { return lit; }
+
+      // Match PER OCCURRENCE on local context, not on the whole string. A FAQ
+      // answer is long, and any single whitespace difference anywhere in it
+      // (the visible half starts on its own line after the wrapper tag) defeats
+      // a whole-string test — that left 12 pairs unconverted across 9 pages.
+      let hit = 0;
+      for (const m2 of parsed.matchAll(/—/g)) {
+        const i = m2.index;
+        const probe = conv(parsed.slice(Math.max(0, i - 30), i + 31));
+        if (visible.includes(probe)) hit++;
+      }
+      if (!hit) return lit;
+
+      // Apply the SAME transform the visible half got, never a per-occurrence
+      // patch. Splicing conv('—') in place re-adds spaces the surrounding text
+      // already has, which produced a double-spaced dash on 146 files.
+      changed += hit;
+      return JSON.stringify(conv(parsed));
+    });
+    return open + next + close;
+  });
+  return { html: out, changed };
+}
+
 function convertFile(rel, { write }) {
   const abs = path.join(REPO, rel);
   const code = localeOf(rel);
@@ -206,9 +260,12 @@ function convertFile(rel, { write }) {
     for (const c of node.children || []) walk(c);
   })(body);
 
-  if (!edits.length) return null;
   let out = html;
   for (const e of edits.sort((a, b) => b.start - a.start)) out = out.slice(0, e.start) + e.next + out.slice(e.end);
+  // Mirror pass: the visible half is now converted, so bring its JSON-LD twin along.
+  const mirror = syncJsonLdMirror(out, pol === 'double-dash' ? toDoubleDash : toEnDash);
+  out = mirror.html;
+  if (!edits.length && !mirror.changed) return null;
   // Count REPLACEMENTS, never the character delta: —->—— adds a character, so
   // a delta metric reports the paired-dash locales as negative work done.
   const converted = edits.reduce((n, e) => {
