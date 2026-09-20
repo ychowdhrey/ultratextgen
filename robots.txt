@@ -19,3 +19,10 @@ User-agent: meta-externalagent
 Allow: /
 
 Sitemap: https://ultratextgen.com/sitemap.xml
+
+# Machine-readable index of what this site holds, and where to look next:
+# https://ultratextgen.com/llms.txt  (per-language and per-section indexes are
+# linked from it). This is a COMMENT, not a directive — the llms.txt proposal
+# defines no robots.txt directive, and RFC 9309 defines no field for one, so
+# inventing `Llms:` here would be an unrecognised line other crawlers must skip.
+# Nothing above disallows it; the files are ordinary static text.

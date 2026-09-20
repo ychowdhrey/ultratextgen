@@ -434,6 +434,14 @@
 /es/library/emoji-corazon/            /es/simbolos-de-corazon/  301
 /es/library/emoji-corazon/index.html  /es/simbolos-de-corazon/  301
 
+# llms.txt: the English index is /llms.txt, because English pages are served
+# from the site root and the llms.txt convention scopes a file to the path it
+# sits at ("a file covers the URLs under its path"). Nothing is served under
+# /en/, so a real file there would claim a path that does not exist. This is a
+# static rule, above the splat block, so an agent that guesses the symmetric
+# URL still lands on the index. See docs/llms-txt.md.
+/en/llms.txt  /llms.txt  301
+
 /404  /404.html  200
 
 # ---------------------------------------------------------------------------

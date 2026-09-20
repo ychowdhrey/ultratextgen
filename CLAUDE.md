@@ -4284,6 +4284,76 @@ a synthetic `italic` that obliques an already-slanted joined hand.
 - **`assets/fonts/README.md`** — the inventory, the provenance and the reasoning.
 
 
+## The ad stack is Auto Ads, and the one hand-placed unit cannot fire on a phone (added 2026-09-20)
+
+Ads are the site's only revenue, and until this was written down nothing in the tree said how
+they are placed. Measured on this tree rather than recalled:
+
+- **4,700 of 4,709 tracked HTML files load the AdSense loader** (`pagead2.googlesyndication.com/
+  pagead/js/adsbygoogle.js?client=…`), `404.html` and `_root.html` included. 4,688 also carry the
+  Funding Choices tag (`npm run check:funding-choices` gates that one).
+- **There is not one manual `<ins class="adsbygoogle">` element in any HTML file in the
+  repository.** Grep it before assuming otherwise; the count is zero. Placement is delegated
+  entirely to **Auto Ads**, which decides per pageview where an ad goes and whether one goes at
+  all.
+- **The only hand-placed unit is injected by `header.js`** — a 300×600 right rail (`.ad-rail-right`,
+  slot `5968968934`) appended to `<body>`, and it is gated twice for the same reason:
+
+  ```js
+  // header.js — the request
+  if (window.matchMedia("(min-width: 1600px)").matches) { window.adsbygoogle.push({}); }
+  ```
+  ```css
+  /* style.css — the display */
+  .ad-rail-right { display: none; }
+  @media (min-width: 1600px) { .ad-rail-right { display: flex; position: fixed; … } }
+  ```
+
+  The gate is deliberate and correct on its own terms — it avoids burning an impression on a slot
+  nobody can see. **Its consequence is the part worth knowing: on a phone, no unit in this
+  repository ever requests an ad.** Every ad a mobile visitor sees was placed by Auto Ads.
+
+**A top-banner unit used to sit beside it and was removed 2026-07-27** after a 7-day pull showed
+3 impressions and no earnings while permanently reserving 100–250px under the nav on every
+pageview. `header.js`'s own comment records this. It is the precedent for the rule below: the
+unit was removed on a measurement, not on a hunch, and the measurement is what made the removal
+safe.
+
+**Correction (2026-09-20, later the same day).** "On a phone, no unit in this repository ever
+requests an ad" is exact about the *repository's* units and misleading about the ad stack: Auto
+Ads requested six in-page units on the live homepage in a mobile viewport, plus an anchor and a
+vignette on two of three probed pages. The lever on a generator page was not a missing request but
+the page destroying two of the placed units on its first keystroke — see "Ads: what Auto Ads does
+on a generator page" below, which also narrows the Rules bullet about manual units: a manual
+`<ins>` placed where it would be seen, inside `#resultsGrid`, would have been wiped by the same
+`innerHTML = ""` until that fix, and outside it duplicates Auto Ads' own placements.
+
+### Rules
+
+- **Do not assume a manual unit exists anywhere.** Several plausible-sounding tasks ("move the ad
+  away from the copy button", "make the ad lazy-load", "swap the unit size") have no code to edit
+  on mobile, because there is no unit. The equivalent levers are AdSense-side: the Auto Ads
+  format toggles (anchor, vignette, in-page, in-article, multiplex) and the ad-load setting, none
+  of which live in this repository.
+- **Adding a manual unit is a real option and it is how you get a guaranteed request** — Auto Ads
+  fills around a manual unit rather than being blocked by one. It is also the only way to control
+  *where* an ad sits relative to the copy and download buttons, which are the primary tap target
+  on every page on this site.
+- **Ship a monetization change with a written hypothesis, a baseline, an observation window and a
+  rollback rule, and scope the first one to a single lane rather than site-wide.** Manual `<ins>`
+  markup is additive, so removing it restores the previous state exactly, and Auto Ads format
+  toggles revert with no deploy — both are same-day reversible, which is what makes a scoped trial
+  reasonable in the first place. A change that cannot be reverted the same day does not belong in
+  a first trial.
+- **Never hand-edit an ad tag into a page's HTML.** The loader is injected by the page templates
+  and the rail by `header.js`; a one-off `<ins>` in a single page is invisible to both and to
+  `npm run check:funding-choices`, and will be lost the next time that page is regenerated. If a
+  lane needs units, put them in the generator or in `header.js` behind an explicit condition, the
+  way the rail already is.
+- **`ad_impression` and `ad_click` reach GA4 through the AdSense↔GA4 link, not through the
+  dataLayer.** So they are unaffected by GTM tag/trigger coverage, and a gap in GTM routing never
+  explains a gap in ad events. Do not debug one by changing the other.
+
 ## A script page's letters are traceable, and its rows are ruled (added 2026-09-19)
 
 The webfonts fix above made `/printables/cursive-alphabet/` set its letters in
@@ -4458,6 +4528,215 @@ alongside the working tree. Panel markup, name preview and figure markup are
 identical on all nine, 0 page errors on both sides. That is what makes the
 twelve `ctx.font` edits safe to believe: they are no-ops at the default weight,
 and the run proves it rather than asserting it.
+
+## llms.txt is a generated navigation layer, not a second sitemap (added 2026-09-20)
+
+Every discovery surface this file already describes — the sitemap, the static
+footer, the pre-rendered hubs — answers *which URLs exist* or *which links a
+non-rendering crawler can see*. None of them says **what is here and how it is
+grouped**, which is what an agent orienting on the site needs before it fetches
+anything. `llms.txt` (llmstxt.org) is that layer: 85 generated files, 4,692
+pages, 31 languages, in a root → language → section hierarchy.
+
+**The spec's own sentence decides the shape, and it is not the obvious one.**
+A file "can be placed at the site root (`/llms.txt`) or at any subpath (e.g.
+`/docs/llms.txt`). **A file covers the URLs under its path.**" So a section
+index may only be published at a REAL directory that holds the pages it lists.
+`/es/symbols/llms.txt` would be a lie — the Spanish symbol pages are under
+`/es/symbol/` — and `/es/printables/llms.txt` a bigger one, because Spanish
+printables are under `/es/imprimibles/`, one of seven printables directory
+names across the site. None is hardcoded: a locale page inherits its section
+from the English parent it declares in its own `hreflang="en"`, the same join
+`scripts/lib/translation-clusters.js` uses.
+
+**There is deliberately no `/en/llms.txt` file.** English is served from the
+root, so `/` IS its path and `/llms.txt` is already the English index; a file
+under `/en/` would claim a path where nothing is served. `_redirects` carries a
+static 301 from `/en/llms.txt`, above the splat block.
+
+**A section earns its own file per DIRECTORY at 10 pages, and the "per
+directory" half was measured.** The first draft required a section's pages to
+share one directory; Spanish has 254 pages in `es/library/` plus a handful of
+library-ish pages at the locale root (`es/simbolos-de-corazon/`, parented on
+`library/heart-symbols/`), and those few blocked the 254 from getting an index
+at all — the same shape hid the `ja`, `th`, `de`, `fr` and `ko` library
+indexes. Pages outside the directory are listed inline in the locale index,
+which covers them. That test still bites where it should: `de`'s thirteen
+font-style pages sit at the locale root, inherit `fonts` from `category/*`, and
+are listed in `/de/llms.txt` rather than a `/de/category/llms.txt` that would
+cover nothing.
+
+**Nothing is authored.** Link text is each page's own `<h1>` (never its
+`<title>`, which carries the brand suffix); the note is the first sentence of
+its `.hero-tagline`, else its meta description — measured, 4,599 taglines plus
+93 meta descriptions covers all 4,692, and `validate()` fails rather than
+inventing if that changes. Section headings are English on every locale file
+because they are machine-facing scaffolding, with the site's OWN localized
+label appended in parentheses when three or more pages agree on a breadcrumb
+(`## Symbol & emoji library (Bibliothek)`). Language names are not printed at
+all: `Intl.DisplayNames` tracks the host's ICU version and this tree must
+regenerate byte-identically in CI.
+
+**Three description rules, each from a wrong result rather than reasoned up
+front**, and the second one is a live site defect this pass did NOT fix:
+
+* a period after a digit is not a sentence boundary unless it closes a
+  four-digit year — without it the index published *"Unicode 18.0 erscheint am
+  16."*;
+* a clause cut must leave something worth reading. `sync_symbol_spoke_links.py`'s
+  `first_sentence()` cuts an over-long string at its last em dash, which
+  inverts when the first clause is a label: every `symbol/` page opens
+  `💢 U+1F4A2 — the four-pointed cross that…`, so the cut keeps `💢 U+1F4A2.`
+  This is **live on the site in 48 compare-cards** (`💢 U+1F4A2.` ×24,
+  `🛑 U+1F6D1.` ×21, `⚸ U+26B8.` ×3 — see `library/emoji-combos`). Fixing it
+  there regenerates card text across hub and locale pages, so it belongs to a
+  deliberate content pass, not to this one;
+* a description is never the title restated — a tool page with no tagline opens
+  its meta description with its own name, which is how
+  `category/old-english-fonts` was described as *"Old English font generator."*
+
+**The one hand-maintained table is 27 lines** (`ROOT_PAGE_SECTION`), for the
+English pages sitting at the site root, because the site has no machine-readable
+statement of which is a platform hub and which a standalone tool: all 38 ship
+the same JSON-LD `@type` set and the same `Home > <own title>` breadcrumb, and
+`styles.js` names six platforms against thirteen platform pages. The closest
+registry, `generate-site-art.py`'s kicker, agrees on 36 of 38 and is a
+3,500-line Python literal. `collectPages()` **throws** on an unclassified
+English root page rather than defaulting — that is the "new generator family
+added but not represented" drift case.
+
+### Tooling
+
+- **`npm run build:llms -- --write`** — the generator, and the fix for any
+  stale check. It also REMOVES an index the model no longer plans.
+- **`npm run check:llms`** — the **gate**, wired into `validate.yml`.
+  **Whole-tree, not diff-scoped**, and that is the drift protection itself: a
+  new locale, a new printable, a retired route, a page flipped to `noindex` or
+  a page that lost its hero tagline all move bytes in files the PR never
+  touched. It gates rather than informs (same call as `check:zalgo-decodes`):
+  committed output is either current or it is not.
+- **`npm run audit:llms`** — whole-site dashboard: per-file sizes, the locale
+  coverage matrix, duplicate descriptions. **Informational, never gating.**
+- **`npm run test:llms`** — 58 assertions, gating, including a determinism
+  check (the same corpus in reverse discovery order renders byte-identically).
+- `scripts/lib/llms-index.js` is the one owner of the model and the markup.
+
+**It does not replace `sitemap.xml` and changes no indexing behaviour.** Both
+scan the same filesystem and skip the same `noindex` pages, so they cannot
+disagree about what exists; the sitemap stays the complete, authoritative URL
+list. `llms.txt` files carry no `index.html`, so they never enter the sitemap.
+`robots.txt` gains a `#` comment and no directive — the proposal defines none
+and RFC 9309 has no field for one. `_routes.json` is untouched, so each file
+stays a free static asset.
+
+**No ranking or inclusion claim is made anywhere**, in this file, in the docs
+or in any generated output. Full spec notes, the sizes table, the ten broken-input
+probes and what was deliberately left undone: **`docs/llms-txt.md`**.
+
+Verified per this file's own rule against ten differently-shaped broken inputs
+plus two controls — a new page, a deleted route, a `noindex` flip, a new route
+family in a locale that had none, a wrong canonical, a page with no description
+source, a hand-edited index, an unclassified English root page — each exits 1
+naming the file, with a clean tree at 0. And verified that CI *gates* on it:
+`run-ci-gates.py --only llms_index` returns 1 on a broken tree and 0 on a clean
+one.
+
+---
+
+## Ads: what Auto Ads does on a generator page, and the pages that carry no loader (added 2026-09-20)
+
+Monetization is AdSense **Auto Ads** (Anchor, In-page, Vignette, In-article,
+Side rail) from the one loader tag every page ships in `<head>`, plus one manual
+300×600 Right Rail unit that `header.js` injects on ≥1600px viewports.
+`npm run check:ads` gates that every page carries exactly one loader. Nothing in
+this repo had ever looked at **where** Auto Ads puts its units, or at what the
+page then does to them.
+
+**On a generator page the first in-page units land inside `#resultsGrid`, and
+the first keystroke used to destroy them.** Measured on the live homepage in a
+mobile viewport (2026-09-20, GA4 blocked): Auto Ads placed 6 in-page units, and
+the 2 highest — the only ones inside the region a visitor actually scrolls —
+sat between the cards of `#resultsGrid` at 1,476px and 2,884px. `renderResults()`
+ran `grid.innerHTML = ""` on every input event, so typing one character removed
+both, Auto Ads never re-placed them, and the survivors sat 3,800–9,200px down in
+the FAQ. Every visitor types (that is the page), so on the site's generator
+family the in-page inventory in the interaction zone was spent as ad requests
+on units nobody could ever view. The same wipe ran on category-tab clicks and
+in `showLoadingState()` and `renderSavedStyles()`.
+
+`clearGridKeepingAds()` / `appendAroundAds()` in `script.js` now keep every
+`div.google-auto-placed` (or bare `ins.adsbygoogle`) where it was, **never
+detaching it** (moving an iframe reloads it, which would blank a filled ad),
+and rebuild the cards around it at the same ordinal position. Verified against
+a worktree of the unpatched tree in headless Chromium with two probe ad nodes
+at child indices 4 and 10: unpatched, both gone after typing and after a tab
+click; patched, both present as the same DOM objects with 4 and 9 cards before
+them, and still present (one now last) after a tab click that cut 11 cards to
+7. 0 page errors on both.
+
+**Hypothesis, baseline, window, rollback** (the standing "site-wide
+monetization changes" bar): more viewable In-page impressions on pages that
+load `script.js`, visible as a rise in the In-page format's Active View
+Viewable (baseline 42.67%, AdSense Jul 2026) and in In-page impressions per
+pageview on `/`, `/discord/`, `/fancy-letters/`, `/roblox/name-generator/`
+against a matched window before the merge; read at 21 days; roll back by
+reverting the one `script.js` commit — no data, no ledger, no template
+depends on it.
+
+**Do not wipe a container that Auto Ads may have placed a unit in.** Any
+generator or explorer that rebuilds a large list on input should clear it
+through the same two helpers (or its own copy of the rule, if it does not load
+`script.js`). `js/repeat`, `js/tattoo`, `js/decorator` and `js/events` still
+rebuild grids with `innerHTML = ""` — smaller surfaces, not measured, listed
+here so the pattern is not rediscovered one controller at a time.
+
+**Two related fixes shipped in the same change.**
+
+* **The mobile anchor covered the copy toast.** The anchor is `position:fixed`
+  at the viewport bottom with the maximum z-index; the toasts sat at
+  `bottom: 24px` with z-index 200–300. In the probe a displayed anchor spanned
+  the bottom 424px of an 839px viewport, so the "Copied!" confirmation for the
+  site's most frequent action was invisible on every mobile pageview that
+  carried one. `header.js` now publishes the displayed anchor's height as
+  `--utg-anchor-h` on `<html>` (0px with none, at the top, or once dismissed)
+  and `.copy-toast`, `.symbol-toast` and `.pt-toast` add it to their offset.
+  Verified: a 100px probe anchor moves the toast to 124px; dismissing it
+  returns 24px.
+* **The Right Rail `<ins>` is only injected where it is requested (≥1600px).**
+  Below that it sat in every page's DOM as a `display:none` manual unit that
+  was never pushed — dead markup that Auto Ads can still read as an existing
+  unit when it plans in-page density on 1200–1599px desktops. Whether it did
+  is **untested** (the live A/B needed a request interception the sandbox
+  refused); the change has no downside either way.
+
+**Pages that must carry no loader.** `404.html` and the six iframe sources the
+`/embed/` documentation tells other sites to embed (`<tool>/embed/index.html`)
+used to ship the loader. Google's placement policy disallows ads on screens
+without publisher content, with error pages as its standard example, and `/404`
+is this site's single most bot-hit URL (GA4 Aug–Sep 2026: Singapore datacenter
+traffic landing there at a 0.03 ad-impression rate). An ad request from inside
+a cross-domain iframe carries the host page's URL, which is not in the Sites
+list, so it can never fill. `isAdFreePage()` in
+`scripts/lib/page-infra-targets.js` names both classes and `check-ads.js` fails
+if either carries the loader (verified: re-adding it to `404.html` and to one
+iframe source exits 1 naming both; restored, exit 0). The `/embed/…`
+documentation pages are ordinary indexable pages and keep theirs. GTM and the
+Funding Choices tag stay on all of them: the Funding Choices message is also
+the consent signal GA4 runs under.
+
+**What the traffic data says about "coverage", so it is not re-derived.**
+GA4 landing-page × event × country × source, 2026-08-24 → 09-10: the share of
+landing users who receive any ad impression is a flat 0.73–0.85 across the US,
+Indonesia, France, Korea, Canada, the UK and every template — printables 0.81,
+library 0.76, usecase 0.78 in the US alone. The segments that read as low are
+automated or sanctioned traffic: Singapore 0.09 and China 0.01 (both ~94%
+"direct", landing on `/404` and dated `/updates/` entries), Russia 0.00 (ads
+are not served there). Those three are 9.6% of landing users and drag the
+homepage (0.53 → 0.70 without them; 0.81 for US Google visitors), `guide/` and
+`answers/` (0.17–0.24 → 0.34–0.37) and `symbol/` (0.52 → 0.68) into looking
+like template defects they are not. A "coverage gap" computed against all
+pageviews is mostly that traffic plus ad blockers, which GA4 cannot see at all
+because they block GTM too.
 
 ## SEO & Structured Data
 
@@ -5138,6 +5417,29 @@ Standing protocol:
   coordinates passes geometry to it rather than drawing its own lines. A
   fixed-fraction ruling (Seyès, Lineatur) takes the trace surface's
   band-to-type ratio; only `standard` reads the face.
+- Do not assume a manual ad unit exists, and do not hand-edit an ad tag into a page. There is
+  **not one `<ins class="adsbygoogle">` in any HTML file here** — placement is Auto Ads, and the
+  only hand-placed unit (`header.js`'s 300×600 right rail) is gated to `min-width: 1600px`, so on
+  a phone nothing in this repository ever requests an ad. See "The ad stack is Auto Ads" above.
+  A monetization change ships with a written hypothesis, baseline, observation window and rollback
+  rule, scoped to one lane — the 2026-07-27 top-banner removal is the precedent, and it was made
+  on a measurement.
+  *(Clarified later the same day: "nothing requests an ad" is true of the units in this
+  repository; Auto Ads itself requests six in-page units plus an anchor and a vignette on a
+  phone, measured on the live homepage. See the next bullet and "Ads: what Auto Ads does on a
+  generator page".)*
+- Do not clear a container that AdSense Auto Ads may have placed a unit in
+  with `innerHTML = ""`. On generator pages the first in-page units sit
+  between the cards of `#resultsGrid`, and a wipe on input destroyed them on
+  every visit while Auto Ads never re-placed them. Clear through
+  `clearGridKeepingAds()` / `appendAroundAds()` in `script.js`, which keep the
+  unit in place without detaching it. See "Ads: what Auto Ads does on a
+  generator page" above.
+- Do not add the AdSense loader to `404.html` or to an iframe source
+  (`<tool>/embed/index.html`), and do not add a fixed bottom element that
+  ignores `--utg-anchor-h`. `npm run check:ads` fails on the first two; the
+  third puts the element behind the mobile anchor ad, which is what hid the
+  copy toast for as long as it existed.
 - Do not add npm packages that run in the browser
 - Do not introduce a JavaScript framework or bundler
 - Do not generate images server-side or with an image-processing library. Visual/printable
@@ -5193,6 +5495,28 @@ Standing protocol:
   at ~36k pageviews/day. Static asset requests are free and unlimited only
   when they do not invoke a Function. Only `/` needs the Function (English
   homepage + legacy `?lang=` 301s); everything else must stay excluded.
+- Do not hand-edit a generated `llms.txt`, and do not add, remove, rename or
+  de-index a page without running `npm run build:llms -- --write` in the same
+  change. `npm run check:llms` regenerates the whole tree and compares, so a
+  hand edit fails the build and is overwritten by the next run. It is
+  whole-tree rather than diff-scoped on purpose — the bytes that move belong to
+  files the PR never touched. See "llms.txt is a generated navigation layer"
+  above.
+- Do not publish an `llms.txt` at a path that does not hold the pages it lists.
+  The spec scopes a file to its own path, so `/es/symbols/llms.txt` and
+  `/es/printables/llms.txt` are both wrong (`/es/symbol/`, `/es/imprimibles/`),
+  and there is no `/en/llms.txt` because English is served from the root. Do
+  not "finish" the hierarchy by adding one.
+- Do not write a description, a section heading or a language name into an
+  `llms.txt`. Every string is read off the page it describes, in that page's
+  own language, the same rule `sync_symbol_spoke_links.py` and
+  `library-hub-data.js` follow. Headings are English scaffolding with the
+  site's own breadcrumb label in parentheses; `Intl.DisplayNames` is
+  deliberately not used because its output tracks the host's ICU version and
+  the tree must regenerate byte-identically in CI.
+- Do not describe `llms.txt` as a ranking factor or as a guarantee of inclusion
+  in any assistant's answers, and do not add an `Llms:` directive to
+  `robots.txt` — the proposal defines none and RFC 9309 has no field for one.
 - Do not edit `sitemap.xml` directly
 - Do not add `var` declarations — use `const`/`let`
 - Do not use `import`/`export` ES module syntax in frontend scripts
