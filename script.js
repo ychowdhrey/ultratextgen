@@ -1166,10 +1166,12 @@ const decorations = window.UTG_DECORATIONS
     }
 
     if (el.resultsGrid) {
-      el.resultsGrid.innerHTML = "";
+      const keptAds = clearGridKeepingAds(el.resultsGrid);
+      const skeletons = [];
       for (let i = 0; i < 8; i++) {
-        el.resultsGrid.appendChild(createSkeletonCard());
+        skeletons.push(createSkeletonCard());
       }
+      appendAroundAds(el.resultsGrid, keptAds, skeletons);
     }
   }
 
@@ -1551,21 +1553,74 @@ const decorations = window.UTG_DECORATIONS
     }
 
     section.hidden = false;
-    grid.innerHTML = "";
+    const keptAds = clearGridKeepingAds(grid);
 
     const inputText = el.mainInput ? el.mainInput.value : "";
     const isDemo = !inputText;
+    const cards = [];
     valid.forEach((name) => {
       const style = stylesRegistry[name];
       const converted = applyFormatMarks(applyScope(inputText || DEMO_TEXT, style));
       const decorated = converted ? applyDecoration(converted) : "";
-      grid.appendChild(createStyleCard(name, converted, selectedDecoration ? decorated : null, style, isDemo));
+      cards.push(createStyleCard(name, converted, selectedDecoration ? decorated : null, style, isDemo));
     });
+    appendAroundAds(grid, keptAds, cards);
   }
 
   /* ===================
      RENDER: Results
      =================== */
+  /* ===================
+     AD-SAFE GRID CLEARING
+     =================== */
+  // AdSense Auto Ads inserts its in-page units as <div class="google-auto-placed">
+  // (wrapping an <ins class="adsbygoogle">) BETWEEN the cards of #resultsGrid:
+  // the grid is the largest block of content on a generator page, so it takes
+  // the first placements. Wiping the grid with innerHTML = "" on every input
+  // event destroyed those units, and Auto Ads never re-placed them. Measured
+  // on the live homepage (mobile, 2026-09-20): 2 of the 6 in-page units sat
+  // inside #resultsGrid before typing and 0 after, with the survivors 3,800px
+  // and further below the fold in the FAQ. A destroyed unit is an ad request
+  // spent on an impression nobody could view, on the one page region the
+  // visitor actually scrolls. So a re-render keeps every auto-placed node
+  // exactly where it was, ordinally, and rebuilds the cards around it.
+  //
+  // The kept node is never detached and re-inserted: moving an <iframe>
+  // reloads it, which would blank a filled ad. Cards are inserted around it.
+  function isAutoPlacedAd(node) {
+    if (!node || node.nodeType !== 1) return false;
+    if (node.classList.contains("google-auto-placed")) return true;
+    return node.tagName === "INS" && node.classList.contains("adsbygoogle");
+  }
+
+  // Removes every child of `grid` except auto-placed ad nodes. Returns those
+  // nodes together with the number of non-ad children that preceded each, so
+  // appendAroundAds() can restore the same ordinal position.
+  function clearGridKeepingAds(grid) {
+    const kept = [];
+    let seen = 0;
+    Array.from(grid.childNodes).forEach((child) => {
+      if (isAutoPlacedAd(child)) {
+        kept.push({ node: child, before: seen });
+      } else {
+        if (child.nodeType === 1) seen += 1;
+        grid.removeChild(child);
+      }
+    });
+    return kept;
+  }
+
+  // Inserts `nodes` into `grid` so that each kept ad still has the same number
+  // of cards before it as it had before the clear (or ends up last when the
+  // new set is shorter).
+  function appendAroundAds(grid, kept, nodes) {
+    let k = 0;
+    nodes.forEach((node, i) => {
+      while (k < kept.length && kept[k].before <= i) k += 1;
+      grid.insertBefore(node, k < kept.length ? kept[k].node : null);
+    });
+  }
+
   function renderResults() {
     if (window.UTG_VERTICAL_MODE) return;
     if (window.UTG_ZALGO_MODE) return;
@@ -1580,7 +1635,7 @@ const decorations = window.UTG_DECORATIONS
     const grid = el.resultsGrid;
     const inputText = el.mainInput ? el.mainInput.value : "";
 
-    grid.innerHTML = "";
+    const keptAds = clearGridKeepingAds(grid);
 
     const entries = Object.entries(stylesRegistry);
 
@@ -1627,12 +1682,14 @@ const decorations = window.UTG_DECORATIONS
     const isDemo = !inputText;
     let count = 0;
 
+    const cards = [];
     filtered.forEach(([name, style]) => {
       const converted = applyFormatMarks(applyScope(inputText || DEMO_TEXT, style));
       const decorated = converted ? applyDecoration(converted) : "";
-      grid.appendChild(createStyleCard(name, converted, selectedDecoration ? decorated : null, style, isDemo));
+      cards.push(createStyleCard(name, converted, selectedDecoration ? decorated : null, style, isDemo));
       count += 1;
     });
+    appendAroundAds(grid, keptAds, cards);
 
     if (filtered.length === 0) {
       const empty = document.createElement("div");

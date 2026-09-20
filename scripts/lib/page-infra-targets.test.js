@@ -18,6 +18,7 @@ const path = require('path');
 const {
   shouldSkipPath,
   isVerificationStub,
+  isAdFreePage,
   SKIP_SEGMENTS,
   SKIP_DIRS
 } = require('./page-infra-targets');
@@ -69,14 +70,34 @@ check('"latest" containing "test" is NOT a skip',
    '404' and '_root' only ever match a path segment that IS exactly that — a
    directory named 404/, or an extensionless file. They do NOT match the files
    404.html and _root.html, both of which ship in this repo and are therefore
-   CHECKED, and both of which carry the tags and pass. That is long-standing
-   behaviour, asserted here so a future "the skip list looks broken" tidy-up
-   has to notice it is silently dropping two live pages from coverage before
-   it changes anything. */
+   CHECKED by the GTM and Funding Choices checks, and both of which carry
+   those tags and pass. That is long-standing behaviour, asserted here so a
+   future "the skip list looks broken" tidy-up has to notice it is silently
+   dropping two live pages from coverage before it changes anything.
+   (Since 2026-09-20 the AdSense check treats 404.html differently — it must
+   carry NO loader; see isAdFreePage below. _root.html is the homepage copy
+   and keeps its loader.) */
 check('404.html is checked, not skipped', shouldSkipPath(at('404.html'), ROOT), false);
 check('_root.html is checked, not skipped', shouldSkipPath(at('_root.html'), ROOT), false);
 check('a directory literally named 404/ IS skipped',
   shouldSkipPath(at('404/index.html'), ROOT), true);
+
+/* ---- ad-free pages: the 404 and the embed widget sources ------------------
+   check-ads.js requires the loader to be ABSENT here (policy: no ads on error
+   pages or inside cross-domain iframes — see isAdFreePage's comment). */
+check('404.html is ad-free', isAdFreePage(at('404.html'), ROOT), true);
+check('embed widget source is ad-free',
+  isAdFreePage(at('usecase/bio-font/embed/index.html'), ROOT), true);
+check('character-counter widget source is ad-free',
+  isAdFreePage(at('character-counter/embed/index.html'), ROOT), true);
+check('the /embed/ documentation hub is NOT ad-free (a real page)',
+  isAdFreePage(at('embed/index.html'), ROOT), false);
+check('an /embed/<tool>/ documentation page is NOT ad-free',
+  isAdFreePage(at('embed/character-counter/index.html'), ROOT), false);
+check('homepage is not ad-free', isAdFreePage(at('index.html'), ROOT), false);
+check('_root.html is not ad-free', isAdFreePage(at('_root.html'), ROOT), false);
+check('"embedded" in a slug is not ad-free',
+  isAdFreePage(at('guide/embedded-fonts/index.html'), ROOT), false);
 
 /* ---- verification stubs are skipped by content ---------------------------- */
 check('naver stub is a stub',
