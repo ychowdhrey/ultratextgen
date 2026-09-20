@@ -482,16 +482,58 @@
 
     // Ad slot: right rail appended to <body> (it's position:fixed, so its
     // DOM position doesn't matter).
-    document.body.insertAdjacentHTML("beforeend", rightRailHTML);
     if (window.adsbygoogle === undefined) {
       window.adsbygoogle = [];
     }
     // Right rail is CSS-hidden below 1600px (see .ad-rail-right in style.css);
     // only request it when it'll actually be seen, so narrow viewports don't
-    // burn an impression on a slot nobody can view.
+    // burn an impression on a slot nobody can view. Since 2026-09-20 the
+    // <ins> is only INJECTED there too: below 1600px it used to sit in every
+    // page's DOM as a display:none manual unit that was never requested —
+    // dead markup that Auto Ads can still read as an existing ad unit when it
+    // plans in-page density on the 1200–1599px desktop range.
     if (window.matchMedia("(min-width: 1600px)").matches) {
+      document.body.insertAdjacentHTML("beforeend", rightRailHTML);
       window.adsbygoogle.push({});
     }
+
+    // Anchor-ad awareness for the site's toasts. Auto Ads' mobile anchor is
+    // position:fixed at the viewport bottom with the maximum z-index — the
+    // exact spot the copy toasts occupy (bottom: 24px, z-index 200–300).
+    // Measured on the live site 2026-09-20: a displayed anchor spanned the
+    // bottom 424px of an 839px viewport, so the "Copied!" confirmation for the
+    // site's most frequent action was invisible behind it on every mobile
+    // pageview that carried an anchor. Its height is published as
+    // --utg-anchor-h on <html> (0px when there is none, or when it is at the
+    // top, or once the visitor dismisses it) and the toast CSS adds it to its
+    // bottom offset. One rAF-coalesced measurement per DOM change.
+    (function trackAnchorAd() {
+      const root = document.documentElement;
+      let raf = 0;
+      function measure() {
+        raf = 0;
+        let h = 0;
+        const ins = document.querySelector('ins.adsbygoogle[data-anchor-status="displayed"]');
+        if (ins) {
+          const r = ins.getBoundingClientRect();
+          if (r.height > 0 && r.bottom >= window.innerHeight - 2) h = Math.round(r.height);
+        }
+        root.style.setProperty("--utg-anchor-h", h + "px");
+      }
+      function schedule() {
+        if (!raf) raf = window.requestAnimationFrame(measure);
+      }
+      if (typeof MutationObserver === "function") {
+        new MutationObserver(schedule).observe(root, {
+          childList: true,
+          subtree: true,
+          attributes: true,
+          attributeFilter: ["data-anchor-status"]
+        });
+      }
+      window.addEventListener("resize", schedule);
+      schedule();
+    })();
 
     // Dark mode: apply saved preference immediately (before paint)
     if (localStorage.getItem("darkMode") === "true") {
