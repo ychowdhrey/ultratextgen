@@ -103,13 +103,53 @@ function localeOf(rel) {
   return m && CODES.has(m[1]) ? m[1] : 'en';
 }
 
-/** ` — ` -> ` – `, and a tight `a—b` -> `a–b`. Punctuation only; no word moves. */
+/**
+ * Swap the em dash for the locale's spaced en dash, PRESERVING the
+ * surrounding whitespace byte for byte.
+ *
+ * `\s*` on both sides looks equivalent and is not: `\s` matches a newline, so
+ * `…\n— foo` collapsed to `… – foo` and silently reflowed 506 line breaks
+ * across the corpus. That renders identically, since HTML collapses
+ * whitespace, but it is diff noise on 27 files and it makes the claim this
+ * whole pass rests on — that only the joint moves — untrue.
+ *
+ * The one case that does gain whitespace is a tight `a—b` (120 occurrences),
+ * because the native mark in all thirteen locales is the SPACED en dash;
+ * leaving `a–b` would read as a numeric range.
+ */
 function toEnDash(s) {
-  return s.replace(/\s*—\s*/g, (m) => (/^\s|\s$/.test(m) ? ' – ' : '–'));
+  return s.replace(/([ \t]*)—([ \t]*)/g, (m, a, b) => (a === '' && b === '' ? ' – ' : a + '–' + b));
 }
 /** A LONE — becomes the native paired ——; an existing —— is already correct. */
 function toDoubleDash(s) {
   return s.replace(/—+/g, (m) => (m.length >= 2 ? m : '——'));
+}
+
+/**
+ * THE EM DASH AS A SPECIMEN, not as punctuation.
+ *
+ * CLAUDE.md already exempts the four dash subject PAGES, but the character is
+ * also shown as a specimen ON other pages, and converting it there states a
+ * falsehood. Both shapes below were found by diffing the conversion character
+ * by character, never by reading the code:
+ *
+ *   <h4>Geviertstrich (—)</h4>   "Geviertstrich" IS German for em dash, so
+ *                                converting it labels an em dash with an en
+ *                                dash. 43 bracketed occurrences corpus-wide.
+ *   <td>—</td>                   a data cell meaning "none", not prose. 30
+ *                                lone-dash elements, mostly <button> (already
+ *                                excluded as UI) plus the ig-matrix cells.
+ *
+ * Deliberately NOT matched: a text node that merely STARTS with a dash, e.g.
+ * `— <strong>Profil…`, which is a list marker and ordinary punctuation. 461
+ * nodes look like that, and treating them as specimens would skip real prose.
+ */
+const BRACKETED_SPECIMEN = /([(\[（【][ \t]*)—([ \t]*[)\]）】])/g;
+
+/** The node is the entire content of its parent and is just the dash. */
+function isLoneSpecimen(node) {
+  const kids = (node.parent && node.parent.children) || [];
+  return kids.length === 1 && kids[0] === node && /^[\s—]*—[\s—]*$/.test(node.data);
 }
 
 function convertFile(rel, { write }) {
@@ -155,7 +195,11 @@ function convertFile(rel, { write }) {
       // exactly as authored.
       const raw = html.slice(loc.startOffset, loc.endOffset);
       if (!raw.includes('—')) return;
-      const next = pol === 'double-dash' ? toDoubleDash(raw) : toEnDash(raw);
+      if (isLoneSpecimen(node)) return;
+      // Protect `(—)` by parking it, converting, then restoring it.
+      const parked = raw.replace(BRACKETED_SPECIMEN, '$1\u0001$2');
+      const conv = pol === 'double-dash' ? toDoubleDash(parked) : toEnDash(parked);
+      const next = conv.split('\u0001').join('—');
       if (next !== raw) edits.push({ start: loc.startOffset, end: loc.endOffset, next, prev: raw });
       return;
     }
