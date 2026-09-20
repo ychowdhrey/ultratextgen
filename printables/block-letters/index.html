@@ -478,6 +478,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       noun: "block",
       pngPrefix: "block",
       font: "'Archivo Black', 'Arial Black', 'Plus Jakarta Sans', sans-serif",
+      // Archivo Black ships a single 400 face (assets/fonts/manifest.json), so the
+      // engine's default of 700 asks the browser to synthesise a bold: engine
+      // dependent, and additive to the outline's own stroke below.
+      fontWeight: 400,
       strokeWidth: 7,
       charset: "alnum",
       nameDemo: "WELCOME",
