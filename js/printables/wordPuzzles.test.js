@@ -115,6 +115,26 @@ const CLUED = [
   ok(gridText(a1.grid) !== gridText(b.grid), "crossword: a different seed gives a different grid");
 }
 
+/* 4b. The differentiator, stated as a floor rather than as "two differ".
+
+   "N different versions so neighbours cannot copy" is a claim about a CLASS,
+   not about one pair, so it is asserted over a class-sized run of seeds. The
+   floor is 30 of 40 rather than 40 of 40 because two children colliding on one
+   of several hundred viable layouts is not a failure of the promise.
+
+   Measured while writing this: the seeded word-order shuffle and the
+   near-best placement choice each carry part of it (39/40 with both, 33/40
+   with the shuffle alone, 21/40 with the placement choice alone), so the
+   floor catches the loss of either mechanism without pinning the exact value
+   of a tuning constant. */
+{
+  const seen = new Set();
+  for (let i = 0; i < 40; i++) {
+    seen.add(gridText(CW.build({ input: SPELLING.join("\n"), seed: "kid" + i }).grid));
+  }
+  ok(seen.size >= 30, "crossword: 40 children get at least 30 distinct layouts — got " + seen.size);
+}
+
 /* 5. Every placed word is connected — a crossword with a floating word is not
       a crossword. Enforced by canPlace requiring a crossing; asserted here by
       flood-filling from the first cell and demanding every letter is reached. */
@@ -235,14 +255,23 @@ const CLUED = [
   eq(notPerm, 0, "scramble: every scramble is a letter-for-letter permutation");
 }
 
-/* 14. A scramble never shows the answer */
+/* 14. A scramble never shows the answer.
+
+   SHORT words carry this case, and that is the whole point of it. A shuffle of
+   a seven-letter word almost never lands back on the original by chance, so a
+   list of them passes this test even with the guard that enforces it deleted —
+   measured: removing `sameLetters` leaves the long list clean and shows the
+   answer on 77 of 200 two-letter words. A test that cannot fail is not a test.
+   Probed exactly that way before this case was written. */
 {
-  let same = 0;
-  for (const seed of ["Emma", "Noah", "Ava", "Liam"]) {
-    const s = SC.build({ input: SPELLING.join("\n"), seed: seed });
-    for (const w of s.words) if (w.text === w.letters.join("")) same++;
+  let same = 0, checked = 0;
+  const SHORT = ["an", "to", "it", "be", "on", "up", "cat", "dog", "the"];
+  for (let i = 0; i < 40; i++) {
+    const s = SC.build({ input: SHORT.concat(SPELLING).join("\n"), seed: "kid" + i });
+    for (const w of s.words) { checked++; if (w.text === w.letters.join("")) same++; }
   }
-  eq(same, 0, "scramble: no word is printed unscrambled across 4 seeds");
+  ok(checked > 500, "scramble: the answer-visible case actually ran (" + checked + " words)");
+  eq(same, 0, "scramble: no word prints unscrambled, over 40 seeds of short and long words");
 }
 
 /* 15. Reproducible, and different per child */

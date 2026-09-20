@@ -369,6 +369,18 @@ jobs:
         continue-on-error: true
         run: npm run test:word-search | tee word-search-tests.log
 
+      # Same shape and same reason as the word search tests above, for the two
+      # puzzles that complete that lane. Both fail silently when they fail: a
+      # crossword clue numbered 7-Across whose squares spell something else, and
+      # a scramble whose letters are not a permutation of its answer, each look
+      # exactly like a working sheet until a child cannot solve one. Gating
+      # rather than informational because there is no backlog to be permanently
+      # red against: every card either reads back out of the grid or does not.
+      - name: Run crossword and word scramble tests
+        id: word_puzzles_tests
+        continue-on-error: true
+        run: npm run test:word-puzzles | tee word-puzzles-tests.log
+
       # Diff-scoped and gating. Fails a PR that corrects a number on one page of
       # an hreflang cluster and leaves a sibling asserting the old value — the
       # 2026-09-01 Unicode 18.0 case, where 13,047 -> 13,007 shipped in English
@@ -920,6 +932,7 @@ jobs:
             echo "### QR encoder tests — \`${{ steps.qr_tests.outcome }}\`"
             echo "### Stencil bridge tests — \`${{ steps.stencil_tests.outcome }}\`"
             echo "### Word search grid tests — \`${{ steps.word_search_tests.outcome }}\`"
+            echo "### Crossword + word scramble tests — \`${{ steps.word_puzzles_tests.outcome }}\`"
             echo '```'
             cat qr-tests.log
             echo '```'
@@ -1120,6 +1133,7 @@ jobs:
           steps.qr_tests.outcome == 'failure' ||
           steps.stencil_tests.outcome == 'failure' ||
           steps.word_search_tests.outcome == 'failure' ||
+          steps.word_puzzles_tests.outcome == 'failure' ||
           steps.numeric_parity.outcome == 'failure' ||
           steps.updates_verification.outcome == 'failure' ||
           steps.external_refs.outcome == 'failure' ||
