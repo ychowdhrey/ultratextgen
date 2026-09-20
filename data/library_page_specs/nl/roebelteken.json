@@ -14,8 +14,8 @@
   "canonical": "https://ultratextgen.com/nl/symbol/roebelteken/",
   "breadcrumb": "Roebelteken",
   "hero_h1": "Roebelteken",
-  "hero_tagline": "Het ₽-roebelteken — de Cyrillische 'Р' doorkruist door een streep — dat Rusland in 2013 aannam na een landelijke publieke stemming, wat het tot een van de jongste nationale valutatekens in Unicode maakt. Klik op een teken om het direct te kopiëren.",
-  "intro": "Het roebelteken (₽) is een van de jongste nationale valutatekens ter wereld — gecodeerd als U+20BD RUBLE SIGN in Unicodes Currency Symbols-blok (U+20A0–U+20CF), en pas toegevoegd aan de standaard in versie 7.0, uitgebracht in juni 2014. De herkomst is ongewoon goed gedocumenteerd. Anders dan het dollar- of pondteken, waarvan de exacte geboorte nog altijd wordt betwist, is ₽ bewust en publiekelijk gekozen: de Bank of Russia bracht duizenden inzendingen terug tot vijf finaleontwerpen, en organiseerde vervolgens een publieke online stemming van 5 november tot 5 december 2013. Het winnende glyph — een Cyrillische hoofdletter 'Р' (de letter Er) met één extra horizontale streep onder de buik van de letter — haalde 61% van meer dan 284.000 stemmen, en de centrale bank keurde het formeel goed op 11 december 2013. Daarvoor hadden Russen geen eigen teken en schreven ze de munt met afkortingen als 'руб.' of een kaal 'р.' De roebel zelf is de munt van Rusland (ISO-code RUB) en een van de oudste nog gebruikte muntnamen, teruggaand tot het middeleeuwse Novgorod; dezelfde naam wordt ook gedragen door de Wit-Russische en Transnistrische roebel. Een eeuwenoude munt die pas in 2013 een eigen teken kreeg — dat maakt ₽ een echte zeldzaamheid.",
+  "hero_tagline": "Het ₽-roebelteken – de Cyrillische 'Р' doorkruist door een streep – dat Rusland in 2013 aannam na een landelijke publieke stemming, wat het tot een van de jongste nationale valutatekens in Unicode maakt. Klik op een teken om het direct te kopiëren.",
+  "intro": "Het roebelteken (₽) is een van de jongste nationale valutatekens ter wereld – gecodeerd als U+20BD RUBLE SIGN in Unicodes Currency Symbols-blok (U+20A0–U+20CF), en pas toegevoegd aan de standaard in versie 7.0, uitgebracht in juni 2014. De herkomst is ongewoon goed gedocumenteerd. Anders dan het dollar- of pondteken, waarvan de exacte geboorte nog altijd wordt betwist, is ₽ bewust en publiekelijk gekozen: de Bank of Russia bracht duizenden inzendingen terug tot vijf finaleontwerpen, en organiseerde vervolgens een publieke online stemming van 5 november tot 5 december 2013. Het winnende glyph – een Cyrillische hoofdletter 'Р' (de letter Er) met één extra horizontale streep onder de buik van de letter – haalde 61% van meer dan 284.000 stemmen, en de centrale bank keurde het formeel goed op 11 december 2013. Daarvoor hadden Russen geen eigen teken en schreven ze de munt met afkortingen als 'руб.' of een kaal 'р.' De roebel zelf is de munt van Rusland (ISO-code RUB) en een van de oudste nog gebruikte muntnamen, teruggaand tot het middeleeuwse Novgorod; dezelfde naam wordt ook gedragen door de Wit-Russische en Transnistrische roebel. Een eeuwenoude munt die pas in 2013 een eigen teken kreeg – dat maakt ₽ een echte zeldzaamheid.",
   "hreflang": [
     {
       "lang": "en",
@@ -35,7 +35,7 @@
       "id": "roebelteken",
       "label": "Roebelteken",
       "h2": "Het Roebelteken (₽)",
-      "intro": "Het teken zelf en de Cyrillische letter waaruit het is opgebouwd. Het winnende ontwerp is de hoofdletter Er (Р) met een extra horizontale streep onder de buik — de kleine letter р is degene die voorkwam in de oude 'р.'-afkorting.",
+      "intro": "Het teken zelf en de Cyrillische letter waaruit het is opgebouwd. Het winnende ontwerp is de hoofdletter Er (Р) met een extra horizontale streep onder de buik – de kleine letter р is degene die voorkwam in de oude 'р.'-afkorting.",
       "symbols": [
         {
           "char": "₽",
@@ -55,7 +55,7 @@
       "id": "recent-aangenomen",
       "label": "Recent Aangenomen",
       "h2": "Andere Recent Aangenomen Valutatekens",
-      "intro": "Het roebelteken heeft naaste buren in Unicodes Currency Symbols-blok — een cluster tekens dat pas in de jaren 2010 werd gecodeerd, toen post-Sovjetstaten en andere landen hun munt een eigen glyph gaven. Net als de roebel werd ook het Indiase roepieteken via een publieke ontwerpwedstrijd gekozen.",
+      "intro": "Het roebelteken heeft naaste buren in Unicodes Currency Symbols-blok – een cluster tekens dat pas in de jaren 2010 werd gecodeerd, toen post-Sovjetstaten en andere landen hun munt een eigen glyph gaven. Net als de roebel werd ook het Indiase roepieteken via een publieke ontwerpwedstrijd gekozen.",
       "symbols": [
         {
           "char": "₹",
@@ -83,7 +83,7 @@
       "id": "klassieke-tekens",
       "label": "Klassieke Tekens",
       "h2": "Klassieke Valutatekens ter Vergelijking",
-      "intro": "Tegenover de heldere, goed gedocumenteerde herkomst van de roebel uit 2013 staan de bekendste valutatekens ter wereld — eeuwen ouder en veel troebeler: de exacte verhalen achter het dollar- en pondteken worden nog altijd betwist.",
+      "intro": "Tegenover de heldere, goed gedocumenteerde herkomst van de roebel uit 2013 staan de bekendste valutatekens ter wereld – eeuwen ouder en veel troebeler: de exacte verhalen achter het dollar- en pondteken worden nog altijd betwist.",
       "symbols": [
         {
           "char": "$",
@@ -122,7 +122,7 @@
     {
       "href": "/nl/symbol/dollarteken/",
       "title": "Dollarteken ($)",
-      "desc": "Het omgekeerde verhaal — het $-teken is eeuwenoud met een omstreden herkomst, waar de geboorte van de roebel in 2013 volledig gedocumenteerd is."
+      "desc": "Het omgekeerde verhaal – het $-teken is eeuwenoud met een omstreden herkomst, waar de geboorte van de roebel in 2013 volledig gedocumenteerd is."
     }
   ]
 }

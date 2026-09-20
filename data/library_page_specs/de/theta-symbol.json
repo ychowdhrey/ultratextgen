@@ -7,8 +7,8 @@
   "canonical": "https://ultratextgen.com/de/symbol/theta-symbol/",
   "breadcrumb": "Theta-Symbol",
   "hero_h1": "Theta-Symbol",
-  "hero_tagline": "Das kleine θ, das in der Trigonometrie einen Winkel markiert, das große Θ der Big-Theta-Notation und die offene Mathe-Variante ϑ — derselbe Buchstabe, den das klassische Athen einst als Todesurteil auf ein Stimmtäfelchen ritzte. Ein Klick genügt zum Kopieren.",
-  "intro": "Theta ist der achte Buchstabe des griechischen Alphabets, und sein Kleinbuchstabe θ (U+03B8, GREEK SMALL LETTER THETA) — ein von einem waagerechten Balken durchkreuzter Kreis — trägt eine der düstersten Vorgeschichten aller Buchstaben. In der Antike war Theta der „Buchstabe des Todes“: Er stand für θάνατος (thánatos, „Tod“), und athenische Geschworene konnten ihn auf ein Stimmtäfelchen oder eine Tonscherbe ritzen, um für die Verurteilung oder Hinrichtung eines Angeklagten zu stimmen — ein Brauch, der so berüchtigt war, dass der römische Dichter Ennius Theta angeblich den unglücklichsten aller Buchstaben nannte. Die Großform Θ (U+0398) und eine eigenständige offene Variante ϑ (U+03D1, GREEK THETA SYMBOL) vervollständigen die Familie — ϑ ist eine kursive, in Physik und Mathematik verwendete Glyphe, kein eigener Buchstabe. Heute ist Thetas Arbeit deutlich harmloser: Das kleine θ ist das Standardzeichen für einen unbekannten oder gemessenen Winkel in Trigonometrie und Geometrie, während das große Θ die Big-Theta-Notation benennt — die „enge Schranke“ der Algorithmenanalyse, die Donald Knuth 1976 in seiner Arbeit „Big Omicron and Big Omega and Big Theta“ formalisierte. Im griechischen Zahlensystem trägt Theta außerdem den Wert 9.",
+  "hero_tagline": "Das kleine θ, das in der Trigonometrie einen Winkel markiert, das große Θ der Big-Theta-Notation und die offene Mathe-Variante ϑ – derselbe Buchstabe, den das klassische Athen einst als Todesurteil auf ein Stimmtäfelchen ritzte. Ein Klick genügt zum Kopieren.",
+  "intro": "Theta ist der achte Buchstabe des griechischen Alphabets, und sein Kleinbuchstabe θ (U+03B8, GREEK SMALL LETTER THETA) – ein von einem waagerechten Balken durchkreuzter Kreis – trägt eine der düstersten Vorgeschichten aller Buchstaben. In der Antike war Theta der „Buchstabe des Todes“: Er stand für θάνατος (thánatos, „Tod“), und athenische Geschworene konnten ihn auf ein Stimmtäfelchen oder eine Tonscherbe ritzen, um für die Verurteilung oder Hinrichtung eines Angeklagten zu stimmen – ein Brauch, der so berüchtigt war, dass der römische Dichter Ennius Theta angeblich den unglücklichsten aller Buchstaben nannte. Die Großform Θ (U+0398) und eine eigenständige offene Variante ϑ (U+03D1, GREEK THETA SYMBOL) vervollständigen die Familie – ϑ ist eine kursive, in Physik und Mathematik verwendete Glyphe, kein eigener Buchstabe. Heute ist Thetas Arbeit deutlich harmloser: Das kleine θ ist das Standardzeichen für einen unbekannten oder gemessenen Winkel in Trigonometrie und Geometrie, während das große Θ die Big-Theta-Notation benennt – die „enge Schranke“ der Algorithmenanalyse, die Donald Knuth 1976 in seiner Arbeit „Big Omicron and Big Omega and Big Theta“ formalisierte. Im griechischen Zahlensystem trägt Theta außerdem den Wert 9.",
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
@@ -34,7 +34,7 @@
     {
       "id": "das-theta-symbol",
       "label": "Das Theta-Symbol",
-      "h2": "Das Theta-Symbol — θ, Θ & ϑ",
+      "h2": "Das Theta-Symbol – θ, Θ & ϑ",
       "intro": "Theta kommt in drei Glyphen vor, die tatsächlich eingefügt werden: das alltägliche kleine θ, das große Θ und die offene ϑ-Variante, reserviert für Mathematik und Physik. Eine vierte, überstrichene Großform existiert rein als mathematisches Zeichen.",
       "symbols": [
         {
@@ -123,7 +123,7 @@
     {
       "href": "/de/symbol/delta-symbol/",
       "title": "Delta-Symbol",
-      "desc": "Ein weiterer griechischer Buchstabe mit einem tiefen Mathe-Leben — Änderung, Differenz und die Diskriminante."
+      "desc": "Ein weiterer griechischer Buchstabe mit einem tiefen Mathe-Leben – Änderung, Differenz und die Diskriminante."
     }
   ]
 }

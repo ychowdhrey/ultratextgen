@@ -7,8 +7,8 @@
   "canonical": "https://ultratextgen.com/de/symbol/daumenzeichen-emoji/",
   "breadcrumb": "Daumenzeichen Emoji",
   "hero_h1": "Daumenzeichen nach links & rechts Emoji",
-  "hero_tagline": "Ein richtungsweisendes Zeigepaar, keine weitere Zustimmungsgeste — im Entwurf für Emoji 18.0, erwartet zusammen mit Unicode 18.0 im September 2026. Nur ein Entwurf: noch nicht genehmigt, von keiner Schriftart darstellbar. Kopiere trotzdem schon jetzt einen der beiden Codepoints.",
-  "intro": "Daumenzeichen nach links (🫹, U+1FAF9) und Daumenzeichen nach rechts (🫺, U+1FAFA) bilden ein Kandidatenpaar im Entwurf für Emoji 18.0, das Emoji-Pendant zu Unicode 18.0, dessen finale Genehmigung für September 2026 erwartet wird. Trotz des Namens sind sie keine weitere Zustimmungsgeste neben Daumen hoch und Daumen runter — es handelt sich um waagerechte, zeigende Zeichen, die von der Funktion her näher an den bereits vorhandenen Emojis „Handrücken zeigt nach links/rechts“ liegen als an einem senkrechten Daumen. Das Paar beantwortet eine langjährige Beschwerde der Community: Unicodes Geste-Set war bislang stark auf rechtshändige, senkrechte Zustimmungszeichen ausgerichtet, ohne saubere Möglichkeit, in einer Antwort oder einem Vergleich mit dem Daumen „auf dieses hier“ statt „auf jenes dort“ zu zeigen. Für diese Kategorie gibt es echte Präzedenzfälle — der Pushing-Hand-Vorschlag von 2021 hatte richtungsweisende Handgesten bereits als eigenständige, legitime Emoji-Sparte jenseits des einfachen Daumen-hoch etabliert. Zusammen bringt das Konzeptpaar nach der Genehmigung 10 Hautton-Varianten mit (je fünf pro Zeichen). Weil es noch Entwürfe sind, stellt derzeit kein Betriebssystem, keine Tastatur und keine Schriftart sie dar; bis zur Genehmigung von Emoji 18.0 und der Umsetzung durch die Plattformen erscheint an dieser Stelle nur ein leeres Kästchen oder eine Platzhalter-Glyphe, voraussichtlich bis irgendwann 2027.",
+  "hero_tagline": "Ein richtungsweisendes Zeigepaar, keine weitere Zustimmungsgeste – im Entwurf für Emoji 18.0, erwartet zusammen mit Unicode 18.0 im September 2026. Nur ein Entwurf: noch nicht genehmigt, von keiner Schriftart darstellbar. Kopiere trotzdem schon jetzt einen der beiden Codepoints.",
+  "intro": "Daumenzeichen nach links (🫹, U+1FAF9) und Daumenzeichen nach rechts (🫺, U+1FAFA) bilden ein Kandidatenpaar im Entwurf für Emoji 18.0, das Emoji-Pendant zu Unicode 18.0, dessen finale Genehmigung für September 2026 erwartet wird. Trotz des Namens sind sie keine weitere Zustimmungsgeste neben Daumen hoch und Daumen runter – es handelt sich um waagerechte, zeigende Zeichen, die von der Funktion her näher an den bereits vorhandenen Emojis „Handrücken zeigt nach links/rechts“ liegen als an einem senkrechten Daumen. Das Paar beantwortet eine langjährige Beschwerde der Community: Unicodes Geste-Set war bislang stark auf rechtshändige, senkrechte Zustimmungszeichen ausgerichtet, ohne saubere Möglichkeit, in einer Antwort oder einem Vergleich mit dem Daumen „auf dieses hier“ statt „auf jenes dort“ zu zeigen. Für diese Kategorie gibt es echte Präzedenzfälle – der Pushing-Hand-Vorschlag von 2021 hatte richtungsweisende Handgesten bereits als eigenständige, legitime Emoji-Sparte jenseits des einfachen Daumen-hoch etabliert. Zusammen bringt das Konzeptpaar nach der Genehmigung 10 Hautton-Varianten mit (je fünf pro Zeichen). Weil es noch Entwürfe sind, stellt derzeit kein Betriebssystem, keine Tastatur und keine Schriftart sie dar; bis zur Genehmigung von Emoji 18.0 und der Umsetzung durch die Plattformen erscheint an dieser Stelle nur ein leeres Kästchen oder eine Platzhalter-Glyphe, voraussichtlich bis irgendwann 2027.",
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
@@ -35,7 +35,7 @@
       "id": "daumenzeichen",
       "label": "Daumenzeichen",
       "h2": "Daumenzeichen nach links & rechts",
-      "intro": "Die beiden Entwurfszeichen selbst — schon heute als Codepoints kopierbar, auch wenn noch keine Schriftart sie darstellen kann.",
+      "intro": "Die beiden Entwurfszeichen selbst – schon heute als Codepoints kopierbar, auch wenn noch keine Schriftart sie darstellen kann.",
       "symbols": [
         {
           "char": "🫹",
@@ -75,7 +75,7 @@
       "id": "weitere-entwurfs-emojis",
       "label": "Weitere Entwurfs-Kandidaten",
       "h2": "Weitere Entwurfs-Kandidaten für Emoji 18.0",
-      "intro": "Daumenzeichen ist nicht das einzige noch nicht genehmigte Zeichen dieser Ausgabe — diese hier stehen im selben Entwurf und bleiben bis zur Entscheidung im September 2026 ebenso unsichtbar.",
+      "intro": "Daumenzeichen ist nicht das einzige noch nicht genehmigte Zeichen dieser Ausgabe – diese hier stehen im selben Entwurf und bleiben bis zur Entscheidung im September 2026 ebenso unsichtbar.",
       "symbols": [
         {
           "char": "🫫",
@@ -110,7 +110,7 @@
     {
       "href": "/de/symbol/essiggurke-emoji/",
       "title": "Essiggurke Emoji",
-      "desc": "Ein weiterer Entwurfs-Kandidat für Emoji 18.0 — übernahm einen Codepoint-Platz, der ursprünglich für einen zurückgestellten Vorschlag reserviert war."
+      "desc": "Ein weiterer Entwurfs-Kandidat für Emoji 18.0 – übernahm einen Codepoint-Platz, der ursprünglich für einen zurückgestellten Vorschlag reserviert war."
     },
     {
       "href": "/de/updates/unicode-18-emoji-abstimmung/",

@@ -459,6 +459,10 @@ module.exports = {
   EDITORIAL_SLOTS,
   PROSE_SLOTS,
   CARD_SELECTORS,
+  // Exported so a rewriter cannot restate them and drift from the extractor:
+  // what counts as chrome/payload must mean one thing on this site.
+  DROP_SELECTORS,
+  UI_SELECTORS,
   classifyPath,
   extractPage,
   editorialText,

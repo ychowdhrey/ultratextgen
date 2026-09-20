@@ -14,8 +14,8 @@
   "canonical": "https://ultratextgen.com/nl/symbol/omega-symbool/",
   "breadcrumb": "Omega-symbool",
   "hero_h1": "Omega-symbool",
-  "hero_tagline": "De laatste letter van het Griekse alfabet (Ω, ω) — en de reden dat het elektrische 'ohm'-teken voor weerstand er op het scherm precies hetzelfde uitziet, terwijl het onderliggend een compleet ander Unicode-teken is. Klik op een teken om het direct te kopiëren.",
-  "intro": "Omega (hoofdletter Ω, kleine letter ω) is de vierentwintigste en laatste letter van het Griekse alfabet — de bron van 'omega' als 'het einde' (zoals in het Nieuwe Testament's 'Alfa en Omega', Openbaring 22:13), en de letter achter hoeksnelheid (ω) en ruimtehoek (Ω) in de natuurkunde. Het staat ook centraal in een echte Unicode-eigenaardigheid: het elektrische teken voor de ohm (weerstand) heeft een eigen, apart codepunt, U+2126 OHM SIGN, dat Unicodes eigen officiële tekenlijst markeert als normaliserend naar — en 'geprefereerd' als — de gewone Griekse omega (U+03A9). De twee zouden als hetzelfde teken behandeld moeten worden, maar dat gebeurt vaak niet. Er zijn echte bugs uit voortgekomen: een gedocumenteerd Pandoc-conversieprobleem behandelde de twee inconsistent, zette de ene om naar LaTeX's \\Omega maar faalde volledig op de andere, en op elektronicaforums wordt regelmatig besproken dat de twee tekens er, afhankelijk van lettertype en besturingssysteem, licht anders uitzien.",
+  "hero_tagline": "De laatste letter van het Griekse alfabet (Ω, ω) – en de reden dat het elektrische 'ohm'-teken voor weerstand er op het scherm precies hetzelfde uitziet, terwijl het onderliggend een compleet ander Unicode-teken is. Klik op een teken om het direct te kopiëren.",
+  "intro": "Omega (hoofdletter Ω, kleine letter ω) is de vierentwintigste en laatste letter van het Griekse alfabet – de bron van 'omega' als 'het einde' (zoals in het Nieuwe Testament's 'Alfa en Omega', Openbaring 22:13), en de letter achter hoeksnelheid (ω) en ruimtehoek (Ω) in de natuurkunde. Het staat ook centraal in een echte Unicode-eigenaardigheid: het elektrische teken voor de ohm (weerstand) heeft een eigen, apart codepunt, U+2126 OHM SIGN, dat Unicodes eigen officiële tekenlijst markeert als normaliserend naar – en 'geprefereerd' als – de gewone Griekse omega (U+03A9). De twee zouden als hetzelfde teken behandeld moeten worden, maar dat gebeurt vaak niet. Er zijn echte bugs uit voortgekomen: een gedocumenteerd Pandoc-conversieprobleem behandelde de twee inconsistent, zette de ene om naar LaTeX's \\Omega maar faalde volledig op de andere, en op elektronicaforums wordt regelmatig besproken dat de twee tekens er, afhankelijk van lettertype en besturingssysteem, licht anders uitzien.",
   "hreflang": [
     {
       "lang": "en",
@@ -34,7 +34,7 @@
     {
       "id": "omega",
       "label": "Omega",
-      "h2": "Omega — Hoofdletter & Kleine Letter",
+      "h2": "Omega – Hoofdletter & Kleine Letter",
       "intro": "De Griekse letter zelf, in beide gevallen.",
       "symbols": [
         {
@@ -51,7 +51,7 @@
       "id": "ohm-teken-verwarring",
       "label": "Ohm-teken",
       "h2": "De Ohm-teken-verwarring",
-      "intro": "Wordt identiek weergegeven als de hoofdletter omega hierboven, maar is gecodeerd als apart teken — plus de elektrische eenheid die is genoemd door het ondersteboven om te draaien.",
+      "intro": "Wordt identiek weergegeven als de hoofdletter omega hierboven, maar is gecodeerd als apart teken – plus de elektrische eenheid die is genoemd door het ondersteboven om te draaien.",
       "symbols": [
         {
           "char": "Ω",
@@ -67,7 +67,7 @@
       "id": "verwante-griekse-letters",
       "label": "Griekse Letters",
       "h2": "Alfa, Omega & Verwante Griekse Letters",
-      "intro": "Alfa opent het Griekse alfabet zoals omega het afsluit — plus twee andere veelgezochte Griekse letters.",
+      "intro": "Alfa opent het Griekse alfabet zoals omega het afsluit – plus twee andere veelgezochte Griekse letters.",
       "symbols": [
         {
           "char": "Α",
@@ -97,12 +97,12 @@
     {
       "href": "/nl/symbol/sigma-symbool/",
       "title": "Sigma-symbool",
-      "desc": "De letter achter de 'sigma male'-meme — en waarom 🗿 hem qua gebruik voorbijstreeft."
+      "desc": "De letter achter de 'sigma male'-meme – en waarom 🗿 hem qua gebruik voorbijstreeft."
     },
     {
       "href": "/nl/symbol/microteken/",
       "title": "Microteken",
-      "desc": "Hetzelfde soort verwarring als ohm vs. omega — identiek aan de Griekse mu op het scherm, een ander teken eronder."
+      "desc": "Hetzelfde soort verwarring als ohm vs. omega – identiek aan de Griekse mu op het scherm, een ander teken eronder."
     }
   ]
 }

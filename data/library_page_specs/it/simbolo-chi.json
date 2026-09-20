@@ -7,8 +7,8 @@
   "canonical": "https://ultratextgen.com/it/symbol/simbolo-chi/",
   "breadcrumb": "Simbolo Chi",
   "hero_h1": "Simbolo Chi",
-  "hero_tagline": "La χ minuscola che alimenta il test statistico χ², la Χ maiuscola che apre \"Cristo\" in greco e ha dato origine al monogramma Chi-Rho e alla \"X\" di Xmas — l'unica lettera greca costantemente scambiata per una X latina. Tocca un simbolo per copiarlo all'istante.",
-  "intro": "Chi è la 22ª lettera dell'alfabeto greco, scritta χ in minuscolo (U+03C7, GREEK SMALL LETTER CHI) e Χ in maiuscolo (U+03A7, GREEK CAPITAL LETTER CHI) — un glifo così simile alla X latina che le due vengono continuamente confuse. Proprio questa somiglianza è il motivo per cui chi porta con sé tanta storia. La Χ maiuscola è la prima lettera di Χριστός (Christós), \"Cristo\" in greco, e gli amanuensi la usano come abbreviazione del nome da oltre mille anni — la grafia \"Xres mæsse\" compare nella Cronaca anglosassone intorno al 1100, e la stessa abitudine è il motivo per cui l'inglese scrive ancora oggi \"Xmas\". Unisci chi alla lettera successiva, rho, e ottieni il monogramma Chi-Rho ☧ (U+2627, CHI RHO), il primo cristogramma che l'imperatore romano Costantino I adottò come suo stendardo militare, il labaro, dopo una visione riportata prima della Battaglia di Ponte Milvio del 28 ottobre 312 d.C. — un racconto che ci giunge attraverso gli antichi scrittori Eusebio e Lattanzio più che come cronaca neutrale. Nella matematica e nella scienza moderne, la χ minuscola è il pilastro del test chi-quadrato (χ²), la statistica di bontà di adattamento che Karl Pearson introdusse nel 1900 e che oggi è un caposaldo di statistica e data science.",
+  "hero_tagline": "La χ minuscola che alimenta il test statistico χ², la Χ maiuscola che apre \"Cristo\" in greco e ha dato origine al monogramma Chi-Rho e alla \"X\" di Xmas – l'unica lettera greca costantemente scambiata per una X latina. Tocca un simbolo per copiarlo all'istante.",
+  "intro": "Chi è la 22ª lettera dell'alfabeto greco, scritta χ in minuscolo (U+03C7, GREEK SMALL LETTER CHI) e Χ in maiuscolo (U+03A7, GREEK CAPITAL LETTER CHI) – un glifo così simile alla X latina che le due vengono continuamente confuse. Proprio questa somiglianza è il motivo per cui chi porta con sé tanta storia. La Χ maiuscola è la prima lettera di Χριστός (Christós), \"Cristo\" in greco, e gli amanuensi la usano come abbreviazione del nome da oltre mille anni – la grafia \"Xres mæsse\" compare nella Cronaca anglosassone intorno al 1100, e la stessa abitudine è il motivo per cui l'inglese scrive ancora oggi \"Xmas\". Unisci chi alla lettera successiva, rho, e ottieni il monogramma Chi-Rho ☧ (U+2627, CHI RHO), il primo cristogramma che l'imperatore romano Costantino I adottò come suo stendardo militare, il labaro, dopo una visione riportata prima della Battaglia di Ponte Milvio del 28 ottobre 312 d.C. – un racconto che ci giunge attraverso gli antichi scrittori Eusebio e Lattanzio più che come cronaca neutrale. Nella matematica e nella scienza moderne, la χ minuscola è il pilastro del test chi-quadrato (χ²), la statistica di bontà di adattamento che Karl Pearson introdusse nel 1900 e che oggi è un caposaldo di statistica e data science.",
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
@@ -34,7 +34,7 @@
     {
       "id": "the-chi-symbol",
       "label": "Il Simbolo Chi",
-      "h2": "Il Simbolo Chi — Χ e χ",
+      "h2": "Il Simbolo Chi – Χ e χ",
       "intro": "La lettera greca stessa, in entrambi i casi. La Χ maiuscola porta la storia religiosa e abbreviativa di chi; la χ minuscola svolge la maggior parte del lavoro matematico e scientifico moderno.",
       "symbols": [
         {
@@ -51,7 +51,7 @@
       "id": "chi-rho-and-xmas",
       "label": "Chi-Rho e Xmas",
       "h2": "Chi-Rho, Xmas e il Monogramma Cristiano",
-      "intro": "Poiché la Χ maiuscola apre Χριστός (\"Cristo\"), è diventata un'abbreviazione secolare del nome — l'origine sia del monogramma Chi-Rho che Costantino portò come stendardo di battaglia, sia del moderno \"Xmas\". Copia qui i pezzi di questa storia.",
+      "intro": "Poiché la Χ maiuscola apre Χριστός (\"Cristo\"), è diventata un'abbreviazione secolare del nome – l'origine sia del monogramma Chi-Rho che Costantino portò come stendardo di battaglia, sia del moderno \"Xmas\". Copia qui i pezzi di questa storia.",
       "symbols": [
         {
           "char": "☧",
@@ -90,8 +90,8 @@
     {
       "id": "chi-vs-latin-x",
       "label": "Chi vs. X",
-      "h2": "Chi vs. la X Latina — i Sosia",
-      "intro": "Chi appare quasi identica alla lettera latina X, ma ciascuna ha il proprio codepoint — scambiarle in silenzio rompe ricerche, codice ed equazioni. Ecco tutte e quattro, così puoi copiare esattamente quella che ti serve.",
+      "h2": "Chi vs. la X Latina – i Sosia",
+      "intro": "Chi appare quasi identica alla lettera latina X, ma ciascuna ha il proprio codepoint – scambiarle in silenzio rompe ricerche, codice ed equazioni. Ecco tutte e quattro, così puoi copiare esattamente quella che ti serve.",
       "symbols": [
         {
           "char": "χ",
@@ -155,7 +155,7 @@
     {
       "href": "/it/symbol/simbolo-pi-greco/",
       "title": "Simbolo Pi Greco",
-      "desc": "Un'altra lettera greca con una doppia vita — la famosa costante matematica π e l'operatore prodotto Π maiuscolo."
+      "desc": "Un'altra lettera greca con una doppia vita – la famosa costante matematica π e l'operatore prodotto Π maiuscolo."
     }
   ]
 }

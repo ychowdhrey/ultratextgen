@@ -14,8 +14,8 @@
   "canonical": "https://ultratextgen.com/nl/symbol/underscore-teken/",
   "breadcrumb": "Underscore",
   "hero_h1": "Underscore (_)",
-  "hero_tagline": "De gewone toetsenbord-underscore (_) die begon als een typemachinetruc voor onderstrepen en uitgroeide tot snake_case — het enige spatie-veilige teken dat gebruikersnamen, e-mailadressen en bestandsnamen toestaan. Hier naast zijn volle-breedte-＿, dubbele ‗ en overline-‾ neven. Klik op een teken om het direct te kopiëren.",
-  "intro": "De underscore, of low line (_, U+005F LOW LINE), is de horizontale streep op de basislijn in Unicodes Basic Latin-blok, waar hij de algemene categorie Connector Punctuation draagt. Het begon als een puur mechanische truc: op een typemachine onderstreepte je een woord door het te typen, de wagen terug te zetten naar het begin, en dezelfde plek nog eens te overtypen met de underscore-toets — een aparte toets die al op machines als de Caligraph uit 1881 zat. Het teken kwam in 1967 in ASCII terecht, op code point 95 (0x5F), de plek van de linkerpijl (←) die het verving, nadat IBM's EBCDIC het in 1964 al had toegevoegd als ‘break character’. Programmeurs gebruikten het vervolgens als woordscheiding — de stijl van underscores-als-spaties gaat terug op C eind jaren 60 en op The C Programming Language (1978), al werd de naam ‘snake_case’ pas rond 2004 bedacht door de Ruby-gemeenschap (Pythons PEP 8 noemt het nog steeds ‘lower_case_with_underscores’). Vandaag is het het enige spatie-veilige teken dat wordt toegestaan in gebruikersnamen, het lokale deel van e-mailadressen, bestandsnamen en URL-slugs, en Markdown leest _enkele underscores_ als cursief en __dubbele__ als vet. Het wordt voortdurend verward met het koppelteken (-, U+002D) en met zijn bredere neven, de volle-breedte-＿ (U+FF3F) en de dubbele low line ‗ (U+2017).",
+  "hero_tagline": "De gewone toetsenbord-underscore (_) die begon als een typemachinetruc voor onderstrepen en uitgroeide tot snake_case – het enige spatie-veilige teken dat gebruikersnamen, e-mailadressen en bestandsnamen toestaan. Hier naast zijn volle-breedte-＿, dubbele ‗ en overline-‾ neven. Klik op een teken om het direct te kopiëren.",
+  "intro": "De underscore, of low line (_, U+005F LOW LINE), is de horizontale streep op de basislijn in Unicodes Basic Latin-blok, waar hij de algemene categorie Connector Punctuation draagt. Het begon als een puur mechanische truc: op een typemachine onderstreepte je een woord door het te typen, de wagen terug te zetten naar het begin, en dezelfde plek nog eens te overtypen met de underscore-toets – een aparte toets die al op machines als de Caligraph uit 1881 zat. Het teken kwam in 1967 in ASCII terecht, op code point 95 (0x5F), de plek van de linkerpijl (←) die het verving, nadat IBM's EBCDIC het in 1964 al had toegevoegd als ‘break character’. Programmeurs gebruikten het vervolgens als woordscheiding – de stijl van underscores-als-spaties gaat terug op C eind jaren 60 en op The C Programming Language (1978), al werd de naam ‘snake_case’ pas rond 2004 bedacht door de Ruby-gemeenschap (Pythons PEP 8 noemt het nog steeds ‘lower_case_with_underscores’). Vandaag is het het enige spatie-veilige teken dat wordt toegestaan in gebruikersnamen, het lokale deel van e-mailadressen, bestandsnamen en URL-slugs, en Markdown leest _enkele underscores_ als cursief en __dubbele__ als vet. Het wordt voortdurend verward met het koppelteken (-, U+002D) en met zijn bredere neven, de volle-breedte-＿ (U+FF3F) en de dubbele low line ‗ (U+2017).",
   "hreflang": [
     {
       "lang": "en",
@@ -35,7 +35,7 @@
       "id": "de-underscore",
       "label": "De Underscore",
       "h2": "De Underscore, Volle Breedte & Dubbel",
-      "intro": "De gewone toetsenbord-low-line en zijn twee breedtevarianten — de volle-breedte-vorm uit Oost-Aziatisch zetwerk en de dubbele spatiëringsvariant. Overal direct te plakken.",
+      "intro": "De gewone toetsenbord-low-line en zijn twee breedtevarianten – de volle-breedte-vorm uit Oost-Aziatisch zetwerk en de dubbele spatiëringsvariant. Overal direct te plakken.",
       "symbols": [
         {
           "char": "_",
@@ -55,7 +55,7 @@
       "id": "de-overline",
       "label": "De Overline",
       "h2": "De Overline: Dezelfde Streep, Boven de Tekst",
-      "intro": "De overline is het spiegelbeeld van de underscore — dezelfde horizontale streep, maar boven de tekst in plaats van eronder, en dat is precies waarom de twee als tegenpolen worden verward. De macron is het korte streepje dat mensen vaak typen als ze een overline bedoelen.",
+      "intro": "De overline is het spiegelbeeld van de underscore – dezelfde horizontale streep, maar boven de tekst in plaats van eronder, en dat is precies waarom de twee als tegenpolen worden verward. De macron is het korte streepje dat mensen vaak typen als ze een overline bedoelen.",
       "symbols": [
         {
           "char": "‾",
@@ -71,7 +71,7 @@
       "id": "vs-koppelteken",
       "label": "Vs. Koppelteken & Streepje",
       "h2": "Underscore vs. de Koppelteken- & Streepjesfamilie",
-      "intro": "In URL's, gebruikersnamen en bestandsnamen worden underscore en koppelteken voortdurend verwisseld — maar ze staan op een andere hoogte, hebben een ander codepunt, en doen elk iets anders.",
+      "intro": "In URL's, gebruikersnamen en bestandsnamen worden underscore en koppelteken voortdurend verwisseld – maar ze staan op een andere hoogte, hebben een ander codepunt, en doen elk iets anders.",
       "symbols": [
         {
           "char": "-",

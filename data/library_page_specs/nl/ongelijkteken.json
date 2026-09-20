@@ -14,8 +14,8 @@
   "canonical": "https://ultratextgen.com/nl/symbol/ongelijkteken/",
   "breadcrumb": "Ongelijkteken",
   "hero_h1": "Ongelijkteken",
-  "hero_tagline": "Het isgelijkteken met een schuine streep erdoorheen (≠) — al minstens sinds Eulers tijd in gebruik in de wiskunde, de bron van een hele familie ontkende relatietekens, en niet opgenomen in ASCII, waardoor code != gebruikt. Klik op een teken om het direct te kopiëren.",
-  "intro": "Het ongelijkteken (≠, U+2260) combineert het isgelijkteken met een diagonale streep — Unicodes eigen decompositie toont het letterlijk als ‘=’ plus een combinerende schuine streep (U+0338), hetzelfde teken dat een hele familie ontkende relaties oplevert: ≁, ≉, ≢, ≮, ≯. De schuine-streep-ontkenning is een apart, later verhaal dan Robert Recordes uitvinding van ‘=’ zelf in 1557 — het vroegst bekende geschreven gebruik gaat terug op de achttiende-eeuwse correspondentie van Leonhard Euler, al benadrukken wiskundehistorici dat het teken dóór Euler is gebruikt, niet per se dóór hem is uitgevonden. Omdat ASCII nooit een plek voor ≠ had gereserveerd, kozen programmeertalen hun eigen vervangers — != in C-achtige talen, <> in SQL en Pascal, ~= in Lua en MATLAB, /= in Fortran en Haskell — waardoor het wiskundeteken en de code die je daadwerkelijk typt bijna nooit hetzelfde teken zijn.",
+  "hero_tagline": "Het isgelijkteken met een schuine streep erdoorheen (≠) – al minstens sinds Eulers tijd in gebruik in de wiskunde, de bron van een hele familie ontkende relatietekens, en niet opgenomen in ASCII, waardoor code != gebruikt. Klik op een teken om het direct te kopiëren.",
+  "intro": "Het ongelijkteken (≠, U+2260) combineert het isgelijkteken met een diagonale streep – Unicodes eigen decompositie toont het letterlijk als ‘=’ plus een combinerende schuine streep (U+0338), hetzelfde teken dat een hele familie ontkende relaties oplevert: ≁, ≉, ≢, ≮, ≯. De schuine-streep-ontkenning is een apart, later verhaal dan Robert Recordes uitvinding van ‘=’ zelf in 1557 – het vroegst bekende geschreven gebruik gaat terug op de achttiende-eeuwse correspondentie van Leonhard Euler, al benadrukken wiskundehistorici dat het teken dóór Euler is gebruikt, niet per se dóór hem is uitgevonden. Omdat ASCII nooit een plek voor ≠ had gereserveerd, kozen programmeertalen hun eigen vervangers – != in C-achtige talen, <> in SQL en Pascal, ~= in Lua en MATLAB, /= in Fortran en Haskell – waardoor het wiskundeteken en de code die je daadwerkelijk typt bijna nooit hetzelfde teken zijn.",
   "hreflang": [
     {
       "lang": "en",
@@ -63,7 +63,7 @@
       "id": "ontkenningsfamilie",
       "label": "Ontkende Relaties",
       "h2": "De Familie van Ontkende Relaties",
-      "intro": "≠ staat niet alleen — dezelfde diagonale-streep-overlay ontkent verschillende andere relatietekens in Unicodes Mathematical Operators-blok.",
+      "intro": "≠ staat niet alleen – dezelfde diagonale-streep-overlay ontkent verschillende andere relatietekens in Unicodes Mathematical Operators-blok.",
       "symbols": [
         {
           "char": "≁",
@@ -91,7 +91,7 @@
       "id": "verwante-vergelijkingstekens",
       "label": "Vergelijkingstekens",
       "h2": "Verwante Vergelijkingstekens",
-      "intro": "De positieve relaties die ≠ ontkent — handig wanneer je juist de niet-doorgestreepte versie nodig hebt.",
+      "intro": "De positieve relaties die ≠ ontkent – handig wanneer je juist de niet-doorgestreepte versie nodig hebt.",
       "symbols": [
         {
           "char": "=",

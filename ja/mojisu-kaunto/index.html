@@ -202,7 +202,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </div>
 
     <div class="counter-fits">
-      <p class="counter-fits-head">この文章が収まる場所 — すべての制限をリアルタイム判定</p>
+      <p class="counter-fits-head">この文章が収まる場所 —— すべての制限をリアルタイム判定</p>
       <div class="cc-fit-grid" id="counterFitGrid" hidden></div>
     </div>
   </div>
@@ -229,7 +229,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </tr>
       </tbody>
     </table></div>
-    <p>多くの人が実際に書きながら意識しているのはソフトリミットのほうなのに、それを表示するカウンターはほとんどありません。LinkedIn投稿は3,000文字入りますが、実際に読まれるのは冒頭のおよそ140文字だけで、残りは誰も押さないタップの向こう側にあります。だから上のツールは折りたたみの位置そのものを描き出します — 入力すると、「もっと見る」の前に表示される文章がそのまま見え、カットラインより後ろは薄く表示され、同じ書き出しが折りたたみのある他の場所でも通用するかどうかまで並べて確認できます。</p>
+    <p>多くの人が実際に書きながら意識しているのはソフトリミットのほうなのに、それを表示するカウンターはほとんどありません。LinkedIn投稿は3,000文字入りますが、実際に読まれるのは冒頭のおよそ140文字だけで、残りは誰も押さないタップの向こう側にあります。だから上のツールは折りたたみの位置そのものを描き出します —— 入力すると、「もっと見る」の前に表示される文章がそのまま見え、カットラインより後ろは薄く表示され、同じ書き出しが折りたたみのある他の場所でも通用するかどうかまで並べて確認できます。</p>
     <p>ここで大事なのは、<strong>折りたたみは画面に表示される文字数で決まる</strong>という点です。UTF-8では3バイトを消費する日本語も、折りたたみの計算では1文字は1文字。Instagramの125文字の折りたたみには日本語でもちょうど125文字入り、バイト数のぶん短くなることはありません。バイト数が効いてくるのは「投稿が通るかどうか」を決めるハードリミットの側だけで、折りたたみとは別の話です。</p>
     <p><strong>どこで折りたたまれるか、デバイス別:</strong></p>
     <div class="comparison-table-wrap"><table class="comparison-table">
@@ -273,7 +273,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <thead><tr><th>数え方</th><th>何を測っているか</th><th>日本語だとどうなるか</th></tr></thead>
       <tbody>
         <tr><td>書記素</td><td>見た目どおりの文字。肌色付きの絵文字も1</td><td>「あ」＝1。Blueskyが採用</td></tr>
-        <tr><td>コードポイント</td><td>Unicodeの文字数 — 👍🏽 は2（手＋肌色）</td><td>「あ」＝1。多くのウェブサービスと、このツールの「文字数」タイル</td></tr>
+        <tr><td>コードポイント</td><td>Unicodeの文字数 —— 👍🏽 は2（手＋肌色）</td><td>「あ」＝1。多くのウェブサービスと、このツールの「文字数」タイル</td></tr>
         <tr><td>UTF-16単位</td><td>JavaScriptや多くのアプリの内部保存形式</td><td>「あ」＝1だが装飾フォントの英数字は2。HTMLフォームの<code>maxlength</code>、ゲームやアプリのバックエンド</td></tr>
         <tr><td>UTF-8バイト</td><td>保存サイズ</td><td><strong>「あ」＝3バイト</strong>。データベースの<code>VARCHAR</code>、Amazonの商品情報欄、Steam名、古い業務システムやCSV連携</td></tr>
       </tbody>
@@ -285,7 +285,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="section-divider"></div>
 
   <section class="editorial-section" id="zenkaku-hankaku">
-    <h2>全角・半角の数え方 — このツールはどちらも1文字</h2>
+    <h2>全角・半角の数え方 —— このツールはどちらも1文字</h2>
     <p>このツールはUnicodeのコードポイント単位でカウントします。つまり全角の「あ」「Ａ」も、半角の「a」「ｱ」も、等しく1文字です。X、Instagram、Discordをはじめ、現在のほとんどのウェブサービスがこの数え方を採用しているため、SNSの投稿やプロフィールの文字数を確認する用途にはこの数値をそのまま使えます。</p>
     <p>ただし正直にお伝えすると、世の中のすべてのフォームが同じ数え方をするわけではありません。一部のエントリーシート入力欄や応募システムには、半角英数字2文字を1文字（半角＝0.5文字）と数える古いルールが残っています。提出先が数え方を明示している場合は、必ずその指定を優先してください。このツールの「文字数」はあくまでUnicode基準の正確な文字数です。</p>
     <p>なお「単語数」「文（センテンス）」「読了時間」「スピーチ時間」は、英語のようにスペースで単語を区切る言語向けの目安です。日本語の文章の分量は「文字数」と「原稿用紙（400字換算）」を基準にしてください。</p>
@@ -302,7 +302,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="section-divider"></div>
 
   <section class="editorial-section" id="x-twitter">
-    <h2>X（旧Twitter）の文字数 — 日本語は実質140字</h2>
+    <h2>X（旧Twitter）の文字数 —— 日本語は実質140字</h2>
     <p>Xの投稿上限は「280文字」と説明されることが多いのですが、正確には280<strong>カウント</strong>です。Xの公式アルゴリズム（twitter-textライブラリ）では、半角英数字は1カウント、日本語・中国語・韓国語の文字と絵文字はそれぞれ2カウントとして計算されます。そのため日本語だけで書いた投稿は、実質約140字が上限になります。</p>
     <p>さらにURLは、実際の長さに関係なく常に23カウントです。短いURLを貼っても23、長いURLを貼っても23として扱われます。上のチェッカーで「X（旧Twitter）ポスト」を選ぶと、この実際の重み付きアルゴリズムそのままでカウントするので、投稿する前に「あと何字書けるか」を正確に確認できます。</p>
   </section>
@@ -430,7 +430,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </a>
       <a href="/ja/kuuhaku-moji/" class="compare-card variant-muted u-no-underline">
         <h4>空白文字＆見えない文字</h4>
-        <p>見えない空白スペースをコピー — 文字数には数えられます。</p>
+        <p>見えない空白スペースをコピー —— 文字数には数えられます。</p>
       </a>
       <a href="/ja/library/special-characters/" class="compare-card variant-muted u-no-underline">
         <h4>特殊文字 一覧</h4>

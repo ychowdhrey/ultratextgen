@@ -11,8 +11,8 @@
   "library_url": "https://ultratextgen.com/nl/library/",
   "breadcrumb": "ASCII Kunst",
   "hero_h1": "ASCII Kunst",
-  "hero_tagline": "Bouwstenen voor eigen tekstkunst: lijnen, blokken, braillepatronen en vormen — klik om te kopiëren.",
-  "intro": "ASCII-kunst (ook wel tekstkunst genoemd) is tekening gemaakt van gewone tekens in plaats van pixels — populair sinds de begindagen van het internet en nog steeds overal te vinden in forumberichten, terminalvensters en chatberichten. Deze pagina verzamelt de bouwstenen: lijntekens om kaders te trekken, blokken en schaduwtinten om vlakken te vullen, braillepatronen voor fijnere texturen, en basisvormen. Combineer ze zelf tot je eigen ontwerp.",
+  "hero_tagline": "Bouwstenen voor eigen tekstkunst: lijnen, blokken, braillepatronen en vormen – klik om te kopiëren.",
+  "intro": "ASCII-kunst (ook wel tekstkunst genoemd) is tekening gemaakt van gewone tekens in plaats van pixels – populair sinds de begindagen van het internet en nog steeds overal te vinden in forumberichten, terminalvensters en chatberichten. Deze pagina verzamelt de bouwstenen: lijntekens om kaders te trekken, blokken en schaduwtinten om vlakken te vullen, braillepatronen voor fijnere texturen, en basisvormen. Combineer ze zelf tot je eigen ontwerp.",
   "date_published": "2026-08-13",
   "date_modified": "2026-08-13",
   "copy_pattern": "single",
@@ -103,7 +103,7 @@
       "id": "blocks",
       "label": "Blokken en schaduw",
       "h2": "Blokken en schaduwtinten",
-      "intro": "Volle en halve blokken, plus schaduwtinten om vlakken te vullen — de basis van pixel-achtige tekstkunst.",
+      "intro": "Volle en halve blokken, plus schaduwtinten om vlakken te vullen – de basis van pixel-achtige tekstkunst.",
       "symbols": [
         {
           "char": "█",

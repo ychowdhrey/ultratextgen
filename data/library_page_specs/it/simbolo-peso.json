@@ -7,8 +7,8 @@
   "canonical": "https://ultratextgen.com/it/symbol/simbolo-peso/",
   "breadcrumb": "Simbolo del Peso",
   "hero_h1": "Simbolo del Peso (₱)",
-  "hero_tagline": "Il ₱ che appartiene al peso filippino — l'unico peso al mondo con un simbolo dedicato, mentre il peso messicano, argentino e colombiano si accontentano tutti del semplice segno del dollaro. Tocca un simbolo per copiarlo all'istante.",
-  "intro": "Il simbolo del peso (₱, Unicode U+20B1 PESO SIGN) è il segno dedicato del peso filippino — e, nonostante il nome generico, è l'unico peso al mondo ad averne uno. Ogni altra valuta chiamata peso — quella messicana (MXN), argentina (ARS), colombiana (COP), cilena (CLP), cubana (CUP), dominicana (DOP) e uruguaiana (UYU), tra le altre — si scrive convenzionalmente con il semplice segno del dollaro, $ (U+0024), di solito disambiguato nella pratica con un prefisso di paese come MX$ o COL$. Quel glifo condiviso non è un caso: si ritiene ampiamente che lo stesso segno del dollaro sia nato da un'abbreviazione manoscritta settecentesca del peso spagnolo, motivo per cui un unico segno serve ancora oggi sia i dollari sia la maggior parte dei pesos. Le Filippine hanno scelto un'altra strada. L'Executive Order n. 66, emesso dal governo coloniale statunitense il 3 agosto 1903, stabilì una P maiuscola attraversata da due linee parallele proprio per distinguere il peso filippino dal dollaro americano e dalla peseta spagnola. Unicode ha codificato ₱ nella versione 3.2, rilasciata nel 2002; il codice ISO 4217 della valuta è PHP ed è emessa dalla Bangko Sentral ng Pilipinas.",
+  "hero_tagline": "Il ₱ che appartiene al peso filippino – l'unico peso al mondo con un simbolo dedicato, mentre il peso messicano, argentino e colombiano si accontentano tutti del semplice segno del dollaro. Tocca un simbolo per copiarlo all'istante.",
+  "intro": "Il simbolo del peso (₱, Unicode U+20B1 PESO SIGN) è il segno dedicato del peso filippino – e, nonostante il nome generico, è l'unico peso al mondo ad averne uno. Ogni altra valuta chiamata peso – quella messicana (MXN), argentina (ARS), colombiana (COP), cilena (CLP), cubana (CUP), dominicana (DOP) e uruguaiana (UYU), tra le altre – si scrive convenzionalmente con il semplice segno del dollaro, $ (U+0024), di solito disambiguato nella pratica con un prefisso di paese come MX$ o COL$. Quel glifo condiviso non è un caso: si ritiene ampiamente che lo stesso segno del dollaro sia nato da un'abbreviazione manoscritta settecentesca del peso spagnolo, motivo per cui un unico segno serve ancora oggi sia i dollari sia la maggior parte dei pesos. Le Filippine hanno scelto un'altra strada. L'Executive Order n. 66, emesso dal governo coloniale statunitense il 3 agosto 1903, stabilì una P maiuscola attraversata da due linee parallele proprio per distinguere il peso filippino dal dollaro americano e dalla peseta spagnola. Unicode ha codificato ₱ nella versione 3.2, rilasciata nel 2002; il codice ISO 4217 della valuta è PHP ed è emessa dalla Bangko Sentral ng Pilipinas.",
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
@@ -34,8 +34,8 @@
     {
       "id": "peso-sign",
       "label": "Il Simbolo del Peso",
-      "h2": "I Due Simboli Chiamati \"Simbolo del Peso\" — ₱ e $",
-      "intro": "Entrambi vengono chiamati simbolo del peso. ₱ è il carattere proprio del peso filippino; $ è quello che usano quasi tutti gli altri pesos — perché lo stesso segno del dollaro probabilmente è nato come abbreviazione del peso spagnolo. Se derivi da una \"Ps\" scritta a mano o dalle Colonne d'Ercole avvolte da una S sulle monete spagnole a otto reales è tuttora oggetto di un dibattito storico genuino.",
+      "h2": "I Due Simboli Chiamati \"Simbolo del Peso\" – ₱ e $",
+      "intro": "Entrambi vengono chiamati simbolo del peso. ₱ è il carattere proprio del peso filippino; $ è quello che usano quasi tutti gli altri pesos – perché lo stesso segno del dollaro probabilmente è nato come abbreviazione del peso spagnolo. Se derivi da una \"Ps\" scritta a mano o dalle Colonne d'Ercole avvolte da una S sulle monete spagnole a otto reales è tuttora oggetto di un dibattito storico genuino.",
       "symbols": [
         {
           "char": "₱",
@@ -51,7 +51,7 @@
       "id": "struck-letter-currencies",
       "label": "Costruiti Come il Peso",
       "h2": "La Famiglia delle Valute a Lettera Barrata",
-      "intro": "Il simbolo del peso è una P maiuscola attraversata da due barre parallele — la stessa ricetta dietro un'intera generazione di segni valutari moderni, ciascuno una lettera nazionale barrata da una o due linee. Pronti da incollare ovunque.",
+      "intro": "Il simbolo del peso è una P maiuscola attraversata da due barre parallele – la stessa ricetta dietro un'intera generazione di segni valutari moderni, ciascuno una lettera nazionale barrata da una o due linee. Pronti da incollare ovunque.",
       "symbols": [
         {
           "char": "₹",
@@ -83,7 +83,7 @@
       "id": "peso-lookalikes",
       "label": "Da Non Confondere Con",
       "h2": "Sosia: Glifi Scambiati per ₱",
-      "intro": "Poiché ₱ è essenzialmente una P barrata, viene scambiato con altri caratteri a forma di P — incluso uno che è una valuta completamente diversa. Ognuno è un codepoint Unicode a sé, non una variante stilistica.",
+      "intro": "Poiché ₱ è essenzialmente una P barrata, viene scambiato con altri caratteri a forma di P – incluso uno che è una valuta completamente diversa. Ognuno è un codepoint Unicode a sé, non una variante stilistica.",
       "symbols": [
         {
           "char": "₽",
@@ -112,7 +112,7 @@
     {
       "href": "/it/library/simboli-euro/",
       "title": "Simboli delle Valute",
-      "desc": "Sfoglia ogni simbolo valutario mondiale — dollaro, euro, sterlina, yen, rupia e il peso — affiancati in un'unica griglia."
+      "desc": "Sfoglia ogni simbolo valutario mondiale – dollaro, euro, sterlina, yen, rupia e il peso – affiancati in un'unica griglia."
     },
     {
       "href": "/it/symbol/simbolo-dollaro/",
@@ -122,7 +122,7 @@
     {
       "href": "/it/symbol/simbolo-rupia/",
       "title": "Simbolo della Rupia (₹)",
-      "desc": "La ₹ indiana — come ₱, un segno valutario moderno decretato ufficialmente per la moneta di una nazione e costruito barrando una lettera con linee parallele."
+      "desc": "La ₹ indiana – come ₱, un segno valutario moderno decretato ufficialmente per la moneta di una nazione e costruito barrando una lettera con linee parallele."
     }
   ]
 }

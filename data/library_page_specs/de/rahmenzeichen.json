@@ -6,7 +6,7 @@
   "breadcrumb": "Rahmenzeichen & Blocksymbole",
   "hero_h1": "Rahmenzeichen & Blocksymbole",
   "hero_tagline": "Linien, Ecken, doppelte Rahmen und schattierte Blöcke zum Bauen von Textkästen und ASCII-Art. Klick auf ein Symbol, um es sofort zu kopieren.",
-  "intro": "Mit Rahmenzeichen und Blockelementen baust du Rahmen, Tabellen und ASCII-Art in reinem Text. Diese Bibliothek versammelt die einfachen Linienstücke und Ecken, die doppelten und fetten Rahmenvarianten sowie die vollen und teilweisen Blöcke für Schattierung und Balkendiagramme — alles reine Unicode-Zeichen, die du in Terminals, Code-Kommentare und Beiträge kopieren kannst.",
+  "intro": "Mit Rahmenzeichen und Blockelementen baust du Rahmen, Tabellen und ASCII-Art in reinem Text. Diese Bibliothek versammelt die einfachen Linienstücke und Ecken, die doppelten und fetten Rahmenvarianten sowie die vollen und teilweisen Blöcke für Schattierung und Balkendiagramme – alles reine Unicode-Zeichen, die du in Terminals, Code-Kommentare und Beiträge kopieren kannst.",
   "date_published": "2026-07-18",
   "date_modified": "2026-07-18",
   "copy_pattern": "collection",
@@ -191,7 +191,7 @@
     "id": "box-drawing-collections",
     "label": "Rahmen-Sammlungen",
     "h2": "Fertige Rahmen & Trennlinien",
-    "intro": "Fertige waagerechte Trennlinien und Rahmenkanten aus Rahmenzeichen — kopiere die ganze Zeile mit einem Klick."
+    "intro": "Fertige waagerechte Trennlinien und Rahmenkanten aus Rahmenzeichen – kopiere die ganze Zeile mit einem Klick."
   },
   "collection_container_id": "boxDrawingCollectionsContainer",
   "collections": [

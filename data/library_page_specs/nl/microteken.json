@@ -14,7 +14,7 @@
   "canonical": "https://ultratextgen.com/nl/symbol/microteken/",
   "breadcrumb": "Microteken",
   "hero_h1": "Microteken (µ)",
-  "hero_tagline": "Het microteken (µ) voor micron, microgram en microseconde — en waarom het een compleet ander teken is dan de identiek ogende Griekse letter mu. Klik op een teken om het direct te kopiëren.",
+  "hero_tagline": "Het microteken (µ) voor micron, microgram en microseconde – en waarom het een compleet ander teken is dan de identiek ogende Griekse letter mu. Klik op een teken om het direct te kopiëren.",
   "intro": "Het microteken (µ, U+00B5) en de Griekse kleine letter mu (μ, U+03BC) worden in bijna elk lettertype weergegeven als exact hetzelfde glyph, maar Unicode behandelt ze als twee aparte tekens. Welke van de twee je plakt, kan zoekfuncties, regex-matching en bestandsnamen stilletjes laten mislukken, zonder dat er op het scherm ook maar iets fout uitziet.",
   "hreflang": [
     {
@@ -55,7 +55,7 @@
       "id": "griekse-mu",
       "label": "Griekse Mu",
       "h2": "Griekse Kleine Letter Mu (U+03BC)",
-      "intro": "De échte twaalfde letter van het Griekse alfabet — visueel identiek aan het microteken, en het teken dat Unicodes eigen normalisatieregels prefereren.",
+      "intro": "De échte twaalfde letter van het Griekse alfabet – visueel identiek aan het microteken, en het teken dat Unicodes eigen normalisatieregels prefereren.",
       "symbols": [
         {
           "char": "μ",
