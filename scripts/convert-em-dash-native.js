@@ -38,6 +38,28 @@ const { execSync } = require('child_process');
 const cheerio = require('cheerio');
 const { DROP_SELECTORS, UI_SELECTORS } = require('./lib/editorial-corpus.js');
 
+/**
+ * WHY ja AND zh-tw ARE NOT CONVERTED HERE (measured 2026-09-20)
+ *
+ * Their ledger replacement is the paired —— , and converting a lone — to it is
+ * correct: the 文化庁 and 教育部 manuals both prescribe the two-cell dash, and
+ * both corpora already use it for 1,810 of 2,565 and 1,036 of 1,121.
+ *
+ * But `punctuationFingerprint` in scripts/lib/editorial-footprint.js counts em
+ * dash CHARACTERS raw — `(ed.match(/—/g) || []).length`, with no reference to
+ * data/em_dash_locale_policy.json. So —— counts as two, and writing Japanese
+ * correctly DOUBLES the page's em-dash rate. Measured: three ja guides blocked
+ * the EFR ratchet at +3.5, +3.6 and +3.4 for exactly this, with
+ * punctuationFingerprint the top or second contributor on each.
+ *
+ * The two halves of one system disagree about what a Japanese dash is: the
+ * em-dash RULE consults the policy and does not flag a new ——, while the
+ * FINGERPRINT feeding EFR does not. Teaching the fingerprint the policy is the
+ * right fix, but it changes a measurement, which moves the cohort median and
+ * is a re-baseline event for data/editorial_footprint_baseline.json — a
+ * deliberate change of its own, never a rider on a content conversion.
+ */
+
 const REPO = path.resolve(__dirname, '..');
 const POLICY = JSON.parse(fs.readFileSync(path.join(REPO, 'data/em_dash_locale_policy.json'), 'utf8'));
 const LOCALES = POLICY.locales || POLICY;
@@ -95,7 +117,7 @@ function convertFile(rel, { write }) {
   const code = localeOf(rel);
   const pol = policyFor(code);
   // English is out of scope: its remedies are per-sentence judgement (§1).
-  const inScope = (pol === 'ban' && code !== 'en') || pol === 'double-dash';
+  const inScope = pol === 'ban' && code !== 'en';   // see the ja/zh-tw note above
   if (!inScope) return null;
   const html = fs.readFileSync(abs, 'utf8');
   if (!html.includes('—')) return null;
@@ -171,7 +193,7 @@ function convertSpec(rel, { write }) {
   const parts = path.relative(path.join(REPO, 'data/library_page_specs'), abs).split(path.sep);
   const code = parts.length > 1 && LOCALES[parts[0]] ? parts[0] : 'en';
   const pol = policyFor(code);
-  const inScope = (pol === 'ban' && code !== 'en') || pol === 'double-dash';
+  const inScope = pol === 'ban' && code !== 'en';   // see the ja/zh-tw note above
   if (!inScope) return null;
   const raw = fs.readFileSync(abs, 'utf8');
   if (!raw.includes('—')) return null;
