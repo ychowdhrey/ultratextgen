@@ -4459,6 +4459,120 @@ identical on all nine, 0 page errors on both sides. That is what makes the
 twelve `ctx.font` edits safe to believe: they are no-ops at the default weight,
 and the run proves it rather than asserting it.
 
+## llms.txt is a generated navigation layer, not a second sitemap (added 2026-09-20)
+
+Every discovery surface this file already describes — the sitemap, the static
+footer, the pre-rendered hubs — answers *which URLs exist* or *which links a
+non-rendering crawler can see*. None of them says **what is here and how it is
+grouped**, which is what an agent orienting on the site needs before it fetches
+anything. `llms.txt` (llmstxt.org) is that layer: 85 generated files, 4,692
+pages, 31 languages, in a root → language → section hierarchy.
+
+**The spec's own sentence decides the shape, and it is not the obvious one.**
+A file "can be placed at the site root (`/llms.txt`) or at any subpath (e.g.
+`/docs/llms.txt`). **A file covers the URLs under its path.**" So a section
+index may only be published at a REAL directory that holds the pages it lists.
+`/es/symbols/llms.txt` would be a lie — the Spanish symbol pages are under
+`/es/symbol/` — and `/es/printables/llms.txt` a bigger one, because Spanish
+printables are under `/es/imprimibles/`, one of seven printables directory
+names across the site. None is hardcoded: a locale page inherits its section
+from the English parent it declares in its own `hreflang="en"`, the same join
+`scripts/lib/translation-clusters.js` uses.
+
+**There is deliberately no `/en/llms.txt` file.** English is served from the
+root, so `/` IS its path and `/llms.txt` is already the English index; a file
+under `/en/` would claim a path where nothing is served. `_redirects` carries a
+static 301 from `/en/llms.txt`, above the splat block.
+
+**A section earns its own file per DIRECTORY at 10 pages, and the "per
+directory" half was measured.** The first draft required a section's pages to
+share one directory; Spanish has 254 pages in `es/library/` plus a handful of
+library-ish pages at the locale root (`es/simbolos-de-corazon/`, parented on
+`library/heart-symbols/`), and those few blocked the 254 from getting an index
+at all — the same shape hid the `ja`, `th`, `de`, `fr` and `ko` library
+indexes. Pages outside the directory are listed inline in the locale index,
+which covers them. That test still bites where it should: `de`'s thirteen
+font-style pages sit at the locale root, inherit `fonts` from `category/*`, and
+are listed in `/de/llms.txt` rather than a `/de/category/llms.txt` that would
+cover nothing.
+
+**Nothing is authored.** Link text is each page's own `<h1>` (never its
+`<title>`, which carries the brand suffix); the note is the first sentence of
+its `.hero-tagline`, else its meta description — measured, 4,599 taglines plus
+93 meta descriptions covers all 4,692, and `validate()` fails rather than
+inventing if that changes. Section headings are English on every locale file
+because they are machine-facing scaffolding, with the site's OWN localized
+label appended in parentheses when three or more pages agree on a breadcrumb
+(`## Symbol & emoji library (Bibliothek)`). Language names are not printed at
+all: `Intl.DisplayNames` tracks the host's ICU version and this tree must
+regenerate byte-identically in CI.
+
+**Three description rules, each from a wrong result rather than reasoned up
+front**, and the second one is a live site defect this pass did NOT fix:
+
+* a period after a digit is not a sentence boundary unless it closes a
+  four-digit year — without it the index published *"Unicode 18.0 erscheint am
+  16."*;
+* a clause cut must leave something worth reading. `sync_symbol_spoke_links.py`'s
+  `first_sentence()` cuts an over-long string at its last em dash, which
+  inverts when the first clause is a label: every `symbol/` page opens
+  `💢 U+1F4A2 — the four-pointed cross that…`, so the cut keeps `💢 U+1F4A2.`
+  This is **live on the site in 48 compare-cards** (`💢 U+1F4A2.` ×24,
+  `🛑 U+1F6D1.` ×21, `⚸ U+26B8.` ×3 — see `library/emoji-combos`). Fixing it
+  there regenerates card text across hub and locale pages, so it belongs to a
+  deliberate content pass, not to this one;
+* a description is never the title restated — a tool page with no tagline opens
+  its meta description with its own name, which is how
+  `category/old-english-fonts` was described as *"Old English font generator."*
+
+**The one hand-maintained table is 27 lines** (`ROOT_PAGE_SECTION`), for the
+English pages sitting at the site root, because the site has no machine-readable
+statement of which is a platform hub and which a standalone tool: all 38 ship
+the same JSON-LD `@type` set and the same `Home > <own title>` breadcrumb, and
+`styles.js` names six platforms against thirteen platform pages. The closest
+registry, `generate-site-art.py`'s kicker, agrees on 36 of 38 and is a
+3,500-line Python literal. `collectPages()` **throws** on an unclassified
+English root page rather than defaulting — that is the "new generator family
+added but not represented" drift case.
+
+### Tooling
+
+- **`npm run build:llms -- --write`** — the generator, and the fix for any
+  stale check. It also REMOVES an index the model no longer plans.
+- **`npm run check:llms`** — the **gate**, wired into `validate.yml`.
+  **Whole-tree, not diff-scoped**, and that is the drift protection itself: a
+  new locale, a new printable, a retired route, a page flipped to `noindex` or
+  a page that lost its hero tagline all move bytes in files the PR never
+  touched. It gates rather than informs (same call as `check:zalgo-decodes`):
+  committed output is either current or it is not.
+- **`npm run audit:llms`** — whole-site dashboard: per-file sizes, the locale
+  coverage matrix, duplicate descriptions. **Informational, never gating.**
+- **`npm run test:llms`** — 58 assertions, gating, including a determinism
+  check (the same corpus in reverse discovery order renders byte-identically).
+- `scripts/lib/llms-index.js` is the one owner of the model and the markup.
+
+**It does not replace `sitemap.xml` and changes no indexing behaviour.** Both
+scan the same filesystem and skip the same `noindex` pages, so they cannot
+disagree about what exists; the sitemap stays the complete, authoritative URL
+list. `llms.txt` files carry no `index.html`, so they never enter the sitemap.
+`robots.txt` gains a `#` comment and no directive — the proposal defines none
+and RFC 9309 has no field for one. `_routes.json` is untouched, so each file
+stays a free static asset.
+
+**No ranking or inclusion claim is made anywhere**, in this file, in the docs
+or in any generated output. Full spec notes, the sizes table, the ten broken-input
+probes and what was deliberately left undone: **`docs/llms-txt.md`**.
+
+Verified per this file's own rule against ten differently-shaped broken inputs
+plus two controls — a new page, a deleted route, a `noindex` flip, a new route
+family in a locale that had none, a wrong canonical, a page with no description
+source, a hand-edited index, an unclassified English root page — each exits 1
+naming the file, with a clean tree at 0. And verified that CI *gates* on it:
+`run-ci-gates.py --only llms_index` returns 1 on a broken tree and 0 on a clean
+one.
+
+---
+
 ## SEO & Structured Data
 
 Every page includes JSON-LD for:
@@ -5193,6 +5307,28 @@ Standing protocol:
   at ~36k pageviews/day. Static asset requests are free and unlimited only
   when they do not invoke a Function. Only `/` needs the Function (English
   homepage + legacy `?lang=` 301s); everything else must stay excluded.
+- Do not hand-edit a generated `llms.txt`, and do not add, remove, rename or
+  de-index a page without running `npm run build:llms -- --write` in the same
+  change. `npm run check:llms` regenerates the whole tree and compares, so a
+  hand edit fails the build and is overwritten by the next run. It is
+  whole-tree rather than diff-scoped on purpose — the bytes that move belong to
+  files the PR never touched. See "llms.txt is a generated navigation layer"
+  above.
+- Do not publish an `llms.txt` at a path that does not hold the pages it lists.
+  The spec scopes a file to its own path, so `/es/symbols/llms.txt` and
+  `/es/printables/llms.txt` are both wrong (`/es/symbol/`, `/es/imprimibles/`),
+  and there is no `/en/llms.txt` because English is served from the root. Do
+  not "finish" the hierarchy by adding one.
+- Do not write a description, a section heading or a language name into an
+  `llms.txt`. Every string is read off the page it describes, in that page's
+  own language, the same rule `sync_symbol_spoke_links.py` and
+  `library-hub-data.js` follow. Headings are English scaffolding with the
+  site's own breadcrumb label in parentheses; `Intl.DisplayNames` is
+  deliberately not used because its output tracks the host's ICU version and
+  the tree must regenerate byte-identically in CI.
+- Do not describe `llms.txt` as a ranking factor or as a guarantee of inclusion
+  in any assistant's answers, and do not add an `Llms:` directive to
+  `robots.txt` — the proposal defines none and RFC 9309 has no field for one.
 - Do not edit `sitemap.xml` directly
 - Do not add `var` declarations — use `const`/`let`
 - Do not use `import`/`export` ES module syntax in frontend scripts
