@@ -4284,6 +4284,67 @@ a synthetic `italic` that obliques an already-slanted joined hand.
 - **`assets/fonts/README.md`** — the inventory, the provenance and the reasoning.
 
 
+## The ad stack is Auto Ads, and the one hand-placed unit cannot fire on a phone (added 2026-09-20)
+
+Ads are the site's only revenue, and until this was written down nothing in the tree said how
+they are placed. Measured on this tree rather than recalled:
+
+- **4,700 of 4,709 tracked HTML files load the AdSense loader** (`pagead2.googlesyndication.com/
+  pagead/js/adsbygoogle.js?client=…`), `404.html` and `_root.html` included. 4,688 also carry the
+  Funding Choices tag (`npm run check:funding-choices` gates that one).
+- **There is not one manual `<ins class="adsbygoogle">` element in any HTML file in the
+  repository.** Grep it before assuming otherwise; the count is zero. Placement is delegated
+  entirely to **Auto Ads**, which decides per pageview where an ad goes and whether one goes at
+  all.
+- **The only hand-placed unit is injected by `header.js`** — a 300×600 right rail (`.ad-rail-right`,
+  slot `5968968934`) appended to `<body>`, and it is gated twice for the same reason:
+
+  ```js
+  // header.js — the request
+  if (window.matchMedia("(min-width: 1600px)").matches) { window.adsbygoogle.push({}); }
+  ```
+  ```css
+  /* style.css — the display */
+  .ad-rail-right { display: none; }
+  @media (min-width: 1600px) { .ad-rail-right { display: flex; position: fixed; … } }
+  ```
+
+  The gate is deliberate and correct on its own terms — it avoids burning an impression on a slot
+  nobody can see. **Its consequence is the part worth knowing: on a phone, no unit in this
+  repository ever requests an ad.** Every ad a mobile visitor sees was placed by Auto Ads.
+
+**A top-banner unit used to sit beside it and was removed 2026-07-27** after a 7-day pull showed
+3 impressions and no earnings while permanently reserving 100–250px under the nav on every
+pageview. `header.js`'s own comment records this. It is the precedent for the rule below: the
+unit was removed on a measurement, not on a hunch, and the measurement is what made the removal
+safe.
+
+### Rules
+
+- **Do not assume a manual unit exists anywhere.** Several plausible-sounding tasks ("move the ad
+  away from the copy button", "make the ad lazy-load", "swap the unit size") have no code to edit
+  on mobile, because there is no unit. The equivalent levers are AdSense-side: the Auto Ads
+  format toggles (anchor, vignette, in-page, in-article, multiplex) and the ad-load setting, none
+  of which live in this repository.
+- **Adding a manual unit is a real option and it is how you get a guaranteed request** — Auto Ads
+  fills around a manual unit rather than being blocked by one. It is also the only way to control
+  *where* an ad sits relative to the copy and download buttons, which are the primary tap target
+  on every page on this site.
+- **Ship a monetization change with a written hypothesis, a baseline, an observation window and a
+  rollback rule, and scope the first one to a single lane rather than site-wide.** Manual `<ins>`
+  markup is additive, so removing it restores the previous state exactly, and Auto Ads format
+  toggles revert with no deploy — both are same-day reversible, which is what makes a scoped trial
+  reasonable in the first place. A change that cannot be reverted the same day does not belong in
+  a first trial.
+- **Never hand-edit an ad tag into a page's HTML.** The loader is injected by the page templates
+  and the rail by `header.js`; a one-off `<ins>` in a single page is invisible to both and to
+  `npm run check:funding-choices`, and will be lost the next time that page is regenerated. If a
+  lane needs units, put them in the generator or in `header.js` behind an explicit condition, the
+  way the rail already is.
+- **`ad_impression` and `ad_click` reach GA4 through the AdSense↔GA4 link, not through the
+  dataLayer.** So they are unaffected by GTM tag/trigger coverage, and a gap in GTM routing never
+  explains a gap in ad events. Do not debug one by changing the other.
+
 ## A script page's letters are traceable, and its rows are ruled (added 2026-09-19)
 
 The webfonts fix above made `/printables/cursive-alphabet/` set its letters in
@@ -5138,6 +5199,13 @@ Standing protocol:
   coordinates passes geometry to it rather than drawing its own lines. A
   fixed-fraction ruling (Seyès, Lineatur) takes the trace surface's
   band-to-type ratio; only `standard` reads the face.
+- Do not assume a manual ad unit exists, and do not hand-edit an ad tag into a page. There is
+  **not one `<ins class="adsbygoogle">` in any HTML file here** — placement is Auto Ads, and the
+  only hand-placed unit (`header.js`'s 300×600 right rail) is gated to `min-width: 1600px`, so on
+  a phone nothing in this repository ever requests an ad. See "The ad stack is Auto Ads" above.
+  A monetization change ships with a written hypothesis, baseline, observation window and rollback
+  rule, scoped to one lane — the 2026-07-27 top-banner removal is the precedent, and it was made
+  on a measurement.
 - Do not add npm packages that run in the browser
 - Do not introduce a JavaScript framework or bundler
 - Do not generate images server-side or with an image-processing library. Visual/printable
