@@ -17,7 +17,8 @@ R-018 / R-019 / R-020 / R-021. Two of those (R-011, R-017) were closed by `main`
 audit was in flight and are marked as such rather than claimed.
 
 Of the remaining three: **R-013** is closed on its tracing half — the part its own "partly fixed"
-block had left open — and open on the design sheet's side margins, which is a product decision;
+block had left open, plus the word alignment the owner decided on 2026-09-20 — and open on the
+design sheet's side margins, which is a product decision;
 **R-015** is fixed on duplication and reported rather than fixed on alignment; and **R-012 is
 measured and deliberately not fixed**, for a reason recorded in its own entry.
 
@@ -695,9 +696,23 @@ It also closes a preview/print disagreement rather than opening one: the rules a
 width. The word is still drawn 1.9× larger relative to its line on screen than it prints — that
 is the height cap, measured in R-017's own correction note and untouched here.
 
-Still open, and a product decision rather than a defect: the word is centred on the full-width
-rule, so a short name now leaves practice space on both sides of itself rather than continuing
-from the left margin.
+**The word is left-aligned too, 2026-09-20 (owner decision).** Filling the line exposed what the
+short line had hidden: the word sat in the middle of it, so a four-letter name left practice space
+stranded on both sides and no continuous run anywhere. Measured on the printed PDF for `Emma`,
+1.4in of blank line before the word and 1.4in after it.
+
+`preserveAspectRatio="xMinYMid meet"` puts the viewBox against the left of the viewport instead of
+centring it. That moves the word, its route and its stroke overlay together — they are all
+positioned in the same coordinates — and costs the type nothing, where re-deriving a left-aligned
+`x` would have meant changing three call sites that each compute their own centre. After: the word
+starts **0.44in** into the line, which is the box's own padding, and the practice run after it is
+**3.39in** in one piece. Ruled rows only: the difficulty-ladder chips and the left-handed model
+pass `guides:false`, are sized to their own box rather than letterboxed inside a wider one, and
+stay centred.
+
+The canvas export follows, from one shared box rather than three: `traceRoutePaths`, the stroke
+overlay and `fillText` all place the word from the total width they are handed, so `genWordPNG`
+hands all three a virtual width whose centre puts the word's left edge a pad past the rules.
 
 **Partly fixed 2026-09-19.** The type is measured rather than counted: one probe at font-size
 100 through the same hidden-canvas measurer the heading already trusted, scaled linearly. The
@@ -989,10 +1004,36 @@ for N-per-sheet to change anything, `updateSheetCost()` owning both. `.pt-choice
 `flex: 1 1 auto` for labelled ladders, so the two digits are sized to their content once the row
 is on its own line.
 
-**Not fixed, and it needs a decision.** Even with the cost line present the chips are two bare
-digits. No existing translated string fits: `T.classSet` is "Class set: one sheet per name",
-which contradicts the 4 chip, and `T.sheets`/`T.pageCount` are nouns. A visible label needs a new
-string in eight languages, which is a copy decision rather than a render fix.
+**Labelled 2026-09-20 (owner decision).** The chips shipped as bare digits on the reasoning that
+digits need no translating and the sheet-cost line below them is the explanation. The line is a
+consequence, not a name: it reads "30 sheets · 8 pages · US Letter" and never says what the 1 and
+the 4 are. The group's old accessible name was worse than nothing — `T.classSet` is "Class set:
+one sheet per name", which contradicts the 4 chip.
+
+`T.sheetsPerPage` names what the control sets, in the vocabulary the line beneath it already uses:
+`sheets` is what this engine calls one child's worksheet and `pageCount` is what it calls a side
+of paper, so label and readout use one word per thing. The visible label is now the group's
+accessible name via `aria-labelledby`, so the page and a screen reader say the same thing instead
+of two different ones.
+
+| locale | label | cost line beside it |
+|---|---|---|
+| en | Sheets per page | 5 sheets · 5 pages |
+| fr | Feuilles par page | feuilles · pages |
+| es | Hojas por página | hojas · páginas |
+| pt | Folhas por página | folhas · páginas |
+| it | Fogli per pagina | fogli · pagine |
+| pl | Kart na stronę | kart · strony |
+| de | Blätter pro Seite | Blätter · Seiten |
+| id | Lembar per halaman | lembar · halaman |
+
+Nothing here was translated freehand. Each noun is the locale's own existing `sheets` /
+`pageCount` value, and each preposition was taken from that locale's own `classSet` string
+(`par`, `por`, `per`, `na`, `pro`). All eight come back **fully attested** against that language's
+own pages on this site (`npm run audit:locale-attestation --locale <code> --strings …`, 224–485
+pages per locale). Read that for what it is, per the tool's own caveat: it establishes that no
+word is invented, not that the inflection, collocation and register are right. `pl` and `de` are
+the two worth a native reader's eye.
 
 ---
 
