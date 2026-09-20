@@ -78,12 +78,49 @@ sitemap has already been submitted somewhere.
   find in the codebase.
 - **Read on the thin volume:** not a red flag by itself — Bing typically
   trails Google's crawl depth/speed for a site this size, and this may be
-  a recently-completed verification still catching up. Worth checking
-  directly in Bing Webmaster Tools whether `sitemap.xml` has actually been
-  submitted there (the GSC-import flow does not automatically submit a
-  sitemap) and whether URL Submission / IndexNow is enabled — Cloudflare
-  and Bing both support IndexNow, which would meaningfully speed up
-  crawling if it isn't already wired up.
+  a recently-completed verification still catching up.
+- **Sitemap-submission status: registered and reporting `Success`
+  (2026-09-20) — but the evidence has a wrinkle worth flagging rather than
+  glossing over.** User screenshot of Bing Webmaster Tools' own Sitemaps
+  report (`bing.com/webmasters/sitemaps?siteUrl=https://ultratextgen.com/`):
+  2 known sitemaps, 0 errors, 0 warnings, 9.4K URLs discovered. Every field
+  matches the GSC screenshot above **exactly**: apex
+  (`ultratextgen.com/sitemap.xml`) Last submit 2026-02-09 ("Submit"), last
+  crawl 2026-09-18, Success, 4.7K URLs; `www` Last submit 2026-08-25
+  ("Discovered"), last crawl 2026-09-17, Success, 4.7K URLs.
+  A 12-for-12 match across both rows and the header totals is too precise
+  to be two independent crawlers coincidentally agreeing — it's consistent
+  with (and doesn't rule out) the GSC-import verification flow above
+  having imported the sitemap *record* wholesale rather than this being a
+  crawl Bing ran itself. So: the sitemap is confirmed **registered** in
+  Bing's own console and reporting healthy — the "was it ever submitted to
+  Bing" half of the open question is closed — but "Bing's own crawler has
+  independently validated it" isn't yet distinguishable from "this row is
+  still showing imported GSC metadata." Re-check in a few days: numbers
+  that diverge from GSC's (a different crawl date, a different URL count)
+  prove an independent Bing crawl; numbers that stay identical mean it's
+  still the imported mirror.
+- **IndexNow is active, and the ratio needs a precise read before it's a
+  finding.** Bing Webmaster Tools' IndexNow → Indexing Insights report
+  (2026-09-20): **122.4K Submitted URLs**, **8.3K Crawled URLs**, but only
+  **5 Indexed URLs** — against a site of ~4.7K real pages. The submission
+  volume (~26x the page count) is consistent with Cloudflare's zone-level
+  automatic IndexNow integration re-pinging on every regeneration of every
+  page over months — the same kind of zone behavior invisible to this
+  repo already documented above for Cloudflare Fonts and for Auto Ads in
+  `CLAUDE.md`; nothing in `functions/`, `scripts/`, or any workflow here
+  sends an IndexNow ping. In keeping with this doc's own practice of
+  flagging an unresolved reading rather than guessing at it, the
+  5-vs-122.4K-vs-8.3K gap is stark enough to need investigation, not a
+  headline: the "Indexed URLs" tile carries
+  its own `(i)` definition this screenshot doesn't show, and — given the
+  "All" filter dropdown at the top of that report — it may measure
+  something narrower than "total pages indexed via IndexNow" (e.g.,
+  first-time-indexed-via-this-channel within a filtered window). The same
+  report also surfaced two unreviewed issues: **Content quality: 628
+  URLs** and **Discovered but not in index: 9 URLs**. Do not read "5
+  indexed" as "IndexNow isn't working" without pulling that definition and
+  the underlying URL lists first.
 
 ## Other search engines considered, not pursued (2026-08-20)
 
