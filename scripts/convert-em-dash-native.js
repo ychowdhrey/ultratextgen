@@ -143,8 +143,20 @@ function convertFile(rel, { write }) {
       const loc = node.sourceCodeLocation;
       if (!loc || !node.data.includes('—')) return;
       if (isExcluded(node.parent)) return;
-      const next = pol === 'double-dash' ? toDoubleDash(node.data) : toEnDash(node.data);
-      if (next !== node.data) edits.push({ start: loc.startOffset, end: loc.endOffset, next, prev: node.data });
+      // Transform the RAW SOURCE SLICE, never node.data. cheerio decodes
+      // entities, so writing .data back un-escapes them: `&amp; &lt; &gt;`
+      // becomes `& < >`, which is wrong everywhere and is real markup
+      // corruption on the pages about those very characters. Measured on the
+      // first attempt: 91 files, 155 entities lost, worst on
+      // de/symbol/kleiner-und-groesser-zeichen (-11).
+      //
+      // An em dash can never appear inside an entity reference, so applying
+      // the dash transform to the raw slice is safe and leaves every entity
+      // exactly as authored.
+      const raw = html.slice(loc.startOffset, loc.endOffset);
+      if (!raw.includes('—')) return;
+      const next = pol === 'double-dash' ? toDoubleDash(raw) : toEnDash(raw);
+      if (next !== raw) edits.push({ start: loc.startOffset, end: loc.endOffset, next, prev: raw });
       return;
     }
     for (const c of node.children || []) walk(c);
