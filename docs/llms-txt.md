@@ -258,15 +258,21 @@ invocation (see CLAUDE.md's invocation-budget note).
 ## 6. Sizes, and what would make one too large
 
 `npm run audit:llms` prints every file. As of 2026-09-20: 85 files, 4,776 links
-(4,692 pages + 84 index links), **999 KB total**, median 8.9 KB.
+(4,692 pages + 84 index links), **1,063 KB total**, median 9.8 KB, max 59.7 KB.
 
 | file | links | size |
 |---|---|---|
-| `/library/llms.txt` | 339 | 59.2 KB |
-| `/es/library/llms.txt` | 254 | 51.0 KB |
-| `/printables/llms.txt` | 212 | 37.6 KB |
+| `/library/llms.txt` | 339 | 59.7 KB |
+| `/es/library/llms.txt` | 254 | 51.2 KB |
+| `/th/symbol/llms.txt` | 107 | 42.6 KB |
+| `/printables/llms.txt` | 212 | 38.6 KB |
 | `/ja/symbol/llms.txt` | 107 | 33.5 KB |
-| `/llms.txt` (root) | 80 | 14.5 KB |
+| `/llms.txt` (root) | 80 | 14.7 KB |
+
+Two of the five largest are `symbol/` indexes in a non-Latin script: Thai and
+Japanese descriptions cost roughly three bytes a character in UTF-8, so those
+files are ~2x their Latin siblings at the same 107 links. That is encoding, not
+a content problem, and it is why the flag is on bytes rather than on link count.
 
 The audit flags anything over **64 KB** for a human to look at. Nothing reaches
 it. The two largest are genuinely one directory each, so splitting them would
