@@ -47,9 +47,20 @@ sitemap has already been submitted somewhere.
   leaves no trace in the codebase, which is why this wasn't already
   documented. Not something to "fix" — just noting why no matching tag will
   ever be found here.
-- **Sitemap-submission status: not confirmed.** Worth checking directly in
-  GSC's Sitemaps report next time someone's in there, same as the
-  outstanding Yandex question below.
+- **Sitemap-submission status: confirmed (2026-09-20).** User screenshot of
+  GSC's own Sitemaps report: 2 known sitemaps, 0 with errors, 0 with
+  warnings, both status `Success`.
+  - `https://ultratextgen.com/sitemap.xml` — Last submit 2026-02-09 (tagged
+    "Submit" in the UI, i.e. a manual submission), last crawl 2026-09-18,
+    4.7K URLs discovered.
+  - `https://www.ultratextgen.com/sitemap.xml` — Last submit 2026-08-25
+    (tagged "Discovered" in the UI, i.e. picked up without a manual
+    submission), last crawl 2026-09-17, 4.7K URLs discovered.
+  The report header's "9.4K URLs discovered" is the sum of those two rows
+  (4.7K + 4.7K), not 9,400 distinct URLs — it's this site's one ~4.7K-URL
+  `sitemap.xml`, counted once per host declaration (apex and `www`), not two
+  different sitemaps. This was the open question this file flagged on
+  2026-08-20; it's closed.
 
 ## Bing Webmaster Tools (confirmed live 2026-08-20)
 
@@ -155,10 +166,27 @@ prior record of when/how — recorded here so they're not lost twice)
     pages (`/library/text-art/`, `/library/aesthetic-symbols/`,
     `/library/coquette-symbols/`) also pulling Russian-language query
     volume.
-  - **Sitemap-submission status still not directly confirmed** — these are
-    query-performance exports, not the Sitemaps report; the sustained
-    18-month crawl history makes it very likely indexing is healthy either
-    way, but the Sitemaps page itself hasn't been checked.
+  - **Sitemap-submission status still not directly confirmed, but two more
+    data points landed 2026-09-20** — neither is the Sitemaps report either,
+    same caveat as before:
+    - Yandex Webmaster's "Most important about ultratextgen.com" dashboard,
+      2026-09-07 → 09-13: 3,854 pages in search (+3% over the window), 852
+      clicks, new `zh-tw`/`vi` pages listed under "Added," and per-query
+      click movement on Russian terms (`нижнее подчеркивание` up 8
+      positions to 14 clicks in the window).
+    - Yandex Webmaster's crawl-statistics report: 106K total crawl requests,
+      1.71B bytes downloaded, 128ms average response time, and **"No
+      problems"** on both tracked hosts — `ultratextgen.com` (105,508
+      requests) and `www.ultratextgen.com` (385 requests).
+    Together with the 18-month history above, this confirms Yandex is
+    actively and healthily crawling **both** host variants as of this week
+    and that the indexed-page count is still growing. It still isn't
+    Webmaster's own **Indexing → Sitemap files** screen, so "was a
+    sitemap.xml ever explicitly submitted" (as distinct from "is the site
+    being crawled and indexed well") remains formally open — same
+    instrument-vs-question distinction this file already draws for Bing.
+    Functionally, indexing health here is no longer in doubt; only the
+    specific sitemap-file record is.
 - **Pinterest domain verification:**
   `<meta name="p:domain_verify" content="b2362cbc0f13ddea34e632da9bc7df05"/>`
   — same as above, present since at least PR #740, origin undocumented.
