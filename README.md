@@ -106,7 +106,7 @@ that's the fastest way to find something. Counts are refreshed weekly from
 | [Updates](https://ultratextgen.com/updates/) | 12 | 56 |
 | [Embed Tools](https://ultratextgen.com/embed/) | 6 | 0 |
 
-**4,680 URLs in total**, across 30 languages.
+**4,694 URLs in total**, across 30 languages.
 <!-- END_PILLARS -->
 
 
