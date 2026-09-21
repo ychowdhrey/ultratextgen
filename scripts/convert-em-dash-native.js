@@ -699,8 +699,13 @@ function convertFile(rel, { write, defer }) {
         const raw = loc ? html.slice(loc.startOffset, loc.endOffset) : null;
         const unreachable = !loc || d !== (raw.match(/—/g) || []).length;
         for (let i = 0; i < d; i++) {
+          /* `unreachable`, never `defer`: no judgement can move a dash the
+           * node loop cannot reach, so reporting it as awaiting one puts
+           * `—`, `Heading — optional` and `— Geviertstrich` at the head of a
+           * queue nothing can clear. It still reads as not-live to
+           * `settlePairs`, which is the whole point of marking it here. */
           if (unreachable || (i === 0 && /^—/.test(raw))) {
-            remedies[seen + i] = null; origin[seen + i] = 'defer';
+            remedies[seen + i] = null; origin[seen + i] = 'unreachable';
           }
         }
         seen += d;
@@ -708,7 +713,8 @@ function convertFile(rel, { write, defer }) {
     }
 
     for (let g = 0; g < plan.length; g++) {
-      if (origin[g] !== 'defer' && origin[g] !== 'noop' && hasHeldTwin(blockText, dashAt[g])) {
+      if (origin[g] !== 'defer' && origin[g] !== 'noop' && origin[g] !== 'unreachable'
+          && hasHeldTwin(blockText, dashAt[g])) {
         remedies[g] = null; origin[g] = 'defer';
       }
     }
