@@ -26,7 +26,7 @@
       "id": "other-superscript-digits",
       "label": "Other Superscript Digits",
       "h2": "The Rest of the Superscript Digits",
-      "intro": "The remaining superscript numerals — added to Unicode much later, in a different block than ² and ³.",
+      "intro": "The remaining superscript numerals, added to Unicode much later, in a different block than ² and ³.",
       "symbols": [
         { "char": "⁰", "label": "Superscript Zero" },
         { "char": "¹", "label": "Superscript One" },
@@ -42,7 +42,7 @@
       "id": "unit-abbreviations",
       "label": "Common Unit Abbreviations",
       "h2": "Common Squared & Cubed Unit Abbreviations",
-      "intro": "The most-copied real-world uses of ² and ³ — area and volume units.",
+      "intro": "The most-copied real-world uses of ² and ³: area and volume units.",
       "symbols": [
         { "char": "m²", "label": "Square Meters" },
         { "char": "cm²", "label": "Square Centimeters" },

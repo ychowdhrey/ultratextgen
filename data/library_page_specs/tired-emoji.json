@@ -5,7 +5,7 @@
   "canonical": "https://ultratextgen.com/library/tired-emoji/",
   "breadcrumb": "Tired Emoji & Kaomoji",
   "hero_h1": "Tired Emoji & Kaomoji",
-  "hero_tagline": "From a drowsy 🥱 yawn to full 😩 burnout — every flavor of tired, plus sleepy kaomoji and ready-made combos. Click any symbol to copy it instantly.",
+  "hero_tagline": "From a drowsy 🥱 yawn to full 😩 burnout: every flavor of tired, plus sleepy kaomoji and ready-made combos. Click any symbol to copy it instantly.",
   "intro": "Tired means two different things: the pleasant 😴 sleepy-and-ready-for-bed kind, and the 😫 exhausted, burned-out kind where you're running on empty. This page splits them cleanly: drowsy yawns and bedtime symbols on one side, weary and melting-from-exhaustion faces on the other. Around them sit recovery-mode props like ☕ coffee and 🌙 moons, classic sleepy kaomoji such as (-_-)zzz, and one-click combo sets for late-night captions and \"so done\" replies. Grab a single face or copy a whole combo depending on how tired you actually are.",
   "date_published": "2026-07-13",
   "date_modified": "2026-07-13",
@@ -15,7 +15,7 @@
       "id": "sleepy-ready-bed",
       "label": "Sleepy & Ready for Bed",
       "h2": "Sleepy & Ready-for-Bed Emojis",
-      "intro": "The gentle, winding-down kind of tired — yawns and heavy eyelids at the end of the day.",
+      "intro": "The gentle, winding-down kind of tired: yawns and heavy eyelids at the end of the day.",
       "symbols": [
         { "char": "😴", "label": "Sleeping Face" },
         { "char": "🥱", "label": "Yawning Face" },
@@ -38,7 +38,7 @@
       "id": "recovery-mode",
       "label": "Recovery Mode",
       "h2": "Recovery & Rest Symbols",
-      "intro": "The props that pair with a tired message — coffee to push through or a bed to give in.",
+      "intro": "The props that pair with a tired message: coffee to push through or a bed to give in.",
       "symbols": [
         { "char": "☕", "label": "Hot Beverage" },
         { "char": "💤", "label": "Zzz" },
@@ -67,7 +67,7 @@
     "id": "combo-sets",
     "label": "Combo Sets",
     "h2": "Tired Emoji Combo Sets",
-    "intro": "Copy a complete tired combo in one click — from a quick yawn to total burnout."
+    "intro": "Copy a complete tired combo in one click: from a quick yawn to total burnout."
   },
   "collection_container_id": "tiredSetsContainer",
   "collections": [

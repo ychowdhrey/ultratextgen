@@ -367,7 +367,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="editorial-block">
     <p><strong>No, not usually.</strong> Discord force-lowercases a text channel name and swaps spaces for hyphens on save. That lowercasing rule only recognizes ordinary A–Z: it has no special case for stylized Unicode letterforms, so fraktur (blackletter), bold, script, and Mathematical Alphanumeric letters are typically stripped out or rejected outright rather than passed through.</p>
     <p>What <em>does</em> survive: Unicode symbols used as dividers or prefixes (⊹ ➤ │ ⌗), and a narrow set of letter-like characters, small caps and fullwidth forms, that Discord's filter reads as lowercase-equivalent. Category names, voice channel names, and channel topics skip this normalization entirely, so that's where fraktur, bold, and other decorative letter styles actually render as typed.</p>
-    <p>Discord hasn't published an official validation regex for channel names, so this behavior is based on tested results, not documentation — expect edge cases.</p>
+    <p>Discord hasn't published an official validation regex for channel names, so this behavior is based on tested results, not documentation. Expect edge cases.</p>
   </div>
 </section>
 

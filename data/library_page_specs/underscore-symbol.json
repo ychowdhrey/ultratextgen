@@ -16,7 +16,7 @@
       "id": "the-underscore",
       "label": "The Underscore",
       "h2": "The Underscore, Fullwidth & Doubled",
-      "intro": "The plain keyboard low line and its two width variants — the fullwidth form used in East Asian typesetting and the doubled spacing underscore. Ready to paste anywhere.",
+      "intro": "The plain keyboard low line and its two width variants, the fullwidth form used in East Asian typesetting and the doubled spacing underscore. Ready to paste anywhere.",
       "symbols": [
         { "char": "_", "label": "Underscore / Low Line (U+005F)" },
         { "char": "＿", "label": "Fullwidth Low Line (U+FF3F)" },
@@ -27,7 +27,7 @@
       "id": "overline",
       "label": "The Overline",
       "h2": "The Overline: the Same Stroke, Above the Text",
-      "intro": "The overline is the underscore's mirror image — the identical horizontal stroke placed above the text instead of below it, which is why the two get confused as opposites. The macron is the short bar people often type when they mean an overline.",
+      "intro": "The overline is the underscore's mirror image, the identical horizontal stroke placed above the text instead of below it, which is why the two get confused as opposites. The macron is the short bar people often type when they mean an overline.",
       "symbols": [
         { "char": "‾", "label": "Overline / Spacing Overscore (U+203E)" },
         { "char": "¯", "label": "Macron (U+00AF)" }

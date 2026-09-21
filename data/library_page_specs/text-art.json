@@ -131,7 +131,7 @@
       "id": "braille-texture",
       "label": "Braille",
       "h2": "Braille Dot Characters",
-      "intro": "Braille patterns give text art its finest resolution — most modern dot art is drawn with these.",
+      "intro": "Braille patterns give text art its finest resolution. Most modern dot art is drawn with these.",
       "symbols": [
         {
           "char": "⠁",
@@ -220,7 +220,7 @@
     "id": "art-pieces",
     "label": "Art Pieces",
     "h2": "Ready-Made Text Art Pieces",
-    "intro": "Copy a complete multi-line text art piece in one click — keep the vertical format so the lines stay aligned."
+    "intro": "Copy a complete multi-line text art piece in one click. Keep the vertical format so the lines stay aligned."
   },
   "collection_container_id": "textArtContainer",
   "collections": [

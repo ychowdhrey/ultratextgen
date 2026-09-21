@@ -6,8 +6,8 @@
   "canonical": "https://ultratextgen.com/symbol/pickle-emoji/",
   "breadcrumb": "Pickle Emoji",
   "hero_h1": "Pickle Emoji",
-  "hero_tagline": "A whole pickle (gherkin), distinct from cucumber and eggplant — drafted for Emoji 18.0, expected alongside Unicode 18.0 in September 2026. Draft only: no font renders it yet. Click to copy the codepoint anyway.",
-  "intro": "Pickle (🫝, U+1FADD) is a candidate emoji drafted for Emoji 18.0, the emoji companion to Unicode 18.0, expected to finalize in September 2026. Its codepoint has an unusual backstory: U+1FADD was originally reserved for a proposed \"Apple Core\" emoji in the Emoji 17.0 draft cycle; that proposal was deferred, and Unicode reassigned the freed slot to Pickle for the 18.0 cycle instead. It depicts a whole pickle (a pickled gherkin), distinct from the existing Cucumber and Eggplant emoji it's most often joked about alongside — tech-press comment sections have floated everything from \"that pickle is going to break the internet\" to speculation it'll \"take a lot of business from\" Eggplant. Because it's still a draft, no operating system, keyboard, or font currently renders it; expect a blank box or placeholder glyph until Emoji 18.0 is approved and platforms ship support.",
+  "hero_tagline": "A whole pickle (gherkin), distinct from cucumber and eggplant, drafted for Emoji 18.0, expected alongside Unicode 18.0 in September 2026. Draft only: no font renders it yet. Click to copy the codepoint anyway.",
+  "intro": "Pickle (🫝, U+1FADD) is a candidate emoji drafted for Emoji 18.0, the emoji companion to Unicode 18.0, expected to finalize in September 2026. Its codepoint has an unusual backstory: U+1FADD was originally reserved for a proposed \"Apple Core\" emoji in the Emoji 17.0 draft cycle; that proposal was deferred, and Unicode reassigned the freed slot to Pickle for the 18.0 cycle instead. It depicts a whole pickle (a pickled gherkin), distinct from the existing Cucumber and Eggplant emoji it's most often joked about alongside: tech-press comment sections have floated everything from \"that pickle is going to break the internet\" to speculation it'll \"take a lot of business from\" Eggplant. Because it's still a draft, no operating system, keyboard, or font currently renders it; expect a blank box or placeholder glyph until Emoji 18.0 is approved and platforms ship support.",
   "date_published": "2026-07-22",
   "date_modified": "2026-07-22",
   "copy_pattern": "single",
@@ -48,7 +48,7 @@
       "id": "fellow-candidates",
       "label": "Fellow Draft Candidates",
       "h2": "Other Emoji 18.0 Draft Candidates",
-      "intro": "Pickle isn't the only unapproved character in this release — these are drafted alongside it, equally unrendered until September 2026's decision.",
+      "intro": "Pickle isn't the only unapproved character in this release. These are drafted alongside it, equally unrendered until September 2026's decision.",
       "symbols": [
         {
           "char": "🫫",

@@ -16,7 +16,7 @@
       "id": "wheelchair-symbol",
       "label": "Wheelchair",
       "h2": "Wheelchair Symbol (International Symbol of Access)",
-      "intro": "The Unicode wheelchair character (U+267F) — the glyph that renders the classic International Symbol of Access on most systems. Ready to paste into documents, signage notes, or bios.",
+      "intro": "The Unicode wheelchair character (U+267F), the glyph that renders the classic International Symbol of Access on most systems. Ready to paste into documents, signage notes, or bios.",
       "symbols": [
         { "char": "♿", "label": "Wheelchair Symbol" },
         { "char": "♿️", "label": "Wheelchair Symbol (Emoji)" }
@@ -26,7 +26,7 @@
       "id": "accessibility-mobility-symbols",
       "label": "Accessibility & Mobility",
       "h2": "Accessibility & Mobility Symbols",
-      "intro": "Related Unicode symbols for mobility aids and other access needs — each a distinct character in its own right, not a variation of the wheelchair sign.",
+      "intro": "Related Unicode symbols for mobility aids and other access needs, each a distinct character in its own right, not a variation of the wheelchair sign.",
       "symbols": [
         { "char": "🦽", "label": "Manual Wheelchair" },
         { "char": "🦼", "label": "Motorized Wheelchair" },
@@ -61,7 +61,7 @@
     {
       "href": "/library/traffic-road-sign-symbols/",
       "title": "Traffic & Road Sign Symbols",
-      "desc": "Parking, warning, and directional road-sign symbols — the signage context the access sign appears in."
+      "desc": "Parking, warning, and directional road-sign symbols, the signage context the access sign appears in."
     }
   ]
 }

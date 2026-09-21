@@ -55,7 +55,7 @@
       "id": "dot-art-characters",
       "label": "Dot Art",
       "h2": "Braille Dot Art Characters",
-      "intro": "The braille tones used to shade compact face art — from solid to nearly empty.",
+      "intro": "The braille tones used to shade compact face art, from solid to nearly empty.",
       "symbols": [
         {
           "char": "⣿",
@@ -176,7 +176,7 @@
     "id": "roblox-art-sets",
     "label": "Art Sets",
     "h2": "Roblox Text Art Pieces",
-    "intro": "Copy a complete chat-ready face or banner in one click — keep the vertical format so lines stay aligned in chat."
+    "intro": "Copy a complete chat-ready face or banner in one click. Keep the vertical format so lines stay aligned in chat."
   },
   "collection_container_id": "robloxTextArtContainer",
   "collections": [

@@ -26,7 +26,7 @@
       "id": "curly-quotes",
       "label": "Curly (Smart) Quotes",
       "h2": "Curly (Smart) Quotation Marks",
-      "intro": "The typeset-style quotes with distinct opening and closing shapes — what \"autocorrect\" turns straight quotes into.",
+      "intro": "The typeset-style quotes with distinct opening and closing shapes, what \"autocorrect\" turns straight quotes into.",
       "symbols": [
         { "char": "“", "label": "Left Double Quotation Mark" },
         { "char": "”", "label": "Right Double Quotation Mark" },

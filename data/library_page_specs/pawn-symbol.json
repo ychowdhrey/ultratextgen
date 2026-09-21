@@ -39,7 +39,7 @@
       "id": "white-chess-pieces",
       "label": "White Pieces",
       "h2": "The White Chess Pieces",
-      "intro": "The outlined white set that faces the black pawn across the board, occupying U+2654 through U+2658 — the queen it may one day have to fear, and the king it can never become.",
+      "intro": "The outlined white set that faces the black pawn across the board, occupying U+2654 through U+2658, the queen it may one day have to fear, and the king it can never become.",
       "symbols": [
         { "char": "♔", "label": "White Chess King (U+2654)" },
         { "char": "♕", "label": "White Chess Queen (U+2655)" },
@@ -70,7 +70,7 @@
     {
       "href": "/library/card-suit-symbols/",
       "title": "Card Suit Symbols",
-      "desc": "Spades, hearts, diamonds, and clubs — the other game glyphs, sitting right beside the chess pieces in Unicode's Miscellaneous Symbols block."
+      "desc": "Spades, hearts, diamonds, and clubs, the other game glyphs, sitting right beside the chess pieces in Unicode's Miscellaneous Symbols block."
     },
     {
       "href": "/library/crown-royalty-symbols/",

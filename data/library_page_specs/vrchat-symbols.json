@@ -6,8 +6,8 @@
   "canonical": "https://ultratextgen.com/library/vrchat-symbols/",
   "breadcrumb": "VRChat Symbols",
   "hero_h1": "VRChat symbols for display names",
-  "hero_tagline": "Frames, stars, dividers and accents that survive a VRChat display name — plus a live checker, because you only get to change that name once every 90 days.",
-  "intro": "VRChat display names accept far more than plain letters, which is why so many names in a popular world are wrapped in stars, brackets and dividers. Two rules shape every one of them. First, the field is short: VRChat's own help documentation puts display names at 4 to 15 characters, so a decorative frame costs you two of the fifteen before you have typed a single letter. Second, and far more consequential, you can only change a display name once every 90 days — 30 days with an active VRC+ subscription. That is the longest rename cooldown of any platform on this site, longer than any game's rename card, and it is the reason this page leads with a checker rather than a wall of glyphs. VRChat publishes no official list of allowed characters: a request for one has sat open on its own community forum since 2024, and users there report that while most Unicode works, not all of it does. So treat every symbol below as very likely to work rather than guaranteed, paste your name into the checker first, and prefer the widely-supported glyphs at the top of each section over the unusual ones.",
+  "hero_tagline": "Frames, stars, dividers and accents that survive a VRChat display name, plus a live checker, because you only get to change that name once every 90 days.",
+  "intro": "VRChat display names accept far more than plain letters, which is why so many names in a popular world are wrapped in stars, brackets and dividers. Two rules shape every one of them. First, the field is short: VRChat's own help documentation puts display names at 4 to 15 characters, so a decorative frame costs you two of the fifteen before you have typed a single letter. Second, and far more consequential, you can only change a display name once every 90 days, 30 days with an active VRC+ subscription. That is the longest rename cooldown of any platform on this site, longer than any game's rename card, and it is the reason this page leads with a checker rather than a wall of glyphs. VRChat publishes no official list of allowed characters: a request for one has sat open on its own community forum since 2024, and users there report that while most Unicode works, not all of it does. So treat every symbol below as very likely to work rather than guaranteed, paste your name into the checker first, and prefer the widely-supported glyphs at the top of each section over the unusual ones.",
   "date_published": "2026-08-02",
   "date_modified": "2026-08-02",
   "copy_pattern": "single",
@@ -16,7 +16,7 @@
       "id": "vrchat-name-frames",
       "label": "Name Frames",
       "h2": "Frames & Brackets",
-      "intro": "A matched pair wraps your name. Remember both halves count toward the 15-character limit — a pair plus a 6-letter name is already 8.",
+      "intro": "A matched pair wraps your name. Remember both halves count toward the 15-character limit: a pair plus a 6-letter name is already 8.",
       "symbols": [
         { "char": "✦", "label": "Black Four Pointed Star" },
         { "char": "✧", "label": "White Four Pointed Star" },
@@ -75,7 +75,7 @@
       "id": "vrchat-avatar-accents",
       "label": "Themed Accents",
       "h2": "Themed Accents",
-      "intro": "Glyphs that read as an identity rather than decoration — common on avatar-themed and roleplay names.",
+      "intro": "Glyphs that read as an identity rather than decoration, common on avatar-themed and roleplay names.",
       "symbols": [
         { "char": "ᨒ", "label": "Lisu Letter Ha" },
         { "char": "ꨄ", "label": "Cham Letter Final Ng" },

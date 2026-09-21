@@ -88,7 +88,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "datePublished": "2026-07-02T00:00:00+00:00",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, now: far better than they used to. Almost every syllable stacks a vowel mark and a tone mark, and Unicode has no styled version of those letters, so the generator splits each vowel apart, styles the base and reattaches every mark. A bold name comes through with its dấu intact — Việt Nam becomes 𝗩𝗶𝗲̣̂𝘁 𝗡𝗮𝗺. This works in every core typography style (bold, italic, script, gothic) as well as the mark and symbol styles. The one letter that never converts is đ, which becomes a plain styled d. Removing the tone marks first (bỏ dấu) is now a choice for game length caps, not a requirement.",
+        "text": "Yes, now: far better than they used to. Almost every syllable stacks a vowel mark and a tone mark, and Unicode has no styled version of those letters, so the generator splits each vowel apart, styles the base and reattaches every mark. A bold name comes through with its dấu intact: Việt Nam becomes 𝗩𝗶𝗲̣̂𝘁 𝗡𝗮𝗺. This works in every core typography style (bold, italic, script, gothic) as well as the mark and symbol styles. The one letter that never converts is đ, which becomes a plain styled d. Removing the tone marks first (bỏ dấu) is now a choice for game length caps, not a requirement.",
         "author": {
           "@id": "https://ultratextgen.com/#organization"
         },
@@ -104,7 +104,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "datePublished": "2026-07-02T00:00:00+00:00",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Because đ / Đ is its own letter in Unicode (d-with-stroke), not a d carrying a mark. It has no decomposition, so there's no combining mark to split off and reattach, and there is no styled đ glyph either. So every letter-swap style falls back to its nearest base letter and gives you a plain or styled d — never a đ. The same property means đ also survives accent-removal tools, which is why bỏ dấu code has to convert đ→d by hand.",
+        "text": "Because đ / Đ is its own letter in Unicode (d-with-stroke), not a d carrying a mark. It has no decomposition, so there's no combining mark to split off and reattach, and there is no styled đ glyph either. So every letter-swap style falls back to its nearest base letter and gives you a plain or styled d, never a đ. The same property means đ also survives accent-removal tools, which is why bỏ dấu code has to convert đ→d by hand.",
         "author": {
           "@id": "https://ultratextgen.com/#organization"
         },
@@ -120,7 +120,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "datePublished": "2026-07-02T00:00:00+00:00",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Almost all of them now: around 77 of the 112 styles, including every bold, italic, script, cursive, fraktur and small caps variant, plus the mark and symbol styles (strikethrough, underline, slash, wraps). Each reattaches the tone marks to the styled vowel, so ữ, ế, ệ, ơ and ư come through intact. The exceptions are the upside-down / flip styles and 13 novelty exotic-alphabet styles (bubble circles, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics). And đ is the one letter no letter-swap style can convert — it falls back to a plain styled d, though the mark and wrap styles leave the đ itself untouched.",
+        "text": "Almost all of them now: around 77 of the 112 styles, including every bold, italic, script, cursive, fraktur and small caps variant, plus the mark and symbol styles (strikethrough, underline, slash, wraps). Each reattaches the tone marks to the styled vowel, so ữ, ế, ệ, ơ and ư come through intact. The exceptions are the upside-down / flip styles and 13 novelty exotic-alphabet styles (bubble circles, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics). And đ is the one letter no letter-swap style can convert: it falls back to a plain styled d, though the mark and wrap styles leave the đ itself untouched.",
         "author": {
           "@id": "https://ultratextgen.com/#organization"
         },
@@ -152,7 +152,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "datePublished": "2026-07-02T00:00:00+00:00",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In display names and posts it can, but with caveats. Zalo restricts fancy/emoji characters in the main display name (they only work in a private friend alias), and Facebook rejects decorative symbols in the name field and strips diacritics from the @username. Both are also subject to device rendering — some Facebook layouts have historically misplaced Vietnamese marks, so test before you rely on it.",
+        "text": "In display names and posts it can, but with caveats. Zalo restricts fancy/emoji characters in the main display name (they only work in a private friend alias), and Facebook rejects decorative symbols in the name field and strips diacritics from the @username. Both are also subject to device rendering: some Facebook layouts have historically misplaced Vietnamese marks, so test before you rely on it.",
         "author": {
           "@id": "https://ultratextgen.com/#organization"
         },
@@ -205,7 +205,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="editorial-section">
   <span class="article-section-label">Short answer</span>
   <div class="editorial-block">
-    <p><strong>Yes, now: far better than they used to.</strong> Vietnamese is the toughest case, because nearly every syllable stacks a vowel mark <em>and</em> a tone mark (ữ, ế, ệ, ơ). Unicode has no styled version of those letters, so the generator decomposes each vowel, styles the base and reattaches every mark — a bold name comes through with its dấu intact (<strong>Việt Nam</strong> → <strong>𝗩𝗶𝗲̣̂𝘁 𝗡𝗮𝗺</strong>). The one letter that <em>never</em> converts is <strong>đ</strong>, which becomes a plain styled "d." Styling with dấu now works in every core typography style; <strong>bỏ dấu</strong> (dropping the tone marks) and <strong>kí tự đặc biệt</strong> (symbol frames) are still handy for game length caps and platform rules.</p>
+    <p><strong>Yes, now: far better than they used to.</strong> Vietnamese is the toughest case, because nearly every syllable stacks a vowel mark <em>and</em> a tone mark (ữ, ế, ệ, ơ). Unicode has no styled version of those letters, so the generator decomposes each vowel, styles the base and reattaches every mark, a bold name comes through with its dấu intact (<strong>Việt Nam</strong> → <strong>𝗩𝗶𝗲̣̂𝘁 𝗡𝗮𝗺</strong>). The one letter that <em>never</em> converts is <strong>đ</strong>, which becomes a plain styled "d." Styling with dấu now works in every core typography style; <strong>bỏ dấu</strong> (dropping the tone marks) and <strong>kí tự đặc biệt</strong> (symbol frames) are still handy for game length caps and platform rules.</p>
   </div>
   <div class="block-example">
     <strong>In one line:</strong> core styles now keep có dấu · đ is the one holdout · bỏ dấu or symbol frames stay useful for length caps.
@@ -219,7 +219,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <h2>How the marks get kept: and the đ that never budges</h2>
   <div class="editorial-block">
     <p>A "fancy font" swaps each letter for a styled Unicode character, but those styled characters only exist for the plain <strong>A–Z, a–z and 0–9</strong>. Vietnamese vowels are built by stacking a base letter, a vowel-shape mark (â, ă, ơ, ư) and a tone mark — "ế" is really e + circumflex + acute. There's no styled "ế" to swap in, so the generator splits it apart (via NFD), styles the bare "e," and re-appends both marks on top — the styled vowel keeps every dấu.</p>
-    <p>But <strong>đ / Đ</strong> is different: it's its own Unicode letter, not a "d" with a mark, so it has no decomposition and no mark to lift off. It converts to a plain styled "d" in <em>every</em> letter-swap style — the one character guaranteed not to carry through as đ.</p>
+    <p>But <strong>đ / Đ</strong> is different: it's its own Unicode letter, not a "d" with a mark, so it has no decomposition and no mark to lift off. It converts to a plain styled "d" in <em>every</em> letter-swap style, the one character guaranteed not to carry through as đ.</p>
     <div class="block-example">
       <div class="example-pair">
         <div class="ex-label">Bold "Việt Nam"</div>
@@ -241,11 +241,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <span class="compare-badge">1 · Restyle, dấu kept</span>
       <p>Just style the name. Every core style (bold, italic, script, gothic) now reattaches each tone mark, so the dấu comes through:</p>
       <p class="mood-example">Việt Nam → 𝗩𝗶𝗲̣̂𝘁 𝗡𝗮𝗺</p>
-      <p>Mark and wrap styles (strikethrough, underline, symbol frames) keep the dấu too, and never decompose the letter — a safe pick for shaky old devices.</p>
+      <p>Mark and wrap styles (strikethrough, underline, symbol frames) keep the dấu too, and never decompose the letter, a safe pick for shaky old devices.</p>
     </div>
     <div class="compare-card variant-muted">
       <span class="compare-badge">2 · Bỏ dấu, then style</span>
-      <p>Remove the tone marks first, then apply bold/script — still the standard move where a game caps name length or rejects marks:</p>
+      <p>Remove the tone marks first, then apply bold/script, still the standard move where a game caps name length or rejects marks:</p>
       <p class="mood-example">chữ kiểu → chu kieu → 𝗰𝗵𝘂 𝗸𝗶𝗲𝘂</p>
       <p>Or decorate a plain name with <strong>kí tự đặc biệt</strong> (symbol frames), the way Free Fire and Liên Quân players do.</p>
     </div>
@@ -259,7 +259,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <h2>Game names, Zalo &amp; Facebook</h2>
   <div class="editorial-block">
     <ul>
-      <li><strong>Game names (Free Fire, Liên Quân, PUBG)</strong> — players use kí tự đặc biệt around a plain, mark-free nickname. Games cap length (Free Fire: 12 characters) and reject foreign or invisible characters, so test the name in a chat box before committing.</li>
+      <li><strong>Game names (Free Fire, Liên Quân, PUBG)</strong>: players use kí tự đặc biệt around a plain, mark-free nickname. Games cap length (Free Fire: 12 characters) and reject foreign or invisible characters, so test the name in a chat box before committing.</li>
       <li><strong>Zalo</strong>: restricts fancy and emoji characters in the main display name; they only work in a private friend alias.</li>
       <li><strong>Facebook</strong>: rejects decorative symbols in the name field and strips diacritics from the @username. Some layouts have historically misplaced Vietnamese marks, so rendering is not guaranteed.</li>
     </ul>
@@ -287,15 +287,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <h2>Frequently Asked Questions</h2>
   <details class="faq-item">
     <summary class="faq-question">Do fancy fonts work with Vietnamese có dấu?</summary>
-    <p class="faq-answer">Yes, now: far better than they used to. Almost every syllable stacks a vowel mark and a tone mark, and Unicode has no styled version of those letters, so the generator splits each vowel apart, styles the base and reattaches every mark. A bold name comes through with its dấu intact — Việt Nam becomes 𝗩𝗶𝗲̣̂𝘁 𝗡𝗮𝗺. This works in every core typography style (bold, italic, script, gothic) as well as the mark and symbol styles. The one letter that never converts is đ, which becomes a plain styled d. Removing the tone marks first (bỏ dấu) is now a choice for game length caps, not a requirement.</p>
+    <p class="faq-answer">Yes, now: far better than they used to. Almost every syllable stacks a vowel mark and a tone mark, and Unicode has no styled version of those letters, so the generator splits each vowel apart, styles the base and reattaches every mark. A bold name comes through with its dấu intact: Việt Nam becomes 𝗩𝗶𝗲̣̂𝘁 𝗡𝗮𝗺. This works in every core typography style (bold, italic, script, gothic) as well as the mark and symbol styles. The one letter that never converts is đ, which becomes a plain styled d. Removing the tone marks first (bỏ dấu) is now a choice for game length caps, not a requirement.</p>
   </details>
   <details class="faq-item">
     <summary class="faq-question">Why does the letter đ never change?</summary>
-    <p class="faq-answer">Because đ / Đ is its own letter in Unicode (d-with-stroke), not a d carrying a mark. It has no decomposition, so there's no combining mark to split off and reattach, and there is no styled đ glyph either. So every letter-swap style falls back to its nearest base letter and gives you a plain or styled d — never a đ. The same property means đ also survives accent-removal tools, which is why bỏ dấu code has to convert đ→d by hand.</p>
+    <p class="faq-answer">Because đ / Đ is its own letter in Unicode (d-with-stroke), not a d carrying a mark. It has no decomposition, so there's no combining mark to split off and reattach, and there is no styled đ glyph either. So every letter-swap style falls back to its nearest base letter and gives you a plain or styled d, never a đ. The same property means đ also survives accent-removal tools, which is why bỏ dấu code has to convert đ→d by hand.</p>
   </details>
   <details class="faq-item">
     <summary class="faq-question">Which styles keep Vietnamese tone marks?</summary>
-    <p class="faq-answer">Almost all of them now: around 77 of the 112 styles, including every bold, italic, script, cursive, fraktur and small caps variant, plus the mark and symbol styles (strikethrough, underline, slash, wraps). Each reattaches the tone marks to the styled vowel, so ữ, ế, ệ, ơ and ư come through intact. The exceptions are the upside-down / flip styles and 13 novelty exotic-alphabet styles (bubble circles, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics). And đ is the one letter no letter-swap style can convert — it falls back to a plain styled d, though the mark and wrap styles leave the đ itself untouched.</p>
+    <p class="faq-answer">Almost all of them now: around 77 of the 112 styles, including every bold, italic, script, cursive, fraktur and small caps variant, plus the mark and symbol styles (strikethrough, underline, slash, wraps). Each reattaches the tone marks to the styled vowel, so ữ, ế, ệ, ơ and ư come through intact. The exceptions are the upside-down / flip styles and 13 novelty exotic-alphabet styles (bubble circles, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics). And đ is the one letter no letter-swap style can convert: it falls back to a plain styled d, though the mark and wrap styles leave the đ itself untouched.</p>
   </details>
   <details class="faq-item">
     <summary class="faq-question">How do Vietnamese gamers get styled names on Free Fire and Liên Quân?</summary>
@@ -303,7 +303,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </details>
   <details class="faq-item">
     <summary class="faq-question">Does styled Vietnamese text work on Zalo and Facebook?</summary>
-    <p class="faq-answer">In display names and posts it can, but with caveats. Zalo restricts fancy/emoji characters in the main display name (they only work in a private friend alias), and Facebook rejects decorative symbols in the name field and strips diacritics from the @username. Both are also subject to device rendering — some Facebook layouts have historically misplaced Vietnamese marks, so test before you rely on it.</p>
+    <p class="faq-answer">In display names and posts it can, but with caveats. Zalo restricts fancy/emoji characters in the main display name (they only work in a private friend alias), and Facebook rejects decorative symbols in the name field and strips diacritics from the @username. Both are also subject to device rendering: some Facebook layouts have historically misplaced Vietnamese marks, so test before you rely on it.</p>
   </details>
 </section>
 

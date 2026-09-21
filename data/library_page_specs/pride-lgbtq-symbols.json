@@ -59,7 +59,7 @@
       "id": "rainbow-visibility",
       "label": "Rainbow & Visibility",
       "h2": "Rainbow & Everyday Pride Marks",
-      "intro": "The rainbow is the single most recognized Pride symbol — see the full rainbow and atmospheric set on Weather Symbols. Pair it with these everyday solidarity marks.",
+      "intro": "The rainbow is the single most recognized Pride symbol. See the full rainbow and atmospheric set on Weather Symbols. Pair it with these everyday solidarity marks.",
       "symbols": [
         {
           "char": "🌈",
@@ -80,7 +80,7 @@
     "id": "flag-color-combos",
     "label": "Flag Color Combos",
     "h2": "Pride Flag Color Combos (Heart Stand-Ins)",
-    "intro": "Unicode hasn't given most Pride flags their own single character, so copy a color-matched heart combo instead — each set follows that flag's real stripe order, top to bottom."
+    "intro": "Unicode hasn't given most Pride flags their own single character, so copy a color-matched heart combo instead. Each set follows that flag's real stripe order, top to bottom."
   },
   "collection_container_id": "prideFlagCombosContainer",
   "collections": [
