@@ -14,7 +14,7 @@
   "canonical": "https://ultratextgen.com/nl/symbol/dirhamteken/",
   "breadcrumb": "Dirhamteken",
   "hero_h1": "Dirhamteken",
-  "hero_tagline": "Het nieuwe valutateken van de Centrale Bank van de VAE, toegewezen aan U+20C3 en bevroren voor publicatie in Unicode 18.0 — steviger vastgelegd dan de conceptemoji's van deze release, maar nog altijd niet te typen op enig toetsenbord.",
+  "hero_tagline": "Het nieuwe valutateken van de Centrale Bank van de VAE, toegewezen aan U+20C3 en bevroren voor publicatie in Unicode 18.0, steviger vastgelegd dan de conceptemoji's van deze release, maar nog altijd niet te typen op enig toetsenbord.",
   "intro": "Het dirhamteken (⃃, U+20C3) is het nieuwe valutateken van de Centrale Bank van de Verenigde Arabische Emiraten, onthuld in maart 2025 samen met een bijbehorend teken voor de digitale dirham. Het werd bij het Unicode-consortium ingediend voor codering, goedgekeurd, en gepubliceerd in de publieke bèta van Unicode 18.0 op 27 mei 2026, samen met de tekens voor de Omaanse rial en de Malediven-rufiyaa. Op het moment van schrijven draagt het de status 'white' in Unicodes eigen pipeline-documentatie: wat betekent dat het bevroren is voor publicatie, in afwachting van alleen nog ISO-goedkeuring, wat eigenlijk een steviger vastgelegde status is dan de conceptemoji-kandidaten van diezelfde release (waarvan er meerdere nog een naamswijzigingsvlag dragen). Unicode 18.0 zelf wordt naar verwachting in september 2026 definitief gepubliceerd. Publicatie alleen zet het echter nog niet op een toetsenbord: geen enkel besturingssysteem, lettertype of invoermethode biedt momenteel native ondersteuning, en de aanbeveling van de Centrale Bank van de VAE in haar eigen stijlgids (de cijfertoets 6) blijft slechts een aanbeveling totdat toestelfabrikanten ernaar handelen. Ondertussen hebben ontwikkelaars al echte tooling gebouwd rond het bevestigde codepunt: een open-source-npm-package, webfont en CSS/React/Vue/Angular/Svelte-componenten (gepubliceerd als 'dirham' op npm en GitHub) laten je het juiste teken vandaag al coderen via een tijdelijke renderlaag, ontworpen om te verdwijnen zodra native OS-ondersteuning verschijnt.",
   "hreflang": [
     {
@@ -47,7 +47,7 @@
       "id": "andere-golfvaluta",
       "label": "Andere Nieuwe Valutatekens",
       "h2": "Andere Nieuwe Golf-valutatekens in deze Release",
-      "intro": "De dirham is niet het enige nieuwe valutateken in Unicode 18.0 — twee andere regionale munten kregen in dezelfde bèta hun eigen teken.",
+      "intro": "De dirham is niet het enige nieuwe valutateken in Unicode 18.0. Twee andere regionale munten kregen in dezelfde bèta hun eigen teken.",
       "symbols": [
         {
           "char": "⃄",
@@ -83,7 +83,7 @@
       "id": "een-versie-voor",
       "label": "Eén Versie Voor",
       "h2": "Het Golf-valutateken dat Eén Versie Eerder Verscheen",
-      "intro": "Saoedi-Arabiës riyal-teken doorliep dit pad al een volledige Unicode-versie eerder — al definitief sinds Unicode 17.0, niet enkel in bèta.",
+      "intro": "Saoedi-Arabiës riyal-teken doorliep dit pad al een volledige Unicode-versie eerder, al definitief sinds Unicode 17.0, niet enkel in bèta.",
       "symbols": [
         {
           "char": "⃁",

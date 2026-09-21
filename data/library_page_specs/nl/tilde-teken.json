@@ -79,7 +79,7 @@
       "id": "wiskundige-tilde",
       "label": "Wiskundige Tildes",
       "h2": "Wiskundige Tildes: Gelijksoortig-aan en Ongeveer-gelijk",
-      "intro": "In vergelijkingen betekent de tilde ‘gelijksoortig aan’ of ‘ongeveer’, maar de echte wiskundige tekens zijn eigen Unicode-tekens — niet de ASCII-~ die mensen er meestal voor typen.",
+      "intro": "In vergelijkingen betekent de tilde ‘gelijksoortig aan’ of ‘ongeveer’, maar de echte wiskundige tekens zijn eigen Unicode-tekens, niet de ASCII-~ die mensen er meestal voor typen.",
       "symbols": [
         {
           "char": "∼",

@@ -35,7 +35,7 @@
       "id": "the-tilde",
       "label": "La Tilde",
       "h2": "La Tilde ~ e i Suoi Sosia",
-      "intro": "Tre caratteri Unicode distinti che tutti chiamano \"la tilde\" — il tasto da tastiera, un modificatore autonomo e il segno diacritico combinante che si posiziona sopra una lettera.",
+      "intro": "Tre caratteri Unicode distinti che tutti chiamano \"la tilde\": il tasto da tastiera, un modificatore autonomo e il segno diacritico combinante che si posiziona sopra una lettera.",
       "symbols": [
         {
           "char": "~",
@@ -79,7 +79,7 @@
       "id": "math-tilde",
       "label": "Tilde Matematiche",
       "h2": "Tilde Matematiche: Simile-a e Quasi-Uguale",
-      "intro": "Nelle equazioni la tilde significa \"simile a\" o \"circa\", ma i veri segni matematici sono caratteri Unicode a parte — non la ~ ASCII che di solito si digita al loro posto.",
+      "intro": "Nelle equazioni la tilde significa \"simile a\" o \"circa\", ma i veri segni matematici sono caratteri Unicode a parte, non la ~ ASCII che di solito si digita al loro posto.",
       "symbols": [
         {
           "char": "∼",

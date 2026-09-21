@@ -35,7 +35,7 @@
       "id": "rolstoel-symbool",
       "label": "Rolstoel",
       "h2": "Rolstoel-symbool (Internationaal Toegankelijkheidsteken)",
-      "intro": "Het Unicode-rolstoelteken (U+267F) — de glyph die het klassieke Internationale Toegankelijkheidsteken op de meeste systemen weergeeft. Klaar om te plakken in documenten, bewegwijzeringsnotities of bio's.",
+      "intro": "Het Unicode-rolstoelteken (U+267F), de glyph die het klassieke Internationale Toegankelijkheidsteken op de meeste systemen weergeeft. Klaar om te plakken in documenten, bewegwijzeringsnotities of bio's.",
       "symbols": [
         {
           "char": "♿",
@@ -51,7 +51,7 @@
       "id": "toegankelijkheid-mobiliteit",
       "label": "Toegankelijkheid & Mobiliteit",
       "h2": "Toegankelijkheids- & Mobiliteitssymbolen",
-      "intro": "Verwante Unicode-symbolen voor mobiliteitshulpmiddelen en andere toegankelijkheidsbehoeften — elk een apart teken op zich, geen variant van het rolstoelteken.",
+      "intro": "Verwante Unicode-symbolen voor mobiliteitshulpmiddelen en andere toegankelijkheidsbehoeften, elk een apart teken op zich, geen variant van het rolstoelteken.",
       "symbols": [
         {
           "char": "🦽",
@@ -110,7 +110,7 @@
     {
       "href": "/library/traffic-road-sign-symbols/",
       "title": "Traffic & Road Sign Symbols",
-      "desc": "Parkeer-, waarschuwings- en richtingaanwijzende verkeersbordsymbolen — de bewegwijzeringscontext waarin het toegankelijkheidsteken voorkomt (Engelstalige bibliotheek)."
+      "desc": "Parkeer-, waarschuwings- en richtingaanwijzende verkeersbordsymbolen, de bewegwijzeringscontext waarin het toegankelijkheidsteken voorkomt (Engelstalige bibliotheek)."
     }
   ]
 }

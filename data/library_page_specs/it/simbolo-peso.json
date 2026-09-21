@@ -35,7 +35,7 @@
       "id": "peso-sign",
       "label": "Il Simbolo del Peso",
       "h2": "I Due Simboli Chiamati \"Simbolo del Peso\" — ₱ e $",
-      "intro": "Entrambi vengono chiamati simbolo del peso. ₱ è il carattere proprio del peso filippino; $ è quello che usano quasi tutti gli altri pesos — perché lo stesso segno del dollaro probabilmente è nato come abbreviazione del peso spagnolo. Se derivi da una \"Ps\" scritta a mano o dalle Colonne d'Ercole avvolte da una S sulle monete spagnole a otto reales è tuttora oggetto di un dibattito storico genuino.",
+      "intro": "Entrambi vengono chiamati simbolo del peso. ₱ è il carattere proprio del peso filippino; $ è quello che usano quasi tutti gli altri pesos, perché lo stesso segno del dollaro probabilmente è nato come abbreviazione del peso spagnolo. Se derivi da una \"Ps\" scritta a mano o dalle Colonne d'Ercole avvolte da una S sulle monete spagnole a otto reales è tuttora oggetto di un dibattito storico genuino.",
       "symbols": [
         {
           "char": "₱",
@@ -51,7 +51,7 @@
       "id": "struck-letter-currencies",
       "label": "Costruiti Come il Peso",
       "h2": "La Famiglia delle Valute a Lettera Barrata",
-      "intro": "Il simbolo del peso è una P maiuscola attraversata da due barre parallele — la stessa ricetta dietro un'intera generazione di segni valutari moderni, ciascuno una lettera nazionale barrata da una o due linee. Pronti da incollare ovunque.",
+      "intro": "Il simbolo del peso è una P maiuscola attraversata da due barre parallele, la stessa ricetta dietro un'intera generazione di segni valutari moderni, ciascuno una lettera nazionale barrata da una o due linee. Pronti da incollare ovunque.",
       "symbols": [
         {
           "char": "₹",
@@ -83,7 +83,7 @@
       "id": "peso-lookalikes",
       "label": "Da Non Confondere Con",
       "h2": "Sosia: Glifi Scambiati per ₱",
-      "intro": "Poiché ₱ è essenzialmente una P barrata, viene scambiato con altri caratteri a forma di P — incluso uno che è una valuta completamente diversa. Ognuno è un codepoint Unicode a sé, non una variante stilistica.",
+      "intro": "Poiché ₱ è essenzialmente una P barrata, viene scambiato con altri caratteri a forma di P, incluso uno che è una valuta completamente diversa. Ognuno è un codepoint Unicode a sé, non una variante stilistica.",
       "symbols": [
         {
           "char": "₽",

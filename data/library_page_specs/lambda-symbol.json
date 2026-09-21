@@ -32,7 +32,7 @@
       "id": "gay-liberation-symbol",
       "label": "Gay Liberation",
       "h2": "Lambda as a Gay-Liberation Symbol",
-      "intro": "New York's Gay Activists Alliance adopted the lowercase λ in 1970, and the International Gay Rights Congress declared it an international symbol of gay and lesbian rights in 1974 — one of the movement's earliest emblems. Paste it alongside the pride glyphs it now sits beside.",
+      "intro": "New York's Gay Activists Alliance adopted the lowercase λ in 1970, and the International Gay Rights Congress declared it an international symbol of gay and lesbian rights in 1974, one of the movement's earliest emblems. Paste it alongside the pride glyphs it now sits beside.",
       "symbols": [
         {
           "char": "λ",
@@ -52,7 +52,7 @@
       "id": "lambda-code-science",
       "label": "Code & Science",
       "h2": "Lambda in Code, Math & Physics",
-      "intro": "The letter's technical life. Lowercase λ marks anonymous functions — from Alonzo Church's lambda calculus through to Python's lambda keyword and AWS Lambda, and stands for wavelength in physics; capital Λ is the cosmological constant of the ΛCDM model.",
+      "intro": "The letter's technical life. Lowercase λ marks anonymous functions, from Alonzo Church's lambda calculus through to Python's lambda keyword and AWS Lambda, and stands for wavelength in physics; capital Λ is the cosmological constant of the ΛCDM model.",
       "symbols": [
         {
           "char": "λ",
@@ -116,7 +116,7 @@
     {
       "href": "/symbol/pi-symbol/",
       "title": "Pi Symbol",
-      "desc": "Another Greek letter with a life far beyond math — the constant William Jones named in 1706."
+      "desc": "Another Greek letter with a life far beyond math, the constant William Jones named in 1706."
     }
   ]
 }

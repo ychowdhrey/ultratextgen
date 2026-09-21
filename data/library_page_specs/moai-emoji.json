@@ -6,7 +6,7 @@
   "breadcrumb": "Moai Emoji",
   "hero_h1": "Moai Emoji 🗿",
   "hero_tagline": "The stone-faced moai 🗿 and every deadpan face, rock, and meme combo that goes with it. Click any symbol or combo to copy it instantly.",
-  "intro": "The moai emoji 🗿 depicts the monolithic stone heads of Easter Island (Rapa Nui), but the internet adopted it as the universal deadpan reaction — a face of pure, unbothered stone. It anchors meme combos like 🗿 🍷 and entire walls of silent judgment in comment sections on TikTok, Discord, and X. This page collects the moai emoji, its rock and stone relatives, matching expressionless faces and kaomoji, and one-click meme combo sets.",
+  "intro": "The moai emoji 🗿 depicts the monolithic stone heads of Easter Island (Rapa Nui), but the internet adopted it as the universal deadpan reaction, a face of pure, unbothered stone. It anchors meme combos like 🗿 🍷 and entire walls of silent judgment in comment sections on TikTok, Discord, and X. This page collects the moai emoji, its rock and stone relatives, matching expressionless faces and kaomoji, and one-click meme combo sets.",
   "date_published": "2026-06-12",
   "date_modified": "2026-06-12",
   "copy_pattern": "collection",
@@ -60,7 +60,7 @@
       "id": "stone-kaomoji",
       "label": "Stone Kaomoji",
       "h2": "Stone-Faced Kaomoji",
-      "intro": "Text faces with the same flat, unimpressed stare — built from real Unicode characters.",
+      "intro": "Text faces with the same flat, unimpressed stare, built from real Unicode characters.",
       "symbols": [
         { "char": "ಠ_ಠ", "label": "Look of Disapproval" },
         { "char": "(¬_¬)", "label": "Side-Eye Face" },
@@ -75,7 +75,7 @@
     "id": "combo-sets",
     "label": "Combo Sets",
     "h2": "Moai Meme Combo Sets",
-    "intro": "Copy a full moai meme combo in one click — from the classic wine pairing to an entire wall of stone."
+    "intro": "Copy a full moai meme combo in one click: from the classic wine pairing to an entire wall of stone."
   },
   "collection_container_id": "moaiSetsContainer",
   "collections": [

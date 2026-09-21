@@ -60,7 +60,7 @@
       "id": "ironing",
       "label": "Ironing",
       "h2": "Ironing & Heat Symbols",
-      "intro": "Iron care symbols use one, two, or three dots for low, medium, and high heat — these Unicode dot characters mirror that scale.",
+      "intro": "Iron care symbols use one, two, or three dots for low, medium, and high heat. These Unicode dot characters mirror that scale.",
       "symbols": [
         { "char": "🔥", "label": "Fire (high heat)" },
         { "char": "♨", "label": "Hot Springs (steam)" },

@@ -47,7 +47,7 @@
       "id": "fill-levels",
       "label": "Fill Levels",
       "h2": "Block Fill Level Characters",
-      "intro": "Eighth-step blocks that rise vertically or grow horizontally — perfect for smooth bar gradients and equalizers.",
+      "intro": "Eighth-step blocks that rise vertically or grow horizontally, perfect for smooth bar gradients and equalizers.",
       "symbols": [
         {
           "char": "▁",
@@ -184,7 +184,7 @@
     "id": "loading-bar-sets",
     "label": "Bar Sets",
     "h2": "Ready-Made Loading Bars & Sequences",
-    "intro": "Copy a single loading line or a whole fill sequence in one click — vertical format keeps each stage on its own line."
+    "intro": "Copy a single loading line or a whole fill sequence in one click. Vertical format keeps each stage on its own line."
   },
   "collection_container_id": "loadingBarsContainer",
   "collections": [

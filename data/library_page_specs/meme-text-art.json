@@ -15,7 +15,7 @@
       "id": "shading-blocks",
       "label": "Shading",
       "h2": "Shading Block Characters",
-      "intro": "The four classic shade levels plus half blocks — the pixels of block-style meme art.",
+      "intro": "The four classic shade levels plus half blocks, the pixels of block-style meme art.",
       "symbols": [
         {
           "char": "░",
@@ -55,7 +55,7 @@
       "id": "braille-density",
       "label": "Dot Density",
       "h2": "Braille Density Characters",
-      "intro": "Braille patterns ordered from full to sparse — these are the grayscale tones of dot art memes.",
+      "intro": "Braille patterns ordered from full to sparse. These are the grayscale tones of dot art memes.",
       "symbols": [
         {
           "char": "⣿",
@@ -151,7 +151,7 @@
       "id": "meme-emojis",
       "label": "Meme Emojis",
       "h2": "Meme Reaction Emojis",
-      "intro": "The emojis that headline meme replies — pair them with dot art for extra effect.",
+      "intro": "The emojis that headline meme replies. Pair them with dot art for extra effect.",
       "symbols": [
         {
           "char": "🗿",
@@ -192,7 +192,7 @@
     "id": "meme-art-sets",
     "label": "Meme Sets",
     "h2": "Meme Text Art Sets",
-    "intro": "Copy a full reaction pack or dot art face in one click — vertical format keeps multi-line pieces aligned."
+    "intro": "Copy a full reaction pack or dot art face in one click. Vertical format keeps multi-line pieces aligned."
   },
   "collection_container_id": "memeTextArtContainer",
   "collections": [

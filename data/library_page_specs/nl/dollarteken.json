@@ -47,7 +47,7 @@
       "id": "verwarrende-tekens",
       "label": "Tekens waarmee het Verward Wordt",
       "h2": "Tekens naast het Dollarteken",
-      "intro": "Losse Unicode-tekens die aan $ verwant lijken of zijn valutacontext delen — elk een eigen codepunt, geen stijlvariant.",
+      "intro": "Losse Unicode-tekens die aan $ verwant lijken of zijn valutacontext delen, elk een eigen codepunt, geen stijlvariant.",
       "symbols": [
         {
           "char": "¢",

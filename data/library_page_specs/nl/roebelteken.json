@@ -35,7 +35,7 @@
       "id": "roebelteken",
       "label": "Roebelteken",
       "h2": "Het Roebelteken (₽)",
-      "intro": "Het teken zelf en de Cyrillische letter waaruit het is opgebouwd. Het winnende ontwerp is de hoofdletter Er (Р) met een extra horizontale streep onder de buik — de kleine letter р is degene die voorkwam in de oude 'р.'-afkorting.",
+      "intro": "Het teken zelf en de Cyrillische letter waaruit het is opgebouwd. Het winnende ontwerp is de hoofdletter Er (Р) met een extra horizontale streep onder de buik. De kleine letter р is degene die voorkwam in de oude 'р.'-afkorting.",
       "symbols": [
         {
           "char": "₽",
@@ -55,7 +55,7 @@
       "id": "recent-aangenomen",
       "label": "Recent Aangenomen",
       "h2": "Andere Recent Aangenomen Valutatekens",
-      "intro": "Het roebelteken heeft naaste buren in Unicodes Currency Symbols-blok — een cluster tekens dat pas in de jaren 2010 werd gecodeerd, toen post-Sovjetstaten en andere landen hun munt een eigen glyph gaven. Net als de roebel werd ook het Indiase roepieteken via een publieke ontwerpwedstrijd gekozen.",
+      "intro": "Het roebelteken heeft naaste buren in Unicodes Currency Symbols-blok, een cluster tekens dat pas in de jaren 2010 werd gecodeerd, toen post-Sovjetstaten en andere landen hun munt een eigen glyph gaven. Net als de roebel werd ook het Indiase roepieteken via een publieke ontwerpwedstrijd gekozen.",
       "symbols": [
         {
           "char": "₹",
@@ -83,7 +83,7 @@
       "id": "klassieke-tekens",
       "label": "Klassieke Tekens",
       "h2": "Klassieke Valutatekens ter Vergelijking",
-      "intro": "Tegenover de heldere, goed gedocumenteerde herkomst van de roebel uit 2013 staan de bekendste valutatekens ter wereld — eeuwen ouder en veel troebeler: de exacte verhalen achter het dollar- en pondteken worden nog altijd betwist.",
+      "intro": "Tegenover de heldere, goed gedocumenteerde herkomst van de roebel uit 2013 staan de bekendste valutatekens ter wereld, eeuwen ouder en veel troebeler: de exacte verhalen achter het dollar- en pondteken worden nog altijd betwist.",
       "symbols": [
         {
           "char": "$",

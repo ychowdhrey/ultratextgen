@@ -16,7 +16,7 @@
       "id": "reaction-symbols",
       "label": "Reaction Symbols",
       "h2": "Facebook Reaction Symbols",
-      "intro": "Text-paste equivalents of Facebook's Like, Love, Care, Haha, Wow, Sad, and Angry reactions — for comments and posts where the real sticker isn't available.",
+      "intro": "Text-paste equivalents of Facebook's Like, Love, Care, Haha, Wow, Sad, and Angry reactions, for comments and posts where the real sticker isn't available.",
       "symbols": [
         { "char": "👍", "label": "Like Reaction" },
         { "char": "❤️", "label": "Love Reaction" },
@@ -92,7 +92,7 @@
       "id": "page-name-symbols",
       "label": "Page & Group Names",
       "h2": "Page & Group Name Symbols",
-      "intro": "Frame and bracket characters for Page names, Group names, and Business Page usernames — fields with more room for decoration than a personal profile Name.",
+      "intro": "Frame and bracket characters for Page names, Group names, and Business Page usernames, fields with more room for decoration than a personal profile Name.",
       "symbols": [
         { "char": "꒰", "label": "Yi Radical Shy" },
         { "char": "꒱", "label": "Yi Radical Vep" },

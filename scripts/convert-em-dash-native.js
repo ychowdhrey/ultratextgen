@@ -283,8 +283,24 @@ function applyRemedy(raw, k, remedy) {
       // No letter left in THIS node to capitalise: a full stop would open a
       // sentence whose start we cannot see. Downgrade rather than guess.
       if (li === -1 || li > 3) return applyRemedy(raw, k, ':');
+      /**
+       * CAPITALISE ONLY WHERE THE CASE PAIR ROUND-TRIPS.
+       *
+       * `'ϑ'.toUpperCase()` is `'Θ'`, and `'Θ'.toLowerCase()` is `'θ'` — a
+       * DIFFERENT letter. On it/symbol/simbolo-theta, whose subject is exactly
+       * the difference between θ and ϑ, that silently rewrote the character
+       * the sentence is about. `'ß'.toUpperCase()` is `'SS'`, two letters for
+       * one. The significance verifier refused the file, which is what it is
+       * for; this is the fix rather than the workaround.
+       *
+       * Where the pair does not round-trip, the full stop still applies and
+       * the letter is left alone: a sentence opening with a lowercase Greek
+       * letter is ordinary in mathematical prose.
+       */
+      const up = tail[li].toUpperCase();
+      const safe = up.length === 1 && up.toLowerCase() === tail[li];
       return raw.slice(0, s) + '.' + gap(right, raw, e)
-           + tail.slice(0, li) + tail[li].toUpperCase() + tail.slice(li + 1);
+           + tail.slice(0, li) + (safe ? up : tail[li]) + tail.slice(li + 1);
     }
     // Only re-open a gap if what follows needs one. The dash may sit directly
     // against punctuation the sentence already carries (`… Zug —, schlägt`),

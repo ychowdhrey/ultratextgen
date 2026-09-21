@@ -14,7 +14,7 @@
   "canonical": "https://ultratextgen.com/nl/symbol/celsius-symbool/",
   "breadcrumb": "Celsius-symbool",
   "hero_h1": "Celsius-symbool",
-  "hero_tagline": "℃ is één Unicode-teken dat het gradenteken en een hoofdletter C in één glyph samenperst — handig om te plakken, al grijpen de meeste typografen nog altijd naar het platte °C. Klik op een teken om het direct te kopiëren.",
+  "hero_tagline": "℃ is één Unicode-teken dat het gradenteken en een hoofdletter C in één glyph samenperst, handig om te plakken, al grijpen de meeste typografen nog altijd naar het platte °C. Klik op een teken om het direct te kopiëren.",
   "intro": "Het graden-Celsius-teken (℃, Unicode U+2103) is een vooraf samengesteld teken in het Letterlike-Symbols-blok dat het gradenteken (°) en een hoofdletter C tot één glyph combineert. Het bestaat vooral zodat oudere Oost-Aziatische tekst — waarin een volledige temperatuuraanduiding vaak één tekencel innam — probleemloos door Unicode kon zonder van lengte te veranderen. Voor nieuwe tekst raden Unicode en de meeste stijlgidsen eigenlijk aan om het gradenteken gevolgd door een gewone C (°C) te schrijven in plaats van het teken van één teken ℃, maar de losse glyph blijft het snelste om te kopiëren als je alleen het teken nodig hebt.",
   "hreflang": [
     {
@@ -35,7 +35,7 @@
       "id": "celsius-teken",
       "label": "Celsius",
       "h2": "Graden-Celsius-teken",
-      "intro": "Het teken van één teken ℃ en de tweetekenige reeks °C die Unicode prefereert — kopieer wat je context nodig heeft.",
+      "intro": "Het teken van één teken ℃ en de tweetekenige reeks °C die Unicode prefereert. Kopieer wat je context nodig heeft.",
       "symbols": [
         {
           "char": "℃",

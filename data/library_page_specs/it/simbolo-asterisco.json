@@ -7,8 +7,8 @@
   "canonical": "https://ultratextgen.com/it/symbol/simbolo-asterisco/",
   "breadcrumb": "Simbolo Asterisco",
   "hero_h1": "Simbolo Asterisco (*)",
-  "hero_tagline": "L'asterisco (*) che usi per le note a piè di pagina, il carattere jolly * che in ricerca e nel codice corrisponde a qualsiasi cosa, e la stellina di censura in una parolaccia — più i suoi cugini tipografici come l'asterismo a triangolo ⁂. Tocca un simbolo per copiarlo all'istante.",
-  "intro": "L'asterisco (*, Unicode U+002A) è il segno a forma di stella che condivide con il tasto numero 8 della tastiera, e il suo nome viene direttamente dal greco antico asteriskos, \"piccola stella\" — un diminutivo di astēr, \"stella\". È uno dei più antichi segni editoriali della tradizione occidentale: lo studioso alessandrino Aristarco di Samotracia (circa 220–143 a.C.) usò l'asteriskos nelle sue edizioni di Omero per segnalare versi che riteneva duplicati altrove, e il teologo Origene lo collocò più tardi nella sua Hexapla per marcare il testo presente nell'ebraico ma assente nel greco. Oggi lo stesso glifo svolge tre compiti molto diversi: è il classico segno di nota a piè di pagina che rimanda il lettore a un'annotazione in fondo alla pagina, è il carattere jolly che corrisponde a qualsiasi cosa nella ricerca di file, negli schemi glob e nel SELECT * di SQL, ed è il sostituto predefinito di censura per le lettere che si preferisce oscurare, come in c***o. La tipografia mantiene attorno a esso una famiglia di parenti: l'ASTERISM ⁂ (U+2042) impila tre asterischi in un triangolo come interruzione di sezione, il HEAVY ASTERISK ✱ (U+2731) e l'EIGHT SPOKED ASTERISK ✳ (U+2733) sono forme più marcate per la visualizzazione, e l'ASTERISK OPERATOR ∗ (U+2217) è il glifo specifico della moltiplicazione in matematica. Nessuno di questi va confuso con le forme di stella decorative, la stella nera ★ (U+2605) o l'emoji stella gialla ⭐ (U+2B50), che appartengono a un registro diverso, puramente ornamentale.",
+  "hero_tagline": "L'asterisco (*) che usi per le note a piè di pagina, il carattere jolly * che in ricerca e nel codice corrisponde a qualsiasi cosa, e la stellina di censura in una parolaccia, più i suoi cugini tipografici come l'asterismo a triangolo ⁂. Tocca un simbolo per copiarlo all'istante.",
+  "intro": "L'asterisco (*, Unicode U+002A) è il segno a forma di stella che condivide con il tasto numero 8 della tastiera, e il suo nome viene direttamente dal greco antico asteriskos, \"piccola stella\", un diminutivo di astēr, \"stella\". È uno dei più antichi segni editoriali della tradizione occidentale: lo studioso alessandrino Aristarco di Samotracia (circa 220–143 a.C.) usò l'asteriskos nelle sue edizioni di Omero per segnalare versi che riteneva duplicati altrove, e il teologo Origene lo collocò più tardi nella sua Hexapla per marcare il testo presente nell'ebraico ma assente nel greco. Oggi lo stesso glifo svolge tre compiti molto diversi: è il classico segno di nota a piè di pagina che rimanda il lettore a un'annotazione in fondo alla pagina, è il carattere jolly che corrisponde a qualsiasi cosa nella ricerca di file, negli schemi glob e nel SELECT * di SQL, ed è il sostituto predefinito di censura per le lettere che si preferisce oscurare, come in c***o. La tipografia mantiene attorno a esso una famiglia di parenti: l'ASTERISM ⁂ (U+2042) impila tre asterischi in un triangolo come interruzione di sezione, il HEAVY ASTERISK ✱ (U+2731) e l'EIGHT SPOKED ASTERISK ✳ (U+2733) sono forme più marcate per la visualizzazione, e l'ASTERISK OPERATOR ∗ (U+2217) è il glifo specifico della moltiplicazione in matematica. Nessuno di questi va confuso con le forme di stella decorative, la stella nera ★ (U+2605) o l'emoji stella gialla ⭐ (U+2B50), che appartengono a un registro diverso, puramente ornamentale.",
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
@@ -63,7 +63,7 @@
       "id": "asterism-editorial",
       "label": "Asterismo e Segni Editoriali",
       "h2": "Asterismo e Segni di Interruzione di Sezione",
-      "intro": "Segni editoriali costruiti a partire dall'asterisco — l'asterismo a triangolo che interrompe le sezioni, più i suoi cugini impilati e abbassati.",
+      "intro": "Segni editoriali costruiti a partire dall'asterisco: l'asterismo a triangolo che interrompe le sezioni, più i suoi cugini impilati e abbassati.",
       "symbols": [
         {
           "char": "⁂",
@@ -122,7 +122,7 @@
     {
       "href": "/it/symbol/simbolo-stella/",
       "title": "Simbolo Stella (★)",
-      "desc": "La stella decorativa ★ e l'emoji stella gialla ⭐ — le cugine ornamentali con cui l'asterisco viene confuso."
+      "desc": "La stella decorativa ★ e l'emoji stella gialla ⭐, le cugine ornamentali con cui l'asterisco viene confuso."
     },
     {
       "href": "/it/symbol/simbolo-di-sezione/",

@@ -7,7 +7,7 @@
   "canonical": "https://ultratextgen.com/it/symbol/simbolo-trattino-basso/",
   "breadcrumb": "Trattino Basso",
   "hero_h1": "Trattino Basso (_)",
-  "hero_tagline": "Il trattino basso della tastiera (_), nato come trucco per sottolineare a macchina da scrivere e diventato lo snake_case: l'unico carattere che username, email e nomi di file accettano al posto di uno spazio — insieme ai parenti stretti: la variante a larghezza intera ＿, quella doppia ‗ e il soprasegno ‾. Tocca un simbolo per copiarlo all'istante.",
+  "hero_tagline": "Il trattino basso della tastiera (_), nato come trucco per sottolineare a macchina da scrivere e diventato lo snake_case: l'unico carattere che username, email e nomi di file accettano al posto di uno spazio, insieme ai parenti stretti: la variante a larghezza intera ＿, quella doppia ‗ e il soprasegno ‾. Tocca un simbolo per copiarlo all'istante.",
   "intro": "Il trattino basso, o low line (_, U+005F LOW LINE), è il tratto orizzontale che poggia sulla linea di base nel blocco Unicode Basic Latin, dove rientra nella categoria generale Connector Punctuation. È nato come puro espediente meccanico: su una macchina da scrivere si sottolineava una parola scrivendola, riportando il carrello all'inizio e ribattendo lo stesso tratto con il tasto dedicato al trattino basso — presente già su modelli come la Caligraph del 1881. Il carattere è entrato nell'ASCII nel 1967, occupando la posizione 95 (0x5F) lasciata libera dalla freccia sinistra (←) che sostituiva, dopo che l'EBCDIC di IBM lo aveva già introdotto nel 1964 come \"break character\". I programmatori lo hanno poi trasformato in un separatore di parole — lo stile con trattini bassi al posto degli spazi risale al linguaggio C di fine anni '60 e a The C Programming Language (1978), anche se il nome \"snake_case\" è stato coniato solo intorno al 2004 dalla comunità Ruby (le PEP 8 di Python lo chiamano ancora \"lower_case_with_underscores\"). Oggi è l'unico carattere ammesso al posto dello spazio in username, indirizzi email, nomi di file e slug degli URL, e in Markdown _un trattino singolo_ genera il corsivo mentre __quello doppio__ genera il grassetto. Viene spesso confuso con il trattino (-, U+002D) e con i suoi cugini più larghi, il trattino basso a larghezza intera ＿ (U+FF3F) e il doppio trattino basso ‗ (U+2017).",
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
@@ -35,7 +35,7 @@
       "id": "the-underscore",
       "label": "Il Trattino Basso",
       "h2": "Trattino Basso, Larghezza Intera e Doppio",
-      "intro": "Il semplice low line da tastiera e le sue due varianti di larghezza — la forma a larghezza intera usata nella composizione tipografica dell'Asia orientale e il trattino basso doppio, più spaziato. Pronti da incollare ovunque.",
+      "intro": "Il semplice low line da tastiera e le sue due varianti di larghezza, la forma a larghezza intera usata nella composizione tipografica dell'Asia orientale e il trattino basso doppio, più spaziato. Pronti da incollare ovunque.",
       "symbols": [
         {
           "char": "_",
