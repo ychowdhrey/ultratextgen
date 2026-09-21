@@ -150,7 +150,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Mogu li koristiti kićene fontove u prikazanom imenu na Discordu?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Da. Prikazana imena, nadimci na serveru, nazivi uloga, nazivi servera, nazivi kanala i tvoj „O meni” svi prihvataju Unicode znakove fonta i emojije. Napravi stilizirani tekst, pa gotove znakove zalijepi u polje — nema se šta uključivati. Daj prednost čitljivim stilovima poput podebljanog, kurziva ili kapitalki kako bi te i članovi na starijim uređajima i čitači ekrana i dalje mogli pročitati." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Da. Prikazana imena, nadimci na serveru, nazivi uloga, nazivi servera, nazivi kanala i tvoj „O meni” svi prihvataju Unicode znakove fonta i emojije. Napravi stilizirani tekst, pa gotove znakove zalijepi u polje. Nema se šta uključivati. Daj prednost čitljivim stilovima poput podebljanog, kurziva ili kapitalki kako bi te i članovi na starijim uređajima i čitači ekrana i dalje mogli pročitati." }
     },
     {
       "@type": "Question",
@@ -210,8 +210,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="key-takeaways">
   <h2>Ključne poruke</h2>
   <ul>
-    <li>Jedinstveno <strong>@korisničko ime</strong> prima samo mala slova a–z, 0–9, podvlaku i tačku. Zalijepiš li tu kićeni font, dobiješ „neispravno korisničko ime” — svaki put, po dizajnu.</li>
-    <li>Svako <strong>polje za prikaz</strong>: prikazano ime, nadimak na serveru, uloga, nazivi servera i kanala, „O meni” — prima Unicode fontove i emojije bez ikakvog trika.</li>
+    <li>Jedinstveno <strong>@korisničko ime</strong> prima samo mala slova a–z, 0–9, podvlaku i tačku. Zalijepiš li tu kićeni font, dobiješ „neispravno korisničko ime”, svaki put, po dizajnu.</li>
+    <li>Svako <strong>polje za prikaz</strong>: prikazano ime, nadimak na serveru, uloga, nazivi servera i kanala, „O meni”. Prima Unicode fontove i emojije bez ikakvog trika.</li>
     <li><strong>Markdown se prikazuje samo u porukama</strong> (uz osnove u tvom „O meni”). U svakom polju za ime zvjezdice samo stoje.</li>
     <li>Stilizirana imena imaju stvarnu cijenu: <kbd>Ctrl+K</kbd> ne može naći 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈 upisivanjem „aesthetic”, čitači ekrana se spotiču, a stariji Android telefoni mogu prikazati kvadratiće.</li>
   </ul>
@@ -308,7 +308,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Renderirano oblikovanje</span>
     <h2>Gdje Markdown radi: a gdje samo stoji</h2>
     <div class="editorial-block">
-      <p>Markdown je druga vrsta stiliziranja: simboli poput <code>**podebljano**</code> koje Discord pretvara kad <em>iscrtava</em> poruku. Matrica pokazuje da je njegov teritorij malen — <strong>poruke, uz osnovno oblikovanje u tvom „O meni”</strong>. Upišeš li <code>**Nova**</code> u polje nadimka, zvjezdice se spreme kao doslovni znakovi, jer se polja imena pohranjuju i prikazuju sirovo; nema prolaza kroz prikazivač koji bi ih pretvorio.</p>
+      <p>Markdown je druga vrsta stiliziranja: simboli poput <code>**podebljano**</code> koje Discord pretvara kad <em>iscrtava</em> poruku. Matrica pokazuje da je njegov teritorij malen, <strong>poruke, uz osnovno oblikovanje u tvom „O meni”</strong>. Upišeš li <code>**Nova**</code> u polje nadimka, zvjezdice se spreme kao doslovni znakovi, jer se polja imena pohranjuju i prikazuju sirovo; nema prolaza kroz prikazivač koji bi ih pretvorio.</p>
       <p>To je praktična podjela koju treba upamtiti: <strong>renderirani stil (Markdown) za ono što govoriš, zalijepljeni stil (Unicode) za ono kako te zovu.</strong> Potpuna mehanika: spojler oznake, blokovi koda, Nitro sloj i klasične greške tipa „zašto mi se zvjezdice ne podebljavaju”: nalazi se u našem pratećem vodiču, <a href="/bs/guide/oblikovanje-teksta-na-discordu/">Oblikovanje teksta na Discordu, dekodirano</a>.</p>
       <p>Jedan poseban slučaj vrijedi istaknuti: <strong>obojeni tekst</strong>. Postoji samo unutar poruka, samo preko ANSI blokova koda, s osam fiksnih boja i klimavom podrškom na mobitelu. Nijedno polje za ime nigdje na Discordu ne prima boju. Cijela tehnika obrađena je u vodiču o obojenom tekstu na Discordu.</p>
     </div>
@@ -326,7 +326,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="compare-grid">
       <div class="compare-card variant-muted">
         <span class="compare-badge">Pretraga pada</span>
-        <p><kbd>Ctrl+K</kbd>, pretraga članova i automatsko dovršavanje spominjanja uparuju doslovne znakove. Upisivanje „aesthetic” nikad neće naći <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong> — ne dijele nijedan znak.</p>
+        <p><kbd>Ctrl+K</kbd>, pretraga članova i automatsko dovršavanje spominjanja uparuju doslovne znakove. Upisivanje „aesthetic” nikad neće naći <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong>, ne dijele nijedan znak.</p>
       </div>
       <div class="compare-card variant-muted">
         <span class="compare-badge">Čitači ekrana se spotiču</span>
@@ -338,7 +338,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="editorial-block">
-      <p>Moje pravilo: <strong>stiliziraj polja koja ljudi gledaju, a ostavi običnim polja koja ljudi tipkaju.</strong> Prikazano ime i zaglavlja kategorija? Stiliziraj slobodno: podebljano, kapitalke i lagani simboli čitaju se dobro gotovo svugdje. Prometan tekstualni kanal koji članovi svakodnevno pretražuju, uloga koju moderatori stalno spominju, naziv servera koji želiš da bude pronalažljiv? Njih drži običnim ili gotovo običnim. I potpuno preskoči zalgo u imenima — mnogi veliki serveri ga automatski moderiraju, a to je stil koji najčešće razbije prikaz.</p>
+      <p>Moje pravilo: <strong>stiliziraj polja koja ljudi gledaju, a ostavi običnim polja koja ljudi tipkaju.</strong> Prikazano ime i zaglavlja kategorija? Stiliziraj slobodno: podebljano, kapitalke i lagani simboli čitaju se dobro gotovo svugdje. Prometan tekstualni kanal koji članovi svakodnevno pretražuju, uloga koju moderatori stalno spominju, naziv servera koji želiš da bude pronalažljiv? Njih drži običnim ili gotovo običnim. I potpuno preskoči zalgo u imenima. Mnogi veliki serveri ga automatski moderiraju, a to je stil koji najčešće razbije prikaz.</p>
     </div>
   </section>
 
@@ -347,7 +347,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA Card -->
   <div class="cta-card">
     <h3>Stiliziraj ime spremno za Discord →</h3>
-    <p>Napravi Unicode ime sigurno na svim uređajima, pa ga zalijepi u prikazano ime, u nadimak ili u listu kanala — u svako polje koje matrica označava otvorenim.</p>
+    <p>Napravi Unicode ime sigurno na svim uređajima, pa ga zalijepi u prikazano ime, u nadimak ili u listu kanala, u svako polje koje matrica označava otvorenim.</p>
     <a href="/bs/fontovi-za-discord/" class="cta-btn">Otvori alat za fontove za Discord →</a>
   </div>
 
@@ -385,7 +385,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Mogu li koristiti kićene fontove u prikazanom imenu na Discordu?</button>
     <div class="faq-answer">
-      <p>Da. Prikazana imena, nadimci na serveru, nazivi uloga, nazivi servera, nazivi kanala i tvoj „O meni” svi prihvataju Unicode znakove fonta i emojije. Napravi stilizirani tekst, pa gotove znakove zalijepi u polje — nema se šta uključivati. Daj prednost čitljivim stilovima poput podebljanog, kurziva ili kapitalki kako bi te i članovi na starijim uređajima i čitači ekrana i dalje mogli pročitati.</p>
+      <p>Da. Prikazana imena, nadimci na serveru, nazivi uloga, nazivi servera, nazivi kanala i tvoj „O meni” svi prihvataju Unicode znakove fonta i emojije. Napravi stilizirani tekst, pa gotove znakove zalijepi u polje. Nema se šta uključivati. Daj prednost čitljivim stilovima poput podebljanog, kurziva ili kapitalki kako bi te i članovi na starijim uređajima i čitači ekrana i dalje mogli pročitati.</p>
     </div>
   </div>
   <div class="faq-item">

@@ -106,7 +106,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "datePublished": "2026-07-09T00:00:00+00:00",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Markdown only renders inside message and post bodies. Channel names, category names, your username and display name, server nicknames, your custom status, and role names are all plain-text fields — Discord shows the literal asterisks there instead of bolding. To get a bold look in those places you must paste Unicode bold characters, which are already bold as characters and need no markdown.",
+        "text": "Markdown only renders inside message and post bodies. Channel names, category names, your username and display name, server nicknames, your custom status, and role names are all plain-text fields: Discord shows the literal asterisks there instead of bolding. To get a bold look in those places you must paste Unicode bold characters, which are already bold as characters and need no markdown.",
         "author": {
           "@id": "https://ultratextgen.com/#organization"
         },
@@ -122,7 +122,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "datePublished": "2026-07-09T00:00:00+00:00",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Unicode bold uses real bold characters from the Mathematical Alphanumeric Symbols block (for example 𝗕𝗼𝗹𝗱), so the text is bold no matter where it is pasted — including plain-text fields. Markdown bold uses ordinary letters plus double-asterisk syntax that Discord styles at display time, and only inside messages. Generate Unicode bold with a bold text generator, then copy and paste it.",
+        "text": "Unicode bold uses real bold characters from the Mathematical Alphanumeric Symbols block (for example 𝗕𝗼𝗹𝗱), so the text is bold no matter where it is pasted, including plain-text fields. Markdown bold uses ordinary letters plus double-asterisk syntax that Discord styles at display time, and only inside messages. Generate Unicode bold with a bold text generator, then copy and paste it.",
         "author": {
           "@id": "https://ultratextgen.com/#organization"
         },
@@ -209,7 +209,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="editorial-section">
   <span class="article-section-label">Short answer</span>
   <div class="editorial-block">
-    <p>To bold a <strong>message</strong>, wrap the text in <strong>double asterisks</strong>: type <code>**bold**</code> and it sends as <strong>bold</strong>. This is Discord's built-in markdown: free, no Nitro, works on desktop, web, and mobile. But markdown only styles the inside of messages. For a <strong>channel name, display name, nickname, custom status, or role name</strong>, Discord ignores the asterisks and shows them literally, so you paste <strong>Unicode bold</strong> characters (like 𝗕𝗼𝗹𝗱) instead — they're bold as characters, so they stay bold anywhere.</p>
+    <p>To bold a <strong>message</strong>, wrap the text in <strong>double asterisks</strong>: type <code>**bold**</code> and it sends as <strong>bold</strong>. This is Discord's built-in markdown: free, no Nitro, works on desktop, web, and mobile. But markdown only styles the inside of messages. For a <strong>channel name, display name, nickname, custom status, or role name</strong>, Discord ignores the asterisks and shows them literally, so you paste <strong>Unicode bold</strong> characters (like 𝗕𝗼𝗹𝗱) instead: they're bold as characters, so they stay bold anywhere.</p>
   </div>
   <div class="block-example">
     <strong>In one line:</strong> messages → <code>**double asterisks**</code> · names, channels, status → paste Unicode bold.
@@ -222,7 +222,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <span class="article-section-label">In messages</span>
   <h2>Markdown bold with double asterisks</h2>
   <div class="editorial-block">
-    <p>Discord uses a lightweight version of Markdown in every message box. Bold is two asterisks on each side of the text — nothing else to install or enable.</p>
+    <p>Discord uses a lightweight version of Markdown in every message box. Bold is two asterisks on each side of the text, nothing else to install or enable.</p>
     <ul>
       <li><code>**bold text**</code> → <strong>bold text</strong></li>
       <li><code>*italic*</code> → <em>italic</em> (one asterisk)</li>
@@ -230,7 +230,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <li><code>__underline__</code> → underlined (two underscores)</li>
       <li><code>__**bold underline**__</code> → bold and underlined together</li>
     </ul>
-    <p>The asterisks vanish once the message posts; readers only see the styled result. This works identically for anyone who sees the message, on any platform, and it does not change the underlying letters — Discord just <em>renders</em> them bold. That's why it's the right tool for message bodies, replies, and forum posts, but useless where there's no markdown renderer.</p>
+    <p>The asterisks vanish once the message posts; readers only see the styled result. This works identically for anyone who sees the message, on any platform, and it does not change the underlying letters: Discord just <em>renders</em> them bold. That's why it's the right tool for message bodies, replies, and forum posts, but useless where there's no markdown renderer.</p>
     <p>Two quick gotchas: to show a literal asterisk without bolding, escape it with a backslash (<code>\*not bold\*</code>). And bold works inside code blocks? No: text between backticks is shown verbatim, so <code>`**this**`</code> stays as plain asterisks.</p>
     <p>One place you no longer have to type the asterisks yourself: on <strong>11 August 2026</strong> Discord added a visual formatting toolbar to the profile bio editor on desktop, so you can select text and click bold instead of remembering the syntax. It produces the same markdown, and it is only the bio field on desktop: message boxes, and every mobile field, still expect you to type the asterisks.</p>
   </div>
@@ -251,7 +251,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <li>Role names</li>
       <li>Server name and channel topics (mostly)</li>
     </ul>
-    <p>To get a bold look in any of these, use <strong>Unicode bold</strong>: characters from the Mathematical Alphanumeric Symbols block that are already bold in their own right — <strong>𝗕𝗼𝗹𝗱 𝗡𝗮𝗺𝗲</strong>. Because the boldness lives in the character, not in markup, it survives being pasted into a plain-text field. Generate it, copy it, and paste it as the name or status. No Nitro required: it's just text.</p>
+    <p>To get a bold look in any of these, use <strong>Unicode bold</strong>: characters from the Mathematical Alphanumeric Symbols block that are already bold in their own right: <strong>𝗕𝗼𝗹𝗱 𝗡𝗮𝗺𝗲</strong>. Because the boldness lives in the character, not in markup, it survives being pasted into a plain-text field. Generate it, copy it, and paste it as the name or status. No Nitro required: it's just text.</p>
   </div>
 </section>
 
@@ -265,7 +265,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <li><strong>What it is</strong>: Markdown: ordinary letters plus <code>**</code> syntax Discord styles at display time. Unicode: genuinely different bold characters.</li>
       <li><strong>Where it works</strong>: Markdown: message and post bodies only. Unicode: anywhere you can type or paste, including all the plain-text name and status fields.</li>
       <li><strong>How you make it</strong>: Markdown: type the asterisks yourself. Unicode: paste from a generator (you can't type these on a normal keyboard).</li>
-      <li><strong>Readability &amp; accessibility</strong>: Markdown wins: it's real text, so search, screen readers, and copy-paste all treat it as normal words. Unicode bold is a run of math symbols, so screen readers may read it oddly and it isn't searchable as plain text — use it for short accents like a name, not whole paragraphs.</li>
+      <li><strong>Readability &amp; accessibility</strong>: Markdown wins: it's real text, so search, screen readers, and copy-paste all treat it as normal words. Unicode bold is a run of math symbols, so screen readers may read it oddly and it isn't searchable as plain text. Use it for short accents like a name, not whole paragraphs.</li>
       <li><strong>Nitro</strong>: neither one needs it.</li>
     </ul>
     <p>Rule of thumb: if you're writing a message, use markdown. If you're naming a channel, styling your display name, or setting a status, paste Unicode bold. Many people use both: a markdown-bold headline inside an announcement that lives in a Unicode-bold channel.</p>
@@ -296,11 +296,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </details>
   <details class="faq-item">
     <summary class="faq-question">Why won't bold markdown work in a Discord channel name or username?</summary>
-    <p class="faq-answer">Markdown only renders inside message and post bodies. Channel names, category names, your username and display name, server nicknames, your custom status, and role names are all plain-text fields — Discord shows the literal asterisks there instead of bolding. To get a bold look in those places you must paste Unicode bold characters, which are already bold as characters and need no markdown.</p>
+    <p class="faq-answer">Markdown only renders inside message and post bodies. Channel names, category names, your username and display name, server nicknames, your custom status, and role names are all plain-text fields: Discord shows the literal asterisks there instead of bolding. To get a bold look in those places you must paste Unicode bold characters, which are already bold as characters and need no markdown.</p>
   </details>
   <details class="faq-item">
     <summary class="faq-question">What is Unicode bold and how is it different from markdown bold?</summary>
-    <p class="faq-answer">Unicode bold uses real bold characters from the Mathematical Alphanumeric Symbols block (for example 𝗕𝗼𝗹𝗱), so the text is bold no matter where it is pasted — including plain-text fields. Markdown bold uses ordinary letters plus double-asterisk syntax that Discord styles at display time, and only inside messages. Generate Unicode bold with a bold text generator, then copy and paste it.</p>
+    <p class="faq-answer">Unicode bold uses real bold characters from the Mathematical Alphanumeric Symbols block (for example 𝗕𝗼𝗹𝗱), so the text is bold no matter where it is pasted, including plain-text fields. Markdown bold uses ordinary letters plus double-asterisk syntax that Discord styles at display time, and only inside messages. Generate Unicode bold with a bold text generator, then copy and paste it.</p>
   </details>
   <details class="faq-item">
     <summary class="faq-question">Do I need Nitro to make bold text in Discord?</summary>
