@@ -149,12 +149,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Kan jag använda snygga typsnitt i mitt Discord-visningsnamn?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Ja. Visningsnamn, serversmeknamn, rollnamn, servernamn, kanalnamn och din «Om mig» accepterar alla Unicode-typsnittstecken och emoji. Skapa den stylade texten och klistra sedan in de färdiga tecknen i fältet — det finns inget att aktivera. Föredra läsbara stilar som fet, kursiv eller kapitäler så att medlemmar på äldre enheter och skärmläsare fortfarande kan läsa dig." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Ja. Visningsnamn, serversmeknamn, rollnamn, servernamn, kanalnamn och din «Om mig» accepterar alla Unicode-typsnittstecken och emoji. Skapa den stylade texten och klistra sedan in de färdiga tecknen i fältet: det finns inget att aktivera. Föredra läsbara stilar som fet, kursiv eller kapitäler så att medlemmar på äldre enheter och skärmläsare fortfarande kan läsa dig." }
     },
     {
       "@type": "Question",
       "name": "Varför tappade mitt kanalnamn sina versaler?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Textkanalnamn normaliseras: Discord gör vanliga A–Z till gemener och byter mellanslag mot bindestreck, så «General Chat» blir «general-chat». Unicode-typsnittstecken är inte vanliga bokstäver, så de passerar oförändrade — 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 behåller sina versaler eftersom de är matematiskt feta tecken, inte A–Z. Röstkanal- och kategorinamn hoppar över denna normalisering och behåller mellanslag och versaler." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Textkanalnamn normaliseras: Discord gör vanliga A–Z till gemener och byter mellanslag mot bindestreck, så «General Chat» blir «general-chat». Unicode-typsnittstecken är inte vanliga bokstäver, så de passerar oförändrade: 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 behåller sina versaler eftersom de är matematiskt feta tecken, inte A–Z. Röstkanal- och kategorinamn hoppar över denna normalisering och behåller mellanslag och versaler." }
     },
     {
       "@type": "Question",
@@ -209,7 +209,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="key-takeaways">
   <h2>Det viktigaste</h2>
   <ul>
-    <li>Det unika <strong>@användarnamnet</strong> accepterar bara små a–z, 0–9, understreck och punkt. Klistra in ett snyggt typsnitt där och du får «ogiltigt användarnamn» — varje gång, som avsett.</li>
+    <li>Det unika <strong>@användarnamnet</strong> accepterar bara små a–z, 0–9, understreck och punkt. Klistra in ett snyggt typsnitt där och du får «ogiltigt användarnamn», varje gång, som avsett.</li>
     <li>Varje <strong>presentationsfält</strong> (visningsnamn, serversmeknamn, roll, server- och kanalnamn, «Om mig») accepterar Unicode-typsnitt och emoji utan några knep.</li>
     <li><strong>Markdown renderas bara i meddelanden</strong> (plus grunderna i din «Om mig»). I varje namnfält blir asteriskerna bara stående.</li>
     <li>Stylade namn har en verklig kostnad: <kbd>Ctrl+K</kbd> hittar inte 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈 när du skriver «aesthetic», skärmläsare trasslar, och äldre Android kan visa rutor.</li>
@@ -281,7 +281,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="editorial-block">
-      <p>Läs kolumnerna uppifrån och ner så framträder logiken: <strong>exakt en rad refuserar Unicode, och exakt en rad kör fullständig Markdown.</strong> Allt däremellan är den öppna mitten — inklistrad styling välkommen, renderad styling ignorerad. Det är hela systemet.</p>
+      <p>Läs kolumnerna uppifrån och ner så framträder logiken: <strong>exakt en rad refuserar Unicode, och exakt en rad kör fullständig Markdown.</strong> Allt däremellan är den öppna mitten: inklistrad styling välkommen, renderad styling ignorerad. Det är hela systemet.</p>
     </div>
   </section>
 
@@ -307,7 +307,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Renderad styling</span>
     <h2>Var Markdown fungerar: och var det bara ligger kvar</h2>
     <div class="editorial-block">
-      <p>Markdown är den andra sortens styling: symboler som <code>**fet**</code> som Discord konverterar när det <em>renderar</em> ett meddelande. Kartan visar att dess territorium är pyttelitet — <strong>meddelanden, plus grundläggande formatering i din «Om mig»</strong>. Skriv <code>**Nova**</code> i ett smeknamnsfält och asteriskerna sparas som bokstavliga tecken, eftersom namnfält lagras och visas råa; det finns ingen renderingspass som konverterar dem.</p>
+      <p>Markdown är den andra sortens styling: symboler som <code>**fet**</code> som Discord konverterar när det <em>renderar</em> ett meddelande. Kartan visar att dess territorium är pyttelitet: <strong>meddelanden, plus grundläggande formatering i din «Om mig»</strong>. Skriv <code>**Nova**</code> i ett smeknamnsfält och asteriskerna sparas som bokstavliga tecken, eftersom namnfält lagras och visas råa; det finns ingen renderingspass som konverterar dem.</p>
       <p>Det är den praktiska uppdelningen att komma ihåg: <strong>renderad styling (Markdown) för det du säger, inklistrad styling (Unicode) för det du kallas.</strong> Hela mekaniken (spoiler-taggar, kodblock, Nitro-lagret och de klassiska «varför blir inte mina asterisker feta»-misstagen) finns i vår systerguide, <a href="/sv/guide/discord-textformatering-forklarad/">Discord-textformatering, avkodad</a>.</p>
       <p>Ett specialfall värt att flagga: <strong>färgad text</strong>. Den finns bara inuti meddelanden, bara via ANSI-kodblock, med åtta fasta färger och skakigt stöd på mobil. Inget namnfält någonstans i Discord accepterar färg.</p>
     </div>
@@ -325,7 +325,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="compare-grid">
       <div class="compare-card variant-muted">
         <span class="compare-badge">Sökningen slutar funka</span>
-        <p><kbd>Ctrl+K</kbd>, medlemssökning och autoslutförande för omnämnanden matchar bokstavliga tecken. Att skriva «aesthetic» hittar aldrig <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong> — de har noll tecken gemensamt.</p>
+        <p><kbd>Ctrl+K</kbd>, medlemssökning och autoslutförande för omnämnanden matchar bokstavliga tecken. Att skriva «aesthetic» hittar aldrig <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong>: de har noll tecken gemensamt.</p>
       </div>
       <div class="compare-card variant-muted">
         <span class="compare-badge">Skärmläsare trasslar</span>
@@ -346,7 +346,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA Card -->
   <div class="cta-card">
     <h3>Styla ett Discord-redo namn →</h3>
-    <p>Skapa ett enhetssäkert Unicode-namn och klistra sedan in det i ditt visningsnamn, smeknamn eller kanallista — varje fält som kartan markerar som öppet.</p>
+    <p>Skapa ett enhetssäkert Unicode-namn och klistra sedan in det i ditt visningsnamn, smeknamn eller kanallista: varje fält som kartan markerar som öppet.</p>
     <a href="/sv/" class="cta-btn">Öppna typsnittsgeneratorn →</a>
   </div>
 
@@ -382,13 +382,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Kan jag använda snygga typsnitt i mitt Discord-visningsnamn?</button>
     <div class="faq-answer">
-      <p>Ja. Visningsnamn, serversmeknamn, rollnamn, servernamn, kanalnamn och din «Om mig» accepterar alla Unicode-typsnittstecken och emoji. Skapa den stylade texten och klistra sedan in de färdiga tecknen i fältet — det finns inget att aktivera. Föredra läsbara stilar som fet, kursiv eller kapitäler så att medlemmar på äldre enheter och skärmläsare fortfarande kan läsa dig.</p>
+      <p>Ja. Visningsnamn, serversmeknamn, rollnamn, servernamn, kanalnamn och din «Om mig» accepterar alla Unicode-typsnittstecken och emoji. Skapa den stylade texten och klistra sedan in de färdiga tecknen i fältet: det finns inget att aktivera. Föredra läsbara stilar som fet, kursiv eller kapitäler så att medlemmar på äldre enheter och skärmläsare fortfarande kan läsa dig.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Varför tappade mitt kanalnamn sina versaler?</button>
     <div class="faq-answer">
-      <p>Textkanalnamn normaliseras: Discord gör vanliga A–Z till gemener och byter mellanslag mot bindestreck, så «General Chat» blir «general-chat». Unicode-typsnittstecken är inte vanliga bokstäver, så de passerar oförändrade — 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 behåller sina versaler eftersom de är matematiskt feta tecken, inte A–Z. Röstkanal- och kategorinamn hoppar över denna normalisering och behåller mellanslag och versaler.</p>
+      <p>Textkanalnamn normaliseras: Discord gör vanliga A–Z till gemener och byter mellanslag mot bindestreck, så «General Chat» blir «general-chat». Unicode-typsnittstecken är inte vanliga bokstäver, så de passerar oförändrade: 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 behåller sina versaler eftersom de är matematiskt feta tecken, inte A–Z. Röstkanal- och kategorinamn hoppar över denna normalisering och behåller mellanslag och versaler.</p>
     </div>
   </div>
   <div class="faq-item">
@@ -412,7 +412,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a class="related-card" href="/sv/guide/discord-textformatering-forklarad/">
       <span class="related-tag">🎮</span>
       <span class="related-title">Discord-textformatering, avkodad</span>
-      <span class="related-desc">Markdown, Unicode och Nitro — hela mekaniken.</span>
+      <span class="related-desc">Markdown, Unicode och Nitro, hela mekaniken.</span>
     </a>
     <a class="related-card" href="/sv/guide/discord-namn-utan-risk/">
       <span class="related-tag">🛡️</span>

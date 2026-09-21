@@ -159,7 +159,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Varför dyker asteriskerna upp i stället för fet text?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Två vanliga orsaker: det finns ett mellanslag mellan asteriskerna och ordet (`** text **` blir inte fett — `**text**` blir det), eller så är texten inuti ett kodblock (backticks stänger av Markdown). Kom också ihåg att Markdown bara fungerar i meddelanden, aldrig i namn." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Två vanliga orsaker: det finns ett mellanslag mellan asteriskerna och ordet (`** text **` blir inte fett, `**text**` blir det), eller så är texten inuti ett kodblock (backticks stänger av Markdown). Kom också ihåg att Markdown bara fungerar i meddelanden, aldrig i namn." }
     }
   ]
 }
@@ -186,7 +186,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="hero">
   <div class="hero-inner" style="max-width:800px;">
     <h1 class="hero-headline">Discord-textformatering, avkodad</h1>
-    <p class="hero-tagline">Du har inte ett «typsnittsproblem» — du har ett problem med tre system. Discord använder Markdown, Unicode-tecken och Nitro-stilar för helt olika jobb. När du väl vet vilket fält som använder vilket besvarar varje «varför funkar inte det här?» sig självt.</p>
+    <p class="hero-tagline">Du har inte ett «typsnittsproblem». Du har ett problem med tre system. Discord använder Markdown, Unicode-tecken och Nitro-stilar för helt olika jobb. När du väl vet vilket fält som använder vilket besvarar varje «varför funkar inte det här?» sig självt.</p>
     <div class="guide-meta">
       <span class="guide-pill is-accent">Plattformskunskap</span>
       <span class="guide-pill">⏱ 8 min läsning</span>
@@ -205,7 +205,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2>Det viktigaste</h2>
   <ul>
     <li>Discord har tre orelaterade textsystem: <strong>Markdown</strong> (meddelanden), <strong>Unicode-«typsnitt»</strong> (namn överallt) och <strong>Nitro</strong> (betalda stilar för visningsnamn).</li>
-    <li>Markdown som <code>**fet**</code> renderas bara i meddelanden — det fungerar aldrig i användarnamn, smeknamn eller server-/kanalnamn.</li>
+    <li>Markdown som <code>**fet**</code> renderas bara i meddelanden: det fungerar aldrig i användarnamn, smeknamn eller server-/kanalnamn.</li>
     <li>Unicode-«typsnitt» fungerar i varje namnfält men kan visas som rutor på vissa enheter och sätta krokben för skärmläsare.</li>
     <li>Nitro lägger till riktig färg och effekter på ditt visningsnamn, men inne på en server vinner din rollfärg och bara typsnittet syns.</li>
   </ul>
@@ -250,7 +250,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><code>||spoiler||</code> → dold tills man klickar</li>
         <li><code>&gt; citat</code> och <code>`kod`</code></li>
       </ul>
-      <p>Det här är det <em>rätta</em> sättet att formatera ett meddelande — det förblir riktig text, så det är sökbart och tillgängligt. Haken är de två misstag som gör att det «inte funkar»:</p>
+      <p>Det här är det <em>rätta</em> sättet att formatera ett meddelande: det förblir riktig text, så det är sökbart och tillgängligt. Haken är de två misstag som gör att det «inte funkar»:</p>
       <div class="compare-grid">
         <div class="compare-card variant-muted">
           <span class="compare-badge">Ingen fetstil</span>
@@ -277,7 +277,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="mood-explainer">
         <div class="mood-example"><strong>@användarnamnet refuserar det.</strong> Ditt unika handtag (det med små bokstäver efter @) tillåter bara a–z, 0–9, <code>_</code> och <code>.</code> – för omnämnanden, sökning och routing. Klistra in ett snyggt typsnitt där och Discord vägrar spara det. Styla ditt <em>visningsnamn</em> i stället.</div>
       </div>
-      <p>Två ärliga förbehåll: Unicode-namn kan visas som rutor på vissa enheter (särskilt äldre Android), och de är svåra för skärmläsare. Välj en säker stil (fet, kursiv, kapitäler) och håll den smakfull — många stora servrar modererar svårlästa namn eller zalgo-namn.</p>
+      <p>Två ärliga förbehåll: Unicode-namn kan visas som rutor på vissa enheter (särskilt äldre Android), och de är svåra för skärmläsare. Välj en säker stil (fet, kursiv, kapitäler) och håll den smakfull. Många stora servrar modererar svårlästa namn eller zalgo-namn.</p>
     </div>
   </section>
 
@@ -292,8 +292,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="mood-explainer">
         <div class="mood-example">Inne på en server åsidosätter din <strong>rollfärg</strong> Nitro-färgen, och effekterna tas bort, så andra medlemmar ser oftast bara <em>typsnittet</em>, inte färgen eller animationen. Hela effekten syns främst på din profil, inte i medlemslistan eller chatten.</div>
       </div>
-      <p>Gratiskonton kan öppna menyn och <strong>förhandsgranska</strong> en stil, men att spara en kräver Nitro — den där «förhandsvisa sedan betalvägg» är precis därför så många nu frågar om Nitro krävs för typsnitt över huvud taget. Det är en rimlig fråga om just den här funktionen; det är ingen förändring av Unicode-styling, som förblir gratis oavsett.</p>
-      <p>Så Nitro är värt det om du vill ha ett polerat profilkort och ett distinkt visningstypsnitt överallt. Det är <em>inte</em> sättet att få färgad text i en konversation — det är ett annat verktyg (nästa avsnitt).</p>
+      <p>Gratiskonton kan öppna menyn och <strong>förhandsgranska</strong> en stil, men att spara en kräver Nitro. Den där «förhandsvisa sedan betalvägg» är precis därför så många nu frågar om Nitro krävs för typsnitt över huvud taget. Det är en rimlig fråga om just den här funktionen; det är ingen förändring av Unicode-styling, som förblir gratis oavsett.</p>
+      <p>Så Nitro är värt det om du vill ha ett polerat profilkort och ett distinkt visningstypsnitt överallt. Det är <em>inte</em> sättet att få färgad text i en konversation. Det är ett annat verktyg (nästa avsnitt).</p>
     </div>
   </section>
 
@@ -340,7 +340,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA Card -->
   <div class="cta-card">
     <h3>Skapa ett Discord-redo namn</h3>
-    <p>Skapa en enhetssäker Unicode-stil, kopiera den och klistra in i ditt visningsnamn eller serversmeknamn — inget Nitro krävs.</p>
+    <p>Skapa en enhetssäker Unicode-stil, kopiera den och klistra in i ditt visningsnamn eller serversmeknamn. Inget Nitro krävs.</p>
     <a href="/sv/" class="cta-btn">Öppna typsnittsgeneratorn →</a>
   </div>
 
@@ -388,7 +388,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Varför dyker asteriskerna upp i stället för fet text?</button>
     <div class="faq-answer">
-      <p>Två vanliga orsaker: det finns ett mellanslag mellan asteriskerna och ordet (<code>** text **</code> blir inte fett — <code>**text**</code> blir det), eller så är texten inuti ett kodblock (backticks stänger av Markdown). Kom också ihåg att Markdown bara fungerar i meddelanden, aldrig i namn.</p>
+      <p>Två vanliga orsaker: det finns ett mellanslag mellan asteriskerna och ordet (<code>** text **</code> blir inte fett, <code>**text**</code> blir det), eller så är texten inuti ett kodblock (backticks stänger av Markdown). Kom också ihåg att Markdown bara fungerar i meddelanden, aldrig i namn.</p>
     </div>
   </div>
 </section>
