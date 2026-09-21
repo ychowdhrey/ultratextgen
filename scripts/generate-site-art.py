@@ -1271,6 +1271,74 @@ def m_word_grid(p, accent=PURPLE):
     return "\n    " + "\n    ".join(out)
 
 
+def m_crossword(p, accent=PURPLE):
+    """An interlocking crossword corner with numbered squares — the crossword maker.
+
+    Two answers crossing on a shared letter is the one thing that distinguishes a
+    crossword from the word-search grid above: that grid is full and this one is
+    mostly empty paper, so the motif draws only the squares an answer occupies and
+    leaves the rest out. Plain Latin capitals and digits, so no spanned()/
+    _resolve_family() wrapper is needed (Liberation covers them).
+    """
+    across = "PRINT"
+    down = "WORD"
+    cross_col, cross_row = 1, 2   # the shared R
+    x0, y0, step = 70, 108, 46
+    out = []
+    for i, ch in enumerate(across):
+        on = i == cross_col
+        out.append(
+            f'<rect x="{x0 + i * step}" y="{y0 + cross_row * step}" width="{step - 4}" '
+            f'height="{step - 4}" rx="5" fill="#fff" stroke="{PURPLE}" stroke-width="4"/>'
+        )
+        out.append(
+            f'<text x="{x0 + i * step + (step - 4) / 2}" y="{y0 + cross_row * step + 33}" '
+            f'font-family="{SANS}" font-size="28" font-weight="{"800" if on else "600"}" '
+            f'fill="{"url(#g" + p + ")" if on else SUB}" text-anchor="middle">{ch}</text>'
+        )
+    for i, ch in enumerate(down):
+        if i == cross_row:
+            continue
+        out.append(
+            f'<rect x="{x0 + cross_col * step}" y="{y0 + i * step}" width="{step - 4}" '
+            f'height="{step - 4}" rx="5" fill="#fff" stroke="{PURPLE}" stroke-width="4"/>'
+        )
+        out.append(
+            f'<text x="{x0 + cross_col * step + (step - 4) / 2}" y="{y0 + i * step + 33}" '
+            f'font-family="{SANS}" font-size="28" font-weight="600" fill="{SUB}" '
+            f'text-anchor="middle">{ch}</text>'
+        )
+    # Clue numbers, small, top-left of each starting square, as a real crossword sets them.
+    for num, (cx, cy) in ((1, (cross_col, 0)), (2, (0, cross_row))):
+        out.append(
+            f'<text x="{x0 + cx * step + 6}" y="{y0 + cy * step + 15}" font-family="{SANS}" '
+            f'font-size="14" font-weight="700" fill="{PURPLE}">{num}</text>'
+        )
+    return "\n    " + "\n    ".join(out)
+
+
+def m_scramble(p, accent=PURPLE):
+    """Loose letter tiles above a ruled answer line — the word scramble maker.
+
+    The tiles are deliberately out of order and slightly rotated: a scramble is
+    letters you rearrange, and a tidy row of them reads as a word. The ruled line
+    underneath is what says "write the answer here" rather than "read this".
+    """
+    tiles = [("D", -8), ("R", 5), ("O", -4), ("W", 7)]
+    x0, y, step = 76, 120, 56
+    out = []
+    for i, (ch, rot) in enumerate(tiles):
+        cx = x0 + i * step
+        out.append(
+            f'<g transform="rotate({rot} {cx + 22} {y + 24})">'
+            f'<rect x="{cx}" y="{y}" width="44" height="48" rx="8" fill="url(#g{p})"/>'
+            f'<text x="{cx + 22}" y="{y + 34}" font-family="{SANS}" font-size="28" '
+            f'font-weight="800" fill="#fff" text-anchor="middle">{ch}</text></g>'
+        )
+    out.append(f'<line x1="70" y1="238" x2="290" y2="238" stroke="{SUB}" stroke-width="6" stroke-linecap="round"/>')
+    return "\n    " + "\n    ".join(out)
+
+
 def m_puzzle(p, accent=PURPLE):
     """Two interlocking jigsaw pieces — name-puzzle maker."""
     return f"""
@@ -2993,6 +3061,8 @@ PAGES.update({
 "printables": ("Printable Letters & Alphabets", "Bubble letters, cursive sheets, tracing pages and more", m_grid, K_PRINT),
 "printables-name-puzzle-maker": ("Name Puzzle Maker", "Any name becomes a cut-apart letter jigsaw puzzle", m_puzzle, K_PRINT),
 "printables-word-search-maker": ("Word Search Maker", "One spelling list, a different grid for every child", m_word_grid, K_PRINT),
+"printables-crossword-maker": ("Crossword Maker", "Your own words and clues, a different layout per child", m_crossword, K_PRINT),
+"printables-word-scramble-maker": ("Word Scramble Maker", "One spelling list, a different scramble per child", m_scramble, K_PRINT),
 "printables-letter-tracing": ("Letter Tracing Worksheets", "Every letter A to Z and number 0 to 9, at seven difficulty levels", P(m_trace_rows, sample="Aa"), K_PRINT),
 "printables-name-tracing": ("Name Tracing Worksheets", "Model row, faded trace rows and blank practice lines", P(m_trace_rows, sample="Emma"), K_PRINT),
 "printables-sight-word-tracing": ("Sight Word Tracing Worksheets", "Dolch sight words to trace at adjustable difficulty", P(m_trace_rows, sample="said"), K_PRINT),

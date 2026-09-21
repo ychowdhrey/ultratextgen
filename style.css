@@ -7432,7 +7432,16 @@ body.dark-mode .pt-design-preview { background: #1c2030; }
   max-height: 66vh;
   overflow: auto;
 }
-.pt-paper .pt-gen-sheet { gap: 0.35rem; }
+/* The sheet is as wide as the paper, not as wide as the longest word.
+
+   .pt-paper centres its child, so the sheet was shrink-to-fit: with "Emma" in
+   it the preview was 229px inside a 444px card, every row exactly as wide as
+   its own viewBox, and nothing letterboxed. That made the preview disagree
+   with the print in composition and not only in scale — the printed rules run
+   the full printable width with the word at the left of them, and the preview
+   drew a short line that the word filled. Stretching the sheet makes the rows
+   the paper's width, which is what the row was always measured against. */
+.pt-paper .pt-gen-sheet { gap: 0.35rem; align-self: stretch; }
 .pt-paper .pt-gen-row .pt-trace-svg { max-height: 92px; }
 .pt-preview-actions { display: flex; gap: 0.6rem; margin-top: 0.9rem; }
 .pt-preview-actions .bubble-btn { padding: 0.72rem 1rem; font-size: 0.95rem; }
@@ -7747,6 +7756,123 @@ body.dark-mode .pt-banner-index { color: var(--text-secondary); }
 .pt-search-meta { margin: 0.5rem 0 0; font-size: 0.85rem; color: var(--text-muted); }
 .pt-search-print-holder { text-align: center; }
 .pt-search-print-holder .pt-search-sheet { max-width: 900px; margin: 0 auto; }
+
+/* Crossword and word scramble sheets.
+   Same ink-on-paper palette and the same literal colours as the word search
+   above, and for the same reason: these are a printed page, not the site's
+   light/dark theme, so a theme token would invert the sheet in dark mode.
+
+   The crossword grid is column-driven like the search grid but is NOT square:
+   a crossword trims to its own bounding box, so the cells carry the square
+   aspect and the grid takes whatever height that gives it. */
+.pt-cw-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--pt-cw-cols, 12), 1fr);
+  width: 100%;
+  max-width: 34rem;
+  gap: 0;
+  padding: 0.5rem;
+  background: #fff;
+  border-radius: 12px;
+}
+.pt-cw-cell {
+  position: relative;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #1a1a2e;
+  background: #fff;
+  line-height: 1;
+}
+/* A blank square is the paper showing through, not a black square: this is a
+   fill-in worksheet, and a solid block would cost ink on every sheet. */
+.pt-cw-cell.is-blank {
+  border-color: transparent;
+  background: transparent;
+}
+.pt-cw-num {
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  font-style: normal;
+  font-weight: 700;
+  color: #1a1a2e;
+  font-size: calc(7rem / var(--pt-cw-cols, 12));
+}
+.pt-cw-letter {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1a1a2e;
+  font-size: calc(17rem / var(--pt-cw-cols, 12));
+}
+.pt-cw-clue-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1rem 1.5rem;
+  width: 100%;
+  max-width: 34rem;
+}
+.pt-cw-clues-title {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.pt-cw-clue-list {
+  margin: 0;
+  padding-left: 1.4rem;
+  font-size: 0.9rem;
+  color: #1a1a2e;
+}
+.pt-cw-clue-list li { break-inside: avoid; padding: 0.12rem 0; }
+.pt-cw-len { color: #6b7280; }
+.pt-cw-bank { width: 100%; max-width: 34rem; }
+
+/* The scramble sheet is a numbered list, one row per word: the loose letters
+   on the left, a ruled answer line on the right. */
+.pt-sc-list {
+  margin: 0;
+  padding-left: 1.6rem;
+  width: 100%;
+  max-width: 34rem;
+  color: #1a1a2e;
+}
+.pt-sc-item {
+  break-inside: avoid;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.42rem 0;
+}
+.pt-sc-scrambled {
+  flex: 0 0 auto;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 1.05rem;
+}
+.pt-sc-line {
+  flex: 1 1 auto;
+  min-width: 6rem;
+  border-bottom: 2px solid #9aa3b2;
+  align-self: flex-end;
+  padding-left: 0.2rem;
+}
+.pt-sc-hint-letter {
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+.pt-sc-answer {
+  flex: 1 1 auto;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
 
 /* ============================================================
    Contextual decoration showcase — static, crawlable SEO block
@@ -10443,7 +10569,8 @@ body.dark-mode .source-note {
 body.is-printing.pt-ink-saver #pt-print-root svg { opacity: 0.72; }
 body.is-printing.pt-ink-saver #pt-print-root .pt-glyph-print,
 body.is-printing.pt-ink-saver #pt-print-root .pt-name-glyph,
-body.is-printing.pt-ink-saver #pt-print-root .pt-search-grid { opacity: 0.72; }
+body.is-printing.pt-ink-saver #pt-print-root .pt-search-grid,
+body.is-printing.pt-ink-saver #pt-print-root .pt-cw-grid { opacity: 0.72; }
 
 @media print {
   .pt-print-tools, .pt-share-tools, .pt-spoke-batch, .pt-toast, .pt-recent { display: none !important; }
@@ -10463,6 +10590,9 @@ body.is-printing.pt-ink-saver #pt-print-root .pt-search-grid { opacity: 0.72; }
   .pt-puzzle-sheet,
   .pt-search-grid,
   .pt-search-words,
+  .pt-cw-grid,
+  .pt-cw-clue-list li,
+  .pt-sc-item,
   .cursive-print-row {
     page-break-inside: avoid;
     break-inside: avoid;
@@ -10488,7 +10618,8 @@ body.pt-pdf-rendering #pt-print-root {
 body.pt-pdf-rendering.pt-ink-saver #pt-print-root svg,
 body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-glyph-print,
 body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-name-glyph,
-body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-search-grid { opacity: 0.72; }
+body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-search-grid,
+body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-cw-grid { opacity: 0.72; }
 body.pt-pdf-rendering .bubble-print-wrap .pt-name-sheet {
   min-height: 9.2in;
   justify-content: space-between;
@@ -10516,6 +10647,25 @@ body.is-printing #pt-print-root .pt-search-cell {
 }
 body.pt-pdf-rendering .pt-search-words,
 body.is-printing #pt-print-root .pt-search-words { max-width: 6.4in; }
+/* On paper both puzzles get the full content width rather than the screen
+   cap, and the crossword's type divides by the same column count the grid
+   does, so a 9-wide and a 24-wide grid both fill the sheet. */
+body.pt-pdf-rendering .pt-cw-grid,
+body.is-printing #pt-print-root .pt-cw-grid { max-width: 6.4in; }
+body.pt-pdf-rendering .pt-cw-letter,
+body.is-printing #pt-print-root .pt-cw-letter {
+  font-size: calc(4.2in / var(--pt-cw-cols, 12));
+}
+body.pt-pdf-rendering .pt-cw-num,
+body.is-printing #pt-print-root .pt-cw-num {
+  font-size: calc(1.7in / var(--pt-cw-cols, 12));
+}
+body.pt-pdf-rendering .pt-cw-clue-cols,
+body.is-printing #pt-print-root .pt-cw-clue-cols,
+body.pt-pdf-rendering .pt-cw-bank,
+body.is-printing #pt-print-root .pt-cw-bank,
+body.pt-pdf-rendering .pt-sc-list,
+body.is-printing #pt-print-root .pt-sc-list { max-width: 6.4in; }
 body.pt-pdf-rendering .pt-banner-grid { grid-template-columns: repeat(3, 1fr); }
 body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
 
@@ -10814,8 +10964,17 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
   transform-origin: top left;
 }
 
+/* The chips and the label that names them, matching .pt-spacing-field's
+   shape — the other labelled chip row this engine mounts at runtime. */
+.pt-nup-field {
+  margin-top: 0.6rem;
+}
+.pt-nup-field .pt-field-label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
 .pt-nup-row {
-  margin-top: 0.5rem;
+  margin-top: 0;
 }
 /* .pt-choice is `flex: 1 1 auto` so a ladder of labelled options fills its
    row. These two are single digits, and once the row moved out of the button
@@ -10827,7 +10986,7 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
   padding: 0.4rem 0.7rem;
 }
 
-@media print { .pt-nup-row { display: none; } }
+@media print { .pt-nup-field { display: none; } }
 
 /* PR-31 -- letter spacing as a control. The chip is its own demonstration:
    the same two letters set at the tracking it applies. Values match
