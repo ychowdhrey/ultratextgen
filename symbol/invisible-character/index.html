@@ -204,7 +204,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <span class="article-section-label">History &amp; Why It Works</span>
   <h2>Why This Specific Character Became "The" Invisible Character</h2>
   <div class="editorial-block">
-    <p>U+2800 isn't a whitespace character at all — it comes from Unicode's Braille Patterns block, which encodes all 256 possible combinations of an 8-dot Braille cell. One of those 256 combinations is "no dots raised": the blank pattern. Because it's classified as an ordinary printable symbol rather than whitespace, it behaves completely differently from characters actually designed to be invisible, like the zero-width space.</p>
+    <p>U+2800 isn't a whitespace character at all: it comes from Unicode's Braille Patterns block, which encodes all 256 possible combinations of an 8-dot Braille cell. One of those 256 combinations is "no dots raised": the blank pattern. Because it's classified as an ordinary printable symbol rather than whitespace, it behaves completely differently from characters actually designed to be invisible, like the zero-width space.</p>
     <p>That distinction is exactly why it became the go-to trick for blank names on Instagram, Discord, and games: most apps trim leading and trailing whitespace and reject a field that ends up empty afterward: a real space, tab, or zero-width space (U+200B) typically gets caught by that check. U+2800 slips through because validation code sees "a character," not "empty space," even though it renders with no visible marks. The technique spread through social-media tips rather than any formal design intent, but it remains reliable specifically because of this Unicode technicality.</p>
   </div>
 </section>
