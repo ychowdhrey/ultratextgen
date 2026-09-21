@@ -210,7 +210,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2>Röviden</h2>
   <ul>
     <li>Az egyedi <strong>@felhasználónév</strong> csak kisbetűket fogad a-tól z-ig, számokat, aláhúzást és pontot. Ha oda díszes betűtípust illesztesz be, minden alkalommal „érvénytelen felhasználónevet” kapsz — ez szándékos.</li>
-    <li>Minden <strong>megjelenítési mező</strong> — megjelenítendő név, szerveren belüli becenév, szerep, szerver- és csatornanevek, „Névjegy” — trükk nélkül fogadja a Unicode betűtípusokat és az emojikat.</li>
+    <li>Minden <strong>megjelenítési mező</strong> (megjelenítendő név, szerveren belüli becenév, szerep, szerver- és csatornanevek, „Névjegy”) trükk nélkül fogadja a Unicode betűtípusokat és az emojikat.</li>
     <li><strong>A Markdown csak az üzenetekben jelenik meg</strong> (az alapok a „Névjegyben” is működnek). Minden névmezőben a csillagok csak úgy ott állnak.</li>
     <li>A stilizált neveknek valódi ára van: a <kbd>Ctrl+K</kbd> nem találja meg a 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈-t az „aesthetic” begépelésével, a képernyőolvasók fennakadnak, a régebbi Androidok pedig négyzeteket mutathatnak.</li>
   </ul>
@@ -296,7 +296,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="mood-explainer">
         <div class="mood-example">Begépelve: <strong>FONTOS HIREK</strong> → mentve mint <strong>#fontos-hirek</strong> &nbsp;·&nbsp; Begépelve: <strong>𝗙𝗢𝗡𝗧𝗢𝗦 ✦ 𝗛𝗜𝗥𝗘𝗞</strong> → mentve mint <strong>#𝗙𝗢𝗡𝗧𝗢𝗦-✦-𝗛𝗜𝗥𝗘𝗞</strong></div>
       </div>
-      <p>A matematikailag félkövér 𝗙 nem sima nagy F — más Unicode karakter —, így a kisbetűsítő szabály kihagyja. Ez az a rés a szabályokban, ami mögött minden olyan szervert láttál már, ahol nagybetűs, díszes csatornalista van. Két megjegyzés: a <strong>hangcsatornák és a kategóriák egyáltalán nem normalizálódnak</strong> (ott a szóközök és a sima nagybetűk túlélnek), és a kategóriafejlécek azok a helyek, ahol a szimbólumelválasztók, mint a ─── és a ╭─, a legjobban érvényesülnek.</p>
+      <p>A matematikailag félkövér 𝗙 nem sima nagy F (más Unicode karakter), így a kisbetűsítő szabály kihagyja. Ez az a rés a szabályokban, ami mögött minden olyan szervert láttál már, ahol nagybetűs, díszes csatornalista van. Két megjegyzés: a <strong>hangcsatornák és a kategóriák egyáltalán nem normalizálódnak</strong> (ott a szóközök és a sima nagybetűk túlélnek), és a kategóriafejlécek azok a helyek, ahol a szimbólumelválasztók, mint a ─── és a ╭─, a legjobban érvényesülnek.</p>
     </div>
   </section>
 
@@ -308,7 +308,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2>Hol működik a Markdown: és hol csak ott áll</h2>
     <div class="editorial-block">
       <p>A Markdown egyfajta másik stílus: olyan szimbólumok, mint a <code>**félkövér**</code>, amelyeket a Discord átalakít, amikor <em>megjeleníti</em> az üzenetet. A mátrix mutatja, hogy a hatóköre apró — <strong>üzenetek, plusz alapszintű formázás a „Névjegyben”</strong>. Írd be a <code>**Nova**</code>-t egy becenévmezőbe, és a csillagok szó szerinti karakterként mentődnek el, mert a névmezők nyersen mentődnek el és jelennek meg; nincs megjelenítő, ami átalakítaná őket.</p>
-      <p>Ez egy gyakorlati felosztás, amit érdemes megjegyezni: <strong>megjelenített stílus (Markdown) arra, amit mondasz, beillesztett stílus (Unicode) arra, ahogy hívnak.</strong> A teljes mechanika — a spoiler jelölés, a kódblokkok, a Nitro réteg és a klasszikus „miért nem lesz félkövér a csillagom” hibák — a kísérő útmutatónkban van, a <a href="/hu/guide/discord-szovegformazas/">Discord szövegformázás elmagyarázva</a> oldalon.</p>
+      <p>Ez egy gyakorlati felosztás, amit érdemes megjegyezni: <strong>megjelenített stílus (Markdown) arra, amit mondasz, beillesztett stílus (Unicode) arra, ahogy hívnak.</strong> A teljes mechanika (a spoiler jelölés, a kódblokkok, a Nitro réteg és a klasszikus „miért nem lesz félkövér a csillagom” hibák) a kísérő útmutatónkban van, a <a href="/hu/guide/discord-szovegformazas/">Discord szövegformázás elmagyarázva</a> oldalon.</p>
       <p>Egy különleges esetet érdemes megemlíteni: a <strong>színes szöveg</strong>. Csak az üzeneteken belül létezik, csak ANSI kódblokkokon keresztül, nyolc rögzített színnel és bizonytalan mobiltámogatással. Egyetlen névmező sem fogad színt sehol a Discordon.</p>
     </div>
   </section>
