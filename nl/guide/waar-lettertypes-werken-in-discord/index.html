@@ -149,12 +149,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Kan ik mooie lettertypes gebruiken in mijn Discord-weergavenaam?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Ja. Weergavenamen, serverbijnamen, rolnamen, servernamen, kanaalnamen en je 'Over mij' accepteren allemaal Unicode-lettertypetekens en emoji. Genereer de gestylede tekst en plak daarna de afgewerkte tekens in het veld — er valt niets aan te zetten. Kies liever leesbare stijlen zoals vet, cursief of small caps, zodat leden op oudere apparaten en met schermlezers je nog kunnen lezen." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Ja. Weergavenamen, serverbijnamen, rolnamen, servernamen, kanaalnamen en je 'Over mij' accepteren allemaal Unicode-lettertypetekens en emoji. Genereer de gestylede tekst en plak daarna de afgewerkte tekens in het veld. Er valt niets aan te zetten. Kies liever leesbare stijlen zoals vet, cursief of small caps, zodat leden op oudere apparaten en met schermlezers je nog kunnen lezen." }
     },
     {
       "@type": "Question",
       "name": "Waarom raakte mijn kanaalnaam zijn hoofdletters kwijt?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Tekstkanaalnamen worden genormaliseerd: Discord zet gewone A–Z om naar kleine letters en verandert spaties in koppeltekens, zodat 'Algemene Chat' 'algemene-chat' wordt. Unicode-lettertypetekens zijn geen gewone letters, dus die gaan onaangeroerd door — 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 behoudt zijn hoofdletters omdat het wiskundig-vette tekens zijn, geen A–Z. Namen van spraakkanalen en categorieën slaan deze normalisatie over en behouden spaties en hoofdletters." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Tekstkanaalnamen worden genormaliseerd: Discord zet gewone A–Z om naar kleine letters en verandert spaties in koppeltekens, zodat 'Algemene Chat' 'algemene-chat' wordt. Unicode-lettertypetekens zijn geen gewone letters, dus die gaan onaangeroerd door: 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 behoudt zijn hoofdletters omdat het wiskundig-vette tekens zijn, geen A–Z. Namen van spraakkanalen en categorieën slaan deze normalisatie over en behouden spaties en hoofdletters." }
     },
     {
       "@type": "Question",
@@ -209,7 +209,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="key-takeaways">
   <h2>Belangrijkste punten</h2>
   <ul>
-    <li>De unieke <strong>@gebruikersnaam</strong> accepteert alleen kleine letters a–z, 0–9, underscore en punt. Plak daar een mooi lettertype en je krijgt 'ongeldige gebruikersnaam' — elke keer, met opzet.</li>
+    <li>De unieke <strong>@gebruikersnaam</strong> accepteert alleen kleine letters a–z, 0–9, underscore en punt. Plak daar een mooi lettertype en je krijgt 'ongeldige gebruikersnaam', elke keer, met opzet.</li>
     <li>Elk <strong>presentatieveld</strong> (weergavenaam, serverbijnaam, rol, server- en kanaalnamen, 'Over mij') accepteert Unicode-lettertypes en emoji zonder trucjes.</li>
     <li><strong>Markdown rendert alleen in berichten</strong> (plus de basis in je 'Over mij'). In elk naamveld blijven de sterretjes gewoon staan.</li>
     <li>Gestylede namen hebben echte kosten: <kbd>Ctrl+K</kbd> vindt 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈 niet als je 'aesthetic' typt, schermlezers struikelen, en oudere Androids kunnen vakjes tonen.</li>
@@ -281,7 +281,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="editorial-block">
-      <p>Lees de kolommen van boven naar beneden en de logica springt eruit: <strong>precies één rij weigert Unicode, en precies één rij draait volledige Markdown.</strong> Alles daartussen is het open midden — geplakte styling welkom, gerenderde styling genegeerd. Dat is het hele systeem.</p>
+      <p>Lees de kolommen van boven naar beneden en de logica springt eruit: <strong>precies één rij weigert Unicode, en precies één rij draait volledige Markdown.</strong> Alles daartussen is het open midden: geplakte styling welkom, gerenderde styling genegeerd. Dat is het hele systeem.</p>
     </div>
   </section>
 
@@ -307,7 +307,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Gerenderde styling</span>
     <h2>Waar Markdown werkt: en waar het gewoon blijft staan</h2>
     <div class="editorial-block">
-      <p>Markdown is de andere soort styling: symbolen zoals <code>**vet**</code> die Discord omzet wanneer het een bericht <em>rendert</em>. De matrix laat zien dat zijn territorium piepklein is — <strong>berichten, plus basisopmaak in je 'Over mij'</strong>. Typ <code>**Nova**</code> in een bijnaamveld en de sterretjes worden als letterlijke tekens opgeslagen, omdat naamvelden ruw worden opgeslagen en getoond; er is geen renderslag om ze om te zetten.</p>
+      <p>Markdown is de andere soort styling: symbolen zoals <code>**vet**</code> die Discord omzet wanneer het een bericht <em>rendert</em>. De matrix laat zien dat zijn territorium piepklein is: <strong>berichten, plus basisopmaak in je 'Over mij'</strong>. Typ <code>**Nova**</code> in een bijnaamveld en de sterretjes worden als letterlijke tekens opgeslagen, omdat naamvelden ruw worden opgeslagen en getoond; er is geen renderslag om ze om te zetten.</p>
       <p>Dat is de praktische scheiding om te onthouden: <strong>gerenderde styling (Markdown) voor wat je zegt, geplakte styling (Unicode) voor hoe je heet.</strong> De volledige mechaniek (spoilertags, codeblokken, de Nitro-laag en de klassieke 'waarom worden mijn sterretjes niet vet'-fouten) staat in onze begeleidende gids, <a href="/nl/guide/discord-tekstopmaak-uitgelegd/">Discord-tekstopmaak, ontcijferd</a>.</p>
       <p>Eén bijzonder geval is het vermelden waard: <strong>gekleurde tekst</strong>. Die bestaat alleen binnen berichten, alleen via ANSI-codeblokken, met acht vaste kleuren en wankele mobiele ondersteuning. Geen enkel naamveld, waar dan ook in Discord, accepteert kleur.</p>
     </div>
@@ -325,7 +325,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="compare-grid">
       <div class="compare-card variant-muted">
         <span class="compare-badge">Zoeken breekt</span>
-        <p><kbd>Ctrl+K</kbd>, ledenzoeken en de automatische aanvulling van vermeldingen zoeken op letterlijke tekens. 'aesthetic' typen vindt <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong> nooit — ze delen nul tekens.</p>
+        <p><kbd>Ctrl+K</kbd>, ledenzoeken en de automatische aanvulling van vermeldingen zoeken op letterlijke tekens. 'aesthetic' typen vindt <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong> nooit: ze delen nul tekens.</p>
       </div>
       <div class="compare-card variant-muted">
         <span class="compare-badge">Schermlezers struikelen</span>
@@ -337,7 +337,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="editorial-block">
-      <p>Mijn regel: <strong>stylet de velden waar mensen naar kijken, houd de velden die mensen typen gewoon.</strong> Een weergavenaam en categoriekoppen? Style erop los: vet, small caps en lichte symbolen lezen bijna overal prima. Een druk tekstkanaal dat leden dagelijks doorzoeken, een rol die mods voortdurend pingen, een servernaam die je vindbaar wilt houden? Houd die gewoon of bijna gewoon. En sla zalgo in namen helemaal over — veel grote servers modereren het automatisch, en het is de stijl die de weergave het snelst breekt.</p>
+      <p>Mijn regel: <strong>stylet de velden waar mensen naar kijken, houd de velden die mensen typen gewoon.</strong> Een weergavenaam en categoriekoppen? Style erop los: vet, small caps en lichte symbolen lezen bijna overal prima. Een druk tekstkanaal dat leden dagelijks doorzoeken, een rol die mods voortdurend pingen, een servernaam die je vindbaar wilt houden? Houd die gewoon of bijna gewoon. En sla zalgo in namen helemaal over: veel grote servers modereren het automatisch, en het is de stijl die de weergave het snelst breekt.</p>
     </div>
   </section>
 
@@ -346,7 +346,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA Card -->
   <div class="cta-card">
     <h3>Maak een Discord-klare naam →</h3>
-    <p>Genereer een apparaatveilige Unicode-naam en plak hem in je weergavenaam, bijnaam of kanalenlijst — elk veld dat de matrix als open markeert.</p>
+    <p>Genereer een apparaatveilige Unicode-naam en plak hem in je weergavenaam, bijnaam of kanalenlijst: elk veld dat de matrix als open markeert.</p>
     <a href="/nl/" class="cta-btn">Open de lettergenerator →</a>
   </div>
 
@@ -384,13 +384,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Kan ik mooie lettertypes gebruiken in mijn Discord-weergavenaam?</button>
     <div class="faq-answer">
-      <p>Ja. Weergavenamen, serverbijnamen, rolnamen, servernamen, kanaalnamen en je 'Over mij' accepteren allemaal Unicode-lettertypetekens en emoji. Genereer de gestylede tekst en plak daarna de afgewerkte tekens in het veld — er valt niets aan te zetten. Kies liever leesbare stijlen zoals vet, cursief of small caps, zodat leden op oudere apparaten en met schermlezers je nog kunnen lezen.</p>
+      <p>Ja. Weergavenamen, serverbijnamen, rolnamen, servernamen, kanaalnamen en je 'Over mij' accepteren allemaal Unicode-lettertypetekens en emoji. Genereer de gestylede tekst en plak daarna de afgewerkte tekens in het veld. Er valt niets aan te zetten. Kies liever leesbare stijlen zoals vet, cursief of small caps, zodat leden op oudere apparaten en met schermlezers je nog kunnen lezen.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Waarom raakte mijn kanaalnaam zijn hoofdletters kwijt?</button>
     <div class="faq-answer">
-      <p>Tekstkanaalnamen worden genormaliseerd: Discord zet gewone A–Z om naar kleine letters en verandert spaties in koppeltekens, zodat "Algemene Chat" "algemene-chat" wordt. Unicode-lettertypetekens zijn geen gewone letters, dus die gaan onaangeroerd door — 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 behoudt zijn hoofdletters omdat het wiskundig-vette tekens zijn, geen A–Z. Namen van spraakkanalen en categorieën slaan deze normalisatie over en behouden spaties en hoofdletters.</p>
+      <p>Tekstkanaalnamen worden genormaliseerd: Discord zet gewone A–Z om naar kleine letters en verandert spaties in koppeltekens, zodat "Algemene Chat" "algemene-chat" wordt. Unicode-lettertypetekens zijn geen gewone letters, dus die gaan onaangeroerd door: 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 behoudt zijn hoofdletters omdat het wiskundig-vette tekens zijn, geen A–Z. Namen van spraakkanalen en categorieën slaan deze normalisatie over en behouden spaties en hoofdletters.</p>
     </div>
   </div>
   <div class="faq-item">
@@ -414,7 +414,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a class="related-card" href="/nl/guide/discord-tekstopmaak-uitgelegd/">
       <span class="related-tag">🎮</span>
       <span class="related-title">Discord-opmaak ontcijferd</span>
-      <span class="related-desc">Markdown vs Unicode vs Nitro — de diepere mechaniek.</span>
+      <span class="related-desc">Markdown vs Unicode vs Nitro: de diepere mechaniek.</span>
     </a>
     <a class="related-card" href="/nl/guide/discord-naam-veilig-stylen/">
       <span class="related-tag">🛡️</span>
