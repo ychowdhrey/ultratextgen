@@ -121,14 +121,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   "@type": "FAQPage",
   "inLanguage": "nl",
   "mainEntity": [
-    {"@type":"Question","name":"Tellen spaties mee als tekens?","acceptedAnswer":{"@type":"Answer","text":"Ja, op vrijwel elk platform. Een spatie is een gewoon teken: hij kost je één van je 280 op X, één van je 150 in je Instagram-bio en één septet in een sms. Daarom staan \"Tekens\" en \"Tekens (zonder spaties)\" hier naast elkaar: gebruik het getal mét spaties voor elke platformlimiet, en het getal zonder spaties alleen als een opdrachtgever of opleiding daar expliciet om vraagt — dat is een afspraak over facturering, geen technische regel."}},
+    {"@type":"Question","name":"Tellen spaties mee als tekens?","acceptedAnswer":{"@type":"Answer","text":"Ja, op vrijwel elk platform. Een spatie is een gewoon teken: hij kost je één van je 280 op X, één van je 150 in je Instagram-bio en één septet in een sms. Daarom staan \"Tekens\" en \"Tekens (zonder spaties)\" hier naast elkaar: gebruik het getal mét spaties voor elke platformlimiet, en het getal zonder spaties alleen als een opdrachtgever of opleiding daar expliciet om vraagt: dat is een afspraak over facturering, geen technische regel."}},
     {"@type":"Question","name":"Telt een emoji als één teken?","acceptedAnswer":{"@type":"Answer","text":"Zelden. Een gewone emoji is meestal 1 code point maar 2 UTF-16-eenheden; emoji met een huidskleur of samengestelde emoji (het gezin, bijvoorbeeld) worden er 4, 7 of meer. Op X kost elke emoji 2 van je 280, en in een sms verplaatst één emoji je hele bericht van GSM-7 met 160 tekens naar Unicode-segmenten van 70. De tegel Grafemen laat zien wat jij ziet; Tekens en UTF-16-eenheden laten zien wat het veld je in rekening brengt."}},
     {"@type":"Question","name":"Waarom zegt het platform dat ik eroverheen ga terwijl mijn teller zegt van niet?","acceptedAnswer":{"@type":"Answer","text":"Omdat jij en het platform in verschillende eenheden tellen. De meeste tellen Unicode-code-points, maar HTML-formulieren en veel apps tellen UTF-16-eenheden, daar telt één opgemaakte letter voor 2, Amazon-listingvelden tellen UTF-8-bytes, en X gebruikt een gewogen telling. Kies bovenin waar je tekst naartoe gaat, dan telt deze tool precies zoals die bestemming telt in plaats van een algemeen getal te geven."}},
     {"@type":"Question","name":"Hoe krijg ik mijn tekst onder de limiet?","acceptedAnswer":{"@type":"Answer","text":"Zodra je eroverheen gaat laat de tool zien wat je kunt schrappen, mét de exacte besparing in de telwijze van dat platform: opgemaakte Unicode-letters terugzetten naar gewone letters, emoji weghalen, gekrulde aanhalingstekens en lange streepjes rechttrekken, dubbele spaties samenvoegen, hashtags verwijderen, of netjes op een woordgrens afkappen. Alles gaat met één klik en is ongedaan te maken, dus je kunt eerst de goedkoopste ingreep proberen voordat je gaat herschrijven."}},
     {"@type":"Question","name":"Tellen opgemaakte letters dubbel?","acceptedAnswer":{"@type":"Answer","text":"Meestal wel. Opgemaakte Unicode-letters (vet, cursief, gotisch en de meeste andere sierlijke lettertypes) staan grotendeels boven U+FFFF, dus elke zichtbare letter kost 2 UTF-16-eenheden, 4 UTF-8-bytes en 2 van de 280 tekens op X. Daardoor wordt een opgemaakte naam van 10 letters geweigerd door een gameveld met een limiet van 12. Plak hem hierboven en gebruik \"Zet opgemaakte letters om naar gewone letters\" om het verschil te zien én meteen terug te winnen."}},
     {"@type":"Question","name":"Tellen onzichtbare tekens ook mee?","acceptedAnswer":{"@type":"Answer","text":"Ja, en dat is de meest voorkomende reden dat een telling ineens hoger uitvalt dan je ziet. Tekens zonder breedte, een byte-order mark en vultekens die uit een andere app zijn meegekopieerd verbruiken je ruimte zonder iets te tonen. De tool markeert ze direct onder het tekstvak en biedt aan ze in één klik te verwijderen."}},
     {"@type":"Question","name":"Waarom valt mijn sms uiteen in meerdere berichten, juist bij Nederlandse tekst?","acceptedAnswer":{"@type":"Answer","text":"Meestal door een trema. Eén sms bevat 160 tekens zolang elk teken in het oude GSM-7-alfabet zit. Dat alfabet bevat wél é, ä, ö, ü en à, maar níét ë en ï: precies de twee letters die in gewone Nederlandse woorden staan: financiën, reëel, ruïne, egoïsme, zoëven. Eén ë verplaatst je hele bericht naar Unicode-modus met 70 tekens per segment, waardoor een bericht van 100 tekens ineens twee segmenten kost. Kies \"Sms (1 bericht)\" in de checker hierboven en de tool noemt precies welk teken het veroorzaakt."}},
-    {"@type":"Question","name":"Is deze teller gratis, en wordt mijn tekst opgeslagen of geüpload?","acceptedAnswer":{"@type":"Answer","text":"Ja, volledig gratis en zonder account. Elke telling, controle en fix draait rechtstreeks in je browser met gewone JavaScript — niets van wat je typt wordt geüpload, gelogd of ergens bewaard."}}
+    {"@type":"Question","name":"Is deze teller gratis, en wordt mijn tekst opgeslagen of geüpload?","acceptedAnswer":{"@type":"Answer","text":"Ja, volledig gratis en zonder account. Elke telling, controle en fix draait rechtstreeks in je browser met gewone JavaScript: niets van wat je typt wordt geüpload, gelogd of ergens bewaard."}}
   ]
 }
 </script>
@@ -160,7 +160,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <h1 class="hero-headline">Woorden en tekens tellen</h1>
-  <p class="hero-sub">Live tellingen voor 38 velden op 17 platforms — plus fixes met één klik als je eroverheen gaat.</p>
+  <p class="hero-sub">Live tellingen voor 38 velden op 17 platforms, plus fixes met één klik als je eroverheen gaat.</p>
 </div></div></section>
 
 <main class="container">
@@ -204,7 +204,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </div>
   </div>
 
-  <p class="counter-footnote">Alles wordt in je eigen browser geteld — er wordt niets geüpload of bewaard. Moet die tekst er ook nog mooi uitzien? <a href="/nl/">De UltraTextGen-generator</a> zet hem om in 100+ lettertypes om te kopiëren en plakken.</p>
+  <p class="counter-footnote">Alles wordt in je eigen browser geteld: er wordt niets geüpload of bewaard. Moet die tekst er ook nog mooi uitzien? <a href="/nl/">De UltraTextGen-generator</a> zet hem om in 100+ lettertypes om te kopiëren en plakken.</p>
 
   <div class="section-divider"></div>
 
@@ -235,7 +235,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <td>LinkedIn-post</td>
           <td class="num">~140</td>
           <td class="num">~210</td>
-          <td>Blijf onder 140 en je opening is op allebei veilig — het grootste verschil tussen apparaten in deze lijst.</td>
+          <td>Blijf onder 140 en je opening is op allebei veilig, het grootste verschil tussen apparaten in deze lijst.</td>
         </tr>
         <tr>
           <td><a href="/nl/instagram-lettertype/">Instagram-bijschrift</a></td>
@@ -270,7 +270,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="comparison-table-wrap"><table class="comparison-table">
       <thead><tr><th>Platform</th><th class="num">Limiet</th><th>Toelichting</th></tr></thead>
       <tbody>
-        <tr id="twitter"><td>X-/Twitter-post</td><td class="num">280</td><td>Gewogen telling: elke URL = 23, de meeste emoji/symbolen/opgemaakte letters = 2 — zie <a href="#telwijze">hoe X telt</a></td></tr>
+        <tr id="twitter"><td>X-/Twitter-post</td><td class="num">280</td><td>Gewogen telling: elke URL = 23, de meeste emoji/symbolen/opgemaakte letters = 2. Zie <a href="#telwijze">hoe X telt</a></td></tr>
         <tr id="discord"><td>Discord-bericht</td><td class="num">2.000</td><td>4.000 met Nitro; langere berichten worden een .txt-bijlage</td></tr>
         <tr id="instagram"><td>Instagram-bijschrift</td><td class="num">2.200</td><td>Wordt na de eerste regels afgekapt met "meer"</td></tr>
         <tr id="tiktok"><td>TikTok-bijschrift</td><td class="num">2.200</td><td></td></tr>
@@ -309,7 +309,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <tr><td>YouTube-videotitel</td><td class="num">100</td><td></td></tr>
         <tr><td>SEO-metatitel</td><td class="num">~60</td><td>Google kapt af op pixelbreedte: lees dit als richtlijn</td></tr>
         <tr><td>SEO-metabeschrijving</td><td class="num">~155</td><td>Idem: afgekapt op pixelbreedte</td></tr>
-        <tr id="sms"><td>Sms-bericht</td><td class="num">160 / segment</td><td>Zakt naar 70 per segment zodra er één teken buiten GSM-7 in staat (emoji, ë, ï, gekrulde aanhalingstekens uit Word…) — zie <a href="#telwijze">hoe sms telt</a></td></tr>
+        <tr id="sms"><td>Sms-bericht</td><td class="num">160 / segment</td><td>Zakt naar 70 per segment zodra er één teken buiten GSM-7 in staat (emoji, ë, ï, gekrulde aanhalingstekens uit Word…). Zie <a href="#telwijze">hoe sms telt</a></td></tr>
       </tbody>
     </table></div>
   </section>
@@ -324,7 +324,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <tbody>
         <tr><td>Grafemen</td><td>Precies wat je ziet: één emoji met huidskleur telt als 1</td><td>Bluesky; ongeveer hoe Instagram met emoji omgaat</td></tr>
         <tr><td>Codepunten</td><td>Unicode-tekens: 👍🏽 telt als 2 (duim + huidskleur)</td><td>De meeste webplatforms, en de hoofdtegel "Tekens" hier</td></tr>
-        <tr><td>UTF-16-eenheden</td><td>Hoe JavaScript en veel apps tekst opslaan — elke 𝗩𝗲𝘁𝘁𝗲 letter telt als 2</td><td>HTML-formulieren (<code>maxlength</code>), veel games en app-backends</td></tr>
+        <tr><td>UTF-16-eenheden</td><td>Hoe JavaScript en veel apps tekst opslaan: elke 𝗩𝗲𝘁𝘁𝗲 letter telt als 2</td><td>HTML-formulieren (<code>maxlength</code>), veel games en app-backends</td></tr>
         <tr><td>UTF-8-bytes</td><td>Opslaggrootte: é = 2, 中 = 3, 𝗯 = 4</td><td>Amazon-listingvelden (titel 200 bytes), Steam-namen, databases</td></tr>
       </tbody>
     </table></div>
@@ -341,7 +341,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <h2>Woorden en tekens tellen, beantwoord</h2>
     <details class="faq-item">
       <summary class="faq-question">Tellen spaties mee als tekens?</summary>
-      <p class="faq-answer">Ja, op vrijwel elk platform. Een spatie is een gewoon teken: hij kost je één van je 280 op X, één van je 150 in je Instagram-bio en één septet in een sms. Daarom staan "Tekens" en "Tekens (zonder spaties)" hier naast elkaar: gebruik het getal mét spaties voor elke platformlimiet, en het getal zonder spaties alleen als een opdrachtgever of opleiding daar expliciet om vraagt — dat is een afspraak over facturering, geen technische regel.</p>
+      <p class="faq-answer">Ja, op vrijwel elk platform. Een spatie is een gewoon teken: hij kost je één van je 280 op X, één van je 150 in je Instagram-bio en één septet in een sms. Daarom staan "Tekens" en "Tekens (zonder spaties)" hier naast elkaar: gebruik het getal mét spaties voor elke platformlimiet, en het getal zonder spaties alleen als een opdrachtgever of opleiding daar expliciet om vraagt: dat is een afspraak over facturering, geen technische regel.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">Telt een emoji als één teken?</summary>
@@ -369,7 +369,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </details>
     <details class="faq-item">
       <summary class="faq-question">Is deze teller gratis, en wordt mijn tekst opgeslagen of geüpload?</summary>
-      <p class="faq-answer">Ja, volledig gratis en zonder account. Elke telling, controle en fix draait rechtstreeks in je browser met gewone JavaScript — niets van wat je typt wordt geüpload, gelogd of ergens bewaard.</p>
+      <p class="faq-answer">Ja, volledig gratis en zonder account. Elke telling, controle en fix draait rechtstreeks in je browser met gewone JavaScript: niets van wat je typt wordt geüpload, gelogd of ergens bewaard.</p>
     </details>
   </section>
 
@@ -377,7 +377,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <div class="cta-card">
     <h3>Moet die tekst ook in een mooi lettertype?</h3>
-    <p>UltraTextGen zet gewone tekst om in vet, cursief, sierlijk en 100+ andere Unicode-lettertypes die overal werken — in je bio, je post of je chat. Gratis en direct.</p>
+    <p>UltraTextGen zet gewone tekst om in vet, cursief, sierlijk en 100+ andere Unicode-lettertypes die overal werken: in je bio, je post of je chat. Gratis en direct.</p>
     <a href="/nl/" class="cta-btn">Open de tekstgenerator →</a>
   </div>
 
@@ -386,7 +386,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="compare-grid">
       <a href="/nl/onzichtbare-tekst/" class="compare-card variant-muted u-no-underline">
         <h4>Onzichtbare tekst</h4>
-        <p>Het teken zonder breedte dat de teller hierboven markeert — hier kun je het kopiëren.</p>
+        <p>Het teken zonder breedte dat de teller hierboven markeert. Hier kun je het kopiëren.</p>
       </a>
       <a href="/nl/mooie-letters/" class="compare-card variant-muted u-no-underline">
         <h4>Mooie letters</h4>
