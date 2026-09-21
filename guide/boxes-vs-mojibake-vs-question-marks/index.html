@@ -110,12 +110,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Can I fix mojibake text?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sometimes. Mojibake happens when the original bytes are read with the wrong text encoding — the bytes themselves are usually still intact, just misinterpreted. If you can find (or guess) the original encoding, re-decoding the same bytes correctly can restore the text exactly. Once the app has thrown away the original bytes and kept only the garbled letters, though, the round trip is no longer reliable." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sometimes. Mojibake happens when the original bytes are read with the wrong text encoding: the bytes themselves are usually still intact, just misinterpreted. If you can find (or guess) the original encoding, re-decoding the same bytes correctly can restore the text exactly. Once the app has thrown away the original bytes and kept only the garbled letters, though, the round trip is no longer reliable." }
     },
     {
       "@type": "Question",
       "name": "Is a box the same problem as a question mark?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No, and the difference matters. A box (tofu, □) means the character survived perfectly — the reader's device simply has no picture to draw it. A question mark or the replacement character (�) means the character itself was destroyed during a lossy conversion. One is a display problem; the other is a data problem." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No, and the difference matters. A box (tofu, □) means the character survived perfectly: the reader's device simply has no picture to draw it. A question mark or the replacement character (�) means the character itself was destroyed during a lossy conversion. One is a display problem; the other is a data problem." }
     },
     {
       "@type": "Question",
@@ -171,8 +171,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2>Key Takeaways</h2>
   <ul>
     <li>A box (□ ▯) is a missing <strong>glyph</strong>: the character is intact, the device just can't draw it. Always fixable by switching style or device.</li>
-    <li>Mojibake (Ã©, â€™) is a wrong <strong>encoding</strong> — the original bytes are usually still there, just misread. Sometimes reversible by re-decoding.</li>
-    <li>A question mark or replacement glyph (�) is a lost <strong>code point</strong> — the character was destroyed during a lossy conversion. Never recoverable from the result alone.</li>
+    <li>Mojibake (Ã©, â€™) is a wrong <strong>encoding</strong>: the original bytes are usually still there, just misread. Sometimes reversible by re-decoding.</li>
+    <li>A question mark or replacement glyph (�) is a lost <strong>code point</strong>: the character was destroyed during a lossy conversion. Never recoverable from the result alone.</li>
     <li>Each failure maps to one layer of how Unicode text actually works: character → code point → encoding → glyph.</li>
   </ul>
 </section>
@@ -223,7 +223,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Break 1 · Glyph</span>
     <h2>The Box: A Picture the Device Doesn't Have</h2>
     <div class="editorial-block">
-      <p>A box, often nicknamed "tofu," means the character's identity was never in doubt — the device simply has no font that can draw it. This is the most common failure with styled Unicode "fonts," because those styles borrow rare Unicode blocks that not every device font ships a picture for.</p>
+      <p>A box, often nicknamed "tofu," means the character's identity was never in doubt: the device simply has no font that can draw it. This is the most common failure with styled Unicode "fonts," because those styles borrow rare Unicode blocks that not every device font ships a picture for.</p>
       <p>It's also the easiest to fix, because nothing was lost: switch to a more universally supported style, or view it on a different device, and the exact same character renders fine. For the full breakdown of which Unicode styles are safest and why, see <a href="/guide/why-fonts-show-as-boxes/">Why Your Fancy Font Turns Into Boxes</a>.</p>
     </div>
   </section>
@@ -235,7 +235,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Break 2 · Encoding</span>
     <h2>Mojibake: The Right Bytes, the Wrong Instructions</h2>
     <div class="editorial-block">
-      <p>Every piece of text is stored as bytes, and an <strong>encoding</strong> is the rulebook for turning those bytes back into characters. The most common one today is UTF-8. Mojibake happens when text encoded one way gets decoded with a different rulebook — the bytes never change, but the letters they're read as do.</p>
+      <p>Every piece of text is stored as bytes, and an <strong>encoding</strong> is the rulebook for turning those bytes back into characters. The most common one today is UTF-8. Mojibake happens when text encoded one way gets decoded with a different rulebook: the bytes never change, but the letters they're read as do.</p>
       <p>The classic example: the word "café" is stored correctly as UTF-8, where "é" takes two bytes. Somewhere downstream, a system reads those same two bytes as Windows-1252 (a single-byte-per-character encoding) instead of UTF-8. Each byte gets mapped to its own separate character, and "café" comes out as <code>cafÃ©</code>.</p>
       <div class="example-pair">
         <span class="ex-label">Stored (UTF-8)</span>
@@ -244,7 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="ex-label">Displayed</span>
         <span class="ex-styled">cafÃ©</span>
       </div>
-      <p>Because the underlying bytes are usually untouched, this is fixable <em>if</em> you still have access to the original bytes and can identify the correct encoding: decode with Windows-1252 to get back to the byte sequence, then re-decode that sequence as UTF-8. Once a system has "helpfully" saved the garbled version as its own new UTF-8 text, though, the original bytes are gone and the fix stops being reliable — you'd be decoding garbage as garbage.</p>
+      <p>Because the underlying bytes are usually untouched, this is fixable <em>if</em> you still have access to the original bytes and can identify the correct encoding: decode with Windows-1252 to get back to the byte sequence, then re-decode that sequence as UTF-8. Once a system has "helpfully" saved the garbled version as its own new UTF-8 text, though, the original bytes are gone and the fix stops being reliable. You'd be decoding garbage as garbage.</p>
     </div>
   </section>
 
@@ -258,7 +258,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>This is the one true data-loss case. It happens when text is forced through a narrower character set than the one it was written in: for example, converting rich Unicode text down to plain ASCII (128 characters) or Windows-1252 (256 characters) for an old database column, a legacy export format, or a strict form field.</p>
       <p>Every character that doesn't exist in the narrower set has nothing to be mapped to, so the converter substitutes a stand-in: a literal <code>?</code>, or the official Unicode <strong>replacement character</strong>, U+FFFD (�). Either way, the original code point, the character's actual identity, is discarded in that step. There is no byte sequence left to re-decode, because the character was never stored; it was replaced.</p>
       <div class="mood-explainer">
-        <div class="mood-example"><strong>𝗛𝗲𝗹𝗹𝗼</strong> saved to an ASCII-only field → <strong>?ello</strong> — the styled H is gone for good, not hiding in another encoding.</div>
+        <div class="mood-example"><strong>𝗛𝗲𝗹𝗹𝗼</strong> saved to an ASCII-only field → <strong>?ello</strong>: the styled H is gone for good, not hiding in another encoding.</div>
       </div>
       <p>This is why "is there a way to undo this" is the wrong question once you're looking at a question mark. The honest answer is: only if you still have the original source (the message you sent, the file you uploaded) somewhere the lossy conversion hasn't touched yet.</p>
     </div>
@@ -306,7 +306,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA Card -->
   <div class="cta-card">
     <h3>Start from clean, safe text</h3>
-    <p>Generate a style from the safest tiers so what you paste survives the trip — no boxes, no surprises downstream.</p>
+    <p>Generate a style from the safest tiers so what you paste survives the trip, no boxes, no surprises downstream.</p>
     <a href="/" class="cta-btn">Open the Text Generator →</a>
   </div>
 
@@ -339,19 +339,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Can I fix mojibake text?</button>
     <div class="faq-answer">
-      <p>Sometimes. Mojibake happens when the original bytes are read with the wrong text encoding — the bytes themselves are usually still intact, just misinterpreted. If you can find (or guess) the original encoding, re-decoding the same bytes correctly can restore the text exactly. Once the app has thrown away the original bytes and kept only the garbled letters, though, the round trip is no longer reliable.</p>
+      <p>Sometimes. Mojibake happens when the original bytes are read with the wrong text encoding: the bytes themselves are usually still intact, just misinterpreted. If you can find (or guess) the original encoding, re-decoding the same bytes correctly can restore the text exactly. Once the app has thrown away the original bytes and kept only the garbled letters, though, the round trip is no longer reliable.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Is a box the same problem as a question mark?</button>
     <div class="faq-answer">
-      <p>No, and the difference matters. A box (tofu, □) means the character survived perfectly — the reader's device simply has no picture to draw it. A question mark or the replacement character (�) means the character itself was destroyed during a lossy conversion. One is a display problem; the other is a data problem.</p>
+      <p>No, and the difference matters. A box (tofu, □) means the character survived perfectly: the reader's device simply has no picture to draw it. A question mark or the replacement character (�) means the character itself was destroyed during a lossy conversion. One is a display problem; the other is a data problem.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Why did my styled Unicode text turn into question marks after I saved or emailed it?</button>
     <div class="faq-answer">
-      <p>Somewhere in the pipeline: an old database column, a legacy export, an email gateway, a form field — the text was forced through a narrower character set that doesn't include your styled characters, typically ASCII or Windows-1252. Every character outside that set gets replaced with "?" or U+FFFD. It's a one-way conversion; the original characters aren't recoverable from the result.</p>
+      <p>Somewhere in the pipeline: an old database column, a legacy export, an email gateway, a form field. The text was forced through a narrower character set that doesn't include your styled characters, typically ASCII or Windows-1252. Every character outside that set gets replaced with "?" or U+FFFD. It's a one-way conversion; the original characters aren't recoverable from the result.</p>
     </div>
   </div>
   <div class="faq-item">

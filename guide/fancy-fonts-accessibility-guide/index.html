@@ -170,7 +170,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="key-takeaways">
   <h2>Key Takeaways</h2>
   <ul>
-    <li>Styled "fonts" aren't bold or italic — they're Mathematical Alphanumeric characters, so screen readers either spell out each one's Unicode name or skip it entirely.</li>
+    <li>Styled "fonts" aren't bold or italic: they're Mathematical Alphanumeric characters, so screen readers either spell out each one's Unicode name or skip it entirely.</li>
     <li>A fully styled bio can read as gibberish, or total silence, to a blind user. That's a real exclusion, not a style preference.</li>
     <li>The answer isn't "never." It's the <strong>Plain-Core Rule</strong>: keep load-bearing text plain, reserve styling for decoration.</li>
     <li>Test it yourself in 60 seconds with the screen reader already built into your phone.</li>
@@ -187,7 +187,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>This topic is unusually heated, and both sides have a point.</p>
       <p><strong>Accessibility advocates</strong> are right that styled Unicode is genuinely exclusionary. As one widely-shared post put it, "it's not formatting — it's a lie." To a screen reader, faux-bold can be unreadable or silent.</p>
       <p><strong>Everyday users</strong> are also right that platforms like LinkedIn, Instagram and TikTok give them <em>no native way</em> to emphasize a word. Telling them "just never style anything" ignores why they reached for the trick in the first place.</p>
-      <p>So the useful question isn't "is it bad?" — it's "<strong>how do I get the visual benefit without leaving anyone behind?</strong>" That's a harm-reduction question, and it has a clear answer.</p>
+      <p>So the useful question isn't "is it bad?", it's "<strong>how do I get the visual benefit without leaving anyone behind?</strong>" That's a harm-reduction question, and it has a clear answer.</p>
     </div>
   </section>
 
@@ -198,11 +198,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">What Actually Happens</span>
     <h2>What a Screen Reader Hears</h2>
     <div class="editorial-block">
-      <p>A normal "B" is the character <code>U+0042</code>. A "bold" 𝗕 from a generator is a completely different character, <code>U+1D5D5</code>, named <em>Mathematical Sans-Serif Bold Capital B</em>. Screen readers read it by that name. So a styled greeting doesn't sound emphasized — it sounds like a spec sheet:</p>
+      <p>A normal "B" is the character <code>U+0042</code>. A "bold" 𝗕 from a generator is a completely different character, <code>U+1D5D5</code>, named <em>Mathematical Sans-Serif Bold Capital B</em>. Screen readers read it by that name. So a styled greeting doesn't sound emphasized. It sounds like a spec sheet:</p>
       <div class="mood-explainer">
         <div class="mood-example">You wrote: <strong>𝗛𝗲𝗹𝗹𝗼</strong><br>A screen reader says: "mathematical bold capital H, mathematical bold small e, mathematical bold small l, mathematical bold small l, mathematical bold small o."</div>
       </div>
-      <p>With some decorative and combining-mark styles, it's worse: the reader announces <em>nothing at all</em>. The styled text becomes silence. And the stakes can flip a message's meaning — a warning rendered in a style the reader skips can turn "do not" into nothing, leaving only the part that says the opposite.</p>
+      <p>With some decorative and combining-mark styles, it's worse: the reader announces <em>nothing at all</em>. The styled text becomes silence. And the stakes can flip a message's meaning: a warning rendered in a style the reader skips can turn "do not" into nothing, leaving only the part that says the opposite.</p>
       <p>It's not only blind users. Dyslexic readers struggle with decorative and irregular letterforms, and <a href="/guide/why-fonts-show-as-boxes/">on many devices the same characters render as boxes</a> anyway, so over-styling fails sighted users too.</p>
     </div>
   </section>
@@ -216,15 +216,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="compare-grid">
       <div class="compare-card variant-muted">
         <span class="compare-badge">Screen readers</span>
-        <p>Styled letters are read as Unicode names or skipped — unintelligible or silent for blind users.</p>
+        <p>Styled letters are read as Unicode names or skipped, unintelligible or silent for blind users.</p>
       </div>
       <div class="compare-card variant-muted">
         <span class="compare-badge">Search</span>
-        <p>Platform search and hashtags index plain characters only. A styled name or keyword is invisible to search — including your own name.</p>
+        <p>Platform search and hashtags index plain characters only. A styled name or keyword is invisible to search, including your own name.</p>
       </div>
       <div class="compare-card variant-muted">
         <span class="compare-badge">Rendering</span>
-        <p>Risky styles turn to tofu boxes on older devices — the styling drops and the meaning can go with it.</p>
+        <p>Risky styles turn to tofu boxes on older devices: the styling drops and the meaning can go with it.</p>
       </div>
     </div>
     <div class="editorial-block">
@@ -261,7 +261,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="editorial-block">
-      <p>This is also just good design. <a href="/guide/stop-the-scroll-with-font-variation/">Emphasis only works when it's rare</a> — when every word is styled, nothing stands out. The accessible choice and the effective choice are the same choice.</p>
+      <p>This is also just good design. <a href="/guide/stop-the-scroll-with-font-variation/">Emphasis only works when it's rare</a>: when every word is styled, nothing stands out. The accessible choice and the effective choice are the same choice.</p>
     </div>
   </section>
 
@@ -279,7 +279,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="ex-label">Plain-Core</span>
         <span class="ex-styled">Jade · 𝗖𝗲𝗿𝗮𝗺𝗶𝗰𝘀 artist · DM to order</span>
       </div>
-      <p>The first version reads to a screen reader as a wall of "mathematical script" names and is invisible in search — including the user's own name. The second styles one accent word and leaves the name, the role keyword and the call to action fully readable, searchable, and screen-reader friendly.</p>
+      <p>The first version reads to a screen reader as a wall of "mathematical script" names and is invisible in search, including the user's own name. The second styles one accent word and leaves the name, the role keyword and the call to action fully readable, searchable, and screen-reader friendly.</p>
     </div>
   </section>
 

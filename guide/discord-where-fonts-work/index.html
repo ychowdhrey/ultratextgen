@@ -146,12 +146,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Can I use fancy fonts in my Discord display name?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Display names, server nicknames, role names, server names, channel names and your About Me all accept Unicode font characters and emoji. Generate the styled text, then paste the finished characters into the field — there is nothing to enable. Prefer readable styles like bold, italic or small caps so members on older devices and screen readers can still read you." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Display names, server nicknames, role names, server names, channel names and your About Me all accept Unicode font characters and emoji. Generate the styled text, then paste the finished characters into the field. There is nothing to enable. Prefer readable styles like bold, italic or small caps so members on older devices and screen readers can still read you." }
     },
     {
       "@type": "Question",
       "name": "Why did my channel name lose its capital letters?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Text channel names are normalized: Discord lowercases ordinary A–Z and turns spaces into hyphens, so \"General Chat\" becomes \"general-chat.\" Unicode font characters are not ordinary letters, so they pass through untouched — 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 keeps its caps because those are math-bold characters, not A–Z. Voice channel and category names skip this normalization and keep spaces and capitals." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Text channel names are normalized: Discord lowercases ordinary A–Z and turns spaces into hyphens, so \"General Chat\" becomes \"general-chat.\" Unicode font characters are not ordinary letters, so they pass through untouched: 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 keeps its caps because those are math-bold characters, not A–Z. Voice channel and category names skip this normalization and keep spaces and capitals." }
     },
     {
       "@type": "Question",
@@ -206,8 +206,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="key-takeaways">
   <h2>Key Takeaways</h2>
   <ul>
-    <li>The unique <strong>@username</strong> accepts only lowercase a–z, 0–9, underscore and period. Paste a fancy font there and you get "invalid username" — every time, by design.</li>
-    <li>Every <strong>presentation field</strong>: display name, server nickname, role, server and channel names, About Me — accepts Unicode fonts and emoji with no tricks.</li>
+    <li>The unique <strong>@username</strong> accepts only lowercase a–z, 0–9, underscore and period. Paste a fancy font there and you get "invalid username", every time, by design.</li>
+    <li>Every <strong>presentation field</strong>: display name, server nickname, role, server and channel names, About Me, accepts Unicode fonts and emoji with no tricks.</li>
     <li><strong>Markdown renders only in messages</strong> (plus basics in your About Me). In every name field, the asterisks just sit there.</li>
     <li>Styled names carry real costs: <kbd>Ctrl+K</kbd> can't find 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈 by typing "aesthetic," screen readers stumble, and older Androids may show boxes.</li>
   </ul>
@@ -278,7 +278,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="editorial-block">
-      <p>Read the columns top to bottom and the logic jumps out: <strong>exactly one row rejects Unicode, and exactly one row runs full Markdown.</strong> Everything between is the open middle — paste-in styling welcome, rendered styling ignored. That's the whole system.</p>
+      <p>Read the columns top to bottom and the logic jumps out: <strong>exactly one row rejects Unicode, and exactly one row runs full Markdown.</strong> Everything between is the open middle: paste-in styling welcome, rendered styling ignored. That's the whole system.</p>
     </div>
   </section>
 
@@ -289,7 +289,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Field Notes</span>
     <h2>The Channel-Name Quirk: Auto-Lowercase, Auto-Hyphen</h2>
     <div class="editorial-block">
-      <p>Text channel names get silently rewritten on save: ordinary capitals are lowercased and spaces become hyphens, which is why <code>General Chat</code> comes out as <code>#general-chat</code>. People read this as "Discord stripped my styling." Look closer — it only touched the plain letters.</p>
+      <p>Text channel names get silently rewritten on save: ordinary capitals are lowercased and spaces become hyphens, which is why <code>General Chat</code> comes out as <code>#general-chat</code>. People read this as "Discord stripped my styling." Look closer: it only touched the plain letters.</p>
       <div class="mood-explainer">
         <div class="mood-example">Typed: <strong>GENERAL CHAT</strong> → saved as <strong>#general-chat</strong> &nbsp;·&nbsp; Typed: <strong>𝗚𝗘𝗡𝗘𝗥𝗔𝗟 ✦ 𝗖𝗛𝗔𝗧</strong> → saved as <strong>#𝗚𝗘𝗡𝗘𝗥𝗔𝗟-✦-𝗖𝗛𝗔𝗧</strong></div>
       </div>
@@ -304,7 +304,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Rendered Styling</span>
     <h2>Where Markdown Works: and Where It Just Sits There</h2>
     <div class="editorial-block">
-      <p>Markdown is the other kind of styling: symbols like <code>**bold**</code> that Discord converts when it <em>renders</em> a message. The matrix shows its territory is tiny — <strong>messages, plus basic formatting in your About Me</strong>. Type <code>**Nova**</code> into a nickname field and the asterisks save as literal characters, because name fields are stored and shown raw; there's no renderer pass to convert them.</p>
+      <p>Markdown is the other kind of styling: symbols like <code>**bold**</code> that Discord converts when it <em>renders</em> a message. The matrix shows its territory is tiny: <strong>messages, plus basic formatting in your About Me</strong>. Type <code>**Nova**</code> into a nickname field and the asterisks save as literal characters, because name fields are stored and shown raw; there's no renderer pass to convert them.</p>
       <p>That's the practical split to remember: <strong>rendered styling (Markdown) for what you say, pasted styling (Unicode) for what you're called.</strong> The full mechanics: spoiler tags, code blocks, the Nitro layer and the classic "why won't my asterisks bold" mistakes: live in our companion guide, <a href="/guide/discord-text-formatting-explained/">Discord Text Formatting, Decoded</a>.</p>
       <p>One special case worth flagging: <strong>colored text</strong>. It exists only inside messages, only via ANSI code blocks, with eight fixed colors and shaky mobile support. No name field anywhere in Discord accepts color. The whole technique is covered in the <a href="/guide/discord-colored-text-guide/">Discord colored text guide</a>.</p>
     </div>
@@ -322,7 +322,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="compare-grid">
       <div class="compare-card variant-muted">
         <span class="compare-badge">Search breaks</span>
-        <p><kbd>Ctrl+K</kbd>, member search and mention autocomplete match literal characters. Typing "aesthetic" will never find <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong> — they share zero characters.</p>
+        <p><kbd>Ctrl+K</kbd>, member search and mention autocomplete match literal characters. Typing "aesthetic" will never find <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong>: they share zero characters.</p>
       </div>
       <div class="compare-card variant-muted">
         <span class="compare-badge">Screen readers stumble</span>
@@ -343,7 +343,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA Card -->
   <div class="cta-card">
     <h3>Style a Discord-ready name →</h3>
-    <p>Generate a device-safe Unicode name, then paste it into your display name, nickname, or channel list — every field the matrix marks open.</p>
+    <p>Generate a device-safe Unicode name, then paste it into your display name, nickname, or channel list, every field the matrix marks open.</p>
     <a href="/discord/" class="cta-btn">Open the Discord Font Tool →</a>
   </div>
 
@@ -382,13 +382,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Can I use fancy fonts in my Discord display name?</button>
     <div class="faq-answer">
-      <p>Yes. Display names, server nicknames, role names, server names, channel names and your About Me all accept Unicode font characters and emoji. Generate the styled text, then paste the finished characters into the field — there is nothing to enable. Prefer readable styles like bold, italic or small caps so members on older devices and screen readers can still read you.</p>
+      <p>Yes. Display names, server nicknames, role names, server names, channel names and your About Me all accept Unicode font characters and emoji. Generate the styled text, then paste the finished characters into the field. There is nothing to enable. Prefer readable styles like bold, italic or small caps so members on older devices and screen readers can still read you.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Why did my channel name lose its capital letters?</button>
     <div class="faq-answer">
-      <p>Text channel names are normalized: Discord lowercases ordinary A–Z and turns spaces into hyphens, so "General Chat" becomes "general-chat." Unicode font characters are not ordinary letters, so they pass through untouched — 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 keeps its caps because those are math-bold characters, not A–Z. Voice channel and category names skip this normalization and keep spaces and capitals.</p>
+      <p>Text channel names are normalized: Discord lowercases ordinary A–Z and turns spaces into hyphens, so "General Chat" becomes "general-chat." Unicode font characters are not ordinary letters, so they pass through untouched: 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 keeps its caps because those are math-bold characters, not A–Z. Voice channel and category names skip this normalization and keep spaces and capitals.</p>
     </div>
   </div>
   <div class="faq-item">
@@ -412,7 +412,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a class="related-card" href="/guide/discord-text-formatting-explained/">
       <span class="related-tag">🎮</span>
       <span class="related-title">Discord Formatting Decoded</span>
-      <span class="related-desc">Markdown vs Unicode vs Nitro — the deep mechanics.</span>
+      <span class="related-desc">Markdown vs Unicode vs Nitro, the deep mechanics.</span>
     </a>
     <a class="related-card" href="/guide/discord-colored-text-guide/">
       <span class="related-tag">🌈</span>

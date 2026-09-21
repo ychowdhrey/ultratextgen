@@ -171,7 +171,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2>Key Takeaways</h2>
   <ul>
     <li>Unicode has no single styled á, ñ or ữ, so this generator <strong>splits each accented letter, styles the base, and reattaches the original mark</strong>. The accent now rides on the styled letter instead of dropping to plain.</li>
-    <li><strong>The vast majority of styles keep every accent</strong>: 77 of 112, including every bold, italic, script, gothic/fraktur, double-struck and small-caps variant, alongside the mark/symbol styles. The exceptions are novelty styles: the <strong>8 upside-down styles</strong> and <strong>13 exotic-alphabet ones</strong> (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics) — plus about ten <strong>one-piece letters</strong> (đ ø ß ł ı …) with no separate mark to carry.</li>
+    <li><strong>The vast majority of styles keep every accent</strong>: 77 of 112, including every bold, italic, script, gothic/fraktur, double-struck and small-caps variant, alongside the mark/symbol styles. The exceptions are novelty styles: the <strong>8 upside-down styles</strong> and <strong>13 exotic-alphabet ones</strong> (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics), plus about ten <strong>one-piece letters</strong> (đ ø ß ł ı …) with no separate mark to carry.</li>
     <li>Spanish, French and even <strong>Vietnamese now style fully, tone marks included</strong>. The one letter that still never converts is <strong>đ</strong>, which is its own character with no accent to lift off.</li>
     <li>Reattached marks make device rendering <em>more</em> relevant, not less: the same string can look clean on Chrome/iPhone and detached on Firefox/old Android. Placement depends on the <em>reader's</em> device, not yours, so test on the worst one.</li>
   </ul>
@@ -184,13 +184,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">The Core Idea</span>
     <h2>Styled Letters Are a Closed Alphabet</h2>
     <div class="editorial-block">
-      <p>When you pick a "bold" or "script" style, you're not applying formatting the way a word processor does. You're swapping each letter for a <em>different Unicode character</em> that happens to look bold or scripted — the bold <strong>𝗮</strong> is its own code point, not a normal "a" wearing a costume. (If that idea is new, start with <a href="/guide/why-fonts-show-as-boxes/">why fancy fonts turn into boxes</a>.)</p>
+      <p>When you pick a "bold" or "script" style, you're not applying formatting the way a word processor does. You're swapping each letter for a <em>different Unicode character</em> that happens to look bold or scripted: the bold <strong>𝗮</strong> is its own code point, not a normal "a" wearing a costume. (If that idea is new, start with <a href="/guide/why-fonts-show-as-boxes/">why fancy fonts turn into boxes</a>.)</p>
       <p>Those styled characters live in a Unicode region called the <strong>Mathematical Alphanumeric Symbols</strong> block, and it was built for equations, not languages. It contains styled forms of exactly three things: <strong>A–Z, a–z, and 0–9</strong>. That's the entire alphabet available to a letter-swap style.</p>
       <p>Every accented letter you can think of (<strong>á é í ñ ü ç</strong>, and every Vietnamese vowel like <strong>ữ ế ệ ơ ư ă</strong>) lives in <em>completely different</em> Unicode blocks (Latin-1 Supplement, Latin Extended-A/B/Additional). Those blocks have <strong>no styled twins</strong>. So when a generator reaches for a bold version of "é," there simply isn't one to reach for, which is why a <em>naive</em> tool leaves the é plain while its neighbours restyle, giving that half-styled look.</p>
       <div class="mood-explainer">
         <div class="mood-example">Old way: <strong>Señor</strong> in bold gave <strong>𝗦𝗲ñ𝗼𝗿</strong>: every letter bold except the plain ñ. Now it gives <strong>𝗦𝗲𝗻̃𝗼𝗿</strong>: a bold "n" with your original tilde riding on top.</div>
       </div>
-      <p>So the closed alphabet is real, but it isn't the end of the story. Unicode stores most accented letters as a base letter <em>plus</em> a separate combining mark, and NFD normalization pulls them apart. This generator does exactly that: it splits the accented letter, styles the base "n" like any other letter, then re-appends your original tilde — the same trick the strikethrough and underline styles always used for their own marks, now applied to accents across the board.</p>
+      <p>So the closed alphabet is real, but it isn't the end of the story. Unicode stores most accented letters as a base letter <em>plus</em> a separate combining mark, and NFD normalization pulls them apart. This generator does exactly that: it splits the accented letter, styles the base "n" like any other letter, then re-appends your original tilde, the same trick the strikethrough and underline styles always used for their own marks, now applied to accents across the board.</p>
     </div>
   </section>
 
@@ -206,7 +206,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="compare-grid">
       <div class="compare-card variant-positive">
         <span class="compare-badge">1 · Split &amp; reattached</span>
-        <p>The default now, and what every core typography style does. The generator splits "ế" into a base "e" plus its marks, styles the "e," then re-appends the original marks. The accent ends up styled to match — <strong>é</strong> inside <strong>𝗰𝗮𝗳𝗲́</strong>, tone marks and all. The only catch is downstream: a reattached mark can still render differently across devices (see below).</p>
+        <p>The default now, and what every core typography style does. The generator splits "ế" into a base "e" plus its marks, styles the "e," then re-appends the original marks. The accent ends up styled to match: <strong>é</strong> inside <strong>𝗰𝗮𝗳𝗲́</strong>, tone marks and all. The only catch is downstream: a reattached mark can still render differently across devices (see below).</p>
       </div>
       <div class="compare-card variant-muted">
         <span class="compare-badge">2 · Left unflipped</span>
@@ -276,7 +276,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="ex-label">Before the fix</span>
         <span class="ex-plain">𝑽𝒊ệ𝒕 𝑵𝒂𝒎</span>
         <span class="ex-arrow">↓</span>
-        <span class="ex-label">Now — bold, dấu intact</span>
+        <span class="ex-label">Now: bold, dấu intact</span>
         <span class="ex-styled">𝗩𝗶𝗲̣̂𝘁 𝗡𝗮𝗺</span>
       </div>
     </div>
