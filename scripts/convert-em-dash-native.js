@@ -154,7 +154,12 @@ const CONJ = {
   sr: ['a','i','ali','ili','pa','те'], hu: ['és','de','vagy','tehát','így'],
 };
 
-const R = { PERIOD:'.', COLON:':', COMMA:',', OPEN:'(', CLOSE:')', KEEP:'-', NOOP:'_', DEFER:'?' };
+const R = { PERIOD:'.', COLON:':', COMMA:',', OPEN:'(', CLOSE:')',
+            KEEP:'-', DROP:'x', NOOP:'_', DEFER:'?' };
+// DROP removes a dash that is redundant against punctuation the sentence
+// already carries: `…(WHITE CHESS PAWN) —, beide Teil des Blocks` wants the
+// comma alone. It is the table's "two jobs in one sentence" case, and it is
+// a judgement, so it is only ever reachable from the ledger.
 
 /**
  * `(—)` is the character shown AS A SPECIMEN, not used as punctuation.
@@ -258,6 +263,10 @@ function planBlock(blockText, tag, code, noopOrdinals) {
 
 /* ---- applying a remedy to the RAW SOURCE SLICE -------------------------- */
 
+/** The separator to put after a mark: none when the next character is itself
+ *  punctuation or whitespace, one space otherwise. */
+const gap = (right, raw, e) => right || (/^[\s,.;:!?)\]…]/.test(raw.slice(e)) || e >= raw.length ? '' : ' ');
+
 function applyRemedy(raw, k, remedy) {
   let seen = -1, pos = -1;
   for (const m of raw.matchAll(/—/g)) { if (++seen === k) { pos = m.index; break; } }
@@ -274,14 +283,24 @@ function applyRemedy(raw, k, remedy) {
       // No letter left in THIS node to capitalise: a full stop would open a
       // sentence whose start we cannot see. Downgrade rather than guess.
       if (li === -1 || li > 3) return applyRemedy(raw, k, ':');
-      return raw.slice(0, s) + '.' + (right || ' ')
+      return raw.slice(0, s) + '.' + gap(right, raw, e)
            + tail.slice(0, li) + tail[li].toUpperCase() + tail.slice(li + 1);
     }
-    case ':': mid = ':' + (right || ' '); break;
-    case ',': mid = ',' + (right || ' '); break;
+    // Only re-open a gap if what follows needs one. The dash may sit directly
+    // against punctuation the sentence already carries (`… Zug —, schlägt`),
+    // and an unconditional space writes `Zug) , schlägt`.
+    case ':': mid = ':' + gap(right, raw, e); break;
+    case ',': mid = ',' + gap(right, raw, e); break;
     case '(': mid = (left || ' ') + '('; break;
-    case ')': mid = ')' + (right || ' '); break;
+    case ')': mid = ')' + gap(right, raw, e); break;
     case '-': mid = (left === '' && right === '') ? ' – ' : left + '–' + right; break;
+    case 'x': {
+      // Collapse the dash away entirely, keeping one separator if the text
+      // on either side would otherwise run together.
+      const after = raw.slice(e), before = raw.slice(0, s);
+      const glue = /^[\s,.;:!?)\]]/.test(after) || /[([\s]$/.test(before) ? '' : ' ';
+      return before + glue + after;
+    }
     default: return null;
   }
   return raw.slice(0, s) + mid + raw.slice(e);
