@@ -584,7 +584,16 @@ function convertSpec(rel, { write, defer }) {
       const decided = JUDGED[text];
       let cur = node;
       for (let i = plan.length - 1; i >= 0; i--) {     // right to left, as above
-        const remedy = (decided && decided[i] && decided[i] !== R.DEFER) ? decided[i] : plan[i];
+        let remedy = (decided && decided[i] && decided[i] !== R.DEFER) ? decided[i] : plan[i];
+        // Tail rules apply here too. Reading only `entries` here let the two
+        // key spaces disagree: a tail moved to a colon stayed a full stop in
+        // every spec, which is how `Click any emoji or combo to copy it.`
+        // survived as a standalone sentence in 36 of them.
+        if (remedy === R.DEFER) {
+          const positions = [...text.matchAll(/—/g)].map((m) => m.index);
+          const t = positions[i] === undefined ? null : TAILS[tailAfter(text, positions[i])];
+          if (t) remedy = t;
+        }
         if (!remedy || remedy === R.DEFER) { if (defer) defer.push({ rel, code, key: text, n: plan.length }); continue; }
         if (remedy === R.NOOP) continue;
         const nx = applyRemedy(cur, i, remedy);

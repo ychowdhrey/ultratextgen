@@ -14,7 +14,7 @@
   "canonical": "https://ultratextgen.com/nl/symbol/onzichtbaar-teken/",
   "breadcrumb": "Onzichtbaar Teken",
   "hero_h1": "Onzichtbaar Teken (⠀)",
-  "hero_tagline": "Het leeg ogende teken achter lege gebruikersnamen en bijnamen. Klik om te kopiëren.",
+  "hero_tagline": "Het leeg ogende teken achter lege gebruikersnamen en bijnamen: klik om te kopiëren.",
   "intro": "⠀ (U+2800) is helemaal geen witruimte-teken — het komt uit Unicodes Braille Patterns-blok, dat alle 256 mogelijke combinaties van een braillecel met 8 punten codeert. Een van die 256 combinaties is 'geen punten omhoog': het blanco patroon. Omdat het geclassificeerd staat als een gewoon afdrukbaar teken in plaats van witruimte, gedraagt het zich compleet anders dan tekens die daadwerkelijk zijn ontworpen om onzichtbaar te zijn, zoals de zero-width space. Precies dat onderscheid is waarom het dé truc werd voor lege namen op Instagram, Discord en in games: de meeste apps trimmen witruimte aan het begin en einde en weigeren een veld dat daarna leeg blijkt — een echte spatie, tab of zero-width space (U+200B) wordt door die controle meestal betrapt. U+2800 glipt erdoorheen omdat validatiecode 'een teken' ziet, geen 'lege ruimte', ook al toont het geen enkel zichtbaar teken. De techniek verspreidde zich via social-media-tips in plaats van enige formele ontwerpbedoeling, maar blijft betrouwbaar precies vanwege deze Unicode-technicaliteit.",
   "hreflang": [
     {
