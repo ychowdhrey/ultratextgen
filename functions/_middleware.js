@@ -68,8 +68,16 @@ export async function onRequest(context) {
   // ── Legacy ?lang=<locale> → /<locale>/ ──────────────────────────────
   // Only fires when the param is actually present and maps to a known
   // locale. `?lang=en` maps to "/" and is skipped so it cannot loop.
+  //
+  // The value is trimmed and stripped of trailing slashes before the
+  // dictionary lookup (added 2026-09-21, found in a GA4 query-path
+  // analysis: a live `/?lang=pt/` hit never redirected because
+  // LANG_REDIRECTS has no "pt/" key, stranding a Portuguese-seeking
+  // visitor on English). This only removes noise around an otherwise
+  // exact code — "fr/de" still fails to match anything, same as before.
   const langParam = url.searchParams.get("lang");
-  const langTarget = langParam ? LANG_REDIRECTS[langParam.toLowerCase()] : null;
+  const langKey = langParam ? langParam.trim().toLowerCase().replace(/\/+$/, "") : null;
+  const langTarget = langKey ? LANG_REDIRECTS[langKey] : null;
   if (langTarget && langTarget !== "/") {
     const target = new URL(langTarget, url.origin);
     // Carry every other param across (notably ?q=, the shareable-text
