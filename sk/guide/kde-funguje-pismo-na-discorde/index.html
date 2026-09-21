@@ -149,7 +149,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Môžem použiť ozdobné písmo v zobrazovanom mene na Discorde?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Áno. Zobrazované mená, serverové prezývky, názvy rolí, názvy serverov, názvy kanálov aj tvoja sekcia „O mne“ prijímajú znaky písma Unicode a emoji. Vygeneruj oštýlovaný text a hotové znaky vlož do poľa — nič netreba zapínať. Uprednostni čitateľné štýly ako tučné, kurzívu alebo kapitálky, aby ťa prečítali aj členovia na starších zariadeniach a čítačky obrazovky." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Áno. Zobrazované mená, serverové prezývky, názvy rolí, názvy serverov, názvy kanálov aj tvoja sekcia „O mne“ prijímajú znaky písma Unicode a emoji. Vygeneruj oštýlovaný text a hotové znaky vlož do poľa: nič netreba zapínať. Uprednostni čitateľné štýly ako tučné, kurzívu alebo kapitálky, aby ťa prečítali aj členovia na starších zariadeniach a čítačky obrazovky." }
     },
     {
       "@type": "Question",
@@ -209,7 +209,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="key-takeaways">
   <h2>Kľúčové poznatky</h2>
   <ul>
-    <li>Unikátne <strong>používateľské meno (@)</strong> prijíma len malé písmená a–z, 0–9, podčiarkovník a bodku. Vlož tam ozdobné písmo a dostaneš „neplatné používateľské meno“ — zakaždým, zámerne.</li>
+    <li>Unikátne <strong>používateľské meno (@)</strong> prijíma len malé písmená a–z, 0–9, podčiarkovník a bodku. Vlož tam ozdobné písmo a dostaneš „neplatné používateľské meno“, zakaždým, zámerne.</li>
     <li>Každé <strong>zobrazovacie pole</strong> (zobrazované meno, serverová prezývka, rola, názvy servera a kanála, „O mne“) prijíma písma Unicode a emoji bez akéhokoľvek triku.</li>
     <li><strong>Markdown sa vykresľuje len v správach</strong> (plus základy v sekcii „O mne“). V každom poli s menom hviezdičky len ležia na mieste.</li>
     <li>Oštýlované mená majú svoju cenu: <kbd>Ctrl+K</kbd> nenájde 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈 napísaním „aesthetic“, čítačky obrazovky sa potkýnajú a staršie Androidy môžu zobraziť štvorčeky.</li>
@@ -281,7 +281,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="editorial-block">
-      <p>Prečítaj stĺpce zhora nadol a logika vyskočí sama: <strong>presne jeden riadok odmieta Unicode a presne jeden riadok spúšťa plný Markdown.</strong> Všetko medzi tým je otvorený stred — vkladaný štýl vítaný, vykresľovaný štýl ignorovaný. To je celý systém.</p>
+      <p>Prečítaj stĺpce zhora nadol a logika vyskočí sama: <strong>presne jeden riadok odmieta Unicode a presne jeden riadok spúšťa plný Markdown.</strong> Všetko medzi tým je otvorený stred: vkladaný štýl vítaný, vykresľovaný štýl ignorovaný. To je celý systém.</p>
     </div>
   </section>
 
@@ -307,7 +307,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Vykresľovaný štýl</span>
     <h2>Kde Markdown funguje: a kde len nečinne leží</h2>
     <div class="editorial-block">
-      <p>Markdown je ten druhý druh štýlu: symboly ako <code>**tučné**</code>, ktoré Discord premení, keď <em>vykresľuje</em> správu. Matica ukazuje, že jeho územie je maličké — <strong>správy plus základné formátovanie v sekcii „O mne“</strong>. Napíš <code>**Nova**</code> do poľa s prezývkou a hviezdičky sa uložia ako doslovné znaky, pretože polia s menami sa ukladajú a zobrazujú neupravené; nie je tam žiadny prechod vykresľovača, ktorý by ich premenil.</p>
+      <p>Markdown je ten druhý druh štýlu: symboly ako <code>**tučné**</code>, ktoré Discord premení, keď <em>vykresľuje</em> správu. Matica ukazuje, že jeho územie je maličké: <strong>správy plus základné formátovanie v sekcii „O mne“</strong>. Napíš <code>**Nova**</code> do poľa s prezývkou a hviezdičky sa uložia ako doslovné znaky, pretože polia s menami sa ukladajú a zobrazujú neupravené; nie je tam žiadny prechod vykresľovača, ktorý by ich premenil.</p>
       <p>To je praktické rozdelenie, ktoré si treba zapamätať: <strong>vykresľovaný štýl (Markdown) pre to, čo hovoríš, vkladaný štýl (Unicode) pre to, ako ťa volajú.</strong> Celú mechaniku (spojlerové značky, bloky kódu, vrstvu Nitra aj klasické chyby „prečo mi hviezdičky nestučnejú“) nájdeš v našom sprievodnom návode <a href="/sk/guide/formatovanie-textu-na-discorde/">Formátovanie textu na Discorde, rozlúštené</a>.</p>
       <p>Jeden osobitný prípad stojí za zmienku: <strong>farebný text</strong>. Existuje len vnútri správ, len cez ANSI bloky kódu, s ôsmimi pevnými farbami a vratkou podporou na mobile. Žiadne pole s menom nikde na Discorde farbu neprijíma.</p>
     </div>
@@ -325,7 +325,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="compare-grid">
       <div class="compare-card variant-muted">
         <span class="compare-badge">Vyhľadávanie sa pokazí</span>
-        <p><kbd>Ctrl+K</kbd>, vyhľadávanie členov a automatické dopĺňanie označení porovnávajú doslovné znaky. Napísanie „aesthetic“ nikdy nenájde <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong> — nemajú spoločný ani jeden znak.</p>
+        <p><kbd>Ctrl+K</kbd>, vyhľadávanie členov a automatické dopĺňanie označení porovnávajú doslovné znaky. Napísanie „aesthetic“ nikdy nenájde <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong>: nemajú spoločný ani jeden znak.</p>
       </div>
       <div class="compare-card variant-muted">
         <span class="compare-badge">Čítačky obrazovky sa potkýnajú</span>
@@ -346,7 +346,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA Card -->
   <div class="cta-card">
     <h3>Oštýluj meno pripravené pre Discord →</h3>
-    <p>Vygeneruj meno v Unicode bezpečné na zariadeniach a vlož ho do zobrazovaného mena, prezývky alebo zoznamu kanálov — do každého poľa, ktoré matica označuje ako otvorené.</p>
+    <p>Vygeneruj meno v Unicode bezpečné na zariadeniach a vlož ho do zobrazovaného mena, prezývky alebo zoznamu kanálov: do každého poľa, ktoré matica označuje ako otvorené.</p>
     <a href="/sk/pismo-pre-discord/" class="cta-btn">Otvoriť nástroj na písmo pre Discord →</a>
   </div>
 
@@ -384,7 +384,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Môžem použiť ozdobné písmo v zobrazovanom mene na Discorde?</button>
     <div class="faq-answer">
-      <p>Áno. Zobrazované mená, serverové prezývky, názvy rolí, názvy serverov, názvy kanálov aj tvoja sekcia „O mne“ prijímajú znaky písma Unicode a emoji. Vygeneruj oštýlovaný text a hotové znaky vlož do poľa — nič netreba zapínať. Uprednostni čitateľné štýly ako tučné, kurzívu alebo kapitálky, aby ťa prečítali aj členovia na starších zariadeniach a čítačky obrazovky.</p>
+      <p>Áno. Zobrazované mená, serverové prezývky, názvy rolí, názvy serverov, názvy kanálov aj tvoja sekcia „O mne“ prijímajú znaky písma Unicode a emoji. Vygeneruj oštýlovaný text a hotové znaky vlož do poľa: nič netreba zapínať. Uprednostni čitateľné štýly ako tučné, kurzívu alebo kapitálky, aby ťa prečítali aj členovia na starších zariadeniach a čítačky obrazovky.</p>
     </div>
   </div>
   <div class="faq-item">
@@ -414,7 +414,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a class="related-card" href="/sk/guide/formatovanie-textu-na-discorde/">
       <span class="related-tag">🎮</span>
       <span class="related-title">Formátovanie textu na Discorde</span>
-      <span class="related-desc">Markdown vs Unicode vs Nitro — hlbšia mechanika.</span>
+      <span class="related-desc">Markdown vs Unicode vs Nitro, hlbšia mechanika.</span>
     </a>
     <a class="related-card" href="/sk/guide/bezpecny-nick-na-discorde/">
       <span class="related-tag">🛡️</span>
