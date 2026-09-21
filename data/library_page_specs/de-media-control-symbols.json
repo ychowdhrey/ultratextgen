@@ -133,7 +133,7 @@
  "editorial_sections": [
   {
    "h2": "Warum diese Zeichen so lange auf Unicode warten mussten",
-   "body": "Play, Pause und Stop gehören zu den bekanntesten Piktogrammen überhaupt, kamen aber erst 2014 mit Unicode 7.0 in den Zeichensatz — Jahrzehnte nachdem sie auf jedem Gerät standen. Der Grund ist die alte Trennlinie: Unicode kodiert Schrift, keine Bedienoberflächen, und Gerätesymbole galten lange als Grafik. Aufgenommen wurden sie schließlich mit dem Argument, dass sie in technischer Dokumentation längst als Text geschrieben wurden — behelfsmäßig mit Dreieck und Doppelstrich. Damit galten sie als Schriftzeichen im Gebrauch, und das genügte."
+   "body": "Play, Pause und Stop gehören zu den bekanntesten Piktogrammen überhaupt, kamen aber erst 2014 mit Unicode 7.0 in den Zeichensatz, Jahrzehnte nachdem sie auf jedem Gerät standen. Der Grund ist die alte Trennlinie: Unicode kodiert Schrift, keine Bedienoberflächen, und Gerätesymbole galten lange als Grafik. Aufgenommen wurden sie schließlich mit dem Argument, dass sie in technischer Dokumentation längst als Text geschrieben wurden, behelfsmäßig mit Dreieck und Doppelstrich. Damit galten sie als Schriftzeichen im Gebrauch, und das genügte."
   }
  ],
  "related": [
