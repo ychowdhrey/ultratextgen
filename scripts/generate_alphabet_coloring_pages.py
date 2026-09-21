@@ -625,7 +625,7 @@ def render_spoke(spec, index):
     <section class="editorial-section">
       <h2>{esc(L)} is for {esc(word)}</h2>
       <p>{esc(e["fact"])}</p>
-      <p>Say the letter name and sound out loud while you color — it helps little learners connect the
+      <p>Say the letter name and sound out loud while you color. It helps little learners connect the
         shape of the letter {esc(L)} to the words it begins. Other fun {esc(L)} words to try:
         {esc(words_list)}.</p>
     </section>
