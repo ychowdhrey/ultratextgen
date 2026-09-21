@@ -141,7 +141,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Why does Discord say my username is invalid?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Because the unique @username is an identity key, not a display field. It accepts only lowercase a–z, 0–9, underscore and period — so pasting Unicode font characters (or even a normal capital letter) makes Discord reject the save. Put the styled version in your display name or server nickname instead; those fields accept Unicode fully." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Because the unique @username is an identity key, not a display field. It accepts only lowercase a–z, 0–9, underscore and period, so pasting Unicode font characters (or even a normal capital letter) makes Discord reject the save. Put the styled version in your display name or server nickname instead; those fields accept Unicode fully." }
     },
     {
       "@type": "Question",
@@ -188,7 +188,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="hero">
   <div class="hero-inner" style="max-width:800px;">
     <h1 class="hero-headline">Where Fancy Fonts Work in Discord</h1>
-    <p class="hero-tagline">"Invalid username." A channel name that lost its capitals. A nickname that saved fine. Discord isn't being inconsistent — every field has a job, and each one enforces different rules. Here's the whole permission map, so you never guess again.</p>
+    <p class="hero-tagline">"Invalid username." A channel name that lost its capitals. A nickname that saved fine. Discord isn't being inconsistent: every field has a job, and each one enforces different rules. Here's the whole permission map, so you never guess again.</p>
     <div class="guide-meta">
       <span class="guide-pill is-accent">Platform: Discord</span>
       <span class="guide-pill">⏱ 9 min read</span>
@@ -207,7 +207,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2>Key Takeaways</h2>
   <ul>
     <li>The unique <strong>@username</strong> accepts only lowercase a–z, 0–9, underscore and period. Paste a fancy font there and you get "invalid username" — every time, by design.</li>
-    <li>Every <strong>presentation field</strong> — display name, server nickname, role, server and channel names, About Me — accepts Unicode fonts and emoji with no tricks.</li>
+    <li>Every <strong>presentation field</strong>: display name, server nickname, role, server and channel names, About Me — accepts Unicode fonts and emoji with no tricks.</li>
     <li><strong>Markdown renders only in messages</strong> (plus basics in your About Me). In every name field, the asterisks just sit there.</li>
     <li>Styled names carry real costs: <kbd>Ctrl+K</kbd> can't find 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈 by typing "aesthetic," screen readers stumble, and older Androids may show boxes.</li>
   </ul>
@@ -218,10 +218,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Section: the core idea -->
   <section class="editorial-section">
     <span class="article-section-label">The Core Idea</span>
-    <h2>Discord Isn't Inconsistent — Each Field Has a Job</h2>
+    <h2>Discord Isn't Inconsistent: Each Field Has a Job</h2>
     <div class="editorial-block">
       <p>The trial-and-error loop goes like this: you style your name with a generator, paste it into one Discord field and it saves beautifully. You paste the same text into another field and Discord flatly refuses. Same characters, same account, opposite results. It <em>feels</em> arbitrary.</p>
-      <p>It isn't. Discord's fields split cleanly into two families. <strong>Identity fields</strong> are the ones other systems depend on — mentions, friend requests, moderation logs, account recovery. There's exactly one: your unique @username, and it's locked down to a tiny character set so it can never be spoofed, mistyped, or rendered differently on different phones. <strong>Presentation fields</strong> are everything people <em>look at</em> — display names, nicknames, role names, server and channel names, your About Me. Those are wide open, because nothing critical routes through them.</p>
+      <p>It isn't. Discord's fields split cleanly into two families. <strong>Identity fields</strong> are the ones other systems depend on: mentions, friend requests, moderation logs, account recovery. There's exactly one: your unique @username, and it's locked down to a tiny character set so it can never be spoofed, mistyped, or rendered differently on different phones. <strong>Presentation fields</strong> are everything people <em>look at</em>: display names, nicknames, role names, server and channel names, your About Me. Those are wide open, because nothing critical routes through them.</p>
       <p>Once you see the two families, every "why won't this save?" answers itself. You're never fighting a bug; you're just pasting presentation-grade characters into an identity-grade field. The fix is always the same: move the styling one field over.</p>
     </div>
   </section>
@@ -235,8 +235,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="editorial-block">
       <p>This single confusion produces more failed attempts than everything else combined. Since Discord dropped the old four-digit discriminators, every account has <strong>two</strong> names, and they follow opposite rules:</p>
       <ul>
-        <li><strong>The username</strong> — your unique handle, shown with an @ in your profile. Allowed characters: lowercase <code>a–z</code>, <code>0–9</code>, <code>_</code> and <code>.</code> — nothing else. Not capital letters, not spaces, and definitely not 𝓬𝓾𝓻𝓼𝓲𝓿𝓮. Anything outside that set triggers the "invalid username" error.</li>
-        <li><strong>The display name</strong> — the big friendly name shown in chat and on your profile. It accepts spaces, capitals, emoji, and any Unicode font characters you can paste.</li>
+        <li><strong>The username</strong>: your unique handle, shown with an @ in your profile. Allowed characters: lowercase <code>a–z</code>, <code>0–9</code>, <code>_</code> and <code>.</code>: nothing else. Not capital letters, not spaces, and definitely not 𝓬𝓾𝓻𝓼𝓲𝓿𝓮. Anything outside that set triggers the "invalid username" error.</li>
+        <li><strong>The display name</strong>: the big friendly name shown in chat and on your profile. It accepts spaces, capitals, emoji, and any Unicode font characters you can paste.</li>
       </ul>
       <p>So the pattern that works is boring on the inside and styled on the outside:</p>
       <div class="example-pair">
@@ -246,7 +246,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="ex-label">Works</span>
         <span class="ex-styled">@nova_riot &nbsp;+&nbsp; display name 𝕹𝖔𝖛𝖆 ⚔</span>
       </div>
-      <p>Inside a server you get a third layer, the <strong>server nickname</strong>, which overrides your display name for that server only — and it's just as permissive. Style it per community: ୨୧ 𝒩𝑜𝓋𝒶 ୨୧ in the book club, 𝗡𝗢𝗩𝗔 in the esports server. A <a href="/usecase/nickname-generator/">nickname generator</a> handles the character-mapping for you.</p>
+      <p>Inside a server you get a third layer, the <strong>server nickname</strong>, which overrides your display name for that server only, and it's just as permissive. Style it per community: ୨୧ 𝒩𝑜𝓋𝒶 ୨୧ in the book club, 𝗡𝗢𝗩𝗔 in the esports server. A <a href="/usecase/nickname-generator/">nickname generator</a> handles the character-mapping for you.</p>
     </div>
   </section>
 
@@ -257,7 +257,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Framework</span>
     <h2>The Field Permission Matrix</h2>
     <div class="editorial-block">
-      <p>Here is the entire map — every text field in Discord, what each one accepts, and <em>why</em>. Bookmark this table and the guessing ends.</p>
+      <p>Here is the entire map: every text field in Discord, what each one accepts, and <em>why</em>. Bookmark this table and the guessing ends.</p>
     </div>
 
     <div class="data-table-wrap">
@@ -293,7 +293,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="mood-explainer">
         <div class="mood-example">Typed: <strong>GENERAL CHAT</strong> → saved as <strong>#general-chat</strong> &nbsp;·&nbsp; Typed: <strong>𝗚𝗘𝗡𝗘𝗥𝗔𝗟 ✦ 𝗖𝗛𝗔𝗧</strong> → saved as <strong>#𝗚𝗘𝗡𝗘𝗥𝗔𝗟-✦-𝗖𝗛𝗔𝗧</strong></div>
       </div>
-      <p>The math-bold 𝗚 isn't an ordinary capital G — it's a different Unicode character — so the lowercasing rule skips it. That's the loophole behind every server you've seen with capitalized, decorated channel lists. Two footnotes: <strong>voice channels and categories aren't normalized at all</strong> (spaces and plain capitals survive there), and category headers are where symbol dividers like ─── and ╭─ do their best work.</p>
+      <p>The math-bold 𝗚 isn't an ordinary capital G, it's a different Unicode character, so the lowercasing rule skips it. That's the loophole behind every server you've seen with capitalized, decorated channel lists. Two footnotes: <strong>voice channels and categories aren't normalized at all</strong> (spaces and plain capitals survive there), and category headers are where symbol dividers like ─── and ╭─ do their best work.</p>
     </div>
   </section>
 
@@ -302,10 +302,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Section: markdown and color -->
   <section class="editorial-section">
     <span class="article-section-label">Rendered Styling</span>
-    <h2>Where Markdown Works — and Where It Just Sits There</h2>
+    <h2>Where Markdown Works: and Where It Just Sits There</h2>
     <div class="editorial-block">
       <p>Markdown is the other kind of styling: symbols like <code>**bold**</code> that Discord converts when it <em>renders</em> a message. The matrix shows its territory is tiny — <strong>messages, plus basic formatting in your About Me</strong>. Type <code>**Nova**</code> into a nickname field and the asterisks save as literal characters, because name fields are stored and shown raw; there's no renderer pass to convert them.</p>
-      <p>That's the practical split to remember: <strong>rendered styling (Markdown) for what you say, pasted styling (Unicode) for what you're called.</strong> The full mechanics — spoiler tags, code blocks, the Nitro layer and the classic "why won't my asterisks bold" mistakes — live in our companion guide, <a href="/guide/discord-text-formatting-explained/">Discord Text Formatting, Decoded</a>.</p>
+      <p>That's the practical split to remember: <strong>rendered styling (Markdown) for what you say, pasted styling (Unicode) for what you're called.</strong> The full mechanics: spoiler tags, code blocks, the Nitro layer and the classic "why won't my asterisks bold" mistakes: live in our companion guide, <a href="/guide/discord-text-formatting-explained/">Discord Text Formatting, Decoded</a>.</p>
       <p>One special case worth flagging: <strong>colored text</strong>. It exists only inside messages, only via ANSI code blocks, with eight fixed colors and shaky mobile support. No name field anywhere in Discord accepts color. The whole technique is covered in the <a href="/guide/discord-colored-text-guide/">Discord colored text guide</a>.</p>
     </div>
   </section>
@@ -334,7 +334,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="editorial-block">
-      <p>My rule: <strong>style the fields people look at, keep plain the fields people type.</strong> A display name and category headers? Style away — bold, small caps and light symbols read fine almost everywhere. A busy text channel that members search daily, a role that mods ping constantly, a server name you want discoverable? Keep those plain or nearly plain. And skip zalgo in names entirely — many large servers auto-moderate it, and it's the style most likely to break rendering.</p>
+      <p>My rule: <strong>style the fields people look at, keep plain the fields people type.</strong> A display name and category headers? Style away: bold, small caps and light symbols read fine almost everywhere. A busy text channel that members search daily, a role that mods ping constantly, a server name you want discoverable? Keep those plain or nearly plain. And skip zalgo in names entirely: many large servers auto-moderate it, and it's the style most likely to break rendering.</p>
     </div>
   </section>
 
@@ -376,7 +376,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Why does Discord say my username is invalid?</button>
     <div class="faq-answer">
-      <p>Because the unique @username is an identity key, not a display field. It accepts only lowercase a–z, 0–9, underscore and period — so pasting Unicode font characters (or even a normal capital letter) makes Discord reject the save. Put the styled version in your display name or server nickname instead; those fields accept Unicode fully.</p>
+      <p>Because the unique @username is an identity key, not a display field. It accepts only lowercase a–z, 0–9, underscore and period, so pasting Unicode font characters (or even a normal capital letter) makes Discord reject the save. Put the styled version in your display name or server nickname instead; those fields accept Unicode fully.</p>
     </div>
   </div>
   <div class="faq-item">

@@ -104,7 +104,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "datePublished": "2026-07-02T00:00:00+00:00",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It depends on whether the destination normalizes or restricts text. Display fields that store text as-is (social display names, bios, most chat messages) keep the styled characters. Fields that canonicalize input — search bars, @username fields, some form fields, and document editors saving to certain formats — convert or reject them. Same clipboard, different handling on the other end.",
+        "text": "It depends on whether the destination normalizes or restricts text. Display fields that store text as-is (social display names, bios, most chat messages) keep the styled characters. Fields that canonicalize input: search bars, @username fields, some form fields, and document editors saving to certain formats — convert or reject them. Same clipboard, different handling on the other end.",
         "author": {
           "@id": "https://ultratextgen.com/#organization"
         },
@@ -136,7 +136,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "datePublished": "2026-07-02T00:00:00+00:00",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Because a styled 'a' (𝗮) is a different character from a plain 'a', so a search for the normal spelling doesn't match it. Search engines and in-app search deliberately normalize styled Unicode to plain for indexing, which is good for being found — but it also means Ctrl+F, on-platform search and SEO won't match your fancy text against a normal query. Keep anything you want found in plain text.",
+        "text": "Because a styled 'a' (𝗮) is a different character from a plain 'a', so a search for the normal spelling doesn't match it. Search engines and in-app search deliberately normalize styled Unicode to plain for indexing, which is good for being found, but it also means Ctrl+F, on-platform search and SEO won't match your fancy text against a normal query. Keep anything you want found in plain text.",
         "author": {
           "@id": "https://ultratextgen.com/#organization"
         },
@@ -193,7 +193,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="hero">
   <div class="hero-inner">
     <h1 class="hero-headline">Why Does Copied Fancy Text Lose Its Formatting?</h1>
-    <p class="hero-tagline">You paste your styled text and it snaps back to plain. The twist: it was never "formatting" in the first place — so nothing was lost. Something was <em>converted</em>.</p>
+    <p class="hero-tagline">You paste your styled text and it snaps back to plain. The twist: it was never "formatting" in the first place, so nothing was lost. Something was <em>converted</em>.</p>
   </div>
 </section>
 <figure class="page-hero-figure" data-uthero aria-hidden="true">
@@ -205,7 +205,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="editorial-section">
   <span class="article-section-label">Short answer</span>
   <div class="editorial-block">
-    <p>Fancy text isn't bold <em>applied</em> to a letter — it's a <strong>different Unicode character</strong> that happens to look bold. So when you paste it somewhere that <strong>normalizes</strong> text — a search box, a username field, some editors — that system folds the special characters back to their plain equivalents, and <strong>𝗯𝗼𝗹𝗱</strong> becomes <strong>bold</strong>. Nothing was stripped in the formatting sense; the special characters were simply converted to normal ones. It survives in fields that store text as-is (display names, bios, chat) and reverts in fields that clean it up.</p>
+    <p>Fancy text isn't bold <em>applied</em> to a letter — it's a <strong>different Unicode character</strong> that happens to look bold. So when you paste it somewhere that <strong>normalizes</strong> text (a search box, a username field, some editors) that system folds the special characters back to their plain equivalents, and <strong>𝗯𝗼𝗹𝗱</strong> becomes <strong>bold</strong>. Nothing was stripped in the formatting sense; the special characters were simply converted to normal ones. It survives in fields that store text as-is (display names, bios, chat) and reverts in fields that clean it up.</p>
   </div>
   <div class="block-example">
     <strong>The key idea:</strong> it's characters, not formatting — so "losing the style" is really the characters being converted back to plain.
@@ -219,7 +219,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <h2>It's characters, not formatting</h2>
   <div class="editorial-block">
     <p>Real formatting (like a word processor's <b>Bold</b> button) is a separate instruction attached <em>to</em> normal letters. Fancy text has no such instruction — the "boldness" is baked into the character itself. The bold <strong>𝗮</strong> and a normal <strong>a</strong> are two different code points that happen to look related.</p>
-    <p>Many systems run text through a cleanup step called <strong>normalization</strong> — and one common form (NFKC) is <em>defined</em> to strip these styled variants back to plain, because they're meant for maths, not styling. That's the step that turns your fancy text back to normal on the way in.</p>
+    <p>Many systems run text through a cleanup step called <strong>normalization</strong>, and one common form (NFKC) is <em>defined</em> to strip these styled variants back to plain, because they're meant for maths, not styling. That's the step that turns your fancy text back to normal on the way in.</p>
   </div>
 </section>
 
@@ -261,9 +261,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <h2>Reverting vs boxes vs stripped accents</h2>
   <div class="editorial-block">
     <ul>
-      <li><strong>Reverts to plain</strong> — the styled characters were normalized back to normal ones (this page). A conversion, not a loss.</li>
-      <li><strong>Shows as boxes</strong> — the characters arrived fine but the device has no glyph to draw them. See <a href="/guide/why-fonts-show-as-boxes/">why fonts show as boxes</a>.</li>
-      <li><strong>Accents go missing</strong> — a related normalization can strip diacritics too. See <a href="/answers/why-fancy-text-removes-accents/">why fancy text removes accents</a>.</li>
+      <li><strong>Reverts to plain</strong>: the styled characters were normalized back to normal ones (this page). A conversion, not a loss.</li>
+      <li><strong>Shows as boxes</strong>: the characters arrived fine but the device has no glyph to draw them. See <a href="/guide/why-fonts-show-as-boxes/">why fonts show as boxes</a>.</li>
+      <li><strong>Accents go missing</strong>: a related normalization can strip diacritics too. See <a href="/answers/why-fancy-text-removes-accents/">why fancy text removes accents</a>.</li>
     </ul>
   </div>
 </section>
@@ -292,7 +292,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </details>
   <details class="faq-item">
     <summary class="faq-question">Why does it work in some places but turn back to normal in others?</summary>
-    <p class="faq-answer">It depends on whether the destination normalizes or restricts text. Display fields that store text as-is (social display names, bios, most chat messages) keep the styled characters. Fields that canonicalize input — search bars, @username fields, some form fields, and document editors saving to certain formats — convert or reject them. Same clipboard, different handling on the other end.</p>
+    <p class="faq-answer">It depends on whether the destination normalizes or restricts text. Display fields that store text as-is (social display names, bios, most chat messages) keep the styled characters. Fields that canonicalize input: search bars, @username fields, some form fields, and document editors saving to certain formats — convert or reject them. Same clipboard, different handling on the other end.</p>
   </details>
   <details class="faq-item">
     <summary class="faq-question">Does pasting fancy text into Word or Google Docs remove it?</summary>
@@ -300,7 +300,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </details>
   <details class="faq-item">
     <summary class="faq-question">Why can't I search for fancy text with Ctrl+F?</summary>
-    <p class="faq-answer">Because a styled 'a' (𝗮) is a different character from a plain 'a', so a search for the normal spelling doesn't match it. Search engines and in-app search deliberately normalize styled Unicode to plain for indexing, which is good for being found — but it also means Ctrl+F, on-platform search and SEO won't match your fancy text against a normal query. Keep anything you want found in plain text.</p>
+    <p class="faq-answer">Because a styled 'a' (𝗮) is a different character from a plain 'a', so a search for the normal spelling doesn't match it. Search engines and in-app search deliberately normalize styled Unicode to plain for indexing, which is good for being found, but it also means Ctrl+F, on-platform search and SEO won't match your fancy text against a normal query. Keep anything you want found in plain text.</p>
   </details>
   <details class="faq-item">
     <summary class="faq-question">How do I keep fancy text from reverting?</summary>

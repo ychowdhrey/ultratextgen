@@ -27,7 +27,7 @@
       "id": "confusable-dashes",
       "label": "Confusable Dashes",
       "h2": "Dashes & Hyphens It's Confused With",
-      "intro": "The shorter marks the em dash gets swapped for by mistake — each one has its own width, code point, and job.",
+      "intro": "The shorter marks the em dash gets swapped for by mistake: each one has its own width, code point, and job.",
       "symbols": [
         { "char": "–", "label": "En Dash" },
         { "char": "-", "label": "Hyphen-Minus (Keyboard)" },
@@ -41,7 +41,7 @@
       "id": "related-punctuation",
       "label": "Related Punctuation",
       "h2": "Related Punctuation & Pause Marks",
-      "intro": "Marks that do a related job — the comma, colon, and parentheses an em dash often replaces, plus the semicolon and ellipsis it's sometimes grouped with.",
+      "intro": "Marks that do a related job: the comma, colon, and parentheses an em dash often replaces, plus the semicolon and ellipsis it's sometimes grouped with.",
       "symbols": [
         { "char": ",", "label": "Comma" },
         { "char": ":", "label": "Colon" },
@@ -66,7 +66,7 @@
     {
       "href": "/symbol/pilcrow/",
       "title": "Pilcrow (¶)",
-      "desc": "The paragraph mark — another editorial typography symbol with a long print history."
+      "desc": "The paragraph mark: another editorial typography symbol with a long print history."
     }
   ]
 }

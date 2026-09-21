@@ -160,7 +160,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Why did my Steam name change or revert on its own?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Multiple Steam Community threads document names built from heavy symbol/block-character content silently reverting to blank or a single stray character after a sync. Valve hasn't published an official explanation, so the exact mechanism is unconfirmed, but the pattern is well-documented — it's a real risk with dense symbol combos, not just a rare fluke, and it's a reason to prefer single-character picks over long decorative strings."
+        "text": "Multiple Steam Community threads document names built from heavy symbol/block-character content silently reverting to blank or a single stray character after a sync. Valve hasn't published an official explanation, so the exact mechanism is unconfirmed, but the pattern is well-documented: it's a real risk with dense symbol combos, not just a rare fluke, and it's a reason to prefer single-character picks over long decorative strings."
       }
     },
     {
@@ -176,7 +176,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Does this affect Linux Steam users differently?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, in a documented way — an open issue on Valve's own Steam-for-Linux GitHub repository (filed 2018, still unresolved) reports symbols that display correctly in the profile editor failing to render in the friends list and in-game on Linux specifically, while working normally on Windows and macOS. If a symbol looks broken only on Linux, this is a known client bug, not something wrong with your name."
+        "text": "Yes, in a documented way: an open issue on Valve's own Steam-for-Linux GitHub repository (filed 2018, still unresolved) reports symbols that display correctly in the profile editor failing to render in the friends list and in-game on Linux specifically, while working normally on Windows and macOS. If a symbol looks broken only on Linux, this is a known client bug, not something wrong with your name."
       }
     }
   ]
@@ -208,7 +208,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
-    <p>Steam profile names look simple to decorate, but most symbol lists skip the part that actually trips people up: the "32-character limit" is really a byte budget, not a character count, so decorative Unicode eats into it faster than plain letters. A symbol that displays fine on your profile page can also show up as a blank square inside a specific game (CS:GO and CS2's weapon-inspect nametag are documented cases), and heavily-decorated names have been reported reverting to blank on their own. Every character below is a single-glyph pick chosen to minimize those risks — copy one, test it, then build from there.</p>
+    <p>Steam profile names look simple to decorate, but most symbol lists skip the part that actually trips people up: the "32-character limit" is really a byte budget, not a character count, so decorative Unicode eats into it faster than plain letters. A symbol that displays fine on your profile page can also show up as a blank square inside a specific game (CS:GO and CS2's weapon-inspect nametag are documented cases), and heavily-decorated names have been reported reverting to blank on their own. Every character below is a single-glyph pick chosen to minimize those risks: copy one, test it, then build from there.</p>
   </div>
 </section>
 
@@ -269,7 +269,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="mood-explainers" id="steam-brackets">
   <span class="article-section-label">Frames &amp; Brackets</span>
   <h2>Name Brackets &amp; Dividers</h2>
-  <p class="u-secondary-tight">Clean framing marks — cheaper on the byte budget than most decorative combos.</p>
+  <p class="u-secondary-tight">Clean framing marks: cheaper on the byte budget than most decorative combos.</p>
   <div class="flag-rows">
     <div class="flag-row">
       <button class="flag-emoji symbol-tile" data-symbol="「" aria-label="Copy Left Corner Bracket">「</button>
@@ -330,7 +330,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="mood-explainers" id="steam-profile-vs-ingame">
   <span class="article-section-label">Two Different Jobs</span>
   <h2>Profile Symbols vs. In-Game Rendering</h2>
-  <p>A symbol displaying correctly on your Steam profile or friends list doesn't guarantee it displays in every game. Documented cases: CS:GO and CS2's weapon-inspect nametag renders unsupported characters as an empty square even when the same name shows fine on your profile page; TF2 has separately been reported not rendering Unicode in in-game name tags at all. If you need a symbol to work specifically inside a game's UI — not just on your Steam profile — test it in that game before committing.</p>
+  <p>A symbol displaying correctly on your Steam profile or friends list doesn't guarantee it displays in every game. Documented cases: CS:GO and CS2's weapon-inspect nametag renders unsupported characters as an empty square even when the same name shows fine on your profile page; TF2 has separately been reported not rendering Unicode in in-game name tags at all. If you need a symbol to work specifically inside a game's UI, not just on your Steam profile, test it in that game before committing.</p>
 </section>
 
 <div class="section-divider"></div>
@@ -379,11 +379,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </details>
   <details class="faq-item">
     <summary class="faq-question">Why does a symbol show on my Steam profile but not in-game?</summary>
-    <p class="faq-answer">Steam's website and profile pages render Unicode broadly, but individual games have their own text rendering — confirmed cases include CS:GO, TF2, and CS2's weapon-inspect nametag showing unsupported characters as empty squares even though the same name displays fine on your Steam profile. Treat "works on my profile" and "works in-game" as two separate questions, not one.</p>
+    <p class="faq-answer">Steam's website and profile pages render Unicode broadly, but individual games have their own text rendering: confirmed cases include CS:GO, TF2, and CS2's weapon-inspect nametag showing unsupported characters as empty squares even though the same name displays fine on your Steam profile. Treat "works on my profile" and "works in-game" as two separate questions, not one.</p>
   </details>
   <details class="faq-item">
     <summary class="faq-question">Why did my Steam name change or revert on its own?</summary>
-    <p class="faq-answer">Multiple Steam Community threads document names built from heavy symbol/block-character content silently reverting to blank or a single stray character after a sync. Valve hasn't published an official explanation, so the exact mechanism is unconfirmed, but the pattern is well-documented — it's a real risk with dense symbol combos, not just a rare fluke, and it's a reason to prefer single-character picks over long decorative strings.</p>
+    <p class="faq-answer">Multiple Steam Community threads document names built from heavy symbol/block-character content silently reverting to blank or a single stray character after a sync. Valve hasn't published an official explanation, so the exact mechanism is unconfirmed, but the pattern is well-documented: it's a real risk with dense symbol combos, not just a rare fluke, and it's a reason to prefer single-character picks over long decorative strings.</p>
   </details>
   <details class="faq-item">
     <summary class="faq-question">Are there characters Steam blocks outright?</summary>
@@ -391,7 +391,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </details>
   <details class="faq-item">
     <summary class="faq-question">Does this affect Linux Steam users differently?</summary>
-    <p class="faq-answer">Yes, in a documented way — an open issue on Valve's own Steam-for-Linux GitHub repository (filed 2018, still unresolved) reports symbols that display correctly in the profile editor failing to render in the friends list and in-game on Linux specifically, while working normally on Windows and macOS. If a symbol looks broken only on Linux, this is a known client bug, not something wrong with your name.</p>
+    <p class="faq-answer">Yes, in a documented way: an open issue on Valve's own Steam-for-Linux GitHub repository (filed 2018, still unresolved) reports symbols that display correctly in the profile editor failing to render in the friends list and in-game on Linux specifically, while working normally on Windows and macOS. If a symbol looks broken only on Linux, this is a known client bug, not something wrong with your name.</p>
   </details>
 </section>
 

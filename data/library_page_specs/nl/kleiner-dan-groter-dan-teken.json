@@ -15,7 +15,7 @@
   "breadcrumb": "Kleiner Dan & Groter Dan",
   "hero_h1": "Kleiner Dan (<) & Groter Dan (>)",
   "hero_tagline": "Wat ze betekenen, waarom ze HTML kunnen breken en hoe ze verschillen van hoekaanhalingstekens. Klik om te kopiëren.",
-  "intro": "< en > zijn ongelijkheidsoperatoren: a < b betekent dat a kleiner is dan b, en a > b betekent dat a groter is dan b. Ze maken sinds de zeventiende eeuw deel uit van de standaard wiskundige notatie en zijn rechtstreeks meegenomen in de oorspronkelijke ASCII-tekenset – daarom staan ze in het Basic Latin-blok in plaats van het aparte Mathematical Operators-blok waarin tekens als ≠ of ∞ pas met Unicode zijn toegevoegd. Die ASCII-oorsprong is ook waarom < en > een tweede taak hebben waar bijna elke toetsenbordgebruiker weleens tegenaan loopt: in HTML en XML is < het teken waarmee elke tag begint. Een losse < die als platte tekst wordt getypt, kan een browser laten denken dat er een tag begint die nooit bedoeld was – daarom moet HTML ze escapen als &lt; en &gt; overal waar ze als letterlijke tekst voorkomen in plaats van als opmaak.",
+  "intro": "< en > zijn ongelijkheidsoperatoren: a < b betekent dat a kleiner is dan b, en a > b betekent dat a groter is dan b. Ze maken sinds de zeventiende eeuw deel uit van de standaard wiskundige notatie en zijn rechtstreeks meegenomen in de oorspronkelijke ASCII-tekenset — daarom staan ze in het Basic Latin-blok in plaats van het aparte Mathematical Operators-blok waarin tekens als ≠ of ∞ pas met Unicode zijn toegevoegd. Die ASCII-oorsprong is ook waarom < en > een tweede taak hebben waar bijna elke toetsenbordgebruiker weleens tegenaan loopt: in HTML en XML is < het teken waarmee elke tag begint. Een losse < die als platte tekst wordt getypt, kan een browser laten denken dat er een tag begint die nooit bedoeld was — daarom moet HTML ze escapen als &lt; en &gt; overal waar ze als letterlijke tekst voorkomen in plaats van als opmaak.",
   "hreflang": [
     {
       "lang": "en",
@@ -105,7 +105,7 @@
     {
       "href": "/nl/symbol/ongelijkteken/",
       "title": "Ongelijkteken (≠)",
-      "desc": "Gebruikt door Euler, ontbrak in ASCII – waarom code != gebruikt."
+      "desc": "Gebruikt door Euler, ontbrak in ASCII — waarom code != gebruikt."
     },
     {
       "href": "/nl/library/wiskunde-symbolen/",

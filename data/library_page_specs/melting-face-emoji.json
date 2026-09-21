@@ -7,7 +7,7 @@
   "breadcrumb": "Melting Face Emoji",
   "hero_h1": "Melting Face Emoji",
   "hero_tagline": "A yellow face with a faint smile whose lower half is sliding away — the standard way to type \"I want to disappear\" without saying it. Click any symbol to copy it instantly.",
-  "intro": "Melting Face (🫠, U+1FAE0) is a yellow circular face keeping a faint smile while its lower half dissolves into a puddle. It was approved as part of Unicode 14.0 and Emoji 14.0, released on 14 September 2021, from proposal L2/20-072, and platforms shipped it through 2022 — so it renders on essentially every current phone and desktop. The melting is doing emotional work rather than literal work: the face is still smiling, which is exactly why it reads as composure failing rather than sadness. That makes it the standard glyph for embarrassment, awkwardness, dread, being overwhelmed, and the \"I'm fine\" register where someone looks intact and isn't. Unicode's own CLDR keyword list for the character is worth reading as a meaning guide in itself — disappear, dissolve, embarrassed, face, haha, heat, hot, liquid, lol, melt, melting, sarcasm, sarcastic — because it puts the two readings people argue about, humour and sarcasm, in the official record alongside the literal heat sense. It is also routinely confused with 🫪 Distorted Face, a much newer character that moves in the opposite direction; the difference is covered below.",
+  "intro": "Melting Face (🫠, U+1FAE0) is a yellow circular face keeping a faint smile while its lower half dissolves into a puddle. It was approved as part of Unicode 14.0 and Emoji 14.0, released on 14 September 2021, from proposal L2/20-072, and platforms shipped it through 2022, so it renders on essentially every current phone and desktop. The melting is doing emotional work rather than literal work: the face is still smiling, which is exactly why it reads as composure failing rather than sadness. That makes it the standard glyph for embarrassment, awkwardness, dread, being overwhelmed, and the \"I'm fine\" register where someone looks intact and isn't. Unicode's own CLDR keyword list for the character is worth reading as a meaning guide in itself: disappear, dissolve, embarrassed, face, haha, heat, hot, liquid, lol, melt, melting, sarcasm, sarcastic: because it puts the two readings people argue about, humour and sarcasm, in the official record alongside the literal heat sense. It is also routinely confused with 🫪 Distorted Face, a much newer character that moves in the opposite direction; the difference is covered below.",
   "date_published": "2026-08-02",
   "date_modified": "2026-08-02",
   "copy_pattern": "single",
@@ -27,7 +27,7 @@
     {
       "id": "neighbouring-faces",
       "label": "Faces It Sits Beside",
-      "h2": "Faces It Gets Used Alongside — and Confused With",
+      "h2": "Faces It Gets Used Alongside, and Confused With",
       "intro": "Neighbouring expressions covering embarrassment, strain and overwhelm. 🫪 Distorted Face is the one most often mistaken for it, and it moves the opposite way — outward, not down.",
       "symbols": [
         {
@@ -120,7 +120,7 @@
     {
       "href": "/library/embarrassed-emoji/",
       "title": "Embarrassed Emoji",
-      "desc": "The full embarrassment set — flushed, sweating, upside-down and melting."
+      "desc": "The full embarrassment set: flushed, sweating, upside-down and melting."
     },
     {
       "href": "/library/tired-emoji/",
@@ -130,7 +130,7 @@
     {
       "href": "/symbol/distorted-face-emoji/",
       "title": "Distorted Face Emoji",
-      "desc": "The character most often mistaken for this one — and it stretches outward instead."
+      "desc": "The character most often mistaken for this one, and it stretches outward instead."
     },
     {
       "href": "/symbol/cracking-face-emoji/",

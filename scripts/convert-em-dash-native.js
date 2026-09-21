@@ -4,13 +4,24 @@
  * data/em_dash_locale_policy.json — the ledger that already names the
  * replacement for every `ban` and `double-dash` locale.
  *
- * This is NOT the English purge that docs/em-dash-policy.md §1 refuses. For the
- * thirteen en-dash locales the ledger's named replacement is a single
- * character ( – ), so no sentence is rewritten and no word moves: the joint
- * changes and nothing else. For ja/zh-tw a LONE — becomes the paired ——, which
- * their own corpora already use for 1,810 of 2,565 and 1,036 of 1,121.
- * English is deliberately out of scope here: its remedies (colon, full stop,
- * comma pair) are per-sentence judgement, which §1 says drains on touch.
+ * IT APPLIES THE REMEDY, NOT THE CHARACTER. An earlier version swapped — for
+ * – and stopped. That is correct typography and it does not do the job: the
+ * tell is the CONSTRUCTION `claim — elaboration`, which reads the same with
+ * either mark. Measured over the 807 pages it had converted, 94% of the
+ * dashes were that construction and 5.9% were genuine A–Z ranges.
+ *
+ * The ledger said so already: `de`.replacement is "the spaced en dash ( – ),
+ * WHICH IS NEVER FLAGGED; or a comma pair, parentheses, a colon or a full
+ * stop" — five options, the first of which clears the gate and changes
+ * nothing for the reader. English has no en-dash option at all, which is why
+ * it is in scope here.
+ *
+ * WHAT MAKES IT SAFE IS A VERIFIER, NOT A PROMISE. Every file is checked with
+ * significanceHash() from scripts/lib/content-significance.js: if the hash
+ * moves, a word moved, and the edit is refused. That is the function the
+ * sitemap itself uses, so "no <lastmod> advances" is proven per file — and it
+ * holds for a full stop, a colon, a comma pair and parentheses alike, because
+ * that function strips punctuation and case-folds.
  *
  * Two things keep the blast radius honest:
  *
@@ -37,6 +48,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 const cheerio = require('cheerio');
 const { DROP_SELECTORS, UI_SELECTORS } = require('./lib/editorial-corpus.js');
+const { significanceHash } = require('./lib/content-significance.js');
 
 /**
  * WHY ja AND zh-tw ARE NOT CONVERTED HERE (measured 2026-09-20)
@@ -64,6 +76,8 @@ const REPO = path.resolve(__dirname, '..');
 const POLICY = JSON.parse(fs.readFileSync(path.join(REPO, 'data/em_dash_locale_policy.json'), 'utf8'));
 const LOCALES = POLICY.locales || POLICY;
 const policyFor = (c) => (LOCALES[c] && LOCALES[c].policy) || null;
+/** English plus the thirteen en-dash locales. ja/zh-tw stay out: see above. */
+const IN_SCOPE = new Set('en de nl it fi no cs sk hr sv sr bs da hu'.split(' '));
 const CODES = new Set(Object.keys(LOCALES).filter((c) => c !== 'en'));
 
 /**
@@ -103,116 +117,208 @@ function localeOf(rel) {
   return m && CODES.has(m[1]) ? m[1] : 'en';
 }
 
+
+
+/* ---- what a candidate IS ------------------------------------------------ */
 /**
- * Swap the em dash for the locale's spaced en dash, PRESERVING the
- * surrounding whitespace byte for byte.
+ * A candidate is a SPACED EM DASH and nothing else.
  *
- * `\s*` on both sides looks equivalent and is not: `\s` matches a newline, so
- * `…\n— foo` collapsed to `… – foo` and silently reflowed 506 line breaks
- * across the corpus. That renders identically, since HTML collapses
- * whitespace, but it is diff noise on 27 files and it makes the claim this
- * whole pass rests on — that only the joint moves — untrue.
- *
- * The one case that does gain whitespace is a tight `a—b` (120 occurrences),
- * because the native mark in all thirteen locales is the SPACED en dash;
- * leaving `a–b` would read as a numeric range.
+ * The first run indexed /[—–]/ and turned `Buchstaben A–Z, a–z` into
+ * `Buchstaben A) Z, a (z`. An en dash in this corpus is already a correct
+ * range; a TIGHT em dash (`2019—2024`) is a range too, and the policy's own
+ * table sends that to an en dash, never to a clause mark.
  */
-function toEnDash(s) {
-  return s.replace(/([ \t]*)—([ \t]*)/g, (m, a, b) => (a === '' && b === '' ? ' – ' : a + '–' + b));
-}
-/** A LONE — becomes the native paired ——; an existing —— is already correct. */
-function toDoubleDash(s) {
-  return s.replace(/—+/g, (m) => (m.length >= 2 ? m : '——'));
-}
 
 /**
- * THE EM DASH AS A SPECIMEN, not as punctuation.
+ * Blocks that bound a sentence for classification.
  *
- * CLAUDE.md already exempts the four dash subject PAGES, but the character is
- * also shown as a specimen ON other pages, and converting it there states a
- * falsehood. Both shapes below were found by diffing the conversion character
- * by character, never by reading the code:
- *
- *   <h4>Geviertstrich (—)</h4>   "Geviertstrich" IS German for em dash, so
- *                                converting it labels an em dash with an en
- *                                dash. 43 bracketed occurrences corpus-wide.
- *   <td>—</td>                   a data cell meaning "none", not prose. 30
- *                                lone-dash elements, mostly <button> (already
- *                                excluded as UI) plus the ig-matrix cells.
- *
- * Deliberately NOT matched: a text node that merely STARTS with a dash, e.g.
- * `— <strong>Profil…`, which is a list marker and ordinary punctuation. 461
- * nodes look like that, and treating them as specimens would skip real prose.
+ * `div` and `section` are here because leaving them out is not a smaller
+ * block, it is NO block: blockOf walks up until it matches, so a `.faq-answer`
+ * div sent the walk to the top of the document and made the WHOLE PAGE one
+ * block. Ten rows of one twelve-row glossary converted and two did not.
  */
-const BRACKETED_SPECIMEN = /([(\[（【][ \t]*)—([ \t]*[)\]）】])/g;
+const BLOCK_RE = /^(p|li|td|th|h2|h3|h4|h5|h6|dd|dt|div|section|article|aside|figcaption|summary|caption|blockquote)$/i;
+/** A label separator lives in these; the tone standard's own mark is a colon. */
+const LABEL_TAG_RE = /^(h2|h3|h4|h5|h6|th|dt|summary|figcaption|caption)$/i;
 
-/** The node is the entire content of its parent and is just the dash. */
+/** Coordinating conjunctions: a dash in front of one is a compound joint. */
+const CONJ = {
+  en: ['and','but','or','so','yet','nor','then','which','while','though'],
+  de: ['und','aber','oder','denn','sondern','doch'],
+  nl: ['en','maar','of','want','dus'],
+  it: ['e','ma','o','però','quindi','oppure'],
+  fi: ['ja','mutta','tai','joten','eli','sekä'],
+  no: ['og','men','eller','så'], da: ['og','men','eller','så'], sv: ['och','men','eller','så'],
+  cs: ['a','ale','nebo','takže','tedy'], sk: ['a','ale','alebo','takže','teda'],
+  hr: ['a','i','ali','ili','pa','te'], bs: ['a','i','ali','ili','pa','te'],
+  sr: ['a','i','ali','ili','pa','те'], hu: ['és','de','vagy','tehát','így'],
+};
+
+const R = { PERIOD:'.', COLON:':', COMMA:',', OPEN:'(', CLOSE:')', KEEP:'-', NOOP:'_', DEFER:'?' };
+
+/**
+ * `(—)` is the character shown AS A SPECIMEN, not used as punctuation.
+ * `Geviertstrich (—)` is German FOR em dash and `Em-streep (—)` is Dutch for
+ * it, so converting there labels an em dash with something else. NOOP is
+ * distinct from KEEP on purpose: KEEP still writes an en dash, and here even
+ * that states a falsehood.
+ */
+const SPECIMEN_AT = (t, at) => /[(\[（【][ \t]*$/.test(t.slice(Math.max(0, at - 3), at))
+                            && /^[ \t]*[)\]）】]/.test(t.slice(at + 1, at + 4));
+
+/**
+ * Plan every em dash in one block at once, SENTENCE BY SENTENCE.
+ *
+ * The first version asked "does this block hold two or more dashes?" and
+ * paired them by parity. A long FAQ answer holds six unrelated joints, so it
+ * produced `Unicode-Zeichen) also in Buchstaben` — a stray bracket mid
+ * sentence. An aside is a property of a SENTENCE, never of a paragraph.
+ *
+ * NOTE THE ONE REMEDY THIS NEVER RETURNS: a full stop. That needs the
+ * following segment to be an independent clause, which needs a finite verb
+ * and is not detectable across fourteen languages; get it wrong and you
+ * strand a fragment (`… – bez Nitra, dodatka ili posebne aplikacije.` has no
+ * verb). A full stop reaches the applier only from the judgement ledger.
+ */
+function planBlock(blockText, tag, code, noopOrdinals) {
+  const conj = CONJ[code] || CONJ.en;
+  const all = [...blockText.matchAll(/—/g)].map((m) => m.index);
+  const plan = new Array(all.length).fill(R.DEFER);
+
+  const bounds = [0];
+  for (const m of blockText.matchAll(/[.!?…](\s|$)/g)) bounds.push(m.index + m[0].length);
+  bounds.push(blockText.length + 1);
+  const sentenceOf = (i) => {
+    for (let k = 0; k < bounds.length - 1; k++) if (i >= bounds[k] && i < bounds[k + 1]) return k;
+    return bounds.length - 2;
+  };
+
+  const bySentence = new Map();
+  const odd = new Set();
+  all.forEach((at, i) => {
+    if (noopOrdinals && noopOrdinals.has(i)) { plan[i] = R.NOOP; return; }
+    if (SPECIMEN_AT(blockText, at)) { plan[i] = R.NOOP; return; }
+    const l = blockText[at - 1], r = blockText[at + 1];
+    const alnum = (c) => c !== undefined && /[\p{L}\p{N}]/u.test(c);
+    const ws = (c) => c === undefined || /\s/.test(c);
+    /**
+     * A RANGE is digits either side — `2019—2024`, which the policy's own
+     * table sends to an en dash. NOT merely "tight": measured across the
+     * whole in-scope corpus there are exactly THREE tight em dashes and all
+     * three are joints (`No—Unicode`, `spaces—like`), none a range. The
+     * "tight therefore a range" rule I wrote first had zero true instances
+     * and one false one, and wrote `No – Unicode`.
+     */
+    if (/\d/.test(l || '') && /\d/.test(r || '')) { plan[i] = R.KEEP; return; }
+    if (alnum(l) && alnum(r)) { plan[i] = R.DEFER; return; }
+    if (!ws(l) || !ws(r)) { plan[i] = R.DEFER; odd.add(sentenceOf(at)); return; }
+    const sk = sentenceOf(at);
+    if (!bySentence.has(sk)) bySentence.set(sk, []);
+    bySentence.get(sk).push(i);
+  });
+
+  // A dash sitting against punctuation is ambiguous, and its PARTNER must not
+  // be converted alone: half a converted aside is worse than none.
+  for (const sk of odd) if (bySentence.has(sk)) bySentence.delete(sk);
+
+  for (const [, group] of bySentence) {
+    // B. a true paired aside: exactly two joints in ONE sentence, with a span
+    //    short enough and clean enough to read as parenthetical.
+    if (group.length === 2) {
+      const [a, b] = group;
+      const inner = blockText.slice(all[a] + 1, all[b]).trim();
+      if (inner.length <= 60 && !/[.!?]/.test(inner)) {
+        const pair = inner.includes(',') ? [R.OPEN, R.CLOSE] : [R.COMMA, R.COMMA];
+        plan[a] = pair[0]; plan[b] = pair[1];
+        continue;
+      }
+    }
+    if (group.length > 2) continue;                     // ambiguous: judge it
+    for (const i of group) {
+      const at = all[i];
+      const before = blockText.slice(0, at).trim();
+      const after = blockText.slice(at + 1).trim();
+      const first = (after.split(/[\s,.;:]/)[0] || '').toLowerCase().replace(/[^\p{L}]/gu, '');
+      if (LABEL_TAG_RE.test(tag)) { plan[i] = R.COLON; continue; }    // A. label row
+      if (conj.includes(first)) { plan[i] = R.COMMA; continue; }      // C. compound joint
+      const se = after.search(/[.!?](\s|$)/);
+      const win = se === -1 ? after : after.slice(0, se);
+      if ((win.match(/,/g) || []).length >= 2) { plan[i] = R.COLON; continue; }  // D. list
+      // A colon ends a label context as surely as a full stop does. Splitting
+      // on sentence enders alone left row 1 of a <br>-separated glossary with
+      // a 55-character `before` and rows 2-12 with a short one: eleven colons
+      // and one untouched dash in one list.
+      const bTail = before.split(/[.!?:]\s/).pop() || before;
+      if (bTail.length < 34) { plan[i] = R.COLON; continue; }         // E. label–gloss
+      plan[i] = R.DEFER;                                              // F. judgement
+    }
+  }
+  return plan;
+}
+
+/* ---- applying a remedy to the RAW SOURCE SLICE -------------------------- */
+
+function applyRemedy(raw, k, remedy) {
+  let seen = -1, pos = -1;
+  for (const m of raw.matchAll(/—/g)) { if (++seen === k) { pos = m.index; break; } }
+  if (pos === -1) return null;
+  let s = pos, e = pos + 1;
+  while (s > 0 && (raw[s - 1] === ' ' || raw[s - 1] === '\t')) s--;
+  while (e < raw.length && (raw[e] === ' ' || raw[e] === '\t')) e++;
+  const left = raw.slice(s, pos), right = raw.slice(pos + 1, e);
+  let mid;
+  switch (remedy) {
+    case '.': {
+      const tail = raw.slice(e);
+      const li = tail.search(/\p{L}/u);
+      // No letter left in THIS node to capitalise: a full stop would open a
+      // sentence whose start we cannot see. Downgrade rather than guess.
+      if (li === -1 || li > 3) return applyRemedy(raw, k, ':');
+      return raw.slice(0, s) + '.' + (right || ' ')
+           + tail.slice(0, li) + tail[li].toUpperCase() + tail.slice(li + 1);
+    }
+    case ':': mid = ':' + (right || ' '); break;
+    case ',': mid = ',' + (right || ' '); break;
+    case '(': mid = (left || ' ') + '('; break;
+    case ')': mid = ')' + (right || ' '); break;
+    case '-': mid = (left === '' && right === '') ? ' – ' : left + '–' + right; break;
+    default: return null;
+  }
+  return raw.slice(0, s) + mid + raw.slice(e);
+}
+
+
+/** The node is the entire content of its parent and is just the dash:
+ *  `<td>—</td>` is a data cell meaning "none", not prose. Deliberately NOT
+ *  matched: a node that merely STARTS with a dash (`— <strong>Profil…`), which
+ *  is a list marker and ordinary punctuation — 461 nodes look like that. */
 function isLoneSpecimen(node) {
   const kids = (node.parent && node.parent.children) || [];
   return kids.length === 1 && kids[0] === node && /^[\s—]*—[\s—]*$/.test(node.data);
 }
 
+/* ---- the judgement ledger ---------------------------------------------- */
 /**
- * KEEP THE JSON-LD MIRROR IN STEP WITH THE VISIBLE COPY.
+ * data/em_dash_rewrites.json holds the ~28% the planner refuses, where
+ * choosing between a full stop and a colon means reading the sentence. Key is
+ * the block's whitespace-collapsed text, value is one remedy code per em dash
+ * in that block, in order, so one entry covers every page carrying it.
  *
- * `script` is in DROP_SELECTORS, which is right for measurement — JSON-LD is
- * metadata, not editorial copy — but a FAQPage block is a MIRROR of the
- * visible FAQ, and CLAUDE.md is explicit that the two must match: "Never edit
- * or trim a visible FAQ without updating the JSON-LD... Paraphrase is not a
- * match." Converting only the visible half opened that split on 453 pages and
- * 1,061 string pairs.
- *
- * `check-faq-schema` cannot see it: it measures CONTENT TOKENS with a 4-token
- * tolerance, and punctuation is not a content token. So this is invisible to
- * the gate by construction, which is precisely why it needs doing here.
- *
- * The rule is self-limiting and needs no slot model: convert a JSON-LD string
- * ONLY when its en-dash twin is already present in the visible body. That
- * converts exactly the strings whose visible half this pass changed, and
- * leaves alone anything mirroring a held slot (title, meta description, h1),
- * which would otherwise open a NEW split in the other direction.
+ * A ledger like every other one here: entries are decisions, never added to
+ * make a gate pass. An unjudged block is left exactly as it is and reported.
  */
-const LD_BLOCK = /(<script[^>]*type="application\/ld\+json"[^>]*>)([\s\S]*?)(<\/script>)/g;
+const LEDGER_PATH = path.join(REPO, 'data/em_dash_rewrites.json');
+const LEDGER = fs.existsSync(LEDGER_PATH)
+  ? JSON.parse(fs.readFileSync(LEDGER_PATH, 'utf8')) : { entries: {} };
+const JUDGED = LEDGER.entries || {};
+const collapse = (s) => s.replace(/\s+/g, ' ').trim();
 
-function syncJsonLdMirror(html, conv) {
-  const visible = html.replace(LD_BLOCK, ' ');
-  let changed = 0;
-  const out = html.replace(LD_BLOCK, (m, open, body, close) => {
-    const next = body.replace(/"(?:[^"\\]|\\.)*"/g, (lit) => {
-      if (!lit.includes('—')) return lit;
-      let parsed;
-      try { parsed = JSON.parse(lit); } catch { return lit; }
+/* ---- the file pass ------------------------------------------------------ */
 
-      // Match PER OCCURRENCE on local context, not on the whole string. A FAQ
-      // answer is long, and any single whitespace difference anywhere in it
-      // (the visible half starts on its own line after the wrapper tag) defeats
-      // a whole-string test — that left 12 pairs unconverted across 9 pages.
-      let hit = 0;
-      for (const m2 of parsed.matchAll(/—/g)) {
-        const i = m2.index;
-        const probe = conv(parsed.slice(Math.max(0, i - 30), i + 31));
-        if (visible.includes(probe)) hit++;
-      }
-      if (!hit) return lit;
-
-      // Apply the SAME transform the visible half got, never a per-occurrence
-      // patch. Splicing conv('—') in place re-adds spaces the surrounding text
-      // already has, which produced a double-spaced dash on 146 files.
-      changed += hit;
-      return JSON.stringify(conv(parsed));
-    });
-    return open + next + close;
-  });
-  return { html: out, changed };
-}
-
-function convertFile(rel, { write }) {
+function convertFile(rel, { write, defer }) {
   const abs = path.join(REPO, rel);
   const code = localeOf(rel);
-  const pol = policyFor(code);
-  // English is out of scope: its remedies are per-sentence judgement (§1).
-  const inScope = pol === 'ban' && code !== 'en';   // see the ja/zh-tw note above
-  if (!inScope) return null;
+  if (!IN_SCOPE.has(code)) return null;
   const html = fs.readFileSync(abs, 'utf8');
   if (!html.includes('—')) return null;
 
@@ -222,187 +328,295 @@ function convertFile(rel, { write }) {
   if (!body) return null;
 
   const excluded = new Set();
-  for (const sel of [...DROP_SELECTORS, ...UI_SELECTORS, ...HELD]) {
-    $(sel).each((_, el) => excluded.add(el));
-  }
-  const isExcluded = (node) => {
-    for (let n = node; n; n = n.parent) if (excluded.has(n)) return true;
-    return false;
-  };
+  for (const sel of [...DROP_SELECTORS, ...UI_SELECTORS, ...HELD]) $(sel).each((_, el) => excluded.add(el));
+  const isExcluded = (node) => { for (let n = node; n; n = n.parent) if (excluded.has(n)) return true; return false; };
 
-  const edits = [];
+  /**
+   * Gather EVERY non-excluded text node, grouped by block, in document order —
+   * not just the dash-bearing ones, and never via $(block).text().
+   *
+   * The plan is indexed by dash ORDINAL and the edits are applied by dash
+   * ordinal within each node. Those two agree only if both are counted over
+   * the same character stream. $(block).text() includes excluded descendants
+   * whose dashes the edit walk skips, so every later ordinal in that block
+   * shifts by one and lands on the wrong dash. Building the block's text FROM
+   * the nodes makes the alignment structural rather than something to get
+   * right.
+   */
+  const blocks = new Map();
   (function walk(node) {
     if (!node) return;
     if (node.type === 'text') {
-      const loc = node.sourceCodeLocation;
-      if (!loc || !node.data.includes('—')) return;
       if (isExcluded(node.parent)) return;
-      // Transform the RAW SOURCE SLICE, never node.data. cheerio decodes
-      // entities, so writing .data back un-escapes them: `&amp; &lt; &gt;`
-      // becomes `& < >`, which is wrong everywhere and is real markup
-      // corruption on the pages about those very characters. Measured on the
-      // first attempt: 91 files, 155 entities lost, worst on
-      // de/symbol/kleiner-und-groesser-zeichen (-11).
-      //
-      // An em dash can never appear inside an entity reference, so applying
-      // the dash transform to the raw slice is safe and leaves every entity
-      // exactly as authored.
-      const raw = html.slice(loc.startOffset, loc.endOffset);
-      if (!raw.includes('—')) return;
-      if (isLoneSpecimen(node)) return;
-      // Protect `(—)` by parking it, converting, then restoring it.
-      const parked = raw.replace(BRACKETED_SPECIMEN, '$1\u0001$2');
-      const conv = pol === 'double-dash' ? toDoubleDash(parked) : toEnDash(parked);
-      const next = conv.split('\u0001').join('—');
-      if (next !== raw) edits.push({ start: loc.startOffset, end: loc.endOffset, next, prev: raw });
+      let b = node.parent;
+      while (b && b.parent && !BLOCK_RE.test(b.name || '')) b = b.parent;
+      b = b || body;
+      if (!blocks.has(b)) blocks.set(b, []);
+      blocks.get(b).push(node);
       return;
     }
     for (const c of node.children || []) walk(c);
   })(body);
 
+  const edits = [];
+  const pairs = [];
+  const deferred = [];
+  let judged = 0, auto = 0;
+
+  for (const [b, nodes] of blocks) {
+    if (!nodes.some((n) => n.data.includes('—'))) continue;
+    const noop = new Set();
+    let ord = 0, buf = '';
+    for (const n of nodes) {
+      const c = (n.data.match(/—/g) || []).length;
+      if (isLoneSpecimen(n)) for (let i = 0; i < c; i++) noop.add(ord + i);
+      ord += c; buf += n.data;
+    }
+    const blockText = collapse(buf);
+    const tag = (b.name || 'p').toLowerCase();
+    const plan = planBlock(blockText, tag, code, noop);
+    const decided = JUDGED[blockText];
+
+    let seenInBlock = 0;
+    for (const bn of nodes) {
+      const loc = bn.sourceCodeLocation;
+      const dataDashes = (bn.data.match(/—/g) || []).length;
+      if (!dataDashes) continue;
+      if (!loc) { seenInBlock += dataDashes; continue; }
+      const raw = html.slice(loc.startOffset, loc.endOffset);
+      // An em dash is never written as an entity here; if raw and decoded
+      // disagree the offsets cannot be trusted, so leave the node rather than
+      // guess. This is what keeps &amp; &lt; &gt; intact — 155 of them were
+      // destroyed the first time by writing cheerio's decoded .data back.
+      if (dataDashes !== (raw.match(/—/g) || []).length) { seenInBlock += dataDashes; continue; }
+
+      /**
+       * RIGHT TO LEFT, and indexed plainly.
+       *
+       * Replacing a dash removes it from `cur`, so going forwards every later
+       * ordinal shifts: the second half of a paired aside was never found and
+       * `(Xīnnián kuàilè) — literally 'New Year happy' —` shipped as
+       * `…), literally 'New Year happy' —` — one comma, one dash, an aside
+       * closed with the wrong mark. A `skipped` counter cannot fix it either,
+       * because a NOOP dash is still a dash in `cur`; that mis-correction is
+       * what turned `em-streep (—) — ook` into `(: ) —`. Descending, index i
+       * always names the i-th dash of the original node, because everything
+       * already replaced sits to its right.
+       */
+      let cur = raw;
+      for (let i = dataDashes - 1; i >= 0; i--) {
+        const g = seenInBlock + i;
+        let remedy;
+        if (decided && decided[g] && decided[g] !== R.DEFER) { remedy = decided[g]; judged++; }
+        else {
+          remedy = plan[g];
+          if (remedy === R.DEFER || remedy === undefined) {
+            deferred.push({ rel, code, key: blockText, n: plan.length });
+            remedy = null;
+          } else if (remedy !== R.NOOP) auto++;
+        }
+        if (!remedy || remedy === R.NOOP) continue;
+        const next = applyRemedy(cur, i, remedy);
+        if (next != null) cur = next;
+      }
+      seenInBlock += dataDashes;
+      if (cur !== raw) {
+        edits.push({ start: loc.startOffset, end: loc.endOffset, next: cur, prev: raw });
+        if (collapse(raw).length >= 12) pairs.push([raw, cur]);
+      }
+    }
+  }
+
+  if (defer) for (const d of deferred) defer.push(d);
+  if (!edits.length) return null;
+
   let out = html;
   for (const e of edits.sort((a, b) => b.start - a.start)) out = out.slice(0, e.start) + e.next + out.slice(e.end);
-  // Mirror pass: the visible half is now converted, so bring its JSON-LD twin along.
-  const mirror = syncJsonLdMirror(out, pol === 'double-dash' ? toDoubleDash : toEnDash);
+  const mirror = syncJsonLdMirror(out, pairs);
   out = mirror.html;
-  if (!edits.length && !mirror.changed) return null;
-  // Count REPLACEMENTS, never the character delta: —->—— adds a character, so
-  // a delta metric reports the paired-dash locales as negative work done.
-  const converted = edits.reduce((n, e) => {
-    if (pol === 'double-dash') return n + ((e.prev.match(/(?<!—)—(?!—)/g) || []).length);
-    return n + ((e.prev.match(/—/g) || []).length);
-  }, 0);
+
+  // THE VERIFIER. The same function the sitemap uses, so "no <lastmod>
+  // advances" is measured rather than argued — and because it strips
+  // punctuation and case-folds, it equally proves no word was added, dropped
+  // or changed by any of the five remedies.
+  if (significanceHash(html) !== significanceHash(out)) return { rel, code, refused: true, nodes: edits.length };
   if (write) fs.writeFileSync(abs, out);
-  return { rel, code, pol, nodes: edits.length, converted };
+  return { rel, code, nodes: edits.length, auto, judged, deferred: deferred.length, mirror: mirror.changed };
 }
 
+
+/* ---- JSON-LD mirror ----------------------------------------------------- */
 /**
- * ---- upstream: the page specs ----
+ * Unchanged in purpose from the first version and changed in mechanism: the
+ * conversion is no longer a pure function of the character, so the mirror
+ * cannot re-derive it. It replays the exact (before -> after) pairs this file
+ * just applied to its visible text, which by construction converts only the
+ * strings whose visible twin moved and leaves a held slot's mirror alone.
  *
- * Fixing only the rendered HTML is undone by the next generator run, which
- * CLAUDE.md names explicitly ("Do not 'fix' an em dash by editing generated
- * HTML"). The locale specs under data/library_page_specs/<lang>/ are that
- * upstream, and a `*.json` glob does not see them — they are a second set.
- *
- * Keys are allowlisted, never swept. `char` is the copy payload and the em
- * dash IS the product there; `title`/`meta_description`/`hero_h1` are the
- * churn class held back by policy §3; `symbols[].label` is a tile label,
- * which editorial-corpus.js captures as `ui` rather than as an editorial
- * slot, so the HTML pass does not touch it either and the two stay in step.
+ * check-faq-schema cannot see this split — it compares content tokens with a
+ * 4-token tolerance and punctuation is not a content token — which is exactly
+ * why it has to be done here. It was 453 pages and 1,061 string pairs the
+ * first time it was missed.
  */
-const SPEC_TEXT_KEYS = new Set([
-  'hero_tagline', 'intro', 'h2', 'desc', 'text', 'body', 'answer', 'question',
-  'cta', 'note', 'notes', 'lead', 'summary', 'caption', 'blurb'
-]);
-const SPEC_NEVER = new Set([
-  'char', 'slug', 'canonical', 'href', 'home_url', 'library_url', 'hreflang',
-  'lang', 'page_type', 'copy_pattern', 'collection_container_id', 'id',
-  'date_modified', 'date_published', 'breadcrumb', 'crumb_home', 'crumb_library',
-  'title', 'meta_description', 'hero_h1', 'label'
-]);
+const LD_BLOCK = /(<script[^>]*type="application\/ld\+json"[^>]*>)([\s\S]*?)(<\/script>)/g;
+const decode = (s) => s.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+  .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ');
 
-function convertSpec(rel, { write }) {
-  const abs = path.join(REPO, rel);
-  const parts = path.relative(path.join(REPO, 'data/library_page_specs'), abs).split(path.sep);
-  const code = parts.length > 1 && LOCALES[parts[0]] ? parts[0] : 'en';
-  const pol = policyFor(code);
-  const inScope = pol === 'ban' && code !== 'en';   // see the ja/zh-tw note above
-  if (!inScope) return null;
-  const raw = fs.readFileSync(abs, 'utf8');
-  if (!raw.includes('—')) return null;
-  let j;
-  try { j = JSON.parse(raw); } catch { return null; }
-  const enHref = (j.hreflang || []).find((h) => h && h.lang === 'en');
-  let enPath = j.canonical || '';
-  if (enHref && enHref.href) { try { enPath = new URL(enHref.href).pathname; } catch { /* keep canonical */ } }
-  else if (enPath) { try { enPath = new URL(enPath).pathname; } catch { /* keep as-is */ } }
-  if (isSubject(enPath)) return null;
-
-  // Collect (oldString -> newString) rather than mutating the tree: 637 of the
-  // 1,555 specs do NOT survive JSON.parse -> JSON.stringify(null, 2) byte for
-  // byte, so a re-serialising writer would reformat a third of the corpus and
-  // bury the real change. Same call, same reason, as the JSON-LD fixer in
-  // docs/source-attribution.md §4: patch the text, never round-trip it.
-  let n = 0;
-  const swaps = [];
-  const conv = (s) => (pol === 'double-dash' ? toDoubleDash(s) : toEnDash(s));
-  (function walk(node) {
-    if (Array.isArray(node)) { for (const v of node) walk(v); return; }
-    if (!node || typeof node !== 'object') return;
-    for (const [k, v] of Object.entries(node)) {
-      if (SPEC_NEVER.has(k)) continue;
-      if (typeof v === 'string') {
-        if (!SPEC_TEXT_KEYS.has(k) || !v.includes('—')) continue;
-        const next = conv(v);
-        if (next !== v) {
-          n += pol === 'double-dash' ? (v.match(/(?<!—)—(?!—)/g) || []).length : (v.match(/—/g) || []).length;
-          swaps.push([v, next]);
-        }
-      } else walk(v);
-    }
-  })(j);
-
-  if (!n) return null;
-  if (write) {
-    let out = raw;
-    for (const [from, to] of swaps) {
-      const needle = JSON.stringify(from);
-      if (!out.includes(needle)) {
-        // Escaping in the file differs from the canonical form; skip rather
-        // than guess. Reported, never silently dropped.
-        console.error(`  ! ${rel}: could not locate a value verbatim, left unchanged`);
-        continue;
+function syncJsonLdMirror(html, pairs) {
+  if (!pairs.length) return { html, changed: 0 };
+  const dec = pairs.map(([a, b]) => [decode(a).trim(), decode(b).trim()])
+    .filter(([a]) => a.length >= 12 && a.includes('—'))
+    .sort((x, y) => y[0].length - x[0].length);   // longest first: never a partial hit
+  let changed = 0;
+  const out = html.replace(LD_BLOCK, (m, open, bodyText, close) => {
+    const next = bodyText.replace(/"(?:[^"\\]|\\.)*"/g, (lit) => {
+      if (!lit.includes('—')) return lit;
+      let parsed; try { parsed = JSON.parse(lit); } catch { return lit; }
+      let v = parsed;
+      for (const [a, b] of dec) {
+        if (!v.includes(a)) continue;
+        v = v.split(a).join(b); changed++;
+        // The node began AFTER the space preceding the dash (that space sat
+        // between </strong> and the text node), so replacing the fragment
+        // leaves `Italic : 4`. Close the gap the substitution opened.
+        if (/^[:,.)]/.test(b)) v = v.replace(/[ \t]+([:,.)])/g, '$1');
       }
-      out = out.split(needle).join(JSON.stringify(to));
+      return v === parsed ? lit : JSON.stringify(v);
+    });
+    return open + next + close;
+  });
+  return { html: out, changed };
+}
+
+/* ---- upstream: the page specs ------------------------------------------ */
+/**
+ * Fixing only the rendered HTML is undone by the next generator run, which
+ * CLAUDE.md names explicitly. The locale specs under
+ * data/library_page_specs/<lang>/ are that upstream and a `*.json` glob does
+ * not see them — they are a second set of 885 beside the 628 at the top.
+ *
+ * Keys are allowlisted, never swept: `char` is the copy payload and the em
+ * dash IS the product there; title/meta_description/hero_h1 are the churn
+ * class held by policy §3; `symbols[].label` is captured as `ui` rather than
+ * as an editorial slot, so the HTML pass does not touch it either and the two
+ * stay in step.
+ */
+const SPEC_TEXT_KEYS = new Set(['hero_tagline', 'intro', 'h2', 'desc', 'text', 'body', 'answer',
+  'question', 'cta', 'note', 'notes', 'lead', 'summary', 'caption', 'blurb']);
+const SPEC_NEVER = new Set(['char', 'title', 'meta_description', 'hero_h1', 'label', 'slug', 'id', 'url', 'href', 'date']);
+
+function convertSpec(rel, { write, defer }) {
+  const abs = path.join(REPO, rel);
+  const src = fs.readFileSync(abs, 'utf8');
+  if (!src.includes('—')) return null;
+  /**
+   * THE SPEC'S OWN `lang`, which is what the generator reads
+   * (generate_library_page_from_spec.py: `spec.get("lang", "en")`), never the
+   * path and never the filename.
+   *
+   * 301 locale specs live at the TOP level of data/library_page_specs/ as
+   * `<lang>-<slug>.json`, so a directory-only rule calls every one of them
+   * English. That was harmless while English was out of scope and became a
+   * scope violation the moment it came in: 14 `ru-`, 21 `fr-`, 12 `pt-`, 8
+   * `pl-` and 3 `es-` specs belong to NATIVE-dash locales that must never be
+   * touched. A filename prefix is not a safe substitute either — `pi-`,
+   * `om-` and `ml-` are English specs about pi, om and millilitres.
+   */
+  let parsed;
+  try { parsed = JSON.parse(src); } catch { return null; }
+  const code = String(parsed.lang || 'en').toLowerCase();
+  if (!IN_SCOPE.has(code)) return null;
+
+  const subs = [];
+  (function walk(node, key) {
+    if (typeof node === 'string') {
+      if (!node.includes('—') || SPEC_NEVER.has(key) || !SPEC_TEXT_KEYS.has(key)) return;
+      const text = collapse(node);
+      const plan = planBlock(text, 'p', code, null);
+      const decided = JUDGED[text];
+      let cur = node;
+      for (let i = plan.length - 1; i >= 0; i--) {     // right to left, as above
+        const remedy = (decided && decided[i] && decided[i] !== R.DEFER) ? decided[i] : plan[i];
+        if (!remedy || remedy === R.DEFER) { if (defer) defer.push({ rel, code, key: text, n: plan.length }); continue; }
+        if (remedy === R.NOOP) continue;
+        const nx = applyRemedy(cur, i, remedy);
+        if (nx != null) cur = nx;
+      }
+      if (cur !== node) subs.push([node, cur]);
+      return;
     }
-    fs.writeFileSync(abs, out);
+    if (Array.isArray(node)) { for (const v of node) walk(v, key); return; }
+    if (node && typeof node === 'object') { for (const [k, v] of Object.entries(node)) walk(v, k); }
+  })(parsed, null);
+
+  if (!subs.length) return null;
+  // Patch the TEXT, never round-trip: 637 of the 1,555 specs do not survive
+  // JSON.parse -> JSON.stringify(null, 2) byte for byte, so a re-serialising
+  // writer reformats a third of the corpus and buries the real change.
+  let out = src;
+  for (const [a, b] of subs) {
+    const from = JSON.stringify(a).slice(1, -1), to = JSON.stringify(b).slice(1, -1);
+    if (out.includes(from)) out = out.split(from).join(to);
   }
-  return { rel, code, pol, converted: n };
+  if (out === src) return null;
+  try { JSON.parse(out); } catch { return { rel, code, refused: true }; }
+  if (write) fs.writeFileSync(abs, out);
+  return { rel, code, strings: subs.length };
+}
+
+
+/* ---- CLI ---------------------------------------------------------------- */
+
+function listFiles(args) {
+  const i = args.indexOf('--files');
+  if (i !== -1) return args.slice(i + 1).filter((a) => !a.startsWith('--'));
+  const out = execSync(
+    "git ls-files '*/index.html' 'index.html' 'data/library_page_specs/**/*.json' 'data/library_page_specs/*.json'",
+    { cwd: REPO, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+  return out.trim().split('\n').filter(Boolean);
 }
 
 function main() {
   const args = process.argv.slice(2);
   const write = args.includes('--write');
-  const only = args.includes('--files') ? args.slice(args.indexOf('--files') + 1).filter((a) => !a.startsWith('--')) : null;
-  const files = only || execSync("git ls-files '*index.html'", { cwd: REPO, maxBuffer: 1e9 }).toString().trim().split('\n');
+  const deferOutIdx = args.indexOf('--defer-out');
+  const deferOut = deferOutIdx === -1 ? null : args[deferOutIdx + 1];
+  const defer = [];
+  const files = listFiles(args);
 
-  const per = {};
-  let pages = 0, converted = 0;
-
-  if (args.includes('--specs')) {
-    const specs = execSync("git ls-files 'data/library_page_specs/*.json'", { cwd: REPO, maxBuffer: 1e9 })
-      .toString().trim().split('\n');
-    for (const rel of specs) {
-      let r;
-      try { r = convertSpec(rel, { write }); } catch (e) { console.error(`  ! ${rel}: ${e.message}`); continue; }
-      if (!r) continue;
-      pages++; converted += r.converted;
-      (per[r.code] ??= { pol: r.pol, pages: 0, n: 0 });
-      per[r.code].pages++; per[r.code].n += r.converted;
-    }
-    console.log(`${write ? 'CONVERTED' : 'WOULD CONVERT'} (SPECS): ${converted} em dashes in ${pages} spec files\n`);
-    console.log('  locale  policy        specs   em dashes');
-    for (const [c, v] of Object.entries(per).sort((a, b) => b[1].n - a[1].n)) {
-      console.log(`  ${c.padEnd(8)}${v.pol.padEnd(14)}${String(v.pages).padStart(5)}${String(v.n).padStart(12)}`);
-    }
-    if (!write) console.log('\n(report only — pass --write to apply)');
-    return;
-  }
-
+  const done = [], refused = [];
+  let nodes = 0, autoN = 0, judgedN = 0, specs = 0, mirrors = 0;
   for (const rel of files) {
-    let r;
-    try { r = convertFile(rel, { write }); } catch (e) { console.error(`  ! ${rel}: ${e.message}`); continue; }
+    const r = rel.endsWith('.json') ? convertSpec(rel, { write, defer }) : convertFile(rel, { write, defer });
     if (!r) continue;
-    pages++; converted += r.converted;
-    (per[r.code] ??= { pol: r.pol, pages: 0, n: 0 });
-    per[r.code].pages++; per[r.code].n += r.converted;
+    if (r.refused) { refused.push(r); continue; }
+    done.push(r);
+    if (r.strings) { specs += r.strings; continue; }
+    nodes += r.nodes; autoN += r.auto || 0; judgedN += r.judged || 0; mirrors += r.mirror || 0;
   }
-  console.log(`${write ? 'CONVERTED' : 'WOULD CONVERT'}: ${converted} em dashes on ${pages} pages\n`);
-  console.log('  locale  policy        pages   em dashes');
-  for (const [c, v] of Object.entries(per).sort((a, b) => b[1].n - a[1].n)) {
-    console.log(`  ${c.padEnd(8)}${v.pol.padEnd(14)}${String(v.pages).padStart(5)}${String(v.n).padStart(12)}`);
+
+  // group the deferrals by their ledger key so one decision covers every page
+  const byKey = new Map();
+  for (const d of defer) {
+    const e = byKey.get(d.key) || { key: d.key, code: d.code, n: d.n, pages: 0 };
+    e.pages++; byKey.set(d.key, e);
   }
-  if (!write) console.log('\n(report only — pass --write to apply)');
+  const pending = [...byKey.values()].sort((a, b) => b.pages - a.pages);
+
+  console.log(`files changed      ${done.length}${write ? '' : '   (dry run — pass --write)'}`);
+  console.log(`  text nodes       ${nodes}`);
+  console.log(`  auto remedies    ${autoN}    (colon / comma / brackets — never a full stop)`);
+  console.log(`  judged remedies  ${judgedN}    (from data/em_dash_rewrites.json)`);
+  console.log(`  json-ld mirrored ${mirrors}`);
+  console.log(`  spec strings     ${specs}`);
+  console.log(`REFUSED by the significance verifier: ${refused.length}`);
+  for (const r of refused.slice(0, 20)) console.log(`   ! ${r.rel}`);
+  console.log(`deferred for judgement: ${defer.length} occurrences in ${pending.length} distinct blocks`);
+  if (deferOut) {
+    fs.writeFileSync(deferOut, JSON.stringify(pending, null, 1));
+    console.log(`  written to ${deferOut}`);
+  }
+  if (refused.length) process.exitCode = 1;
 }
+
 if (require.main === module) main();
-module.exports = { convertFile, convertSpec, toEnDash, toDoubleDash };

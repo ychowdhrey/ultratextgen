@@ -5,8 +5,8 @@
   "canonical": "https://ultratextgen.com/library/sigh-emoji/",
   "breadcrumb": "Sigh Emoji & Kaomoji",
   "hero_h1": "Sigh Emoji & Kaomoji",
-  "hero_tagline": "From a relieved exhale to a flat 'well, that happened' — every sigh emoji, exasperated kaomoji, and one-click combo for the moment it's finally over. Click any symbol to copy it instantly.",
-  "intro": "The exhaling face 😮‍💨 is the internet's go-to sigh, and it stretches to cover a lot: relief after a close call, exasperation at yet another delay, or the flat resignation of watching something go wrong and not having the energy to react. This page collects that whole range — the relieved exhale of 😌 and 😥, the eye-rolling exasperation of 🙄 and 😒, wind-and-shrug props like 💨 and 🤷, and plain-text sigh kaomoji such as (¬_¬) for anywhere emoji don't render. If you want general exhaustion or sleepiness instead, the tired emoji page covers yawns and burnout; this one stays focused on the exhale itself, not the run-down. Grab a single face or copy a ready-made combo depending on how big the sigh is.",
+  "hero_tagline": "From a relieved exhale to a flat 'well, that happened': every sigh emoji, exasperated kaomoji, and one-click combo for the moment it's finally over. Click any symbol to copy it instantly.",
+  "intro": "The exhaling face 😮‍💨 is the internet's go-to sigh, and it stretches to cover a lot: relief after a close call, exasperation at yet another delay, or the flat resignation of watching something go wrong and not having the energy to react. This page collects that whole range: the relieved exhale of 😌 and 😥, the eye-rolling exasperation of 🙄 and 😒, wind-and-shrug props like 💨 and 🤷, and plain-text sigh kaomoji such as (¬_¬) for anywhere emoji don't render. If you want general exhaustion or sleepiness instead, the tired emoji page covers yawns and burnout; this one stays focused on the exhale itself, not the run-down. Grab a single face or copy a ready-made combo depending on how big the sigh is.",
   "date_published": "2026-07-13",
   "date_modified": "2026-07-13",
   "copy_pattern": "collection",
@@ -15,7 +15,7 @@
       "id": "sigh-relief",
       "label": "Sigh & Relief",
       "h2": "Sigh & Relief Emoji",
-      "intro": "The literal exhale — relief after tension breaks, or a shaky laugh once the worst part is over.",
+      "intro": "The literal exhale: relief after tension breaks, or a shaky laugh once the worst part is over.",
       "symbols": [
         { "char": "😮‍💨", "label": "Face Exhaling" },
         { "char": "😌", "label": "Relieved Face" },
@@ -29,7 +29,7 @@
       "id": "exasperated-resigned",
       "label": "Exasperated & Resigned",
       "h2": "Exasperated & Resigned Faces",
-      "intro": "When the sigh isn't relief but resignation — eye-rolling, flat, or quietly done with whatever just happened.",
+      "intro": "When the sigh isn't relief but resignation: eye-rolling, flat, or quietly done with whatever just happened.",
       "symbols": [
         { "char": "😔", "label": "Pensive Face" },
         { "char": "🙄", "label": "Face with Rolling Eyes" },
@@ -44,7 +44,7 @@
       "id": "sigh-props",
       "label": "Reaction Props",
       "h2": "Sigh Reaction Props & Gestures",
-      "intro": "The gestures and props that ride along with a sigh — a puff of breath, a shrug, or checking out entirely.",
+      "intro": "The gestures and props that ride along with a sigh: a puff of breath, a shrug, or checking out entirely.",
       "symbols": [
         { "char": "💨", "label": "Dashing Away" },
         { "char": "🌬️", "label": "Wind Face" },
@@ -58,7 +58,7 @@
       "id": "sigh-kaomoji",
       "label": "Kaomoji",
       "h2": "Sigh Kaomoji & Text Faces",
-      "intro": "Plain-text sigh faces for anywhere emoji don't render — paste them into comments, forums, or code.",
+      "intro": "Plain-text sigh faces for anywhere emoji don't render: paste them into comments, forums, or code.",
       "symbols": [
         { "char": "(´-ω-`)", "label": "Soft Sigh Kaomoji" },
         { "char": "(¬_¬)", "label": "Side-Eye Sigh Kaomoji" },
@@ -74,7 +74,7 @@
     "id": "combo-sets",
     "label": "Combo Sets",
     "h2": "Sigh Emoji Combo Sets",
-    "intro": "Ready-made sigh combos — copy a full set with one click and paste it straight into a caption, comment, or reply."
+    "intro": "Ready-made sigh combos: copy a full set with one click and paste it straight into a caption, comment, or reply."
   },
   "collection_container_id": "sighSetsContainer",
   "collections": [

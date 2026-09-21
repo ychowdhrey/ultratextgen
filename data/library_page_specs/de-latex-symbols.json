@@ -7,8 +7,8 @@
  "meta_description": "LaTeX-Symbole mit Befehl und Zeichen: griechische Buchstaben, Operatoren, Relationen, Mengenlehre, Pfeile. Zum Kopieren für Formeln, Notizen und Arbeiten.",
  "breadcrumb": "LaTeX-Symbole",
  "hero_h1": "LaTeX-Symbole",
- "hero_tagline": "Jedes Zeichen mit seinem Befehl — zum Nachschlagen und zum Kopieren.",
- "intro": "Wer in LaTeX schreibt, braucht zwei Dinge: den Befehl für die Formel und das Zeichen für alles außerhalb davon — den Fließtext, die Abbildungsbeschriftung, die E-Mail an die Betreuung. Diese Seite listet beides nebeneinander. Der Befehl steht bei jedem Zeichen, das Zeichen selbst lässt sich mit einem Klick kopieren.",
+ "hero_tagline": "Jedes Zeichen mit seinem Befehl: zum Nachschlagen und zum Kopieren.",
+ "intro": "Wer in LaTeX schreibt, braucht zwei Dinge: den Befehl für die Formel und das Zeichen für alles außerhalb davon: den Fließtext, die Abbildungsbeschriftung, die E-Mail an die Betreuung. Diese Seite listet beides nebeneinander. Der Befehl steht bei jedem Zeichen, das Zeichen selbst lässt sich mit einem Klick kopieren.",
  "sections": [
   {
    "id": "griechisch",
@@ -345,7 +345,7 @@
   {
    "href": "/de/library/griechische-symbole/",
    "title": "Griechische Buchstaben",
-   "desc": "Das griechische Alphabet — Grundlage der meisten Formelzeichen."
+   "desc": "Das griechische Alphabet: Grundlage der meisten Formelzeichen."
   },
   {
    "href": "/de/library/elektro-symbole/",

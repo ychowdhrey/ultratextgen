@@ -73,7 +73,7 @@
    "id": "frage",
    "label": "Frage & Ausruf",
    "h2": "Interrobang und umgekehrte Zeichen",
-   "intro": "Für Fragen, die zugleich Ausrufe sind — und für spanische Sätze.",
+   "intro": "Für Fragen, die zugleich Ausrufe sind, und für spanische Sätze.",
    "symbols": [
     {
      "char": "‽",
@@ -252,7 +252,7 @@
  "editorial_sections": [
   {
    "h2": "Die Reihenfolge der Fußnotenzeichen",
-   "body": "Wo Ziffern für Fußnoten nicht in Frage kommen — etwa in Tabellen, in denen Zahlen bereits Daten sind — gilt eine feste Reihenfolge: erst *, dann †, dann ‡, dann §, dann ‖, dann ¶. Danach wird verdoppelt: **, ††, ‡‡. Diese Folge stammt aus dem Bleisatz und wird von wissenschaftlichen Verlagen bis heute so verwendet. Wer nur ein Zeichen braucht, nimmt das Sternchen; wer drei braucht, sollte die Reihenfolge kennen, weil eine willkürliche Auswahl im gesetzten Text sofort auffällt."
+   "body": "Wo Ziffern für Fußnoten nicht in Frage kommen (etwa in Tabellen, in denen Zahlen bereits Daten sind) gilt eine feste Reihenfolge: erst *, dann †, dann ‡, dann §, dann ‖, dann ¶. Danach wird verdoppelt: **, ††, ‡‡. Diese Folge stammt aus dem Bleisatz und wird von wissenschaftlichen Verlagen bis heute so verwendet. Wer nur ein Zeichen braucht, nimmt das Sternchen; wer drei braucht, sollte die Reihenfolge kennen, weil eine willkürliche Auswahl im gesetzten Text sofort auffällt."
   },
   {
    "h2": "Warum ‰ und ‱ eigene Zeichen sind",
@@ -268,7 +268,7 @@
   {
    "href": "/de/symbol/absatzzeichen/",
    "title": "Absatzzeichen (¶)",
-   "desc": "Das Pilcrow-Zeichen — Geschichte und heutige Verwendung."
+   "desc": "Das Pilcrow-Zeichen: Geschichte und heutige Verwendung."
   },
   {
    "href": "/de/symbol/umgekehrtes-fragezeichen/",

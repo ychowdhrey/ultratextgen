@@ -7,7 +7,7 @@
  "breadcrumb": "Elektro-Symbole",
  "hero_h1": "Elektro-Symbole und Schaltzeichen",
  "hero_tagline": "Erde, Sicherung, Wechselstrom, Logikgatter und die Einheitenzeichen — als echte Unicode-Zeichen zum Kopieren.",
- "intro": "Wer einen Schaltplan beschriftet, eine Installationsplanung dokumentiert oder eine Messung notiert, braucht Zeichen, die die Tastatur nicht hergibt: das Erdungszeichen, das Wechselstromzeichen, Ohm, Mikro. Diese Seite sammelt sie als kopierbare Unicode-Zeichen — sie funktionieren in Word, Excel, CAD-Beschriftungen und E-Mails gleichermaßen.",
+ "intro": "Wer einen Schaltplan beschriftet, eine Installationsplanung dokumentiert oder eine Messung notiert, braucht Zeichen, die die Tastatur nicht hergibt: das Erdungszeichen, das Wechselstromzeichen, Ohm, Mikro. Diese Seite sammelt sie als kopierbare Unicode-Zeichen: sie funktionieren in Word, Excel, CAD-Beschriftungen und E-Mails gleichermaßen.",
  "sections": [
   {
    "id": "energie",
@@ -315,8 +315,8 @@
  ],
  "editorial_sections": [
   {
-   "h2": "Was Unicode kann — und was nicht",
-   "body": "Für die Elektrotechnik ist Unicode ein halbes Werkzeug, und es lohnt zu wissen, welche Hälfte. Vorhanden sind alle Größen und Einheiten, die booleschen Operatoren, die Stromarten und die Sicherheitszeichen — also praktisch alles, was in Fließtext, Tabellen und Beschriftungen gebraucht wird. Nicht vorhanden sind die Bauteil-Schaltzeichen selbst: Widerstand, Kondensator, Spule, Transistor. Der Grund ist derselbe wie bei den Pflegesymbolen der Wäscheetiketten — es sind genormte Bildzeichen, keine Schriftzeichen, und Unicode kodiert Schrift. Wer eine Schaltung zeichnen will, braucht ein CAD-Programm; wer sie beschriften oder beschreiben will, findet hier alles."
+   "h2": "Was Unicode kann, und was nicht",
+   "body": "Für die Elektrotechnik ist Unicode ein halbes Werkzeug, und es lohnt zu wissen, welche Hälfte. Vorhanden sind alle Größen und Einheiten, die booleschen Operatoren, die Stromarten und die Sicherheitszeichen: also praktisch alles, was in Fließtext, Tabellen und Beschriftungen gebraucht wird. Nicht vorhanden sind die Bauteil-Schaltzeichen selbst: Widerstand, Kondensator, Spule, Transistor. Der Grund ist derselbe wie bei den Pflegesymbolen der Wäscheetiketten: es sind genormte Bildzeichen, keine Schriftzeichen, und Unicode kodiert Schrift. Wer eine Schaltung zeichnen will, braucht ein CAD-Programm; wer sie beschriften oder beschreiben will, findet hier alles."
   },
   {
    "h2": "Die Ohm-Falle",
@@ -337,7 +337,7 @@
   {
    "href": "/de/library/griechische-symbole/",
    "title": "Griechische Buchstaben",
-   "desc": "Das griechische Alphabet — Grundlage der meisten Formelzeichen."
+   "desc": "Das griechische Alphabet: Grundlage der meisten Formelzeichen."
   },
   {
    "href": "/de/symbol/ohm-zeichen/",

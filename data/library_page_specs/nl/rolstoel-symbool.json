@@ -14,8 +14,8 @@
   "canonical": "https://ultratextgen.com/nl/symbol/rolstoel-symbool/",
   "breadcrumb": "Rolstoel-symbool",
   "hero_h1": "Rolstoel-symbool",
-  "hero_tagline": "Het blauw-witte Internationale Toegankelijkheidsteken (♿), ontworpen in 1968 – en het nog altijd onopgeloste debat over de 'dynamische' Accessible-Icon-herziening. Klik op een teken om het direct te kopiëren.",
-  "intro": "Het rolstoelsymbool (♿, U+267F) is officieel het International Symbol of Access (ISA) – het teken dat toegankelijke parkeerplaatsen, ingangen, toiletten en zitplaatsen wereldwijd markeert. Het werd in 1968 ontworpen en in 1974 door de Verenigde Naties aangenomen. Sinds 2010 is een herzien, 'dynamisch' ontwerp – met een figuur die voorovergebogen in actieve beweging is – overgenomen door verschillende Amerikaanse staten en andere rechtsgebieden, terwijl het formeel is afgewezen op Amerikaans federaal niveau en door ISO – wat het tot een van de weinige wereldwijd erkende symbolen maakt waarvan het standaardontwerp vandaag nog actief ter discussie staat.",
+  "hero_tagline": "Het blauw-witte Internationale Toegankelijkheidsteken (♿), ontworpen in 1968, en het nog altijd onopgeloste debat over de 'dynamische' Accessible-Icon-herziening. Klik op een teken om het direct te kopiëren.",
+  "intro": "Het rolstoelsymbool (♿, U+267F) is officieel het International Symbol of Access (ISA): het teken dat toegankelijke parkeerplaatsen, ingangen, toiletten en zitplaatsen wereldwijd markeert. Het werd in 1968 ontworpen en in 1974 door de Verenigde Naties aangenomen. Sinds 2010 is een herzien, 'dynamisch' ontwerp — met een figuur die voorovergebogen in actieve beweging is — overgenomen door verschillende Amerikaanse staten en andere rechtsgebieden, terwijl het formeel is afgewezen op Amerikaans federaal niveau en door ISO — wat het tot een van de weinige wereldwijd erkende symbolen maakt waarvan het standaardontwerp vandaag nog actief ter discussie staat.",
   "hreflang": [
     {
       "lang": "en",
@@ -35,7 +35,7 @@
       "id": "rolstoel-symbool",
       "label": "Rolstoel",
       "h2": "Rolstoel-symbool (Internationaal Toegankelijkheidsteken)",
-      "intro": "Het Unicode-rolstoelteken (U+267F) – de glyph die het klassieke Internationale Toegankelijkheidsteken op de meeste systemen weergeeft. Klaar om te plakken in documenten, bewegwijzeringsnotities of bio's.",
+      "intro": "Het Unicode-rolstoelteken (U+267F) — de glyph die het klassieke Internationale Toegankelijkheidsteken op de meeste systemen weergeeft. Klaar om te plakken in documenten, bewegwijzeringsnotities of bio's.",
       "symbols": [
         {
           "char": "♿",
@@ -51,7 +51,7 @@
       "id": "toegankelijkheid-mobiliteit",
       "label": "Toegankelijkheid & Mobiliteit",
       "h2": "Toegankelijkheids- & Mobiliteitssymbolen",
-      "intro": "Verwante Unicode-symbolen voor mobiliteitshulpmiddelen en andere toegankelijkheidsbehoeften – elk een apart teken op zich, geen variant van het rolstoelteken.",
+      "intro": "Verwante Unicode-symbolen voor mobiliteitshulpmiddelen en andere toegankelijkheidsbehoeften — elk een apart teken op zich, geen variant van het rolstoelteken.",
       "symbols": [
         {
           "char": "🦽",
@@ -110,7 +110,7 @@
     {
       "href": "/library/traffic-road-sign-symbols/",
       "title": "Traffic & Road Sign Symbols",
-      "desc": "Parkeer-, waarschuwings- en richtingaanwijzende verkeersbordsymbolen – de bewegwijzeringscontext waarin het toegankelijkheidsteken voorkomt (Engelstalige bibliotheek)."
+      "desc": "Parkeer-, waarschuwings- en richtingaanwijzende verkeersbordsymbolen — de bewegwijzeringscontext waarin het toegankelijkheidsteken voorkomt (Engelstalige bibliotheek)."
     }
   ]
 }

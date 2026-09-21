@@ -6,8 +6,8 @@
   "canonical": "https://ultratextgen.com/symbol/distorted-face-emoji/",
   "breadcrumb": "Distorted Face Emoji",
   "hero_h1": "Distorted Face Emoji",
-  "hero_tagline": "The stretched, inflated face 🫪 — codepoint, meaning, alt-input shortcuts, and the documented design history behind Unicode 17.0's most talked-about new emoji. Click any symbol to copy it instantly.",
-  "intro": "🫪 DISTORTED FACE (U+1FAEA) is a face pulled out of shape — swollen, stretched, and slightly airborne. Unicode added it in version 17.0 on 9 September 2025, and within months it was the new emoji people actually used, winning both \"Most Popular New Emoji\" and \"Most '2026' Emoji\" at Emojipedia's World Emoji Awards. This page identifies the glyph itself — meaning, codepoint, and how to type it — then covers where the design genuinely came from, including the widely-repeated origin story that its own Unicode proposal does not support.",
+  "hero_tagline": "The stretched, inflated face 🫪: codepoint, meaning, alt-input shortcuts, and the documented design history behind Unicode 17.0's most talked-about new emoji. Click any symbol to copy it instantly.",
+  "intro": "🫪 DISTORTED FACE (U+1FAEA) is a face pulled out of shape: swollen, stretched, and slightly airborne. Unicode added it in version 17.0 on 9 September 2025, and within months it was the new emoji people actually used, winning both \"Most Popular New Emoji\" and \"Most '2026' Emoji\" at Emojipedia's World Emoji Awards. This page identifies the glyph itself (meaning, codepoint, and how to type it) then covers where the design genuinely came from, including the widely-repeated origin story that its own Unicode proposal does not support.",
   "date_published": "2026-08-01",
   "date_modified": "2026-08-01",
   "copy_pattern": "single",
@@ -16,7 +16,7 @@
       "id": "distorted-face-core",
       "label": "The Glyph",
       "h2": "Distorted Face Emoji",
-      "intro": "The core Unicode glyph — one stretched, inflated face.",
+      "intro": "The core Unicode glyph: one stretched, inflated face.",
       "symbols": [
         { "char": "🫪", "label": "Distorted Face (U+1FAEA)" }
       ]
@@ -34,7 +34,7 @@
       "id": "adjacent-faces",
       "label": "Adjacent Faces",
       "h2": "Other Faces It Gets Used Alongside",
-      "intro": "Expressive faces that cover neighbouring moods — overwhelm, dissolving, and dizziness.",
+      "intro": "Expressive faces that cover neighbouring moods: overwhelm, dissolving, and dizziness.",
       "symbols": [
         { "char": "🫠", "label": "Melting Face (U+1FAE0)" },
         { "char": "🫥", "label": "Dotted Line Face (U+1FAE5)" },
@@ -48,12 +48,12 @@
     {
       "href": "/library/face-emojis/",
       "title": "Face Emojis",
-      "desc": "Every face emoji — kiss, wink, smirk, eye-roll, blush and more, copy-paste ready."
+      "desc": "Every face emoji: kiss, wink, smirk, eye-roll, blush and more, copy-paste ready."
     },
     {
       "href": "/symbol/cracking-face-emoji/",
       "title": "Cracking Face Emoji",
-      "desc": "🫫 — the draft Emoji 18.0 candidate, and the next face emoji in the pipeline."
+      "desc": "🫫: the draft Emoji 18.0 candidate, and the next face emoji in the pipeline."
     },
     {
       "href": "/updates/unicode-17-new-emoji-rollout/",

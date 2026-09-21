@@ -5,7 +5,7 @@
   "canonical": "https://ultratextgen.com/library/alt-codes/",
   "breadcrumb": "Alt Codes",
   "hero_h1": "Alt Codes",
-  "hero_tagline": "Every common Windows Alt key code with the character it types — and click-to-copy if you'd rather skip the numpad. Click any character to copy it instantly.",
+  "hero_tagline": "Every common Windows Alt key code with the character it types, and click-to-copy if you'd rather skip the numpad. Click any character to copy it instantly.",
   "intro": "Alt codes let Windows users type special characters by holding Alt and entering a number on the numeric keypad — Alt+0169 produces ©, Alt+3 produces ♥. This reference lists the most useful alt codes grouped by category, with each character labeled by its code and name. No numpad? No problem: every character on this page is also click-to-copy, so it works on laptops, Macs, and phones too.",
   "date_published": "2026-06-12",
   "date_modified": "2026-06-12",
@@ -102,7 +102,7 @@
       "id": "classic-dos-alt-codes",
       "label": "Classic DOS",
       "h2": "Classic DOS Alt Codes (1–31)",
-      "intro": "The original low-number alt codes from the IBM PC era — smileys, suits, and arrows.",
+      "intro": "The original low-number alt codes from the IBM PC era: smileys, suits, and arrows.",
       "symbols": [
         { "char": "☺", "label": "Alt+1: White Smiling Face" },
         { "char": "♥", "label": "Alt+3: Black Heart Suit" },

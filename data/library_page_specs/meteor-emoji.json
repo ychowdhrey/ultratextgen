@@ -7,7 +7,7 @@
   "breadcrumb": "Meteor Emoji",
   "hero_h1": "Meteor Emoji",
   "hero_tagline": "A streaking meteor, splitting off from Comet's decade-long identity crisis — drafted for Emoji 18.0, expected alongside Unicode 18.0 in September 2026. Draft only: not yet approved, and no font renders it yet. Click to copy the codepoint anyway.",
-  "intro": "Meteor (🪋, U+1FA8B) is a candidate emoji drafted for Emoji 18.0, the emoji companion to Unicode 18.0, expected to finalize in September 2026. It depicts a streaking fireball entering the atmosphere — and it exists specifically to fix a vendor rendering split that's dogged the existing Comet emoji (☄️) since its debut: some platforms drew Comet as a blue, sparkling ice ball, while others redesigned it as a red-hot rock mid-impact, two genuinely different concepts sharing one codepoint. Unicode's own announcement put it plainly: \"wishing on a star and witnessing an extinction-level event are two entirely different energies.\" Meteor takes over the fireball meaning so Comet can settle back into a consistent blue-ice design everywhere. Because it's still a draft, no operating system, keyboard, or font currently renders it; expect a blank box or placeholder glyph until Emoji 18.0 is approved and platforms ship support, likely sometime in 2027.",
+  "intro": "Meteor (🪋, U+1FA8B) is a candidate emoji drafted for Emoji 18.0, the emoji companion to Unicode 18.0, expected to finalize in September 2026. It depicts a streaking fireball entering the atmosphere, and it exists specifically to fix a vendor rendering split that's dogged the existing Comet emoji (☄️) since its debut: some platforms drew Comet as a blue, sparkling ice ball, while others redesigned it as a red-hot rock mid-impact, two genuinely different concepts sharing one codepoint. Unicode's own announcement put it plainly: \"wishing on a star and witnessing an extinction-level event are two entirely different energies.\" Meteor takes over the fireball meaning so Comet can settle back into a consistent blue-ice design everywhere. Because it's still a draft, no operating system, keyboard, or font currently renders it; expect a blank box or placeholder glyph until Emoji 18.0 is approved and platforms ship support, likely sometime in 2027.",
   "date_published": "2026-07-22",
   "date_modified": "2026-07-22",
   "copy_pattern": "single",
@@ -16,7 +16,7 @@
       "id": "meteor",
       "label": "Meteor",
       "h2": "Meteor Emoji",
-      "intro": "The draft character itself — copyable today as a codepoint, even though no font can render it yet.",
+      "intro": "The draft character itself: copyable today as a codepoint, even though no font can render it yet.",
       "symbols": [
         {
           "char": "🪋",

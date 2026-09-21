@@ -85,8 +85,8 @@
     {
       "id": "card-suits-combined",
       "label": "Kartenfarben — gefüllt & umrandet",
-      "h2": "Kartenfarben – gefüllt & umrandet (8)",
-      "intro": "Alle acht Unicode-Kartenfarben zusammen – gefüllt (♠ ♥ ♦ ♣) und umrandet (♤ ♡ ♢ ♧) – der kanonische „Namens-Satz“ für Spielkarten-Deko.",
+      "h2": "Kartenfarben: gefüllt & umrandet (8)",
+      "intro": "Alle acht Unicode-Kartenfarben zusammen, gefüllt (♠ ♥ ♦ ♣) und umrandet (♤ ♡ ♢ ♧), der kanonische „Namens-Satz“ für Spielkarten-Deko.",
       "symbols": [
         {
           "char": "♠",
@@ -251,7 +251,7 @@
     {
       "href": "/de/library/schach-symbole/",
       "title": "Schach-Symbole",
-      "desc": "Unicode-Schachfiguren – weiße und schwarze Könige, Damen, Türme, Läufer, Springer und Bauern."
+      "desc": "Unicode-Schachfiguren: weiße und schwarze Könige, Damen, Türme, Läufer, Springer und Bauern."
     },
     {
       "href": "/de/library/herz-symbole/",

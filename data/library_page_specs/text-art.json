@@ -6,7 +6,7 @@
   "breadcrumb": "Text Art",
   "hero_h1": "Text Art",
   "hero_tagline": "Finished ASCII and Unicode art pieces plus every box-drawing, block, and braille character you need to make your own. Click to copy instantly.",
-  "intro": "Text art (also called ASCII art) is artwork drawn entirely with characters — box-drawing lines, shaded blocks, braille dots, and plain keyboard symbols. It works anywhere text does: Discord chats, game lobbies, X posts, YouTube comments, and plain-text bios. This page collects small, ready-to-paste text art pieces you can copy in one click, plus the individual building-block characters if you want to draw something original.",
+  "intro": "Text art (also called ASCII art) is artwork drawn entirely with characters: box-drawing lines, shaded blocks, braille dots, and plain keyboard symbols. It works anywhere text does: Discord chats, game lobbies, X posts, YouTube comments, and plain-text bios. This page collects small, ready-to-paste text art pieces you can copy in one click, plus the individual building-block characters if you want to draw something original.",
   "date_published": "2026-06-12",
   "date_modified": "2026-06-12",
   "copy_pattern": "collection",
@@ -15,7 +15,7 @@
       "id": "box-drawing-basics",
       "label": "Lines",
       "h2": "Box Drawing Characters",
-      "intro": "Straight lines, corners, and junctions — the skeleton of frames, tables, and structured text art.",
+      "intro": "Straight lines, corners, and junctions: the skeleton of frames, tables, and structured text art.",
       "symbols": [
         {
           "char": "─",

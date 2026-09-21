@@ -14,8 +14,8 @@
   "canonical": "https://ultratextgen.com/nl/symbol/monarchvlinder-emoji/",
   "breadcrumb": "Monarchvlinder-emoji",
   "hero_h1": "Monarchvlinder-emoji",
-  "hero_tagline": "Eén specifieke soort, uitgesneden uit de cross-platform-renderingsmismatch van de generieke Vlinder-emoji – ontworpen als concept voor Emoji 18.0, verwacht samen met Unicode 18.0 in september 2026. Alleen nog concept: nog niet goedgekeurd, en nog door geen lettertype gerenderd. Klik toch om het codepunt te kopiëren.",
-  "intro": "Monarchvlinder (🫌, U+1FACC) is een kandidaat-emoji ontworpen voor Emoji 18.0, de emoji-tegenhanger van Unicode 18.0, die naar verwachting in september 2026 definitief wordt. Het bestaat om een echt versnipperingsprobleem op te lossen: de bestaande generieke Vlinder-emoji (🦋) wordt op sommige platforms weergegeven als een blauwe Morpho en op andere als iets dat dichter bij een Monarch ligt, zodat twee mensen hetzelfde codepunt konden uitwisselen en toch aan twee verschillende insecten denken – 'je stuurde iemand mogelijk een Monarchvlinder terwijl diegene naar een Morpho keek'. Verzoeken hiervoor gaan jaren terug op Apples eigen communityforums, waar gebruikers wezen op de iconische oranje-zwarte kleuring van de Monarch en zijn bedreigde status als redenen waarom hij een eigen plek verdient. Unicode is normaal terughoudend met het goedkeuren van soortspecifieke varianten, maar frequentiegegevens die Vlinder als de meest gebruikte dieren-emoji in zijn subcategorie aanwezen, maakten de zaak rond voor het uitsnijden van zijn meest herkenbare soort. De emoji zelf draagt het migratieverhaal van de Monarch met zich mee – 'generatie-overstijgende veerkracht, doorzettingsvermogen en diep voorouderlijk geheugen', een wezen dat duizenden kilometers aflegt over generaties heen die het zelf nooit voltooit. Omdat het nog een concept is, biedt geen enkel besturingssysteem, toetsenbord of lettertype momenteel ondersteuning; verwacht een leeg vakje of plaatshoudersglyph totdat Emoji 18.0 is goedgekeurd en platforms ondersteuning uitrollen, waarschijnlijk ergens in 2027.",
+  "hero_tagline": "Eén specifieke soort, uitgesneden uit de cross-platform-renderingsmismatch van de generieke Vlinder-emoji — ontworpen als concept voor Emoji 18.0, verwacht samen met Unicode 18.0 in september 2026. Alleen nog concept: nog niet goedgekeurd, en nog door geen lettertype gerenderd. Klik toch om het codepunt te kopiëren.",
+  "intro": "Monarchvlinder (🫌, U+1FACC) is een kandidaat-emoji ontworpen voor Emoji 18.0, de emoji-tegenhanger van Unicode 18.0, die naar verwachting in september 2026 definitief wordt. Het bestaat om een echt versnipperingsprobleem op te lossen: de bestaande generieke Vlinder-emoji (🦋) wordt op sommige platforms weergegeven als een blauwe Morpho en op andere als iets dat dichter bij een Monarch ligt, zodat twee mensen hetzelfde codepunt konden uitwisselen en toch aan twee verschillende insecten denken — 'je stuurde iemand mogelijk een Monarchvlinder terwijl diegene naar een Morpho keek'. Verzoeken hiervoor gaan jaren terug op Apples eigen communityforums, waar gebruikers wezen op de iconische oranje-zwarte kleuring van de Monarch en zijn bedreigde status als redenen waarom hij een eigen plek verdient. Unicode is normaal terughoudend met het goedkeuren van soortspecifieke varianten, maar frequentiegegevens die Vlinder als de meest gebruikte dieren-emoji in zijn subcategorie aanwezen, maakten de zaak rond voor het uitsnijden van zijn meest herkenbare soort. De emoji zelf draagt het migratieverhaal van de Monarch met zich mee: 'generatie-overstijgende veerkracht, doorzettingsvermogen en diep voorouderlijk geheugen', een wezen dat duizenden kilometers aflegt over generaties heen die het zelf nooit voltooit. Omdat het nog een concept is, biedt geen enkel besturingssysteem, toetsenbord of lettertype momenteel ondersteuning; verwacht een leeg vakje of plaatshoudersglyph totdat Emoji 18.0 is goedgekeurd en platforms ondersteuning uitrollen, waarschijnlijk ergens in 2027.",
   "hreflang": [
     {
       "lang": "en",
@@ -35,7 +35,7 @@
       "id": "monarchvlinder",
       "label": "Monarchvlinder",
       "h2": "Monarchvlinder-emoji",
-      "intro": "Het conceptteken zelf – vandaag al te kopiëren als codepunt, ook al kan nog geen lettertype het renderen.",
+      "intro": "Het conceptteken zelf: vandaag al te kopiëren als codepunt, ook al kan nog geen lettertype het renderen.",
       "symbols": [
         {
           "char": "🫌",
@@ -59,7 +59,7 @@
       "id": "mede-conceptkandidaten",
       "label": "Mede-conceptkandidaten",
       "h2": "Andere Emoji-18.0-conceptkandidaten",
-      "intro": "Monarchvlinder is niet het enige nog niet goedgekeurde teken in deze release – deze zijn er tegelijk mee ontworpen, evenzeer ongerenderd tot aan de beslissing van september 2026.",
+      "intro": "Monarchvlinder is niet het enige nog niet goedgekeurde teken in deze release — deze zijn er tegelijk mee ontworpen, evenzeer ongerenderd tot aan de beslissing van september 2026.",
       "symbols": [
         {
           "char": "🫫",
@@ -90,7 +90,7 @@
     {
       "href": "/nl/symbol/augurk-emoji/",
       "title": "Augurk-emoji",
-      "desc": "Nog een Emoji-18.0-conceptkandidaat – overgenomen van een uitgesteld Apple-Core-voorstel."
+      "desc": "Nog een Emoji-18.0-conceptkandidaat — overgenomen van een uitgesteld Apple-Core-voorstel."
     },
     {
       "href": "/updates/unicode-18-most-anticipated-emoji/",

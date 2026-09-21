@@ -162,7 +162,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="hero">
   <div class="hero-inner" style="max-width:800px;">
     <h1 class="hero-headline">Why Your Instagram Bio Collapses Into One Line (and How to Make Spacing Stick)</h1>
-    <p class="hero-tagline">You didn't mistype anything. Instagram's server deliberately strips your spacing when you press save. The fix is a character the cleanup rule can't see — and a three-step method that makes your layout survive every time.</p>
+    <p class="hero-tagline">You didn't mistype anything. Instagram's server deliberately strips your spacing when you press save. The fix is a character the cleanup rule can't see, and a three-step method that makes your layout survive every time.</p>
     <div class="guide-meta">
       <span class="guide-pill is-accent">Platform: Instagram</span>
       <span class="guide-pill">⏱ 7 min read</span>
@@ -194,9 +194,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">The Core Idea</span>
     <h2>Your Bio Didn't Break. It Got Cleaned.</h2>
     <div class="editorial-block">
-      <p>You know the moment. You lay out four tidy lines — who you are, what you do, a divider, a link nudge — press save, and Instagram hands you back one long run-on sentence. You re-type it. Same result. You start wondering if your keyboard is broken or the app is glitching.</p>
-      <p>Neither. Here's the one fact that explains everything: <strong>when you save your bio, Instagram's server runs a cleanup pass over it.</strong> That pass trims spaces from the start and end of every line, and it collapses runs of consecutive newlines down to almost nothing. Your carefully placed blank lines aren't being lost in transit — they're being <em>deleted on purpose</em>, by a rule, the instant you hit save.</p>
-      <p>That distinction matters, because you can't out-type a rule. Re-entering the same spacing harder, on a different day, in a different mood, produces the same collapse. What you <em>can</em> do is understand exactly what the rule looks for — and then hand it something it can't see.</p>
+      <p>You know the moment. You lay out four tidy lines (who you are, what you do, a divider, a link nudge) press save, and Instagram hands you back one long run-on sentence. You re-type it. Same result. You start wondering if your keyboard is broken or the app is glitching.</p>
+      <p>Neither. Here's the one fact that explains everything: <strong>when you save your bio, Instagram's server runs a cleanup pass over it.</strong> That pass trims spaces from the start and end of every line, and it collapses runs of consecutive newlines down to almost nothing. Your carefully placed blank lines aren't being lost in transit: they're being <em>deleted on purpose</em>, by a rule, the instant you hit save.</p>
+      <p>That distinction matters, because you can't out-type a rule. Re-entering the same spacing harder, on a different day, in a different mood, produces the same collapse. What you <em>can</em> do is understand exactly what the rule looks for, and then hand it something it can't see.</p>
     </div>
   </section>
 
@@ -208,9 +208,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2>The Trailing Space That Eats Your Line Break</h2>
     <div class="editorial-block">
       <p>The single most common failure isn't the blank-line collapse at all. It's subtler: <strong>a trailing space before you press Enter.</strong></p>
-      <p>Type "Coffee roaster ☕" — then, out of pure typing habit, tap the spacebar before hitting return. You've now written <em>line, space, newline</em>. When Instagram's trim runs, it removes that trailing space, and the line break sitting behind it gets eaten in the same pass. Two lines you clearly typed as separate become one. Because the space is invisible in the editor, the collapse looks completely random to you.</p>
+      <p>Type "Coffee roaster ☕", then, out of pure typing habit, tap the spacebar before hitting return. You've now written <em>line, space, newline</em>. When Instagram's trim runs, it removes that trailing space, and the line break sitting behind it gets eaten in the same pass. Two lines you clearly typed as separate become one. Because the space is invisible in the editor, the collapse looks completely random to you.</p>
       <p>Where you edit matters too. The mobile app at least gives you a return key that (usually) inserts a real newline. Instagram's <strong>desktop editor is historically much worse</strong>: depending on the browser and the year, pressing Enter has submitted the form, been ignored, or inserted a break that the save step then discarded. If your line breaks vanish every single time and you're editing at instagram.com on a laptop, the fix may be as simple as: write the bio in your phone's Notes app, paste it into the mobile app, and save there.</p>
-      <p>So the failure has two heads — trailing spaces that eat single breaks, and the newline-collapse that eats blank lines. The method below handles both.</p>
+      <p>So the failure has two heads: trailing spaces that eat single breaks, and the newline-collapse that eats blank lines. The method below handles both.</p>
     </div>
   </section>
 
@@ -225,17 +225,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="editorial-block">
-      <h3>Step 1: End every line clean — no trailing spaces</h3>
+      <h3>Step 1: End every line clean: no trailing spaces</h3>
       <p>Before each Enter, make sure the last character on the line is a real character: a letter, an emoji, a symbol. If you're pasting a pre-written bio, this is the first thing to audit, because invisible trailing spaces travel with the paste. The last visible thing on the line should be the last thing on the line, period.</p>
     </div>
 
     <div class="editorial-block">
       <h3>Step 2: Put U+2800 on every intentionally blank line</h3>
-      <p>A truly empty line is exactly what the collapse rule deletes. So don't give it one. The <strong>braille pattern blank — U+2800, rendered ⠀</strong> — is a character that <em>looks</em> like nothing but <em>counts</em> as visible text. A line containing only ⠀ isn't empty as far as Instagram's cleanup is concerned, so it survives the save untouched. You beat a rule with a character the rule can't see. (Why braille blank and not a zero-width space? Because zero-width characters are exactly what sanitizers strip; the braille blank is a legitimate printable character from the braille block, so it gets left alone.)</p>
+      <p>A truly empty line is exactly what the collapse rule deletes. So don't give it one. The <strong>braille pattern blank (U+2800, rendered ⠀</strong>) is a character that <em>looks</em> like nothing but <em>counts</em> as visible text. A line containing only ⠀ isn't empty as far as Instagram's cleanup is concerned, so it survives the save untouched. You beat a rule with a character the rule can't see. (Why braille blank and not a zero-width space? Because zero-width characters are exactly what sanitizers strip; the braille blank is a legitimate printable character from the braille block, so it gets left alone.)</p>
     </div>
 
     <div class="editorial-block">
-      <h3>Step 3: Budget the 150 characters — invisible ones included</h3>
+      <h3>Step 3: Budget the 150 characters: invisible ones included</h3>
       <p>Every newline, every ⠀, every divider symbol counts against Instagram's 150-character bio limit. Write your actual words first, check the count, and only then spend what's left on spacing and <a href="/guide/dividers-separators-guide/">dividers</a>. Structure is a luxury you buy with leftover characters — more on the trade-off below.</p>
     </div>
 
@@ -272,7 +272,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="ex-styled">Coffee roaster ☕⏎ Small batches, big opinions⏎ ⠀⏎ ↓ New roast every Friday</span>
       </div>
       <p>The two versions look nearly identical in the editor — that ␠ (the trailing space) and the difference between an empty line and a ⠀ line are invisible to the eye. But on save, the first collapses to "Coffee roaster ☕ Small batches, big opinions ↓ New roast every Friday" and the second keeps all four lines, spacer included. Invisible inputs, wildly different outputs. That's the whole game.</p>
-      <p>If you want the spacer line to carry a visible divider instead of pure emptiness — a row of ┈ or ━ or ୨୧ — pull one from the <a href="/library/line-divider-symbols/">line divider symbol library</a>. A visible divider survives the save for the same reason ⠀ does: it's real text, so the collapse rule leaves the line alone.</p>
+      <p>If you want the spacer line to carry a visible divider instead of pure emptiness, a row of ┈ or ━ or ୨୧, pull one from the <a href="/library/line-divider-symbols/">line divider symbol library</a>. A visible divider survives the save for the same reason ⠀ does: it's real text, so the collapse rule leaves the line alone.</p>
     </div>
   </section>
 
@@ -281,10 +281,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Section: why Instagram does this + honest limits -->
   <section class="editorial-section">
     <span class="article-section-label">Honest Limits</span>
-    <h2>Why Instagram Does This — and What the Trick Costs You</h2>
+    <h2>Why Instagram Does This: and What the Trick Costs You</h2>
     <div class="editorial-block">
-      <p>It's worth saying plainly: the cleanup rule isn't malice, and it isn't sloppiness. Bios are a favorite canvas for spam — walls of blank lines that shove content off-screen, whitespace tricks that hide links, padding that games search snippets. Trimming stray spaces and collapsing empty lines is <strong>standard abuse-hygiene for a short identity field</strong>. Your artfully spaced bio is collateral damage from a rule aimed at someone else. That's also why the rule is unlikely to ever go away — and why a workaround character beats waiting for a fix.</p>
-      <p>Now the honest part. The Save-Proof method has a real cost: <strong>characters.</strong> The bio limit is 150, and everything counts — every newline, every invisible ⠀, every glyph of a divider. A bio with three text lines and two spacer lines spends roughly 6–8 characters on pure structure; add a 12-symbol divider and you've spent 20 characters saying nothing. If your copy is already pushing the limit, spacing is the thing to sacrifice, not words.</p>
+      <p>It's worth saying plainly: the cleanup rule isn't malice, and it isn't sloppiness. Bios are a favorite canvas for spam: walls of blank lines that shove content off-screen, whitespace tricks that hide links, padding that games search snippets. Trimming stray spaces and collapsing empty lines is <strong>standard abuse-hygiene for a short identity field</strong>. Your artfully spaced bio is collateral damage from a rule aimed at someone else. That's also why the rule is unlikely to ever go away, and why a workaround character beats waiting for a fix.</p>
+      <p>Now the honest part. The Save-Proof method has a real cost: <strong>characters.</strong> The bio limit is 150, and everything counts: every newline, every invisible ⠀, every glyph of a divider. A bio with three text lines and two spacer lines spends roughly 6–8 characters on pure structure; add a 12-symbol divider and you've spent 20 characters saying nothing. If your copy is already pushing the limit, spacing is the thing to sacrifice, not words.</p>
       <p>And know when <em>not</em> to bother. If your bio is one or two short lines, whitespace engineering adds nothing — a single clean line often reads more confident than a stack of fragments. Screen readers also announce braille blanks inconsistently (some skip them, some pause oddly), so a bio built from many spacer lines can be noisier for assistive tech than a compact one. Use one deliberate blank line to separate identity from call-to-action, and stop there. Structure should serve the words, not replace them.</p>
       <p>One thing this trick does <em>not</em> affect: your reach. Spacing characters and styled text in a bio don't suppress your account — if you've heard otherwise, read the <a href="/guide/instagram-fonts-shadowban-myth/">Instagram fonts shadowban myth</a> piece before you strip your bio bare out of fear.</p>
     </div>
@@ -297,8 +297,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Beyond Instagram</span>
     <h2>The Same Trick Travels</h2>
     <div class="editorial-block">
-      <p>Instagram isn't the only app that sanitizes short profile fields. <strong>TikTok bios collapse whitespace the same way, and the same U+2800 fix works there</strong> — write clean line endings, park a braille blank on empty lines, and the layout holds. The character budget is even tighter (80 characters), so the "words first, spacing second" discipline matters more, not less.</p>
-      <p>Once your spacing survives the save, the next lever is what the lines actually look like. Styled Unicode text — bold, script, small caps — pastes into a bio exactly like the braille blank does, because it's all just characters. The <a href="/usecase/bio-font/">bio font generator</a> renders your lines in device-safe styles you can copy straight in, and the <a href="/instagram/">Instagram fonts page</a> covers what works on the platform more broadly. A bio that's both structured <em>and</em> styled is two paste operations away.</p>
+      <p>Instagram isn't the only app that sanitizes short profile fields. <strong>TikTok bios collapse whitespace the same way, and the same U+2800 fix works there</strong>: write clean line endings, park a braille blank on empty lines, and the layout holds. The character budget is even tighter (80 characters), so the "words first, spacing second" discipline matters more, not less.</p>
+      <p>Once your spacing survives the save, the next lever is what the lines actually look like. Styled Unicode text (bold, script, small caps) pastes into a bio exactly like the braille blank does, because it's all just characters. The <a href="/usecase/bio-font/">bio font generator</a> renders your lines in device-safe styles you can copy straight in, and the <a href="/instagram/">Instagram fonts page</a> covers what works on the platform more broadly. A bio that's both structured <em>and</em> styled is two paste operations away.</p>
     </div>
   </section>
 

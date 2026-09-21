@@ -7,7 +7,7 @@
   "breadcrumb": "Microphone Emoji",
   "hero_h1": "Microphone Emoji (🎤)",
   "hero_tagline": "The handheld mic you reach for to talk about singing, karaoke, MC-ing, interviews, and mic-drop moments — not to be confused with the tripod-mounted studio microphone 🎙️. Click to copy it instantly.",
-  "intro": "The microphone emoji (🎤, U+1F3A4 MICROPHONE) depicts a handheld mic with its head angled toward the mouth — the shape used for singing, karaoke, hosting, interviews, stand-up, and mic-drop moments. It's been part of the standard emoji set since Unicode 6.0 in 2010, among the first wave of emoji folded in from Japanese mobile carrier fonts, and it renders in full color on every major platform without needing a variation selector. Click it below to copy it instantly.",
+  "intro": "The microphone emoji (🎤, U+1F3A4 MICROPHONE) depicts a handheld mic with its head angled toward the mouth: the shape used for singing, karaoke, hosting, interviews, stand-up, and mic-drop moments. It's been part of the standard emoji set since Unicode 6.0 in 2010, among the first wave of emoji folded in from Japanese mobile carrier fonts, and it renders in full color on every major platform without needing a variation selector. Click it below to copy it instantly.",
   "date_published": "2026-07-24",
   "date_modified": "2026-07-24",
   "copy_pattern": "single",
@@ -30,7 +30,7 @@
       "id": "microphone-emoji",
       "label": "Microphone",
       "h2": "The Microphone Emoji",
-      "intro": "The handheld mic itself — ready to paste anywhere emoji are supported.",
+      "intro": "The handheld mic itself: ready to paste anywhere emoji are supported.",
       "symbols": [
         {
           "char": "🎤",
@@ -95,7 +95,7 @@
     {
       "href": "/library/object-emojis/",
       "title": "Object Emojis",
-      "desc": "Every everyday-item emoji — tech, household, and office — including the microphone, browsable in one grid."
+      "desc": "Every everyday-item emoji (tech, household, and office) including the microphone, browsable in one grid."
     },
     {
       "href": "/library/emoji-combos/",
@@ -105,7 +105,7 @@
     {
       "href": "/library/music-symbols/",
       "title": "Music Symbols",
-      "desc": "Unicode music notation — ♪ ♫ ♬ — the text-based cousin of the music emoji family."
+      "desc": "Unicode music notation, ♪ ♫ ♬, the text-based cousin of the music emoji family."
     }
   ]
 }

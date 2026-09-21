@@ -46,7 +46,7 @@
       "id": "distress-faces",
       "label": "Distress Faces",
       "h2": "Related Distress & Pleading Faces",
-      "intro": "Faces on the edge of tears — weary, overwhelmed, or pleading.",
+      "intro": "Faces on the edge of tears: weary, overwhelmed, or pleading.",
       "symbols": [
         { "char": "😩", "label": "Weary Face" },
         { "char": "😫", "label": "Tired Face" },
@@ -81,7 +81,7 @@
     "id": "combo-sets",
     "label": "Combo Sets",
     "h2": "Crying Emoji Combo Sets",
-    "intro": "Ready-made crying combos — copy a full set with one click and paste it straight into a caption or reply."
+    "intro": "Ready-made crying combos: copy a full set with one click and paste it straight into a caption or reply."
   },
   "collection_container_id": "cryingSetsContainer",
   "collections": [
@@ -135,7 +135,7 @@
     {
       "href": "/library/text-faces-kaomoji/",
       "title": "Text Faces & Kaomoji",
-      "desc": "The full kaomoji library — happy, sad, angry, and everything between."
+      "desc": "The full kaomoji library: happy, sad, angry, and everything between."
     },
     {
       "href": "/library/face-emojis/",

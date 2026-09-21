@@ -38,7 +38,7 @@
       "id": "ascii-digits-48-57",
       "label": "Digits 48–57",
       "h2": "ASCII Digits (48–57)",
-      "intro": "The ten decimal digits — each digit's code is 48 plus its value.",
+      "intro": "The ten decimal digits: each digit's code is 48 plus its value.",
       "symbols": [
         { "char": "0", "label": "48 / 0x30 / 0b0110000 / 0o60: Digit Zero" },
         { "char": "1", "label": "49 / 0x31 / 0b0110001 / 0o61: Digit One" },

@@ -199,7 +199,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <section class="hero">
   <div class="hero-inner">
     <h1 class="hero-headline">Can You Uncover Redacted Text?</h1>
-    <p class="hero-tagline">Whether blacked-out text can be revealed comes down to one thing: was the original deleted, or just covered up? Here's the honest answer — and how to redact so nobody can read what you hid.</p>
+    <p class="hero-tagline">Whether blacked-out text can be revealed comes down to one thing: was the original deleted, or just covered up? Here's the honest answer, and how to redact so nobody can read what you hid.</p>
   </div>
 </section>
 <figure class="page-hero-figure" data-uthero aria-hidden="true">
@@ -221,13 +221,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="section-divider"></div>
 
 <section class="editorial-section">
-  <span class="article-section-label">Case 1 — Text redaction</span>
+  <span class="article-section-label">Case 1: Text redaction</span>
   <h2>Unicode blackouts can't be uncovered</h2>
   <div class="editorial-block">
-    <p>When you run a sentence through a <a href="/category/classified/">redacted text generator</a>, each letter is <strong>replaced</strong> with a block character such as █, ▓, ■ or ⬛. The result is just text — the word <em>agent</em> literally becomes <em>█████</em>. The original letters are not stored anywhere in the output, so:</p>
+    <p>When you run a sentence through a <a href="/category/classified/">redacted text generator</a>, each letter is <strong>replaced</strong> with a block character such as █, ▓, ■ or ⬛. The result is just text: the word <em>agent</em> literally becomes <em>█████</em>. The original letters are not stored anywhere in the output, so:</p>
     <ul>
       <li>Highlighting or selecting it reveals nothing.</li>
-      <li>There is no "decoder" — there is no hidden layer to decode.</li>
+      <li>There is no "decoder": there is no hidden layer to decode.</li>
       <li>Copy it, paste it, and the original words are permanently gone.</li>
     </ul>
     <p>This is exactly why Unicode redaction is great for joke spoilers, SCP-style entries, and privacy-friendly screenshots: once you copy the blacked-out version, even <em>you</em> can't get the original back from it.</p>
@@ -237,10 +237,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="section-divider"></div>
 
 <section class="editorial-section">
-  <span class="article-section-label">Case 2 — Image &amp; PDF redaction</span>
+  <span class="article-section-label">Case 2: Image &amp; PDF redaction</span>
   <h2>Boxes, blur, and pixelation can sometimes be reversed</h2>
   <div class="editorial-block">
-    <p>The leaks you hear about — where someone "revealed" redacted text — almost never involve breaking a true blackout. They involve a redaction that never deleted the underlying data:</p>
+    <p>The leaks you hear about, where someone "revealed" redacted text, almost never involve breaking a true blackout. They involve a redaction that never deleted the underlying data:</p>
     <ul>
       <li><strong>Black box over live text.</strong> In many PDFs a rectangle is drawn on top, but the selectable text is still there. Copy-pasting underneath, or removing the shape, exposes it.</li>
       <li><strong>Blur and pixelation.</strong> These transform the original rather than remove it. For predictable content, the transformation can sometimes be estimated or reversed.</li>
@@ -255,7 +255,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="section-divider"></div>
 
 <section class="editorial-section">
-  <span class="article-section-label">Case 3 — Spoiler-style reveal</span>
+  <span class="article-section-label">Case 3: Spoiler-style reveal</span>
   <h2>SCP and spoiler tags are a different tool, on purpose</h2>
   <div class="editorial-block">
     <p>If you landed here searching for "SCP redacted text" or "reveal on highlight," you may want a third, separate technique — not a way to break someone's redaction, but a way to build your <em>own</em> text that's meant to be revealed. The SCP Wiki's classic black-bar effect, and Discord/Telegram spoiler tags, work by styling text the same color as its background (often via a CSS trick like black-on-black) so it looks blacked out until a reader selects or taps it.</p>

@@ -6,7 +6,7 @@
   "breadcrumb": "Islamic Symbols",
   "hero_h1": "Islamic Symbols",
   "hero_tagline": "The star and crescent, Arabic honorific ligatures, mosque and prayer characters, and Ramadan greetings. Click any symbol to copy it instantly.",
-  "intro": "Islamic symbols in Unicode go well beyond the familiar ☪ star and crescent. The Arabic Presentation Forms block includes complete honorific ligatures — single characters that render the word Allah (ﷲ), the blessing recited after the Prophet's name (ﷺ), and the full Bismillah (﷽). This page gathers those ligatures together with mosque, Kaaba, and prayer emojis, presented respectfully for use in Ramadan and Eid greetings, bios, and faith-centred posts. Please use the honorific ligatures with the reverence they carry.",
+  "intro": "Islamic symbols in Unicode go well beyond the familiar ☪ star and crescent. The Arabic Presentation Forms block includes complete honorific ligatures: single characters that render the word Allah (ﷲ), the blessing recited after the Prophet's name (ﷺ), and the full Bismillah (﷽). This page gathers those ligatures together with mosque, Kaaba, and prayer emojis, presented respectfully for use in Ramadan and Eid greetings, bios, and faith-centred posts. Please use the honorific ligatures with the reverence they carry.",
   "date_published": "2026-06-12",
   "date_modified": "2026-06-12",
   "copy_pattern": "single",
@@ -167,7 +167,7 @@
       "id": "islamic-greetings",
       "label": "Greetings",
       "h2": "Ramadan & Eid Greeting Combos",
-      "intro": "Ready-made respectful greetings — each button copies the full combo string in one click.",
+      "intro": "Ready-made respectful greetings: each button copies the full combo string in one click.",
       "symbols": [
         {
           "char": "☪️🌙 Ramadan Mubarak 🌙☪️",

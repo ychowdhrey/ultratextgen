@@ -5,7 +5,7 @@
  "meta_description": "Wassymbolen begrijpen: wassen, bleken, drogen, strijken en alle doorgestreepte tekens uitgelegd — met Unicode-tekens om te kopiëren voor etiketten, notities en berichten.",
  "breadcrumb": "Wassymbolen",
  "hero_h1": "Wassymbolen en hun betekenis",
- "hero_tagline": "Wassen, bleken, drogen, strijken — de vijf tekengroepen op elk wasetiket, met Unicode-tekens om te kopiëren.",
+ "hero_tagline": "Wassen, bleken, drogen, strijken: de vijf tekengroepen op elk wasetiket, met Unicode-tekens om te kopiëren.",
  "intro": "Op elk wasetiket staan dezelfde vijf families tekens: het wasteiltje, de bleekdriehoek, de droogcirkel, het strijkijzer en de cirkel voor de stomerij. Een kruis door een van die tekens betekent altijd „niet doen“. Deze pagina legt het systeem uit en geeft de Unicode-tekens waarmee je wasvoorschriften in gewone tekst kunt schrijven — voor een briefje in de wasruimte, een overdrachtslijst of een productomschrijving in een webshop.",
  "sections": [
   {
@@ -207,7 +207,7 @@
  "editorial_sections": [
   {
    "h2": "Vijf tekens, één systeem",
-   "body": "Een wasetiket oogt rommelig maar volgt een strakke logica: vijf grondtekens in steeds dezelfde volgorde — wasteiltje, driehoek, vierkant, strijkijzer, cirkel. Wat een teken preciezer maakt staat erin (een getal, een stip, een letter) of eronder (één streep voor mild, twee voor zeer mild). Wie die grammatica eenmaal doorheeft, hoeft geen enkel etiket meer uit het hoofd te leren: het teken noemt de behandeling, de inhoud noemt de grens, en het kruis verbiedt hem."
+   "body": "Een wasetiket oogt rommelig maar volgt een strakke logica: vijf grondtekens in steeds dezelfde volgorde: wasteiltje, driehoek, vierkant, strijkijzer, cirkel. Wat een teken preciezer maakt staat erin (een getal, een stip, een letter) of eronder (één streep voor mild, twee voor zeer mild). Wie die grammatica eenmaal doorheeft, hoeft geen enkel etiket meer uit het hoofd te leren: het teken noemt de behandeling, de inhoud noemt de grens, en het kruis verbiedt hem."
   },
   {
    "h2": "Waarom deze tekens niet in Unicode staan",

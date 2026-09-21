@@ -6,7 +6,7 @@
  "breadcrumb": "Emoji Bedeutung",
  "hero_h1": "Emoji Bedeutung",
  "hero_tagline": "Was die gebräuchlichsten Emojis tatsächlich aussagen — nach Gruppen sortiert, nicht alphabetisch.",
- "intro": "Die meisten Emojis haben zwei Bedeutungen: die, die im Unicode-Namen steht, und die, die im Chat tatsächlich ankommt. Diese Liste nennt beide, wenn sie auseinandergehen. Sortiert ist sie nach Gruppen — Gesichter, Hände, Herzfarben, Tiere, Doppeldeutiges — weil man ein Emoji fast nie alphabetisch sucht, sondern danach, was man ausdrücken möchte. Jedes Zeichen lässt sich mit einem Klick kopieren.",
+ "intro": "Die meisten Emojis haben zwei Bedeutungen: die, die im Unicode-Namen steht, und die, die im Chat tatsächlich ankommt. Diese Liste nennt beide, wenn sie auseinandergehen. Sortiert ist sie nach Gruppen (Gesichter, Hände, Herzfarben, Tiere, Doppeldeutiges) weil man ein Emoji fast nie alphabetisch sucht, sondern danach, was man ausdrücken möchte. Jedes Zeichen lässt sich mit einem Klick kopieren.",
  "sections": [
   {
    "id": "gesichter",
@@ -235,7 +235,7 @@
   },
   {
    "h2": "Herzfarben: die einzige Gruppe mit einem eigenen Nebensystem",
-   "body": "Bei den Herzen kommt eine Besonderheit hinzu: Snapchat vergibt Herzfarben automatisch nach Freundschaftsstatus. Ein gelbes Herz dort heißt nicht „Freundschaft“ im allgemeinen Sinn, sondern „ihr seid gegenseitig beste Freunde“. Wer die Snapchat-Logik auf WhatsApp überträgt, liest die Nachricht falsch — und umgekehrt. Für alles außerhalb von Snapchat gilt die Farbtabelle oben."
+   "body": "Bei den Herzen kommt eine Besonderheit hinzu: Snapchat vergibt Herzfarben automatisch nach Freundschaftsstatus. Ein gelbes Herz dort heißt nicht „Freundschaft“ im allgemeinen Sinn, sondern „ihr seid gegenseitig beste Freunde“. Wer die Snapchat-Logik auf WhatsApp überträgt, liest die Nachricht falsch, und umgekehrt. Für alles außerhalb von Snapchat gilt die Farbtabelle oben."
   }
  ],
  "related": [

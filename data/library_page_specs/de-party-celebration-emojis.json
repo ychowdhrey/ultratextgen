@@ -7,7 +7,7 @@
  "breadcrumb": "Party-Emojis",
  "hero_h1": "Party-Emojis",
  "hero_tagline": "Konfetti, Sekt, Torte und Feuerwerk — nach Anlass sortiert, mit fertigen Kombinationen.",
- "intro": "Für Geburtstagsglückwünsche, Einladungen und Feier-Beiträge braucht es meist zwei bis drei Zeichen, nicht zwanzig. Diese Seite sortiert die Party-Emojis nach Anlass — Feiern, Geburtstag, Anstoßen, Musik, Feuerwerk, Auszeichnung — und schließt mit fertigen Kombinationen, die zusammen etwas sagen.",
+ "intro": "Für Geburtstagsglückwünsche, Einladungen und Feier-Beiträge braucht es meist zwei bis drei Zeichen, nicht zwanzig. Diese Seite sortiert die Party-Emojis nach Anlass (Feiern, Geburtstag, Anstoßen, Musik, Feuerwerk, Auszeichnung) und schließt mit fertigen Kombinationen, die zusammen etwas sagen.",
  "sections": [
   {
    "id": "party",
@@ -214,7 +214,7 @@
   "id": "combo-sets",
   "label": "Fertige Kombinationen",
   "h2": "Fertige Party-Kombinationen",
-  "intro": "Komplette Kombinationen mit einem Klick kopieren — Geburtstag, Silvester, Abschluss."
+  "intro": "Komplette Kombinationen mit einem Klick kopieren: Geburtstag, Silvester, Abschluss."
  },
  "collection_container_id": "partySetsContainer",
  "collections": [

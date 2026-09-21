@@ -110,12 +110,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Does styled text actually hurt my SEO or reach?",
-      "acceptedAnswer": { "@type": "Answer", "text": "There's no evidence of an algorithmic reach penalty for using styled Unicode characters, and no platform lists it as a ranking factor. The real cost isn't a penalty — it's that search engines and in-app search do exact character matching, so a styled word is a different string to the index than its plain equivalent. It doesn't get suppressed; it simply doesn't match the search someone actually typed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "There's no evidence of an algorithmic reach penalty for using styled Unicode characters, and no platform lists it as a ranking factor. The real cost isn't a penalty: it's that search engines and in-app search do exact character matching, so a styled word is a different string to the index than its plain equivalent. It doesn't get suppressed; it simply doesn't match the search someone actually typed." }
     },
     {
       "@type": "Question",
       "name": "Can people find my name or bio if I style it?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Only if they type the exact styled characters, which almost nobody does. Someone searching \"Sarah\" will not match a profile styled as \"𝓢𝓪𝓻𝓪𝓱,\" because those are different Unicode code points to the search index, not the same letters in a costume. Keep anything you want found — your name, a keyword, a hashtag — in plain text." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Only if they type the exact styled characters, which almost nobody does. Someone searching \"Sarah\" will not match a profile styled as \"𝓢𝓪𝓻𝓪𝓱,\" because those are different Unicode code points to the search index, not the same letters in a costume. Keep anything you want found (your name, a keyword, a hashtag) in plain text." }
     },
     {
       "@type": "Question",
@@ -173,7 +173,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li>No search engine or platform lists styled Unicode as a ranking or reach penalty — that claim is post-hoc reasoning, not documented policy.</li>
     <li>The real mechanism is the <strong>Searchability Tax</strong>: search does exact character matching, so a styled word is a different string than its plain form and simply won't match.</li>
     <li>This costs you in four places: general search (Google), in-app search, hashtag indexing, and @mention autocomplete.</li>
-    <li>The fix isn't "never style text" — it's keeping anything you want <em>found</em> (names, keywords, hashtags, links) in plain text, and reserving styling for decoration.</li>
+    <li>The fix isn't "never style text": it's keeping anything you want <em>found</em> (names, keywords, hashtags, links) in plain text, and reserving styling for decoration.</li>
   </ul>
 </section>
 
@@ -184,7 +184,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">The Myth</span>
     <h2>"My Reach Dropped, It Must Be the Font"</h2>
     <div class="editorial-block">
-      <p>It's a familiar chain of reasoning: post engagement dips, and the most recent visible change — a styled name, a fancy bio, a bold caption — gets blamed. It's the same post-hoc logic behind the Instagram shadowban myth and the LinkedIn "does bold hurt reach" panic, and it doesn't hold up any better here.</p>
+      <p>It's a familiar chain of reasoning: post engagement dips, and the most recent visible change (a styled name, a fancy bio, a bold caption) gets blamed. It's the same post-hoc logic behind the Instagram shadowban myth and the LinkedIn "does bold hurt reach" panic, and it doesn't hold up any better here.</p>
       <p>No platform's stated ranking factors, help-center documentation, or leaked algorithm details mention styled Unicode characters as a reach or ranking signal. Search engines' own guidance on ranking factors focuses on content quality, relevance, and technical fundamentals — never character styling. If styled text carried an algorithmic penalty, it would be one of the most consequential and easiest-to-fix SEO issues in existence, and no major SEO resource treats it as one.</p>
     </div>
   </section>
@@ -194,7 +194,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Section: the real mechanism -->
   <section class="editorial-section">
     <span class="article-section-label">The Real Mechanism</span>
-    <h2>Search Doesn't Penalize Styled Text — It Just Doesn't Match It</h2>
+    <h2>Search Doesn't Penalize Styled Text: It Just Doesn't Match It</h2>
     <div class="editorial-block">
       <p>Here's the fact that actually explains everything: search indexes work by exact character matching. When someone types "hello" into a search box, the system looks for the code points U+0068, U+0065, U+006C, U+006C, U+006F. A styled "𝗵𝗲𝗹𝗹𝗼" is built from an entirely different set of code points in the Mathematical Alphanumeric block. To a search index, these are not the same word rendered differently — they're two unrelated strings that happen to look similar to a human eye.</p>
       <div class="example-pair">
@@ -204,7 +204,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="ex-label">Your styled text</span>
         <span class="ex-styled">𝗵𝗲𝗹𝗹𝗼</span>
       </div>
-      <p>No suppression, no demotion — just a string that never enters the candidate pool in the first place. This is the same mechanism explained in <a href="/guide/how-unicode-fonts-work/">the pillar guide's Four-Layer Model</a>: the style <em>is</em> the characters, not a costume worn by the plain ones.</p>
+      <p>No suppression, no demotion: just a string that never enters the candidate pool in the first place. This is the same mechanism explained in <a href="/guide/how-unicode-fonts-work/">the pillar guide's Four-Layer Model</a>: the style <em>is</em> the characters, not a costume worn by the plain ones.</p>
     </div>
   </section>
 
@@ -322,13 +322,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Does styled text actually hurt my SEO or reach?</button>
     <div class="faq-answer">
-      <p>There's no evidence of an algorithmic reach penalty for using styled Unicode characters, and no platform lists it as a ranking factor. The real cost isn't a penalty — it's that search engines and in-app search do exact character matching, so a styled word is a different string to the index than its plain equivalent. It doesn't get suppressed; it simply doesn't match the search someone actually typed.</p>
+      <p>There's no evidence of an algorithmic reach penalty for using styled Unicode characters, and no platform lists it as a ranking factor. The real cost isn't a penalty: it's that search engines and in-app search do exact character matching, so a styled word is a different string to the index than its plain equivalent. It doesn't get suppressed; it simply doesn't match the search someone actually typed.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Can people find my name or bio if I style it?</button>
     <div class="faq-answer">
-      <p>Only if they type the exact styled characters, which almost nobody does. Someone searching "Sarah" will not match a profile styled as "𝓢𝓪𝓻𝓪𝓱," because those are different Unicode code points to the search index, not the same letters in a costume. Keep anything you want found — your name, a keyword, a hashtag — in plain text.</p>
+      <p>Only if they type the exact styled characters, which almost nobody does. Someone searching "Sarah" will not match a profile styled as "𝓢𝓪𝓻𝓪𝓱," because those are different Unicode code points to the search index, not the same letters in a costume. Keep anything you want found (your name, a keyword, a hashtag) in plain text.</p>
     </div>
   </div>
   <div class="faq-item">
@@ -352,7 +352,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a class="related-card" href="/guide/instagram-fonts-shadowban-myth/">
       <span class="related-tag">👻</span>
       <span class="related-title">Do Fonts Get You Shadowbanned?</span>
-      <span class="related-desc">The myth, busted — and the real costs.</span>
+      <span class="related-desc">The myth, busted, and the real costs.</span>
     </a>
     <a class="related-card" href="/guide/linkedin-fonts-recruiters-ats/">
       <span class="related-tag">🔎</span>

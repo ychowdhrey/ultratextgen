@@ -14,8 +14,8 @@
   "canonical": "https://ultratextgen.com/nl/symbol/congruent-teken/",
   "breadcrumb": "Congruent-teken",
   "hero_h1": "Congruent-teken",
-  "hero_tagline": "Het ≅ dat elke meetkundeles gebruikt voor congruente vormen – dezelfde vorm, dezelfde grootte – ook al is Unicodes officiële naam ervoor ‘Approximately Equal To.’ Plus de gelijkende tekens ≈ en ≡ waarmee het voortdurend wordt verward. Klik op een teken om het direct te kopiëren.",
-  "intro": "Het congruent-teken, ≅, is het teken dat wiskundedocenten tekenen als twee vormen congruent zijn – identiek in zowel vorm als grootte. En dat is de eigenaardigheid: Unicode noemt het niet zo. De officiële naam van het teken (U+2245) is ‘APPROXIMATELY EQUAL TO,’ een naam die congruentie nergens noemt, terwijl ≅ precies het teken is waar meetkundeklassen wereldwijd naar grijpen. Het teken leest als twee ideeën op elkaar gestapeld – de ≈ van benadering boven de = van gelijkheid – en het staat in een dichtbevolkte buurt van makkelijk te verwarren verwanten. ≈ (U+2248, ALMOST EQUAL TO) betekent ‘ongeveer,’ het teken dat je gebruikt voor π ≈ 3,14. ≡ (U+2261, IDENTICAL TO) betekent iets sterkers – identiteit, en in de getaltheorie is het het congruentieteken van de modulorekening, zoals in ‘17 ≡ 2 (mod 5)’. Drie tekens, drie taken, allemaal opgebouwd uit gestapelde horizontale strepen, en allemaal voortdurend voor elkaar getypt. Deze pagina houdt ze uit elkaar en laat je precies het teken kopiëren dat je nodig hebt.",
+  "hero_tagline": "Het ≅ dat elke meetkundeles gebruikt voor congruente vormen (dezelfde vorm, dezelfde grootte) ook al is Unicodes officiële naam ervoor ‘Approximately Equal To.’ Plus de gelijkende tekens ≈ en ≡ waarmee het voortdurend wordt verward. Klik op een teken om het direct te kopiëren.",
+  "intro": "Het congruent-teken, ≅, is het teken dat wiskundedocenten tekenen als twee vormen congruent zijn — identiek in zowel vorm als grootte. En dat is de eigenaardigheid: Unicode noemt het niet zo. De officiële naam van het teken (U+2245) is ‘APPROXIMATELY EQUAL TO,’ een naam die congruentie nergens noemt, terwijl ≅ precies het teken is waar meetkundeklassen wereldwijd naar grijpen. Het teken leest als twee ideeën op elkaar gestapeld, de ≈ van benadering boven de = van gelijkheid, en het staat in een dichtbevolkte buurt van makkelijk te verwarren verwanten. ≈ (U+2248, ALMOST EQUAL TO) betekent ‘ongeveer,’ het teken dat je gebruikt voor π ≈ 3,14. ≡ (U+2261, IDENTICAL TO) betekent iets sterkers: identiteit, en in de getaltheorie is het het congruentieteken van de modulorekening, zoals in ‘17 ≡ 2 (mod 5)’. Drie tekens, drie taken, allemaal opgebouwd uit gestapelde horizontale strepen, en allemaal voortdurend voor elkaar getypt. Deze pagina houdt ze uit elkaar en laat je precies het teken kopiëren dat je nodig hebt.",
   "hreflang": [
     {
       "lang": "en",
@@ -34,8 +34,8 @@
     {
       "id": "het-congruent-teken",
       "label": "Het Congruent-teken",
-      "h2": "Het Congruent-teken – ≅",
-      "intro": "Het teken dat de meetkunde gebruikt voor congruentie – dezelfde vorm en grootte – ook al noemt Unicodes officiële naam het woord nergens. De visuele neef ≃ heeft één tilde in plaats van twee.",
+      "h2": "Het Congruent-teken: ≅",
+      "intro": "Het teken dat de meetkunde gebruikt voor congruentie, dezelfde vorm en grootte, ook al noemt Unicodes officiële naam het woord nergens. De visuele neef ≃ heeft één tilde in plaats van twee.",
       "symbols": [
         {
           "char": "≅",
@@ -50,7 +50,7 @@
     {
       "id": "uit-elkaar-houden",
       "label": "Uit Elkaar Houden",
-      "h2": "≅ vs. ≈ vs. ≡ – De Verwarrende Buurtekens",
+      "h2": "≅ vs. ≈ vs. ≡: De Verwarrende Buurtekens",
       "intro": "Drie gestapelde-strepen-tekens die voortdurend worden verwisseld, elk met een eigen taak: congruent (dezelfde vorm en grootte), ongeveer gelijk (een ruwe schatting), en identiek aan (echte identiteit en modulocongruentie).",
       "symbols": [
         {
@@ -101,12 +101,12 @@
     {
       "href": "/nl/symbol/ongelijkteken/",
       "title": "Ongelijkteken",
-      "desc": "De tegenovergestelde relatie – en een naaste buur in dezelfde ‘gelijkheidsfamilie’ van wiskundetekens."
+      "desc": "De tegenovergestelde relatie, en een naaste buur in dezelfde ‘gelijkheidsfamilie’ van wiskundetekens."
     },
     {
       "href": "/nl/symbol/omega-symbool/",
       "title": "Omega-symbool",
-      "desc": "Nog een teken waarvan de alledaagse identiteit – het ohm-teken voor elektrische weerstand – niet de naam is die Unicode er officieel aan geeft."
+      "desc": "Nog een teken waarvan de alledaagse identiteit, het ohm-teken voor elektrische weerstand, niet de naam is die Unicode er officieel aan geeft."
     }
   ]
 }

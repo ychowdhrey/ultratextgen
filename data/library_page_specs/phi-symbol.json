@@ -7,7 +7,7 @@
   "breadcrumb": "Phi Symbol",
   "hero_h1": "Phi Symbol",
   "hero_tagline": "The lowercase φ that stands for the golden ratio (≈1.618), the capital Φ physicists use for magnetic flux, and the closed math variant ϕ — the letter Mark Barr named around 1909 after the sculptor Phidias. Click any symbol to copy it instantly.",
-  "intro": "Phi's lowercase glyph, φ (U+03C6, GREEK SMALL LETTER PHI), is the 21st letter of the Greek alphabet, but it's most famous as the symbol for the golden ratio — the irrational number (1 + √5) / 2 ≈ 1.6180339887 that artists and architects have chased for centuries. That naming is surprisingly recent: the ratio was long written with the Greek letter tau (τ) until the American mathematician Mark Barr proposed φ around 1909, picking it as the first letter of Phidias (Φειδίας, c. 490–430 BC), the sculptor tied to the Parthenon's proportions. Phi also carries a quirk no other Greek letter here has — two lowercase glyphs. The everyday letter φ (U+03C6) usually renders as the 'loopy,' open form, while a separately encoded Greek phi symbol, ϕ (U+03D5), is the 'closed,' stroked form — a circle crossed by a vertical line — that Unicode has recommended for mathematics since version 3.0, though which shape a font actually shows varies by typeface. The capital Φ (U+03A6) does heavier lifting in the sciences: it's the standard symbol for magnetic flux in physics, while lowercase φ marks Euler's totient function, φ(n), in number theory.",
+  "intro": "Phi's lowercase glyph, φ (U+03C6, GREEK SMALL LETTER PHI), is the 21st letter of the Greek alphabet, but it's most famous as the symbol for the golden ratio — the irrational number (1 + √5) / 2 ≈ 1.6180339887 that artists and architects have chased for centuries. That naming is surprisingly recent: the ratio was long written with the Greek letter tau (τ) until the American mathematician Mark Barr proposed φ around 1909, picking it as the first letter of Phidias (Φειδίας, c. 490–430 BC), the sculptor tied to the Parthenon's proportions. Phi also carries a quirk no other Greek letter here has — two lowercase glyphs. The everyday letter φ (U+03C6) usually renders as the 'loopy,' open form, while a separately encoded Greek phi symbol, ϕ (U+03D5), is the 'closed,' stroked form, a circle crossed by a vertical line, that Unicode has recommended for mathematics since version 3.0, though which shape a font actually shows varies by typeface. The capital Φ (U+03A6) does heavier lifting in the sciences: it's the standard symbol for magnetic flux in physics, while lowercase φ marks Euler's totient function, φ(n), in number theory.",
   "date_published": "2026-07-18",
   "date_modified": "2026-07-18",
   "copy_pattern": "single",
@@ -15,7 +15,7 @@
     {
       "id": "the-phi-symbol",
       "label": "The Phi Symbol",
-      "h2": "The Phi Symbol — φ, Φ & ϕ",
+      "h2": "The Phi Symbol: φ, Φ & ϕ",
       "intro": "The three forms people mean by 'the phi symbol': the everyday lowercase letter, the capital, and the dedicated math variant. Paste whichever one you need.",
       "symbols": [
         {

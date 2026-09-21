@@ -6,7 +6,7 @@
   "breadcrumb": "Guess the Soccer Team",
   "hero_h1": "Guess the Soccer Team by Emoji",
   "hero_tagline": "National and club team emoji clues with answers, plus a World Cup quiz round. Click any clue to copy it.",
-  "intro": "Turn emojis into a team-guessing game. Each clue below hints at a national side or club through its colours and nicknames — no logos needed — and the answer sits right beside it. Click a clue to copy the emojis for a quiz, story, or party round, then reveal the team.",
+  "intro": "Turn emojis into a team-guessing game. Each clue below hints at a national side or club through its colours and nicknames, no logos needed, and the answer sits right beside it. Click a clue to copy the emojis for a quiz, story, or party round, then reveal the team.",
   "date_published": "2026-06-16",
   "date_modified": "2026-06-16",
   "copy_pattern": "single",
@@ -47,7 +47,7 @@
       "id": "club-teams",
       "label": "Clubs",
       "h2": "Club Team Clues",
-      "intro": "Club colours and nicknames — guess the badge.",
+      "intro": "Club colours and nicknames: guess the badge.",
       "symbols": [
         {
           "char": "⚪👑⚽",

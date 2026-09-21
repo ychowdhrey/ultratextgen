@@ -15,7 +15,7 @@
     {
       "id": "the-chi-symbol",
       "label": "The Chi Symbol",
-      "h2": "The Chi Symbol — Χ & χ",
+      "h2": "The Chi Symbol: Χ & χ",
       "intro": "The Greek letter itself, in both cases. Uppercase Χ carries chi's religious and abbreviation history; lowercase χ does most of the modern math and science work.",
       "symbols": [
         { "char": "Χ", "label": "Greek Capital Letter Chi (U+03A7)" },
@@ -47,8 +47,8 @@
     {
       "id": "chi-vs-latin-x",
       "label": "Chi vs. X",
-      "h2": "Chi vs. the Latin X — the Look-Alikes",
-      "intro": "Chi looks almost identical to the Latin letter X, but each has its own code point — swapping them silently breaks search, code, and equations. Here are all four so you can copy the exact one you mean.",
+      "h2": "Chi vs. the Latin X: the Look-Alikes",
+      "intro": "Chi looks almost identical to the Latin letter X, but each has its own code point: swapping them silently breaks search, code, and equations. Here are all four so you can copy the exact one you mean.",
       "symbols": [
         { "char": "χ", "label": "Greek Small Letter Chi (U+03C7)" },
         { "char": "Χ", "label": "Greek Capital Letter Chi (U+03A7)" },

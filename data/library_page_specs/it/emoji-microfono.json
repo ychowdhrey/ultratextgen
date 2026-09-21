@@ -7,8 +7,8 @@
   "canonical": "https://ultratextgen.com/it/symbol/emoji-microfono/",
   "breadcrumb": "Emoji Microfono",
   "hero_h1": "Emoji Microfono (🎤)",
-  "hero_tagline": "Il microfono a mano che tiri fuori per parlare di canto, karaoke, presentazioni, interviste e momenti da mic-drop – da non confondere con il microfono da studio su treppiede 🎙️. Tocca per copiarlo all'istante.",
-  "intro": "L'emoji microfono (🎤, U+1F3A4 MICROPHONE) raffigura un microfono a mano con la testa inclinata verso la bocca – la forma usata per canto, karaoke, conduzione, interviste, stand-up e momenti da mic-drop. Fa parte del set standard delle emoji fin da Unicode 6.0 nel 2010, tra la prima ondata di emoji confluite dai font dei gestori telefonici giapponesi, e si renderizza a colori pieni su ogni piattaforma principale senza bisogno di un selettore di variazione. Toccalo qui sotto per copiarlo all'istante.",
+  "hero_tagline": "Il microfono a mano che tiri fuori per parlare di canto, karaoke, presentazioni, interviste e momenti da mic-drop — da non confondere con il microfono da studio su treppiede 🎙️. Tocca per copiarlo all'istante.",
+  "intro": "L'emoji microfono (🎤, U+1F3A4 MICROPHONE) raffigura un microfono a mano con la testa inclinata verso la bocca: la forma usata per canto, karaoke, conduzione, interviste, stand-up e momenti da mic-drop. Fa parte del set standard delle emoji fin da Unicode 6.0 nel 2010, tra la prima ondata di emoji confluite dai font dei gestori telefonici giapponesi, e si renderizza a colori pieni su ogni piattaforma principale senza bisogno di un selettore di variazione. Toccalo qui sotto per copiarlo all'istante.",
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
@@ -39,7 +39,7 @@
       "id": "microphone-emoji",
       "label": "Microfono",
       "h2": "L'Emoji Microfono",
-      "intro": "Il microfono a mano in sé – pronto da incollare ovunque siano supportate le emoji.",
+      "intro": "Il microfono a mano in sé: pronto da incollare ovunque siano supportate le emoji.",
       "symbols": [
         {
           "char": "🎤",
@@ -104,7 +104,7 @@
     {
       "href": "/library/object-emojis/",
       "title": "Object Emojis",
-      "desc": "Ogni emoji di oggetto quotidiano già codificata – tech, casa e ufficio – incluso il microfono, sfogliabile in un'unica griglia."
+      "desc": "Ogni emoji di oggetto quotidiano già codificata (tech, casa e ufficio) incluso il microfono, sfogliabile in un'unica griglia."
     },
     {
       "href": "/library/emoji-combos/",
@@ -114,7 +114,7 @@
     {
       "href": "/library/music-symbols/",
       "title": "Music Symbols",
-      "desc": "Notazione musicale Unicode – ♪ ♫ ♬ – la cugina testuale della famiglia delle emoji musicali."
+      "desc": "Notazione musicale Unicode, ♪ ♫ ♬, la cugina testuale della famiglia delle emoji musicali."
     }
   ]
 }

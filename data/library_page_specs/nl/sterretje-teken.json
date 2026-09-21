@@ -14,8 +14,8 @@
   "canonical": "https://ultratextgen.com/nl/symbol/sterretje-teken/",
   "breadcrumb": "Sterretje",
   "hero_h1": "Sterretje / Asterisk (*)",
-  "hero_tagline": "Het sterretje (*) voor voetnoten, de wildcard * die in zoekopdrachten en code alles matcht, en de censurerende ster in f**k – plus typografische neven zoals het asterisme ⁂, drie sterretjes in een driehoek. Klik op een teken om het direct te kopiëren.",
-  "intro": "Het sterretje (*, Unicode U+002A) is het stervormige teken dat de toets met het cijfer 8 deelt, en de naam komt rechtstreeks van het Oudgriekse asteriskos, ‘sterretje’ – een verkleinwoord van astēr, ‘ster’. Het is een van de oudste redactionele tekens uit de westerse traditie: de Alexandrijnse geleerde Aristarchus van Samothrace (ca. 220–143 v.Chr.) gebruikte de asteriskos in zijn edities van Homerus om regels te markeren die hij elders als dubbel beschouwde, en de theoloog Origenes plaatste het later in zijn Hexapla om tekst aan te duiden die wel in het Hebreeuws stond maar niet in het Grieks. Vandaag doet hetzelfde teken drie heel verschillende dingen: het is het klassieke voetnootteken dat een lezer naar een noot onderaan de pagina stuurt, het is de wildcard die in bestandszoekopdrachten, glob-patronen en SQL's SELECT * voor ‘alles’ staat, en het is de standaardvervanger om letters te censureren, zoals in f**k. Typografie houdt er een familie verwanten op na – het ASTERISME ⁂ (U+2042) stapelt drie sterretjes in een driehoek als sectiescheiding, het DIKKE STERRETJE ✱ (U+2731) en het ACHTPUNTIGE STERRETJE ✳ (U+2733) zijn dikkere weergavevormen, en de ASTERISK-OPERATOR ∗ (U+2217) is het wiskundige vermenigvuldigingsteken. Geen van deze is de decoratieve stervorm – de zwarte ster ★ (U+2605) of de gele ster-emoji ⭐ (U+2B50) – die tot een ander, sierlijk register horen.",
+  "hero_tagline": "Het sterretje (*) voor voetnoten, de wildcard * die in zoekopdrachten en code alles matcht, en de censurerende ster in f**k — plus typografische neven zoals het asterisme ⁂, drie sterretjes in een driehoek. Klik op een teken om het direct te kopiëren.",
+  "intro": "Het sterretje (*, Unicode U+002A) is het stervormige teken dat de toets met het cijfer 8 deelt, en de naam komt rechtstreeks van het Oudgriekse asteriskos, ‘sterretje’ — een verkleinwoord van astēr, ‘ster’. Het is een van de oudste redactionele tekens uit de westerse traditie: de Alexandrijnse geleerde Aristarchus van Samothrace (ca. 220–143 v.Chr.) gebruikte de asteriskos in zijn edities van Homerus om regels te markeren die hij elders als dubbel beschouwde, en de theoloog Origenes plaatste het later in zijn Hexapla om tekst aan te duiden die wel in het Hebreeuws stond maar niet in het Grieks. Vandaag doet hetzelfde teken drie heel verschillende dingen: het is het klassieke voetnootteken dat een lezer naar een noot onderaan de pagina stuurt, het is de wildcard die in bestandszoekopdrachten, glob-patronen en SQL's SELECT * voor ‘alles’ staat, en het is de standaardvervanger om letters te censureren, zoals in f**k. Typografie houdt er een familie verwanten op na: het ASTERISME ⁂ (U+2042) stapelt drie sterretjes in een driehoek als sectiescheiding, het DIKKE STERRETJE ✱ (U+2731) en het ACHTPUNTIGE STERRETJE ✳ (U+2733) zijn dikkere weergavevormen, en de ASTERISK-OPERATOR ∗ (U+2217) is het wiskundige vermenigvuldigingsteken. Geen van deze is de decoratieve stervorm, de zwarte ster ★ (U+2605) of de gele ster-emoji ⭐ (U+2B50), die tot een ander, sierlijk register horen.",
   "hreflang": [
     {
       "lang": "en",
@@ -63,7 +63,7 @@
       "id": "asterisme-redactioneel",
       "label": "Asterisme & Redactionele Tekens",
       "h2": "Asterisme & Sectiescheidingstekens",
-      "intro": "Redactionele tekens opgebouwd uit het sterretje – het asterisme van drie sterretjes in een driehoek dat secties scheidt, plus zijn gestapelde en verlaagde neven.",
+      "intro": "Redactionele tekens opgebouwd uit het sterretje — het asterisme van drie sterretjes in een driehoek dat secties scheidt, plus zijn gestapelde en verlaagde neven.",
       "symbols": [
         {
           "char": "⁂",
@@ -83,7 +83,7 @@
       "id": "sterren-verward-mee",
       "label": "Sterren waarmee het Verward Wordt",
       "h2": "Stervormen waarmee het Sterretje Verward Wordt",
-      "intro": "Stervormige tekens die mensen pakken als ze een sterretje bedoelen. Dit zijn decoratieve sterren – een sierlijk register, geen voetnoot- of interpunctieteken.",
+      "intro": "Stervormige tekens die mensen pakken als ze een sterretje bedoelen. Dit zijn decoratieve sterren: een sierlijk register, geen voetnoot- of interpunctieteken.",
       "symbols": [
         {
           "char": "★",
@@ -117,12 +117,12 @@
     {
       "href": "/nl/library/ster-symbolen/",
       "title": "Ster-Symbolen",
-      "desc": "Sterretjes voor bio, naam en reviews – de decoratieve sterren waarmee het sterretje wordt verward."
+      "desc": "Sterretjes voor bio, naam en reviews — de decoratieve sterren waarmee het sterretje wordt verward."
     },
     {
       "href": "/nl/library/speciale-tekens/",
       "title": "Speciale Tekens",
-      "desc": "Hartjes, sterretjes, kaders en de andere klassiekers – één tik om te kopiëren."
+      "desc": "Hartjes, sterretjes, kaders en de andere klassiekers — één tik om te kopiëren."
     }
   ]
 }

@@ -6,7 +6,7 @@
   "breadcrumb": "Money Emojis",
   "hero_h1": "Money Emojis",
   "hero_tagline": "Cash, coins, banknotes, and rich-aesthetic combo sets for hustle bios and payday posts. Click any emoji to copy it instantly.",
-  "intro": "Money emojis are the universal shorthand for paydays, side hustles, and rich-aesthetic bios. This page collects the full cash cluster — 💰 money bag, 💸 money with wings, 🤑 money-mouth face, 💵 banknotes in every currency — plus banking, business, and luxury emojis. They show up in hustle-culture captions, finance-account bios, payday group chats, and celebration posts. If you need the plain ¢ € ₿ text glyphs instead, see our currency symbols page; this one owns the emoji and combo side.",
+  "intro": "Money emojis are the universal shorthand for paydays, side hustles, and rich-aesthetic bios. This page collects the full cash cluster: 💰 money bag, 💸 money with wings, 🤑 money-mouth face, 💵 banknotes in every currency: plus banking, business, and luxury emojis. They show up in hustle-culture captions, finance-account bios, payday group chats, and celebration posts. If you need the plain ¢ € ₿ text glyphs instead, see our currency symbols page; this one owns the emoji and combo side.",
   "date_published": "2026-06-12",
   "date_modified": "2026-06-12",
   "copy_pattern": "collection",
@@ -15,7 +15,7 @@
       "id": "cash-currency",
       "label": "Cash",
       "h2": "Cash & Currency Emojis",
-      "intro": "Bags, banknotes, and coins — the core money set.",
+      "intro": "Bags, banknotes, and coins: the core money set.",
       "symbols": [
         { "char": "💰", "label": "Money Bag" },
         { "char": "💵", "label": "Dollar Banknote" },
@@ -84,7 +84,7 @@
     "id": "combo-sets",
     "label": "Combo Sets",
     "h2": "Money & Rich Combo Sets",
-    "intro": "Copy a full money combo in one click — rich-aesthetic bios, hustle captions, and payday energy ready to paste."
+    "intro": "Copy a full money combo in one click: rich-aesthetic bios, hustle captions, and payday energy ready to paste."
   },
   "collection_container_id": "moneySetsContainer",
   "collections": [
@@ -133,7 +133,7 @@
     {
       "href": "/library/currency-symbols/",
       "title": "Currency Symbols",
-      "desc": "Text glyphs for every currency — ¢ € £ ¥ ₿ and more."
+      "desc": "Text glyphs for every currency: ¢ € £ ¥ ₿ and more."
     },
     {
       "href": "/library/jewelry-gem-emojis/",
@@ -148,7 +148,7 @@
     {
       "href": "/library/object-emojis/",
       "title": "Object Emojis",
-      "desc": "Everyday item emojis — phones, locks, pins, and more."
+      "desc": "Everyday item emojis: phones, locks, pins, and more."
     }
   ]
 }

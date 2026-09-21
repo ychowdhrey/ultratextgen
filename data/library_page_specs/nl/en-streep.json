@@ -14,7 +14,7 @@
   "canonical": "https://ultratextgen.com/nl/symbol/en-streep/",
   "breadcrumb": "En-streep",
   "hero_h1": "En-streep (–)",
-  "hero_tagline": "De en-streep (–) die getal- en datumbereiken verbindt — 1939–1945, pagina's 10–20, 9.00–17.00 uur — en tweeledige relaties koppelt zoals de vlucht New York–Londen. Langer dan een koppelteken, korter dan een em-streep, en het enige teken zonder eigen toets. Klik op een teken om het direct te kopiëren.",
+  "hero_tagline": "De en-streep (–) die getal- en datumbereiken verbindt: 1939–1945, pagina's 10–20, 9.00–17.00 uur, en tweeledige relaties koppelt zoals de vlucht New York–Londen. Langer dan een koppelteken, korter dan een em-streep, en het enige teken zonder eigen toets. Klik op een teken om het direct te kopiëren.",
   "intro": "De en-streep (–, Unicode U+2013) is de middellange streep die tussen het gewone koppelteken en de langere em-streep in zit — genoemd omdat hij ongeveer de halve breedte van een em-streep heeft, zowat de breedte van een hoofdletter N. Hij doet twee hoofdtaken: hij markeert spannen en bereiken (1939–1945, pagina's 10–20, 9.00–17.00 uur, het mei–september-nummer), en hij koppelt tweeledige relaties en open samenstellingen waar een koppelteken te zwak zou zijn (de vlucht New York–Londen, de deal Shell–ExxonMobil, de periode 1900–1950). Omdat geen enkel toetsenbord een eigen en-streep-toets heeft, wordt hij voortdurend verkeerd getypt als het koppelteken (-, U+002D); om hem correct in te voeren druk je op een Mac Option+Koppelteken of op Windows Alt+0150 op het numerieke toetsenblok, en Microsofts Word AutoFormat zet een gespatieerd koppelteken (woord - woord) automatisch om. Stijlgidsen zijn verdeeld: de Chicago Manual of Style gebruikt de en-streep voor bereiken, terwijl de Associated Press Stylebook helemaal geen en-strepen gebruikt en bereiken gewoon met een koppelteken zet. Hij wordt ook regelmatig verward met het typografische koppelteken (‐, U+2010), het minteken (−, U+2212) en de em-streep (—, U+2014).",
   "hreflang": [
     {
@@ -51,7 +51,7 @@
       "id": "verwarrende-streepjes",
       "label": "Verwarrende Streepjes",
       "h2": "Streepjes en Koppeltekens waarmee het Verward Wordt",
-      "intro": "De tekens waarmee de en-streep wordt verwisseld — elk met een eigen breedte, codepunt en taak, van het gewone toetsenbord-koppelteken tot de em-streep en het echte minteken.",
+      "intro": "De tekens waarmee de en-streep wordt verwisseld: elk met een eigen breedte, codepunt en taak, van het gewone toetsenbord-koppelteken tot de em-streep en het echte minteken.",
       "symbols": [
         {
           "char": "—",

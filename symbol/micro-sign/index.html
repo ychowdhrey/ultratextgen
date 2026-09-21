@@ -194,7 +194,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="hero">
   <div class="hero-inner">
     <h1 class="hero-headline">Micro Sign (µ)</h1>
-    <p class="hero-tagline">The micro sign (µ) used for microns, micrograms, and microseconds — and why it's a completely different character from the identical-looking Greek letter mu. Click any symbol to copy it instantly.</p>
+    <p class="hero-tagline">The micro sign (µ) used for microns, micrograms, and microseconds, and why it's a completely different character from the identical-looking Greek letter mu. Click any symbol to copy it instantly.</p>
   </div>
 </section>
 
@@ -284,8 +284,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <span class="article-section-label">History &amp; Context</span>
   <h2>Why two identical-looking characters exist</h2>
   <div class="editorial-block">
-    <p>The micro sign (µ, U+00B5) exists in Unicode purely for backward compatibility. It was inherited from ISO/IEC 8859-1 (Latin-1), the 8-bit encoding that predates Unicode and is still baked into countless legacy systems, fonts, and file formats. The Unicode Consortium's own guidance is that the Greek small letter mu (μ, U+03BC) is the preferred character for the SI "micro" prefix — µg, µm, µs — but software must keep recognizing U+00B5 too, because so much existing text already uses it.</p>
-    <p>The two characters are visually identical in nearly every font, and Unicode's own NFKC normalization rule folds the micro sign down to Greek mu automatically. That's usually invisible — until it isn't: a search, a regex match, a filename comparison, or a database lookup can silently fail when one string uses U+00B5 and the other uses U+03BC, because to a byte-level comparison they're different characters even though no human can tell them apart on screen. It's a common enough gotcha that developers file real bug reports over it — a 2025 Home Assistant pull request, for example, proposed switching the project's unit strings from the micro sign to Greek mu specifically to avoid this class of mismatch.</p>
+    <p>The micro sign (µ, U+00B5) exists in Unicode purely for backward compatibility. It was inherited from ISO/IEC 8859-1 (Latin-1), the 8-bit encoding that predates Unicode and is still baked into countless legacy systems, fonts, and file formats. The Unicode Consortium's own guidance is that the Greek small letter mu (μ, U+03BC) is the preferred character for the SI "micro" prefix (µg, µm, µs) but software must keep recognizing U+00B5 too, because so much existing text already uses it.</p>
+    <p>The two characters are visually identical in nearly every font, and Unicode's own NFKC normalization rule folds the micro sign down to Greek mu automatically. That's usually invisible: until it isn't: a search, a regex match, a filename comparison, or a database lookup can silently fail when one string uses U+00B5 and the other uses U+03BC, because to a byte-level comparison they're different characters even though no human can tell them apart on screen. It's a common enough gotcha that developers file real bug reports over it: a 2025 Home Assistant pull request, for example, proposed switching the project's unit strings from the micro sign to Greek mu specifically to avoid this class of mismatch.</p>
   </div>
 </section>
 

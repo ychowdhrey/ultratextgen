@@ -14,8 +14,8 @@
   "canonical": "https://ultratextgen.com/nl/symbol/interrobang/",
   "breadcrumb": "Interrobang",
   "hero_h1": "Interrobang (‽)",
-  "hero_tagline": "De interrobang (‽) die ‘?’ en ‘!’ samensmelt tot één teken voor een verbaasde vraag – bedacht door de Amerikaanse reclameman Martin Speckter in 1962 en even verkocht als echte typemachinetoets – plus zijn Spaans-stijl openende tweeling, de omgekeerde interrobang (⸘). Klik op een teken om het direct te kopiëren.",
-  "intro": "De interrobang (‽, Unicode U+203D) is één teken dat een vraagteken met een uitroepteken samensmelt, gemaakt voor een zin die tegelijk vraagt én uitroept – ‘Je hebt wát gedaan‽’ De Amerikaanse reclameman Martin K. Speckter stelde het in 1962 voor in een artikel getiteld ‘Making a New Point, or, How About That…’ in TYPEtalks, het tijdschrift dat hij redigeerde; hij bouwde de naam op uit interrogatio (Latijn voor een retorische vraag) en bang (drukkersjargon voor het uitroepteken), en verwierp kandidaten als ‘exclamaquest’ en ‘exclarotive’. Het werd even echte hardware: het lettertype Americana van Richard Isbell uit 1965 bevatte het, sommige Remington-typemachines boden in 1968 een interrobang-toets, en vervangende toetskapjes bereikten Smith-Corona-machines in de jaren 70 – maar het haalde nooit het standaardtoetsenbord en verdween tegen eind jaren 70 uit beeld. Unicode codeert het nog steeds, samen met zijn spiegelbeeld, de omgekeerde interrobang (⸘, U+2E18, toegevoegd in Unicode 5.1 in 2008), ontworpen om een zin te openen zoals ¿ en ¡ dat doen bij vragen en uitroepen in het Spaans. Verwar het niet met het gespiegelde vraagteken (⸮), een apart retorisch teken uit 1575 met een eigen pagina.",
+  "hero_tagline": "De interrobang (‽) die ‘?’ en ‘!’ samensmelt tot één teken voor een verbaasde vraag — bedacht door de Amerikaanse reclameman Martin Speckter in 1962 en even verkocht als echte typemachinetoets — plus zijn Spaans-stijl openende tweeling, de omgekeerde interrobang (⸘). Klik op een teken om het direct te kopiëren.",
+  "intro": "De interrobang (‽, Unicode U+203D) is één teken dat een vraagteken met een uitroepteken samensmelt, gemaakt voor een zin die tegelijk vraagt én uitroept — ‘Je hebt wát gedaan‽’ De Amerikaanse reclameman Martin K. Speckter stelde het in 1962 voor in een artikel getiteld ‘Making a New Point, or, How About That…’ in TYPEtalks, het tijdschrift dat hij redigeerde; hij bouwde de naam op uit interrogatio (Latijn voor een retorische vraag) en bang (drukkersjargon voor het uitroepteken), en verwierp kandidaten als ‘exclamaquest’ en ‘exclarotive’. Het werd even echte hardware: het lettertype Americana van Richard Isbell uit 1965 bevatte het, sommige Remington-typemachines boden in 1968 een interrobang-toets, en vervangende toetskapjes bereikten Smith-Corona-machines in de jaren 70, maar het haalde nooit het standaardtoetsenbord en verdween tegen eind jaren 70 uit beeld. Unicode codeert het nog steeds, samen met zijn spiegelbeeld, de omgekeerde interrobang (⸘, U+2E18, toegevoegd in Unicode 5.1 in 2008), ontworpen om een zin te openen zoals ¿ en ¡ dat doen bij vragen en uitroepen in het Spaans. Verwar het niet met het gespiegelde vraagteken (⸮), een apart retorisch teken uit 1575 met een eigen pagina.",
   "hreflang": [
     {
       "lang": "en",
@@ -34,7 +34,7 @@
     {
       "id": "de-interrobang",
       "label": "De Interrobang",
-      "h2": "De Interrobang – ‽ & ⸘",
+      "h2": "De Interrobang: ‽ & ⸘",
       "intro": "Het teken zelf en zijn spiegelbeeld: de standaardinterrobang die een verbaasde vraag afsluit, en de omgekeerde vorm die er juist een opent.",
       "symbols": [
         {
@@ -51,7 +51,7 @@
       "id": "wat-het-samenvoegt",
       "label": "Wat Het Samenvoegt",
       "h2": "Het Vraagteken en Uitroepteken die Het Combineert",
-      "intro": "De interrobang perst deze twee alledaagse tekens samen tot één. Als een toetsenbord het niet kan maken, typen mensen ze los achter elkaar – of grijpen ze naar Unicodes kant-en-klare gecombineerde vormen.",
+      "intro": "De interrobang perst deze twee alledaagse tekens samen tot één. Als een toetsenbord het niet kan maken, typen mensen ze los achter elkaar, of grijpen ze naar Unicodes kant-en-klare gecombineerde vormen.",
       "symbols": [
         {
           "char": "?",
@@ -79,7 +79,7 @@
       "id": "openende-interpunctie",
       "label": "Openende Interpunctie",
       "h2": "Waarom de Omgekeerde Interrobang Bestaat",
-      "intro": "Het Spaans en verwante talen openen een vraag met ¿ en een uitroep met ¡; de omgekeerde interrobang ⸘ voegt dat openende paar samen, als spiegelbeeld aan het begin van een zin van wat ‽ aan het eind doet. Het gespiegelde vraagteken ⸮ is een compleet apart teken – zie de eigen pagina.",
+      "intro": "Het Spaans en verwante talen openen een vraag met ¿ en een uitroep met ¡; de omgekeerde interrobang ⸘ voegt dat openende paar samen, als spiegelbeeld aan het begin van een zin van wat ‽ aan het eind doet. Het gespiegelde vraagteken ⸮ is een compleet apart teken — zie de eigen pagina.",
       "symbols": [
         {
           "char": "¿",
@@ -109,12 +109,12 @@
     {
       "href": "/nl/symbol/omgekeerd-vraagteken/",
       "title": "Omgekeerd Vraagteken (⸮)",
-      "desc": "Een ander historisch retorisch teken – het gespiegelde vraagteken uit 1575, geen vraag-plus-uitroep-mix zoals de interrobang."
+      "desc": "Een ander historisch retorisch teken — het gespiegelde vraagteken uit 1575, geen vraag-plus-uitroep-mix zoals de interrobang."
     },
     {
       "href": "/nl/symbol/alinea-teken/",
       "title": "Alineateken (¶)",
-      "desc": "Het paragraafteken – een redactioneel typografisch teken met een lange druk-geschiedenis."
+      "desc": "Het paragraafteken: een redactioneel typografisch teken met een lange druk-geschiedenis."
     }
   ]
 }

@@ -110,7 +110,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Are fancy fonts from a generator real fonts?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. A font is a file installed on a device that changes how ordinary letters are drawn. A generator never touches fonts — it swaps your letters for different Unicode characters that happen to look bold, italic, or gothic. The bold 𝗮 (U+1D5EE) is a separate character from the regular a (U+0061), the same way ß is separate from B. That is why the styling travels with the text instead of living on your device." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. A font is a file installed on a device that changes how ordinary letters are drawn. A generator never touches fonts: it swaps your letters for different Unicode characters that happen to look bold, italic, or gothic. The bold 𝗮 (U+1D5EE) is a separate character from the regular a (U+0061), the same way ß is separate from B. That is why the styling travels with the text instead of living on your device." }
     },
     {
       "@type": "Question",
@@ -120,7 +120,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Why do some sites reject styled characters in usernames?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Username and handle fields are usually validated against a small whitelist — often just a–z, 0–9, dots and underscores — because handles are used for logins, mentions, and URLs, where lookalike characters enable impersonation. A styled 𝗮 is not on that whitelist, so the field rejects it. Bios and posts are free-text fields with no such whitelist, which is why the exact same characters work fine there." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Username and handle fields are usually validated against a small whitelist (often just a–z, 0–9, dots and underscores) because handles are used for logins, mentions, and URLs, where lookalike characters enable impersonation. A styled 𝗮 is not on that whitelist, so the field rejects it. Bios and posts are free-text fields with no such whitelist, which is why the exact same characters work fine there." }
     },
     {
       "@type": "Question",
@@ -176,7 +176,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2>Key Takeaways</h2>
   <ul>
     <li>A generator "font" is not a font. The bold 𝗮 (U+1D5EE) is a completely different character from a (U+0061) — not the same letter wearing a costume.</li>
-    <li>Every text failure — tofu boxes, rejected usernames, invisible search results, garbled screen readers — happens at exactly one of four layers: Character, Code point, Encoding, or Glyph.</li>
+    <li>Every text failure: tofu boxes, rejected usernames, invisible search results, garbled screen readers: happens at exactly one of four layers: Character, Code point, Encoding, or Glyph.</li>
     <li>Copy-paste works everywhere because the styling is data (the characters themselves), not metadata a platform can strip.</li>
     <li>The costs are real: styled text is hostile to screen readers and invisible to search — style short decorative phrases, never the words people need to find or hear.</li>
   </ul>
@@ -190,7 +190,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2>The Bold Isn't a Costume. It's a Different Letter.</h2>
     <div class="editorial-block">
       <p>Ask most people how a font generator works and you'll get some version of "it applies a font to my text." It doesn't — it <em>can't</em>. A font is a file installed on a device, and no website can install files onto Instagram's servers or your reader's phone. Something else is happening, and it's stranger and more elegant than a font.</p>
-      <p><strong>The generator is swapping your letters for entirely different characters.</strong> When you type "bold" and get 𝗯𝗼𝗹𝗱, none of your original letters survived. Each one was replaced by a lookalike from a distant corner of the Unicode standard — the same universal character catalog that gives every letter, symbol, and emoji on Earth a number.</p>
+      <p><strong>The generator is swapping your letters for entirely different characters.</strong> When you type "bold" and get 𝗯𝗼𝗹𝗱, none of your original letters survived. Each one was replaced by a lookalike from a distant corner of the Unicode standard: the same universal character catalog that gives every letter, symbol, and emoji on Earth a number.</p>
       <div class="example-pair">
         <span class="ex-label">Looks like</span>
         <span class="ex-styled">𝗯𝗼𝗹𝗱</span>
@@ -222,7 +222,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Framework</span>
     <h2>The Four-Layer Model</h2>
     <div class="editorial-block">
-      <p>Here is the mental model that makes every text failure diagnosable. Between your intention and your reader's eyeball, text passes through four layers. Each layer can fail — and each failure has a distinct signature.</p>
+      <p>Here is the mental model that makes every text failure diagnosable. Between your intention and your reader's eyeball, text passes through four layers. Each layer can fail, and each failure has a distinct signature.</p>
     </div>
 
     <div class="data-table-wrap">
@@ -238,7 +238,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="editorial-block">
-      <p>Notice who owns each layer. You control layer 1 (what you type). The Unicode Consortium owns layer 2. The network and the platform handle layer 3 — and in 2026, UTF-8 is so universal that layer 3 almost never fails anymore. Layer 4 belongs entirely to <em>the reader's device</em>. That's the punchline most people miss: the last and most visible layer is the one the author has zero control over. When your gothic bio turns into □□□□ on a friend's phone, nothing you sent broke — their device just has no picture for those characters. <a href="/guide/why-fonts-show-as-boxes/">Why fonts show as boxes</a> dedicates a whole guide to that one layer.</p>
+      <p>Notice who owns each layer. You control layer 1 (what you type). The Unicode Consortium owns layer 2. The network and the platform handle layer 3, and in 2026, UTF-8 is so universal that layer 3 almost never fails anymore. Layer 4 belongs entirely to <em>the reader's device</em>. That's the punchline most people miss: the last and most visible layer is the one the author has zero control over. When your gothic bio turns into □□□□ on a friend's phone, nothing you sent broke — their device just has no picture for those characters. <a href="/guide/why-fonts-show-as-boxes/">Why fonts show as boxes</a> dedicates a whole guide to that one layer.</p>
     </div>
   </section>
 
@@ -274,7 +274,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">The Consequences</span>
     <h2>Why Bios Say Yes and Usernames Say No</h2>
     <div class="editorial-block">
-      <p>The model also explains the two behaviors that confuse people most: styled text pastes <em>everywhere</em>, yet certain fields flatly refuse it. Both follow from the same fact — the styling is the characters.</p>
+      <p>The model also explains the two behaviors that confuse people most: styled text pastes <em>everywhere</em>, yet certain fields flatly refuse it. Both follow from the same fact: the styling is the characters.</p>
       <p><strong>Copy-paste works because there is nothing extra to lose.</strong> When a word processor makes text bold, the bold is metadata riding alongside plain letters, and it dies the moment you paste into a plain-text box. Unicode styling has no metadata: 𝗯𝗼𝗹𝗱 is just four characters, so any field that accepts text accepts them, styling intact. By the same logic, a platform <strong>cannot "strip" the style from your bio</strong> — there's no style layer to peel off. Removing the bold would mean rewriting your characters into different characters, and platforms don't rewrite what you typed into free-text fields. (The persistent rumor that Instagram punishes fancy bios doesn't hold up either — see <a href="/guide/instagram-fonts-shadowban-myth/">the shadowban myth, tested</a>.)</p>
     </div>
     <div class="compare-grid">
@@ -292,7 +292,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="editorial-block">
-      <p>So "will this field take my fancy text?" is really "is this a display field or an identity field?" Games are the strictest case of all — <a href="/guide/game-username-allowed-symbols/">which symbols game usernames actually allow</a> maps that territory.</p>
+      <p>So "will this field take my fancy text?" is really "is this a display field or an identity field?" Games are the strictest case of all, <a href="/guide/game-username-allowed-symbols/">which symbols game usernames actually allow</a> maps that territory.</p>
     </div>
   </section>
 
@@ -305,8 +305,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="editorial-block">
       <p>A pillar guide owes you the downsides, and they're not small. Because a styled 𝗮 is a genuinely different character, every system that treats text as <em>meaning</em> rather than <em>pixels</em> gets worse:</p>
       <ul>
-        <li><strong>Screen readers</strong> often announce styled words character by character — "mathematical bold small b, mathematical bold small o…" — turning your hook into noise for blind readers. The <a href="/guide/fancy-fonts-accessibility-guide/">accessibility guide</a> shows exactly what each style sounds like.</li>
-        <li><strong>Search and discovery</strong> silently fail. A recruiter searching "designer" will never surface the profile that says 𝓭𝓮𝓼𝓲𝓰𝓷𝓮𝓻 — and on LinkedIn that has real costs (<a href="/guide/linkedin-fonts-recruiters-ats/">what recruiters and ATS systems see</a>).</li>
+        <li><strong>Screen readers</strong> often announce styled words character by character ("mathematical bold small b, mathematical bold small o…") turning your hook into noise for blind readers. The <a href="/guide/fancy-fonts-accessibility-guide/">accessibility guide</a> shows exactly what each style sounds like.</li>
+        <li><strong>Search and discovery</strong> silently fail. A recruiter searching "designer" will never surface the profile that says 𝓭𝓮𝓼𝓲𝓰𝓷𝓮𝓻, and on LinkedIn that has real costs (<a href="/guide/linkedin-fonts-recruiters-ats/">what recruiters and ATS systems see</a>).</li>
         <li><strong>Old devices</strong> still draw tofu for the rarer blocks, so the fancier the style, the smaller the audience that sees it as intended.</li>
       </ul>
       <div class="mood-explainer">
@@ -320,8 +320,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- CTA Card -->
   <div class="cta-card">
-    <h3>See it for yourself — style any text →</h3>
-    <p>Type a word and watch it re-spelled in dozens of parallel Unicode alphabets — bold, italic, script, Fraktur and more. Copy any of them: it's just text.</p>
+    <h3>See it for yourself: style any text →</h3>
+    <p>Type a word and watch it re-spelled in dozens of parallel Unicode alphabets: bold, italic, script, Fraktur and more. Copy any of them: it's just text.</p>
     <a href="/" class="cta-btn">Open the Text Generator →</a>
   </div>
 
@@ -354,7 +354,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Are fancy fonts from a generator real fonts?</button>
     <div class="faq-answer">
-      <p>No. A font is a file installed on a device that changes how ordinary letters are drawn. A generator never touches fonts — it swaps your letters for different Unicode characters that happen to look bold, italic, or gothic. The bold 𝗮 (U+1D5EE) is a separate character from the regular a (U+0061), the same way ß is separate from B. That is why the styling travels with the text instead of living on your device.</p>
+      <p>No. A font is a file installed on a device that changes how ordinary letters are drawn. A generator never touches fonts: it swaps your letters for different Unicode characters that happen to look bold, italic, or gothic. The bold 𝗮 (U+1D5EE) is a separate character from the regular a (U+0061), the same way ß is separate from B. That is why the styling travels with the text instead of living on your device.</p>
     </div>
   </div>
   <div class="faq-item">
@@ -366,7 +366,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Why do some sites reject styled characters in usernames?</button>
     <div class="faq-answer">
-      <p>Username and handle fields are usually validated against a small whitelist — often just a–z, 0–9, dots and underscores — because handles are used for logins, mentions, and URLs, where lookalike characters enable impersonation. A styled 𝗮 is not on that whitelist, so the field rejects it. Bios and posts are free-text fields with no such whitelist, which is why the exact same characters work fine there.</p>
+      <p>Username and handle fields are usually validated against a small whitelist (often just a–z, 0–9, dots and underscores) because handles are used for logins, mentions, and URLs, where lookalike characters enable impersonation. A styled 𝗮 is not on that whitelist, so the field rejects it. Bios and posts are free-text fields with no such whitelist, which is why the exact same characters work fine there.</p>
     </div>
   </div>
   <div class="faq-item">

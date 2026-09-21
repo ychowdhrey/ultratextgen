@@ -120,7 +120,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Why doesn't Discord colored text work on mobile?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The iOS and Android apps have historically not rendered ANSI codes inside code blocks the way desktop and web do. Depending on the app version, phone readers see either the raw escape codes scattered through your text or a plain uncolored code block. Your message isn't broken — the mobile client just doesn't paint the colors — so never put meaning in the color alone." }
+      "acceptedAnswer": { "@type": "Answer", "text": "The iOS and Android apps have historically not rendered ANSI codes inside code blocks the way desktop and web do. Depending on the app version, phone readers see either the raw escape codes scattered through your text or a plain uncolored code block. Your message isn't broken, the mobile client just doesn't paint the colors, so never put meaning in the color alone." }
     },
     {
       "@type": "Question",
@@ -178,7 +178,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li>Colored text exists <strong>only inside code blocks fenced with <code>```ansi</code></strong> — it's a syntax-highlighting trick Discord inherited, not a chat feature.</li>
     <li>The palette is fixed: <strong>8 foreground colors</strong> (codes 30–37), 8 backgrounds (40–47), bold (1) and underline (4). No hex, no custom colors.</li>
     <li>The #1 failure: the codes need the <strong>literal, invisible ESC character</strong> (U+001B). Typing the visible text <code>\e[31m</code> or <code>␛[31m</code> yourself produces dead text.</li>
-    <li>Mobile rendering is unreliable — many phones show the raw codes — so run the <strong>ANSI Reality Check</strong> before you build a server aesthetic on it.</li>
+    <li>Mobile rendering is unreliable, many phones show the raw codes, so run the <strong>ANSI Reality Check</strong> before you build a server aesthetic on it.</li>
   </ul>
 </section>
 
@@ -190,8 +190,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2>It's a Code-Block Trick, Not a Formatting Feature</h2>
     <div class="editorial-block">
       <p>Search "discord colored text" and you'll find two kinds of people: the ones excitedly posting rainbow announcements from their desktop, and the ones asking why their message looks like <code>[31mHELP[0m</code> on their phone. Both are looking at the same feature. Neither was told what it actually is.</p>
-      <p>Here's what it actually is. Discord's code blocks support syntax highlighting for programming languages — you fence a block with three backticks, name a language, and Discord tints the code. One of the "languages" it recognizes is <strong>ANSI</strong>: the escape-code system terminals have used to color text since the 1970s. Somebody noticed that a code block tagged <code>ansi</code> obeys those old terminal color codes, and a folk feature was born.</p>
-      <p>That origin story explains every limitation you're about to hit. It's why the color only works inside a monospaced code box, why the palette is eight terminal colors instead of a color picker, and why the mobile apps — which never promised terminal emulation — often don't render it at all. Colored text in Discord is real. It's just narrow, and it was never designed for you. This guide is part of a series; for the full map of Discord's text systems (Markdown, Unicode, Nitro), see <a href="/guide/discord-text-formatting-explained/">Discord text formatting decoded</a> — this page zooms all the way in on the color trick alone.</p>
+      <p>Here's what it actually is. Discord's code blocks support syntax highlighting for programming languages: you fence a block with three backticks, name a language, and Discord tints the code. One of the "languages" it recognizes is <strong>ANSI</strong>: the escape-code system terminals have used to color text since the 1970s. Somebody noticed that a code block tagged <code>ansi</code> obeys those old terminal color codes, and a folk feature was born.</p>
+      <p>That origin story explains every limitation you're about to hit. It's why the color only works inside a monospaced code box, why the palette is eight terminal colors instead of a color picker, and why the mobile apps, which never promised terminal emulation, often don't render it at all. Colored text in Discord is real. It's just narrow, and it was never designed for you. This guide is part of a series; for the full map of Discord's text systems (Markdown, Unicode, Nitro), see <a href="/guide/discord-text-formatting-explained/">Discord text formatting decoded</a> — this page zooms all the way in on the color trick alone.</p>
     </div>
   </section>
 
@@ -206,7 +206,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="usecase-example">```ansi
 ␛[31mServer restart in 10 minutes — save your builds.␛[0m
 ```</div>
-      <p>Reading it left to right: the <code>```ansi</code> fence opens a code block in ANSI mode. <code>␛[31m</code> switches the foreground to red (color 31). The text renders red until <code>␛[0m</code> — code 0 — resets everything back to default. Close the fence and you're done. You can stack codes with semicolons: <code>␛[1;32m</code> means bold (1) <em>and</em> green (32) in one sequence.</p>
+      <p>Reading it left to right: the <code>```ansi</code> fence opens a code block in ANSI mode. <code>␛[31m</code> switches the foreground to red (color 31). The text renders red until <code>␛[0m</code>, code 0, resets everything back to default. Close the fence and you're done. You can stack codes with semicolons: <code>␛[1;32m</code> means bold (1) <em>and</em> green (32) in one sequence.</p>
       <div class="usecase-example">```ansi
 ␛[1;32mPASSED:␛[0m tryouts roster is live
 ␛[1;31mFAILED:␛[0m east server is still down
@@ -222,7 +222,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Cheat Sheet</span>
     <h2>The Entire Palette: 8 Colors, 2 Effects, 1 Reset</h2>
     <div class="editorial-block">
-      <p>This table is the whole feature. There is nothing beyond it — no hex, no RGB, no 256-color mode. If your plan needs a ninth color, your plan needs a bot embed instead.</p>
+      <p>This table is the whole feature. There is nothing beyond it: no hex, no RGB, no 256-color mode. If your plan needs a ninth color, your plan needs a bot embed instead.</p>
     </div>
     <div class="data-table-wrap">
       <table class="data-table">
@@ -240,7 +240,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </table>
     </div>
     <div class="editorial-block">
-      <p>Plus three modifiers: <code>1</code> = bold, <code>4</code> = underline, <code>0</code> = reset everything. Combine with semicolons — <code>␛[4;36m</code> is underlined cyan, <code>␛[1;37;41m</code> is bold white on a rust background. That last pattern (37 on 41) is the closest thing ANSI has to a warning banner, and it's about as loud as this feature gets.</p>
+      <p>Plus three modifiers: <code>1</code> = bold, <code>4</code> = underline, <code>0</code> = reset everything. Combine with semicolons: <code>␛[4;36m</code> is underlined cyan, <code>␛[1;37;41m</code> is bold white on a rust background. That last pattern (37 on 41) is the closest thing ANSI has to a warning banner, and it's about as loud as this feature gets.</p>
     </div>
   </section>
 
@@ -251,7 +251,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">The Gotcha</span>
     <h2>The Escape-Character Trap</h2>
     <div class="editorial-block">
-      <p>Here is the single mistake behind most "ANSI not working" posts. The <code>␛</code> in every example on this page is a stand-in for the <strong>ESC control character</strong> — Unicode U+001B. It's a real character, but an invisible one: it has no glyph, and there is no key on your keyboard that types it into a chat box. Tutorials render it as <code>\e</code>, <code>^[</code> or <code>␛</code> so you can see where it goes — and readers faithfully type those <em>visible</em> characters, which are just a backslash-and-letter or a caret-and-bracket. Dead text.</p>
+      <p>Here is the single mistake behind most "ANSI not working" posts. The <code>␛</code> in every example on this page is a stand-in for the <strong>ESC control character</strong> — Unicode U+001B. It's a real character, but an invisible one: it has no glyph, and there is no key on your keyboard that types it into a chat box. Tutorials render it as <code>\e</code>, <code>^[</code> or <code>␛</code> so you can see where it goes, and readers faithfully type those <em>visible</em> characters, which are just a backslash-and-letter or a caret-and-bracket. Dead text.</p>
       <div class="compare-grid">
         <div class="compare-card variant-muted">
           <span class="compare-badge">Typed by hand</span>
@@ -273,14 +273,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Framework</span>
     <h2>The ANSI Reality Check</h2>
     <div class="editorial-block">
-      <p>Before you put colored text anywhere that matters — rules channel, event announcement, server welcome — run it through four questions. This is the whole decision in thirty seconds.</p>
+      <p>Before you put colored text anywhere that matters (rules channel, event announcement, server welcome) run it through four questions. This is the whole decision in thirty seconds.</p>
       <ul>
         <li><strong>1. Is it in a code block?</strong> ANSI only lives inside a <code>```ansi</code> fence. If you wanted a colored word inside a normal sentence, the answer is already no — that feature does not exist in Discord.</li>
         <li><strong>2. Is monospace-in-a-box acceptable?</strong> Your colored text will sit in a gray code box in terminal font. For patch notes and status boards that's a vibe; for a heartfelt announcement it reads like a stack trace.</li>
         <li><strong>3. Will mobile readers matter?</strong> If the people who need this message are on phones, assume a large share will see raw codes or no color at all.</li>
         <li><strong>4. Do 8 colors cover it?</strong> No brand hex, no gradients, no exact matches. Red-green-yellow status semantics work; "our server's signature lavender" does not.</li>
       </ul>
-      <p><strong>If any answer is no, don't force it.</strong> Use a bot embed (colored strip, any hex, renders identically everywhere) or skip color and use structure instead. Four yeses? Go ahead — it's a genuinely fun trick in its lane.</p>
+      <p><strong>If any answer is no, don't force it.</strong> Use a bot embed (colored strip, any hex, renders identically everywhere) or skip color and use structure instead. Four yeses? Go ahead: it's a genuinely fun trick in its lane.</p>
     </div>
     <div class="editorial-block">
       <p>And here's the support matrix behind question 3 — what each client actually does with an ANSI block:</p>
@@ -306,11 +306,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Section: limits and alternatives -->
   <section class="editorial-section">
     <span class="article-section-label">Honest Limits</span>
-    <h2>When Not to Use It — and What to Use Instead</h2>
+    <h2>When Not to Use It: and What to Use Instead</h2>
     <div class="editorial-block">
       <p>Our position, plainly: ANSI color is a party trick worth knowing and a foundation worth nothing. Don't build a server's visual identity on a rendering quirk that half your members can't see. Specifically, skip ANSI when:</p>
       <ul>
-        <li><strong>The message is load-bearing.</strong> Rules, safety info, event times — anything people must read should never depend on a fragile render. A phone user staring at escape codes is worse off than one reading plain text.</li>
+        <li><strong>The message is load-bearing.</strong> Rules, safety info, event times: anything people must read should never depend on a fragile render. A phone user staring at escape codes is worse off than one reading plain text.</li>
         <li><strong>You're coloring for identity, not status.</strong> If the goal is "our announcements look branded," you want a bot embed: embeds accept any hex color for their side strip, support real headings and links, and render identically on every client. That's the reliable colored-message technology in Discord.</li>
         <li><strong>You actually wanted styled names or inline emphasis.</strong> ANSI can't touch usernames, nicknames, channel names or normal sentences. For those, the working system is Unicode styled characters — see <a href="/guide/discord-where-fonts-work/">exactly where fonts work in Discord</a> for the field-by-field map, and mind the device-support caveats that come with Unicode styles.</li>
       </ul>
@@ -323,7 +323,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA Card -->
   <div class="cta-card">
     <h3>Style text that works in every field</h3>
-    <p>Color dies outside code blocks — Unicode styles don't. Generate a bold, cursive or small-caps version of your name and paste it into your display name, nickname or bio.</p>
+    <p>Color dies outside code blocks: Unicode styles don't. Generate a bold, cursive or small-caps version of your name and paste it into your display name, nickname or bio.</p>
     <a href="/discord/" class="cta-btn">Style text that works in every field →</a>
   </div>
 
@@ -368,7 +368,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Why doesn't Discord colored text work on mobile?</button>
     <div class="faq-answer">
-      <p>The iOS and Android apps have historically not rendered ANSI codes inside code blocks the way desktop and web do. Depending on the app version, phone readers see either the raw escape codes scattered through your text or a plain uncolored code block. Your message isn't broken — the mobile client just doesn't paint the colors — so never put meaning in the color alone.</p>
+      <p>The iOS and Android apps have historically not rendered ANSI codes inside code blocks the way desktop and web do. Depending on the app version, phone readers see either the raw escape codes scattered through your text or a plain uncolored code block. Your message isn't broken, the mobile client just doesn't paint the colors, so never put meaning in the color alone.</p>
     </div>
   </div>
   <div class="faq-item">

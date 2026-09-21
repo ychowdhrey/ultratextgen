@@ -6,7 +6,7 @@
   "breadcrumb": "LaTeX Symbols",
   "hero_h1": "LaTeX Symbols",
   "hero_tagline": "Unicode equivalents of common LaTeX math notation, each labeled with its LaTeX command. Click any symbol to copy it instantly.",
-  "intro": "LaTeX symbols normally live inside .tex documents, but you often need the real Unicode character — for an email, a Slack message, lecture notes, or a forum post where LaTeX does not render. This reference pairs each glyph with its LaTeX command, so you can copy the actual character or recall the command for your document. It covers Greek letters, operators, relations, set and logic notation, arrows, and the miscellaneous symbols students and researchers reach for most.",
+  "intro": "LaTeX symbols normally live inside .tex documents, but you often need the real Unicode character: for an email, a Slack message, lecture notes, or a forum post where LaTeX does not render. This reference pairs each glyph with its LaTeX command, so you can copy the actual character or recall the command for your document. It covers Greek letters, operators, relations, set and logic notation, arrows, and the miscellaneous symbols students and researchers reach for most.",
   "date_published": "2026-06-12",
   "date_modified": "2026-06-12",
   "copy_pattern": "single",

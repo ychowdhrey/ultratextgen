@@ -7,8 +7,8 @@
   "canonical": "https://ultratextgen.com/de/symbol/interrobang/",
   "breadcrumb": "Interrobang",
   "hero_h1": "Interrobang (‽)",
-  "hero_tagline": "Der Interrobang (‽), der „?“ und „!“ zu einem Zeichen für eine erstaunte Frage verschmilzt – erfunden 1962 vom Werbemann Martin Speckter und kurzzeitig als echte Schreibmaschinentaste verkauft –, dazu sein spanisch inspirierter, satzeröffnender Zwilling, der umgekehrte Interrobang (⸘). Ein Klick genügt zum Kopieren.",
-  "intro": "Der Interrobang (‽, Unicode U+203D) ist ein einzelnes Zeichen, das ein Fragezeichen mit einem Ausrufezeichen verschmilzt, gebaut, um einen Satz zu setzen, der gleichzeitig fragt und ausruft – „Du hast was getan‽“ Der US-amerikanische Werbetexter Martin K. Speckter schlug es 1962 in einem Artikel mit dem Titel „Making a New Point, or, How About That…“ in TYPEtalks vor, dem Magazin, das er selbst herausgab; er bildete den Namen aus interrogatio (lateinisch für eine rhetorische Frage) und bang (Druckerjargon für das Ausrufezeichen) und verwarf dabei Kandidaten wie „exclamaquest“ und „exclarotive“. Kurzzeitig wurde daraus echte Hardware: Richard Isbells Schriftart Americana von 1965 enthielt ihn, manche Remington-Schreibmaschinen boten bis 1968 eine eigene Interrobang-Taste, und Ersatz-Tastenkappen erreichten in den 1970er-Jahren Smith-Corona-Maschinen – doch er schaffte es nie auf die Standardtastatur und verschwand bis Ende der 1970er wieder aus dem Alltag. Unicode kodiert ihn weiterhin, zusammen mit seinem Spiegelbild, dem umgekehrten Interrobang (⸘, U+2E18, aufgenommen mit Unicode 5.1 im Jahr 2008), entworfen, um einen Satz so zu eröffnen, wie ¿ und ¡ im Spanischen Fragen und Ausrufe eröffnen. Nicht zu verwechseln mit dem umgekehrten Fragezeichen (⸮), einem eigenständigen rhetorischen Zeichen von 1575 mit eigener Seite.",
+  "hero_tagline": "Der Interrobang (‽), der „?“ und „!“ zu einem Zeichen für eine erstaunte Frage verschmilzt — erfunden 1962 vom Werbemann Martin Speckter und kurzzeitig als echte Schreibmaschinentaste verkauft —, dazu sein spanisch inspirierter, satzeröffnender Zwilling, der umgekehrte Interrobang (⸘). Ein Klick genügt zum Kopieren.",
+  "intro": "Der Interrobang (‽, Unicode U+203D) ist ein einzelnes Zeichen, das ein Fragezeichen mit einem Ausrufezeichen verschmilzt, gebaut, um einen Satz zu setzen, der gleichzeitig fragt und ausruft — „Du hast was getan‽“ Der US-amerikanische Werbetexter Martin K. Speckter schlug es 1962 in einem Artikel mit dem Titel „Making a New Point, or, How About That…“ in TYPEtalks vor, dem Magazin, das er selbst herausgab; er bildete den Namen aus interrogatio (lateinisch für eine rhetorische Frage) und bang (Druckerjargon für das Ausrufezeichen) und verwarf dabei Kandidaten wie „exclamaquest“ und „exclarotive“. Kurzzeitig wurde daraus echte Hardware: Richard Isbells Schriftart Americana von 1965 enthielt ihn, manche Remington-Schreibmaschinen boten bis 1968 eine eigene Interrobang-Taste, und Ersatz-Tastenkappen erreichten in den 1970er-Jahren Smith-Corona-Maschinen, doch er schaffte es nie auf die Standardtastatur und verschwand bis Ende der 1970er wieder aus dem Alltag. Unicode kodiert ihn weiterhin, zusammen mit seinem Spiegelbild, dem umgekehrten Interrobang (⸘, U+2E18, aufgenommen mit Unicode 5.1 im Jahr 2008), entworfen, um einen Satz so zu eröffnen, wie ¿ und ¡ im Spanischen Fragen und Ausrufe eröffnen. Nicht zu verwechseln mit dem umgekehrten Fragezeichen (⸮), einem eigenständigen rhetorischen Zeichen von 1575 mit eigener Seite.",
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
@@ -34,7 +34,7 @@
     {
       "id": "der-interrobang",
       "label": "Der Interrobang",
-      "h2": "Der Interrobang – ‽ & ⸘",
+      "h2": "Der Interrobang: ‽ & ⸘",
       "intro": "Das Zeichen selbst und sein Spiegelbild: der übliche Interrobang, der eine erstaunte Frage abschließt, und die umgekehrte Form, gebaut, um eine solche zu eröffnen.",
       "symbols": [
         {
@@ -51,7 +51,7 @@
       "id": "die-verschmolzenen-zeichen",
       "label": "Was er verschmilzt",
       "h2": "Das Fragezeichen und Ausrufezeichen, die er verbindet",
-      "intro": "Der Interrobang komprimiert diese beiden alltäglichen Zeichen zu einem. Kommt eine Tastatur nicht damit klar, tippen die meisten stattdessen beide hintereinander – oder greifen zu Unicodes fertigen kombinierten Formen.",
+      "intro": "Der Interrobang komprimiert diese beiden alltäglichen Zeichen zu einem. Kommt eine Tastatur nicht damit klar, tippen die meisten stattdessen beide hintereinander, oder greifen zu Unicodes fertigen kombinierten Formen.",
       "symbols": [
         {
           "char": "?",
@@ -79,7 +79,7 @@
       "id": "eroeffnende-interpunktion",
       "label": "Eröffnende Interpunktion",
       "h2": "Warum es den umgekehrten Interrobang gibt",
-      "intro": "Das Spanische und verwandte Sprachen eröffnen eine Frage mit ¿ und einen Ausruf mit ¡; der umgekehrte Interrobang ⸘ verschmilzt dieses eröffnende Paar und spiegelt am Satzanfang, was ‽ am Satzende leistet. Das umgekehrte Fragezeichen ⸮ ist ein völlig eigenständiges Zeichen – siehe seine eigene Seite.",
+      "intro": "Das Spanische und verwandte Sprachen eröffnen eine Frage mit ¿ und einen Ausruf mit ¡; der umgekehrte Interrobang ⸘ verschmilzt dieses eröffnende Paar und spiegelt am Satzanfang, was ‽ am Satzende leistet. Das umgekehrte Fragezeichen ⸮ ist ein völlig eigenständiges Zeichen — siehe seine eigene Seite.",
       "symbols": [
         {
           "char": "¿",
@@ -109,7 +109,7 @@
     {
       "href": "/de/symbol/umgekehrtes-fragezeichen/",
       "title": "Umgekehrtes Fragezeichen (⸮)",
-      "desc": "Ein eigenständiges historisches rhetorisches Zeichen – das umgekehrte Fragezeichen von 1575, keine Frage-plus-Ausruf-Mischung wie der Interrobang."
+      "desc": "Ein eigenständiges historisches rhetorisches Zeichen — das umgekehrte Fragezeichen von 1575, keine Frage-plus-Ausruf-Mischung wie der Interrobang."
     },
     {
       "href": "/de/symbol/geviertstrich/",
@@ -119,7 +119,7 @@
     {
       "href": "/de/symbol/absatzzeichen/",
       "title": "Absatzzeichen (¶)",
-      "desc": "Der Pilcrow – ein redaktionelles Typografiezeichen mit eigener langer Druckgeschichte."
+      "desc": "Der Pilcrow: ein redaktionelles Typografiezeichen mit eigener langer Druckgeschichte."
     }
   ]
 }

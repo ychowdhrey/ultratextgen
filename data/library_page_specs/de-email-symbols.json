@@ -8,13 +8,13 @@
  "breadcrumb": "E-Mail-Symbole",
  "hero_h1": "E-Mail-Symbole",
  "hero_tagline": "Aufzählungen, Trenner, Statuszeichen und Kontaktsymbole — für Betreff, Text und Signatur.",
- "intro": "In einer E-Mail steht kein Formatierungswerkzeug zur Verfügung, das über Fett und Kursiv hinausgeht. Wer trotzdem gliedern will, tut das mit Zeichen: ein ▸ als Aufzählungspunkt, eine ─ Linie als Trenner, ein 🔴 im Betreff für Dringlichkeit. Diese Seite sammelt die Zeichen, die dafür üblich sind — und die in Outlook, Gmail und Apple Mail gleichermaßen ankommen.",
+ "intro": "In einer E-Mail steht kein Formatierungswerkzeug zur Verfügung, das über Fett und Kursiv hinausgeht. Wer trotzdem gliedern will, tut das mit Zeichen: ein ▸ als Aufzählungspunkt, eine ─ Linie als Trenner, ein 🔴 im Betreff für Dringlichkeit. Diese Seite sammelt die Zeichen, die dafür üblich sind, und die in Outlook, Gmail und Apple Mail gleichermaßen ankommen.",
  "sections": [
   {
    "id": "betreff",
    "label": "Betreffzeile",
    "h2": "Betreffzeile",
-   "intro": "Zeichen, die eine Betreffzeile sichtbar machen. Sparsam einsetzen — zu viele wirken wie Werbung und landen im Spam.",
+   "intro": "Zeichen, die eine Betreffzeile sichtbar machen. Sparsam einsetzen: zu viele wirken wie Werbung und landen im Spam.",
    "symbols": [
     {
      "char": "⚡",
@@ -70,7 +70,7 @@
    "id": "aufzaehlung",
    "label": "Aufzählungszeichen",
    "h2": "Aufzählungszeichen",
-   "intro": "Sachliche Punkte für Listen — funktionieren auch dort, wo die Formatierung verlorengeht.",
+   "intro": "Sachliche Punkte für Listen: funktionieren auch dort, wo die Formatierung verlorengeht.",
    "symbols": [
     {
      "char": "▸",

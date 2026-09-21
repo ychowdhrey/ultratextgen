@@ -6,7 +6,7 @@
   "breadcrumb": "Peace Emoji",
   "hero_h1": "Peace Emoji",
   "hero_tagline": "The peace sign hand for photos, the dove and flag for anti-war and harmony posts, plus meditation and calm-vibes emoji for bios and captions. Click any symbol to copy it instantly.",
-  "intro": "The ✌️ victory hand is one of the most-used photo-pose emoji on the internet, thrown up in selfies and group shots as a quick, friendly ‘peace out.’ Alongside it sits a whole family of peace-themed picture emoji with a different register: 🕊️ the dove and 🏳️ the white flag carry anti-war and ceasefire symbolism, while ☯️ yin-yang and 🧘 meditation emoji lean into calm and inner harmony instead. This page collects that full picture-emoji set — the victory-hand gesture in every skin tone, dove and flag symbolism, harmony and meditation emoji, and peace-sign kaomoji — plus ready-made combo sets to copy and paste. Looking for the plain Unicode ☮ peace-sign character on its own, with its codepoint and design history? See the dedicated peace symbol page linked below.",
+  "intro": "The ✌️ victory hand is one of the most-used photo-pose emoji on the internet, thrown up in selfies and group shots as a quick, friendly ‘peace out.’ Alongside it sits a whole family of peace-themed picture emoji with a different register: 🕊️ the dove and 🏳️ the white flag carry anti-war and ceasefire symbolism, while ☯️ yin-yang and 🧘 meditation emoji lean into calm and inner harmony instead. This page collects that full picture-emoji set: the victory-hand gesture in every skin tone, dove and flag symbolism, harmony and meditation emoji, and peace-sign kaomoji — plus ready-made combo sets to copy and paste. Looking for the plain Unicode ☮ peace-sign character on its own, with its codepoint and design history? See the dedicated peace symbol page linked below.",
   "date_published": "2026-07-13",
   "date_modified": "2026-07-13",
   "copy_pattern": "collection",
@@ -15,7 +15,7 @@
       "id": "victory-hand",
       "label": "Peace Sign & Victory Hand",
       "h2": "Peace Sign & Victory Hand Emoji",
-      "intro": "The classic photo-pose gesture — two fingers raised — in the default cartoon-yellow tone and every skin-tone modifier.",
+      "intro": "The classic photo-pose gesture, two fingers raised, in the default cartoon-yellow tone and every skin-tone modifier.",
       "symbols": [
         { "char": "✌️", "label": "Victory Hand" },
         { "char": "✌🏻", "label": "Victory Hand: Light Skin Tone" },
@@ -29,7 +29,7 @@
       "id": "dove-flag-symbols",
       "label": "Dove, Flag & Peace Symbols",
       "h2": "Dove, Flag & Global Peace Symbols",
-      "intro": "The anti-war and ceasefire register — the dove of peace, the white flag of surrender, and balance symbols used in peace and harmony messaging.",
+      "intro": "The anti-war and ceasefire register: the dove of peace, the white flag of surrender, and balance symbols used in peace and harmony messaging.",
       "symbols": [
         { "char": "🕊️", "label": "Dove" },
         { "char": "☮️", "label": "Peace Symbol" },
@@ -74,7 +74,7 @@
     "id": "combo-sets",
     "label": "Combo Sets",
     "h2": "Peace Emoji Combo Sets",
-    "intro": "Ready-made peace and harmony combos — copy a full set with one click and paste it straight into a caption, bio, or DM."
+    "intro": "Ready-made peace and harmony combos: copy a full set with one click and paste it straight into a caption, bio, or DM."
   },
   "collection_container_id": "peaceSetsContainer",
   "collections": [
@@ -123,7 +123,7 @@
     {
       "href": "/symbol/peace-sign/",
       "title": "Peace Symbol (☮)",
-      "desc": "The plain Unicode peace-sign character on its own — codepoint, 1958 design history, and how to type it."
+      "desc": "The plain Unicode peace-sign character on its own: codepoint, 1958 design history, and how to type it."
     },
     {
       "href": "/library/hand-symbols/",
@@ -138,7 +138,7 @@
     {
       "href": "/library/emoji-meanings-guide/",
       "title": "Emoji Meanings Guide",
-      "desc": "What popular emoji actually mean — hand gestures and double-meaning emoji included."
+      "desc": "What popular emoji actually mean: hand gestures and double-meaning emoji included."
     }
   ]
 }

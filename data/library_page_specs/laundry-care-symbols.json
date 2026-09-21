@@ -6,7 +6,7 @@
   "breadcrumb": "Laundry Care Symbols",
   "hero_h1": "Laundry Care Symbols",
   "hero_tagline": "Wash, bleach, dry, and iron care icons you can copy and paste. Click any symbol to copy it instantly.",
-  "intro": "The official ISO 3758 laundry care symbols printed on clothing tags are not encoded as standalone Unicode text characters, so this reference gathers the closest Unicode equivalents — emoji and geometric shapes — grouped by what each care instruction means: washing and water, bleaching, drying, ironing heat levels, and “do not” prohibitions. Every tile copies a single character you can paste into care labels, packing lists, notes, and posts. Use the Unicode name shown beside each symbol so readers know exactly what it stands for.",
+  "intro": "The official ISO 3758 laundry care symbols printed on clothing tags are not encoded as standalone Unicode text characters, so this reference gathers the closest Unicode equivalents, emoji and geometric shapes, grouped by what each care instruction means: washing and water, bleaching, drying, ironing heat levels, and “do not” prohibitions. Every tile copies a single character you can paste into care labels, packing lists, notes, and posts. Use the Unicode name shown beside each symbol so readers know exactly what it stands for.",
   "date_published": "2026-06-08",
   "date_modified": "2026-06-08",
   "copy_pattern": "single",
@@ -15,7 +15,7 @@
       "id": "washing",
       "label": "Washing",
       "h2": "Washing & Water Symbols",
-      "intro": "Closest Unicode stand-ins for the wash-tub care instruction — water, detergent, and machine-wash cues.",
+      "intro": "Closest Unicode stand-ins for the wash-tub care instruction: water, detergent, and machine-wash cues.",
       "symbols": [
         { "char": "🧺", "label": "Basket (laundry)" },
         { "char": "🧼", "label": "Soap" },

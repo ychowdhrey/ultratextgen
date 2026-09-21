@@ -26,7 +26,7 @@
       "id": "confusable-neighbors",
       "label": "Confusable Neighbors",
       "h2": "Symbols Often Confused with ℉",
-      "intro": "Marks that get substituted for ℉ — each is a distinct character.",
+      "intro": "Marks that get substituted for ℉: each is a distinct character.",
       "symbols": [
         { "char": "°", "label": "Degree Sign (U+00B0)" },
         { "char": "℃", "label": "Degree Celsius (U+2103)" },

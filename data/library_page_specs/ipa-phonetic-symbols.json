@@ -5,8 +5,8 @@
   "canonical": "https://ultratextgen.com/library/ipa-phonetic-symbols/",
   "breadcrumb": "IPA Phonetic Symbols",
   "hero_h1": "IPA Phonetic Symbols",
-  "hero_tagline": "The International Phonetic Alphabet — vowels, consonants, and stress marks with example sounds. Click any symbol to copy it instantly.",
-  "intro": "IPA symbols from the International Phonetic Alphabet let you write pronunciation precisely — the schwa ə, the 'sh' sound ʃ, the 'th' sounds θ and ð, and dozens more. Typing them is the hard part: most keyboards have no way to enter IPA Extensions characters, which is why linguists, ESL teachers, and dictionary editors copy them from a reference like this one. Every symbol below is grouped by type and labeled with its name and an example sound where helpful.",
+  "hero_tagline": "The International Phonetic Alphabet: vowels, consonants, and stress marks with example sounds. Click any symbol to copy it instantly.",
+  "intro": "IPA symbols from the International Phonetic Alphabet let you write pronunciation precisely: the schwa ə, the 'sh' sound ʃ, the 'th' sounds θ and ð, and dozens more. Typing them is the hard part: most keyboards have no way to enter IPA Extensions characters, which is why linguists, ESL teachers, and dictionary editors copy them from a reference like this one. Every symbol below is grouped by type and labeled with its name and an example sound where helpful.",
   "date_published": "2026-06-12",
   "date_modified": "2026-06-12",
   "copy_pattern": "single",
@@ -35,7 +35,7 @@
       "id": "ipa-fricatives",
       "label": "Fricatives",
       "h2": "Fricative & Sibilant Consonants",
-      "intro": "The hissing and friction sounds — including the famous esh, ezh, theta, and eth.",
+      "intro": "The hissing and friction sounds: including the famous esh, ezh, theta, and eth.",
       "symbols": [
         { "char": "ʃ", "label": "Esh: 'sh' in Ship" },
         { "char": "ʒ", "label": "Ezh: 's' in Vision" },
@@ -90,7 +90,7 @@
     {
       "href": "/library/greek-letter-symbols/",
       "title": "Greek Letter Symbols",
-      "desc": "Alpha to omega — Greek letters used in science and math."
+      "desc": "Alpha to omega: Greek letters used in science and math."
     },
     {
       "href": "/library/accent-marks-diacritics/",
