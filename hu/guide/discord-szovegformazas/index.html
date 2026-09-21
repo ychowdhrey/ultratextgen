@@ -159,7 +159,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Miért jelennek meg csillagok félkövér szöveg helyett?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Két gyakori ok: szóköz van a csillagok és a szó között (`** szöveg **` nem lesz félkövér — a `**szöveg**` igen), vagy a szöveg egy kódblokkon belül van (a fordított aposztrófok kikapcsolják a Markdownt). Ne feledd azt sem, hogy a Markdown csak az üzenetekben működik, a nevekben soha." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Két gyakori ok: szóköz van a csillagok és a szó között (`** szöveg **` nem lesz félkövér, a `**szöveg**` igen), vagy a szöveg egy kódblokkon belül van (a fordított aposztrófok kikapcsolják a Markdownt). Ne feledd azt sem, hogy a Markdown csak az üzenetekben működik, a nevekben soha." }
     }
   ]
 }
@@ -205,7 +205,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2>Röviden</h2>
   <ul>
     <li>A Discordnak három össze nem kapcsolt szövegrendszere van: a <strong>Markdown</strong> (üzenetek), a <strong>Unicode „betűtípusok”</strong> (nevek mindenhol) és a <strong>Nitro</strong> (fizetős megjelenítendő név stílusok).</li>
-    <li>A Markdown, mint a <code>**félkövér**</code>, csak az üzenetekben jelenik meg — sosem működik a felhasználónévben, a becenévben vagy a szerver-/csatornanévben.</li>
+    <li>A Markdown, mint a <code>**félkövér**</code>, csak az üzenetekben jelenik meg, sosem működik a felhasználónévben, a becenévben vagy a szerver-/csatornanévben.</li>
     <li>A Unicode „betűtípusok” minden névmezőben működnek, de néhány eszközön négyzetként jelenhetnek meg, és megzavarhatják a képernyőolvasókat.</li>
     <li>A Nitro valódi színt és effektet ad a megjelenítendő nevedhez, de a szerveren belül a szereped színe győz, és csak a betűtípus látszik.</li>
   </ul>
@@ -250,7 +250,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><code>||spoiler||</code> → elrejtve kattintásig</li>
         <li><code>&gt; idézet</code> és <code>`kód`</code></li>
       </ul>
-      <p>Ez a <em>valódi</em> módja az üzenet formázásának — valódi szöveg marad, tehát kereshető és akadálymentes. A csapda két hiba, amiktől „nem működik”:</p>
+      <p>Ez a <em>valódi</em> módja az üzenet formázásának: valódi szöveg marad, tehát kereshető és akadálymentes. A csapda két hiba, amiktől „nem működik”:</p>
       <div class="compare-grid">
         <div class="compare-card variant-muted">
           <span class="compare-badge">Nem lesz félkövér</span>
@@ -272,12 +272,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">2. rendszer</span>
     <h2>Unicode „betűtípusok”: a nevekhez</h2>
     <div class="editorial-block">
-      <p>Ha egy <em>nevet</em> akarsz stilizálni, nem kérheted meg a Discordot, hogy bármit megjelenítsen — ezért olyan karaktereket használsz, amik már eleve stilizáltnak néznek ki. A generátor a „Nova”-t 𝗡𝗼𝘃𝗮-vá vagy 𝓝𝓸𝓿𝓪-vá alakítja speciális Unicode karakterekkel, a kész eredményt pedig egyenesen a mezőbe illeszted be. Semmilyen megjelenítésre nincs szükség, ezért ott is túléli, ahol a Markdown nem tud.</p>
+      <p>Ha egy <em>nevet</em> akarsz stilizálni, nem kérheted meg a Discordot, hogy bármit megjelenítsen, ezért olyan karaktereket használsz, amik már eleve stilizáltnak néznek ki. A generátor a „Nova”-t 𝗡𝗼𝘃𝗮-vá vagy 𝓝𝓸𝓿𝓪-vá alakítja speciális Unicode karakterekkel, a kész eredményt pedig egyenesen a mezőbe illeszted be. Semmilyen megjelenítésre nincs szükség, ezért ott is túléli, ahol a Markdown nem tud.</p>
       <p>Ez működik a megjelenítendő nevedben, a szerveren belüli becenévben, a szerver- és csatornanevekben, a szerepek nevében, a bióban és az üzenetekben. Pontosan egy hely van, ahol le van tiltva:</p>
       <div class="mood-explainer">
-        <div class="mood-example"><strong>A @felhasználónév elutasítja.</strong> Az egyedi azonosítód (a kisbetűs rész a @ után) csak a–z-t, 0–9-et, <code>_</code>-t és <code>.</code>-ot fogad — a megemlítésekhez, a kereséshez és az útválasztáshoz. Ha oda díszes betűtípust illesztesz be, a Discord elutasítja a mentést. Ehelyett stilizáld a <em>megjelenítendő nevet</em>.</div>
+        <div class="mood-example"><strong>A @felhasználónév elutasítja.</strong> Az egyedi azonosítód (a kisbetűs rész a @ után) csak a–z-t, 0–9-et, <code>_</code>-t és <code>.</code>-ot fogad, a megemlítésekhez, a kereséshez és az útválasztáshoz. Ha oda díszes betűtípust illesztesz be, a Discord elutasítja a mentést. Ehelyett stilizáld a <em>megjelenítendő nevet</em>.</div>
       </div>
-      <p>Két őszinte megjegyzés: a Unicode nevek néhány eszközön négyzetként jelenhetnek meg (különösen régebbi Androidon), és nehezen olvashatók a képernyőolvasók számára. Válassz biztonságos stílust (félkövér, dőlt, kiskapitális), és tartsd ízlésesen — sok nagy szerver moderálja a nehezen olvasható vagy zalgo neveket.</p>
+      <p>Két őszinte megjegyzés: a Unicode nevek néhány eszközön négyzetként jelenhetnek meg (különösen régebbi Androidon), és nehezen olvashatók a képernyőolvasók számára. Válassz biztonságos stílust (félkövér, dőlt, kiskapitális), és tartsd ízlésesen. Sok nagy szerver moderálja a nehezen olvasható vagy zalgo neveket.</p>
     </div>
   </section>
 
@@ -293,7 +293,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="mood-example">A szerveren belül a <strong>szereped</strong> színe felülírja a Nitro színt, az effektek pedig eltűnnek, így a többi tag általában csak a <em>betűtípust</em> látja, nem a színt vagy az animációt. A teljes hatás főleg a profilodon látszik, nem a tagok listáján vagy a chatben.</div>
       </div>
       <p>Az ingyenes fiókok megnyithatják a menüt, és <strong>megnézhetik előre</strong> a stílust, de a mentéshez Nitro kell: ez az előnézet-majd-fizetés sorrend pontosan az oka annak, hogy manapság sokan azt kérdezik, kell-e Nitro a betűtípusokhoz egyáltalán. Ez jogos kérdés erről a konkrét funkcióról; nem változtatja meg a Unicode stilizálást, ami mindenképp ingyenes marad.</p>
-      <p>Tehát a Nitro akkor éri meg, ha egy csinos profilkártyát és felismerhető névbetűtípust szeretnél mindenhol. <em>Nem</em> arra való, hogy színes szöveget vigyél a beszélgetésbe — az egy másik eszköz (következő szakasz).</p>
+      <p>Tehát a Nitro akkor éri meg, ha egy csinos profilkártyát és felismerhető névbetűtípust szeretnél mindenhol. <em>Nem</em> arra való, hogy színes szöveget vigyél a beszélgetésbe. Az egy másik eszköz (következő szakasz).</p>
     </div>
   </section>
 
@@ -340,7 +340,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA kartica -->
   <div class="cta-card">
     <h3>Készíts Discordra kész nevet</h3>
-    <p>Készíts Unicode stílust, ami minden eszközön biztonságos, másold ki, és illeszd be a megjelenítendő névbe vagy a szerveren belüli becenévbe — Nitro nélkül.</p>
+    <p>Készíts Unicode stílust, ami minden eszközön biztonságos, másold ki, és illeszd be a megjelenítendő névbe vagy a szerveren belüli becenévbe, Nitro nélkül.</p>
     <a href="/hu/discord-betutipusok/" class="cta-btn">Discord betűtípus generátor megnyitása →</a>
   </div>
 
@@ -390,7 +390,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Miért jelennek meg csillagok félkövér szöveg helyett?</button>
     <div class="faq-answer">
-      <p>Két gyakori ok: szóköz van a csillagok és a szó között (<code>** szöveg **</code> nem lesz félkövér — a <code>**szöveg**</code> igen), vagy a szöveg egy kódblokkon belül van (a fordított aposztrófok kikapcsolják a Markdownt). Ne feledd azt sem, hogy a Markdown csak az üzenetekben működik, a nevekben soha.</p>
+      <p>Két gyakori ok: szóköz van a csillagok és a szó között (<code>** szöveg **</code> nem lesz félkövér, a <code>**szöveg**</code> igen), vagy a szöveg egy kódblokkon belül van (a fordított aposztrófok kikapcsolják a Markdownt). Ne feledd azt sem, hogy a Markdown csak az üzenetekben működik, a nevekben soha.</p>
     </div>
   </div>
 </section>

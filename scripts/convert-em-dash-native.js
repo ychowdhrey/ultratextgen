@@ -677,12 +677,55 @@ function convertFile(rel, { write, defer }) {
       }
       remedies[g] = p0; origin[g] = p0 === R.NOOP ? 'noop' : 'auto';
     }
+    /**
+     * A DASH THE NODE LOOP CANNOT REACH IS DEFERRED HERE, BEFORE `settlePairs`.
+     *
+     * The plan decides for the whole block; the node loop then skips a dash
+     * that opens its own text node (the space before it lives in the previous
+     * node) or a node whose raw and decoded dash counts disagree. When one
+     * half of a parenthetical aside is skipped that way, `settlePairs` has
+     * already passed and the OTHER half converts alone:
+     * `…(iPhone, McDonald) — und lassen` kept its closing dash while the
+     * opening one became a comma, on `de/gross-und-kleinschreibung` and
+     * `snapchat/index.html`. Marking the unreachable ordinals first lets the
+     * pair rule see them and demote their partners.
+     */
+    {
+      let seen = 0;
+      for (const bn of nodes) {
+        const d = (bn.data.match(/—/g) || []).length;
+        if (!d) continue;
+        const loc = bn.sourceCodeLocation;
+        const raw = loc ? html.slice(loc.startOffset, loc.endOffset) : null;
+        const unreachable = !loc || d !== (raw.match(/—/g) || []).length;
+        for (let i = 0; i < d; i++) {
+          if (unreachable || (i === 0 && /^—/.test(raw))) {
+            remedies[seen + i] = null; origin[seen + i] = 'defer';
+          }
+        }
+        seen += d;
+      }
+    }
+
     for (let g = 0; g < plan.length; g++) {
       if (origin[g] !== 'defer' && origin[g] !== 'noop' && hasHeldTwin(blockText, dashAt[g])) {
         remedies[g] = null; origin[g] = 'defer';
       }
     }
     for (const g of settlePairs(plan, remedies)) { remedies[g] = null; origin[g] = 'defer'; }
+
+    /**
+     * THE BLOCK IS A MATCHING UNIT FOR THE MIRROR, NOT ONLY THE NODE.
+     *
+     * A bullet marker sits ALONE in its own text node (`\n    — ` before a
+     * `<strong>`), so `collapse(raw).length >= 12` drops it and the JSON-LD
+     * mirror never learns the dash moved. Its schema twin flattens the whole
+     * list into one string, which is the BLOCK, so the block is the unit that
+     * corresponds to it. Measured: this is the whole of the 25 splits on the
+     * five `bs/cs/hr/sk/sr` homepages, where the visible bullets took the
+     * locale's en dash and the schema kept an em dash.
+     */
+    const blockApplied = new Array(plan.length).fill(null);
 
     let seenInBlock = 0;
     for (const bn of nodes) {
@@ -735,12 +778,17 @@ function convertFile(rel, { write, defer }) {
         const next = applyRemedy(cur, i, remedy);
         if (next != null) { cur = next; applied[i] = remedy; }
       }
+      for (let i = 0; i < dataDashes; i++) blockApplied[seenInBlock + i] = applied[i];
       seenInBlock += dataDashes;
       if (cur !== raw) {
         edits.push({ start: loc.startOffset, end: loc.endOffset, next: cur, prev: raw });
         if (collapse(raw).length >= 12) pairs.push([raw, cur, applied]);
       }
     }
+    // Only the remedies that were actually applied, never the planned ones: a
+    // dash the node loop skipped did not move on the page and must not move in
+    // the schema either.
+    if (blockApplied.some(Boolean)) pairs.push([blockText, null, blockApplied]);
   }
 
   if (defer) for (const d of deferred) defer.push(d);
@@ -823,10 +871,70 @@ function syncJsonLdMirror(html, pairs) {
    * containing a quotation. Any quote matches any quote, and a run of
    * whitespace matches a run of any length.
    */
-  const QUOTES = /["'\u2018\u2019\u201c\u201d\u00ab\u00bb]/g;
+  const QUOTES = /["'\u2018\u2019\u201c\u201d\u201e\u00ab\u00bb]/g;
   const loose = (a) => new RegExp(
     a.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ +/g, '\\s+')
-     .replace(QUOTES, '["\'\u2018\u2019\u201c\u201d\u00ab\u00bb]'), 'g');
+     .replace(QUOTES, '["\'\u2018\u2019\u201c\u201d\u201e\u00ab\u00bb]'), 'g');
+
+  /**
+   * THE SCHEMA IS OFTEN A REWORDED RETELLING, NOT A SHORTENED ONE.
+   *
+   * On `roblox/index.html` the visible sentence runs `... outright,
+   * consistently across web, mobile, and app clients.` and its schema twin
+   * `... outright, not a rendering problem.` — they diverge INSIDE the
+   * sentence, so neither the node unit nor the sentence unit can match and
+   * seven splits survived the loop above.
+   *
+   * This pass asks the question the DETECTOR asks, which is the only reason
+   * to trust it: take a window around the schema's own dash, convert it by
+   * each remedy, and accept one only when the page's VISIBLE text already
+   * carries that exact string. It is evidence from the page, never inference
+   * — a dash whose converted form is nowhere on the page is left alone, and
+   * so is one where two remedies both match.
+   */
+  /**
+   * A QUOTE IS NOT THE SAME CHARACTER ON BOTH SIDES here either. The German
+   * schema writes `\u201eNasa\"` where its visible twin writes `"Nasa"`, so an
+   * exact window test missed dashes 2 and 3 of that answer — and the DETECTOR
+   * shared the blind spot and reported zero, which is why it was found by the
+   * parenthetical-pair probe instead. Two instruments agreeing is not evidence
+   * when they agree by sharing a rule.
+   */
+  const unquote = (s) => s.replace(/["'\u2018\u2019\u201c\u201d\u201e\u00ab\u00bb]/g, '"');
+  const visibleText = unquote(flat(decode(html.replace(LD_BLOCK, '').replace(/<[^>]*>/g, ' '))));
+  const W = 70;
+  /**
+   * NO PARENTHESES HERE. This pass decides one dash at a time and has no pair
+   * model, so it accepted `)` on the closing dash of a snapchat aside whose
+   * OPENING window did not match (the visible sentence starts `Languages`
+   * where the schema reads `styled text: languages`) and shipped
+   * `scripts — Arabic, ... Persian)`. An aside is a pair decision; the unit
+   * matcher above carries the node's whole `marks` array and handles it. A
+   * dash left here is a reported split, which is recoverable; a one-sided
+   * parenthesis is corruption, which is not.
+   */
+  const CANDIDATES = [R.COLON, R.COMMA, R.PERIOD, R.KEEP];
+  const ordinalBefore = (s, i) => (s.slice(0, i).match(/—/g) || []).length;
+  const reconcile = (v0) => {
+    let v = v0, from = 0;
+    for (;;) {
+      const i = v.indexOf('—', from);
+      if (i === -1) return v;
+      const a = Math.max(0, i - W), b = Math.min(v.length, i + W + 1);
+      const seg = v.slice(a, b);
+      const hits = new Set();
+      for (const r of CANDIDATES) {
+        const cand = applyRemedy(seg, ordinalBefore(seg, i - a), r);
+        if (!cand) continue;
+        const probe = unquote(flat(cand));
+        if (probe.length > 30 && visibleText.includes(probe)) hits.add(r);
+      }
+      if (hits.size !== 1) { from = i + 1; continue; }
+      const nx = applyRemedy(v, ordinalBefore(v, i), [...hits][0]);
+      if (nx == null) { from = i + 1; continue; }
+      changed++; v = nx; from = i;
+    }
+  };
 
   let changed = 0;
   const out = html.replace(LD_BLOCK, (m, open, bodyText, close) => {
@@ -869,6 +977,7 @@ function syncJsonLdMirror(html, pairs) {
        * never touched by a page this pass did not edit that way.
        */
       if (openedGap) v = v.replace(/[ \t]+([:,.)])/g, '$1');
+      v = reconcile(v);
       return v === parsed ? lit : JSON.stringify(v);
     });
     return open + next + close;

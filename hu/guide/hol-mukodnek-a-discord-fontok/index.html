@@ -149,7 +149,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Használhatok díszes betűtípust a megjelenítendő névben a Discordon?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Igen. A megjelenítendő nevek, a szerveren belüli becenevek, a szerepek nevei, a szerver neve, a csatornák neve és a „Névjegyed” mind fogadják a Unicode betűtípus karaktereket és az emojikat. Készítsd el a stilizált szöveget, majd illeszd be a kész karaktereket a mezőbe — nincs mit bekapcsolni. Add az elsőbbséget az olvasható stílusoknak, mint a félkövér, a dőlt vagy a kiskapitális, hogy a régebbi eszközön lévő tagok és a képernyőolvasók is el tudják olvasni." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Igen. A megjelenítendő nevek, a szerveren belüli becenevek, a szerepek nevei, a szerver neve, a csatornák neve és a „Névjegyed” mind fogadják a Unicode betűtípus karaktereket és az emojikat. Készítsd el a stilizált szöveget, majd illeszd be a kész karaktereket a mezőbe. Nincs mit bekapcsolni. Add az elsőbbséget az olvasható stílusoknak, mint a félkövér, a dőlt vagy a kiskapitális, hogy a régebbi eszközön lévő tagok és a képernyőolvasók is el tudják olvasni." }
     },
     {
       "@type": "Question",
@@ -209,7 +209,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="key-takeaways">
   <h2>Röviden</h2>
   <ul>
-    <li>Az egyedi <strong>@felhasználónév</strong> csak kisbetűket fogad a-tól z-ig, számokat, aláhúzást és pontot. Ha oda díszes betűtípust illesztesz be, minden alkalommal „érvénytelen felhasználónevet” kapsz — ez szándékos.</li>
+    <li>Az egyedi <strong>@felhasználónév</strong> csak kisbetűket fogad a-tól z-ig, számokat, aláhúzást és pontot. Ha oda díszes betűtípust illesztesz be, minden alkalommal „érvénytelen felhasználónevet” kapsz. Ez szándékos.</li>
     <li>Minden <strong>megjelenítési mező</strong> (megjelenítendő név, szerveren belüli becenév, szerep, szerver- és csatornanevek, „Névjegy”) trükk nélkül fogadja a Unicode betűtípusokat és az emojikat.</li>
     <li><strong>A Markdown csak az üzenetekben jelenik meg</strong> (az alapok a „Névjegyben” is működnek). Minden névmezőben a csillagok csak úgy ott állnak.</li>
     <li>A stilizált neveknek valódi ára van: a <kbd>Ctrl+K</kbd> nem találja meg a 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈-t az „aesthetic” begépelésével, a képernyőolvasók fennakadnak, a régebbi Androidok pedig négyzeteket mutathatnak.</li>
@@ -281,7 +281,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="editorial-block">
-      <p>Olvasd fentről lefelé az oszlopokat, és kiugrik a logika: <strong>pontosan egy sor utasítja el a Unicode-ot, és pontosan egy sor indítja el a teljes Markdownt.</strong> Minden, ami közte van, nyitott középmező — a beillesztett stílus szívesen látott, a megjelenítendő (rendered) stílus figyelmen kívül marad. Ez az egész rendszer.</p>
+      <p>Olvasd fentről lefelé az oszlopokat, és kiugrik a logika: <strong>pontosan egy sor utasítja el a Unicode-ot, és pontosan egy sor indítja el a teljes Markdownt.</strong> Minden, ami közte van, nyitott középmező: a beillesztett stílus szívesen látott, a megjelenítendő (rendered) stílus figyelmen kívül marad. Ez az egész rendszer.</p>
     </div>
   </section>
 
@@ -292,7 +292,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Terepi jegyzetek</span>
     <h2>A csatornanevek csapdája: automatikus kisbetűsítés és kötőjelezés</h2>
     <div class="editorial-block">
-      <p>A szöveges csatornák nevei csendben átíródnak mentéskor: a sima nagybetűk kisbetűvé válnak, a szóközök pedig kötőjellé, ezért a <code>Fontos Hirek</code> <code>#fontos-hirek</code>-ként jön ki. Az emberek ezt úgy olvassák: „a Discord levette a stílusomat.” Nézz jobban oda — csak a sima betűkhöz nyúlt hozzá.</p>
+      <p>A szöveges csatornák nevei csendben átíródnak mentéskor: a sima nagybetűk kisbetűvé válnak, a szóközök pedig kötőjellé, ezért a <code>Fontos Hirek</code> <code>#fontos-hirek</code>-ként jön ki. Az emberek ezt úgy olvassák: „a Discord levette a stílusomat.” Nézz jobban oda: csak a sima betűkhöz nyúlt hozzá.</p>
       <div class="mood-explainer">
         <div class="mood-example">Begépelve: <strong>FONTOS HIREK</strong> → mentve mint <strong>#fontos-hirek</strong> &nbsp;·&nbsp; Begépelve: <strong>𝗙𝗢𝗡𝗧𝗢𝗦 ✦ 𝗛𝗜𝗥𝗘𝗞</strong> → mentve mint <strong>#𝗙𝗢𝗡𝗧𝗢𝗦-✦-𝗛𝗜𝗥𝗘𝗞</strong></div>
       </div>
@@ -307,7 +307,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Megjelenített stílus</span>
     <h2>Hol működik a Markdown: és hol csak ott áll</h2>
     <div class="editorial-block">
-      <p>A Markdown egyfajta másik stílus: olyan szimbólumok, mint a <code>**félkövér**</code>, amelyeket a Discord átalakít, amikor <em>megjeleníti</em> az üzenetet. A mátrix mutatja, hogy a hatóköre apró — <strong>üzenetek, plusz alapszintű formázás a „Névjegyben”</strong>. Írd be a <code>**Nova**</code>-t egy becenévmezőbe, és a csillagok szó szerinti karakterként mentődnek el, mert a névmezők nyersen mentődnek el és jelennek meg; nincs megjelenítő, ami átalakítaná őket.</p>
+      <p>A Markdown egyfajta másik stílus: olyan szimbólumok, mint a <code>**félkövér**</code>, amelyeket a Discord átalakít, amikor <em>megjeleníti</em> az üzenetet. A mátrix mutatja, hogy a hatóköre apró: <strong>üzenetek, plusz alapszintű formázás a „Névjegyben”</strong>. Írd be a <code>**Nova**</code>-t egy becenévmezőbe, és a csillagok szó szerinti karakterként mentődnek el, mert a névmezők nyersen mentődnek el és jelennek meg; nincs megjelenítő, ami átalakítaná őket.</p>
       <p>Ez egy gyakorlati felosztás, amit érdemes megjegyezni: <strong>megjelenített stílus (Markdown) arra, amit mondasz, beillesztett stílus (Unicode) arra, ahogy hívnak.</strong> A teljes mechanika (a spoiler jelölés, a kódblokkok, a Nitro réteg és a klasszikus „miért nem lesz félkövér a csillagom” hibák) a kísérő útmutatónkban van, a <a href="/hu/guide/discord-szovegformazas/">Discord szövegformázás elmagyarázva</a> oldalon.</p>
       <p>Egy különleges esetet érdemes megemlíteni: a <strong>színes szöveg</strong>. Csak az üzeneteken belül létezik, csak ANSI kódblokkokon keresztül, nyolc rögzített színnel és bizonytalan mobiltámogatással. Egyetlen névmező sem fogad színt sehol a Discordon.</p>
     </div>
@@ -325,7 +325,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="compare-grid">
       <div class="compare-card variant-muted">
         <span class="compare-badge">A keresés elszáll</span>
-        <p>A <kbd>Ctrl+K</kbd>, a tagok keresője és a @megemlítés automatikus kiegészítése szó szerinti karaktereket hasonlít össze. Az „aesthetic” begépelése soha nem fogja megtalálni a <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong>-t — egyetlen közös karakterük sincs.</p>
+        <p>A <kbd>Ctrl+K</kbd>, a tagok keresője és a @megemlítés automatikus kiegészítése szó szerinti karaktereket hasonlít össze. Az „aesthetic” begépelése soha nem fogja megtalálni a <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong>-t: egyetlen közös karakterük sincs.</p>
       </div>
       <div class="compare-card variant-muted">
         <span class="compare-badge">A képernyőolvasók fennakadnak</span>
@@ -346,7 +346,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA kartica -->
   <div class="cta-card">
     <h3>Stilizáld a Discordra kész nevedet →</h3>
-    <p>Készíts Unicode nevet, ami minden eszközön biztonságos, majd illeszd be a megjelenítendő névbe, a becenévbe vagy a csatornalistába — bármelyik mezőbe, amit a mátrix nyitottnak jelöl.</p>
+    <p>Készíts Unicode nevet, ami minden eszközön biztonságos, majd illeszd be a megjelenítendő névbe, a becenévbe vagy a csatornalistába, bármelyik mezőbe, amit a mátrix nyitottnak jelöl.</p>
     <a href="/hu/discord-betutipusok/" class="cta-btn">Discord betűtípus generátor megnyitása →</a>
   </div>
 
@@ -384,7 +384,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Használhatok díszes betűtípust a megjelenítendő névben a Discordon?</button>
     <div class="faq-answer">
-      <p>Igen. A megjelenítendő nevek, a szerveren belüli becenevek, a szerepek nevei, a szerver neve, a csatornák neve és a „Névjegyed” mind fogadják a Unicode betűtípus karaktereket és az emojikat. Készítsd el a stilizált szöveget, majd illeszd be a kész karaktereket a mezőbe — nincs mit bekapcsolni. Add az elsőbbséget az olvasható stílusoknak, mint a félkövér, a dőlt vagy a kiskapitális, hogy a régebbi eszközön lévő tagok és a képernyőolvasók is el tudják olvasni.</p>
+      <p>Igen. A megjelenítendő nevek, a szerveren belüli becenevek, a szerepek nevei, a szerver neve, a csatornák neve és a „Névjegyed” mind fogadják a Unicode betűtípus karaktereket és az emojikat. Készítsd el a stilizált szöveget, majd illeszd be a kész karaktereket a mezőbe. Nincs mit bekapcsolni. Add az elsőbbséget az olvasható stílusoknak, mint a félkövér, a dőlt vagy a kiskapitális, hogy a régebbi eszközön lévő tagok és a képernyőolvasók is el tudják olvasni.</p>
     </div>
   </div>
   <div class="faq-item">
