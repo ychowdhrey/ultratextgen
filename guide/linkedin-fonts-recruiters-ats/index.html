@@ -110,7 +110,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Can recruiters find me if my LinkedIn name uses fancy fonts?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Recruiter search is exact-character matching, and every styled letter is a different Unicode character from the plain one — 𝓢𝓪𝓻𝓪𝓱 shares zero characters with Sarah. A recruiter types plain letters on a plain keyboard, so a styled name simply never appears in their results. It isn't a ranking penalty; it's a matching failure. Your profile is still live: it's just unreachable by the one query that matters: your name." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Recruiter search is exact-character matching, and every styled letter is a different Unicode character from the plain one: 𝓢𝓪𝓻𝓪𝓱 shares zero characters with Sarah. A recruiter types plain letters on a plain keyboard, so a styled name simply never appears in their results. It isn't a ranking penalty; it's a matching failure. Your profile is still live: it's just unreachable by the one query that matters: your name." }
     },
     {
       "@type": "Question",
@@ -125,7 +125,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Where is it safe to use styled text as a job seeker?",
-      "acceptedAnswer": { "@type": "Answer", "text": "In places nobody searches: the body of your posts and your comments. Recruiters find you through your name, headline, and skills — not by searching post text. Bold emphasis on a key line, a styled hook, or a visual divider inside a post costs you nothing in findability. The rule: decorate the conversation, never the record." }
+      "acceptedAnswer": { "@type": "Answer", "text": "In places nobody searches: the body of your posts and your comments. Recruiters find you through your name, headline, and skills, not by searching post text. Bold emphasis on a key line, a styled hook, or a visual divider inside a post costs you nothing in findability. The rule: decorate the conversation, never the record." }
     },
     {
       "@type": "Question",
@@ -190,8 +190,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2>A Styled Name Is an Invisibility Cloak</h2>
     <div class="editorial-block">
       <p>You changed your LinkedIn name to 𝓢𝓪𝓻𝓪𝓱 𝓒𝓱𝓮𝓷 because it looks distinctive in the feed. It does. It also just did something you didn't intend: it removed you from recruiter search.</p>
-      <p>Here's the mechanism, and it's brutally simple. Those "fancy fonts" aren't fonts: they're <em>different characters</em>. The script 𝓢 is a mathematical symbol from a distant corner of Unicode, not a stylish version of S. When a recruiter opens LinkedIn Recruiter and types S-a-r-a-h on an ordinary keyboard, the system looks for profiles containing those exact characters. Your name contains none of them. Not a partial match, not a fuzzy match — <strong>zero matches</strong>. You haven't been demoted in the results; you've been deleted from the query's universe.</p>
-      <p>Job searching is the one context where this isn't a cosmetic quibble. Your name, your headline keywords, and your skills are the handles other people use to pull you out of a database of a billion profiles. Style those handles, and nobody can grab them. That's why our position in this guide is blunt: <strong>decoration belongs where nobody searches.</strong> Everywhere else, plain text is doing a job you can't see — until it stops.</p>
+      <p>Here's the mechanism, and it's brutally simple. Those "fancy fonts" aren't fonts: they're <em>different characters</em>. The script 𝓢 is a mathematical symbol from a distant corner of Unicode, not a stylish version of S. When a recruiter opens LinkedIn Recruiter and types S-a-r-a-h on an ordinary keyboard, the system looks for profiles containing those exact characters. Your name contains none of them. Not a partial match, not a fuzzy match, <strong>zero matches</strong>. You haven't been demoted in the results; you've been deleted from the query's universe.</p>
+      <p>Job searching is the one context where this isn't a cosmetic quibble. Your name, your headline keywords, and your skills are the handles other people use to pull you out of a database of a billion profiles. Style those handles, and nobody can grab them. That's why our position in this guide is blunt: <strong>decoration belongs where nobody searches.</strong> Everywhere else, plain text is doing a job you can't see, until it stops.</p>
     </div>
   </section>
 
@@ -202,7 +202,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">How Matching Works</span>
     <h2>Recruiter Search Reads Code Points, Not Shapes</h2>
     <div class="editorial-block">
-      <p>To a human eye, 𝗦𝗮𝗿𝗮𝗵 and Sarah are obviously the same name. To a search index, they share nothing at all. The plain S is code point U+0053. The bold 𝗦 is U+1D5E6, from the Mathematical Alphanumeric Symbols block — a region of Unicode designed for equations, which generators borrow to fake bold and cursive. (If you want the full story of that trick, read <a href="/guide/how-unicode-fonts-work/">how Unicode fonts actually work</a>.)</p>
+      <p>To a human eye, 𝗦𝗮𝗿𝗮𝗵 and Sarah are obviously the same name. To a search index, they share nothing at all. The plain S is code point U+0053. The bold 𝗦 is U+1D5E6, from the Mathematical Alphanumeric Symbols block, a region of Unicode designed for equations, which generators borrow to fake bold and cursive. (If you want the full story of that trick, read <a href="/guide/how-unicode-fonts-work/">how Unicode fonts actually work</a>.)</p>
       <p>Search engines match code points. Some systems normalize accented characters, é can match e, but mathematical alphanumerics generally survive normalization as the exotic symbols they are. In practice: <strong>every styled letter in a searchable field is a letter recruiters cannot type.</strong> One styled character in your name is enough to break an exact-name query.</p>
       <p>And there's a second problem stacked on top. LinkedIn's name policy requires your real name in the Name field and explicitly disallows symbols, numbers, and special characters, and styled Unicode letters are special characters, whatever they look like. Profiles get flagged and can be restricted until the name is corrected. So the fancy name isn't just invisible; it's against the rules of the platform you're trying to be hired through.</p>
       <div class="mood-explainer">
@@ -218,7 +218,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">The ATS Problem</span>
     <h2>What Applicant Tracking Systems Do With Styled Text</h2>
     <div class="editorial-block">
-      <p>Recruiter search is only half of the pipeline. The other half is the applicant tracking system — the software that parses your resume or Easy Apply data into structured fields before a human ever looks at it. ATS parsers were built for plain text. Feed one a line of mathematical alphanumerics and you'll get one of three outcomes, none of them good.</p>
+      <p>Recruiter search is only half of the pipeline. The other half is the applicant tracking system, the software that parses your resume or Easy Apply data into structured fields before a human ever looks at it. ATS parsers were built for plain text. Feed one a line of mathematical alphanumerics and you'll get one of three outcomes, none of them good.</p>
     </div>
     <div class="compare-grid">
       <div class="compare-card variant-muted">
@@ -235,7 +235,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="editorial-block">
-      <p>The cruel part is the asymmetry: everything looks perfect on <em>your</em> screen. The damage happens inside software you never see, to a version of your application you never get to review. That's why "ats unicode resume" horror stories keep surfacing in job-hunt forums — the failure is invisible until the interviews don't come.</p>
+      <p>The cruel part is the asymmetry: everything looks perfect on <em>your</em> screen. The damage happens inside software you never see, to a version of your application you never get to review. That's why "ats unicode resume" horror stories keep surfacing in job-hunt forums: the failure is invisible until the interviews don't come.</p>
     </div>
   </section>
 
@@ -267,7 +267,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="editorial-block">
-      <p>Memorize the boundary, not the rows: <strong>if a field describes you, keep it plain; if a field is you talking, style away.</strong> The map also has an accessibility dimension — styled characters are read letter-by-letter or skipped by screen readers, which is one more reason to keep RED-zone fields clean. Our <a href="/guide/fancy-fonts-accessibility-guide/">accessibility guide</a> covers that side in depth.</p>
+      <p>Memorize the boundary, not the rows: <strong>if a field describes you, keep it plain; if a field is you talking, style away.</strong> The map also has an accessibility dimension: styled characters are read letter-by-letter or skipped by screen readers, which is one more reason to keep RED-zone fields clean. Our <a href="/guide/fancy-fonts-accessibility-guide/">accessibility guide</a> covers that side in depth.</p>
     </div>
   </section>
 
@@ -284,7 +284,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="ex-plain">𝓢𝓪𝓻𝓪𝓱 𝓒𝓱𝓮𝓷 · 𝙋𝙧𝙤𝙙𝙪𝙘𝙩 𝙈𝙖𝙣𝙖𝙜𝙚𝙧 ✦ 𝓼𝓪𝓪𝓼</span>
         <span class="ex-arrow">↓</span>
         <span class="ex-label">Findable</span>
-        <span class="ex-styled">Sarah Chen · Product Manager | B2B SaaS — posts that open with 𝗧𝗵𝗲 𝗳𝗲𝗮𝘁𝘂𝗿𝗲 𝘄𝗲 𝗸𝗶𝗹𝗹𝗲𝗱 𝗱𝗼𝘂𝗯𝗹𝗲𝗱 𝗿𝗲𝘁𝗲𝗻𝘁𝗶𝗼𝗻.</span>
+        <span class="ex-styled">Sarah Chen · Product Manager | B2B SaaS, posts that open with 𝗧𝗵𝗲 𝗳𝗲𝗮𝘁𝘂𝗿𝗲 𝘄𝗲 𝗸𝗶𝗹𝗹𝗲𝗱 𝗱𝗼𝘂𝗯𝗹𝗲𝗱 𝗿𝗲𝘁𝗲𝗻𝘁𝗶𝗼𝗻.</span>
       </div>
       <p>Notice where the personality went. It didn't disappear: it moved from the record (name, headline) to the conversation (the post hook), which is the one place bold text actually earns attention. If you're rebuilding your headline, our <a href="/usecase/linkedin-headline/">LinkedIn headline tool</a> keeps keywords plain while letting you style the separators.</p>
     </div>
@@ -345,7 +345,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Can recruiters find me if my LinkedIn name uses fancy fonts?</button>
     <div class="faq-answer">
-      <p>No. Recruiter search is exact-character matching, and every styled letter is a different Unicode character from the plain one — 𝓢𝓪𝓻𝓪𝓱 shares zero characters with Sarah. A recruiter types plain letters on a plain keyboard, so a styled name simply never appears in their results. It isn't a ranking penalty; it's a matching failure. Your profile is still live: it's just unreachable by the one query that matters: your name.</p>
+      <p>No. Recruiter search is exact-character matching, and every styled letter is a different Unicode character from the plain one: 𝓢𝓪𝓻𝓪𝓱 shares zero characters with Sarah. A recruiter types plain letters on a plain keyboard, so a styled name simply never appears in their results. It isn't a ranking penalty; it's a matching failure. Your profile is still live: it's just unreachable by the one query that matters: your name.</p>
     </div>
   </div>
   <div class="faq-item">
@@ -363,7 +363,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Where is it safe to use styled text as a job seeker?</button>
     <div class="faq-answer">
-      <p>In places nobody searches: the body of your posts and your comments. Recruiters find you through your name, headline, and skills — not by searching post text. Bold emphasis on a key line, a styled hook, or a visual divider inside a post costs you nothing in findability. The rule: decorate the conversation, never the record.</p>
+      <p>In places nobody searches: the body of your posts and your comments. Recruiters find you through your name, headline, and skills, not by searching post text. Bold emphasis on a key line, a styled hook, or a visual divider inside a post costs you nothing in findability. The rule: decorate the conversation, never the record.</p>
     </div>
   </div>
   <div class="faq-item">
