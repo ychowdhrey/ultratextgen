@@ -159,7 +159,7 @@
   "editorial_sections": [
     {
       "h2": "Ein Gefahrensymbol ist kein Gefahrenschild",
-      "body": "Der Unterschied wiegt schwerer, als er klingt. Ein Sicherheitsschild ist ein genormtes Objekt: Größe, Farbe, Kontrast und Anbringungsort sind vorgeschrieben, weil es aus der Entfernung, im Vorbeigehen und bei schlechtem Licht funktionieren muss. Ein Unicode-Zeichen hat nichts davon — es wechselt mit dem Text die Farbe, schrumpft mit der Schriftgröße und wird auf einem anderen Gerät womöglich anders gezeichnet. Deshalb ist ☢ in einer Zeile Dokumentation genau richtig und an einer Tür völlig fehl am Platz."
+      "body": "Der Unterschied wiegt schwerer, als er klingt. Ein Sicherheitsschild ist ein genormtes Objekt: Größe, Farbe, Kontrast und Anbringungsort sind vorgeschrieben, weil es aus der Entfernung, im Vorbeigehen und bei schlechtem Licht funktionieren muss. Ein Unicode-Zeichen hat nichts davon: es wechselt mit dem Text die Farbe, schrumpft mit der Schriftgröße und wird auf einem anderen Gerät womöglich anders gezeichnet. Deshalb ist ☢ in einer Zeile Dokumentation genau richtig und an einer Tür völlig fehl am Platz."
     }
   ],
   "related": [

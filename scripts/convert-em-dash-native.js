@@ -185,7 +185,7 @@ const SPECIMEN_AT = (t, at) => /[(\[（【][ \t]*$/.test(t.slice(Math.max(0, at 
  * strand a fragment (`… – bez Nitra, dodatka ili posebne aplikacije.` has no
  * verb). A full stop reaches the applier only from the judgement ledger.
  */
-function planBlock(blockText, tag, code, noopOrdinals) {
+function planBlock(blockText, tag, code, noopOrdinals, deferOrdinals) {
   const conj = CONJ[code] || CONJ.en;
   const all = [...blockText.matchAll(/—/g)].map((m) => m.index);
   const plan = new Array(all.length).fill(R.DEFER);
@@ -202,7 +202,30 @@ function planBlock(blockText, tag, code, noopOrdinals) {
   const odd = new Set();
   all.forEach((at, i) => {
     if (noopOrdinals && noopOrdinals.has(i)) { plan[i] = R.NOOP; return; }
+    if (deferOrdinals && deferOrdinals.has(i)) { plan[i] = R.DEFER; return; }
     if (SPECIMEN_AT(blockText, at)) { plan[i] = R.NOOP; return; }
+    /**
+     * A DASH WITH NOTHING BEFORE IT IS NOT A JOINT.
+     *
+     * `ws()` answers true for `undefined` so that the range guard below reads
+     * the block edges as whitespace — correct for a range, wrong here: a dash
+     * at offset 0 has no left-hand clause to join to anything, so the label
+     * rule below fired on it and turned the em dash's OWN hub card,
+     * `<h4>— Em Dash</h4>`, into `<h4>: Em Dash</h4>` on all four locale
+     * hubs. The card is the specimen. Same at the other end.
+     */
+    if (!blockText.slice(0, at).trim() || !blockText.slice(at + 1).trim()) { plan[i] = R.NOOP; return; }
+    /**
+     * A JOINT DOES NOT FOLLOW A TERMINAL MARK.
+     *
+     * `Allowed characters: lowercase a–z, 0–9, _ and . — nothing else.` names
+     * the FULL STOP as an allowed character, so the dash is preceded by a
+     * period that is content rather than punctuation. A colon there reads
+     * `_ and .: nothing else` — doubled punctuation, on 16 Discord guide
+     * pages in as many languages. `)` and a closing quote are deliberately
+     * NOT in this set: `(U+2014) — the rest` is an ordinary joint.
+     */
+    if (/[.,:;!?]/.test((blockText.slice(0, at).trimEnd().slice(-1)) || '')) { plan[i] = R.DEFER; return; }
     const l = blockText[at - 1], r = blockText[at + 1];
     const alnum = (c) => c !== undefined && /[\p{L}\p{N}]/u.test(c);
     const ws = (c) => c === undefined || /\s/.test(c);
@@ -357,7 +380,93 @@ const JUDGED = LEDGER.entries || {};
  */
 const TAILS = LEDGER.tails || {};
 const tailAfter = (text, at) => text.slice(at + 1).trim().split(/(?<=[.!?])\s/)[0];
+
+/**
+ * THE TAIL RULE MUST NOT REACH A TIGHT DASH.
+ *
+ * `planBlock` defers a dash that is not spaced on BOTH sides, because that
+ * shape is a range, a compound or a specimen — never the `claim — elaboration`
+ * joint this pass converts. The tail fallback then read the deferral as "no
+ * decision yet" and applied one anyway, on a key it was never judged against.
+ *
+ * It deleted the em dash from `the em dash (—, U+2014).` in three specs
+ * (en-dash, it/trattino-medio, nl/en-streep) — pages whose SUBJECT is that
+ * character — because the tail `, U+2014).` matches a legitimate rule learned
+ * from ` —,` on two German pages, where dropping the dash of a dash-comma pair
+ * is right. The tail is the same string; the dash is not the same dash.
+ *
+ * The HTML pass was spared only by accident (its block stayed deferred), which
+ * is why the damage showed up in the specs alone. Guarding at the one place
+ * both passes resolve a tail is what keeps them from disagreeing again.
+ */
+const SPACED_AT = (text, at) => /[ \t]/.test(text[at - 1] || '') && /[ \t]/.test(text[at + 1] || '');
+const tailRemedy = (TAILS, text, at) =>
+  (at === undefined || !SPACED_AT(text, at)) ? null : (TAILS[tailAfter(text, at)] || null);
 const collapse = (s) => s.replace(/\s+/g, ' ').trim();
+
+/**
+ * ONE OWNER FOR A STANDALONE STRING.
+ *
+ * Used by the spec pass and by data/accent_notice_copy.json, which is an
+ * UPSTREAM rather than an output: the builder bakes it into 26 pages, so a
+ * pass that converted the pages and not this file was undone by the next
+ * bake. That happened twice. Reading it here is what makes the tree
+ * reproducible from the ledger alone.
+ */
+function convertString(node, code, { rel, defer }) {
+  const text = collapse(node);
+  const plan = planBlock(text, 'p', code, null);
+  const decided = JUDGED[text];
+  const positions = [...text.matchAll(/—/g)].map((m) => m.index);
+  let cur = node;
+  for (let i = plan.length - 1; i >= 0; i--) {         // right to left, as above
+    let remedy = (decided && decided[i] && decided[i] !== R.DEFER) ? decided[i] : plan[i];
+    // Tail rules apply here too. Reading only `entries` here let the two key
+    // spaces disagree: a tail moved to a colon stayed a full stop in every
+    // spec, which is how `Click any emoji or combo to copy it.` survived as a
+    // standalone sentence in 36 of them.
+    if (remedy === R.DEFER) { const t = tailRemedy(TAILS, text, positions[i]); if (t) remedy = t; }
+    if (!remedy || remedy === R.DEFER) { if (defer) defer.push({ rel, code, key: text, n: plan.length }); continue; }
+    if (remedy === R.NOOP) continue;
+    const nx = applyRemedy(cur, i, remedy);
+    if (nx != null) cur = nx;
+  }
+  return cur;
+}
+
+/* ---- the accent-notice copy table --------------------------------------- */
+
+const ACCENT_NOTICE = 'data/accent_notice_copy.json';
+const ACCENT_TEXT_KEYS = new Set(['default', 'upsideDown']);
+
+function convertAccentNotice({ write, defer }) {
+  const abs = path.join(REPO, ACCENT_NOTICE);
+  if (!fs.existsSync(abs)) return null;
+  const src = fs.readFileSync(abs, 'utf8');
+  if (!src.includes('\u2014')) return null;
+  let parsed; try { parsed = JSON.parse(src); } catch { return null; }
+
+  const subs = [];
+  for (const [code, entry] of Object.entries(parsed.locales || {})) {
+    if (!IN_SCOPE.has(String(code).toLowerCase()) || !entry) continue;
+    for (const [k, v] of Object.entries(entry)) {
+      if (!ACCENT_TEXT_KEYS.has(k) || typeof v !== 'string' || !v.includes('\u2014')) continue;
+      const cur = convertString(v, String(code).toLowerCase(), { rel: ACCENT_NOTICE, defer });
+      if (cur !== v) subs.push([v, cur]);
+    }
+  }
+  if (!subs.length) return null;
+
+  let out = src;                                        // patched as text, never re-serialised
+  for (const [a, b] of subs) {
+    const from = JSON.stringify(a).slice(1, -1), to = JSON.stringify(b).slice(1, -1);
+    if (out.includes(from)) out = out.split(from).join(to);
+  }
+  if (out === src) return null;
+  try { JSON.parse(out); } catch { return { rel: ACCENT_NOTICE, code: 'multi', refused: true }; }
+  if (write) fs.writeFileSync(abs, out);
+  return { rel: ACCENT_NOTICE, code: 'multi', strings: subs.length };
+}
 
 /* ---- the file pass ------------------------------------------------------ */
 
@@ -412,15 +521,37 @@ function convertFile(rel, { write, defer }) {
   for (const [b, nodes] of blocks) {
     if (!nodes.some((n) => n.data.includes('—'))) continue;
     const noop = new Set();
-    let ord = 0, buf = '';
+    /**
+     * WHAT THE BLOCK TEXT CANNOT SEE.
+     *
+     * `walk` skips excluded nodes, so an inline `code`/`kbd`/`var` between two
+     * text nodes closes the gap and makes their characters look adjacent. On
+     * `… <code>_</code> and <code>.</code> — nothing else.` the block text
+     * reads `_ and — nothing else`: the FULL STOP, which is the content being
+     * listed, is invisible, and the joint took a colon — `_ and .: nothing
+     * else` on 16 Discord guide pages in as many languages.
+     *
+     * The character is still in the SOURCE, between the two nodes' offsets.
+     * Reading it there feeds the guard without changing `blockText`, which is
+     * the ledger's key — recomputing that would orphan every judged block
+     * holding an inline element.
+     */
+    const deferOrd = new Set();
+    let ord = 0, buf = '', prevEnd = null;
     for (const n of nodes) {
       const c = (n.data.match(/—/g) || []).length;
       if (isLoneSpecimen(n)) for (let i = 0; i < c; i++) noop.add(ord + i);
+      if (c && prevEnd != null && n.sourceCodeLocation) {
+        const gap = html.slice(prevEnd, n.sourceCodeLocation.startOffset).replace(/<[^>]*>/g, '').trimEnd();
+        const lead = n.data.slice(0, n.data.indexOf('—')).trim();
+        if (!lead && /[.,:;!?]$/.test(gap)) deferOrd.add(ord);
+      }
       ord += c; buf += n.data;
+      if (n.sourceCodeLocation) prevEnd = n.sourceCodeLocation.endOffset;
     }
     const blockText = collapse(buf);
     const tag = (b.name || 'p').toLowerCase();
-    const plan = planBlock(blockText, tag, code, noop);
+    const plan = planBlock(blockText, tag, code, noop, deferOrd);
     const decided = JUDGED[blockText];
 
     let seenInBlock = 0;
@@ -458,12 +589,25 @@ function convertFile(rel, { write, defer }) {
           remedy = plan[g];
           if (remedy === R.DEFER || remedy === undefined) {
             const positions = [...blockText.matchAll(/—/g)].map((m) => m.index);
-            const t = positions[g] === undefined ? null : TAILS[tailAfter(blockText, positions[g])];
+            const t = tailRemedy(TAILS, blockText, positions[g]);
             if (t) { remedy = t; judged++; }
             else { deferred.push({ rel, code, key: blockText, n: plan.length }); remedy = null; }
           } else if (remedy !== R.NOOP) auto++;
         }
         if (!remedy || remedy === R.NOOP) continue;
+        /**
+         * A DASH THAT OPENS ITS OWN TEXT NODE CANNOT BE CONVERTED HERE.
+         *
+         * The space before it lives in the PREVIOUS node, which this
+         * one-node edit cannot reach, so `Heading <span>— optional</span>`
+         * became `Heading <span>: optional</span>` and rendered
+         * `Heading : optional` on five printables pages. `gap()` owns the
+         * space after the mark; nothing owns the space before it across a
+         * node boundary. A node-initial dash is either this case or the
+         * block-edge case the plan already protects, so skipping it loses
+         * nothing that was convertible.
+         */
+        if (i === 0 && /^—/.test(raw)) continue;
         const next = applyRemedy(cur, i, remedy);
         if (next != null) cur = next;
       }
@@ -579,26 +723,7 @@ function convertSpec(rel, { write, defer }) {
   (function walk(node, key) {
     if (typeof node === 'string') {
       if (!node.includes('—') || SPEC_NEVER.has(key) || !SPEC_TEXT_KEYS.has(key)) return;
-      const text = collapse(node);
-      const plan = planBlock(text, 'p', code, null);
-      const decided = JUDGED[text];
-      let cur = node;
-      for (let i = plan.length - 1; i >= 0; i--) {     // right to left, as above
-        let remedy = (decided && decided[i] && decided[i] !== R.DEFER) ? decided[i] : plan[i];
-        // Tail rules apply here too. Reading only `entries` here let the two
-        // key spaces disagree: a tail moved to a colon stayed a full stop in
-        // every spec, which is how `Click any emoji or combo to copy it.`
-        // survived as a standalone sentence in 36 of them.
-        if (remedy === R.DEFER) {
-          const positions = [...text.matchAll(/—/g)].map((m) => m.index);
-          const t = positions[i] === undefined ? null : TAILS[tailAfter(text, positions[i])];
-          if (t) remedy = t;
-        }
-        if (!remedy || remedy === R.DEFER) { if (defer) defer.push({ rel, code, key: text, n: plan.length }); continue; }
-        if (remedy === R.NOOP) continue;
-        const nx = applyRemedy(cur, i, remedy);
-        if (nx != null) cur = nx;
-      }
+      const cur = convertString(node, code, { rel, defer });
       if (cur !== node) subs.push([node, cur]);
       return;
     }
@@ -643,6 +768,10 @@ function main() {
 
   const done = [], refused = [];
   let nodes = 0, autoN = 0, judgedN = 0, specs = 0, mirrors = 0;
+  {
+    const an = convertAccentNotice({ write, defer });
+    if (an) (an.refused ? refused : done).push(an);
+  }
   for (const rel of files) {
     const r = rel.endsWith('.json') ? convertSpec(rel, { write, defer }) : convertFile(rel, { write, defer });
     if (!r) continue;
