@@ -146,17 +146,17 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {
       "@type": "Question",
       "name": "A cosa serve il carattere invisibile?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Serve a impostare un nome, una bio o un messaggio dall'aspetto vuoto sulle app che non ammettono un campo davvero vuoto — i nomi visualizzati di Instagram, i soprannomi di Discord e i nomi utente dei giochi sono gli usi più comuni. Incollarlo in un campo nome soddisfa il requisito «non vuoto» mostrando però nulla di visibile." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Serve a impostare un nome, una bio o un messaggio dall'aspetto vuoto sulle app che non ammettono un campo davvero vuoto. I nomi visualizzati di Instagram, i soprannomi di Discord e i nomi utente dei giochi sono gli usi più comuni. Incollarlo in un campo nome soddisfa il requisito «non vuoto» mostrando però nulla di visibile." }
     },
     {
       "@type": "Question",
       "name": "Perché questo carattere funziona quando uno spazio normale no?",
-      "acceptedAnswer": { "@type": "Answer", "text": "La maggior parte delle app elimina automaticamente gli spazi iniziali e finali e rifiuta i campi rimasti vuoti dopo il taglio. U+2800 non è affatto classificato come spazio bianco — è tecnicamente il motivo «vuoto» del blocco Unicode Braille Patterns, un vero simbolo stampabile che semplicemente non mostra alcun punto. Il codice di validazione che elimina i veri spazi o i caratteri a larghezza zero di solito lo lascia in pace." }
+      "acceptedAnswer": { "@type": "Answer", "text": "La maggior parte delle app elimina automaticamente gli spazi iniziali e finali e rifiuta i campi rimasti vuoti dopo il taglio. U+2800 non è affatto classificato come spazio bianco: è tecnicamente il motivo «vuoto» del blocco Unicode Braille Patterns, un vero simbolo stampabile che semplicemente non mostra alcun punto. Il codice di validazione che elimina i veri spazi o i caratteri a larghezza zero di solito lo lascia in pace." }
     },
     {
       "@type": "Question",
       "name": "Come si scrive il carattere invisibile?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Non esiste una scorciatoia da tastiera semplice né su Windows né su Mac — il modo più facile è copiarlo direttamente da una pagina di riferimento come questa, oppure usare il metodo esadecimale Alt+X in Word (digita 2800 e poi premi Alt+X)." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Non esiste una scorciatoia da tastiera semplice né su Windows né su Mac. Il modo più facile è copiarlo direttamente da una pagina di riferimento come questa, oppure usare il metodo esadecimale Alt+X in Word (digita 2800 e poi premi Alt+X)." }
     }
   ]
 }
@@ -217,8 +217,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <span class="article-section-label">Storia e perché funziona</span>
   <h2>Perché proprio questo carattere è diventato «il» carattere invisibile</h2>
   <div class="editorial-block">
-    <p>U+2800 non è affatto un carattere di spaziatura — viene dal blocco Braille Patterns di Unicode, che codifica tutte le 256 combinazioni possibili di una cella Braille a 8 punti. Una di queste 256 combinazioni corrisponde a «nessun punto in rilievo»: il motivo vuoto. Poiché è classificato come un normale simbolo stampabile e non come uno spazio, si comporta in modo del tutto diverso dai caratteri realmente pensati per essere invisibili, come lo spazio a larghezza zero.</p>
-    <p>Questa distinzione spiega esattamente perché è diventato il trucco di riferimento per i nomi vuoti su Instagram, Discord e nei giochi: la maggior parte delle app elimina gli spazi iniziali e finali e rifiuta un campo rimasto vuoto dopo il taglio — un vero spazio, una tabulazione o uno spazio a larghezza zero (U+200B) di solito viene intercettato da quel controllo. U+2800 passa perché il codice di validazione vede «un carattere», non «uno spazio vuoto», anche se non mostra alcun segno visibile. Il trucco si è diffuso tramite i consigli condivisi sui social più che per una precisa intenzione di progetto, ma resta affidabile proprio grazie a questo tecnicismo di Unicode.</p>
+    <p>U+2800 non è affatto un carattere di spaziatura: viene dal blocco Braille Patterns di Unicode, che codifica tutte le 256 combinazioni possibili di una cella Braille a 8 punti. Una di queste 256 combinazioni corrisponde a «nessun punto in rilievo»: il motivo vuoto. Poiché è classificato come un normale simbolo stampabile e non come uno spazio, si comporta in modo del tutto diverso dai caratteri realmente pensati per essere invisibili, come lo spazio a larghezza zero.</p>
+    <p>Questa distinzione spiega esattamente perché è diventato il trucco di riferimento per i nomi vuoti su Instagram, Discord e nei giochi: la maggior parte delle app elimina gli spazi iniziali e finali e rifiuta un campo rimasto vuoto dopo il taglio. Un vero spazio, una tabulazione o uno spazio a larghezza zero (U+200B) di solito viene intercettato da quel controllo. U+2800 passa perché il codice di validazione vede «un carattere», non «uno spazio vuoto», anche se non mostra alcun segno visibile. Il trucco si è diffuso tramite i consigli condivisi sui social più che per una precisa intenzione di progetto, ma resta affidabile proprio grazie a questo tecnicismo di Unicode.</p>
   </div>
 </section>
 
@@ -297,15 +297,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <h2>Domande sul carattere invisibile</h2>
   <div class="faq-item">
     <button class="faq-question" type="button">A cosa serve il carattere invisibile?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-    <div class="faq-answer">Serve a impostare un nome, una bio o un messaggio dall'aspetto vuoto sulle app che non ammettono un campo davvero vuoto — i nomi visualizzati di Instagram, i soprannomi di Discord e i nomi utente dei giochi sono gli usi più comuni. Incollarlo in un campo nome soddisfa il requisito «non vuoto» mostrando però nulla di visibile.</div>
+    <div class="faq-answer">Serve a impostare un nome, una bio o un messaggio dall'aspetto vuoto sulle app che non ammettono un campo davvero vuoto. I nomi visualizzati di Instagram, i soprannomi di Discord e i nomi utente dei giochi sono gli usi più comuni. Incollarlo in un campo nome soddisfa il requisito «non vuoto» mostrando però nulla di visibile.</div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Perché questo carattere funziona quando uno spazio normale no?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-    <div class="faq-answer">La maggior parte delle app elimina automaticamente gli spazi iniziali e finali e rifiuta i campi rimasti vuoti dopo il taglio. U+2800 non è affatto classificato come spazio bianco — è tecnicamente il motivo «vuoto» del blocco Unicode Braille Patterns, un vero simbolo stampabile che semplicemente non mostra alcun punto. Il codice di validazione che elimina i veri spazi o i caratteri a larghezza zero di solito lo lascia in pace.</div>
+    <div class="faq-answer">La maggior parte delle app elimina automaticamente gli spazi iniziali e finali e rifiuta i campi rimasti vuoti dopo il taglio. U+2800 non è affatto classificato come spazio bianco: è tecnicamente il motivo «vuoto» del blocco Unicode Braille Patterns, un vero simbolo stampabile che semplicemente non mostra alcun punto. Il codice di validazione che elimina i veri spazi o i caratteri a larghezza zero di solito lo lascia in pace.</div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Come si scrive il carattere invisibile?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-    <div class="faq-answer">Non esiste una scorciatoia da tastiera semplice né su Windows né su Mac — il modo più facile è copiarlo direttamente da una pagina di riferimento come questa, oppure usare il metodo esadecimale Alt+X in Word (digita 2800 e poi premi Alt+X).</div>
+    <div class="faq-answer">Non esiste una scorciatoia da tastiera semplice né su Windows né su Mac. Il modo più facile è copiarlo direttamente da una pagina di riferimento come questa, oppure usare il metodo esadecimale Alt+X in Word (digita 2800 e poi premi Alt+X).</div>
   </div>
 </section>
 

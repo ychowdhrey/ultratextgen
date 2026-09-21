@@ -1095,7 +1095,12 @@ function main() {
   // group the deferrals by their ledger key so one decision covers every page
   const byKey = new Map();
   for (const d of defer) {
-    const e = byKey.get(d.key) || { key: d.key, code: d.code, n: d.n, pages: 0 };
+    // Carry the first page so a judge can open it. The key is `blockText`,
+    // which OMITS the text of held elements — `<code>U+0024</code>` sat
+    // immediately before a dash on `it/symbol/simbolo-dollaro` and the key
+    // read `condividono — quella che appare`, a dangling verb on a page that
+    // is perfectly fine. A judgement made from the key alone cannot see that.
+    const e = byKey.get(d.key) || { key: d.key, code: d.code, n: d.n, pages: 0, at: d.rel };
     e.pages++; byKey.set(d.key, e);
   }
   const pending = [...byKey.values()].sort((a, b) => b.pages - a.pages);
