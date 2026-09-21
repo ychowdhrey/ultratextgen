@@ -16,7 +16,7 @@
       "id": "en-dash",
       "label": "En Dash",
       "h2": "The En Dash & Figure Dash",
-      "intro": "The en dash for ranges and compounds, plus the figure dash — the same width, reserved for numerals so digits line up cleanly in tables and phone numbers. Ready to paste anywhere.",
+      "intro": "The en dash for ranges and compounds, plus the figure dash, the same width, reserved for numerals so digits line up cleanly in tables and phone numbers. Ready to paste anywhere.",
       "symbols": [
         { "char": "–", "label": "En Dash (U+2013)" },
         { "char": "‒", "label": "Figure Dash (U+2012)" }

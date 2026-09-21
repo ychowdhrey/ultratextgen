@@ -201,7 +201,7 @@
   "editorial_sections": [
     {
       "h2": "The tail is the whole invention",
-      "body": "A rectangle around text is just a box. What makes a bubble is the small pointer aimed at a speaker, and that piece is barely two hundred years old — early printed cartoons ran dialogue on ribbons floating near a figure's mouth, with no enclosure at all. The enclosed shape with a tail only settled once comics needed to fit many speakers into one frame and had to answer, unambiguously, who was talking. Unicode inherits that split: it gives you the enclosure in one set of characters and the pointer in another, and a bubble is only finished when you have used both."
+      "body": "A rectangle around text is just a box. What makes a bubble is the small pointer aimed at a speaker, and that piece is barely two hundred years old: early printed cartoons ran dialogue on ribbons floating near a figure's mouth, with no enclosure at all. The enclosed shape with a tail only settled once comics needed to fit many speakers into one frame and had to answer, unambiguously, who was talking. Unicode inherits that split: it gives you the enclosure in one set of characters and the pointer in another, and a bubble is only finished when you have used both."
     }
   ],
   "related": [

@@ -155,7 +155,7 @@
   "editorial_sections": [
     {
       "h2": "Perché una Bandiera Non è Davvero un Carattere",
-      "body": "🇮🇹 non esiste come carattere singolo: sono due «indicatori regionali», 🇮 e 🇹, che il sistema riconosce come codice paese e sostituisce con un'immagine. Unicode ha scelto questa strada apposta, per non dover decidere quali entità meritino una bandiera — l'elenco viene dallo standard ISO dei codici paese, non da una delibera del consorzio. Per questo una bandiera può apparire su un dispositivo e restare due lettere su un altro."
+      "body": "🇮🇹 non esiste come carattere singolo: sono due «indicatori regionali», 🇮 e 🇹, che il sistema riconosce come codice paese e sostituisce con un'immagine. Unicode ha scelto questa strada apposta, per non dover decidere quali entità meritino una bandiera: l'elenco viene dallo standard ISO dei codici paese, non da una delibera del consorzio. Per questo una bandiera può apparire su un dispositivo e restare due lettere su un altro."
     }
   ],
   "collection_section": {

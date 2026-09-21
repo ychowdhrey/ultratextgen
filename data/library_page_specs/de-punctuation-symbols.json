@@ -7,7 +7,7 @@
  "breadcrumb": "Satzzeichen",
  "hero_h1": "Satzzeichen und typografische Zeichen",
  "hero_tagline": "Kreuz, Paragraf, Absatzzeichen, Interrobang: die Zeichen jenseits von Punkt und Komma.",
- "intro": "Punkt, Komma und Fragezeichen liegen auf der Tastatur. Alles andere nicht: das Kreuz für Verstorbene, das Paragrafenzeichen, das Absatzzeichen aus dem Lektorat, das Promillezeichen. Diese Seite sammelt die typografischen Zeichen, die man in Fußnoten, Rechtstexten und Lektoratsanmerkungen braucht — mit einer Erklärung, wofür jedes steht.",
+ "intro": "Punkt, Komma und Fragezeichen liegen auf der Tastatur. Alles andere nicht: das Kreuz für Verstorbene, das Paragrafenzeichen, das Absatzzeichen aus dem Lektorat, das Promillezeichen. Diese Seite sammelt die typografischen Zeichen, die man in Fußnoten, Rechtstexten und Lektoratsanmerkungen braucht, mit einer Erklärung, wofür jedes steht.",
  "sections": [
   {
    "id": "kreuze",
@@ -165,7 +165,7 @@
    "id": "komma",
    "label": "Komma",
    "h2": "Komma & Klammern",
-   "intro": "Komma, Klammern und verwandte Trennzeichen für sauber gesetzten Text — samt der ostasiatischen Vollbreiten-Formen.",
+   "intro": "Komma, Klammern und verwandte Trennzeichen für sauber gesetzten Text, samt der ostasiatischen Vollbreiten-Formen.",
    "symbols": [
     {
      "char": ",",
@@ -256,7 +256,7 @@
   },
   {
    "h2": "Warum ‰ und ‱ eigene Zeichen sind",
-   "body": "Das Prozentzeichen % hat zwei Nullen im Nenner, das Promillezeichen ‰ drei, das Basispunktzeichen ‱ vier — die Zeichenform bildet die Größenordnung direkt ab. ‰ ist im deutschsprachigen Raum vor allem aus dem Verkehrsrecht bekannt (Blutalkohol), ‱ fast ausschließlich aus dem Finanzwesen, wo Zinsänderungen in Basispunkten angegeben werden. Beide werden häufig durch „Promille“ beziehungsweise „bp“ ersetzt, was zulässig, aber weniger präzise ist."
+   "body": "Das Prozentzeichen % hat zwei Nullen im Nenner, das Promillezeichen ‰ drei, das Basispunktzeichen ‱ vier: die Zeichenform bildet die Größenordnung direkt ab. ‰ ist im deutschsprachigen Raum vor allem aus dem Verkehrsrecht bekannt (Blutalkohol), ‱ fast ausschließlich aus dem Finanzwesen, wo Zinsänderungen in Basispunkten angegeben werden. Beide werden häufig durch „Promille“ beziehungsweise „bp“ ersetzt, was zulässig, aber weniger präzise ist."
   }
  ],
  "related": [

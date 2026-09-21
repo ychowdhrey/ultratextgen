@@ -161,7 +161,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Warum erscheinen die Sternchen statt fettem Text?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Zwei häufige Gründe: Es gibt ein Leerzeichen zwischen den Sternchen und dem Wort (`** Text **` wird nicht fett — `**Text**` schon), oder der Text steht in einem Codeblock (Backticks schalten Markdown ab). Denk außerdem daran: Markdown funktioniert nur in Nachrichten, nie in Namen." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Zwei häufige Gründe: Es gibt ein Leerzeichen zwischen den Sternchen und dem Wort (`** Text **` wird nicht fett, `**Text**` schon), oder der Text steht in einem Codeblock (Backticks schalten Markdown ab). Denk außerdem daran: Markdown funktioniert nur in Nachrichten, nie in Namen." }
     }
   ]
 }
@@ -207,7 +207,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2>Das Wichtigste in Kürze</h2>
   <ul>
     <li>Discord hat drei voneinander unabhängige Textsysteme: <strong>Markdown</strong> (Nachrichten), <strong>Unicode-«Schriften»</strong> (Namen, überall) und <strong>Nitro</strong> (kostenpflichtige Anzeigenamen-Stile).</li>
-    <li>Markdown wie <code>**fett**</code> wird nur in Nachrichten dargestellt — nie in Benutzernamen, Nicknames oder Server- und Kanalnamen.</li>
+    <li>Markdown wie <code>**fett**</code> wird nur in Nachrichten dargestellt, nie in Benutzernamen, Nicknames oder Server- und Kanalnamen.</li>
     <li>Unicode-«Schriften» funktionieren in jedem Namensfeld, können aber auf manchen Geräten als Kästchen erscheinen und stören Screenreader.</li>
     <li>Nitro fügt deinem Anzeigenamen echte Farbe und Effekte hinzu, aber im Server gewinnt deine Rollenfarbe, und nur die Schrift bleibt.</li>
   </ul>
@@ -252,7 +252,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><code>||spoiler||</code> → verborgen bis zum Klick</li>
         <li><code>&gt; Zitat</code> und <code>`Code`</code></li>
       </ul>
-      <p>Das ist der <em>richtige</em> Weg, eine Nachricht zu formatieren — es bleibt echter Text, also durchsuchbar und barrierefrei. Der Haken sind die zwei Fehler, die dafür sorgen, dass es «nicht geht»:</p>
+      <p>Das ist der <em>richtige</em> Weg, eine Nachricht zu formatieren: es bleibt echter Text, also durchsuchbar und barrierefrei. Der Haken sind die zwei Fehler, die dafür sorgen, dass es «nicht geht»:</p>
       <div class="compare-grid">
         <div class="compare-card variant-muted">
           <span class="compare-badge">Wird nicht fett</span>
@@ -274,12 +274,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">System 2</span>
     <h2>Unicode-«Schriften»: für Namen</h2>
     <div class="editorial-block">
-      <p>Um einen <em>Namen</em> zu gestalten, kannst du Discord nichts zum Darstellen geben — also nutzt du Zeichen, die schon gestaltet aussehen. Ein Generator macht aus «Nova» ein 𝗡𝗼𝘃𝗮 oder 𝓝𝓸𝓿𝓪 mithilfe spezieller <a href="/de/library/">Unicode-Zeichen</a>, und du fügst das fertige Ergebnis direkt ins Feld ein. Kein Rendern nötig, also übersteht es Stellen, an denen Markdown scheitert.</p>
+      <p>Um einen <em>Namen</em> zu gestalten, kannst du Discord nichts zum Darstellen geben, also nutzt du Zeichen, die schon gestaltet aussehen. Ein Generator macht aus «Nova» ein 𝗡𝗼𝘃𝗮 oder 𝓝𝓸𝓿𝓪 mithilfe spezieller <a href="/de/library/">Unicode-Zeichen</a>, und du fügst das fertige Ergebnis direkt ins Feld ein. Kein Rendern nötig, also übersteht es Stellen, an denen Markdown scheitert.</p>
       <p>Das funktioniert in deinem Anzeigenamen, deinem Server-Nickname, in Server- und Kanalnamen, Rollennamen, deiner Bio und in Nachrichten. Es gibt genau eine Stelle, an der es blockiert ist:</p>
       <div class="mood-explainer">
-        <div class="mood-example"><strong>Der @Benutzername lehnt es ab.</strong> Dein eindeutiges Handle (das kleingeschriebene nach dem @) erlaubt nur a–z, 0–9, <code>_</code> und <code>.</code> — für Erwähnungen, Suche und Routing. Fügst du dort eine schicke Schrift ein, weigert sich Discord, sie zu speichern. Gestalte stattdessen deinen <em>Anzeigenamen</em>.</div>
+        <div class="mood-example"><strong>Der @Benutzername lehnt es ab.</strong> Dein eindeutiges Handle (das kleingeschriebene nach dem @) erlaubt nur a–z, 0–9, <code>_</code> und <code>.</code> – für Erwähnungen, Suche und Routing. Fügst du dort eine schicke Schrift ein, weigert sich Discord, sie zu speichern. Gestalte stattdessen deinen <em>Anzeigenamen</em>.</div>
       </div>
-      <p>Zwei ehrliche Einschränkungen: Unicode-Namen können auf manchen Geräten (vor allem älteren Android-Handys) als Kästchen erscheinen, und sie sind für Screenreader schwer lesbar. Wähle einen sicheren Stil (fett, kursiv, Kapitälchen) und halte ihn dezent — viele große Server moderieren schwer lesbare oder Zalgo-Namen streng.</p>
+      <p>Zwei ehrliche Einschränkungen: Unicode-Namen können auf manchen Geräten (vor allem älteren Android-Handys) als Kästchen erscheinen, und sie sind für Screenreader schwer lesbar. Wähle einen sicheren Stil (fett, kursiv, Kapitälchen) und halte ihn dezent: viele große Server moderieren schwer lesbare oder Zalgo-Namen streng.</p>
     </div>
   </section>
 
@@ -292,10 +292,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="editorial-block">
       <p>Discords kostenpflichtige Nitro-Stufe bietet Anzeigenamen-Stile, ein Ende 2025 hinzugefügtes Feature: echte Schrift, Farbe und sogar animierte Effekte für deinen Anzeigenamen. Auf deiner Profilkarte sieht das großartig aus. Doch es gibt einen Haken, den viele auf die harte Tour entdecken:</p>
       <div class="mood-explainer">
-        <div class="mood-example">Im Server überschreibt deine <strong>Rollenfarbe</strong> die Nitro-Farbe, und Effekte werden entfernt — andere Mitglieder sehen also meist nur die <em>Schrift</em>, nicht Farbe oder Animation. Der volle Effekt zeigt sich vor allem auf deinem Profil, nicht in der Mitgliederliste oder im Chat.</div>
+        <div class="mood-example">Im Server überschreibt deine <strong>Rollenfarbe</strong> die Nitro-Farbe, und Effekte werden entfernt, andere Mitglieder sehen also meist nur die <em>Schrift</em>, nicht Farbe oder Animation. Der volle Effekt zeigt sich vor allem auf deinem Profil, nicht in der Mitgliederliste oder im Chat.</div>
       </div>
       <p>Kostenlose Konten können das Menü öffnen und einen Stil <strong>in der Vorschau ansehen</strong>, aber das Speichern gibt es nur mit Nitro: genau dieses «Vorschau, dann Bezahlschranke» ist der Grund, warum so viele fragen, ob man für Schriften überhaupt Nitro braucht. Eine berechtigte Frage zu genau diesem Feature; am Unicode-Styling ändert es nichts, das bleibt in jedem Fall kostenlos.</p>
-      <p>Nitro lohnt sich also, wenn du eine schicke Profilkarte und eine eigene Anzeigeschrift überall willst. Es ist <em>nicht</em> der Weg, farbigen Text in ein Gespräch zu bringen — das ist ein anderes Werkzeug (nächster Abschnitt).</p>
+      <p>Nitro lohnt sich also, wenn du eine schicke Profilkarte und eine eigene Anzeigeschrift überall willst. Es ist <em>nicht</em> der Weg, farbigen Text in ein Gespräch zu bringen. Das ist ein anderes Werkzeug (nächster Abschnitt).</p>
     </div>
   </section>
 
@@ -342,7 +342,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA Card -->
   <div class="cta-card">
     <h3>Erstelle einen Discord-tauglichen Namen</h3>
-    <p>Erzeuge einen geräteübergreifend sicheren Unicode-Stil, kopiere ihn und füge ihn in deinen Anzeigenamen oder Server-Nickname ein — ganz ohne Nitro.</p>
+    <p>Erzeuge einen geräteübergreifend sicheren Unicode-Stil, kopiere ihn und füge ihn in deinen Anzeigenamen oder Server-Nickname ein, ganz ohne Nitro.</p>
     <a href="/de/discord-schriftart/" class="cta-btn">Discord-Schrift-Tool öffnen →</a>
   </div>
 
@@ -391,7 +391,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Warum erscheinen die Sternchen statt fettem Text?</button>
     <div class="faq-answer">
-      <p>Zwei häufige Gründe: Es gibt ein Leerzeichen zwischen den Sternchen und dem Wort (<code>** Text **</code> wird nicht fett — <code>**Text**</code> schon), oder der Text steht in einem Codeblock (Backticks schalten Markdown ab). Denk außerdem daran: Markdown funktioniert nur in Nachrichten, nie in Namen.</p>
+      <p>Zwei häufige Gründe: Es gibt ein Leerzeichen zwischen den Sternchen und dem Wort (<code>** Text **</code> wird nicht fett, <code>**Text**</code> schon), oder der Text steht in einem Codeblock (Backticks schalten Markdown ab). Denk außerdem daran: Markdown funktioniert nur in Nachrichten, nie in Namen.</p>
     </div>
   </div>
 </section>

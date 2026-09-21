@@ -335,11 +335,11 @@
  "editorial_sections": [
   {
    "h2": "Warum Monospace alles entscheidet",
-   "body": "Jede ASCII-Zeichnung beruht auf einer einzigen Annahme: dass ein Zeichen genauso breit ist wie jedes andere. In einer Proportionalschrift ist ein „i“ schmaler als ein „█“, und schon verschiebt sich jede Zeile gegen die darüber. Genau deshalb sieht dieselbe Zeichnung im Discord-Codeblock perfekt und in der Instagram-Bio zerrissen aus — nicht weil Zeichen fehlen, sondern weil sie unterschiedlich breit gesetzt werden. Wer ASCII-Kunst verschickt, sollte deshalb immer zuerst die Zielumgebung prüfen, nicht das Zeichenrepertoire."
+   "body": "Jede ASCII-Zeichnung beruht auf einer einzigen Annahme: dass ein Zeichen genauso breit ist wie jedes andere. In einer Proportionalschrift ist ein „i“ schmaler als ein „█“, und schon verschiebt sich jede Zeile gegen die darüber. Genau deshalb sieht dieselbe Zeichnung im Discord-Codeblock perfekt und in der Instagram-Bio zerrissen aus, nicht weil Zeichen fehlen, sondern weil sie unterschiedlich breit gesetzt werden. Wer ASCII-Kunst verschickt, sollte deshalb immer zuerst die Zielumgebung prüfen, nicht das Zeichenrepertoire."
   },
   {
    "h2": "Vier Zeichenfamilien, vier Aufgaben",
-   "body": "Rahmenzeichen ziehen Linien und schließen Kästen — sie stammen aus der Terminalgrafik der Achtzigerjahre und sind bis heute die sauberste Art, in Text einen Kasten zu zeichnen. Blockelemente füllen Flächen und liefern mit ░▒▓█ vier Helligkeitsstufen. Braille-Punkte sind der Sonderfall: acht Punkte pro Zeichen, also die feinste erreichbare Auflösung. Geometrische Formen schließlich sind keine Bausteine, sondern Akzente: Aufzählungspunkte, Trenner, kleine Markierungen."
+   "body": "Rahmenzeichen ziehen Linien und schließen Kästen: sie stammen aus der Terminalgrafik der Achtzigerjahre und sind bis heute die sauberste Art, in Text einen Kasten zu zeichnen. Blockelemente füllen Flächen und liefern mit ░▒▓█ vier Helligkeitsstufen. Braille-Punkte sind der Sonderfall: acht Punkte pro Zeichen, also die feinste erreichbare Auflösung. Geometrische Formen schließlich sind keine Bausteine, sondern Akzente: Aufzählungspunkte, Trenner, kleine Markierungen."
   }
  ],
  "related": [

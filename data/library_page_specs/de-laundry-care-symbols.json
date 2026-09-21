@@ -211,7 +211,7 @@
   },
   {
    "h2": "Warum diese Zeichen nicht in Unicode stehen",
-   "body": "Die genormten Pflegesymbole gehören GINETEX und sind als Bildmarken geschützt — Unicode nimmt geschützte Zeichensysteme grundsätzlich nicht auf. Deshalb gibt es kein Zeichen für „Waschbottich 40 Grad“, das man in eine Nachricht kopieren könnte. Für Fließtext bleibt der Umweg über die Zeichen oben: ein Wassertropfen und eine Temperaturangabe sagen dasselbe wie das Etikett, nur eben in Textform."
+   "body": "Die genormten Pflegesymbole gehören GINETEX und sind als Bildmarken geschützt: Unicode nimmt geschützte Zeichensysteme grundsätzlich nicht auf. Deshalb gibt es kein Zeichen für „Waschbottich 40 Grad“, das man in eine Nachricht kopieren könnte. Für Fließtext bleibt der Umweg über die Zeichen oben: ein Wassertropfen und eine Temperaturangabe sagen dasselbe wie das Etikett, nur eben in Textform."
   }
  ],
  "related": [

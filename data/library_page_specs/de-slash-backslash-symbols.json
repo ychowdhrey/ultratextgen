@@ -175,7 +175,7 @@
   "editorial_sections": [
     {
       "h2": "Ein Zeichen, das von einer Firmenentscheidung übrig blieb",
-      "body": "Dass Windows-Pfade mit Backslash geschrieben werden, ist kein Entwurf, sondern ein Rest. MS-DOS verwendete den Schrägstrich bereits für Befehlsschalter, als Verzeichnisse hinzukamen — also musste der Trenner ein anderes Zeichen werden, und der Backslash war frei. Diese Notlösung von 1983 ist der Grund, warum bis heute jede plattformübergreifende Software zwei Pfadschreibweisen behandeln muss, warum \\ in fast jeder Programmiersprache doppelt getippt wird und warum die deutsche Tastatur dieses Zeichen hinter eine AltGr-Kombination versteckt hat."
+      "body": "Dass Windows-Pfade mit Backslash geschrieben werden, ist kein Entwurf, sondern ein Rest. MS-DOS verwendete den Schrägstrich bereits für Befehlsschalter, als Verzeichnisse hinzukamen, also musste der Trenner ein anderes Zeichen werden, und der Backslash war frei. Diese Notlösung von 1983 ist der Grund, warum bis heute jede plattformübergreifende Software zwei Pfadschreibweisen behandeln muss, warum \\ in fast jeder Programmiersprache doppelt getippt wird und warum die deutsche Tastatur dieses Zeichen hinter eine AltGr-Kombination versteckt hat."
     }
   ],
   "related": [
