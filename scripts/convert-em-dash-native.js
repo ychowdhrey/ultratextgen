@@ -636,9 +636,22 @@ function convertFile(rel, { write, defer }) {
       const c = (n.data.match(/—/g) || []).length;
       if (isLoneSpecimen(n)) for (let i = 0; i < c; i++) noop.add(ord + i);
       if (c && prevEnd != null && n.sourceCodeLocation) {
-        const gap = html.slice(prevEnd, n.sourceCodeLocation.startOffset).replace(/<[^>]*>/g, '').trimEnd();
+        const between = html.slice(prevEnd, n.sourceCodeLocation.startOffset);
+        const gap = between.replace(/<[^>]*>/g, '').trimEnd();
         const lead = n.data.slice(0, n.data.indexOf('—')).trim();
         if (!lead && /[.,:;!?]$/.test(gap)) deferOrd.add(ord);
+        /**
+         * A DASH THAT OPENS A LINE IS A BULLET, NOT A JOINT.
+         *
+         * `<strong>Melyik milyen érzést ad</strong><br>\n    — Kézírás (…)`
+         * collapses to one block, so the label rule saw a 22-character
+         * clause before the dash and wrote `: Kézírás` at the START of the
+         * rendered row. The rule cannot tell a list marker from a gloss
+         * because the line break is markup, not text; only the source gap
+         * shows it. Deferred rather than marked no-op: the row still wants
+         * the locale's own bullet, which is a judgement.
+         */
+        if (!lead && /<br\s*\/?>/i.test(between)) deferOrd.add(ord);
       }
       ord += c; buf += n.data;
       if (n.sourceCodeLocation) prevEnd = n.sourceCodeLocation.endOffset;
