@@ -7,7 +7,7 @@
   "breadcrumb": "Celsius Symbol",
   "hero_h1": "Celsius Symbol",
   "hero_tagline": "℃ is a single Unicode character that packs the degree sign and a capital C into one glyph, handy to paste, though most typographers still reach for plain °C. Click any symbol to copy it instantly.",
-  "intro": "The degree Celsius sign (℃, Unicode U+2103) is a precomposed character in the Letterlike Symbols block that combines the degree sign (°) and a capital C into a single glyph. It exists mainly so that older East Asian text — where a full temperature reading often occupied one character cell — could round-trip through Unicode without changing length. For new text, Unicode and most style guides actually recommend writing the degree sign followed by a plain C (°C) rather than the one-character ℃, but the single glyph remains the fastest thing to copy when you just need the mark.",
+  "intro": "The degree Celsius sign (℃, Unicode U+2103) is a precomposed character in the Letterlike Symbols block that combines the degree sign (°) and a capital C into a single glyph. It exists mainly so that older East Asian text, where a full temperature reading often occupied one character cell, could round-trip through Unicode without changing length. For new text, Unicode and most style guides actually recommend writing the degree sign followed by a plain C (°C) rather than the one-character ℃, but the single glyph remains the fastest thing to copy when you just need the mark.",
   "date_published": "2026-07-12",
   "date_modified": "2026-07-12",
   "copy_pattern": "single",
