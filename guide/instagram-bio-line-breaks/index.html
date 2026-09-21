@@ -130,7 +130,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Why do my line breaks work in captions but not my bio?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Captions and bios go through different cleanup rules. Captions are long-form fields and preserve most line breaks (though very long runs of blank lines still get trimmed). The bio is a short identity field that Instagram sanitizes much more aggressively — trailing spaces are trimmed and consecutive newlines are collapsed on save. That's why the same spacing that survives in a caption dies in a bio, and why the bio needs the U+2800 trick." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Captions and bios go through different cleanup rules. Captions are long-form fields and preserve most line breaks (though very long runs of blank lines still get trimmed). The bio is a short identity field that Instagram sanitizes much more aggressively: trailing spaces are trimmed and consecutive newlines are collapsed on save. That's why the same spacing that survives in a caption dies in a bio, and why the bio needs the U+2800 trick." }
     },
     {
       "@type": "Question",
@@ -180,9 +180,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="key-takeaways">
   <h2>Key Takeaways</h2>
   <ul>
-    <li>Your bio collapsing isn't a bug or your mistake — Instagram's server trims leading/trailing spaces and collapses consecutive newlines on save, as a spam-cleanup rule.</li>
+    <li>Your bio collapsing isn't a bug or your mistake: Instagram's server trims leading/trailing spaces and collapses consecutive newlines on save, as a spam-cleanup rule.</li>
     <li>The classic trap is a trailing space before Enter: the trim eats the space <em>and</em> the line break behind it, merging two lines into one.</li>
-    <li>The braille blank U+2800 (⠀) looks empty but counts as real text, so a "blank" line containing it survives the save — that's the whole trick.</li>
+    <li>The braille blank U+2800 (⠀) looks empty but counts as real text, so a "blank" line containing it survives the save: that's the whole trick.</li>
     <li>Everything counts against the 150-character limit: newlines, invisible blanks, dividers. Write the words first, then spend leftover characters on spacing.</li>
   </ul>
 </section>
@@ -236,7 +236,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="editorial-block">
       <h3>Step 3: Budget the 150 characters: invisible ones included</h3>
-      <p>Every newline, every ⠀, every divider symbol counts against Instagram's 150-character bio limit. Write your actual words first, check the count, and only then spend what's left on spacing and <a href="/guide/dividers-separators-guide/">dividers</a>. Structure is a luxury you buy with leftover characters — more on the trade-off below.</p>
+      <p>Every newline, every ⠀, every divider symbol counts against Instagram's 150-character bio limit. Write your actual words first, check the count, and only then spend what's left on spacing and <a href="/guide/dividers-separators-guide/">dividers</a>. Structure is a luxury you buy with leftover characters, more on the trade-off below.</p>
     </div>
 
     <div class="editorial-block">
@@ -271,7 +271,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="ex-label">Save-proof version (spacing survives)</span>
         <span class="ex-styled">Coffee roaster ☕⏎ Small batches, big opinions⏎ ⠀⏎ ↓ New roast every Friday</span>
       </div>
-      <p>The two versions look nearly identical in the editor — that ␠ (the trailing space) and the difference between an empty line and a ⠀ line are invisible to the eye. But on save, the first collapses to "Coffee roaster ☕ Small batches, big opinions ↓ New roast every Friday" and the second keeps all four lines, spacer included. Invisible inputs, wildly different outputs. That's the whole game.</p>
+      <p>The two versions look nearly identical in the editor: that ␠ (the trailing space) and the difference between an empty line and a ⠀ line are invisible to the eye. But on save, the first collapses to "Coffee roaster ☕ Small batches, big opinions ↓ New roast every Friday" and the second keeps all four lines, spacer included. Invisible inputs, wildly different outputs. That's the whole game.</p>
       <p>If you want the spacer line to carry a visible divider instead of pure emptiness, a row of ┈ or ━ or ୨୧, pull one from the <a href="/library/line-divider-symbols/">line divider symbol library</a>. A visible divider survives the save for the same reason ⠀ does: it's real text, so the collapse rule leaves the line alone.</p>
     </div>
   </section>
@@ -285,8 +285,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="editorial-block">
       <p>It's worth saying plainly: the cleanup rule isn't malice, and it isn't sloppiness. Bios are a favorite canvas for spam: walls of blank lines that shove content off-screen, whitespace tricks that hide links, padding that games search snippets. Trimming stray spaces and collapsing empty lines is <strong>standard abuse-hygiene for a short identity field</strong>. Your artfully spaced bio is collateral damage from a rule aimed at someone else. That's also why the rule is unlikely to ever go away, and why a workaround character beats waiting for a fix.</p>
       <p>Now the honest part. The Save-Proof method has a real cost: <strong>characters.</strong> The bio limit is 150, and everything counts: every newline, every invisible ⠀, every glyph of a divider. A bio with three text lines and two spacer lines spends roughly 6–8 characters on pure structure; add a 12-symbol divider and you've spent 20 characters saying nothing. If your copy is already pushing the limit, spacing is the thing to sacrifice, not words.</p>
-      <p>And know when <em>not</em> to bother. If your bio is one or two short lines, whitespace engineering adds nothing — a single clean line often reads more confident than a stack of fragments. Screen readers also announce braille blanks inconsistently (some skip them, some pause oddly), so a bio built from many spacer lines can be noisier for assistive tech than a compact one. Use one deliberate blank line to separate identity from call-to-action, and stop there. Structure should serve the words, not replace them.</p>
-      <p>One thing this trick does <em>not</em> affect: your reach. Spacing characters and styled text in a bio don't suppress your account — if you've heard otherwise, read the <a href="/guide/instagram-fonts-shadowban-myth/">Instagram fonts shadowban myth</a> piece before you strip your bio bare out of fear.</p>
+      <p>And know when <em>not</em> to bother. If your bio is one or two short lines, whitespace engineering adds nothing: a single clean line often reads more confident than a stack of fragments. Screen readers also announce braille blanks inconsistently (some skip them, some pause oddly), so a bio built from many spacer lines can be noisier for assistive tech than a compact one. Use one deliberate blank line to separate identity from call-to-action, and stop there. Structure should serve the words, not replace them.</p>
+      <p>One thing this trick does <em>not</em> affect: your reach. Spacing characters and styled text in a bio don't suppress your account, if you've heard otherwise, read the <a href="/guide/instagram-fonts-shadowban-myth/">Instagram fonts shadowban myth</a> piece before you strip your bio bare out of fear.</p>
     </div>
   </section>
 
@@ -364,7 +364,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Why do my line breaks work in captions but not my bio?</button>
     <div class="faq-answer">
-      <p>Captions and bios go through different cleanup rules. Captions are long-form fields and preserve most line breaks (though very long runs of blank lines still get trimmed). The bio is a short identity field that Instagram sanitizes much more aggressively — trailing spaces are trimmed and consecutive newlines are collapsed on save. That's why the same spacing that survives in a caption dies in a bio, and why the bio needs the U+2800 trick.</p>
+      <p>Captions and bios go through different cleanup rules. Captions are long-form fields and preserve most line breaks (though very long runs of blank lines still get trimmed). The bio is a short identity field that Instagram sanitizes much more aggressively: trailing spaces are trimmed and consecutive newlines are collapsed on save. That's why the same spacing that survives in a caption dies in a bio, and why the bio needs the U+2800 trick.</p>
     </div>
   </div>
   <div class="faq-item">
