@@ -245,6 +245,27 @@ function planBlock(blockText, tag, code, noopOrdinals, deferOrdinals) {
     bySentence.get(sk).push(i);
   });
 
+  /**
+   * WHICH DASHES ARE EACH OTHER'S PARTNERS.
+   *
+   * Recorded for every same-sentence group of SPACE-SURROUNDED dashes,
+   * independently of how each one was classified above, because the ledger and
+   * the tail rules both get a say after this function returns and either can
+   * convert one side of an aside on its own. A tight dash is never a member: a
+   * range (`2019-2024`) does not delimit anything.
+   */
+  const spacedAt = (at) => (at === 0 || /\s/.test(blockText[at - 1] || '')) && /\s/.test(blockText[at + 1] || '');
+  const perSentence = new Map();
+  all.forEach((at, i) => {
+    if (!spacedAt(at)) return;
+    const k = sentenceOf(at);
+    if (!perSentence.has(k)) perSentence.set(k, []);
+    perSentence.get(k).push(i);
+  });
+  Object.defineProperty(plan, 'pairs', {
+    value: [...perSentence.values()].filter((g) => g.length >= 2), enumerable: false,
+  });
+
   // A dash sitting against punctuation is ambiguous, and its PARTNER must not
   // be converted alone: half a converted aside is worse than none.
   for (const sk of odd) if (bySentence.has(sk)) bySentence.delete(sk);
@@ -260,6 +281,19 @@ function planBlock(blockText, tag, code, noopOrdinals, deferOrdinals) {
         plan[a] = pair[0]; plan[b] = pair[1];
         continue;
       }
+      /**
+       * AN ASIDE THE RULE ABOVE DECLINES IS STILL AN ASIDE.
+       *
+       * Falling through to the per-dash rules below converted the OPENING dash
+       * of a long aside and left the closing one standing, because rule D sees
+       * two commas inside the aside and rule F sees a bare clause after it:
+       * `a chunk of your audience: often older Android phones, certain web
+       * browsers, or specific apps - sees a row of squares.` That shipped on
+       * 69 sentences in 11 languages. The `odd` set two lines down already
+       * states the principle for a punctuation-adjacent partner; this is the
+       * same principle for a partner the 60-character test rejected.
+       */
+      continue;
     }
     if (group.length > 2) continue;                     // ambiguous: judge it
     for (const i of group) {
@@ -282,6 +316,29 @@ function planBlock(blockText, tag, code, noopOrdinals, deferOrdinals) {
     }
   }
   return plan;
+}
+
+/**
+ * BOTH OR NEITHER.
+ *
+ * Runs on the FINAL remedy array, after the plan, the ledger and the tail
+ * rules have each had their say, because any of the three can convert one
+ * dash of an aside on its own and only the finished array shows it. Where a
+ * sentence's spaced dashes disagree, the converted ones are demoted rather
+ * than the unconverted ones promoted: a mark this pass cannot choose is a
+ * judgement, and guessing the partner is how the defect was introduced.
+ *
+ * Returns the demoted ordinals so the caller can account for them as deferred
+ * instead of silently dropping them out of the pending list.
+ */
+function settlePairs(plan, remedies) {
+  const live = (r) => !!r && r !== R.DEFER && r !== R.NOOP;
+  const demoted = [];
+  for (const group of plan.pairs || []) {
+    if (group.every((i) => live(remedies[i])) || group.every((i) => !live(remedies[i]))) continue;
+    for (const i of group) if (live(remedies[i])) { remedies[i] = R.DEFER; demoted.push(i); }
+  }
+  return demoted;
 }
 
 /* ---- applying a remedy to the RAW SOURCE SLICE -------------------------- */
@@ -418,14 +475,19 @@ function convertString(node, code, { rel, defer }) {
   const plan = planBlock(text, 'p', code, null);
   const decided = JUDGED[text];
   const positions = [...text.matchAll(/—/g)].map((m) => m.index);
+  // Tail rules apply here too. Reading only `entries` here let the two key
+  // spaces disagree: a tail moved to a colon stayed a full stop in every
+  // spec, which is how `Click any emoji or combo to copy it.` survived as a
+  // standalone sentence in 36 of them.
+  const remedies = plan.map((p, i) => {
+    let r = (decided && decided[i] && decided[i] !== R.DEFER) ? decided[i] : p;
+    if (r === R.DEFER) { const t = tailRemedy(TAILS, text, positions[i]); if (t) r = t; }
+    return r;
+  });
+  settlePairs(plan, remedies);
   let cur = node;
-  for (let i = plan.length - 1; i >= 0; i--) {         // right to left, as above
-    let remedy = (decided && decided[i] && decided[i] !== R.DEFER) ? decided[i] : plan[i];
-    // Tail rules apply here too. Reading only `entries` here let the two key
-    // spaces disagree: a tail moved to a colon stayed a full stop in every
-    // spec, which is how `Click any emoji or combo to copy it.` survived as a
-    // standalone sentence in 36 of them.
-    if (remedy === R.DEFER) { const t = tailRemedy(TAILS, text, positions[i]); if (t) remedy = t; }
+  for (let i = remedies.length - 1; i >= 0; i--) {     // right to left, as above
+    const remedy = remedies[i];
     if (!remedy || remedy === R.DEFER) { if (defer) defer.push({ rel, code, key: text, n: plan.length }); continue; }
     if (remedy === R.NOOP) continue;
     const nx = applyRemedy(cur, i, remedy);
@@ -485,6 +547,38 @@ function convertFile(rel, { write, defer }) {
   const excluded = new Set();
   for (const sel of [...DROP_SELECTORS, ...UI_SELECTORS, ...HELD]) $(sel).each((_, el) => excluded.add(el));
   const isExcluded = (node) => { for (let n = node; n; n = n.parent) if (excluded.has(n)) return true; return false; };
+
+  /**
+   * WHAT THE PAGE ALSO SAYS WHERE THIS PASS CANNOT REACH.
+   *
+   * The `events/*` template renders its FAQ inside `<footer>`, which is
+   * dropped, so the intro paragraph converted while the footer's copy of the
+   * same sentence could not — and the page then showed one sentence two ways.
+   * A sentence with a twin in a held or dropped region is therefore deferred
+   * rather than converted: the same both-or-neither rule the paired-aside
+   * guard applies inside a sentence, applied across the exclusion boundary.
+   * 40 characters keeps a nav label or a heading from matching prose.
+   */
+  const notATwin = (el) => {
+    const t = (el.tagName || '').toLowerCase();
+    if (t === 'style' || t === 'noscript' || t === 'template') return true;
+    // The JSON-LD is this pass's own MIRROR TARGET, not an independent twin:
+    // counting it here deferred every sentence the schema repeats (2,435
+    // extra blocks) and left the mirror nothing to replay. Every OTHER inline
+    // script IS a twin - `cs/usecase/pismo-pro-bio` renders its compatibility
+    // note from a `note:` string in page JS, so converting only the static
+    // span left the visitor reading the dash the moment that script ran.
+    return t === 'script' && /ld\+json/i.test($(el).attr('type') || '');
+  };
+  const heldText = [...excluded].filter((el) => !notATwin(el))
+    .map((el) => $(el).text()).join(' \u0000 ').replace(/\s+/g, ' ');
+  const TWIN_MIN = 40;
+  const hasHeldTwin = (blockText, at) => {
+    const s0 = blockText.lastIndexOf('. ', at), s1 = blockText.indexOf('. ', at);
+    const sent = blockText.slice(s0 === -1 ? 0 : s0 + 2, s1 === -1 ? blockText.length : s1 + 1)
+      .replace(/\s+/g, ' ').trim();
+    return sent.length >= TWIN_MIN && sent.includes('—') && heldText.includes(sent);
+  };
 
   /**
    * Gather EVERY non-excluded text node, grouped by block, in document order —
@@ -554,6 +648,29 @@ function convertFile(rel, { write, defer }) {
     const plan = planBlock(blockText, tag, code, noop, deferOrd);
     const decided = JUDGED[blockText];
 
+    /* Settled for the WHOLE block before any node is touched: a partner can
+     * live in a different text node from the dash it closes, so a per-node
+     * decision cannot see the pair. `origin` keeps the per-dash accounting
+     * the node loop below reports. */
+    const dashAt = [...blockText.matchAll(/—/g)].map((m) => m.index);
+    const remedies = [], origin = [];
+    for (let g = 0; g < plan.length; g++) {
+      if (decided && decided[g] && decided[g] !== R.DEFER) { remedies[g] = decided[g]; origin[g] = 'judged'; continue; }
+      const p0 = plan[g];
+      if (p0 === R.DEFER || p0 === undefined) {
+        const t = tailRemedy(TAILS, blockText, dashAt[g]);
+        if (t) { remedies[g] = t; origin[g] = 'judged'; } else { remedies[g] = null; origin[g] = 'defer'; }
+        continue;
+      }
+      remedies[g] = p0; origin[g] = p0 === R.NOOP ? 'noop' : 'auto';
+    }
+    for (let g = 0; g < plan.length; g++) {
+      if (origin[g] !== 'defer' && origin[g] !== 'noop' && hasHeldTwin(blockText, dashAt[g])) {
+        remedies[g] = null; origin[g] = 'defer';
+      }
+    }
+    for (const g of settlePairs(plan, remedies)) { remedies[g] = null; origin[g] = 'defer'; }
+
     let seenInBlock = 0;
     for (const bn of nodes) {
       const loc = bn.sourceCodeLocation;
@@ -581,19 +698,13 @@ function convertFile(rel, { write, defer }) {
        * already replaced sits to its right.
        */
       let cur = raw;
+      const applied = new Array(dataDashes).fill(null);   // for the JSON-LD mirror
       for (let i = dataDashes - 1; i >= 0; i--) {
         const g = seenInBlock + i;
-        let remedy;
-        if (decided && decided[g] && decided[g] !== R.DEFER) { remedy = decided[g]; judged++; }
-        else {
-          remedy = plan[g];
-          if (remedy === R.DEFER || remedy === undefined) {
-            const positions = [...blockText.matchAll(/—/g)].map((m) => m.index);
-            const t = tailRemedy(TAILS, blockText, positions[g]);
-            if (t) { remedy = t; judged++; }
-            else { deferred.push({ rel, code, key: blockText, n: plan.length }); remedy = null; }
-          } else if (remedy !== R.NOOP) auto++;
-        }
+        const remedy = remedies[g];
+        if (origin[g] === 'judged') judged++;
+        else if (origin[g] === 'auto') auto++;
+        else if (origin[g] === 'defer') deferred.push({ rel, code, key: blockText, n: plan.length });
         if (!remedy || remedy === R.NOOP) continue;
         /**
          * A DASH THAT OPENS ITS OWN TEXT NODE CANNOT BE CONVERTED HERE.
@@ -609,12 +720,12 @@ function convertFile(rel, { write, defer }) {
          */
         if (i === 0 && /^—/.test(raw)) continue;
         const next = applyRemedy(cur, i, remedy);
-        if (next != null) cur = next;
+        if (next != null) { cur = next; applied[i] = remedy; }
       }
       seenInBlock += dataDashes;
       if (cur !== raw) {
         edits.push({ start: loc.startOffset, end: loc.endOffset, next: cur, prev: raw });
-        if (collapse(raw).length >= 12) pairs.push([raw, cur]);
+        if (collapse(raw).length >= 12) pairs.push([raw, cur, applied]);
       }
     }
   }
@@ -656,23 +767,95 @@ const decode = (s) => s.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&g
 
 function syncJsonLdMirror(html, pairs) {
   if (!pairs.length) return { html, changed: 0 };
-  const dec = pairs.map(([a, b]) => [decode(a).trim(), decode(b).trim()])
-    .filter(([a]) => a.length >= 12 && a.includes('—'))
+  const flat = (s) => s.replace(/\s+/g, ' ').trim();
+  const visible = flat(decode(html.replace(LD_BLOCK, '')));
+
+  /**
+   * THE MATCHING UNIT IS A SENTENCE, NOT A NODE.
+   *
+   * A JSON-LD answer is frequently a SHORTENED retelling of the visible one
+   * (on bs/goticka-slova the visible node is 438 characters and its schema
+   * twin 391), so the node text is not a substring of the value and a
+   * whole-node test mirrors nothing. A sentence survives that: it is also the
+   * unit Google compares a FAQ answer on. The whole node is kept as the first
+   * candidate so an exact page still matches in one step; once it has
+   * converted, its sentences no longer carry a dash and cannot match again.
+   */
+  const SENT = /[^.!?…]*[.!?…]+["'\u2019\u201d)\]]*|[^.!?…]+$/g;
+  const units = [];
+  for (const [a0, b0, rem] of pairs) {
+    const a = flat(decode(a0));
+    if (!a.includes('—') || a.length < 12) continue;
+    const marks = rem || [];
+    units.push([a, marks]);
+    let k = 0;
+    for (const sm of a.match(SENT) || []) {
+      const n = (sm.match(/—/g) || []).length;
+      const t = sm.trim();
+      if (n && t.length >= 25 && t !== a) units.push([t, marks.slice(k, k + n)]);
+      k += n;
+    }
+  }
+  const dec = units
+    .filter(([a]) => !visible.includes(a))
     .sort((x, y) => y[0].length - x[0].length);   // longest first: never a partial hit
+  if (!dec.length) return { html, changed: 0 };
+
+  /**
+   * A QUOTE IS NOT THE SAME CHARACTER ON BOTH SIDES.
+   *
+   * A double quote inside a JSON string has to be escaped, so these pages
+   * were authored with the JSON-LD twin carrying `'ASCII art'` where the
+   * visible text carries `"ASCII art"`. An exact test missed every sentence
+   * containing a quotation. Any quote matches any quote, and a run of
+   * whitespace matches a run of any length.
+   */
+  const QUOTES = /["'\u2018\u2019\u201c\u201d\u00ab\u00bb]/g;
+  const loose = (a) => new RegExp(
+    a.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ +/g, '\\s+')
+     .replace(QUOTES, '["\'\u2018\u2019\u201c\u201d\u00ab\u00bb]'), 'g');
+
   let changed = 0;
   const out = html.replace(LD_BLOCK, (m, open, bodyText, close) => {
     const next = bodyText.replace(/"(?:[^"\\]|\\.)*"/g, (lit) => {
       if (!lit.includes('—')) return lit;
       let parsed; try { parsed = JSON.parse(lit); } catch { return lit; }
       let v = parsed;
-      for (const [a, b] of dec) {
-        if (!v.includes(a)) continue;
-        v = v.split(a).join(b); changed++;
-        // The node began AFTER the space preceding the dash (that space sat
-        // between </strong> and the text node), so replacing the fragment
-        // leaves `Italic : 4`. Close the gap the substitution opened.
-        if (/^[:,.)]/.test(b)) v = v.replace(/[ \t]+([:,.)])/g, '$1');
+      let openedGap = false;
+      for (const [a, marks] of dec) {
+        if (!v.includes('—')) break;
+        const want = (a.match(/—/g) || []).length;
+        /**
+         * THE MATCHED SPAN IS EDITED, NOT REPLACED.
+         *
+         * Writing the converted text over the match would carry the VISIBLE
+         * side's quote characters into the JSON-LD and rewrite text this pass
+         * has no business touching. Running the node's own remedies over the
+         * span moves exactly the dashes and leaves every other character of
+         * the value as its author wrote it.
+         */
+        v = v.replace(loose(a), (span) => {
+          if ((span.match(/—/g) || []).length !== want) return span;
+          let edited = span;
+          for (let k = marks.length - 1; k >= 0; k--) {
+            if (!marks[k] || marks[k] === R.NOOP) continue;
+            const nx = applyRemedy(edited, k, marks[k]);
+            if (nx != null) edited = nx;
+          }
+          if (edited !== span) changed++;
+          if (/^[:,.)]/.test(edited)) openedGap = true;
+          return edited;
+        });
       }
+      /**
+       * The matched span began AFTER the space preceding its dash - that
+       * space sits between `</strong>` and the text node, so it is not part
+       * of the node and `applyRemedy` cannot see it. Left alone it reads
+       * `Bold : sans, serif` in 17 schema strings. Closed only when a span
+       * actually started with a mark, so a locale that spaces its colons is
+       * never touched by a page this pass did not edit that way.
+       */
+      if (openedGap) v = v.replace(/[ \t]+([:,.)])/g, '$1');
       return v === parsed ? lit : JSON.stringify(v);
     });
     return open + next + close;

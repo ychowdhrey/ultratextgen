@@ -378,7 +378,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </tbody>
     </table></div>
     <p>All four are shown live in the stats above, so when a form says your text is too long while your word processor disagrees, you can see exactly which count the form is using. Two platforms need special rules on top:</p>
-    <p><strong>X / Twitter counts by weight, not characters.</strong> Per X's own published algorithm (the <code>twitter-text</code> library), every URL counts as exactly 23, basic Latin letters count as 1, and almost everything else: CJK characters, most emoji, and every "fancy font" Unicode letter counts as <strong>2</strong>. A fully styled 𝗯𝗼𝗹𝗱 post therefore fits only 140 visible letters in the 280 budget. The "X / Twitter post" option in the checker above implements this real algorithm.</p>
+    <p><strong>X / Twitter counts by weight, not characters.</strong> Per X's own published algorithm (the <code>twitter-text</code> library), every URL counts as exactly 23, basic Latin letters count as 1, and almost everything else — CJK characters, most emoji, and every "fancy font" Unicode letter — counts as <strong>2</strong>. A fully styled 𝗯𝗼𝗹𝗱 post therefore fits only 140 visible letters in the 280 budget. The "X / Twitter post" option in the checker above implements this real algorithm.</p>
     <p><strong>SMS is counted in segments, and one character can triple your bill.</strong> A text message holds 160 characters only while every character is in the old GSM-7 alphabet. One emoji, curly quote (’ pasted from Word), or accented letter outside it (ş, ő, ą, Vietnamese diacritics…) silently switches the whole message to Unicode mode: 70 characters per segment, 67 when it splits. The "SMS text message" option above detects this and names the exact character that flipped your message.</p>
   </section>
 
@@ -386,7 +386,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <section class="editorial-section" id="fancy-text">
     <h2>Counting fancy fonts and styled text</h2>
-    <p>Styled Unicode text: 𝐛𝐨𝐥𝐝, 𝓈𝒸𝓇𝒾𝓅𝓉, 𝔤𝔬𝔱𝔥𝔦𝔠 letters from the <a href="/">UltraTextGen generator</a>: looks like normal letters but usually lives in Unicode's supplementary planes, so each letter costs 2 UTF-16 units, 4 bytes, and 2 of X's 280. That's why a 10-letter styled name can be rejected by a 12-character game field. Paste your styled text into the counter above to see its real cost in every counting mode before you use it, and if a name keeps getting rejected, see <a href="/answers/why-was-my-game-name-rejected/">why game names get rejected</a>.</p>
+    <p>Styled Unicode text — 𝐛𝐨𝐥𝐝, 𝓈𝒸𝓇𝒾𝓅𝓉, 𝔤𝔬𝔱𝔥𝔦𝔠 letters from the <a href="/">UltraTextGen generator</a> — looks like normal letters but usually lives in Unicode's supplementary planes, so each letter costs 2 UTF-16 units, 4 bytes, and 2 of X's 280. That's why a 10-letter styled name can be rejected by a 12-character game field. Paste your styled text into the counter above to see its real cost in every counting mode before you use it, and if a name keeps getting rejected, see <a href="/answers/why-was-my-game-name-rejected/">why game names get rejected</a>.</p>
   </section>
 
   <div class="section-divider"></div>

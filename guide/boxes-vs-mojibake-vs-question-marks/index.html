@@ -125,7 +125,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Is there a way to detect the correct encoding automatically?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Tools like Python's chardet/charset-normalizer, or a browser's 'Repair Text Encoding' extensions, can guess an encoding from byte patterns with decent accuracy on real prose. They work by testing which decoding produces the most statistically plausible text for a given language — useful for mojibake, but powerless once the character has already been replaced by a question mark, because there's no pattern left to analyze." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Tools like Python's chardet/charset-normalizer, or a browser's 'Repair Text Encoding' extensions, can guess an encoding from byte patterns with decent accuracy on real prose. They work by testing which decoding produces the most statistically plausible text for a given language: useful for mojibake, but powerless once the character has already been replaced by a question mark, because there's no pattern left to analyze." }
     }
   ]
 }
@@ -351,7 +351,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Why did my styled Unicode text turn into question marks after I saved or emailed it?</button>
     <div class="faq-answer">
-      <p>Somewhere in the pipeline: an old database column, a legacy export, an email gateway, a form field. The text was forced through a narrower character set that doesn't include your styled characters, typically ASCII or Windows-1252. Every character outside that set gets replaced with "?" or U+FFFD. It's a one-way conversion; the original characters aren't recoverable from the result.</p>
+      <p>Somewhere in the pipeline — an old database column, a legacy export, an email gateway, a form field — the text was forced through a narrower character set that doesn't include your styled characters, typically ASCII or Windows-1252. Every character outside that set gets replaced with "?" or U+FFFD. It's a one-way conversion; the original characters aren't recoverable from the result.</p>
     </div>
   </div>
   <div class="faq-item">

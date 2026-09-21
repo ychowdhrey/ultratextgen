@@ -326,7 +326,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <!-- Accent-aware hint: shows only when the input contains diacritics -->
         <div class="accent-notice" id="accentNotice" role="note" hidden>
           <span class="accent-notice-icon" aria-hidden="true">◌́</span>
-          <span class="accent-notice-text">Your text has accent marks. Bold, script, gothic and most other styles now keep <b>é</b> and <b>ữ</b> styled. A few (upside-down, and letters like <b>ł đ ø ß</b> with no accent form) still fall back to plain. <a href="/guide/fancy-fonts-and-accents/">See which styles handle accents →</a></span>
+          <span class="accent-notice-text">Your text has accent marks. Bold, script, gothic and most other styles now keep <b>é</b> and <b>ữ</b> styled — a few (upside-down, and letters like <b>ł đ ø ß</b> with no accent form) still fall back to plain. <a href="/guide/fancy-fonts-and-accents/">See which styles handle accents →</a></span>
           <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Dismiss">✕</button>
         </div>
 
@@ -398,7 +398,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <li><strong>Instagram</strong>: bio, post caption, comments, story stickers: works in every style. Username field: works only with Latin-script styles (bold, italic, cursive, bubble); won&rsquo;t accept Zalgo or fullwidth.</li>
       <li><strong>TikTok</strong>: bio, caption, comments, video description: works in all core styles. The "nickname" field is more permissive than Instagram&rsquo;s username.</li>
       <li><strong>Discord</strong>: server nickname, display name, messages, &ldquo;About me&rdquo;: Unicode fonts work without Nitro. Markdown bold (<code>**text**</code>) only renders inside messages; Unicode bold renders <em>everywhere</em>, including your nickname.</li>
-      <li><strong>LinkedIn</strong>: headline, About section, post body: bold, italic and small caps render reliably. Avoid Zalgo and heavily decorated styles on a professional profile. They trigger recruiter filters and screen-reader issues.</li>
+      <li><strong>LinkedIn</strong>: headline, About section, post body: bold, italic and small caps render reliably. Avoid Zalgo and heavily decorated styles on a professional profile — they trigger recruiter filters and screen-reader issues.</li>
       <li><strong>WhatsApp</strong>: status, group names, broadcasts: all Unicode fonts work. WhatsApp&rsquo;s own <code>*bold*</code>, <code>_italic_</code> and <code>~strike~</code> only render inside chat messages, so Unicode is the only option for status and group names.</li>
       <li><strong>X (Twitter)</strong>: display name, bio, tweets: works everywhere. Some Zalgo styles get visually clipped on mobile.</li>
       <li><strong>Snapchat, Pinterest, Telegram, Signal, iMessage</strong>: bios, captions, messages: all work.</li>
@@ -408,7 +408,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </ul>
     <h3>Why Unicode fonts ≠ regular fonts</h3>
     <p>
-      A regular font (Helvetica, Arial, the LinkedIn Sans typeface, etc.) is a file that lives on your device and tells the screen how to draw a letter. If the website doesn&rsquo;t load that font, the letter still says "A". It just gets drawn in a default font instead. Unicode &ldquo;fonts&rdquo; aren&rsquo;t fonts at all in that sense. They&rsquo;re separate characters in the Unicode standard: A, 𝐀, 𝘈, 𝓐, 𝔄, 𝕬, Ⓐ are all different characters with different code points. That&rsquo;s why they travel: you&rsquo;re not styling the letter A, you&rsquo;re using a different letter entirely that happens to look styled.
+      A regular font (Helvetica, Arial, the LinkedIn Sans typeface, etc.) is a file that lives on your device and tells the screen how to draw a letter. If the website doesn&rsquo;t load that font, the letter still says "A" — it just gets drawn in a default font instead. Unicode &ldquo;fonts&rdquo; aren&rsquo;t fonts at all in that sense. They&rsquo;re separate characters in the Unicode standard: A, 𝐀, 𝘈, 𝓐, 𝔄, 𝕬, Ⓐ are all different characters with different code points. That&rsquo;s why they travel: you&rsquo;re not styling the letter A, you&rsquo;re using a different letter entirely that happens to look styled.
     </p>
     <h3>What&rsquo;s in the library</h3>
     <p>
@@ -863,7 +863,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="faq-answer" data-i18n-html="faq.categories.3.items.2.answer">
     Honestly: mostly no, and this is something most generators won&rsquo;t tell you.
     <br><br>
-    Screen readers: VoiceOver on iOS, TalkBack on Android, NVDA and JAWS on Windows — read each Unicode code point literally. 𝐀 is announced as "Mathematical Bold Capital A," not "A." A LinkedIn headline written entirely in Unicode bold becomes hostile to anyone using a screen reader.
+    Screen readers — VoiceOver on iOS, TalkBack on Android, NVDA and JAWS on Windows — read each Unicode code point literally. 𝐀 is announced as "Mathematical Bold Capital A," not "A." A LinkedIn headline written entirely in Unicode bold becomes hostile to anyone using a screen reader.
     <br><br>
     <strong>How to use Unicode fonts responsibly:</strong><br>
     — Style a word or phrase, not an entire bio.<br>
