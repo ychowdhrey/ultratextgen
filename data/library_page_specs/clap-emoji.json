@@ -57,7 +57,7 @@
       "id": "clap-kaomoji",
       "label": "Kaomoji",
       "h2": "Clapping & Cheering Kaomoji",
-      "intro": "Text-only kaomoji that pair with 👏 for celebration and cheering — handy on platforms or fonts where the emoji itself doesn't render.",
+      "intro": "Text-only kaomoji that pair with 👏 for celebration and cheering, handy on platforms or fonts where the emoji itself doesn't render.",
       "symbols": [
         { "char": "\\(^o^)/", "label": "Cheering Kaomoji" },
         { "char": "ヽ(´▽`)/", "label": "Celebrating Kaomoji" },

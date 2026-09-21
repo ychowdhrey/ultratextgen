@@ -7,7 +7,7 @@
   "breadcrumb": "Cent Sign",
   "hero_h1": "Cent Sign",
   "hero_tagline": "The ¢ that prices a fraction of a dollar, and the one common currency symbol with no dedicated key on almost any keyboard. Click any symbol to copy it instantly.",
-  "intro": "The cent sign (¢, Unicode U+00A2) marks a subunit of currency — one-hundredth of a dollar, as in 99¢. It's one of the oldest currency symbols in the Unicode Latin-1 Supplement block, inherited from legacy 8-bit encodings, which is exactly why it types easily via an Alt code even though almost no keyboard gives it its own key the way $ gets one.",
+  "intro": "The cent sign (¢, Unicode U+00A2) marks a subunit of currency, one-hundredth of a dollar, as in 99¢. It's one of the oldest currency symbols in the Unicode Latin-1 Supplement block, inherited from legacy 8-bit encodings, which is exactly why it types easily via an Alt code even though almost no keyboard gives it its own key the way $ gets one.",
   "date_published": "2026-07-12",
   "date_modified": "2026-07-12",
   "copy_pattern": "single",
@@ -25,7 +25,7 @@
       "id": "confusable-neighbors",
       "label": "Confusable Neighbors",
       "h2": "Symbols Often Mistaken for the Cent Sign",
-      "intro": "These get substituted for ¢ in practice — each is a distinct character with its own meaning.",
+      "intro": "These get substituted for ¢ in practice. Each is a distinct character with its own meaning.",
       "symbols": [
         { "char": "₵", "label": "Cedi Sign (Ghana): Not the Cent Sign" },
         { "char": "₡", "label": "Colón Sign (Costa Rica / El Salvador)" },

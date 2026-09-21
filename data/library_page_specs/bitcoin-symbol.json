@@ -6,7 +6,7 @@
   "canonical": "https://ultratextgen.com/symbol/bitcoin-symbol/",
   "breadcrumb": "Bitcoin Symbol",
   "hero_h1": "Bitcoin Symbol",
-  "hero_tagline": "The currency sign for Bitcoin (₿), added to Unicode in 2017 after real demand — not to be confused with the Thai baht ฿ or the BTC ticker. Click any symbol to copy it instantly.",
+  "hero_tagline": "The currency sign for Bitcoin (₿), added to Unicode in 2017 after real demand, not to be confused with the Thai baht ฿ or the BTC ticker. Click any symbol to copy it instantly.",
   "intro": "The Bitcoin symbol (₿, U+20BF) marks an amount denominated in Bitcoin: a price, a tip jar, a donation line. But unlike the older currency signs Unicode absorbed as routine formatting, ₿ was added in 2017 in direct response to organic demand from a fast-growing user base, and it's worn as an identity badge in bios about as often as it's used to write a number.",
   "date_published": "2026-07-12",
   "date_modified": "2026-07-12",
@@ -26,7 +26,7 @@
       "id": "lookalikes",
       "label": "Look-Alikes to Avoid",
       "h2": "Look-Alikes & Confusables",
-      "intro": "Characters ₿ is regularly mistyped for — same B-with-a-vertical-stroke silhouette, entirely different characters and codepoints.",
+      "intro": "Characters ₿ is regularly mistyped for: same B-with-a-vertical-stroke silhouette, entirely different characters and codepoints.",
       "symbols": [
         { "char": "฿", "label": "Thai Baht Sign (U+0E3F)" },
         { "char": "Ƀ", "label": "Capital B With Stroke (U+0243)" },
@@ -37,7 +37,7 @@
       "id": "currency-symbols",
       "label": "Other Currency Symbols",
       "h2": "Other Currency Symbols",
-      "intro": "The rest of the world's money signs — the neighbors ₿ sits beside in the Currency Symbols block and in most price fields.",
+      "intro": "The rest of the world's money signs: the neighbors ₿ sits beside in the Currency Symbols block and in most price fields.",
       "symbols": [
         { "char": "$", "label": "Dollar Sign" },
         { "char": "¢", "label": "Cent Sign" },
@@ -63,7 +63,7 @@
     {
       "href": "/symbol/rupee-sign/",
       "title": "Rupee Sign",
-      "desc": "A recent, deliberately created currency sign — chosen by public competition in 2010."
+      "desc": "A recent, deliberately created currency sign, chosen by public competition in 2010."
     }
   ]
 }

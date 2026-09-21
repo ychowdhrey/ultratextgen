@@ -7,7 +7,7 @@
  "breadcrumb": "ASCII-Kunst",
  "hero_h1": "ASCII-Kunst",
  "hero_tagline": "Die Bausteine, aus denen Bilder aus Zeichen entstehen: Linien, Blöcke, Punkte und Formen.",
- "intro": "ASCII-Kunst entsteht nicht aus Buchstaben, sondern aus vier Zeichenfamilien: Rahmenzeichen für Linien, Blockelemente für Flächen, Braille-Punkte für feine Schattierungen und geometrische Formen für Akzente. Diese Seite sammelt sie alle zum Kopieren. Wer damit arbeitet, braucht keinen Generator — die Zeichen sind das Werkzeug.",
+ "intro": "ASCII-Kunst entsteht nicht aus Buchstaben, sondern aus vier Zeichenfamilien: Rahmenzeichen für Linien, Blockelemente für Flächen, Braille-Punkte für feine Schattierungen und geometrische Formen für Akzente. Diese Seite sammelt sie alle zum Kopieren. Wer damit arbeitet, braucht keinen Generator. Die Zeichen sind das Werkzeug.",
  "sections": [
   {
    "id": "rahmen",
@@ -129,7 +129,7 @@
    "id": "braille",
    "label": "Braille-Punkte",
    "h2": "Braille-Punkte für feine Texturen",
-   "intro": "Braille-Zeichen bieten acht Punkte pro Zelle — die höchste Auflösung, die reiner Text erreicht.",
+   "intro": "Braille-Zeichen bieten acht Punkte pro Zelle, die höchste Auflösung, die reiner Text erreicht.",
    "symbols": [
     {
      "char": "⠁",
@@ -218,7 +218,7 @@
   "id": "combo-sets",
   "label": "Fertige Bausteine",
   "h2": "Fertige ASCII-Bausteine",
-  "intro": "Komplette Elemente mit einem Klick kopieren — Rahmen, Balken und Trenner."
+  "intro": "Komplette Elemente mit einem Klick kopieren: Rahmen, Balken und Trenner."
  },
  "collection_container_id": "asciiSetsContainer",
  "collections": [

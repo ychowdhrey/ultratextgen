@@ -6,7 +6,7 @@
   "canonical": "https://ultratextgen.com/symbol/diameter-symbol/",
   "breadcrumb": "Diameter Symbol",
   "hero_h1": "Diameter Symbol",
-  "hero_tagline": "The diameter sign (⌀) that precedes circular dimensions on engineering drawings — plus the symbols people mistake for it. Click any symbol to copy it instantly.",
+  "hero_tagline": "The diameter sign (⌀) that precedes circular dimensions on engineering drawings, plus the symbols people mistake for it. Click any symbol to copy it instantly.",
   "intro": "The diameter symbol (⌀, Unicode U+2300) is the circle-with-a-slash mark that goes in front of a measurement to say \"this is a diameter, not a radius.\" It shows up on machining specs, CAD drawings, and manufacturing callouts, and it's routinely swapped for lookalike characters that mean something else entirely.",
   "date_published": "2026-07-12",
   "date_modified": "2026-07-12",
@@ -28,7 +28,7 @@
       "id": "confusable-neighbors",
       "label": "Confusable Neighbors",
       "h2": "Symbols Often Mistaken for the Diameter Sign",
-      "intro": "These look close enough to ⌀ to get substituted by accident — each one has a different meaning.",
+      "intro": "These look close enough to ⌀ to get substituted by accident. Each one has a different meaning.",
       "symbols": [
         {
           "char": "∅",

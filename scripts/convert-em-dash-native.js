@@ -330,6 +330,17 @@ const LEDGER_PATH = path.join(REPO, 'data/em_dash_rewrites.json');
 const LEDGER = fs.existsSync(LEDGER_PATH)
   ? JSON.parse(fs.readFileSync(LEDGER_PATH, 'utf8')) : { entries: {} };
 const JUDGED = LEDGER.entries || {};
+/**
+ * `tails` is the same kind of decision as `entries`, keyed by what FOLLOWS
+ * the dash rather than by the whole block — because one CTA sentence recurs
+ * verbatim across dozens of pages that are otherwise unrelated, and 110
+ * identical judgements is not 110 decisions. Matched on the exact remainder
+ * sentence, so it can never fire on a sentence somebody has not read. Ranked
+ * by leverage, which is the method docs/em-dash-policy.md already prescribes
+ * for this class of pass.
+ */
+const TAILS = LEDGER.tails || {};
+const tailAfter = (text, at) => text.slice(at + 1).trim().split(/(?<=[.!?])\s/)[0];
 const collapse = (s) => s.replace(/\s+/g, ' ').trim();
 
 /* ---- the file pass ------------------------------------------------------ */
@@ -430,8 +441,10 @@ function convertFile(rel, { write, defer }) {
         else {
           remedy = plan[g];
           if (remedy === R.DEFER || remedy === undefined) {
-            deferred.push({ rel, code, key: blockText, n: plan.length });
-            remedy = null;
+            const positions = [...blockText.matchAll(/—/g)].map((m) => m.index);
+            const t = positions[g] === undefined ? null : TAILS[tailAfter(blockText, positions[g])];
+            if (t) { remedy = t; judged++; }
+            else { deferred.push({ rel, code, key: blockText, n: plan.length }); remedy = null; }
           } else if (remedy !== R.NOOP) auto++;
         }
         if (!remedy || remedy === R.NOOP) continue;

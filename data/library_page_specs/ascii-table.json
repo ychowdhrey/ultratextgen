@@ -71,7 +71,7 @@
       "id": "ascii-letters",
       "label": "Letters 65–122",
       "h2": "ASCII Letters (65–90 and 97–122)",
-      "intro": "Uppercase letters run from 65 (A) to 90 (Z); lowercase from 97 (a) to 122 (z) — always uppercase plus 32.",
+      "intro": "Uppercase letters run from 65 (A) to 90 (Z); lowercase from 97 (a) to 122 (z), always uppercase plus 32.",
       "symbols": [
         { "char": "A", "label": "65 / 0x41 / 0b1000001 / 0o101: Latin Capital Letter A" },
         { "char": "B", "label": "66 / 0x42 / 0b1000010 / 0o102: Latin Capital Letter B" },

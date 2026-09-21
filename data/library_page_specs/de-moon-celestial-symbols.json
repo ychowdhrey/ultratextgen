@@ -70,7 +70,7 @@
    "id": "halbmond",
    "label": "Halbmond-Zeichen",
    "h2": "Halbmond-Zeichen",
-   "intro": "Die einfarbigen typografischen Zeichen — für Text, in dem bunte Emojis stören.",
+   "intro": "Die einfarbigen typografischen Zeichen, für Text, in dem bunte Emojis stören.",
    "symbols": [
     {
      "char": "☽",
@@ -162,7 +162,7 @@
    "id": "sonnenlauf",
    "label": "Sonnenlauf-Sequenz",
    "h2": "Sonnenlauf-Sequenz",
-   "intro": "Der Tagesbogen von Sonnenaufgang bis Nacht — als Folge kopierbar.",
+   "intro": "Der Tagesbogen von Sonnenaufgang bis Nacht, als Folge kopierbar.",
    "symbols": [
     {
      "char": "🌅",
@@ -284,7 +284,7 @@
   "id": "celestial-collections",
   "label": "Himmels-Sets",
   "h2": "Himmelsfolgen",
-  "intro": "Kopiere eine komplette Himmelsfolge mit einem Klick — die acht Mondphasen in astronomischer Reihenfolge und den Sonnenlauf vom Sonnenaufgang bis zur Nacht."
+  "intro": "Kopiere eine komplette Himmelsfolge mit einem Klick: die acht Mondphasen in astronomischer Reihenfolge und den Sonnenlauf vom Sonnenaufgang bis zur Nacht."
  },
  "collection_container_id": "celestialCollectionsContainer",
  "collections": [
