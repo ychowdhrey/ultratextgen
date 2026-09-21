@@ -159,7 +159,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Hvorfor vises stjernene i stedet for fet tekst?",
-      "acceptedAnswer": { "@type": "Answer", "text": "To vanlige årsaker: det er et mellomrom mellom stjernene og ordet (`** tekst **` blir ikke fett — `**tekst**` blir det), eller teksten står inne i en kodeblokk (backtick-tegn slår av Markdown). Husk også at Markdown bare virker i meldinger, aldri i navn." }
+      "acceptedAnswer": { "@type": "Answer", "text": "To vanlige årsaker: det er et mellomrom mellom stjernene og ordet (`** tekst **` blir ikke fett, `**tekst**` blir det), eller teksten står inne i en kodeblokk (backtick-tegn slår av Markdown). Husk også at Markdown bare virker i meldinger, aldri i navn." }
     }
   ]
 }
@@ -205,7 +205,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2>Kort oppsummert</h2>
   <ul>
     <li>Discord har tre urelaterte tekstsystemer: <strong>Markdown</strong> (meldinger), <strong>Unicode-«skrifter»</strong> (navn overalt), og <strong>Nitro</strong> (betalte visningsnavn-stiler).</li>
-    <li>Markdown som <code>**fet**</code> gjengis bare i meldinger — det virker aldri i brukernavn, kallenavn eller server-/kanalnavn.</li>
+    <li>Markdown som <code>**fet**</code> gjengis bare i meldinger: det virker aldri i brukernavn, kallenavn eller server-/kanalnavn.</li>
     <li>Unicode-«skrifter» virker i alle navnefelt, men kan vises som firkanter på enkelte enheter og ødelegge for skjermlesere.</li>
     <li>Nitro gir visningsnavnet ditt ekte farge og effekter, men inne i en server vinner rollefargen din, og bare skrifttypen vises.</li>
   </ul>
@@ -250,7 +250,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><code>||spoiler||</code> → skjult til du klikker</li>
         <li><code>&gt; sitat</code> og <code>`kode`</code></li>
       </ul>
-      <p>Dette er den <em>riktige</em> måten å formatere en melding på — det forblir ekte tekst, så det er søkbart og tilgjengelig. Haken er de to feilene som gjør at det «ikke virker»:</p>
+      <p>Dette er den <em>riktige</em> måten å formatere en melding på: det forblir ekte tekst, så det er søkbart og tilgjengelig. Haken er de to feilene som gjør at det «ikke virker»:</p>
       <div class="compare-grid">
         <div class="compare-card variant-muted">
           <span class="compare-badge">Blir ikke fett</span>
@@ -277,7 +277,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="mood-explainer">
         <div class="mood-example"><strong>@Brukernavnet avviser det.</strong> Det unike brukernavnet ditt (det med små bokstaver etter @) tillater bare a–z, 0–9, <code>_</code> og <code>.</code> – for nevninger, søk og ruting. Lim en fancy skrift der, og Discord nekter å lagre den. Style <em>visningsnavnet</em> i stedet.</div>
       </div>
-      <p>To ærlige forbehold: Unicode-navn kan vises som firkanter på enkelte enheter (spesielt eldre Android), og de er vanskelige for skjermlesere. Velg en trygg stil (fet, kursiv, small caps) og hold den smakfull — mange store servere modererer navn som er vanskelige å lese eller er i zalgo.</p>
+      <p>To ærlige forbehold: Unicode-navn kan vises som firkanter på enkelte enheter (spesielt eldre Android), og de er vanskelige for skjermlesere. Velg en trygg stil (fet, kursiv, small caps) og hold den smakfull. Mange store servere modererer navn som er vanskelige å lese eller er i zalgo.</p>
     </div>
   </section>
 
@@ -292,8 +292,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="mood-explainer">
         <div class="mood-example">Inne i en server overstyrer <strong>rollefargen</strong> din Nitro-fargen, og effektene fjernes, så andre medlemmer ser som regel bare <em>skrifttypen</em>, ikke fargen eller animasjonen. Hele effekten vises stort sett på profilen din, ikke i medlemslisten eller chatten.</div>
       </div>
-      <p>Gratiskontoer kan åpne menyen og <strong>forhåndsvise</strong> en stil, men å lagre en er kun for Nitro — den forhåndsvis-så-betalingsmur er nettopp derfor så mange nå spør om Nitro i det hele tatt kreves for skrifter. Det er et rimelig spørsmål om akkurat denne funksjonen; det er ingen endring av Unicode-stiling, som forblir gratis uansett.</p>
-      <p>Så Nitro er verdt det om du vil ha et forseggjort profilkort og en distinkt visningsskrift overalt. Det er <em>ikke</em> måten å få farget tekst inn i en samtale — det er et annet verktøy (neste avsnitt).</p>
+      <p>Gratiskontoer kan åpne menyen og <strong>forhåndsvise</strong> en stil, men å lagre en er kun for Nitro. Den forhåndsvis-så-betalingsmur er nettopp derfor så mange nå spør om Nitro i det hele tatt kreves for skrifter. Det er et rimelig spørsmål om akkurat denne funksjonen; det er ingen endring av Unicode-stiling, som forblir gratis uansett.</p>
+      <p>Så Nitro er verdt det om du vil ha et forseggjort profilkort og en distinkt visningsskrift overalt. Det er <em>ikke</em> måten å få farget tekst inn i en samtale. Det er et annet verktøy (neste avsnitt).</p>
     </div>
   </section>
 
@@ -340,7 +340,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA Card -->
   <div class="cta-card">
     <h3>Lag et navn klart for Discord</h3>
-    <p>Lag en Unicode-stil som er trygg på alle enheter, kopier den, og lim den inn i visningsnavnet eller kallenavnet på serveren — ingen Nitro nødvendig.</p>
+    <p>Lag en Unicode-stil som er trygg på alle enheter, kopier den, og lim den inn i visningsnavnet eller kallenavnet på serveren. Ingen Nitro nødvendig.</p>
     <a href="/no/" class="cta-btn">Åpne tekstgeneratoren →</a>
   </div>
 
@@ -388,7 +388,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Hvorfor vises stjernene i stedet for fet tekst?</button>
     <div class="faq-answer">
-      <p>To vanlige årsaker: det er et mellomrom mellom stjernene og ordet (<code>** tekst **</code> blir ikke fett — <code>**tekst**</code> blir det), eller teksten står inne i en kodeblokk (backtick-tegn slår av Markdown). Husk også at Markdown bare virker i meldinger, aldri i navn.</p>
+      <p>To vanlige årsaker: det er et mellomrom mellom stjernene og ordet (<code>** tekst **</code> blir ikke fett, <code>**tekst**</code> blir det), eller teksten står inne i en kodeblokk (backtick-tegn slår av Markdown). Husk også at Markdown bare virker i meldinger, aldri i navn.</p>
     </div>
   </div>
 </section>

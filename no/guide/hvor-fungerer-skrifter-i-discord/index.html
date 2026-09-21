@@ -149,12 +149,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Kan jeg bruke fine skrifter i Discord-visningsnavnet mitt?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Ja. Visningsnavn, kallenavn på server, rollenavn, servernavn, kanalnavn og «Om meg» godtar alle Unicode-skrifttegn og emoji. Lag den stiliserte teksten, og lim så de ferdige tegnene inn i feltet — det er ingenting å skru på. Foretrekk lesbare stiler som fet, kursiv eller small caps, slik at medlemmer på eldre enheter og skjermlesere fortsatt kan lese deg." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Ja. Visningsnavn, kallenavn på server, rollenavn, servernavn, kanalnavn og «Om meg» godtar alle Unicode-skrifttegn og emoji. Lag den stiliserte teksten, og lim så de ferdige tegnene inn i feltet. Det er ingenting å skru på. Foretrekk lesbare stiler som fet, kursiv eller small caps, slik at medlemmer på eldre enheter og skjermlesere fortsatt kan lese deg." }
     },
     {
       "@type": "Question",
       "name": "Hvorfor mistet kanalnavnet mitt de store bokstavene?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Navn på tekstkanaler normaliseres: Discord gjør vanlige A–Z om til små bokstaver og bytter mellomrom med bindestrek, så «General Chat» blir «general-chat». Unicode-skrifttegn er ikke vanlige bokstaver, så de går uendret gjennom — 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 beholder de store bokstavene fordi det er matematisk fete tegn, ikke A–Z. Navn på talekanaler og kategorier hopper over denne normaliseringen og beholder mellomrom og store bokstaver." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Navn på tekstkanaler normaliseres: Discord gjør vanlige A–Z om til små bokstaver og bytter mellomrom med bindestrek, så «General Chat» blir «general-chat». Unicode-skrifttegn er ikke vanlige bokstaver, så de går uendret gjennom: 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 beholder de store bokstavene fordi det er matematisk fete tegn, ikke A–Z. Navn på talekanaler og kategorier hopper over denne normaliseringen og beholder mellomrom og store bokstaver." }
     },
     {
       "@type": "Question",
@@ -209,7 +209,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="key-takeaways">
   <h2>Kort oppsummert</h2>
   <ul>
-    <li>Det unike <strong>@brukernavnet</strong> godtar bare små bokstaver a–z, 0–9, understrek og punktum. Lim en fancy skrift der, og du får «ugyldig brukernavn» — hver gang, med hensikt.</li>
+    <li>Det unike <strong>@brukernavnet</strong> godtar bare små bokstaver a–z, 0–9, understrek og punktum. Lim en fancy skrift der, og du får «ugyldig brukernavn», hver gang, med hensikt.</li>
     <li>Hvert <strong>presentasjonsfelt</strong> (visningsnavn, kallenavn på server, rolle, server- og kanalnavn, «Om meg») godtar Unicode-skrifter og emoji uten noen triks.</li>
     <li><strong>Markdown gjengis bare i meldinger</strong> (pluss det grunnleggende i «Om meg»). I hvert navnefelt blir stjernene bare stående.</li>
     <li>Stiliserte navn har en reell kostnad: <kbd>Ctrl+K</kbd> finner ikke 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈 når du skriver «aesthetic», skjermlesere snubler, og eldre Android-telefoner kan vise firkanter.</li>
@@ -307,7 +307,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Gjengitt stil</span>
     <h2>Hvor Markdown virker: og hvor det bare blir stående</h2>
     <div class="editorial-block">
-      <p>Markdown er den andre typen stil: symboler som <code>**fet**</code> som Discord konverterer når det <em>gjengir</em> en melding. Kartet viser at territoriet er bitte lite — <strong>meldinger, pluss grunnleggende formatering i «Om meg»</strong>. Skriv <code>**Nova**</code> inn i et kallenavnfelt, og stjernene lagres som bokstavelige tegn, fordi navnefelt lagres og vises rått; det er ingen gjengivelses-runde som konverterer dem.</p>
+      <p>Markdown er den andre typen stil: symboler som <code>**fet**</code> som Discord konverterer når det <em>gjengir</em> en melding. Kartet viser at territoriet er bitte lite: <strong>meldinger, pluss grunnleggende formatering i «Om meg»</strong>. Skriv <code>**Nova**</code> inn i et kallenavnfelt, og stjernene lagres som bokstavelige tegn, fordi navnefelt lagres og vises rått; det er ingen gjengivelses-runde som konverterer dem.</p>
       <p>Det er den praktiske delingen å huske: <strong>gjengitt stil (Markdown) for det du sier, innlimt stil (Unicode) for det du heter.</strong> Hele mekanikken (spoiler-koder, kodeblokker, Nitro-laget og de klassiske «hvorfor blir ikke stjernene mine fete»-feilene) finner du i søsterguiden vår, <a href="/no/guide/discord-tekstformatering-forklart/">Discord-tekstformatering, dekodet</a>.</p>
       <p>Ett spesialtilfelle verdt å nevne: <strong>farget tekst</strong>. Det finnes bare inne i meldinger, kun via ANSI-kodeblokker, med åtte faste farger og skjør mobilstøtte. Ingen navnefelt noe sted i Discord godtar farge.</p>
     </div>
@@ -325,7 +325,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="compare-grid">
       <div class="compare-card variant-muted">
         <span class="compare-badge">Søk ryker</span>
-        <p><kbd>Ctrl+K</kbd>, medlemssøk og autofullføring av nevninger sammenligner bokstavelige tegn. Å skrive «aesthetic» finner aldri <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong> — de deler null tegn.</p>
+        <p><kbd>Ctrl+K</kbd>, medlemssøk og autofullføring av nevninger sammenligner bokstavelige tegn. Å skrive «aesthetic» finner aldri <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong>: de deler null tegn.</p>
       </div>
       <div class="compare-card variant-muted">
         <span class="compare-badge">Skjermlesere snubler</span>
@@ -346,7 +346,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA Card -->
   <div class="cta-card">
     <h3>Lag et navn klart for Discord →</h3>
-    <p>Lag et Unicode-navn som er trygt på alle enheter, og lim det inn i visningsnavnet, kallenavnet eller kanallisten — hvert felt kartet markerer som åpent.</p>
+    <p>Lag et Unicode-navn som er trygt på alle enheter, og lim det inn i visningsnavnet, kallenavnet eller kanallisten: hvert felt kartet markerer som åpent.</p>
     <a href="/no/" class="cta-btn">Åpne tekstgeneratoren →</a>
   </div>
 
@@ -382,13 +382,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Kan jeg bruke fine skrifter i Discord-visningsnavnet mitt?</button>
     <div class="faq-answer">
-      <p>Ja. Visningsnavn, kallenavn på server, rollenavn, servernavn, kanalnavn og «Om meg» godtar alle Unicode-skrifttegn og emoji. Lag den stiliserte teksten, og lim så de ferdige tegnene inn i feltet — det er ingenting å skru på. Foretrekk lesbare stiler som fet, kursiv eller small caps, slik at medlemmer på eldre enheter og skjermlesere fortsatt kan lese deg.</p>
+      <p>Ja. Visningsnavn, kallenavn på server, rollenavn, servernavn, kanalnavn og «Om meg» godtar alle Unicode-skrifttegn og emoji. Lag den stiliserte teksten, og lim så de ferdige tegnene inn i feltet. Det er ingenting å skru på. Foretrekk lesbare stiler som fet, kursiv eller small caps, slik at medlemmer på eldre enheter og skjermlesere fortsatt kan lese deg.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Hvorfor mistet kanalnavnet mitt de store bokstavene?</button>
     <div class="faq-answer">
-      <p>Navn på tekstkanaler normaliseres: Discord gjør vanlige A–Z om til små bokstaver og bytter mellomrom med bindestrek, så «General Chat» blir «general-chat». Unicode-skrifttegn er ikke vanlige bokstaver, så de går uendret gjennom — 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 beholder de store bokstavene fordi det er matematisk fete tegn, ikke A–Z. Navn på talekanaler og kategorier hopper over denne normaliseringen og beholder mellomrom og store bokstaver.</p>
+      <p>Navn på tekstkanaler normaliseres: Discord gjør vanlige A–Z om til små bokstaver og bytter mellomrom med bindestrek, så «General Chat» blir «general-chat». Unicode-skrifttegn er ikke vanlige bokstaver, så de går uendret gjennom: 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 beholder de store bokstavene fordi det er matematisk fete tegn, ikke A–Z. Navn på talekanaler og kategorier hopper over denne normaliseringen og beholder mellomrom og store bokstaver.</p>
     </div>
   </div>
   <div class="faq-item">
