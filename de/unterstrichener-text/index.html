@@ -81,12 +81,12 @@
     {
       "@type": "Question",
       "name": "Wie schreibt man unterstrichenen Text?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Tippe deinen Text in das Feld oben — die Versionen mit einfacher Linie (T̲e̲x̲t̲), doppelter Linie (T̳e̳x̳t̳) und Wellenlinie (T̰ḛx̰t̰) erscheinen sofort. Tippe auf Kopieren und füge sie ein, wo du willst. Da die Linie ein Unicode-Zeichen unter dem Buchstaben ist, bleibt sie selbst in Feldern erhalten, die kein Unterstreichen unterstützen." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Tippe deinen Text in das Feld oben: die Versionen mit einfacher Linie (T̲e̲x̲t̲), doppelter Linie (T̳e̳x̳t̳) und Wellenlinie (T̰ḛx̰t̰) erscheinen sofort. Tippe auf Kopieren und füge sie ein, wo du willst. Da die Linie ein Unicode-Zeichen unter dem Buchstaben ist, bleibt sie selbst in Feldern erhalten, die kein Unterstreichen unterstützen." }
     },
     {
       "@type": "Question",
       "name": "Wie unterstreicht man Text auf dem Handy?",
-      "acceptedAnswer": { "@type": "Answer", "text": "WhatsApp hat Abkürzungen für fett (*Text*) und durchgestrichen (~Text~), aber keine fürs Unterstreichen — deshalb ist Unicode der einzige Weg. Discord ist anders: Text zwischen zwei Unterstriche zu setzen (__Text__) erzeugt eine echte native Unterstreichung in der Nachricht. Überall sonst (Instagram, WhatsApp-Status, TikTok, Nickname) tippst du hier und kopierst die unterstrichene Version." }
+      "acceptedAnswer": { "@type": "Answer", "text": "WhatsApp hat Abkürzungen für fett (*Text*) und durchgestrichen (~Text~), aber keine fürs Unterstreichen, deshalb ist Unicode der einzige Weg. Discord ist anders: Text zwischen zwei Unterstriche zu setzen (__Text__) erzeugt eine echte native Unterstreichung in der Nachricht. Überall sonst (Instagram, WhatsApp-Status, TikTok, Nickname) tippst du hier und kopierst die unterstrichene Version." }
     },
     {
       "@type": "Question",
@@ -101,7 +101,7 @@
     {
       "@type": "Question",
       "name": "Funktioniert das auch mit Umlauten (ä, ö, ü, ß) und anderen Schriften?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Ja. Die Linie beruht auf einem eigenen kombinierenden Zeichen und nicht auf einer Ersatzbuchstaben-Tabelle: sie läuft also unter jedem Buchstaben durch, einschließlich ä, ö, ü, ß und nicht-lateinischer Schriften. Anders als bei fettem Unicode musst du deutsche Sonderzeichen nicht vereinfachen. In manchen älteren Apps sitzt die Linie eventuell nicht exakt am Buchstaben — prüfe es nach dem Einfügen." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Ja. Die Linie beruht auf einem eigenen kombinierenden Zeichen und nicht auf einer Ersatzbuchstaben-Tabelle: sie läuft also unter jedem Buchstaben durch, einschließlich ä, ö, ü, ß und nicht-lateinischer Schriften. Anders als bei fettem Unicode musst du deutsche Sonderzeichen nicht vereinfachen. In manchen älteren Apps sitzt die Linie eventuell nicht exakt am Buchstaben. Prüfe es nach dem Einfügen." }
     }
   ]
 }
@@ -140,7 +140,7 @@
   <div class="hero-inner">
     <div class="hero-card">
       <h1 class="hero-headline">Unterstrichener Text — kopieren und einfügen</h1>
-      <p class="hero-tagline">Tippe deinen Text, und er wird sofort unterstrichen — einfache Linie, doppelte Linie und Wellenlinie. Füge ihn in die Instagram-Bio, den WhatsApp-Status, Überschriften und Nicknamen ein; die Linie bleibt überall erhalten.</p>
+      <p class="hero-tagline">Tippe deinen Text, und er wird sofort unterstrichen: einfache Linie, doppelte Linie und Wellenlinie. Füge ihn in die Instagram-Bio, den WhatsApp-Status, Überschriften und Nicknamen ein; die Linie bleibt überall erhalten.</p>
       <div class="input-wrapper">
         <textarea class="main-input" id="mainInput" placeholder="Unterstrichener Text..." maxlength="500" autofocus=""></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
@@ -171,11 +171,11 @@
 
   <section class="editorial-section">
     <h2>Unterstrichener Unicode-Text: die Linie, die überall mitkommt</h2>
-    <p class="editorial-intro">Der <strong>unterstrichene Text</strong> hier ist keine Formatierung wie in Word — an jeden Buchstaben wird ein kombinierendes Unicode-Zeichen gehängt, dessen Form bereits eine Linie ist. Deshalb wandert die Linie beim Kopieren mit: in die Instagram-Bio ohne Unterstreichen-Button, in den WhatsApp-Status, in die TikTok-Beschreibung und sogar in den Spiel-Nickname.</p>
+    <p class="editorial-intro">Der <strong>unterstrichene Text</strong> hier ist keine Formatierung wie in Word: an jeden Buchstaben wird ein kombinierendes Unicode-Zeichen gehängt, dessen Form bereits eine Linie ist. Deshalb wandert die Linie beim Kopieren mit: in die Instagram-Bio ohne Unterstreichen-Button, in den WhatsApp-Status, in die TikTok-Beschreibung und sogar in den Spiel-Nickname.</p>
     <div class="block-example">
       <strong>Beispiel:</strong> «Text» → T̲e̲x̲t̲ (einfache Linie), T̳e̳x̳t̳ (doppelte Linie), T̰ḛx̰t̰ (Wellenlinie)
     </div>
-    <p>In Discord erzeugen zwei Unterstriche (__Text__) eine echte, native Unterstreichung — das ist eine App-eigene Abkürzung. WhatsApp hat für Unterstreichen gar keine; die Unicode-Variante bleibt dagegen überall unterstrichen, weil die Linie Teil des Zeichens selbst ist.</p>
+    <p>In Discord erzeugen zwei Unterstriche (__Text__) eine echte, native Unterstreichung. Das ist eine App-eigene Abkürzung. WhatsApp hat für Unterstreichen gar keine; die Unicode-Variante bleibt dagegen überall unterstrichen, weil die Linie Teil des Zeichens selbst ist.</p>
   </section>
 
   <section class="editorial-section glyph-section">
@@ -208,7 +208,7 @@
 
   <section class="editorial-section">
     <h2>Wo ist unterstrichener Text nützlich?</h2>
-    <p class="editorial-intro">Die Aufgabe der Unterstreichung ist Betonung — der sauberste Weg, ein Wort von den anderen abzuheben.</p>
+    <p class="editorial-intro">Die Aufgabe der Unterstreichung ist Betonung, der sauberste Weg, ein Wort von den anderen abzuheben.</p>
     <div class="block-example">
       — <strong>Überschrift / Schlüsselwort</strong>: mach ein einzelnes Wort in deiner Bio w̲i̲c̲h̲t̲i̲g̲<br>— <strong>Preis / Aktion</strong>: betone Formulierungen wie «nur heute»<br>— <strong>Nickname und Bio</strong>: unterstreiche einen Teil deines Spitznamens<br>— <strong>Aufmerksamkeit</strong>: hebe ein Wort in einem Kommentar oder einer Nachricht hervor
     </div>
@@ -232,11 +232,11 @@
     </div>
   </section>
     <h2 class="faq-category">Fragen zu unterstrichenem Text</h2>
-    <div class="faq-item"><button class="faq-question" type="button">Wie schreibt man unterstrichenen Text?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Tippe deinen Text in das Feld oben — die Versionen mit einfacher Linie (T̲e̲x̲t̲), doppelter Linie (T̳e̳x̳t̳) und Wellenlinie (T̰ḛx̰t̰) erscheinen sofort. Tippe auf Kopieren und füge sie ein, wo du willst. Da die Linie ein Unicode-Zeichen unter dem Buchstaben ist, bleibt sie selbst in Feldern erhalten, die kein Unterstreichen unterstützen.</div></div>
-    <div class="faq-item"><button class="faq-question" type="button">Wie unterstreicht man Text auf dem Handy?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">WhatsApp hat Abkürzungen für fett (*Text*) und durchgestrichen (~Text~), aber keine fürs Unterstreichen — deshalb ist Unicode der einzige Weg. Discord ist anders: Text zwischen zwei Unterstriche zu setzen (__Text__) erzeugt eine echte native Unterstreichung in der Nachricht. Überall sonst (Instagram, WhatsApp-Status, TikTok, Nickname) tippst du hier und kopierst die unterstrichene Version.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">Wie schreibt man unterstrichenen Text?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Tippe deinen Text in das Feld oben: die Versionen mit einfacher Linie (T̲e̲x̲t̲), doppelter Linie (T̳e̳x̳t̳) und Wellenlinie (T̰ḛx̰t̰) erscheinen sofort. Tippe auf Kopieren und füge sie ein, wo du willst. Da die Linie ein Unicode-Zeichen unter dem Buchstaben ist, bleibt sie selbst in Feldern erhalten, die kein Unterstreichen unterstützen.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">Wie unterstreicht man Text auf dem Handy?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">WhatsApp hat Abkürzungen für fett (*Text*) und durchgestrichen (~Text~), aber keine fürs Unterstreichen, deshalb ist Unicode der einzige Weg. Discord ist anders: Text zwischen zwei Unterstriche zu setzen (__Text__) erzeugt eine echte native Unterstreichung in der Nachricht. Überall sonst (Instagram, WhatsApp-Status, TikTok, Nickname) tippst du hier und kopierst die unterstrichene Version.</div></div>
     <div class="faq-item"><button class="faq-question" type="button">Kann man unterstrichenen Text auf Instagram verwenden?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Ja. Instagram hat keinen Unterstreichen-Button, aber unterstrichene Unicode-Zeichen werden in der Bio, im Anzeigenamen, in der Bildunterschrift und in Kommentaren problemlos angezeigt. Hier kopieren, bei Instagram einfügen. Nur das Feld für den Benutzernamen (@) nimmt sie nicht an: dort gelten nur einfache Buchstaben, Ziffern, Punkt und Unterstrich.</div></div>
     <div class="faq-item"><button class="faq-question" type="button">Was ist der Unterschied zwischen den Unterstreichungsstilen?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Die einfache Linie (T̲e̲x̲t̲) ist die klassische Unterstreichung — am besten lesbar für Betonung und wichtige Wörter. Die doppelte Linie (T̳e̳x̳t̳) ist kräftiger und auffälliger. Die Wellenlinie (T̰ḛx̰t̰) erinnert an die rote Fehlermarkierung in Textprogrammen — gut für ironische Betonung oder ein «schau dir das mal an». Alle drei werden gleich kopiert und eingefügt.</div></div>
-    <div class="faq-item"><button class="faq-question" type="button">Funktioniert das auch mit Umlauten (ä, ö, ü, ß) und anderen Schriften?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Ja. Die Linie beruht auf einem eigenen kombinierenden Zeichen und nicht auf einer Ersatzbuchstaben-Tabelle: sie läuft also unter jedem Buchstaben durch, einschließlich ä, ö, ü, ß und nicht-lateinischer Schriften. Anders als bei fettem Unicode musst du deutsche Sonderzeichen nicht vereinfachen. In manchen älteren Apps sitzt die Linie eventuell nicht exakt am Buchstaben — prüfe es nach dem Einfügen.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">Funktioniert das auch mit Umlauten (ä, ö, ü, ß) und anderen Schriften?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Ja. Die Linie beruht auf einem eigenen kombinierenden Zeichen und nicht auf einer Ersatzbuchstaben-Tabelle: sie läuft also unter jedem Buchstaben durch, einschließlich ä, ö, ü, ß und nicht-lateinischer Schriften. Anders als bei fettem Unicode musst du deutsche Sonderzeichen nicht vereinfachen. In manchen älteren Apps sitzt die Linie eventuell nicht exakt am Buchstaben. Prüfe es nach dem Einfügen.</div></div>
 
     <!-- Language Switcher -->
     <div class="lang-switcher" role="navigation" aria-label="Sprachauswahl">
