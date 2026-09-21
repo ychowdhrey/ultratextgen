@@ -410,7 +410,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <section class="editorial-section" aria-labelledby="intro-heading">
     <h2 id="intro-heading">Hvad denne seje skrifttype-generator faktisk gør</h2>
     <p>
-      UltraTextGen er en gratis Unicode-skrifttypegenerator. Du skriver almindelig tekst, den udskifter hvert bogstav med et stylet tegn, der findes inde i selve Unicode-standarden, og du kopierer resultatet, hvor du vil bruge det: en Instagram-bio, en TikTok-billedtekst, et Discord-visningsnavn, en LinkedIn-overskrift, en Roblox-profil, en WhatsApp-status, endda et emnefelt i en e-mail. Fordi de stylede bogstaver <em>er</em> teksten: ikke en skrifttypefil, telefonen skal indlæse, og ikke Markdown, der bliver fjernet — overlever de copy-paste i apps, der ikke tillader formatering.
+      UltraTextGen er en gratis Unicode-skrifttypegenerator. Du skriver almindelig tekst, den udskifter hvert bogstav med et stylet tegn, der findes inde i selve Unicode-standarden, og du kopierer resultatet, hvor du vil bruge det: en Instagram-bio, en TikTok-billedtekst, et Discord-visningsnavn, en LinkedIn-overskrift, en Roblox-profil, en WhatsApp-status, endda et emnefelt i en e-mail. Fordi de stylede bogstaver <em>er</em> teksten: ikke en skrifttypefil, telefonen skal indlæse, og ikke Markdown, der bliver fjernet, overlever de copy-paste i apps, der ikke tillader formatering.
     </p>
     <p>
       Skriv <code>hello</code>, og du får:
@@ -428,7 +428,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       oʅʅǝɥ (på hovedet),
       ollǝɥ (spejlvendt),
       h̷̢̛e̴̜͝l̸̼͝l̷͔͠o̵̗͝ (Zalgo / glitch),
-      og omkring 50 til — heriblandt aesthetic spatierede stilarter som <strong>𝓱 𝓮 𝓵 𝓵 𝓸</strong>, som folk bruger til Pinterest-pins og Y2K-agtige brugernavne.
+      og omkring 50 til, heriblandt aesthetic spatierede stilarter som <strong>𝓱 𝓮 𝓵 𝓵 𝓸</strong>, som folk bruger til Pinterest-pins og Y2K-agtige brugernavne.
     </p>
     <h3>Hvor disse skrifttyper faktisk virker (og hvor de ikke gør)</h3>
     <p>
@@ -438,17 +438,17 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <li><strong>Instagram</strong>: bio, opslagstekst, kommentarer, story-klistermærker: virker i alle stilarter. Brugernavnfeltet: virker kun med latinske skrift-stilarter (fed, kursiv, script, bobler); accepterer ikke Zalgo eller fullwidth.</li>
       <li><strong>TikTok</strong>: bio, billedtekst, kommentarer, videobeskrivelse: virker i alle kernestilarter. Feltet "kaldenavn" er mere tilladende end Instagrams brugernavn.</li>
       <li><strong>Discord</strong>: serverkaldenavn, visningsnavn, beskeder, "About me": Unicode-skrifttyper virker uden Nitro. Markdown-fed skrift (<code>**tekst**</code>) vises kun inde i beskeder; Unicode-fed skrift vises <em>overalt</em>, inklusive dit kaldenavn. Se det fulde felt-for-felt-kort i <a href="/da/guide/hvor-virker-skrifttyper-i-discord/">hvor virker smarte skrifttyper i Discord</a>.</li>
-      <li><strong>LinkedIn</strong>: overskrift, Om-sektion, opslagstekst: fed, kursiv og small caps vises pålideligt. Undgå Zalgo og stærkt dekorerede stilarter på en professionel profil — de udløser rekrutteringsfiltre og skærmlæserproblemer.</li>
+      <li><strong>LinkedIn</strong>: overskrift, Om-sektion, opslagstekst: fed, kursiv og small caps vises pålideligt. Undgå Zalgo og stærkt dekorerede stilarter på en professionel profil. De udløser rekrutteringsfiltre og skærmlæserproblemer.</li>
       <li><strong>WhatsApp</strong>: status, gruppenavne, broadcasts: alle Unicode-skrifttyper virker. WhatsApps egne <code>*fed*</code>, <code>_kursiv_</code> og <code>~gennemstreget~</code> vises kun inde i chatbeskeder, så Unicode er den eneste mulighed til status og gruppenavne.</li>
       <li><strong>X (Twitter)</strong>: visningsnavn, bio, tweets: virker overalt. Nogle Zalgo-stilarter bliver visuelt afskåret på mobilen.</li>
       <li><strong>Snapchat, Pinterest, Telegram, Signal, iMessage</strong>: bioer, billedtekster, beskeder: alle virker.</li>
       <li><strong>Roblox, Steam, Minecraft, Fortnite</strong> — visningsnavne accepterer normalt fed/kursiv/gotisk. Hver platforms navnefilter afviser forskellige tegn — prøv en anden stil, hvis én bliver blokeret.</li>
-      <li><strong>Emnefelter i e-mails</strong> (Gmail, Outlook, Apple Mail) — viser Unicode-skrifttyper, som de er skrevet. Det er det ene sted, hvor der ikke findes noget rigtekst-alternativ.</li>
+      <li><strong>Emnefelter i e-mails</strong> (Gmail, Outlook, Apple Mail) viser Unicode-skrifttyper, som de er skrevet. Det er det ene sted, hvor der ikke findes noget rigtekst-alternativ.</li>
       <li><strong>Virker ikke:</strong> Microsoft Word, Google Docs' brødtekst-formatering (brug værktøjslinjen i stedet), trykte dokumenter med ikke-Unicode-skrifttyper, samt overalt hvor modtagerens enhed mangler tegnet (sjældent på telefoner fra 2018 og nyere).</li>
     </ul>
     <h3>Hvorfor Unicode-skrifttyper ≠ almindelige skrifttyper</h3>
     <p>
-      En almindelig skrifttype (Helvetica, Arial, LinkedIn Sans-typografien osv.) er en fil, der ligger på din enhed, og som fortæller skærmen, hvordan et bogstav skal tegnes. Hvis hjemmesiden ikke indlæser den skrifttype, står der stadig "A" — det bliver bare tegnet med en standardskrifttype i stedet. Unicode-"skrifttyper" er slet ikke skrifttyper i den forstand. De er selvstændige tegn i selve Unicode-standarden: A, 𝐀, 𝘈, 𝓐, 𝔄, 𝕬, Ⓐ er alle forskellige tegn med forskellige kodepunkter. Derfor rejser de med: du stylizer ikke bogstavet A, du bruger et helt andet bogstav, der tilfældigvis ser stylet ud.
+      En almindelig skrifttype (Helvetica, Arial, LinkedIn Sans-typografien osv.) er en fil, der ligger på din enhed, og som fortæller skærmen, hvordan et bogstav skal tegnes. Hvis hjemmesiden ikke indlæser den skrifttype, står der stadig "A": det bliver bare tegnet med en standardskrifttype i stedet. Unicode-"skrifttyper" er slet ikke skrifttyper i den forstand. De er selvstændige tegn i selve Unicode-standarden: A, 𝐀, 𝘈, 𝓐, 𝔄, 𝕬, Ⓐ er alle forskellige tegn med forskellige kodepunkter. Derfor rejser de med: du stylizer ikke bogstavet A, du bruger et helt andet bogstav, der tilfældigvis ser stylet ud.
     </p>
     <h3>Hvad biblioteket indeholder</h3>
     <p>

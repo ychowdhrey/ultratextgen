@@ -149,7 +149,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Kan jeg bruge smarte skrifttyper i mit Discord-visningsnavn?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Ja. Visningsnavne, serverkaldenavne, rollenavne, servernavne, kanalnavne og din «Om mig» accepterer alle Unicode-skrifttegn og emojis. Lav den stiliserede tekst, og indsæt så de færdige tegn i feltet — der er intet at aktivere. Foretræk læsbare stilarter som fed, kursiv eller small caps, så medlemmer på ældre enheder og skærmlæsere stadig kan læse dig." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Ja. Visningsnavne, serverkaldenavne, rollenavne, servernavne, kanalnavne og din «Om mig» accepterer alle Unicode-skrifttegn og emojis. Lav den stiliserede tekst, og indsæt så de færdige tegn i feltet. Der er intet at aktivere. Foretræk læsbare stilarter som fed, kursiv eller small caps, så medlemmer på ældre enheder og skærmlæsere stadig kan læse dig." }
     },
     {
       "@type": "Question",
@@ -209,8 +209,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="key-takeaways">
   <h2>Kort fortalt</h2>
   <ul>
-    <li>Det unikke <strong>@brugernavn</strong> accepterer kun små bogstaver a–z, 0–9, understreg og punktum. Indsæt en smart skrifttype der, og du får «ugyldigt brugernavn» — hver gang, med vilje.</li>
-    <li>Alle <strong>præsentationsfelter</strong>: visningsnavn, serverkaldenavn, rolle, server- og kanalnavne, «Om mig» — accepterer Unicode-skrifttyper og emojis uden tricks.</li>
+    <li>Det unikke <strong>@brugernavn</strong> accepterer kun små bogstaver a–z, 0–9, understreg og punktum. Indsæt en smart skrifttype der, og du får «ugyldigt brugernavn», hver gang, med vilje.</li>
+    <li>Alle <strong>præsentationsfelter</strong>: visningsnavn, serverkaldenavn, rolle, server- og kanalnavne, «Om mig» accepterer Unicode-skrifttyper og emojis uden tricks.</li>
     <li><strong>Markdown vises kun i beskeder</strong> (plus det basale i din «Om mig»). I alle navnefelter bliver stjernerne bare stående.</li>
     <li>Stiliserede navne har en reel pris: <kbd>Ctrl+K</kbd> kan ikke finde 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈, når du skriver «aesthetic», skærmlæsere snubler, og ældre Android-enheder kan vise firkanter.</li>
   </ul>
@@ -307,7 +307,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Renderet styling</span>
     <h2>Hvor Markdown virker: og hvor det bare bliver stående</h2>
     <div class="editorial-block">
-      <p>Markdown er den anden slags styling: symboler som <code>**fed**</code>, som Discord konverterer, når den <em>renderer</em> en besked. Kortet viser, at dens territorium er lillebitte — <strong>beskeder plus grundlæggende formatering i din «Om mig»</strong>. Skriv <code>**Nova**</code> i et kaldenavns-felt, og stjernerne gemmes som bogstavelige tegn, fordi navnefelter gemmes og vises råt; der er ingen renderer-gennemgang til at konvertere dem.</p>
+      <p>Markdown er den anden slags styling: symboler som <code>**fed**</code>, som Discord konverterer, når den <em>renderer</em> en besked. Kortet viser, at dens territorium er lillebitte: <strong>beskeder plus grundlæggende formatering i din «Om mig»</strong>. Skriv <code>**Nova**</code> i et kaldenavns-felt, og stjernerne gemmes som bogstavelige tegn, fordi navnefelter gemmes og vises råt; der er ingen renderer-gennemgang til at konvertere dem.</p>
       <p>Det er den praktiske opdeling, du skal huske: <strong>renderet styling (Markdown) til det, du siger, indsat styling (Unicode) til det, du kaldes.</strong> Hele mekanikken: spoiler-tags, kodeblokke, Nitro-laget og de klassiske «hvorfor bliver mine stjerner ikke fede»-fejl: findes i vores søsterguide, <a href="/da/guide/discord-tekstformatering-forklaret/">Discord-tekstformatering, afkodet</a>.</p>
       <p>Ét særtilfælde er værd at nævne: <strong>farvet tekst</strong>. Det findes kun inde i beskeder, kun via ANSI-kodeblokke, med otte faste farver og vaklende mobil-understøttelse. Intet navnefelt nogen steder i Discord accepterer farve.</p>
     </div>
@@ -325,7 +325,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="compare-grid">
       <div class="compare-card variant-muted">
         <span class="compare-badge">Søgning bryder sammen</span>
-        <p><kbd>Ctrl+K</kbd>, medlemssøgning og mention-autofuldførelse matcher bogstavelige tegn. At skrive «aesthetic» vil aldrig finde <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong> — de deler ingen tegn.</p>
+        <p><kbd>Ctrl+K</kbd>, medlemssøgning og mention-autofuldførelse matcher bogstavelige tegn. At skrive «aesthetic» vil aldrig finde <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong>, de deler ingen tegn.</p>
       </div>
       <div class="compare-card variant-muted">
         <span class="compare-badge">Skærmlæsere snubler</span>
@@ -346,7 +346,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA Card -->
   <div class="cta-card">
     <h3>Styl et Discord-klart navn →</h3>
-    <p>Lav et enheds-sikkert Unicode-navn, og indsæt det så i dit visningsnavn, kaldenavn eller din kanalliste — hvert felt, kortet markerer som åbent.</p>
+    <p>Lav et enheds-sikkert Unicode-navn, og indsæt det så i dit visningsnavn, kaldenavn eller din kanalliste, hvert felt, kortet markerer som åbent.</p>
     <a href="/da/" class="cta-btn">Åbn skrifttypegeneratoren →</a>
   </div>
 
@@ -383,7 +383,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Kan jeg bruge smarte skrifttyper i mit Discord-visningsnavn?</button>
     <div class="faq-answer">
-      <p>Ja. Visningsnavne, serverkaldenavne, rollenavne, servernavne, kanalnavne og din «Om mig» accepterer alle Unicode-skrifttegn og emojis. Lav den stiliserede tekst, og indsæt så de færdige tegn i feltet — der er intet at aktivere. Foretræk læsbare stilarter som fed, kursiv eller small caps, så medlemmer på ældre enheder og skærmlæsere stadig kan læse dig.</p>
+      <p>Ja. Visningsnavne, serverkaldenavne, rollenavne, servernavne, kanalnavne og din «Om mig» accepterer alle Unicode-skrifttegn og emojis. Lav den stiliserede tekst, og indsæt så de færdige tegn i feltet. Der er intet at aktivere. Foretræk læsbare stilarter som fed, kursiv eller small caps, så medlemmer på ældre enheder og skærmlæsere stadig kan læse dig.</p>
     </div>
   </div>
   <div class="faq-item">
@@ -423,7 +423,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a class="related-card" href="/da/">
       <span class="related-tag">🎮</span>
       <span class="related-title">Discord-skrifttypegenerator</span>
-      <span class="related-desc">Skriv, vælg en stil, og indsæt i Discord — gratis, ingen Nitro.</span>
+      <span class="related-desc">Skriv, vælg en stil, og indsæt i Discord, gratis, ingen Nitro.</span>
     </a>
   </div>
 </section>

@@ -159,7 +159,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Hvorfor dukker stjernerne op i stedet for fed tekst?",
-      "acceptedAnswer": { "@type": "Answer", "text": "To almindelige årsager: der er et mellemrum mellem stjernerne og ordet (`** tekst **` bliver ikke fedt — `**tekst**` gør), eller teksten er inde i en kodeblok (backticks slår Markdown fra). Husk også, at Markdown kun virker i beskeder, aldrig i navne." }
+      "acceptedAnswer": { "@type": "Answer", "text": "To almindelige årsager: der er et mellemrum mellem stjernerne og ordet (`** tekst **` bliver ikke fedt, `**tekst**` gør), eller teksten er inde i en kodeblok (backticks slår Markdown fra). Husk også, at Markdown kun virker i beskeder, aldrig i navne." }
     }
   ]
 }
@@ -186,7 +186,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="hero">
   <div class="hero-inner" style="max-width:800px;">
     <h1 class="hero-headline">Discord-tekstformatering, afkodet</h1>
-    <p class="hero-tagline">Du har ikke et «skrifttype»-problem — du har et tre-systemer-problem. Discord bruger Markdown, Unicode-tegn og Nitro-stilarter til helt forskellige opgaver. Når du først ved, hvilket felt der bruger hvad, besvarer hvert «hvorfor virker det ikke?» sig selv.</p>
+    <p class="hero-tagline">Du har ikke et «skrifttype»-problem, du har et tre-systemer-problem. Discord bruger Markdown, Unicode-tegn og Nitro-stilarter til helt forskellige opgaver. Når du først ved, hvilket felt der bruger hvad, besvarer hvert «hvorfor virker det ikke?» sig selv.</p>
     <div class="guide-meta">
       <span class="guide-pill is-accent">Platformsmestring</span>
       <span class="guide-pill">⏱ 8 min læsning</span>
@@ -250,7 +250,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><code>||spoiler||</code> → skjult, indtil man klikker</li>
         <li><code>&gt; citat</code> og <code>`kode`</code></li>
       </ul>
-      <p>Det er den <em>rigtige</em> måde at formatere en besked på — den forbliver ægte tekst, så den kan søges og er tilgængelig. Hagen er de to fejl, der får den til at «ikke virke»:</p>
+      <p>Det er den <em>rigtige</em> måde at formatere en besked på: den forbliver ægte tekst, så den kan søges og er tilgængelig. Hagen er de to fejl, der får den til at «ikke virke»:</p>
       <div class="compare-grid">
         <div class="compare-card variant-muted">
           <span class="compare-badge">Bliver ikke fed</span>
@@ -275,9 +275,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>For at stilisere et <em>navn</em> kan du ikke bede Discord om at vise noget, så du bruger tegn, der allerede ser stiliserede ud. En generator laver «Nova» om til 𝗡𝗼𝘃𝗮 eller 𝓝𝓸𝓿𝓪 ved hjælp af særlige <a href="/da/library/">Unicode-tegn</a>, og du indsætter det færdige resultat direkte i feltet. Ingen visning krævet, så det overlever der, hvor Markdown ikke kan.</p>
       <p>Det virker i dit visningsnavn, serverkaldenavn, server- og kanalnavne, rollenavne, din bio og beskeder. Der er præcis ét sted, det er blokeret:</p>
       <div class="mood-explainer">
-        <div class="mood-example"><strong>@brugernavnet afviser det.</strong> Din unikke identifikator (den med små bogstaver efter @) tillader kun a–z, 0–9, <code>_</code> og <code>.</code> — til mentions, søgning og routing. Indsæt en smart skrifttype der, og Discord nægter at gemme det. Stiliser dit <em>visningsnavn</em> i stedet.</div>
+        <div class="mood-example"><strong>@brugernavnet afviser det.</strong> Din unikke identifikator (den med små bogstaver efter @) tillader kun a–z, 0–9, <code>_</code> og <code>.</code>, til mentions, søgning og routing. Indsæt en smart skrifttype der, og Discord nægter at gemme det. Stiliser dit <em>visningsnavn</em> i stedet.</div>
       </div>
-      <p>To ærlige forbehold, begge dækket i dybden andetsteds: Unicode-navne kan vises som firkanter på nogle enheder (især ældre Android), og de er svære for skærmlæsere. Vælg en sikker stil (fed, kursiv, small caps), og hold den smagfuld — mange store servere modererer svært læselige navne eller zalgo-navne.</p>
+      <p>To ærlige forbehold, begge dækket i dybden andetsteds: Unicode-navne kan vises som firkanter på nogle enheder (især ældre Android), og de er svære for skærmlæsere. Vælg en sikker stil (fed, kursiv, small caps), og hold den smagfuld: mange store servere modererer svært læselige navne eller zalgo-navne.</p>
     </div>
   </section>
 
@@ -293,7 +293,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="mood-example">Inde i en server tilsidesætter din <strong>rollefarve</strong> Nitro-farven, og effekterne fjernes, så andre medlemmer ser som regel kun <em>skrifttypen</em>, ikke farven eller animationen. Den fulde effekt ses primært på din profil, ikke i medlemslisten eller chatten.</div>
       </div>
       <p>Gratis konti kan åbne menuen og <strong>forhåndsvise</strong> en stil, men at gemme den kræver Nitro: netop det med forhåndsvisning-og-så-betalingsmur er grunden til, at så mange nu spørger, om Nitro overhovedet er nødvendigt for skrifttyper. Det er et rimeligt spørgsmål om netop denne funktion; det er ikke en ændring af Unicode-styling, som forbliver gratis uanset hvad.</p>
-      <p>Så Nitro er pengene værd, hvis du vil have et poleret profilkort og en distinkt visningsskrifttype overalt. Det er <em>ikke</em> måden at få farvet tekst ind i en samtale på — det er et andet værktøj (næste afsnit).</p>
+      <p>Så Nitro er pengene værd, hvis du vil have et poleret profilkort og en distinkt visningsskrifttype overalt. Det er <em>ikke</em> måden at få farvet tekst ind i en samtale på, det er et andet værktøj (næste afsnit).</p>
     </div>
   </section>
 
@@ -340,7 +340,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA Card -->
   <div class="cta-card">
     <h3>Lav et Discord-klart navn</h3>
-    <p>Lav en enheds-sikker Unicode-stil, kopier den, og indsæt den i dit visningsnavn eller serverkaldenavn — ingen Nitro nødvendig.</p>
+    <p>Lav en enheds-sikker Unicode-stil, kopier den, og indsæt den i dit visningsnavn eller serverkaldenavn, ingen Nitro nødvendig.</p>
     <a href="/da/" class="cta-btn">Åbn skrifttypegeneratoren →</a>
   </div>
 
@@ -389,7 +389,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Hvorfor dukker stjernerne op i stedet for fed tekst?</button>
     <div class="faq-answer">
-      <p>To almindelige årsager: der er et mellemrum mellem stjernerne og ordet (<code>** tekst **</code> bliver ikke fedt — <code>**tekst**</code> gør), eller teksten er inde i en kodeblok (backticks slår Markdown fra). Husk også, at Markdown kun virker i beskeder, aldrig i navne.</p>
+      <p>To almindelige årsager: der er et mellemrum mellem stjernerne og ordet (<code>** tekst **</code> bliver ikke fedt, <code>**tekst**</code> gør), eller teksten er inde i en kodeblok (backticks slår Markdown fra). Husk også, at Markdown kun virker i beskeder, aldrig i navne.</p>
     </div>
   </div>
 </section>
@@ -411,7 +411,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a class="related-card" href="/da/">
       <span class="related-tag">🎮</span>
       <span class="related-title">Discord-skrifttypegenerator</span>
-      <span class="related-desc">Skriv, vælg en stil, og indsæt i Discord — gratis, ingen Nitro.</span>
+      <span class="related-desc">Skriv, vælg en stil, og indsæt i Discord, gratis, ingen Nitro.</span>
     </a>
   </div>
 </section>

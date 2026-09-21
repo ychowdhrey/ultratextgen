@@ -149,7 +149,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Jsou písma Unicode totéž co písma z Discord Nitro?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Ne. Písma Unicode jsou náhradní znaky zdarma, které vložíš všude, kde je jméno povolené; fungují všem, ale na některých zařízeních se můžou zobrazit jako čtverečky a mate čtečky obrazovky. Nitro Display Name Styles je placená funkce, která na tvé zobrazované jméno nasadí opravdové písmo, barvu a efekty — jenže barva a efekty se uvnitř serverů neukážou, tam vyhrává barva tvé role; přenese se jen samotné písmo." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Ne. Písma Unicode jsou náhradní znaky zdarma, které vložíš všude, kde je jméno povolené; fungují všem, ale na některých zařízeních se můžou zobrazit jako čtverečky a mate čtečky obrazovky. Nitro Display Name Styles je placená funkce, která na tvé zobrazované jméno nasadí opravdové písmo, barvu a efekty, jenže barva a efekty se uvnitř serverů neukážou, tam vyhrává barva tvé role; přenese se jen samotné písmo." }
     },
     {
       "@type": "Question",
@@ -205,9 +205,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2>Co si odnést</h2>
   <ul>
     <li>Discord má tři nesouvisející textové systémy: <strong>Markdown</strong> (zprávy), <strong>písma Unicode</strong> (jména všude) a <strong>Nitro</strong> (placené styly zobrazovaného jména).</li>
-    <li>Markdown jako <code>**tučné**</code> se vykreslí jen ve zprávách — nikdy nefunguje v uživatelských jménech, přezdívkách ani v názvech serverů či kanálů.</li>
+    <li>Markdown jako <code>**tučné**</code> se vykreslí jen ve zprávách, nikdy nefunguje v uživatelských jménech, přezdívkách ani v názvech serverů či kanálů.</li>
     <li>Písma Unicode fungují v každém poli se jménem, ale na některých zařízeních se můžou ukázat jako čtverečky a matou čtečky obrazovky.</li>
-    <li>Nitro přidá tvému zobrazovanému jménu opravdovou barvu a efekty — jenže uvnitř serveru vyhrává barva tvé role a ukáže se jen písmo.</li>
+    <li>Nitro přidá tvému zobrazovanému jménu opravdovou barvu a efekty, jenže uvnitř serveru vyhrává barva tvé role a ukáže se jen písmo.</li>
   </ul>
 </section>
 
@@ -250,7 +250,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><code>||spoiler||</code> → skryté, dokud neklikneš</li>
         <li><code>&gt; citace</code> a <code>`kód`</code></li>
       </ul>
-      <p>Tohle je <em>správný</em> způsob, jak naformátovat zprávu — zůstane to opravdový text, takže je dohledatelný a přístupný. Háček jsou dvě chyby, kvůli kterým to „nefunguje":</p>
+      <p>Tohle je <em>správný</em> způsob, jak naformátovat zprávu: zůstane to opravdový text, takže je dohledatelný a přístupný. Háček jsou dvě chyby, kvůli kterým to „nefunguje":</p>
       <div class="compare-grid">
         <div class="compare-card variant-muted">
           <span class="compare-badge">Neztuční</span>
@@ -275,9 +275,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>K ostylování <em>jména</em> nemůžeš Discord požádat, aby něco vykreslil, takže použiješ znaky, které už samy vypadají ostylované. Generátor promění „Nova" na 𝗡𝗼𝘃𝗮 nebo 𝓝𝓸𝓿𝓪 pomocí speciálních znaků Unicode a hotový výsledek vložíš rovnou do pole. Není potřeba žádné vykreslování, takže to přežije tam, kde Markdown ne.</p>
       <p>Funguje to v zobrazovaném jméně, v serverové přezdívce, v názvech serveru a kanálu, v názvech rolí, v biu i ve zprávách. Existuje přesně jedno místo, kde je to zablokované:</p>
       <div class="mood-explainer">
-        <div class="mood-example"><strong>Uživatelské jméno (@) to odmítne.</strong> Tvůj unikátní login (ten malými písmeny za @) povoluje jen a–z, 0–9, <code>_</code> a <code>.</code> — kvůli zmínkám, vyhledávání a směrování. Vlož tam ozdobné písmo a Discord ho odmítne uložit. Ostyluj místo toho <em>zobrazované jméno</em>.</div>
+        <div class="mood-example"><strong>Uživatelské jméno (@) to odmítne.</strong> Tvůj unikátní login (ten malými písmeny za @) povoluje jen a–z, 0–9, <code>_</code> a <code>.</code>, kvůli zmínkám, vyhledávání a směrování. Vlož tam ozdobné písmo a Discord ho odmítne uložit. Ostyluj místo toho <em>zobrazované jméno</em>.</div>
       </div>
-      <p>Dvě upřímné výhrady, obě rozebrané jinde do hloubky: jména z Unicode se na některých zařízeních (hlavně na starším Androidu) můžou ukázat jako čtverečky a čtečkám obrazovky dělají potíže. Vyber si bezpečný styl (tučné, kurzíva, kapitálky) a drž ho vkusný — spousta velkých serverů těžko čitelná nebo zalgo jména moderuje.</p>
+      <p>Dvě upřímné výhrady, obě rozebrané jinde do hloubky: jména z Unicode se na některých zařízeních (hlavně na starším Androidu) můžou ukázat jako čtverečky a čtečkám obrazovky dělají potíže. Vyber si bezpečný styl (tučné, kurzíva, kapitálky) a drž ho vkusný: spousta velkých serverů těžko čitelná nebo zalgo jména moderuje.</p>
     </div>
   </section>
 
@@ -293,7 +293,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="mood-example">Uvnitř serveru barva tvé <strong>role</strong> přebije barvu z Nitra a efekty se ořežou, takže ostatní členové obvykle vidí jen <em>písmo</em>, ne barvu ani animaci. Celý efekt se ukáže hlavně na tvém profilu, ne v seznamu členů nebo na chatu.</div>
       </div>
       <p>Účty zdarma si můžou menu otevřít a styl <strong>prohlédnout</strong>, ale uložit ho jde jen s Nitrem, a právě tenhle model „napřed náhled, pak placená zeď" je důvod, proč se dnes tolik lidí ptá, jestli je Nitro na písma vůbec potřeba. Je to férová otázka k téhle konkrétní funkci; není to změna ve stylování přes Unicode, které zůstává zdarma bez ohledu na to.</p>
-      <p>Nitro se tedy vyplatí, pokud chceš vyladěnou kartu profilu a výrazné písmo jména všude. <em>Není</em> to cesta, jak dostat barevný text do konverzace — to je jiný nástroj (další sekce).</p>
+      <p>Nitro se tedy vyplatí, pokud chceš vyladěnou kartu profilu a výrazné písmo jména všude. <em>Není</em> to cesta, jak dostat barevný text do konverzace, to je jiný nástroj (další sekce).</p>
     </div>
   </section>
 
@@ -379,7 +379,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Jsou písma Unicode totéž co písma z Discord Nitro?</button>
     <div class="faq-answer">
-      <p>Ne. Písma Unicode jsou náhradní znaky zdarma, které vložíš všude, kde je jméno povolené; fungují všem, ale na některých zařízeních se můžou zobrazit jako čtverečky a mate čtečky obrazovky. Nitro Display Name Styles je placená funkce, která na tvé zobrazované jméno nasadí opravdové písmo, barvu a efekty — jenže barva a efekty se uvnitř serverů neukážou, tam vyhrává barva tvé role; přenese se jen samotné písmo.</p>
+      <p>Ne. Písma Unicode jsou náhradní znaky zdarma, které vložíš všude, kde je jméno povolené; fungují všem, ale na některých zařízeních se můžou zobrazit jako čtverečky a mate čtečky obrazovky. Nitro Display Name Styles je placená funkce, která na tvé zobrazované jméno nasadí opravdové písmo, barvu a efekty, jenže barva a efekty se uvnitř serverů neukážou, tam vyhrává barva tvé role; přenese se jen samotné písmo.</p>
     </div>
   </div>
   <div class="faq-item">
@@ -391,7 +391,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Proč se místo tučného textu ukazují hvězdičky?</button>
     <div class="faq-answer">
-      <p>Dva časté důvody: mezi hvězdičkami a slovem je mezera (<code>** text **</code> neztuční — <code>**text**</code> ano), nebo je text uvnitř bloku kódu (zpětné apostrofy Markdown vypnou). A nezapomeň, že Markdown funguje jen ve zprávách, nikdy ve jménech.</p>
+      <p>Dva časté důvody: mezi hvězdičkami a slovem je mezera (<code>** text **</code> neztuční, <code>**text**</code> ano), nebo je text uvnitř bloku kódu (zpětné apostrofy Markdown vypnou). A nezapomeň, že Markdown funguje jen ve zprávách, nikdy ve jménech.</p>
     </div>
   </div>
 </section>
@@ -413,7 +413,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a class="related-card" href="/cs/pismo-pro-discord/">
       <span class="related-tag">✦</span>
       <span class="related-title">Písmo pro Discord</span>
-      <span class="related-desc">Generátor nicku a bia — zkopíruj a vlož, bez Nitra.</span>
+      <span class="related-desc">Generátor nicku a bia, zkopíruj a vlož, bez Nitra.</span>
     </a>
   </div>
 </section>
