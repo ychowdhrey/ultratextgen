@@ -631,7 +631,11 @@ function convertFile(rel, { write, defer }) {
      * holding an inline element.
      */
     const deferOrd = new Set();
-    let ord = 0, buf = '', prevEnd = null;
+    /* `shown` is `buf` with the SOURCE between nodes folded back in, so a
+     * held `<code>`/`<kbd>` span's text is visible. Display only — never a
+     * ledger key, which must stay exactly `blockText`. See the deferral
+     * record's `full` field. */
+    let ord = 0, buf = '', shown = '', prevEnd = null;
     for (const n of nodes) {
       const c = (n.data.match(/—/g) || []).length;
       if (isLoneSpecimen(n)) for (let i = 0; i < c; i++) noop.add(ord + i);
@@ -653,10 +657,14 @@ function convertFile(rel, { write, defer }) {
          */
         if (!lead && /<br\s*\/?>/i.test(between)) deferOrd.add(ord);
       }
-      ord += c; buf += n.data;
+      if (n.sourceCodeLocation && prevEnd != null) {
+        shown += html.slice(prevEnd, n.sourceCodeLocation.startOffset).replace(/<[^>]*>/g, ' ');
+      }
+      ord += c; buf += n.data; shown += n.data;
       if (n.sourceCodeLocation) prevEnd = n.sourceCodeLocation.endOffset;
     }
     const blockText = collapse(buf);
+    const blockShown = collapse(decode(shown));
     const tag = (b.name || 'p').toLowerCase();
     const plan = planBlock(blockText, tag, code, noop, deferOrd);
     const decided = JUDGED[blockText];
@@ -766,7 +774,7 @@ function convertFile(rel, { write, defer }) {
         const remedy = remedies[g];
         if (origin[g] === 'judged') judged++;
         else if (origin[g] === 'auto') auto++;
-        else if (origin[g] === 'defer') deferred.push({ rel, code, key: blockText, n: plan.length });
+        else if (origin[g] === 'defer') deferred.push({ rel, code, key: blockText, full: blockShown, n: plan.length });
         if (!remedy || remedy === R.NOOP) continue;
         /**
          * A DASH THAT OPENS ITS OWN TEXT NODE CANNOT BE CONVERTED HERE.
@@ -1100,7 +1108,7 @@ function main() {
     // immediately before a dash on `it/symbol/simbolo-dollaro` and the key
     // read `condividono — quella che appare`, a dangling verb on a page that
     // is perfectly fine. A judgement made from the key alone cannot see that.
-    const e = byKey.get(d.key) || { key: d.key, code: d.code, n: d.n, pages: 0, at: d.rel };
+    const e = byKey.get(d.key) || { key: d.key, full: d.full, code: d.code, n: d.n, pages: 0, at: d.rel };
     e.pages++; byKey.set(d.key, e);
   }
   const pending = [...byKey.values()].sort((a, b) => b.pages - a.pages);
