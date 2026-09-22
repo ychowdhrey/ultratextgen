@@ -20,7 +20,7 @@
  * that render them, and no gate on this site could see it: the parity
  * fingerprint reads the buildGrids CALL rather than its output, the locale and
  * FAQ gates read text that was not there, and the image gates read assets.
- * CLAUDE.md's Discovery Model section names the cost — several search and AI
+ * `.claude/rules/discovery-and-routing.md` names the cost — several search and AI
  * crawlers execute no JavaScript — which on these pages is the whole payload.
  * Without a gate the next generated page simply ships without its block again.
  *

@@ -8,7 +8,7 @@ Keeps two kinds of /symbol/ linking automatic instead of manual:
   (2) peer<->peer — between two /symbol/ spokes that name each other as a
       related symbol in their own "Related Symbols" compare-grid.
 
-The contract (documented in CLAUDE.md "Library vs Symbol"):
+The contract (documented in `.claude/rules/content-architecture.md`):
   - every /symbol/ spoke links back to its related /library/ hub(s) — the
     spoke's own HTML is the source of truth for which hubs it claims
     (specs only exist for a subset of spokes, so HTML is authoritative);
@@ -405,7 +405,7 @@ def main(argv=None):
     # The EN pass above has just settled the canonical peer graph. Mirror it
     # into every language, restricted to relations where BOTH ends have a live
     # sibling in that language — a peer with no translation is skipped, never
-    # linked in English (CLAUDE.md, "Locale-native internal linking").
+    # linked in English (`.claude/rules/localization.md`).
     locale_pages = 0
     if args.locales:
         siblings = load_locale_siblings()
@@ -450,7 +450,7 @@ def main(argv=None):
         # Hub->spoke, mirrored the same way. The EN pass above settles which
         # hubs each spoke claims; that graph is EN-only until it is mirrored,
         # so <lang>/library/<hub> was never required to link <lang>/symbol/<spoke>
-        # and no check could see the gap (CLAUDE.md, "Only the PEER graph is
+        # and no check could see the gap (`docs/architecture/content-lanes.md` ("Only the PEER graph is
         # mirrored"). Restricted, like the peer pass, to relations where BOTH
         # ends have a live sibling in that language.
         locale_hubs = load_locale_hubs()

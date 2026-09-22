@@ -146,7 +146,7 @@ def _find_native_lexicon():
     """Locate the Local Language Intelligence Library's canonical CSV.
 
     This repo deliberately keeps no copy of it and no hardcoded path to it
-    (see CLAUDE.md's "Local Language Intelligence" section) -- it is
+    (see `docs/local-language-intelligence.md`) -- it is
     discovered by shape, not by name, in whichever sibling checkout carries
     it. NATIVE_LEXICON_PATH overrides the search with an explicit path.
     """

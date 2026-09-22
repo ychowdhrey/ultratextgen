@@ -460,7 +460,7 @@ function englishParentOf(html) {
   if (!url.startsWith(BASE)) return null;
   const rel = url.slice(BASE.length).replace(/^\/+|\/+$/g, '');
   // A subpage naming the bare homepage is the documented shape of a ratified
-  // local-only page (see CLAUDE.md, "Ratified local-only exceptions") — it is a
+  // local-only page (see `docs/decisions/local-only-locale-exceptions.md`) — it is a
   // placeholder claim, not a translation relationship, so there is no parent
   // whose strings this page should have replaced.
   if (rel === '') return null;

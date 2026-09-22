@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """sync_event_hub_links.py — give every /events/ spoke its inbound hub links.
 
-CLAUDE.md's Hub vs Spoke Rule 4 requires links in BOTH directions: hub -> spoke
+`.claude/rules/content-architecture.md` Hub-vs-Spoke Rule 4 requires links in BOTH directions: hub -> spoke
 and spoke -> hub. The event pages shipped with only half of that. Every event
 page links out diligently (the Eid page alone points at /library/islamic-symbols/,
 /library/moon-celestial-symbols/, /library/sparkle-symbols/), but not one of

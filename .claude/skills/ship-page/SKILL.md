@@ -19,13 +19,15 @@ skill's rules apply throughout; for a locale page, switch to the `locale-batch`
 skill (the English-Parent Rule comes first there).
 
 Work the steps in order. Each exists because skipping it produced a recorded
-failure named in `CLAUDE.md`.
+failure — the invariants are in `.claude/rules/content-architecture.md` and the case
+studies in `docs/architecture/content-lanes.md`.
 
 ## 1. Justify — does this page deserve to exist?
 
 - **Demand evidence**, not "a keyword exists": GSC/keyword data, or a
   defensible non-Google reason (utility, share/print/embed path, reference
-  value) per `CLAUDE.md` → "Discovery Model".
+  value) per root `CLAUDE.md` → "Discovery" and
+  `.claude/rules/discovery-and-routing.md`.
 - **Verify any "X doesn't exist yet" claim properly** — alias sweeps and
   different lanes, never one exact grep. The repo has recorded a pass where 4
   of 5 "missing" capabilities had already shipped.
@@ -44,8 +46,8 @@ failure named in `CLAUDE.md`.
 
 ## 3. Pick the lane — content type decides the directory
 
-Use `CLAUDE.md`'s decision tables ("Guide vs Answer", "Library vs Symbol",
-"Content Type: Updates"). The short form:
+Use the lane-selection table in `.claude/rules/content-architecture.md`, and
+`docs/architecture/content-lanes.md` when the call is close. The short form:
 
 | The page's job | Lane |
 |---|---|
@@ -92,6 +94,8 @@ a 404 on that first fetch is recorded before any backfill.
 - **Hub registration**: EN library pages → `npm run build:library-directory`;
   locale hubs → `node scripts/build-library-hub.js`. Never hand-edit an entry
   list or the pre-rendered `#libDirectory`.
+- **A printable surface**: use the `printables-surface` skill — the scope test, the
+  tool-duplication check and the font-weight check all live there.
 - **Symbol pages**: declare `related` hubs/peers in the spec, run
   `npm run sync:symbol-peer-links` (peer relations must be reciprocal — the
   generator, not you, keeps that true), and add the one manual entry on
@@ -100,8 +104,11 @@ a 404 on that first fetch is recorded before any backfill.
   sitemap. Add the contextual hub→spoke link (Rule 4). But respect the
   deliberate non-links: `answers/` stays unlinked from homepages, `symbol/`
   stays out of the nav — don't "fix" those.
-- `sitemap.xml` is auto-generated — never touch it. `_redirects` matches
-  paths only; query logic lives in `functions/_middleware.js`.
+- **Art**: use the `page-art` skill. It must ship in the same commit —
+  `npm run check:new-page-images`.
+- `sitemap.xml` is auto-generated — never touch it. `_redirects` matches paths only
+  (query logic lives in `functions/_middleware.js`), and a splat rule belongs at the
+  bottom of that file or it silently drops the rules below it.
 
 ## 7. Validate, honestly
 

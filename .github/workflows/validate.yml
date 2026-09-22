@@ -67,7 +67,7 @@ name: Validate Site
 # gate without being permanently red. scripts/check-locale-mesh.js and
 # scripts/check-locale-parent-gap.js are the diff-scoped gates that actually
 # enforce mesh health and the pre-build gap check on what a PR adds/changes —
-# see CLAUDE.md, "Locale Parent Governance", and docs/locale-parent-governance.md.
+# see `.claude/rules/localization.md` and `docs/locale-parent-governance.md`.
 #
 # All steps run every time (continue-on-error on each) so a single PR shows
 # every problem at once instead of stopping at the first failure; the final
@@ -782,7 +782,7 @@ jobs:
       # the parity fingerprint reads the buildGrids CALL rather than its output,
       # the locale and FAQ gates read text that was not there, the image gates
       # read assets. On these pages the collections ARE the payload, and
-      # CLAUDE.md's Discovery Model section states the cost plainly: several
+      # `.claude/rules/discovery-and-routing.md` states the cost plainly: several
       # search and AI crawlers execute no JavaScript.
       #
       # It gates rather than informs because there is no backlog to be red

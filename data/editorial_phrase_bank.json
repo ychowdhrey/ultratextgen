@@ -640,7 +640,7 @@
       "firstAdded": "2026-08-26",
       "lastReviewed": "2026-08-26",
       "replacementGuidance": "None.",
-      "notes": "The EN homepage's own H1 is 'Fancy Text Generator'; a ratified local-only exception in CLAUDE.md turns on that fact. Never substitute these."
+      "notes": "The EN homepage's own H1 is 'Fancy Text Generator'; a ratified local-only exception in `.claude/rules/editorial-copy.md` turns on that fact. Never substitute these."
     },
     {
       "id": "EFR-S-004",
@@ -667,7 +667,7 @@
       "lastReviewed": "2026-08-26",
       "replacementGuidance": "None. These are formal identifiers; translating or substituting one breaks the page.",
       "pluralNote": "Every term carries its plural. The first version did not, and `\\bunderscore\\b` does not match \"underscores\" — which is the form the username-rules pages actually use (\"letters, numbers and underscores only\"), so the protection missed the exact case it was written for. Found by test, not by reading.",
-      "notes": "Same principle CLAUDE.md's 'a formal identifier is not English' rule already applies to the locale-translation gate, applied here to the phrase bank."
+      "notes": "Same principle the 'a formal identifier is not English' rule (`.claude/rules/localization.md` §5) already applies to the locale-translation gate, applied here to the phrase bank."
     },
     {
       "id": "EFR-S-005",

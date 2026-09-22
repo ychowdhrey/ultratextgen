@@ -11,7 +11,7 @@
  *
  * WHAT IT COVERS, AND WHY ONLY THIS
  * ---------------------------------
- * header.js is an IIFE with no exports, by design (CLAUDE.md: "No ES modules —
+ * header.js is an IIFE with no exports, by design (`.claude/rules/frontend-javascript.md`: "No ES modules —
  * scripts use global scope communication intentionally"). So this test does what
  * check-zalgo-decodes.js already does for `generateZalgo()`: it SLICES the pure
  * functions out of the live header.js and evaluates them, rather than
@@ -152,7 +152,7 @@ t('an anchor-only href resolves against the current page',
 
    Two things make this worth testing rather than eyeballing:
 
-     · The table is a factual assertion about encodings. CLAUDE.md's own rule
+     · The table is a factual assertion about encodings. the rule
        is that a surface asserting facts (limits, counts, encodings) earns a
        test, and a visual check cannot catch an off-by-one block boundary.
      · The whole-site coverage case below is a self-maintaining gate: ship a

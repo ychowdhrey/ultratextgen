@@ -9,7 +9,7 @@
  * createElement on DOMContentLoaded. So a client that runs no JavaScript saw
  * an empty box where the page's whole payload should be: 15 of the 17 render
  * ZERO tiles without JS (EN and ar carry 8 hand-written ones above the
- * registry). CLAUDE.md's Discovery Model section states the cost — several
+ * registry). `.claude/rules/discovery-and-routing.md` states the cost — several
  * search and AI crawlers execute none.
  *
  * Same shape as scripts/prerender-collection-grids.js, and deliberately so:

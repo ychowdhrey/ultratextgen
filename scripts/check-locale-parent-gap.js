@@ -113,7 +113,7 @@ function passingLedgerEntry(pattern, locale) {
 
 // Ratified English-Parent-Rule exceptions — locale pages explicitly agreed to
 // exist with no EN parent (see data/english_parent_exceptions.json's _readme
-// and CLAUDE.md's "Localization Workflow" ratifications). Keyed by normalized
+// and `.claude/rules/localization.md` ratifications). Keyed by normalized
 // canonical URL.
 let enParentExceptionUrls = new Set();
 if (fs.existsSync(EN_PARENT_EXCEPTIONS_PATH)) {
@@ -190,7 +190,7 @@ for (const rel of addedFiles) {
       detail:
         'This new locale page declares no resolvable hreflang="en" alternate, so its EN parent ' +
         "(and therefore its Core Parent Set pattern) can't be classified. Add the hreflang link " +
-        '(see CLAUDE.md, "Localization Workflow — the English-Parent Rule"), run ' +
+        '(see `.claude/rules/localization.md`), run ' +
         '`npm run sync:locale-mesh -- --fix` if the EN parent already exists, or — if this is a ' +
         'genuinely local-only page — ratify it with the user and record it in ' +
         'data/english_parent_exceptions.json.',
@@ -209,7 +209,7 @@ for (const rel of addedFiles) {
   // IS the recorded decision, so it passes here regardless of whether its
   // placeholder happens to resolve.
   // Verified against a deliberately unratified copy of the same page, per
-  // CLAUDE.md's "adding a validator is not the same as gating on it" rule:
+  // Per `.claude/rules/tooling-and-gates.md`, adding a validator is not the
   // the copy is flagged and the script exits 1, so this is scoped to the
   // ledger rather than a blanket bypass.
   if (enParentExceptionUrls.has(rec.canonical)) {
@@ -253,7 +253,7 @@ if (flagged.length) {
     );
     console.log(
       '    Fix: record the result in data/locale_parent_gap_audit.json (see its "_readme") once you\'ve run the ' +
-        'check, or raise it with the user before treating it as agreed — same bar as CLAUDE.md\'s English-Parent ' +
+        'check, or raise it with the user before treating it as agreed — same bar as `.claude/rules/localization.md`\'s English-Parent ' +
         'Rule exceptions.'
     );
     console.log('');

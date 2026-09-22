@@ -241,7 +241,7 @@ em dashes inside it. On the EN hub the source is the page's own `LIBRARY` array 
 a script block, outside every slot — so its 25 inventory em dashes are a bounded
 backlog in one file, cleared through the array and a rebuild.
 
-Verified per CLAUDE.md's own rule against seven differently-shaped probes: a
+Verified per the rule against seven differently-shaped probes: a
 prose edit on the updates hub reports 18 inherited em dashes across meta
 description, prose and cards; an href-only edit on the same page reports 0 and
 lists them as pre-existing; an EN `symbol/euro-sign` edit reports its own 8 and

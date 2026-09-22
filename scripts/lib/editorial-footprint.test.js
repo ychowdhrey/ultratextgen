@@ -9,7 +9,7 @@
  * Zero dependencies, no framework - the same idiom as
  * js/counter/counterRules.test.js. Assertions only.
  *
- * WHY THIS SURFACE HAS TESTS WHEN MOST DO NOT. CLAUDE.md's rule is that a page
+ * WHY THIS SURFACE HAS TESTS WHEN MOST DO NOT. the rule is that a page
  * which merely renders copy does not need tests, but a surface that ASSERTS
  * FACTS does. This one asserts facts about other people's writing and can fail a
  * pull request over them, so a false positive here is not a cosmetic defect - it

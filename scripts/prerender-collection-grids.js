@@ -8,7 +8,7 @@
  * format picker and a Copy Collection button — and on every one of them that
  * section is the page's payload. All 898 shipped it as an empty
  * `<div id="…Container"></div>` plus an inline `GROUPS` array, built into DOM
- * by `UltraTextGen.buildGrids()` after load. CLAUDE.md's Discovery Model
+ * by `UltraTextGen.buildGrids()` after load. `.claude/rules/discovery-and-routing.md`
  * section states the cost plainly: several search and AI crawlers execute no
  * JavaScript, so for those surfaces the page's payload did not exist.
  *
