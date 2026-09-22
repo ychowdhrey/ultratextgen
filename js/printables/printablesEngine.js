@@ -3257,7 +3257,22 @@
          job's title placement is unchanged, so no existing PDF moves. */
       const units = $$(PT_PAGE_UNITS, wrap).filter((u) => !u.parentElement.closest(PT_PAGE_UNITS));
       if (units.length === 1) units[0].insertBefore(h, units[0].firstChild);
-      else wrap.insertBefore(h, wrap.firstChild);
+      else {
+        /* On a job of SEVERAL page units the title is chrome the PDF never
+           carries: printablePdf.js rasterises each explicit unit and drops
+           everything outside them, so the two export paths disagreed about
+           this one element. That was invisible while the units overflowed;
+           once a unit is exactly one page tall, the title's height ahead of
+           the first one pushes that unit's tail over the boundary -- measured
+           on the 7-level ladder through the print dialog, sheet 1's credit
+           block and QR landed alone on an 8th page. Hidden in print, and
+           never for a job with ONE unit (the title sits inside it and does
+           print) nor for a wrap with NO units (the writer cuts the wrap
+           itself, so the title is the document's own heading).
+           Nothing is lost: every sheet carries its own credit line and URL. */
+        if (units.length > 1) h.classList.add("is-multipage-label");
+        wrap.insertBefore(h, wrap.firstChild);
+      }
     }
     // Size the sheet to the paper the visitor chose, then sign it. Both have
     // to happen before anything measures or rasterises the surface.

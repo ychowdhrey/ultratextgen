@@ -10574,6 +10574,11 @@ body.is-printing.pt-ink-saver #pt-print-root .pt-cw-grid { opacity: 0.72; }
 
 @media print {
   .pt-print-tools, .pt-share-tools, .pt-spoke-batch, .pt-toast, .pt-recent { display: none !important; }
+  /* A multi-unit job's title is dropped by the PDF writer, so printing it
+     from the dialog is the one place the two paths differed -- and its height
+     ahead of a one-page-tall first unit orphaned that sheet's credit block
+     onto an extra page. See printWrap()'s own note. */
+  .bubble-print-title.is-multipage-label { display: none; }
   /* One sheet per page, never a tile or a name row split across pages. */
   .pt-sheet-page {
     page-break-after: always;
