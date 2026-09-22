@@ -89,9 +89,6 @@ only; the gate measures convergence toward the untouched sibling and reports suc
 pairs rather than failing them. When the gate flags a pair, sync it — do not reach
 for the ledger.
 
-Running the gate locally diffs `merge-base..HEAD`, so **uncommitted work is
-invisible to it**: commit first, then run, or you get a false green.
-
 ## 5. Structure is not language
 
 A page can pass every structural, schema, asset and mesh gate and still be in the

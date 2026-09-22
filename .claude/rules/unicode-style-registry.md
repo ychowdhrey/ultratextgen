@@ -2,6 +2,7 @@
 paths:
   - "styles.js"
   - "renderer.js"
+  - "fonts.json"
 ---
 
 # The Unicode style registry

@@ -7,6 +7,7 @@ paths:
   - "scripts/lib/{content-significance,redirects-parse,llms-index}.js"
   - "data/sitemap-lastmod-cache.json"
   - ".github/workflows/update-sitemap.yml"
+  - "_headers"
 ---
 
 # Discovery, routing and delivery

@@ -6,6 +6,7 @@ paths:
   - "functions/**"
   - "scripts/{check-ads,check-funding-choices}.js"
   - "scripts/lib/page-infra-targets.js"
+  - "ads.txt"
 ---
 
 # Ads and monetization

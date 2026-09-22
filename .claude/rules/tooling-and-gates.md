@@ -5,6 +5,7 @@ paths:
   - "**/*.test.js"
   - "**/*.test.py"
   - "**/*.test.html"
+  - "package.json"
 ---
 
 # Validators, gates and workflows

@@ -59,9 +59,8 @@ markup over racing it.
 
 A generator that rebuilds a list on input must not clear its container with
 `innerHTML = ""` — AdSense Auto Ads places units inside those containers. Clear
-through `clearGridKeepingAds()` / `appendAroundAds()` in `script.js`, which keep the
-unit in place **without detaching it** (moving an iframe reloads it, blanking a
-filled ad). See `.claude/rules/ads-and-monetization.md`.
+through `clearGridKeepingAds()` / `appendAroundAds()` in `script.js`. Why, and the
+measurement: `.claude/rules/ads-and-monetization.md`.
 
 ## Opt-in surfaces
 

@@ -22,16 +22,11 @@ paths:
   same way: absolutely position the figure inside a `position: relative` parent,
   which makes the height definite *and* takes the figure out of the flow so it
   cannot push its own container around.
-- **A fixed element at the viewport bottom must clear the mobile anchor ad.**
-  `header.js` publishes the displayed anchor's height as `--utg-anchor-h` on
-  `<html>`; any fixed bottom element adds it to its own offset. Ignoring it hid the
-  copy confirmation toast on every mobile pageview that carried an anchor. See
-  `.claude/rules/ads-and-monetization.md`.
+- **A fixed element at the viewport bottom must add `--utg-anchor-h` to its offset**,
+  or it sits behind the mobile anchor ad. See `.claude/rules/ads-and-monetization.md`.
 
 ## The `@font-face` block in `style.css` is generated
 
-Never hand-write one. The region between the `@self-hosted-fonts` markers is
-generated from `assets/fonts/manifest.json` by
-`python3 scripts/build-font-face-css.py --write`. See `.claude/rules/fonts.md`.
+Never hand-write one — see `.claude/rules/fonts.md`.
 
 `npm run audit:css` is the whole-site CSS audit.
