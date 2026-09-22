@@ -1,9 +1,6 @@
 ---
 paths:
-  - "{answers,guide,library,symbol,usecase,category,updates,events,learn,printables}/**"
-  - "*/{answers,guide,library,symbol,usecase,category,updates,events}/**"
-  - "{discord,facebook,instagram,linkedin,pinterest,snapchat,telegram,threads,tiktok,whatsapp,x,youtube,roblox}/**"
-  - "{de/zum-ausdrucken,es/imprimibles,fr/imprimables,id/printables,it/da-stampare,nl/om-uit-te-printen,pl/do-druku,pt/imprimiveis}/**"
+  - "**/*.html"
   - "data/{library_page_specs,event_page_specs}/**"
 ---
 
@@ -83,6 +80,24 @@ A `library/`/`symbol/` page must be registered in **its own locale's** hub. A pa
 no hub links is reachable only from the sitemap. A deliberate omission needs an
 entry in `data/library_hub_exclusions.json` (see `.claude/rules/ledgers.md`); the
 default fix is to register it.
+
+`npm run audit:library-hub-coverage` is the whole-site picture; `npm run check:symbol-peer-links`
+(the sync script with no flags) is the read-only whole-site peer audit.
+
+**There are five inventory mechanisms and you must not narrow the set** —
+`libraryArray`, `libEntry`, `azIndex`, `compareCard`, `tipCard` — and which one a hub
+uses is a property of the hub, not of the locale. A checker that knew only
+`compare-card` reported `da`, `no` and `sv` broken and `es` fine; all three were
+complete. Re-check those three locales before changing the set
+(`docs/architecture/content-lanes.md` §4).
+
+**Two deliberate non-links that an audit will flag every time — do not "fix" them.**
+`answers/` is intentionally not linked from any homepage, EN or locale: the pillar is
+built to be landed on from a search or answer engine, resolve one question and stop,
+and it keeps its `header.js` nav entry but gets no homepage body links. `symbol/`
+intentionally has **no nav entry** at all; its discovery is search- and pin-driven.
+Both were recorded after `answers/` was once wrongly "corrected" on exactly that
+basis. Reasoning: `docs/decisions/content-lanes.md`.
 
 `symbol/` hub↔spoke and peer↔peer links are **generated**, never hand-written:
 `npm run sync:symbol-peer-links`. A declared peer relation must be reciprocal, and

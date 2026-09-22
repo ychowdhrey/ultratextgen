@@ -14,14 +14,19 @@ The site's baseline on this axis is genuinely strong: across all pages there are
 
 ## Blocking
 
+`npm run audit:accessibility` is the whole-site dashboard.
+
 `npm run check:accessibility` is a **state check on changed pages**, not a delta,
 precisely because there is no backlog to be permanently red against. "This page has
 a duplicate id now" is worth failing on whether or not it had one before.
 
-The eleven blocking classes: a duplicate `id`, an `<img>` with no `alt`, a button
-or link with no accessible name, an empty `href`, an unlabelled form control, a
-missing `<html lang>`, a missing `h1`, more than one `<main>`, and a positive
-`tabindex`.
+The blocking set is `BLOCKING` in `scripts/lib/accessibility-audit.js` — read it
+there rather than trusting a count here. Today it is eleven: `duplicate-id`,
+`multiple-main`, `img-no-alt`, `control-no-name`, `input-no-label`, `empty-href`,
+`iframe-no-title`, `no-h1`, `multiple-h1`, `missing-lang`, `positive-tabindex`.
+
+`iframe-no-title` is easy to overlook and concrete here: the site ships 13 `embed/`
+surfaces and the `/embed/` documentation pages exist to be iframed.
 
 A duplicate `id` is not cosmetic here: `script.js` binds by id, so a page that
 shipped two `<main class="container">` blocks populated only the first of each and

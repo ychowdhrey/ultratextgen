@@ -1,6 +1,6 @@
 ---
 paths:
-  - "js/{share,saved}/**"
+  - "js/**/*.js"
   - "{script,header,symbol-explorer}.js"
   - "locales/**"
   - "scripts/{check-share-save-tags,inject-share-save-tags,sync-explorer-strings}.js"
@@ -68,8 +68,7 @@ gates, for a feature attachment delivers for free.
 
 ## Coverage
 
-The library/symbol lane is wired. The other ~34 clipboard-writing modules (emoji,
-huruf, vertical, ASCII, counters, name generators) still have Copy alone — about 6%
-of ungated copy volume between them, left for scope reasons, not because they should
-stay that way. Each is a few lines: build the buttons, stamp `surface`, pass a
-localized `label`.
+The library/symbol lane is wired; roughly 34 other clipboard-writing modules still
+have Copy alone. That is a backlog, not a decision — each is a few lines: build the
+buttons, stamp `surface`, pass a localized `label`. Current state and the measured
+share: `docs/architecture/copy-share-save.md`.

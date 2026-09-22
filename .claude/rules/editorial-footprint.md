@@ -11,7 +11,9 @@ paths:
 
 Read `docs/editorial-footprint-risk.md` before changing a rule and
 `docs/editorial-footprint-research-2026-08-26.md` before changing a weight.
-Thresholds, levers and the exception process: `docs/efr-quality-gate.md`.
+Thresholds, levers and the exception process: `docs/efr-quality-gate.md`. What the
+corpus actually contains, and the record of past passes:
+`docs/architecture/editorial-standard.md`.
 
 ## It is not an AI detector, and must never be described as one
 

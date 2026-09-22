@@ -92,6 +92,13 @@ rather than infer drift from "one side moved".
   **required status check** in branch protection before assuming the script is
   wrong. That is a repository setting, not a tracked file.
 
+## Surfaces that assert facts get tests
+
+A page whose value is a claim that can be wrong — a limit, a count, an encoding, a
+decode, a capability comparison — gets a zero-dependency test and a dated
+re-verification. One that merely renders copy does not. The inventory and the
+reasoning: `docs/architecture/check-surfaces.md`.
+
 ## Reading a result
 
 **Never read a probe's exit status through a pipe.** `$?` after `| head`, `| tail`

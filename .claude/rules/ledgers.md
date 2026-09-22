@@ -47,6 +47,10 @@ grandfathered.
 | `source_link_health.json` | per-URL fetch history; **never hand-edited** | `audit-link-rot.js` |
 | `sitemap-lastmod-cache.json` | per-URL content hash + lastmod; re-baselined, not edited | `update-sitemap.js` |
 | `stranded_work_exclusions.json` | a branch knowingly left untracked | `check-stranded-work.py` |
+| `library_hub_i18n.json` | per-locale hub facet labels | `build-library-hub.js` |
+| `source_block_labels.json` | each locale's own word for "Sources" | `source-attribution.js` |
+| `accent_notice_copy.json`, `accent-support.json` | the accent notice and per-style accent coverage | `build-accent-notice.js` |
+| `character-confusions.json` | confusable-character pairs | the symbol generators |
 
 Policy and registry files (`core_parent_set`, `locale_qualification_tiers`,
 `em_dash_locale_policy`, `parity_catalogue_pages`, `source_authority`) are

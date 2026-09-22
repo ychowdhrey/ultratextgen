@@ -1,7 +1,6 @@
 ---
 paths:
-  - "{updates,guide,answers}/**"
-  - "*/{updates,guide,answers}/**"
+  - "**/*.html"
   - "data/source_*.json"
   - "scripts/**/*source-attribution*"
 ---

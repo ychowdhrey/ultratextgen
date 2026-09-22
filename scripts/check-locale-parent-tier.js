@@ -52,7 +52,7 @@ if (result.requiresLedgerEntry) {
   console.log('    - keyword volume: what is the monthly search volume for this job in this locale (Semrush / keyword tool)?');
   console.log("    - EN GSC impressions: how many impressions does the EN parent already draw from this locale's language queries?");
   console.log('  Record the verdict there, or raise it with the user before treating it as agreed —');
-  console.log("  the same bar CLAUDE.md's English-Parent Rule sets for locale-first exceptions.");
+  console.log("  the same bar `.claude/rules/localization.md`’s English-Parent Rule sets for locale-first exceptions.");
 } else {
   console.log('');
   console.log('  No ledger entry required to build this — it is the registry\'s expected default.');

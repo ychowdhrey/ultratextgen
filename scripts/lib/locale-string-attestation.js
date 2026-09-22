@@ -16,7 +16,7 @@
  * SO THIS MEASURES CORPUS SUPPORT, NOT CORRECTNESS, and the difference is not
  * a quibble. A string can be fully attested and still be wrong:
  *
- *   - Wrong inflection. CLAUDE.md records the real case — Swedish "kontrollerat"
+ *   - Wrong inflection. `docs/architecture/content-lanes.md` records the real case — Swedish "kontrollerat"
  *     (neuter, agreeing with *innehållet*) where a first draft guessed
  *     "kontrollerad". Both stems are attested; only one agrees.
  *   - Wrong collocation. Every word of a phrase can be attested while the

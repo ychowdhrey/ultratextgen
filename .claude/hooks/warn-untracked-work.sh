@@ -23,8 +23,12 @@ git rev-parse --verify --quiet "$base" >/dev/null 2>&1 || base=origin/master
 git rev-parse --verify --quiet "$base" >/dev/null 2>&1 || exit 0
 
 # A branch with no merge-base cannot be measured here (shallow clone). Say so
-# rather than reporting a reassuring zero.
-if ! git merge-base "$base" HEAD >/dev/null 2>&1; then exit 0; fi
+# rather than reporting a reassuring zero -- an author who reads "no problems" from
+# a check that never ran is worse off than one who reads nothing.
+if ! git merge-base "$base" HEAD >/dev/null 2>&1; then
+  printf '{"systemMessage":"Untracked-work check could not run: no merge-base against %s (shallow clone). Run `git fetch --deepen=200` to measure."}\n' "$base"
+  exit 0
+fi
 
 ahead=$(git rev-list --count "$base"..HEAD 2>/dev/null || echo 0)
 [ "$ahead" -eq 0 ] 2>/dev/null && exit 0

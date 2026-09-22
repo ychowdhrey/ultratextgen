@@ -2,11 +2,17 @@
 paths:
   - "*.js"
   - "js/**/*.js"
+  - "*/**/*.js"
 ---
 
 # Frontend JavaScript conventions
 
 Module map and runtime architecture: `docs/architecture/frontend-runtime.md`.
+
+**`functions/` is exempt from all of it.** Those are Cloudflare Pages Functions, which
+run on the server and **do** use real ES modules (`export async function onRequest`).
+The conventions below are for code that ships to the browser. See
+`.claude/rules/discovery-and-routing.md` for what governs `functions/` instead.
 
 ## Hard conventions
 
@@ -85,3 +91,24 @@ A surface that **asserts facts** — limits, counts, encodings, decodes — dese
 tests; a surface that merely renders copy does not. The character counter has them
 because it shipped a wrong number that no visual check could catch. See
 `.claude/rules/tooling-and-gates.md`.
+
+## Never hand-edit or NFC-normalise a zalgo string
+
+The unzalgo widget on `usecase/zalgo-text` (and its eleven locale siblings) strips
+combining marks **by codepoint range** — it does not decompose. So a card only works
+while its marks are stored as *base + combining mark*, which makes **every zalgo
+string on this site NFC-fragile by construction**: normalise the file and `A`+U+0328
+becomes the single codepoint `Ą`, which no range-strip can undo. That shipped, and
+twelve cards decoded to `ZĄLGO`, `hellō`, `çiao` directly above the box claiming to
+reverse them.
+
+**The inversion worth remembering: the strings that work are NFC-*unstable*, and
+being NFC-stable is the symptom.** Generate a card with the page's own
+`generateZalgo()`, sliced out of the live widget rather than reimplemented; never
+type or edit one by hand. `npm run check:zalgo-decodes` gates it whole-site.
+
+The same slicing rule protects the engine itself: the block between
+`/* @zalgo-engine:begin */` and `/* @zalgo-engine:end */` is evaluated by
+`scripts/lib/zalgo-engine.js`, so **move the markers if you move the code**. Full
+record, including the two-stage Thai cascade decoder:
+`docs/architecture/check-surfaces.md`.

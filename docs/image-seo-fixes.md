@@ -245,7 +245,7 @@ byte-for-byte unchanged, same discipline as the render-churn note above.
 
 The remaining locales stay on `m_brand` by design: bespoke treatment is
 gated on demonstrated demand here the same way it is everywhere else on the
-site (see CLAUDE.md's flair philosophy). As a locale's organic performance
+site (see the flair philosophy in `docs/decisions/content-lanes.md`). As a locale's organic performance
 grows, add it to `LOCALIZED_HOME_MOTIF` — that registry is the whole
 extension point.
 

@@ -69,6 +69,11 @@ existing hub cannibalize its own spoke. Before shipping: list that locale's page
 check every in-depth prose section against them, and verify — do not assume — that
 the target file exists on disk.
 
+**Do not add a link a deliberate decision withholds.** `answers/` is intentionally
+unlinked from every locale homepage and `symbol/` intentionally has no nav entry —
+see `.claude/rules/content-architecture.md` and `docs/decisions/content-lanes.md`.
+This rule pushes toward adding missing locale-native links; those two are not missing.
+
 ## 4. Translation parity — after both pages exist
 
 When you edit a page in an hreflang cluster, ask whether the edit is **structural**
@@ -100,6 +105,10 @@ parent in **any** slot:
 - `data-symbol` **clipboard payloads** — the one-click copy is the page's whole
   point, and an English payload pasted from a locale page is the defect.
 
+`npm run audit:locale-translation`, `npm run audit:translation-parity`,
+`npm run audit:numeric-parity` and `npm run audit:locale-parent-gap` are the
+whole-site dashboards behind the gates named here.
+
 A byte-identical *correct* translation goes in
 `data/translation_identical_strings.json` with its reason. **Never use that ledger
 to silence a string you have not translated.** A cognate nobody chose is not a
@@ -130,7 +139,10 @@ locale's score is not comparable to a Latin one. Read a `partial` verdict as a
 question for a human reviewer, never as a defect, and an `attested` verdict never
 as "this is correct".
 
-Read the existing string off the site before adding one. Wording is each locale's
+**Never machine-translate a slug or invent a native term for one.** Divergent locale
+slugs for one English parent are this repo's signature parallel-session collision —
+two paths that merge clean and coexist as duplicates. Read the existing string off
+the site before adding one. Wording is each locale's
 own, harvested from what already shipped — never translated fresh here.
 
 ## 8. Governance
@@ -160,6 +172,14 @@ The researched lexicon of locally-native vocabulary **does not live in this repo
 and never should**; work that needs it attaches the workspace holding it as a
 sibling checkout and reads the canonical CSV filtered to `status` in
 `{approved, limited_use}`. See `docs/local-language-intelligence.md`.
+
+**Do not mix vocabulary from neighbouring countries or markets without evidence** —
+Mexican Spanish into `es_ES`-targeted copy, Portugal Portuguese into `pt_BR`, Gulf
+Arabic into pan-Arabic MSA. Each record's `country_or_market` field says which market
+it is evidenced for, and its `avoid_when` field says where to skip it. Respect
+`content_surface` and `register` too: a phrase flagged for FAQ or example use is not
+promoted into a title or H1, and community or gaming jargon does not belong in legal,
+accessibility or technical copy.
 
 Use a local phrase only when it naturally fits the exact meaning, platform,
 audience and register of the sentence. It supports the page's one primary query

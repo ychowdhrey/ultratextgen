@@ -19,7 +19,7 @@ field. Several cases below pin that granularity down so it cannot regress back.
 
 The deliberate NON-catches matter as much as the catches. A gate that fires on a
 short fragment, on a slug, or on a spec that merely still contains reuse it did
-not add is a gate people learn to route around — the failure mode CLAUDE.md
+not add is a gate people learn to route around — the failure mode `.claude/rules/tooling-and-gates.md`
 records for check:images and audit:locale-parent-gap.
 """
 

@@ -2,8 +2,7 @@
 paths:
   - "{header,script,symbol-explorer}.js"
   - "{404,index,_root}.html"
-  - "*/embed/index.html"
-  - "embed/**"
+  - "**/embed/**"
   - "functions/**"
   - "scripts/{check-ads,check-funding-choices}.js"
   - "scripts/lib/page-infra-targets.js"

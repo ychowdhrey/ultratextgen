@@ -133,13 +133,13 @@ the wrong commit; `git fetch --deepen=<n>` before trusting any first-add date.
 
 - **Conventional commits** (`feat:`, `fix:`, `chore:`, `UX:`), `[skip ci]` on
   auto-generated commits.
-- **All changes go through a pull request**; direct pushes to `master` are avoided.
+- **All changes go through a pull request**; direct pushes to `main` are avoided.
 - AI branch naming: `claude/<description>-<session-id>`.
-- **"Shipped" means merged to `master` through a PR — nothing else.** A commit pushed
+- **"Shipped" means merged to `main` through a PR — nothing else.** A commit pushed
   to a branch is not shipped, and a commit pushed to a branch whose PR **already
-  merged** is invisible: no open PR tracks it and it will never reach master. Before
+  merged** is invisible: no open PR tracks it and it will never reach `main`. Before
   recording anything as shipped, confirm the PR shows merged or that
-  `git branch -r --contains <commit>` includes `origin/master`. This repo has lost work
+  `git branch -r --contains <commit>` includes `origin/main`. This repo has lost work
   that way at least five times, for between 4 hours and 2 months.
 - **Before a translation batch or a shared-module rewrite, find out who else is in
   there.** Git's conflict detection is textual and per-hunk, so two locale slugs for
@@ -199,11 +199,12 @@ without `paths` would load every session, so every rule has one.
 
 ### 2. `.claude/skills/` — ordered procedures
 
-`steward` (how this repo expects changes to be made) · `ship-page` · `locale-batch` ·
-`add-unicode-style` · `page-art` · `printables-surface` · `editorial-remediation` ·
-`build-a-gate`. Invoke the skill rather than reconstructing its order — **most of what
-this repo has got wrong was one of these workflows run out of order or with a step
-skipped.**
+`steward` · `ship-page` · `locale-batch` · `add-unicode-style` · `page-art` ·
+`printables-surface` · `editorial-remediation` · `build-a-gate`. Invoke the skill
+rather than reconstructing its order — **most of what this repo has got wrong was one
+of these workflows run out of order or with a step skipped.** A sibling workspace
+ships a skill also named `steward`; if the name resolves there, read this repo's at
+`.claude/skills/steward/SKILL.md`.
 
 ### 3. `docs/` — evidence, and the reasoning of record
 

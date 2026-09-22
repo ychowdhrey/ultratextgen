@@ -20,6 +20,8 @@ Usage:
     python3 scripts/audit-claude-context.py --full   # list pre-existing stale links
     python3 scripts/audit-claude-context.py --strict # non-zero when over budget too
 """
+import itertools
+import json
 import pathlib
 import re
 import subprocess
@@ -31,6 +33,36 @@ ROOT_BUDGET = 250
 # A link target inside the repo, as written in a rule/skill/doc. Bare words, npm
 # aliases and shell fragments are not links and are not checked.
 LINK = re.compile(r'`((?:\.claude|docs|scripts|data|assets|js)/[A-Za-z0-9_./*<>-]+)`')
+
+
+def expand_braces(pattern):
+    """Expand {a,b} groups the way the rules loader's glob budget describes."""
+    m = re.search(r'\{([^{}]*)\}', pattern)
+    if not m:
+        return [pattern]
+    return list(itertools.chain.from_iterable(
+        expand_braces(pattern[:m.start()] + opt + pattern[m.end():])
+        for opt in m.group(1).split(',')))
+
+
+def glob_re(pattern):
+    """`**` spans directories; a single `*` does not cross a separator.
+
+    That distinction is the whole reason this pass exists: `*.js` plus
+    `js/**/*.js` silently matched none of the 21 feature scripts that live beside
+    their own page, so the rule governing them never loaded.
+    """
+    rx = (re.escape(pattern)
+          .replace(r'\*\*/', '(?:.*/)?')
+          .replace(r'\*\*', '.*')
+          .replace(r'\*', '[^/]*')
+          .replace(r'\?', '[^/]'))
+    return re.compile(rx + r'\Z')
+
+
+def tracked_files():
+    out = subprocess.run(['git', 'ls-files'], cwd=REPO, capture_output=True, text=True)
+    return out.stdout.split() if out.returncode == 0 else []
 
 
 def ignored(rel):
@@ -93,6 +125,57 @@ def main():
         else:
             print(f'    {f.relative_to(REPO).name:34s} {n:4d}L  {len(paths)} pattern(s)')
     print(f'  total scoped rule lines: {total} (loaded only on matching reads)')
+
+    # A glob that matches nothing is a rule that never loads, and it looks
+    # identical to a rule that is simply not needed yet. Four such gaps shipped in
+    # the first cut of this architecture, so this is measured, not trusted.
+    files = tracked_files()
+    if not files:
+        problems.append('could not list tracked files (not a git repo?) '
+                        '-- glob coverage UNKNOWN, not clean')
+    else:
+        print('\n  glob coverage (matched tracked files per rule):')
+        for f in rules:
+            paths, err = frontmatter(f.read_text(encoding='utf-8'))
+            if err:
+                continue
+            dead, total = [], 0
+            for raw in paths:
+                n = 0
+                for pat in expand_braces(raw):
+                    rx = glob_re(pat)
+                    n += sum(1 for p in files if rx.match(p))
+                total += n
+                if n == 0:
+                    dead.append(raw)
+            name = f.relative_to(REPO).name
+            print(f'    {name:34s} {total:6d} file(s)'
+                  + (f'   DEAD: {", ".join(dead)}' if dead else ''))
+            for raw in dead:
+                problems.append(f'{f.relative_to(REPO)}: glob {raw!r} matches no '
+                                'tracked file -- this rule will never load for it')
+
+        # The localization rule hardcodes the locale list its own text forbids
+        # discovering by glob. Keep the two in step or locale #31 silently loses
+        # the entire rule.
+        reg = REPO / 'data' / 'locale_qualification_tiers.json'
+        loc_rule = REPO / '.claude' / 'rules' / 'localization.md'
+        if reg.exists() and loc_rule.exists():
+            known = set(json.loads(reg.read_text(encoding='utf-8'))['locales'])
+            paths, err = frontmatter(loc_rule.read_text(encoding='utf-8'))
+            globbed = set()
+            for raw in (paths or []):
+                for pat in expand_braces(raw):
+                    head = pat.split('/')[0]
+                    if head in known:
+                        globbed.add(head)
+            missing = sorted(known - globbed)
+            if missing:
+                problems.append(
+                    'localization.md: locale(s) in data/locale_qualification_tiers.json '
+                    'but not in its paths: ' + ', '.join(missing))
+            else:
+                print(f'    localization covers all {len(known)} registered locales')
 
     skills = sorted((REPO / '.claude' / 'skills').glob('*/SKILL.md'))
     print(f'\n.claude/skills: {len(skills)} skill(s)')

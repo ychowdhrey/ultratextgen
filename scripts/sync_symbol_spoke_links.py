@@ -450,7 +450,7 @@ def main(argv=None):
         # Hub->spoke, mirrored the same way. The EN pass above settles which
         # hubs each spoke claims; that graph is EN-only until it is mirrored,
         # so <lang>/library/<hub> was never required to link <lang>/symbol/<spoke>
-        # and no check could see the gap (CLAUDE.md, "Only the PEER graph is
+        # and no check could see the gap (`docs/architecture/content-lanes.md` ("Only the PEER graph is
         # mirrored"). Restricted, like the peer pass, to relations where BOTH
         # ends have a live sibling in that language.
         locale_hubs = load_locale_hubs()

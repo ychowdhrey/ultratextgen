@@ -3,8 +3,6 @@ paths:
   - "scripts/**/*pinterest*"
   - "scripts/lib/r2_pinterest.py"
   - "data/*pinterest*"
-  - "assets/pinterest/**"
-  - "assets/collection-pins/**"
 ---
 
 # Pinterest pins and boards
@@ -14,6 +12,9 @@ time**. Also: `docs/pinterest-csv-format.md`, `docs/pinterest-r2-migration.md`,
 `docs/pinterest-api-publishing.md`, `docs/collection-pins-design-logic.md`.
 
 ## Images never enter git
+
+`assets/pinterest/` and `assets/collection-pins/` are **gitignored**, so this rule
+cannot be scoped to them — nothing tracked lives there, by design.
 
 Since the R2 migration, every generator **renders in memory and uploads straight to
 Cloudflare R2** via `scripts/lib/r2_pinterest.py` — the single source of truth for

@@ -6,7 +6,8 @@ paths:
 # Every page carries this furniture
 
 Deeper reference: `docs/architecture/faq-schema.md` (the drift history and the
-runtime-rewrite case), `docs/architecture/page-art.md` (the art pipeline),
+runtime-rewrite case), `docs/architecture/frontend-runtime.md` (load order and
+pre-rendering), `docs/architecture/page-art.md` (the art pipeline),
 `docs/architecture/content-lanes.md` §5 (the `updates/` pillar and its pills).
 
 ## Required in every page
@@ -17,25 +18,41 @@ runtime-rewrite case), `docs/architecture/page-art.md` (the art pipeline),
 4. **JSON-LD structured data** — `WebApplication`/`WebSite`, `Organization`,
    `BreadcrumbList`, and `FAQPage` where applicable. Never skip it, and keep it
    updated to match the content when you edit the page.
-5. **Script load order**, and it is load-bearing:
+5. **Script load order**, and it is load-bearing.** The contract is not a fixed
+   list**: every share/save module tag must precede the **first host script** —
+   `script.js`, `symbol-explorer.js`, `printablesEngine.js` and the other entries in
+   `HOST_SCRIPTS` (`scripts/lib/share-save-tags.js`). `header.js`, `styles.js` and
+   `renderer.js` are **not** hosts and normally come first, all `defer`. A live page
+   looks like this:
 
    ```html
+   <script src="/header.js" defer></script>
+   <script src="/styles.js" defer></script>
+   <script src="/renderer.js" defer></script>
    <script src="/js/share/share-core.js" defer></script>
    <script src="/js/saved/saved-items.js" defer></script>
-   <script src="/header.js"></script>
-   <script src="/styles.js"></script>
-   <script src="/renderer.js"></script>
    <script src="/script.js" defer></script>
    ```
 
-   The share/save modules are dependency-free and must come **before** their
-   consumers. `script.js`'s init calls into `share-core.js`; place the modules
-   after it and the generator throws and renders zero cards. Never hand-place
-   these tags — `npm run inject:share-save-tags` positions them and
+   The modules are dependency-free; `script.js`'s init calls into `share-core.js`, so
+   a module tag placed after its host makes the generator throw and render zero cards.
+   **A printables page owes a third module**, `/js/printables/printPrefs.js`, tagged
+   **without `defer` on purpose** — some pages load `printablesEngine.js` as a classic
+   script and read `printPrefs` at top level.
+
+   **Never hand-place these tags.** `npm run inject:share-save-tags` positions them and
    `npm run check:share-save-tags` gates presence **and order**.
 6. **Dark mode** via a `dark` class on `<html>`, never a `prefers-color-scheme`
    media query.
 7. No inline `<style>` blocks and no inline styles — add to `style.css`.
+8. **The AdSense loader** in `<head>` (`npm run check:ads`) and **the Funding Choices
+   tag** (`npm run check:funding-choices`). Both gate site-wide. Two classes must
+   carry **no** loader — `404.html` and iframe sources (`<tool>/embed/index.html`);
+   see `.claude/rules/ads-and-monetization.md`.
+
+**A file with an `<html>` element is a page.** Two tracked `.html` files are not —
+a search-engine verification stub that must stay byte-exact, and a script fragment
+under `scripts/`. Neither takes any of the furniture above.
 
 ## Structured data must mirror what the reader sees
 
@@ -55,6 +72,9 @@ House markup is either the JS-bound accordion
 (`<div class="faq-item"><button class="faq-question">` + `.faq-answer`) or the
 JS-free disclosure (`<details class="faq-item"><summary class="faq-question">`).
 Prefer `<details>` on any page that does not load `/script.js`.
+
+`npm run audit:faq-schema` is the whole-site picture; `npm run check:faq-schema` gates
+every page a PR touches.
 
 **Never hand-write a schema.org `citation` array or hand-edit a Sources block's
 JSON-LD** — it is generated from the block so the two cannot drift.

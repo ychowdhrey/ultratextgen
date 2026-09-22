@@ -253,7 +253,7 @@ if (flagged.length) {
     );
     console.log(
       '    Fix: record the result in data/locale_parent_gap_audit.json (see its "_readme") once you\'ve run the ' +
-        'check, or raise it with the user before treating it as agreed — same bar as CLAUDE.md\'s English-Parent ' +
+        'check, or raise it with the user before treating it as agreed — same bar as `.claude/rules/localization.md`\'s English-Parent ' +
         'Rule exceptions.'
     );
     console.log('');
