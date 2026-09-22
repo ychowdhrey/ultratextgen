@@ -90,6 +90,16 @@ The caption under it names the same settings in words and **introduces no new
 strings** — it is composed from `PO.letter` / `PO.portrait` / `PO.narrow` /
 `PO.inkSaver`, which the panel already ships translated in eight languages.
 
+> **Amended 2026-09-22.** True, and it covered fewer pages than it reads as. The
+> caption belongs to the character surface's paper preview; `genPreviewMeta` and
+> `designPreviewMeta` name the paper on their own families. Measured by seeding
+> Legal/Landscape/Narrow/Ink-saver and reading the rendered text, **14 of the 27
+> EN families named the active paper nowhere on the page** — `banner-maker`,
+> `monogram-maker`, `name-puzzle-maker`, `dot-to-dot-name`, all six
+> `*-in-cursive` pages, the three puzzle makers and `cross-stitch-letters`. The
+> panel's own collapsed summary now carries it everywhere; see the section
+> below.
+
 **The sheet is capped by HEIGHT, not width** (`min(100%, 72vh * aspect)`). That is the
 answer to *"the image still is not occupying the larger space"*: the old
 `.bubble-stage.is-solo` cap was a flat 560px, so a sheet sat in an 852px column with
@@ -292,6 +302,114 @@ ascent/descent difference below the box centre. `glyphMetrics.ink()` exposes
 `emAscent`/`emDescent` for exactly this caller and says so in its own comment. Guessing
 0.3em instead is only ever the degraded fallback for a browser with no
 `actualBoundingBox` support.
+
+## The output row reaches every sheet, and says what it will print (2026-09-22)
+
+Six defects in the print-settings / PDF / PNG / Share / Share-as-image / Pin row,
+found by driving all 27 EN printables families in headless Chromium. Reading the
+markup would have found none of them: every surface here is written at runtime.
+
+### The anchor was a hand-ordered list, and that is two bugs
+
+`buildPrintOptions()` mounts **four** things from one anchor — the panel, the
+share row, the saved strip and the recent strip — and returned at its first line
+when the anchor was null. It chose that anchor with
+`firstEl([alphaPrint, practicePrint, namePrint, genPrint, designPrint,
+bannerPrint, puzzlePrint])`, a preference order, not the order a visitor meets
+the page in.
+
+* On a page mounting several surfaces the panel was inserted above whichever
+  ranked highest **in the list**, which put it **below** the first action row on
+  8 of 27 EN families — 44 pages once locale mirrors are counted. Worst:
+  `name-tracing`, panel at y=2282 against a Download PDF button at y=1049.
+* The list omitted `searchPrint`/`cwPrint`/`scPrint`, so `word-search-maker`,
+  `crossword-maker` and `word-scramble-maker` matched nothing and shipped
+  2026-09-19/20 with **no print settings and no share row at all** — while still
+  writing to `utg_printables_recent`, a history with no surface to show it.
+
+`firstActionSurface()` replaces it with document order over all eleven action
+ids plus `#pt-panel`. Adding three ids to the old list would have fixed those
+three pages and left the next surface to rediscover the same thing, which is why
+the repair is the ordering.
+
+| | before | after |
+|---|---:|---:|
+| families with no panel and no share row | 3 | **0** |
+| panel below the first action row | 8 | **1** |
+| families stating the active paper | 13 | **27** |
+
+The one remaining is `coloring-page-maker`, whose page HTML declares its own
+`#pt-print-options` mount **after** the action row. That is the page's own
+deliberate placement, it is 56px away, and an explicit mount still wins. Three
+locale siblings share it. Making the estate consistent means moving four mounts
+in page HTML, which bills clean-on-touch — a decision, not a defect.
+
+### Two more gates on the wrong question
+
+`onShareImage` was gated on `primaryInput() || el.panel`, which is **not** the
+set of surfaces that can build a PNG: the puzzle inputs are word *lists* and are
+deliberately absent from `primaryInput()`, which feeds `p.name`.
+`primaryPngExport()` is now split into `pngExportTarget()` (the predicate) and
+the action, so the button can be offered without exporting to find out.
+
+`presetParams()` carried a word list for word-search only, so a shared
+**crossword or scramble** link reopened an empty tool. Both round-trip now.
+
+### The pin rule lived in one engine of three
+
+"The sheet preview, never the branded OG card" was fixed in
+`printablesEngine.js` on 2026-09-13 and never ported, so all six
+`monogram-maker`/`cross-stitch-letters` pages (EN + es x2 + fr + id) went on
+pinning a 1200x630 **landscape** brand card to the one platform that is
+vertical-first — each with a `.pt-sheet-preview` already on the page. It now
+lives in `printPrefs.js`, which all three engines load.
+
+The pin **description** was the full `<title>`, brand suffix included. It now
+prefers the page's own `meta[name="description"]` — purpose-written for this and
+already translated in all 30 locales — and falls back to the de-suffixed title.
+
+### The summary states the settings, in the page's own words
+
+Prefs persist in **one** `localStorage` key across the whole pillar, so a
+visitor who picks Legal/Landscape on one page carries it to the next, and the
+collapsed disclosure read the static words "PDF settings". It now reads
+`PDF-Einstellungen · A4 · Querformat · Schmal · Tintensparmodus`: the paper
+always, then only what deviates from the default. Every word comes from
+`PANEL_I18N`; the ink label's bracketed gloss is trimmed because all eight
+locales write it in brackets, and trimming a bracket is not authoring a string.
+
+### What stops it recurring
+
+`npm run check:printables-surface-wiring` compares the engine against **itself**
+— every `*Print` key in the `el` map must be one `firstActionSurface()`
+considers, every primary `*Png` key one `pngExportTarget()` reaches. It gates,
+because the backlog is zero after this repair, and it exits **2** when it cannot
+locate its subject so a rename fails closed.
+
+Verified against five differently-shaped inputs plus a control: the real
+regression replayed (exit 1, naming all three), a PNG surface dropped (exit 1), a
+renamed `firstActionSurface` (**exit 2 UNKNOWN**, not eleven false defects), a
+brand-new surface added to `el` and nowhere else (exit 1 on both rules), a
+non-action `pt-` key added to `el` (exit 0), and the clean tree (exit 0).
+
+Writing it surfaced a bug in itself worth recording: the key scan matched
+`\w+Png` as a **suffix**, so `namePngT` never entered the set and the
+`PNG_VARIANTS` exemption written for it was inert — excluding a key the scan
+never produced, and under-counting the summary by one. Found by reading the
+count, not the code. That is "confirm structure, not syntax" arriving inside a
+check written to enforce it.
+
+### Reported, not fixed
+
+The three puzzle makers have **no `.pt-sheet-preview` and no preview asset**
+(303 exist for other pages), so their pin correctly falls back to `og:image`.
+`generate-printables-previews.py` raises on an unknown family by design; those
+three need renderers of their own. The verification asserts the fallback
+explicitly, so the day a preview exists that assertion starts requiring it.
+
+`monogram-maker` and `cross-stitch-letters` still have no recent- or
+saved-sheets strip: `rememberSheet()` is `printablesEngine`-only. Same shape as
+the pin rule above, and the same repair would fit.
 
 ## Verification
 

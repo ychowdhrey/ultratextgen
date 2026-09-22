@@ -10439,6 +10439,17 @@ body.dark-mode .source-note {
   color: var(--text-secondary);
   padding: 0.35rem 0;
   list-style: none;
+  /* The state span makes this line longer than the label ever was; at 390px
+     "PDF settings · Legal · Landscape · Narrow · Ink saver" has to wrap rather
+     than push the panel wider than the sheet beside it. */
+  overflow-wrap: anywhere;
+}
+/* The active settings, beside the label. Lighter and normal-weight so the
+   summary still reads as one control rather than two, and allowed to wrap at
+   phone width instead of overflowing a 46px row. */
+.pt-print-state {
+  font-weight: 400;
+  color: var(--text-muted, var(--text-secondary));
 }
 .pt-print-options > summary::-webkit-details-marker { display: none; }
 .pt-print-options > summary::before {

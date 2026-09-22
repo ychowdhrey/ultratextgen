@@ -296,6 +296,21 @@ jobs:
         continue-on-error: true
         run: npm run check:share-save-tags | tee share-save-tags.log
 
+      # Compares printablesEngine.js against ITSELF: every action surface the
+      # `el` map reads must be one firstActionSurface() can anchor on, and every
+      # primary PNG surface one pngExportTarget() can reach. The three puzzle
+      # makers shipped with no print-settings panel and no share row because
+      # their ids were in the map and not in the anchor list, and no gate could
+      # see it — the mount is written at runtime, so there is nothing in the
+      # HTML for a static page check to find. Whole-file and gating: the backlog
+      # is zero after the 2026-09-22 repair. It exits 2 rather than 0 when it
+      # cannot locate its subject, so a rename fails closed instead of reporting
+      # a comforting clean.
+      - name: Run printables surface wiring check
+        id: printables_surface_wiring
+        continue-on-error: true
+        run: npm run check:printables-surface-wiring | tee printables-surface-wiring.log
+
       # glyphMetrics.js must load BEFORE printablesEngine.js: the engine reads
       # it for tile centring, word-box sizing, ruled-line registration and the
       # skeleton fit, so a tag in the wrong position is present, diffs clean and
@@ -852,6 +867,7 @@ jobs:
             echo '```'
             echo ""
             echo "### Funding Choices tag check — \`${{ steps.funding_choices.outcome }}\`"
+            echo "### Printables surface wiring check — \`${{ steps.printables_surface_wiring.outcome }}\`"
             echo "### Share/Save module tag check — \`${{ steps.share_save_tags.outcome }}\`"
             echo "### glyphMetrics tag check — \`${{ steps.glyph_metrics_tag.outcome }}\`"
             echo "### symbol-explorer string sync check — \`${{ steps.explorer_strings.outcome }}\`"
@@ -859,7 +875,7 @@ jobs:
             echo "### share-core analytics tests — \`${{ steps.share_core_tests.outcome }}\`"
             echo "### IndexNow submission-policy tests — \`${{ steps.indexnow_tests.outcome }}\`"
             echo '```'
-            cat share-save-tags.log explorer-strings.log saved-items-tests.log indexnow-tests.log share-core-tests.log
+            cat printables-surface-wiring.log share-save-tags.log explorer-strings.log saved-items-tests.log indexnow-tests.log share-core-tests.log
             echo '```'
             echo ""
             echo "### Funding Choices tag check — \`${{ steps.funding_choices.outcome }}\`"
@@ -1143,6 +1159,7 @@ jobs:
           steps.hreflang_completeness.outcome == 'failure' ||
           steps.library.outcome == 'failure' ||
           steps.funding_choices.outcome == 'failure' ||
+          steps.printables_surface_wiring.outcome == 'failure' ||
           steps.share_save_tags.outcome == 'failure' ||
           steps.glyph_metrics_tag.outcome == 'failure' ||
           steps.explorer_strings.outcome == 'failure' ||
