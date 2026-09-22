@@ -112,7 +112,7 @@ idempotent (verified: a second run reports `898 already current, 0 updated`).
 | `check:locale-translation` | **no-op after the `fi`/`ms` fix** — see §4 | Group names come from each page's own `GROUPS`, already in that page's language. |
 | `check:editorial-footprint` | **excluded** | `.flag-grid-section` added to `DROP_SELECTORS` in `scripts/lib/editorial-corpus.js`. |
 | `check:accessibility` | **no-op** | One container per page, so `preview-N` / `copyBtn-N` cannot collide; every button carries text. |
-| `<lastmod>` | **advances once, correctly** | The grids are new visible content and new copy payloads on those pages. CLAUDE.md's own list of changes that legitimately advanced `lastmod` names "hubs pre-rendered". Nothing about what the hash *covers* changed, so no cache re-baseline is required. |
+| `<lastmod>` | **advances once, correctly** | The grids are new visible content and new copy payloads on those pages. `.claude/rules/discovery-and-routing.md`’s list of changes that legitimately advance `lastmod` names "hubs pre-rendered". Nothing about what the hash *covers* changed, so no cache re-baseline is required. |
 
 ### Why the editorial corpus drops it
 

@@ -13,7 +13,7 @@ WHAT THESE PIN DOWN
 Three things, each of which would be a silent defect rather than a crash:
 
   1. **The locale carve-out.** Every `<lang>/...` page must return None. If this
-     ever starts routing, a French page links an English tool, which CLAUDE.md's
+     ever starts routing, a French page links an English tool, which `.claude/rules/editorial-copy.md`’s
      locale-native linking rule forbids and `check-locale-mesh` fails on.
   2. **Idempotence.** The pass may only touch a card still on the shared
      homepage default. A second run must be a no-op, and a card someone already

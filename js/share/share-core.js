@@ -569,6 +569,23 @@
     const itemType = o.itemType || "style";
     const urlOf = () => (typeof o.url === "function" ? o.url() : (o.url || window.location.href));
     const titleOf = () => (typeof o.title === "function" ? o.title() : (o.title || document.title));
+    /* A pin's description is read by people browsing Pinterest, not by someone
+       looking at a browser tab, so the brand suffix every <title> on this site
+       carries (" | UltraTextGen", in all 30 locales) is spent characters. The
+       page's own meta description is purpose-written for exactly this job and
+       already translated, so it is preferred and nothing is authored here; the
+       de-suffixed title is the fallback for a page without one.
+
+       Scoped to the PIN. A native share sheet shows the title next to the link
+       and the full one is right there. */
+    const pinDescriptionOf = () => {
+      if (o.pinDescription) return typeof o.pinDescription === "function" ? o.pinDescription() : o.pinDescription;
+      const meta = document.querySelector('meta[name="description"]');
+      const desc = meta && (meta.getAttribute("content") || "").trim();
+      if (desc) return desc;
+      // Only a trailing " | <brand>" segment, never an interior pipe.
+      return String(titleOf()).replace(/\s*\|\s*[^|]*$/, "").trim() || titleOf();
+    };
     const cls = o.buttonClass || "bubble-btn pt-share-btn";
     // Icon + label, never a bare string: four equal-weight text buttons read
     // as a wall and outshouted the sheet's own Print button. The icons are
@@ -624,7 +641,7 @@
       pin.target = "_blank"; pin.rel = "noopener";
       pin.addEventListener("click", () => {
         pin.href = "https://www.pinterest.com/pin/create/button/?url=" + encodeURIComponent(urlOf()) +
-          "&media=" + encodeURIComponent(o.pinMedia() || "") + "&description=" + encodeURIComponent(titleOf());
+          "&media=" + encodeURIComponent(o.pinMedia() || "") + "&description=" + encodeURIComponent(pinDescriptionOf());
         pushShare("pinterest", SHARE_DESTINATIONS.PINTEREST, { surface: surface, itemType: itemType });
         if (o.onShared) o.onShared("pinterest");
       });

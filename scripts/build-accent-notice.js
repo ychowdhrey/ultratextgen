@@ -76,7 +76,7 @@ const COMMENT = "<!-- Accent-aware hint: shows only when the input contains diac
 
 // Locale codes come from the canonical registry, never from a filesystem glob:
 // zh-tw is five characters and a two-character glob has silently skipped it
-// before (see CLAUDE.md, "Do not discover locales with a filesystem glob").
+// before (see `.claude/rules/localization.md`).
 function localeCodes() {
   const out = new Set();
   (function walk(node) {
@@ -137,7 +137,7 @@ function isUpsideDown(rel, html) {
 // differently.
 // x-default is the documented fallback: a ratified local-only page declares no
 // hreflang="en" at all, only a self-reference and an x-default on the bare
-// homepage (see CLAUDE.md, "Ratified local-only exceptions"). The homepage is a
+// homepage (see `docs/decisions/local-only-locale-exceptions.md`). The homepage is a
 // generator, so those pages have a deployable counterpart even though they have
 // no translation parent — es/fuentes-de-letras, tr/sekilli-yazi, ja/gal-moji
 // and 16 more would otherwise be skipped for the wrong reason.

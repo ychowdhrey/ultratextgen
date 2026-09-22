@@ -49,7 +49,7 @@ after-the-fact repair. Those are, respectively, items 2, 3, and 1 below.
 **The problem this replaces:** `scripts/audit-hreflang.js` and
 `scripts/check-translation-parity.js` are both *audit-and-repair* tools —
 they find drift after it ships and either report it or require a human to
-fix it. CLAUDE.md's "Locale-native internal linking" section documents a
+fix it. `.claude/rules/localization.md` documents a
 recurring bug of exactly this shape: PR #586 fixed 3 instances of a locale
 page linking an English hub instead of its own locale-native sibling; a
 same-day follow-up audit found the identical pattern in 21 more locale

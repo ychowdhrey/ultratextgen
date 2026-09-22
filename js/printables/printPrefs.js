@@ -18,6 +18,8 @@
  *   save()          persist to localStorage
  *   buildPanel(o)   the <details> panel; o = { labels, onChange }
  *   defaultPaper()  the region default, exported for tests
+ *   sheetPreviewUrl() the image that represents this SHEET, never the OG card
+ *   stateSummary(L) the active non-default settings, in this page's language
  *
  * Load it BEFORE any engine that uses it. It has no dependencies.
  */
@@ -215,6 +217,55 @@
     return Object.assign({}, PANEL_I18N.en, PANEL_I18N[lang] || {});
   }
 
+  /* The image that represents THIS SHEET: the rendered preview
+     scripts/wire-printables-previews.py writes as `.pt-sheet-preview`, never
+     the branded OG card. It lives here because all three engines load this
+     module and only one of them had the rule.
+
+     printablesEngine.js fixed its own copy on 2026-09-13 -- before that every
+     pin fell through to og:image, a 1200x630 LANDSCAPE brand card on the one
+     platform that is vertical-first -- and the fix was never ported. Measured
+     2026-09-22 by reading the composed pin href in a browser: all six
+     monogram/cross-stitch pages (EN + es x2 + fr + id) were still pinning the
+     OG card, and all six carry a `.pt-sheet-preview` that was right there. The
+     older class names stay as a fallback for a page wired by hand. */
+  function sheetPreviewUrl() {
+    const img = document.querySelector(".pt-sheet-preview img")
+      || document.querySelector("img.pt-preview-img")
+      || document.querySelector(".pt-preview-figure img");
+    if (img && img.src) return img.src;
+    const og = document.querySelector('meta[property="og:image"]');
+    return og ? og.getAttribute("content") : "";
+  }
+
+  /* The settings this visitor is actually on, for the collapsed summary.
+
+     Only deviations from the default are listed, after the paper, which is
+     always named: prefs persist in ONE localStorage key across the whole
+     pillar, so someone who picks Legal/Landscape on one page carries it to the
+     next -- and the summary read the static words "PDF settings" while 14 of
+     the 27 EN families named the active paper nowhere on the page at all.
+     Verified by seeding those prefs and reading the rendered text: the word
+     "Legal" appeared nowhere on banner-maker, monogram-maker, name-puzzle-maker
+     or any of the six *-in-cursive pages.
+
+     Every word comes from PANEL_I18N, already translated. The parenthetical is
+     dropped from the ink label because the summary is one line at 390px and
+     every one of the eight locales writes that gloss in brackets -- trimming a
+     bracket is not authoring a string. */
+  function stateSummary(L) {
+    const labels = L || panelLabels();
+    const bits = [labels[values.paper] || labels.letter];
+    if (values.orient === "landscape") bits.push(labels.landscape);
+    if (values.margin === "narrow") bits.push(labels.narrow);
+    if (values.ink === "saver") bits.push(String(labels.inkSaver || "").replace(/\s*\([^)]*\)\s*$/, ""));
+    // English-only, exactly like the control: buildPanel() clears a stored
+    // "contrast" on every other locale, so this can never be the one English
+    // word in a translated summary.
+    if (values.ink === "contrast") bits.push("High contrast");
+    return bits.join(" \u00b7 ");
+  }
+
 
   function choiceRow(labelText, options, current, onPick) {
     const row = document.createElement("div");
@@ -268,6 +319,8 @@
     SCALES: SCALES,
     defaultPaper: defaultPaper,
     shareLabels: shareLabels,
+    sheetPreviewUrl: sheetPreviewUrl,
+    stateSummary: stateSummary,
     paperFull: paperFull,
     marginIn: marginIn,
     scale: scale,
@@ -293,11 +346,18 @@
       const L = Object.assign(panelLabels(), opt.labels || {});
       const only = opt.only ? new Set(opt.only) : null;
       const wants = (k) => !only || only.has(k);
-      const changed = () => { save(); if (opt.onChange) opt.onChange(); };
       const details = document.createElement("details");
       details.className = "pt-print-options";
       const summary = document.createElement("summary");
       summary.textContent = L.settings || "Print settings";
+      /* A separate node so the state can be restyled and, more importantly, so
+         repainting it cannot overwrite the label. */
+      const state = document.createElement("span");
+      state.className = "pt-print-state";
+      summary.appendChild(state);
+      const paintSummary = () => { state.textContent = " \u00b7 " + stateSummary(L); };
+      paintSummary();
+      const changed = () => { save(); paintSummary(); if (opt.onChange) opt.onChange(); };
       details.appendChild(summary);
       if (wants("paper")) details.appendChild(choiceRow(L.paper || "Paper", [
         { key: "letter", label: L.letter || "US Letter" },

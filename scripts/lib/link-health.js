@@ -52,7 +52,7 @@
  * NEVER GATES. The audit is informational by construction: it depends on the
  * public internet, on hosts that rate-limit, and on whatever egress the
  * runner has. A gate on that would be red for reasons no PR author can fix,
- * which is the failure mode CLAUDE.md documents for check:images.
+ * which is the failure mode `.claude/rules/tooling-and-gates.md` documents for check:images.
  */
 
 const fs = require('fs');

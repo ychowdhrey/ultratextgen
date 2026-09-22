@@ -188,7 +188,7 @@ if (unbound.length) {
     'Fix: use the JS-free disclosure variant instead —\n' +
       '     <details class="faq-item"><summary class="faq-question">Q</summary>\n' +
       '       <p class="faq-answer">A</p></details>\n' +
-      '     See CLAUDE.md, "FAQ schema must mirror visible page content".'
+      '     See `.claude/rules/html-pages.md`.'
   );
   console.log('');
 }
@@ -231,7 +231,7 @@ if (driftFlagged.length) console.log(
     '     the JSON-LD grew a sentence the page never renders, or the visible answer was\n' +
     '     trimmed and the JSON-LD kept the old wording. Render the missing content, or\n' +
     '     drop it from the JSON-LD. Google compares the actual strings; paraphrase is not\n' +
-    '     a match. See CLAUDE.md, "FAQ schema must mirror visible page content".'
+    '     a match. See `.claude/rules/html-pages.md`.'
 );
 
 for (const f of flagged) {
@@ -247,7 +247,7 @@ for (const f of flagged) {
 if (flagged.length) console.log(
   'Fix: render the Q&A on the page (house style: .faq-item > .faq-question + .faq-answer),\n' +
     '     or remove the unmatched questions from the JSON-LD. Schema must mirror visible\n' +
-    '     content — see CLAUDE.md, "FAQ schema must mirror visible page content".\n' +
+    '     content — see `.claude/rules/html-pages.md`.\n' +
     '     Whole-site picture: npm run audit:faq-schema'
 );
 process.exit(1);

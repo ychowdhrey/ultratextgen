@@ -201,7 +201,7 @@ if (crossCluster.length) {
 if (duplicateClusters.length) {
   console.log('Duplicate-page clusters — two+ pages claim the same locale for one EN parent.');
   console.log('This is the "Parallel sessions build the same thing under different names" bug');
-  console.log('(CLAUDE.md, Git Workflow) — resolve by hand (keep the more-integrated page, 301');
+  console.log('(`docs/architecture/parallel-sessions.md`) — resolve by hand (keep the more-integrated page, 301');
   console.log('the other, repoint references), never auto-filled:');
   for (const d of duplicateClusters) {
     console.log(`  ✗ cluster ${d.anchor} — hreflang="${d.lang}" claimed by:`);

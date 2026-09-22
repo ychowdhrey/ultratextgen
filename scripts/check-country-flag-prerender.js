@@ -21,7 +21,7 @@
  * country tiles without JavaScript, and no gate on this site could see it: the
  * parity fingerprint reads links and section counts, the locale gate reads
  * text that was not in the HTML, the accessibility gate reads markup that
- * rendered, and the image gates read assets. CLAUDE.md's Discovery Model
+ * rendered, and the image gates read assets. `.claude/rules/discovery-and-routing.md`
  * section names the cost — several search and AI crawlers execute none — and
  * on these pages the tiles are the entire payload.
  *

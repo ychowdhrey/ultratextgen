@@ -6,7 +6,7 @@
  * Language-independent "structural fingerprint" of a page: which content
  * pages it links to (resolved through the hreflang cluster map so a
  * locale-native link and its EN equivalent count as the same target — see
- * "Locale-native internal linking" in CLAUDE.md), plus rendered-FAQ/h2/
+ * `.claude/rules/localization.md`), plus rendered-FAQ/h2/
  * symbol-tile/table counts. Shared by audit-translation-parity.js (point-in-time site sweep)
  * and check-translation-parity.js (per-PR diff gate) so "did this page's
  * content actually change" means the same thing in both places.

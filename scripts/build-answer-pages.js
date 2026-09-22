@@ -77,7 +77,7 @@ function breadcrumbJsonLd(slug, name) {
  * which is what made regenerating one page silently drop the figure from it.
  *
  * Emitted only when the SVG actually exists: referencing art that isn't on
- * disk would ship a 404 to Googlebot (see CLAUDE.md, "New pages must ship with
+ * disk would ship a 404 to Googlebot (see `.claude/rules/html-pages.md` ("New pages must ship with
  * their hero/OG/Twitter art in the same change"), so a missing file warns and
  * emits nothing instead.
  */

@@ -399,7 +399,7 @@ should be reviewed but don't block.
 
 ### Translating a page: the lane is inherited, never re-decided
 
-`library/` vs `symbol/` (CLAUDE.md, "Content Types: Library vs Symbol") is a
+`library/` vs `symbol/` (`.claude/rules/content-architecture.md`) is a
 **content-type** decision made once, on the English page, via its spec's
 `page_type`. Translating that page into `<lang>/` does not reopen the
 decision — a translation of a `/symbol/<slug>/` page ships to

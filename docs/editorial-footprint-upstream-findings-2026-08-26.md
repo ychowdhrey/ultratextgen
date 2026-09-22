@@ -380,7 +380,7 @@ wired into `.github/workflows/validate.yml` as a **gating** step, with
   reuse is correct.
 - `--audit` prints the whole-corpus picture (`npm run audit:spec-sentence-reuse`).
 
-Verified per CLAUDE.md's own rule before being trusted ("Adding a validator
+Verified per the rule before being trusted ("Adding a validator
 script is not the same as gating on it"), against real inputs on the live tree:
 
 - **Catch** — pasting the 181-spec tagline sentence into

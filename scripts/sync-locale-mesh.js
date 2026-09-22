@@ -5,7 +5,7 @@
  * sync-locale-mesh.js
  *
  * Phase-0 mesh automation: generates the reciprocal hreflang set and
- * locale-native internal links CLAUDE.md's "Locale-native internal linking"
+ * locale-native internal links, per `.claude/rules/localization.md`
  * and "Localization Workflow" sections require, instead of leaving them to
  * manual vigilance (the failure mode PR #586 and its 21-locale follow-up
  * audit had to hand-repair).

@@ -713,7 +713,18 @@
         /* Only where the OS can take the file; otherwise share-core falls
            through to a plain download and this is a second "Download PNG". */
         onShareImage: (ns.canShareFiles && ns.canShareFiles()) ? shareImage : null,
-        pinMedia: function () { return og ? og.getAttribute("content") : ""; }
+        /* The SHEET preview, never the branded OG card. printPrefs.sheetPreviewUrl()
+           is the one owner of that rule; this engine pinned og.content -- a
+           1200x630 LANDSCAPE brand card, on the one platform that is
+           vertical-first -- for the nine days between printablesEngine.js
+           fixing its own copy (2026-09-13) and this port. Every one of these
+           pages already carries the `.pt-sheet-preview` it should have been
+           using. `og` stays as the fallback, which is what the shared helper
+           returns anyway when no preview is on the page. */
+        pinMedia: function () {
+          if (PP && PP.sheetPreviewUrl) return PP.sheetPreviewUrl();
+          return og ? og.getAttribute("content") : "";
+        }
       }));
     } else if (!(ns && ns.buildShareRow)) {
       // Never fail silently: no share row looks identical to a page that

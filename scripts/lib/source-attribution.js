@@ -279,7 +279,7 @@ function inspect(relPath, html) {
  * Article, CollectionPage, WebApplication, WebPage, FAQPage).
  *
  * It is DERIVED FROM THE SOURCES BLOCK, never authored separately, for the
- * reason CLAUDE.md's FAQ-schema section documents at length: two hand-kept
+ * reason `.claude/rules/html-pages.md` documents at length: two hand-kept
  * copies of one list drift, and the drifted one is the one nobody sees.
  * The block is the source of truth; this is a projection of it.
  *

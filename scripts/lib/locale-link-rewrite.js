@@ -6,7 +6,7 @@
  * Given discoverClusters()'s { byUrl, clusters } and one page record, finds
  * every internal <a href="..."> on that page pointing at an English
  * (non-locale-prefixed) hub/spoke URL under one of the sections named in
- * CLAUDE.md's "Locale-native internal linking" rule — category/, library/,
+ * the locale-native internal linking rule in `.claude/rules/localization.md` — category/, library/,
  * usecase/, guide/, answers/, symbol/, or any of the eleven platform roots —
  * for which a locale-native equivalent already exists, in THIS page's own
  * locale, inside that URL's hreflang cluster.

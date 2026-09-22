@@ -2251,11 +2251,22 @@
     if (spacingKey !== "normal") p.sp = spacingKey;
     if (stencilOnFlag) p.st = "1";
     if (el.sizeControl && alphaSizeKey !== "full") p.size = alphaSizeKey;
-    const heading = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading]);
+    const heading = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading, el.cwHeading, el.scHeading]);
     if (heading && heading.value.trim()) p.heading = heading.value.trim();
     if (el.searchInput && el.searchInput.value.trim()) {
       p.words = WS_NS().normalizeWords(el.searchInput.value).map((w) => w.display).join("|");
       if (searchState.level !== "medium") p.wslevel = searchState.level;
+    }
+    /* Crossword and scramble carry their word list too. Only the word-search
+       branch above existed, so a shared crossword or scramble link reopened an
+       EMPTY tool -- and the share row those two pages were missing until
+       2026-09-22 is what made that invisible. Their lists are taken verbatim
+       rather than through normalizeWords(): that helper is the word-search
+       module's own grid-placement normaliser, and neither of these builds a
+       grid the same way. */
+    const puzzleWords = firstEl([el.cwInput, el.scInput]);
+    if (!p.words && puzzleWords && puzzleWords.value.trim()) {
+      p.words = puzzleWords.value.split(/[\n,]+/).map((w) => w.trim()).filter(Boolean).join("|");
     }
     if (el.strip && activeChar && !CFG.initialChar) p.ch = activeChar;
     /* Paper travels, but only as a suggestion -- see the read side, which
@@ -2295,12 +2306,13 @@
     const cs = presetGet("case");
     if (cs && el.genCase && ["as-typed", "upper", "lower", "title"].indexOf(cs) !== -1) el.genCase.value = cs;
     const words = presetGet("words");
-    if (words && el.searchInput) {
-      el.searchInput.value = String(words).split("|").map((x) => x.trim()).filter(Boolean).join("\n");
+    const wordsEl = firstEl([el.searchInput, el.cwInput, el.scInput]);
+    if (words && wordsEl) {
+      wordsEl.value = String(words).split("|").map((x) => x.trim()).filter(Boolean).join("\n");
     }
     const wslevel = presetGet("wslevel");
     if (wslevel && ["easy", "medium", "hard"].indexOf(wslevel) !== -1) searchState.level = wslevel;
-    const heading = presetGet("heading"); const headingEl = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading]);
+    const heading = presetGet("heading"); const headingEl = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading, el.cwHeading, el.scHeading]);
     if (heading && headingEl) headingEl.value = String(heading).slice(0, 60);
     /* A link's paper seeds a visitor who has never chosen, and never
        overrides one who has. Paper is a property of the recipient's printer,
@@ -2439,30 +2451,48 @@
   // surface on the same page, so the strip and the Save button cannot drift.
   document.addEventListener("utg:savedchange", () => { renderSaved(); });
 
-  // The image a pin should carry: the SHEET preview, never the branded OG
-  // card. scripts/wire-printables-previews.py writes the figure as
-  // `.pt-sheet-preview`; the first two selectors here named classes that have
-  // never existed in the tree, so every pin between 2026-09-12 and 09-13 fell
-  // through to og:image -- a 1200x630 landscape brand card, on the one
-  // platform that is vertical-first. `.pt-sheet-preview` is the class the
-  // wiring script actually writes and is checked first; the older names stay
-  // as a fallback in case a page is wired by hand.
+  /* The image a pin should carry: the SHEET preview, never the branded OG
+     card. The rule and its history now live in printPrefs.js, which all three
+     printables engines load -- this copy was the only one that had it, so the
+     monogram and cross-stitch pages went on pinning a 1200x630 landscape brand
+     card to the one platform that is vertical-first for nine days after it was
+     fixed here. Delegating rather than keeping a second copy is the same
+     "one owner" rule the module header states. The inline fallback covers a
+     printPrefs that failed to load; it is not a second implementation to
+     maintain, it is this function's own last resort. */
   function previewImageUrl() {
-    const img = $(".pt-sheet-preview img") || $("img.pt-preview-img") || $(".pt-preview-figure img");
-    if (img && img.src) return img.src;
+    if (PP && PP.sheetPreviewUrl) return PP.sheetPreviewUrl();
     const og = $('meta[property="og:image"]');
     return og ? og.getAttribute("content") : "";
   }
-  // The page's primary PNG builder, reused by "Share as image": whichever
-  // section this page mounts decides what the sheet is.
+  /* The page's primary PNG builder, reused by "Share as image": whichever
+     section this page mounts decides what the sheet is.
+
+     Split into a predicate and an action on 2026-09-22. The share row has to
+     ask "is there a PNG builder here?" BEFORE it renders the button, and the
+     only way to ask used to be to call this and let it export -- so the gate
+     asked a different question instead (`primaryInput() || el.panel`), which
+     is not the same set. The word-search, crossword and scramble surfaces have
+     a PNG builder and are absent from `primaryInput()` by design, because that
+     function feeds `p.name` and their input is a word LIST. */
+  function pngExportTarget() {
+    if (el.namePng && typeof wordPNG === "function") return el.namePng;
+    if (el.genPng) return el.genPng;
+    if (el.designPng) return el.designPng;
+    if (el.bannerPng) return el.bannerPng;
+    if (el.puzzlePng) return el.puzzlePng;
+    if (el.searchPng) return el.searchPng;
+    if (el.cwPng) return el.cwPng;
+    if (el.scPng) return el.scPng;
+    if (el.panel && typeof letterPNG === "function") return el.panel;
+    return null;
+  }
   function primaryPngExport() {
-    if (el.namePng && typeof wordPNG === "function") { el.namePng.click(); return true; }
-    if (el.genPng) { el.genPng.click(); return true; }
-    if (el.designPng) { el.designPng.click(); return true; }
-    if (el.bannerPng) { el.bannerPng.click(); return true; }
-    if (el.puzzlePng) { el.puzzlePng.click(); return true; }
-    if (el.panel && typeof letterPNG === "function") { letterPNG(activeChar); return true; }
-    return false;
+    const target = pngExportTarget();
+    if (!target) return false;
+    if (target === el.panel) { letterPNG(activeChar); return true; }
+    target.click();
+    return true;
   }
   function makeBtn(cls, text, onClick) {
     const b = document.createElement("button");
@@ -2473,10 +2503,52 @@
   // Mount the print-settings panel, the share row and the recent-sheets
   // strip once per page, above the first print action the page carries (or
   // into an explicit #pt-print-options mount).
+  /* The page's first action surface in DOCUMENT order.
+
+     Until 2026-09-22 buildPrintOptions() anchored on
+     `firstEl([alphaPrint, practicePrint, namePrint, genPrint, designPrint,
+     bannerPrint, puzzlePrint])` -- a hand-ordered preference list, which is not
+     the order a visitor meets the page in. Two failures followed, both measured
+     in a browser rather than read out of the source:
+
+     1. On a page mounting several surfaces the panel was inserted above
+        whichever of those ranked highest in the LIST, so it landed BELOW the
+        row the visitor reaches first on 8 of the 27 EN families (44 pages once
+        locale mirrors are counted) -- by 56px on coloring-page-maker and by
+        1,097px on name-tracing, a paper control a thousand pixels under the
+        button it governs.
+     2. The list omitted searchPrint/cwPrint/scPrint entirely, so the three
+        puzzle makers matched nothing, `anchor` resolved to null and the
+        function returned at its first line -- taking the share row, the saved
+        strip and the recent strip with it, since all four are mounted here.
+        Those pages shipped 2026-09-19/20 with no print settings and no share
+        row at all, and nothing could see it: every gate in this repo reads
+        markup the engine had not written yet.
+
+     Document order cannot drift from what the page renders the way a hand-kept
+     list can, which is the actual repair -- adding three ids to the old list
+     would have fixed today's pages and left the next surface to rediscover it. */
+  function firstActionSurface() {
+    const rows = [el.alphaPrint, el.practicePrint, el.namePrint, el.genPrint,
+      el.designPrint, el.bannerPrint, el.puzzlePrint, el.searchPrint, el.cwPrint,
+      el.scPrint, el.bookPrint]
+      .filter(Boolean)
+      .map((b) => b.closest(".bubble-actions, .pt-actions, .pt-preview-actions") || b);
+    /* The character surface's own action row is built by selectChar(), which
+       has not run when this is called, so #pt-panel stands in for it. It is
+       also the container of that row, so the containment branch below keeps it
+       either way. */
+    if (el.panel) rows.push(el.panel);
+    return rows.reduce((first, node) => {
+      if (!first || node.contains(first)) return node;
+      if (first === node || first.contains(node)) return first;
+      return (first.compareDocumentPosition(node) & Node.DOCUMENT_POSITION_PRECEDING) ? node : first;
+    }, null);
+  }
   function buildPrintOptions() {
+    // An explicit mount is a page's own deliberate placement and still wins.
     const explicit = $("#pt-print-options");
-    const firstAction = firstEl([el.alphaPrint, el.practicePrint, el.namePrint, el.genPrint, el.designPrint, el.bannerPrint, el.puzzlePrint]);
-    const anchor = explicit || (firstAction ? (firstAction.closest(".bubble-actions, .pt-actions, .pt-preview-actions") || firstAction) : (el.panel || null));
+    const anchor = explicit || firstActionSurface();
     if (!anchor) return;
     if (document.getElementById("pt-print-settings")) return;
     const wrap = document.createElement("div");
@@ -2521,7 +2593,7 @@
         // button downloads a PNG, which every printables sheet already offers
         // as "Download PNG" a few pixels above -- two labels, one action, and
         // no way for the visitor to tell which is which.
-        onShareImage: ((primaryInput() || el.panel) && UTGns.canShareFiles && UTGns.canShareFiles())
+        onShareImage: (pngExportTarget() && UTGns.canShareFiles && UTGns.canShareFiles())
           ? () => { exportMode = "share"; if (!primaryPngExport()) exportMode = "download"; }
           : null,
         pinMedia: previewImageUrl,
