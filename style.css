@@ -6868,9 +6868,11 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
    height (with the SVG's preserveAspectRatio centering) makes one letter a
    full-page worksheet instead of a small floating figure.
 
-   --pt-sheet-h is set per print job by printablesEngine.js's
-   applySheetMetrics(), from the paper, orientation and margin the visitor
-   picked in Print settings. The fallbacks are the old fixed values, so a
+   --pt-body-h (the property the rule below actually reads; this comment said
+   --pt-sheet-h, which did not exist until 2026-09-22 and is a different
+   budget) is set per print job by printablesEngine.js's applySheetMetrics(),
+   from the paper, orientation and margin the visitor picked in Print
+   settings. The fallbacks are the old fixed values, so a
    surface that somehow prints without the property set behaves exactly as it
    did before. They were the ONLY values until 2026-09-13, which is why
    choosing Landscape printed one letter across three sheets: 8.4in of figure
@@ -7272,7 +7274,7 @@ body.dark-mode .pt-design-preview { background: #1c2030; }
   width: 100%;
   max-width: none;
   height: auto;
-  max-height: var(--pt-page-h, 9.4in);
+  max-height: var(--pt-sheet-h, 8.4in);
   margin: 0 auto;
   box-shadow: none;
 }
@@ -10636,17 +10638,24 @@ body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-glyph-print,
 body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-name-glyph,
 body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-search-grid,
 body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-cw-grid { opacity: 0.72; }
+/* --pt-sheet-h, not a hardcoded 9.2in: these sheets share their page unit with
+   the credit footer, so the height they may claim is the printable page MINUS
+   that band. At Letter/normal the old literal was 883.2px, the credit and its
+   gap 115.1px, and the page box 960px -- 38.4px over, which printablePdf.js
+   turned into a silent 0.962 scale of the whole sheet, margins included. The
+   @media print copies below keep --pt-body-h: that path budgets the same band
+   through PRINT_CHROME_IN and is not the one that overflowed. */
 body.pt-pdf-rendering .bubble-print-wrap .pt-name-sheet {
-  min-height: 9.2in;
+  min-height: var(--pt-sheet-h, 8.4in);
   justify-content: space-between;
 }
 body.pt-pdf-rendering .pt-puzzle-print-holder .pt-puzzle-sheet {
-  min-height: 9.2in;
+  min-height: var(--pt-sheet-h, 8.4in);
   justify-content: center;
   gap: 1.4rem;
 }
 body.pt-pdf-rendering .pt-search-print-holder .pt-search-sheet {
-  min-height: 9.2in;
+  min-height: var(--pt-sheet-h, 8.4in);
   justify-content: flex-start;
   gap: 1.2rem;
 }

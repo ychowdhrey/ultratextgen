@@ -2110,10 +2110,21 @@
     // a cramped sheet is recoverable, a broken one is not.
     const page = Math.max(2, full.h - 2 * marginIn - PRINT_PADDING_IN);
     const body = Math.max(1.4, page - PRINT_CHROME_IN);
+    /* What a sheet that SHARES its page with the credit footer may claim.
+       printArea() has budgeted for that footer since attachCredit shipped --
+       "the tile budget has to leave room for it" -- but the sheet layouts
+       never did: they were sized to a whole page and the credit was appended
+       below, so the unit came out a credit band taller than the paper and
+       printablePdf.js scaled the whole sheet down to fit. Measured on
+       coloring-page-maker at Letter/normal: figure 927.4px (the full
+       --pt-page-h) + credit 91.2px + 23.9px gap = 1042.5px against a 960px
+       page, i.e. 115.1px over, against PRINT_CREDIT_BAND_IN's 115.2px. The
+       constant was already right; nothing was applying it here. */
+    const sheet = Math.max(1.4, page - PRINT_CREDIT_BAND_IN);
     // Width is not published: every figure is width:100% with the SVG's own
     // preserveAspectRatio, so a landscape sheet letterboxes rather than
     // overflowing, and a property nothing reads is a property that goes stale.
-    return { page: page, body: body };
+    return { page: page, body: body, sheet: sheet };
   }
   // Published to the print CSS as custom properties, so one measurement
   // drives every print layout instead of each one carrying its own constant.
@@ -2122,6 +2133,7 @@
     const m = sheetMetrics();
     node.style.setProperty("--pt-page-h", m.page.toFixed(2) + "in");
     node.style.setProperty("--pt-body-h", m.body.toFixed(2) + "in");
+    node.style.setProperty("--pt-sheet-h", m.sheet.toFixed(2) + "in");
     node.style.setProperty("--pt-glyph-size", (m.body * GLYPH_RATIO).toFixed(2) + "in");
   }
 
