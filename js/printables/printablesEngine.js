@@ -5445,14 +5445,15 @@
      "Anna 2" is a level and "R2D2" is a name. Anything else is the whole line.
      A line with no number gets the picker's level, which is what every line
      got before. */
-  function rosterEntries(mount) {
+  function rosterEntries(mount, rungs) {
     if (!mount) return [];
+    const top = rungs || TRACE_LEVELS.length;
     return mount.value.split(/\r?\n/).map((s) => s.trim()).filter(Boolean).slice(0, ROSTER_CAP)
       .map((line) => {
         const m = line.match(/^(.*\S)\s+(\d{1,2})$/);
         if (m) {
           const lv = parseInt(m[2], 10);
-          if (lv >= 1 && lv <= TRACE_LEVELS.length) return { name: m[1], level: lv };
+          if (lv >= 1 && lv <= top) return { name: m[1], level: lv };
         }
         return { name: line, level: null };
       });
@@ -5499,10 +5500,11 @@
      without. Lines that are not plain sample names (the leading "one name per
      line" instruction, which every locale writes its own way) are recognised
      by already containing a space, and left alone. */
-  function annotateRosterPlaceholder(mount) {
+  function annotateRosterPlaceholder(mount, rungs) {
     if (!mount || !mount.placeholder || /\s\d+$/m.test(mount.placeholder)) return;
-    const mid = Math.max(2, Math.min(TRACE_LEVELS.length, 2));
-    const high = Math.max(mid + 1, Math.min(TRACE_LEVELS.length, 5));
+    const top = rungs || TRACE_LEVELS.length;
+    const mid = Math.max(2, Math.min(top, 2));
+    const high = Math.max(mid + 1, Math.min(top, 5));
     let sample = 0;
     mount.placeholder = mount.placeholder.split("\n").map((line) => {
       const t = line.trim();
@@ -5853,8 +5855,17 @@
          placeholder already lists sample names in the page's own language;
          appending a level to two of them shows the syntax with no word that
          needs translating, and it stays in step with whatever each of the
-         eight locales wrote. Only the ladder tools get it -- the puzzle,
-         design and name rosters have no levels and must not imply one. */
+         eight locales wrote.
+
+         Only a roster whose page shows a ladder gets it. That set grew on
+         2026-09-22: the word search and word scramble each ship an
+         easy/medium/hard picker, so their rosters cross with it and are
+         annotated at their own three rungs. The puzzle, design and name
+         rosters still have no ladder of any kind -- name-puzzle-maker,
+         coloring-page-maker, dot-to-dot-name, name-tracing -- and must not
+         imply one; nor does the crossword, whose build takes no level. The
+         test is whether the page has a ladder, never how the roster is
+         spelled. */
       annotateRosterPlaceholder(el.genRoster);
       let rosterTimer = null;
       el.genRoster.addEventListener("input", () => {
@@ -8422,6 +8433,18 @@
     || "because\nfriend\npeople\nschool\nwater\nthere\nwhich\nwould\ncould\nabout";
   const searchState = { level: "medium" };
 
+  /* The puzzle tools present three rungs, where the tracing family presents
+     five. Both read the same trailing-number roster syntax, so the number a
+     line carries is clamped to the ladder the page actually shows: rosterEntries
+     takes the rung count rather than assuming the tracing one, and a line whose
+     number falls outside it keeps the picker's level instead of being silently
+     re-ranked. One parser, two ladders -- a second copy would drift from the
+     first, which is the failure this file already documents. */
+  const PUZZLE_LEVELS = ["easy", "medium", "hard"];
+  function puzzleLevelKey(entry, fallback) {
+    return (entry && entry.level) ? PUZZLE_LEVELS[entry.level - 1] : fallback;
+  }
+
   let wsWarned = false;
   function wordSearchModule() {
     const ns = window.UltraTextGen && window.UltraTextGen.wordSearch;
@@ -8458,11 +8481,11 @@
   /* One grid. `seed` is what makes two children's sheets differ — a name from
      the roster, or the word list itself when there is no roster, so the
      preview is stable while the visitor types options rather than words. */
-  function searchBuild(seed) {
+  function searchBuild(seed, level) {
     const ns = wordSearchModule();
     if (!ns) return null;
     const text = searchWordsText();
-    return ns.build({ words: text, level: searchState.level, seed: seed || text });
+    return ns.build({ words: text, level: level || searchState.level, seed: seed || text });
   }
 
   function searchGridNode(built, showAnswer) {
@@ -8503,8 +8526,8 @@
   /* The whole sheet as one DOM node — the single primitive behind the live
      preview, the print, the PDF and the PNG, so what is on screen is what
      prints. `seedName` is the child this copy belongs to. */
-  function searchSheetNode(seedName, showAnswer) {
-    const built = searchBuild(seedName);
+  function searchSheetNode(seedName, showAnswer, level) {
+    const built = searchBuild(seedName, level);
     const sheet = document.createElement("div");
     sheet.className = "pt-search-sheet";
     if (!built) return sheet;
@@ -8577,15 +8600,20 @@
     const holder = document.createElement("div");
     holder.className = "pt-search-print-holder";
     const answer = searchAnswerOn();
-    const names = rosterNames(el.searchRoster);
-    if (names.length >= 2) {
+    const entries = rosterEntries(el.searchRoster, PUZZLE_LEVELS.length);
+    if (entries.length >= 2) {
       holder.classList.add("pt-class-set");
       /* Each child's puzzle, then — when asked for — every answer key after
          them. The keys are grouped at the end rather than interleaved because
          a teacher prints the stack once and keeps the keys; a key behind each
-         child's sheet is a key handed to that child. */
-      appendSheetPages(holder, names, (n) => searchSheetNode(n, false));
-      if (answer) appendSheetPages(holder, names, (n) => searchSheetNode(n, true));
+         child's sheet is a key handed to that child.
+
+         A line carrying its own level gets that grid; a line without one gets
+         the picker's. The answer key is built at the same level as the puzzle
+         it answers, which is why the level is read per entry in both loops
+         rather than once for the job. */
+      appendSheetPages(holder, entries, (e) => searchSheetNode(e.name, false, puzzleLevelKey(e, searchState.level)));
+      if (answer) appendSheetPages(holder, entries, (e) => searchSheetNode(e.name, true, puzzleLevelKey(e, searchState.level)));
       printWrap("", holder, "word_search");
       return;
     }
@@ -8619,7 +8647,10 @@
     const schedule = () => { if (timer) clearTimeout(timer); timer = setTimeout(renderSearchPreview, 160); };
     el.searchInput.addEventListener("input", schedule);
     if (el.searchHeading) el.searchHeading.addEventListener("input", schedule);
-    if (el.searchRoster) el.searchRoster.addEventListener("input", schedule);
+    if (el.searchRoster) {
+      annotateRosterPlaceholder(el.searchRoster, PUZZLE_LEVELS.length);
+      el.searchRoster.addEventListener("input", schedule);
+    }
     if (el.searchAnswer) el.searchAnswer.addEventListener("change", renderSearchPreview);
     wireSearchLevel();
     if (el.searchPrint) el.searchPrint.addEventListener("click", printSearch);
@@ -8905,11 +8936,11 @@
   function scAnswerOn() { return !!(el.scAnswer && el.scAnswer.checked); }
   function scHintOn() { return !!(el.scHint && el.scHint.checked); }
 
-  function scBuild(seed) {
+  function scBuild(seed, level) {
     const ns = puzzleNs("wordScramble");
     if (!ns) return null;
     const text = scWordsText();
-    return ns.build({ input: text, level: scrambleState.level, seed: seed || text });
+    return ns.build({ input: text, level: level || scrambleState.level, seed: seed || text });
   }
 
   function scListNode(built, showAnswer) {
@@ -8948,8 +8979,8 @@
     return list;
   }
 
-  function scSheetNode(seedName, showAnswer) {
-    const built = scBuild(seedName);
+  function scSheetNode(seedName, showAnswer, level) {
+    const built = scBuild(seedName, level);
     const sheet = document.createElement("div");
     sheet.className = "pt-search-sheet pt-sc-sheet";
     if (!built || !built.words.length) return sheet;
@@ -8998,11 +9029,14 @@
     const holder = document.createElement("div");
     holder.className = "pt-search-print-holder";
     const answer = scAnswerOn();
-    const names = rosterNames(el.scRoster);
-    if (names.length >= 2) {
+    const entries = rosterEntries(el.scRoster, PUZZLE_LEVELS.length);
+    if (entries.length >= 2) {
       holder.classList.add("pt-class-set");
-      appendSheetPages(holder, names, (n) => scSheetNode(n, false));
-      if (answer) appendSheetPages(holder, names, (n) => scSheetNode(n, true));
+      /* Per-entry level, for the same reason as the word search above: a line
+         carrying its own number gets that scramble, a bare line gets the
+         picker's, and the key is built at the level of the sheet it answers. */
+      appendSheetPages(holder, entries, (e) => scSheetNode(e.name, false, puzzleLevelKey(e, scrambleState.level)));
+      if (answer) appendSheetPages(holder, entries, (e) => scSheetNode(e.name, true, puzzleLevelKey(e, scrambleState.level)));
       printWrap("", holder, "word_scramble");
       return;
     }
@@ -9036,7 +9070,10 @@
     const schedule = () => { if (timer) clearTimeout(timer); timer = setTimeout(renderScPreview, 160); };
     el.scInput.addEventListener("input", schedule);
     if (el.scHeading) el.scHeading.addEventListener("input", schedule);
-    if (el.scRoster) el.scRoster.addEventListener("input", schedule);
+    if (el.scRoster) {
+      annotateRosterPlaceholder(el.scRoster, PUZZLE_LEVELS.length);
+      el.scRoster.addEventListener("input", schedule);
+    }
     if (el.scAnswer) el.scAnswer.addEventListener("change", renderScPreview);
     if (el.scHint) el.scHint.addEventListener("change", renderScPreview);
     wireScrambleLevel();
