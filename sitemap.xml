@@ -5854,7 +5854,7 @@
 
   <url>
     <loc>https://ultratextgen.com/de/zum-ausdrucken/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -5887,6 +5887,20 @@
     </image:image>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/de-zum-ausdrucken-blasenbuchstaben.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/de/zum-ausdrucken/buchstaben-nachspuren/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/printables-previews/de-zum-ausdrucken-buchstaben-nachspuren.png</image:loc>
+      <image:title>Buchstaben nachspuren: Vorschau der Druckvorlage</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/de-zum-ausdrucken-buchstaben-nachspuren.png</image:loc>
     </image:image>
   </url>
 
@@ -5934,7 +5948,7 @@
 
   <url>
     <loc>https://ultratextgen.com/de/zum-ausdrucken/namen-schreiben/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -6372,7 +6386,7 @@
 
   <url>
     <loc>https://ultratextgen.com/es/imprimibles/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -6997,6 +7011,20 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/es/imprimibles/letras-para-trazar/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/printables-previews/es-imprimibles-letras-para-trazar.png</image:loc>
+      <image:title>Letras para trazar: vista previa de la hoja para imprimir</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/es-imprimibles-letras-para-trazar.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/es/imprimibles/letras-punteadas/</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -7054,7 +7082,7 @@
 
   <url>
     <loc>https://ultratextgen.com/es/imprimibles/nombre-para-trazar/</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -11712,7 +11740,7 @@
 
   <url>
     <loc>https://ultratextgen.com/fr/imprimables/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -11791,6 +11819,20 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/fr/imprimables/lettres-a-tracer/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/printables-previews/fr-imprimables-lettres-a-tracer.png</image:loc>
+      <image:title>Lettres à tracer: aperçu de la fiche à imprimer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/fr-imprimables-lettres-a-tracer.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/fr/imprimables/lettres-bulles/</loc>
     <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -11820,7 +11862,7 @@
 
   <url>
     <loc>https://ultratextgen.com/fr/imprimables/prenom-a-tracer/</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -17500,7 +17542,7 @@
 
   <url>
     <loc>https://ultratextgen.com/it/da-stampare/</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -17571,8 +17613,22 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/it/da-stampare/pregrafismo-lettere/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/printables-previews/it-da-stampare-pregrafismo-lettere.png</image:loc>
+      <image:title>Pregrafismo delle lettere: anteprima della scheda da stampare</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/it-da-stampare-pregrafismo-lettere.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/it/da-stampare/tracciare-il-nome/</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -30378,7 +30434,7 @@
 
   <url>
     <loc>https://ultratextgen.com/pl/do-druku/</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -30468,7 +30524,7 @@
 
   <url>
     <loc>https://ultratextgen.com/pl/do-druku/pisanie-imienia/</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -30477,6 +30533,20 @@
     </image:image>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/pl-do-druku-pisanie-imienia.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/pl/do-druku/pisanie-liter-po-sladzie/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/printables-previews/pl-do-druku-pisanie-liter-po-sladzie.png</image:loc>
+      <image:title>Pisanie liter po śladzie: podgląd arkusza do druku</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/pl-do-druku-pisanie-liter-po-sladzie.png</image:loc>
     </image:image>
   </url>
 
@@ -35270,7 +35340,7 @@
 
   <url>
     <loc>https://ultratextgen.com/printables/letter-tracing/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -35340,7 +35410,7 @@
 
   <url>
     <loc>https://ultratextgen.com/printables/name-tracing/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -35654,7 +35724,7 @@
 
   <url>
     <loc>https://ultratextgen.com/pt/imprimiveis/</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -35705,6 +35775,20 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/pt/imprimiveis/alfabeto-pontilhado/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/printables-previews/pt-imprimiveis-alfabeto-pontilhado.png</image:loc>
+      <image:title>Alfabeto pontilhado: pré-visualização da folha para imprimir</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/pt-imprimiveis-alfabeto-pontilhado.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/pt/imprimiveis/letra-bastao/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -35730,7 +35814,7 @@
 
   <url>
     <loc>https://ultratextgen.com/pt/imprimiveis/nome-para-tracar/</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -40088,7 +40172,7 @@
 
   <url>
     <loc>https://ultratextgen.com/sv/library/hjarta-symboler/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -40188,7 +40272,7 @@
 
   <url>
     <loc>https://ultratextgen.com/sv/library/stjarna-symboler/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
