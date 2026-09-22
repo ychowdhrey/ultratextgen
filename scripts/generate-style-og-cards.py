@@ -15,7 +15,7 @@ Output: assets/og/style/<key>.png    (key = normalized slug)
 Like generate-site-art.py, a run skips cards that already exist ("already
 there means done"); --force re-renders. A rendered card that comes out
 blank fails the run — spanned() DROPS characters no installed font covers
-(see CLAUDE.md "Never select a tile no installed font can draw"), so a
+(see `docs/architecture/page-art.md`), so a
 missing font here would otherwise ship an empty card silently.
 """
 import argparse

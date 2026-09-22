@@ -22,7 +22,7 @@
  * CASE-SENSITIVELY and reported "no other entry carries an inline stamp".
  * Every one of the 11 does; they all say `Last checked`. A pattern-matched
  * audit found the surface it was written for and missed the next one, which
- * is exactly the failure CLAUDE.md's "Structure is not language" section
+ * is exactly the failure `docs/architecture/translation-parity.md` §6
  * documents. So this classifier keys on a closed set of STAMP PHRASES, and
  * the audit that uses it enumerates rather than samples.
  *

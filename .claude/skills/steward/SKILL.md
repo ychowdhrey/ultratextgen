@@ -24,16 +24,21 @@ diagnose than before.
 UltraTextGen looks like a static website, but the tree also carries the
 operating system around the website:
 
-- **`CLAUDE.md` is a decision record, not just a style guide.** Its dated case
-  studies, corrections, and "ratified exception" entries are the reasoning of
-  record for why things are the way they are. Read the section covering your
-  area before touching that area.
+- **Knowledge is layered on purpose.** Root `CLAUDE.md` is the global truth only;
+  `.claude/rules/` holds the invariants for the files you are touching;
+  `.claude/skills/` holds the procedures; `docs/` is the reasoning of record —
+  `docs/architecture/` for mechanism and incident history, `docs/decisions/` for
+  ratified exceptions and owner calls, `docs/README.md` for the lane and ownership
+  map. **Read the rule for your area and the doc it links** before touching that
+  area; the docs' dated corrections often reverse the paragraph above them. Where
+  new knowledge belongs: `docs/architecture/claude-context-architecture.md`.
 - **`data/*.json` ledgers are machine-read state** backing CI gates
   (`english_parent_exceptions.json`, `translation_parity_exceptions.json`,
   `translation_identical_strings.json`, `library_hub_exclusions.json`,
   `core_parent_set.json`, `locale_qualification_tiers.json`,
   `locale_parent_gap_audit.json`, `parity_catalogue_pages.json`,
-  `editorial_phrase_bank.json`). Every entry represents a discussed decision.
+  `editorial_phrase_bank.json`, and more). Every entry represents a discussed
+  decision — the full map is `.claude/rules/ledgers.md`.
 - **`scripts/` is paired tooling**: for most concerns there is an `audit:*`
   (whole-site dashboard, informational), a `check:*` (diff-scoped CI gate), and
   sometimes a `fix`/`sync`/`build` script — all sharing one library under
@@ -41,7 +46,8 @@ operating system around the website:
   scripts block is the index.
 - **`docs/*.md` holds workflows and dated findings** (e.g.
   `docs/locale-parent-governance.md`, `docs/unicode-library-workflow.md`,
-  `docs/editorial-footprint-risk.md`, `docs/local-language-intelligence.md`).
+  `docs/editorial-footprint-risk.md`, `docs/local-language-intelligence.md`), and
+  `docs/architecture/README.md` maps each rule to the doc behind it.
 - **Some evidence lives outside this repo by design.** Locale vocabulary
   research and its evidence trail live in a separate, non-public workspace
   (see `docs/local-language-intelligence.md`). Never copy that material here,
@@ -55,8 +61,9 @@ Treat all of that as part of the product, with the same care as page content.
 
 Before editing anything, establish what already exists and why:
 
-1. Read the relevant `CLAUDE.md` section(s) end to end — including the dated
-   corrections, which often reverse the paragraph above them.
+1. Read the `.claude/rules/` file(s) covering the paths you are about to touch, and
+   the reference doc each one links — including its dated corrections, which often
+   reverse the paragraph above them.
 2. `git log --follow -- <files>` on what you're about to change; read the
    commit messages. Recent history frequently explains a shape that looks wrong.
 3. Check whether a ledger, doc, or script already governs the area (search
@@ -64,28 +71,33 @@ Before editing anything, establish what already exists and why:
 4. Look for a sibling implementation of the same pattern (another locale's page,
    another validator, another generator) and match it.
 
-A finding that "X doesn't exist" needs real verification, not one grep:
-`CLAUDE.md`'s Capability Ledger workflow documents multiple recorded cases where
-a single exact-match search produced a false "gap" (a mechanism reachable
-through a different entry point, an EN parent living in a different lane). Sweep
-aliases and different lanes before asserting absence.
+A finding that "X doesn't exist" needs real verification, not one grep. There are
+multiple recorded cases here where a single exact-match search produced a false
+"gap" — a mechanism reachable through a different entry point, an EN parent living
+in a different lane. Sweep aliases and different lanes before asserting absence, and
+remember that **a scope or novelty judgement is an existence claim wearing a
+different hat**: three absence claims were wrong in one session, two of them framed
+as verdicts rather than as absences.
 
 ## 2. Respect the architecture; extend, don't parallel
 
 - No frameworks, no bundlers, no browser npm packages, no ES modules in
-  frontend scripts, IIFE pattern, CSS custom properties — see `CLAUDE.md`.
-  Visual output is client-side SVG/Canvas only.
+  frontend scripts, IIFE pattern, CSS custom properties — see root `CLAUDE.md`'s
+  hard lines and `.claude/rules/frontend-javascript.md`. Visual output is
+  client-side SVG/Canvas only.
 - **Generated surfaces are never hand-edited.** `sitemap.xml`, the pre-rendered
   library hub directories (`node scripts/build-library-hub.js` for locale hubs,
   `npm run build:library-directory` for EN), static footers
   (`npm run build:static-footer`), hreflang meshes
   (`npm run sync:locale-mesh -- --fix`), symbol peer links
   (`npm run sync:symbol-peer-links`). Hand-editing one is undone by the next
-  generator run and usually breaks a parity gate.
+  generator run and usually breaks a parity gate. The full file → generator map is
+  `.claude/rules/generated-artifacts.md`.
 - **One source of truth per concern.** Before writing a new script, check
   whether an existing one (or its shared `scripts/lib/` module) should grow the
   behavior instead. A second copy of parsing/diff/cluster logic will drift from
-  the first — that exact failure is documented several times in `CLAUDE.md`.
+  the first — that exact failure is recorded several times in
+  `docs/architecture/validation-system.md`.
 - New checks follow the house pattern: whole-site `audit:*` that is
   informational when a backlog exists, diff-scoped `check:*` that gates only on
   what the PR introduces ("measure the delta, not the state"), shared lib, and
@@ -98,7 +110,7 @@ Before changing or removing anything deliberate-looking, classify it:
 | Signal in the tree | Meaning |
 |---|---|
 | Ledger entry (`data/*_exceptions.json`, tier/gap registries) | **Active discussed decision** — changing it requires raising it with the user, never editing to make a check pass |
-| Dated "Correction / Superseded" note in `CLAUDE.md` or a doc | The *older* text is historical context; keep it, follow the correction |
+| Dated "Correction / Superseded" note in a rule or a doc | The *older* text is historical context; keep it, follow the correction |
 | "Grandfathered", "shadow mode", "informational only" | **Deliberate pacing**, not an oversight — promotion to enforcement is its own discussed step |
 | "Open follow-up / not yet decided / needs-research" | **Unresolved question** — cite it as open, never as settled precedent |
 | A retired script left in place with a note | **Deprecated by decision** — don't run it as workflow, don't delete it without asking |
@@ -123,25 +135,27 @@ self-reference recurred across 350+ pages. So when you fix something:
 3. **Ask what should have caught it.** If no gate could have, consider whether a
    diff-scoped check in the house pattern is warranted — and if you add one,
    **verify it against deliberately broken input and watch it fail** before
-   trusting it. "Adding a validator script is not the same as gating on it" is
-   a paid-for lesson here (the entire workflow was inert for weeks, twice).
-   Remember the repo's recurring trap: *a check that reports nothing is
-   indistinguishable from a check that passes.*
+   trusting it — the `build-a-gate` skill is the ordered procedure. "Adding a
+   validator script is not the same as gating on it" is a paid-for lesson here (the
+   entire workflow was inert for weeks, twice). Remember the repo's recurring trap:
+   *a check that reports nothing is indistinguishable from a check that passes* —
+   six recorded forms in `docs/architecture/validation-system.md`.
 
 ## 5. Protect SEO and crawlability
 
 A change is not safe merely because the page renders. Before shipping:
 
-- **Static crawlability**: important internal links must exist in static HTML,
-  not only behind JS (several crawlers execute none — see "Discovery Model" in
-  `CLAUDE.md`). Never move a crawlable link set into a JS-only mechanism.
+- **Static crawlability**: important internal links and a page's payload must exist
+  in static HTML, not only behind JS — several crawlers execute none
+  (`.claude/rules/discovery-and-routing.md`). Never move a crawlable link set into a
+  JS-only mechanism.
 - **Hub registration**: any new `library/`/`symbol/` (or locale-lane) page must
-  be registered in its locale's hub via the correct mechanism — there are five,
-  and which one is a property of the hub (`CLAUDE.md` → "Library Hub Coverage").
+  be registered in its locale's hub via the correct mechanism — there are five, and
+  which one is a property of the hub (`docs/architecture/content-lanes.md` §4).
   `npm run check:library-hub-coverage` gates it.
-- **Cannibalization**: before a new page, run the "check who already owns it"
-  test and the four-part Hub-vs-Spoke rule (`CLAUDE.md`) — including Rule 3,
-  de-targeting the hub, the part most often skipped.
+- **Cannibalization**: before a new page, run the "check who already owns it" test
+  and the four-part Hub-vs-Spoke rule (`.claude/rules/content-architecture.md`) —
+  including Rule 3, de-targeting the hub, the part most often skipped.
 - **Answer-shaped content goes under `answers/` only**; single items under
   `symbol/`, collections under `library/` — lanes are inherited on translation,
   never re-decided.
@@ -152,8 +166,9 @@ A change is not safe merely because the page renders. Before shipping:
   and `x-default` direction are all gated; repair with
   `npm run sync:locale-mesh -- --fix`, never by hand. `sitemap.xml` is
   generated. `_redirects` matches paths only (query logic belongs in
-  `functions/_middleware.js`), and `_routes.json` must stay narrow — widening
-  it has a real invocation-budget cost documented in `CLAUDE.md`.
+  `functions/_middleware.js`), and `_routes.json` must stay narrow — widening it has
+  a real invocation-budget cost recorded in
+  `docs/architecture/discovery-and-delivery.md`.
 
 ## 6. Protect locale integrity
 
@@ -230,7 +245,7 @@ keep informational audits informational rather than deleting them for being red.
 
 ## 11. Freezes and observation windows
 
-If `CLAUDE.md`, a doc, a ledger entry, or a PR thread indicates an active
+If a rule, a doc, a ledger entry, or a PR thread indicates an active
 measurement window, experiment, or hold (e.g. a `nextRecheck`/`nextReview`
 date, a shadow-mode gate, a "do not touch until" note): avoid structural
 changes to the measured surface, flag any change that could contaminate the

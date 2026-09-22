@@ -23,7 +23,7 @@
  * `<h2>` difference silently also excused a deleted FAQ or a dropped symbol
  * tile on the same pair.
  *
- * CLAUDE.md's "Translation Parity" section requires that the audit and the
+ * `.claude/rules/tooling-and-gates.md` requires that the audit and the
  * gate never define "changed" differently, which is why the fingerprint/diff
  * logic already lives in content-fingerprint.js. The ledger's semantics are
  * the same kind of shared definition, so they live here rather than being

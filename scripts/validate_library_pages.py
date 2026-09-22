@@ -73,7 +73,7 @@ SYMBOL_DIR = REPO / "symbol"
 # library/ single-copy pages serve a browse-and-compare job (a small set of
 # peer symbols), so they need enough tiles to be worth a dedicated page.
 # symbol/ pages serve a different job -- one canonical glyph plus its
-# closest variants, per CLAUDE.md's "Content Types: Library vs Symbol" -- so
+# closest variants, per `.claude/rules/content-architecture.md` -- so
 # a 2-4 tile spoke is by design, not thin content. Calibrated against the
 # existing symbol/ corpus, whose smallest legitimate pages sit at 2 tiles.
 MIN_SINGLE_BUTTONS_LIBRARY = 6

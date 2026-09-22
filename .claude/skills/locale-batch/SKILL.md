@@ -15,8 +15,11 @@ description: >-
 
 **The canonical procedure is `docs/library-locale-translation-workflow.md`.
 Read it in full before the first page of any batch** — this skill enforces its
-ordering and adds the guard rails around it; it does not replace it. The
-`steward` skill's rules apply throughout.
+ordering and adds the guard rails around it; it does not replace it. The invariants
+are in `.claude/rules/localization.md` and the evidence behind each one is in
+`docs/architecture/translation-parity.md`, `docs/locale-parent-governance.md` and
+`docs/decisions/local-only-locale-exceptions.md`. The `steward` skill's rules apply
+throughout.
 
 ## Scope check before anything else
 

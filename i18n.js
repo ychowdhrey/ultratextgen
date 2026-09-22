@@ -88,7 +88,7 @@
     //
     // That is invisible-content FAQ markup: it forfeits the rich result and is
     // the shape Google's guidance treats as spammy structured markup (see
-    // CLAUDE.md, "FAQ schema must mirror visible page content").
+    // `.claude/rules/html-pages.md`).
     //
     // It was live. On the 11 locale zalgo pages the overlap between the page's
     // own 6 questions and the homepage's 21 was ZERO — and invisible to

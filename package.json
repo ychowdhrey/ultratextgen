@@ -119,7 +119,8 @@
     "check:gate-inventory": "python3 scripts/build-gate-inventory.py",
     "build:gate-inventory": "python3 scripts/build-gate-inventory.py --write",
     "check:stranded-work": "python3 scripts/check-stranded-work.py",
-    "check:pr-overlap": "node scripts/check-pr-file-overlap.js"
+    "check:pr-overlap": "node scripts/check-pr-file-overlap.js",
+    "audit:claude-context": "python3 scripts/audit-claude-context.py"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

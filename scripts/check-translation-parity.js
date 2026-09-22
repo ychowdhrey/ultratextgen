@@ -14,7 +14,7 @@
  * This is the enforcement half of scripts/audit-translation-parity.js: the
  * audit finds existing drift across the whole site; this stops NEW drift
  * from being introduced, going both directions (EN -> locale and locale ->
- * EN), per CLAUDE.md's "Translation Parity" section.
+ * EN), per `.claude/rules/localization.md`.
  *
  * A flagged pair is not necessarily wrong — EN and a locale page are
  * allowed to diverge when there's an explicit, agreed reason. Record that
@@ -245,7 +245,7 @@ for (const rel of changedFiles) {
 
   const members = [...clusters.get(enAnchor)].filter((u) => u !== rec.canonical);
 
-  // Per this file's header (and CLAUDE.md "Translation Parity"): a
+  // Per this file's header (and `.claude/rules/localization.md`): a
   // structural change passes when AT LEAST ONE sibling in the cluster was
   // also touched in this branch — the EN parent for a locale-page change,
   // any sibling for an EN-parent change. (Bug fixed 2026-08-02: the loop
@@ -283,7 +283,7 @@ for (const rel of changedFiles) {
     // that could not legitimately act on this change — where the only thing
     // that moved is links whose targets have NO counterpart in that sibling's
     // language, linking the English page from a locale page is exactly what
-    // CLAUDE.md's "Locale-native internal linking" rule forbids. Flagging
+    // the locale-native linking rule in `.claude/rules/localization.md` forbids. Flagging
     // those would force either a wrong link or a per-page exception on
     // essentially every new EN page. The moment a translation of the target
     // exists the sibling becomes actionable again — the correct trigger,
@@ -350,7 +350,7 @@ if (flagged.length) {
     }
     console.log(
       `    Fix: update the sibling in this PR, or add an entry to data/translation_parity_exceptions.json` +
-        ` documenting why they're allowed to diverge (see CLAUDE.md, "Translation Parity").`
+        ` documenting why they're allowed to diverge (see .claude/rules/localization.md).`
     );
     console.log('');
   }
