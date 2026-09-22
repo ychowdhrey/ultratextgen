@@ -10929,6 +10929,57 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
    the track it sits in. minmax(0, 1fr) rather than 1fr for the same reason a
    grid item gets min-width:0 -- an auto minimum is what split the columns
    504/205 on the first attempt. */
+/* A printed generator sheet is ONE page tall, and its rows share what the
+   job title, the name/date line and the credit leave.
+
+   Until 2026-09-22 nothing bounded it. `.pt-gen-row .pt-trace-svg` caps a row
+   at a hardcoded 150px and the rows simply stacked, so the sheet was as tall
+   as its content and the PAGE had no say: at the default 3 practice rows the
+   unit measured 1173px against a 960px printable page (US Letter, normal
+   margins), and renderPages rasterises a page unit to one canvas which
+   fromCanvases then fits to the sheet -- so the whole worksheet, ruled lines,
+   letters and margins together, was silently scaled to 0.818. Measured on the
+   7-level ladder PDF: levels 2-6 carry six rows and printed at 0.858 (band
+   187px at 300dpi) while levels 1 and 7 carry five and four and printed at
+   1.000 (band 218px), i.e. the letters changed size between sheets of one
+   pack. At 8 practice rows the scale was 0.488 -- half size, inside a 1.03in
+   margin nobody chose.
+
+   The fix is the pattern `.is-nup` below already uses and the one
+   applySheetMetrics() was written for: the page is a flex column of the real
+   printable height, its chrome claims its natural space, and the rows take
+   what is left. Rows may shrink and never grow, so a sheet that already fits
+   is untouched -- this changes nothing at 1 row, where the old sheet was
+   855px and already inside the page.
+
+   `is-fitted` is set in JS on a page unit whose content is a `.pt-gen-sheet`,
+   rather than on every `.pt-sheet-page`: a puzzle grid or a tiled alphabet is
+   sized by its content and is not a column of shrinkable rows. */
+.pt-sheet-page.is-fitted {
+  display: flex;
+  flex-direction: column;
+  height: var(--pt-page-h, 9.6in);
+}
+.pt-sheet-page.is-fitted > .pt-gen-sheet {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+/* Basis 150px, shrink only: the row wants the height it has always had and
+   gives some back when the page is short. min-height:0 because a column flex
+   item's auto minimum is its content, which is what stops it shrinking. */
+.pt-sheet-page.is-fitted .pt-gen-row {
+  flex: 0 1 150px;
+  min-height: 0;
+}
+/* The SVG follows the row it is in rather than its own cap, so the ruled
+   lines and the type scale together -- they are one drawing in one viewBox. */
+.pt-sheet-page.is-fitted .pt-gen-row > .pt-trace-svg {
+  height: 100%;
+  max-height: none;
+}
+.pt-sheet-page.is-fitted .pt-gen-row.has-lefty { align-items: stretch; }
+.pt-sheet-page.is-fitted .pt-sheet-footer { flex: 0 0 auto; }
+
 .pt-sheet-page.is-nup {
   display: flex;
   flex-direction: column;

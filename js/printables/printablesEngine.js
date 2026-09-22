@@ -2173,11 +2173,21 @@
      sheet (1068px), the name worksheet (1053px) and the handwriting
      generator sheet (1114px); the name puzzle sheet escaped at 999px only
      because it is shorter than the tolerance, not because it differs. */
+  /* A page unit whose content is a column of shrinkable ruled rows can be
+     fitted to the paper; one sized by its own content (a puzzle grid, a tiled
+     alphabet, a design sheet) cannot, and is left exactly as it was. See
+     `.pt-sheet-page.is-fitted` in style.css for the measurements. */
+  function markFittedPage(page, node) {
+    if (node && node.classList && node.classList.contains("pt-gen-sheet")) {
+      page.classList.add("is-fitted");
+    }
+    return page;
+  }
   function sheetPageNode(node) {
     const page = document.createElement("div");
     page.className = "pt-sheet-page";
     page.appendChild(node);
-    return page;
+    return markFittedPage(page, node);
   }
   function attachCredit(wrap) {
     const pages = $$(PT_PAGE_UNITS, wrap).filter((p) => !p.parentElement.closest(PT_PAGE_UNITS));
@@ -4389,7 +4399,9 @@
       const page = document.createElement("div");
       page.className = "pt-sheet-page";
       if (per === 1) {
-        page.appendChild(makeNode(chunk[0], i));
+        const only = makeNode(chunk[0], i);
+        page.appendChild(only);
+        markFittedPage(page, only);
       } else {
         page.classList.add("is-nup", "is-nup-" + per);
         /* The cells live in their own grid rather than directly on the page,
@@ -5594,6 +5606,46 @@
     return row;
   }
 
+  /* One print job, one row geometry.
+
+     A sheet's row count is not constant across a job: genSheetNode drops the
+     model row at level 1 (the trace rows ARE the model) and the two closing
+     blank lines at level 7 (the trace rows are already blank), and a roster
+     carrying per-child levels does the same sheet by sheet. Now that the rows
+     share the page rather than overflowing it, a sheet with FEWER rows gives
+     each of them more height -- so one ladder pack would print the same word
+     at three sizes, which is the one thing a graded ladder must not do: only
+     the guide is meant to change between sheets. Measured on the 7-level PDF
+     before the page-fit change, from the other direction: levels 1 and 7 came
+     out at band 218px and levels 2-6 at 187px.
+
+     Padding every sheet up to the job's own maximum with blank ruled lines
+     makes the geometry identical, and the rows it adds are practice space on
+     a sheet that had room for them.
+
+     The maximum is read back off the built DOM rather than re-derived from the
+     level rules. A second copy of that arithmetic is one that drifts from
+     genSheetNode(), which is the failure this file documents against its own
+     generators more than any other. */
+  function padSheetRows(root, words) {
+    const sheets = $$(".pt-gen-sheet", root);
+    if (sheets.length < 2) return;
+    const counts = sheets.map((s) => $$(".pt-gen-row", s).length);
+    const max = Math.max.apply(null, counts);
+    sheets.forEach((s, i) => {
+      // insertBefore(node, null) appends, so a sheet with no footer still works.
+      const footer = $(".pt-sheet-footer", s);
+      /* The padding row takes its own sheet's left-handed state, not the
+         job's: `lefty` is already per-sheet (level 7 turns it off), and a row
+         that disagreed with its neighbours would end at a different x. */
+      const lefty = !!$(".pt-gen-row.has-lefty", s);
+      const word = words && words[i] != null ? String(words[i]) : "";
+      for (let k = counts[i]; k < max; k++) {
+        s.insertBefore(genRow(word, TRACE_LEVELS.length, "blank", lefty), footer);
+      }
+    });
+  }
+
   // A small inline sample of a level's look, injected into each level button
   // so the ladder shows — not just tells — dotted vs dashed vs faded.
   function levelSampleSVG(level) {
@@ -5660,6 +5712,7 @@
       const set = document.createElement("div");
       set.className = "pt-class-set";
       appendSheetPages(set, entries, (e) => genSheetNode(e.name, e.level));
+      padSheetRows(set, entries.map((e) => e.name));
       // A mixed set has no one level to name, so the title says how many
       // sheets rather than asserting a level that is only true of some.
       const mixed = entries.some((e) => e.level != null && e.level !== genLevel());
@@ -5677,6 +5730,7 @@
     const set = document.createElement("div");
     set.className = "pt-class-set";
     appendSheetPages(set, TRACE_LEVELS, (spec, i) => genSheetNode(word, i + 1));
+    padSheetRows(set, TRACE_LEVELS.map(() => word));
     printWrap(joinWords([word, "\u00b7", TRACE_LEVELS.length + " " + T.sheets, "\u00b7", siteCredit()]), set, "generator_ladder");
   }
 
