@@ -41,6 +41,14 @@ top of a decision somebody had already taken and written down: see R-012 and R-0
 reasoning comment in the engine is an active decision, and an audit that reverses one without
 saying so is not an audit.
 
+**Superseded in scope, not in content, by
+[`render-fidelity-audit-2026-09-22.md`](render-fidelity-audit-2026-09-22.md).** That pass asks a
+different question — what happens when the *settings* change — and its findings are numbered
+`RF-###` in its own register rather than continued here, because they are about page geometry
+rather than letterforms. Two of them touch entries here: **RF-002** is the same landscape
+letterboxing as **R-007**, measured across every paper and surface rather than on one page, and
+**RF-015** is the mechanism behind it. Nothing in this file is retracted.
+
 ---
 
 ## R-001 — Dotted tracing samples the glyph OUTLINE, not a writing centreline

@@ -87,6 +87,35 @@ The engine mounts a surface from an element id, so this is a one-line mistake. S
 - Every sheet action writes a **PDF**; the print dialog is the fallback only. There
   is no row that offers a print button.
 
+## The export is a CLONE, and it drops what it is not told to carry
+
+`printablePdf.js` writes the PDF and the PNG by cloning the print surface, inlining a **named
+list** of computed properties onto the clone, and painting that through an
+`<svg><foreignObject>`. `width` and `height` are on the list, so **a property that produced the
+layout and is not on the list is dropped while the box it produced stays behind** — the children
+reflow inside a box that still reports the old size and paint over whatever follows.
+
+That is not hypothetical. `.pt-search-words` is `columns: 3 8rem`; neither `column-count` nor
+`column-width` was carried, so the word search's clue list exported as one column, ran across the
+Name/Date row and the credit QR, and lost three of its ten words off the page — **at default
+settings**, for as long as the tool has existed. The crossword's word bank reuses the class and
+did the same to its clue columns.
+
+**Nothing in the DOM shows this.** The page, the preview and every geometry assertion over the
+print surface are correct; the defect exists only in the clone.
+
+* **Adding a CSS property to a print-surface rule means adding it to `PROPS`.**
+  `npm run check:print-export-properties` compares the two and fails the build otherwise. A
+  shorthand whose computed value round-trips (`overflow`, `border-radius`, `columns`) carries its
+  longhands; a property that genuinely cannot affect a static raster goes in that script's `INERT`
+  list **with its reason**, never silently.
+* **`::before` / `::after` do not survive the clone at all** — `cloneNode()` does not reproduce
+  pseudo-elements. The check reports them as a note. Do not style a printed sheet with one.
+* The geometry a sheet must satisfy — no two sibling regions sharing space, no child escaping a
+  box that does not clip it, nothing past the paper's width, no page rescued by shrinking it — is
+  `js/printables/renderInvariants.js`, gated by `npm run test:render-invariants` against recorded
+  before/after geometry of that word-search export.
+
 ## Attribution
 
 **Never hand-author a QR code, a second QR encoder, or a credit block.** The

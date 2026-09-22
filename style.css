@@ -10600,11 +10600,23 @@ body.is-printing.pt-ink-saver #pt-print-root .pt-cw-grid { opacity: 0.72; }
   .pt-name-row,
   .pt-puzzle-sheet,
   .pt-search-grid,
-  .pt-search-words,
   .pt-cw-grid,
   .pt-cw-clue-list li,
   .pt-sc-item,
   .cursive-print-row {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  /* A word list breaks BETWEEN words, never as a block.
+
+     `.pt-search-words` was in the list above, so a clue list that did not fit
+     under its grid moved to the next sheet whole. Measured from the print
+     dialog on /printables/word-search-maker/ with 40 words: page 1 ended at
+     "Find all 38 words:" with four blank inches under it, and page 2 carried
+     the list, the Name/Date row and nothing else. A child gets the grid on one
+     sheet and the words on another, which is not a word search. Each item
+     still holds together. */
+  .pt-search-words li {
     page-break-inside: avoid;
     break-inside: avoid;
   }
@@ -10631,20 +10643,56 @@ body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-glyph-print,
 body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-name-glyph,
 body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-search-grid,
 body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-cw-grid { opacity: 0.72; }
+/* The sheet's minimum height is the PAGE's, not US Letter portrait's.
+
+   These three rules read `min-height: 9.2in` until 2026-09-22 — "US Letter
+   portrait, minus its margins, minus about a credit block" — and they read it
+   on every paper and both orientations. A landscape Letter page is 7.5in, so
+   a sheet whose own content was shorter than that was still stretched to
+   9.2in, overshot the box by 1.7in, and renderPages scaled the whole page down
+   to fit. Measured on the name puzzle, where the minimum was the binding
+   constraint: fit 0.72 on Letter landscape and 0.75 on A4 landscape narrow,
+   letterboxed in the middle of the page — and 0.961 on US Letter PORTRAIT,
+   the paper the constant was written for. After: 1.000 on all four. Nothing
+   was wrong with the sheet; the only thing adapting to paper was the raster
+   scale.
+
+   This does NOT close the case for a sheet whose content is genuinely taller
+   than the page — the word search at 40 words is 1,242px against a 720px
+   landscape box whatever this minimum says. That is RF-015 and FIX-1 in
+   docs/printables/render-fidelity-audit-2026-09-22.md.
+
+   --pt-pdf-body-h is that number measured rather than assumed: the PDF page
+   box (paper minus margins, where the print root has no padding) minus the
+   credit band, whose 1.2in is the already-measured cost of a 0.95in QR and its
+   margin. applySheetMetrics() publishes it.
+
+   A FLEX COLUMN WAS TRIED FIRST AND REVERTED. Making .pt-sheet-page a flex
+   column of the full page height let the sheet fill the page — and the thing
+   that absorbed the difference was the figure: measured on the default word
+   search, the grid went from 614px to 484px, so the printed puzzle came out
+   18% smaller than before the "fix". A minimum height is the whole of what
+   these layouts needed; the page-filling flex column belongs to the landscape
+   redesign, where the sheet is re-laid-out rather than re-sized. */
 body.pt-pdf-rendering .bubble-print-wrap .pt-name-sheet {
-  min-height: 9.2in;
+  min-height: var(--pt-pdf-body-h, 8.8in);
   justify-content: space-between;
 }
 body.pt-pdf-rendering .pt-puzzle-print-holder .pt-puzzle-sheet {
-  min-height: 9.2in;
+  min-height: var(--pt-pdf-body-h, 8.8in);
   justify-content: center;
   gap: 1.4rem;
 }
 body.pt-pdf-rendering .pt-search-print-holder .pt-search-sheet {
-  min-height: 9.2in;
+  min-height: var(--pt-pdf-body-h, 8.8in);
   justify-content: flex-start;
   gap: 1.2rem;
 }
+/* The 4-up page carries an exact height rather than a minimum, and in PDF
+   mode that height is the PDF box, not the print dialog's: --pt-page-h
+   subtracts the 1rem of padding #pt-print-root has at print time and does not
+   have here, so every 4-up PDF came out a third of an inch short. */
+body.pt-pdf-rendering .pt-sheet-page.is-nup { height: var(--pt-pdf-page-h, 10in); }
 /* On paper the grid gets the full content width rather than the screen cap,
    and the type size divides by the same column count. */
 body.pt-pdf-rendering .pt-search-grid,

@@ -2110,10 +2110,24 @@
     // a cramped sheet is recoverable, a broken one is not.
     const page = Math.max(2, full.h - 2 * marginIn - PRINT_PADDING_IN);
     const body = Math.max(1.4, page - PRINT_CHROME_IN);
+    /* The PDF path is a THIRD height, and it is not the print one.
+       body.pt-pdf-rendering sets the print root's padding to 0 and the
+       rasteriser lays the sheet out on paper-minus-margins exactly, so
+       --pt-page-h (which subtracts the print dialog's 1rem padding) is 0.34in
+       short there. Published separately rather than folded into `page`,
+       because the print dialog's padding is real and a single number would be
+       wrong for one of the two. */
+    const pdfPage = Math.max(2, full.h - 2 * marginIn);
+    /* What a sheet that sets a min-height may claim of that box: the page
+       minus the credit band, whose 1.2in is the measured cost of a 0.95in QR
+       and its margin (PRINT_CREDIT_BAND_IN). The three min-height sheets used
+       a flat 9.2in before, which is this number for US Letter portrait and
+       1.7in too tall for the same paper turned sideways. */
+    const pdfBody = Math.max(1.4, pdfPage - PRINT_CREDIT_BAND_IN);
     // Width is not published: every figure is width:100% with the SVG's own
     // preserveAspectRatio, so a landscape sheet letterboxes rather than
     // overflowing, and a property nothing reads is a property that goes stale.
-    return { page: page, body: body };
+    return { page: page, body: body, pdfPage: pdfPage, pdfBody: pdfBody };
   }
   // Published to the print CSS as custom properties, so one measurement
   // drives every print layout instead of each one carrying its own constant.
@@ -2122,6 +2136,8 @@
     const m = sheetMetrics();
     node.style.setProperty("--pt-page-h", m.page.toFixed(2) + "in");
     node.style.setProperty("--pt-body-h", m.body.toFixed(2) + "in");
+    node.style.setProperty("--pt-pdf-page-h", m.pdfPage.toFixed(2) + "in");
+    node.style.setProperty("--pt-pdf-body-h", m.pdfBody.toFixed(2) + "in");
     node.style.setProperty("--pt-glyph-size", (m.body * GLYPH_RATIO).toFixed(2) + "in");
   }
 
