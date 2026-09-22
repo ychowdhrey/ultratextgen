@@ -64,6 +64,10 @@ default settings too.
 * a clue list that does not fit under its grid now breaks **between words** instead of jumping to
   the next sheet whole (browser-print page-one ink 9.74% → **13.08%**).
 
+Measured across the 670 configurations on three trees, this branch takes `EXPORT-SPILL` from
+**19 to 1** and `EXPORT-GEOMETRY-DRIFT` from **35 to 17** against `main`, and moves nothing else:
+zero configurations fail here that pass on `main`. §8 has the table.
+
 **What `main` fixed underneath it, mid-audit.** PR #927 landed while this branch was open and
 repaired the sheet-height half of RF-002 from the other side, with `--pt-sheet-h`, plus the
 flex-row page fit for generator sheets that is FIX-1's own mechanism. This branch had reached the
@@ -720,33 +724,37 @@ intended, recorded there.
 ### Verification of what shipped
 
 Three trees, one harness, the same 670 configurations: the audit's base commit `11d281455`,
-`main` after PR #927, and this branch merged onto it. Comparing the last two isolates what this
-branch does; comparing the first two is #927's, already summarised in RF-002.
+`main` after PR #927, and this branch merged onto it. The `base → main` step is #927's; the
+`main → PR` step is this branch's, and it is the one that says whether this PR does what it
+claims and nothing else.
 
 Invariant violations, `INK-OUTSIDE-VIEWBOX` excluded per RF-014:
 
-| invariant | base `11d281455` | `main` (after #927) | this branch |
-|---|---|---|---|
-| `EXPORT-SPILL` — a child escaping its box in the exported clone | 19 | _see note_ | _see note_ |
-| `EXPORT-GEOMETRY-DRIFT` — an element in a different place in the file than on the page | 43 | _see note_ | _see note_ |
-| `FIT-SHRINK` — a page the rasteriser had to scale | 576 | _see note_ | _see note_ |
-| `COLLIDE` — two sibling regions sharing space | 338 | _see note_ | _see note_ |
-| `EXPORT-COLLIDE` | 5 | _see note_ | _see note_ |
-| `OOB-WIDTH` | 4 | _see note_ | _see note_ |
+| invariant | base `11d281455` | `main` (after #927) | this branch | whose |
+|---|---|---|---|---|
+| `EXPORT-SPILL` — a child escaping its box in the exported clone | 19 | 19 | **1** | this PR |
+| `EXPORT-GEOMETRY-DRIFT` — an element in a different place in the file than on the page | 43 | 35 | **17** | 8 #927's, 18 this PR's |
+| `FIT-SHRINK` — a page the rasteriser had to scale | 576 | **395** | 395 | #927's |
+| `COLLIDE` — two sibling regions sharing space | 338 | 338 | 338 | neither — RF-005, untouched |
+| `EXPORT-COLLIDE` | 5 | 5 | 5 | neither — RF-005 in the clone |
+| `OOB-WIDTH` | 4 | 4 | 4 | neither — RF-004 |
+| **total** | **985** | **796** | **760** | |
 
-> **Note.** The `main` and branch columns are being measured as this document is written; the base
-> column is the audit's own run. Two numbers are already established from the per-route runs in
-> RF-002 and RF-015 and do not depend on that sweep: the `gen` surfaces go `fit` 0.613 → 1.000 and
-> the `name` surfaces do not move. **This block is finished before the PR is asked for review** —
-> a table of blanks is a promise, not a result, and it is recorded that way rather than filled with
-> an estimate.
+**Nothing regressed**: the set of violations on this branch is a strict subset of `main`'s — zero
+configurations fail here that pass there, checked per `(route, surface, case, paper, code)` rather
+than by comparing totals, because two totals can match while the membership moves.
 
-Against the audit's own pre-merge run of this branch's changes, measured before `main` moved:
-`EXPORT-SPILL` 19 → **1** (the one left is RF-004, a different cause), `EXPORT-GEOMETRY-DRIFT`
-43 → **17** (the rest is the banner's own `dy -14.4` offset, RF-006's page), and `COLLIDE`
-unchanged at 338 — which is the number that mattered most to check, since a first attempt at the
-height fix pushed it to 490 by shrinking the crossword's cells, and that is how that attempt was
-caught and reverted.
+What the export repair leaves behind, and why each is a different defect rather than a remnant of
+this one:
+
+* **`EXPORT-SPILL` 1** — `word-scramble-maker`, one very long word. That is RF-004: the row is
+  too wide, not mis-cloned.
+* **`EXPORT-GEOMETRY-DRIFT` 17** — 15 on `banner-maker` (the page grid sits `dy -14.4` off in the
+  clone, RF-006's page and a separate cause), 1 on `bubble-letters` and 1 on `crossword-maker`.
+
+`COLLIDE` holding at 338 across all three trees is the number that most needed checking: a first
+attempt at the height fix on this branch pushed it to **490** by shrinking the crossword's cells,
+which is how that attempt was caught and reverted.
 
 ---
 
