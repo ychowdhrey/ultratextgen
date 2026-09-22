@@ -19,23 +19,23 @@ roster, answer key, viewport — and where does the artifact stop agreeing with 
 
 ## 1. Executive summary
 
-| | |
-|---|---|
-| Generators audited | **27** English routes (25 on `printablesEngine.js`, plus `monogram-maker` and `cross-stitch-letters` on their own engines) + **69** locale mirrors across 8 languages |
-| Distinct print surfaces | **14** (`name`, `gen`, `design`, `banner`, `puzzle`, `search`, `cw`, `sc`, `alphabet`, `practice`, `book`, `char`, `mono`, `xstitch`) |
-| Settings inventoried | **1,013** interactive controls across the 27 EN routes, enumerated from the live DOM |
-| Configurations driven | **670** PDF-path configurations (content × paper × orientation × margin × roster × answer key), **135** responsive preview configurations (27 routes × 5 viewports), **8** browser-print renders |
-| Defects | **15** |
-| P0 | **2** |
-| P1 | **4** |
-| P2 | **7** |
-| P3 | **2** |
-| Systemic root causes | **5** |
+| | | |
+|---|---|---|
+| Generators audited | **96** | 27 English routes (25 on `printablesEngine.js`, plus `monogram-maker` and `cross-stitch-letters` on their own engines) + 69 locale mirrors across 8 languages |
+| Distinct print surfaces | **14** | `name`, `gen`, `design`, `banner`, `puzzle`, `search`, `cw`, `sc`, `alphabet`, `practice`, `book`, `char`, `mono`, `xstitch` |
+| Settings inventoried | **1,013** | interactive controls across the 27 EN routes, enumerated from the live DOM |
+| Configurations driven | **1,670** | 670 PDF-path on the English routes (content × paper × orientation × margin × roster × answer key), 857 on the locale mirrors, 135 responsive (27 routes × 5 viewports), 8 browser-print renders — each measured three ways |
+| Defects | **14** | a fifteenth register entry, RF-014, records an instrument error rather than a defect |
+| P0 | **2** | RF-001 (fixed), RF-015 |
+| P1 | **3** | RF-002 (partly fixed), RF-003 (fixed), RF-004 |
+| P2 | **6** | RF-005, RF-006, RF-007, RF-008, RF-010, RF-013 |
+| P3 | **3** | RF-009, RF-011 (fixed), RF-012 |
+| Systemic root causes | **5** | SRC-1 … SRC-5 in §5 |
 
 **The two P0s.** A **short name** — one to three characters, the most ordinary input a tracing
 page takes — prints its sheet at **27%** of size (19.7% at worst), as a narrow strip down the
-middle of the paper, on 15 of the 27 generators. And the word-search maker's **default** sheet — ten words, one grid, nothing
-configured — shipped a PDF in which the clue list rendered as a single column, ran across the
+middle of the paper, on 15 of the 27 generators. And the word-search maker's **default** sheet —
+ten words, one grid, nothing configured — shipped a PDF in which the clue list rendered as a single column, ran across the
 Name/Date row and the credit QR, and lost three of its ten words off the bottom of the page. The
 crossword's word bank did the same thing to its ACROSS/DOWN clues. **Nothing in the DOM showed
 it.** The page, the preview and every geometry assertion over the print surface are correct; the
@@ -59,8 +59,8 @@ default settings too.
 * the export now carries the properties the print surfaces use — `columns` and 24 others — and a
   CI gate compares the two lists so the next one cannot be dropped in silence;
 * the PDF page box is published and used, so a portrait or Legal sheet is no longer shrunk to fit
-  a box it already fitted (`fit` 0.961 → **1.000** on the default word search, 0.773 → **1.000**
-  with a full word list);
+  a box it already fitted — on the name puzzle, `fit` 0.961 → **1.000** on US Letter portrait and
+  0.72 → **1.000** on Letter landscape, 9 of its 15 configurations improved and none regressed;
 * a clue list that does not fit under its grid now breaks **between words** instead of jumping to
   the next sheet whole (browser-print page-one ink 9.74% → **13.08%**).
 
@@ -135,10 +135,12 @@ measured, and which shared component owns it.
 **Actual** `.pt-search-words` is `columns: 3 8rem`. The exporter's clone carried neither
 `column-count` nor `column-width`, so the list rendered as **one** column while keeping the
 height the three-column layout had produced. Measured on the default sheet at the moment of
-rasterisation: the list's items ran **165px past the bottom of their own `<ul>`** (the last item
-at y 832.8 in a box ending at 667.8), across the Name/Date row, across the credit QR, and off the
-page. Three of ten words were absent from the downloaded PDF. With a 40-word list the overrun was
-**476px** and roughly twenty words were lost.
+rasterisation: the `<ul>` is 110px tall at y 726.95, and its last item ends at y **1001.95** —
+**165px past the bottom of its own box**, across the Name/Date row, across the credit QR, and off
+the page. Three of ten words were absent from the downloaded PDF. With a 40-word list the overrun
+was **476px** and roughly twenty words were lost. (Those two trees — the clean live surface and
+the spilling clone, from the same instant — are the committed fixture in
+`js/printables/renderInvariants.fixtures.json`.)
 
 **Root cause** SRC-1 — the export clone's property allow-list.
 **Affected shared component** `js/printables/printablePdf.js` → `PROPS` / `inlineStyles()`.
@@ -231,13 +233,23 @@ whole page down to fit. Measured shrink at the baseline, by surface:
 `34rem` content caps that make a sheet's height independent of its page.
 **Affected shared component** `style.css` print block; `applySheetMetrics()` in
 `js/printables/printablesEngine.js`.
-**Fix shipped** `applySheetMetrics()` now publishes `--pt-pdf-page-h` (paper − margins, with the
-print root's padding correctly excluded in PDF mode), `.pt-sheet-page` is the flex column that
-carries it, and the three hardcoded heights are gone. Re-measured on the word search: Letter
-portrait `fit` 0.961 → **1.000**, Legal narrow → **1.000**, A4 portrait → **0.999**.
-**Open residue** landscape. With the min-height gone the sheet is still ~11.6in of content in a
-7.5in box, so `fit` is 0.645 rather than 0.580. **A sheet that fits a landscape page needs a
-landscape layout, not a smaller picture** — see FIX-1.
+**Fix shipped** `applySheetMetrics()` now publishes `--pt-pdf-page-h` and `--pt-pdf-body-h` — the
+real PDF page box (paper − margins, with the print root's padding correctly excluded in PDF mode)
+and that box minus the already-measured 1.2in credit band — and the three constants are replaced
+by `min(9.2in, var(--pt-pdf-body-h))`. Re-measured on the name puzzle, where the minimum is the
+binding constraint, across all 15 of its configurations: **9 improved, 0 regressed**, Letter
+landscape `fit` 0.72 → **1.000**, A4 landscape narrow 0.75 → **1.000**, Letter portrait
+0.961 → **1.000**. On the cursive pages: 4 improved, 0 regressed, worst case 0.68 → 0.89.
+
+**The `min()` is there because of a measurement.** `--pt-pdf-body-h` alone is 12.3in on Legal
+narrow, and a sheet stretched to that overran its page — 20 Legal configurations that used to fit
+started being scaled down. Taking the smaller of the physical limit and the old design limit keeps
+the landscape repair and cannot make any paper worse than it was.
+
+**Open residue** every sheet whose CONTENT is taller than the page, where a minimum height was
+never the constraint: the word search at 40 words is 1,242px against a 720px landscape box, and
+`fit` is 0.58 before and after. **A sheet that fits a landscape page needs a landscape layout, not
+a smaller picture** — see FIX-1 and FIX-2.
 **Evidence** `evidence/RF-002-nametracing-landscape.png`.
 
 ---
@@ -507,7 +519,7 @@ Ranked by breadth of impact, measured — not by how serious they feel.
 **Affected settings** every setting, on every sheet, because the mechanism is not
 setting-specific
 **Failure mechanism** `printablePdf.js` exports by cloning the print surface and calling
-`inlineStyles()`, which copies 96 named computed properties onto the clone. `width` and `height`
+`inlineStyles()`, which copied 96 named computed properties onto the clone (121 now). `width` and `height`
 are among them. Any property that produced the layout and is *not* among them is dropped — so the
 clone keeps the box and loses the rule that filled it, the children reflow inside a box that still
 reports the old size, and they paint over whatever follows. `column-count` and `column-width` were
@@ -651,6 +663,28 @@ would only move the defect, which is called out where it applies.
 | S-3 | RF-003 | SRC-3 | print-CSS break avoidance moved from `.pt-search-words` to its `li` |
 | S-4 | prevention | SRC-1, I-1…I-4 | `renderInvariants.js` + `renderInvariants.test.js` (21 assertions, recorded fixtures), gated in CI |
 
+### Verification of what shipped
+
+The whole 670-configuration matrix was re-run against the repaired tree with the same harness,
+and compared row for row with the baseline. Invariant violations, `INK-OUTSIDE-VIEWBOX` excluded
+per RF-014:
+
+| invariant | baseline `11d281455` | shipped | |
+|---|---|---|---|
+| `EXPORT-SPILL` — a child escaping its box in the exported clone | 19 | **1** | the one left is RF-004, a different cause |
+| `EXPORT-GEOMETRY-DRIFT` — an element in a different place in the file than on the page | 43 | **17** | the rest is the banner's own `dy -14.4` offset, RF-006's page |
+| `FIT-SHRINK` — a page the rasteriser had to scale | 576 | **542** | RF-015 and RF-002's residue |
+| `COLLIDE` — two sibling regions sharing space | 338 | **338** | RF-005, untouched and unamplified |
+| `EXPORT-COLLIDE` | 5 | **5** | RF-005 in the clone |
+| `OOB-WIDTH` | 4 | **4** | RF-004 |
+| **total** | **985** | **907** | |
+
+Nothing regressed. `COLLIDE` staying flat is the number that mattered most to check: a first
+attempt at S-2 pushed it to 490 by shrinking the crossword's cells, which is how that attempt was
+caught and reverted.
+
+---
+
 ### FIX-1 — the ruled band takes its height from the page, the word from its band · closes RF-015 (P0), most of RF-002, and RF-013
 
 The largest single change and the one everything else waits on. Today a practice row is **one SVG
@@ -715,9 +749,27 @@ correctly makes the crossword collision more visible, not less. Everything else 
 ## 9. Localization
 
 The 69 locale printable routes are mirrors of the English ones and share every mechanism above, so
-they inherit every defect above. They were driven through the same harness at a reduced
-configuration set (default, longest input, widest input, accented input × the paper rotation), for
-the two questions that are specific to them:
+they inherit every defect above. **857 configurations across 61 of them** were driven through the
+same harness at a reduced set (default, longest input, widest input, accented input × the paper
+rotation), against the repaired tree. The residue is the English residue, in the same proportions:
+
+| | violations | routes | worst |
+|---|---|---|---|
+| de | 41 | 7 | sheet at 20% |
+| es | 49 | 8 | sheet at 20% |
+| fr | 37 | 6 | sheet at 20% |
+| pl | 44 | 6 | sheet at 20% |
+| pt | 31 | 5 | sheet at 20% |
+| it | 30 | 5 | sheet at 43% |
+| id | 23 | 4 | sheet at 61% |
+| nl | 6 | 1 | sheet at 78% |
+
+251 of the 261 are `FIT-SHRINK` — RF-002 and RF-015 arriving on the mirrors, with `nome-para-tracar`
+(pt) at **0.639 on US Letter portrait at its own default**. The other 10 are the banner export drift
+that RF-006's page also shows in English. **No locale produced a defect class the English route did
+not**, which is the useful finding: fixing the shared mechanism fixes 96 routes, not 27.
+
+Two questions are specific to the mirrors:
 
 * **Do longer UI strings change the sheet's geometry?** The sheets' own strings (`Name:`, `Date:`,
   "Find all N words") are the only translated text on a printed sheet, and they sit in a centred

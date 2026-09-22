@@ -10667,6 +10667,16 @@ body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-cw-grid { opacity: 0.72; }
    credit band, whose 1.2in is the already-measured cost of a 0.95in QR and its
    margin. applySheetMetrics() publishes it.
 
+   WHY min() AND NOT THE VARIABLE ALONE. The variable is the PHYSICAL limit;
+   9.2in is a DESIGN one, and on Legal the two disagree. --pt-pdf-body-h is
+   12.3in on Legal narrow, and a sheet stretched to that overran its page by
+   0.57in — the credit band costs more than the 1.2in the variable subtracts
+   once the sheet's own gaps are in it — so 20 Legal configurations that used
+   to fit started being scaled down. Measured across 670 configurations, not
+   predicted. Taking the smaller of the two keeps the landscape repair and
+   cannot make any paper worse than it was: a practice sheet does not need to
+   be thirteen inches tall to have done its job.
+
    A FLEX COLUMN WAS TRIED FIRST AND REVERTED. Making .pt-sheet-page a flex
    column of the full page height let the sheet fill the page — and the thing
    that absorbed the difference was the figure: measured on the default word
@@ -10675,16 +10685,16 @@ body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-cw-grid { opacity: 0.72; }
    these layouts needed; the page-filling flex column belongs to the landscape
    redesign, where the sheet is re-laid-out rather than re-sized. */
 body.pt-pdf-rendering .bubble-print-wrap .pt-name-sheet {
-  min-height: var(--pt-pdf-body-h, 8.8in);
+  min-height: min(9.2in, var(--pt-pdf-body-h, 8.8in));
   justify-content: space-between;
 }
 body.pt-pdf-rendering .pt-puzzle-print-holder .pt-puzzle-sheet {
-  min-height: var(--pt-pdf-body-h, 8.8in);
+  min-height: min(9.2in, var(--pt-pdf-body-h, 8.8in));
   justify-content: center;
   gap: 1.4rem;
 }
 body.pt-pdf-rendering .pt-search-print-holder .pt-search-sheet {
-  min-height: var(--pt-pdf-body-h, 8.8in);
+  min-height: min(9.2in, var(--pt-pdf-body-h, 8.8in));
   justify-content: flex-start;
   gap: 1.2rem;
 }

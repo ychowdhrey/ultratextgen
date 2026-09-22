@@ -52,7 +52,14 @@ const CSS = path.join(ROOT, 'style.css');
    sheetPageNode/appendSheetPages and the per-surface *SheetNode functions),
    plus the two body classes that scope the print-only layout. A new sheet
    class belongs here in the same change that introduces it; the count assert
-   below is what stops this list from silently matching nothing. */
+   below is what stops this list from silently matching nothing.
+
+   ERRING TOWARDS TOO MANY IS THE RIGHT ERROR. Some markers also catch the
+   on-screen control that shares a prefix with its sheet (`.pt-name-rows-select`
+   under `pt-name-`, `.bubble-outline-card` under `bubble-outline`). The cost
+   of that is a property carried into the export that the export did not need.
+   The cost of the other direction is a property the sheet uses and the export
+   drops — which is the incident above. */
 const SURFACE_MARKERS = [
   '#pt-print-root', 'pt-pdf-rendering', 'is-printing',
   'pt-sheet-page', 'pt-tile-page', 'pt-banner-page', 'bubble-print-book-page',
@@ -89,7 +96,13 @@ const INERT = new Map([
   ['orphans', 'the clone is not fragmented'], ['widows', 'the clone is not fragmented'],
   ['size', '@page only'], ['outline', 'focus only'], ['outline-offset', 'focus only'],
   ['outline-color', 'focus only'], ['outline-width', 'focus only'], ['outline-style', 'focus only'],
-  ['box-shadow', 'print sheets are flat ink; the exporter drops shadows deliberately'],
+  /* A shadow IS dropped from the export: the list has never carried it, so a
+     print-surface element with one prints flat. That is right for a printed
+     sheet — ink on paper has no drop shadow — and the two declarations the
+     markers below catch are on screen cards, not on anything the exporter
+     clones. Listed as inert rather than added to PROPS so the choice is
+     visible instead of implicit. */
+  ['box-shadow', 'a printed sheet is flat ink; the export has never carried one'],
   ['print-color-adjust', 'honoured by the print dialog, not by a canvas'],
   ['-webkit-print-color-adjust', 'honoured by the print dialog, not by a canvas'],
   ['aria-hidden', 'not a CSS property']
@@ -151,14 +164,15 @@ function readPropsList() {
 function rules(css) {
   const out = [];
   let i = 0;
-  const stack = [];
   let buf = '';
   while (i < css.length) {
     const c = css[i];
     if (c === '/' && css[i + 1] === '*') { const end = css.indexOf('*/', i); i = end === -1 ? css.length : end + 2; continue; }
     if (c === '{') {
       const sel = buf.trim(); buf = '';
-      if (sel.startsWith('@')) { stack.push({ at: true }); i++; continue; }
+      // An at-rule's own preamble is not a selector; its inner rules are read
+      // by this same loop, so there is nothing to track but the brace.
+      if (sel.startsWith('@')) { i++; continue; }
       // Read the declaration block up to its matching close.
       let depth = 1, j = i + 1, body = '';
       while (j < css.length && depth > 0) {
@@ -170,7 +184,7 @@ function rules(css) {
       out.push({ selector: sel, body: body, line: css.slice(0, i).split('\n').length });
       i = j + 1; continue;
     }
-    if (c === '}') { stack.pop(); buf = ''; i++; continue; }
+    if (c === '}') { buf = ''; i++; continue; }
     buf += c; i++;
   }
   return out;
