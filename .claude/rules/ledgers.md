@@ -2,6 +2,7 @@
 paths:
   - "data/**/*.json"
   - "data/**/*.csv"
+  - "data/**/*.yaml"
 ---
 
 # `data/` ledgers are machine-read state, and every entry is a discussed decision

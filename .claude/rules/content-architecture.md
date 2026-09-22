@@ -3,6 +3,7 @@ paths:
   - "{answers,guide,library,symbol,usecase,category,updates,events,learn,printables}/**"
   - "*/{answers,guide,library,symbol,usecase,category,updates,events}/**"
   - "{discord,facebook,instagram,linkedin,pinterest,snapchat,telegram,threads,tiktok,whatsapp,x,youtube,roblox}/**"
+  - "{de/zum-ausdrucken,es/imprimibles,fr/imprimables,id/printables,it/da-stampare,nl/om-uit-te-printen,pl/do-druku,pt/imprimiveis}/**"
   - "data/{library_page_specs,event_page_specs}/**"
 ---
 
