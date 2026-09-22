@@ -43,6 +43,24 @@ the head terms — `word search maker` is KD 72 and `crossword puzzle maker` KD 
 Copy-paste Unicode is the front door and satisfies the job fastest. Never make a
 printable the *default* answer for a query plain characters already serve.
 
+## A surface the engine reads must be a surface it routes
+
+`buildPrintOptions()` mounts the print-settings panel, the share row, the saved
+strip and the recent strip — **all four, from one anchor**, and it returns early
+when that anchor is null. So an action surface added to the `el` map but not to
+`firstActionSurface()` costs a page every one of them, silently: the mount is
+written at runtime, so there is nothing in the HTML for a static page check to
+miss. That shipped on the three puzzle makers for three days.
+
+The same shape applies to `pngExportTarget()`, which gates whether the page
+offers **Share as image** at all.
+
+`npm run check:printables-surface-wiring` compares the engine against itself and
+gates on it. It exits **2** rather than 0 when it cannot locate `el`,
+`firstActionSurface()` or `pngExportTarget()` — a rename fails closed instead of
+reporting a comforting clean. If you rename or restructure one of the three,
+update the check in the same change.
+
 ## Two pages must not own the same tool
 
 The engine mounts a surface from an element id, so this is a one-line mistake. See
