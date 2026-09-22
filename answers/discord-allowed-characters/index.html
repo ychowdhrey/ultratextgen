@@ -151,7 +151,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "datePublished": "2026-06-04T00:00:00+00:00",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Server nicknames accept Unicode characters just like display names, so styled fonts work. The only limit is moderation — some servers block decorative or hard-to-read names through their own rules.",
+        "text": "Yes. Server nicknames accept Unicode characters just like display names, so styled fonts work. The only limit is moderation: some servers block decorative or hard-to-read names through their own rules.",
         "author": {
           "@id": "https://ultratextgen.com/#organization"
         },
@@ -365,9 +365,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <span class="article-section-label">Channel names</span>
   <h2>Can channel names use fraktur or blackletter letters?</h2>
   <div class="editorial-block">
-    <p><strong>No, not usually.</strong> Discord force-lowercases a text channel name and swaps spaces for hyphens on save. That lowercasing rule only recognizes ordinary A–Z — it has no special case for stylized Unicode letterforms, so fraktur (blackletter), bold, script, and Mathematical Alphanumeric letters are typically stripped out or rejected outright rather than passed through.</p>
-    <p>What <em>does</em> survive: Unicode symbols used as dividers or prefixes (⊹ ➤ │ ⌗), and a narrow set of letter-like characters — small caps and fullwidth forms — that Discord's filter reads as lowercase-equivalent. Category names, voice channel names, and channel topics skip this normalization entirely, so that's where fraktur, bold, and other decorative letter styles actually render as typed.</p>
-    <p>Discord hasn't published an official validation regex for channel names, so this behavior is based on tested results, not documentation — expect edge cases.</p>
+    <p><strong>No, not usually.</strong> Discord force-lowercases a text channel name and swaps spaces for hyphens on save. That lowercasing rule only recognizes ordinary A–Z: it has no special case for stylized Unicode letterforms, so fraktur (blackletter), bold, script, and Mathematical Alphanumeric letters are typically stripped out or rejected outright rather than passed through.</p>
+    <p>What <em>does</em> survive: Unicode symbols used as dividers or prefixes (⊹ ➤ │ ⌗), and a narrow set of letter-like characters, small caps and fullwidth forms, that Discord's filter reads as lowercase-equivalent. Category names, voice channel names, and channel topics skip this normalization entirely, so that's where fraktur, bold, and other decorative letter styles actually render as typed.</p>
+    <p>Discord hasn't published an official validation regex for channel names, so this behavior is based on tested results, not documentation. Expect edge cases.</p>
   </div>
 </section>
 
@@ -377,7 +377,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <span class="article-section-label">Reserved words</span>
   <h2>Names Discord blocks outright, regardless of style</h2>
   <div class="editorial-block">
-    <p>Separate from the Unicode question, usernames and display names can't contain the substrings <code>@</code>, <code>#</code>, <code>:</code>, or three backticks in a row, and can't be (or contain, in some forms) the reserved words <strong>everyone</strong>, <strong>here</strong>, <strong>system message</strong>, or <strong>discord</strong> — no styled version of these gets around the filter, since it checks the underlying text, not the font. Webhook names have their own reserved word: <strong>clyde</strong>.</p>
+    <p>Separate from the Unicode question, usernames and display names can't contain the substrings <code>@</code>, <code>#</code>, <code>:</code>, or three backticks in a row, and can't be (or contain, in some forms) the reserved words <strong>everyone</strong>, <strong>here</strong>, <strong>system message</strong>, or <strong>discord</strong>: no styled version of these gets around the filter, since it checks the underlying text, not the font. Webhook names have their own reserved word: <strong>clyde</strong>.</p>
   </div>
 </section>
 
@@ -434,7 +434,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
       </button>
       <div class="faq-answer">
-        Yes. Server nicknames accept Unicode characters just like display names, so styled fonts work. The only limit is moderation — some servers block decorative or hard-to-read names through their own rules.
+        Yes. Server nicknames accept Unicode characters just like display names, so styled fonts work. The only limit is moderation: some servers block decorative or hard-to-read names through their own rules.
       </div>
     </div>
     <div class="faq-item">
@@ -443,7 +443,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
       </button>
       <div class="faq-answer">
-        Mostly no. Text channel slugs are force-lowercased with hyphens replacing spaces, and that filter only recognizes ordinary A–Z — stylized letterforms like fraktur (blackletter), bold, and script are typically stripped or rejected rather than kept. Symbol dividers, small caps, and fullwidth letters generally survive. Category names, role names, and the channel topic skip this normalization entirely, so blackletter and other decorative styles render as typed there.
+        Mostly no. Text channel slugs are force-lowercased with hyphens replacing spaces, and that filter only recognizes ordinary A–Z: stylized letterforms like fraktur (blackletter), bold, and script are typically stripped or rejected rather than kept. Symbol dividers, small caps, and fullwidth letters generally survive. Category names, role names, and the channel topic skip this normalization entirely, so blackletter and other decorative styles render as typed there.
       </div>
     </div>
     <div class="faq-item">

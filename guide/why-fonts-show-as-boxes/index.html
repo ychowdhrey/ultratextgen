@@ -110,17 +110,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Why does my fancy font show up as boxes for other people but not me?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Because the boxes are drawn by the reader's device, not yours. A styled “font” is really a set of special Unicode characters. Your phone happens to have a font that can draw them, so you see them perfectly. When a friend's device has no glyph for a character, it falls back to the .notdef box (□), often called “tofu.” Your text is intact — their device just can't paint it." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Because the boxes are drawn by the reader's device, not yours. A styled “font” is really a set of special Unicode characters. Your phone happens to have a font that can draw them, so you see them perfectly. When a friend's device has no glyph for a character, it falls back to the .notdef box (□), often called “tofu.” Your text is intact: their device just can't paint it." }
     },
     {
       "@type": "Question",
       "name": "Which font styles are safe to use everywhere?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Bold and italic sans-serif, bold/italic serif, and small caps are the safest — they map to the Mathematical Alphanumeric block that nearly every modern device ships a glyph for. Monospace, fullwidth and circled styles are usually fine. Fraktur (blackletter), double-struck, heavily decorative and zalgo styles are the most likely to break on older Android and some apps." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Bold and italic sans-serif, bold/italic serif, and small caps are the safest: they map to the Mathematical Alphanumeric block that nearly every modern device ships a glyph for. Monospace, fullwidth and circled styles are usually fine. Fraktur (blackletter), double-struck, heavily decorative and zalgo styles are the most likely to break on older Android and some apps." }
     },
     {
       "@type": "Question",
       "name": "How do I stop my text from breaking?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Pick a Tier 1 style for anything important, keep the meaning readable even if the styling drops, and never put a load-bearing word (a name, link, or call to action) in a risky style alone. Then test on a second device — ideally an older Android phone — before you commit it to a bio." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Pick a Tier 1 style for anything important, keep the meaning readable even if the styling drops, and never put a load-bearing word (a name, link, or call to action) in a risky style alone. Then test on a second device, ideally an older Android phone, before you commit it to a bio." }
     },
     {
       "@type": "Question",
@@ -130,7 +130,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "What does a shaded block symbol like ▓ or ▒ mean when I see it in a message?",
-      "acceptedAnswer": { "@type": "Answer", "text": "It's usually the same tofu problem in a different shape. Shade and block characters (░ ▒ ▓ █) are real, valid Unicode symbols — often used deliberately for retro UI, glitch effects, or loading-bar aesthetics — but on a device or app with a thin font, they can render as generic boxes instead of their intended shading. If you typed or copied one on purpose, it isn't broken; check it on another device before assuming it failed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "It's usually the same tofu problem in a different shape. Shade and block characters (░ ▒ ▓ █) are real, valid Unicode symbols (often used deliberately for retro UI, glitch effects, or loading-bar aesthetics) but on a device or app with a thin font, they can render as generic boxes instead of their intended shading. If you typed or copied one on purpose, it isn't broken; check it on another device before assuming it failed." }
     }
   ]
 }
@@ -175,7 +175,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="key-takeaways">
   <h2>Key Takeaways</h2>
   <ul>
-    <li>A box (□ ▯), often called "tofu," means the reader's device has no glyph for that character — your text arrived fine, it just can't be drawn there.</li>
+    <li>A box (□ ▯), often called "tofu," means the reader's device has no glyph for that character. Your text arrived fine, it just can't be drawn there.</li>
     <li>"Fonts" from a generator are really substitute Unicode characters, so support depends entirely on the <em>viewer's</em> device, OS, and app.</li>
     <li>Use the Style Safety Tiers: bold, italic and small caps are near-universal; Fraktur, double-struck and zalgo are the most fragile.</li>
     <li>Never put a load-bearing word in a risky style alone, and always test on a second device before you commit it to a bio.</li>
@@ -190,8 +190,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2>Boxes Are the Reader's Device Talking, Not Yours</h2>
     <div class="editorial-block">
       <p>You styled your name, it looked perfect, and a friend replied: "it's just squares for me." The instinct is to assume you did something wrong. You didn't.</p>
-      <p>Here is the one fact that explains the whole thing: <strong>the styled "fonts" you copy from a generator are not fonts at all.</strong> They're ordinary text made of special <a href="/library/">Unicode characters</a> — the bold "𝗮" is a different character from a normal "a," not the same letter wearing a costume. When you paste them, the characters travel with your message. What happens next is entirely up to the <em>reader's</em> device.</p>
-      <p>Every device keeps a set of fonts that map characters to little pictures called <strong>glyphs</strong>. When a device meets a character it has no glyph for, it draws a placeholder: the <strong>.notdef box</strong> — □ or ▯ — nicknamed <strong>"tofu"</strong> (the font family Noto is literally named "no more tofu"). So the box isn't your text failing. It's the reader's device saying "I received this character, but I don't own a picture for it."</p>
+      <p>Here is the one fact that explains the whole thing: <strong>the styled "fonts" you copy from a generator are not fonts at all.</strong> They're ordinary text made of special <a href="/library/">Unicode characters</a>: the bold "𝗮" is a different character from a normal "a," not the same letter wearing a costume. When you paste them, the characters travel with your message. What happens next is entirely up to the <em>reader's</em> device.</p>
+      <p>Every device keeps a set of fonts that map characters to little pictures called <strong>glyphs</strong>. When a device meets a character it has no glyph for, it draws a placeholder: the <strong>.notdef box</strong>, □ or ▯, nicknamed <strong>"tofu"</strong> (the font family Noto is literally named "no more tofu"). So the box isn't your text failing. It's the reader's device saying "I received this character, but I don't own a picture for it."</p>
     </div>
   </section>
 
@@ -202,7 +202,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Why It's Sneaky</span>
     <h2>The Failure Is Invisible to the Author</h2>
     <div class="editorial-block">
-      <p>This is what makes boxes so frustrating: <strong>you can't reproduce the problem on your own phone.</strong> Your device has the glyph, so it renders perfectly for you, every time. Meanwhile a chunk of your audience — often older Android phones, certain web browsers, or specific apps — sees a row of squares.</p>
+      <p>This is what makes boxes so frustrating: <strong>you can't reproduce the problem on your own phone.</strong> Your device has the glyph, so it renders perfectly for you, every time. Meanwhile a chunk of your audience (often older Android phones, certain web browsers, or specific apps) sees a row of squares.</p>
       <p>That asymmetry is why "my bio looks broken to some people" is one of the most-asked questions across Discord, Instagram and TikTok. The author and the audience are looking at the same characters through different fonts.</p>
       <div class="mood-explainer">
         <div class="mood-example">What you see: <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong> &nbsp;·&nbsp; What an older Android sees: ▯▯▯▯▯▯▯▯▯</div>
@@ -233,7 +233,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="editorial-block">
-      <p>The rule of thumb: <strong>the prettier and more unusual a style looks, the fewer devices can draw it.</strong> Decorative cursive and blackletter are exactly the styles people reach for in bios — and exactly the ones most likely to turn into tofu.</p>
+      <p>The rule of thumb: <strong>the prettier and more unusual a style looks, the fewer devices can draw it.</strong> Decorative cursive and blackletter are exactly the styles people reach for in bios, and exactly the ones most likely to turn into tofu.</p>
     </div>
   </section>
 
@@ -246,7 +246,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="editorial-block">
       <h3>1. Never style a load-bearing word alone</h3>
-      <p>If a word <em>must</em> be read — your name, a link, a price, a call to action — keep it in plain text or a Tier 1 style. If it turns to boxes, your message still survives.</p>
+      <p>If a word <em>must</em> be read (your name, a link, a price, a call to action) keep it in plain text or a Tier 1 style. If it turns to boxes, your message still survives.</p>
       <div class="example-pair">
         <span class="ex-label">Fragile</span>
         <span class="ex-plain">𝕯𝕸 𝖒𝖊 𝖙𝖔 𝖔𝖗𝖉𝖊𝖗</span>
@@ -263,7 +263,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="editorial-block">
       <h3>3. Apply the 2-device test</h3>
-      <p>Before a style goes into a bio, view it on a second device — ideally an older Android phone, the worst-case renderer. If it survives there, it'll survive almost anywhere.</p>
+      <p>Before a style goes into a bio, view it on a second device, ideally an older Android phone, the worst-case renderer. If it survives there, it'll survive almost anywhere.</p>
     </div>
   </section>
 
@@ -280,15 +280,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="compare-card variant-muted">
         <span class="compare-badge">? or �</span>
-        <p>The character was lost or mis-decoded in transit. <strong>A data problem.</strong> The styling won't help — the text itself changed.</p>
+        <p>The character was lost or mis-decoded in transit. <strong>A data problem.</strong> The styling won't help: the text itself changed.</p>
       </div>
       <div class="compare-card variant-muted">
         <span class="compare-badge">Ã© garbage</span>
-        <p>"Mojibake" — bytes read with the wrong encoding. <strong>Also a data problem</strong>, usually from a broken copy/export step.</p>
+        <p>"Mojibake": bytes read with the wrong encoding. <strong>Also a data problem</strong>, usually from a broken copy/export step.</p>
       </div>
     </div>
     <div class="editorial-block">
-      <p>This guide is about the first one — a font problem you fix by choosing a safer style. The other two are data problems: the characters themselves changed in transit, so no style choice will bring them back.</p>
+      <p>This guide is about the first one: a font problem you fix by choosing a safer style. The other two are data problems: the characters themselves changed in transit, so no style choice will bring them back.</p>
     </div>
   </section>
 
@@ -300,10 +300,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2>Where Boxes Show Up Most</h2>
     <div class="editorial-block">
       <ul>
-        <li><strong>Discord</strong> — styled names render for most desktop users, but older Android clients and screen readers struggle. See <a href="/guide/discord-text-formatting-explained/">Discord text formatting decoded</a>.</li>
-        <li><strong>Instagram &amp; TikTok</strong> — bios render via the viewer's system fonts, so the same bio can look crisp on iPhone and broken on a budget Android.</li>
-        <li><strong>Older Android, generally</strong> — the single most common source of tofu. If you only test on an iPhone, you're testing the easy case.</li>
-        <li><strong>iPhone specifically</strong> — testing on iOS isn't a free pass. Apple's system font, San Francisco, doesn't cover the same Unicode ranges Google's Noto font does on Android, so certain decorative and rare-block styles that render fine on Android can still turn to boxes on iPhone. Treat both platforms as separate tests, not one stand-in for the other.</li>
+        <li><strong>Discord</strong>: styled names render for most desktop users, but older Android clients and screen readers struggle. See <a href="/guide/discord-text-formatting-explained/">Discord text formatting decoded</a>.</li>
+        <li><strong>Instagram &amp; TikTok</strong>: bios render via the viewer's system fonts, so the same bio can look crisp on iPhone and broken on a budget Android.</li>
+        <li><strong>Older Android, generally</strong>: the single most common source of tofu. If you only test on an iPhone, you're testing the easy case.</li>
+        <li><strong>iPhone specifically</strong>: testing on iOS isn't a free pass. Apple's system font, San Francisco, doesn't cover the same Unicode ranges Google's Noto font does on Android, so certain decorative and rare-block styles that render fine on Android can still turn to boxes on iPhone. Treat both platforms as separate tests, not one stand-in for the other.</li>
       </ul>
     </div>
   </section>
@@ -313,7 +313,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA Card -->
   <div class="cta-card">
     <h3>Generate text in a device-safe style</h3>
-    <p>Pick a Tier 1 style — bold, italic or small caps — and it'll render almost everywhere. Type it once, copy it, paste it anywhere.</p>
+    <p>Pick a Tier 1 style (bold, italic or small caps) and it'll render almost everywhere. Type it once, copy it, paste it anywhere.</p>
     <a href="/" class="cta-btn">Open the Text Generator →</a>
   </div>
 
@@ -346,19 +346,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Why does my fancy font show up as boxes for other people but not me?</button>
     <div class="faq-answer">
-      <p>Because the boxes are drawn by the reader's device, not yours. A styled "font" is really a set of special Unicode characters. Your phone happens to have a font that can draw them, so you see them perfectly. When a friend's device has no glyph for a character, it falls back to the .notdef box (□), often called "tofu." Your text is intact — their device just can't paint it.</p>
+      <p>Because the boxes are drawn by the reader's device, not yours. A styled "font" is really a set of special Unicode characters. Your phone happens to have a font that can draw them, so you see them perfectly. When a friend's device has no glyph for a character, it falls back to the .notdef box (□), often called "tofu." Your text is intact: their device just can't paint it.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Which font styles are safe to use everywhere?</button>
     <div class="faq-answer">
-      <p>Bold and italic sans-serif, bold/italic serif, and small caps are the safest — they map to the Mathematical Alphanumeric block that nearly every modern device ships a glyph for. Monospace, fullwidth and circled styles are usually fine. Fraktur (blackletter), double-struck, heavily decorative and zalgo styles are the most likely to break on older Android and some apps. Make a safe one with the <a href="/">text generator</a>.</p>
+      <p>Bold and italic sans-serif, bold/italic serif, and small caps are the safest: they map to the Mathematical Alphanumeric block that nearly every modern device ships a glyph for. Monospace, fullwidth and circled styles are usually fine. Fraktur (blackletter), double-struck, heavily decorative and zalgo styles are the most likely to break on older Android and some apps. Make a safe one with the <a href="/">text generator</a>.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">How do I stop my text from breaking?</button>
     <div class="faq-answer">
-      <p>Pick a Tier 1 style for anything important, keep the meaning readable even if the styling drops, and never put a load-bearing word (a name, link, or call to action) in a risky style alone. Then test on a second device — ideally an older Android phone — before you commit it to a bio.</p>
+      <p>Pick a Tier 1 style for anything important, keep the meaning readable even if the styling drops, and never put a load-bearing word (a name, link, or call to action) in a risky style alone. Then test on a second device, ideally an older Android phone, before you commit it to a bio.</p>
     </div>
   </div>
   <div class="faq-item">
@@ -370,7 +370,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">What does a shaded block symbol like ▓ or ▒ mean when I see it in a message?</button>
     <div class="faq-answer">
-      <p>It's usually the same tofu problem in a different shape. Shade and block characters (░ ▒ ▓ █) are real, valid Unicode symbols — often used deliberately for retro UI, glitch effects, or loading-bar aesthetics — but on a device or app with a thin font, they can render as generic boxes instead of their intended shading. If you typed or copied one on purpose, it isn't broken; check it on another device before assuming it failed.</p>
+      <p>It's usually the same tofu problem in a different shape. Shade and block characters (░ ▒ ▓ █) are real, valid Unicode symbols (often used deliberately for retro UI, glitch effects, or loading-bar aesthetics) but on a device or app with a thin font, they can render as generic boxes instead of their intended shading. If you typed or copied one on purpose, it isn't broken; check it on another device before assuming it failed.</p>
     </div>
   </div>
 </section>

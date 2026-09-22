@@ -144,17 +144,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Prečo Discord hovorí, že moje používateľské meno je neplatné?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Pretože unikátne používateľské meno (@) je kľúč identity, nie zobrazovacie pole. Prijíma len malé písmená a–z, číslice 0–9, podčiarkovník a bodku — takže vloženie znakov písma Unicode (alebo aj obyčajného veľkého písmena) spôsobí, že Discord uloženie odmietne. Oštýlovanú verziu daj radšej do zobrazovaného mena alebo serverovej prezývky; tie polia Unicode prijímajú naplno." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Pretože unikátne používateľské meno (@) je kľúč identity, nie zobrazovacie pole. Prijíma len malé písmená a–z, číslice 0–9, podčiarkovník a bodku, takže vloženie znakov písma Unicode (alebo aj obyčajného veľkého písmena) spôsobí, že Discord uloženie odmietne. Oštýlovanú verziu daj radšej do zobrazovaného mena alebo serverovej prezývky; tie polia Unicode prijímajú naplno." }
     },
     {
       "@type": "Question",
       "name": "Môžem použiť ozdobné písmo v zobrazovanom mene na Discorde?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Áno. Zobrazované mená, serverové prezývky, názvy rolí, názvy serverov, názvy kanálov aj tvoja sekcia „O mne“ prijímajú znaky písma Unicode a emoji. Vygeneruj oštýlovaný text a hotové znaky vlož do poľa — nič netreba zapínať. Uprednostni čitateľné štýly ako tučné, kurzívu alebo kapitálky, aby ťa prečítali aj členovia na starších zariadeniach a čítačky obrazovky." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Áno. Zobrazované mená, serverové prezývky, názvy rolí, názvy serverov, názvy kanálov aj tvoja sekcia „O mne“ prijímajú znaky písma Unicode a emoji. Vygeneruj oštýlovaný text a hotové znaky vlož do poľa: nič netreba zapínať. Uprednostni čitateľné štýly ako tučné, kurzívu alebo kapitálky, aby ťa prečítali aj členovia na starších zariadeniach a čítačky obrazovky." }
     },
     {
       "@type": "Question",
       "name": "Prečo môj názov kanála stratil veľké písmená?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Názvy textových kanálov sa normalizujú: Discord obyčajné A–Z prepíše na malé písmená a medzery zmení na spojovníky, takže z „General Chat“ sa stane „general-chat“. Znaky písma Unicode nie sú obyčajné písmená, takže prejdú nedotknuté — 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 si veľké písmená udrží, pretože to sú matematické tučné znaky, nie A–Z. Názvy hlasových kanálov a kategórií túto normalizáciu preskočia a medzery aj veľké písmená si zachovajú." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Názvy textových kanálov sa normalizujú: Discord obyčajné A–Z prepíše na malé písmená a medzery zmení na spojovníky, takže z „General Chat“ sa stane „general-chat“. Znaky písma Unicode nie sú obyčajné písmená, takže prejdú nedotknuté: 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 si veľké písmená udrží, pretože to sú matematické tučné znaky, nie A–Z. Názvy hlasových kanálov a kategórií túto normalizáciu preskočia a medzery aj veľké písmená si zachovajú." }
     },
     {
       "@type": "Question",
@@ -164,7 +164,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Vedia ma ľudia ešte @označiť, ak mám oštýlované meno?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Áno — označenia sa viažu na tvoj účet, nie na oštýlované znaky. Napísanie tvojho obyčajného používateľského mena (@) ťa nájde vždy a funguje aj kliknutie na tvoje meno či výber zo zoznamu členov. Čo prestane fungovať, je automatické dopĺňanie podľa zobrazovaného mena: napísanie „aesthetic“ sa nezhodne s 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈, pretože sú to iné znaky. Práve preto Discord drží login obyčajný: je to zaručený spôsob, ako sa k tebe dostať." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Áno: označenia sa viažu na tvoj účet, nie na oštýlované znaky. Napísanie tvojho obyčajného používateľského mena (@) ťa nájde vždy a funguje aj kliknutie na tvoje meno či výber zo zoznamu členov. Čo prestane fungovať, je automatické dopĺňanie podľa zobrazovaného mena: napísanie „aesthetic“ sa nezhodne s 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈, pretože sú to iné znaky. Práve preto Discord drží login obyčajný: je to zaručený spôsob, ako sa k tebe dostať." }
     }
   ]
 }
@@ -191,7 +191,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="hero">
   <div class="hero-inner" style="max-width:800px;">
     <h1 class="hero-headline">Kde funguje ozdobné písmo na Discorde</h1>
-    <p class="hero-tagline">„Neplatné používateľské meno.“ Názov kanála, ktorý stratil veľké písmená. Prezývka, ktorá sa uložila bez problému. Discord nie je nedôsledný — každé pole má svoju úlohu a každé presadzuje iné pravidlá. Tu je celá mapa oprávnení, aby si už nikdy nemusel hádať.</p>
+    <p class="hero-tagline">„Neplatné používateľské meno.“ Názov kanála, ktorý stratil veľké písmená. Prezývka, ktorá sa uložila bez problému. Discord nie je nedôsledný: každé pole má svoju úlohu a každé presadzuje iné pravidlá. Tu je celá mapa oprávnení, aby si už nikdy nemusel hádať.</p>
     <div class="guide-meta">
       <span class="guide-pill is-accent">Platforma: Discord</span>
       <span class="guide-pill">⏱ 9 min čítania</span>
@@ -209,8 +209,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="key-takeaways">
   <h2>Kľúčové poznatky</h2>
   <ul>
-    <li>Unikátne <strong>používateľské meno (@)</strong> prijíma len malé písmená a–z, 0–9, podčiarkovník a bodku. Vlož tam ozdobné písmo a dostaneš „neplatné používateľské meno“ — zakaždým, zámerne.</li>
-    <li>Každé <strong>zobrazovacie pole</strong> — zobrazované meno, serverová prezývka, rola, názvy servera a kanála, „O mne“ — prijíma písma Unicode a emoji bez akéhokoľvek triku.</li>
+    <li>Unikátne <strong>používateľské meno (@)</strong> prijíma len malé písmená a–z, 0–9, podčiarkovník a bodku. Vlož tam ozdobné písmo a dostaneš „neplatné používateľské meno“, zakaždým, zámerne.</li>
+    <li>Každé <strong>zobrazovacie pole</strong> (zobrazované meno, serverová prezývka, rola, názvy servera a kanála, „O mne“) prijíma písma Unicode a emoji bez akéhokoľvek triku.</li>
     <li><strong>Markdown sa vykresľuje len v správach</strong> (plus základy v sekcii „O mne“). V každom poli s menom hviezdičky len ležia na mieste.</li>
     <li>Oštýlované mená majú svoju cenu: <kbd>Ctrl+K</kbd> nenájde 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈 napísaním „aesthetic“, čítačky obrazovky sa potkýnajú a staršie Androidy môžu zobraziť štvorčeky.</li>
   </ul>
@@ -221,10 +221,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Sekcia: základná myšlienka -->
   <section class="editorial-section">
     <span class="article-section-label">Základná myšlienka</span>
-    <h2>Discord nie je nedôsledný — každé pole má svoju úlohu</h2>
+    <h2>Discord nie je nedôsledný: každé pole má svoju úlohu</h2>
     <div class="editorial-block">
       <p>Slučka pokus-omyl vyzerá takto: oštýluješ si meno generátorom, vložíš ho do jedného poľa na Discorde a krásne sa uloží. Ten istý text vložíš do iného poľa a Discord ho úplne odmietne. Rovnaké znaky, rovnaký účet, opačné výsledky. <em>Pôsobí</em> to svojvoľne.</p>
-      <p>Nie je. Polia Discordu sa čisto delia na dve rodiny. <strong>Polia identity</strong> sú tie, od ktorých závisia iné systémy — označenia, žiadosti o priateľstvo, moderátorské logy, obnova účtu. Existuje presne jedno: tvoje unikátne používateľské meno (@) a je uzamknuté na drobnú sadu znakov, aby sa nikdy nedalo sfalšovať, zle napísať ani vykresliť rôzne na rôznych telefónoch. <strong>Zobrazovacie polia</strong> sú všetko, na čo sa ľudia <em>pozerajú</em> — zobrazované mená, prezývky, názvy rolí, názvy servera a kanála, tvoje „O mne“. Tie sú dokorán otvorené, pretože cez ne nevedie nič kritické.</p>
+      <p>Nie je. Polia Discordu sa čisto delia na dve rodiny. <strong>Polia identity</strong> sú tie, od ktorých závisia iné systémy: označenia, žiadosti o priateľstvo, moderátorské logy, obnova účtu. Existuje presne jedno: tvoje unikátne používateľské meno (@) a je uzamknuté na drobnú sadu znakov, aby sa nikdy nedalo sfalšovať, zle napísať ani vykresliť rôzne na rôznych telefónoch. <strong>Zobrazovacie polia</strong> sú všetko, na čo sa ľudia <em>pozerajú</em>: zobrazované mená, prezývky, názvy rolí, názvy servera a kanála, tvoje „O mne“. Tie sú dokorán otvorené, pretože cez ne nevedie nič kritické.</p>
       <p>Keď raz vidíš tie dve rodiny, každé „prečo sa to neuloží?“ si odpovie samo. Nebojuješ s chybou; len vkladáš znaky zobrazovacej triedy do poľa identity. Riešenie je vždy rovnaké: presuň štýl o jedno pole ďalej.</p>
     </div>
   </section>
@@ -238,8 +238,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="editorial-block">
       <p>Práve toto jedno nedorozumenie spôsobuje viac neúspešných pokusov než všetko ostatné dohromady. Odkedy Discord zrušil staré štvorciferné rozlišovače, každý účet má <strong>dve</strong> mená a riadia sa opačnými pravidlami:</p>
       <ul>
-        <li><strong>Používateľské meno</strong> — tvoj unikátny login, zobrazený s @ na profile. Povolené znaky: malé <code>a–z</code>, <code>0–9</code>, <code>_</code> a <code>.</code> — nič iné. Žiadne veľké písmená, žiadne medzery a určite nie 𝓬𝓾𝓻𝓼𝓲𝓿𝓮. Čokoľvek mimo tejto sady spustí chybu „neplatné používateľské meno“.</li>
-        <li><strong>Zobrazované meno</strong> — veľké priateľské meno zobrazené na chate a na tvojom profile. Prijíma medzery, veľké písmená, emoji aj akékoľvek znaky písma Unicode, ktoré vieš vložiť.</li>
+        <li><strong>Používateľské meno</strong>: tvoj unikátny login, zobrazený s @ na profile. Povolené znaky: malé <code>a–z</code>, <code>0–9</code>, <code>_</code> a <code>.</code> – nič iné. Žiadne veľké písmená, žiadne medzery a určite nie 𝓬𝓾𝓻𝓼𝓲𝓿𝓮. Čokoľvek mimo tejto sady spustí chybu „neplatné používateľské meno“.</li>
+        <li><strong>Zobrazované meno</strong>: veľké priateľské meno zobrazené na chate a na tvojom profile. Prijíma medzery, veľké písmená, emoji aj akékoľvek znaky písma Unicode, ktoré vieš vložiť.</li>
       </ul>
       <p>Vzorec, ktorý funguje, je teda nudný zvnútra a oštýlovaný zvonka:</p>
       <div class="example-pair">
@@ -249,7 +249,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="ex-label">Funguje</span>
         <span class="ex-styled">@nova_riot &nbsp;+&nbsp; zobrazované meno 𝕹𝖔𝖛𝖆 ⚔</span>
       </div>
-      <p>Vnútri servera získaš tretiu vrstvu, <strong>serverovú prezývku</strong>, ktorá prebije tvoje zobrazované meno len na tom serveri — a je rovnako povoľná. Oštýluj ju podľa komunity: ୨୧ 𝒩𝑜𝓋𝒶 ୨୧ v knižnom klube, 𝗡𝗢𝗩𝗔 na esportovom serveri. <a href="/sk/pismo-pre-discord/">Generátor prezývok</a> mapovanie znakov vybaví za teba.</p>
+      <p>Vnútri servera získaš tretiu vrstvu, <strong>serverovú prezývku</strong>, ktorá prebije tvoje zobrazované meno len na tom serveri, a je rovnako povoľná. Oštýluj ju podľa komunity: ୨୧ 𝒩𝑜𝓋𝒶 ୨୧ v knižnom klube, 𝗡𝗢𝗩𝗔 na esportovom serveri. <a href="/sk/pismo-pre-discord/">Generátor prezývok</a> mapovanie znakov vybaví za teba.</p>
     </div>
   </section>
 
@@ -260,7 +260,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Rámec</span>
     <h2>Matica oprávnení polí</h2>
     <div class="editorial-block">
-      <p>Tu je celá mapa — každé textové pole na Discorde, čo každé prijíma a <em>prečo</em>. Ulož si túto tabuľku medzi záložky a hádanie sa skončí.</p>
+      <p>Tu je celá mapa: každé textové pole na Discorde, čo každé prijíma a <em>prečo</em>. Ulož si túto tabuľku medzi záložky a hádanie sa skončí.</p>
     </div>
 
     <div class="data-table-wrap">
@@ -281,7 +281,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="editorial-block">
-      <p>Prečítaj stĺpce zhora nadol a logika vyskočí sama: <strong>presne jeden riadok odmieta Unicode a presne jeden riadok spúšťa plný Markdown.</strong> Všetko medzi tým je otvorený stred — vkladaný štýl vítaný, vykresľovaný štýl ignorovaný. To je celý systém.</p>
+      <p>Prečítaj stĺpce zhora nadol a logika vyskočí sama: <strong>presne jeden riadok odmieta Unicode a presne jeden riadok spúšťa plný Markdown.</strong> Všetko medzi tým je otvorený stred: vkladaný štýl vítaný, vykresľovaný štýl ignorovaný. To je celý systém.</p>
     </div>
   </section>
 
@@ -292,11 +292,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Poznámky z terénu</span>
     <h2>Zvláštnosť názvu kanála: automatické malé písmená a spojovníky</h2>
     <div class="editorial-block">
-      <p>Názvy textových kanálov sa pri uložení potichu prepíšu: obyčajné veľké písmená sa zmenia na malé a medzery sa stanú spojovníkmi, a preto z <code>General Chat</code> vyjde <code>#general-chat</code>. Ľudia to čítajú ako „Discord mi zobral štýl“. Pozri sa bližšie — dotkol sa len obyčajných písmen.</p>
+      <p>Názvy textových kanálov sa pri uložení potichu prepíšu: obyčajné veľké písmená sa zmenia na malé a medzery sa stanú spojovníkmi, a preto z <code>General Chat</code> vyjde <code>#general-chat</code>. Ľudia to čítajú ako „Discord mi zobral štýl“. Pozri sa bližšie: dotkol sa len obyčajných písmen.</p>
       <div class="mood-explainer">
         <div class="mood-example">Napísané: <strong>GENERAL CHAT</strong> → uložené ako <strong>#general-chat</strong> &nbsp;·&nbsp; Napísané: <strong>𝗚𝗘𝗡𝗘𝗥𝗔𝗟 ✦ 𝗖𝗛𝗔𝗧</strong> → uložené ako <strong>#𝗚𝗘𝗡𝗘𝗥𝗔𝗟-✦-𝗖𝗛𝗔𝗧</strong></div>
       </div>
-      <p>Matematické tučné 𝗚 nie je obyčajné veľké G — je to iný znak Unicode — takže pravidlo na malé písmená ho preskočí. To je tá medzera v pravidlách za každým serverom, ktorý si videl s veľkými písmenami a ozdobenými zoznamami kanálov. Dve poznámky pod čiarou: <strong>hlasové kanály a kategórie sa nenormalizujú vôbec</strong> (medzery aj obyčajné veľké písmená tam prežijú) a hlavičky kategórií sú miesto, kde oddeľovače symbolov ako ─── a ╭─ zažiaria najviac.</p>
+      <p>Matematické tučné 𝗚 nie je obyčajné veľké G, je to iný znak Unicode, takže pravidlo na malé písmená ho preskočí. To je tá medzera v pravidlách za každým serverom, ktorý si videl s veľkými písmenami a ozdobenými zoznamami kanálov. Dve poznámky pod čiarou: <strong>hlasové kanály a kategórie sa nenormalizujú vôbec</strong> (medzery aj obyčajné veľké písmená tam prežijú) a hlavičky kategórií sú miesto, kde oddeľovače symbolov ako ─── a ╭─ zažiaria najviac.</p>
     </div>
   </section>
 
@@ -305,10 +305,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Sekcia: markdown a farba -->
   <section class="editorial-section">
     <span class="article-section-label">Vykresľovaný štýl</span>
-    <h2>Kde Markdown funguje — a kde len nečinne leží</h2>
+    <h2>Kde Markdown funguje: a kde len nečinne leží</h2>
     <div class="editorial-block">
-      <p>Markdown je ten druhý druh štýlu: symboly ako <code>**tučné**</code>, ktoré Discord premení, keď <em>vykresľuje</em> správu. Matica ukazuje, že jeho územie je maličké — <strong>správy plus základné formátovanie v sekcii „O mne“</strong>. Napíš <code>**Nova**</code> do poľa s prezývkou a hviezdičky sa uložia ako doslovné znaky, pretože polia s menami sa ukladajú a zobrazujú neupravené; nie je tam žiadny prechod vykresľovača, ktorý by ich premenil.</p>
-      <p>To je praktické rozdelenie, ktoré si treba zapamätať: <strong>vykresľovaný štýl (Markdown) pre to, čo hovoríš, vkladaný štýl (Unicode) pre to, ako ťa volajú.</strong> Celú mechaniku — spojlerové značky, bloky kódu, vrstvu Nitra aj klasické chyby „prečo mi hviezdičky nestučnejú“ — nájdeš v našom sprievodnom návode <a href="/sk/guide/formatovanie-textu-na-discorde/">Formátovanie textu na Discorde, rozlúštené</a>.</p>
+      <p>Markdown je ten druhý druh štýlu: symboly ako <code>**tučné**</code>, ktoré Discord premení, keď <em>vykresľuje</em> správu. Matica ukazuje, že jeho územie je maličké: <strong>správy plus základné formátovanie v sekcii „O mne“</strong>. Napíš <code>**Nova**</code> do poľa s prezývkou a hviezdičky sa uložia ako doslovné znaky, pretože polia s menami sa ukladajú a zobrazujú neupravené; nie je tam žiadny prechod vykresľovača, ktorý by ich premenil.</p>
+      <p>To je praktické rozdelenie, ktoré si treba zapamätať: <strong>vykresľovaný štýl (Markdown) pre to, čo hovoríš, vkladaný štýl (Unicode) pre to, ako ťa volajú.</strong> Celú mechaniku (spojlerové značky, bloky kódu, vrstvu Nitra aj klasické chyby „prečo mi hviezdičky nestučnejú“) nájdeš v našom sprievodnom návode <a href="/sk/guide/formatovanie-textu-na-discorde/">Formátovanie textu na Discorde, rozlúštené</a>.</p>
       <p>Jeden osobitný prípad stojí za zmienku: <strong>farebný text</strong>. Existuje len vnútri správ, len cez ANSI bloky kódu, s ôsmimi pevnými farbami a vratkou podporou na mobile. Žiadne pole s menom nikde na Discorde farbu neprijíma.</p>
     </div>
   </section>
@@ -325,7 +325,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="compare-grid">
       <div class="compare-card variant-muted">
         <span class="compare-badge">Vyhľadávanie sa pokazí</span>
-        <p><kbd>Ctrl+K</kbd>, vyhľadávanie členov a automatické dopĺňanie označení porovnávajú doslovné znaky. Napísanie „aesthetic“ nikdy nenájde <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong> — nemajú spoločný ani jeden znak.</p>
+        <p><kbd>Ctrl+K</kbd>, vyhľadávanie členov a automatické dopĺňanie označení porovnávajú doslovné znaky. Napísanie „aesthetic“ nikdy nenájde <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong>: nemajú spoločný ani jeden znak.</p>
       </div>
       <div class="compare-card variant-muted">
         <span class="compare-badge">Čítačky obrazovky sa potkýnajú</span>
@@ -337,7 +337,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="editorial-block">
-      <p>Moje pravidlo: <strong>štýluj polia, na ktoré sa ľudia pozerajú, a nechaj obyčajné polia, ktoré ľudia píšu.</strong> Zobrazované meno a hlavičky kategórií? Štýluj naplno — tučné, kapitálky a ľahké symboly sa čítajú dobre takmer všade. Vyťažený textový kanál, ktorý členovia denne hľadajú, rola, ktorú moderátori bez prestania pingajú, názov servera, ktorý chceš mať nájditeľný? Tie nechaj obyčajné alebo takmer obyčajné. A zalgo v menách úplne vynechaj — mnohé veľké servery ho automaticky moderujú a je to štýl, ktorý najpravdepodobnejšie rozbije vykreslenie.</p>
+      <p>Moje pravidlo: <strong>štýluj polia, na ktoré sa ľudia pozerajú, a nechaj obyčajné polia, ktoré ľudia píšu.</strong> Zobrazované meno a hlavičky kategórií? Štýluj naplno: tučné, kapitálky a ľahké symboly sa čítajú dobre takmer všade. Vyťažený textový kanál, ktorý členovia denne hľadajú, rola, ktorú moderátori bez prestania pingajú, názov servera, ktorý chceš mať nájditeľný? Tie nechaj obyčajné alebo takmer obyčajné. A zalgo v menách úplne vynechaj: mnohé veľké servery ho automaticky moderujú a je to štýl, ktorý najpravdepodobnejšie rozbije vykreslenie.</p>
     </div>
   </section>
 
@@ -346,7 +346,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA Card -->
   <div class="cta-card">
     <h3>Oštýluj meno pripravené pre Discord →</h3>
-    <p>Vygeneruj meno v Unicode bezpečné na zariadeniach a vlož ho do zobrazovaného mena, prezývky alebo zoznamu kanálov — do každého poľa, ktoré matica označuje ako otvorené.</p>
+    <p>Vygeneruj meno v Unicode bezpečné na zariadeniach a vlož ho do zobrazovaného mena, prezývky alebo zoznamu kanálov: do každého poľa, ktoré matica označuje ako otvorené.</p>
     <a href="/sk/pismo-pre-discord/" class="cta-btn">Otvoriť nástroj na písmo pre Discord →</a>
   </div>
 
@@ -378,19 +378,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Prečo Discord hovorí, že moje používateľské meno je neplatné?</button>
     <div class="faq-answer">
-      <p>Pretože unikátne používateľské meno (@) je kľúč identity, nie zobrazovacie pole. Prijíma len malé písmená a–z, číslice 0–9, podčiarkovník a bodku — takže vloženie znakov písma Unicode (alebo aj obyčajného veľkého písmena) spôsobí, že Discord uloženie odmietne. Oštýlovanú verziu daj radšej do zobrazovaného mena alebo serverovej prezývky; tie polia Unicode prijímajú naplno.</p>
+      <p>Pretože unikátne používateľské meno (@) je kľúč identity, nie zobrazovacie pole. Prijíma len malé písmená a–z, číslice 0–9, podčiarkovník a bodku, takže vloženie znakov písma Unicode (alebo aj obyčajného veľkého písmena) spôsobí, že Discord uloženie odmietne. Oštýlovanú verziu daj radšej do zobrazovaného mena alebo serverovej prezývky; tie polia Unicode prijímajú naplno.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Môžem použiť ozdobné písmo v zobrazovanom mene na Discorde?</button>
     <div class="faq-answer">
-      <p>Áno. Zobrazované mená, serverové prezývky, názvy rolí, názvy serverov, názvy kanálov aj tvoja sekcia „O mne“ prijímajú znaky písma Unicode a emoji. Vygeneruj oštýlovaný text a hotové znaky vlož do poľa — nič netreba zapínať. Uprednostni čitateľné štýly ako tučné, kurzívu alebo kapitálky, aby ťa prečítali aj členovia na starších zariadeniach a čítačky obrazovky.</p>
+      <p>Áno. Zobrazované mená, serverové prezývky, názvy rolí, názvy serverov, názvy kanálov aj tvoja sekcia „O mne“ prijímajú znaky písma Unicode a emoji. Vygeneruj oštýlovaný text a hotové znaky vlož do poľa: nič netreba zapínať. Uprednostni čitateľné štýly ako tučné, kurzívu alebo kapitálky, aby ťa prečítali aj členovia na starších zariadeniach a čítačky obrazovky.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Prečo môj názov kanála stratil veľké písmená?</button>
     <div class="faq-answer">
-      <p>Názvy textových kanálov sa normalizujú: Discord obyčajné A–Z prepíše na malé písmená a medzery zmení na spojovníky, takže z „General Chat“ sa stane „general-chat“. Znaky písma Unicode nie sú obyčajné písmená, takže prejdú nedotknuté — 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 si veľké písmená udrží, pretože to sú matematické tučné znaky, nie A–Z. Názvy hlasových kanálov a kategórií túto normalizáciu preskočia a medzery aj veľké písmená si zachovajú.</p>
+      <p>Názvy textových kanálov sa normalizujú: Discord obyčajné A–Z prepíše na malé písmená a medzery zmení na spojovníky, takže z „General Chat“ sa stane „general-chat“. Znaky písma Unicode nie sú obyčajné písmená, takže prejdú nedotknuté: 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 si veľké písmená udrží, pretože to sú matematické tučné znaky, nie A–Z. Názvy hlasových kanálov a kategórií túto normalizáciu preskočia a medzery aj veľké písmená si zachovajú.</p>
     </div>
   </div>
   <div class="faq-item">
@@ -402,7 +402,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Vedia ma ľudia ešte @označiť, ak mám oštýlované meno?</button>
     <div class="faq-answer">
-      <p>Áno — označenia sa viažu na tvoj účet, nie na oštýlované znaky. Napísanie tvojho obyčajného používateľského mena (@) ťa nájde vždy a funguje aj kliknutie na tvoje meno či výber zo zoznamu členov. Čo prestane fungovať, je automatické dopĺňanie podľa zobrazovaného mena: napísanie „aesthetic“ sa nezhodne s 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈, pretože sú to iné znaky. Práve preto Discord drží login obyčajný: je to zaručený spôsob, ako sa k tebe dostať.</p>
+      <p>Áno: označenia sa viažu na tvoj účet, nie na oštýlované znaky. Napísanie tvojho obyčajného používateľského mena (@) ťa nájde vždy a funguje aj kliknutie na tvoje meno či výber zo zoznamu členov. Čo prestane fungovať, je automatické dopĺňanie podľa zobrazovaného mena: napísanie „aesthetic“ sa nezhodne s 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈, pretože sú to iné znaky. Práve preto Discord drží login obyčajný: je to zaručený spôsob, ako sa k tebe dostať.</p>
     </div>
   </div>
 </section>
@@ -414,7 +414,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a class="related-card" href="/sk/guide/formatovanie-textu-na-discorde/">
       <span class="related-tag">🎮</span>
       <span class="related-title">Formátovanie textu na Discorde</span>
-      <span class="related-desc">Markdown vs Unicode vs Nitro — hlbšia mechanika.</span>
+      <span class="related-desc">Markdown vs Unicode vs Nitro, hlbšia mechanika.</span>
     </a>
     <a class="related-card" href="/sk/guide/bezpecny-nick-na-discorde/">
       <span class="related-tag">🛡️</span>
@@ -424,7 +424,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a class="related-card" href="/sk/pismo-pre-discord/">
       <span class="related-tag">🎮</span>
       <span class="related-title">Generátor písma pre Discord</span>
-      <span class="related-desc">Štýlové písmená do nicku a „O mne“ — bez Nitra.</span>
+      <span class="related-desc">Štýlové písmená do nicku a „O mne“, bez Nitra.</span>
     </a>
   </div>
 </section>

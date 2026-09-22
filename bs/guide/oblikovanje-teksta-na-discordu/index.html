@@ -145,12 +145,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Zašto podebljanje radi u chatu na Discordu, a ne u korisničkom imenu?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Zato što koriste različite sisteme. U chatu je **podebljano** Markdown — Discord ga prikaže kad iscrta tvoju poruku. Imena (korisničko ime, nadimak, server, kanal, uloga) ne pokreću Markdown, pa se zvjezdice prikažu doslovno. Da stiliziraš ime, trebaju ti Unicode „fontovi” — posebni znakovi koji već izgledaju podebljano — zalijepljeni ravno u polje." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Zato što koriste različite sisteme. U chatu je **podebljano** Markdown: Discord ga prikaže kad iscrta tvoju poruku. Imena (korisničko ime, nadimak, server, kanal, uloga) ne pokreću Markdown, pa se zvjezdice prikažu doslovno. Da stiliziraš ime, trebaju ti Unicode „fontovi”, posebni znakovi koji već izgledaju podebljano, zalijepljeni ravno u polje." }
     },
     {
       "@type": "Question",
       "name": "Jesu li Unicode fontovi isto što i Nitro fontovi na Discordu?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Ne. Unicode „fontovi” besplatni su zamjenski znakovi koje možeš zalijepiti svugdje gdje je ime dozvoljeno; rade svima, ali se na nekim uređajima mogu prikazati kao kvadratići i zbunjuju čitače ekrana. Nitro Display Name Styles plaćena je mogućnost koja tvom prikazanom imenu daje pravi font, boju i efekte — ali boja i efekti se ne vide unutar servera, gdje pobjeđuje boja tvoje uloge; prenosi se samo font." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Ne. Unicode „fontovi” besplatni su zamjenski znakovi koje možeš zalijepiti svugdje gdje je ime dozvoljeno; rade svima, ali se na nekim uređajima mogu prikazati kao kvadratići i zbunjuju čitače ekrana. Nitro Display Name Styles plaćena je mogućnost koja tvom prikazanom imenu daje pravi font, boju i efekte, ali boja i efekti se ne vide unutar servera, gdje pobjeđuje boja tvoje uloge; prenosi se samo font." }
     },
     {
       "@type": "Question",
@@ -160,7 +160,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Zašto se pojavljuju zvjezdice umjesto podebljanog teksta?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Dva česta razloga: ima razmaka između zvjezdica i riječi (`** tekst **` neće podebljati — `**tekst**` hoće), ili je tekst unutar bloka koda (pozadinski navodnici gase Markdown). Zapamti i da Markdown radi samo u porukama, nikad u imenima." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Dva česta razloga: ima razmaka između zvjezdica i riječi (`** tekst **` neće podebljati, `**tekst**` hoće), ili je tekst unutar bloka koda (pozadinski navodnici gase Markdown). Zapamti i da Markdown radi samo u porukama, nikad u imenima." }
     }
   ]
 }
@@ -187,7 +187,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="hero">
   <div class="hero-inner" style="max-width:800px;">
     <h1 class="hero-headline">Oblikovanje teksta na Discordu, dekodirano</h1>
-    <p class="hero-tagline">Nemaš problem s „fontovima” — imaš problem s tri sistema. Discord koristi Markdown, Unicode znakove i Nitro stilove za posve različite poslove. Kad jednom znaš koje polje koristi koji, svako „zašto ovo ne radi?” samo se od sebe rasplete.</p>
+    <p class="hero-tagline">Nemaš problem s „fontovima”: imaš problem s tri sistema. Discord koristi Markdown, Unicode znakove i Nitro stilove za posve različite poslove. Kad jednom znaš koje polje koristi koji, svako „zašto ovo ne radi?” samo se od sebe rasplete.</p>
     <div class="guide-meta">
       <span class="guide-pill is-accent">Ovladavanje platformom</span>
       <span class="guide-pill">⏱ 8 min čitanja</span>
@@ -206,9 +206,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2>Ključne poruke</h2>
   <ul>
     <li>Discord ima tri nepovezana sistema teksta: <strong>Markdown</strong> (poruke), <strong>Unicode „fontove”</strong> (imena svugdje) i <strong>Nitro</strong> (plaćeni stilovi prikazanog imena).</li>
-    <li>Markdown poput <code>**podebljano**</code> prikazuje se samo u porukama — nikad ne radi u korisničkim imenima, nadimcima ni u nazivima servera i kanala.</li>
+    <li>Markdown poput <code>**podebljano**</code> prikazuje se samo u porukama, nikad ne radi u korisničkim imenima, nadimcima ni u nazivima servera i kanala.</li>
     <li>Unicode „fontovi” rade u svakom polju za ime, ali se na nekim uređajima mogu prikazati kao kvadratići i zbunjuju čitače ekrana.</li>
-    <li>Nitro dodaje pravu boju i efekte tvom prikazanom imenu — ali unutar servera pobjeđuje boja tvoje uloge i vidi se samo font.</li>
+    <li>Nitro dodaje pravu boju i efekte tvom prikazanom imenu, ali unutar servera pobjeđuje boja tvoje uloge i vidi se samo font.</li>
   </ul>
 </section>
 
@@ -217,9 +217,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Section: the reframe -->
   <section class="editorial-section">
     <span class="article-section-label">Novi pogled</span>
-    <h2>Nisu fontovi — to su tri različita sistema</h2>
+    <h2>Nisu fontovi: to su tri različita sistema</h2>
     <div class="editorial-block">
-      <p>Gotovo svako pitanje „zašto mi tekst ne radi” na Discordu dolazi od miješanja triju stvari koje nemaju veze jedna s drugom. Discord te u chatu <em>uči</em> Markdown, pa pretpostaviš da bi isti trik trebao stilizirati i tvoje ime. Ne stilizira — imena pokreće posve drugi sistem.</p>
+      <p>Gotovo svako pitanje „zašto mi tekst ne radi” na Discordu dolazi od miješanja triju stvari koje nemaju veze jedna s drugom. Discord te u chatu <em>uči</em> Markdown, pa pretpostaviš da bi isti trik trebao stilizirati i tvoje ime. Ne stilizira: imena pokreće posve drugi sistem.</p>
       <p>Evo cijelog područja u jednom kadru. Nauči koji sistem koristi koje polje i više te ništa neće iznenaditi.</p>
     </div>
 
@@ -240,7 +240,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Section: System 1 Markdown -->
   <section class="editorial-section">
     <span class="article-section-label">Sistem 1</span>
-    <h2>Markdown — za poruke</h2>
+    <h2>Markdown: za poruke</h2>
     <div class="editorial-block">
       <p>Markdown je oblikovanje koje Discord primjenjuje kad <em>prikazuje</em> tvoju poruku. Ti otipkaš simbole oko riječi, a Discord ih zamijeni pravim stilom.</p>
       <ul>
@@ -251,7 +251,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><code>||spojler||</code> → skriveno dok se ne klikne</li>
         <li><code>&gt; citat</code> i <code>`kod`</code></li>
       </ul>
-      <p>To je <em>pravi</em> način da oblikuješ poruku — ostaje pravi tekst, pa je pretraživ i pristupačan. Kvaka su dvije greške zbog kojih „ne radi”:</p>
+      <p>To je <em>pravi</em> način da oblikuješ poruku: ostaje pravi tekst, pa je pretraživ i pristupačan. Kvaka su dvije greške zbog kojih „ne radi”:</p>
       <div class="compare-grid">
         <div class="compare-card variant-muted">
           <span class="compare-badge">Neće podebljati</span>
@@ -271,14 +271,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Section: System 2 Unicode -->
   <section class="editorial-section">
     <span class="article-section-label">Sistem 2</span>
-    <h2>Unicode „fontovi” — za imena</h2>
+    <h2>Unicode „fontovi”: za imena</h2>
     <div class="editorial-block">
-      <p>Da stiliziraš <em>ime</em>, ne možeš tražiti od Discorda da bilo šta prikaže — pa koristiš znakove koji već izgledaju stilizirano. Generator pretvara „Nova” u 𝗡𝗼𝘃𝗮 ili 𝓝𝓸𝓿𝓪 pomoću posebnih <a href="/library/">Unicode znakova</a>, a gotov rezultat zalijepiš ravno u polje. Nikakvo prikazivanje nije potrebno, pa preživi tamo gdje Markdown ne može.</p>
+      <p>Da stiliziraš <em>ime</em>, ne možeš tražiti od Discorda da bilo šta prikaže, pa koristiš znakove koji već izgledaju stilizirano. Generator pretvara „Nova” u 𝗡𝗼𝘃𝗮 ili 𝓝𝓸𝓿𝓪 pomoću posebnih <a href="/library/">Unicode znakova</a>, a gotov rezultat zalijepiš ravno u polje. Nikakvo prikazivanje nije potrebno, pa preživi tamo gdje Markdown ne može.</p>
       <p>Ovo radi u tvom prikazanom imenu, u nadimku na serveru, u nazivima servera i kanala, u nazivima uloga, u tvom biju i u porukama. Postoji tačno jedno mjesto gdje je blokirano:</p>
       <div class="mood-explainer">
-        <div class="mood-example"><strong>@korisničko ime ga odbija.</strong> Tvoj jedinstveni identifikator (onaj malim slovima iza @) dopušta samo a–z, 0–9, <code>_</code> i <code>.</code> — za spominjanje, pretragu i usmjeravanje. Zalijepiš li tu kićeni font, Discord ga odbija spremiti. Umjesto toga stiliziraj svoje <em>prikazano ime</em>.</div>
+        <div class="mood-example"><strong>@korisničko ime ga odbija.</strong> Tvoj jedinstveni identifikator (onaj malim slovima iza @) dopušta samo a–z, 0–9, <code>_</code> i <code>.</code>, za spominjanje, pretragu i usmjeravanje. Zalijepiš li tu kićeni font, Discord ga odbija spremiti. Umjesto toga stiliziraj svoje <em>prikazano ime</em>.</div>
       </div>
-      <p>Dvije iskrene napomene, obje detaljno obrađene drugdje: Unicode imena se na nekim uređajima mogu prikazati kao kvadratići (naročito na starijim Android telefonima), a teška su za čitače ekrana. Odaberi siguran stil (podebljano, kurziv, kapitalke) i drži ga ukusnim — mnogi veliki serveri moderiraju teško čitljiva ili zalgo imena.</p>
+      <p>Dvije iskrene napomene, obje detaljno obrađene drugdje: Unicode imena se na nekim uređajima mogu prikazati kao kvadratići (naročito na starijim Android telefonima), a teška su za čitače ekrana. Odaberi siguran stil (podebljano, kurziv, kapitalke) i drži ga ukusnim: mnogi veliki serveri moderiraju teško čitljiva ili zalgo imena.</p>
     </div>
   </section>
 
@@ -287,14 +287,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Section: System 3 Nitro -->
   <section class="editorial-section">
     <span class="article-section-label">Sistem 3</span>
-    <h2>Nitro Display Name Styles — plaćeni i uži nego što misliš</h2>
+    <h2>Nitro Display Name Styles: plaćeni i uži nego što misliš</h2>
     <div class="editorial-block">
       <p>Discordov plaćeni Nitro nudi Display Name Styles, mogućnost dodanu krajem 2025.: pravi font, boju pa i animirane efekte primijenjene na tvoje prikazano ime. Sjajno izgleda na tvojoj profilnoj kartici. Ali postoji kvaka koju ljudi otkriju na teži način:</p>
       <div class="mood-explainer">
-        <div class="mood-example">Unutar servera <strong>boja tvoje uloge</strong> nadjačava Nitro boju, a efekti se uklanjaju — pa drugi članovi obično vide samo <em>font</em>, ne i boju ni animaciju. Puni efekt vidi se uglavnom na tvom profilu, a ne u listi članova ili u chatu.</div>
+        <div class="mood-example">Unutar servera <strong>boja tvoje uloge</strong> nadjačava Nitro boju, a efekti se uklanjaju, pa drugi članovi obično vide samo <em>font</em>, ne i boju ni animaciju. Puni efekt vidi se uglavnom na tvom profilu, a ne u listi članova ili u chatu.</div>
       </div>
-      <p>Besplatni računi mogu otvoriti izbornik i <strong>pregledati</strong> stil, ali spremanje traži Nitro — taj pregled-pa-plati upravo je razlog zašto mnogi sada pitaju je li Nitro uopće potreban za fontove. To je opravdano pitanje o toj konkretnoj mogućnosti; nije promjena za Unicode stiliziranje, koje ostaje besplatno bez obzira na sve.</p>
-      <p>Dakle, Nitro se isplati ako želiš dotjeranu profilnu karticu i prepoznatljiv font imena svugdje. <em>Nije</em> način da ubaciš obojeni tekst u razgovor — za to služi drugi alat (sljedeći odjeljak).</p>
+      <p>Besplatni računi mogu otvoriti izbornik i <strong>pregledati</strong> stil, ali spremanje traži Nitro: taj pregled-pa-plati upravo je razlog zašto mnogi sada pitaju je li Nitro uopće potreban za fontove. To je opravdano pitanje o toj konkretnoj mogućnosti; nije promjena za Unicode stiliziranje, koje ostaje besplatno bez obzira na sve.</p>
+      <p>Dakle, Nitro se isplati ako želiš dotjeranu profilnu karticu i prepoznatljiv font imena svugdje. <em>Nije</em> način da ubaciš obojeni tekst u razgovor, za to služi drugi alat (sljedeći odjeljak).</p>
     </div>
   </section>
 
@@ -307,9 +307,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="editorial-block">
       <p>Obojeni tekst u poruci je četvrti, uži trik: <strong>ANSI blokovi koda</strong>. Tekst omotaš u blok s tri pozadinska navodnika označen s <code>ansi</code> i dodaš escape kodove za boju. Budi realan oko ograničenja:</p>
       <ul>
-        <li>Samo <strong>osam fiksnih boja</strong> — bez vlastitog hex koda.</li>
-        <li><strong>Samo u bloku koda</strong> — ne može obojiti običnu rečenicu usred teksta.</li>
-        <li><strong>Nepouzdan na mobitelu</strong> — korisnicima telefona često se prikaže kao običan tekst.</li>
+        <li>Samo <strong>osam fiksnih boja</strong>: bez vlastitog hex koda.</li>
+        <li><strong>Samo u bloku koda</strong>: ne može obojiti običnu rečenicu usred teksta.</li>
+        <li><strong>Nepouzdan na mobitelu</strong>: korisnicima telefona često se prikaže kao običan tekst.</li>
       </ul>
       <p>Koristan za upozorenja ili zapise na serveru okrenutom računarima; nije opći alat za stiliziranje. Ako je polovina tvojih članova na mobitelu, računaj da neće vidjeti boju.</p>
     </div>
@@ -341,7 +341,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA Card -->
   <div class="cta-card">
     <h3>Napravi ime spremno za Discord</h3>
-    <p>Napravi Unicode stil siguran na svim uređajima, kopiraj ga i zalijepi u prikazano ime ili u nadimak na serveru — bez Nitra.</p>
+    <p>Napravi Unicode stil siguran na svim uređajima, kopiraj ga i zalijepi u prikazano ime ili u nadimak na serveru, bez Nitra.</p>
     <a href="/bs/fontovi-za-discord/" class="cta-btn">Otvori alat za fontove za Discord →</a>
   </div>
 
@@ -372,13 +372,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Zašto podebljanje radi u chatu na Discordu, a ne u korisničkom imenu?</button>
     <div class="faq-answer">
-      <p>Zato što koriste različite sisteme. U chatu je <code>**podebljano**</code> Markdown — Discord ga prikaže kad iscrta tvoju poruku. Imena (korisničko ime, nadimak, server, kanal, uloga) ne pokreću Markdown, pa se zvjezdice prikažu doslovno. Da stiliziraš ime, trebaju ti Unicode „fontovi” — posebni znakovi koji već izgledaju podebljano — zalijepljeni ravno u polje.</p>
+      <p>Zato što koriste različite sisteme. U chatu je <code>**podebljano**</code> Markdown: Discord ga prikaže kad iscrta tvoju poruku. Imena (korisničko ime, nadimak, server, kanal, uloga) ne pokreću Markdown, pa se zvjezdice prikažu doslovno. Da stiliziraš ime, trebaju ti Unicode „fontovi”, posebni znakovi koji već izgledaju podebljano, zalijepljeni ravno u polje.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Jesu li Unicode fontovi isto što i Nitro fontovi na Discordu?</button>
     <div class="faq-answer">
-      <p>Ne. Unicode „fontovi” besplatni su zamjenski znakovi koje možeš zalijepiti svugdje gdje je ime dozvoljeno; rade svima, ali se na nekim uređajima mogu prikazati kao kvadratići i zbunjuju čitače ekrana. Nitro Display Name Styles plaćena je mogućnost koja tvom prikazanom imenu daje pravi font, boju i efekte — ali boja i efekti se ne vide unutar servera, gdje pobjeđuje boja tvoje uloge; prenosi se samo font.</p>
+      <p>Ne. Unicode „fontovi” besplatni su zamjenski znakovi koje možeš zalijepiti svugdje gdje je ime dozvoljeno; rade svima, ali se na nekim uređajima mogu prikazati kao kvadratići i zbunjuju čitače ekrana. Nitro Display Name Styles plaćena je mogućnost koja tvom prikazanom imenu daje pravi font, boju i efekte, ali boja i efekti se ne vide unutar servera, gdje pobjeđuje boja tvoje uloge; prenosi se samo font.</p>
     </div>
   </div>
   <div class="faq-item">
@@ -390,7 +390,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Zašto se pojavljuju zvjezdice umjesto podebljanog teksta?</button>
     <div class="faq-answer">
-      <p>Dva česta razloga: ima razmaka između zvjezdica i riječi (<code>** tekst **</code> neće podebljati — <code>**tekst**</code> hoće), ili je tekst unutar bloka koda (pozadinski navodnici gase Markdown). Zapamti i da Markdown radi samo u porukama, nikad u imenima.</p>
+      <p>Dva česta razloga: ima razmaka između zvjezdica i riječi (<code>** tekst **</code> neće podebljati, <code>**tekst**</code> hoće), ili je tekst unutar bloka koda (pozadinski navodnici gase Markdown). Zapamti i da Markdown radi samo u porukama, nikad u imenima.</p>
     </div>
   </div>
 </section>
@@ -412,7 +412,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a class="related-card" href="/bs/fontovi-za-discord/">
       <span class="related-tag">🎮</span>
       <span class="related-title">Generator fontova za Discord</span>
-      <span class="related-desc">Slova za nadimak i „O meni”, spremna za lijepljenje — bez Nitra.</span>
+      <span class="related-desc">Slova za nadimak i „O meni”, spremna za lijepljenje, bez Nitra.</span>
     </a>
   </div>
 </section>

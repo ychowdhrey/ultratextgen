@@ -5,7 +5,7 @@
   "canonical": "https://ultratextgen.com/library/chinese-symbols/",
   "breadcrumb": "Chinese Symbols",
   "hero_h1": "Chinese Symbols",
-  "hero_tagline": "Meaningful Chinese characters — luck, love, dragons, and nature — each labeled with pinyin and meaning. Click any symbol to copy it instantly.",
+  "hero_tagline": "Meaningful Chinese characters (luck, love, dragons, and nature) each labeled with pinyin and meaning. Click any symbol to copy it instantly.",
   "intro": "Chinese symbols carry centuries of meaning in a single character, which is why hanzi like 福 (good fortune) and 龍 (dragon) appear in usernames, bios, tattoos, and Lunar New Year posts worldwide. This library collects culturally meaningful Chinese characters organized by theme, each labeled with its pinyin romanization and English meaning so you know exactly what you are copying. Use them to add depth to a profile, decorate a caption, or send an auspicious greeting.",
   "date_published": "2026-06-12",
   "date_modified": "2026-06-12",
@@ -95,7 +95,7 @@
       "id": "nature-elements",
       "label": "Nature & Elements",
       "h2": "Dragons, Nature & the Elements",
-      "intro": "Animals of legend and the natural elements — favorites for aesthetic bios and usernames.",
+      "intro": "Animals of legend and the natural elements, favorites for aesthetic bios and usernames.",
       "symbols": [
         {
           "char": "龍",
@@ -151,7 +151,7 @@
       "id": "strength-spirit",
       "label": "Strength & Spirit",
       "h2": "Strength, Power & Spirit Characters",
-      "intro": "Bold characters for strength, courage, and destiny — popular in gamer tags and bold bios.",
+      "intro": "Bold characters for strength, courage, and destiny, popular in gamer tags and bold bios.",
       "symbols": [
         {
           "char": "力",
@@ -240,7 +240,7 @@
     "id": "chinese-sets",
     "label": "Character Sets",
     "h2": "Chinese Character Combo Sets",
-    "intro": "Copy a full themed set of Chinese characters — or a classic blessing phrase — with one click."
+    "intro": "Copy a full themed set of Chinese characters, or a classic blessing phrase, with one click."
   },
   "collection_container_id": "chineseSetsContainer",
   "collections": [

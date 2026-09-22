@@ -6,7 +6,7 @@
   "canonical": "https://ultratextgen.com/symbol/micro-sign/",
   "breadcrumb": "Micro Sign",
   "hero_h1": "Micro Sign (µ)",
-  "hero_tagline": "The micro sign (µ) used for microns, micrograms, and microseconds — and why it's a completely different character from the identical-looking Greek letter mu. Click any symbol to copy it instantly.",
+  "hero_tagline": "The micro sign (µ) used for microns, micrograms, and microseconds, and why it's a completely different character from the identical-looking Greek letter mu. Click any symbol to copy it instantly.",
   "intro": "The micro sign (µ, U+00B5) and the Greek small letter mu (μ, U+03BC) render as the exact same glyph in almost every font, but Unicode treats them as two separate characters. Which one you paste can quietly break search, regex matching, and filenames without ever looking wrong on screen.",
   "date_published": "2026-07-12",
   "date_modified": "2026-07-12",
@@ -36,7 +36,7 @@
       "id": "greek-mu",
       "label": "Greek Mu",
       "h2": "Greek Small Letter Mu (U+03BC)",
-      "intro": "The actual twelfth letter of the Greek alphabet — visually identical to the micro sign and the character Unicode's own normalization rules prefer.",
+      "intro": "The actual twelfth letter of the Greek alphabet, visually identical to the micro sign and the character Unicode's own normalization rules prefer.",
       "symbols": [
         {
           "char": "μ",

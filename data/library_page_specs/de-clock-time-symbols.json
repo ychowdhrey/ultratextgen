@@ -7,8 +7,8 @@
  "meta_description": "Uhr-Symbole zum Kopieren: alle 24 Zifferblätter zu jeder halben Stunde, Wecker, Sanduhr, Stoppuhr und Kalender — plus die Zeichen für Minuten und Sekunden.",
  "breadcrumb": "Uhr-Symbole",
  "hero_h1": "Uhr-Symbole",
- "hero_tagline": "Alle Zifferblätter, Wecker, Sanduhr und Kalender — zum Kopieren.",
- "intro": "Unicode hat für jede volle und jede halbe Stunde ein eigenes Zifferblatt — 24 Zeichen insgesamt, mehr als für jedes andere Alltagsobjekt. Diese Seite hat sie alle, dazu Wecker, Stoppuhr, Sanduhr und die typografischen Zeichen für Minuten und Sekunden.",
+ "hero_tagline": "Alle Zifferblätter, Wecker, Sanduhr und Kalender, zum Kopieren.",
+ "intro": "Unicode hat für jede volle und jede halbe Stunde ein eigenes Zifferblatt, 24 Zeichen insgesamt, mehr als für jedes andere Alltagsobjekt. Diese Seite hat sie alle, dazu Wecker, Stoppuhr, Sanduhr und die typografischen Zeichen für Minuten und Sekunden.",
  "sections": [
   {
    "id": "volle",
@@ -269,7 +269,7 @@
  "editorial_sections": [
   {
    "h2": "Warum eine halbe Stunde reicht",
-   "body": "Dass Unicode bei der halben Stunde aufhört, wirkt willkürlich, folgt aber der Vorlage: die japanischen Betreiberzeichensätze führten Zifferblätter für Terminerinnerungen, und dort genügte die Auflösung von dreißig Minuten. Eine Erweiterung auf Viertelstunden hätte 48 Zeichen bedeutet, ohne erkennbaren Zusatznutzen — Emojis sollen erkennbar sein, und der Unterschied zwischen 3:15 und 3:30 ist auf Zeichengröße kaum zu sehen. Wer eine genaue Zeit angeben will, schreibt sie ohnehin aus; das Zifferblatt ist ein Hinweis, keine Anzeige."
+   "body": "Dass Unicode bei der halben Stunde aufhört, wirkt willkürlich, folgt aber der Vorlage: die japanischen Betreiberzeichensätze führten Zifferblätter für Terminerinnerungen, und dort genügte die Auflösung von dreißig Minuten. Eine Erweiterung auf Viertelstunden hätte 48 Zeichen bedeutet, ohne erkennbaren Zusatznutzen. Emojis sollen erkennbar sein, und der Unterschied zwischen 3:15 und 3:30 ist auf Zeichengröße kaum zu sehen. Wer eine genaue Zeit angeben will, schreibt sie ohnehin aus; das Zifferblatt ist ein Hinweis, keine Anzeige."
   }
  ],
  "related": [

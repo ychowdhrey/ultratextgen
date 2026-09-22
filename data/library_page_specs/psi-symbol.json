@@ -6,8 +6,8 @@
   "canonical": "https://ultratextgen.com/symbol/psi-symbol/",
   "breadcrumb": "Psi Symbol",
   "hero_h1": "Psi Symbol",
-  "hero_tagline": "The lowercase ψ and capital Ψ — the letter Erwin Schrödinger picked to name the quantum wavefunction, and the trident-shaped glyph the world uses as the icon for psychology and psychiatry. Click any symbol to copy it instantly.",
-  "intro": "Psi's lowercase glyph, ψ (U+03C8, GREEK SMALL LETTER PSI), and its capital, Ψ (U+03A8), form the 23rd and penultimate letter of the Greek alphabet — the one just before omega, sounded as the /ps/ in 'lapse' and worth 700 in the Greek numeral system. Both code points entered Unicode in version 1.1, back in 1993. What makes psi punch above the other Greek letters is where it lands in modern science: in early 1926 Erwin Schrödinger chose ψ to denote the wavefunction in his new wave mechanics, and it stuck — today capital Ψ usually names a system's full time-dependent wavefunction while lowercase ψ marks a stationary or spatial one. Psi is also the near-universal icon for psychology and psychiatry, and for a documented reason: the Greek word 'psyche' (ψυχή, 'mind' or 'soul') begins with this very letter. The often-repeated tale that its trident shape was borrowed from the devil's pitchfork is a myth — the three-pronged, tuning-fork silhouette is simply the letterform itself, the same shape Indiana University registers as its trident logo.",
+  "hero_tagline": "The lowercase ψ and capital Ψ: the letter Erwin Schrödinger picked to name the quantum wavefunction, and the trident-shaped glyph the world uses as the icon for psychology and psychiatry. Click any symbol to copy it instantly.",
+  "intro": "Psi's lowercase glyph, ψ (U+03C8, GREEK SMALL LETTER PSI), and its capital, Ψ (U+03A8), form the 23rd and penultimate letter of the Greek alphabet, the one just before omega, sounded as the /ps/ in 'lapse' and worth 700 in the Greek numeral system. Both code points entered Unicode in version 1.1, back in 1993. What makes psi punch above the other Greek letters is where it lands in modern science: in early 1926 Erwin Schrödinger chose ψ to denote the wavefunction in his new wave mechanics, and it stuck. Today capital Ψ usually names a system's full time-dependent wavefunction while lowercase ψ marks a stationary or spatial one. Psi is also the near-universal icon for psychology and psychiatry, and for a documented reason: the Greek word 'psyche' (ψυχή, 'mind' or 'soul') begins with this very letter. The often-repeated tale that its trident shape was borrowed from the devil's pitchfork is a myth: the three-pronged, tuning-fork silhouette is simply the letterform itself, the same shape Indiana University registers as its trident logo.",
   "date_published": "2026-07-18",
   "date_modified": "2026-07-18",
   "copy_pattern": "single",
@@ -15,8 +15,8 @@
     {
       "id": "the-psi-symbol",
       "label": "The Psi Symbol",
-      "h2": "The Psi Symbol — ψ & Ψ",
-      "intro": "The Greek letter itself, in both cases. Lowercase ψ and capital Ψ are the two forms everyone reaches for — paste whichever the equation or logo needs.",
+      "h2": "The Psi Symbol: ψ & Ψ",
+      "intro": "The Greek letter itself, in both cases. Lowercase ψ and capital Ψ are the two forms everyone reaches for. Paste whichever the equation or logo needs.",
       "symbols": [
         {
           "char": "ψ",
@@ -32,7 +32,7 @@
       "id": "psi-in-quantum-mechanics",
       "label": "Quantum & Science",
       "h2": "Psi in Quantum Mechanics",
-      "intro": "Psi's signature role: Schrödinger's wavefunction. By convention capital Ψ is the full time-dependent wavefunction of a system and lowercase ψ is the stationary, time-independent one — often paired with φ (phi) for a companion state.",
+      "intro": "Psi's signature role: Schrödinger's wavefunction. By convention capital Ψ is the full time-dependent wavefunction of a system and lowercase ψ is the stationary, time-independent one, often paired with φ (phi) for a companion state.",
       "symbols": [
         {
           "char": "Ψ",
@@ -52,7 +52,7 @@
       "id": "psi-psychology-trident",
       "label": "Psychology & Trident",
       "h2": "Psi in Psychology & the Trident Shape",
-      "intro": "Capital Ψ is the global mark of psychology, psychiatry, and parapsychology — chosen because 'psyche' starts with psi, not because of any devil's-pitchfork legend. Its three-pronged silhouette is why people liken it to a trident, the weapon of Poseidon.",
+      "intro": "Capital Ψ is the global mark of psychology, psychiatry, and parapsychology, chosen because 'psyche' starts with psi, not because of any devil's-pitchfork legend. Its three-pronged silhouette is why people liken it to a trident, the weapon of Poseidon.",
       "symbols": [
         {
           "char": "Ψ",
@@ -107,7 +107,7 @@
     {
       "href": "/symbol/omega-symbol/",
       "title": "Omega Symbol",
-      "desc": "Psi's neighbor — the final Greek letter, and the standard symbol for resistance in ohms."
+      "desc": "Psi's neighbor: the final Greek letter, and the standard symbol for resistance in ohms."
     },
     {
       "href": "/symbol/pi-symbol/",

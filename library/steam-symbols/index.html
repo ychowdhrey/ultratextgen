@@ -152,7 +152,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Why does a symbol show on my Steam profile but not in-game?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Steam's website and profile pages render Unicode broadly, but individual games have their own text rendering — confirmed cases include CS:GO, TF2, and CS2's weapon-inspect nametag showing unsupported characters as empty squares even though the same name displays fine on your Steam profile. Treat 'works on my profile' and 'works in-game' as two separate questions, not one."
+        "text": "Steam's website and profile pages render Unicode broadly, but individual games have their own text rendering: confirmed cases include CS:GO, TF2, and CS2's weapon-inspect nametag showing unsupported characters as empty squares even though the same name displays fine on your Steam profile. Treat 'works on my profile' and 'works in-game' as two separate questions, not one."
       }
     },
     {
@@ -160,7 +160,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Why did my Steam name change or revert on its own?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Multiple Steam Community threads document names built from heavy symbol/block-character content silently reverting to blank or a single stray character after a sync. Valve hasn't published an official explanation, so the exact mechanism is unconfirmed, but the pattern is well-documented — it's a real risk with dense symbol combos, not just a rare fluke, and it's a reason to prefer single-character picks over long decorative strings."
+        "text": "Multiple Steam Community threads document names built from heavy symbol/block-character content silently reverting to blank or a single stray character after a sync. Valve hasn't published an official explanation, so the exact mechanism is unconfirmed, but the pattern is well-documented: it's a real risk with dense symbol combos, not just a rare fluke, and it's a reason to prefer single-character picks over long decorative strings."
       }
     },
     {
@@ -176,7 +176,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Does this affect Linux Steam users differently?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, in a documented way — an open issue on Valve's own Steam-for-Linux GitHub repository (filed 2018, still unresolved) reports symbols that display correctly in the profile editor failing to render in the friends list and in-game on Linux specifically, while working normally on Windows and macOS. If a symbol looks broken only on Linux, this is a known client bug, not something wrong with your name."
+        "text": "Yes, in a documented way: an open issue on Valve's own Steam-for-Linux GitHub repository (filed 2018, still unresolved) reports symbols that display correctly in the profile editor failing to render in the friends list and in-game on Linux specifically, while working normally on Windows and macOS. If a symbol looks broken only on Linux, this is a known client bug, not something wrong with your name."
       }
     }
   ]
@@ -208,7 +208,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
-    <p>Steam profile names look simple to decorate, but most symbol lists skip the part that actually trips people up: the "32-character limit" is really a byte budget, not a character count, so decorative Unicode eats into it faster than plain letters. A symbol that displays fine on your profile page can also show up as a blank square inside a specific game (CS:GO and CS2's weapon-inspect nametag are documented cases), and heavily-decorated names have been reported reverting to blank on their own. Every character below is a single-glyph pick chosen to minimize those risks — copy one, test it, then build from there.</p>
+    <p>Steam profile names look simple to decorate, but most symbol lists skip the part that actually trips people up: the "32-character limit" is really a byte budget, not a character count, so decorative Unicode eats into it faster than plain letters. A symbol that displays fine on your profile page can also show up as a blank square inside a specific game (CS:GO and CS2's weapon-inspect nametag are documented cases), and heavily-decorated names have been reported reverting to blank on their own. Every character below is a single-glyph pick chosen to minimize those risks: copy one, test it, then build from there.</p>
   </div>
 </section>
 
@@ -269,7 +269,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="mood-explainers" id="steam-brackets">
   <span class="article-section-label">Frames &amp; Brackets</span>
   <h2>Name Brackets &amp; Dividers</h2>
-  <p class="u-secondary-tight">Clean framing marks — cheaper on the byte budget than most decorative combos.</p>
+  <p class="u-secondary-tight">Clean framing marks: cheaper on the byte budget than most decorative combos.</p>
   <div class="flag-rows">
     <div class="flag-row">
       <button class="flag-emoji symbol-tile" data-symbol="「" aria-label="Copy Left Corner Bracket">「</button>
@@ -304,7 +304,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="mood-explainers" id="steam-collections">
   <span class="article-section-label">Name Combos</span>
   <h2>Ready-Made Steam Name Combos</h2>
-  <p class="u-secondary-block">Copy a full layout in one click, then swap in your own name — remember decorative symbols cost more of your 32-character budget than plain letters.</p>
+  <p class="u-secondary-block">Copy a full layout in one click, then swap in your own name. Remember decorative symbols cost more of your 32-character budget than plain letters.</p>
   <div id="steamCollectionsContainer">
     <!-- BEGIN prerendered collections: generated by scripts/prerender-collection-grids.js, do not edit -->
     <div class="mood-explainer flag-grid-section"><h3>Star Name Tag</h3><div class="flag-grid-display">★ Name ★</div><div class="format-selector"><div class="format-selector-label">Copy Format</div><div class="format-tabs"><button class="format-tab active" data-format="inline" data-group="0">Inline</button><button class="format-tab" data-format="vertical" data-group="0">Vertical</button><button class="format-tab" data-format="comma" data-group="0">Comma</button><button class="format-tab" data-format="space" data-group="0">Space</button><button class="format-tab" data-format="bullet" data-group="0">Bullet</button></div></div><div class="format-preview" id="preview-0">★ Name ★</div><button class="copy-collection-btn" id="copyBtn-0" data-group="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Collection</button></div>
@@ -321,7 +321,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="mood-explainers" id="steam-character-limit">
   <span class="article-section-label">The Real Limit</span>
   <h2>Steam's Character Limit Is a Byte Budget, Not 32 Characters</h2>
-  <p>Steam's own help text says "2 to 32 characters," but multiple independent Steam Community guides converge on the same detail generic symbol lists leave out: enforcement is effectively byte-weighted. Plain ASCII letters cost 1 byte each, so an ordinary name gets the full 32. Symbols and non-Latin scripts typically cost 2-3 bytes per character — a name built mostly from decorative Unicode can hit the real limit at well under 32 visible characters, which is why a name that "should fit" sometimes gets truncated or rejected. Build with single-character accents rather than long symbol strings if you want predictable results.</p>
+  <p>Steam's own help text says "2 to 32 characters," but multiple independent Steam Community guides converge on the same detail generic symbol lists leave out: enforcement is effectively byte-weighted. Plain ASCII letters cost 1 byte each, so an ordinary name gets the full 32. Symbols and non-Latin scripts typically cost 2-3 bytes per character: a name built mostly from decorative Unicode can hit the real limit at well under 32 visible characters, which is why a name that "should fit" sometimes gets truncated or rejected. Build with single-character accents rather than long symbol strings if you want predictable results.</p>
 </section>
 
 <div class="section-divider"></div>
@@ -330,7 +330,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="mood-explainers" id="steam-profile-vs-ingame">
   <span class="article-section-label">Two Different Jobs</span>
   <h2>Profile Symbols vs. In-Game Rendering</h2>
-  <p>A symbol displaying correctly on your Steam profile or friends list doesn't guarantee it displays in every game. Documented cases: CS:GO and CS2's weapon-inspect nametag renders unsupported characters as an empty square even when the same name shows fine on your profile page; TF2 has separately been reported not rendering Unicode in in-game name tags at all. If you need a symbol to work specifically inside a game's UI — not just on your Steam profile — test it in that game before committing.</p>
+  <p>A symbol displaying correctly on your Steam profile or friends list doesn't guarantee it displays in every game. Documented cases: CS:GO and CS2's weapon-inspect nametag renders unsupported characters as an empty square even when the same name shows fine on your profile page; TF2 has separately been reported not rendering Unicode in in-game name tags at all. If you need a symbol to work specifically inside a game's UI, not just on your Steam profile, test it in that game before committing.</p>
 </section>
 
 <div class="section-divider"></div>
@@ -348,7 +348,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="mood-explainers" id="steam-reversion-risk">
   <span class="article-section-label">A Real Risk</span>
   <h2>Why Some Names Revert to Blank</h2>
-  <p>Steam Community discussion threads document names built from heavy block-character or symbol content silently reverting — one reported case had a name built from stacked block characters collapse down to a single leftover punctuation mark after a client sync. Valve hasn't published an official explanation for why this happens, so the exact cause is unconfirmed, but it's a documented, repeated pattern, not an isolated fluke. It's a real reason to lean on the single-character picks above rather than long, dense decorative strings.</p>
+  <p>Steam Community discussion threads document names built from heavy block-character or symbol content silently reverting: one reported case had a name built from stacked block characters collapse down to a single leftover punctuation mark after a client sync. Valve hasn't published an official explanation for why this happens, so the exact cause is unconfirmed, but it's a documented, repeated pattern, not an isolated fluke. It's a real reason to lean on the single-character picks above rather than long, dense decorative strings.</p>
 </section>
 
 <div class="section-divider"></div>
@@ -357,7 +357,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="mood-explainers" id="steam-blocked">
   <span class="article-section-label">What's Blocked</span>
   <h2>Names Steam Won't Let You Use</h2>
-  <p>Steam automatically blocks any name containing the word "Steam" itself, to make impersonation and phishing harder — this applies regardless of symbols or styling around it. Separately, your custom profile URL (vanity ID) runs on a much stricter rule set than your display name and generally rejects decorative symbols outright even when your display name accepts the exact same character — treat them as two different fields with two different limits.</p>
+  <p>Steam automatically blocks any name containing the word "Steam" itself, to make impersonation and phishing harder: this applies regardless of symbols or styling around it. Separately, your custom profile URL (vanity ID) runs on a much stricter rule set than your display name and generally rejects decorative symbols outright even when your display name accepts the exact same character. Treat them as two different fields with two different limits.</p>
 </section>
 
 <div class="section-divider"></div>
@@ -379,11 +379,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </details>
   <details class="faq-item">
     <summary class="faq-question">Why does a symbol show on my Steam profile but not in-game?</summary>
-    <p class="faq-answer">Steam's website and profile pages render Unicode broadly, but individual games have their own text rendering — confirmed cases include CS:GO, TF2, and CS2's weapon-inspect nametag showing unsupported characters as empty squares even though the same name displays fine on your Steam profile. Treat "works on my profile" and "works in-game" as two separate questions, not one.</p>
+    <p class="faq-answer">Steam's website and profile pages render Unicode broadly, but individual games have their own text rendering: confirmed cases include CS:GO, TF2, and CS2's weapon-inspect nametag showing unsupported characters as empty squares even though the same name displays fine on your Steam profile. Treat "works on my profile" and "works in-game" as two separate questions, not one.</p>
   </details>
   <details class="faq-item">
     <summary class="faq-question">Why did my Steam name change or revert on its own?</summary>
-    <p class="faq-answer">Multiple Steam Community threads document names built from heavy symbol/block-character content silently reverting to blank or a single stray character after a sync. Valve hasn't published an official explanation, so the exact mechanism is unconfirmed, but the pattern is well-documented — it's a real risk with dense symbol combos, not just a rare fluke, and it's a reason to prefer single-character picks over long decorative strings.</p>
+    <p class="faq-answer">Multiple Steam Community threads document names built from heavy symbol/block-character content silently reverting to blank or a single stray character after a sync. Valve hasn't published an official explanation, so the exact mechanism is unconfirmed, but the pattern is well-documented: it's a real risk with dense symbol combos, not just a rare fluke, and it's a reason to prefer single-character picks over long decorative strings.</p>
   </details>
   <details class="faq-item">
     <summary class="faq-question">Are there characters Steam blocks outright?</summary>
@@ -391,7 +391,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </details>
   <details class="faq-item">
     <summary class="faq-question">Does this affect Linux Steam users differently?</summary>
-    <p class="faq-answer">Yes, in a documented way — an open issue on Valve's own Steam-for-Linux GitHub repository (filed 2018, still unresolved) reports symbols that display correctly in the profile editor failing to render in the friends list and in-game on Linux specifically, while working normally on Windows and macOS. If a symbol looks broken only on Linux, this is a known client bug, not something wrong with your name.</p>
+    <p class="faq-answer">Yes, in a documented way: an open issue on Valve's own Steam-for-Linux GitHub repository (filed 2018, still unresolved) reports symbols that display correctly in the profile editor failing to render in the friends list and in-game on Linux specifically, while working normally on Windows and macOS. If a symbol looks broken only on Linux, this is a known client bug, not something wrong with your name.</p>
   </details>
 </section>
 

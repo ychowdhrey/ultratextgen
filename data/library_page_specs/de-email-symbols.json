@@ -7,14 +7,14 @@
  "meta_description": "E-Mail-Symbole zum Kopieren: Aufzählungszeichen, Trennlinien, Statuszeichen und Kontaktsymbole für Signatur und Betreff — funktionieren in Outlook, Gmail und Word.",
  "breadcrumb": "E-Mail-Symbole",
  "hero_h1": "E-Mail-Symbole",
- "hero_tagline": "Aufzählungen, Trenner, Statuszeichen und Kontaktsymbole — für Betreff, Text und Signatur.",
- "intro": "In einer E-Mail steht kein Formatierungswerkzeug zur Verfügung, das über Fett und Kursiv hinausgeht. Wer trotzdem gliedern will, tut das mit Zeichen: ein ▸ als Aufzählungspunkt, eine ─ Linie als Trenner, ein 🔴 im Betreff für Dringlichkeit. Diese Seite sammelt die Zeichen, die dafür üblich sind — und die in Outlook, Gmail und Apple Mail gleichermaßen ankommen.",
+ "hero_tagline": "Aufzählungen, Trenner, Statuszeichen und Kontaktsymbole, für Betreff, Text und Signatur.",
+ "intro": "In einer E-Mail steht kein Formatierungswerkzeug zur Verfügung, das über Fett und Kursiv hinausgeht. Wer trotzdem gliedern will, tut das mit Zeichen: ein ▸ als Aufzählungspunkt, eine ─ Linie als Trenner, ein 🔴 im Betreff für Dringlichkeit. Diese Seite sammelt die Zeichen, die dafür üblich sind, und die in Outlook, Gmail und Apple Mail gleichermaßen ankommen.",
  "sections": [
   {
    "id": "betreff",
    "label": "Betreffzeile",
    "h2": "Betreffzeile",
-   "intro": "Zeichen, die eine Betreffzeile sichtbar machen. Sparsam einsetzen — zu viele wirken wie Werbung und landen im Spam.",
+   "intro": "Zeichen, die eine Betreffzeile sichtbar machen. Sparsam einsetzen: zu viele wirken wie Werbung und landen im Spam.",
    "symbols": [
     {
      "char": "⚡",
@@ -70,7 +70,7 @@
    "id": "aufzaehlung",
    "label": "Aufzählungszeichen",
    "h2": "Aufzählungszeichen",
-   "intro": "Sachliche Punkte für Listen — funktionieren auch dort, wo die Formatierung verlorengeht.",
+   "intro": "Sachliche Punkte für Listen: funktionieren auch dort, wo die Formatierung verlorengeht.",
    "symbols": [
     {
      "char": "▸",
@@ -385,7 +385,7 @@
  "editorial_sections": [
   {
    "h2": "Warum Zeichen in E-Mails mehr leisten als Formatierung",
-   "body": "Eine E-Mail durchläuft auf dem Weg zum Empfänger mehrere Programme, und jedes darf die Formatierung anders auslegen oder verwerfen: Weiterleitungen entfernen Aufzählungen, Nur-Text-Ansichten löschen jede Auszeichnung, mobile Clients setzen Abstände neu. Ein Unicode-Zeichen überlebt all das, weil es Teil des Texts ist und nicht seiner Darstellung. Genau deshalb halten sich ▸ und ─ in geschäftlicher Korrespondenz so hartnäckig — sie sind die einzige Gliederung, die garantiert ankommt."
+   "body": "Eine E-Mail durchläuft auf dem Weg zum Empfänger mehrere Programme, und jedes darf die Formatierung anders auslegen oder verwerfen: Weiterleitungen entfernen Aufzählungen, Nur-Text-Ansichten löschen jede Auszeichnung, mobile Clients setzen Abstände neu. Ein Unicode-Zeichen überlebt all das, weil es Teil des Texts ist und nicht seiner Darstellung. Genau deshalb halten sich ▸ und ─ in geschäftlicher Korrespondenz so hartnäckig. Sie sind die einzige Gliederung, die garantiert ankommt."
   }
  ],
  "related": [

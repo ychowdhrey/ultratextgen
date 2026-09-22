@@ -6,8 +6,8 @@
   "canonical": "https://ultratextgen.com/symbol/alpha-symbol/",
   "breadcrumb": "Alpha Symbol",
   "hero_h1": "Alpha Symbol",
-  "hero_tagline": "The first letter of the Greek alphabet — capital Α and lowercase α — the ‘Alpha’ of ‘Alpha and Omega,’ and the symbol behind alpha particles, investment alpha, and more. Click any symbol to copy it instantly.",
-  "intro": "Alpha is the first letter of the Greek alphabet — capital Α (U+0391) and lowercase α (U+03B1) — and where omega means ‘the end,’ alpha has always meant ‘the beginning.’ The pairing is ancient and famous: in the New Testament, Revelation 22:13 reads ‘I am Alpha and Omega, the beginning and the end, the first and the last,’ using the alphabet's bookend letters as a metaphor for totality. Beyond scripture, the lowercase α does heavy scientific lifting: an ‘alpha particle’ is the nucleus of a helium atom — two protons and two neutrons — flung out during alpha decay, and α also denotes the fine-structure constant in physics and angles in geometry. In finance, ‘alpha’ is the return an investment earns above its benchmark, formalized as Jensen's alpha by economist Michael Jensen in the 1960s. The word even seeped into pop culture as ‘alpha male’ — a phrase rooted in mid-20th-century studies of captive wolves that the researcher most associated with it, David Mech, later publicly disowned as a misreading of how wild wolves actually live.",
+  "hero_tagline": "The first letter of the Greek alphabet, capital Α and lowercase α, the ‘Alpha’ of ‘Alpha and Omega,’ and the symbol behind alpha particles, investment alpha, and more. Click any symbol to copy it instantly.",
+  "intro": "Alpha is the first letter of the Greek alphabet, capital Α (U+0391) and lowercase α (U+03B1), and where omega means ‘the end,’ alpha has always meant ‘the beginning.’ The pairing is ancient and famous: in the New Testament, Revelation 22:13 reads ‘I am Alpha and Omega, the beginning and the end, the first and the last,’ using the alphabet's bookend letters as a metaphor for totality. Beyond scripture, the lowercase α does heavy scientific lifting: an ‘alpha particle’ is the nucleus of a helium atom, two protons and two neutrons, flung out during alpha decay, and α also denotes the fine-structure constant in physics and angles in geometry. In finance, ‘alpha’ is the return an investment earns above its benchmark, formalized as Jensen's alpha by economist Michael Jensen in the 1960s. The word even seeped into pop culture as ‘alpha male’: a phrase rooted in mid-20th-century studies of captive wolves that the researcher most associated with it, David Mech, later publicly disowned as a misreading of how wild wolves actually live.",
   "date_published": "2026-07-13",
   "date_modified": "2026-07-13",
   "copy_pattern": "single",
@@ -15,7 +15,7 @@
     {
       "id": "the-alpha-symbol",
       "label": "The Alpha Symbol",
-      "h2": "The Alpha Symbol — Α & α",
+      "h2": "The Alpha Symbol: Α & α",
       "intro": "The Greek letter itself, in both cases. Lowercase α is the one most people mean; it also carries a value of one in the ancient Greek numeral system.",
       "symbols": [
         {
@@ -31,7 +31,7 @@
     {
       "id": "alpha-and-omega",
       "label": "Alpha & Omega",
-      "h2": "Alpha and Omega — The Beginning and the End",
+      "h2": "Alpha and Omega: The Beginning and the End",
       "intro": "The most famous use of the letter: paired with omega as the first and last letters of the Greek alphabet, a metaphor for ‘everything from start to finish’ (Revelation 22:13). Copy the bookend pair.",
       "symbols": [
         {
@@ -91,7 +91,7 @@
     {
       "href": "/symbol/sigma-symbol/",
       "title": "Sigma Symbol",
-      "desc": "Another single Greek letter whose fame outgrew the alphabet — the summation sign in math, the ‘sigma male’ meme online."
+      "desc": "Another single Greek letter whose fame outgrew the alphabet: the summation sign in math, the ‘sigma male’ meme online."
     }
   ]
 }

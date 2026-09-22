@@ -250,7 +250,13 @@ function firstSentence(text, maxLen = MAX_DESC_LEN) {
   let sentence = m ? t.slice(0, m.index + 1).trim() : t;
   if (sentence.length > maxLen) {
     const head = sentence.slice(0, maxLen);
-    const clause = head.lastIndexOf(' — ');
+    // EITHER dash, because thirteen locales write the clause break as a spaced
+    // EN dash — it is their native Gedankenstrich / lineetta / tankestrek, not
+    // a different mark. Matching only the em dash made this cut blind on
+    // exactly those languages: 21 llms.txt descriptions fell through to the
+    // word-boundary cut and changed from a complete clause ending in '.' to a
+    // truncated fragment ending in '…'.
+    const clause = Math.max(head.lastIndexOf(' — '), head.lastIndexOf(' – '));
     // The Python original cuts at the last em dash inside the cap so the text
     // still reads as a complete thought. That inverts when the FIRST clause is
     // a label: every `symbol/` page opens its tagline "💢 U+1F4A2 — the

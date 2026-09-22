@@ -6,8 +6,8 @@
   "canonical": "https://ultratextgen.com/symbol/cracking-face-emoji/",
   "breadcrumb": "Cracking Face Emoji",
   "hero_h1": "Cracking Face Emoji",
-  "hero_tagline": "A face mid-expression, cracking under strain — drafted for Emoji 18.0, expected alongside Unicode 18.0 in September 2026. Draft only: not yet approved, and no font renders it yet. Click to copy the codepoint anyway.",
-  "intro": "Cracking Face (🫫, U+1FAEB) is a candidate emoji drafted for Emoji 18.0, the emoji companion to Unicode 18.0, expected to finalize in September 2026. It depicts a face mid-expression with a visible crack, read by most coverage as emotional strain or \"breaking\" while still smiling — a fit for the Gen-Z \"I'm fine\" meme, where someone looks composed on the outside while overwhelmed underneath. Its codepoint has a specific history: U+1FAEB was originally reserved for a different proposed emoji, \"Face With Squinting Eyes,\" before the Unicode Emoji Standard & Research Working Group recommended replacing it with Cracking Face in January 2026. As of this writing, Unicode's own pipeline documentation still lists that codepoint under its original name, flagged as pending a name-change resolution — meaning even the \"Cracking Face\" name isn't fully locked in yet, despite widespread press coverage already using it. Because it's still a draft, no operating system, keyboard, or font currently renders it; expect a blank box or placeholder glyph until Emoji 18.0 is approved and platforms ship support, likely sometime in 2027.",
+  "hero_tagline": "A face mid-expression, cracking under strain, drafted for Emoji 18.0, expected alongside Unicode 18.0 in September 2026. Draft only: not yet approved, and no font renders it yet. Click to copy the codepoint anyway.",
+  "intro": "Cracking Face (🫫, U+1FAEB) is a candidate emoji drafted for Emoji 18.0, the emoji companion to Unicode 18.0, expected to finalize in September 2026. It depicts a face mid-expression with a visible crack, read by most coverage as emotional strain or \"breaking\" while still smiling, a fit for the Gen-Z \"I'm fine\" meme, where someone looks composed on the outside while overwhelmed underneath. Its codepoint has a specific history: U+1FAEB was originally reserved for a different proposed emoji, \"Face With Squinting Eyes,\" before the Unicode Emoji Standard & Research Working Group recommended replacing it with Cracking Face in January 2026. As of this writing, Unicode's own pipeline documentation still lists that codepoint under its original name, flagged as pending a name-change resolution, meaning even the \"Cracking Face\" name isn't fully locked in yet, despite widespread press coverage already using it. Because it's still a draft, no operating system, keyboard, or font currently renders it; expect a blank box or placeholder glyph until Emoji 18.0 is approved and platforms ship support, likely sometime in 2027.",
   "date_published": "2026-07-22",
   "date_modified": "2026-07-22",
   "copy_pattern": "single",
@@ -16,7 +16,7 @@
       "id": "cracking-face",
       "label": "Cracking Face",
       "h2": "Cracking Face Emoji",
-      "intro": "The draft character itself — copyable today as a codepoint, even though no font can render it yet.",
+      "intro": "The draft character itself: copyable today as a codepoint, even though no font can render it yet.",
       "symbols": [
         {
           "char": "🫫",
@@ -28,7 +28,7 @@
       "id": "related-face-emoji",
       "label": "Related Face Emoji",
       "h2": "Existing Emoji It's Often Compared To",
-      "intro": "Already-encoded, fully-supported face emoji covering similar \"strained\" or \"overwhelmed\" territory — useful stand-ins until Cracking Face actually ships.",
+      "intro": "Already-encoded, fully-supported face emoji covering similar \"strained\" or \"overwhelmed\" territory, useful stand-ins until Cracking Face actually ships.",
       "symbols": [
         {
           "char": "😬",
@@ -52,7 +52,7 @@
       "id": "fellow-candidates",
       "label": "Fellow Draft Candidates",
       "h2": "Other Emoji 18.0 Draft Candidates",
-      "intro": "Cracking Face isn't the only unapproved character in this release — these are drafted alongside it, equally unrendered until September 2026's decision.",
+      "intro": "Cracking Face isn't the only unapproved character in this release: these are drafted alongside it, equally unrendered until September 2026's decision.",
       "symbols": [
         {
           "char": "🫝",
@@ -78,22 +78,22 @@
     {
       "href": "/symbol/pickle-emoji/",
       "title": "Pickle Emoji",
-      "desc": "Another Emoji 18.0 draft candidate — reassigned from a deferred Apple Core proposal."
+      "desc": "Another Emoji 18.0 draft candidate, reassigned from a deferred Apple Core proposal."
     },
     {
       "href": "/symbol/meteor-emoji/",
       "title": "Meteor Emoji",
-      "desc": "Another Emoji 18.0 draft candidate — splits off from Comet's long rendering split."
+      "desc": "Another Emoji 18.0 draft candidate splits off from Comet's long rendering split."
     },
     {
       "href": "/symbol/monarch-butterfly-emoji/",
       "title": "Monarch Butterfly Emoji",
-      "desc": "Another Emoji 18.0 draft candidate — fixes a cross-platform Butterfly mix-up."
+      "desc": "Another Emoji 18.0 draft candidate fixes a cross-platform Butterfly mix-up."
     },
     {
       "href": "/symbol/thumb-sign-emoji/",
       "title": "Thumb Sign Emoji",
-      "desc": "Another Emoji 18.0 draft candidate pair — directional pointing, not approval."
+      "desc": "Another Emoji 18.0 draft candidate pair, directional pointing, not approval."
     },
     {
       "href": "/updates/unicode-18-most-anticipated-emoji/",
@@ -103,7 +103,7 @@
     {
       "href": "/updates/unicode-17-new-emoji-rollout/",
       "title": "Unicode 17.0 New Emoji Rollout",
-      "desc": "How last year's approved emoji rolled out platform by platform — the pattern this one will likely follow."
+      "desc": "How last year's approved emoji rolled out platform by platform, the pattern this one will likely follow."
     }
   ]
 }

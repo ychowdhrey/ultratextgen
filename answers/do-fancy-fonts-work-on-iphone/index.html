@@ -104,7 +104,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "datePublished": "2026-07-02T00:00:00+00:00",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Because iOS does not substitute another font when the system font lacks a character — it draws the .notdef box instead. Styles built from rare Unicode blocks therefore box out on iPhone, especially on older iOS versions. The box is drawn by the viewer’s device, so the same text can look fine to you and broken to them.",
+        "text": "Because iOS does not substitute another font when the system font lacks a character. It draws the .notdef box instead. Styles built from rare Unicode blocks therefore box out on iPhone, especially on older iOS versions. The box is drawn by the viewer’s device, so the same text can look fine to you and broken to them.",
         "author": {
           "@id": "https://ultratextgen.com/#organization"
         },
@@ -208,7 +208,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="hero">
   <div class="hero-inner">
     <h1 class="hero-headline">Do Fancy Fonts Work on iPhone?</h1>
-    <p class="hero-tagline">Mostly yes — but iOS is picky in one specific way that turns the fancier styles into empty boxes. Here’s what renders and what to avoid.</p>
+    <p class="hero-tagline">Mostly yes, but iOS is picky in one specific way that turns the fancier styles into empty boxes. Here’s what renders and what to avoid.</p>
   </div>
 </section>
 <figure class="page-hero-figure" data-uthero aria-hidden="true">
@@ -220,7 +220,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="editorial-section">
   <span class="article-section-label">Short answer</span>
   <div class="editorial-block">
-    <p>Yes, for the common styles. iPhones ship fonts that cover <strong>bold, italic, sans, small caps and monospace</strong>, so those copy-and-paste fine into names, bios and Messages. The catch is that iOS is <strong>strict about fallback</strong>: if a style uses characters the system font doesn’t have, iOS often draws an empty box (□) instead of borrowing a glyph from another font. So the most decorative styles — fraktur, double-struck and obscure symbols — are the ones that break on iPhone.</p>
+    <p>Yes, for the common styles. iPhones ship fonts that cover <strong>bold, italic, sans, small caps and monospace</strong>, so those copy-and-paste fine into names, bios and Messages. The catch is that iOS is <strong>strict about fallback</strong>: if a style uses characters the system font doesn’t have, iOS often draws an empty box (□) instead of borrowing a glyph from another font. So the most decorative styles (fraktur, double-struck and obscure symbols) are the ones that break on iPhone.</p>
   </div>
   <div class="block-example">
     <strong>Safe on iOS:</strong> bold · italic · small caps · monospace · script. <strong>Risky:</strong> fraktur · double-struck · heavy decoratives.
@@ -237,7 +237,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <ul>
       <li><strong>Bold, italic, bold-italic</strong> (sans and serif)</li>
       <li><strong>Small caps</strong> and <strong>monospace</strong></li>
-      <li><strong>Script / cursive</strong> — generally reliable on modern iOS</li>
+      <li><strong>Script / cursive</strong>: generally reliable on modern iOS</li>
     </ul>
     <p class="mood-example">𝐇𝐢 · 𝘏𝘪 · ɢᴏᴏᴅ · 𝘵𝘩𝘦𝘳𝘦</p>
   </div>
@@ -249,13 +249,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <span class="article-section-label">What breaks</span>
   <h2>Why some fancy fonts show as boxes on iPhone</h2>
   <div class="editorial-block">
-    <p>When a character isn’t in iOS’s font, the iPhone frequently <em>doesn’t</em> substitute another font — it just draws the <strong>.notdef box</strong> (□). Android leans on its Noto fonts to avoid this; iOS is less forgiving. So the styles most likely to box out on iPhone are:</p>
+    <p>When a character isn’t in iOS’s font, the iPhone frequently <em>doesn’t</em> substitute another font. It just draws the <strong>.notdef box</strong> (□). Android leans on its Noto fonts to avoid this; iOS is less forgiving. So the styles most likely to box out on iPhone are:</p>
     <ul>
       <li><strong>Fraktur / blackletter</strong> and <strong>double-struck</strong></li>
       <li>Obscure symbol runs and rare decorative blocks</li>
       <li>Anything viewed on an <strong>older iOS version</strong>, which covers fewer characters</li>
     </ul>
-    <p>Remember the box is drawn by the <em>viewer’s</em> iPhone, not yours — so your text can look perfect to you and broken to a friend. See <a href="/guide/why-fonts-show-as-boxes/">why fonts show as boxes</a>.</p>
+    <p>Remember the box is drawn by the <em>viewer’s</em> iPhone, not yours, so your text can look perfect to you and broken to a friend. See <a href="/guide/why-fonts-show-as-boxes/">why fonts show as boxes</a>.</p>
   </div>
 </section>
 
@@ -265,13 +265,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <span class="article-section-label">Where it goes</span>
   <h2>Where you can paste it on iOS</h2>
   <div class="editorial-block">
-    <p>Styled text works in <strong>display names, bios, captions and messages</strong>. It does <strong>not</strong> work in <strong>@username / handle fields</strong>, which are ASCII-only across apps. Accented letters follow the same rule as everywhere — most styles leave them plain (see <a href="/answers/why-fancy-text-removes-accents/">why fancy text removes accents</a>).</p>
+    <p>Styled text works in <strong>display names, bios, captions and messages</strong>. It does <strong>not</strong> work in <strong>@username / handle fields</strong>, which are ASCII-only across apps. Accented letters follow the same rule as everywhere. Most styles leave them plain (see <a href="/answers/why-fancy-text-removes-accents/">why fancy text removes accents</a>).</p>
   </div>
 </section>
 
 <div class="cta-card">
   <h3>Make iPhone-safe styled text</h3>
-  <p>Generate a bold, italic or small-caps style — the ones iOS renders everywhere — then copy and paste it straight into any app.</p>
+  <p>Generate a bold, italic or small-caps style, the ones iOS renders everywhere, then copy and paste it straight into any app.</p>
   <a href="/" class="cta-btn">Open the Text Generator →</a>
 </div>
 
@@ -303,7 +303,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="faq-item">
     <button class="faq-question" type="button">Why do some fancy fonts show as boxes on iPhone?</button>
     <div class="faq-answer">
-      <p>Because iOS does not substitute another font when the system font lacks a character — it draws the .notdef box instead. Styles built from rare Unicode blocks therefore box out on iPhone, especially on older iOS versions. The box is drawn by the viewer’s device, so the same text can look fine to you and broken to them.</p>
+      <p>Because iOS does not substitute another font when the system font lacks a character. It draws the .notdef box instead. Styles built from rare Unicode blocks therefore box out on iPhone, especially on older iOS versions. The box is drawn by the viewer’s device, so the same text can look fine to you and broken to them.</p>
     </div>
   </div>
   <div class="faq-item">

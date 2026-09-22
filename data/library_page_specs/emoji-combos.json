@@ -6,7 +6,7 @@
   "breadcrumb": "Emoji Combos",
   "hero_h1": "Emoji Combos",
   "hero_tagline": "Curated aesthetic emoji combinations plus the single emojis to build your own. Click any symbol or combo to copy it instantly.",
-  "intro": "Emoji combos are short, curated strings of emojis that share one mood — think 🎀 🌸 ✨ for a soft-girl bio or 🌙 ⭐ ☁️ for a dreamy night theme. They are the fastest way to give an Instagram bio, TikTok caption, Discord status, or username an instant aesthetic. Copy a ready-made combo set below in one click, or mix your own from the individually copyable emojis in each themed section.",
+  "intro": "Emoji combos are short, curated strings of emojis that share one mood: think 🎀 🌸 ✨ for a soft-girl bio or 🌙 ⭐ ☁️ for a dreamy night theme. They are the fastest way to give an Instagram bio, TikTok caption, Discord status, or username an instant aesthetic. Copy a ready-made combo set below in one click, or mix your own from the individually copyable emojis in each themed section.",
   "date_published": "2026-06-12",
   "date_modified": "2026-06-12",
   "copy_pattern": "collection",
@@ -15,7 +15,7 @@
       "id": "aesthetic-staples",
       "label": "Staples",
       "h2": "Aesthetic Emoji Staples",
-      "intro": "The core emojis that appear in almost every aesthetic combo — sparkles, bows, butterflies, and soft sky elements.",
+      "intro": "The core emojis that appear in almost every aesthetic combo: sparkles, bows, butterflies, and soft sky elements.",
       "symbols": [
         {
           "char": "✨",
@@ -184,7 +184,7 @@
     "id": "combo-sets",
     "label": "Combo Sets",
     "h2": "Ready-Made Emoji Combo Sets",
-    "intro": "Copy a complete aesthetic emoji combination in one click — perfect for bios, captions, and statuses."
+    "intro": "Copy a complete aesthetic emoji combination in one click: perfect for bios, captions, and statuses."
   },
   "collection_container_id": "emojiCombosContainer",
   "collections": [
@@ -286,7 +286,7 @@
     {
       "href": "/library/color-emoji-combos/",
       "title": "Color Emoji Combos",
-      "desc": "Emoji combos grouped by color theme — blue, pink, purple, and more."
+      "desc": "Emoji combos grouped by color theme: blue, pink, purple, and more."
     },
     {
       "href": "/library/funny-emoji-combos/",

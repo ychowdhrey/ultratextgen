@@ -6,7 +6,7 @@
   "breadcrumb": "Halloween Symbols",
   "hero_h1": "Halloween Symbols",
   "hero_tagline": "Pumpkins, ghosts, skulls, bats, and spooky greeting combos for October. Click any symbol to copy it instantly.",
-  "intro": "Halloween symbols give October posts their costume — a 🎃 jack-o-lantern in a username, a 🕸 web across an Instagram bio, a trail of 💀 skulls in a Discord status. This library collects the spooky Unicode characters and emojis people copy most for Halloween captions, party invites, and themed profiles, from graveyard imagery to witchy potions, plus one-click trick-or-treat combos.",
+  "intro": "Halloween symbols give October posts their costume: a 🎃 jack-o-lantern in a username, a 🕸 web across an Instagram bio, a trail of 💀 skulls in a Discord status. This library collects the spooky Unicode characters and emojis people copy most for Halloween captions, party invites, and themed profiles, from graveyard imagery to witchy potions, plus one-click trick-or-treat combos.",
   "date_published": "2026-06-12",
   "date_modified": "2026-06-12",
   "copy_pattern": "single",
@@ -15,7 +15,7 @@
       "id": "pumpkins-ghosts",
       "label": "Classics",
       "h2": "Pumpkins, Ghosts & Skulls",
-      "intro": "The core Halloween cast — jack-o-lanterns, ghosts, and skulls.",
+      "intro": "The core Halloween cast: jack-o-lanterns, ghosts, and skulls.",
       "symbols": [
         { "char": "🎃", "label": "Jack-O-Lantern" },
         { "char": "👻", "label": "Ghost" },
@@ -80,7 +80,7 @@
       "id": "treats-party",
       "label": "Treats",
       "h2": "Trick-or-Treat Candy",
-      "intro": "The haul — candy, chocolate, and the basket to carry it in.",
+      "intro": "The haul: candy, chocolate, and the basket to carry it in.",
       "symbols": [
         { "char": "🍬", "label": "Candy" },
         { "char": "🍭", "label": "Lollipop" },
@@ -93,7 +93,7 @@
       "id": "spooky-combos",
       "label": "Spooky Combos",
       "h2": "Halloween Greeting Combos",
-      "intro": "One-click spooky greetings and bio decorations — each button copies the whole combo string.",
+      "intro": "One-click spooky greetings and bio decorations. Each button copies the whole combo string.",
       "symbols": [
         { "char": "🎃👻 Happy Halloween 👻🎃", "label": "Happy Halloween Greeting" },
         { "char": "🕸🕷🕸 Trick or Treat 🕸🕷🕸", "label": "Trick or Treat Greeting" },

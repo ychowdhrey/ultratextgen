@@ -6,8 +6,8 @@
  "meta_description": "ASCII-Kunst selbst bauen: Rahmenzeichen, Blockelemente, Braille-Punkte und Formen zum Kopieren — plus fertige Bausteine für Bilder aus Zeichen.",
  "breadcrumb": "ASCII-Kunst",
  "hero_h1": "ASCII-Kunst",
- "hero_tagline": "Die Bausteine, aus denen Bilder aus Zeichen entstehen — Linien, Blöcke, Punkte und Formen.",
- "intro": "ASCII-Kunst entsteht nicht aus Buchstaben, sondern aus vier Zeichenfamilien: Rahmenzeichen für Linien, Blockelemente für Flächen, Braille-Punkte für feine Schattierungen und geometrische Formen für Akzente. Diese Seite sammelt sie alle zum Kopieren. Wer damit arbeitet, braucht keinen Generator — die Zeichen sind das Werkzeug.",
+ "hero_tagline": "Die Bausteine, aus denen Bilder aus Zeichen entstehen: Linien, Blöcke, Punkte und Formen.",
+ "intro": "ASCII-Kunst entsteht nicht aus Buchstaben, sondern aus vier Zeichenfamilien: Rahmenzeichen für Linien, Blockelemente für Flächen, Braille-Punkte für feine Schattierungen und geometrische Formen für Akzente. Diese Seite sammelt sie alle zum Kopieren. Wer damit arbeitet, braucht keinen Generator. Die Zeichen sind das Werkzeug.",
  "sections": [
   {
    "id": "rahmen",
@@ -81,7 +81,7 @@
    "id": "bloecke",
    "label": "Blockelemente",
    "h2": "Blockelemente und Schattierungen",
-   "intro": "Für Flächen und Helligkeitsstufen — die vier Schattierungsgrade ergeben Graustufen aus reinem Text.",
+   "intro": "Für Flächen und Helligkeitsstufen: die vier Schattierungsgrade ergeben Graustufen aus reinem Text.",
    "symbols": [
     {
      "char": "█",
@@ -129,7 +129,7 @@
    "id": "braille",
    "label": "Braille-Punkte",
    "h2": "Braille-Punkte für feine Texturen",
-   "intro": "Braille-Zeichen bieten acht Punkte pro Zelle — die höchste Auflösung, die reiner Text erreicht.",
+   "intro": "Braille-Zeichen bieten acht Punkte pro Zelle, die höchste Auflösung, die reiner Text erreicht.",
    "symbols": [
     {
      "char": "⠁",
@@ -218,7 +218,7 @@
   "id": "combo-sets",
   "label": "Fertige Bausteine",
   "h2": "Fertige ASCII-Bausteine",
-  "intro": "Komplette Elemente mit einem Klick kopieren — Rahmen, Balken und Trenner."
+  "intro": "Komplette Elemente mit einem Klick kopieren: Rahmen, Balken und Trenner."
  },
  "collection_container_id": "asciiSetsContainer",
  "collections": [
@@ -335,11 +335,11 @@
  "editorial_sections": [
   {
    "h2": "Warum Monospace alles entscheidet",
-   "body": "Jede ASCII-Zeichnung beruht auf einer einzigen Annahme: dass ein Zeichen genauso breit ist wie jedes andere. In einer Proportionalschrift ist ein „i“ schmaler als ein „█“, und schon verschiebt sich jede Zeile gegen die darüber. Genau deshalb sieht dieselbe Zeichnung im Discord-Codeblock perfekt und in der Instagram-Bio zerrissen aus — nicht weil Zeichen fehlen, sondern weil sie unterschiedlich breit gesetzt werden. Wer ASCII-Kunst verschickt, sollte deshalb immer zuerst die Zielumgebung prüfen, nicht das Zeichenrepertoire."
+   "body": "Jede ASCII-Zeichnung beruht auf einer einzigen Annahme: dass ein Zeichen genauso breit ist wie jedes andere. In einer Proportionalschrift ist ein „i“ schmaler als ein „█“, und schon verschiebt sich jede Zeile gegen die darüber. Genau deshalb sieht dieselbe Zeichnung im Discord-Codeblock perfekt und in der Instagram-Bio zerrissen aus, nicht weil Zeichen fehlen, sondern weil sie unterschiedlich breit gesetzt werden. Wer ASCII-Kunst verschickt, sollte deshalb immer zuerst die Zielumgebung prüfen, nicht das Zeichenrepertoire."
   },
   {
    "h2": "Vier Zeichenfamilien, vier Aufgaben",
-   "body": "Rahmenzeichen ziehen Linien und schließen Kästen — sie stammen aus der Terminalgrafik der Achtzigerjahre und sind bis heute die sauberste Art, in Text einen Kasten zu zeichnen. Blockelemente füllen Flächen und liefern mit ░▒▓█ vier Helligkeitsstufen. Braille-Punkte sind der Sonderfall: acht Punkte pro Zeichen, also die feinste erreichbare Auflösung. Geometrische Formen schließlich sind keine Bausteine, sondern Akzente — Aufzählungspunkte, Trenner, kleine Markierungen."
+   "body": "Rahmenzeichen ziehen Linien und schließen Kästen: sie stammen aus der Terminalgrafik der Achtzigerjahre und sind bis heute die sauberste Art, in Text einen Kasten zu zeichnen. Blockelemente füllen Flächen und liefern mit ░▒▓█ vier Helligkeitsstufen. Braille-Punkte sind der Sonderfall: acht Punkte pro Zeichen, also die feinste erreichbare Auflösung. Geometrische Formen schließlich sind keine Bausteine, sondern Akzente: Aufzählungspunkte, Trenner, kleine Markierungen."
   }
  ],
  "related": [
@@ -351,7 +351,7 @@
   {
    "href": "/de/library/braille-symbole/",
    "title": "Braille-Symbole",
-   "desc": "Der vollständige Braille-Block — auch für feine Textur in Textbildern."
+   "desc": "Der vollständige Braille-Block: auch für feine Textur in Textbildern."
   },
   {
    "href": "/de/library/geometrische-symbole/",

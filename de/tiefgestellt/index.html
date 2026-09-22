@@ -110,7 +110,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {
       "@type": "Question",
       "name": "Was ist ein Tiefgestellt-Generator und wie funktioniert er?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Ein Tiefgestellt-Generator verwandelt normale Buchstaben und Zahlen in kleine Unicode-Zeichen, die unter der Grundlinie sitzen — wie die 2 in H₂O. Weil es echte Unicode-Zeichen sind und keine HTML-Formatierung, lassen sie sich überall kopieren und einfügen, wo reiner Text erlaubt ist." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Ein Tiefgestellt-Generator verwandelt normale Buchstaben und Zahlen in kleine Unicode-Zeichen, die unter der Grundlinie sitzen, wie die 2 in H₂O. Weil es echte Unicode-Zeichen sind und keine HTML-Formatierung, lassen sie sich überall kopieren und einfügen, wo reiner Text erlaubt ist." }
     },
     {
       "@type": "Question",
@@ -120,7 +120,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {
       "@type": "Question",
       "name": "Warum lassen sich manche Buchstaben nicht tiefstellen?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Unicode definiert tiefgestellte Formen nur für eine begrenzte Auswahl an Buchstaben (a, e, h, i, j, k, l, m, n, o, p, r, s, t, u, v, x sowie ein beta-ähnliches Ersatzzeichen für b). Für c, d, f, g, q, w, y und z gibt es im Unicode-Standard keine echte tiefgestellte Form, sie bleiben deshalb normal groß. Das ist eine Lücke in Unicode selbst, keine Einschränkung des Tools. Alle zehn Ziffern (0–9) haben dagegen volle Abdeckung — deshalb funktionieren tiefgestellte Zahlen in Formeln wie H₂O immer." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Unicode definiert tiefgestellte Formen nur für eine begrenzte Auswahl an Buchstaben (a, e, h, i, j, k, l, m, n, o, p, r, s, t, u, v, x sowie ein beta-ähnliches Ersatzzeichen für b). Für c, d, f, g, q, w, y und z gibt es im Unicode-Standard keine echte tiefgestellte Form, sie bleiben deshalb normal groß. Das ist eine Lücke in Unicode selbst, keine Einschränkung des Tools. Alle zehn Ziffern (0–9) haben dagegen volle Abdeckung, deshalb funktionieren tiefgestellte Zahlen in Formeln wie H₂O immer." }
     },
     {
       "@type": "Question",
@@ -129,7 +129,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     },
     {
       "@type": "Question",
-      "name": "Tiefgestellt oder hochgestellt — was brauche ich?",
+      "name": "Tiefgestellt oder hochgestellt: was brauche ich?",
       "acceptedAnswer": { "@type": "Answer", "text": "Tiefgestellte Zeichen sitzen unter der Grundlinie und sind Standard für Chemieformeln (H₂O) und Fußnoten-Indizes. Hochgestellte Zeichen schweben über der Grundlinie und stehen für Exponenten (x²), Ordnungszahlen und das ™-Zeichen. Für eine chemische Formel nimmst du Tiefgestellt; für einen Exponenten Hochgestellt." }
     }
   ]
@@ -171,7 +171,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="hero-inner">
     <div class="hero-card">
       <h1 class="hero-headline">Tiefgestellt Generator (H₂O, Tiefgestellte Zahlen)</h1>
-      <p class="hero-tagline">Tippe eine Chemieformel, einen Fußnoten-Index oder eine tiefgestellte Zahl und kopiere sie als echte tiefgestellte Unicode-Schrift — ohne HTML-Tags, ohne Formatierungsleiste.</p>
+      <p class="hero-tagline">Tippe eine Chemieformel, einen Fußnoten-Index oder eine tiefgestellte Zahl und kopiere sie als echte tiefgestellte Unicode-Schrift, ohne HTML-Tags, ohne Formatierungsleiste.</p>
       <div class="input-wrapper">
         <textarea class="main-input" id="mainInput" placeholder="Text hier eingeben…" maxlength="500">H2O</textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
@@ -180,7 +180,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <!-- Accent-aware hint: shows only when the input contains diacritics -->
       <div class="accent-notice" id="accentNotice" role="note" hidden>
         <span class="accent-notice-icon" aria-hidden="true">◌̈</span>
-        <span class="accent-notice-text">Dein Text enthält Umlaute oder Akzente. Fett, Schreibschrift, Fraktur und die meisten anderen Stile behalten <b>ä</b>, <b>ö</b> und <b>ü</b> jetzt mit dem Zeichen — nur wenige (Kopfüber-Text, und <b>ß</b>, das keine Form mit Zeichen hat) fallen auf einfache Buchstaben zurück. <a href="/guide/fancy-fonts-and-accents/">Welche Stile Umlaute behalten →</a></span>
+        <span class="accent-notice-text">Dein Text enthält Umlaute oder Akzente. Fett, Schreibschrift, Fraktur und die meisten anderen Stile behalten <b>ä</b>, <b>ö</b> und <b>ü</b> jetzt mit dem Zeichen. Nur wenige (Kopfüber-Text, und <b>ß</b>, das keine Form mit Zeichen hat) fallen auf einfache Buchstaben zurück. <a href="/guide/fancy-fonts-and-accents/">Welche Stile Umlaute behalten →</a></span>
         <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Schließen">✕</button>
       </div>
       <div class="decoration-section">
@@ -202,7 +202,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <span class="article-section-label">Tiefgestellte Unicode-Schrift</span>
     <h2>Tiefgestellte Zahlen und Buchstaben zum Kopieren</h2>
     <p>Diese Zeichen sind keine Schriftart und kein Bild, sondern echte <strong>Unicode-Zeichen</strong>, die unter der
-      Grundlinie sitzen — wie die 2 in H₂O. Schreibe Chemieformeln, tiefgestellte Zahlen oder Fußnoten-Indizes und füge
+      Grundlinie sitzen, wie die 2 in H₂O. Schreibe Chemieformeln, tiefgestellte Zahlen oder Fußnoten-Indizes und füge
       sie überall dort ein, wo es keine echte Tiefstell-Funktion gibt. Tippe oben, tippe auf <strong>Kopieren</strong> und
       setze die tiefgestellte Schrift ein, wo du willst.</p>
   </section>
@@ -212,22 +212,22 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <section class="deco-showcase" aria-labelledby="tiefgestellt-uses-title">
     <h2 class="deco-showcase-title" id="tiefgestellt-uses-title">Wofür tiefgestellter Text wirklich gebraucht wird</h2>
-    <p class="deco-showcase-intro">Tiefgestellte Schrift ist funktional, nicht dekorativ — die meisten brauchen sie, um etwas Bestimmtes zu schreiben, nicht um eine Bio zu stylen. Die drei häufigsten Aufgaben:</p>
+    <p class="deco-showcase-intro">Tiefgestellte Schrift ist funktional, nicht dekorativ: die meisten brauchen sie, um etwas Bestimmtes zu schreiben, nicht um eine Bio zu stylen. Die drei häufigsten Aufgaben:</p>
     <ul class="small-caps-compare">
-      <li><strong>Chemieformeln</strong> — H₂O, CO₂, C₆H₁₂O₆. Chat-Apps, Discord und die meisten Foren bieten keine echte Tiefstell-Taste, deshalb ist Unicode der einzige Weg, die Zahlen tief zu setzen.</li>
-      <li><strong>Fußnoten-Indizes</strong> — a₁, xₙ, tiefgestellte Variablen in Mathe- und Physik-Notation, die als reiner Text geteilt werden.</li>
-      <li><strong>Wissenschaftliche und technische Notation</strong> — überall dort, wo eine saubere Tiefstellung sonst LaTeX oder die Formatierungsleiste einer Textverarbeitung bräuchte.</li>
+      <li><strong>Chemieformeln</strong>: H₂O, CO₂, C₆H₁₂O₆. Chat-Apps, Discord und die meisten Foren bieten keine echte Tiefstell-Taste, deshalb ist Unicode der einzige Weg, die Zahlen tief zu setzen.</li>
+      <li><strong>Fußnoten-Indizes</strong>: a₁, xₙ, tiefgestellte Variablen in Mathe- und Physik-Notation, die als reiner Text geteilt werden.</li>
+      <li><strong>Wissenschaftliche und technische Notation</strong>, überall dort, wo eine saubere Tiefstellung sonst LaTeX oder die Formatierungsleiste einer Textverarbeitung bräuchte.</li>
     </ul>
   </section>
 
   <section class="deco-showcase" id="coverage" aria-labelledby="coverage-title">
     <h2 class="deco-showcase-title" id="coverage-title">Ehrliche Anmerkung zur Buchstaben-Abdeckung</h2>
     <p class="block-example"><strong>Nicht jeder Buchstabe hat eine echte tiefgestellte Form.</strong> Unicode definiert eigene tiefgestellte Buchstaben nur für <strong>a, e, h, i, j, k, l, m, n, o, p, r, s, t, u, v, x</strong> (plus ein beta-ähnliches Ersatzzeichen, das häufig für <strong>b</strong> genutzt wird). Für die Buchstaben <strong>c, d, f, g, q, w, y</strong> und <strong>z</strong> gibt es im Unicode-Standard überhaupt keine tiefgestellte Form — jeder Tiefgestellt-Generator, auch dieser, lässt sie normal groß. Alle zehn Ziffern (0–9) haben dagegen volle Unterstützung für tiefgestellte Zahlen, weshalb Chemieformeln wie H₂O und CO₂ immer korrekt aussehen.</p>
-    <h3 class="small-caps-compare-title">Tiefgestellt, hochgestellt oder Kapitälchen — was passt?</h3>
+    <h3 class="small-caps-compare-title">Tiefgestellt, hochgestellt oder Kapitälchen: was passt?</h3>
     <ul class="small-caps-compare">
-      <li><strong>Tiefgestellt (diese Seite)</strong> — sitzt unter der Grundlinie. Nimm es für Chemieformeln und Fußnoten-Indizes.</li>
-      <li><strong><a href="/de/hochgestellt/">Hochgestellt</a></strong> — schwebt über der Grundlinie. Nimm es für Exponenten (x²), Ordnungszahlen und das ™-Zeichen.</li>
-      <li><strong><a href="/de/kleine-schrift/">Kleine Schrift &amp; Kapitälchen</a></strong> — sitzt auf der Grundlinie und hat die beste Buchstaben-Abdeckung aller kleinen Stile. Nimm sie für Überschriften, Labels und Bios.</li>
+      <li><strong>Tiefgestellt (diese Seite)</strong>: sitzt unter der Grundlinie. Nimm es für Chemieformeln und Fußnoten-Indizes.</li>
+      <li><strong><a href="/de/hochgestellt/">Hochgestellt</a></strong>: schwebt über der Grundlinie. Nimm es für Exponenten (x²), Ordnungszahlen und das ™-Zeichen.</li>
+      <li><strong><a href="/de/kleine-schrift/">Kleine Schrift &amp; Kapitälchen</a></strong>: sitzt auf der Grundlinie und hat die beste Buchstaben-Abdeckung aller kleinen Stile. Nimm sie für Überschriften, Labels und Bios.</li>
     </ul>
   </section>
 
@@ -239,7 +239,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </section>
 <div class="faq-section" id="tiefgestellt-faq">
 
-<h2 class="faq-category">Tiefgestellt Generator — FAQ</h2>
+<h2 class="faq-category">Tiefgestellt Generator: FAQ</h2>
 
 <div class="faq-item">
   <button class="faq-question" type="button">
@@ -247,7 +247,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
   </button>
   <div class="faq-answer">
-    Ein Tiefgestellt-Generator verwandelt normale Buchstaben und Zahlen in kleine Unicode-Zeichen, die unter der Grundlinie sitzen — wie die 2 in H₂O. Weil es echte Unicode-Zeichen sind und keine HTML-Formatierung, lassen sie sich überall kopieren und einfügen, wo reiner Text erlaubt ist.
+    Ein Tiefgestellt-Generator verwandelt normale Buchstaben und Zahlen in kleine Unicode-Zeichen, die unter der Grundlinie sitzen, wie die 2 in H₂O. Weil es echte Unicode-Zeichen sind und keine HTML-Formatierung, lassen sie sich überall kopieren und einfügen, wo reiner Text erlaubt ist.
   </div>
 </div>
 
@@ -267,7 +267,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
   </button>
   <div class="faq-answer">
-    Unicode definiert tiefgestellte Formen nur für eine begrenzte Auswahl an Buchstaben (a, e, h, i, j, k, l, m, n, o, p, r, s, t, u, v, x sowie ein beta-ähnliches Ersatzzeichen für b). Für c, d, f, g, q, w, y und z gibt es im Unicode-Standard keine echte tiefgestellte Form, sie bleiben deshalb normal groß. Das ist eine Lücke in Unicode selbst, keine Einschränkung des Tools. Alle zehn Ziffern (0–9) haben dagegen volle Abdeckung — deshalb funktionieren tiefgestellte Zahlen in Formeln wie H₂O immer.
+    Unicode definiert tiefgestellte Formen nur für eine begrenzte Auswahl an Buchstaben (a, e, h, i, j, k, l, m, n, o, p, r, s, t, u, v, x sowie ein beta-ähnliches Ersatzzeichen für b). Für c, d, f, g, q, w, y und z gibt es im Unicode-Standard keine echte tiefgestellte Form, sie bleiben deshalb normal groß. Das ist eine Lücke in Unicode selbst, keine Einschränkung des Tools. Alle zehn Ziffern (0–9) haben dagegen volle Abdeckung, deshalb funktionieren tiefgestellte Zahlen in Formeln wie H₂O immer.
   </div>
 </div>
 
@@ -283,7 +283,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    Tiefgestellt oder hochgestellt — was brauche ich?
+    Tiefgestellt oder hochgestellt: was brauche ich?
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
   </button>
   <div class="faq-answer">

@@ -145,12 +145,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Miksi lihavointi toimii Discordin chatissa mutta ei käyttäjänimessäni?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Koska ne käyttävät eri järjestelmiä. Chatissa **lihavointi** on Markdownia — Discord piirtää sen näkyviin, kun se näyttää viestisi. Nimet (käyttäjänimi, nimimerkki, palvelin, kanava, rooli) eivät suorita Markdownia, joten tähdet näkyvät sellaisenaan. Nimen tyylittelyyn tarvitset Unicode-”fontteja” — erikoismerkkejä, jotka näyttävät jo lihavoiduilta — liitettynä suoraan kenttään." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Koska ne käyttävät eri järjestelmiä. Chatissa **lihavointi** on Markdownia: Discord piirtää sen näkyviin, kun se näyttää viestisi. Nimet (käyttäjänimi, nimimerkki, palvelin, kanava, rooli) eivät suorita Markdownia, joten tähdet näkyvät sellaisenaan. Nimen tyylittelyyn tarvitset Unicode-”fontteja” (erikoismerkkejä, jotka näyttävät jo lihavoiduilta) liitettynä suoraan kenttään." }
     },
     {
       "@type": "Question",
       "name": "Ovatko Unicode-fontit samoja kuin Discord Nitro -fontit?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Ei. Unicode-”fontit” ovat ilmaisia korvaavia merkkejä, jotka voit liittää mihin tahansa nimikenttään; ne toimivat kaikilla, mutta voivat näkyä neliöinä joissakin laitteissa ja hämmentävät ruudunlukijoita. Nitron Display Name Styles on maksullinen ominaisuus, joka lisää näyttönimeesi oikean fontin, värin ja efektit — mutta väri ja efektit eivät näy palvelimien sisällä, joissa roolisi väri voittaa; vain fontti siirtyy mukana." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Ei. Unicode-”fontit” ovat ilmaisia korvaavia merkkejä, jotka voit liittää mihin tahansa nimikenttään; ne toimivat kaikilla, mutta voivat näkyä neliöinä joissakin laitteissa ja hämmentävät ruudunlukijoita. Nitron Display Name Styles on maksullinen ominaisuus, joka lisää näyttönimeesi oikean fontin, värin ja efektit, mutta väri ja efektit eivät näy palvelimien sisällä, joissa roolisi väri voittaa; vain fontti siirtyy mukana." }
     },
     {
       "@type": "Question",
@@ -160,7 +160,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Miksi tähdet näkyvät lihavoinnin sijaan?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Kaksi yleistä syytä: tähtien ja sanan välissä on välilyönti (`** teksti **` ei lihavoi — `**teksti**` lihavoi) tai teksti on koodilohkon sisällä (takakenot sammuttavat Markdownin). Muista myös, että Markdown toimii vain viesteissä, ei koskaan nimissä." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Kaksi yleistä syytä: tähtien ja sanan välissä on välilyönti (`** teksti **` ei lihavoi, `**teksti**` lihavoi) tai teksti on koodilohkon sisällä (takakenot sammuttavat Markdownin). Muista myös, että Markdown toimii vain viesteissä, ei koskaan nimissä." }
     }
   ]
 }
@@ -187,7 +187,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="hero">
   <div class="hero-inner" style="max-width:800px;">
     <h1 class="hero-headline">Discord-tekstin muotoilu, puretaan osiin</h1>
-    <p class="hero-tagline">Sinulla ei ole ”fonttiongelmaa” — sinulla on kolmen järjestelmän ongelma. Discord käyttää Markdownia, Unicode-merkkejä ja Nitro-tyylejä täysin eri tehtäviin. Kun tiedät, mitä järjestelmää mikäkin kenttä käyttää, jokainen ”miksi tämä ei toimi?” vastaa itse itseensä.</p>
+    <p class="hero-tagline">Sinulla ei ole ”fonttiongelmaa”: sinulla on kolmen järjestelmän ongelma. Discord käyttää Markdownia, Unicode-merkkejä ja Nitro-tyylejä täysin eri tehtäviin. Kun tiedät, mitä järjestelmää mikäkin kenttä käyttää, jokainen ”miksi tämä ei toimi?” vastaa itse itseensä.</p>
     <div class="guide-meta">
       <span class="guide-pill is-accent">Alustan hallinta</span>
       <span class="guide-pill">⏱ 8 min lukuaikaa</span>
@@ -206,9 +206,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2>Keskeistä</h2>
   <ul>
     <li>Discordissa on kolme toisiinsa liittymätöntä tekstijärjestelmää: <strong>Markdown</strong> (viestit), <strong>Unicode-”fontit”</strong> (nimet kaikkialla) ja <strong>Nitro</strong> (maksulliset näyttönimen tyylit).</li>
-    <li>Markdown, kuten <code>**lihavointi**</code>, näkyy vain viesteissä — se ei koskaan toimi käyttäjänimissä, nimimerkeissä eikä palvelimen/kanavan nimissä.</li>
+    <li>Markdown, kuten <code>**lihavointi**</code>, näkyy vain viesteissä, se ei koskaan toimi käyttäjänimissä, nimimerkeissä eikä palvelimen/kanavan nimissä.</li>
     <li>Unicode-”fontit” toimivat jokaisessa nimikentässä, mutta ne voivat näkyä neliöinä joissakin laitteissa ja hämmentää ruudunlukijoita.</li>
-    <li>Nitro lisää näyttönimeesi oikean värin ja efektit — mutta palvelimen sisällä roolisi väri voittaa ja vain fontti näkyy.</li>
+    <li>Nitro lisää näyttönimeesi oikean värin ja efektit, mutta palvelimen sisällä roolisi väri voittaa ja vain fontti näkyy.</li>
   </ul>
 </section>
 
@@ -217,9 +217,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Osio: uusi näkökulma -->
   <section class="editorial-section">
     <span class="article-section-label">Uusi näkökulma</span>
-    <h2>Kyse ei ole fonteista — kyse on kolmesta eri järjestelmästä</h2>
+    <h2>Kyse ei ole fonteista: kyse on kolmesta eri järjestelmästä</h2>
     <div class="editorial-block">
-      <p>Lähes jokainen Discordin ”miksi tekstini ei toimi” -kysymys johtuu kolmen keskenään täysin erillisen asian sekoittamisesta. Discord <em>opettaa</em> sinulle Markdownia chatissa, joten oletat saman tempun tyylittelevän myös nimesi. Ei tyylittele — nimet toimivat aivan eri järjestelmällä.</p>
+      <p>Lähes jokainen Discordin ”miksi tekstini ei toimi” -kysymys johtuu kolmen keskenään täysin erillisen asian sekoittamisesta. Discord <em>opettaa</em> sinulle Markdownia chatissa, joten oletat saman tempun tyylittelevän myös nimesi. Ei tyylittele: nimet toimivat aivan eri järjestelmällä.</p>
       <p>Tässä koko kenttä yhdessä kuvassa. Opi, mitä järjestelmää mikäkin kenttä käyttää, eikä mikään enää yllätä sinua.</p>
     </div>
 
@@ -240,7 +240,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Osio: 1. järjestelmä Markdown -->
   <section class="editorial-section">
     <span class="article-section-label">1. järjestelmä</span>
-    <h2>Markdown — viesteille</h2>
+    <h2>Markdown: viesteille</h2>
     <div class="editorial-block">
       <p>Markdown on muotoilu, jonka Discord ottaa käyttöön <em>näyttäessään</em> viestisi. Kirjoitat symboleja sanojen ympärille, ja Discord vaihtaa ne oikeaksi tyyliksi.</p>
       <ul>
@@ -251,7 +251,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><code>||spoiler||</code> → piilossa kunnes klikataan</li>
         <li><code>&gt; lainaus</code> ja <code>`koodi`</code></li>
       </ul>
-      <p>Tämä on <em>oikea</em> tapa muotoilla viesti — se pysyy oikeana tekstinä, joten se on haettavissa ja saavutettava. Kompastuskivenä ovat kaksi virhettä, joiden vuoksi se ”ei toimi”:</p>
+      <p>Tämä on <em>oikea</em> tapa muotoilla viesti: se pysyy oikeana tekstinä, joten se on haettavissa ja saavutettava. Kompastuskivenä ovat kaksi virhettä, joiden vuoksi se ”ei toimi”:</p>
       <div class="compare-grid">
         <div class="compare-card variant-muted">
           <span class="compare-badge">Ei lihavoi</span>
@@ -271,14 +271,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Osio: 2. järjestelmä Unicode -->
   <section class="editorial-section">
     <span class="article-section-label">2. järjestelmä</span>
-    <h2>Unicode-”fontit” — nimille</h2>
+    <h2>Unicode-”fontit”: nimille</h2>
     <div class="editorial-block">
-      <p><em>Nimen</em> tyylittelyyn et voi pyytää Discordia piirtämään mitään — joten käytät merkkejä, jotka näyttävät jo tyylitellyiltä. Generaattori muuttaa sanan „Nova” muotoon 𝗡𝗼𝘃𝗮 tai 𝓝𝓸𝓿𝓪 erikoisten Unicode-merkkien avulla, ja liität valmiin tuloksen suoraan kenttään. Mitään piirtämistä ei tarvita, joten se selviää siellä, missä Markdown ei selviä.</p>
+      <p><em>Nimen</em> tyylittelyyn et voi pyytää Discordia piirtämään mitään, joten käytät merkkejä, jotka näyttävät jo tyylitellyiltä. Generaattori muuttaa sanan „Nova” muotoon 𝗡𝗼𝘃𝗮 tai 𝓝𝓸𝓿𝓪 erikoisten Unicode-merkkien avulla, ja liität valmiin tuloksen suoraan kenttään. Mitään piirtämistä ei tarvita, joten se selviää siellä, missä Markdown ei selviä.</p>
       <p>Tämä toimii näyttönimessäsi, palvelimen nimimerkissäsi, palvelimen ja kanavien nimissä, roolien nimissä, biossasi ja viesteissä. On tasan yksi paikka, jossa se on estetty:</p>
       <div class="mood-explainer">
-        <div class="mood-example"><strong>@käyttäjänimi hylkää sen.</strong> Ainutlaatuinen tunnuksesi (se pienillä kirjaimilla @-merkin jälkeen) sallii vain a–z, 0–9, <code>_</code> ja <code>.</code> — mainintoja, hakua ja reititystä varten. Jos liität sinne koristeellisen fontin, Discord kieltäytyy tallentamasta sitä. Tyylittele sen sijaan <em>näyttönimesi</em>.</div>
+        <div class="mood-example"><strong>@käyttäjänimi hylkää sen.</strong> Ainutlaatuinen tunnuksesi (se pienillä kirjaimilla @-merkin jälkeen) sallii vain a–z, 0–9, <code>_</code> ja <code>.</code> – mainintoja, hakua ja reititystä varten. Jos liität sinne koristeellisen fontin, Discord kieltäytyy tallentamasta sitä. Tyylittele sen sijaan <em>näyttönimesi</em>.</div>
       </div>
-      <p>Kaksi rehellistä huomiota: Unicode-nimet voivat näkyä joissakin laitteissa neliöinä (etenkin vanhemmassa Androidissa) ja ne ovat vaikeita ruudunlukijoille. Valitse turvallinen tyyli (lihavoitu, kursiivi, pienet suuraakkoset) ja pidä se tyylikkäänä — moni suuri palvelin moderoi vaikealukuisia tai zalgo-nimiä.</p>
+      <p>Kaksi rehellistä huomiota: Unicode-nimet voivat näkyä joissakin laitteissa neliöinä (etenkin vanhemmassa Androidissa) ja ne ovat vaikeita ruudunlukijoille. Valitse turvallinen tyyli (lihavoitu, kursiivi, pienet suuraakkoset) ja pidä se tyylikkäänä: moni suuri palvelin moderoi vaikealukuisia tai zalgo-nimiä.</p>
     </div>
   </section>
 
@@ -287,14 +287,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Osio: 3. järjestelmä Nitro -->
   <section class="editorial-section">
     <span class="article-section-label">3. järjestelmä</span>
-    <h2>Nitron Display Name Styles — maksullinen ja suppeampi kuin luulet</h2>
+    <h2>Nitron Display Name Styles: maksullinen ja suppeampi kuin luulet</h2>
     <div class="editorial-block">
       <p>Discordin maksullinen Nitro tarjoaa Display Name Stylesin, vuoden 2025 lopulla lisätyn ominaisuuden: oikean fontin, värin ja jopa animoituja efektejä näyttönimeesi. Se näyttää upealta profiilikortillasi. Mutta mukana tulee kompastuskivi, jonka ihmiset huomaavat kantapään kautta:</p>
       <div class="mood-explainer">
-        <div class="mood-example">Palvelimen sisällä <strong>roolisi</strong> väri ohittaa Nitro-värin, ja efektit poistetaan — joten muut jäsenet näkevät yleensä vain <em>fontin</em>, eivät väriä eivätkä animaatiota. Koko efekti näkyy lähinnä profiilissasi, ei jäsenlistalla eikä chatissa.</div>
+        <div class="mood-example">Palvelimen sisällä <strong>roolisi</strong> väri ohittaa Nitro-värin, ja efektit poistetaan, joten muut jäsenet näkevät yleensä vain <em>fontin</em>, eivät väriä eivätkä animaatiota. Koko efekti näkyy lähinnä profiilissasi, ei jäsenlistalla eikä chatissa.</div>
       </div>
-      <p>Ilmaiset tilit voivat avata valikon ja <strong>esikatsella</strong> tyyliä, mutta tallentaminen vaatii Nitron — juuri tuo esikatsele-ja-maksa-järjestys on syy siihen, miksi niin moni nyt kysyy, tarvitaanko Nitroa fontteihin ylipäätään. Se on aiheellinen kysymys tästä nimenomaisesta ominaisuudesta; se ei ole muutos Unicode-tyylittelyyn, joka pysyy ilmaisena joka tapauksessa.</p>
-      <p>Nitro siis kannattaa, jos haluat siistin profiilikortin ja tunnistettavan nimifontin kaikkialle. Se <em>ei ole</em> tapa saada väritettyä tekstiä keskusteluun — siihen on toinen työkalu (seuraava osio).</p>
+      <p>Ilmaiset tilit voivat avata valikon ja <strong>esikatsella</strong> tyyliä, mutta tallentaminen vaatii Nitron: juuri tuo esikatsele-ja-maksa-järjestys on syy siihen, miksi niin moni nyt kysyy, tarvitaanko Nitroa fontteihin ylipäätään. Se on aiheellinen kysymys tästä nimenomaisesta ominaisuudesta; se ei ole muutos Unicode-tyylittelyyn, joka pysyy ilmaisena joka tapauksessa.</p>
+      <p>Nitro siis kannattaa, jos haluat siistin profiilikortin ja tunnistettavan nimifontin kaikkialle. Se <em>ei ole</em> tapa saada väritettyä tekstiä keskusteluun. Siihen on toinen työkalu (seuraava osio).</p>
     </div>
   </section>
 
@@ -307,9 +307,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="editorial-block">
       <p>Väritetty teksti viestissä on neljäs, kapeampi temppu: <strong>ANSI-koodilohkot</strong>. Kääräiset tekstin kolmen takakenon lohkoon, jonka tunniste on <code>ansi</code>, ja lisäät väreille pakoetumerkit. Ole tietoinen rajoituksista:</p>
       <ul>
-        <li>Vain <strong>kahdeksan kiinteää väriä</strong> — ei omaa heksaväriä.</li>
-        <li><strong>Vain koodilohkon sisällä</strong> — ei voi väriä tavallista lausetta rivin sisällä.</li>
-        <li><strong>Epäluotettava mobiilissa</strong> — puhelimen käyttäjille näkyy usein pelkkänä tekstinä.</li>
+        <li>Vain <strong>kahdeksan kiinteää väriä</strong>: ei omaa heksaväriä.</li>
+        <li><strong>Vain koodilohkon sisällä</strong>: ei voi väriä tavallista lausetta rivin sisällä.</li>
+        <li><strong>Epäluotettava mobiilissa</strong>: puhelimen käyttäjille näkyy usein pelkkänä tekstinä.</li>
       </ul>
       <p>Hyödyllinen tietokonekeskeisen palvelimen varoituksiin tai lokeihin; ei yleinen tyylittelytyökalu. Jos puolet jäsenistäsi on mobiilissa, oleta ettei he näe väriä.</p>
     </div>
@@ -341,7 +341,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA-kortti -->
   <div class="cta-card">
     <h3>Tee Discord-valmis nimi</h3>
-    <p>Luo laitteille turvallinen Unicode-tyyli, kopioi se ja liitä se näyttönimeen tai palvelimen nimimerkkiin — ilman Nitroa.</p>
+    <p>Luo laitteille turvallinen Unicode-tyyli, kopioi se ja liitä se näyttönimeen tai palvelimen nimimerkkiin, ilman Nitroa.</p>
     <a href="/fi/discord-fontit/" class="cta-btn">Avaa Discord-fonttityökalu →</a>
   </div>
 
@@ -370,13 +370,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Miksi lihavointi toimii Discordin chatissa mutta ei käyttäjänimessäni?</button>
     <div class="faq-answer">
-      <p>Koska ne käyttävät eri järjestelmiä. Chatissa <code>**lihavointi**</code> on Markdownia — Discord piirtää sen näkyviin, kun se näyttää viestisi. Nimet (käyttäjänimi, nimimerkki, palvelin, kanava, rooli) eivät suorita Markdownia, joten tähdet näkyvät sellaisenaan. Nimen tyylittelyyn tarvitset Unicode-”fontteja” — erikoismerkkejä, jotka näyttävät jo lihavoiduilta — liitettynä suoraan kenttään.</p>
+      <p>Koska ne käyttävät eri järjestelmiä. Chatissa <code>**lihavointi**</code> on Markdownia: Discord piirtää sen näkyviin, kun se näyttää viestisi. Nimet (käyttäjänimi, nimimerkki, palvelin, kanava, rooli) eivät suorita Markdownia, joten tähdet näkyvät sellaisenaan. Nimen tyylittelyyn tarvitset Unicode-”fontteja” (erikoismerkkejä, jotka näyttävät jo lihavoiduilta) liitettynä suoraan kenttään.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Ovatko Unicode-fontit samoja kuin Discord Nitro -fontit?</button>
     <div class="faq-answer">
-      <p>Ei. Unicode-”fontit” ovat ilmaisia korvaavia merkkejä, jotka voit liittää mihin tahansa nimikenttään; ne toimivat kaikilla, mutta voivat näkyä neliöinä joissakin laitteissa ja hämmentävät ruudunlukijoita. Nitron Display Name Styles on maksullinen ominaisuus, joka lisää näyttönimeesi oikean fontin, värin ja efektit — mutta väri ja efektit eivät näy palvelimien sisällä, joissa roolisi väri voittaa; vain fontti siirtyy mukana.</p>
+      <p>Ei. Unicode-”fontit” ovat ilmaisia korvaavia merkkejä, jotka voit liittää mihin tahansa nimikenttään; ne toimivat kaikilla, mutta voivat näkyä neliöinä joissakin laitteissa ja hämmentävät ruudunlukijoita. Nitron Display Name Styles on maksullinen ominaisuus, joka lisää näyttönimeesi oikean fontin, värin ja efektit, mutta väri ja efektit eivät näy palvelimien sisällä, joissa roolisi väri voittaa; vain fontti siirtyy mukana.</p>
     </div>
   </div>
   <div class="faq-item">
@@ -388,7 +388,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Miksi tähdet näkyvät lihavoinnin sijaan?</button>
     <div class="faq-answer">
-      <p>Kaksi yleistä syytä: tähtien ja sanan välissä on välilyönti (<code>** teksti **</code> ei lihavoi — <code>**teksti**</code> lihavoi) tai teksti on koodilohkon sisällä (takakenot sammuttavat Markdownin). Muista myös, että Markdown toimii vain viesteissä, ei koskaan nimissä.</p>
+      <p>Kaksi yleistä syytä: tähtien ja sanan välissä on välilyönti (<code>** teksti **</code> ei lihavoi, <code>**teksti**</code> lihavoi) tai teksti on koodilohkon sisällä (takakenot sammuttavat Markdownin). Muista myös, että Markdown toimii vain viesteissä, ei koskaan nimissä.</p>
     </div>
   </div>
 </section>

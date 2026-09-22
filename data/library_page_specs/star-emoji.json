@@ -5,8 +5,8 @@
   "canonical": "https://ultratextgen.com/library/star-emoji/",
   "breadcrumb": "Star Emoji & Kaomoji",
   "hero_h1": "Star Emoji & Kaomoji",
-  "hero_tagline": "Rating stars, glowing stars, shooting stars, sparkles, and star-eyed kaomoji — the full picture-emoji star set. Click any symbol to copy it instantly.",
-  "intro": "The star emoji ⭐ is one of the internet's most practical picture emoji — a single tap builds a ⭐⭐⭐⭐⭐ five-star review, rates a product, or crowns a favorite in a caption. This page collects the full picture-emoji star family, from the ⭐ rating star to the 🌟 glowing star, ✨ sparkles, and 🌠 shooting star, plus night-sky companions and star-eyed kaomoji like (☆ω☆). These are full-color emoji that render as little pictures — if you want plain-text Unicode stars like ★ and ☆ that paste anywhere as characters, see the star symbols collection at /library/star-symbols/ (kaomoji and ASCII star art live on their own linked pages too). Copy a single star, a kaomoji, or a ready-made combo set with one click.",
+  "hero_tagline": "Rating stars, glowing stars, shooting stars, sparkles, and star-eyed kaomoji: the full picture-emoji star set. Click any symbol to copy it instantly.",
+  "intro": "The star emoji ⭐ is one of the internet's most practical picture emoji: a single tap builds a ⭐⭐⭐⭐⭐ five-star review, rates a product, or crowns a favorite in a caption. This page collects the full picture-emoji star family, from the ⭐ rating star to the 🌟 glowing star, ✨ sparkles, and 🌠 shooting star, plus night-sky companions and star-eyed kaomoji like (☆ω☆). These are full-color emoji that render as little pictures. If you want plain-text Unicode stars like ★ and ☆ that paste anywhere as characters, see the star symbols collection at /library/star-symbols/ (kaomoji and ASCII star art live on their own linked pages too). Copy a single star, a kaomoji, or a ready-made combo set with one click.",
   "date_published": "2026-07-13",
   "date_modified": "2026-07-13",
   "copy_pattern": "collection",
@@ -67,7 +67,7 @@
     "id": "combo-sets",
     "label": "Combo Sets",
     "h2": "Star Emoji Combo Sets",
-    "intro": "Copy a complete star combo in one click — a five-star review, a starry sky, or a sparkle aesthetic."
+    "intro": "Copy a complete star combo in one click: a five-star review, a starry sky, or a sparkle aesthetic."
   },
   "collection_container_id": "starSetsContainer",
   "collections": [
@@ -116,7 +116,7 @@
     {
       "href": "/library/star-symbols/",
       "title": "Star Symbol Collection",
-      "desc": "Plain-text ★ ☆ Unicode stars that paste anywhere as characters — no emoji rendering needed."
+      "desc": "Plain-text ★ ☆ Unicode stars that paste anywhere as characters, no emoji rendering needed."
     },
     {
       "href": "/library/star-kaomoji/",

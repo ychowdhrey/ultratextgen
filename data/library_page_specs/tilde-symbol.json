@@ -7,7 +7,7 @@
   "breadcrumb": "Tilde Symbol",
   "hero_h1": "Tilde Symbol (~)",
   "hero_tagline": "The keyboard tilde (~) that marks your Unix home folder and means ‘roughly,’ the small tilde ˜ and the combining mark that sits over ñ, ã, and õ, and the math tildes ∼ and ≈ it's endlessly confused with. Click any symbol to copy it instantly.",
-  "intro": "The tilde (~, U+007E TILDE) is the wavy mark on your keyboard's top-left key, and it carries more jobs than almost any other punctuation character. In a Unix or Linux shell it's shorthand for your home directory (~/) — a convention traced to the 1970s Lear-Siegler ADM-3A terminal, whose keyboard printed ‘~’ and the word ‘Home’ on the same key. In casual chat it means ‘approximately’ or ‘around’ (~5 minutes), and programmers nickname it the ‘twiddle.’ Its name comes from Spanish tilde, from Latin titulus (‘title’ or ‘superscription’), and its story begins with medieval scribes: a small wavy mark written above a letter stood for an omitted ‘n’ or ‘m,’ saving costly vellum and ink. That shortcut is exactly why Spanish has ñ — scribes wrote a single ‘n’ with the mark over it to stand for a doubled ‘nn.’ That diacritic survives today as the combining tilde (◌̃, U+0303), a different character from the standalone small tilde (˜, U+02DC) and from the plain keyboard ~. It's also routinely confused with the math signs it resembles: the tilde operator ∼ (U+223C, ‘similar to’) and almost-equal ≈ (U+2248) are separate Unicode characters, not the ASCII tilde.",
+  "intro": "The tilde (~, U+007E TILDE) is the wavy mark on your keyboard's top-left key, and it carries more jobs than almost any other punctuation character. In a Unix or Linux shell it's shorthand for your home directory (~/), a convention traced to the 1970s Lear-Siegler ADM-3A terminal, whose keyboard printed ‘~’ and the word ‘Home’ on the same key. In casual chat it means ‘approximately’ or ‘around’ (~5 minutes), and programmers nickname it the ‘twiddle.’ Its name comes from Spanish tilde, from Latin titulus (‘title’ or ‘superscription’), and its story begins with medieval scribes: a small wavy mark written above a letter stood for an omitted ‘n’ or ‘m,’ saving costly vellum and ink. That shortcut is exactly why Spanish has ñ: scribes wrote a single ‘n’ with the mark over it to stand for a doubled ‘nn.’ That diacritic survives today as the combining tilde (◌̃, U+0303), a different character from the standalone small tilde (˜, U+02DC) and from the plain keyboard ~. It's also routinely confused with the math signs it resembles: the tilde operator ∼ (U+223C, ‘similar to’) and almost-equal ≈ (U+2248) are separate Unicode characters, not the ASCII tilde.",
   "date_published": "2026-07-18",
   "date_modified": "2026-07-18",
   "copy_pattern": "single",
@@ -16,7 +16,7 @@
       "id": "the-tilde",
       "label": "The Tilde",
       "h2": "The Tilde ~ and Its Look-Alikes",
-      "intro": "Three separate Unicode characters people all call ‘the tilde’ — the keyboard key, a standalone spacing modifier, and the combining diacritic that sits over a letter.",
+      "intro": "Three separate Unicode characters people all call ‘the tilde’: the keyboard key, a standalone spacing modifier, and the combining diacritic that sits over a letter.",
       "symbols": [
         { "char": "~", "label": "Tilde (U+007E): the Keyboard Key" },
         { "char": "˜", "label": "Small Tilde (U+02DC): Standalone Spacing Modifier" },
@@ -39,7 +39,7 @@
       "id": "math-tilde",
       "label": "Math Tildes",
       "h2": "Math Tildes: Similar-To and Approximately-Equal",
-      "intro": "In equations the tilde means ‘similar to’ or ‘approximately,’ but the true math signs are their own Unicode characters — not the ASCII ~ people usually type in their place.",
+      "intro": "In equations the tilde means ‘similar to’ or ‘approximately,’ but the true math signs are their own Unicode characters, not the ASCII ~ people usually type in their place.",
       "symbols": [
         { "char": "∼", "label": "Tilde Operator (U+223C): ‘Similar To’" },
         { "char": "≈", "label": "Almost Equal To (U+2248): ‘Approximately Equal’" },

@@ -5,8 +5,8 @@
   "canonical": "https://ultratextgen.com/library/invisible-character/",
   "breadcrumb": "Invisible Character",
   "hero_h1": "Invisible Character",
-  "hero_tagline": "Every invisible character and blank space Unicode offers — zero width spaces, fillers, and empty braille. Click any symbol to copy it instantly.",
-  "intro": "An invisible character is a real Unicode character that renders as nothing — a blank space you can copy and paste where platforms normally reject empty input. People use them to make an invisible Discord name, add blank lines to an Instagram bio or caption, send a seemingly empty WhatsApp message, or create clean spacing in gaming nicknames. Every button below holds a genuine invisible or blank character: the tiles look empty, but the labels tell you exactly which character you are copying.",
+  "hero_tagline": "Every invisible character and blank space Unicode offers: zero width spaces, fillers, and empty braille. Click any symbol to copy it instantly.",
+  "intro": "An invisible character is a real Unicode character that renders as nothing, a blank space you can copy and paste where platforms normally reject empty input. People use them to make an invisible Discord name, add blank lines to an Instagram bio or caption, send a seemingly empty WhatsApp message, or create clean spacing in gaming nicknames. Every button below holds a genuine invisible or blank character: the tiles look empty, but the labels tell you exactly which character you are copying.",
   "date_published": "2026-06-12",
   "date_modified": "2026-06-12",
   "copy_pattern": "single",
@@ -15,7 +15,7 @@
       "id": "zero-width-characters",
       "label": "Zero Width",
       "h2": "Zero Width & Invisible Format Characters",
-      "intro": "These characters occupy no visual width at all — ideal for invisible usernames and for breaking up text without showing anything.",
+      "intro": "These characters occupy no visual width at all, ideal for invisible usernames and for breaking up text without showing anything.",
       "symbols": [
         {
           "char": "​",
@@ -95,7 +95,7 @@
       "id": "wide-spaces",
       "label": "Wide Spaces",
       "h2": "Wide & Special Space Characters",
-      "intro": "Extra-wide blank characters, including the full-width ideographic space used in CJK typography — great for big visible gaps.",
+      "intro": "Extra-wide blank characters, including the full-width ideographic space used in CJK typography, great for big visible gaps.",
       "symbols": [
         {
           "char": " ",
@@ -131,7 +131,7 @@
       "id": "filler-characters",
       "label": "Fillers",
       "h2": "Filler & Blank-Glyph Characters",
-      "intro": "Letters and patterns that render as empty glyphs — the braille blank and Hangul filler are the go-to picks for invisible game names.",
+      "intro": "Letters and patterns that render as empty glyphs. The braille blank and Hangul filler are the go-to picks for invisible game names.",
       "symbols": [
         {
           "char": "⠀",

@@ -7,8 +7,8 @@
   "canonical": "https://ultratextgen.com/it/symbol/simbolo-theta/",
   "breadcrumb": "Simbolo Theta",
   "hero_h1": "Simbolo Theta",
-  "hero_tagline": "La θ minuscola che indica un angolo in trigonometria, la Θ maiuscola della notazione Big-Theta della complessità computazionale, e la variante matematica ad anello aperto ϑ — la stessa lettera che gli ateniesi classici incidevano su una scheda per votare la morte.",
-  "intro": "Theta è l'ottava lettera dell'alfabeto greco, e il suo glifo minuscolo θ (U+03B8, GREEK SMALL LETTER THETA) — un cerchio attraversato da una barra orizzontale — porta con sé uno dei retroscena più cupi tra tutte le lettere. Nell'antichità classica theta era la \"lettera della morte\": stava per θάνατος (thánatos, \"morte\"), e i giurati ateniesi potevano incidere una theta su una scheda o un coccio per votare la condanna o l'esecuzione di un imputato, un uso talmente noto che il poeta romano Ennio l'avrebbe definita la lettera più sfortunata di tutte. La forma maiuscola Θ (U+0398) e una distinta variante ad anello aperto ϑ (U+03D1, GREEK THETA SYMBOL) completano la famiglia — ϑ è un glifo in stile corsivo usato in alcuni testi di fisica e matematica, non una lettera a sé. Oggi il compito di theta è ben più tranquillo: la θ minuscola è il simbolo standard per un angolo incognito o misurato in trigonometria e geometria, mentre la Θ maiuscola dà nome alla notazione Big-Theta, il \"limite stretto\" dell'analisi degli algoritmi che Donald Knuth formalizzò nel suo articolo del 1976 \"Big Omicron and Big Omega and Big Theta\". Nel sistema numerico greco, theta porta anche il valore 9.",
+  "hero_tagline": "La θ minuscola che indica un angolo in trigonometria, la Θ maiuscola della notazione Big-Theta della complessità computazionale, e la variante matematica ad anello aperto ϑ, la stessa lettera che gli ateniesi classici incidevano su una scheda per votare la morte.",
+  "intro": "Theta è l'ottava lettera dell'alfabeto greco, e il suo glifo minuscolo θ (U+03B8, GREEK SMALL LETTER THETA), un cerchio attraversato da una barra orizzontale, porta con sé uno dei retroscena più cupi tra tutte le lettere. Nell'antichità classica theta era la \"lettera della morte\": stava per θάνατος (thánatos, \"morte\"), e i giurati ateniesi potevano incidere una theta su una scheda o un coccio per votare la condanna o l'esecuzione di un imputato, un uso talmente noto che il poeta romano Ennio l'avrebbe definita la lettera più sfortunata di tutte. La forma maiuscola Θ (U+0398) e una distinta variante ad anello aperto ϑ (U+03D1, GREEK THETA SYMBOL) completano la famiglia. ϑ è un glifo in stile corsivo usato in alcuni testi di fisica e matematica, non una lettera a sé. Oggi il compito di theta è ben più tranquillo: la θ minuscola è il simbolo standard per un angolo incognito o misurato in trigonometria e geometria, mentre la Θ maiuscola dà nome alla notazione Big-Theta, il \"limite stretto\" dell'analisi degli algoritmi che Donald Knuth formalizzò nel suo articolo del 1976 \"Big Omicron and Big Omega and Big Theta\". Nel sistema numerico greco, theta porta anche il valore 9.",
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
@@ -34,7 +34,7 @@
     {
       "id": "the-theta-symbol",
       "label": "Il Simbolo Theta",
-      "h2": "Il Simbolo Theta — θ, Θ e ϑ",
+      "h2": "Il Simbolo Theta: θ, Θ e ϑ",
       "intro": "Theta si presenta in tre glifi che si copiano davvero: la θ minuscola di uso comune, la Θ maiuscola e la variante ad anello aperto ϑ riservata a matematica e fisica. Esiste anche una quarta forma, maiuscola e sbarrata, usata solo come simbolo matematico.",
       "symbols": [
         {
@@ -123,7 +123,7 @@
     {
       "href": "/it/symbol/simbolo-delta/",
       "title": "Simbolo Delta",
-      "desc": "Un'altra singola lettera greca con una vita matematica profonda — variazione, differenza e discriminante."
+      "desc": "Un'altra singola lettera greca con una vita matematica profonda: variazione, differenza e discriminante."
     }
   ]
 }

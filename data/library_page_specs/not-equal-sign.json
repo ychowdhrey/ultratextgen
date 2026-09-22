@@ -6,8 +6,8 @@
   "canonical": "https://ultratextgen.com/symbol/not-equal-sign/",
   "breadcrumb": "Not Equal Sign",
   "hero_h1": "Not Equal Sign",
-  "hero_tagline": "The equals sign with a slash through it (≠) — used in mathematics since at least Euler's era, the source of a whole family of negated-relation symbols, and left out of ASCII, which is why code uses != instead. Click any symbol to copy it instantly.",
-  "intro": "The not equal sign (≠, U+2260) combines the equals sign with a diagonal slash — Unicode's own decomposition shows it as literally “=” plus a combining slash overlay (U+0338), the same mark that produces a whole family of negated relations: ≁, ≉, ≢, ≮, ≯. The slash-negation convention is a distinct, later story from Robert Recorde's 1557 invention of “=” itself — the earliest known written use traces to Leonhard Euler's 18th-century correspondence, though historians of mathematics are careful to say the symbol was used by Euler, not necessarily invented by him. Because ASCII never allocated a slot for ≠, programming languages substituted their own stand-ins — != in C-family languages, <> in SQL and Pascal, ~= in Lua and MATLAB, /= in Fortran and Haskell — which is why the math symbol and the code you actually type are almost never the same character.",
+  "hero_tagline": "The equals sign with a slash through it (≠): used in mathematics since at least Euler's era, the source of a whole family of negated-relation symbols, and left out of ASCII, which is why code uses != instead. Click any symbol to copy it instantly.",
+  "intro": "The not equal sign (≠, U+2260) combines the equals sign with a diagonal slash: Unicode's own decomposition shows it as literally “=” plus a combining slash overlay (U+0338), the same mark that produces a whole family of negated relations: ≁, ≉, ≢, ≮, ≯. The slash-negation convention is a distinct, later story from Robert Recorde's 1557 invention of “=” itself: the earliest known written use traces to Leonhard Euler's 18th-century correspondence, though historians of mathematics are careful to say the symbol was used by Euler, not necessarily invented by him. Because ASCII never allocated a slot for ≠, programming languages substituted their own stand-ins (!= in C-family languages, <> in SQL and Pascal, ~= in Lua and MATLAB, /= in Fortran and Haskell) which is why the math symbol and the code you actually type are almost never the same character.",
   "date_published": "2026-07-13",
   "date_modified": "2026-07-13",
   "copy_pattern": "single",
@@ -44,7 +44,7 @@
       "id": "negated-relation-family",
       "label": "Negated Relations",
       "h2": "The Negated Relation Family",
-      "intro": "≠ isn't alone — the same diagonal-slash overlay negates several other relation symbols in Unicode's Mathematical Operators block.",
+      "intro": "≠ isn't alone: the same diagonal-slash overlay negates several other relation symbols in Unicode's Mathematical Operators block.",
       "symbols": [
         {
           "char": "≁",
@@ -72,7 +72,7 @@
       "id": "related-comparison-symbols",
       "label": "Comparison Symbols",
       "h2": "Related Comparison Symbols",
-      "intro": "The positive relations ≠ negates — useful when you need the un-slashed version instead.",
+      "intro": "The positive relations ≠ negates: useful when you need the un-slashed version instead.",
       "symbols": [
         {
           "char": "=",

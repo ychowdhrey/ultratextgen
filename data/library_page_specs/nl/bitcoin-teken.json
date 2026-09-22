@@ -14,8 +14,8 @@
   "canonical": "https://ultratextgen.com/nl/symbol/bitcoin-teken/",
   "breadcrumb": "Bitcoin-teken",
   "hero_h1": "Bitcoin-teken",
-  "hero_tagline": "Het valutateken voor Bitcoin (₿), in 2017 aan Unicode toegevoegd na echte vraag — niet te verwarren met de Thaise baht ฿ of de tickercode BTC. Klik op een teken om het direct te kopiëren.",
-  "intro": "Het Bitcoin-teken (₿, U+20BF) markeert een bedrag in Bitcoin — een prijs, een fooienpot, een donatieregel. Maar anders dan de oudere valutatekens die Unicode als routine-opmaak overnam, werd ₿ in 2017 toegevoegd als directe reactie op organische vraag van een snelgroeiende gebruikersgroep, en het wordt in bio's zowat even vaak als identiteitsbadge gedragen als daadwerkelijk gebruikt om een bedrag te schrijven.",
+  "hero_tagline": "Het valutateken voor Bitcoin (₿), in 2017 aan Unicode toegevoegd na echte vraag, niet te verwarren met de Thaise baht ฿ of de tickercode BTC. Klik op een teken om het direct te kopiëren.",
+  "intro": "Het Bitcoin-teken (₿, U+20BF) markeert een bedrag in Bitcoin: een prijs, een fooienpot, een donatieregel. Maar anders dan de oudere valutatekens die Unicode als routine-opmaak overnam, werd ₿ in 2017 toegevoegd als directe reactie op organische vraag van een snelgroeiende gebruikersgroep, en het wordt in bio's zowat even vaak als identiteitsbadge gedragen als daadwerkelijk gebruikt om een bedrag te schrijven.",
   "hreflang": [
     {
       "lang": "en",
@@ -51,7 +51,7 @@
       "id": "look-alikes",
       "label": "Look-alikes om te Vermijden",
       "h2": "Look-alikes & Verwarrende Tekens",
-      "intro": "Tekens waar ₿ regelmatig voor wordt aangezien — hetzelfde B-met-verticale-streep-silhouet, maar volledig andere tekens en codepunten.",
+      "intro": "Tekens waar ₿ regelmatig voor wordt aangezien: hetzelfde B-met-verticale-streep-silhouet, maar volledig andere tekens en codepunten.",
       "symbols": [
         {
           "char": "฿",
@@ -71,7 +71,7 @@
       "id": "andere-valuta",
       "label": "Andere Valutatekens",
       "h2": "Andere Valutatekens",
-      "intro": "De rest van de valutatekens van de wereld — de buren van ₿ in het Currency Symbols-blok en in de meeste prijsvelden.",
+      "intro": "De rest van de valutatekens van de wereld: de buren van ₿ in het Currency Symbols-blok en in de meeste prijsvelden.",
       "symbols": [
         {
           "char": "$",
@@ -118,7 +118,7 @@
     {
       "href": "/nl/symbol/roepieteken/",
       "title": "Indiase Roepieteken (₹)",
-      "desc": "Een recent, bewust gecreëerd valutateken — gekozen via een publieke wedstrijd in 2010."
+      "desc": "Een recent, bewust gecreëerd valutateken, gekozen via een publieke wedstrijd in 2010."
     }
   ]
 }

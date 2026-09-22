@@ -18,7 +18,7 @@
     "bs": {
       "icon": "◌̌",
       "dismiss": "Zatvori",
-      "default": "Tvoj tekst sadrži dijakritičke znakove. Podebljano, rukopisno, gotičko i većina drugih stilova sada zadržavaju <b>č</b>, <b>ć</b> i <b>ž</b> sa znakom — tek nekoliko njih (obrnuti tekst i <b>đ</b>, koje nema oblik sa znakom) vraća se na obična slova. <a href=\"/guide/fancy-fonts-and-accents/\">Koji stilovi zadržavaju dijakritiku →</a>"
+      "default": "Tvoj tekst sadrži dijakritičke znakove. Podebljano, rukopisno, gotičko i većina drugih stilova sada zadržavaju <b>č</b>, <b>ć</b> i <b>ž</b> sa znakom. Tek nekoliko njih (obrnuti tekst i <b>đ</b>, koje nema oblik sa znakom) vraća se na obična slova. <a href=\"/guide/fancy-fonts-and-accents/\">Koji stilovi zadržavaju dijakritiku →</a>"
     },
     "cs": {
       "icon": "◌̌",
@@ -27,20 +27,20 @@
     },
     "da": {
       "dismiss": "Luk",
-      "default": "Din tekst indeholder accenttegn. Fed, skrift, gotisk og de fleste andre stilarter bevarer nu <b>é</b> og <b>å</b> med tegnet — enkelte (omvendt tekst, og bogstaver uden accentform som <b>æ ø ł ß</b>) falder tilbage til almindelige bogstaver. <a href=\"/guide/fancy-fonts-and-accents/\">Hvilke stilarter bevarer accenter →</a>",
+      "default": "Din tekst indeholder accenttegn. Fed, skrift, gotisk og de fleste andre stilarter bevarer nu <b>é</b> og <b>å</b> med tegnet. Enkelte (omvendt tekst, og bogstaver uden accentform som <b>æ ø ł ß</b>) falder tilbage til almindelige bogstaver. <a href=\"/guide/fancy-fonts-and-accents/\">Hvilke stilarter bevarer accenter →</a>",
       "icon": "◌́"
     },
     "de": {
       "icon": "◌̈",
       "dismiss": "Schließen",
-      "default": "Dein Text enthält Umlaute oder Akzente. Fett, Schreibschrift, Fraktur und die meisten anderen Stile behalten <b>ä</b>, <b>ö</b> und <b>ü</b> jetzt mit dem Zeichen — nur wenige (Kopfüber-Text, und <b>ß</b>, das keine Form mit Zeichen hat) fallen auf einfache Buchstaben zurück. <a href=\"/guide/fancy-fonts-and-accents/\">Welche Stile Umlaute behalten →</a>",
-      "upsideDown": "Dein Text enthält Umlaute oder Akzente. Kopfüber-Text hat für <b>ä ö ü ß</b> keine gedrehte Form — diese Buchstaben bleiben unverändert und stehen aufrecht im umgedrehten Text. Fett, Schreibschrift und Fraktur behalten die Zeichen. <a href=\"/guide/fancy-fonts-and-accents/\">Welche Stile Umlaute behalten →</a>"
+      "default": "Dein Text enthält Umlaute oder Akzente. Fett, Schreibschrift, Fraktur und die meisten anderen Stile behalten <b>ä</b>, <b>ö</b> und <b>ü</b> jetzt mit dem Zeichen. Nur wenige (Kopfüber-Text, und <b>ß</b>, das keine Form mit Zeichen hat) fallen auf einfache Buchstaben zurück. <a href=\"/guide/fancy-fonts-and-accents/\">Welche Stile Umlaute behalten →</a>",
+      "upsideDown": "Dein Text enthält Umlaute oder Akzente. Kopfüber-Text hat für <b>ä ö ü ß</b> keine gedrehte Form. Diese Buchstaben bleiben unverändert und stehen aufrecht im umgedrehten Text. Fett, Schreibschrift und Fraktur behalten die Zeichen. <a href=\"/guide/fancy-fonts-and-accents/\">Welche Stile Umlaute behalten →</a>"
     },
     "en": {
       "dismiss": "Dismiss",
-      "default": "Your text has accent marks. Bold, script, gothic and most other styles now keep <b>é</b> and <b>ữ</b> styled — a few (upside-down, and letters like <b>ł đ ø ß</b> with no accent form) still fall back to plain. <a href=\"/guide/fancy-fonts-and-accents/\">See which styles handle accents →</a>",
+      "default": "Your text has accent marks. Bold, script, gothic and most other styles now keep <b>é</b> and <b>ữ</b> styled. A few (upside-down, and letters like <b>ł đ ø ß</b> with no accent form) still fall back to plain. <a href=\"/guide/fancy-fonts-and-accents/\">See which styles handle accents →</a>",
       "icon": "◌́",
-      "upsideDown": "Your text has accent marks. Upside-down text has no flipped form for <b>é ñ ß ł</b> — those letters pass through unchanged, so they stay upright inside the flipped text. Bold, script and gothic styles do keep their marks. <a href=\"/guide/fancy-fonts-and-accents/\">See which styles handle accents →</a>"
+      "upsideDown": "Your text has accent marks. Upside-down text has no flipped form for <b>é ñ ß ł</b>. Those letters pass through unchanged, so they stay upright inside the flipped text. Bold, script and gothic styles do keep their marks. <a href=\"/guide/fancy-fonts-and-accents/\">See which styles handle accents →</a>"
     },
     "es": {
       "icon": "◌́",
@@ -61,7 +61,7 @@
     "hr": {
       "icon": "◌̌",
       "dismiss": "Zatvori",
-      "default": "Tvoj tekst sadrži dijakritičke znakove. Podebljano, rukopisno, gotičko i većina drugih stilova sada zadržavaju <b>č</b>, <b>ć</b> i <b>ž</b> sa znakom — tek nekoliko njih (obrnuti tekst i <b>đ</b>, koje nema oblik sa znakom) vraća se na obična slova. <a href=\"/guide/fancy-fonts-and-accents/\">Koji stilovi zadržavaju dijakritiku →</a>"
+      "default": "Tvoj tekst sadrži dijakritičke znakove. Podebljano, rukopisno, gotičko i većina drugih stilova sada zadržavaju <b>č</b>, <b>ć</b> i <b>ž</b> sa znakom. Tek nekoliko njih (obrnuti tekst i <b>đ</b>, koje nema oblik sa znakom) vraća se na obična slova. <a href=\"/guide/fancy-fonts-and-accents/\">Koji stilovi zadržavaju dijakritiku →</a>"
     },
     "hu": {
       "icon": "◌́",
@@ -70,18 +70,18 @@
     },
     "it": {
       "dismiss": "Chiudi",
-      "default": "Il tuo testo contiene lettere accentate. Grassetto, corsivo, gotico e quasi tutti gli altri stili ora mantengono <b>à</b>, <b>è</b> e <b>ù</b> con l’accento — solo alcuni (il testo capovolto, e lettere senza forma accentata come <b>ł đ ø ß</b>) tornano in lettere normali. <a href=\"/guide/fancy-fonts-and-accents/\">Quali stili tengono gli accenti →</a>",
+      "default": "Il tuo testo contiene lettere accentate. Grassetto, corsivo, gotico e quasi tutti gli altri stili ora mantengono <b>à</b>, <b>è</b> e <b>ù</b> con l’accento. Solo alcuni (il testo capovolto, e lettere senza forma accentata come <b>ł đ ø ß</b>) tornano in lettere normali. <a href=\"/guide/fancy-fonts-and-accents/\">Quali stili tengono gli accenti →</a>",
       "upsideDown": "Il tuo testo contiene lettere accentate. Alcune lettere come <b>à</b>, <b>è</b> o <b>ù</b> non hanno un gemello capovolto in Unicode e restano dritte. <a href=\"/guide/fancy-fonts-and-accents/\">Come si comportano gli accenti →</a>",
       "icon": "◌́"
     },
     "nl": {
       "dismiss": "Sluiten",
-      "default": "Je tekst bevat accenten of een trema. Vet, sierlijk, gotisch en bijna alle andere stijlen behouden nu <b>ë</b>, <b>é</b> en <b>ï</b> mét het teken — een enkele (omgekeerde tekst, en letters zonder accentvorm zoals <b>ł đ ø ß</b>) valt terug op gewone letters. <a href=\"/guide/fancy-fonts-and-accents/\">Welke stijlen accenten houden →</a>",
+      "default": "Je tekst bevat accenten of een trema. Vet, sierlijk, gotisch en bijna alle andere stijlen behouden nu <b>ë</b>, <b>é</b> en <b>ï</b> mét het teken. Een enkele (omgekeerde tekst, en letters zonder accentvorm zoals <b>ł đ ø ß</b>) valt terug op gewone letters. <a href=\"/guide/fancy-fonts-and-accents/\">Welke stijlen accenten houden →</a>",
       "icon": "◌̈"
     },
     "no": {
       "dismiss": "Lukk",
-      "default": "Teksten din inneholder aksenttegn. Fet, skrift, gotisk og de fleste andre stilene beholder nå <b>é</b> og <b>å</b> med tegnet — noen få (opp-ned-tekst, og bokstaver uten aksentform som <b>æ ø ł ß</b>) faller tilbake til vanlige bokstaver. <a href=\"/guide/fancy-fonts-and-accents/\">Hvilke stiler beholder aksenter →</a>",
+      "default": "Teksten din inneholder aksenttegn. Fet, skrift, gotisk og de fleste andre stilene beholder nå <b>é</b> og <b>å</b> med tegnet. Noen få (opp-ned-tekst, og bokstaver uten aksentform som <b>æ ø ł ß</b>) faller tilbake til vanlige bokstaver. <a href=\"/guide/fancy-fonts-and-accents/\">Hvilke stiler beholder aksenter →</a>",
       "icon": "◌́"
     },
     "pl": {
@@ -109,11 +109,11 @@
     "sr": {
       "icon": "◌̌",
       "dismiss": "Zatvori",
-      "default": "Tvoj tekst sadrži dijakritičke znakove. Podebljano, rukopisno, gotičko i većina drugih stilova sada zadržavaju <b>č</b>, <b>ć</b> i <b>ž</b> sa znakom — tek nekoliko njih (obrnuti tekst i <b>đ</b>, koje nema oblik sa znakom) vraća se na obična slova. <a href=\"/guide/fancy-fonts-and-accents/\">Koji stilovi zadržavaju dijakritiku →</a>"
+      "default": "Tvoj tekst sadrži dijakritičke znakove. Podebljano, rukopisno, gotičko i većina drugih stilova sada zadržavaju <b>č</b>, <b>ć</b> i <b>ž</b> sa znakom. Tek nekoliko njih (obrnuti tekst i <b>đ</b>, koje nema oblik sa znakom) vraća se na obična slova. <a href=\"/guide/fancy-fonts-and-accents/\">Koji stilovi zadržavaju dijakritiku →</a>"
     },
     "sv": {
       "dismiss": "Stäng",
-      "default": "Din text innehåller accenttecken. Fet, skrivstil, gotisk och de flesta andra stilar behåller nu <b>å</b>, <b>ä</b> och <b>ö</b> med tecknet — några få (upp-och-nedvänd text, och bokstäver utan accentform som <b>ł đ ø ß</b>) faller tillbaka till vanliga bokstäver. <a href=\"/guide/fancy-fonts-and-accents/\">Vilka stilar behåller accenter →</a>",
+      "default": "Din text innehåller accenttecken. Fet, skrivstil, gotisk och de flesta andra stilar behåller nu <b>å</b>, <b>ä</b> och <b>ö</b> med tecknet. Några få (upp-och-nedvänd text, och bokstäver utan accentform som <b>ł đ ø ß</b>) faller tillbaka till vanliga bokstäver. <a href=\"/guide/fancy-fonts-and-accents/\">Vilka stilar behåller accenter →</a>",
       "icon": "◌́"
     },
     "tr": {

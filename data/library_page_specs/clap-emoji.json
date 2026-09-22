@@ -6,7 +6,7 @@
   "breadcrumb": "Clap Emoji",
   "hero_h1": "Clap Emoji",
   "hero_tagline": "The 👏 clapping hands emoji for praise, applause, and the word-by-word emphasis meme, plus skin tone variants and one-click combo sets. Click any symbol to copy it instantly.",
-  "intro": "The clap emoji 👏 is one of the most-used hand gestures on the internet, and it does two very different jobs. Used once at the end of a sentence, it reads as straightforward applause or praise — nice work, well said, congrats. But dropped between every word in a sentence, it becomes the internet's emphasis meme: 'THIS 👏 IS 👏 NOT 👏 OKAY' or 'STOP 👏 TALKING 👏 OVER 👏 ME' turns 👏 into punctuation that mimics someone clapping out each syllable for emphasis. This page covers both uses — the plain applause glyph in every skin tone, ready-made emphasis-format combos you can copy and swap words into, and pairing emoji for captions, comments, and DMs. If you want the full range of hand gestures instead of just clapping, the hand symbols library linked below has the complete set.",
+  "intro": "The clap emoji 👏 is one of the most-used hand gestures on the internet, and it does two very different jobs. Used once at the end of a sentence, it reads as straightforward applause or praise: nice work, well said, congrats. But dropped between every word in a sentence, it becomes the internet's emphasis meme: 'THIS 👏 IS 👏 NOT 👏 OKAY' or 'STOP 👏 TALKING 👏 OVER 👏 ME' turns 👏 into punctuation that mimics someone clapping out each syllable for emphasis. This page covers both uses: the plain applause glyph in every skin tone, ready-made emphasis-format combos you can copy and swap words into, and pairing emoji for captions, comments, and DMs. If you want the full range of hand gestures instead of just clapping, the hand symbols library linked below has the complete set.",
   "date_published": "2026-07-13",
   "date_modified": "2026-07-13",
   "copy_pattern": "collection",
@@ -57,7 +57,7 @@
       "id": "clap-kaomoji",
       "label": "Kaomoji",
       "h2": "Clapping & Cheering Kaomoji",
-      "intro": "Text-only kaomoji that pair with 👏 for celebration and cheering — handy on platforms or fonts where the emoji itself doesn't render.",
+      "intro": "Text-only kaomoji that pair with 👏 for celebration and cheering, handy on platforms or fonts where the emoji itself doesn't render.",
       "symbols": [
         { "char": "\\(^o^)/", "label": "Cheering Kaomoji" },
         { "char": "ヽ(´▽`)/", "label": "Celebrating Kaomoji" },
@@ -71,7 +71,7 @@
     "id": "combo-sets",
     "label": "Combo Sets",
     "h2": "Clap Emoji Combo Sets",
-    "intro": "Ready-made clap combos — including the word-by-word emphasis format — copy a full set with one click and paste it straight into a caption, comment, or DM."
+    "intro": "Ready-made clap combos, including the word-by-word emphasis format, copy a full set with one click and paste it straight into a caption, comment, or DM."
   },
   "collection_container_id": "clapSetsContainer",
   "collections": [
@@ -120,7 +120,7 @@
     {
       "href": "/library/hand-symbols/",
       "title": "Hand Symbol Collection",
-      "desc": "The full range of hand gesture emoji and symbols — raising hands, handshake, folded hands, and more."
+      "desc": "The full range of hand gesture emoji and symbols: raising hands, handshake, folded hands, and more."
     },
     {
       "href": "/library/thumbs-up-emoji/",

@@ -14,8 +14,8 @@
   "canonical": "https://ultratextgen.com/nl/symbol/kwadraat-en-derdemacht/",
   "breadcrumb": "Kwadraat & Derde Macht",
   "hero_h1": "Kwadraat (²) & Derde Macht (³)",
-  "hero_tagline": "De twee superscript-cijfers die ouder zijn dan de rest van de superscript-set — voor exponenten, eenheidsafkortingen en de notatie ‘x in het kwadraat’. Klik op een teken om het direct te kopiëren.",
-  "intro": "² en ³ (superscript twee en drie, U+00B2 en U+00B3) zijn de exponenttekens achter x², E=mc² en eenheidsafkortingen zoals m² en cm³. In tegenstelling tot de rest van de superscript-cijfers maken ze al sinds de jaren 80 deel uit van de standaard Latin-1-tekenset — daarom worden ze op veel meer plekken correct weergegeven dan ⁰, ¹ of ⁴–⁹.",
+  "hero_tagline": "De twee superscript-cijfers die ouder zijn dan de rest van de superscript-set, voor exponenten, eenheidsafkortingen en de notatie ‘x in het kwadraat’. Klik op een teken om het direct te kopiëren.",
+  "intro": "² en ³ (superscript twee en drie, U+00B2 en U+00B3) zijn de exponenttekens achter x², E=mc² en eenheidsafkortingen zoals m² en cm³. In tegenstelling tot de rest van de superscript-cijfers maken ze al sinds de jaren 80 deel uit van de standaard Latin-1-tekenset. Daarom worden ze op veel meer plekken correct weergegeven dan ⁰, ¹ of ⁴–⁹.",
   "hreflang": [
     {
       "lang": "en",
@@ -51,7 +51,7 @@
       "id": "overige-superscript-cijfers",
       "label": "Overige Superscript-cijfers",
       "h2": "De Rest van de Superscript-cijfers",
-      "intro": "De overige superscript-cijfers — pas veel later aan Unicode toegevoegd, in een ander blok dan ² en ³.",
+      "intro": "De overige superscript-cijfers: pas veel later aan Unicode toegevoegd, in een ander blok dan ² en ³.",
       "symbols": [
         {
           "char": "⁰",
@@ -91,7 +91,7 @@
       "id": "eenheidsafkortingen",
       "label": "Veelgebruikte Eenheidsafkortingen",
       "h2": "Veelgebruikte Kwadraat- & Derdemacht-eenheden",
-      "intro": "De meest gekopieerde praktijktoepassingen van ² en ³ — oppervlakte- en volume-eenheden.",
+      "intro": "De meest gekopieerde praktijktoepassingen van ² en ³: oppervlakte- en volume-eenheden.",
       "symbols": [
         {
           "char": "m²",

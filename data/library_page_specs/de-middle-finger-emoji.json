@@ -8,7 +8,7 @@
  "breadcrumb": "Mittelfinger-Emoji",
  "hero_h1": "Mittelfinger-Emoji",
  "hero_tagline": "🖕 in allen Hauttönen, dazu die leiseren Arten, dasselbe zu sagen.",
- "intro": "🖕 ist das eindeutigste Ablehnungszeichen im Emoji-Satz — und das am häufigsten gefilterte. Diese Seite hat es in allen Hauttönen, dazu die Zeichen für Trotz und Genervtheit, die dieselbe Haltung ausdrücken, ohne gemeldet zu werden.",
+ "intro": "🖕 ist das eindeutigste Ablehnungszeichen im Emoji-Satz, und das am häufigsten gefilterte. Diese Seite hat es in allen Hauttönen, dazu die Zeichen für Trotz und Genervtheit, die dieselbe Haltung ausdrücken, ohne gemeldet zu werden.",
  "sections": [
   {
    "id": "finger",
@@ -169,11 +169,11 @@
  "editorial_sections": [
   {
    "h2": "Warum das Zeichen so spät kam",
-   "body": "Emojis stammen aus japanischen Mobilfunkzeichensätzen der Neunzigerjahre, und dort war eine Beleidigungsgeste nicht vorgesehen. Als Unicode den Satz 2010 vereinheitlichte, blieb die Lücke zunächst bestehen — 🖕 wurde erst 2014 nachgereicht, nach längerer Diskussion und mit dem neutral gehaltenen Namen „Reversed Hand with Middle Finger Extended“. Die Zurückhaltung wirkt bis heute nach: mehrere Plattformen filtern das Zeichen, obwohl es regulär kodiert ist."
+   "body": "Emojis stammen aus japanischen Mobilfunkzeichensätzen der Neunzigerjahre, und dort war eine Beleidigungsgeste nicht vorgesehen. Als Unicode den Satz 2010 vereinheitlichte, blieb die Lücke zunächst bestehen: 🖕 wurde erst 2014 nachgereicht, nach längerer Diskussion und mit dem neutral gehaltenen Namen „Reversed Hand with Middle Finger Extended“. Die Zurückhaltung wirkt bis heute nach: mehrere Plattformen filtern das Zeichen, obwohl es regulär kodiert ist."
   },
   {
    "h2": "Wo Kaomoji das Emoji schlagen",
-   "body": "Genau weil 🖕 gefiltert wird, haben sich die Textvarianten gehalten. 凸(￣ヘ￣)凸 besteht aus gewöhnlichen Unicode-Zeichen, die kein Filter als Geste erkennt — es passiert Namensprüfungen und Kommentarfilter, an denen das Emoji scheitert. Das ist kein Umgehungstrick, sondern schlicht eine Eigenheit der Filter: sie prüfen Codepoints, nicht Bedeutung."
+   "body": "Genau weil 🖕 gefiltert wird, haben sich die Textvarianten gehalten. 凸(￣ヘ￣)凸 besteht aus gewöhnlichen Unicode-Zeichen, die kein Filter als Geste erkennt: es passiert Namensprüfungen und Kommentarfilter, an denen das Emoji scheitert. Das ist kein Umgehungstrick, sondern schlicht eine Eigenheit der Filter: sie prüfen Codepoints, nicht Bedeutung."
   }
  ],
  "related": [

@@ -7,7 +7,7 @@
   "breadcrumb": "Biohazard Symbol",
   "hero_h1": "Biohazard Symbol",
   "hero_tagline": "The trefoil-and-circles sign (☣) engineered in a 1966 Dow Chemical lab to be instantly memorable and completely meaningless on its own. Click any symbol to copy it instantly.",
-  "intro": "The biohazard symbol (☣, U+2623) marks anything biologically dangerous — contaminated waste, infectious samples, quarantine zones. Unlike most hazard signs, which evolved slowly from older pictograms, this one was built from scratch in a single 1966 design project with an unusual brief: make it stick in people's memory before they even know what it means.",
+  "intro": "The biohazard symbol (☣, U+2623) marks anything biologically dangerous: contaminated waste, infectious samples, quarantine zones. Unlike most hazard signs, which evolved slowly from older pictograms, this one was built from scratch in a single 1966 design project with an unusual brief: make it stick in people's memory before they even know what it means.",
   "date_published": "2026-07-12",
   "date_modified": "2026-07-12",
   "copy_pattern": "single",
@@ -16,7 +16,7 @@
       "id": "biohazard-sign",
       "label": "Biohazard",
       "h2": "Biohazard Sign",
-      "intro": "The Unicode biohazard character, ready to paste anywhere — bios, gaming tags, or the real thing.",
+      "intro": "The Unicode biohazard character, ready to paste anywhere: bios, gaming tags, or the real thing.",
       "symbols": [
         { "char": "☣", "label": "Biohazard Sign" },
         { "char": "☣️", "label": "Biohazard Emoji" }
@@ -26,7 +26,7 @@
       "id": "radiological-lab-symbols",
       "label": "Radiological & Lab Symbols",
       "h2": "Radiological & Lab Hazard Symbols",
-      "intro": "Biohazard's closest sibling symbols — the ones it's most often mistaken for or paired with in real signage.",
+      "intro": "Biohazard's closest sibling symbols: the ones it's most often mistaken for or paired with in real signage.",
       "symbols": [
         { "char": "☢", "label": "Radioactive Sign" },
         { "char": "⚡", "label": "High Voltage" },

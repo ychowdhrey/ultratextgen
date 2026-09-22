@@ -6,7 +6,7 @@
   "breadcrumb": "Movie Night Emojis",
   "hero_h1": "Movie Night Emojis",
   "hero_tagline": "Popcorn, clapper boards, cozy couches, and ready-made film combo sets for your next watch party. Click any emoji to copy it instantly.",
-  "intro": "Movie night emojis set the scene before the opening credits roll. This page collects the classic cinema set — 🍿 popcorn, 🎬 clapper board, 🎥 movie camera, 📺 television — alongside snack, cozy-night-in, and genre-reaction emojis people drop into Letterboxd bios, group-chat watch-party invites, and Instagram captions. Scroll down for one-click combo sets covering everything from horror marathons to rom-com evenings.",
+  "intro": "Movie night emojis set the scene before the opening credits roll. This page collects the classic cinema set (🍿 popcorn, 🎬 clapper board, 🎥 movie camera, 📺 television) alongside snack, cozy-night-in, and genre-reaction emojis people drop into Letterboxd bios, group-chat watch-party invites, and Instagram captions. Scroll down for one-click combo sets covering everything from horror marathons to rom-com evenings.",
   "date_published": "2026-06-12",
   "date_modified": "2026-06-12",
   "copy_pattern": "collection",
@@ -65,7 +65,7 @@
       "id": "genre-reactions",
       "label": "Genres",
       "h2": "Genre & Reaction Emojis",
-      "intro": "Signal the genre — horror, rom-com, sci-fi — or react to the plot twist.",
+      "intro": "Signal the genre (horror, rom-com, sci-fi) or react to the plot twist.",
       "symbols": [
         { "char": "😱", "label": "Face Screaming in Fear" },
         { "char": "👻", "label": "Ghost" },
@@ -100,7 +100,7 @@
     "id": "combo-sets",
     "label": "Combo Sets",
     "h2": "Movie Night Combo Sets",
-    "intro": "Copy a full themed movie-night combo in one click — ready for bios, captions, and watch-party invites."
+    "intro": "Copy a full themed movie-night combo in one click: ready for bios, captions, and watch-party invites."
   },
   "collection_container_id": "movieNightSetsContainer",
   "collections": [
@@ -164,7 +164,7 @@
     {
       "href": "/library/object-emojis/",
       "title": "Object Emojis",
-      "desc": "Everyday item emojis — cameras, phones, pins, and more."
+      "desc": "Everyday item emojis: cameras, phones, pins, and more."
     }
   ]
 }

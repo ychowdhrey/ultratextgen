@@ -5,7 +5,7 @@
   "breadcrumb": "Tastatur-Symbole",
   "hero_h1": "Tastatur-Symbole",
   "hero_tagline": "Tasten so, wie sie in Handbüchern gesetzt werden: ⌘ ⌥ ⇧ ⌫ ⇥ und die Pfeile, fertig zum Einfügen.",
-  "intro": "Wer eine Tastenkombination aufschreibt — in einer Anleitung, einer README, einer Nachricht — braucht die echten Tastenzeichen statt der Wörter. Es sind Unicode-Zeichen und funktionieren überall ohne Bild. Zum Kopieren anklicken.",
+  "intro": "Wer eine Tastenkombination aufschreibt (in einer Anleitung, einer README, einer Nachricht) braucht die echten Tastenzeichen statt der Wörter. Es sind Unicode-Zeichen und funktionieren überall ohne Bild. Zum Kopieren anklicken.",
   "copy_pattern": "single",
   "sections": [
     {
@@ -139,7 +139,7 @@
   "editorial_sections": [
     {
       "h2": "Warum Tasten ein Eigenes Zeichen Haben",
-      "body": "Diese Symbole stehen in Unicode, weil die technische Dokumentation sie lange vor dem Web brauchte: Ein gedrucktes Handbuch konnte nicht bei jeder genannten Tastenkombination eine Abbildung einfügen. Deshalb sind ⌘, ⌥ und ⇧ echte Zeichen, die sich wie Buchstaben in eine Textzeile setzen lassen — und deshalb bleiben sie auch in einem Chat lesbar, statt zum Anhang zu werden."
+      "body": "Diese Symbole stehen in Unicode, weil die technische Dokumentation sie lange vor dem Web brauchte: Ein gedrucktes Handbuch konnte nicht bei jeder genannten Tastenkombination eine Abbildung einfügen. Deshalb sind ⌘, ⌥ und ⇧ echte Zeichen, die sich wie Buchstaben in eine Textzeile setzen lassen, und deshalb bleiben sie auch in einem Chat lesbar, statt zum Anhang zu werden."
     }
   ],
   "related": [
@@ -151,12 +151,12 @@
     {
       "href": "/de/library/kaomoji/",
       "title": "Kaomoji &amp; Text-Emoticons",
-      "desc": "Kaomoji kopieren und einfügen — Text-Emoticons im japanischen Stil aus Unicode-Zeichen. Fröhliche Gesichter…"
+      "desc": "Kaomoji kopieren und einfügen: Text-Emoticons im japanischen Stil aus Unicode-Zeichen. Fröhliche Gesichter…"
     },
     {
       "href": "/de/library/alt-codes/",
       "title": "Alt-Codes für Windows",
-      "desc": "Die wichtigsten Alt-Codes, um Sonderzeichen unter Windows zu tippen — vom großen Eszett ẞ über deutsche Uml…"
+      "desc": "Die wichtigsten Alt-Codes, um Sonderzeichen unter Windows zu tippen: vom großen Eszett ẞ über deutsche Uml…"
     }
   ],
   "canonical": "https://ultratextgen.com/de/library/tastatur-symbole/",

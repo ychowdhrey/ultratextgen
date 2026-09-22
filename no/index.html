@@ -368,7 +368,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <!-- Accent-aware hint: shows only when the input contains diacritics -->
         <div class="accent-notice" id="accentNotice" role="note" hidden="">
           <span class="accent-notice-icon" aria-hidden="true">◌́</span>
-          <span class="accent-notice-text">Teksten din inneholder aksenttegn. Fet, skrift, gotisk og de fleste andre stilene beholder nå <b>é</b> og <b>å</b> med tegnet — noen få (opp-ned-tekst, og bokstaver uten aksentform som <b>æ ø ł ß</b>) faller tilbake til vanlige bokstaver. <a href="/guide/fancy-fonts-and-accents/">Hvilke stiler beholder aksenter →</a></span>
+          <span class="accent-notice-text">Teksten din inneholder aksenttegn. Fet, skrift, gotisk og de fleste andre stilene beholder nå <b>é</b> og <b>å</b> med tegnet. Noen få (opp-ned-tekst, og bokstaver uten aksentform som <b>æ ø ł ß</b>) faller tilbake til vanlige bokstaver. <a href="/guide/fancy-fonts-and-accents/">Hvilke stiler beholder aksenter →</a></span>
           <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Lukk">✕</button>
         </div>
 
@@ -412,7 +412,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <section class="editorial-section" aria-labelledby="intro-heading">
     <h2 id="intro-heading">Hva denne tekstgeneratoren faktisk gjør</h2>
     <p>
-      UltraTextGen er en gratis Unicode-skriftgenerator. Du skriver vanlig tekst, og hver bokstav byttes ut med et stylet tegn som allerede finnes i Unicode-standarden — du kopierer resultatet dit du vil ha det: en Instagram-bio, en TikTok-bildetekst, et Discord-visningsnavn, en LinkedIn-overskrift, en Roblox-profil, en WhatsApp-status, til og med en e-post-emnelinje. Fordi de stylede bokstavene <em>er</em> teksten — ikke en fontfil telefonen din må laste inn, og ikke Markdown som blir fjernet — overlever de copy-paste i apper som ikke tillater formatering.
+      UltraTextGen er en gratis Unicode-skriftgenerator. Du skriver vanlig tekst, og hver bokstav byttes ut med et stylet tegn som allerede finnes i Unicode-standarden: du kopierer resultatet dit du vil ha det: en Instagram-bio, en TikTok-bildetekst, et Discord-visningsnavn, en LinkedIn-overskrift, en Roblox-profil, en WhatsApp-status, til og med en e-post-emnelinje. Fordi de stylede bokstavene <em>er</em> teksten, ikke en fontfil telefonen din må laste inn, og ikke Markdown som blir fjernet, overlever de copy-paste i apper som ikke tillater formatering.
     </p>
     <p>
       Skriv <code>hello</code>, og du får:
@@ -430,31 +430,31 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       oʅʅǝɥ (opp ned),
       ollǝɥ (speilvendt),
       h̷̢̛e̴̜͝l̸̼͝l̷͔͠o̵̗͝ (Zalgo / glitch),
-      og rundt 50 til — inkludert luftige aesthetic-stiler som <strong>𝓱 𝓮 𝓵 𝓵 𝓸</strong> folk bruker til Pinterest-pins og Y2K-aktige brukernavn.
+      og rundt 50 til, inkludert luftige aesthetic-stiler som <strong>𝓱 𝓮 𝓵 𝓵 𝓸</strong> folk bruker til Pinterest-pins og Y2K-aktige brukernavn.
     </p>
     <h3>Hvor disse skriftene faktisk fungerer (og hvor de ikke gjør det)</h3>
     <p>
       Kompatibilitet varierer fordi Unicode-visning avhenger av enhetens font, ikke nettsiden. Her er hva vi har testet:
     </p>
     <ul class="compat-list">
-      <li><strong>Instagram</strong> — bio, bildetekst, kommentarer, story-klistremerker: fungerer i alle stiler. Brukernavnfeltet: fungerer bare med latinske stiler (fet, kursiv, håndskrift, boble); godtar ikke Zalgo eller fullwidth.</li>
-      <li><strong>TikTok</strong> — bio, bildetekst, kommentarer, videobeskrivelse: fungerer i alle kjernestiler. «Kallenavn»-feltet er mer tillatende enn Instagrams brukernavnfelt.</li>
-      <li><strong>Discord</strong> — serverkallenavn, visningsnavn, meldinger, «Om meg»: Unicode-skrifter fungerer uten Nitro. Markdown-fet (<code>**tekst**</code>) vises bare inne i meldinger; Unicode-fet vises <em>overalt</em>, også i kallenavnet ditt.</li>
-      <li><strong>LinkedIn</strong> — overskrift, Om-seksjon, innleggstekst: fet, kursiv og small caps vises pålitelig. Unngå Zalgo og sterkt dekorerte stiler på en profesjonell profil — de utløser rekrutteringsfiltre og skjermleser-problemer.</li>
-      <li><strong>WhatsApp</strong> — status, gruppenavn, kringkastinger: alle Unicode-skrifter fungerer. WhatsApps egne <code>*fet*</code>, <code>_kursiv_</code> og <code>~gjennomstreket~</code> vises bare inne i chat-meldinger, så Unicode er eneste alternativ for status og gruppenavn.</li>
-      <li><strong>X (Twitter)</strong> — visningsnavn, bio, tweets: fungerer overalt. Enkelte Zalgo-stiler blir visuelt klippet på mobil.</li>
-      <li><strong>Snapchat, Pinterest, Telegram, Signal, iMessage</strong> — bioer, bildetekster, meldinger: alt fungerer.</li>
-      <li><strong>Roblox, Steam, Minecraft, Fortnite</strong> — visningsnavn godtar vanligvis fet/kursiv/gotisk. Hver plattforms navnefilter avviser ulike tegn — prøv en annen stil hvis én blir blokkert.</li>
-      <li><strong>E-post-emnelinjer</strong> (Gmail, Outlook, Apple Mail) — viser Unicode-skrifter som skrevet. Dette er det ene stedet hvor det ikke finnes noe riktekst-alternativ.</li>
+      <li><strong>Instagram</strong>: bio, bildetekst, kommentarer, story-klistremerker: fungerer i alle stiler. Brukernavnfeltet: fungerer bare med latinske stiler (fet, kursiv, håndskrift, boble); godtar ikke Zalgo eller fullwidth.</li>
+      <li><strong>TikTok</strong>: bio, bildetekst, kommentarer, videobeskrivelse: fungerer i alle kjernestiler. «Kallenavn»-feltet er mer tillatende enn Instagrams brukernavnfelt.</li>
+      <li><strong>Discord</strong>: serverkallenavn, visningsnavn, meldinger, «Om meg»: Unicode-skrifter fungerer uten Nitro. Markdown-fet (<code>**tekst**</code>) vises bare inne i meldinger; Unicode-fet vises <em>overalt</em>, også i kallenavnet ditt.</li>
+      <li><strong>LinkedIn</strong>: overskrift, Om-seksjon, innleggstekst: fet, kursiv og small caps vises pålitelig. Unngå Zalgo og sterkt dekorerte stiler på en profesjonell profil: de utløser rekrutteringsfiltre og skjermleser-problemer.</li>
+      <li><strong>WhatsApp</strong>: status, gruppenavn, kringkastinger: alle Unicode-skrifter fungerer. WhatsApps egne <code>*fet*</code>, <code>_kursiv_</code> og <code>~gjennomstreket~</code> vises bare inne i chat-meldinger, så Unicode er eneste alternativ for status og gruppenavn.</li>
+      <li><strong>X (Twitter)</strong>: visningsnavn, bio, tweets: fungerer overalt. Enkelte Zalgo-stiler blir visuelt klippet på mobil.</li>
+      <li><strong>Snapchat, Pinterest, Telegram, Signal, iMessage</strong>: bioer, bildetekster, meldinger: alt fungerer.</li>
+      <li><strong>Roblox, Steam, Minecraft, Fortnite</strong>: visningsnavn godtar vanligvis fet/kursiv/gotisk. Hver plattforms navnefilter avviser ulike tegn. Prøv en annen stil hvis én blir blokkert.</li>
+      <li><strong>E-post-emnelinjer</strong> (Gmail, Outlook, Apple Mail): viser Unicode-skrifter som skrevet. Dette er det ene stedet hvor det ikke finnes noe riktekst-alternativ.</li>
       <li><strong>Fungerer ikke:</strong> Microsoft Word, Google Docs’ brødtekst-styling (bruk verktøylinjen i stedet), utskrevne dokumenter med ikke-Unicode-skrifter, og steder der mottakerens enhet mangler tegnet (sjeldent på telefoner fra 2018 eller nyere).</li>
     </ul>
     <h3>Hvorfor Unicode-skrifter ≠ vanlige skrifttyper</h3>
     <p>
-      En vanlig skrifttype (Helvetica, Arial, LinkedIn Sans-fonten osv.) er en fil som ligger på enheten din og forteller skjermen hvordan en bokstav skal tegnes. Hvis nettsiden ikke laster inn den fonten, står bokstaven fortsatt som «A» — den tegnes bare med en standardfont i stedet. Unicode-«skrifter» er ikke skrifttyper i det hele tatt i den forstand. De er egne tegn i Unicode-standarden — A, 𝐀, 𝘈, 𝓐, 𝔄, 𝕬, Ⓐ er alle forskjellige tegn med forskjellige kodepunkter. Derfor overlever de: du stiler ikke bokstaven A, du bruker en helt annen bokstav som tilfeldigvis ser stylet ut.
+      En vanlig skrifttype (Helvetica, Arial, LinkedIn Sans-fonten osv.) er en fil som ligger på enheten din og forteller skjermen hvordan en bokstav skal tegnes. Hvis nettsiden ikke laster inn den fonten, står bokstaven fortsatt som «A». Den tegnes bare med en standardfont i stedet. Unicode-«skrifter» er ikke skrifttyper i det hele tatt i den forstand. De er egne tegn i Unicode-standarden: A, 𝐀, 𝘈, 𝓐, 𝔄, 𝕬, Ⓐ er alle forskjellige tegn med forskjellige kodepunkter. Derfor overlever de: du stiler ikke bokstaven A, du bruker en helt annen bokstav som tilfeldigvis ser stylet ut.
     </p>
     <h3>Hva som finnes i stilbiblioteket</h3>
     <p>
-      Rundt 65 stiler fordelt på tolv familier: <strong>fet</strong> (grotesk, antikva, kursiv-fet), <strong>kursiv</strong>, <strong>håndskrift / script</strong> (vanlig og fet), <strong>gotisk / fraktur</strong>, <strong>boble</strong> (fylt, lett, fliser, buet, vinklet, luftig og flere — 12 varianter), <strong>gjennomstreket</strong> (skråstrek, tilde, kort, lang), <strong>understreket</strong>, <strong>monospace / fullwidth</strong>, <strong>small caps og hevet skrift</strong>, <strong>aesthetic / luftig</strong>, <strong>opp ned + speilvendt + baklengs</strong>, <strong>Zalgo (glitch)</strong>, og en ti-stils <strong>tekstdekoratør</strong> som automatisk rammer inn hvert ord med symboler. Kombiner to stiler med ett klikk, eller ramm inn hele resultatet med en ramme, skillelinje, pil, emoji eller flagg.
+      Rundt 65 stiler fordelt på tolv familier: <strong>fet</strong> (grotesk, antikva, kursiv-fet), <strong>kursiv</strong>, <strong>håndskrift / script</strong> (vanlig og fet), <strong>gotisk / fraktur</strong>, <strong>boble</strong> (fylt, lett, fliser, buet, vinklet, luftig og flere: 12 varianter), <strong>gjennomstreket</strong> (skråstrek, tilde, kort, lang), <strong>understreket</strong>, <strong>monospace / fullwidth</strong>, <strong>small caps og hevet skrift</strong>, <strong>aesthetic / luftig</strong>, <strong>opp ned + speilvendt + baklengs</strong>, <strong>Zalgo (glitch)</strong>, og en ti-stils <strong>tekstdekoratør</strong> som automatisk rammer inn hvert ord med symboler. Kombiner to stiler med ett klikk, eller ramm inn hele resultatet med en ramme, skillelinje, pil, emoji eller flagg.
     </p>
   </section>
 
@@ -485,7 +485,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <a class="tip-card" href="/usecase/zalgo-text/" aria-label="Zalgo glitch text generator">
         <div class="tip-icon">👻</div>
         <h3>Zalgo &amp; cursed glitch text</h3>
-        <p>Corrupt any text with stacked Unicode marks — one-click presets from subtle to full chaos, a "will it fit?" check for Discord and X limits, plus a decoder that un-zalgos text back to normal.</p>
+        <p>Corrupt any text with stacked Unicode marks: one-click presets from subtle to full chaos, a "will it fit?" check for Discord and X limits, plus a decoder that un-zalgos text back to normal.</p>
       </a>
     </div>
     <p class="u-mt-15 u-text-center"><a class="cat-cta" href="/usecase/" data-i18n="useCases.viewAll">Vis alle bruksområder -&gt;</a></p>
@@ -526,12 +526,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <a class="tip-card" href="/no/kursiv-tekst/" aria-label="Cursive and script font generator">
         <div class="tip-icon">✍️</div>
         <h3>Cursive &amp; script (𝓒𝓾𝓻𝓼𝓲𝓿𝓮)</h3>
-        <p>Two flowing script variants. People paste these into Instagram bios, Pinterest pin titles, wedding-y captions, and aesthetic usernames. Bold script reads better at small sizes — use it on TikTok.</p>
+        <p>Two flowing script variants. People paste these into Instagram bios, Pinterest pin titles, wedding-y captions, and aesthetic usernames. Bold script reads better at small sizes. Use it on TikTok.</p>
       </a>
       <a class="tip-card" href="/category/gothic-fonts/" aria-label="Gothic and fraktur font generator">
         <div class="tip-icon">🖤</div>
         <h3>Gothic / fraktur (𝔊𝔬𝔱𝔥𝔦𝔠)</h3>
-        <p>Old-English / Fraktur letterforms. Common in gaming clan tags, metal/horror branding, dark academia bios, and Discord display names. Looks heaviest at large sizes — pair with one decorative symbol, not five.</p>
+        <p>Old-English / Fraktur letterforms. Common in gaming clan tags, metal/horror branding, dark academia bios, and Discord display names. Looks heaviest at large sizes: pair with one decorative symbol, not five.</p>
       </a>
       <a class="tip-card" href="/category/bubble-fonts/" aria-label="Bubble and aesthetic font generator">
         <div class="tip-icon">🫧</div>
@@ -549,32 +549,32 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <a class="tip-card" href="/no/library/hjertesymboler/" aria-label="Hjertesymboler">
         <div class="tip-icon">♡</div>
         <h3>Hjertesymboler</h3>
-        <p>Hjertetegn og hjerte-emojier i alle farger og stiler — ♡ ♥ ❤ 🤍 — klare til å kopiere og lime inn i bio, navn og bildetekst.</p>
+        <p>Hjertetegn og hjerte-emojier i alle farger og stiler, ♡ ♥ ❤ 🤍, klare til å kopiere og lime inn i bio, navn og bildetekst.</p>
       </a>
       <a class="tip-card" href="/no/library/stjernesymboler/" aria-label="Stjernesymboler">
         <div class="tip-icon">★</div>
         <h3>Stjernesymboler</h3>
-        <p>Stjerner, gnister og glitter — ★ ☆ ✦ ✧ ✨ — pluss ferdige stjernerangeringer til anmeldelser. Klikk for å kopiere.</p>
+        <p>Stjerner, gnister og glitter, ★ ☆ ✦ ✧ ✨, pluss ferdige stjernerangeringer til anmeldelser. Klikk for å kopiere.</p>
       </a>
       <a class="tip-card" href="/no/library/greske-bokstaver/" aria-label="Greske bokstaver">
         <div class="tip-icon">Ω</div>
         <h3>Greske bokstaver</h3>
-        <p>Hele det greske alfabetet — α β Δ Σ Ω π — store og små bokstaver til matte, fysikk og design, klare til å kopiere.</p>
+        <p>Hele det greske alfabetet, α β Δ Σ Ω π, store og små bokstaver til matte, fysikk og design, klare til å kopiere.</p>
       </a>
       <a class="tip-card" href="/no/library/matematiske-symboler/" aria-label="Matematiske symboler">
         <div class="tip-icon">∑</div>
         <h3>Matematiske symboler</h3>
-        <p>Operatorer, brøk, integral og uendelig — ± × ÷ √ ∞ ∑ — skriv likninger i tekst, e-post og dokumenter uten LaTeX.</p>
+        <p>Operatorer, brøk, integral og uendelig, ± × ÷ √ ∞ ∑, skriv likninger i tekst, e-post og dokumenter uten LaTeX.</p>
       </a>
       <a class="tip-card" href="/no/library/pilsymboler/" aria-label="Pilsymboler">
         <div class="tip-icon">→</div>
         <h3>Pilsymboler</h3>
-        <p>Piler i alle retninger — → ← ↑ ↓ ➤ ⇒ — pil ned, pil opp og emoji-piler til navigasjon, lister og punkter.</p>
+        <p>Piler i alle retninger, → ← ↑ ↓ ➤ ⇒, pil ned, pil opp og emoji-piler til navigasjon, lister og punkter.</p>
       </a>
       <a class="tip-card" href="/no/library/korssymboler/" aria-label="Korssymboler og religiøse symboler">
         <div class="tip-icon">✝</div>
         <h3>Korssymboler</h3>
-        <p>Korsvarianter og religiøse symboler — ✝ ☦ ☪ ✡ ☸ ☯ — fra verdens tradisjoner, klare til å kopiere.</p>
+        <p>Korsvarianter og religiøse symboler, ✝ ☦ ☪ ✡ ☸ ☯, fra verdens tradisjoner, klare til å kopiere.</p>
       </a>
       <a class="tip-card" href="/no/library/facebook-symboler/" aria-label="Facebook-symboler">
         <div class="tip-icon">👍❤★</div>

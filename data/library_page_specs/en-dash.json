@@ -6,8 +6,8 @@
   "canonical": "https://ultratextgen.com/symbol/en-dash/",
   "breadcrumb": "En Dash",
   "hero_h1": "En Dash (–)",
-  "hero_tagline": "The en dash (–) that joins number and date ranges — 1939–1945, pages 10–20, 9am–5pm — and links two-part relationships like the New York–London flight or pre–World War II. Longer than a hyphen, shorter than an em dash, and the one mark with no key of its own. Click any symbol to copy it instantly.",
-  "intro": "The en dash (–, Unicode U+2013) is the medium-length dash that sits between the plain hyphen and the longer em dash — named because it is about half the width of an em dash, roughly the width of a capital N. It does two main jobs: it marks spans and ranges (1939–1945, pages 10–20, 9am–5pm, the May–September issue), and it joins two-part relationships and open compounds where a hyphen would be too weak (the New York–London flight, the Clinton–Gore ticket, pre–World War II). Because no keyboard has a dedicated en-dash key, it is constantly mistyped as the hyphen-minus (-, U+002D); to enter it properly you press Option+Hyphen on a Mac or Alt+0150 on the Windows numeric keypad, and Microsoft Word's AutoFormat converts a spaced hyphen (word - word) into one automatically. Style guides split on it: the Chicago Manual of Style uses the en dash for ranges (pages 3–11), while the Associated Press Stylebook does not use en dashes at all, setting ranges with a plain hyphen instead. It is also frequently confused with the typographic hyphen (‐, U+2010), the minus sign (−, U+2212), and the em dash (—, U+2014).",
+  "hero_tagline": "The en dash (–) that joins number and date ranges (1939–1945, pages 10–20, 9am–5pm) and links two-part relationships like the New York–London flight or pre–World War II. Longer than a hyphen, shorter than an em dash, and the one mark with no key of its own. Click any symbol to copy it instantly.",
+  "intro": "The en dash (–, Unicode U+2013) is the medium-length dash that sits between the plain hyphen and the longer em dash, named because it is about half the width of an em dash, roughly the width of a capital N. It does two main jobs: it marks spans and ranges (1939–1945, pages 10–20, 9am–5pm, the May–September issue), and it joins two-part relationships and open compounds where a hyphen would be too weak (the New York–London flight, the Clinton–Gore ticket, pre–World War II). Because no keyboard has a dedicated en-dash key, it is constantly mistyped as the hyphen-minus (-, U+002D); to enter it properly you press Option+Hyphen on a Mac or Alt+0150 on the Windows numeric keypad, and Microsoft Word's AutoFormat converts a spaced hyphen (word - word) into one automatically. Style guides split on it: the Chicago Manual of Style uses the en dash for ranges (pages 3–11), while the Associated Press Stylebook does not use en dashes at all, setting ranges with a plain hyphen instead. It is also frequently confused with the typographic hyphen (‐, U+2010), the minus sign (−, U+2212), and the em dash (—, U+2014).",
   "date_published": "2026-07-18",
   "date_modified": "2026-07-18",
   "copy_pattern": "single",
@@ -16,7 +16,7 @@
       "id": "en-dash",
       "label": "En Dash",
       "h2": "The En Dash & Figure Dash",
-      "intro": "The en dash for ranges and compounds, plus the figure dash — the same width, reserved for numerals so digits line up cleanly in tables and phone numbers. Ready to paste anywhere.",
+      "intro": "The en dash for ranges and compounds, plus the figure dash, the same width, reserved for numerals so digits line up cleanly in tables and phone numbers. Ready to paste anywhere.",
       "symbols": [
         { "char": "–", "label": "En Dash (U+2013)" },
         { "char": "‒", "label": "Figure Dash (U+2012)" }
@@ -26,7 +26,7 @@
       "id": "confusable-dashes",
       "label": "Confusable Dashes",
       "h2": "Dashes & Hyphens It's Confused With",
-      "intro": "The marks the en dash gets swapped for — each has its own width, code point, and job, from the plain keyboard hyphen to the em dash and the true minus sign.",
+      "intro": "The marks the en dash gets swapped for: each has its own width, code point, and job, from the plain keyboard hyphen to the em dash and the true minus sign.",
       "symbols": [
         { "char": "—", "label": "Em Dash (U+2014)" },
         { "char": "-", "label": "Hyphen-Minus (Keyboard)" },

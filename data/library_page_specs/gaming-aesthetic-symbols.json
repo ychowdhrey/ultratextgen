@@ -6,7 +6,7 @@
   "breadcrumb": "Gaming Aesthetic Symbols",
   "hero_h1": "Gaming Aesthetic Symbols",
   "hero_tagline": "Clan-tag frames, HUD dividers, and battle icons for gamer bios, usernames, and Discord tags. Copy and paste gaming aesthetic symbols instantly.",
-  "intro": "Gaming aesthetic symbols are the frames, brackets, and battle icons that turn a plain username into a clan tag — the ꧁༒…༒꧂ wraps, HUD-style loading bars, and level-up icons seen on Free Fire, PUBG, and Discord profiles. This library gathers the frame characters, battle icons, and progress-bar dividers that make a gamertag or gaming bio look intentional.",
+  "intro": "Gaming aesthetic symbols are the frames, brackets, and battle icons that turn a plain username into a clan tag: the ꧁༒…༒꧂ wraps, HUD-style loading bars, and level-up icons seen on Free Fire, PUBG, and Discord profiles. This library gathers the frame characters, battle icons, and progress-bar dividers that make a gamertag or gaming bio look intentional.",
   "date_published": "2026-07-11",
   "date_modified": "2026-07-11",
   "copy_pattern": "collection",
@@ -74,7 +74,7 @@
     "id": "gaming-aesthetic-collections",
     "label": "Gaming Aesthetic Collections",
     "h2": "Gamer Tag & Clan Divider Sets",
-    "intro": "Ready-made gaming combos you can paste straight into a username, bio, or clan tag — copy the whole arrangement in one click."
+    "intro": "Ready-made gaming combos you can paste straight into a username, bio, or clan tag: copy the whole arrangement in one click."
   },
   "collections": [
     { "name": "Clan Tag Frame", "flags": ["꧁", "彡", "꧂"], "defaultFormat": "inline" },

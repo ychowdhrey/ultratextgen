@@ -6,8 +6,8 @@
   "canonical": "https://ultratextgen.com/symbol/star-of-david/",
   "breadcrumb": "Star of David",
   "hero_h1": "Star of David",
-  "hero_tagline": "The six-pointed Star of David (✡ ✡️) — the Magen David, or \"Shield of David\" — whose path to becoming the emblem of Judaism is more recent and more layered than most people assume. Click any symbol to copy it instantly.",
-  "intro": "The Star of David (✡, U+2721) — Magen David, \"Shield of David\" in Hebrew — is the six-pointed star recognized today as the symbol of Judaism and the emblem at the center of the flag of Israel. Yet the hexagram itself is far older and far more widely shared than that role suggests: for most of its history it was a common geometric motif used across many cultures, and its journey to becoming a distinctly Jewish sign is a comparatively recent, well-documented story.",
+  "hero_tagline": "The six-pointed Star of David (✡ ✡️) (the Magen David, or \"Shield of David\") whose path to becoming the emblem of Judaism is more recent and more layered than most people assume. Click any symbol to copy it instantly.",
+  "intro": "The Star of David (✡, U+2721) (Magen David, \"Shield of David\" in Hebrew) is the six-pointed star recognized today as the symbol of Judaism and the emblem at the center of the flag of Israel. Yet the hexagram itself is far older and far more widely shared than that role suggests: for most of its history it was a common geometric motif used across many cultures, and its journey to becoming a distinctly Jewish sign is a comparatively recent, well-documented story.",
   "date_published": "2026-07-12",
   "date_modified": "2026-07-12",
   "copy_pattern": "single",
@@ -16,7 +16,7 @@
       "id": "star-of-david",
       "label": "Star of David",
       "h2": "Star of David Symbol",
-      "intro": "The Unicode Star of David, ready to paste anywhere — bios, posts, or profiles. Two forms: the plain glyph and the full-color emoji.",
+      "intro": "The Unicode Star of David, ready to paste anywhere: bios, posts, or profiles. Two forms: the plain glyph and the full-color emoji.",
       "symbols": [
         { "char": "✡", "label": "Star of David" },
         { "char": "✡️", "label": "Star of David Emoji" }
@@ -37,7 +37,7 @@
       "id": "hexagram-variants",
       "label": "Six-Pointed Stars & Hexagrams",
       "h2": "Six-Pointed Stars & Hexagram Variants",
-      "intro": "The same six-pointed geometry appears far beyond any one tradition — as decoration, in astronomy and mysticism, and as plain geometric shapes.",
+      "intro": "The same six-pointed geometry appears far beyond any one tradition: as decoration, in astronomy and mysticism, and as plain geometric shapes.",
       "symbols": [
         { "char": "🔯", "label": "Six-Pointed Star with Dot" },
         { "char": "✶", "label": "Six-Pointed Black Star" },
@@ -60,7 +60,7 @@
     {
       "href": "/library/star-symbols/",
       "title": "Star Symbols",
-      "desc": "Stars of every kind — four-, five-, six-, and eight-pointed — in one copy-paste reference."
+      "desc": "Stars of every kind (four-, five-, six-, and eight-pointed) in one copy-paste reference."
     }
   ]
 }

@@ -6,7 +6,7 @@
   "canonical": "https://ultratextgen.com/symbol/fahrenheit-symbol/",
   "breadcrumb": "Fahrenheit Symbol",
   "hero_h1": "Fahrenheit Symbol",
-  "hero_tagline": "℉ folds the degree sign and a capital F into one Unicode character — quick to paste, though most style guides still prefer the two-character °F. Click any symbol to copy it instantly.",
+  "hero_tagline": "℉ folds the degree sign and a capital F into one Unicode character, quick to paste, though most style guides still prefer the two-character °F. Click any symbol to copy it instantly.",
   "intro": "The degree Fahrenheit sign (℉, Unicode U+2109) is a precomposed character in the Letterlike Symbols block combining the degree sign (°) with a capital F. Like its Celsius counterpart ℃, it was added to Unicode largely for lossless round-tripping of legacy East Asian text, where a temperature reading often filled a single character cell. In everyday writing the recommended form is the degree sign followed by a plain F (°F), but the single ℉ is the fastest glyph to copy when that is all you need.",
   "date_published": "2026-07-12",
   "date_modified": "2026-07-12",
@@ -26,7 +26,7 @@
       "id": "confusable-neighbors",
       "label": "Confusable Neighbors",
       "h2": "Symbols Often Confused with ℉",
-      "intro": "Marks that get substituted for ℉ — each is a distinct character.",
+      "intro": "Marks that get substituted for ℉: each is a distinct character.",
       "symbols": [
         { "char": "°", "label": "Degree Sign (U+00B0)" },
         { "char": "℃", "label": "Degree Celsius (U+2103)" },

@@ -4,7 +4,7 @@
   "meta_description": "Backslash \\ und Schrägstrich / mit allen Varianten: Bruchstrich ⁄, Divisionsstrich ∕, Fullwidth ／ ＼, Mathe-Diagonalen und senkrechte Striche. Antippen zum Kopieren.",
   "breadcrumb": "Backslash Zeichen",
   "hero_h1": "Schrägstrich- und Backslash-Zeichen",
-  "hero_tagline": "/ \\ ⁄ ∕ ／ ╱ — Schrägstrich, Backslash, Bruch- und Mathe-Varianten. Antippen zum Kopieren.",
+  "hero_tagline": "/ \\ ⁄ ∕ ／ ╱: Schrägstrich, Backslash, Bruch- und Mathe-Varianten. Antippen zum Kopieren.",
   "intro": "Die meisten Besucher dieser Seite suchen genau eine Sache: wie man den Backslash tippt, wenn die Tastatur ihn nicht hergibt. Die Antwort steht in der FAQ; die vier Gruppen darunter sind die Varianten, die man braucht, sobald es um Brüche, Formeln oder Textsatz geht. Antippen kopiert das Zeichen.",
   "copy_pattern": "single",
   "sections": [
@@ -175,24 +175,24 @@
   "editorial_sections": [
     {
       "h2": "Ein Zeichen, das von einer Firmenentscheidung übrig blieb",
-      "body": "Dass Windows-Pfade mit Backslash geschrieben werden, ist kein Entwurf, sondern ein Rest. MS-DOS verwendete den Schrägstrich bereits für Befehlsschalter, als Verzeichnisse hinzukamen — also musste der Trenner ein anderes Zeichen werden, und der Backslash war frei. Diese Notlösung von 1983 ist der Grund, warum bis heute jede plattformübergreifende Software zwei Pfadschreibweisen behandeln muss, warum \\ in fast jeder Programmiersprache doppelt getippt wird und warum die deutsche Tastatur dieses Zeichen hinter eine AltGr-Kombination versteckt hat."
+      "body": "Dass Windows-Pfade mit Backslash geschrieben werden, ist kein Entwurf, sondern ein Rest. MS-DOS verwendete den Schrägstrich bereits für Befehlsschalter, als Verzeichnisse hinzukamen, also musste der Trenner ein anderes Zeichen werden, und der Backslash war frei. Diese Notlösung von 1983 ist der Grund, warum bis heute jede plattformübergreifende Software zwei Pfadschreibweisen behandeln muss, warum \\ in fast jeder Programmiersprache doppelt getippt wird und warum die deutsche Tastatur dieses Zeichen hinter eine AltGr-Kombination versteckt hat."
     }
   ],
   "related": [
     {
       "href": "/de/library/mathe-symbole/",
       "title": "Mathe-Symbole",
-      "desc": "Mathematische Unicode-Zeichen zum Kopieren und Einfügen — Operatoren, griechische Buchstaben, Mengenlehre, Analysis und mehr. Klick auf ein Symbol, um es sofort zu kopieren."
+      "desc": "Mathematische Unicode-Zeichen zum Kopieren und Einfügen: Operatoren, griechische Buchstaben, Mengenlehre, Analysis und mehr. Klick auf ein Symbol, um es sofort zu kopieren."
     },
     {
       "href": "/de/library/klammer-symbole/",
       "title": "Klammern & Klammerzeichen",
-      "desc": "Eine vollständige Referenz der Unicode-Klammertypen — von Standard- und mathematischen Klammern bis zu CJK-, dekorativen und vollbreiten Varianten. Klick auf ein Symbol, um es sofort zu kopieren."
+      "desc": "Eine vollständige Referenz der Unicode-Klammertypen: von Standard- und mathematischen Klammern bis zu CJK-, dekorativen und vollbreiten Varianten. Klick auf ein Symbol, um es sofort zu kopieren."
     },
     {
       "href": "/de/library/symbole-zum-kopieren/",
       "title": "Symbole & Emojis zum Kopieren",
-      "desc": "Alle Symbole, Sonderzeichen, Zeichen und Emojis zum Kopieren und Einfügen an einem Ort — Herzen ♥, Sterne ★, Pfeile →, Häkchen ✓, Währung € und mehr. Klick ein Zeichen an, und es ist sofort in deiner Zwischenablage. Kostenlos, ohne App, ohne Anmeldung."
+      "desc": "Alle Symbole, Sonderzeichen, Zeichen und Emojis zum Kopieren und Einfügen an einem Ort: Herzen ♥, Sterne ★, Pfeile →, Häkchen ✓, Währung € und mehr. Klick ein Zeichen an, und es ist sofort in deiner Zwischenablage. Kostenlos, ohne App, ohne Anmeldung."
     }
   ],
   "canonical": "https://ultratextgen.com/de/library/backslash-zeichen/",

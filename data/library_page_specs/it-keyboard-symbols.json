@@ -5,7 +5,7 @@
   "breadcrumb": "Simboli Tastiera",
   "hero_h1": "Simboli Tastiera",
   "hero_tagline": "I tasti scritti come si scrivono nei manuali: ⌘ ⌥ ⇧ ⌫ ⇥ e le frecce, pronti da incollare.",
-  "intro": "Quando scrivi una scorciatoia — in una guida, in un README, in un messaggio — servono i simboli veri dei tasti, non le parole. Sono caratteri Unicode, quindi funzionano ovunque senza immagini. Clicca per copiare.",
+  "intro": "Quando scrivi una scorciatoia (in una guida, in un README, in un messaggio) servono i simboli veri dei tasti, non le parole. Sono caratteri Unicode, quindi funzionano ovunque senza immagini. Clicca per copiare.",
   "copy_pattern": "single",
   "sections": [
     {
@@ -139,19 +139,19 @@
   "editorial_sections": [
     {
       "h2": "Perché i Tasti Hanno un Carattere Proprio",
-      "body": "Questi simboli esistono in Unicode perché la documentazione tecnica ne aveva bisogno molto prima del web: un manuale stampato non poteva inserire una figura ogni volta che citava una scorciatoia. Per questo ⌘, ⌥ e ⇧ sono caratteri veri e propri, componibili in una riga di testo come qualsiasi lettera — ed è anche il motivo per cui, incollati in una chat, restano leggibili invece di diventare un allegato."
+      "body": "Questi simboli esistono in Unicode perché la documentazione tecnica ne aveva bisogno molto prima del web: un manuale stampato non poteva inserire una figura ogni volta che citava una scorciatoia. Per questo ⌘, ⌥ e ⇧ sono caratteri veri e propri, componibili in una riga di testo come qualsiasi lettera: ed è anche il motivo per cui, incollati in una chat, restano leggibili invece di diventare un allegato."
     }
   ],
   "related": [
     {
       "href": "/it/library/kaomoji/",
       "title": "Kaomoji e faccine giapponesi",
-      "desc": "Copia e incolla i kaomoji — emoticon testuali in stile giapponese costruite con caratteri Unicode. Facce fe…"
+      "desc": "Copia e incolla i kaomoji: emoticon testuali in stile giapponese costruite con caratteri Unicode. Facce fe…"
     },
     {
       "href": "/it/library/caratteri-speciali-simboli/",
       "title": "Caratteri Speciali",
-      "desc": "Una raccolta di riferimento di simboli Unicode unici — infinito, pace, scienza, marchi legali, elementi est…"
+      "desc": "Una raccolta di riferimento di simboli Unicode unici: infinito, pace, scienza, marchi legali, elementi est…"
     },
     {
       "href": "/it/library/codici-alt/",

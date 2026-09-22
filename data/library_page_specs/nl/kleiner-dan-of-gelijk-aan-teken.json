@@ -14,8 +14,8 @@
   "canonical": "https://ultratextgen.com/nl/symbol/kleiner-dan-of-gelijk-aan-teken/",
   "breadcrumb": "Kleiner Dan of Gelijk Aan",
   "hero_h1": "Kleiner Dan of Gelijk Aan (≤)",
-  "hero_tagline": "Het ≤ dat je gebruikt als een waarde kleiner kan zijn dan een andere waarde, of er precies aan gelijk — Alt+243 op Windows, \\leq in LaTeX, en &le; in HTML. Klik om het direct te kopiëren.",
-  "intro": "Het teken kleiner dan of gelijk aan (≤, U+2264) combineert het kleiner-dan-teken met een horizontale streep eronder, om te laten zien dat een waarde kleiner kan zijn dan een andere waarde, of er precies aan gelijk — de relatie achter alles van simpele ongelijkheden tot de gesloten intervallen van de calculus. Anders dan de strikte tekens < en >, die de Engelse wiskundige Thomas Harriot in 1631 introduceerde, is het gecombineerde paar ≤/≥ een latere verfijning: de Franse wiskundige Pierre Bouguer krijgt doorgaans de eer voor de introductie ervan in 1734, in zijn essay over de gradatie van licht. ASCII heeft nooit een eigen plek voor ≤ gereserveerd, en dat is waarom bijna elke programmeertaal terugvalt op het tweetekenige <= in plaats van het losse Unicode-teken.",
+  "hero_tagline": "Het ≤ dat je gebruikt als een waarde kleiner kan zijn dan een andere waarde, of er precies aan gelijk: Alt+243 op Windows, \\leq in LaTeX, en &le; in HTML. Klik om het direct te kopiëren.",
+  "intro": "Het teken kleiner dan of gelijk aan (≤, U+2264) combineert het kleiner-dan-teken met een horizontale streep eronder, om te laten zien dat een waarde kleiner kan zijn dan een andere waarde, of er precies aan gelijk: de relatie achter alles van simpele ongelijkheden tot de gesloten intervallen van de calculus. Anders dan de strikte tekens < en >, die de Engelse wiskundige Thomas Harriot in 1631 introduceerde, is het gecombineerde paar ≤/≥ een latere verfijning: de Franse wiskundige Pierre Bouguer krijgt doorgaans de eer voor de introductie ervan in 1734, in zijn essay over de gradatie van licht. ASCII heeft nooit een eigen plek voor ≤ gereserveerd, en dat is waarom bijna elke programmeertaal terugvalt op het tweetekenige <= in plaats van het losse Unicode-teken.",
   "hreflang": [
     {
       "lang": "en",
@@ -109,7 +109,7 @@
     {
       "href": "/nl/symbol/ongelijkteken/",
       "title": "Ongelijkteken (≠)",
-      "desc": "Gebruikt door Euler, ontbrak in ASCII — waarom code != gebruikt."
+      "desc": "Gebruikt door Euler, ontbrak in ASCII: waarom code != gebruikt."
     },
     {
       "href": "/nl/symbol/kleiner-dan-groter-dan-teken/",

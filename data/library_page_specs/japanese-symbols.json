@@ -5,8 +5,8 @@
   "canonical": "https://ultratextgen.com/library/japanese-symbols/",
   "breadcrumb": "Japanese Symbols",
   "hero_h1": "Japanese Symbols",
-  "hero_tagline": "Kanji, hiragana, and katakana characters with romaji and meanings — ready for bios, captions, and usernames. Click any character to copy it instantly.",
-  "intro": "Japanese symbols are a staple of aesthetic bios and usernames, from the cherry-blossom kanji 桜 (sakura) to the katakana smile ツ. This library gathers meaningful kanji, the core hiragana and katakana syllabaries, and Japanese punctuation marks, each labeled with its romaji reading and English meaning. Copy them into Instagram captions, Discord names, or anywhere you want a touch of Japanese style — respectfully and with the meaning made clear.",
+  "hero_tagline": "Kanji, hiragana, and katakana characters with romaji and meanings: ready for bios, captions, and usernames. Click any character to copy it instantly.",
+  "intro": "Japanese symbols are a staple of aesthetic bios and usernames, from the cherry-blossom kanji 桜 (sakura) to the katakana smile ツ. This library gathers meaningful kanji, the core hiragana and katakana syllabaries, and Japanese punctuation marks, each labeled with its romaji reading and English meaning. Copy them into Instagram captions, Discord names, or anywhere you want a touch of Japanese style, respectfully and with the meaning made clear.",
   "date_published": "2026-06-12",
   "date_modified": "2026-06-12",
   "copy_pattern": "collection",
@@ -15,7 +15,7 @@
       "id": "beautiful-kanji",
       "label": "Kanji",
       "h2": "Beautiful Kanji With Meanings",
-      "intro": "Evocative kanji for nature, light, and emotion — the most popular characters for aesthetic profiles.",
+      "intro": "Evocative kanji for nature, light, and emotion, the most popular characters for aesthetic profiles.",
       "symbols": [
         { "char": "桜", "label": "Sakura: Cherry Blossom" },
         { "char": "愛", "label": "Ai: Love" },
@@ -55,7 +55,7 @@
       "id": "katakana",
       "label": "Katakana",
       "h2": "Katakana Characters",
-      "intro": "The angular syllabary for loanwords — including ツ and シ, beloved as smiley faces in usernames.",
+      "intro": "The angular syllabary for loanwords, including ツ and シ, beloved as smiley faces in usernames.",
       "symbols": [
         { "char": "ツ", "label": "Tsu: Katakana Letter Tu (Smile Face)" },
         { "char": "シ", "label": "Shi: Katakana Letter Si (Smile Face)" },

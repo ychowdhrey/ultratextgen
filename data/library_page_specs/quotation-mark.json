@@ -7,7 +7,7 @@
   "breadcrumb": "Quotation Mark",
   "hero_h1": "Quotation Mark",
   "hero_tagline": "The straight \" and ' every keyboard types, and the curly, guillemet, and low-quote variants that stand in for them in different software and languages. Click any symbol to copy it instantly.",
-  "intro": "The quotation mark (\", Unicode U+0022) and apostrophe (', U+0027) are the plain, straight characters on every keyboard. They're also the ones code and markup expect — the curly “smart quotes” your word processor substitutes automatically are a different, incompatible character underneath, which is the single most common reason pasted text breaks in code editors.",
+  "intro": "The quotation mark (\", Unicode U+0022) and apostrophe (', U+0027) are the plain, straight characters on every keyboard. They're also the ones code and markup expect: the curly “smart quotes” your word processor substitutes automatically are a different, incompatible character underneath, which is the single most common reason pasted text breaks in code editors.",
   "date_published": "2026-07-12",
   "date_modified": "2026-07-12",
   "copy_pattern": "single",
@@ -16,7 +16,7 @@
       "id": "straight-quotes",
       "label": "Straight Quotes",
       "h2": "Quotation Mark & Apostrophe",
-      "intro": "The plain ASCII quote characters — what a keyboard actually types, and what code expects.",
+      "intro": "The plain ASCII quote characters: what a keyboard actually types, and what code expects.",
       "symbols": [
         { "char": "\"", "label": "Quotation Mark (Straight Double Quote)" },
         { "char": "'", "label": "Apostrophe (Straight Single Quote)" }
@@ -26,7 +26,7 @@
       "id": "curly-quotes",
       "label": "Curly (Smart) Quotes",
       "h2": "Curly (Smart) Quotation Marks",
-      "intro": "The typeset-style quotes with distinct opening and closing shapes — what \"autocorrect\" turns straight quotes into.",
+      "intro": "The typeset-style quotes with distinct opening and closing shapes, what \"autocorrect\" turns straight quotes into.",
       "symbols": [
         { "char": "“", "label": "Left Double Quotation Mark" },
         { "char": "”", "label": "Right Double Quotation Mark" },

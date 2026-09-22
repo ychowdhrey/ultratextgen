@@ -4,8 +4,8 @@
   "meta_description": "Nederlandse vlag 🇳🇱 en alle landenvlaggen als emoji. Klik op een vlag om te kopiëren en plak hem in je bio, naam of bericht. Ook complete vlaggensets.",
   "breadcrumb": "Vlaggen Emoji",
   "hero_h1": "Vlaggen Emoji — Alle Landenvlaggen",
-  "hero_tagline": "Klik op een vlag en hij staat meteen op je klembord: de Nederlandse vlag, België, Duitsland en elk ander land. Plakken in je bio, weergavenaam, caption of bericht — zonder app.",
-  "intro": "Elke landenvlag is één klik weg. Blader door de vlaggen van bijna 200 landen, filter op werelddeel en kopieer elke vlagemoji direct. Vlaggen-emoji's zijn echte Unicode-tekens en geen plaatjes, dus je plakt ze net als gewone tekst in posts, bio's, captions en berichten op WhatsApp, Instagram, TikTok, Discord en Telegram — en in naamvelden van games. Bovenaan staan de Nederlandse vlag en de meestgezochte landen klaar; onderaan kopieer je een hele set in één keer, zoals de EU-landen, de G20 of de Noordse landen.",
+  "hero_tagline": "Klik op een vlag en hij staat meteen op je klembord: de Nederlandse vlag, België, Duitsland en elk ander land. Plakken in je bio, weergavenaam, caption of bericht, zonder app.",
+  "intro": "Elke landenvlag is één klik weg. Blader door de vlaggen van bijna 200 landen, filter op werelddeel en kopieer elke vlagemoji direct. Vlaggen-emoji's zijn echte Unicode-tekens en geen plaatjes, dus je plakt ze net als gewone tekst in posts, bio's, captions en berichten op WhatsApp, Instagram, TikTok, Discord en Telegram, en in naamvelden van games. Bovenaan staan de Nederlandse vlag en de meestgezochte landen klaar; onderaan kopieer je een hele set in één keer, zoals de EU-landen, de G20 of de Noordse landen.",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -159,14 +159,14 @@
   "editorial_sections": [
     {
       "h2": "🇳🇱 is helemaal geen vlagteken",
-      "body": "🇳🇱 bestaat niet als vlagteken: het zijn Ⓝ + Ⓛ, twee regioletters die je lettertype als vlag tekent. Vandaar die letters op Windows. Unicode leende de ISO-landcodes om nooit te bepalen wat een land is — daarom ontbreken sommige vlaggen simpelweg."
+      "body": "🇳🇱 bestaat niet als vlagteken: het zijn Ⓝ + Ⓛ, twee regioletters die je lettertype als vlag tekent. Vandaar die letters op Windows. Unicode leende de ISO-landcodes om nooit te bepalen wat een land is. Daarom ontbreken sommige vlaggen simpelweg."
     }
   ],
   "collection_section": {
     "id": "flag-grids",
     "label": "Vlaggensets",
     "h2": "Vlaggensets per regio",
-    "intro": "Kopieer een complete set vlaggen in één klik — handig voor een post, een lijst of een caption."
+    "intro": "Kopieer een complete set vlaggen in één klik, handig voor een post, een lijst of een caption."
   },
   "collection_container_id": "flagGridContainer",
   "collections": [
@@ -210,17 +210,17 @@
     {
       "href": "/nl/library/emoji-combos/",
       "title": "Emoji Combinaties om te Kopiëren en Plakken 🦋✨ Esthetische Combo's",
-      "desc": "Kant-en-klare emoji combinaties om te kopiëren en plakken: schattig, coquette, liefde, dark en strand. Esthetische emoji combo's voor je Insta-bio, TikTok en WhatsApp — gratis."
+      "desc": "Kant-en-klare emoji combinaties om te kopiëren en plakken: schattig, coquette, liefde, dark en strand. Esthetische emoji combo's voor je Insta-bio, TikTok en WhatsApp, gratis."
     },
     {
       "href": "/nl/library/hartjes/",
       "title": "Hartjes Kopiëren ♡ ❤ 🖤 — Alle Hartjes-Tekens en Hart-Emoji's",
-      "desc": "Hartjes om te kopiëren en plakken: het open hartje ♡, het volle hartje ♥ (Alt+3), alle gekleurde hart-emoji's ❤ 🧡 💛 💚 💙 💜 🖤 en aesthetic hartjes als ᥫ᭡ en ୨୧ — voor je bio, naam en berichten. Eén tik om te kopiëren."
+      "desc": "Hartjes om te kopiëren en plakken: het open hartje ♡, het volle hartje ♥ (Alt+3), alle gekleurde hart-emoji's ❤ 🧡 💛 💚 💙 💜 🖤 en aesthetic hartjes als ᥫ᭡ en ୨୧, voor je bio, naam en berichten. Eén tik om te kopiëren."
     },
     {
       "href": "/nl/library/discord-symbolen/",
       "title": "Discord Symbolen ⌗ ➤ ♡ Kopiëren voor Gebruikersnaam &amp; Bio",
-      "desc": "Discord symbolen ⌗ ➤ ♡ om te kopiëren en plakken in gebruikersnaam, weergavenaam, kanalen en bio — esthetische versieringen, scheidingstekens, hartjes en sterretjes die overal netjes worden weergegeven."
+      "desc": "Discord symbolen ⌗ ➤ ♡ om te kopiëren en plakken in gebruikersnaam, weergavenaam, kanalen en bio: esthetische versieringen, scheidingstekens, hartjes en sterretjes die overal netjes worden weergegeven."
     }
   ],
   "canonical": "https://ultratextgen.com/nl/library/emoji-vlaggen/",

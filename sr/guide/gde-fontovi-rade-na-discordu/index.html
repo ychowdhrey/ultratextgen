@@ -144,17 +144,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Zašto Discord kaže da je moje korisničko ime nevažeće?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Zato što je jedinstveno korisničko ime (@) ključ identiteta, a ne polje za prikaz. Prima samo mala slova a–z, 0–9, podvlaku i tačku — pa lepljenje Unicode znakova fontova (ili čak običnog velikog slova) navede Discord da odbije čuvanje. Umesto toga, stilizovanu verziju stavi u prikazano ime ili nadimak na serveru; ta polja u potpunosti primaju Unicode." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Zato što je jedinstveno korisničko ime (@) ključ identiteta, a ne polje za prikaz. Prima samo mala slova a–z, 0–9, podvlaku i tačku, pa lepljenje Unicode znakova fontova (ili čak običnog velikog slova) navede Discord da odbije čuvanje. Umesto toga, stilizovanu verziju stavi u prikazano ime ili nadimak na serveru; ta polja u potpunosti primaju Unicode." }
     },
     {
       "@type": "Question",
       "name": "Mogu li da koristim kićene fontove u prikazanom imenu na Discordu?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Da. Prikazana imena, nadimci na serveru, nazivi uloga, nazivi servera, nazivi kanala i tvoj odeljak „O meni” svi primaju Unicode znakove fontova i emoji. Napravi stilizovani tekst, pa gotove znakove nalepi u polje — nema ništa da se uključuje. Biraj čitljive stilove poput podebljanog, kurziva ili kapitalki, da bi te članovi na starijim uređajima i čitači ekrana i dalje mogli pročitati." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Da. Prikazana imena, nadimci na serveru, nazivi uloga, nazivi servera, nazivi kanala i tvoj odeljak „O meni” svi primaju Unicode znakove fontova i emoji. Napravi stilizovani tekst, pa gotove znakove nalepi u polje: nema ništa da se uključuje. Biraj čitljive stilove poput podebljanog, kurziva ili kapitalki, da bi te članovi na starijim uređajima i čitači ekrana i dalje mogli pročitati." }
     },
     {
       "@type": "Question",
       "name": "Zašto je naziv mog kanala izgubio velika slova?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Nazivi tekstualnih kanala se normalizuju: Discord obična slova A–Z prevodi u mala i razmake pretvara u crtice, pa „General Chat” postaje „general-chat”. Unicode znakovi fontova nisu obična slova, pa prolaze netaknuti — 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 zadržava velika slova jer su to matematički podebljani znakovi, a ne A–Z. Nazivi glasovnih kanala i kategorija preskaču ovu normalizaciju i zadržavaju razmake i velika slova." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Nazivi tekstualnih kanala se normalizuju: Discord obična slova A–Z prevodi u mala i razmake pretvara u crtice, pa „General Chat” postaje „general-chat”. Unicode znakovi fontova nisu obična slova, pa prolaze netaknuti: 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 zadržava velika slova jer su to matematički podebljani znakovi, a ne A–Z. Nazivi glasovnih kanala i kategorija preskaču ovu normalizaciju i zadržavaju razmake i velika slova." }
     },
     {
       "@type": "Question",
@@ -164,7 +164,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Mogu li ljudi i dalje da me @pomenu ako mi je ime stilizovano?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Da — pominjanja se razrešavaju prema tvom nalogu, a ne prema stilizovanim znakovima. Kucanje tvog običnog korisničkog imena (@) te uvek nađe, a radi i klik na tvoje ime ili biranje iz liste članova. Ono što se lomi jeste automatsko dopunjavanje po prikazanom imenu: kucanje „aesthetic” neće se poklopiti sa 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈, jer su to različiti znakovi. Upravo zato Discord drži identifikator jednostavnim: to je zagarantovan način da te neko dobije." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Da: pominjanja se razrešavaju prema tvom nalogu, a ne prema stilizovanim znakovima. Kucanje tvog običnog korisničkog imena (@) te uvek nađe, a radi i klik na tvoje ime ili biranje iz liste članova. Ono što se lomi jeste automatsko dopunjavanje po prikazanom imenu: kucanje „aesthetic” neće se poklopiti sa 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈, jer su to različiti znakovi. Upravo zato Discord drži identifikator jednostavnim: to je zagarantovan način da te neko dobije." }
     }
   ]
 }
@@ -191,7 +191,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="hero">
   <div class="hero-inner" style="max-width:800px;">
     <h1 class="hero-headline">Gde fontovi rade na Discordu</h1>
-    <p class="hero-tagline">„Nevažeće korisničko ime.” Naziv kanala koji je izgubio velika slova. Nadimak koji se sačuvao bez problema. Discord nije nedosledan — svako polje ima svoj posao, i svako primenjuje drugačija pravila. Evo cele mape dozvola, da više nikad ne pogađaš.</p>
+    <p class="hero-tagline">„Nevažeće korisničko ime.” Naziv kanala koji je izgubio velika slova. Nadimak koji se sačuvao bez problema. Discord nije nedosledan: svako polje ima svoj posao, i svako primenjuje drugačija pravila. Evo cele mape dozvola, da više nikad ne pogađaš.</p>
     <div class="guide-meta">
       <span class="guide-pill is-accent">Platforma: Discord</span>
       <span class="guide-pill">⏱ 9 min čitanja</span>
@@ -209,8 +209,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="key-takeaways">
   <h2>Šta zapamtiti</h2>
   <ul>
-    <li>Jedinstveno <strong>korisničko ime (@)</strong> prima samo mala slova a–z, 0–9, podvlaku i tačku. Nalepi tamo kićeni font i dobiješ „nevažeće korisničko ime” — svaki put, po osmišljenju.</li>
-    <li>Svako <strong>polje prikaza</strong> — prikazano ime, nadimak na serveru, uloga, nazivi servera i kanala, „O meni” — prima Unicode fontove i emoji bez ikakvih trikova.</li>
+    <li>Jedinstveno <strong>korisničko ime (@)</strong> prima samo mala slova a–z, 0–9, podvlaku i tačku. Nalepi tamo kićeni font i dobiješ „nevažeće korisničko ime”, svaki put, po osmišljenju.</li>
+    <li>Svako <strong>polje prikaza</strong> (prikazano ime, nadimak na serveru, uloga, nazivi servera i kanala, „O meni”) prima Unicode fontove i emoji bez ikakvih trikova.</li>
     <li><strong>Markdown se prikazuje samo u porukama</strong> (plus osnove u tvom odeljku „O meni”). U svakom polju sa imenom, zvezdice samo stoje tu.</li>
     <li>Stilizovana imena imaju stvarnu cenu: <kbd>Ctrl+K</kbd> ne može da nađe 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈 kad otkucaš „aesthetic”, čitači ekrana se spotiču, a stariji Android telefoni mogu da prikažu kvadratiće.</li>
   </ul>
@@ -221,10 +221,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Section: the core idea -->
   <section class="editorial-section">
     <span class="article-section-label">Ključna ideja</span>
-    <h2>Discord nije nedosledan — svako polje ima svoj posao</h2>
+    <h2>Discord nije nedosledan: svako polje ima svoj posao</h2>
     <div class="editorial-block">
       <p>Krug pokušaja i grešaka ide ovako: stilizuješ ime generatorom, nalepiš ga u jedno Discord polje i sačuva se prelepo. Nalepiš isti tekst u drugo polje i Discord ga glatko odbije. Isti znakovi, isti nalog, suprotni rezultati. <em>Deluje</em> proizvoljno.</p>
-      <p>Nije. Discordova polja se čisto dele u dve porodice. <strong>Polja identiteta</strong> su ona od kojih zavise drugi sistemi — pominjanja, zahtevi za prijateljstvo, logovi moderacije, oporavak naloga. Postoji tačno jedno: tvoje jedinstveno korisničko ime (@), zaključano na sićušan skup znakova da nikad ne može da bude lažirano, pogrešno otkucano ni prikazano drugačije na različitim telefonima. <strong>Polja prikaza</strong> su sve ono što ljudi <em>gledaju</em> — prikazana imena, nadimci, nazivi uloga, nazivi servera i kanala, tvoj odeljak „O meni”. Ta polja su širom otvorena, jer kroz njih ne prolazi ništa kritično.</p>
+      <p>Nije. Discordova polja se čisto dele u dve porodice. <strong>Polja identiteta</strong> su ona od kojih zavise drugi sistemi: pominjanja, zahtevi za prijateljstvo, logovi moderacije, oporavak naloga. Postoji tačno jedno: tvoje jedinstveno korisničko ime (@), zaključano na sićušan skup znakova da nikad ne može da bude lažirano, pogrešno otkucano ni prikazano drugačije na različitim telefonima. <strong>Polja prikaza</strong> su sve ono što ljudi <em>gledaju</em>: prikazana imena, nadimci, nazivi uloga, nazivi servera i kanala, tvoj odeljak „O meni”. Ta polja su širom otvorena, jer kroz njih ne prolazi ništa kritično.</p>
       <p>Kad jednom vidiš dve porodice, svako „zašto ovo neće da se sačuva?” odgovori samo sebi. Nikad se ne boriš sa greškom; samo lepiš znakove za prikaz u polje za identitet. Rešenje je uvek isto: pomeri stil jedno polje dalje.</p>
     </div>
   </section>
@@ -238,8 +238,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="editorial-block">
       <p>Ova jedna zabuna proizvodi više neuspelih pokušaja nego sve ostalo zajedno. Otkako je Discord ukinuo stare četvorocifrene diskriminatore, svaki nalog ima <strong>dva</strong> imena, koja slede suprotna pravila:</p>
       <ul>
-        <li><strong>Korisničko ime</strong> — tvoj jedinstveni identifikator, prikazan sa @ na profilu. Dozvoljeni znakovi: mala slova <code>a–z</code>, <code>0–9</code>, <code>_</code> i <code>.</code> — ništa drugo. Ni velika slova, ni razmaci, a pogotovo ne 𝓴𝓾𝓻𝔃𝓲𝓿. Sve van tog skupa pokreće grešku „nevažeće korisničko ime”.</li>
-        <li><strong>Prikazano ime</strong> — veliko, prijateljsko ime prikazano u chatu i na tvom profilu. Prima razmake, velika slova, emoji i sve Unicode znakove fontova koje možeš da nalepiš.</li>
+        <li><strong>Korisničko ime</strong>: tvoj jedinstveni identifikator, prikazan sa @ na profilu. Dozvoljeni znakovi: mala slova <code>a–z</code>, <code>0–9</code>, <code>_</code> i <code>.</code> – ništa drugo. Ni velika slova, ni razmaci, a pogotovo ne 𝓴𝓾𝓻𝔃𝓲𝓿. Sve van tog skupa pokreće grešku „nevažeće korisničko ime”.</li>
+        <li><strong>Prikazano ime</strong>: veliko, prijateljsko ime prikazano u chatu i na tvom profilu. Prima razmake, velika slova, emoji i sve Unicode znakove fontova koje možeš da nalepiš.</li>
       </ul>
       <p>Dakle, obrazac koji radi je dosadan iznutra i stilizovan spolja:</p>
       <div class="example-pair">
@@ -249,7 +249,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="ex-label">Radi</span>
         <span class="ex-styled">@nova_riot &nbsp;+&nbsp; prikazano ime 𝕹𝖔𝖛𝖆 ⚔</span>
       </div>
-      <p>Unutar servera dobijaš treći sloj, <strong>nadimak na serveru</strong>, koji zamenjuje tvoje prikazano ime samo na tom serveru — i jednako je popustljiv. Stilizuj ga po zajednici: ୨୧ 𝒩𝑜𝓋𝒶 ୨୧ u knjiškom klubu, 𝗡𝗢𝗩𝗔 na esport serveru. <a href="/sr/fontovi-za-discord/">Generator nadimaka</a> preslikavanje znakova radi umesto tebe.</p>
+      <p>Unutar servera dobijaš treći sloj, <strong>nadimak na serveru</strong>, koji zamenjuje tvoje prikazano ime samo na tom serveru, i jednako je popustljiv. Stilizuj ga po zajednici: ୨୧ 𝒩𝑜𝓋𝒶 ୨୧ u knjiškom klubu, 𝗡𝗢𝗩𝗔 na esport serveru. <a href="/sr/fontovi-za-discord/">Generator nadimaka</a> preslikavanje znakova radi umesto tebe.</p>
     </div>
   </section>
 
@@ -260,7 +260,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Okvir</span>
     <h2>Matrica dozvola po poljima</h2>
     <div class="editorial-block">
-      <p>Evo cele mape — svako tekstualno polje na Discordu, šta svako od njih prima i <em>zašto</em>. Sačuvaj ovu tabelu u obeleživače i pogađanje prestaje.</p>
+      <p>Evo cele mape: svako tekstualno polje na Discordu, šta svako od njih prima i <em>zašto</em>. Sačuvaj ovu tabelu u obeleživače i pogađanje prestaje.</p>
     </div>
 
     <div class="data-table-wrap">
@@ -281,7 +281,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="editorial-block">
-      <p>Čitaj kolone odozgo nadole i logika iskoči: <strong>tačno jedan red odbija Unicode, i tačno jedan red pokreće pun Markdown.</strong> Sve između je otvorena sredina — nalepljeni stil dobrodošao, prikazani stil zanemaren. To je ceo sistem.</p>
+      <p>Čitaj kolone odozgo nadole i logika iskoči: <strong>tačno jedan red odbija Unicode, i tačno jedan red pokreće pun Markdown.</strong> Sve između je otvorena sredina: nalepljeni stil dobrodošao, prikazani stil zanemaren. To je ceo sistem.</p>
     </div>
   </section>
 
@@ -292,11 +292,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Beleške sa terena</span>
     <h2>Ćudljivost naziva kanala: automatska mala slova i crtice</h2>
     <div class="editorial-block">
-      <p>Nazivi tekstualnih kanala se pri čuvanju tiho prepisuju: obična velika slova prelaze u mala, a razmaci postaju crtice, i zato <code>General Chat</code> izađe kao <code>#general-chat</code>. Ljudi to čitaju kao „Discord mi je uklonio stil”. Pogledaj bolje — dirnuo je samo obična slova.</p>
+      <p>Nazivi tekstualnih kanala se pri čuvanju tiho prepisuju: obična velika slova prelaze u mala, a razmaci postaju crtice, i zato <code>General Chat</code> izađe kao <code>#general-chat</code>. Ljudi to čitaju kao „Discord mi je uklonio stil”. Pogledaj bolje: dirnuo je samo obična slova.</p>
       <div class="mood-explainer">
         <div class="mood-example">Otkucano: <strong>GENERAL CHAT</strong> → sačuvano kao <strong>#general-chat</strong> &nbsp;·&nbsp; Otkucano: <strong>𝗚𝗘𝗡𝗘𝗥𝗔𝗟 ✦ 𝗖𝗛𝗔𝗧</strong> → sačuvano kao <strong>#𝗚𝗘𝗡𝗘𝗥𝗔𝗟-✦-𝗖𝗛𝗔𝗧</strong></div>
       </div>
-      <p>Matematičko podebljano 𝗚 nije obično veliko G — to je drugačiji Unicode znak — pa ga pravilo o malim slovima preskače. To je rupa u pravilima iza svakog servera koji si video sa velikim, ukrašenim listama kanala. Dve fusnote: <strong>glasovni kanali i kategorije se uopšte ne normalizuju</strong> (razmaci i obična velika slova tu opstaju), a zaglavlja kategorija su mesto gde razdelnici poput ─── i ╭─ daju najbolji efekat.</p>
+      <p>Matematičko podebljano 𝗚 nije obično veliko G, to je drugačiji Unicode znak, pa ga pravilo o malim slovima preskače. To je rupa u pravilima iza svakog servera koji si video sa velikim, ukrašenim listama kanala. Dve fusnote: <strong>glasovni kanali i kategorije se uopšte ne normalizuju</strong> (razmaci i obična velika slova tu opstaju), a zaglavlja kategorija su mesto gde razdelnici poput ─── i ╭─ daju najbolji efekat.</p>
     </div>
   </section>
 
@@ -305,10 +305,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Section: markdown and color -->
   <section class="editorial-section">
     <span class="article-section-label">Prikazani stil</span>
-    <h2>Gde Markdown radi — a gde samo stoji</h2>
+    <h2>Gde Markdown radi: a gde samo stoji</h2>
     <div class="editorial-block">
-      <p>Markdown je druga vrsta stila: simboli poput <code>**podebljano**</code> koje Discord pretvara kad <em>prikaže</em> poruku. Matrica pokazuje da je njegova teritorija sićušna — <strong>poruke, plus osnovno formatiranje u tvom odeljku „O meni”</strong>. Otkucaj <code>**Nova**</code> u polje nadimka i zvezdice se sačuvaju kao doslovni znakovi, jer se polja sa imenom čuvaju i prikazuju sirova; nema prolaza prikazivača da ih pretvori.</p>
-      <p>To je praktična podela koju treba zapamtiti: <strong>prikazani stil (Markdown) za ono što govoriš, nalepljeni stil (Unicode) za ono kako te zovu.</strong> Potpuna mehanika — spojler oznake, blokovi koda, Nitro sloj i klasične greške tipa „zašto mi zvezdice ne podebljavaju” — nalazi se u našem pratećem vodiču, <a href="/sr/guide/formatiranje-teksta-na-discordu/">Formatiranje teksta na Discordu, dekodirano</a>.</p>
+      <p>Markdown je druga vrsta stila: simboli poput <code>**podebljano**</code> koje Discord pretvara kad <em>prikaže</em> poruku. Matrica pokazuje da je njegova teritorija sićušna: <strong>poruke, plus osnovno formatiranje u tvom odeljku „O meni”</strong>. Otkucaj <code>**Nova**</code> u polje nadimka i zvezdice se sačuvaju kao doslovni znakovi, jer se polja sa imenom čuvaju i prikazuju sirova; nema prolaza prikazivača da ih pretvori.</p>
+      <p>To je praktična podela koju treba zapamtiti: <strong>prikazani stil (Markdown) za ono što govoriš, nalepljeni stil (Unicode) za ono kako te zovu.</strong> Potpuna mehanika (spojler oznake, blokovi koda, Nitro sloj i klasične greške tipa „zašto mi zvezdice ne podebljavaju”) nalazi se u našem pratećem vodiču, <a href="/sr/guide/formatiranje-teksta-na-discordu/">Formatiranje teksta na Discordu, dekodirano</a>.</p>
       <p>Jedan poseban slučaj vredi istaći: <strong>obojen tekst</strong>. Postoji samo unutar poruka, samo preko ANSI blokova koda, sa osam fiksnih boja i klimavom podrškom na mobilnom. Nijedno polje sa imenom, nigde na Discordu, ne prima boju.</p>
     </div>
   </section>
@@ -325,7 +325,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="compare-grid">
       <div class="compare-card variant-muted">
         <span class="compare-badge">Pretraga se lomi</span>
-        <p><kbd>Ctrl+K</kbd>, pretraga članova i automatsko dopunjavanje pominjanja upoređuju doslovne znakove. Kucanje „aesthetic” nikada neće naći <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong> — nemaju nijedan zajednički znak.</p>
+        <p><kbd>Ctrl+K</kbd>, pretraga članova i automatsko dopunjavanje pominjanja upoređuju doslovne znakove. Kucanje „aesthetic” nikada neće naći <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong>: nemaju nijedan zajednički znak.</p>
       </div>
       <div class="compare-card variant-muted">
         <span class="compare-badge">Čitači ekrana se spotiču</span>
@@ -337,7 +337,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="editorial-block">
-      <p>Moje pravilo: <strong>stilizuj polja koja ljudi gledaju, drži jednostavnim polja koja ljudi kucaju.</strong> Prikazano ime i zaglavlja kategorija? Stilizuj do mile volje — podebljano, kapitalke i lagani simboli čitaju se dobro skoro svuda. Prometan tekstualni kanal koji članovi svakodnevno pretražuju, uloga koju modovi neprestano pinguju, naziv servera koji želiš da bude pronalažljiv? Njih drži jednostavnim ili skoro jednostavnim. I potpuno preskoči zalgo u imenima — mnogi veliki serveri ga automatski moderiraju, i to je stil koji najverovatnije lomi prikaz.</p>
+      <p>Moje pravilo: <strong>stilizuj polja koja ljudi gledaju, drži jednostavnim polja koja ljudi kucaju.</strong> Prikazano ime i zaglavlja kategorija? Stilizuj do mile volje: podebljano, kapitalke i lagani simboli čitaju se dobro skoro svuda. Prometan tekstualni kanal koji članovi svakodnevno pretražuju, uloga koju modovi neprestano pinguju, naziv servera koji želiš da bude pronalažljiv? Njih drži jednostavnim ili skoro jednostavnim. I potpuno preskoči zalgo u imenima. Mnogi veliki serveri ga automatski moderiraju, i to je stil koji najverovatnije lomi prikaz.</p>
     </div>
   </section>
 
@@ -346,7 +346,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA Card -->
   <div class="cta-card">
     <h3>Napravi ime spremno za Discord →</h3>
-    <p>Napravi Unicode ime bezbedno na svim uređajima, pa ga nalepi u prikazano ime, nadimak ili listu kanala — u svako polje koje matrica označava kao otvoreno.</p>
+    <p>Napravi Unicode ime bezbedno na svim uređajima, pa ga nalepi u prikazano ime, nadimak ili listu kanala: u svako polje koje matrica označava kao otvoreno.</p>
     <a href="/sr/fontovi-za-discord/" class="cta-btn">Otvori alat za fontove za Discord →</a>
   </div>
 
@@ -378,19 +378,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Zašto Discord kaže da je moje korisničko ime nevažeće?</button>
     <div class="faq-answer">
-      <p>Zato što je jedinstveno korisničko ime (@) ključ identiteta, a ne polje za prikaz. Prima samo mala slova a–z, 0–9, podvlaku i tačku — pa lepljenje Unicode znakova fontova (ili čak običnog velikog slova) navede Discord da odbije čuvanje. Umesto toga, stilizovanu verziju stavi u prikazano ime ili nadimak na serveru; ta polja u potpunosti primaju Unicode.</p>
+      <p>Zato što je jedinstveno korisničko ime (@) ključ identiteta, a ne polje za prikaz. Prima samo mala slova a–z, 0–9, podvlaku i tačku, pa lepljenje Unicode znakova fontova (ili čak običnog velikog slova) navede Discord da odbije čuvanje. Umesto toga, stilizovanu verziju stavi u prikazano ime ili nadimak na serveru; ta polja u potpunosti primaju Unicode.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Mogu li da koristim kićene fontove u prikazanom imenu na Discordu?</button>
     <div class="faq-answer">
-      <p>Da. Prikazana imena, nadimci na serveru, nazivi uloga, nazivi servera, nazivi kanala i tvoj odeljak „O meni” svi primaju Unicode znakove fontova i emoji. Napravi stilizovani tekst, pa gotove znakove nalepi u polje — nema ništa da se uključuje. Biraj čitljive stilove poput podebljanog, kurziva ili kapitalki, da bi te članovi na starijim uređajima i čitači ekrana i dalje mogli pročitati.</p>
+      <p>Da. Prikazana imena, nadimci na serveru, nazivi uloga, nazivi servera, nazivi kanala i tvoj odeljak „O meni” svi primaju Unicode znakove fontova i emoji. Napravi stilizovani tekst, pa gotove znakove nalepi u polje: nema ništa da se uključuje. Biraj čitljive stilove poput podebljanog, kurziva ili kapitalki, da bi te članovi na starijim uređajima i čitači ekrana i dalje mogli pročitati.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Zašto je naziv mog kanala izgubio velika slova?</button>
     <div class="faq-answer">
-      <p>Nazivi tekstualnih kanala se normalizuju: Discord obična slova A–Z prevodi u mala i razmake pretvara u crtice, pa „General Chat” postaje „general-chat”. Unicode znakovi fontova nisu obična slova, pa prolaze netaknuti — 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 zadržava velika slova jer su to matematički podebljani znakovi, a ne A–Z. Nazivi glasovnih kanala i kategorija preskaču ovu normalizaciju i zadržavaju razmake i velika slova.</p>
+      <p>Nazivi tekstualnih kanala se normalizuju: Discord obična slova A–Z prevodi u mala i razmake pretvara u crtice, pa „General Chat” postaje „general-chat”. Unicode znakovi fontova nisu obična slova, pa prolaze netaknuti: 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 zadržava velika slova jer su to matematički podebljani znakovi, a ne A–Z. Nazivi glasovnih kanala i kategorija preskaču ovu normalizaciju i zadržavaju razmake i velika slova.</p>
     </div>
   </div>
   <div class="faq-item">
@@ -402,7 +402,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Mogu li ljudi i dalje da me @pomenu ako mi je ime stilizovano?</button>
     <div class="faq-answer">
-      <p>Da — pominjanja se razrešavaju prema tvom nalogu, a ne prema stilizovanim znakovima. Kucanje tvog običnog korisničkog imena (@) te uvek nađe, a radi i klik na tvoje ime ili biranje iz liste članova. Ono što se lomi jeste automatsko dopunjavanje po prikazanom imenu: kucanje „aesthetic” neće se poklopiti sa 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈, jer su to različiti znakovi. Upravo zato Discord drži identifikator jednostavnim: to je zagarantovan način da te neko dobije.</p>
+      <p>Da: pominjanja se razrešavaju prema tvom nalogu, a ne prema stilizovanim znakovima. Kucanje tvog običnog korisničkog imena (@) te uvek nađe, a radi i klik na tvoje ime ili biranje iz liste članova. Ono što se lomi jeste automatsko dopunjavanje po prikazanom imenu: kucanje „aesthetic” neće se poklopiti sa 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈, jer su to različiti znakovi. Upravo zato Discord drži identifikator jednostavnim: to je zagarantovan način da te neko dobije.</p>
     </div>
   </div>
 </section>
@@ -414,7 +414,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a class="related-card" href="/sr/guide/formatiranje-teksta-na-discordu/">
       <span class="related-tag">🧩</span>
       <span class="related-title">Formatiranje teksta na Discordu</span>
-      <span class="related-desc">Markdown, Unicode i Nitro — dubinska mehanika.</span>
+      <span class="related-desc">Markdown, Unicode i Nitro, dubinska mehanika.</span>
     </a>
     <a class="related-card" href="/sr/guide/bezbedan-nadimak-na-discordu/">
       <span class="related-tag">🛡️</span>
@@ -424,7 +424,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a class="related-card" href="/sr/fontovi-za-discord/">
       <span class="related-tag">🎮</span>
       <span class="related-title">Generator fontova za Discord</span>
-      <span class="related-desc">Stilizuj ime pre nego što ga nalepiš — nadimak, „O meni”, kanali.</span>
+      <span class="related-desc">Stilizuj ime pre nego što ga nalepiš: nadimak, „O meni”, kanali.</span>
     </a>
   </div>
 </section>

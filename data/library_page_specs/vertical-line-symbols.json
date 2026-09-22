@@ -5,8 +5,8 @@
   "canonical": "https://ultratextgen.com/library/vertical-line-symbols/",
   "breadcrumb": "Vertical Line Symbols",
   "hero_h1": "Vertical Line Symbols",
-  "hero_tagline": "Every pipe, bar, and vertical rule Unicode offers — from the keyboard | to heavy ❚ bars. Click any symbol to copy it instantly.",
-  "intro": "The vertical line symbol — also called the pipe, bar, or vertical slash — separates items in headlines, bios, navigation menus, and code. Beyond the keyboard pipe |, Unicode includes double bars, dashed box-drawing verticals, heavy dingbat bars, and mathematical divides-by characters. Pick the exact weight and style of vertical line you need below; each one is a single copyable character.",
+  "hero_tagline": "Every pipe, bar, and vertical rule Unicode offers: from the keyboard | to heavy ❚ bars. Click any symbol to copy it instantly.",
+  "intro": "The vertical line symbol (also called the pipe, bar, or vertical slash) separates items in headlines, bios, navigation menus, and code. Beyond the keyboard pipe |, Unicode includes double bars, dashed box-drawing verticals, heavy dingbat bars, and mathematical divides-by characters. Pick the exact weight and style of vertical line you need below; each one is a single copyable character.",
   "date_published": "2026-06-12",
   "date_modified": "2026-06-12",
   "copy_pattern": "single",
@@ -63,7 +63,7 @@
       "id": "box-drawing-verticals",
       "label": "Box Drawing",
       "h2": "Box Drawing Vertical Lines",
-      "intro": "Light, heavy, dashed, and double verticals from the box-drawing block — ideal for dividers and frames.",
+      "intro": "Light, heavy, dashed, and double verticals from the box-drawing block, ideal for dividers and frames.",
       "symbols": [
         {
           "char": "│",

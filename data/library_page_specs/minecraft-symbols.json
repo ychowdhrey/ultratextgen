@@ -6,7 +6,7 @@
   "breadcrumb": "Minecraft Symbols",
   "hero_h1": "Minecraft Symbols",
   "hero_tagline": "Chat brackets, MOTD shading blocks, box-drawing lines, and game-themed icons that render in Minecraft's font. Click any symbol to copy it instantly.",
-  "intro": "Minecraft's default font renders a wide slice of Unicode, which is why servers decorate MOTDs, chat ranks, holograms, and kick screens with characters like ►, ▌, and ☠. This library collects the Minecraft symbols that show up reliably in chat, server list entries, scoreboard lines, and plugin configs — from shading blocks for MOTD banners to pickaxe and sword icons for rank prefixes. Paste them into server.properties-driven MOTD plugins, essentials chat formats, or anvil-renamed items.",
+  "intro": "Minecraft's default font renders a wide slice of Unicode, which is why servers decorate MOTDs, chat ranks, holograms, and kick screens with characters like ►, ▌, and ☠. This library collects the Minecraft symbols that show up reliably in chat, server list entries, scoreboard lines, and plugin configs, from shading blocks for MOTD banners to pickaxe and sword icons for rank prefixes. Paste them into server.properties-driven MOTD plugins, essentials chat formats, or anvil-renamed items.",
   "date_published": "2026-06-12",
   "date_modified": "2026-06-12",
   "copy_pattern": "single",
@@ -175,7 +175,7 @@
       "id": "game-icons",
       "label": "Game Icons",
       "h2": "Game-Themed Icons",
-      "intro": "Pickaxes, swords, hearts, and potions — icons that match Minecraft's tools and HUD.",
+      "intro": "Pickaxes, swords, hearts, and potions, icons that match Minecraft's tools and HUD.",
       "symbols": [
         {
           "char": "⛏",

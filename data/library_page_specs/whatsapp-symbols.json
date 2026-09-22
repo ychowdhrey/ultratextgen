@@ -6,7 +6,7 @@
   "breadcrumb": "WhatsApp Symbols",
   "hero_h1": "WhatsApp Symbols",
   "hero_tagline": "Ticks, hearts, stars, and decorations for WhatsApp statuses, bios, and group names. Click any symbol to copy it instantly.",
-  "intro": "WhatsApp symbols dress up the parts of the app that plain text leaves bare — your About line, status updates, group names, and broadcast messages. This library collects the characters people paste into WhatsApp most: check-mark ticks, hearts in every colour, stars and sparkles, plus dividers and ready-made status decorations. Everything here is standard Unicode, so it renders on both Android and iPhone without extra apps.",
+  "intro": "WhatsApp symbols dress up the parts of the app that plain text leaves bare: your About line, status updates, group names, and broadcast messages. This library collects the characters people paste into WhatsApp most: check-mark ticks, hearts in every colour, stars and sparkles, plus dividers and ready-made status decorations. Everything here is standard Unicode, so it renders on both Android and iPhone without extra apps.",
   "date_published": "2026-06-12",
   "date_modified": "2026-06-12",
   "copy_pattern": "single",
@@ -94,7 +94,7 @@
       "id": "status-combos",
       "label": "Status Combos",
       "h2": "Ready-Made Status Decorations",
-      "intro": "One-click status and bio decorations — each button copies the whole combo string at once.",
+      "intro": "One-click status and bio decorations. Each button copies the whole combo string at once.",
       "symbols": [
         { "char": "•──────♡──────•", "label": "Heart Line Divider" },
         { "char": "✦ ♡ ✦ ♡ ✦", "label": "Star and Heart String" },

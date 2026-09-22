@@ -5,8 +5,8 @@
  "meta_description": "Waschsymbole verstehen: Waschen, Bleichen, Trocknen, Bügeln und alle Durchstreichungen erklärt — mit Unicode-Zeichen zum Kopieren für Etiketten, Notizen und Aushänge.",
  "breadcrumb": "Waschsymbole",
  "hero_h1": "Waschsymbole und ihre Bedeutung",
- "hero_tagline": "Waschen, Bleichen, Trocknen, Bügeln — die fünf Zeichengruppen auf jedem Pflegeetikett, dazu passende Unicode-Zeichen zum Kopieren.",
- "intro": "Auf jedem Pflegeetikett stehen dieselben fünf Zeichenfamilien: der Waschbottich, das Bleichdreieck, der Trocknerkreis, das Bügeleisen und der Kreis für die Textilreinigung. Ein Kreuz durch eines dieser Zeichen heißt immer „nicht tun“. Diese Seite erklärt die Systematik und stellt die Unicode-Zeichen bereit, mit denen sich Waschhinweise in Text schreiben lassen — für Aushänge in der Waschküche, Übergabelisten oder Pflegehinweise im Online-Shop.",
+ "hero_tagline": "Waschen, Bleichen, Trocknen, Bügeln: die fünf Zeichengruppen auf jedem Pflegeetikett, dazu passende Unicode-Zeichen zum Kopieren.",
+ "intro": "Auf jedem Pflegeetikett stehen dieselben fünf Zeichenfamilien: der Waschbottich, das Bleichdreieck, der Trocknerkreis, das Bügeleisen und der Kreis für die Textilreinigung. Ein Kreuz durch eines dieser Zeichen heißt immer „nicht tun“. Diese Seite erklärt die Systematik und stellt die Unicode-Zeichen bereit, mit denen sich Waschhinweise in Text schreiben lassen, für Aushänge in der Waschküche, Übergabelisten oder Pflegehinweise im Online-Shop.",
  "sections": [
   {
    "id": "waschen",
@@ -207,18 +207,18 @@
  "editorial_sections": [
   {
    "h2": "Fünf Zeichen, ein System",
-   "body": "Pflegeetiketten wirken unübersichtlich, folgen aber einer knappen Logik: fünf Grundzeichen in immer derselben Reihenfolge — Waschbottich, Dreieck, Quadrat, Bügeleisen, Kreis. Was ein Zeichen genauer bestimmt, steht darin (eine Zahl, ein Punkt, ein Buchstabe) oder darunter (ein Strich für schonend, zwei für sehr schonend). Wer diese Grammatik einmal verstanden hat, muss kein Etikett mehr auswendig lernen: Zeichen benennt die Behandlung, Inhalt nennt die Grenze, Kreuz verbietet sie."
+   "body": "Pflegeetiketten wirken unübersichtlich, folgen aber einer knappen Logik: fünf Grundzeichen in immer derselben Reihenfolge: Waschbottich, Dreieck, Quadrat, Bügeleisen, Kreis. Was ein Zeichen genauer bestimmt, steht darin (eine Zahl, ein Punkt, ein Buchstabe) oder darunter (ein Strich für schonend, zwei für sehr schonend). Wer diese Grammatik einmal verstanden hat, muss kein Etikett mehr auswendig lernen: Zeichen benennt die Behandlung, Inhalt nennt die Grenze, Kreuz verbietet sie."
   },
   {
    "h2": "Warum diese Zeichen nicht in Unicode stehen",
-   "body": "Die genormten Pflegesymbole gehören GINETEX und sind als Bildmarken geschützt — Unicode nimmt geschützte Zeichensysteme grundsätzlich nicht auf. Deshalb gibt es kein Zeichen für „Waschbottich 40 Grad“, das man in eine Nachricht kopieren könnte. Für Fließtext bleibt der Umweg über die Zeichen oben: ein Wassertropfen und eine Temperaturangabe sagen dasselbe wie das Etikett, nur eben in Textform."
+   "body": "Die genormten Pflegesymbole gehören GINETEX und sind als Bildmarken geschützt: Unicode nimmt geschützte Zeichensysteme grundsätzlich nicht auf. Deshalb gibt es kein Zeichen für „Waschbottich 40 Grad“, das man in eine Nachricht kopieren könnte. Für Fließtext bleibt der Umweg über die Zeichen oben: ein Wassertropfen und eine Temperaturangabe sagen dasselbe wie das Etikett, nur eben in Textform."
   }
  ],
  "related": [
   {
    "href": "/de/library/warnsymbole/",
    "title": "Warn- und Gefahrensymbole",
-   "desc": "GHS-Piktogramme und Warnzeichen mit ihrer Bedeutung — zum Kopieren."
+   "desc": "GHS-Piktogramme und Warnzeichen mit ihrer Bedeutung, zum Kopieren."
   },
   {
    "href": "/de/library/geometrische-symbole/",

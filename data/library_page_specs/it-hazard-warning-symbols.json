@@ -4,7 +4,7 @@
   "meta_description": "Simboli di pericolo da copiare: radioattivo ☢, biologico ☣, teschio ☠, avvertimento ⚠, alta tensione ⚡ e segnali di divieto 🚫 ⛔. Tocca per copiare.",
   "breadcrumb": "Simboli pericolo",
   "hero_h1": "Simboli di pericolo e avvertimento",
-  "hero_tagline": "☢ ☣ ⚠ ⚡ 🚫 — rischio, avvertimento, allerta e divieto. Tocca per copiare.",
+  "hero_tagline": "☢ ☣ ⚠ ⚡ 🚫: rischio, avvertimento, allerta e divieto. Tocca per copiare.",
   "intro": "Sono caratteri di testo, non pittogrammi normati: servono a scrivere di un rischio, non a segnalarlo su un impianto. I quattro gruppi qui sotto vanno dal rischio fisico al divieto. Tocca un simbolo e finisce negli appunti.",
   "copy_pattern": "single",
   "sections": [
@@ -159,14 +159,14 @@
   "editorial_sections": [
     {
       "h2": "Un simbolo di pericolo non è un segnale di pericolo",
-      "body": "La differenza conta più di quanto sembri. Un cartello di sicurezza è un oggetto normato: dimensione, colore, contrasto e posizione sono prescritti perché deve funzionare a distanza, di corsa e con poca luce. Un carattere Unicode non ha nulla di tutto ciò — cambia colore con il testo, si rimpicciolisce con il corpo, e su un altro dispositivo può essere disegnato in un modo diverso. Per questo ☢ è perfetto in una riga di documentazione o in un messaggio, e completamente fuori luogo su una porta."
+      "body": "La differenza conta più di quanto sembri. Un cartello di sicurezza è un oggetto normato: dimensione, colore, contrasto e posizione sono prescritti perché deve funzionare a distanza, di corsa e con poca luce. Un carattere Unicode non ha nulla di tutto ciò: cambia colore con il testo, si rimpicciolisce con il corpo, e su un altro dispositivo può essere disegnato in un modo diverso. Per questo ☢ è perfetto in una riga di documentazione o in un messaggio, e completamente fuori luogo su una porta."
     }
   ],
   "related": [
     {
       "href": "/it/library/caratteri-speciali-simboli/",
       "title": "Caratteri Speciali",
-      "desc": "Una raccolta di riferimento di simboli Unicode unici — infinito, pace, scienza, marchi legali, elementi estetici indipendenti e rare curiosità. Tocca un simbolo per copiarlo all'istante."
+      "desc": "Una raccolta di riferimento di simboli Unicode unici: infinito, pace, scienza, marchi legali, elementi estetici indipendenti e rare curiosità. Tocca un simbolo per copiarlo all'istante."
     },
     {
       "href": "/it/symbol/simbolo-rischio-biologico/",
@@ -176,7 +176,7 @@
     {
       "href": "/it/symbol/simbolo-stop/",
       "title": "Simbolo stop (🛑)",
-      "desc": "L'emoji del cartello stop ottagonale — l'unico segnale stradale con questa forma voluta — e il cerchio ⛔ «divieto di accesso» con cui viene confuso di continuo. Tocca per copiarlo."
+      "desc": "L'emoji del cartello stop ottagonale, l'unico segnale stradale con questa forma voluta, e il cerchio ⛔ «divieto di accesso» con cui viene confuso di continuo. Tocca per copiarlo."
     }
   ],
   "canonical": "https://ultratextgen.com/it/library/simboli-pericolo/",

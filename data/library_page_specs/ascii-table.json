@@ -6,7 +6,7 @@
   "breadcrumb": "ASCII Table",
   "hero_h1": "ASCII Table",
   "hero_tagline": "Printable ASCII characters 33–126 with their decimal, hex, binary, and octal codes. Click any character to copy it instantly.",
-  "intro": "The ASCII table maps the 128 characters of the American Standard Code for Information Interchange to the numbers 0–127 — the foundation of modern text encoding and the first 128 code points of Unicode. This reference covers the printable range (33–126) grouped by type, with each character labeled by its decimal, hex, binary, and octal code. Codes 0–31 are non-printing control characters (like 10, the line feed), and 32 is the space.",
+  "intro": "The ASCII table maps the 128 characters of the American Standard Code for Information Interchange to the numbers 0–127, the foundation of modern text encoding and the first 128 code points of Unicode. This reference covers the printable range (33–126) grouped by type, with each character labeled by its decimal, hex, binary, and octal code. Codes 0–31 are non-printing control characters (like 10, the line feed), and 32 is the space.",
   "date_published": "2026-06-12",
   "date_modified": "2026-07-10",
   "copy_pattern": "single",
@@ -38,7 +38,7 @@
       "id": "ascii-digits-48-57",
       "label": "Digits 48–57",
       "h2": "ASCII Digits (48–57)",
-      "intro": "The ten decimal digits — each digit's code is 48 plus its value.",
+      "intro": "The ten decimal digits: each digit's code is 48 plus its value.",
       "symbols": [
         { "char": "0", "label": "48 / 0x30 / 0b0110000 / 0o60: Digit Zero" },
         { "char": "1", "label": "49 / 0x31 / 0b0110001 / 0o61: Digit One" },
@@ -71,7 +71,7 @@
       "id": "ascii-letters",
       "label": "Letters 65–122",
       "h2": "ASCII Letters (65–90 and 97–122)",
-      "intro": "Uppercase letters run from 65 (A) to 90 (Z); lowercase from 97 (a) to 122 (z) — always uppercase plus 32.",
+      "intro": "Uppercase letters run from 65 (A) to 90 (Z); lowercase from 97 (a) to 122 (z), always uppercase plus 32.",
       "symbols": [
         { "char": "A", "label": "65 / 0x41 / 0b1000001 / 0o101: Latin Capital Letter A" },
         { "char": "B", "label": "66 / 0x42 / 0b1000010 / 0o102: Latin Capital Letter B" },

@@ -6,7 +6,7 @@
   "breadcrumb": "Electrical & Circuit Symbols",
   "hero_h1": "Electrical & Circuit Symbols",
   "hero_tagline": "Ground, current, power, logic gate, and unit glyphs for engineering text. Click any symbol to copy it instantly.",
-  "intro": "Unicode quietly covers a surprising amount of electrical notation: the ohm sign, earth ground, AC and DC current marks, power button glyphs, and compact unit characters like ㎃ and ㏀. These electrical symbols are handy in schematics annotations, datasheety forum posts, lab reports, spreadsheets, and anywhere a drawing tool is overkill. Copy the character you need straight into your document — no special font required.",
+  "intro": "Unicode quietly covers a surprising amount of electrical notation: the ohm sign, earth ground, AC and DC current marks, power button glyphs, and compact unit characters like ㎃ and ㏀. These electrical symbols are handy in schematics annotations, datasheety forum posts, lab reports, spreadsheets, and anywhere a drawing tool is overkill. Copy the character you need straight into your document, no special font required.",
   "date_published": "2026-06-12",
   "date_modified": "2026-06-12",
   "copy_pattern": "single",
@@ -15,7 +15,7 @@
       "id": "power-energy",
       "label": "Power",
       "h2": "Power & Energy Symbols",
-      "intro": "Power states, plugs, and batteries — the glyphs of switching things on and off.",
+      "intro": "Power states, plugs, and batteries, the glyphs of switching things on and off.",
       "symbols": [
         {
           "char": "⚡",

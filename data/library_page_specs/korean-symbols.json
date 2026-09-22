@@ -5,8 +5,8 @@
   "canonical": "https://ultratextgen.com/library/korean-symbols/",
   "breadcrumb": "Korean Symbols",
   "hero_h1": "Korean Symbols",
-  "hero_tagline": "Hangul words, jamo letters, and K-pop fan slang — each labeled with romanization and meaning. Click any symbol to copy it instantly.",
-  "intro": "Korean symbols have gone global with K-pop and K-drama fandom, and Hangul words like 사랑 (sarang, love) now appear in bios, fan edits, and comments everywhere. This library collects meaningful Korean words, the building-block jamo letters of the Hangul alphabet, and the text slang Koreans actually use — like ㅋㅋㅋ for laughter — all labeled with romanization and meaning. Copy them for fan accounts, captions, or learning practice.",
+  "hero_tagline": "Hangul words, jamo letters, and K-pop fan slang, each labeled with romanization and meaning. Click any symbol to copy it instantly.",
+  "intro": "Korean symbols have gone global with K-pop and K-drama fandom, and Hangul words like 사랑 (sarang, love) now appear in bios, fan edits, and comments everywhere. This library collects meaningful Korean words, the building-block jamo letters of the Hangul alphabet, and the text slang Koreans actually use, like ㅋㅋㅋ for laughter, all labeled with romanization and meaning. Copy them for fan accounts, captions, or learning practice.",
   "date_published": "2026-06-12",
   "date_modified": "2026-06-12",
   "copy_pattern": "collection",
@@ -15,7 +15,7 @@
       "id": "hangul-words",
       "label": "Hangul Words",
       "h2": "Meaningful Hangul Words",
-      "intro": "Beautiful Korean words for love, dreams, and nature — the most copied Hangul for bios and captions.",
+      "intro": "Beautiful Korean words for love, dreams, and nature, the most copied Hangul for bios and captions.",
       "symbols": [
         { "char": "사랑", "label": "Sarang: Love" },
         { "char": "행복", "label": "Haengbok: Happiness" },
@@ -73,7 +73,7 @@
       "id": "korean-text-slang",
       "label": "Text Slang",
       "h2": "Korean Text Slang & Laughs",
-      "intro": "Jamo shorthand used in Korean chats — laughter, tears, and quick replies.",
+      "intro": "Jamo shorthand used in Korean chats: laughter, tears, and quick replies.",
       "symbols": [
         { "char": "ㅋㅋㅋ", "label": "Kekeke: Laughing (Korean LOL)" },
         { "char": "ㅎㅎ", "label": "Hehe: Soft Laugh" },
@@ -90,7 +90,7 @@
     "id": "korean-sets",
     "label": "Hangul Sets",
     "h2": "Korean Combo Sets",
-    "intro": "Copy a full Hangul set — fan cheers, laugh strings, or a ready-made K-pop bio frame — in one click."
+    "intro": "Copy a full Hangul set (fan cheers, laugh strings, or a ready-made K-pop bio frame) in one click."
   },
   "collection_container_id": "koreanSetsContainer",
   "collections": [

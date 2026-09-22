@@ -6,7 +6,7 @@
   "breadcrumb": "Crying Emoji & Kaomoji",
   "hero_h1": "Crying Emoji & Kaomoji",
   "hero_tagline": "Every crying emoji from full 😭 sobbing to 🥹 held-back tears, plus kaomoji and ready-made tear combos. Click any symbol to copy it instantly.",
-  "intro": "The crying emoji is one of the most-used characters on the internet — 😭 alone doubles as genuine sobbing and exaggerated crying-laughing. This page collects every crying emoji variant, the water and heartbreak symbols that pair with them, classic Japanese crying kaomoji like (;﹏;), and one-click combo sets for captions, comments, and group-chat reactions. If you want quieter melancholy rather than open tears, see the sad emoji page linked below.",
+  "intro": "The crying emoji is one of the most-used characters on the internet. 😭 Alone doubles as genuine sobbing and exaggerated crying-laughing. This page collects every crying emoji variant, the water and heartbreak symbols that pair with them, classic Japanese crying kaomoji like (;﹏;), and one-click combo sets for captions, comments, and group-chat reactions. If you want quieter melancholy rather than open tears, see the sad emoji page linked below.",
   "date_published": "2026-06-12",
   "date_modified": "2026-06-12",
   "copy_pattern": "collection",
@@ -46,7 +46,7 @@
       "id": "distress-faces",
       "label": "Distress Faces",
       "h2": "Related Distress & Pleading Faces",
-      "intro": "Faces on the edge of tears — weary, overwhelmed, or pleading.",
+      "intro": "Faces on the edge of tears: weary, overwhelmed, or pleading.",
       "symbols": [
         { "char": "😩", "label": "Weary Face" },
         { "char": "😫", "label": "Tired Face" },
@@ -62,7 +62,7 @@
       "id": "crying-kaomoji",
       "label": "Kaomoji",
       "h2": "Crying Kaomoji & Text Faces",
-      "intro": "Japanese-style text faces that cry with full-width tears — paste them anywhere plain text works.",
+      "intro": "Japanese-style text faces that cry with full-width tears: paste them anywhere plain text works.",
       "symbols": [
         { "char": "(T_T)", "label": "Streaming Tears Kaomoji" },
         { "char": "(;_;)", "label": "Quiet Tears Kaomoji" },
@@ -81,7 +81,7 @@
     "id": "combo-sets",
     "label": "Combo Sets",
     "h2": "Crying Emoji Combo Sets",
-    "intro": "Ready-made crying combos — copy a full set with one click and paste it straight into a caption or reply."
+    "intro": "Ready-made crying combos: copy a full set with one click and paste it straight into a caption or reply."
   },
   "collection_container_id": "cryingSetsContainer",
   "collections": [
@@ -135,7 +135,7 @@
     {
       "href": "/library/text-faces-kaomoji/",
       "title": "Text Faces & Kaomoji",
-      "desc": "The full kaomoji library — happy, sad, angry, and everything between."
+      "desc": "The full kaomoji library: happy, sad, angry, and everything between."
     },
     {
       "href": "/library/face-emojis/",

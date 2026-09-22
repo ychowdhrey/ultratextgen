@@ -5,8 +5,8 @@
   "canonical": "https://ultratextgen.com/library/facepalm-emoji/",
   "breadcrumb": "Facepalm Emoji & Kaomoji",
   "hero_h1": "Facepalm Emoji & Kaomoji",
-  "hero_tagline": "The 🤦 facepalm, exasperated done faces, and slumped-over kaomoji like orz — every flavor of 'I can't even.' Click any symbol to copy it instantly.",
-  "intro": "The facepalm emoji 🤦 is the internet's universal 'I can't believe this' — palm pressed to forehead in secondhand embarrassment or sheer disbelief. This page gathers the whole range: the person, man, and woman facepalm variants, the weary and exhaling 'done' faces for when the sigh is audible, the flat 😑 and eye-rolling 🙄 reactions for lower-grade frustration, and classic facepalm kaomoji like orz and (－‸ლ) that paste anywhere plain text works. Grab a single face, or copy a ready-made combo set for chats, comments, and replies.",
+  "hero_tagline": "The 🤦 facepalm, exasperated done faces, and slumped-over kaomoji like orz: every flavor of 'I can't even.' Click any symbol to copy it instantly.",
+  "intro": "The facepalm emoji 🤦 is the internet's universal 'I can't believe this', palm pressed to forehead in secondhand embarrassment or sheer disbelief. This page gathers the whole range: the person, man, and woman facepalm variants, the weary and exhaling 'done' faces for when the sigh is audible, the flat 😑 and eye-rolling 🙄 reactions for lower-grade frustration, and classic facepalm kaomoji like orz and (－‸ლ) that paste anywhere plain text works. Grab a single face, or copy a ready-made combo set for chats, comments, and replies.",
   "date_published": "2026-07-13",
   "date_modified": "2026-07-13",
   "copy_pattern": "collection",
@@ -15,7 +15,7 @@
       "id": "facepalm-faces",
       "label": "Face Palm",
       "h2": "The Facepalm Emoji",
-      "intro": "The core facepalm — the emoji everyone reaches for when words fail, in every variant.",
+      "intro": "The core facepalm: the emoji everyone reaches for when words fail, in every variant.",
       "symbols": [
         { "char": "🤦", "label": "Person Facepalming" },
         { "char": "🤦‍♂️", "label": "Man Facepalming" },
@@ -29,7 +29,7 @@
       "id": "exasperated-faces",
       "label": "Weary Face",
       "h2": "Exasperated & Done Faces",
-      "intro": "The audible-sigh faces — weary, exhaling, and completely out of patience.",
+      "intro": "The audible-sigh faces: weary, exhaling, and completely out of patience.",
       "symbols": [
         { "char": "😩", "label": "Weary Face" },
         { "char": "😫", "label": "Tired Face" },
@@ -42,7 +42,7 @@
       "id": "frustrated-reactions",
       "label": "Expressionless Face",
       "h2": "Related Frustrated Reactions",
-      "intro": "Lower-grade irritation — flat stares and eye rolls for a milder 'seriously?'",
+      "intro": "Lower-grade irritation: flat stares and eye rolls for a milder 'seriously?'",
       "symbols": [
         { "char": "😑", "label": "Expressionless Face" },
         { "char": "🙄", "label": "Face With Rolling Eyes" },
@@ -70,7 +70,7 @@
     "id": "combo-sets",
     "label": "Combo Sets",
     "h2": "Facepalm Combo Sets",
-    "intro": "Copy a complete facepalm combo in one click — from a quiet sigh to full 'I give up' mode."
+    "intro": "Copy a complete facepalm combo in one click: from a quiet sigh to full 'I give up' mode."
   },
   "collection_container_id": "facepalmSetsContainer",
   "collections": [

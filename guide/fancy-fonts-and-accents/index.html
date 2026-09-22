@@ -110,17 +110,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Why do my accents disappear or turn plain when I use a fancy font?",
-      "acceptedAnswer": { "@type": "Answer", "text": "In this generator they mostly no longer do — 77 of the 112 styles keep your accents styled, including every core typography style. Unicode has no single styled version of á, ñ or ữ, so the generator splits each accented letter into its base letter plus its combining mark, styles the base like any other letter, and reattaches the original mark on top. Bold Señor now comes out 𝗦𝗲𝗻̃𝗼𝗿, with the ñ styled too. What still shows a plain accent: the 8 upside-down styles, 13 novelty styles that use exotic alphabets (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics), and a handful of one-piece letters like đ, ø and ß that have no separate mark to lift off." }
+      "acceptedAnswer": { "@type": "Answer", "text": "In this generator they mostly no longer do: 77 of the 112 styles keep your accents styled, including every core typography style. Unicode has no single styled version of á, ñ or ữ, so the generator splits each accented letter into its base letter plus its combining mark, styles the base like any other letter, and reattaches the original mark on top. Bold Señor now comes out 𝗦𝗲𝗻̃𝗼𝗿, with the ñ styled too. What still shows a plain accent: the 8 upside-down styles, 13 novelty styles that use exotic alphabets (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics), and a handful of one-piece letters like đ, ø and ß that have no separate mark to lift off." }
     },
     {
       "@type": "Question",
       "name": "Which fancy fonts keep accents like á, ñ and ữ?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Almost all the core typography styles now — 77 of the 112 styles fully preserve accents, including every bold, italic, script, cursive, fraktur/gothic, double-struck, small caps and monospace variant, plus the mark and symbol styles (strikethrough, underline, slash, wraps). Each one keeps the accent by styling the base letter and riding the original mark back on top. The ones that keep a plain accent are the 8 upside-down / flip styles, 13 novelty styles that substitute exotic alphabets (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics), and the one-piece letters đ, ø, ß, ł and ı that have no mark to reattach. You can compare them on the generator." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Almost all the core typography styles now: 77 of the 112 styles fully preserve accents, including every bold, italic, script, cursive, fraktur/gothic, double-struck, small caps and monospace variant, plus the mark and symbol styles (strikethrough, underline, slash, wraps). Each one keeps the accent by styling the base letter and riding the original mark back on top. The ones that keep a plain accent are the 8 upside-down / flip styles, 13 novelty styles that substitute exotic alphabets (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics), and the one-piece letters đ, ø, ß, ł and ı that have no mark to reattach. You can compare them on the generator." }
     },
     {
       "@type": "Question",
       "name": "Do fancy fonts work with Vietnamese?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes, far better than they used to. Almost every Vietnamese syllable stacks a vowel mark and a tone mark (ữ, ế, ệ, ơ), and the generator now decomposes each vowel, styles the base and reattaches every mark, so a name styles fully with its dấu intact — bold Việt Nam comes out 𝗩𝗶𝗲̣̂𝘁 𝗡𝗮𝗺. The one letter that never converts is đ, which is its own Unicode character with no decomposition, so it styles as a plain d. The upside-down styles and a few novelty exotic-alphabet styles are still a poor fit too. Removing the tone marks first (bỏ dấu) is still common for game names, but now it's a choice for length caps and platform limits, not a requirement for clean styling." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, far better than they used to. Almost every Vietnamese syllable stacks a vowel mark and a tone mark (ữ, ế, ệ, ơ), and the generator now decomposes each vowel, styles the base and reattaches every mark, so a name styles fully with its dấu intact: bold Việt Nam comes out 𝗩𝗶𝗲̣̂𝘁 𝗡𝗮𝗺. The one letter that never converts is đ, which is its own Unicode character with no decomposition, so it styles as a plain d. The upside-down styles and a few novelty exotic-alphabet styles are still a poor fit too. Removing the tone marks first (bỏ dấu) is still common for game names, but now it's a choice for length caps and platform limits, not a requirement for clean styling." }
     },
     {
       "@type": "Question",
@@ -157,7 +157,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="hero">
   <div class="hero-inner" style="max-width:800px;">
     <h1 class="hero-headline">Accents, Diacritics &amp; Fancy Fonts</h1>
-    <p class="hero-tagline">Style <strong>café</strong> and the é now stays styled too. Unicode never made a bold á or ñ — so this generator styles the base letter and rides your original accent back on top, and the vast majority of styles keep their marks. Here's how that works, the styles that still can't (the upside-down styles, and a set of novelty exotic-alphabet styles), the one-piece letters like <strong>đ</strong> and <strong>ß</strong> that have no mark to lift off, and how it all renders across devices.</p>
+    <p class="hero-tagline">Style <strong>café</strong> and the é now stays styled too. Unicode never made a bold á or ñ, so this generator styles the base letter and rides your original accent back on top, and the vast majority of styles keep their marks. Here's how that works, the styles that still can't (the upside-down styles, and a set of novelty exotic-alphabet styles), the one-piece letters like <strong>đ</strong> and <strong>ß</strong> that have no mark to lift off, and how it all renders across devices.</p>
     <div class="guide-meta">
       <span class="guide-pill is-accent">Unicode &amp; Languages</span>
       <span class="guide-pill">⏱ 12 min read</span>
@@ -170,10 +170,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="key-takeaways">
   <h2>Key Takeaways</h2>
   <ul>
-    <li>Unicode has no single styled á, ñ or ữ — so this generator <strong>splits each accented letter, styles the base, and reattaches the original mark</strong>. The accent now rides on the styled letter instead of dropping to plain.</li>
-    <li><strong>The vast majority of styles keep every accent</strong> — 77 of 112, including every bold, italic, script, gothic/fraktur, double-struck and small-caps variant, alongside the mark/symbol styles. The exceptions are novelty styles — the <strong>8 upside-down styles</strong> and <strong>13 exotic-alphabet ones</strong> (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics) — plus about ten <strong>one-piece letters</strong> (đ ø ß ł ı …) with no separate mark to carry.</li>
+    <li>Unicode has no single styled á, ñ or ữ, so this generator <strong>splits each accented letter, styles the base, and reattaches the original mark</strong>. The accent now rides on the styled letter instead of dropping to plain.</li>
+    <li><strong>The vast majority of styles keep every accent</strong>: 77 of 112, including every bold, italic, script, gothic/fraktur, double-struck and small-caps variant, alongside the mark/symbol styles. The exceptions are novelty styles: the <strong>8 upside-down styles</strong> and <strong>13 exotic-alphabet ones</strong> (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics), plus about ten <strong>one-piece letters</strong> (đ ø ß ł ı …) with no separate mark to carry.</li>
     <li>Spanish, French and even <strong>Vietnamese now style fully, tone marks included</strong>. The one letter that still never converts is <strong>đ</strong>, which is its own character with no accent to lift off.</li>
-    <li>Reattached marks make device rendering <em>more</em> relevant, not less: the same string can look clean on Chrome/iPhone and detached on Firefox/old Android. Placement depends on the <em>reader's</em> device, not yours — so test on the worst one.</li>
+    <li>Reattached marks make device rendering <em>more</em> relevant, not less: the same string can look clean on Chrome/iPhone and detached on Firefox/old Android. Placement depends on the <em>reader's</em> device, not yours, so test on the worst one.</li>
   </ul>
 </section>
 
@@ -184,13 +184,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">The Core Idea</span>
     <h2>Styled Letters Are a Closed Alphabet</h2>
     <div class="editorial-block">
-      <p>When you pick a "bold" or "script" style, you're not applying formatting the way a word processor does. You're swapping each letter for a <em>different Unicode character</em> that happens to look bold or scripted — the bold <strong>𝗮</strong> is its own code point, not a normal "a" wearing a costume. (If that idea is new, start with <a href="/guide/why-fonts-show-as-boxes/">why fancy fonts turn into boxes</a>.)</p>
+      <p>When you pick a "bold" or "script" style, you're not applying formatting the way a word processor does. You're swapping each letter for a <em>different Unicode character</em> that happens to look bold or scripted: the bold <strong>𝗮</strong> is its own code point, not a normal "a" wearing a costume. (If that idea is new, start with <a href="/guide/why-fonts-show-as-boxes/">why fancy fonts turn into boxes</a>.)</p>
       <p>Those styled characters live in a Unicode region called the <strong>Mathematical Alphanumeric Symbols</strong> block, and it was built for equations, not languages. It contains styled forms of exactly three things: <strong>A–Z, a–z, and 0–9</strong>. That's the entire alphabet available to a letter-swap style.</p>
-      <p>Every accented letter you can think of — <strong>á é í ñ ü ç</strong>, and every Vietnamese vowel like <strong>ữ ế ệ ơ ư ă</strong> — lives in <em>completely different</em> Unicode blocks (Latin-1 Supplement, Latin Extended-A/B/Additional). Those blocks have <strong>no styled twins</strong>. So when a generator reaches for a bold version of "é," there simply isn't one to reach for — which is why a <em>naive</em> tool leaves the é plain while its neighbours restyle, giving that half-styled look.</p>
+      <p>Every accented letter you can think of (<strong>á é í ñ ü ç</strong>, and every Vietnamese vowel like <strong>ữ ế ệ ơ ư ă</strong>) lives in <em>completely different</em> Unicode blocks (Latin-1 Supplement, Latin Extended-A/B/Additional). Those blocks have <strong>no styled twins</strong>. So when a generator reaches for a bold version of "é," there simply isn't one to reach for, which is why a <em>naive</em> tool leaves the é plain while its neighbours restyle, giving that half-styled look.</p>
       <div class="mood-explainer">
-        <div class="mood-example">Old way: <strong>Señor</strong> in bold gave <strong>𝗦𝗲ñ𝗼𝗿</strong> — every letter bold except the plain ñ. Now it gives <strong>𝗦𝗲𝗻̃𝗼𝗿</strong> — a bold "n" with your original tilde riding on top.</div>
+        <div class="mood-example">Old way: <strong>Señor</strong> in bold gave <strong>𝗦𝗲ñ𝗼𝗿</strong>: every letter bold except the plain ñ. Now it gives <strong>𝗦𝗲𝗻̃𝗼𝗿</strong>: a bold "n" with your original tilde riding on top.</div>
       </div>
-      <p>So the closed alphabet is real, but it isn't the end of the story. Unicode stores most accented letters as a base letter <em>plus</em> a separate combining mark, and NFD normalization pulls them apart. This generator does exactly that: it splits the accented letter, styles the base "n" like any other letter, then re-appends your original tilde — the same trick the strikethrough and underline styles always used for their own marks, now applied to accents across the board.</p>
+      <p>So the closed alphabet is real, but it isn't the end of the story. Unicode stores most accented letters as a base letter <em>plus</em> a separate combining mark, and NFD normalization pulls them apart. This generator does exactly that: it splits the accented letter, styles the base "n" like any other letter, then re-appends your original tilde, the same trick the strikethrough and underline styles always used for their own marks, now applied to accents across the board.</p>
     </div>
   </section>
 
@@ -206,19 +206,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="compare-grid">
       <div class="compare-card variant-positive">
         <span class="compare-badge">1 · Split &amp; reattached</span>
-        <p>The default now, and what every core typography style does. The generator splits "ế" into a base "e" plus its marks, styles the "e," then re-appends the original marks. The accent ends up styled to match — <strong>é</strong> inside <strong>𝗰𝗮𝗳𝗲́</strong>, tone marks and all. The only catch is downstream: a reattached mark can still render differently across devices (see below).</p>
+        <p>The default now, and what every core typography style does. The generator splits "ế" into a base "e" plus its marks, styles the "e," then re-appends the original marks. The accent ends up styled to match: <strong>é</strong> inside <strong>𝗰𝗮𝗳𝗲́</strong>, tone marks and all. The only catch is downstream: a reattached mark can still render differently across devices (see below).</p>
       </div>
       <div class="compare-card variant-muted">
         <span class="compare-badge">2 · Left unflipped</span>
-        <p>The <strong>upside-down / flip</strong> styles only know how to flip plain ASCII, so an accented letter is carried along to its new position but never turned over. Fully Flipped "Señor" gives <strong>ɹoñǝS</strong> — the ñ sits upright while everything around it flips.</p>
+        <p>The <strong>upside-down / flip</strong> styles only know how to flip plain ASCII, so an accented letter is carried along to its new position but never turned over. Fully Flipped "Señor" gives <strong>ɹoñǝS</strong>: the ñ sits upright while everything around it flips.</p>
       </div>
       <div class="compare-card variant-muted">
         <span class="compare-badge">3 · Styled but stripped (đ)</span>
-        <p>A few letters — <strong>đ, ø, ß, ł, ı</strong> and kin — are single Unicode characters with no decomposition, so there's no mark to split off and reattach. They style as their nearest base shape (đ → d) and permanently lose the stroke. It's a real Unicode limit, not a bug.</p>
+        <p>A few letters (<strong>đ, ø, ß, ł, ı</strong> and kin) are single Unicode characters with no decomposition, so there's no mark to split off and reattach. They style as their nearest base shape (đ → d) and permanently lose the stroke. It's a real Unicode limit, not a bug.</p>
       </div>
     </div>
     <div class="editorial-block">
-      <p>Fate #1 is now the rule: Spanish, French and Vietnamese all style cleanly, tone marks included. Fate #2 is one family to avoid when accents matter — the upside-down group. (A second family, 13 novelty styles like the circled-bubble, fullwidth and katakana sets, also deliberately keeps the plain accented letter, because their exotic glyph blocks can't display a reattached mark cleanly — more on that in the table below.) And fate #3 is why a Vietnamese name with a đ in it can never be <em>fully</em> converted by any style, no matter what — the đ will always read as a plain d.</p>
+      <p>Fate #1 is now the rule: Spanish, French and Vietnamese all style cleanly, tone marks included. Fate #2 is one family to avoid when accents matter: the upside-down group. (A second family, 13 novelty styles like the circled-bubble, fullwidth and katakana sets, also deliberately keeps the plain accented letter, because their exotic glyph blocks can't display a reattached mark cleanly: more on that in the table below.) And fate #3 is why a Vietnamese name with a đ in it can never be <em>fully</em> converted by any style, no matter what: the đ will always read as a plain d.</p>
     </div>
   </section>
 
@@ -227,9 +227,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Section: Framework -->
   <section class="editorial-section">
     <span class="article-section-label">The Framework</span>
-    <h2>Which Styles Keep Your Accents — and Which Don't</h2>
+    <h2>Which Styles Keep Your Accents: and Which Don't</h2>
     <div class="editorial-block">
-      <p>Here's the useful part. We ran every style in this generator through the engine — and then through a real browser, since combining marks depend on font fallback, not just valid Unicode. The result: <strong>77 of 112 styles fully preserve accents</strong>, including every core typography style. The exceptions fall into a few named groups, each for a different reason.</p>
+      <p>Here's the useful part. We ran every style in this generator through the engine, and then through a real browser, since combining marks depend on font fallback, not just valid Unicode. The result: <strong>77 of 112 styles fully preserve accents</strong>, including every core typography style. The exceptions fall into a few named groups, each for a different reason.</p>
     </div>
 
     <div class="data-table-wrap">
@@ -271,12 +271,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="editorial-block">
-      <p>The mechanism is the same one the strikethrough and underline styles always used for their own line: decompose the letter with NFD, act on the base, then re-append whatever combining marks were riding on it. A bold "ñ" doesn't exist in Unicode — but a bold "n" does, and the original tilde is a separate mark you can simply put back on top of it. Applied across the registry, that's how bold, italic, script and the rest went from stranding accents to keeping them.</p>
+      <p>The mechanism is the same one the strikethrough and underline styles always used for their own line: decompose the letter with NFD, act on the base, then re-append whatever combining marks were riding on it. A bold "ñ" doesn't exist in Unicode, but a bold "n" does, and the original tilde is a separate mark you can simply put back on top of it. Applied across the registry, that's how bold, italic, script and the rest went from stranding accents to keeping them.</p>
       <div class="example-pair">
         <span class="ex-label">Before the fix</span>
         <span class="ex-plain">𝑽𝒊ệ𝒕 𝑵𝒂𝒎</span>
         <span class="ex-arrow">↓</span>
-        <span class="ex-label">Now — bold, dấu intact</span>
+        <span class="ex-label">Now: bold, dấu intact</span>
         <span class="ex-styled">𝗩𝗶𝗲̣̂𝘁 𝗡𝗮𝗺</span>
       </div>
     </div>
@@ -289,16 +289,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Desktop vs Mobile</span>
     <h2>Why the Same Text Looks Fine on One Screen and Broken on Another</h2>
     <div class="editorial-block">
-      <p>Now that marks are reattached across most styles, this part matters <em>more</em>, not less — in fact it's exactly why the 13 exotic-block styles above keep the plain accent instead of a reattached one. Even when an accent is placed correctly, whether it looks right depends on the reader's device, browser, and screen — so you can't judge accented styled text from your own phone alone.</p>
+      <p>Now that marks are reattached across most styles, this part matters <em>more</em>, not less: in fact it's exactly why the 13 exotic-block styles above keep the plain accent instead of a reattached one. Even when an accent is placed correctly, whether it looks right depends on the reader's device, browser, and screen, so you can't judge accented styled text from your own phone alone.</p>
 
       <h3>The browser flip: Chrome vs Firefox</h3>
-      <p>When an accent is stored as a separate combining mark, Chrome, Edge and Safari quietly re-compose it onto its letter before drawing (they normalise to NFC). <strong>Firefox does not</strong> — it hands the sequence to the font as-is. So a reattached accent that looks perfect in Chrome can render as a <em>floating, offset mark</em> in Firefox on the very same page. Same text, opposite result, decided entirely by the reader's browser.</p>
+      <p>When an accent is stored as a separate combining mark, Chrome, Edge and Safari quietly re-compose it onto its letter before drawing (they normalise to NFC). <strong>Firefox does not</strong>: it hands the sequence to the font as-is. So a reattached accent that looks perfect in Chrome can render as a <em>floating, offset mark</em> in Firefox on the very same page. Same text, opposite result, decided entirely by the reader's browser.</p>
 
       <h3>The platform gap: iOS vs Android vs Windows</h3>
       <ul>
-        <li><strong>Windows</strong> can draw the styled glyphs at all only because a math font (Cambria Math) sits in its fallback chain — the default Segoe UI covers almost none of the block. In older or plain text controls with no fallback, styled letters become boxes.</li>
-        <li><strong>iOS</strong> is strict: if a character isn't in the system font, iOS often won't fall back to another font at all — the glyph simply shows as an empty box. Apple deliberately omits many of these code points.</li>
-        <li><strong>Android</strong> leans on its Noto fonts ("no more tofu") which cover the math block on modern versions — but Android 5-and-older and low-end builds never got that coverage, so the same styled name that's crisp on a new phone is tofu on an old one.</li>
+        <li><strong>Windows</strong> can draw the styled glyphs at all only because a math font (Cambria Math) sits in its fallback chain: the default Segoe UI covers almost none of the block. In older or plain text controls with no fallback, styled letters become boxes.</li>
+        <li><strong>iOS</strong> is strict: if a character isn't in the system font, iOS often won't fall back to another font at all. The glyph simply shows as an empty box. Apple deliberately omits many of these code points.</li>
+        <li><strong>Android</strong> leans on its Noto fonts ("no more tofu") which cover the math block on modern versions, but Android 5-and-older and low-end builds never got that coverage, so the same styled name that's crisp on a new phone is tofu on an old one.</li>
       </ul>
 
       <h3>Size, zoom &amp; screen density: the noticeability dial</h3>
@@ -325,7 +325,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">Language by Language</span>
     <h2>What Each Language Looks Like Now</h2>
     <div class="editorial-block">
-      <p>With marks reattached, the accents themselves style in every Latin-script language. What changes from one to the next is only how many <em>one-piece</em> letters it uses — the atomic characters that still can't carry a mark. Rough guide, least to most affected:</p>
+      <p>With marks reattached, the accents themselves style in every Latin-script language. What changes from one to the next is only how many <em>one-piece</em> letters it uses, the atomic characters that still can't carry a mark. Rough guide, least to most affected:</p>
       <div class="data-table-wrap">
         <table class="data-table">
           <thead><tr><th>Language</th><th>Accent load</th><th>What a bold/script style looks like</th></tr></thead>
@@ -338,7 +338,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </tbody>
         </table>
       </div>
-      <p>So a Spanish or a Vietnamese name both style cleanly now, dấu and all — the only guaranteed holdout is đ. Which brings us to the language that stress-tests all of this.</p>
+      <p>So a Spanish or a Vietnamese name both style cleanly now, dấu and all. The only guaranteed holdout is đ. Which brings us to the language that stress-tests all of this.</p>
     </div>
   </section>
 
@@ -349,22 +349,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="article-section-label">The Hard Case</span>
     <h2>Vietnamese: Why "Chữ Kiểu" Fights Back</h2>
     <div class="editorial-block">
-      <p>Vietnamese is the stress test for every idea on this page, because a single vowel can stack a base letter, a vowel-shape mark (â, ă, ơ, ư) <em>and</em> a tone mark (sắc, huyền, hỏi, ngã, nặng). "ế" is really e + circumflex + acute — three code points. The old letter-swap behaviour restyled only the bare "e" and dropped the two marks that carry the meaning; the generator now decomposes the whole stack, styles the "e," and puts <em>both</em> marks back, so <strong>ế</strong> comes through styled and complete.</p>
+      <p>Vietnamese is the stress test for every idea on this page, because a single vowel can stack a base letter, a vowel-shape mark (â, ă, ơ, ư) <em>and</em> a tone mark (sắc, huyền, hỏi, ngã, nặng). "ế" is really e + circumflex + acute, three code points. The old letter-swap behaviour restyled only the bare "e" and dropped the two marks that carry the meaning; the generator now decomposes the whole stack, styles the "e," and puts <em>both</em> marks back, so <strong>ế</strong> comes through styled and complete.</p>
 
       <h3>The NFC / NFD trap</h3>
-      <p>Vietnamese text exists in two encodings that look identical: <strong>precomposed</strong> (NFC — "ệ" is one character) and <strong>combining</strong> (NFD — "ệ" is three). Most keyboards and websites use NFC, but <strong>text copied from a Mac often arrives in NFD</strong>. The styling engine handles both — it decomposes to NFD internally before reattaching marks — but the <em>output</em> then carries combining marks, so how cleanly it displays still depends on the reader's font and browser (the Chrome-vs-Firefox split above). The flip styles remain the exception: fed NFD Vietnamese, they can reorder a vowel and its tone mark independently.</p>
+      <p>Vietnamese text exists in two encodings that look identical: <strong>precomposed</strong> (NFC, "ệ" is one character) and <strong>combining</strong> (NFD, "ệ" is three). Most keyboards and websites use NFC, but <strong>text copied from a Mac often arrives in NFD</strong>. The styling engine handles both, it decomposes to NFD internally before reattaching marks, but the <em>output</em> then carries combining marks, so how cleanly it displays still depends on the reader's font and browser (the Chrome-vs-Firefox split above). The flip styles remain the exception: fed NFD Vietnamese, they can reorder a vowel and its tone mark independently.</p>
 
       <h3>The đ that never budges</h3>
-      <p>As above: đ/Đ has no decomposition and no styled twin, so it's the one letter guaranteed to stay plain in every letter-swap style — and it also survives accent-stripping, so tools that "remove dấu" have to special-case it by hand.</p>
+      <p>As above: đ/Đ has no decomposition and no styled twin, so it's the one letter guaranteed to stay plain in every letter-swap style, and it also survives accent-stripping, so tools that "remove dấu" have to special-case it by hand.</p>
 
       <h3>What Vietnamese users actually do</h3>
-      <p>Long before generators handled dấu, the Vietnamese scene had already routed around the problem, and the habits stuck. The popular category isn't "font" at all — it's <strong>"kí tự đặc biệt"</strong> (special characters): instead of restyling letters, users <strong>decorate a plain name with symbol frames</strong> (꧁ ༒ 亗 ★), which keeps the letters — and their dấu — safe. Restyling <em>with</em> the accents kept now works too, so it's an option rather than the only one. The common moves:</p>
+      <p>Long before generators handled dấu, the Vietnamese scene had already routed around the problem, and the habits stuck. The popular category isn't "font" at all. It's <strong>"kí tự đặc biệt"</strong> (special characters): instead of restyling letters, users <strong>decorate a plain name with symbol frames</strong> (꧁ ༒ 亗 ★), which keeps the letters (and their dấu) safe. Restyling <em>with</em> the accents kept now works too, so it's an option rather than the only one. The common moves:</p>
       <ul>
-        <li><strong>Wrap, don't swap</strong> — put ornaments around a plain name; the accent-safe symbol styles above do exactly this.</li>
-        <li><strong>Bỏ dấu</strong> — deliberately drop the tone marks (Hưng → Hung) so the whole word styles uniformly. Standard for game names on Free Fire and Liên Quân, where names are length-capped and diacritics often error out.</li>
-        <li><strong>Test before committing</strong> — paste the candidate into a chat box first; if it shows □ or ?, pick another.</li>
+        <li><strong>Wrap, don't swap</strong>: put ornaments around a plain name; the accent-safe symbol styles above do exactly this.</li>
+        <li><strong>Bỏ dấu</strong>: deliberately drop the tone marks (Hưng → Hung) so the whole word styles uniformly. Standard for game names on Free Fire and Liên Quân, where names are length-capped and diacritics often error out.</li>
+        <li><strong>Test before committing</strong>: paste the candidate into a chat box first; if it shows □ or ?, pick another.</li>
       </ul>
-      <p>The lesson for anyone styling Vietnamese: a bold or script style now keeps your dấu, so restyle with the accents if you want them. Reach for bỏ dấu or symbol frames when a game's length cap or a platform's character rules force your hand — not because the font can't hold the marks anymore.</p>
+      <p>The lesson for anyone styling Vietnamese: a bold or script style now keeps your dấu, so restyle with the accents if you want them. Reach for bỏ dấu or symbol frames when a game's length cap or a platform's character rules force your hand, not because the font can't hold the marks anymore.</p>
     </div>
   </section>
 
@@ -377,12 +377,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="editorial-block">
       <p>Even a perfectly styled accented string can change the moment it leaves the generator, because many systems <em>normalise</em> text on the way in.</p>
       <ul>
-        <li><strong>Search sees through the styling.</strong> Indexes and search boxes fold styled letters back to plain (NFKC normalization), so <strong>𝐛𝐨𝐥𝐝</strong> is indexed as "bold." That's good for being found — but it also means fancy text won't match a search for the normal spelling, and Ctrl-F / in-app search skips right over it.</li>
-        <li><strong>Some fields strip accents outright.</strong> A common sanitising step (decompose, then drop combining marks) erases every accent — and, again, leaves đ behind. Your carefully-accented text can arrive plain.</li>
+        <li><strong>Search sees through the styling.</strong> Indexes and search boxes fold styled letters back to plain (NFKC normalization), so <strong>𝐛𝐨𝐥𝐝</strong> is indexed as "bold." That's good for being found, but it also means fancy text won't match a search for the normal spelling, and Ctrl-F / in-app search skips right over it.</li>
+        <li><strong>Some fields strip accents outright.</strong> A common sanitising step (decompose, then drop combining marks) erases every accent, and, again, leaves đ behind. Your carefully-accented text can arrive plain.</li>
         <li><strong>Handles are ASCII-only everywhere.</strong> Instagram, Discord, TikTok, X, Telegram, Snapchat, Roblox and Steam all restrict the @handle to plain letters/numbers/dot/underscore. Styled and accented text belongs in the <em>display-name</em> field, never the handle.</li>
-        <li><strong>Stacking marks has limits.</strong> Platforms cap combining marks to fight zalgo (Discord stops handling them past ~150; Unicode's own "stream-safe" limit is 30). Piling zalgo on top of Vietnamese is doubly destructive — the glitch marks drown the tone marks that carry meaning.</li>
+        <li><strong>Stacking marks has limits.</strong> Platforms cap combining marks to fight zalgo (Discord stops handling them past ~150; Unicode's own "stream-safe" limit is 30). Piling zalgo on top of Vietnamese is doubly destructive: the glitch marks drown the tone marks that carry meaning.</li>
       </ul>
-      <p>And length counts against you: on X, each styled letter counts as <strong>two</strong> characters, so a styled accented bio hits the limit roughly twice as fast — while also raising the odds that at least one character lands on a device that can't draw it.</p>
+      <p>And length counts against you: on X, each styled letter counts as <strong>two</strong> characters, so a styled accented bio hits the limit roughly twice as fast, while also raising the odds that at least one character lands on a device that can't draw it.</p>
     </div>
   </section>
 
@@ -394,16 +394,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2>Five Rules for Accented &amp; Non-English Text</h2>
 
     <div class="editorial-block">
-      <h3>1. Assume your accents will style — then check the exceptions</h3>
+      <h3>1. Assume your accents will style: then check the exceptions</h3>
       <p>Every core typography style now keeps accents, in any language, Vietnamese included. What to watch for: the <strong>upside-down styles</strong> (they don't flip accented letters), the <strong>13 novelty exotic-alphabet styles</strong> (bubble circles, fullwidth, katakana and the like, which keep the plain accent), and the <strong>one-piece letters</strong> (đ ø ß ł ı) that style as a bare base shape.</p>
     </div>
     <div class="editorial-block">
       <h3>2. Need a guaranteed-flat mark? A mark or wrap style is the safe fallback</h3>
-      <p>Strikethrough, underline, slash and symbol-wrap styles preserve diacritics without decomposing anything — handy if a letter-swap style hits one of the exceptions above, or if you want to avoid reattached combining marks on a shaky rendering target.</p>
+      <p>Strikethrough, underline, slash and symbol-wrap styles preserve diacritics without decomposing anything, handy if a letter-swap style hits one of the exceptions above, or if you want to avoid reattached combining marks on a shaky rendering target.</p>
     </div>
     <div class="editorial-block">
       <h3>3. Remember đ always drops to a plain d</h3>
-      <p>đ has no accent to lift off, so in every style it converts to a bare styled "d" (or stays "d"). If a name leans on that đ to read correctly, keep the word plain, or accept the d — no style can produce a styled đ.</p>
+      <p>đ has no accent to lift off, so in every style it converts to a bare styled "d" (or stays "d"). If a name leans on that đ to read correctly, keep the word plain, or accept the d: no style can produce a styled đ.</p>
     </div>
     <div class="editorial-block">
       <h3>4. Style a word, not a paragraph</h3>
@@ -411,16 +411,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="editorial-block">
       <h3>5. Test on the worst case</h3>
-      <p>For accents specifically, that's an older Android phone and Firefox — the two renderers most likely to expose a dropped or detached mark. If it survives there, it'll survive nearly anywhere.</p>
+      <p>For accents specifically, that's an older Android phone and Firefox, the two renderers most likely to expose a dropped or detached mark. If it survives there, it'll survive nearly anywhere.</p>
     </div>
   </section>
 
-  <div class="pull-quote">Unicode never built a bold á.<br>So this generator builds it for you — it styles the base letter and rides your original accent back on top.<br><br>The only marks it can't keep are the ones that don't exist as marks: đ, ø and ß aren't accents you can lift off — they're plain by nature, not by bug.</div>
+  <div class="pull-quote">Unicode never built a bold á.<br>So this generator builds it for you: it styles the base letter and rides your original accent back on top.<br><br>The only marks it can't keep are the ones that don't exist as marks: đ, ø and ß aren't accents you can lift off: they're plain by nature, not by bug.</div>
 
   <!-- CTA Card -->
   <div class="cta-card">
     <h3>Find a style that keeps your accents</h3>
-    <p>Type your accented or Vietnamese text into the generator and compare styles side by side — the vast majority of styles keep your diacritics intact, and you can see exactly where the upside-down and novelty styles (and letters like đ) don't.</p>
+    <p>Type your accented or Vietnamese text into the generator and compare styles side by side: the vast majority of styles keep your diacritics intact, and you can see exactly where the upside-down and novelty styles (and letters like đ) don't.</p>
     <a href="/" class="cta-btn">Open the Text Generator →</a>
   </div>
 
@@ -453,19 +453,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Why do my accents disappear or turn plain when I use a fancy font?</button>
     <div class="faq-answer">
-      <p>In this generator they mostly no longer do — 77 of the 112 styles keep your accents styled, including every core typography style. Unicode has no single styled version of á, ñ or ữ, so the generator splits each accented letter into its base letter plus its combining mark, styles the base like any other letter, and reattaches the original mark on top. Bold Señor now comes out 𝗦𝗲𝗻̃𝗼𝗿, with the ñ styled too. What still shows a plain accent: the 8 upside-down styles, 13 novelty styles that use exotic alphabets (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics), and a handful of one-piece letters like đ, ø and ß that have no separate mark to lift off.</p>
+      <p>In this generator they mostly no longer do: 77 of the 112 styles keep your accents styled, including every core typography style. Unicode has no single styled version of á, ñ or ữ, so the generator splits each accented letter into its base letter plus its combining mark, styles the base like any other letter, and reattaches the original mark on top. Bold Señor now comes out 𝗦𝗲𝗻̃𝗼𝗿, with the ñ styled too. What still shows a plain accent: the 8 upside-down styles, 13 novelty styles that use exotic alphabets (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics), and a handful of one-piece letters like đ, ø and ß that have no separate mark to lift off.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Which fancy fonts keep accents like á, ñ and ữ?</button>
     <div class="faq-answer">
-      <p>Almost all the core typography styles now — 77 of the 112 styles fully preserve accents, including every bold, italic, script, cursive, fraktur/gothic, double-struck, small caps and monospace variant, plus the mark and symbol styles (strikethrough, underline, slash, wraps). Each one keeps the accent by styling the base letter and riding the original mark back on top. The ones that keep a plain accent are the 8 upside-down / flip styles, 13 novelty styles that substitute exotic alphabets (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics), and the one-piece letters đ, ø, ß, ł and ı that have no mark to reattach. You can compare them on the <a href="/">generator</a>.</p>
+      <p>Almost all the core typography styles now: 77 of the 112 styles fully preserve accents, including every bold, italic, script, cursive, fraktur/gothic, double-struck, small caps and monospace variant, plus the mark and symbol styles (strikethrough, underline, slash, wraps). Each one keeps the accent by styling the base letter and riding the original mark back on top. The ones that keep a plain accent are the 8 upside-down / flip styles, 13 novelty styles that substitute exotic alphabets (circled/bubble letters, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics), and the one-piece letters đ, ø, ß, ł and ı that have no mark to reattach. You can compare them on the <a href="/">generator</a>.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Do fancy fonts work with Vietnamese?</button>
     <div class="faq-answer">
-      <p>Yes, far better than they used to. Almost every Vietnamese syllable stacks a vowel mark and a tone mark (ữ, ế, ệ, ơ), and the generator now decomposes each vowel, styles the base and reattaches every mark, so a name styles fully with its dấu intact — bold Việt Nam comes out 𝗩𝗶𝗲̣̂𝘁 𝗡𝗮𝗺. The one letter that never converts is đ, which is its own Unicode character with no decomposition, so it styles as a plain d. The upside-down styles and a few novelty exotic-alphabet styles are still a poor fit too. Removing the tone marks first (bỏ dấu) is still common for game names, but now it's a choice for length caps and platform limits, not a requirement for clean styling.</p>
+      <p>Yes, far better than they used to. Almost every Vietnamese syllable stacks a vowel mark and a tone mark (ữ, ế, ệ, ơ), and the generator now decomposes each vowel, styles the base and reattaches every mark, so a name styles fully with its dấu intact: bold Việt Nam comes out 𝗩𝗶𝗲̣̂𝘁 𝗡𝗮𝗺. The one letter that never converts is đ, which is its own Unicode character with no decomposition, so it styles as a plain d. The upside-down styles and a few novelty exotic-alphabet styles are still a poor fit too. Removing the tone marks first (bỏ dấu) is still common for game names, but now it's a choice for length caps and platform limits, not a requirement for clean styling.</p>
     </div>
   </div>
   <div class="faq-item">
@@ -477,7 +477,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Does styled or accented text work in usernames and @handles?</button>
     <div class="faq-answer">
-      <p>No. Almost every platform's @handle / username field is ASCII-only (letters, numbers, dot, underscore) and will reject styled Unicode and accented letters. The display-name / nickname field is where Unicode is allowed — on Instagram, Discord, TikTok, X, Telegram, Snapchat, Roblox and Steam. Put styled or accented text in the display name, and keep the handle plain.</p>
+      <p>No. Almost every platform's @handle / username field is ASCII-only (letters, numbers, dot, underscore) and will reject styled Unicode and accented letters. The display-name / nickname field is where Unicode is allowed: on Instagram, Discord, TikTok, X, Telegram, Snapchat, Roblox and Steam. Put styled or accented text in the display name, and keep the handle plain.</p>
     </div>
   </div>
 </section>

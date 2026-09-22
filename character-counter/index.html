@@ -142,7 +142,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Why does the platform say I'm over when my counter says I'm under?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Because you and the platform are counting in different units. Most count Unicode code points, but HTML form fields and many apps count UTF-16 units — where a styled letter costs 2 — Amazon listing fields count UTF-8 bytes, X uses a weighted count, and UCAS counts a line break as 2. Pick your destination at the top of the tool and it counts the way that destination counts, instead of giving you a generic number."
+        "text": "Because you and the platform are counting in different units. Most count Unicode code points, but HTML form fields and many apps count UTF-16 units, where a styled letter costs 2, Amazon listing fields count UTF-8 bytes, X uses a weighted count, and UCAS counts a line break as 2. Pick your destination at the top of the tool and it counts the way that destination counts, instead of giving you a generic number."
       }
     },
     {
@@ -158,7 +158,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Do fancy fonts count as more characters?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Usually double. Styled Unicode letters — bold, script, gothic and most other fancy alphabets — mostly live above U+FFFF, so each visible letter costs 2 UTF-16 units, 4 UTF-8 bytes, and 2 of X's 280. A 10-letter styled name can therefore be rejected by a 12-character game field. Paste it in and use \"Convert fancy text to plain\" to see and recover the difference instantly."
+        "text": "Usually double. Styled Unicode letters (bold, script, gothic and most other fancy alphabets) mostly live above U+FFFF, so each visible letter costs 2 UTF-16 units, 4 UTF-8 bytes, and 2 of X's 280. A 10-letter styled name can therefore be rejected by a 12-character game field. Paste it in and use \"Convert fancy text to plain\" to see and recover the difference instantly."
       }
     },
     {
@@ -174,7 +174,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Is this counter free, and does it store or upload my text?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, completely free with no signup. Every count, check and fix runs client-side in your browser with plain JavaScript — nothing you type is uploaded, logged, or stored anywhere."
+        "text": "Yes, completely free with no signup. Every count, check and fix runs client-side in your browser with plain JavaScript: nothing you type is uploaded, logged, or stored anywhere."
       }
     }
   ]
@@ -208,7 +208,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <h1 class="hero-headline">Character Counter &amp; Word Counter</h1>
-  <p class="hero-sub">Live counts for 39 fields across 17 platforms — and one-click fixes when you are over.</p>
+  <p class="hero-sub">Live counts for 39 fields across 17 platforms, and one-click fixes when you are over.</p>
 </div></div></section>
 
 <main class="container">
@@ -247,12 +247,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </div>
 
     <div class="counter-fits">
-      <p class="counter-fits-head">Where else this text fits — live, across every limit</p>
+      <p class="counter-fits-head">Where else this text fits: live, across every limit</p>
       <div class="cc-fit-grid" id="counterFitGrid" hidden></div>
     </div>
   </div>
 
-  <p class="counter-footnote">Everything is computed in your browser — nothing you type is uploaded or stored. Need the text styled too? The <a href="/">UltraTextGen generator</a> turns it into 100+ copy-paste fonts.</p>
+  <p class="counter-footnote">Everything is computed in your browser: nothing you type is uploaded or stored. Need the text styled too? The <a href="/">UltraTextGen generator</a> turns it into 100+ copy-paste fonts.</p>
 
   <div class="section-divider"></div>
 
@@ -274,7 +274,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </tr>
       </tbody>
     </table></div>
-    <p>The soft limit is the one most people are actually writing against, and almost no counter shows it. A LinkedIn post has 3,000 characters and roughly 140 useful ones: the rest is behind a tap nobody takes. So the tool above renders the fold directly — type into it and you see the exact text that appears before "see more", with everything after the cut dimmed behind a line, plus how the same opening holds up on every other feed that truncates.</p>
+    <p>The soft limit is the one most people are actually writing against, and almost no counter shows it. A LinkedIn post has 3,000 characters and roughly 140 useful ones: the rest is behind a tap nobody takes. So the tool above renders the fold directly: type into it and you see the exact text that appears before "see more", with everything after the cut dimmed behind a line, plus how the same opening holds up on every other feed that truncates.</p>
     <p><strong>Where each feed cuts, and on which device:</strong></p>
     <div class="comparison-table-wrap"><table class="comparison-table">
       <thead><tr><th>Feed</th><th class="num">Mobile</th><th class="num">Desktop</th><th>What that means for a hook</th></tr></thead>
@@ -283,13 +283,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <td><a href="/linkedin/">LinkedIn post</a></td>
           <td class="num">~140</td>
           <td class="num">~210</td>
-          <td>Write to 140 and it survives both — the widest device gap of any feed here.</td>
+          <td>Write to 140 and it survives both: the widest device gap of any feed here.</td>
         </tr>
         <tr>
           <td><a href="/instagram/">Instagram caption</a></td>
           <td class="num">~125</td>
           <td class="num">~125</td>
-          <td>The tightest fold on this list — roughly one sentence before "... more".</td>
+          <td>The tightest fold on this list: roughly one sentence before "... more".</td>
         </tr>
         <tr>
           <td><a href="/youtube/">YouTube description</a></td>
@@ -301,12 +301,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <td><a href="/facebook/">Facebook post</a></td>
           <td class="num">~477</td>
           <td class="num">~477</td>
-          <td>The most forgiving fold — a full short paragraph lands before the cut.</td>
+          <td>The most forgiving fold: a full short paragraph lands before the cut.</td>
         </tr>
       </tbody>
     </table></div>
-    <p>Writing the hook itself is a different craft from measuring it — for what actually earns the tap, see <a href="/guide/style-linkedin-hooks-to-stand-out/">styling LinkedIn hooks to stand out</a>.</p>
-    <p>Two honest caveats. These are observed UI behaviour, not published limits, so treat them as "what reliably shows" rather than exact thresholds — and feeds also cut on <em>line count</em>, so three early line breaks can truncate a post well short of any character number. If your opening depends on a list, check it in the real composer too.</p>
+    <p>Writing the hook itself is a different craft from measuring it. For what actually earns the tap, see <a href="/guide/style-linkedin-hooks-to-stand-out/">styling LinkedIn hooks to stand out</a>.</p>
+    <p>Two honest caveats. These are observed UI behaviour, not published limits, so treat them as "what reliably shows" rather than exact thresholds, and feeds also cut on <em>line count</em>, so three early line breaks can truncate a post well short of any character number. If your opening depends on a list, check it in the real composer too.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -319,11 +319,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="comparison-table-wrap"><table class="comparison-table">
       <thead><tr><th>Platform</th><th class="num">Limit</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr id="twitter"><td>X / Twitter post</td><td class="num">280</td><td>Weighted: every URL = 23, most emoji/symbols/styled letters = 2 — see <a href="#counting-modes">how X counts</a></td></tr>
+        <tr id="twitter"><td>X / Twitter post</td><td class="num">280</td><td>Weighted: every URL = 23, most emoji/symbols/styled letters = 2. See <a href="#counting-modes">how X counts</a></td></tr>
         <tr id="discord"><td>Discord message</td><td class="num">2,000</td><td>4,000 with Nitro; longer messages become a .txt attachment</td></tr>
         <tr id="instagram"><td>Instagram caption</td><td class="num">2,200</td><td>Truncated with "more" after the first lines</td></tr>
         <tr id="tiktok"><td>TikTok caption</td><td class="num">2,200</td><td></td></tr>
-        <tr><td>LinkedIn post</td><td class="num">3,000</td><td>"See more" cuts the hook at ~140 on mobile, ~210 on desktop — write to 140 and it survives both</td></tr>
+        <tr><td>LinkedIn post</td><td class="num">3,000</td><td>"See more" cuts the hook at ~140 on mobile, ~210 on desktop. Write to 140 and it survives both</td></tr>
         <tr><td>Facebook post</td><td class="num">63,206</td><td></td></tr>
         <tr><td>YouTube description</td><td class="num">5,000</td><td></td></tr>
         <tr><td>Pinterest pin description</td><td class="num">500</td><td></td></tr>
@@ -356,9 +356,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <tr><td>TikTok username</td><td class="num">24</td><td>Letters, numbers, underscores, periods only</td></tr>
         <tr><td>Instagram username</td><td class="num">30</td><td></td></tr>
         <tr><td>YouTube title</td><td class="num">100</td><td></td></tr>
-        <tr><td>SEO meta title</td><td class="num">~60</td><td>Google truncates by pixel width — treat as a guideline</td></tr>
-        <tr><td>SEO meta description</td><td class="num">~155</td><td>Same — pixel-width truncation</td></tr>
-        <tr id="sms"><td>SMS text message</td><td class="num">160 / segment</td><td>Drops to 70 per segment the moment one non-GSM character (emoji, curly quote, ş, ő, Vietnamese diacritics…) appears — see <a href="#counting-modes">SMS counting</a></td></tr>
+        <tr><td>SEO meta title</td><td class="num">~60</td><td>Google truncates by pixel width: treat as a guideline</td></tr>
+        <tr><td>SEO meta description</td><td class="num">~155</td><td>Same: pixel-width truncation</td></tr>
+        <tr id="sms"><td>SMS text message</td><td class="num">160 / segment</td><td>Drops to 70 per segment the moment one non-GSM character (emoji, curly quote, ş, ő, Vietnamese diacritics…) appears. See <a href="#counting-modes">SMS counting</a></td></tr>
       </tbody>
     </table></div>
   </section>
@@ -371,22 +371,22 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="comparison-table-wrap"><table class="comparison-table">
       <thead><tr><th>Counting mode</th><th>What it measures</th><th>Who uses it</th></tr></thead>
       <tbody>
-        <tr><td>Graphemes</td><td>What you visually see — an emoji with skin tone is 1</td><td>Bluesky; roughly how Instagram treats emoji</td></tr>
-        <tr><td>Code points</td><td>Unicode characters — 👍🏽 is 2 (thumb + skin tone)</td><td>Most web platforms and this tool's main "Characters" stat</td></tr>
-        <tr><td>UTF-16 units</td><td>How JavaScript and many apps store text — 𝗯𝗼𝗹𝗱 letters cost 2 each</td><td>HTML form fields (<code>maxlength</code>), many games and app backends</td></tr>
-        <tr><td>UTF-8 bytes</td><td>Storage size — é is 2, 中 is 3, 𝗯 is 4</td><td>Amazon listing fields (200-byte titles, 250-byte search terms), Steam names, databases</td></tr>
+        <tr><td>Graphemes</td><td>What you visually see: an emoji with skin tone is 1</td><td>Bluesky; roughly how Instagram treats emoji</td></tr>
+        <tr><td>Code points</td><td>Unicode characters: 👍🏽 is 2 (thumb + skin tone)</td><td>Most web platforms and this tool's main "Characters" stat</td></tr>
+        <tr><td>UTF-16 units</td><td>How JavaScript and many apps store text: 𝗯𝗼𝗹𝗱 letters cost 2 each</td><td>HTML form fields (<code>maxlength</code>), many games and app backends</td></tr>
+        <tr><td>UTF-8 bytes</td><td>Storage size: é is 2, 中 is 3, 𝗯 is 4</td><td>Amazon listing fields (200-byte titles, 250-byte search terms), Steam names, databases</td></tr>
       </tbody>
     </table></div>
     <p>All four are shown live in the stats above, so when a form says your text is too long while your word processor disagrees, you can see exactly which count the form is using. Two platforms need special rules on top:</p>
-    <p><strong>X / Twitter counts by weight, not characters.</strong> Per X's own published algorithm (the <code>twitter-text</code> library), every URL counts as exactly 23, basic Latin letters count as 1, and almost everything else — CJK characters, most emoji, and every "fancy font" Unicode letter — counts as <strong>2</strong>. A fully styled 𝗯𝗼𝗹𝗱 post therefore fits only 140 visible letters in the 280 budget. The "X / Twitter post" option in the checker above implements this real algorithm.</p>
-    <p><strong>SMS is counted in segments, and one character can triple your bill.</strong> A text message holds 160 characters only while every character is in the old GSM-7 alphabet. One emoji, curly quote (’ pasted from Word), or accented letter outside it (ş, ő, ą, Vietnamese diacritics…) silently switches the whole message to Unicode mode — 70 characters per segment, 67 when it splits. The "SMS text message" option above detects this and names the exact character that flipped your message.</p>
+    <p><strong>X / Twitter counts by weight, not characters.</strong> Per X's own published algorithm (the <code>twitter-text</code> library), every URL counts as exactly 23, basic Latin letters count as 1, and almost everything else (CJK characters, most emoji, and every "fancy font" Unicode letter) counts as <strong>2</strong>. A fully styled 𝗯𝗼𝗹𝗱 post therefore fits only 140 visible letters in the 280 budget. The "X / Twitter post" option in the checker above implements this real algorithm.</p>
+    <p><strong>SMS is counted in segments, and one character can triple your bill.</strong> A text message holds 160 characters only while every character is in the old GSM-7 alphabet. One emoji, curly quote (’ pasted from Word), or accented letter outside it (ş, ő, ą, Vietnamese diacritics…) silently switches the whole message to Unicode mode: 70 characters per segment, 67 when it splits. The "SMS text message" option above detects this and names the exact character that flipped your message.</p>
   </section>
 
   <div class="section-divider"></div>
 
   <section class="editorial-section" id="fancy-text">
     <h2>Counting fancy fonts and styled text</h2>
-    <p>Styled Unicode text — 𝐛𝐨𝐥𝐝, 𝓈𝒸𝓇𝒾𝓅𝓉, 𝔤𝔬𝔱𝔥𝔦𝔠 letters from the <a href="/">UltraTextGen generator</a> — looks like normal letters but usually lives in Unicode's supplementary planes, so each letter costs 2 UTF-16 units, 4 bytes, and 2 of X's 280. That's why a 10-letter styled name can be rejected by a 12-character game field. Paste your styled text into the counter above to see its real cost in every counting mode before you use it — and if a name keeps getting rejected, see <a href="/answers/why-was-my-game-name-rejected/">why game names get rejected</a>.</p>
+    <p>Styled Unicode text (𝐛𝐨𝐥𝐝, 𝓈𝒸𝓇𝒾𝓅𝓉, 𝔤𝔬𝔱𝔥𝔦𝔠 letters from the <a href="/">UltraTextGen generator</a>) looks like normal letters but usually lives in Unicode's supplementary planes, so each letter costs 2 UTF-16 units, 4 bytes, and 2 of X's 280. That's why a 10-letter styled name can be rejected by a 12-character game field. Paste your styled text into the counter above to see its real cost in every counting mode before you use it, and if a name keeps getting rejected, see <a href="/answers/why-was-my-game-name-rejected/">why game names get rejected</a>.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -404,7 +404,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </details>
     <details class="faq-item">
       <summary class="faq-question">Why does the platform say I'm over when my counter says I'm under?</summary>
-      <p class="faq-answer">Because you and the platform are counting in different units. Most count Unicode code points, but HTML form fields and many apps count UTF-16 units — where a styled letter costs 2 — Amazon listing fields count UTF-8 bytes, X uses a weighted count, and UCAS counts a line break as 2. Pick your destination at the top of the tool and it counts the way that destination counts, instead of giving you a generic number.</p>
+      <p class="faq-answer">Because you and the platform are counting in different units. Most count Unicode code points, but HTML form fields and many apps count UTF-16 units, where a styled letter costs 2, Amazon listing fields count UTF-8 bytes, X uses a weighted count, and UCAS counts a line break as 2. Pick your destination at the top of the tool and it counts the way that destination counts, instead of giving you a generic number.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">How do I get my text under the limit?</summary>
@@ -412,7 +412,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </details>
     <details class="faq-item">
       <summary class="faq-question">Do fancy fonts count as more characters?</summary>
-      <p class="faq-answer">Usually double. Styled Unicode letters — bold, script, gothic and most other fancy alphabets — mostly live above U+FFFF, so each visible letter costs 2 UTF-16 units, 4 UTF-8 bytes, and 2 of X's 280. A 10-letter styled name can therefore be rejected by a 12-character game field. Paste it in and use "Convert fancy text to plain" to see and recover the difference instantly.</p>
+      <p class="faq-answer">Usually double. Styled Unicode letters (bold, script, gothic and most other fancy alphabets) mostly live above U+FFFF, so each visible letter costs 2 UTF-16 units, 4 UTF-8 bytes, and 2 of X's 280. A 10-letter styled name can therefore be rejected by a 12-character game field. Paste it in and use "Convert fancy text to plain" to see and recover the difference instantly.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">Are invisible characters counted too?</summary>
@@ -420,7 +420,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </details>
     <details class="faq-item">
       <summary class="faq-question">Is this counter free, and does it store or upload my text?</summary>
-      <p class="faq-answer">Yes, completely free with no signup. Every count, check and fix runs client-side in your browser with plain JavaScript — nothing you type is uploaded, logged, or stored anywhere.</p>
+      <p class="faq-answer">Yes, completely free with no signup. Every count, check and fix runs client-side in your browser with plain JavaScript: nothing you type is uploaded, logged, or stored anywhere.</p>
     </details>
   </section>
 
@@ -428,7 +428,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <div class="cta-card">
     <h3>Need that text in a fancy font?</h3>
-    <p>UltraTextGen turns plain text into bold, italic, cursive, and 100+ other Unicode font styles that work in any bio, post, or chat — free and instant.</p>
+    <p>UltraTextGen turns plain text into bold, italic, cursive, and 100+ other Unicode font styles that work in any bio, post, or chat: free and instant.</p>
     <a href="https://ultratextgen.com/" class="cta-btn">Open UltraTextGen →</a>
   </div>
 
