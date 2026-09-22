@@ -34,9 +34,11 @@ roster, answer key, viewport — and where does the artifact stop agreeing with 
 
 **The two P0s.** A **short name** — one to three characters, the most ordinary input a tracing
 page takes — prints its sheet at **27%** of size (19.7% at worst), as a narrow strip down the
-middle of the paper, on 15 of the 27 generators. And the word-search maker's **default** sheet —
-ten words, one grid, nothing configured — shipped a PDF in which the clue list rendered as a single column, ran across the
-Name/Date row and the credit QR, and lost three of its ten words off the bottom of the page. The
+middle of the paper, on 15 of the 27 generators at the time of the audit and on **12** now that
+PR #927 has closed the generator half. And the word-search maker's **default** sheet — ten words,
+one grid, nothing configured — shipped a PDF in which the clue list rendered as a single column,
+ran across the Name/Date row and the credit QR, and lost three of its ten words off the bottom of
+the page. The
 crossword's word bank did the same thing to its ACROSS/DOWN clues. **Nothing in the DOM showed
 it.** The page, the preview and every geometry assertion over the print surface are correct; the
 defect is created by the exporter's own clone, which pins `width`/`height` from the original
@@ -717,22 +719,33 @@ intended, recorded there.
 
 ### Verification of what shipped
 
-The whole 670-configuration matrix was re-run against the repaired tree with the same harness,
-and compared row for row with the baseline. Invariant violations, `INK-OUTSIDE-VIEWBOX` excluded
-per RF-014:
+Three trees, one harness, the same 670 configurations: the audit's base commit `11d281455`,
+`main` after PR #927, and this branch merged onto it. Comparing the last two isolates what this
+branch does; comparing the first two is #927's, already summarised in RF-002.
 
-| invariant | baseline `11d281455` | shipped | |
+Invariant violations, `INK-OUTSIDE-VIEWBOX` excluded per RF-014:
+
+| invariant | base `11d281455` | `main` (after #927) | this branch |
 |---|---|---|---|
-| `EXPORT-SPILL` — a child escaping its box in the exported clone | 19 | **1** | the one left is RF-004, a different cause |
-| `EXPORT-GEOMETRY-DRIFT` — an element in a different place in the file than on the page | 43 | **17** | the rest is the banner's own `dy -14.4` offset, RF-006's page |
-| `FIT-SHRINK` — a page the rasteriser had to scale | 576 | **542** | RF-015 and RF-002's residue |
-| `COLLIDE` — two sibling regions sharing space | 338 | **338** | RF-005, untouched and unamplified |
-| `EXPORT-COLLIDE` | 5 | **5** | RF-005 in the clone |
-| `OOB-WIDTH` | 4 | **4** | RF-004 |
-| **total** | **985** | **907** | |
+| `EXPORT-SPILL` — a child escaping its box in the exported clone | 19 | _see note_ | _see note_ |
+| `EXPORT-GEOMETRY-DRIFT` — an element in a different place in the file than on the page | 43 | _see note_ | _see note_ |
+| `FIT-SHRINK` — a page the rasteriser had to scale | 576 | _see note_ | _see note_ |
+| `COLLIDE` — two sibling regions sharing space | 338 | _see note_ | _see note_ |
+| `EXPORT-COLLIDE` | 5 | _see note_ | _see note_ |
+| `OOB-WIDTH` | 4 | _see note_ | _see note_ |
 
-Nothing regressed. `COLLIDE` staying flat is the number that mattered most to check: a first
-attempt at S-2 pushed it to 490 by shrinking the crossword's cells, which is how that attempt was
+> **Note.** The `main` and branch columns are being measured as this document is written; the base
+> column is the audit's own run. Two numbers are already established from the per-route runs in
+> RF-002 and RF-015 and do not depend on that sweep: the `gen` surfaces go `fit` 0.613 → 1.000 and
+> the `name` surfaces do not move. **This block is finished before the PR is asked for review** —
+> a table of blanks is a promise, not a result, and it is recorded that way rather than filled with
+> an estimate.
+
+Against the audit's own pre-merge run of this branch's changes, measured before `main` moved:
+`EXPORT-SPILL` 19 → **1** (the one left is RF-004, a different cause), `EXPORT-GEOMETRY-DRIFT`
+43 → **17** (the rest is the banner's own `dy -14.4` offset, RF-006's page), and `COLLIDE`
+unchanged at 338 — which is the number that mattered most to check, since a first attempt at the
+height fix pushed it to 490 by shrinking the crossword's cells, and that is how that attempt was
 caught and reverted.
 
 ---
