@@ -21,5 +21,33 @@
     "  { \"pages\": [\"printables/a\", \"printables/b\"], \"reason\": \"...\", \"decided\": \"YYYY-MM-DD\", \"owner\": \"...\" }",
     "  `pages` are routes as the gate prints them: no leading slash, no /index.html."
   ],
-  "exceptions": []
+  "exceptions": [
+    {
+      "pages": [
+        "de/zum-ausdrucken/buchstaben-nachspuren",
+        "de/zum-ausdrucken/namen-schreiben"
+      ],
+      "reason": "Owner decision 2026-09-22: every locale carries the same two tracing pages English carries, so the name sheet and the letter sheet are separate pages in all seven locales rather than one page doing both. This is the SAME pair English already runs (printables/name-tracing <-> printables/letter-tracing, pre-existing at the merge base and reported by every run), reaching de because the de letter-tracing page now exists. The two pages do not compete for one query: 'Namen nachspuren' and 'Buchstaben nachspuren' are different searches, the pages target them separately, and each links to the other with a one-line pointer (Rule 3 is applied, not skipped). The signature collides only because German uses one word for both sheets -- 'Nachspuren' -- which is a property of the language, not of the pages: it, pl and pt build the identical pair in the same change and do NOT collide, because those languages name the two sheets differently (pregrafismo, slad, pontilhado). Raised with the owner as the open question in the 2026-09-20 printables locale-coverage analysis, section 5, and decided there.",
+      "decided": "2026-09-22",
+      "owner": "dhlemalaysia@gmail.com"
+    },
+    {
+      "pages": [
+        "es/imprimibles/letras-para-trazar",
+        "es/imprimibles/nombre-para-trazar"
+      ],
+      "reason": "Owner decision 2026-09-22: every locale carries the same two tracing pages English carries, so the name sheet and the letter sheet are separate pages in all seven locales rather than one page doing both. This is the SAME pair English already runs (printables/name-tracing <-> printables/letter-tracing, pre-existing at the merge base and reported by every run), reaching es because the es letter-tracing page now exists. The two pages do not compete for one query: 'nombre para trazar' and 'letras para trazar' are different searches, the pages target them separately, and each links to the other with a one-line pointer (Rule 3 is applied, not skipped). The signature collides only because Spanish uses one word for both sheets -- 'trazo' -- which is a property of the language, not of the pages: it, pl and pt build the identical pair in the same change and do NOT collide, because those languages name the two sheets differently (pregrafismo, slad, pontilhado). Raised with the owner as the open question in the 2026-09-20 printables locale-coverage analysis, section 5, and decided there.",
+      "decided": "2026-09-22",
+      "owner": "dhlemalaysia@gmail.com"
+    },
+    {
+      "pages": [
+        "fr/imprimables/lettres-a-tracer",
+        "fr/imprimables/prenom-a-tracer"
+      ],
+      "reason": "Owner decision 2026-09-22: every locale carries the same two tracing pages English carries, so the name sheet and the letter sheet are separate pages in all seven locales rather than one page doing both. This is the SAME pair English already runs (printables/name-tracing <-> printables/letter-tracing, pre-existing at the merge base and reported by every run), reaching fr because the fr letter-tracing page now exists. The two pages do not compete for one query: 'prenom a tracer' and 'lettres a tracer' are different searches, the pages target them separately, and each links to the other with a one-line pointer (Rule 3 is applied, not skipped). The signature collides only because French uses one word for both sheets -- 'trace' -- which is a property of the language, not of the pages: it, pl and pt build the identical pair in the same change and do NOT collide, because those languages name the two sheets differently (pregrafismo, slad, pontilhado). Raised with the owner as the open question in the 2026-09-20 printables locale-coverage analysis, section 5, and decided there.",
+      "decided": "2026-09-22",
+      "owner": "dhlemalaysia@gmail.com"
+    }
+  ]
 }
