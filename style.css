@@ -6868,9 +6868,11 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
    height (with the SVG's preserveAspectRatio centering) makes one letter a
    full-page worksheet instead of a small floating figure.
 
-   --pt-sheet-h is set per print job by printablesEngine.js's
-   applySheetMetrics(), from the paper, orientation and margin the visitor
-   picked in Print settings. The fallbacks are the old fixed values, so a
+   --pt-body-h (the property the rule below actually reads; this comment said
+   --pt-sheet-h, which did not exist until 2026-09-22 and is a different
+   budget) is set per print job by printablesEngine.js's applySheetMetrics(),
+   from the paper, orientation and margin the visitor picked in Print
+   settings. The fallbacks are the old fixed values, so a
    surface that somehow prints without the property set behaves exactly as it
    did before. They were the ONLY values until 2026-09-13, which is why
    choosing Landscape printed one letter across three sheets: 8.4in of figure
@@ -7272,7 +7274,7 @@ body.dark-mode .pt-design-preview { background: #1c2030; }
   width: 100%;
   max-width: none;
   height: auto;
-  max-height: var(--pt-page-h, 9.4in);
+  max-height: var(--pt-sheet-h, 8.4in);
   margin: 0 auto;
   box-shadow: none;
 }
@@ -10585,6 +10587,11 @@ body.is-printing.pt-ink-saver #pt-print-root .pt-cw-grid { opacity: 0.72; }
 
 @media print {
   .pt-print-tools, .pt-share-tools, .pt-spoke-batch, .pt-toast, .pt-recent { display: none !important; }
+  /* A multi-unit job's title is dropped by the PDF writer, so printing it
+     from the dialog is the one place the two paths differed -- and its height
+     ahead of a one-page-tall first unit orphaned that sheet's credit block
+     onto an extra page. See printWrap()'s own note. */
+  .bubble-print-title.is-multipage-label { display: none; }
   /* One sheet per page, never a tile or a name row split across pages. */
   .pt-sheet-page {
     page-break-after: always;
@@ -10643,66 +10650,27 @@ body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-glyph-print,
 body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-name-glyph,
 body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-search-grid,
 body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-cw-grid { opacity: 0.72; }
-/* The sheet's minimum height is the PAGE's, not US Letter portrait's.
-
-   These three rules read `min-height: 9.2in` until 2026-09-22 — "US Letter
-   portrait, minus its margins, minus about a credit block" — and they read it
-   on every paper and both orientations. A landscape Letter page is 7.5in, so
-   a sheet whose own content was shorter than that was still stretched to
-   9.2in, overshot the box by 1.7in, and renderPages scaled the whole page down
-   to fit. Measured on the name puzzle, where the minimum was the binding
-   constraint: fit 0.72 on Letter landscape and 0.75 on A4 landscape narrow,
-   letterboxed in the middle of the page — and 0.961 on US Letter PORTRAIT,
-   the paper the constant was written for. After: 1.000 on all four. Nothing
-   was wrong with the sheet; the only thing adapting to paper was the raster
-   scale.
-
-   This does NOT close the case for a sheet whose content is genuinely taller
-   than the page — the word search at 40 words is 1,242px against a 720px
-   landscape box whatever this minimum says. That is RF-015 and FIX-1 in
-   docs/printables/render-fidelity-audit-2026-09-22.md.
-
-   --pt-pdf-body-h is that number measured rather than assumed: the PDF page
-   box (paper minus margins, where the print root has no padding) minus the
-   credit band, whose 1.2in is the already-measured cost of a 0.95in QR and its
-   margin. applySheetMetrics() publishes it.
-
-   WHY min() AND NOT THE VARIABLE ALONE. The variable is the PHYSICAL limit;
-   9.2in is a DESIGN one, and on Legal the two disagree. --pt-pdf-body-h is
-   12.3in on Legal narrow, and a sheet stretched to that overran its page by
-   0.57in — the credit band costs more than the 1.2in the variable subtracts
-   once the sheet's own gaps are in it — so 20 Legal configurations that used
-   to fit started being scaled down. Measured across 670 configurations, not
-   predicted. Taking the smaller of the two keeps the landscape repair and
-   cannot make any paper worse than it was: a practice sheet does not need to
-   be thirteen inches tall to have done its job.
-
-   A FLEX COLUMN WAS TRIED FIRST AND REVERTED. Making .pt-sheet-page a flex
-   column of the full page height let the sheet fill the page — and the thing
-   that absorbed the difference was the figure: measured on the default word
-   search, the grid went from 614px to 484px, so the printed puzzle came out
-   18% smaller than before the "fix". A minimum height is the whole of what
-   these layouts needed; the page-filling flex column belongs to the landscape
-   redesign, where the sheet is re-laid-out rather than re-sized. */
+/* --pt-sheet-h, not a hardcoded 9.2in: these sheets share their page unit with
+   the credit footer, so the height they may claim is the printable page MINUS
+   that band. At Letter/normal the old literal was 883.2px, the credit and its
+   gap 115.1px, and the page box 960px -- 38.4px over, which printablePdf.js
+   turned into a silent 0.962 scale of the whole sheet, margins included. The
+   @media print copies below keep --pt-body-h: that path budgets the same band
+   through PRINT_CHROME_IN and is not the one that overflowed. */
 body.pt-pdf-rendering .bubble-print-wrap .pt-name-sheet {
-  min-height: min(9.2in, var(--pt-pdf-body-h, 8.8in));
+  min-height: var(--pt-sheet-h, 8.4in);
   justify-content: space-between;
 }
 body.pt-pdf-rendering .pt-puzzle-print-holder .pt-puzzle-sheet {
-  min-height: min(9.2in, var(--pt-pdf-body-h, 8.8in));
+  min-height: var(--pt-sheet-h, 8.4in);
   justify-content: center;
   gap: 1.4rem;
 }
 body.pt-pdf-rendering .pt-search-print-holder .pt-search-sheet {
-  min-height: min(9.2in, var(--pt-pdf-body-h, 8.8in));
+  min-height: var(--pt-sheet-h, 8.4in);
   justify-content: flex-start;
   gap: 1.2rem;
 }
-/* The 4-up page carries an exact height rather than a minimum, and in PDF
-   mode that height is the PDF box, not the print dialog's: --pt-page-h
-   subtracts the 1rem of padding #pt-print-root has at print time and does not
-   have here, so every 4-up PDF came out a third of an inch short. */
-body.pt-pdf-rendering .pt-sheet-page.is-nup { height: var(--pt-pdf-page-h, 10in); }
 /* On paper the grid gets the full content width rather than the screen cap,
    and the type size divides by the same column count. */
 body.pt-pdf-rendering .pt-search-grid,
@@ -10998,6 +10966,57 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
    the track it sits in. minmax(0, 1fr) rather than 1fr for the same reason a
    grid item gets min-width:0 -- an auto minimum is what split the columns
    504/205 on the first attempt. */
+/* A printed generator sheet is ONE page tall, and its rows share what the
+   job title, the name/date line and the credit leave.
+
+   Until 2026-09-22 nothing bounded it. `.pt-gen-row .pt-trace-svg` caps a row
+   at a hardcoded 150px and the rows simply stacked, so the sheet was as tall
+   as its content and the PAGE had no say: at the default 3 practice rows the
+   unit measured 1173px against a 960px printable page (US Letter, normal
+   margins), and renderPages rasterises a page unit to one canvas which
+   fromCanvases then fits to the sheet -- so the whole worksheet, ruled lines,
+   letters and margins together, was silently scaled to 0.818. Measured on the
+   7-level ladder PDF: levels 2-6 carry six rows and printed at 0.858 (band
+   187px at 300dpi) while levels 1 and 7 carry five and four and printed at
+   1.000 (band 218px), i.e. the letters changed size between sheets of one
+   pack. At 8 practice rows the scale was 0.488 -- half size, inside a 1.03in
+   margin nobody chose.
+
+   The fix is the pattern `.is-nup` below already uses and the one
+   applySheetMetrics() was written for: the page is a flex column of the real
+   printable height, its chrome claims its natural space, and the rows take
+   what is left. Rows may shrink and never grow, so a sheet that already fits
+   is untouched -- this changes nothing at 1 row, where the old sheet was
+   855px and already inside the page.
+
+   `is-fitted` is set in JS on a page unit whose content is a `.pt-gen-sheet`,
+   rather than on every `.pt-sheet-page`: a puzzle grid or a tiled alphabet is
+   sized by its content and is not a column of shrinkable rows. */
+.pt-sheet-page.is-fitted {
+  display: flex;
+  flex-direction: column;
+  height: var(--pt-page-h, 9.6in);
+}
+.pt-sheet-page.is-fitted > .pt-gen-sheet {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+/* Basis 150px, shrink only: the row wants the height it has always had and
+   gives some back when the page is short. min-height:0 because a column flex
+   item's auto minimum is its content, which is what stops it shrinking. */
+.pt-sheet-page.is-fitted .pt-gen-row {
+  flex: 0 1 150px;
+  min-height: 0;
+}
+/* The SVG follows the row it is in rather than its own cap, so the ruled
+   lines and the type scale together -- they are one drawing in one viewBox. */
+.pt-sheet-page.is-fitted .pt-gen-row > .pt-trace-svg {
+  height: 100%;
+  max-height: none;
+}
+.pt-sheet-page.is-fitted .pt-gen-row.has-lefty { align-items: stretch; }
+.pt-sheet-page.is-fitted .pt-sheet-footer { flex: 0 0 auto; }
+
 .pt-sheet-page.is-nup {
   display: flex;
   flex-direction: column;
