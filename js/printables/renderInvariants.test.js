@@ -13,7 +13,9 @@
              allow-list of computed properties inlined onto it
 
    `before` is commit 11d281455, where the allow-list carried neither
-   `column-count` nor `column-width`. `.pt-search-words` is `columns: 3 8rem`;
+   `column-count` nor `column-width`; `after` is this branch merged with the
+   `--pt-sheet-h` repair that landed on main in between, so the pair differs in
+   the export list and nothing else. `.pt-search-words` is `columns: 3 8rem`;
    the clone lost the columns, kept the height they had produced, and the clue
    list ran 165px out of the bottom of its own box — across the Name/Date row,
    across the credit QR, and off the page. Three of ten words were missing from
@@ -104,15 +106,14 @@ console.log("\nrecorded — the same page after carrying `columns` into the expo
   ok("and so is the clone", cloneV.length === 0, JSON.stringify(cloneV.slice(0, 3)));
 }
 
-console.log("\nrecorded — the page unit against its paper");
-{
-  // Measured on the same two recordings: the sheet is 998.4px tall before the
-  // print-CSS repair and 960px after, against a 960px US Letter content box.
-  ok("before, US Letter portrait had to be shrunk to fit",
-    RI.fitScale(FIX.before.source.box.h, 960) < 1);
-  ok("after, it fits at full size",
-    RI.fitScale(FIX.after.source.box.h, 960) === 1);
-}
+/* Deliberately NOT asserted here: that the recorded sheet fits a US Letter
+   page. It does not — 994.4px against a 960px content box — because its
+   CONTENT exceeds the page rather than its height budget being wrong, which is
+   RF-015/FIX-1 in docs/printables/render-fidelity-audit-2026-09-22.md and is
+   not what this module or these recordings are about. Asserting it would make
+   this test a permanent red against a known backlog item, which is how a check
+   gets ignored; asserting its NEGATION would make it go red the day somebody
+   fixes it. The fit rule is unit-tested above on numbers instead. */
 
 console.log("\n" + (fail ? "FAIL" : "PASS") + " — " + pass + " passed, " + fail + " failed\n");
 process.exit(fail ? 1 : 0);

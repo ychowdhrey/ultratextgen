@@ -45,24 +45,29 @@ layout and drops any property outside a 96-entry allow-list. `columns` was not o
 **The broadest.** No sheet re-lays-out for the paper it is printed on. Paper, orientation and
 margins reach the *page box*; the sheet adapts by being **scaled down as a picture** — 576 of 670
 configurations, 22 of the 27 generators. Two proximate causes feed it: three `min-height: 9.2in`
-declarations that mean "US Letter portrait, roughly" on every paper (now replaced with the
-measured page box), and RF-015's row height, which is derived from the word rather than from the
-page. The second is the larger and is the top item of the fix plan.
+declarations that mean "US Letter portrait, roughly" on every paper, and RF-015's row height,
+which is derived from the word rather than from the page. PR #927 closed the first and the
+generator half of the second while this audit was in flight. The remainder — the name sheets — is
+the larger half and is the top item of the fix plan.
 
 **The reported regression is explained and closed.** "Word search · large word list · the final
 word collides with the Name/Date section" is not a footer-position problem and moving the Name
 field down would not have touched it. It is the collapsed clue list above, and it happens at
 default settings too.
 
-**What this pass fixed** (all verified by re-measuring with the same instrument):
+**What this pass fixed** (verified by re-measuring with the same instrument):
 
 * the export now carries the properties the print surfaces use — `columns` and 24 others — and a
   CI gate compares the two lists so the next one cannot be dropped in silence;
-* the PDF page box is published and used, so a portrait or Legal sheet is no longer shrunk to fit
-  a box it already fitted — on the name puzzle, `fit` 0.961 → **1.000** on US Letter portrait and
-  0.72 → **1.000** on Letter landscape, 9 of its 15 configurations improved and none regressed;
 * a clue list that does not fit under its grid now breaks **between words** instead of jumping to
   the next sheet whole (browser-print page-one ink 9.74% → **13.08%**).
+
+**What `main` fixed underneath it, mid-audit.** PR #927 landed while this branch was open and
+repaired the sheet-height half of RF-002 from the other side, with `--pt-sheet-h`, plus the
+flex-row page fit for generator sheets that is FIX-1's own mechanism. This branch had reached the
+same three rules through a different property and **deferred to #927's on merge** rather than
+carry two mechanisms for one number. The measurements are in RF-002 and RF-015; the short version
+is that the `gen` surfaces went `fit` 0.613 → **1.000** and the `name` surfaces did not move.
 
 ---
 
@@ -153,9 +158,9 @@ spill, all ten words present, Name/Date and credit clear.
 
 ---
 
-### RF-015 · A short name prints a tracing sheet at a quarter of its size, as a strip down the middle of the page — P0 · **OPEN**
+### RF-015 · A short name prints a tracing sheet at a quarter of its size, as a strip down the middle of the page — P0 · **OPEN for the name sheets; the generator half closed on `main`**
 
-**Generators** every `name` surface (12 routes) and every `gen` surface (3 routes) — 15 of 27
+**Generators** every `name` surface (12 routes) and, until PR #927, every `gen` surface (3 more)
 **Route** e.g. `/printables/mom-in-cursive/`, `/printables/name-tracing/`,
 `/printables/letter-tracing/`
 **Settings to reproduce** default. **Input** a short name — one to three characters
@@ -184,6 +189,19 @@ long. Worst measured on `name-tracing`: **`fit` 0.197**, a sheet printed at 19.7
 This is the audit's most severe finding and it needs no unusual setting: a parent typing a child's
 initial gets it.
 
+**Half of it closed on `main` while this audit was in flight.** PR #927 made the generator page a
+flex column of the real printable height and let its ruled rows shrink into it
+(`.pt-sheet-page.is-fitted`), which is exactly FIX-1's mechanism. Measured against the merged
+tree, the three `gen` surfaces go from `fit` 0.613 to **1.000** across all 15 configurations, none
+regressed. The `name` surfaces are untouched — `markFittedPage()` marks a unit only when its
+content is a `.pt-gen-sheet` — so `mom-in-cursive` is still **0.271** and `name-tracing` still
+**0.197** on the merged tree, unchanged from the baseline.
+
+That makes FIX-1 cheaper than it was when this audit started: the pattern now exists in the file,
+with its own measurements beside it, and the remaining work is extending it to the name row —
+where it is harder, because a `.pt-gen-row` shrinks and a `.pt-name-row`'s ruling is inside the
+word's own viewBox.
+
 **Root cause** SRC-2, in its strongest form — **the ruled band and the word share one SVG whose
 viewBox is sized to the word**, so the ruling cannot be page-width and the row cannot be
 page-height. `.pt-name-row.has-guides .pt-word-outline { max-height: none }` is where the cap was
@@ -201,7 +219,7 @@ already names `addRuling()` as "the one owner of a ruling", which is where the b
 
 ---
 
-### RF-002 · Every sheet is laid out for US Letter portrait and adapts to other paper only by scaling the raster — P1 · **PARTLY FIXED**
+### RF-002 · Every sheet is laid out for US Letter portrait and adapts to other paper only by scaling the raster — P1 · **PARTLY FIXED (on `main`, by PR #927)**
 
 **Generators** 22 of 27 · **Route** all printable routes
 **Settings to reproduce** Paper / Orientation / Margins — any value other than US Letter portrait
@@ -233,20 +251,36 @@ whole page down to fit. Measured shrink at the baseline, by surface:
 `34rem` content caps that make a sheet's height independent of its page.
 **Affected shared component** `style.css` print block; `applySheetMetrics()` in
 `js/printables/printablesEngine.js`.
-**Fix shipped** `applySheetMetrics()` now publishes `--pt-pdf-page-h` and `--pt-pdf-body-h` — the
-real PDF page box (paper − margins, with the print root's padding correctly excluded in PDF mode)
-and that box minus the already-measured 1.2in credit band — and the three constants are replaced
-by `min(9.2in, var(--pt-pdf-body-h))`. Re-measured on the name puzzle, where the minimum is the
-binding constraint, across all 15 of its configurations: **9 improved, 0 regressed**, Letter
-landscape `fit` 0.72 → **1.000**, A4 landscape narrow 0.75 → **1.000**, Letter portrait
-0.961 → **1.000**. On the cursive pages: 4 improved, 0 regressed, worst case 0.68 → 0.89.
+**Fixed on `main` by PR #927 while this audit was in flight, not by this branch.** That change
+publishes `--pt-sheet-h` — the printable page minus the credit band the sheet shares its unit with
+— and the three constants read it. This branch had reached the same three rules from the other
+side (`--pt-pdf-body-h`, the PDF page box minus the same band) and **deferred to #927's on merge**:
+two mechanisms for one number is the drift this repository pays for elsewhere. Re-measured against
+the merged tree, per configuration rather than in aggregate:
 
-**The `min()` is there because of a measurement.** `--pt-pdf-body-h` alone is 12.3in on Legal
-narrow, and a sheet stretched to that overran its page — 20 Legal configurations that used to fit
-started being scaled down. Taking the smaller of the physical limit and the old design limit keeps
-the landscape repair and cannot make any paper worse than it was.
+| route | configurations improved | regressed | worst `fit` before → after |
+|---|---|---|---|
+| `letter-tracing` (gen) | 12 of 15 | 0 | 0.613 → **1.000** |
+| `sight-word-tracing` (gen) | 12 of 15 | 0 | 0.613 → **1.000** |
+| `name-puzzle-maker` | 9 of 15 | 0 | 0.721 → **0.971** |
+| `mom-in-cursive` (name) | 5 of 15 | 1 | 0.271 → **0.271** |
+| `name-tracing` (name) | 1 of 15 | 1 | 0.197 → **0.197** |
 
-**Open residue** every sheet whose CONTENT is taller than the page, where a minimum height was
+The two `gen` rows are the interesting ones: #927 did not only replace the constant, it made the
+generator page a flex column whose ruled rows shrink into it (`.pt-sheet-page.is-fitted`) — which
+is FIX-1's mechanism, shipped for that surface. The two `name` rows are unchanged because the name
+sheets are not marked fitted, which is why RF-015 stands.
+
+**A 1.7% regression on Legal narrow, measured, and reported rather than patched.**
+`--pt-sheet-h` is 11.96in on Legal narrow, and a sheet stretched to it lands 22px past the 1,296px
+page box once its own gaps are counted, so two name routes went `fit` 1.000 → **0.983** on the
+`accented` input. This branch's own version had the same failure larger (4%) and carried a
+`min(9.2in, …)` clamp for it; the clamp went with the rest when the branch deferred to #927. It is
+recorded because it is now `main`'s behaviour, and the fix is either that clamp or counting the
+sheet's own gaps into the band — a one-line decision for whoever owns #927's change, not a reason
+to reintroduce a second page-height property.
+
+**Open residue** every sheet whose CONTENT is taller than the page, where a height budget was
 never the constraint: the word search at 40 words is 1,242px against a 720px landscape box, and
 `fit` is 0.58 before and after. **A sheet that fits a landscape page needs a landscape layout, not
 a smaller picture** — see FIX-1 and FIX-2.
@@ -428,12 +462,20 @@ rule that moves the defect around is worse than one that is not there. The real 
 
 ---
 
-### RF-011 · The 4-up page used the print dialog's page box in PDF mode — P3 · **FIXED**
+### RF-011 · The 4-up page uses the print dialog's page box in PDF mode — P3 · **OPEN**
 
-`.pt-sheet-page.is-nup` took `height: var(--pt-page-h)`, which subtracts `PRINT_PADDING_IN`
+`.pt-sheet-page.is-nup` takes `height: var(--pt-page-h)`, which subtracts `PRINT_PADDING_IN`
 (0.34in) — correct for the print dialog, where `#pt-print-root` has 1rem of padding, and 0.34in
-short in PDF mode, where the same rule sets `padding: 0`. Every 4-up PDF was a third of an inch
-short of its page. Fixed by the same `--pt-pdf-page-h` that closes RF-002.
+short in PDF mode, where the same rule sets `padding: 0`. Every 4-up PDF is a third of an inch
+short of its page, and since PR #927 the new `.pt-sheet-page.is-fitted` reads the same property
+and inherits the same shortfall.
+
+This branch did fix it, with a `--pt-pdf-page-h`, and **that fix was withdrawn on merge**. The
+reason is worth recording: the shortfall is in the SAFE direction (a sheet stops short of the
+bottom rather than spilling onto a second page), and introducing a second page-height property for
+one of the two rules that read `--pt-page-h` would leave the pair inconsistent the day after
+#927 shipped a considered design around it. The right fix is one property for both, decided by
+whoever owns that design.
 
 ---
 
@@ -629,7 +671,7 @@ What each defect class could be prevented by, and what now exists.
 |---|---|---|
 | RF-001 · a property dropped from the export | **static CI gate** comparing the exporter's allow-list against the print CSS | **shipped** — `npm run check:print-export-properties`, wired into `validate.yml`, negative-tested |
 | RF-001, RF-004 · geometry the DOM cannot show | **DOM bounds assertions over the exporter's own clone** | module **shipped** (`js/printables/renderInvariants.js`); the clone capture lives in the audit harness and needs a browser, so it is not in CI |
-| I-1 … I-4 regressions | **pure-geometry node test with recorded fixtures** | **shipped** — `npm run test:render-invariants`, 21 assertions, including the RF-001 geometry measured before and after the fix |
+| I-1 … I-4 regressions | **pure-geometry node test with recorded fixtures** | **shipped** — `npm run test:render-invariants`, 19 assertions, including the RF-001 geometry measured before and after the fix |
 | RF-002, RF-015 · scale failures | **a `fit` budget per surface**: render each sheet at each paper × orientation and fail when `fit` drops below a floor | designed, not built — needs the browser harness; the numbers in §4 are what it would assert |
 | RF-003, RF-010 · print pagination | **`/Type /Page` count per paper × orientation**, which `.claude/skills/printables-surface` already asks for by hand | the harness does it; worth a scripted run per release |
 | RF-007, RF-008, RF-009 · responsive preview | **viewport sweep asserting no horizontal scroll, no content past a scroll box, and square boxes square** | harness pass exists (27 routes × 5 viewports) |
@@ -659,9 +701,19 @@ would only move the defect, which is called out where it applies.
 | # | Fixes | Root cause | Change |
 |---|---|---|---|
 | S-1 | RF-001 (P0) | SRC-1 | `columns` + 24 properties added to `PROPS`; `check:print-export-properties` gate wired into CI and negative-tested |
-| S-2 | RF-002 (part), RF-011 | SRC-2 | `--pt-pdf-page-h` / `--pt-pdf-body-h` published by `applySheetMetrics()`; three `min-height: 9.2in` replaced; 4-up page height corrected |
-| S-3 | RF-003 | SRC-3 | print-CSS break avoidance moved from `.pt-search-words` to its `li` |
-| S-4 | prevention | SRC-1, I-1…I-4 | `renderInvariants.js` + `renderInvariants.test.js` (21 assertions, recorded fixtures), gated in CI |
+| S-2 | RF-003 | SRC-3 | print-CSS break avoidance moved from `.pt-search-words` to its `li` |
+| S-3 | prevention | SRC-1, I-1…I-4 | `renderInvariants.js` + `renderInvariants.test.js` (19 assertions, recorded fixtures), gated in CI |
+
+### Shipped on `main` mid-audit, by PR #927
+
+| Fixes | Root cause | Change |
+|---|---|---|
+| RF-002 (part) | SRC-2 | `--pt-sheet-h` published by `applySheetMetrics()`; the three `min-height: 9.2in` constants read it |
+| RF-015 (the `gen` half) | SRC-2 | `.pt-sheet-page.is-fitted` — the generator page is a flex column of the real printable height and its ruled rows shrink into it |
+
+This branch had independently reached the first of those and withdrew it on merge; the reasoning
+is in RF-002. What it leaves behind is a 1.7% Legal-narrow regression that neither change set
+intended, recorded there.
 
 ### Verification of what shipped
 
@@ -687,9 +739,13 @@ caught and reverted.
 
 ### FIX-1 — the ruled band takes its height from the page, the word from its band · closes RF-015 (P0), most of RF-002, and RF-013
 
-The largest single change and the one everything else waits on. Today a practice row is **one SVG
-holding both the ruling and the word**, with a viewBox sized to the word — so the ruling cannot
-span the page and the row cannot take the page's height.
+The largest single change and the one everything else waits on — and **half of it has now
+shipped**. PR #927 gave the generator page `.pt-sheet-page.is-fitted`: a flex column of the real
+printable height whose ruled rows shrink into it, which took the three `gen` surfaces from `fit`
+0.613 to 1.000. What remains is the **name** sheets, where the same idea is harder: a
+`.pt-gen-row` is a row that can shrink, while a `.pt-name-row` is **one SVG holding both the
+ruling and the word**, with a viewBox sized to the word — so the ruling cannot span the page and
+the row cannot take the page's height.
 
 1. `nameSheetNode()` / `genSheetNode()` publish the row count they actually built as a custom
    property on the sheet (the engine knows it; CSS does not, and **estimating it is the failure
@@ -836,12 +892,13 @@ produced confident false findings. They are recorded because the next pass will 
 
 **Three.**
 
-1. **Give the sheet its height from the page and the figure what is left** (FIX-1, and S-2 which
-   is already in). One change to how a practice row is built closes the audit's worst defect
-   (RF-015, 15 generators, sheets printed at 19.7–27%), most of the broadest one (RF-002, 22
-   generators, 576 configurations), and the width half of it (RF-013). It also removes the
-   *mechanism* behind every remaining scale failure, because it stops `renderPages()`'s `fit` from
-   being how a sheet meets its paper.
+1. **Give the sheet its height from the page and the figure what is left** (FIX-1). One change to
+   how a practice row is built closes the audit's worst defect (RF-015, sheets printed at
+   19.7–27%), most of the broadest one (RF-002), and the width half of it (RF-013). It also
+   removes the *mechanism* behind every remaining scale failure, because it stops
+   `renderPages()`'s `fit` from being how a sheet meets its paper. **PR #927 has already done this
+   for the generator sheets and measured the result** — 0.613 → 1.000 across all their
+   configurations — which is both the proof that the change is right and half of it delivered.
 
 2. **Make the exporter's clone a checked artifact rather than a hopeful one** (S-1, shipped). One
    gate closes the audit's other P0 and, more importantly, closes the whole class: a property the
@@ -861,14 +918,16 @@ Everything else in the register is a one-file fix that can land in any order.
 
 | Step | Work | Depends on | Blast radius |
 |---|---|---|---|
-| 1 | **S-1, S-2, S-3, S-4** — shipped in this pass | — | the export path and three print rules; verified by re-measuring 670 configurations |
-| 2 | **FIX-5b** (crossword number inset) | ships beside S-2, which makes the collision more visible | one selector |
-| 3 | **FIX-1** — row band takes the page's height | step 1 (needs `--pt-pdf-body-h`) | 15 generators, every name and gen sheet; the highest-value and highest-risk change in the plan, and the reason it is not in this PR |
-| 4 | **FIX-2** — landscape layout for the puzzle sheets | FIX-1 | 3 generators; visual redesign, owner decision |
-| 5 | **FIX-3** — one pagination owner | FIX-1 (pagination of a correctly-sized sheet is a different problem) | every tool with a download button |
-| 6 | **FIX-4** — the preview is a page | independent | 7 previews |
-| 7 | **FIX-5 a, c, d, e** | independent | one file each |
+| 0 | **PR #927** — `--pt-sheet-h` and `.pt-sheet-page.is-fitted` | — | shipped on `main` during this audit |
+| 1 | **S-1, S-2, S-3** — shipped in this pass | — | the export path and one print rule |
+| 2 | **the Legal-narrow 1.7%** left by step 0 | step 0 | one declaration; clamp the band or count the sheet's gaps into it |
+| 3 | **FIX-5b** (crossword number inset) | independent | one selector |
+| 4 | **FIX-1** — the name row's band takes the page's height, as the generator row now does | steps 0 and 1 | 12 name routes; the highest-value and highest-risk change left, and the reason it is not in this PR |
+| 5 | **FIX-2** — landscape layout for the puzzle sheets | FIX-1 | 3 generators; visual redesign, owner decision |
+| 6 | **FIX-3** — one pagination owner | FIX-1 (pagination of a correctly-sized sheet is a different problem) | every tool with a download button |
+| 7 | **FIX-4** — the preview is a page | independent | 7 previews |
+| 8 | **FIX-5 a, c, d, e** | independent | one file each |
 
-Steps 1 and 2 are safe now. Step 3 is the one that needs an owner in the room, because it changes
-what every tracing sheet on the site looks like — and because getting it wrong by estimating a
-footer's height is the specific failure `--pt-body-h` exists to prevent.
+Steps 1 to 3 are safe now. Step 4 is the one that needs an owner in the room, because it changes
+what every name-tracing sheet on the site looks like — though #927 has just made it cheaper by
+putting the pattern, and its measurements, in the file.
