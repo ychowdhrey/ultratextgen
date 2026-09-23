@@ -132,9 +132,10 @@ eq("a page with no images yields none",
 // alt is the page's own description, so the two can never disagree.
 eq("a content image's alt is carried as its title",
   getContentImageEntries(
-    '<figure class="guide-hero-figure pt-sheet-preview">' +
-    '<img src="/assets/printables-previews/printables-block-letters-letter-a.png" ' +
-    'width="1200" height="900" alt="Printable block letter A stencil: hollow outline" loading="lazy"></figure>'),
+    '<div class="bubble-letter-panel" id="pt-panel" aria-live="polite" ' +
+    'data-sheet-preview="/assets/printables-previews/printables-block-letters-letter-a.png">' +
+    '<img class="pt-sheet-preview" src="/assets/printables-previews/printables-block-letters-letter-a.png" ' +
+    'width="1200" height="900" alt="Printable block letter A stencil: hollow outline" loading="lazy"></div>'),
   [{ loc: `${B}/assets/printables-previews/printables-block-letters-letter-a.png`,
      title: "Printable block letter A stencil: hollow outline" }]);
 
@@ -164,8 +165,8 @@ eq("a bare string image still emits a plain <image:loc> block",
   const rel = path.relative(path.join(__dirname, ".."), path.join(dir, "index.html"));
   fs.writeFileSync(path.join(dir, "index.html"),
     '<meta property="og:image" content="' + B + '/assets/og/p.png">' +
-    '<figure class="guide-hero-figure pt-sheet-preview"><img src="/assets/printables-previews/p.png" ' +
-    'width="1200" height="900" alt="Letter A coloring page" loading="lazy"></figure>');
+    '<div id="pt-panel" data-sheet-preview="/assets/printables-previews/p.png"><img class="pt-sheet-preview" ' +
+    'src="/assets/printables-previews/p.png" width="1200" height="900" alt="Letter A coloring page" loading="lazy"></div>');
   eq("the described content image precedes the og:image",
     getPageImages(rel).map((e) => e.loc),
     [`${B}/assets/printables-previews/p.png`, `${B}/assets/og/p.png`]);

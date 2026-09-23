@@ -10422,9 +10422,21 @@ body.dark-mode .source-note {
    time by applyPageStyle() into #pt-page-style.
    --------------------------------------------------------------- */
 /* Indexable sheet preview (scripts/wire-printables-previews.py): the real
-   sheet PNG as a visible figure, so image search has a descriptive image to
-   index instead of the decorative hero art. Sized here, never inline. */
-.pt-sheet-preview { max-width: 560px; }
+   sheet PNG, placed inside the live preview box as its no-JavaScript content,
+   so a crawler that runs no JavaScript indexes a descriptive image of the
+   sheet where the tool is. With scripting on it is hidden (a hidden lazy
+   image is never fetched) and the engine empties the box before drawing, so
+   a visitor sees one preview, the live one. Sized here, never inline. */
+img.pt-sheet-preview {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  margin: 0 auto;
+}
+@media (scripting: enabled) {
+  img.pt-sheet-preview { display: none; }
+}
 
 .pt-print-tools { margin: 0.9rem 0 0.4rem; }
 .pt-print-options {
