@@ -115,7 +115,7 @@ that raster. Open it and read the panel, or drive it headlessly and read
       lines.push("ABORT  " + FAM + " is not available — every number below would be meaningless.");
       fail++; finish(); return;
     }
-    ok(!!DATA && Object.keys(DATA).length === 52, "strokeDirectionData covers 52 letters",
+    ok(!!DATA && Object.keys(DATA).length === 62, "strokeDirectionData covers 52 letters and 10 digits",
        "got " + (DATA ? Object.keys(DATA).length : 0));
 
     // ---- the arithmetic, before the geometry ---------------------------
@@ -176,6 +176,8 @@ that raster. Open it and read the panel, or drive it headlessly and read
     lines.push("route on letter, worst 10: " + worst.slice(0, 10)
       .map(function (r) { return r.ch + " " + r.pct.toFixed(0) + "%"; }).join("  "));
     lines.push("mean " + mean.toFixed(1) + "%");
+    lines.push("digits: " + scores.filter(function (r) { return /[0-9]/.test(r.ch); })
+      .map(function (r) { return r.ch + " " + r.pct.toFixed(0) + "%"; }).join("  "));
     lines.push("");
 
     ok(mean >= 97, "mean route coverage is at least 97%", "got " + mean.toFixed(1) + "%");
@@ -208,7 +210,132 @@ that raster. Open it and read the panel, or drive it headlessly and read
        "at " + lPos.toFixed(0) + "% of the stem width");
 
     badgeTests(gm, DATA, stem);
-    finish();
+    routeDotTests(gm, DATA, stem).then(finish, function (e) {
+      ok(false, "the route-dot tests ran", String(e && e.message || e));
+      finish();
+    });
+  }
+
+  /* ---- the dotted rungs, as pixels ------------------------------------
+     R-001 dots the writing route one <path> per stroke. Where strokes meet,
+     both paths used to put a dot there: 38 of 52 letters printed two dots
+     0.1-9 units apart against an 11-unit dot (2026-09-23). routeDotDashes()
+     now decides which dots each path draws. Every defect found while building
+     it was invisible to any count of the dots it MEANT to draw -- a dash that
+     starts on the path's end is not drawn at all, so every stroke lost its
+     last dot; a stem whose ends met the bowl lost every station, and "a"
+     read as "o". So this renders the real SVG, rasterises it, finds the dots
+     as blobs, and asks three things of every character on every rung:
+       - no blob is two dots merged (area over 1.6x the median dot);
+       - no two dot centres are closer than the dot's own width;
+       - every point of the route has a dot within 0.9 of the pattern's
+         period -- which is what catches a missing stem or arch. */
+  const DOT_RUNGS = [
+    { name: "bold-dot", dash: "0.1 17", sw: 11 },
+    { name: "fine-dot", dash: "0.1 19", sw: 7 },
+    { name: "faint",    dash: "0.1 22", sw: 3 }
+  ];
+
+  function sliceRouteDots() {
+    const src = window.__PT_ENGINE_SRC || "";
+    const a = src.indexOf("/* @stroke-badges:begin"), b = src.indexOf("/* @stroke-badges:end */");
+    const c = src.indexOf("/* @route-dots:begin"), d = src.indexOf("/* @route-dots:end */");
+    if (a < 0 || b < 0 || c < 0 || d < 0) return null;
+    return new Function(src.slice(a, b) + "\n" + src.slice(c, d) + "\nreturn { routeDotDashes };")();
+  }
+
+  async function rasterDots(paths, dashes, rung, box) {
+    const K = 4, SVGNS = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(SVGNS, "svg");
+    svg.setAttribute("xmlns", SVGNS);
+    svg.setAttribute("viewBox", box.join(" "));
+    svg.setAttribute("width", box[2] * K); svg.setAttribute("height", box[3] * K);
+    paths.forEach(function (dd, i) {
+      if (dashes && !dashes[i]) return;
+      const p = document.createElementNS(SVGNS, "path");
+      p.setAttribute("d", dd); p.setAttribute("fill", "none"); p.setAttribute("stroke", "#000");
+      p.setAttribute("stroke-width", rung.sw); p.setAttribute("stroke-linecap", "round");
+      p.setAttribute("stroke-dasharray", dashes ? dashes[i].dash.join(" ") : rung.dash);
+      if (dashes && dashes[i].offset) p.setAttribute("stroke-dashoffset", dashes[i].offset);
+      svg.appendChild(p);
+    });
+    const img = new Image();
+    img.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(new XMLSerializer().serializeToString(svg));
+    await img.decode();
+    const W = box[2] * K, H = box[3] * K;
+    const cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+    const x = cv.getContext("2d"); x.fillStyle = "#fff"; x.fillRect(0, 0, W, H); x.drawImage(img, 0, 0);
+    const px = x.getImageData(0, 0, W, H).data, lab = new Int32Array(W * H), blobs = [];
+    for (let i = 0; i < W * H; i++) {
+      if (lab[i] || px[i * 4] > 200) continue;
+      let n = 0, sx = 0, sy = 0; const st = [i]; lab[i] = 1;
+      while (st.length) {
+        const j = st.pop(); n++; sx += j % W; sy += (j / W) | 0;
+        [j - 1, j + 1, j - W, j + W].forEach(function (nb) {
+          if (nb < 0 || nb >= W * H || lab[nb] || px[nb * 4] > 200) return;
+          if (Math.abs((nb % W) - (j % W)) > 1) return;
+          lab[nb] = 1; st.push(nb);
+        });
+      }
+      blobs.push({ n: n, x: box[0] + sx / n / K, y: box[1] + sy / n / K });
+    }
+    return blobs;
+  }
+
+  async function routeDotTests(gm, DATA, stem) {
+    lines.push("");
+    const RD = sliceRouteDots();
+    if (!RD) {
+      ok(false, "the @route-dots block was sliced out of printablesEngine.js",
+         "markers not found — the block moved or was renamed");
+      return;
+    }
+    const merged = [], close = [], gaps = [], empty = [];
+    for (const ch of Object.keys(DATA)) {
+      const i = gm.ink(ch, F, SIZE, 700);
+      if (!i || !i.exact) continue;
+      const originX = CX - i.advance / 2;
+      const inkBox = { x: originX + i.left, y: BASE + i.top, w: i.width, h: i.height };
+      const fit = gm.fitSkeleton(DATA[ch].strokes, inkBox, { inset: stem / 2 });
+      if (!fit) continue;
+      const route = gm.flattenStrokes(fit.d, 24);
+      const box = [Math.floor(inkBox.x - 30), Math.floor(inkBox.y - 30),
+                   Math.ceil(inkBox.w + 60), Math.ceil(inkBox.h + 60)];
+      for (const rung of DOT_RUNGS) {
+        const parts = rung.dash.split(" ").map(Number), period = parts[0] + parts[1];
+        const dashes = RD.routeDotDashes(fit.d, rung.dash, rung.sw, 1);
+        const blobs = await rasterDots(fit.d, dashes, rung, box);
+        const tag = ch + "@" + rung.name;
+        if (!blobs.length) { empty.push(tag); continue; }
+        const areas = blobs.map(function (b) { return b.n; }).sort(function (a, b) { return a - b; });
+        const med = areas[areas.length >> 1];
+        if (blobs.some(function (b) { return b.n > med * 1.6; })) merged.push(tag);
+        let tooClose = false;
+        for (let a = 0; a < blobs.length && !tooClose; a++)
+          for (let b = a + 1; b < blobs.length; b++)
+            if (Math.hypot(blobs[a].x - blobs[b].x, blobs[a].y - blobs[b].y) < rung.sw * 1.05) { tooClose = true; break; }
+        if (tooClose) close.push(tag);
+        let worst = 0;
+        route.forEach(function (run) {
+          for (let k = 1; k < run.length; k++) {
+            const p0 = run[k - 1], p1 = run[k];
+            const steps = Math.max(1, Math.round(Math.hypot(p1[0] - p0[0], p1[1] - p0[1]) / 2));
+            for (let t = 0; t <= steps; t++) {
+              const qx = p0[0] + (p1[0] - p0[0]) * t / steps, qy = p0[1] + (p1[1] - p0[1]) * t / steps;
+              let m = Infinity;
+              blobs.forEach(function (b) { const dd = Math.hypot(b.x - qx, b.y - qy); if (dd < m) m = dd; });
+              if (m > worst) worst = m;
+            }
+          }
+        });
+        if (worst > period * 0.9) gaps.push(tag + " " + worst.toFixed(1));
+      }
+    }
+    lines.push("dotted rungs checked: " + Object.keys(DATA).length + " characters x " + DOT_RUNGS.length);
+    ok(empty.length === 0, "every character draws dots on every dotted rung", empty.join(", "));
+    ok(merged.length === 0, "no two dots merge into one blob where strokes meet", merged.join(", "));
+    ok(close.length === 0, "no two dot centres are closer than a dot's own width", close.join(", "));
+    ok(gaps.length === 0, "no stretch of the route is left without a dot (stems, arches, tips)", gaps.join(", "));
   }
 
   /* ---- the numbered badges ------------------------------------------

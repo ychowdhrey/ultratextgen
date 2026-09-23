@@ -228,9 +228,21 @@
      2026-09-22 by reading the composed pin href in a browser: all six
      monogram/cross-stitch pages (EN + es x2 + fr + id) were still pinning the
      OG card, and all six carry a `.pt-sheet-preview` that was right there. The
-     older class names stay as a fallback for a page wired by hand. */
+     older class names stay as a fallback for a page wired by hand.
+
+     Since 2026-09-23 the <img> is the preview box's no-JavaScript content,
+     and every engine empties that box before drawing, so by the time anyone
+     clicks Pin the <img> is gone. The URL is read from the box's
+     `data-sheet-preview` attribute first, which survives the box being
+     emptied, and resolved to an absolute URL as img.src would be. */
   function sheetPreviewUrl() {
-    const img = document.querySelector(".pt-sheet-preview img")
+    const box = document.querySelector("[data-sheet-preview]");
+    const rel = box && box.getAttribute("data-sheet-preview");
+    if (rel) {
+      try { return new URL(rel, document.baseURI).href; } catch (e) { /* fall through */ }
+    }
+    const img = document.querySelector("img.pt-sheet-preview")
+      || document.querySelector(".pt-sheet-preview img")
       || document.querySelector("img.pt-preview-img")
       || document.querySelector(".pt-preview-figure img");
     if (img && img.src) return img.src;
