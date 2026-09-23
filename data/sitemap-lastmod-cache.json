@@ -2316,8 +2316,8 @@
   "lastmod": "2026-08-15"
  },
  "/de/zum-ausdrucken/": {
-  "hash": "650732815da56e94",
-  "lastmod": "2026-09-17"
+  "hash": "69b07a5385003c3c",
+  "lastmod": "2026-09-22"
  },
  "/de/zum-ausdrucken/alphabet-ausmalbilder/": {
   "hash": "65570eabd54bf1f3",
@@ -2326,6 +2326,10 @@
  "/de/zum-ausdrucken/blasenbuchstaben/": {
   "hash": "3dcce3db1659d366",
   "lastmod": "2026-08-15"
+ },
+ "/de/zum-ausdrucken/buchstaben-nachspuren/": {
+  "hash": "087735e773f94b17",
+  "lastmod": "2026-09-22"
  },
  "/de/zum-ausdrucken/buchstaben-vorlagen/": {
   "hash": "e338f42ecc49b317",
@@ -2340,8 +2344,8 @@
   "lastmod": "2026-09-16"
  },
  "/de/zum-ausdrucken/namen-schreiben/": {
-  "hash": "df8e1fadb957533c",
-  "lastmod": "2026-08-15"
+  "hash": "3c60909a872a88c6",
+  "lastmod": "2026-09-22"
  },
  "/de/zum-ausdrucken/schreibschrift/": {
   "hash": "8e5d38d877e49429",
@@ -2504,8 +2508,8 @@
   "lastmod": "2026-07-26"
  },
  "/es/imprimibles/": {
-  "hash": "324b0abd62923657",
-  "lastmod": "2026-09-17"
+  "hash": "5243183798e7dfed",
+  "lastmod": "2026-09-22"
  },
  "/es/imprimibles/abecedario-espanol/": {
   "hash": "6edbc77157463708",
@@ -2683,6 +2687,10 @@
   "hash": "218e261b3e49ce72",
   "lastmod": "2026-09-16"
  },
+ "/es/imprimibles/letras-para-trazar/": {
+  "hash": "6c54321b1db187f3",
+  "lastmod": "2026-09-22"
+ },
  "/es/imprimibles/letras-punteadas/": {
   "hash": "daf3fba17daf4393",
   "lastmod": "2026-08-13"
@@ -2700,8 +2708,8 @@
   "lastmod": "2026-08-12"
  },
  "/es/imprimibles/nombre-para-trazar/": {
-  "hash": "91183166d667dcfb",
-  "lastmod": "2026-08-12"
+  "hash": "e1c9c5592a1404e6",
+  "lastmod": "2026-09-22"
  },
  "/es/letra-cursiva/": {
   "hash": "bbf0647095197cfb",
@@ -4552,8 +4560,8 @@
   "lastmod": "2026-07-26"
  },
  "/fr/imprimables/": {
-  "hash": "54cdbb4aac0b7a4c",
-  "lastmod": "2026-09-17"
+  "hash": "6ca23b1bd0b5233a",
+  "lastmod": "2026-09-22"
  },
  "/fr/imprimables/alphabet-cursif/": {
   "hash": "f195079c9932c386",
@@ -4575,6 +4583,10 @@
   "hash": "0e5acec3c0b251da",
   "lastmod": "2026-09-12"
  },
+ "/fr/imprimables/lettres-a-tracer/": {
+  "hash": "e78f7ac1faf81920",
+  "lastmod": "2026-09-22"
+ },
  "/fr/imprimables/lettres-bulles/": {
   "hash": "ad6023ff3cd0e159",
   "lastmod": "2026-08-12"
@@ -4584,8 +4596,8 @@
   "lastmod": "2026-09-16"
  },
  "/fr/imprimables/prenom-a-tracer/": {
-  "hash": "1a14be67548f928f",
-  "lastmod": "2026-07-25"
+  "hash": "52b097309b4892b3",
+  "lastmod": "2026-09-22"
  },
  "/fr/library/": {
   "hash": "0dc38b35ad813c9d",
@@ -6760,8 +6772,8 @@
   "lastmod": "2026-08-21"
  },
  "/it/da-stampare/": {
-  "hash": "d4c45dea4ce8d2e8",
-  "lastmod": "2026-09-20"
+  "hash": "a816c6af37182b35",
+  "lastmod": "2026-09-22"
  },
  "/it/da-stampare/alfabeto-corsivo/": {
   "hash": "d07c52b7f7dd512f",
@@ -6783,9 +6795,13 @@
   "hash": "af55afc2aa735215",
   "lastmod": "2026-09-16"
  },
+ "/it/da-stampare/pregrafismo-lettere/": {
+  "hash": "957ae1bb9a096959",
+  "lastmod": "2026-09-22"
+ },
  "/it/da-stampare/tracciare-il-nome/": {
-  "hash": "98726b73f13e0648",
-  "lastmod": "2026-07-25"
+  "hash": "0f97a192134c9e8d",
+  "lastmod": "2026-09-22"
  },
  "/it/font-copia-e-incolla/": {
   "hash": "85634b97abb3503a",
@@ -11844,8 +11860,8 @@
   "lastmod": "2026-09-01"
  },
  "/pl/do-druku/": {
-  "hash": "8dc6f8bb22739d43",
-  "lastmod": "2026-09-20"
+  "hash": "cca98aabc3f14d1e",
+  "lastmod": "2026-09-22"
  },
  "/pl/do-druku/alfabet-do-kolorowania/": {
   "hash": "18166eeb993bca5d",
@@ -11872,8 +11888,12 @@
   "lastmod": "2026-09-20"
  },
  "/pl/do-druku/pisanie-imienia/": {
-  "hash": "6523f5ca4a3a1de2",
-  "lastmod": "2026-07-25"
+  "hash": "f1a715fa6b460590",
+  "lastmod": "2026-09-22"
+ },
+ "/pl/do-druku/pisanie-liter-po-sladzie/": {
+  "hash": "5a87cd19659cc8f4",
+  "lastmod": "2026-09-22"
  },
  "/pl/do-druku/pokoloruj-imie/": {
   "hash": "b7ad49d250ffd7d9",
@@ -13420,8 +13440,8 @@
   "lastmod": "2026-09-19"
  },
  "/printables/letter-tracing/": {
-  "hash": "d31c7f46d724bc9d",
-  "lastmod": "2026-09-19"
+  "hash": "7c722ac94c358560",
+  "lastmod": "2026-09-22"
  },
  "/printables/love-in-cursive/": {
   "hash": "d347563c74cdc024",
@@ -13440,8 +13460,8 @@
   "lastmod": "2026-09-19"
  },
  "/printables/name-tracing/": {
-  "hash": "2dc55d32c9c52405",
-  "lastmod": "2026-09-19"
+  "hash": "47bc6554113a9ebf",
+  "lastmod": "2026-09-22"
  },
  "/printables/sight-word-tracing/": {
   "hash": "41838e41e7948c0b",
@@ -13556,8 +13576,8 @@
   "lastmod": "2026-07-26"
  },
  "/pt/imprimiveis/": {
-  "hash": "8b330c2031532e13",
-  "lastmod": "2026-09-20"
+  "hash": "bd32f2dd9c9d6661",
+  "lastmod": "2026-09-22"
  },
  "/pt/imprimiveis/alfabeto-cursivo/": {
   "hash": "c154bba49c9e6e68",
@@ -13571,6 +13591,10 @@
   "hash": "94c543c2d42bc149",
   "lastmod": "2026-09-13"
  },
+ "/pt/imprimiveis/alfabeto-pontilhado/": {
+  "hash": "675fca5c88a13229",
+  "lastmod": "2026-09-22"
+ },
  "/pt/imprimiveis/letra-bastao/": {
   "hash": "bc91c56add3b8ae1",
   "lastmod": "2026-09-20"
@@ -13580,8 +13604,8 @@
   "lastmod": "2026-08-12"
  },
  "/pt/imprimiveis/nome-para-tracar/": {
-  "hash": "5b3f98b657a3c4bb",
-  "lastmod": "2026-08-06"
+  "hash": "95f43a7090423d6a",
+  "lastmod": "2026-09-22"
  },
  "/pt/letra-cursiva/": {
   "hash": "a2d7ae9e8efac753",
