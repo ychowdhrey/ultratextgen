@@ -166,6 +166,84 @@ spill, all ten words present, Name/Date and credit clear.
 
 ### RF-015 · A short name prints a tracing sheet at a quarter of its size, as a strip down the middle of the page — P0 · **OPEN for the name sheets; the generator half closed on `main`**
 
+> ### Correction — 2026-09-23: the scope below is wrong in both directions
+>
+> Re-measured against merged `main` (this entry's own numbers were taken on the
+> pre-#927 tree and its scope was read off the surface inventory rather than
+> driven). Every page that mounts the name sheet was opened in headless Chromium,
+> given names of 1, 2, 3, 4, 6, 8 and 11 letters at US Letter portrait defaults,
+> and put through the PDF path; the `fit` below is what `renderPages()` applied.
+>
+> **It is 20 pages, not "12 routes", and the discriminator is `ruledRows: true` —
+> not "has a name surface".** 47 pages mount the name sheet. The 20 that set
+> `ruledRows: true` are affected; the other 27 are capped by
+> `.pt-name-row .pt-word-outline { max-height: 120px }` and measure a flat `fit`
+> 0.978 at every name length, because `max-height: none` is what
+> `.pt-name-row.has-guides` removes.
+>
+> | page | 1 letter | 3 | 6 | 11 |
+> |---|---|---|---|---|
+> | `printables/name-tracing` | **0.210** | 0.352 | 0.470 | 0.805 |
+> | `printables/mom-in-cursive` | **0.257** | 0.428 | 0.567 | 0.874 |
+> | `printables/dad-in-cursive` | **0.257** | 0.428 | 0.567 | 0.874 |
+> | `printables/love-in-cursive` | **0.257** | 0.428 | 0.567 | 0.874 |
+> | `printables/family-in-cursive` | **0.257** | 0.428 | 0.567 | 0.874 |
+> | `printables/best-friend-in-cursive` | **0.257** | 0.428 | 0.567 | 0.874 |
+> | `printables/happy-birthday-in-cursive` | **0.257** | 0.428 | 0.567 | 0.874 |
+> | `printables/cursive-alphabet` | **0.257** | 0.428 | 0.567 | 0.874 |
+> | `de/zum-ausdrucken/namen-schreiben` | **0.176** | 0.302 | 0.404 | 0.696 |
+> | `es/imprimibles/nombre-para-trazar` | **0.210** | 0.352 | 0.470 | 0.805 |
+> | `fr/imprimables/prenom-a-tracer` | **0.210** | 0.352 | 0.470 | 0.805 |
+> | `it/da-stampare/tracciare-il-nome` | **0.210** | 0.352 | 0.470 | 0.805 |
+> | `pl/do-druku/pisanie-imienia` | **0.210** | 0.352 | 0.470 | 0.805 |
+> | `pt/imprimiveis/nome-para-tracar` | **0.210** | 0.352 | 0.470 | 0.805 |
+> | `es/imprimibles/alfabeto-cursiva` | **0.223** | 0.388 | 0.573 | 0.887 |
+> | `it/da-stampare/alfabeto-corsivo` | **0.246** | 0.427 | 0.563 | 0.868 |
+> | `pl/do-druku/alfabet-kursywny` | **0.257** | 0.418 | 0.534 | 0.892 |
+> | `pt/imprimiveis/alfabeto-cursivo` | **0.277** | 0.446 | 0.579 | 0.880 |
+> | `fr/imprimables/alphabet-cursif` | **0.318** | 0.478 | 0.611 | 0.903 |
+> | `id/printables/tulisan-selamat-ulang-tahun` | **0.318** | 0.478 | 0.613 | 0.917 |
+>
+> **Four of the "12 name routes" are not affected at all** — `block-letters`,
+> `bubble-letters`, `calligraphy-alphabet` and `graffiti-letters` are unruled and
+> hold at 0.978 for every name. **And twelve locale mirrors were never counted.**
+>
+> **`fit` 0.197 is not this defect's worst case.** That figure is the
+> `widest run` × A4-landscape-narrow configuration, which is RF-002's cause, not
+> this one's. The worst short-name case at US Letter portrait is **0.176** on
+> `de/zum-ausdrucken/namen-schreiben`, and the reason is measurable: German
+> Lineatur carries a fourth line for the Unterlänge, so `wordRulingGeom()` raises
+> the viewBox to `0 0 200 240` — taller than square, where English is
+> `0 0 200 200`.
+>
+> **It is the ink width of the word, not its letter count.** The
+> `chars.length × 118 + 80` form quoted below is `wordOutlineGeom()`'s *fallback*;
+> the live path measures ink through `glyphMetrics.ink()` and floors the result at
+> 200. So "Emma" (4 letters, box 537 wide) prints at 0.514 while "Olivia"
+> (6 letters, box 484 wide, because `i` and `l` are thin) prints at 0.470. A fix
+> that reasons about character counts will not close this.
+>
+> **Why it survived review:** the preview carries the cap the sheet does not.
+> `#pt-name-preview` measures 154px tall for "A" and for "Christopher" alike —
+> `.pt-name-preview .pt-word-outline` keeps `max-height: 120px` — so the on-screen
+> figure is correctly proportioned at every name length while the printed sheet is
+> not. One property, two places, and only one of them is visible.
+>
+> **Checked, not inferred:** 27 further pages set `ruledRows: true` and are *not*
+> affected — the 26 `printables/cursive-alphabet/letter-*` pages and
+> `id/printables/huruf-sambung`. Each was driven through its own export: they carry
+> a single figure, no stacked sheet, and their print path produces zero page units,
+> so there is no page-fit stage to fail. Absence was measured rather than read off
+> the config.
+>
+> Evidence: `evidence/RF-015-name-length-vs-print-size.png` (four real page bitmaps
+> from the PDF path, one worksheet, four names) and
+> `evidence/RF-015-row-aspect-mechanism.png` (the viewBox → row height → sheet
+> height → `fit` chain, drawn to scale). **FIX-1 below is unchanged** — the
+> mechanism was diagnosed correctly; only its blast radius was understated. Read
+> "12 name routes" everywhere below as **20 pages: 8 English and 12 locale
+> mirrors**.
+
 **Generators** every `name` surface (12 routes) and, until PR #927, every `gen` surface (3 more)
 **Route** e.g. `/printables/mom-in-cursive/`, `/printables/name-tracing/`,
 `/printables/letter-tracing/`
@@ -537,9 +615,9 @@ violations in that one configuration, across the generators of that surface kind
 | list | `Wolfeschlegelsteinhausenbergerdorff` (one word) | Letter | portrait · normal | 4 | the answer line runs 171px off the page and is cut from the file |
 | gen (3 tracing generators) | longest name | Letter | landscape · normal | 30 | sheet at 61% |
 | gen | widest run `WMWMWM` | A4 | landscape · narrow | 30 | sheet at 61% |
-| name (12 routes) | **single character** | A4 | portrait · normal | 12 | **sheet at 27%** — RF-015 |
+| name (12 routes) [^rf015c] | **single character** | A4 | portrait · normal | 12 | **sheet at 27%** — RF-015 |
 | name | longest name | Letter | landscape · normal | 21 | sheet at 27–73% |
-| name | widest run | A4 | landscape · narrow | 21 | worst measured: **19.7%** |
+| name | widest run | A4 | landscape · narrow | 21 | worst measured: **19.7%** [^rf015c] |
 | name | roster of 10 | Legal | portrait · narrow | 17 | sheet scaled on a page with 3in to spare |
 | design (2 routes) | roster of 10 | Legal | portrait · narrow | 11 | sheet scaled on a 13in page |
 | puzzle | any name | Letter | landscape · normal | 28 | sheet at 72% before this pass, 100% after |
@@ -589,8 +667,9 @@ side. Negative-tested: removing `columns` from `PROPS` turns it red and names th
 length of whatever the visitor types
 **Failure mechanism** three separate expressions of one idea:
 
-* a row SVG whose viewBox is `chars.length × 118 + 80` wide and 200 tall, laid out `width: 100%;
-  height: auto` — so a short word makes a **tall** row (RF-015);
+* a row SVG whose viewBox is sized to the word — the ink width through `glyphMetrics.ink()`,
+  floored at 200, with `chars.length × 118 + 80` as the fallback — and 200 tall, laid out
+  `width: 100%; height: auto`, so a short word makes a **tall** row (RF-015) [^rf015c];
 * `min-height: 9.2in` on three sheets, which is US Letter portrait's content height written as a
   constant (RF-002);
 * `max-width: 6.4in` / `34rem` caps on every grid and list, which are absolute where the page is
@@ -943,7 +1022,7 @@ Everything else in the register is a one-file fix that can land in any order.
 | 1 | **S-1, S-2, S-3** — shipped in this pass | — | the export path and one print rule |
 | 2 | **the Legal-narrow 1.7%** left by step 0 | step 0 | one declaration; clamp the band or count the sheet's gaps into it |
 | 3 | **FIX-5b** (crossword number inset) | independent | one selector |
-| 4 | **FIX-1** — the name row's band takes the page's height, as the generator row now does | steps 0 and 1 | 12 name routes; the highest-value and highest-risk change left, and the reason it is not in this PR |
+| 4 | **FIX-1** — the name row's band takes the page's height, as the generator row now does | steps 0 and 1 | 20 pages (8 English, 12 locale mirrors) [^rf015c]; the highest-value and highest-risk change left, and the reason it is not in this PR |
 | 5 | **FIX-2** — landscape layout for the puzzle sheets | FIX-1 | 3 generators; visual redesign, owner decision |
 | 6 | **FIX-3** — one pagination owner | FIX-1 (pagination of a correctly-sized sheet is a different problem) | every tool with a download button |
 | 7 | **FIX-4** — the preview is a page | independent | 7 previews |
@@ -952,3 +1031,6 @@ Everything else in the register is a one-file fix that can land in any order.
 Steps 1 to 3 are safe now. Step 4 is the one that needs an owner in the room, because it changes
 what every name-tracing sheet on the site looks like — though #927 has just made it cheaper by
 putting the pattern, and its measurements, in the file.
+
+[^rf015c]: Superseded in scope by RF-015's **Correction — 2026-09-23**: 20 pages, not 12 routes,
+    and the discriminator is `ruledRows: true`. The mechanism and FIX-1 are unchanged.

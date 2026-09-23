@@ -116,3 +116,26 @@ alongside the working tree and drive both in headless Chromium:
   **not** intend to change, and expect them identical with 0 page errors.
 
 Then `npm run check:ci-gates`.
+
+## 9. Report a print defect as a picture, not a paragraph
+
+A `fit` of 0.21 is a number; the page bitmap is the argument. Prose also hides the
+case where your own description of the defect is wrong — a sheet described as
+"overlapping" turned out to be correctly laid out and merely printed small.
+
+Two figures, both cheap once the harness is up:
+
+- **The same sheet under several inputs, side by side, from the real page canvases.**
+  Not a screenshot of the preview and not the print surface — the bitmap the PDF
+  embeds. Intercept it by defining an accessor for `UltraTextGen.pdf` **before** the
+  page scripts run, wrap `renderPages()`, and `toDataURL()` what it returns. Caption
+  each panel with the measured number and what it means on paper ("prints at 21% ·
+  1.8in of 8.5in"), so the picture and the metric are read together.
+- **The mechanism drawn to scale, carrying the measured numbers.** Boxes whose
+  proportions are the real proportions, one stage per causal step. Do not illustrate
+  a mechanism you have not measured; every figure on it should be traceable to a
+  value the harness printed.
+
+Compose the figure as an HTML page and screenshot the element in the same headless
+browser — no image library needed, and the layout is reviewable as source.
+
