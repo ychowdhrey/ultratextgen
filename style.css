@@ -6726,6 +6726,13 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
   color: var(--accent-purple);
 }
 
+/* Sibling printables at the foot of a family page: the hub's cards, but the
+   row collapses its empty tracks so two cards fill the width instead of
+   leaving a blank third column. */
+.pt-siblings .printable-hub-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
 /* Selected-character figure in glyph mode (cursive).
    The family comes from the page's own CFG.font, published as
    --pt-glyph-family by printablesEngine's init(). Without it these elements

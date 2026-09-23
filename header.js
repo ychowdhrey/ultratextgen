@@ -1049,8 +1049,8 @@
   /* Printables cluster navigation. The 2026-09-10 review could not say
      whether a visitor who lands on a hub or a per-letter page ever reaches
      a second printable, because nothing recorded the click. Only the
-     printables' own link surfaces are watched (hub cards, the A-Z strip,
-     prev/next, chips, related cards); header nav and footer are the site's
+     printables' own link surfaces are watched (hub cards, sibling cards,
+     the A-Z strip, prev/next, chips, related cards); header nav and footer are the site's
      shared chrome and stay under cta_click / plain page_view. */
   var PRINTABLE_NAV_SELECTOR = ".printable-card a[href], a.printable-card[href], .pt-az-link[href], a[rel=\"next\"][href], a[rel=\"prev\"][href], .pt-chip[href], .related-page-card a[href], a.related-page-card[href]";
   function printableNavKind(link) {
@@ -1058,6 +1058,9 @@
     if (link.matches("a[rel=\"next\"], a[rel=\"prev\"]")) return link.getAttribute("rel");
     if (link.matches(".pt-chip")) return "chip";
     if (link.matches(".related-page-card, .related-page-card a")) return "related_card";
+    // The same .printable-card, placed at the foot of a family page to name
+    // its sibling printables. Without this it would count as a hub click.
+    if (link.closest(".pt-siblings")) return "sibling_card";
     return "hub_card";
   }
   function initializePrintableNavTracking() {
