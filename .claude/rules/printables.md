@@ -112,6 +112,31 @@ The engine mounts a surface from an element id, so this is a one-line mistake. S
   and compare. It answers for the **sheet**, not the preview card — those are
   different widths, and the setting changes the worksheet.
 
+## A page unit pinned to the paper must be able to shrink into it
+
+`markFittedPage()` gives a page unit `is-fitted`, and `.pt-sheet-page.is-fitted` is a flex
+column with `height: var(--pt-page-h)`. Once a unit has a fixed height, **nothing downstream
+rescues content that does not fit**: `renderPages()` paints the unit through a
+`<div style="overflow:hidden">` at the unit's own height, so overflow is CUT IN THE FILE
+rather than scaled to fit.
+
+- **A `min-height` inside a fitted unit is a floor `flex-shrink` cannot cross.** Give every
+  sheet and row inside one `min-height: 0` scoped to the variant, and let `flex: 1 1 auto`
+  decide the height. `npm run check:fitted-page-fit` gates this.
+- **A `--pt-*-h` budget is not a layout.** `--pt-sheet-h` is the page minus the credit band and
+  knows nothing about a title; `--pt-body-h` budgets a different band again. They size a sheet
+  that flows; inside a fitted column they are a second, conflicting answer to a question flex
+  has already answered, and the larger one wins. That was RF-016: 38.4 + 16 + 812.2 + 115.2 =
+  981.7px of content in a 927.4px box, and the bottom 54.3px — most of the credit QR and the
+  whole credit URL — was cut out of every PDF and PNG on the 20 ruled name routes.
+- **`fit` does not measure this and cannot.** `fit = pageHeight / unitHeight` measures a unit
+  sized by its content. The moment a unit is pinned, `fit` is 1.0000 by construction — it stays
+  green while the file loses content. Measure the unit's DESCENDANTS against its box instead.
+- **Prove it by decoding, not by looking.** The credit QR is the canary for this whole class,
+  because it sits last in the column and is machine-readable: render the print surface at print
+  resolution and feed the bitmap to a QR decoder. Before the RF-016 fix nothing decoded on any
+  of the 20 routes; the page and every rectangle on it measured correctly throughout.
+
 ## The export is a CLONE, and it drops what it is not told to carry
 
 `printablePdf.js` writes the PDF and the PNG by cloning the print surface, inlining a **named
