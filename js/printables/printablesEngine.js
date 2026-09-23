@@ -146,6 +146,7 @@
       flagCount: { one: "flag", other: "flags" },
       pageCount: { one: "page", other: "pages" },
       alphabetWord: "alphabet",
+      practiceTitle: "{Noun} practice sheet",
       caseUpper: "Uppercase", caseLower: "Lowercase",
       modelCount: { one: "model", other: "model" },
       traceCount: { one: "trace", other: "trace" },
@@ -187,6 +188,7 @@
       printBook: "Enregistrer en livret — une page par lettre",
       pageCount: { one: "page", other: "pages" },
       ofWord: "sur",
+      practiceTitle: "Fiche d'entraînement · {Noun}",
       alphabetWord: "alphabet",
       caseUpper: "Majuscules", caseLower: "Minuscules",
       save: "Enregistrer",
@@ -235,6 +237,7 @@
       printOpts: { settings: "Ajustes del PDF", paper: "Papel", letter: "Carta", a4: "A4", legal: "Oficio", orientation: "Orientación", portrait: "Vertical", landscape: "Horizontal", margins: "Márgenes", normal: "Normales", narrow: "Estrechos", inkSaver: "Ahorro de tinta (líneas más claras)", savePdf: "Descargar PDF", pdfToast: "En el cuadro de impresión, elige Guardar como PDF como destino.", share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", recent: "Tus hojas recientes", clear: "Borrar", madeAt: "Hecho en" },
       printBook: "Guardar como libro — una página por letra",
       pageCount: { one: "página", other: "páginas" },
+      practiceTitle: "Hoja de práctica · {Noun}",
       ofWord: "de",
       alphabetWord: "alfabeto",
       caseUpper: "Mayúsculas", caseLower: "Minúsculas",
@@ -283,6 +286,7 @@
       pdfHint: "Dica: Imprimir → “Salvar como PDF” baixa a folha em PDF.",
       printOpts: { settings: "Configurações do PDF", paper: "Papel", letter: "Carta", a4: "A4", legal: "Ofício", orientation: "Orientação", portrait: "Retrato", landscape: "Paisagem", margins: "Margens", normal: "Normais", narrow: "Estreitas", inkSaver: "Economia de tinta (linhas mais claras)", savePdf: "Baixar PDF", pdfToast: "Na caixa de impressão, escolha Salvar como PDF como destino.", share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", recent: "Suas folhas recentes", clear: "Limpar", madeAt: "Feito em" },
       printBook: "Salvar como livro — uma página por letra",
+      practiceTitle: "Folha de treino · {Noun}",
       pageCount: { one: "página", other: "páginas" },
       ofWord: "de",
       alphabetWord: "alfabeto",
@@ -331,6 +335,7 @@
       dotLadderText: "Inizia dal facile e aggiungi punti man mano. Livello esperto superato? Togli i numeri e prova a disegnare a mano libera.",
       pdfHint: "Suggerimento: Stampa → “Salva come PDF” scarica il foglio in PDF.",
       printOpts: { settings: "Impostazioni PDF", paper: "Carta", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientamento", portrait: "Verticale", landscape: "Orizzontale", margins: "Margini", normal: "Normali", narrow: "Stretti", inkSaver: "Risparmio inchiostro (linee più chiare)", savePdf: "Scarica PDF", pdfToast: "Nella finestra di stampa scegli Salva come PDF come destinazione.", share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", recent: "I tuoi fogli recenti", clear: "Cancella", madeAt: "Creato su" },
+      practiceTitle: "Scheda di esercizio · {Noun}",
       printBook: "Salva come libretto – una pagina per lettera",
       pageCount: { one: "pagina", other: "pagine" },
       ofWord: "di",
@@ -391,6 +396,7 @@
       sheetsPerPage: "Kart na stronę",
       bannerInstr: "Wytnij każdą chorągiewkę wzdłuż przerywanej linii, zrób dziurkę w każdym punkcie, a następnie przewlecz sznurek lub wstążkę po kolei (1, 2, 3…), aby ułożyć napis.",
       puzzleCut: "Tnij wzdłuż przerywanych linii, aby oddzielić każdy element-literę.",
+      practiceTitle: "Karta pracy · {Noun}",
       usLetter: "US Letter",
       bannerFlagsLabel: "chorągiewki", ofWord: "z",
       flagCount: { one: "chorągiewka", few: "chorągiewki", many: "chorągiewek" },
@@ -429,6 +435,7 @@
       dotsCount: "Punkte", dotNumbers: "Nummerierte Punkte",
       dotLadderTitle: "Schwierigkeitsleiter",
       dotLadderText: "Leicht anfangen, dann Punkte dazunehmen. Experte geschafft? Zahlen ausblenden und frei zeichnen.",
+      practiceTitle: "Übungsblatt · {Noun}",
       pdfHint: "Tipp: Drucken → „Als PDF speichern“ lädt das Blatt als PDF herunter.",
       printOpts: { settings: "PDF-Einstellungen", paper: "Papier", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Ausrichtung", portrait: "Hochformat", landscape: "Querformat", margins: "Ränder", normal: "Normal", narrow: "Schmal", inkSaver: "Tintensparmodus (hellere Linien)", savePdf: "PDF herunterladen", pdfToast: "Wähle im Druckdialog Als PDF speichern als Ziel.", share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", recent: "Deine letzten Blätter", clear: "Löschen", madeAt: "Erstellt auf" },
       printBook: "Als Heft speichern \u2013 eine Seite pro Buchstabe",
@@ -498,6 +505,7 @@
       classSet: "Set kelas \u2014 satu lembar per nama", sheets: "lembar",
       classSetPngHint: "PNG mengunduh nama yang sedang tampil; pakai Simpan sebagai PDF untuk seluruh setnya.",
       sheetsPerPage: "Lembar per halaman",
+      practiceTitle: "Lembar latihan · {Noun}",
       bannerInstr: "Gunting tiap bendera mengikuti garis putus-putus, lubangi di setiap titik, lalu masukkan tali atau pita berurutan (1, 2, 3\u2026) sampai membentuk katanya.",
       puzzleCut: "Gunting mengikuti garis putus-putus untuk memisahkan tiap kepingan huruf.",
       usLetter: "US Letter",
@@ -3988,7 +3996,9 @@
     CHARS.forEach((ch) => sheet.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { small: true }))));
     // The credit is in the footer block now (attachCredit), with a QR beside
     // it, so the heading stops carrying a second copy of the domain.
-    printWrap(cap(NOUN) + " alphabet", sheet, "alphabet_sheet");
+    // T.alphabetWord, as the tiled print's title already uses: this read
+    // " alphabet" in English on every locale page until 2026-09-23.
+    printWrap(cap(NOUN) + " " + T.alphabetWord, sheet, "alphabet_sheet");
   }
 
   /* ---------------------------------------------------------------
@@ -4306,7 +4316,11 @@
       row.appendChild(model); row.appendChild(trace); row.appendChild(line);
       sheet.appendChild(row);
     });
-    printWrap(cap(NOUN) + " practice sheet", sheet, "practice_sheet");
+    /* Localized 2026-09-23: this was cap(NOUN) + " practice sheet" on every
+       page, so the Spanish, French, Italian, Polish and Portuguese cursive
+       sheets printed "Cursiva practice sheet" at the top of the PDF. The
+       wording is each locale's own, harvested from its pages. */
+    printWrap(T.practiceTitle.replace("{Noun}", cap(NOUN)), sheet, "practice_sheet");
   }
 
   /* ---------------------------------------------------------------
