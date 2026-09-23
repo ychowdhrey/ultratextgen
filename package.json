@@ -61,6 +61,7 @@
     "test:word-search": "node js/printables/wordSearch.test.js",
     "test:word-puzzles": "node js/printables/wordPuzzles.test.js",
     "test:render-invariants": "node js/printables/renderInvariants.test.js",
+    "test:practice-row": "node js/printables/practiceRow.test.js",
     "audit:numeric-parity": "node scripts/audit-numeric-parity.js",
     "check:numeric-parity": "node scripts/check-numeric-parity.js",
     "audit:link-rot": "node scripts/audit-link-rot.js",
