@@ -1969,6 +1969,39 @@
     }
   }
 
+  /* printable_engage -- which controls a page's visitors actually touch, and
+     which sections they reach, before any of them is simplified away (owner
+     decision 2026-09-22: /printables/block-letters/ is frozen until this is
+     measured). printable_output already says which surface EXPORTED; this says
+     which ones were used or seen without exporting.
+
+     Deliberately coarse: once per control and value per page view, so a
+     visitor tapping through all 36 letters is one letter_pick row, not 36.
+     printable_value is a letter-vs-number kind, a size preset key or a section
+     heading id -- never the character and never anything typed, under the
+     same PII rule as trackPrintable in header.js. */
+  const ENGAGED = new Set();
+  function trackEngage(control, value) {
+    const key = control + ":" + value;
+    if (ENGAGED.has(key)) return;
+    ENGAGED.add(key);
+    trackPrintableEvent("printable_engage", { printable_control: control, printable_value: String(value) });
+  }
+  function charKind(ch) { return /[0-9]/.test(ch) ? "number" : "letter"; }
+  function watchSectionReach() {
+    if (!("IntersectionObserver" in window)) return;
+    const sections = $$("main section[aria-labelledby]");
+    if (!sections.length) return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        trackEngage("section_view", en.target.getAttribute("aria-labelledby"));
+        io.unobserve(en.target);
+      });
+    }, { threshold: 0.25 });
+    sections.forEach((sec) => io.observe(sec));
+  }
+
   /* ---------------------------------------------------------------
      Print settings, presets and sharing (2026-09-10).
      Every sheet on this site used to print with whatever paper size the
@@ -3780,7 +3813,7 @@
       b.setAttribute("aria-selected", "false");
       b.setAttribute("aria-label", cap(NOUN) + " " + charLabel(ch));
       b.textContent = ch;
-      b.addEventListener("click", () => selectChar(ch));
+      b.addEventListener("click", () => { selectChar(ch); trackEngage("letter_pick", charKind(ch)); });
       return b;
     };
     const letterRow = document.createElement("div");
@@ -4191,6 +4224,7 @@
       b.appendChild(small);
       b.addEventListener("click", () => {
         alphaSizeKey = preset.key;
+        trackEngage("size", preset.key);
         $$(".pt-choice", group).forEach((o) => {
           const isOn = o === b;
           o.classList.toggle("is-active", isOn);
@@ -4296,6 +4330,7 @@
       cell.appendChild(RENDER === "glyph" ? smallGlyphCell(ch) : (RENDER === "dots" ? singleDotSVG(ch, { small: true }) : outlineSVG(ch, { small: true })));
       cell.addEventListener("click", () => {
         selectChar(ch);
+        trackEngage("grid_pick", charKind(ch));
         if (el.panel) el.panel.scrollIntoView({ behavior: "smooth", block: "start" });
       });
       el.alphaGrid.appendChild(cell);
@@ -6445,7 +6480,13 @@
   //   mode:    "outline" (colorable letters) | "dots" (numbered dot-to-dot)
   //   density: dot-to-dot difficulty key (see DOT_LEVELS)
   //   hint:    show the faint guide line through the dots
-  const designState = { fill: "plain", border: "none", mode: "outline", density: "medium", hint: true, audience: "one" };
+  /* CFG.designer.mode fixes the sheet type on a page with no mode picker.
+     dot-to-dot-name carried a Coloring-outline / Dot-to-dot choice until
+     2026-09-22 (owner decision: one mechanic per page; the coloring page is
+     coloring-page-maker's job). With the picker gone the mode has to come from
+     config, because the default below is the coloring outline. A page that
+     still ships #pt-design-mode-group overrides this from its active chip. */
+  const designState = { fill: "plain", border: "none", mode: DESIGN.mode === "dots" ? "dots" : "outline", density: "medium", hint: true, audience: "one" };
 
   function svgMake(tag, attrs, parent) {
     const node = document.createElementNS(SVGNS, tag);
@@ -9750,6 +9791,7 @@
     buildPrintOptions();
     convertPrintButtonsToPdf();
     wireGenerateEvents();
+    watchSectionReach();
     applyPresetState();
 
     /* Canvas measureText does NOT trigger webfont loading.
