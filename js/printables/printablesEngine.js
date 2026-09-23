@@ -2881,9 +2881,9 @@
        2. paint-order="stroke" puts the stroke UNDER the fill, so only its
           outer half is visible and the counters stay open. Canvas has no
           paint-order: the same result is a stroke pass followed by a fill
-          pass on top. This is exactly what
-          scripts/generate-printables-previews.py's svg_text() already does
-          for cairosvg, which is why the build-time preview PNGs were right
+          pass on top. This is exactly what the build-time preview renderer
+          (a cairosvg script, retired 2026-09-23 for a capture of this
+          engine's own PDF) already did, which is why its PNGs were right
           while these were not.
 
      Shipped 2026-09-10 and found 2026-09-13: letterPNG used a fixed 4.5% of

@@ -217,6 +217,9 @@ are worth keeping, because neither is visible in the one-line diff:
   bold that would double the outline's stroke"*. So the build-time preview and the
   runtime sheet had been drawing different letterforms. **When a second renderer exists,
   check what it already does before treating a question as open.**
+  *(2026-09-23: that second renderer is retired. The previews are now page 1 of each
+  page's own PDF, captured by `scripts/capture-printables-previews.js`, so the preview
+  and the sheet can no longer draw different letterforms.)*
 
 ### 77 printable surfaces still ask for a weight that is not shipped
 
@@ -403,8 +406,11 @@ check written to enforce it.
 
 The three puzzle makers have **no `.pt-sheet-preview` and no preview asset**
 (303 exist for other pages), so their pin correctly falls back to `og:image`.
-`generate-printables-previews.py` raises on an unknown family by design; those
-three need renderers of their own. The verification asserts the fallback
+`generate-printables-previews.py` raised on an unknown family by design; those
+three needed renderers of their own. *(2026-09-23: that renderer is retired and the
+capture reads any page's own PDF, so no per-family renderer is needed any more. The
+three still have no preview only because none has been wired; the capture refreshes
+existing previews and does not decide which pages get one.)* The verification asserts the fallback
 explicitly, so the day a preview exists that assertion starts requiring it.
 
 `monogram-maker` and `cross-stitch-letters` still have no recent- or

@@ -2,21 +2,26 @@
 """
 wire-printables-previews.py — insert each printables page's sheet preview <img>.
 
-Companion to scripts/generate-printables-previews.py, which renders the PNGs;
-this script puts ONE indexable image on each page, as the first child of the
-live preview box the page's engine draws into (see TARGET_IDS):
+Companion to scripts/capture-printables-previews.js, which captures each PNG
+as page 1 of the page's own PDF; this script puts ONE indexable image on each
+page, as the first child of the live preview box the page's engine draws into
+(see TARGET_IDS):
 
     <div ... id="pt-panel" data-sheet-preview="/assets/printables-previews/<slug>.png"><img
       class="pt-sheet-preview" src="/assets/printables-previews/<slug>.png"
-      width="1200" height="900" alt="<descriptive alt>" loading="lazy">...
+      width="<png width>" height="<png height>" alt="<descriptive alt>" loading="lazy">...
+
+The width and height are read from the PNG itself: a captured sheet is the
+shape of the paper it prints on (Letter, or A4 on a locale page), not a fixed
+1200x900 card, and a wrong ratio reserves the wrong box.
 
 It is the box's no-JavaScript content. style.css hides it under
 `@media (scripting: enabled)`, so a hidden lazy image is never fetched and a
 visitor sees only the live preview, and the engine empties the box before
 drawing anyway. A crawler that runs no JavaScript sees the real sheet where
-the tool is. The alt is the same text generate-printables-previews.py
-reports, imported from that module rather than copied, so the image and its
-description have one owner. Because the image is NOT aria-hidden and the alt
+the tool is. The page list, the slug and the alt text come from
+scripts/lib/printables_previews.py, so the capture and the wiring share one
+owner for each. Because the image is NOT aria-hidden and the alt
 is non-empty, scripts/update-sitemap.js declares it (with the alt as
 <image:title>) on the next sitemap run.
 
@@ -31,6 +36,7 @@ Usage
     python3 scripts/wire-printables-previews.py            # report only
     python3 scripts/wire-printables-previews.py --write
     python3 scripts/wire-printables-previews.py --write --only printables-block-letters
+    python3 scripts/wire-printables-previews.py --list-json  # the capture script's page list
 """
 from __future__ import annotations
 
@@ -51,7 +57,7 @@ def _load(path, name):
     return mod
 
 
-GEN = _load(os.path.join(HERE, "generate-printables-previews.py"), "printables_previews")
+GEN = _load(os.path.join(HERE, "lib", "printables_previews.py"), "printables_previews")
 
 # The standalone figure this script used to write (2026-09-10 to 2026-09-23).
 # Still matched so a re-run moves it into the preview box instead of leaving a
@@ -107,8 +113,9 @@ def target_open_tag(html):
 
 
 def img_html(page):
+    w, h = GEN.png_size(GEN.png_path(page))
     return (
-        f'<img class="pt-sheet-preview" src="{GEN.OUT_URL}/{page["slug"]}.png" width="{GEN.W}" height="{GEN.H}"'
+        f'<img class="pt-sheet-preview" src="{GEN.OUT_URL}/{page["slug"]}.png" width="{w}" height="{h}"'
         f' alt="{GEN.esc(GEN.alt_for(page))}" loading="lazy">'
     )
 
@@ -142,15 +149,27 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--write", action="store_true", help="edit pages in place (default: report only)")
     ap.add_argument("--only", action="append", default=[], metavar="PREFIX", help="slug prefix filter (repeatable)")
+    ap.add_argument("--list-json", action="store_true",
+                    help="print the pages that carry a preview, for capture-printables-previews.js, and exit")
     a = ap.parse_args(argv)
     pages = GEN.discover_pages()
+    if a.list_json:
+        # The set is the pages that already have a preview on disk: the
+        # capture refreshes images, it does not decide which pages get one.
+        import json
+        print(json.dumps([{
+            "slug": p["slug"], "url": GEN.page_url(p), "query": GEN.capture_query(p),
+            "setup": GEN.capture_setup(p),
+            "out": os.path.relpath(GEN.png_path(p), REPO),
+        } for p in pages if os.path.exists(GEN.png_path(p))]))
+        return 0
     if a.only:
         pages = [p for p in pages if any(p["slug"].startswith(x) for x in a.only)]
     missing = [p for p in pages if not os.path.exists(os.path.join(GEN.OUT_DIR, p["slug"] + ".png"))]
     if missing:
         for p in missing:
             print(f"ERROR no preview on disk for {p['rel']} ({GEN.OUT_URL}/{p['slug']}.png)")
-        print("Run scripts/generate-printables-previews.py first; a page is never wired to a 404.")
+        print("Run scripts/capture-printables-previews.js first; a page is never wired to a 404.")
         return 1
     counts = {}
     for p in pages:
