@@ -3111,6 +3111,10 @@ PAGES.update({
 "printables-happy-birthday-in-cursive": ("Happy Birthday in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Birthday"), K_PRINT),
 "printables-love-in-cursive": ("Love in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Love"), K_PRINT),
 "printables-mom-in-cursive": ("Mom in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Mom"), K_PRINT),
+"printables-cursive-name": ("Cursive Name Tracing", "Any name in joined cursive, one sheet per child", P(m_trace_rows, sample="Olivia"), K_PRINT),
+"printables-bubble-name": ("Your Name in Bubble Letters", "Hollow to color, or filled in your colors as a PNG", P(m_letter_bubble, letter="M"), K_PRINT),
+"printables-graffiti-name": ("Graffiti Name Generator", "Your name in five graffiti styles, PNG or print", P(m_letter_graffiti, letter="N"), K_PRINT),
+"printables-calligraphy-name": ("Calligraphy Name Sheets", "A name in blackletter to trace, or one per guest", P(m_typo, sample="\U0001D516\U0001D52C", ff=FRAKTUR, weight="400", style="normal", size=104, label="blackletter name"), K_PRINT),
 
 "category-ancient-fonts": ("Ancient & Rune Fonts", "Rune, Cherokee & ancient script styling",
       P(m_typo, sample="Rune", ff=SERIF, weight="800", size=84, label="runic · cherokee · ethiopic"), K_CAT),
