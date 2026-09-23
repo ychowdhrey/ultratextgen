@@ -445,6 +445,19 @@ jobs:
         continue-on-error: true
         run: npm run test:render-invariants | tee render-invariants-tests.log
 
+      # The practice-style row composer, held to the rules a composition has to
+      # obey: no clipping, no overlap, whole copies only, the same writing
+      # margin in every mode that starts with a model, and a progressive-
+      # disclosure flag that agrees with the compositions it describes. Checked
+      # against RECORDED output of the real function rather than a second copy
+      # of the arithmetic, so a drift in the composer fails here rather than
+      # being reproduced by its own test. Negative-tested: a fixture whose
+      # repeat run overflows the line turns this red and names the case.
+      - name: Run practice-style row composer tests
+        id: practice_row_tests
+        continue-on-error: true
+        run: npm run test:practice-row | tee practice-row-tests.log
+
       # Diff-scoped and gating. Fails a PR that corrects a number on one page of
       # an hreflang cluster and leaves a sibling asserting the old value — the
       # 2026-09-01 Unicode 18.0 case, where 13,047 -> 13,007 shipped in English
@@ -902,7 +915,7 @@ jobs:
             echo "### share-core analytics tests — \`${{ steps.share_core_tests.outcome }}\`"
             echo "### IndexNow submission-policy tests — \`${{ steps.indexnow_tests.outcome }}\`"
             echo '```'
-            cat printables-surface-wiring.log print-export-properties.log render-invariants-tests.log share-save-tags.log explorer-strings.log saved-items-tests.log indexnow-tests.log share-core-tests.log
+            cat printables-surface-wiring.log print-export-properties.log render-invariants-tests.log practice-row-tests.log share-save-tags.log explorer-strings.log saved-items-tests.log indexnow-tests.log share-core-tests.log
             echo '```'
             echo ""
             echo "### Funding Choices tag check — \`${{ steps.funding_choices.outcome }}\`"
@@ -1010,6 +1023,7 @@ jobs:
             echo "### Word search grid tests — \`${{ steps.word_search_tests.outcome }}\`"
             echo "### Crossword + word scramble tests — \`${{ steps.word_puzzles_tests.outcome }}\`"
             echo "### Printable render invariant tests — \`${{ steps.render_invariants_tests.outcome }}\`"
+            echo "### Practice-style row composer tests — \`${{ steps.practice_row_tests.outcome }}\`"
             echo '```'
             cat qr-tests.log
             echo '```'
@@ -1190,6 +1204,7 @@ jobs:
           steps.printables_surface_wiring.outcome == 'failure' ||
           steps.print_export_properties.outcome == 'failure' ||
           steps.render_invariants_tests.outcome == 'failure' ||
+          steps.practice_row_tests.outcome == 'failure' ||
           steps.share_save_tags.outcome == 'failure' ||
           steps.glyph_metrics_tag.outcome == 'failure' ||
           steps.explorer_strings.outcome == 'failure' ||

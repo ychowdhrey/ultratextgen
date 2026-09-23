@@ -164,7 +164,50 @@ spill, all ten words present, Name/Date and credit clear.
 
 ---
 
-### RF-015 · A short name prints a tracing sheet at a quarter of its size, as a strip down the middle of the page — P0 · **OPEN for the name sheets; the generator half closed on `main`**
+### RF-015 · A short name prints a tracing sheet at a quarter of its size, as a strip down the middle of the page — P0 · **FIXED 2026-09-23**
+
+> ### Resolved — 2026-09-23
+>
+> Fixed at the geometry level, and the fix is the one FIX-1 named: the ruled
+> row's coordinate system is separated from the word's. `wordOutlineGeom()` now
+> returns the ink extent (`model`) and the box (`w`) as two numbers;
+> `layoutPracticeRow()` gives the row's SVG the aspect of the row's own
+> measured box, and the row's height comes from CSS — a flex share of
+> `.pt-sheet-page.is-fitted`, which is #927's mechanism extended to the name
+> sheet. **No width constant is calibrated to US Letter**; the 925 floor of the
+> 2026-09-22 experiment is gone.
+>
+> Measured across all 47 pages that mount the name sheet, 7 name lengths each,
+> US Letter portrait, through the PDF path:
+>
+> | | before | after |
+> |---|---|---|
+> | `fit` on the 20 ruled routes | 0.176 – 0.917, varying with the name | **1.000, every route, every name** |
+> | distinct row viewBoxes per route | 6 – 7 (one per name) | **1** |
+> | the 27 unruled routes | 0.978 flat | **0.978 flat — 0 of 189 measurements changed** |
+>
+> The sheet is now exactly one page at full size instead of being drawn at its
+> content's height and rasterised down, so the rasterise-and-scale step is gone
+> for these routes too.
+>
+> **Two intentional visual differences on the ruled routes**, neither avoidable
+> while fixing the geometry:
+>
+> 1. **Long names print larger.** `Christopher` was drawn at 0.805 and scaled;
+>    it is now drawn at 1.000. The printed size is the same to within the
+>    rounding of the old scale, but the sheet is no longer a rasterised
+>    reduction, so it is sharper and sits flush to the print area instead of
+>    being centred inside it with the slack the shrink created.
+> 2. **The model starts at the writing margin instead of being centred.** The
+>    old centring was a consequence of the box being the word; a model at the
+>    left is what `traceWordSVG` already does on the generator rows, for the
+>    reason recorded there: "the word starts at the left of the line it is
+>    written on, the way a child writes and the way every ruled exercise book
+>    is laid out."
+>
+> Shipped together with the **practice style** primitive
+> (`docs/printables/practice-styles-2026-09-23.md`), which is what decides where
+> the models go now that the row no longer collapses around them.
 
 > ### Correction — 2026-09-23: the scope below is wrong in both directions
 >

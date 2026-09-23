@@ -87,6 +87,31 @@ The engine mounts a surface from an element id, so this is a one-line mistake. S
 - Every sheet action writes a **PDF**; the print dialog is the fallback only. There
   is no row that offers a print button.
 
+## A ruled practice row takes its box from the page, never from the word
+
+- **A row's coordinate system is the ROW's, not the content's.** `wordOutlineGeom()`
+  returns `model` (the ink the word occupies) and `w` (the box drawn around it) as
+  two numbers. They were one, and that was RF-015: the viewBox was sized to the ink,
+  `width: 100%` stretched it to the line, the height followed the word's ratio, and
+  six near-square rows were a 39in sheet. Measured on US Letter portrait before the
+  fix: `A` printed at **0.210** of full size, `Christopher` at 0.805, German worst at
+  **0.176** because its Lineatur raises the box to `0 0 200 240`.
+- `layoutPracticeRow()` gives the viewBox the row's own aspect, read from the row's
+  measured box, and the row's height comes from CSS — a flex share of
+  `.pt-sheet-page.is-fitted` on a sheet, a fixed band in the preview. **Run it inside
+  the state you are measuring**: the PDF, PNG and `beforeprint` paths each call
+  `layoutPracticeRows()` because the surface is `display: none` outside them and a
+  row measured on screen is not the row on the paper.
+- **The floor is a floor.** A name wider than the line still widens its own box;
+  clipping a child's name is worse than a slightly short page.
+- **Composition is `practiceCompose()`, and there is one of it.** Model placement for
+  all four practice styles is that function, in row units, driven by measured ink —
+  never by a character count, because `WWW` and `iii` are three characters and two
+  different lines. Adding a style means adding a case there, not a second renderer.
+- **Whether the control is shown is computed, not guessed**: compose all four styles
+  and compare. It answers for the **sheet**, not the preview card — those are
+  different widths, and the setting changes the worksheet.
+
 ## The export is a CLONE, and it drops what it is not told to carry
 
 `printablePdf.js` writes the PDF and the PNG by cloning the print surface, inlining a **named
