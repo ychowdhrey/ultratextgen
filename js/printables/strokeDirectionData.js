@@ -28,9 +28,13 @@
  * direction arrowhead is drawn. Pure data, no logic — read by
  * printablesEngine.js. Exposes window.UTG_STROKE_DIRECTION_DATA only.
  *
- * Coverage: full A-Z and a-z (52 letters). Digits are intentionally out of
- * scope for this pass (optional per the feature spec) — the overlay is a
- * silent no-op for any character without an entry here.
+ * Coverage: full A-Z, a-z and 0-9 (62 characters). Digits were added
+ * 2026-09-23: without them traceRoutePaths returned null for any word
+ * carrying a digit, so a dotted row fell back to dotting the glyph OUTLINE
+ * (two columns of dots per stem, the R-001 defect) and the stroke-direction
+ * overlay drew nothing. Their shapes follow the site's tracing face
+ * (Quicksand 700): flat-topped 3, open 4, diagonal-tailed 6 and 9. The overlay
+ * is still a silent no-op for any character without an entry here.
  */
 (function () {
   "use strict";
@@ -252,6 +256,43 @@
       "M55,90 L145,90",
       "M145,90 L55,198",
       "M55,198 L145,198"
+    ]     },
+
+    /* ---------------------------------------------------------------
+       Digits 0-9 (conventional manuscript order; shapes follow Quicksand)
+       --------------------------------------------------------------- */
+
+    "0": { strokes: [
+      "M100,55 C62,55 50,95 50,127 C50,160 62,198 100,198 C138,198 150,160 150,127 C150,95 138,55 100,55"
+    ] },
+    "1": { strokes: [
+      "M66,86 L112,55 L112,198"
+    ] },
+    "2": { strokes: [
+      "M52,90 C55,68 75,55 100,55 C128,55 146,72 146,95 C146,115 135,128 115,145 L52,198 L150,198"
+    ] },
+    "3": { strokes: [
+      "M55,55 L142,55 L96,112 C130,110 150,132 150,158 C150,185 128,198 100,198 C80,198 62,190 52,178"
+    ] },
+    "4": { strokes: [
+      "M112,55 L45,145 L155,145",
+      "M128,100 L128,198"
+    ] },
+    "5": { strokes: [
+      "M68,55 L62,118 C78,108 92,104 106,104 C132,104 150,124 150,150 C150,180 128,198 100,198 C80,198 62,190 52,178",
+      "M68,55 L142,55"
+    ] },
+    "6": { strokes: [
+      "M125,55 L62,145 C50,168 65,198 100,198 C130,198 148,178 148,155 C148,130 128,112 100,112 C85,112 72,120 62,135"
+    ] },
+    "7": { strokes: [
+      "M50,55 L150,55 L88,198"
+    ] },
+    "8": { strokes: [
+      "M140,86 C140,67 122,55 100,55 C78,55 60,68 60,88 C60,106 76,118 100,125 C126,132 146,146 146,164 C146,185 125,198 100,198 C75,198 54,185 54,164 C54,146 74,132 100,125 C124,118 140,106 140,86"
+    ] },
+    "9": { strokes: [
+      "M145,97 C145,72 125,55 100,55 C75,55 55,72 55,97 C55,122 75,140 100,140 C125,140 145,122 145,97 C145,145 120,185 75,198"
     ] }
   };
 })();

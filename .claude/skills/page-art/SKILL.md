@@ -75,7 +75,8 @@ The slug is the page path with `/` replaced by `-` (`tr/gotik-yazi/index.html` â
 - An `--only` prefix matching no registered page is an **error**, not a silent no-op.
 
 For a locale page use `scripts/generate-locale-art.py`; for a printables preview,
-`scripts/generate-printables-previews.py` + `wire-printables-previews.py`.
+`scripts/capture-printables-previews.js` + `wire-printables-previews.py` (the preview is
+page 1 of the page's own PDF, captured in headless Chromium).
 
 ## 4. Read `git status` before committing
 

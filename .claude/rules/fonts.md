@@ -2,7 +2,7 @@
 paths:
   - "assets/fonts/**"
   - "**/*.css"
-  - "scripts/{fetch-self-hosted-fonts,build-font-face-css,generate-printables-previews,generate-site-art}.py"
+  - "scripts/{fetch-self-hosted-fonts,build-font-face-css,generate-site-art}.py"
   - ".gitignore"
 ---
 

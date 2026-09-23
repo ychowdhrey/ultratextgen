@@ -25,6 +25,7 @@ is a second source of truth. When you find one of these, find its generator.
 | the `@font-face` block in `style.css` | `python3 scripts/build-font-face-css.py --write` | — |
 | hero SVG + OG PNG | `scripts/generate-site-art.py --only <slug>` / `wire-site-art.py` | `check:new-page-images` |
 | per-style OG cards | `scripts/generate-style-og-cards.py` | — |
+| printables sheet previews (`assets/printables-previews/*.png` and the `<img>` in each page's preview box) | `node scripts/capture-printables-previews.js --only <slug>` (page 1 of the page's own PDF, headless Chromium), then `python3 scripts/wire-printables-previews.py --write` | `test:sitemap-images` |
 | pre-rendered collection grids | `npm run prerender:collection-grids -- --write` | `check:collection-grids` |
 | pre-rendered country-flag tiles | `npm run prerender:country-flags -- --write` | `check:country-flags` |
 | `symbol/` hub↔spoke and peer↔peer cards | `npm run sync:symbol-peer-links` | `check:new-symbol-peer-links` |

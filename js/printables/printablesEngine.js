@@ -146,6 +146,7 @@
       flagCount: { one: "flag", other: "flags" },
       pageCount: { one: "page", other: "pages" },
       alphabetWord: "alphabet",
+      practiceTitle: "{Noun} practice sheet",
       caseUpper: "Uppercase", caseLower: "Lowercase",
       modelCount: { one: "model", other: "model" },
       traceCount: { one: "trace", other: "trace" },
@@ -194,6 +195,7 @@
       printBook: "Enregistrer en livret — une page par lettre",
       pageCount: { one: "page", other: "pages" },
       ofWord: "sur",
+      practiceTitle: "Fiche d'entraînement · {Noun}",
       alphabetWord: "alphabet",
       caseUpper: "Majuscules", caseLower: "Minuscules",
       save: "Enregistrer",
@@ -249,6 +251,7 @@
       printOpts: { settings: "Ajustes del PDF", paper: "Papel", letter: "Carta", a4: "A4", legal: "Oficio", orientation: "Orientación", portrait: "Vertical", landscape: "Horizontal", margins: "Márgenes", normal: "Normales", narrow: "Estrechos", inkSaver: "Ahorro de tinta (líneas más claras)", savePdf: "Descargar PDF", pdfToast: "En el cuadro de impresión, elige Guardar como PDF como destino.", share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", recent: "Tus hojas recientes", clear: "Borrar", madeAt: "Hecho en" },
       printBook: "Guardar como libro — una página por letra",
       pageCount: { one: "página", other: "páginas" },
+      practiceTitle: "Hoja de práctica · {Noun}",
       ofWord: "de",
       alphabetWord: "alfabeto",
       caseUpper: "Mayúsculas", caseLower: "Minúsculas",
@@ -304,6 +307,7 @@
       pdfHint: "Dica: Imprimir → “Salvar como PDF” baixa a folha em PDF.",
       printOpts: { settings: "Configurações do PDF", paper: "Papel", letter: "Carta", a4: "A4", legal: "Ofício", orientation: "Orientação", portrait: "Retrato", landscape: "Paisagem", margins: "Margens", normal: "Normais", narrow: "Estreitas", inkSaver: "Economia de tinta (linhas mais claras)", savePdf: "Baixar PDF", pdfToast: "Na caixa de impressão, escolha Salvar como PDF como destino.", share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", recent: "Suas folhas recentes", clear: "Limpar", madeAt: "Feito em" },
       printBook: "Salvar como livro — uma página por letra",
+      practiceTitle: "Folha de treino · {Noun}",
       pageCount: { one: "página", other: "páginas" },
       ofWord: "de",
       alphabetWord: "alfabeto",
@@ -359,6 +363,7 @@
       dotLadderText: "Inizia dal facile e aggiungi punti man mano. Livello esperto superato? Togli i numeri e prova a disegnare a mano libera.",
       pdfHint: "Suggerimento: Stampa → “Salva come PDF” scarica il foglio in PDF.",
       printOpts: { settings: "Impostazioni PDF", paper: "Carta", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientamento", portrait: "Verticale", landscape: "Orizzontale", margins: "Margini", normal: "Normali", narrow: "Stretti", inkSaver: "Risparmio inchiostro (linee più chiare)", savePdf: "Scarica PDF", pdfToast: "Nella finestra di stampa scegli Salva come PDF come destinazione.", share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", recent: "I tuoi fogli recenti", clear: "Cancella", madeAt: "Creato su" },
+      practiceTitle: "Scheda di esercizio · {Noun}",
       printBook: "Salva come libretto – una pagina per lettera",
       pageCount: { one: "pagina", other: "pagine" },
       ofWord: "di",
@@ -426,6 +431,7 @@
       sheetsPerPage: "Kart na stronę",
       bannerInstr: "Wytnij każdą chorągiewkę wzdłuż przerywanej linii, zrób dziurkę w każdym punkcie, a następnie przewlecz sznurek lub wstążkę po kolei (1, 2, 3…), aby ułożyć napis.",
       puzzleCut: "Tnij wzdłuż przerywanych linii, aby oddzielić każdy element-literę.",
+      practiceTitle: "Karta pracy · {Noun}",
       usLetter: "US Letter",
       bannerFlagsLabel: "chorągiewki", ofWord: "z",
       flagCount: { one: "chorągiewka", few: "chorągiewki", many: "chorągiewek" },
@@ -471,6 +477,7 @@
       dotsCount: "Punkte", dotNumbers: "Nummerierte Punkte",
       dotLadderTitle: "Schwierigkeitsleiter",
       dotLadderText: "Leicht anfangen, dann Punkte dazunehmen. Experte geschafft? Zahlen ausblenden und frei zeichnen.",
+      practiceTitle: "Übungsblatt · {Noun}",
       pdfHint: "Tipp: Drucken → „Als PDF speichern“ lädt das Blatt als PDF herunter.",
       printOpts: { settings: "PDF-Einstellungen", paper: "Papier", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Ausrichtung", portrait: "Hochformat", landscape: "Querformat", margins: "Ränder", normal: "Normal", narrow: "Schmal", inkSaver: "Tintensparmodus (hellere Linien)", savePdf: "PDF herunterladen", pdfToast: "Wähle im Druckdialog Als PDF speichern als Ziel.", share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", recent: "Deine letzten Blätter", clear: "Löschen", madeAt: "Erstellt auf" },
       printBook: "Als Heft speichern \u2013 eine Seite pro Buchstabe",
@@ -547,6 +554,7 @@
       classSet: "Set kelas \u2014 satu lembar per nama", sheets: "lembar",
       classSetPngHint: "PNG mengunduh nama yang sedang tampil; pakai Simpan sebagai PDF untuk seluruh setnya.",
       sheetsPerPage: "Lembar per halaman",
+      practiceTitle: "Lembar latihan · {Noun}",
       bannerInstr: "Gunting tiap bendera mengikuti garis putus-putus, lubangi di setiap titik, lalu masukkan tali atau pita berurutan (1, 2, 3\u2026) sampai membentuk katanya.",
       puzzleCut: "Gunting mengikuti garis putus-putus untuk memisahkan tiap kepingan huruf.",
       usLetter: "US Letter",
@@ -1169,6 +1177,14 @@
     if (!GM) return;
     const TILE = { w: 200, h: 240 };
     document.querySelectorAll("svg.bubble-outline").forEach((svg) => {
+      /* Letter tiles only. The dot-to-dot sheet shares the bubble-outline
+         class (800x960, circles plus number labels), and its first <text> is
+         the label "1": this pass re-centred that label as if it were a
+         200x240 letter, dragging it 84-807 units off its dot on 24 of the 26
+         uppercase dot-to-dot pages, on screen only (the PNG/PDF export draws
+         from the layout and was right). Measured 2026-09-23. A tile is what
+         outlineSVG() builds: that viewBox and no dots. */
+      if (svg.getAttribute("viewBox") !== "0 0 200 240" || svg.querySelector("circle")) return;
       const t = svg.querySelector("text");
       if (!t) return;
       const ch = t.textContent;
@@ -2124,7 +2140,9 @@
 
   function addWordStrokeOverlay(svg, word, fontPx, spacingPx, anchorY, mode, totalW, opts) {
     wordCellCentres(word, fontPx, spacingPx, totalW).forEach((c) => {
-      if (!/[A-Za-z]/.test(c.ch)) return;
+      // Digits joined A-Z/a-z in strokeDirectionData.js on 2026-09-23. A
+      // character with no entry is still a no-op inside letterOverlayCell.
+      if (!/[A-Za-z0-9]/.test(c.ch)) return;
       letterOverlayCell(svg, c.ch, c.cx, anchorY, fontPx, mode, opts);
     });
   }
@@ -3205,9 +3223,9 @@
        2. paint-order="stroke" puts the stroke UNDER the fill, so only its
           outer half is visible and the counters stay open. Canvas has no
           paint-order: the same result is a stroke pass followed by a fill
-          pass on top. This is exactly what
-          scripts/generate-printables-previews.py's svg_text() already does
-          for cairosvg, which is why the build-time preview PNGs were right
+          pass on top. This is exactly what the build-time preview renderer
+          (a cairosvg script, retired 2026-09-23 for a capture of this
+          engine's own PDF) already did, which is why its PNGs were right
           while these were not.
 
      Shipped 2026-09-10 and found 2026-09-13: letterPNG used a fixed 4.5% of
@@ -4340,7 +4358,9 @@
     CHARS.forEach((ch) => sheet.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { small: true }))));
     // The credit is in the footer block now (attachCredit), with a QR beside
     // it, so the heading stops carrying a second copy of the domain.
-    printWrap(cap(NOUN) + " alphabet", sheet, "alphabet_sheet");
+    // T.alphabetWord, as the tiled print's title already uses: this read
+    // " alphabet" in English on every locale page until 2026-09-23.
+    printWrap(cap(NOUN) + " " + T.alphabetWord, sheet, "alphabet_sheet");
   }
 
   /* ---------------------------------------------------------------
@@ -4658,7 +4678,11 @@
       row.appendChild(model); row.appendChild(trace); row.appendChild(line);
       sheet.appendChild(row);
     });
-    printWrap(cap(NOUN) + " practice sheet", sheet, "practice_sheet");
+    /* Localized 2026-09-23: this was cap(NOUN) + " practice sheet" on every
+       page, so the Spanish, French, Italian, Polish and Portuguese cursive
+       sheets printed "Cursiva practice sheet" at the top of the PDF. The
+       wording is each locale's own, harvested from its pages. */
+    printWrap(T.practiceTitle.replace("{Noun}", cap(NOUN)), sheet, "practice_sheet");
   }
 
   /* ---------------------------------------------------------------
@@ -5763,6 +5787,250 @@
     return out.length ? out : null;
   }
 
+  /* @route-dots:begin — js/printables/strokeRoute.test.html slices this block
+     (together with @stroke-badges, whose polyLength/pointAt it uses) and
+     rasterises every character on every dotted rung. The defects it guards
+     were all invisible to a count of dots: a dot the browser silently did not
+     draw, a stem that lost every station, an "a" that read as "o". Keep the
+     markers with the code if it moves. */
+  /* One dot per place on the page, wherever two strokes meet.
+
+     Each stroke of the route is its own path, dotted by its own dash
+     pattern, so where two strokes touch -- B's bowls on the stem, the arches
+     of m and n rising out of theirs, the bowl of d reaching its stem, the
+     start of every E arm -- both paths put a dot there. Measured in Chromium
+     on the bold-dot row, 2026-09-23: 38 of 52 letters carried two dots whose
+     centres were 0.1-9 units apart, against an 11-unit dot. They print as
+     one smudged blob, or as two dots where the child sees one to join.
+
+     The fix keeps the design -- a <path> per stroke with a dasharray, which
+     the canvas export, the PDF raster and the stroke overlay all rely on --
+     and only changes WHICH dots each path draws. Every stroke proposes
+     stations (routeDotStations), the whole letter's stations are resolved
+     at once by priority, gaps are refilled, and each path gets an explicit
+     dash sequence that draws exactly its survivors.
+
+     Priority is what keeps the letter legible, and it was learned the hard
+     way. "First stroke wins" printed "a" as "o": the bowl's two ends sit on
+     the stem, 8.6 units from the stem's own tips, so the tips lost -- and the
+     tips sticking out above and below the bowl are the ONLY thing that tells
+     an "a" from an "o". So:
+       3  a free stroke tip, a corner, a lone mark (the tittle of i) -- the
+          silhouette of the letter;
+       2  an ordinary dot along a stroke;
+       1  a stroke end that lands ON another stroke (bowl ends on a stem,
+          the n arch leaving its stem, T's stem under its bar). The other
+          stroke marks that spot already, so this one yields first.
+
+     Dot patterns only ("0.1 17" and the like). The dashed rung draws
+     strokes, not dots, and a dash meeting a dash reads as a joint. Returns
+     null when it cannot measure, so the caller keeps the plain pattern. An
+     entry of null means "draw nothing on this path": every dot it had is
+     already on the page. */
+
+  /* Where the dots of ONE stroke go: on both ends, on every corner, and
+     evenly between, at the spacing closest to the pattern's period. Each
+     station says what it is -- "end", "corner", "mid" or "mark".
+
+     A plain dash pattern puts a dot every `period` from the start and none
+     where the stroke actually ends or turns. At the point of V, W, M, 1, 4
+     and 7 that left two dots a few units apart on either side of the turn
+     (measured: 7.3 units on "v" against an 11-unit dot) and no dot ON the
+     turn, which is the one place a child needs to see where to change
+     direction. A turn is a vertex where the path bends by more than
+     ROUTE_DOT_CORNER; a smooth curve, flattened finely, never does. */
+  const ROUTE_DOT_CORNER = 40 * Math.PI / 180;
+  function routeDotStations(P, period, minGap) {
+    const cuts = [0];
+    let acc = 0;
+    for (let i = 1; i < P.length; i++) {
+      const ax = P[i][0] - P[i - 1][0], ay = P[i][1] - P[i - 1][1];
+      const seg = Math.hypot(ax, ay);
+      acc += seg;
+      if (i < P.length - 1 && seg > 0) {
+        const bx = P[i + 1][0] - P[i][0], by = P[i + 1][1] - P[i][1];
+        const nb = Math.hypot(bx, by);
+        if (nb > 0) {
+          const cos = (ax * bx + ay * by) / (seg * nb);
+          if (Math.acos(Math.max(-1, Math.min(1, cos))) > ROUTE_DOT_CORNER) cuts.push(acc);
+        }
+      }
+    }
+    /* A stroke shorter than about half a period is a mark, not a line: the
+       tittle of i and j is authored as a 4-unit stroke, and two dots 2.3
+       units apart on it printed as one oval blob. One dot, in its middle. */
+    if (acc < period * 0.6) return [{ s: acc / 2, kind: "mark" }];
+    cuts.push(acc);
+    const out = [{ s: 0, kind: "end" }];
+    for (let c = 1; c < cuts.length; c++) {
+      const a = cuts[c - 1], len = cuts[c] - a;
+      if (len <= 1e-6) continue;
+      /* Never closer than minGap, or a 1.5-period segment split in two puts
+         its own dots 0.75 periods apart -- under the clearance every other
+         pair is held to. */
+      const n = Math.max(1, Math.min(Math.round(len / period), Math.floor(len / (minGap || 1e-9))));
+      for (let j = 1; j <= n; j++) {
+        out.push({ s: a + len * j / n, kind: j < n ? "mid" : (c < cuts.length - 1 ? "corner" : "end") });
+      }
+    }
+    return out;
+  }
+
+  // Arc position and distance of the point of polyline P nearest (x, y).
+  function nearestOnPoly(P, x, y) {
+    let best = { s: 0, d: Infinity };
+    let acc = 0;
+    for (let i = 1; i < P.length; i++) {
+      const ax = P[i - 1][0], ay = P[i - 1][1];
+      const vx = P[i][0] - ax, vy = P[i][1] - ay;
+      const len2 = vx * vx + vy * vy;
+      const seg = Math.sqrt(len2);
+      const t = len2 ? Math.max(0, Math.min(1, ((x - ax) * vx + (y - ay) * vy) / len2)) : 0;
+      const d = Math.hypot(ax + vx * t - x, ay + vy * t - y);
+      if (d < best.d) best = { s: acc + seg * t, d: d };
+      acc += seg;
+    }
+    return best;
+  }
+
+  const ROUTE_DOT_CLEAR = 1.3;          // x the dot's diameter...
+  const ROUTE_DOT_PERIOD_CLEAR = 0.45;  // ...or x the pattern's period, whichever is larger. 0.6 dropped
+                                        // the first dot of F's top arm on the faint rung, whose 3-unit
+                                        // dots 10 units apart never touch; size, not spacing, decides.
+  const ROUTE_DOT_ON_STROKE = 1.5;      // a stroke end this close to another stroke's path is a junction
+  function routeDotDashes(paths, dashStr, dotW, scale) {
+    const k = scale || 1;
+    const parts = String(dashStr || "").split(/[\s,]+/).filter(Boolean).map(Number);
+    if (parts.length !== 2 || !(parts[0] < 1) || !(parts[1] > 0)) return null;
+    const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
+    if (!GM || !GM.flattenStrokes) return null;
+    const runs = paths.map((d) => GM.flattenStrokes([d], 24)[0] || []);
+    if (runs.some((r) => r.length < 2)) return null;
+    const dot = parts[0] * k;
+    const period = (parts[0] + parts[1]) * k;
+    const clear = Math.max(dotW * k * ROUTE_DOT_CLEAR, period * ROUTE_DOT_PERIOD_CLEAR);
+    const lens = runs.map(polyLength);
+    /* Bounding boxes, so a dot is only measured against strokes near it: a
+       word's route is every stroke of every letter, and a class set renders
+       it for up to 60 names per sheet run. */
+    const boxes = runs.map((P) => {
+      let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+      P.forEach((p) => { x0 = Math.min(x0, p[0]); y0 = Math.min(y0, p[1]); x1 = Math.max(x1, p[0]); y1 = Math.max(y1, p[1]); });
+      return [x0, y0, x1, y1];
+    });
+    const nearBox = (ri, x, y, r) => {
+      const b = boxes[ri];
+      return x >= b[0] - r && x <= b[2] + r && y >= b[1] - r && y <= b[3] + r;
+    };
+    /* A dash that STARTS at the path's end is not drawn -- Chromium ends the
+       pattern there -- and the flattened length can overshoot the browser's
+       own by a fraction of a unit. With the end station exactly on L, every
+       stroke lost its last dot: the foot of the "a" and "u" stems, the whole
+       arch of "r". Every station is kept a hair inside the path, and BEFORE
+       the clearance test: moving it afterwards closed a checked 9.2-unit pair
+       to 8.0. */
+    const clampS = (ri, s) => {
+      const L = lens[ri], inset = Math.min(0.6 * k, L / 2);
+      return Math.max(inset < L / 2 ? 0 : L / 2, Math.min(s, L - inset));
+    };
+    const onOther = (ri, q) => runs.some((P, rj) => rj !== ri &&
+      nearBox(rj, q[0], q[1], ROUTE_DOT_ON_STROKE * k) &&
+      nearestOnPoly(P, q[0], q[1]).d < ROUTE_DOT_ON_STROKE * k);
+
+    // 1. Every stroke's stations, ranked.
+    const cands = [];
+    runs.forEach((P, ri) => {
+      routeDotStations(P, period, clear).forEach((st) => {
+        const s = clampS(ri, st.s);
+        const q = pointAt(P, s);
+        let pri = 2;
+        if (st.kind === "corner" || st.kind === "mark") pri = 3;
+        else if (st.kind === "end") pri = onOther(ri, q) ? 1 : 3;
+        cands.push({ x: q[0], y: q[1], run: ri, s: s, pri: pri });
+      });
+    });
+
+    // 2. Resolve the whole letter at once: best first, stroke order breaking ties.
+    const kept = [];
+    /* One rule for every pair, same stroke or not. Stations are spaced at
+       least `clear` apart along a stroke (routeDotStations), so a stroke's
+       own neighbours pass it; what it catches on the same stroke is a loop
+       closing on its own start (o, O, 0, 8) and the two sides of a sharp
+       turn (v, 2, Q's tail). An earlier version exempted same-stroke
+       neighbours, and a dot sliding along its stroke then landed 9.5 units
+       from its neighbour on the base of "2". */
+    const blocked = (q) => kept.some((o) => Math.hypot(o.x - q[0], o.y - q[1]) < clear);
+    /* An ordinary dot that is blocked slides along its own stroke, up to a
+       third of a period either way, before it is given up. The arch of "r"
+       is short: its middle dot sat 14.08 units from the stem's top dot
+       against a 14.3 clearance and was dropped, leaving the arch as one dot
+       floating off the stem. Tips, corners and marks never move -- where they
+       sit is the letter. */
+    const place = (c) => {
+      if (!blocked([c.x, c.y])) return c;
+      if (c.pri !== 2) return null;
+      const P = runs[c.run], step = period * 0.05;
+      for (let m = 1; m * step <= period * 0.35; m++) {
+        for (const sg of [1, -1]) {
+          const s = clampS(c.run, c.s + sg * m * step);
+          const q = pointAt(P, s);
+          if (!blocked(q)) return { x: q[0], y: q[1], run: c.run, s: s, pri: 2 };
+        }
+      }
+      return null;
+    };
+    cands.sort((a, b) => (b.pri - a.pri) || (a.run - b.run) || (a.s - b.s));
+    cands.forEach((c) => { const got = place(c); if (got) kept.push(got); });
+
+    /* 3. Refill. Dropping is not enough on its own: a stroke can lose a run
+       of stations to another that merely passes near, and a gap wider than
+       the pattern reads as a break in the letter. Walk each stroke with every
+       dot that lies ON it -- its own and other strokes' within a dot-width of
+       the path -- and wherever two consecutive ones are more than 1.5
+       periods apart, fill the gap evenly. */
+    runs.forEach((P, ri) => {
+      const L = lens[ri];
+      const onPath = [0, L];
+      kept.forEach((o) => {
+        if (o.run === ri) { onPath.push(o.s); return; }
+        if (!nearBox(ri, o.x, o.y, dotW * k)) return;
+        const pr = nearestOnPoly(P, o.x, o.y);
+        if (pr.d < dotW * k) onPath.push(pr.s);
+      });
+      onPath.sort((a, b) => a - b);
+      for (let i = 1; i < onPath.length; i++) {
+        const a = onPath[i - 1], gap = onPath[i] - a;
+        if (gap <= period * 1.5) continue;
+        const n = Math.round(gap / period);
+        for (let j = 1; j < n; j++) {
+          const s = clampS(ri, a + gap * j / n);
+          const q = pointAt(P, s);
+          const got = place({ x: q[0], y: q[1], run: ri, s: s, pri: 2 });
+          if (got) kept.push(got);
+        }
+      }
+    });
+
+    // 4. One explicit dash sequence per stroke.
+    return runs.map((P, ri) => {
+      const L = lens[ri];
+      const mine = kept.filter((o) => o.run === ri).map((o) => o.s).sort((a, b) => a - b);
+      if (!mine.length) return null;
+      const dash = [];
+      for (let i = 0; i < mine.length; i++) {
+        dash.push(dot);
+        // The last gap outruns the path, so the pattern never repeats on it.
+        dash.push(i < mine.length - 1 ? Math.max(0.001, mine[i + 1] - mine[i] - dot) : L + period + mine[0]);
+      }
+      /* A pattern starts with a dash at s=0. When that dot was dropped, start
+         the pattern inside its long final gap instead, so the first dash lands
+         at mine[0]. A positive offset, because every engine supports one. */
+      const total = dash.reduce((x, y) => x + y, 0);
+      return { dash: dash, offset: mine[0] > 0 ? total - mine[0] : 0 };
+    });
+  }
+  /* @route-dots:end */
+
   function traceWordSVG(word, level, opts) {
     const o = opts || {};
     const spec = levelSpec(level);
@@ -5824,13 +6092,20 @@
       const g = document.createElementNS(SVGNS, "g");
       g.setAttribute("class", "pt-trace-route");
       if (spec.opacity != null && spec.opacity !== 1) g.setAttribute("opacity", String(spec.opacity));
-      routed.forEach((d) => {
+      const dots = routeDotDashes(routed, spec.routeDash, spec.routeSw, 1);
+      routed.forEach((d, k) => {
+        if (dots && !dots[k]) return;   // every dot of this stroke is already drawn
         const path = document.createElementNS(SVGNS, "path");
         path.setAttribute("d", d);
         path.setAttribute("fill", "none");
         path.setAttribute("stroke", spec.stroke);
         path.setAttribute("stroke-width", String(spec.routeSw));
-        path.setAttribute("stroke-dasharray", spec.routeDash);
+        if (dots) {
+          path.setAttribute("stroke-dasharray", dots[k].dash.map((n) => +n.toFixed(3)).join(" "));
+          if (dots[k].offset) path.setAttribute("stroke-dashoffset", String(+dots[k].offset.toFixed(3)));
+        } else {
+          path.setAttribute("stroke-dasharray", spec.routeDash);
+        }
         path.setAttribute("stroke-linecap", spec.cap || "round");
         path.setAttribute("stroke-linejoin", "round");
         g.appendChild(path);
@@ -6330,8 +6605,15 @@
           if (routedPng) {
             ctx.lineWidth = Math.max(1, spec.routeSw * scale);
             const rd = dashOf(spec.routeDash);
-            ctx.setLineDash(rd.length ? rd : []);
-            routedPng.forEach((d) => ctx.stroke(new Path2D(d)));
+            // Same survivors as the preview row, in canvas units.
+            const dots = routeDotDashes(routedPng, spec.routeDash, spec.routeSw, scale);
+            routedPng.forEach((d, k) => {
+              if (dots && !dots[k]) return;
+              ctx.setLineDash(dots ? dots[k].dash : (rd.length ? rd : []));
+              ctx.lineDashOffset = dots ? dots[k].offset : 0;
+              ctx.stroke(new Path2D(d));
+            });
+            ctx.lineDashOffset = 0;
           } else {
             ctx.lineWidth = Math.max(1, spec.sw * scale);
             const dash = dashOf(spec.dash);

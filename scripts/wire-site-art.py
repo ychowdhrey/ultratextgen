@@ -193,7 +193,12 @@ def main():
         # Content-shaped: keyed on the page having a real figure, not on a
         # path list, so any lane that grows a described hero gets the same
         # treatment and no table goes stale.
-        if 'class="guide-hero-figure pt-sheet-preview"' in html:
+        #
+        # Since 2026-09-23 the described image is an <img class="pt-sheet-preview">
+        # inside the tool's preview box, not a standalone figure. The page
+        # still carries it, so the banner still stays off; both forms match.
+        if ('class="pt-sheet-preview"' in html
+                or 'class="guide-hero-figure pt-sheet-preview"' in html):
             if had_figure:
                 banner_dropped += 1
             if html != original:
