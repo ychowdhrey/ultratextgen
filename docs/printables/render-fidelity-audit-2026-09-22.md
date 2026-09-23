@@ -25,8 +25,8 @@ roster, answer key, viewport — and where does the artifact stop agreeing with 
 | Distinct print surfaces | **14** | `name`, `gen`, `design`, `banner`, `puzzle`, `search`, `cw`, `sc`, `alphabet`, `practice`, `book`, `char`, `mono`, `xstitch` |
 | Settings inventoried | **1,013** | interactive controls across the 27 EN routes, enumerated from the live DOM |
 | Configurations driven | **1,670** | 670 PDF-path on the English routes (content × paper × orientation × margin × roster × answer key), 857 on the locale mirrors, 135 responsive (27 routes × 5 viewports), 8 browser-print renders — each measured three ways |
-| Defects | **14** | a fifteenth register entry, RF-014, records an instrument error rather than a defect |
-| P0 | **2** | RF-001 (fixed), RF-015 |
+| Defects | **15** | a sixteenth register entry, RF-014, records an instrument error rather than a defect |
+| P0 | **3** | RF-001 (fixed), RF-015 (fixed), RF-016 (fixed) |
 | P1 | **3** | RF-002 (partly fixed), RF-003 (fixed), RF-004 |
 | P2 | **6** | RF-005, RF-006, RF-007, RF-008, RF-010, RF-013 |
 | P3 | **3** | RF-009, RF-011 (fixed), RF-012 |
@@ -51,6 +51,15 @@ declarations that mean "US Letter portrait, roughly" on every paper, and RF-015'
 which is derived from the word rather than from the page. PR #927 closed the first and the
 generator half of the second while this audit was in flight. The remainder — the name sheets — is
 the larger half and is the top item of the fix plan.
+
+**A third P0, added 2026-09-23 and fixed the same day.** RF-016: the fix for RF-015 pinned the
+name page to the paper, and the ruled sheet's `min-height` — a budget that counts the credit band
+but not the title — kept it from shrinking into it, so the exporter cut the last 54.3px out of
+the file. That is most of the credit QR and the whole credit URL, on all 20 ruled routes, at
+every setting. It was found by the user, on this audit's own evidence figure, and it is the
+sharpest available example of §5's thesis: the DOM was correct throughout, and **the metric this
+audit trusted to catch scale failures had become a tautology the moment the page stopped being
+sized by its content.**
 
 **The reported regression is explained and closed.** "Word search · large word list · the final
 word collides with the Name/Date section" is not a footer-position problem and moving the Name
@@ -208,6 +217,15 @@ spill, all ten words present, Name/Date and credit clear.
 > Shipped together with the **practice style** primitive
 > (`docs/printables/practice-styles-2026-09-23.md`), which is what decides where
 > the models go now that the row no longer collapses around them.
+>
+> **Read the `fit` row above with RF-016 beside it.** `fit 1.000` is correct and it
+> is also what this measurement now says on ANY pinned unit, fitting or not: the
+> metric divides the page height by the unit's height, and a unit given a fixed
+> height reports 1.0000 whatever its contents do. The same change that produced
+> these numbers made them stop being evidence of the thing they had been evidence
+> of, and the credit block was being cut out of every one of these sheets while
+> this table read clean. Content past a pinned box is a separate measurement
+> (`clipY` in §10's harness).
 
 > ### Correction — 2026-09-23: the scope below is wrong in both directions
 >
@@ -343,6 +361,88 @@ already names `addRuling()` as "the one owner of a ruling", which is where the b
 **Do not** fix this by capping `max-height` alone, and **do not** fix it by letting
 `renderPages()` keep scaling — that is the mechanism, not the remedy.
 **Evidence** `evidence/RF-015-cursive-single-char.png` (a one-letter sheet as delivered).
+
+---
+
+### RF-016 · The fitted page cut the credit QR and the credit URL out of every exported sheet — P0 · **FIXED 2026-09-23**
+
+**Generators** the 20 routes that build a ruled name sheet (RF-015's set exactly) · **Route** all of them
+**Settings to reproduce** any — paper, orientation, margins and name length do not change it
+**Introduced by** PR #932 (the RF-015 fix), found by the user on the shipped evidence figure
+
+**What a visitor gets.** The credit block at the foot of the sheet is cut horizontally: the QR
+keeps its top ~40% with a ragged edge and the URL beside it does not appear at all. Printed
+paper then has **no route back to the tool** — which is the entire reason the block exists.
+Decoded rather than looked at: a QR decoder run over the exported 288-DPI page bitmap returns
+nothing on any of the 20 routes, where the same decoder reads the pre-#932 sheets.
+
+**The mechanism.** `markFittedPage()` now marks a ruled name page `is-fitted`, and
+`.pt-sheet-page.is-fitted` is a flex column with `height: var(--pt-page-h)` — 927.4px at Letter
+with normal margins. Its children are the title, the ruled sheet and the credit band. The sheet
+still carried `min-height: var(--pt-sheet-h)` = 812.2px, and **`--pt-sheet-h` is the page minus
+the credit band** — a budget written for a unit that has no title. A `min-height` is a floor
+`flex-shrink` cannot cross, so the column could not fit itself:
+
+| child | height |
+|---|---|
+| `.bubble-print-title` | 38.4px |
+| row gap | 16.0px |
+| `.pt-name-sheet` (`min-height: var(--pt-sheet-h)`) | 812.2px |
+| `.pt-credit` + its `0.25in` margin | 115.2px |
+| **total** | **981.7px** |
+| **the page box** | **927.4px** |
+
+`renderPages()` then paints the unit through a `<div style="overflow:hidden">` at the unit's own
+height, so the 54.3px past the box is **cut in the file**, not scaled to fit. The credit band
+starts 890.5px down and the URL's own top is at 925.5px, which is why the QR is part-cut and the
+URL is entirely gone.
+
+**Why nothing caught it.** The page reports 927.4px and every rectangle inside it measures
+correctly — the defect is created at raster time, the same shape as RF-001. And the harness's
+own overflow metric could not see it: `fit = pageHeight / unitHeight` measures a unit **sized by
+its content**, and the moment #932 pinned the unit's height that number became a tautology —
+1.0000 on every route, every name, every paper, and blind to content past the box. *A check that
+reports nothing is indistinguishable from a check that passes*, in its sixth recorded form, and
+this time the check was one this audit itself had written. The skill's own step — *"decode the QR
+from a render of the print surface at print resolution, never look at it"* — is what would have
+caught it, and it was not run before #932 shipped.
+
+**Root cause** SRC-2, inverted. SRC-2 is a figure sized by its content instead of by its page;
+this is a figure **given a page and still carrying its content-derived budget**, so two owners
+answer the same question and the larger wins.
+**Affected shared component** `body.pt-pdf-rendering .bubble-print-wrap .pt-name-sheet` in
+`style.css`; `markFittedPage()` in `js/printables/printablesEngine.js`.
+
+> ### Resolved — 2026-09-23
+>
+> `min-height: 0` on a `.pt-name-sheet` inside a fitted page, scoped to beat the
+> `body.pt-pdf-rendering` rule that sets the budget. `flex: 1 1 auto` already fills
+> whatever the page has left, which is what the min-height was asking for; the
+> ruled band absorbs the 54.4px instead of the credit being cut.
+>
+> Measured through the PDF path on every page that mounts the name surface, 4 name
+> lengths × 2 paper configurations, against a worktree of `090e2c4d7` and against
+> the fix:
+>
+> | | before | after |
+> |---|---|---|
+> | name-surface measurements clipping past the page box | **160 of 376**, all by 54.4px | **0 of 376** |
+> | routes affected | 20 | 0 |
+> | `units`, `fit`, `over` | — | **byte-identical either side** |
+> | QR decoded from the exported bitmap | **nothing, on any route** | every render, at 0.87in |
+>
+> The QR is now **0.87in** across in the file. It has never been that size on these
+> routes: before #932 it decoded, but at **0.30in** for a three-letter name and
+> **0.18in** for a single letter, because RF-015's rasterise-and-scale took the
+> credit down with the sheet — below the 0.42in the `.pt-credit-qr` comment already
+> records as "a QR that renders perfectly and cannot be scanned". RF-015 cost the
+> credit too, and that was not in this register until now.
+>
+> Regression sweep: **250 measurements across 88 routes and 12 surface kinds**, all
+> surfaces, default and named content — 0 clipped.
+>
+> Gated by `npm run check:fitted-page-fit`, negative-tested against both the removed
+> fix and a removed `.pt-name-row` release.
 
 ---
 
@@ -798,6 +898,9 @@ What each defect class could be prevented by, and what now exists.
 | Defect class | Prevented by | Status |
 |---|---|---|
 | RF-001 · a property dropped from the export | **static CI gate** comparing the exporter's allow-list against the print CSS | **shipped** — `npm run check:print-export-properties`, wired into `validate.yml`, negative-tested |
+| RF-016 · a min-height a pinned page cannot shrink past | **static CI gate** reading the fitted variants and sheet classes from the engine and requiring a variant-scoped `min-height: 0` for each floor | **shipped** — `npm run check:fitted-page-fit`, wired into `validate.yml`, negative-tested against both the removed fix and a removed row release |
+| RF-016 · content cut inside a pinned page unit | **descendant bounds against the unit box** (`clipY`), because `fit` cannot see it | harness pass exists (250 measurements, 88 routes, 12 surface kinds); needs a browser, so it is not in CI |
+| RF-016 · the credit is unreadable in the file | **decode the exported bitmap**, rather than measuring the DOM that produced it | harness pass exists; the QR is the canary for anything that falls off the foot of a sheet |
 | RF-001, RF-004 · geometry the DOM cannot show | **DOM bounds assertions over the exporter's own clone** | module **shipped** (`js/printables/renderInvariants.js`); the clone capture lives in the audit harness and needs a browser, so it is not in CI |
 | I-1 … I-4 regressions | **pure-geometry node test with recorded fixtures** | **shipped** — `npm run test:render-invariants`, 19 assertions, including the RF-001 geometry measured before and after the fix |
 | RF-002, RF-015 · scale failures | **a `fit` budget per surface**: render each sheet at each paper × orientation and fail when `fit` drops below a floor | designed, not built — needs the browser harness; the numbers in §4 are what it would assert |

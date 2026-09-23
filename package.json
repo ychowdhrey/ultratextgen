@@ -38,6 +38,7 @@
     "inject:glyph-metrics-tag": "node scripts/inject-glyph-metrics-tag.js",
     "check:printables-surface-wiring": "node scripts/check-printables-surface-wiring.js",
     "check:print-export-properties": "node scripts/check-print-export-properties.js",
+    "check:fitted-page-fit": "node scripts/check-fitted-page-fit.js",
     "check:share-save-tags": "node scripts/check-share-save-tags.js",
     "inject:share-save-tags": "node scripts/inject-share-save-tags.js",
     "check:hreflang": "node scripts/audit-hreflang.js",
