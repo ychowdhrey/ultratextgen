@@ -58,6 +58,24 @@
   const CFG = window.UTG_PRINTABLE;
   if (!CFG) return;
 
+  /* CFG.nameRoute -- where a personal name goes on a page that no longer
+     takes one (owner decision 2026-09-22: one working job per page). The
+     alphabet and fixed-word pages used to carry a name box, so share links,
+     saved sheets and "recent sheets" written before the split still arrive
+     here with ?name= or ?roster=. Without this they would open the alphabet
+     with the name silently dropped. They are forwarded, query intact, to the
+     page that now owns the name job. Only when the page has no name box of its
+     own, so a page that still takes a name can never bounce. */
+  if (CFG.nameRoute && !document.getElementById("pt-name-input")) {
+    try {
+      const q = new URLSearchParams(window.location.search);
+      if (q.get("name") || q.get("text") || q.get("q") || q.get("roster")) {
+        window.location.replace(CFG.nameRoute + window.location.search);
+        return;
+      }
+    } catch (err) { /* no URLSearchParams: the page simply opens as it is */ }
+  }
+
   /* ---------------------------------------------------------------
      Localization. All engine-injected UI text flows through T, keyed
      off the page's language (html lang="…", or an explicit CFG.lang).
