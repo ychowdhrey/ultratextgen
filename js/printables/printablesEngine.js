@@ -1113,6 +1113,14 @@
     if (!GM) return;
     const TILE = { w: 200, h: 240 };
     document.querySelectorAll("svg.bubble-outline").forEach((svg) => {
+      /* Letter tiles only. The dot-to-dot sheet shares the bubble-outline
+         class (800x960, circles plus number labels), and its first <text> is
+         the label "1": this pass re-centred that label as if it were a
+         200x240 letter, dragging it 84-807 units off its dot on 24 of the 26
+         uppercase dot-to-dot pages, on screen only (the PNG/PDF export draws
+         from the layout and was right). Measured 2026-09-23. A tile is what
+         outlineSVG() builds: that viewBox and no dots. */
+      if (svg.getAttribute("viewBox") !== "0 0 200 240" || svg.querySelector("circle")) return;
       const t = svg.querySelector("text");
       if (!t) return;
       const ch = t.textContent;
