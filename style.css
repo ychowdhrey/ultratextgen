@@ -7095,7 +7095,35 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
    would be a second line a few pixels under the first. Guides only: an unruled
    name row keeps the single border it has always had. */
 .pt-name-row.has-guides { border-bottom: none; }
-.pt-name-row.has-guides .pt-word-outline { width: 100%; max-height: none; }
+/* RF-015. `max-height: none` here is what let the row take its height from
+   the WORD: the SVG's viewBox was sized to the ink, `width: 100%` stretched
+   it to the line, and the height followed the word's ratio, so a one-letter
+   name made a 720px row and six of them a 39-inch sheet. The row is given a
+   height instead, and the drawing fills it; the engine then gives the viewBox
+   that box's aspect (layoutPracticeRow), so the ruled line is the same line
+   whatever is written on it. Measured before: "A" 0.210 of full size on US
+   Letter portrait, "Christopher" 0.805. */
+.pt-name-row.has-guides {
+  align-items: stretch;
+  height: var(--pt-row-h, 150px);
+}
+.pt-name-row.has-guides > .pt-word-outline {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+}
+/* One real row, at the height a preview card can hold. It is the same
+   element the sheet builds, so a practice style that changes the row changes
+   what is on screen. */
+/* The card is a centring flex box, so the sheet has to claim its width or it
+   shrinks to the drawing inside it and the row stops being a line. */
+.pt-name-sheet.is-preview {
+  gap: 0;
+  flex: 1 1 100%;
+  width: 100%;
+  min-width: 0;
+}
+.pt-name-sheet.is-preview .pt-name-row.has-guides { --pt-row-h: 120px; }
 .pt-name-row .pt-word-outline { width: 100%; max-height: 120px; }
 .pt-name-word {
   font-size: 3.2rem;
@@ -7505,6 +7533,44 @@ body.dark-mode .pt-studio-preview .pt-design-preview { background: transparent; 
   color: var(--accent-purple);
   box-shadow: inset 0 0 0 1px var(--accent-purple);
 }
+/* Practice style: four cards, each showing the name of the activity, a
+   miniature of the row it produces and one line saying what the learner
+   does. Cards rather than a <select> because the picture is half the
+   explanation, and the four are a closed set the reader compares. */
+.pt-practice-field { margin: 0.75rem 0 0.25rem; }
+.pt-practice-field[hidden] { display: none; }
+.pt-practice-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+}
+.pt-practice-row { gap: 0.5rem; }
+.pt-practice-choice {
+  flex: 1 1 8.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.6rem 0.55rem 0.5rem;
+  text-align: left;
+}
+.pt-practice-name { font-size: 0.82rem; line-height: 1.2; }
+.pt-practice-choice small { margin-top: 0; text-align: left; }
+.pt-practice-mini {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: var(--text-secondary);
+  opacity: 0.85;
+}
+.pt-practice-choice.is-active .pt-practice-mini { color: var(--accent-purple); opacity: 1; }
+/* Two columns on a phone rather than four 4rem slivers, which is narrower
+   than the miniature needs to read. */
+@media (max-width: 620px) {
+  .pt-practice-choice { flex: 1 1 calc(50% - 0.25rem); }
+}
+body.dark-mode .pt-practice-mini { color: var(--text-secondary); }
+
 .pt-dots-options { margin-top: -0.35rem; }
 .pt-dots-hint { margin-top: 0.7rem; }
 
@@ -11016,6 +11082,19 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
 }
 .pt-sheet-page.is-fitted .pt-gen-row.has-lefty { align-items: stretch; }
 .pt-sheet-page.is-fitted .pt-sheet-footer { flex: 0 0 auto; }
+/* A name sheet is the same shape of thing: a column of ruled practice rows
+   that can share whatever the page has left. Basis 150px and shrink-only, as
+   above, so a sheet that already fits keeps the row height it had and a
+   sheet that does not gives some back instead of being rasterised smaller. */
+.pt-sheet-page.is-fitted > .pt-name-sheet {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.pt-sheet-page.is-fitted .pt-name-row {
+  flex: 0 1 150px;
+  min-height: 0;
+  height: auto;
+}
 
 .pt-sheet-page.is-nup {
   display: flex;

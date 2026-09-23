@@ -170,6 +170,13 @@
         full:   { label: "Full page", hint: "One big letter per sheet: today's default" },
         medium: { label: "Medium (~4 in)", hint: "Several letters per sheet: good for posters" },
         small:  { label: "Small (~2 in)", hint: "Many letters per sheet: great for bulletin boards" }
+      },
+      practice: {
+        label: "Practice style",
+        repeat: { label: "Repeat tracing", hint: "Fill each line with traceable copies." },
+        trace_write: { label: "Trace then write", hint: "Trace once, then practise on your own." },
+        trace_write_check: { label: "Trace, write, check", hint: "Trace, practise, then compare with the model." },
+        write_check: { label: "Write then check", hint: "Write from memory, then compare with the model." }
       }
     },
     fr: {
@@ -219,6 +226,13 @@
         full:   { label: "Pleine page", hint: "Une grande lettre par feuille — le réglage par défaut" },
         medium: { label: "Moyenne (~10 cm)", hint: "Plusieurs lettres par feuille — pratique pour des affiches" },
         small:  { label: "Petite (~5 cm)", hint: "Beaucoup de lettres par feuille — idéal pour un panneau d'affichage" }
+      },
+      practice: {
+        label: "Type d'exercice",
+        repeat: { label: "Repasser en série", hint: "Remplir chaque ligne de modèles à repasser." },
+        trace_write: { label: "Repasser puis écrire", hint: "Repasser une fois, puis s'entraîner seul." },
+        trace_write_check: { label: "Repasser, écrire, vérifier", hint: "Repasser, s'entraîner, puis comparer au modèle." },
+        write_check: { label: "Écrire puis vérifier", hint: "Écrire de mémoire, puis comparer au modèle." }
       }
     },
     es: {
@@ -268,6 +282,13 @@
         full:   { label: "Página completa", hint: "Una letra grande por hoja — la opción por defecto" },
         medium: { label: "Mediano (~10 cm)", hint: "Varias letras por hoja — ideal para pósteres" },
         small:  { label: "Pequeño (~5 cm)", hint: "Muchas letras por hoja — ideal para un mural" }
+      },
+      practice: {
+        label: "Tipo de práctica",
+        repeat: { label: "Repasar varias veces", hint: "Llenar cada línea con copias para repasar." },
+        trace_write: { label: "Repasar y escribir", hint: "Repasar una vez y luego practicar solo." },
+        trace_write_check: { label: "Repasar, escribir, comprobar", hint: "Repasar, practicar y comparar con el modelo." },
+        write_check: { label: "Escribir y comprobar", hint: "Escribir de memoria y comparar con el modelo." }
       }
     },
     pt: {
@@ -317,6 +338,13 @@
         full:   { label: "Página inteira", hint: "Uma letra grande por folha — o padrão de hoje" },
         medium: { label: "Médio (~10 cm)", hint: "Várias letras por folha — bom para cartazes" },
         small:  { label: "Pequeno (~5 cm)", hint: "Muitas letras por folha — ótimo para mural" }
+      },
+      practice: {
+        label: "Tipo de prática",
+        repeat: { label: "Repetir o traçado", hint: "Encher cada linha com cópias para traçar." },
+        trace_write: { label: "Traçar e escrever", hint: "Traçar uma vez e depois praticar sozinho." },
+        trace_write_check: { label: "Traçar, escrever, conferir", hint: "Traçar, praticar e comparar com o modelo." },
+        write_check: { label: "Escrever e conferir", hint: "Escrever de memória e comparar com o modelo." }
       }
     },
     it: {
@@ -366,6 +394,13 @@
         full:   { label: "Pagina intera", hint: "Una grande lettera per foglio – l'opzione predefinita" },
         medium: { label: "Medio (~10 cm)", hint: "Diverse lettere per foglio – comodo per i poster" },
         small:  { label: "Piccolo (~5 cm)", hint: "Tante lettere per foglio – ideale per una bacheca" }
+      },
+      practice: {
+        label: "Tipo di esercizio",
+        repeat: { label: "Ripassa più volte", hint: "Riempi ogni riga di copie da ripassare." },
+        trace_write: { label: "Ripassa e scrivi", hint: "Ripassa una volta, poi esercitati da solo." },
+        trace_write_check: { label: "Ripassa, scrivi, controlla", hint: "Ripassa, esercitati e confronta con il modello." },
+        write_check: { label: "Scrivi e controlla", hint: "Scrivi a memoria, poi confronta con il modello." }
       }
     },
     pl: {
@@ -417,6 +452,13 @@
         full:   { label: "Cała strona", hint: "Jedna duża litera na kartkę — dzisiejsze ustawienie domyślne" },
         medium: { label: "Średni (~10 cm)", hint: "Kilka liter na kartkę — dobre na plakaty" },
         small:  { label: "Mały (~5 cm)", hint: "Wiele liter na kartkę — świetne na tablicę ogłoszeń" }
+      },
+      practice: {
+        label: "Rodzaj ćwiczenia",
+        repeat: { label: "Powtarzaj po śladzie", hint: "Wypełnij każdy wiersz wzorami do obrysowania." },
+        trace_write: { label: "Po śladzie, potem samodzielnie", hint: "Obrysuj raz, potem ćwicz samodzielnie." },
+        trace_write_check: { label: "Po śladzie, napisz, sprawdź", hint: "Obrysuj, poćwicz i porównaj ze wzorem." },
+        write_check: { label: "Napisz i sprawdź", hint: "Napisz z pamięci, potem porównaj ze wzorem." }
       }
     },
     de: {
@@ -470,6 +512,13 @@
         full:   { label: "Ganze Seite", hint: "Ein großer Buchstabe pro Blatt – die heutige Standardeinstellung" },
         medium: { label: "Mittel (~10 cm)", hint: "Mehrere Buchstaben pro Blatt – gut für Poster" },
         small:  { label: "Klein (~5 cm)", hint: "Viele Buchstaben pro Blatt – ideal für eine Pinnwand" }
+      },
+      practice: {
+        label: "Übungsform",
+        repeat: { label: "Mehrfach nachspuren", hint: "Jede Zeile mit Vorlagen zum Nachspuren füllen." },
+        trace_write: { label: "Nachspuren, dann schreiben", hint: "Einmal nachspuren, dann selbst üben." },
+        trace_write_check: { label: "Nachspuren, schreiben, prüfen", hint: "Nachspuren, üben und mit der Vorlage vergleichen." },
+        write_check: { label: "Schreiben, dann prüfen", hint: "Aus dem Gedächtnis schreiben, dann mit der Vorlage vergleichen." }
       }
     }
 ,
@@ -529,6 +578,13 @@
         full:   { label: "Satu halaman penuh", hint: "Satu huruf besar per lembar \u2014 setelan bawaan saat ini" },
         medium: { label: "Sedang (~10 cm)", hint: "Beberapa huruf per lembar \u2014 cocok untuk poster" },
         small:  { label: "Kecil (~5 cm)", hint: "Banyak huruf per lembar \u2014 pas untuk mading" }
+      },
+      practice: {
+        label: "Jenis latihan",
+        repeat: { label: "Tebalkan berulang", hint: "Isi setiap baris dengan contoh untuk ditebalkan." },
+        trace_write: { label: "Tebalkan lalu tulis", hint: "Tebalkan sekali, lalu berlatih sendiri." },
+        trace_write_check: { label: "Tebalkan, tulis, periksa", hint: "Tebalkan, berlatih, lalu bandingkan dengan contohnya." },
+        write_check: { label: "Tulis lalu periksa", hint: "Tulis dari ingatan, lalu bandingkan dengan contohnya." }
       }
     }
   };
@@ -1218,14 +1274,22 @@
        the case a width estimate cannot see. */
     const GMW = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
     const im = GMW ? GMW.ink(String(word), font, WORD_OUTLINE_FS, FONT_WEIGHT) : null;
-    let w;
-    if (im) {
-      const track = Math.max(0, chars.length - 1) * spacing;
-      const inkW = Math.max(im.right, im.advance) - Math.min(0, im.left);
-      w = Math.max(200, Math.ceil(inkW + track + WORD_OUTLINE_PAD));
-    } else {
-      w = Math.max(200, chars.length * 118 + WORD_OUTLINE_PAD + Math.max(0, chars.length - 1) * spacing);
-    }
+    const track = Math.max(0, chars.length - 1) * spacing;
+    /* `model` is the ink the word actually occupies; `w` is the box drawn
+       around it. They were one number, and that is RF-015: the box was the
+       word, so the ROW was the word, so a short name made a near-square row
+       and six of them were taller than the paper. The composer below places
+       models inside a box the PAGE decides, which is why the two are
+       separate now. */
+    const inkLeft = im ? Math.min(0, im.left) : 0;
+    const model = im
+      ? Math.ceil(Math.max(im.right, im.advance) - inkLeft + track)
+      : chars.length * 118 + track;
+    let w = Math.max(200, model + WORD_OUTLINE_PAD);
+    // A ruled row hands its own box width in, measured from the row's place
+    // on the page. It is a FLOOR, never a cap: a name wider than the line
+    // still gets its full box rather than being clipped.
+    if (o.rowVW) w = Math.max(w, o.rowVW);
     const hc = highContrastOn();
     /* o.strokeWidth arrives quoted in outlineSVG()'s units (font-size 210) --
        it comes from CFG.strokeWidth or a nameStyles entry, the same field the
@@ -1245,7 +1309,8 @@
       h = Math.max(h, Math.ceil(gRul.base + (r.extra || 0) * gRul.band + 10));
     }
     return {
-      w: w, h: h, fontSize: WORD_OUTLINE_FS, font: font, spacing: spacing,
+      w: w, h: h, model: model, inkLeft: inkLeft,
+      fontSize: WORD_OUTLINE_FS, font: font, spacing: spacing,
       anchorY: WORD_OUTLINE_ANCHOR_Y, guides: gRul,
       fill: o.solid ? (o.fill || INK) : "#ffffff",
       /* The name-tracing family draws its rows here rather than through
@@ -1258,6 +1323,242 @@
         ? (o.strokeColor ? (o.strokeWidth != null ? wordStroke : 4) : 0)
         : (hc ? contrastStroke(WORD_OUTLINE_FS, wordStroke) : wordStroke)
     };
+  }
+
+  /* ---------------------------------------------------------------
+     Practice style -- one row composition primitive
+     ---------------------------------------------------------------
+     A practice style is how the MODEL and the INDEPENDENT WRITING SPACE are
+     arranged across one ruled handwriting row. It is not a property of short
+     names: a row is composed the same way whether it carries a letter, a
+     short word or a name, and the same composer runs for the preview, the
+     print surface, the PNG and the PDF so those four cannot disagree.
+
+     Everything here is in the row SVG's own units, so it is independent of
+     paper size, locale and page markup. The caller supplies the box width the
+     PAGE decided (see practiceRowVW); this function never reads the DOM and
+     never asks how many characters the word has -- "WWW" and "iii" are three
+     characters and two different lines, which is why every decision below is
+     made from measured ink.  */
+  const PRACTICE_STYLES = ["repeat", "trace_write", "trace_write_check", "write_check"];
+  const PRACTICE_DEFAULT = "repeat";
+  let practiceStyle = PRACTICE_DEFAULT;
+
+  // The writing margin every mode starts from, so a model and the blank line
+  // beside it begin at the same x on every row of the sheet.
+  function practiceMargin() { return WORD_OUTLINE_PAD / 2; }
+  // Minimum air between two models, in type units rather than pixels so it
+  // holds at any paper size.
+  function practiceGap(fontSize) { return Math.max(1, fontSize * 0.55); }
+
+  /* Returns the x of each model's INK, left to right. An empty practice area
+     is simply ruled row with nothing on it -- never an underscore glyph, and
+     never a partial copy of the word. */
+  function practiceCompose(style, boxW, modelW, fontSize) {
+    if (!(modelW > 0) || !(boxW > 0)) return [];
+    const pad = practiceMargin();
+    const gap = practiceGap(fontSize);
+    const start = pad;
+    const end = Math.max(pad, boxW - pad - modelW);
+    const usable = Math.max(0, boxW - 2 * pad);
+    if (style === "trace_write") return [start];
+    if (style === "write_check") return [end];
+    if (style === "trace_write_check") {
+      // Two models need room for a practice area between them that is worth
+      // writing in; otherwise the row honestly carries one.
+      return usable >= 2 * modelW + gap * 2 ? [start, end] : [start];
+    }
+    /* repeat: whole copies only. The count comes from the measured model
+       width, so a copy is never clipped and never half-drawn; the remainder
+       is then spread between them rather than left as a gutter on the right. */
+    const n = Math.max(1, Math.floor((usable + gap) / (modelW + gap)));
+    if (n <= 1) return [start];
+    const step = (usable - modelW) / (n - 1);
+    const xs = [];
+    for (let i = 0; i < n; i++) xs.push(start + step * i);
+    return xs;
+  }
+
+  /* Whether the four styles produce different rows AT ALL on this input.
+     This is what decides if the control is shown: a selector that is
+     visibly inert is this engine's own documented defect. Computed by
+     composing all four and comparing, not by a width heuristic. */
+  function practiceStylesDiffer(boxW, modelW, fontSize) {
+    const key = (st) => practiceCompose(st, boxW, modelW, fontSize)
+      .map((x) => Math.round(x)).join(",");
+    const first = key(PRACTICE_STYLES[0]);
+    return PRACTICE_STYLES.some((st) => key(st) !== first);
+  }
+
+  /* The row's box, read from the PAGE. This is RF-015's fix in one function:
+     the viewBox is given the row's own aspect, so the ruled line is the same
+     line whatever is written on it, and the sheet's height stops depending on
+     the name. The row's height is set in CSS -- a flex share of the fitted
+     page on a sheet, a fixed band in the preview -- so this measurement is
+     never circular. A name wider than the line still widens the box, because
+     the floor in wordOutlineGeom is a floor: clipping a child's name is worse
+     than a slightly short page. */
+  function practiceRowVW(row, vbH) {
+    const r = row.getBoundingClientRect();
+    if (!(r.width > 0) || !(r.height > 0)) return 0;
+    return Math.max(1, Math.round(r.width * vbH / r.height));
+  }
+
+  function layoutPracticeRow(row) {
+    const d = row.__ptPractice;
+    if (!d) return;
+    const old = row.querySelector(":scope > svg.pt-word-outline");
+    if (!old) return;
+    const g = wordOutlineGeom(d.word, d.opts);
+    const vw = practiceRowVW(row, g.h);
+    if (!vw) return;
+    const o = Object.assign({}, d.opts, { rowVW: vw });
+    if (!d.opts.blank) o.practice = practiceStyle;
+    row.replaceChild(wordOutlineSVG(d.word, o), old);
+  }
+
+  /* Run wherever the row has just been given its box: after the sheet is
+     built, and again inside the PDF and print states, where the surface is
+     laid out at the chosen paper's width rather than the screen's. A sheet
+     measured on screen and rasterised at Legal is the "preview is not the
+     PDF" failure this engine has already recorded once. */
+  function layoutPracticeRows(root) {
+    if (!root || !root.querySelectorAll) return;
+    $$(".pt-name-row", root).forEach(layoutPracticeRow);
+  }
+
+  /* The miniature is the same composition the sheet will use, drawn small --
+     an illustration of the real thing, not a decoration. It uses a fixed
+     one-letter sample rather than the typed name on purpose: the four
+     pictures exist to show how the four styles differ, and a name that fills
+     the line makes all four identical, which would teach the opposite of the
+     truth. The words are the explanation; this is the second cue. */
+  const PRACTICE_MINI = { w: 420, h: 100, model: 48, sample: "A" };
+  function practiceMiniature(style) {
+    const M = PRACTICE_MINI, pad = 14;
+    const svg = document.createElementNS(SVGNS, "svg");
+    svg.setAttribute("viewBox", "0 0 " + M.w + " " + M.h);
+    svg.setAttribute("class", "pt-practice-mini");
+    svg.setAttribute("aria-hidden", "true");
+    svg.setAttribute("focusable", "false");
+    [[0.22, true], [0.55, false], [0.88, true]].forEach((row) => {
+      const y = M.h * row[0], solid = row[1];
+      const l = document.createElementNS(SVGNS, "line");
+      l.setAttribute("x1", String(pad));
+      l.setAttribute("x2", String(M.w - pad));
+      l.setAttribute("y1", String(y));
+      l.setAttribute("y2", String(y));
+      l.setAttribute("stroke", "currentColor");
+      l.setAttribute("stroke-width", solid ? "3" : "2");
+      l.setAttribute("opacity", solid ? "0.5" : "0.3");
+      if (!solid) l.setAttribute("stroke-dasharray", "8 9");
+      svg.appendChild(l);
+    });
+    practiceCompose(style, M.w, M.model, M.model * 1.5).forEach((x) => {
+      const t = document.createElementNS(SVGNS, "text");
+      t.setAttribute("x", String(x));
+      t.setAttribute("y", String(M.h * 0.88));
+      t.setAttribute("font-size", String(M.h * 0.66));
+      t.setAttribute("font-weight", "700");
+      t.setAttribute("fill", "currentColor");
+      t.textContent = M.sample;
+      svg.appendChild(t);
+    });
+    return svg;
+  }
+
+  /* One control, mounted by the engine rather than authored into 20 pages in
+     7 languages. Same reason the print-size control is built here: the markup
+     is identical everywhere, and a runtime mount keeps a UI control out of
+     the parity, locale-translation and em-dash gates. It names what the
+     LEARNER does, never what the renderer does. */
+  function mountPracticeControl() {
+    /* Anchored on the name INPUT, not on the rows select: only 7 of the 20
+       ruled pages declare `#pt-name-rows`, so anchoring there mounted the
+       control on a third of them and left the rest with a default they could
+       not change. Every page with a name sheet has the input. */
+    if (!RULED_ROWS || !el.nameInput || $("#pt-practice-style")) return;
+    const field = document.createElement("div");
+    field.className = "pt-practice-field";
+    field.id = "pt-practice-style";
+    field.hidden = true;                     // syncPracticeControl() decides
+    const lab = document.createElement("p");
+    lab.className = "pt-practice-label";
+    lab.textContent = T.practice.label;
+    field.appendChild(lab);
+    const group = document.createElement("div");
+    group.className = "pt-choice-row pt-practice-row";
+    group.setAttribute("role", "radiogroup");
+    group.setAttribute("aria-label", T.practice.label);
+    PRACTICE_STYLES.forEach((key) => {
+      const copy = (T.practice && T.practice[key]) || { label: key, hint: "" };
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pt-choice pt-practice-choice";
+      const on = key === practiceStyle;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("role", "radio");
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      const name = document.createElement("span");
+      name.className = "pt-practice-name";
+      name.textContent = copy.label;
+      b.appendChild(name);
+      b.appendChild(practiceMiniature(key));
+      const small = document.createElement("small");
+      small.textContent = copy.hint;
+      b.appendChild(small);
+      b.addEventListener("click", () => {
+        practiceStyle = key;
+        $$(".pt-practice-choice", group).forEach((o) => {
+          const isOn = o === b;
+          o.classList.toggle("is-active", isOn);
+          o.setAttribute("aria-checked", isOn ? "true" : "false");
+        });
+        // A control with no visible consequence is indistinguishable from a
+        // control that does nothing, so this repaints both previews.
+        renderNamePreview();
+        paintPaperPreview();
+      });
+      group.appendChild(b);
+    });
+    field.appendChild(group);
+    const anchor = el.nameRows || el.nameInput;
+    const host = anchor.closest(".pt-field, .pt-opt, .pt-name-rows-field, .pt-name-field")
+      || anchor.parentElement;
+    host.insertAdjacentElement("afterend", field);
+  }
+
+  /* Progressive disclosure. The selector is shown only where the four styles
+     actually produce different rows, decided from the composed geometry of a
+     real row rather than from a letter count. */
+  function syncPracticeControl() {
+    const field = $("#pt-practice-style");
+    if (field) field.hidden = !practiceControlMeaningful();
+  }
+
+  // Does THIS page's current name produce four different rows? Measured on a
+  // real row, so it answers for the paper and the face in use.
+  function practiceControlMeaningful() {
+    const probe = $(".pt-name-row", el.namePreview) || $(".pt-name-row", el.printRoot);
+    if (!probe || !probe.__ptPractice) return false;
+    const d = probe.__ptPractice;
+    const g = wordOutlineGeom(d.word, d.opts);
+    const vw = practiceRowVW(probe, g.h);
+    if (!vw) return false;
+    /* Asked of the SHEET, not of the preview card. The two are real rows built
+       by the same code, but they are not the same width -- a preview card is
+       810px on a laptop and 330px on a phone while the paper is 720px either
+       way -- and the question here is whether the setting changes the
+       WORKSHEET. Deciding it from the card would hide the control on a phone
+       for a name whose sheet does change, and show it on a laptop for one
+       whose sheet does not. The row's height is the same band in both, so the
+       print width is all that has to be carried across. */
+    const r = probe.getBoundingClientRect();
+    const full = paperFull();
+    const marginIn = parseFloat(MARGINS[printPrefs.margin] || MARGINS.normal) || 0.5;
+    const printW = Math.max(1, (full.w - 2 * marginIn) * 96);
+    const sheetVW = r.width > 0 ? vw * (printW / r.width) : vw;
+    return practiceStylesDiffer(Math.max(sheetVW, g.w), g.model, g.fontSize);
   }
 
   // preserves the original behaviour for pages without a designer.
@@ -1284,30 +1585,58 @@
       svg.removeAttribute("aria-label");
       return svg;
     }
-    const text = document.createElementNS(SVGNS, "text");
-    text.setAttribute("x", String(w / 2));
-    text.setAttribute("y", String(g.anchorY));
-    text.setAttribute("text-anchor", "middle");
-    text.setAttribute("dominant-baseline", "central");
-    text.setAttribute("font-family", g.font);
-    text.setAttribute("font-weight", String(FONT_WEIGHT));
-    text.setAttribute("font-size", String(fontSize));
-    text.setAttribute("fill", g.fill);
-    text.setAttribute("stroke", g.stroke);
-    text.setAttribute("stroke-width", String(g.strokeWidth));
-    text.setAttribute("stroke-linejoin", "round");
-    text.setAttribute("paint-order", "stroke");
-    // Nudge the anchor left by half a letter-gap so the trailing space SVG adds
-    // after the final glyph doesn't push the centered word off-center.
-    if (spacing) {
-      text.setAttribute("letter-spacing", String(spacing));
-      text.setAttribute("dx", String(-spacing / 2));
-    }
-    const wskew = skewTransform(o.skew, 112);
-    if (wskew) text.setAttribute("transform", wskew);
-    text.textContent = word;
-    svg.appendChild(text);
-    if (o.overlay) addWordStrokeOverlay(svg, word, fontSize, spacing, 112, "central", w);
+    /* One model, centred, is the composition every surface but a ruled
+       practice row uses, and it is left exactly as it was. A ruled row asks
+       for a composition instead and gets one <text> per model, all sharing
+       this baseline, this font size and this stroke -- the second model in
+       "trace, write, check" is a reference point, so it has to be the same
+       drawing as the first, not a smaller echo of it. */
+    const xs = o.practice
+      ? practiceCompose(o.practice, w, g.model, fontSize)
+      : null;
+    const model = (x) => {
+      const text = document.createElementNS(SVGNS, "text");
+      if (x == null) {
+        text.setAttribute("x", String(w / 2));
+        text.setAttribute("text-anchor", "middle");
+      } else {
+        // Place the INK at x: a tail or an italic overhang puts ink left of
+        // the advance origin, and g.inkLeft is how far.
+        text.setAttribute("x", String(x - g.inkLeft));
+        text.setAttribute("text-anchor", "start");
+      }
+      text.setAttribute("y", String(g.anchorY));
+      text.setAttribute("dominant-baseline", "central");
+      text.setAttribute("font-family", g.font);
+      text.setAttribute("font-weight", String(FONT_WEIGHT));
+      text.setAttribute("font-size", String(fontSize));
+      text.setAttribute("fill", g.fill);
+      text.setAttribute("stroke", g.stroke);
+      text.setAttribute("stroke-width", String(g.strokeWidth));
+      text.setAttribute("stroke-linejoin", "round");
+      text.setAttribute("paint-order", "stroke");
+      if (spacing) {
+        text.setAttribute("letter-spacing", String(spacing));
+        // Nudge the anchor left by half a letter-gap so the trailing space SVG
+        // adds after the final glyph doesn't push the centered word off-center.
+        // A start-anchored model has that space on its right, where it is the
+        // gap rather than an offset, so it takes no nudge.
+        if (x == null) text.setAttribute("dx", String(-spacing / 2));
+      }
+      const wskew = skewTransform(o.skew, 112);
+      if (wskew) text.setAttribute("transform", wskew);
+      text.textContent = word;
+      svg.appendChild(text);
+      /* wordCellCentres puts the advance box's left edge at
+         totalW / 2 - advance / 2, so a box of 2x + model centres it on this
+         model. Derived rather than guessed so the stroke arrows land on the
+         letters of EVERY copy, not just the first. */
+      if (o.overlay) {
+        addWordStrokeOverlay(svg, word, fontSize, spacing, 112, "central",
+          x == null ? w : 2 * (x - g.inkLeft) + g.model);
+      }
+    };
+    if (xs) xs.forEach(model); else model(null);
     return svg;
   }
 
@@ -2189,8 +2518,21 @@
      fitted to the paper; one sized by its own content (a puzzle grid, a tiled
      alphabet, a design sheet) cannot, and is left exactly as it was. See
      `.pt-sheet-page.is-fitted` in style.css for the measurements. */
+  /* A `.pt-name-sheet` qualifies for the same reason a `.pt-gen-sheet` does,
+     and until now it did not carry the class: its rows are ruled practice
+     rows that can share whatever height the page has, so the sheet is fitted
+     to the paper instead of being drawn at its content's height and
+     rasterised down. That is the other half of RF-015 -- the row stops being
+     sized by the word here, and stops being sized by its own SVG there. */
   function markFittedPage(page, node) {
-    if (node && node.classList && node.classList.contains("pt-gen-sheet")) {
+    const cl = node && node.classList;
+    if (!cl) return page;
+    /* A name sheet qualifies only where its rows are RULED. An unruled name
+       row is capped at 120px and is not a shrinkable band, and the 27 pages
+       that build one were measured as unaffected by RF-015 -- fitting their
+       page would be a 2% size change to sheets that are already correct, for
+       no reason. Scoped rather than applied to every `.pt-name-sheet`. */
+    if (cl.contains("pt-gen-sheet") || (cl.contains("pt-name-sheet") && RULED_ROWS)) {
       page.classList.add("is-fitted");
     }
     return page;
@@ -3159,6 +3501,10 @@
          For a sheet built from explicit page units (the tiled alphabet) the
          tallest unit is the page height; for ordinary flow content it is the
          whole wrap, which yields exactly one canvas. */
+      // The rows take their box from the page, so they are composed HERE --
+      // the surface is display:none outside this state and every rectangle
+      // reads zero, which is the same reason contentH is measured here.
+      layoutPracticeRows(wrap);
       const units = wrap.querySelectorAll(PT_PAGE_UNITS);
       let contentH = 0;
       if (units.length) units.forEach((u) => { contentH = Math.max(contentH, Math.ceil(u.getBoundingClientRect().height)); });
@@ -3220,6 +3566,7 @@
     let pages = null;
     let links = [];
     try {
+      layoutPracticeRows(wrap);
       pages = await P.renderPages(wrap, { widthPx: widthPx, pageHeightPx: pageHPx, scale: renderScale() });
       // Measure the credit blocks HERE, inside the rendering state: the print
       // surface is display:none the moment pt-pdf-rendering comes off, and
@@ -3302,7 +3649,21 @@
     pdfHints.forEach((p) => { p.hidden = false; });
   }
 
+  /* The dialog path lays out under @media print, which is a different box
+     from the screen. beforeprint fires with those rules applied, so the rows
+     are composed against the paper rather than against the last thing the
+     screen happened to be. */
+  let practiceBeforePrintBound = false;
+  function bindPracticeBeforePrint() {
+    if (practiceBeforePrintBound || !RULED_ROWS) return;
+    practiceBeforePrintBound = true;
+    window.addEventListener("beforeprint", () => {
+      if (el.printRoot) layoutPracticeRows(el.printRoot);
+    });
+  }
+
   function printWrap(titleText, bodyNode, sheet) {
+    bindPracticeBeforePrint();
     /* The PNG button works by re-clicking the section's own PDF button, and
        that button carries [data-pt-pdf], whose capture-phase handler sets
        pdfMode on the way through. So both flags are set on a PNG click and
@@ -3363,6 +3724,7 @@
     applySheetMetrics(el.printRoot);
     attachCredit(wrap);
     el.printRoot.appendChild(wrap);
+    layoutPracticeRows(wrap);
 
     /* Download PNG for the sheets that have no canvas builder of their own
        (the A-Z alphabet sheet and the practice sheet). Every other section
@@ -4719,6 +5081,21 @@
       p.className = "pt-glyph-figure pt-name-glyph";
       p.textContent = renderGlyph(name);
       el.namePreview.appendChild(p);
+    } else if (RULED_ROWS) {
+      /* A ruled page previews ONE REAL ROW, built by nameRow() and composed
+         by layoutPracticeRows() -- the same two functions the sheet, the PNG
+         and the PDF go through. It was a bare word SVG capped at 120px, which
+         is why a practice style could not be previewed at all, and why
+         RF-015 was invisible on screen for as long as it was: the card
+         measured 154px tall for "A" and for "Christopher" alike while the
+         printed sheet did not. A preview that cannot be wrong about this is
+         worth more than a preview that is prettier. */
+      const sheet = document.createElement("div");
+      sheet.className = "pt-name-sheet is-preview";
+      sheet.appendChild(nameRow(name, "trace"));
+      el.namePreview.appendChild(sheet);
+      layoutPracticeRows(sheet);
+      syncPracticeControl();
     } else if (NAME_STYLES) {
       const o = nameRenderOpts("preview");
       o.overlay = strokeOverlayOn();
@@ -4985,11 +5362,24 @@
      drift. RULED_ROWS is separate on purpose -- hollow letters and handwriting
      guidelines answer different jobs, and graffiti name art wants the first
      without the second. */
+  /* A ruled row is composed, not just drawn: it records what it is made of so
+     layoutPracticeRow() can rebuild it once the page has given it a box, and
+     again when the practice style changes. An unruled row keeps exactly the
+     markup it has always had -- the 27 pages that do not rule their rows are
+     not part of this. */
+  function stashPracticeRow(row, word, opts) {
+    if (RULED_ROWS) row.__ptPractice = { word: word, opts: opts };
+    return row;
+  }
   function nameRow(name, kind) {
     const row = document.createElement("div");
     row.className = "pt-name-row pt-name-" + kind + (RULED_ROWS ? " has-guides" : "");
     if (kind === "blank") {
-      if (RULED_ROWS) row.appendChild(wordOutlineSVG(name, { blank: true, guides: true }));
+      if (RULED_ROWS) {
+        const o = { blank: true, guides: true };
+        row.appendChild(wordOutlineSVG(name, o));
+        stashPracticeRow(row, name, o);
+      }
       return row;
     }
     if (RENDER === "glyph" && !TRACEABLE) {
@@ -5001,11 +5391,16 @@
       const o = nameRenderOpts(kind);
       o.overlay = strokeOverlayOn();
       o.guides = RULED_ROWS;
+      if (RULED_ROWS) o.practice = practiceStyle;
       row.appendChild(wordOutlineSVG(name, o));
+      stashPracticeRow(row, name, o);
     } else {
-      row.appendChild(wordOutlineSVG(name, {
+      const o = {
         solid: kind === "model", guides: RULED_ROWS, overlay: strokeOverlayOn()
-      }));
+      };
+      if (RULED_ROWS) o.practice = practiceStyle;
+      row.appendChild(wordOutlineSVG(name, o));
+      stashPracticeRow(row, name, o);
     }
     if (leftHanded && kind === "trace" && !(RENDER === "glyph" && !TRACEABLE)) {
       row.appendChild(leftyModel(wordOutlineSVG(name, { solid: true })));
@@ -9296,6 +9691,7 @@
        created here is written back onto it rather than re-queried everywhere. */
     mountNameCase();
     mountLeftHanded();
+    mountPracticeControl();
     mountSpacing();
     if (CFG.stencil === true) loadStencilModule();
     mountStencilToggle();
@@ -9354,6 +9750,21 @@
         timer = setTimeout(renderNamePreview, 120);
       });
       renderNamePreview();
+      /* The row composes itself from the box it is given, so a narrower
+         window is a different row -- on a phone a name that repeats four
+         times on a laptop repeats twice. Re-composed rather than left as the
+         desktop answer scaled down, and debounced because the preview is one
+         row and this is not worth a frame budget. */
+      if (RULED_ROWS && el.namePreview) {
+        let rTimer = null;
+        window.addEventListener("resize", () => {
+          if (rTimer) clearTimeout(rTimer);
+          rTimer = setTimeout(() => {
+            layoutPracticeRows(el.namePreview);
+            syncPracticeControl();
+          }, 160);
+        });
+      }
     }
     if (el.namePrint) el.namePrint.addEventListener("click", buildNameWorksheet);
     const namePngOpts = (transparent) => {
@@ -9456,6 +9867,24 @@
      tag and the share row and the saved-sheets strip stop rendering, with no
      error and no failing check. Keying on "complete" makes the wiring
      independent of tag order (2026-09-13). */
+  /* The row composer, published so the geometry can be exercised without a
+     worksheet. It lives in this file rather than in a module of its own for
+     one reason: a module needs a <script> tag, and that would be a hand edit
+     to 20 pages in 7 languages -- the localization cost this whole feature is
+     built to avoid. One implementation, one place, and the tests drive the
+     real one rather than a copy that can drift from it. */
+  window.UltraTextGen = window.UltraTextGen || {};
+  window.UltraTextGen.practiceRow = {
+    STYLES: PRACTICE_STYLES.slice(),
+    DEFAULT: PRACTICE_DEFAULT,
+    compose: practiceCompose,
+    differ: practiceStylesDiffer,
+    margin: practiceMargin,
+    gap: practiceGap,
+    get style() { return practiceStyle; },
+    set style(v) { if (PRACTICE_STYLES.indexOf(v) >= 0) practiceStyle = v; }
+  };
+
   if (document.readyState === "complete") {
     init();
   } else {
