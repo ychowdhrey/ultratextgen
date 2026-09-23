@@ -2340,13 +2340,18 @@
     if (!presetQuery) return;
     const name = presetGet("name") || presetGet("text") || presetGet("q");
     const input = primaryInput();
-    if (name && input) input.value = String(name).slice(0, input.maxLength > 0 ? input.maxLength : 60);
+    if (name && input) {
+      const before = input.value;
+      input.value = String(name).slice(0, input.maxLength > 0 ? input.maxLength : 60);
+      // A <select> (CFG.fixedWords) given an unlisted word selects nothing; keep the word it had.
+      if (!input.value && input.tagName === "SELECT") input.value = before;
+    }
     const roster = presetGet("roster");
     const rosterEl = primaryRoster();
     if (roster && rosterEl) {
       // ROSTER_CAP, not 40: a 41-name class lost its tail on the round trip
       // and nothing said so.
-      rosterEl.value = String(roster).split("|").map((x) => x.trim()).filter(Boolean).slice(0, ROSTER_CAP).join("\n");
+      rosterEl.value = String(roster).split("|").map((x) => x.trim()).filter(Boolean).filter(allowedWord).slice(0, ROSTER_CAP).join("\n");
       const field = rosterEl.closest("details"); if (field) field.open = true;
     }
     const rows = presetGet("rows"); const rowsEl = firstEl([el.nameRows, el.genRows]);
@@ -2371,7 +2376,7 @@
     const paper = presetGet("paper");
     if (paper && PAPERS[paper] && !(PP && PP.hasStored && PP.hasStored())) printPrefs.paper = paper;
     const orient = presetGet("orient"); if (orient === "landscape" || orient === "portrait") printPrefs.orient = orient;
-    if (!roster && rosterEl && !rosterEl.value.trim()) {
+    if (!roster && rosterEl && !rosterEl.value.trim() && !fixedWordSet()) {
       // Roster memory: a teacher's class list stays on the device between
       // visits (this device only, never sent anywhere).
       const remembered = readRoster(); if (remembered) rosterEl.value = remembered;
@@ -2773,7 +2778,7 @@
       });
     });
     const roster = primaryRoster();
-    if (roster) {
+    if (roster && !fixedWordSet()) {
       let t2 = null;
       roster.addEventListener("input", () => { clearTimeout(t2); t2 = setTimeout(() => writeRoster(roster.value), 800); });
     }
@@ -4451,11 +4456,18 @@
      carries a word that only exists once someone types it, so there is no
      crawlable link to lose. */
   const CARRY_TOOLS = [
-    "/printables/name-tracing/", "/printables/letter-tracing/",
-    "/printables/handwriting-worksheet-generator/", "/printables/sight-word-tracing/",
+    "/printables/name-tracing/", "/printables/cursive-name/",
+    "/printables/handwriting-worksheet-generator/",
     "/printables/coloring-page-maker/", "/printables/dot-to-dot-name/",
-    "/printables/name-puzzle-maker/", "/printables/banner-maker/"
+    "/printables/name-puzzle-maker/", "/printables/banner-maker/",
+    "/printables/bubble-name/", "/printables/graffiti-name/", "/printables/calligraphy-name/"
   ];
+  /* letter-tracing and sight-word-tracing left this list on 2026-09-22: one
+     practises letters only (CFG.genLetters) and the other prints only its own
+     Dolch and Fry words (CFG.fixedWords), so a name carried to either would
+     arrive as something that page does not make. The four name pages joined
+     it, which needs their links in the footer's Generators column, where the
+     labels are read from. */
   /* PR-12 -- "how many sheets will this cost me?" was unanswerable before
      pressing the button, on a family whose own community evidence is
      "we can only afford printer ink a couple times a year". Every number here
@@ -5789,7 +5801,19 @@
   function genValue() {
     const raw = el.genInput ? el.genInput.value : "";
     const v = (raw && raw.trim()) ? raw.trim().slice(0, 42) : GEN_DEMO;
-    return applyCase(v);
+    return applyCase(CFG.genLetters === true ? lettersOnly(v) : v);
+  }
+  /* CFG.genLetters -- the builder on /printables/letter-tracing/ practises
+     LETTERS (owner decision 2026-09-22): names belong to name-tracing and
+     words to the handwriting generator. So what is typed is reduced to its
+     letters and set apart one by one -- "bdp" and "b, d, p" both print as
+     b d p, and a name typed here prints as the letters it is made of rather
+     than as a word to write. \p{L} keeps accented letters for any locale page
+     that opts in; nothing else is kept. */
+  function lettersOnly(v) {
+    let letters;
+    try { letters = String(v).match(/\p{L}/gu); } catch (err) { letters = String(v).match(/[A-Za-z]/g); }
+    return letters && letters.length ? letters.join(" ").slice(0, 42) : GEN_DEMO;
   }
 
   // Difficulty is one internal source of truth (1..7). The level buttons
@@ -5860,10 +5884,43 @@
           if (lv >= 1 && lv <= top) return { name: m[1], level: lv };
         }
         return { name: line, level: null };
-      });
+      })
+      .filter((e) => allowedWord(e.name));
   }
   function rosterNames(mount) {
     return rosterEntries(mount).map((e) => e.name);
+  }
+
+  /* CFG.fixedWords -- a curated-word page (sight-word-tracing; owner decision
+     2026-09-22: a quick-print page offers a bounded set that belongs to its
+     own job, never free text). The allowed set is read from the page's own
+     markup -- the options of the #pt-gen-input picker plus every word a
+     .pt-roster-preset list button carries -- so the list has one owner, the
+     HTML a crawler also reads, and nothing here has to be kept in step.
+
+     Three doors let arbitrary text in besides typing, and each is closed:
+     a ?name= preset (the picker is a <select>, so an unlisted value simply
+     selects nothing and the demo word stands), a ?roster= preset, and the
+     remembered class roster, which is shared across the whole pillar and
+     would otherwise print a teacher's thirty names as "sight words". */
+  let FIXED_WORDS = null;
+  function fixedWordSet() {
+    if (CFG.fixedWords !== true) return null;
+    if (FIXED_WORDS) return FIXED_WORDS;
+    const set = new Set();
+    const pick = document.getElementById("pt-gen-input");
+    if (pick && pick.options) {
+      Array.prototype.forEach.call(pick.options, (o) => { if (o.value) set.add(o.value.toLowerCase()); });
+    }
+    $$(".pt-roster-preset").forEach((b) => {
+      String(b.dataset.words || "").split("|").forEach((w) => { if (w.trim()) set.add(w.trim().toLowerCase()); });
+    });
+    FIXED_WORDS = set;
+    return set;
+  }
+  function allowedWord(w) {
+    const set = fixedWordSet();
+    return !set || set.has(String(w).trim().toLowerCase());
   }
 
   /* Mount a class roster on a page that wants one but does not author the
