@@ -10607,11 +10607,23 @@ body.is-printing.pt-ink-saver #pt-print-root .pt-cw-grid { opacity: 0.72; }
   .pt-name-row,
   .pt-puzzle-sheet,
   .pt-search-grid,
-  .pt-search-words,
   .pt-cw-grid,
   .pt-cw-clue-list li,
   .pt-sc-item,
   .cursive-print-row {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  /* A word list breaks BETWEEN words, never as a block.
+
+     `.pt-search-words` was in the list above, so a clue list that did not fit
+     under its grid moved to the next sheet whole. Measured from the print
+     dialog on /printables/word-search-maker/ with 40 words: page 1 ended at
+     "Find all 38 words:" with four blank inches under it, and page 2 carried
+     the list, the Name/Date row and nothing else. A child gets the grid on one
+     sheet and the words on another, which is not a word search. Each item
+     still holds together. */
+  .pt-search-words li {
     page-break-inside: avoid;
     break-inside: avoid;
   }

@@ -121,6 +121,33 @@
 
   /* ---------------- DOM -> image ---------------- */
 
+  /* The properties copied onto the clone.
+
+     THIS LIST IS LOAD-BEARING AND IT HAS FAILED ONCE, silently and in the
+     primary export path. `inlineStyles()` pins `width` and `height` from the
+     ORIGINAL layout onto every node; a property that produced that layout and
+     is missing here is dropped, so the clone keeps the box and loses the rule
+     that filled it. The children then flow differently inside a box that still
+     reports the old size, spill out of it, and paint over whatever follows.
+
+     Measured on /printables/word-search-maker/ at its DEFAULT settings:
+     `.pt-search-words` is `columns: 3 8rem`, neither `column-count` nor
+     `column-width` was carried, and the clue list rendered as ONE column
+     running 476px past its own box — over the Name/Date row, over the credit
+     QR, and off the bottom of the page. Ten words in, three of them were
+     missing from the file. The crossword's word bank reuses the same list
+     class and overlapped the ACROSS/DOWN clues the same way.
+
+     Nothing in the DOM shows this: the page, the preview and every geometry
+     assertion over the print surface are correct: the defect is created by the
+     clone. `npm run check:print-export-properties` compares this list against
+     the properties the print-surface CSS actually declares, so the next
+     property added there cannot be dropped in silence.
+
+     A SHORTHAND EARNS ITS PLACE: getComputedStyle returns a settable value for
+     `overflow` ("auto hidden"), `border-radius` ("4px 8px") and `columns`
+     ("128px 3"), so one entry carries its longhands. Longhands are listed only
+     where the shorthand does not round-trip. */
   const PROPS = [
     "display", "position", "top", "left", "right", "bottom", "width", "height", "min-width", "min-height", "max-width", "max-height",
     "box-sizing", "margin-top", "margin-right", "margin-bottom", "margin-left", "padding-top", "padding-right", "padding-bottom", "padding-left",
@@ -131,8 +158,20 @@
     "text-align", "text-transform", "text-decoration", "text-indent", "white-space", "vertical-align", "direction", "opacity", "overflow",
     "flex-direction", "flex-wrap", "flex-grow", "flex-shrink", "flex-basis", "justify-content", "align-items", "align-content", "align-self",
     "gap", "row-gap", "column-gap", "grid-template-columns", "grid-template-rows", "grid-column", "grid-row", "grid-auto-flow", "grid-auto-rows", "order",
-    "transform", "transform-origin", "visibility", "fill", "fill-opacity", "stroke", "stroke-width", "stroke-dasharray", "stroke-linecap", "stroke-linejoin",
-    "stroke-opacity", "paint-order", "text-anchor", "dominant-baseline", "list-style-type", "writing-mode", "float", "clear", "border-collapse", "border-spacing"
+    "transform", "transform-origin", "visibility", "z-index", "fill", "fill-opacity", "stroke", "stroke-width", "stroke-dasharray", "stroke-linecap", "stroke-linejoin",
+    "stroke-opacity", "paint-order", "text-anchor", "dominant-baseline", "list-style-type", "writing-mode", "float", "clear", "border-collapse", "border-spacing",
+    // Multi-column: the incident above. "columns" carries count and width; the
+    // rest of the family is listed because a rule may set them on their own.
+    "columns", "column-fill", "column-span", "column-rule-width", "column-rule-style", "column-rule-color",
+    // Line breaking. These decide where a long word wraps, so dropping one
+    // changes a box's height while the pinned height stays behind.
+    "word-break", "overflow-wrap", "hyphens", "tab-size", "text-overflow",
+    // Box shape and list marker placement.
+    "aspect-ratio", "list-style-position", "object-fit", "object-position",
+    // Painting a letterform: a dropped fill-rule fills a counter solid, and a
+    // dropped clip-path or text-stroke changes what the glyph looks like.
+    "fill-rule", "clip-rule", "clip-path", "stroke-dashoffset", "stroke-miterlimit",
+    "vector-effect", "text-shadow", "-webkit-text-stroke-width", "-webkit-text-stroke-color"
   ];
 
   function inlineStyles(src, dst, meta) {

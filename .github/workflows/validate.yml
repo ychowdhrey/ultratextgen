@@ -311,6 +311,20 @@ jobs:
         continue-on-error: true
         run: npm run check:printables-surface-wiring | tee printables-surface-wiring.log
 
+      # The PDF/PNG export clones the print surface and inlines an ALLOW-LIST of
+      # computed properties onto the clone, with width and height pinned from
+      # the original layout. A property the sheet's CSS uses and the list does
+      # not carry is dropped while its box stays behind, so the file differs
+      # from the DOM it was made from and nothing in the DOM can show it: the
+      # word search's `columns: 3 8rem` clue list exported as one column, ran
+      # across the Name/Date row and the credit QR, and lost three of its ten
+      # words. Whole-file and gating; exits 2 if it cannot read the allow-list
+      # or its selector markers match nothing.
+      - name: Run print export property check
+        id: print_export_properties
+        continue-on-error: true
+        run: npm run check:print-export-properties | tee print-export-properties.log
+
       # glyphMetrics.js must load BEFORE printablesEngine.js: the engine reads
       # it for tile centring, word-box sizing, ruled-line registration and the
       # skeleton fit, so a tag in the wrong position is present, diffs clean and
@@ -418,6 +432,18 @@ jobs:
         id: word_puzzles_tests
         continue-on-error: true
         run: npm run test:word-puzzles | tee word-puzzles-tests.log
+
+      # The geometry a printed sheet must satisfy — no two page regions sharing
+      # space, no child escaping a box that does not clip it, nothing past the
+      # paper's width — asserted against MEASURED recordings of the word-search
+      # export before and after the 2026-09-22 repair. The `before` recording is
+      # the case a DOM check cannot see: the live print surface is clean and the
+      # clone the exporter paints is not. Pure geometry, no browser and no font,
+      # so it is stable enough to gate on.
+      - name: Run printable render invariant tests
+        id: render_invariants_tests
+        continue-on-error: true
+        run: npm run test:render-invariants | tee render-invariants-tests.log
 
       # Diff-scoped and gating. Fails a PR that corrects a number on one page of
       # an hreflang cluster and leaves a sibling asserting the old value — the
@@ -868,6 +894,7 @@ jobs:
             echo ""
             echo "### Funding Choices tag check — \`${{ steps.funding_choices.outcome }}\`"
             echo "### Printables surface wiring check — \`${{ steps.printables_surface_wiring.outcome }}\`"
+            echo "### Print export property check — \`${{ steps.print_export_properties.outcome }}\`"
             echo "### Share/Save module tag check — \`${{ steps.share_save_tags.outcome }}\`"
             echo "### glyphMetrics tag check — \`${{ steps.glyph_metrics_tag.outcome }}\`"
             echo "### symbol-explorer string sync check — \`${{ steps.explorer_strings.outcome }}\`"
@@ -875,7 +902,7 @@ jobs:
             echo "### share-core analytics tests — \`${{ steps.share_core_tests.outcome }}\`"
             echo "### IndexNow submission-policy tests — \`${{ steps.indexnow_tests.outcome }}\`"
             echo '```'
-            cat printables-surface-wiring.log share-save-tags.log explorer-strings.log saved-items-tests.log indexnow-tests.log share-core-tests.log
+            cat printables-surface-wiring.log print-export-properties.log render-invariants-tests.log share-save-tags.log explorer-strings.log saved-items-tests.log indexnow-tests.log share-core-tests.log
             echo '```'
             echo ""
             echo "### Funding Choices tag check — \`${{ steps.funding_choices.outcome }}\`"
@@ -982,6 +1009,7 @@ jobs:
             echo "### Stencil bridge tests — \`${{ steps.stencil_tests.outcome }}\`"
             echo "### Word search grid tests — \`${{ steps.word_search_tests.outcome }}\`"
             echo "### Crossword + word scramble tests — \`${{ steps.word_puzzles_tests.outcome }}\`"
+            echo "### Printable render invariant tests — \`${{ steps.render_invariants_tests.outcome }}\`"
             echo '```'
             cat qr-tests.log
             echo '```'
@@ -1160,6 +1188,8 @@ jobs:
           steps.library.outcome == 'failure' ||
           steps.funding_choices.outcome == 'failure' ||
           steps.printables_surface_wiring.outcome == 'failure' ||
+          steps.print_export_properties.outcome == 'failure' ||
+          steps.render_invariants_tests.outcome == 'failure' ||
           steps.share_save_tags.outcome == 'failure' ||
           steps.glyph_metrics_tag.outcome == 'failure' ||
           steps.explorer_strings.outcome == 'failure' ||
