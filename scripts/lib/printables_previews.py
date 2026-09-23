@@ -268,6 +268,18 @@ EN_ALT = {
     "monogram-maker": {
         "landing": "Monogram sample: the initials J, S and L in an elegant serif, small, large, small",
     },
+    "cursive-name": {
+        "landing": "Cursive name tracing worksheet sample for {demo}: a joined cursive model above outlined rows to trace, then blank ruled lines",
+    },
+    "calligraphy-name": {
+        "landing": "Calligraphy name sheet sample for {demo}: a blackletter model above outlined rows to trace, then blank lines",
+    },
+    "bubble-name": {
+        "landing": "Bubble name sample for {demo}: a solid bubble-letter model above hollow bubble outlines to trace and color",
+    },
+    "graffiti-name": {
+        "landing": "Graffiti name sample: {demo} as a graffiti tag above hollow outlines to trace and colour",
+    },
     "_cursive_phrase": {
         "landing": "{demo} in cursive: a script model above outlined copies to trace on ruled lines",
     },
@@ -296,7 +308,8 @@ def family_of(page):
     engine setup."""
     key = page["key"]
     if key in CURSIVE_PHRASE_KEYS or (page["render"] == "glyph" and page["demo"]
-                                       and key not in ("cursive-alphabet", "calligraphy-alphabet")):
+                                       and key not in ("cursive-alphabet", "calligraphy-alphabet",
+                                                       "cursive-name", "calligraphy-name")):
         return "_cursive_phrase"
     if key == "grafiti-nama":
         return "graffiti-letters"

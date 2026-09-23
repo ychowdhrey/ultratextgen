@@ -151,7 +151,9 @@ Only two sections carry sub-headings, and both taxonomies already exist:
   pages carry one, and `data/library_hub_i18n.json` ships the localized label
   for 19 locales, so a German index reads `## Symbols (Symbole)`.
 * **`printables`** groups by `data-pt-job` on `printables/index.html`'s own
-  cards — the attribute the hub filters by. 25 of 25 families carry one. Only
+  cards, the attribute that places each card in one of the hub's six job
+  sections (since 2026-09-22; before that it drove a facet filter). 31 of 31
+  families carry one. Only
   the human-readable English label for each job value is added here, because
   the attribute ships no visible label anywhere on the site.
 

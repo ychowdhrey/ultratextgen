@@ -1211,6 +1211,10 @@
         '<a href="/printables/handwriting-worksheet-generator/" class="footer-link">Handwriting Worksheets</a>' +
         '<a href="/printables/coloring-page-maker/" class="footer-link">Coloring Page Maker</a>' +
         '<a href="/printables/name-tracing/" class="footer-link">Name Tracing</a>' +
+        '<a href="/printables/cursive-name/" class="footer-link">Cursive Name</a>' +
+        '<a href="/printables/bubble-name/" class="footer-link">Bubble Name</a>' +
+        '<a href="/printables/graffiti-name/" class="footer-link">Graffiti Name</a>' +
+        '<a href="/printables/calligraphy-name/" class="footer-link">Calligraphy Name</a>' +
         '<a href="/printables/sight-word-tracing/" class="footer-link">Sight Word Tracing</a>' +
         '<a href="/printables/name-puzzle-maker/" class="footer-link">Name Puzzle Maker</a>' +
         '<a href="/printables/dot-to-dot-name/" class="footer-link">Dot-to-Dot Name</a>' +
