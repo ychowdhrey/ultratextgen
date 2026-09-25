@@ -364,6 +364,32 @@
       ],
       "kicker": "LIB",
       "added": "2026-09-25"
+    },
+    "tr-library-telegram-sembolleri": {
+      "title": "Telegram Sembolleri",
+      "sub": "İsim çerçeveleri, trend harfler ve ayraçlar",
+      "glyphs": [
+        "➢",
+        "➣",
+        "➤",
+        "⌲",
+        "⌯"
+      ],
+      "kicker": "LIB",
+      "added": "2026-09-25"
+    },
+    "ru-library-simvoly-telegram": {
+      "title": "Символы для Телеграма",
+      "sub": "Рамки для имени, буквы из тренда и разделители",
+      "glyphs": [
+        "➢",
+        "➣",
+        "➤",
+        "⌲",
+        "⌯"
+      ],
+      "kicker": "LIB",
+      "added": "2026-09-25"
     }
   }
 }
