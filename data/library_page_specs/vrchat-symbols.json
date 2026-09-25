@@ -101,11 +101,11 @@
     },
     {
       "q": "Which symbols work in a VRChat display name?",
-      "a": "VRChat publishes no official list of allowed characters, and a request for one has been open on its own community forum since 2024 without a staff answer. Community reports are that most Unicode works but not all of it does. Widely-supported glyphs — stars, hearts, corner brackets, katakana, middle dots — are the safest choices; obscure or very new characters are the ones most likely to fail or show as an empty box."
+      "a": "VRChat publishes no official list of allowed characters. A request for one on VRChat's own Ask forum, opened in July 2024, still had no staff answer on September 25, 2026. Community reports are that most Unicode works but not all of it does. Widely-supported glyphs (stars, hearts, corner brackets, katakana, middle dots) are the safest choices; obscure or very new characters are the ones most likely to fail or show as an empty box."
     },
     {
       "q": "Is the VRChat display name the same as the username?",
-      "a": "No. The username is the login credential and is not what other players see. The display name is the visible one, and it is the field these symbols go in. Changing the display name does not change the username."
+      "a": "No. The username is the login credential and is not what other players see. The display name is the visible one, and it is the field these symbols go in. Changing the display name does not change the username. A display name must also be unique: if another account already uses it as a display name or a username, VRChat will not let you take it."
     },
     {
       "q": "Why does my VRChat name show as boxes to other people?",
@@ -116,6 +116,7 @@
       "a": "Spaces are generally accepted in display names, but each one costs a character from the 15 available. Where a name needs visual separation on a tight budget, a thin divider such as the katakana middle dot ・ does the same job in one character and reads more cleanly at distance."
     }
   ],
+  "sources": "The 4-to-15-character limit, the rule that a display name must be unique, and the 90-day cooldown (30 days with VRC+) that support cannot bypass come from VRChat's help article <a href=\"https://help.vrchat.com/hc/en-us/articles/1500002248601-I-d-like-to-change-my-name\" rel=\"nofollow noopener\" target=\"_blank\">I'd like to change my name</a>. The unanswered request for a list of allowed characters, and the report that \"not all unicodes\" work, are in the Ask forum thread <a href=\"https://ask.vrchat.com/t/looking-for-a-competitive-list-of-symbols-and-fonts-for-nicknames/25799\" rel=\"nofollow noopener\" target=\"_blank\">Looking for a competitive list of symbols and fonts for nicknames</a>, opened on July 26, 2024.",
   "related": [
     {
       "href": "/library/gaming-aesthetic-symbols/",
