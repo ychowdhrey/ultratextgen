@@ -275,6 +275,27 @@ t('every data-symbol payload on the site resolves to a real Unicode block', () =
   }
 });
 
+// ── printable_nav: a sibling card is not a hub card ───────────────────────
+//
+// The foot of a printables family page reuses the hub's .printable-card inside
+// a .pt-siblings section. printableNavKind() is DOM-bound, so the link is a stub
+// that answers matches()/closest() for the selectors it is given.
+
+const NAV_KIND = new Function(
+  `${slice('  function printableNavKind(link) {', '  function initializePrintableNavTracking()')}\nreturn printableNavKind;`
+)();
+const fakeLink = (matching, ancestors) => ({
+  matches: (sel) => sel.split(',').some((s) => matching.includes(s.trim())),
+  closest: (sel) => (ancestors.includes(sel) || sel.split(',').some((s) => matching.includes(s.trim())) ? {} : null),
+});
+
+t('a printable card inside .pt-siblings is "sibling_card"',
+  () => eq(NAV_KIND(fakeLink(['a.printable-card[href]'], ['.pt-siblings'])), 'sibling_card'));
+t('a printable card on the hub is still "hub_card"',
+  () => eq(NAV_KIND(fakeLink(['a.printable-card[href]'], [])), 'hub_card'));
+t('an A-Z strip link inside .pt-siblings stays "az_strip"',
+  () => eq(NAV_KIND(fakeLink(['.pt-az-link'], ['.pt-siblings'])), 'az_strip'));
+
 console.log('header.js — CTA click tracking + copy_text item identity\n');
 LINES.forEach((l) => console.log(l));
 console.log(`\n${PASS} passed, ${FAIL} failed`);
