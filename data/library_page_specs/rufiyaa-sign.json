@@ -2,25 +2,26 @@
   "slug": "rufiyaa-sign",
   "page_type": "symbol",
   "title": "Rufiyaa Sign: Copy & Paste ⃂ — the Maldives' New Currency Symbol, Accepted for Unicode 18.0",
-  "meta_description": "The Maldivian rufiyaa sign (⃂, U+20C2) was accepted by the Unicode Technical Committee in October 2025 and publishes with Unicode 18.0 on September 16, 2026 — no font renders it yet. Here's its design, status, and what to type until then.",
+  "meta_description": "The Maldivian rufiyaa sign (⃂, U+20C2) was accepted by the Unicode Technical Committee in October 2025 and published in Unicode 18.0 on September 16, 2026, but no system font renders it yet. Here's its design, status, and what to type until then.",
   "canonical": "https://ultratextgen.com/symbol/rufiyaa-sign/",
   "breadcrumb": "Rufiyaa Sign",
   "hero_h1": "Rufiyaa Sign",
-  "hero_tagline": "The Maldives' own currency symbol, built from the Thaana letter ރ, accepted by Unicode and waiting on publication, which means no keyboard or font renders it yet.",
-  "intro": "The rufiyaa sign (⃂, U+20C2) is the currency symbol for the Maldivian rufiyaa. Its design, by Hassan Shujau, takes the Thaana letter ރ (raa) (the first letter of ރުފިޔާ, rufiyaa) and adds a horizontal stroke across it, the same visual convention that turns a plain letter into a currency mark in the euro, yen and Indian rupee signs. Unicode's own allocation pipeline records the character as provisionally assigned on 2025-07-22 and formally accepted on 2025-10-29, under UTC decisions 184-C18 and 185-C40, with publication scheduled for Unicode 18.0 on September 16, 2026. That status matters more than it sounds: accepted is not the same as available. Until vendors ship fonts covering the character, ⃂ will render as an empty box on almost every device, so the practical answer today is still MVR, Rf, or the Thaana letter ރ itself. This page carries the real codepoint so you can test it, and tells you honestly what to use while you wait.",
+  "hero_tagline": "The Maldives' own currency symbol, built from the Thaana letter ރ, published in Unicode 18.0 on September 16, 2026, though no keyboard or system font renders it yet.",
+  "intro": "The rufiyaa sign (⃂, U+20C2) is the currency symbol for the Maldivian rufiyaa. Its design, by Hassan Shujau, takes the Thaana letter ރ (raa) (the first letter of ރުފިޔާ, rufiyaa) and adds a horizontal stroke across it, the same visual convention that turns a plain letter into a currency mark in the euro, yen and Indian rupee signs. Unicode's own allocation pipeline records the character as provisionally assigned on 2025-07-22 and formally accepted on 2025-10-29, under UTC decisions 184-C18 and 185-C40, and Unicode 18.0 published it on September 16, 2026. That status matters more than it sounds: published is not the same as available. Until vendors ship fonts covering the character, ⃂ will render as an empty box on almost every device, so the practical answer today is still MVR, Rf, or the Thaana letter ރ itself. This page carries the real codepoint so you can test it, and tells you honestly what to use while you wait.",
   "date_published": "2026-08-02",
-  "date_modified": "2026-08-02",
+  "date_modified": "2026-09-25",
   "copy_pattern": "single",
+  "sources": "Unicode 18.0's publication on September 16, 2026, with this character as U+20C2 RUFIYAA SIGN, is confirmed by the Unicode Consortium's <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">Unicode 18.0 announcement</a>, which notes that vendors can now implement support. The Saudi riyal sign's Windows 11 support is in Microsoft's <a href=\"https://support.microsoft.com/en-us/servicing/os/windows-11/2025/12/december-1-2025-kb5070311-os-builds-26200-7309-and-26100-7309-preview\">KB5070311 release notes</a>, and its arrival on the iPhone keyboard rests on users' own posts from March 24, 2026 on <a href=\"https://x.com/NewslyKSA/status/2036571137807634580\">X</a> and <a href=\"https://www.instagram.com/p/DWSAJelDocG/\">Instagram</a>.",
   "sections": [
     {
       "id": "rufiyaa-sign",
       "label": "Rufiyaa Sign",
       "h2": "Rufiyaa Sign",
-      "intro": "The accepted character itself. If you see an empty box below, your device has no font for it yet: that is the expected result today, not a fault on your end.",
+      "intro": "The published character itself. If you see an empty box below, your device has no font for it yet: that is the expected result today, not a fault on your end.",
       "symbols": [
         {
           "char": "⃂",
-          "label": "Rufiyaa Sign (U+20C2, accepted for Unicode 18.0)"
+          "label": "Rufiyaa Sign (U+20C2, Unicode 18.0)"
         }
       ]
     },
@@ -32,7 +33,7 @@
       "symbols": [
         {
           "char": "ރ",
-          "label": "Thaana letter Raa (U+7B0): the letter the sign is derived from"
+          "label": "Thaana letter Raa (U+0783): the letter the sign is derived from"
         },
         {
           "char": "₨",
@@ -48,7 +49,7 @@
       "id": "other-new-currency-symbols",
       "label": "Other New Currency Symbols",
       "h2": "The Other New Currency Symbols in This Release",
-      "intro": "The rufiyaa is one of three new currency signs arriving in the same Unicode 18.0 block: all three sit in consecutive codepoints, and all three are waiting on the same publication date.",
+      "intro": "The rufiyaa is one of three new currency signs in the same Unicode 18.0 release: all three sit in consecutive codepoints, and all three were published on September 16, 2026.",
       "symbols": [
         {
           "char": "⃃",
@@ -64,7 +65,7 @@
       "id": "already-final",
       "label": "Already Final",
       "h2": "The Neighbouring Sign That Shipped a Version Earlier",
-      "intro": "Saudi Arabia's riyal sign cleared the same path one Unicode version sooner, final since Unicode 17.0, and already reaching devices while these three wait.",
+      "intro": "Saudi Arabia's riyal sign cleared the same path one Unicode version sooner, final since Unicode 17.0, and already on Windows 11 and iPhone keyboards while these three wait for vendor support.",
       "symbols": [
         {
           "char": "⃁",
@@ -76,19 +77,19 @@
   "faq": [
     {
       "q": "What is the rufiyaa sign?",
-      "a": "It is the currency symbol for the Maldivian rufiyaa, encoded at U+20C2. The design, by Hassan Shujau, is the Thaana letter ރ (raa) — the first letter of ރުފިޔާ — with a horizontal stroke added across it, the same convention used by the euro, yen and Indian rupee signs."
+      "a": "It is the currency symbol for the Maldivian rufiyaa, encoded at U+20C2. The design, by Hassan Shujau, is the Thaana letter ރ (raa), the first letter of ރުފިޔާ, with a horizontal stroke added across it, the same convention used by the euro, yen and Indian rupee signs."
     },
     {
       "q": "Why does the rufiyaa sign show as an empty box?",
-      "a": "Because no font covers it yet. The character was accepted by the Unicode Technical Committee on 29 October 2025 but does not publish until Unicode 18.0 on 16 September 2026, and operating systems and font vendors only add coverage after publication. An empty box is the expected result on almost every device today."
+      "a": "Because your device's fonts don't cover it yet. The character was accepted by the Unicode Technical Committee on 29 October 2025 and published in Unicode 18.0 on 16 September 2026, and operating systems and font vendors add coverage only after publication, usually months later. As of September 25, 2026, an empty box is the expected result on almost every device."
     },
     {
       "q": "When can I actually type the rufiyaa sign?",
-      "a": "Not on a fixed date. Publication with Unicode 18.0 is scheduled for 16 September 2026, but that is when the standard defines the character, not when your phone can draw it. Keyboard and font support follows separately, usually over the months and years after publication — the Saudi riyal sign, final a full version earlier, is still rolling out."
+      "a": "Not on a fixed date. Unicode 18.0 published the character on 16 September 2026, but that is when the standard defines it, not when your phone can draw it. As of September 25, 2026, no vendor has announced a date. Keyboard and font support follows separately, usually over the months and years after publication: the Saudi riyal sign, final a full version earlier, reached Windows 11 in December 2025 and the iPhone keyboard in March 2026, and is still rolling out elsewhere."
     },
     {
       "q": "What should I use for Maldivian rufiyaa instead?",
-      "a": "MVR is the ISO 4217 currency code and is unambiguous everywhere. Rf is the common short form. The Thaana letter ރ renders correctly on any device with Thaana support and is the closest visible relative of the new sign. Avoid the rupee sign ₨ if precision matters — it is a different currency's symbol."
+      "a": "MVR is the ISO 4217 currency code and is unambiguous everywhere. Rf is the common short form. The Thaana letter ރ renders correctly on any device with Thaana support and is the closest visible relative of the new sign. Avoid the rupee sign ₨ if precision matters: it is a different currency's symbol."
     },
     {
       "q": "Is the rufiyaa sign the same as the rupee sign?",
@@ -108,12 +109,12 @@
     {
       "href": "/symbol/dirham-sign/",
       "title": "Dirham Sign",
-      "desc": "The UAE's new currency symbol, arriving in the same Unicode 18.0 release."
+      "desc": "The UAE's new currency symbol, published in the same Unicode 18.0 release."
     },
     {
       "href": "/symbol/omani-rial-sign/",
       "title": "Omani Rial Sign",
-      "desc": "Oman's new currency symbol, the third of the trio waiting on publication."
+      "desc": "Oman's new currency symbol, the third of the trio published on September 16, 2026."
     },
     {
       "href": "/symbol/saudi-riyal-sign/",
@@ -122,8 +123,8 @@
     },
     {
       "href": "/updates/unicode-18-beta-review-opens/",
-      "title": "Unicode 18.0 Beta Review Opens",
-      "desc": "The release this symbol publishes as part of."
+      "title": "What's New in Unicode 18.0",
+      "desc": "The release this symbol was published in."
     },
     {
       "href": "/guide/why-fonts-show-as-boxes/",
