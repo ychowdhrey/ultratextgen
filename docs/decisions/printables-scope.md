@@ -74,9 +74,21 @@ wherever it already existed (for example the French and Spanish tracing pages
 already said "une fiche par enfant" and "una ficha por niño", and the German,
 Italian and Polish coloring pages already carried the title and name-line labels).
 A few short labels ("Who is this for?", "Whole class") are plain phrases with no
-UI page to cite; they use the site's existing words. Dutch has no engine strings
-at all, so the Dutch page still shows none of these controls rather than English
-labels on a Dutch page.
+UI page to cite; they use the site's existing words.
+
+**Follow-up the same day (owner):**
+
+- **The monogram and cross-stitch tools get the same "More" section.** Their
+  drawing stays their own; the shared module adds the title and the name line
+  around the finished canvas, and leaves a sheet nobody changed byte-for-byte as
+  it was.
+- **Dutch.** The engine had no Dutch at all, so its one printables page ran every
+  control in English. A full Dutch set now exists, checked against the site's own
+  Dutch pages first ("vel", "printen", "blokletter") and native teacher,
+  worksheet and software pages for the domain terms.
+- **A class list wherever a typed name makes the sheet**, including the 28 locale
+  letter pages whose name section never had one. A fixed-phrase page opts out
+  (`roster: false`), as the Indonesian birthday-phrase page does.
 
 **Status (2026-09-25):** built in PR #937 (branch `claude/youthful-cannon-2sfyg7`),
 not yet merged.
