@@ -338,6 +338,32 @@
       ],
       "kicker": "SYM",
       "added": "2026-09-10"
+    },
+    "library-telegram-symbols": {
+      "title": "Telegram Symbols",
+      "sub": "Name frames, trend letters and dividers to copy",
+      "glyphs": [
+        "➢",
+        "➣",
+        "➤",
+        "⌲",
+        "⌯"
+      ],
+      "kicker": "LIB",
+      "added": "2026-09-25"
+    },
+    "id-library-simbol-telegram": {
+      "title": "Simbol Telegram",
+      "sub": "Bingkai nama, huruf tren, dan pembatas siap salin",
+      "glyphs": [
+        "➢",
+        "➣",
+        "➤",
+        "⌲",
+        "⌯"
+      ],
+      "kicker": "LIB",
+      "added": "2026-09-25"
     }
   }
 }
