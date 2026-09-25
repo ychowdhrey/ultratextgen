@@ -120,6 +120,24 @@
      link was being handed US Letter. So a link may seed paper for someone who
      has never chosen, and never overrides someone who has. */
   let stored = false;
+  /* High contrast, translated 2026-09-25 (owner: every option in every
+     language), checked against native software and teaching pages. A
+     language with no row still gets no control, and a stored "contrast" is
+     still cleared there, for the reason given where it is read. */
+  const CONTRAST_I18N = {
+    en: "High contrast (for photocopying)",
+    de: "Hoher Kontrast (zum Kopieren)",
+    it: "Alto contrasto (per le fotocopie)",
+    pl: "Wysoki kontrast (do kserowania)",
+    fr: "Contraste élevé (pour la photocopie)",
+    es: "Alto contraste (para fotocopiar)",
+    pt: "Alto contraste (para fotocópia)",
+    id: "Kontras tinggi (untuk difotokopi)"
+  };
+  function contrastLabel() {
+    const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
+    return CONTRAST_I18N[lang] || null;
+  }
   try {
     const saved = JSON.parse(localStorage.getItem(KEY) || "null");
     if (saved && typeof saved === "object") {
@@ -138,15 +156,11 @@
          panel is built, because the paper preview is painted first: resetting
          later left the German caption reading "High contrast" over a sheet
          that was not. */
-      if (values.ink === "contrast" && !docIsEnglish()) values.ink = "normal";
+      if (values.ink === "contrast" && !contrastLabel()) values.ink = "normal";
       if (SCALES[saved.quality]) values.quality = saved.quality;
     }
   } catch (err) { /* private mode or corrupt value: defaults apply */ }
 
-  function docIsEnglish() {
-    const el = document.documentElement;
-    return ((el && el.getAttribute("lang")) || "en").slice(0, 2).toLowerCase() === "en";
-  }
   function save() {
     try { localStorage.setItem(KEY, JSON.stringify(values)); } catch (err) { /* optional */ }
   }
@@ -277,7 +291,7 @@
     // English-only, exactly like the control: buildPanel() clears a stored
     // "contrast" on every other locale, so this can never be the one English
     // word in a translated summary.
-    if (values.ink === "contrast") bits.push("High contrast");
+    if (values.ink === "contrast" && contrastLabel()) bits.push(contrastLabel().replace(/\s*\([^)]*\)\s*$/, ""));
     return bits.join(" \u00b7 ");
   }
 
@@ -528,8 +542,8 @@
            Eight invented strings is not something this repo does, so the seven
            other locales keep the panel they have until a native reading or
            corpus evidence exists. Per the owner's decision of 2026-09-17. */
-        if (docIsEnglish()) {
-          details.appendChild(checkRow("High contrast (for photocopying)",
+        if (contrastLabel()) {
+          details.appendChild(checkRow(contrastLabel(),
             values.ink === "contrast",
             (on) => {
               values.ink = on ? "contrast" : "normal";

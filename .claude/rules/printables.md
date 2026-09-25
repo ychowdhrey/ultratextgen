@@ -77,9 +77,15 @@ option looks and behaves the same wherever it appears:
   switch. A roster that is a **word list** (spelling list, sight words) is marked
   `data-roster-kind="words"` and keeps the disclosure. `rosterEntries()` is the only
   reader of the switch; read the roster through it.
-- **Name and date line**: always on for a sheet a child hands back (tracing, name
-  sheets, puzzles); a toggle on a display piece (the designers, name puzzle).
+- **Title and name/date line** live in one "More" section per tool, built by
+  `mountMore()` in two scopes, `letters` and `word`. Read them through
+  `moreTitle()` / `moreFooterOn()`, never from an element id. The name/date default
+  is what the sheet printed before the section existed: on for a sheet a child hands
+  back, off for a display piece. An empty title keeps the sheet's own.
+- **Print size** wherever letters print; every letter page has an A–Z batch.
 - **Save all levels** wherever the sheet has levels.
+- **A control's label exists in every language the page ships, or the control is
+  not mounted there.** Never show an English label on a locale page.
 - **Recent and saved sheets** on every surface, from `printPrefs.js`, which all three
   engines load. Do not keep a second reader of `utg_printables_recent`.
 
