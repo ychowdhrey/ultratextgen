@@ -1300,8 +1300,15 @@
      --------------------------------------------------------------- */
 
   /* The set a tiled sheet shares a baseline across. Digits are in it because
-     the alphabet books print 0-9 alongside A-Z on the same grid. */
-  const TILE_BASELINE_SET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+     the alphabet books print 0-9 alongside A-Z on the same grid. A page's own
+     letters outside A-Z join it too (Ñ; Ç Ğ İ Ö Ş Ü): measured only on A-Z,
+     the Turkish small sheet centred a cap-height grid and cut the breve off Ğ
+     and the dot off İ at the top of their cells, which on a cut-out template
+     turns them into G and I. An A-Z page adds nothing, so its sheets render
+     exactly as before. */
+  const TILE_BASELINE_SET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" +
+    CHARS.filter((c) => !/^[A-Za-z0-9]$/.test(c))
+      .map((c) => c.toLocaleUpperCase(CASE_LOCALE) + c.toLocaleLowerCase(CASE_LOCALE)).join("");
 
   // A single character as a rounded, traceable SVG outline (outline mode).
   /* OUT-15 -- bridged stencils.
