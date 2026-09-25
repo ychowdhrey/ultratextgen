@@ -6697,6 +6697,9 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
   gap: 1rem;
   margin-top: 1rem;
 }
+.printable-hub-grid + p {
+  margin-top: 1.25rem;
+}
 .printable-card {
   display: flex;
   flex-direction: column;
