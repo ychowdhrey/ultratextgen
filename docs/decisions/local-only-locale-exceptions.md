@@ -116,6 +116,16 @@ page states only the name rules the site already documents for these two edition
 `vi/ki-tu-dac-biet-lien-quan/` keeps its own exception: its entry's "no EN Arena of
 Valor page exists" clause is now out of date and is left for the owner to re-decide.
 
+**Resolved 2026-09-25 (owner-directed): `vi/ki-tu-dac-biet-lien-quan/` keeps its
+exception, re-grounded.** The page is the symbols variant of the job, not the
+generator. It cannot join the new en/vi/zh-TW cluster because that cluster's `vi` slot
+already belongs to `vi/usecase/ten-lien-quan-dep/`, and no English Arena of Valor
+symbols page exists for it to translate. The ledger entry now says exactly that, with
+verdict `exception-stands` and a next recheck of 2026-12-01. Its open questions carry
+over unchanged: 40 days of Vietnamese GSC data put the page at zero impressions (a
+fold candidate into `ten-lien-quan-dep`), and a content hold on its U+3164 blank-name
+copy is still waiting on an in-game check. Neither question is decided here.
+
 ## Argument B — EN SERP consolidation
 
 ### `fr/calligraphie/`, `fr/changeur-de-police/`, `fr/police-d-ecriture/` (2026-07-26)
