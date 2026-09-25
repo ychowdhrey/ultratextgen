@@ -165,6 +165,7 @@
       sheetsPerPage: "Sheets per page",
       bannerInstr: "Cut each flag along its dashed line, punch a hole at each dot, then thread string or ribbon through in order (1, 2, 3…) to spell it out.",
       puzzleCut: "Cut along the dashed lines to separate each letter piece.",
+      puzzleTitle: "{name}’s Name Puzzle",
       usLetter: "US Letter",
       bannerFlagsLabel: "banner flags", ofWord: "of",
       flagCount: { one: "flag", other: "flags" },
@@ -232,6 +233,7 @@
       sheetsPerPage: "Feuilles par page",
       bannerInstr: "Découpez chaque fanion le long de sa ligne pointillée, percez un trou à chaque point, puis passez une ficelle ou un ruban dans l'ordre (1, 2, 3…) pour former le mot.",
       puzzleCut: "Découpez le long des lignes pointillées pour séparer chaque pièce-lettre.",
+      puzzleTitle: "Le puzzle de {name}",
       trace: {
         solid:    { label: "Modèle plein", hint: "Lettres pleines et foncées — tracez par-dessus" },
         "bold-dot": { label: "Pointillé épais", hint: "Points épais et rapprochés à relier" },
@@ -289,6 +291,7 @@
       sheetsPerPage: "Hojas por página",
       bannerInstr: "Recorta cada banderín por su línea punteada, haz un agujero en cada punto y pasa un cordel o cinta en orden (1, 2, 3…) para formar la palabra.",
       puzzleCut: "Recorta por las líneas punteadas para separar cada pieza-letra.",
+      puzzleTitle: "El rompecabezas de {name}",
       trace: {
         solid:    { label: "Modelo sólido", hint: "Letras oscuras y llenas — traza justo encima" },
         "bold-dot": { label: "Punteado grueso", hint: "Puntos gruesos y juntos para unir" },
@@ -346,6 +349,7 @@
       sheetsPerPage: "Folhas por página",
       bannerInstr: "Recorte cada bandeirinha na linha pontilhada, faça um furo em cada ponto e passe um barbante ou fita na ordem (1, 2, 3…) para formar a palavra.",
       puzzleCut: "Recorte nas linhas pontilhadas para separar cada peça-letra.",
+      puzzleTitle: "O quebra-cabeça de {name}",
       trace: {
         solid:    { label: "Modelo cheio", hint: "Letras escuras e cheias — trace por cima" },
         "bold-dot": { label: "Pontilhado grosso", hint: "Pontos grossos e juntos para ligar" },
@@ -403,6 +407,7 @@
       sheetsPerPage: "Fogli per pagina",
       bannerInstr: "Ritaglia ogni bandierina lungo la linea tratteggiata, fai un foro su ogni punto, poi infila uno spago o un nastro in ordine (1, 2, 3…) per comporre la parola.",
       puzzleCut: "Ritaglia lungo le linee tratteggiate per separare ogni pezzo-lettera.",
+      puzzleTitle: "Il puzzle di {name}",
       trace: {
         solid:    { label: "Modello pieno", hint: "Lettere piene e scure – ricalca sopra" },
         "bold-dot": { label: "Puntinato spesso", hint: "Punti spessi e ravvicinati da unire" },
@@ -455,6 +460,7 @@
       sheetsPerPage: "Kart na stronę",
       bannerInstr: "Wytnij każdą chorągiewkę wzdłuż przerywanej linii, zrób dziurkę w każdym punkcie, a następnie przewlecz sznurek lub wstążkę po kolei (1, 2, 3…), aby ułożyć napis.",
       puzzleCut: "Tnij wzdłuż przerywanych linii, aby oddzielić każdy element-literę.",
+      puzzleTitle: "Puzzle z imieniem: {name}",
       practiceTitle: "Karta pracy · {Noun}",
       usLetter: "US Letter",
       bannerFlagsLabel: "chorągiewki", ofWord: "z",
@@ -519,6 +525,7 @@
       sheetsPerPage: "Blätter pro Seite",
       bannerInstr: "Schneide jeden Wimpel entlang der gestrichelten Linie aus, stich an jedem Punkt ein Loch und fädle eine Schnur oder ein Band der Reihe nach (1, 2, 3…) durch, um das Wort zu bilden.",
       puzzleCut: "Schneide entlang der gestrichelten Linien, um jedes Buchstaben-Teil zu trennen.",
+      puzzleTitle: "Namenspuzzle von {name}",
       usLetter: "US Letter",
       modelCount: { one: "Vorlagenzeile", other: "Vorlagenzeilen" },
       traceCount: { one: "Nachspurzeile", other: "Nachspurzeilen" },
@@ -581,6 +588,7 @@
       practiceTitle: "Lembar latihan · {Noun}",
       bannerInstr: "Gunting tiap bendera mengikuti garis putus-putus, lubangi di setiap titik, lalu masukkan tali atau pita berurutan (1, 2, 3\u2026) sampai membentuk katanya.",
       puzzleCut: "Gunting mengikuti garis putus-putus untuk memisahkan tiap kepingan huruf.",
+      puzzleTitle: "Puzzle nama {name}",
       usLetter: "US Letter",
       bannerFlagsLabel: "bendera banner", ofWord: "dari",
       flagCount: { one: "bendera", other: "bendera" },
@@ -725,6 +733,7 @@
       "sheetsPerPage": "Werkbladen per pagina",
       "bannerInstr": "Knip elk vlaggetje uit langs de stippellijn, prik bij elke stip een gaatje en rijg er op volgorde (1, 2, 3…) een touwtje of lint door, zodat het woord verschijnt.",
       "puzzleCut": "Knip langs de stippellijnen om de letterstukjes los te maken.",
+      "puzzleTitle": "Naampuzzel van {name}",
       "usLetter": "US Letter",
       "bannerFlagsLabel": "letterslinger",
       "ofWord": "van",
@@ -904,6 +913,7 @@
       sheetsPerPage: "Sayfa başına çalışma",
       bannerInstr: "Her bayrağı kesikli çizgisinden kes, her noktaya bir delik aç, sonra ipi ya da kurdeleyi sırayla (1, 2, 3…) geçir; kelime ortaya çıksın.",
       puzzleCut: "Harf parçalarını ayırmak için kesikli çizgilerden kes.",
+      puzzleTitle: "{name} için isim yapbozu",
       usLetter: "US Letter",
       bannerFlagsLabel: "harf bayrağı", ofWord: "/",
       flagCount: { one: "bayrak", other: "bayrak" },
@@ -6876,6 +6886,15 @@
     const r = moreRefs[scope];
     return r && r.check ? r.check.checked : dflt;
   }
+  /* One cut piece or banner flag holds one character, uppercased. The test
+     was /[a-z]/i, which left every accented letter lowercase: "Sofía" cut as
+     SOFíA, "Jürgen" as JüRGEN, and ñ stayed ñ. Any letter whose uppercase is
+     still one character is uppercased now; ß (-> SS) keeps its own form,
+     because two letters in one piece would break the puzzle. */
+  function pieceChar(ch) {
+    const up = String(ch).toLocaleUpperCase(CASE_LOCALE);
+    return [...up].length === [...String(ch)].length ? up : ch;
+  }
   // {name} becomes this sheet's name; on a sheet with no name it is dropped.
   function withName(text, name) {
     if (!text || text.indexOf(NAME_TOKEN) === -1) return text;
@@ -9515,7 +9534,7 @@
     [...phrase].forEach((ch) => {
       if (/\s/.test(ch)) { cards.push({ type: "gap" }); return; }
       n++;
-      cards.push({ type: "flag", ch: /[a-z]/i.test(ch) ? ch.toLocaleUpperCase(CASE_LOCALE) : ch, index: n });
+      cards.push({ type: "flag", ch: pieceChar(ch), index: n });
     });
     return cards;
   }
@@ -9833,7 +9852,7 @@
         cols.push("0.6fr");
         return;
       }
-      const ch = /[a-z]/i.test(rawCh) ? rawCh.toLocaleUpperCase(CASE_LOCALE) : rawCh;
+      const ch = pieceChar(rawCh);
       const piece = document.createElement("div");
       piece.className = "pt-puzzle-piece";
       piece.appendChild(outlineSVG(ch));
@@ -9862,7 +9881,7 @@
 
     const h = document.createElement("h3");
     h.className = "pt-puzzle-heading-text";
-    h.textContent = heading || (word + "’s Name Puzzle");
+    h.textContent = withName(heading, word) || withName(T.puzzleTitle, word);
     sheet.appendChild(h);
 
     sheet.appendChild(puzzleRowNode(word));
@@ -9948,7 +9967,7 @@
 
       ctx.font = "700 48px " + FONT;
       ctx.fillStyle = INK;
-      ctx.fillText(heading || (word + "’s Name Puzzle"), W / 2, 130);
+      ctx.fillText(withName(heading, word) || withName(T.puzzleTitle, word), W / 2, 130);
 
       const rowTop = 190, rowBottom = 620, rowH = rowBottom - rowTop;
       const availW = W - pad * 2;
@@ -9959,7 +9978,7 @@
       chars.forEach((rawCh, i) => {
         const w = availW * (weights[i] / totalWeight);
         if (rawCh !== " ") {
-          const ch = /[a-z]/i.test(rawCh) ? rawCh.toLocaleUpperCase(CASE_LOCALE) : rawCh;
+          const ch = pieceChar(rawCh);
           const cx = x + w / 2, cy = rowTop + rowH / 2;
           const fs = Math.min(rowH * 0.8, w * 0.85);
           ctx.font = FONT_WEIGHT + " " + Math.round(fs) + "px " + FONT;
