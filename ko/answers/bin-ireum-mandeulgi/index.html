@@ -100,7 +100,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {
       "@type": "Question",
       "name": "게임에서 빈 이름은 어떻게 만드나요?",
-      "acceptedAnswer": { "@type": "Answer", "text": "투명 유니코드 문자를 복사해서 — 한글 채움 문자(U+3164)가 가장 안정적입니다 — 공백 대신 이름 칸에 붙여넣으세요. 하나만 넣어 이미 사용 중이라고 거부되면 두세 번 붙여넣어 중복을 피하면서도 비어 보이게 할 수 있습니다." }
+      "acceptedAnswer": { "@type": "Answer", "text": "한글 채움 문자(U+3164) 같은 투명 유니코드 문자를 복사해서 공백 대신 이름 칸에 붙여넣으세요. 받아 주는 문자는 게임마다 다르며, Free Fire는 OB43 패치 무렵부터 U+3164를 거부한다는 플레이어 제보가 있으니 거기서는 다른 공백 문자를 시도하세요. 하나만 넣어 이미 사용 중이라고 거부되면 두세 번 붙여넣어 중복을 피하면서도 비어 보이게 할 수 있습니다." }
     },
     {
       "@type": "Question",
@@ -110,7 +110,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {
       "@type": "Question",
       "name": "어떤 투명 문자를 쓰는 게 좋나요?",
-      "acceptedAnswer": { "@type": "Answer", "text": "한글 채움 문자(U+3164)로 시작하세요. 앱이 거부하거나 네모로 보이면 브라유 공백(U+2800) 같은 대체 문자를 시도하세요. 무엇이 통하는지는 앱에 따라 다르고 업데이트로 바뀔 수 있으니 실제 대상에서 확인하세요." }
+      "acceptedAnswer": { "@type": "Answer", "text": "게임에 따라 다릅니다. 가장 널리 알려진 것은 한글 채움 문자(U+3164)지만, Free Fire는 OB43 패치 무렵부터 이를 거부한다는 플레이어 제보가 있습니다. Free Fire나 문자를 거부하거나 네모로 보이는 앱에서는 브라유 공백(U+2800) 같은 대체 문자를 시도하세요. 통하는 문자는 업데이트로 바뀔 수 있으니 이름 변경권을 쓰기 전에 실제 대상에서 확인하세요." }
     },
     {
       "@type": "Question",
@@ -162,7 +162,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="editorial-section">
   <span class="article-section-label">짧은 답</span>
   <div class="editorial-block">
-    <p>일반 space를 입력하면 대부분의 앱이 잘라내기 때문에 그 방법으로는 빈 이름을 저장할 수 없습니다. 대신 입력란이 진짜 글자로 인식하지만 화면에는 아무것도 그리지 않는 <strong>투명 유니코드 문자</strong>를 붙여넣습니다. 가장 안정적인 것은 <strong>한글 채움 문자(U+3164)</strong>입니다. 복사해서 이름 칸에 붙여넣으면 이름이 비어 보입니다. 솔직한 주의점 두 가지: <strong>어떤 투명 문자가 통하는지는 앱마다 다르고 업데이트로 바뀔 수 있으며</strong>, 일부 게임은 빈 이름을 규정 위반으로 보기 때문에 초기화나 제재 위험이 조금 있습니다.</p>
+    <p>일반 space를 입력하면 대부분의 앱이 잘라내기 때문에 그 방법으로는 빈 이름을 저장할 수 없습니다. 대신 입력란이 진짜 글자로 인식하지만 화면에는 아무것도 그리지 않는 <strong>투명 유니코드 문자</strong>를 붙여넣습니다. 가장 널리 알려진 것은 <strong>한글 채움 문자(U+3164)</strong>입니다. 다만 Free Fire는 OB43 패치 무렵부터 이를 거부한다는 플레이어 제보가 있습니다. 복사해서 이름 칸에 붙여넣으면 이름이 비어 보입니다. 솔직한 주의점 두 가지: <strong>어떤 투명 문자가 통하는지는 앱마다 다르고 업데이트로 바뀔 수 있으며</strong>, 일부 게임은 빈 이름을 규정 위반으로 보기 때문에 초기화나 제재 위험이 조금 있습니다.</p>
   </div>
   <div class="block-example">
     <strong>방법:</strong> 공백이 들어갈 자리에 투명 문자(예: 한글 채움 문자 ㅤ)를 붙여넣습니다. <strong>주의:</strong> 앱과 패치에 따라 다릅니다.
@@ -186,7 +186,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <h2>투명 문자를 붙여넣기</h2>
   <div class="editorial-block">
     <ol>
-      <li><a href="/ko/symbol/tumyeong-munja-giho/">투명 문자 도구</a>에서 투명 문자를 복사합니다(한글 채움 문자 ㅤ가 가장 널리 통합니다).</li>
+      <li><a href="/ko/symbol/tumyeong-munja-giho/">투명 문자 도구</a>에서 투명 문자를 복사합니다(한글 채움 문자 ㅤ가 가장 널리 알려져 있지만, Free Fire는 OB43 패치 무렵부터 이를 거부한다는 플레이어 제보가 있으니 거기서는 다른 문자를 시도하세요).</li>
       <li>비워 두고 싶은 위치의 이름 칸에 붙여넣습니다.</li>
       <li>일부 게임은 투명 문자 <em>하나</em>만 넣으면 이미 사용 중인 “이름”이라며 거부합니다. <strong>2~3번</strong> 붙여넣으면 비어 보이면서도 중복을 피할 수 있습니다.</li>
     </ol>
@@ -232,7 +232,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="faq-item">
     <button class="faq-question" type="button">게임에서 빈 이름은 어떻게 만드나요?</button>
     <div class="faq-answer">
-      <p>투명 유니코드 문자를 복사해서 — 한글 채움 문자(U+3164)가 가장 안정적입니다 — 공백 대신 이름 칸에 붙여넣으세요. 하나만 넣어 이미 사용 중이라고 거부되면 두세 번 붙여넣어 중복을 피하면서도 비어 보이게 할 수 있습니다.</p>
+      <p>한글 채움 문자(U+3164) 같은 투명 유니코드 문자를 복사해서 공백 대신 이름 칸에 붙여넣으세요. 받아 주는 문자는 게임마다 다르며, Free Fire는 OB43 패치 무렵부터 U+3164를 거부한다는 플레이어 제보가 있으니 거기서는 다른 공백 문자를 시도하세요. 하나만 넣어 이미 사용 중이라고 거부되면 두세 번 붙여넣어 중복을 피하면서도 비어 보이게 할 수 있습니다.</p>
     </div>
   </div>
   <div class="faq-item">
@@ -244,7 +244,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="faq-item">
     <button class="faq-question" type="button">어떤 투명 문자를 쓰는 게 좋나요?</button>
     <div class="faq-answer">
-      <p>한글 채움 문자(U+3164)로 시작하세요. 앱이 거부하거나 네모로 보이면 브라유 공백(U+2800) 같은 대체 문자를 시도하세요. 무엇이 통하는지는 앱에 따라 다르고 업데이트로 바뀔 수 있으니 실제 대상에서 확인하세요.</p>
+      <p>게임에 따라 다릅니다. 가장 널리 알려진 것은 한글 채움 문자(U+3164)지만, Free Fire는 OB43 패치 무렵부터 이를 거부한다는 플레이어 제보가 있습니다. Free Fire나 문자를 거부하거나 네모로 보이는 앱에서는 브라유 공백(U+2800) 같은 대체 문자를 시도하세요. 통하는 문자는 업데이트로 바뀔 수 있으니 이름 변경권을 쓰기 전에 실제 대상에서 확인하세요.</p>
     </div>
   </div>
   <div class="faq-item">
