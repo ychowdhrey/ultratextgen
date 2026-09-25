@@ -11,6 +11,8 @@ Every number below was measured, not estimated. Where a first reading was wrong 
 recorded as a correction rather than removed, because the wrong reading is the one a future
 audit will repeat.
 
+**2026-09-25:** R-022 and R-023 added, both fixed on `happy-birthday-in-cursive` and open on the other script sheets.
+
 **Fix status (2026-09-19).** Twenty-one entries; **eighteen are closed**, each with the same
 instrument re-run against the same input: R-001 through R-011, R-014, R-016, R-017 and
 R-018 / R-019 / R-020 / R-021. Two of those (R-011, R-017) were closed by `main` itself while this
@@ -1145,6 +1147,68 @@ enough to be ignored. Three entries now share the shape — R-014 (ink saver cha
 nothing on screen), R-019 (chips with their explanation hidden), R-021 — and all three were found
 by driving the control in a browser and looking at what changed. That, not a gate, is the
 instrument for this class.
+
+---
+
+## R-022 — Cursive trace rows are the glyph OUTLINE: R-001, on every script sheet
+
+**Severity** R1 · **Root cause** PATH_GENERATION · **Screen** FAIL · **Print** FAIL · **PNG** N/A
+**Affects** every ruled `render: "glyph"` sheet: `cursive-name`, the six `*-in-cursive` word pages,
+`calligraphy-name`, and their locale siblings. Found 2026-09-25 on `happy-birthday-in-cursive`.
+
+R-001's fix drew the print sheets' dotted levels along a writing centreline, from a per-letter
+skeleton fitted onto each letter. That fix could not reach cursive: a cursive letter's lead-in and
+exit belong to the JOIN with its neighbour, the same glyph changes shape with its neighbour (the
+`i` after `b` has a lead-in, after `B` it has none), and a hand-drawn per-letter skeleton has
+nothing to say about either. So every cursive trace row stayed a hollow outline of the font:
+
+```html
+<text fill="#ffffff" stroke="#8b93a7" stroke-width="2.86" ...>Happy Birthday</text>
+```
+
+Two edges per stroke, no start, no order, and at every retrace (the `a` stem, the `d` stem, the
+`t`) a single inked line that the child is asked to trace round both sides of. The same
+motor-path failure R-001 recorded, on the pages whose whole job is joined handwriting.
+
+**Evidence** `evidence/R-022-R-023-cursive-route-and-descenders.png` (top: `main`).
+
+**Fixed 2026-09-25 for `happy-birthday-in-cursive`, both forms; open elsewhere.** A cursive route
+belongs to a PHRASE, so it is built per phrase from the phrase's own rendered ink:
+`scripts/build-cursive-routes.js` thins the Playwrite US Trad raster to a one-pixel centreline and
+joins authored waypoints (`scripts/lib/cursive-route-spec.js`, which fix loop direction, retraces
+and pen lifts) along it. It refuses to write unless the route is on the ink and skips nothing:
+
+| phrase | on-glyph | centreline covered | longest undrawn run | strokes |
+|---|---|---|---|---|
+| `Happy Birthday` | 100.00% | 98.75% | 18px (limit 32) | 7 |
+| `happy birthday` | 100.00% | 98.75% | 13px (limit 32) | 4 |
+
+The gap measure is the one that matters: a waypoint list missing the top of one `p` was 100%
+on-glyph and 97.8% covered, and only the 80px undrawn run caught it (reproduced deliberately
+before trusting the check). The sheet draws the route with `routeDotDashes()`, the print route's
+own dot resolver, which also merges the dots of a stroke that doubles back over itself, and a
+numbered start mark on each stroke. Rows: model, bold dots, fine dots, start marks only, two
+blank. A page opts in with `CFG.cursiveRoute`; every other word, face, weight or tracking keeps
+the outline.
+
+## R-023 — Ruled rows clip script descenders
+
+**Severity** R2 · **Root cause** GEOMETRY · **Screen** FAIL · **Print** FAIL · **PNG** N/A
+**Affects** the same ruled `render: "glyph"` sheets as R-022, on the model row and every trace row.
+
+A ruled row's viewBox is `WORD_OUTLINE_H` = 200 units and the baseline sits at 181, so the box
+ends 19 units under the line. Playwrite US Trad's `p` and `y` reach **78** units below it
+(`glyphMetrics.ink`, 150-unit type, measured in the page). An SVG root clips: **59 of 78 units,
+three quarters of every descender, are cut off** the model row a child copies from and every row
+they trace. The cursive alphabet's letter pairs had this and took `o.fitInk` on 2026-09-25; the
+ruled practice rows were left alone on purpose, because they take their box from the page.
+
+**Fixed 2026-09-25 for routed sheets only.** A sheet with a writing route passes `fitInk` on every
+row, blank rows included so the ruling lines up down the page: viewBox height 270, ink bottom 259,
+11 units clear. The rows keep their CSS height, so the drawing scales to fit rather than growing
+the page. **Open** on the other cursive and calligraphy sheets: the same one-line opt-in would fix
+them, but it shrinks their letters by the same ratio, which is a change to seven pages nobody has
+looked at yet.
 
 ---
 

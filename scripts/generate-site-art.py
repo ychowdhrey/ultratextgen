@@ -3109,7 +3109,7 @@ PAGES.update({
 "printables-best-friend-in-cursive": ("Best Friend in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Friends"), K_PRINT),
 "printables-dad-in-cursive": ("Dad in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Dad"), K_PRINT),
 "printables-family-in-cursive": ("Family in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Family"), K_PRINT),
-"printables-happy-birthday-in-cursive": ("Happy Birthday in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Birthday"), K_PRINT),
+"printables-happy-birthday-in-cursive": ("Happy Birthday in Cursive", "Watch the 7 strokes, then trace them", P(m_trace_rows, sample="Birthday"), K_PRINT),
 "printables-love-in-cursive": ("Love in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Love"), K_PRINT),
 "printables-mom-in-cursive": ("Mom in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Mom"), K_PRINT),
 "printables-cursive-name": ("Cursive Name Tracing", "Any name in joined cursive, one sheet per child", P(m_trace_rows, sample="Olivia"), K_PRINT),

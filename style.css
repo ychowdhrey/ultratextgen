@@ -7165,6 +7165,58 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
 
 /* Dark-mode: keep print-preview cards light so white-fill outlines stay visible */
 body.dark-mode .pt-name-preview { background: #fff; border-color: var(--border-light); }
+
+/* How-to-write demo (js/printables/cursiveDemo.js): the phrase drawn stroke by
+   stroke beside its written stroke plan. The stage is paper, so it stays white
+   in dark mode like the sheet preview above. */
+.pt-form-picker { margin: 0.5rem 0 1rem; }
+.pt-howto-layout { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+/* A nine-letter phrase is wide and short: the stage takes the full width and
+   the stroke plan sits under it, in two columns once there is room. */
+@media (min-width: 760px) {
+  .pt-howto-plan > [data-form-block] { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 0 1.5rem; align-items: start; }
+  .pt-howto-plan > [data-form-block][hidden] { display: none; }
+}
+.pt-demo-stage {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  min-height: 90px;
+}
+body.dark-mode .pt-demo-stage { background: #fff; }
+.pt-demo-svg { display: block; width: 100%; height: auto; }
+.pt-demo-bar { display: flex; align-items: center; gap: 0.75rem; margin-top: 0.6rem; flex-wrap: wrap; }
+.pt-demo-bar .pt-demo-play { flex: 0 0 auto; width: auto; min-width: 8rem; }
+.pt-demo-status { color: var(--text-secondary); font-size: 0.9rem; }
+.pt-howto-counts { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.2rem 0 0.6rem; align-content: flex-start; }
+.pt-howto-counts span {
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  padding: 0.15rem 0.7rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.pt-demo-steps { margin: 0; padding-left: 1.4rem; }
+.pt-demo-steps li { margin: 0.35rem 0; color: var(--text-secondary); }
+.pt-demo-steps li.is-current { color: var(--text-primary); font-weight: 600; }
+.pt-demo-steps li::marker { color: var(--accent-purple); font-weight: 700; }
+.pt-letter-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.75rem; margin-top: 0.75rem; }
+.pt-letter-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  color: inherit;
+  text-decoration: none;
+}
+.pt-letter-card:hover { border-color: var(--accent-purple); }
+.pt-letter-glyph { font-family: 'Playwrite US Trad', 'Segoe Script', cursive; font-size: 1.9rem; line-height: 1.5; color: var(--text-primary); }
+.pt-letter-name { font-weight: 700; font-size: 0.9rem; }
+.pt-letter-how { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.45; }
 body.dark-mode .printable-card-art { color: var(--accent-blue); }
 
 /* ============================================================
