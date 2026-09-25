@@ -411,22 +411,36 @@ def render_hub(spec):
       </ul>
       <h3>Prefer copy-paste letters instead of a coloring page?</h3>
       <p>These outlines are for paper. If you want stylish letters you can paste into a bio or caption, use the
-        <a href="/category/">font generators</a>. For other printable looks, try
-        <a href="/printables/bubble-letters/">bubble letters</a> or
+        <a href="/category/">font generators</a>. For another printable look, try
         <a href="/printables/block-letters/">block letter stencils</a>.</p>
     </section>
 
-    <div class="cta-card">
-      <h3>Want a puzzle before the coloring?</h3>
-      <p>Every letter also has a numbered dot-to-dot version. Connect the dots in order to reveal the letter, then color it in.</p>
-      <a class="cta-btn" href="/printables/dot-to-dot-alphabet/">Open dot-to-dot alphabet →</a>
-    </div>
-
-    <div class="cta-card">
-      <h3>Looking for handwriting practice instead?</h3>
-      <p>Type any name and print a tracing worksheet with model and trace rows, perfect for preschool and kindergarten.</p>
-      <a class="cta-btn" href="/printables/name-tracing/">Open name tracing worksheets →</a>
-    </div>
+    <!-- Sibling printables. Picks: the owner's routes for this page (custom
+         name coloring, bubble style) plus the same ready-made letters as a
+         puzzle. Revisit with GA4 co-visitation data. -->
+    <section class="editorial-section pt-siblings" aria-labelledby="ptSiblingsHeading">
+      <h2 id="ptSiblingsHeading">More letter printables</h2>
+      <div class="printable-hub-grid">
+        <a class="printable-card" href="/printables/coloring-page-maker/">
+          <span class="printable-card-art" aria-hidden="true">✎ A+</span>
+          <h3>Coloring page maker</h3>
+          <p>Type a name or word and print it as one coloring page, with a border and a name-and-date line.</p>
+          <span class="printable-card-cta">Color a name →</span>
+        </a>
+        <a class="printable-card" href="/printables/dot-to-dot-alphabet/">
+          <span class="printable-card-art" aria-hidden="true">1 2 3</span>
+          <h3>Dot-to-dot alphabet</h3>
+          <p>These letters as numbered connect-the-dots puzzles: one per page, A–Z and 0–9.</p>
+          <span class="printable-card-cta">Open dot-to-dot →</span>
+        </a>
+        <a class="printable-card" href="/printables/bubble-letters/">
+          <span class="printable-card-art" aria-hidden="true">Ⓐ Ⓑ Ⓒ</span>
+          <h3>Bubble letters</h3>
+          <p>Puffy outline letters A–Z and 0–9 to color, trace or cut out.</p>
+          <span class="printable-card-cta">Open bubble letters →</span>
+        </a>
+      </div>
+    </section>
 
       <h2 class="faq-category">Alphabet Coloring Pages FAQ</h2>
 
