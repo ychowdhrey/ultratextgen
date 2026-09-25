@@ -811,8 +811,6 @@
     designInput2: $("#pt-design-input2"),
     designCount: $("#pt-design-count"),
     designFillNote: $("#pt-design-fill-note"),
-    designAudienceGroup: $("#pt-design-audience"),
-    designClassFields: $("#pt-design-class-fields"),
     designPreviewMeta: $("#pt-design-preview-meta"),
     designSettingsMount: $("#pt-design-settings-mount"),
     designHeading: $("#pt-design-heading"),
@@ -858,6 +856,7 @@
     searchMeta: $("#pt-search-meta"),
     searchPrint: $("#pt-search-print"),
     searchPng: $("#pt-search-png"),
+    searchLadder: $("#pt-search-ladder"),
     cwInput: $("#pt-cw-input"),
     cwRoster: $("#pt-cw-roster"),
     cwHeading: $("#pt-cw-heading"),
@@ -876,6 +875,7 @@
     scMeta: $("#pt-sc-meta"),
     scPrint: $("#pt-sc-print"),
     scPng: $("#pt-sc-png"),
+    scLadder: $("#pt-sc-ladder"),
     printRoot: $("#pt-print-root")
   };
 
@@ -2354,7 +2354,6 @@
     en: ["Print"], fr: ["Imprimer"], es: ["Imprimir"], pt: ["Imprimir"],
     it: ["Stampa"], pl: ["Wydrukuj", "Drukuj"], id: ["Cetak"], de: []
   };
-  const RECENT_KEY = "utg_printables_recent";
   /* ONE roster for the whole pillar, not one per URL. It was keyed on
      location.pathname, so a class typed on /printables/name-tracing/ was
      invisible on the puzzle, sight-word, coloring and dot-to-dot tools that
@@ -2381,7 +2380,6 @@
       localStorage.removeItem(ROSTER_KEY_LEGACY);
     } catch (err) { /* optional */ }
   }
-  const RECENT_MAX = 6;
   /* Sheet setup (paper, orientation, margins, ink saver, render scale) is
      owned by js/printables/printPrefs.js, so this engine, monogramEngine and
      crossStitchEngine cannot disagree about what page a sheet is written on.
@@ -2661,7 +2659,8 @@
     const input = primaryInput();
     if (input && input.value.trim()) p.name = input.value.trim();
     const roster = primaryRoster();
-    if (roster && roster.value.trim()) p.roster = rosterNames(roster).join("|");
+    const rosterList = roster ? rosterNames(roster) : [];
+    if (rosterList.length) p.roster = rosterList.join("|");
     if (el.genSlider || el.genLevels) p.level = genLevel();
     const rows = firstEl([el.nameRows, el.genRows]);
     if (rows && rows.value) p.rows = rows.value;
@@ -2801,44 +2800,22 @@
 
   // "Recent sheets" memory (this device): the last few sheets made here,
   // as preset links, so a teacher who printed Emma's sheet last week finds
-  // it without retyping. Stored alongside the site's other per-device keys.
-  function readRecent() {
-    try { const v = JSON.parse(localStorage.getItem(RECENT_KEY) || "[]"); return Array.isArray(v) ? v : []; } catch (err) { return []; }
-  }
+  // it without retyping. The list and both strips are printPrefs.js's since
+  // 2026-09-25, so the monogram and cross-stitch tools read the same record;
+  // this engine passes its own strings, exactly as it did.
   function rememberSheet(sheet) {
     const input = primaryInput();
     const label = (input && input.value.trim()) || (el.strip ? charLabel(activeChar) : "") || document.title.split("|")[0].trim();
-    const href = presetUrl();
-    const list = readRecent().filter((r) => r && r.href !== href);
-    list.unshift({ href: href, label: label.slice(0, 40), page: (document.title || "").split("|")[0].trim().slice(0, 60), sheet: sheet || "sheet", t: Date.now() });
-    try { localStorage.setItem(RECENT_KEY, JSON.stringify(list.slice(0, RECENT_MAX))); } catch (err) { /* optional */ }
+    if (PP && PP.rememberRecent) {
+      PP.rememberRecent({ href: presetUrl(), label: label, page: (document.title || "").split("|")[0].trim(), sheet: sheet });
+    }
     const roster = primaryRoster();
     if (roster) writeRoster(roster.value);
     renderRecent();
   }
   let recentMount = null;
   function renderRecent() {
-    if (!recentMount) return;
-    const list = readRecent();
-    recentMount.innerHTML = "";
-    if (!list.length) { recentMount.hidden = true; return; }
-    recentMount.hidden = false;
-    const title = document.createElement("span");
-    title.className = "pt-recent-title";
-    title.textContent = PO.recent;
-    recentMount.appendChild(title);
-    list.forEach((r) => {
-      const a = document.createElement("a");
-      a.className = "pt-recent-link";
-      a.href = r.href;
-      a.textContent = r.label;
-      a.title = r.page || "";
-      recentMount.appendChild(a);
-    });
-    const clear = document.createElement("button");
-    clear.type = "button"; clear.className = "pt-recent-clear"; clear.textContent = PO.clear;
-    clear.addEventListener("click", () => { try { localStorage.removeItem(RECENT_KEY); } catch (err) { /* optional */ } renderRecent(); });
-    recentMount.appendChild(clear);
+    if (recentMount && PP && PP.renderRecentInto) PP.renderRecentInto(recentMount, { recent: PO.recent, clear: PO.clear });
   }
 
   /* Saved sheets, from the shared store rather than this page's own recency
@@ -2853,27 +2830,7 @@
      PO.clear, both already translated in all eight locales. */
   let savedMount = null;
   function renderSaved() {
-    if (!savedMount) return;
-    const store = window.UltraTextGen && window.UltraTextGen.saved;
-    const list = store ? store.all("printable") : [];
-    savedMount.innerHTML = "";
-    if (!list.length) { savedMount.hidden = true; return; }
-    savedMount.hidden = false;
-    const title = document.createElement("span");
-    title.className = "pt-recent-title";
-    title.textContent = T.saved;
-    savedMount.appendChild(title);
-    list.forEach((r) => {
-      const a = document.createElement("a");
-      a.className = "pt-recent-link";
-      a.href = r.href || r.value;
-      a.textContent = r.label || r.value;
-      savedMount.appendChild(a);
-    });
-    const clear = document.createElement("button");
-    clear.type = "button"; clear.className = "pt-recent-clear"; clear.textContent = PO.clear;
-    clear.addEventListener("click", () => { if (store) store.clear("printable"); });
-    savedMount.appendChild(clear);
+    if (savedMount && PP && PP.renderSavedInto) PP.renderSavedInto(savedMount, { saved: T.saved, clear: PO.clear });
   }
   // saved-items.js fires this on every write, including one made by another
   // surface on the same page, so the strip and the Save button cannot drift.
@@ -3104,7 +3061,7 @@
     // The multi-sheet actions keep their own object ("all 7 levels", "the
     // A-Z + 0-9 book") and swap only the verb, per the owner's rule that
     // "Print all 7 levels" reads "Save all 7 levels".
-    [el.bookPrint, el.genLadder, el.designLadder].filter(Boolean).forEach((btn) => {
+    [el.bookPrint, el.genLadder, el.designLadder, el.searchLadder, el.scLadder].filter(Boolean).forEach((btn) => {
       if (btn.dataset.ptPdf) return;
       btn.dataset.ptPdf = "1";
       btn.textContent = saveVerbLabel(btn.textContent);
@@ -6304,7 +6261,9 @@
      A line with no number gets the picker's level, which is what every line
      got before. */
   function rosterEntries(mount, rungs) {
-    if (!mount) return [];
+    // "One sheet" keeps the list on the page and out of the job: the names
+    // stay typed for next time, and nothing prints them until "Whole class".
+    if (!mount || rosterIsOff(mount)) return [];
     const top = rungs || TRACE_LEVELS.length;
     return mount.value.split(/\r?\n/).map((s) => s.trim()).filter(Boolean).slice(0, ROSTER_CAP)
       .map((line) => {
@@ -6351,6 +6310,120 @@
   function allowedWord(w) {
     const set = fixedWordSet();
     return !set || set.has(String(w).trim().toLowerCase());
+  }
+
+  /* One class-set control, everywhere a roster is a class (2026-09-25).
+
+     The coloring-page maker asked "Who is this for?" with a visible One sheet /
+     Whole class switch; nine other tools did the same job behind a collapsed
+     "Class set" disclosure, and three of the locale mirrors took the
+     coloring-page switch too. A teacher who met the switch on one tool read the
+     other nine as not having the feature, which is how it was reported. So
+     every roster now takes the switch, built here from the page's own
+     disclosure rather than re-authored into each page: the textarea, its hint
+     and its placeholder move across untouched, and only the summary line is
+     replaced by the question.
+
+     The strings are the ones the coloring-page maker already ships in
+     English, German, Italian and Polish, copied from those pages. Nothing is
+     translated here, so fr, es, pt and id keep their disclosure until a native
+     reading of the five labels exists -- the same rule mountLeftHanded()
+     follows. A roster that is a WORD list rather than a class (the handwriting
+     generator's spelling list, the sight-word lists) is marked
+     data-roster-kind="words" in its page and keeps its disclosure too:
+     "Whole class" is the wrong question to ask about a spelling list.
+
+     The state lives on the textarea (data-pt-audience), and rosterEntries()
+     is the one place that reads it, so every surface -- preview, PDF, PNG,
+     sheet count, N-up chips, share link -- follows the switch without being
+     told about it. A roster that arrives filled (a ?roster= link, or the
+     class list this device remembers) opens on "Whole class", which is what
+     the disclosure did: a filled list printed the whole class whether its box
+     was open or not. */
+  const AUDIENCE_I18N = {
+    en: { label: "Who is this for?", group: "How many sheets", one: "One sheet", oneHint: "Just this name", all: "Whole class", allHint: "One sheet per child" },
+    de: { label: "Für wen ist das?", group: "Wie viele Blätter", one: "Ein Blatt", oneHint: "Nur dieser Name", all: "Ganze Klasse", allHint: "Ein Blatt pro Kind" },
+    it: { label: "Per chi è?", group: "Quanti fogli", one: "Un foglio", oneHint: "Solo questo nome", all: "Tutta la classe", allHint: "Un foglio per bambino" },
+    pl: { label: "Dla kogo to jest?", group: "Ile kart", one: "Jedna karta", oneHint: "Tylko to imię", all: "Cała klasa", allHint: "Jedna karta na dziecko" }
+  };
+  // The word-list tools print one sheet from a LIST, not from a name, so
+  // "Just this name" would describe a sheet they do not make.
+  const AUDIENCE_LIST_ROSTERS = ["pt-search-roster", "pt-cw-roster", "pt-sc-roster"];
+  function rosterIsOff(mount) {
+    return !!(mount && mount.dataset && mount.dataset.ptAudience === "one");
+  }
+  function setRosterAudience(mount, value, opts) {
+    mount.dataset.ptAudience = value;
+    const box = mount.closest(".pt-audience-field");
+    if (box) {
+      $$(".pt-choice", box).forEach((b) => {
+        const on = b.dataset.value === value;
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-checked", on ? "true" : "false");
+      });
+      const fields = mount.closest(".pt-class-fields");
+      if (fields) fields.hidden = value !== "class";
+    }
+    // Every surface already re-renders on the roster's own input event.
+    if (!(opts && opts.quiet)) mount.dispatchEvent(new Event("input", { bubbles: true }));
+  }
+  function audienceChoice(value, text, hint) {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "pt-choice";
+    b.dataset.value = value;
+    b.setAttribute("role", "radio");
+    b.appendChild(document.createTextNode(text));
+    if (hint) {
+      const small = document.createElement("small");
+      small.textContent = hint;
+      b.appendChild(small);
+    }
+    return b;
+  }
+  function mountAudience(mount) {
+    if (!mount || mount.dataset.ptAudienceWired) return;
+    let box = mount.closest(".pt-audience-field");
+    if (!box) {
+      const L = AUDIENCE_I18N[LANG];
+      const details = mount.closest("details.pt-roster-field");
+      if (!L || !details || details.dataset.rosterKind === "words" || fixedWordSet()) return;
+      box = document.createElement("div");
+      box.className = "pt-field pt-audience-field";
+      const label = document.createElement("span");
+      label.className = "pt-field-label";
+      label.textContent = L.label;
+      box.appendChild(label);
+      const group = document.createElement("div");
+      group.className = "pt-choice-row";
+      group.setAttribute("role", "radiogroup");
+      group.setAttribute("aria-label", L.group);
+      const listTool = AUDIENCE_LIST_ROSTERS.indexOf(mount.id) !== -1;
+      group.appendChild(audienceChoice("one", L.one, listTool ? "" : L.oneHint));
+      group.appendChild(audienceChoice("class", L.all, L.allHint));
+      box.appendChild(group);
+      const fields = document.createElement("div");
+      fields.className = "pt-class-fields";
+      Array.prototype.slice.call(details.childNodes).forEach((n) => {
+        if (n.nodeName !== "SUMMARY") fields.appendChild(n);
+      });
+      box.appendChild(fields);
+      details.replaceWith(box);
+    }
+    mount.dataset.ptAudienceWired = "1";
+    $$(".pt-choice", box).forEach((b) => {
+      b.addEventListener("click", () => setRosterAudience(mount, b.dataset.value));
+    });
+    setRosterAudience(mount, mount.value.trim() ? "class" : "one", { quiet: true });
+  }
+  function mountAudiences() {
+    [el.nameRoster, el.genRoster, el.designRoster, el.puzzleRoster, el.searchRoster, el.cwRoster, el.scRoster]
+      .forEach(mountAudience);
+    /* The sheet count is bound to the roster's input event, and a list that
+       arrives filled (?roster= or remembered) never fires one, so a shared
+       class link opened with no "3 sheets · 3 pages" line under the button
+       -- on main before this change too. Counted once here, after the fill. */
+    updateSheetCost();
   }
 
   /* Mount a class roster on a page that wants one but does not author the
@@ -6881,7 +6954,7 @@
      coloring-page-maker's job). With the picker gone the mode has to come from
      config, because the default below is the coloring outline. A page that
      still ships #pt-design-mode-group overrides this from its active chip. */
-  const designState = { fill: "plain", border: "none", mode: DESIGN.mode === "dots" ? "dots" : "outline", density: "medium", hint: true, audience: "one" };
+  const designState = { fill: "plain", border: "none", mode: DESIGN.mode === "dots" ? "dots" : "outline", density: "medium", hint: true };
 
   function svgMake(tag, attrs, parent) {
     const node = document.createElementNS(SVGNS, tag);
@@ -8758,11 +8831,9 @@
 
   // "One sheet" vs "Whole class" is an audience, not a step: steps 1-3 are
   // the same work for a parent and a teacher, and only the batch is extra.
+  // The switch itself is mountAudience()'s, shared with every other roster.
   function designIsClassMode() {
-    return el.designAudienceGroup ? designState.audience === "class" : true;
-  }
-  function syncDesignAudience() {
-    if (el.designClassFields) el.designClassFields.hidden = !designIsClassMode();
+    return !rosterIsOff(el.designRoster);
   }
 
   /* The strip above the sheet used to read a hardcoded "US Letter", so
@@ -8792,7 +8863,6 @@
     // Dot-to-dot mode toggle + difficulty ladder + hint switch (all optional).
     wireChoiceGroup(el.designModeGroup, "mode", syncDesignMode);
     wireChoiceGroup(el.designDensityGroup, "density");
-    wireChoiceGroup(el.designAudienceGroup, "audience", syncDesignAudience);
     if (el.designRoster) el.designRoster.addEventListener("input", schedule);
     if (el.designHint) {
       designState.hint = el.designHint.checked;
@@ -8803,7 +8873,6 @@
     if (el.designLadder) el.designLadder.addEventListener("click", printDesignLadder);
     if (el.designPng) el.designPng.addEventListener("click", designPNG);
     syncDesignMode();
-    syncDesignAudience();
     syncDesignBudget();
     syncDesignPreviewMeta();
     renderDesignPreview();
@@ -9568,6 +9637,38 @@
     printWrap("", holder, "word_search");
   }
 
+  /* Every level as one job -- the same word list at easy, medium and hard,
+     then each key after the three puzzles when the key is on. The generator
+     ladder and the dot-to-dot ladder already did this; the two puzzle makers
+     had the three levels and no way to print them together, so a teacher
+     differentiating one list for a mixed class printed it three times.
+
+     Each sheet names its level in its heading. The word is the level button's
+     own label in this page's markup, so nothing is authored or translated
+     here, and a stack that comes off the printer out of order can still be
+     sorted. The ladder ignores the roster, as the generator's does: it is one
+     list at every level, not one child at every level. */
+  function puzzleLevelLabel(group, key) {
+    const b = group && group.querySelector('.pt-choice[data-level="' + key + '"]');
+    return b ? b.textContent.trim() : key;
+  }
+  function puzzleLadderPages(holder, group, sheetFor, answer) {
+    const levelSheet = (key, showAnswer) => {
+      const node = sheetFor(key, showAnswer);
+      const h = node.querySelector(".pt-search-heading-text");
+      if (h) h.textContent += " \u00b7 " + puzzleLevelLabel(group, key);
+      return node;
+    };
+    appendSheetPages(holder, PUZZLE_LEVELS, (key) => levelSheet(key, false));
+    if (answer) appendSheetPages(holder, PUZZLE_LEVELS, (key) => levelSheet(key, true));
+  }
+  function printSearchLadder() {
+    const holder = document.createElement("div");
+    holder.className = "pt-search-print-holder pt-class-set";
+    puzzleLadderPages(holder, el.searchLevelGroup, (key, ans) => searchSheetNode(null, ans, key), searchAnswerOn());
+    printWrap("", holder, "word_search_ladder");
+  }
+
   function wireSearchLevel() {
     const group = el.searchLevelGroup;
     if (!group) return;
@@ -9600,6 +9701,7 @@
     if (el.searchAnswer) el.searchAnswer.addEventListener("change", renderSearchPreview);
     wireSearchLevel();
     if (el.searchPrint) el.searchPrint.addEventListener("click", printSearch);
+    if (el.searchLadder) el.searchLadder.addEventListener("click", printSearchLadder);
     // The PNG comes from the same DOM the print does (pngFromWrap), so there is
     // no second drawing path to drift.
     if (el.searchPng) el.searchPng.addEventListener("click", () => { pngMode = true; printSearch(); });
@@ -9991,6 +10093,13 @@
     printWrap("", holder, "word_scramble");
   }
 
+  function printScrambleLadder() {
+    const holder = document.createElement("div");
+    holder.className = "pt-search-print-holder pt-class-set";
+    puzzleLadderPages(holder, el.scLevelGroup, (key, ans) => scSheetNode(null, ans, key), scAnswerOn());
+    printWrap("", holder, "word_scramble_ladder");
+  }
+
   function wireScrambleLevel() {
     const group = el.scLevelGroup;
     if (!group) return;
@@ -10024,6 +10133,7 @@
     if (el.scHint) el.scHint.addEventListener("change", renderScPreview);
     wireScrambleLevel();
     if (el.scPrint) el.scPrint.addEventListener("click", printScramble);
+    if (el.scLadder) el.scLadder.addEventListener("click", printScrambleLadder);
     if (el.scPng) el.scPng.addEventListener("click", () => { pngMode = true; printScramble(); });
     renderScPreview();
   }
@@ -10116,6 +10226,8 @@
     mountSheetCost();
     mountNUp();
     applyPresetInputs();
+    // After the roster is filled, so a list that arrives filled opens on it.
+    mountAudiences();
     initStrokeToggle();
     /* Before the first paint, not after: setCharStyle() reassigns the FONT
        every surface below reads, so wiring it here means the picker and the
