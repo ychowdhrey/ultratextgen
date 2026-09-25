@@ -41,6 +41,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { rules } = require('./lib/css-rules');
 
 const ROOT = path.resolve(__dirname, '..');
 const PDF = path.join(ROOT, 'js/printables/printablePdf.js');
@@ -158,37 +159,11 @@ function readPropsList() {
   return list.length ? new Set(list) : null;
 }
 
-/* Rule extraction, by brace walk rather than by regex over the whole file:
-   style.css carries @media and @supports blocks, and a regex for
-   `selector { … }` matches the at-rule's own preamble as a selector. */
-function rules(css) {
-  const out = [];
-  let i = 0;
-  let buf = '';
-  while (i < css.length) {
-    const c = css[i];
-    if (c === '/' && css[i + 1] === '*') { const end = css.indexOf('*/', i); i = end === -1 ? css.length : end + 2; continue; }
-    if (c === '{') {
-      const sel = buf.trim(); buf = '';
-      // An at-rule's own preamble is not a selector; its inner rules are read
-      // by this same loop, so there is nothing to track but the brace.
-      if (sel.startsWith('@')) { i++; continue; }
-      // Read the declaration block up to its matching close.
-      let depth = 1, j = i + 1, body = '';
-      while (j < css.length && depth > 0) {
-        if (css[j] === '/' && css[j + 1] === '*') { const e = css.indexOf('*/', j); j = e === -1 ? css.length : e + 2; continue; }
-        if (css[j] === '{') depth++;
-        else if (css[j] === '}') { depth--; if (!depth) break; }
-        body += css[j]; j++;
-      }
-      out.push({ selector: sel, body: body, line: css.slice(0, i).split('\n').length });
-      i = j + 1; continue;
-    }
-    if (c === '}') { buf = ''; i++; continue; }
-    buf += c; i++;
-  }
-  return out;
-}
+/* Rule extraction is `scripts/lib/css-rules.js` — a brace walk, because
+   style.css carries @media and @supports blocks and a regex for
+   `selector { … }` matches the at-rule's own preamble as a selector. Shared
+   with check-fitted-page-fit.js rather than copied, so the two gates read the
+   same file the same way. */
 
 const props = readPropsList();
 if (!props) {

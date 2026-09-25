@@ -325,6 +325,21 @@ jobs:
         continue-on-error: true
         run: npm run check:print-export-properties | tee print-export-properties.log
 
+      # A page unit pinned to the paper must be able to shrink into it, because
+      # nothing downstream rescues it: renderPages() paints the unit through a
+      # div with overflow:hidden at the unit's own height, so overflow is CUT IN
+      # THE FILE. RF-016: the ruled name sheet kept a `min-height` budgeted
+      # against the credit band and not the title, so 981.7px of content sat in
+      # a 927.4px box and the bottom 54.3px -- most of the credit QR and the
+      # whole credit URL -- was cut out of every PDF and PNG on 20 routes, while
+      # the DOM and the harness's own `fit` metric both read clean. Reads the
+      # fitted variants and their sheet classes FROM THE ENGINE; exits 2 if it
+      # cannot, or if no variant pins a height any more.
+      - name: Run fitted page fit check
+        id: fitted_page_fit
+        continue-on-error: true
+        run: npm run check:fitted-page-fit | tee fitted-page-fit.log
+
       # glyphMetrics.js must load BEFORE printablesEngine.js: the engine reads
       # it for tile centring, word-box sizing, ruled-line registration and the
       # skeleton fit, so a tag in the wrong position is present, diffs clean and
@@ -915,7 +930,7 @@ jobs:
             echo "### share-core analytics tests — \`${{ steps.share_core_tests.outcome }}\`"
             echo "### IndexNow submission-policy tests — \`${{ steps.indexnow_tests.outcome }}\`"
             echo '```'
-            cat printables-surface-wiring.log print-export-properties.log render-invariants-tests.log practice-row-tests.log share-save-tags.log explorer-strings.log saved-items-tests.log indexnow-tests.log share-core-tests.log
+            cat printables-surface-wiring.log print-export-properties.log fitted-page-fit.log render-invariants-tests.log practice-row-tests.log share-save-tags.log explorer-strings.log saved-items-tests.log indexnow-tests.log share-core-tests.log
             echo '```'
             echo ""
             echo "### Funding Choices tag check — \`${{ steps.funding_choices.outcome }}\`"
@@ -1024,6 +1039,7 @@ jobs:
             echo "### Crossword + word scramble tests — \`${{ steps.word_puzzles_tests.outcome }}\`"
             echo "### Printable render invariant tests — \`${{ steps.render_invariants_tests.outcome }}\`"
             echo "### Practice-style row composer tests — \`${{ steps.practice_row_tests.outcome }}\`"
+            echo "### Fitted page fit — \`${{ steps.fitted_page_fit.outcome }}\`"
             echo '```'
             cat qr-tests.log
             echo '```'
@@ -1203,6 +1219,7 @@ jobs:
           steps.funding_choices.outcome == 'failure' ||
           steps.printables_surface_wiring.outcome == 'failure' ||
           steps.print_export_properties.outcome == 'failure' ||
+          steps.fitted_page_fit.outcome == 'failure' ||
           steps.render_invariants_tests.outcome == 'failure' ||
           steps.practice_row_tests.outcome == 'failure' ||
           steps.share_save_tags.outcome == 'failure' ||

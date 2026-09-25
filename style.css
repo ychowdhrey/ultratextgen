@@ -10746,6 +10746,26 @@ body.pt-pdf-rendering .bubble-print-wrap .pt-name-sheet {
   min-height: var(--pt-sheet-h, 8.4in);
   justify-content: space-between;
 }
+/* ...except on a FITTED page, where the height the sheet may claim is already
+   decided by the flex column it sits in, and this min-height is a second
+   answer to the same question. The larger one wins, and it is computed
+   against a different set of siblings: --pt-sheet-h is the page MINUS the
+   credit band, and budgets nothing for the sheet's own title.
+
+   Measured on /printables/name-tracing at Letter / normal margins: the page
+   box is 927.4px; title 38.4 + row gap 16 + sheet 812.2 (= --pt-sheet-h) +
+   credit band 115.2 = 981.7px of content. The page box does not grow, and
+   printablePdf.js rasterises a page unit through a div with overflow:hidden
+   at the page's own height -- so the 54.3px past the box was cut off in the
+   export, taking the bottom 60% of the credit QR and the whole credit URL
+   with it. Nothing in the DOM shows it: the page reports 927.4px and every
+   rect inside it is correct; only the raster is wrong.
+
+   min-height:0 hands the question back to flex: `flex: 1 1 auto` already
+   fills whatever the page has left, which is what this rule wanted. */
+body.pt-pdf-rendering .bubble-print-wrap .pt-sheet-page.is-fitted > .pt-name-sheet {
+  min-height: 0;
+}
 body.pt-pdf-rendering .pt-puzzle-print-holder .pt-puzzle-sheet {
   min-height: var(--pt-sheet-h, 8.4in);
   justify-content: center;
@@ -11231,32 +11251,14 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
 
 @media print { .pt-stencil-field { display: none; } }
 
-/* PR-18 -- the printables hub's facet bar. The hub was a flat 24-card grid
-   with no search, no filter and no facet, so the only way in was by knowing
-   the name of the printable you wanted. */
-.pt-hub-facets {
+/* The printables hub is sectioned by job (owner decision 2026-09-22), which
+   replaced the PR-18 facet bar: six headed sections are crawlable and need no
+   script. This row jumps to them. */
+.pt-hub-jump {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem 1.5rem;
-  margin: 0 0 1.25rem;
-}
-
-.pt-hub-facet {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.pt-hub-facet-label {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-}
-
-.pt-hub-count {
-  margin: 0;
-  flex-basis: 100%;
-  font-size: 0.85rem;
+  gap: 0.35rem 0.75rem;
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
   color: var(--text-secondary);
 }

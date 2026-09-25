@@ -109,7 +109,11 @@ alongside the working tree and drive both in headless Chromium:
   combination — the landscape/portrait split is how a one-letter sheet printed on
   three pages;
 - **decode** the QR from a render of the print surface at print resolution, never look
-  at it;
+  at it — and run this step on the change that has "nothing to do with the credit",
+  because RF-016 was a row-geometry change that cut the credit out of 20 routes;
+- **measure the page unit's descendants against its box**, not just the unit against
+  the page. `fit = pageHeight / unitHeight` is 1.0000 by construction on a unit with a
+  fixed height (`is-fitted`, `is-nup`) and cannot see content cut inside it;
 - for a letterform change, compare **two engines** — Chromium and Firefox disagreed by
   23% on a lowercase counter from the same font file;
 - diff the panel markup, name preview and figure markup of the page types you did

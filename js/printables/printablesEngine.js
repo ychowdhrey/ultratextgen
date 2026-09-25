@@ -58,6 +58,24 @@
   const CFG = window.UTG_PRINTABLE;
   if (!CFG) return;
 
+  /* CFG.nameRoute -- where a personal name goes on a page that no longer
+     takes one (owner decision 2026-09-22: one working job per page). The
+     alphabet and fixed-word pages used to carry a name box, so share links,
+     saved sheets and "recent sheets" written before the split still arrive
+     here with ?name= or ?roster=. Without this they would open the alphabet
+     with the name silently dropped. They are forwarded, query intact, to the
+     page that now owns the name job. Only when the page has no name box of its
+     own, so a page that still takes a name can never bounce. */
+  if (CFG.nameRoute && !document.getElementById("pt-name-input")) {
+    try {
+      const q = new URLSearchParams(window.location.search);
+      if (q.get("name") || q.get("text") || q.get("q") || q.get("roster")) {
+        window.location.replace(CFG.nameRoute + window.location.search);
+        return;
+      }
+    } catch (err) { /* no URLSearchParams: the page simply opens as it is */ }
+  }
+
   /* ---------------------------------------------------------------
      Localization. All engine-injected UI text flows through T, keyed
      off the page's language (html lang="…", or an explicit CFG.lang).
@@ -2280,6 +2298,39 @@
     }
   }
 
+  /* printable_engage -- which controls a page's visitors actually touch, and
+     which sections they reach, before any of them is simplified away (owner
+     decision 2026-09-22: /printables/block-letters/ is frozen until this is
+     measured). printable_output already says which surface EXPORTED; this says
+     which ones were used or seen without exporting.
+
+     Deliberately coarse: once per control and value per page view, so a
+     visitor tapping through all 36 letters is one letter_pick row, not 36.
+     printable_value is a letter-vs-number kind, a size preset key or a section
+     heading id -- never the character and never anything typed, under the
+     same PII rule as trackPrintable in header.js. */
+  const ENGAGED = new Set();
+  function trackEngage(control, value) {
+    const key = control + ":" + value;
+    if (ENGAGED.has(key)) return;
+    ENGAGED.add(key);
+    trackPrintableEvent("printable_engage", { printable_control: control, printable_value: String(value) });
+  }
+  function charKind(ch) { return /[0-9]/.test(ch) ? "number" : "letter"; }
+  function watchSectionReach() {
+    if (!("IntersectionObserver" in window)) return;
+    const sections = $$("main section[aria-labelledby]");
+    if (!sections.length) return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        trackEngage("section_view", en.target.getAttribute("aria-labelledby"));
+        io.unobserve(en.target);
+      });
+    }, { threshold: 0.25 });
+    sections.forEach((sec) => io.observe(sec));
+  }
+
   /* ---------------------------------------------------------------
      Print settings, presets and sharing (2026-09-10).
      Every sheet on this site used to print with whatever paper size the
@@ -2664,13 +2715,18 @@
     if (!presetQuery) return;
     const name = presetGet("name") || presetGet("text") || presetGet("q");
     const input = primaryInput();
-    if (name && input) input.value = String(name).slice(0, input.maxLength > 0 ? input.maxLength : 60);
+    if (name && input) {
+      const before = input.value;
+      input.value = String(name).slice(0, input.maxLength > 0 ? input.maxLength : 60);
+      // A <select> (CFG.fixedWords) given an unlisted word selects nothing; keep the word it had.
+      if (!input.value && input.tagName === "SELECT") input.value = before;
+    }
     const roster = presetGet("roster");
     const rosterEl = primaryRoster();
     if (roster && rosterEl) {
       // ROSTER_CAP, not 40: a 41-name class lost its tail on the round trip
       // and nothing said so.
-      rosterEl.value = String(roster).split("|").map((x) => x.trim()).filter(Boolean).slice(0, ROSTER_CAP).join("\n");
+      rosterEl.value = String(roster).split("|").map((x) => x.trim()).filter(Boolean).filter(allowedWord).slice(0, ROSTER_CAP).join("\n");
       const field = rosterEl.closest("details"); if (field) field.open = true;
     }
     const rows = presetGet("rows"); const rowsEl = firstEl([el.nameRows, el.genRows]);
@@ -2695,7 +2751,7 @@
     const paper = presetGet("paper");
     if (paper && PAPERS[paper] && !(PP && PP.hasStored && PP.hasStored())) printPrefs.paper = paper;
     const orient = presetGet("orient"); if (orient === "landscape" || orient === "portrait") printPrefs.orient = orient;
-    if (!roster && rosterEl && !rosterEl.value.trim()) {
+    if (!roster && rosterEl && !rosterEl.value.trim() && !fixedWordSet()) {
       // Roster memory: a teacher's class list stays on the device between
       // visits (this device only, never sent anywhere).
       const remembered = readRoster(); if (remembered) rosterEl.value = remembered;
@@ -3097,7 +3153,7 @@
       });
     });
     const roster = primaryRoster();
-    if (roster) {
+    if (roster && !fixedWordSet()) {
       let t2 = null;
       roster.addEventListener("input", () => { clearTimeout(t2); t2 = setTimeout(() => writeRoster(roster.value), 800); });
     }
@@ -4119,7 +4175,7 @@
       b.setAttribute("aria-selected", "false");
       b.setAttribute("aria-label", cap(NOUN) + " " + charLabel(ch));
       b.textContent = ch;
-      b.addEventListener("click", () => selectChar(ch));
+      b.addEventListener("click", () => { selectChar(ch); trackEngage("letter_pick", charKind(ch)); });
       return b;
     };
     const letterRow = document.createElement("div");
@@ -4530,6 +4586,7 @@
       b.appendChild(small);
       b.addEventListener("click", () => {
         alphaSizeKey = preset.key;
+        trackEngage("size", preset.key);
         $$(".pt-choice", group).forEach((o) => {
           const isOn = o === b;
           o.classList.toggle("is-active", isOn);
@@ -4635,6 +4692,7 @@
       cell.appendChild(RENDER === "glyph" ? smallGlyphCell(ch) : (RENDER === "dots" ? singleDotSVG(ch, { small: true }) : outlineSVG(ch, { small: true })));
       cell.addEventListener("click", () => {
         selectChar(ch);
+        trackEngage("grid_pick", charKind(ch));
         if (el.panel) el.panel.scrollIntoView({ behavior: "smooth", block: "start" });
       });
       el.alphaGrid.appendChild(cell);
@@ -4795,11 +4853,18 @@
      carries a word that only exists once someone types it, so there is no
      crawlable link to lose. */
   const CARRY_TOOLS = [
-    "/printables/name-tracing/", "/printables/letter-tracing/",
-    "/printables/handwriting-worksheet-generator/", "/printables/sight-word-tracing/",
+    "/printables/name-tracing/", "/printables/cursive-name/",
+    "/printables/handwriting-worksheet-generator/",
     "/printables/coloring-page-maker/", "/printables/dot-to-dot-name/",
-    "/printables/name-puzzle-maker/", "/printables/banner-maker/"
+    "/printables/name-puzzle-maker/", "/printables/banner-maker/",
+    "/printables/bubble-name/", "/printables/graffiti-name/", "/printables/calligraphy-name/"
   ];
+  /* letter-tracing and sight-word-tracing left this list on 2026-09-22: one
+     practises letters only (CFG.genLetters) and the other prints only its own
+     Dolch and Fry words (CFG.fixedWords), so a name carried to either would
+     arrive as something that page does not make. The four name pages joined
+     it, which needs their links in the footer's Generators column, where the
+     labels are read from. */
   /* PR-12 -- "how many sheets will this cost me?" was unanswerable before
      pressing the button, on a family whose own community evidence is
      "we can only afford printer ink a couple times a year". Every number here
@@ -6166,7 +6231,19 @@
   function genValue() {
     const raw = el.genInput ? el.genInput.value : "";
     const v = (raw && raw.trim()) ? raw.trim().slice(0, 42) : GEN_DEMO;
-    return applyCase(v);
+    return applyCase(CFG.genLetters === true ? lettersOnly(v) : v);
+  }
+  /* CFG.genLetters -- the builder on /printables/letter-tracing/ practises
+     LETTERS (owner decision 2026-09-22): names belong to name-tracing and
+     words to the handwriting generator. So what is typed is reduced to its
+     letters and set apart one by one -- "bdp" and "b, d, p" both print as
+     b d p, and a name typed here prints as the letters it is made of rather
+     than as a word to write. \p{L} keeps accented letters for any locale page
+     that opts in; nothing else is kept. */
+  function lettersOnly(v) {
+    let letters;
+    try { letters = String(v).match(/\p{L}/gu); } catch (err) { letters = String(v).match(/[A-Za-z]/g); }
+    return letters && letters.length ? letters.join(" ").slice(0, 42) : GEN_DEMO;
   }
 
   // Difficulty is one internal source of truth (1..7). The level buttons
@@ -6237,10 +6314,43 @@
           if (lv >= 1 && lv <= top) return { name: m[1], level: lv };
         }
         return { name: line, level: null };
-      });
+      })
+      .filter((e) => allowedWord(e.name));
   }
   function rosterNames(mount) {
     return rosterEntries(mount).map((e) => e.name);
+  }
+
+  /* CFG.fixedWords -- a curated-word page (sight-word-tracing; owner decision
+     2026-09-22: a quick-print page offers a bounded set that belongs to its
+     own job, never free text). The allowed set is read from the page's own
+     markup -- the options of the #pt-gen-input picker plus every word a
+     .pt-roster-preset list button carries -- so the list has one owner, the
+     HTML a crawler also reads, and nothing here has to be kept in step.
+
+     Three doors let arbitrary text in besides typing, and each is closed:
+     a ?name= preset (the picker is a <select>, so an unlisted value simply
+     selects nothing and the demo word stands), a ?roster= preset, and the
+     remembered class roster, which is shared across the whole pillar and
+     would otherwise print a teacher's thirty names as "sight words". */
+  let FIXED_WORDS = null;
+  function fixedWordSet() {
+    if (CFG.fixedWords !== true) return null;
+    if (FIXED_WORDS) return FIXED_WORDS;
+    const set = new Set();
+    const pick = document.getElementById("pt-gen-input");
+    if (pick && pick.options) {
+      Array.prototype.forEach.call(pick.options, (o) => { if (o.value) set.add(o.value.toLowerCase()); });
+    }
+    $$(".pt-roster-preset").forEach((b) => {
+      String(b.dataset.words || "").split("|").forEach((w) => { if (w.trim()) set.add(w.trim().toLowerCase()); });
+    });
+    FIXED_WORDS = set;
+    return set;
+  }
+  function allowedWord(w) {
+    const set = fixedWordSet();
+    return !set || set.has(String(w).trim().toLowerCase());
   }
 
   /* Mount a class roster on a page that wants one but does not author the
@@ -6765,7 +6875,13 @@
   //   mode:    "outline" (colorable letters) | "dots" (numbered dot-to-dot)
   //   density: dot-to-dot difficulty key (see DOT_LEVELS)
   //   hint:    show the faint guide line through the dots
-  const designState = { fill: "plain", border: "none", mode: "outline", density: "medium", hint: true, audience: "one" };
+  /* CFG.designer.mode fixes the sheet type on a page with no mode picker.
+     dot-to-dot-name carried a Coloring-outline / Dot-to-dot choice until
+     2026-09-22 (owner decision: one mechanic per page; the coloring page is
+     coloring-page-maker's job). With the picker gone the mode has to come from
+     config, because the default below is the coloring outline. A page that
+     still ships #pt-design-mode-group overrides this from its active chip. */
+  const designState = { fill: "plain", border: "none", mode: DESIGN.mode === "dots" ? "dots" : "outline", density: "medium", hint: true, audience: "one" };
 
   function svgMake(tag, attrs, parent) {
     const node = document.createElementNS(SVGNS, tag);
@@ -10086,6 +10202,7 @@
     buildPrintOptions();
     convertPrintButtonsToPdf();
     wireGenerateEvents();
+    watchSectionReach();
     applyPresetState();
 
     /* Canvas measureText does NOT trigger webfont loading.
