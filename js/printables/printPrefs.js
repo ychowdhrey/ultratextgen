@@ -135,7 +135,8 @@
     es: "Alto contraste (para fotocopiar)",
     pt: "Alto contraste (para fotocópia)",
     id: "Kontras tinggi (untuk difotokopi)",
-    nl:  "Hoog contrast (om te kopiëren)"
+    nl:  "Hoog contrast (om te kopiëren)",
+    tr:  "Yüksek kontrast (fotokopi için)"
   };
   function contrastLabel() {
     const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
@@ -199,7 +200,8 @@
     pl:  { settings: "Ustawienia PDF", paper: "Papier", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientacja", portrait: "Pionowa", landscape: "Pozioma", margins: "Marginesy", normal: "Normalne", narrow: "Wąskie", inkSaver: "Oszczędzanie tuszu (jaśniejsze linie)" },
     de:  { settings: "PDF-Einstellungen", paper: "Papier", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Ausrichtung", portrait: "Hochformat", landscape: "Querformat", margins: "Ränder", normal: "Normal", narrow: "Schmal", inkSaver: "Tintensparmodus (hellere Linien)" },
     id:  { settings: "Pengaturan PDF", paper: "Kertas", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientasi", portrait: "Potret", landscape: "Lanskap", margins: "Margin", normal: "Normal", narrow: "Sempit", inkSaver: "Hemat tinta (garis lebih tipis)" },
-    nl:  {"settings": "PDF-instellingen", "paper": "Papier", "letter": "US Letter", "a4": "A4", "legal": "Legal", "orientation": "Afdrukstand", "portrait": "Staand", "landscape": "Liggend", "margins": "Marges", "normal": "Normaal", "narrow": "Smal", "inkSaver": "Inkt besparen (lichtere lijnen)"}
+    nl:  {"settings": "PDF-instellingen", "paper": "Papier", "letter": "US Letter", "a4": "A4", "legal": "Legal", "orientation": "Afdrukstand", "portrait": "Staand", "landscape": "Liggend", "margins": "Marges", "normal": "Normaal", "narrow": "Smal", "inkSaver": "Inkt besparen (lichtere lijnen)"},
+    tr:  { settings: "PDF ayarları", paper: "Kâğıt", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Yön", portrait: "Dikey", landscape: "Yatay", margins: "Kenar boşlukları", normal: "Normal", narrow: "Dar", inkSaver: "Mürekkep tasarrufu (daha açık çizgiler)" }
   };
 
   /* The action-row strings the three engines share (Share, Copy link,
@@ -227,7 +229,8 @@
     pl:  { share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", savePdf: "Pobierz PDF" },
     de:  { share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", savePdf: "PDF herunterladen" },
     id:  { share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", savePdf: "Unduh PDF" },
-    nl:  {"share": "Delen", "shareImage": "Delen als afbeelding", "copyLink": "Link kopiëren", "linkCopied": "Link gekopieerd", "pinterest": "Bewaren op Pinterest", "savePdf": "PDF downloaden"}
+    nl:  {"share": "Delen", "shareImage": "Delen als afbeelding", "copyLink": "Link kopiëren", "linkCopied": "Link gekopieerd", "pinterest": "Bewaren op Pinterest", "savePdf": "PDF downloaden"},
+    tr:  { share: "Paylaş", shareImage: "Görsel olarak paylaş", copyLink: "Bağlantıyı kopyala", linkCopied: "Bağlantı kopyalandı", pinterest: "Pinterest'e kaydet", savePdf: "PDF indir" }
   };
   function shareLabels() {
     const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
@@ -369,7 +372,8 @@
     pl:  { recent: "Twoje ostatnie arkusze", saved: "Zapisano", clear: "Wyczyść" },
     de:  { recent: "Deine letzten Blätter", saved: "Gespeichert", clear: "Löschen" },
     id:  { recent: "Lembar terbaru Anda", saved: "Tersimpan", clear: "Hapus" },
-    nl:  {"recent": "Je recente vellen", "saved": "Bewaard", "clear": "Wissen"}
+    nl:  {"recent": "Je recente vellen", "saved": "Bewaard", "clear": "Wissen"},
+    tr:  { recent: "Son sayfaların", saved: "Kaydedildi", clear: "Temizle" }
   };
   function stripLabels() {
     const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
@@ -477,7 +481,8 @@
     es: { summary: "Más: título de la hoja, línea de nombre y fecha", title: "Título de la hoja", optional: "opcional", nameDate: "Añadir una línea de nombre y fecha", nameHint: "Escribe {name} para poner el nombre de cada niño." },
     pt: { summary: "Mais: título da folha e linha de nome e data", title: "Título da folha", optional: "opcional", nameDate: "Incluir linha de nome e data", nameHint: "Escreva {name} para colocar o nome de cada criança." },
     id: { summary: "Lainnya: judul lembar serta baris nama dan tanggal", title: "Judul lembar", optional: "opsional", nameDate: "Tambahkan baris nama dan tanggal", nameHint: "Tulis {name} untuk memasukkan nama tiap anak." },
-    nl:  {"summary": "Meer: titel en een regel voor naam en datum", "title": "Titel", "optional": "optioneel", "nameDate": "Regel voor naam en datum toevoegen", "nameHint": "Schrijf {name} om de naam van elk kind in te vullen."}
+    nl:  {"summary": "Meer: titel en een regel voor naam en datum", "title": "Titel", "optional": "optioneel", "nameDate": "Regel voor naam en datum toevoegen", "nameHint": "Schrijf {name} om de naam van elk kind in te vullen."},
+    tr:  { summary: "Daha fazla: başlık ile ad ve tarih satırı", title: "Başlık", optional: "isteğe bağlı", nameDate: "Ad ve tarih satırı ekle", nameHint: "Her çocuğun adını yerleştirmek için {name} yaz." }
   };
   const NAMEDATE_I18N = {
     en: { name: "Name:", date: "Date:" },
@@ -488,7 +493,8 @@
     pl: { name: "Imię:", date: "Data:" },
     de: { name: "Name:", date: "Datum:" },
     id: { name: "Nama:", date: "Tanggal:" },
-    nl:  {"name": "Naam:", "date": "Datum:"}
+    nl:  {"name": "Naam:", "date": "Datum:"},
+    tr:  { name: "Ad:", date: "Tarih:" }
   };
   function langKey() {
     return (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();

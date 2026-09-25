@@ -60,9 +60,10 @@ So the shape is driven by the site's real URLs, not by a tidy taxonomy:
 * `/es/symbols/llms.txt` would be **wrong** — the Spanish symbol pages are
   under `/es/symbol/`.
 * `/es/printables/llms.txt` would be **more wrong** — Spanish printables are
-  under `/es/imprimibles/`, and the seven printables directory names across
-  the site are `printables`, `imprimibles`, `imprimables`, `zum-ausdrucken`,
-  `do-druku`, `da-stampare`, `imprimiveis`, `om-uit-te-printen`. None of those
+  under `/es/imprimibles/`, and the printables directory names across the
+  site are `printables`, `imprimibles`, `imprimables`, `zum-ausdrucken`,
+  `do-druku`, `da-stampare`, `imprimiveis`, `om-uit-te-printen`,
+  `yazdirilabilir` (and `id/printables`). None of those
   is hardcoded: a locale page inherits its section from the English parent it
   declares in its own `hreflang="en"`, the same join
   `scripts/lib/translation-clusters.js` uses.
