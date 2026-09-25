@@ -73,11 +73,13 @@ recorded where found) · `id` (Indonesian) · `de` (German) · `hu` (Hungarian)
 **Batch 2 (ranks 11–20):** `th` (Thai) · `pl` (Polish) · `sr` (Serbian —
 Latin script; the site currently carries no Cyrillic, recorded as a
 negative finding, not assumed) · `ru` (Russian) · `nl` (Dutch — NL primary)
-· `cs` (Czech) · `hr` (Croatian) · `ko` (Korean — a "shadow locale," in the
-site's `detectLang()` allow-list with 48 live pages but no `locales/
-ko.json` shared-chrome file yet; researched the same as any other locale
-here) · `tl` (Tagalog/Filipino — Taglish code-switching recorded as
-legitimate native usage) · `no` (Norwegian)
+· `cs` (Czech) · `hr` (Croatian) · `ko` (Korean — described here 2026-07-25 as
+a "shadow locale" with 48 live pages and no `locales/ko.json` shared-chrome
+file; **stale, corrected 2026-09-25:** `locales/ko.json` shipped 2026-08-24
+(`i18n.js`'s `withRuntimeJson` list), and the page count has grown to 236 —
+still researched the same as any other locale here) · `tl` (Tagalog/Filipino
+— Taglish code-switching recorded as legitimate native usage) · `no`
+(Norwegian)
 
 This is the top 20 of this site's supported locales ranked by forum-derived
 growth opportunity (evidence & demand, coverage gap, competitive weakness,

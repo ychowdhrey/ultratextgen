@@ -102,6 +102,20 @@ units at the time — so unlike the `id/tulisan-cuping/` precedent this exceptio
 on the structural/linguistic argument rather than confirmed search volume. Revisit
 with real numbers if either page's ranking becomes a live question.
 
+**Superseded 2026-09-23 (owner-directed): verdict `build-parent`.** The owner asked
+for an English version of this pair so the Vietnamese page could link its own
+rename-lock update with a real English sibling. The reverse check was direct SERP
+observation, since the keyword instrument was again out of API units: "arena of valor
+name generator symbols" returned mostly Valorant pages, with no dedicated Arena of
+Valor name generator ranking, so there was no existing owner to cannibalize.
+`usecase/arena-of-valor-name-generator/` now parents both pages, the three form one
+en/vi/zh-TW cluster, and both ledger entries were removed from
+`data/english_parent_exceptions.json` as its `build-parent` rule requires. The EN
+page states only the name rules the site already documents for these two editions
+(12 characters, symbols counted singly, no plain space). The separate symbols page
+`vi/ki-tu-dac-biet-lien-quan/` keeps its own exception: its entry's "no EN Arena of
+Valor page exists" clause is now out of date and is left for the owner to re-decide.
+
 ## Argument B — EN SERP consolidation
 
 ### `fr/calligraphie/`, `fr/changeur-de-police/`, `fr/police-d-ecriture/` (2026-07-26)
@@ -122,6 +136,24 @@ concepts. The reason no EN parent exists is that English/Spanish/Italian SERPs f
 the concept pull the *same* competitor set as "font generator" — Google treats them
 as synonyms there, so a standalone EN page would cannibalize the EN homepage. The
 French data shows the opposite holds in the French market.
+
+**Superseded 2026-08-15 for `fr/calligraphie/` only (found stale 2026-09-25, doc
+corrected same day; not a new decision, just closing the loop on this repo's own
+"mark revisions" rule).** PR #739 shipped a standalone EN page,
+`calligraphy/` (`docs/README.md`'s 2026-08-15 update), which falsifies this
+entry's own consolidation premise for calligraphy specifically. `fr/calligraphie/`
+now carries a real `hreflang="en"` back to `calligraphy/` and its row was already
+removed from `data/english_parent_exceptions.json` — the machine-readable ledger
+is current. Only this prose narrative had not been updated to say so.
+**Not yet resolved:** `fr/changeur-de-police/` and `fr/police-d-ecriture/` remain
+in the ledger with `reason` text that still reads "same ratification as
+fr/calligraphie/" — i.e. their consolidation argument leans on a premise that no
+longer holds for their own trio-mate. Whether `calligraphy/` shipping without
+visibly cannibalizing the EN homepage says anything about `font changer`/`police
+d'écriture` specifically is an open question for the owner, not decided here; both
+entries' own `recheckEvidence` (2026-08-11 SERP observation, before PR #739
+shipped) predates this change and should be re-examined at their next
+`nextRecheck` (2026-11-01) with that in mind.
 
 **That EN-side premise is inferred, not verified**, and has never been checked
 against an EN SERP or EN GSC pull — the keyword instrument has been out of API units

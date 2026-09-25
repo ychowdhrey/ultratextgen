@@ -138,9 +138,8 @@
 
   function detectLang() {
     // Locales recognized from the URL path so <html lang> and text direction get
-    // set correctly. Includes prerendered "shadow" locales (ko, hi, zh-tw) that
-    // ship fully translated pages but carry no runtime translation JSON — those
-    // only need the lang/dir attributes, not a fetch (see withRuntimeJson below).
+    // set correctly. Includes the prerendered "shadow" locales (ko, hi, zh-tw) —
+    // see withRuntimeJson below for what they fetch and why.
     var supported = ["en", "es", "fr", "pt", "de", "id", "it", "nl", "tr", "pl", "vi", "tl", "da", "sv", "no", "ja", "th", "ru", "ar", "cs", "sk", "hr", "bs", "sr", "ro", "hu", "ko", "hi", "zh-tw", "fi", "ms"];
 
     // 1. Detect from URL path prefix (e.g. /fr/, /de/, /zh-tw/)
