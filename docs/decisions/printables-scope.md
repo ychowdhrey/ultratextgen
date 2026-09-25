@@ -90,8 +90,9 @@ UI page to cite; they use the site's existing words.
   letter pages whose name section never had one. A fixed-phrase page opts out
   (`roster: false`), as the Indonesian birthday-phrase page does.
 
-**Status (2026-09-25):** built in PR #937 (branch `claude/youthful-cannon-2sfyg7`),
-not yet merged.
+**Status (2026-09-25):** the options, print size and translations shipped in
+PR #937 (merged, `ed12d4949`). The follow-up (monogram and cross-stitch, Dutch,
+class list on every name tool) is PR #941, not yet merged.
 
 ## The `/learn/` pillar sits close to this boundary
 
