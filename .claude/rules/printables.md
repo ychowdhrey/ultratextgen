@@ -66,6 +66,23 @@ update the check in the same change.
 The engine mounts a surface from an element id, so this is a one-line mistake. See
 `.claude/rules/content-architecture.md` → "Two pages must not offer the same tool".
 
+## A sheet option follows the job, not the page
+
+Which options a sheet offers is decided by what the sheet contains, so the same
+option looks and behaves the same wherever it appears:
+
+- **Class set** wherever a typed **name** makes the sheet. It is one control,
+  `mountAudience()`'s "Who is this for? One sheet / Whole class" switch, built from
+  the page's `details.pt-roster-field`. Author that disclosure, never a second
+  switch. A roster that is a **word list** (spelling list, sight words) is marked
+  `data-roster-kind="words"` and keeps the disclosure. `rosterEntries()` is the only
+  reader of the switch; read the roster through it.
+- **Name and date line**: always on for a sheet a child hands back (tracing, name
+  sheets, puzzles); a toggle on a display piece (the designers, name puzzle).
+- **Save all levels** wherever the sheet has levels.
+- **Recent and saved sheets** on every surface, from `printPrefs.js`, which all three
+  engines load. Do not keep a second reader of `utg_printables_recent`.
+
 ## The print settings own the sheet
 
 - **Never hardcode a printed figure's height in inches**, and never estimate the
