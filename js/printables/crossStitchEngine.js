@@ -357,7 +357,11 @@
 
     const cell = 40;
     const margin = 40;
-    const titleH = 64;
+    /* With a typed sheet title the word's own heading band gives way to the
+       shared frame (PP.frameCanvas), which puts the title and then the
+       name line above the chart -- the same order as every other sheet. */
+    const ownTitle = moreTitle();
+    const titleH = ownTitle ? 16 : 64;
     const legendH = 72;
     const chartW = model.cols * cell;
     const chartH = GLYPH_ROWS * cell;
@@ -401,7 +405,7 @@
     ctx.font = "700 34px 'Plus Jakarta Sans', system-ui, sans-serif";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.fillText(word, canvasW / 2, titleH * 0.55);
+    if (!ownTitle) ctx.fillText(word, canvasW / 2, titleH * 0.55);
 
     // Chart, centred.
     const ox = Math.round((canvasW - chartW) / 2);
@@ -445,7 +449,7 @@
     ctx.textAlign = "center";
     ctx.fillText(siteCredit(), canvasW / 2, canvasH - 16);
 
-    return canvas;
+    return PP && PP.frameCanvas ? PP.frameCanvas(canvas, { title: ownTitle, nameDate: moreLine() }) : canvas;
   }
 
   function exportName() { return "cross-stitch-" + (slugify(state.text) || "pattern"); }
@@ -534,6 +538,25 @@
   /* ── Print ─────────────────────────────────────────────────────────
      Build title + chart + legend into #pt-print-root, flip the global
      print class (CSS isolates that root), print, then clean up. */
+
+  /* The sheet's "More" section (title + name-and-date line), the one every
+     printables sheet offers. printPrefs.js owns the control, the strings and
+     the printed line; this engine only says where the section goes and hands
+     its finished canvas to PP.frameCanvas(), which adds the title and the
+     line around the drawing without touching it. Both default to off, so a
+     sheet nobody changes is exactly what it was. */
+  let moreRef = null;
+  function moreTitle() { return moreRef && moreRef.title ? moreRef.title.value.trim().slice(0, 60) : ""; }
+  function moreLine() { return !!(moreRef && moreRef.check && moreRef.check.checked); }
+  function mountMore(anchor) {
+    if (moreRef || !PP || !PP.moreSection || !anchor) return;
+    const sec = PP.moreSection("word", { placeholder: "", checked: false });
+    if (!sec) return;
+    const field = anchor.closest(".pt-field") || anchor.parentNode;
+    field.insertAdjacentElement("afterend", sec.node);
+    moreRef = sec;
+  }
+
   function printPattern() {
     const model = buildRows(state.text);
     if (model.empty || model.cols === 0) return;
@@ -552,8 +575,9 @@
        carries a full I18N table; one string does not warrant a second copy of
        that machinery, so a translated page overrides it from its own config
        the same way it already supplies UTG_PRINTABLE. Falls back to English. */
-    h.textContent = T.printTitle + state.text.toUpperCase().trim();
+    h.textContent = moreTitle() || T.printTitle + state.text.toUpperCase().trim();
     wrap.appendChild(h);
+    if (moreLine() && PP && PP.nameDateRow) wrap.appendChild(PP.nameDateRow());
 
     const label = state.text.trim().replace(/"/g, "”");
     const chartHolder = document.createElement("div");
@@ -684,6 +708,7 @@
       state.style = value;
       if (!silent) render();
     });
+    mountMore($("#cs-style-group"));
 
     /* The primary action writes a PDF; savePdf() already falls back to
        printPattern() when the PDF module cannot run, so the print dialog

@@ -405,7 +405,7 @@
       ctx.fillText(siteCredit(), size / 2, size - 24);
 
       const slug = (v.l + v.c + v.r).toLowerCase() || "initials";
-      cb(canvas, slug);
+      cb(PP && PP.frameCanvas ? PP.frameCanvas(canvas, { title: moreTitle(), nameDate: moreLine() }) : canvas, slug);
     });
   }
 
@@ -539,6 +539,25 @@
   // line can never name different pages.
   function creditUrl() { return "https://" + siteCredit() + "/"; }
 
+
+  /* The sheet's "More" section (title + name-and-date line), the one every
+     printables sheet offers. printPrefs.js owns the control, the strings and
+     the printed line; this engine only says where the section goes and hands
+     its finished canvas to PP.frameCanvas(), which adds the title and the
+     line around the drawing without touching it. Both default to off, so a
+     sheet nobody changes is exactly what it was. */
+  let moreRef = null;
+  function moreTitle() { return moreRef && moreRef.title ? moreRef.title.value.trim().slice(0, 60) : ""; }
+  function moreLine() { return !!(moreRef && moreRef.check && moreRef.check.checked); }
+  function mountMore(anchor) {
+    if (moreRef || !PP || !PP.moreSection || !anchor) return;
+    const sec = PP.moreSection("word", { placeholder: "", checked: false });
+    if (!sec) return;
+    const field = anchor.closest(".pt-field") || anchor.parentNode;
+    field.insertAdjacentElement("afterend", sec.node);
+    moreRef = sec;
+  }
+
   function printMonogram() {
     trackPrintable("print", "monogram");
     const root = byId("pt-print-root");
@@ -550,8 +569,9 @@
     wrap.className = "bubble-print-wrap";
     const h = document.createElement("h2");
     h.className = "bubble-print-title";
-    h.textContent = T.printTitle + initials;
+    h.textContent = moreTitle() || T.printTitle + initials;
     wrap.appendChild(h);
+    if (moreLine() && PP && PP.nameDateRow) wrap.appendChild(PP.nameDateRow());
     const holder = document.createElement("div");
     holder.className = "pt-design-print-holder";
     holder.appendChild(buildMonogramSVG());
@@ -654,6 +674,7 @@
     wireInput("mono-right");
     wireSwatchGroup(byId("mono-layout-group"), "layout", layoutIcon);
     wireSwatchGroup(byId("mono-style-group"), "style", styleIcon);
+    mountMore(byId("mono-style-group"));
 
     /* The primary action writes a PDF; savePdf() already falls back to
        printMonogram() when the PDF module cannot run, so the print dialog

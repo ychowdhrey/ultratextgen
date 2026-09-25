@@ -23,6 +23,8 @@
  *   readRecent() / rememberRecent(entry)   the "recent sheets" list, one key
  *   renderRecentInto(m, L) / renderSavedInto(m, L) / buildMemoryStrips(L)
  *                   the recent and saved strips under the share row
+ *   moreSection(scope, o) / nameDateRow() / frameCanvas(art, o)
+ *                   the sheet's title + name-and-date line, for all three engines
  *
  * Load it BEFORE any engine that uses it. It has no dependencies.
  */
@@ -132,7 +134,8 @@
     fr: "Contraste élevé (pour la photocopie)",
     es: "Alto contraste (para fotocopiar)",
     pt: "Alto contraste (para fotocópia)",
-    id: "Kontras tinggi (untuk difotokopi)"
+    id: "Kontras tinggi (untuk difotokopi)",
+    nl:  "Hoog contrast (om te kopiëren)"
   };
   function contrastLabel() {
     const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
@@ -196,6 +199,7 @@
     pl:  { settings: "Ustawienia PDF", paper: "Papier", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientacja", portrait: "Pionowa", landscape: "Pozioma", margins: "Marginesy", normal: "Normalne", narrow: "Wąskie", inkSaver: "Oszczędzanie tuszu (jaśniejsze linie)" },
     de:  { settings: "PDF-Einstellungen", paper: "Papier", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Ausrichtung", portrait: "Hochformat", landscape: "Querformat", margins: "Ränder", normal: "Normal", narrow: "Schmal", inkSaver: "Tintensparmodus (hellere Linien)" },
     id:  { settings: "Pengaturan PDF", paper: "Kertas", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientasi", portrait: "Potret", landscape: "Lanskap", margins: "Margin", normal: "Normal", narrow: "Sempit", inkSaver: "Hemat tinta (garis lebih tipis)" },
+    nl:  {"settings": "PDF-instellingen", "paper": "Papier", "letter": "US Letter", "a4": "A4", "legal": "Legal", "orientation": "Afdrukstand", "portrait": "Staand", "landscape": "Liggend", "margins": "Marges", "normal": "Normaal", "narrow": "Smal", "inkSaver": "Inkt besparen (lichtere lijnen)"}
   };
 
   /* The action-row strings the three engines share (Share, Copy link,
@@ -223,6 +227,7 @@
     pl:  { share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", savePdf: "Pobierz PDF" },
     de:  { share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", savePdf: "PDF herunterladen" },
     id:  { share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", savePdf: "Unduh PDF" },
+    nl:  {"share": "Delen", "shareImage": "Delen als afbeelding", "copyLink": "Link kopiëren", "linkCopied": "Link gekopieerd", "pinterest": "Bewaren op Pinterest", "savePdf": "PDF downloaden"}
   };
   function shareLabels() {
     const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
@@ -364,6 +369,7 @@
     pl:  { recent: "Twoje ostatnie arkusze", saved: "Zapisano", clear: "Wyczyść" },
     de:  { recent: "Deine letzten Blätter", saved: "Gespeichert", clear: "Löschen" },
     id:  { recent: "Lembar terbaru Anda", saved: "Tersimpan", clear: "Hapus" },
+    nl:  {"recent": "Je recente vellen", "saved": "Bewaard", "clear": "Wissen"}
   };
   function stripLabels() {
     const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
@@ -451,6 +457,188 @@
     return { node: node, refresh: refresh };
   }
 
+  /* ---------------- the sheet's "More" section ---------------- */
+
+  /* The title field and the name-and-date line every printables sheet offers
+     (owner decision 2026-09-25: an option follows the job, not the page).
+     Here rather than in printablesEngine.js so the monogram and cross-stitch
+     tools, which draw their sheet on one canvas in engines of their own, get
+     the same control, the same strings and the same printed line. What each
+     engine DRAWS stays its own; the title and the line are added around it.
+
+     NAMEDATE_I18N is printablesEngine.js's own T.nameLabel / T.dateLabel,
+     extracted, not retyped. MORE_I18N moved here from that file. */
+  const MORE_I18N = {
+    en: { summary: "More: sheet title and name and date line", title: "Sheet title", optional: "optional", nameDate: "Add a name and date line", nameHint: "Write {name} to put each child's name in it." },
+    de: { summary: "Mehr: Überschrift und eine Name-und-Datum-Zeile", title: "Überschrift", optional: "optional", nameDate: "Name-und-Datum-Zeile hinzufügen", nameHint: "Schreibe {name}, um den Namen jedes Kindes einzusetzen." },
+    it: { summary: "Altro: un titolo e una riga nome e data", title: "Titolo", optional: "facoltativo", nameDate: "Aggiungi una riga nome e data", nameHint: "Scrivi {name} per inserire il nome di ogni bambino." },
+    pl: { summary: "Więcej: nagłówek oraz linia na imię i datę", title: "Nagłówek", optional: "opcjonalny", nameDate: "Dodaj linię na imię i datę", nameHint: "Wpisz {name}, aby wstawić imię każdego dziecka." },
+    fr: { summary: "Plus : titre de la fiche, ligne prénom et date", title: "Titre de la fiche", optional: "facultatif", nameDate: "Ajouter une ligne prénom et date", nameHint: "Tapez {name} pour y insérer le prénom de chaque enfant." },
+    es: { summary: "Más: título de la hoja, línea de nombre y fecha", title: "Título de la hoja", optional: "opcional", nameDate: "Añadir una línea de nombre y fecha", nameHint: "Escribe {name} para poner el nombre de cada niño." },
+    pt: { summary: "Mais: título da folha e linha de nome e data", title: "Título da folha", optional: "opcional", nameDate: "Incluir linha de nome e data", nameHint: "Escreva {name} para colocar o nome de cada criança." },
+    id: { summary: "Lainnya: judul lembar serta baris nama dan tanggal", title: "Judul lembar", optional: "opsional", nameDate: "Tambahkan baris nama dan tanggal", nameHint: "Tulis {name} untuk memasukkan nama tiap anak." },
+    nl:  {"summary": "Meer: titel en een regel voor naam en datum", "title": "Titel", "optional": "optioneel", "nameDate": "Regel voor naam en datum toevoegen", "nameHint": "Schrijf {name} om de naam van elk kind in te vullen."}
+  };
+  const NAMEDATE_I18N = {
+    en: { name: "Name:", date: "Date:" },
+    fr: { name: "Prénom :", date: "Date :" },
+    es: { name: "Nombre:", date: "Fecha:" },
+    pt: { name: "Nome:", date: "Data:" },
+    it: { name: "Nome:", date: "Data:" },
+    pl: { name: "Imię:", date: "Data:" },
+    de: { name: "Name:", date: "Datum:" },
+    id: { name: "Nama:", date: "Tanggal:" },
+    nl:  {"name": "Naam:", "date": "Datum:"}
+  };
+  function langKey() {
+    return (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
+  }
+  // null where the page's language has no row: the caller does not mount the
+  // section rather than show English labels on a translated page.
+  function moreLabels() {
+    const own = MORE_I18N[langKey()];
+    return own ? Object.assign({}, MORE_I18N.en, own) : null;
+  }
+  function nameDateLabels() {
+    return Object.assign({}, NAMEDATE_I18N.en, NAMEDATE_I18N[langKey()] || {});
+  }
+  function moreDetails(L) {
+    const d = document.createElement("details");
+    d.className = "pt-more-field pt-sheet-more";
+    const sum = document.createElement("summary");
+    sum.textContent = L.summary;
+    d.appendChild(sum);
+    return d;
+  }
+  function moreTitleField(L, scope, placeholder, withHint) {
+    const f = document.createElement("div");
+    f.className = "pt-field";
+    const id = "pt-" + scope + "-title";
+    const lab = document.createElement("label");
+    lab.className = "pt-field-label";
+    lab.setAttribute("for", id);
+    lab.appendChild(document.createTextNode(L.title + " "));
+    const opt = document.createElement("span");
+    opt.className = "pt-field-opt";
+    opt.textContent = L.optional;
+    lab.appendChild(opt);
+    f.appendChild(lab);
+    const input = document.createElement("input");
+    input.type = "text";
+    input.className = "main-input";
+    input.id = id;
+    input.maxLength = 60;
+    input.autocomplete = "off";
+    if (placeholder) input.placeholder = placeholder;
+    f.appendChild(input);
+    if (withHint) {
+      const hint = document.createElement("p");
+      hint.className = "pt-field-hint";
+      hint.textContent = L.nameHint;
+      f.appendChild(hint);
+    }
+    return { field: f, input: input };
+  }
+  function moreCheckField(L, scope, checked) {
+    const f = document.createElement("div");
+    f.className = "pt-field";
+    const lab = document.createElement("label");
+    lab.className = "pt-check";
+    const box = document.createElement("input");
+    box.type = "checkbox";
+    box.id = "pt-" + scope + "-namedate";
+    box.checked = !!checked;
+    lab.appendChild(box);
+    lab.appendChild(document.createTextNode(" " + L.nameDate));
+    f.appendChild(lab);
+    return { field: f, input: box };
+  }
+  // The whole section. o = { placeholder, checked, withHint }.
+  function moreSection(scope, o) {
+    const L = moreLabels();
+    if (!L) return null;
+    const opts = o || {};
+    const d = moreDetails(L);
+    const t = moreTitleField(L, scope, opts.placeholder || "", !!opts.withHint);
+    const c = moreCheckField(L, scope, !!opts.checked);
+    d.appendChild(t.field);
+    d.appendChild(c.field);
+    return { node: d, title: t.input, check: c.input };
+  }
+  // The printed line, as DOM. Same markup as the sheets' own footer row.
+  function nameDateRow() {
+    const L = nameDateLabels();
+    const row = document.createElement("div");
+    row.className = "pt-sheet-footer";
+    [L.name, L.date].forEach(function (label) {
+      const f = document.createElement("span");
+      f.className = "pt-sheet-footer-field";
+      const l = document.createElement("span");
+      l.className = "pt-sheet-footer-label";
+      l.textContent = label;
+      f.appendChild(l);
+      const rule = document.createElement("span");
+      rule.className = "pt-sheet-footer-rule";
+      f.appendChild(rule);
+      row.appendChild(f);
+    });
+    return row;
+  }
+  /* The title and the line added AROUND a finished drawing, for the engines
+     that export one canvas. The art is copied untouched; above it go an
+     optional title band and an optional name-and-date band, both sized from
+     the art's own width, so they print at the same physical size however
+     many pixels the drawing has. Returns the art itself when neither is
+     asked for, so a sheet nobody changed is byte-for-byte what it was. */
+  function frameCanvas(art, o) {
+    const opts = o || {};
+    const title = String(opts.title || "").trim();
+    const withLine = !!opts.nameDate;
+    if (!art || (!title && !withLine)) return art;
+    const W = art.width;
+    const titlePx = Math.round(W * 0.042);
+    const titleBand = title ? Math.round(titlePx * 2.4) : 0;
+    const linePx = Math.round(W * 0.022);
+    const lineBand = withLine ? Math.round(linePx * 3.4) : 0;
+    const out = document.createElement("canvas");
+    out.width = W;
+    out.height = titleBand + lineBand + art.height;
+    const ctx = out.getContext("2d");
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, out.width, out.height);
+    ctx.fillStyle = "#1a1a2e";
+    ctx.textBaseline = "middle";
+    if (title) {
+      ctx.font = "700 " + titlePx + "px 'Plus Jakarta Sans', system-ui, sans-serif";
+      ctx.textAlign = "center";
+      let text = title;
+      while (ctx.measureText(text).width > W * 0.92 && text.length > 1) text = text.slice(0, -1);
+      ctx.fillText(text, W / 2, titleBand * 0.55);
+    }
+    if (withLine) {
+      const L = nameDateLabels();
+      const y = titleBand + lineBand * 0.55;
+      const pad = W * 0.06;
+      const half = (W - pad * 2) / 2;
+      ctx.font = "700 " + linePx + "px 'Plus Jakarta Sans', system-ui, sans-serif";
+      ctx.textAlign = "left";
+      ctx.strokeStyle = "#cbd5e1";
+      ctx.lineWidth = Math.max(2, Math.round(W / 800));
+      [[L.name, pad], [L.date, pad + half + W * 0.02]].forEach(function (f) {
+        ctx.fillStyle = "#1a1a2e";
+        ctx.fillText(f[0], f[1], y);
+        const x0 = f[1] + ctx.measureText(f[0]).width + linePx * 0.5;
+        const x1 = f[1] + half - W * 0.03;
+        ctx.beginPath();
+        ctx.moveTo(x0, y + linePx * 0.6);
+        ctx.lineTo(x1, y + linePx * 0.6);
+        ctx.stroke();
+      });
+    }
+    ctx.drawImage(art, 0, titleBand + lineBand);
+    return out;
+  }
+
   UTG.printPrefs = {
     values: values,
     PAPERS: PAPERS,
@@ -467,6 +655,13 @@
     renderSavedInto: renderSavedInto,
     buildMemoryStrips: buildMemoryStrips,
     stripLabels: stripLabels,
+    moreLabels: moreLabels,
+    moreDetails: moreDetails,
+    moreTitleField: moreTitleField,
+    moreCheckField: moreCheckField,
+    moreSection: moreSection,
+    nameDateRow: nameDateRow,
+    frameCanvas: frameCanvas,
     paperFull: paperFull,
     marginIn: marginIn,
     scale: scale,

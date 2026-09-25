@@ -612,6 +612,222 @@
         trace_write_check: { label: "Tebalkan, tulis, periksa", hint: "Tebalkan, berlatih, lalu bandingkan dengan contohnya." },
         write_check: { label: "Tulis lalu periksa", hint: "Tulis dari ingatan, lalu bandingkan dengan contohnya." }
       }
+    },
+    /* Dutch (2026-09-25, owner: "fix the Dutch part"). Until now nl had no
+       row at all and its one printables page ran every control in English.
+       Translated and checked against the site's own 21 Dutch pages first
+       (their words win: "vel", "printen", "blokletter") and native teacher,
+       worksheet and software pages for the domain terms. Informal "je", as
+       the site's Dutch copy uses. */
+    nl: {
+      "letterWord": "letter",
+      "numberWord": "cijfer",
+      "copied": "Gekopieerd!",
+      "downloadPng": "PNG downloaden",
+      "copyPaste": "Kopiëren en plakken",
+      "copy": "Kopieer",
+      "howToDraw": "Zo teken je hem",
+      "lowerSuffix": " · klein",
+      "level": "Niveau",
+      "nameLabel": "Naam:",
+      "dateLabel": "Datum:",
+      "space": "spatie",
+      "dotToDot": "stip tot stip",
+      "bannerFlag": "Vlaggetje:",
+      "dotsCount": "stippen",
+      "dotNumbers": "Genummerde stippen",
+      "dotLadderTitle": "Stap voor stap",
+      "dotLadderText": "Begin makkelijk en neem er stippen bij zodra het goed gaat. Expert gelukt? Zet de cijfers uit en teken hem daarna uit de losse hand.",
+      "pdfHint": "Tip: Printen → „Opslaan als pdf” downloadt dit vel als PDF.",
+      "wordSearch": {
+        "heading": "Woordzoeker",
+        "findAll": "Zoek alle",
+        "wordsWord": "woorden",
+        "answerKey": "Oplossing",
+        "forWhom": "voor",
+        "tooLong": "Te lang voor het rooster:",
+        "needWords": "Typ een paar woorden om een rooster te maken.",
+        "gridOf": "Woordzoekerrooster",
+        "lettersBy": "letters bij",
+        "versions": "verschillende roosters, één per naam",
+        "oneGrid": "Eén rooster"
+      },
+      "crossword": {
+        "heading": "Kruiswoordpuzzel",
+        "across": "Horizontaal",
+        "down": "Verticaal",
+        "answerKey": "Oplossing",
+        "forWhom": "voor",
+        "clueBlank": "(schrijf zelf een omschrijving)",
+        "wordBank": "Woordenlijst",
+        "noFit": "Geen plek in het rooster voor:",
+        "needWords": "Typ een paar woorden die letters gemeen hebben.",
+        "gridOf": "Kruiswoordrooster",
+        "cellsBy": "vakjes bij",
+        "versions": "verschillende indelingen, één per naam",
+        "oneGrid": "Eén indeling"
+      },
+      "scramble": {
+        "heading": "Husselwoorden",
+        "unscramble": "Zet de letters van elk woord in de goede volgorde.",
+        "answerKey": "Oplossing",
+        "forWhom": "voor",
+        "startsWith": "begint met",
+        "noScramble": "Te kort om te husselen:",
+        "needWords": "Typ een paar woorden om te husselen.",
+        "versions": "verschillende vellen, één per naam",
+        "oneSheet": "Eén vel",
+        "easy": "Makkelijk",
+        "medium": "Gemiddeld",
+        "hard": "Moeilijk"
+      },
+      "printOpts": {
+        "settings": "PDF-instellingen",
+        "paper": "Papier",
+        "letter": "US Letter",
+        "a4": "A4",
+        "legal": "Legal",
+        "orientation": "Afdrukstand",
+        "portrait": "Staand",
+        "landscape": "Liggend",
+        "margins": "Marges",
+        "normal": "Normaal",
+        "narrow": "Smal",
+        "inkSaver": "Inkt besparen (lichtere lijnen)",
+        "savePdf": "PDF downloaden",
+        "pdfToast": "Kies in het printvenster Opslaan als pdf als bestemming.",
+        "share": "Delen",
+        "shareImage": "Delen als afbeelding",
+        "copyLink": "Link kopiëren",
+        "linkCopied": "Link gekopieerd",
+        "pinterest": "Bewaren op Pinterest",
+        "recent": "Je recente vellen",
+        "clear": "Wissen",
+        "madeAt": "Gemaakt op"
+      },
+      "printBook": "Opslaan als boekje: één pagina per letter",
+      "save": "Opslaan",
+      "saved": "Bewaard",
+      "nameStyleLabel": "Stijl",
+      "nameFillLabel": "Vulling",
+      "nameStrokeLabel": "Omtrek",
+      "nameSolidLabel": "Nu al inkleuren (volledig gevuld)",
+      "pngTransparent": "PNG (transparant)",
+      "classSet": "Klassenset: één vel per naam",
+      "sheets": "vellen",
+      "classSetPngHint": "PNG downloadt de huidige naam; gebruik Opslaan als pdf voor de hele set.",
+      "sheetsPerPage": "Werkbladen per pagina",
+      "bannerInstr": "Knip elk vlaggetje uit langs de stippellijn, prik bij elke stip een gaatje en rijg er op volgorde (1, 2, 3…) een touwtje of lint door, zodat het woord verschijnt.",
+      "puzzleCut": "Knip langs de stippellijnen om de letterstukjes los te maken.",
+      "usLetter": "US Letter",
+      "bannerFlagsLabel": "letterslinger",
+      "ofWord": "van",
+      "flagCount": {
+        "one": "vlaggetje",
+        "other": "vlaggetjes"
+      },
+      "pageCount": {
+        "one": "pagina",
+        "other": "pagina's"
+      },
+      "alphabetWord": "alfabet",
+      "practiceTitle": "Oefenblad · {Noun}",
+      "caseUpper": "Hoofdletters",
+      "caseLower": "Kleine letters",
+      "modelCount": {
+        "one": "voorbeeldregel",
+        "other": "voorbeeldregels"
+      },
+      "traceCount": {
+        "one": "overtrekregel",
+        "other": "overtrekregels"
+      },
+      "blankCount": {
+        "one": "lege regel",
+        "other": "lege regels"
+      },
+      "trace": {
+        "solid": {
+          "label": "Volledig voorbeeld",
+          "hint": "Donkere, volle letters: direct overtrekken"
+        },
+        "bold-dot": {
+          "label": "Dik gestippeld",
+          "hint": "Dikke stippen dicht bij elkaar om te verbinden"
+        },
+        "fine-dot": {
+          "label": "Fijn gestippeld",
+          "hint": "Dunnere stippen met wat meer ruimte ertussen"
+        },
+        "dashed": {
+          "label": "Gestreept",
+          "hint": "Losse streepjes: meer lijn om zelf aan te vullen"
+        },
+        "faded": {
+          "label": "Lichte schaduw",
+          "hint": "Lichtgrijze letters om overheen te schrijven"
+        },
+        "faint": {
+          "label": "Vage omtrek",
+          "hint": "Nauwelijks zichtbare omtrek: bijna zelfstandig"
+        },
+        "blank": {
+          "label": "Lege regel",
+          "hint": "Geen hulp: uit je hoofd schrijven"
+        }
+      },
+      "dot": {
+        "easy": {
+          "label": "Makkelijk",
+          "hint": "Grote afstanden, weinig stippen: voor de jongsten"
+        },
+        "medium": {
+          "label": "Gemiddeld",
+          "hint": "Een evenwichtige stip-tot-stiptekening"
+        },
+        "hard": {
+          "label": "Moeilijk",
+          "hint": "Meer stippen en fijnere details in de letter"
+        },
+        "expert": {
+          "label": "Expert",
+          "hint": "Heel veel stippen: een echte uitdaging"
+        }
+      },
+      "size": {
+        "label": "Printformaat",
+        "full": {
+          "label": "Hele pagina",
+          "hint": "Eén grote letter per vel: de standaardinstelling"
+        },
+        "medium": {
+          "label": "Middel (~10 cm)",
+          "hint": "Meerdere letters per vel: goed voor posters"
+        },
+        "small": {
+          "label": "Klein (~5 cm)",
+          "hint": "Veel letters per vel: ideaal voor een prikbord"
+        }
+      },
+      "practice": {
+        "label": "Oefenvorm",
+        "repeat": {
+          "label": "Herhaald overtrekken",
+          "hint": "Elke regel vullen met letters om over te trekken."
+        },
+        "trace_write": {
+          "label": "Overtrekken, dan schrijven",
+          "hint": "Eén keer overtrekken, dan zelf oefenen."
+        },
+        "trace_write_check": {
+          "label": "Overtrekken, schrijven, controleren",
+          "hint": "Overtrekken, oefenen en dan vergelijken met het voorbeeld."
+        },
+        "write_check": {
+          "label": "Schrijven, dan controleren",
+          "hint": "Uit je hoofd schrijven, dan vergelijken met het voorbeeld."
+        }
+      }
     }
   };
   /* Shallow-merged over English rather than replaced, so a key a locale block
@@ -2369,7 +2585,7 @@
      those labels are left for the i18n table to set outright. */
   const PRINT_VERBS = {
     en: ["Print"], fr: ["Imprimer"], es: ["Imprimir"], pt: ["Imprimir"],
-    it: ["Stampa"], pl: ["Wydrukuj", "Drukuj"], id: ["Cetak"], de: []
+    it: ["Stampa"], pl: ["Wydrukuj", "Drukuj"], id: ["Cetak"], de: [], nl: []
   };
   /* ONE roster for the whole pillar, not one per URL. It was keyed on
      location.pathname, so a class typed on /printables/name-tracing/ was
@@ -5278,7 +5494,7 @@
      contrast -- each held back for want of an attested word. The owner asked
      for them everywhere (2026-09-25); each was translated and checked against
      native worksheet, teaching and software pages, and the evidence is kept
-     with the research, not here. A language with no row (nl) still does not
+     with the research, not here. A language with no row still does not
      get the control: an English label on a Dutch page is the thing the
      original rule was right about. */
   const OPTIONS_I18N = {
@@ -5289,7 +5505,8 @@
     fr: { lefty: "Pour gauchers (modèle des deux côtés)", spacing: "Espacement des lettres", normal: "Normal", wide: "Large", widest: "Très large", stencil: "Pochoir avec ponts (l'intérieur des lettres reste attaché à la découpe)" },
     es: { lefty: "Para zurdos (modelo en los dos extremos)", spacing: "Espaciado entre letras", normal: "Normal", wide: "Amplio", widest: "Muy amplio", stencil: "Plantilla con puentes (el interior de las letras no se cae al recortar)" },
     pt: { lefty: "Para canhotos (modelo nos dois lados)", spacing: "Espaçamento entre letras", normal: "Normal", wide: "Largo", widest: "Muito largo", stencil: "Estêncil com pontes (o miolo das letras não cai ao recortar)" },
-    id: { lefty: "Untuk anak kidal (contoh di kedua sisi)", spacing: "Jarak antar huruf", normal: "Normal", wide: "Lebar", widest: "Sangat lebar", stencil: "Stensil dengan jembatan (bagian tengah huruf tidak lepas saat digunting)" }
+    id: { lefty: "Untuk anak kidal (contoh di kedua sisi)", spacing: "Jarak antar huruf", normal: "Normal", wide: "Lebar", widest: "Sangat lebar", stencil: "Stensil dengan jembatan (bagian tengah huruf tidak lepas saat digunting)" },
+    nl: {"lefty": "Voor linkshandigen (voorbeeld aan beide kanten)", "spacing": "Letterafstand", "normal": "Normaal", "wide": "Breed", "widest": "Extra breed", "stencil": "Sjabloon met bruggetjes (binnenstukjes blijven vastzitten als je uitknipt)"}
   };
   const OL = OPTIONS_I18N[LANG] || null;
 
@@ -6418,7 +6635,8 @@
     fr: { label: "Pour qui ?", group: "Nombre de fiches", one: "Une fiche", oneHint: "Seulement ce prénom", all: "Toute la classe", allHint: "Une fiche par enfant" },
     es: { label: "¿Para quién es?", group: "Número de hojas", one: "Una hoja", oneHint: "Solo este nombre", all: "Toda la clase", allHint: "Una hoja por niño" },
     pt: { label: "Para quem é?", group: "Quantas folhas", one: "Uma folha", oneHint: "Só este nome", all: "Turma inteira", allHint: "Uma folha por criança" },
-    id: { label: "Untuk siapa?", group: "Berapa lembar", one: "Satu lembar", oneHint: "Hanya nama ini", all: "Seluruh kelas", allHint: "Satu lembar per anak" }
+    id: { label: "Untuk siapa?", group: "Berapa lembar", one: "Satu lembar", oneHint: "Hanya nama ini", all: "Seluruh kelas", allHint: "Satu lembar per anak" },
+    nl: {label: "Voor wie is dit?", group: "Hoeveel vellen", one: "Eén vel", oneHint: "Alleen deze naam", all: "Hele klas", allHint: "Eén vel per kind"}
   };
   // The word-list tools print one sheet from a LIST, not from a name, so
   // "Just this name" would describe a sheet they do not make.
@@ -6521,20 +6739,13 @@
      that field is moved into the section rather than duplicated, and the
      coloring maker's hand-written section is adopted as it is.
 
-     Strings: en; de/it/pl from the site's own coloring pages; fr/es/pt/id
-     translated for this and checked against native worksheet and software
-     sites (2026-09-25). */
-  const MORE_I18N = {
-    en: { summary: "More: sheet title and name and date line", title: "Sheet title", optional: "optional", nameDate: "Add a name and date line", nameHint: "Write {name} to put each child's name in it." },
-    de: { summary: "Mehr: Überschrift und eine Name-und-Datum-Zeile", title: "Überschrift", optional: "optional", nameDate: "Name-und-Datum-Zeile hinzufügen", nameHint: "Schreibe {name}, um den Namen jedes Kindes einzusetzen." },
-    it: { summary: "Altro: un titolo e una riga nome e data", title: "Titolo", optional: "facoltativo", nameDate: "Aggiungi una riga nome e data", nameHint: "Scrivi {name} per inserire il nome di ogni bambino." },
-    pl: { summary: "Więcej: nagłówek oraz linia na imię i datę", title: "Nagłówek", optional: "opcjonalny", nameDate: "Dodaj linię na imię i datę", nameHint: "Wpisz {name}, aby wstawić imię każdego dziecka." },
-    fr: { summary: "Plus : titre de la fiche, ligne prénom et date", title: "Titre de la fiche", optional: "facultatif", nameDate: "Ajouter une ligne prénom et date", nameHint: "Tapez {name} pour y insérer le prénom de chaque enfant." },
-    es: { summary: "Más: título de la hoja, línea de nombre y fecha", title: "Título de la hoja", optional: "opcional", nameDate: "Añadir una línea de nombre y fecha", nameHint: "Escribe {name} para poner el nombre de cada niño." },
-    pt: { summary: "Mais: título da folha e linha de nome e data", title: "Título da folha", optional: "opcional", nameDate: "Incluir linha de nome e data", nameHint: "Escreva {name} para colocar o nome de cada criança." },
-    id: { summary: "Lainnya: judul lembar serta baris nama dan tanggal", title: "Judul lembar", optional: "opsional", nameDate: "Tambahkan baris nama dan tanggal", nameHint: "Tulis {name} untuk memasukkan nama tiap anak." }
-  };
-  const ML = Object.assign({}, MORE_I18N.en, MORE_I18N[LANG] || {});
+     The strings and the DOM builders live in printPrefs.js, so the monogram
+     and cross-stitch engines mount the identical section. de/it/pl are the
+     site's own coloring-page wording; fr/es/pt/id were translated and
+     checked against native worksheet and software sites (2026-09-25). */
+  // The strings and the builders are printPrefs.js's (all three engines
+  // share them). null on a page whose language has no row: no section there.
+  const ML = PP && PP.moreLabels ? PP.moreLabels() : null;
   const NAME_TOKEN = "{name}";
   const moreRefs = {};   // scope -> { title: <input>|null, check: <input>|null }
 
@@ -6576,57 +6787,9 @@
     });
   }
 
-  function moreDetails() {
-    const d = document.createElement("details");
-    d.className = "pt-more-field pt-sheet-more";
-    const sum = document.createElement("summary");
-    sum.textContent = ML.summary;
-    d.appendChild(sum);
-    return d;
-  }
-  function moreTitleField(scope, placeholder, withHint) {
-    const f = document.createElement("div");
-    f.className = "pt-field";
-    const id = "pt-" + scope + "-title";
-    const lab = document.createElement("label");
-    lab.className = "pt-field-label";
-    lab.setAttribute("for", id);
-    lab.appendChild(document.createTextNode(ML.title + " "));
-    const opt = document.createElement("span");
-    opt.className = "pt-field-opt";
-    opt.textContent = ML.optional;
-    lab.appendChild(opt);
-    f.appendChild(lab);
-    const input = document.createElement("input");
-    input.type = "text";
-    input.className = "main-input";
-    input.id = id;
-    input.maxLength = 60;
-    input.autocomplete = "off";
-    if (placeholder) input.placeholder = placeholder;
-    f.appendChild(input);
-    if (withHint) {
-      const hint = document.createElement("p");
-      hint.className = "pt-field-hint";
-      hint.textContent = ML.nameHint;
-      f.appendChild(hint);
-    }
-    return { field: f, input: input };
-  }
-  function moreCheckField(scope, checked) {
-    const f = document.createElement("div");
-    f.className = "pt-field";
-    const lab = document.createElement("label");
-    lab.className = "pt-check";
-    const box = document.createElement("input");
-    box.type = "checkbox";
-    box.id = "pt-" + scope + "-namedate";
-    box.checked = !!checked;
-    lab.appendChild(box);
-    lab.appendChild(document.createTextNode(" " + ML.nameDate));
-    f.appendChild(lab);
-    return { field: f, input: box };
-  }
+  function moreDetails() { return PP.moreDetails(ML); }
+  function moreTitleField(scope, placeholder, withHint) { return PP.moreTitleField(ML, scope, placeholder, withHint); }
+  function moreCheckField(scope, checked) { return PP.moreCheckField(ML, scope, checked); }
 
   function lettersDefaultTitle() { return cap(NOUN) + " " + T.alphabetWord; }
   function wordDefaultTitle() {
@@ -6636,6 +6799,7 @@
   }
 
   function mountMore() {
+    if (!ML) return;
     /* Letters: under the print-size control, above the A-Z actions, which is
        where every letter page now has one (buildSpokeBatch covers the hubs
        and spokes that had no batch button of their own). */
@@ -10508,12 +10672,19 @@
        readyState, in its other form. */
     if (document.readyState === "complete") mountCarryRow();
     else window.addEventListener("load", mountCarryRow, { once: true });
-    if (CFG.roster === true) {
-      ["name", "gen", "design", "puzzle"].forEach((kind) => {
-        const made = mountRoster(kind);
-        if (made) el[kind + "Roster"] = made;
-      });
-    }
+    /* A typed NAME makes a class set on every page, so the name tool mounts
+       its roster unless the page opts out with CFG.roster === false (a
+       fixed-phrase page such as id/printables/tulisan-selamat-ulang-tahun).
+       Twenty-eight locale hubs kept a name section with no class list after
+       their English parents' name tools moved to pages that author one
+       (2026-09-25). The other tools still mount theirs only on
+       CFG.roster === true: a generator's list is often words, not children. */
+    const rosterKinds = CFG.roster === true ? ["name", "gen", "design", "puzzle"]
+      : (CFG.roster === false ? [] : ["name"]);
+    rosterKinds.forEach((kind) => {
+      const made = mountRoster(kind);
+      if (made) el[kind + "Roster"] = made;
+    });
     /* AFTER mountRoster, not before it. Both of these read primaryRoster():
        the cost line binds its input listener to one, and the N chips exist
        only where one does. el.*Roster is captured at module scope, so on the
