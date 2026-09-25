@@ -150,7 +150,7 @@ page (4.6in, 26 sheets) and Medium (2.3in, 7 sheets). Not built.
 alphabet pages still names the old "Save as a book" button. Rewriting it touches
 pages whose titles and headings carry em dashes, so it is a separate copy pass.
 
-**Status (2026-09-25):** not yet merged.
+**Status (2026-09-25):** PR #944, not yet merged.
 
 ## The `/learn/` pillar sits close to this boundary
 
