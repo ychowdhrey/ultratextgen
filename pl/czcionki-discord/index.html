@@ -92,6 +92,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
+  "citation": [
+    {
+      "@type": "WebPage",
+      "name": "artykuł pomocy Discorda o profilach",
+      "url": "https://support.discord.com/hc/en-us/articles/4403147417623-Custom-Profiles"
+    }
+  ],
   "name": "Generator Czcionek na Discord",
   "alternateName": [
     "Czcionki Discord",
@@ -135,7 +142,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {
       "@type": "Question",
       "name": "Czym różni się formatowanie Discorda (**pogrubienie**) od czcionek Unicode?",
-      "acceptedAnswer": { "@type": "Answer", "text": "To dwie różne rzeczy. Markdown Discorda (**pogrubienie**, *kursywa*, `kod`) formatuje tekst tylko wewnątrz wiadomości na czacie i znika, gdy spróbujesz użyć go w nazwie albo w bio. Czcionki Unicode z tej strony to sam ostylizowany znak, więc działają wszędzie — w nicku, w „O mnie”, w nazwie kanału, w statusie i na czacie. Zasada praktyczna: w zwykłej wiadomości użyj Markdownu, a żeby ostylować nick albo bio, użyj czcionki Unicode." }
+      "acceptedAnswer": { "@type": "Answer", "text": "To dwie różne rzeczy. Markdown Discorda (**pogrubienie**, *kursywa*, `kod`) formatuje wiadomości na czacie i bio, ale znika, gdy spróbujesz użyć go w nazwie. Czcionki Unicode z tej strony to sam ostylizowany znak, więc działają wszędzie — w nicku, w „O mnie”, w nazwie kanału, w statusie i na czacie. Zasada praktyczna: w zwykłej wiadomości użyj Markdownu, a żeby ostylować nick albo bio, użyj czcionki Unicode." }
     },
     {
       "@type": "Question",
@@ -277,10 +284,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <h2>Markdown Discorda vs czcionki Unicode — kiedy czego użyć</h2>
     <p class="editorial-intro">Discord ma <strong>dwa sposoby</strong> na majstrowanie przy tekście i warto ich nie mylić. Jeden to natywne <strong>formatowanie Markdown</strong>, drugi to <strong>czcionki Unicode</strong> z tej strony. Służą do różnych rzeczy.</p>
     <div class="block-example">
-      — <strong>Markdown (natywny):</strong> <code>**pogrubienie**</code> → <strong>pogrubienie</strong>, <code>*kursywa*</code> → <em>kursywa</em>, <code>__podkreślenie__</code>, <code>~~przekreślenie~~</code>, <code>`kod`</code>. Działa tylko <strong>wewnątrz wiadomości</strong> na czacie i znika, gdy spróbujesz w nazwie albo w bio.<br>
+      — <strong>Markdown (natywny):</strong> <code>**pogrubienie**</code> → <strong>pogrubienie</strong>, <code>*kursywa*</code> → <em>kursywa</em>, <code>__podkreślenie__</code>, <code>~~przekreślenie~~</code>, <code>`kod`</code>. Działa <strong>w wiadomościach</strong> na czacie i w „O mnie” (bio), ale znika, gdy spróbujesz w nazwie.<br>
       — <strong>Czcionki Unicode (ta strona):</strong> 𝗽𝗼𝗴𝗿𝘂𝗯𝗶𝗼𝗻𝗲, 𝓴𝓾𝓻𝓼𝔂𝔀𝓪, 𝔤𝔬𝔱𝔶𝔨. To sam ostylizowany znak, więc działa <strong>wszędzie</strong> — w nicku, w „O mnie”, w nazwie kanału, w statusie i na czacie.
     </div>
-    <p>Zasada praktyczna: żeby sformatować zwykłą <strong>wiadomość</strong> (pogrubić słowo w środku zdania), użyj Markdownu Discorda — jest czystszy. Żeby ostylować <strong>nick, bio albo nazwę kanału</strong>, użyj czcionki Unicode, bo Markdown tam nie zadziała. I ważne ostrzeżenie: nic z tego nie działa w <strong>nazwie użytkownika (@)</strong>, która przyjmuje tylko małe litery od a do z, cyfry, kropkę i podkreślenie — żadnej czcionki, spacji ani emoji. Jeśli chcesz stylu w nazwie, właściwym polem jest nazwa wyświetlana, a nie login @.</p>
+    <p>Zasada praktyczna: żeby sformatować zwykłą <strong>wiadomość</strong> (pogrubić słowo w środku zdania), użyj Markdownu Discorda — jest czystszy. Żeby ostylować <strong>nick albo nazwę kanału</strong>, użyj czcionki Unicode, bo Markdown tam nie zadziała. W bio działa jedno i drugie. I ważne ostrzeżenie: nic z tego nie działa w <strong>nazwie użytkownika (@)</strong>, która przyjmuje tylko małe litery od a do z, cyfry, kropkę i podkreślenie — żadnej czcionki, spacji ani emoji. Jeśli chcesz stylu w nazwie, właściwym polem jest nazwa wyświetlana, a nie login @.</p>
   </section>
 
   <!-- Ozdobne nicki z ramkami -->
@@ -338,11 +345,19 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </a>
     </div>
   </section>
+
+<section class="editorial-section">
+  <span class="article-section-label">Źródła</span>
+  <div class="source-note">
+    <p>To, że pole „O mnie” przyjmuje tekst w Markdownie i linki, do 190 znaków, podaje <a href="https://support.discord.com/hc/en-us/articles/4403147417623-Custom-Profiles" rel="nofollow noopener" target="_blank">artykuł pomocy Discorda o profilach</a>.</p>
+  </div>
+</section>
+
     <h2 class="faq-category">Najczęstsze pytania o czcionki na Discord</h2>
     <div class="faq-item"><button class="faq-question" type="button">Jak zmienić czcionkę w nicku na Discordzie?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Wpisz swoje imię w polu na górze strony. Od razu pojawią się dziesiątki czcionek na Discord — pogrubione, kursywa, gotyckie, bąbelkowe, małe kapitaliki. Kliknij „Kopiuj” przy tej, która ci się podoba, otwórz Discorda, wejdź w Ustawienia użytkownika i wklej ją w nazwę wyświetlaną, albo kliknij prawym przyciskiem na serwerze i zmień pseudonim na tym serwerze. Ponieważ to znaki Unicode, stylowa literka wkleja się w pole bez żadnej wtyczki.</div></div>
     <div class="faq-item"><button class="faq-question" type="button">Czy do czcionek na Discordzie potrzebne jest Nitro?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Nie. Literki z tego generatora to zwykłe znaki Unicode, takie same jak z klawiatury, tylko z innym wyglądem — dlatego wklejają się w nazwę wyświetlaną, w pseudonim na serwerze, w sekcję „O mnie”, w nazwę kanału i w wiadomości bez żadnego Nitro. Nitro jest potrzebne tylko do płatnych dodatków, takich jak kolory i gradient w nazwie (Display Name Styles), a nie do samego stylowego tekstu.</div></div>
     <div class="faq-item"><button class="faq-question" type="button">Czy czcionki działają w nazwie użytkownika (@) na Discordzie?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Nie. Nazwa użytkownika (unikalne @ używane do zaproszeń do znajomych) przyjmuje tylko małe litery od a do z, cyfry, kropkę i podkreślenie — żadnych stylowych czcionek, spacji, emoji ani symboli. Czcionki na Discord działają w nazwie wyświetlanej, w pseudonimie serwerowym, w sekcji „O mnie”, w nazwie kanału i na czacie. Jeśli chcesz stylu w nazwie, użyj nazwy wyświetlanej, a nie loginu @.</div></div>
-    <div class="faq-item"><button class="faq-question" type="button">Czym różni się formatowanie Discorda (**pogrubienie**) od czcionek Unicode?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">To dwie różne rzeczy. Markdown Discorda (**pogrubienie**, *kursywa*, `kod`) formatuje tekst tylko wewnątrz wiadomości na czacie i znika, gdy spróbujesz użyć go w nazwie albo w bio. Czcionki Unicode z tej strony to sam ostylizowany znak, więc działają wszędzie — w nicku, w „O mnie”, w nazwie kanału, w statusie i na czacie. Zasada praktyczna: w zwykłej wiadomości użyj Markdownu, a żeby ostylować nick albo bio, użyj czcionki Unicode.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">Czym różni się formatowanie Discorda (**pogrubienie**) od czcionek Unicode?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">To dwie różne rzeczy. Markdown Discorda (**pogrubienie**, *kursywa*, `kod`) formatuje wiadomości na czacie i bio, ale znika, gdy spróbujesz użyć go w nazwie. Czcionki Unicode z tej strony to sam ostylizowany znak, więc działają wszędzie — w nicku, w „O mnie”, w nazwie kanału, w statusie i na czacie. Zasada praktyczna: w zwykłej wiadomości użyj Markdownu, a żeby ostylować nick albo bio, użyj czcionki Unicode.</div></div>
     <div class="faq-item"><button class="faq-question" type="button">Jak zrobić ozdobny nick na Discorda z ramkami i symbolami?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Wybierz czcionkę do imienia (gotyk i bąbelkowe wychodzą najlepiej) i otocz je ramkami oraz symbolami w stylu ꧁༒ ༒꧂. Na tej stronie jest siatka gotowych nicków z ramkami — kliknij, żeby skopiować, i wklej w pseudonim na serwerze. Możesz też wpisać swoje imię na górze, nałożyć czcionkę i użyć zakładek Symbole i Ramki, żeby dopiąć wygląd przed skopiowaniem.</div></div>
     <div class="faq-item"><button class="faq-question" type="button">Dlaczego literki wyświetlają się na Discordzie jako kwadraciki?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Bo urządzenie osoby, która to ogląda, nie ma czcionki rysującej dany znak — zwykle to starszy telefon albo komputer. To nie błąd strony ani twojego kopiowania. Podstawowe style — pogrubione, kursywa, gotyk, bąbelkowe i małe kapitaliki — są najbezpieczniejsze i wyświetlają się poprawnie niemal wszędzie. Jeśli ktoś zgłosi kwadracik (□), zamień na jeden z tych stylów.</div></div>
 

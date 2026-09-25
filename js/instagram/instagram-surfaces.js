@@ -34,6 +34,12 @@
      `status` is one of "safe" | "partial" | "blocked" and maps to
      the shared --ts-safe / --ts-risk / --ts-fail tokens.
      ------------------------------------------------------------ */
+  /* Sources, checked 2026-09-25. Bio 150 is Instagram's own figure
+     (help.instagram.com/728994388226960). The other limits are not published
+     by Instagram: display name 64 matches what social-media analysts have
+     reported since mid-2022, caption/comment 2,200 and the 30-character
+     handle are the long-standing observed caps, and the Story text box has no
+     documented limit at all, so 2,200 there is a conservative stand-in. */
   const SURFACES = {
     "display-name": {
       label: "Display name",

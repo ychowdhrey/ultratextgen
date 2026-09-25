@@ -92,6 +92,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
+  "citation": [
+    {
+      "@type": "WebPage",
+      "name": "artigo de ajuda do Discord sobre perfis",
+      "url": "https://support.discord.com/hc/en-us/articles/4403147417623-Custom-Profiles"
+    }
+  ],
   "name": "Gerador de Fontes para Discord",
   "alternateName": [
     "Fontes para Discord",
@@ -135,7 +142,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {
       "@type": "Question",
       "name": "Qual a diferença entre a formatação do Discord (**negrito**) e as fontes Unicode?",
-      "acceptedAnswer": { "@type": "Answer", "text": "São coisas diferentes. O Markdown do Discord (**negrito**, *itálico*, `código`) só formata o texto dentro das mensagens do chat, e some se você tentar usar no nome ou na bio. Já as fontes Unicode deste site são o próprio caractere estilizado, então funcionam em todo lugar — nick, «Sobre mim», nome de canal, status e chat. Regra prática: em mensagem normal, use o Markdown; pra deixar o nick ou a bio estilosa, use a fonte Unicode." }
+      "acceptedAnswer": { "@type": "Answer", "text": "São coisas diferentes. O Markdown do Discord (**negrito**, *itálico*, `código`) formata as mensagens do chat e a bio, mas some se você tentar usar no nome. Já as fontes Unicode deste site são o próprio caractere estilizado, então funcionam em todo lugar — nick, «Sobre mim», nome de canal, status e chat. Regra prática: em mensagem normal, use o Markdown; pra deixar o nick ou a bio estilosa, use a fonte Unicode." }
     },
     {
       "@type": "Question",
@@ -276,10 +283,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <h2>Markdown do Discord vs fontes Unicode — quando usar cada um</h2>
     <p class="editorial-intro">O Discord tem <strong>dois jeitos</strong> de mexer no texto, e é bom não confundir. Um é a <strong>formatação Markdown</strong> nativa; o outro são as <strong>fontes Unicode</strong> deste site. Servem pra coisas diferentes.</p>
     <div class="block-example">
-      — <strong>Markdown (nativo):</strong> <code>**negrito**</code> → <strong>negrito</strong>, <code>*itálico*</code> → <em>itálico</em>, <code>__sublinhado__</code>, <code>~~riscado~~</code>, <code>`código`</code>. Só funciona <strong>dentro das mensagens</strong> do chat e some se você tentar no nome ou na bio.<br>
+      — <strong>Markdown (nativo):</strong> <code>**negrito**</code> → <strong>negrito</strong>, <code>*itálico*</code> → <em>itálico</em>, <code>__sublinhado__</code>, <code>~~riscado~~</code>, <code>`código`</code>. Funciona <strong>nas mensagens</strong> do chat e no «Sobre mim» (a bio), mas some se você tentar no nome.<br>
       — <strong>Fontes Unicode (este site):</strong> 𝗻𝗲𝗴𝗿𝗶𝘁𝗼, 𝓬𝓾𝓻𝓼𝓲𝓿𝓪, 𝔤𝔬́𝔱𝔦𝔠𝔞. É o próprio caractere estilizado, então funciona <strong>em todo lugar</strong> — nick, «Sobre mim», nome de canal, status e chat.
     </div>
-    <p>Regra prática: pra formatar uma <strong>mensagem</strong> normal (deixar uma palavra em negrito no meio da frase), use o Markdown do Discord — é mais limpo. Pra deixar o <strong>nick, a bio ou o nome de canal</strong> estiloso, use a fonte Unicode, porque o Markdown não pega ali. E um aviso importante: nada disso funciona no <strong>nome de usuário (@)</strong>, que só aceita letra minúscula de a a z, número, ponto e underline — nem fonte, nem espaço, nem emoji. Se quer estilo no nome, o campo certo é o nome de exibição, não o @.</p>
+    <p>Regra prática: pra formatar uma <strong>mensagem</strong> normal (deixar uma palavra em negrito no meio da frase), use o Markdown do Discord — é mais limpo. Pra deixar o <strong>nick ou o nome de canal</strong> estiloso, use a fonte Unicode, porque o Markdown não pega ali. Na bio, os dois funcionam. E um aviso importante: nada disso funciona no <strong>nome de usuário (@)</strong>, que só aceita letra minúscula de a a z, número, ponto e underline — nem fonte, nem espaço, nem emoji. Se quer estilo no nome, o campo certo é o nome de exibição, não o @.</p>
   </section>
 
   <!-- Nicks com molduras -->
@@ -341,11 +348,19 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </a>
     </div>
   </section>
+
+<section class="editorial-section">
+  <span class="article-section-label">Fontes</span>
+  <div class="source-note">
+    <p>Que o «Sobre mim» aceita texto em Markdown e links, até 190 caracteres, está no <a href="https://support.discord.com/hc/en-us/articles/4403147417623-Custom-Profiles" rel="nofollow noopener" target="_blank">artigo de ajuda do Discord sobre perfis</a>.</p>
+  </div>
+</section>
+
     <h2 class="faq-category">Perguntas frequentes sobre fontes para Discord</h2>
     <div class="faq-item"><button class="faq-question" type="button">Como colocar fonte diferente no nick do Discord?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Digita seu nome na caixa lá em cima da página. Na hora aparecem dezenas de fontes para Discord — negrito, itálico, cursiva, gótica, bubble, small caps. Clica em «Copiar» na que você gostou, abre o Discord, vai em Configurações de Usuário e cola no seu nome de exibição, ou clica com o botão direito no servidor e edita o apelido daquele servidor. Como são caracteres Unicode, a letra estilosa gruda no campo sem precisar de nenhum plugin.</div></div>
     <div class="faq-item"><button class="faq-question" type="button">Preciso do Nitro para usar fontes no Discord?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Não. As letras que este gerador cria são caracteres Unicode comuns, iguais às do teclado, só que com outro desenho — então colam no nome de exibição, no apelido de servidor, no «Sobre mim», no nome de canal e nas mensagens sem Nitro nenhum. O Nitro só é necessário pra recursos pagos como cores e degradê no nome (Display Name Styles), não pra deixar o texto estiloso.</div></div>
     <div class="faq-item"><button class="faq-question" type="button">As fontes funcionam no nome de usuário (@) do Discord?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Não. O nome de usuário (o @ único usado pra pedido de amizade) só aceita letras minúsculas de a a z, números, ponto e underline — nada de fonte estilosa, espaço, emoji ou símbolo. As fontes para Discord funcionam no nome de exibição, no apelido de servidor, no «Sobre mim», no nome de canal e no chat. Se quer estilo no nome, use o nome de exibição, não o @.</div></div>
-    <div class="faq-item"><button class="faq-question" type="button">Qual a diferença entre a formatação do Discord (**negrito**) e as fontes Unicode?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">São coisas diferentes. O Markdown do Discord (**negrito**, *itálico*, `código`) só formata o texto dentro das mensagens do chat, e some se você tentar usar no nome ou na bio. Já as fontes Unicode deste site são o próprio caractere estilizado, então funcionam em todo lugar — nick, «Sobre mim», nome de canal, status e chat. Regra prática: em mensagem normal, use o Markdown; pra deixar o nick ou a bio estilosa, use a fonte Unicode.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">Qual a diferença entre a formatação do Discord (**negrito**) e as fontes Unicode?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">São coisas diferentes. O Markdown do Discord (**negrito**, *itálico*, `código`) formata as mensagens do chat e a bio, mas some se você tentar usar no nome. Já as fontes Unicode deste site são o próprio caractere estilizado, então funcionam em todo lugar — nick, «Sobre mim», nome de canal, status e chat. Regra prática: em mensagem normal, use o Markdown; pra deixar o nick ou a bio estilosa, use a fonte Unicode.</div></div>
     <div class="faq-item"><button class="faq-question" type="button">Como deixar o nick do Discord estiloso com símbolos e molduras?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Escolhe uma fonte pro nome (gótica e bubble são as que mais rendem) e cerca com símbolos e molduras tipo ꧁༒ ༒꧂. Aqui na página tem uma grade de nicks prontos com molduras — clica pra copiar e cola no apelido do servidor. Você também pode digitar seu nome lá em cima, aplicar a fonte e usar as abas de Símbolos e Molduras pra fechar o visual antes de copiar.</div></div>
     <div class="faq-item"><button class="faq-question" type="button">Por que as letras aparecem como quadradinho no Discord?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">É porque o aparelho de quem está vendo não tem a fonte que desenha aquele caractere — geralmente celular ou computador mais antigo. Não é erro do site nem do seu copy-paste. Os estilos principais — negrito, itálico, cursiva, gótica, bubble e small caps — são os mais seguros e aparecem certinho em quase todo lugar. Se alguém reclamar de quadradinho (□), troca por um desses estilos.</div></div>
 
