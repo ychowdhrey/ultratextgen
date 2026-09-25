@@ -46,6 +46,41 @@ standing kill list.
 `printables/crossword-maker/` and `printables/word-scramble-maker/` have shipped,
 with `test:word-search` and `test:word-puzzles` gating them.
 
+## Sheet options are standard, and the English-only labels are translated (owner decision, 2026-09-25)
+
+An audit of every printables page found the same option built differently or not
+at all from sheet to sheet: a class list behind a visible switch on one tool and a
+collapsed box on nine, a title field on four, a name-and-date line forced on some
+and absent from the rest. The owner's direction: **an option follows the job, not
+the page**, and it looks and behaves the same wherever it appears.
+
+| Option | Decision |
+|---|---|
+| Class set | The "Who is this for? One sheet / Whole class" switch wherever a typed **name** makes the sheet. A word list (spelling list, sight words) is not a class and keeps its own box. |
+| Name and date line | One checkbox on every sheet. **On** by default for sheets a child hands back (tracing, name sheets, word puzzles), **off** for display sheets (letters, designers, banner). This supersedes the 2026-09-16 "always on, no toggle" choice for the worksheets: the line is still printed by default, and now it can be switched off. |
+| Sheet title | One field in the same "More" section on every sheet. Empty keeps the sheet's own title, and a sheet that printed no title still prints none. `{name}` puts each child's name into a class set's titles. |
+| Print size | On every letter page. The cursive, calligraphy and dot-to-dot alphabets, which printed single letters only, gained the whole-alphabet book and grid it acts on. |
+| Letter style | **No change.** Each page keeps its one style; a picker of every style on every page would make each page do its siblings' job. |
+
+**The defaults are what each sheet already printed**, so no existing PDF changes
+until a visitor asks for something different.
+
+**Translations.** The class-set switch (fr, es, pt, id), left-handed mode, letter
+spacing, bridged stencils, high contrast and the "More" section had been held back
+because this site's own pages did not attest a word for them. The owner asked for
+them in every language. Each label was translated and checked against native
+worksheet, teaching and software pages, and the site's own wording was preferred
+wherever it already existed (for example the French and Spanish tracing pages
+already said "une fiche par enfant" and "una ficha por niño", and the German,
+Italian and Polish coloring pages already carried the title and name-line labels).
+A few short labels ("Who is this for?", "Whole class") are plain phrases with no
+UI page to cite; they use the site's existing words. Dutch has no engine strings
+at all, so the Dutch page still shows none of these controls rather than English
+labels on a Dutch page.
+
+**Status (2026-09-25):** built in PR #937 (branch `claude/youthful-cannon-2sfyg7`),
+not yet merged.
+
 ## The `/learn/` pillar sits close to this boundary
 
 `/learn/` carries handwriting/pre-writing/tracing *articles* — content *about*

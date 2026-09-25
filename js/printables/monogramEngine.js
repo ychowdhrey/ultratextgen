@@ -510,6 +510,25 @@
     if (window.UltraTextGen && window.UltraTextGen.trackPrintable) {
       window.UltraTextGen.trackPrintable(action, sheet);
     }
+    rememberSheet(sheet);
+  }
+
+  /* "Your recent sheets" and "Saved" (2026-09-25). Every other printables
+     page listed the sheets made on this device and the sheets saved anywhere
+     on the site; this tool was the one place that did neither, so a
+     monogram made last week had to be rebuilt by hand. Both strips and the
+     record are printPrefs.js's, the same ones printablesEngine.js reads, so a
+     sheet made here shows up there and the other way round. Every export
+     (PDF, PNG, print fallback) passes through trackPrintable() above, and a
+     share passes through the share row's onShared, so those are the two
+     places a sheet is remembered. */
+  let memory = null;
+  function rememberSheet(sheet) {
+    if (!PP || !PP.rememberRecent) return;
+    const page = (document.title || "").split("|")[0].trim();
+    const v = vals();
+    PP.rememberRecent({ href: presetUrl(), label: v.l + v.c + v.r || page, page: page, sheet: sheet });
+    if (memory) memory.refresh();
   }
 
   function siteCredit() {
@@ -675,6 +694,7 @@
       const og = document.querySelector('meta[property="og:image"]');
       actions.insertAdjacentElement("afterend", ns.buildShareRow({
         className: "pt-share-row",
+        onShared: function () { rememberSheet("share"); },
         url: presetUrl,
         surface: "printables",
         itemType: "printable",
@@ -702,6 +722,15 @@
       // Never fail silently: no share row looks identical to a page that
       // never had one. See printablesEngine.js for the full note (2026-09-13).
       console.warn("[printables] share-core.js has not loaded; the share row is not rendered. Check that /js/share/share-core.js is tagged before this engine.");
+    }
+
+    // Under the share row, in the order printablesEngine uses: share, then
+    // what you saved, then what you made recently.
+    if (PP && PP.buildMemoryStrips && actions) {
+      memory = PP.buildMemoryStrips();
+      const shareRow = actions.nextElementSibling && actions.nextElementSibling.classList.contains("pt-share-row")
+        ? actions.nextElementSibling : actions;
+      shareRow.insertAdjacentElement("afterend", memory.node);
     }
 
     applyPreset();

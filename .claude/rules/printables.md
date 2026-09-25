@@ -66,6 +66,29 @@ update the check in the same change.
 The engine mounts a surface from an element id, so this is a one-line mistake. See
 `.claude/rules/content-architecture.md` → "Two pages must not offer the same tool".
 
+## A sheet option follows the job, not the page
+
+Which options a sheet offers is decided by what the sheet contains, so the same
+option looks and behaves the same wherever it appears:
+
+- **Class set** wherever a typed **name** makes the sheet. It is one control,
+  `mountAudience()`'s "Who is this for? One sheet / Whole class" switch, built from
+  the page's `details.pt-roster-field`. Author that disclosure, never a second
+  switch. A roster that is a **word list** (spelling list, sight words) is marked
+  `data-roster-kind="words"` and keeps the disclosure. `rosterEntries()` is the only
+  reader of the switch; read the roster through it.
+- **Title and name/date line** live in one "More" section per tool, built by
+  `mountMore()` in two scopes, `letters` and `word`. Read them through
+  `moreTitle()` / `moreFooterOn()`, never from an element id. The name/date default
+  is what the sheet printed before the section existed: on for a sheet a child hands
+  back, off for a display piece. An empty title keeps the sheet's own.
+- **Print size** wherever letters print; every letter page has an A–Z batch.
+- **Save all levels** wherever the sheet has levels.
+- **A control's label exists in every language the page ships, or the control is
+  not mounted there.** Never show an English label on a locale page.
+- **Recent and saved sheets** on every surface, from `printPrefs.js`, which all three
+  engines load. Do not keep a second reader of `utg_printables_recent`.
+
 ## The print settings own the sheet
 
 - **Never hardcode a printed figure's height in inches**, and never estimate the

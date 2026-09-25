@@ -20,6 +20,9 @@
  *   defaultPaper()  the region default, exported for tests
  *   sheetPreviewUrl() the image that represents this SHEET, never the OG card
  *   stateSummary(L) the active non-default settings, in this page's language
+ *   readRecent() / rememberRecent(entry)   the "recent sheets" list, one key
+ *   renderRecentInto(m, L) / renderSavedInto(m, L) / buildMemoryStrips(L)
+ *                   the recent and saved strips under the share row
  *
  * Load it BEFORE any engine that uses it. It has no dependencies.
  */
@@ -117,6 +120,24 @@
      link was being handed US Letter. So a link may seed paper for someone who
      has never chosen, and never overrides someone who has. */
   let stored = false;
+  /* High contrast, translated 2026-09-25 (owner: every option in every
+     language), checked against native software and teaching pages. A
+     language with no row still gets no control, and a stored "contrast" is
+     still cleared there, for the reason given where it is read. */
+  const CONTRAST_I18N = {
+    en: "High contrast (for photocopying)",
+    de: "Hoher Kontrast (zum Kopieren)",
+    it: "Alto contrasto (per le fotocopie)",
+    pl: "Wysoki kontrast (do kserowania)",
+    fr: "Contraste élevé (pour la photocopie)",
+    es: "Alto contraste (para fotocopiar)",
+    pt: "Alto contraste (para fotocópia)",
+    id: "Kontras tinggi (untuk difotokopi)"
+  };
+  function contrastLabel() {
+    const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
+    return CONTRAST_I18N[lang] || null;
+  }
   try {
     const saved = JSON.parse(localStorage.getItem(KEY) || "null");
     if (saved && typeof saved === "object") {
@@ -135,15 +156,11 @@
          panel is built, because the paper preview is painted first: resetting
          later left the German caption reading "High contrast" over a sheet
          that was not. */
-      if (values.ink === "contrast" && !docIsEnglish()) values.ink = "normal";
+      if (values.ink === "contrast" && !contrastLabel()) values.ink = "normal";
       if (SCALES[saved.quality]) values.quality = saved.quality;
     }
   } catch (err) { /* private mode or corrupt value: defaults apply */ }
 
-  function docIsEnglish() {
-    const el = document.documentElement;
-    return ((el && el.getAttribute("lang")) || "en").slice(0, 2).toLowerCase() === "en";
-  }
   function save() {
     try { localStorage.setItem(KEY, JSON.stringify(values)); } catch (err) { /* optional */ }
   }
@@ -274,7 +291,7 @@
     // English-only, exactly like the control: buildPanel() clears a stored
     // "contrast" on every other locale, so this can never be the one English
     // word in a translated summary.
-    if (values.ink === "contrast") bits.push("High contrast");
+    if (values.ink === "contrast" && contrastLabel()) bits.push(contrastLabel().replace(/\s*\([^)]*\)\s*$/, ""));
     return bits.join(" \u00b7 ");
   }
 
@@ -323,6 +340,117 @@
      the caller can repaint its preview; a control with no visible consequence
      is indistinguishable from a control that does nothing, which is the
      report the panel was rebuilt for on 2026-09-13. */
+  /* ---------------- recent and saved sheets ---------------- */
+
+  /* "Your recent sheets" and "Saved", the two strips under the share row.
+     They lived only in printablesEngine.js, so the two standalone tools
+     (monogram-maker, cross-stitch-letters) were the only printables pages where
+     a sheet you had just made was not listed and a sheet you had saved on
+     another page was not reachable. Moved here -- the one module all three
+     engines load -- rather than copied, so there is one reader of the key and
+     one markup for the strip. The key and the six-entry cap are unchanged, so
+     every list a visitor already has keeps working.
+
+     STRIP_I18N is the same provenance as SHARE_I18N: printablesEngine.js's own
+     printOpts.recent / printOpts.clear and T.saved, extracted, not retyped. */
+  const RECENT_KEY = "utg_printables_recent";
+  const RECENT_MAX = 6;
+  const STRIP_I18N = {
+    en:  { recent: "Your recent sheets", saved: "Saved", clear: "Clear" },
+    fr:  { recent: "Vos fiches récentes", saved: "Enregistré", clear: "Effacer" },
+    es:  { recent: "Tus hojas recientes", saved: "Guardado", clear: "Borrar" },
+    pt:  { recent: "Suas folhas recentes", saved: "Salvo", clear: "Limpar" },
+    it:  { recent: "I tuoi fogli recenti", saved: "Salvato", clear: "Cancella" },
+    pl:  { recent: "Twoje ostatnie arkusze", saved: "Zapisano", clear: "Wyczyść" },
+    de:  { recent: "Deine letzten Blätter", saved: "Gespeichert", clear: "Löschen" },
+    id:  { recent: "Lembar terbaru Anda", saved: "Tersimpan", clear: "Hapus" },
+  };
+  function stripLabels() {
+    const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
+    return Object.assign({}, STRIP_I18N.en, STRIP_I18N[lang] || {});
+  }
+  function readRecent() {
+    try {
+      const v = JSON.parse(localStorage.getItem(RECENT_KEY) || "[]");
+      return Array.isArray(v) ? v : [];
+    } catch (err) { return []; }
+  }
+  // entry = { href, label, page, sheet }. The newest first, one row per link.
+  function rememberRecent(entry) {
+    if (!entry || !entry.href) return;
+    const list = readRecent().filter(function (r) { return r && r.href !== entry.href; });
+    list.unshift({
+      href: entry.href,
+      label: String(entry.label || "").slice(0, 40),
+      page: String(entry.page || "").slice(0, 60),
+      sheet: entry.sheet || "sheet",
+      t: Date.now()
+    });
+    try { localStorage.setItem(RECENT_KEY, JSON.stringify(list.slice(0, RECENT_MAX))); } catch (err) { /* optional */ }
+  }
+  function stripInto(mount, title, rows, clearText, onClear) {
+    mount.innerHTML = "";
+    if (!rows.length) { mount.hidden = true; return; }
+    mount.hidden = false;
+    const t = document.createElement("span");
+    t.className = "pt-recent-title";
+    t.textContent = title;
+    mount.appendChild(t);
+    rows.forEach(function (r) {
+      const a = document.createElement("a");
+      a.className = "pt-recent-link";
+      a.href = r.href;
+      a.textContent = r.label;
+      if (r.title) a.title = r.title;
+      mount.appendChild(a);
+    });
+    const clear = document.createElement("button");
+    clear.type = "button";
+    clear.className = "pt-recent-clear";
+    clear.textContent = clearText;
+    clear.addEventListener("click", onClear);
+    mount.appendChild(clear);
+  }
+  // L = { recent, clear } -- a caller's own strings win; defaults are STRIP_I18N.
+  function renderRecentInto(mount, L) {
+    if (!mount) return;
+    const labels = Object.assign(stripLabels(), L || {});
+    const rows = readRecent().map(function (r) { return { href: r.href, label: r.label, title: r.page || "" }; });
+    stripInto(mount, labels.recent, rows, labels.clear, function () {
+      try { localStorage.removeItem(RECENT_KEY); } catch (err) { /* optional */ }
+      renderRecentInto(mount, L);
+    });
+  }
+  // The cross-page saved store (js/saved/saved-items.js); L = { saved, clear }.
+  function renderSavedInto(mount, L) {
+    if (!mount) return;
+    const labels = Object.assign(stripLabels(), L || {});
+    const store = UTG.saved;
+    const rows = (store ? store.all("printable") : []).map(function (r) {
+      return { href: r.href || r.value, label: r.label || r.value };
+    });
+    stripInto(mount, labels.saved, rows, labels.clear, function () { if (store) store.clear("printable"); });
+  }
+  /* Both strips in one node, for an engine that has nowhere else to put them.
+     Returns { node, refresh }; the saved strip follows every write to the
+     store, including one made by another surface on the same page. */
+  function buildMemoryStrips(L) {
+    const node = document.createElement("div");
+    node.className = "pt-memory-strips";
+    const saved = document.createElement("div");
+    saved.className = "pt-recent pt-saved-strip";
+    saved.hidden = true;
+    const recent = document.createElement("div");
+    recent.className = "pt-recent";
+    recent.hidden = true;
+    node.appendChild(saved);
+    node.appendChild(recent);
+    const refresh = function () { renderSavedInto(saved, L); renderRecentInto(recent, L); };
+    document.addEventListener("utg:savedchange", function () { renderSavedInto(saved, L); });
+    refresh();
+    return { node: node, refresh: refresh };
+  }
+
   UTG.printPrefs = {
     values: values,
     PAPERS: PAPERS,
@@ -333,6 +461,12 @@
     shareLabels: shareLabels,
     sheetPreviewUrl: sheetPreviewUrl,
     stateSummary: stateSummary,
+    readRecent: readRecent,
+    rememberRecent: rememberRecent,
+    renderRecentInto: renderRecentInto,
+    renderSavedInto: renderSavedInto,
+    buildMemoryStrips: buildMemoryStrips,
+    stripLabels: stripLabels,
     paperFull: paperFull,
     marginIn: marginIn,
     scale: scale,
@@ -408,8 +542,8 @@
            Eight invented strings is not something this repo does, so the seven
            other locales keep the panel they have until a native reading or
            corpus evidence exists. Per the owner's decision of 2026-09-17. */
-        if (docIsEnglish()) {
-          details.appendChild(checkRow("High contrast (for photocopying)",
+        if (contrastLabel()) {
+          details.appendChild(checkRow(contrastLabel(),
             values.ink === "contrast",
             (on) => {
               values.ink = on ? "contrast" : "normal";
