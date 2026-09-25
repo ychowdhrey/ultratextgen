@@ -7,10 +7,10 @@
   "canonical": "https://ultratextgen.com/fr/symbol/symbole-riyal-saoudien/",
   "breadcrumb": "Symbole du Riyal Saoudien",
   "hero_h1": "Symbole du Riyal Saoudien",
-  "hero_tagline": "Le symbole monétaire officiel de l'Arabie saoudite, approuvé par décret royal et encodé dans Unicode 17.0 — déjà définitif, même si la plupart des polices et des claviers n'ont pas encore rattrapé leur retard.",
-  "intro": "Le symbole du riyal saoudien (⃁, U+20C1) est le symbole monétaire officiel de l'Arabie saoudite, conçu sous décret royal par un comité réunissant la Banque centrale saoudienne (SAMA), le ministère de la Culture, le ministère des Médias et l'organisme saoudien de normalisation. Son dessin s'inspire de la calligraphie arabe, formant les lettres arabes du mot « ريال » (riyal), la lettre rāʾ (ر) doublant son trait en guise de barre transversale, dans la même famille visuelle que d'autres symboles monétaires à barre transversale comme le dollar et la livre. Le roi Salman a officiellement approuvé le dessin le 20 février 2025, et la SAMA l'a soumis pour encodage Unicode peu après (proposition L2/25-075, datée du 7 mars 2025). Le Comité technique Unicode l'a approuvé sans modification lors de sa 183ᵉ réunion, du 22 au 24 avril 2025, et il a été publié comme caractère final et ratifié dans Unicode 17.0 le 9 septembre 2025 — une version complète d'avance sur les symboles du dirham émirati, du rial omanais et du rufiyaa maldivien, encore en bêta dans Unicode 18.0 au moment de la rédaction. Être définitif ne signifie pas être partout pour autant : un ticket GitHub ouvert sur Inter, l'une des polices open source les plus utilisées, réclame l'ajout du glyphe — signe que la couverture par les polices grand public accuse encore du retard, une version Unicode complète après la ratification. En attendant, une police open source (conçue spécifiquement pour ce symbole) et des guides communautaires pour l'utiliser dans Word, Excel et sur le web existent déjà.",
+  "hero_tagline": "Le symbole monétaire officiel de l'Arabie saoudite, approuvé par décret royal et encodé dans Unicode 17.0. Déjà définitif et présent sur les claviers de Windows 11 et de l'iPhone, même si la plupart des polices n'ont pas encore rattrapé leur retard.",
+  "intro": "Le symbole du riyal saoudien (⃁, U+20C1) est le symbole monétaire officiel de l'Arabie saoudite, conçu sous décret royal par un comité réunissant la Banque centrale saoudienne (SAMA), le ministère de la Culture, le ministère des Médias et l'organisme saoudien de normalisation. Son dessin s'inspire de la calligraphie arabe, formant les lettres arabes du mot « ريال » (riyal), la lettre rāʾ (ر) doublant son trait en guise de barre transversale, dans la même famille visuelle que d'autres symboles monétaires à barre transversale comme le dollar et la livre. Le roi Salman a officiellement approuvé le dessin le 20 février 2025, et la SAMA l'a soumis pour encodage Unicode peu après (proposition L2/25-075, datée du 7 mars 2025). Le Comité technique Unicode l'a approuvé sans modification lors de sa 183ᵉ réunion, du 22 au 24 avril 2025, et il a été publié comme caractère final et ratifié dans Unicode 17.0 le 9 septembre 2025 — une version complète d'avance sur les symboles du dirham émirati, du rial omanais et du rufiyaa maldivien, arrivés avec Unicode 18.0 le 16 septembre 2026. Être définitif ne signifie pas être partout pour autant. Microsoft l'a ajouté aux dispositions de clavier arabe de Windows 11 en décembre 2025 (AltGr+S sur Arabe 101), et des utilisateurs d'iPhone l'ont signalé sur le clavier arabe d'iOS à partir du 24 mars 2026. Au 25 septembre 2026, les demandes d'ajout du glyphe à Inter, l'une des polices open source les plus utilisées, et aux polices Noto Arabic de Google sont toujours ouvertes, signe que la couverture par les polices accuse encore du retard, une version Unicode complète après la ratification. En attendant, une police open source (conçue spécifiquement pour ce symbole) et des guides communautaires pour l'utiliser dans Word, Excel et sur le web existent déjà.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-25",
   "copy_pattern": "single",
   "home_url": "https://ultratextgen.com/fr/",
   "crumb_home": "Accueil",
@@ -47,19 +47,19 @@
       "id": "autres-symboles-monetaires-du-golfe",
       "label": "Autres Symboles Monétaires du Golfe",
       "h2": "Autres Nouveaux Symboles Monétaires du Golfe",
-      "intro": "Trois autres monnaies régionales ont reçu leur propre symbole Unicode dans la version suivante, Unicode 18.0 — encore en bêta au moment de la rédaction.",
+      "intro": "Trois autres monnaies régionales ont reçu leur propre symbole Unicode dans la version suivante, Unicode 18.0, publiée le 16 septembre 2026.",
       "symbols": [
         {
           "char": "⃃",
-          "label": "Symbole du Dirham des Émirats (U+20C3, bêta Unicode 18.0)"
+          "label": "Symbole du Dirham des Émirats (U+20C3, Unicode 18.0)"
         },
         {
           "char": "⃄",
-          "label": "Symbole du Rial Omanais (U+20C4, bêta Unicode 18.0)"
+          "label": "Symbole du Rial Omanais (U+20C4, Unicode 18.0)"
         },
         {
           "char": "⃂",
-          "label": "Symbole du Rufiyaa Maldivien (U+20C2, bêta Unicode 18.0)"
+          "label": "Symbole du Rufiyaa Maldivien (U+20C2, Unicode 18.0)"
         }
       ]
     },
@@ -89,12 +89,12 @@
     {
       "href": "/fr/symbol/symbole-dirham/",
       "title": "Symbole du Dirham",
-      "desc": "Le nouveau symbole monétaire des Émirats — une version Unicode de retard, encore en bêta."
+      "desc": "Le nouveau symbole monétaire des Émirats, définitif une version Unicode plus tard, dans Unicode 18.0."
     },
     {
       "href": "/fr/symbol/symbole-rial-omanais/",
       "title": "Symbole du Rial Omanais",
-      "desc": "Un autre symbole monétaire du Golfe qui sort dans la même bêta d'Unicode 18.0."
+      "desc": "Un autre symbole monétaire du Golfe, publié dans la même version Unicode 18.0."
     },
     {
       "href": "/updates/uae-dirham-symbol-unicode-18/",
