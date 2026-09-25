@@ -35,8 +35,8 @@
                   true = the field is BELIEVED to count something other than
                   glyphs, but the rule is not sourced. `effective` stays at 1x
                   (we never assert an unverified limit), and instead a name that
-                  fits at 1x but would NOT fit counting UTF-16 code units raises
-                  a "weight-uncertain" warning. Use this instead of guessing at
+                  fits at 1x but would NOT fit counting UTF-8 bytes raises a
+                  "weight-uncertain" warning. Use this instead of guessing at
                   `weighted` when the evidence is a pile of player reports rather
                   than a document.
      asciiPattern set = the field only accepts this charset (username-locked
@@ -75,8 +75,21 @@
   const XBOX_MARK = "\\u0900-\\u0903\\u093A-\\u094F\\u0E31\\u0E34-\\u0E3A\\u0E47-\\u0E4E";
   const XBOX_WORD = "[" + XBOX_BASE + XBOX_MARK + "0-9]";
   const RULES = {
+    // Free Fire: Garena's patch notes (OB43 in seven regional editions, OB53-OB55)
+    // and its help pages never say which characters a nickname may contain. The
+    // U+3164 block rests on player and tool-site reports only (e.g. a Vietnamese
+    // OB55 test reporting a "ten nhay cam" / sensitive-name error), so it stays a
+    // warning, never a fail. `weighted` is the stricter reading of conflicting
+    // reports, not a documented rule. Verified 2026-09-25:
+    //   https://ff.garena.com/en/article/1317/  (OB43 notes, silent on names)
+    //   https://ffsuporte.garena.com/support/solutions/articles/154000130473-como-faco-para-trocar-meu-nickname-
     ff: { label: "Free Fire", limit: 12, min: 1, weighted: true, noSpace: true, field: "display", reportedBlocked: "ㅤ" },
-    ml: { label: "Mobile Legends", limit: 16, min: 4, weighted: false, noSpace: false, field: "display" },
+    // Mobile Legends: 4-20. The in-game rename box reads "Names should have no
+    // more than 4-20 characters and should not include illegal characters"
+    // (screenshot, r/MobileLegendsGame post 1wkghzu, 2026-09-19). Styled
+    // characters are reported to use 2-3 each; that is undocumented, so the
+    // count stays at 1x here. Verified 2026-09-25.
+    ml: { label: "Mobile Legends", limit: 20, min: 4, weighted: false, noSpace: false, field: "display" },
     // Krafton publishes NO name rules for PUBG Mobile. The help centre article
     // ("How do I change my in-game nickname?", unchanged since at least 2022)
     // documents only the Rename Card flow — level-10 Growth Mission, Shop ->
@@ -90,14 +103,15 @@
     // circulating for this game is Krafton's PUBG: BATTLEGROUNDS (PC) policy,
     // laundered into mobile articles. It is wrong here.
     // weightUncertain: players repeatedly report the 14-character error firing
-    // on names that LOOK shorter than 14. That is consistent with the field
-    // counting UTF-16 code units rather than glyphs — every classic decoration
-    // (꧁ ꧂ ༒ 彡 乡 ★ ツ) and every small-caps letter is 1 unit, but every
-    // mathematical-alphanumeric letter (bold/script/fraktur) is 2, so a fully
-    // bold name would cap at 7 visible letters rather than 14. Nobody documents
-    // the counting behaviour, so we do NOT assert it: `effective` stays at 1x
-    // and we only warn inside the ambiguous band. One controlled in-client test
-    // would settle it.
+    // on names that LOOK shorter than 14. The reports fit a UTF-8 byte count,
+    // not UTF-16 units: a 13-character BGMI name with six "ē" (13 UTF-16 units,
+    // 19 bytes) got "it should not exceed 14 characters" (r/BGMI 1hjtgp4,
+    // 2024-12-22; a reply: "special characters take 2 spaces"), and PUBG Mobile
+    // players put one decorative symbol at about 3 letters (r/PUBGMobile
+    // 13bgg3v, 2023-05-08) — ꧁ ༒ ★ are 3 bytes each. The same 14 limit applies
+    // on BGMI. Nobody documents the counting behaviour, so we do NOT assert it:
+    // `effective` stays at 1x and we only warn inside the ambiguous band. One
+    // controlled in-client test would settle it. Verified 2026-09-25.
     pubg: { label: "PUBG Mobile", limit: 14, min: 1, weighted: false, weightUncertain: true, noSpace: true, field: "display" },
     // Clash of Clans: 2-15 characters, first rename free (unlocks at Town Hall
     // 5), then Gems starting at 500 and rising by 500 each time. strict because
@@ -107,6 +121,10 @@
     // https://support.supercell.com/clash-of-clans/en/articles/how-to-change-your-username.html
     // (verified 2026-09-25)
     coc: { label: "Clash of Clans", limit: 15, min: 2, weighted: false, noSpace: false, field: "display", strict: true },
+    // Lien Quan: 12 comes from Vietnamese guides (2022-2024) and a Garena
+    // Thailand RoV FAQ (search snippet); Garena VN's own notices mention "so ki
+    // tu quy dinh" without the number. Whether symbols count double is
+    // unverified. Verified 2026-09-25.
     lienquan: { label: "Liên Quân Mobile", limit: 12, min: 1, weighted: false, noSpace: true, field: "display" },
     standoff2: { label: "Standoff 2", limit: 16, min: 2, weighted: false, noSpace: false, field: "display" },
     discord: { label: "Discord", limit: 32, min: 1, weighted: false, noSpace: false, field: "display" },
@@ -514,10 +532,14 @@
       ? chars.filter(function (ch) { return !rule.uncountedMarks.test(ch); }).length
       : chars.length;
     const effective = rule.weighted ? weightedLen : glyphs;
-    // JS strings are UTF-16, so str.length IS the code-unit count — the thing a
-    // field counts when it counts "characters" the naive way. Only used by
-    // weightUncertain; never fed into `effective`.
+    // JS strings are UTF-16, so str.length IS the code-unit count. Returned for
+    // callers; never fed into `effective`.
     const utf16 = (str || "").length;
+    // UTF-8 byte length: the count the PUBG and Mobile Legends player reports
+    // fit (see RULES.pubg). Only used by weightUncertain.
+    const utf8 = typeof TextEncoder !== "undefined"
+      ? new TextEncoder().encode(str || "").length
+      : unescape(encodeURIComponent(str || "")).length;
     const issues = [];
 
     if (!glyphs) issues.push("empty");
@@ -529,9 +551,9 @@
       const u = str.split("_").length - 1;
       if (u > 1 || /^_|_$/.test(str)) issues.push("underscore");
     }
-    // Fits counting glyphs, would not fit counting UTF-16 units. We cannot say
+    // Fits counting glyphs, would not fit counting UTF-8 bytes. We cannot say
     // which the game does, so we say exactly that rather than picking one.
-    if (rule.weightUncertain && rule.limit && effective <= rule.limit && utf16 > rule.limit) {
+    if (rule.weightUncertain && rule.limit && effective <= rule.limit && utf8 > rule.limit) {
       issues.push("weight-uncertain");
     }
     if (!rule.asciiPattern && unknown > 0) issues.push("unknown-chars");
@@ -570,6 +592,7 @@
       glyphs: glyphs,
       effective: effective,
       utf16: utf16,
+      utf8: utf8,
       limit: rule.limit || 0,
       counts: { plain: plain, safe: safe, styled: styled, emoji: emoji, unknown: unknown, spaces: spaces },
       badChars: badChars,
