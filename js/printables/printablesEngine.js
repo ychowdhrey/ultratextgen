@@ -6521,20 +6521,13 @@
      that field is moved into the section rather than duplicated, and the
      coloring maker's hand-written section is adopted as it is.
 
-     Strings: en; de/it/pl from the site's own coloring pages; fr/es/pt/id
-     translated for this and checked against native worksheet and software
-     sites (2026-09-25). */
-  const MORE_I18N = {
-    en: { summary: "More: sheet title and name and date line", title: "Sheet title", optional: "optional", nameDate: "Add a name and date line", nameHint: "Write {name} to put each child's name in it." },
-    de: { summary: "Mehr: Überschrift und eine Name-und-Datum-Zeile", title: "Überschrift", optional: "optional", nameDate: "Name-und-Datum-Zeile hinzufügen", nameHint: "Schreibe {name}, um den Namen jedes Kindes einzusetzen." },
-    it: { summary: "Altro: un titolo e una riga nome e data", title: "Titolo", optional: "facoltativo", nameDate: "Aggiungi una riga nome e data", nameHint: "Scrivi {name} per inserire il nome di ogni bambino." },
-    pl: { summary: "Więcej: nagłówek oraz linia na imię i datę", title: "Nagłówek", optional: "opcjonalny", nameDate: "Dodaj linię na imię i datę", nameHint: "Wpisz {name}, aby wstawić imię każdego dziecka." },
-    fr: { summary: "Plus : titre de la fiche, ligne prénom et date", title: "Titre de la fiche", optional: "facultatif", nameDate: "Ajouter une ligne prénom et date", nameHint: "Tapez {name} pour y insérer le prénom de chaque enfant." },
-    es: { summary: "Más: título de la hoja, línea de nombre y fecha", title: "Título de la hoja", optional: "opcional", nameDate: "Añadir una línea de nombre y fecha", nameHint: "Escribe {name} para poner el nombre de cada niño." },
-    pt: { summary: "Mais: título da folha e linha de nome e data", title: "Título da folha", optional: "opcional", nameDate: "Incluir linha de nome e data", nameHint: "Escreva {name} para colocar o nome de cada criança." },
-    id: { summary: "Lainnya: judul lembar serta baris nama dan tanggal", title: "Judul lembar", optional: "opsional", nameDate: "Tambahkan baris nama dan tanggal", nameHint: "Tulis {name} untuk memasukkan nama tiap anak." }
-  };
-  const ML = Object.assign({}, MORE_I18N.en, MORE_I18N[LANG] || {});
+     The strings and the DOM builders live in printPrefs.js, so the monogram
+     and cross-stitch engines mount the identical section. de/it/pl are the
+     site's own coloring-page wording; fr/es/pt/id were translated and
+     checked against native worksheet and software sites (2026-09-25). */
+  // The strings and the builders are printPrefs.js's (all three engines
+  // share them). null on a page whose language has no row: no section there.
+  const ML = PP && PP.moreLabels ? PP.moreLabels() : null;
   const NAME_TOKEN = "{name}";
   const moreRefs = {};   // scope -> { title: <input>|null, check: <input>|null }
 
@@ -6576,57 +6569,9 @@
     });
   }
 
-  function moreDetails() {
-    const d = document.createElement("details");
-    d.className = "pt-more-field pt-sheet-more";
-    const sum = document.createElement("summary");
-    sum.textContent = ML.summary;
-    d.appendChild(sum);
-    return d;
-  }
-  function moreTitleField(scope, placeholder, withHint) {
-    const f = document.createElement("div");
-    f.className = "pt-field";
-    const id = "pt-" + scope + "-title";
-    const lab = document.createElement("label");
-    lab.className = "pt-field-label";
-    lab.setAttribute("for", id);
-    lab.appendChild(document.createTextNode(ML.title + " "));
-    const opt = document.createElement("span");
-    opt.className = "pt-field-opt";
-    opt.textContent = ML.optional;
-    lab.appendChild(opt);
-    f.appendChild(lab);
-    const input = document.createElement("input");
-    input.type = "text";
-    input.className = "main-input";
-    input.id = id;
-    input.maxLength = 60;
-    input.autocomplete = "off";
-    if (placeholder) input.placeholder = placeholder;
-    f.appendChild(input);
-    if (withHint) {
-      const hint = document.createElement("p");
-      hint.className = "pt-field-hint";
-      hint.textContent = ML.nameHint;
-      f.appendChild(hint);
-    }
-    return { field: f, input: input };
-  }
-  function moreCheckField(scope, checked) {
-    const f = document.createElement("div");
-    f.className = "pt-field";
-    const lab = document.createElement("label");
-    lab.className = "pt-check";
-    const box = document.createElement("input");
-    box.type = "checkbox";
-    box.id = "pt-" + scope + "-namedate";
-    box.checked = !!checked;
-    lab.appendChild(box);
-    lab.appendChild(document.createTextNode(" " + ML.nameDate));
-    f.appendChild(lab);
-    return { field: f, input: box };
-  }
+  function moreDetails() { return PP.moreDetails(ML); }
+  function moreTitleField(scope, placeholder, withHint) { return PP.moreTitleField(ML, scope, placeholder, withHint); }
+  function moreCheckField(scope, checked) { return PP.moreCheckField(ML, scope, checked); }
 
   function lettersDefaultTitle() { return cap(NOUN) + " " + T.alphabetWord; }
   function wordDefaultTitle() {
@@ -6636,6 +6581,7 @@
   }
 
   function mountMore() {
+    if (!ML) return;
     /* Letters: under the print-size control, above the A-Z actions, which is
        where every letter page now has one (buildSpokeBatch covers the hubs
        and spokes that had no batch button of their own). */
