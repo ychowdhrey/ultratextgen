@@ -3,7 +3,7 @@
   "lang": "vi",
   "page_type": "symbol",
   "title": "Ký Hiệu Dirham: Sao Chép & Dán ⃃ — Ký Hiệu Tiền Tệ Mới Của UAE, Đã Chốt Để Xuất Bản Trong Unicode 18.0",
-  "meta_description": "Ký hiệu dirham UAE (⃃, U+20C3) đã chốt để xuất bản trong Unicode 18.0, dự kiến tháng 9 năm 2026 — đã được phê duyệt và ổn định, nhưng chưa có trên bất kỳ bàn phím nào. Mã điểm, lịch sử và cách các nhà phát triển đã dùng nó ngay hôm nay.",
+  "meta_description": "Ký hiệu dirham UAE (⃃, U+20C3) đã chính thức có trong Unicode 18.0 từ ngày 16 tháng 9 năm 2026, nhưng chưa có trên bất kỳ bàn phím nào. Mã điểm, lịch sử và cách các nhà phát triển đã dùng nó ngay hôm nay.",
   "canonical": "https://ultratextgen.com/vi/symbol/dirham-sign/",
   "home_url": "https://ultratextgen.com/vi/",
   "crumb_home": "Trang chủ",
@@ -11,10 +11,10 @@
   "library_url": "https://ultratextgen.com/vi/symbol/",
   "breadcrumb": "Ký Hiệu Dirham",
   "hero_h1": "Ký Hiệu Dirham",
-  "hero_tagline": "Ký hiệu tiền tệ mới của Ngân hàng Trung ương UAE, được gán mã U+20C3 và đã chốt để xuất bản trong Unicode 18.0 — ổn định hơn cả các emoji nháp trong cùng bản phát hành này, nhưng vẫn chưa gõ được trên bất kỳ bàn phím nào.",
-  "intro": "Ký hiệu dirham (⃃, U+20C3) là ký hiệu tiền tệ mới của Ngân hàng Trung ương Các Tiểu Vương quốc Ả Rập Thống nhất (UAE), ra mắt vào tháng 3 năm 2025 cùng một ký hiệu đồng hành cho dirham kỹ thuật số. Nó được gửi lên Hiệp hội Unicode để mã hóa, được phê duyệt, và xuất hiện trong bản beta công khai Unicode 18.0 vào ngày 27 tháng 5 năm 2026, cùng với các ký hiệu rial Oman và rufiyaa Maldives. Tính đến thời điểm viết bài này, nó mang trạng thái «white» trong tài liệu quy trình nội bộ của Unicode — nghĩa là đã chốt để xuất bản, chỉ còn chờ ISO phê duyệt, một trạng thái thực ra còn ổn định hơn các emoji ứng viên dạng nháp trong cùng bản phát hành này (một số emoji đó vẫn còn cờ chờ đổi tên). Bản thân Unicode 18.0 dự kiến xuất bản chính thức vào tháng 9 năm 2026. Tuy nhiên, việc xuất bản không tự động đưa ký hiệu lên bàn phím — hiện chưa có hệ điều hành, phông chữ hay phương thức nhập liệu nào hỗ trợ sẵn, và khuyến nghị của chính Ngân hàng Trung ương UAE trong sách hướng dẫn kiểu chữ (dùng phím số 6) cũng chỉ là một khuyến nghị cho đến khi các nhà sản xuất thiết bị áp dụng. Trong lúc chờ đợi, các nhà phát triển đã xây dựng công cụ thật sự xoay quanh mã điểm đã được xác nhận: một gói npm mã nguồn mở, một web font, cùng các thành phần CSS/React/Vue/Angular/Svelte (đăng dưới tên «dirham» trên npm và GitHub) cho phép mã hóa đúng ký tự này ngay hôm nay thông qua một lớp hiển thị tạm thời, được thiết kế để loại bỏ ngay khi hệ điều hành hỗ trợ chính thức.",
+  "hero_tagline": "Ký hiệu tiền tệ mới của Ngân hàng Trung ương UAE, được gán mã U+20C3 và đã xuất bản trong Unicode 18.0 ngày 16 tháng 9 năm 2026, nhưng vẫn chưa gõ được trên bất kỳ bàn phím nào.",
+  "intro": "Ký hiệu dirham (⃃, U+20C3) là ký hiệu tiền tệ mới của Ngân hàng Trung ương Các Tiểu Vương quốc Ả Rập Thống nhất (UAE), ra mắt vào tháng 3 năm 2025 cùng một ký hiệu đồng hành cho dirham kỹ thuật số. Nó được gửi lên Hiệp hội Unicode để mã hóa, được phê duyệt, và xuất hiện trong bản beta công khai Unicode 18.0 vào ngày 27 tháng 5 năm 2026, cùng với các ký hiệu rial Oman và rufiyaa Maldives. Unicode 18.0 đã xuất bản chính thức ký hiệu này vào ngày 16 tháng 9 năm 2026, với tên cố định UAE DIRHAM SIGN. Tuy nhiên, việc xuất bản không tự động đưa ký hiệu lên bàn phím — tính đến ngày 25 tháng 9 năm 2026, chưa có hệ điều hành, phông chữ hệ thống hay phương thức nhập liệu nào hỗ trợ sẵn, và khuyến nghị của chính Ngân hàng Trung ương UAE trong sách hướng dẫn kiểu chữ (dùng phím số 6) cũng chỉ là một khuyến nghị cho đến khi các nhà sản xuất thiết bị áp dụng. Trong lúc chờ đợi, các nhà phát triển đã xây dựng công cụ thật sự xoay quanh mã điểm đã được xác nhận: một gói npm mã nguồn mở, một web font, cùng các thành phần CSS/React/Vue/Angular/Svelte (đăng dưới tên «dirham» trên npm và GitHub) cho phép mã hóa đúng ký tự này ngay hôm nay thông qua một lớp hiển thị tạm thời, được thiết kế để loại bỏ ngay khi hệ điều hành hỗ trợ chính thức.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-25",
   "copy_pattern": "single",
   "hreflang": [
     {
@@ -35,11 +35,11 @@
       "id": "dirham-sign",
       "label": "Ký Hiệu Dirham",
       "h2": "Ký Hiệu Dirham",
-      "intro": "Ký tự đã được xác nhận — có thể sao chép ngay hôm nay theo mã điểm, dù chưa phông chữ nào hiển thị được nó theo cách gốc.",
+      "intro": "Ký tự chính thức — có thể sao chép ngay hôm nay theo mã điểm, dù chưa phông chữ hệ thống nào hiển thị được nó theo cách gốc.",
       "symbols": [
         {
           "char": "⃃",
-          "label": "Ký Hiệu Dirham UAE (U+20C3, đã chốt để xuất bản)"
+          "label": "Ký Hiệu Dirham UAE (U+20C3, Unicode 18.0)"
         }
       ]
     },
@@ -47,7 +47,7 @@
       "id": "other-new-gulf-currency-symbols",
       "label": "Ký Hiệu Vùng Vịnh Mới Khác",
       "h2": "Các Ký Hiệu Tiền Tệ Vùng Vịnh Mới Khác Trong Bản Phát Hành Này",
-      "intro": "Dirham không phải ký hiệu tiền tệ mới duy nhất xuất hiện trong Unicode 18.0 — hai đồng tiền khu vực khác cũng nhận được ký hiệu riêng trong cùng bản beta.",
+      "intro": "Dirham không phải ký hiệu tiền tệ mới duy nhất xuất hiện trong Unicode 18.0 — hai đồng tiền khu vực khác cũng nhận được ký hiệu riêng trong cùng bản phát hành.",
       "symbols": [
         {
           "char": "⃄",
@@ -83,7 +83,7 @@
       "id": "gulf-currency-a-version-ahead",
       "label": "Sớm Hơn Một Phiên Bản",
       "h2": "Ký Hiệu Tiền Tệ Vùng Vịnh Ra Mắt Sớm Hơn Một Phiên Bản",
-      "intro": "Ký hiệu riyal Ả Rập Saudi đã đi qua con đường tương tự sớm hơn hẳn một phiên bản Unicode — đã chính thức từ Unicode 17.0, không chỉ dừng ở bản beta.",
+      "intro": "Ký hiệu riyal Ả Rập Saudi đã đi qua con đường tương tự sớm hơn hẳn một phiên bản Unicode — chính thức từ Unicode 17.0 và gõ được trên Windows 11 từ tháng 12 năm 2025.",
       "symbols": [
         {
           "char": "⃁",
@@ -101,7 +101,7 @@
     {
       "href": "/vi/symbol/omani-rial-sign/",
       "title": "Ký Hiệu Rial Oman",
-      "desc": "Một ký hiệu tiền tệ vùng Vịnh khác ra mắt trong cùng bản beta Unicode 18.0."
+      "desc": "Một ký hiệu tiền tệ vùng Vịnh khác, xuất bản trong cùng bản Unicode 18.0."
     },
     {
       "href": "/vi/symbol/saudi-riyal-sign/",

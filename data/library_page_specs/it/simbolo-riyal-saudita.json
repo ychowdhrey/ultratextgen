@@ -3,14 +3,14 @@
   "lang": "it",
   "page_type": "symbol",
   "title": "Simbolo del Riyal Saudita: Copia e Incolla ⃁ — Approvato per Decreto Reale, Attivo in Unicode 17.0",
-  "meta_description": "Il simbolo del riyal saudita (⃁, U+20C1) è stato approvato da Re Salman nel febbraio 2025 e codificato in Unicode 17.0 nel settembre 2025 — già definitivo, anche se la maggior parte dei font non lo renderizza ancora. Ecco il suo design, la storia e come usarlo oggi.",
+  "meta_description": "Il simbolo del riyal saudita (⃁, U+20C1) è stato approvato da Re Salman nel febbraio 2025 e codificato in Unicode 17.0 nel settembre 2025. È definitivo, anche se la maggior parte dei font non lo renderizza ancora. Ecco il suo design, la storia e come usarlo oggi.",
   "canonical": "https://ultratextgen.com/it/symbol/simbolo-riyal-saudita/",
   "breadcrumb": "Simbolo del Riyal Saudita",
   "hero_h1": "Simbolo del Riyal Saudita",
-  "hero_tagline": "Il simbolo ufficiale della valuta dell'Arabia Saudita, approvato per decreto reale e codificato in Unicode 17.0, già definitivo, anche se la maggior parte di font e tastiere non si è ancora aggiornata.",
-  "intro": "Il simbolo del riyal saudita (⃁, U+20C1) è il simbolo ufficiale della valuta dell'Arabia Saudita, sviluppato per decreto reale da un comitato che riunisce la Saudi Central Bank (SAMA), il Ministero della Cultura, il Ministero dei Media e l'ente Saudi Standards. Il suo design si ispira alla calligrafia araba, componendo le lettere arabe di \"ريال\" (riyal) con il tratto della lettera rāʾ (ر) che funge da barra trasversale, nella stessa famiglia visiva di altri simboli valutari con barra trasversale come il dollaro e la sterlina. Re Salman ha approvato ufficialmente il design il 20 febbraio 2025, e SAMA lo ha sottoposto per la codifica Unicode poco dopo (proposta L2/25-075, datata 7 marzo 2025). Lo Unicode Technical Committee lo ha approvato senza modifiche nella sua 183ª riunione, dal 22 al 24 aprile 2025, ed è stato pubblicato come carattere definitivo e ratificato in Unicode 17.0 il 9 settembre 2025: un'intera versione prima del dirham degli Emirati, del rial omanita e del segno della rufiyaa delle Maldive, ancora in beta in Unicode 18.0 al momento della stesura. Essere definitivo non significa però essere già ovunque: una issue aperta su GitHub per Inter, uno dei font open-source più usati al mondo, chiede l'aggiunta del glifo, segno che la copertura dei font mainstream è ancora indietro anche a un'intera versione Unicode dalla ratifica. Nel frattempo esistono già un font open-source (costruito appositamente per questo simbolo) e guide della community per usarlo in Word, Excel e sul web.",
+  "hero_tagline": "Il simbolo ufficiale della valuta dell'Arabia Saudita, approvato per decreto reale e codificato in Unicode 17.0. Definitivo e presente sulle tastiere di Windows 11 e iPhone, anche se la maggior parte dei font non si è ancora aggiornata.",
+  "intro": "Il simbolo del riyal saudita (⃁, U+20C1) è il simbolo ufficiale della valuta dell'Arabia Saudita, sviluppato per decreto reale da un comitato che riunisce la Saudi Central Bank (SAMA), il Ministero della Cultura, il Ministero dei Media e l'ente Saudi Standards. Il suo design si ispira alla calligrafia araba, componendo le lettere arabe di \"ريال\" (riyal) con il tratto della lettera rāʾ (ر) che funge da barra trasversale, nella stessa famiglia visiva di altri simboli valutari con barra trasversale come il dollaro e la sterlina. Re Salman ha approvato ufficialmente il design il 20 febbraio 2025, e SAMA lo ha sottoposto per la codifica Unicode poco dopo (proposta L2/25-075, datata 7 marzo 2025). Lo Unicode Technical Committee lo ha approvato senza modifiche nella sua 183ª riunione, dal 22 al 24 aprile 2025, ed è stato pubblicato come carattere definitivo e ratificato in Unicode 17.0 il 9 settembre 2025: un'intera versione prima del dirham degli Emirati, del rial omanita e del segno della rufiyaa delle Maldive, arrivati con Unicode 18.0 il 16 settembre 2026. Essere definitivo non significa però essere già ovunque. Microsoft lo ha aggiunto ai layout di tastiera araba di Windows 11 a dicembre 2025 (AltGr+S su Arabo 101), e gli utenti iPhone lo hanno segnalato sulla tastiera araba di iOS dal 24 marzo 2026. Al 25 settembre 2026 restano aperte le richieste di aggiungere il glifo a Inter, uno dei font open-source più usati al mondo, e ai font Noto Arabic di Google, segno che la copertura dei font è ancora indietro anche a un'intera versione Unicode dalla ratifica. Nel frattempo esistono già un font open-source (costruito appositamente per questo simbolo) e guide della community per usarlo in Word, Excel e sul web.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-25",
   "copy_pattern": "single",
   "home_url": "https://ultratextgen.com/it/",
   "crumb_home": "Home",
@@ -47,19 +47,19 @@
       "id": "other-new-gulf-currency-symbols",
       "label": "Altri Simboli Valutari del Golfo",
       "h2": "Altri Nuovi Simboli Valutari del Golfo",
-      "intro": "Altre tre valute regionali hanno ottenuto un proprio simbolo Unicode nella versione successiva, Unicode 18.0, ancora in beta al momento della stesura.",
+      "intro": "Altre tre valute regionali hanno ottenuto un proprio simbolo Unicode nella versione successiva, Unicode 18.0, pubblicata il 16 settembre 2026.",
       "symbols": [
         {
           "char": "⃃",
-          "label": "Simbolo del Dirham degli EAU (U+20C3, beta di Unicode 18.0)"
+          "label": "Simbolo del Dirham degli EAU (U+20C3, Unicode 18.0)"
         },
         {
           "char": "⃄",
-          "label": "Simbolo del Rial Omanita (U+20C4, beta di Unicode 18.0)"
+          "label": "Simbolo del Rial Omanita (U+20C4, Unicode 18.0)"
         },
         {
           "char": "⃂",
-          "label": "Simbolo della Rufiyaa delle Maldive (U+20C2, beta di Unicode 18.0)"
+          "label": "Simbolo della Rufiyaa delle Maldive (U+20C2, Unicode 18.0)"
         }
       ]
     },
@@ -89,12 +89,12 @@
     {
       "href": "/it/symbol/simbolo-dirham/",
       "title": "Simbolo del Dirham",
-      "desc": "Il nuovo simbolo valutario degli Emirati Arabi Uniti, una versione Unicode indietro, ancora in beta."
+      "desc": "Il nuovo simbolo valutario degli Emirati Arabi Uniti, definitivo una versione Unicode dopo, in Unicode 18.0."
     },
     {
       "href": "/it/symbol/simbolo-rial-omanita/",
       "title": "Simbolo del Rial Omanita",
-      "desc": "Un altro simbolo valutario del Golfo in arrivo nella stessa beta di Unicode 18.0."
+      "desc": "Un altro simbolo valutario del Golfo, pubblicato nella stessa versione Unicode 18.0."
     },
     {
       "href": "/updates/uae-dirham-symbol-unicode-18/",
