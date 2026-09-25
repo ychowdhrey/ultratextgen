@@ -2,15 +2,15 @@
   "slug": "dirham-zeichen",
   "lang": "de",
   "page_type": "symbol",
-  "title": "Dirham-Zeichen: ⃃ kopieren & einfügen — das neue VAE-Währungssymbol, eingefroren zur Unicode-18.0-Veröffentlichung",
-  "meta_description": "Das VAE-Dirham-Zeichen (⃃, U+20C3) ist zur Veröffentlichung in Unicode 18.0 eingefroren, erwartet im September 2026 — genehmigt und stabil, aber auf keiner Tastatur tippbar. Codepoint, Geschichte und wie Entwickler es heute schon nutzen.",
+  "title": "Dirham-Zeichen: ⃃ kopieren & einfügen, das neue VAE-Währungssymbol, eingefroren zur Unicode-18.0-Veröffentlichung",
+  "meta_description": "Das VAE-Dirham-Zeichen (⃃, U+20C3) ist seit dem 16. September 2026 final in Unicode 18.0, aber noch auf keiner Tastatur tippbar. Codepoint, Geschichte und wie Entwickler es heute schon nutzen.",
   "canonical": "https://ultratextgen.com/de/symbol/dirham-zeichen/",
   "breadcrumb": "Dirham-Zeichen",
   "hero_h1": "Dirham-Zeichen",
-  "hero_tagline": "Das neue Währungssymbol der VAE-Zentralbank, als U+20C3 vergeben und zur Veröffentlichung in Unicode 18.0 eingefroren, fester verankert als die Entwurfs-Emojis derselben Ausgabe, aber noch auf keiner Tastatur tippbar.",
-  "intro": "Das Dirham-Zeichen (⃃, U+20C3) ist das neue Währungssymbol der Zentralbank der Vereinigten Arabischen Emirate, vorgestellt im März 2025 zusammen mit einem begleitenden Zeichen für den digitalen Dirham. Es wurde beim Unicode-Konsortium zur Kodierung eingereicht, genehmigt und am 27. Mai 2026 in der öffentlichen Beta von Unicode 18.0 veröffentlicht, gemeinsam mit den Zeichen für den omanischen Rial und die maledivische Rufiyaa. Zum Zeitpunkt dieses Textes trägt es in Unicodes eigener Pipeline-Dokumentation den Status „weiß“: das bedeutet, es ist zur Veröffentlichung eingefroren und wartet nur noch auf die ISO-Genehmigung, ein tatsächlich festerer Stand als die Entwurfs-Emoji-Kandidaten derselben Ausgabe (von denen mehrere noch mit ausstehenden Namensänderungen markiert sind). Unicode 18.0 selbst wird voraussichtlich im September 2026 final veröffentlicht. Eine Veröffentlichung allein bringt das Zeichen aber noch nicht auf die Tastatur: Derzeit bietet kein Betriebssystem, keine Schriftart und keine Eingabemethode native Unterstützung, und die Empfehlung der VAE-Zentralbank im eigenen Styleguide (die Zifferntaste 6) bleibt nur eine Empfehlung, bis Gerätehersteller sie umsetzen. In der Zwischenzeit haben Entwickler bereits reale Werkzeuge rund um den bestätigten Codepoint gebaut: ein Open-Source-npm-Paket, eine Webschriftart und CSS-/React-/Vue-/Angular-/Svelte-Komponenten (veröffentlicht als „dirham“ auf npm und GitHub) lassen dich das korrekte Zeichen schon heute über eine vorübergehende Darstellungsschicht einbinden, gedacht zum Verwerfen, sobald native Betriebssystem-Unterstützung verfügbar ist.",
+  "hero_tagline": "Das neue Währungssymbol der VAE-Zentralbank, als U+20C3 vergeben und am 16. September 2026 in Unicode 18.0 veröffentlicht, aber noch auf keiner Tastatur tippbar.",
+  "intro": "Das Dirham-Zeichen (⃃, U+20C3) ist das neue Währungssymbol der Zentralbank der Vereinigten Arabischen Emirate, vorgestellt im März 2025 zusammen mit einem begleitenden Zeichen für den digitalen Dirham. Es wurde beim Unicode-Konsortium zur Kodierung eingereicht, genehmigt und am 27. Mai 2026 in der öffentlichen Beta von Unicode 18.0 veröffentlicht, gemeinsam mit den Zeichen für den omanischen Rial und die maledivische Rufiyaa. Unicode 18.0 hat es am 16. September 2026 final veröffentlicht, unter dem dauerhaften Namen UAE DIRHAM SIGN. Eine Veröffentlichung allein bringt das Zeichen aber noch nicht auf die Tastatur: Stand 25. September 2026 bietet kein Betriebssystem, keine Systemschrift und keine Eingabemethode native Unterstützung, und die Empfehlung der VAE-Zentralbank im eigenen Styleguide (die Zifferntaste 6) bleibt nur eine Empfehlung, bis Gerätehersteller sie umsetzen. In der Zwischenzeit haben Entwickler bereits reale Werkzeuge rund um den bestätigten Codepoint gebaut: ein Open-Source-npm-Paket, eine Webschriftart und CSS-/React-/Vue-/Angular-/Svelte-Komponenten (veröffentlicht als „dirham“ auf npm und GitHub) lassen dich das korrekte Zeichen schon heute über eine vorübergehende Darstellungsschicht einbinden, gedacht zum Verwerfen, sobald native Betriebssystem-Unterstützung verfügbar ist.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-25",
   "copy_pattern": "single",
   "home_url": "https://ultratextgen.com/de/",
   "crumb_home": "Startseite",
@@ -35,11 +35,11 @@
       "id": "dirham-zeichen",
       "label": "Dirham-Zeichen",
       "h2": "Dirham-Zeichen",
-      "intro": "Das bestätigte Zeichen selbst: schon heute per Codepoint kopierbar, auch wenn noch keine Schriftart es nativ darstellt.",
+      "intro": "Das finale Zeichen selbst: schon heute per Codepoint kopierbar, auch wenn noch keine Systemschrift es nativ darstellt.",
       "symbols": [
         {
           "char": "⃃",
-          "label": "VAE-Dirham-Zeichen (U+20C3, eingefroren zur Veröffentlichung)"
+          "label": "VAE-Dirham-Zeichen (U+20C3, Unicode 18.0)"
         }
       ]
     },
@@ -47,7 +47,7 @@
       "id": "weitere-neue-waehrungssymbole",
       "label": "Weitere neue Währungssymbole",
       "h2": "Weitere neue Golf-Währungssymbole in dieser Ausgabe",
-      "intro": "Der Dirham ist nicht das einzige neue Währungssymbol in Unicode 18.0. Zwei weitere Regionalwährungen erhielten in derselben Beta ihre eigenen Zeichen.",
+      "intro": "Der Dirham ist nicht das einzige neue Währungssymbol in Unicode 18.0. Zwei weitere Regionalwährungen erhielten in derselben Ausgabe ihre eigenen Zeichen.",
       "symbols": [
         {
           "char": "⃄",
@@ -83,7 +83,7 @@
       "id": "golf-waehrung-eine-version-voraus",
       "label": "Eine Version voraus",
       "h2": "Das Golf-Währungssymbol, das eine Version früher erschien",
-      "intro": "Saudi-Arabiens Rial-Zeichen legte denselben Weg eine volle Unicode-Version früher zurück, bereits final seit Unicode 17.0, nicht nur in der Beta.",
+      "intro": "Saudi-Arabiens Rial-Zeichen legte denselben Weg eine volle Unicode-Version früher zurück: final seit Unicode 17.0 und seit Dezember 2025 unter Windows 11 tippbar.",
       "symbols": [
         {
           "char": "⃁",
@@ -101,7 +101,7 @@
     {
       "href": "/de/symbol/omani-rial-zeichen/",
       "title": "Omanisches Rial-Zeichen",
-      "desc": "Ein weiteres Golf-Währungssymbol aus derselben Unicode-18.0-Beta."
+      "desc": "Ein weiteres Golf-Währungssymbol aus derselben Unicode-18.0-Ausgabe."
     },
     {
       "href": "/de/symbol/saudi-rial-zeichen/",
@@ -120,8 +120,8 @@
     },
     {
       "href": "/de/updates/unicode-18-beta-startet/",
-      "title": "Unicode 18.0 Beta startet",
-      "desc": "Die vollständige Ausgabe, zu der dieses Zeichen gehört: Schriftsysteme, Symbole und Entwurfs-Emojis."
+      "title": "Was ist neu in Unicode 18.0",
+      "desc": "Die vollständige Ausgabe, zu der dieses Zeichen gehört: Schriftsysteme, Symbole und neue Emojis."
     }
   ]
 }
