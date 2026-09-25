@@ -102,6 +102,20 @@ units at the time — so unlike the `id/tulisan-cuping/` precedent this exceptio
 on the structural/linguistic argument rather than confirmed search volume. Revisit
 with real numbers if either page's ranking becomes a live question.
 
+**Superseded 2026-09-23 (owner-directed): verdict `build-parent`.** The owner asked
+for an English version of this pair so the Vietnamese page could link its own
+rename-lock update with a real English sibling. The reverse check was direct SERP
+observation, since the keyword instrument was again out of API units: "arena of valor
+name generator symbols" returned mostly Valorant pages, with no dedicated Arena of
+Valor name generator ranking, so there was no existing owner to cannibalize.
+`usecase/arena-of-valor-name-generator/` now parents both pages, the three form one
+en/vi/zh-TW cluster, and both ledger entries were removed from
+`data/english_parent_exceptions.json` as its `build-parent` rule requires. The EN
+page states only the name rules the site already documents for these two editions
+(12 characters, symbols counted singly, no plain space). The separate symbols page
+`vi/ki-tu-dac-biet-lien-quan/` keeps its own exception: its entry's "no EN Arena of
+Valor page exists" clause is now out of date and is left for the owner to re-decide.
+
 ## Argument B — EN SERP consolidation
 
 ### `fr/calligraphie/`, `fr/changeur-de-police/`, `fr/police-d-ecriture/` (2026-07-26)

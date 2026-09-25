@@ -126,7 +126,7 @@
       categories: [
         { label: "Fette Schrift", href: "/de/fette-schrift/" },
         { label: "Schreibschrift", href: "/de/schreibschrift/" },
-        { label: "Gotische Schrift", href: "/de/gotische-schrift/" },
+        { label: "Altdeutsche Schrift", href: "/de/altdeutsche-schrift/" },
         { label: "Kleine Schrift", href: "/de/kleine-schrift/" },
         { label: "Durchgestrichener Text", href: "/de/durchgestrichener-text/" }
       ],
