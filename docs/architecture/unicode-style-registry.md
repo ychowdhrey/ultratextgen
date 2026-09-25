@@ -41,16 +41,18 @@ passes `styles[styleKey]`.
 
 `function` is checked **before** the switch (`style.type === 'function' &&
 style.transform`); everything else falls through a `switch` whose `default` is
-`renderMap`. The five values in live use, with counts as of 2026-08-11 and
-**re-verified 2026-09-22** at 114 styles total:
+`renderMap`. The five values in live use, with counts as of 2026-08-11,
+re-verified 2026-09-22 at 114 styles total, and **re-verified again
+2026-09-25 (2 new `procedure` styles, 1 new `redact` style added in the
+3 days since)** at 117 styles total:
 
 | `type` | count | meaning |
 |---|---|---|
 | `map` | 50 | positional Unicode substitution via `renderMap` |
-| `procedure` | 30 | named algorithm by `procedureId` — where zalgo, gal-moji, cuping and similar transforms live |
+| `procedure` | 32 | named algorithm by `procedureId` — where zalgo, gal-moji, cuping and similar transforms live |
 | `decorator` | 15 | named decorator by `decoratorId` |
 | `function` | 11 | `transform` fn; today the upside-down family |
-| `redact` | 8 | `redactChar`/`redactMode` |
+| `redact` | 9 | `redactChar`/`redactMode` |
 
 `renderer.js` also has a `case 'pattern'` calling `renderPattern`, but **no style
 currently uses it** — supported, unused. Do not assume it is dead without checking;
