@@ -2,26 +2,27 @@
   "slug": "umman-riyali-isareti",
   "lang": "tr",
   "page_type": "symbol",
-  "title": "Umman Riyali İşareti: Kopyala Yapıştır ⃄ — Umman'ın Yeni Para Birimi İşareti, Unicode 18.0 İçin Yayına Hazır",
-  "meta_description": "Umman riyali işareti (⃄, U+20C4) Kasım 2025'te Umman Merkez Bankası tarafından tanıtıldı ve Eylül 2026'da beklenen Unicode 18.0 yayını için hazır — henüz hiçbir klavyede yok. Tasarımı, tarihi ve durumu.",
+  "title": "Umman Riyali İşareti: Kopyala Yapıştır ⃄, Unicode 18.0'da Kesinleşti",
+  "meta_description": "Umman riyali işareti (⃄, U+20C4) Kasım 2025'te Umman Merkez Bankası tarafından tanıtıldı ve 16 Eylül 2026'dan beri Unicode 18.0'da kesinleşmiş durumda, ama henüz hiçbir klavyede yok. Tasarımı, tarihi ve durumu.",
   "canonical": "https://ultratextgen.com/tr/symbol/umman-riyali-isareti/",
   "breadcrumb": "Umman Riyali İşareti",
   "hero_h1": "Umman Riyali İşareti",
-  "hero_tagline": "Umman Ulusal Günü'nde tanıtılan ve Unicode 18.0 yayını için hazırlanan Umman'ın resmi para birimi işareti — onaylandı, ama henüz hiçbir klavyede ya da yazı tipinde değil.",
-  "intro": "Umman riyali işareti (⃄, U+20C4), Umman Merkez Bankası'nın Umman Ulusal Günü'ne denk getirilerek 19 Kasım 2025'te kamuoyuna sunduğu resmi para birimi işaretidir. Tasarımı iki stilize Arapça harften oluşur — \"Umman'a ait\" anlamındaki عماني sözcüğünün ilk harfi olan ʿayn (ع) ile \"riyal\" anlamındaki ريال sözcüğünün ilk harfi olan rāʾ (ر), birçok modern para birimi işaretinin paylaştığı tarzda iki çizgiyle kesilerek. Merkez Bankası Başkanı Ahmed bin Cafer El-Musallami, bu benimsemeyi Umman'ın bölgesel bir finans merkezi olarak konumunu güçlendirmek ve riyali uluslararası, ticari ve dijital platformlarda tanınır kılmak için stratejik bir adım olarak sundu. BAE dirhemi ve Maldiv rufiyası işaretleriyle birlikte Unicode kodlaması için başvuruldu ve bu yazının kaleme alındığı sırada Unicode'un kendi süreç belgelerinde \"beyaz\" statüsünü taşıyor — yayına hazır, yalnızca ISO onayını bekliyor, nihai yayının Eylül 2026'da Unicode 18.0'ın geri kalanıyla birlikte gerçekleşmesi bekleniyor. Şu anda hiçbir işletim sistemi, yazı tipi ya da klavye yerel destek sunmuyor. Bu arada iki pratik yol var. Merkez Bankası işareti SVG, PNG ve EPS dosyaları olarak kullanım kılavuzuyla birlikte yayımlıyor; bir fatura şablonu, bir fiyat listesi ya da basılı bir tabela için bu yeterli. Odoo kullanan şirketler ise yazı tipi gömen bir ERP modülü kurarak işaretin faturalarda, raporlarda, müşteri portalında ve kasa fişlerinde görünmesini sağlayabilir. İkisi de karakterin yerini tutmaz: yalnızca U+20C4 aranabilir, sıralanabilir ve yapıştırılabilir.",
+  "hero_tagline": "Umman Ulusal Günü'nde tanıtılan ve 16 Eylül 2026'da Unicode 18.0'da yayımlanan Umman'ın resmi para birimi işareti — kesinleşti, ama henüz hiçbir klavyede ya da yazı tipinde değil.",
+  "intro": "Umman riyali işareti (⃄, U+20C4), Umman Merkez Bankası'nın Umman Ulusal Günü'ne denk getirilerek 19 Kasım 2025'te kamuoyuna sunduğu resmi para birimi işaretidir. Tasarımı iki stilize Arapça harften oluşur — \"Umman'a ait\" anlamındaki عماني sözcüğünün ilk harfi olan ʿayn (ع) ile \"riyal\" anlamındaki ريال sözcüğünün ilk harfi olan rāʾ (ر), birçok modern para birimi işaretinin paylaştığı tarzda iki çizgiyle kesilerek. Merkez Bankası Başkanı Ahmed bin Cafer El-Musallami, bu benimsemeyi Umman'ın bölgesel bir finans merkezi olarak konumunu güçlendirmek ve riyali uluslararası, ticari ve dijital platformlarda tanınır kılmak için stratejik bir adım olarak sundu. BAE dirhemi ve Maldiv rufiyası işaretleriyle birlikte Unicode kodlaması için başvuruldu ve Unicode 18.0 onu 16 Eylül 2026'da U+20C4 OMANI RIAL SIGN olarak kesinleşmiş hâliyle yayımladı. 25 Eylül 2026 itibarıyla hiçbir işletim sistemi, sistem yazı tipi ya da klavye yerel destek sunmuyor. Bu arada iki pratik yol var. Merkez Bankası işareti SVG, PNG ve EPS dosyaları olarak kullanım kılavuzuyla birlikte yayımlıyor; bir fatura şablonu, bir fiyat listesi ya da basılı bir tabela için bu yeterli. Odoo kullanan şirketler ise yazı tipi gömen bir ERP modülü kurarak işaretin faturalarda, raporlarda, müşteri portalında ve kasa fişlerinde görünmesini sağlayabilir. İkisi de karakterin yerini tutmaz: yalnızca U+20C4 aranabilir, sıralanabilir ve yapıştırılabilir.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
+  "sources": "Unicode 18.0'ın 16 Eylül 2026'da yayımlanması ve bu karakterin U+20C4 OMANI RIAL SIGN adı, Unicode Konsorsiyumu'nun <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">Unicode 18.0 duyurusu</a> ile doğrulanıyor. Suudi riyali işaretinin Windows 11 klavyelerine gelişi, Microsoft'un <a href=\"https://support.microsoft.com/en-us/servicing/os/windows-11/2025/12/december-1-2025-kb5070311-os-builds-26200-7309-and-26100-7309-preview\">KB5070311 sürüm notları</a>nda belgelenmiş durumda.",
   "sections": [
     {
       "id": "omani-rial-sign",
       "label": "Umman Riyali İşareti",
       "h2": "Umman Riyali İşareti",
-      "intro": "Onaylanmış karakterin kendisi — hiçbir yazı tipi henüz yerel olarak göstermese de bugün kod noktasıyla kopyalanabilir.",
+      "intro": "Kesinleşmiş karakterin kendisi — hiçbir sistem yazı tipi henüz yerel olarak göstermese de bugün kod noktasıyla kopyalanabilir.",
       "symbols": [
         {
           "char": "⃄",
-          "label": "Omani Rial Sign (U+20C4, yayına hazır)"
+          "label": "Omani Rial Sign (U+20C4, Unicode 18.0)"
         }
       ]
     },
@@ -29,7 +30,7 @@
       "id": "other-new-gulf-currency-symbols",
       "label": "Diğer Yeni Körfez Para Birimi İşaretleri",
       "h2": "Bu Sürümdeki Diğer Yeni Para Birimi İşaretleri",
-      "intro": "Umman riyali, Unicode 18.0'da yayına giren tek yeni para birimi işareti değil — aynı betada iki para birimi daha kendi işaretine kavuştu.",
+      "intro": "Umman riyali, Unicode 18.0'da yayına giren tek yeni para birimi işareti değil — aynı sürümde iki para birimi daha kendi işaretine kavuştu.",
       "symbols": [
         {
           "char": "⃃",
@@ -45,7 +46,7 @@
       "id": "gulf-currency-a-version-ahead",
       "label": "Bir Sürüm Önde",
       "h2": "Bir Sürüm Önce Yayına Giren Körfez Para Birimi İşareti",
-      "intro": "Suudi Arabistan'ın riyal işareti aynı yolu bir tam Unicode sürümü önce kat etti — sadece betada değil, Unicode 17.0'dan beri zaten kesinleşmiş durumda.",
+      "intro": "Suudi Arabistan'ın riyal işareti aynı yolu bir tam Unicode sürümü önce kat etti — Unicode 17.0'dan beri kesinleşmiş durumda ve Aralık 2025'ten beri Windows 11'in Arapça klavyelerinde.",
       "symbols": [
         {
           "char": "⃁",
@@ -63,7 +64,7 @@
     {
       "href": "/tr/symbol/dirhem-isareti/",
       "title": "Dirhem İşareti",
-      "desc": "BAE'nin yeni para birimi işareti — aynı Unicode 18.0 betasında yayında."
+      "desc": "BAE'nin yeni para birimi işareti — aynı Unicode 18.0 sürümünde yayımlandı."
     },
     {
       "href": "/tr/symbol/suudi-riyali-isareti/",

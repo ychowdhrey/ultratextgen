@@ -2,16 +2,17 @@
   "slug": "emoji-cetriolino",
   "lang": "it",
   "page_type": "symbol",
-  "title": "Emoji Cetriolino: Copia e Incolla 🫝 — la Candidata di Unicode 18.0 che Ha Ereditato uno Slot Rinviato di Apple Core",
-  "meta_description": "Pickle (🫝, U+1FADD) è una candidata in bozza per Emoji 18.0, attesa insieme a Unicode 18.0 a settembre 2026. Il suo codepoint era originariamente riservato a un'emoji \"Apple Core\" prima di essere rinviato e riassegnato. Non ancora approvata, nessun font la renderizza oggi.",
+  "title": "Emoji Cetriolino: Copia e Incolla 🫝, Ufficiale in Emoji 18.0",
+  "meta_description": "Pickle (🫝, U+1FADD) è definitiva in Emoji 18.0, pubblicata con Unicode 18.0 il 16 settembre 2026. Il suo codepoint era originariamente riservato a un'emoji \"Apple Core\" prima di essere riassegnato. Al 25 settembre 2026 nessun telefono o computer la mostra di serie.",
   "canonical": "https://ultratextgen.com/it/symbol/emoji-cetriolino/",
   "breadcrumb": "Emoji Cetriolino",
   "hero_h1": "Emoji Cetriolino",
-  "hero_tagline": "Un cetriolino sott'aceto intero, distinto dal cetriolo e dalla melanzana, in bozza per Emoji 18.0, attesa insieme a Unicode 18.0 a settembre 2026. Solo bozza: nessun font la renderizza ancora. Tocca comunque per copiare il codepoint.",
-  "intro": "Pickle (🫝, U+1FADD) è un'emoji candidata in bozza per Emoji 18.0, la componente emoji di Unicode 18.0, attesa in versione definitiva a settembre 2026. Il suo codepoint ha un retroscena insolito: U+1FADD era originariamente riservato a una proposta \"Apple Core\" (torsolo di mela) nel ciclo di bozze di Emoji 17.0; quella proposta è stata rinviata, e Unicode ha riassegnato lo slot liberato a Pickle per il ciclo 18.0. Raffigura un cetriolino sott'aceto intero, distinto dalle già esistenti emoji Cetriolo e Melanzana a cui viene più spesso accostata per scherzo: la stampa tech ha ipotizzato di tutto, da \"quel cetriolino spaccherà internet\" a previsioni secondo cui \"toglierà molto business\" alla Melanzana. Trattandosi ancora di una bozza, nessun sistema operativo, tastiera o font la renderizza attualmente; aspettati un riquadro vuoto o un glifo segnaposto finché Emoji 18.0 non sarà approvata e le piattaforme non avranno implementato il supporto.",
+  "hero_tagline": "Un cetriolino sott'aceto intero, distinto dal cetriolo e dalla melanzana, definitivo in Emoji 18.0 dal 16 settembre 2026. Al 25 settembre 2026 nessun telefono o computer mostra questa emoji di serie, ma puoi già copiare il codepoint.",
+  "intro": "Pickle (🫝, U+1FADD) è una delle nove nuove emoji di Emoji 18.0, la componente emoji di Unicode 18.0; entrambe sono state pubblicate il 16 settembre 2026. Il suo codepoint ha un retroscena insolito: U+1FADD era originariamente riservato a una proposta \"Apple Core\" (torsolo di mela) nel ciclo di bozze di Emoji 17.0; quella proposta è stata rinviata, e Unicode ha riassegnato lo slot liberato a Pickle per il ciclo 18.0. È rimasta una candidata in bozza fino a settembre 2026, e i dati emoji di Unicode 18.0 ora elencano U+1FADD come \"pickle\", completamente qualificata. Raffigura un cetriolino sott'aceto intero, distinto dalle già esistenti emoji Cetriolo e Melanzana a cui viene più spesso accostata per scherzo: la stampa tech ha ipotizzato di tutto, da \"quel cetriolino spaccherà internet\" a previsioni secondo cui \"toglierà molto business\" alla Melanzana. Definitiva non vuol dire già sulla tua tastiera. Google ha pubblicato il suo design nel font Noto Color Emoji, ma al 25 settembre 2026 nessun sistema operativo, tastiera o font emoji di sistema la include; aspettati un riquadro vuoto o un glifo segnaposto finché la tua piattaforma non supporterà Emoji 18.0.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
+  "sources": "Il file di dati <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> di Unicode 18.0 elenca U+1FADD come \"pickle\", un'emoji completamente qualificata di Emoji 18.0, e l'<a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">annuncio di Unicode 18.0</a> del Consorzio Unicode data la pubblicazione al 16 settembre 2026. Il <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">resoconto di Emojipedia su Unicode 18.0</a> riporta i design di Google in Noto Color Emoji per le nuove emoji.",
   "home_url": "https://ultratextgen.com/it/",
   "crumb_home": "Home",
   "crumb_library": "Simboli",
@@ -35,11 +36,11 @@
       "id": "pickle",
       "label": "Cetriolino",
       "h2": "Emoji Cetriolino",
-      "intro": "Il carattere in bozza in sé: copiabile già oggi come codepoint, anche se nessun font può ancora renderizzarlo.",
+      "intro": "Il carattere di Emoji 18.0 in sé: copia oggi il codepoint e diventerà un cetriolino non appena il tuo telefono o computer supporterà Emoji 18.0.",
       "symbols": [
         {
           "char": "🫝",
-          "label": "Pickle (bozza, U+1FADD)"
+          "label": "Pickle (U+1FADD, Emoji 18.0)"
         }
       ]
     },
@@ -65,21 +66,21 @@
     },
     {
       "id": "fellow-candidates",
-      "label": "Altre Candidate in Bozza",
-      "h2": "Altre Candidate in Bozza di Emoji 18.0",
-      "intro": "Pickle non è l'unico carattere non approvato di questa release: questi sono in bozza insieme a lei, ugualmente non renderizzati fino alla decisione di settembre 2026.",
+      "label": "Pubblicate Insieme",
+      "h2": "Altre Nuove Emoji di Emoji 18.0",
+      "intro": "Pickle non è l'unica nuova emoji di questa release: queste sono diventate definitive insieme a lei il 16 settembre 2026, e nessun telefono o computer le mostra ancora di serie.",
       "symbols": [
         {
           "char": "🫫",
-          "label": "Cracking Face (bozza, U+1FAEB)"
+          "label": "Cracking Face (U+1FAEB, Emoji 18.0)"
         },
         {
           "char": "🫌",
-          "label": "Monarch Butterfly (bozza, U+1FACC)"
+          "label": "Monarch Butterfly (U+1FACC, Emoji 18.0)"
         },
         {
           "char": "🛙",
-          "label": "Lighthouse (bozza, U+1F6D9)"
+          "label": "Lighthouse (U+1F6D9, Emoji 18.0)"
         }
       ]
     }
@@ -93,27 +94,27 @@
     {
       "href": "/it/symbol/emoji-volto-incrinato/",
       "title": "Emoji Volto Incrinato",
-      "desc": "Un'altra candidata in bozza di Emoji 18.0, e quella che ha vinto il voto pubblico."
+      "desc": "Il volto di Emoji 18.0 che ha battuto Pickle nel voto pubblico di Emojipedia."
     },
     {
       "href": "/it/symbol/emoji-meteora/",
       "title": "Emoji Meteora",
-      "desc": "Un'altra candidata in bozza di Emoji 18.0 si separa dalla lunga divisione di rendering di Comet."
+      "desc": "Anche lei definitiva in Emoji 18.0: una stella cadente separata dalla lunga divisione di rendering di Comet."
     },
     {
       "href": "/it/symbol/emoji-farfalla-monarca/",
       "title": "Emoji Farfalla Monarca",
-      "desc": "Un'altra candidata in bozza di Emoji 18.0 risolve una confusione multipiattaforma sulla Farfalla."
+      "desc": "Anche lei definitiva in Emoji 18.0: risolve una confusione multipiattaforma sulla Farfalla."
     },
     {
       "href": "/it/symbol/emoji-pollice-direzionale/",
       "title": "Emoji Pollice Direzionale",
-      "desc": "Un'altra coppia candidata in bozza di Emoji 18.0, puntamento direzionale, non approvazione."
+      "desc": "Anche questa coppia è definitiva in Emoji 18.0: puntamento direzionale, non approvazione."
     },
     {
       "href": "/updates/unicode-18-most-anticipated-emoji/",
       "title": "Unicode 18.0's New Emoji",
-      "desc": "L'intero elenco delle 9 candidate in bozza, classificate per voto pubblico."
+      "desc": "Le 9 emoji diventate definitive in Emoji 18.0, classificate per voto pubblico."
     }
   ]
 }

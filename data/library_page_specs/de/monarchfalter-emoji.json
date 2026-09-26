@@ -2,16 +2,17 @@
   "slug": "monarchfalter-emoji",
   "lang": "de",
   "page_type": "symbol",
-  "title": "Monarchfalter Emoji: 🫌 kopieren & einfügen — der Unicode-18.0-Kandidat gegen die Schmetterlings-Verwechslung",
-  "meta_description": "Monarchfalter (🫌, U+1FACC) ist ein Entwurfs-Kandidat für Emoji 18.0, erwartet zusammen mit Unicode 18.0 im September 2026. Er behebt eine jahrelange plattformübergreifende Darstellungs-Verwechslung des Schmetterling-Emojis — noch nicht genehmigt.",
+  "title": "Monarchfalter Emoji: 🫌 kopieren & einfügen, final in Emoji 18.0",
+  "meta_description": "Monarchfalter (🫌, U+1FACC) ist seit dem 16. September 2026 final in Emoji 18.0 und behebt eine jahrelange Verwechslung beim Schmetterling-Emoji. Noch zeigt ihn kein Handy und kein Computer standardmäßig an.",
   "canonical": "https://ultratextgen.com/de/symbol/monarchfalter-emoji/",
   "breadcrumb": "Monarchfalter Emoji",
   "hero_h1": "Monarchfalter Emoji",
-  "hero_tagline": "Eine bestimmte Art, herausgelöst aus der plattformübergreifenden Darstellungs-Verwechslung des generischen Schmetterling-Emojis, im Entwurf für Emoji 18.0, erwartet zusammen mit Unicode 18.0 im September 2026. Nur ein Entwurf: von keiner Schriftart darstellbar. Trotzdem kannst du den Codepoint schon jetzt kopieren.",
-  "intro": "Monarchfalter (🫌, U+1FACC) ist ein Kandidaten-Emoji im Entwurf für Emoji 18.0, das Emoji-Pendant zu Unicode 18.0, dessen finale Genehmigung für September 2026 erwartet wird. Es behebt ein reales Fragmentierungsproblem: Das bestehende generische Schmetterling-Emoji (🦋) erscheint auf manchen Plattformen als blauer Morphofalter, auf anderen eher als Monarchfalter, sodass zwei Menschen denselben Codepoint austauschen und sich zwei unterschiedliche Insekten vorstellen konnten: „man könnte jemandem einen Monarchfalter geschickt haben, während die Person einen Morphofalter vor sich sah“. Wünsche danach gehen auf Apples eigenen Community-Foren jahrelang zurück, wo Nutzer auf die charakteristische orange-schwarze Färbung des Monarchfalters und seinen gefährdeten Status als Gründe verwiesen, warum er einen eigenen Platz verdiene. Unicode zeigt sich bei artspezifischen Varianten normalerweise zurückhaltend, doch Häufigkeitsdaten, die den Schmetterling als meistgenutztes Tier-Emoji seiner Unterkategorie auswiesen, machten den Fall für seine bekannteste Art. Das Emoji selbst trägt die Wandergeschichte des Monarchfalters in sich: „generationsübergreifende Widerstandsfähigkeit, Ausdauer und tief verwurzeltes Ahnengedächtnis“, ein Geschöpf, das Tausende Kilometer über Lebensspannen hinweg zurücklegt, die es selbst nie vollendet. Weil es noch ein Entwurf ist, stellt derzeit kein Betriebssystem, keine Tastatur und keine Schriftart es dar; bis zur Genehmigung von Emoji 18.0 und der Umsetzung durch die Plattformen erscheint an dieser Stelle nur ein leeres Kästchen oder eine Platzhalter-Glyphe, voraussichtlich bis irgendwann 2027.",
+  "hero_tagline": "Eine bestimmte Art, herausgelöst aus der plattformübergreifenden Darstellungs-Verwechslung des generischen Schmetterling-Emojis, final in Emoji 18.0, veröffentlicht mit Unicode 18.0 am 16. September 2026. Stand 25. September 2026 zeigt kein Handy und kein Computer den Monarchfalter standardmäßig an. Trotzdem kannst du den Codepoint schon jetzt kopieren.",
+  "intro": "Monarchfalter (🫌, U+1FACC) ist eines der neun neuen Emojis in Emoji 18.0, dem Emoji-Pendant zu Unicode 18.0, das das Unicode-Konsortium am 16. September 2026 veröffentlicht hat. Es behebt ein reales Fragmentierungsproblem: Das bestehende generische Schmetterling-Emoji (🦋) erscheint auf manchen Plattformen als blauer Morphofalter, auf anderen eher als Monarchfalter, sodass zwei Menschen denselben Codepoint austauschen und sich zwei unterschiedliche Insekten vorstellen konnten: „man könnte jemandem einen Monarchfalter geschickt haben, während die Person einen Morphofalter vor sich sah“. Wünsche danach gehen auf Apples eigenen Community-Foren jahrelang zurück, wo Nutzer auf die charakteristische orange-schwarze Färbung des Monarchfalters und seinen gefährdeten Status als Gründe verwiesen, warum er einen eigenen Platz verdiene. Unicode zeigt sich bei artspezifischen Varianten normalerweise zurückhaltend, doch Häufigkeitsdaten, die den Schmetterling als meistgenutztes Tier-Emoji seiner Unterkategorie auswiesen, machten den Fall für seine bekannteste Art. Das Emoji selbst trägt die Wandergeschichte des Monarchfalters in sich: „generationsübergreifende Widerstandsfähigkeit, Ausdauer und tief verwurzeltes Ahnengedächtnis“, ein Geschöpf, das Tausende Kilometer über Lebensspannen hinweg zurücklegt, die es selbst nie vollendet. Final heißt aber noch nicht, dass der Monarchfalter auf deiner Tastatur ist. Google hat ein Monarchfalter-Design in seiner Schrift Noto Color Emoji veröffentlicht, doch Stand 25. September 2026 liefert kein Betriebssystem, keine Tastatur und keine System-Emoji-Schrift es aus; bis die Plattformen Unterstützung ausliefern, erscheint an dieser Stelle nur ein leeres Kästchen oder eine Platzhalter-Glyphe. Emojipedia schätzt, auf Basis des Vorjahres, das erste Quartal 2027 für WhatsApp, Samsung und Googles Android, etwa März oder April 2027 für Apple und den Spätsommer oder Frühherbst 2027 für Microsoft.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
+  "sources": "Codepoint und Name, U+1FACC „monarch butterfly“, führt die Datendatei <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> von Unicode 18.0 als vollständig qualifiziertes Emoji; die <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">Ankündigung von Unicode 18.0</a> des Unicode-Konsortiums datiert die Veröffentlichung auf den 16. September 2026. <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">Emojipedias Überblick zu Unicode 18.0</a> berichtet über Googles Designs für Noto Color Emoji und nennt die oben zitierten Schätzungen für 2027.",
   "home_url": "https://ultratextgen.com/de/",
   "crumb_home": "Startseite",
   "crumb_library": "Symbole",
@@ -35,11 +36,11 @@
       "id": "monarchfalter",
       "label": "Monarchfalter",
       "h2": "Monarchfalter Emoji",
-      "intro": "Das Entwurfszeichen selbst: schon heute als Codepoint kopierbar, auch wenn noch keine Schriftart es darstellen kann.",
+      "intro": "Der Monarchfalter, wie Emoji 18.0 ihn festgeschrieben hat: schon heute als Codepoint kopierbar, auch wenn ihn noch kein Handy und kein Computer standardmäßig anzeigt.",
       "symbols": [
         {
           "char": "🫌",
-          "label": "Monarchfalter (Entwurf, U+1FACC)"
+          "label": "Monarchfalter (U+1FACC, Emoji 18.0)"
         }
       ]
     },
@@ -57,21 +58,21 @@
     },
     {
       "id": "weitere-entwurfs-emojis",
-      "label": "Weitere Entwurfs-Kandidaten",
-      "h2": "Weitere Entwurfs-Kandidaten für Emoji 18.0",
-      "intro": "Monarchfalter ist nicht das einzige noch nicht genehmigte Zeichen dieser Ausgabe: diese hier stehen im selben Entwurf und bleiben bis zur Entscheidung im September 2026 ebenso unsichtbar.",
+      "label": "Mit ihm veröffentlicht",
+      "h2": "Weitere neue Emojis in Emoji 18.0",
+      "intro": "Monarchfalter ist nicht das einzige neue Emoji dieser Ausgabe: diese hier wurden am 16. September 2026 mit ihm final, und auch sie zeigt noch kein Handy und kein Computer standardmäßig an.",
       "symbols": [
         {
           "char": "🫫",
-          "label": "Berstendes Gesicht (Entwurf, U+1FAEB): Gewinner der öffentlichen Abstimmung"
+          "label": "Berstendes Gesicht (U+1FAEB, Emoji 18.0): Gewinner der öffentlichen Abstimmung"
         },
         {
           "char": "🫝",
-          "label": "Essiggurke (Entwurf, U+1FADD)"
+          "label": "Essiggurke (U+1FADD, Emoji 18.0)"
         },
         {
           "char": "🪋",
-          "label": "Meteor (Entwurf, U+1FA8B)"
+          "label": "Meteor (U+1FA8B, Emoji 18.0)"
         }
       ]
     }
@@ -85,17 +86,17 @@
     {
       "href": "/de/symbol/berstendes-gesicht-emoji/",
       "title": "Berstendes Gesicht Emoji",
-      "desc": "Der Entwurfs-Kandidat für Emoji 18.0, der die öffentliche Abstimmung gewann."
+      "desc": "Das neue Emoji aus Emoji 18.0, das die öffentliche Abstimmung gewann."
     },
     {
       "href": "/de/symbol/essiggurke-emoji/",
       "title": "Essiggurke Emoji",
-      "desc": "Ein weiterer Entwurfs-Kandidat für Emoji 18.0 übernahm einen Codepoint-Platz, der ursprünglich für einen zurückgestellten Vorschlag reserviert war."
+      "desc": "Ein weiteres neues Emoji aus Emoji 18.0, das einen Codepoint-Platz übernahm, der ursprünglich für einen zurückgestellten Vorschlag reserviert war."
     },
     {
       "href": "/de/updates/unicode-18-emoji-abstimmung/",
       "title": "Unicode 18.0: Neue Emojis",
-      "desc": "Die vollständige Entwurfsliste aller 9 Kandidaten, sortiert nach öffentlicher Abstimmung."
+      "desc": "Alle 9 neuen Emojis der finalen Ausgabe, sortiert nach öffentlicher Abstimmung."
     }
   ]
 }

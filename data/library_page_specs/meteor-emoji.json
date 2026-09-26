@@ -1,26 +1,27 @@
 {
   "slug": "meteor-emoji",
   "page_type": "symbol",
-  "title": "Meteor Emoji: Copy & Paste 🪋 — the Unicode 18.0 Candidate That Splits From Comet",
-  "meta_description": "Meteor (🪋, U+1FA8B) is a draft candidate for Emoji 18.0, expected alongside Unicode 18.0 in September 2026. It resolves a years-long Comet rendering split — not approved yet, and no font renders it today. Here's its backstory, meaning, and status.",
+  "title": "Meteor Emoji: Copy & Paste 🪋, Final in Emoji 18.0",
+  "meta_description": "Meteor (🪋, U+1FA8B) became final in Emoji 18.0 on September 16, 2026, taking over the fireball look Comet ☄️ was split on. As of September 25, 2026, no phone or computer shows it by default.",
   "canonical": "https://ultratextgen.com/symbol/meteor-emoji/",
   "breadcrumb": "Meteor Emoji",
   "hero_h1": "Meteor Emoji",
-  "hero_tagline": "A streaking meteor, splitting off from Comet's decade-long identity crisis, drafted for Emoji 18.0, expected alongside Unicode 18.0 in September 2026. Draft only: not yet approved, and no font renders it yet. Click to copy the codepoint anyway.",
-  "intro": "Meteor (🪋, U+1FA8B) is a candidate emoji drafted for Emoji 18.0, the emoji companion to Unicode 18.0, expected to finalize in September 2026. It depicts a streaking fireball entering the atmosphere, and it exists specifically to fix a vendor rendering split that's dogged the existing Comet emoji (☄️) since its debut: some platforms drew Comet as a blue, sparkling ice ball, while others redesigned it as a red-hot rock mid-impact, two genuinely different concepts sharing one codepoint. Unicode's own announcement put it plainly: \"wishing on a star and witnessing an extinction-level event are two entirely different energies.\" Meteor takes over the fireball meaning so Comet can settle back into a consistent blue-ice design everywhere. Because it's still a draft, no operating system, keyboard, or font currently renders it; expect a blank box or placeholder glyph until Emoji 18.0 is approved and platforms ship support, likely sometime in 2027.",
+  "hero_tagline": "A streaking meteor, splitting off from Comet's decade-long identity crisis, final in Emoji 18.0 since Unicode 18.0 was published on September 16, 2026. As of September 25, 2026, no phone or computer shows it by default. Click to copy the codepoint anyway.",
+  "intro": "Meteor (🪋, U+1FA8B) is one of the nine new emoji in Emoji 18.0, the emoji companion to Unicode 18.0, which the Unicode Consortium published on September 16, 2026. It depicts a streaking fireball entering the atmosphere, and it exists specifically to fix a vendor rendering split that's dogged the existing Comet emoji (☄️) since its debut: some platforms drew Comet as a blue, sparkling ice ball, while others redesigned it as a red-hot rock mid-impact, two genuinely different concepts sharing one codepoint. Unicode's own announcement put it plainly: \"wishing on a star and witnessing an extinction-level event are two entirely different energies.\" Meteor takes over the fireball meaning so Comet can settle back into a consistent blue-ice design everywhere. It was a draft candidate until that release; Unicode's final emoji data now lists U+1FA8B as \"meteor\", fully qualified and marked E18.0. Google has already drawn it for Noto Color Emoji, but as of September 25, 2026, no operating system, keyboard or system emoji font ships it, so expect a blank box or placeholder glyph for now. Emojipedia estimates, from last year's rollout pattern, that WhatsApp, Samsung and Google Android add it in the first quarter of 2027, Apple around March or April 2027, and Microsoft in late summer or early fall 2027.",
   "date_published": "2026-07-22",
-  "date_modified": "2026-07-22",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
+  "sources": "Meteor's final name and codepoint, U+1FA8B meteor marked E18.0, are listed in Unicode 18.0's <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> data file. The Unicode Consortium's <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">Unicode 18.0 announcement</a> confirms the release date, September 16, 2026, and its nine new emoji. <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">Emojipedia</a> reported Google's Noto Color Emoji designs and published the 2027 platform estimates quoted above.",
   "sections": [
     {
       "id": "meteor",
       "label": "Meteor",
       "h2": "Meteor Emoji",
-      "intro": "The draft character itself: copyable today as a codepoint, even though no font can render it yet.",
+      "intro": "The Emoji 18.0 character itself: copy the codepoint today and it draws as a meteor once your platform's emoji font catches up.",
       "symbols": [
         {
           "char": "🪋",
-          "label": "Meteor (draft, U+1FA8B)"
+          "label": "Meteor (U+1FA8B, Emoji 18.0)"
         }
       ]
     },
@@ -46,21 +47,21 @@
     },
     {
       "id": "fellow-candidates",
-      "label": "Fellow Draft Candidates",
-      "h2": "Other Emoji 18.0 Draft Candidates",
-      "intro": "Meteor isn't the only unapproved character in this release: these are drafted alongside it, equally unrendered until September 2026's decision.",
+      "label": "Same Release",
+      "h2": "Other New Emoji in Emoji 18.0",
+      "intro": "Meteor isn't the only character Emoji 18.0 made final: these became part of the standard with it on September 16, 2026, and most screens can't draw them yet either.",
       "symbols": [
         {
           "char": "🫫",
-          "label": "Cracking Face (draft, U+1FAEB): won the public vote"
+          "label": "Cracking Face (U+1FAEB, Emoji 18.0): won the public vote"
         },
         {
           "char": "🫝",
-          "label": "Pickle (draft, U+1FADD)"
+          "label": "Pickle (U+1FADD, Emoji 18.0)"
         },
         {
           "char": "🫌",
-          "label": "Monarch Butterfly (draft, U+1FACC)"
+          "label": "Monarch Butterfly (U+1FACC, Emoji 18.0)"
         }
       ]
     }
@@ -74,17 +75,17 @@
     {
       "href": "/symbol/cracking-face-emoji/",
       "title": "Cracking Face Emoji",
-      "desc": "The Emoji 18.0 draft candidate that won the public vote."
+      "desc": "The new Emoji 18.0 face that won the public vote."
     },
     {
       "href": "/symbol/pickle-emoji/",
       "title": "Pickle Emoji",
-      "desc": "Another Emoji 18.0 draft candidate, reassigned from a deferred Apple Core proposal."
+      "desc": "Another new Emoji 18.0 emoji, reassigned from a deferred Apple Core proposal."
     },
     {
       "href": "/updates/unicode-18-most-anticipated-emoji/",
       "title": "Unicode 18.0's New Emoji",
-      "desc": "The full draft slate of 9 candidates, ranked by public vote."
+      "desc": "All 9 emoji that became final in Emoji 18.0, ranked by public vote."
     }
   ]
 }

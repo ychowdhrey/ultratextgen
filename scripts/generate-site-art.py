@@ -233,8 +233,27 @@ def spanned(text, native, default_family=None, base_path=_LIBERATION_SANS):
         # which resolves each *already-correct* glyph against font cmaps,
         # just works.
         import arabic_reshaper
+        import unicodedata
         from bidi.algorithm import get_display
-        text = get_display(arabic_reshaper.reshape(text))
+        # Python's own Unicode database lags the standard, and a character it
+        # does not know yet has no bidi class, which python-bidi rejects with
+        # an assertion. Unicode 18.0's dirham sign ⃃ in an Arabic card line
+        # stopped a whole locale-art run. Stand each unknown character in for
+        # a private-use placeholder (bidi class L) while reordering, then put
+        # the real character back.
+        masked, back = [], {}
+        for ch in text:
+            if unicodedata.bidirectional(ch) == "":
+                ph = next((k for k, v in back.items() if v == ch), None)
+                if ph is None:
+                    ph = chr(0xE000 + len(back))
+                    back[ph] = ch
+                masked.append(ph)
+            else:
+                masked.append(ch)
+        text = get_display(arabic_reshaper.reshape("".join(masked)))
+        if back:
+            text = "".join(back.get(ch, ch) for ch in text)
     runs, cur, cur_family = [], "", None
     first = True
     for ch in text:
@@ -2230,16 +2249,16 @@ PAGES = {
   "symbol-tilde-symbol": ("Tilde Symbol", "~ meaning, history & how to type it", glyphs("~"), K_SYM),
   "symbol-underscore-symbol": ("Underscore", "_ meaning, history & how to type it", glyphs("_"), K_SYM),
   "symbol-calendar-emoji": ("Calendar Emoji", "Why it's always frozen on July 17", m_calendar, K_SYM),
-  "symbol-lighthouse-emoji": ("Lighthouse Emoji", "Confirmed for Unicode 18.0, Sept 16 2026",
+  "symbol-lighthouse-emoji": ("Lighthouse Emoji", "Final in Emoji 18.0 · U+1F6D9",
         glyphs("☀", "✦", "⚓", "☾", "✧"), K_SYM),
-  "symbol-cracking-face-emoji": ("Cracking Face Emoji", "Draft Emoji 18.0 candidate, not live yet", m_smiley, K_SYM),
+  "symbol-cracking-face-emoji": ("Cracking Face Emoji", "Final in Emoji 18.0 · U+1FAEB", m_smiley, K_SYM),
   "symbol-distorted-face-emoji": ("Distorted Face Emoji", "U+1FAEA — meaning, codepoint & origin", m_smiley, K_SYM),
   "symbol-melting-face-emoji": ("Melting Face Emoji", "U+1FAE0 — meaning, sarcasm reading & origin", m_smiley, K_SYM),
-  "symbol-pickle-emoji": ("Pickle Emoji", "Draft Emoji 18.0 candidate, not live yet", m_cup, K_SYM),
-  "symbol-meteor-emoji": ("Meteor Emoji", "Draft Emoji 18.0 candidate, not live yet",
+  "symbol-pickle-emoji": ("Pickle Emoji", "Final in Emoji 18.0 · U+1FADD", m_cup, K_SYM),
+  "symbol-meteor-emoji": ("Meteor Emoji", "Final in Emoji 18.0 · U+1FA8B",
         glyphs("☄", "✦", "★", "☆", "✧"), K_SYM),
-  "symbol-monarch-butterfly-emoji": ("Monarch Butterfly Emoji", "Draft Emoji 18.0 candidate, not live yet", m_paw, K_SYM),
-  "symbol-thumb-sign-emoji": ("Thumb Sign Emoji", "Draft Emoji 18.0 candidate, not live yet",
+  "symbol-monarch-butterfly-emoji": ("Monarch Butterfly Emoji", "Final in Emoji 18.0 · U+1FACC", m_paw, K_SYM),
+  "symbol-thumb-sign-emoji": ("Thumb Sign Emoji", "Final in Emoji 18.0 · U+1FAF9, U+1FAFA",
         glyphs("☝", "☞", "☜", "☟", "✌"), K_SYM),
   # Emoji 17.0, live on phones since iOS 26.4 (2026-03-24). Each is registered
   # against a DRAWN motif rather than its own glyph: no font on the build box
@@ -2249,10 +2268,10 @@ PAGES = {
   "symbol-trombone-emoji": ("Trombone Emoji", "U+1FA8A, the slide that earned its own glyph", m_note, K_SYM),
   "symbol-treasure-chest-emoji": ("Treasure Chest Emoji", "U+1FA8E, filed under money, not objects", m_coin, K_SYM),
   "symbol-fight-cloud-emoji": ("Fight Cloud Emoji", "U+1FAEF, a century-old cartoon shorthand", m_burst_angry, K_SYM),
-  "symbol-dirham-sign": ("Dirham Sign", "Frozen for Unicode 18.0 publication", m_coin, K_SYM),
-  "symbol-omani-rial-sign": ("Omani Rial Sign", "Frozen for Unicode 18.0 publication", m_coin, K_SYM),
+  "symbol-dirham-sign": ("Dirham Sign", "Final in Unicode 18.0 · U+20C3, the UAE dirham", m_coin, K_SYM),
+  "symbol-omani-rial-sign": ("Omani Rial Sign", "Final in Unicode 18.0 · U+20C4, Oman's rial", m_coin, K_SYM),
   "symbol-saudi-riyal-sign": ("Saudi Riyal Sign", "Final since Unicode 17.0", m_coin, K_SYM),
-  "symbol-rufiyaa-sign": ("Rufiyaa Sign", "Accepted for Unicode 18.0 publication", m_coin, K_SYM),
+  "symbol-rufiyaa-sign": ("Rufiyaa Sign", "Final in Unicode 18.0 · U+20C2, the Maldives' rufiyaa", m_coin, K_SYM),
   "symbol-belarusian-ruble-sign": ("Belarusian Ruble Sign", "Provisional at U+20C5, targeting Unicode 19.0", m_coin, K_SYM),
   "ru-symbol-znak-belorusskogo-rublya": ("Знак белорусского рубля", "Предварительно U+20C5, прицел на Unicode 19.0", m_coin, K_SYM),
 
@@ -3278,16 +3297,16 @@ def _native_for_slug(slug):
 PAGES.update({
 "updates": ("UltraTextGen Updates", "What changed, and why your Check may too", m_doc, K_UPDATE),
 "updates-unicode-17-new-emoji-rollout": ("Unicode 17.0's New Emoji: Rollout Tracker", "8 new emoji, tracked platform by platform", m_doc, K_UPDATE),
-"updates-uae-dirham-symbol-unicode-18": ("UAE Dirham Symbol: Coming September 2026", "Official Sept 16, 2026 \u00b7 phones during 2027, our estimate", m_doc, K_UPDATE),
-"ar-updates-uae-dirham-symbol-unicode-18": ("رمز الدرهم الإماراتي: سبتمبر 2026", "رسمي في 16 سبتمبر 2026 · الهواتف خلال 2027، تقديرنا", m_doc, K_UPDATE),
-"de-updates-vae-dirham-symbol-unicode-18": ("VAE-Dirham-Symbol: September 2026", "Offiziell am 16.9.2026 · Handys 2027, unsere Schätzung", m_doc, K_UPDATE),
-"es-updates-simbolo-dirham-emiratos-unicode-18": ("Dírham de los EAU: septiembre de 2026", "Oficial el 16/9/2026 · móviles en 2027, estimación nuestra", m_doc, K_UPDATE),
-"it-updates-simbolo-dirham-unicode-18": ("Dirham degli EAU: settembre 2026", "Ufficiale il 16/9/2026 · telefoni nel 2027, nostra stima", m_doc, K_UPDATE),
-"ko-updates-dirham-giho-unicode-18": ("UAE 디르함 기호: 2026년 9월", "2026년 9월 16일 정식 · 휴대폰은 2027년, 저희 추정", m_doc, K_UPDATE),
-"nl-updates-dirham-symbool-unicode-18": ("VAE-dirhamsymbool: september 2026", "Officieel op 16-9-2026 · telefoons in 2027, onze schatting", m_doc, K_UPDATE),
-"sv-updates-dirham-symbol-unicode-18": ("Dirhamsymbolen: september 2026", "Officiell 16 sep 2026 · telefoner 2027, vår uppskattning", m_doc, K_UPDATE),
-"tr-updates-dirhem-sembolu-unicode-18": ("BAE Dirhemi Sembolü: Eylül 2026", "16 Eylül 2026’da resmî · telefonlar 2027, tahminimiz", m_doc, K_UPDATE),
-"updates-omani-rial-symbol-unicode-18": ("Omani Rial Symbol: Coming September 16, 2026", "Official Sept 16, 2026 \u00b7 fonts during 2027, our estimate", m_doc, K_UPDATE),
+"updates-uae-dirham-symbol-unicode-18": ("UAE Dirham Symbol: Final in Unicode 18.0", "Keyboard rollout status · official since Sept 16, 2026", m_doc, K_UPDATE),
+"ar-updates-uae-dirham-symbol-unicode-18": ("رمز الدرهم الإماراتي: يونيكود 18.0", "رسمي منذ 16 سبتمبر 2026 · حالة دعم لوحات المفاتيح", m_doc, K_UPDATE),
+"de-updates-vae-dirham-symbol-unicode-18": ("VAE-Dirham-Symbol: Unicode 18.0", "Offiziell seit 16.9.2026 · Stand der Tastatur-Einführung", m_doc, K_UPDATE),
+"es-updates-simbolo-dirham-emiratos-unicode-18": ("Dírham de los EAU: Unicode 18.0", "Oficial desde el 16/9/2026 · llegada al teclado", m_doc, K_UPDATE),
+"it-updates-simbolo-dirham-unicode-18": ("Dirham degli EAU: Unicode 18.0", "Ufficiale dal 16/9/2026 · arrivo sulla tastiera", m_doc, K_UPDATE),
+"ko-updates-dirham-giho-unicode-18": ("UAE 디르함 기호: 유니코드 18.0", "2026년 9월 16일 정식 반영 · 키보드 지원 현황", m_doc, K_UPDATE),
+"nl-updates-dirham-symbool-unicode-18": ("VAE-dirhamsymbool: Unicode 18.0", "Officieel sinds 16-9-2026 · uitrol naar toetsenborden", m_doc, K_UPDATE),
+"sv-updates-dirham-symbol-unicode-18": ("Dirhamsymbolen: Unicode 18.0", "Officiell sedan 16 sep 2026 · utrullning till tangentbord", m_doc, K_UPDATE),
+"tr-updates-dirhem-sembolu-unicode-18": ("BAE Dirhemi Sembolü: Unicode 18.0", "16 Eylül 2026’dan beri resmî · klavye desteği durumu", m_doc, K_UPDATE),
+"updates-omani-rial-symbol-unicode-18": ("Omani Rial Symbol: Final in Unicode 18.0", "Font rollout status · official since Sept 16, 2026", m_doc, K_UPDATE),
 "updates-middle-east-currency-symbols-scorecard": ("Middle East Currency Symbols", "5 own signs \u00b7 3 shared \u00b7 7 none \u00b7 every row copies", m_doc, K_UPDATE),
 "ar-updates-middle-east-currency-symbols-scorecard": ("رموز عملات الشرق الأوسط", "5 خاصة · 3 مشتركة · 7 بلا رمز · كل صف ينسخ", m_doc, K_UPDATE),
 "de-updates-naher-osten-waehrungssymbole-unicode-18": ("Währungssymbole im Nahen Osten", "5 eigene · 3 geteilte · 7 ohne · jede Zeile kopiert", m_doc, K_UPDATE),
@@ -3306,28 +3325,28 @@ PAGES.update({
 "nl-updates-unicode-18-beta-van-start": ("Wat er in Unicode 18.0 zit", "13.007 tekens, drie historische schriften, 9 emoji", m_doc, K_UPDATE),
 "sv-updates-unicode-18-betagranskning-oppnar": ("Det här finns i Unicode 18.0", "13 007 tecken, tre historiska skriftsystem, 9 emojier", m_doc, K_UPDATE),
 "tr-updates-unicode-18-beta-inceleme-basliyor": ("Unicode 18.0'da neler var", "13.007 karakter, üç tarihî yazı, 9 emoji", m_doc, K_UPDATE),
-"updates-unicode-18-release-date-confirmed": ("Unicode 18.0 Date Confirmed", "September 16, 2026 — and one script got cut", m_doc, K_UPDATE),
-"ar-updates-unicode-18-release-date-confirmed": ("تأكيد موعد إصدار يونيكود 18.0", "16 سبتمبر 2026 — وكتابة واحدة حُذفت", m_doc, K_UPDATE),
-"de-updates-unicode-18-erscheinungsdatum-bestaetigt": ("Unicode 18.0: Datum bestätigt", "16. September 2026 — eine Schrift gestrichen", m_doc, K_UPDATE),
-"es-updates-unicode-18-fecha-lanzamiento-confirmada": ("Unicode 18.0: fecha confirmada", "16 de septiembre de 2026 — una escritura cortada", m_doc, K_UPDATE),
-"fr-updates-unicode-18-date-de-sortie-confirmee": ("Unicode 18.0 : date confirmée", "16 septembre 2026 — une écriture retirée", m_doc, K_UPDATE),
-"vi-updates-unicode-18-xac-nhan-ngay-phat-hanh": ("Unicode 18.0 chốt ngày phát hành", "16/9/2026 — một hệ chữ bị gạch tên", m_doc, K_UPDATE),
-"zh-tw-updates-unicode-18-fabu-riqi-queren": ("Unicode 18.0 發布日期確定", "2026 年 9 月 16 日——一套文字遭剔除", m_doc, K_UPDATE),
+"updates-unicode-18-release-date-confirmed": ("Unicode 18.0 Release Date", "Published Sept 16, 2026 · one script was cut", m_doc, K_UPDATE),
+"ar-updates-unicode-18-release-date-confirmed": ("موعد إصدار يونيكود 18.0", "صدر في 16 سبتمبر 2026 · وحُذفت كتابة واحدة", m_doc, K_UPDATE),
+"de-updates-unicode-18-erscheinungsdatum-bestaetigt": ("Unicode 18.0: Erscheinungsdatum", "Erschienen am 16. September 2026 · eine Schrift gestrichen", m_doc, K_UPDATE),
+"es-updates-unicode-18-fecha-lanzamiento-confirmada": ("Unicode 18.0: fecha de lanzamiento", "Salió el 16 de septiembre de 2026 · una escritura fuera", m_doc, K_UPDATE),
+"fr-updates-unicode-18-date-de-sortie-confirmee": ("Unicode 18.0 : date de sortie", "Sorti le 16 septembre 2026 · une écriture retirée", m_doc, K_UPDATE),
+"vi-updates-unicode-18-xac-nhan-ngay-phat-hanh": ("Ngày phát hành Unicode 18.0", "Đã ra mắt 16/9/2026 · một hệ chữ bị gạch tên", m_doc, K_UPDATE),
+"zh-tw-updates-unicode-18-fabu-riqi-queren": ("Unicode 18.0 發布日期", "已於 2026 年 9 月 16 日發布 · 一套文字遭剔除", m_doc, K_UPDATE),
 "vi-updates-emoji-moi-unicode-18": ("Emoji mới của Unicode 18.0", "Cracking Face thắng bình chọn, Pickle và Meteor theo sau", m_doc, K_UPDATE),
 # Kept short deliberately: wrap_width_for() only widens for "Noto Sans CJK
 # JP"/"KR", and zh-tw resolves to WenQuanYi Zen Hei, so a zh-TW title wraps at
 # the Latin character width and a long one overruns the card into the motif.
 "zh-tw-updates-unicode-18-xin-biaoqing-fuhao": ("Unicode 18.0 新表情符號", "龜裂臉贏得公開投票，醃黃瓜居次", m_doc, K_UPDATE),
-"id-updates-tanggal-rilis-unicode-18-dipastikan": ("Tanggal Rilis Unicode 18.0", "16 September 2026 — satu aksara dicoret", m_doc, K_UPDATE),
-"it-updates-data-di-uscita-unicode-18-confermata": ("Unicode 18.0: data confermata", "16 settembre 2026 — una scrittura tolta", m_doc, K_UPDATE),
-"ja-updates-unicode-18-release-date-confirmed": ("Unicode 18.0 リリース日確定", "2026年9月16日 — 文字体系が1つ削除", m_doc, K_UPDATE),
-"ko-updates-unicode-18-chulsi-il-hwakjeong": ("유니코드 18.0 출시일 확정", "2026년 9월 16일 — 문자 하나 제외", m_doc, K_UPDATE),
-"nl-updates-unicode-18-releasedatum-bevestigd": ("Unicode 18.0: datum bevestigd", "16 september 2026 — één schrift geschrapt", m_doc, K_UPDATE),
-"pl-updates-unicode-18-data-premiery-potwierdzona": ("Unicode 18.0: data potwierdzona", "16 września 2026 — jedno pismo usunięte", m_doc, K_UPDATE),
-"pt-updates-data-de-lancamento-unicode-18-confirmada": ("Unicode 18.0: data confirmada", "16 de setembro de 2026 — uma escrita cortada", m_doc, K_UPDATE),
-"ru-updates-unicode-18-release-date-confirmed": ("Дата выхода Unicode 18.0", "16 сентября 2026 — одна письменность исключена", m_doc, K_UPDATE),
-"th-updates-unicode-18-release-date-confirmed": ("ยืนยันวันปล่อย Unicode 18.0", "16 กันยายน 2026 — ตัดอักษรออกหนึ่งชุด", m_doc, K_UPDATE),
-"tr-updates-unicode-18-cikis-tarihi-onaylandi": ("Unicode 18.0 çıkış tarihi onaylandı", "16 Eylül 2026 — bir yazı çıkarıldı", m_doc, K_UPDATE),
+"id-updates-tanggal-rilis-unicode-18-dipastikan": ("Tanggal Rilis Unicode 18.0", "Terbit 16 September 2026 · satu aksara dicoret", m_doc, K_UPDATE),
+"it-updates-data-di-uscita-unicode-18-confermata": ("Unicode 18.0: data di uscita", "Uscito il 16 settembre 2026 · una scrittura tolta", m_doc, K_UPDATE),
+"ja-updates-unicode-18-release-date-confirmed": ("Unicode 18.0 リリース日", "2026年9月16日に公開 · 文字体系が1つ削除", m_doc, K_UPDATE),
+"ko-updates-unicode-18-chulsi-il-hwakjeong": ("유니코드 18.0 출시일", "2026년 9월 16일 공개 · 문자 하나 제외", m_doc, K_UPDATE),
+"nl-updates-unicode-18-releasedatum-bevestigd": ("Unicode 18.0: releasedatum", "Verschenen op 16 september 2026 · één schrift geschrapt", m_doc, K_UPDATE),
+"pl-updates-unicode-18-data-premiery-potwierdzona": ("Unicode 18.0: data premiery", "Ukazało się 16 września 2026 · jedno pismo usunięte", m_doc, K_UPDATE),
+"pt-updates-data-de-lancamento-unicode-18-confirmada": ("Unicode 18.0: data de lançamento", "Saiu em 16 de setembro de 2026 · uma escrita cortada", m_doc, K_UPDATE),
+"ru-updates-unicode-18-release-date-confirmed": ("Дата выхода Unicode 18.0", "Вышел 16 сентября 2026 · одна письменность исключена", m_doc, K_UPDATE),
+"th-updates-unicode-18-release-date-confirmed": ("วันปล่อย Unicode 18.0", "ออกแล้ว 16 กันยายน 2026 · ตัดอักษรออกหนึ่งชุด", m_doc, K_UPDATE),
+"tr-updates-unicode-18-cikis-tarihi-onaylandi": ("Unicode 18.0 çıkış tarihi", "16 Eylül 2026’da yayımlandı · bir yazı çıkarıldı", m_doc, K_UPDATE),
 "updates-unicode-18-most-anticipated-emoji": ("Unicode 18.0's New Emoji: Cracking Face Wins the Vote", "Pickle and Meteor round out the public's top 3", m_doc, K_UPDATE),
 "ar-updates-unicode-18-most-anticipated-emoji": ("إيموجي يونيكود 18.0 الجديدة", "الوجه المتصدّع يفوز بالتصويت العام، ثم المخلل والشهاب", m_doc, K_UPDATE),
 "de-updates-unicode-18-emoji-abstimmung": ("Unicode 18.0: Die neuen Emojis", "Berstendes Gesicht gewinnt die Abstimmung, dahinter Essiggurke und Meteor", m_doc, K_UPDATE),
@@ -3608,6 +3627,12 @@ def page_pictographs(slug, limit=5, floor=3):
         counts = {}
         for ch in html:
             if ch in _CHROME or not _is_pictograph(ch):
+                continue
+            # A flag is two regional-indicator letters; counted one character
+            # at a time it splits, and a lone 🇴 or 🇲 won the dirham update's
+            # card over the currency glyphs the page is about. A lone
+            # indicator is never art.
+            if 0x1F1E6 <= ord(ch) <= 0x1F1FF:
                 continue
             counts[ch] = counts.get(ch, 0) + 1
         if len(counts) >= floor:

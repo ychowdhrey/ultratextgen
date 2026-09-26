@@ -102,7 +102,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Bir oyunda boş bir isim nasıl yaparım?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Görünmez bir Unicode karakteri kopyala — Hangul Filler (U+3164) en güvenilir olanıdır — ve boşluk yerine isim alanına yapıştır. Tek bir tanesi zaten alınmış diye reddedilirse, isim benzersiz ama yine de boş görünecek şekilde iki ya da üç kez yapıştır."
+        "text": "Hangul Filler (U+3164) gibi görünmez bir Unicode karakteri kopyala ve boşluk yerine isim alanına yapıştır. Her oyun farklı karakter kabul eder: oyuncular Free Fire'ın U+3164'ü OB43 yaması civarından beri reddettiğini bildiriyor, orada başka bir boş karakter dene. Tek bir tanesi zaten alınmış diye reddedilirse, isim benzersiz ama yine de boş görünecek şekilde iki ya da üç kez yapıştır."
       }
     },
     {
@@ -118,7 +118,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Hangi görünmez karakteri kullanmalıyım?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Hangul Filler (U+3164) ile başla. Bir uygulama onu reddederse veya kutu gösterirse, Braille Pattern Blank (U+2800) gibi bir alternatif dene. Hangisinin kabul edildiği uygulamaya bağlıdır ve güncellemelerle değişebilir, bu yüzden hedefinde test et."
+        "text": "Oyuna bağlı. En bilinen seçenek Hangul Filler (U+3164), ama oyuncular Free Fire'ın onu OB43 yaması civarından beri reddettiğini bildiriyor; orada ve bir karakteri reddeden ya da kutu gösteren her uygulamada Braille Pattern Blank (U+2800) gibi bir alternatif dene. Hangisinin kabul edildiği güncellemelerle değişebilir, bu yüzden isim değiştirme kartını harcamadan önce hedefinde test et."
       }
     },
     {
@@ -177,7 +177,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="editorial-section">
   <span class="article-section-label">Kısa cevap</span>
   <div class="editorial-block">
-    <p>Normal bir boşluk yaz ve çoğu uygulama onu kırpar, bu yüzden bu şekilde boş bir isim kaydedemezsin. Bunun yerine, alanın gerçek bir harf gibi saydığı ama hiçbir şey olarak çizdiği <strong>görünmez bir Unicode karakteri</strong> yapıştırırsın — en güvenilir olanı <strong>Hangul Filler (U+3164)</strong>'dir. Kopyala, isim alanına yapıştır, ve isim boş görünecektir. İki dürüst uyarı: <strong>hangi görünmez karakterin işe yaradığı uygulamaya göre değişir ve güncellemelerle değişebilir</strong>, ve bazı oyunlar boş isimleri kurallara aykırı sayar, bu yüzden küçük bir sıfırlama/ban riski vardır.</p>
+    <p>Normal bir boşluk yaz ve çoğu uygulama onu kırpar, bu yüzden bu şekilde boş bir isim kaydedemezsin. Bunun yerine, alanın gerçek bir harf gibi saydığı ama hiçbir şey olarak çizdiği <strong>görünmez bir Unicode karakteri</strong> yapıştırırsın — en bilineni <strong>Hangul Filler (U+3164)</strong>'dir, ama oyuncular Free Fire'ın onu OB43 yaması civarından beri reddettiğini bildiriyor. Kopyala, isim alanına yapıştır, ve isim boş görünecektir. İki dürüst uyarı: <strong>hangi görünmez karakterin işe yaradığı uygulamaya göre değişir ve güncellemelerle değişebilir</strong>, ve bazı oyunlar boş isimleri kurallara aykırı sayar, bu yüzden küçük bir sıfırlama/ban riski vardır.</p>
   </div>
   <div class="block-example">
     <strong>Nasıl:</strong> boşluğun gideceği yere görünmez bir karakter yapıştır (örn. Hangul Filler ㅤ). <strong>Püf noktası:</strong> destek uygulamaya ve güncellemeye göre değişir.
@@ -201,7 +201,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <h2>Görünmez bir karakter yapıştır</h2>
   <div class="editorial-block">
     <ol>
-      <li><a href="/tr/gorunmez-karakter/">görünmez karakter aracından</a> görünmez bir karakter kopyala (Hangul Filler ㅤ en geniş kabul görenidir).</li>
+      <li><a href="/tr/gorunmez-karakter/">görünmez karakter aracından</a> görünmez bir karakter kopyala (en bilineni Hangul Filler ㅤ; oyuncular Free Fire'ın onu OB43 yaması civarından beri reddettiğini bildiriyor, orada başka birini dene).</li>
       <li>Boşluğu istediğin yerde isim alanına yapıştır.</li>
       <li>Bazı oyunlar <em>tek başına</em> görünmez bir karakteri, o «isim» zaten alınmış diye reddeder — isim benzersiz ama yine de boş görünecek şekilde <strong>2-3 kez</strong> yapıştır.</li>
     </ol>
@@ -247,7 +247,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="faq-item">
     <button class="faq-question" type="button">Bir oyunda boş bir isim nasıl yaparım?</button>
     <div class="faq-answer">
-      <p>Görünmez bir Unicode karakteri kopyala — Hangul Filler (U+3164) en güvenilir olanıdır — ve boşluk yerine isim alanına yapıştır. Tek bir tanesi zaten alınmış diye reddedilirse, isim benzersiz ama yine de boş görünecek şekilde iki ya da üç kez yapıştır.</p>
+      <p>Hangul Filler (U+3164) gibi görünmez bir Unicode karakteri kopyala ve boşluk yerine isim alanına yapıştır. Her oyun farklı karakter kabul eder: oyuncular Free Fire'ın U+3164'ü OB43 yaması civarından beri reddettiğini bildiriyor, orada başka bir boş karakter dene. Tek bir tanesi zaten alınmış diye reddedilirse, isim benzersiz ama yine de boş görünecek şekilde iki ya da üç kez yapıştır.</p>
     </div>
   </div>
   <div class="faq-item">
@@ -259,7 +259,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="faq-item">
     <button class="faq-question" type="button">Hangi görünmez karakteri kullanmalıyım?</button>
     <div class="faq-answer">
-      <p>Hangul Filler (U+3164) ile başla. Bir uygulama onu reddederse veya kutu gösterirse, Braille Pattern Blank (U+2800) gibi bir alternatif dene. Hangisinin kabul edildiği uygulamaya bağlıdır ve güncellemelerle değişebilir, bu yüzden hedefinde test et.</p>
+      <p>Oyuna bağlı. En bilinen seçenek Hangul Filler (U+3164), ama oyuncular Free Fire'ın onu OB43 yaması civarından beri reddettiğini bildiriyor; orada ve bir karakteri reddeden ya da kutu gösteren her uygulamada Braille Pattern Blank (U+2800) gibi bir alternatif dene. Hangisinin kabul edildiği güncellemelerle değişebilir, bu yüzden isim değiştirme kartını harcamadan önce hedefinde test et.</p>
     </div>
   </div>
   <div class="faq-item">

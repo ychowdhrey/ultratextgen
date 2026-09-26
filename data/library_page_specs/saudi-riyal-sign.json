@@ -2,15 +2,16 @@
   "slug": "saudi-riyal-sign",
   "page_type": "symbol",
   "title": "Saudi Riyal Sign: Copy & Paste ⃁ — Approved by Royal Directive, Live in Unicode 17.0",
-  "meta_description": "The Saudi riyal sign (⃁, U+20C1) was approved by King Salman in February 2025 and encoded in Unicode 17.0 in September 2025 — already final, though most fonts still don't render it. Here's its design, history, and how to use it today.",
+  "meta_description": "The Saudi riyal sign (⃁, U+20C1) was approved by King Salman in February 2025 and encoded in Unicode 17.0 in September 2025. It is final, though most fonts still don't render it. Here's its design, history, and how to use it today.",
   "canonical": "https://ultratextgen.com/symbol/saudi-riyal-sign/",
   "breadcrumb": "Saudi Riyal Sign",
   "hero_h1": "Saudi Riyal Sign",
-  "hero_tagline": "Saudi Arabia's official currency symbol, approved by royal directive and encoded in Unicode 17.0, already final, though most fonts and keyboards still haven't caught up.",
-  "intro": "The Saudi riyal sign (⃁, U+20C1) is Saudi Arabia's official currency symbol, developed under a royal directive by a committee spanning the Saudi Central Bank (SAMA), the Ministry of Culture, the Ministry of Media, and the Saudi Standards organization. Its design draws on Arabic calligraphy, forming the Arabic letters of \"ريال\" (riyal) with the rāʾ (ر) letter's stroke doubling as a crossbar, in the same visual family as other crossbar-based currency symbols like the dollar and pound. King Salman officially approved the design on February 20, 2025, and SAMA submitted it for Unicode encoding shortly after (proposal L2/25-075, dated March 7, 2025). The Unicode Technical Committee approved it without changes at its 183rd meeting, April 22–24, 2025, and it shipped as a final, ratified character in Unicode 17.0 on September 9, 2025: a full version ahead of the UAE dirham, Omani rial, and Maldivian rufiyaa signs, which are still in Unicode 18.0's beta as of this writing. Being final doesn't mean it's everywhere yet, though: an open GitHub issue on Inter, one of the most widely used open-source typefaces, requests the glyph be added, a sign that mainstream font coverage is still catching up even a full Unicode version after ratification. In the meantime, an open-source font (built specifically for this symbol) and community guides for using it in Word, Excel, and on the web already exist.",
+  "hero_tagline": "Saudi Arabia's official currency symbol, approved by royal directive and encoded in Unicode 17.0. Final, and on Windows 11 and iPhone keyboards, though most fonts still haven't caught up.",
+  "intro": "The Saudi riyal sign (⃁, U+20C1) is Saudi Arabia's official currency symbol, developed under a royal directive by a committee spanning the Saudi Central Bank (SAMA), the Ministry of Culture, the Ministry of Media, and the Saudi Standards organization. Its design draws on Arabic calligraphy, forming the Arabic letters of \"ريال\" (riyal) with the rāʾ (ر) letter's stroke doubling as a crossbar, in the same visual family as other crossbar-based currency symbols like the dollar and pound. King Salman officially approved the design on February 20, 2025, and SAMA submitted it for Unicode encoding shortly after (proposal L2/25-075, dated March 7, 2025). The Unicode Technical Committee approved it without changes at its 183rd meeting, April 22–24, 2025, and it shipped as a final, ratified character in Unicode 17.0 on September 9, 2025: a full version ahead of the UAE dirham, Omani rial, and Maldivian rufiyaa signs, which followed in Unicode 18.0 on September 16, 2026. Being final doesn't mean it's everywhere yet, though. Microsoft added it to Windows 11's Arabic keyboard layouts in December 2025 (AltGr+S on Arabic 101), and iPhone users reported it on the iOS Arabic keyboard from March 24, 2026. As of September 25, 2026, requests to add the glyph to Inter, one of the most widely used open-source typefaces, and to Google's Noto Arabic fonts are still open, a sign that font coverage is still catching up a full Unicode version after ratification. In the meantime, an open-source font (built specifically for this symbol) and community guides for using it in Word, Excel, and on the web already exist.",
   "date_published": "2026-07-22",
-  "date_modified": "2026-07-22",
+  "date_modified": "2026-09-25",
   "copy_pattern": "single",
+  "sources": "Unicode 18.0's publication on September 16, 2026, which added the three signs listed above, is confirmed by the Unicode Consortium's <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">Unicode 18.0 announcement</a>. The Windows 11 Arabic keyboard support is documented in Microsoft's <a href=\"https://support.microsoft.com/en-us/servicing/os/windows-11/2025/12/december-1-2025-kb5070311-os-builds-26200-7309-and-26100-7309-preview\">KB5070311 release notes</a>, and the sign's arrival on the iPhone keyboard rests on users' own posts from March 24, 2026 on <a href=\"https://x.com/NewslyKSA/status/2036571137807634580\">X</a> and <a href=\"https://www.instagram.com/p/DWSAJelDocG/\">Instagram</a>. The open font requests are <a href=\"https://github.com/rsms/inter/issues/842\">Inter issue 842</a> and <a href=\"https://github.com/notofonts/arabic/issues/291\">notofonts/arabic issue 291</a>.",
   "sections": [
     {
       "id": "saudi-riyal-sign",
@@ -28,19 +29,19 @@
       "id": "other-new-gulf-currency-symbols",
       "label": "Other Gulf Currency Symbols",
       "h2": "Other New Gulf Currency Symbols",
-      "intro": "Three more regional currencies got their own Unicode signs the following version, Unicode 18.0, still in beta as of this writing.",
+      "intro": "Three more regional currencies got their own Unicode signs the following version, in Unicode 18.0, published on September 16, 2026.",
       "symbols": [
         {
           "char": "⃃",
-          "label": "UAE Dirham Sign (U+20C3, Unicode 18.0 beta)"
+          "label": "UAE Dirham Sign (U+20C3, Unicode 18.0)"
         },
         {
           "char": "⃄",
-          "label": "Omani Rial Sign (U+20C4, Unicode 18.0 beta)"
+          "label": "Omani Rial Sign (U+20C4, Unicode 18.0)"
         },
         {
           "char": "⃂",
-          "label": "Maldivian Rufiyaa Sign (U+20C2, Unicode 18.0 beta)"
+          "label": "Maldivian Rufiyaa Sign (U+20C2, Unicode 18.0)"
         }
       ]
     },
@@ -70,12 +71,12 @@
     {
       "href": "/symbol/dirham-sign/",
       "title": "Dirham Sign",
-      "desc": "The UAE's new currency symbol: one Unicode version behind, still in beta."
+      "desc": "The UAE's new currency symbol, final one Unicode version later, in Unicode 18.0."
     },
     {
       "href": "/symbol/omani-rial-sign/",
       "title": "Omani Rial Sign",
-      "desc": "Another Gulf currency symbol shipping in the same Unicode 18.0 beta."
+      "desc": "Another Gulf currency symbol, published in the same Unicode 18.0 release."
     },
     {
       "href": "/updates/uae-dirham-symbol-unicode-18/",

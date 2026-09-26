@@ -2,26 +2,27 @@
   "slug": "dirhem-isareti",
   "lang": "tr",
   "page_type": "symbol",
-  "title": "Dirhem İşareti: Kopyala Yapıştır ⃃ — BAE'nin Yeni Para Birimi İşareti, Unicode 18.0 İçin Yayına Hazır",
-  "meta_description": "BAE dirhem işareti (⃃, U+20C3) Eylül 2026'da beklenen Unicode 18.0 için yayına hazır — onaylandı ve sabitlendi, ama henüz hiçbir klavyede yok. Kod noktası, tarihi ve geliştiricilerin bugün onu nasıl kullandığı.",
+  "title": "BAE Dirhem İşareti: Kopyala Yapıştır ⃃, Unicode 18.0'da Kesinleşti",
+  "meta_description": "BAE dirhem işareti (⃃, U+20C3) 16 Eylül 2026'dan beri Unicode 18.0'da kesinleşmiş durumda, ama henüz hiçbir klavyede yok. Kod noktası, tarihi ve geliştiricilerin bugün onu nasıl kullandığı.",
   "canonical": "https://ultratextgen.com/tr/symbol/dirhem-isareti/",
   "breadcrumb": "Dirhem İşareti",
   "hero_h1": "Dirhem İşareti",
-  "hero_tagline": "BAE Merkez Bankası'nın U+20C3 kod noktasına atanan ve Unicode 18.0 için yayına hazırlanan yeni para birimi işareti — bu sürümün taslak emojilerinden bile daha sağlama alınmış durumda, ama henüz hiçbir klavyede yazılamıyor.",
-  "intro": "Dirhem işareti (⃃, U+20C3), Birleşik Arap Emirlikleri Merkez Bankası'nın Mart 2025'te bir dijital dirhem işaretiyle birlikte tanıttığı yeni para birimi işaretidir. Unicode kodlaması için Unicode Konsorsiyumu'na sunuldu, onaylandı ve 27 Mayıs 2026'da Umman riyali ile Maldiv rufiyası işaretleriyle birlikte Unicode 18.0'ın halka açık betasında yayımlandı. Bu yazının kaleme alındığı sırada Unicode'un kendi süreç belgelerinde \"beyaz\" statüsünü taşıyor — yani yayına hazır, yalnızca ISO onayını bekliyor; bu aslında aynı sürümün taslak emoji adaylarından (birçoğu hâlâ bekleyen ad değişikliği bayrakları taşıyor) daha sağlama alınmış bir durum. Unicode 18.0'ın kendisinin Eylül 2026'da kesinleşmiş olarak yayımlanması bekleniyor. Ancak yayına girmiş olmak tek başına bir klavyeye yerleşmesini sağlamıyor — hiçbir işletim sistemi, yazı tipi ya da girdi yöntemi şu anda yerel destek sunmuyor, BAE Merkez Bankası'nın kendi stil rehberinde önerdiği tuş (6 numaralı tuş) de cihaz üreticileri harekete geçene dek sadece bir öneri olarak kalıyor. Bu arada geliştiriciler, onaylanmış kod noktası etrafında gerçek araçlar inşa etmiş bile: açık kaynaklı bir npm paketi, bir web yazı tipi ve CSS/React/Vue/Angular/Svelte bileşenleri (npm ve GitHub'da \"dirham\" adıyla yayımlandı) doğru karakteri bugünden, yerel işletim sistemi desteği geldiği anda bırakılmak üzere tasarlanmış geçici bir görüntüleme katmanıyla kodlamanı sağlıyor.",
+  "hero_tagline": "BAE Merkez Bankası'nın U+20C3 kod noktasına atanan ve 16 Eylül 2026'da Unicode 18.0'da yayımlanan yeni para birimi işareti, ama henüz hiçbir klavyede yazılamıyor.",
+  "intro": "Dirhem işareti (⃃, U+20C3), Birleşik Arap Emirlikleri Merkez Bankası'nın Mart 2025'te bir dijital dirhem işaretiyle birlikte tanıttığı yeni para birimi işaretidir. Unicode kodlaması için Unicode Konsorsiyumu'na sunuldu, onaylandı ve 27 Mayıs 2026'da Umman riyali ile Maldiv rufiyası işaretleriyle birlikte Unicode 18.0'ın halka açık betasında yayımlandı. Unicode 18.0 onu 16 Eylül 2026'da UAE DIRHAM SIGN kalıcı adıyla kesinleşmiş olarak yayımladı. Ancak yayına girmiş olmak tek başına bir klavyeye yerleşmesini sağlamıyor — 25 Eylül 2026 itibarıyla hiçbir işletim sistemi, sistem yazı tipi ya da girdi yöntemi yerel destek sunmuyor, BAE Merkez Bankası'nın kendi stil rehberinde önerdiği tuş (6 numaralı tuş) de cihaz üreticileri harekete geçene dek sadece bir öneri olarak kalıyor. Bu arada geliştiriciler, onaylanmış kod noktası etrafında gerçek araçlar inşa etmiş bile: açık kaynaklı bir npm paketi, bir web yazı tipi ve CSS/React/Vue/Angular/Svelte bileşenleri (npm ve GitHub'da \"dirham\" adıyla yayımlandı) doğru karakteri bugünden, yerel işletim sistemi desteği geldiği anda bırakılmak üzere tasarlanmış geçici bir görüntüleme katmanıyla kodlamanı sağlıyor.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
+  "sources": "Unicode 18.0'ın 16 Eylül 2026'da yayımlanması ve bu karakterin U+20C3 UAE DIRHAM SIGN adı, Unicode Konsorsiyumu'nun <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">Unicode 18.0 duyurusu</a> ile doğrulanıyor; <a href=\"https://tbreak.com/uae-dirham-symbol-unicode-18-0/\">teknoloji sitesi tbreak</a> ise 23 Eylül 2026'da Apple, Google, Samsung ve Microsoft'un desteği henüz eklemediğini bildirdi. Suudi riyali işaretinin Windows 11 desteği Microsoft'un <a href=\"https://support.microsoft.com/en-us/servicing/os/windows-11/2025/12/december-1-2025-kb5070311-os-builds-26200-7309-and-26100-7309-preview\">KB5070311 sürüm notları</a>nda yer alıyor.",
   "sections": [
     {
       "id": "dirham-sign",
       "label": "Dirhem İşareti",
       "h2": "Dirhem İşareti",
-      "intro": "Onaylanmış karakterin kendisi — hiçbir yazı tipi henüz yerel olarak göstermese de bugün kod noktasıyla kopyalanabilir.",
+      "intro": "Kesinleşmiş karakterin kendisi — hiçbir sistem yazı tipi henüz yerel olarak göstermese de bugün kod noktasıyla kopyalanabilir.",
       "symbols": [
         {
           "char": "⃃",
-          "label": "UAE Dirham Sign (U+20C3, yayına hazır)"
+          "label": "UAE Dirham Sign (U+20C3, Unicode 18.0)"
         }
       ]
     },
@@ -29,7 +30,7 @@
       "id": "other-new-gulf-currency-symbols",
       "label": "Diğer Yeni Para Birimi İşaretleri",
       "h2": "Bu Sürümdeki Diğer Yeni Körfez Para Birimi İşaretleri",
-      "intro": "Dirhem, Unicode 18.0'da yayına giren tek yeni para birimi işareti değil — aynı betada iki bölgesel para birimi daha kendi işaretine kavuştu.",
+      "intro": "Dirhem, Unicode 18.0'da yayına giren tek yeni para birimi işareti değil — aynı sürümde iki bölgesel para birimi daha kendi işaretine kavuştu.",
       "symbols": [
         {
           "char": "⃄",
@@ -65,7 +66,7 @@
       "id": "gulf-currency-a-version-ahead",
       "label": "Bir Sürüm Önde",
       "h2": "Bir Sürüm Önce Yayına Giren Körfez Para Birimi İşareti",
-      "intro": "Suudi Arabistan'ın riyal işareti aynı yolu bir tam Unicode sürümü önce kat etti — sadece betada değil, Unicode 17.0'dan beri zaten kesinleşmiş durumda.",
+      "intro": "Suudi Arabistan'ın riyal işareti aynı yolu bir tam Unicode sürümü önce kat etti — Unicode 17.0'dan beri kesinleşmiş durumda ve Aralık 2025'ten beri Windows 11'de yazılabiliyor.",
       "symbols": [
         {
           "char": "⃁",
@@ -83,7 +84,7 @@
     {
       "href": "/tr/symbol/umman-riyali-isareti/",
       "title": "Umman Riyali İşareti",
-      "desc": "Aynı Unicode 18.0 betasında yayına giren bir başka Körfez para birimi işareti."
+      "desc": "Aynı Unicode 18.0 sürümünde yayımlanan bir başka Körfez para birimi işareti."
     },
     {
       "href": "/tr/symbol/suudi-riyali-isareti/",

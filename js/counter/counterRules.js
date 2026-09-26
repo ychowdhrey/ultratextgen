@@ -178,12 +178,25 @@
     { id: "x-name", platform: "x", field: "Display name", label: "X / Twitter display name", limit: 50, group: "usernames" },
 
     { id: "ig-caption", platform: "instagram", field: "Caption", label: "Instagram caption", limit: 2200, group: "posts", visibleAt: 125 },
+    /* 150: help.instagram.com/728994388226960, verified 2026-09-25. */
     { id: "ig-bio", platform: "instagram", field: "Bio", label: "Instagram bio", limit: 150, group: "bios" },
     { id: "ig-username", platform: "instagram", field: "Username", label: "Instagram username", limit: 30, group: "usernames" },
+    /* 100 is unsourced: Instagram publishes no alt-text limit, and
+       accessibility press reported the cap gone in 2021. Kept as the
+       conservative figure until an in-app test settles it. */
     { id: "ig-alt", platform: "instagram", field: "Alt text", label: "Instagram alt text", limit: 100, group: "titles" },
 
+    /* TikTok caption: 2,200 is the Content Posting API cap ("2200 in UTF-16
+       runes", developers.tiktok.com/doc/content-posting-api-reference-direct-post,
+       verified 2026-09-25). Creators have reported 4,000 in the app since
+       August 2023, but TikTok's help centre states neither, so the lower,
+       API-safe number stays until an in-app test settles it. */
     { id: "tiktok-caption", platform: "tiktok", field: "Caption", label: "TikTok caption", limit: 2200, group: "posts" },
+    /* TikTok bio: 80 is the long-standing figure. Creators reported a
+       160-character bio field in Sept/Oct 2025 and TikTok publishes no
+       limit, so 80 stays as the figure every account accepts. */
     { id: "tiktok-bio", platform: "tiktok", field: "Bio", label: "TikTok bio", limit: 80, group: "bios" },
+    /* 2-24: tiktok.com/support/faq_detail?id=7581821550156962315, verified 2026-09-25. */
     { id: "tiktok-username", platform: "tiktok", field: "Username", label: "TikTok username", limit: 24, group: "usernames" },
 
     { id: "li-post", platform: "linkedin", field: "Post", label: "LinkedIn post", limit: 3000, group: "posts", visibleAt: 140, foldDesktop: 210 },
@@ -191,12 +204,15 @@
     { id: "li-about", platform: "linkedin", field: "About section", label: "LinkedIn About", limit: 2600, group: "bios" },
     { id: "li-comment", platform: "linkedin", field: "Comment", label: "LinkedIn comment", limit: 1250, group: "posts" },
 
+    /* Title 100, description 5,000: support.google.com/youtube/answer/57404, verified 2026-09-25. */
     { id: "yt-title", platform: "youtube", field: "Video title", label: "YouTube title", limit: 100, group: "titles" },
     { id: "yt-description", platform: "youtube", field: "Description", label: "YouTube description", limit: 5000, group: "posts", visibleAt: 157 },
     { id: "yt-comment", platform: "youtube", field: "Comment", label: "YouTube comment", limit: 10000, group: "posts" },
 
     { id: "fb-post", platform: "facebook", field: "Post", label: "Facebook post", limit: 63206, group: "posts", visibleAt: 477 },
 
+    /* 2,000 (4,000 with Nitro): support.discord.com/hc/en-us/articles/33694251638295
+       and docs.discord.com/developers/resources/message, verified 2026-09-25. */
     { id: "discord-message", platform: "discord", field: "Message", label: "Discord message", limit: 2000, group: "posts" },
     { id: "discord-nick", platform: "discord", field: "Nickname", label: "Discord nickname", limit: 32, group: "usernames" },
     { id: "discord-status", platform: "discord", field: "Custom status", label: "Discord custom status", limit: 128, group: "bios" },
@@ -210,7 +226,10 @@
        picking "Telegram message" needs to know which of the two they are
        actually writing against. */
     { id: "telegram-message", platform: "telegram", field: "Message", label: "Telegram message", limit: 4096, group: "posts" },
+    /* 32,768: telegram.org/blog/communities-editor-invisible-messages, verified 2026-09-25. */
     { id: "telegram-message-premium", platform: "telegram", field: "Message (Premium)", label: "Telegram message (Premium)", limit: 32768, group: "posts" },
+    /* Caption 1,024 and bio 70 are the free-account defaults in
+       core.telegram.org/api/config (Premium: 4,096 and 140), verified 2026-09-25. */
     { id: "telegram-caption", platform: "telegram", field: "Photo/video caption", label: "Telegram photo/video caption", limit: 1024, group: "posts" },
     { id: "telegram-bio", platform: "telegram", field: "Bio", label: "Telegram bio", limit: 70, group: "bios" },
 
@@ -221,6 +240,8 @@
        AT Protocol lexicon caps a post at 300 *graphemes* (and a profile
        description at 256), so a family emoji built from a 7-code-point ZWJ
        sequence costs 1, not 7. */
+    /* Both confirmed in the lexicons (app.bsky.feed.post, app.bsky.actor.profile)
+       in github.com/bluesky-social/atproto, verified 2026-09-25. */
     { id: "bluesky-post", platform: "bluesky", field: "Post", label: "Bluesky post", limit: 300, group: "posts", countMode: "graphemes" },
     { id: "bluesky-bio", platform: "bluesky", field: "Bio", label: "Bluesky bio", limit: 256, group: "bios", countMode: "graphemes" },
 

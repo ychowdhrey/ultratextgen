@@ -2,15 +2,15 @@
   "slug": "znak-riala-omanskiego",
   "lang": "pl",
   "page_type": "symbol",
-  "title": "Znak Riala Omańskiego: Skopiuj ⃄ — Nowy Symbol Waluty Omanu, Zamrożony do Publikacji w Unicode 18.0",
-  "meta_description": "Znak riala omańskiego (⃄, U+20C4) przedstawił Bank Centralny Omanu w listopadzie 2025 roku i jest zamrożony do publikacji w Unicode 18.0, spodziewanej we wrześniu 2026 roku — wciąż bez żadnej klawiatury. Oto jego projekt, historia i status.",
+  "title": "Znak Riala Omańskiego: Skopiuj ⃄, Finalny w Unicode 18.0",
+  "meta_description": "Znak riala omańskiego (⃄, U+20C4) przedstawił Bank Centralny Omanu w listopadzie 2025 roku i od 16 września 2026 roku jest finalny w Unicode 18.0, ale wciąż bez żadnej klawiatury. Oto jego projekt, historia i status.",
   "canonical": "https://ultratextgen.com/pl/symbol/znak-riala-omanskiego/",
   "breadcrumb": "Znak Riala Omańskiego",
   "hero_h1": "Znak Riala Omańskiego",
-  "hero_tagline": "Oficjalny symbol waluty Omanu, zaprezentowany w Narodowe Święto 2025 roku i zamrożony do publikacji w Unicode 18.0 — zatwierdzony, ale wciąż przed jakąkolwiek klawiaturą czy czcionką.",
-  "intro": "Znak riala omańskiego (⃄, U+20C4) to oficjalny symbol waluty Banku Centralnego Omanu, przedstawiony publicznie 19 listopada 2025 roku, w terminie zbieżnym z Narodowym Świętem Omanu. Jego projekt zbudowano z dwóch stylizowanych liter arabskich — ʿajn (ع), pierwszej litery słowa عماني („omański”), i rāʾ (ر), pierwszej litery słowa ريال („rial”) — przekreślonych dwiema liniami, w stylu wspólnym dla wielu współczesnych znaków walut. Gubernator Banku Centralnego, Ahmed bin Jafar Al-Musallami, przedstawił to przyjęcie jako strategiczny krok wzmacniający pozycję Omanu jako regionalnego centrum finansowego oraz ułatwiający rozpoznawanie riala na platformach międzynarodowych, handlowych i cyfrowych. Znak zgłoszono do zakodowania w Unicode razem ze znakami dirhama ZEA i rufiji malediwskiej, a w chwili pisania tego tekstu nosi w dokumentacji potoku prac Unicode status „white” — zamrożony do publikacji, oczekujący już tylko na zatwierdzenie ISO, z finalną publikacją spodziewaną razem z resztą Unicode 18.0 we wrześniu 2026 roku. Żaden system operacyjny, czcionka ani klawiatura nie oferuje obecnie natywnego wsparcia. Tymczasem istnieją dwie praktyczne drogi. Bank Centralny publikuje znak jako pliki SVG, PNG i EPS wraz z wytycznymi użycia, co wystarcza do szablonu faktury, cennika czy drukowanego szyldu. Firmy korzystające z Odoo mogą zainstalować moduł ERP osadzający czcionkę, dzięki czemu znak pojawia się na fakturach, w raportach, w portalu klienta i na paragonach. Żadna z tych dróg nie zastępuje samego znaku: wyszukać, posortować i wkleić można tylko U+20C4.",
+  "hero_tagline": "Oficjalny symbol waluty Omanu, zaprezentowany w Narodowe Święto 2025 roku i opublikowany w Unicode 18.0 16 września 2026 roku — finalny, ale wciąż przed jakąkolwiek klawiaturą czy czcionką.",
+  "intro": "Znak riala omańskiego (⃄, U+20C4) to oficjalny symbol waluty Banku Centralnego Omanu, przedstawiony publicznie 19 listopada 2025 roku, w terminie zbieżnym z Narodowym Świętem Omanu. Jego projekt zbudowano z dwóch stylizowanych liter arabskich — ʿajn (ع), pierwszej litery słowa عماني („omański”), i rāʾ (ر), pierwszej litery słowa ريال („rial”) — przekreślonych dwiema liniami, w stylu wspólnym dla wielu współczesnych znaków walut. Gubernator Banku Centralnego, Ahmed bin Jafar Al-Musallami, przedstawił to przyjęcie jako strategiczny krok wzmacniający pozycję Omanu jako regionalnego centrum finansowego oraz ułatwiający rozpoznawanie riala na platformach międzynarodowych, handlowych i cyfrowych. Znak zgłoszono do zakodowania w Unicode razem ze znakami dirhama ZEA i rufiji malediwskiej, a Unicode 18.0 opublikowało go jako finalny 16 września 2026 roku, jako U+20C4 OMANI RIAL SIGN. Na 25 września 2026 roku żaden system operacyjny, czcionka systemowa ani klawiatura nie oferuje natywnego wsparcia. Tymczasem istnieją dwie praktyczne drogi. Bank Centralny publikuje znak jako pliki SVG, PNG i EPS wraz z wytycznymi użycia, co wystarcza do szablonu faktury, cennika czy drukowanego szyldu. Firmy korzystające z Odoo mogą zainstalować moduł ERP osadzający czcionkę, dzięki czemu znak pojawia się na fakturach, w raportach, w portalu klienta i na paragonach. Żadna z tych dróg nie zastępuje samego znaku: wyszukać, posortować i wkleić można tylko U+20C4.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
   "home_url": "https://ultratextgen.com/pl/",
   "crumb_home": "Strona główna",
@@ -30,16 +30,17 @@
       "href": "https://ultratextgen.com/symbol/omani-rial-sign/"
     }
   ],
+  "sources": "Publikację Unicode 18.0 16 września 2026 roku, z tym znakiem jako U+20C4 OMANI RIAL SIGN, potwierdza <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">ogłoszenie Unicode 18.0</a> Konsorcjum Unicode. <a href=\"https://support.microsoft.com/en-us/servicing/os/windows-11/2025/12/december-1-2025-kb5070311-os-builds-26200-7309-and-26100-7309-preview\">Informacje o wersji KB5070311</a> Microsoftu dokumentują pojawienie się znaku riala saudyjskiego na klawiaturach Windows 11.",
   "sections": [
     {
       "id": "znak-riala-omanskiego",
       "label": "Znak Riala Omańskiego",
       "h2": "Znak Riala Omańskiego",
-      "intro": "Sam potwierdzony znak — możliwy do skopiowania już dziś jako punkt kodowy, mimo że żadna czcionka jeszcze go natywnie nie wyświetla.",
+      "intro": "Sam finalny znak — możliwy do skopiowania już dziś jako punkt kodowy, mimo że żadna czcionka systemowa jeszcze go natywnie nie wyświetla.",
       "symbols": [
         {
           "char": "⃄",
-          "label": "Znak Riala Omańskiego (U+20C4, zamrożony do publikacji)"
+          "label": "Znak Riala Omańskiego (U+20C4, Unicode 18.0)"
         }
       ]
     },
@@ -47,7 +48,7 @@
       "id": "inne-nowe-symbole-walut-zatoki",
       "label": "Inne Nowe Symbole Zatoki",
       "h2": "Inne Nowe Symbole Walut w Tej Edycji",
-      "intro": "Rial omański to nie jedyny nowy symbol waluty wydawany w Unicode 18.0 — dwie kolejne waluty otrzymały własne znaki w tej samej becie.",
+      "intro": "Rial omański to nie jedyny nowy symbol waluty wydany w Unicode 18.0 — dwie kolejne waluty otrzymały własne znaki w tym samym wydaniu.",
       "symbols": [
         {
           "char": "⃃",
@@ -63,7 +64,7 @@
       "id": "wersja-do-przodu",
       "label": "Wersję Wcześniej",
       "h2": "Symbol Waluty Zatoki, Który Wyszedł Wersję Wcześniej",
-      "intro": "Znak riala saudyjskiego przeszedł tę samą drogę całą wersję Unicode wcześniej — już finalny od Unicode 17.0, a nie tylko w becie.",
+      "intro": "Znak riala saudyjskiego przeszedł tę samą drogę całą wersję Unicode wcześniej — finalny od Unicode 17.0 i na arabskich klawiaturach Windows 11 od grudnia 2025 roku.",
       "symbols": [
         {
           "char": "⃁",
@@ -82,7 +83,7 @@
     {
       "href": "/pl/symbol/znak-dirhama/",
       "title": "Znak Dirhama",
-      "desc": "Nowy symbol waluty ZEA, wydawany w tej samej becie Unicode 18.0."
+      "desc": "Nowy symbol waluty ZEA, wydany w tym samym wydaniu Unicode 18.0."
     },
     {
       "href": "/pl/symbol/znak-riala-saudyjskiego/",

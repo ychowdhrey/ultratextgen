@@ -5,7 +5,7 @@ exceptions, and positions that look like defects to a well-meaning audit.
 
 | File | Holds |
 |---|---|
-| [`content-lanes.md`](./content-lanes.md) | content and product decisions: the `updates/` scope, heading skips, printables CTAs, the image-generation boundary, flair scope, the zalgo comparison table, `answers/` homepage links |
+| [`content-lanes.md`](./content-lanes.md) | content and product decisions: the `updates/` scope, titles that outlive a status, heading skips, printables CTAs, the image-generation boundary, flair scope, the zalgo comparison table, `answers/` homepage links |
 | [`local-only-locale-exceptions.md`](./local-only-locale-exceptions.md) | every page ratified as needing no English parent, with its evidence, plus several superseded entries (marked in place, not moved to one section) and one counter-example |
 | [`printables-scope.md`](./printables-scope.md) | the typography-native boundary and the word-search decision |
 

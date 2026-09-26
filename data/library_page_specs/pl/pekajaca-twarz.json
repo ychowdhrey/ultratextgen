@@ -2,15 +2,15 @@
   "slug": "pekajaca-twarz",
   "lang": "pl",
   "page_type": "symbol",
-  "title": "Emoji Pękającej Twarzy: Skopiuj 🫫 — Projektowa Kandydatura Emoji 18.0 Zastępująca „Zmrużone Oczy”",
-  "meta_description": "Pękająca Twarz (🫫, U+1FAEB) to projektowa kandydatura do Emoji 18.0, spodziewana wraz z Unicode 18.0 we wrześniu 2026 roku — jeszcze nieprzyjęta i nierenderowana przez żadną czcionkę. Oto jej historia, znaczenie i status.",
+  "title": "Emoji Pękającej Twarzy: Skopiuj 🫫, Ostateczne w Emoji 18.0",
+  "meta_description": "Pękająca Twarz (🫫, U+1FAEB) jest ostateczna w Emoji 18.0, wydanym wraz z Unicode 18.0 16 września 2026 roku, ale żaden telefon ani komputer nie wyświetla jej jeszcze domyślnie. Oto jej historia, znaczenie i status.",
   "canonical": "https://ultratextgen.com/pl/symbol/pekajaca-twarz/",
   "breadcrumb": "Emoji Pękającej Twarzy",
   "hero_h1": "Emoji Pękającej Twarzy",
-  "hero_tagline": "Twarz w trakcie ekspresji, pękająca pod naporem — zaprojektowana dla Emoji 18.0, spodziewana wraz z Unicode 18.0 we wrześniu 2026 roku. Wciąż tylko projekt: jeszcze nieprzyjęty, żadna czcionka go jeszcze nie renderuje. Mimo to kliknij, aby skopiować ten punkt kodowy.",
-  "intro": "Pękająca Twarz (🫫, U+1FAEB) to kandydujące emoji zaprojektowane dla Emoji 18.0, emotikonowego towarzysza Unicode 18.0, którego finalizacja spodziewana jest we wrześniu 2026 roku. Przedstawia twarz w trakcie ekspresji, z widoczną rysą — odczytywaną przez większość doniesień prasowych jako emocjonalne napięcie albo „pękanie” przy wciąż utrzymywanym uśmiechu, pasującą do pokoleniowego mema pokolenia Z „nic mi nie jest”, gdzie ktoś na zewnątrz wygląda opanowanie, będąc w środku przytłoczonym. Jej punkt kodowy ma konkretną historię: U+1FAEB pierwotnie zarezerwowano dla innego proponowanego emoji, „Twarzy ze Zmrużonymi Oczami”, zanim Unicode Emoji Standard & Research Working Group zarekomendowała w styczniu 2026 roku zastąpienie go Pękającą Twarzą. W chwili pisania tego tekstu dokumentacja potoku prac Unicode wciąż wymienia ten punkt kodowy pod pierwotną nazwą, oznaczoną jako oczekująca na rozstrzygnięcie zmiany nazwy — co oznacza, że nawet nazwa „Pękająca Twarz” nie jest jeszcze w pełni ugruntowana, mimo że szeroko już jej używa prasa. Ponieważ to wciąż tylko projekt, żaden system operacyjny, klawiatura ani czcionka obecnie go nie renderuje; spodziewaj się pustego kwadratu albo znaku zastępczego, dopóki Emoji 18.0 nie zostanie zatwierdzone, a platformy nie wprowadzą wsparcia, prawdopodobnie gdzieś w 2027 roku.",
+  "hero_tagline": "Twarz w trakcie ekspresji, pękająca pod naporem — zatwierdzona w Emoji 18.0 wraz z Unicode 18.0 16 września 2026 roku. Ostateczna, ale żaden telefon ani komputer nie wyświetla jej jeszcze domyślnie. Mimo to kliknij, aby skopiować ten punkt kodowy.",
+  "intro": "Pękająca Twarz (🫫, U+1FAEB) to jedno z nowych emoji w Emoji 18.0, emotikonowym towarzyszu Unicode 18.0, który stał się ostateczny 16 września 2026 roku. Przedstawia twarz w trakcie ekspresji, z widoczną rysą — odczytywaną przez większość doniesień prasowych jako emocjonalne napięcie albo „pękanie” przy wciąż utrzymywanym uśmiechu, pasującą do pokoleniowego mema pokolenia Z „nic mi nie jest”, gdzie ktoś na zewnątrz wygląda opanowanie, będąc w środku przytłoczonym. Jej punkt kodowy ma konkretną historię: U+1FAEB pierwotnie zarezerwowano dla innego proponowanego emoji, „Twarzy ze Zmrużonymi Oczami”, zanim Unicode Emoji Standard & Research Working Group zarekomendowała w styczniu 2026 roku zastąpienie go Pękającą Twarzą. Nazwa jest już ustalona: dane znaków Unicode 18.0 wymieniają U+1FAEB jako CRACKING FACE. Status ostateczny nie oznacza jednak, że emoji jest już w twoim telefonie. Google opublikował swój projekt w czcionce Noto Color Emoji, ale na dzień 25 września 2026 roku żaden telefon ani komputer nie wyświetla go domyślnie; spodziewaj się pustego kwadratu albo znaku zastępczego, dopóki platformy nie wprowadzą wsparcia. Emojipedia szacuje, na podstawie zeszłorocznego harmonogramu, pierwsze aktualizacje w pierwszym kwartale 2027 roku (WhatsApp i Samsung), Apple około marca lub kwietnia 2027 roku, a Microsoft pod koniec lata lub na początku jesieni 2027 roku.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
   "home_url": "https://ultratextgen.com/pl/",
   "crumb_home": "Strona główna",
@@ -21,14 +21,15 @@
     { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/pekajaca-twarz/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/cracking-face-emoji/" }
   ],
+  "sources": "Ostateczna nazwa i punkt kodowy Pękającej Twarzy, U+1FAEB CRACKING FACE, znajdują się w pliku danych Unicode 18.0 <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a>, a samo wydanie z 16 września 2026 roku potwierdza <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">ogłoszenie Unicode 18.0</a> Konsorcjum Unicode. <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">Emojipedia</a> opisała projekty Google w Noto Color Emoji i opublikowała szacunki wdrożeń na 2027 rok.",
   "sections": [
     {
       "id": "pekajaca-twarz",
       "label": "Pękająca Twarz",
       "h2": "Emoji Pękającej Twarzy",
-      "intro": "Sam projektowy znak — możliwy do skopiowania już dziś jako punkt kodowy, mimo że żadna czcionka nie potrafi go jeszcze wyrenderować.",
+      "intro": "Sam ostateczny znak — możliwy do skopiowania już dziś jako punkt kodowy, mimo że żaden telefon ani komputer nie wyświetla go jeszcze domyślnie.",
       "symbols": [
-        { "char": "🫫", "label": "Pękająca Twarz (projekt, U+1FAEB)" }
+        { "char": "🫫", "label": "Pękająca Twarz (U+1FAEB, Emoji 18.0)" }
       ]
     },
     {
@@ -45,13 +46,13 @@
     },
     {
       "id": "inne-projekty",
-      "label": "Inne Projektowe Kandydatury",
-      "h2": "Inne Projektowe Kandydatury Emoji 18.0",
-      "intro": "Pękająca Twarz nie jest jedynym niezatwierdzonym znakiem w tej edycji — te zaprojektowano razem z nią, równie niewyrenderowane aż do decyzji we wrześniu 2026 roku.",
+      "label": "Wydane Razem z Nią",
+      "h2": "Inne Nowe Emoji w Emoji 18.0",
+      "intro": "Pękająca Twarz nie jest jedynym nowym emoji w tej edycji — te zatwierdzono razem z nią 16 września 2026 roku i na razie na większości urządzeń są równie niewidoczne.",
       "symbols": [
-        { "char": "🫝", "label": "Ogórek Kiszony (projekt, U+1FADD)" },
-        { "char": "🫌", "label": "Motyl Monarcha (projekt, U+1FACC)" },
-        { "char": "🛙", "label": "Latarnia Morska (projekt, U+1F6D9)" }
+        { "char": "🫝", "label": "Ogórek Kiszony (U+1FADD, Emoji 18.0)" },
+        { "char": "🫌", "label": "Motyl Monarcha (U+1FACC, Emoji 18.0)" },
+        { "char": "🛙", "label": "Latarnia Morska (U+1F6D9, Emoji 18.0)" }
       ]
     }
   ],
@@ -59,28 +60,28 @@
   "related": [
     {
       "href": "/library/face-emojis/",
-      "title": "Face Emojis",
+      "title": "Emoji twarzy",
       "desc": "Każde już zakodowane emoji twarzy, przeglądalne i gotowe do skopiowania już dziś."
     },
     {
       "href": "/pl/symbol/ogorek-kiszony/",
       "title": "Emoji Ogórka Kiszonego",
-      "desc": "Kolejna projektowa kandydatura Emoji 18.0 — przeniesiona z odłożonej propozycji Apple Core."
+      "desc": "Kolejne nowe emoji z Emoji 18.0 — przeniesione z odłożonej propozycji Apple Core."
     },
     {
       "href": "/pl/symbol/emoji-meteoru/",
       "title": "Emoji Meteoru",
-      "desc": "Kolejna projektowa kandydatura Emoji 18.0 — odłącza się od wieloletniego rozdźwięku w renderowaniu Komety."
+      "desc": "Kolejne nowe emoji z Emoji 18.0 — odłącza się od wieloletniego rozdźwięku w renderowaniu Komety."
     },
     {
       "href": "/pl/symbol/emoji-motyla-monarchy/",
       "title": "Emoji Motyla Monarchy",
-      "desc": "Kolejna projektowa kandydatura Emoji 18.0 — naprawia międzyplatformową pomyłkę z emoji Motyla."
+      "desc": "Kolejne nowe emoji z Emoji 18.0 — naprawia międzyplatformową pomyłkę z emoji Motyla."
     },
     {
       "href": "/pl/symbol/kciuk-kierunkowy/",
       "title": "Emoji Kciuka Kierunkowego",
-      "desc": "Kolejna para projektowych kandydatur Emoji 18.0 — wskazywanie kierunku, nie aprobata."
+      "desc": "Kolejna nowa para z Emoji 18.0 — wskazywanie kierunku, nie aprobata."
     }
   ]
 }

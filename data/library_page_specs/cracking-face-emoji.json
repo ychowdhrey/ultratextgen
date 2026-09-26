@@ -1,26 +1,27 @@
 {
   "slug": "cracking-face-emoji",
   "page_type": "symbol",
-  "title": "Cracking Face Emoji: Copy & Paste 🫫 — the Draft Emoji 18.0 Candidate Replacing \"Squinting Eyes\"",
-  "meta_description": "Cracking Face (🫫, U+1FAEB) is a draft candidate for Emoji 18.0, expected alongside Unicode 18.0 in September 2026 — not approved yet, and not rendered by any font today. Here's its backstory, meaning, and status.",
+  "title": "Cracking Face Emoji: Copy & Paste 🫫, Final in Emoji 18.0",
+  "meta_description": "Cracking Face (🫫, U+1FAEB) became final in Emoji 18.0, released with Unicode 18.0 on September 16, 2026, but no phone or computer shows it by default yet. Here's its backstory, meaning, and status.",
   "canonical": "https://ultratextgen.com/symbol/cracking-face-emoji/",
   "breadcrumb": "Cracking Face Emoji",
   "hero_h1": "Cracking Face Emoji",
-  "hero_tagline": "A face mid-expression, cracking under strain, drafted for Emoji 18.0, expected alongside Unicode 18.0 in September 2026. Draft only: not yet approved, and no font renders it yet. Click to copy the codepoint anyway.",
-  "intro": "Cracking Face (🫫, U+1FAEB) is a candidate emoji drafted for Emoji 18.0, the emoji companion to Unicode 18.0, expected to finalize in September 2026. It depicts a face mid-expression with a visible crack, read by most coverage as emotional strain or \"breaking\" while still smiling, a fit for the Gen-Z \"I'm fine\" meme, where someone looks composed on the outside while overwhelmed underneath. Its codepoint has a specific history: U+1FAEB was originally reserved for a different proposed emoji, \"Face With Squinting Eyes,\" before the Unicode Emoji Standard & Research Working Group recommended replacing it with Cracking Face in January 2026. As of this writing, Unicode's own pipeline documentation still lists that codepoint under its original name, flagged as pending a name-change resolution, meaning even the \"Cracking Face\" name isn't fully locked in yet, despite widespread press coverage already using it. Because it's still a draft, no operating system, keyboard, or font currently renders it; expect a blank box or placeholder glyph until Emoji 18.0 is approved and platforms ship support, likely sometime in 2027.",
+  "hero_tagline": "A face mid-expression, cracking under strain, approved in Emoji 18.0 alongside Unicode 18.0 on September 16, 2026. Final, but no phone or computer shows it by default yet. Click to copy the codepoint anyway.",
+  "intro": "Cracking Face (🫫, U+1FAEB) is one of the new emoji in Emoji 18.0, the emoji companion to Unicode 18.0, which became final on September 16, 2026. It depicts a face mid-expression with a visible crack, read by most coverage as emotional strain or \"breaking\" while still smiling, a fit for the Gen-Z \"I'm fine\" meme, where someone looks composed on the outside while overwhelmed underneath. Its codepoint has a specific history: U+1FAEB was originally reserved for a different proposed emoji, \"Face With Squinting Eyes,\" before the Unicode Emoji Standard & Research Working Group recommended replacing it with Cracking Face in January 2026. The name is now settled: Unicode 18.0's character data lists U+1FAEB as CRACKING FACE. Being final is not the same as being on your phone, though. Google has published its design in the Noto Color Emoji font, but as of September 25, 2026, no phone or computer shows it by default, so expect a blank box or placeholder glyph until platforms ship support. Emojipedia estimates the first updates in the first quarter of 2027 (WhatsApp and Samsung), Apple around March or April 2027 and Microsoft in late summer or early fall 2027, estimates based on last year's rollout.",
   "date_published": "2026-07-22",
-  "date_modified": "2026-07-22",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
+  "sources": "Cracking Face's final name and codepoint, U+1FAEB CRACKING FACE, are in Unicode 18.0's <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> data file, released with the Unicode Consortium's <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">Unicode 18.0 announcement</a> on September 16, 2026. <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">Emojipedia</a> reported Google's Noto Color Emoji designs and published the 2027 rollout estimates.",
   "sections": [
     {
       "id": "cracking-face",
       "label": "Cracking Face",
       "h2": "Cracking Face Emoji",
-      "intro": "The draft character itself: copyable today as a codepoint, even though no font can render it yet.",
+      "intro": "The final character itself: copyable today as a codepoint, even though no phone or computer shows it by default yet.",
       "symbols": [
         {
           "char": "🫫",
-          "label": "Cracking Face (draft, U+1FAEB)"
+          "label": "Cracking Face (U+1FAEB, Emoji 18.0)"
         }
       ]
     },
@@ -50,21 +51,21 @@
     },
     {
       "id": "fellow-candidates",
-      "label": "Fellow Draft Candidates",
-      "h2": "Other Emoji 18.0 Draft Candidates",
-      "intro": "Cracking Face isn't the only unapproved character in this release: these are drafted alongside it, equally unrendered until September 2026's decision.",
+      "label": "Released Alongside It",
+      "h2": "Other New Emoji in Emoji 18.0",
+      "intro": "Cracking Face isn't the only new emoji in this release: these were approved alongside it on September 16, 2026, and are equally unrendered on most devices for now.",
       "symbols": [
         {
           "char": "🫝",
-          "label": "Pickle (draft, U+1FADD)"
+          "label": "Pickle (U+1FADD, Emoji 18.0)"
         },
         {
           "char": "🫌",
-          "label": "Monarch Butterfly (draft, U+1FACC)"
+          "label": "Monarch Butterfly (U+1FACC, Emoji 18.0)"
         },
         {
           "char": "🛙",
-          "label": "Lighthouse (draft, U+1F6D9)"
+          "label": "Lighthouse (U+1F6D9, Emoji 18.0)"
         }
       ]
     }
@@ -78,27 +79,27 @@
     {
       "href": "/symbol/pickle-emoji/",
       "title": "Pickle Emoji",
-      "desc": "Another Emoji 18.0 draft candidate, reassigned from a deferred Apple Core proposal."
+      "desc": "Another new Emoji 18.0 emoji, reassigned from a deferred Apple Core proposal."
     },
     {
       "href": "/symbol/meteor-emoji/",
       "title": "Meteor Emoji",
-      "desc": "Another Emoji 18.0 draft candidate splits off from Comet's long rendering split."
+      "desc": "Another new Emoji 18.0 emoji, split off from Comet's long rendering split."
     },
     {
       "href": "/symbol/monarch-butterfly-emoji/",
       "title": "Monarch Butterfly Emoji",
-      "desc": "Another Emoji 18.0 draft candidate fixes a cross-platform Butterfly mix-up."
+      "desc": "Another new Emoji 18.0 emoji, fixing a cross-platform Butterfly mix-up."
     },
     {
       "href": "/symbol/thumb-sign-emoji/",
       "title": "Thumb Sign Emoji",
-      "desc": "Another Emoji 18.0 draft candidate pair, directional pointing, not approval."
+      "desc": "Another new Emoji 18.0 pair, for directional pointing, not approval."
     },
     {
       "href": "/updates/unicode-18-most-anticipated-emoji/",
       "title": "Unicode 18.0's New Emoji",
-      "desc": "The full draft slate of 9 candidates, ranked by public vote."
+      "desc": "All 9 new emoji in the final release, ranked by public vote."
     },
     {
       "href": "/updates/unicode-17-new-emoji-rollout/",

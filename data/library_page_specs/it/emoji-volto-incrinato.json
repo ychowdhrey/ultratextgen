@@ -2,15 +2,15 @@
   "slug": "emoji-volto-incrinato",
   "lang": "it",
   "page_type": "symbol",
-  "title": "Emoji Volto Incrinato: Copia e Incolla 🫫 — la Candidata in Bozza di Emoji 18.0 che Sostituisce \"Occhi Socchiusi\"",
-  "meta_description": "Cracking Face (🫫, U+1FAEB) è una candidata in bozza per Emoji 18.0, attesa insieme a Unicode 18.0 a settembre 2026 — non ancora approvata, nessun font la renderizza oggi. Ecco il suo retroscena, il significato e lo stato attuale.",
+  "title": "Emoji Volto Incrinato: Copia e Incolla 🫫, Definitiva in Emoji 18.0",
+  "meta_description": "Cracking Face (🫫, U+1FAEB) è definitiva in Emoji 18.0, pubblicata con Unicode 18.0 il 16 settembre 2026, ma nessun telefono o computer la mostra ancora di serie. Ecco il suo retroscena, il significato e lo stato attuale.",
   "canonical": "https://ultratextgen.com/it/symbol/emoji-volto-incrinato/",
   "breadcrumb": "Emoji Volto Incrinato",
   "hero_h1": "Emoji Volto Incrinato",
-  "hero_tagline": "Un volto a metà espressione, che si incrina sotto la pressione, in bozza per Emoji 18.0, attesa insieme a Unicode 18.0 a settembre 2026. Solo bozza: non ancora approvata, nessun font la renderizza. Tocca comunque per copiare il codepoint.",
-  "intro": "Cracking Face (🫫, U+1FAEB) è un'emoji candidata in bozza per Emoji 18.0, la componente emoji di Unicode 18.0, attesa in versione definitiva a settembre 2026. Raffigura un volto a metà espressione con una crepa visibile, letta dalla maggior parte della copertura mediatica come tensione emotiva o \"rottura\" pur continuando a sorridere, perfetta per il meme Gen-Z \"sto bene\", dove qualcuno appare composto all'esterno mentre dentro è sopraffatto. Il suo codepoint ha una storia precisa: U+1FAEB era originariamente riservato a una diversa emoji proposta, \"Face With Squinting Eyes\" (volto con occhi socchiusi), prima che lo Unicode Emoji Standard & Research Working Group raccomandasse di sostituirla con Cracking Face nel gennaio 2026. Al momento della stesura, la documentazione della pipeline di Unicode elenca ancora quel codepoint con il nome originale, segnalato come in attesa di una risoluzione sul cambio nome, il che significa che perfino il nome \"Cracking Face\" non è ancora del tutto definitivo, nonostante la stampa lo usi già ampiamente. Trattandosi ancora di una bozza, nessun sistema operativo, tastiera o font la renderizza attualmente; aspettati un riquadro vuoto o un glifo segnaposto finché Emoji 18.0 non sarà approvata e le piattaforme non avranno implementato il supporto, probabilmente nel 2027.",
+  "hero_tagline": "Un volto a metà espressione, che si incrina sotto la pressione, approvato in Emoji 18.0 insieme a Unicode 18.0 il 16 settembre 2026. L'emoji è definitiva, ma nessun telefono o computer la mostra ancora di serie. Tocca comunque per copiare il codepoint.",
+  "intro": "Cracking Face (🫫, U+1FAEB) è una delle nuove emoji di Emoji 18.0, la componente emoji di Unicode 18.0, diventata definitiva il 16 settembre 2026. Raffigura un volto a metà espressione con una crepa visibile, letta dalla maggior parte della copertura mediatica come tensione emotiva o \"rottura\" pur continuando a sorridere, perfetta per il meme Gen-Z \"sto bene\", dove qualcuno appare composto all'esterno mentre dentro è sopraffatto. Il suo codepoint ha una storia precisa: U+1FAEB era originariamente riservato a una diversa emoji proposta, \"Face With Squinting Eyes\" (volto con occhi socchiusi), prima che lo Unicode Emoji Standard & Research Working Group raccomandasse di sostituirla con Cracking Face nel gennaio 2026. Il nome ora è fissato: i dati dei caratteri di Unicode 18.0 elencano U+1FAEB come CRACKING FACE. Essere definitiva però non significa essere sul tuo telefono. Google ha pubblicato il suo design nel font Noto Color Emoji, ma al 25 settembre 2026 nessun telefono o computer la mostra di serie, quindi aspettati un riquadro vuoto o un glifo segnaposto finché le piattaforme non implementeranno il supporto. Emojipedia stima, sulla base dello scorso anno, i primi aggiornamenti nel primo trimestre 2027 (WhatsApp e Samsung), Apple intorno a marzo o aprile 2027 e Microsoft tra fine estate e inizio autunno 2027.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
   "home_url": "https://ultratextgen.com/it/",
   "crumb_home": "Home",
@@ -30,16 +30,17 @@
       "href": "https://ultratextgen.com/symbol/cracking-face-emoji/"
     }
   ],
+  "sources": "Il nome e il codepoint definitivi di Cracking Face, U+1FAEB CRACKING FACE, sono nel file di dati <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> di Unicode 18.0, pubblicato con l'<a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">annuncio di Unicode 18.0</a> dell'Unicode Consortium il 16 settembre 2026. <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">Emojipedia</a> ha riportato i design di Google in Noto Color Emoji e ha pubblicato le stime di rollout per il 2027.",
   "sections": [
     {
       "id": "cracking-face",
       "label": "Volto Incrinato",
       "h2": "Emoji Volto Incrinato",
-      "intro": "Il carattere in bozza in sé: copiabile già oggi come codepoint, anche se nessun font può ancora renderizzarlo.",
+      "intro": "Il carattere definitivo in sé: copiabile già oggi come codepoint, anche se nessun telefono o computer lo mostra ancora di serie.",
       "symbols": [
         {
           "char": "🫫",
-          "label": "Cracking Face (bozza, U+1FAEB)"
+          "label": "Cracking Face (U+1FAEB, Emoji 18.0)"
         }
       ]
     },
@@ -51,15 +52,15 @@
       "symbols": [
         {
           "char": "😬",
-          "label": "Grimacing Face"
+          "label": "Faccina con Smorfia"
         },
         {
           "char": "🫠",
-          "label": "Melting Face"
+          "label": "Faccina che si Scioglie"
         },
         {
           "char": "🥴",
-          "label": "Woozy Face"
+          "label": "Faccina Stordita"
         },
         {
           "char": "🫪",
@@ -69,21 +70,21 @@
     },
     {
       "id": "fellow-candidates",
-      "label": "Altre Candidate in Bozza",
-      "h2": "Altre Candidate in Bozza di Emoji 18.0",
-      "intro": "Cracking Face non è l'unico carattere non approvato di questa release: questi sono in bozza insieme a lei, ugualmente non renderizzati fino alla decisione di settembre 2026.",
+      "label": "Pubblicate Insieme",
+      "h2": "Altre Nuove Emoji di Emoji 18.0",
+      "intro": "Cracking Face non è l'unica nuova emoji di questa release: queste sono state approvate insieme a lei il 16 settembre 2026 e per ora restano ugualmente invisibili sulla maggior parte dei dispositivi.",
       "symbols": [
         {
           "char": "🫝",
-          "label": "Pickle (bozza, U+1FADD)"
+          "label": "Pickle (U+1FADD, Emoji 18.0)"
         },
         {
           "char": "🫌",
-          "label": "Monarch Butterfly (bozza, U+1FACC)"
+          "label": "Monarch Butterfly (U+1FACC, Emoji 18.0)"
         },
         {
           "char": "🛙",
-          "label": "Lighthouse (bozza, U+1F6D9)"
+          "label": "Lighthouse (U+1F6D9, Emoji 18.0)"
         }
       ]
     }
@@ -97,31 +98,31 @@
     {
       "href": "/it/symbol/emoji-cetriolino/",
       "title": "Emoji Cetriolino",
-      "desc": "Un'altra candidata in bozza di Emoji 18.0, riassegnata da una proposta Apple Core rinviata."
+      "desc": "Un'altra nuova emoji di Emoji 18.0, riassegnata da una proposta Apple Core rinviata."
     },
     {
       "href": "/it/symbol/emoji-meteora/",
       "title": "Emoji Meteora",
-      "desc": "Un'altra candidata in bozza di Emoji 18.0 si separa dalla lunga divisione di rendering di Comet."
+      "desc": "Un'altra nuova emoji di Emoji 18.0, separata dalla lunga divisione di rendering di Comet."
     },
     {
       "href": "/it/symbol/emoji-farfalla-monarca/",
       "title": "Emoji Farfalla Monarca",
-      "desc": "Un'altra candidata in bozza di Emoji 18.0 risolve una confusione multipiattaforma sulla Farfalla."
+      "desc": "Un'altra nuova emoji di Emoji 18.0, che risolve una confusione multipiattaforma sulla Farfalla."
     },
     {
       "href": "/it/symbol/emoji-pollice-direzionale/",
       "title": "Emoji Pollice Direzionale",
-      "desc": "Un'altra coppia candidata in bozza di Emoji 18.0, puntamento direzionale, non approvazione."
+      "desc": "Un'altra nuova coppia di Emoji 18.0, per il puntamento direzionale, non l'approvazione."
     },
     {
       "href": "/updates/unicode-18-most-anticipated-emoji/",
-      "title": "Unicode 18.0's New Emoji",
-      "desc": "L'intero elenco delle 9 candidate in bozza, classificate per voto pubblico."
+      "title": "Le nuove emoji di Unicode 18.0",
+      "desc": "Tutte le 9 nuove emoji della release definitiva, classificate per voto pubblico."
     },
     {
       "href": "/updates/unicode-17-new-emoji-rollout/",
-      "title": "Unicode 17.0 New Emoji Rollout",
+      "title": "Rollout delle nuove emoji di Unicode 17.0",
       "desc": "Come si sono diffuse le emoji approvate lo scorso anno, piattaforma per piattaforma, lo schema che probabilmente seguirà anche questa."
     }
   ]

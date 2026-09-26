@@ -35,18 +35,61 @@
                   true = the field is BELIEVED to count something other than
                   glyphs, but the rule is not sourced. `effective` stays at 1x
                   (we never assert an unverified limit), and instead a name that
-                  fits at 1x but would NOT fit counting UTF-16 code units raises
-                  a "weight-uncertain" warning. Use this instead of guessing at
+                  fits at 1x but would NOT fit counting UTF-8 bytes raises a
+                  "weight-uncertain" warning. Use this instead of guessing at
                   `weighted` when the evidence is a pile of player reports rather
                   than a document.
      asciiPattern set = the field only accepts this charset (username-locked
-                  games); everything else is rejected outright
+                  games); everything else is rejected outright. The name is
+                  historical: Xbox's pattern is not ASCII-only.
+     charPattern  optional per-glyph version of asciiPattern for the character
+                  panel, for patterns with positional rules (must start with a
+                  letter, no separator at the end) that a single glyph cannot
+                  satisfy on its own
+     uncountedMarks
+                  optional regex of combining marks the field does not count
+                  as characters (Xbox counts "rendered characters", so a Thai or
+                  Devanagari letter plus its diacritic is one)
      noSpace      true = a plain space is rejected (invisible chars instead)
      field        which name this rule describes: 'display' or 'username'
      ============================ */
+
+  // Xbox modern gamertag letters, from Microsoft's own two lists. Only scripts
+  // on BOTH are accepted: the player-facing gamertag FAQ (13 alphabets: basic
+  // Latin, Latin-1, Latin Extended-A, Hangul, hiragana, katakana, CJK, Bengali,
+  // Devanagari, Cyrillic, Greek, Thai) and the GDK range table that games are
+  // built against. The GDK table also lists Arabic, Hebrew, Urdu and an
+  // apostrophe, which the player FAQ does not, so those stay rejected here
+  // until an in-console test settles them. Digits are Latin 0-9 only ("We only
+  // support numbers in Latin-based alphabets"); × and ÷ are excluded.
+  // Sources, verified 2026-09-25:
+  //   https://support.xbox.com/en-US/help/account-profile/profile/gamertag-update-faq
+  //   https://learn.microsoft.com/en-us/gaming/gdk/docs/services/fundamentals/identity/user-profile/gamertags/live-modern-gamertags-unicode
+  const XBOX_BASE =
+    "A-Za-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u017F" + // Latin, Latin-1, Latin Ext-A
+    "\\u0390-\\u03CE\\u0400-\\u045F" +                      // Greek, core Cyrillic
+    "\\u0904-\\u0939\\u0985-\\u09B9" +                      // Devanagari, Bengali letters
+    "\\u0E01-\\u0E30\\u0E32\\u0E33\\u0E40-\\u0E46" +        // Thai letters
+    "\\u1100-\\u1112\\u1161-\\u1175\\u11A8-\\u11C2\\uAC00-\\uD7A3" + // Hangul
+    "\\u3041-\\u3096\\u30A1-\\u30FA\\u4E00-\\u9FFF";        // kana (no ー), CJK
+  const XBOX_MARK = "\\u0900-\\u0903\\u093A-\\u094F\\u0E31\\u0E34-\\u0E3A\\u0E47-\\u0E4E";
+  const XBOX_WORD = "[" + XBOX_BASE + XBOX_MARK + "0-9]";
   const RULES = {
+    // Free Fire: Garena's patch notes (OB43 in seven regional editions, OB53-OB55)
+    // and its help pages never say which characters a nickname may contain. The
+    // U+3164 block rests on player and tool-site reports only (e.g. a Vietnamese
+    // OB55 test reporting a "ten nhay cam" / sensitive-name error), so it stays a
+    // warning, never a fail. `weighted` is the stricter reading of conflicting
+    // reports, not a documented rule. Verified 2026-09-25:
+    //   https://ff.garena.com/en/article/1317/  (OB43 notes, silent on names)
+    //   https://ffsuporte.garena.com/support/solutions/articles/154000130473-como-faco-para-trocar-meu-nickname-
     ff: { label: "Free Fire", limit: 12, min: 1, weighted: true, noSpace: true, field: "display", reportedBlocked: "ㅤ" },
-    ml: { label: "Mobile Legends", limit: 16, min: 4, weighted: false, noSpace: false, field: "display" },
+    // Mobile Legends: 4-20. The in-game rename box reads "Names should have no
+    // more than 4-20 characters and should not include illegal characters"
+    // (screenshot, r/MobileLegendsGame post 1wkghzu, 2026-09-19). Styled
+    // characters are reported to use 2-3 each; that is undocumented, so the
+    // count stays at 1x here. Verified 2026-09-25.
+    ml: { label: "Mobile Legends", limit: 20, min: 4, weighted: false, noSpace: false, field: "display" },
     // Krafton publishes NO name rules for PUBG Mobile. The help centre article
     // ("How do I change my in-game nickname?", unchanged since at least 2022)
     // documents only the Rename Card flow — level-10 Growth Mission, Shop ->
@@ -60,51 +103,107 @@
     // circulating for this game is Krafton's PUBG: BATTLEGROUNDS (PC) policy,
     // laundered into mobile articles. It is wrong here.
     // weightUncertain: players repeatedly report the 14-character error firing
-    // on names that LOOK shorter than 14. That is consistent with the field
-    // counting UTF-16 code units rather than glyphs — every classic decoration
-    // (꧁ ꧂ ༒ 彡 乡 ★ ツ) and every small-caps letter is 1 unit, but every
-    // mathematical-alphanumeric letter (bold/script/fraktur) is 2, so a fully
-    // bold name would cap at 7 visible letters rather than 14. Nobody documents
-    // the counting behaviour, so we do NOT assert it: `effective` stays at 1x
-    // and we only warn inside the ambiguous band. One controlled in-client test
-    // would settle it.
+    // on names that LOOK shorter than 14. The reports fit a UTF-8 byte count,
+    // not UTF-16 units: a 13-character BGMI name with six "ē" (13 UTF-16 units,
+    // 19 bytes) got "it should not exceed 14 characters" (r/BGMI 1hjtgp4,
+    // 2024-12-22; a reply: "special characters take 2 spaces"), and PUBG Mobile
+    // players put one decorative symbol at about 3 letters (r/PUBGMobile
+    // 13bgg3v, 2023-05-08) — ꧁ ༒ ★ are 3 bytes each. The same 14 limit applies
+    // on BGMI. Nobody documents the counting behaviour, so we do NOT assert it:
+    // `effective` stays at 1x and we only warn inside the ambiguous band. One
+    // controlled in-client test would settle it. Verified 2026-09-25.
     pubg: { label: "PUBG Mobile", limit: 14, min: 1, weighted: false, weightUncertain: true, noSpace: true, field: "display" },
-    coc: { label: "Clash of Clans", limit: 15, min: 2, weighted: false, noSpace: false, field: "display" },
+    // Clash of Clans: 2-15 characters, first rename free (unlocks at Town Hall
+    // 5), then Gems starting at 500 and rising by 500 each time. strict because
+    // Supercell's own article carries the same warning as Clash Royale's:
+    // emoji, special characters and non-Latin letters "may not be displayed
+    // properly" and can make a name appear invisible to other players.
+    // https://support.supercell.com/clash-of-clans/en/articles/how-to-change-your-username.html
+    // (verified 2026-09-25)
+    coc: { label: "Clash of Clans", limit: 15, min: 2, weighted: false, noSpace: false, field: "display", strict: true },
+    // Lien Quan: 12 comes from Vietnamese guides (2022-2024) and a Garena
+    // Thailand RoV FAQ (search snippet); Garena VN's own notices mention "so ki
+    // tu quy dinh" without the number. Whether symbols count double is
+    // unverified. Verified 2026-09-25.
     lienquan: { label: "Liên Quân Mobile", limit: 12, min: 1, weighted: false, noSpace: true, field: "display" },
     standoff2: { label: "Standoff 2", limit: 16, min: 2, weighted: false, noSpace: false, field: "display" },
     discord: { label: "Discord", limit: 32, min: 1, weighted: false, noSpace: false, field: "display" },
     tiktok: { label: "TikTok", limit: 30, min: 1, weighted: false, noSpace: false, field: "display" },
+    // Epic display name: 3-16 characters, changeable once every two weeks.
+    // Epic publishes no character list, so decorative Unicode stays a warning.
+    // https://www.epicgames.com/help/en-US/c-202300000001645/c-202300000001753/what-are-the-rules-for-creating-my-display-name-a202300000016056
+    // (verified 2026-09-25)
     fortnite: { label: "Fortnite", limit: 16, min: 3, weighted: false, noSpace: false, field: "display", strict: true },
+    // Riot ID game name: 3-16 characters, tagline 3-5 alphanumeric, one free
+    // change every 90 days and no paid changes (Riot Support, Riot ID FAQ and
+    // "Changing Your Riot ID"). The player FAQ says "alphanumeric"; Riot's
+    // developer FAQ says "Any Unicode Letter is supported". Symbols are in
+    // neither, which is why decoration is a warning here, not a pass.
+    // https://support.riotgames.com/en-us/riot/account/riot-id-faq (verified 2026-09-25)
     valorant: { label: "Valorant (Riot ID)", limit: 16, min: 3, weighted: false, noSpace: false, field: "display", strict: true },
+    // Roblox @username: matches Roblox's own sign-up validator exactly, observed
+    // 2026-09-25 at auth.roblox.com/v1/usernames/validate: "Usernames can be 3 to
+    // 20 characters long", "Only a-z, A-Z, 0-9, and _ are allowed", "Usernames
+    // can have at most one _", "Username can't start or end with _", "Username
+    // cannot contain spaces".
     roblox: { label: "Roblox (username)", limit: 20, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9_]+$/, singleUnderscore: true },
-    robloxDisplay: { label: "Roblox (display name)", limit: 20, min: 3, weighted: false, noSpace: false, field: "display" },
+    // Roblox display name: 3-20 characters, free, once every 7 days (Roblox
+    // help centre). strict since 2026-09-25: Roblox's own display-name validator
+    // (users.roblox.com/v1/display-names/validate, the sign-up path) answered
+    // "Display name contains invalid characters" for every decorated name we
+    // tried: stars, hearts, emoji, bold math letters, Cyrillic, kana, Hangul,
+    // Han, accented Latin, the Hangul filler and a period. Plain letters,
+    // numbers, one inner underscore and single spaces passed. Roblox's help
+    // centre lists Japanese as a beta "not available to all users", and the
+    // account-settings path needs a signed-in test, so this warns rather than
+    // fails until that test is run.
+    // https://en.help.roblox.com/hc/en-us/articles/4401938870292
+    robloxDisplay: { label: "Roblox (display name)", limit: 20, min: 3, weighted: false, noSpace: false, field: "display", strict: true },
+    // Minecraft Java profile name: up to 16 characters, one change every 30
+    // days (Minecraft Help Center). The 3-character minimum and the
+    // letters/digits/underscore set are not in that article.
+    // https://help.minecraft.net/hc/en-us/articles/360034636712 (verified 2026-09-25)
     minecraft: { label: "Minecraft", limit: 16, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9_]+$/ },
-    // Stumble Guys' rename screen enforces 4-12 characters (Stumble Guys Help
-    // Center) and its official UI form-validates against symbol characters —
+    // Stumble Guys' rename screen enforces 4-12 characters, first rename free
+    // then 100 gems each (Stumble Guys Help Center,
+    // https://stumbleguys.helpshift.com/hc/en/4-stumble-guys/faq/61-is-it-possible-to-change-your-in-game-name/
+    // verified 2026-09-25) and its official UI form-validates against symbol characters —
     // but players widely report styled Unicode letters (Cyrillic/Greek/small
     // caps look-alikes) and common decorative symbols (crowns, stars, arrows)
     // surviving in practice, the same "may not always stick" profile as
     // Fortnite/Valorant, hence strict rather than an outright block.
     stumbleguys: { label: "Stumble Guys", limit: 12, min: 4, weighted: false, noSpace: false, field: "display", strict: true },
-    // Xbox Gamertags are plain text only — styled Unicode has never been
-    // accepted here, at any character count. As of Microsoft's July 2026
-    // console update, a gamertag that is unique, available, and Latin-only
-    // can run up to 15 characters, but any name needing the auto-assigned
-    // #1234 suffix (i.e. not unique) or written in a non-Latin script stays
-    // capped at the old 12-character limit. We validate against the
-    // guaranteed 12-char floor rather than the conditional 15, since
-    // uniqueness can't be known until the player actually tries to claim
-    // the name — see /updates/xbox-gamertag-15-character-limit/.
-    xbox: { label: "Xbox Gamertag", limit: 12, min: 1, weighted: false, noSpace: false, field: "username", asciiPattern: /^[A-Za-z][A-Za-z0-9]*(?: [A-Za-z0-9]+)*$/ },
+    // Xbox Gamertags accept letters from 13 alphabets, Latin digits and single
+    // spaces, and must start with a letter; symbols, emoji and styled Unicode
+    // (bold/script math letters, small caps) are rejected at any length. See
+    // XBOX_BASE above for the exact ranges and sources. Microsoft's July 2026
+    // console update (release date 7/15/2026, OS 10.0.26100.8866) lets a
+    // gamertag that is unique, available and Latin-only run to 15 characters;
+    // "Gamertags that are not unique or contain non-Latin characters may have a
+    // suffix and will continue to support up to 12 characters." We validate
+    // against the guaranteed 12, since uniqueness can't be known until the
+    // player tries to claim the name. Xbox counts "rendered characters", so a
+    // Thai or Devanagari diacritic does not add one (uncountedMarks).
+    // https://support.xbox.com/en-US/help/hardware-network/settings-updates/whats-new-xbox-one-system-updates
+    // (verified 2026-09-25) and /updates/xbox-gamertag-15-character-limit/.
+    xbox: {
+      label: "Xbox Gamertag", limit: 12, min: 1, weighted: false, noSpace: false, field: "username",
+      asciiPattern: new RegExp("^[" + XBOX_BASE + "]" + XBOX_WORD + "*(?: " + XBOX_WORD + "+)*$"),
+      charPattern: new RegExp("^[" + XBOX_BASE + XBOX_MARK + "0-9 ]+$"),
+      uncountedMarks: new RegExp("[" + XBOX_MARK + "]")
+    },
     // PSN Online IDs are plain ASCII only (no styled Unicode, ever): 3-16
     // characters, must start with a letter, then letters/numbers/hyphens/
     // underscores only (Sony's own account-signup documentation).
-    psn: { label: "PSN Online ID", limit: 16, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z][A-Za-z0-9_-]*$/ },
-    // Clash Royale names: 2-15 characters (Supercell Support). Unlike Free
-    // Fire/Clash of Clans, Supercell's own article warns that symbols and
-    // non-Latin characters "may not be displayed properly" and can make a
-    // name appear invisible to other players — so we flag decorative
-    // Unicode as a warning here (strict) rather than treating it as safe.
+    psn: { label: "PSN Online ID", limit: 16, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z][A-Za-z0-9_-]*$/, charPattern: /^[A-Za-z0-9_-]+$/ },
+    // Clash Royale names: 2-15 characters, first change free from King Tower
+    // Level 4, then Gems at a rising price (Supercell Support). Supercell's
+    // own article warns that emoji, special characters and non-Latin letters
+    // "may not be displayed properly" and can make a name appear invisible to
+    // other players, so decorative Unicode is a warning here (strict) rather
+    // than safe. Clash of Clans' article carries the identical warning.
+    // https://support.supercell.com/clash-royale/en/articles/how-to-change-your-username-3.html
+    // (verified 2026-09-25)
     clashroyale: { label: "Clash Royale", limit: 15, min: 2, weighted: false, noSpace: false, field: "display", strict: true },
     // YouTube channel names (display names) accept Unicode freely — styled
     // letters, symbols and emoji all save. Google's own help pages document
@@ -113,7 +212,8 @@
     // NO character maximum for the name field; the 50 here is the widely
     // reported client-side limit and matches the field's observed maxlength,
     // not a Google document — treat it like PUBG's 14 (real client behaviour,
-    // no official source). One caveat worth knowing that this engine cannot
+    // no official source; still true on 2026-09-25, when the article's only
+    // name rule was the 14-day throttle). One caveat worth knowing that this engine cannot
     // encode: since 2022 YouTube limits names spelled ENTIRELY in lookalike
     // special characters (its own example: "¥ouⓉube") as an impersonation/
     // spam measure — decorated-but-readable names pass, all-symbol names can
@@ -122,20 +222,25 @@
     // YouTube @handles are the opposite field: 3-30 characters, letters and
     // numbers plus underscores, hyphens, periods and Latin middle dots (·) —
     // none of those four at the start or end — unique across YouTube, and no
-    // decorative Unicode ever (support.google.com/youtube/answer/11585688).
+    // decorative Unicode ever (support.google.com/youtube/answer/11585688,
+    // verified 2026-09-25).
     // Google also allows letters from ~75 non-Latin scripts with SHORTER
     // script-specific limits (Han/Hangul 1-10, kana/Ethiopic 2-20); this
     // ASCII pattern validates the Latin path only, so the page's fail copy
     // must say "plain letters and numbers" rather than claim non-Latin
     // handles are impossible.
-    youtubeHandle: { label: "YouTube @handle", limit: 30, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9](?:[A-Za-z0-9._·-]*[A-Za-z0-9])?$/ },
-    // VRChat Display Names are 4-15 characters and can only be changed once
-    // every 90 days (30 days with VRC+), per VRChat's own "I'd like to change
-    // my name" help article — by far the longest rename cooldown of any rule
-    // in this table, which is exactly why checking before pasting matters here.
-    // Charset: VRChat publishes no allowed-character list, and its own
-    // community forum has an open, unanswered request for one; users there
-    // report that most Unicode works but "not all unicodes do". So this is
+    youtubeHandle: { label: "YouTube @handle", limit: 30, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9](?:[A-Za-z0-9._·-]*[A-Za-z0-9])?$/, charPattern: /^[A-Za-z0-9._·-]+$/ },
+    // VRChat Display Names are 4-15 characters, must be unique, and can only be
+    // changed once every 90 days (30 days with VRC+), per VRChat's own "I'd
+    // like to change my name" help article — by far the longest rename cooldown
+    // of any rule in this table, which is exactly why checking before pasting
+    // matters here. https://help.vrchat.com/hc/en-us/articles/1500002248601-I-d-like-to-change-my-name
+    // (verified 2026-09-25)
+    // Charset: VRChat publishes no allowed-character list. The Ask forum thread
+    // requesting one (opened 2024-07-26,
+    // https://ask.vrchat.com/t/looking-for-a-competitive-list-of-symbols-and-fonts-for-nicknames/25799)
+    // still had no staff reply on 2026-09-25; users there report that most
+    // Unicode works but "not all unicodes do". So this is
     // strict (decorative Unicode flagged as a warning) rather than safe or
     // blocked. Deliberately NOT weighted: the widely-repeated claim that some
     // Unicode counts as two characters here could not be verified against
@@ -177,7 +282,15 @@
       limit: 4, min: 2, noSpace: true,
       asciiPattern: /^[A-Za-z0-9][A-Za-z0-9_-]*$/,
       minAlnum: 2, cost: "990 G-COIN",
-      source: "PUBG Wiki — Clan System"
+      // Krafton's own patch notes, not the wiki: "Requirement: 2-4 characters,
+      // uppercase letters of the English alphabet, numbers, hyphen (-),
+      // underscore (_)", first character a letter or number, no spaces, at
+      // least 2 letters/numbers, and a Clan Tag Change costs 990 G-COIN.
+      // Lowercase is still accepted by this pattern because a tag typed in
+      // lowercase has not been shown to be refused rather than capitalised.
+      // PUBG: BATTLEGROUNDS Patch Notes - Update 23.2, 2023-05-10 (verified 2026-09-25):
+      // https://store.steampowered.com/news/app/578080/view/5140340308864886422
+      source: "PUBG: BATTLEGROUNDS Patch Notes, Update 23.2"
     },
     // PUBG MOBILE is a different product with a different clan system, and
     // Krafton documents neither its tag length nor its charset. Do NOT copy
@@ -370,7 +483,8 @@
   // data set, so it never asserts anything beyond what this file already
   // encodes about a game's charset policy.
   function charVerdict(ch, rule) {
-    if (rule.asciiPattern) return rule.asciiPattern.test(ch) ? "pass" : "reject";
+    const pattern = rule.charPattern || rule.asciiPattern;
+    if (pattern) return pattern.test(ch) ? "pass" : "reject";
     if (ch === " ") return rule.noSpace ? "reject" : "pass";
     // ch may be a multi-codepoint grapheme (base + combining marks) — classify
     // by its first codepoint, same base that carries the visible glyph.
@@ -412,12 +526,20 @@
       }
     });
 
-    const glyphs = chars.length;
+    // A field that counts rendered characters (Xbox) does not count a
+    // combining diacritic as one; every other rule counts codepoints.
+    const glyphs = rule.uncountedMarks
+      ? chars.filter(function (ch) { return !rule.uncountedMarks.test(ch); }).length
+      : chars.length;
     const effective = rule.weighted ? weightedLen : glyphs;
-    // JS strings are UTF-16, so str.length IS the code-unit count — the thing a
-    // field counts when it counts "characters" the naive way. Only used by
-    // weightUncertain; never fed into `effective`.
+    // JS strings are UTF-16, so str.length IS the code-unit count. Returned for
+    // callers; never fed into `effective`.
     const utf16 = (str || "").length;
+    // UTF-8 byte length: the count the PUBG and Mobile Legends player reports
+    // fit (see RULES.pubg). Only used by weightUncertain.
+    const utf8 = typeof TextEncoder !== "undefined"
+      ? new TextEncoder().encode(str || "").length
+      : unescape(encodeURIComponent(str || "")).length;
     const issues = [];
 
     if (!glyphs) issues.push("empty");
@@ -429,9 +551,9 @@
       const u = str.split("_").length - 1;
       if (u > 1 || /^_|_$/.test(str)) issues.push("underscore");
     }
-    // Fits counting glyphs, would not fit counting UTF-16 units. We cannot say
+    // Fits counting glyphs, would not fit counting UTF-8 bytes. We cannot say
     // which the game does, so we say exactly that rather than picking one.
-    if (rule.weightUncertain && rule.limit && effective <= rule.limit && utf16 > rule.limit) {
+    if (rule.weightUncertain && rule.limit && effective <= rule.limit && utf8 > rule.limit) {
       issues.push("weight-uncertain");
     }
     if (!rule.asciiPattern && unknown > 0) issues.push("unknown-chars");
@@ -470,6 +592,7 @@
       glyphs: glyphs,
       effective: effective,
       utf16: utf16,
+      utf8: utf8,
       limit: rule.limit || 0,
       counts: { plain: plain, safe: safe, styled: styled, emoji: emoji, unknown: unknown, spaces: spaces },
       badChars: badChars,

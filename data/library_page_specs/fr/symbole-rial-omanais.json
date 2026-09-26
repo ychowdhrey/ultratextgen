@@ -2,15 +2,15 @@
   "slug": "symbole-rial-omanais",
   "lang": "fr",
   "page_type": "symbol",
-  "title": "Symbole du Rial Omanais : Copier-Coller ⃄ — le Nouveau Symbole Monétaire d'Oman, Figé pour Publication dans Unicode 18.0",
-  "meta_description": "Le symbole du rial omanais (⃄, U+20C4) a été dévoilé par la Banque centrale d'Oman en novembre 2025 et est figé pour publication dans Unicode 18.0, attendu en septembre 2026 — encore absent de tout clavier. Voici son dessin, son histoire et son statut.",
+  "title": "Symbole du Rial Omanais : Copier-Coller ⃄, Définitif dans Unicode 18.0",
+  "meta_description": "Le symbole du rial omanais (⃄, U+20C4) a été dévoilé par la Banque centrale d'Oman en novembre 2025 et est définitif dans Unicode 18.0 depuis le 16 septembre 2026, mais encore absent de tout clavier. Voici son dessin, son histoire et son statut.",
   "canonical": "https://ultratextgen.com/fr/symbol/symbole-rial-omanais/",
   "breadcrumb": "Symbole du Rial Omanais",
   "hero_h1": "Symbole du Rial Omanais",
-  "hero_tagline": "Le symbole monétaire officiel d'Oman, dévoilé lors de la Fête nationale 2025 et figé pour publication dans Unicode 18.0 — approuvé, mais encore en avance sur tout clavier ou toute police.",
-  "intro": "Le symbole du rial omanais (⃄, U+20C4) est le symbole monétaire officiel de la Banque centrale d'Oman, présenté au public le 19 novembre 2025, dans le sillage de la Fête nationale du pays. Son dessin s'appuie sur deux lettres arabes stylisées — ʿayn (ع), la première lettre de عماني (« omanais »), et rāʾ (ر), la première lettre de ريال (« rial ») — barrées de deux lignes, dans le style que partagent de nombreux symboles monétaires modernes. Le gouverneur de la Banque centrale, Ahmed bin Jafar Al-Musallami, a présenté cette adoption comme une démarche stratégique pour renforcer la position d'Oman comme pôle financier régional et faciliter l'identification du rial sur les plateformes internationales, commerciales et numériques. Le symbole a été soumis pour encodage Unicode aux côtés du dirham émirati et du rufiyaa maldivien, et porte à ce jour, dans la documentation même du pipeline d'Unicode, le statut « white » — figé pour publication, en attente uniquement de l'approbation ISO, avec une publication finale attendue avec le reste d'Unicode 18.0 en septembre 2026. Aucun système d'exploitation, police ou clavier n'offre pour l'instant de support natif. Deux voies pratiques existent en attendant. La Banque centrale publie le symbole en SVG, PNG et EPS avec ses règles d'usage, ce qui suffit pour un modèle de facture, une liste de prix ou une enseigne imprimée. Les entreprises sous Odoo peuvent installer un module ERP qui embarque une police, afin que le symbole s'affiche dans les factures, les rapports, le portail client et les tickets de caisse. Aucune des deux ne remplace le caractère : seul U+20C4 peut être recherché, trié et collé.",
+  "hero_tagline": "Le symbole monétaire officiel d'Oman, dévoilé lors de la Fête nationale 2025 et publié dans Unicode 18.0 le 16 septembre 2026 — définitif, mais encore en avance sur tout clavier ou toute police.",
+  "intro": "Le symbole du rial omanais (⃄, U+20C4) est le symbole monétaire officiel de la Banque centrale d'Oman, présenté au public le 19 novembre 2025, dans le sillage de la Fête nationale du pays. Son dessin s'appuie sur deux lettres arabes stylisées — ʿayn (ع), la première lettre de عماني (« omanais »), et rāʾ (ر), la première lettre de ريال (« rial ») — barrées de deux lignes, dans le style que partagent de nombreux symboles monétaires modernes. Le gouverneur de la Banque centrale, Ahmed bin Jafar Al-Musallami, a présenté cette adoption comme une démarche stratégique pour renforcer la position d'Oman comme pôle financier régional et faciliter l'identification du rial sur les plateformes internationales, commerciales et numériques. Le symbole a été soumis pour encodage Unicode aux côtés du dirham émirati et du rufiyaa maldivien, et Unicode 18.0 l'a publié comme définitif le 16 septembre 2026, sous le nom U+20C4 OMANI RIAL SIGN. Au 25 septembre 2026, aucun système d'exploitation, police système ou clavier n'offre de support natif. Deux voies pratiques existent en attendant. La Banque centrale publie le symbole en SVG, PNG et EPS avec ses règles d'usage, ce qui suffit pour un modèle de facture, une liste de prix ou une enseigne imprimée. Les entreprises sous Odoo peuvent installer un module ERP qui embarque une police, afin que le symbole s'affiche dans les factures, les rapports, le portail client et les tickets de caisse. Aucune des deux ne remplace le caractère : seul U+20C4 peut être recherché, trié et collé.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
   "home_url": "https://ultratextgen.com/fr/",
   "crumb_home": "Accueil",
@@ -30,16 +30,17 @@
       "href": "https://ultratextgen.com/symbol/omani-rial-sign/"
     }
   ],
+  "sources": "La publication d'Unicode 18.0 le 16 septembre 2026, avec ce caractère sous le nom U+20C4 OMANI RIAL SIGN, est confirmée par <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">l'annonce d'Unicode 18.0</a> du Consortium Unicode. Les <a href=\"https://support.microsoft.com/en-us/servicing/os/windows-11/2025/12/december-1-2025-kb5070311-os-builds-26200-7309-and-26100-7309-preview\">notes de version KB5070311</a> de Microsoft documentent l'arrivée du symbole du riyal saoudien sur les claviers Windows 11.",
   "sections": [
     {
       "id": "symbole-rial-omanais",
       "label": "Symbole du Rial Omanais",
       "h2": "Symbole du Rial Omanais",
-      "intro": "Le caractère confirmé lui-même — copiable dès aujourd'hui via son code, même si aucune police ne l'affiche encore nativement.",
+      "intro": "Le caractère définitif lui-même — copiable dès aujourd'hui via son code, même si aucune police système ne l'affiche encore nativement.",
       "symbols": [
         {
           "char": "⃄",
-          "label": "Symbole du Rial Omanais (U+20C4, figé pour publication)"
+          "label": "Symbole du Rial Omanais (U+20C4, Unicode 18.0)"
         }
       ]
     },
@@ -47,7 +48,7 @@
       "id": "autres-nouveaux-symboles-du-golfe",
       "label": "Autres Nouveaux Symboles Monétaires du Golfe",
       "h2": "Autres Nouveaux Symboles Monétaires de Cette Version",
-      "intro": "Le rial omanais n'est pas le seul nouveau symbole monétaire de la version Unicode 18.0 — deux autres monnaies ont reçu leur propre signe dans la même bêta.",
+      "intro": "Le rial omanais n'est pas le seul nouveau symbole monétaire de la version Unicode 18.0 — deux autres monnaies ont reçu leur propre signe dans la même version.",
       "symbols": [
         {
           "char": "⃃",
@@ -63,7 +64,7 @@
       "id": "une-version-d-avance",
       "label": "Une Version d'Avance",
       "h2": "Le Symbole Monétaire du Golfe qui est Sorti une Version Plus Tôt",
-      "intro": "Le symbole du riyal saoudien a franchi ce même chemin une version Unicode entière plus tôt — déjà définitif depuis Unicode 17.0, et non plus simplement en bêta.",
+      "intro": "Le symbole du riyal saoudien a franchi ce même chemin une version Unicode entière plus tôt — définitif depuis Unicode 17.0 et sur les claviers arabes de Windows 11 depuis décembre 2025.",
       "symbols": [
         {
           "char": "⃁",
@@ -81,7 +82,7 @@
     {
       "href": "/fr/symbol/symbole-dirham/",
       "title": "Symbole du Dirham",
-      "desc": "Le nouveau symbole monétaire des Émirats, qui sort dans la même bêta d'Unicode 18.0."
+      "desc": "Le nouveau symbole monétaire des Émirats, publié dans la même version Unicode 18.0."
     },
     {
       "href": "/fr/symbol/symbole-riyal-saoudien/",
@@ -90,7 +91,7 @@
     },
     {
       "href": "/updates/unicode-18-beta-review-opens/",
-      "title": "Unicode 18.0 Beta Review Opens",
+      "title": "Les nouveautés d'Unicode 18.0",
       "desc": "L'ensemble de la version dont ce symbole fait partie (en anglais)."
     }
   ]

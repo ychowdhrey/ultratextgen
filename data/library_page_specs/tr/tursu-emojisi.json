@@ -2,26 +2,27 @@
   "slug": "tursu-emojisi",
   "lang": "tr",
   "page_type": "symbol",
-  "title": "Turşu Emojisi: Kopyala Yapıştır 🫝 — Ertelenen Bir Apple Core Slotunu Devralan Unicode 18.0 Adayı",
-  "meta_description": "Turşu (🫝, U+1FADD), Eylül 2026'da beklenen Unicode 18.0 ile birlikte gelecek Emoji 18.0 için bir taslak aday. Kod noktası başlangıçta Apple Core'a ayrılmıştı, sonra ertelenip yeniden atandı. Henüz onaylanmadı ve bugün hiçbir yazı tipi göstermiyor.",
+  "title": "Turşu Emojisi: Kopyala Yapıştır 🫝, Emoji 18.0'da Kesinleşti",
+  "meta_description": "Turşu (🫝, U+1FADD), 16 Eylül 2026'da Unicode 18.0 ile yayımlanan Emoji 18.0'da kesinleşti. Kod noktası başlangıçta Apple Core'a ayrılmıştı, sonra yeniden atandı. 25 Eylül 2026 itibarıyla hiçbir telefon ya da bilgisayar onu varsayılan olarak göstermiyor.",
   "canonical": "https://ultratextgen.com/tr/symbol/tursu-emojisi/",
   "breadcrumb": "Turşu Emojisi",
   "hero_h1": "Turşu Emojisi",
-  "hero_tagline": "Salatalıktan ve patlıcandan ayrı, tam bir turşu (kornişon) — Eylül 2026'da beklenen Unicode 18.0 ile gelecek Emoji 18.0 için taslak. Yalnızca taslak: hiçbir yazı tipi henüz göstermiyor. Yine de kod noktasını kopyalayabilirsin.",
-  "intro": "Turşu (🫝, U+1FADD), Eylül 2026'da kesinleşmesi beklenen Unicode 18.0'ın emoji karşılığı Emoji 18.0 için taslak hâline getirilmiş bir aday emojidir. Kod noktasının sıra dışı bir geçmişi var: U+1FADD başlangıçta Emoji 17.0 taslak döngüsünde önerilen bir \"Elma Kabuğu\" (Apple Core) emojisi için ayrılmıştı; bu öneri ertelendi ve Unicode, boşalan yeri 18.0 döngüsü için Turşu'ya yeniden atadı. Tam bir turşuyu (turşu kornişonu) betimler, en sık şakayla birlikte anıldığı mevcut Salatalık ve Patlıcan emojilerinden ayrı bir karakterdir — teknoloji basınının yorum bölümleri \"o turşu interneti çökertecek\"ten \"Patlıcan'dan çok iş çalacak\" spekülasyonlarına kadar her şeyi öne sürdü. Hâlâ bir taslak olduğu için hiçbir işletim sistemi, klavye ya da yazı tipi şu anda bunu göstermiyor; Emoji 18.0 onaylanıp platformlar desteği yayınlayana kadar boş bir kutu ya da yer tutucu bir glif bekle.",
+  "hero_tagline": "Salatalıktan ve patlıcandan ayrı, tam bir turşu (kornişon), 16 Eylül 2026'dan beri Emoji 18.0'da kesin. 25 Eylül 2026 itibarıyla hiçbir telefon ya da bilgisayar onu varsayılan olarak göstermiyor, ama kod noktasını şimdiden kopyalayabilirsin.",
+  "intro": "Turşu (🫝, U+1FADD), Unicode 18.0'ın emoji karşılığı Emoji 18.0'daki dokuz yeni emojiden biridir; ikisi de 16 Eylül 2026'da yayımlandı. Kod noktasının sıra dışı bir geçmişi var: U+1FADD başlangıçta Emoji 17.0 taslak döngüsünde önerilen bir \"Elma Kabuğu\" (Apple Core) emojisi için ayrılmıştı; bu öneri ertelendi ve Unicode, boşalan yeri 18.0 döngüsü için Turşu'ya yeniden atadı. Eylül 2026'ya kadar taslak bir adaydı; Unicode 18.0'ın emoji verileri artık U+1FADD'yi tam nitelikli \"pickle\" olarak listeliyor. Tam bir turşuyu (turşu kornişonu) betimler, en sık şakayla birlikte anıldığı mevcut Salatalık ve Patlıcan emojilerinden ayrı bir karakterdir: teknoloji basınının yorum bölümleri \"o turşu interneti çökertecek\"ten \"Patlıcan'dan çok iş çalacak\" spekülasyonlarına kadar her şeyi öne sürdü. Kesinleşmiş olması klavyende olduğu anlamına gelmiyor. Google tasarımını Noto Color Emoji yazı tipinde yayımladı, ama 25 Eylül 2026 itibarıyla hiçbir işletim sistemi, klavye ya da sistem emoji yazı tipi onu sunmuyor; platformun Emoji 18.0 desteği gelene kadar boş bir kutu ya da yer tutucu bir glif bekle.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
+  "sources": "Unicode 18.0'ın <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> veri dosyası U+1FADD'yi Emoji 18.0'ın tam nitelikli bir emojisi olan \"pickle\" olarak listeliyor ve Unicode Konsorsiyumu'nun <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">Unicode 18.0 duyurusu</a> yayın tarihini 16 Eylül 2026 olarak veriyor. <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">Emojipedia'nın Unicode 18.0 raporu</a>, Google'ın yeni emojiler için Noto Color Emoji tasarımlarını ele alıyor.",
   "sections": [
     {
       "id": "pickle",
       "label": "Turşu",
       "h2": "Turşu Emojisi",
-      "intro": "Taslak karakterin kendisi — hiçbir yazı tipi henüz gösteremese de bugün kod noktası olarak kopyalanabilir.",
+      "intro": "Emoji 18.0 karakterinin kendisi: kod noktasını bugün kopyala, telefonun ya da bilgisayarın Emoji 18.0'ı desteklediği anda turşu olarak görünür.",
       "symbols": [
         {
           "char": "🫝",
-          "label": "Pickle (taslak, U+1FADD)"
+          "label": "Pickle (U+1FADD, Emoji 18.0)"
         }
       ]
     },
@@ -47,21 +48,21 @@
     },
     {
       "id": "fellow-candidates",
-      "label": "Diğer Taslak Adaylar",
-      "h2": "Diğer Emoji 18.0 Taslak Adayları",
-      "intro": "Turşu, bu sürümde onaylanmamış tek karakter değil — bunlar da onunla birlikte taslak hâline getirildi ve Eylül 2026'daki karara kadar aynı şekilde görüntülenemiyor.",
+      "label": "Onunla Birlikte Yayımlananlar",
+      "h2": "Emoji 18.0'daki Diğer Yeni Emojiler",
+      "intro": "Turşu, bu sürümdeki tek yeni emoji değil: bunlar da 16 Eylül 2026'da onunla birlikte kesinleşti ve henüz hiçbir telefon ya da bilgisayar onları varsayılan olarak göstermiyor.",
       "symbols": [
         {
           "char": "🫫",
-          "label": "Cracking Face (taslak, U+1FAEB)"
+          "label": "Cracking Face (U+1FAEB, Emoji 18.0)"
         },
         {
           "char": "🫌",
-          "label": "Monarch Butterfly (taslak, U+1FACC)"
+          "label": "Monarch Butterfly (U+1FACC, Emoji 18.0)"
         },
         {
           "char": "🛙",
-          "label": "Lighthouse (taslak, U+1F6D9)"
+          "label": "Lighthouse (U+1F6D9, Emoji 18.0)"
         }
       ]
     }
@@ -75,22 +76,22 @@
     {
       "href": "/tr/symbol/catlayan-yuz-emojisi/",
       "title": "Çatlayan Yüz Emojisi",
-      "desc": "Halk oylamasını kazanan bir başka Emoji 18.0 taslak adayı."
+      "desc": "Emojipedia'nın halk oylamasında Turşu'yu geride bırakan Emoji 18.0 yüzü."
     },
     {
       "href": "/tr/symbol/meteor-emojisi/",
       "title": "Meteor Emojisi",
-      "desc": "Comet'in uzun süredir devam eden görüntüleme ayrışmasından ayrılan bir başka Emoji 18.0 taslak adayı."
+      "desc": "Comet'in uzun süredir devam eden görüntüleme ayrışmasından ayrılan, Emoji 18.0'da kesinleşmiş bir kayan yıldız."
     },
     {
       "href": "/tr/symbol/monark-kelebegi-emojisi/",
       "title": "Monark Kelebeği Emojisi",
-      "desc": "Platformlar arası bir Kelebek karışıklığını düzelten bir başka Emoji 18.0 taslak adayı."
+      "desc": "Platformlar arası bir Kelebek karışıklığını düzelten, Emoji 18.0'da kesinleşmiş bir emoji."
     },
     {
       "href": "/tr/symbol/basparmak-isareti-emojisi/",
       "title": "Baş Parmak İşareti Emojisi",
-      "desc": "Onay değil, yön göstermek için tasarlanmış bir başka Emoji 18.0 taslak çifti."
+      "desc": "Onay değil, yön göstermek için tasarlanmış, Emoji 18.0'da kesinleşmiş bir çift."
     }
   ],
   "hreflang": [
