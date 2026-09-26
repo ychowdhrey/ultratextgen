@@ -2,7 +2,7 @@
   "slug": "sinal-do-dirham",
   "lang": "pt",
   "page_type": "symbol",
-  "title": "Sinal do Dirham: Copiar e Colar ⃃ — o Novo Símbolo Monetário dos EAU, Congelado para o Unicode 18.0",
+  "title": "Sinal do Dirham dos EAU: Copiar e Colar ⃃, Definitivo no Unicode 18.0",
   "meta_description": "O sinal do dirham dos EAU (⃃, U+20C3) é definitivo no Unicode 18.0 desde 16 de setembro de 2026, mas ainda sem tecla própria. Veja seu código, história e como desenvolvedores já o usam hoje.",
   "canonical": "https://ultratextgen.com/pt/symbol/sinal-do-dirham/",
   "breadcrumb": "Sinal do Dirham",
@@ -10,7 +10,7 @@
   "hero_tagline": "O novo símbolo monetário do Banco Central dos Emirados Árabes Unidos, com o código U+20C3, publicado no Unicode 18.0 em 16 de setembro de 2026, mas ainda impossível de digitar em qualquer teclado.",
   "intro": "O sinal do dirham (⃃, U+20C3) é o novo símbolo monetário do Banco Central dos Emirados Árabes Unidos, revelado em março de 2025 junto com uma marca complementar para o dirham digital. Foi submetido ao Consórcio Unicode para codificação, aprovado e publicado na versão beta pública do Unicode 18.0 em 27 de maio de 2026, ao lado dos sinais do rial omanense e do rufiyaa maldivo. O Unicode 18.0 o publicou como definitivo em 16 de setembro de 2026, com o nome permanente UAE DIRHAM SIGN. Só a publicação, porém, não coloca o símbolo num teclado: em 25 de setembro de 2026, nenhum sistema operacional, fonte do sistema ou método de entrada oferece suporte nativo, e a própria recomendação do guia de estilo do Banco Central dos EAU (a tecla numérica 6) é só isso, uma recomendação, até que os fabricantes de dispositivos ajam. Enquanto isso, desenvolvedores já construíram ferramentas reais em torno do código confirmado: um pacote npm de código aberto, uma web font e componentes para CSS, React, Vue, Angular e Svelte (publicados como «dirham» no npm e no GitHub) permitem codificar o caractere correto hoje, por meio de uma camada de renderização temporária, pensada para ser descartada assim que o suporte nativo do sistema operacional chegar.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-09-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
   "home_url": "https://ultratextgen.com/pt/",
   "crumb_home": "Início",
@@ -30,6 +30,7 @@
       "href": "https://ultratextgen.com/symbol/dirham-sign/"
     }
   ],
+  "sources": "A publicação do Unicode 18.0 em 16 de setembro de 2026, com este caractere como U+20C3 UAE DIRHAM SIGN, é confirmada pelo <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">anúncio do Unicode 18.0</a> do Consórcio Unicode, e o <a href=\"https://tbreak.com/uae-dirham-symbol-unicode-18-0/\">site de tecnologia tbreak</a> informou em 23 de setembro de 2026 que Apple, Google, Samsung e Microsoft ainda precisavam adicionar o suporte.",
   "sections": [
     {
       "id": "dirham-sign",

@@ -2,15 +2,15 @@
   "slug": "berstendes-gesicht-emoji",
   "lang": "de",
   "page_type": "symbol",
-  "title": "Berstendes Gesicht Emoji: 🫫 kopieren & einfügen — der Emoji-18.0-Entwurf, der „Zusammengekniffene Augen“ ersetzt",
-  "meta_description": "Berstendes Gesicht (🫫, U+1FAEB) ist ein Entwurfs-Kandidat für Emoji 18.0, erwartet zusammen mit Unicode 18.0 im September 2026 — noch nicht genehmigt und von keiner Schriftart darstellbar. Hier erfährst du Vorgeschichte, Bedeutung und Status.",
+  "title": "Berstendes Gesicht Emoji: 🫫 kopieren & einfügen, final in Emoji 18.0",
+  "meta_description": "Berstendes Gesicht (🫫, U+1FAEB) ist seit dem 16. September 2026 final in Emoji 18.0, veröffentlicht mit Unicode 18.0, doch noch zeigt es kein Handy und kein Computer standardmäßig an. Hier erfährst du Vorgeschichte, Bedeutung und Status.",
   "canonical": "https://ultratextgen.com/de/symbol/berstendes-gesicht-emoji/",
   "breadcrumb": "Berstendes Gesicht Emoji",
   "hero_h1": "Berstendes Gesicht Emoji",
-  "hero_tagline": "Ein Gesicht mitten im Ausdruck, das unter Anspannung birst, im Entwurf für Emoji 18.0, erwartet zusammen mit Unicode 18.0 im September 2026. Nur ein Entwurf: noch nicht genehmigt, von keiner Schriftart darstellbar. Trotzdem kannst du den Codepoint schon jetzt kopieren.",
-  "intro": "Berstendes Gesicht (🫫, U+1FAEB) ist ein Kandidaten-Emoji im Entwurf für Emoji 18.0, das Emoji-Pendant zu Unicode 18.0, dessen finale Genehmigung für September 2026 erwartet wird. Es zeigt ein Gesicht mitten im Ausdruck mit einem sichtbaren Riss, von den meisten Berichten als emotionale Anspannung oder ein „Zerbrechen“ bei gleichzeitigem Lächeln gedeutet: passend zum Gen-Z-„Mir geht's gut“-Meme, bei dem jemand nach außen gefasst wirkt, während innen längst alles zu viel ist. Sein Codepoint hat eine besondere Vorgeschichte: U+1FAEB war ursprünglich für ein anderes vorgeschlagenes Emoji reserviert, „Gesicht mit zusammengekniffenen Augen“, bevor die Unicode Emoji Standard & Research Working Group im Januar 2026 empfahl, es durch Berstendes Gesicht zu ersetzen. Zum Zeitpunkt dieses Textes führt Unicodes eigene Pipeline-Dokumentation diesen Codepoint noch unter dem ursprünglichen Namen, markiert als ausstehende Namensänderung. Selbst der Name „Berstendes Gesicht“ ist also trotz breiter Presseberichterstattung noch nicht endgültig festgeschrieben. Weil es noch ein Entwurf ist, stellt derzeit kein Betriebssystem, keine Tastatur und keine Schriftart es dar; bis zur Genehmigung von Emoji 18.0 und der Umsetzung durch die Plattformen erscheint an dieser Stelle nur ein leeres Kästchen oder eine Platzhalter-Glyphe, voraussichtlich bis irgendwann 2027.",
+  "hero_tagline": "Ein Gesicht mitten im Ausdruck, das unter Anspannung birst, am 16. September 2026 in Emoji 18.0 zusammen mit Unicode 18.0 genehmigt. Final, aber noch zeigt es kein Handy und kein Computer standardmäßig an. Trotzdem kannst du den Codepoint schon jetzt kopieren.",
+  "intro": "Berstendes Gesicht (🫫, U+1FAEB) ist eines der neuen Emojis in Emoji 18.0, dem Emoji-Pendant zu Unicode 18.0, das am 16. September 2026 final wurde. Es zeigt ein Gesicht mitten im Ausdruck mit einem sichtbaren Riss, von den meisten Berichten als emotionale Anspannung oder ein „Zerbrechen“ bei gleichzeitigem Lächeln gedeutet: passend zum Gen-Z-„Mir geht's gut“-Meme, bei dem jemand nach außen gefasst wirkt, während innen längst alles zu viel ist. Sein Codepoint hat eine besondere Vorgeschichte: U+1FAEB war ursprünglich für ein anderes vorgeschlagenes Emoji reserviert, „Gesicht mit zusammengekniffenen Augen“, bevor die Unicode Emoji Standard & Research Working Group im Januar 2026 empfahl, es durch Berstendes Gesicht zu ersetzen. Der Name steht inzwischen fest: Die Zeichendaten von Unicode 18.0 führen U+1FAEB als CRACKING FACE. Final heißt aber noch nicht, dass es auf deinem Handy ist. Google hat sein Design in der Schrift Noto Color Emoji veröffentlicht, doch Stand 25. September 2026 zeigt es kein Handy und kein Computer standardmäßig an; bis die Plattformen Unterstützung ausliefern, erscheint nur ein leeres Kästchen oder eine Platzhalter-Glyphe. Emojipedia schätzt, auf Basis des Vorjahres, die ersten Updates im ersten Quartal 2027 (WhatsApp und Samsung), Apple um März oder April 2027 und Microsoft im Spätsommer oder Frühherbst 2027.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
   "home_url": "https://ultratextgen.com/de/",
   "crumb_home": "Startseite",
@@ -30,16 +30,17 @@
       "href": "https://ultratextgen.com/symbol/cracking-face-emoji/"
     }
   ],
+  "sources": "Der endgültige Name und Codepoint von Berstendes Gesicht, U+1FAEB CRACKING FACE, stehen in der Datendatei <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> von Unicode 18.0, veröffentlicht mit der <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">Ankündigung von Unicode 18.0</a> des Unicode-Konsortiums am 16. September 2026. <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">Emojipedia</a> berichtete über Googles Designs in Noto Color Emoji und veröffentlichte die Rollout-Schätzungen für 2027.",
   "sections": [
     {
       "id": "berstendes-gesicht",
       "label": "Berstendes Gesicht",
       "h2": "Berstendes Gesicht Emoji",
-      "intro": "Das Entwurfszeichen selbst: schon heute als Codepoint kopierbar, auch wenn noch keine Schriftart es darstellen kann.",
+      "intro": "Das finale Zeichen selbst: schon heute als Codepoint kopierbar, auch wenn es noch kein Handy und kein Computer standardmäßig anzeigt.",
       "symbols": [
         {
           "char": "🫫",
-          "label": "Berstendes Gesicht (Entwurf, U+1FAEB)"
+          "label": "Berstendes Gesicht (U+1FAEB, Emoji 18.0)"
         }
       ]
     },
@@ -69,21 +70,21 @@
     },
     {
       "id": "weitere-entwurfs-emojis",
-      "label": "Weitere Entwurfs-Kandidaten",
-      "h2": "Weitere Entwurfs-Kandidaten für Emoji 18.0",
-      "intro": "Berstendes Gesicht ist nicht das einzige noch nicht genehmigte Zeichen dieser Ausgabe: diese hier stehen im selben Entwurf und bleiben bis zur Entscheidung im September 2026 ebenso unsichtbar.",
+      "label": "Mit ihm veröffentlicht",
+      "h2": "Weitere neue Emojis in Emoji 18.0",
+      "intro": "Berstendes Gesicht ist nicht das einzige neue Emoji dieser Ausgabe: diese hier wurden am 16. September 2026 mit ihm genehmigt und sind auf den meisten Geräten vorerst ebenso unsichtbar.",
       "symbols": [
         {
           "char": "🫝",
-          "label": "Essiggurke (Entwurf, U+1FADD)"
+          "label": "Essiggurke (U+1FADD, Emoji 18.0)"
         },
         {
           "char": "🫌",
-          "label": "Monarchfalter (Entwurf, U+1FACC)"
+          "label": "Monarchfalter (U+1FACC, Emoji 18.0)"
         },
         {
           "char": "🛙",
-          "label": "Leuchtturm (Entwurf, U+1F6D9)"
+          "label": "Leuchtturm (U+1F6D9, Emoji 18.0)"
         }
       ]
     }
@@ -97,27 +98,27 @@
     {
       "href": "/de/symbol/essiggurke-emoji/",
       "title": "Essiggurke Emoji",
-      "desc": "Ein weiterer Entwurfs-Kandidat für Emoji 18.0 übernahm einen Codepoint-Platz, der ursprünglich für einen zurückgestellten Vorschlag reserviert war."
+      "desc": "Ein weiteres neues Emoji aus Emoji 18.0, das einen Codepoint-Platz übernahm, der ursprünglich für einen zurückgestellten Vorschlag reserviert war."
     },
     {
       "href": "/de/symbol/meteor-emoji/",
       "title": "Meteor Emoji",
-      "desc": "Ein weiterer Entwurfs-Kandidat für Emoji 18.0 löst Komets jahrelange Darstellungs-Spaltung auf."
+      "desc": "Ein weiteres neues Emoji aus Emoji 18.0, das Komets jahrelange Darstellungs-Spaltung auflöst."
     },
     {
       "href": "/de/symbol/monarchfalter-emoji/",
       "title": "Monarchfalter Emoji",
-      "desc": "Ein weiterer Entwurfs-Kandidat für Emoji 18.0 behebt eine plattformübergreifende Verwechslung beim Schmetterling-Emoji."
+      "desc": "Ein weiteres neues Emoji aus Emoji 18.0, das eine plattformübergreifende Verwechslung beim Schmetterling-Emoji behebt."
     },
     {
       "href": "/de/symbol/daumenzeichen-emoji/",
       "title": "Daumenzeichen Emoji",
-      "desc": "Ein weiteres Entwurfs-Paar für Emoji 18.0, richtungsweisendes Zeigen, keine Zustimmungsgeste."
+      "desc": "Ein weiteres neues Paar aus Emoji 18.0, für richtungsweisendes Zeigen, keine Zustimmungsgeste."
     },
     {
       "href": "/de/updates/unicode-18-emoji-abstimmung/",
       "title": "Unicode 18.0: Neue Emojis",
-      "desc": "Die vollständige Entwurfsliste aller 9 Kandidaten, sortiert nach öffentlicher Abstimmung."
+      "desc": "Alle 9 neuen Emojis der finalen Ausgabe, sortiert nach öffentlicher Abstimmung."
     }
   ]
 }

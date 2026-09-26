@@ -2,7 +2,7 @@
   "lang": "es",
   "slug": "signo-de-dirham",
   "page_type": "symbol",
-  "title": "Signo del Dirham: Copiar y Pegar ⃃ — el Nuevo Símbolo de Moneda de los Emiratos, Congelado para Publicarse en Unicode 18.0",
+  "title": "Signo del Dirham de los EAU: Copiar y Pegar ⃃, Definitivo en Unicode 18.0",
   "meta_description": "El signo del dirham emiratí (⃃, U+20C3) es definitivo en Unicode 18.0 desde el 16 de septiembre de 2026, pero todavía no está en ningún teclado. Su código, historia y cómo lo usan ya los desarrolladores.",
   "canonical": "https://ultratextgen.com/es/symbol/signo-de-dirham/",
   "breadcrumb": "Signo del Dirham",
@@ -10,13 +10,14 @@
   "hero_tagline": "El nuevo símbolo de moneda del Banco Central de los Emiratos, asignado a U+20C3 y publicado en Unicode 18.0 el 16 de septiembre de 2026, pero todavía sin poderse escribir en ningún teclado.",
   "intro": "El signo del dirham (⃃, U+20C3) es el nuevo símbolo de moneda del Banco Central de los Emiratos Árabes Unidos, presentado en marzo de 2025 junto a una marca complementaria para el dirham digital. Se envió al Consorcio Unicode para su codificación, se aprobó y se publicó en la beta pública de Unicode 18.0 el 27 de mayo de 2026, junto a los signos del rial omaní y del rufiyaa maldivo. Unicode 18.0 lo publicó como definitivo el 16 de septiembre de 2026, con el nombre permanente UAE DIRHAM SIGN. Que se publique no lo pone automáticamente en un teclado: a 25 de septiembre de 2026, ningún sistema operativo, fuente del sistema o método de entrada ofrece soporte nativo, y la recomendación del propio Banco Central de los Emiratos en su guía de estilo (la tecla del número 6) es solo eso, una recomendación, hasta que los fabricantes de dispositivos actúen. Mientras tanto, los desarrolladores ya han construido herramientas reales en torno al punto de código confirmado: un paquete npm de código abierto, una fuente web y componentes de CSS/React/Vue/Angular/Svelte (publicados como «dirham» en npm y GitHub) permiten codificar hoy el carácter correcto mediante una capa de renderizado temporal, pensada para retirarse en cuanto llegue el soporte nativo del sistema operativo.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-09-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
   "hreflang": [
     { "lang": "en", "href": "https://ultratextgen.com/symbol/dirham-sign/" },
     { "lang": "es", "href": "https://ultratextgen.com/es/symbol/signo-de-dirham/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/dirham-sign/" }
   ],
+  "sources": "La publicación de Unicode 18.0 el 16 de septiembre de 2026, con este carácter como U+20C3 UAE DIRHAM SIGN, la confirma el <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">anuncio de Unicode 18.0</a> del Consorcio Unicode, y la <a href=\"https://tbreak.com/uae-dirham-symbol-unicode-18-0/\">web tecnológica tbreak</a> informó el 23 de septiembre de 2026 de que Apple, Google, Samsung y Microsoft aún tenían que añadir compatibilidad. La compatibilidad del signo del rial saudí en Windows 11 figura en las <a href=\"https://support.microsoft.com/en-us/servicing/os/windows-11/2025/12/december-1-2025-kb5070311-os-builds-26200-7309-and-26100-7309-preview\">notas de la versión KB5070311</a> de Microsoft.",
   "sections": [
     {
       "id": "signo-de-dirham",

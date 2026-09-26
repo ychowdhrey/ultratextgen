@@ -2,7 +2,7 @@
   "slug": "dirhem-isareti",
   "lang": "tr",
   "page_type": "symbol",
-  "title": "Dirhem İşareti: Kopyala Yapıştır ⃃ — BAE'nin Yeni Para Birimi İşareti, Unicode 18.0 İçin Yayına Hazır",
+  "title": "BAE Dirhem İşareti: Kopyala Yapıştır ⃃, Unicode 18.0'da Kesinleşti",
   "meta_description": "BAE dirhem işareti (⃃, U+20C3) 16 Eylül 2026'dan beri Unicode 18.0'da kesinleşmiş durumda, ama henüz hiçbir klavyede yok. Kod noktası, tarihi ve geliştiricilerin bugün onu nasıl kullandığı.",
   "canonical": "https://ultratextgen.com/tr/symbol/dirhem-isareti/",
   "breadcrumb": "Dirhem İşareti",
@@ -10,8 +10,9 @@
   "hero_tagline": "BAE Merkez Bankası'nın U+20C3 kod noktasına atanan ve 16 Eylül 2026'da Unicode 18.0'da yayımlanan yeni para birimi işareti, ama henüz hiçbir klavyede yazılamıyor.",
   "intro": "Dirhem işareti (⃃, U+20C3), Birleşik Arap Emirlikleri Merkez Bankası'nın Mart 2025'te bir dijital dirhem işaretiyle birlikte tanıttığı yeni para birimi işaretidir. Unicode kodlaması için Unicode Konsorsiyumu'na sunuldu, onaylandı ve 27 Mayıs 2026'da Umman riyali ile Maldiv rufiyası işaretleriyle birlikte Unicode 18.0'ın halka açık betasında yayımlandı. Unicode 18.0 onu 16 Eylül 2026'da UAE DIRHAM SIGN kalıcı adıyla kesinleşmiş olarak yayımladı. Ancak yayına girmiş olmak tek başına bir klavyeye yerleşmesini sağlamıyor — 25 Eylül 2026 itibarıyla hiçbir işletim sistemi, sistem yazı tipi ya da girdi yöntemi yerel destek sunmuyor, BAE Merkez Bankası'nın kendi stil rehberinde önerdiği tuş (6 numaralı tuş) de cihaz üreticileri harekete geçene dek sadece bir öneri olarak kalıyor. Bu arada geliştiriciler, onaylanmış kod noktası etrafında gerçek araçlar inşa etmiş bile: açık kaynaklı bir npm paketi, bir web yazı tipi ve CSS/React/Vue/Angular/Svelte bileşenleri (npm ve GitHub'da \"dirham\" adıyla yayımlandı) doğru karakteri bugünden, yerel işletim sistemi desteği geldiği anda bırakılmak üzere tasarlanmış geçici bir görüntüleme katmanıyla kodlamanı sağlıyor.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-09-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
+  "sources": "Unicode 18.0'ın 16 Eylül 2026'da yayımlanması ve bu karakterin U+20C3 UAE DIRHAM SIGN adı, Unicode Konsorsiyumu'nun <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">Unicode 18.0 duyurusu</a> ile doğrulanıyor; <a href=\"https://tbreak.com/uae-dirham-symbol-unicode-18-0/\">teknoloji sitesi tbreak</a> ise 23 Eylül 2026'da Apple, Google, Samsung ve Microsoft'un desteği henüz eklemediğini bildirdi. Suudi riyali işaretinin Windows 11 desteği Microsoft'un <a href=\"https://support.microsoft.com/en-us/servicing/os/windows-11/2025/12/december-1-2025-kb5070311-os-builds-26200-7309-and-26100-7309-preview\">KB5070311 sürüm notları</a>nda yer alıyor.",
   "sections": [
     {
       "id": "dirham-sign",

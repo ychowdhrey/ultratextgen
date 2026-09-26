@@ -2,26 +2,27 @@
   "slug": "catlayan-yuz-emojisi",
   "lang": "tr",
   "page_type": "symbol",
-  "title": "Çatlayan Yüz Emojisi: Kopyala Yapıştır 🫫 — \"Kısık Gözler\"in Yerini Alan Emoji 18.0 Adayı",
-  "meta_description": "Çatlayan Yüz (🫫, U+1FAEB), Eylül 2026'da beklenen Emoji 18.0 için bir taslak aday — henüz onaylanmadı ve bugün hiçbir yazı tipi göstermiyor. Arka planı, anlamı ve durumu.",
+  "title": "Çatlayan Yüz Emojisi: Kopyala Yapıştır 🫫, Emoji 18.0'da Kesinleşti",
+  "meta_description": "Çatlayan Yüz (🫫, U+1FAEB), 16 Eylül 2026'da Unicode 18.0 ile yayımlanan Emoji 18.0'da kesinleşti, ama henüz hiçbir telefon ya da bilgisayar onu varsayılan olarak göstermiyor. Arka planı, anlamı ve durumu.",
   "canonical": "https://ultratextgen.com/tr/symbol/catlayan-yuz-emojisi/",
   "breadcrumb": "Çatlayan Yüz Emojisi",
   "hero_h1": "Çatlayan Yüz Emojisi",
-  "hero_tagline": "İfadenin ortasında, gerilim altında çatlayan bir yüz — Eylül 2026'da beklenen Unicode 18.0 ile birlikte gelecek Emoji 18.0 için taslak. Yalnızca taslak: henüz onaylanmadı ve hiçbir yazı tipi göstermiyor. Yine de kod noktasını kopyalayabilirsin.",
-  "intro": "Çatlayan Yüz (🫫, U+1FAEB), Eylül 2026'da kesinleşmesi beklenen Unicode 18.0'ın emoji karşılığı Emoji 18.0 için taslak hâline getirilmiş bir aday emojidir. Görünür bir çatlağı olan, ifadenin ortasındaki bir yüzü betimler; çoğu kaynak bunu duygusal gerilim ya da gülümserken içten içe \"kırılma\" olarak okuyor — birinin dışarıdan sakin görünürken içeriden bunalmış olduğu, Z kuşağının \"iyiyim\" mim kültürüne uygun bir ifade. Kod noktasının belirli bir geçmişi var: U+1FAEB başlangıçta önerilen farklı bir emoji olan \"Kısık Gözlü Yüz\" için ayrılmıştı, ta ki Unicode Emoji Standardı ve Araştırma Çalışma Grubu Ocak 2026'da bunun yerine Çatlayan Yüz'ü önerene kadar. Bu yazının kaleme alındığı sırada Unicode'un kendi süreç belgeleri bu kod noktasını hâlâ eski adıyla listeliyor ve bir ad değişikliği kararını beklediğini işaretliyor — bu da yaygın basın kapsamı çoktan \"Çatlayan Yüz\" adını kullansa bile, bu adın henüz tam olarak kesinleşmediği anlamına geliyor. Hâlâ bir taslak olduğu için hiçbir işletim sistemi, klavye ya da yazı tipi şu anda bunu göstermiyor; Emoji 18.0 onaylanıp platformlar desteği yayınlayana kadar, muhtemelen 2027 civarında, boş bir kutu ya da yer tutucu bir glif bekle.",
+  "hero_tagline": "İfadenin ortasında, gerilim altında çatlayan bir yüz — 16 Eylül 2026'da Unicode 18.0 ile birlikte Emoji 18.0'da onaylandı. Kesinleşti, ama henüz hiçbir telefon ya da bilgisayar onu varsayılan olarak göstermiyor. Yine de kod noktasını kopyalayabilirsin.",
+  "intro": "Çatlayan Yüz (🫫, U+1FAEB), 16 Eylül 2026'da kesinleşen Unicode 18.0'ın emoji karşılığı Emoji 18.0'ın yeni emojilerinden biridir. Görünür bir çatlağı olan, ifadenin ortasındaki bir yüzü betimler; çoğu kaynak bunu duygusal gerilim ya da gülümserken içten içe \"kırılma\" olarak okuyor — birinin dışarıdan sakin görünürken içeriden bunalmış olduğu, Z kuşağının \"iyiyim\" mim kültürüne uygun bir ifade. Kod noktasının belirli bir geçmişi var: U+1FAEB başlangıçta önerilen farklı bir emoji olan \"Kısık Gözlü Yüz\" için ayrılmıştı, ta ki Unicode Emoji Standardı ve Araştırma Çalışma Grubu Ocak 2026'da bunun yerine Çatlayan Yüz'ü önerene kadar. Ad artık kesinleşti: Unicode 18.0'ın karakter verileri U+1FAEB'yi CRACKING FACE olarak listeliyor. Ama kesinleşmiş olmak telefonunda olmakla aynı şey değil. Google tasarımını Noto Color Emoji yazı tipinde yayımladı, ancak 25 Eylül 2026 itibarıyla hiçbir telefon ya da bilgisayar onu varsayılan olarak göstermiyor; platformlar desteği yayınlayana kadar boş bir kutu ya da yer tutucu bir glif bekle. Emojipedia, geçen yılın takvimine dayanarak ilk güncellemeleri 2027'nin ilk çeyreğinde (WhatsApp ve Samsung), Apple'ı Mart ya da Nisan 2027 civarında, Microsoft'u ise 2027 yaz sonu ya da sonbahar başında tahmin ediyor.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
+  "sources": "Çatlayan Yüz'ün kesin adı ve kod noktası, U+1FAEB CRACKING FACE, Unicode 18.0'ın <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> veri dosyasında yer alıyor; dosya, Unicode Konsorsiyumu'nun <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">Unicode 18.0 duyurusu</a> ile birlikte 16 Eylül 2026'da yayımlandı. <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">Emojipedia</a>, Google'ın Noto Color Emoji tasarımlarını aktardı ve 2027 dağıtım tahminlerini yayımladı.",
   "sections": [
     {
       "id": "cracking-face",
       "label": "Çatlayan Yüz",
       "h2": "Çatlayan Yüz Emojisi",
-      "intro": "Taslak karakterin kendisi — hiçbir yazı tipi henüz gösteremese de bugün kod noktası olarak kopyalanabilir.",
+      "intro": "Kesinleşmiş karakterin kendisi — hiçbir telefon ya da bilgisayar henüz varsayılan olarak göstermese de bugün kod noktası olarak kopyalanabilir.",
       "symbols": [
         {
           "char": "🫫",
-          "label": "Cracking Face (taslak, U+1FAEB)"
+          "label": "Cracking Face (U+1FAEB, Emoji 18.0)"
         }
       ]
     },
@@ -33,15 +34,15 @@
       "symbols": [
         {
           "char": "😬",
-          "label": "Grimacing Face"
+          "label": "Yüzünü Buruşturan Yüz"
         },
         {
           "char": "🫠",
-          "label": "Melting Face"
+          "label": "Eriyen Yüz"
         },
         {
           "char": "🥴",
-          "label": "Woozy Face"
+          "label": "Sersem Yüz"
         },
         {
           "char": "🫪",
@@ -51,21 +52,21 @@
     },
     {
       "id": "fellow-candidates",
-      "label": "Diğer Taslak Adaylar",
-      "h2": "Diğer Emoji 18.0 Taslak Adayları",
-      "intro": "Çatlayan Yüz, bu sürümde onaylanmamış tek karakter değil — bunlar da onunla birlikte taslak hâline getirildi ve Eylül 2026'daki karara kadar aynı şekilde görüntülenemiyor.",
+      "label": "Onunla Birlikte Yayımlananlar",
+      "h2": "Emoji 18.0'daki Diğer Yeni Emojiler",
+      "intro": "Çatlayan Yüz, bu sürümdeki tek yeni emoji değil — bunlar da 16 Eylül 2026'da onunla birlikte onaylandı ve şimdilik çoğu cihazda aynı şekilde görüntülenemiyor.",
       "symbols": [
         {
           "char": "🫝",
-          "label": "Pickle (taslak, U+1FADD)"
+          "label": "Pickle (U+1FADD, Emoji 18.0)"
         },
         {
           "char": "🫌",
-          "label": "Monarch Butterfly (taslak, U+1FACC)"
+          "label": "Monarch Butterfly (U+1FACC, Emoji 18.0)"
         },
         {
           "char": "🛙",
-          "label": "Lighthouse (taslak, U+1F6D9)"
+          "label": "Lighthouse (U+1F6D9, Emoji 18.0)"
         }
       ]
     }
@@ -79,22 +80,22 @@
     {
       "href": "/tr/symbol/tursu-emojisi/",
       "title": "Turşu Emojisi",
-      "desc": "Ertelenen bir Apple Core önerisinden devralınmış bir başka Emoji 18.0 taslak adayı."
+      "desc": "Ertelenen bir Apple Core önerisinden devralınmış bir başka yeni Emoji 18.0 emojisi."
     },
     {
       "href": "/tr/symbol/meteor-emojisi/",
       "title": "Meteor Emojisi",
-      "desc": "Comet'in uzun süredir devam eden görüntüleme ayrışmasından ayrılan bir başka Emoji 18.0 taslak adayı."
+      "desc": "Comet'in uzun süredir devam eden görüntüleme ayrışmasından ayrılan bir başka yeni Emoji 18.0 emojisi."
     },
     {
       "href": "/tr/symbol/monark-kelebegi-emojisi/",
       "title": "Monark Kelebeği Emojisi",
-      "desc": "Platformlar arası bir Kelebek karışıklığını düzelten bir başka Emoji 18.0 taslak adayı."
+      "desc": "Platformlar arası bir Kelebek karışıklığını düzelten bir başka yeni Emoji 18.0 emojisi."
     },
     {
       "href": "/tr/symbol/basparmak-isareti-emojisi/",
       "title": "Baş Parmak İşareti Emojisi",
-      "desc": "Onay değil, yön göstermek için tasarlanmış bir başka Emoji 18.0 taslak çifti."
+      "desc": "Onay değil, yön göstermek için tasarlanmış bir başka yeni Emoji 18.0 çifti."
     }
   ],
   "hreflang": [
