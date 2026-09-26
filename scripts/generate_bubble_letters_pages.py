@@ -185,15 +185,6 @@ CONFIG_TEMPLATE = """  <script>
       variantFamily: "bubble",
       glyphStyle: "Ultra Bubble",
       nameDemo: "Mia",
-      howto: {
-        title: "How to draw a bubble {ch}",
-        steps: [
-          "Lightly pencil the plain {ch} as a thin skeleton.",
-          "Draw a rounded, puffy outline about a finger-width around every stroke.",
-          "Round off the corners, erase the skeleton, then ink and color it in."
-        ],
-        tip: "Tip: print the outline above and trace it a few times until the shape feels natural."
-      },
       initialChar: "__L__"
     };
   </script>"""
@@ -416,7 +407,8 @@ def render_spoke(spec, index):
             f"How do I draw a bubble letter {L} by hand?",
             f"{esc(draw)} Then erase the guide lines, ink the outline, and colour it in. "
             "Printing the outline above and tracing over it a few times is the quickest way to "
-            "learn the shape.",
+            'learn the shape, and our <a href="/learn/how-to-draw-bubble-letters/">guide to '
+            "drawing bubble letters</a> shows each step animated.",
             None,
         ),
         (

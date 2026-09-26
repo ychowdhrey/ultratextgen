@@ -2981,6 +2981,8 @@ PAGES.update({
     P(m_doc), K_PRINT),
 "learn-dot-to-dots": ("Dot-to-Dots & Pencil Control", "A progression guide from many dots to freehand",
     P(m_typo, sample="•••", size=92, label="pencil control"), K_PRINT),
+"learn-how-to-draw-bubble-letters": ("How to Draw Bubble Letters", "Skeleton, puffy outline, ink: three steps",
+    P(m_typo, sample="Hi", size=92, label="bubble letters"), K_PRINT),
 "learn-coloring-and-fine-motor": ("Coloring Letters", "Fine motor skills through letter-shaped coloring",
     P(m_typo, sample="Aa", size=92, label="fine motor"), K_PRINT),
 "learn-handwriting": ("Teaching Handwriting", "A practical, stage-by-stage guide — readiness to cursive",
