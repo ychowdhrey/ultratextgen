@@ -2,16 +2,17 @@
   "slug": "emoji-pollice-direzionale",
   "lang": "it",
   "page_type": "symbol",
-  "title": "Emoji Pollice Direzionale: Copia e Incolla 🫹 🫺 — la Coppia Gestuale Bozza di Unicode 18.0",
-  "meta_description": "Leftwards e Rightwards Thumb Sign (🫹 U+1FAF9, 🫺 U+1FAFA) sono candidate in bozza per Emoji 18.0, attese insieme a Unicode 18.0 a settembre 2026 — gesti direzionali, distinti da Pollice in Su/Giù. Non ancora approvate, nessun font le renderizza oggi.",
+  "title": "Emoji Pollice Direzionale: Copia e Incolla 🫹 🫺, Definitive in Emoji 18.0",
+  "meta_description": "Leftwards e Rightwards Thumb Sign (🫹 U+1FAF9, 🫺 U+1FAFA) sono definitive in Emoji 18.0 dal 16 settembre 2026: gesti direzionali, distinti da Pollice in Su/Giù. Al 25 settembre 2026 nessun telefono o computer le mostra di serie.",
   "canonical": "https://ultratextgen.com/it/symbol/emoji-pollice-direzionale/",
   "breadcrumb": "Emoji Pollice Direzionale",
   "hero_h1": "Emoji Pollice Direzionale (Sinistra e Destra)",
-  "hero_tagline": "Una coppia di gesti direzionali, non un altro segno di approvazione, in bozza per Emoji 18.0, attesa insieme a Unicode 18.0 a settembre 2026. Solo bozza: non ancora approvata, nessun font la renderizza. Tocca comunque per copiare ciascun codepoint.",
-  "intro": "Leftwards Thumb Sign (🫹, U+1FAF9) e Rightwards Thumb Sign (🫺, U+1FAFA) sono una coppia di emoji candidate in bozza per Emoji 18.0, la componente emoji di Unicode 18.0, attesa in versione definitiva a settembre 2026. Nonostante il nome, non si tratta di un altro gesto di approvazione accanto a Pollice in Su e Pollice in Giù: sono segni orizzontali, di puntamento, più vicini per funzione alle emoji Backhand Index Pointing Left/Right già esistenti che a un pollice verticale. La coppia risponde a una lamentela di lunga data della community: il repertorio gestuale di Unicode ha sempre favorito segni di approvazione verticali e orientati verso destra, senza un modo pulito per puntare un pollice \"verso questo\" contro \"verso quello\" in una risposta o in un confronto. Esiste un vero precedente per questa categoria: la proposta Pushing Hand del 2021 aveva già stabilito i gesti direzionali della mano come filone legittimo oltre il semplice pollice-in-su di approvazione. Tra i due concetti, la coppia porterà 10 varianti di tono della pelle una volta approvata (cinque per ciascuna). Trattandosi ancora di bozze, nessun sistema operativo, tastiera o font le renderizza attualmente; aspettati un riquadro vuoto o un glifo segnaposto finché Emoji 18.0 non sarà approvata e le piattaforme non avranno implementato il supporto, probabilmente nel 2027.",
+  "hero_tagline": "Una coppia di gesti direzionali, non un altro segno di approvazione, definitiva in Emoji 18.0 insieme a Unicode 18.0 dal 16 settembre 2026. Al 25 settembre 2026 nessun telefono o computer la mostra di serie, ma puoi già copiare ciascun codepoint con un tocco.",
+  "intro": "Leftwards Thumb Sign (🫹, U+1FAF9) e Rightwards Thumb Sign (🫺, U+1FAFA) sono una coppia di nuove emoji di Emoji 18.0, la componente emoji di Unicode 18.0, diventata definitiva il 16 settembre 2026. Nonostante il nome, non si tratta di un altro gesto di approvazione accanto a Pollice in Su e Pollice in Giù: sono segni orizzontali, di puntamento, più vicini per funzione alle emoji Backhand Index Pointing Left/Right già esistenti che a un pollice verticale. La coppia risponde a una lamentela di lunga data della community: il repertorio gestuale di Unicode ha sempre favorito segni di approvazione verticali e orientati verso destra, senza un modo pulito per puntare un pollice \"verso questo\" contro \"verso quello\" in una risposta o in un confronto. Esiste un vero precedente per questa categoria: la proposta Pushing Hand del 2021 aveva già stabilito i gesti direzionali della mano come filone legittimo oltre il semplice pollice-in-su di approvazione. I dati emoji definitivi di Unicode assegnano a ciascun segno tutti e cinque i modificatori del tono della pelle, quindi la coppia conta 10 varianti di tono della pelle (cinque per ciascuna). Essere definitive le mette nello standard, non ancora sullo schermo. Google ha pubblicato i design di entrambe nel font Noto Color Emoji, ma al 25 settembre 2026 nessun sistema operativo, tastiera o font emoji di sistema le include, quindi aspettati un riquadro vuoto o un glifo segnaposto finché le piattaforme non implementeranno il supporto. Emojipedia stima, sulla base del calendario dello scorso anno, WhatsApp, Samsung e Google nel primo trimestre 2027, Apple intorno a marzo o aprile 2027 e Microsoft tra fine estate e inizio autunno 2027.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
+  "sources": "Entrambe le emoji, U+1FAF9 e U+1FAFA, compaiono con cinque varianti di tono della pelle ciascuna nel file di dati <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> di Unicode 18.0, pubblicato con l'<a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">annuncio di Unicode 18.0</a> dell'Unicode Consortium il 16 settembre 2026. <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">Emojipedia</a> ha segnalato i design di Google in Noto Color Emoji e pubblicato le stime per il 2027 citate sopra.",
   "home_url": "https://ultratextgen.com/it/",
   "crumb_home": "Home",
   "crumb_library": "Simboli",
@@ -35,15 +36,15 @@
       "id": "thumb-sign",
       "label": "Pollice Direzionale",
       "h2": "Pollice Direzionale Sinistra e Destra",
-      "intro": "I due caratteri in bozza: copiabili già oggi come codepoint, anche se nessun font può ancora renderizzarli.",
+      "intro": "I due caratteri definitivi: copiabili già oggi come codepoint, anche se nessun telefono o computer li mostra ancora di serie.",
       "symbols": [
         {
           "char": "🫹",
-          "label": "Leftwards Thumb Sign (bozza, U+1FAF9)"
+          "label": "Leftwards Thumb Sign (U+1FAF9, Emoji 18.0)"
         },
         {
           "char": "🫺",
-          "label": "Rightwards Thumb Sign (bozza, U+1FAFA)"
+          "label": "Rightwards Thumb Sign (U+1FAFA, Emoji 18.0)"
         }
       ]
     },
@@ -73,25 +74,25 @@
     },
     {
       "id": "fellow-candidates",
-      "label": "Altre Candidate in Bozza",
-      "h2": "Altre Candidate in Bozza di Emoji 18.0",
-      "intro": "Thumb Sign non è l'unico carattere non approvato di questa release: questi sono in bozza insieme a lei, ugualmente non renderizzati fino alla decisione di settembre 2026.",
+      "label": "Pubblicate con Loro",
+      "h2": "Altre Nuove Emoji di Emoji 18.0",
+      "intro": "Thumb Sign non è l'unico carattere nuovo di questa release: questi sono stati approvati insieme a lei il 16 settembre 2026 e per ora restano ugualmente invisibili sulla maggior parte dei dispositivi.",
       "symbols": [
         {
           "char": "🫫",
-          "label": "Cracking Face (bozza, U+1FAEB): ha vinto il voto pubblico"
+          "label": "Cracking Face (U+1FAEB, Emoji 18.0): ha vinto il voto pubblico"
         },
         {
           "char": "🫝",
-          "label": "Pickle (bozza, U+1FADD)"
+          "label": "Pickle (U+1FADD, Emoji 18.0)"
         },
         {
           "char": "🪋",
-          "label": "Meteor (bozza, U+1FA8B)"
+          "label": "Meteor (U+1FA8B, Emoji 18.0)"
         },
         {
           "char": "🫌",
-          "label": "Monarch Butterfly (bozza, U+1FACC)"
+          "label": "Monarch Butterfly (U+1FACC, Emoji 18.0)"
         }
       ]
     }
@@ -105,17 +106,17 @@
     {
       "href": "/it/symbol/emoji-volto-incrinato/",
       "title": "Emoji Volto Incrinato",
-      "desc": "La candidata in bozza di Emoji 18.0 che ha vinto il voto pubblico."
+      "desc": "La nuova emoji di Emoji 18.0 che ha vinto il voto pubblico."
     },
     {
       "href": "/it/symbol/emoji-cetriolino/",
       "title": "Emoji Cetriolino",
-      "desc": "Un'altra candidata in bozza di Emoji 18.0, riassegnata da una proposta Apple Core rinviata."
+      "desc": "Un'altra nuova emoji di Emoji 18.0, riassegnata da una proposta Apple Core rinviata."
     },
     {
       "href": "/updates/unicode-18-most-anticipated-emoji/",
       "title": "Unicode 18.0's New Emoji",
-      "desc": "L'intero elenco delle 9 candidate in bozza, classificate per voto pubblico."
+      "desc": "Tutte le 9 nuove emoji della release definitiva, classificate per voto pubblico."
     }
   ]
 }

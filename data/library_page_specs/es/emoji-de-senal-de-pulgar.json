@@ -2,16 +2,17 @@
   "lang": "es",
   "slug": "emoji-de-senal-de-pulgar",
   "page_type": "symbol",
-  "title": "Emoji de Señal de Pulgar: Copiar y Pegar 🫹 🫺 — el Par Direccional Candidato de Unicode 18.0",
-  "meta_description": "Señal de Pulgar hacia la Izquierda y hacia la Derecha (🫹 U+1FAF9, 🫺 U+1FAFA) son candidatos en borrador para Emoji 18.0, previstos junto a Unicode 18.0 en septiembre de 2026 — gestos direccionales de señalar, distintos de Pulgar Arriba/Abajo. Aún no aprobados, y ninguna fuente los renderiza todavía.",
+  "title": "Emoji de Señal de Pulgar: Copiar y Pegar 🫹 🫺, Definitivo en Emoji 18.0",
+  "meta_description": "Señal de Pulgar hacia la Izquierda y hacia la Derecha (🫹 U+1FAF9, 🫺 U+1FAFA) son definitivos en Emoji 18.0 desde el 16 de septiembre de 2026: gestos direccionales de señalar, distintos de Pulgar Arriba/Abajo. A 25 de septiembre de 2026, ningún móvil ni ordenador los muestra de serie.",
   "canonical": "https://ultratextgen.com/es/symbol/emoji-de-senal-de-pulgar/",
   "breadcrumb": "Emoji de Señal de Pulgar",
   "hero_h1": "Emoji de Señal de Pulgar, Izquierda y Derecha",
-  "hero_tagline": "Un par direccional para señalar, no otro gesto de aprobación — en fase de borrador para Emoji 18.0, previsto junto a Unicode 18.0 en septiembre de 2026. Solo borrador: todavía no aprobado, y ninguna fuente lo renderiza. Haz clic para copiar cualquiera de los dos códigos igualmente.",
-  "intro": "Señal de Pulgar hacia la Izquierda (🫹, U+1FAF9) y Señal de Pulgar hacia la Derecha (🫺, U+1FAFA) forman un par de emoji candidatos en fase de borrador para Emoji 18.0, la actualización de emoji que acompaña a Unicode 18.0 y que se espera finalizar en septiembre de 2026. Pese al nombre, no son otro gesto de aprobación junto a Pulgar Arriba y Pulgar Abajo — son señales horizontales, de señalar, más cercanas en su función a los emoji ya existentes de Mano hacia Atrás Señalando a la Izquierda/Derecha que a un pulgar vertical. El par responde a una queja recurrente de la comunidad: el repertorio de gestos de Unicode siempre se ha inclinado hacia signos de aprobación verticales y diestros, sin una forma clara de señalar con el pulgar «a este» frente a «a aquel» dentro de una respuesta o una comparación. Hay un precedente real para esta categoría — la propuesta de la Mano Empujando de 2021 ya estableció los gestos direccionales de mano como un carril legítimo de emoji más allá del simple pulgar de aprobación. Entre los dos conceptos, el par lleva 10 variantes de tono de piel una vez aprobado (cinco cada uno). Como todavía son borradores, ningún sistema operativo, teclado o fuente los renderiza hoy; espera un cuadro en blanco o un glifo de marcador de posición hasta que se apruebe Emoji 18.0 y las plataformas incorporen soporte, probablemente en algún momento de 2027.",
+  "hero_tagline": "Un par direccional para señalar, no otro gesto de aprobación, definitivo en Emoji 18.0 junto a Unicode 18.0 desde el 16 de septiembre de 2026. A 25 de septiembre de 2026, ningún móvil ni ordenador lo muestra de serie, pero ya puedes copiar cualquiera de los dos códigos con un clic.",
+  "intro": "Señal de Pulgar hacia la Izquierda (🫹, U+1FAF9) y Señal de Pulgar hacia la Derecha (🫺, U+1FAFA) forman un par de emoji nuevos de Emoji 18.0, la actualización de emoji que acompaña a Unicode 18.0, definitiva desde el 16 de septiembre de 2026. Pese al nombre, no son otro gesto de aprobación junto a Pulgar Arriba y Pulgar Abajo — son señales horizontales, de señalar, más cercanas en su función a los emoji ya existentes de Mano hacia Atrás Señalando a la Izquierda/Derecha que a un pulgar vertical. El par responde a una queja recurrente de la comunidad: el repertorio de gestos de Unicode siempre se ha inclinado hacia signos de aprobación verticales y diestros, sin una forma clara de señalar con el pulgar «a este» frente a «a aquel» dentro de una respuesta o una comparación. Hay un precedente real para esta categoría — la propuesta de la Mano Empujando de 2021 ya estableció los gestos direccionales de mano como un carril legítimo de emoji más allá del simple pulgar de aprobación. Los datos de emoji definitivos de Unicode dan a cada señal los cinco modificadores de tono de piel, así que el par suma 10 variantes de tono de piel (cinco cada una). Ser definitivos los mete en el estándar, pero todavía no en la pantalla. Google ha publicado diseños de ambos en su fuente Noto Color Emoji, pero a 25 de septiembre de 2026 ningún sistema operativo, teclado ni fuente de emoji del sistema los incluye, así que espera un cuadro en blanco o un glifo de marcador de posición hasta que las plataformas incorporen soporte. Emojipedia estima, a partir del calendario del año pasado, WhatsApp, Samsung y Google en el primer trimestre de 2027, Apple hacia marzo o abril de 2027 y Microsoft entre finales del verano y principios del otoño de 2027.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
+  "sources": "Ambas señales, U+1FAF9 y U+1FAFA, figuran con cinco variantes de tono de piel cada una en el archivo de datos <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> de Unicode 18.0, publicado con el <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">anuncio de Unicode 18.0</a> del Consorcio Unicode el 16 de septiembre de 2026. <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">Emojipedia</a> informó de los diseños de Google en Noto Color Emoji y publicó las estimaciones para 2027 citadas arriba.",
   "hreflang": [
     { "lang": "en", "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/" },
     { "lang": "es", "href": "https://ultratextgen.com/es/symbol/emoji-de-senal-de-pulgar/" },
@@ -22,10 +23,10 @@
       "id": "senal-de-pulgar",
       "label": "Señal de Pulgar",
       "h2": "Señal de Pulgar hacia la Izquierda y hacia la Derecha",
-      "intro": "Los dos caracteres en borrador propiamente dichos — copiables hoy como códigos, aunque ninguna fuente pueda renderizarlos todavía.",
+      "intro": "Los dos caracteres definitivos propiamente dichos: copiables hoy como códigos, aunque ningún móvil ni ordenador los muestre todavía de serie.",
       "symbols": [
-        { "char": "🫹", "label": "Señal de Pulgar hacia la Izquierda (borrador, U+1FAF9)" },
-        { "char": "🫺", "label": "Señal de Pulgar hacia la Derecha (borrador, U+1FAFA)" }
+        { "char": "🫹", "label": "Señal de Pulgar hacia la Izquierda (U+1FAF9, Emoji 18.0)" },
+        { "char": "🫺", "label": "Señal de Pulgar hacia la Derecha (U+1FAFA, Emoji 18.0)" }
       ]
     },
     {
@@ -42,14 +43,14 @@
     },
     {
       "id": "otros-candidatos",
-      "label": "Otros Candidatos en Borrador",
-      "h2": "Otros Candidatos en Borrador de Emoji 18.0",
-      "intro": "Señal de Pulgar no es el único carácter sin aprobar de esta versión — estos están en borrador junto a él, igual de sin renderizar hasta la decisión de septiembre de 2026.",
+      "label": "Publicados con Ellos",
+      "h2": "Otros Emoji Nuevos de Emoji 18.0",
+      "intro": "Señal de Pulgar no es el único carácter nuevo de esta versión: estos se aprobaron junto a él el 16 de septiembre de 2026 y, por ahora, tampoco se ven en la mayoría de dispositivos.",
       "symbols": [
-        { "char": "🫫", "label": "Cara Agrietada (borrador, U+1FAEB): ganó la votación pública" },
-        { "char": "🫝", "label": "Pepinillo (borrador, U+1FADD)" },
-        { "char": "🪋", "label": "Meteoro (borrador, U+1FA8B)" },
-        { "char": "🫌", "label": "Mariposa Monarca (borrador, U+1FACC)" }
+        { "char": "🫫", "label": "Cara Agrietada (U+1FAEB, Emoji 18.0): ganó la votación pública" },
+        { "char": "🫝", "label": "Pepinillo (U+1FADD, Emoji 18.0)" },
+        { "char": "🪋", "label": "Meteoro (U+1FA8B, Emoji 18.0)" },
+        { "char": "🫌", "label": "Mariposa Monarca (U+1FACC, Emoji 18.0)" }
       ]
     }
   ],
@@ -62,17 +63,17 @@
     {
       "href": "/es/symbol/emoji-de-cara-agrietada/",
       "title": "Emoji de Cara Agrietada",
-      "desc": "El candidato en borrador de Emoji 18.0 que ganó la votación pública."
+      "desc": "El emoji nuevo de Emoji 18.0 que ganó la votación pública."
     },
     {
       "href": "/es/symbol/emoji-de-pepinillo/",
       "title": "Emoji de Pepinillo",
-      "desc": "Otro candidato en borrador de Emoji 18.0 — reasignado de una propuesta aplazada de Apple Core."
+      "desc": "Otro emoji nuevo de Emoji 18.0, reasignado de una propuesta aplazada de Apple Core."
     },
     {
       "href": "/es/updates/unicode-18-nuevos-emojis-votacion/",
       "title": "Los Nuevos Emoji de Unicode 18.0",
-      "desc": "La lista completa de 9 candidatos en borrador, ordenados por votación pública."
+      "desc": "Los 9 emoji nuevos de la versión definitiva, ordenados por votación pública."
     }
   ]
 }

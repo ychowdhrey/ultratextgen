@@ -2,16 +2,17 @@
   "slug": "emoji-signe-du-pouce",
   "lang": "fr",
   "page_type": "symbol",
-  "title": "Emoji Signe du Pouce : Copier-Coller 🫹 🫺 — la Paire Directionnelle Candidate d'Unicode 18.0",
-  "meta_description": "Leftwards et Rightwards Thumb Sign (🫹 U+1FAF9, 🫺 U+1FAFA) sont des candidats provisoires pour Emoji 18.0, attendus avec Unicode 18.0 en septembre 2026 — des gestes directionnels, distincts du pouce levé/baissé. Pas encore approuvés, et aucune police ne les affiche à ce jour.",
+  "title": "Emoji Signe du Pouce : Copier-Coller 🫹 🫺, Définitif dans Emoji 18.0",
+  "meta_description": "Leftwards et Rightwards Thumb Sign (🫹 U+1FAF9, 🫺 U+1FAFA) sont définitifs dans Emoji 18.0 depuis le 16 septembre 2026 : des gestes directionnels, distincts du pouce levé/baissé. Au 25 septembre 2026, aucun téléphone ni ordinateur ne les affiche par défaut.",
   "canonical": "https://ultratextgen.com/fr/symbol/emoji-signe-du-pouce/",
   "breadcrumb": "Emoji Signe du Pouce",
   "hero_h1": "Emoji Signe du Pouce (Gauche & Droite)",
-  "hero_tagline": "Une paire directionnelle, pas un nouveau geste d'approbation — provisoirement retenue pour Emoji 18.0, attendue avec Unicode 18.0 en septembre 2026. Encore à l'état de brouillon : pas encore approuvée, et aucune police ne l'affiche pour l'instant. Clique pour copier le code malgré tout.",
-  "intro": "Leftwards Thumb Sign (🫹, U+1FAF9) et Rightwards Thumb Sign (🫺, U+1FAFA) forment une paire d'emoji candidats provisoirement retenus pour Emoji 18.0, le volet emoji d'Unicode 18.0, dont la finalisation est attendue en septembre 2026. Malgré leur nom, ce ne sont pas de nouveaux gestes d'approbation aux côtés du pouce levé et du pouce baissé — ce sont des signes horizontaux, directionnels, plus proches dans leur usage des emoji « main qui pointe à gauche/à droite » déjà existants que d'un pouce vertical. Cette paire répond à une plainte récurrente de la communauté : le répertoire de gestes d'Unicode a toujours penché vers des signes d'approbation verticaux et droitiers, sans moyen propre de pointer un pouce vers « celui-ci » plutôt que vers « celui-là » dans une réponse ou une comparaison. La catégorie a un vrai précédent — la proposition Pushing Hand de 2021 avait déjà établi les gestes de main directionnels comme un registre légitime d'emoji, au-delà du simple pouce levé d'approbation. À elles deux, ces esquisses porteront 10 variantes de teinte de peau une fois approuvées (cinq chacune). Comme il s'agit encore de brouillons, aucun système d'exploitation, clavier ou police n'affiche l'un ou l'autre aujourd'hui ; attends-toi à un carré vide ou à un glyphe de repli jusqu'à ce qu'Emoji 18.0 soit approuvé et que les plateformes déploient leur support, probablement courant 2027.",
+  "hero_tagline": "Une paire directionnelle, pas un nouveau geste d'approbation, définitive dans Emoji 18.0 avec Unicode 18.0 depuis le 16 septembre 2026. Au 25 septembre 2026, aucun téléphone ni ordinateur ne l'affiche par défaut, mais tu peux déjà copier chaque code d'un clic.",
+  "intro": "Leftwards Thumb Sign (🫹, U+1FAF9) et Rightwards Thumb Sign (🫺, U+1FAFA) forment une paire de nouveaux emoji d'Emoji 18.0, le volet emoji d'Unicode 18.0, devenu définitif le 16 septembre 2026. Malgré leur nom, ce ne sont pas de nouveaux gestes d'approbation aux côtés du pouce levé et du pouce baissé — ce sont des signes horizontaux, directionnels, plus proches dans leur usage des emoji « main qui pointe à gauche/à droite » déjà existants que d'un pouce vertical. Cette paire répond à une plainte récurrente de la communauté : le répertoire de gestes d'Unicode a toujours penché vers des signes d'approbation verticaux et droitiers, sans moyen propre de pointer un pouce vers « celui-ci » plutôt que vers « celui-là » dans une réponse ou une comparaison. La catégorie a un vrai précédent — la proposition Pushing Hand de 2021 avait déjà établi les gestes de main directionnels comme un registre légitime d'emoji, au-delà du simple pouce levé d'approbation. Les données emoji définitives d'Unicode attribuent à chaque signe les cinq modificateurs de teinte de peau : la paire compte donc 10 variantes de teinte de peau (cinq chacun). Être définitifs les place dans la norme, pas encore sur ton écran. Google a publié des dessins pour les deux dans sa police Noto Color Emoji, mais au 25 septembre 2026, aucun système d'exploitation, clavier ou police emoji système ne les intègre ; attends-toi à un carré vide ou à un glyphe de repli jusqu'à ce que les plateformes déploient leur support. Emojipedia estime, d'après le calendrier de l'an dernier, WhatsApp, Samsung et Google au premier trimestre 2027, Apple vers mars ou avril 2027 et Microsoft entre la fin de l'été et le début de l'automne 2027.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
+  "sources": "Les deux signes, U+1FAF9 et U+1FAFA, figurent avec cinq variantes de teinte de peau chacun dans le fichier de données <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> d'Unicode 18.0, publié avec l'<a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">annonce d'Unicode 18.0</a> du Consortium Unicode le 16 septembre 2026. <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">Emojipedia</a> a signalé les dessins de Google dans Noto Color Emoji et publié les estimations pour 2027 reprises plus haut.",
   "home_url": "https://ultratextgen.com/fr/",
   "crumb_home": "Accueil",
   "crumb_library": "Symboles",
@@ -35,15 +36,15 @@
       "id": "signe-du-pouce",
       "label": "Signe du Pouce",
       "h2": "Signe du Pouce Gauche & Droit",
-      "intro": "Les deux caractères provisoires eux-mêmes — copiables dès aujourd'hui en tant que codes, même si aucune police ne peut encore les afficher.",
+      "intro": "Les deux caractères définitifs eux-mêmes, copiables dès aujourd'hui en tant que codes, même si aucun téléphone ni ordinateur ne les affiche encore par défaut.",
       "symbols": [
         {
           "char": "🫹",
-          "label": "Signe du Pouce vers la Gauche (brouillon, U+1FAF9)"
+          "label": "Signe du Pouce vers la Gauche (U+1FAF9, Emoji 18.0)"
         },
         {
           "char": "🫺",
-          "label": "Signe du Pouce vers la Droite (brouillon, U+1FAFA)"
+          "label": "Signe du Pouce vers la Droite (U+1FAFA, Emoji 18.0)"
         }
       ]
     },
@@ -73,25 +74,25 @@
     },
     {
       "id": "autres-candidats",
-      "label": "Autres Candidats Provisoires",
-      "h2": "Les Autres Candidats Provisoires d'Emoji 18.0",
-      "intro": "Signe du Pouce n'est pas le seul caractère non approuvé de cette édition — ceux-ci sont retenus en même temps que lui, tout aussi invisibles jusqu'à la décision de septembre 2026.",
+      "label": "Publiés en Même Temps",
+      "h2": "Les Autres Nouveaux Emoji d'Emoji 18.0",
+      "intro": "Signe du Pouce n'est pas le seul nouveau caractère de cette édition : ceux-ci ont été approuvés en même temps que lui le 16 septembre 2026 et restent, pour l'instant, tout aussi invisibles sur la plupart des appareils.",
       "symbols": [
         {
           "char": "🫫",
-          "label": "Visage Fissuré (brouillon, U+1FAEB): grand gagnant du vote public"
+          "label": "Visage Fissuré (U+1FAEB, Emoji 18.0): grand gagnant du vote public"
         },
         {
           "char": "🫝",
-          "label": "Cornichon (brouillon, U+1FADD)"
+          "label": "Cornichon (U+1FADD, Emoji 18.0)"
         },
         {
           "char": "🪋",
-          "label": "Météore (brouillon, U+1FA8B)"
+          "label": "Météore (U+1FA8B, Emoji 18.0)"
         },
         {
           "char": "🫌",
-          "label": "Papillon Monarque (brouillon, U+1FACC)"
+          "label": "Papillon Monarque (U+1FACC, Emoji 18.0)"
         }
       ]
     }
@@ -105,17 +106,17 @@
     {
       "href": "/fr/symbol/emoji-visage-fissure/",
       "title": "Emoji Visage Fissuré",
-      "desc": "Le candidat provisoire d'Emoji 18.0 qui a remporté le vote public."
+      "desc": "Le nouvel emoji d'Emoji 18.0 qui a remporté le vote public."
     },
     {
       "href": "/fr/symbol/emoji-cornichon/",
       "title": "Emoji Cornichon",
-      "desc": "Un autre candidat provisoire d'Emoji 18.0 — repêché d'une proposition Apple Core mise en attente."
+      "desc": "Un autre nouvel emoji d'Emoji 18.0, repêché d'une proposition Apple Core mise en attente."
     },
     {
       "href": "/updates/unicode-18-most-anticipated-emoji/",
       "title": "Unicode 18.0's New Emoji",
-      "desc": "La liste complète des 9 candidats provisoires, classés par vote public (en anglais)."
+      "desc": "Les 9 nouveaux emoji de la version définitive, classés par vote public (en anglais)."
     }
   ]
 }
