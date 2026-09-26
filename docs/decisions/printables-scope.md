@@ -93,6 +93,7 @@ UI page to cite; they use the site's existing words.
 **Status (2026-09-25):** the options, print size and translations shipped in
 PR #937 (merged, `ed12d4949`). The follow-up (monogram and cross-stitch, Dutch,
 class list on every name tool) is PR #941, not yet merged.
+**Update (2026-09-26):** #941 merged as `4a9332878`, confirmed on `main`.
 
 ## Printing a set of letters: which letters, then print size, then one button (owner decision, 2026-09-25)
 
@@ -151,6 +152,7 @@ alphabet pages still names the old "Save as a book" button. Rewriting it touches
 pages whose titles and headings carry em dashes, so it is a separate copy pass.
 
 **Status (2026-09-25):** PR #944, not yet merged.
+**Update (2026-09-26):** merged as `89ca12ccf`, confirmed on `main`.
 
 ## The `/learn/` pillar sits close to this boundary
 
