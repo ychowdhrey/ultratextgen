@@ -26,7 +26,7 @@ OUT_DIR = os.path.join(REPO, "assets", "printables-previews")
 OUT_URL = "/assets/printables-previews"
 
 ENGINE_MARKERS = ("window.UTG_PRINTABLE", "crossStitchEngine.js", "monogramEngine.js")
-LOCALE_DIRS = ("de", "es", "fr", "id", "it", "pl", "pt")
+LOCALE_DIRS = ("de", "es", "fr", "id", "it", "nl", "pl", "pt", "tr")
 
 # The PDF buttons capture-printables-previews.js presses, in its PRIMARY order.
 # Listed here only so capture_query() can tell which one a page will use.

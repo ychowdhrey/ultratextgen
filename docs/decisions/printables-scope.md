@@ -94,6 +94,64 @@ UI page to cite; they use the site's existing words.
 PR #937 (merged, `ed12d4949`). The follow-up (monogram and cross-stitch, Dutch,
 class list on every name tool) is PR #941, not yet merged.
 
+## Printing a set of letters: which letters, then print size, then one button (owner decision, 2026-09-25)
+
+The block under every letter page that prints more than one letter asked three
+questions for one answer. Print size (Full page / Medium / Small), a row of
+unlabelled 1 / 2 / 4 chips and a separate "Save as a book" button each decided how
+many letters share a page, and the button you pressed silently ignored some of them.
+Rendered on `/printables/alphabet-coloring-pages/` in headless Chromium:
+
+| You picked | What printed |
+|---|---|
+| AEIOU, 4, Medium, then Download PDF | all 36 characters on 9 pages |
+| Medium, AEIOU, 4, then Save as a book (letter A page) | all 26 letters on 7 pages |
+| Full page, then Download PDF | 16 small letters per page, not "one big letter per sheet" |
+| 2 per page | the same 2.0in letters as 4 per page, on 18 pages instead of 9 |
+| Medium (~4 in) / Small (~2 in) | 2.3in / 1.1in capitals |
+
+Of 15 control-and-button pairs, 8 ignored or misused the choice, and underneath there
+were only three kinds of printed page. The owner's direction was to redesign it:
+
+- **Which letters?** comes first: the whole set, A–Z, 0–9, the page language's
+  vowels, or "Pick letters" (a typed run such as `A-E` or `B D P Q`). The chips are
+  built from what the page prints, so a letters-only page never offers numbers and a
+  Polish page's vowels are A Ą E Ę I O Ó U Y.
+- **Print size** second, as three pictured choices that are counts: Full page is one
+  letter per page, Medium a 2×2 grid, Small 4×4 (3×2 and 6×3 in landscape). Outline
+  pages also show the letter height, computed from the paper and the face and rounded
+  to the nearest ¼in (0.5cm outside English), always read as "about". Measured at print
+  resolution it lands within 0.1in of the printed capitals on the coloring, bubble,
+  tracing and Spanish-chart faces; the graffiti face runs 0.2–0.4in high. Script, dot
+  and Unicode-glyph pages show the count alone, because the same formula said 4.5in for
+  a cursive A that printed 3.1in.
+- **One button** at the end, labelled with the pages it will use ("Download PDF ·
+  3 pages"). The "Save as a book" button, the 1 / 2 / 4 row and the "A–E" chip are
+  gone. PNG is offered only when the result is one page, not as one image of every
+  page stacked (a 1440 × 17,172px file at Medium).
+- **2 per page is dropped**: portrait 2-up printed the same letter size as 4-up on
+  twice the paper.
+- **Typed letters print in the page's alphabet order, once each** ("MIA" prints A, I,
+  M), and the block says so. Owner decision: spelling a name in order is the Coloring
+  Page Maker's job. Nothing matched now disables the button with a message, where it
+  used to print the whole set in silence.
+- **Defaults are what each page printed before**: Small on the hubs whose main button
+  printed the compact sheet (16 per page on Letter), Full page on book pages and the
+  per-letter pages. Dot-to-dot pages have no Small: its numbers print at 2.7pt.
+- `/printables/block-letters/` keeps the old control, byte for byte, until its
+  size-control readout lands (the freeze recorded 2026-09-22). Its locale siblings are
+  separate `printable_page` values and take the new control.
+
+**Open (owner):** a "Large" size, two letters side by side on a sheet turned
+sideways. Rendered with the engine: 3.3in capitals and A–Z on 13 sheets, between Full
+page (4.6in, 26 sheets) and Medium (2.3in, 7 sheets). Not built.
+
+**Follow-up:** the FAQ on the seven Spanish-alphabet-chart pages and the dot-to-dot
+alphabet pages still names the old "Save as a book" button. Rewriting it touches
+pages whose titles and headings carry em dashes, so it is a separate copy pass.
+
+**Status (2026-09-25):** PR #944, not yet merged.
+
 ## The `/learn/` pillar sits close to this boundary
 
 `/learn/` carries handwriting/pre-writing/tracing *articles* — content *about*

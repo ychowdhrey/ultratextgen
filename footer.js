@@ -11,16 +11,16 @@
 
   // Locales with their own native printables hub get the SAME printables-
   // audience treatment as English /printables/ — translated, linking to
-  // their own on-disk sub-pages, not the generic locale footer. tr/id have
-  // no native printables hub yet (their "printables" nav item still points
-  // at the English /printables/), so they correctly fall through to the
-  // plain isPrintablesContext branch below when a tr/id visitor lands there.
+  // their own on-disk sub-pages, not the generic locale footer. tr joined on
+  // 2026-09-25 with /tr/yazdirilabilir/. A locale not listed here falls
+  // through to the plain isPrintablesContext branch below.
   var PRINTABLES_NATIVE_PREFIX = {
     pt: "/pt/imprimiveis/",
     fr: "/fr/imprimables/",
     de: "/de/zum-ausdrucken/",
     it: "/it/da-stampare/",
-    es: "/es/imprimibles/"
+    es: "/es/imprimibles/",
+    tr: "/tr/yazdirilabilir/"
   };
   var nativePrintablesLocale = null;
   for (var _ppl in PRINTABLES_NATIVE_PREFIX) {
@@ -180,7 +180,7 @@
         { label: "Kullanımlar", href: "/tr/usecase/" },
         { label: "Kategoriler", href: "/tr/category/" },
         { label: "Kütüphane", href: "/tr/library/" },
-        { label: "Baskılar", href: "/printables/" },
+        { label: "Yazdırılabilir", href: "/tr/yazdirilabilir/" },
         { label: "Etkinlikler", href: "/events/" }
       ],
       tools: [
@@ -1145,13 +1145,10 @@
       copyright: "© 2026 UltraTextGen. Letras y alfabetos gratis para imprimir."
     },
     tr: {
-      colTitle: "Baskılar",
+      colTitle: "Yazdırılabilir",
       items: [
-        { label: "Tüm Baskılar", href: "/printables/" },
-        { label: "El Yazısı Alfabesi", href: "/printables/cursive-alphabet/" },
-        { label: "Alfabe Boyama Sayfaları", href: "/printables/alphabet-coloring-pages/" },
-        { label: "Balon Harfler A–Z", href: "/printables/bubble-letters/" },
-        { label: "İsim İzleme Sayfası", href: "/printables/name-tracing/" }
+        { label: "Tüm Yazdırılabilir Sayfalar", href: "/tr/yazdirilabilir/" },
+        { label: "Harf Kalıpları", href: "/tr/yazdirilabilir/harf-kaliplari/" }
       ],
       bridge: 'Biyografi ve gönderiler için yazı tipi mi arıyorsun? <a href="/tr/" class="footer-link">Yazı tipi oluşturucuyu dene →</a>',
       copyright: "© 2026 UltraTextGen. Yazdırılabilir harfler ve alfabeler ücretsiz."

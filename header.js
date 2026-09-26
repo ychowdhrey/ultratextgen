@@ -84,7 +84,7 @@
       category: { label: "Kategoriler", href: "/tr/category/" },
       usecase: { label: "Kullanımlar", href: "/tr/usecase/" },
       library: { label: "Kütüphane", href: "/tr/library/" },
-      printables: { label: "Baskılar", href: "/printables/" },
+      printables: { label: "Yazdırılabilir", href: "/tr/yazdirilabilir/" },
       events: { label: "Etkinlikler", href: "/events/" },
       search: "Yazı stili ara…",
       darkMode: "Karanlık modu değiştir"
