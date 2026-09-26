@@ -3,6 +3,7 @@
   "_decisions": {
     "ja": "Shipped as both 情報源 ('information source', journalistic) and 出典 ('citation', what Japanese reference works use for a sources list). Chose 出典 on 2026-09-03. Both were already on the site; this is a choice between published forms, not an invention.",
     "th": "Shipped as both แหล่งข้อมูล ('information source') and แหล่งอ้างอิง ('reference source', unambiguous for citations). Chose แหล่งอ้างอิง on 2026-09-03, same basis as ja.",
+    "_added_2026-09-26": "hi स्रोत, ro Surse, sr/hr/bs Izvori, sk/cs Zdroje, hu Források, fi Lähteet. None of these nine locales had ever carried a Sources block, so there was no shipped form to take. Each is the plain dictionary word for 'sources', the same literal sense every other locale here uses, approved by the owner on 2026-09-26 so that pages in these locales can carry a block labelled in their own language. Corpus support at that date (npm run audit:locale-attestation -- --strings): Izvori attested for sr, hr and bs (the singular izvor is on their pages); the other six unattested. They await a native reader, who can replace or reorder any of them as the _note says.",
     "_note": "A native reader can reverse either by reordering that locale's array and re-running scripts/fix-source-attribution.js --write, which migrates every page's label."
   },
   "labels": {
@@ -24,6 +25,15 @@
     "th": ["แหล่งอ้างอิง", "แหล่งข้อมูล"],
     "tr": ["Kaynaklar"],
     "vi": ["Nguồn"],
-    "zh-tw": ["資料來源"]
+    "zh-tw": ["資料來源"],
+    "hi": ["स्रोत"],
+    "ro": ["Surse"],
+    "sr": ["Izvori"],
+    "hr": ["Izvori"],
+    "bs": ["Izvori"],
+    "sk": ["Zdroje"],
+    "cs": ["Zdroje"],
+    "hu": ["Források"],
+    "fi": ["Lähteet"]
   }
 }
