@@ -20,10 +20,12 @@ open findings: `docs/printables/print-settings-and-letterforms.md` and the rest 
 
 ## 1. Scope test
 
-**Could a visitor type a word or name into the feature and see *that word*
-rendered?** If no, it is not a printable for this repo — and that is the test, not the
-example lists. Mazes, shape-only tracing, pre-writing strokes and math worksheets are
-out; word searches, crosswords and word scrambles built from typed words are in.
+**Is what prints something a visitor could type, whether they type it or pick it
+from a ready-made set?** If the sheet's content is a shape, a path or a sum, it is not
+a printable for this repo, and that is the test, not the example lists. A page with
+no input passes when its sheet is text (an A to Z picker, the Dolch list, "Mom" in
+cursive). Mazes, shape-only tracing, pre-writing strokes and math worksheets are out;
+word searches, crosswords and word scrambles built from typed words are in.
 
 A visual asset is the higher-intent **follow-up**, never the default answer for a
 query copy-paste Unicode already serves.
