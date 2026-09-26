@@ -1,0 +1,547 @@
+rater,status,archetype,mode,code,usability,readability,structure,image,colour,defects
+R1,current,A,HALFTONE_M,LPJ,5,5,5.0,,,none
+R1,current,A,STANDARD,LJG,5,5,5.0,,,none
+R1,current,A,COMBINED_REMOVE+TINT_75,EUQ,4,4,4.0,,,"title, rules, midline and tracing letters all lightened; dashed midline paler"
+R1,current,A,DECOR_REMOVAL,SOL,5,5,5.0,,,none
+R1,current,A,SUPER_ECO_BW,NDP,2,5,5.0,,,tracing letters now solid black
+R1,current,A,BW_THRESHOLD,TEA,1,2,2.0,,,tracing letters and dashed midline vanished; stray black specks on rules
+R1,current,A,TINT_55,OJH,3,3,3.0,,,"whole page washed out: tracing letters and midline very faint, rules grey"
+R1,current,A,OUTLINE_NAIVE,ZEO,5,5,5.0,,,none
+R1,current,A,TINT_FILL_30,HQB,5,5,5.0,,,none
+R1,current,A,OUTLINE_ONLY,VAF,5,5,5.0,,,none
+R1,current,A,HIGH_CONTRAST,TWG,4,5,5.0,,,tracing letters darker mid-grey; less contrast with a pencil stroke
+R1,current,A,OPACITY_GROUP_60,MKF,3,3,3.0,,,"whole page washed out: tracing letters and midline very faint, rules grey"
+R1,current,A,BW_SEMANTIC,LTT,2,5,5.0,,,tracing letters now solid black
+R1,current,A,ECO_COLOUR,VQR,5,5,5.0,,,none
+R1,current,A,OPACITY_GROUP_75,XHU,4,4,4.0,,,"title, rules, midline and tracing letters all lightened; dashed midline paler"
+R1,current,A,DITHER_M,FUV,5,5,5.0,,,none
+R1,current,A,COPY_SAFE_ECO,JEP,4,5,5.0,,,tracing letters darker mid-grey; less contrast with a pencil stroke
+R1,current,A,TINT_FILL_55,OOZ,5,5,5.0,,,none
+R1,current,A,BG_REMOVAL,NTO,5,5,5.0,,,none
+R1,current,A,COMBINED_ECO+STRUCT_75,HID,4,4,4.0,,,"title, rules, midline and tracing letters all lightened; dashed midline paler"
+R1,current,A,GRAYSCALE,MWH,5,5,5.0,,,none
+R1,current,B,TINT_55,FLQ,4,3,4.0,,,"whole page lightened: letters mid-grey, grid light grey, small word list and instruction faint"
+R1,current,B,HIGH_CONTRAST,PVS,5,5,5.0,,,none
+R1,current,B,SUPER_ECO_BW,DBF,5,5,5.0,,,none
+R1,current,B,STANDARD,RII,5,5,5.0,,,none
+R1,current,B,DITHER_M,FHG,5,5,5.0,,,none
+R1,current,B,GRAYSCALE,QSE,5,5,5.0,,,none
+R1,current,B,ECO_COLOUR,WGW,5,5,5.0,,,none
+R1,current,B,TINT_FILL_30,JTR,5,5,5.0,,,none
+R1,current,B,BW_SEMANTIC,BHW,5,5,5.0,,,none
+R1,current,B,OPACITY_GROUP_75,LJT,5,4,4.0,,,text and grid dark grey instead of black; slight contrast loss
+R1,current,B,BG_REMOVAL,KNF,5,5,5.0,,,none
+R1,current,B,OUTLINE_NAIVE,YJH,5,5,5.0,,,none
+R1,current,B,HALFTONE_M,HBE,5,5,5.0,,,none
+R1,current,B,OPACITY_GROUP_60,LNU,4,3,4.0,,,"whole page lightened: letters mid-grey, grid light grey, small word list and instruction faint"
+R1,current,B,COPY_SAFE_ECO,IDL,5,5,5.0,,,none
+R1,current,B,COMBINED_REMOVE+TINT_75,MIG,5,4,4.0,,,text and grid dark grey instead of black; slight contrast loss
+R1,current,B,COMBINED_ECO+STRUCT_75,KSM,5,4,4.0,,,text and grid dark grey instead of black; slight contrast loss
+R1,current,B,OUTLINE_ONLY,KCR,5,5,5.0,,,none
+R1,current,B,DECOR_REMOVAL,UJJ,5,5,5.0,,,none
+R1,current,B,BW_THRESHOLD,KTW,5,4,5.0,,,binarised: small instruction text slightly jagged
+R1,current,B,TINT_FILL_55,NEI,5,5,5.0,,,none
+R1,current,C,TINT_55,DTA,3,3,,,,title and body text mid-grey; low contrast for sustained reading
+R1,current,C,COMBINED_ECO+STRUCT_75,VHB,5,4,,,,title and body text dark grey; slight contrast loss
+R1,current,C,OUTLINE_ONLY,UVE,5,5,,,,none
+R1,current,C,STANDARD,TQT,5,5,,,,none
+R1,current,C,BW_SEMANTIC,PYL,5,5,,,,none
+R1,current,C,HIGH_CONTRAST,IMY,5,5,,,,none
+R1,current,C,DECOR_REMOVAL,DYM,5,5,,,,none
+R1,current,C,DITHER_M,JAU,5,5,,,,none
+R1,current,C,GRAYSCALE,IVK,5,5,,,,none
+R1,current,C,HALFTONE_M,QNX,5,5,,,,none
+R1,current,C,TINT_FILL_55,UGN,5,5,,,,none
+R1,current,C,OPACITY_GROUP_75,SXW,5,4,,,,title and body text dark grey; slight contrast loss
+R1,current,C,COPY_SAFE_ECO,UWU,5,5,,,,none
+R1,current,C,BG_REMOVAL,VKT,5,5,,,,none
+R1,current,C,TINT_FILL_30,EFG,5,5,,,,none
+R1,current,C,OUTLINE_NAIVE,HJO,5,5,,,,none
+R1,current,C,OPACITY_GROUP_60,FAP,3,3,,,,title and body text mid-grey; low contrast for sustained reading
+R1,current,C,SUPER_ECO_BW,GRY,5,5,,,,none
+R1,current,C,BW_THRESHOLD,ARA,5,4,,,,"binarised text: slightly jagged, uneven stroke weight"
+R1,current,C,ECO_COLOUR,ZYV,5,5,,,,none
+R1,current,C,COMBINED_REMOVE+TINT_75,ABS,5,4,,,,title and body text dark grey; slight contrast loss
+R1,current,D,TINT_FILL_30,JAY,5,5,5.0,4.0,,picture fills very pale; banner tint faint
+R1,current,D,COPY_SAFE_ECO,MWF,5,5,5.0,5.0,,banner tint dropped; sun rays black instead of orange
+R1,current,D,OUTLINE_NAIVE,CSV,5,5,5.0,4.0,,picture fills removed (outline-only sun and tree); banner shown as outline box
+R1,current,D,GRAYSCALE,ZCE,5,5,5.0,4.0,,pictures and banner converted to grey
+R1,current,D,OPACITY_GROUP_60,FQF,4,3,4.0,4.0,,"whole page lightened: question text mid-grey, answer lines and box light grey, pale pictures"
+R1,current,D,STANDARD,KHZ,5,5,5.0,5.0,,none
+R1,current,D,BG_REMOVAL,YAU,5,5,5.0,5.0,,none
+R1,current,D,OPACITY_GROUP_75,SSQ,4,4,4.0,4.0,,text and lines dark grey; pictures paler
+R1,current,D,SUPER_ECO_BW,YLL,5,5,5.0,4.0,,"pictures reduced to black outlines, colour removed; banner tint dropped"
+R1,current,D,BW_SEMANTIC,ZMI,5,5,5.0,4.0,,pictures reduced to black outlines with solid black trunk; banner as outline box
+R1,current,D,HALFTONE_M,KGD,5,5,5.0,4.0,,halftone dot pattern in picture fills and banner
+R1,current,D,COMBINED_ECO+STRUCT_75,GMZ,4,4,4.0,4.0,,"title grey, text and lines dark grey; pastel pictures; banner tint dropped"
+R1,current,D,ECO_COLOUR,FJN,5,5,5.0,5.0,,banner tint dropped; pictures slightly paler
+R1,current,D,DITHER_M,BRH,5,5,5.0,4.0,,noisy dither speckle in picture fills and banner
+R1,current,D,COMBINED_REMOVE+TINT_75,IHR,4,4,4.0,4.0,,"title grey, text and lines dark grey; pastel pictures; banner tint dropped"
+R1,current,D,HIGH_CONTRAST,YNV,5,5,5.0,5.0,,none
+R1,current,D,OUTLINE_ONLY,GBE,5,5,5.0,4.0,,picture fills removed (outline-only sun and tree); banner shown as outline box
+R1,current,D,BW_THRESHOLD,MLP,3,5,4.0,2.0,,sun rays vanished (plain circle); tree reduced to outline with black trunk; answer line weights uneven
+R1,current,D,DECOR_REMOVAL,XNE,5,5,5.0,5.0,,banner tint dropped
+R1,current,D,TINT_55,BMT,4,3,4.0,4.0,,"whole page lightened: question text mid-grey, answer lines and box light grey, pale pictures"
+R1,current,D,TINT_FILL_55,HFR,5,5,5.0,5.0,,pictures slightly paler
+R1,current,E,COMBINED_REMOVE+TINT_75,ECH,4,4,4.0,4.0,,title and words dark grey; card borders grey; photos and clip art lighter
+R1,current,E,BW_THRESHOLD,ZWD,2,5,5.0,1.0,,"photos thresholded to black blobs (unrecognisable, one nearly blank); clip art solid black silhouettes"
+R1,current,E,TINT_55,SNK,3,3,4.0,3.0,,"whole page washed out: grey words and borders, faded photos and clip art"
+R1,current,E,DITHER_M,VFR,4,5,5.0,4.0,,random stipple noise in clip-art fills and backgrounds
+R1,current,E,SUPER_ECO_BW,NBD,3,5,5.0,2.0,,photos become black/white dither noise with a visible vertical seam; clip art outline-only in extra frame; flower becomes overlapping circles
+R1,current,E,GRAYSCALE,HWV,4,5,5.0,3.0,,all pictures greyscale; apple and flower lose colour cues
+R1,current,E,ECO_COLOUR,WHU,5,5,5.0,5.0,,clip art slightly paler
+R1,current,E,COMBINED_ECO+STRUCT_75,JJX,4,4,4.0,4.0,,title and words dark grey; card borders grey; photos and clip art lighter
+R1,current,E,TINT_FILL_55,IXA,4,5,5.0,4.0,,photos and clip art washed out/pale
+R1,current,E,BW_SEMANTIC,CNN,3,5,5.0,2.0,,photos become black/white dither noise with a visible seam; clip art solid black silhouettes in extra frame
+R1,current,E,DECOR_REMOVAL,GWG,5,5,5.0,5.0,,none
+R1,current,E,HIGH_CONTRAST,BAY,5,5,5.0,5.0,,none
+R1,current,E,HALFTONE_M,JTH,4,5,5.0,4.0,,regular dot halftone pattern in clip-art fills
+R1,current,E,OUTLINE_ONLY,LNF,4,5,5.0,3.0,,clip art reduced to outlines in an extra frame; flower becomes overlapping circle outlines
+R1,current,E,OUTLINE_NAIVE,YWJ,4,5,5.0,3.0,,clip art reduced to outlines in an extra frame; flower becomes overlapping circle outlines
+R1,current,E,OPACITY_GROUP_60,SOF,3,3,4.0,3.0,,"whole page washed out: grey words and borders, faded photos and clip art"
+R1,current,E,BG_REMOVAL,VCA,5,5,5.0,5.0,,none
+R1,current,E,OPACITY_GROUP_75,WHP,4,4,4.0,4.0,,title and words dark grey; card borders grey; photos and clip art lighter
+R1,current,E,COPY_SAFE_ECO,TIH,5,5,5.0,5.0,,none
+R1,current,E,STANDARD,EWE,5,5,5.0,5.0,,none
+R1,current,E,TINT_FILL_30,ITL,3,5,5.0,2.0,,photos and clip art heavily washed out; one photo nearly blank
+R1,current,F,GRAYSCALE,DKU,4,5,5.0,,2.0,converted to greyscale; several circle colours merge into similar greys; grey page background
+R1,current,F,TINT_FILL_55,FKQ,5,5,5.0,,4.0,pastel fills and cream background; labels switched to dark text
+R1,current,F,ECO_COLOUR,URU,5,5,5.0,,4.0,pastel fills; labels switched to dark text
+R1,current,F,OPACITY_GROUP_60,TRT,3,3,5.0,,4.0,white title and labels kept on lightened fills: low contrast
+R1,current,F,OUTLINE_ONLY,KCV,4,5,4.0,,3.0,"fills removed, only thin coloured outlines; weak poster impact"
+R1,superseded (pre-fix render),F,COPY_SAFE_ECO,SFG,5,5,5.0,,5.0,none
+R1,superseded (pre-fix render),F,SUPER_ECO_BW,QRD,1,1,4.0,,1.0,white title and 5 of 9 white labels vanished; colour removed (black outlines only)
+R1,current,F,DITHER_M,BHT,4,4,5.0,,4.0,random stipple noise texture in fills and background behind text
+R1,current,F,OUTLINE_NAIVE,EMU,1,1,4.0,,3.0,all text vanished (title and every label); only coloured outlines remain
+R1,current,F,COMBINED_ECO+STRUCT_75,TYU,5,5,5.0,,4.0,pastel fills; labels switched to dark text
+R1,current,F,TINT_55,KZO,5,5,5.0,,4.0,pastel fills and cream background; labels switched to dark text
+R1,current,F,DECOR_REMOVAL,ZXY,5,5,5.0,,5.0,none
+R1,current,F,COMBINED_REMOVE+TINT_75,OJU,5,5,5.0,,5.0,fills slightly lighter
+R1,current,F,OPACITY_GROUP_75,MII,5,4,5.0,,5.0,white labels on lighter fills: slightly lower contrast
+R1,current,F,BW_SEMANTIC,MBE,4,5,5.0,,2.0,"reduced to black/white: circles either solid black or white outline, hue distinctions lost"
+R1,current,F,HALFTONE_M,VUD,4,4,5.0,,4.0,"halftone dot pattern on fills, banner and background behind text"
+R1,current,F,BG_REMOVAL,FUR,5,5,5.0,,5.0,none
+R1,current,F,TINT_FILL_30,ZOT,4,5,5.0,,3.0,very pale washed-out fills; weak poster impact
+R1,current,F,BW_THRESHOLD,CJJ,1,2,1.0,,1.0,4 of 9 circles and their words vanished; remaining circles solid black; colour lost
+R1,current,F,HIGH_CONTRAST,PKC,5,5,5.0,,5.0,none
+R1,current,F,STANDARD,CYX,5,5,5.0,,5.0,none
+R1,current,G,COPY_SAFE_ECO,WRY,5,5,5.0,5.0,,none
+R1,current,G,DECOR_REMOVAL,YSP,5,5,5.0,5.0,,none
+R1,current,G,TINT_55,ZJM,4,4,4.0,5.0,,outlines and title lightened to mid grey; small inner detail strokes faint
+R1,current,G,ECO_COLOUR,WKU,5,5,5.0,5.0,,none
+R1,current,G,BG_REMOVAL,BIB,5,5,5.0,5.0,,none
+R1,current,G,GRAYSCALE,WFL,5,5,5.0,5.0,,none
+R1,current,G,HALFTONE_M,SAQ,5,5,5.0,5.0,,none
+R1,current,G,HIGH_CONTRAST,ZYD,5,5,5.0,5.0,,none
+R1,current,G,BW_SEMANTIC,LQQ,5,5,5.0,5.0,,none
+R1,current,G,OUTLINE_ONLY,GOE,5,5,5.0,5.0,,none
+R1,current,G,STANDARD,YER,5,5,5.0,5.0,,none
+R1,current,G,OUTLINE_NAIVE,KBA,5,5,5.0,5.0,,none
+R1,current,G,COMBINED_REMOVE+TINT_75,UNB,5,5,5.0,5.0,,outlines and title dark grey rather than black (still clear)
+R1,current,G,COMBINED_ECO+STRUCT_75,GNP,5,5,5.0,5.0,,outlines and title dark grey rather than black (still clear)
+R1,current,G,BW_THRESHOLD,PTZ,5,5,5.0,5.0,,hard binarised edges with slight jaggies on curves
+R1,current,G,SUPER_ECO_BW,AVV,5,5,5.0,5.0,,none
+R1,current,G,TINT_FILL_30,EMA,5,5,5.0,5.0,,none
+R1,current,G,OPACITY_GROUP_60,OTM,4,4,4.0,5.0,,outlines and title lightened to mid grey; small inner detail strokes faint
+R1,current,G,OPACITY_GROUP_75,GLS,5,5,5.0,5.0,,outlines and title dark grey rather than black (still clear)
+R1,current,G,TINT_FILL_55,BIP,5,5,5.0,5.0,,none
+R1,current,G,DITHER_M,XHB,5,5,5.0,5.0,,none
+R1,current,H,TINT_FILL_55,LPE,5,5,5.0,,,none
+R1,current,H,ECO_COLOUR,ELQ,5,5,5.0,,,header shading removed (header still bold and ruled)
+R1,current,H,BG_REMOVAL,OEB,5,5,5.0,,,none
+R1,current,H,BW_THRESHOLD,FPQ,5,5,5.0,,,header shading removed; hard binarised edges on text and lines
+R1,current,H,OPACITY_GROUP_60,XVW,4,4,4.0,,,all text and grid lightened to mid grey; small cell text lower contrast
+R1,current,H,COPY_SAFE_ECO,WVG,5,5,5.0,,,header shading removed (header still bold and ruled)
+R1,current,H,TINT_FILL_30,HDN,5,5,5.0,,,header shading very faint
+R1,current,H,HIGH_CONTRAST,ZWC,5,5,5.0,,,none
+R1,current,H,HALFTONE_M,NZK,5,5,5.0,,,header shading rendered as light dot pattern
+R1,current,H,DITHER_M,DZM,5,5,5.0,,,header shading rendered as dither texture behind header text
+R1,current,H,GRAYSCALE,DMK,5,5,5.0,,,none
+R1,current,H,SUPER_ECO_BW,ADB,5,5,5.0,,,header shading removed (header still bold and ruled)
+R1,current,H,COMBINED_ECO+STRUCT_75,UQN,5,5,5.0,,,title and text dark grey; header shading removed
+R1,current,H,TINT_55,LNN,4,3,4.0,,,all text and grid faded to light grey; small cell text low contrast
+R1,current,H,COMBINED_REMOVE+TINT_75,AKZ,5,5,5.0,,,title and text dark grey; header shading removed
+R1,current,H,OUTLINE_NAIVE,RJH,5,5,5.0,,,header shading removed (header still bold and ruled)
+R1,current,H,STANDARD,ULO,5,5,5.0,,,none
+R1,current,H,OPACITY_GROUP_75,LCE,5,5,4.0,,,"title, cell text and grid lightened to grey"
+R1,current,H,OUTLINE_ONLY,SCK,5,5,5.0,,,header shading removed (header still bold and ruled)
+R1,current,H,DECOR_REMOVAL,JTW,5,5,5.0,,,header shading removed (header still bold and ruled)
+R1,current,H,BW_SEMANTIC,UZA,5,5,5.0,,,header shading removed (header still bold and ruled)
+R1,current,I,BW_THRESHOLD,ORA,1,5,5.0,,1.0,colours collapsed to solid black or white: five categories merge into two; jagged circle edges
+R1,current,I,GRAYSCALE,ZFJ,2,5,5.0,,2.0,colours converted to five similar greys; vo/mi/ello and ka/fo too close to tell apart
+R1,current,I,COMBINED_ECO+STRUCT_75,VQL,5,4,5.0,,4.0,colours lightened but still distinct; title and labels grey
+R1,current,I,COMBINED_REMOVE+TINT_75,IXU,5,5,5.0,,5.0,colours slightly muted
+R1,current,I,BW_SEMANTIC,KEB,1,5,5.0,,1.0,colours collapsed to solid black or white: five categories merge into two
+R1,current,I,OUTLINE_ONLY,PKS,5,5,5.0,,5.0,none
+R1,current,I,COPY_SAFE_ECO,WEB,5,5,5.0,,5.0,none
+R1,current,I,HALFTONE_M,JNE,4,5,5.0,,4.0,fills rendered as pale stipple dot patterns; red and orange less distinct
+R1,current,I,DECOR_REMOVAL,UTF,5,5,5.0,,5.0,none
+R1,current,I,STANDARD,TLX,5,5,5.0,,5.0,none
+R1,current,I,ECO_COLOUR,LFV,5,5,5.0,,4.0,colours lightened but still distinct
+R1,current,I,TINT_FILL_30,HVR,3,5,5.0,,3.0,very pale tints; pink/peach/lavender and pale blue/green hard to separate
+R1,current,I,TINT_55,LGU,4,4,4.0,,4.0,"colours lightened; text, circle outlines and answer lines light grey"
+R1,current,I,TINT_FILL_55,VDS,5,5,5.0,,4.0,colours lightened but still distinct
+R1,current,I,DITHER_M,YTZ,4,5,5.0,,4.0,speckle noise texture in fills; colours paler
+R1,current,I,OPACITY_GROUP_75,BKB,5,5,5.0,,5.0,colours slightly muted
+R1,current,I,SUPER_ECO_BW,SUM,1,5,5.0,,1.0,colours collapsed to solid black or white: five categories merge into two
+R1,current,I,BG_REMOVAL,XZS,5,5,5.0,,5.0,none
+R1,current,I,HIGH_CONTRAST,IJT,5,5,5.0,,5.0,none
+R1,current,I,OUTLINE_NAIVE,WKO,5,5,5.0,,5.0,none
+R1,current,I,OPACITY_GROUP_60,FHJ,4,4,4.0,,4.0,"colours lightened; title, labels and outlines grey"
+R1,current,J,HIGH_CONTRAST,CBW,5,5,5.0,,,trace words darker mid grey than other versions (still read as a guide)
+R1,current,J,DECOR_REMOVAL,ZEX,5,5,5.0,,,none
+R1,current,J,DITHER_M,SXI,5,5,5.0,,,none
+R1,current,J,HALFTONE_M,LNX,5,5,5.0,,,none
+R1,current,J,COPY_SAFE_ECO,KPT,5,5,5.0,,,trace words darker mid grey than other versions (still read as a guide)
+R1,current,J,OPACITY_GROUP_60,FHE,3,3,3.0,,,all text faded to grey; trace words and dashed guides very pale; answer lines grey
+R1,current,J,BG_REMOVAL,UCP,5,5,5.0,,,none
+R1,current,J,ECO_COLOUR,NZF,5,5,5.0,,,none
+R1,current,J,OUTLINE_ONLY,AHQ,5,5,5.0,,,none
+R1,current,J,TINT_55,UNE,3,3,3.0,,,all text faded to grey; trace words and dashed guides very pale; answer lines grey
+R1,current,J,SUPER_ECO_BW,LES,3,5,5.0,,,trace words now solid black (no longer grey to trace over)
+R1,current,J,BW_THRESHOLD,HKO,2,5,2.0,,,grey trace words and dashed trace guides vanished completely; binarised text
+R1,current,J,COMBINED_ECO+STRUCT_75,VWX,4,4,4.0,,,title and labels grey; trace words and dashed guides pale
+R1,current,J,STANDARD,SPP,5,5,5.0,,,none
+R1,current,J,COMBINED_REMOVE+TINT_75,XJU,4,4,4.0,,,text grey; trace words and dashed guides pale
+R1,current,J,GRAYSCALE,WUH,5,5,5.0,,,none
+R1,current,J,TINT_FILL_55,AHC,5,5,5.0,,,none
+R1,current,J,BW_SEMANTIC,WQO,3,5,5.0,,,trace words now solid black (no longer grey to trace over)
+R1,current,J,OPACITY_GROUP_75,STN,4,4,4.0,,,text grey; trace words and dashed guides pale
+R1,current,J,TINT_FILL_30,JTQ,5,5,5.0,,,none
+R1,current,J,OUTLINE_NAIVE,NLG,5,5,5.0,,,none
+R1,current,K,TINT_FILL_55,TFK,5,5,5.0,5.0,,none
+R1,current,K,HALFTONE_M,UOC,5,5,5.0,4.0,,"faint dot-pattern texture on background, banner and icon fills"
+R1,current,K,OPACITY_GROUP_75,NVQ,5,5,5.0,5.0,,white title on pink banner; body text dark grey
+R1,current,K,TINT_55,LYE,4,4,4.0,5.0,,"text, answer lines and box lightened to grey; decoration paler"
+R1,current,K,COMBINED_REMOVE+TINT_75,UWX,5,5,5.0,,,"all decoration removed (border, banner, icons); text dark grey"
+R1,current,K,COMBINED_ECO+STRUCT_75,MMT,5,5,5.0,,,"all decoration removed (border, banner, icons); text dark grey"
+R1,current,K,STANDARD,VDN,5,5,5.0,5.0,,none
+R1,current,K,ECO_COLOUR,MJK,5,5,5.0,,,"all decoration removed (border, banner, icons)"
+R1,current,K,BW_THRESHOLD,HZV,5,5,5.0,3.0,,decoration converted to black/outline; sun icons lost their rays; frame removed
+R1,current,K,HIGH_CONTRAST,NCS,5,5,5.0,5.0,,border converted to solid black
+R1,superseded (pre-fix render),K,SUPER_ECO_BW,XJK,4,4,5.0,,,title removed along with banner and all decoration
+R1,current,K,TINT_FILL_30,HYZ,5,5,5.0,4.0,,decoration very pale
+R1,current,K,BG_REMOVAL,WXI,5,5,5.0,5.0,,background tint removed
+R1,superseded (pre-fix render),K,COPY_SAFE_ECO,KOY,4,4,5.0,,,title removed along with banner and all decoration
+R1,current,K,GRAYSCALE,RHA,5,5,5.0,4.0,,converted to greys; grey page tint
+R1,current,K,OUTLINE_NAIVE,GYN,4,4,5.0,4.0,,white title text vanished (banner now outline on white); icons outline only
+R1,current,K,BW_SEMANTIC,MQG,5,5,5.0,4.0,,decoration converted to solid black and white
+R1,current,K,DECOR_REMOVAL,WHU,5,5,5.0,,,decoration removed except yellow page tint
+R1,current,K,DITHER_M,UKI,4,4,5.0,4.0,,"speckle noise texture on background, banner and icon fills"
+R1,current,K,OPACITY_GROUP_60,LWP,4,4,4.0,5.0,,text and answer lines lightened to grey
+R1,current,K,OUTLINE_ONLY,DLA,5,5,5.0,4.0,,decoration outline only
+R1,current,L,SUPER_ECO_BW,TZE,5,5,5.0,4.0,,pictures reduced to black outlines (flower less recognisable)
+R1,current,L,TINT_55,NIM,4,4,3.0,5.0,,words grey; cut lines light grey and faint
+R1,current,L,OPACITY_GROUP_60,CJD,4,4,3.0,5.0,,words grey; cut lines light grey and faint
+R1,current,L,OPACITY_GROUP_75,SMT,5,5,4.0,5.0,,cut lines mid grey
+R1,current,L,HIGH_CONTRAST,BXO,5,5,5.0,5.0,,none
+R1,current,L,DITHER_M,QCU,4,5,5.0,4.0,,speckle noise texture on pictures and card backgrounds
+R1,current,L,COMBINED_ECO+STRUCT_75,NEU,4,4,4.0,5.0,,words grey; cut lines lighter; card tints removed
+R1,current,L,OUTLINE_ONLY,OZY,5,5,4.0,4.0,,pictures outline only; extra rounded card borders inside the dashed cut lines
+R1,current,L,HALFTONE_M,NFH,4,5,5.0,4.0,,halftone dot pattern on pictures and card backgrounds
+R1,current,L,TINT_FILL_30,BKX,5,5,5.0,4.0,,pictures very pale
+R1,current,L,GRAYSCALE,CIO,4,5,5.0,4.0,,converted to greys; grey card backgrounds; apple and flower dark grey blobs
+R1,current,L,OUTLINE_NAIVE,FEH,5,5,4.0,4.0,,pictures outline only; extra rounded card borders inside the dashed cut lines
+R1,current,L,STANDARD,HOL,5,5,5.0,5.0,,none
+R1,current,L,BG_REMOVAL,DXX,5,5,5.0,5.0,,none
+R1,current,L,DECOR_REMOVAL,PHN,5,5,5.0,5.0,,card background tints removed
+R1,current,L,COMBINED_REMOVE+TINT_75,KOX,4,4,4.0,5.0,,words grey; colours slightly faded; cut lines lighter
+R1,current,L,COPY_SAFE_ECO,MGC,5,5,5.0,5.0,,none
+R1,current,L,BW_THRESHOLD,DCX,3,5,5.0,2.0,,"pictures binarised: sun lost rays (plain circle); apple, flower, fish, balloon solid black silhouettes"
+R1,current,L,ECO_COLOUR,BWE,5,5,5.0,5.0,,pastel pictures; card tints removed
+R1,current,L,TINT_FILL_55,WKY,5,5,5.0,5.0,,pastel colours
+R1,current,L,BW_SEMANTIC,WJY,4,5,5.0,3.0,,"apple, flower, fish, balloon solid black silhouettes; extra card borders"
+R2,current,A,OUTLINE_ONLY,PAA,5,5,5.0,,,none
+R2,current,A,DECOR_REMOVAL,RDS,5,5,5.0,,,none
+R2,current,A,BW_THRESHOLD,YEM,1,5,2.0,,,tracing letters and dashed midline vanished; only ruled lines and stray specks remain
+R2,current,A,BG_REMOVAL,ILS,5,5,5.0,,,none
+R2,current,A,ECO_COLOUR,UWH,5,5,5.0,,,none
+R2,current,A,COPY_SAFE_ECO,CIC,4,5,4.0,,,tracing letters and midline darker mid-grey; less trace-like
+R2,current,A,OUTLINE_NAIVE,LQW,5,5,5.0,,,none
+R2,current,A,DITHER_M,PRI,5,5,5.0,,,none
+R2,current,A,HIGH_CONTRAST,ZYW,4,5,4.0,,,tracing letters darker mid-grey; less trace-like
+R2,current,A,SUPER_ECO_BW,GKW,2,5,2.0,,,tracing letters now solid black; midline dark
+R2,current,A,COMBINED_ECO+STRUCT_75,KBG,4,4,4.0,,,title grey; tracing letters and midline lighter
+R2,current,A,TINT_FILL_30,CQH,5,5,5.0,,,none
+R2,current,A,HALFTONE_M,TCW,5,5,5.0,,,none
+R2,current,A,OPACITY_GROUP_75,FVL,4,4,4.0,,,title grey; tracing letters pale and midline faint
+R2,current,A,TINT_55,WHI,3,4,3.0,,,"everything faded: tracing letters very pale, midline barely visible, grey title and rules"
+R2,current,A,STANDARD,SAX,5,5,5.0,,,none
+R2,current,A,COMBINED_REMOVE+TINT_75,AKD,4,4,4.0,,,title grey; tracing letters and midline lighter
+R2,current,A,TINT_FILL_55,KZC,5,5,5.0,,,none
+R2,current,A,OPACITY_GROUP_60,WKJ,3,4,3.0,,,"faded: tracing letters very pale, midline faint, grey title and rules"
+R2,current,A,BW_SEMANTIC,MPZ,2,5,2.0,,,tracing letters now solid black; midline dark
+R2,current,A,GRAYSCALE,CNU,5,5,5.0,,,none
+R2,current,B,COPY_SAFE_ECO,LMQ,5,5,5.0,,,none
+R2,current,B,BW_THRESHOLD,ESY,5,5,5.0,,,none
+R2,current,B,HIGH_CONTRAST,VDS,5,5,5.0,,,none
+R2,current,B,SUPER_ECO_BW,QBC,5,5,5.0,,,none
+R2,current,B,TINT_FILL_55,LLW,5,5,5.0,,,none
+R2,current,B,COMBINED_ECO+STRUCT_75,DNR,4,4,4.0,,,"title, grid letters, word list and grid lines mid-grey"
+R2,current,B,STANDARD,YPG,5,5,5.0,,,none
+R2,current,B,HALFTONE_M,HBR,5,5,5.0,,,none
+R2,current,B,OUTLINE_ONLY,AGE,5,5,5.0,,,none
+R2,current,B,TINT_55,WHM,4,4,4.0,,,all text and grid lines lighter grey; small instruction line faint
+R2,current,B,COMBINED_REMOVE+TINT_75,SCC,5,5,4.0,,,grid letters dark grey; grid lines lighter grey
+R2,current,B,OPACITY_GROUP_60,YZZ,4,4,4.0,,,all text and grid lines lighter grey; small instruction line faint
+R2,current,B,OPACITY_GROUP_75,RLF,4,4,4.0,,,grey title and letters; light grey grid lines
+R2,current,B,DITHER_M,EHR,5,5,5.0,,,none
+R2,current,B,BW_SEMANTIC,PTE,5,5,5.0,,,none
+R2,current,B,OUTLINE_NAIVE,DTE,5,5,5.0,,,none
+R2,current,B,TINT_FILL_30,LTD,5,5,5.0,,,none
+R2,current,B,ECO_COLOUR,LGE,5,5,5.0,,,none
+R2,current,B,GRAYSCALE,VQN,5,5,5.0,,,none
+R2,current,B,BG_REMOVAL,UQJ,5,5,5.0,,,none
+R2,current,B,DECOR_REMOVAL,HCM,5,5,5.0,,,none
+R2,current,C,OPACITY_GROUP_75,HZQ,4,4,,,,title and body text dark grey; reduced contrast
+R2,current,C,HIGH_CONTRAST,EYQ,5,5,,,,none
+R2,current,C,COMBINED_REMOVE+TINT_75,VYH,4,4,,,,title grey; body text dark grey; reduced contrast
+R2,current,C,OUTLINE_ONLY,PTD,5,5,,,,none
+R2,current,C,SUPER_ECO_BW,IBG,5,5,,,,none
+R2,current,C,TINT_55,AWL,3,3,,,,title and body text mid-grey; low contrast for sustained reading
+R2,current,C,GRAYSCALE,QKM,5,5,,,,none
+R2,current,C,BG_REMOVAL,RAS,5,5,,,,none
+R2,current,C,BW_SEMANTIC,PIC,5,5,,,,none
+R2,current,C,DECOR_REMOVAL,KYM,5,5,,,,none
+R2,current,C,STANDARD,UIT,5,5,,,,none
+R2,current,C,OPACITY_GROUP_60,MPL,3,3,,,,title and body text mid-grey; low contrast for sustained reading
+R2,current,C,ECO_COLOUR,ZNV,5,5,,,,none
+R2,current,C,TINT_FILL_55,KXF,5,5,,,,none
+R2,current,C,BW_THRESHOLD,BVG,4,4,,,,"body text hard-thresholded: jagged, thinned strokes"
+R2,current,C,COMBINED_ECO+STRUCT_75,PBW,4,4,,,,title and body text dark grey; reduced contrast
+R2,current,C,TINT_FILL_30,TPU,5,5,,,,none
+R2,current,C,HALFTONE_M,KRO,5,5,,,,none
+R2,current,C,COPY_SAFE_ECO,LBY,5,5,,,,none
+R2,current,C,DITHER_M,DGY,5,5,,,,none
+R2,current,C,OUTLINE_NAIVE,QLC,5,5,,,,none
+R2,current,D,ECO_COLOUR,UVX,5,5,5.0,5.0,,banner tint removed; pictures slightly paler
+R2,current,D,GRAYSCALE,BJO,5,5,5.0,4.0,,greyscale; pictures lose colour
+R2,current,D,BG_REMOVAL,AHI,5,5,5.0,5.0,,none
+R2,current,D,TINT_55,RZD,4,3,4.0,4.0,,all text and answer lines mid-grey; pictures pale
+R2,current,D,OPACITY_GROUP_60,GBX,4,3,4.0,4.0,,title and question text grey; answer lines grey; pictures pale
+R2,current,D,TINT_FILL_55,ICM,5,5,5.0,5.0,,banner and pictures slightly paler
+R2,current,D,TINT_FILL_30,GZL,5,5,5.0,4.0,,pictures very washed out; banner near white
+R2,current,D,STANDARD,IND,5,5,5.0,5.0,,none
+R2,current,D,OUTLINE_NAIVE,STP,5,5,5.0,4.0,,fills removed: outline-only pictures and banner
+R2,current,D,HALFTONE_M,GVO,5,5,5.0,4.0,,dot-pattern fills on pictures and banner
+R2,current,D,OPACITY_GROUP_75,BBV,4,4,4.0,4.0,,question text and lines grey; pictures paler
+R2,current,D,DECOR_REMOVAL,SUD,5,5,5.0,5.0,,banner removed
+R2,current,D,OUTLINE_ONLY,SYL,5,5,5.0,4.0,,fills removed: outline-only pictures and banner
+R2,current,D,HIGH_CONTRAST,OZT,5,5,5.0,5.0,,sun rays black instead of orange
+R2,current,D,BW_SEMANTIC,HOT,5,5,5.0,4.0,,pictures black outline only; colour removed
+R2,current,D,DITHER_M,VPM,5,5,5.0,4.0,,stipple noise fills on pictures and banner
+R2,current,D,SUPER_ECO_BW,SQS,5,5,5.0,4.0,,banner removed; black outline-only pictures
+R2,current,D,COMBINED_REMOVE+TINT_75,GBQ,4,4,4.0,5.0,,"title, question text and lines grey"
+R2,current,D,COPY_SAFE_ECO,WUI,5,5,5.0,5.0,,banner removed; sun rays black
+R2,current,D,COMBINED_ECO+STRUCT_75,UBO,4,4,4.0,4.0,,"title, text and lines grey; pictures pale"
+R2,current,D,BW_THRESHOLD,PXB,3,5,4.0,2.0,,sun rays vanished so sun reads as a plain circle; outline-only pictures; some answer lines thinner
+R2,current,E,OPACITY_GROUP_75,XPN,4,4,4.0,4.0,,title and words grey; card borders lighter; pictures paler
+R2,current,E,BW_SEMANTIC,SFT,3,5,5.0,2.0,,photos reduced to dithered grey noise; clip art solid black silhouettes
+R2,current,E,OUTLINE_ONLY,USP,4,5,5.0,4.0,,clip art outline-only (flower becomes overlapping circles)
+R2,current,E,TINT_FILL_55,IDR,4,5,5.0,4.0,,pictures washed out
+R2,current,E,HIGH_CONTRAST,TOS,5,5,5.0,5.0,,none
+R2,current,E,HALFTONE_M,XZA,4,5,5.0,4.0,,dot-pattern fills on clip art
+R2,current,E,COMBINED_ECO+STRUCT_75,HGX,4,4,4.0,4.0,,"title, words and card borders grey; pictures paler"
+R2,current,E,SUPER_ECO_BW,BDH,3,5,5.0,2.0,,photos reduced to dithered grey noise; clip art outline-only
+R2,current,E,TINT_FILL_30,QGZ,3,5,5.0,3.0,,photos faded almost to white; clip art pastel
+R2,current,E,OUTLINE_NAIVE,PXH,4,5,5.0,4.0,,clip art outline-only
+R2,current,E,COPY_SAFE_ECO,BQA,5,5,5.0,5.0,,none
+R2,current,E,DECOR_REMOVAL,SIX,5,5,5.0,5.0,,none
+R2,current,E,ECO_COLOUR,SZQ,5,5,5.0,5.0,,clip art slightly paler
+R2,current,E,TINT_55,FBQ,3,4,4.0,3.0,,"everything faded: grey words and borders, washed-out pictures"
+R2,current,E,BW_THRESHOLD,UQR,2,5,5.0,1.0,,photos thresholded to meaningless black blobs; clip art solid black silhouettes
+R2,current,E,BG_REMOVAL,OSI,5,5,5.0,5.0,,none
+R2,current,E,STANDARD,BIB,5,5,5.0,5.0,,none
+R2,current,E,COMBINED_REMOVE+TINT_75,ITX,4,4,5.0,4.0,,title and words grey; pictures paler
+R2,current,E,DITHER_M,BQV,4,5,5.0,4.0,,stipple noise fills on clip art
+R2,current,E,GRAYSCALE,FKC,4,5,5.0,3.0,,greyscale; photos lose colour cues
+R2,current,E,OPACITY_GROUP_60,IUD,4,4,4.0,4.0,,"title, words and card borders grey; pictures pale"
+R2,current,F,OUTLINE_ONLY,SLC,4,5,4.0,,,fills removed; outline-only banner and circles; weaker poster look
+R2,current,F,BG_REMOVAL,PYL,5,5,5.0,,,none
+R2,current,F,TINT_FILL_30,LNW,4,5,4.0,,,very pale pastel fills; cream background tint
+R2,current,F,ECO_COLOUR,XSE,5,5,5.0,,,lighter fills with dark text
+R2,current,F,DECOR_REMOVAL,EVQ,5,5,5.0,,,yellow page background tint
+R2,current,F,COMBINED_ECO+STRUCT_75,GJK,5,5,5.0,,,lighter fills with dark text
+R2,current,F,HALFTONE_M,CER,4,4,4.0,,,halftone pattern noise on fills and background
+R2,current,F,DITHER_M,MBS,3,4,3.0,,,speckle noise on fills and background
+R2,superseded (pre-fix render),F,COPY_SAFE_ECO,OUV,5,5,5.0,,,none
+R2,superseded (pre-fix render),F,SUPER_ECO_BW,WPM,1,1,4.0,,,white title text and 5 of 9 circle words vanished; outline-only
+R2,current,F,TINT_55,VMZ,5,5,5.0,,,lighter fills; cream background
+R2,current,F,STANDARD,LAC,5,5,5.0,,,yellow page background tint
+R2,current,F,BW_SEMANTIC,PPO,4,5,4.0,,,colours collapsed to solid black or empty outline; heavy black banner and circles
+R2,current,F,BW_THRESHOLD,NPX,2,2,2.0,,,4 of 9 circles and their words vanished; remaining shapes solid black
+R2,current,F,OPACITY_GROUP_60,MOZ,3,3,5.0,,,white text on lightened fills; low contrast title and words
+R2,current,F,TINT_FILL_55,CKY,5,5,5.0,,,lighter fills; cream background
+R2,current,F,HIGH_CONTRAST,EHE,5,5,5.0,,,none
+R2,current,F,GRAYSCALE,ZQL,4,5,5.0,,,greyscale; grey page background
+R2,current,F,OPACITY_GROUP_75,TPP,4,4,5.0,,,"white text on lightened fills, reduced contrast; background tint"
+R2,current,F,OUTLINE_NAIVE,ULV,1,1,4.0,,,title and all circle words vanished; outline-only
+R2,current,F,COMBINED_REMOVE+TINT_75,SER,5,5,5.0,,,lighter fills
+R2,current,G,COMBINED_REMOVE+TINT_75,QDZ,5,4,4.0,5.0,,outlines and title lightened to dark grey; still clear
+R2,current,G,TINT_FILL_30,YBV,5,5,5.0,5.0,,none
+R2,current,G,TINT_55,KRH,4,3,3.0,4.0,,outlines and title faded to mid grey; fine interior strokes faint
+R2,current,G,OPACITY_GROUP_75,HIG,5,4,4.0,5.0,,outlines and title lightened to dark grey; still clear
+R2,current,G,TINT_FILL_55,ZHZ,5,5,5.0,5.0,,none
+R2,current,G,COMBINED_ECO+STRUCT_75,SMG,5,4,4.0,5.0,,outlines and title lightened to dark grey; still clear
+R2,current,G,OUTLINE_NAIVE,TRA,5,5,5.0,5.0,,none
+R2,current,G,COPY_SAFE_ECO,OHQ,5,5,5.0,5.0,,none
+R2,current,G,ECO_COLOUR,VBO,5,5,5.0,5.0,,none
+R2,current,G,STANDARD,JYR,5,5,5.0,5.0,,none
+R2,current,G,OPACITY_GROUP_60,MGJ,4,3,3.0,4.0,,outlines and title faded to mid grey; fine interior strokes faint
+R2,current,G,GRAYSCALE,ZGO,5,5,5.0,5.0,,none
+R2,current,G,HIGH_CONTRAST,XOW,5,5,5.0,5.0,,none
+R2,current,G,BW_SEMANTIC,DTO,5,5,5.0,5.0,,none
+R2,current,G,SUPER_ECO_BW,QNG,5,5,5.0,5.0,,none
+R2,current,G,DITHER_M,LPT,5,5,5.0,5.0,,none
+R2,current,G,OUTLINE_ONLY,VKM,5,5,5.0,5.0,,none
+R2,current,G,BG_REMOVAL,WMJ,5,5,5.0,5.0,,none
+R2,current,G,HALFTONE_M,GIO,5,5,5.0,5.0,,none
+R2,current,G,DECOR_REMOVAL,WBB,5,5,5.0,5.0,,none
+R2,current,G,BW_THRESHOLD,HII,5,5,5.0,5.0,,slightly jagged (aliased) outline edges
+R2,current,H,TINT_FILL_55,RNG,5,5,5.0,,,none
+R2,current,H,OPACITY_GROUP_75,WAF,4,4,4.0,,,cell text and grid lightened to dark grey
+R2,current,H,STANDARD,VFH,5,5,5.0,,,none
+R2,current,H,DECOR_REMOVAL,RQE,5,5,4.0,,,header row shading removed (header still bold with heavy rule)
+R2,current,H,OUTLINE_NAIVE,ZSW,5,5,4.0,,,header row shading removed (header still bold with heavy rule)
+R2,current,H,TINT_FILL_30,WLR,5,5,5.0,,,header shading very faint
+R2,current,H,OPACITY_GROUP_60,ILE,3,3,3.0,,,small cell text and grid faded to mid grey; low contrast
+R2,current,H,BW_SEMANTIC,WXQ,5,5,4.0,,,header row shading removed (header still bold with heavy rule)
+R2,current,H,COMBINED_REMOVE+TINT_75,ASK,4,4,4.0,,,cell text and grid lightened to dark grey; header shading removed
+R2,current,H,BW_THRESHOLD,DDO,5,5,4.0,,,header shading removed; slightly jagged text edges
+R2,current,H,BG_REMOVAL,MJI,5,5,5.0,,,none
+R2,current,H,COMBINED_ECO+STRUCT_75,JHC,4,4,4.0,,,cell text and grid lightened to dark grey; header shading removed
+R2,current,H,SUPER_ECO_BW,YTB,5,5,4.0,,,header row shading removed (header still bold with heavy rule)
+R2,current,H,COPY_SAFE_ECO,TEA,5,5,4.0,,,header row shading removed (header still bold with heavy rule)
+R2,current,H,HIGH_CONTRAST,SUO,5,5,5.0,,,none
+R2,current,H,GRAYSCALE,RQZ,5,5,5.0,,,none
+R2,current,H,DITHER_M,DUQ,5,5,4.0,,,header fill replaced by stipple/dither pattern noise
+R2,current,H,HALFTONE_M,JBB,5,5,4.0,,,header fill replaced by fine checker pattern noise
+R2,current,H,OUTLINE_ONLY,OOE,5,5,4.0,,,header row shading removed (header still bold with heavy rule)
+R2,current,H,TINT_55,DHE,3,3,3.0,,,small cell text and grid faded to mid grey; low contrast
+R2,current,H,ECO_COLOUR,AGM,5,5,4.0,,,header row shading removed (header still bold with heavy rule)
+R2,current,I,ECO_COLOUR,XQO,5,5,5.0,,4.0,fills lightened to pastel tints; categories still distinct
+R2,current,I,TINT_FILL_55,OOL,5,5,5.0,,4.0,fills lightened to pastel tints; categories still distinct
+R2,current,I,TINT_55,MSW,4,3,3.0,,4.0,"labels, instructions and answer lines faded to mid grey; pastel fills"
+R2,current,I,STANDARD,ZRD,5,5,5.0,,5.0,none
+R2,current,I,COMBINED_ECO+STRUCT_75,DTA,5,4,4.0,,4.0,text and answer lines lightened to dark grey; pastel fills
+R2,current,I,BG_REMOVAL,GNZ,5,5,5.0,,5.0,none
+R2,current,I,OPACITY_GROUP_75,SLA,5,4,4.0,,5.0,text and answer lines lightened to dark grey; fills slightly lighter
+R2,current,I,OUTLINE_ONLY,LCR,5,5,5.0,,5.0,none
+R2,current,I,SUPER_ECO_BW,ONH,1,5,5.0,,1.0,"colours collapsed to black/white: ka/mi/fo all black, vo/ello all white; counting task impossible"
+R2,current,I,HIGH_CONTRAST,BIU,5,5,5.0,,5.0,none
+R2,current,I,BW_THRESHOLD,VYE,1,5,5.0,,1.0,"colours collapsed to black/white: ka/mi/fo all black, vo/ello all white; jagged edges"
+R2,current,I,TINT_FILL_30,HFC,3,5,5.0,,3.0,fills very pale; pink vs peach and lavender vs light blue hard to separate
+R2,current,I,BW_SEMANTIC,UKR,1,5,5.0,,1.0,"colours collapsed to black/white: ka/mi/fo all black, vo/ello all white; counting task impossible"
+R2,current,I,COMBINED_REMOVE+TINT_75,ZNO,5,4,4.0,,5.0,text and answer lines lightened to dark grey; fills slightly lighter
+R2,current,I,HALFTONE_M,YMJ,4,5,5.0,,4.0,fills rendered as pale coloured dot screen; pattern noise
+R2,current,I,OPACITY_GROUP_60,LZR,4,3,3.0,,4.0,"labels, instructions and answer lines faded to mid grey; lighter fills"
+R2,current,I,DECOR_REMOVAL,YTY,5,5,5.0,,5.0,none
+R2,current,I,COPY_SAFE_ECO,GHW,5,5,5.0,,5.0,none
+R2,current,I,DITHER_M,TTP,4,5,5.0,,4.0,fills pale with random speckle texture
+R2,current,I,GRAYSCALE,ICV,2,5,5.0,,2.0,"converted to greyscale; five grey levels too close (vo vs mi, ka vs fo) to tell apart reliably"
+R2,current,I,OUTLINE_NAIVE,LMX,5,5,5.0,,5.0,none
+R2,current,J,TINT_55,NUF,2,3,2.0,,,"all text faded to mid grey; trace words and dashed guides very faint, likely lost on photocopy"
+R2,current,J,BG_REMOVAL,QQW,5,5,5.0,,,none
+R2,current,J,COPY_SAFE_ECO,FOW,4,5,4.0,,,"trace words darker grey, closer to printed text"
+R2,current,J,BW_THRESHOLD,VFX,2,4,2.0,,,grey trace words and dashed trace guides vanished; small text slightly jagged
+R2,current,J,COMBINED_REMOVE+TINT_75,TVD,4,4,4.0,,,text lightened to dark grey; trace words lighter
+R2,current,J,OPACITY_GROUP_75,JUB,4,4,4.0,,,text lightened to dark grey; trace words lighter
+R2,current,J,HALFTONE_M,WAQ,5,5,5.0,,,none
+R2,current,J,GRAYSCALE,KBB,5,5,5.0,,,none
+R2,current,J,STANDARD,IXZ,5,5,5.0,,,none
+R2,current,J,DITHER_M,GZJ,5,5,5.0,,,none
+R2,current,J,TINT_FILL_55,MXH,5,5,5.0,,,none
+R2,current,J,COMBINED_ECO+STRUCT_75,ORS,4,4,4.0,,,text and boxes lightened to dark grey; trace words lighter
+R2,current,J,ECO_COLOUR,XXW,5,5,5.0,,,none
+R2,current,J,BW_SEMANTIC,TKU,3,5,3.0,,,trace words now solid black; nothing left to trace
+R2,current,J,OUTLINE_NAIVE,PTU,5,5,5.0,,,none
+R2,current,J,DECOR_REMOVAL,GHA,5,5,5.0,,,none
+R2,current,J,SUPER_ECO_BW,PNU,3,5,3.0,,,trace words now solid black; nothing left to trace
+R2,current,J,HIGH_CONTRAST,SRZ,4,5,4.0,,,"trace words darker grey, closer to printed text"
+R2,current,J,OPACITY_GROUP_60,JVJ,2,3,2.0,,,"all text, boxes and lines faded to mid grey; trace words very faint, likely lost on photocopy"
+R2,current,J,OUTLINE_ONLY,JNS,5,5,5.0,,,none
+R2,current,J,TINT_FILL_30,DMT,5,5,5.0,,,none
+R2,current,K,OUTLINE_NAIVE,ZQL,4,4,5.0,4.0,,white banner title text vanished (empty outlined banner); decoration reduced to outlines
+R2,current,K,TINT_FILL_55,RDA,5,5,5.0,5.0,,none
+R2,current,K,OPACITY_GROUP_75,BRK,4,4,4.0,5.0,,body text and answer lines lightened to dark grey on tinted background; white title on lighter pink
+R2,current,K,BG_REMOVAL,ZVJ,5,5,5.0,5.0,,none
+R2,current,K,ECO_COLOUR,LNS,5,5,5.0,,,all decoration removed (optional); plain title kept
+R2,current,K,BW_THRESHOLD,EZR,5,5,4.0,3.0,,decoration converted to black/white; sun icons lost rays; some answer lines thin grey
+R2,current,K,HIGH_CONTRAST,JXV,5,5,5.0,5.0,,border rendered solid black
+R2,superseded (pre-fix render),K,SUPER_ECO_BW,XCR,5,4,5.0,,,title and all decoration removed
+R2,current,K,TINT_FILL_30,URS,5,5,5.0,5.0,,decoration colours lightened
+R2,current,K,DECOR_REMOVAL,AIS,5,5,5.0,,,"border, banner and icons removed; background tint kept"
+R2,superseded (pre-fix render),K,COPY_SAFE_ECO,QFN,5,4,5.0,,,title and all decoration removed
+R2,current,K,DITHER_M,NQK,5,4,5.0,4.0,,"speckle texture on background, banner and icon fills"
+R2,current,K,OUTLINE_ONLY,TXY,5,5,5.0,4.0,,decoration reduced to outlines (flower outline tangled)
+R2,current,K,HALFTONE_M,EDZ,5,4,5.0,4.0,,"dot-screen pattern on background, banner and icon fills"
+R2,current,K,BW_SEMANTIC,CWP,5,5,5.0,4.0,,decoration converted to black silhouettes; heavy black border
+R2,current,K,TINT_55,AIE,3,3,4.0,4.0,,question text and answer lines faded to mid grey on tinted background; pale decoration
+R2,current,K,STANDARD,VPS,5,5,5.0,5.0,,none
+R2,current,K,GRAYSCALE,ZGV,5,5,5.0,4.0,,converted to greyscale; grey page tint
+R2,current,K,COMBINED_ECO+STRUCT_75,PXC,4,4,4.0,,,decoration removed; body text and answer lines lightened to dark grey
+R2,current,K,COMBINED_REMOVE+TINT_75,QXI,4,4,4.0,,,decoration removed; body text and answer lines lightened to dark grey
+R2,current,K,OPACITY_GROUP_60,MJU,3,3,4.0,4.0,,question text and answer lines faded to mid grey on tinted background; pale decoration
+R2,current,L,BG_REMOVAL,GMO,5,5,5.0,5.0,,none
+R2,current,L,COMBINED_ECO+STRUCT_75,CYA,4,4,4.0,5.0,,cut lines and labels lightened; pictures pastel
+R2,current,L,BW_SEMANTIC,MBT,5,5,4.0,4.0,,pictures reduced to black silhouettes/outlines; solid card borders beside dashed cut lines
+R2,current,L,COPY_SAFE_ECO,UCE,5,5,5.0,5.0,,none
+R2,current,L,GRAYSCALE,DZJ,5,5,5.0,4.0,,converted to greyscale; grey card tints
+R2,current,L,OPACITY_GROUP_60,GAN,4,3,3.0,4.0,,labels faded to mid grey; cut lines light grey; pictures pastel
+R2,current,L,DITHER_M,TEV,5,5,5.0,4.0,,speckle texture on picture fills and card backgrounds
+R2,current,L,TINT_55,LJC,3,3,3.0,4.0,,"labels, cut lines and pictures faded; cut lines faint"
+R2,current,L,OUTLINE_NAIVE,XXZ,5,5,4.0,4.0,,pictures reduced to outlines (flower outline tangled); grey card borders inside cut lines
+R2,current,L,OPACITY_GROUP_75,MUG,4,4,4.0,5.0,,cut lines and labels lightened
+R2,current,L,TINT_FILL_30,DTG,5,5,5.0,4.0,,pictures very pale pastel
+R2,current,L,STANDARD,PBC,5,5,5.0,5.0,,none
+R2,current,L,HALFTONE_M,SML,5,5,5.0,4.0,,dot-pattern texture on picture fills and card backgrounds
+R2,current,L,SUPER_ECO_BW,UTY,5,5,5.0,4.0,,pictures reduced to outlines (flower outline tangled)
+R2,current,L,DECOR_REMOVAL,XPI,5,5,5.0,5.0,,none
+R2,current,L,HIGH_CONTRAST,JYB,5,5,5.0,5.0,,none
+R2,current,L,OUTLINE_ONLY,NEA,5,5,4.0,4.0,,pictures reduced to outlines (flower outline tangled); grey card borders inside cut lines
+R2,current,L,COMBINED_REMOVE+TINT_75,ICQ,4,4,4.0,5.0,,cut lines and labels lightened
+R2,current,L,BW_THRESHOLD,EHK,4,5,5.0,3.0,,sun lost its rays (reads as plain circle); other pictures black silhouettes
+R2,current,L,TINT_FILL_55,NZI,5,5,5.0,5.0,,pictures slightly lighter
+R2,current,L,ECO_COLOUR,XPT,5,5,5.0,5.0,,pictures slightly lighter; card tints removed
+R3,current,F,TINT_55,RAH,5,5,5.0,,,fills lightened to pastel and cream page tint; no functional loss
+R3,current,F,OUTLINE_NAIVE,ALE,1,1,3.0,,,all text vanished: title and every circle word blank; only thin coloured outlines of banner and circles remain
+R3,current,F,GRAYSCALE,WTW,4,4,5.0,,,converted to greyscale with grey page tint; white words on mid-grey circles (NU/VER/OM) lower contrast; colour identity lost
+R3,current,F,HALFTONE_M,QXK,4,4,4.0,,,"halftone dot pattern on banner, circles and background; ragged dotted circle edges; words sit on dot texture"
+R3,current,F,COMBINED_REMOVE+TINT_75,HSA,5,5,5.0,,,none
+R3,current,F,OUTLINE_ONLY,DZP,4,5,5.0,,,fills removed to thin coloured outlines; all text clear but poster loses its colour impact
+R3,current,F,OPACITY_GROUP_60,TYI,3,2,5.0,,,"white text on pastel fills: title and circle words low contrast, DE/MI on light orange and NU/VER on light green barely legible; cream tint"
+R3,current,F,COPY_SAFE_ECO,LZC,5,5,5.0,,,none
+R3,current,F,DITHER_M,XII,4,4,4.0,,,"random dither noise on banner, circles and background; speckled circle edges; words over noisy texture"
+R3,current,F,OPACITY_GROUP_75,BYP,4,3,5.0,,,"white words on medium fills (orange DE/MI, green NU/VER) low contrast; cream tint"
+R3,current,F,TINT_FILL_30,VYM,4,5,5.0,,,very pale washed-out fills and banner; text crisp but poster loses visual punch
+R3,current,F,BG_REMOVAL,NEY,5,4,5.0,,,white words on orange circles (DE/MI) lower contrast
+R3,current,F,STANDARD,TLK,5,4,5.0,,,white words on orange circles (DE/MI) lower contrast; cream page tint
+R3,current,F,BW_SEMANTIC,ENP,4,5,4.0,,,"reduced to pure black/white: banner and some circles solid black, others hollow outlines, so matching-colour pairs no longer match; text clear"
+R3,current,F,DECOR_REMOVAL,IFY,5,4,5.0,,,white words on orange circles (DE/MI) lower contrast; cream page tint
+R3,current,F,HIGH_CONTRAST,IME,5,5,5.0,,,none
+R3,current,F,BW_THRESHOLD,HPZ,2,2,2.0,,,"4 of 9 circles (NU, DE, VER, MI) vanished together with their words; remaining banner and circles solid black"
+R3,current,F,COMBINED_ECO+STRUCT_75,UPO,5,5,5.0,,,fills lightened to pastel; no functional loss
+R3,current,F,SUPER_ECO_BW,SZY,4,5,5.0,,,"all fills removed, black outlines only; text clear but reads as line art rather than a colour poster"
+R3,current,F,ECO_COLOUR,UVX,5,5,5.0,,,fills lightened to pastel; no functional loss
+R3,current,F,TINT_FILL_55,XJD,5,5,5.0,,,fills lightened to pastel and cream page tint; no functional loss
+R3,current,K,BG_REMOVAL,YPE,5,5,5.0,5.0,,none
+R3,current,K,GRAYSCALE,DOU,5,5,5.0,4.0,,converted to greyscale; light grey page tint and grey border; icons grey but recognisable
+R3,current,K,TINT_FILL_55,LHA,5,5,5.0,5.0,,decoration lightened to pastel; cream page tint
+R3,current,K,TINT_55,XQW,3,3,3.0,4.0,,"question text, Name/Date labels and answer lines faded to light grey; whole page washed out"
+R3,current,K,STANDARD,VGQ,5,5,5.0,5.0,,none
+R3,current,K,COPY_SAFE_ECO,TXY,5,5,5.0,1.0,,"all decoration removed (border, banner, icons, tint) - optional per brief; questions, lines and box intact"
+R3,current,K,HALFTONE_M,QPO,5,5,5.0,4.0,,"halftone dot pattern on banner and icons, faint dot texture in background"
+R3,current,K,DECOR_REMOVAL,BKP,5,5,5.0,1.0,,"border, banner and icons removed (optional) but yellow page tint kept; questions and lines intact"
+R3,current,K,BW_SEMANTIC,GAV,5,5,5.0,4.0,,"border, banner and several icons turned solid black; heavy black frame; content intact"
+R3,current,K,COMBINED_REMOVE+TINT_75,VOH,4,4,4.0,1.0,,"decoration removed (optional); title, question text and answer lines lightened to mid grey"
+R3,current,K,OPACITY_GROUP_60,MAG,3,3,3.0,4.0,,question text and answer lines faded grey on cream; white banner title low contrast on pale pink; pale icons
+R3,current,K,BW_THRESHOLD,UUK,5,5,5.0,3.0,,border reduced to star outlines; banner solid black; sun icons lost rays (plain circles); apple/flower black silhouettes
+R3,current,K,OUTLINE_ONLY,YIV,5,5,5.0,4.0,,decoration reduced to thin outlines; flower drawn as overlapping circle outlines
+R3,current,K,SUPER_ECO_BW,PQK,5,5,5.0,1.0,,all decoration removed - optional per brief; text and lines black and intact
+R3,current,K,COMBINED_ECO+STRUCT_75,XTA,4,4,4.0,1.0,,"decoration removed (optional); title, question text and answer lines lightened to mid grey"
+R3,current,K,DITHER_M,JBW,5,5,5.0,4.0,,"random speckle texture on banner and icons, faint speckle in background"
+R3,current,K,HIGH_CONTRAST,SRA,5,5,5.0,5.0,,border turned black (stars and icons keep colour); no functional loss
+R3,current,K,OUTLINE_NAIVE,LUK,4,4,5.0,4.0,,"banner title text vanished (empty outlined banner); decoration outline-only, flower as overlapping circles"
+R3,current,K,ECO_COLOUR,LQO,5,5,5.0,1.0,,all decoration removed - optional per brief; questions and lines intact
+R3,current,K,TINT_FILL_30,PAL,5,5,5.0,4.0,,banner and icons washed to pale pastel; cream tint; content intact
+R3,current,K,OPACITY_GROUP_75,XEP,4,4,4.0,5.0,,question text and answer lines lightened to dark grey; white banner title on mid pink

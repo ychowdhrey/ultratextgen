@@ -1479,6 +1479,7 @@ K_SYM = "ULTRATEXTGEN · SYMBOLS"
 K_SITE = "ULTRATEXTGEN"
 K_PRINT = "ULTRATEXTGEN · PRINTABLES"
 K_UPDATE = "ULTRATEXTGEN · UPDATES"
+K_RESEARCH = "ULTRATEXTGEN · RESEARCH"
 
 
 def glyphs(*g):
@@ -2964,8 +2965,18 @@ for _d in "0123456789":
         f"Number {_d} Coloring Page", f"Printable {_d} outline to color",
         P(m_letter_outline, letter=_d), K_PRINT)
 
+# ---- /research/ published studies ----
+PAGES.update({
+"research-hub": ("Research", "Published experiments with their method and data",
+    P(m_doc), K_RESEARCH),
+"research-printable-ink-efficiency-study": ("Printable Ink Efficiency", "Estimated coverage across 36 rendering methods",
+    P(m_doc), K_RESEARCH),
+})
+
 # ---- /learn/ education pillar ----
 PAGES.update({
+"learn-save-printer-ink-printables": ("Save Printer Ink on Worksheets", "Remove decoration, lighten fills, keep text dark",
+    P(m_doc), K_PRINT),
 "learn-hub": ("Learn", "Stage-by-stage guides for handwriting & lettering",
     P(m_doc), K_PRINT),
 "learn-dot-to-dots": ("Dot-to-Dots & Pencil Control", "A progression guide from many dots to freehand",

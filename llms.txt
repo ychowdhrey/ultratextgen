@@ -4,7 +4,7 @@
 
 UltraTextGen is a free, no-sign-up text tool: Unicode font styles to copy and paste, a browsable symbol and emoji library, one reference page per individual symbol, printable lettering and handwriting sheets rendered in the browser, and explanatory guides and answers. Everything runs client-side.
 
-4719 indexable pages in 31 languages. This file is a navigation index, not a URL list: https://ultratextgen.com/sitemap.xml is the complete canonical URL list and stays the authority on what exists. Links below point to a narrower llms.txt index where one exists, and straight to a page where it does not.
+4722 indexable pages in 31 languages. This file is a navigation index, not a URL list: https://ultratextgen.com/sitemap.xml is the complete canonical URL list and stays the authority on what exists. Links below point to a narrower llms.txt index where one exists, and straight to a page where it does not.
 
 English pages are served from the site root, so this file is also the English index (https://ultratextgen.com/en/llms.txt redirects here). Every other language has its own index at https://ultratextgen.com/<code>/llms.txt.
 
@@ -54,7 +54,7 @@ English pages are served from the site root, so this file is also the English in
 - [Printables](https://ultratextgen.com/printables/llms.txt): Printable tracing worksheets, name sheets, coloring pages, word puzzles and block letters. Each prints as a PDF or saves as a PNG, with a class set option. 218 pages.
 - [Seasonal & event text (Events)](https://ultratextgen.com/events/llms.txt): Live font, emoji, kaomoji, ASCII art, and phrase generators for calendar holidays — Chinese New Year, Eid, Christmas, Diwali, Halloween, New Year, Valentine's Day, and more. 17 pages.
 - [Guides](https://ultratextgen.com/guide/llms.txt): Fonts are not decoration. They are signals. Explore guides on how Unicode typography encodes tone, authority, irony, and emphasis across social platforms. 33 pages.
-- [Learn: handwriting & lettering (Learn)](https://ultratextgen.com/learn/llms.txt): UltraTextGen's education library: stage-by-stage, tool-connected guides for parents and teachers. First topic: teaching handwriting, from readiness to cursive. 13 pages.
+- [Learn](https://ultratextgen.com/learn/llms.txt): UltraTextGen's education library: stage-by-stage, tool-connected guides for parents and teachers. First topic: teaching handwriting, from readiness to cursive. 14 pages.
 - [Answers](https://ultratextgen.com/answers/llms.txt): Direct answers to common font and typography questions for Facebook, Snapchat, LinkedIn, and more — exact font details, lookalikes, and practical guidance. 66 pages.
 - [Updates](https://ultratextgen.com/updates/llms.txt): What changed, and why it matters for your text. UltraTextGen tracks new Unicode versions, platform formatting changes, and game nickname rule changes: the same events that keep our Check tools accurate. 13 pages.
 
@@ -91,6 +91,11 @@ English pages are served from the site root, so this file is also the English in
 - [Stylish text for X (Twitter) posts & bio.](https://ultratextgen.com/x/): Stylish Unicode text for your X posts and bio.
 - [YouTube Font Generator — Channel Name First](https://ultratextgen.com/youtube/): Style your YouTube channel name, About text, and descriptions with 100+ Unicode fonts, checked live against YouTube's real name and @handle…
 - [YouTube Channel Name Generator](https://ultratextgen.com/youtube/name-generator/): Generate channel-name ideas from a keyword, initials, and creator vibe, then style your favorite in the YouTube Font Generator.
+
+## Research
+
+- [UltraTextGen Research](https://ultratextgen.com/research/): Controlled experiments, published with the method, data and limitations needed to check them.
+- [Printable Ink Efficiency: Measuring Coverage Reduction Across Common Worksheet Rendering Methods](https://ultratextgen.com/research/printable-ink-efficiency-study/): A controlled experiment on 108 computer-generated worksheet pages, 36 rendering methods and 36 unseen holdout pages.
 
 ## Embeddable widgets
 

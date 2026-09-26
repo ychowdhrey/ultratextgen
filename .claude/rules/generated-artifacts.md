@@ -28,6 +28,7 @@ is a second source of truth. When you find one of these, find its generator.
 | per-style OG cards | `scripts/generate-style-og-cards.py` | — |
 | `js/printables/cursiveRouteData.js` (a cursive phrase's writing route) | `node scripts/build-cursive-routes.js --write` from `scripts/lib/cursive-route-spec.js`; it refuses to write a route that leaves the ink or skips a stroke | `--check` (build-time, needs a browser driver) |
 | printables sheet previews (`assets/printables-previews/*.png` and the `<img>` in each page's preview box) | `node scripts/capture-printables-previews.js --only <slug>` (page 1 of the page's own PDF, headless Chromium), then `python3 scripts/wire-printables-previews.py --write` | `test:sitemap-images` |
+| a study's downloadable PDF (`research/<study>.pdf`) | `node scripts/build-research-pdf.js --study <study>` — prints the study page itself (its `@media print` rules in `style.css`), so the PDF carries the page's own text; re-run it in the same change as any edit to the page, or the two drift | — (build-time, needs a browser driver) |
 | pre-rendered collection grids | `npm run prerender:collection-grids -- --write` | `check:collection-grids` |
 | pre-rendered country-flag tiles | `npm run prerender:country-flags -- --write` | `check:country-flags` |
 | `symbol/` hub↔spoke and peer↔peer cards | `npm run sync:symbol-peer-links` | `check:new-symbol-peer-links` |
