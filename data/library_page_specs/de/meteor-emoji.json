@@ -2,16 +2,17 @@
   "slug": "meteor-emoji",
   "lang": "de",
   "page_type": "symbol",
-  "title": "Meteor Emoji: 🪋 kopieren & einfügen — der Unicode-18.0-Kandidat, der sich von Komet abspaltet",
-  "meta_description": "Meteor (🪋, U+1FA8B) ist ein Entwurfs-Kandidat für Emoji 18.0, erwartet zusammen mit Unicode 18.0 im September 2026. Er löst eine jahrelange Darstellungs-Spaltung beim Komet-Emoji — noch nicht genehmigt, von keiner Schriftart darstellbar. Vorgeschichte, Bedeutung und Status.",
+  "title": "Meteor Emoji: 🪋 kopieren & einfügen, final in Emoji 18.0",
+  "meta_description": "Meteor (🪋, U+1FA8B) ist seit dem 16. September 2026 final in Emoji 18.0 und übernimmt den Feuerball-Look, über den Komet ☄️ gespalten war. Stand 25. September 2026 zeigt ihn noch kein Handy und kein Computer standardmäßig an.",
   "canonical": "https://ultratextgen.com/de/symbol/meteor-emoji/",
   "breadcrumb": "Meteor Emoji",
   "hero_h1": "Meteor Emoji",
-  "hero_tagline": "Ein durch die Atmosphäre schießender Meteor, abgespalten von Komets jahrzehntelanger Identitätskrise, im Entwurf für Emoji 18.0, erwartet zusammen mit Unicode 18.0 im September 2026. Nur ein Entwurf: noch nicht genehmigt, von keiner Schriftart darstellbar. Trotzdem kannst du den Codepoint schon jetzt kopieren.",
-  "intro": "Meteor (🪋, U+1FA8B) ist ein Kandidaten-Emoji im Entwurf für Emoji 18.0, das Emoji-Pendant zu Unicode 18.0, dessen finale Genehmigung für September 2026 erwartet wird. Es zeigt einen in die Atmosphäre eintretenden, glühenden Feuerball, und es existiert eigens, um eine Darstellungs-Spaltung zu beheben, die das bestehende Komet-Emoji (☄️) seit seiner Einführung plagt: Manche Plattformen zeichneten Komet als blauen, funkelnden Eisball, andere entwarfen ihn als glühend heißen Gesteinsbrocken mitten im Einschlag: zwei tatsächlich unterschiedliche Konzepte, die sich einen Codepoint teilten. Unicodes eigene Ankündigung brachte es auf den Punkt: „Sich etwas bei einer Sternschnuppe zu wünschen und ein Ereignis wie das Aussterben der Dinosaurier live mitzuerleben, sind einfach zwei völlig verschiedene Energien.“ Meteor übernimmt die Feuerball-Bedeutung, damit sich Komet überall auf ein einheitliches, blau-eisiges Design zurückziehen kann. Weil er noch ein Entwurf ist, stellt derzeit kein Betriebssystem, keine Tastatur und keine Schriftart ihn dar; bis zur Genehmigung von Emoji 18.0 und der Umsetzung durch die Plattformen erscheint an dieser Stelle nur ein leeres Kästchen oder eine Platzhalter-Glyphe, voraussichtlich bis irgendwann 2027.",
+  "hero_tagline": "Ein durch die Atmosphäre schießender Meteor, abgespalten von Komets jahrzehntelanger Identitätskrise, final in Emoji 18.0, seit Unicode 18.0 am 16. September 2026 veröffentlicht wurde. Stand 25. September 2026 zeigt ihn noch kein Handy und kein Computer standardmäßig an. Trotzdem kannst du den Codepoint schon jetzt kopieren.",
+  "intro": "Meteor (🪋, U+1FA8B) ist eines der neun neuen Emojis in Emoji 18.0, dem Emoji-Pendant zu Unicode 18.0, das das Unicode-Konsortium am 16. September 2026 veröffentlicht hat. Es zeigt einen in die Atmosphäre eintretenden, glühenden Feuerball, und es existiert eigens, um eine Darstellungs-Spaltung zu beheben, die das bestehende Komet-Emoji (☄️) seit seiner Einführung plagt: Manche Plattformen zeichneten Komet als blauen, funkelnden Eisball, andere entwarfen ihn als glühend heißen Gesteinsbrocken mitten im Einschlag: zwei tatsächlich unterschiedliche Konzepte, die sich einen Codepoint teilten. Unicodes eigene Ankündigung brachte es auf den Punkt: „Sich etwas bei einer Sternschnuppe zu wünschen und ein Ereignis wie das Aussterben der Dinosaurier live mitzuerleben, sind einfach zwei völlig verschiedene Energien.“ Meteor übernimmt die Feuerball-Bedeutung, damit sich Komet überall auf ein einheitliches, blau-eisiges Design zurückziehen kann. Bis zu dieser Veröffentlichung war er ein Entwurfs-Kandidat; Unicodes finale Emoji-Daten führen U+1FA8B jetzt als „meteor“, voll qualifiziert und mit E18.0 markiert. Google hat ihn bereits für Noto Color Emoji gezeichnet, doch Stand 25. September 2026 liefert ihn kein Betriebssystem, keine Tastatur und keine System-Emoji-Schrift aus, daher erscheint vorerst ein leeres Kästchen oder eine Platzhalter-Glyphe. Emojipedia schätzt anhand des Rollouts im Vorjahr, dass WhatsApp, Samsung und Google Android ihn im ersten Quartal 2027 ergänzen, Apple etwa im März oder April 2027 und Microsoft im Spätsommer oder Frühherbst 2027.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
+  "sources": "Den finalen Namen und Codepoint, U+1FA8B meteor mit der Markierung E18.0, führt die Datendatei <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> von Unicode 18.0. Die <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">Ankündigung von Unicode 18.0</a> des Unicode-Konsortiums bestätigt das Veröffentlichungsdatum, den 16. September 2026, und die neun neuen Emojis. <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">Emojipedia</a> berichtete über Googles Designs für Noto Color Emoji und veröffentlichte die oben genannten Schätzungen für 2027.",
   "home_url": "https://ultratextgen.com/de/",
   "crumb_home": "Startseite",
   "crumb_library": "Symbole",
@@ -35,11 +36,11 @@
       "id": "meteor",
       "label": "Meteor",
       "h2": "Meteor Emoji",
-      "intro": "Das Entwurfszeichen selbst: schon heute als Codepoint kopierbar, auch wenn noch keine Schriftart es darstellen kann.",
+      "intro": "Das Emoji-18.0-Zeichen selbst: Kopiere den Codepoint schon heute; als Meteor erscheint er, sobald die Emoji-Schrift deiner Plattform nachzieht.",
       "symbols": [
         {
           "char": "🪋",
-          "label": "Meteor (Entwurf, U+1FA8B)"
+          "label": "Meteor (U+1FA8B, Emoji 18.0)"
         }
       ]
     },
@@ -65,21 +66,21 @@
     },
     {
       "id": "weitere-entwurfs-emojis",
-      "label": "Weitere Entwurfs-Kandidaten",
-      "h2": "Weitere Entwurfs-Kandidaten für Emoji 18.0",
-      "intro": "Meteor ist nicht das einzige noch nicht genehmigte Zeichen dieser Ausgabe: diese hier stehen im selben Entwurf und bleiben bis zur Entscheidung im September 2026 ebenso unsichtbar.",
+      "label": "Gleiche Veröffentlichung",
+      "h2": "Weitere neue Emojis in Emoji 18.0",
+      "intro": "Meteor ist nicht das einzige Zeichen, das Emoji 18.0 final gemacht hat: diese hier kamen am 16. September 2026 mit ihm in den Standard, und die meisten Bildschirme können sie ebenfalls noch nicht darstellen.",
       "symbols": [
         {
           "char": "🫫",
-          "label": "Berstendes Gesicht (Entwurf, U+1FAEB): Gewinner der öffentlichen Abstimmung"
+          "label": "Berstendes Gesicht (U+1FAEB, Emoji 18.0): Gewinner der öffentlichen Abstimmung"
         },
         {
           "char": "🫝",
-          "label": "Essiggurke (Entwurf, U+1FADD)"
+          "label": "Essiggurke (U+1FADD, Emoji 18.0)"
         },
         {
           "char": "🫌",
-          "label": "Monarchfalter (Entwurf, U+1FACC)"
+          "label": "Monarchfalter (U+1FACC, Emoji 18.0)"
         }
       ]
     }
@@ -93,17 +94,17 @@
     {
       "href": "/de/symbol/berstendes-gesicht-emoji/",
       "title": "Berstendes Gesicht Emoji",
-      "desc": "Der Entwurfs-Kandidat für Emoji 18.0, der die öffentliche Abstimmung gewann."
+      "desc": "Das neue Emoji-18.0-Gesicht, das die öffentliche Abstimmung gewann."
     },
     {
       "href": "/de/symbol/essiggurke-emoji/",
       "title": "Essiggurke Emoji",
-      "desc": "Ein weiterer Entwurfs-Kandidat für Emoji 18.0 übernahm einen Codepoint-Platz, der ursprünglich für einen zurückgestellten Vorschlag reserviert war."
+      "desc": "Ein weiteres neues Emoji aus Emoji 18.0 übernahm einen Codepoint-Platz, der ursprünglich für einen zurückgestellten Vorschlag reserviert war."
     },
     {
       "href": "/de/updates/unicode-18-emoji-abstimmung/",
       "title": "Unicode 18.0: Neue Emojis",
-      "desc": "Die vollständige Entwurfsliste aller 9 Kandidaten, sortiert nach öffentlicher Abstimmung."
+      "desc": "Alle 9 Emojis, die in Emoji 18.0 final wurden, sortiert nach öffentlicher Abstimmung."
     }
   ]
 }
