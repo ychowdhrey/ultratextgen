@@ -118,42 +118,104 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <span class="breadcrumb-current">Research</span>
 </nav>
 
-<section class="hero research-hero">
+<section class="hero research-hero research-hub-hero">
     <div class="hero-inner">
       <h1 class="hero-headline">UltraTextGen Research</h1>
       <p class="hero-tagline">Controlled experiments, published with the method, data and limitations needed to check them. The first study measures how much estimated coverage common ink-saving methods remove from computer-generated worksheet pages.</p>
     </div>
   </section>
 
-  <main class="container research-page">
+  <main class="container research-page research-hub">
 
-    <section class="editorial-section" id="studies">
+    <section class="study-section" id="studies" aria-labelledby="studies-title">
       <span class="article-section-label">Studies</span>
-      <h2>Published studies</h2>
-      <ol class="research-list">
-        <li class="research-entry">
-          <span class="evidence-tag is-measured">Study 1</span>
-          <h3><a href="/research/printable-ink-efficiency-study/">Printable Ink Efficiency: Measuring Coverage Reduction Across Common Worksheet Rendering Methods</a></h3>
-          <p>How much estimated printed coverage 36 rendering methods remove from 12 kinds of computer-generated worksheet, and what each one breaks. Removing decoration was the largest lever where decoration exists; page-wide fading saved little on text and line pages; dot patterns never meaningfully beat a flat tint.</p>
-          <p><a href="/research/printable-ink-efficiency-study.pdf" download>Download the PDF</a> · <a href="/learn/save-printer-ink-printables/">Practical guide</a></p>
+      <h2 id="studies-title">Published studies</h2>
+      <h3 class="research-area" id="printing-and-printables">Printing and printables</h3>
+      <ol class="study-cards">
+        <li class="study-card">
+          <div class="study-card-head">
+            <span class="study-card-number">Study 1</span>
+            <ul class="study-status" aria-label="Validation status">
+              <li class="study-status-item is-done">Digital study complete</li>
+              <li class="study-status-item is-pending">Printer validation not yet run</li>
+            </ul>
+          </div>
+          <h4 class="study-card-title"><a href="/research/printable-ink-efficiency-study/">Printable Ink Efficiency</a></h4>
+          <p class="study-card-subtitle">Measuring Coverage Reduction Across Common Worksheet Rendering Methods</p>
+          <p class="study-card-summary">How much estimated printed coverage 36 rendering methods remove from 12 kinds of computer-generated worksheet, and what each one breaks.</p>
+          <p class="study-card-finding"><span class="study-card-finding-label">Main finding</span> No single ink-saving setting performed best on every page. What a page can save depends on what covers it.</p>
+          <ul class="study-card-results">
+            <li>Removing decoration was the largest lever where decoration exists.</li>
+            <li>Page-wide fading saved little on text and line pages.</li>
+            <li>Dot patterns never meaningfully beat a flat tint.</li>
+          </ul>
+          <ul class="study-card-facts" aria-label="Scope">
+            <li><strong>108</strong> pages</li>
+            <li><strong>36</strong> methods</li>
+            <li><strong>6,616</strong> measurements</li>
+            <li><strong>36</strong> holdout pages</li>
+          </ul>
+          <ul class="study-card-links" aria-label="Study resources">
+            <li><a class="is-primary" href="/research/printable-ink-efficiency-study/">Read the study</a></li>
+            <li><a href="/research/printable-ink-efficiency-study.pdf" download>PDF, 1.5 MB</a></li>
+            <li><a href="/research/printable-ink-efficiency-study/#data">Data files</a></li>
+            <li><a href="/research/printable-ink-efficiency-study/#method">Method</a></li>
+            <li><a href="/learn/save-printer-ink-printables/">Practical guide</a></li>
+          </ul>
           <dl class="research-meta">
             <div><dt>Published</dt><dd><time datetime="2026-09-26">September 26, 2026</time></dd></div>
             <div><dt>Version</dt><dd>1.0</dd></div>
-            <div><dt>Status</dt><dd>Digital study complete; printer validation not yet run</dd></div>
+            <div><dt>Evidence</dt><dd>Estimated coverage and function checks on rendered pages</dd></div>
           </dl>
         </li>
       </ol>
-      <p>Next, planned: testing the same methods on real worksheet files. It will be listed here when it is published.</p>
     </section>
 
-    <section class="editorial-section" id="how-we-publish">
+    <section class="study-section" id="planned" aria-labelledby="planned-title">
+      <span class="article-section-label">Next</span>
+      <h2 id="planned-title">Planned and not yet run</h2>
+      <ul class="planned-list">
+        <li class="planned-item">
+          <span class="study-status-item is-planned">Planned</span>
+          <p>Testing the same methods on real worksheet files. It will be listed here when it is published.</p>
+        </li>
+        <li class="planned-item">
+          <span class="study-status-item is-pending">Designed, not run</span>
+          <p>Physical printer validation for Study 1: a weighing protocol for inkjet, ink-tank, mono laser and color laser printers is designed, not executed.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="study-section" id="guidance" aria-labelledby="guidance-title">
+      <span class="article-section-label">Practical guidance</span>
+      <h2 id="guidance-title">Guides built on this research</h2>
+      <div class="related-pages">
+        <div class="related-pages-grid">
+          <a href="/learn/save-printer-ink-printables/" class="related-page-card">
+            <span class="related-page-label">Learn guide · from Study 1</span>
+            <h4>How to Save Printer Ink on Worksheets</h4>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="study-section" id="how-we-publish" aria-labelledby="publish-title">
       <span class="article-section-label">Method</span>
-      <h2>How these studies are published</h2>
-      <ul>
+      <h2 id="publish-title">How these studies are published</h2>
+      <ul class="study-bullets">
         <li>The study page is the canonical record. Its key findings, method and limitations are on the page itself, not only in the PDF.</li>
         <li>The PDF is generated from the study page, so the two carry the same text and version number.</li>
         <li>Every headline finding is tagged with the kind of evidence behind it: measured, simulated, specific to one renderer, or not yet tested.</li>
         <li>Data files are published with each study. A corrected study keeps its address, gets a new version number and says what changed.</li>
+      </ul>
+      <h3 id="evidence-labels">The evidence labels</h3>
+      <ul class="evidence-legend">
+        <li><span class="evidence-tag is-measured">Estimated coverage</span> <span>measured from rendered pages</span></li>
+        <li><span class="evidence-tag is-function">Function check</span> <span>measured contrast, visibility or color separation against a stated threshold</span></li>
+        <li><span class="evidence-tag is-simulated">Simulated</span> <span>produced by a model, not a real device</span></li>
+        <li><span class="evidence-tag is-renderer">Chromium-specific</span> <span>a property of one browser build</span></li>
+        <li><span class="evidence-tag is-untested">Not tested on printers</span> <span>an open question for physical testing</span></li>
+        <li><span class="evidence-tag is-physical">Physical printer test</span> <span>measured on a real printer; no published study has one yet</span></li>
       </ul>
     </section>
 

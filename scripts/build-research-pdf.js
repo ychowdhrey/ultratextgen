@@ -107,6 +107,8 @@ async function main() {
     });
     if (broken.length) throw new Error("images failed to load: " + broken.join(", "));
     if (errs.length) throw new Error("page errors: " + errs.join(" | "));
+    // Reference tables folded into <details> on screen belong in the printed record.
+    await page.evaluate(() => document.querySelectorAll("details").forEach((d) => { d.open = true; }));
 
     // Links resolve against the local server; a printed copy must point at the live site.
     const rewritten = await page.evaluate((origin) => {

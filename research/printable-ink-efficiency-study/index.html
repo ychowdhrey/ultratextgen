@@ -169,239 +169,520 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <span class="breadcrumb-current">Printable Ink Efficiency Study</span>
 </nav>
 
-<section class="hero research-hero">
+<section class="hero research-hero study-header">
     <div class="hero-inner">
-      <p class="research-kicker">UltraTextGen Research</p>
+      <p class="research-kicker">UltraTextGen Research · Study 1 · Printing and printables</p>
       <h1 class="hero-headline">Printable Ink Efficiency: Measuring Coverage Reduction Across Common Worksheet Rendering Methods</h1>
       <p class="hero-tagline">A controlled experiment on 108 computer-generated worksheet pages, 36 rendering methods and 36 unseen holdout pages. It measures how much of each page a printer would be asked to cover, not how much ink or toner a printer uses.</p>
+      <ul class="study-status" aria-label="Validation status">
+        <li class="study-status-item is-done">Digital study complete</li>
+        <li class="study-status-item is-pending">Printer validation not yet run</li>
+      </ul>
       <dl class="research-meta">
         <div><dt>Published</dt><dd><time datetime="2026-09-26">September 26, 2026</time></dd></div>
         <div><dt>Version</dt><dd>1.0</dd></div>
-        <div><dt>Status</dt><dd>Digital study complete; printer validation not yet run</dd></div>
         <div><dt>Evidence</dt><dd>Estimated coverage and function checks on rendered pages</dd></div>
       </dl>
       <div class="research-actions">
         <a class="cta-btn" href="/research/printable-ink-efficiency-study.pdf" download>Download the full study (PDF, 1.5 MB)</a>
         <a class="research-secondary-link" href="#data">Data files and sample PDFs</a>
+        <a class="research-secondary-link" href="#citation">How to cite</a>
       </div>
       <p class="research-print-only">Canonical URL: https://ultratextgen.com/research/printable-ink-efficiency-study/<br>UltraTextGen Research · Version 1.0 · Published September 26, 2026</p>
     </div>
   </section>
-<figure class="page-hero-figure" data-uthero aria-hidden="true">
-  <img src="/assets/hero/research-printable-ink-efficiency-study.svg" width="1200" height="340"
-       fetchpriority="high" alt="">
-</figure>
 
-
-  <main class="container research-page">
-
-    <div class="evidence-note" role="note">
-      <p><strong>How to read the numbers.</strong> Every percentage on this page is <strong>estimated printed coverage</strong>, calculated from rendered pages. No ink or toner was weighed. Lower coverage is likely to need less ink or toner, but on laser printers the toner used per covered area is known to differ between solid areas, dot patterns and text edges, so a 30% cut in coverage is not necessarily a 30% cut in toner.</p>
+<div class="study-layout">
+  <nav class="study-toc" id="contents" aria-label="On this page">
+    <p class="study-toc-title">On this page</p>
+    <p class="study-toc-group">Quick read</p>
+    <ol class="study-toc-list">
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#results-by-page-type">Best trade-off by page type</a></li>
+      <li><a href="#methods-compared">What worked and what did not</a></li>
+    </ol>
+    <p class="study-toc-group">Full study</p>
+    <ol class="study-toc-list">
+      <li><a href="#abstract">Abstract and design</a></li>
+      <li><a href="#findings">Detailed findings</a></li>
+      <li><a href="#holdout">Holdout test</a></li>
+      <li><a href="#method">Method</a></li>
+      <li><a href="#limitations">Limitations</a></li>
+    </ol>
+    <p class="study-toc-group">Record</p>
+    <ol class="study-toc-list">
+      <li><a href="#corrections">Corrections</a></li>
+      <li><a href="#data">Data and files</a></li>
+      <li><a href="#citation">How to cite</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
+    <div class="study-toc-actions">
+      <a href="/research/printable-ink-efficiency-study.pdf" download>Download PDF (1.5 MB)</a>
+      <a href="#data">Data files (19)</a>
     </div>
+  </nav>
 
-    <section class="editorial-section" id="abstract">
-      <span class="article-section-label">Abstract</span>
-      <h2>What the study asked and what it can conclude</h2>
-      <p><strong>Question.</strong> Which ways of rendering a printable page reduce how much of the page a printer is asked to cover, without damaging what the page is for?</p>
-      <p><strong>What was tested.</strong> 36 rendering methods, compared with the unchanged page: page-wide fading, lighter solid color, lighter fills only, grayscale, two kinds of black and white, outline-only, background and decoration removal, halftone and dither patterns, high contrast, and ten methods built from the first round of results (five combined methods and five pairs that test how savings combine). Each was applied to 108 computer-generated pages (12 worksheet types, each at 3 fullness levels and 3 element sizes). 84 replicate pages, rendered with a reduced set of 14 methods, checked other content and US Letter paper, and 36 pages of 4 unseen types were held back to test the recommendations.</p>
-      <p><strong>What was measured.</strong> Estimated printed coverage from the rendered pixels; whether each page's critical elements kept their visibility, text contrast and color separation; survival through a simulated photocopier; file size and render time; and what the exported PDF actually contains. The study produced 6,616 measurement rows.</p>
-      <p><strong>What it can conclude.</strong> How much estimated coverage each method removes on each kind of page, and what each method breaks, in the tested conditions.</p>
-      <p><strong>What it cannot conclude.</strong> How much ink or toner any method saves on a real printer, or how real readers judge the pages. Physical printer validation has not been run, and the visual reviewers were AI models.</p>
-    </section>
+  <main class="container research-page study-main">
 
-    <section class="key-takeaways" id="summary">
-      <h2>Summary</h2>
-      <ul>
-        <li>No single ink-saving setting performed best on every page. What a page can save depends on what covers it.</li>
-        <li>Five of the 12 page types cover under 3% of the paper as designed. For handwriting sheets and photocopy masters, the best trade-off found was to leave the page unchanged.</li>
-        <li>On the poster, cut-card and decorated-worksheet designs, where backgrounds, borders or large color areas carry most of the coverage, removing decoration and lightening fills cut estimated coverage by about 60 to 97% on average per design (49 to 99% page by page). Text, lines and pictures still passed the checks, a result that is partly true by design because decoration was never a checked element.</li>
-        <li>Page-wide fading cuts coverage in proportion to the fade (75% strength: about 26% less) and removes no mark. Page opacity already failed 12 of 108 pages at 75%.</li>
-        <li>As drawn in the browser, authored dot patterns never meaningfully beat an equally light flat color. Chromium's PDF export then stored them as 72 ppi images, so the file a user prints no longer carries the designed pattern.</li>
+    <section class="study-section study-summary" id="summary" aria-labelledby="summary-title">
+      <span class="article-section-label">Summary</span>
+      <h2 id="summary-title">What the study found</h2>
+      <p class="study-answer">No single ink-saving setting performed best on every page. What a page can save depends on what covers it.</p>
+      <ul class="key-figures">
+        <li class="key-figure">
+          <p class="key-figure-value">5 of 12</p>
+          <p class="key-figure-label">page types cover under 3% of the paper as designed</p>
+          <p class="key-figure-detail">For handwriting sheets and photocopy masters, the best trade-off found was to leave the page unchanged.</p>
+          <p class="key-figure-tags"><span class="evidence-tag is-measured">Estimated coverage</span></p>
+        </li>
+        <li class="key-figure">
+          <p class="key-figure-value">60 to 97%</p>
+          <p class="key-figure-label">less from removing decoration and lightening fills</p>
+          <p class="key-figure-detail">On the poster, cut-card and decorated-worksheet designs, where backgrounds, borders or large color areas carry most of the coverage, removing decoration and lightening fills cut estimated coverage by about 60 to 97% on average per design (49 to 99% page by page). Text, lines and pictures still passed the checks, a result that is partly true by design because decoration was never a checked element.</p>
+          <p class="key-figure-tags"><span class="evidence-tag is-measured">Estimated coverage</span> <span class="evidence-tag is-function">Function check</span></p>
+        </li>
+        <li class="key-figure">
+          <p class="key-figure-value">About 26%</p>
+          <p class="key-figure-label">less from fading the whole page to 75%</p>
+          <p class="key-figure-detail">Page-wide fading cuts coverage in proportion to the fade (75% strength: about 26% less) and removes no mark. Page opacity already failed 12 of 108 pages at 75%.</p>
+          <p class="key-figure-tags"><span class="evidence-tag is-measured">Estimated coverage</span> <span class="evidence-tag is-function">Function check</span></p>
+        </li>
+        <li class="key-figure">
+          <p class="key-figure-value">4% at most</p>
+          <p class="key-figure-label">less tone from dot patterns than a flat tint</p>
+          <p class="key-figure-detail">As drawn in the browser, authored dot patterns never meaningfully beat an equally light flat color. Chromium's PDF export then stored them as 72 ppi images, so the file a user prints no longer carries the designed pattern.</p>
+          <p class="key-figure-tags"><span class="evidence-tag is-measured">Estimated coverage</span> <span class="evidence-tag is-renderer">Chromium-specific</span></p>
+        </li>
       </ul>
+      <div class="study-caveat" role="note">
+        <p class="study-caveat-title"><span class="evidence-tag is-untested">Not tested on printers</span> What these numbers do not show yet</p>
+        <p><strong>How to read the numbers.</strong> Every percentage on this page is <strong>estimated printed coverage</strong>, calculated from rendered pages. No ink or toner was weighed. Lower coverage is likely to need less ink or toner, but on laser printers the toner used per covered area is known to differ between solid areas, dot patterns and text edges, so a 30% cut in coverage is not necessarily a 30% cut in toner.</p>
+        <p>Physical printer validation has not been run, and the visual reviewers were AI models. <a href="#limitations">Read the limitations</a></p>
+      </div>
     </section>
 
-    <section class="editorial-section" id="findings">
+    <section class="study-section" id="results-by-page-type" aria-labelledby="results-title">
+      <span class="article-section-label">Results</span>
+      <h2 id="results-title">Best trade-off by page type</h2>
+      <p class="study-lede">Pages that cover a quarter of the paper or more lost 48 to 98% of their estimated coverage under the best trade-off. Pages under 6% had 1.4 points or less to gain.</p>
+      <div class="data-table-wrap viz-table-wrap">
+        <table class="data-table viz-table tradeoff-table">
+          <caption class="sr-only">Best trade-off found for each of the 12 page types, grouped by how much of the page is covered as designed</caption>
+          <thead><tr><th scope="col">Page type</th><th scope="col">Coverage as designed</th><th scope="col">Best trade-off found</th><th scope="col">Estimated cut</th></tr></thead>
+          <tbody>
+            <tr class="table-group"><th scope="rowgroup" colspan="4">Covers a quarter of the page or more</th></tr>
+            <tr>
+              <th scope="row">Poster</th>
+              <td data-label="Coverage as designed"><span class="bar-value">80%</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-coverage" width="80.0" height="8"/></svg></td>
+              <td data-label="Best trade-off found">Eco Colour</td>
+              <td data-label="Estimated cut"><span class="bar-value">61%</span> <span class="bar-sub">51.7 points</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-cut" width="61.0" height="8"/></svg></td>
+            </tr>
+            <tr>
+              <th scope="row">Decorated worksheet</th>
+              <td data-label="Coverage as designed"><span class="bar-value">41.7%</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-coverage" width="41.7" height="8"/></svg></td>
+              <td data-label="Best trade-off found">Remove decoration, then 75%</td>
+              <td data-label="Estimated cut"><span class="bar-value">98%</span> <span class="bar-sub">40.9 points</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-cut" width="98.0" height="8"/></svg></td>
+            </tr>
+            <tr>
+              <th scope="row">Color key</th>
+              <td data-label="Coverage as designed"><span class="bar-value">27.5%</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-coverage" width="27.5" height="8"/></svg></td>
+              <td data-label="Best trade-off found">Eco Colour, text and lines at 75%</td>
+              <td data-label="Estimated cut"><span class="bar-value">48%</span> <span class="bar-sub">13.2 points</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-cut" width="48.0" height="8"/></svg></td>
+            </tr>
+            <tr>
+              <th scope="row">Cut-out cards</th>
+              <td data-label="Coverage as designed"><span class="bar-value">26.7%</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-coverage" width="26.7" height="8"/></svg></td>
+              <td data-label="Best trade-off found">Decoration removal</td>
+              <td data-label="Estimated cut"><span class="bar-value">62%</span> <span class="bar-sub">21.3 points</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-cut" width="62.0" height="8"/></svg></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr class="table-group"><th scope="rowgroup" colspan="4">Covers about a tenth of the page</th></tr>
+            <tr>
+              <th scope="row">Picture cards</th>
+              <td data-label="Coverage as designed"><span class="bar-value">9.6%</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-coverage" width="9.6" height="8"/></svg></td>
+              <td data-label="Best trade-off found">Lighter fills and photos (55%)</td>
+              <td data-label="Estimated cut"><span class="bar-value">44%</span> <span class="bar-sub">4.2 points</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-cut" width="44.0" height="8"/></svg></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr class="table-group"><th scope="rowgroup" colspan="4">Covers under 6% of the page</th></tr>
+            <tr>
+              <th scope="row">Word search</th>
+              <td data-label="Coverage as designed"><span class="bar-value">5.5%</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-coverage" width="5.5" height="8"/></svg></td>
+              <td data-label="Best trade-off found">75% page opacity</td>
+              <td data-label="Estimated cut"><span class="bar-value">25%</span> <span class="bar-sub">1.4 points</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-cut" width="25.0" height="8"/></svg></td>
+            </tr>
+            <tr>
+              <th scope="row">Reading passage</th>
+              <td data-label="Coverage as designed"><span class="bar-value">3.1%</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-coverage" width="3.1" height="8"/></svg></td>
+              <td data-label="Best trade-off found">75% page opacity</td>
+              <td data-label="Estimated cut"><span class="bar-value">25%</span> <span class="bar-sub">0.8 points</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-cut" width="25.0" height="8"/></svg></td>
+            </tr>
+            <tr>
+              <th scope="row">Table or schedule</th>
+              <td data-label="Coverage as designed"><span class="bar-value">2.8%</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-coverage" width="2.8" height="8"/></svg></td>
+              <td data-label="Best trade-off found">Remove decoration, then 75%</td>
+              <td data-label="Estimated cut"><span class="bar-value">36%</span> <span class="bar-sub">1.0 points</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-cut" width="36.0" height="8"/></svg></td>
+            </tr>
+            <tr>
+              <th scope="row">Mixed worksheet</th>
+              <td data-label="Coverage as designed"><span class="bar-value">2.1%</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-coverage" width="2.1" height="8"/></svg></td>
+              <td data-label="Best trade-off found">Eco Colour</td>
+              <td data-label="Estimated cut"><span class="bar-value">33%</span> <span class="bar-sub">0.7 points</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-cut" width="33.0" height="8"/></svg></td>
+            </tr>
+            <tr>
+              <th scope="row">Handwriting sheet</th>
+              <td data-label="Coverage as designed"><span class="bar-value">1.5%</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-coverage" width="1.5" height="8"/></svg></td>
+              <td data-label="Best trade-off found">Leave unchanged</td>
+              <td data-label="Estimated cut"><span class="bar-value">None</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-cut" width="0.0" height="8"/></svg></td>
+            </tr>
+            <tr>
+              <th scope="row">Photocopy master</th>
+              <td data-label="Coverage as designed"><span class="bar-value">1.4%</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-coverage" width="1.4" height="8"/></svg></td>
+              <td data-label="Best trade-off found">Leave unchanged</td>
+              <td data-label="Estimated cut"><span class="bar-value">None</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-cut" width="0.0" height="8"/></svg></td>
+            </tr>
+            <tr>
+              <th scope="row">Coloring page</th>
+              <td data-label="Coverage as designed"><span class="bar-value">1.1%</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-coverage" width="1.1" height="8"/></svg></td>
+              <td data-label="Best trade-off found">75% page opacity</td>
+              <td data-label="Estimated cut"><span class="bar-value">25%</span> <span class="bar-sub">0.3 points</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-cut" width="25.0" height="8"/></svg></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">For each page type, the method with the largest cut on both coverage estimates among those that kept function on average over the type's 9 pages, kept at least 90% of the unchanged page's marks through simulated copies, were rated at least 4 out of 5 by the AI reviewers and did not inflate the PDF. Within 2 points, the simpler method won.</p>
+      <p class="table-note">Points are percentage points of estimated coverage. Two picks depend on how "kept function" is applied: if every page, not the average, must score at least 0.90, cut-out cards move to lighter fills; at 0.95, cut-out cards move to leave unchanged and picture cards to 75% opacity. Where 75% opacity was picked, it more than halves text contrast (17.4:1 to 7.7:1 for near-black text, still above the 7:1 enhanced line) to save 0.3 to 1.4 points, so we would not use it for low-vision readers or long reading; no reader was tested. Rankings that compare faded text against removed fills are coverage rankings only; they need a physical test before they can be read as ink rankings.</p>
+      <p class="study-callout study-guide-callout">Printing worksheets yourself? <a href="/learn/save-printer-ink-printables/">How to Save Printer Ink on Worksheets</a> turns these results into steps, and keeps what this study tested apart from general printing advice.</p>
+    </section>
+
+    <section class="study-section" id="methods-compared" aria-labelledby="methods-title">
+      <span class="article-section-label">Methods</span>
+      <h2 id="methods-title">What worked and what did not</h2>
+      <p class="study-lede">Twelve of the 36 methods, across all 108 development pages: the mean cut in estimated coverage with its range from the lowest to the highest page, and how many pages failed the function check.</p>
+      <div class="data-table-wrap viz-table-wrap">
+        <table class="data-table viz-table method-table">
+          <caption class="sr-only">Mean cut in estimated coverage, range and function-check failures for twelve rendering methods over 108 development pages</caption>
+          <thead><tr><th scope="col">Method</th><th scope="col">Mean cut, 108 pages</th><th scope="col">Pages failed</th><th scope="col">What to know</th></tr></thead>
+          <tbody>
+            <tr class="table-group"><th scope="rowgroup" colspan="4">Cut where there is color to remove, and kept function</th></tr>
+            <tr>
+              <th scope="row">Eco Colour <code>ECO_COLOUR</code></th>
+              <td data-label="Mean cut, 108 pages"><span class="bar-value">29.8%</span> <span class="bar-sub">range 0 to 99%</span><svg class="range-bar" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><line class="range-zero" x1="16.7" x2="16.7" y1="0" y2="12"/><rect class="range-span" x="16.7" y="4" width="82.3" height="4"/><rect class="range-mean" x="40.7" y="0" width="1.6" height="12"/></svg></td>
+              <td data-label="Pages failed"><span class="bar-value">0</span> <span class="bar-sub">of 108</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-failed" width="0.0" height="8"/></svg></td>
+              <td data-label="What to know">Removes background and decoration, fills to 55%, photos to 80%, text and lines unchanged. It changed nothing on 45 of 108 pages, which have no fills or decoration.</td>
+            </tr>
+            <tr>
+              <th scope="row">Decoration removal <code>DECOR_REMOVAL</code></th>
+              <td data-label="Mean cut, 108 pages"><span class="bar-value">11.4%</span> <span class="bar-sub">range 0 to 88%</span><svg class="range-bar" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><line class="range-zero" x1="16.7" x2="16.7" y1="0" y2="12"/><rect class="range-span" x="16.7" y="4" width="73.3" height="4"/><rect class="range-mean" x="25.3" y="0" width="1.6" height="12"/></svg></td>
+              <td data-label="Pages failed"><span class="bar-value">0</span> <span class="bar-sub">of 108</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-failed" width="0.0" height="8"/></svg></td>
+              <td data-label="What to know">62% on cut-out cards; nothing to remove on pages without decoration.</td>
+            </tr>
+            <tr>
+              <th scope="row">Lighter fills (55%) <code>TINT_FILL_55</code></th>
+              <td data-label="Mean cut, 108 pages"><span class="bar-value">20.0%</span> <span class="bar-sub">range 0 to 50%</span><svg class="range-bar" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><line class="range-zero" x1="16.7" x2="16.7" y1="0" y2="12"/><rect class="range-span" x="16.7" y="4" width="41.5" height="4"/><rect class="range-mean" x="32.5" y="0" width="1.6" height="12"/></svg></td>
+              <td data-label="Pages failed"><span class="bar-value">2</span> <span class="bar-sub">of 108</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-failed" width="1.9" height="8"/></svg></td>
+              <td data-label="What to know">Fills and pictures only; text and lines unchanged. The best trade-off found for picture cards.</td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr class="table-group"><th scope="rowgroup" colspan="4">Small, even cut on every page; fails where text sits on color</th></tr>
+            <tr>
+              <th scope="row">Page opacity 75% <code>OPACITY_GROUP_75</code></th>
+              <td data-label="Mean cut, 108 pages"><span class="bar-value">26.1%</span> <span class="bar-sub">range 25 to 30%</span><svg class="range-bar" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><line class="range-zero" x1="16.7" x2="16.7" y1="0" y2="12"/><rect class="range-span" x="37.5" y="4" width="3.8" height="4"/><rect class="range-mean" x="37.6" y="0" width="1.6" height="12"/></svg></td>
+              <td data-label="Pages failed"><span class="bar-value">12</span> <span class="bar-sub">of 108</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-failed" width="11.1" height="8"/></svg></td>
+              <td data-label="What to know">Removes no mark. Failed all 9 posters and 3 dense cut-card pages.</td>
+            </tr>
+            <tr>
+              <th scope="row">Lighter solid color 75% <code>TINT_75</code></th>
+              <td data-label="Mean cut, 108 pages"><span class="bar-value">25.8%</span> <span class="bar-sub">range 23 to 29%</span><svg class="range-bar" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><line class="range-zero" x1="16.7" x2="16.7" y1="0" y2="12"/><rect class="range-span" x="35.7" y="4" width="5.5" height="4"/><rect class="range-mean" x="37.3" y="0" width="1.6" height="12"/></svg></td>
+              <td data-label="Pages failed"><span class="bar-value">3</span> <span class="bar-sub">of 108</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-failed" width="2.8" height="8"/></svg></td>
+              <td data-label="What to know">Same coverage as page opacity, but re-colors white text dark when its fill lightens. Failed only 3 cut-card pages.</td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr class="table-group"><th scope="rowgroup" colspan="4">Cut more, and broke many pages</th></tr>
+            <tr>
+              <th scope="row">Page opacity 60% <code>OPACITY_GROUP_60</code></th>
+              <td data-label="Mean cut, 108 pages"><span class="bar-value">41.4%</span> <span class="bar-sub">range 40 to 46%</span><svg class="range-bar" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><line class="range-zero" x1="16.7" x2="16.7" y1="0" y2="12"/><rect class="range-span" x="50.0" y="4" width="4.6" height="4"/><rect class="range-mean" x="50.3" y="0" width="1.6" height="12"/></svg></td>
+              <td data-label="Pages failed"><span class="bar-value">46</span> <span class="bar-sub">of 108</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-failed" width="42.6" height="8"/></svg></td>
+              <td data-label="What to know">Failed every handwriting and cut-card page and 8 of 9 photocopy masters.</td>
+            </tr>
+            <tr>
+              <th scope="row">Lighter solid color 55% <code>TINT_55</code></th>
+              <td data-label="Mean cut, 108 pages"><span class="bar-value">46.0%</span> <span class="bar-sub">range 43 to 50%</span><svg class="range-bar" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><line class="range-zero" x1="16.7" x2="16.7" y1="0" y2="12"/><rect class="range-span" x="52.4" y="4" width="5.9" height="4"/><rect class="range-mean" x="54.2" y="0" width="1.6" height="12"/></svg></td>
+              <td data-label="Pages failed"><span class="bar-value">83</span> <span class="bar-sub">of 108</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-failed" width="76.9" height="8"/></svg></td>
+              <td data-label="What to know">Near-black text falls below the 4.5:1 line at 55% strength.</td>
+            </tr>
+            <tr>
+              <th scope="row">Page opacity 45% <code>OPACITY_GROUP_45</code></th>
+              <td data-label="Mean cut, 108 pages"><span class="bar-value">56.3%</span> <span class="bar-sub">range 55 to 60%</span><svg class="range-bar" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><line class="range-zero" x1="16.7" x2="16.7" y1="0" y2="12"/><rect class="range-span" x="62.5" y="4" width="4.5" height="4"/><rect class="range-mean" x="62.8" y="0" width="1.6" height="12"/></svg></td>
+              <td data-label="Pages failed"><span class="bar-value">108</span> <span class="bar-sub">of 108</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-failed" width="100.0" height="8"/></svg></td>
+              <td data-label="What to know">Failed every page.</td>
+            </tr>
+            <tr>
+              <th scope="row">Black and white, 1-bit threshold <code>BW_THRESHOLD</code></th>
+              <td data-label="Mean cut, 108 pages"><span class="bar-value">33.7%</span> <span class="bar-sub">range &minus;11 to 92%</span><svg class="range-bar" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><line class="range-zero" x1="16.7" x2="16.7" y1="0" y2="12"/><rect class="range-span" x="7.8" y="4" width="85.9" height="4"/><rect class="range-mean" x="43.9" y="0" width="1.6" height="12"/></svg></td>
+              <td data-label="Pages failed"><span class="bar-value">62</span> <span class="bar-sub">of 108</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-failed" width="57.4" height="8"/></svg></td>
+              <td data-label="What to know">Thresholding the rendered page to 1-bit is unreliable.</td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr class="table-group"><th scope="rowgroup" colspan="4">No real saving, or a new problem</th></tr>
+            <tr>
+              <th scope="row">Grayscale <code>GRAYSCALE</code></th>
+              <td data-label="Mean cut, 108 pages"><span class="bar-value">27.3%</span> <span class="bar-sub">four-color only; no tone removed</span><svg class="range-bar is-ghost" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><line class="range-zero" x1="16.7" x2="16.7" y1="0" y2="12"/><rect class="range-span" x="16.7" y="4" width="63.8" height="4"/><rect class="range-mean" x="38.6" y="0" width="1.6" height="12"/></svg></td>
+              <td data-label="Pages failed"><span class="bar-value">8</span> <span class="bar-sub">of 108</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-failed" width="7.4" height="8"/></svg></td>
+              <td data-label="What to know">Removes no tone: the single-color darkness estimate moved 0.0%. The four-color figure falls only because color moves to black. Merged pastel color categories.</td>
+            </tr>
+            <tr>
+              <th scope="row">Halftone dots, 30% area <code>HALFTONE_M</code></th>
+              <td data-label="Mean cut, 108 pages"><span class="bar-value">26.4%</span> <span class="bar-sub">range 0 to 74%</span><svg class="range-bar" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><line class="range-zero" x1="16.7" x2="16.7" y1="0" y2="12"/><rect class="range-span" x="16.7" y="4" width="61.3" height="4"/><rect class="range-mean" x="37.8" y="0" width="1.6" height="12"/></svg></td>
+              <td data-label="Pages failed"><span class="bar-value">19</span> <span class="bar-sub">of 108</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-failed" width="17.6" height="8"/></svg></td>
+              <td data-label="What to know">Never meaningfully beat an equally light flat tint. Chromium stored it as a 72 ppi image, and its PDFs were a median 21 times the size.</td>
+            </tr>
+            <tr>
+              <th scope="row">Outline, naive <code>OUTLINE_NAIVE</code></th>
+              <td data-label="Mean cut, 108 pages"><span class="bar-value">28.8%</span> <span class="bar-sub">range 0 to 99%</span><svg class="range-bar" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><line class="range-zero" x1="16.7" x2="16.7" y1="0" y2="12"/><rect class="range-span" x="16.7" y="4" width="82.4" height="4"/><rect class="range-mean" x="39.8" y="0" width="1.6" height="12"/></svg></td>
+              <td data-label="Pages failed"><span class="bar-value">21</span> <span class="bar-sub">of 108</span><svg class="mini-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="mini-bar-track" width="100" height="8"/><rect class="mini-bar-fill is-failed" width="19.4" height="8"/></svg></td>
+              <td data-label="What to know">Does not re-color white text on fills: lost every word on all 9 posters.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">A page fails below a function score of 0.80. The range bar runs from the lowest to the highest page, on a scale from &minus;20% to 100%, and the tick marks the mean; a negative cut means the method added coverage. Values come from <a href="/research/printable-ink-efficiency-study/data/summary-by-mode.csv">summary-by-mode.csv</a>; all 36 methods are in the <a href="#fig-reduction-by-mode">dot plot below</a>.</p>
+
+      <figure class="research-figure is-wide" data-compare="Standard|60% page opacity|Decoration removed|Eco Colour" data-compare-subject="Decorated worksheet">
+        <a href="/assets/research/printable-ink-efficiency-study/renders-decorative-worksheet.png"><img src="/assets/research/printable-ink-efficiency-study/renders-decorative-worksheet.png" width="1800" height="664" alt="Four renderings of the decorated worksheet: standard with yellow background, border and banner; 60% opacity; decoration removed; and Eco Colour." loading="lazy"></a>
+        <figcaption>Decorated worksheet: Standard, 60% page opacity, decoration removed, and Eco Colour.</figcaption>
+      </figure>
+    </section>
+
+    <section class="study-section" id="abstract" aria-labelledby="abstract-title">
+      <span class="article-section-label">Abstract</span>
+      <h2 id="abstract-title">What the study asked and what it can conclude</h2>
+      <dl class="abstract-list">
+        <div><dt>Question</dt><dd>Which ways of rendering a printable page reduce how much of the page a printer is asked to cover, without damaging what the page is for?</dd></div>
+        <div><dt>What was tested</dt><dd>36 rendering methods, compared with the unchanged page: page-wide fading, lighter solid color, lighter fills only, grayscale, two kinds of black and white, outline-only, background and decoration removal, halftone and dither patterns, high contrast, and ten methods built from the first round of results (five combined methods and five pairs that test how savings combine). Each was applied to 108 computer-generated pages (12 worksheet types, each at 3 fullness levels and 3 element sizes). 84 replicate pages, rendered with a reduced set of 14 methods, checked other content and US Letter paper, and 36 pages of 4 unseen types were held back to test the recommendations.</dd></div>
+        <div><dt>What was measured</dt><dd>Estimated printed coverage from the rendered pixels; whether each page's critical elements kept their visibility, text contrast and color separation; survival through a simulated photocopier; file size and render time; and what the exported PDF actually contains. The study produced 6,616 measurement rows.</dd></div>
+        <div><dt>What it can conclude</dt><dd>How much estimated coverage each method removes on each kind of page, and what each method breaks, in the tested conditions.</dd></div>
+        <div class="is-limit"><dt>What it cannot conclude</dt><dd>How much ink or toner any method saves on a real printer, or how real readers judge the pages. Physical printer validation has not been run, and the visual reviewers were AI models.</dd></div>
+      </dl>
+
+      <figure class="study-flow-figure">
+        <figcaption class="study-flow-title">How the study ran, and what is still to come</figcaption>
+        <ol class="study-flow">
+          <li class="study-flow-step">
+            <span class="study-flow-kicker">1 · Build</span>
+            <span class="study-flow-value">108 pages</span>
+            <span class="study-flow-text">12 worksheet types, 3 fullness levels, 3 element sizes, on A4</span>
+          </li>
+          <li class="study-flow-step">
+            <span class="study-flow-kicker">2 · Render</span>
+            <span class="study-flow-value">36 methods</span>
+            <span class="study-flow-text">Each compared with the unchanged Standard page in headless Chromium 141</span>
+          </li>
+          <li class="study-flow-step">
+            <span class="study-flow-kicker">3 · Measure</span>
+            <span class="study-flow-value">6,616 rows</span>
+            <span class="study-flow-text">Coverage, function checks, simulated copies, file size and PDF contents</span>
+          </li>
+          <li class="study-flow-step">
+            <span class="study-flow-kicker">4 · Replicate</span>
+            <span class="study-flow-value">84 pages</span>
+            <span class="study-flow-text">Other content seeds and US Letter, with 14 methods</span>
+          </li>
+          <li class="study-flow-step">
+            <span class="study-flow-kicker">5 · Hold out</span>
+            <span class="study-flow-value">36 pages</span>
+            <span class="study-flow-text">4 unseen types, rendered after the routing rules were committed</span>
+          </li>
+          <li class="study-flow-step is-pending">
+            <span class="study-flow-kicker">6 · Not yet run</span>
+            <span class="study-flow-value">Printers</span>
+            <span class="study-flow-text">Weighing ink and toner on inkjet, ink-tank, mono laser and color laser: designed, not executed</span>
+          </li>
+        </ol>
+      </figure>
+    </section>
+
+    <section class="study-section" id="findings" aria-labelledby="findings-title">
       <span class="article-section-label">Findings</span>
-      <h2>Headline findings</h2>
+      <h2 id="findings-title">Detailed findings</h2>
       <p>Each finding carries a tag for the kind of evidence behind it.</p>
       <ul class="evidence-legend">
-        <li><span class="evidence-tag is-measured">Estimated coverage</span> measured from rendered pages</li>
-        <li><span class="evidence-tag is-measured">Function check</span> measured contrast, visibility or color separation against a stated threshold</li>
-        <li><span class="evidence-tag is-simulated">Simulated</span> produced by a model, not a real device</li>
-        <li><span class="evidence-tag is-renderer">Chromium-specific</span> a property of the Chromium build used (141)</li>
-        <li><span class="evidence-tag is-untested">Not tested on printers</span> an open question for physical testing</li>
+        <li><span class="evidence-tag is-measured">Estimated coverage</span> <span>measured from rendered pages</span></li>
+        <li><span class="evidence-tag is-function">Function check</span> <span>measured contrast, visibility or color separation against a stated threshold</span></li>
+        <li><span class="evidence-tag is-simulated">Simulated</span> <span>produced by a model, not a real device</span></li>
+        <li><span class="evidence-tag is-renderer">Chromium-specific</span> <span>a property of the Chromium build used (141)</span></li>
+        <li><span class="evidence-tag is-untested">Not tested on printers</span> <span>an open question for physical testing</span></li>
+        <li><span class="evidence-tag is-physical">Physical printer test</span> <span>measured on a real printer: none in this version</span></li>
       </ul>
 
       <h3 id="coverage-findings">Estimated coverage</h3>
       <ul class="research-findings">
-        <li><span class="evidence-tag is-measured">Estimated coverage</span> <strong>What covers the page decides what can be saved.</strong> As designed, five page types cover under 3% of the paper: coloring page 1.1%, photocopy master 1.4%, handwriting sheet 1.5%, mixed worksheet 2.1%, table 2.8%. The decorated worksheet averaged 41.7%, of which 40.7 points were decoration. Posters averaged 80%.</li>
-        <li><span class="evidence-tag is-measured">Estimated coverage</span> <strong>Page opacity and an equally light solid color produce the same coverage.</strong> Across 108 pages they differed by 0.02 points on average and 0.11 at most. At 75% strength, page opacity cut estimated coverage by 26.1% and lighter solid color by 25.8%. At 60% opacity the cut was 41.4%.</li>
-        <li><span class="evidence-tag is-measured">Estimated coverage</span> <strong>Fading removes no mark.</strong> The share of the page carrying any mark fell 0.1% under 75% opacity, against 16 to 35% under decoration removal, Eco Colour or outline conversion.</li>
-        <li><span class="evidence-tag is-measured">Estimated coverage</span> <strong>Removing decoration is the largest lever where decoration exists.</strong> Removing background and decoration cut 97% on the decorated worksheet (the tinted background alone, 59%), 62% on cut-out cards and 94 to 98% on the unseen certificates. This saving equals the share of each page the designs gave to decoration, so it describes these designs, not real worksheets.</li>
-        <li><span class="evidence-tag is-measured">Estimated coverage</span> <strong>Eco Colour</strong> (remove background and decoration, fills to 55% strength, photos to 80%, text and lines unchanged) cut 61% on posters, 97% on the decorated worksheet, 76% on cut-out cards, 47% on the color key, 33% on the mixed worksheet and 28% on picture cards. It changed nothing on 45 of 108 pages, which have no fills or decoration.</li>
-        <li><span class="evidence-tag is-measured">Estimated coverage</span> <strong>Grayscale removes no tone.</strong> The single-color darkness estimate moved 0.0% on average (&minus;0.8% to +0.8% by page). The four-color estimate fell 27.3% only because color moved to black; if a device built grays from color inks, the fall would be 2.6%.</li>
-        <li><span class="evidence-tag is-measured">Estimated coverage</span> <strong>Dot patterns never meaningfully beat a flat tint.</strong> Against an equally light flat color, halftone and dither patches measured at most 4% less and up to 19% more total tone (median ratio 1.03; single-color darkness within 5%).</li>
-        <li><span class="evidence-tag is-measured">Estimated coverage</span> <strong>Combined methods multiply, not add.</strong> On posters, background removal plus lighter fills saved 51.7 points, against 62.4 by adding the two and 51.1 by multiplying their remaining shares. Across all pairs the multiplicative prediction was 0.5 points off on average; single pages were up to 13.4 points off.</li>
-        <li><span class="evidence-tag is-measured">Estimated coverage</span> <strong>Absolute savings shrink with coverage.</strong> For 75% page opacity, no page under 3% coverage gained a full point with its function kept; the lowest-coverage page that did started at 4.4%.</li>
+        <li><span class="evidence-tag is-measured">Estimated coverage</span> <p><strong>What covers the page decides what can be saved.</strong> As designed, five page types cover under 3% of the paper: coloring page 1.1%, photocopy master 1.4%, handwriting sheet 1.5%, mixed worksheet 2.1%, table 2.8%. The decorated worksheet averaged 41.7%, of which 40.7 points were decoration. Posters averaged 80%.</p></li>
+        <li><span class="evidence-tag is-measured">Estimated coverage</span> <p><strong>Page opacity and an equally light solid color produce the same coverage.</strong> Across 108 pages they differed by 0.02 points on average and 0.11 at most. At 75% strength, page opacity cut estimated coverage by 26.1% and lighter solid color by 25.8%. At 60% opacity the cut was 41.4%.</p></li>
+        <li><span class="evidence-tag is-measured">Estimated coverage</span> <p><strong>Fading removes no mark.</strong> The share of the page carrying any mark fell 0.1% under 75% opacity, against 16 to 35% under decoration removal, Eco Colour or outline conversion.</p></li>
+        <li><span class="evidence-tag is-measured">Estimated coverage</span> <p><strong>Removing decoration is the largest lever where decoration exists.</strong> Removing background and decoration cut 97% on the decorated worksheet (the tinted background alone, 59%), 62% on cut-out cards and 94 to 98% on the unseen certificates. This saving equals the share of each page the designs gave to decoration, so it describes these designs, not real worksheets.</p></li>
+        <li><span class="evidence-tag is-measured">Estimated coverage</span> <p><strong>Eco Colour</strong> (remove background and decoration, fills to 55% strength, photos to 80%, text and lines unchanged) cut 61% on posters, 97% on the decorated worksheet, 76% on cut-out cards, 47% on the color key, 33% on the mixed worksheet and 28% on picture cards. It changed nothing on 45 of 108 pages, which have no fills or decoration.</p></li>
+        <li><span class="evidence-tag is-measured">Estimated coverage</span> <p><strong>Grayscale removes no tone.</strong> The single-color darkness estimate moved 0.0% on average (&minus;0.8% to +0.8% by page). The four-color estimate fell 27.3% only because color moved to black; if a device built grays from color inks, the fall would be 2.6%.</p></li>
+        <li><span class="evidence-tag is-measured">Estimated coverage</span> <p><strong>Dot patterns never meaningfully beat a flat tint.</strong> Against an equally light flat color, halftone and dither patches measured at most 4% less and up to 19% more total tone (median ratio 1.03; single-color darkness within 5%).</p></li>
+        <li><span class="evidence-tag is-measured">Estimated coverage</span> <p><strong>Combined methods multiply, not add.</strong> On posters, background removal plus lighter fills saved 51.7 points, against 62.4 by adding the two and 51.1 by multiplying their remaining shares. Across all pairs the multiplicative prediction was 0.5 points off on average; single pages were up to 13.4 points off.</p></li>
+        <li><span class="evidence-tag is-measured">Estimated coverage</span> <p><strong>Absolute savings shrink with coverage.</strong> For 75% page opacity, no page under 3% coverage gained a full point with its function kept; the lowest-coverage page that did started at 4.4%.</p></li>
       </ul>
-    <figure class="research-figure">
-      <a href="/assets/research/printable-ink-efficiency-study/what-consumes-the-page.png"><img src="/assets/research/printable-ink-efficiency-study/what-consumes-the-page.png" alt="Bar chart of standard coverage by element type for the 12 page types: posters about 80%, decorated worksheet about 40%, color key and cut cards in the 20s, the rest under 10%." loading="lazy"></a>
-      <figcaption>What covers each page type as designed: mean of 9 pages per type, split by element group. Groups are measured by removing each one in turn, so they need not add up exactly to the total.</figcaption>
-    </figure>
-    <figure class="research-figure is-wide">
-      <a href="/assets/research/printable-ink-efficiency-study/reduction-by-mode.png"><img src="/assets/research/printable-ink-efficiency-study/reduction-by-mode.png" alt="Dot plot of the reduction in estimated coverage for each of the 36 methods across 108 pages, with failed pages marked as red crosses." loading="lazy"></a>
-      <figcaption>Reduction in estimated coverage for every method on every development page. One dot per page; the bar is the median; red crosses failed the function check (below 0.80). The figure's legend calls every other page &ldquo;function kept&rdquo;; elsewhere on this page that term means 0.95 or above. Method names are the identifiers used in the data files.</figcaption>
-    </figure>
-
-    <figure class="research-figure">
-      <a href="/assets/research/printable-ink-efficiency-study/halftone-dither.png"><img src="/assets/research/printable-ink-efficiency-study/halftone-dither.png" alt="Line chart of total tone against nominal tone for a navy fill: every halftone and dither line sits above the flat-tint line; a bar chart beside it shows PDF sizes of 1, 1, 19 and 58 KB." loading="lazy"></a>
-      <figcaption>Navy test patch at 600 dpi: halftones and a dither against the equally light flat tint (left), and the median size of all 60 &times; 60 mm test patches, every color, tone and dot spacing, as Chromium PDFs (right).</figcaption>
-    </figure>
+      <figure class="research-figure is-chart">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="What covers each page type, scrollable chart">
+          <a href="/assets/research/printable-ink-efficiency-study/what-consumes-the-page.png"><img src="/assets/research/printable-ink-efficiency-study/what-consumes-the-page.png" width="1350" height="570" alt="Bar chart of standard coverage by element type for the 12 page types: posters about 80%, decorated worksheet about 40%, color key and cut cards in the 20s, the rest under 10%." loading="lazy"></a>
+        </div>
+        <figcaption>What covers each page type as designed: mean of 9 pages per type, split by element group. Groups are measured by removing each one in turn, so they need not add up exactly to the total.</figcaption>
+      </figure>
+      <figure class="research-figure is-chart is-tall" id="fig-reduction-by-mode">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="Reduction by method, scrollable chart">
+          <a href="/assets/research/printable-ink-efficiency-study/reduction-by-mode.png"><img src="/assets/research/printable-ink-efficiency-study/reduction-by-mode.png" width="1200" height="1614" alt="Dot plot of the reduction in estimated coverage for each of the 36 methods across 108 pages, with failed pages marked as red crosses." loading="lazy"></a>
+        </div>
+        <figcaption>Reduction in estimated coverage for every method on every development page. One dot per page; the bar is the median; red crosses failed the function check (below 0.80). The figure's legend calls every other page &ldquo;function kept&rdquo;; elsewhere on this page that term means 0.95 or above. Method names are the identifiers used in the data files.</figcaption>
+      </figure>
+      <figure class="research-figure is-chart">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="Dot patterns against a flat tint, scrollable chart">
+          <a href="/assets/research/printable-ink-efficiency-study/halftone-dither.png"><img src="/assets/research/printable-ink-efficiency-study/halftone-dither.png" width="1650" height="540" alt="Line chart of total tone against nominal tone for a navy fill: every halftone and dither line sits above the flat-tint line; a bar chart beside it shows PDF sizes of 1, 1, 19 and 58 KB." loading="lazy"></a>
+        </div>
+        <figcaption>Navy test patch at 600 dpi: halftones and a dither against the equally light flat tint (left), and the median size of all 60 &times; 60 mm test patches, every color, tone and dot spacing, as Chromium PDFs (right).</figcaption>
+      </figure>
 
       <h3 id="function-findings">Function checks</h3>
       <ul class="research-findings">
-        <li><span class="evidence-tag is-measured">Function check</span> <strong>Page opacity fails first where text sits on color.</strong> At 75% opacity, 12 of 108 pages failed: all 9 posters, where white 12 pt labels, already below the 4.5:1 line as designed (2.4:1), fell to 1.9:1 against their fills, and 3 dense cut-card pages, where dark labels on pink card fills fell from 4.63:1 to 2.76:1. The lighter-color version re-colors white text dark when its fill lightens; it passed the posters and failed only those 3 cut-card pages.</li>
-        <li><span class="evidence-tag is-measured">Function check</span> <strong>Near-black text crosses the 4.5:1 line between 60% and 55% strength.</strong> #1a1a1a text on white measures 7.69:1 at 75%, 4.54:1 at 60% and 3.90:1 at 55%. Text that starts as dark gray crosses much earlier. On the decorated worksheet the white banner title (large text, 3:1 line) fell to 2.79:1 at 75%; dark text on its pale yellow background held 7.10:1 at 75% and fell to 4.26:1 at 60%.</li>
-        <li><span class="evidence-tag is-measured">Function check</span> <strong>Stronger fading fails many pages, and every page by 45%.</strong> 60% page opacity failed 46 of 108 pages, including every handwriting and cut-card page and 8 of 9 photocopy masters; 55% lighter color failed 83; 45% opacity and 30% lighter color failed all 108.</li>
-        <li><span class="evidence-tag is-measured">Function check</span> <strong>Hard black and white is unreliable.</strong> Thresholding the rendered page to 1-bit failed 62 of 108 pages. A per-element conversion kept text and lines but turned gray tracing letters solid black (+86% coverage on handwriting pages); the automated check missed this, and the AI reviewers scored it 2 out of 5 (their brief had listed this defect as an example).</li>
-        <li><span class="evidence-tag is-measured">Function check</span> <strong>Knockout text is the implementation trap.</strong> Removing or outlining fills without re-coloring the white text on them lost every word on all 9 posters.</li>
-        <li><span class="evidence-tag is-measured">Function check</span> <strong>Color categories.</strong> Grayscale reduced four pastel categories to a color difference of 0.2 (CIEDE2000; 10 was the distinguishable line) and failed 6 of 9 color-key pages. Lightening fills to 55% kept saturated categories apart for normal color vision. In a deuteranopia simulation, the key's weakest red and green pair, already below the distinguishable line of 10 as designed (5.2), fell to 2.9.</li>
-        <li><span class="evidence-tag is-simulated">Simulated</span> <strong>Copies suffer before the original.</strong> In the simulated copier, the worst-hit lines or text at 75% opacity kept 81% as many visible marks as the unchanged page's own copies on medium-size pages and 62% on small-element pages; at 60%, 67% and 36%. Two simulated copies erased pale flat tints outright.</li>
+        <li><span class="evidence-tag is-function">Function check</span> <p><strong>Page opacity fails first where text sits on color.</strong> At 75% opacity, 12 of 108 pages failed: all 9 posters, where white 12 pt labels, already below the 4.5:1 line as designed (2.4:1), fell to 1.9:1 against their fills, and 3 dense cut-card pages, where dark labels on pink card fills fell from 4.63:1 to 2.76:1. The lighter-color version re-colors white text dark when its fill lightens; it passed the posters and failed only those 3 cut-card pages.</p></li>
+        <li><span class="evidence-tag is-function">Function check</span> <p><strong>Near-black text crosses the 4.5:1 line between 60% and 55% strength.</strong> #1a1a1a text on white measures 7.69:1 at 75%, 4.54:1 at 60% and 3.90:1 at 55%. Text that starts as dark gray crosses much earlier. On the decorated worksheet the white banner title (large text, 3:1 line) fell to 2.79:1 at 75%; dark text on its pale yellow background held 7.10:1 at 75% and fell to 4.26:1 at 60%.</p></li>
+        <li><span class="evidence-tag is-function">Function check</span> <p><strong>Stronger fading fails many pages, and every page by 45%.</strong> 60% page opacity failed 46 of 108 pages, including every handwriting and cut-card page and 8 of 9 photocopy masters; 55% lighter color failed 83; 45% opacity and 30% lighter color failed all 108.</p></li>
+        <li><span class="evidence-tag is-function">Function check</span> <p><strong>Hard black and white is unreliable.</strong> Thresholding the rendered page to 1-bit failed 62 of 108 pages. A per-element conversion kept text and lines but turned gray tracing letters solid black (+86% coverage on handwriting pages); the automated check missed this, and the AI reviewers scored it 2 out of 5 (their brief had listed this defect as an example).</p></li>
+        <li><span class="evidence-tag is-function">Function check</span> <p><strong>Knockout text is the implementation trap.</strong> Removing or outlining fills without re-coloring the white text on them lost every word on all 9 posters.</p></li>
+        <li><span class="evidence-tag is-function">Function check</span> <p><strong>Color categories.</strong> Grayscale reduced four pastel categories to a color difference of 0.2 (CIEDE2000; 10 was the distinguishable line) and failed 6 of 9 color-key pages. Lightening fills to 55% kept saturated categories apart for normal color vision. In a deuteranopia simulation, the key's weakest red and green pair, already below the distinguishable line of 10 as designed (5.2), fell to 2.9.</p></li>
+        <li><span class="evidence-tag is-simulated">Simulated</span> <p><strong>Copies suffer before the original.</strong> In the simulated copier, the worst-hit lines or text at 75% opacity kept 81% as many visible marks as the unchanged page's own copies on medium-size pages and 62% on small-element pages; at 60%, 67% and 36%. Two simulated copies erased pale flat tints outright.</p></li>
       </ul>
-    <figure class="research-figure is-wide">
-      <a href="/assets/research/printable-ink-efficiency-study/line-survival.png"><img src="/assets/research/printable-ink-efficiency-study/line-survival.png" alt="Six line charts of line continuity against line width for black, guide gray and tracing gray lines, clean and after two simulated copies, under five methods." loading="lazy"></a>
-      <figcaption>Controlled line test at 300 dpi: share of each line still visible, clean (top) and after two simulated copies (bottom). Only high contrast kept the tracing gray through the simulated copies.</figcaption>
-    </figure>
-    <figure class="research-figure is-wide">
-      <a href="/assets/research/printable-ink-efficiency-study/renders-decorative-worksheet.png"><img src="/assets/research/printable-ink-efficiency-study/renders-decorative-worksheet.png" alt="Four renderings of the decorated worksheet: standard with yellow background, border and banner; 60% opacity; decoration removed; and Eco Colour." loading="lazy"></a>
-      <figcaption>Decorated worksheet: Standard, 60% page opacity, decoration removed, and Eco Colour.</figcaption>
-    </figure>
-    <figure class="research-figure is-wide">
-      <a href="/assets/research/printable-ink-efficiency-study/renders-poster.png"><img src="/assets/research/printable-ink-efficiency-study/renders-poster.png" alt="Four renderings of a poster: standard, background removed, Eco Colour with dark labels on lighter fills, and a naive outline version where the white text has vanished." loading="lazy"></a>
-      <figcaption>Poster: the naive outline version loses every white label, because the fill it stood out against is gone.</figcaption>
-    </figure>
-    <figure class="research-figure is-wide">
-      <a href="/assets/research/printable-ink-efficiency-study/renders-sparse-line.png"><img src="/assets/research/printable-ink-efficiency-study/renders-sparse-line.png" alt="Handwriting sheet crops at standard, 75% and 60% opacity and high contrast, each shown clean and after two simulated copies." loading="lazy"></a>
-      <figcaption>Handwriting sheet, clean and after two simulated copies. Gray guides and tracing letters are the first marks lost.</figcaption>
-    </figure>
-    <figure class="research-figure is-wide">
-      <a href="/assets/research/printable-ink-efficiency-study/renders-colour-coded.png"><img src="/assets/research/printable-ink-efficiency-study/renders-colour-coded.png" alt="Color key rendered four ways: standard, fills 45% lighter, grayscale and black and white." loading="lazy"></a>
-      <figcaption>Color key: lighter fills keep the categories apart; grayscale and black and white merge them.</figcaption>
-    </figure>
+      <figure class="research-figure is-wide" data-compare="Standard|Background removed|Eco Colour|Outline, naive" data-compare-subject="Poster">
+        <a href="/assets/research/printable-ink-efficiency-study/renders-poster.png"><img src="/assets/research/printable-ink-efficiency-study/renders-poster.png" width="1800" height="664" alt="Four renderings of a poster: standard, background removed, Eco Colour with dark labels on lighter fills, and a naive outline version where the white text has vanished." loading="lazy"></a>
+        <figcaption>Poster: the naive outline version loses every white label, because the fill it stood out against is gone.</figcaption>
+      </figure>
+      <figure class="research-figure is-wide" data-compare="Standard|75% page opacity|60% page opacity|High contrast" data-compare-subject="Handwriting sheet, clean (top) and after two simulated copies (bottom)">
+        <a href="/assets/research/printable-ink-efficiency-study/renders-sparse-line.png"><img src="/assets/research/printable-ink-efficiency-study/renders-sparse-line.png" width="1800" height="692" alt="Handwriting sheet crops at standard, 75% and 60% opacity and high contrast, each shown clean and after two simulated copies." loading="lazy"></a>
+        <figcaption>Handwriting sheet, clean and after two simulated copies. Gray guides and tracing letters are the first marks lost.</figcaption>
+      </figure>
+      <figure class="research-figure is-wide" data-compare="Standard|Fills 45% lighter|Grayscale|Black and white" data-compare-subject="Color key">
+        <a href="/assets/research/printable-ink-efficiency-study/renders-colour-coded.png"><img src="/assets/research/printable-ink-efficiency-study/renders-colour-coded.png" width="1800" height="299" alt="Color key rendered four ways: standard, fills 45% lighter, grayscale and black and white." loading="lazy"></a>
+        <figcaption>Color key: lighter fills keep the categories apart; grayscale and black and white merge them.</figcaption>
+      </figure>
+      <figure class="research-figure is-chart">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="Line survival test, scrollable chart">
+          <a href="/assets/research/printable-ink-efficiency-study/line-survival.png"><img src="/assets/research/printable-ink-efficiency-study/line-survival.png" width="1650" height="780" alt="Six line charts of line continuity against line width for black, guide gray and tracing gray lines, clean and after two simulated copies, under five methods." loading="lazy"></a>
+        </div>
+        <figcaption>Controlled line test at 300 dpi: share of each line still visible, clean (top) and after two simulated copies (bottom). Only high contrast kept the tracing gray through the simulated copies.</figcaption>
+      </figure>
 
       <h3 id="pdf-findings">Chromium and PDF behavior</h3>
       <ul class="research-findings">
-        <li><span class="evidence-tag is-renderer">Chromium-specific</span> <strong>Chromium's PDF export does not keep dot patterns.</strong> Every pattern-filled shape was written as its own full-page 72 ppi image with an alpha mask, not as vector dots. At 0.35 to 0.5 mm spacing the PDF holds a flat, lighter tone; at 1 to 2 mm, blocky aliased dots. Flat tints stay vector. So the halftone results above describe the pattern as drawn in the browser, not the file a user would print.</li>
-        <li><span class="evidence-tag is-renderer">Chromium-specific</span> <strong>Chromium's PDF of a fine pattern is lighter than the design.</strong> MuPDF and PDFium showed 0.35 to 0.5 mm halftones 8 to 39% lighter than Chromium's own raster of the same design, while agreeing with each other within 6%. Flat methods agreed within 1 to 5% across all four renderers.</li>
-        <li><span class="evidence-tag is-renderer">Chromium-specific</span> <strong>Pattern files are large and slow.</strong> Page PDFs with patterns were a median 19 to 21 times (halftone) and 28 times (dither) the size of the unchanged page, up to 148 MB and 198 MB for one A4 page, and the slowest single export took 723 seconds (timings are upper bounds: the machine was not idle for part of the run). Flat methods rendered and exported within a few percent of the unchanged page, except per-element and text-only opacity, whose PDFs were a median 1.5 and 1.1 times larger (up to about 12 times).</li>
-        <li><span class="evidence-tag is-renderer">Chromium-specific</span> <strong>Filter-based implementations rasterize the whole page.</strong> Grayscale or lightening applied as a CSS filter or an SVG filter exported the page as an image with no text layer; plain group opacity stayed vector.</li>
+        <li><span class="evidence-tag is-renderer">Chromium-specific</span> <p><strong>Chromium's PDF export does not keep dot patterns.</strong> Every pattern-filled shape was written as its own full-page 72 ppi image with an alpha mask, not as vector dots. At 0.35 to 0.5 mm spacing the PDF holds a flat, lighter tone; at 1 to 2 mm, blocky aliased dots. Flat tints stay vector. So the halftone results above describe the pattern as drawn in the browser, not the file a user would print.</p></li>
+        <li><span class="evidence-tag is-renderer">Chromium-specific</span> <p><strong>Chromium's PDF of a fine pattern is lighter than the design.</strong> MuPDF and PDFium showed 0.35 to 0.5 mm halftones 8 to 39% lighter than Chromium's own raster of the same design, while agreeing with each other within 6%. Flat methods agreed within 1 to 5% across all four renderers.</p></li>
+        <li><span class="evidence-tag is-renderer">Chromium-specific</span> <p><strong>Pattern files are large and slow.</strong> Page PDFs with patterns were a median 19 to 21 times (halftone) and 28 times (dither) the size of the unchanged page, up to 148 MB and 198 MB for one A4 page, and the slowest single export took 723 seconds (timings are upper bounds: the machine was not idle for part of the run). Flat methods rendered and exported within a few percent of the unchanged page, except per-element and text-only opacity, whose PDFs were a median 1.5 and 1.1 times larger (up to about 12 times).</p></li>
+        <li><span class="evidence-tag is-renderer">Chromium-specific</span> <p><strong>Filter-based implementations rasterize the whole page.</strong> Grayscale or lightening applied as a CSS filter or an SVG filter exported the page as an image with no text layer; plain group opacity stayed vector.</p></li>
       </ul>
-    <figure class="research-figure is-wide">
-      <a href="/assets/research/printable-ink-efficiency-study/pdf-pattern-rasterisation.png"><img src="/assets/research/printable-ink-efficiency-study/pdf-pattern-rasterisation.png" alt="Six square crops of a 30% navy fill: four halftone spacings, a dither and a flat tint, each shown as drawn and as stored in Chromium's PDF." loading="lazy"></a>
-      <figcaption>A 30% pattern as drawn (top) and inside Chromium's PDF (bottom). Fine screens flatten to a lighter tone and coarse ones to blocky squares; the flat tint is unchanged.</figcaption>
-    </figure>
+      <figure class="research-figure is-chart">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="Patterns as drawn and inside the PDF, scrollable image">
+          <a href="/assets/research/printable-ink-efficiency-study/pdf-pattern-rasterisation.png"><img src="/assets/research/printable-ink-efficiency-study/pdf-pattern-rasterisation.png" width="1464" height="586" alt="Six square crops of a 30% navy fill: four halftone spacings, a dither and a flat tint, each shown as drawn and as stored in Chromium's PDF." loading="lazy"></a>
+        </div>
+        <figcaption>A 30% pattern as drawn (top) and inside Chromium's PDF (bottom). Fine screens flatten to a lighter tone and coarse ones to blocky squares; the flat tint is unchanged.</figcaption>
+      </figure>
 
       <h3 id="not-tested">Not yet validated on physical printers</h3>
       <ul class="research-findings">
-        <li><span class="evidence-tag is-untested">Not tested on printers</span> Whether any cut in estimated coverage becomes a matching cut in ink or toner, for each method and printer type.</li>
-        <li><span class="evidence-tag is-untested">Not tested on printers</span> Whether grayscale saves anything on a given printer; several manufacturers say grayscale modes can still use color ink.</li>
-        <li><span class="evidence-tag is-untested">Not tested on printers</span> Whether faded text and gray guides survive a printer's own dot screening. Every contrast figure here assumes a lighter color prints as a flat tone.</li>
-        <li><span class="evidence-tag is-untested">Not tested on printers</span> Real copier behavior. The copier is a model with chosen settings, and the finding that pale tints vanish while coarse dots survive comes from those settings.</li>
-        <li><span class="evidence-tag is-untested">Not tested on printers</span> <span class="evidence-tag is-simulated">Simulated</span> The simulated printer screen gave halftones a median 1.31 times, and dithers 1.24 times, the dot area of the equal flat tint.</li>
+        <li><span class="evidence-tag is-untested">Not tested on printers</span> <p>Whether any cut in estimated coverage becomes a matching cut in ink or toner, for each method and printer type.</p></li>
+        <li><span class="evidence-tag is-untested">Not tested on printers</span> <p>Whether grayscale saves anything on a given printer; several manufacturers say grayscale modes can still use color ink.</p></li>
+        <li><span class="evidence-tag is-untested">Not tested on printers</span> <p>Whether faded text and gray guides survive a printer's own dot screening. Every contrast figure here assumes a lighter color prints as a flat tone.</p></li>
+        <li><span class="evidence-tag is-untested">Not tested on printers</span> <p>Real copier behavior. The copier is a model with chosen settings, and the finding that pale tints vanish while coarse dots survive comes from those settings.</p></li>
+        <li><span class="evidence-tag-set"><span class="evidence-tag is-untested">Not tested on printers</span> <span class="evidence-tag is-simulated">Simulated</span></span> <p>The simulated printer screen gave halftones a median 1.31 times, and dithers 1.24 times, the dot area of the equal flat tint.</p></li>
       </ul>
     </section>
 
-    <section class="editorial-section" id="results-by-page-type">
-      <span class="article-section-label">Results</span>
-      <h2>Best trade-off by page type</h2>
-      <p>For each page type, the method with the largest cut on both coverage estimates among those that kept function on average over the type's 9 pages, kept at least 90% of the unchanged page's marks through simulated copies, were rated at least 4 out of 5 by the AI reviewers and did not inflate the PDF. Within 2 points, the simpler method won.</p>
-      <div class="data-table-wrap">
-        <table class="data-table">
-          <thead><tr><th scope="col">Page type</th><th scope="col">Coverage as designed</th><th scope="col">Best trade-off found</th><th scope="col">Estimated cut</th></tr></thead>
-          <tbody>
-            <tr><td>Handwriting sheet</td><td>1.5%</td><td>Leave unchanged</td><td>None</td></tr>
-            <tr><td>Word search</td><td>5.5%</td><td>75% page opacity</td><td>25% (1.4 points)</td></tr>
-            <tr><td>Reading passage</td><td>3.1%</td><td>75% page opacity</td><td>25% (0.8 points)</td></tr>
-            <tr><td>Mixed worksheet</td><td>2.1%</td><td>Eco Colour</td><td>33% (0.7 points)</td></tr>
-            <tr><td>Picture cards</td><td>9.6%</td><td>Lighter fills and photos (55%)</td><td>44% (4.2 points)</td></tr>
-            <tr><td>Poster</td><td>80%</td><td>Eco Colour</td><td>61% (51.7 points)</td></tr>
-            <tr><td>Coloring page</td><td>1.1%</td><td>75% page opacity</td><td>25% (0.3 points)</td></tr>
-            <tr><td>Table or schedule</td><td>2.8%</td><td>Remove decoration, then 75%</td><td>36% (1.0 points)</td></tr>
-            <tr><td>Color key</td><td>27.5%</td><td>Eco Colour, text and lines at 75%</td><td>48% (13.2 points)</td></tr>
-            <tr><td>Photocopy master</td><td>1.4%</td><td>Leave unchanged</td><td>None</td></tr>
-            <tr><td>Decorated worksheet</td><td>41.7%</td><td>Remove decoration, then 75%</td><td>98% (40.9 points)</td></tr>
-            <tr><td>Cut-out cards</td><td>26.7%</td><td>Decoration removal</td><td>62% (21.3 points)</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p>Points are percentage points of estimated coverage. Two picks depend on how "kept function" is applied: if every page, not the average, must score at least 0.90, cut-out cards move to lighter fills; at 0.95, cut-out cards move to leave unchanged and picture cards to 75% opacity. Where 75% opacity was picked, it more than halves text contrast (17.4:1 to 7.7:1 for near-black text, still above the 7:1 enhanced line) to save 0.3 to 1.4 points, so we would not use it for low-vision readers or long reading; no reader was tested. Rankings that compare faded text against removed fills are coverage rankings only; they need a physical test before they can be read as ink rankings.</p>
-    </section>
-
-    <section class="editorial-section" id="holdout">
+    <section class="study-section" id="holdout" aria-labelledby="holdout-title">
       <span class="article-section-label">Holdout</span>
-      <h2>How the recommendations held on unseen pages</h2>
+      <h2 id="holdout-title">How the recommendations held on unseen pages</h2>
       <p>The routing rules were written down and committed before four held-back page types (a certificate, a maze, a month planner and a labeled diagram, 36 pages) were rendered.</p>
-      <ul>
-        <li>Every holdout page was routed to the same method, Eco Colour, so the rules for pictures, sparse pages and text-and-line pages were not exercised.</li>
-        <li>Function was kept on all 36 pages for normal color vision, which mostly confirms that Eco Colour leaves text and lines alone.</li>
-        <li>The decoration rule's coverage prediction held: certificates lost 94 to 98% of their estimated coverage, 99% of the best available. Whether a certificate still works as an award without its frame was not assessed.</li>
-        <li>The color rule failed. Planners and diagrams saved 47 to 65%, but a more aggressive fill lightening saved more on every one. On the maze, color meaning is two small start and finish dots while the coverage is black walls: Eco Colour saved 1 to 7% where 45% was available. Routing by what covers the page, not by page type or feature, is the lesson; that rule itself has not yet been tested on unseen pages.</li>
+      <ul class="outcome-list">
+        <li class="outcome is-open"><span class="outcome-label">Not exercised</span> <p>Every holdout page was routed to the same method, Eco Colour, so the rules for pictures, sparse pages and text-and-line pages were not exercised.</p></li>
+        <li class="outcome is-held"><span class="outcome-label">Held</span> <p>Function was kept on all 36 pages for normal color vision, which mostly confirms that Eco Colour leaves text and lines alone.</p></li>
+        <li class="outcome is-held"><span class="outcome-label">Held</span> <p>The decoration rule's coverage prediction held: certificates lost 94 to 98% of their estimated coverage, 99% of the best available. Whether a certificate still works as an award without its frame was not assessed.</p></li>
+        <li class="outcome is-failed"><span class="outcome-label">Failed</span> <p>The color rule failed. Planners and diagrams saved 47 to 65%, but a more aggressive fill lightening saved more on every one. On the maze, color meaning is two small start and finish dots while the coverage is black walls: Eco Colour saved 1 to 7% where 45% was available. Routing by what covers the page, not by page type or feature, is the lesson; that rule itself has not yet been tested on unseen pages.</p></li>
       </ul>
     </section>
 
-    <section class="editorial-section" id="method">
+    <section class="study-section" id="method" aria-labelledby="method-title">
       <span class="article-section-label">Method</span>
-      <h2>How the study was run</h2>
+      <h2 id="method-title">How the study was run</h2>
 
       <h3>Pages</h3>
       <p>Every page was generated from code, so one property could change at a time. Twelve development types were each built at three fullness levels (30%, 60% and 92% of the usable area populated) and three element sizes (for example 16, 12 and 9 pt body text; 0.40, 0.25 and 0.15 mm guide lines) on A4 with 15 mm margins: 108 pages. Replicates rebuilt each type's typical page with four more content seeds (48 pages) and its three medium-size pages on US Letter (36 pages), with a reduced set of 14 methods; seeds change words and picture choice, not layout. Text is pseudo-words; pictures are simple vector clip art and procedural photographs.</p>
-      <div class="data-table-wrap">
-        <table class="data-table">
-          <thead><tr><th scope="col">Page type</th><th scope="col">Stands in for</th><th scope="col">Critical elements</th></tr></thead>
-          <tbody>
-            <tr><td>Sparse lines</td><td>Handwriting practice, tracing</td><td>Ruled lines, guides, tracing letters</td></tr>
-            <tr><td>Dense lines</td><td>Word searches, grids</td><td>Grid, letters</td></tr>
-            <tr><td>Text heavy</td><td>Reading passages</td><td>Text</td></tr>
-            <tr><td>Mixed</td><td>Everyday worksheets</td><td>Text, answer lines, pictures</td></tr>
-            <tr><td>Image heavy</td><td>Picture cards</td><td>Pictures, words</td></tr>
-            <tr><td>Large solid color</td><td>Posters</td><td>Titles, color fills</td></tr>
-            <tr><td>Outline art</td><td>Coloring pages</td><td>Outlines</td></tr>
-            <tr><td>Table or grid</td><td>Schedules, forms</td><td>Grid, small text</td></tr>
-            <tr><td>Color coded</td><td>Color keys, sorting tasks</td><td>Color categories, labels</td></tr>
-            <tr><td>Photocopy master</td><td>Quizzes for copying</td><td>Small text, boxes, lines, guides</td></tr>
-            <tr><td>Decorative worksheet</td><td>Worksheets with borders and clip art</td><td>Questions, answer lines</td></tr>
-            <tr><td>Cuttable</td><td>Flashcards, cut-out cards</td><td>Cut lines, pictures, words</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <details class="study-details">
+        <summary>The 12 page types and their critical elements</summary>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th scope="col">Page type</th><th scope="col">Stands in for</th><th scope="col">Critical elements</th></tr></thead>
+            <tbody>
+              <tr><td>Sparse lines</td><td>Handwriting practice, tracing</td><td>Ruled lines, guides, tracing letters</td></tr>
+              <tr><td>Dense lines</td><td>Word searches, grids</td><td>Grid, letters</td></tr>
+              <tr><td>Text heavy</td><td>Reading passages</td><td>Text</td></tr>
+              <tr><td>Mixed</td><td>Everyday worksheets</td><td>Text, answer lines, pictures</td></tr>
+              <tr><td>Image heavy</td><td>Picture cards</td><td>Pictures, words</td></tr>
+              <tr><td>Large solid color</td><td>Posters</td><td>Titles, color fills</td></tr>
+              <tr><td>Outline art</td><td>Coloring pages</td><td>Outlines</td></tr>
+              <tr><td>Table or grid</td><td>Schedules, forms</td><td>Grid, small text</td></tr>
+              <tr><td>Color coded</td><td>Color keys, sorting tasks</td><td>Color categories, labels</td></tr>
+              <tr><td>Photocopy master</td><td>Quizzes for copying</td><td>Small text, boxes, lines, guides</td></tr>
+              <tr><td>Decorative worksheet</td><td>Worksheets with borders and clip art</td><td>Questions, answer lines</td></tr>
+              <tr><td>Cuttable</td><td>Flashcards, cut-out cards</td><td>Cut lines, pictures, words</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
 
       <h3>Rendering methods</h3>
       <p>36 methods were compared with the unchanged Standard rendering. The first 26 were defined before the main measurements; the 10 in the Derived and Pairs rows were built afterwards from those results.</p>
-      <div class="data-table-wrap">
-        <table class="data-table">
-          <thead><tr><th scope="col">Family</th><th scope="col">Methods (data identifiers)</th><th scope="col">What it does</th></tr></thead>
-          <tbody>
-            <tr><td>Page opacity</td><td><code>OPACITY_GROUP_90/75/60/45</code>, <code>OPACITY_ELEM_60</code></td><td>Fades the whole page, or each element separately</td></tr>
-            <tr><td>Partial opacity</td><td><code>OPACITY_FILL_60</code>, <code>OPACITY_STROKE_60</code>, <code>OPACITY_TEXT_60</code></td><td>Fades only fills, strokes or text</td></tr>
-            <tr><td>Lighter solid color</td><td><code>TINT_75/55/30</code></td><td>Moves every color toward white, fully opaque</td></tr>
-            <tr><td>Lighter fills</td><td><code>TINT_FILL_55/30/15</code></td><td>Fills and pictures only; text and lines unchanged</td></tr>
-            <tr><td>Grayscale</td><td><code>GRAYSCALE</code></td><td>Each color to its gray of equal lightness</td></tr>
-            <tr><td>Black and white</td><td><code>BW_THRESHOLD</code>, <code>BW_SEMANTIC</code></td><td>1-bit threshold of the page, or per-element black and white</td></tr>
-            <tr><td>Outline</td><td><code>OUTLINE_ONLY</code>, <code>OUTLINE_NAIVE</code></td><td>Fills become outlines; the naive version does not re-color white text</td></tr>
-            <tr><td>Removal</td><td><code>BG_REMOVAL</code>, <code>DECOR_REMOVAL</code></td><td>Deletes the page background, or decorative art, borders and non-essential fills</td></tr>
-            <tr><td>Patterns</td><td><code>HALFTONE_H/M/L</code>, <code>DITHER_M</code></td><td>Fills become 1 mm dot screens (55, 30, 15% area) or a 30% dither</td></tr>
-            <tr><td>High contrast</td><td><code>HIGH_CONTRAST</code></td><td>Background off, black structure, strokes at least 0.3 mm, darker guides</td></tr>
-            <tr><td>Derived</td><td><code>ECO_COLOUR</code>, <code>SUPER_ECO_BW</code>, <code>COPY_SAFE_ECO</code>, <code>COMBINED_REMOVE+TINT_75</code>, <code>COMBINED_ECO+STRUCT_75</code></td><td>Removal combined with lighter fills, black and white, high contrast or 75% strength</td></tr>
-            <tr><td>Pairs</td><td><code>INT_BG+TINT_FILL_55</code>, <code>INT_REMOVE_ALL</code>, <code>INT_OUTLINE+BW</code>, <code>INT_GRAY+BG</code>, <code>INT_OUTLINE+HALFTONE_M</code></td><td>Two methods together, to test how savings combine</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <details class="study-details">
+        <summary>All 36 methods and their data identifiers</summary>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th scope="col">Family</th><th scope="col">Methods (data identifiers)</th><th scope="col">What it does</th></tr></thead>
+            <tbody>
+              <tr><td>Page opacity</td><td><code>OPACITY_GROUP_90/75/60/45</code>, <code>OPACITY_ELEM_60</code></td><td>Fades the whole page, or each element separately</td></tr>
+              <tr><td>Partial opacity</td><td><code>OPACITY_FILL_60</code>, <code>OPACITY_STROKE_60</code>, <code>OPACITY_TEXT_60</code></td><td>Fades only fills, strokes or text</td></tr>
+              <tr><td>Lighter solid color</td><td><code>TINT_75/55/30</code></td><td>Moves every color toward white, fully opaque</td></tr>
+              <tr><td>Lighter fills</td><td><code>TINT_FILL_55/30/15</code></td><td>Fills and pictures only; text and lines unchanged</td></tr>
+              <tr><td>Grayscale</td><td><code>GRAYSCALE</code></td><td>Each color to its gray of equal lightness</td></tr>
+              <tr><td>Black and white</td><td><code>BW_THRESHOLD</code>, <code>BW_SEMANTIC</code></td><td>1-bit threshold of the page, or per-element black and white</td></tr>
+              <tr><td>Outline</td><td><code>OUTLINE_ONLY</code>, <code>OUTLINE_NAIVE</code></td><td>Fills become outlines; the naive version does not re-color white text</td></tr>
+              <tr><td>Removal</td><td><code>BG_REMOVAL</code>, <code>DECOR_REMOVAL</code></td><td>Deletes the page background, or decorative art, borders and non-essential fills</td></tr>
+              <tr><td>Patterns</td><td><code>HALFTONE_H/M/L</code>, <code>DITHER_M</code></td><td>Fills become 1 mm dot screens (55, 30, 15% area) or a 30% dither</td></tr>
+              <tr><td>High contrast</td><td><code>HIGH_CONTRAST</code></td><td>Background off, black structure, strokes at least 0.3 mm, darker guides</td></tr>
+              <tr><td>Derived</td><td><code>ECO_COLOUR</code>, <code>SUPER_ECO_BW</code>, <code>COPY_SAFE_ECO</code>, <code>COMBINED_REMOVE+TINT_75</code>, <code>COMBINED_ECO+STRUCT_75</code></td><td>Removal combined with lighter fills, black and white, high contrast or 75% strength</td></tr>
+              <tr><td>Pairs</td><td><code>INT_BG+TINT_FILL_55</code>, <code>INT_REMOVE_ALL</code>, <code>INT_OUTLINE+BW</code>, <code>INT_GRAY+BG</code>, <code>INT_OUTLINE+HALFTONE_M</code></td><td>Two methods together, to test how savings combine</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
 
       <h3>Coverage estimates</h3>
       <p>Pages were rendered in headless Chromium 141 at 150 dpi (controlled tests at 300 and 600 dpi) and composited on white. From the sRGB pixels: <strong>total tonal coverage</strong> (the headline figure) uses a naive four-color split, K = 1 &minus; max(R, G, B) and C = (max &minus; R) / max with M and Y alike, summed per pixel and averaged over the page; <strong>single-color darkness</strong> is the mean of 1 &minus; luma (Rec. 709); <strong>marked area</strong> is the share of pixels carrying any mark. The four-color split is not a color-managed conversion; it sends every gray to black only and counts a saturated two-ink color as about 200%, so points are not comparable across page types. A composite estimate (every gray built from color inks) is reported alongside. Each element group's share was measured by removing it and re-measuring.</p>
 
-      <h3>Function checks</h3>
+      <h3 id="function-checks-method">Function checks</h3>
       <p>Each page type declares its critical elements, and a page scores the minimum over them, so it is only as usable as its most damaged element. Text contrast is measured against the fills actually beneath it, at 4.5:1 for normal text and 3:1 for large text (at least 18 pt, or 14 pt bold), and lines at 3:1; these WCAG 2.2 thresholds are a screen standard used as a print proxy. A mark counts as visible when it differs from what lies beneath it by at least a 15% tone step. Color categories count as distinguishable at a CIEDE2000 difference of 10. Pictures are compared by edge structure at pixel and reading-distance scales. A page fails below 0.80 and keeps function at 0.95 or above.</p>
+      <figure class="function-scale">
+        <figcaption class="function-scale-title">Function score of a page: the lowest score among its critical elements</figcaption>
+        <ol class="function-scale-bands">
+          <li class="function-band is-failed"><span class="function-band-range">0 to 0.80</span> <span class="function-band-name">Failed</span></li>
+          <li class="function-band is-between"><span class="function-band-range">0.80 to 0.95</span> <span class="function-band-name">Not failed, not kept</span></li>
+          <li class="function-band is-kept"><span class="function-band-range">0.95 to 1</span> <span class="function-band-name">Function kept</span></li>
+        </ol>
+      </figure>
 
       <h3>Simulated photocopying</h3>
       <p>Each copy generation applies a 0.10 mm optical blur, maps anything lighter than 0.90 luma (Rec. 709) to paper and anything darker than 0.10 to solid black, and adds noise; three generations were run. Survival is compared with the unchanged page's own copies, per critical element, after the first and second copy. The settings were chosen to reproduce documented copier behavior and were not fitted to any machine.</p>
@@ -410,7 +691,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p>On each page, a method was marked failed below the function line; dominated when another tested method was at least as good on both coverage estimates, function, copy survival and complexity, and strictly better on one (this includes "no effect on this page"); needing physical validation when its saving depends on device behavior (patterns, colors pushed into a faint band, or color moved to black); promising when it cut at least 15% and a full point with function and copies kept; and conditional otherwise.</p>
 
       <h3>Cross-checks and review</h3>
-      <ul>
+      <ul class="study-bullets">
         <li><strong>Renderers.</strong> Chromium's rasters were compared with resvg 0.48.1, and Chromium's PDFs were rasterized with MuPDF (PyMuPDF 1.28.2) and PDFium (pypdfium2 5.13.0). Firefox and WebKit were not available.</li>
         <li><strong>Robustness.</strong> Statuses were stable in 167 of 168 content-seed cells and in 99% of 504 A4 versus US Letter comparisons. Failure counts were re-run at alternative thresholds and criteria.</li>
         <li><strong>Visual review.</strong> Two independent AI vision reviewers scored 21 methods on each type's typical page from coded images, without method names or coverage figures (86.5% identical usability scores, all within one point; Cohen's kappa 0.74, weighted 0.92). A third re-scored the poster and decorated worksheet after a bug fix. Raters and the automated check agreed only moderately (rank correlation 0.61): the check was stricter on contrast, failing 29 renderings the raters scored usable with defects, and laxer on guide hierarchy and pale colors.</li>
@@ -418,9 +699,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </ul>
     </section>
 
-    <section class="editorial-section" id="limitations">
+    <section class="study-section" id="limitations" aria-labelledby="limitations-title">
       <span class="article-section-label">Limitations</span>
-      <h2>What the study cannot tell you</h2>
+      <h2 id="limitations-title">What the study cannot tell you</h2>
       <ol class="research-limitations">
         <li><strong>No ink or toner was measured.</strong> Every figure is estimated coverage. Ink, toner, cartridge yield and cost need physical tests, and toner per covered area differs between solid areas, dots and text edges on laser printers.</li>
         <li><strong>Physical printer validation has not been run.</strong> A weighing protocol for inkjet, ink-tank, mono laser and color laser printers is designed, not executed.</li>
@@ -441,35 +722,52 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </ol>
     </section>
 
-    <section class="editorial-section" id="corrections">
+    <section class="study-section" id="corrections" aria-labelledby="corrections-title">
       <span class="article-section-label">Record</span>
-      <h2>Corrections made before publication</h2>
+      <h2 id="corrections-title">Corrections made before publication</h2>
+      <dl class="version-list">
+        <div><dt>Version 1.0</dt><dd><time datetime="2026-09-26">September 26, 2026</time>: first published version</dd></div>
+      </dl>
       <p>Review found and fixed these before version 1.0: text contrast had been measured against white instead of the fills beneath it (75% page opacity went from 0 failures to 12); copy survival had missed guides the unchanged page already lost by the second copy (handwriting sheets and photocopy masters went from "fade to 90%" to "leave unchanged"); one combined method had the wrong complexity; the PDF check had missed images stored inside patterns; and one contrast figure first attributed to text on a tint belonged to a banner title. Superseded wording does not appear on this page.</p>
     </section>
 
-    <section class="editorial-section" id="data">
+    <section class="study-section" id="data" aria-labelledby="data-title">
       <span class="article-section-label">Data</span>
-      <h2>Data, samples and reproducibility</h2>
+      <h2 id="data-title">Data, samples and reproducibility</h2>
+      <ul class="download-list">
+        <li class="download-item is-primary">
+          <a href="/research/printable-ink-efficiency-study.pdf" download><span class="download-name">Full study, version 1.0</span> <span class="download-meta">PDF · 1.5 MB</span></a>
+          <p>The same text as this page, with title, version and canonical URL on every page.</p>
+        </li>
+        <li class="download-item">
+          <a href="/research/printable-ink-efficiency-study/data/coverage-results.csv"><span class="download-name">coverage-results.csv</span> <span class="download-meta">CSV · 3.0 MB</span></a>
+          <p>Every measurement: one row per page and rendering.</p>
+        </li>
+        <li class="download-item">
+          <a href="/research/printable-ink-efficiency-study/data/summary-by-mode.csv"><span class="download-name">summary-by-mode.csv</span> <span class="download-meta">CSV · 7 KB</span></a>
+          <p>Start here: per-method means, ranges and failure counts.</p>
+        </li>
+      </ul>
       <p>The full study is available as a PDF generated from this page: <a href="/research/printable-ink-efficiency-study.pdf" download>Printable Ink Efficiency study, version 1.0 (PDF, 1.5 MB)</a>. The measurement data are CSV files with one header row; coverage values are fractions of the page (0.25 = 25%), and total tonal coverage can exceed 1 because a saturated two-ink color counts about 2.</p>
       <div class="data-table-wrap">
-        <table class="data-table">
-          <thead><tr><th scope="col">File</th><th scope="col">Contents</th></tr></thead>
+        <table class="data-table data-files-table">
+          <thead><tr><th scope="col">File</th><th scope="col">Contents</th><th scope="col">Size</th></tr></thead>
           <tbody>
-            <tr><td><a href="/research/printable-ink-efficiency-study/data/coverage-results.csv">coverage-results.csv</a></td><td>All 6,616 rows: one per page and rendering, with every coverage estimate, function score, copy result, contrast result, file size and status</td></tr>
-            <tr><td><a href="/research/printable-ink-efficiency-study/data/page-definitions.json">page-definitions.json</a></td><td>Every generated page: type, fullness, size, paper, seed, critical elements and standard coverage</td></tr>
-            <tr><td><a href="/research/printable-ink-efficiency-study/data/summary-by-mode.csv">summary-by-mode.csv</a></td><td>Per-method means, medians, ranges and status counts over the 108 development pages</td></tr>
-            <tr><td><a href="/research/printable-ink-efficiency-study/data/effect-by-archetype.csv">effect-by-archetype.csv</a></td><td>Per-method results for each page type</td></tr>
-            <tr><td><a href="/research/printable-ink-efficiency-study/data/combined-optimal.csv">combined-optimal.csv</a></td><td>The best trade-off selection by page type</td></tr>
-            <tr><td><a href="/research/printable-ink-efficiency-study/data/holdout-summary.csv">holdout-summary.csv</a></td><td>Holdout pages, routed methods and outcomes</td></tr>
-            <tr><td><a href="/research/printable-ink-efficiency-study/data/sensitivity.csv">sensitivity.csv</a></td><td>Failure and status counts under alternative thresholds and criteria</td></tr>
-            <tr><td><a href="/research/printable-ink-efficiency-study/data/contrast-backing-aware.csv">contrast-backing-aware.csv</a></td><td>Text and line contrast against the actual background, per page and rendering</td></tr>
-            <tr><td><a href="/research/printable-ink-efficiency-study/data/interactions.csv">interactions.csv</a></td><td>Observed, additive and multiplicative predictions for method pairs</td></tr>
-            <tr><td><a href="/research/printable-ink-efficiency-study/data/line-survival.csv">line-survival.csv</a>, <a href="/research/printable-ink-efficiency-study/data/text-survival.csv">text-survival.csv</a>, <a href="/research/printable-ink-efficiency-study/data/colour-survival.csv">colour-survival.csv</a></td><td>Controlled line-width, small-text and color-category tests</td></tr>
-            <tr><td><a href="/research/printable-ink-efficiency-study/data/halftone-dither.csv">halftone-dither.csv</a></td><td>Halftone, dither and flat-tint patches: coverage, simulated device screen, copies, file sizes, renderer readings</td></tr>
-            <tr><td><a href="/research/printable-ink-efficiency-study/data/pdf-pattern-structure.csv">pdf-pattern-structure.csv</a>, <a href="/research/printable-ink-efficiency-study/data/pdf-filter-check.csv">pdf-filter-check.csv</a></td><td>What Chromium's PDFs contain for each pattern, and whether filter implementations stay vector</td></tr>
-            <tr><td><a href="/research/printable-ink-efficiency-study/data/renderer-consistency.csv">renderer-consistency.csv</a>, <a href="/research/printable-ink-efficiency-study/data/resolution-sensitivity.csv">resolution-sensitivity.csv</a></td><td>Chromium, resvg, MuPDF and PDFium compared; 100, 150 and 300 dpi compared</td></tr>
-            <tr><td><a href="/research/printable-ink-efficiency-study/data/performance-results.csv">performance-results.csv</a></td><td>Load, raster and PDF export times, DOM size and PDF size per method (times are upper bounds: the machine was not idle for part of the run; the layout_s and style_s columns were not recorded and are 0 on every row)</td></tr>
-            <tr><td><a href="/research/printable-ink-efficiency-study/data/visual-quality-results.csv">visual-quality-results.csv</a></td><td>The AI reviewers' scores and defect notes, decoded</td></tr>
+            <tr><td><a href="/research/printable-ink-efficiency-study/data/coverage-results.csv">coverage-results.csv</a></td><td>All 6,616 rows: one per page and rendering, with every coverage estimate, function score, copy result, contrast result, file size and status</td><td>3.0 MB</td></tr>
+            <tr><td><a href="/research/printable-ink-efficiency-study/data/page-definitions.json">page-definitions.json</a></td><td>Every generated page: type, fullness, size, paper, seed, critical elements and standard coverage</td><td>280 KB</td></tr>
+            <tr><td><a href="/research/printable-ink-efficiency-study/data/summary-by-mode.csv">summary-by-mode.csv</a></td><td>Per-method means, medians, ranges and status counts over the 108 development pages</td><td>7 KB</td></tr>
+            <tr><td><a href="/research/printable-ink-efficiency-study/data/effect-by-archetype.csv">effect-by-archetype.csv</a></td><td>Per-method results for each page type</td><td>33 KB</td></tr>
+            <tr><td><a href="/research/printable-ink-efficiency-study/data/combined-optimal.csv">combined-optimal.csv</a></td><td>The best trade-off selection by page type</td><td>1 KB</td></tr>
+            <tr><td><a href="/research/printable-ink-efficiency-study/data/holdout-summary.csv">holdout-summary.csv</a></td><td>Holdout pages, routed methods and outcomes</td><td>20 KB</td></tr>
+            <tr><td><a href="/research/printable-ink-efficiency-study/data/sensitivity.csv">sensitivity.csv</a></td><td>Failure and status counts under alternative thresholds and criteria</td><td>17 KB</td></tr>
+            <tr><td><a href="/research/printable-ink-efficiency-study/data/contrast-backing-aware.csv">contrast-backing-aware.csv</a></td><td>Text and line contrast against the actual background, per page and rendering</td><td>295 KB</td></tr>
+            <tr><td><a href="/research/printable-ink-efficiency-study/data/interactions.csv">interactions.csv</a></td><td>Observed, additive and multiplicative predictions for method pairs</td><td>108 KB</td></tr>
+            <tr><td><a href="/research/printable-ink-efficiency-study/data/line-survival.csv">line-survival.csv</a>, <a href="/research/printable-ink-efficiency-study/data/text-survival.csv">text-survival.csv</a>, <a href="/research/printable-ink-efficiency-study/data/colour-survival.csv">colour-survival.csv</a></td><td>Controlled line-width, small-text and color-category tests</td><td>150, 38 and 2 KB</td></tr>
+            <tr><td><a href="/research/printable-ink-efficiency-study/data/halftone-dither.csv">halftone-dither.csv</a></td><td>Halftone, dither and flat-tint patches: coverage, simulated device screen, copies, file sizes, renderer readings</td><td>17 KB</td></tr>
+            <tr><td><a href="/research/printable-ink-efficiency-study/data/pdf-pattern-structure.csv">pdf-pattern-structure.csv</a>, <a href="/research/printable-ink-efficiency-study/data/pdf-filter-check.csv">pdf-filter-check.csv</a></td><td>What Chromium's PDFs contain for each pattern, and whether filter implementations stay vector</td><td>5 KB and 379 bytes</td></tr>
+            <tr><td><a href="/research/printable-ink-efficiency-study/data/renderer-consistency.csv">renderer-consistency.csv</a>, <a href="/research/printable-ink-efficiency-study/data/resolution-sensitivity.csv">resolution-sensitivity.csv</a></td><td>Chromium, resvg, MuPDF and PDFium compared; 100, 150 and 300 dpi compared</td><td>10 and 4 KB</td></tr>
+            <tr><td><a href="/research/printable-ink-efficiency-study/data/performance-results.csv">performance-results.csv</a></td><td>Load, raster and PDF export times, DOM size and PDF size per method (times are upper bounds: the machine was not idle for part of the run; the layout_s and style_s columns were not recorded and are 0 on every row)</td><td>56 KB</td></tr>
+            <tr><td><a href="/research/printable-ink-efficiency-study/data/visual-quality-results.csv">visual-quality-results.csv</a></td><td>The AI reviewers' scores and defect notes, decoded</td><td>44 KB</td></tr>
           </tbody>
         </table>
       </div>
@@ -477,13 +775,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p>Software: Chromium 141.0.7390.37 driven by Playwright 1.56, Python 3.11, numpy 2.4, Pillow 12.3, pandas 3.0, resvg 0.48.1, PyMuPDF 1.28.2, pypdfium2 5.13.0; fonts Roboto 3.015 and Liberation Serif 2.1. The rendering is deterministic, so the same software reproduces the same pixels. The measurement code is not published with this version.</p>
     </section>
 
-    <section class="editorial-section" id="citation">
+    <section class="study-section" id="citation" aria-labelledby="citation-title">
       <span class="article-section-label">Cite</span>
-      <h2>How to cite this study</h2>
-      <p class="research-citation">UltraTextGen Research. &ldquo;Printable Ink Efficiency: Measuring Coverage Reduction Across Common Worksheet Rendering Methods.&rdquo; Version 1.0, September 26, 2026. https://ultratextgen.com/research/printable-ink-efficiency-study/</p>
+      <h2 id="citation-title">How to cite this study</h2>
+      <p class="research-citation" id="citation-text">UltraTextGen Research. &ldquo;Printable Ink Efficiency: Measuring Coverage Reduction Across Common Worksheet Rendering Methods.&rdquo; Version 1.0, September 26, 2026. https://ultratextgen.com/research/printable-ink-efficiency-study/</p>
       <p>Please cite the version number. A later version will keep this address and state what changed.</p>
     </section>
 
+    <div id="sources" class="study-sources">
     <section class="editorial-section">
       <span class="article-section-label">Sources</span>
       <h2>External sources</h2>
@@ -494,6 +793,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <p>Copier background suppression, the behavior the simulated copier imitates, is described in Xerox's support article on <a target="_blank" rel="nofollow noopener" href="https://www.support.xerox.com/en-us/article/KB0138689">automatically suppressing background variation</a>.</p>
       </div>
     </section>
+    </div>
 
     <section class="related-pages">
       <h2>Related</h2>
@@ -510,6 +810,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </section>
 
   </main>
+</div>
 
   <footer class="footer">
     <div class="footer-inner">
@@ -519,6 +820,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 </div>
   </footer>
 
+<script src="/js/research/research-study.js" defer></script>
 <script src="/footer.js" defer></script>
 </body>
 </html>
