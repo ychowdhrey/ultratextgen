@@ -114,6 +114,19 @@ date live on these pages and only one is a stamp:
 entries carry **one** localized pill and no `Published` half, and its date must
 equal the EN parent's `Verified` date.
 
+## A title outlives the status it reports
+
+On any page that tracks something with a lifecycle (a Unicode or emoji character on
+its way to a release, a platform rollout, a game-rule change), the `<title>`, H1,
+`og:title`, `twitter:title`, JSON-LD `headline`/`name` and the card-art title name the
+subject and carry **only a terminal fact** ("Final in Unicode 18.0", "Published
+September 16, 2026") **or a status-neutral phrase** ("Release Date", "Rollout
+Status"). A **transient** status (candidate, draft, beta, frozen, coming, accepted,
+expected, "confirmed for", "not live yet") belongs in the body, the meta description
+or the `updates/` pill, where the next update moves it without a retitle. A retitle
+rewrites the card art and every locale sibling. **A retitle never changes the URL.**
+Owner decision and evidence: `docs/decisions/content-lanes.md`.
+
 ## Accessibility and copy rules also apply here
 
 See `.claude/rules/accessibility.md` and `.claude/rules/editorial-copy.md` — both

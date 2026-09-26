@@ -27,6 +27,40 @@ type does not enroll a site in Google News. **Formal Publisher Center submission
 remains explicitly out of scope**, for the same domain-risk reasoning; this
 refinement does not reopen that question.
 
+## Titles outlive the status they report (2026-09-26)
+
+**Decision (owner, 2026-09-26):** stale status titles are retitled in place to carry
+the final fact, **without changing the URL**, and from now on a page that tracks a
+series of updates gets a title that stays true through the whole series.
+
+**Why.** The Unicode 18.0 pages were titled for the stage they were written in:
+"Frozen for Unicode 18.0 Publication", "Coming September 2026", "the Draft Emoji 18.0
+Candidate", "Accepted for Unicode 18.0", "Is Confirmed for September 16, 2026".
+Unicode 18.0 published on September 16, 2026, and on that one day **75 titles across
+EN and 16 locales became false together**, most of them with card art that embeds the
+same words. The body copy could be corrected sentence by sentence; the titles could
+not be touched without regenerating art, so they were the part left stating an
+expired status.
+
+**The rule** (invariant in `.claude/rules/html-pages.md`, "A title outlives the status
+it reports"): a title names the subject and carries only a **terminal** fact ("Final
+in Emoji 18.0", "Published September 16, 2026") or a **status-neutral** phrase
+("Release Date", "Keyboard Rollout Status"). Transient states live in the body, the
+meta description and the `updates/` pill. For a character that is not final yet, the
+title is written in the neutral form from the start (for example
+"Pickle Emoji: Copy & Paste 🫝, Emoji 18.0 Status and Release Date") and changes at
+most once, when the terminal fact lands.
+
+**How the retitle was done.** URL, slug, canonical and hreflang unchanged. Every slot
+that carries the title changed together (`<title>`, `og:title`, `twitter:title`,
+JSON-LD, H1 where the H1 carried the status, the page spec's `title` field, the
+card-art registry), with the art regenerated in the same change, and every locale
+sibling in the same change. Status wording in the body was corrected in the same pass
+so no page says "Final" in its title and "draft candidate" in its first paragraph.
+
+**Executed:** [`ychowdhrey/ultratextgen#943`](https://github.com/ychowdhrey/ultratextgen/pull/943)
+(open at the time of writing; not executed until it merges).
+
 ## Heading-level skips stay advisory (2026-09-10)
 
 909 pages skip a heading level, all the same design-system decision: a
