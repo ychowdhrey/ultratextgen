@@ -2,16 +2,17 @@
   "lang": "es",
   "slug": "emoji-de-pepinillo",
   "page_type": "symbol",
-  "title": "Emoji de Pepinillo: Copiar y Pegar 🫝 — el Candidato de Unicode 18.0 que Heredó una Casilla Aplazada de Apple Core",
-  "meta_description": "Pepinillo (🫝, U+1FADD) es un candidato en borrador para Emoji 18.0, previsto junto a Unicode 18.0 en septiembre de 2026. Su punto de código estaba reservado originalmente para «Apple Core» antes de aplazarse y reasignarse. Aún no aprobado, y ninguna fuente lo renderiza hoy.",
+  "title": "Emoji de Pepinillo: Copiar y Pegar 🫝, Oficial en Emoji 18.0",
+  "meta_description": "Pepinillo (🫝, U+1FADD) es definitivo en Emoji 18.0, publicado con Unicode 18.0 el 16 de septiembre de 2026. Su punto de código estaba reservado originalmente para «Apple Core» antes de reasignarse. A 25 de septiembre de 2026, ningún móvil ni ordenador lo muestra de serie.",
   "canonical": "https://ultratextgen.com/es/symbol/emoji-de-pepinillo/",
   "breadcrumb": "Emoji de Pepinillo",
   "hero_h1": "Emoji de Pepinillo",
-  "hero_tagline": "Un pepinillo entero, distinto del pepino y de la berenjena — en fase de borrador para Emoji 18.0, previsto junto a Unicode 18.0 en septiembre de 2026. Solo borrador: ninguna fuente lo renderiza todavía. Haz clic para copiar el código igualmente.",
-  "intro": "Pepinillo (🫝, U+1FADD) es un emoji candidato en fase de borrador para Emoji 18.0, la actualización de emoji que acompaña a Unicode 18.0 y que se espera finalizar en septiembre de 2026. Su punto de código tiene una historia curiosa: U+1FADD estaba reservado originalmente para un emoji propuesto de «corazón de manzana» (Apple Core) en el ciclo de borrador de Emoji 17.0; esa propuesta se aplazó, y Unicode reasignó la casilla liberada a Pepinillo para el ciclo 18.0. Representa un pepinillo entero (un gherkin encurtido), distinto de los ya existentes emoji de Pepino y Berenjena junto a los que suele bromearse — la prensa tecnológica ha llegado a comentar desde que «ese pepinillo va a romper internet» hasta especular con que «le va a quitar mucho negocio» a la Berenjena. Como todavía es un borrador, ningún sistema operativo, teclado o fuente lo renderiza actualmente; espera un cuadro en blanco o un glifo de marcador de posición hasta que se apruebe Emoji 18.0 y las plataformas incorporen soporte.",
+  "hero_tagline": "Un pepinillo entero, distinto del pepino y de la berenjena, definitivo en Emoji 18.0 desde el 16 de septiembre de 2026. A 25 de septiembre de 2026, ningún móvil ni ordenador lo muestra de serie, pero ya puedes copiar el código.",
+  "intro": "Pepinillo (🫝, U+1FADD) es uno de los nueve emoji nuevos de Emoji 18.0, la actualización de emoji que acompaña a Unicode 18.0; ambos se publicaron el 16 de septiembre de 2026. Su punto de código tiene una historia curiosa: U+1FADD estaba reservado originalmente para un emoji propuesto de «corazón de manzana» (Apple Core) en el ciclo de borrador de Emoji 17.0; esa propuesta se aplazó, y Unicode reasignó la casilla liberada a Pepinillo para el ciclo 18.0. Fue un candidato en borrador hasta septiembre de 2026, y los datos de emoji de Unicode 18.0 ya registran U+1FADD como «pickle», totalmente cualificado. Representa un pepinillo entero (un gherkin encurtido), distinto de los ya existentes emoji de Pepino y Berenjena junto a los que suele bromearse — la prensa tecnológica ha llegado a comentar desde que «ese pepinillo va a romper internet» hasta especular con que «le va a quitar mucho negocio» a la Berenjena. Que sea definitivo no significa que ya esté en tu teclado. Google ha publicado su diseño en la fuente Noto Color Emoji, pero a 25 de septiembre de 2026 ningún sistema operativo, teclado ni fuente de emoji del sistema lo incluye; espera un cuadro en blanco o un glifo de marcador de posición hasta que tu plataforma incorpore Emoji 18.0.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
+  "sources": "El archivo de datos <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> de Unicode 18.0 registra U+1FADD como «pickle», un emoji totalmente cualificado de Emoji 18.0, y el <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">anuncio de Unicode 18.0</a> del Consorcio Unicode fecha la publicación el 16 de septiembre de 2026. El <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">informe de Emojipedia sobre Unicode 18.0</a> recoge los diseños de Google en Noto Color Emoji para los nuevos emoji.",
   "hreflang": [
     { "lang": "en", "href": "https://ultratextgen.com/symbol/pickle-emoji/" },
     { "lang": "es", "href": "https://ultratextgen.com/es/symbol/emoji-de-pepinillo/" },
@@ -22,9 +23,9 @@
       "id": "pepinillo",
       "label": "Pepinillo",
       "h2": "Emoji de Pepinillo",
-      "intro": "El carácter en borrador propiamente dicho — copiable hoy como código, aunque ninguna fuente pueda renderizarlo todavía.",
+      "intro": "El carácter de Emoji 18.0 propiamente dicho: copia hoy el código y se verá como un pepinillo en cuanto tu móvil u ordenador incorpore Emoji 18.0.",
       "symbols": [
-        { "char": "🫝", "label": "Pepinillo (borrador, U+1FADD)" }
+        { "char": "🫝", "label": "Pepinillo (U+1FADD, Emoji 18.0)" }
       ]
     },
     {
@@ -40,13 +41,13 @@
     },
     {
       "id": "otros-candidatos",
-      "label": "Otros Candidatos en Borrador",
-      "h2": "Otros Candidatos en Borrador de Emoji 18.0",
-      "intro": "Pepinillo no es el único carácter sin aprobar de esta versión — estos están en borrador junto a él, igual de sin renderizar hasta la decisión de septiembre de 2026.",
+      "label": "Publicados con Él",
+      "h2": "Otros Emoji Nuevos de Emoji 18.0",
+      "intro": "Pepinillo no es el único emoji nuevo de esta versión: estos pasaron a ser definitivos con él el 16 de septiembre de 2026, y ningún móvil ni ordenador los muestra de serie todavía.",
       "symbols": [
-        { "char": "🫫", "label": "Cara Agrietada (borrador, U+1FAEB)" },
-        { "char": "🫌", "label": "Mariposa Monarca (borrador, U+1FACC)" },
-        { "char": "🛙", "label": "Faro (borrador, U+1F6D9)" }
+        { "char": "🫫", "label": "Cara Agrietada (U+1FAEB, Emoji 18.0)" },
+        { "char": "🫌", "label": "Mariposa Monarca (U+1FACC, Emoji 18.0)" },
+        { "char": "🛙", "label": "Faro (U+1F6D9, Emoji 18.0)" }
       ]
     }
   ],
@@ -59,27 +60,27 @@
     {
       "href": "/es/symbol/emoji-de-cara-agrietada/",
       "title": "Emoji de Cara Agrietada",
-      "desc": "Otro candidato en borrador de Emoji 18.0 — y el que ganó la votación pública."
+      "desc": "La cara de Emoji 18.0 que superó a Pepinillo en la votación pública de Emojipedia."
     },
     {
       "href": "/es/symbol/emoji-de-meteoro/",
       "title": "Emoji de Meteoro",
-      "desc": "Otro candidato en borrador de Emoji 18.0 — se separa de la larga división de renderizado del Cometa."
+      "desc": "También definitivo en Emoji 18.0: una estrella fugaz separada de la larga división de renderizado del Cometa."
     },
     {
       "href": "/es/symbol/emoji-de-mariposa-monarca/",
       "title": "Emoji de Mariposa Monarca",
-      "desc": "Otro candidato en borrador de Emoji 18.0 — corrige una confusión de Mariposa entre plataformas."
+      "desc": "También definitivo en Emoji 18.0: corrige una confusión de Mariposa entre plataformas."
     },
     {
       "href": "/es/symbol/emoji-de-senal-de-pulgar/",
       "title": "Emoji de Señal de Pulgar",
-      "desc": "Otro par candidato en borrador de Emoji 18.0 — señalar direccional, no aprobación."
+      "desc": "También definitivo en Emoji 18.0: un par para señalar una dirección, no para aprobar."
     },
     {
       "href": "/es/updates/unicode-18-nuevos-emojis-votacion/",
       "title": "Los Nuevos Emoji de Unicode 18.0",
-      "desc": "La lista completa de 9 candidatos en borrador, ordenados por votación pública."
+      "desc": "Los 9 emoji que pasaron a ser definitivos en Emoji 18.0, ordenados por votación pública."
     }
   ]
 }

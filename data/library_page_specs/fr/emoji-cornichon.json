@@ -2,16 +2,17 @@
   "slug": "emoji-cornichon",
   "lang": "fr",
   "page_type": "symbol",
-  "title": "Emoji Cornichon : Copier-Coller 🫝 — le Candidat d'Unicode 18.0 qui a Récupéré une Case Apple Core en Attente",
-  "meta_description": "Cornichon (🫝, U+1FADD) est un candidat provisoire pour Emoji 18.0, attendu avec Unicode 18.0 en septembre 2026. Son code était à l'origine réservé à un emoji « Apple Core » avant d'être mis en attente. Pas encore approuvé, et aucune police ne l'affiche à ce jour.",
+  "title": "Emoji Cornichon : Copier-Coller 🫝, Officiel dans Emoji 18.0",
+  "meta_description": "Cornichon (🫝, U+1FADD) est définitif dans Emoji 18.0, publié avec Unicode 18.0 le 16 septembre 2026. Son code était à l'origine réservé à un emoji « Apple Core » avant d'être réattribué. Au 25 septembre 2026, aucun téléphone ni ordinateur ne l'affiche par défaut.",
   "canonical": "https://ultratextgen.com/fr/symbol/emoji-cornichon/",
   "breadcrumb": "Emoji Cornichon",
   "hero_h1": "Emoji Cornichon",
-  "hero_tagline": "Un cornichon entier, distinct du concombre et de l'aubergine — provisoirement retenu pour Emoji 18.0, attendu avec Unicode 18.0 en septembre 2026. Encore à l'état de brouillon : aucune police ne l'affiche pour l'instant. Clique pour copier le code malgré tout.",
-  "intro": "Cornichon (🫝, U+1FADD) est un emoji candidat provisoirement retenu pour Emoji 18.0, le volet emoji d'Unicode 18.0, dont la finalisation est attendue en septembre 2026. Son point de code a une histoire inhabituelle : U+1FADD était à l'origine réservé à un emoji « Apple Core » (trognon de pomme) proposé lors du cycle de brouillons d'Emoji 17.0 ; cette proposition a été mise en attente, et Unicode a réaffecté la case ainsi libérée à Cornichon pour le cycle 18.0. Il représente un cornichon entier (un petit concombre mariné), distinct des emoji Concombre et Aubergine déjà existants auxquels on l'associe le plus souvent en plaisanterie — la presse tech a spéculé aussi bien sur « ce cornichon va faire exploser Internet » que sur le fait qu'il « va piquer beaucoup d'affaires » à Aubergine. Comme il s'agit encore d'un brouillon, aucun système d'exploitation, clavier ou police ne l'affiche aujourd'hui ; attends-toi à un carré vide ou à un glyphe de repli jusqu'à ce qu'Emoji 18.0 soit approuvé et que les plateformes déploient leur support.",
+  "hero_tagline": "Un cornichon entier, distinct du concombre et de l'aubergine, définitif dans Emoji 18.0 depuis le 16 septembre 2026. Au 25 septembre 2026, aucun téléphone ni ordinateur ne l'affiche par défaut, mais tu peux déjà copier le code.",
+  "intro": "Cornichon (🫝, U+1FADD) est l'un des neuf nouveaux emoji d'Emoji 18.0, le volet emoji d'Unicode 18.0 ; les deux ont été publiés le 16 septembre 2026. Son point de code a une histoire inhabituelle : U+1FADD était à l'origine réservé à un emoji « Apple Core » (trognon de pomme) proposé lors du cycle de brouillons d'Emoji 17.0 ; cette proposition a été mise en attente, et Unicode a réaffecté la case ainsi libérée à Cornichon pour le cycle 18.0. Il est resté un candidat provisoire jusqu'en septembre 2026, et les données emoji d'Unicode 18.0 listent désormais U+1FADD sous le nom « pickle », entièrement qualifié. Il représente un cornichon entier (un petit concombre mariné), distinct des emoji Concombre et Aubergine déjà existants auxquels on l'associe le plus souvent en plaisanterie — la presse tech a spéculé aussi bien sur « ce cornichon va faire exploser Internet » que sur le fait qu'il « va piquer beaucoup d'affaires » à Aubergine. Définitif ne veut pas dire déjà sur ton clavier. Google a publié son dessin dans la police Noto Color Emoji, mais au 25 septembre 2026 aucun système d'exploitation, clavier ou police emoji système ne l'intègre ; attends-toi à un carré vide ou à un glyphe de repli jusqu'à ce que ta plateforme prenne en charge Emoji 18.0.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
+  "sources": "Le fichier de données <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> d'Unicode 18.0 liste U+1FADD sous le nom « pickle », un emoji entièrement qualifié d'Emoji 18.0, et l'<a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">annonce d'Unicode 18.0</a> du Consortium Unicode date la publication au 16 septembre 2026. Le <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">rapport d'Emojipedia sur Unicode 18.0</a> présente les dessins de Google dans Noto Color Emoji pour les nouveaux emoji.",
   "home_url": "https://ultratextgen.com/fr/",
   "crumb_home": "Accueil",
   "crumb_library": "Symboles",
@@ -35,11 +36,11 @@
       "id": "cornichon",
       "label": "Cornichon",
       "h2": "Emoji Cornichon",
-      "intro": "Le caractère provisoire lui-même — copiable dès aujourd'hui en tant que code, même si aucune police ne peut encore l'afficher.",
+      "intro": "Le caractère d'Emoji 18.0 lui-même : copie le code dès aujourd'hui, il s'affichera en cornichon dès que ton téléphone ou ton ordinateur prendra en charge Emoji 18.0.",
       "symbols": [
         {
           "char": "🫝",
-          "label": "Cornichon (brouillon, U+1FADD)"
+          "label": "Cornichon (U+1FADD, Emoji 18.0)"
         }
       ]
     },
@@ -65,21 +66,21 @@
     },
     {
       "id": "autres-candidats",
-      "label": "Autres Candidats Provisoires",
-      "h2": "Les Autres Candidats Provisoires d'Emoji 18.0",
-      "intro": "Cornichon n'est pas le seul caractère non approuvé de cette édition — ceux-ci sont retenus en même temps que lui, tout aussi invisibles jusqu'à la décision de septembre 2026.",
+      "label": "Publiés avec Lui",
+      "h2": "Les Autres Nouveaux Emoji d'Emoji 18.0",
+      "intro": "Cornichon n'est pas le seul nouvel emoji de cette édition : ceux-ci sont devenus définitifs avec lui le 16 septembre 2026, et aucun téléphone ni ordinateur ne les affiche encore par défaut.",
       "symbols": [
         {
           "char": "🫫",
-          "label": "Visage Fissuré (brouillon, U+1FAEB)"
+          "label": "Visage Fissuré (U+1FAEB, Emoji 18.0)"
         },
         {
           "char": "🫌",
-          "label": "Papillon Monarque (brouillon, U+1FACC)"
+          "label": "Papillon Monarque (U+1FACC, Emoji 18.0)"
         },
         {
           "char": "🛙",
-          "label": "Phare (brouillon, U+1F6D9)"
+          "label": "Phare (U+1F6D9, Emoji 18.0)"
         }
       ]
     }
@@ -93,22 +94,22 @@
     {
       "href": "/fr/symbol/emoji-visage-fissure/",
       "title": "Emoji Visage Fissuré",
-      "desc": "Un autre candidat provisoire d'Emoji 18.0 — et celui qui a remporté le vote public."
+      "desc": "Le visage d'Emoji 18.0 qui a devancé Cornichon au vote public d'Emojipedia."
     },
     {
       "href": "/fr/symbol/emoji-meteore/",
       "title": "Emoji Météore",
-      "desc": "Un autre candidat provisoire d'Emoji 18.0 — issu de la longue scission de rendu de Comète."
+      "desc": "Également définitif dans Emoji 18.0 : une étoile filante issue de la longue scission de rendu de Comète."
     },
     {
       "href": "/fr/symbol/emoji-papillon-monarque/",
       "title": "Emoji Papillon Monarque",
-      "desc": "Un autre candidat provisoire d'Emoji 18.0 — corrige une confusion multiplateforme sur l'emoji Papillon."
+      "desc": "Également définitif dans Emoji 18.0 : il corrige une confusion multiplateforme sur l'emoji Papillon."
     },
     {
       "href": "/fr/symbol/emoji-signe-du-pouce/",
       "title": "Emoji Signe du Pouce",
-      "desc": "Une autre paire candidate d'Emoji 18.0 — un geste directionnel, pas une approbation."
+      "desc": "Également définitive dans Emoji 18.0 : une paire pour un geste directionnel, pas une approbation."
     }
   ]
 }
