@@ -283,7 +283,7 @@
     },
     {
       "id": "EFR-F-004",
-      "pattern": "\\b(?:Here(?:'s| is) (?:a|an|the) (?:comprehensive|detailed|revised|updated|rewritten|complete)|Certainly[,!]|I hope this helps|Feel free to (?:let me know|reach out)|In conclusion,)\\b",
+      "pattern": "(?:\\b(?:Here(?:'s| is) (?:a|an|the) (?:comprehensive|detailed|revised|updated|rewritten|complete)|I hope this helps|Feel free to let me know)\\b|\\bCertainly[,!]|\\bIn conclusion,)",
       "matchType": "regex",
       "language": "en",
       "category": "forbidden",
@@ -299,9 +299,9 @@
         "cta"
       ],
       "rationale": "Conversational scaffolding addressed to a commissioner rather than a reader. A page is not a reply.",
-      "evidenceSource": "corpus scan 2026-08-26",
-      "corpusFrequency": 0,
-      "pageFrequency": 0,
+      "evidenceSource": "corpus scan 2026-08-26; re-measured 2026-09-26 at the register #85 shadow readout",
+      "corpusFrequency": 1,
+      "pageFrequency": 1,
       "variety": null,
       "contentFamilies": [
         "*"
@@ -314,9 +314,9 @@
       "seoProtection": "none",
       "maxPer1000Words": null,
       "firstAdded": "2026-08-26",
-      "lastReviewed": "2026-08-26",
+      "lastReviewed": "2026-09-26",
       "replacementGuidance": "Delete the wrapper and keep the content. If deleting it leaves nothing, there was nothing.",
-      "notes": "English only. The equivalent scaffolding in other languages needs its own corpus evidence before an entry exists — translating this pattern would be exactly the bias the research memo §6 forbids."
+      "notes": "English only. The equivalent scaffolding in other languages needs its own corpus evidence before an entry exists — translating this pattern would be exactly the bias the research memo §6 forbids. CORRECTED 2026-09-26 (register #85 readout): `reach out` was dropped from the alternation. It was the rule's only hit anywhere on the site and it was a FALSE POSITIVE — \"If you have suggestions or ideas, feel free to reach out.\" on about/index.html, which is ordinary reader-facing contact copy on the one page type where it belongs, not scaffolding addressed to a commissioner. `let me know` is kept: it addresses a commissioner and has no reader-facing reading. The entry shipped claiming corpusFrequency 0 while the corpus already held this one occurrence, so the figure is corrected here too. Had model-leakage been promoted on 2026-08-26, the next PR to touch that page's prose would have been blocked on a legitimate sentence. SECOND CORRECTION, same readout: `Certainly[,!]` and `In conclusion,` had been UNREACHABLE since 2026-08-26. The pattern wrapped every alternative in \\b(?:…)\\b, and a trailing \\b cannot assert after ',' or '!' — both are non-word characters, as is the space that follows them, so there is no boundary. Two of the rule's five alternatives could never match, which is this repo's most-repeated failure (a check that reports nothing reads exactly like a check that passes) sitting inside the rule that was up for promotion. Found by probing the rule after narrowing it, not by reading it. The word-ending alternatives keep the trailing \\b; the two punctuation-ending ones now sit outside it."
     },
     {
       "id": "EFR-D-001",
