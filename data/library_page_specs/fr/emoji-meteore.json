@@ -2,16 +2,17 @@
   "slug": "emoji-meteore",
   "lang": "fr",
   "page_type": "symbol",
-  "title": "Emoji Météore : Copier-Coller 🪋 — le Candidat d'Unicode 18.0 qui se Détache de Comète",
-  "meta_description": "Météore (🪋, U+1FA8B) est un candidat provisoire pour Emoji 18.0, attendu avec Unicode 18.0 en septembre 2026. Il résout une scission de rendu vieille de plusieurs années sur l'emoji Comète — pas encore approuvé, et aucune police ne l'affiche à ce jour. Voici son histoire, sa signification et son statut.",
+  "title": "Emoji Météore : Copier-Coller 🪋, Définitif dans Emoji 18.0",
+  "meta_description": "Météore (🪋, U+1FA8B) est définitif dans Emoji 18.0 depuis le 16 septembre 2026 et reprend le look « boule de feu » qui divisait Comète ☄️. Au 25 septembre 2026, aucun téléphone ni ordinateur ne l'affiche par défaut.",
   "canonical": "https://ultratextgen.com/fr/symbol/emoji-meteore/",
   "breadcrumb": "Emoji Météore",
   "hero_h1": "Emoji Météore",
-  "hero_tagline": "Un météore filant, détaché de la crise d'identité que traîne Comète depuis dix ans — provisoirement retenu pour Emoji 18.0, attendu avec Unicode 18.0 en septembre 2026. Encore à l'état de brouillon : pas encore approuvé, et aucune police ne l'affiche pour l'instant. Clique pour copier le code malgré tout.",
-  "intro": "Météore (🪋, U+1FA8B) est un emoji candidat provisoirement retenu pour Emoji 18.0, le volet emoji d'Unicode 18.0, dont la finalisation est attendue en septembre 2026. Il représente une boule de feu filante entrant dans l'atmosphère — et il existe précisément pour corriger une scission de rendu entre fournisseurs qui poursuit l'emoji Comète (☄️) existant depuis ses débuts : certaines plateformes dessinaient Comète comme une boule de glace bleue et scintillante, d'autres l'ont redessinée comme une roche brûlante en plein impact — deux concepts réellement différents partageant un seul code. L'annonce d'Unicode le formule sans détour : « faire un vœu devant une étoile filante et assister à un événement d'extinction, ce sont deux énergies totalement différentes ». Météore reprend le sens « boule de feu » pour que Comète puisse retrouver un dessin bleu-glace cohérent partout. Comme il s'agit encore d'un brouillon, aucun système d'exploitation, clavier ou police ne l'affiche aujourd'hui ; attends-toi à un carré vide ou à un glyphe de repli jusqu'à ce qu'Emoji 18.0 soit approuvé et que les plateformes déploient leur support, probablement courant 2027.",
+  "hero_tagline": "Un météore filant, détaché de la crise d'identité que traîne Comète depuis dix ans, définitif dans Emoji 18.0 depuis la publication d'Unicode 18.0 le 16 septembre 2026. Au 25 septembre 2026, aucun téléphone ni ordinateur ne l'affiche par défaut. Clique pour copier le code malgré tout.",
+  "intro": "Météore (🪋, U+1FA8B) fait partie des neuf nouveaux emoji d'Emoji 18.0, le volet emoji d'Unicode 18.0, publié par le Consortium Unicode le 16 septembre 2026. Il représente une boule de feu filante entrant dans l'atmosphère — et il existe précisément pour corriger une scission de rendu entre fournisseurs qui poursuit l'emoji Comète (☄️) existant depuis ses débuts : certaines plateformes dessinaient Comète comme une boule de glace bleue et scintillante, d'autres l'ont redessinée comme une roche brûlante en plein impact — deux concepts réellement différents partageant un seul code. L'annonce d'Unicode le formule sans détour : « faire un vœu devant une étoile filante et assister à un événement d'extinction, ce sont deux énergies totalement différentes ». Météore reprend le sens « boule de feu » pour que Comète puisse retrouver un dessin bleu-glace cohérent partout. C'était un candidat provisoire jusqu'à cette publication ; les données emoji définitives d'Unicode listent désormais U+1FA8B sous le nom « meteor », entièrement qualifié et marqué E18.0. Google l'a déjà dessiné pour Noto Color Emoji, mais au 25 septembre 2026 aucun système d'exploitation, clavier ou police emoji système ne l'intègre : attends-toi pour l'instant à un carré vide ou à un glyphe de repli. Selon l'estimation d'Emojipedia, fondée sur le déploiement de l'an dernier, WhatsApp, Samsung et Google Android l'ajouteraient au premier trimestre 2027, Apple vers mars ou avril 2027 et Microsoft entre la fin de l'été et le début de l'automne 2027.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
+  "sources": "Le nom et le code définitifs, U+1FA8B meteor marqué E18.0, figurent dans le fichier de données <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> d'Unicode 18.0. L'<a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">annonce d'Unicode 18.0</a> du Consortium Unicode confirme la date de publication, le 16 septembre 2026, et ses neuf nouveaux emoji. <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">Emojipedia</a> a signalé les dessins de Google pour Noto Color Emoji et publié les estimations 2027 citées plus haut.",
   "home_url": "https://ultratextgen.com/fr/",
   "crumb_home": "Accueil",
   "crumb_library": "Symboles",
@@ -35,11 +36,11 @@
       "id": "meteore",
       "label": "Météore",
       "h2": "Emoji Météore",
-      "intro": "Le caractère provisoire lui-même — copiable dès aujourd'hui en tant que code, même si aucune police ne peut encore l'afficher.",
+      "intro": "Le caractère d'Emoji 18.0 lui-même : copie le code dès aujourd'hui, il s'affichera en météore dès que la police emoji de ta plateforme suivra.",
       "symbols": [
         {
           "char": "🪋",
-          "label": "Météore (brouillon, U+1FA8B)"
+          "label": "Météore (U+1FA8B, Emoji 18.0)"
         }
       ]
     },
@@ -65,21 +66,21 @@
     },
     {
       "id": "autres-candidats",
-      "label": "Autres Candidats Provisoires",
-      "h2": "Les Autres Candidats Provisoires d'Emoji 18.0",
-      "intro": "Météore n'est pas le seul caractère non approuvé de cette édition — ceux-ci sont retenus en même temps que lui, tout aussi invisibles jusqu'à la décision de septembre 2026.",
+      "label": "Même Version",
+      "h2": "Les Autres Nouveaux Emoji d'Emoji 18.0",
+      "intro": "Météore n'est pas le seul caractère qu'Emoji 18.0 a rendu définitif : ceux-ci sont entrés dans le standard avec lui le 16 septembre 2026, et la plupart des écrans ne peuvent pas encore les afficher non plus.",
       "symbols": [
         {
           "char": "🫫",
-          "label": "Visage Fissuré (brouillon, U+1FAEB): grand gagnant du vote public"
+          "label": "Visage Fissuré (U+1FAEB, Emoji 18.0): grand gagnant du vote public"
         },
         {
           "char": "🫝",
-          "label": "Cornichon (brouillon, U+1FADD)"
+          "label": "Cornichon (U+1FADD, Emoji 18.0)"
         },
         {
           "char": "🫌",
-          "label": "Papillon Monarque (brouillon, U+1FACC)"
+          "label": "Papillon Monarque (U+1FACC, Emoji 18.0)"
         }
       ]
     }
@@ -93,12 +94,12 @@
     {
       "href": "/fr/symbol/emoji-visage-fissure/",
       "title": "Emoji Visage Fissuré",
-      "desc": "Le candidat provisoire d'Emoji 18.0 qui a remporté le vote public."
+      "desc": "Le nouveau visage d'Emoji 18.0 qui a remporté le vote public."
     },
     {
       "href": "/fr/symbol/emoji-cornichon/",
       "title": "Emoji Cornichon",
-      "desc": "Un autre candidat provisoire d'Emoji 18.0 — repêché d'une proposition Apple Core mise en attente."
+      "desc": "Un autre nouvel emoji d'Emoji 18.0, repêché d'une proposition Apple Core mise en attente."
     }
   ]
 }
