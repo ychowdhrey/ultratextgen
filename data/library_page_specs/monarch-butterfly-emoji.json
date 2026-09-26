@@ -1,26 +1,27 @@
 {
   "slug": "monarch-butterfly-emoji",
   "page_type": "symbol",
-  "title": "Monarch Butterfly Emoji: Copy & Paste 🫌 — the Unicode 18.0 Candidate Fixing a Species Mix-Up",
-  "meta_description": "Monarch Butterfly (🫌, U+1FACC) is a draft candidate for Emoji 18.0, expected alongside Unicode 18.0 in September 2026. It fixes years of cross-platform Butterfly rendering confusion — not approved yet, and no font renders it today.",
+  "title": "Monarch Butterfly Emoji: Copy & Paste 🫌, Final in Emoji 18.0",
+  "meta_description": "Monarch Butterfly (🫌, U+1FACC) became final in Emoji 18.0 on September 16, 2026, fixing a cross-platform Butterfly mix-up. No phone or computer shows it by default yet.",
   "canonical": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/",
   "breadcrumb": "Monarch Butterfly Emoji",
   "hero_h1": "Monarch Butterfly Emoji",
-  "hero_tagline": "A specific species, carved out of the generic Butterfly emoji's cross-platform rendering mismatch, drafted for Emoji 18.0, expected alongside Unicode 18.0 in September 2026. Draft only: not yet approved, and no font renders it yet. Click to copy the codepoint anyway.",
-  "intro": "Monarch Butterfly (🫌, U+1FACC) is a candidate emoji drafted for Emoji 18.0, the emoji companion to Unicode 18.0, expected to finalize in September 2026. It exists to fix a real fragmentation problem: the existing generic Butterfly emoji (🦋) renders as a blue Morpho on some platforms and as something closer to a Monarch on others, so two people could exchange the identical codepoint and picture two different insects: \"you might have been texting them a Monarch butterfly while they were looking at a Morpho.\" Requests for it go back years on Apple's own community forums, where users have pointed to the Monarch's iconic orange-and-black coloring and its endangered status as reasons it deserves its own slot. Unicode is normally reluctant to approve species-specific variants, but frequency data showing Butterfly as the most-used animal emoji in its subcategory made the case for carving out its most recognizable species. The emoji itself carries the Monarch's migration story: \"generational resilience, endurance, and deep ancestral memory,\" a creature that crosses thousands of miles across lifespans it never completes. Because it's still a draft, no operating system, keyboard, or font currently renders it; expect a blank box or placeholder glyph until Emoji 18.0 is approved and platforms ship support, likely sometime in 2027.",
+  "hero_tagline": "A specific species, carved out of the generic Butterfly emoji's cross-platform rendering mismatch, final in Emoji 18.0, published with Unicode 18.0 on September 16, 2026. As of September 25, 2026, no phone or computer shows the Monarch by default. Click to copy the codepoint anyway.",
+  "intro": "Monarch Butterfly (🫌, U+1FACC) is one of the nine new emoji in Emoji 18.0, the emoji companion to Unicode 18.0, which the Unicode Consortium published on September 16, 2026. It exists to fix a real fragmentation problem: the existing generic Butterfly emoji (🦋) renders as a blue Morpho on some platforms and as something closer to a Monarch on others, so two people could exchange the identical codepoint and picture two different insects: \"you might have been texting them a Monarch butterfly while they were looking at a Morpho.\" Requests for it go back years on Apple's own community forums, where users have pointed to the Monarch's iconic orange-and-black coloring and its endangered status as reasons it deserves its own slot. Unicode is normally reluctant to approve species-specific variants, but frequency data showing Butterfly as the most-used animal emoji in its subcategory made the case for carving out its most recognizable species. The emoji itself carries the Monarch's migration story: \"generational resilience, endurance, and deep ancestral memory,\" a creature that crosses thousands of miles across lifespans it never completes. Being final does not put the Monarch on your keyboard, though. Google has published a Monarch Butterfly design in its Noto Color Emoji font, but as of September 25, 2026, no operating system, keyboard, or system emoji font ships it, so expect a blank box or placeholder glyph until platforms ship support. Emojipedia's estimate, based on last year's rollout, is the first quarter of 2027 for WhatsApp, Samsung and Google's Android, around March or April 2027 for Apple, and late summer or early fall 2027 for Microsoft.",
   "date_published": "2026-07-22",
-  "date_modified": "2026-07-22",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
+  "sources": "Monarch Butterfly's final codepoint and name, U+1FACC \"monarch butterfly,\" are listed as a fully-qualified emoji in Unicode 18.0's <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> data file, and the Unicode Consortium's <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">Unicode 18.0 announcement</a> dates the release to September 16, 2026. <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">Emojipedia's Unicode 18.0 roundup</a> reported Google's Noto Color Emoji designs and published the 2027 rollout estimates quoted above.",
   "sections": [
     {
       "id": "monarch-butterfly",
       "label": "Monarch Butterfly",
       "h2": "Monarch Butterfly Emoji",
-      "intro": "The draft character itself: copyable today as a codepoint, even though no font can render it yet.",
+      "intro": "Monarch Butterfly as Emoji 18.0 finalized it: copyable today as a codepoint, though no phone or computer shows it by default yet.",
       "symbols": [
         {
           "char": "🫌",
-          "label": "Monarch Butterfly (draft, U+1FACC)"
+          "label": "Monarch Butterfly (U+1FACC, Emoji 18.0)"
         }
       ]
     },
@@ -38,21 +39,21 @@
     },
     {
       "id": "fellow-candidates",
-      "label": "Fellow Draft Candidates",
-      "h2": "Other Emoji 18.0 Draft Candidates",
-      "intro": "Monarch Butterfly isn't the only unapproved character in this release: these are drafted alongside it, equally unrendered until September 2026's decision.",
+      "label": "Released Alongside It",
+      "h2": "Other New Emoji in Emoji 18.0",
+      "intro": "Monarch Butterfly isn't the only new emoji in this release: these became final alongside it on September 16, 2026, and no phone or computer shows them by default yet either.",
       "symbols": [
         {
           "char": "🫫",
-          "label": "Cracking Face (draft, U+1FAEB): won the public vote"
+          "label": "Cracking Face (U+1FAEB, Emoji 18.0): won the public vote"
         },
         {
           "char": "🫝",
-          "label": "Pickle (draft, U+1FADD)"
+          "label": "Pickle (U+1FADD, Emoji 18.0)"
         },
         {
           "char": "🪋",
-          "label": "Meteor (draft, U+1FA8B)"
+          "label": "Meteor (U+1FA8B, Emoji 18.0)"
         }
       ]
     }
@@ -66,17 +67,17 @@
     {
       "href": "/symbol/cracking-face-emoji/",
       "title": "Cracking Face Emoji",
-      "desc": "The Emoji 18.0 draft candidate that won the public vote."
+      "desc": "The new Emoji 18.0 emoji that won the public vote."
     },
     {
       "href": "/symbol/pickle-emoji/",
       "title": "Pickle Emoji",
-      "desc": "Another Emoji 18.0 draft candidate, reassigned from a deferred Apple Core proposal."
+      "desc": "Another new Emoji 18.0 emoji, reassigned from a deferred Apple Core proposal."
     },
     {
       "href": "/updates/unicode-18-most-anticipated-emoji/",
       "title": "Unicode 18.0's New Emoji",
-      "desc": "The full draft slate of 9 candidates, ranked by public vote."
+      "desc": "All 9 new emoji in the final release, ranked by public vote."
     }
   ]
 }
