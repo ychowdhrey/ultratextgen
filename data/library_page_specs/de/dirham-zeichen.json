@@ -2,7 +2,7 @@
   "slug": "dirham-zeichen",
   "lang": "de",
   "page_type": "symbol",
-  "title": "Dirham-Zeichen: ⃃ kopieren & einfügen — das neue VAE-Währungssymbol, eingefroren zur Unicode-18.0-Veröffentlichung",
+  "title": "Dirham-Zeichen der VAE: ⃃ kopieren & einfügen, final in Unicode 18.0",
   "meta_description": "Das VAE-Dirham-Zeichen (⃃, U+20C3) ist seit dem 16. September 2026 final in Unicode 18.0, aber noch auf keiner Tastatur tippbar. Codepoint, Geschichte und wie Entwickler es heute schon nutzen.",
   "canonical": "https://ultratextgen.com/de/symbol/dirham-zeichen/",
   "breadcrumb": "Dirham-Zeichen",
@@ -10,7 +10,7 @@
   "hero_tagline": "Das neue Währungssymbol der VAE-Zentralbank, als U+20C3 vergeben und am 16. September 2026 in Unicode 18.0 veröffentlicht, aber noch auf keiner Tastatur tippbar.",
   "intro": "Das Dirham-Zeichen (⃃, U+20C3) ist das neue Währungssymbol der Zentralbank der Vereinigten Arabischen Emirate, vorgestellt im März 2025 zusammen mit einem begleitenden Zeichen für den digitalen Dirham. Es wurde beim Unicode-Konsortium zur Kodierung eingereicht, genehmigt und am 27. Mai 2026 in der öffentlichen Beta von Unicode 18.0 veröffentlicht, gemeinsam mit den Zeichen für den omanischen Rial und die maledivische Rufiyaa. Unicode 18.0 hat es am 16. September 2026 final veröffentlicht, unter dem dauerhaften Namen UAE DIRHAM SIGN. Eine Veröffentlichung allein bringt das Zeichen aber noch nicht auf die Tastatur: Stand 25. September 2026 bietet kein Betriebssystem, keine Systemschrift und keine Eingabemethode native Unterstützung, und die Empfehlung der VAE-Zentralbank im eigenen Styleguide (die Zifferntaste 6) bleibt nur eine Empfehlung, bis Gerätehersteller sie umsetzen. In der Zwischenzeit haben Entwickler bereits reale Werkzeuge rund um den bestätigten Codepoint gebaut: ein Open-Source-npm-Paket, eine Webschriftart und CSS-/React-/Vue-/Angular-/Svelte-Komponenten (veröffentlicht als „dirham“ auf npm und GitHub) lassen dich das korrekte Zeichen schon heute über eine vorübergehende Darstellungsschicht einbinden, gedacht zum Verwerfen, sobald native Betriebssystem-Unterstützung verfügbar ist.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-09-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
   "home_url": "https://ultratextgen.com/de/",
   "crumb_home": "Startseite",
@@ -30,6 +30,7 @@
       "href": "https://ultratextgen.com/symbol/dirham-sign/"
     }
   ],
+  "sources": "Die Veröffentlichung von Unicode 18.0 am 16. September 2026, mit diesem Zeichen als U+20C3 UAE DIRHAM SIGN, bestätigt die <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">Ankündigung von Unicode 18.0</a> des Unicode-Konsortiums, und <a href=\"https://tbreak.com/uae-dirham-symbol-unicode-18-0/\">tbreak</a> berichtete am 23. September 2026, dass Apple, Google, Samsung und Microsoft die Unterstützung noch ergänzen mussten. Die Windows-11-Unterstützung des saudischen Rial-Zeichens steht in Microsofts <a href=\"https://support.microsoft.com/en-us/servicing/os/windows-11/2025/12/december-1-2025-kb5070311-os-builds-26200-7309-and-26100-7309-preview\">Versionshinweisen zu KB5070311</a>.",
   "sections": [
     {
       "id": "dirham-zeichen",

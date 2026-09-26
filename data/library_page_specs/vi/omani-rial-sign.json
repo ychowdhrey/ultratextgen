@@ -2,7 +2,7 @@
   "slug": "omani-rial-sign",
   "lang": "vi",
   "page_type": "symbol",
-  "title": "Ký Hiệu Rial Oman: Sao Chép & Dán ⃄ — Ký Hiệu Tiền Tệ Mới Của Oman, Đã Chốt Để Xuất Bản Trong Unicode 18.0",
+  "title": "Ký Hiệu Rial Oman: Sao Chép & Dán ⃄, Chính Thức Có Trong Unicode 18.0",
   "meta_description": "Ký hiệu rial Oman (⃄, U+20C4) được Ngân hàng Trung ương Oman công bố tháng 11 năm 2025 và đã chính thức có trong Unicode 18.0 từ ngày 16 tháng 9 năm 2026, nhưng chưa có trên bất kỳ bàn phím nào. Thiết kế, lịch sử và tình trạng hiện tại.",
   "canonical": "https://ultratextgen.com/vi/symbol/omani-rial-sign/",
   "home_url": "https://ultratextgen.com/vi/",
@@ -14,7 +14,7 @@
   "hero_tagline": "Ký hiệu tiền tệ chính thức của Oman, ra mắt đúng dịp Quốc khánh 2025 và đã xuất bản trong Unicode 18.0 ngày 16 tháng 9 năm 2026 — đã chính thức, nhưng vẫn đi trước cả bàn phím lẫn phông chữ.",
   "intro": "Ký hiệu rial Oman (⃄, U+20C4) là ký hiệu tiền tệ chính thức của Ngân hàng Trung ương Oman, được công bố trước công chúng vào ngày 19 tháng 11 năm 2025, trùng dịp Quốc khánh Oman. Thiết kế của nó được xây dựng từ hai chữ cái Ả Rập cách điệu — ʿayn (ع), chữ cái đầu của từ عماني («Oman»), và rāʾ (ر), chữ cái đầu của từ ريال («rial») — bị gạch ngang bởi hai vạch theo phong cách mà nhiều ký hiệu tiền tệ hiện đại khác cũng dùng. Thống đốc Ngân hàng Trung ương Ahmed bin Jafar Al-Musallami mô tả việc thông qua ký hiệu này là một bước đi chiến lược nhằm củng cố vị thế của Oman như một trung tâm tài chính khu vực và giúp đồng rial dễ nhận diện hơn trên các nền tảng quốc tế, thương mại và kỹ thuật số. Ký hiệu này được gửi đề nghị mã hóa Unicode cùng lúc với các ký hiệu dirham UAE và rufiyaa Maldives, và Unicode 18.0 đã xuất bản chính thức vào ngày 16 tháng 9 năm 2026 dưới tên U+20C4 OMANI RIAL SIGN. Tính đến ngày 25 tháng 9 năm 2026, chưa có hệ điều hành, phông chữ hệ thống hay bàn phím nào hỗ trợ sẵn ký hiệu này. Trong lúc chờ, có hai hướng thực tế. Ngân hàng Trung ương phát hành ký hiệu dưới dạng tệp SVG, PNG và EPS kèm hướng dẫn sử dụng, đủ dùng cho mẫu hóa đơn, bảng giá hay biển hiệu in. Doanh nghiệp dùng Odoo có thể cài mô-đun ERP nhúng sẵn phông chữ, để ký hiệu hiển thị trên hóa đơn, báo cáo, cổng khách hàng và biên lai bán hàng. Cả hai đều không thay thế được chính ký tự: chỉ U+20C4 mới tìm kiếm, sắp xếp và dán được.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-09-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
   "hreflang": [
     {
@@ -30,6 +30,7 @@
       "href": "https://ultratextgen.com/symbol/omani-rial-sign/"
     }
   ],
+  "sources": "Việc Unicode 18.0 phát hành ngày 16 tháng 9 năm 2026, với ký tự này mang tên U+20C4 OMANI RIAL SIGN, được xác nhận qua <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">thông báo Unicode 18.0</a> của Unicode Consortium. <a href=\"https://support.microsoft.com/en-us/servicing/os/windows-11/2025/12/december-1-2025-kb5070311-os-builds-26200-7309-and-26100-7309-preview\">Ghi chú phát hành KB5070311</a> của Microsoft ghi nhận việc ký hiệu riyal Ả Rập Saudi có mặt trên bàn phím Windows 11.",
   "sections": [
     {
       "id": "omani-rial-sign",

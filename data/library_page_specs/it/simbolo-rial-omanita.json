@@ -2,7 +2,7 @@
   "slug": "simbolo-rial-omanita",
   "lang": "it",
   "page_type": "symbol",
-  "title": "Simbolo del Rial Omanita: Copia e Incolla ⃄ – Il Nuovo Segno Valutario dell'Oman, Bloccato per la Pubblicazione in Unicode 18.0",
+  "title": "Simbolo del Rial Omanita: Copia e Incolla ⃄, Definitivo in Unicode 18.0",
   "meta_description": "Il simbolo del rial omanita (⃄, U+20C4) è stato presentato dalla Banca Centrale dell'Oman nel novembre 2025 ed è definitivo in Unicode 18.0 dal 16 settembre 2026, ma non ancora su nessuna tastiera. Ecco il suo design, la storia e lo stato attuale.",
   "canonical": "https://ultratextgen.com/it/symbol/simbolo-rial-omanita/",
   "breadcrumb": "Simbolo del Rial Omanita",
@@ -10,7 +10,7 @@
   "hero_tagline": "Il simbolo ufficiale della valuta dell'Oman, svelato nel Giorno Nazionale 2025 e pubblicato in Unicode 18.0 il 16 settembre 2026 – definitivo, ma ancora in anticipo su qualsiasi tastiera o font.",
   "intro": "Il simbolo del rial omanita (⃄, U+20C4) è il simbolo ufficiale della valuta della Banca Centrale dell'Oman, presentato al pubblico il 19 novembre 2025, in concomitanza con il Giorno Nazionale dell'Oman. Il suo design nasce da due lettere arabe stilizzate, attraversate da due linee nello stile condiviso da molti segni valutari moderni: ʿayn (ع), la prima lettera di عماني (\"omanita\"), e rāʾ (ر), la prima lettera di ريال (\"rial\"). Il governatore della Banca Centrale, Ahmed bin Jafar Al-Musallami, ha presentato l'adozione come una mossa strategica per rafforzare il ruolo dell'Oman come hub finanziario regionale e rendere il rial più riconoscibile sulle piattaforme internazionali, commerciali e digitali. Il simbolo è stato sottoposto per la codifica Unicode insieme al dirham degli Emirati Arabi Uniti e al segno della rufiyaa delle Maldive, e Unicode 18.0 lo ha pubblicato come definitivo il 16 settembre 2026, come U+20C4 OMANI RIAL SIGN. Al 25 settembre 2026 nessun sistema operativo, font di sistema o tastiera offre supporto nativo. Nel frattempo esistono due strade pratiche. La Banca Centrale pubblica il segno come file SVG, PNG ed EPS con le proprie linee guida d'uso, sufficienti per un modello di fattura, un listino prezzi o un'insegna stampata. Le aziende che usano Odoo possono installare un modulo ERP che incorpora un font, così il simbolo compare in fatture, report, portale clienti e scontrini della cassa. Nessuna delle due sostituisce il carattere: solo U+20C4 si può cercare, ordinare e incollare.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-09-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
   "home_url": "https://ultratextgen.com/it/",
   "crumb_home": "Home",
@@ -30,6 +30,7 @@
       "href": "https://ultratextgen.com/symbol/omani-rial-sign/"
     }
   ],
+  "sources": "La pubblicazione di Unicode 18.0 il 16 settembre 2026, con questo carattere come U+20C4 OMANI RIAL SIGN, è confermata dall'<a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">annuncio di Unicode 18.0</a> dell'Unicode Consortium. Le <a href=\"https://support.microsoft.com/en-us/servicing/os/windows-11/2025/12/december-1-2025-kb5070311-os-builds-26200-7309-and-26100-7309-preview\">note di rilascio di KB5070311</a> di Microsoft documentano l'arrivo del segno del riyal saudita sulle tastiere di Windows 11.",
   "sections": [
     {
       "id": "omani-rial-sign",

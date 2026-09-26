@@ -2,7 +2,7 @@
   "slug": "dirham-sign",
   "lang": "vi",
   "page_type": "symbol",
-  "title": "Ký Hiệu Dirham: Sao Chép & Dán ⃃ — Ký Hiệu Tiền Tệ Mới Của UAE, Đã Chốt Để Xuất Bản Trong Unicode 18.0",
+  "title": "Ký Hiệu Dirham UAE: Sao Chép & Dán ⃃, Chính Thức Có Trong Unicode 18.0",
   "meta_description": "Ký hiệu dirham UAE (⃃, U+20C3) đã chính thức có trong Unicode 18.0 từ ngày 16 tháng 9 năm 2026, nhưng chưa có trên bất kỳ bàn phím nào. Mã điểm, lịch sử và cách các nhà phát triển đã dùng nó ngay hôm nay.",
   "canonical": "https://ultratextgen.com/vi/symbol/dirham-sign/",
   "home_url": "https://ultratextgen.com/vi/",
@@ -14,7 +14,7 @@
   "hero_tagline": "Ký hiệu tiền tệ mới của Ngân hàng Trung ương UAE, được gán mã U+20C3 và đã xuất bản trong Unicode 18.0 ngày 16 tháng 9 năm 2026, nhưng vẫn chưa gõ được trên bất kỳ bàn phím nào.",
   "intro": "Ký hiệu dirham (⃃, U+20C3) là ký hiệu tiền tệ mới của Ngân hàng Trung ương Các Tiểu Vương quốc Ả Rập Thống nhất (UAE), ra mắt vào tháng 3 năm 2025 cùng một ký hiệu đồng hành cho dirham kỹ thuật số. Nó được gửi lên Hiệp hội Unicode để mã hóa, được phê duyệt, và xuất hiện trong bản beta công khai Unicode 18.0 vào ngày 27 tháng 5 năm 2026, cùng với các ký hiệu rial Oman và rufiyaa Maldives. Unicode 18.0 đã xuất bản chính thức ký hiệu này vào ngày 16 tháng 9 năm 2026, với tên cố định UAE DIRHAM SIGN. Tuy nhiên, việc xuất bản không tự động đưa ký hiệu lên bàn phím — tính đến ngày 25 tháng 9 năm 2026, chưa có hệ điều hành, phông chữ hệ thống hay phương thức nhập liệu nào hỗ trợ sẵn, và khuyến nghị của chính Ngân hàng Trung ương UAE trong sách hướng dẫn kiểu chữ (dùng phím số 6) cũng chỉ là một khuyến nghị cho đến khi các nhà sản xuất thiết bị áp dụng. Trong lúc chờ đợi, các nhà phát triển đã xây dựng công cụ thật sự xoay quanh mã điểm đã được xác nhận: một gói npm mã nguồn mở, một web font, cùng các thành phần CSS/React/Vue/Angular/Svelte (đăng dưới tên «dirham» trên npm và GitHub) cho phép mã hóa đúng ký tự này ngay hôm nay thông qua một lớp hiển thị tạm thời, được thiết kế để loại bỏ ngay khi hệ điều hành hỗ trợ chính thức.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-09-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
   "hreflang": [
     {
@@ -30,6 +30,7 @@
       "href": "https://ultratextgen.com/symbol/dirham-sign/"
     }
   ],
+  "sources": "Việc Unicode 18.0 phát hành ngày 16 tháng 9 năm 2026, với ký tự này mang tên U+20C3 UAE DIRHAM SIGN, được xác nhận qua <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">thông báo Unicode 18.0</a> của Unicode Consortium, và <a href=\"https://tbreak.com/uae-dirham-symbol-unicode-18-0/\">tbreak</a> đưa tin ngày 23 tháng 9 năm 2026 rằng Apple, Google, Samsung và Microsoft vẫn chưa bổ sung hỗ trợ. Hỗ trợ ký hiệu riyal Ả Rập Saudi trên Windows 11 được ghi trong <a href=\"https://support.microsoft.com/en-us/servicing/os/windows-11/2025/12/december-1-2025-kb5070311-os-builds-26200-7309-and-26100-7309-preview\">ghi chú phát hành KB5070311</a> của Microsoft.",
   "sections": [
     {
       "id": "dirham-sign",

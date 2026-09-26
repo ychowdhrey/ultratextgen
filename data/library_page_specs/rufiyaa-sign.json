@@ -1,7 +1,7 @@
 {
   "slug": "rufiyaa-sign",
   "page_type": "symbol",
-  "title": "Rufiyaa Sign: Copy & Paste ⃂ — the Maldives' New Currency Symbol, Accepted for Unicode 18.0",
+  "title": "Rufiyaa Sign: Copy & Paste ⃂, the Maldives' Currency Symbol, Final in Unicode 18.0",
   "meta_description": "The Maldivian rufiyaa sign (⃂, U+20C2) was accepted by the Unicode Technical Committee in October 2025 and published in Unicode 18.0 on September 16, 2026, but no system font renders it yet. Here's its design, status, and what to type until then.",
   "canonical": "https://ultratextgen.com/symbol/rufiyaa-sign/",
   "breadcrumb": "Rufiyaa Sign",
@@ -9,7 +9,7 @@
   "hero_tagline": "The Maldives' own currency symbol, built from the Thaana letter ރ, published in Unicode 18.0 on September 16, 2026, though no keyboard or system font renders it yet.",
   "intro": "The rufiyaa sign (⃂, U+20C2) is the currency symbol for the Maldivian rufiyaa. Its design, by Hassan Shujau, takes the Thaana letter ރ (raa) (the first letter of ރުފިޔާ, rufiyaa) and adds a horizontal stroke across it, the same visual convention that turns a plain letter into a currency mark in the euro, yen and Indian rupee signs. Unicode's own allocation pipeline records the character as provisionally assigned on 2025-07-22 and formally accepted on 2025-10-29, under UTC decisions 184-C18 and 185-C40, and Unicode 18.0 published it on September 16, 2026. That status matters more than it sounds: published is not the same as available. Until vendors ship fonts covering the character, ⃂ will render as an empty box on almost every device, so the practical answer today is still MVR, Rf, or the Thaana letter ރ itself. This page carries the real codepoint so you can test it, and tells you honestly what to use while you wait.",
   "date_published": "2026-08-02",
-  "date_modified": "2026-09-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
   "sources": "Unicode 18.0's publication on September 16, 2026, with this character as U+20C2 RUFIYAA SIGN, is confirmed by the Unicode Consortium's <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">Unicode 18.0 announcement</a>, which notes that vendors can now implement support. The Saudi riyal sign's Windows 11 support is in Microsoft's <a href=\"https://support.microsoft.com/en-us/servicing/os/windows-11/2025/12/december-1-2025-kb5070311-os-builds-26200-7309-and-26100-7309-preview\">KB5070311 release notes</a>, and its arrival on the iPhone keyboard rests on users' own posts from March 24, 2026 on <a href=\"https://x.com/NewslyKSA/status/2036571137807634580\">X</a> and <a href=\"https://www.instagram.com/p/DWSAJelDocG/\">Instagram</a>.",
   "sections": [

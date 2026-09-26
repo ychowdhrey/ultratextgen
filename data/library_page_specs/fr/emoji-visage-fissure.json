@@ -2,15 +2,15 @@
   "slug": "emoji-visage-fissure",
   "lang": "fr",
   "page_type": "symbol",
-  "title": "Emoji Visage Fissuré : Copier-Coller 🫫 — le Candidat Brouillon d'Emoji 18.0 qui Remplace « Squinting Eyes »",
-  "meta_description": "Visage Fissuré (🫫, U+1FAEB) est un candidat provisoire pour Emoji 18.0, attendu avec Unicode 18.0 en septembre 2026 — pas encore approuvé, et aucune police ne l'affiche à ce jour. Voici son histoire, sa signification et son statut.",
+  "title": "Emoji Visage Fissuré : Copier-Coller 🫫, Définitif dans Emoji 18.0",
+  "meta_description": "Visage Fissuré (🫫, U+1FAEB) est définitif dans Emoji 18.0, publié avec Unicode 18.0 le 16 septembre 2026, mais aucun téléphone ni ordinateur ne l'affiche encore par défaut. Voici son histoire, sa signification et son statut.",
   "canonical": "https://ultratextgen.com/fr/symbol/emoji-visage-fissure/",
   "breadcrumb": "Emoji Visage Fissuré",
   "hero_h1": "Emoji Visage Fissuré",
-  "hero_tagline": "Un visage en pleine expression, qui craque sous la pression — provisoirement retenu pour Emoji 18.0, attendu avec Unicode 18.0 en septembre 2026. Encore à l'état de brouillon : pas encore approuvé, et aucune police ne l'affiche pour l'instant. Clique pour copier le code malgré tout.",
-  "intro": "Visage Fissuré (🫫, U+1FAEB) est un emoji candidat provisoirement retenu pour Emoji 18.0, le volet emoji d'Unicode 18.0, dont la finalisation est attendue en septembre 2026. Il représente un visage en pleine expression, marqué d'une fissure visible, que la plupart des commentateurs lisent comme une tension émotionnelle ou un « craquage » sous un sourire encore affiché — une correspondance parfaite avec le mème Gen-Z « je vais bien », où quelqu'un paraît composé en surface tout en étant submergé en dessous. Son point de code a une histoire précise : U+1FAEB était à l'origine réservé à un tout autre emoji proposé, « Face With Squinting Eyes » (visage aux yeux plissés), avant que le groupe de travail Unicode Emoji Standard & Research ne recommande de le remplacer par Visage Fissuré en janvier 2026. À ce jour, la documentation même du pipeline d'Unicode répertorie encore ce point de code sous son nom d'origine, signalé comme en attente d'une résolution de changement de nom — ce qui signifie que même le nom « Visage Fissuré » n'est pas encore totalement verrouillé, malgré une couverture de presse déjà abondante qui l'utilise. Comme il s'agit encore d'un brouillon, aucun système d'exploitation, clavier ou police ne l'affiche aujourd'hui ; attends-toi à un carré vide ou à un glyphe de repli jusqu'à ce qu'Emoji 18.0 soit approuvé et que les plateformes déploient leur support, probablement courant 2027.",
+  "hero_tagline": "Un visage en pleine expression, qui craque sous la pression — approuvé dans Emoji 18.0 avec Unicode 18.0 le 16 septembre 2026. Définitif, mais aucun téléphone ni ordinateur ne l'affiche encore par défaut. Clique pour copier le code malgré tout.",
+  "intro": "Visage Fissuré (🫫, U+1FAEB) est l'un des nouveaux emoji d'Emoji 18.0, le volet emoji d'Unicode 18.0, devenu définitif le 16 septembre 2026. Il représente un visage en pleine expression, marqué d'une fissure visible, que la plupart des commentateurs lisent comme une tension émotionnelle ou un « craquage » sous un sourire encore affiché — une correspondance parfaite avec le mème Gen-Z « je vais bien », où quelqu'un paraît composé en surface tout en étant submergé en dessous. Son point de code a une histoire précise : U+1FAEB était à l'origine réservé à un tout autre emoji proposé, « Face With Squinting Eyes » (visage aux yeux plissés), avant que le groupe de travail Unicode Emoji Standard & Research ne recommande de le remplacer par Visage Fissuré en janvier 2026. Le nom est désormais fixé : les données de caractères d'Unicode 18.0 répertorient U+1FAEB sous le nom CRACKING FACE. Être définitif ne veut pas dire être sur ton téléphone pour autant. Google a publié son dessin dans la police Noto Color Emoji, mais au 25 septembre 2026, aucun téléphone ni ordinateur ne l'affiche par défaut ; attends-toi à un carré vide ou à un glyphe de repli jusqu'à ce que les plateformes déploient leur support. Emojipedia estime, d'après le calendrier de l'an dernier, les premières mises à jour au premier trimestre 2027 (WhatsApp et Samsung), Apple vers mars ou avril 2027 et Microsoft entre la fin de l'été et le début de l'automne 2027.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
   "home_url": "https://ultratextgen.com/fr/",
   "crumb_home": "Accueil",
@@ -30,16 +30,17 @@
       "href": "https://ultratextgen.com/symbol/cracking-face-emoji/"
     }
   ],
+  "sources": "Le nom et le point de code définitifs de Visage Fissuré, U+1FAEB CRACKING FACE, figurent dans le fichier de données <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> d'Unicode 18.0, publié avec <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">l'annonce d'Unicode 18.0</a> du Consortium Unicode le 16 septembre 2026. <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">Emojipedia</a> a présenté les dessins de Google dans Noto Color Emoji et publié les estimations de déploiement pour 2027.",
   "sections": [
     {
       "id": "visage-fissure",
       "label": "Visage Fissuré",
       "h2": "Emoji Visage Fissuré",
-      "intro": "Le caractère provisoire lui-même — copiable dès aujourd'hui en tant que code, même si aucune police ne peut encore l'afficher.",
+      "intro": "Le caractère définitif lui-même, copiable dès aujourd'hui en tant que code, même si aucun téléphone ni ordinateur ne l'affiche encore par défaut.",
       "symbols": [
         {
           "char": "🫫",
-          "label": "Visage Fissuré (brouillon, U+1FAEB)"
+          "label": "Visage Fissuré (U+1FAEB, Emoji 18.0)"
         }
       ]
     },
@@ -69,21 +70,21 @@
     },
     {
       "id": "autres-candidats",
-      "label": "Autres Candidats Provisoires",
-      "h2": "Les Autres Candidats Provisoires d'Emoji 18.0",
-      "intro": "Visage Fissuré n'est pas le seul caractère non approuvé de cette édition — ceux-ci sont retenus en même temps que lui, tout aussi invisibles jusqu'à la décision de septembre 2026.",
+      "label": "Publiés en Même Temps",
+      "h2": "Les Autres Nouveaux Emoji d'Emoji 18.0",
+      "intro": "Visage Fissuré n'est pas le seul nouvel emoji de cette édition : ceux-ci ont été approuvés en même temps que lui le 16 septembre 2026 et restent, pour l'instant, tout aussi invisibles sur la plupart des appareils.",
       "symbols": [
         {
           "char": "🫝",
-          "label": "Cornichon (brouillon, U+1FADD)"
+          "label": "Cornichon (U+1FADD, Emoji 18.0)"
         },
         {
           "char": "🫌",
-          "label": "Papillon Monarque (brouillon, U+1FACC)"
+          "label": "Papillon Monarque (U+1FACC, Emoji 18.0)"
         },
         {
           "char": "🛙",
-          "label": "Phare (brouillon, U+1F6D9)"
+          "label": "Phare (U+1F6D9, Emoji 18.0)"
         }
       ]
     }
@@ -97,22 +98,22 @@
     {
       "href": "/fr/symbol/emoji-cornichon/",
       "title": "Emoji Cornichon",
-      "desc": "Un autre candidat provisoire d'Emoji 18.0 — repêché d'une proposition Apple Core mise en attente."
+      "desc": "Un autre nouvel emoji d'Emoji 18.0, repêché d'une proposition Apple Core mise en attente."
     },
     {
       "href": "/fr/symbol/emoji-meteore/",
       "title": "Emoji Météore",
-      "desc": "Un autre candidat provisoire d'Emoji 18.0 — issu de la longue scission de rendu de Comète."
+      "desc": "Un autre nouvel emoji d'Emoji 18.0, issu de la longue scission de rendu de Comète."
     },
     {
       "href": "/fr/symbol/emoji-papillon-monarque/",
       "title": "Emoji Papillon Monarque",
-      "desc": "Un autre candidat provisoire d'Emoji 18.0 — corrige une confusion multiplateforme sur l'emoji Papillon."
+      "desc": "Un autre nouvel emoji d'Emoji 18.0, qui corrige une confusion multiplateforme sur l'emoji Papillon."
     },
     {
       "href": "/fr/symbol/emoji-signe-du-pouce/",
       "title": "Emoji Signe du Pouce",
-      "desc": "Une autre paire candidate d'Emoji 18.0 — un geste directionnel, pas une approbation."
+      "desc": "Une autre nouvelle paire d'Emoji 18.0 : un geste directionnel, pas une approbation."
     }
   ]
 }

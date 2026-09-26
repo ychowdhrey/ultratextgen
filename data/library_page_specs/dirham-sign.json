@@ -1,7 +1,7 @@
 {
   "slug": "dirham-sign",
   "page_type": "symbol",
-  "title": "Dirham Sign: Copy & Paste ⃃ — the UAE's New Currency Symbol, Frozen for Unicode 18.0 Publication",
+  "title": "Dirham Sign: Copy & Paste ⃃, the UAE's Currency Symbol, Final in Unicode 18.0",
   "meta_description": "The UAE dirham sign (⃃, U+20C3) became final in Unicode 18.0 on September 16, 2026, but no keyboard ships it yet. Here's its codepoint, history, and how developers are already using it today.",
   "canonical": "https://ultratextgen.com/symbol/dirham-sign/",
   "breadcrumb": "Dirham Sign",
@@ -9,7 +9,7 @@
   "hero_tagline": "The UAE Central Bank's new currency symbol, assigned U+20C3 and published in Unicode 18.0 on September 16, 2026, but still not typeable on any keyboard yet.",
   "intro": "The dirham sign (⃃, U+20C3) is the United Arab Emirates Central Bank's new currency symbol, unveiled in March 2025 alongside a companion digital-dirham mark. It was submitted to the Unicode Consortium for encoding, approved, and published in the Unicode 18.0 public beta on May 27, 2026, alongside the Omani rial and Maldivian rufiyaa signs. Unicode 18.0 published it as final on September 16, 2026, under the permanent name UAE DIRHAM SIGN. Publication alone doesn't put it on a keyboard, though: as of September 25, 2026, no operating system, system font, or input method ships native support, and the UAE Central Bank's own style guide recommendation (the number-6 key) is only a recommendation until device makers act on it. In the meantime, developers have already built real tooling around the confirmed codepoint: an open-source npm package, web font, and CSS/React/Vue/Angular/Svelte components (published as \"dirham\" on npm and GitHub) let you encode the correct character today via a temporary rendering layer, designed to be dropped the moment native OS support ships.",
   "date_published": "2026-07-22",
-  "date_modified": "2026-09-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
   "sources": "Unicode 18.0's publication on September 16, 2026, with this character as U+20C3 UAE DIRHAM SIGN, is confirmed by the Unicode Consortium's <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">Unicode 18.0 announcement</a>, and <a href=\"https://tbreak.com/uae-dirham-symbol-unicode-18-0/\">tbreak</a> reported on September 23, 2026 that Apple, Google, Samsung and Microsoft still had to add support. The Saudi riyal sign's Windows 11 shortcut is in Microsoft's <a href=\"https://support.microsoft.com/en-us/servicing/os/windows-11/2025/12/december-1-2025-kb5070311-os-builds-26200-7309-and-26100-7309-preview\">KB5070311 release notes</a>.",
   "sections": [

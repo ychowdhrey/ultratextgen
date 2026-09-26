@@ -6,10 +6,10 @@
   "crumb_library": "Symbolen",
   "library_url": "https://ultratextgen.com/nl/symbol/",
   "date_published": "2026-07-25",
-  "date_modified": "2026-09-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
   "slug": "omaanse-rial-teken",
-  "title": "Omaanse-Rial-teken: Kopieer en Plak ⃄ – Omans Nieuwe Valutateken, Bevroren voor Publicatie in Unicode 18.0",
+  "title": "Omaanse-Rial-teken: Kopieer en Plak ⃄, Definitief in Unicode 18.0",
   "meta_description": "Het Omaanse-rial-teken (⃄, U+20C4) werd in november 2025 onthuld door de Centrale Bank van Oman en is sinds 16 september 2026 definitief in Unicode 18.0, maar nog op geen enkel toetsenbord. Ontwerp, geschiedenis en status.",
   "canonical": "https://ultratextgen.com/nl/symbol/omaanse-rial-teken/",
   "breadcrumb": "Omaanse-Rial-teken",
@@ -30,6 +30,7 @@
       "href": "https://ultratextgen.com/symbol/omani-rial-sign/"
     }
   ],
+  "sources": "De publicatie van Unicode 18.0 op 16 september 2026, met dit teken als U+20C4 OMANI RIAL SIGN, wordt bevestigd door de <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">aankondiging van Unicode 18.0</a> van het Unicode Consortium. De <a href=\"https://support.microsoft.com/en-us/servicing/os/windows-11/2025/12/december-1-2025-kb5070311-os-builds-26200-7309-and-26100-7309-preview\">releaseopmerkingen van KB5070311</a> van Microsoft documenteren de komst van het riyalteken van Saoedi-Arabië op Windows 11-toetsenborden.",
   "sections": [
     {
       "id": "omaanse-rial-teken",
