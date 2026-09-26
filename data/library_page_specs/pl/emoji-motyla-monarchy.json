@@ -2,16 +2,17 @@
   "slug": "emoji-motyla-monarchy",
   "lang": "pl",
   "page_type": "symbol",
-  "title": "Emoji Motyla Monarchy: Skopiuj 🫌 — Kandydatura z Unicode 18.0 Naprawiająca Pomyłkę Gatunków",
-  "meta_description": "Motyl Monarcha (🫌, U+1FACC) to projektowa kandydatura do Emoji 18.0, spodziewana wraz z Unicode 18.0 we wrześniu 2026 roku. Naprawia wieloletni chaos w renderowaniu emoji Motyla na różnych platformach — jeszcze nieprzyjęta, żadna czcionka jej dziś nie renderuje.",
+  "title": "Emoji Motyla Monarchy: Skopiuj 🫌, Ostateczne w Emoji 18.0",
+  "meta_description": "Motyl Monarcha (🫌, U+1FACC) jest ostateczny w Emoji 18.0 od 16 września 2026 roku i naprawia wieloletni chaos w renderowaniu emoji Motyla. Żaden telefon ani komputer nie wyświetla go jeszcze domyślnie.",
   "canonical": "https://ultratextgen.com/pl/symbol/emoji-motyla-monarchy/",
   "breadcrumb": "Emoji Motyla Monarchy",
   "hero_h1": "Emoji Motyla Monarchy",
-  "hero_tagline": "Konkretny gatunek, wydzielony z rozbieżności w renderowaniu ogólnego emoji Motyla na różnych platformach — zaprojektowany dla Emoji 18.0, spodziewany wraz z Unicode 18.0 we wrześniu 2026 roku. Wciąż tylko projekt: jeszcze nieprzyjęty, żadna czcionka go jeszcze nie renderuje. Mimo to kliknij, aby skopiować ten punkt kodowy.",
-  "intro": "Motyl Monarcha (🫌, U+1FACC) to kandydujące emoji zaprojektowane dla Emoji 18.0, emotikonowego towarzysza Unicode 18.0, którego finalizacja spodziewana jest we wrześniu 2026 roku. Powstało, by naprawić realny problem fragmentacji: istniejące, ogólne emoji Motyla (🦋) na niektórych platformach wyświetla się jako niebieski Morfo, a na innych zostało przeprojektowane na coś bliższego Monarsze, więc dwie osoby mogłyby wymienić identyczny punkt kodowy, wyobrażając sobie dwa różne owady — „mogłeś wysyłać komuś SMS-em motyla Monarchę, podczas gdy on patrzył na Morfo”. Prośby o taki znak pojawiają się od lat na forach społeczności Apple, gdzie użytkownicy wskazywali charakterystyczne, pomarańczowo-czarne ubarwienie Monarchy oraz jego zagrożony status jako powody, dla których zasługuje na własne miejsce. Unicode zwykle niechętnie zatwierdza warianty specyficzne dla gatunku, ale dane o częstości użycia pokazujące, że Motyl to najczęściej używane emoji zwierzęcia w swojej podkategorii, przekonały do wydzielenia jego najbardziej rozpoznawalnego gatunku. Samo emoji niesie ze sobą historię migracji Monarchy — „pokoleniową wytrzymałość, wytrwałość i głęboką pamięć przodków”, stworzenie pokonujące tysiące kilometrów w trakcie życia, którego samo nigdy nie kończy tej podróży. Ponieważ to wciąż tylko projekt, żaden system operacyjny, klawiatura ani czcionka obecnie go nie renderuje; spodziewaj się pustego kwadratu albo znaku zastępczego, dopóki Emoji 18.0 nie zostanie zatwierdzone, a platformy nie wprowadzą wsparcia, prawdopodobnie gdzieś w 2027 roku.",
+  "hero_tagline": "Konkretny gatunek, wydzielony z rozbieżności w renderowaniu ogólnego emoji Motyla na różnych platformach, ostateczny w Emoji 18.0, wydanym wraz z Unicode 18.0 16 września 2026 roku. Na dzień 25 września 2026 roku żaden telefon ani komputer nie wyświetla Monarchy domyślnie. Mimo to kliknij, aby skopiować ten punkt kodowy.",
+  "intro": "Motyl Monarcha (🫌, U+1FACC) to jedno z dziewięciu nowych emoji w Emoji 18.0, emotikonowym towarzyszu Unicode 18.0, opublikowanym przez Konsorcjum Unicode 16 września 2026 roku. Powstało, by naprawić realny problem fragmentacji: istniejące, ogólne emoji Motyla (🦋) na niektórych platformach wyświetla się jako niebieski Morfo, a na innych zostało przeprojektowane na coś bliższego Monarsze, więc dwie osoby mogłyby wymienić identyczny punkt kodowy, wyobrażając sobie dwa różne owady — „mogłeś wysyłać komuś SMS-em motyla Monarchę, podczas gdy on patrzył na Morfo”. Prośby o taki znak pojawiają się od lat na forach społeczności Apple, gdzie użytkownicy wskazywali charakterystyczne, pomarańczowo-czarne ubarwienie Monarchy oraz jego zagrożony status jako powody, dla których zasługuje na własne miejsce. Unicode zwykle niechętnie zatwierdza warianty specyficzne dla gatunku, ale dane o częstości użycia pokazujące, że Motyl to najczęściej używane emoji zwierzęcia w swojej podkategorii, przekonały do wydzielenia jego najbardziej rozpoznawalnego gatunku. Samo emoji niesie ze sobą historię migracji Monarchy — „pokoleniową wytrzymałość, wytrwałość i głęboką pamięć przodków”, stworzenie pokonujące tysiące kilometrów w trakcie życia, którego samo nigdy nie kończy tej podróży. Status ostateczny nie oznacza jednak, że Motyl Monarcha jest już na twojej klawiaturze. Google opublikował projekt Motyla Monarchy w swojej czcionce Noto Color Emoji, ale na dzień 25 września 2026 roku żaden system operacyjny, klawiatura ani systemowa czcionka emoji go nie zawiera; spodziewaj się pustego kwadratu albo znaku zastępczego, dopóki platformy nie wprowadzą wsparcia. Emojipedia szacuje, na podstawie zeszłorocznego harmonogramu, pierwszy kwartał 2027 roku dla WhatsAppa, Samsunga i Androida Google, około marca lub kwietnia 2027 roku dla Apple, a koniec lata lub początek jesieni 2027 roku dla Microsoftu.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
+  "sources": "Ostateczny punkt kodowy i nazwa, U+1FACC „monarch butterfly”, figurują jako w pełni kwalifikowane emoji w pliku danych <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> Unicode 18.0, a <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">ogłoszenie Unicode 18.0</a> Konsorcjum Unicode datuje wydanie na 16 września 2026 roku. <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">Podsumowanie Unicode 18.0 od Emojipedii</a> opisało projekty Google w Noto Color Emoji i podało przytoczone wyżej szacunki wdrożeń na 2027 rok.",
   "home_url": "https://ultratextgen.com/pl/",
   "crumb_home": "Strona główna",
   "crumb_library": "Symbole",
@@ -26,9 +27,9 @@
       "id": "motyl-monarcha",
       "label": "Motyl Monarcha",
       "h2": "Emoji Motyla Monarchy",
-      "intro": "Sam projektowy znak — możliwy do skopiowania już dziś jako punkt kodowy, mimo że żadna czcionka nie potrafi go jeszcze wyrenderować.",
+      "intro": "Motyl Monarcha w postaci ustalonej przez Emoji 18.0: możliwy do skopiowania już dziś jako punkt kodowy, choć żaden telefon ani komputer nie wyświetla go jeszcze domyślnie.",
       "symbols": [
-        { "char": "🫌", "label": "Motyl Monarcha (projekt, U+1FACC)" }
+        { "char": "🫌", "label": "Motyl Monarcha (U+1FACC, Emoji 18.0)" }
       ]
     },
     {
@@ -42,13 +43,13 @@
     },
     {
       "id": "inne-projekty",
-      "label": "Inne Projektowe Kandydatury",
-      "h2": "Inne Projektowe Kandydatury Emoji 18.0",
-      "intro": "Motyl Monarcha nie jest jedynym niezatwierdzonym znakiem w tej edycji — te zaprojektowano razem z nim, równie niewyrenderowane aż do decyzji we wrześniu 2026 roku.",
+      "label": "Wydane Razem z Nim",
+      "h2": "Inne Nowe Emoji w Emoji 18.0",
+      "intro": "Motyl Monarcha nie jest jedynym nowym emoji w tej edycji: te stały się ostateczne razem z nim 16 września 2026 roku i również ich żaden telefon ani komputer nie wyświetla jeszcze domyślnie.",
       "symbols": [
-        { "char": "🫫", "label": "Pękająca Twarz (projekt, U+1FAEB): wygrała głosowanie publiczne" },
-        { "char": "🫝", "label": "Ogórek Kiszony (projekt, U+1FADD)" },
-        { "char": "🪋", "label": "Meteor (projekt, U+1FA8B)" }
+        { "char": "🫫", "label": "Pękająca Twarz (U+1FAEB, Emoji 18.0): wygrała głosowanie publiczne" },
+        { "char": "🫝", "label": "Ogórek Kiszony (U+1FADD, Emoji 18.0)" },
+        { "char": "🪋", "label": "Meteor (U+1FA8B, Emoji 18.0)" }
       ]
     }
   ],
@@ -62,12 +63,12 @@
     {
       "href": "/pl/symbol/pekajaca-twarz/",
       "title": "Emoji Pękającej Twarzy",
-      "desc": "Projektowa kandydatura Emoji 18.0, która wygrała głosowanie publiczne."
+      "desc": "Nowe emoji z Emoji 18.0, które wygrało głosowanie publiczne."
     },
     {
       "href": "/pl/symbol/ogorek-kiszony/",
       "title": "Emoji Ogórka Kiszonego",
-      "desc": "Kolejna projektowa kandydatura Emoji 18.0 — przeniesiona z odłożonej propozycji Apple Core."
+      "desc": "Kolejne nowe emoji z Emoji 18.0, przeniesione z odłożonej propozycji Apple Core."
     }
   ]
 }
