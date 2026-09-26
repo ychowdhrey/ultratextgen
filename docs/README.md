@@ -604,6 +604,17 @@ here so they aren't lost. Update as they're closed or new ones appear.
       and still hasn't been made — five occurrences in, and the prior
       review already judged a sixth flagging not worth its weight, so this
       one stays terse rather than repeating the case again.
+    - **Closed (2026-09-20) — the `validate.yml` row escalation ends here.**
+      PR #911 built exactly the generator this entry proposed after its
+      fourth cycle: the row above is now produced by
+      `scripts/build-gate-inventory.py` between `<!-- gate-inventory:begin -->`
+      / `<!-- gate-inventory:end -->` markers and gated by
+      `check:gate-inventory`, so it is regenerated rather than hand-corrected
+      and cannot go stale by omission again. Nine consecutive review cycles
+      (2026-07-31 through 2026-09-19) is the count this pattern reached
+      before the fix landed — recorded so a future session sees why the row
+      stopped needing this section's attention rather than assuming it was
+      dropped.
 17. **New this week: `.claude/skills/` is a genuinely new, wholly undocumented
     lane — and it's process infrastructure, not a page type.** PR #834 (two
     commits: `feat: add a repo-level steward skill encoding the repository's
@@ -628,6 +639,19 @@ here so they aren't lost. Update as they're closed or new ones appear.
     already tells a PR-babysitting session to read `steward/SKILL.md` and
     `babysit/SKILL.md` if either exists) — this map doesn't decide that
     unilaterally, only places the signal.
+    **Update (2026-09-26):** the footprint sharpened rather than closed.
+    PR #925 (`refactor(context): split CLAUDE.md into root + path-scoped
+    rules + skills + reference docs`) moved this file's own content into
+    `.claude/rules/`, `.claude/skills/`, `.claude/hooks/` and
+    `.claude/settings.json`, so `.claude/` is no longer just the two skill
+    files this entry first described — it is now a whole tree PRs touch
+    routinely. Nine of this week's PRs (#911, #925, #926, #928, #930, #931,
+    #932, #934, #937) surfaced as Unclassified purely on `.claude/` paths,
+    against the one PR (#834) that first flagged it. The fix named at first
+    report is unchanged and still one line — `(".claude/", "Repo-scoped
+    Claude Code config")`, ordered before the `docs/` catch-all, still no
+    overlap — just proposed now against a roughly 4–5x larger footprint.
+    Still not added here for the same additive-diff-to-this-file reason.
 18. **New this week: two root-level test files unclassified — the counter
     test convention extending beyond `js/`, and the classifier not learning
     it.** PR #824 added `accent-notice.test.html` (repo root, alongside
@@ -650,6 +674,14 @@ here so they aren't lost. Update as they're closed or new ones appear.
     own lane, checked after the exact-match rules) would close this
     permanently instead of one entry per new root-level test file. Not
     urgent at two instances; worth it if a third shows up.
+    **Update (2026-09-26):** a third and fourth touch, past this entry's own
+    "worth it if a third shows up" threshold. `header.test.js` (added by
+    PR #849, not a new file this week) was modified by two more PRs this
+    week — #925 and #936 — and surfaced as Unclassified both times; the
+    classifier still hasn't learned the path. `accent-notice.test.html` did
+    not recur this week. The one-line fix named at first report,
+    `("header.test.js", "Core JS")`, is unchanged; still not added here for
+    the same additive-diff-to-this-file reason as every prior occurrence.
 19. **Self-corrected this week, worth a line so it isn't rediscovered from
     scratch: a `node_modules` symlink was briefly committed to `main`, and
     two parallel sessions fixed it independently.** PR #849's branch tip
@@ -721,6 +753,20 @@ here so they aren't lost. Update as they're closed or new ones appear.
     from the GitHub API instead. The routine-cadence fix (move the trigger
     to Monday, after the digest's 06:00 UTC run) still lives outside this
     repo and still hasn't been made.
+24. **New this week: root-level `llms.txt` has no `LANE_RULES` entry.**
+    `llms.txt` is a generated artifact — `npm run build:llms -- --write`,
+    gated by `check:llms` (see `.claude/rules/generated-artifacts.md` and
+    PR #920, "a generated llms.txt hierarchy across every locale and
+    section") — that gets touched on the same kind of tree-wide pass as
+    `sitemap.xml` and `robots.txt`, but only those two have a `LANE_RULES`
+    row. Six PRs this week (#916, #920, #929, #933, #935, #940) touched the
+    root `llms.txt` file and surfaced as Unclassified because of it alone;
+    the per-locale and per-section `llms.txt` files the same generator
+    writes are unaffected, because their paths already match a locale or
+    lane prefix. The fix is a one-line addition, `("llms.txt", "SEO /
+    sitemap")`, in the same style as the `sitemap.xml`/`robots.txt` rows
+    already there; not added here per this review's own
+    additive-diff-to-this-file mandate.
 
 ---
 
