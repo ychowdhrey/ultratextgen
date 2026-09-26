@@ -37,6 +37,7 @@ LANE_RULES = [
     ("usecase/", "Usecase pages"),
     ("guide/", "Guide pages"),
     ("learn/", "Learn"),
+    ("research/", "Research"),
     ("printables/", "Printables"),
     ("events/", "Events"),
     ("updates/", "Updates"),
