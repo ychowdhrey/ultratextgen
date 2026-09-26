@@ -59,7 +59,7 @@ sibling in the same change. Status wording in the body was corrected in the same
 so no page says "Final" in its title and "draft candidate" in its first paragraph.
 
 **Executed:** [`ychowdhrey/ultratextgen#943`](https://github.com/ychowdhrey/ultratextgen/pull/943)
-(open at the time of writing; not executed until it merges).
+(merged 2026-09-26 as `0b488bfe2`).
 
 ## Heading-level skips stay advisory (2026-09-10)
 
