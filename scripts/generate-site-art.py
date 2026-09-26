@@ -233,8 +233,27 @@ def spanned(text, native, default_family=None, base_path=_LIBERATION_SANS):
         # which resolves each *already-correct* glyph against font cmaps,
         # just works.
         import arabic_reshaper
+        import unicodedata
         from bidi.algorithm import get_display
-        text = get_display(arabic_reshaper.reshape(text))
+        # Python's own Unicode database lags the standard, and a character it
+        # does not know yet has no bidi class, which python-bidi rejects with
+        # an assertion. Unicode 18.0's dirham sign ⃃ in an Arabic card line
+        # stopped a whole locale-art run. Stand each unknown character in for
+        # a private-use placeholder (bidi class L) while reordering, then put
+        # the real character back.
+        masked, back = [], {}
+        for ch in text:
+            if unicodedata.bidirectional(ch) == "":
+                ph = next((k for k, v in back.items() if v == ch), None)
+                if ph is None:
+                    ph = chr(0xE000 + len(back))
+                    back[ph] = ch
+                masked.append(ph)
+            else:
+                masked.append(ch)
+        text = get_display(arabic_reshaper.reshape("".join(masked)))
+        if back:
+            text = "".join(back.get(ch, ch) for ch in text)
     runs, cur, cur_family = [], "", None
     first = True
     for ch in text:
