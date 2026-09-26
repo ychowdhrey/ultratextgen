@@ -1712,13 +1712,29 @@
        ruling lines up across a row. Measured per pair, a "G g" tile came out
        taller than "H h" beside it and printed its lines lower. */
     const fit = o.fitInk && GMW ? GMW.ink(String(o.fitInk), font, WORD_OUTLINE_FS, FONT_WEIGHT) : null;
+    /* o.fitTop: the same, upward, so the box starts above y = 0 (y0 < 0).
+       Playwrite ID stands 1.43em above its baseline: its S, U, T, l and h,
+       and the top rule drawn at that height, sit above the box's top edge.
+       Unfitted, the row letterboxed and the overflow happened to land in the
+       spare room; fitted below, the row fills its band and the tops were cut
+       off the page, the T's crossbar entirely. Only the routed sheets ask for
+       it (nameRow), and a face whose ink already starts inside the box (US
+       Trad) gets y0 = 0 and an unchanged row. */
+    let y0 = 0;
     if (fit && fit.exact && im) {
       const base = gRul ? gRul.base
         : (im.emAscent != null ? WORD_OUTLINE_ANCHOR_Y + (im.emAscent - im.emDescent) / 2 : null);
-      if (base != null) h = Math.max(h, Math.ceil(base + Math.max(im.bottom, fit.bottom) + wordStroke + 8));
+      if (base != null) {
+        h = Math.max(h, Math.ceil(base + Math.max(im.bottom, fit.bottom) + wordStroke + 8));
+        if (o.fitTop) {
+          const inkTop = base + Math.min(im.top, fit.top) - wordStroke - 8;
+          const ruleTop = gRul ? gRul.base - gRul.band * Math.max.apply(null, ruling().lines.map((l) => l.at)) - 4 : 0;
+          y0 = Math.min(0, Math.floor(Math.min(inkTop, ruleTop)));
+        }
+      }
     }
     return {
-      w: w, h: h, model: model, inkLeft: inkLeft,
+      w: w, h: h, y0: y0, model: model, inkLeft: inkLeft,
       fontSize: WORD_OUTLINE_FS, font: font, spacing: spacing,
       anchorY: WORD_OUTLINE_ANCHOR_Y, guides: gRul,
       fill: o.solid ? (o.fill || INK) : "#ffffff",
@@ -1819,7 +1835,7 @@
     const old = row.querySelector(":scope > svg.pt-word-outline");
     if (!old) return;
     const g = wordOutlineGeom(d.word, d.opts);
-    const vw = practiceRowVW(row, g.h);
+    const vw = practiceRowVW(row, g.h - g.y0);
     if (!vw) return;
     const o = Object.assign({}, d.opts, { rowVW: vw });
     if (!d.opts.blank) o.practice = practiceStyle;
@@ -1952,7 +1968,7 @@
     if (!probe || !probe.__ptPractice) return false;
     const d = probe.__ptPractice;
     const g = wordOutlineGeom(d.word, d.opts);
-    const vw = practiceRowVW(probe, g.h);
+    const vw = practiceRowVW(probe, g.h - g.y0);
     if (!vw) return false;
     /* Asked of the SHEET, not of the preview card. The two are real rows built
        by the same code, but they are not the same width -- a preview card is
@@ -1978,7 +1994,7 @@
     const g = wordOutlineGeom(word, o);
     const w = g.w, fontSize = g.fontSize, spacing = g.spacing;
     const svg = document.createElementNS(SVGNS, "svg");
-    svg.setAttribute("viewBox", "0 0 " + w + " " + g.h);
+    svg.setAttribute("viewBox", "0 " + g.y0 + " " + w + " " + (g.h - g.y0));
     svg.setAttribute("class", "pt-word-outline");
     svg.setAttribute("role", "img");
     svg.setAttribute("aria-label", word);
@@ -2003,7 +2019,18 @@
     const xs = o.practice
       ? practiceCompose(o.practice, w, g.model, fontSize)
       : null;
+    /* A cursive row with a writing route draws the ROUTE, not the letter: see
+       cursiveRouteFor(). The route is in em units from the text origin on the
+       baseline, so it is placed exactly where the <text> below would have put
+       its glyphs -- centred on the advance, or with its ink starting at x. */
+    const route = o.route ? cursiveRouteFor(word) : null;
+    const routeBase = route ? wordBaselineY(g.font, fontSize, g.anchorY) : 0;
     const model = (x) => {
+      if (route) {
+        const ox = x == null ? w / 2 - route.advance * fontSize / 2 : x - g.inkLeft;
+        drawCursiveRoute(svg, route, ox, routeBase, fontSize, o.route);
+        return;
+      }
       const text = document.createElementNS(SVGNS, "text");
       if (x == null) {
         text.setAttribute("x", String(w / 2));
@@ -6131,9 +6158,32 @@
     if (nameCase === "lower") return String(word).toLocaleLowerCase(CASE_LOCALE);
     return word;
   }
+  /* A page that offers its phrase in more than one fixed form (CFG.nameForms,
+     "Happy Birthday" / "happy birthday") is told which one is in use by a
+     document event its form picker raises (js/printables/cursiveDemo.js).
+     Only a listed form is taken: this chooses between ready-made sheets, it
+     is not a text field by another route. A page that also has a text field
+     (the Indonesian sibling keeps one: no Indonesian page takes a name in
+     cursive yet) has the field follow the picker while it holds a form or
+     nothing; text the visitor typed is theirs and stays. */
+  const NAME_FORMS = Array.isArray(CFG.nameForms) ? CFG.nameForms.map(String) : [];
+  let nameForm = null;
+  if (NAME_FORMS.length) {
+    document.addEventListener("utg:cursive-form", (e) => {
+      const w = e && e.detail ? String(e.detail.word) : "";
+      if (NAME_FORMS.indexOf(w) === -1) return;
+      const before = nameValue();
+      nameForm = w;
+      if (el.nameInput) {
+        const typed = el.nameInput.value.trim();
+        if (!typed || NAME_FORMS.indexOf(typed) !== -1) el.nameInput.value = w;
+      }
+      if (nameValue() !== before) renderNamePreview();
+    });
+  }
   function nameValue() {
     const raw = el.nameInput ? el.nameInput.value : "";
-    return applyNameCase((raw && raw.trim()) ? raw.trim().slice(0, 40) : NAME_DEMO);
+    return applyNameCase((raw && raw.trim()) ? raw.trim().slice(0, 40) : (nameForm || NAME_DEMO));
   }
 
   function renderNamePreview() {
@@ -6212,9 +6262,17 @@
 
     // Solid model row.
     rows.appendChild(nameRow(name, "model"));
-    // Trace rows (hollow / faded).
-    const traceCount = Math.max(1, Math.min(6, parseInt((el.nameRows && el.nameRows.value) || "3", 10) || 3));
-    for (let i = 0; i < traceCount; i++) rows.appendChild(nameRow(name, "trace"));
+    if (cursiveRouteFor(name)) {
+      /* A phrase with a writing route: bold dots, fine dots, then start marks
+         only -- the same six rows as the outline sheet, stepping from tracing
+         the path to writing it from where each stroke begins. */
+      ROUTE_TRACE_LEVELS.forEach((lv) => rows.appendChild(nameRow(name, "trace", lv)));
+      rows.appendChild(nameRow(name, "start"));
+    } else {
+      // Trace rows (hollow / faded).
+      const traceCount = Math.max(1, Math.min(6, parseInt((el.nameRows && el.nameRows.value) || "3", 10) || 3));
+      for (let i = 0; i < traceCount; i++) rows.appendChild(nameRow(name, "trace"));
+    }
     // Blank ruled rows for free practice.
     for (let i = 0; i < 2; i++) rows.appendChild(nameRow(name, "blank"));
     if (moreFooterOn("word", true)) rows.appendChild(nameDateRow());
@@ -6456,12 +6514,146 @@
     if (RULED_ROWS) row.__ptPractice = { word: word, opts: opts };
     return row;
   }
-  function nameRow(name, kind) {
+
+  /* ---------------------------------------------------------------
+     Cursive writing route -- a script word traced as one pen path
+     ---------------------------------------------------------------
+     A cursive trace row used to be the word's hollow OUTLINE: two edges per
+     stroke, no start and no order, which is R-001 all over again -- the
+     print pages stopped teaching the perimeter of a letter on 2026-09-17,
+     and every cursive sheet kept doing it because the print fix is a
+     per-letter skeleton and cursive letters are joined.
+
+     So a cursive route belongs to a PHRASE: js/printables/cursiveRouteData.js,
+     built by scripts/build-cursive-routes.js from the phrase's own rendered
+     ink and verified on it. It exists only for exact strings in one face at
+     one weight, so a page opts in (CFG.cursiveRoute) and every other word,
+     face, weight or tracking falls back to the outline it always had.
+
+     A trace row draws the route dotted, with the same dot machinery the print
+     route uses (routeDotDashes resolves a stroke that doubles back over itself
+     the way it resolves two strokes meeting), and a numbered start mark on
+     every pen stroke. A "start" row draws only the marks: where to put the
+     pencil down, and in what order, with the letters left to the child. */
+  const ROUTE_TRACE_LEVELS = [2, 3];      // bold dots, then fine dots
+  const ROUTE_START_FILL = "#2b8a3e";     // a start mark reads as "go"
+  const ROUTE_BADGE_R = 8.5;              // word-surface units (type drawn at 150)
+
+  function cursiveRouteFor(word) {
+    if (CFG.cursiveRoute !== true || RENDER !== "glyph") return null;
+    // Tracking moves every glyph after the first; the route was measured at none.
+    if ((LETTER_SPACING + spacingBoost) !== 0) return null;
+    const all = window.UTG_CURSIVE_ROUTE_DATA;
+    const face = all && all[primaryFontName()];
+    const key = String(word);
+    const r = face && Object.prototype.hasOwnProperty.call(face, key) ? face[key] : null;
+    if (!r || (r.weight != null && r.weight !== FONT_WEIGHT)) return null;
+    return r;
+  }
+
+  /* "M x y L x y ..." in em from the origin -> the same path in this SVG's units. */
+  function routePathAt(d, ox, by, fs) {
+    const nums = String(d).match(/-?\d*\.?\d+(?:e-?\d+)?/g) || [];
+    const out = [];
+    for (let i = 0; i + 1 < nums.length; i += 2) {
+      out.push((i ? "L" : "M") + (+(ox + Number(nums[i]) * fs).toFixed(2)) + " " + (+(by + Number(nums[i + 1]) * fs).toFixed(2)));
+    }
+    return out.join(" ");
+  }
+
+  function drawCursiveRoute(svg, route, ox, by, fs, ro) {
+    const g = document.createElementNS(SVGNS, "g");
+    g.setAttribute("class", "pt-cursive-route");
+    const mode = ro && ro.mode === "start" ? "start" : "trace";
+    const lines = [];
+    const starts = [];
+    route.strokes.forEach((s) => {
+      if (s.kind === "dot") {
+        starts.push({ x: ox + s.x * fs, y: by + s.y * fs, dot: true });
+        return;
+      }
+      const d = routePathAt(s.d, ox, by, fs);
+      const m = /^M(-?[\d.]+) (-?[\d.]+)/.exec(d);
+      if (!m) return;
+      lines.push(d);
+      starts.push({ x: Number(m[1]), y: Number(m[2]), dot: false });
+    });
+    if (mode === "trace") {
+      /* The trace levels are quoted at the trace surface's type size (132);
+         this surface draws at `fs`, so every length scales by k. */
+      const k = fs / TRACE_FONT_SIZE;
+      const spec = levelSpec(ro.level || ROUTE_TRACE_LEVELS[0]);
+      const sw = spec.routeSw * k;
+      const dots = routeDotDashes(lines, spec.routeDash, spec.routeSw, k);
+      const wrap = document.createElementNS(SVGNS, "g");
+      if (spec.opacity != null && spec.opacity !== 1) wrap.setAttribute("opacity", String(spec.opacity));
+      lines.forEach((d, i) => {
+        if (dots && !dots[i]) return;   // every dot of this stroke is already drawn
+        const p = document.createElementNS(SVGNS, "path");
+        p.setAttribute("d", d);
+        p.setAttribute("fill", "none");
+        p.setAttribute("stroke", spec.stroke);
+        p.setAttribute("stroke-width", String(+sw.toFixed(2)));
+        if (dots) {
+          p.setAttribute("stroke-dasharray", dots[i].dash.map((n) => +n.toFixed(3)).join(" "));
+          if (dots[i].offset) p.setAttribute("stroke-dashoffset", String(+dots[i].offset.toFixed(3)));
+        } else {
+          p.setAttribute("stroke-dasharray", String(spec.routeDash).split(/\s+/).map((n) => +(Number(n) * k).toFixed(3)).join(" "));
+        }
+        p.setAttribute("stroke-linecap", spec.cap || "round");
+        p.setAttribute("stroke-linejoin", "round");
+        wrap.appendChild(p);
+      });
+      // The tittle is one mark: drawn once, the size of a trace dot.
+      starts.filter((s) => s.dot).forEach((s) => {
+        const c = document.createElementNS(SVGNS, "circle");
+        c.setAttribute("cx", String(+s.x.toFixed(2)));
+        c.setAttribute("cy", String(+s.y.toFixed(2)));
+        c.setAttribute("r", String(+(sw / 2).toFixed(2)));
+        c.setAttribute("fill", spec.stroke);
+        wrap.appendChild(c);
+      });
+      g.appendChild(wrap);
+    }
+    starts.forEach((s, i) => {
+      const c = document.createElementNS(SVGNS, "circle");
+      c.setAttribute("cx", String(+s.x.toFixed(2)));
+      c.setAttribute("cy", String(+s.y.toFixed(2)));
+      c.setAttribute("r", String(ROUTE_BADGE_R));
+      c.setAttribute("fill", ROUTE_START_FILL);
+      g.appendChild(c);
+      const t = document.createElementNS(SVGNS, "text");
+      t.setAttribute("x", String(+s.x.toFixed(2)));
+      t.setAttribute("y", String(+(s.y + 0.5).toFixed(2)));
+      t.setAttribute("text-anchor", "middle");
+      t.setAttribute("dominant-baseline", "central");
+      t.setAttribute("font-family", "'Plus Jakarta Sans', 'Segoe UI', sans-serif");
+      t.setAttribute("font-weight", "700");
+      t.setAttribute("font-size", "11");
+      t.setAttribute("fill", "#ffffff");
+      t.textContent = String(i + 1);
+      g.appendChild(t);
+    });
+    svg.appendChild(g);
+  }
+
+  function nameRow(name, kind, level) {
     const row = document.createElement("div");
     row.className = "pt-name-row pt-name-" + kind + (RULED_ROWS ? " has-guides" : "");
+    /* A sheet with a writing route reserves the face's descenders in every
+       row. The ruled rows otherwise end a few units under the baseline and an
+       SVG root clips, so the loops of p and y -- half of what a cursive route
+       asks the child to trace -- were cut off on the model row and on every
+       trace row (measured on the Happy Birthday PDF, 2026-09-25). The same
+       fitInk the cursive alphabet's letter pairs already use, and fitTop for a
+       face whose capitals rise past the box (Playwrite ID); every row of the
+       sheet takes both, blank rows included, so the ruling lines up down the
+       page. */
+    const routedSheet = !!cursiveRouteFor(name);
     if (kind === "blank") {
       if (RULED_ROWS) {
         const o = { blank: true, guides: true };
+        if (routedSheet) { o.fitInk = name; o.fitTop = true; }
         row.appendChild(wordOutlineSVG(name, o));
         stashPracticeRow(row, name, o);
       }
@@ -6484,6 +6676,14 @@
         solid: kind === "model", guides: RULED_ROWS, overlay: strokeOverlayOn()
       };
       if (RULED_ROWS) o.practice = practiceStyle;
+      if (routedSheet) {
+        o.fitInk = name;
+        o.fitTop = true;
+        if (kind === "trace" || kind === "start") {
+          o.route = { mode: kind, level: level || ROUTE_TRACE_LEVELS[0] };
+          o.overlay = false;   // the route's own start marks are the overlay
+        }
+      }
       row.appendChild(wordOutlineSVG(name, o));
       stashPracticeRow(row, name, o);
     }
