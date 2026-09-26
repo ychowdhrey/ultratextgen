@@ -2316,8 +2316,8 @@
   "lastmod": "2026-08-15"
  },
  "/de/zum-ausdrucken/": {
-  "hash": "5b2a292ef8fed7b4",
-  "lastmod": "2026-09-23"
+  "hash": "53cdf789f72a6d3e",
+  "lastmod": "2026-09-25"
  },
  "/de/zum-ausdrucken/alphabet-ausmalbilder/": {
   "hash": "e51f9dcf1abe4ef3",
@@ -2346,6 +2346,10 @@
  "/de/zum-ausdrucken/namen-schreiben/": {
   "hash": "3c60909a872a88c6",
   "lastmod": "2026-09-22"
+ },
+ "/de/zum-ausdrucken/namenspuzzle/": {
+  "hash": "17288773e00d8eb8",
+  "lastmod": "2026-09-25"
  },
  "/de/zum-ausdrucken/schreibschrift/": {
   "hash": "8e5d38d877e49429",
@@ -2508,8 +2512,8 @@
   "lastmod": "2026-07-26"
  },
  "/es/imprimibles/": {
-  "hash": "39409a4677489270",
-  "lastmod": "2026-09-23"
+  "hash": "afbd8abb1640684a",
+  "lastmod": "2026-09-25"
  },
  "/es/imprimibles/abecedario-espanol/": {
   "hash": "6edbc77157463708",
@@ -2710,6 +2714,10 @@
  "/es/imprimibles/nombre-para-trazar/": {
   "hash": "e1c9c5592a1404e6",
   "lastmod": "2026-09-22"
+ },
+ "/es/imprimibles/rompecabezas-del-nombre/": {
+  "hash": "6bc9f9afdc91554f",
+  "lastmod": "2026-09-25"
  },
  "/es/letra-cursiva/": {
   "hash": "bbf0647095197cfb",
@@ -4560,8 +4568,8 @@
   "lastmod": "2026-07-26"
  },
  "/fr/imprimables/": {
-  "hash": "0d462b102368aa1d",
-  "lastmod": "2026-09-23"
+  "hash": "d3d8fbdb0321a805",
+  "lastmod": "2026-09-25"
  },
  "/fr/imprimables/alphabet-cursif/": {
   "hash": "f195079c9932c386",
@@ -4598,6 +4606,10 @@
  "/fr/imprimables/prenom-a-tracer/": {
   "hash": "52b097309b4892b3",
   "lastmod": "2026-09-22"
+ },
+ "/fr/imprimables/puzzle-prenom/": {
+  "hash": "cb085110b4eb953d",
+  "lastmod": "2026-09-25"
  },
  "/fr/library/": {
   "hash": "0dc38b35ad813c9d",
@@ -6068,8 +6080,8 @@
   "lastmod": "2026-08-15"
  },
  "/id/printables/": {
-  "hash": "6a608e495cbadaab",
-  "lastmod": "2026-09-23"
+  "hash": "eec8f391fe908332",
+  "lastmod": "2026-09-25"
  },
  "/id/printables/alfabet-spanyol/": {
   "hash": "ab48c27d7f681c91",
@@ -6104,8 +6116,12 @@
   "lastmod": "2026-08-15"
  },
  "/id/printables/menebalkan-huruf/": {
-  "hash": "c835739f92606f6b",
-  "lastmod": "2026-08-15"
+  "hash": "5591c58dc85acc25",
+  "lastmod": "2026-09-25"
+ },
+ "/id/printables/menebalkan-nama/": {
+  "hash": "7e1c05f76061ade9",
+  "lastmod": "2026-09-25"
  },
  "/id/printables/mewarnai-huruf/": {
   "hash": "17f965df9b36694c",
@@ -6776,8 +6792,8 @@
   "lastmod": "2026-08-21"
  },
  "/it/da-stampare/": {
-  "hash": "def941140ef0c823",
-  "lastmod": "2026-09-23"
+  "hash": "eae79f2d19be8cf0",
+  "lastmod": "2026-09-25"
  },
  "/it/da-stampare/alfabeto-corsivo/": {
   "hash": "d07c52b7f7dd512f",
@@ -6786,6 +6802,10 @@
  "/it/da-stampare/alfabeto-spagnolo/": {
   "hash": "319115a72ff163b1",
   "lastmod": "2026-08-12"
+ },
+ "/it/da-stampare/lettere-a-bolla/": {
+  "hash": "79e87a3af59be11e",
+  "lastmod": "2026-09-25"
  },
  "/it/da-stampare/lettere-da-colorare/": {
   "hash": "f01bca6cb9f160ac",
@@ -11216,12 +11236,24 @@
   "lastmod": "2026-09-10"
  },
  "/nl/om-uit-te-printen/": {
-  "hash": "ee2b5147532ead57",
-  "lastmod": "2026-09-20"
+  "hash": "b420e3cda7779f9d",
+  "lastmod": "2026-09-25"
  },
  "/nl/om-uit-te-printen/blokletters/": {
   "hash": "3b47f7a6958811de",
   "lastmod": "2026-09-20"
+ },
+ "/nl/om-uit-te-printen/bubbelletters/": {
+  "hash": "5df05dc1b9ee52fe",
+  "lastmod": "2026-09-25"
+ },
+ "/nl/om-uit-te-printen/naam-leren-schrijven/": {
+  "hash": "f8af939025510f3e",
+  "lastmod": "2026-09-25"
+ },
+ "/nl/om-uit-te-printen/schrijfletters/": {
+  "hash": "567a347015e4a99d",
+  "lastmod": "2026-09-25"
  },
  "/nl/onderstreepte-tekst/": {
   "hash": "9e6f4164ee8099ca",
@@ -17486,6 +17518,14 @@
  "/tr/whatsapp-yazi-tipi/": {
   "hash": "e8f57c2b85a428c2",
   "lastmod": "2026-09-01"
+ },
+ "/tr/yazdirilabilir/": {
+  "hash": "3b11268854ba9401",
+  "lastmod": "2026-09-25"
+ },
+ "/tr/yazdirilabilir/harf-kaliplari/": {
+  "hash": "20aea5bf131c0857",
+  "lastmod": "2026-09-25"
  },
  "/updates/": {
   "hash": "d4e2f89b3572b68e",

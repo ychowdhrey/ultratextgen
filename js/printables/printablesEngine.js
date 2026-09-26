@@ -86,6 +86,12 @@
      --------------------------------------------------------------- */
   const LANG = String(CFG.lang || document.documentElement.getAttribute("lang") || "en")
     .slice(0, 2).toLowerCase();
+  /* Case conversion follows the page's language where the language has its
+     own rules. Turkish is the one that matters here: "i" uppercases to "İ" and
+     "I" lowercases to "ı", so the default toUpperCase() prints "ISTANBUL" for
+     "istanbul" and pairs "I" with "i" on an alphabet sheet. For every other
+     language "en" gives exactly what toUpperCase()/toLowerCase() gave before. */
+  const CASE_LOCALE = LANG === "tr" ? "tr" : "en";
   const I18N = {
     en: {
       letterWord: "letter", numberWord: "number",
@@ -159,6 +165,7 @@
       sheetsPerPage: "Sheets per page",
       bannerInstr: "Cut each flag along its dashed line, punch a hole at each dot, then thread string or ribbon through in order (1, 2, 3…) to spell it out.",
       puzzleCut: "Cut along the dashed lines to separate each letter piece.",
+      puzzleTitle: "{name}’s Name Puzzle",
       usLetter: "US Letter",
       bannerFlagsLabel: "banner flags", ofWord: "of",
       flagCount: { one: "flag", other: "flags" },
@@ -226,6 +233,7 @@
       sheetsPerPage: "Feuilles par page",
       bannerInstr: "Découpez chaque fanion le long de sa ligne pointillée, percez un trou à chaque point, puis passez une ficelle ou un ruban dans l'ordre (1, 2, 3…) pour former le mot.",
       puzzleCut: "Découpez le long des lignes pointillées pour séparer chaque pièce-lettre.",
+      puzzleTitle: "Le puzzle de {name}",
       trace: {
         solid:    { label: "Modèle plein", hint: "Lettres pleines et foncées — tracez par-dessus" },
         "bold-dot": { label: "Pointillé épais", hint: "Points épais et rapprochés à relier" },
@@ -283,6 +291,7 @@
       sheetsPerPage: "Hojas por página",
       bannerInstr: "Recorta cada banderín por su línea punteada, haz un agujero en cada punto y pasa un cordel o cinta en orden (1, 2, 3…) para formar la palabra.",
       puzzleCut: "Recorta por las líneas punteadas para separar cada pieza-letra.",
+      puzzleTitle: "El rompecabezas de {name}",
       trace: {
         solid:    { label: "Modelo sólido", hint: "Letras oscuras y llenas — traza justo encima" },
         "bold-dot": { label: "Punteado grueso", hint: "Puntos gruesos y juntos para unir" },
@@ -340,6 +349,7 @@
       sheetsPerPage: "Folhas por página",
       bannerInstr: "Recorte cada bandeirinha na linha pontilhada, faça um furo em cada ponto e passe um barbante ou fita na ordem (1, 2, 3…) para formar a palavra.",
       puzzleCut: "Recorte nas linhas pontilhadas para separar cada peça-letra.",
+      puzzleTitle: "O quebra-cabeça de {name}",
       trace: {
         solid:    { label: "Modelo cheio", hint: "Letras escuras e cheias — trace por cima" },
         "bold-dot": { label: "Pontilhado grosso", hint: "Pontos grossos e juntos para ligar" },
@@ -397,6 +407,7 @@
       sheetsPerPage: "Fogli per pagina",
       bannerInstr: "Ritaglia ogni bandierina lungo la linea tratteggiata, fai un foro su ogni punto, poi infila uno spago o un nastro in ordine (1, 2, 3…) per comporre la parola.",
       puzzleCut: "Ritaglia lungo le linee tratteggiate per separare ogni pezzo-lettera.",
+      puzzleTitle: "Il puzzle di {name}",
       trace: {
         solid:    { label: "Modello pieno", hint: "Lettere piene e scure – ricalca sopra" },
         "bold-dot": { label: "Puntinato spesso", hint: "Punti spessi e ravvicinati da unire" },
@@ -449,6 +460,7 @@
       sheetsPerPage: "Kart na stronę",
       bannerInstr: "Wytnij każdą chorągiewkę wzdłuż przerywanej linii, zrób dziurkę w każdym punkcie, a następnie przewlecz sznurek lub wstążkę po kolei (1, 2, 3…), aby ułożyć napis.",
       puzzleCut: "Tnij wzdłuż przerywanych linii, aby oddzielić każdy element-literę.",
+      puzzleTitle: "Puzzle z imieniem: {name}",
       practiceTitle: "Karta pracy · {Noun}",
       usLetter: "US Letter",
       bannerFlagsLabel: "chorągiewki", ofWord: "z",
@@ -513,6 +525,7 @@
       sheetsPerPage: "Blätter pro Seite",
       bannerInstr: "Schneide jeden Wimpel entlang der gestrichelten Linie aus, stich an jedem Punkt ein Loch und fädle eine Schnur oder ein Band der Reihe nach (1, 2, 3…) durch, um das Wort zu bilden.",
       puzzleCut: "Schneide entlang der gestrichelten Linien, um jedes Buchstaben-Teil zu trennen.",
+      puzzleTitle: "Namenspuzzle von {name}",
       usLetter: "US Letter",
       modelCount: { one: "Vorlagenzeile", other: "Vorlagenzeilen" },
       traceCount: { one: "Nachspurzeile", other: "Nachspurzeilen" },
@@ -575,6 +588,7 @@
       practiceTitle: "Lembar latihan · {Noun}",
       bannerInstr: "Gunting tiap bendera mengikuti garis putus-putus, lubangi di setiap titik, lalu masukkan tali atau pita berurutan (1, 2, 3\u2026) sampai membentuk katanya.",
       puzzleCut: "Gunting mengikuti garis putus-putus untuk memisahkan tiap kepingan huruf.",
+      puzzleTitle: "Puzzle nama {name}",
       usLetter: "US Letter",
       bannerFlagsLabel: "bendera banner", ofWord: "dari",
       flagCount: { one: "bendera", other: "bendera" },
@@ -719,6 +733,7 @@
       "sheetsPerPage": "Werkbladen per pagina",
       "bannerInstr": "Knip elk vlaggetje uit langs de stippellijn, prik bij elke stip een gaatje en rijg er op volgorde (1, 2, 3…) een touwtje of lint door, zodat het woord verschijnt.",
       "puzzleCut": "Knip langs de stippellijnen om de letterstukjes los te maken.",
+      "puzzleTitle": "Naampuzzel van {name}",
       "usLetter": "US Letter",
       "bannerFlagsLabel": "letterslinger",
       "ofWord": "van",
@@ -827,6 +842,115 @@
           "label": "Schrijven, dan controleren",
           "hint": "Uit je hoofd schrijven, dan vergelijken met het voorbeeld."
         }
+      }
+    },
+    /* Turkish (2026-09-25, first tr printables page). Informal "sen", as the
+       site's own Turkish pages write ("kopyaladığın", "yaz"); their words win
+       for the shared actions ("Kopyala", "Kopyalandı!", "indir", "Temizle").
+       Worksheet terms follow Turkish teacher resource sites: "çalışma
+       sayfası" for a drill sheet, "harf kalıbı" for a cut-out outline letter,
+       "noktaları birleştir" for dot-to-dot. */
+    tr: {
+      letterWord: "harf", numberWord: "rakam",
+      copied: "Kopyalandı!",
+      downloadPng: "PNG indir",
+      copyPaste: "Kopyala yapıştır", copy: "Kopyala", howToDraw: "Nasıl çizilir", lowerSuffix: " · küçük",
+      level: "Seviye", nameLabel: "Ad:", dateLabel: "Tarih:", space: "boşluk",
+      dotToDot: "noktaları birleştir", bannerFlag: "Bayrak:",
+      dotsCount: "nokta", dotNumbers: "Numaralı noktalar",
+      dotLadderTitle: "Adım adım",
+      dotLadderText: "Kolaydan başla, rahatladıkça nokta ekle. Uzman seviyesini bitirdin mi? Rakamları kapat, sonra harfi serbest elle çizmeyi dene.",
+      pdfHint: "İpucu: Yazdır → “PDF olarak kaydet” bu sayfayı PDF olarak indirir.",
+      wordSearch: {
+        heading: "Kelime Avı",
+        findAll: "Bulunacak",
+        wordsWord: "kelime",
+        answerKey: "Cevap anahtarı",
+        forWhom: "·",
+        tooLong: "Tabloya sığmayacak kadar uzun:",
+        needWords: "Tablo oluşturmak için birkaç kelime yaz.",
+        gridOf: "Kelime avı tablosu",
+        lettersBy: "x",
+        versions: "farklı tablo, her isim için bir tane",
+        oneGrid: "Tek tablo"
+      },
+      crossword: {
+        heading: "Bulmaca",
+        across: "Soldan sağa",
+        down: "Yukarıdan aşağıya",
+        answerKey: "Cevap anahtarı",
+        forWhom: "·",
+        clueBlank: "(ipucunu sen yaz)",
+        wordBank: "Kelime listesi",
+        noFit: "Tabloda yer kalmadı:",
+        needWords: "Ortak harfleri olan birkaç kelime yaz.",
+        gridOf: "Bulmaca tablosu",
+        cellsBy: "x",
+        versions: "farklı yerleşim, her isim için bir tane",
+        oneGrid: "Tek yerleşim"
+      },
+      scramble: {
+        heading: "Karışık Harfler",
+        unscramble: "Her kelimenin harflerini doğru sıraya koy.",
+        answerKey: "Cevap anahtarı",
+        forWhom: "·",
+        startsWith: "şununla başlar:",
+        noScramble: "Karıştırmak için çok kısa:",
+        needWords: "Karıştırmak için birkaç kelime yaz.",
+        versions: "farklı sayfa, her isim için bir tane",
+        oneSheet: "Tek sayfa",
+        easy: "Kolay", medium: "Orta", hard: "Zor"
+      },
+      printOpts: { settings: "PDF ayarları", paper: "Kâğıt", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Yön", portrait: "Dikey", landscape: "Yatay", margins: "Kenar boşlukları", normal: "Normal", narrow: "Dar", inkSaver: "Mürekkep tasarrufu (daha açık çizgiler)", savePdf: "PDF indir", pdfToast: "Yazdırma penceresinde hedef olarak PDF olarak kaydet'i seç.", share: "Paylaş", shareImage: "Görsel olarak paylaş", copyLink: "Bağlantıyı kopyala", linkCopied: "Bağlantı kopyalandı", pinterest: "Pinterest'e kaydet", recent: "Son sayfaların", clear: "Temizle", madeAt: "Hazırlandığı yer:" },
+      printBook: "Kitapçık olarak kaydet: her harf için bir sayfa",
+      save: "Kaydet",
+      saved: "Kaydedildi",
+      nameStyleLabel: "Stil", nameFillLabel: "Dolgu", nameStrokeLabel: "Kontur",
+      nameSolidLabel: "Şimdi boya (tam dolgu)",
+      pngTransparent: "PNG (şeffaf)",
+      classSet: "Sınıf seti: her isim için bir sayfa", sheets: "sayfa",
+      classSetPngHint: "PNG yalnızca şu anki ismi indirir; setin tamamı için PDF olarak kaydet'i kullan.",
+      sheetsPerPage: "Sayfa başına çalışma",
+      bannerInstr: "Her bayrağı kesikli çizgisinden kes, her noktaya bir delik aç, sonra ipi ya da kurdeleyi sırayla (1, 2, 3…) geçir; kelime ortaya çıksın.",
+      puzzleCut: "Harf parçalarını ayırmak için kesikli çizgilerden kes.",
+      puzzleTitle: "{name} için isim yapbozu",
+      usLetter: "US Letter",
+      bannerFlagsLabel: "harf bayrağı", ofWord: "/",
+      flagCount: { one: "bayrak", other: "bayrak" },
+      pageCount: { one: "sayfa", other: "sayfa" },
+      alphabetWord: "alfabe",
+      practiceTitle: "Çalışma sayfası · {Noun}",
+      caseUpper: "Büyük harf", caseLower: "Küçük harf",
+      modelCount: { one: "örnek satır", other: "örnek satır" },
+      traceCount: { one: "üzerinden geçme satırı", other: "üzerinden geçme satırı" },
+      blankCount: { one: "boş satır", other: "boş satır" },
+      trace: {
+        solid:    { label: "Tam örnek", hint: "Koyu, dolu harfler: doğrudan üzerinden geç" },
+        "bold-dot": { label: "Kalın noktalı", hint: "Birleştirmek için sık ve kalın noktalar" },
+        "fine-dot": { label: "İnce noktalı", hint: "Arası biraz daha açık, ince noktalar" },
+        dashed:   { label: "Kesikli", hint: "Kesik çizgiler: tamamlanacak daha çok yer" },
+        faded:    { label: "Soluk", hint: "Üzerine yazmak için açık gri harfler" },
+        faint:    { label: "Hafif iz", hint: "Zor görülen bir iz: neredeyse tek başına" },
+        blank:    { label: "Boş satır", hint: "İz yok: ezberden yaz" }
+      },
+      dot: {
+        easy:   { label: "Kolay", hint: "Geniş aralık, az nokta: en küçükler için" },
+        medium: { label: "Orta", hint: "Dengeli bir noktaları birleştirme" },
+        hard:   { label: "Zor", hint: "Daha çok nokta, harfte daha ince ayrıntı" },
+        expert: { label: "Uzman", hint: "Çok sayıda nokta: gerçek bir meydan okuma" }
+      },
+      size: {
+        label: "Baskı boyutu",
+        full:   { label: "Tam sayfa", hint: "Her sayfaya tek büyük harf: varsayılan ayar" },
+        medium: { label: "Orta (~10 cm)", hint: "Sayfa başına birkaç harf: afişler için uygun" },
+        small:  { label: "Küçük (~5 cm)", hint: "Sayfa başına çok harf: sınıf panosu için ideal" }
+      },
+      practice: {
+        label: "Çalışma şekli",
+        repeat: { label: "Tekrar tekrar üzerinden geç", hint: "Her satırı üzerinden geçilecek örneklerle doldur." },
+        trace_write: { label: "Üzerinden geç, sonra yaz", hint: "Bir kez üzerinden geç, sonra kendin çalış." },
+        trace_write_check: { label: "Geç, yaz, kontrol et", hint: "Üzerinden geç, çalış, sonra örnekle karşılaştır." },
+        write_check: { label: "Yaz, sonra kontrol et", hint: "Ezberden yaz, sonra örnekle karşılaştır." }
       }
     }
   };
@@ -1100,17 +1224,19 @@
      --------------------------------------------------------------- */
 
   function charLabel(ch) { return /[0-9]/.test(ch) ? (T.numberWord + " " + ch) : (T.letterWord + " " + ch); }
-  // ASCII-safe slug for the one Latin letter in CFG.chars sets with no plain
-  // a-z form (Ñ, from the Spanish alphabet) — keeps PNG filenames and #hash
-  // anchors free of non-ASCII characters. Every other letter is unaffected.
+  // ASCII-safe slug for the Latin letters in CFG.chars sets with no plain a-z
+  // form (Ñ from the Spanish alphabet; Ç Ğ İ Ö Ş Ü from the Turkish one), so
+  // PNG filenames and #hash anchors stay ASCII. "I" and "İ" are two Turkish
+  // letters and get two slugs. Every other letter is unaffected.
+  const CHAR_SLUGS = { "Ñ": "enye", "Ç": "c-cedilla", "Ğ": "g-breve", "İ": "i-dot", "Ö": "o-umlaut", "Ş": "s-cedilla", "Ü": "u-umlaut" };
   function charSlug(ch) {
     if (/[0-9]/.test(ch)) return "number-" + ch;
-    const lower = ch.toLowerCase();
-    if (lower === "ñ") return "letter-enye";
-    return "letter-" + lower;
+    const special = CHAR_SLUGS[String(ch).toUpperCase()] || CHAR_SLUGS[ch];
+    if (special) return "letter-" + special;
+    return "letter-" + ch.toLowerCase();
   }
   function slugify(s) {
-    return String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+    return String(s || "").toLocaleLowerCase(CASE_LOCALE).replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   }
   function primaryFontName() {
     // "Fredoka, '…', sans-serif" -> "Fredoka" (for document.fonts.load)
@@ -1174,8 +1300,15 @@
      --------------------------------------------------------------- */
 
   /* The set a tiled sheet shares a baseline across. Digits are in it because
-     the alphabet books print 0-9 alongside A-Z on the same grid. */
-  const TILE_BASELINE_SET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+     the alphabet books print 0-9 alongside A-Z on the same grid. A page's own
+     letters outside A-Z join it too (Ñ; Ç Ğ İ Ö Ş Ü): measured only on A-Z,
+     the Turkish small sheet centred a cap-height grid and cut the breve off Ğ
+     and the dot off İ at the top of their cells, which on a cut-out template
+     turns them into G and I. An A-Z page adds nothing, so its sheets render
+     exactly as before. */
+  const TILE_BASELINE_SET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" +
+    CHARS.filter((c) => !/^[A-Za-z0-9]$/.test(c))
+      .map((c) => c.toLocaleUpperCase(CASE_LOCALE) + c.toLocaleLowerCase(CASE_LOCALE)).join("");
 
   // A single character as a rounded, traceable SVG outline (outline mode).
   /* OUT-15 -- bridged stencils.
@@ -2031,8 +2164,8 @@
       if (TRACEABLE) return glyphPairOutline(ch, { guides: RULED_ROWS });
       const p = document.createElement("p");
       p.className = "pt-glyph-figure";
-      const u = renderGlyph(ch.toUpperCase());
-      const l = renderGlyph(ch.toLowerCase());
+      const u = renderGlyph(ch.toLocaleUpperCase(CASE_LOCALE));
+      const l = renderGlyph(ch.toLocaleLowerCase(CASE_LOCALE));
       p.textContent = /[0-9]/.test(ch) ? u : (u + " " + l);
       return p;
     }
@@ -2585,7 +2718,7 @@
      those labels are left for the i18n table to set outright. */
   const PRINT_VERBS = {
     en: ["Print"], fr: ["Imprimer"], es: ["Imprimir"], pt: ["Imprimir"],
-    it: ["Stampa"], pl: ["Wydrukuj", "Drukuj"], id: ["Cetak"], de: [], nl: []
+    it: ["Stampa"], pl: ["Wydrukuj", "Drukuj"], id: ["Cetak"], de: [], nl: [], tr: []
   };
   /* ONE roster for the whole pillar, not one per URL. It was keyed on
      location.pathname, so a class typed on /printables/name-tracing/ was
@@ -3022,7 +3155,7 @@
       });
     }
     const ch = presetGet("ch");
-    if (ch && el.strip && CHARS.indexOf(String(ch).toUpperCase()) !== -1) selectChar(String(ch).toUpperCase(), { silent: true });
+    if (ch && el.strip && CHARS.indexOf(String(ch).toLocaleUpperCase(CASE_LOCALE)) !== -1) selectChar(String(ch).toLocaleUpperCase(CASE_LOCALE), { silent: true });
     [typeof renderNamePreview === "function" && el.nameInput ? renderNamePreview : null,
      typeof renderGenPreview === "function" && el.genInput ? renderGenPreview : null,
      typeof renderDesignPreview === "function" && el.designInput ? renderDesignPreview : null,
@@ -3532,7 +3665,7 @@
       ctx.textBaseline = "middle";
       ctx.lineJoin = "round";
       const glyph = RENDER === "glyph"
-        ? (/[0-9]/.test(ch) ? renderGlyph(ch.toUpperCase()) : (renderGlyph(ch.toUpperCase()) + renderGlyph(ch.toLowerCase())))
+        ? (/[0-9]/.test(ch) ? renderGlyph(ch.toLocaleUpperCase(CASE_LOCALE)) : (renderGlyph(ch.toLocaleUpperCase(CASE_LOCALE)) + renderGlyph(ch.toLocaleLowerCase(CASE_LOCALE))))
         : ch;
       const letterFs = Math.round(size * (RENDER === "glyph" ? 0.4 : 0.66));
       ctx.font = FONT_WEIGHT + " " + letterFs + "px " + FONT;
@@ -4276,7 +4409,7 @@
      sheets before this change still sees them, and deleting the strip would
      orphan their records rather than tidy anything. */
 
-  function cap(s) { return String(s).charAt(0).toUpperCase() + String(s).slice(1); }
+  function cap(s) { return String(s).charAt(0).toLocaleUpperCase(CASE_LOCALE) + String(s).slice(1); }
 
   /* The upper/lower pair a script page shows, drawn hollow. It goes through
      wordOutlineSVG rather than outlineSVG because outlineSVG draws ONE
@@ -4286,12 +4419,12 @@
      colouring-book outline, not a trace ghost. */
   function glyphPairOutline(ch, opts) {
     const o = opts || {};
-    const u = renderGlyph(ch.toUpperCase());
-    const l = renderGlyph(ch.toLowerCase());
+    const u = renderGlyph(ch.toLocaleUpperCase(CASE_LOCALE));
+    const l = renderGlyph(ch.toLocaleLowerCase(CASE_LOCALE));
     const pair = /[0-9]/.test(ch) ? u : (u + " " + l);
     const svg = wordOutlineSVG(pair, {
       solid: false, strokeColor: INK, strokeWidth: STROKE, guides: !!o.guides,
-      fitInk: CHARS.map((c) => renderGlyph(c.toLowerCase())).join("")
+      fitInk: CHARS.map((c) => renderGlyph(c.toLocaleLowerCase(CASE_LOCALE))).join("")
     });
     svg.setAttribute("aria-label", NOUN + " " + charLabel(ch));
     return svg;
@@ -4301,8 +4434,8 @@
     if (TRACEABLE) return glyphPairOutline(ch, { guides: RULED_ROWS });
     const p = document.createElement("p");
     p.className = "pt-glyph-print";
-    const u = renderGlyph(ch.toUpperCase());
-    const l = renderGlyph(ch.toLowerCase());
+    const u = renderGlyph(ch.toLocaleUpperCase(CASE_LOCALE));
+    const l = renderGlyph(ch.toLocaleLowerCase(CASE_LOCALE));
     p.textContent = /[0-9]/.test(ch) ? u : (u + " " + l);
     return p;
   }
@@ -4322,7 +4455,7 @@
     const seen = new Set();
     familyStyles().forEach(({ name, style }) => {
       cases.forEach((kind) => {
-        const src = kind === "upper" ? ch.toUpperCase() : ch.toLowerCase();
+        const src = kind === "upper" ? ch.toLocaleUpperCase(CASE_LOCALE) : ch.toLocaleLowerCase(CASE_LOCALE);
         const rendered = renderGlyph(src, name);
         if (!rendered || rendered === src) return;
         if (seen.has(rendered)) return;
@@ -4429,7 +4562,7 @@
   function bookChars() {
     if (!bookRange) return CHARS;
     const want = new Set(bookRange);
-    const picked = CHARS.filter((ch) => want.has(ch.toUpperCase()));
+    const picked = CHARS.filter((ch) => want.has(ch.toLocaleUpperCase(CASE_LOCALE)));
     // Never render an empty book: an unmatched filter falls back to the whole
     // set rather than producing a zero-page PDF, which reads as a broken button.
     return picked.length ? picked : CHARS;
@@ -4449,9 +4582,9 @@
      "A-E" means the first five characters THIS page prints rather than five
      codepoints it may not have. */
   function parseRange(text) {
-    const order = CHARS.map((c) => c.toUpperCase());
+    const order = CHARS.map((c) => c.toLocaleUpperCase(CASE_LOCALE));
     const printable = new Set(order);
-    const raw = String(text || "").toUpperCase();
+    const raw = String(text || "").toLocaleUpperCase(CASE_LOCALE);
     const set = [];
     const add = (ch) => { if (printable.has(ch) && !set.includes(ch)) set.push(ch); };
     let i = 0;
@@ -4487,7 +4620,7 @@
     /* Only offer presets this page can actually honour. "A-Z" on a page whose
        charset is punctuation is a button that does nothing, and the whole
        control is pointless when only "everything" is left. */
-    const have = new Set(CHARS.map((c) => c.toUpperCase()));
+    const have = new Set(CHARS.map((c) => c.toLocaleUpperCase(CASE_LOCALE)));
     const presets = BOOK_PRESETS.filter((pr) => !pr.chars || pr.chars.some((c) => have.has(c)));
     if (presets.length < 2) return;
     const wrap = document.createElement("div");
@@ -4922,7 +5055,7 @@
   function smallGlyphCell(ch) {
     const s = document.createElement("span");
     s.className = "pt-glyph-cell";
-    s.textContent = renderGlyph(ch.toUpperCase()) + " " + renderGlyph(ch.toLowerCase());
+    s.textContent = renderGlyph(ch.toLocaleUpperCase(CASE_LOCALE)) + " " + renderGlyph(ch.toLocaleLowerCase(CASE_LOCALE));
     return s;
   }
 
@@ -4942,14 +5075,14 @@
       const trace = document.createElement("span");
       trace.className = "cursive-print-trace";
       if (RENDER === "glyph") {
-        model.textContent = renderGlyph(ch.toUpperCase()) + " " + renderGlyph(ch.toLowerCase());
-        trace.textContent = renderGlyph(ch.toUpperCase()) + " " + renderGlyph(ch.toLowerCase());
+        model.textContent = renderGlyph(ch.toLocaleUpperCase(CASE_LOCALE)) + " " + renderGlyph(ch.toLocaleLowerCase(CASE_LOCALE));
+        trace.textContent = renderGlyph(ch.toLocaleUpperCase(CASE_LOCALE)) + " " + renderGlyph(ch.toLocaleLowerCase(CASE_LOCALE));
       } else {
         // Model column only ever shows the uppercase letter (CHARS is A-Z +
         // 0-9), so the overlay's uppercase coverage lines up exactly here.
         model.appendChild(outlineSVG(ch, { small: true, overlay: overlayOn }));
         model.classList.add("pt-model-svg");
-        trace.textContent = /[0-9]/.test(ch) ? ch : (ch + " " + ch.toLowerCase());
+        trace.textContent = /[0-9]/.test(ch) ? ch : (ch + " " + ch.toLocaleLowerCase(CASE_LOCALE));
       }
       const line = document.createElement("span");
       line.className = "cursive-print-line";
@@ -5373,8 +5506,8 @@
     host.insertAdjacentElement("afterend", row);
   }
   function applyNameCase(word) {
-    if (nameCase === "upper") return String(word).toUpperCase();
-    if (nameCase === "lower") return String(word).toLowerCase();
+    if (nameCase === "upper") return String(word).toLocaleUpperCase(CASE_LOCALE);
+    if (nameCase === "lower") return String(word).toLocaleLowerCase(CASE_LOCALE);
     return word;
   }
   function nameValue() {
@@ -5506,7 +5639,8 @@
     es: { lefty: "Para zurdos (modelo en los dos extremos)", spacing: "Espaciado entre letras", normal: "Normal", wide: "Amplio", widest: "Muy amplio", stencil: "Plantilla con puentes (el interior de las letras no se cae al recortar)" },
     pt: { lefty: "Para canhotos (modelo nos dois lados)", spacing: "Espaçamento entre letras", normal: "Normal", wide: "Largo", widest: "Muito largo", stencil: "Estêncil com pontes (o miolo das letras não cai ao recortar)" },
     id: { lefty: "Untuk anak kidal (contoh di kedua sisi)", spacing: "Jarak antar huruf", normal: "Normal", wide: "Lebar", widest: "Sangat lebar", stencil: "Stensil dengan jembatan (bagian tengah huruf tidak lepas saat digunting)" },
-    nl: {"lefty": "Voor linkshandigen (voorbeeld aan beide kanten)", "spacing": "Letterafstand", "normal": "Normaal", "wide": "Breed", "widest": "Extra breed", "stencil": "Sjabloon met bruggetjes (binnenstukjes blijven vastzitten als je uitknipt)"}
+    nl: {"lefty": "Voor linkshandigen (voorbeeld aan beide kanten)", "spacing": "Letterafstand", "normal": "Normaal", "wide": "Breed", "widest": "Extra breed", "stencil": "Sjabloon met bruggetjes (binnenstukjes blijven vastzitten als je uitknipt)"},
+    tr: { lefty: "Solaklar için (örnek iki tarafta)", spacing: "Harf aralığı", normal: "Normal", wide: "Geniş", widest: "Çok geniş", stencil: "Köprülü şablon (kesince harflerin içi düşmez)" }
   };
   const OL = OPTIONS_I18N[LANG] || null;
 
@@ -6464,9 +6598,9 @@
 
   function applyCase(word) {
     const mode = el.genCase ? el.genCase.value : "as-typed";
-    if (mode === "upper") return word.toUpperCase();
-    if (mode === "lower") return word.toLowerCase();
-    if (mode === "title") return word.replace(/\b\w/g, (c) => c.toUpperCase());
+    if (mode === "upper") return word.toLocaleUpperCase(CASE_LOCALE);
+    if (mode === "lower") return word.toLocaleLowerCase(CASE_LOCALE);
+    if (mode === "title") return word.replace(/\b\w/g, (c) => c.toLocaleUpperCase(CASE_LOCALE));
     return word;
   }
   function genValue() {
@@ -6636,7 +6770,8 @@
     es: { label: "¿Para quién es?", group: "Número de hojas", one: "Una hoja", oneHint: "Solo este nombre", all: "Toda la clase", allHint: "Una hoja por niño" },
     pt: { label: "Para quem é?", group: "Quantas folhas", one: "Uma folha", oneHint: "Só este nome", all: "Turma inteira", allHint: "Uma folha por criança" },
     id: { label: "Untuk siapa?", group: "Berapa lembar", one: "Satu lembar", oneHint: "Hanya nama ini", all: "Seluruh kelas", allHint: "Satu lembar per anak" },
-    nl: {label: "Voor wie is dit?", group: "Hoeveel vellen", one: "Eén vel", oneHint: "Alleen deze naam", all: "Hele klas", allHint: "Eén vel per kind"}
+    nl: {label: "Voor wie is dit?", group: "Hoeveel vellen", one: "Eén vel", oneHint: "Alleen deze naam", all: "Hele klas", allHint: "Eén vel per kind"},
+    tr: { label: "Kimin için?", group: "Kaç sayfa", one: "Tek sayfa", oneHint: "Yalnızca bu isim", all: "Tüm sınıf", allHint: "Her çocuğa bir sayfa" }
   };
   // The word-list tools print one sheet from a LIST, not from a name, so
   // "Just this name" would describe a sheet they do not make.
@@ -6757,6 +6892,15 @@
   function moreFooterOn(scope, dflt) {
     const r = moreRefs[scope];
     return r && r.check ? r.check.checked : dflt;
+  }
+  /* One cut piece or banner flag holds one character, uppercased. The test
+     was /[a-z]/i, which left every accented letter lowercase: "Sofía" cut as
+     SOFíA, "Jürgen" as JüRGEN, and ñ stayed ñ. Any letter whose uppercase is
+     still one character is uppercased now; ß (-> SS) keeps its own form,
+     because two letters in one piece would break the puzzle. */
+  function pieceChar(ch) {
+    const up = String(ch).toLocaleUpperCase(CASE_LOCALE);
+    return [...up].length === [...String(ch)].length ? up : ch;
   }
   // {name} becomes this sheet's name; on a sheet with no name it is dropped.
   function withName(text, name) {
@@ -8586,7 +8730,7 @@
   // and the book range all stay uppercase, so nothing that addresses a
   // character by name has to know about this.
   function dotCase(ch) {
-    return dotPageState.case === "lower" ? String(ch).toLowerCase() : String(ch).toUpperCase();
+    return dotPageState.case === "lower" ? String(ch).toLocaleLowerCase(CASE_LOCALE) : String(ch).toLocaleUpperCase(CASE_LOCALE);
   }
   // viewBox is 4x outlineSVG's 200x240 (same 5:6 aspect; on-screen size is
   // unchanged since CSS scales the SVG to width:100%). dotR/numF are clamped
@@ -8863,10 +9007,10 @@
       const half = Math.min(cy - G.dotPad(heading), G.dotFloor(footer) - cy);
       if (lines.length === 2) {
         const bandH = half - 18;
-        const next = addDotWordSVG(svg, String(lines[0]).toUpperCase(), designState.density, { x: M, y: cy - half, w: availW, h: bandH }, designState.hint);
-        addDotWordSVG(svg, String(lines[1]).toUpperCase(), designState.density, { x: M, y: cy + 18, w: availW, h: bandH }, designState.hint, undefined, wrapped ? next : 1);
+        const next = addDotWordSVG(svg, String(lines[0]).toLocaleUpperCase(CASE_LOCALE), designState.density, { x: M, y: cy - half, w: availW, h: bandH }, designState.hint);
+        addDotWordSVG(svg, String(lines[1]).toLocaleUpperCase(CASE_LOCALE), designState.density, { x: M, y: cy + 18, w: availW, h: bandH }, designState.hint, undefined, wrapped ? next : 1);
       } else {
-        addDotWordSVG(svg, String(text).toUpperCase(), designState.density, { x: M, y: cy - half, w: availW, h: half * 2 }, designState.hint);
+        addDotWordSVG(svg, String(text).toLocaleUpperCase(CASE_LOCALE), designState.density, { x: M, y: cy - half, w: availW, h: half * 2 }, designState.hint);
       }
     } else {
       // Interior: plain white (open to color), or a tiled pattern painted as
@@ -8993,8 +9137,8 @@
      levels that rendered identical sheets both stayed switched on. With a
      second line the longer of the two is what binds. */
   function designDotText() {
-    const a = String(designText()).toUpperCase();
-    const b = String(designLine2() || "").toUpperCase();
+    const a = String(designText()).toLocaleUpperCase(CASE_LOCALE);
+    const b = String(designLine2() || "").toLocaleUpperCase(CASE_LOCALE);
     return ([...b].length > [...a].length) ? b : a;
   }
 
@@ -9151,10 +9295,10 @@
         const availD = W - G.M * 2;
         if (lines.length === 2) {
           const bandH = half - 18;
-          const next = drawDotWordCanvas(ctx, String(lines[0]).toUpperCase(), designState.density, { x: G.M, y: cyD - half, w: availD, h: bandH }, designState.hint);
-          drawDotWordCanvas(ctx, String(lines[1]).toUpperCase(), designState.density, { x: G.M, y: cyD + 18, w: availD, h: bandH }, designState.hint, undefined, wrapped ? next : 1);
+          const next = drawDotWordCanvas(ctx, String(lines[0]).toLocaleUpperCase(CASE_LOCALE), designState.density, { x: G.M, y: cyD - half, w: availD, h: bandH }, designState.hint);
+          drawDotWordCanvas(ctx, String(lines[1]).toLocaleUpperCase(CASE_LOCALE), designState.density, { x: G.M, y: cyD + 18, w: availD, h: bandH }, designState.hint, undefined, wrapped ? next : 1);
         } else {
-          drawDotWordCanvas(ctx, String(text).toUpperCase(), designState.density, { x: G.M, y: cyD - half, w: availD, h: half * 2 }, designState.hint);
+          drawDotWordCanvas(ctx, String(text).toLocaleUpperCase(CASE_LOCALE), designState.density, { x: G.M, y: cyD - half, w: availD, h: half * 2 }, designState.hint);
         }
       } else {
         const cy = G.inkCy(hasHeading);
@@ -9397,7 +9541,7 @@
     [...phrase].forEach((ch) => {
       if (/\s/.test(ch)) { cards.push({ type: "gap" }); return; }
       n++;
-      cards.push({ type: "flag", ch: /[a-z]/i.test(ch) ? ch.toUpperCase() : ch, index: n });
+      cards.push({ type: "flag", ch: pieceChar(ch), index: n });
     });
     return cards;
   }
@@ -9477,7 +9621,7 @@
       const title = document.createElement("p");
       title.className = "pt-banner-page-title";
       const own = withName(moreTitle("word"), "");
-      title.textContent = (own ? own + " \u00b7 " : phrase.toUpperCase() + " — " + T.bannerFlagsLabel + " — ") +
+      title.textContent = (own ? own + " \u00b7 " : phrase.toLocaleUpperCase(CASE_LOCALE) + " — " + T.bannerFlagsLabel + " — ") +
         T.pageCount.one + " " + (pi + 1) + " " + T.ofWord + " " + pages.length;
       head.appendChild(title);
       if (pi === 0) {
@@ -9715,7 +9859,7 @@
         cols.push("0.6fr");
         return;
       }
-      const ch = /[a-z]/i.test(rawCh) ? rawCh.toUpperCase() : rawCh;
+      const ch = pieceChar(rawCh);
       const piece = document.createElement("div");
       piece.className = "pt-puzzle-piece";
       piece.appendChild(outlineSVG(ch));
@@ -9744,7 +9888,7 @@
 
     const h = document.createElement("h3");
     h.className = "pt-puzzle-heading-text";
-    h.textContent = heading || (word + "’s Name Puzzle");
+    h.textContent = withName(heading, word) || withName(T.puzzleTitle, word);
     sheet.appendChild(h);
 
     sheet.appendChild(puzzleRowNode(word));
@@ -9830,7 +9974,7 @@
 
       ctx.font = "700 48px " + FONT;
       ctx.fillStyle = INK;
-      ctx.fillText(heading || (word + "’s Name Puzzle"), W / 2, 130);
+      ctx.fillText(withName(heading, word) || withName(T.puzzleTitle, word), W / 2, 130);
 
       const rowTop = 190, rowBottom = 620, rowH = rowBottom - rowTop;
       const availW = W - pad * 2;
@@ -9841,7 +9985,7 @@
       chars.forEach((rawCh, i) => {
         const w = availW * (weights[i] / totalWeight);
         if (rawCh !== " ") {
-          const ch = /[a-z]/i.test(rawCh) ? rawCh.toUpperCase() : rawCh;
+          const ch = pieceChar(rawCh);
           const cx = x + w / 2, cy = rowTop + rowH / 2;
           const fs = Math.min(rowH * 0.8, w * 0.85);
           ctx.font = FONT_WEIGHT + " " + Math.round(fs) + "px " + FONT;
@@ -10773,8 +10917,8 @@
       // CFG.initialChar locks a page to a single letter on load (spoke pages);
       // falls back to CHARS[0] when unset so existing pages are unaffected.
       let initial = CHARS[0];
-      if (CFG.initialChar && CHARS.indexOf(String(CFG.initialChar).toUpperCase()) !== -1) {
-        initial = String(CFG.initialChar).toUpperCase();
+      if (CFG.initialChar && CHARS.indexOf(String(CFG.initialChar).toLocaleUpperCase(CASE_LOCALE)) !== -1) {
+        initial = String(CFG.initialChar).toLocaleUpperCase(CASE_LOCALE);
       }
       const h = (window.location.hash || "").replace(/^#/, "");
       const match = CHARS.filter((c) => charSlug(c) === h)[0];

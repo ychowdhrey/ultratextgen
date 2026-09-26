@@ -107,7 +107,7 @@ const LOCALE_SET = new Set(LOCALES);
 // parent it declares in its own `hreflang="en"` (the same join
 // scripts/lib/translation-clusters.js uses), which is how the localized
 // printables directories — imprimibles, zum-ausdrucken, do-druku, da-stampare,
-// imprimiveis, om-uit-te-printen, imprimables — classify without being listed
+// imprimiveis, om-uit-te-printen, imprimables, yazdirilabilir — classify without being listed
 // here. Nothing about a locale's directory naming is hardcoded.
 
 const SECTIONS = [
