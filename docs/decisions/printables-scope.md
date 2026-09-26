@@ -13,6 +13,30 @@ tracing, pre-writing motor strokes, mazes, math worksheets — is out of scope h
 real but belongs to a possible future, separate property once this site is more
 established. Do not build it under this brand.
 
+## The test asks what prints, not how it was chosen (owner decision, 2026-09-26)
+
+The 2026-09-16 wording below asked *"could a visitor type a word or name into the
+feature and see that word rendered?"* It stopped describing the lane once the
+owner ruled on 2026-09-22 that quick-print intent stays no-generator: sight-word
+tracing became a Dolch/Fry picker, the six "in cursive" word pages print only their
+own word, and the bubble, graffiti, cursive and calligraphy alphabets lost their
+name tools to dedicated name pages. Measured on 2026-09-26, **14 of the 31 English
+families take no typing at all** (the three alphabet quick-print pages plus those
+11). Read literally, the old test failed all 14. None of them is out of scope.
+
+**Revised test:** *is what prints something a visitor could type, whether they
+type it or pick it from a ready-made set?* A sheet of letters, numbers, a word, a
+name or a phrase passes whether it came from a text box, an A to Z picker, a
+curated list or a fixed page word. A sheet whose content is a shape, a path or a
+sum fails, so mazes, shape-only tracing, pre-writing strokes and math worksheets
+stay out exactly as before. The boundary did not move. Only its wording changed,
+so that it no longer misreads the no-input pages as out of scope.
+
+**Superseded wording:** the 2026-09-16 section's phrasing *"whether the visitor's
+own typed text is what gets rendered"* is kept below as the record of that
+decision. Its outcome (typed word lists make word searches, crosswords and
+scrambles in scope) stands unchanged under the revised test.
+
 ## The test governs, and `word searches` left the exclusion list (owner decision, 2026-09-16)
 
 The rule stated the boundary two ways in one paragraph and they disagreed. A
@@ -93,6 +117,7 @@ UI page to cite; they use the site's existing words.
 **Status (2026-09-25):** the options, print size and translations shipped in
 PR #937 (merged, `ed12d4949`). The follow-up (monogram and cross-stitch, Dutch,
 class list on every name tool) is PR #941, not yet merged.
+**Update (2026-09-26):** #941 merged as `4a9332878`, confirmed on `main`.
 
 ## Printing a set of letters: which letters, then print size, then one button (owner decision, 2026-09-25)
 
@@ -151,6 +176,7 @@ alphabet pages still names the old "Save as a book" button. Rewriting it touches
 pages whose titles and headings carry em dashes, so it is a separate copy pass.
 
 **Status (2026-09-25):** PR #944, not yet merged.
+**Update (2026-09-26):** merged as `89ca12ccf`, confirmed on `main`.
 
 ## The `/learn/` pillar sits close to this boundary
 

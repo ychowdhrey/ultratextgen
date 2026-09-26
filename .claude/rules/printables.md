@@ -17,10 +17,16 @@ measurements, quality audits) and `docs/decisions/printables-scope.md`.
 
 ## Scope: the test governs, the examples illustrate it
 
-A printable belongs in this repo only if the thing being rendered is **text** — a
-letter, word, name or phrase. **The test: could a visitor type a word or name into
-the feature and see *that word* rendered?** If no, it is not a printable for this
+A printable belongs in this repo only if the thing being rendered is **text**: a
+letter, number, word, name or phrase. **The test: is what prints something a
+visitor could type, whether they type it or pick it from a ready-made set?** If
+the sheet's content is a shape, a path or a sum, it is not a printable for this
 repo.
+
+The test is about **what prints, not how it was chosen**. A page with no input at
+all passes when its sheet is text: an A to Z letter picker, the Dolch sight-word
+list, a fixed word such as "Mom" in cursive. Why the wording changed:
+`docs/decisions/printables-scope.md` (2026-09-26).
 
 In scope: bubble/cursive/block letters, coloring pages, tracing sheets, a
 dot-to-dot of a *name*, name puzzles, banners spelling a word, and word searches,
@@ -28,8 +34,9 @@ crosswords and word scrambles **built from typed words** (owner decision,
 2026-09-16 — the test wins over the older exclusion list).
 
 Out of scope: mazes, shape-only tracing, pre-writing motor strokes, math
-worksheets — nothing the visitor types appears in them. That demand is real and
-belongs to a possible future separate property; do not build it under this brand.
+worksheets. What they print is a shape, a path or a sum, not text anyone could
+type. That demand is real and belongs to a possible future separate property; do
+not build it under this brand.
 
 Nothing here bypasses the rest of the rules: a new URL still goes through
 `.claude/rules/content-architecture.md` (Hub-vs-Spoke, "check who already owns it")
