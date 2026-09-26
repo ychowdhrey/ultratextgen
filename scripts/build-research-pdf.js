@@ -108,6 +108,15 @@ async function main() {
     if (broken.length) throw new Error("images failed to load: " + broken.join(", "));
     if (errs.length) throw new Error("page errors: " + errs.join(" | "));
 
+    // Links resolve against the local server; a printed copy must point at the live site.
+    const rewritten = await page.evaluate((origin) => {
+      const canonical = new URL(document.querySelector('link[rel="canonical"]').href).origin;
+      let n = 0;
+      document.querySelectorAll("a[href]").forEach((el) => {
+        if (el.href.startsWith(origin)) { el.href = canonical + el.href.slice(origin.length); n++; }
+      });
+      return n;
+    }, base);
     const meta = await page.evaluate(() => {
       const dd = [...document.querySelectorAll(".research-meta div")]
         .reduce((m, d) => (m[d.querySelector("dt").textContent.trim()] = d.querySelector("dd").textContent.trim(), m), {});
@@ -130,7 +139,7 @@ async function main() {
       footerTemplate: `<div style="${small}display:flex;justify-content:space-between;"><span>${esc(meta.canonical)}</span><span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span></div>`
     });
     const kb = Math.round(fs.statSync(out).size / 1024);
-    process.stdout.write(`wrote ${path.relative(REPO, out)} (${kb} KB) from ${meta.canonical}, version ${meta.version}\n`);
+    process.stdout.write(`wrote ${path.relative(REPO, out)} (${kb} KB) from ${meta.canonical}, version ${meta.version}; ${rewritten} links pointed at the live site\n`);
   } catch (e) {
     process.stderr.write(`${e.message}\n`);
     code = 1;

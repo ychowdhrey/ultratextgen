@@ -51,7 +51,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <meta name="description" content="A controlled experiment on 144 computer-generated worksheet pages and 36 rendering methods: how much estimated printed coverage each method removes, and what it breaks.">
   <link rel="canonical" href="https://ultratextgen.com/research/printable-ink-efficiency-study/">
   <meta property="og:title" content="Printable Ink Efficiency Study">
-  <meta property="og:description" content="How much estimated printed coverage 36 rendering methods remove from 12 kinds of worksheet, and what each one breaks. Coverage, not ink: printer tests still to come.">
+  <meta property="og:description" content="How much estimated printed coverage 36 rendering methods remove from 12 kinds of worksheet, and what each one breaks. Coverage, not ink: no printer tests have been run yet.">
   <meta property="og:url" content="https://ultratextgen.com/research/printable-ink-efficiency-study/">
   <meta property="og:type" content="article">
   <meta property="og:image" content="https://ultratextgen.com/assets/og/research-printable-ink-efficiency-study.png">
@@ -60,7 +60,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <meta property="og:image:type" content="image/png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Printable Ink Efficiency Study">
-  <meta name="twitter:description" content="How much estimated printed coverage 36 rendering methods remove from 12 kinds of worksheet, and what each one breaks. Coverage, not ink: printer tests still to come.">
+  <meta name="twitter:description" content="How much estimated printed coverage 36 rendering methods remove from 12 kinds of worksheet, and what each one breaks. Coverage, not ink: no printer tests have been run yet.">
   <meta name="twitter:image" content="https://ultratextgen.com/assets/og/research-printable-ink-efficiency-study.png">
   <link rel="stylesheet" href="/style.css">
 
@@ -203,8 +203,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <span class="article-section-label">Abstract</span>
       <h2>What the study asked and what it can conclude</h2>
       <p><strong>Question.</strong> Which ways of rendering a printable page reduce how much of the page a printer is asked to cover, without damaging what the page is for?</p>
-      <p><strong>What was tested.</strong> 36 rendering methods, compared with the unchanged page: page-wide fading, lighter solid color, lighter fills only, grayscale, two kinds of black and white, outline-only, background and decoration removal, halftone and dither patterns, high contrast, and five combinations built from the first round of results. Each was applied to 108 computer-generated pages (12 worksheet types, each at 3 fullness levels and 3 element sizes). 84 replicate pages checked other content and US Letter paper, and 36 pages of 4 unseen types were held back to test the recommendations.</p>
-      <p><strong>What was measured.</strong> Estimated printed coverage from the rendered pixels; whether each page's critical elements stayed visible and legible; survival through a simulated photocopier; file size and render time; and what the exported PDF actually contains. The study produced 6,616 measurement rows.</p>
+      <p><strong>What was tested.</strong> 36 rendering methods, compared with the unchanged page: page-wide fading, lighter solid color, lighter fills only, grayscale, two kinds of black and white, outline-only, background and decoration removal, halftone and dither patterns, high contrast, and ten methods built from the first round of results (five combined methods and five pairs that test how savings combine). Each was applied to 108 computer-generated pages (12 worksheet types, each at 3 fullness levels and 3 element sizes). 84 replicate pages, rendered with a reduced set of 14 methods, checked other content and US Letter paper, and 36 pages of 4 unseen types were held back to test the recommendations.</p>
+      <p><strong>What was measured.</strong> Estimated printed coverage from the rendered pixels; whether each page's critical elements kept their visibility, text contrast and color separation; survival through a simulated photocopier; file size and render time; and what the exported PDF actually contains. The study produced 6,616 measurement rows.</p>
       <p><strong>What it can conclude.</strong> How much estimated coverage each method removes on each kind of page, and what each method breaks, in the tested conditions.</p>
       <p><strong>What it cannot conclude.</strong> How much ink or toner any method saves on a real printer, or how real readers judge the pages. Physical printer validation has not been run, and the visual reviewers were AI models.</p>
     </section>
@@ -214,9 +214,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <ul>
         <li>No single ink-saving setting performed best on every page. What a page can save depends on what covers it.</li>
         <li>Five of the 12 page types cover under 3% of the paper as designed. For handwriting sheets and photocopy masters, the best trade-off found was to leave the page unchanged.</li>
-        <li>Where backgrounds, borders or large color areas carry most of the coverage, removing decoration and lightening fills cut estimated coverage by about 60 to 97% per design, with text, lines and pictures still passing the checks.</li>
+        <li>On the poster, cut-card and decorated-worksheet designs, where backgrounds, borders or large color areas carry most of the coverage, removing decoration and lightening fills cut estimated coverage by about 60 to 97% on average per design (49 to 99% page by page). Text, lines and pictures still passed the checks, a result that is partly true by design because decoration was never a checked element.</li>
         <li>Page-wide fading cuts coverage in proportion to the fade (75% strength: about 26% less) and removes no mark. Page opacity already failed 12 of 108 pages at 75%.</li>
-        <li>Authored dot patterns never meaningfully beat an equally light flat color, and Chromium's PDF export stored them as 72 ppi images.</li>
+        <li>As drawn in the browser, authored dot patterns never meaningfully beat an equally light flat color. Chromium's PDF export then stored them as 72 ppi images, so the file a user prints no longer carries the designed pattern.</li>
       </ul>
     </section>
 
@@ -250,22 +250,22 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </figure>
     <figure class="research-figure is-wide">
       <a href="/assets/research/printable-ink-efficiency-study/reduction-by-mode.png"><img src="/assets/research/printable-ink-efficiency-study/reduction-by-mode.png" alt="Dot plot of the reduction in estimated coverage for each of the 36 methods across 108 pages, with failed pages marked as red crosses." loading="lazy"></a>
-      <figcaption>Reduction in estimated coverage for every method on every development page. One dot per page; the bar is the median; red crosses failed the function check. Method names are the identifiers used in the data files.</figcaption>
+      <figcaption>Reduction in estimated coverage for every method on every development page. One dot per page; the bar is the median; red crosses failed the function check (below 0.80). The figure's legend calls every other page &ldquo;function kept&rdquo;; elsewhere on this page that term means 0.95 or above. Method names are the identifiers used in the data files.</figcaption>
     </figure>
 
     <figure class="research-figure">
       <a href="/assets/research/printable-ink-efficiency-study/halftone-dither.png"><img src="/assets/research/printable-ink-efficiency-study/halftone-dither.png" alt="Line chart of total tone against nominal tone for a navy fill: every halftone and dither line sits above the flat-tint line; a bar chart beside it shows PDF sizes of 1, 1, 19 and 58 KB." loading="lazy"></a>
-      <figcaption>Navy test patch at 600 dpi: halftones and a dither against the equally light flat tint (left), and the size of the same 60 &times; 60 mm patch as a Chromium PDF (right).</figcaption>
+      <figcaption>Navy test patch at 600 dpi: halftones and a dither against the equally light flat tint (left), and the median size of all 60 &times; 60 mm test patches, every color, tone and dot spacing, as Chromium PDFs (right).</figcaption>
     </figure>
 
       <h3 id="function-findings">Function checks</h3>
       <ul class="research-findings">
-        <li><span class="evidence-tag is-measured">Function check</span> <strong>Page opacity fails first where text sits on color.</strong> At 75% opacity, 12 of 108 pages failed: all 9 posters, where white labels fell from 2.4:1 to 1.9:1 against their fills, and 3 dense cut-card pages, where dark labels on pink card fills fell from 4.63:1 to 2.76:1. The lighter-color version re-colors white text dark when its fill lightens; it passed the posters and failed only those 3 cut-card pages.</li>
+        <li><span class="evidence-tag is-measured">Function check</span> <strong>Page opacity fails first where text sits on color.</strong> At 75% opacity, 12 of 108 pages failed: all 9 posters, where white 12 pt labels, already below the 4.5:1 line as designed (2.4:1), fell to 1.9:1 against their fills, and 3 dense cut-card pages, where dark labels on pink card fills fell from 4.63:1 to 2.76:1. The lighter-color version re-colors white text dark when its fill lightens; it passed the posters and failed only those 3 cut-card pages.</li>
         <li><span class="evidence-tag is-measured">Function check</span> <strong>Near-black text crosses the 4.5:1 line between 60% and 55% strength.</strong> #1a1a1a text on white measures 7.69:1 at 75%, 4.54:1 at 60% and 3.90:1 at 55%. Text that starts as dark gray crosses much earlier. On the decorated worksheet the white banner title (large text, 3:1 line) fell to 2.79:1 at 75%; dark text on its pale yellow background held 7.10:1 at 75% and fell to 4.26:1 at 60%.</li>
-        <li><span class="evidence-tag is-measured">Function check</span> <strong>Stronger fading fails most pages.</strong> 60% page opacity failed 46 of 108 pages, including every handwriting and cut-card page and 8 of 9 photocopy masters; 55% lighter color failed 83; 45% opacity and 30% lighter color failed all 108.</li>
-        <li><span class="evidence-tag is-measured">Function check</span> <strong>Hard black and white is unreliable.</strong> Thresholding the rendered page to 1-bit failed 62 of 108 pages. A per-element conversion kept text and lines but turned gray tracing letters solid black (+86% coverage on handwriting pages); the automated check missed this, and the AI reviewers scored it 2 out of 5.</li>
+        <li><span class="evidence-tag is-measured">Function check</span> <strong>Stronger fading fails many pages, and every page by 45%.</strong> 60% page opacity failed 46 of 108 pages, including every handwriting and cut-card page and 8 of 9 photocopy masters; 55% lighter color failed 83; 45% opacity and 30% lighter color failed all 108.</li>
+        <li><span class="evidence-tag is-measured">Function check</span> <strong>Hard black and white is unreliable.</strong> Thresholding the rendered page to 1-bit failed 62 of 108 pages. A per-element conversion kept text and lines but turned gray tracing letters solid black (+86% coverage on handwriting pages); the automated check missed this, and the AI reviewers scored it 2 out of 5 (their brief had listed this defect as an example).</li>
         <li><span class="evidence-tag is-measured">Function check</span> <strong>Knockout text is the implementation trap.</strong> Removing or outlining fills without re-coloring the white text on them lost every word on all 9 posters.</li>
-        <li><span class="evidence-tag is-measured">Function check</span> <strong>Color categories.</strong> Grayscale reduced four pastel categories to a color difference of 0.2 (CIEDE2000; 10 was the distinguishable line) and failed 6 of 9 color-key pages. Lightening fills to 55% kept saturated categories apart for normal color vision. In a deuteranopia simulation, the key's weakest red and green pair fell from 5.2 to 2.9.</li>
+        <li><span class="evidence-tag is-measured">Function check</span> <strong>Color categories.</strong> Grayscale reduced four pastel categories to a color difference of 0.2 (CIEDE2000; 10 was the distinguishable line) and failed 6 of 9 color-key pages. Lightening fills to 55% kept saturated categories apart for normal color vision. In a deuteranopia simulation, the key's weakest red and green pair, already below the distinguishable line of 10 as designed (5.2), fell to 2.9.</li>
         <li><span class="evidence-tag is-simulated">Simulated</span> <strong>Copies suffer before the original.</strong> In the simulated copier, the worst-hit lines or text at 75% opacity kept 81% as many visible marks as the unchanged page's own copies on medium-size pages and 62% on small-element pages; at 60%, 67% and 36%. Two simulated copies erased pale flat tints outright.</li>
       </ul>
     <figure class="research-figure is-wide">
@@ -292,8 +292,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <h3 id="pdf-findings">Chromium and PDF behavior</h3>
       <ul class="research-findings">
         <li><span class="evidence-tag is-renderer">Chromium-specific</span> <strong>Chromium's PDF export does not keep dot patterns.</strong> Every pattern-filled shape was written as its own full-page 72 ppi image with an alpha mask, not as vector dots. At 0.35 to 0.5 mm spacing the PDF holds a flat, lighter tone; at 1 to 2 mm, blocky aliased dots. Flat tints stay vector. So the halftone results above describe the pattern as drawn in the browser, not the file a user would print.</li>
-        <li><span class="evidence-tag is-renderer">Chromium-specific</span> <strong>PDF engines therefore disagree on patterns.</strong> MuPDF and PDFium showed 0.35 to 0.5 mm halftones 8 to 39% lighter than Chromium's own raster of the same design, while agreeing with each other within 6%. Flat methods agreed within 1 to 5% across all four renderers.</li>
-        <li><span class="evidence-tag is-renderer">Chromium-specific</span> <strong>Pattern files are large and slow.</strong> Page PDFs with patterns were a median 21 times (halftone) and 28 times (dither) the size of the unchanged page, up to 148 MB and 198 MB for one A4 page, and the slowest single export took 723 seconds. Flat methods rendered and exported within a few percent of the unchanged page.</li>
+        <li><span class="evidence-tag is-renderer">Chromium-specific</span> <strong>Chromium's PDF of a fine pattern is lighter than the design.</strong> MuPDF and PDFium showed 0.35 to 0.5 mm halftones 8 to 39% lighter than Chromium's own raster of the same design, while agreeing with each other within 6%. Flat methods agreed within 1 to 5% across all four renderers.</li>
+        <li><span class="evidence-tag is-renderer">Chromium-specific</span> <strong>Pattern files are large and slow.</strong> Page PDFs with patterns were a median 19 to 21 times (halftone) and 28 times (dither) the size of the unchanged page, up to 148 MB and 198 MB for one A4 page, and the slowest single export took 723 seconds (timings are upper bounds: the machine was not idle for part of the run). Flat methods rendered and exported within a few percent of the unchanged page, except per-element and text-only opacity, whose PDFs were a median 1.5 and 1.1 times larger (up to about 12 times).</li>
         <li><span class="evidence-tag is-renderer">Chromium-specific</span> <strong>Filter-based implementations rasterize the whole page.</strong> Grayscale or lightening applied as a CSS filter or an SVG filter exported the page as an image with no text layer; plain group opacity stayed vector.</li>
       </ul>
     <figure class="research-figure is-wide">
@@ -334,7 +334,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           </tbody>
         </table>
       </div>
-      <p>Points are percentage points of estimated coverage. Two picks depend on how "kept function" is applied: if every page, not the average, must score at least 0.90, cut-out cards move to lighter fills; at 0.95, cut-out cards move to leave unchanged and picture cards to 75% opacity. Where 75% opacity was picked, it more than halves text contrast (17.4:1 to 7.7:1 for near-black text), so it is not a choice for low-vision readers or long reading. Rankings that compare faded text against removed fills are coverage rankings only; they need a physical test before they can be read as ink rankings.</p>
+      <p>Points are percentage points of estimated coverage. Two picks depend on how "kept function" is applied: if every page, not the average, must score at least 0.90, cut-out cards move to lighter fills; at 0.95, cut-out cards move to leave unchanged and picture cards to 75% opacity. Where 75% opacity was picked, it more than halves text contrast (17.4:1 to 7.7:1 for near-black text, still above the 7:1 enhanced line) to save 0.3 to 1.4 points, so we would not use it for low-vision readers or long reading; no reader was tested. Rankings that compare faded text against removed fills are coverage rankings only; they need a physical test before they can be read as ink rankings.</p>
     </section>
 
     <section class="editorial-section" id="holdout">
@@ -354,7 +354,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <h2>How the study was run</h2>
 
       <h3>Pages</h3>
-      <p>Every page was generated from code, so one property could change at a time. Twelve development types were each built at three fullness levels (30%, 60% and 92% of the usable area populated) and three element sizes (for example 16, 12 and 9 pt body text; 0.40, 0.25 and 0.15 mm guide lines) on A4 with 15 mm margins: 108 pages. Replicates rebuilt the typical page of each type with four more content seeds and on US Letter (84 pages); seeds change words and picture choice, not layout. Text is pseudo-words; pictures are simple vector clip art and procedural photographs.</p>
+      <p>Every page was generated from code, so one property could change at a time. Twelve development types were each built at three fullness levels (30%, 60% and 92% of the usable area populated) and three element sizes (for example 16, 12 and 9 pt body text; 0.40, 0.25 and 0.15 mm guide lines) on A4 with 15 mm margins: 108 pages. Replicates rebuilt each type's typical page with four more content seeds (48 pages) and its three medium-size pages on US Letter (36 pages), with a reduced set of 14 methods; seeds change words and picture choice, not layout. Text is pseudo-words; pictures are simple vector clip art and procedural photographs.</p>
       <div class="data-table-wrap">
         <table class="data-table">
           <thead><tr><th scope="col">Page type</th><th scope="col">Stands in for</th><th scope="col">Critical elements</th></tr></thead>
@@ -404,7 +404,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p>Each page type declares its critical elements, and a page scores the minimum over them, so it is only as usable as its most damaged element. Text contrast is measured against the fills actually beneath it, at 4.5:1 for normal text and 3:1 for large text (at least 18 pt, or 14 pt bold), and lines at 3:1; these WCAG 2.2 thresholds are a screen standard used as a print proxy. A mark counts as visible when it differs from what lies beneath it by at least a 15% tone step. Color categories count as distinguishable at a CIEDE2000 difference of 10. Pictures are compared by edge structure at pixel and reading-distance scales. A page fails below 0.80 and keeps function at 0.95 or above.</p>
 
       <h3>Simulated photocopying</h3>
-      <p>Each copy generation applies a 0.10 mm optical blur, maps anything lighter than 90% luminance to paper and anything darker than 10% to solid black, and adds noise; three generations were run. Survival is compared with the unchanged page's own copies, per critical element, after the first and second copy. The settings were chosen to reproduce documented copier behavior and were not fitted to any machine.</p>
+      <p>Each copy generation applies a 0.10 mm optical blur, maps anything lighter than 0.90 luma (Rec. 709) to paper and anything darker than 0.10 to solid black, and adds noise; three generations were run. Survival is compared with the unchanged page's own copies, per critical element, after the first and second copy. The settings were chosen to reproduce documented copier behavior and were not fitted to any machine.</p>
 
       <h3>Classification</h3>
       <p>On each page, a method was marked failed below the function line; dominated when another tested method was at least as good on both coverage estimates, function, copy survival and complexity, and strictly better on one (this includes "no effect on this page"); needing physical validation when its saving depends on device behavior (patterns, colors pushed into a faint band, or color moved to black); promising when it cut at least 15% and a full point with function and copies kept; and conditional otherwise.</p>
@@ -413,8 +413,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <ul>
         <li><strong>Renderers.</strong> Chromium's rasters were compared with resvg 0.48.1, and Chromium's PDFs were rasterized with MuPDF (PyMuPDF 1.28.2) and PDFium (pypdfium2 5.13.0). Firefox and WebKit were not available.</li>
         <li><strong>Robustness.</strong> Statuses were stable in 167 of 168 content-seed cells and in 99% of 504 A4 versus US Letter comparisons. Failure counts were re-run at alternative thresholds and criteria.</li>
-        <li><strong>Visual review.</strong> Two independent AI vision reviewers scored 21 methods on each type's typical page from coded images, without method names or coverage figures (86.5% identical usability scores, all within one point; Cohen's kappa 0.74, weighted 0.92). A third re-scored the poster and decorated worksheet after a bug fix.</li>
-        <li><strong>Independent review.</strong> Seven AI agents, each reviewing from one professional perspective, and an adversarial claim check reviewed the results against the data and code before publication. They found three measurement errors and the PDF export behavior above; all were corrected in this version.</li>
+        <li><strong>Visual review.</strong> Two independent AI vision reviewers scored 21 methods on each type's typical page from coded images, without method names or coverage figures (86.5% identical usability scores, all within one point; Cohen's kappa 0.74, weighted 0.92). A third re-scored the poster and decorated worksheet after a bug fix. Raters and the automated check agreed only moderately (rank correlation 0.61): the check was stricter on contrast, failing 29 renderings the raters scored usable with defects, and laxer on guide hierarchy and pale colors.</li>
+        <li><strong>Independent review.</strong> Seven AI agents, each reviewing from one professional perspective, and an adversarial claim check reviewed the results against the data and code before publication. They found three measurement errors and the PDF export behavior above; the errors and figures were corrected in this version, and what re-analysis could not fix is listed under Limitations.</li>
       </ul>
     </section>
 
@@ -427,8 +427,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <li><strong>Contrast assumes flat tones.</strong> A printer prints a lighter color as dots, so faded text and thin guides may perform worse on paper than here.</li>
         <li><strong>The four-color estimate is a naive proxy.</strong> No color-managed separation with an ink limit was run, and near-black colors with a slight tint count much higher than pure black.</li>
         <li><strong>Chromium PDF behavior.</strong> Pattern fills export as 72 ppi images and filters rasterize the whole page in this build; other PDF producers were not tested, and only one browser engine was available.</li>
+        <li><strong>The simplicity ranking assumes screen implementations.</strong> Lighter color and grayscale were rated the simplest methods, but applied as a CSS or SVG filter they rasterize the PDF in this Chromium build.</li>
         <li><strong>Halftone results describe the pattern as drawn,</strong> not the image stored in the PDF, and pattern savings on the 150 dpi grid move by up to 3.9 points with resolution.</li>
         <li><strong>The copier is simulated.</strong> Its settings were not fitted to a device and drive the copy findings.</li>
+        <li><strong>Coverage was measured on the master, not on copies.</strong> The simulated copier already drops the decorated worksheet's pale background on the first copy, so when a class set is photocopied, removing it saves coverage on the master only.</li>
         <li><strong>Some thresholds were not varied:</strong> the color-difference line (10), the dominance tolerance, the 0.95 function line, the 0.90 copy line, the complexity scale and the copier settings. Function is a pass/fail line, so failure counts depend on where it sits. With a 0.90 failure line, Eco Colour fails 3 dense cut-card pages; under the first, stricter picture check it would fail 9 mixed worksheets; with deuteranopia in the color check it fails all 9 color-key pages.</li>
         <li><strong>Decoration results are partly true by design.</strong> Decoration was never a critical element, so removing it could only fail by damaging something else, and the saving equals the decoration share the designs gave each page. Layout, visual hierarchy and appeal were not measured.</li>
         <li><strong>Only one color-vision deficiency was simulated</strong> (deuteranopia). Some standard pages already fall below accessibility thresholds, and function is scored relative to them.</li>
@@ -448,7 +450,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <section class="editorial-section" id="data">
       <span class="article-section-label">Data</span>
       <h2>Data, samples and reproducibility</h2>
-      <p>The full study is available as a PDF generated from this page: <a href="/research/printable-ink-efficiency-study.pdf" download>Printable Ink Efficiency study, version 1.0 (PDF, 1.5 MB)</a>. The measurement data are CSV files with one header row; coverage values are fractions of the page (0.25 = 25%).</p>
+      <p>The full study is available as a PDF generated from this page: <a href="/research/printable-ink-efficiency-study.pdf" download>Printable Ink Efficiency study, version 1.0 (PDF, 1.5 MB)</a>. The measurement data are CSV files with one header row; coverage values are fractions of the page (0.25 = 25%), and total tonal coverage can exceed 1 because a saturated two-ink color counts about 2.</p>
       <div class="data-table-wrap">
         <table class="data-table">
           <thead><tr><th scope="col">File</th><th scope="col">Contents</th></tr></thead>
@@ -466,7 +468,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
             <tr><td><a href="/research/printable-ink-efficiency-study/data/halftone-dither.csv">halftone-dither.csv</a></td><td>Halftone, dither and flat-tint patches: coverage, simulated device screen, copies, file sizes, renderer readings</td></tr>
             <tr><td><a href="/research/printable-ink-efficiency-study/data/pdf-pattern-structure.csv">pdf-pattern-structure.csv</a>, <a href="/research/printable-ink-efficiency-study/data/pdf-filter-check.csv">pdf-filter-check.csv</a></td><td>What Chromium's PDFs contain for each pattern, and whether filter implementations stay vector</td></tr>
             <tr><td><a href="/research/printable-ink-efficiency-study/data/renderer-consistency.csv">renderer-consistency.csv</a>, <a href="/research/printable-ink-efficiency-study/data/resolution-sensitivity.csv">resolution-sensitivity.csv</a></td><td>Chromium, resvg, MuPDF and PDFium compared; 100, 150 and 300 dpi compared</td></tr>
-            <tr><td><a href="/research/printable-ink-efficiency-study/data/performance-results.csv">performance-results.csv</a></td><td>Load, raster and PDF export times, DOM size and PDF size per method</td></tr>
+            <tr><td><a href="/research/printable-ink-efficiency-study/data/performance-results.csv">performance-results.csv</a></td><td>Load, raster and PDF export times, DOM size and PDF size per method (times are upper bounds: the machine was not idle for part of the run; the layout_s and style_s columns were not recorded and are 0 on every row)</td></tr>
             <tr><td><a href="/research/printable-ink-efficiency-study/data/visual-quality-results.csv">visual-quality-results.csv</a></td><td>The AI reviewers' scores and defect notes, decoded</td></tr>
           </tbody>
         </table>
