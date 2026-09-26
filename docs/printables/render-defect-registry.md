@@ -11,7 +11,7 @@ Every number below was measured, not estimated. Where a first reading was wrong 
 recorded as a correction rather than removed, because the wrong reading is the one a future
 audit will repeat.
 
-**2026-09-25:** R-022 and R-023 added, both fixed on `happy-birthday-in-cursive` and open on the other script sheets.
+**2026-09-25:** R-022 and R-023 added, both fixed on `happy-birthday-in-cursive` and open on the other script sheets. **2026-09-26:** both also fixed on its Indonesian sibling `id/printables/tulisan-selamat-ulang-tahun`, where R-023 turned out to have an upward half.
 
 **Fix status (2026-09-19).** Twenty-one entries; **eighteen are closed**, each with the same
 instrument re-run against the same input: R-001 through R-011, R-014, R-016, R-017 and
@@ -1182,6 +1182,8 @@ and pen lifts) along it. It refuses to write unless the route is on the ink and 
 |---|---|---|---|---|
 | `Happy Birthday` | 100.00% | 98.75% | 18px (limit 32) | 7 |
 | `happy birthday` | 100.00% | 98.75% | 13px (limit 32) | 4 |
+| `Selamat Ulang Tahun` (Playwrite ID, 2026-09-26) | 100.00% | 100.00% | 0px (limit 34) | 7 |
+| `selamat ulang tahun` (Playwrite ID, 2026-09-26) | 100.00% | 100.00% | 0px (limit 34) | 5 |
 
 The gap measure is the one that matters: a waypoint list missing the top of one `p` was 100%
 on-glyph and 97.8% covered, and only the 80px undrawn run caught it (reproduced deliberately
@@ -1190,6 +1192,17 @@ own dot resolver, which also merges the dots of a stroke that doubles back over 
 numbered start mark on each stroke. Rows: model, bold dots, fine dots, start marks only, two
 blank. A page opts in with `CFG.cursiveRoute`; every other word, face, weight or tracking keeps
 the outline.
+
+**Fixed 2026-09-26 for the Indonesian sibling, both forms.** Its face is Playwrite ID (the upright
+school model), so its route is its own, read from its own ink; the spec and builder now carry a
+baseline and canvas height per face. That was not a formality: at US Trad's raster (baseline 500px
+in an 800px canvas) Playwrite ID's capitals ran off the top of the canvas, and a cut letter thins
+to a stroke the font does not have. The builder now refuses a raster with ink on its top or bottom
+row. The two ID phrases score 100% / 100% / 0px because the face is a clean monoline with round
+terminals, which leaves no thinning spurs; a clean score is only worth something if the check can
+fail, so it was broken on purpose first: dropping the T's crossbar still read **97.48% covered**
+(above the 97% line) and failed only on its **244px** undrawn run; skipping the g's loop failed at
+94.91% and 716px.
 
 ## R-023 — Ruled rows clip script descenders
 
@@ -1209,6 +1222,16 @@ row, blank rows included so the ruling lines up down the page: viewBox height 27
 the page. **Open** on the other cursive and calligraphy sheets: the same one-line opt-in would fix
 them, but it shrinks their letters by the same ratio, which is a change to seven pages nobody has
 looked at yet.
+
+**The upward half, found 2026-09-26 on the Indonesian sibling.** Playwrite ID stands **1.43em**
+above its baseline. Its ruled row puts the top rule at **y = −31** and its S, U, T, l and h at
+about −27, both above the box's top edge at 0, on `main` too. There it did not show, because the
+row letterboxed inside its band and the overflow landed in the spare room. `fitInk` removed the
+spare room (viewBox 200 → 343 high, to take the g's loop), the row filled its band, and the tops
+were cut off every row of the PDF, the T's crossbar entirely. A routed row now also passes
+`fitTop`, which starts the box above 0: viewBox `0 −42 2194 385`, rule and ink inside. A face
+whose ink already starts inside the box gets `y0 = 0`: the two English sheets rendered
+pixel-identical before and after, and so did eleven unrouted pages checked against `main`.
 
 ---
 

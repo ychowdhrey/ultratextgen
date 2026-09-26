@@ -1570,13 +1570,29 @@
        ruling lines up across a row. Measured per pair, a "G g" tile came out
        taller than "H h" beside it and printed its lines lower. */
     const fit = o.fitInk && GMW ? GMW.ink(String(o.fitInk), font, WORD_OUTLINE_FS, FONT_WEIGHT) : null;
+    /* o.fitTop: the same, upward, so the box starts above y = 0 (y0 < 0).
+       Playwrite ID stands 1.43em above its baseline: its S, U, T, l and h,
+       and the top rule drawn at that height, sit above the box's top edge.
+       Unfitted, the row letterboxed and the overflow happened to land in the
+       spare room; fitted below, the row fills its band and the tops were cut
+       off the page, the T's crossbar entirely. Only the routed sheets ask for
+       it (nameRow), and a face whose ink already starts inside the box (US
+       Trad) gets y0 = 0 and an unchanged row. */
+    let y0 = 0;
     if (fit && fit.exact && im) {
       const base = gRul ? gRul.base
         : (im.emAscent != null ? WORD_OUTLINE_ANCHOR_Y + (im.emAscent - im.emDescent) / 2 : null);
-      if (base != null) h = Math.max(h, Math.ceil(base + Math.max(im.bottom, fit.bottom) + wordStroke + 8));
+      if (base != null) {
+        h = Math.max(h, Math.ceil(base + Math.max(im.bottom, fit.bottom) + wordStroke + 8));
+        if (o.fitTop) {
+          const inkTop = base + Math.min(im.top, fit.top) - wordStroke - 8;
+          const ruleTop = gRul ? gRul.base - gRul.band * Math.max.apply(null, ruling().lines.map((l) => l.at)) - 4 : 0;
+          y0 = Math.min(0, Math.floor(Math.min(inkTop, ruleTop)));
+        }
+      }
     }
     return {
-      w: w, h: h, model: model, inkLeft: inkLeft,
+      w: w, h: h, y0: y0, model: model, inkLeft: inkLeft,
       fontSize: WORD_OUTLINE_FS, font: font, spacing: spacing,
       anchorY: WORD_OUTLINE_ANCHOR_Y, guides: gRul,
       fill: o.solid ? (o.fill || INK) : "#ffffff",
@@ -1677,7 +1693,7 @@
     const old = row.querySelector(":scope > svg.pt-word-outline");
     if (!old) return;
     const g = wordOutlineGeom(d.word, d.opts);
-    const vw = practiceRowVW(row, g.h);
+    const vw = practiceRowVW(row, g.h - g.y0);
     if (!vw) return;
     const o = Object.assign({}, d.opts, { rowVW: vw });
     if (!d.opts.blank) o.practice = practiceStyle;
@@ -1810,7 +1826,7 @@
     if (!probe || !probe.__ptPractice) return false;
     const d = probe.__ptPractice;
     const g = wordOutlineGeom(d.word, d.opts);
-    const vw = practiceRowVW(probe, g.h);
+    const vw = practiceRowVW(probe, g.h - g.y0);
     if (!vw) return false;
     /* Asked of the SHEET, not of the preview card. The two are real rows built
        by the same code, but they are not the same width -- a preview card is
@@ -1836,7 +1852,7 @@
     const g = wordOutlineGeom(word, o);
     const w = g.w, fontSize = g.fontSize, spacing = g.spacing;
     const svg = document.createElementNS(SVGNS, "svg");
-    svg.setAttribute("viewBox", "0 0 " + w + " " + g.h);
+    svg.setAttribute("viewBox", "0 " + g.y0 + " " + w + " " + (g.h - g.y0));
     svg.setAttribute("class", "pt-word-outline");
     svg.setAttribute("role", "img");
     svg.setAttribute("aria-label", word);
@@ -5392,15 +5408,23 @@
      "Happy Birthday" / "happy birthday") is told which one is in use by a
      document event its form picker raises (js/printables/cursiveDemo.js).
      Only a listed form is taken: this chooses between ready-made sheets, it
-     is not a text field by another route. */
+     is not a text field by another route. A page that also has a text field
+     (the Indonesian sibling keeps one: no Indonesian page takes a name in
+     cursive yet) has the field follow the picker while it holds a form or
+     nothing; text the visitor typed is theirs and stays. */
   const NAME_FORMS = Array.isArray(CFG.nameForms) ? CFG.nameForms.map(String) : [];
   let nameForm = null;
   if (NAME_FORMS.length) {
     document.addEventListener("utg:cursive-form", (e) => {
       const w = e && e.detail ? String(e.detail.word) : "";
-      if (NAME_FORMS.indexOf(w) === -1 || w === (nameForm || NAME_DEMO)) return;
+      if (NAME_FORMS.indexOf(w) === -1) return;
+      const before = nameValue();
       nameForm = w;
-      renderNamePreview();
+      if (el.nameInput) {
+        const typed = el.nameInput.value.trim();
+        if (!typed || NAME_FORMS.indexOf(typed) !== -1) el.nameInput.value = w;
+      }
+      if (nameValue() !== before) renderNamePreview();
     });
   }
   function nameValue() {
@@ -5866,14 +5890,15 @@
        SVG root clips, so the loops of p and y -- half of what a cursive route
        asks the child to trace -- were cut off on the model row and on every
        trace row (measured on the Happy Birthday PDF, 2026-09-25). The same
-       fitInk the cursive alphabet's letter pairs already use; every row of the
-       sheet takes it, blank rows included, so the ruling lines up down the
+       fitInk the cursive alphabet's letter pairs already use, and fitTop for a
+       face whose capitals rise past the box (Playwrite ID); every row of the
+       sheet takes both, blank rows included, so the ruling lines up down the
        page. */
     const routedSheet = !!cursiveRouteFor(name);
     if (kind === "blank") {
       if (RULED_ROWS) {
         const o = { blank: true, guides: true };
-        if (routedSheet) o.fitInk = name;
+        if (routedSheet) { o.fitInk = name; o.fitTop = true; }
         row.appendChild(wordOutlineSVG(name, o));
         stashPracticeRow(row, name, o);
       }
@@ -5898,6 +5923,7 @@
       if (RULED_ROWS) o.practice = practiceStyle;
       if (routedSheet) {
         o.fitInk = name;
+        o.fitTop = true;
         if (kind === "trace" || kind === "start") {
           o.route = { mode: kind, level: level || ROUTE_TRACE_LEVELS[0] };
           o.overlay = false;   // the route's own start marks are the overlay

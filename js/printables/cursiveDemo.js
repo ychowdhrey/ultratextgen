@@ -73,7 +73,7 @@
     return { xh: up("x"), top: Math.max(up("H"), up("dhbklt")), bottom: down("gjpqy") };
   }
 
-  /* The advance of the first word and its space, in em, from the face. */
+  /* The advance of the words before a space, and the space, in em, from the face. */
   function splitAdvance(font, weight, head) {
     const c = document.createElement("canvas").getContext("2d");
     c.font = weight + " " + FS + "px '" + font + "'";
@@ -101,7 +101,7 @@
     let timer = 0;
     let shown = 0;         // reduced motion: strokes revealed so far
     let played = false;
-    let layoutSplit = 0;
+    let layoutStacked = false;
 
     function steps() {
       const block = document.querySelector('[data-form-block="' + word.replace(/"/g, '\\"') + '"] .pt-demo-steps')
@@ -133,19 +133,23 @@
       const pad = 0.28 * FS;
       const ox = pad;
       /* A phone is too narrow for a nine-letter phrase on one line: the whole
-         thing drew about 60px tall. Two words go on two lines there. Every pen
-         stroke belongs to one word -- the pencil always lifts between words --
-         so a stroke moves to line 2 by where it starts. */
-      const sp = word.indexOf(" ");
-      const split = sp > 0 && stage.clientWidth > 0 && stage.clientWidth < TWO_LINE_BELOW
-        ? splitAdvance(font, route.weight || 400, word.slice(0, sp + 1)) : 0;
-      layoutSplit = split;
+         thing drew about 60px tall. Each word goes on its own line there.
+         Every pen stroke belongs to one word -- the pencil always lifts
+         between words -- so a stroke moves to a word's line by where it is. */
+      const splits = [];
+      if (stage.clientWidth > 0 && stage.clientWidth < TWO_LINE_BELOW) {
+        for (let sp = word.indexOf(" "); sp > 0; sp = word.indexOf(" ", sp + 1)) {
+          splits.push(splitAdvance(font, route.weight || 400, word.slice(0, sp + 1)));
+        }
+      }
+      layoutStacked = splits.length > 0;
       const lineH = (m.top + m.bottom + 0.42) * FS;
       const by = (m.top + 0.2) * FS;
-      const W = (split ? Math.max(split, route.advance - split) : route.advance) * FS + 2 * pad;
-      const H = by + (m.bottom + 0.16) * FS + (split ? lineH : 0);
+      const starts = [0].concat(splits), ends = splits.concat([route.advance]);
+      const W = Math.max.apply(null, starts.map((a, k) => ends[k] - a)) * FS + 2 * pad;
+      const H = by + (m.bottom + 0.16) * FS + splits.length * lineH;
       const svg = el("svg", { viewBox: "0 0 " + (+W.toFixed(1)) + " " + (+H.toFixed(1)), class: "pt-demo-svg", "aria-hidden": "true", focusable: "false" });
-      const lines = split ? [[by, word.slice(0, sp)], [by + lineH, word.slice(sp + 1)]] : [[by, word]];
+      const lines = (splits.length ? word.split(" ") : [word]).map((w, k) => [by + k * lineH, w]);
       // Ruling: top of the tall letters, the x-height (dashed), the baseline.
       lines.forEach((ln0) => {
         const b = ln0[0];
@@ -158,9 +162,13 @@
         ghost.textContent = ln0[1];
         svg.appendChild(ghost);
       });
-      // Where a stroke lands, by an x inside it: line 1 as measured, or line 2
-      // moved back by the first word's advance and down one line.
-      const place = (sx) => (split && sx >= split ? [ox - split * FS, by + lineH] : [ox, by]);
+      // Where a stroke lands, by an x inside it: line 1 as measured, or a later
+      // line moved back by the advance of the words before it and down.
+      const place = (sx) => {
+        let k = 0;
+        while (k < splits.length && sx >= splits[k]) k++;
+        return [ox - starts[k] * FS, by + k * lineH];
+      };
       const inkG = el("g", { fill: "none", stroke: INK, "stroke-width": +(route.stem * FS).toFixed(2), "stroke-linecap": "round", "stroke-linejoin": "round" });
       const badgeG = el("g", {});
       svg.appendChild(inkG);
@@ -293,7 +301,7 @@
       clearTimeout(resizeT);
       resizeT = setTimeout(() => {
         const stack = stage.clientWidth > 0 && stage.clientWidth < TWO_LINE_BELOW && word.indexOf(" ") > 0;
-        if (stack !== (layoutSplit > 0)) { render(); if (played && !still) showAll(); }
+        if (stack !== layoutStacked) { render(); if (played && !still) showAll(); }
       }, 150);
     });
     const start = () => {

@@ -52,8 +52,7 @@ const path = require("path");
 const REPO = path.resolve(__dirname, "..");
 const OUT = path.join(REPO, "js", "printables", "cursiveRouteData.js");
 const SPEC = require("./lib/cursive-route-spec.js");
-const F = 400;              // raster type size, px
-const BASE = 500;           // raster baseline, px
+const F = 400;              // raster type size, px (the baseline and canvas height are per face, in the spec)
 const MIN_ON_GLYPH = 0.995;
 const MIN_COVERAGE = 0.97;
 const COVER_R = 6;          // px: a centreline pixel this close to the route counts as drawn
@@ -108,7 +107,7 @@ function serve() {
 
 // In the page: rasterise, thin, and measure the stem and the dots.
 async function rasterInPage(args) {
-  const { text, font, weight, F, BASE } = args;
+  const { text, font, weight, F, BASE, H } = args;
   const spec = weight + " " + F + "px '" + font + "'";
   await document.fonts.load(spec);
   if (!document.fonts.check(spec)) return { error: "font did not load: " + font };
@@ -117,13 +116,18 @@ async function rasterInPage(args) {
   const m = m0.measureText(text);
   const pad = Math.round(F * 0.3);
   const W = Math.ceil(m.actualBoundingBoxRight + m.actualBoundingBoxLeft + 2 * pad);
-  const H = Math.ceil(F * 2.0);
   const x0 = pad + Math.ceil(m.actualBoundingBoxLeft);
   const cv = document.createElement("canvas"); cv.width = W; cv.height = H;
   const ctx = cv.getContext("2d"); ctx.font = spec; ctx.fillStyle = "#000"; ctx.fillText(text, x0, BASE);
   const d = ctx.getImageData(0, 0, W, H).data;
   const ink = new Uint8Array(W * H);
   for (let i = 0; i < W * H; i++) ink[i] = d[i * 4 + 3] > 127 ? 1 : 0;
+  // Ink on the canvas's top or bottom row means the letters were cut off there,
+  // and a cut letter thins to a stroke that is not in the font. Playwrite ID's
+  // capitals were, at US Trad's baseline of 500px.
+  for (let x = 0; x < W; x++) {
+    if (ink[x] || ink[(H - 1) * W + x]) return { error: "ink reaches the " + (ink[x] ? "top" : "bottom") + " of the " + H + "px canvas; raise this face's base or height in the spec" };
+  }
   const img = ink.slice();
   const I = (x, y) => img[y * W + x];
   let changed = true;
@@ -163,11 +167,12 @@ async function rasterInPage(args) {
     dists.push(r);
   }
   dists.sort((a, b) => a - b);
-  return { W, H, x0, advance: m.width, skel, ink: Array.from(ink), stem: 2 * dists[dists.length >> 1] };
+  return { W, H, x0, base: BASE, advance: m.width, skel, ink: Array.from(ink), stem: 2 * dists[dists.length >> 1] };
 }
 
 function buildPhrase(ph, R) {
   const { W, H, x0 } = R;
+  const BASE = R.base;
   const pix = new Set(R.skel);
   const P = R.skel;
   const nb = (k) => {
@@ -350,17 +355,17 @@ function render(results) {
   lines.push(" * within " + COVER_R + "px of the route; longest run of centreline never drawn,");
   lines.push(" * at the builder's " + F + "px raster):");
   results.forEach((r) => {
-    lines.push(" *   " + JSON.stringify(r.text) + ": on-glyph " + (r.onGlyph * 100).toFixed(2) + "%, coverage " + (r.coverage * 100).toFixed(2) + "%, longest undrawn run " + r.maxGap + "px of " + r.gapLimit + " allowed, " + r.out.strokes.length + " strokes");
+    lines.push(" *   " + r.font + ", " + JSON.stringify(r.text) + ": on-glyph " + (r.onGlyph * 100).toFixed(2) + "%, coverage " + (r.coverage * 100).toFixed(2) + "%, longest undrawn run " + r.maxGap + "px of " + r.gapLimit + " allowed, " + r.out.strokes.length + " strokes");
   });
   lines.push(" */");
   lines.push("(function () {");
   lines.push("  \"use strict\";");
   lines.push("  const data = window.UTG_CURSIVE_ROUTE_DATA = window.UTG_CURSIVE_ROUTE_DATA || {};");
-  lines.push("  const face = data[" + JSON.stringify(SPEC.font) + "] = data[" + JSON.stringify(SPEC.font) + "] || {};");
+  lines.push("  const face = (name) => (data[name] = data[name] || {});");
   results.forEach((r) => {
     const o = r.out;
-    lines.push("  face[" + JSON.stringify(r.text) + "] = {");
-    lines.push("    weight: " + SPEC.weight + ", advance: " + o.advance + ", stem: " + o.stem + ",");
+    lines.push("  face(" + JSON.stringify(r.font) + ")[" + JSON.stringify(r.text) + "] = {");
+    lines.push("    weight: " + r.weight + ", advance: " + o.advance + ", stem: " + o.stem + ",");
     lines.push("    strokes: [");
     o.strokes.forEach((s, i) => {
       const tail = i < o.strokes.length - 1 ? "," : "";
@@ -387,18 +392,18 @@ function render(results) {
   try {
     const page = await browser.newPage();
     await page.goto("http://127.0.0.1:" + port + "/", { waitUntil: "load" });
-    for (const ph of SPEC.phrases) {
-      const R = await page.evaluate(rasterInPage, { text: ph.text, font: SPEC.font, weight: SPEC.weight, F, BASE });
+    for (const fc of SPEC.faces) for (const ph of fc.phrases) {
+      const R = await page.evaluate(rasterInPage, { text: ph.text, font: fc.font, weight: fc.weight, F, BASE: fc.base, H: fc.height });
       if (R.error) { process.stderr.write(ph.text + ": " + R.error + "\n"); failed = true; continue; }
       if (R.x0 !== ph.x0) {
         process.stderr.write(JSON.stringify(ph.text) + ": the raster puts the text origin at x=" + R.x0 + ", the spec was read at x=" + ph.x0 + ". The face changed; re-read the waypoints.\n");
         failed = true; continue;
       }
       const r = buildPhrase(ph, R);
-      r.text = ph.text;
+      r.text = ph.text; r.font = fc.font; r.weight = fc.weight;
       results.push(r);
       const status = r.problems.length ? "FAIL" : "ok";
-      process.stdout.write(status + "  " + JSON.stringify(ph.text) + "  on-glyph " + (r.onGlyph * 100).toFixed(2) + "%  coverage " + (r.coverage * 100).toFixed(2) + "%  longest gap " + r.maxGap + "/" + r.gapLimit + "px  strokes " + r.out.strokes.length + "  stem " + r.out.stem + "em\n");
+      process.stdout.write(status + "  " + fc.font + "  " + JSON.stringify(ph.text) + "  on-glyph " + (r.onGlyph * 100).toFixed(2) + "%  coverage " + (r.coverage * 100).toFixed(2) + "%  longest gap " + r.maxGap + "/" + r.gapLimit + "px  strokes " + r.out.strokes.length + "  stem " + r.out.stem + "em\n");
       r.problems.forEach((p) => process.stdout.write("      " + p + "\n"));
       if (r.problems.length) failed = true;
     }
