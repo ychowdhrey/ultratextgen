@@ -3609,6 +3609,12 @@ def page_pictographs(slug, limit=5, floor=3):
         for ch in html:
             if ch in _CHROME or not _is_pictograph(ch):
                 continue
+            # A flag is two regional-indicator letters; counted one character
+            # at a time it splits, and a lone 🇴 or 🇲 won the dirham update's
+            # card over the currency glyphs the page is about. A lone
+            # indicator is never art.
+            if 0x1F1E6 <= ord(ch) <= 0x1F1FF:
+                continue
             counts[ch] = counts.get(ch, 0) + 1
         if len(counts) >= floor:
             out = [c for c, _ in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))][:limit]
