@@ -2,16 +2,17 @@
   "slug": "essiggurke-emoji",
   "lang": "de",
   "page_type": "symbol",
-  "title": "Essiggurke Emoji: 🫝 kopieren & einfügen — der Unicode-18.0-Kandidat auf einem umgewidmeten Apple-Core-Platz",
-  "meta_description": "Essiggurke (🫝, U+1FADD) ist ein Entwurfs-Kandidat für Emoji 18.0, erwartet zusammen mit Unicode 18.0 im September 2026. Ihr Codepoint war ursprünglich für ein „Apfelgehäuse“-Emoji reserviert. Noch nicht genehmigt, von keiner Schriftart darstellbar.",
+  "title": "Essiggurke Emoji: 🫝 kopieren & einfügen, final in Emoji 18.0",
+  "meta_description": "Essiggurke (🫝, U+1FADD) ist seit dem 16. September 2026 final in Emoji 18.0, veröffentlicht mit Unicode 18.0. Ihr Codepoint war ursprünglich für ein „Apfelgehäuse“-Emoji reserviert. Stand 25. September 2026 zeigt sie noch kein Handy und kein Computer standardmäßig an.",
   "canonical": "https://ultratextgen.com/de/symbol/essiggurke-emoji/",
   "breadcrumb": "Essiggurke Emoji",
   "hero_h1": "Essiggurke Emoji",
-  "hero_tagline": "Eine ganze Essiggurke, klar unterschieden von Gurke und Aubergine, im Entwurf für Emoji 18.0, erwartet zusammen mit Unicode 18.0 im September 2026. Nur ein Entwurf: von keiner Schriftart darstellbar. Trotzdem kannst du den Codepoint schon jetzt kopieren.",
-  "intro": "Essiggurke (🫝, U+1FADD) ist ein Kandidaten-Emoji im Entwurf für Emoji 18.0, das Emoji-Pendant zu Unicode 18.0, dessen finale Genehmigung für September 2026 erwartet wird. Ihr Codepoint hat eine ungewöhnliche Vorgeschichte: U+1FADD war im Entwurfszyklus von Emoji 17.0 ursprünglich für ein vorgeschlagenes „Apfelgehäuse“-Emoji reserviert; dieser Vorschlag wurde zurückgestellt, und Unicode vergab den frei gewordenen Platz für den 18.0-Zyklus stattdessen an die Essiggurke. Sie zeigt eine ganze eingelegte Gurke (Gewürzgurke), klar getrennt von den bereits vorhandenen Emojis Gurke und Aubergine, mit denen sie in Tech-Foren am häufigsten verglichen wird. Dort reichten die Kommentare von „diese Gurke wird das Internet lahmlegen“ bis zu Spekulationen, sie werde der Aubergine „viel Geschäft wegnehmen“. Weil sie noch ein Entwurf ist, stellt derzeit kein Betriebssystem, keine Tastatur und keine Schriftart sie dar; bis zur Genehmigung von Emoji 18.0 und der Umsetzung durch die Plattformen erscheint an dieser Stelle nur ein leeres Kästchen oder eine Platzhalter-Glyphe.",
+  "hero_tagline": "Eine ganze Essiggurke, klar unterschieden von Gurke und Aubergine, seit dem 16. September 2026 final in Emoji 18.0. Stand 25. September 2026 zeigt sie noch kein Handy und kein Computer standardmäßig an, aber den Codepoint kannst du schon jetzt kopieren.",
+  "intro": "Essiggurke (🫝, U+1FADD) ist eines von neun neuen Emojis in Emoji 18.0, dem Emoji-Pendant zu Unicode 18.0; beide wurden am 16. September 2026 veröffentlicht. Ihr Codepoint hat eine ungewöhnliche Vorgeschichte: U+1FADD war im Entwurfszyklus von Emoji 17.0 ursprünglich für ein vorgeschlagenes „Apfelgehäuse“-Emoji reserviert; dieser Vorschlag wurde zurückgestellt, und Unicode vergab den frei gewordenen Platz für den 18.0-Zyklus stattdessen an die Essiggurke. Bis September 2026 war sie ein Entwurfs-Kandidat; die Emoji-Daten von Unicode 18.0 führen U+1FADD jetzt als „pickle“, vollständig qualifiziert. Sie zeigt eine ganze eingelegte Gurke (Gewürzgurke), klar getrennt von den bereits vorhandenen Emojis Gurke und Aubergine, mit denen sie in Tech-Foren am häufigsten verglichen wird. Dort reichten die Kommentare von „diese Gurke wird das Internet lahmlegen“ bis zu Spekulationen, sie werde der Aubergine „viel Geschäft wegnehmen“. Final heißt aber noch nicht, dass sie auf deiner Tastatur ist. Google hat ihr Design in der Schrift Noto Color Emoji veröffentlicht, doch Stand 25. September 2026 liefert kein Betriebssystem, keine Tastatur und keine System-Emoji-Schrift sie aus; bis deine Plattform Emoji 18.0 unterstützt, erscheint an dieser Stelle nur ein leeres Kästchen oder eine Platzhalter-Glyphe.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
+  "sources": "Die Datei <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> von Unicode 18.0 führt U+1FADD als „pickle“, ein vollständig qualifiziertes Emoji aus Emoji 18.0, und die <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">Ankündigung von Unicode 18.0</a> des Unicode-Konsortiums datiert die Veröffentlichung auf den 16. September 2026. <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">Emojipedias Bericht zu Unicode 18.0</a> behandelt Googles Designs in Noto Color Emoji für die neuen Emojis.",
   "home_url": "https://ultratextgen.com/de/",
   "crumb_home": "Startseite",
   "crumb_library": "Symbole",
@@ -35,11 +36,11 @@
       "id": "essiggurke",
       "label": "Essiggurke",
       "h2": "Essiggurke Emoji",
-      "intro": "Das Entwurfszeichen selbst: schon heute als Codepoint kopierbar, auch wenn noch keine Schriftart es darstellen kann.",
+      "intro": "Das Emoji-18.0-Zeichen selbst: Kopiere den Codepoint schon heute, und er wird zur Essiggurke, sobald dein Handy oder Computer Emoji 18.0 unterstützt.",
       "symbols": [
         {
           "char": "🫝",
-          "label": "Essiggurke (Entwurf, U+1FADD)"
+          "label": "Essiggurke (U+1FADD, Emoji 18.0)"
         }
       ]
     },
@@ -65,21 +66,21 @@
     },
     {
       "id": "weitere-entwurfs-emojis",
-      "label": "Weitere Entwurfs-Kandidaten",
-      "h2": "Weitere Entwurfs-Kandidaten für Emoji 18.0",
-      "intro": "Die Essiggurke ist nicht das einzige noch nicht genehmigte Zeichen dieser Ausgabe: diese hier stehen im selben Entwurf und bleiben bis zur Entscheidung im September 2026 ebenso unsichtbar.",
+      "label": "Mit ihr veröffentlicht",
+      "h2": "Weitere neue Emojis in Emoji 18.0",
+      "intro": "Die Essiggurke ist nicht das einzige neue Emoji dieser Ausgabe: diese hier wurden am 16. September 2026 mit ihr final, und auch sie zeigt noch kein Handy und kein Computer standardmäßig an.",
       "symbols": [
         {
           "char": "🫫",
-          "label": "Berstendes Gesicht (Entwurf, U+1FAEB)"
+          "label": "Berstendes Gesicht (U+1FAEB, Emoji 18.0)"
         },
         {
           "char": "🫌",
-          "label": "Monarchfalter (Entwurf, U+1FACC)"
+          "label": "Monarchfalter (U+1FACC, Emoji 18.0)"
         },
         {
           "char": "🛙",
-          "label": "Leuchtturm (Entwurf, U+1F6D9)"
+          "label": "Leuchtturm (U+1F6D9, Emoji 18.0)"
         }
       ]
     }
@@ -93,27 +94,27 @@
     {
       "href": "/de/symbol/berstendes-gesicht-emoji/",
       "title": "Berstendes Gesicht Emoji",
-      "desc": "Ein weiterer Entwurfs-Kandidat für Emoji 18.0, und der Gewinner der öffentlichen Abstimmung."
+      "desc": "Das Gesicht aus Emoji 18.0, das die Essiggurke in der öffentlichen Abstimmung von Emojipedia schlug."
     },
     {
       "href": "/de/symbol/meteor-emoji/",
       "title": "Meteor Emoji",
-      "desc": "Ein weiterer Entwurfs-Kandidat für Emoji 18.0 löst Komets jahrelange Darstellungs-Spaltung auf."
+      "desc": "Ebenfalls final in Emoji 18.0: eine Sternschnuppe, die Komets jahrelange Darstellungs-Spaltung auflöst."
     },
     {
       "href": "/de/symbol/monarchfalter-emoji/",
       "title": "Monarchfalter Emoji",
-      "desc": "Ein weiterer Entwurfs-Kandidat für Emoji 18.0 behebt eine plattformübergreifende Verwechslung beim Schmetterling-Emoji."
+      "desc": "Ebenfalls final in Emoji 18.0: behebt eine plattformübergreifende Verwechslung beim Schmetterling-Emoji."
     },
     {
       "href": "/de/symbol/daumenzeichen-emoji/",
       "title": "Daumenzeichen Emoji",
-      "desc": "Ein weiteres Entwurfs-Paar für Emoji 18.0, richtungsweisendes Zeigen, keine Zustimmungsgeste."
+      "desc": "Ebenfalls final in Emoji 18.0: ein Paar für richtungsweisendes Zeigen, keine Zustimmungsgeste."
     },
     {
       "href": "/de/updates/unicode-18-emoji-abstimmung/",
       "title": "Unicode 18.0: Neue Emojis",
-      "desc": "Die vollständige Entwurfsliste aller 9 Kandidaten, sortiert nach öffentlicher Abstimmung."
+      "desc": "Die 9 Emojis, die in Emoji 18.0 final wurden, sortiert nach öffentlicher Abstimmung."
     }
   ]
 }

@@ -2,16 +2,17 @@
   "slug": "emoji-de-picles",
   "lang": "pt",
   "page_type": "symbol",
-  "title": "Emoji de Picles: Copiar e Colar 🫝 — o Candidato do Unicode 18.0 que Assumiu uma Vaga Adiada da Apple Core",
-  "meta_description": "Pickle (🫝, U+1FADD) é um candidato rascunho para o Emoji 18.0, previsto para junto do Unicode 18.0 em setembro de 2026. Seu código era originalmente reservado para o emoji \"Apple Core\", antes de ser adiado e reatribuído. Ainda não aprovado, e nenhuma fonte o renderiza hoje.",
+  "title": "Emoji de Picles: Copiar e Colar 🫝, Oficial no Emoji 18.0",
+  "meta_description": "Pickle (🫝, U+1FADD) é definitivo no Emoji 18.0, publicado com o Unicode 18.0 em 16 de setembro de 2026. Seu código era originalmente reservado para o emoji \"Apple Core\", antes de ser reatribuído. Em 25 de setembro de 2026, nenhum celular ou computador o exibe por padrão.",
   "canonical": "https://ultratextgen.com/pt/symbol/emoji-de-picles/",
   "breadcrumb": "Emoji de Picles",
   "hero_h1": "Emoji de Picles",
-  "hero_tagline": "Um picles inteiro (pepino em conserva), diferente do pepino e da berinjela — proposto para o Emoji 18.0, previsto para junto do Unicode 18.0 em setembro de 2026. Ainda é só rascunho: nenhuma fonte o renderiza ainda. Clique para copiar o código mesmo assim.",
-  "intro": "Pickle (🫝, U+1FADD) é um emoji candidato proposto para o Emoji 18.0, o complemento de emoji do Unicode 18.0, com finalização prevista para setembro de 2026. Seu código tem uma origem incomum: o U+1FADD era originalmente reservado para um emoji proposto de «Apple Core» (miolo de maçã) no ciclo de rascunhos do Emoji 17.0; essa proposta foi adiada, e o Unicode reatribuiu a vaga liberada ao Pickle para o ciclo 18.0. Ele retrata um picles inteiro (um pepino em conserva), diferente dos já existentes emojis de Pepino e Berinjela, com que é mais comumente associado em piadas — a imprensa de tecnologia já especulou de tudo, de «esse picles vai bombar na internet» a previsões de que ele vai «roubar boa parte do público» da Berinjela. Como ainda é um rascunho, nenhum sistema operacional, teclado ou fonte o renderiza atualmente; espere uma caixa em branco ou um glifo substituto até o Emoji 18.0 ser aprovado e as plataformas lançarem suporte.",
+  "hero_tagline": "Um picles inteiro (pepino em conserva), diferente do pepino e da berinjela, definitivo no Emoji 18.0 desde 16 de setembro de 2026. Em 25 de setembro de 2026, nenhum celular ou computador o exibe por padrão, mas você já pode copiar o código.",
+  "intro": "Pickle (🫝, U+1FADD) é um dos nove emojis novos do Emoji 18.0, o complemento de emoji do Unicode 18.0; os dois foram publicados em 16 de setembro de 2026. Seu código tem uma origem incomum: o U+1FADD era originalmente reservado para um emoji proposto de «Apple Core» (miolo de maçã) no ciclo de rascunhos do Emoji 17.0; essa proposta foi adiada, e o Unicode reatribuiu a vaga liberada ao Pickle para o ciclo 18.0. Ele foi um candidato rascunho até setembro de 2026, e os dados de emoji do Unicode 18.0 agora listam o U+1FADD como «pickle», totalmente qualificado. Ele retrata um picles inteiro (um pepino em conserva), diferente dos já existentes emojis de Pepino e Berinjela, com que é mais comumente associado em piadas — a imprensa de tecnologia já especulou de tudo, de «esse picles vai bombar na internet» a previsões de que ele vai «roubar boa parte do público» da Berinjela. Ser definitivo não quer dizer que já está no seu teclado. O Google publicou o design dele na fonte Noto Color Emoji, mas em 25 de setembro de 2026 nenhum sistema operacional, teclado ou fonte de emoji do sistema o inclui; espere uma caixa em branco ou um glifo substituto até a sua plataforma adotar o Emoji 18.0.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
+  "sources": "O arquivo de dados <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> do Unicode 18.0 lista o U+1FADD como «pickle», um emoji totalmente qualificado do Emoji 18.0, e o <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">anúncio do Unicode 18.0</a> do Consórcio Unicode data a publicação em 16 de setembro de 2026. O <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">relatório da Emojipedia sobre o Unicode 18.0</a> traz os designs do Google na Noto Color Emoji para os novos emojis.",
   "home_url": "https://ultratextgen.com/pt/",
   "crumb_home": "Início",
   "crumb_library": "Símbolos",
@@ -35,11 +36,11 @@
       "id": "pickle",
       "label": "Picles",
       "h2": "Emoji de Picles",
-      "intro": "O caractere rascunho em si — já copiável hoje como código, mesmo que nenhuma fonte consiga renderizá-lo ainda.",
+      "intro": "O caractere do Emoji 18.0 em si: copie o código hoje e ele aparece como um picles assim que o seu celular ou computador adotar o Emoji 18.0.",
       "symbols": [
         {
           "char": "🫝",
-          "label": "Pickle (rascunho, U+1FADD)"
+          "label": "Pickle (U+1FADD, Emoji 18.0)"
         }
       ]
     },
@@ -65,21 +66,21 @@
     },
     {
       "id": "fellow-candidates",
-      "label": "Outros Candidatos Rascunho",
-      "h2": "Outros Candidatos Rascunho do Emoji 18.0",
-      "intro": "Pickle não é o único caractere ainda não aprovado deste lançamento — estes foram propostos junto com ele, igualmente sem renderização até a decisão de setembro de 2026.",
+      "label": "Publicados Junto com Ele",
+      "h2": "Outros Emojis Novos do Emoji 18.0",
+      "intro": "Pickle não é o único emoji novo deste lançamento: estes se tornaram definitivos junto com ele em 16 de setembro de 2026, e nenhum celular ou computador os exibe por padrão ainda.",
       "symbols": [
         {
           "char": "🫫",
-          "label": "Cracking Face (rascunho, U+1FAEB)"
+          "label": "Cracking Face (U+1FAEB, Emoji 18.0)"
         },
         {
           "char": "🫌",
-          "label": "Monarch Butterfly (rascunho, U+1FACC)"
+          "label": "Monarch Butterfly (U+1FACC, Emoji 18.0)"
         },
         {
           "char": "🛙",
-          "label": "Lighthouse (rascunho, U+1F6D9)"
+          "label": "Lighthouse (U+1F6D9, Emoji 18.0)"
         }
       ]
     }
@@ -88,22 +89,22 @@
     {
       "href": "/pt/symbol/emoji-de-rosto-rachado/",
       "title": "Emoji de Rosto Rachado",
-      "desc": "Outro candidato rascunho do Emoji 18.0 — e o que venceu a votação pública."
+      "desc": "O rosto do Emoji 18.0 que venceu o Pickle na votação pública da Emojipedia."
     },
     {
       "href": "/pt/symbol/emoji-de-meteoro/",
       "title": "Emoji de Meteoro",
-      "desc": "Outro candidato rascunho do Emoji 18.0 — se separa da longa divisão de renderização do Cometa."
+      "desc": "Também definitivo no Emoji 18.0: uma estrela cadente separada da longa divisão de renderização do Cometa."
     },
     {
       "href": "/pt/symbol/emoji-de-borboleta-monarca/",
       "title": "Emoji de Borboleta Monarca",
-      "desc": "Outro candidato rascunho do Emoji 18.0 — corrige uma confusão de espécie entre plataformas."
+      "desc": "Também definitivo no Emoji 18.0: corrige uma confusão de espécie entre plataformas."
     },
     {
       "href": "/pt/symbol/emoji-de-polegar-direcional/",
       "title": "Emoji de Polegar Direcional",
-      "desc": "Outro par de candidatos rascunho do Emoji 18.0 — aponta direção, não aprovação."
+      "desc": "Também definitivo no Emoji 18.0: um par que aponta direção, não aprovação."
     }
   ]
 }
