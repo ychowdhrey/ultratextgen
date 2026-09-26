@@ -197,8 +197,18 @@ def main():
         # Since 2026-09-23 the described image is an <img class="pt-sheet-preview">
         # inside the tool's preview box, not a standalone figure. The page
         # still carries it, so the banner still stays off; both forms match.
+        #
+        # A page may also decline the banner outright with data-hero-art="none"
+        # on its hero. /printables/ does: it is a router whose cards each show
+        # their own sheet's letterforms, and the generic font-tile banner put
+        # 244px of art depicting no sheet between the hero and the first card
+        # (desktop first card at y=850 on a 900px viewport, audit 2026-09-26).
+        # Content-shaped for the same reason as above: the page carries its
+        # own decision, so no path list here goes stale. The marker must not
+        # contain "data-uthero", which the guards above read as "has a banner".
         if ('class="pt-sheet-preview"' in html
-                or 'class="guide-hero-figure pt-sheet-preview"' in html):
+                or 'class="guide-hero-figure pt-sheet-preview"' in html
+                or 'data-hero-art="none"' in html):
             if had_figure:
                 banner_dropped += 1
             if html != original:
