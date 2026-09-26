@@ -163,6 +163,7 @@
       classSet: "Class set: one sheet per name", sheets: "sheets",
       classSetPngHint: "PNG downloads the current name; use Save as PDF for the whole set.",
       sheetsPerPage: "Sheets per page",
+      set: { which: "Which letters?", all: "All {n}", letters: "Letters", pick: "Pick letters", pickLabel: "Type the letters you want", pickHint: "For example A-E, or B D P Q.", order: "Prints in alphabet order:", notHere: "Not on this page:", empty: "Type at least one letter from this page.", perPage: "{n} per page", tall: "about {h} tall" },
       bannerInstr: "Cut each flag along its dashed line, punch a hole at each dot, then thread string or ribbon through in order (1, 2, 3…) to spell it out.",
       puzzleCut: "Cut along the dashed lines to separate each letter piece.",
       puzzleTitle: "{name}’s Name Puzzle",
@@ -231,6 +232,7 @@
       classSet: "Série pour la classe — une feuille par prénom", sheets: "feuilles",
       classSetPngHint: "Le PNG télécharge le prénom affiché ; utilisez Enregistrer en PDF pour toute la série.",
       sheetsPerPage: "Feuilles par page",
+      set: { which: "Quelles lettres ?", all: "Les {n}", letters: "Lettres", pick: "Choisir des lettres", pickLabel: "Tapez les lettres que vous voulez", pickHint: "Par exemple A-E, ou B D P Q.", order: "Impression dans l'ordre alphabétique :", notHere: "Absent de cette page :", empty: "Tapez au moins une lettre de cette page.", perPage: "{n} par page", tall: "environ {h} de haut" },
       bannerInstr: "Découpez chaque fanion le long de sa ligne pointillée, percez un trou à chaque point, puis passez une ficelle ou un ruban dans l'ordre (1, 2, 3…) pour former le mot.",
       puzzleCut: "Découpez le long des lignes pointillées pour séparer chaque pièce-lettre.",
       puzzleTitle: "Le puzzle de {name}",
@@ -289,6 +291,7 @@
       classSet: "Juego para la clase — una hoja por nombre", sheets: "hojas",
       classSetPngHint: "El PNG descarga el nombre actual; usa Guardar como PDF para el juego completo.",
       sheetsPerPage: "Hojas por página",
+      set: { which: "¿Qué letras?", all: "Las {n}", letters: "Letras", pick: "Elegir letras", pickLabel: "Escribe las letras que quieras", pickHint: "Por ejemplo A-E, o B D P Q.", order: "Se imprimen en orden alfabético:", notHere: "No están en esta página:", empty: "Escribe al menos una letra de esta página.", perPage: "{n} por página", tall: "unos {h} de alto" },
       bannerInstr: "Recorta cada banderín por su línea punteada, haz un agujero en cada punto y pasa un cordel o cinta en orden (1, 2, 3…) para formar la palabra.",
       puzzleCut: "Recorta por las líneas punteadas para separar cada pieza-letra.",
       puzzleTitle: "El rompecabezas de {name}",
@@ -347,6 +350,7 @@
       classSet: "Conjunto para a turma — uma folha por nome", sheets: "folhas",
       classSetPngHint: "O PNG baixa o nome atual; use Salvar como PDF para o conjunto completo.",
       sheetsPerPage: "Folhas por página",
+      set: { which: "Quais letras?", all: "As {n}", letters: "Letras", pick: "Escolher letras", pickLabel: "Digite as letras que você quer", pickHint: "Por exemplo A-E, ou B D P Q.", order: "Impressas em ordem alfabética:", notHere: "Não estão nesta página:", empty: "Digite pelo menos uma letra desta página.", perPage: "{n} por página", tall: "cerca de {h} de altura" },
       bannerInstr: "Recorte cada bandeirinha na linha pontilhada, faça um furo em cada ponto e passe um barbante ou fita na ordem (1, 2, 3…) para formar a palavra.",
       puzzleCut: "Recorte nas linhas pontilhadas para separar cada peça-letra.",
       puzzleTitle: "O quebra-cabeça de {name}",
@@ -405,6 +409,7 @@
       classSet: "Set per la classe – un foglio per nome", sheets: "fogli",
       classSetPngHint: "Il PNG scarica il nome corrente; usa Salva come PDF per l'intero set.",
       sheetsPerPage: "Fogli per pagina",
+      set: { which: "Quali lettere?", all: "Tutte le {n}", letters: "Lettere", pick: "Scegli le lettere", pickLabel: "Scrivi le lettere che vuoi", pickHint: "Per esempio A-E, oppure B D P Q.", order: "Stampate in ordine alfabetico:", notHere: "Non presenti in questa pagina:", empty: "Scrivi almeno una lettera di questa pagina.", perPage: "{n} per pagina", tall: "circa {h} di altezza" },
       bannerInstr: "Ritaglia ogni bandierina lungo la linea tratteggiata, fai un foro su ogni punto, poi infila uno spago o un nastro in ordine (1, 2, 3…) per comporre la parola.",
       puzzleCut: "Ritaglia lungo le linee tratteggiate per separare ogni pezzo-lettera.",
       puzzleTitle: "Il puzzle di {name}",
@@ -458,6 +463,7 @@
       classSet: "Zestaw dla klasy — jedna karta na imię", sheets: "kart",
       classSetPngHint: "PNG pobiera bieżące imię; użyj Zapisz jako PDF dla całego zestawu.",
       sheetsPerPage: "Kart na stronę",
+      set: { which: "Które litery?", all: "Wszystkie ({n})", letters: "Litery", pick: "Wybierz litery", pickLabel: "Wpisz litery, które chcesz", pickHint: "Na przykład A-E albo B D P Q.", order: "Drukowane w kolejności alfabetycznej:", notHere: "Nie ma na tej stronie:", empty: "Wpisz co najmniej jedną literę z tej strony.", perPage: "{n} na stronę", tall: "około {h} wysokości" },
       bannerInstr: "Wytnij każdą chorągiewkę wzdłuż przerywanej linii, zrób dziurkę w każdym punkcie, a następnie przewlecz sznurek lub wstążkę po kolei (1, 2, 3…), aby ułożyć napis.",
       puzzleCut: "Tnij wzdłuż przerywanych linii, aby oddzielić każdy element-literę.",
       puzzleTitle: "Puzzle z imieniem: {name}",
@@ -523,6 +529,7 @@
       classSet: "Klassensatz – ein Blatt pro Name", sheets: "Blätter",
       classSetPngHint: "PNG lädt den aktuellen Namen; für den ganzen Satz Als PDF speichern verwenden.",
       sheetsPerPage: "Blätter pro Seite",
+      set: { which: "Welche Buchstaben?", all: "Alle {n}", letters: "Buchstaben", pick: "Buchstaben wählen", pickLabel: "Tippe die Buchstaben ein, die du willst", pickHint: "Zum Beispiel A-E oder B D P Q.", order: "Gedruckt in alphabetischer Reihenfolge:", notHere: "Nicht auf dieser Seite:", empty: "Tippe mindestens einen Buchstaben von dieser Seite ein.", perPage: "{n} pro Seite", tall: "etwa {h} hoch" },
       bannerInstr: "Schneide jeden Wimpel entlang der gestrichelten Linie aus, stich an jedem Punkt ein Loch und fädle eine Schnur oder ein Band der Reihe nach (1, 2, 3…) durch, um das Wort zu bilden.",
       puzzleCut: "Schneide entlang der gestrichelten Linien, um jedes Buchstaben-Teil zu trennen.",
       puzzleTitle: "Namenspuzzle von {name}",
@@ -585,6 +592,7 @@
       classSet: "Set kelas \u2014 satu lembar per nama", sheets: "lembar",
       classSetPngHint: "PNG mengunduh nama yang sedang tampil; pakai Simpan sebagai PDF untuk seluruh setnya.",
       sheetsPerPage: "Lembar per halaman",
+      set: { which: "Huruf yang mana?", all: "Semua ({n})", letters: "Huruf", pick: "Pilih huruf", pickLabel: "Ketik huruf yang kamu mau", pickHint: "Contoh: A-E, atau B D P Q.", order: "Dicetak urut abjad:", notHere: "Tidak ada di halaman ini:", empty: "Ketik minimal satu huruf dari halaman ini.", perPage: "{n} per halaman", tall: "tinggi sekitar {h}" },
       practiceTitle: "Lembar latihan · {Noun}",
       bannerInstr: "Gunting tiap bendera mengikuti garis putus-putus, lubangi di setiap titik, lalu masukkan tali atau pita berurutan (1, 2, 3\u2026) sampai membentuk katanya.",
       puzzleCut: "Gunting mengikuti garis putus-putus untuk memisahkan tiap kepingan huruf.",
@@ -731,6 +739,7 @@
       "sheets": "vellen",
       "classSetPngHint": "PNG downloadt de huidige naam; gebruik Opslaan als pdf voor de hele set.",
       "sheetsPerPage": "Werkbladen per pagina",
+      "set": {"which": "Welke letters?", "all": "Alle {n}", "letters": "Letters", "pick": "Letters kiezen", "pickLabel": "Typ de letters die je wilt", "pickHint": "Bijvoorbeeld A-E, of B D P Q.", "order": "Afgedrukt in alfabetische volgorde:", "notHere": "Niet op deze pagina:", "empty": "Typ minstens één letter van deze pagina.", "perPage": "{n} per pagina", "tall": "ongeveer {h} hoog"},
       "bannerInstr": "Knip elk vlaggetje uit langs de stippellijn, prik bij elke stip een gaatje en rijg er op volgorde (1, 2, 3…) een touwtje of lint door, zodat het woord verschijnt.",
       "puzzleCut": "Knip langs de stippellijnen om de letterstukjes los te maken.",
       "puzzleTitle": "Naampuzzel van {name}",
@@ -2078,6 +2087,8 @@
     // The designer's own "paper" strip is repainted from here too, so one
     // panel change updates every surface that names the paper.
     if (typeof syncDesignPreviewMeta === "function") syncDesignPreviewMeta();
+    // So is the letter-set block: its counts, heights and icons are the paper's.
+    updateBatch();
     paintPreviewInk();
     /* The designed sheet takes the paper's aspect (sheetGeom), so a paper or
        orientation change re-lays it out — and a preview that did not repaint
@@ -3038,7 +3049,11 @@
     if (nUp > 1) p.nup = String(nUp);
     if (spacingKey !== "normal") p.sp = spacingKey;
     if (stencilOnFlag) p.st = "1";
-    if (el.sizeControl && alphaSizeKey !== "full") p.size = alphaSizeKey;
+    if (el.sizeControl && alphaSizeKey !== batchDefaultSize) p.size = alphaSizeKey;
+    if (batch.btn && setKey !== "all") {
+      p.letters = setKey;
+      if (setKey === "pick" && setPickText.trim()) p.pick = setPickText.trim().slice(0, 40);
+    }
     const heading = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading, el.cwHeading, el.scHeading]);
     if (heading && heading.value.trim()) p.heading = heading.value.trim();
     if (el.searchInput && el.searchInput.value.trim()) {
@@ -3147,7 +3162,15 @@
     const cstyle = presetGet("cstyle");
     if (cstyle && typeof setCharStyle === "function" && CHAR_STYLES && CHAR_STYLES.some((x) => x.key === cstyle)) setCharStyle(cstyle);
     const size = presetGet("size");
-    if (size && el.sizeControl && SIZE_PRESETS.some((x) => x.key === size)) {
+    if (batch.btn) {
+      const letters = presetGet("letters");
+      if (letters === "pick") {
+        setPickText = String(presetGet("pick") || "").slice(0, 40);
+        if (batch.pickInput) batch.pickInput.value = setPickText;
+      }
+      if (letters) setBatchLetters(letters, { quiet: true });
+      if (size) setBatchSize(size, { quiet: true });
+    } else if (size && el.sizeControl && SIZE_PRESETS.some((x) => x.key === size)) {
       alphaSizeKey = size;
       $$(".pt-size-row .pt-choice", el.sizeControl).forEach((o, i) => {
         const on = SIZE_PRESETS[i] && SIZE_PRESETS[i].key === size;
@@ -4605,6 +4628,595 @@
     return set.length ? set : null;
   }
 
+  /* ---------------------------------------------------------------
+     "Print a set of letters": the batch block, redesigned 2026-09-25.
+
+     It asked three questions for one answer. Print size (Full page / Medium /
+     Small), a row of 1 / 2 / 4 chips and a separate "Save as a book" button
+     each decided how many letters share a page, and whichever button was
+     pressed silently ignored some of them. Rendered on
+     /printables/alphabet-coloring-pages/: vowels + 4 + Medium, then Download
+     PDF, printed all 36 characters on 9 pages; on a per-letter page, Medium
+     dropped the chosen letters from the book and printed all 26. Of 15
+     control-and-button pairs, 8 ignored or misused the choice, and under all
+     of it there were only three kinds of printed page.
+
+     Now it asks in the order a visitor decides: which letters, then print
+     size, then the shared More section, then ONE button that names the pages
+     it is about to spend. Every output reads the same two answers.
+
+     - Sizes are counts. Full page is one letter per page; Medium is a 2x2
+       grid and Small 4x4 (3x2 and 6x3 in landscape). The count is what a
+       parent pays for in paper, so it is what stays true on every paper. On
+       outline pages the tile also shows the letter height, derived from the
+       page and the face (see formatHeight for how close it lands).
+     - 2 per page is gone. Portrait 2-up printed the same 2.0in letters as
+       4-up on twice the paper (measured), the geometry the N-per-sheet note
+       below already records for class sets.
+     - Keys stay "full" / "medium" / "small", so ?size= links and the
+       printable_engage "size" values keep their meaning.
+     - Each page opens on what its batch button printed before: the compact
+       sheet (16 per page on Letter) is Small on sheet-mode hubs, the book is
+       Full page everywhere else. docs/decisions/printables-scope.md, "the
+       defaults are what each sheet already printed".
+
+     /printables/block-letters/ keeps the previous control untouched. It is
+     frozen until its printable_engage size readout lands (owner decision
+     2026-09-22, see trackEngage above), and a different control mid-way would
+     corrupt that readout. Delete BATCH_FROZEN and the legacy path when the
+     freeze lifts.
+     --------------------------------------------------------------- */
+  const BATCH_FROZEN = /^\/printables\/block-letters\/?$/.test(window.location.pathname || "");
+  const SET_GRIDS = {
+    portrait:  { full: [1, 1], medium: [2, 2], small: [4, 4] },
+    landscape: { full: [1, 1], medium: [3, 2], small: [6, 3] }
+  };
+  /* Small is not offered on dot-to-dot pages: at 16 per page the dot numbers
+     print at 2.7pt, which nobody can follow. */
+  const SET_SIZE_KEYS = RENDER === "dots" ? ["full", "medium"] : ["full", "medium", "small"];
+  /* Vowels in the page's own language, kept to the characters the page
+     prints. A chip labelled AEIOU on a Polish page would miss Ą, Ę, Ó and Y. */
+  const SET_VOWELS = {
+    en: "AEIOU", es: "AEIOU", pt: "AEIOU", it: "AEIOU", id: "AEIOU", nl: "AEIOU",
+    fr: "AEIOUY", de: "AEIOUÄÖÜ", pl: "AĄEĘIOÓUY"
+  };
+  // What a set page spends on things that are not letter, in inches,
+  // measured on the print surface (US Letter, normal margins): title + credit
+  // on a full page (0.31 + 0.17 + 0.95), title + cut hint + credit on a grid
+  // page (0.24 + 0.10 + 0.19 + 0.08 + 0.95), a card's padding and border, and
+  // the Name/Date row. The heights do not depend on the paper, so the same
+  // subtraction holds on A4 and in landscape. Only the height LABEL reads
+  // these; the page itself is laid out by flex.
+  const SET_CHROME = { full: 1.43, grid: 1.56, card: 0.26, nameDate: 0.55 };
+
+  const batch = { btn: null, tiles: [], chips: [], pick: null, pickInput: null, pickEcho: null, summary: null, preview: null };
+  let batchDefaultSize = "full";
+  let setKey = "all";
+  let setPickText = "";
+  let setOptsCache = null;
+
+  function setOptions() {
+    if (setOptsCache) return setOptsCache;
+    const isDigit = (c) => /[0-9]/.test(c);
+    const letters = CHARS.filter((c) => !isDigit(c));
+    const digits = CHARS.filter(isDigit);
+    const opts = [{ key: "all", label: T.set.all.replace("{n}", String(CHARS.length)), chars: CHARS }];
+    if (letters.length && digits.length) {
+      const isAZ = letters.map((c) => c.toUpperCase()).join("") === LETTERS.join("");
+      opts.push({ key: "az", label: isAZ ? "A–Z" : T.set.letters, chars: letters });
+      opts.push({ key: "num", label: digits[0] + "–" + digits[digits.length - 1], chars: digits });
+    }
+    const vowelSet = (SET_VOWELS[LANG] || SET_VOWELS.en).split("");
+    const vowels = CHARS.filter((c) => vowelSet.indexOf(c.toUpperCase()) !== -1);
+    if (vowels.length >= 2 && vowels.length < letters.length) {
+      opts.push({ key: "vow", label: vowels.map((c) => c.toUpperCase()).join(""), chars: vowels });
+    }
+    opts.push({ key: "pick", label: T.set.pick + "…", chars: null });
+    setOptsCache = opts;
+    return opts;
+  }
+
+  /* A typed set prints in the page's own order and once per character, as
+     the book always has: "MIA" prints A, I, M. Spelling a name in order is
+     the Coloring Page Maker's job, and the readback says which order this
+     one uses. Unlike the old field, nothing matched means nothing printed
+     and the block says so; it used to fall back to all 36 in silence. */
+  function parsePick(text) {
+    const got = parseRange(text) || [];
+    const want = new Set(got);
+    const chars = CHARS.filter((c) => want.has(c.toUpperCase()));
+    const printable = new Set(CHARS.map((c) => c.toUpperCase()));
+    const bad = [];
+    String(text || "").toUpperCase().split("").forEach((ch) => {
+      if (/[\s,;.\-–]/.test(ch) || printable.has(ch) || bad.indexOf(ch) !== -1) return;
+      bad.push(ch);
+    });
+    return { chars: chars, bad: bad };
+  }
+
+  function setChars() {
+    if (setKey === "pick") return parsePick(setPickText).chars;
+    const o = setOptions().filter((x) => x.key === setKey)[0];
+    return o && o.chars ? o.chars : CHARS;
+  }
+
+  function setGrid(sizeKey) {
+    const table = printPrefs.orient === "landscape" ? SET_GRIDS.landscape : SET_GRIDS.portrait;
+    const g = table[sizeKey] || table.full;
+    return { cols: g[0], rows: g[1], per: g[0] * g[1] };
+  }
+
+  // The box one letter's figure gets on paper, in inches.
+  function setCellIn(sizeKey) {
+    const full = paperFull();
+    const marginIn = parseFloat(MARGINS[printPrefs.margin] || MARGINS.normal) || 0.5;
+    const g = setGrid(sizeKey);
+    let h = sheetMetrics().page - (g.per > 1 ? SET_CHROME.grid : SET_CHROME.full);
+    if (moreFooterOn("letters", false)) h -= SET_CHROME.nameDate;
+    const pad = g.per > 1 ? SET_CHROME.card : 0;
+    return {
+      w: Math.max(0.5, (full.w - 2 * marginIn) / g.cols - pad),
+      h: Math.max(0.5, h / g.rows - pad)
+    };
+  }
+
+  // Glyph-mode type size for one grid cell: the full-page ratio, capped by
+  // the cell's width so an "A a" pair never runs past its card.
+  function setGlyphSizeIn(cell) {
+    const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
+    const pair = GM ? GM.ink(renderGlyph("A") + " " + renderGlyph("a"), FONT, 100, FONT_WEIGHT) : null;
+    const perEm = pair && pair.width ? pair.width / 100 : 1.6;
+    return Math.max(0.2, Math.min(cell.h * 0.62, (cell.w * 0.92) / perEm));
+  }
+
+  /* Printed height of a capital at this size, from the face's own cap height
+     and the 200 x 240 box it is fitted into. Outline letters only (formatHeight
+     records how close it lands).
+     A script pair, a dot figure or a Unicode glyph does not follow that box
+     (the same formula said 4.5in for a cursive A that printed 3.1in), so
+     those pages show the count alone rather than a height nobody measured. */
+  const SET_SHOWS_HEIGHT = RENDER === "outline";
+  function setLetterHeightIn(sizeKey) {
+    const g = setGrid(sizeKey);
+    const cell = setCellIn(sizeKey);
+    const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
+    const scale = Math.min(cell.w / 200, cell.h / 240);
+    const fm = GM ? GM.faceMetrics(FONT, 210, FONT_WEIGHT) : null;
+    const capH = fm && fm.capHeight ? fm.capHeight : 147;
+    const stroke = Math.max(4, STROKE * (g.per > 1 ? tileStrokeScale(cell.h) : 1));
+    return (capH + stroke) * scale;
+  }
+
+  // "4½ in" on English pages, "11,5 cm" everywhere else, to the nearest step
+  // and always read with "about". Measured at print resolution against the
+  // capitals actually printed (coloring, bubble, tracing and Spanish-chart
+  // faces; full, medium and small; Letter, A4 and landscape): within 0.1in.
+  // The graffiti page is the outlier, 0.2-0.4in above its printed capitals
+  // (up to 15% at Medium), because its letters print shorter than the face's
+  // measured cap height; a median over its letters did not close the gap.
+  function formatHeight(inches) {
+    if (LANG === "en") {
+      const q = Math.max(1, Math.round(inches * 4));
+      const whole = Math.floor(q / 4), frac = ["", "¼", "½", "¾"][q % 4];
+      return (whole ? String(whole) : "") + frac + " in";
+    }
+    const cm = Math.max(0.5, Math.round(inches * 2.54 * 2) / 2);
+    let num;
+    try { num = new Intl.NumberFormat(LANG, { maximumFractionDigits: 1 }).format(cm); } catch (err) { num = String(cm); }
+    return num + " cm";
+  }
+
+  function sizeName(key) {
+    // "Medium (~4 in)" -> "Medium": the tile states the real height itself.
+    return String((T.size[key] && T.size[key].label) || key).replace(/\s*\([^)]*\)\s*$/, "");
+  }
+
+  // A picture of the page: the paper's own shape, the grid, tiny letters.
+  function setIcon(sizeKey) {
+    const full = paperFull();
+    const w = 40, h = Math.round(40 * full.h / full.w);
+    const svg = document.createElementNS(SVGNS, "svg");
+    svg.setAttribute("viewBox", "0 0 " + w + " " + h);
+    svg.setAttribute("width", String(w));
+    svg.setAttribute("height", String(h));
+    svg.setAttribute("aria-hidden", "true");
+    svg.setAttribute("class", "pt-set-icon");
+    const page = document.createElementNS(SVGNS, "rect");
+    page.setAttribute("x", "0.5"); page.setAttribute("y", "0.5");
+    page.setAttribute("width", String(w - 1)); page.setAttribute("height", String(h - 1));
+    page.setAttribute("rx", "2"); page.setAttribute("class", "pt-set-icon-page");
+    svg.appendChild(page);
+    const g = setGrid(sizeKey);
+    const x0 = 3, y0 = 4, gw = w - 6, gh = h - 8;
+    const cw = gw / g.cols, ch = gh / g.rows;
+    const fs = Math.min(cw * 1.05, ch * 0.95);
+    for (let i = 0; i < g.per; i++) {
+      const c = i % g.cols, r = Math.floor(i / g.cols);
+      const t = document.createElementNS(SVGNS, "text");
+      t.setAttribute("x", (x0 + cw * (c + 0.5)).toFixed(1));
+      t.setAttribute("y", (y0 + ch * (r + 0.5) + fs * 0.36).toFixed(1));
+      t.setAttribute("text-anchor", "middle");
+      t.setAttribute("font-size", fs.toFixed(1));
+      t.setAttribute("font-family", FONT);
+      t.setAttribute("font-weight", String(FONT_WEIGHT));
+      t.setAttribute("class", "pt-set-icon-glyph");
+      t.textContent = LETTERS[i % LETTERS.length];
+      svg.appendChild(t);
+    }
+    for (let c = 1; c < g.cols; c++) {
+      const l = document.createElementNS(SVGNS, "line");
+      l.setAttribute("x1", (x0 + cw * c).toFixed(1)); l.setAttribute("x2", (x0 + cw * c).toFixed(1));
+      l.setAttribute("y1", String(y0)); l.setAttribute("y2", String(y0 + gh));
+      l.setAttribute("class", "pt-set-icon-cut");
+      svg.appendChild(l);
+    }
+    for (let r = 1; r < g.rows; r++) {
+      const l = document.createElementNS(SVGNS, "line");
+      l.setAttribute("y1", (y0 + ch * r).toFixed(1)); l.setAttribute("y2", (y0 + ch * r).toFixed(1));
+      l.setAttribute("x1", String(x0)); l.setAttribute("x2", String(x0 + gw));
+      l.setAttribute("class", "pt-set-icon-cut");
+      svg.appendChild(l);
+    }
+    return svg;
+  }
+
+  /* Native radios in a fieldset, styled as the site's chips: the group gets
+     its name from the legend, arrow keys move within it, and nothing has to
+     re-implement a radio group. The old rows were role="radio" buttons with
+     no arrow keys, one nested inside the other, named "letter" and "page". */
+  function setRadio(name, value, checked, cls) {
+    const lab = document.createElement("label");
+    lab.className = cls + (checked ? " is-active" : "");
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = name;
+    input.value = value;
+    input.checked = checked;
+    input.className = "sr-only";
+    lab.appendChild(input);
+    return { label: lab, input: input };
+  }
+  function setActive(list, key) {
+    list.forEach((it) => {
+      const on = it.key === key;
+      it.label.classList.toggle("is-active", on);
+      if (it.input.checked !== on) it.input.checked = on;
+    });
+  }
+
+  function buildSetLettersStep() {
+    const fs = document.createElement("fieldset");
+    fs.className = "pt-set-step";
+    const lg = document.createElement("legend");
+    lg.className = "pt-set-legend";
+    lg.textContent = T.set.which;
+    fs.appendChild(lg);
+    const row = document.createElement("div");
+    row.className = "pt-choice-row pt-set-letters";
+    setOptions().forEach((o) => {
+      const r = setRadio("pt-set-letters", o.key, o.key === setKey, "pt-choice pt-choice-sm");
+      r.label.appendChild(document.createTextNode(o.label));
+      r.input.addEventListener("change", () => { if (r.input.checked) setBatchLetters(o.key); });
+      batch.chips.push({ key: o.key, label: r.label, input: r.input });
+      row.appendChild(r.label);
+    });
+    fs.appendChild(row);
+
+    const pick = document.createElement("div");
+    pick.className = "pt-set-pick";
+    pick.hidden = setKey !== "pick";
+    const pl = document.createElement("label");
+    pl.className = "pt-set-pick-label";
+    pl.htmlFor = "pt-set-pick-input";
+    pl.textContent = T.set.pickLabel;
+    const hint = document.createElement("p");
+    hint.className = "pt-set-hint";
+    hint.id = "pt-set-pick-hint";
+    hint.textContent = T.set.pickHint;
+    const input = document.createElement("input");
+    input.type = "text";
+    input.id = "pt-set-pick-input";
+    input.className = "pt-set-pick-input";
+    input.maxLength = 40;
+    input.autocomplete = "off";
+    input.spellcheck = false;
+    input.setAttribute("autocapitalize", "characters");
+    input.setAttribute("autocorrect", "off");
+    input.setAttribute("aria-describedby", "pt-set-pick-hint pt-set-pick-echo");
+    input.value = setPickText;
+    input.addEventListener("input", () => { setPickText = input.value; updateBatch(); });
+    const echo = document.createElement("p");
+    echo.className = "pt-set-echo";
+    echo.id = "pt-set-pick-echo";
+    pick.appendChild(pl);
+    pick.appendChild(hint);
+    pick.appendChild(input);
+    pick.appendChild(echo);
+    fs.appendChild(pick);
+    batch.pick = pick;
+    batch.pickInput = input;
+    batch.pickEcho = echo;
+    return fs;
+  }
+
+  function buildSetSizeStep() {
+    const fs = document.createElement("fieldset");
+    fs.className = "pt-set-step";
+    const lg = document.createElement("legend");
+    lg.className = "pt-set-legend";
+    lg.textContent = T.size.label;
+    fs.appendChild(lg);
+    const row = document.createElement("div");
+    row.className = "pt-choice-row pt-set-sizes";
+    SET_SIZE_KEYS.forEach((key) => {
+      const r = setRadio("pt-set-size", key, key === alphaSizeKey, "pt-choice pt-set-tile");
+      const icon = document.createElement("span");
+      icon.className = "pt-set-tile-icon";
+      const name = document.createElement("span");
+      name.className = "pt-set-tile-name";
+      name.textContent = sizeName(key);
+      const count = document.createElement("small");
+      const size = SET_SHOWS_HEIGHT ? document.createElement("small") : null;
+      r.label.appendChild(icon);
+      r.label.appendChild(name);
+      r.label.appendChild(count);
+      if (size) r.label.appendChild(size);
+      r.input.addEventListener("change", () => { if (r.input.checked) setBatchSize(key); });
+      batch.tiles.push({ key: key, label: r.label, input: r.input, icon: icon, count: count, size: size });
+      row.appendChild(r.label);
+    });
+    fs.appendChild(row);
+    return fs;
+  }
+
+  function buildSetResult() {
+    const box = document.createElement("div");
+    box.className = "pt-set-result";
+    const preview = document.createElement("div");
+    preview.className = "pt-set-preview";
+    preview.setAttribute("aria-hidden", "true");
+    const text = document.createElement("div");
+    text.className = "pt-set-result-text";
+    const summary = document.createElement("p");
+    summary.className = "pt-set-summary";
+    summary.setAttribute("aria-live", "polite");
+    const settings = document.createElement("button");
+    settings.type = "button";
+    settings.className = "pt-set-settings";
+    settings.textContent = PO.settings;
+    settings.addEventListener("click", openPrintSettings);
+    text.appendChild(summary);
+    text.appendChild(settings);
+    box.appendChild(preview);
+    box.appendChild(text);
+    batch.summary = summary;
+    batch.preview = preview;
+    return box;
+  }
+
+  // Paper, orientation and margins live in one panel for the whole page, so
+  // the block points there instead of growing a second copy of them.
+  function openPrintSettings() {
+    const host = document.getElementById("pt-print-settings");
+    if (!host) return;
+    const d = host.querySelector("details");
+    if (d) d.open = true;
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    host.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+    const s = d && d.querySelector("summary");
+    if (s) s.focus({ preventScroll: true });
+  }
+
+  function setBatchLetters(key, opts) {
+    if (!setOptions().some((o) => o.key === key)) return;
+    setKey = key;
+    setActive(batch.chips, key);
+    if (batch.pick) batch.pick.hidden = key !== "pick";
+    if (!(opts && opts.quiet)) trackEngage("letters", key);
+    updateBatch();
+  }
+  function setBatchSize(key, opts) {
+    if (SET_SIZE_KEYS.indexOf(key) === -1) return;
+    alphaSizeKey = key;
+    setActive(batch.tiles, key);
+    if (!(opts && opts.quiet)) trackEngage("size", key);
+    updateBatch();
+  }
+
+  function paintSetPreview(chars, g) {
+    const host = batch.preview;
+    if (!host) return;
+    host.innerHTML = "";
+    const full = paperFull();
+    host.style.aspectRatio = full.w + " / " + full.h;
+    const bar = document.createElement("span");
+    bar.className = "pt-set-preview-title";
+    host.appendChild(bar);
+    const grid = document.createElement("span");
+    grid.className = "pt-set-preview-grid" + (g.per > 1 ? " is-cut" : "");
+    grid.style.gridTemplateColumns = "repeat(" + g.cols + ", minmax(0, 1fr))";
+    grid.style.gridTemplateRows = "repeat(" + g.rows + ", minmax(0, 1fr))";
+    chars.slice(0, g.per).forEach((ch) => {
+      const cell = document.createElement("span");
+      cell.className = "pt-set-preview-cell";
+      cell.appendChild(RENDER === "glyph" ? smallGlyphCell(ch) : (RENDER === "dots" ? singleDotSVG(ch, { small: true }) : outlineSVG(ch, { small: true })));
+      grid.appendChild(cell);
+    });
+    host.appendChild(grid);
+  }
+
+  function updateBatch() {
+    if (BATCH_FROZEN || !batch.btn) return;
+    const chars = setChars();
+    const g = setGrid(alphaSizeKey);
+    const pages = chars.length ? Math.ceil(chars.length / g.per) : 0;
+
+    batch.tiles.forEach((t) => {
+      const tg = setGrid(t.key);
+      t.icon.innerHTML = "";
+      t.icon.appendChild(setIcon(t.key));
+      t.count.textContent = T.set.perPage.replace("{n}", String(tg.per));
+      if (t.size) {
+        const hIn = setLetterHeightIn(t.key);
+        t.size.textContent = T.set.tall.replace("{h}", formatHeight(hIn));
+        // The unrounded estimate, for a render check to compare with the ink.
+        t.size.dataset.heightIn = hIn.toFixed(3);
+      }
+    });
+
+    if (batch.pickEcho) {
+      batch.pickEcho.textContent = "";
+      if (setKey === "pick" && setPickText.trim()) {
+        const res = parsePick(setPickText);
+        if (res.chars.length) {
+          batch.pickEcho.appendChild(document.createTextNode(T.set.order + " "));
+          const b = document.createElement("b");
+          b.textContent = res.chars.map((c) => c.toUpperCase()).join(" ");
+          batch.pickEcho.appendChild(b);
+        }
+        if (res.bad.length) {
+          const w = document.createElement("span");
+          w.className = "pt-set-warn";
+          w.textContent = (res.chars.length ? " · " : "") + T.set.notHere + " " + res.bad.join(" ");
+          batch.pickEcho.appendChild(w);
+        }
+      }
+    }
+
+    const pageWord = pages + " " + plural(pages, T.pageCount);
+    batch.btn.textContent = pages ? PO.savePdf + " · " + pageWord : PO.savePdf;
+    batch.btn.disabled = !pages;
+    const png = el.alphaPrint === batch.btn ? document.getElementById("pt-alphabet-png") : null;
+    if (png) png.hidden = pages !== 1;
+
+    if (batch.summary) {
+      const paper = PP && PP.paperLabel ? PP.paperLabel() : "";
+      const orient = printPrefs.orient === "landscape" ? PO.landscape : PO.portrait;
+      batch.summary.textContent = pages
+        ? [pageWord, paper, orient].filter(Boolean).join(" · ")
+        : T.set.empty;
+      batch.summary.classList.toggle("is-empty", !pages);
+    }
+    paintSetPreview(chars, g);
+  }
+
+  function batchFigure(ch, cell, sizeKey) {
+    const g = setGrid(sizeKey);
+    if (RENDER === "glyph") return bigGlyphForPrint(ch);
+    if (RENDER === "dots") return singleDotSVG(ch, { small: g.per > 1 && cell.h <= 2.2 });
+    return outlineSVG(ch, g.per > 1 ? { small: true, strokeScale: tileStrokeScale(cell.h) } : undefined);
+  }
+
+  /* One print path for every size. Full page is the book page exactly as it
+     always printed; the grids reuse the same page unit, so the PDF writer,
+     the credit footer and the page-unit gates treat them the same way. The
+     grid sits absolutely inside a flex child, which is what gives its rows a
+     definite height to divide (.claude/rules/css.md). The credit is a flex
+     row of the page, not a grid cell, so it spans the page instead of
+     wrapping inside one column as the old 4-up cards did. */
+  function printLetterSet() {
+    const chars = setChars();
+    if (!chars.length) {
+      if (batch.pickInput) batch.pickInput.focus();
+      return;
+    }
+    if (alphaSizeKey === "full" || SET_SIZE_KEYS.indexOf(alphaSizeKey) === -1) {
+      printAlphabetBook(chars, 1);
+      return;
+    }
+    const sizeKey = alphaSizeKey;
+    const g = setGrid(sizeKey);
+    const cell = setCellIn(sizeKey);
+    const total = Math.ceil(chars.length / g.per);
+    const own = withName(moreTitle("letters"), "");
+    const book = document.createElement("div");
+    book.className = "bubble-print-book";
+    for (let i = 0, pi = 0; i < chars.length; i += g.per, pi++) {
+      const page = document.createElement("div");
+      page.className = "bubble-print-book-page is-grid";
+      const title = document.createElement("h3");
+      title.className = "bubble-print-title";
+      title.textContent = (own || cap(NOUN) + " " + T.alphabetWord) +
+        (total > 1 ? " · " + T.pageCount.one + " " + (pi + 1) + " " + T.ofWord + " " + total : "");
+      page.appendChild(title);
+      const box = document.createElement("div");
+      box.className = "pt-set-grid";
+      const grid = document.createElement("div");
+      grid.className = "pt-set-grid-cells";
+      grid.style.gridTemplateColumns = "repeat(" + g.cols + ", minmax(0, 1fr))";
+      grid.style.gridTemplateRows = "repeat(" + g.rows + ", minmax(0, 1fr))";
+      if (RENDER === "glyph") grid.style.setProperty("--pt-glyph-size", setGlyphSizeIn(cell).toFixed(2) + "in");
+      chars.slice(i, i + g.per).forEach((ch) => {
+        const card = document.createElement("div");
+        card.className = "pt-card";
+        const figure = document.createElement("div");
+        figure.className = "bubble-figure";
+        figure.appendChild(batchFigure(ch, cell, sizeKey));
+        card.appendChild(figure);
+        grid.appendChild(card);
+      });
+      box.appendChild(grid);
+      page.appendChild(box);
+      const cut = document.createElement("p");
+      cut.className = "pt-cut-hint";
+      cut.textContent = T.puzzleCut;
+      page.appendChild(cut);
+      if (moreFooterOn("letters", false)) page.appendChild(nameDateRow());
+      book.appendChild(page);
+    }
+    printWrap("", book, "alphabet_tiled");
+  }
+
+  /* Builds the steps into the page's print-size mount (or one made in front
+     of the action row), and the result line in front of that row. mountMore()
+     runs later and puts the shared More section straight after the mount, so
+     the block reads: which letters, print size, More, pages + paper, button. */
+  function buildBatchControl(btn) {
+    let host = btn.closest(".bubble-actions, .pt-actions, .pt-preview-actions");
+    /* The Spanish alphabet chart and its six mirrors put the button in the
+       section's heading row, a flex row with the heading on the left. The
+       steps cannot live in that row, so the button gets an action row of its
+       own under the heading and the block stacks: steps, More, result, button. */
+    const head = !host && btn.parentElement && btn.parentElement.classList.contains("bubble-alphabet-head") ? btn.parentElement : null;
+    if (head) {
+      host = document.createElement("div");
+      host.className = "bubble-actions pt-batch-actions";
+      head.insertAdjacentElement("afterend", host);
+      host.appendChild(btn);
+    }
+    if (!host) host = btn;
+    if (!el.sizeControl) {
+      const field = document.createElement("div");
+      field.className = "pt-size-field";
+      const mount = document.createElement("div");
+      mount.id = "pt-size-control";
+      field.appendChild(mount);
+      host.insertAdjacentElement("beforebegin", field);
+      el.sizeControl = mount;
+    }
+    const field = el.sizeControl.closest(".pt-size-field");
+    /* The steps come before the button they feed: a field authored after the
+       button, or inside the heading row, moves in front of it. Otherwise
+       "Download PDF" would sit above the questions that decide what it prints. */
+    const stepsNode = field || el.sizeControl;
+    const after = host.compareDocumentPosition(stepsNode) & Node.DOCUMENT_POSITION_FOLLOWING;
+    if ((after || (head && head.contains(stepsNode))) && !host.contains(stepsNode)) {
+      host.insertAdjacentElement("beforebegin", stepsNode);
+    }
+    // The authored "Print size" label and the paragraph under it described
+    // the old three-way control; each step carries its own legend now.
+    if (field) $$(".pt-size-field-label, .pt-size-hint", field).forEach((n) => { if (!el.sizeControl.contains(n)) n.remove(); });
+    el.sizeControl.classList.add("pt-set-control");
+    batchDefaultSize = (el.alphaPrint && btn === el.alphaPrint && CFG.alphabetPrint !== "book") ? "small" : "full";
+    if (SET_SIZE_KEYS.indexOf(batchDefaultSize) === -1) batchDefaultSize = "full";
+    alphaSizeKey = batchDefaultSize;
+    batch.btn = btn;
+    el.sizeControl.appendChild(buildSetLettersStep());
+    el.sizeControl.appendChild(buildSetSizeStep());
+    host.insertAdjacentElement("beforebegin", buildSetResult());
+    updateBatch();
+  }
+
   const BOOK_PRESETS = [
     { key: "all", label: "A\u2013Z 0\u20139", chars: null },
     { key: "az",  label: "A\u2013Z", chars: "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("") },
@@ -4696,11 +5308,15 @@
     bookBtn.parentNode.insertBefore(wrap, bookBtn);
   }
 
-  function printAlphabetBook() {
+  // With no arguments this is the legacy book (the frozen page's range and
+  // 1 / 2 / 4 control); printLetterSet() passes its own set at one per page.
+  // The legacy buttons register this directly as a click listener, so the
+  // first argument can be the click event: only an array counts as a set.
+  function printAlphabetBook(charsArg, perArg) {
     const book = document.createElement("div");
     book.className = "bubble-print-book";
-    const chars = bookChars();
-    const per = bookPerPage;
+    const chars = Array.isArray(charsArg) ? charsArg : bookChars();
+    const per = typeof perArg === "number" ? perArg : bookPerPage;
     for (let i = 0; i < chars.length; i += per) {
       const page = document.createElement("div");
       page.className = "bubble-print-book-page" + (per > 1 ? " is-" + per + "up" : "");
@@ -4985,21 +5601,26 @@
     // job, and two purple buttons in one column read as two primaries.
     book.className = "bubble-btn";
     book.dataset.ptPdf = "1";
-    book.textContent = T.printBook;
-    book.addEventListener("click", () => {
-      if (alphaSizeKey !== "full") { printAlphabetTiled(alphaSizeKey); return; }
-      printAlphabetBook();
-    });
+    book.textContent = PO.savePdf;
+    book.addEventListener("click", printLetterSet);
     actions.appendChild(book);
-    buildBookRangeControl(book);
     wrap.appendChild(actions);
     wrap.appendChild(makePdfHint());
 
     el.panel.insertAdjacentElement("afterend", wrap);
-    buildSizeControl();
+    buildBatchControl(book);
   }
 
   function buildAlphabetGrid() {
+    if (!BATCH_FROZEN) {
+      const btn = el.alphaPrint || el.bookPrint;
+      if (btn) {
+        [el.alphaPrint, el.bookPrint].filter(Boolean).forEach((b) => b.addEventListener("click", printLetterSet));
+        buildBatchControl(btn);
+      }
+      paintAlphabetGrid();
+      return;
+    }
     buildSizeControl();
     if (el.bookPrint) {
       el.bookPrint.addEventListener("click", () => {
@@ -5245,7 +5866,7 @@
     // the number every teacher was already paying, and it is what makes the
     // N chips above legible without a sentence.
     let pages = n > 1 ? Math.ceil(n / (nUp > 1 ? nUp : 1)) : 0;
-    if (el.sizeControl && alphaSizeKey !== "full") {
+    if (BATCH_FROZEN && el.sizeControl && alphaSizeKey !== "full") {
       const preset = SIZE_PRESETS.filter((x) => x.key === alphaSizeKey)[0];
       if (preset && preset.heightIn) {
         const per = tileLayout(preset.heightIn).perPage;
@@ -10865,6 +11486,7 @@
     buildScrambleSurface();
     mountMore();
     wireMoreRepaint();
+    if (moreRefs.letters && moreRefs.letters.check) moreRefs.letters.check.addEventListener("change", updateBatch);
 
     if (el.practicePrint) el.practicePrint.addEventListener("click", buildPracticeSheet);
 
@@ -10931,6 +11553,8 @@
     wireGenerateEvents();
     watchSectionReach();
     applyPresetState();
+    // convertPrintButtonsToPdf() relabelled the batch button and added its PNG.
+    updateBatch();
 
     /* Canvas measureText does NOT trigger webfont loading.
 
@@ -10963,7 +11587,7 @@
         /* The word surfaces do need a rebuild: their viewBox width is measured
            too, so a re-measure changes the box and not just the text inside it. */
         [renderNamePreview, renderGenPreview, renderDesignPreview,
-         renderBannerPreview, renderPuzzlePreview].forEach((fn) => {
+         renderBannerPreview, renderPuzzlePreview, updateBatch].forEach((fn) => {
           if (typeof fn === "function") { try { fn(); } catch (e) { /* surface absent on this page */ } }
         });
       });
