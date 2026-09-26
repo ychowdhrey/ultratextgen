@@ -2,16 +2,17 @@
   "slug": "kciuk-kierunkowy",
   "lang": "pl",
   "page_type": "symbol",
-  "title": "Emoji Kciuka Kierunkowego: Skopiuj 🫹 🫺 — Para z Unicode 18.0",
-  "meta_description": "Kciuk w Lewo i Kciuk w Prawo (🫹 U+1FAF9, 🫺 U+1FAFA) to projektowe kandydatury do Emoji 18.0, spodziewane wraz z Unicode 18.0 we wrześniu 2026 roku — gesty kierunkowe, inne niż Kciuk w Górę/w Dół. Jeszcze nieprzyjęte, żadna czcionka jeszcze ich nie renderuje.",
+  "title": "Emoji Kciuka Kierunkowego: Skopiuj 🫹 🫺, Oficjalnie w Emoji 18.0",
+  "meta_description": "Kciuk w Lewo i Kciuk w Prawo (🫹 U+1FAF9, 🫺 U+1FAFA) mają status ostateczny w Emoji 18.0 od 16 września 2026 roku: gesty kierunkowe, inne niż Kciuk w Górę/w Dół. Na dzień 25 września 2026 roku żaden telefon ani komputer nie wyświetla ich domyślnie.",
   "canonical": "https://ultratextgen.com/pl/symbol/kciuk-kierunkowy/",
   "breadcrumb": "Emoji Kciuka Kierunkowego",
   "hero_h1": "Emoji Kciuka w Lewo i w Prawo",
-  "hero_tagline": "Para gestów kierunkowych, nie kolejny gest aprobaty — zaprojektowana dla Emoji 18.0, spodziewana wraz z Unicode 18.0 we wrześniu 2026 roku. Wciąż tylko projekt: jeszcze nieprzyjęty, żadna czcionka jeszcze go nie renderuje. Mimo to kliknij, aby skopiować dowolny z tych punktów kodowych.",
-  "intro": "Leftwards Thumb Sign (🫹, U+1FAF9) i Rightwards Thumb Sign (🫺, U+1FAFA) to sparowany zestaw kandydujących emoji zaprojektowanych dla Emoji 18.0, emotikonowego towarzysza Unicode 18.0, którego finalizacja spodziewana jest we wrześniu 2026 roku. Mimo nazwy nie są kolejnym gestem aprobaty obok Kciuka w Górę i Kciuka w Dół — to poziome, wskazujące znaki, bliższe zadaniem istniejącym emoji Wskazująca Dłoń w Lewo/w Prawo niż pionowemu kciukowi. Ta para odpowiada na długo powtarzaną skargę społeczności: zestaw gestów Unicode zawsze przechylał się ku praworęcznym, pionowym znakom aprobaty, bez czystego sposobu, by kciukiem wskazać „na to” kontra „na tamto” w odpowiedzi czy porównaniu. Istnieje realny precedens dla tej kategorii — propozycja Pushing Hand z 2021 roku już ustanowiła kierunkowe gesty dłoni jako uprawnioną kategorię emoji, wykraczającą poza zwykłą aprobatę kciukiem w górę. Między tymi dwoma koncepcjami para niesie ze sobą 10 wariantów odcienia skóry po zatwierdzeniu (po pięć na każdy znak). Ponieważ to wciąż tylko projekty, żaden system operacyjny, klawiatura ani czcionka obecnie nie renderuje żadnego z nich; spodziewaj się pustego kwadratu albo znaku zastępczego, dopóki Emoji 18.0 nie zostanie zatwierdzone, a platformy nie wprowadzą wsparcia, prawdopodobnie gdzieś w 2027 roku.",
+  "hero_tagline": "Para gestów kierunkowych, nie kolejny gest aprobaty, zatwierdzona w Emoji 18.0 wraz z Unicode 18.0 16 września 2026 roku. Na dzień 25 września 2026 roku żaden telefon ani komputer nie wyświetla jej domyślnie, ale każdy z punktów kodowych skopiujesz już jednym kliknięciem.",
+  "intro": "Leftwards Thumb Sign (🫹, U+1FAF9) i Rightwards Thumb Sign (🫺, U+1FAFA) to sparowany zestaw nowych emoji z Emoji 18.0, emotikonowego towarzysza Unicode 18.0, który uzyskał status ostateczny 16 września 2026 roku. Mimo nazwy nie są kolejnym gestem aprobaty obok Kciuka w Górę i Kciuka w Dół — to poziome, wskazujące znaki, bliższe zadaniem istniejącym emoji Wskazująca Dłoń w Lewo/w Prawo niż pionowemu kciukowi. Ta para odpowiada na długo powtarzaną skargę społeczności: zestaw gestów Unicode zawsze przechylał się ku praworęcznym, pionowym znakom aprobaty, bez czystego sposobu, by kciukiem wskazać „na to” kontra „na tamto” w odpowiedzi czy porównaniu. Istnieje realny precedens dla tej kategorii — propozycja Pushing Hand z 2021 roku już ustanowiła kierunkowe gesty dłoni jako uprawnioną kategorię emoji, wykraczającą poza zwykłą aprobatę kciukiem w górę. Ostateczne dane emoji Unicode dają każdemu znakowi wszystkie pięć modyfikatorów odcienia skóry, więc para ma łącznie 10 wariantów odcienia skóry (po pięć na każdy znak). Status ostateczny oznacza miejsce w standardzie, jeszcze nie na ekranie. Google opublikował projekty obu znaków w czcionce Noto Color Emoji, ale na dzień 25 września 2026 roku żaden system operacyjny, klawiatura ani systemowa czcionka emoji ich nie zawiera; spodziewaj się pustego kwadratu albo znaku zastępczego, dopóki platformy nie wprowadzą wsparcia. Emojipedia szacuje, na podstawie zeszłorocznego harmonogramu, WhatsApp, Samsunga i Google w pierwszym kwartale 2027 roku, Apple około marca lub kwietnia 2027 roku, a Microsoft pod koniec lata lub na początku jesieni 2027 roku.",
   "date_published": "2026-07-25",
-  "date_modified": "2026-07-25",
+  "date_modified": "2026-09-26",
   "copy_pattern": "single",
+  "sources": "Oba znaki, U+1FAF9 i U+1FAFA, figurują z pięcioma wariantami odcienia skóry każdy w pliku danych <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> Unicode 18.0, opublikowanym razem z <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">ogłoszeniem Unicode 18.0</a> konsorcjum Unicode 16 września 2026 roku. <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">Emojipedia</a> opisała projekty Google w Noto Color Emoji i opublikowała przytoczone wyżej szacunki na 2027 rok.",
   "home_url": "https://ultratextgen.com/pl/",
   "crumb_home": "Strona główna",
   "crumb_library": "Symbole",
@@ -26,10 +27,10 @@
       "id": "kciuk-kierunkowy",
       "label": "Kciuk Kierunkowy",
       "h2": "Kciuk w Lewo i w Prawo",
-      "intro": "Same dwa projektowe znaki — możliwe do skopiowania już dziś jako punkty kodowe, mimo że żadna czcionka nie potrafi ich jeszcze wyrenderować.",
+      "intro": "Same dwa ostateczne znaki: możliwe do skopiowania już dziś jako punkty kodowe, mimo że żaden telefon ani komputer nie wyświetla ich jeszcze domyślnie.",
       "symbols": [
-        { "char": "🫹", "label": "Kciuk w Lewo (projekt, U+1FAF9)" },
-        { "char": "🫺", "label": "Kciuk w Prawo (projekt, U+1FAFA)" }
+        { "char": "🫹", "label": "Kciuk w Lewo (U+1FAF9, Emoji 18.0)" },
+        { "char": "🫺", "label": "Kciuk w Prawo (U+1FAFA, Emoji 18.0)" }
       ]
     },
     {
@@ -46,14 +47,14 @@
     },
     {
       "id": "inne-projekty",
-      "label": "Inne Projektowe Kandydatury",
-      "h2": "Inne Projektowe Kandydatury Emoji 18.0",
-      "intro": "Kciuk Kierunkowy nie jest jedynym niezatwierdzonym znakiem w tej edycji — te zaprojektowano razem z nim, równie niewyrenderowane aż do decyzji we wrześniu 2026 roku.",
+      "label": "Wydane Razem z Nimi",
+      "h2": "Inne Nowe Emoji w Emoji 18.0",
+      "intro": "Kciuk Kierunkowy nie jest jedynym nowym znakiem w tej edycji: te zatwierdzono razem z nim 16 września 2026 roku i na razie również nie wyświetlają się na większości urządzeń.",
       "symbols": [
-        { "char": "🫫", "label": "Pękająca Twarz (projekt, U+1FAEB): wygrała głosowanie publiczne" },
-        { "char": "🫝", "label": "Ogórek Kiszony (projekt, U+1FADD)" },
-        { "char": "🪋", "label": "Meteor (projekt, U+1FA8B)" },
-        { "char": "🫌", "label": "Motyl Monarcha (projekt, U+1FACC)" }
+        { "char": "🫫", "label": "Pękająca Twarz (U+1FAEB, Emoji 18.0): wygrała głosowanie publiczne" },
+        { "char": "🫝", "label": "Ogórek Kiszony (U+1FADD, Emoji 18.0)" },
+        { "char": "🪋", "label": "Meteor (U+1FA8B, Emoji 18.0)" },
+        { "char": "🫌", "label": "Motyl Monarcha (U+1FACC, Emoji 18.0)" }
       ]
     }
   ],
@@ -67,12 +68,12 @@
     {
       "href": "/pl/symbol/pekajaca-twarz/",
       "title": "Emoji Pękającej Twarzy",
-      "desc": "Projektowa kandydatura Emoji 18.0, która wygrała głosowanie publiczne."
+      "desc": "Nowe emoji z Emoji 18.0, które wygrało głosowanie publiczne."
     },
     {
       "href": "/pl/symbol/ogorek-kiszony/",
       "title": "Emoji Ogórka Kiszonego",
-      "desc": "Kolejna projektowa kandydatura Emoji 18.0 — przeniesiona z odłożonej propozycji Apple Core."
+      "desc": "Kolejne nowe emoji z Emoji 18.0, przeniesione z odłożonej propozycji Apple Core."
     }
   ]
 }
