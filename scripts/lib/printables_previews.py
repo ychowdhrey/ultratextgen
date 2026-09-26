@@ -26,7 +26,7 @@ OUT_DIR = os.path.join(REPO, "assets", "printables-previews")
 OUT_URL = "/assets/printables-previews"
 
 ENGINE_MARKERS = ("window.UTG_PRINTABLE", "crossStitchEngine.js", "monogramEngine.js")
-LOCALE_DIRS = ("de", "es", "fr", "id", "it", "pl", "pt")
+LOCALE_DIRS = ("de", "es", "fr", "id", "it", "nl", "pl", "pt", "tr")
 
 # The PDF buttons capture-printables-previews.js presses, in its PRIMARY order.
 # Listed here only so capture_query() can tell which one a page will use.
@@ -283,6 +283,11 @@ EN_ALT = {
     "_cursive_phrase": {
         "landing": "{demo} in cursive: a script model above outlined copies to trace on ruled lines",
     },
+    # A phrase whose sheet traces its writing route (js/printables/cursiveRouteData.js)
+    # prints the pen path in dots with numbered start points, not an outline.
+    "_cursive_route": {
+        "landing": "{demo} in cursive: a script model above rows of dots along the pen path, numbered start points, and blank ruled lines",
+    },
 }
 
 # Each locale's own suffix for "preview of the printable sheet". The page's
@@ -300,6 +305,8 @@ LOCALE_SUFFIX = {
 
 CURSIVE_PHRASE_KEYS = {"mom-in-cursive", "dad-in-cursive", "love-in-cursive", "family-in-cursive",
                        "best-friend-in-cursive", "happy-birthday-in-cursive"}
+# The phrase pages that opt into a writing route (CFG.cursiveRoute).
+CURSIVE_ROUTE_KEYS = {"happy-birthday-in-cursive"}
 
 
 def family_of(page):
@@ -307,6 +314,8 @@ def family_of(page):
     reuse EN keys except where a locale page carries its own key for the same
     engine setup."""
     key = page["key"]
+    if key in CURSIVE_ROUTE_KEYS and page["lang"] == "en":
+        return "_cursive_route"
     if key in CURSIVE_PHRASE_KEYS or (page["render"] == "glyph" and page["demo"]
                                        and key not in ("cursive-alphabet", "calligraphy-alphabet",
                                                        "cursive-name", "calligraphy-name")):

@@ -1,7 +1,7 @@
 ---
 paths:
   - "printables/**"
-  - "{de/zum-ausdrucken,es/imprimibles,fr/imprimables,id/printables,it/da-stampare,nl/om-uit-te-printen,pl/do-druku,pt/imprimiveis}/**"
+  - "{de/zum-ausdrucken,es/imprimibles,fr/imprimables,id/printables,it/da-stampare,nl/om-uit-te-printen,pl/do-druku,pt/imprimiveis,tr/yazdirilabilir}/**"
   - "js/printables/**"
   - "data/printables_*.json"
   - "data/printable_tool_duplication_exclusions.json"
