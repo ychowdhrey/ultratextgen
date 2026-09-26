@@ -199,18 +199,19 @@ const ROOT_PAGE_SECTION = new Map(Object.entries({
  *               library-hub-data.js's englishClassification(). 338/338 EN pages
  *               carry one. Localized per locale in data/library_hub_i18n.json.
  *   printables  `data-pt-job` on `printables/index.html`'s own cards, the
- *               attribute that places each card in one of the hub's six job sections. 31/31 families carry one.
+ *               attribute that places each card in one of the hub's four job
+ *               sections. 31/31 families carry one.
  *
- * The job values are the hub's; only the human-readable English label is added
- * here, because the attribute ships no visible label anywhere on the site.
+ * The job values are the hub's, and so are the labels: each is the hub's own
+ * section H2, in the hub's order, so a reader of llms.txt and a reader of the
+ * page see one map. (Until 2026-09-26 these were separate, more descriptive
+ * strings, written when the attribute had no visible label on the site.)
  */
 const PRINTABLE_JOB_TITLES = new Map(Object.entries({
-  quick: 'Quick print: ready-made sheets',
+  practice: 'Practice writing',
   name: 'Personalize a name',
-  words: 'Create with your own words',
-  practice: 'Handwriting & letter practice',
-  puzzle: 'Word puzzles',
-  craft: 'Craft & display lettering',
+  puzzle: 'Coloring & puzzles',
+  craft: 'Craft & display',
 }));
 
 // ─── Small helpers ───────────────────────────────────────────────────────────

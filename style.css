@@ -11482,14 +11482,67 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
 
 @media print { .pt-stencil-field { display: none; } }
 
-/* The printables hub is sectioned by job (owner decision 2026-09-22), which
-   replaced the PR-18 facet bar: six headed sections are crawlable and need no
-   script. This row jumps to them. */
+/* The printables hub (/printables/) is sectioned by job: Practice writing,
+   Personalize a name, Coloring & puzzles, Craft & display (four sections since
+   2026-09-26; six from 2026-09-22, when they replaced the PR-18 facet bar).
+   Headed sections are crawlable and need no script.
+   Every rule here is scoped to .pt-hub-hero / .pt-hub. .hero-headline,
+   .editorial-section and .printable-card are shared by the rest of the site,
+   and the hub is the only page that overrides them. */
+.pt-hub-hero { padding-bottom: 1.5rem; }
+.pt-hub-hero .hero-inner { max-width: 800px; }
+/* The site-wide headline is sized for tool pages, where the generator is the
+   first thing on screen. On a router the H1 is the page's only title, and at
+   the shared 1.5rem it rendered smaller than the 1.75rem section H2s. */
+.pt-hub-hero .hero-headline { font-size: 2.25rem; margin-bottom: 0.75rem; }
+.pt-hub-hero .pt-claims { margin-bottom: 1.25rem; }
+
+/* This row jumps to the sections: one chip per section, at a 44px touch target. */
 .pt-hub-jump {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem 0.75rem;
-  margin: 0 0 1.5rem;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+.pt-hub-jump a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: var(--bg-white);
+  color: var(--accent-purple);
   font-size: 0.95rem;
-  color: var(--text-secondary);
+  font-weight: 600;
+  text-decoration: none;
+}
+.pt-hub-jump a:hover { border-color: var(--accent-purple); }
+
+/* Headings sit on the same left edge as the intro and the cards below them. */
+.pt-hub .editorial-section > h2 { text-align: left; margin-bottom: 0.5rem; }
+.pt-hub .printable-card { padding: 1rem 1.15rem; gap: 0.35rem; }
+.pt-hub .printable-card-art { font-size: 1.6rem; line-height: 1.3; }
+
+/* Card art set in the face the sheet itself prints in, where no Unicode
+   string can show it: block stencils, bubble and rounded outlines, graffiti.
+   Hollow faces are stroked in the art colour, so dark mode's colour swap
+   carries through. The faces are the self-hosted @font-face families above. */
+.pt-hub .pt-hub-art-block { font-family: 'Archivo Black', 'Arial Black', sans-serif; font-weight: 400; }
+.pt-hub .pt-hub-art-bubble { font-family: 'Fredoka', 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
+.pt-hub .pt-hub-art-rounded { font-family: 'Baloo 2', 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
+.pt-hub .pt-hub-art-graffiti { font-family: 'Sedgwick Ave Display', 'Permanent Marker', cursive; font-weight: 400; letter-spacing: 0.06em; }
+.pt-hub .pt-hub-art-hollow {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.5px currentColor;
+  opacity: 1;
+}
+
+/* The six ready-made cursive words: one inline row, every link the same. */
+.pt-hub .pt-hub-words { line-height: 2; }
+.pt-hub .pt-hub-words a { display: inline-block; padding: 0.35rem 0.1rem; }
+
+@media (max-width: 640px) {
+  .pt-hub-hero .hero-headline { font-size: 1.85rem; }
 }
