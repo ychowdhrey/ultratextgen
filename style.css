@@ -11617,6 +11617,21 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
 
 .research-print-only { display: none; }
 
+.study-hero-finding {
+  max-width: 760px;
+  margin: 0 0 1.25rem;
+  padding: 0.75rem 1rem;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--accent-purple);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.study-hero-finding-label { display: block; margin-bottom: 0.15rem; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
+
 /* Validation status: a filled dot is done, a ring is pending, a dashed ring is planned. */
 .study-status { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 0.25rem; padding: 0; }
 .study-status-item {
@@ -11752,7 +11767,6 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
 .study-toc-list a[aria-current="true"] { color: var(--text-primary); font-weight: 700; border-left-color: var(--accent-purple); }
 .study-toc-actions { display: grid; gap: 0.45rem; margin-top: 1.1rem; padding-top: 0.9rem; border-top: 1px solid var(--border-light); }
 .study-toc-actions a { font-weight: 600; color: var(--text-primary); text-decoration: underline; text-decoration-color: var(--accent-purple); text-underline-offset: 3px; }
-.study-toc-open { display: none; }
 
 @media (min-width: 1120px) {
   .study-layout { display: grid; grid-template-columns: 210px minmax(0, 760px); gap: 48px; align-items: start; }
@@ -11769,31 +11783,38 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
   .study-layout > .google-auto-placed { grid-column: 1 / -1; }
 }
 
+/* Below 1120px the list becomes one scrollable row of section chips: the same
+   height with or without the script, so nothing shifts when it loads. */
 @media (max-width: 1119.98px) {
-  .study-toc:not(.is-enhanced) {
-    padding: 1rem 1.25rem;
-    background: var(--bg-white);
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius);
-  }
-  .study-toc.is-enhanced > :not(.study-toc-open) { display: none; }
-  .study-toc.is-enhanced .study-toc-open {
+  .study-toc {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    gap: 0.75rem;
-    padding: 0.8rem 1rem;
-    font: inherit;
-    font-size: 0.9375rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    background: var(--bg-white);
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius);
-    cursor: pointer;
+    gap: 0.4rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0.15rem 1.5rem 0.35rem 0.1rem;
+    -webkit-mask-image: linear-gradient(to right, #000 88%, transparent);
+    mask-image: linear-gradient(to right, #000 88%, transparent);
   }
-  .study-toc-open-count { font-size: 0.8125rem; font-weight: 500; color: var(--text-secondary); }
+  .study-toc::-webkit-scrollbar { display: none; }
+  .study-toc .study-toc-title,
+  .study-toc .study-toc-group,
+  .study-toc .study-toc-actions { display: none; }
+  .study-toc .study-toc-list { display: contents; }
+  .study-toc .study-toc-list li { flex: none; }
+  .study-toc .study-toc-list a {
+    margin: 0;
+    padding: 0.4rem 0.85rem;
+    border: 1px solid var(--border-light);
+    border-radius: 999px;
+    background: var(--bg-white);
+    color: var(--text-primary);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .study-toc .study-toc-list a[aria-current="true"] { border-color: var(--text-primary); }
 }
 
 @media (max-width: 640px) {
@@ -11893,14 +11914,7 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
 .study-toc a:focus-visible,
 .study-section summary:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 2px; border-radius: 3px; }
 
-/* Summary: the answer, four key figures, and what is not shown yet. */
-.study-answer {
-  font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.45rem);
-  font-weight: 700;
-  line-height: 1.35;
-  max-width: 36em;
-}
-.study-section p.study-answer { margin-bottom: 1.5rem; }
+/* Summary: four key figures, and what is not shown yet. */
 /* Key figures read as a list: the number in a column of its own, so the eye
    can run down four numbers before reading any sentence. */
 .key-figures {
@@ -12051,7 +12065,13 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
 .rc-crop { position: relative; overflow: hidden; border: 1px solid var(--border-light); border-radius: 8px; background: var(--bg-white); }
 .rc-crop img { position: absolute; top: 0; left: 0; height: 100%; max-width: none; }
 .rc-full { display: inline-block; margin-top: 0.5rem; font-size: 0.8125rem; font-weight: 600; color: var(--text-primary); text-decoration-color: var(--accent-purple); text-underline-offset: 3px; }
-@media screen { .research-figure.is-enhanced > a { display: none; } }
+/* On a wide screen the four-panel image is already legible, so the
+   comparison only replaces it on a phone. */
+.render-compare { display: none; }
+@media screen and (max-width: 640px) {
+  .research-figure.is-enhanced .render-compare { display: block; }
+  .research-figure.is-enhanced > a { display: none; }
+}
 @media (max-width: 560px) { .rc-stage.is-landscape { grid-template-columns: 1fr; } }
 
 .research-findings { list-style: none; padding: 0; margin: 0 0 1.5rem; }
@@ -12215,14 +12235,17 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
 
 .study-callout a { font-weight: 600; }
 .study-section .study-guide-callout { margin-top: 1.25rem; font-size: 0.9375rem; color: var(--text-primary); }
+.study-section .study-impl-note .evidence-tag { margin-right: 0.35rem; }
 
 /* ---- /research/ index: one card per study, grouped by research area. The
-   card's parts are fixed so a list of fifty stays scannable: status, title,
-   main finding, scope, resources, dates. ---- */
+   card's parts are fixed (number and status, title, main finding, at most
+   three results, resources, one line of dates) so cards stay comparable as
+   the list grows. Past about eight studies a filter row by area and status
+   belongs above the list; with one study it would be furniture. ---- */
 .research-hub.container { max-width: 900px; }
 .research-hub-hero .hero-inner { max-width: 852px; }
 .research-hub .study-section:first-child { margin-top: 2.5rem; }
-.research-area { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 0.75rem; }
+.study-section > h3.research-area { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 0.75rem; }
 .study-cards { list-style: none; display: grid; gap: 1rem; margin: 0; padding: 0; }
 .study-card { padding: 1.5rem; background: var(--bg-white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); }
 .study-card-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 1rem; margin-bottom: 0.85rem; }
@@ -12234,11 +12257,8 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
 .study-section .study-card-summary { margin: 0 0 0.85rem; color: var(--text-secondary); }
 .study-section .study-card-finding { margin: 0 0 0.5rem; font-weight: 600; }
 .study-card-finding-label { display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 0.15rem; }
-.study-card-results { margin: 0 0 1rem; padding-left: 1.2rem; }
+.study-card-results { margin: 0 0 1.1rem; padding-left: 1.2rem; }
 .study-card-results li { margin-bottom: 0.3rem; line-height: 1.55; }
-.study-card-facts { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem 1.75rem; margin: 0 0 1rem; padding: 0.75rem 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
-.study-card-facts li { display: flex; flex-direction: column; font-size: 0.8rem; color: var(--text-secondary); }
-.study-card-facts strong { font-size: 1.15rem; line-height: 1.2; color: var(--text-primary); }
 .study-card-links { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1rem; padding: 0; }
 .study-card-links a {
   display: inline-flex;
@@ -12255,7 +12275,7 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
 .study-card-links a:hover { border-color: var(--text-secondary); }
 .study-card-links a.is-primary { background: var(--text-primary); border-color: var(--text-primary); color: var(--bg-white); }
 .study-card-links a:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 2px; }
-.study-card .research-meta { margin-top: 0; max-width: none; }
+.study-section .study-card-meta { margin: 0; font-size: 0.8125rem; color: var(--text-secondary); }
 .planned-list { list-style: none; display: grid; gap: 0.75rem; margin: 0; padding: 0; }
 .planned-item { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 0.5rem 1rem; align-items: start; padding: 1rem 1.1rem; border: 1px dashed var(--border-light); border-radius: var(--radius); }
 .planned-item .study-status-item { justify-self: start; }
@@ -12317,5 +12337,9 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
   body:has(.research-page) .figure-scroll img { width: 100%; max-width: 100%; }
   body:has(.research-page) .research-limitations { padding-left: 2.2em; }
   body:has(.research-page) .study-details > summary::before { display: none; }
+  body:has(.research-page) .key-figures { border: 0; padding: 0; }
+  body:has(.research-page) .research-figure.is-tall .figure-scroll img { width: auto; max-width: 100%; max-height: 215mm; margin: 0 auto; }
+  body:has(.research-page) thead,
+  body:has(.research-page) .table-group { break-after: avoid; }
   body:has(.research-page) a { color: inherit; }
 }

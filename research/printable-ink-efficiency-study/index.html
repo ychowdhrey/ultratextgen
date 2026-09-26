@@ -134,6 +134,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   ],
   "headline": "Printable Ink Efficiency: Measuring Coverage Reduction Across Common Worksheet Rendering Methods",
   "description": "A controlled experiment on 144 computer-generated worksheet pages and 36 rendering methods: how much estimated printed coverage each method removes, and what it breaks.",
+  "abstract": "No single ink-saving setting performed best on every page. What a page can save depends on what covers it.",
   "author": {
     "@type": "Organization",
     "name": "UltraTextGen",
@@ -174,6 +175,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="research-kicker">UltraTextGen Research · Study 1 · Printing and printables</p>
       <h1 class="hero-headline">Printable Ink Efficiency: Measuring Coverage Reduction Across Common Worksheet Rendering Methods</h1>
       <p class="hero-tagline">A controlled experiment on 108 computer-generated worksheet pages, 36 rendering methods and 36 unseen holdout pages. It measures how much of each page a printer would be asked to cover, not how much ink or toner a printer uses.</p>
+      <p class="study-hero-finding"><span class="study-hero-finding-label">Main finding</span> No single ink-saving setting performed best on every page. What a page can save depends on what covers it.</p>
       <ul class="study-status" aria-label="Validation status">
         <li class="study-status-item is-done">Digital study complete</li>
         <li class="study-status-item is-pending">Printer validation not yet run</li>
@@ -185,8 +187,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </dl>
       <div class="research-actions">
         <a class="cta-btn" href="/research/printable-ink-efficiency-study.pdf" download>Download the full study (PDF, 1.5 MB)</a>
+        <a class="research-secondary-link" href="/learn/save-printer-ink-printables/">Practical guide for worksheets</a>
         <a class="research-secondary-link" href="#data">Data files and sample PDFs</a>
-        <a class="research-secondary-link" href="#citation">How to cite</a>
       </div>
       <p class="research-print-only">Canonical URL: https://ultratextgen.com/research/printable-ink-efficiency-study/<br>UltraTextGen Research · Version 1.0 · Published September 26, 2026</p>
     </div>
@@ -227,7 +229,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <section class="study-section study-summary" id="summary" aria-labelledby="summary-title">
       <span class="article-section-label">Summary</span>
       <h2 id="summary-title">What the study found</h2>
-      <p class="study-answer">No single ink-saving setting performed best on every page. What a page can save depends on what covers it.</p>
       <ul class="key-figures">
         <li class="key-figure">
           <p class="key-figure-value">5 of 12</p>
@@ -366,7 +367,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <caption class="sr-only">Mean cut in estimated coverage, range and function-check failures for twelve rendering methods over 108 development pages</caption>
           <thead><tr><th scope="col">Method</th><th scope="col">Mean cut, 108 pages</th><th scope="col">Pages failed</th><th scope="col">What to know</th></tr></thead>
           <tbody>
-            <tr class="table-group"><th scope="rowgroup" colspan="4">Cut where there is color to remove, and kept function</th></tr>
+            <tr class="table-group"><th scope="rowgroup" colspan="4">Cut where there is color to remove, with few or no failures</th></tr>
             <tr>
               <th scope="row">Eco Colour <code>ECO_COLOUR</code></th>
               <td data-label="Mean cut, 108 pages"><span class="bar-value">29.8%</span> <span class="bar-sub">range 0 to 99%</span><svg class="range-bar" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><line class="range-zero" x1="16.7" x2="16.7" y1="0" y2="12"/><rect class="range-span" x="16.7" y="4" width="82.3" height="4"/><rect class="range-mean" x="40.7" y="0" width="1.6" height="12"/></svg></td>
@@ -452,6 +453,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </table>
       </div>
       <p class="table-note">A page fails below a function score of 0.80. The range bar runs from the lowest to the highest page, on a scale from &minus;20% to 100%, and the tick marks the mean; a negative cut means the method added coverage. Values come from <a href="/research/printable-ink-efficiency-study/data/summary-by-mode.csv">summary-by-mode.csv</a>; all 36 methods are in the <a href="#fig-reduction-by-mode">dot plot below</a>.</p>
+      <p class="table-note study-impl-note"><span class="evidence-tag is-renderer">Chromium-specific</span> How a method is built changes the file. Grayscale or lightening applied as a CSS filter or an SVG filter exported the page as an image with no text layer; plain group opacity stayed vector. <a href="#pdf-findings">Chromium and PDF behavior</a></p>
 
       <figure class="research-figure is-wide" data-compare="Standard|60% page opacity|Decoration removed|Eco Colour" data-compare-subject="Decorated worksheet">
         <a href="/assets/research/printable-ink-efficiency-study/renders-decorative-worksheet.png"><img src="/assets/research/printable-ink-efficiency-study/renders-decorative-worksheet.png" width="1800" height="664" alt="Four renderings of the decorated worksheet: standard with yellow background, border and banner; 60% opacity; decoration removed; and Eco Colour." loading="lazy"></a>

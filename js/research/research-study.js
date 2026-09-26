@@ -5,11 +5,11 @@
  * every section, number and figure is static HTML, and the PDF is printed from
  * it. This only adds what a long record needs on screen:
  *
- *   contents    on wide screens the sticky list marks the section in view; on
- *               narrow ones the list collapses to an "On this page" button,
- *               and a floating Contents button (with a reading-progress line)
- *               appears once that button has scrolled away. Both open the same
- *               sheet.
+ *   contents    the list marks the section in view. On wide screens it is a
+ *               sticky sidebar; on narrow ones CSS turns it into a row of
+ *               section chips, and once that row has scrolled away a floating
+ *               Contents button (with a reading-progress line) opens the list
+ *               in a sheet.
  *   compare     a figure with data-compare="Standard|A|B|C" whose image is
  *               four panels side by side gets Standard next to one chosen
  *               panel, large enough to read on a phone. The full image stays
@@ -39,13 +39,6 @@
       .filter(Boolean);
     if (!targets.length) return;
 
-    const openBtn = el("button", "study-toc-open");
-    openBtn.type = "button";
-    openBtn.setAttribute("aria-haspopup", "dialog");
-    openBtn.append(el("span", "", "On this page"), el("span", "study-toc-open-count", targets.length + " sections"));
-    nav.prepend(openBtn);
-    nav.classList.add("is-enhanced");
-
     const sheet = el("dialog", "study-toc-sheet");
     sheet.setAttribute("aria-label", "On this page");
     const inner = el("div", "study-toc-sheet-inner");
@@ -55,7 +48,7 @@
     head.append(el("p", "study-toc-title", "On this page"), close);
     inner.append(head);
     Array.from(nav.children).forEach((child) => {
-      if (child === openBtn || child.classList.contains("study-toc-title")) return;
+      if (child.classList.contains("study-toc-title")) return;
       inner.append(child.cloneNode(true));
     });
     sheet.append(inner);
@@ -85,7 +78,6 @@
       if (typeof sheet.close === "function") sheet.close();
       else sheet.removeAttribute("open");
     }
-    openBtn.addEventListener("click", openSheet);
     fab.addEventListener("click", openSheet);
     close.addEventListener("click", closeSheet);
     // A click on the backdrop lands on the dialog itself, outside the inner panel.
@@ -119,9 +111,9 @@
       const doc = document.documentElement;
       const max = doc.scrollHeight - window.innerHeight;
       bar.style.transform = "scaleX(" + (max > 0 ? Math.min(1, window.scrollY / max) : 0) + ")";
-      const pastButton = openBtn.getBoundingClientRect().bottom < 0;
+      const pastList = nav.getBoundingClientRect().bottom < 0;
       const atFooter = footer && footer.getBoundingClientRect().top < window.innerHeight;
-      fab.classList.toggle("is-visible", !WIDE.matches && pastButton && !atFooter);
+      fab.classList.toggle("is-visible", !WIDE.matches && pastList && !atFooter);
     }
     function queue() {
       if (!queued) {
