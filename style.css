@@ -11786,6 +11786,9 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
 /* Below 1120px the list becomes one scrollable row of section chips: the same
    height with or without the script, so nothing shifts when it loads. */
 @media (max-width: 1119.98px) {
+  /* The record is one centred 760px column here; the header shares it, or it
+     sits flush left with the body indented beneath it. */
+  .study-header .hero-inner { max-width: 760px; }
   .study-toc {
     display: flex;
     align-items: center;
