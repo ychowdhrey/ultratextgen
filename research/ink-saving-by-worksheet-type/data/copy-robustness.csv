@@ -1,0 +1,151 @@
+case,worksheet_type,component,treatment,visibility_threshold,copy_generation,ratio_mean,ratio_min,ratio_max
+hw-finedot,Tracing with dark dotted or dashed marks,trace_rows,lighter_dark_marks_75,0.08,1,0.9146,0.9126,0.9162
+hw-finedot,Tracing with dark dotted or dashed marks,trace_rows,lighter_dark_marks_75,0.08,2,0.8634,0.8609,0.8666
+hw-finedot,Tracing with dark dotted or dashed marks,trace_rows,lighter_dark_marks_75,0.15,1,0.894,0.8919,0.8977
+hw-finedot,Tracing with dark dotted or dashed marks,trace_rows,lighter_dark_marks_75,0.15,2,0.8408,0.8376,0.8428
+hw-finedot,Tracing with dark dotted or dashed marks,trace_rows,lighter_dark_marks_75,0.25,1,0.8687,0.8652,0.8716
+hw-finedot,Tracing with dark dotted or dashed marks,trace_rows,lighter_dark_marks_75,0.25,2,0.7961,0.7931,0.7998
+hw-finedot,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.08,1,0.9146,0.9126,0.9162
+hw-finedot,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.08,2,0.8634,0.8609,0.8666
+hw-finedot,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.15,1,0.894,0.8919,0.8977
+hw-finedot,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.15,2,0.8408,0.8376,0.8428
+hw-finedot,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.25,1,0.8687,0.8652,0.8716
+hw-finedot,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.25,2,0.7961,0.7931,0.7998
+happy-birthday,Tracing with dark dotted or dashed marks,trace_rows,lighter_dark_marks_75,0.08,1,0.9307,0.9295,0.9321
+happy-birthday,Tracing with dark dotted or dashed marks,trace_rows,lighter_dark_marks_75,0.08,2,0.8911,0.8906,0.8916
+happy-birthday,Tracing with dark dotted or dashed marks,trace_rows,lighter_dark_marks_75,0.15,1,0.9134,0.9122,0.9141
+happy-birthday,Tracing with dark dotted or dashed marks,trace_rows,lighter_dark_marks_75,0.15,2,0.8681,0.8668,0.8698
+happy-birthday,Tracing with dark dotted or dashed marks,trace_rows,lighter_dark_marks_75,0.25,1,0.8933,0.8914,0.8951
+happy-birthday,Tracing with dark dotted or dashed marks,trace_rows,lighter_dark_marks_75,0.25,2,0.8318,0.8302,0.834
+happy-birthday,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.08,1,0.9307,0.9295,0.9321
+happy-birthday,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.08,2,0.8911,0.8906,0.8916
+happy-birthday,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.15,1,0.9134,0.9122,0.9141
+happy-birthday,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.15,2,0.8681,0.8668,0.8698
+happy-birthday,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.25,1,0.8933,0.8914,0.8951
+happy-birthday,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.25,2,0.8318,0.8302,0.834
+hw-dashed,Tracing with dark dotted or dashed marks,trace_rows,lighter_dark_marks_75,0.08,1,0.9325,0.9314,0.9337
+hw-dashed,Tracing with dark dotted or dashed marks,trace_rows,lighter_dark_marks_75,0.08,2,0.8921,0.8889,0.8944
+hw-dashed,Tracing with dark dotted or dashed marks,trace_rows,lighter_dark_marks_75,0.15,1,0.9167,0.9154,0.9183
+hw-dashed,Tracing with dark dotted or dashed marks,trace_rows,lighter_dark_marks_75,0.15,2,0.865,0.8625,0.8669
+hw-dashed,Tracing with dark dotted or dashed marks,trace_rows,lighter_dark_marks_75,0.25,1,0.8807,0.8796,0.882
+hw-dashed,Tracing with dark dotted or dashed marks,trace_rows,lighter_dark_marks_75,0.25,2,0.8204,0.8174,0.824
+hw-dashed,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.08,1,0.9325,0.9314,0.9337
+hw-dashed,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.08,2,0.8921,0.8889,0.8944
+hw-dashed,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.15,1,0.9167,0.9154,0.9183
+hw-dashed,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.15,2,0.865,0.8625,0.8669
+hw-dashed,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.25,1,0.8807,0.8796,0.882
+hw-dashed,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.25,2,0.8204,0.8174,0.824
+hw-bolddot,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.08,1,0.9479,0.9461,0.949
+hw-bolddot,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.08,2,0.9191,0.9177,0.9201
+hw-bolddot,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.15,1,0.9353,0.9343,0.9363
+hw-bolddot,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.15,2,0.9028,0.901,0.9045
+hw-bolddot,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.25,1,0.9192,0.918,0.9204
+hw-bolddot,Tracing with dark dotted or dashed marks,trace_rows,role_aware_75,0.25,2,0.8811,0.8793,0.883
+name-tracing,Name and word tracing,writing_guides,broad_fade_72,0.08,1,0.6918,0.6884,0.6961
+name-tracing,Name and word tracing,writing_guides,broad_fade_72,0.08,2,0.0682,0.0667,0.0694
+name-tracing,Name and word tracing,writing_guides,broad_fade_72,0.15,1,0.2147,0.2096,0.2202
+name-tracing,Name and word tracing,writing_guides,broad_fade_72,0.15,2,,,
+name-tracing,Name and word tracing,writing_guides,broad_fade_72,0.25,1,0.0583,0.0559,0.06
+name-tracing,Name and word tracing,writing_guides,broad_fade_72,0.25,2,,,
+name-tracing,Name and word tracing,writing_guides,role_aware_75,0.08,1,0.9989,0.9987,0.9991
+name-tracing,Name and word tracing,writing_guides,role_aware_75,0.08,2,0.9948,0.9944,0.9952
+name-tracing,Name and word tracing,writing_guides,role_aware_75,0.15,1,0.997,0.9964,0.9974
+name-tracing,Name and word tracing,writing_guides,role_aware_75,0.15,2,,,
+name-tracing,Name and word tracing,writing_guides,role_aware_75,0.25,1,0.9606,0.9593,0.9619
+name-tracing,Name and word tracing,writing_guides,role_aware_75,0.25,2,,,
+name-tracing,Name and word tracing,trace_rows,broad_fade_72,0.08,1,0.6176,0.6138,0.6211
+name-tracing,Name and word tracing,trace_rows,broad_fade_72,0.08,2,0.04,0.0379,0.0416
+name-tracing,Name and word tracing,trace_rows,broad_fade_72,0.15,1,0.1582,0.1551,0.1634
+name-tracing,Name and word tracing,trace_rows,broad_fade_72,0.15,2,,,
+name-tracing,Name and word tracing,trace_rows,broad_fade_72,0.25,1,0.0027,0.0,0.0034
+name-tracing,Name and word tracing,trace_rows,broad_fade_72,0.25,2,,,
+name-tracing,Name and word tracing,trace_rows,role_aware_75,0.08,1,1.0,1.0,1.0
+name-tracing,Name and word tracing,trace_rows,role_aware_75,0.08,2,1.0,1.0,1.0
+name-tracing,Name and word tracing,trace_rows,role_aware_75,0.15,1,1.0,1.0,1.0
+name-tracing,Name and word tracing,trace_rows,role_aware_75,0.15,2,,,
+name-tracing,Name and word tracing,trace_rows,role_aware_75,0.25,1,1.0,1.0,1.0
+name-tracing,Name and word tracing,trace_rows,role_aware_75,0.25,2,,,
+cursive-name,Name and word tracing,trace_rows,broad_fade_72,0.08,1,0.6187,0.6137,0.6208
+cursive-name,Name and word tracing,trace_rows,broad_fade_72,0.08,2,0.0517,0.0478,0.0589
+cursive-name,Name and word tracing,trace_rows,broad_fade_72,0.15,1,0.1563,0.1534,0.1597
+cursive-name,Name and word tracing,trace_rows,broad_fade_72,0.15,2,,,
+cursive-name,Name and word tracing,trace_rows,broad_fade_72,0.25,1,0.0047,0.0031,0.0059
+cursive-name,Name and word tracing,trace_rows,broad_fade_72,0.25,2,,,
+cursive-name,Name and word tracing,trace_rows,role_aware_75,0.08,1,1.0,1.0,1.0
+cursive-name,Name and word tracing,trace_rows,role_aware_75,0.08,2,1.0,1.0,1.0
+cursive-name,Name and word tracing,trace_rows,role_aware_75,0.15,1,1.0,1.0,1.0
+cursive-name,Name and word tracing,trace_rows,role_aware_75,0.15,2,,,
+cursive-name,Name and word tracing,trace_rows,role_aware_75,0.25,1,1.0,1.0,1.0
+cursive-name,Name and word tracing,trace_rows,role_aware_75,0.25,2,,,
+word-search,Word search,other_marks,broad_fade_72,0.08,1,0.9503,0.9499,0.9511
+word-search,Word search,other_marks,broad_fade_72,0.08,2,0.9419,0.941,0.9425
+word-search,Word search,other_marks,broad_fade_72,0.15,1,0.9349,0.9346,0.9354
+word-search,Word search,other_marks,broad_fade_72,0.15,2,0.9407,0.9403,0.9412
+word-search,Word search,other_marks,broad_fade_72,0.25,1,0.9476,0.9473,0.9478
+word-search,Word search,other_marks,broad_fade_72,0.25,2,0.9276,0.927,0.9281
+word-search,Word search,other_marks,role_aware_75_all_content,0.08,1,0.9675,0.9673,0.9678
+word-search,Word search,other_marks,role_aware_75_all_content,0.08,2,0.9509,0.9508,0.9511
+word-search,Word search,other_marks,role_aware_75_all_content,0.15,1,0.9625,0.9623,0.9628
+word-search,Word search,other_marks,role_aware_75_all_content,0.15,2,0.9405,0.9398,0.9407
+word-search,Word search,other_marks,role_aware_75_all_content,0.25,1,0.9501,0.9496,0.9503
+word-search,Word search,other_marks,role_aware_75_all_content,0.25,2,0.9263,0.9258,0.9268
+crossword,Crossword,other_marks,broad_fade_72,0.08,1,0.9268,0.9247,0.9281
+crossword,Crossword,other_marks,broad_fade_72,0.08,2,0.8541,0.8505,0.8556
+crossword,Crossword,other_marks,broad_fade_72,0.15,1,0.8962,0.8954,0.8965
+crossword,Crossword,other_marks,broad_fade_72,0.15,2,0.7587,0.7578,0.7597
+crossword,Crossword,other_marks,broad_fade_72,0.25,1,0.8105,0.8096,0.8124
+crossword,Crossword,other_marks,broad_fade_72,0.25,2,0.561,0.5592,0.5636
+crossword,Crossword,other_marks,role_aware_75_all_content,0.08,1,0.9059,0.9038,0.907
+crossword,Crossword,other_marks,role_aware_75_all_content,0.08,2,0.8163,0.8154,0.8189
+crossword,Crossword,other_marks,role_aware_75_all_content,0.15,1,0.8644,0.8631,0.866
+crossword,Crossword,other_marks,role_aware_75_all_content,0.15,2,0.7192,0.7184,0.7205
+crossword,Crossword,other_marks,role_aware_75_all_content,0.25,1,0.7742,0.7725,0.7754
+crossword,Crossword,other_marks,role_aware_75_all_content,0.25,2,0.4832,0.4818,0.4849
+scramble,Word scramble,other_marks,broad_fade_72,0.08,1,1.0,1.0,1.0
+scramble,Word scramble,other_marks,broad_fade_72,0.08,2,1.0,1.0,1.0
+scramble,Word scramble,other_marks,broad_fade_72,0.15,1,1.0,1.0,1.0
+scramble,Word scramble,other_marks,broad_fade_72,0.15,2,1.0,1.0,1.0
+scramble,Word scramble,other_marks,broad_fade_72,0.25,1,1.0,1.0,1.0
+scramble,Word scramble,other_marks,broad_fade_72,0.25,2,1.0,1.0,1.0
+scramble,Word scramble,other_marks,role_aware_75_all_content,0.08,1,0.9805,0.98,0.9809
+scramble,Word scramble,other_marks,role_aware_75_all_content,0.08,2,0.9677,0.9674,0.9682
+scramble,Word scramble,other_marks,role_aware_75_all_content,0.15,1,0.9748,0.9742,0.9755
+scramble,Word scramble,other_marks,role_aware_75_all_content,0.15,2,0.9534,0.9522,0.9542
+scramble,Word scramble,other_marks,role_aware_75_all_content,0.25,1,0.9589,0.9583,0.9596
+scramble,Word scramble,other_marks,role_aware_75_all_content,0.25,2,0.8909,0.8883,0.8938
+kana-hiragana,Kana chart,other_marks,lighter_dark_marks_75,0.08,1,0.9741,0.9736,0.9743
+kana-hiragana,Kana chart,other_marks,lighter_dark_marks_75,0.08,2,0.9558,0.9556,0.956
+kana-hiragana,Kana chart,other_marks,lighter_dark_marks_75,0.15,1,0.9384,0.9376,0.9391
+kana-hiragana,Kana chart,other_marks,lighter_dark_marks_75,0.15,2,0.9086,0.9081,0.9093
+kana-hiragana,Kana chart,other_marks,lighter_dark_marks_75,0.25,1,0.9185,0.9181,0.9194
+kana-hiragana,Kana chart,other_marks,lighter_dark_marks_75,0.25,2,0.875,0.8743,0.8759
+alphabet-coloring,Outline alphabet,other_marks,broad_fade_72,0.08,1,0.9419,0.9415,0.9424
+alphabet-coloring,Outline alphabet,other_marks,broad_fade_72,0.08,2,0.8923,0.8913,0.8929
+alphabet-coloring,Outline alphabet,other_marks,broad_fade_72,0.15,1,0.915,0.9143,0.916
+alphabet-coloring,Outline alphabet,other_marks,broad_fade_72,0.15,2,0.8416,0.8405,0.8421
+alphabet-coloring,Outline alphabet,other_marks,broad_fade_72,0.25,1,0.8755,0.875,0.8762
+alphabet-coloring,Outline alphabet,other_marks,broad_fade_72,0.25,2,0.7687,0.7679,0.7695
+alphabet-coloring,Outline alphabet,other_marks,role_aware_75_all_content,0.08,1,0.9494,0.9492,0.9501
+alphabet-coloring,Outline alphabet,other_marks,role_aware_75_all_content,0.08,2,0.9068,0.9064,0.9072
+alphabet-coloring,Outline alphabet,other_marks,role_aware_75_all_content,0.15,1,0.9249,0.9243,0.926
+alphabet-coloring,Outline alphabet,other_marks,role_aware_75_all_content,0.15,2,0.8597,0.8587,0.8605
+alphabet-coloring,Outline alphabet,other_marks,role_aware_75_all_content,0.25,1,0.8915,0.8912,0.8919
+alphabet-coloring,Outline alphabet,other_marks,role_aware_75_all_content,0.25,2,0.8003,0.7995,0.8008
+alphabet-coloring,Outline alphabet,other_marks,page_wide_fade_75,0.08,1,0.8582,0.8574,0.859
+alphabet-coloring,Outline alphabet,other_marks,page_wide_fade_75,0.08,2,0.7509,0.7501,0.7515
+alphabet-coloring,Outline alphabet,other_marks,page_wide_fade_75,0.15,1,0.7594,0.7581,0.7606
+alphabet-coloring,Outline alphabet,other_marks,page_wide_fade_75,0.15,2,0.7466,0.7449,0.7485
+alphabet-coloring,Outline alphabet,other_marks,page_wide_fade_75,0.25,1,0.7411,0.7403,0.742
+alphabet-coloring,Outline alphabet,other_marks,page_wide_fade_75,0.25,2,0.7799,0.7793,0.7805
+block-letters,Outline alphabet,other_marks,broad_fade_72,0.08,1,0.9305,0.93,0.9309
+block-letters,Outline alphabet,other_marks,broad_fade_72,0.08,2,0.8977,0.8969,0.899
+block-letters,Outline alphabet,other_marks,broad_fade_72,0.15,1,0.9137,0.9131,0.9141
+block-letters,Outline alphabet,other_marks,broad_fade_72,0.15,2,0.8725,0.8722,0.873
+block-letters,Outline alphabet,other_marks,broad_fade_72,0.25,1,0.8921,0.8916,0.8925
+block-letters,Outline alphabet,other_marks,broad_fade_72,0.25,2,0.8413,0.8401,0.8419
+block-letters,Outline alphabet,other_marks,role_aware_75_all_content,0.08,1,0.939,0.9384,0.9394
+block-letters,Outline alphabet,other_marks,role_aware_75_all_content,0.08,2,0.9108,0.9099,0.9116
+block-letters,Outline alphabet,other_marks,role_aware_75_all_content,0.15,1,0.9234,0.9229,0.9239
+block-letters,Outline alphabet,other_marks,role_aware_75_all_content,0.15,2,0.8874,0.887,0.8876
+block-letters,Outline alphabet,other_marks,role_aware_75_all_content,0.25,1,0.9055,0.9053,0.9061
+block-letters,Outline alphabet,other_marks,role_aware_75_all_content,0.25,2,0.8614,0.86,0.8621

@@ -12283,6 +12283,91 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
 @media (max-width: 640px) { .planned-item { grid-template-columns: 1fr; } .study-card { padding: 1.25rem; } }
 .research-hub .related-pages { max-width: none; margin: 0; padding: 0; }
 
+/* ---- Study 2 (ink saving by worksheet type). Three more evidence kinds for a
+   study that reaches product questions, each with its own glyph: hollow square
+   = interpretation, arrowhead = product implication, hollow circle =
+   unresolved (the "not tested on printers" glyph, widened to any open
+   question). ---- */
+.evidence-tag.is-interpretation { --tag-c: var(--text-secondary); }
+.evidence-tag.is-interpretation::before { border-radius: 1px; border-width: 0.14em; }
+.evidence-tag.is-implication { --tag-c: var(--text-primary); }
+.evidence-tag.is-implication::before { box-sizing: content-box; width: 0; height: 0; border-radius: 0; border-width: 0.36em 0 0.36em 0.62em; border-color: transparent transparent transparent var(--tag-c); }
+.evidence-tag.is-unresolved { --tag-c: var(--ts-fail); }
+.evidence-tag.is-unresolved::before { border-width: 0.14em; }
+
+/* The short answer, read before anything else. */
+.study-answer { margin: 0 0 1.75rem; padding: 1.1rem 1.25rem; background: var(--bg-white); border: 1px solid var(--border-light); border-left: 4px solid var(--accent-purple); border-radius: var(--radius); }
+.study-answer-label { display: block; margin-bottom: 0.3rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-secondary); }
+.study-section .study-answer-lead { margin: 0 0 0.5rem; font-size: clamp(1.15rem, 1.05rem + 0.4vw, 1.35rem); font-weight: 700; line-height: 1.35; }
+.study-section .study-answer p:last-child { margin-bottom: 0; }
+
+/* Verdicts: a text label plus a glyph, never color alone (filled circle
+   passed, diamond hold, ring no meaningful effect, filled square failed,
+   hollow square a different problem). */
+.verdict { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.875rem; font-weight: 700; line-height: 1.35; color: var(--text-primary); }
+.verdict::before { content: ""; flex: none; box-sizing: border-box; width: 0.8rem; height: 0.8rem; border-radius: 50%; border: 0.4rem solid var(--ts-safe); }
+.verdict.is-hold::before { border-color: var(--ts-risk); border-radius: 1px; transform: rotate(45deg) scale(0.85); }
+.verdict.is-none::before { border-width: 2px; border-color: var(--text-secondary); }
+.verdict.is-failed::before { border-color: var(--ts-fail); border-radius: 2px; }
+.verdict.is-other::before { border-width: 2px; border-color: var(--accent-purple); border-radius: 2px; }
+
+/* All eleven worksheet types at a glance, grouped by verdict. */
+.verdict-overview { margin: 0 0 1.75rem; }
+.verdict-overview-title { margin: 0 0 0.6rem; font-size: 0.8125rem; font-weight: 700; color: var(--text-secondary); }
+.verdict-groups { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 0.75rem; margin: 0; padding: 0; }
+.verdict-group { padding: 0.85rem 1rem; background: var(--bg-white); border: 1px solid var(--border-light); border-radius: var(--radius); }
+.verdict-group ul { list-style: none; margin: 0.5rem 0 0; padding: 0; font-size: 0.875rem; line-height: 1.5; }
+.verdict-group li { padding: 0.15rem 0; }
+.verdict-n { font-size: 0.8125rem; color: var(--text-secondary); }
+.verdict-group ul + .verdict { margin-top: 0.85rem; }
+
+/* Results by worksheet type: a real table, laid out as one card per type at
+   every width, because six columns of prose do not fit a 760px column. */
+.family-table,
+.family-table tbody,
+.family-table tr,
+.family-table th,
+.family-table td { display: block; }
+.research-page .data-table.family-table { min-width: 0; }
+.family-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.family-table tbody tr:not(.table-group) { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem 1.25rem; padding: 1.1rem 0; border-bottom: 1px solid var(--border-light); }
+.research-page .family-table th,
+.research-page .family-table td { width: auto; padding: 0; border: 0; font-size: 0.875rem; line-height: 1.55; vertical-align: top; }
+.family-table tbody th[scope="row"] { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 1rem; text-transform: none; letter-spacing: 0; font-size: 1rem; color: var(--text-primary); }
+.family-table .family-n { font-size: 0.8125rem; font-weight: 400; color: var(--text-secondary); }
+.family-table tbody th[scope="row"] .verdict { flex-basis: 100%; }
+.family-table td::before { content: attr(data-label); display: block; margin-bottom: 0.2rem; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-secondary); }
+.family-table td.family-rec { grid-column: 2 / -1; }
+.research-page .family-table .table-group th { padding: 1.5rem 0 0.4rem; border-bottom: 1px solid var(--border-light); font-size: 0.7rem; color: var(--text-secondary); }
+.research-page .family-table tbody:first-of-type .table-group th { padding-top: 0.5rem; }
+.family-table .range-bar { display: block; width: 100%; max-width: 180px; height: 12px; margin-top: 0.35rem; }
+@media (max-width: 640px) {
+  .family-table tbody tr:not(.table-group) { grid-template-columns: minmax(0, 1fr); }
+  .family-table td.family-rec { grid-column: auto; }
+}
+
+/* What each setting does to each part of a tracing sheet. The chips are
+   printed tones on paper: the sheet's own print colors, fixed like the
+   printables CSS above rather than theme tokens, with a white paper ring
+   that stays white in dark mode too. */
+.tone-chip { --chip: #1a1a2e; display: inline-block; width: 1.6rem; height: 0.7rem; margin: 0 0.5rem 0 0.2rem; vertical-align: -1px; border-radius: 2px; background: var(--chip); box-shadow: 0 0 0 3px #fff, 0 0 0 4px var(--border-light); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.tone-chip.is-navy-72 { --chip: #5a5a68; }
+.tone-chip.is-navy-75 { --chip: #535362; }
+.tone-chip.is-trace { --chip: #8b93a7; }
+.tone-chip.is-trace-72 { --chip: #acb1c0; }
+.tone-chip.is-guide { --chip: #9aa2b1; }
+.tone-chip.is-guide-72 { --chip: #b6bcc7; }
+.role-matrix th[scope="row"] { text-transform: none; letter-spacing: 0; font-size: 0.875rem; color: var(--text-primary); }
+.role-matrix td { white-space: nowrap; }
+.role-matrix .role-job { display: block; font-size: 0.78rem; font-weight: 400; color: var(--text-secondary); }
+.role-matrix tr.is-changed td:last-child,
+.role-matrix tr.is-harmed td:nth-of-type(2) { font-weight: 700; }
+
+@media print {
+  body:has(.research-page) .study-answer,
+  body:has(.research-page) .verdict-group { break-inside: avoid; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .study-toc-fab,
   .study-details > summary::before { transition: none; }
