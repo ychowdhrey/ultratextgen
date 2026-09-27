@@ -104,6 +104,12 @@ basis. Reasoning: `docs/decisions/content-lanes.md`.
 the generator mirrors the peer and hub graphs into every locale where both ends have
 a live sibling.
 
+`library/` ↔ `library/` links are mirrored the same way. Two EN library pages that
+link each other are a relation, and a locale with both pages must link them too:
+a spoke you translate goes onto its locale hub in the same change. The gate is
+`check:library-link-mirror` (delta), the repair `npm run fix:library-link-mirror --
+--lang <code> --page <en-slug> --write`, the backlog `audit:library-link-mirror`.
+
 ## Two pages must not offer the same tool
 
 `js/printables/printablesEngine.js` mounts a surface from an element id, so giving
