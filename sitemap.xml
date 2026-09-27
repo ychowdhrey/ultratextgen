@@ -3944,7 +3944,7 @@
 
   <url>
     <loc>https://ultratextgen.com/de/library/kaomoji/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -8974,7 +8974,7 @@
 
   <url>
     <loc>https://ultratextgen.com/es/library/kaomoji/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -20406,7 +20406,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ja/library/kaomoji/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -22666,7 +22666,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/library/imotikon/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -24326,7 +24326,7 @@
 
   <url>
     <loc>https://ultratextgen.com/learn/</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -24499,6 +24499,32 @@
     </image:image>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/learn-handwriting-when-to-start-handwriting.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/learn/save-printer-ink-printables/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/printable-ink-efficiency-study/renders-decorative-worksheet.png</image:loc>
+      <image:title>A decorated worksheet shown four ways: as designed, faded to 60%, with decoration removed, and with decoration removed and lighter fills.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/printable-ink-efficiency-study/renders-colour-coded.png</image:loc>
+      <image:title>A color key shown four ways: as designed, with fills 45% lighter, in grayscale and in black and white.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/printable-ink-efficiency-study/pdf-pattern-rasterisation.png</image:loc>
+      <image:title>Six crops of a 30% navy fill, each shown as drawn and as stored in the browser</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/printable-ink-efficiency-study/renders-sparse-line.png</image:loc>
+      <image:title>A handwriting sheet at full strength, 75% and 60% and in high contrast, each shown clean and after two simulated photocopies.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/learn-save-printer-ink-printables.png</image:loc>
     </image:image>
   </url>
 
@@ -27554,7 +27580,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/text-faces-kaomoji/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -38045,6 +38071,96 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/pt-usecase-zalgo-text.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/research/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/research-hub.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/research/ink-saving-by-worksheet-type/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/ink-saving-by-worksheet-type/test-corpus-sheets.png</image:loc>
+      <image:title>Fourteen of the test sheets as exported unchanged: name tracing, a French sheet with Seyes ruling, dotted handwriting, a letter practice list, an outline alphabet, a single outline letter, a coloring page, dot-to-dot, banner flags, a monogram, a word search, a crossword, a cross-stitch chart and page 2 of a kana chart.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/ink-saving-by-worksheet-type/results-by-worksheet-type.png</image:loc>
+      <image:title>Dot chart of tone removed per sheet, one marker per test case, for 11 worksheet types. Tracing sheets under the broad fade are all hollow markers (failed) between 0.2 and 0.7 points; under the role-aware rule they are all filled (passed) between 0.13 and 0.53. Outline letters, coloring pages, display lettering and cross-stitch charts pass under the broad fade. Only two passing markers reach the 1-point line: 1.20 and 1.24. Word search sits at 1.23 as a failed marker marked Hold.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/ink-saving-by-worksheet-type/tracing-clean-and-copy.png</image:loc>
+      <image:title>The top of a name tracing sheet in three versions, each shown clean and after one simulated photocopy. Standard: dark example row, visible pale trace letters and guides. Broad fade: gray example row, and after the copy the trace letters and guides have almost vanished. Role-aware: gray example row, trace letters and guides the same as Standard, clean and copied.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/ink-saving-by-worksheet-type/how-sparse-a-tracing-sheet-is.png</image:loc>
+      <image:title>A grid of 1,000 squares standing for one page. Only 24 are colored: 12 for the example row, 4 for the writing guides, 3 for the trace rows, 3 for the credit QR code and 2 for everything else. The broad fade removes about 6 squares, the role-aware rule about 3, and removing the QR code about 3.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/ink-saving-by-worksheet-type/where-the-tone-goes.png</image:loc>
+      <image:title>Stacked bar chart of weighted darkness for 14 sheets, split into credit QR code, credit web address, heading, name and date line, writing guides, example row, trace rows and other marks. Tracing sheets are 2.3 to 2.7%, mostly example row and guides; outline and display sheets are mostly letter outlines; the word search is 4.85%, almost all letter grid; the QR code is about 0.3 points on almost every sheet.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/ink-saving-by-worksheet-type/kana-chart-pagination.png</image:loc>
+      <image:title>Five printed pages of the hiragana chart side by side. Page 1 holds only the title, Hiragana Chart, and is otherwise blank. Pages 2 to 5 hold the kana grids, and page 5 holds only a few rows.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/research-ink-saving-by-worksheet-type.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/research/printable-ink-efficiency-study/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/printable-ink-efficiency-study/renders-decorative-worksheet.png</image:loc>
+      <image:title>Four renderings of the decorated worksheet: standard with yellow background, border and banner; 60% opacity; decoration removed; and Eco Colour.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/printable-ink-efficiency-study/what-consumes-the-page.png</image:loc>
+      <image:title>Bar chart of standard coverage by element type for the 12 page types: posters about 80%, decorated worksheet about 40%, color key and cut cards in the 20s, the rest under 10%.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/printable-ink-efficiency-study/reduction-by-mode.png</image:loc>
+      <image:title>Dot plot of the reduction in estimated coverage for each of the 36 methods across 108 pages, with failed pages marked as red crosses.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/printable-ink-efficiency-study/halftone-dither.png</image:loc>
+      <image:title>Line chart of total tone against nominal tone for a navy fill: every halftone and dither line sits above the flat-tint line; a bar chart beside it shows PDF sizes of 1, 1, 19 and 58 KB.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/printable-ink-efficiency-study/renders-poster.png</image:loc>
+      <image:title>Four renderings of a poster: standard, background removed, Eco Colour with dark labels on lighter fills, and a naive outline version where the white text has vanished.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/printable-ink-efficiency-study/renders-sparse-line.png</image:loc>
+      <image:title>Handwriting sheet crops at standard, 75% and 60% opacity and high contrast, each shown clean and after two simulated copies.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/printable-ink-efficiency-study/renders-colour-coded.png</image:loc>
+      <image:title>Color key rendered four ways: standard, fills 45% lighter, grayscale and black and white.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/printable-ink-efficiency-study/line-survival.png</image:loc>
+      <image:title>Six line charts of line continuity against line width for black, guide gray and tracing gray lines, clean and after two simulated copies, under five methods.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/printable-ink-efficiency-study/pdf-pattern-rasterisation.png</image:loc>
+      <image:title>Six square crops of a 30% navy fill: four halftone spacings, a dither and a flat tint, each shown as drawn and as stored in Chromium</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/research-printable-ink-efficiency-study.png</image:loc>
     </image:image>
   </url>
 

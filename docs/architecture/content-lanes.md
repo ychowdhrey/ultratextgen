@@ -137,6 +137,40 @@ probes: a new locale page no hub links **exits 1** naming the exact hub; the sam
 page once linked **exits 0**; a one-directional EN peer relation still **exits 1**,
 proving the original rule was not broken by the addition.
 
+### The same gap, one lane over: library ↔ library (closed 2026-09-27)
+
+The symbol mirror above covers `library/` hub → `symbol/` spoke and `symbol/` ↔
+`symbol/`. A **`library/` hub whose spokes are also `library/` pages** (the kaomoji
+family: `text-faces-kaomoji` and 30 `*-kaomoji` pages) was covered by nothing. So
+every spoke translated after its hub stayed off that hub: `ko/library/imotikon`
+linked **6 of its 28** locale spokes, `es/library/kaomoji` **7 of 24**,
+`ja/library/kaomoji` 13 of 17. The translation-parity audit could see link drift in
+principle but not in practice. It reports 1,334 actionable and 2,330 bulk pairs,
+and `es/library/kaomoji`'s pair carries a full-pair exception from 2026-07-25 (for
+one unrelated href) that hides every later drift on it.
+
+Library pages have no type that says which one is the hub, so the relation is
+defined by the EN site itself: **two EN library pages whose bodies link each other**.
+One-way links are not relations; mirroring every EN "see also" would bill locales for
+citations. Across 339 EN library pages that gives 201 relations, 1,202 locale links
+owed where both ends are translated, and **436 missing on 2026-09-27**, led by `es`
+(84), `de` (58) and `ko` (48).
+
+`scripts/lib/library_link_mirror.py` is the one definition, shared by
+`audit:library-link-mirror` (the backlog), `check:library-link-mirror` (a **delta**
+gate: a branch fails only for a gap it introduced) and `fix:library-link-mirror`
+(idempotent Related cards with the target's own `<h1>` and tagline sentence, the
+same three rules as above). It reads a git revision through `cat-file --batch`, so
+comparing HEAD against the merge base takes about two seconds. Probed against pages
+outside the branch that built it: a new `fr` spoke not put on the `fr` hub, a new EN
+relation left unmirrored and a removed `pt` hub link each **exit 1**. An absolute-URL
+form of the same link, a one-way EN link and a prose edit **exit 0**. An unresolvable
+base and an unreadable locale registry **exit 2**, never 0. `run-ci-gates.py --only
+library_link_mirror` returns 1 on the broken tree and 0 on the clean one.
+
+Its first run found its own branch's regression: the EN hub had just gained 13 spoke
+links, and `es`/`de` owed 9 of them.
+
 ## 4. Library hub coverage — the five mechanisms
 
 A 2026-08-26 audit found **374 pages** live, indexable, self-canonical, in
