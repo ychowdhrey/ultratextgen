@@ -4,7 +4,7 @@
 
 UltraTextGen is a free, no-sign-up text tool: Unicode font styles to copy and paste, a browsable symbol and emoji library, one reference page per individual symbol, printable lettering and handwriting sheets rendered in the browser, and explanatory guides and answers. Everything runs client-side.
 
-4722 indexable pages in 31 languages. This file is a navigation index, not a URL list: https://ultratextgen.com/sitemap.xml is the complete canonical URL list and stays the authority on what exists. Links below point to a narrower llms.txt index where one exists, and straight to a page where it does not.
+4723 indexable pages in 31 languages. This file is a navigation index, not a URL list: https://ultratextgen.com/sitemap.xml is the complete canonical URL list and stays the authority on what exists. Links below point to a narrower llms.txt index where one exists, and straight to a page where it does not.
 
 English pages are served from the site root, so this file is also the English index (https://ultratextgen.com/en/llms.txt redirects here). Every other language has its own index at https://ultratextgen.com/<code>/llms.txt.
 
@@ -95,6 +95,7 @@ English pages are served from the site root, so this file is also the English in
 ## Research
 
 - [UltraTextGen Research](https://ultratextgen.com/research/): Controlled experiments, published with the method, data and limitations needed to check them.
+- [Ink Saving by Worksheet Type: Which Print Treatments Keep a Worksheet Working](https://ultratextgen.com/research/ink-saving-by-worksheet-type/): We exported 54 real printable test cases, from name tracing sheets to word searches, under ink-saving treatments carried over from Study 1…
 - [Printable Ink Efficiency: Measuring Coverage Reduction Across Common Worksheet Rendering Methods](https://ultratextgen.com/research/printable-ink-efficiency-study/): A controlled experiment on 108 computer-generated worksheet pages, 36 rendering methods and 36 unseen holdout pages.
 
 ## Embeddable widgets

@@ -2971,6 +2971,8 @@ PAGES.update({
     P(m_doc), K_RESEARCH),
 "research-printable-ink-efficiency-study": ("Printable Ink Efficiency", "Estimated coverage across 36 rendering methods",
     P(m_doc), K_RESEARCH),
+"research-ink-saving-by-worksheet-type": ("Ink Saving by Worksheet Type", "Print treatments tested on 54 real printable cases",
+    P(m_doc), K_RESEARCH),
 })
 
 # ---- /learn/ education pillar ----

@@ -1,0 +1,54 @@
+{
+  "study": "Ink Saving by Worksheet Type (UltraTextGen Research, Study 2), version 1.0, 2026-09-27",
+  "status": "Frozen after the pre-publication review, so that later tests can be run against the same criteria unchanged.",
+  "provenance": "The criteria were written after the tone attribution (where the tone goes on each sheet) had been read and before the first table of treatment results was printed. They were not frozen in a file at that time, so that order cannot be verified independently. Two changes made after the first results are listed under 'revisions' and flagged post_hoc.",
+  "measures": {
+    "tone": "Weighted darkness (WD): mean of (1 - Rec. 709 luma) over the page, from a 150 dpi raster of the real PDF. Reported as a percentage of the page; savings are percentage points of WD.",
+    "tone_proxy_ttc": "Total tonal coverage from Study 1: a naive four-color split of the same pixels. Reported alongside WD only for comparison with Study 1; it overstates savings on these sheets because their navy ink counts as rich black.",
+    "component_mask": "Pixels where the Standard render changes by at least 0.05 luma when that component is hidden. 'other_marks' is every marked pixel (luma < 0.95) minus the named components.",
+    "tone_step": "1 - median luma of the component mask: how much darker than paper the component prints.",
+    "copy": "Study 1's photocopier model (not fitted to any machine), 2 generations, copier seeds 0 to 4. A pixel is visible when (1 - copy luma) >= 0.15. Each component's visible share is compared with Standard's own visible share after the same copy. Undefined when Standard keeps 0.05 or less.",
+    "contrast": "WCAG contrast ratio of the component's darkest-decile luma (linearized) against white. For display letters at 55% it is computed analytically, because full-strength cut lines dominate the darkest decile.",
+    "printer_screen": "Study 1's simulated clustered-dot printer screen (600 dpi, 106 lines per inch, 45 degrees), then a 0.15 mm blur for reading distance, on the top 62% of page 1 of each tracing sheet."
+  },
+  "rules": {
+    "Name and word tracing; tracing with dark dotted or dashed marks": [
+      "writing_guides copy 1 >= 0.9 x Standard",
+      "writing_guides tone step >= 0.9 x Standard",
+      "trace_rows copy 1 >= 0.9 x Standard",
+      "trace_rows tone step >= 0.9 x Standard",
+      "example_row contrast >= 3:1",
+      "hierarchy: trace_rows median luma not darker than example_row median luma - 0.02"
+    ],
+    "Letter practice list": ["other_marks copy 1 >= 0.9 x Standard", "example_row contrast >= 3:1"],
+    "Outline letters; coloring and dot-to-dot": ["other_marks copy 1 >= 0.9 x Standard", "other_marks contrast >= 3:1"],
+    "Display lettering": ["other_marks contrast >= 4.5:1"],
+    "Word search, crossword, word scramble, kana chart": ["other_marks contrast >= 4.5:1", "other_marks copy 2 >= 0.95 x Standard"],
+    "Cross-stitch chart": ["other_marks contrast >= 3:1", "other_marks copy 1 >= 0.9 x Standard"]
+  },
+  "revisions": [
+    {
+      "rule": "contrast tests",
+      "change": "Where Standard itself is below the contrast threshold, the test becomes >= 0.9 x Standard's contrast.",
+      "why": "A user-chosen pink (#ec4899) is 2.6:1 on the unchanged sheet.",
+      "post_hoc": true,
+      "decides_any_recommendation": false
+    },
+    {
+      "rule": "passed_with_posthoc_3to1_floor (sensitivity only)",
+      "change": "A dark mark may lighten until its tone step reaches 0.42 (about 3:1) instead of 0.9 x Standard.",
+      "why": "Bold dots at 75% stay at 7.6:1 but fail the 0.9 x tone-step test.",
+      "post_hoc": true,
+      "counted_as_pass": false,
+      "decides_any_recommendation": false
+    }
+  ],
+  "materiality": {
+    "source": "Study 1's classification",
+    "promising": "TTC saving >= 15% relative AND >= 1 point",
+    "negligible": "TTC saving < 5% relative OR < 0.25 points",
+    "small": "otherwise",
+    "note": "TTC overstates the savings on these sheets 1.19 to 2.06 times, so results are ranked by WD. A pass (safety) and a class (materiality) are separate findings."
+  },
+  "knife_edge": "A verdict whose ratio lies within +/-0.05 of its bar at any of the visibility thresholds 0.08, 0.15 or 0.25 is reported as undetermined (a hold), not as a pass or a fail."
+}
