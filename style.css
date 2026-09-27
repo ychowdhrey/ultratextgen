@@ -12281,6 +12281,14 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
 .planned-item .study-status-item { justify-self: start; }
 .study-section .planned-item p { margin: 0; }
 @media (max-width: 640px) { .planned-item { grid-template-columns: 1fr; } .study-card { padding: 1.25rem; } }
+
+/* A call for the physical tests a study could not run. Screen only: the PDF is
+   the versioned record, and an open ask is not part of it. */
+.research-help { margin: 1.5rem 0 0; padding: 1rem 1.1rem; border: 1px solid var(--border-light); border-left: 3px solid var(--accent-purple); border-radius: var(--radius); }
+.research-help p { margin: 0 0 0.6rem; }
+.research-help p:last-child { margin-bottom: 0; }
+.research-help ul { margin: 0 0 0.6rem; padding-left: 1.25rem; }
+.research-help li { margin-bottom: 0.35rem; }
 .research-hub .related-pages { max-width: none; margin: 0; padding: 0; }
 
 /* ---- Study 2 (ink saving by worksheet type). Three more evidence kinds for a
@@ -12385,6 +12393,7 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
   body:has(.research-page) .study-toc-sheet,
   body:has(.research-page) .render-compare,
   body:has(.research-page) .citation-actions,
+  body:has(.research-page) .research-help,
   body:has(.research-page) .related-pages { display: none; }
 
   /* Auto ads inject inline display styles, so only an !important rule can hide them. */
