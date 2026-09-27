@@ -98,7 +98,9 @@ HTML and renders as expression cards. The class follows the contents, never the
 page type: `npm run fix:text-object-grids` writes it, `check:text-object-grids`
 gates it whole-tree, and `isTextObject()` in `symbol-explorer.js` is the one
 definition. Never widen `.flag-row` or drop `.symbol-tile`'s `aspect-ratio` to make
-an expression fit: that ratio is what gives every glyph its 43x43 target.
+an expression fit: that ratio is what gives every glyph its 43x43 target. A
+component that reuses `.symbol-tile` for text (`.uname-chip`, `.symbol-tile--combo`)
+sets `aspect-ratio: auto` in its own rule.
 Measurements and the decision: `docs/architecture/copy-tiles.md`.
 
 ## Art ships in the same change

@@ -42,20 +42,23 @@ function load() {
 
 const engine = load();
 
-const ENTITIES = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ' };
+// A full HTML entity table, not a hand-picked one: a page that writes
+// data-symbol="&laquo;" must be judged on «, and a partial decoder read it as
+// the 7-character string "&laquo;" and put a lone guillemet in the text layout.
+// Resolved through cheerio (the declared build dependency that ships it) so a
+// hoisting change fails loudly here instead of silently.
+const { decodeHTML } = require(require.resolve('entities', {
+  paths: [path.dirname(require.resolve('cheerio'))],
+}));
 function decodeAttr(s) {
-  return s.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (m, e) => {
-    if (e[0] === '#') {
-      const cp = e[1] === 'x' || e[1] === 'X' ? parseInt(e.slice(2), 16) : parseInt(e.slice(1), 10);
-      return String.fromCodePoint(cp);
-    }
-    return Object.prototype.hasOwnProperty.call(ENTITIES, e.toLowerCase()) ? ENTITIES[e.toLowerCase()] : m;
-  });
+  return decodeHTML(s);
 }
 
-const OPEN_RE = /<div\b[^>]*\bclass="([^"]*\bflag-rows\b[^"]*)"[^>]*>/g;
+// Both quote styles: several hand-built locale pages write class='flag-rows'
+// and data-symbol='…', and a double-quote-only pattern skipped them silently.
+const OPEN_RE = /<div\b[^>]*\bclass=(["'])((?:(?!\1).)*\bflag-rows\b(?:(?!\1).)*)\1[^>]*>/g;
 const DIV_RE = /<div\b[^>]*>|<\/div\s*>/gi;
-const SYMBOL_RE = /\bdata-symbol="([^"]*)"/g;
+const SYMBOL_RE = /\bdata-symbol=(?:"([^"]*)"|'([^']*)')/g;
 
 /** Every static `.flag-rows` grid in an HTML string. */
 function findGrids(html) {
@@ -63,7 +66,9 @@ function findGrids(html) {
   OPEN_RE.lastIndex = 0;
   let m;
   while ((m = OPEN_RE.exec(html))) {
-    const classes = m[1].split(/\s+/).filter(Boolean);
+    const quote = m[1];
+    const classAttr = m[2];
+    const classes = classAttr.split(/\s+/).filter(Boolean);
     if (!classes.includes('flag-rows')) continue;
     // Walk to the matching </div> so a grid's tiles are never read from the next grid.
     let depth = 1;
@@ -78,12 +83,13 @@ function findGrids(html) {
     const symbols = [];
     let s;
     SYMBOL_RE.lastIndex = 0;
-    while ((s = SYMBOL_RE.exec(body))) symbols.push(decodeAttr(s[1]));
+    while ((s = SYMBOL_RE.exec(body))) symbols.push(decodeAttr(s[1] !== undefined ? s[1] : s[2]));
     const textObjects = symbols.filter((v) => engine.isTextObject(v));
     grids.push({
       start: m.index,
       openTag: m[0],
-      classAttr: m[1],
+      quote,
+      classAttr,
       hasClass: classes.includes(engine.TEXT_GRID_CLASS),
       symbols,
       textObjects,
@@ -101,7 +107,8 @@ function applyClasses(html) {
   for (const g of grids.reverse()) {
     const classes = g.classAttr.split(/\s+/).filter(Boolean).filter((c) => c !== engine.TEXT_GRID_CLASS);
     if (g.shouldHaveClass) classes.splice(classes.indexOf('flag-rows') + 1, 0, engine.TEXT_GRID_CLASS);
-    const tag = g.openTag.replace(`class="${g.classAttr}"`, `class="${classes.join(' ')}"`);
+    const q = g.quote;
+    const tag = g.openTag.replace(`class=${q}${g.classAttr}${q}`, `class=${q}${classes.join(' ')}${q}`);
     out = out.slice(0, g.start) + tag + out.slice(g.start + g.openTag.length);
   }
   return { html: out, changed: grids.length };

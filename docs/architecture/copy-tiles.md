@@ -107,7 +107,49 @@ What the chosen card keeps and changes:
 The class follows the contents, never the page type, so it lands wherever a text
 object does, including a glyph page with one combo section.
 
-<!-- scope-table -->
+| Group | Pages | English families | Locales | What changed |
+|---|---|---|---|---|
+| Definitely migrate | 610 | 121 | 21 | text grids where tiles overflowed or wrapped |
+| Probably migrate | 137 | 27 | 24 | text grids that were square-inflated but still fit |
+| Name chips and combos | 210 (+8 counted above) | 59 | 27 | `.uname-chip` / `.symbol-tile--combo`, see below |
+| Keep | 2,575 | 324 | 22 | glyph grids, `copy-cell`, `symbol-hero`: unchanged |
+
+3,532 pages carry a `.symbol-tile`; 1,836 grids on 747 pages hold 8,695 text
+objects and gained the class. Kaomoji are the largest family by item count, but
+most affected pages are not kaomoji pages: emoji pages with a combo or kaomoji
+section (`sad-emoji`, `skull-emoji`), symbol pages with decorations (`discord-symbols`,
+`y2k-symbols`, `star-symbols` rating rows), borders, and seasonal phrase sections.
+Every row, with the before and after measurements, is in
+`reports/text-object-grids-audit.csv`.
+
+After the change, at 375 and 1440 px:
+
+| | before | after |
+|---|---|---|
+| text tiles overflowing their cell | 1,258 | **0** |
+| text tiles wrapped | 4,734 | **145** (375 px only; 121 of them phrases breaking at a space, e.g. `🎄✨ Feliz Navidad ✨🎄`) |
+| glyph tiles in glyph grids with any change of box | | **0 of 84,972** |
+| page height at 375 px, `/ko/library/imotikon/` | 22,713 px | 18,336 px |
+| CLS / LCP | 0 / 272 ms | 0 / 276 ms (noise) |
+
+Control pages (`/library/math-symbols/`, all 195 tiles of `/library/emoji-flags/`)
+render pixel-identical before and after.
+
+## The same mechanism in two more components
+
+`.uname-chip` (ready-made names on 218 gaming-name and nickname pages) and
+`.symbol-tile--combo` (the LinkedIn symbol library's `→ Key takeaway` row) also
+carry `.symbol-tile` for its copy wiring, restyle it as a text chip, and never
+undid the ratio. **All 4,746 of those tiles rendered square**: a 9-character name
+was 324x324 on a phone, so six names filled 2,000 px, and the LinkedIn combos ran
+past the page edge. Both now set `aspect-ratio: auto` in their own rule in
+`style.css` (mean chip height at 375 px: 320 → 55 px; combos 150 → 32 px, 6 tiles
+past the edge → 0). These are components that are never glyphs, so no classifier
+is involved.
+
+Left alone after measuring: `.copy-cell` (136 tiles) and `.symbol-hero-tile`
+(671) had no overflow, wrap or square text; four `/vi/` decoration grids hold
+3-column items in square 92-120 px tiles that fit.
 
 ## How a page gets the class
 

@@ -907,6 +907,15 @@ jobs:
         continue-on-error: true
         run: npm run check:text-object-grids | tee text-object-grids.log
 
+      # Gating. The glyph / text-object boundary is where string length lies:
+      # 👨‍👩‍👧 is 8 code units and one glyph, ( ͡° ͜ʖ ͡°) is 17 and 8 columns.
+      # These cases pin it, plus the two parser bugs the first whole-site run
+      # found (single-quoted attributes skipped, &laquo; read as 7 characters).
+      - name: Run text-object classifier tests
+        id: text_object_grid_tests
+        continue-on-error: true
+        run: npm run test:text-object-grids | tee text-object-grid-tests.log
+
       # printablesEngine mounts a tool wherever the right element id appears, so
       # giving page B a tool page A already owns is a one-line change — which is
       # how /printables/alphabet-coloring-pages/ grew a name coloring tool that
@@ -1227,6 +1236,11 @@ jobs:
             cat text-object-grids.log
             echo '```'
             echo ""
+            echo "### Text-object classifier tests — \`${{ steps.text_object_grid_tests.outcome }}\`"
+            echo '```'
+            cat text-object-grid-tests.log
+            echo '```'
+            echo ""
             echo "### Printable tool duplication — \`${{ steps.tool_duplication.outcome }}\`"
             echo '```'
             cat tool-duplication.log
@@ -1325,6 +1339,7 @@ jobs:
           steps.collection_grids.outcome == 'failure' ||
           steps.country_flags.outcome == 'failure' ||
           steps.text_object_grids.outcome == 'failure' ||
+          steps.text_object_grid_tests.outcome == 'failure' ||
           steps.tool_duplication.outcome == 'failure' ||
           steps.cta_routing_tests.outcome == 'failure' ||
           steps.library_hub_parity.outcome == 'failure'
