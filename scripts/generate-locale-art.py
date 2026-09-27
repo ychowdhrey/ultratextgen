@@ -283,6 +283,9 @@ def main():
 
     for r in rows:
         motif, kicker, how = motif_kicker_for(r["eng_slug"], r["og_base"], r["hero_base"])
+        # The card's own words, where the English equivalent's motif would
+        # otherwise draw English (see LOCALE_MOTIFS in generate-site-art.py).
+        motif = gsa.LOCALE_MOTIFS.get(r["slug"], motif)
         if how == "fallback":
             fallback.append(r["path"])
         title = r["title"] or "UltraTextGen"

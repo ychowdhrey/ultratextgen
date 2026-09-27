@@ -25,15 +25,15 @@
   <g transform="translate(740 -10) scale(1.02)">
     <text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="104"
           font-weight="700" font-style="normal" fill="url(#ghtrustuci)"
-          text-anchor="middle" opacity="0.12">strike</text>
+          text-anchor="middle" opacity="0.12">çizili</text>
     <rect x="40" y="120" width="280" height="150" rx="28" fill="url(#ghtrustuci)"/>
-    <g transform="rotate(0 180 195)"><text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="64" font-weight="700" font-style="normal" text-decoration="line-through" letter-spacing="0" fill="#fff" text-anchor="middle">strike</text></g>
-    <text x="180" y="318" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="20" fill="#64748b" text-anchor="middle">crossed out</text></g>
+    <g transform="rotate(0 180 195)"><text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="64" font-weight="700" font-style="normal" text-decoration="line-through" letter-spacing="0" fill="#fff" text-anchor="middle">çizili</text></g>
+    </g>
   <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
     <text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="104"
           font-weight="700" font-style="normal" fill="url(#ghtrustuci)"
-          text-anchor="middle" opacity="0.12">strike</text>
+          text-anchor="middle" opacity="0.12">çizili</text>
     <rect x="40" y="120" width="280" height="150" rx="28" fill="url(#ghtrustuci)"/>
-    <g transform="rotate(0 180 195)"><text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="64" font-weight="700" font-style="normal" text-decoration="line-through" letter-spacing="0" fill="#fff" text-anchor="middle">strike</text></g>
-    <text x="180" y="318" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="20" fill="#64748b" text-anchor="middle">crossed out</text></g>
+    <g transform="rotate(0 180 195)"><text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="64" font-weight="700" font-style="normal" text-decoration="line-through" letter-spacing="0" fill="#fff" text-anchor="middle">çizili</text></g>
+    </g>
 </svg>

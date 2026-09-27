@@ -28,12 +28,12 @@
           text-anchor="middle" opacity="0.12">ab</text>
     <rect x="40" y="120" width="280" height="150" rx="28" fill="url(#ghidfontbu)"/>
     <g transform="rotate(0 180 195)"><text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="92" font-weight="700" font-style="normal" text-decoration="none" letter-spacing="0" fill="#fff" text-anchor="middle">ab</text></g>
-    <circle cx="118" cy="195" r="56" fill="none" stroke="#fff" stroke-width="7"/><circle cx="240" cy="195" r="56" fill="none" stroke="#fff" stroke-width="7"/><text x="180" y="318" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="20" fill="#64748b" text-anchor="middle">bubbled</text></g>
+    <circle cx="118" cy="195" r="56" fill="none" stroke="#fff" stroke-width="7"/><circle cx="240" cy="195" r="56" fill="none" stroke="#fff" stroke-width="7"/></g>
   <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
     <text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="132"
           font-weight="700" font-style="normal" fill="url(#ghidfontbu)"
           text-anchor="middle" opacity="0.12">ab</text>
     <rect x="40" y="120" width="280" height="150" rx="28" fill="url(#ghidfontbu)"/>
     <g transform="rotate(0 180 195)"><text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="92" font-weight="700" font-style="normal" text-decoration="none" letter-spacing="0" fill="#fff" text-anchor="middle">ab</text></g>
-    <circle cx="118" cy="195" r="56" fill="none" stroke="#fff" stroke-width="7"/><circle cx="240" cy="195" r="56" fill="none" stroke="#fff" stroke-width="7"/><text x="180" y="318" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="20" fill="#64748b" text-anchor="middle">bubbled</text></g>
+    <circle cx="118" cy="195" r="56" fill="none" stroke="#fff" stroke-width="7"/><circle cx="240" cy="195" r="56" fill="none" stroke="#fff" stroke-width="7"/></g>
 </svg>

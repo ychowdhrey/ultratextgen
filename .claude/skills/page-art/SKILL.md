@@ -36,6 +36,14 @@ Then confirm every path in those two tables exists. If your font build differs f
 the one that produced the committed PNGs, a wide run rewrites **visually identical but
 byte-different** files — see step 4.
 
+**Then pin the serif face: run every art command with
+`FONTCONFIG_FILE=$PWD/scripts/fontconfig/art-fonts.conf`** (absolute: fontconfig
+ignores a relative path). `SERIF` names Georgia, which is
+not installed, and the substitute depends on what else is: the committed cards were
+drawn with DejaVu Serif, and installing `fonts-noto-core` above silently switches it
+to Noto Serif, a visibly different face on every serif motif (measured 2026-09-27).
+`generate-site-art.py` warns when the mapping is wrong.
+
 ## 2. Register the page
 
 Add it to `PAGES` in `scripts/generate-site-art.py` (title, sub, motif, kicker). For

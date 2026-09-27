@@ -366,8 +366,13 @@ def m_typo(p, sample="Aa", **kw):
     if label:
         lab = (f'<text x="180" y="318" font-family="{lab_ff}" font-size="20" '
                f'fill="{SUB}" text-anchor="middle">{label}</text>')
+    # The faint echo behind the chip is 40 units larger than the sample. A
+    # long locale word passes a fitted `echo` so it stays inside the motif
+    # instead of running under the card's subtitle; without it the output is
+    # unchanged.
+    echo = kw.get("echo", size + 40)
     return f"""
-    <text x="180" y="208" font-family="{ff}" font-size="{size+40}"
+    <text x="180" y="208" font-family="{ff}" font-size="{echo}"
           font-weight="{weight}" font-style="{style}" fill="url(#g{p})"
           text-anchor="middle" opacity="0.12">{sample}</text>
     <rect x="40" y="120" width="280" height="150" rx="28" fill="url(#g{p})"/>
@@ -462,11 +467,16 @@ def m_transform(p, a="A", b="B", accent=PURPLE):
 
 
 def m_vertical(p, letters="WAIT", accent=PURPLE):
+    # Up to five letters: a locale's word for "text" is often five (TEXTO,
+    # TEXTE, TEKST). Four keep the original spacing, byte for byte; five are
+    # set a little tighter so the column still ends inside the motif box.
     g = ""
-    for i, ch in enumerate(letters[:4]):
-        y = 96 + i * 60
-        g += (f'<text x="128" y="{y}" font-family="{SANS}" font-size="52" '
-              f'font-weight="700" fill="url(#gv{p})" text-anchor="middle">{ch}</text>')
+    five = len(letters) > 4
+    for i, ch in enumerate(letters[:5] if five else letters[:4]):
+        y = (86 + i * 50) if five else (96 + i * 60)
+        size = "46" if five else "52"
+        g += (f'<text x="128" y="{y}" font-family="{SANS}" font-size="{size}" '
+              f'font-weight="700" fill="url(#gv{p})" text-anchor="middle">{spanned(ch, None)}</text>')
     flow = ""
     for i in range(4):
         y = 78 + i * 60
@@ -1650,16 +1660,14 @@ PAGES = {
   "zh-tw-library-kongbai-fuhao": ("空白符號", "隱形字元，貼哪都不留痕跡",
         glyphs("␣", "▢", "◌", "▯", "□"), K_LIB),
   "zh-tw-da-xiao-xie-zhuanhuan": ("大小寫轉換", "英文大寫、小寫一鍵轉換",
-        P(m_typo, sample="Aa", weight="700", size=88, label="UPPER / lower"), K_CAT),
+        P(m_typo, sample="Aa", weight="700", size=88), K_CAT),
   "zh-tw-usecase-ciqing-ziti": ("刺青字體產生器", "紋身字體預覽比較",
-        P(m_typo, sample="Love", ff=SERIF, style="italic", weight="400", size=64,
-          label="cursive · gothic · italic"), K_USE),
+        P(m_typo, sample="愛", ff="WenQuanYi Zen Hei", weight="400", size=88), K_USE),
   "zh-tw-usecase-youxi-mingzi-fuhao": ("遊戲暱稱特殊符號", "傳說對決・Discord暱稱裝飾", m_gamepad, K_USE),
   "zh-tw-ig-ziti": ("IG 字體產生器", "個人簡介・名稱特殊字體",
-        P(m_typo, sample="ig", weight="700", size=88, label="bold · script · caps"), K_USE),
+        P(m_typo, sample="ig", weight="700", size=88), K_USE),
   "zh-tw-shufa-ziti": ("書法字體產生器", "英文花體字，複製貼上",
-        P(m_typo, sample="Sofia", ff=SERIF, style="italic", weight="400", size=64,
-          label="cursive · script"), K_CAT),
+        P(m_typo, sample="Sofia", ff=SERIF, style="italic", weight="400", size=64), K_CAT),
   "zh-tw-keai-ziti": ("可愛字體產生器", "圈圈字、泡泡字與可愛符號",
         glyphs("♡", "✧", "❀", "✿", "❥"), K_CAT),
   "zh-tw-library-jiantou-fuhao": ("箭頭符號大全", "各種方向箭頭，複製貼上", glyphs("→", "⇒", "↑", "➜", "↩"), K_LIB),
@@ -1954,7 +1962,7 @@ PAGES = {
   "pt-usecase-nick-ff": ("Gerador de Nick FF", "Símbolos e fontes para Free Fire", m_gamepad, K_USE),
   "pt-library-simbolos": ("Símbolos para Copiar", "Símbolos para nick, bio e Insta", m_grid, K_LIB),
   "pt-letras-pequenas": ("Letra Pequena", "Texto pequeno para copiar e colar",
-        P(m_typo, sample=" small", size=44, label="letra pequena"), K_CAT),
+        P(m_typo, sample=" pequena", size=44, label="letra pequena"), K_CAT),
   "pt-letra-cursiva": ("Letra Cursiva", "Alfabeto cursivo para copiar e colar",
         P(m_typo, sample="Cursiva", ff=SERIF, style="italic", weight="400", size=58,
           label="elegante e fluida"), K_CAT),
@@ -1970,12 +1978,12 @@ PAGES = {
   "tr-usecase-valorant-nick": ("Valorant Nick", "Riot ID kontrolü ve stil isimler", m_gamepad, K_USE),
   "tr-library-semboller": ("Şekilli Semboller", "Nick ve bio için semboller", m_grid, K_LIB),
   "tr-kucuk-yazi": ("Küçük Yazı", "Minik harfler kopyala yapıştır",
-        P(m_typo, sample=" small", size=44, label="küçük yazı"), K_CAT),
+        P(m_typo, sample=" küçük", size=44, label="küçük yazı"), K_CAT),
   "tr-el-yazisi-fontu": ("El Yazısı Fontu", "El yazısı alfabesi kopyala yapıştır",
         P(m_typo, sample="Yazi", ff=SERIF, style="italic", weight="400", size=58,
           label="zarif ve akıcı"), K_CAT),
   "tr-kalin-yazi": ("Kalın Yazı", "Kalın font kopyala yapıştır",
-        P(m_typo, sample="Bold", weight="800", size=80, label="kalın ve net"), K_CAT),
+        P(m_typo, sample="Kalın", weight="800", size=80, label="kalın ve net"), K_CAT),
   "tr-alti-cizili-yazi": ("Altı Çizili Yazı", "Altı çizili font kopyala yapıştır",
         P(m_typo, sample="Çizili", size=64, deco="underline", label="vurgulu ve net"), K_CAT),
   # category/underline-text locale mirrors (Tier-1 gap close)
@@ -1998,7 +2006,7 @@ PAGES = {
   "tr-gotik-yazi": ("Gotik Yazı", "Gotik font kopyala yapıştır",
         P(m_typo, sample="Gotik", ff=SERIF, weight="800", size=76, label="ağır ve karakterli"), K_CAT),
   "nl-gotische-letters": ("Gotische Letters", "Gothic lettertype kopiëren",
-        P(m_typo, sample="Gothic", ff=SERIF, weight="800", size=72, label="zwaar en stoer"), K_CAT),
+        P(m_typo, sample="Gotisch", ff=SERIF, weight="800", size=72, label="zwaar en stoer"), K_CAT),
   "tr-estetik-yazi": ("Estetik Yazı", "Aesthetic font kopyala yapıştır",
         P(m_typo, sample="e s t", size=70, spacing="6", label="e s t e t i k"), K_CAT),
   "fr-texte-barre": ("Texte Barré", "Écriture barrée à copier-coller",
@@ -2088,19 +2096,19 @@ PAGES = {
   "de-usecase-vertical-text": ("Vertikaler Text-Generator", "Text von oben nach unten stapeln",
         P(m_vertical, letters="TEXT"), K_USE),
   "es-usecase-vertical-text": ("Generador de Texto Vertical", "Apila tu texto de arriba abajo",
-        P(m_vertical, letters="TEXT"), K_USE),
+        P(m_vertical, letters="TEXTO"), K_USE),
   "fr-usecase-vertical-text": ("Générateur de Texte Vertical", "Empilez votre texte de haut en bas",
-        P(m_vertical, letters="MOTS"), K_USE),
+        P(m_vertical, letters="TEXTE"), K_USE),
   "id-usecase-vertical-text": ("Generator Teks Vertikal", "Susun tulisan dari atas ke bawah",
         P(m_vertical, letters="TEKS"), K_USE),
   "it-usecase-vertical-text": ("Generatore di Testo Verticale", "Impila il testo dall'alto in basso",
-        P(m_vertical, letters="TEST"), K_USE),
+        P(m_vertical, letters="TESTO"), K_USE),
   "nl-usecase-vertical-text": ("Verticale Tekst Generator", "Stapel je tekst van boven naar beneden",
-        P(m_vertical, letters="TEKS"), K_USE),
+        P(m_vertical, letters="TEKST"), K_USE),
   "pl-usecase-vertical-text": ("Generator Tekstu Pionowego", "Ułóż tekst od góry do dołu",
-        P(m_vertical, letters="TEKS"), K_USE),
+        P(m_vertical, letters="TEKST"), K_USE),
   "pt-usecase-vertical-text": ("Gerador de Texto Vertical", "Empilhe seu texto de cima para baixo",
-        P(m_vertical, letters="TEXT"), K_USE),
+        P(m_vertical, letters="TEXTO"), K_USE),
   "tr-usecase-vertical-text": ("Dikey Yazı Oluşturucu", "Metni yukarıdan aşağıya dizin",
         P(m_vertical, letters="YAZI"), K_USE),
   "vi-usecase-vertical-text": ("Trình Tạo Chữ Dọc", "Xếp chữ từ trên xuống dưới",
@@ -3924,7 +3932,27 @@ def motif_from_page(slug, current_motif):
 
 
 
+def _warn_font_build():
+    """The committed cards were drawn where Georgia (first in SERIF) resolves
+    to DejaVu Serif: measured 2026-09-27, the English serif cards re-render
+    pixel-identical under that mapping and differ under any other. Installing
+    fonts-noto-core silently remaps Georgia to Noto Serif and changes every
+    serif card a run touches. Warn, so a run on a different build is a choice."""
+    import subprocess
+    try:
+        got = subprocess.run(["fc-match", "-f", "%{family}", "Georgia:bold"],
+                             capture_output=True, text=True, timeout=10).stdout.strip()
+    except (OSError, subprocess.SubprocessError):
+        return
+    if got and not got.startswith("DejaVu Serif"):
+        sys.stderr.write(f"[warn] Georgia resolves to {got!r}, not DejaVu Serif: serif motifs will not "
+                         "match the committed cards. Run with "
+                         "FONTCONFIG_FILE=$PWD/scripts/fontconfig/art-fonts.conf (an absolute path; "
+                         "fontconfig ignores a relative one).\n")
+
+
 def main():
+    _warn_font_build()
     import argparse
     import cairosvg
 
@@ -4285,6 +4313,175 @@ except FileNotFoundError:
     pass
 except Exception as _exc:  # noqa: BLE001 - a malformed side file must not break art generation
     sys.stderr.write(f"[warn] could not merge {_GEN_ART}: {_exc}\n")
+
+# ---- locale motif words --------------------------------------------------
+# A locale page with no PAGES entry of its own is drawn by
+# generate-locale-art.py with its ENGLISH equivalent's motif, so ~130 locale
+# cards showed "Bold / strong & striking", "small / tiny + small", "Cursive /
+# elegant & flowing" and "TEXT" (found 2026-09-27 by reading the motif text of
+# every locale hero SVG). LOCALE_MOTIFS gives those cards their own words;
+# generate-locale-art.py prefers an entry here over the English motif, while
+# the card's title and subtitle still come from the page.
+#
+# The sample word is the page's own style word, taken from its H1 (lemma
+# form: "Pogrubiona", not the genitive "Pogrubionej" the H1 inflects). The
+# English caption is dropped rather than translated, because no locale page
+# ships one; locale PAGES entries that were given a caption by hand keep it.
+# Where a locale's own H1 uses the loanword ("Letras aesthetic", "Font
+# Gothic") the card keeps it too.
+_CJK_FACE = {"ja": "Noto Sans CJK JP", "ko": "Noto Sans CJK KR", "zh-tw": "WenQuanYi Zen Hei"}
+
+
+def _ink_width(sample, kw, size):
+    """Width in motif units of `sample` as cairo actually draws it: rendered,
+    not estimated, so a font fallback cannot make the fit lie."""
+    import cairosvg
+    from PIL import Image
+    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="400">'
+           f'<text x="20" y="300" font-family="{kw.get("ff", SANS)}" font-size="{size}" '
+           f'font-weight="{kw.get("weight", "700")}" font-style="{kw.get("style", "normal")}" '
+           f'letter-spacing="{kw.get("spacing", "0")}">{esc(sample)}</text></svg>')
+    ink = Image.open(io.BytesIO(cairosvg.svg2png(bytestring=svg.encode()))).getchannel("A").getbbox()
+    return (ink[2] - ink[0]) if ink else 0
+
+
+def _fit(sample, kw, size, max_w):
+    """The largest size <= `size` at which `sample` is at most `max_w` wide.
+    Ink width is linear in font size, so one measurement gives the answer and
+    a second confirms it (hinting can round a pixel or two either way)."""
+    width = _ink_width(sample, kw, size)
+    if width <= max_w:
+        return size
+    size = int(size * max_w / width)
+    while size > 12 and _ink_width(sample, kw, size) > max_w:
+        size -= 1
+    return size
+
+
+def _localized_typo(en_slug, sample=None, label="", slug=None, **over):
+    """The English entry's m_typo, with this locale's sample and no English
+    caption. Every other setting (face, weight, slant, decoration) is kept, so
+    a bold card still draws bold and a struck-through one still strikes."""
+    kw = dict(PAGES[en_slug][2].keywords)
+    kw.update(over)
+    if sample is not None:
+        kw["sample"] = sample
+        kw.pop("spacing", None) if " " not in sample.strip() else None
+    kw["label"] = label
+    loc = locale_of_slug(slug) if slug else None
+    if loc in _CJK_FACE and any("\u3040" <= c <= "\u9fff" or "\uac00" <= c <= "\ud7af"
+                                for c in kw["sample"]):
+        kw["ff"], kw["style"] = _CJK_FACE[loc], "normal"
+    # The chip is 280 units wide; the echo may use the motif's 360.
+    kw["size"] = _fit(kw["sample"], kw, kw.get("size", 120), 236)
+    echo = _fit(kw["sample"], kw, kw["size"] + 40, 340)
+    if echo < kw["size"] + 40:
+        kw["echo"] = echo
+    return P(m_typo, **kw)
+
+
+class _LazyMotifs(dict):
+    """slug -> motif, built on first use. Fitting a sample renders it, and a
+    table of ~130 renders at import cost every script that loads this module
+    (the locale-art and kicker scripts too) close to a minute."""
+
+    def __getitem__(self, slug):
+        value = dict.__getitem__(self, slug)
+        if isinstance(value, tuple):
+            value = _localized_typo(*value[0], **value[1])
+            dict.__setitem__(self, slug, value)
+        return value
+
+    def get(self, slug, default=None):
+        return self[slug] if slug in self else default
+
+
+def _typo_set(en_slug, words, **over):
+    return {slug: ((en_slug, word), dict(slug=slug, **over)) for slug, word in words.items()}
+
+
+LOCALE_MOTIFS = _LazyMotifs()
+LOCALE_MOTIFS.update(_typo_set("category-bold-fonts", {
+    "id-tulisan-tebal": "Tebal", "ms-tulisan-tebal": "Tebal", "pt-letras-negrito": "Negrito",
+    "de-fette-schrift": "Fett", "it-grassetto": "Grassetto", "pl-pogrubiona-czcionka": "Pogrubiona",
+    "ru-zhirnyy-shrift": "Жирный", "vi-chu-in-dam": "Đậm", "hu-felkover-szoveg": "Félkövér",
+    "bs-podebljana-slova": "Podebljana", "hr-podebljana-slova": "Podebljana",
+    "sr-podebljana-slova": "Podebljana", "cs-tucne-pismo": "Tučné", "sk-tucne-pismo": "Tučné",
+    "ro-text-ingrosat": "Îngroșat", "fi-lihavoitu-teksti": "Lihavoitu", "es-letras-negritas": "Negrita"}))
+LOCALE_MOTIFS.update(_typo_set("category-italic-fonts", {
+    "id-tulisan-miring": "Miring", "ms-tulisan-condong": "Condong", "pt-letras-italicas": "Itálica",
+    "es-letras-italicas": "Itálica", "de-kursive-schrift": "Kursiv", "tr-italik-yazi": "İtalik",
+    "pl-kursywa": "Kursywa", "ru-kursiv": "Курсив", "vi-chu-nghieng": "Nghiêng",
+    "hu-dolt-szoveg": "Dőlt", "bs-kurziv": "Kurziv", "hr-kurziv": "Kurziv", "sr-kurziv": "Kurziv",
+    "cs-kurziva": "Kurzíva", "sk-kurziva": "Kurzíva", "ro-text-cursiv": "Cursiv",
+    "fi-kursivoitu-teksti": "Kursivoitu"}))
+LOCALE_MOTIFS.update(_typo_set("category-small-text", {
+    "id-tulisan-kecil": " kecil", "ms-tulisan-kecil": " kecil", "de-kleine-schrift": " klein",
+    "it-testo-piccolo": " piccolo", "es-texto-pequeno": " pequeño", "pl-male-litery": " małe",
+    "ru-malenkiy-tekst": " маленький", "vi-chu-nho": " nhỏ", "hu-apro-betuk": " apró",
+    "bs-mala-slova": " mala", "hr-mala-slova": " mala", "sr-mala-slova": " mala",
+    "cs-male-pismo": " malé", "sk-male-pismo": " malé", "ro-text-mic": " mic",
+    "fi-pieni-teksti": " pieni"}))
+LOCALE_MOTIFS.update(_typo_set("category-gothic-fonts", {
+    "id-tulisan-gotik": "Gotik", "ms-tulisan-gotik": "Gotik", "de-altdeutsche-schrift": "Altdeutsch",
+    "it-gotico": "Gotico", "es-letras-goticas": "Gótica", "pl-czcionki-gotyckie": "Gotyk",
+    "ru-goticheskiy-shrift": "Готический", "vi-font-gothic": "Gothic", "hu-gotikus-betuk": "Gotikus",
+    "bs-goticka-slova": "Gotička", "hr-goticka-slova": "Gotička", "sr-goticka-slova": "Gotička",
+    "cs-goticke-pismo": "Gotické", "sk-goticke-pismo": "Gotické", "ro-scriere-gotica": "Gotică",
+    "fi-goottilaiset-kirjaimet": "Goottilainen"}))
+LOCALE_MOTIFS.update(_typo_set("category-strikethrough-text", {
+    "id-tulisan-coret": "coret", "pt-letra-tachada": "tachada", "es-letra-tachada": "tachada",
+    "de-durchgestrichener-text": "durchgestrichen", "tr-ustu-cizili-yazi": "çizili",
+    "it-testo-barrato": "barrato", "pl-przekreslony-tekst": "przekreślony",
+    "ru-zacherknutyy-tekst": "зачёркнутый", "vi-chu-gach-ngang": "gạch ngang"}))
+LOCALE_MOTIFS.update(_typo_set("category-cursive-fonts", {
+    "id-tulisan-sambung": "Sambung", "de-schreibschrift": "Schreibschrift", "it-lettere-in-corsivo": "Corsivo",
+    "es-letra-cursiva": "Cursiva", "ko-pilgichae-byeonhwan": "필기체", "ja-hikkitai": "筆記体",
+    "no-kursiv-tekst": "Skriveskrift"}))
+LOCALE_MOTIFS.update(_typo_set("category-cute-fonts", {
+    "id-font-lucu": "Lucu", "it-scritte-belle": "Belle", "ko-yeppeun-geulssi": "예쁜",
+    "ja-kawaii-moji": "かわいい"}))
+LOCALE_MOTIFS.update(_typo_set("category-upside-down-text", {
+    "id-tulisan-terbalik": "terbalik", "pt-texto-ao-contrario": "contrário", "de-kopfueber-text": "kopfüber",
+    "it-testo-capovolto": "capovolto", "es-texto-al-reves": "al revés", "pl-odwrocony-tekst": "odwrócony",
+    "vi-chu-nguoc": "ngược"}))
+LOCALE_MOTIFS.update(_typo_set("category-aesthetic-fonts", {
+    "ko-gamseong-moji": "감성", "ja-oshare-moji": "おしゃれ", "ru-krasivyy-shrift": "красивый"}))
+LOCALE_MOTIFS["pl-estetyczne-czcionki"] = (
+    ("category-aesthetic-fonts", "e s t"), dict(label="e s t e t y c z n e", slug="pl-estetyczne-czcionki"))
+LOCALE_MOTIFS["ru-podcherknutyy-tekst"] = (
+    ("category-underline-text", "подчёркнутый"), dict(slug="ru-podcherknutyy-tekst"))
+# Neutral samples ("Aa", "123", "ab", "𝔄𝔞") stay; only the English caption goes.
+for _en, _slugs in {
+    "category-case-converter": ["id-huruf-besar-kecil", "ms-huruf-besar-kecil", "pt-maiusculas-e-minusculas",
+                                "de-gross-und-kleinschreibung", "fr-majuscules-et-minuscules",
+                                "tr-buyuk-kucuk-harf", "it-maiuscole-e-minuscole", "es-mayusculas-y-minusculas",
+                                "pl-wielkie-i-male-litery", "vi-chu-hoa-chu-thuong"],
+    "character-counter": ["id-penghitung-kata-dan-karakter", "pt-contador-de-palavras-e-caracteres",
+                          "de-woerter-zeichen-zaehlen", "fr-compteur-de-mots-et-de-caracteres",
+                          "tr-karakter-sayaci", "it-contatore-di-parole-e-caratteri",
+                          "es-contador-de-palabras-y-caracteres", "pl-licznik-slow-i-znakow",
+                          "ru-schetchik-slov-i-simvolov", "vi-dem-tu-dem-ky-tu"],
+    "printables-cursive-alphabet": ["pt-imprimiveis-alfabeto-cursivo", "de-zum-ausdrucken-schreibschrift",
+                                    "fr-imprimables-alphabet-cursif", "it-da-stampare-alfabeto-corsivo",
+                                    "es-imprimibles-alfabeto-cursiva", "nl-om-uit-te-printen-schrijfletters"],
+    "printables-calligraphy-alphabet": ["fr-imprimables-alphabet-calligraphie",
+                                        "it-da-stampare-alfabeto-calligrafico"],
+    "category-bubble-fonts": ["id-font-bubble"],
+}.items():
+    for _slug in _slugs:
+        LOCALE_MOTIFS[_slug] = ((_en,), dict(slug=_slug))
+LOCALE_MOTIFS.update({
+    "ar-usecase-vertical-text": P(m_vertical, letters="نص"),
+    "ko-usecase-vertical-text": P(m_vertical, letters="세로"),
+    "ja-usecase-vertical-text": P(m_vertical, letters="縦書き"),
+})
+# An entry here for a slug PAGES already owns would never be read: PAGES wins
+# in generate-site-art.py, and generate-locale-art.py skips PAGES slugs.
+_owned = sorted(set(LOCALE_MOTIFS) & set(PAGES))
+if _owned:
+    raise SystemExit(f"LOCALE_MOTIFS entries for PAGES-owned slugs (edit PAGES instead): {_owned}")
+
 
 if __name__ == "__main__":
     sys.exit(main())
