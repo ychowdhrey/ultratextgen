@@ -92,6 +92,12 @@
      "istanbul" and pairs "I" with "i" on an alphabet sheet. For every other
      language "en" gives exactly what toUpperCase()/toLowerCase() gave before. */
   const CASE_LOCALE = LANG === "tr" ? "tr" : "en";
+  /* Puzzle grids in French are set in unaccented capitals (É, È, Ê are all E;
+     Œ takes two squares), which is how every French crossword and mots mêlés
+     is printed. The word-search and crossword modules strip the marks from the
+     grid only when asked; the word list and clues keep the real spelling.
+     Other languages keep their letters, as the English pages promise. */
+  const FOLD_GRID = CFG.foldAccents != null ? !!CFG.foldAccents : LANG === "fr";
   const I18N = {
     en: {
       letterWord: "letter", numberWord: "number",
@@ -239,6 +245,35 @@
       bannerInstr: "Découpez chaque fanion le long de sa ligne pointillée, percez un trou à chaque point, puis passez une ficelle ou un ruban dans l'ordre (1, 2, 3…) pour former le mot.",
       puzzleCut: "Découpez le long des lignes pointillées pour séparer chaque pièce-lettre.",
       puzzleTitle: "Le puzzle de {name}",
+      wordSearch: {
+        heading: "Mots mêlés",
+        findAll: "Retrouve les",
+        wordsWord: "mots",
+        answerKey: "Corrigé",
+        forWhom: "pour",
+        tooLong: "Trop long pour la grille :",
+        needWords: "Tape quelques mots pour créer une grille.",
+        gridOf: "Grille de mots mêlés",
+        lettersBy: "lettres sur",
+        versions: "grilles différentes, une par prénom",
+        oneGrid: "Une grille",
+        colon: "\u00a0:"
+      },
+      crossword: {
+        heading: "Mots croisés",
+        across: "Horizontalement",
+        down: "Verticalement",
+        answerKey: "Corrigé",
+        forWhom: "pour",
+        clueBlank: "(écris ta propre définition)",
+        wordBank: "Liste des mots",
+        noFit: "Pas de place dans la grille pour :",
+        needWords: "Tape quelques mots qui ont des lettres en commun.",
+        gridOf: "Grille de mots croisés",
+        cellsBy: "cases sur",
+        versions: "grilles différentes, une par prénom",
+        oneGrid: "Une grille"
+      },
       trace: {
         solid:    { label: "Modèle plein", hint: "Lettres pleines et foncées — tracez par-dessus" },
         "bold-dot": { label: "Pointillé épais", hint: "Points épais et rapprochés à relier" },
@@ -10952,7 +10987,7 @@
     const ns = wordSearchModule();
     if (!ns) return null;
     const text = searchWordsText();
-    return ns.build({ words: text, level: level || searchState.level, seed: seed || text });
+    return ns.build({ words: text, level: level || searchState.level, seed: seed || text, fold: FOLD_GRID });
   }
 
   function searchGridNode(built, showAnswer) {
@@ -11013,7 +11048,7 @@
     const placed = built.words.filter((w) => w.placed).length;
     const note = document.createElement("p");
     note.className = "pt-search-note";
-    note.textContent = T.wordSearch.findAll + " " + placed + " " + T.wordSearch.wordsWord + ":";
+    note.textContent = T.wordSearch.findAll + " " + placed + " " + T.wordSearch.wordsWord + (T.wordSearch.colon || ":");
     sheet.appendChild(note);
 
     sheet.appendChild(searchWordListNode(built));
@@ -11237,7 +11272,7 @@
     const ns = puzzleNs("crossword");
     if (!ns) return null;
     const text = cwWordsText();
-    return ns.build({ input: text, seed: seed || text });
+    return ns.build({ input: text, seed: seed || text, fold: FOLD_GRID });
   }
 
   /* The grid is a table of squares: a filled square carries its letter (or,

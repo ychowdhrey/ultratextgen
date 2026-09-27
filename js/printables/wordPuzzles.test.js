@@ -341,6 +341,27 @@ const CLUED = [
   eq(s.words[0].letters.length, 8, "scramble: the space is not a letter");
 }
 
+/* 20b. French grids are unaccented when the page asks (fold) */
+{
+  // ÉLÈVE and TÊTE share an E only once the marks are gone, which is why
+  // French crosswords are printed in plain capitals. Every entry must still be
+  // read back out of the grid, and the clue list keeps the real spelling.
+  const input = "élève = Enfant à l'école\ntête = Le haut du corps\ncœur = Il bat dans la poitrine\ngarçon = Un enfant";
+  const c = CW.build({ input: input, seed: "b", fold: true });
+  eq(c.unplaced.length, 0, "crossword fold: a French list places completely");
+  eq(c.strays.length, 0, "crossword fold: no unlisted run");
+  ok(!/[À-ÿŒœ]/.test(gridText(c.grid)), "crossword fold: no accented letter or ligature in the grid");
+  const keys = c.words.map((w) => w.key).sort().join(" ");
+  eq(keys, "COEUR ELEVE GARCON TETE", "crossword fold: grid forms are unaccented, Œ is two squares");
+  ok(c.words.some((w) => w.display === "élève"), "crossword fold: the display keeps its accents");
+  // Without the fold, É, È and Ê are letters nothing else in the list has, so
+  // ÉLÈVE and TÊTE cannot cross anything. Measured: unplaced on all 200 of 200
+  // seeds tried, against about one in two with the fold.
+  const plain = CW.build({ input: input, seed: "b" });
+  eq(plain.unplaced.map((w) => w.key).sort().join(" "), "TÊTE ÉLÈVE",
+     "crossword without fold: accented words that share no letter are left out");
+}
+
 /* 21. Duplicates are collapsed, and the list cap holds */
 {
   const s = SC.build({ input: "cat\nCAT\n cat \ndog", seed: "x" });

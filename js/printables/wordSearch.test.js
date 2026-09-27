@@ -160,6 +160,20 @@ const SPELLING = ["because", "friend", "people", "school", "water", "there",
   const fr = WS.build({ words: ["école", "fenêtre", "cœur", "à côté"], seed: "fr", level: "hard" });
   eq(fr.unplaced.length, 0, "a French list places completely");
 
+  // A French page asks for unaccented grid letters (fold), the way French
+  // puzzles are printed. The grid loses the marks; the display keeps them.
+  const frWords = WS.normalizeWords(["école", "fenêtre", "cœur", "garçon", "à côté"], true);
+  eq(frWords.map((w) => w.letters.join("")).join(" "), "ECOLE FENETRE COEUR GARCON ACOTE",
+     "fold: marks stripped, Œ takes two cells, Ç becomes C");
+  eq(frWords[0].display, "école", "fold: the display form keeps the accent for the word list");
+  const frFold = WS.build({ words: ["école", "fenêtre", "cœur", "élève", "tête"], seed: "fr", level: "hard", fold: true });
+  eq(frFold.unplaced.length, 0, "fold: a folded French list places completely");
+  ok(!/[À-ÿŒœ]/.test(gridText(frFold.grid)), "fold: no accented letter or ligature reaches the grid");
+  for (const w of frFold.words) ok(WS.findWord(frFold.grid, w.letters).length > 0, "fold findable: " + w.display);
+  eq(WS.normalizeWords(["straße"], true)[0].letters.join(""), "STRAßE", "fold leaves ß alone");
+  ok(gridText(WS.build({ words: ["école"], seed: "x" }).grid).indexOf("É") >= 0,
+     "without fold, É still reaches the grid (the English page's promise)");
+
   // ß uppercases to SS. One grid cell holds one character, so it must stay ß
   // or every letter after it shifts and the word silently breaks.
   const de = WS.normalizeWords(["straße"]);
