@@ -23,6 +23,7 @@ built from vector primitives + raster-safe system-font glyphs only. Colour
 emoji, runic and hieroglyph code points do NOT rasterize in the bundled fonts,
 so those themes use hand-drawn vector motifs instead of baked glyphs.
 """
+import glob
 import json
 import io
 import os
@@ -3289,6 +3290,122 @@ def _fit_title(slug, title, native):
     return lines
 
 
+# ---- the card kicker, in the page's own language ----------------------------
+# The kicker line ("ULTRATEXTGEN · LIBRARY") was English on every locale card:
+# a French symbol page's card read "ULTRATEXTGEN · SYMBOLS". The section word
+# now comes from the page's locale. Nothing here is translated fresh; every
+# word is one the site already ships in that locale:
+#   LIBRARY, PRINTABLES, ANSWERS, GUIDE, FONTS (the category lane) and
+#   GENERATOR (the usecase lane) -> header.js's NAV labels for that locale;
+#   SYMBOLS and UPDATES -> the hub name in that locale's own symbol/ and
+#   updates/ pages' BreadcrumbList (the most common one).
+# A section with no shipped word in a locale (PLATFORM and RESEARCH have none
+# anywhere) drops to the brand alone rather than keep the English word.
+# English slugs are untouched: localize_kicker() returns the kicker unchanged
+# for any slug that does not start with a locale code.
+KICKER_BRAND = "ULTRATEXTGEN"
+_KICKER_NAV = {"LIBRARY": "library", "PRINTABLES": "printables", "ANSWERS": "answers",
+               "GUIDE": "guide", "GUIDES": "guide",  # older cards say GUIDE(S)
+               "FONTS": "category", "GENERATOR": "usecase"}
+_KICKER_CRUMB = {"SYMBOLS": "symbol", "UPDATES": "updates"}
+# Letter-spacing splits joined or stacked scripts: Arabic loses its joins and
+# Thai/Devanagari marks drift off their base letter. Those kickers set tight.
+_KICKER_TIGHT = {"ar", "hi", "th"}
+_KICKER_WORDS = None
+
+
+def _locale_codes():
+    with open(os.path.join(ROOT, "data", "locale_qualification_tiers.json"), encoding="utf-8") as fh:
+        return sorted(json.load(fh)["locales"], key=len, reverse=True)
+
+
+def locale_of_slug(slug):
+    """The locale a card slug belongs to ('zh-tw-library-x' -> 'zh-tw'), or None
+    for an English slug. Locale codes come from the registry, never a glob."""
+    for loc in _locale_codes():
+        if slug == loc or slug.startswith(loc + "-"):
+            return loc
+    return None
+
+
+def _nav_labels():
+    """{locale: {nav key: label}} read out of header.js's NAV table."""
+    src = open(os.path.join(ROOT, "header.js"), encoding="utf-8").read()
+    start = src.index("const NAV = {")
+    end = src.index("\n  };", start)
+    out = {}
+    for m in re.finditer(r'\n    "?([a-z]{2}(?:-[a-z]{2})?)"?: \{(.*?)\n    \}', src[start:end], re.S):
+        out[m.group(1)] = dict(re.findall(r'(\w+): \{ label: "([^"]*)"', m.group(2)))
+    return out
+
+
+def _crumb_hub_name(loc, lane):
+    """The most common position-2 BreadcrumbList name on <loc>/<lane>/*/ pages
+    that links to the lane's hub, or None when the locale has no such pages."""
+    counts = {}
+    for path in glob.glob(os.path.join(ROOT, loc, lane, "*", "index.html")):
+        html = open(path, encoding="utf-8").read()
+        for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>', html, re.S):
+            try:
+                data = json.loads(block)
+            except ValueError:
+                continue
+            if isinstance(data, dict) and data.get("@type") == "BreadcrumbList":
+                items = data.get("itemListElement") or []
+                # Only a crumb that links to the lane's hub names the hub; ms's
+                # one symbol page puts its own title in position 2.
+                if (len(items) >= 2 and items[1].get("name")
+                        and str(items[1].get("item", "")).rstrip("/").endswith("/" + lane)):
+                    name = items[1]["name"]
+                    counts[name] = counts.get(name, 0) + 1
+                break
+    if not counts:
+        return None
+    return sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))[0][0]
+
+
+def kicker_words():
+    """{locale: {SECTION: word}}, built once per run from the shipped sources."""
+    global _KICKER_WORDS
+    if _KICKER_WORDS is None:
+        nav = _nav_labels()
+        words = {}
+        for loc in _locale_codes():
+            w = {sec: nav.get(loc, {}).get(key) for sec, key in _KICKER_NAV.items()}
+            for sec, lane in _KICKER_CRUMB.items():
+                w[sec] = _crumb_hub_name(loc, lane)
+            words[loc] = {k: v for k, v in w.items() if v}
+        _KICKER_WORDS = words
+    return _KICKER_WORDS
+
+
+def _upper(word, loc):
+    # Turkish dotted/dotless i: the default upper() prints "I" for "i".
+    if loc == "tr":
+        word = word.replace("i", "İ").replace("ı", "I")
+    return word.upper()
+
+
+def localize_kicker(kicker, slug):
+    """The kicker for this card, in the card's own locale."""
+    loc = locale_of_slug(slug)
+    prefix = KICKER_BRAND + " · "
+    if not loc or not kicker.startswith(prefix):
+        return kicker
+    word = kicker_words().get(loc, {}).get(kicker[len(prefix):])
+    return prefix + _upper(word, loc) if word else KICKER_BRAND
+
+
+def kicker_svg(kicker, slug, native):
+    """The <text> element for the kicker line, localized for the card's slug."""
+    text = localize_kicker(kicker, slug)
+    # Only a kicker carrying a native word sets tight; the bare brand keeps
+    # the spacing every other card draws it with.
+    spacing = "0" if (locale_of_slug(slug) in _KICKER_TIGHT and text != KICKER_BRAND) else "3"
+    return (f'<text x="80" y="96" font-family="{SANS}" font-size="22" font-weight="700"\n'
+            f'        letter-spacing="{spacing}" fill="{PURPLE}">{spanned(text, native)}</text>')
+
+
 def og_png_svg(slug, title, sub, motif, kicker, a=PURPLE, b=BLUE, native=None):
     p = "o" + slug.replace("-", "")[:8]
     wrapped = _fit_title(slug, title, native)
@@ -3304,8 +3421,7 @@ def og_png_svg(slug, title, sub, motif, kicker, a=PURPLE, b=BLUE, native=None):
   <rect width="1200" height="630" fill="url(#dots{p})"/>
   <circle cx="1080" cy="120" r="380" fill="url(#glow{p})"/>
   <rect x="0" y="0" width="14" height="630" fill="url(#gv{p})"/>
-  <text x="80" y="96" font-family="{SANS}" font-size="22" font-weight="700"
-        letter-spacing="3" fill="{PURPLE}">{esc(kicker)}</text>
+  {kicker_svg(kicker, slug, native)}
   <text font-family="{SANS}" font-size="60" font-weight="700" fill="{INK}">{tspans}</text>
   <text x="80" y="{y0 + len(wrapped)*72 + 6}" font-family="{SANS}" font-size="26"
         fill="{SUB}">{s}</text>
