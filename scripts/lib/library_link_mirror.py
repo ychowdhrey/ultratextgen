@@ -245,6 +245,28 @@ def inject(path, href, title, desc):
     return True
 
 
+DASH_RE = re.compile(r"\s*(?:——|—)\s*")
+
+
+def rejoint(text, lang):
+    """Card text without the em dash, whatever the locale's policy allows.
+
+    A card is new text on the hub, and a locale where the dash is native still
+    scores it in the Editorial Footprint's punctuation fingerprint: 17 verbatim
+    taglines moved es/library/kaomoji from p40 to p73. So the joint moves, per
+    docs/em-dash-policy.md's structural remedies, and every word stays: a pair of
+    dashes around an aside becomes a comma pair, a single dash before an
+    explanation becomes a colon (full-width in ja and zh-tw)."""
+    if not text or "—" not in text:
+        return text
+    parts = DASH_RE.split(text)
+    if len(parts) == 3:
+        return f"{parts[0]}, {parts[1]}, {parts[2]}"
+    colon = "：" if lang in ("ja", "zh-tw") else ": "
+    return colon.join(parts)
+
+
 def card_copy(graph, lang, en_slug):
     entry = graph.locale[(lang, en_slug)]
-    return page_title_and_desc(graph.texts[entry["rel"]], en_slug, lang)
+    title, desc = page_title_and_desc(graph.texts[entry["rel"]], en_slug, lang)
+    return rejoint(title, lang), rejoint(desc, lang)
