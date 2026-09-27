@@ -1552,8 +1552,8 @@
   "lastmod": "2026-09-10"
  },
  "/de/library/kaomoji/": {
-  "hash": "a61ba925b963913f",
-  "lastmod": "2026-09-10"
+  "hash": "c950833ee1ea179f",
+  "lastmod": "2026-09-27"
  },
  "/de/library/kawaii-suesse-symbole/": {
   "hash": "ee6797affed7816a",
@@ -3460,8 +3460,8 @@
   "lastmod": "2026-08-12"
  },
  "/es/library/kaomoji/": {
-  "hash": "30fe5e5494fa61fd",
-  "lastmod": "2026-09-10"
+  "hash": "7a446302c46f452e",
+  "lastmod": "2026-09-27"
  },
  "/es/library/lenny-face/": {
   "hash": "e877a60857378469",
@@ -4568,7 +4568,11 @@
   "lastmod": "2026-07-26"
  },
  "/fr/imprimables/": {
-  "hash": "c38a811f22e647d2",
+  "hash": "db14e9f057cba2e9",
+  "lastmod": "2026-09-26"
+ },
+ "/fr/imprimables/alphabet-calligraphie/": {
+  "hash": "1a1e1424d90e8d3d",
   "lastmod": "2026-09-26"
  },
  "/fr/imprimables/alphabet-cursif/": {
@@ -4582,6 +4586,10 @@
  "/fr/imprimables/alphabet-point-de-croix/": {
   "hash": "2645e5a239dc4c3d",
   "lastmod": "2026-09-12"
+ },
+ "/fr/imprimables/alphabet-points-a-relier/": {
+  "hash": "84744b2aa74b6cea",
+  "lastmod": "2026-09-26"
  },
  "/fr/imprimables/coloriage-alphabet/": {
   "hash": "80ef1b1bbfc871e2",
@@ -4602,6 +4610,14 @@
  "/fr/imprimables/lettres-graffiti/": {
   "hash": "fcbeeb09be22bc12",
   "lastmod": "2026-09-16"
+ },
+ "/fr/imprimables/modeles-d-ecriture/": {
+  "hash": "9134498fb76f273e",
+  "lastmod": "2026-09-26"
+ },
+ "/fr/imprimables/monogramme/": {
+  "hash": "733c88119790aef3",
+  "lastmod": "2026-09-26"
  },
  "/fr/imprimables/prenom-a-tracer/": {
   "hash": "52b097309b4892b3",
@@ -6792,7 +6808,11 @@
   "lastmod": "2026-08-21"
  },
  "/it/da-stampare/": {
-  "hash": "579f71177cc5b218",
+  "hash": "c44cddd8cac2b4cb",
+  "lastmod": "2026-09-26"
+ },
+ "/it/da-stampare/alfabeto-calligrafico/": {
+  "hash": "0fab4076e88942d8",
   "lastmod": "2026-09-26"
  },
  "/it/da-stampare/alfabeto-corsivo/": {
@@ -7864,8 +7884,8 @@
   "lastmod": "2026-09-26"
  },
  "/ja/library/kaomoji/": {
-  "hash": "0cbcc0193b149a61",
-  "lastmod": "2026-09-10"
+  "hash": "b858e5af2c14d54e",
+  "lastmod": "2026-09-27"
  },
  "/ja/library/kawaii-cute-symbols/": {
   "hash": "58ae397c5d3b9b5a",
@@ -8760,8 +8780,8 @@
   "lastmod": "2026-09-10"
  },
  "/ko/library/imotikon/": {
-  "hash": "a501b20bab9af164",
-  "lastmod": "2026-09-10"
+  "hash": "f94179431dc345b4",
+  "lastmod": "2026-09-27"
  },
  "/ko/library/insa-imotikon/": {
   "hash": "e0895d23724274cd",
@@ -9476,8 +9496,8 @@
   "lastmod": "2026-07-25"
  },
  "/learn/save-printer-ink-printables/": {
-  "hash": "4d2f20eea0b7c78a",
-  "lastmod": "2026-09-26"
+  "hash": "d9bfbf5231d56e33",
+  "lastmod": "2026-09-27"
  },
  "/library/": {
   "hash": "1df807058ee073fd",
@@ -10692,8 +10712,8 @@
   "lastmod": "2026-09-10"
  },
  "/library/text-faces-kaomoji/": {
-  "hash": "10e58c5ac960bb0f",
-  "lastmod": "2026-09-10"
+  "hash": "797e3a2f6ba65d94",
+  "lastmod": "2026-09-27"
  },
  "/library/thanksgiving-symbols/": {
   "hash": "63d20f29647f9346",
@@ -14452,12 +14472,16 @@
   "lastmod": "2026-09-05"
  },
  "/research/": {
-  "hash": "48ab9ba446f80914",
-  "lastmod": "2026-09-26"
+  "hash": "cf2d4a917a80d0b6",
+  "lastmod": "2026-09-27"
+ },
+ "/research/ink-saving-by-worksheet-type/": {
+  "hash": "a252f07dd98ac9ee",
+  "lastmod": "2026-09-27"
  },
  "/research/printable-ink-efficiency-study/": {
-  "hash": "6734c8dbf657e6be",
-  "lastmod": "2026-09-26"
+  "hash": "0515dc5e08466aa5",
+  "lastmod": "2026-09-27"
  },
  "/ro/": {
   "hash": "ad8343c6fc94adff",
