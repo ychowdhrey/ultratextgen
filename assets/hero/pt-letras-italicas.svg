@@ -25,15 +25,15 @@
   <g transform="translate(740 -10) scale(1.02)">
     <text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="112"
           font-weight="600" font-style="italic" fill="url(#ghptletras)"
-          text-anchor="middle" opacity="0.12">Italic</text>
+          text-anchor="middle" opacity="0.12">Itálica</text>
     <rect x="40" y="120" width="280" height="150" rx="28" fill="url(#ghptletras)"/>
-    <g transform="rotate(0 180 195)"><text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="72" font-weight="600" font-style="italic" text-decoration="none" letter-spacing="0" fill="#fff" text-anchor="middle">Italic</text></g>
-    <text x="180" y="318" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="20" fill="#64748b" text-anchor="middle">emphasis &amp; flow</text></g>
+    <g transform="rotate(0 180 195)"><text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="72" font-weight="600" font-style="italic" text-decoration="none" letter-spacing="0" fill="#fff" text-anchor="middle">Itálica</text></g>
+    </g>
   <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
     <text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="112"
           font-weight="600" font-style="italic" fill="url(#ghptletras)"
-          text-anchor="middle" opacity="0.12">Italic</text>
+          text-anchor="middle" opacity="0.12">Itálica</text>
     <rect x="40" y="120" width="280" height="150" rx="28" fill="url(#ghptletras)"/>
-    <g transform="rotate(0 180 195)"><text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="72" font-weight="600" font-style="italic" text-decoration="none" letter-spacing="0" fill="#fff" text-anchor="middle">Italic</text></g>
-    <text x="180" y="318" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="20" fill="#64748b" text-anchor="middle">emphasis &amp; flow</text></g>
+    <g transform="rotate(0 180 195)"><text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="72" font-weight="600" font-style="italic" text-decoration="none" letter-spacing="0" fill="#fff" text-anchor="middle">Itálica</text></g>
+    </g>
 </svg>

@@ -43,9 +43,10 @@ spec = importlib.util.spec_from_file_location(
 gsa = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(gsa)
 
-LOCALES = ["ar", "bs", "cs", "de", "es", "fi", "fr", "hi", "hr", "hu", "id",
-           "it", "ja", "ko", "ms", "nl", "no", "pl", "pt", "ro", "ru", "sk",
-           "sr", "sv", "th", "tl", "tr", "vi", "zh-tw"]
+# From the registry, never a hand-kept list: the list that stood here had no
+# "da", so Danish pages were never collected and seven of them still shared
+# English cards (found 2026-09-27).
+LOCALES = sorted(gsa._locale_codes())
 
 
 # Content is matched with a backreference to its own opening quote (.*?\1 /
@@ -172,6 +173,10 @@ def clean_title(html):
     # U+FF1A FULLWIDTH COLON is the title/subtitle delimiter CJK titles
     # actually use — without it every zh/ja/ko title counted as one clause
     # and rendered the whole SEO title onto the card, overrunning the motif.
+    # A parenthetical aside is dropped before taking the head clause, not
+    # split on: "Leeren (unsichtbaren) Namen erstellen" otherwise became the
+    # one-word card title "Leeren" (and pl, nl, ru, ko had the same shape).
+    t = re.sub(r'\s*\([^()]*\)', '', t).strip()
     head = re.split(r'\s*[:：\|–—(]\s*', t)[0].strip()
     # CJK/Thai titles pack a complete concept into very few characters, so
     # the Latin-tuned "is this head substantial enough" bar needs to be low.
@@ -278,6 +283,9 @@ def main():
 
     for r in rows:
         motif, kicker, how = motif_kicker_for(r["eng_slug"], r["og_base"], r["hero_base"])
+        # The card's own words, where the English equivalent's motif would
+        # otherwise draw English (see LOCALE_MOTIFS in generate-site-art.py).
+        motif = gsa.LOCALE_MOTIFS.get(r["slug"], motif)
         if how == "fallback":
             fallback.append(r["path"])
         title = r["title"] or "UltraTextGen"
