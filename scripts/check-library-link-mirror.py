@@ -82,6 +82,12 @@ def main(argv=None):
 
     print("Library link mirror check")
     print(f"  base: {base} (merge-base {merge_base[:12]})")
+    # CI checks out a commit, so its working tree IS the commit. Locally the two
+    # can differ, and a pass on uncommitted edits says nothing about the commit.
+    dirty = git("status", "--porcelain", "--", "library", *[f"{l}/library" for l in head.locales])
+    if dirty:
+        print(f"  note: read the WORKING TREE, which has {len(dirty.splitlines())} uncommitted library "
+              "change(s); CI reads the commit. Commit, then re-run, before trusting a pass.")
     print(f"  missing links at merge base: {len(was)} · now: {len(now)} · "
           f"repaired by this branch: {len(repaired)} · introduced: {len(introduced)}")
 
