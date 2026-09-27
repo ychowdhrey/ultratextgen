@@ -1933,6 +1933,36 @@
       "suppress": {
         "faqDelta": true
       }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/invisible-character/",
+      "localeUrl": "https://ultratextgen.com/ko/bin-kan-munja/",
+      "reason": "check-translation-parity.js flags this pair because ko/bin-kan-munja/ linked to ko/ireum-kkumigi, which public PR #959 moved to ko/usecase/ireum-kkumigi (the only usecase/nickname-generator locale sibling not following the site's <locale>/usecase/<slug>/ URL-lane convention -- confirmed against every other usecase/* page site-wide). The only change on this page is the href value of one existing link, updated to the new path; no wording, no new or removed link, no structural change (verified by direct diff). The EN sibling needs no change: it has never linked ko/ireum-kkumigi or its EN equivalent in this way. Same shape as the fr/de/pl/tr library/emoji-combos entries above (URL-target-only fix from a page move, not new translatable content). Discussed with the user 2026-09-27.",
+      "agreed": "2026-09-27"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/guide/discord-safe-name-styling/",
+      "localeUrl": "https://ultratextgen.com/ko/guide/discord-nikneim-anjeon/",
+      "reason": "check-translation-parity.js flags this pair because ko/guide/discord-nikneim-anjeon/ linked to ko/ireum-kkumigi, which public PR #959 moved to ko/usecase/ireum-kkumigi (the only usecase/nickname-generator locale sibling not following the site's <locale>/usecase/<slug>/ URL-lane convention -- confirmed against every other usecase/* page site-wide). The only change on this page is the href value of one existing link, updated to the new path; no wording, no new or removed link, no structural change (verified by direct diff). The EN sibling needs no change: it has never linked ko/ireum-kkumigi or its EN equivalent in this way. Same shape as the fr/de/pl/tr library/emoji-combos entries above (URL-target-only fix from a page move, not new translatable content). Discussed with the user 2026-09-27.",
+      "agreed": "2026-09-27"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/guide/discord-text-formatting-explained/",
+      "localeUrl": "https://ultratextgen.com/ko/guide/discord-tekseuteu-seosik/",
+      "reason": "check-translation-parity.js flags this pair because ko/guide/discord-tekseuteu-seosik/ linked to ko/ireum-kkumigi, which public PR #959 moved to ko/usecase/ireum-kkumigi (the only usecase/nickname-generator locale sibling not following the site's <locale>/usecase/<slug>/ URL-lane convention -- confirmed against every other usecase/* page site-wide). The only change on this page is the href value of one existing link, updated to the new path; no wording, no new or removed link, no structural change (verified by direct diff). The EN sibling needs no change: it has never linked ko/ireum-kkumigi or its EN equivalent in this way. Same shape as the fr/de/pl/tr library/emoji-combos entries above (URL-target-only fix from a page move, not new translatable content). Discussed with the user 2026-09-27.",
+      "agreed": "2026-09-27"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/ko/",
+      "reason": "check-translation-parity.js flags this pair because ko/ linked to ko/ireum-kkumigi, which public PR #959 moved to ko/usecase/ireum-kkumigi (the only usecase/nickname-generator locale sibling not following the site's <locale>/usecase/<slug>/ URL-lane convention -- confirmed against every other usecase/* page site-wide). The only change on this page is the href value of one existing link, updated to the new path; no wording, no new or removed link, no structural change (verified by direct diff). The EN sibling needs no change: it has never linked ko/ireum-kkumigi or its EN equivalent in this way. Same shape as the fr/de/pl/tr library/emoji-combos entries above (URL-target-only fix from a page move, not new translatable content). Discussed with the user 2026-09-27.",
+      "agreed": "2026-09-27"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/special-characters/",
+      "localeUrl": "https://ultratextgen.com/ko/library/teuksu-munja/",
+      "reason": "check-translation-parity.js flags this pair because ko/library/teuksu-munja/ linked to ko/ireum-kkumigi, which public PR #959 moved to ko/usecase/ireum-kkumigi (the only usecase/nickname-generator locale sibling not following the site's <locale>/usecase/<slug>/ URL-lane convention -- confirmed against every other usecase/* page site-wide). The only change on this page is the href value of one existing link, updated to the new path; no wording, no new or removed link, no structural change (verified by direct diff). The EN sibling needs no change: it has never linked ko/ireum-kkumigi or its EN equivalent in this way. Same shape as the fr/de/pl/tr library/emoji-combos entries above (URL-target-only fix from a page move, not new translatable content). Discussed with the user 2026-09-27.",
+      "agreed": "2026-09-27"
     }
   ]
 }
