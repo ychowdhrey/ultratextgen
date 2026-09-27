@@ -2356,7 +2356,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 0.75rem;
-  margin-top: 0.75rem;
+  margin: 0.75rem 0;
 }
 
 .compare-card {
@@ -2593,7 +2593,7 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: .75rem;
-  margin-top: .75rem;
+  margin: .75rem 0;
 }
 
 .compare-card {
@@ -4253,7 +4253,7 @@ button.clear-decoration {
 }
 
 .glyph-group {
-  margin-top: 1.75rem;
+  margin: 1.75rem 0;
 }
 
 .glyph-group h3 {
