@@ -4,8 +4,8 @@
   "lastmod": "2026-08-04"
  },
  "/about/": {
-  "hash": "b38906ebc93789ed",
-  "lastmod": "2026-07-25"
+  "hash": "949fc3e3e362e5c5",
+  "lastmod": "2026-09-27"
  },
  "/answers/": {
   "hash": "0e38bdd531c6e1c1",
@@ -1152,8 +1152,8 @@
   "lastmod": "2026-08-06"
  },
  "/contact/": {
-  "hash": "402e6d84bdc381d7",
-  "lastmod": "2026-07-25"
+  "hash": "c002720ea0b36631",
+  "lastmod": "2026-09-27"
  },
  "/cs/": {
   "hash": "7deb3d0e6e4d5793",
@@ -2328,8 +2328,8 @@
   "lastmod": "2026-08-15"
  },
  "/de/zum-ausdrucken/buchstaben-nachspuren/": {
-  "hash": "087735e773f94b17",
-  "lastmod": "2026-09-22"
+  "hash": "3608d6a91d976478",
+  "lastmod": "2026-09-27"
  },
  "/de/zum-ausdrucken/buchstaben-vorlagen/": {
   "hash": "e338f42ecc49b317",
@@ -2692,8 +2692,8 @@
   "lastmod": "2026-09-16"
  },
  "/es/imprimibles/letras-para-trazar/": {
-  "hash": "6c54321b1db187f3",
-  "lastmod": "2026-09-22"
+  "hash": "7f63c02858b6a80f",
+  "lastmod": "2026-09-27"
  },
  "/es/imprimibles/letras-punteadas/": {
   "hash": "418d58e311ddc261",
@@ -4600,8 +4600,8 @@
   "lastmod": "2026-09-12"
  },
  "/fr/imprimables/lettres-a-tracer/": {
-  "hash": "e78f7ac1faf81920",
-  "lastmod": "2026-09-22"
+  "hash": "dd130f7a2b2c43f4",
+  "lastmod": "2026-09-27"
  },
  "/fr/imprimables/lettres-bulles/": {
   "hash": "ad6023ff3cd0e159",
@@ -6852,8 +6852,8 @@
   "lastmod": "2026-09-16"
  },
  "/it/da-stampare/pregrafismo-lettere/": {
-  "hash": "957ae1bb9a096959",
-  "lastmod": "2026-09-22"
+  "hash": "eed8bba39c6955ff",
+  "lastmod": "2026-09-27"
  },
  "/it/da-stampare/tracciare-il-nome/": {
   "hash": "0f97a192134c9e8d",
@@ -8512,16 +8512,16 @@
   "lastmod": "2026-09-17"
  },
  "/ko/": {
-  "hash": "5464be81152b7e56",
-  "lastmod": "2026-09-23"
+  "hash": "e3ad9452c7d39c74",
+  "lastmod": "2026-09-27"
  },
  "/ko/answers/bin-ireum-mandeulgi/": {
   "hash": "a0f732f034184989",
   "lastmod": "2026-09-25"
  },
  "/ko/bin-kan-munja/": {
-  "hash": "92d45e1a5c90ca59",
-  "lastmod": "2026-09-25"
+  "hash": "d6f6e5f0dea0f081",
+  "lastmod": "2026-09-27"
  },
  "/ko/font-byeonhwan/": {
   "hash": "069c3b64e271647e",
@@ -8540,24 +8540,20 @@
   "lastmod": "2026-08-15"
  },
  "/ko/guide/discord-nikneim-anjeon/": {
-  "hash": "99a932921e4a18ad",
-  "lastmod": "2026-08-15"
+  "hash": "a9f461f11f6b536b",
+  "lastmod": "2026-09-27"
  },
  "/ko/guide/discord-ponteu-jiwon/": {
-  "hash": "9ccb884ac3cd7a9c",
-  "lastmod": "2026-08-15"
+  "hash": "77425173921828dc",
+  "lastmod": "2026-09-27"
  },
  "/ko/guide/discord-tekseuteu-seosik/": {
-  "hash": "828e2171e2efb38f",
-  "lastmod": "2026-08-15"
+  "hash": "10551f9b9c40da71",
+  "lastmod": "2026-09-27"
  },
  "/ko/insta-font/": {
   "hash": "96d12f04915ba302",
   "lastmod": "2026-09-10"
- },
- "/ko/ireum-kkumigi/": {
-  "hash": "07062b8afd46ac37",
-  "lastmod": "2026-08-15"
  },
  "/ko/jeongak-bangak/": {
   "hash": "f7f60f26446aa0de",
@@ -8936,12 +8932,12 @@
   "lastmod": "2026-09-02"
  },
  "/ko/library/sutja-giho/": {
-  "hash": "90628e47fe8cea77",
-  "lastmod": "2026-08-15"
+  "hash": "f9ebfeb806970439",
+  "lastmod": "2026-09-27"
  },
  "/ko/library/teuksu-munja/": {
-  "hash": "f65be5a8242faee4",
-  "lastmod": "2026-09-10"
+  "hash": "b5f8397f018a8fe5",
+  "lastmod": "2026-09-27"
  },
  "/ko/library/teureompeu-kadeu-giho/": {
   "hash": "5fb0b067e9601ed5",
@@ -9400,8 +9396,8 @@
   "lastmod": "2026-08-15"
  },
  "/ko/symbol/won-giho/": {
-  "hash": "112c248fd64dd4fa",
-  "lastmod": "2026-08-15"
+  "hash": "1d511ae689d9c2bd",
+  "lastmod": "2026-09-27"
  },
  "/ko/symbol/yangjari-giho/": {
   "hash": "e12f9bd7b9253076",
@@ -9446,6 +9442,10 @@
  "/ko/updates/unicode-18-imoji-tupyo/": {
   "hash": "398ff7c2362fd5ae",
   "lastmod": "2026-09-25"
+ },
+ "/ko/usecase/ireum-kkumigi/": {
+  "hash": "07062b8afd46ac37",
+  "lastmod": "2026-09-27"
  },
  "/ko/usecase/vertical-text/": {
   "hash": "09d0c8837d1f3da7",
@@ -11968,8 +11968,8 @@
   "lastmod": "2026-09-22"
  },
  "/pl/do-druku/pisanie-liter-po-sladzie/": {
-  "hash": "5a87cd19659cc8f4",
-  "lastmod": "2026-09-22"
+  "hash": "b44a87a0f3b7ee3d",
+  "lastmod": "2026-09-27"
  },
  "/pl/do-druku/pokoloruj-imie/": {
   "hash": "b7ad49d250ffd7d9",
@@ -13572,8 +13572,8 @@
   "lastmod": "2026-09-25"
  },
  "/privacy/": {
-  "hash": "d992cd1d2b925a41",
-  "lastmod": "2026-07-25"
+  "hash": "b9ce340f94783e86",
+  "lastmod": "2026-09-27"
  },
  "/pt/": {
   "hash": "c3ee4e4973e5ed9b",
@@ -13684,8 +13684,8 @@
   "lastmod": "2026-09-13"
  },
  "/pt/imprimiveis/alfabeto-pontilhado/": {
-  "hash": "675fca5c88a13229",
-  "lastmod": "2026-09-22"
+  "hash": "a9f95c0bb32562c2",
+  "lastmod": "2026-09-27"
  },
  "/pt/imprimiveis/letra-bastao/": {
   "hash": "bc91c56add3b8ae1",
@@ -14484,15 +14484,15 @@
   "lastmod": "2026-09-05"
  },
  "/research/": {
-  "hash": "cf2d4a917a80d0b6",
+  "hash": "70198b0febfe2f59",
   "lastmod": "2026-09-27"
  },
  "/research/ink-saving-by-worksheet-type/": {
-  "hash": "a252f07dd98ac9ee",
+  "hash": "b1d80cf6193962d5",
   "lastmod": "2026-09-27"
  },
  "/research/printable-ink-efficiency-study/": {
-  "hash": "0515dc5e08466aa5",
+  "hash": "1e6e55cbc815e3ec",
   "lastmod": "2026-09-27"
  },
  "/ro/": {

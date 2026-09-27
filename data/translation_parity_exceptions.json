@@ -1924,6 +1924,15 @@
       "suppress": {
         "h2Delta": true
       }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/number-symbols/",
+      "localeUrl": "https://ultratextgen.com/ko/library/sutja-giho/",
+      "reason": "ko/library/sutja-giho gained one FAQ item (and a matching alternateName entry + H2 parenthetical) explaining that colloquial 동그라미 숫자 (~6,600/mo) and the formal 원문자 name the same circled-number characters, per lab-repo lexicon gap KO-069. This is a genuine Korean formal/colloquial vocabulary split with no English equivalent -- \"circled numbers\" is already the one natural English term on the EN parent (library/number-symbols), so there is no synonym gap to translate there. Discussed and agreed with the user 2026-09-27 rather than inventing an unneeded EN-side FAQ just to keep structure in sync.",
+      "agreed": "2026-09-27",
+      "suppress": {
+        "faqDelta": true
+      }
     }
   ]
 }
