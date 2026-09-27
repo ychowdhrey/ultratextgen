@@ -104,7 +104,9 @@ def strip_tags(html):
 
 def first_sentence(text, max_len=MAX_DESC_LEN):
     text = re.sub(r"\s+", " ", text or "").strip()
-    m = re.search(r"[.!?](\s|$)", text)
+    # 。！？ end a sentence with no following space (ja, zh-tw); without them a
+    # whole Japanese tagline, call to action included, became the card text.
+    m = re.search(r"[.!?](\s|$)|[。！？]", text)
     sentence = text[: m.end()].strip() if m else text
     if len(sentence) > max_len:
         # Prefer cutting at a clause boundary (em-dash) so the card text

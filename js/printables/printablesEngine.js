@@ -92,6 +92,12 @@
      "istanbul" and pairs "I" with "i" on an alphabet sheet. For every other
      language "en" gives exactly what toUpperCase()/toLowerCase() gave before. */
   const CASE_LOCALE = LANG === "tr" ? "tr" : "en";
+  /* Puzzle grids in French are set in unaccented capitals (É, È, Ê are all E;
+     Œ takes two squares), which is how every French crossword and mots mêlés
+     is printed. The word-search and crossword modules strip the marks from the
+     grid only when asked; the word list and clues keep the real spelling.
+     Other languages keep their letters, as the English pages promise. */
+  const FOLD_GRID = CFG.foldAccents != null ? !!CFG.foldAccents : LANG === "fr";
   const I18N = {
     en: {
       letterWord: "letter", numberWord: "number",
@@ -222,6 +228,9 @@
       pageCount: { one: "page", other: "pages" },
       ofWord: "sur",
       practiceTitle: "Fiche d'entraînement · {Noun}",
+      modelCount: { one: "ligne modèle", other: "lignes modèles" },
+      traceCount: { one: "ligne à tracer", other: "lignes à tracer" },
+      blankCount: { one: "ligne vierge", other: "lignes vierges" },
       alphabetWord: "alphabet",
       caseUpper: "Majuscules", caseLower: "Minuscules",
       save: "Enregistrer",
@@ -236,6 +245,35 @@
       bannerInstr: "Découpez chaque fanion le long de sa ligne pointillée, percez un trou à chaque point, puis passez une ficelle ou un ruban dans l'ordre (1, 2, 3…) pour former le mot.",
       puzzleCut: "Découpez le long des lignes pointillées pour séparer chaque pièce-lettre.",
       puzzleTitle: "Le puzzle de {name}",
+      wordSearch: {
+        heading: "Mots mêlés",
+        findAll: "Retrouve les",
+        wordsWord: "mots",
+        answerKey: "Corrigé",
+        forWhom: "pour",
+        tooLong: "Trop long pour la grille :",
+        needWords: "Tape quelques mots pour créer une grille.",
+        gridOf: "Grille de mots mêlés",
+        lettersBy: "lettres sur",
+        versions: "grilles différentes, une par prénom",
+        oneGrid: "Une grille",
+        colon: "\u00a0:"
+      },
+      crossword: {
+        heading: "Mots croisés",
+        across: "Horizontalement",
+        down: "Verticalement",
+        answerKey: "Corrigé",
+        forWhom: "pour",
+        clueBlank: "(écris ta propre définition)",
+        wordBank: "Liste des mots",
+        noFit: "Pas de place dans la grille pour :",
+        needWords: "Tape quelques mots qui ont des lettres en commun.",
+        gridOf: "Grille de mots croisés",
+        cellsBy: "cases sur",
+        versions: "grilles différentes, une par prénom",
+        oneGrid: "Une grille"
+      },
       trace: {
         solid:    { label: "Modèle plein", hint: "Lettres pleines et foncées — tracez par-dessus" },
         "bold-dot": { label: "Pointillé épais", hint: "Points épais et rapprochés à relier" },
@@ -280,6 +318,9 @@
       printBook: "Guardar como libro — una página por letra",
       pageCount: { one: "página", other: "páginas" },
       practiceTitle: "Hoja de práctica · {Noun}",
+      modelCount: { one: "renglón modelo", other: "renglones modelo" },
+      traceCount: { one: "renglón para trazar", other: "renglones para trazar" },
+      blankCount: { one: "renglón vacío", other: "renglones vacíos" },
       ofWord: "de",
       alphabetWord: "alfabeto",
       caseUpper: "Mayúsculas", caseLower: "Minúsculas",
@@ -338,6 +379,9 @@
       printOpts: { settings: "Configurações do PDF", paper: "Papel", letter: "Carta", a4: "A4", legal: "Ofício", orientation: "Orientação", portrait: "Retrato", landscape: "Paisagem", margins: "Margens", normal: "Normais", narrow: "Estreitas", inkSaver: "Economia de tinta (linhas mais claras)", savePdf: "Baixar PDF", pdfToast: "Na caixa de impressão, escolha Salvar como PDF como destino.", share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", recent: "Suas folhas recentes", clear: "Limpar", madeAt: "Feito em" },
       printBook: "Salvar como livro — uma página por letra",
       practiceTitle: "Folha de treino · {Noun}",
+      modelCount: { one: "linha modelo", other: "linhas modelo" },
+      traceCount: { one: "linha para cobrir", other: "linhas para cobrir" },
+      blankCount: { one: "linha vazia", other: "linhas vazias" },
       pageCount: { one: "página", other: "páginas" },
       ofWord: "de",
       alphabetWord: "alfabeto",
@@ -396,6 +440,9 @@
       pdfHint: "Suggerimento: Stampa → “Salva come PDF” scarica il foglio in PDF.",
       printOpts: { settings: "Impostazioni PDF", paper: "Carta", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientamento", portrait: "Verticale", landscape: "Orizzontale", margins: "Margini", normal: "Normali", narrow: "Stretti", inkSaver: "Risparmio inchiostro (linee più chiare)", savePdf: "Scarica PDF", pdfToast: "Nella finestra di stampa scegli Salva come PDF come destinazione.", share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", recent: "I tuoi fogli recenti", clear: "Cancella", madeAt: "Creato su" },
       practiceTitle: "Scheda di esercizio · {Noun}",
+      modelCount: { one: "riga modello", other: "righe modello" },
+      traceCount: { one: "riga da tracciare", other: "righe da tracciare" },
+      blankCount: { one: "riga vuota", other: "righe vuote" },
       printBook: "Salva come libretto – una pagina per lettera",
       pageCount: { one: "pagina", other: "pagine" },
       ofWord: "di",
@@ -468,6 +515,9 @@
       puzzleCut: "Tnij wzdłuż przerywanych linii, aby oddzielić każdy element-literę.",
       puzzleTitle: "Puzzle z imieniem: {name}",
       practiceTitle: "Karta pracy · {Noun}",
+      modelCount: { one: "wiersz ze wzorem", few: "wiersze ze wzorem", many: "wierszy ze wzorem" },
+      traceCount: { one: "wiersz do pisania", few: "wiersze do pisania", many: "wierszy do pisania" },
+      blankCount: { one: "pusty wiersz", few: "puste wiersze", many: "pustych wierszy" },
       usLetter: "US Letter",
       bannerFlagsLabel: "chorągiewki", ofWord: "z",
       flagCount: { one: "chorągiewka", few: "chorągiewki", many: "chorągiewek" },
@@ -10937,7 +10987,7 @@
     const ns = wordSearchModule();
     if (!ns) return null;
     const text = searchWordsText();
-    return ns.build({ words: text, level: level || searchState.level, seed: seed || text });
+    return ns.build({ words: text, level: level || searchState.level, seed: seed || text, fold: FOLD_GRID });
   }
 
   function searchGridNode(built, showAnswer) {
@@ -10998,7 +11048,7 @@
     const placed = built.words.filter((w) => w.placed).length;
     const note = document.createElement("p");
     note.className = "pt-search-note";
-    note.textContent = T.wordSearch.findAll + " " + placed + " " + T.wordSearch.wordsWord + ":";
+    note.textContent = T.wordSearch.findAll + " " + placed + " " + T.wordSearch.wordsWord + (T.wordSearch.colon || ":");
     sheet.appendChild(note);
 
     sheet.appendChild(searchWordListNode(built));
@@ -11222,7 +11272,7 @@
     const ns = puzzleNs("crossword");
     if (!ns) return null;
     const text = cwWordsText();
-    return ns.build({ input: text, seed: seed || text });
+    return ns.build({ input: text, seed: seed || text, fold: FOLD_GRID });
   }
 
   /* The grid is a table of squares: a filled square carries its letter (or,

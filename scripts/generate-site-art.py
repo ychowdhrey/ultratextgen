@@ -1251,7 +1251,7 @@ def m_trace_rows(p, sample="Emma"):
     <line x1="70" y1="250" x2="290" y2="250" stroke="{SUB}" stroke-width="3"/>"""
 
 
-def m_word_grid(p, accent=PURPLE):
+def m_word_grid(p, accent=PURPLE, word="WORDS"):
     """A letter grid with one word ringed on the diagonal — the word search maker.
 
     Plain Latin capitals only, so they need no spanned()/_resolve_family() wrapper:
@@ -1259,8 +1259,15 @@ def m_word_grid(p, accent=PURPLE):
     resolver applies to glyphs it does not cover. The ringed diagonal spells the
     found word, which is the one thing that says "word search" rather than
     "grid of letters".
+
+    `word` is the found word, five capitals because the ring is drawn for five
+    cells. A locale page passes a word in its own language: an English word on a
+    French card is English on a French page. Unaccented, as that locale's grids
+    print it (French puzzle grids drop accents).
     """
-    cols = ["W", "O", "R", "D", "S"]
+    if len(word) != 5 or not word.isascii() or not word.isupper():
+        raise ValueError(f"m_word_grid word must be 5 unaccented capitals, got {word!r}")
+    cols = list(word)
     rows = [
         ["F", "K", "T", "M", "R"],
         ["S", "I", "B", "Q", "V"],
@@ -1290,7 +1297,7 @@ def m_word_grid(p, accent=PURPLE):
     return "\n    " + "\n    ".join(out)
 
 
-def m_crossword(p, accent=PURPLE):
+def m_crossword(p, accent=PURPLE, across="PRINT", down="WORD", cross_col=1, cross_row=2):
     """An interlocking crossword corner with numbered squares — the crossword maker.
 
     Two answers crossing on a shared letter is the one thing that distinguishes a
@@ -1299,9 +1306,12 @@ def m_crossword(p, accent=PURPLE):
     leaves the rest out. Plain Latin capitals and digits, so no spanned()/
     _resolve_family() wrapper is needed (Liberation covers them).
     """
-    across = "PRINT"
-    down = "WORD"
-    cross_col, cross_row = 1, 2   # the shared R
+    # `across` and `down` cross where across[cross_col] == down[cross_row] (the
+    # shared R in the English default). A locale page passes words in its own
+    # language, unaccented as its grids print them; checked, because a pair that
+    # does not share the letter draws two answers that do not cross.
+    if across[cross_col] != down[cross_row]:
+        raise ValueError(f"m_crossword: {across!r}[{cross_col}] != {down!r}[{cross_row}]")
     x0, y0, step = 70, 108, 46
     out = []
     for i, ch in enumerate(across):
@@ -2002,7 +2012,7 @@ PAGES = {
   "fr-ecriture-gothique": ("Écriture Gothique", "Lettres gothiques à copier-coller",
         P(m_typo, sample="Goth", ff=SERIF, weight="800", size=80, label="dark et médiévale"), K_CAT),
   "fr-petite-ecriture": ("Petite Écriture", "Petit texte à copier-coller",
-        P(m_typo, sample=" small", size=44, label="petite écriture"), K_CAT),
+        P(m_typo, sample=" petit", size=44, label="petite écriture"), K_CAT),
   "fr-usecase-pseudo-fortnite": ("Pseudo Fortnite Stylé", "Symboles tryhard et pseudos 16 caractères", m_gamepad, K_USE),
   "fr-usecase-pseudo-free-fire": ("Pseudo Free Fire Stylé", "Symboles ombrelle et pseudos 12 caractères", m_gamepad, K_USE),
   "fr-ecriture-aesthetic": ("Écriture Aesthetic", "Lettres et symboles aesthetic à copier",
@@ -2070,7 +2080,7 @@ PAGES = {
   "es-usecase-vertical-text": ("Generador de Texto Vertical", "Apila tu texto de arriba abajo",
         P(m_vertical, letters="TEXT"), K_USE),
   "fr-usecase-vertical-text": ("Générateur de Texte Vertical", "Empilez votre texte de haut en bas",
-        P(m_vertical, letters="TEXT"), K_USE),
+        P(m_vertical, letters="MOTS"), K_USE),
   "id-usecase-vertical-text": ("Generator Teks Vertikal", "Susun tulisan dari atas ke bawah",
         P(m_vertical, letters="TEKS"), K_USE),
   "it-usecase-vertical-text": ("Generatore di Testo Verticale", "Impila il testo dall'alto in basso",
@@ -2971,6 +2981,8 @@ PAGES.update({
     P(m_doc), K_RESEARCH),
 "research-printable-ink-efficiency-study": ("Printable Ink Efficiency", "Estimated coverage across 36 rendering methods",
     P(m_doc), K_RESEARCH),
+"research-ink-saving-by-worksheet-type": ("Ink Saving by Worksheet Type", "Print treatments tested on 54 real printable cases",
+    P(m_doc), K_RESEARCH),
 })
 
 # ---- /learn/ education pillar ----
@@ -3131,6 +3143,12 @@ PAGES.update({
 "es-imprimibles-moldes-de-letras": ("Moldes de Letras para Imprimir", "Plantillas huecas A-Z y 0-9 para recortar y pintar", P(m_letter_stencil, letter="M"), K_PRINT),
 "de-zum-ausdrucken-buchstaben-vorlagen": ("Buchstaben zum Ausdrucken", "Hohle Vorlagen A-Z und 0-9 zum Ausschneiden", P(m_letter_stencil, letter="B"), K_PRINT),
 "fr-imprimables-lettres-a-imprimer": ("Lettres à Imprimer et à Découper", "Contours creux A-Z et 0-9 à découper et à colorier", P(m_letter_stencil, letter="L"), K_PRINT),
+# 2026-09-27 FR word puzzles + name colouring. The puzzle motifs carry French
+# words, unaccented as French grids print them; the EN parents' defaults are
+# English words, which is what these cards showed when first generated.
+"fr-imprimables-mots-croises": ("Générateur de Mots Croisés", "Tes mots et définitions, une grille par élève", P(m_crossword, across="MOTS", down="PORT", cross_col=1, cross_row=1), K_PRINT),
+"fr-imprimables-mots-meles": ("Générateur de Mots Mêlés", "Ta liste de mots, une grille par élève", P(m_word_grid, word="ECOLE"), K_PRINT),
+"fr-imprimables-prenom-a-colorier": ("Prénom à Colorier", "Un prénom ou un mot en grand coloriage à imprimer", m_crayons, K_PRINT),
 "pl-do-druku-litery-do-druku": ("Litery do Druku", "Puste kontury A-Z z polskimi znakami i cyfry 0-9", P(m_letter_stencil, letter="Ł"), K_PRINT),
 "pt-imprimiveis-letra-bastao": ("Letra Bastao para Imprimir", "Moldes vazados A-Z e 0-9 para recortar", P(m_letter_stencil, letter="B"), K_PRINT),
 "it-da-stampare-lettere-stampatello": ("Lettere Stampatello da Stampare", "Sagome a contorno vuoto A-Z e 0-9", P(m_letter_stencil, letter="S"), K_PRINT),

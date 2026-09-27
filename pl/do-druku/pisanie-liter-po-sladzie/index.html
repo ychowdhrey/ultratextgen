@@ -48,7 +48,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pisanie liter po śladzie: karty pracy A–Z i 0–9 do wydruku | UltraTextGen</title>
-  <meta name="description" content="Karty pracy do pisania po śladzie dla każdej litery od A do Ż i każdej cyfry od 0 do 9, wielkimi lub małymi literami. Siedem poziomów pomocy, strzałki kierunku kreski i zestaw dla całej klasy. Za darmo, bez rejestracji.">
+  <meta name="description" content="Karty pracy do pisania po śladzie dla każdej litery od A do Ż i każdej cyfry od 0 do 9, wielkimi lub małymi literami. Siedem poziomów pomocy, strzałki kierunku kreski i karty tylko z literami na ten tydzień. Za darmo, bez rejestracji.">
   <link rel="canonical" href="https://ultratextgen.com/pl/do-druku/pisanie-liter-po-sladzie/">
 
   <link rel="alternate" hreflang="en" href="https://ultratextgen.com/printables/letter-tracing/">
@@ -147,10 +147,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     },
     {
       "@type": "Question",
-      "name": "Czy mogę wydrukować karty dla całej klasy?",
+      "name": "Czy mogę wydrukować kartę z imieniem dla każdego dziecka w klasie?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Tak. Otwórz Zestaw dla klasy w generatorze i wklej do 60 imion albo wyrazów, po jednym w wierszu. PDF utworzy wtedy jedną kartę na wiersz w jednym wydruku, wszystkie na wybranym poziomie."
+        "text": "Tak, służy do tego karta do nauki pisania imienia: bierze listę klasy i drukuje jedną kartę na dziecko z jego własnym imieniem. Ta strona ćwiczy litery, więc kartę z literami na ten tydzień drukuje się raz i kseruje dla wszystkich."
       }
     },
     {
@@ -230,9 +230,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="pt-studio">
         <div class="pt-studio-controls">
           <div class="pt-field">
-            <label class="pt-field-label" for="pt-gen-input">Litery lub wyrazy do ćwiczenia</label>
+            <label class="pt-field-label" for="pt-gen-input">Litery do ćwiczenia</label>
             <div class="input-wrapper">
-              <input type="text" class="main-input pt-gen-input" id="pt-gen-input" placeholder="Litera, kilka liter albo wyraz" maxlength="42" autocomplete="off">
+              <input type="text" class="main-input pt-gen-input" id="pt-gen-input" placeholder="Wpisz litery, np. b d p" maxlength="42" autocomplete="off">
             </div>
           </div>
 
@@ -315,11 +315,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
             </label>
           </div>
 
-          <details class="pt-roster-field">
-            <summary>Zestaw dla klasy: jedna karta na dziecko</summary>
-            <textarea id="pt-gen-roster" class="main-input" rows="5" placeholder="Jedno imię w wierszu&#10;Zuzia&#10;Antoni&#10;Maja" aria-label="Lista klasy, jedno imię w wierszu"></textarea>
-            <p class="pt-roster-hint">Wklej do 60 imion, a „Pobierz PDF” zbuduje jedną kartę na dziecko na wybranym wyżej poziomie. PDF zapisuje cały zestaw w jednym pliku. „Pobierz PNG” zapisuje tylko to, co jest wpisane w polu.</p>
-          </details>
         </div>
 
         <div class="pt-studio-preview">
@@ -387,11 +382,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </div>
       <div class="faq-item">
         <button class="faq-question" type="button">
-          Czy mogę wydrukować karty dla całej klasy?
+          Czy mogę wydrukować kartę z imieniem dla każdego dziecka w klasie?
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
         <div class="faq-answer">
-          Tak. Otwórz <strong>Zestaw dla klasy</strong> w generatorze i wklej do 60 imion albo wyrazów, po jednym w wierszu. PDF utworzy wtedy jedną kartę na wiersz w jednym wydruku, wszystkie na wybranym poziomie.
+          Tak, służy do tego <a href="/pl/do-druku/pisanie-imienia/">karta do nauki pisania imienia</a>: bierze listę klasy i drukuje jedną kartę na dziecko z jego własnym imieniem. Ta strona ćwiczy litery, więc kartę z literami na ten tydzień drukuje się raz i kseruje dla wszystkich.
         </div>
       </div>
       <div class="faq-item">
@@ -419,7 +414,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <script>
     window.UTG_PRINTABLE = {
-      roster: true,
       lang: "pl",
       key: "letter-tracing",
       render: "outline",
@@ -429,6 +423,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       strokeWidth: 4,
       charset: "alnum",
       genDemo: "Aa",
+      genLetters: true,
       howto: {
         title: "Jak pisać {ch} po śladzie",
         steps: [

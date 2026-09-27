@@ -147,10 +147,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     },
     {
       "@type": "Question",
-      "name": "Puis-je imprimer des fiches pour toute une classe ?",
+      "name": "Puis-je imprimer une fiche avec le prénom de chaque enfant de la classe ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui. Ouvrez Jeu de classe dans le constructeur et collez jusqu'à 60 prénoms ou mots, un par ligne. Le PDF produit alors une fiche par ligne en une seule impression, toutes au niveau choisi."
+        "text": "Oui, avec les fiches de prénom à tracer, qui prennent une liste de classe et impriment une fiche par enfant avec son propre prénom. Cette page travaille les lettres : une fiche avec les lettres de la semaine s'imprime une fois et se photocopie pour tous."
       }
     },
     {
@@ -230,9 +230,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="pt-studio">
         <div class="pt-studio-controls">
           <div class="pt-field">
-            <label class="pt-field-label" for="pt-gen-input">Lettres ou mots à travailler</label>
+            <label class="pt-field-label" for="pt-gen-input">Lettres à travailler</label>
             <div class="input-wrapper">
-              <input type="text" class="main-input pt-gen-input" id="pt-gen-input" placeholder="Une lettre, quelques lettres ou un mot" maxlength="42" autocomplete="off">
+              <input type="text" class="main-input pt-gen-input" id="pt-gen-input" placeholder="Tapez les lettres, par ex. b d p" maxlength="42" autocomplete="off">
             </div>
           </div>
 
@@ -315,11 +315,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
             </label>
           </div>
 
-          <details class="pt-roster-field">
-            <summary>Jeu de classe : une fiche par enfant</summary>
-            <textarea id="pt-gen-roster" class="main-input" rows="5" placeholder="Un prénom par ligne&#10;Emma&#10;Noah&#10;Léa" aria-label="Liste de classe, un prénom par ligne"></textarea>
-            <p class="pt-roster-hint">Collez jusqu'à 60 prénoms et « Télécharger le PDF » construit une fiche par enfant au niveau choisi ci-dessus. Le PDF enregistre le jeu entier dans un seul fichier. « Télécharger le PNG » n'enregistre que ce qui est tapé dans le champ.</p>
-          </details>
         </div>
 
         <div class="pt-studio-preview">
@@ -387,11 +382,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </div>
       <div class="faq-item">
         <button class="faq-question" type="button">
-          Puis-je imprimer des fiches pour toute une classe ?
+          Puis-je imprimer une fiche avec le prénom de chaque enfant de la classe ?
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
         <div class="faq-answer">
-          Oui. Ouvrez <strong>Jeu de classe</strong> dans le constructeur et collez jusqu'à 60 prénoms ou mots, un par ligne. Le PDF produit alors une fiche par ligne en une seule impression, toutes au niveau choisi.
+          Oui, avec les <a href="/fr/imprimables/prenom-a-tracer/">fiches de prénom à tracer</a>, qui prennent une liste de classe et impriment une fiche par enfant avec son propre prénom. Cette page travaille les lettres : une fiche avec les lettres de la semaine s'imprime une fois et se photocopie pour tous.
         </div>
       </div>
       <div class="faq-item">
@@ -419,7 +414,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <script>
     window.UTG_PRINTABLE = {
-      roster: true,
       lang: "fr",
       key: "letter-tracing",
       render: "outline",
@@ -429,6 +423,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       strokeWidth: 4,
       charset: "alnum",
       genDemo: "Aa",
+      genLetters: true,
       howto: {
         title: "Comment tracer {ch}",
         steps: [

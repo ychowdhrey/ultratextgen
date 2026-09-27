@@ -158,8 +158,14 @@
   margin-bottom: 6px;
 }
 
+/* The tabs never wrap inside themselves (white-space: nowrap), so without
+   flex-wrap four translated labels made this control 400-560px wide and scrolled
+   the whole page sideways on phones, in every locale but two. Wrapping keeps
+   every tab visible and tappable; on a wide screen nothing changes. */
 .format-tabs {
   display: inline-flex;
+  flex-wrap: wrap;
+  max-width: 100%;
   border: 1px solid var(--border-light, #e0e0e0);
   border-radius: 8px;
   overflow: hidden;
