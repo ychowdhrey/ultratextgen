@@ -48,7 +48,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alfabeto pontilhado para imprimir: letras A–Z e 0–9 para cobrir | UltraTextGen</title>
-  <meta name="description" content="Atividades de alfabeto pontilhado para imprimir, com cada letra de A a Z e cada número de 0 a 9, em letra bastão maiúscula ou minúscula. Sete níveis de ajuda, setas com a direção do traçado e folhas para a turma inteira. Grátis, sem cadastro.">
+  <meta name="description" content="Atividades de alfabeto pontilhado para imprimir, com cada letra de A a Z e cada número de 0 a 9, em letra bastão maiúscula ou minúscula. Sete níveis de ajuda, setas com a direção do traçado e folhas só com as letras da semana. Grátis, sem cadastro.">
   <link rel="canonical" href="https://ultratextgen.com/pt/imprimiveis/alfabeto-pontilhado/">
 
   <link rel="alternate" hreflang="en" href="https://ultratextgen.com/printables/letter-tracing/">
@@ -147,10 +147,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     },
     {
       "@type": "Question",
-      "name": "Posso imprimir folhas para a turma inteira?",
+      "name": "Posso imprimir uma folha com o nome de cada criança da turma?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Pode. Abra Conjunto da turma no gerador e cole até 60 nomes ou palavras, um por linha. O PDF então produz uma folha por linha numa única impressão, todas no nível escolhido."
+        "text": "Pode, na página nome para traçar, que recebe a lista da turma e imprime uma folha por criança com o próprio nome. Esta página treina letras, então uma folha com as letras da semana é impressa uma vez e copiada para todos."
       }
     },
     {
@@ -230,9 +230,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="pt-studio">
         <div class="pt-studio-controls">
           <div class="pt-field">
-            <label class="pt-field-label" for="pt-gen-input">Letras ou palavras para treinar</label>
+            <label class="pt-field-label" for="pt-gen-input">Letras para treinar</label>
             <div class="input-wrapper">
-              <input type="text" class="main-input pt-gen-input" id="pt-gen-input" placeholder="Uma letra, algumas letras ou uma palavra" maxlength="42" autocomplete="off">
+              <input type="text" class="main-input pt-gen-input" id="pt-gen-input" placeholder="Digite as letras, ex.: b d p" maxlength="42" autocomplete="off">
             </div>
           </div>
 
@@ -315,11 +315,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
             </label>
           </div>
 
-          <details class="pt-roster-field">
-            <summary>Conjunto da turma: uma folha por criança</summary>
-            <textarea id="pt-gen-roster" class="main-input" rows="5" placeholder="Um nome por linha&#10;Helena&#10;Miguel&#10;Alice" aria-label="Lista da turma, um nome por linha"></textarea>
-            <p class="pt-roster-hint">Cole até 60 nomes e «Baixar PDF» monta uma folha por criança no nível escolhido acima. O PDF salva o conjunto inteiro num único arquivo. «Baixar PNG» salva apenas o que está escrito no campo.</p>
-          </details>
         </div>
 
         <div class="pt-studio-preview">
@@ -387,11 +382,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </div>
       <div class="faq-item">
         <button class="faq-question" type="button">
-          Posso imprimir folhas para a turma inteira?
+          Posso imprimir uma folha com o nome de cada criança da turma?
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
         <div class="faq-answer">
-          Pode. Abra <strong>Conjunto da turma</strong> no gerador e cole até 60 nomes ou palavras, um por linha. O PDF então produz uma folha por linha numa única impressão, todas no nível escolhido.
+          Pode, na página <a href="/pt/imprimiveis/nome-para-tracar/">nome para traçar</a>, que recebe a lista da turma e imprime uma folha por criança com o próprio nome. Esta página treina letras, então uma folha com as letras da semana é impressa uma vez e copiada para todos.
         </div>
       </div>
       <div class="faq-item">
@@ -419,7 +414,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <script>
     window.UTG_PRINTABLE = {
-      roster: true,
       lang: "pt",
       key: "letter-tracing",
       render: "outline",
@@ -429,6 +423,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       strokeWidth: 4,
       charset: "alnum",
       genDemo: "Aa",
+      genLetters: true,
       howto: {
         title: "Como cobrir a {ch}",
         steps: [

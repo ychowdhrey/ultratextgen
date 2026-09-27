@@ -114,8 +114,22 @@
 
   const LETTER_RE = /[\p{L}\p{N}]/u;
 
-  function gridLetters(text) {
-    return Array.from(String(text))
+  /* French puzzles are set in unaccented capitals: É, È and Ê are all E in the
+     grid, Ç is C, and the ligatures take two squares (Œ is OE). Keeping the
+     accent would print a letter no French solver expects to hunt for, and it
+     would stop ÉLÈVE crossing TÊTE on the E they share. So a page that asks
+     for it (`fold`) strips the marks from the GRID form only. The display form
+     keeps the word's real spelling, so the word list under the grid is still
+     correct French. ß is untouched: it is a letter, not a letter plus a mark,
+     and folding is a per-language choice this module does not make itself. */
+  const LIGATURES = { "œ": "oe", "Œ": "OE", "æ": "ae", "Æ": "AE" };
+  function foldMarks(text) {
+    return String(text).replace(/[œŒæÆ]/g, (ch) => LIGATURES[ch])
+      .normalize("NFD").replace(/\p{M}/gu, "").normalize("NFC");
+  }
+
+  function gridLetters(text, fold) {
+    return Array.from(fold ? foldMarks(text) : String(text))
       .filter((ch) => LETTER_RE.test(ch))
       .map(upperOne);
   }
@@ -124,7 +138,7 @@
      array. Keeps the entry's own spelling for the clue list and derives a
      separate letters-only form for the grid, so "ICE CREAM" is one nine-letter
      run in the grid and still reads as two words underneath it. */
-  function normalizeWords(input) {
+  function normalizeWords(input, fold) {
     const raw = Array.isArray(input)
       ? input
       : String(input == null ? "" : input).split(/[\r\n,;]+/);
@@ -133,7 +147,7 @@
     for (const entry of raw) {
       const display = String(entry).replace(/\s+/g, " ").trim();
       if (!display) continue;
-      const letters = gridLetters(display);
+      const letters = gridLetters(display, fold);
       if (!letters.length) continue;
       const key = letters.join("");
       if (seen[key]) continue;
@@ -245,7 +259,7 @@
     const o = opts || {};
     const words = Array.isArray(o.words) && o.words.length && o.words[0] && o.words[0].letters
       ? o.words
-      : normalizeWords(o.words);
+      : normalizeWords(o.words, !!o.fold);
     const level = LEVELS[o.level] ? o.level : "medium";
     const dirNames = Array.isArray(o.directions) && o.directions.length
       ? o.directions.filter((d) => DIRS[d])

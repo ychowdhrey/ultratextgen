@@ -3944,7 +3944,7 @@
 
   <url>
     <loc>https://ultratextgen.com/de/library/kaomoji/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -8974,7 +8974,7 @@
 
   <url>
     <loc>https://ultratextgen.com/es/library/kaomoji/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -11570,7 +11570,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://ultratextgen.com/assets/og/answers-how-to-make-a-blank-name.png</image:loc>
+      <image:loc>https://ultratextgen.com/assets/og/fr-answers-comment-faire-un-pseudo-vide.png</image:loc>
     </image:image>
   </url>
 
@@ -11580,7 +11580,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://ultratextgen.com/assets/og/answers-where-do-fancy-fonts-work-username-vs-display-name.png</image:loc>
+      <image:loc>https://ultratextgen.com/assets/og/fr-answers-nom-utilisateur-ou-nom-affiche.png</image:loc>
     </image:image>
   </url>
 
@@ -11768,11 +11768,25 @@
 
   <url>
     <loc>https://ultratextgen.com/fr/imprimables/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/fr-imprimables.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/fr/imprimables/alphabet-calligraphie/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/printables-previews/fr-imprimables-alphabet-calligraphie.png</image:loc>
+      <image:title>Alphabet calligraphie à imprimer: aperçu de la fiche à imprimer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/fr-imprimables-alphabet-calligraphie.png</image:loc>
     </image:image>
   </url>
 
@@ -11815,6 +11829,20 @@
     </image:image>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/fr-imprimables-alphabet-point-de-croix.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/fr/imprimables/alphabet-points-a-relier/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/printables-previews/fr-imprimables-alphabet-points-a-relier.png</image:loc>
+      <image:title>Alphabet en points à relier: aperçu de la fiche à imprimer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/fr-imprimables-alphabet-points-a-relier.png</image:loc>
     </image:image>
   </url>
 
@@ -11885,6 +11913,68 @@
     </image:image>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/fr-imprimables-lettres-graffiti.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/fr/imprimables/modeles-d-ecriture/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/printables-previews/fr-imprimables-modeles-d-ecriture.png</image:loc>
+      <image:title>Générateur de modèles d&apos;écriture: aperçu de la fiche à imprimer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/fr-imprimables-modeles-d-ecriture.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/fr/imprimables/monogramme/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/printables-previews/fr-imprimables-monogramme.png</image:loc>
+      <image:title>Crée ton monogramme à imprimer: aperçu de la fiche à imprimer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/fr-imprimables-monogramme.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/fr/imprimables/mots-croises/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/fr-imprimables-mots-croises.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/fr/imprimables/mots-meles/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/fr-imprimables-mots-meles.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/fr/imprimables/prenom-a-colorier/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/printables-previews/fr-imprimables-prenom-a-colorier.png</image:loc>
+      <image:title>Prénom à colorier: aperçu de la fiche à imprimer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/fr-imprimables-prenom-a-colorier.png</image:loc>
     </image:image>
   </url>
 
@@ -17617,6 +17707,20 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/it/da-stampare/alfabeto-calligrafico/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/printables-previews/it-da-stampare-alfabeto-calligrafico.png</image:loc>
+      <image:title>Alfabeto calligrafico da stampare: anteprima della scheda da stampare</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/it-da-stampare-alfabeto-calligrafico.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/it/da-stampare/alfabeto-corsivo/</loc>
     <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -20336,7 +20440,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ja/library/kaomoji/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -22596,7 +22700,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/library/imotikon/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -24434,7 +24538,7 @@
 
   <url>
     <loc>https://ultratextgen.com/learn/save-printer-ink-printables/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -27510,7 +27614,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/text-faces-kaomoji/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -38006,7 +38110,7 @@
 
   <url>
     <loc>https://ultratextgen.com/research/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -38015,8 +38119,42 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/research/ink-saving-by-worksheet-type/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/ink-saving-by-worksheet-type/test-corpus-sheets.png</image:loc>
+      <image:title>Fourteen of the test sheets as exported unchanged: name tracing, a French sheet with Seyes ruling, dotted handwriting, a letter practice list, an outline alphabet, a single outline letter, a coloring page, dot-to-dot, banner flags, a monogram, a word search, a crossword, a cross-stitch chart and page 2 of a kana chart.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/ink-saving-by-worksheet-type/results-by-worksheet-type.png</image:loc>
+      <image:title>Dot chart of tone removed per sheet, one marker per test case, for 11 worksheet types. Tracing sheets under the broad fade are all hollow markers (failed) between 0.2 and 0.7 points; under the role-aware rule they are all filled (passed) between 0.13 and 0.53. Outline letters, coloring pages, display lettering and cross-stitch charts pass under the broad fade. Only two passing markers reach the 1-point line: 1.20 and 1.24. Word search sits at 1.23 as a failed marker marked Hold.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/ink-saving-by-worksheet-type/tracing-clean-and-copy.png</image:loc>
+      <image:title>The top of a name tracing sheet in three versions, each shown clean and after one simulated photocopy. Standard: dark example row, visible pale trace letters and guides. Broad fade: gray example row, and after the copy the trace letters and guides have almost vanished. Role-aware: gray example row, trace letters and guides the same as Standard, clean and copied.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/ink-saving-by-worksheet-type/how-sparse-a-tracing-sheet-is.png</image:loc>
+      <image:title>A grid of 1,000 squares standing for one page. Only 24 are colored: 12 for the example row, 4 for the writing guides, 3 for the trace rows, 3 for the credit QR code and 2 for everything else. The broad fade removes about 6 squares, the role-aware rule about 3, and removing the QR code about 3.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/ink-saving-by-worksheet-type/where-the-tone-goes.png</image:loc>
+      <image:title>Stacked bar chart of weighted darkness for 14 sheets, split into credit QR code, credit web address, heading, name and date line, writing guides, example row, trace rows and other marks. Tracing sheets are 2.3 to 2.7%, mostly example row and guides; outline and display sheets are mostly letter outlines; the word search is 4.85%, almost all letter grid; the QR code is about 0.3 points on almost every sheet.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/ink-saving-by-worksheet-type/kana-chart-pagination.png</image:loc>
+      <image:title>Five printed pages of the hiragana chart side by side. Page 1 holds only the title, Hiragana Chart, and is otherwise blank. Pages 2 to 5 hold the kana grids, and page 5 holds only a few rows.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/research-ink-saving-by-worksheet-type.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/research/printable-ink-efficiency-study/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
