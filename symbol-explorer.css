@@ -71,6 +71,121 @@
   border-radius: 4px;
 }
 
+/* ---- Text-object grid (.flag-rows--text) ----
+   Everything above is drawn for ONE visual character: .symbol-tile's
+   `aspect-ratio: 1` gives each glyph a 43x43 target in a sixth-of-a-row cell.
+   A kaomoji, donger, emoji combo or border pushed through that tile becomes a
+   box as tall as it is wide (a table flip rendered 130x130 on desktop, a
+   border 484x484), spills
+   out of its cell and wraps mid-face on a phone. A grid whose tiles are
+   composed expressions carries this modifier in its static HTML instead,
+   written by scripts/check-text-object-grids.js --write from the one
+   definition in symbol-explorer.js (`isTextObject`).
+
+   The layout is content-sized cards: each card is as wide as its expression
+   and grows to share its line, so short faces sit two or three to a phone
+   row and a long one gets the width it needs on one line. The whole card is
+   the copy target (the button's ::after covers it) while the markup stays
+   the same button + label pair every other grid uses. Glyph grids are not
+   touched by any rule here. */
+.flag-rows--text {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Soaks up the last line's spare width, so a lone final card keeps its own
+   size instead of stretching across the row. */
+.flag-rows--text::after {
+  content: "";
+  flex: 1000 1 0;
+}
+
+.flag-rows--text > .flag-row {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 7.5rem;
+  max-width: 100%;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 1.5rem 10px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius, 8px);
+  background: var(--bg-white);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.flag-rows--text > .flag-row:hover,
+.flag-rows--text > .flag-row:has(.flag-emoji.is-copied) {
+  border-color: var(--accent-purple);
+}
+
+.flag-rows--text > .flag-row:has(.flag-emoji:focus-visible) {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 2px;
+}
+
+/* One ring, on the card. A browser without :has() never reaches this rule and
+   keeps the button's own ring from .flag-emoji:focus-visible. */
+.flag-rows--text > .flag-row:has(.flag-emoji:focus-visible) .flag-emoji:focus-visible {
+  outline: none;
+}
+
+.flag-rows--text .flag-emoji.symbol-tile {
+  aspect-ratio: auto;
+  max-width: 100%;
+  padding: 0 6px;
+  border-radius: 6px;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  /* pre-wrap: two spaces in a donger stay two spaces on screen, as they do
+     on the clipboard. Wrapping happens only when a card at full width still
+     cannot hold the expression. */
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* A <button> does not inherit colour, so without this a face is black on the
+   dark-mode card. Scoped off .is-copied so the shared copied state keeps its
+   own contrast. */
+.flag-rows--text .flag-emoji.symbol-tile:not(.is-copied) {
+  color: var(--text-primary);
+}
+
+.flag-rows--text .flag-emoji:hover {
+  transform: none;
+}
+
+.flag-rows--text .flag-emoji::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius, 8px);
+}
+
+/* Phones: a little less padding and size, so a 15-column border or table flip
+   stays on one line at 375px. Measured on the 539 text tiles of the twelve
+   longest-item pages: wrapped tiles at 320px fell from 26 to 11, at 375px
+   from 11 to 5, all of those at a real space in a phrase. */
+@media (max-width: 480px) {
+  .flag-rows--text > .flag-row {
+    padding-inline: 1.1rem;
+  }
+
+  .flag-rows--text .flag-emoji.symbol-tile {
+    font-size: 1.3rem;
+  }
+}
+
+/* The Save star belongs to the card's corner here, above the stretched
+   target, rather than beside a glyph's centre. */
+.flag-rows--text .symbol-save-btn {
+  top: 4px;
+  inset-inline-start: auto;
+  inset-inline-end: 4px;
+  margin-inline-start: 0;
+}
+
 /* ---- Twemoji <img> sizing ---- */
 .flag-emoji img.emoji,
 .flag-grid-display img.emoji,

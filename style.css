@@ -3943,7 +3943,18 @@ button.clear-decoration {
   font-weight: 500;
 }
 
+/* A grid of combos sizes each tile to its text and wraps, the way
+   .flag-rows--text does, instead of forcing six nowrap labels into six
+   equal columns wider than the page. */
+.symbol-grid:has(> .symbol-tile--combo) {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .symbol-tile--combo {
+  /* A combo is text, not a glyph: without this the tile stays a 150x150
+     square and its nowrap label runs out of it. */
+  aspect-ratio: auto;
   min-width: auto;
   width: auto;
   padding: 0.5rem 1rem;
@@ -4440,6 +4451,12 @@ button.clear-decoration {
   margin: 1rem 0 0.5rem;
 }
 .uname-chip {
+  /* Undo .symbol-tile's `aspect-ratio: 1`, which is for single glyphs. A name
+     chip is a text object: with the ratio, every chip on a phone was as tall as
+     the screen was wide (a 9-character name at 324x324), and six names filled
+     2,000px. Measured on 4,726 chips across 164 pages; see
+     docs/architecture/copy-tiles.md. */
+  aspect-ratio: auto;
   font-family: inherit;
   font-size: 1.05rem;
   line-height: 1.5;

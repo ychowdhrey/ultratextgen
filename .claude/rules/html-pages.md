@@ -89,6 +89,20 @@ Never hand-edit a pre-rendered block, and never add a second copy of the markup 
 a generator — `gridSectionsHTML()` and `countryFlagRowsHTML` in
 `symbol-explorer.js` are their single owners.
 
+## A copy grid's layout follows what it holds
+
+A `.flag-rows` grid of `.flag-emoji` tiles is drawn for **one visual character per
+tile** (★, √, 🇰🇷, 👨‍👩‍👧). A grid holding **composed text objects** (kaomoji,
+dongers, emoji combos, borders, phrases) carries `flag-rows--text` in its static
+HTML and renders as expression cards. The class follows the contents, never the
+page type: `npm run fix:text-object-grids` writes it, `check:text-object-grids`
+gates it whole-tree, and `isTextObject()` in `symbol-explorer.js` is the one
+definition. Never widen `.flag-row` or drop `.symbol-tile`'s `aspect-ratio` to make
+an expression fit: that ratio is what gives every glyph its 43x43 target. A
+component that reuses `.symbol-tile` for text (`.uname-chip`, `.symbol-tile--combo`)
+sets `aspect-ratio: auto` in its own rule.
+Measurements and the decision: `docs/architecture/copy-tiles.md`.
+
 ## Art ships in the same change
 
 A new or edited page's `og:image`, `twitter:image` and declared hero figure must

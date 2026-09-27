@@ -892,6 +892,30 @@ jobs:
         continue-on-error: true
         run: npm run check:country-flags -- --base origin/${{ github.base_ref || 'main' }} | tee country-flags.log
 
+      # A `.flag-rows` grid is laid out for ONE visual character per tile:
+      # `.symbol-tile`'s aspect-ratio makes each a 43x43 target. Kaomoji,
+      # dongers, emoji combos and borders pushed through that tile rendered as
+      # boxes as tall as they were wide (all 8,695 such tiles site-wide), and
+      # 4,768 of them overflowed their cell or wrapped mid-face at 375 or 1440 px.
+      # A grid holding a text object now carries `flag-rows--text` in its
+      # static HTML and gets the expression-card layout. Whole-tree, because
+      # the definition lives in symbol-explorer.js and changing it re-classifies
+      # pages a PR never touched, and because a hand-built locale page is how a
+      # new one arrives. Gating: no backlog, and the fix is one command.
+      - name: Run text-object grid check
+        id: text_object_grids
+        continue-on-error: true
+        run: npm run check:text-object-grids | tee text-object-grids.log
+
+      # Gating. The glyph / text-object boundary is where string length lies:
+      # 👨‍👩‍👧 is 8 code units and one glyph, ( ͡° ͜ʖ ͡°) is 17 and 8 columns.
+      # These cases pin it, plus the two parser bugs the first whole-site run
+      # found (single-quoted attributes skipped, &laquo; read as 7 characters).
+      - name: Run text-object classifier tests
+        id: text_object_grid_tests
+        continue-on-error: true
+        run: npm run test:text-object-grids | tee text-object-grid-tests.log
+
       # printablesEngine mounts a tool wherever the right element id appears, so
       # giving page B a tool page A already owns is a one-line change — which is
       # how /printables/alphabet-coloring-pages/ grew a name coloring tool that
@@ -1207,6 +1231,16 @@ jobs:
             cat country-flags.log
             echo '```'
             echo ""
+            echo "### Text-object grids — \`${{ steps.text_object_grids.outcome }}\`"
+            echo '```'
+            cat text-object-grids.log
+            echo '```'
+            echo ""
+            echo "### Text-object classifier tests — \`${{ steps.text_object_grid_tests.outcome }}\`"
+            echo '```'
+            cat text-object-grid-tests.log
+            echo '```'
+            echo ""
             echo "### Printable tool duplication — \`${{ steps.tool_duplication.outcome }}\`"
             echo '```'
             cat tool-duplication.log
@@ -1304,6 +1338,8 @@ jobs:
           steps.accessibility.outcome == 'failure' ||
           steps.collection_grids.outcome == 'failure' ||
           steps.country_flags.outcome == 'failure' ||
+          steps.text_object_grids.outcome == 'failure' ||
+          steps.text_object_grid_tests.outcome == 'failure' ||
           steps.tool_duplication.outcome == 'failure' ||
           steps.cta_routing_tests.outcome == 'failure' ||
           steps.library_hub_parity.outcome == 'failure'

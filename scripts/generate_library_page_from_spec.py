@@ -1021,7 +1021,7 @@ def main(argv=None):
         )
         return 3
 
-    page = render_page(spec)
+    page = _mark_text_object_grids(render_page(spec))
 
     if args.dry_run:
         print(f"[dry-run] spec OK -> would write {out_path.relative_to(REPO)} "
@@ -1046,6 +1046,31 @@ def main(argv=None):
         return _last_mile(out_path, spec, art_key_for(spec))
 
     return 0
+
+
+def _mark_text_object_grids(page):
+    """Give each symbol grid holding composed expressions its text layout.
+
+    A kaomoji or emoji combo in the single-glyph tile renders as a box as tall
+    as it is wide and spills out of its cell, so such a grid carries
+    `flag-rows--text` (see symbol-explorer.css). Which values count is defined
+    once, in symbol-explorer.js; this pipes the page through the script that
+    evaluates that definition rather than restating it. If node is missing the
+    page is written unmarked and `check:text-object-grids` reports it.
+    """
+    try:
+        r = subprocess.run(
+            ["node", str(SCRIPT_DIR / "check-text-object-grids.js"), "--stdin"],
+            input=page, cwd=REPO, capture_output=True, text=True, timeout=60)
+    except (FileNotFoundError, subprocess.TimeoutExpired) as e:
+        sys.stderr.write(f"[warn] text-object grids not marked ({e}); "
+                         "run `npm run fix:text-object-grids`\n")
+        return page
+    if r.returncode != 0 or not r.stdout:
+        sys.stderr.write("[warn] text-object grids not marked (node exited "
+                         f"{r.returncode}); run `npm run fix:text-object-grids`\n")
+        return page
+    return r.stdout
 
 
 def art_key_for(spec):

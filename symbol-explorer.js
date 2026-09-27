@@ -541,6 +541,50 @@
   }
   ns.copySymbol = copySymbol;
 
+  /* ============================
+     Glyph vs text object
+     ============================ */
+  // A .flag-emoji tile inherits `aspect-ratio: 1` from .symbol-tile. For a
+  // glyph that is what gives it a 43x43 target, but a composed expression
+  // like (╯°□°）╯︵ ┻━┻ becomes a box as tall as it is wide and overflows its
+  // grid cell. A grid holding one of those gets `flag-rows--text` in its
+  // static HTML, and symbol-explorer.css lays it out as expression cards.
+  //
+  // Width is counted in terminal columns per grapheme cluster, never by
+  // string length: 👨‍👩‍👧 is 8 UTF-16 units and one emoji. An emoji or a
+  // CJK/Hangul/fullwidth grapheme counts 2, anything else 1. At 3 or more
+  // the glyph box can no longer hold the item (measured across every
+  // rendered tile on the site: at width 2 no tile outgrew its box, at 6 all
+  // of them did). scripts/lib/text-object-grid.js runs this block in Node,
+  // so the build and the browser share one definition.
+  /* @text-object:begin */
+  const TEXT_OBJECT_MIN_WIDTH = 3;
+  const TEXT_GRID_CLASS = "flag-rows--text";
+  const WIDE_RE = /[ᄀ-ᅟ⺀-〾ぁ-㏿㐀-䶿一-鿿ꀀ-꓏가-힣豈-﫿︰-﹏＀-｠￠-￦]/;
+  const PICTO_RE = /\p{Extended_Pictographic}|\p{Regional_Indicator}/u;
+
+  function copyItemWidth(value) {
+    const s = String(value == null ? "" : value).trim();
+    if (!s) return 0;
+    let width = 0;
+    if (typeof Intl !== "undefined" && Intl.Segmenter) {
+      const seg = new Intl.Segmenter(undefined, { granularity: "grapheme" });
+      for (const part of seg.segment(s)) {
+        width += PICTO_RE.test(part.segment) || WIDE_RE.test(part.segment) ? 2 : 1;
+      }
+    } else {
+      width = Array.from(s).length;
+    }
+    return width;
+  }
+
+  function isTextObject(value) {
+    return copyItemWidth(value) >= TEXT_OBJECT_MIN_WIDTH;
+  }
+  /* @text-object:end */
+  ns.copyItemWidth = copyItemWidth;
+  ns.isTextObject = isTextObject;
+
   function feedback(el, label, copied) {
     el.classList.add("is-copied");
     setTimeout(function () {
@@ -1006,6 +1050,9 @@
 
     const grid = document.createElement("div");
     grid.className = "symbol-saved-grid flag-rows";
+    if (items.some(function (r) { return isTextObject(r.value); })) {
+      grid.classList.add(TEXT_GRID_CLASS);
+    }
     items.forEach(function (r) {
       const row = document.createElement("div");
       row.className = "flag-row";
