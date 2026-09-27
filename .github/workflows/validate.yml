@@ -664,6 +664,26 @@ jobs:
         continue-on-error: true
         run: npm run audit:library-hub-coverage | tee library-hub-coverage-audit.log
 
+      # Library link mirror: the DIFF-SCOPED gate for library->library links in
+      # locales. Two EN library pages that link each other are a relation; a
+      # locale with both pages owes the same link. Nothing enforced that, since
+      # sync_symbol_spoke_links.py mirrors only library->symbol hubs and symbol
+      # peers, so a spoke translated after its hub stayed off the hub:
+      # ko/library/imotikon linked 6 of its 28 spokes and es/library/kaomoji 7
+      # of 24, with 436 such links missing site-wide on 2026-09-27. Delta, for
+      # the reason every gate here with a backlog is: a finding counts only if
+      # this branch introduced it, and the backlog is reported by the audit
+      # below, never billed to a PR. `npm run fix:library-link-mirror` repairs.
+      - name: Run library link mirror check
+        id: library_link_mirror
+        continue-on-error: true
+        run: npm run check:library-link-mirror -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee library-link-mirror.log
+
+      - name: Run library link mirror audit (whole-site, informational)
+        id: library_link_mirror_audit
+        continue-on-error: true
+        run: npm run audit:library-link-mirror | tee library-link-mirror-audit.log
+
       # Editorial Footprint Risk — SHADOW MODE, and deliberately not in the
       # gating list below. It reports what it WOULD fail on and exits 0.
       #
@@ -1114,6 +1134,16 @@ jobs:
             cat library-hub-coverage-audit.log
             echo '```'
             echo ""
+            echo "### Library link mirror check — \`${{ steps.library_link_mirror.outcome }}\`"
+            echo '```'
+            cat library-link-mirror.log
+            echo '```'
+            echo ""
+            echo "### Library link mirror audit (informational) — \`${{ steps.library_link_mirror_audit.outcome }}\`"
+            echo '```'
+            cat library-link-mirror-audit.log
+            echo '```'
+            echo ""
             echo "### Editorial footprint check (shadow mode; em dash policy enforced per locale) — \`${{ steps.editorial_footprint.outcome }}\`"
             echo '```'
             cat editorial-footprint.log
@@ -1260,6 +1290,7 @@ jobs:
           steps.library_directory.outcome == 'failure' ||
           steps.locale_library_directory.outcome == 'failure' ||
           steps.library_hub_coverage.outcome == 'failure' ||
+          steps.library_link_mirror.outcome == 'failure' ||
           steps.editorial_footprint.outcome == 'failure' ||
           steps.editorial_footprint_tests.outcome == 'failure' ||
           steps.efr_gate.outcome == 'failure' ||
