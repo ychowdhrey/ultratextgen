@@ -111,8 +111,17 @@
 
   const LETTER_RE = /[\p{L}\p{N}]/u;
 
-  function puzzleLetters(text) {
-    return Array.from(String(text))
+  /* Unaccented grid letters for a page that asks for them (`fold`), the French
+     convention: see foldMarks() in wordSearch.js, which this must match. The
+     display form keeps the real spelling for the clue list and word bank. */
+  const LIGATURES = { "œ": "oe", "Œ": "OE", "æ": "ae", "Æ": "AE" };
+  function foldMarks(text) {
+    return String(text).replace(/[œŒæÆ]/g, (ch) => LIGATURES[ch])
+      .normalize("NFD").replace(/\p{M}/gu, "").normalize("NFC");
+  }
+
+  function puzzleLetters(text, fold) {
+    return Array.from(fold ? foldMarks(text) : String(text))
       .filter((ch) => LETTER_RE.test(ch))
       .map(upperOne);
   }
@@ -140,7 +149,7 @@
      "ICE CREAM" is one eight-letter run and still reads as two words under it.
      With `clues` off, commas and semicolons separate entries too, which is how
      a scramble list is usually pasted. */
-  function normalizeWords(input, clues) {
+  function normalizeWords(input, clues, fold) {
     const raw = Array.isArray(input)
       ? input
       : String(input == null ? "" : input).split(clues ? /[\r\n]+/ : /[\r\n,;]+/);
@@ -150,7 +159,7 @@
       const parsed = clues ? splitEntry(entry) : { display: String(entry).trim(), clue: "" };
       const display = parsed.display.replace(/\s+/g, " ").trim();
       if (!display) continue;
-      const letters = puzzleLetters(display);
+      const letters = puzzleLetters(display, fold);
       if (!letters.length) continue;
       const key = letters.join("");
       if (seen[key]) continue;
@@ -293,7 +302,7 @@
     const o = opts || {};
     const words = Array.isArray(o.words) && o.words.length && typeof o.words[0] === "object"
       ? o.words.slice(0, o.maxWords || MAX_WORDS)
-      : normalizeWords(o.input != null ? o.input : o.words, true).slice(0, o.maxWords || MAX_WORDS);
+      : normalizeWords(o.input != null ? o.input : o.words, true, !!o.fold).slice(0, o.maxWords || MAX_WORDS);
 
     const empty = {
       width: 0, height: 0, grid: [], numbers: [], across: [], down: [],
@@ -497,7 +506,7 @@
     const level = LEVELS[o.level] || LEVELS.medium;
     const words = Array.isArray(o.words) && o.words.length && typeof o.words[0] === "object"
       ? o.words.slice(0, o.maxWords || MAX_WORDS)
-      : normalizeWords(o.input != null ? o.input : o.words, false).slice(0, o.maxWords || MAX_WORDS);
+      : normalizeWords(o.input != null ? o.input : o.words, false, !!o.fold).slice(0, o.maxWords || MAX_WORDS);
 
     const next = rng(o.seed == null ? "" : String(o.seed));
     const out = [];

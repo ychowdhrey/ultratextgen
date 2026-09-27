@@ -11768,7 +11768,7 @@
 
   <url>
     <loc>https://ultratextgen.com/fr/imprimables/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -11941,6 +11941,40 @@
     </image:image>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/fr-imprimables-monogramme.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/fr/imprimables/mots-croises/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/fr-imprimables-mots-croises.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/fr/imprimables/mots-meles/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/fr-imprimables-mots-meles.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/fr/imprimables/prenom-a-colorier/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/printables-previews/fr-imprimables-prenom-a-colorier.png</image:loc>
+      <image:title>Prénom à colorier: aperçu de la fiche à imprimer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/fr-imprimables-prenom-a-colorier.png</image:loc>
     </image:image>
   </url>
 
