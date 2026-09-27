@@ -15,6 +15,7 @@ you are deciding where a new piece of knowledge belongs.
 | [`frontend-runtime.md`](./frontend-runtime.md) | module map, load order, the flair layer, opt-in surfaces, the platform-preview modal, pre-rendering | `frontend-javascript`, `html-pages` |
 | [`unicode-style-registry.md`](./unicode-style-registry.md) | the style object's real shape, the five `type` values, and the 2026-08-11 correction | `unicode-style-registry` |
 | [`copy-share-save.md`](./copy-share-save.md) | the one Share implementation, the typed saved store, `share_destination`, the two script-order bugs | `copy-share-analytics` |
+| [`copy-tiles.md`](./copy-tiles.md) | the glyph tile vs the text-object grid, the `aspect-ratio` mechanism, the site-wide render measurements, the layout decision | `html-pages` |
 | [`faq-schema.md`](./faq-schema.md) | the 214-page drift, the dead answer half, and the runtime schema rewrite | `html-pages` |
 | [`accessibility.md`](./accessibility.md) | the measured baseline, the duplicate-id bug, blocking vs advisory | `accessibility` |
 | [`page-art.md`](./page-art.md) | the hero/OG pipeline, `--only` prefix matching, title fitting, page-derived motifs, the four font rules | `html-pages`, `generated-artifacts`, `fonts` |
