@@ -283,8 +283,17 @@ def smart_wrap(text, width):
     none — a single 'word' would otherwise blow past the card width)."""
     words = textwrap.wrap(text, width=width)
     if len(words) <= 1 and len(text) > width:
-        return [text[i:i + width] for i in range(0, len(text), width)]
-    return words
+        words = [text[i:i + width] for i in range(0, len(text), width)]
+    # A line may not START with a combining mark: a Thai vowel or tone mark is
+    # its own code point, and a fixed-width cut printed "วิธีสร้างชื่อว / ่าง"
+    # with the mark alone at the head of line two. Hand it back to its base
+    # letter. Scripts without combining marks wrap exactly as before.
+    import unicodedata
+    for i in range(1, len(words)):
+        while words[i] and unicodedata.category(words[i][0]).startswith("M"):
+            words[i - 1] += words[i][0]
+            words[i] = words[i][1:]
+    return [w for w in words if w]
 
 
 def wrap_width_for(text, native):
