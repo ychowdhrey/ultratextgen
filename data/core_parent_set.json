@@ -217,6 +217,12 @@
       "rationale": "Educational/authority long-tail — gate on a pre-build demand check, same instrument as answers/*."
     },
     {
+      "pattern": "learn/*",
+      "tier": "gated",
+      "scriptIndependent": false,
+      "rationale": "Educational long-tail (the Learn lane, added 2026-09-27 when its first translations shipped): gate on a pre-build demand check, same instrument as guide/*."
+    },
+    {
       "pattern": "category/index.html",
       "tier": "core",
       "scriptIndependent": true,

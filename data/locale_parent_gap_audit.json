@@ -1605,6 +1605,110 @@
       "verdict": "gate-pass",
       "evidence": "User-authorized per-batch exception, not a fresh per-locale instrument pull. sv remains Tier 3 (hold-stub) in data/locale_qualification_tiers.json; this entry does not promote it and does not re-qualify it generally, exactly like the 2026-07-26 four-page sv entry, whose own text reserved future sv decisions for the user. Origin of the batch: a 2026-07-12 branch (claude/sv-competitive-analysis-eub4hl) built 16 sv/library pages in commits pushed AFTER its PR #524 had already merged, so no open PR tracked them and they never reached main. A 2026-09-10 audit of that stranded work found 4 slugs since built independently on main (in larger, newer versions), 2 that would have landed as duplicate claimants under a second slug (grekiska-alfabetet against main's grekiska-bokstaver, kon-symboler against konssymboler, each pair claiming one EN parent), and 10 with live EN parents and no sv claimant of any kind. The user was shown the Tier-3 default and the limited scope of the 2026-07-26 entry, was told the call was theirs, and authorized building these 10. Authorizes exactly the nine that ship here: sv/library/copyright-tecken, japanska-tecken, kors-symboler, kortfarg-symboler, punkt-symboler, skiljetecken, stjarntecken, tangentbord-symboler, vader-symboler. The tenth recovered page, grader-tecken, is NOT authorized by this entry and is deliberately held back: its EN parent is symbol/degree-symbol, so the lane it inherits is symbol/ rather than library/, it matches the symbol/* pattern this entry does not cover, and sv has no symbol/ pillar -- shipping it would open a new lane for the locale with one orphan spoke and no sv/symbol/index.html hub. That is a pillar decision rather than a recovery, and it goes back to the user rather than being settled by widening this entry. Future sv builds still go through the Tier-3 default (raise with the user first) unless sv is promoted via the 7-point gate.",
       "recordedBy": "claude-session-lucid-davinci-oi44ql-user-authorized"
+    },
+    {
+      "pattern": "learn/*",
+      "locale": "de",
+      "checkedDate": "2026-09-27",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a threshold-clearing instrument pull. The user was told on 2026-09-27 that guide-type pages are gated, that the Discord guide trio translated to 28 locales drew ~18 clicks/mo across 87 pages, and that no volume check could run (Semrush: no API units); they chose to build all eight locale translations of learn/how-to-draw-bubble-letters/ in the same change as the EN guide, so the eight bubble-letter hubs could drop their how-to panels in favour of a guide in their own language. Authorizes exactly de/lernen/bubble-letters-zeichnen/ and no other learn/* page in this locale. Head term resolved from live search results (US-localized, no volumes): \"Bubble Letters zeichnen\" (medium-high): handletteringlernen.de, sinnstiften.biz, graffiti-wiki.com tutorials rank; \"Blasenbuchstaben\" showed no tutorial content, \"Ballonschrift\" pulls party balloons. Re-check with first-party GSC once the page has 90 days of data.",
+      "recordedBy": "claude (session 01KVNMBi71LBZG9awi9WPGxB), user-directed"
+    },
+    {
+      "pattern": "learn/*",
+      "locale": "es",
+      "checkedDate": "2026-09-27",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a threshold-clearing instrument pull. The user was told on 2026-09-27 that guide-type pages are gated, that the Discord guide trio translated to 28 locales drew ~18 clicks/mo across 87 pages, and that no volume check could run (Semrush: no API units); they chose to build all eight locale translations of learn/how-to-draw-bubble-letters/ in the same change as the EN guide, so the eight bubble-letter hubs could drop their how-to panels in favour of a guide in their own language. Authorizes exactly es/aprender/como-dibujar-letras-burbuja/ and no other learn/* page in this locale. Head term resolved from live search results (US-localized, no volumes): \"como dibujar letras burbuja\" (high): loopinky.com, lettering.me and several YouTube tutorials; \"letras gorditas\" is a live LatAm alias; the drawing verb removes the balloon-decoration intent bare \"letras burbuja\" carries. Re-check with first-party GSC once the page has 90 days of data.",
+      "recordedBy": "claude (session 01KVNMBi71LBZG9awi9WPGxB), user-directed"
+    },
+    {
+      "pattern": "learn/*",
+      "locale": "fr",
+      "checkedDate": "2026-09-27",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a threshold-clearing instrument pull. The user was told on 2026-09-27 that guide-type pages are gated, that the Discord guide trio translated to 28 locales drew ~18 clicks/mo across 87 pages, and that no volume check could run (Semrush: no API units); they chose to build all eight locale translations of learn/how-to-draw-bubble-letters/ in the same change as the EN guide, so the eight bubble-letter hubs could drop their how-to panels in favour of a guide in their own language. Authorizes exactly fr/apprendre/dessiner-lettres-bulles/ and no other learn/* page in this locale. Head term resolved from live search results (US-localized, no volumes): \"comment dessiner des lettres bulles\" (medium): lavise.fr, cabaneaidees.com, wikiHow FR; much of the ranking content is machine-translated; \"ecriture bulle\" pulls comic speech bubbles. Re-check with first-party GSC once the page has 90 days of data.",
+      "recordedBy": "claude (session 01KVNMBi71LBZG9awi9WPGxB), user-directed"
+    },
+    {
+      "pattern": "learn/*",
+      "locale": "id",
+      "checkedDate": "2026-09-27",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a threshold-clearing instrument pull. The user was told on 2026-09-27 that guide-type pages are gated, that the Discord guide trio translated to 28 locales drew ~18 clicks/mo across 87 pages, and that no volume check could run (Semrush: no API units); they chose to build all eight locale translations of learn/how-to-draw-bubble-letters/ in the same change as the EN guide, so the eight bubble-letter hubs could drop their how-to panels in favour of a guide in their own language. Authorizes exactly id/belajar/cara-menggambar-huruf-bubble/ and no other learn/* page in this locale. Head term resolved from live search results (US-localized, no volumes): \"cara menggambar huruf bubble\" (medium-high): multiple Indonesian YouTube tutorials and TikTok discover pages; \"huruf balon\" pulls speech balloons. Re-check with first-party GSC once the page has 90 days of data.",
+      "recordedBy": "claude (session 01KVNMBi71LBZG9awi9WPGxB), user-directed"
+    },
+    {
+      "pattern": "learn/*",
+      "locale": "it",
+      "checkedDate": "2026-09-27",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a threshold-clearing instrument pull. The user was told on 2026-09-27 that guide-type pages are gated, that the Discord guide trio translated to 28 locales drew ~18 clicks/mo across 87 pages, and that no volume check could run (Semrush: no API units); they chose to build all eight locale translations of learn/how-to-draw-bubble-letters/ in the same change as the EN guide, so the eight bubble-letter hubs could drop their how-to panels in favour of a guide in their own language. Authorizes exactly it/impara/come-disegnare-lettere-a-bolla/ and no other learn/* page in this locale. Head term resolved from live search results (US-localized, no volumes): \"come disegnare lettere a bolla\" (medium): racem.org, campionatigiovanili.it; thin, mostly translated SERP; \"lettere a palloncino\" is party balloons. Re-check with first-party GSC once the page has 90 days of data.",
+      "recordedBy": "claude (session 01KVNMBi71LBZG9awi9WPGxB), user-directed"
+    },
+    {
+      "pattern": "learn/*",
+      "locale": "nl",
+      "checkedDate": "2026-09-27",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a threshold-clearing instrument pull. The user was told on 2026-09-27 that guide-type pages are gated, that the Discord guide trio translated to 28 locales drew ~18 clicks/mo across 87 pages, and that no volume check could run (Semrush: no API units); they chose to build all eight locale translations of learn/how-to-draw-bubble-letters/ in the same change as the EN guide, so the eight bubble-letter hubs could drop their how-to panels in favour of a guide in their own language. Authorizes exactly nl/leren/bubbelletters-tekenen/ and no other learn/* page in this locale. Head term resolved from live search results (US-localized, no volumes): \"bubbelletters tekenen\" (low): matches the live nl hub term; \"ballonletters\" showed more native drawing lessons (tekenschooldekameleon.nl) and is carried as the body alias; unresolved split. Re-check with first-party GSC once the page has 90 days of data.",
+      "recordedBy": "claude (session 01KVNMBi71LBZG9awi9WPGxB), user-directed"
+    },
+    {
+      "pattern": "learn/*",
+      "locale": "pl",
+      "checkedDate": "2026-09-27",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a threshold-clearing instrument pull. The user was told on 2026-09-27 that guide-type pages are gated, that the Discord guide trio translated to 28 locales drew ~18 clicks/mo across 87 pages, and that no volume check could run (Semrush: no API units); they chose to build all eight locale translations of learn/how-to-draw-bubble-letters/ in the same change as the EN guide, so the eight bubble-letter hubs could drop their how-to panels in favour of a guide in their own language. Authorizes exactly pl/nauka/jak-narysowac-litery-babelkowe/ and no other learn/* page in this locale. Head term resolved from live search results (US-localized, no volumes): \"jak narysowac litery babelkowe\" (low-medium): sparse Polish tutorial content; \"litery balonowe\" is balloon arches; note the pl hub slug uses the non-standard \"bombelkowe\" spelling. Re-check with first-party GSC once the page has 90 days of data.",
+      "recordedBy": "claude (session 01KVNMBi71LBZG9awi9WPGxB), user-directed"
+    },
+    {
+      "pattern": "learn/*",
+      "locale": "pt",
+      "checkedDate": "2026-09-27",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a threshold-clearing instrument pull. The user was told on 2026-09-27 that guide-type pages are gated, that the Discord guide trio translated to 28 locales drew ~18 clicks/mo across 87 pages, and that no volume check could run (Semrush: no API units); they chose to build all eight locale translations of learn/how-to-draw-bubble-letters/ in the same change as the EN guide, so the eight bubble-letter hubs could drop their how-to panels in favour of a guide in their own language. Authorizes exactly pt/aprender/como-fazer-letra-bolha/ and no other learn/* page in this locale. Head term resolved from live search results (US-localized, no volumes): \"como fazer letra bolha\" (medium): Brazilian lettering YouTube tutorials use \"letra(s) bolha\", contradicting the lexicon note PT-041 for the drawing context; \"letras gordinhas\" is a large live alias. Re-check with first-party GSC once the page has 90 days of data.",
+      "recordedBy": "claude (session 01KVNMBi71LBZG9awi9WPGxB), user-directed"
     }
   ]
 }
