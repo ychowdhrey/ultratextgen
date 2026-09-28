@@ -179,6 +179,16 @@ a page that already exists, never invented and never translated here").
 
 `validate()` fails rather than inventing if a page ever has none.
 
+**One authored exception: published non-HTML documents.** The page walk sees
+only `index.html` files, so a Markdown document published at the site root
+(`reportcard.md`, the dated record of user-facing improvements) has no `<h1>`
+or tagline to read. `ROOT_DOCUMENTS` in `scripts/lib/llms-index.js` lists each
+one with its title and one-line note, and the root `llms.txt` prints them
+under their own heading (`## Product history`) ahead of `## Optional`, because
+product history is context an agent should read, not skip. `build()` throws
+when a listed file no longer exists, so a removed document fails
+`check:llms` instead of leaving a dead link (added 2026-09-28).
+
 **Headings are English on every locale file, on purpose.** They are
 machine-facing scaffolding — an agent comparing `/de/llms.txt` with
 `/ko/llms.txt` should see the same section names — and translating them here
