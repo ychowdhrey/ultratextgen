@@ -5002,6 +5002,108 @@ button.clear-decoration {
   color: var(--text-muted);
 }
 
+/* How to draw bubble letters (learn/how-to-draw-bubble-letters/).
+   Each step figure draws the same skeleton. The bubble outline is the skeleton
+   stroked thick in ink with a thinner paper-coloured stroke on top, which
+   leaves an outline a constant distance from every stroke: the method the
+   page teaches. The resting state is each step's finished frame, so
+   reduced-motion readers and crawlers see the result, not a blank. */
+.bubble-demo-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+.bubble-demo-figure { margin: 1.25rem 0; }
+.bubble-demo-row .bubble-demo-figure { margin: 0; }
+.bubble-demo {
+  display: block;
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  margin: 0 auto;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+}
+.bubble-demo-figure figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+.bubble-demo path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.bd-skel path { stroke: var(--text-muted); stroke-width: 3; }
+.bd-outer path { stroke: var(--text-primary); }
+.bd-inner path { stroke: var(--bg-white); }
+.bd-fill .bd-inner path { stroke: var(--accent-purple); }
+.bd-w-thin .bd-outer path { stroke-width: 14; }
+.bd-w-thin .bd-inner path { stroke-width: 8; }
+.bd-w-good .bd-outer path { stroke-width: 36; }
+.bd-w-good .bd-inner path { stroke-width: 28; }
+.bd-w-fat .bd-outer path { stroke-width: 58; }
+.bd-w-fat .bd-inner path { stroke-width: 50; }
+
+/* Step 1: the pencil skeleton draws on. */
+.bd-step-skeleton .bd-skel path {
+  stroke-dasharray: 1;
+  animation: bd-draw 4s ease-in-out infinite;
+}
+/* Step 2: a light pencil outline puffs out around the skeleton. */
+.bd-step-puff .bd-skel { opacity: 0.6; }
+.bd-step-puff .bd-outer path {
+  stroke: var(--text-muted);
+  animation: bd-puff-outer 4s ease-in-out infinite;
+}
+.bd-step-puff .bd-inner path { animation: bd-puff-inner 4s ease-in-out infinite; }
+/* Step 3: erase the skeleton, ink the outline, color it in. */
+.bd-step-ink .bd-skel { opacity: 0; animation: bd-erase 6s ease-in-out infinite; }
+.bd-step-ink .bd-outer path { animation: bd-ink 6s ease-in-out infinite; }
+.bd-step-ink .bd-inner path {
+  stroke: var(--accent-purple);
+  animation: bd-color 6s ease-in-out infinite;
+}
+@keyframes bd-draw {
+  0% { stroke-dashoffset: 1; }
+  60%, 100% { stroke-dashoffset: 0; }
+}
+@keyframes bd-puff-outer {
+  0% { stroke-width: 6; }
+  60%, 100% { stroke-width: 36; }
+}
+@keyframes bd-puff-inner {
+  0% { stroke-width: 0; }
+  60%, 100% { stroke-width: 28; }
+}
+@keyframes bd-erase {
+  0%, 10% { opacity: 1; }
+  30%, 100% { opacity: 0; }
+}
+@keyframes bd-ink {
+  0%, 30% { stroke: var(--text-muted); }
+  50%, 100% { stroke: var(--text-primary); }
+}
+@keyframes bd-color {
+  0%, 55% { stroke: var(--bg-white); }
+  80%, 100% { stroke: var(--accent-purple); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bd-step-skeleton .bd-skel path,
+  .bd-step-puff .bd-outer path,
+  .bd-step-puff .bd-inner path,
+  .bd-step-ink .bd-skel,
+  .bd-step-ink .bd-outer path,
+  .bd-step-ink .bd-inner path { animation: none; }
+}
+
+/* The mistakes row: the same A at three puff widths. */
+.bd-w-even .bd-outer path { stroke-width: 30; }
+.bd-w-even .bd-inner path { stroke-width: 22; }
+
 /* Printable alphabet grid */
 .bubble-alphabet-head {
   display: flex;
