@@ -39,3 +39,9 @@
 # regenerated card at 30 days instead of a year.
 /assets/*
   Cache-Control: public, max-age=2592000, must-revalidate
+
+# The report card is a Markdown document linked from /about/ for people to
+# read. Served as text/markdown, some browsers download it instead of showing
+# it; text/plain displays everywhere and reads the same to crawlers and agents.
+/reportcard.md
+  Content-Type: text/plain; charset=utf-8

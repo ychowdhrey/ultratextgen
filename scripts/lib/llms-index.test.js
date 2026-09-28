@@ -325,6 +325,7 @@ ok(real.skippedNoindex.length > 0,
   // No file may advertise an index that is not planned.
   const planned = new Set(real.files.map((f) => `${BASE}/${f.relPath}`));
   const known = new Set(real.pages.map((p) => p.url));
+  for (const doc of L.ROOT_DOCUMENTS) known.add(`${BASE}/${doc.file}`);
   const bad = [];
   for (const file of real.files) {
     for (const m of file.content.matchAll(/^- \[.*?\]\((\S+?)\)/gm)) {
@@ -332,6 +333,17 @@ ok(real.skippedNoindex.length > 0,
     }
   }
   eq(bad.length, 0, 'build: every emitted link is a real page or a planned index', bad.slice(0, 3).join(' | '));
+}
+
+{
+  // Published non-HTML documents are listed in the root index, and only there.
+  const root = real.files.find((f) => f.relPath === 'llms.txt');
+  for (const doc of L.ROOT_DOCUMENTS) {
+    const url = `${BASE}/${doc.file}`;
+    const holders = real.files.filter((f) => f.content.includes(`](${url})`));
+    ok(root.content.includes(`](${url}): `), `build: root llms.txt lists ${doc.file}`);
+    eq(holders.length, 1, `build: ${doc.file} is listed exactly once`);
+  }
 }
 
 {
