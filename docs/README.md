@@ -141,6 +141,7 @@ not files in this repo. They run as full Claude sessions and open PRs for review
 | Routine | Trigger | Action |
 |---|---|---|
 | Weekly infrastructure review | weekly schedule | run the [Weekly infrastructure review](#weekly-infrastructure-review); open a PR updating this map (no auto-merge) |
+| Weekly updates opportunity scan | weekly schedule | check the three event types `updates/` tracks (`.claude/rules/content-architecture.md`) for anything genuinely new since the last run, cross-check against what the site already publishes, and write a dated record to `docs/updates-scan/` (no page is built or published without a separate decision) |
 
 ---
 
