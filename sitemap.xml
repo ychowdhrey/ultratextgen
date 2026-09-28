@@ -21980,7 +21980,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -22000,7 +22000,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/bin-kan-munja/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -22050,7 +22050,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/guide/discord-nikneim-anjeon/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -22064,7 +22064,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/guide/discord-ponteu-jiwon/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -22078,7 +22078,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/guide/discord-tekseuteu-seosik/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -22097,16 +22097,6 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/ko-insta-font.png</image:loc>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://ultratextgen.com/ko/ireum-kkumigi/</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://ultratextgen.com/assets/og/ko-ireum-kkumigi.png</image:loc>
     </image:image>
   </url>
 
@@ -23060,7 +23050,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/library/sutja-giho/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -23070,7 +23060,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/library/teuksu-munja/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -24220,7 +24210,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/symbol/won-giho/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -24335,6 +24325,16 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/ko-updates-unicode-18-imoji-tupyo.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/usecase/ireum-kkumigi/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-ireum-kkumigi.png</image:loc>
     </image:image>
   </url>
 

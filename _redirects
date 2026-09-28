@@ -103,6 +103,13 @@
 /usecase/linkedin-bold/                       /linkedin/ 301
 /usecase/linkedin-bold/index.html             /linkedin/ 301
 /usecase/glitch-text/                         /usecase/zalgo-text/ 301
+
+# ko nickname-generator moved under usecase/ (2026-09-27) — every other
+# usecase/* locale sibling in this repo uses the <locale>/usecase/<slug>/
+# pattern; this page was the sole exception, built before that convention
+# was consistently applied
+/ko/ireum-kkumigi/           /ko/usecase/ireum-kkumigi/ 301
+/ko/ireum-kkumigi            /ko/usecase/ireum-kkumigi/ 301
 /usecase/glitch-text/index.html               /usecase/zalgo-text/ 301
 /usecase/glitch-text-generator/               /usecase/zalgo-text/ 301
 
