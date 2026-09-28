@@ -5559,12 +5559,11 @@
     printWrap("", root, "alphabet_tiled");
   }
 
-  // Optional "print size" radiogroup (#pt-size-control). Entirely opt-in:
-  // pages that don't add the mount never call this and the alphabet-print
-  // button keeps calling exactly the same default handler it always has.
-  // "Full page" is pre-selected, so even a page that DOES add the mount
-  // still defaults to today's unaffected output until the visitor actively
-  // picks Medium or Small.
+  // "Print size" radiogroup (#pt-size-control). A page may declare the mount
+  // itself; a page that prints an alphabet sheet and does not declare it gets
+  // one created at runtime (see below), so this is not opt-in. "Full page" is
+  // pre-selected, so the default output is unchanged until the visitor
+  // actively picks Medium or Small.
   function buildSizeControl() {
     /* Mount it for a page that prints an alphabet and never declared the hook.
        All 24 English landings gained the control on 2026-09-13; sixteen locale

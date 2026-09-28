@@ -155,7 +155,8 @@
       if (MARGINS[saved.margin]) values.margin = saved.margin;
       if (saved.ink === "saver" || saved.ink === "normal" || saved.ink === "contrast") values.ink = saved.ink;
       /* One localStorage key serves every page, so a visitor who turns high
-         contrast on in English and then opens a locale page would carry a mode
+         contrast on in English and then opens a page whose language has no
+         CONTRAST_I18N row would carry a mode
          with no control to see or clear it. Cleared HERE rather than when the
          panel is built, because the paper preview is painted first: resetting
          later left the German caption reading "High contrast" over a sheet
@@ -296,9 +297,9 @@
     if (values.orient === "landscape") bits.push(labels.landscape);
     if (values.margin === "narrow") bits.push(labels.narrow);
     if (values.ink === "saver") bits.push(String(labels.inkSaver || "").replace(/\s*\([^)]*\)\s*$/, ""));
-    // English-only, exactly like the control: buildPanel() clears a stored
-    // "contrast" on every other locale, so this can never be the one English
-    // word in a translated summary.
+    // Shown only where CONTRAST_I18N has a row for the page language, exactly
+    // like the control: a stored "contrast" is cleared at load on any language
+    // without one, so this can never be an untranslated word in a summary.
     if (values.ink === "contrast" && contrastLabel()) bits.push(contrastLabel().replace(/\s*\([^)]*\)\s*$/, ""));
     return bits.join(" \u00b7 ");
   }
@@ -735,14 +736,11 @@
            guides these sheets are built from, so the sheet that reaches thirty
            children is the one this setting renders.
 
-           ENGLISH ONLY, and not for want of trying. Unlike "300 DPI" above
-           there is no numeral or international unit that says this, and unlike
-           every other label on this panel there is no already-shipped string
-           to reuse: neither printablesEngine's I18N table nor locales/*.json
-           carries a word for contrast or for photocopying in any of the eight.
-           Eight invented strings is not something this repo does, so the seven
-           other locales keep the panel they have until a native reading or
-           corpus evidence exists. Per the owner's decision of 2026-09-17. */
+           Shipped English-only on 2026-09-17 (owner's decision then: no
+           already-shipped string to reuse, and no invented translations).
+           Translated 2026-09-25: the label now comes from CONTRAST_I18N, which
+           carries ten languages. The control appears only where that table has
+           a row for the page language; any other locale keeps the panel it had. */
         if (contrastLabel()) {
           details.appendChild(checkRow(contrastLabel(),
             values.ink === "contrast",
