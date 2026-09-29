@@ -2,6 +2,21 @@
 
 You are maintaining `reportcard.md`.
 
+This file is the instruction set for the weekly Claude Code Routine that keeps
+the report card current. The Routine's own prompt only points here, so change
+the process by editing this file through a pull request.
+
+## Before you start
+
+1. If an open pull request already proposes a report card update (title
+   "docs: weekly report card update"), stop. Do not open a second one covering
+   the same weeks. Report that the earlier pull request is still waiting for
+   review, and end the run.
+2. The review window starts at the merge of the most recent pull request that
+   changed `reportcard.md` on `main`, and ends now. Find that point from git
+   history (`git log origin/main -1 -- reportcard.md`), never from memory or
+   from this file.
+
 Your job is to review work merged since the most recent report card update and add only meaningful user facing improvements.
 
 Do not rebuild the historical report card.
@@ -151,9 +166,13 @@ Newest entries must appear first within the correct month.
 
 Do not rewrite older entries unless a factual correction is clearly necessary.
 
-If there are no qualifying improvements, make no changes.
+If there are no qualifying improvements, make no changes and open no pull
+request.
 
 If there are qualifying improvements, edit only `reportcard.md`.
+
+Do not use em dashes in new entries. Use commas, colons or full stops, as the
+existing entries do.
 
 Before finishing, verify:
 
@@ -168,3 +187,20 @@ Before finishing, verify:
 The final question you should answer through the file edit is:
 
 "What became meaningfully better for UltraTextGen users since the last report card review?"
+
+## Delivering the change
+
+Only when `reportcard.md` changed:
+
+1. Create a branch from the latest `main` named
+   `claude/reportcard-weekly-<YYYY-MM-DD>` using today's date.
+2. Commit with the message `docs: weekly report card update`.
+3. Run `npm install` and then `npm run check:ci-gates`. Fix anything your edit
+   caused before pushing.
+4. Push the branch and open a pull request titled
+   `docs: weekly report card update`. In its description, list each new entry
+   with the pull requests and commits that support it and how each number was
+   verified. That evidence belongs in the pull request, never in the report
+   card itself.
+5. Do not merge it. A person reviews and merges every report card update.
+
