@@ -4,7 +4,7 @@
 
 UltraTextGen is a free, no-sign-up text tool: Unicode font styles to copy and paste, a browsable symbol and emoji library, one reference page per individual symbol, printable lettering and handwriting sheets rendered in the browser, and explanatory guides and answers. Everything runs client-side.
 
-4740 indexable pages in 31 languages. This file is a navigation index, not a URL list: https://ultratextgen.com/sitemap.xml is the complete canonical URL list and stays the authority on what exists. Links below point to a narrower llms.txt index where one exists, and straight to a page where it does not.
+4742 indexable pages in 31 languages. This file is a navigation index, not a URL list: https://ultratextgen.com/sitemap.xml is the complete canonical URL list and stays the authority on what exists. Links below point to a narrower llms.txt index where one exists, and straight to a page where it does not.
 
 English pages are served from the site root, so this file is also the English index (https://ultratextgen.com/en/llms.txt redirects here). Every other language has its own index at https://ultratextgen.com/<code>/llms.txt.
 
@@ -58,6 +58,10 @@ English pages are served from the site root, so this file is also the English in
 - [Answers](https://ultratextgen.com/answers/llms.txt): Direct answers to common font and typography questions for Facebook, Snapchat, LinkedIn, and more — exact font details, lookalikes, and practical guidance. 66 pages.
 - [Updates](https://ultratextgen.com/updates/llms.txt): What changed, and why it matters for your text. UltraTextGen tracks new Unicode versions, platform formatting changes, and game nickname rule changes: the same events that keep our Check tools accurate. 13 pages.
 
+## Tool comparisons
+
+- [Zalgo Generators Compared: Which One Fits What You Want to Make](https://ultratextgen.com/compare/zalgo-generators/): We tested 12 Zalgo generators with the same inputs on September 29, 2026.
+
 ## Text tools
 
 - [ASCII Art Generator](https://ultratextgen.com/ascii-art-generator/): Type a word or name and watch it turn into big multi-line block-letter ASCII art instantly, with several font styles to switch between.
@@ -97,6 +101,7 @@ English pages are served from the site root, so this file is also the English in
 - [UltraTextGen Research](https://ultratextgen.com/research/): Controlled experiments, published with the method, data and limitations needed to check them.
 - [Ink Saving by Worksheet Type: Which Print Treatments Keep a Worksheet Working](https://ultratextgen.com/research/ink-saving-by-worksheet-type/): We exported 54 real printable test cases, from name tracing sheets to word searches, under ink-saving treatments carried over from Study 1…
 - [Printable Ink Efficiency: Measuring Coverage Reduction Across Common Worksheet Rendering Methods](https://ultratextgen.com/research/printable-ink-efficiency-study/): A controlled experiment on 108 computer-generated worksheet pages, 36 rendering methods and 36 unseen holdout pages.
+- [Zalgo Generator Benchmark 2026: Testing Creative Control Across 13 Popular Tools](https://ultratextgen.com/research/zalgo-generator-benchmark/): We ran 13 Zalgo and corrupted-text generators through one procedure on September 29, 2026: the same ten inputs, the same fifteen creative…
 
 ## Embeddable widgets
 
