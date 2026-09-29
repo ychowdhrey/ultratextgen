@@ -90,7 +90,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "datePublished": "2026-07-03T00:00:00+00:00",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Paste the corrupted text into an unzalgo decoder, a tool that strips Unicode combining marks. Zalgo is ordinary text plus stacked combining marks, so removing the marks restores the original instantly and losslessly. UltraTextGen's zalgo generator has a built-in Decode Zalgo box that does this as you type.",
+        "text": "Paste the corrupted text into an unzalgo decoder, a tool that strips Unicode combining marks. Zalgo is ordinary text plus stacked combining marks, so removing the marks restores the readable text instantly. UltraTextGen's zalgo generator has a built-in Decode Zalgo box that does this as you type.",
         "author": {
           "@id": "https://ultratextgen.com/#organization"
         },
@@ -106,7 +106,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "datePublished": "2026-07-03T00:00:00+00:00",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. The original characters are never altered: zalgo only attaches combining marks to them. Strip the marks (Unicode ranges U+0300–U+036F and related combining blocks) and the base text is exactly what was typed. Nothing is encrypted or destroyed, so decoding is always lossless.",
+        "text": "Almost always. Most generators only attach combining marks, so stripping them (U+0300–U+036F and related blocks) returns the letters that were typed. Two things do not come back: an accent stored as a separate mark is stripped with the zalgo, and a few generators also change the letters themselves, for example by adding underscores or spaces, which no decoder can undo.",
         "author": {
           "@id": "https://ultratextgen.com/#organization"
         },
@@ -181,7 +181,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="hero">
   <div class="hero-inner">
     <h1 class="hero-headline">How to Remove Zalgo Text (Unzalgo)</h1>
-    <p class="hero-tagline">Someone sent you c̷u̴r̶s̵e̸d̶ text, or you over-corrupted your own. Here's how to get the clean original back, instantly, and always losslessly.</p>
+    <p class="hero-tagline">Someone sent you c̷u̴r̶s̵e̸d̶ text, or you over-corrupted your own. Here's how to get the readable text back, instantly.</p>
   </div>
 </section>
 <figure class="page-hero-figure" data-uthero aria-hidden="true">
@@ -207,7 +207,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <h2>Zalgo never destroys the original text</h2>
   <div class="editorial-block">
     <p>Unicode "combining marks" are characters that attach visually to the letter before them: the accent in <em>é</em> is one. Zalgo abuses this by stacking many marks per letter, but the base letters underneath are untouched. Nothing is encrypted, substituted, or lost.</p>
-    <p>That means decoding is <strong>always possible and always lossless</strong>: filter out every character in the combining-mark ranges (U+0300–U+036F and a few related blocks) and what remains is exactly what was typed. A zalgo'd password, name, or message can always be read by anyone with a decoder, worth remembering before you use zalgo to "hide" anything.</p>
+    <p>That means decoding <strong>almost always works</strong>: filter out every character in the combining-mark ranges (U+0300–U+036F and a few related blocks) and what remains is the letters that were typed. The exceptions are accents stored as separate marks, which go with the zalgo, and generators that change the letters themselves. A zalgo'd password, name, or message can always be read by anyone with a decoder, worth remembering before you use zalgo to "hide" anything.</p>
   </div>
 </section>
 
@@ -253,11 +253,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <h2>Frequently Asked Questions</h2>
   <details class="faq-item">
     <summary class="faq-question">How do I remove zalgo text?</summary>
-    <p class="faq-answer">Paste the corrupted text into an unzalgo decoder, a tool that strips Unicode combining marks. Zalgo is ordinary text plus stacked combining marks, so removing the marks restores the original instantly and losslessly. UltraTextGen's zalgo generator has a built-in Decode Zalgo box that does this as you type.</p>
+    <p class="faq-answer">Paste the corrupted text into an unzalgo decoder, a tool that strips Unicode combining marks. Zalgo is ordinary text plus stacked combining marks, so removing the marks restores the readable text instantly. UltraTextGen's zalgo generator has a built-in Decode Zalgo box that does this as you type.</p>
   </details>
   <details class="faq-item">
     <summary class="faq-question">Can zalgo text always be decoded back to normal?</summary>
-    <p class="faq-answer">Yes. The original characters are never altered: zalgo only attaches combining marks to them. Strip the marks (Unicode ranges U+0300–U+036F and related combining blocks) and the base text is exactly what was typed. Nothing is encrypted or destroyed, so decoding is always lossless.</p>
+    <p class="faq-answer">Almost always. Most generators only attach combining marks, so stripping them (U+0300–U+036F and related blocks) returns the letters that were typed. Two things do not come back: an accent stored as a separate mark is stripped with the zalgo, and a few generators also change the letters themselves, for example by adding underscores or spaces, which no decoder can undo.</p>
   </details>
   <details class="faq-item">
     <summary class="faq-question">Can I remove zalgo text by hand?</summary>

@@ -2,9 +2,9 @@
 """Measure Zalgo outputs on one scale for every tool.
 
 Input: samples.json and inputs.json next to this script.
-Output: writes measurements.csv (one row per sample) and
-measurements-summary.csv (one row per tool x input x setting), which should
-match output-measurements.csv.
+Output: writes measurements.csv (one row per sample) and output-measurements.csv
+(one row per tool x input x setting). Run in a copy of the data folder: the
+second file is byte-identical to the published output-measurements.csv.
 
 Zones come from Unicode canonical combining class (ccc), not a tool's labels:
   middle = ccc 1 (overlay); above = 214,216,228,230,232,234;
@@ -65,22 +65,22 @@ def measure(text, original=None):
 
 def main():
     root = os.path.dirname(os.path.abspath(__file__))
-    inputs = {i["id"]: i["text"] for i in json.load(open(os.path.join(root, "inputs.json")))["inputs"]}
+    inputs = {i["id"]: i["text"] for i in json.load(open(os.path.join(root, "inputs.json"), encoding="utf-8"))["inputs"]}
     rows = []
     for s in json.load(open(os.path.join(root, "samples.json"), encoding="utf-8"))["samples"]:
         m = measure(s["output"], inputs.get(s["input_id"]))
-        rows.append({"tool": s["tool"], "input_id": s["input_id"], "setting": s.get("setting", "default"), **m})
+        rows.append({"tool_id": s["tool_id"], "tool": s["tool"], "input_id": s["input_id"], "setting": s.get("setting", "default"), **m})
     if not rows:
         print("no samples found", file=sys.stderr); sys.exit(2)
-    with open(os.path.join(root, "measurements.csv"), "w", newline="") as fh:
+    with open(os.path.join(root, "measurements.csv"), "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=rows[0].keys()); w.writeheader(); w.writerows(rows)
     groups = {}
     for r in rows:
-        groups.setdefault((r["tool"], r["input_id"], r["setting"]), []).append(r)
+        groups.setdefault((r["tool_id"], r["tool"], r["input_id"], r["setting"]), []).append(r)
     summ = []
-    for (tool, iid, setting), rs in groups.items():
+    for (tid, tool, iid, setting), rs in groups.items():
         mpb = [r["marks_per_alnum_base"] for r in rs]
-        summ.append({"tool": tool, "input_id": iid, "setting": setting, "n": len(rs),
+        summ.append({"tool_id": tid, "tool": tool, "input_id": iid, "setting": setting, "n": len(rs),
             "mpb_mean": round(statistics.mean(mpb), 2), "mpb_sd": round(statistics.pstdev(mpb), 2),
             "mpb_min": min(mpb), "mpb_max": max(mpb),
             "above_share": round(sum(r["above"] for r in rs) / max(1, sum(r["marks_total"] for r in rs)), 3),
@@ -90,9 +90,8 @@ def main():
             "utf16_len_mean": round(statistics.mean(r["utf16_len"] for r in rs), 1),
             "max_above_one_base": max(r["max_above_one_base"] for r in rs),
             "max_marks_one_base": max(r["max_marks_one_base"] for r in rs),
-            "share_alnum_touched_mean": round(statistics.mean(r["share_alnum_touched"] for r in rs), 3),
-            "distinct_outputs": None})
-    with open(os.path.join(root, "measurements-summary.csv"), "w", newline="") as fh:
+            "share_alnum_touched_mean": round(statistics.mean(r["share_alnum_touched"] for r in rs), 3)})
+    with open(os.path.join(root, "output-measurements.csv"), "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=summ[0].keys()); w.writeheader(); w.writerows(summ)
     print(f"{len(rows)} samples, {len(summ)} groups")
 

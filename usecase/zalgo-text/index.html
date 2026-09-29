@@ -215,10 +215,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Generate creepy glitch text (Zalgo) using Unicode combining marks. One-click presets, full control over characters, position, shape, frequency, and amplitude, a Thai Cascade mode that stacks one Thai tone mark up to 150 times for the viral side spike, a platform character-limit checker for Discord, X and Instagram, and a built-in unzalgo decoder that removes zalgo from any text.",
+  "description": "Generate creepy glitch text (Zalgo) using Unicode combining marks. One-click presets, separate controls for characters, position, shape, frequency and amplitude, a Thai Cascade mode that stacks one Thai tone mark up to 150 times for the viral side spike, a platform character-limit checker for Discord, X and Instagram, and a built-in unzalgo decoder that removes zalgo marks from pasted text.",
   "featureList": [
     "One-click intensity presets (Subtle to HE COMES, plus Extreme, which opens the amplitude slider to 100)",
-    "Separate control of marks above, through, and below each letter",
+    "Choose marks above, through or below each letter",
     "Density shapes: uniform, slope, wave, pyramid, so corruption spreads across a sentence",
     "Thai Cascade preset: one Thai tone mark repeated 10 to 150 times on one carrier letter, the viral side-spike effect",
     "Will-it-fit checker for Discord, X/Twitter and Instagram character limits",
@@ -258,7 +258,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="app">
       <div class="zalgo-page-header">
         <h1 class="hero-headline">Glitch Text Generator: Create Creepy, Cursed Zalgo Text</h1>
-        <p>Type your text, pick a preset from Subtle to H̸E̶ ̷C̵O̸M̷E̸S̶ or the Thai Cascade side spike, and shape the corruption with character type, position, frequency, amplitude and progression. The “Will it fit?” check shows what fits Discord, X and Instagram limits, and the built-in unzalgo decoder turns zalgo back into clean text.</p>
+        <p>Type your text and pick a preset, from a light Subtle glitch to full H̸E̶ ̷C̵O̸M̷E̸S̶ or the Thai side spike, then choose where the marks go and how they build across the line. The “Will it fit?” check shows what fits Discord, X and Instagram limits, and the built-in decoder turns zalgo back into clean text.</p>
       </div>
 
       <!-- Text Input -->
@@ -301,7 +301,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
     <section class="editorial-section">
       <h2>How This Generator Works</h2>
-      <p><strong>Characters</strong> controls which <em>type</em> of combining marks are used: bars (strikethrough-style), letters (superscript letter marks), symbols (enclosing/overlay marks), or noise (accent-style diacritics). "All" uses the full Unicode pool.</p>
+      <p><strong>Characters</strong> controls which <em>type</em> of combining marks are used: bars (strikethrough-style), letters (superscript letter marks), symbols (dots, rings, hooks and overlays), or noise (accent-style diacritics). "All" uses the full Unicode pool.</p>
       <p><strong>Position</strong> controls <em>where</em> marks attach: above, below, through the middle, or a combination. "Up & Down" gives the classic zalgo look with spires and roots but no strikethrough.</p>
       <p><strong>Shape</strong> controls how mark density <em>varies across your text</em>. Uniform applies even density everywhere. Slope Up starts clean and builds chaos. Wave oscillates. Pyramid peaks in the middle. Each shape creates a different visual rhythm.</p>
       <p><strong>Frequency</strong> is the probability that any given character receives marks at all. At 50%, roughly half your characters stay clean, which gives a "corruption spreading" look. At 100%, every character is affected.</p>
@@ -315,22 +315,22 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p>The decoder below treats a repeated Thai mark as a stack and leaves single marks alone, so ordinary Thai words come back untouched.</p>
 
       <h3 id="compare">How this Zalgo generator differs</h3>
-      <p>We tested this generator against 11 others on September 29, 2026. These are the differences you can use:</p>
+      <p>In our September 29, 2026 test of 12 Zalgo generators, this was the only one with a mark-type choice, a frequency control and a live platform-limit check, and one of two that can shape corruption along a sentence.</p>
       <div class="data-table-wrap">
         <table class="data-table">
           <thead>
-            <tr><th scope="col">Feature</th><th scope="col">What it lets you do</th><th scope="col">What you get</th></tr>
+            <tr><th scope="col">Feature and what it does</th><th scope="col">What you get</th></tr>
           </thead>
           <tbody>
-            <tr><td>Shape: Slope, Wave, Pyramid, Valley, Steps</td><td>Change the corruption along your text instead of keeping it even</td><td>Words that decay as they are read, pulse, or peak mid-sentence</td></tr>
-            <tr><td>Characters and Frequency</td><td>Pick the kind of marks, and how many letters they touch</td><td>A scratched-out look, fine noise, or a few cursed letters in a readable line</td></tr>
-            <tr><td>Position, including Mid only</td><td>Put marks only above, only below, or only through the letters</td><td>Spires, dripping roots, or a strikethrough glitch</td></tr>
-            <tr><td>Will it fit?</td><td>See live whether the output fits a Discord nickname, a Discord message, an X post or an Instagram bio</td><td>No failed paste into a 32-character name</td></tr>
-            <tr><td>Settings in the link, plus a decoder</td><td>Share your setup, and turn zalgo back into plain text</td><td>Friends get the same style; cursed messages become readable</td></tr>
+            <tr><td><strong>Shape:</strong> corruption changes along your text instead of staying even</td><td>A line that starts clean and ends cursed, fades out, pulses or peaks mid-sentence</td></tr>
+            <tr><td><strong>Mark type and frequency:</strong> pick the kind of marks, and how many letters get them</td><td>A scratched-out look, fine noise, or a few cursed letters in a readable line</td></tr>
+            <tr><td><strong>Mid only:</strong> marks only through the letters, with no stray marks above or below</td><td>A glitch strike through your text, without spires above or roots below</td></tr>
+            <tr><td><strong>Will it fit?:</strong> a live length check for a Discord name and message, an X post and an Instagram bio</td><td>Know it fits a 32-character Discord name before you paste</td></tr>
+            <tr><td><strong>Settings in the link:</strong> your text and settings travel in the page address</td><td>Friends open the same style with one link</td></tr>
           </tbody>
         </table>
       </div>
-      <p>Only one other tested tool, Textavia's Glitch Text Converter, can shape corruption across a sentence. If you just want one-click zalgo with no settings, simpler generators are faster. <a href="/compare/zalgo-generators/">Compare Zalgo generators</a> or <a href="/research/zalgo-generator-benchmark/#method">see the benchmark methodology</a>.</p>
+      <p>For one-click zalgo with no settings, simpler generators are faster. <a href="/compare/zalgo-generators/">Compare Zalgo generators</a> or <a href="/research/zalgo-generator-benchmark/#method">see the benchmark methodology</a>.</p>
     </section>
 
 
@@ -373,8 +373,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <!-- Unzalgo / Decoder -->
     <section class="editorial-section" id="unzalgo-guide">
       <h2>Unzalgo: Remove Zalgo From Any Text</h2>
-      <p>Most zalgo generators cannot reverse their own output: in our <a href="/research/zalgo-generator-benchmark/">September 2026 benchmark of 12 generators</a>, 4 could, and this page is one of them, with a built-in <strong>unzalgo decoder</strong>. Paste corrupted text into the <a href="#unzalgo">Decode Zalgo box</a> above and it strips the combining-mark ranges zalgo generators use, returning readable text instantly. No separate "zalgo remover" tool needed. A Thai cascade stack (one tone mark repeated) comes out too, and normal Thai text stays as it is.</p>
-      <p>Use it to read a cursed message someone sent you, clean up text before quoting it, recover something you over-corrupted, or, if you moderate a Discord server or forum, to see what a zalgo username or message actually says before acting on it. Because zalgo is just base characters plus combining marks, the letters always come back. Accents typed the usual way survive; an accent stored as a separate mark is removed with the zalgo, so check names like café after decoding. For the full explanation (and how moderators auto-filter zalgo), see <a href="/answers/how-to-remove-zalgo-text/">how to remove zalgo text</a>.</p>
+      <p>Most zalgo generators cannot reverse their own output: in our <a href="/research/zalgo-generator-benchmark/">September 2026 benchmark of 12 generators</a>, 4 could, and this page is one of them, with a built-in <strong>unzalgo decoder</strong>. Paste corrupted text into the <a href="#unzalgo">Decode Zalgo box</a> above and it strips the combining-mark ranges zalgo generators use, returning readable text instantly. A Thai cascade stack (one tone mark repeated) comes out too, and normal Thai text stays as it is.</p>
+      <p>Use it to read a cursed message someone sent you, clean up text before quoting it, recover something you over-corrupted, or, if you moderate a Discord server or forum, to see what a zalgo username or message actually says before acting on it. For the full explanation (and how moderators auto-filter zalgo), see <a href="/answers/how-to-remove-zalgo-text/">how to remove zalgo text</a>.</p>
+      <p>Because zalgo is just base characters plus combining marks, the letters usually come back. Accents typed the usual way survive; an accent stored as a separate mark is removed with the zalgo, so check names like café after decoding.</p>
     </section>
 
     <section class="editorial-section">
