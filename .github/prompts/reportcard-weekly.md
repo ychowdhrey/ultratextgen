@@ -86,6 +86,97 @@ Write for a parent, teacher, student or ordinary website user.
 
 Use plain English, short sentences and concrete outcomes.
 
+## Mandatory entry standard: Feature, Advantage, Benefit, Use Case, Evidence
+
+Every entry is an end user benefit record, not a release note. Build each one
+on this chain, written as natural prose rather than labelled fields:
+
+1. **Feature**: what capability, improvement or fix is now available.
+2. **Advantage**: what the user can now do more easily, quickly, accurately,
+   flexibly or reliably.
+3. **Benefit**: the practical value that creates.
+4. **Use case**: who benefits and in what situation.
+5. **Evidence**: the verified number, before and after comparison or scope
+   that supports the claim.
+
+The golden rule: never stop at what changed. Every entry must answer
+"So what for the user?"
+
+These rules are mandatory for every entry:
+
+1. Write from the end user's perspective. The underlying fact may be about
+   UltraTextGen; the entry explains what that fact means for the user.
+2. Follow Feature, Advantage, Benefit, Use Case, Evidence. Do not force five
+   labels into the text; the prose should carry the chain.
+3. Do not stop at "what changed".
+4. Always answer "So what for the user?"
+5. Prefer a verified before and after comparison (before, now, why it
+   matters) where it makes the benefit clearer.
+6. Never invent a baseline. Use a "before" only when merged work or its
+   commits state it. Never manufacture a comparison to make an entry sound
+   stronger.
+7. Numbers support the benefit; they are not the story. Keep a number when it
+   helps the reader understand the benefit. Leave out internal metrics that
+   mean little to a user.
+8. Each entry must stand alone when retrieved on its own by a search engine
+   or an AI assistant. Do not open with "This feature", "It now" or "These";
+   repeat the subject.
+9. Name the affected feature or tool explicitly ("The name tracing
+   worksheet...", "The Zalgo glitch text generator...").
+10. Use plain language.
+11. Technical implementation details belong in the pull request's evidence,
+    not the entry, unless they matter directly to the user.
+12. Do not add competitor comparisons to the report card.
+13. Do not describe ordinary product differences as research. Only work with
+    a real test, benchmark or published methodology is research, and it lives
+    under `/research/`, not here.
+14. Preserve dates and verified scope.
+
+Name the audience where it adds meaning: teachers, parents, students, gamers,
+creators, social media users, people printing at home, users on phones, users
+working in another language. Do not force an audience label where it adds
+nothing.
+
+Claim only benefits that follow from the feature, and phrase plausible but
+unmeasured benefits conservatively. "Reduces repetitive setup" is acceptable;
+"saves teachers 30 minutes per class" is not, unless that time was measured.
+
+Bad:
+"Printables gained class list support."
+
+Good:
+"Teachers can now type a class list once and reuse it on every worksheet tool.
+Before, each tool kept its own list, so a class of thirty had to be retyped
+when moving between worksheets."
+
+Bad:
+"Four worksheets can now fit on one sheet."
+
+Good:
+"Teachers can print four sheets on one page, so a class set for 30 children
+uses about 8 sheets of paper instead of 30."
+
+Bad:
+"Zalgo gained additional modes."
+
+Good:
+"The Zalgo glitch text generator now offers two stronger effects for creators
+and gamers who want more dramatic text, without assembling Unicode marks by
+hand."
+
+### Keep content types separate
+
+The report card answers one question: what became better over time. Other
+questions belong on other pages, and the weekly run does not create them:
+
+* What UltraTextGen can do today belongs on a feature or tool page.
+* How an approach differs from alternatives belongs on a comparison page.
+* What measured evidence shows belongs under `/research/`.
+* How to accomplish a task belongs under `/learn/`.
+
+If a new entry reveals a capability that deserves its own page, say so in the
+pull request description rather than expanding the report card.
+
 ## Public information rule
 
 You may use internal research, audits, Reddit findings, competitor analysis, tests and validation work to verify an improvement.
@@ -183,6 +274,11 @@ Before finishing, verify:
 5. Related PRs have been grouped properly.
 6. No internal research or discovery method has leaked into the public copy.
 7. Markdown formatting remains valid.
+8. Every new entry answers "So what for the user?" and reads as a benefit
+   story, not a release note.
+9. Every new entry names its feature or tool and makes sense on its own.
+10. No baseline, saving or outcome was invented, and no competitor or
+    research claim was added.
 
 The final question you should answer through the file edit is:
 
