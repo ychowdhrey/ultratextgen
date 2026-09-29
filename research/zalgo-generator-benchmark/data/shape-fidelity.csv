@@ -1,0 +1,27 @@
+tool,shape,batch,n_outputs,letters,mean_marks_per_letter,ideal,r_mean_profile,r_single_median,r_single_min,first_third,middle_third,last_third,wave_cycles,wave_period_letters,wave_peak_share_mean,wave_peak_share_single
+ultratextgen,uniform,main,20,81,4.84,,,,,4.84,4.97,4.71,27,3.0,0.09,0.11
+ultratextgen,slope-up,main,20,81,2.7,up,0.858,0.578,0.354,1.54,2.8,3.74,,,,
+ultratextgen,slope-down,main,20,81,2.78,down,0.84,0.509,0.391,3.83,2.83,1.69,,,,
+ultratextgen,wave,main,20,81,3.57,,,,,3.84,3.0,3.86,2,40.5,0.69,0.16
+ultratextgen,pyramid,main,20,81,2.71,peak,0.811,0.528,0.342,2.17,3.66,2.29,,,,
+ultratextgen,valley,main,20,81,3.03,valley,0.747,0.373,0.105,3.37,2.34,3.39,,,,
+ultratextgen,staircase,main,20,81,3.35,steps,0.829,0.38,0.069,2.52,3.28,4.25,,,,
+ultratextgen,random,main,20,81,3.19,,,,,3.18,3.24,3.14,37,2.2,0.12,0.11
+ultratextgen,uniform,replicate,20,81,4.82,,,,,4.83,4.84,4.79,,,,
+ultratextgen,slope-up,replicate,20,81,2.71,up,0.815,0.529,0.39,1.67,2.79,3.67,,,,
+ultratextgen,slope-down,replicate,20,81,2.65,down,0.83,0.521,0.307,3.66,2.65,1.64,,,,
+ultratextgen,wave,replicate,20,81,3.59,,,,,3.75,3.13,3.89,2,40.5,0.68,0.17
+ultratextgen,pyramid,replicate,20,81,2.72,peak,0.821,0.55,0.163,2.15,3.73,2.27,,,,
+ultratextgen,valley,replicate,20,81,3.07,valley,0.798,0.372,0.192,3.43,2.34,3.43,,,,
+ultratextgen,staircase,replicate,20,81,3.36,steps,0.818,0.414,0.187,2.52,3.19,4.36,,,,
+ultratextgen,random,replicate,20,81,3.09,,,,,3.09,3.15,3.05,,,,
+textavia-glitch,Progressive,main,20,81,3.78,up,0.939,0.609,0.462,1.88,3.81,5.64,,,,
+textavia-glitch,Decay,main,20,81,3.81,down,0.953,0.603,0.482,5.62,3.88,1.93,,,,
+textavia-glitch,Wave,main,20,81,2.77,,,,,2.85,2.64,2.81,14,5.8,0.63,0.33
+textavia-glitch,Center Focus,main,20,81,3.4,peak,0.955,0.606,0.437,2.54,5.03,2.65,,,,
+textavia-glitch,Edges Only,main,20,81,0.19,valley,0.319,0.287,0.245,0.42,0,0.14,,,,
+textavia-glitch,Pulse,main,20,81,2.29,,,,,2.26,2.32,2.28,21,3.9,0.4,0.23
+textavia-glitch,Heartbeat,main,20,81,2.05,,,,,1.96,2.02,2.17,21,3.9,0.34,0.21
+textavia-glitch,Cascade Down,main,20,81,3,,,,,3,3,3,,,,
+textavia-glitch,Random Scatter,main,20,81,3.21,,,,,3.31,3.22,3.1,29,2.8,0.11,0.11
+textavia-glitch,Glitch Scan,main,20,81,2.76,up,0.95,0.61,0.462,1.56,2.73,3.98,,,,

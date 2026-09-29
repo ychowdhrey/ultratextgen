@@ -1,0 +1,14 @@
+tool,tested_url,selection,fetch_status,test_date
+UltraTextGen,https://ultratextgen.com/usecase/zalgo-text/,subject of the study,ok,2026-09-29
+Coddy,https://coddy.tech/tools/glitch-text-generator,rule: 7 of 7 queries,ok,2026-09-29
+LingoJam,https://lingojam.com/ZalgoText,rule: 7 of 7 queries,ok,2026-09-29
+Glyphy,https://glyphy.io/font-generator/zalgo-text,rule: 7 of 7 queries,ok,2026-09-29
+Creative Fabrica,https://www.creativefabrica.com/tools/zalgo-text-generator/,rule: 7 of 7 queries,blocked,2026-09-29
+Zalgo.org,https://zalgo.org/,rule: 5 of 7 queries,ok,2026-09-29
+SymbolDB,https://symboldb.org/font-generator/zalgo/,rule: 5 of 7 queries,ok,2026-09-29
+PSD-Dude,https://www.psd-dude.com/zalgo-text/,rule: 4 of 7 queries,ok,2026-09-29
+FontCraft,https://fontcraft.com/zalgo-text/,rule: 4 of 7 queries,ok,2026-09-29
+Pixelied,https://pixelied.com/font-generator/glitch-text,rule: 3 of 7 queries,ok,2026-09-29
+Textavia (Zalgo Text Generator),https://textavia.com/tools/zalgo,added: 2 of 7 queries; checked for a progression feature,ok,2026-09-29
+Textavia (Glitch Text Converter),https://textavia.com/tools/glitch-text-converter,added: returned for corrupted text generator; the Textavia page with progression presets,ok,2026-09-29
+Zalgo.io,https://zalgo.io/,added: named comparison target; 0 of 7 queries in this sample,ok,2026-09-29

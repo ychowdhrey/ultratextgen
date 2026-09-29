@@ -1,0 +1,17 @@
+/* Zalgo generator benchmark + comparison tables: result colouring and a sticky first column. */
+.bm-table { min-width: 64rem; }
+.bm-table caption,
+.data-table caption { caption-side: top; text-align: left; font-size: 0.85rem; color: var(--text-secondary); padding: 0 0 0.5rem; }
+.bm-table th[scope="row"] { position: sticky; left: 0; background: var(--bg-white); z-index: 1; min-width: 11rem; }
+.bm-table td { text-align: center; white-space: nowrap; font-size: 0.85rem; }
+.bm-table .bm-group th { text-align: left; font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-secondary); }
+.bm-table .bm-yes { color: var(--ts-safe); font-weight: 600; }
+.bm-table .bm-partial { color: var(--ts-risk); }
+.bm-table .bm-no,
+.bm-table .bm-not_found { color: var(--text-secondary); }
+.bm-table .bm-unclear,
+.bm-table .bm-untested { color: var(--ts-fail); }
+.bm-table .bm-total th,
+.bm-table .bm-total td { font-weight: 600; }
+.cmp-answer { font-size: 1.05rem; }
+.cmp-pick { margin: 0.25rem 0 0; }
