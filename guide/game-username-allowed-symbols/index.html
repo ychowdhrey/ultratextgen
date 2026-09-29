@@ -115,12 +115,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "How do I put symbols in my Fortnite name?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Your Fortnite name is your Epic Games display name, and you change it on the Epic Games account website, not inside the game. Epic allows letters, numbers and a small set of plain symbols like hyphens, underscores and periods, but not styled Unicode. If you play through PlayStation or Xbox, the game shows your PSN or Gamertag instead, which follows that platform's own stricter rules." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Your Fortnite name is your Epic Games display name, and you change it on the Epic Games account website, not inside the game. Epic accepts letters, numbers, plain symbols like hyphens, underscores and periods, and some other special characters, but publishes no list of which ones. Fortnite can show a glyph it doesn't support as a box or a question mark, so test a styled name in a lobby before you rely on it. If you play through PlayStation or Xbox, the game shows your PSN or Gamertag instead, which follows that platform's own stricter rules." }
     },
     {
       "@type": "Question",
       "name": "Does Valorant allow fancy Unicode characters?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes, the Riot ID is one of the most permissive name fields in gaming. It accepts a broad range of Unicode, including styled characters like ᴠɪᴘᴇʀ or 𝕏, in both the name and many tag combinations. Change it from your Riot account page. The usual caveats still apply: exotic characters can render as boxes on teammates' devices, and unreadable names attract reports." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Not reliably. Riot describes the game name as 3 to 16 alphanumeric characters and its developer docs say any Unicode letter is supported, but neither documents styled characters like ᴠɪᴘᴇʀ or 𝕏 as accepted. Test one on your Riot account page before you commit, and expect an accented letter to count as the plain letter for uniqueness (à = a)." }
     },
     {
       "@type": "Question",
@@ -177,7 +177,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <ul>
     <li>Every game has two name layers: a locked-down ASCII <strong>account handle</strong> and a looser <strong>display name</strong>. Symbols almost always belong in the second one.</li>
     <li>Most "rejections" are one of three failures: wrong <em>field</em> (username vs display name), wrong <em>place</em> (in-game vs account website), or a <em>silent filter</em> that strips symbols after creation.</li>
-    <li>Valorant's Riot ID is the most symbol-friendly major name field; Roblox usernames and PSN IDs are the strictest. Check the Rules Matrix before you burn a name change.</li>
+    <li>Steam persona names are the most symbol-friendly major name field; Roblox usernames and PSN IDs are the strictest. Riot IDs and Epic display names sit in between, and neither publishes a symbol list. Check the Rules Matrix before you burn a name change.</li>
     <li>Test before committing: paste the name into the game's player search. If search can't find it, teammates can't either, and some lobbies will blank the symbols anyway.</li>
   </ul>
 </section>
@@ -233,10 +233,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <tbody>
           <tr><td><strong>Roblox username</strong></td><td>3–20</td><td>One <code>_</code> max, no spaces</td><td>✗ Never</td><td>Account settings (paid, in Robux)</td></tr>
           <tr><td><strong>Roblox display name</strong></td><td>3–20</td><td>Slightly looser, moderated</td><td>Partial — filtered</td><td>Account settings (free, rate-limited)</td></tr>
-          <tr><td><strong>Fortnite / Epic display name</strong></td><td>3–16</td><td><code>- _ .</code> and a few more</td><td>✗ Mostly blocked</td><td>Epic Games <em>website</em>, not in-game</td></tr>
+          <tr><td><strong>Fortnite / Epic display name</strong></td><td>3–16</td><td><code>- _ .</code> and a few more</td><td>Some; no published list</td><td>Epic Games <em>website</em>, not in-game</td></tr>
           <tr><td><strong>PSN Online ID</strong></td><td>3–16</td><td><code>- _</code> only</td><td>✗ Never</td><td><a href="/usecase/playstation-name-generator/">PlayStation settings</a> (first change free)</td></tr>
           <tr><td><strong>Xbox Gamertag</strong></td><td>12–15<sup>*</sup> + #suffix</td><td>Spaces, apostrophes</td><td>✗ Never</td><td><a href="/usecase/xbox-name-generator/">Xbox settings</a> (first change free)</td></tr>
-          <tr><td><strong>Valorant Riot ID</strong></td><td>3–16 + tag</td><td>Broad</td><td>✓ Broadly, incl. styled chars</td><td>Riot account page (free, cooldown)</td></tr>
+          <tr><td><strong>Valorant Riot ID</strong></td><td>3–16 + tag</td><td>Letters and numbers</td><td>Undocumented, test first</td><td>Riot account page (free, cooldown)</td></tr>
           <tr><td><strong>COD Activision ID</strong></td><td>up to ~20</td><td><code>_ -</code> and a few more</td><td>✗ + silent display filter</td><td>Activision account (limited free tokens)</td></tr>
           <tr><td><strong>Steam persona name</strong></td><td>up to ~32</td><td>Nearly anything</td><td>✓ Very permissive</td><td>Steam profile (free, anytime)</td></tr>
         </tbody>
@@ -244,7 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="editorial-block">
-      <p>Read the matrix vertically and the Username-vs-Display-Name Rule jumps out: the strict rows (Roblox username, PSN, Xbox, Activision ID) are all <em>account handles</em>. The permissive rows (Riot ID, Steam persona) are <em>display layers</em>. Valorant looks like an exception, the Riot ID does double duty, but Riot made searchability work anyway by bolting on the <code>#tag</code>, which is why it can afford to be generous with the name half.</p>
+      <p>Read the matrix vertically and the Username-vs-Display-Name Rule jumps out: the strict rows (Roblox username, PSN, Xbox, Activision ID) are all <em>account handles</em>. The looser rows (Epic display name, Steam persona) are <em>display layers</em>. The Riot ID sits in between: it does double duty as handle and display name, with a <code>#tag</code> for searchability, and Riot documents letters from any script for the name half, not symbols.</p>
       <p><sup>*</sup>As of Microsoft's July 2026 Xbox console update, a Gamertag can run up to 15 characters, but only if it's unique, available, and uses Latin characters. A Gamertag needing a numeric <code>#suffix</code>, or written in a non-Latin script, still caps out at the old 12-character limit. See our <a href="/updates/xbox-gamertag-15-character-limit/">Xbox Gamertag update</a> for the full breakdown.</p>
     </div>
   </section>
@@ -270,12 +270,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="editorial-block">
       <h3>Fortnite: you're editing in the wrong place</h3>
-      <p>There is no name editor inside Fortnite. Your in-game name is your <strong>Epic Games display name</strong>, changed on the Epic account <em>website</em> and rate-limited (roughly one change per two weeks). Epic allows letters, numbers and a small plain-symbol set (hyphens, underscores, periods) but blocks most styled Unicode. And if you play on console, there's a second trap: PlayStation and Xbox lobbies show your <strong>PSN ID or Gamertag</strong> instead, which follow Sony's and Microsoft's stricter rules no matter what your Epic name says.</p>
+      <p>There is no name editor inside Fortnite. Your in-game name is your <strong>Epic Games display name</strong>, changed on the Epic account <em>website</em> and rate-limited (roughly one change per two weeks). Epic accepts letters, numbers, a plain-symbol set (hyphens, underscores, periods) and some other special characters, but publishes no list of which ones. Glyphs Fortnite can't show turn into boxes, diamonds or question marks, and players report gothic (Fraktur) letters coming out as ?. And if you play on console, there's a second trap: PlayStation and Xbox lobbies show your <strong>PSN ID or Gamertag</strong> instead, which follow Sony's and Microsoft's stricter rules no matter what your Epic name says.</p>
     </div>
 
     <div class="editorial-block">
-      <h3>Valorant: genuinely permissive: use it wisely</h3>
-      <p>The <strong>Riot ID</strong> (name#tag) is the most symbol-friendly name field in mainstream competitive gaming. Styled characters like <strong>ᴠɪᴘᴇʀᴍᴀɪɴ#ACE</strong>, <strong>𝕵𝖊𝖙𝖙#EU1</strong> or a clean <strong>ツ</strong> generally pass. This is the one game where the question really is taste, not rules, which makes it the right place to spend effort on a <a href="/usecase/nickname-generator/">properly styled nickname</a> instead of fighting a validator.</p>
+      <h3>Valorant: letters from any script, symbols untested</h3>
+      <p>Riot's player support describes the <strong>Riot ID</strong> game name as 3 to 16 alphanumeric characters with a 3 to 5 character tagline, and its developer docs add that any Unicode letter is supported. A katakana letter like <strong>ツ</strong> falls under that documented rule. Styled characters like <strong>ᴠɪᴘᴇʀᴍᴀɪɴ#ACE</strong> or <strong>𝕵𝖊𝖙𝖙#EU1</strong> are not documented as accepted, and players report them sticking for some and blocked for others. Accented letters can count as the plain letter, so Café and Cafe may collide. Run the name through the <a href="/usecase/valorant-name-generator/">Valorant name generator's checker</a> first, and save heavier styling for a <a href="/usecase/nickname-generator/">properly styled nickname</a> on a field that accepts it.</p>
     </div>
 
     <div class="editorial-block">
@@ -390,13 +390,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">How do I put symbols in my Fortnite name?</button>
     <div class="faq-answer">
-      <p>Your Fortnite name is your Epic Games display name, and you change it on the Epic Games account website, not inside the game. Epic allows letters, numbers and a small set of plain symbols like hyphens, underscores and periods, but not styled Unicode. If you play through PlayStation or Xbox, the game shows your PSN or Gamertag instead, which follows that platform's own stricter rules.</p>
+      <p>Your Fortnite name is your Epic Games display name, and you change it on the Epic Games account website, not inside the game. Epic accepts letters, numbers, plain symbols like hyphens, underscores and periods, and some other special characters, but publishes no list of which ones. Fortnite can show a glyph it doesn't support as a box or a question mark, so test a styled name in a lobby before you rely on it. If you play through PlayStation or Xbox, the game shows your PSN or Gamertag instead, which follows that platform's own stricter rules.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Does Valorant allow fancy Unicode characters?</button>
     <div class="faq-answer">
-      <p>Yes, the Riot ID is one of the most permissive name fields in gaming. It accepts a broad range of Unicode, including styled characters like ᴠɪᴘᴇʀ or 𝕏, in both the name and many tag combinations. Change it from your Riot account page. The usual caveats still apply: exotic characters can render as boxes on teammates' devices, and unreadable names attract reports.</p>
+      <p>Not reliably. Riot describes the game name as 3 to 16 alphanumeric characters and its developer docs say any Unicode letter is supported, but neither documents styled characters like ᴠɪᴘᴇʀ or 𝕏 as accepted. Test one on your Riot account page before you commit, and expect an accented letter to count as the plain letter for uniqueness (à = a).</p>
     </div>
   </div>
   <div class="faq-item">
