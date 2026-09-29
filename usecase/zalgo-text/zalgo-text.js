@@ -96,7 +96,7 @@
     // Extreme mode: classic marks with a far larger budget. Gated by
     // data-extreme on #zalgoControlPanel for the same reason as the cascade.
     presetExtreme:           'Extreme',
-    tooltipAmplitudeExtreme: 'Extreme mode: up to 100 marks stacked per character. Long text gets heavy; most apps clip it.'
+    tooltipAmplitudeExtreme: 'Extreme mode: the amplitude slider goes up to 100 (about 92 marks per letter with every position on). Long text gets heavy; most apps clip it.'
   }, window.zalgoI18n || {});
 
 
