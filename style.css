@@ -3469,6 +3469,26 @@ body.dark-mode .embed-copy-btn.is-copied {
   text-decoration: underline;
 }
 
+/* Phones: the site header already takes ~160px, so the hero is tightened
+   until the primary Copy button sits inside a 375x740 first screen. */
+@media (max-width: 639px) {
+  .embed-landing {
+    gap: 14px;
+    padding-top: 12px;
+  }
+  .embed-landing-lede {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+  .embed-landing-code {
+    padding: 12px;
+  }
+  .embed-code-box {
+    font-size: 0.75rem;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+}
 @media (min-width: 640px) {
   /* Four items each: 2x2 rather than 3 + an orphan. */
   .embed-benefits,
