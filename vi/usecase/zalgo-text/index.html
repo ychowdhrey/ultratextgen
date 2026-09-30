@@ -138,7 +138,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Tôi có thể chia sẻ cấu hình chữ Zalgo cụ thể dưới dạng liên kết không?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Có. URL trang tự động cập nhật khi bạn gõ, bao gồm văn bản, kiểu dáng và cường độ hiện tại của bạn dưới dạng tham số URL. Sao chép URL từ thanh địa chỉ của trình duyệt để chia sẻ cấu hình chính xác của bạn."
+        "text": "Có, và chính xác đến từng dấu. Địa chỉ trang cập nhật khi bạn gõ, gồm chữ của bạn, các cài đặt và hạt giống ngẫu nhiên (seed) tạo ra các dấu. Sao chép từ thanh địa chỉ, ai mở liên kết cũng thấy đúng đoạn zalgo đó, từng dấu một. Bấm Tạo lại để có seed mới và kiểu mới."
       }
     }
   ]
@@ -211,7 +211,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="app">
       <div class="zalgo-page-header">
         <h1 class="hero-headline">Trình Tạo Chữ Zalgo — Tạo Chữ Lỗi và Rùng Rợn</h1>
-        <p>Nhập văn bản của bạn bên dưới. Chọn các thành phần — loại ký tự, vị trí, hình dạng, tần suất và biên độ — để tạo ra chính xác hiệu ứng bị hỏng mà bạn muốn. Sao chép và dán ở bất kỳ đâu.</p>
+        <p>Nhập chữ của bạn, chọn một cài đặt nhanh rồi sao chép chữ zalgo ma quái. Phần kiểm tra “Có vừa không?” cho biết chữ nào vừa với Discord, X và Instagram.</p>
       </div>
 
       <!-- Text Input -->
@@ -257,11 +257,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
     <section class="editorial-section">
       <h2>Cách Trình Tạo Này Hoạt Động</h2>
-      <p><strong>Ký tự</strong> kiểm soát <em>loại</em> ký tự kết hợp được sử dụng — thanh (kiểu gạch ngang), chữ (ký hiệu chữ cái trên chỉ số), ký hiệu (ký hiệu bao quanh) hoặc nhiễu (dấu phụ nhấn mạnh). "Tất cả" sử dụng toàn bộ bộ Unicode.</p>
+      <p><strong>Ký tự</strong> kiểm soát <em>loại</em> ký tự kết hợp được sử dụng — thanh (kiểu gạch ngang), chữ (ký hiệu chữ cái trên chỉ số), ký hiệu (chấm, vòng, móc và nét đè ngang chữ) hoặc nhiễu (dấu phụ nhấn mạnh). "Tất cả" sử dụng toàn bộ bộ Unicode.</p>
       <p><strong>Vị trí</strong> kiểm soát <em>nơi</em> các ký tự gắn vào — trên, dưới, ở giữa hoặc kết hợp. "Trên và dưới" tạo ra giao diện Zalgo cổ điển với các tháp nhọn và rễ nhưng không có gạch ngang.</p>
       <p><strong>Hình dạng</strong> kiểm soát cách mật độ ký tự <em>thay đổi trong văn bản</em>. Đồng đều áp dụng mật độ đồng đều ở mọi nơi. Dốc lên bắt đầu sạch và tăng dần hỗn loạn. Sóng dao động. Kim tự tháp đỉnh ở giữa.</p>
       <p><strong>Tần suất</strong> là xác suất một ký tự nhất định nhận được dấu. Ở 50%, khoảng một nửa ký tự của bạn vẫn sạch. Ở 100%, mỗi ký tự đều bị ảnh hưởng.</p>
-      <p><strong>Biên độ</strong> là số dấu xếp chồng trên mỗi ký tự bị ảnh hưởng. Ở 1, đó là dấu nhẹ nhàng. Ở 20, đó là hỗn loạn hình ảnh tối đa.</p>
+      <p><strong>Biên độ</strong> là số dấu xếp chồng trên mỗi ký tự bị ảnh hưởng. Ở 1, đó là dấu nhẹ nhàng. Ở 20, đó là kiểu zalgo cổ điển dày đặc. Chế độ <strong>Cực đại</strong> mở thanh trượt lên tới 300.</p>
 
       <h3 id="thai-cascade">Zalgo cổ điển và thác Thái</h3>
       <p>Cột cao chạy ngang màn hình trong các ảnh chụp viral không phải zalgo vặn hết cỡ, cũng không phải chế độ Cực đại. Đó là một <strong>dấu thanh tiếng Thái</strong> duy nhất (mặc định là Mai Tho, U+0E49) lặp lại tới 1.000 lần trên một chữ cái mang dấu, phụ âm Thái ก. Zalgo cổ điển rải hàng chục dấu <em>khác nhau</em> quanh <em>mọi</em> chữ; thác Thái xếp <em>cùng một</em> dấu lên <em>một</em> chữ.</p>
@@ -333,8 +333,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <!-- Unzalgo / Decoder -->
     <section class="editorial-section" id="unzalgo-guide">
       <h2>Unzalgo — Gỡ Zalgo Khỏi Mọi Đoạn Chữ</h2>
-      <p>Hầu hết trình tạo zalgo không đảo ngược được chính kết quả của mình. Trong đợt thử 12 trình tạo ngày 29 tháng 9 năm 2026, có 4 trình tạo gỡ được zalgo, và trang này là một trong số đó, với <strong>bộ giải mã unzalgo</strong> tích hợp sẵn. Dán đoạn chữ bị hỏng vào ô <a href="#unzalgo">Giải Mã Zalgo</a> ở trên: nó gỡ sạch mọi ký tự Unicode kết hợp và trả lại ngay đoạn chữ gốc dễ đọc. Chuỗi thác Thái (một dấu thanh lặp lại) cũng được gỡ, còn chữ Thái bình thường vẫn giữ nguyên.</p>
-      <p>Dùng nó để đọc một tin nhắn bị nguyền ai đó gửi cho bạn, làm sạch một đoạn chữ trước khi trích dẫn, cứu lại thứ bạn đã lỡ làm hỏng quá tay, hoặc — nếu bạn quản trị một máy chủ Discord hay một diễn đàn — xem một username hoặc một tin nhắn zalgo thật sự viết gì trước khi xử lý. Vì zalgo chỉ là ký tự gốc cộng thêm ký tự kết hợp, việc giải mã không làm mất dữ liệu: đoạn chữ ban đầu luôn lấy lại được. Giải thích đầy đủ (và cách các mod tự động lọc zalgo) có trong bài <a href="/answers/how-to-remove-zalgo-text/">cách xóa chữ zalgo</a> (tiếng Anh).</p>
+      <p>Hầu hết trình tạo zalgo không đảo ngược được chính kết quả của mình. Trong đợt thử 12 trình tạo ngày 29 tháng 9 năm 2026, có 4 trình tạo gỡ được zalgo, và trang này là một trong số đó, với <strong>bộ giải mã unzalgo</strong> tích hợp sẵn. Dán đoạn chữ bị hỏng vào ô <a href="#unzalgo">Giải Mã Zalgo</a> ở trên: nó gỡ các dải ký tự kết hợp mà trình tạo zalgo hay dùng và trả lại ngay đoạn chữ dễ đọc. Chuỗi thác Thái (một dấu thanh lặp lại) cũng được gỡ, còn chữ Thái bình thường vẫn giữ nguyên.</p>
+      <p>Dùng nó để đọc một tin nhắn bị nguyền ai đó gửi cho bạn, làm sạch một đoạn chữ trước khi trích dẫn, cứu lại thứ bạn đã lỡ làm hỏng quá tay, hoặc — nếu bạn quản trị một máy chủ Discord hay một diễn đàn — xem một username hoặc một tin nhắn zalgo thật sự viết gì trước khi xử lý. Vì zalgo chỉ là ký tự gốc cộng thêm ký tự kết hợp, chữ gần như luôn trở lại. Với tiếng Việt cần để ý một điểm: chữ có dấu gõ thành một ký tự dựng sẵn (như ế) vẫn giữ nguyên, còn chữ gõ thành chữ gốc cộng một dấu kết hợp riêng (kiểu tổ hợp) sẽ mất dấu. Vì vậy hãy xem lại các chữ có dấu sau khi giải mã. Giải thích đầy đủ (và cách các mod tự động lọc zalgo) có trong bài <a href="/answers/how-to-remove-zalgo-text/">cách xóa chữ zalgo</a> (tiếng Anh).</p>
     </section>
 
     <section class="editorial-section">
@@ -342,7 +342,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p><strong>Discord</strong> là sân nhà của zalgo — tin nhắn hiển thị đầy đủ các ký tự kết hợp và không có bộ lọc mặc định nào chặn chúng (AutoMod của máy chủ hoặc bot MEE6 thì có thể). <em>Tên hiển thị</em> và <em>biệt danh</em> chấp nhận zalgo nhưng giới hạn 32 ký tự, và mỗi dấu đều được tính — hãy dùng cài đặt Nhẹ cho tên. <em>Username</em> Discord (từ 2023) chỉ nhận chữ thường, chữ số, dấu gạch dưới và dấu chấm, nên zalgo không thể dùng ở đó.</p>
       <p><strong>Roblox</strong> lọc rất gắt: zalgo nặng biến thành dấu # hoặc ô vuông, và dấu giữa (đè lên chữ) là thứ hỏng đầu tiên. Nếu vẫn muốn thử, hãy chọn cài đặt Nhẹ, đặt Vị trí là Trên và dưới, giữ chữ thật ngắn rồi kiểm tra ngay trong game — phân tích đầy đủ ở bài <a href="/answers/does-zalgo-work-on-roblox/">zalgo có chạy trên Roblox không</a> (tiếng Anh).</p>
       <p><strong>Instagram</strong> hỗ trợ zalgo trong tiểu sử, chú thích và bình luận — kiểu nhẹ cho kết quả đẹp nhất, còn những chồng dấu quá cao sẽ bị chiều cao dòng cắt mất. Username thì không nhận. <strong>TikTok</strong> cũng vậy: tiểu sử, chú thích và bình luận thì được, username thì không.</p>
-      <p><strong>Twitter / X</strong> hiển thị zalgo trong bài đăng, tiểu sử và trả lời, nhưng mỗi ký tự kết hợp đều tính vào giới hạn 280 ký tự — zalgo nặng trên một từ thôi cũng có thể ngốn nửa cái tweet. Hãy để ý các nhãn "Có vừa không?" dưới phần kết quả, hoặc đưa bất kỳ đoạn chữ nào qua công cụ <a href="/vi/dem-tu-dem-ky-tu/">đếm ký tự</a> để kiểm tra cùng lúc với 25 giới hạn nền tảng.</p>
+      <p><strong>Twitter / X</strong> hiển thị zalgo trong bài đăng, tiểu sử và trả lời, nhưng mỗi ký tự kết hợp đều tính vào giới hạn 280 ký tự — zalgo nặng trên một từ thôi cũng có thể ngốn nửa cái tweet. Hãy để ý các nhãn "Có vừa không?" dưới phần kết quả, hoặc đưa bất kỳ đoạn chữ nào qua công cụ <a href="/vi/dem-tu-dem-ky-tu/">đếm ký tự</a> để kiểm tra cùng lúc với 39 giới hạn trên 17 nền tảng.</p>
       <p><strong>Twitch</strong> dùng username thuần chữ và số (không có zalgo), nhưng khung chat thì hiển thị được — dù bot của kênh thường xóa hoặc timeout chữ lỗi quá nặng. <strong>Minecraft</strong> hiển thị ký tự kết hợp không qua bộ lọc trong chat, trên bảng gỗ và ở MOTD của máy chủ. <strong>Steam</strong> hiển thị zalgo không cắt xén, và đó đúng là lý do nó tràn ra khỏi giao diện trang cá nhân và tên nhóm — hãy dùng vừa phải. <strong>WhatsApp và Telegram</strong> hiển thị tin nhắn zalgo bình thường.</p>
       <p><strong>Một lưu ý về phép lịch sự:</strong> trình đọc màn hình đọc to từng ký tự kết hợp một, biến một từ zalgo thành một tràng dài khó chịu, và một số cộng đồng (wiki của fan, diễn đàn) cấm hẳn zalgo vì nó phá vỡ bố cục trang. Quy tắc của dân viết truyện kinh dị: một dòng zalgo cho mỗi ~200 từ đánh mạnh hơn cả một đoạn văn bị hỏng từ đầu đến cuối. Còn nếu ai đó lo rằng đoạn chữ bị nguyền này làm hỏng máy — không thể: <a href="/answers/is-zalgo-text-safe/">zalgo là Unicode, không phải mã lệnh</a> (tiếng Anh).</p>
     </section>
@@ -395,7 +395,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </details>
   <details class="faq-item">
     <summary class="faq-question">Tôi có thể chia sẻ cấu hình chữ Zalgo cụ thể dưới dạng liên kết không?</summary>
-    <p class="faq-answer">Có. URL trang tự động cập nhật khi bạn gõ, bao gồm văn bản, kiểu dáng và cường độ hiện tại của bạn dưới dạng tham số URL. Sao chép URL từ thanh địa chỉ của trình duyệt để chia sẻ cấu hình chính xác của bạn.</p>
+    <p class="faq-answer">Có, và chính xác đến từng dấu. Địa chỉ trang cập nhật khi bạn gõ, gồm chữ của bạn, các cài đặt và hạt giống ngẫu nhiên (seed) tạo ra các dấu. Sao chép từ thanh địa chỉ, ai mở liên kết cũng thấy đúng đoạn zalgo đó, từng dấu một. Bấm Tạo lại để có seed mới và kiểu mới.</p>
   </details>
 </section>
 
