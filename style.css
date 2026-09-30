@@ -1992,7 +1992,7 @@
   line-height: 48px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-  color: #fff;
+  color: white;
   font-weight: 700;
   font-size: 1.2rem;
   margin: 0 auto 1rem;
@@ -2894,7 +2894,7 @@ button.cta-btn { border: 0; cursor: pointer; }
 .helper-chip:hover,
 .helper-chip.active {
   background: var(--accent-purple);
-  color: #fff;
+  color: white;
   border-color: var(--accent-purple);
 }
 
@@ -2921,7 +2921,7 @@ button.cta-btn { border: 0; cursor: pointer; }
 /* Primary action button */
 .apply-btn {
   background: var(--accent-purple);
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 8px;
   padding: 0.5rem 1.25rem;
@@ -2971,14 +2971,14 @@ button.cta-btn { border: 0; cursor: pointer; }
    <style> block — it just uses these classes.
    ============================================================ */
 
-/* <body> of a /usecase/*/embed/ iframe page — no page chrome, just the widget */
+/* <body> of a /usecase/<slug>/embed/ iframe page — no page chrome, just the widget */
 .embed-widget-body {
   min-height: auto;
   padding: 0;
   margin: 0;
 }
 
-/* Compact overrides applied to the <body> of a /usecase/*/embed/ iframe page */
+/* Compact overrides applied to the <body> of a /usecase/<slug>/embed/ iframe page */
 .embed-wrapper {
   max-width: 720px;
   margin: 0 auto;
@@ -3032,6 +3032,19 @@ button.cta-btn { border: 0; cursor: pointer; }
 .embed-wrapper .decoration-tab {
   padding: 5px 10px;
   font-size: 0.7rem;
+  min-height: 32px;
+}
+/* A preset row that wraps instead of scrolling sideways: in a widget the
+   host sizes, a hidden overflow hides presets nobody knows to swipe for. */
+.embed-wrapper .decoration-tabs--wrap {
+  flex-wrap: wrap;
+  overflow-x: visible;
+  padding-right: 0;
+}
+/* Zalgo output is one unbroken run of base + combining characters; without
+   this a long word at 320px pushes the card wider than the host's column. */
+.embed-wrapper .style-preview {
+  overflow-wrap: anywhere;
 }
 .embed-variations {
   margin-top: 1rem;
@@ -3134,6 +3147,355 @@ button.cta-btn { border: 0; cursor: pointer; }
   color: var(--text-secondary);
   font-size: 0.875rem;
   line-height: 1.6;
+}
+
+/* /embed/<slug>/ landing page, widget-distribution layout (first: zalgo).
+   Journey: understand -> try -> copy -> install, then "what else can I embed".
+   Mobile order: intro, code, live preview, copy-again, benefits.
+   Desktop (>=1000px): intro + code + benefits beside the live preview, so the
+   widget and the copy button share the first viewport. */
+.embed-landing-page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 16px 48px;
+}
+.embed-landing-page .embed-landing-crumbs {
+  max-width: none;
+  padding: 12px 0 0;
+}
+.embed-landing {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "intro" "code" "preview" "after" "benefits";
+  gap: 20px;
+  padding-top: 20px;
+}
+.embed-landing-intro { grid-area: intro; }
+.embed-landing-code { grid-area: code; }
+.embed-preview-frame { grid-area: preview; }
+.embed-landing-after { grid-area: after; }
+.embed-landing-benefits { grid-area: benefits; }
+
+.embed-landing-eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-purple);
+}
+.embed-landing-title {
+  margin: 0 0 10px;
+  font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.1rem);
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+.embed-landing-lede {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.embed-landing-code {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+}
+.embed-landing-label {
+  margin: 0 0 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.embed-code-box {
+  margin: 0 0 12px;
+  padding: 12px;
+  background: var(--bg-base);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.embed-code-box:focus-visible,
+.embed-copy-btn:focus-visible,
+.embed-more-card:focus-visible,
+.embed-more-all:focus-visible {
+  outline: 3px solid var(--accent-purple);
+  outline-offset: 2px;
+}
+/* Solid, not the .cta-btn gradient: white on --accent-purple is 4.2:1 and
+   on --accent-blue 3.7:1, so the fill is darkened toward the page's own ink
+   (about 5.6:1 in both themes). */
+.embed-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent-purple) 80%, var(--text-primary));
+  color: white;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+body.dark-mode .embed-copy-btn {
+  background: color-mix(in srgb, var(--accent-purple) 80%, var(--bg-base));
+}
+.embed-copy-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
+}
+.embed-copy-btn.is-copied {
+  background: var(--ts-safe);
+}
+body.dark-mode .embed-copy-btn.is-copied {
+  color: var(--bg-base);
+}
+.embed-copy-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+.embed-landing-install {
+  margin: 10px 0 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+/* The live widget, framed as a page on the visitor's own site. The iframe
+   height is the embed code's own 700px, fixed, so nothing shifts on load. */
+.embed-preview-frame {
+  margin: 0;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-base);
+  box-shadow: var(--shadow-soft);
+}
+.embed-preview-chrome {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 36px;
+  padding: 0 12px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.embed-preview-dots {
+  display: inline-flex;
+  gap: 5px;
+}
+.embed-preview-dots i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--border-light);
+}
+.embed-preview-url {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.embed-preview-badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent-purple) 12%, transparent);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.embed-preview-iframe {
+  display: block;
+  width: 100%;
+  height: 700px;
+  border: none;
+}
+
+.embed-landing-after {
+  text-align: center;
+}
+.embed-landing-after p {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.embed-benefits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+.embed-benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+.embed-benefits svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  fill: none;
+  stroke: var(--accent-purple);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.embed-benefits strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.embed-more {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-light);
+}
+.embed-more-title {
+  margin: 0 0 16px;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+.embed-more-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+.embed-more-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.embed-more-card:hover {
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-hover);
+}
+.embed-more-sample {
+  margin-bottom: 4px;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  overflow-wrap: anywhere;
+}
+.embed-more-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+.embed-more-desc {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+.embed-more-all {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 8px 0;
+  font-weight: 600;
+  color: var(--accent-purple);
+  text-decoration: none;
+}
+.embed-more-all:hover {
+  text-decoration: underline;
+}
+
+/* Utility footer: the widget page's continuation is the "More widgets"
+   section above, so the 27-link site footer is replaced by legal links. */
+.embed-utility-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 20px 16px 32px;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+.embed-utility-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+}
+.embed-utility-footer a {
+  display: inline-block;
+  padding: 6px 0;
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+.embed-utility-footer a:hover {
+  color: var(--accent-purple);
+  text-decoration: underline;
+}
+
+@media (min-width: 640px) {
+  .embed-copy-btn {
+    width: auto;
+  }
+  .embed-landing-install {
+    text-align: left;
+  }
+}
+@media (min-width: 1000px) {
+  .embed-landing {
+    grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+    grid-template-areas:
+      "intro preview"
+      "code preview"
+      "benefits preview";
+    grid-template-rows: auto auto 1fr;
+    column-gap: 40px;
+    row-gap: 20px;
+    align-items: start;
+  }
+  .embed-landing-after {
+    display: none;
+  }
+  .embed-benefits {
+    grid-template-columns: 1fr 1fr;
+  }
+  .embed-copy-btn {
+    width: 100%;
+  }
+  .embed-landing-install {
+    text-align: center;
+  }
 }
 
 .sr-only {
@@ -3290,7 +3652,7 @@ h3 + .section-subline {
 
 .symbol-tile.is-copied {
   background: var(--accent-purple);
-  color: #fff;
+  color: white;
   border-color: var(--accent-purple);
 }
 
@@ -3418,7 +3780,7 @@ h3 + .section-subline {
 
 .symbol-hero-tile.is-copied {
   background: var(--accent-purple);
-  color: #fff;
+  color: white;
   border-color: var(--accent-purple);
 }
 
@@ -3516,13 +3878,13 @@ h3 + .section-subline {
 /* Keep active chips readable while hovered — the hover rule above would
    otherwise paint accent text on the accent background. */
 .vertical-chip.active:hover:not(:disabled) {
-  color: #fff;
+  color: white;
 }
 
 .vertical-chip.active {
   background: var(--accent, #6366f1);
   border-color: var(--accent, #6366f1);
-  color: #fff;
+  color: white;
 }
 
 .vertical-chip:disabled {
@@ -3653,7 +4015,7 @@ body.dark-mode .vertical-chip {
 body.dark-mode .vertical-chip.active {
   background: var(--accent, #6366f1);
   border-color: var(--accent, #6366f1);
-  color: #fff;
+  color: white;
 }
 
 /* Layout picker — visual buttons with a mini preview per layout */
@@ -3820,7 +4182,7 @@ body.dark-mode .vertical-fit-badge.no-fit { color: #f87171; }
 
 .vertical-caps-btn:hover {
   background: var(--accent, #6366f1);
-  color: #fff;
+  color: white;
 }
 
 /* Card meta line — char count + collapsed-duplicates note */
@@ -4072,7 +4434,7 @@ button.clear-decoration {
 }
 
 .guide-meta .guide-pill.is-accent {
-  color: #fff;
+  color: white;
   background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
   border-color: transparent;
 }
@@ -4313,7 +4675,7 @@ button.clear-decoration {
 .glyph-copy.copied {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
-  color: #fff;
+  color: white;
 }
 
 /* ==========================================================================
@@ -4677,7 +5039,7 @@ button.clear-decoration {
 .ts-btn-primary {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
-  color: #fff;
+  color: white;
 }
 .ts-btn-primary:hover { opacity: 0.9; }
 .ts-btn-ghost:hover { border-color: var(--accent-purple); }
@@ -4785,7 +5147,7 @@ button.clear-decoration {
 .bubble-chip.is-active {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
-  color: #fff;
+  color: white;
 }
 .bubble-strip-digits .bubble-chip {
   color: var(--text-secondary);
@@ -4949,7 +5311,7 @@ button.clear-decoration {
 .bubble-btn-primary {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
-  color: #fff;
+  color: white;
 }
 .bubble-btn-primary:hover { background: var(--accent-blue); border-color: var(--accent-blue); }
 
@@ -5262,7 +5624,7 @@ button.clear-decoration {
 .format-chip.active {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
-  color: #fff;
+  color: white;
 }
 
 /* Safe-mode toggle row (F2) — mirrors .scope-control / .format-control.
@@ -5312,7 +5674,7 @@ button.clear-decoration {
 .safemode-chip.active {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
-  color: #fff;
+  color: white;
 }
 
 .safemode-chip-dot {
@@ -6102,7 +6464,7 @@ body.preview-open { overflow: hidden; }
 .deco-theme-chip.active {
   background: var(--accent-purple, #8b5cf6);
   border-color: var(--accent-purple, #8b5cf6);
-  color: #fff;
+  color: white;
 }
 
 .deco-theme-icon {
@@ -6140,7 +6502,7 @@ body.preview-open { overflow: hidden; }
   border: none;
   border-radius: 20px;
   background: linear-gradient(135deg, var(--accent-purple, #8b5cf6), var(--accent-blue, #3b82f6));
-  color: #fff;
+  color: white;
   font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
@@ -6170,7 +6532,7 @@ body.dark-mode .deco-theme-chip {
 body.dark-mode .deco-theme-chip.active {
   background: var(--accent-purple, #8b5cf6);
   border-color: var(--accent-purple, #8b5cf6);
-  color: #fff;
+  color: white;
 }
 
 @media (max-width: 640px) {
@@ -6348,7 +6710,7 @@ body.dark-mode .deco-symbol-input {
 .tattoo-letter-btn.active {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
-  color: #fff;
+  color: white;
 }
 
 /* Results — cards with display-size previews */
@@ -7430,7 +7792,7 @@ body.dark-mode .printable-card-art { color: var(--accent-blue); }
 .pt-az-strip a.is-current {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
-  color: #fff;
+  color: white;
 }
 
 /* Spoke: previous / next letter navigation */
@@ -7561,7 +7923,7 @@ body.dark-mode .pt-design-preview { background: #1c2030; }
 .pt-segment .pt-gen-preset.is-active {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
-  color: #fff;
+  color: white;
 }
 .pt-segment .pt-gen-preset.is-active small { opacity: 0.9; }
 
@@ -8607,7 +8969,7 @@ body.dark-mode .pt-banner-index { color: var(--text-secondary); }
 .kana-btn:hover { border-color: var(--accent-purple); transform: translateY(-1px); }
 
 .kana-btn-primary {
-  color: #fff;
+  color: white;
   background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
   border-color: transparent;
 }
@@ -8743,7 +9105,7 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   cursor: pointer;
 }
 .gr-tab.active {
-  color: #fff;
+  color: white;
   background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
   border-color: transparent;
 }
@@ -9157,7 +9519,7 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   border: 1px solid transparent;
   border-radius: 999px;
   background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-  color: #fff;
+  color: white;
   font-size: 0.8rem;
   font-weight: 700;
   cursor: pointer;
@@ -9241,7 +9603,7 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .kao-btn.is-copied { border-color: var(--accent-purple); }
 .kao-btn-primary {
   background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-  color: #fff;
+  color: white;
   border-color: transparent;
 }
 .kao-btn-primary:hover { color: #fff; }
@@ -9276,7 +9638,7 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .kao-mood:hover { border-color: var(--accent-purple); color: var(--text-primary); }
 .kao-mood.is-active {
   background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-  color: #fff;
+  color: white;
   border-color: transparent;
 }
 .kao-presets { gap: 0.55rem; }
@@ -9416,7 +9778,7 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .kao-dec-moods, .kao-dec-similar { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: center; }
 .kao-dec-mood {
   background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-  color: #fff;
+  color: white;
   border-radius: 999px;
   padding: 0.25rem 0.75rem;
   font-size: 0.82rem;
@@ -10094,7 +10456,7 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .lib-pill.active {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
-  color: #fff;
+  color: white;
 }
 .lib-pill .pill-count {
   opacity: 0.75;
