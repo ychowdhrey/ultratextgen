@@ -75,6 +75,23 @@
     }, 2000));
   }
 
+  // Both clipboard paths refused (locked-down browser, embedded webview):
+  // select the code so one keystroke finishes the job, and say which.
+  function selectForManualCopy() {
+    const range = document.createRange();
+    range.selectNodeContents(code);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    const key = /Mac|iPhone|iPad/.test(navigator.platform || "") ? "Cmd" : "Ctrl";
+    if (status) status.textContent = "Code selected. Press " + key + "+C to copy.";
+    const hint = document.getElementById("embedCopyHint");
+    if (hint) {
+      hint.textContent = "Code selected. Press " + key + "+C to copy.";
+      hint.hidden = false;
+    }
+  }
+
   buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
       const text = code.textContent;
@@ -83,9 +100,12 @@
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(done, () => {
           if (fallbackCopy(text)) done();
+          else selectForManualCopy();
         });
       } else if (fallbackCopy(text)) {
         done();
+      } else {
+        selectForManualCopy();
       }
     });
   });

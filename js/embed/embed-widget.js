@@ -110,15 +110,26 @@
     track("type", "");
   });
 
+  // One "option" row per distinct choice per page load: enough to read which
+  // presets/fonts/games get used, without a row for every symbol a visitor
+  // taps into a headline.
+  const seenOptions = new Set();
+  function trackOption(value) {
+    const key = clean(value);
+    if (seenOptions.has(key)) return;
+    seenOptions.add(key);
+    track("option", key);
+  }
+
   document.addEventListener("change", (e) => {
-    if (e.target.matches("select")) track("option", e.target.value);
+    if (e.target.matches("select")) trackOption(e.target.value);
   });
 
   document.addEventListener("click", (e) => {
     const btn = e.target.closest && e.target.closest("button");
     if (!btn || btn.closest(".embed-attribution")) return;
     if (btn.matches(".copy-btn, [id$='CopyBtn'], [class*='clear']")) return;
-    track("option", optionOf(btn));
+    trackOption(optionOf(btn));
   });
 
   new MutationObserver((records) => {

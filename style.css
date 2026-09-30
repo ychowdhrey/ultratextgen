@@ -3279,6 +3279,13 @@ body.dark-mode .embed-copy-btn.is-copied {
   text-align: center;
 }
 
+.embed-copy-hint {
+  margin: 8px 0 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+}
 /* The live widget, framed as a page on the visitor's own site. The iframe
    height is the embed code's own 700px, fixed, so nothing shifts on load. */
 .embed-preview-frame {
