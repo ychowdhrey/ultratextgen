@@ -76,6 +76,7 @@ const BEGIN =
   "Do not edit by hand — run `npm run build:static-footer`. -->";
 const END = "<!-- END static footer -->";
 
+const OPT_OUT_RE = /<body\b[^>]*\bdata-static-footer="none"/;
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const GENERATED_RE = new RegExp("\\n?[ \\t]*" + esc(BEGIN) + "[\\s\\S]*?" + esc(END), "g");
 const FOOTER_OPEN_RE = /<footer class="footer"[^>]*>/;
@@ -225,6 +226,7 @@ function main() {
 
   let changed = 0;
   let ok = 0;
+  let optedOut = 0;
   const errors = [];
   const drifted = [];
 
@@ -237,6 +239,23 @@ function main() {
       continue;
     }
 
+    // A page may decline the site footer outright with data-static-footer="none"
+    // (on <body>). Two kinds do: an iframe widget other sites embed, where 27
+    // site links would render inside someone else's page, and a
+    // widget-distribution landing page whose continuation is its own "more
+    // widgets" section plus a utility footer. Content-shaped, like
+    // wire-site-art.py's data-hero-art="none": the page carries its own
+    // decision, so no path list here goes stale. An opted-out page must not
+    // still carry a generated block (that would be the half-removed state).
+    if (OPT_OUT_RE.test(html)) {
+      if (GENERATED_RE.test(html)) {
+        GENERATED_RE.lastIndex = 0;
+        errors.push([rel, 'opts out with data-static-footer="none" but still carries a generated footer block']);
+      } else {
+        optedOut++;
+      }
+      continue;
+    }
     const result = bake(html, urlPathFor(rel));
     if (result.error) {
       errors.push([rel, result.error]);
@@ -253,6 +272,7 @@ function main() {
 
   console.log(`Static footer — ${pages.length} page(s)`);
   console.log(`  already correct: ${ok}`);
+  if (optedOut) console.log(`  opted out (data-static-footer="none"): ${optedOut}`);
   console.log(`  ${write ? "written" : "out of date"}: ${changed}`);
   if (errors.length) {
     console.log(`  errors: ${errors.length}`);
