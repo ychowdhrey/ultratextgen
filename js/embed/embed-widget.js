@@ -25,7 +25,7 @@
 
    A copy is detected when a button gains `copied` or `is-copied` — the class
    every widget's copy handler adds AFTER the clipboard write resolves — so a
-   row fires on success, never on intent (the same rule share_text follows).
+   row fires on success, never on intent (the rule the share events follow).
 
    Opt-in: <body data-embed-widget="<prefix>" data-embed-source="<slug>">. */
 (function () {
