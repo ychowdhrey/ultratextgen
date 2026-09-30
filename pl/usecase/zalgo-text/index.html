@@ -138,7 +138,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Czy mogę udostępnić konkretną konfigurację tekstu Zalgo jako link?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Tak. Adres URL strony aktualizuje się automatycznie podczas pisania, zawierając bieżący tekst, styl i intensywność jako parametry URL. Skopiuj URL z paska adresu przeglądarki, aby udostępnić swoją dokładną konfigurację."
+        "text": "Tak, i to dokładnie. Adres strony aktualizuje się podczas pisania i zawiera twój tekst, ustawienia oraz losowe ziarno, od którego zależą znaki. Skopiuj go z paska adresu, a kto go otworzy, zobaczy to samo zalgo, znak w znak. Naciśnij Wygeneruj ponownie, aby dostać nowe ziarno i nowy wygląd."
       }
     }
   ]
@@ -211,7 +211,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="app">
       <div class="zalgo-page-header">
         <h1 class="hero-headline">Generator Tekstu Zalgo — Twórz Przerażający Tekst Glitch</h1>
-        <p>Wpisz swój tekst poniżej. Wybierz składniki — typ znaków, pozycja, kształt, częstotliwość i amplituda — aby stworzyć dokładnie taki zniekształcony efekt, jaki chcesz. Kopiuj i wklejaj wszędzie.</p>
+        <p>Wpisz tekst, wybierz preset i skopiuj przeklęty tekst zalgo. Test „Zmieści się?” pokazuje, co zmieści się na Discordzie, X i Instagramie.</p>
       </div>
 
       <!-- Text Input -->
@@ -257,11 +257,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
     <section class="editorial-section">
       <h2>Jak Działa Ten Generator</h2>
-      <p><strong>Znaki</strong> kontroluje, jaki <em>typ</em> znaków łączących jest używany — paski (styl przekreślenia), litery (znaki liter w indeksie górnym), symbole (znaki otaczające) lub szum (diakrytyki akcentowe). "Wszystkie" używa pełnej puli Unicode.</p>
+      <p><strong>Znaki</strong> kontroluje, jaki <em>typ</em> znaków łączących jest używany — paski (styl przekreślenia), litery (znaki liter w indeksie górnym), symbole (kropki, kółka, haczyki i nakładki) lub szum (diakrytyki akcentowe). "Wszystkie" używa pełnej puli Unicode.</p>
       <p><strong>Pozycja</strong> kontroluje, <em>gdzie</em> znaki się przyczepiają — nad, pod, pośrodku lub w kombinacji. "Góra i dół" daje klasyczny wygląd Zalgo ze szpicami i korzeniami, ale bez przekreślenia.</p>
       <p><strong>Kształt</strong> kontroluje, jak gęstość znaków <em>zmienia się w tekście</em>. Jednolity stosuje równomierną gęstość wszędzie. Nachylenie w górę zaczyna się czysto i buduje chaos. Fala oscyluje. Piramida osiąga szczyt w środku.</p>
       <p><strong>Częstotliwość</strong> to prawdopodobieństwo, że dany znak otrzyma oznaczenia. Przy 50% około połowa znaków pozostaje czysta. Przy 100% każdy znak jest dotknięty.</p>
-      <p><strong>Amplituda</strong> to liczba znaków ułożonych na każdym dotkniętym znaku. Przy 1 to subtelny akcent. Przy 20 to maksymalny wizualny chaos.</p>
+      <p><strong>Amplituda</strong> to liczba znaków ułożonych na każdym dotkniętym znaku. Przy 1 to subtelny akcent. Przy 20 to mocny, klasyczny chaos. Preset <strong>Ekstremalny</strong> otwiera suwak do 300. Przy 300 i wszystkich pozycjach włączonych litera niesie około 272 znaków: dekoder nadal je usuwa, ale większość aplikacji przycina je na wysokości wiersza.</p>
 
       <h3 id="thai-cascade">Klasyczne zalgo a kaskada tajska</h3>
       <p>Wysoki słup, który w viralowych zrzutach ekranu przecina cały ekran, to nie zalgo podkręcone do maksimum ani preset Ekstremalny. To jeden <strong>tajski znak tonalny</strong> (domyślnie Mai Tho, U+0E49) powtórzony do 1000 razy na jednej literze nośnej, tajskiej spółgłosce ก. Klasyczne zalgo rozsypuje dziesiątki <em>różnych</em> znaków wokół <em>każdej</em> litery; kaskada układa <em>ten sam</em> znak na <em>jednej</em>.</p>
@@ -333,8 +333,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <!-- Unzalgo / Decoder -->
     <section class="editorial-section" id="unzalgo-guide">
       <h2>Unzalgo — Usuń Zalgo z Dowolnego Tekstu</h2>
-      <p>Większość generatorów zalgo nie potrafi odwrócić własnego wyniku. W teście 12 generatorów przeprowadzonym 29 września 2026 zalgo potrafiły usunąć 4, a ta strona jest wśród nich, dzięki wbudowanemu <strong>dekoderowi unzalgo</strong>. Wklej uszkodzony tekst w pole <a href="#unzalgo">Dekoduj Zalgo</a> powyżej: usunie każdy łączący znak Unicode i natychmiast zwróci oryginalny, czytelny tekst. Stos kaskady tajskiej (jeden powtórzony znak tonalny) też znika, a zwykły tajski tekst zostaje bez zmian.</p>
-      <p>Użyj go, aby przeczytać przeklętą wiadomość, którą ktoś ci wysłał, oczyścić tekst przed zacytowaniem, odzyskać coś, co zniekształciłeś za mocno — albo, jeśli moderujesz serwer Discord czy forum, sprawdzić, co naprawdę mówi zalgowa nazwa użytkownika lub wiadomość, zanim zareagujesz. Ponieważ zalgo to po prostu znaki bazowe plus znaki łączące, dekodowanie jest bezstratne: oryginał zawsze da się odzyskać. Pełne wyjaśnienie (i to, jak moderatorzy automatycznie filtrują zalgo) znajdziesz na stronie (po angielsku) <a href="/answers/how-to-remove-zalgo-text/">jak usunąć tekst zalgo</a>.</p>
+      <p>Większość generatorów zalgo nie potrafi odwrócić własnego wyniku. W teście 12 generatorów przeprowadzonym 29 września 2026 zalgo potrafiły usunąć 4, a ta strona jest wśród nich, dzięki wbudowanemu <strong>dekoderowi unzalgo</strong>. Wklej uszkodzony tekst w pole <a href="#unzalgo">Dekoduj Zalgo</a> powyżej: usunie zakresy znaków łączących, których używają generatory zalgo, i natychmiast zwróci czytelny tekst. Stos kaskady tajskiej (jeden powtórzony znak tonalny) też znika, a zwykły tajski tekst zostaje bez zmian.</p>
+      <p>Użyj go, aby przeczytać przeklętą wiadomość, którą ktoś ci wysłał, oczyścić tekst przed zacytowaniem, odzyskać coś, co zniekształciłeś za mocno — albo, jeśli moderujesz serwer Discord czy forum, sprawdzić, co naprawdę mówi zalgowa nazwa użytkownika lub wiadomość, zanim zareagujesz. Ponieważ zalgo to po prostu znaki bazowe plus znaki łączące, litery prawie zawsze wracają. Polskie litery wpisane zwykłym sposobem (ą jako jeden znak) zostają bez zmian. Akcent zapisany jako osobny znak łączący znika razem z zalgo, więc po dekodowaniu sprawdź nazwy takie jak Łódź. Pełne wyjaśnienie (i to, jak moderatorzy automatycznie filtrują zalgo) znajdziesz na stronie (po angielsku) <a href="/answers/how-to-remove-zalgo-text/">jak usunąć tekst zalgo</a>.</p>
     </section>
 
     <section class="editorial-section">
@@ -342,7 +342,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p><strong>Discord</strong> to naturalne środowisko zalgo: wiadomości renderują znaki łączące w całości i domyślnie nic ich nie blokuje (może to robić AutoMod serwera albo bot MEE6). <em>Nazwy wyświetlane i pseudonimy</em> przyjmują zalgo, ale mają limit 32 znaków, a każde oznaczenie się do niego liczy — do nazw używaj presetu <em>Subtelny</em>. <em>Nazwy użytkownika</em> na Discordzie (od 2023 roku) dopuszczają tylko małe litery, cyfry, podkreślenia i kropki, więc tam zalgo jest niemożliwe.</p>
       <p><strong>Roblox</strong> filtruje agresywnie: ciężkie zalgo zamienia się w symbole # albo kwadraciki, a znaki środkowe (nakładane) odpadają jako pierwsze. Jeśli chcesz spróbować, weź preset <em>Subtelny</em>, ustaw pozycję na <em>Góra i dół</em>, trzymaj krótki tekst i przetestuj go w grze — pełna analiza na stronie (po angielsku) <a href="/answers/does-zalgo-work-on-roblox/">czy zalgo działa na Robloxie</a>.</p>
       <p><strong>Instagram</strong> obsługuje zalgo w bio, podpisach i komentarzach — lżejsze style działają najlepiej, a bardzo wysokie stosy są przycinane przez wysokość linii. Nazwy użytkownika je odrzucają. <strong>TikTok</strong> zachowuje się tak samo: bio, podpisy i komentarze tak, nazwy użytkownika nie.</p>
-      <p><strong>Twitter / X</strong> renderuje zalgo w postach, bio i odpowiedziach, ale każdy znak łączący liczy się do limitu 280 znaków — ciężkie zalgo na jednym słowie potrafi zjeść pół wpisu. Pilnuj plakietek „Zmieści się?” pod wynikiem albo przepuść dowolny tekst przez <a href="/pl/licznik-slow-i-znakow/">licznik słów i znaków</a>, żeby sprawdzić go naraz względem 25 limitów platform.</p>
+      <p><strong>Twitter / X</strong> renderuje zalgo w postach, bio i odpowiedziach, ale każdy znak łączący liczy się do limitu 280 znaków — ciężkie zalgo na jednym słowie potrafi zjeść pół wpisu. Pilnuj plakietek „Zmieści się?” pod wynikiem albo przepuść dowolny tekst przez <a href="/pl/licznik-slow-i-znakow/">licznik słów i znaków</a>, żeby sprawdzić go naraz względem 39 limitów na 17 platformach.</p>
       <p><strong>Twitch</strong> ma nazwy użytkownika wyłącznie alfanumeryczne (żadnego zalgo), ale czat je renderuje — choć boty kanałów często wycinają mocno zniekształcony tekst albo dają za niego timeout. <strong>Minecraft</strong> pokazuje znaki łączące bez filtrowania na czacie, na tabliczkach i w MOTD serwera. <strong>Steam</strong> renderuje zalgo bez przycinania — właśnie dlatego wylewa się poza interfejs profilów i nazw grup; używaj oszczędnie. <strong>WhatsApp i Telegram</strong> wyświetlają wiadomości z zalgo poprawnie.</p>
       <p><strong>Słowo o kulturze używania:</strong> czytniki ekranu odczytują każdy znak łączący z osobna, zamieniając jedno słowo zalgo w długą i nieprzyjemną tiradę, a część społeczności (fanowskie wiki, fora) zakazuje zalgo w całości, bo rozwala układ strony. Zasada dla autorów horroru: jedna linia zalgo na jakieś 200 słów działa mocniej niż cały uszkodzony akapit. A jeśli ktoś się obawia, że przeklęty tekst uszkodzi mu urządzenie — nie uszkodzi: <a href="/answers/is-zalgo-text-safe/">zalgo to Unicode, nie kod</a> (po angielsku).</p>
     </section>
@@ -373,7 +373,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </details>
   <details class="faq-item">
     <summary class="faq-question">Czy mogę udostępnić konkretną konfigurację tekstu Zalgo jako link?</summary>
-    <p class="faq-answer">Tak. Adres URL strony aktualizuje się automatycznie podczas pisania, zawierając bieżący tekst, styl i intensywność jako parametry URL. Skopiuj URL z paska adresu przeglądarki, aby udostępnić swoją dokładną konfigurację.</p>
+    <p class="faq-answer">Tak, i to dokładnie. Adres strony aktualizuje się podczas pisania i zawiera twój tekst, ustawienia oraz losowe ziarno, od którego zależą znaki. Skopiuj go z paska adresu, a kto go otworzy, zobaczy to samo zalgo, znak w znak. Naciśnij Wygeneruj ponownie, aby dostać nowe ziarno i nowy wygląd.</p>
   </details>
 </section>
 

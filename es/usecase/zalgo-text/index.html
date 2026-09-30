@@ -138,7 +138,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "¿Puedo compartir una configuración específica de texto Zalgo como enlace?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. La URL de la página se actualiza automáticamente a medida que escribes, incluyendo el texto actual, el estilo y la intensidad como parámetros de URL. Copia la URL desde la barra de direcciones para compartir tu configuración exacta."
+        "text": "Sí, y es exacto. La dirección de la página se actualiza mientras escribes con tu texto, tus ajustes y la semilla aleatoria que decide las marcas. Cópiala desde la barra de direcciones y quien la abra verá el mismo zalgo, marca por marca. Pulsa Regenerar para tener una semilla nueva y un aspecto nuevo."
       }
     }
   ]
@@ -211,7 +211,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="app">
       <div class="zalgo-page-header">
         <h1 class="hero-headline">Generador de Texto Zalgo — Crea Texto Glitch y Espeluznante</h1>
-        <p>Escribe tu texto a continuación. Elige los ingredientes — tipo de carácter, posición, forma, frecuencia y amplitud — para crear exactamente el efecto distorsionado que deseas. Copia y pega en cualquier lugar.</p>
+        <p>Escribe tu texto, elige un ajuste rápido y copia el texto zalgo maldito. La comprobación “¿Cabrá?” te muestra qué cabe en Discord, X e Instagram.</p>
       </div>
 
       <!-- Text Input -->
@@ -257,11 +257,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
     <section class="editorial-section">
       <h2>Cómo Funciona Este Generador</h2>
-      <p><strong>Caracteres</strong> controla qué <em>tipo</em> de marcas combinadas se utilizan — barras (estilo tachado), letras (marcas de letras en superíndice), símbolos (marcas envolventes) o ruido (diacríticos de acento). "Todos" usa el conjunto Unicode completo.</p>
+      <p><strong>Caracteres</strong> controla qué <em>tipo</em> de marcas combinadas se utilizan — barras (estilo tachado), letras (marcas de letras en superíndice), símbolos (puntos, anillos, ganchos y superposiciones) o ruido (diacríticos de acento). "Todos" usa el conjunto Unicode completo.</p>
       <p><strong>Posición</strong> controla <em>dónde</em> se adjuntan las marcas — arriba, abajo, en el medio o una combinación. "Arriba y abajo" da el aspecto Zalgo clásico con agujas y raíces pero sin tachado.</p>
       <p><strong>Forma</strong> controla cómo varía la densidad de marcas <em>a lo largo de tu texto</em>. Uniforme aplica densidad uniforme. Pendiente ascendente empieza limpio y aumenta el caos. Onda oscila. Pirámide alcanza el pico en el centro.</p>
       <p><strong>Frecuencia</strong> es la probabilidad de que un carácter dado reciba marcas. Al 50%, aproximadamente la mitad de tus caracteres permanecen limpios. Al 100%, todos los caracteres se ven afectados.</p>
-      <p><strong>Amplitud</strong> es cuántas marcas se apilan en cada carácter afectado. En 1, es un acento sutil. En 20, es el caos visual máximo.</p>
+      <p><strong>Amplitud</strong> es cuántas marcas se apilan en cada carácter afectado. En 1, es un acento sutil. En 20, es un caos clásico intenso. El ajuste <strong>Extremo</strong> abre el control hasta 300. A 300, con todas las posiciones activas, una letra lleva unas 272 marcas: el decodificador todavía las quita, pero la mayoría de apps las recortan a la altura de la línea.</p>
 
       <h3 id="thai-cascade">Zalgo clásico frente a la cascada tailandesa</h3>
       <p>El pico alto que cruza la pantalla en las capturas virales no es zalgo al máximo, y tampoco es el ajuste Extremo. Es una sola <strong>marca tonal tailandesa</strong> (Mai Tho, U+0E49, por defecto) repetida hasta 1000 veces sobre una letra portadora, la consonante tailandesa ก. El zalgo clásico esparce decenas de marcas <em>distintas</em> alrededor de <em>cada</em> letra; la cascada apila la <em>misma</em> marca sobre <em>una</em>.</p>
@@ -333,8 +333,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <!-- Unzalgo / Decoder -->
     <section class="editorial-section" id="unzalgo-guide">
       <h2>Unzalgo — Elimina el Zalgo de Cualquier Texto</h2>
-      <p>La mayoría de generadores de zalgo no pueden revertir su propio resultado. En una prueba de 12 generadores el 29 de septiembre de 2026, 4 podían quitar el zalgo, y esta página está entre ellos, con un <strong>decodificador unzalgo</strong> integrado. Pega el texto corrupto en el cuadro <a href="#unzalgo">Decodificar Zalgo</a> de arriba: elimina todas las marcas Unicode combinadas y te devuelve al instante el texto original legible. Una pila de cascada tailandesa (una marca tonal repetida) también desaparece, y el texto tailandés normal se queda como está.</p>
-      <p>Úsalo para leer un mensaje maldito que te hayan enviado, limpiar un texto antes de citarlo, recuperar algo que corrompiste de más o — si moderas un servidor de Discord o un foro — para ver qué dice realmente un nombre o un mensaje en zalgo antes de actuar. Como el zalgo son solo caracteres base más marcas combinadas, la decodificación no pierde nada: el texto original siempre se puede recuperar. Para la explicación completa (y cómo los moderadores filtran el zalgo automáticamente), consulta la guía (en inglés) sobre <a href="/answers/how-to-remove-zalgo-text/">cómo eliminar el texto zalgo</a>.</p>
+      <p>La mayoría de generadores de zalgo no pueden revertir su propio resultado. En una prueba de 12 generadores el 29 de septiembre de 2026, 4 podían quitar el zalgo, y esta página está entre ellos, con un <strong>decodificador unzalgo</strong> integrado. Pega el texto corrupto en el cuadro <a href="#unzalgo">Decodificar Zalgo</a> de arriba: quita los rangos de marcas combinadas que usan los generadores de zalgo y te devuelve al instante el texto legible. Una pila de cascada tailandesa (una marca tonal repetida) también desaparece, y el texto tailandés normal se queda como está.</p>
+      <p>Úsalo para leer un mensaje maldito que te hayan enviado, limpiar un texto antes de citarlo, recuperar algo que corrompiste de más o — si moderas un servidor de Discord o un foro — para ver qué dice realmente un nombre o un mensaje en zalgo antes de actuar. Como el zalgo son solo caracteres base más marcas combinadas, las letras casi siempre vuelven. Los acentos escritos de la forma habitual (é como un solo carácter) se conservan. Un acento guardado como marca aparte se borra junto con el zalgo, así que revisa nombres como José después de decodificar. Para la explicación completa (y cómo los moderadores filtran el zalgo automáticamente), consulta la guía (en inglés) sobre <a href="/answers/how-to-remove-zalgo-text/">cómo eliminar el texto zalgo</a>.</p>
     </section>
 
     <section class="editorial-section">
@@ -342,7 +342,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p><strong>Discord</strong> es el terreno natural del zalgo: los mensajes renderizan las marcas combinadas por completo y ningún filtro las bloquea por defecto (el AutoMod del servidor o el bot MEE6 sí pueden). Los <em>nombres para mostrar</em> y los <em>apodos</em> aceptan zalgo, pero tienen un tope de 32 caracteres y cada marca cuenta — usa el ajuste Sutil para los nombres. Los <em>nombres de usuario</em> de Discord (desde 2023) solo admiten letras minúsculas, dígitos, guiones bajos y puntos, así que ahí el zalgo es imposible.</p>
       <p><strong>Roblox</strong> filtra de forma agresiva: el zalgo intenso se convierte en símbolos # o en cuadros, y las marcas centrales (superpuestas) son las primeras en romperse. Si quieres intentarlo, usa el ajuste Sutil, pon la Posición en Arriba y abajo, mantenlo corto y pruébalo dentro del juego — análisis completo en la guía (en inglés) sobre <a href="/answers/does-zalgo-work-on-roblox/">si el zalgo funciona en Roblox</a>.</p>
       <p><strong>Instagram</strong> admite zalgo en biografías, pies de foto y comentarios — los estilos más ligeros funcionan mejor, y las pilas muy altas quedan recortadas por la altura de línea. Los nombres de usuario lo rechazan. <strong>TikTok</strong> se comporta igual: biografías, descripciones y comentarios sí, nombres de usuario no.</p>
-      <p><strong>Twitter / X</strong> renderiza el zalgo en publicaciones, biografías y respuestas, pero cada marca combinada cuenta para el límite de 280 caracteres — el zalgo intenso en una sola palabra puede comerse medio tuit. Vigila las etiquetas "¿Cabrá?" bajo la salida, o pasa cualquier texto por el <a href="/es/contador-de-palabras-y-caracteres/">contador de caracteres</a> para comprobarlo contra 25 límites de plataforma a la vez.</p>
+      <p><strong>Twitter / X</strong> renderiza el zalgo en publicaciones, biografías y respuestas, pero cada marca combinada cuenta para el límite de 280 caracteres — el zalgo intenso en una sola palabra puede comerse medio tuit. Vigila las etiquetas "¿Cabrá?" bajo la salida, o pasa cualquier texto por el <a href="/es/contador-de-palabras-y-caracteres/">contador de caracteres</a> para comprobarlo contra 39 límites de 17 plataformas a la vez.</p>
       <p><strong>Twitch</strong> tiene nombres de usuario alfanuméricos simples (nada de zalgo), pero el chat sí lo renderiza — aunque los bots de canal a menudo lo eliminan o silencian temporalmente cuando el texto glitch es muy intenso. <strong>Minecraft</strong> renderiza las marcas combinadas sin filtro en el chat, los carteles y los MOTD de servidor. <strong>Steam</strong> renderiza el zalgo sin recortarlo, que es justo el motivo por el que se desborda en la interfaz de perfiles y nombres de grupo — úsalo con moderación. <strong>WhatsApp y Telegram</strong> muestran los mensajes con zalgo sin problema.</p>
       <p><strong>Una nota sobre la etiqueta:</strong> los lectores de pantalla anuncian cada marca combinada, convirtiendo una sola palabra en zalgo en una parrafada larga y desagradable, y algunas comunidades (wikis de fans, foros) prohíben el zalgo directamente porque rompe los diseños. Regla práctica para quien escribe terror: una línea en zalgo cada ~200 palabras impacta más que un párrafo entero corrupto. Y si alguien teme que el texto maldito pueda dañar su dispositivo — no puede: <a href="/answers/is-zalgo-text-safe/">el zalgo es Unicode, no código</a> (en inglés).</p>
     </section>
@@ -373,7 +373,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </details>
   <details class="faq-item">
     <summary class="faq-question">¿Puedo compartir una configuración específica de texto Zalgo como enlace?</summary>
-    <p class="faq-answer">Sí. La URL de la página se actualiza automáticamente a medida que escribes, incluyendo el texto actual, el estilo y la intensidad como parámetros de URL. Copia la URL desde la barra de direcciones para compartir tu configuración exacta.</p>
+    <p class="faq-answer">Sí, y es exacto. La dirección de la página se actualiza mientras escribes con tu texto, tus ajustes y la semilla aleatoria que decide las marcas. Cópiala desde la barra de direcciones y quien la abra verá el mismo zalgo, marca por marca. Pulsa Regenerar para tener una semilla nueva y un aspecto nuevo.</p>
   </details>
 </section>
 
