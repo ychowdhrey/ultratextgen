@@ -202,6 +202,17 @@ t('X: Latin, combining marks and Thai weigh 1 each (b + acute has no precomposed
 t('X: NFC first, so e + combining acute counts once', E.xWeightedLength('e\u0301'), 1);
 t('X: CJK weighs 2', E.xWeightedLength('つ'), 2);
 t('X: an emoji sequence weighs 2 however long', [E.xWeightedLength('👍'), E.xWeightedLength('👍🏽'), E.xWeightedLength('👨‍👩‍👧')], [2, 2, 2]);
+t('X: a flag and a keycap weigh 2', [E.xWeightedLength('🇹🇷'), E.xWeightedLength('1\uFE0F\u20E3')], [2, 2]);
+t('X: marks after an emoji are weighed one by one', E.xWeightedLength('👁' + '\u0300\u0301\u0302'), 5);
+{
+  const big = E.generateZalgo('The quick brown fox jumps over the lazy dog. '.repeat(12).slice(0, 500),
+    { amplitude: 300, frequency: 1, zones: { up: 300, mid: 300, down: 300 }, seed: 7 });
+  const t0 = Date.now();
+  const capped = E.xWeightedLength(big, 280);
+  t('X with a cap: a 360,000-mark output is known to be over 280 at once', capped > 280 && Date.now() - t0 < 50, true);
+  const small = 'Zalgo 👁' + E.generateZalgo('hi', { amplitude: 5, seed: 3 });
+  t('X with a cap: under the cap it gives the exact uncapped count', E.xWeightedLength(small, 280), E.xWeightedLength(small));
+}
 
 // --- fit to a limit ---
 {

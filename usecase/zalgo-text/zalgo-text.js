@@ -286,14 +286,14 @@
   // through the pool again (re-shuffled) so duplicates only appear after
   // every unique mark has been used once.
   function pickUnique(pool, count, rnd) {
-    if (!pool.length) return '';
-    let result = '';
+    if (!pool.length || count <= 0) return '';
+    const out = new Array(count);
     let deck = [];
     for (let m = 0; m < count; m++) {
       if (deck.length === 0) deck = shuffle(pool, rnd);
-      result += deck.pop();
+      out[m] = deck.pop();
     }
-    return result;
+    return out.join('');
   }
 
   // User-perceived characters. Marks go after a whole grapheme so a flag,
@@ -514,17 +514,38 @@
   // Cyrillic, combining marks, Thai…) and a few punctuation ranges weigh 1,
   // everything else weighs 2, and an emoji sequence weighs 2 however many
   // code points it has. Other platforms get the JavaScript length.
-  function xWeightedLength(s) {
-    const text = String(s == null ? '' : s).normalize('NFC');
+  // Marks typed after an emoji are not part of its sequence, so they are
+  // weighed one by one like any other code point.
+  const X_EMOJI = /\p{Extended_Pictographic}|\p{Regional_Indicator}|\u20E3/u;
+  const X_EMOJI_SEQ = /^[0-9#*]?(?:[\p{Extended_Pictographic}\p{Regional_Indicator}\p{Emoji_Modifier}\u200D\uFE0F\u20E3]|[\u{E0020}-\u{E007F}])+/u;
+  function xCodePointWeight(text) {
     let n = 0;
-    for (const g of graphemes(text)) {
-      if (/\p{Extended_Pictographic}/u.test(g)) { n += 2; continue; }
-      for (const ch of g) {
-        const cp = ch.codePointAt(0);
-        const light = cp <= 0x10FF || (cp >= 0x2000 && cp <= 0x200D) ||
-                      (cp >= 0x2010 && cp <= 0x201F) || (cp >= 0x2032 && cp <= 0x2037);
-        n += light ? 1 : 2;
-      }
+    for (const ch of text) {
+      const cp = ch.codePointAt(0);
+      const light = cp <= 0x10FF || (cp >= 0x2000 && cp <= 0x200D) ||
+                    (cp >= 0x2010 && cp <= 0x201F) || (cp >= 0x2032 && cp <= 0x2037);
+      n += light ? 1 : 2;
+    }
+    return n;
+  }
+  function xGraphemeWeight(g) {
+    if (!X_EMOJI.test(g)) return xCodePointWeight(g);
+    const seq = g.match(X_EMOJI_SEQ);
+    return seq ? 2 + xCodePointWeight(g.slice(seq[0].length)) : xCodePointWeight(g);
+  }
+  // With `cap`, counting stops as soon as the total passes it and the partial
+  // (already larger) total is returned. Normalising a stack of 360,000 marks
+  // takes half a second; knowing it is over 280 takes one letter.
+  function xWeightedLength(s, cap) {
+    const raw = String(s == null ? '' : s);
+    let n = 0;
+    if (cap == null) {
+      for (const g of graphemes(raw.normalize('NFC'))) n += xGraphemeWeight(g);
+      return n;
+    }
+    for (const g of graphemes(raw)) {
+      n += xGraphemeWeight(g.normalize('NFC'));
+      if (n > cap) return n;
     }
     return n;
   }
@@ -572,6 +593,13 @@
       .replace(DECODE_CASCADE_RUN, '');
   }
   /* @zalgo-engine:end */
+
+  // The embeddable widget (/usecase/zalgo-text/embed/) loads this file for
+  // the engine alone, so both surfaces run one engine instead of two copies.
+  // It has no control panel, so init() below leaves its page alone.
+  window.UTGZalgoEngine = {
+    generateZalgo, generateCascade, decodeZalgo, graphemes, makeRng, newSeed
+  };
 
   // ── Presets ─────────────────────────────────────────────────────
   // One-click starting points. Previews are pre-rendered (deterministic)
@@ -973,6 +1001,7 @@
   // Full strings are kept here so Copy always copies the whole text
   // even when the visible row is ellipsis-truncated.
   const variantOutputs = {};
+  let variantsKey = '';
   function updateVariants() {
     const strip = $('#variantStrip');
     if (!strip) return;
@@ -985,6 +1014,11 @@
     }
 
     strip.hidden = false;
+    // The variants depend only on the text and the seed, so a slider move
+    // (which changes neither) does not pay for them again.
+    const key = state.seed + '\u0000' + text;
+    if (key === variantsKey) return;
+    variantsKey = key;
     VARIANTS.forEach((v, i) => {
       variantOutputs[v.id] = generateZalgo(text, Object.assign({ seed: (state.seed + i + 1) >>> 0 }, v.opts));
       const el = strip.querySelector(`[data-variant-text="${v.id}"]`);
@@ -1009,13 +1043,13 @@
     wrap.hidden = false;
     let anyFail = false;
     badges.innerHTML = PLATFORM_LIMITS.map(p => {
-      const len = platformLength(p, state.output);
+      const len = platformLength(p, state.output, p.limit);
       const fits = len <= p.limit;
       if (!fits) anyFail = true;
       // A red badge is a button: it shrinks the effect until the output fits.
       return fits
         ? `<span class="fit-badge fit-yes" title="${len} / ${p.limit}">✓ ${i18n[p.labelKey]}</span>`
-        : `<button type="button" class="fit-badge fit-no" data-fit="${p.id}" title="${len} / ${p.limit}">✕ ${i18n[p.labelKey]}</button>`;
+        : `<button type="button" class="fit-badge fit-no" data-fit="${p.id}" title="${p.id === 'x-post' ? '&gt; ' + p.limit : len + ' / ' + p.limit}">✕ ${i18n[p.labelKey]}</button>`;
     }).join('');
     const status = $('#fitStatus');
     if (status && !status.dataset.sticky) status.textContent = anyFail ? i18n.fitAction : '';
@@ -1024,8 +1058,8 @@
 
   // X counts with its own weights (see xWeightedLength); the others count
   // the JavaScript string length, which is what their text boxes enforce.
-  function platformLength(p, s) {
-    return p.id === 'x-post' ? xWeightedLength(s) : s.length;
+  function platformLength(p, s, cap) {
+    return p.id === 'x-post' ? xWeightedLength(s, cap) : s.length;
   }
 
   // Shrink the current effect to the largest setting that fits the limit:
@@ -1036,7 +1070,7 @@
     const input = $('#mainInput');
     const text = input ? input.value.trim() : '';
     if (!p || !text) return;
-    const measure = s => platformLength(p, s);
+    const measure = s => platformLength(p, s, p.limit);
     const label = i18n[p.labelKey];
     let ok = true;
     const saved = { amplitude: state.amplitude, frequency: state.frequency, zones: Object.assign({}, state.zones), depth: state.cascade.depth };
@@ -1143,6 +1177,17 @@
       zones:     state.zonesOn ? state.zones : null,
       seed:      state.seed
     }, over || {});
+  }
+
+  // Sliders fire faster than a very long output can be rebuilt; coalesce
+  // them so each frame renders the latest value once instead of queueing.
+  let generateFrame = 0;
+  function scheduleGenerate() {
+    if (generateFrame) return;
+    generateFrame = requestAnimationFrame(() => {
+      generateFrame = 0;
+      runGenerate();
+    });
   }
 
   function updateOutput() {
@@ -1328,7 +1373,7 @@
       freqSlider.addEventListener('input', () => {
         state.frequency = parseFloat(freqSlider.value);
         freqValue.textContent = Math.round(state.frequency * 100) + '%';
-        runGenerate();
+        scheduleGenerate();
       });
     }
 
@@ -1339,7 +1384,7 @@
       ampSlider.addEventListener('input', () => {
         state.amplitude = clampAmplitude(ampSlider.value, state.extreme);
         ampValue.textContent = state.amplitude;
-        runGenerate();
+        scheduleGenerate();
       });
     }
 
@@ -1359,7 +1404,7 @@
         const v = $('#zone-' + s.dataset.zone + '-value');
         if (v) v.textContent = state.zones[s.dataset.zone];
         clearActivePreset();
-        runGenerate();
+        scheduleGenerate();
       });
     });
 
@@ -1384,7 +1429,7 @@
       depthSlider.addEventListener('input', () => {
         state.cascade.depth = clampDepth(depthSlider.value);
         if (depthValue) depthValue.textContent = state.cascade.depth;
-        runGenerate();
+        scheduleGenerate();
       });
     }
 
@@ -1795,6 +1840,7 @@
 
   function init() {
     const panel = $('#zalgoControlPanel');
+    if (!panel) return;
     cascadeAvailable = !!(panel && panel.hasAttribute('data-cascade'));
     extremeAvailable = !!(panel && panel.hasAttribute('data-extreme'));
     loadFromURL();

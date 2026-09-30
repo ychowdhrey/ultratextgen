@@ -554,571 +554,571 @@ symboldb,SymbolDB,watching,task:tiny_stack (custom insanity 2 top),2,2.0,0.0,2.0
 symboldb,SymbolDB,watching,task:roots_downward (custom insanity 30 bottom),2,15.0,0.0,15.0,15.0,0.096,0.044,0.86,29,384,5,15,1.0
 symboldb,SymbolDB,watching,task:light (custom insanity 2 top mid bottom),2,4.0,0.0,4.0,4.0,0.557,0.01,0.432,51,120,3,4,1.0
 symboldb,SymbolDB,watching,task:mostly_readable (custom insanity 1 top bottom),2,1.0,0.0,1.0,1.0,1.0,0.0,0.0,18,48,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,default,20,1.52,0.25,1.2,2.0,1.0,0.0,0.0,9,12.6,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Below Light,5,1.52,0.1,1.4,1.6,0.0,0.0,1.0,8,12.6,0,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Electric,5,1.52,0.2,1.2,1.8,1.0,0.0,0.0,9,12.6,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Flicker,5,0.6,0.0,0.6,0.6,1.0,0.0,0.0,3,8,1,1,0.6
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Frozen,5,1.6,0.13,1.4,1.8,0.1,0.125,0.725,9,13,1,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Mid Light,5,1.4,0.13,1.2,1.6,0.371,0.229,0.371,7,12,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Mist,5,1.0,0.0,1.0,1.0,0.0,0.0,1.0,5,10,0,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Soft Scratch,5,1.0,0.0,1.0,1.0,0.28,0.24,0.44,5,10,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Static Light,5,1.0,0.0,1.0,1.0,0.32,0.04,0.6,5,10,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Underwater,5,2.2,0.25,1.8,2.4,0.0,0.0,1.0,11,16,0,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Weathered,5,1.32,0.1,1.2,1.4,0.697,0.121,0.182,7,11.6,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Whisper,5,1.0,0.0,1.0,1.0,1.0,0.0,0.0,5,10,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Cascade Down,5,3.0,0.0,3.0,3.0,0.493,0.04,0.467,15,20,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Center Focus,5,2.68,0.45,2.2,3.4,0.567,0.06,0.358,15,18.4,7,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Data Corrupt,5,2.48,0.48,1.8,3.0,0.565,0.097,0.29,12,17.4,3,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Decay,5,4.0,0.7,2.8,4.6,0.43,0.12,0.4,21,25,4,12,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Edges Only,5,4.44,1.44,3.0,7.0,0.423,0.036,0.505,27,27.2,5,10,0.8
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Fragmented,5,1.2,0.54,0.2,1.8,0.467,0.067,0.467,9,11,3,3,0.52
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Glitch Scan,5,2.84,0.9,1.4,3.8,0.535,0.07,0.366,17,19.2,6,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Haunted,5,2.92,0.2,2.6,3.2,0.548,0.0,0.452,15,19.6,4,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Heartbeat,5,2.12,0.47,1.6,2.8,0.623,0.075,0.283,13,15.6,6,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Interference,5,2.08,0.48,1.4,2.8,0.5,0.0,0.5,14,15.4,2,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Matrix Rain,5,3.32,0.41,2.8,4.0,0.0,0.0,1.0,14,21.6,0,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Medium Static,5,2.4,0.52,2.0,3.4,0.5,0.05,0.417,17,17,4,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Mid Heavy,5,3.48,0.45,2.6,3.8,0.391,0.207,0.299,15,22.4,3,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Neon Flicker,5,1.56,0.2,1.2,1.8,0.615,0.051,0.308,9,12.8,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Progressive,5,3.96,0.87,2.6,5.0,0.434,0.081,0.465,24,24.8,7,12,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Pulse,5,2.52,0.3,2.2,3.0,0.508,0.063,0.381,14,17.6,3,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Radioactive,5,2.52,0.5,1.6,3.0,0.46,0.111,0.429,15,17.6,3,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Redacted,5,3.52,0.57,2.8,4.4,0.307,0.261,0.375,16,22.6,3,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Scratched,5,2.24,0.46,1.6,2.8,0.375,0.25,0.304,12,16.2,2,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Shimmer,5,1.8,0.22,1.4,2.0,1.0,0.0,0.0,10,14,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Signal Loss,5,1.8,0.55,1.2,2.8,0.4,0.089,0.489,14,14,3,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Spectral,5,2.64,0.5,1.8,3.2,0.864,0.106,0.015,14,18.2,4,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Tremor,5,2.16,0.41,1.4,2.6,0.0,0.0,1.0,12,15.8,0,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:TV Static,5,1.64,0.56,1.0,2.4,1.0,0.0,0.0,9,13.2,5,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Wave,5,2.92,0.41,2.2,3.4,0.521,0.041,0.397,16,19.6,5,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Above Heavy,5,3.92,1.45,2.2,6.0,1.0,0.0,0.0,21,24.6,8,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Below Heavy,5,3.2,0.69,2.4,4.2,0.0,0.0,1.0,16,21,0,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Bleeding,5,3.52,0.9,2.4,4.6,0.091,0.034,0.852,19,22.6,2,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Burning,5,5.24,1.15,3.6,6.6,1.0,0.0,0.0,25,31.2,10,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Corrupted,5,4.36,1.49,1.8,6.4,0.734,0.138,0.073,23,26.8,6,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Cursed,5,3.8,0.63,2.8,4.6,0.505,0.053,0.389,20,24,6,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Demon Text,5,5.8,1.29,3.6,7.2,0.448,0.062,0.462,29,34,7,12,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Heavy Mixed,5,4.48,1.15,2.4,5.6,0.473,0.071,0.402,26,27.4,5,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Insane,5,7.04,1.56,4.4,9.0,0.517,0.091,0.364,40,40.2,8,15,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Maximum,5,12.8,1.99,9.2,15.0,0.475,0.069,0.428,55,69,14,24,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Melting,5,6.0,0.42,5.4,6.4,0.0,0.0,1.0,24,35,0,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Overload,5,5.76,1.26,3.6,7.2,0.507,0.062,0.382,30,33.8,7,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Poltergeist,5,3.88,0.71,2.6,4.4,0.454,0.124,0.412,21,24.4,5,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Possessed,5,11.12,2.84,7.2,15.0,0.486,0.011,0.489,54,60.6,11,17,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Random Scatter,5,3.0,1.01,1.8,4.8,0.56,0.027,0.387,23,20,5,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Shattered,5,7.76,1.51,5.4,9.8,0.495,0.036,0.433,38,43.8,11,20,0.64
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Submerged,5,4.04,0.27,3.6,4.4,0.238,0.129,0.574,19,25.2,3,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,hello,preset:Void,5,11.88,1.45,10.2,14.4,0.192,0.061,0.717,51,64.4,6,19,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,default,3,1.48,0.13,1.286,1.571,1.0,0.0,0.0,10,18.3,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Below Light,1,1.29,0.0,1.286,1.286,0.0,0.0,1.0,7,17,0,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Electric,1,1.29,0.0,1.286,1.286,1.0,0.0,0.0,7,17,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Flicker,1,0.57,0.0,0.571,0.571,1.0,0.0,0.0,4,12,1,1,0.571
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Frozen,1,1.43,0.0,1.429,1.429,0.1,0.2,0.7,9,18,1,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Mid Light,1,1.43,0.0,1.429,1.429,0.5,0.3,0.1,8,18,1,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Mist,1,1.0,0.0,1.0,1.0,0.0,0.0,1.0,6,15,0,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Soft Scratch,1,1.0,0.0,1.0,1.0,0.286,0.286,0.286,7,15,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Static Light,1,1.0,0.0,1.0,1.0,0.286,0.0,0.714,7,15,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Underwater,1,2.0,0.0,2.0,2.0,0.0,0.0,1.0,13,22,0,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Weathered,1,1.43,0.0,1.429,1.429,0.7,0.0,0.1,8,18,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Whisper,1,1.0,0.0,1.0,1.0,1.0,0.0,0.0,7,15,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Cascade Down,1,3.0,0.0,3.0,3.0,0.286,0.048,0.619,17,29,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Center Focus,1,2.14,0.0,2.143,2.143,0.467,0.133,0.333,14,23,2,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Data Corrupt,1,2.57,0.0,2.571,2.571,0.333,0.333,0.111,11,26,3,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Decay,1,2.86,0.0,2.857,2.857,0.55,0.0,0.45,18,28,5,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Edges Only,1,4.43,0.0,4.429,4.429,0.581,0.065,0.355,28,39,6,10,0.571
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Fragmented,1,1.14,0.0,1.143,1.143,0.625,0.0,0.375,7,16,2,3,0.571
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Glitch Scan,1,2.86,0.0,2.857,2.857,0.45,0.15,0.35,19,28,6,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Haunted,1,3.29,0.0,3.286,3.286,0.565,0.0,0.435,19,31,3,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Heartbeat,1,2.14,0.0,2.143,2.143,0.4,0.0,0.533,15,23,4,9,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Interference,1,2.14,0.0,2.143,2.143,0.4,0.0,0.6,14,23,2,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Matrix Rain,1,3.57,0.0,3.571,3.571,0.0,0.0,1.0,19,33,0,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Medium Static,1,2.71,0.0,2.714,2.714,0.211,0.0,0.737,17,27,2,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Mid Heavy,1,3.29,0.0,3.286,3.286,0.435,0.261,0.217,17,31,3,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Neon Flicker,1,1.0,0.0,1.0,1.0,0.571,0.0,0.429,7,15,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Progressive,1,4.14,0.0,4.143,4.143,0.448,0.138,0.345,28,37,3,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Pulse,1,3.0,0.0,3.0,3.0,0.429,0.0,0.524,21,29,3,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Radioactive,1,2.71,0.0,2.714,2.714,0.684,0.053,0.263,19,27,3,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Redacted,1,3.71,0.0,3.714,3.714,0.385,0.346,0.192,17,34,5,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Scratched,1,2.43,0.0,2.429,2.429,0.294,0.0,0.706,11,25,2,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Shimmer,1,2.14,0.0,2.143,2.143,1.0,0.0,0.0,13,23,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Signal Loss,1,2.71,0.0,2.714,2.714,0.368,0.158,0.474,16,27,2,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Spectral,1,2.29,0.0,2.286,2.286,0.812,0.062,0.125,13,24,3,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Tremor,1,2.0,0.0,2.0,2.0,0.0,0.0,1.0,14,22,0,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:TV Static,1,2.43,0.0,2.429,2.429,1.0,0.0,0.0,16,25,4,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Wave,1,3.14,0.0,3.143,3.143,0.5,0.0,0.455,20,30,4,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Above Heavy,1,4.86,0.0,4.857,4.857,1.0,0.0,0.0,22,42,8,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Below Heavy,1,4.71,0.0,4.714,4.714,0.0,0.0,1.0,27,41,0,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Bleeding,1,3.71,0.0,3.714,3.714,0.192,0.0,0.769,21,34,2,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Burning,1,4.71,0.0,4.714,4.714,1.0,0.0,0.0,24,41,8,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Corrupted,1,5.0,0.0,5.0,5.0,0.829,0.086,0.057,26,43,7,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Cursed,1,5.14,0.0,5.143,5.143,0.417,0.028,0.5,31,44,5,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Demon Text,1,8.71,0.0,8.714,8.714,0.361,0.066,0.557,45,69,5,12,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Heavy Mixed,1,4.29,0.0,4.286,4.286,0.5,0.133,0.333,25,38,5,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Insane,1,6.57,0.0,6.571,6.571,0.5,0.087,0.413,36,54,4,11,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Maximum,1,16.14,0.0,16.143,16.143,0.487,0.062,0.381,67,121,11,23,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Melting,1,4.86,0.0,4.857,4.857,0.0,0.0,1.0,22,42,0,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Overload,1,6.43,0.0,6.429,6.429,0.622,0.067,0.289,36,53,6,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Poltergeist,1,2.71,0.0,2.714,2.714,0.316,0.053,0.632,18,27,3,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Possessed,1,9.71,0.0,9.714,9.714,0.471,0.029,0.485,54,76,10,16,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Random Scatter,1,2.71,0.0,2.714,2.714,0.474,0.0,0.526,17,27,4,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Shattered,1,8.57,0.0,8.571,8.571,0.533,0.067,0.333,46,68,9,19,0.857
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Submerged,1,4.29,0.0,4.286,4.286,0.233,0.067,0.633,25,38,2,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,he_comes,preset:Void,1,10.86,0.0,10.857,10.857,0.211,0.079,0.684,52,84,6,18,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,default,3,1.49,0.11,1.333,1.571,1.0,0.0,0.0,24,55.3,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Below Light,1,1.52,0.0,1.524,1.524,0.0,0.0,1.0,22,56,0,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Electric,1,1.62,0.0,1.619,1.619,1.0,0.0,0.0,25,58,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Flicker,1,0.52,0.0,0.524,0.524,1.0,0.0,0.0,11,35,1,1,0.524
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Frozen,1,1.67,0.0,1.667,1.667,0.314,0.029,0.629,27,59,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Mid Light,1,1.62,0.0,1.619,1.619,0.382,0.265,0.235,19,58,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Mist,1,1.0,0.0,1.0,1.0,0.0,0.0,1.0,20,45,0,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Soft Scratch,1,1.0,0.0,1.0,1.0,0.286,0.143,0.571,15,45,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Static Light,1,1.0,0.0,1.0,1.0,0.524,0.048,0.333,21,45,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Underwater,1,2.14,0.0,2.143,2.143,0.0,0.0,1.0,29,69,0,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Weathered,1,1.52,0.0,1.524,1.524,0.594,0.125,0.188,25,56,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Whisper,1,1.0,0.0,1.0,1.0,1.0,0.0,0.0,18,45,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Cascade Down,4,3.0,0.0,3.0,3.0,0.452,0.075,0.444,51,87,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Center Focus,1,3.29,0.0,3.286,3.286,0.391,0.13,0.406,49,93,5,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Data Corrupt,1,2.62,0.0,2.619,2.619,0.618,0.091,0.218,29,79,4,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Decay,1,3.43,0.0,3.429,3.429,0.444,0.069,0.444,50,96,6,9,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Edges Only,1,1.48,0.0,1.476,1.476,0.29,0.194,0.484,27,55,4,10,0.19
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Fragmented,1,0.95,0.0,0.952,0.952,0.55,0.0,0.45,17,44,3,3,0.476
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Glitch Scan,1,2.81,0.0,2.81,2.81,0.593,0.017,0.373,42,83,5,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Haunted,1,3.19,0.0,3.19,3.19,0.463,0.0,0.537,46,91,3,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Heartbeat,1,2.24,0.0,2.238,2.238,0.447,0.085,0.426,37,71,4,9,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Interference,1,2.14,0.0,2.143,2.143,0.644,0.0,0.356,32,69,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Matrix Rain,1,2.81,0.0,2.81,2.81,0.0,0.0,1.0,32,83,0,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Medium Static,1,2.19,0.0,2.19,2.19,0.5,0.109,0.391,36,70,3,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Mid Heavy,1,3.86,0.0,3.857,3.857,0.457,0.16,0.296,23,105,5,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Neon Flicker,1,1.62,0.0,1.619,1.619,0.441,0.029,0.5,30,58,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Progressive,1,3.43,0.0,3.429,3.429,0.417,0.056,0.486,55,96,5,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Pulse,1,2.1,0.0,2.095,2.095,0.409,0.091,0.455,34,68,2,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Radioactive,1,2.43,0.0,2.429,2.429,0.569,0.098,0.294,41,75,3,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Redacted,1,3.57,0.0,3.571,3.571,0.373,0.227,0.333,22,99,3,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Scratched,1,2.29,0.0,2.286,2.286,0.333,0.271,0.333,20,72,2,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Shimmer,1,1.91,0.0,1.905,1.905,1.0,0.0,0.0,27,64,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Signal Loss,1,2.33,0.0,2.333,2.333,0.408,0.0,0.571,36,73,2,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Spectral,1,2.43,0.0,2.429,2.429,0.824,0.098,0.078,34,75,3,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Tremor,1,1.95,0.0,1.952,1.952,0.0,0.0,1.0,29,65,0,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:TV Static,1,1.95,0.0,1.952,1.952,1.0,0.0,0.0,29,65,5,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Wave,1,3.24,0.0,3.238,3.238,0.397,0.074,0.515,49,92,4,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Above Heavy,1,4.91,0.0,4.905,4.905,1.0,0.0,0.0,39,127,8,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Below Heavy,1,4.43,0.0,4.429,4.429,0.0,0.0,1.0,36,117,0,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Bleeding,1,3.95,0.0,3.952,3.952,0.084,0.072,0.807,45,107,2,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Burning,1,5.29,0.0,5.286,5.286,1.0,0.0,0.0,44,135,9,9,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Corrupted,1,3.57,0.0,3.571,3.571,0.707,0.107,0.147,46,99,6,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Cursed,1,5.09,0.0,5.095,5.095,0.421,0.103,0.458,64,131,6,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Demon Text,1,5.67,0.0,5.667,5.667,0.454,0.084,0.445,72,143,6,12,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Heavy Mixed,1,3.9,0.0,3.905,3.905,0.451,0.049,0.5,51,106,6,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Insane,1,8.48,0.0,8.476,8.476,0.427,0.056,0.5,80,202,8,15,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Maximum,1,13.24,0.0,13.238,13.238,0.464,0.05,0.478,101,302,10,24,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Melting,1,5.29,0.0,5.286,5.286,0.0,0.0,1.0,37,135,0,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Overload,1,5.09,0.0,5.095,5.095,0.402,0.065,0.477,69,131,5,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Poltergeist,1,3.33,0.0,3.333,3.333,0.429,0.043,0.443,49,94,4,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Possessed,1,6.09,0.0,6.095,6.095,0.477,0.0,0.516,73,152,8,16,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Random Scatter,1,2.62,0.0,2.619,2.619,0.473,0.109,0.4,43,79,6,9,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Shattered,1,7.05,0.0,7.048,7.048,0.419,0.088,0.466,82,172,10,18,0.619
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Submerged,1,3.62,0.0,3.619,3.619,0.171,0.118,0.632,41,100,3,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,preset:Void,1,9.9,0.0,9.905,9.905,0.192,0.053,0.75,77,232,5,20,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,default,3,1.67,0.27,1.333,2.0,1.0,0.0,0.0,10,16,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Below Light,1,1.67,0.0,1.667,1.667,0.0,0.0,1.0,10,16,0,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Electric,1,1.67,0.0,1.667,1.667,1.0,0.0,0.0,10,16,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Flicker,1,0.5,0.0,0.5,0.5,1.0,0.0,0.0,3,9,1,1,0.5
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Frozen,1,1.33,0.0,1.333,1.333,0.125,0.25,0.625,8,14,1,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Mid Light,1,1.17,0.0,1.167,1.167,0.571,0.286,0.143,7,13,1,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Mist,1,1.0,0.0,1.0,1.0,0.0,0.0,1.0,5,12,0,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Soft Scratch,1,1.0,0.0,1.0,1.0,0.333,0.0,0.5,6,12,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Static Light,1,1.0,0.0,1.0,1.0,0.5,0.333,0.167,6,12,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Underwater,1,1.5,0.0,1.5,1.5,0.0,0.0,1.0,9,15,0,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Weathered,1,1.33,0.0,1.333,1.333,0.625,0.25,0.125,8,14,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Whisper,1,1.0,0.0,1.0,1.0,1.0,0.0,0.0,6,12,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Cascade Down,1,3.0,0.0,3.0,3.0,0.389,0.111,0.5,16,24,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Center Focus,1,2.33,0.0,2.333,2.333,0.5,0.071,0.429,14,20,4,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Data Corrupt,1,1.67,0.0,1.667,1.667,0.4,0.4,0.1,9,16,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Decay,1,3.5,0.0,3.5,3.5,0.667,0.095,0.19,18,27,10,12,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Edges Only,1,3.5,0.0,3.5,3.5,0.524,0.095,0.381,21,27,5,9,0.667
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Fragmented,1,1.83,0.0,1.833,1.833,0.455,0.0,0.273,10,17,2,3,0.833
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Glitch Scan,1,2.67,0.0,2.667,2.667,0.375,0.125,0.5,16,22,3,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Haunted,1,2.0,0.0,2.0,2.0,0.417,0.0,0.583,11,18,2,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Heartbeat,1,1.67,0.0,1.667,1.667,0.5,0.0,0.5,9,16,1,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Interference,1,1.5,0.0,1.5,1.5,0.667,0.0,0.333,9,15,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Matrix Rain,1,2.83,0.0,2.833,2.833,0.0,0.0,1.0,14,23,0,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Medium Static,1,2.83,0.0,2.833,2.833,0.353,0.118,0.529,15,23,2,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Mid Heavy,1,1.83,0.0,1.833,1.833,0.455,0.273,0.273,8,17,3,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Neon Flicker,1,1.5,0.0,1.5,1.5,0.111,0.222,0.667,8,15,1,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Progressive,1,4.0,0.0,4.0,4.0,0.583,0.083,0.292,21,30,7,12,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Pulse,1,1.33,0.0,1.333,1.333,0.375,0.125,0.5,8,14,1,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Radioactive,1,1.83,0.0,1.833,1.833,0.364,0.0,0.636,9,17,2,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Redacted,1,3.17,0.0,3.167,3.167,0.579,0.158,0.211,12,25,3,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Scratched,1,2.5,0.0,2.5,2.5,0.533,0.133,0.2,12,21,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Shimmer,1,2.0,0.0,2.0,2.0,1.0,0.0,0.0,11,18,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Signal Loss,1,2.17,0.0,2.167,2.167,0.538,0.0,0.462,13,19,2,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Spectral,1,2.0,0.0,2.0,2.0,0.75,0.083,0.167,11,18,2,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Tremor,1,2.17,0.0,2.167,2.167,0.0,0.0,1.0,12,19,0,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:TV Static,1,2.5,0.0,2.5,2.5,1.0,0.0,0.0,13,21,5,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Wave,1,2.17,0.0,2.167,2.167,0.462,0.077,0.462,13,19,3,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Above Heavy,1,5.33,0.0,5.333,5.333,1.0,0.0,0.0,22,38,8,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Below Heavy,1,5.17,0.0,5.167,5.167,0.0,0.0,1.0,22,37,0,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Bleeding,1,4.33,0.0,4.333,4.333,0.077,0.0,0.923,20,32,1,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Burning,1,4.67,0.0,4.667,4.667,1.0,0.0,0.0,19,34,7,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Corrupted,1,4.5,0.0,4.5,4.5,0.667,0.259,0.074,21,33,5,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Cursed,1,3.33,0.0,3.333,3.333,0.6,0.1,0.3,19,26,4,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Demon Text,1,3.67,0.0,3.667,3.667,0.5,0.045,0.318,17,28,3,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Heavy Mixed,1,3.83,0.0,3.833,3.833,0.522,0.087,0.348,23,29,3,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Insane,1,6.83,0.0,6.833,6.833,0.439,0.098,0.439,32,47,6,11,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Maximum,1,13.83,0.0,13.833,13.833,0.446,0.084,0.458,57,89,12,20,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Melting,1,5.83,0.0,5.833,5.833,0.0,0.0,1.0,24,41,0,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Overload,1,5.83,0.0,5.833,5.833,0.286,0.057,0.629,29,41,3,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Poltergeist,1,2.83,0.0,2.833,2.833,0.353,0.0,0.588,15,23,2,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Possessed,1,8.67,0.0,8.667,8.667,0.481,0.019,0.481,38,58,11,18,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Random Scatter,1,4.33,0.0,4.333,4.333,0.423,0.077,0.5,25,32,6,9,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Shattered,1,3.17,0.0,3.167,3.167,0.316,0.105,0.579,19,25,2,7,0.667
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Submerged,1,3.83,0.0,3.833,3.833,0.174,0.043,0.696,20,29,3,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,digits,preset:Void,1,13.5,0.0,13.5,13.5,0.247,0.012,0.741,53,87,5,20,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,default,3,1.43,0.05,1.4,1.5,1.0,0.0,0.0,12,26.3,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Below Light,1,1.4,0.0,1.4,1.4,0.0,0.0,1.0,12,26,0,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Electric,1,1.6,0.0,1.6,1.6,1.0,0.0,0.0,14,28,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Flicker,1,0.5,0.0,0.5,0.5,1.0,0.0,0.0,4,17,1,1,0.5
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Frozen,1,1.5,0.0,1.5,1.5,0.0,0.133,0.8,14,27,0,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Mid Light,1,1.7,0.0,1.7,1.7,0.471,0.176,0.235,15,29,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Mist,1,1.0,0.0,1.0,1.0,0.0,0.0,1.0,9,22,0,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Soft Scratch,1,1.0,0.0,1.0,1.0,0.4,0.2,0.3,8,22,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Static Light,1,1.0,0.0,1.0,1.0,0.6,0.1,0.3,10,22,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Underwater,1,1.8,0.0,1.8,1.8,0.0,0.0,1.0,14,30,0,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Weathered,1,1.4,0.0,1.4,1.4,0.571,0.214,0.143,12,26,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Whisper,1,1.0,0.0,1.0,1.0,1.0,0.0,0.0,10,22,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Cascade Down,1,3.0,0.0,3.0,3.0,0.433,0.033,0.5,29,42,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Center Focus,1,3.5,0.0,3.5,3.5,0.314,0.086,0.6,29,47,2,9,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Data Corrupt,1,2.3,0.0,2.3,2.3,0.522,0.13,0.13,17,35,2,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Decay,1,5.2,0.0,5.2,5.2,0.462,0.077,0.423,39,64,6,11,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Edges Only,1,2.4,0.0,2.4,2.4,0.417,0.125,0.417,21,36,4,10,0.4
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Fragmented,1,1.7,0.0,1.7,1.7,0.647,0.118,0.235,17,29,2,3,0.7
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Glitch Scan,1,3.2,0.0,3.2,3.2,0.562,0.062,0.375,28,44,4,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Haunted,1,3.2,0.0,3.2,3.2,0.688,0.0,0.312,27,44,4,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Heartbeat,1,2.2,0.0,2.2,2.2,0.409,0.045,0.545,21,34,3,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Interference,1,1.9,0.0,1.9,1.9,0.368,0.0,0.632,17,31,1,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Matrix Rain,1,2.9,0.0,2.9,2.9,0.0,0.0,1.0,22,41,0,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Medium Static,1,2.0,0.0,2.0,2.0,0.6,0.05,0.3,15,32,3,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Mid Heavy,1,4.5,0.0,4.5,4.5,0.467,0.222,0.267,20,57,5,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Neon Flicker,1,1.5,0.0,1.5,1.5,0.533,0.067,0.4,15,27,2,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Progressive,1,3.8,0.0,3.8,3.8,0.526,0.053,0.421,31,50,8,12,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Pulse,1,2.7,0.0,2.7,2.7,0.519,0.074,0.407,24,39,6,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Radioactive,1,2.3,0.0,2.3,2.3,0.391,0.13,0.478,22,35,3,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Redacted,1,3.7,0.0,3.7,3.7,0.432,0.27,0.189,19,49,2,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Scratched,1,2.8,0.0,2.8,2.8,0.357,0.214,0.286,18,40,2,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Shimmer,1,1.8,0.0,1.8,1.8,1.0,0.0,0.0,16,30,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Signal Loss,1,2.2,0.0,2.2,2.2,0.455,0.045,0.5,19,34,3,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Spectral,1,3.2,0.0,3.2,3.2,0.812,0.125,0.062,24,44,4,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Tremor,1,1.7,0.0,1.7,1.7,0.0,0.0,1.0,15,29,0,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:TV Static,1,2.1,0.0,2.1,2.1,1.0,0.0,0.0,14,33,5,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Wave,1,2.0,0.0,2.0,2.0,0.2,0.1,0.7,18,32,2,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Above Heavy,1,6.0,0.0,6.0,6.0,1.0,0.0,0.0,35,72,8,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Below Heavy,1,2.9,0.0,2.9,2.9,0.0,0.0,1.0,21,41,0,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Bleeding,1,3.9,0.0,3.9,3.9,0.051,0.026,0.923,28,51,1,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Burning,1,5.9,0.0,5.9,5.9,1.0,0.0,0.0,36,71,10,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Corrupted,1,4.5,0.0,4.5,4.5,0.689,0.111,0.111,32,57,6,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Cursed,1,4.7,0.0,4.7,4.7,0.511,0.043,0.447,37,59,6,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Demon Text,1,6.9,0.0,6.9,6.9,0.406,0.043,0.493,49,81,4,12,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Heavy Mixed,1,4.2,0.0,4.2,4.2,0.476,0.024,0.476,37,54,4,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Insane,1,6.7,0.0,6.7,6.7,0.522,0.075,0.373,48,79,7,11,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Maximum,1,16.5,0.0,16.5,16.5,0.448,0.097,0.43,90,177,13,23,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Melting,1,5.0,0.0,5.0,5.0,0.0,0.0,1.0,29,62,0,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Overload,1,5.5,0.0,5.5,5.5,0.509,0.109,0.364,44,67,5,9,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Poltergeist,1,3.0,0.0,3.0,3.0,0.5,0.033,0.367,25,42,6,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Possessed,1,7.9,0.0,7.9,7.9,0.557,0.038,0.405,55,91,11,17,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Random Scatter,1,3.0,0.0,3.0,3.0,0.367,0.133,0.5,28,42,2,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Shattered,1,13.0,0.0,13.0,13.0,0.492,0.077,0.392,74,142,10,18,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Submerged,1,4.3,0.0,4.3,4.3,0.209,0.163,0.605,29,55,2,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,accents,preset:Void,1,10.0,0.0,10.0,10.0,0.23,0.06,0.67,58,112,9,20,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,default,3,1.73,0.25,1.4,2.0,1.0,0.0,0.0,12,23,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Below Light,1,1.4,0.0,1.4,1.4,0.0,0.0,1.0,10,21,0,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Electric,1,1.4,0.0,1.4,1.4,1.0,0.0,0.0,9,20,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Flicker,1,0.4,0.0,0.4,0.4,1.0,0.0,0.0,4,15,1,1,0.4
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Frozen,1,1.6,0.0,1.6,1.6,0.091,0.0,0.727,9,22,1,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Mid Light,1,1.4,0.0,1.4,1.4,0.1,0.5,0.3,8,21,1,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Mist,1,1.0,0.0,1.0,1.0,0.0,0.0,1.0,6,18,0,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Soft Scratch,1,1.0,0.0,1.0,1.0,0.714,0.143,0.143,7,18,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Static Light,1,1.0,0.0,1.0,1.0,0.143,0.0,0.714,7,18,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Underwater,1,1.8,0.0,1.8,1.8,0.0,0.0,1.0,9,22,0,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Weathered,1,2.0,0.0,2.0,2.0,0.846,0.154,0.0,10,24,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Whisper,1,1.0,0.0,1.0,1.0,1.0,0.0,0.0,7,18,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Cascade Down,1,3.0,0.0,3.0,3.0,0.381,0.048,0.476,18,32,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Center Focus,1,3.4,0.0,3.4,3.4,0.632,0.0,0.368,16,30,4,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Data Corrupt,1,2.4,0.0,2.4,2.4,0.312,0.375,0.25,12,27,2,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Decay,1,3.6,0.0,3.6,3.6,0.333,0.143,0.524,16,32,2,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Edges Only,1,1.4,0.0,1.4,1.4,0.5,0.111,0.278,15,29,4,8,0.4
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Fragmented,1,1.0,0.0,1.0,1.0,0.5,0.125,0.375,8,19,2,3,0.4
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Glitch Scan,1,3.4,0.0,3.4,3.4,0.385,0.192,0.385,22,37,5,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Haunted,1,4.6,0.0,4.6,4.6,0.6,0.0,0.4,24,41,4,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Heartbeat,1,2.2,0.0,2.2,2.2,0.615,0.231,0.154,12,24,4,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Interference,1,1.6,0.0,1.6,1.6,0.6,0.0,0.4,10,21,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Matrix Rain,1,3.6,0.0,3.6,3.6,0.0,0.0,1.0,22,38,0,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Medium Static,1,3.0,0.0,3.0,3.0,0.524,0.0,0.429,19,32,4,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Mid Heavy,1,2.6,0.0,2.6,2.6,0.318,0.227,0.227,16,33,2,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Neon Flicker,1,1.2,0.0,1.2,1.2,0.125,0.125,0.625,8,19,1,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Progressive,1,4.6,0.0,4.6,4.6,0.406,0.031,0.5,29,43,4,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Pulse,1,2.6,0.0,2.6,2.6,0.556,0.0,0.444,18,29,3,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Radioactive,1,2.6,0.0,2.6,2.6,0.667,0.0,0.333,14,29,3,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Redacted,1,4.0,0.0,4.0,4.0,0.464,0.179,0.214,16,39,4,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Scratched,1,1.6,0.0,1.6,1.6,0.462,0.0,0.385,11,24,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Shimmer,1,2.0,0.0,2.0,2.0,1.0,0.0,0.0,12,25,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Signal Loss,1,2.4,0.0,2.4,2.4,0.333,0.278,0.389,15,29,3,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Spectral,1,2.2,0.0,2.2,2.2,0.875,0.062,0.0,14,27,3,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Tremor,1,1.8,0.0,1.8,1.8,0.0,0.0,1.0,11,22,0,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:TV Static,1,2.0,0.0,2.0,2.0,1.0,0.0,0.0,13,27,5,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Wave,1,3.6,0.0,3.6,3.6,0.462,0.115,0.423,24,37,3,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Above Heavy,1,4.4,0.0,4.4,4.4,1.0,0.0,0.0,26,47,8,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Below Heavy,1,5.8,0.0,5.8,5.8,0.0,0.0,1.0,24,50,0,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Bleeding,1,4.4,0.0,4.4,4.4,0.086,0.057,0.857,29,46,2,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Burning,1,5.6,0.0,5.6,5.6,1.0,0.0,0.0,30,57,10,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Corrupted,1,3.8,0.0,3.8,3.8,0.643,0.071,0.107,22,39,5,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Cursed,1,4.0,0.0,4.0,4.0,0.793,0.069,0.138,26,40,6,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Demon Text,1,3.8,0.0,3.8,3.8,0.6,0.0,0.4,24,41,6,9,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Heavy Mixed,1,4.2,0.0,4.2,4.2,0.517,0.069,0.345,25,40,3,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Insane,1,8.4,0.0,8.4,8.4,0.556,0.074,0.37,43,65,7,12,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Maximum,1,11.4,0.0,11.4,11.4,0.36,0.116,0.512,53,97,7,19,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Melting,1,5.6,0.0,5.6,5.6,0.0,0.0,1.0,26,54,0,9,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Overload,1,4.6,0.0,4.6,4.6,0.472,0.028,0.5,33,47,4,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Poltergeist,1,5.0,0.0,5.0,5.0,0.63,0.0,0.333,25,38,7,9,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Possessed,1,6.2,0.0,6.2,6.2,0.396,0.038,0.566,39,64,5,13,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Random Scatter,1,3.6,0.0,3.6,3.6,0.375,0.083,0.542,24,35,3,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Shattered,1,12.2,0.0,12.2,12.2,0.368,0.105,0.5,53,87,8,19,0.8
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Submerged,1,4.0,0.0,4.0,4.0,0.333,0.074,0.593,24,38,3,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,emoji,preset:Void,1,11.6,0.0,11.6,11.6,0.21,0.037,0.716,51,92,6,20,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,default,3,1.51,0.01,1.494,1.519,1.0,0.0,0.0,47,225.3,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Below Light,1,1.62,0.0,1.617,1.617,0.0,0.0,1.0,37,235,0,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Electric,1,1.46,0.0,1.457,1.457,1.0,0.0,0.0,44,220,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Flicker,1,0.51,0.0,0.506,0.506,1.0,0.0,0.0,28,142,1,1,0.506
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Frozen,1,1.52,0.0,1.519,1.519,0.248,0.128,0.576,50,225,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Mid Light,1,1.48,0.0,1.481,1.481,0.48,0.154,0.276,23,223,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Mist,1,1.0,0.0,1.0,1.0,0.0,0.0,1.0,36,183,0,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Soft Scratch,1,1.0,0.0,1.0,1.0,0.349,0.241,0.361,22,183,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Static Light,1,1.0,0.0,1.0,1.0,0.542,0.048,0.398,60,183,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Underwater,1,1.99,0.0,1.988,1.988,0.0,0.0,1.0,40,264,0,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Weathered,1,1.53,0.0,1.531,1.531,0.78,0.102,0.071,57,227,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Whisper,1,1.0,0.0,1.0,1.0,1.0,0.0,0.0,43,183,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Cascade Down,1,3.0,0.0,3.0,3.0,0.474,0.1,0.394,98,349,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Center Focus,1,3.67,0.0,3.667,3.667,0.482,0.05,0.435,105,401,8,11,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Data Corrupt,1,2.4,0.0,2.395,2.395,0.462,0.156,0.296,46,299,4,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Decay,1,3.68,0.0,3.679,3.679,0.464,0.05,0.447,101,402,5,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Edges Only,1,0.33,0.0,0.333,0.333,0.382,0.029,0.588,29,134,5,10,0.037
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Fragmented,1,1.11,0.0,1.111,1.111,0.419,0.086,0.462,64,193,3,3,0.58
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Glitch Scan,1,2.93,0.0,2.926,2.926,0.455,0.074,0.446,91,342,4,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Haunted,1,3.04,0.0,3.037,3.037,0.496,0.0,0.504,81,348,4,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Heartbeat,1,1.99,0.0,1.988,1.988,0.436,0.085,0.448,89,265,6,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Interference,1,1.95,0.0,1.951,1.951,0.488,0.0,0.512,73,262,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Matrix Rain,1,2.84,0.0,2.84,2.84,0.0,0.0,1.0,40,336,0,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Medium Static,1,2.43,0.0,2.432,2.432,0.485,0.095,0.41,94,300,4,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Mid Heavy,1,3.56,0.0,3.556,3.556,0.373,0.231,0.305,23,395,4,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Neon Flicker,1,1.49,0.0,1.494,1.494,0.448,0.056,0.48,69,225,2,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Progressive,1,3.75,0.0,3.753,3.753,0.448,0.082,0.423,105,417,5,11,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Pulse,1,2.16,0.0,2.16,2.16,0.451,0.044,0.473,89,282,4,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Radioactive,1,2.53,0.0,2.531,2.531,0.502,0.075,0.385,82,313,3,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Redacted,1,3.86,0.0,3.864,3.864,0.401,0.207,0.313,23,419,4,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Scratched,1,2.44,0.0,2.444,2.444,0.377,0.216,0.338,23,304,4,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Shimmer,1,2.02,0.0,2.025,2.025,1.0,0.0,0.0,47,266,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Signal Loss,1,2.33,0.0,2.333,2.333,0.479,0.067,0.428,91,294,4,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Spectral,1,2.67,0.0,2.667,2.667,0.82,0.045,0.108,67,322,4,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Tremor,1,2.07,0.0,2.074,2.074,0.0,0.0,1.0,39,274,0,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:TV Static,1,1.79,0.0,1.79,1.79,1.0,0.0,0.0,47,248,5,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Wave,1,2.67,0.0,2.667,2.667,0.39,0.083,0.5,94,318,4,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Above Heavy,1,4.73,0.0,4.728,4.728,1.0,0.0,0.0,48,489,8,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Below Heavy,1,5.18,0.0,5.185,5.185,0.0,0.0,1.0,40,522,0,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Bleeding,1,4.11,0.0,4.111,4.111,0.086,0.042,0.857,63,436,2,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Burning,1,5.63,0.0,5.63,5.63,1.0,0.0,0.0,48,564,10,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Corrupted,1,3.84,0.0,3.84,3.84,0.702,0.111,0.152,71,415,7,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Cursed,1,4.85,0.0,4.852,4.852,0.451,0.09,0.439,107,499,5,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Demon Text,1,6.58,0.0,6.58,6.58,0.454,0.058,0.452,111,638,8,12,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Heavy Mixed,1,5.0,0.0,5.0,5.0,0.494,0.079,0.405,110,517,6,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Insane,1,8.47,0.0,8.469,8.469,0.442,0.075,0.462,111,803,11,15,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Maximum,1,10.59,0.0,10.593,10.593,0.453,0.07,0.432,111,968,17,25,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Melting,1,5.41,0.0,5.407,5.407,0.0,0.0,1.0,40,550,0,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Overload,1,5.07,0.0,5.074,5.074,0.473,0.091,0.418,106,519,8,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Poltergeist,1,3.46,0.0,3.457,3.457,0.448,0.062,0.459,104,390,5,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Possessed,1,10.12,0.0,10.123,10.123,0.485,0.019,0.491,110,951,11,18,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Random Scatter,1,3.49,0.0,3.494,3.494,0.457,0.1,0.392,103,391,8,9,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Shattered,1,6.37,0.0,6.37,6.37,0.475,0.086,0.414,109,624,11,20,0.63
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Submerged,1,3.98,0.0,3.975,3.975,0.213,0.128,0.641,62,429,3,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,long100,preset:Void,1,10.1,0.0,10.099,10.099,0.216,0.043,0.718,105,933,9,20,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,default,3,1.62,0.05,1.565,1.696,1.0,0.0,0.0,35,100.3,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Below Light,1,1.61,0.0,1.609,1.609,0.0,0.0,1.0,31,103,0,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Electric,1,1.48,0.0,1.478,1.478,1.0,0.0,0.0,30,95,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Flicker,1,0.48,0.0,0.478,0.478,1.0,0.0,0.0,15,63,1,1,0.478
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Frozen,1,1.65,0.0,1.652,1.652,0.172,0.103,0.672,40,102,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Mid Light,1,1.65,0.0,1.652,1.652,0.361,0.23,0.344,23,105,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Mist,1,1.0,0.0,1.0,1.0,0.0,0.0,1.0,23,81,0,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Soft Scratch,1,1.0,0.0,1.0,1.0,0.297,0.297,0.27,17,81,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Static Light,1,1.0,0.0,1.0,1.0,0.378,0.135,0.486,33,81,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Underwater,1,2.04,0.0,2.043,2.043,0.0,0.0,1.0,38,115,0,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Weathered,1,1.48,0.0,1.478,1.478,0.804,0.039,0.137,33,95,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Whisper,1,1.0,0.0,1.0,1.0,1.0,0.0,0.0,26,81,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Cascade Down,1,3.0,0.0,3.0,3.0,0.45,0.045,0.45,62,155,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Center Focus,1,3.39,0.0,3.391,3.391,0.445,0.039,0.484,72,172,5,9,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Data Corrupt,1,2.65,0.0,2.652,2.652,0.621,0.189,0.147,39,139,4,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Decay,1,4.26,0.0,4.261,4.261,0.5,0.093,0.386,76,184,6,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Edges Only,1,0.48,0.0,0.478,0.478,0.4,0.15,0.45,19,64,3,9,0.13
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Fragmented,1,1.74,0.0,1.739,1.739,0.492,0.068,0.441,47,103,3,3,0.826
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Glitch Scan,1,2.26,0.0,2.261,2.261,0.5,0.058,0.43,61,130,3,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Haunted,1,2.91,0.0,2.913,2.913,0.561,0.0,0.439,67,158,4,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Heartbeat,1,2.22,0.0,2.217,2.217,0.452,0.083,0.464,63,128,6,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Interference,1,1.96,0.0,1.957,1.957,0.459,0.0,0.541,48,118,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Matrix Rain,1,2.56,0.0,2.565,2.565,0.0,0.0,1.0,37,142,0,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Medium Static,1,2.44,0.0,2.435,2.435,0.553,0.059,0.376,61,129,3,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Mid Heavy,1,3.44,0.0,3.435,3.435,0.421,0.207,0.306,23,165,4,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Neon Flicker,1,1.48,0.0,1.478,1.478,0.298,0.053,0.632,43,101,2,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Progressive,1,4.39,0.0,4.391,4.391,0.484,0.052,0.431,79,197,5,12,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Pulse,1,2.17,0.0,2.174,2.174,0.429,0.039,0.519,60,121,5,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Radioactive,1,2.48,0.0,2.478,2.478,0.449,0.079,0.438,58,133,4,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Redacted,1,3.22,0.0,3.217,3.217,0.415,0.252,0.26,23,167,4,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Scratched,1,2.56,0.0,2.565,2.565,0.367,0.143,0.327,23,142,2,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Shimmer,1,1.74,0.0,1.739,1.739,1.0,0.0,0.0,36,115,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Signal Loss,1,2.39,0.0,2.391,2.391,0.506,0.082,0.365,57,129,4,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Spectral,1,2.78,0.0,2.783,2.783,0.816,0.092,0.082,57,142,4,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Tremor,1,2.04,0.0,2.043,2.043,0.0,0.0,1.0,35,121,0,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:TV Static,1,2.13,0.0,2.13,2.13,1.0,0.0,0.0,36,115,5,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Wave,1,2.78,0.0,2.783,2.783,0.391,0.057,0.483,60,131,4,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Above Heavy,1,4.39,0.0,4.391,4.391,1.0,0.0,0.0,47,200,8,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Below Heavy,1,4.17,0.0,4.174,4.174,0.0,0.0,1.0,40,231,0,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Bleeding,1,3.87,0.0,3.87,3.87,0.066,0.04,0.868,58,195,2,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Burning,1,5.22,0.0,5.217,5.217,1.0,0.0,0.0,48,234,10,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Corrupted,1,3.87,0.0,3.87,3.87,0.669,0.083,0.172,58,201,6,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Cursed,1,4.43,0.0,4.435,4.435,0.443,0.098,0.408,84,218,6,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Demon Text,1,6.3,0.0,6.304,6.304,0.372,0.098,0.509,88,278,7,12,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Heavy Mixed,1,4.96,0.0,4.957,4.957,0.457,0.069,0.428,84,217,4,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Insane,1,6.0,0.0,6.0,6.0,0.477,0.074,0.418,103,300,9,15,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Maximum,1,12.65,0.0,12.652,12.652,0.477,0.052,0.455,107,488,15,25,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Melting,1,5.65,0.0,5.652,5.652,0.0,0.0,1.0,40,260,0,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Overload,1,5.09,0.0,5.087,5.087,0.452,0.074,0.442,95,261,9,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Poltergeist,1,3.04,0.0,3.043,3.043,0.556,0.073,0.339,76,168,5,9,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Possessed,1,8.26,0.0,8.261,8.261,0.461,0.022,0.505,103,361,9,16,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Random Scatter,1,3.35,0.0,3.348,3.348,0.459,0.036,0.459,67,155,5,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Shattered,1,9.44,0.0,9.435,9.435,0.439,0.101,0.433,105,379,12,20,0.87
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Submerged,1,4.87,0.0,4.87,4.87,0.235,0.112,0.62,59,223,4,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,punct,preset:Void,1,13.65,0.0,13.652,13.652,0.184,0.057,0.742,91,517,6,20,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,default,3,1.25,0.35,1.0,1.75,1.0,0.0,0.0,7,18,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Below Light,1,1.5,0.0,1.5,1.5,0.0,0.0,1.0,6,19,0,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Electric,1,1.5,0.0,1.5,1.5,1.0,0.0,0.0,6,19,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Flicker,1,0.5,0.0,0.5,0.5,1.0,0.0,0.0,2,15,1,1,0.5
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Frozen,1,1.75,0.0,1.75,1.75,0.429,0.0,0.571,7,20,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Mid Light,1,1.5,0.0,1.5,1.5,0.333,0.167,0.333,5,19,1,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Mist,1,1.0,0.0,1.0,1.0,0.0,0.0,1.0,4,17,0,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Soft Scratch,1,1.0,0.0,1.0,1.0,0.0,0.25,0.5,3,17,0,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Static Light,1,1.0,0.0,1.0,1.0,0.75,0.25,0.0,4,17,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Underwater,1,2.0,0.0,2.0,2.0,0.0,0.0,1.0,8,21,0,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Weathered,1,1.5,0.0,1.5,1.5,0.833,0.0,0.167,6,19,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Whisper,1,1.0,0.0,1.0,1.0,1.0,0.0,0.0,4,17,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Cascade Down,1,3.0,0.0,3.0,3.0,0.417,0.0,0.583,8,25,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Center Focus,1,1.5,0.0,1.5,1.5,0.5,0.0,0.5,6,19,1,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Data Corrupt,1,2.75,0.0,2.75,2.75,0.273,0.273,0.455,7,24,2,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Decay,1,4.25,0.0,4.25,4.25,0.588,0.059,0.353,16,30,4,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Edges Only,1,2.25,0.0,2.25,2.25,0.444,0.0,0.556,9,22,2,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Fragmented,1,1.75,0.0,1.75,1.75,0.0,0.143,0.714,7,20,0,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Glitch Scan,1,3.25,0.0,3.25,3.25,0.385,0.077,0.538,13,26,3,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Haunted,1,3.0,0.0,3.0,3.0,0.75,0.0,0.25,12,25,4,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Heartbeat,1,1.5,0.0,1.5,1.5,0.5,0.0,0.333,6,19,2,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Interference,1,2.0,0.0,2.0,2.0,0.5,0.0,0.5,8,21,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Matrix Rain,1,3.0,0.0,3.0,3.0,0.0,0.0,1.0,12,25,0,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Medium Static,1,1.75,0.0,1.75,1.75,0.286,0.143,0.571,7,20,1,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Mid Heavy,1,4.0,0.0,4.0,4.0,0.562,0.188,0.25,12,29,3,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Neon Flicker,1,1.5,0.0,1.5,1.5,0.5,0.333,0.167,6,19,1,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Progressive,1,3.0,0.0,3.0,3.0,0.583,0.0,0.417,12,25,3,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Pulse,1,2.25,0.0,2.25,2.25,0.556,0.0,0.444,8,22,3,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Radioactive,1,2.0,0.0,2.0,2.0,0.375,0.125,0.375,8,21,2,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Redacted,1,4.5,0.0,4.5,4.5,0.556,0.111,0.278,11,31,5,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Scratched,1,1.75,0.0,1.75,1.75,0.429,0.0,0.571,5,20,1,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Shimmer,1,1.25,0.0,1.25,1.25,1.0,0.0,0.0,5,18,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Signal Loss,1,2.25,0.0,2.25,2.25,0.667,0.0,0.222,9,22,2,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Spectral,1,3.25,0.0,3.25,3.25,0.923,0.077,0.0,10,26,4,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Tremor,1,1.75,0.0,1.75,1.75,0.0,0.0,1.0,7,20,0,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:TV Static,1,2.0,0.0,2.0,2.0,1.0,0.0,0.0,6,21,4,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Wave,1,4.75,0.0,4.75,4.75,0.474,0.0,0.474,18,32,5,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Above Heavy,1,4.75,0.0,4.75,4.75,1.0,0.0,0.0,16,32,7,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Below Heavy,1,5.5,0.0,5.5,5.5,0.0,0.0,1.0,18,35,0,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Bleeding,1,5.5,0.0,5.5,5.5,0.045,0.045,0.864,14,35,1,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Burning,1,3.0,0.0,3.0,3.0,1.0,0.0,0.0,11,25,5,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Corrupted,1,3.0,0.0,3.0,3.0,0.667,0.083,0.167,12,25,7,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Cursed,1,4.5,0.0,4.5,4.5,0.611,0.056,0.333,17,31,4,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Demon Text,1,6.5,0.0,6.5,6.5,0.577,0.038,0.346,23,39,7,11,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Heavy Mixed,1,6.0,0.0,6.0,6.0,0.417,0.042,0.542,22,37,4,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Insane,1,4.0,0.0,4.0,4.0,0.375,0.188,0.438,16,29,3,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Maximum,1,16.75,0.0,16.75,16.75,0.537,0.03,0.388,46,80,13,24,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Melting,1,4.5,0.0,4.5,4.5,0.0,0.0,1.0,16,31,0,9,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Overload,1,3.5,0.0,3.5,3.5,0.429,0.214,0.214,12,27,3,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Poltergeist,1,4.0,0.0,4.0,4.0,0.312,0.188,0.5,16,29,2,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Possessed,1,15.75,0.0,15.75,15.75,0.508,0.0,0.476,50,76,11,17,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Random Scatter,1,1.25,0.0,1.25,1.25,0.2,0.2,0.6,5,18,1,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Shattered,1,8.5,0.0,8.5,8.5,0.471,0.265,0.265,24,47,8,17,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Submerged,1,2.75,0.0,2.75,2.75,0.091,0.091,0.727,10,24,1,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,spaces,preset:Void,1,7.5,0.0,7.5,7.5,0.133,0.1,0.733,26,43,3,15,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,default,3,1.58,0.21,1.312,1.812,1.0,0.0,0.0,21,44.3,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Below Light,1,1.31,0.0,1.312,1.312,0.0,0.0,1.0,18,40,0,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Electric,1,1.62,0.0,1.625,1.625,1.0,0.0,0.0,22,45,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Flicker,1,0.5,0.0,0.5,0.5,1.0,0.0,0.0,7,27,1,1,0.5
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Frozen,1,1.56,0.0,1.562,1.562,0.12,0.08,0.76,21,44,1,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Mid Light,1,1.69,0.0,1.688,1.688,0.37,0.222,0.407,16,46,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Mist,1,1.0,0.0,1.0,1.0,0.0,0.0,1.0,13,35,0,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Soft Scratch,1,1.0,0.0,1.0,1.0,0.312,0.25,0.312,12,35,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Static Light,1,1.0,0.0,1.0,1.0,0.688,0.0,0.25,13,35,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Underwater,1,1.94,0.0,1.938,1.938,0.0,0.0,1.0,21,50,0,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Weathered,1,1.5,0.0,1.5,1.5,0.708,0.042,0.167,18,43,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Whisper,1,1.0,0.0,1.0,1.0,1.0,0.0,0.0,13,35,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Cascade Down,1,3.0,0.0,3.0,3.0,0.417,0.062,0.521,34,67,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Center Focus,1,3.12,0.0,3.125,3.125,0.58,0.04,0.38,36,69,4,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Data Corrupt,1,2.81,0.0,2.812,2.812,0.467,0.178,0.289,25,64,3,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Decay,1,3.19,0.0,3.188,3.188,0.392,0.059,0.529,37,70,3,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Edges Only,1,1.38,0.0,1.375,1.375,0.455,0.091,0.409,19,41,5,9,0.25
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Fragmented,1,1.44,0.0,1.438,1.438,0.522,0.0,0.391,22,42,2,3,0.688
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Glitch Scan,1,2.31,0.0,2.312,2.312,0.405,0.054,0.541,34,56,4,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Haunted,1,3.31,0.0,3.312,3.312,0.528,0.0,0.472,43,72,3,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Heartbeat,1,1.88,0.0,1.875,1.875,0.4,0.033,0.533,26,49,5,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Interference,1,2.44,0.0,2.438,2.438,0.564,0.0,0.436,34,58,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Matrix Rain,1,3.12,0.0,3.125,3.125,0.0,0.0,1.0,29,69,0,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Medium Static,1,2.62,0.0,2.625,2.625,0.452,0.024,0.452,31,61,4,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Mid Heavy,1,3.06,0.0,3.062,3.062,0.592,0.102,0.265,18,68,4,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Neon Flicker,1,1.44,0.0,1.438,1.438,0.522,0.174,0.304,20,42,2,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Progressive,1,4.06,0.0,4.062,4.062,0.446,0.015,0.462,50,84,5,11,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Pulse,1,2.31,0.0,2.312,2.312,0.459,0.027,0.486,33,56,4,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Radioactive,1,2.12,0.0,2.125,2.125,0.382,0.059,0.559,27,53,2,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Redacted,1,4.0,0.0,4.0,4.0,0.375,0.25,0.328,23,83,3,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Scratched,1,2.5,0.0,2.5,2.5,0.55,0.075,0.175,20,59,4,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Shimmer,1,2.0,0.0,2.0,2.0,1.0,0.0,0.0,24,51,3,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Signal Loss,1,2.12,0.0,2.125,2.125,0.412,0.029,0.441,30,53,3,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Spectral,1,2.44,0.0,2.438,2.438,0.872,0.026,0.103,28,58,4,4,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Tremor,1,1.81,0.0,1.812,1.812,0.0,0.0,1.0,21,48,0,3,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:TV Static,1,2.19,0.0,2.188,2.188,1.0,0.0,0.0,24,54,5,5,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Wave,1,3.19,0.0,3.188,3.188,0.431,0.059,0.49,41,70,4,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Above Heavy,1,3.0,0.0,3.0,3.0,1.0,0.0,0.0,28,67,7,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Below Heavy,1,5.25,0.0,5.25,5.25,0.0,0.0,1.0,34,103,0,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Bleeding,1,4.69,0.0,4.688,4.688,0.053,0.107,0.813,46,94,2,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Burning,1,5.88,0.0,5.875,5.875,1.0,0.0,0.0,41,113,10,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Corrupted,1,4.0,0.0,4.0,4.0,0.703,0.156,0.125,35,83,6,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Cursed,1,5.0,0.0,5.0,5.0,0.525,0.037,0.375,53,99,5,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Demon Text,1,6.19,0.0,6.188,6.188,0.485,0.081,0.424,66,118,8,12,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Heavy Mixed,1,5.5,0.0,5.5,5.5,0.42,0.057,0.466,58,107,6,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Insane,1,6.69,0.0,6.688,6.688,0.514,0.056,0.402,62,126,8,14,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Maximum,1,11.62,0.0,11.625,11.625,0.419,0.075,0.457,84,205,10,21,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Melting,1,5.88,0.0,5.875,5.875,0.0,0.0,1.0,35,113,0,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Overload,1,6.38,0.0,6.375,6.375,0.549,0.029,0.402,64,121,8,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Poltergeist,1,3.0,0.0,3.0,3.0,0.562,0.062,0.354,38,67,6,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Possessed,1,9.25,0.0,9.25,9.25,0.473,0.047,0.473,78,167,12,18,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Random Scatter,1,3.19,0.0,3.188,3.188,0.49,0.039,0.451,38,70,5,7,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Shattered,1,8.81,0.0,8.812,8.812,0.504,0.05,0.404,79,160,11,20,0.812
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Submerged,1,4.5,0.0,4.5,4.5,0.194,0.069,0.694,43,91,4,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,mixed,preset:Void,1,8.88,0.0,8.875,8.875,0.197,0.077,0.718,68,161,4,18,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,task:light,2,1.0,0.0,1.0,1.0,1.0,0.0,0.0,17,45,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,task:extreme,2,14.02,0.55,13.476,14.571,0.435,0.078,0.458,105,318.5,13,25,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,task:above_only,2,3.93,0.17,3.762,4.095,1.0,0.0,0.0,39,106.5,8,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,task:below_only,2,5.38,0.05,5.333,5.429,0.0,0.0,1.0,39,137,0,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,task:middle_only,2,3.98,0.02,3.952,4.0,0.413,0.162,0.323,23,107.5,4,6,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,task:mostly_readable,2,1.0,0.0,1.0,1.0,1.0,0.0,0.0,17,45,1,1,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,task:dense_unreadable,2,14.02,0.55,13.476,14.571,0.435,0.078,0.458,105,318.5,13,25,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,task:increasing,2,3.69,0.17,3.524,3.857,0.432,0.077,0.445,59,101.5,6,9,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,task:decreasing,2,3.67,0.0,3.667,3.667,0.435,0.065,0.487,57,101,5,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,task:wave,2,3.52,0.14,3.381,3.667,0.48,0.061,0.446,60,98,4,8,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,task:middle_peak,2,3.81,0.1,3.714,3.905,0.419,0.1,0.469,59,104,6,10,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,task:middle_valley,2,1.24,0.05,1.19,1.286,0.346,0.077,0.577,24,50,4,10,0.19
-textavia-glitch,Textavia Glitch Text Converter,watching,task:strikethrough,2,1.48,0.0,1.476,1.476,0.435,0.242,0.274,17,55,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,task:tiny_stack,2,1.6,0.07,1.524,1.667,1.0,0.0,0.0,27,57.5,2,2,1.0
-textavia-glitch,Textavia Glitch Text Converter,watching,task:roots_downward,2,5.31,0.69,4.619,6.0,0.0,0.0,1.0,37,135.5,0,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,default,20,1.52,0.25,1.2,2.0,1.0,0.0,0.0,9,12.6,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Below Light,5,1.52,0.1,1.4,1.6,0.0,0.0,1.0,8,12.6,0,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Electric,5,1.52,0.2,1.2,1.8,1.0,0.0,0.0,9,12.6,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Flicker,5,0.6,0.0,0.6,0.6,1.0,0.0,0.0,3,8,1,1,0.6
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Frozen,5,1.6,0.13,1.4,1.8,0.1,0.125,0.725,9,13,1,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Mid Light,5,1.4,0.13,1.2,1.6,0.371,0.229,0.371,7,12,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Mist,5,1.0,0.0,1.0,1.0,0.0,0.0,1.0,5,10,0,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Soft Scratch,5,1.0,0.0,1.0,1.0,0.28,0.24,0.44,5,10,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Static Light,5,1.0,0.0,1.0,1.0,0.32,0.04,0.6,5,10,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Underwater,5,2.2,0.25,1.8,2.4,0.0,0.0,1.0,11,16,0,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Weathered,5,1.32,0.1,1.2,1.4,0.697,0.121,0.182,7,11.6,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Whisper,5,1.0,0.0,1.0,1.0,1.0,0.0,0.0,5,10,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Cascade Down,5,3.0,0.0,3.0,3.0,0.493,0.04,0.467,15,20,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Center Focus,5,2.68,0.45,2.2,3.4,0.567,0.06,0.358,15,18.4,7,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Data Corrupt,5,2.48,0.48,1.8,3.0,0.565,0.097,0.29,12,17.4,3,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Decay,5,4.0,0.7,2.8,4.6,0.43,0.12,0.4,21,25,4,12,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Edges Only,5,4.44,1.44,3.0,7.0,0.423,0.036,0.505,27,27.2,5,10,0.8
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Fragmented,5,1.2,0.54,0.2,1.8,0.467,0.067,0.467,9,11,3,3,0.52
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Glitch Scan,5,2.84,0.9,1.4,3.8,0.535,0.07,0.366,17,19.2,6,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Haunted,5,2.92,0.2,2.6,3.2,0.548,0.0,0.452,15,19.6,4,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Heartbeat,5,2.12,0.47,1.6,2.8,0.623,0.075,0.283,13,15.6,6,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Interference,5,2.08,0.48,1.4,2.8,0.5,0.0,0.5,14,15.4,2,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Matrix Rain,5,3.32,0.41,2.8,4.0,0.0,0.0,1.0,14,21.6,0,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Medium Static,5,2.4,0.52,2.0,3.4,0.5,0.05,0.417,17,17,4,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Mid Heavy,5,3.48,0.45,2.6,3.8,0.391,0.207,0.299,15,22.4,3,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Neon Flicker,5,1.56,0.2,1.2,1.8,0.615,0.051,0.308,9,12.8,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Progressive,5,3.96,0.87,2.6,5.0,0.434,0.081,0.465,24,24.8,7,12,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Pulse,5,2.52,0.3,2.2,3.0,0.508,0.063,0.381,14,17.6,3,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Radioactive,5,2.52,0.5,1.6,3.0,0.46,0.111,0.429,15,17.6,3,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Redacted,5,3.52,0.57,2.8,4.4,0.307,0.261,0.375,16,22.6,3,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Scratched,5,2.24,0.46,1.6,2.8,0.375,0.25,0.304,12,16.2,2,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Shimmer,5,1.8,0.22,1.4,2.0,1.0,0.0,0.0,10,14,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Signal Loss,5,1.8,0.55,1.2,2.8,0.4,0.089,0.489,14,14,3,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Spectral,5,2.64,0.5,1.8,3.2,0.864,0.106,0.015,14,18.2,4,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Tremor,5,2.16,0.41,1.4,2.6,0.0,0.0,1.0,12,15.8,0,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:TV Static,5,1.64,0.56,1.0,2.4,1.0,0.0,0.0,9,13.2,5,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Wave,5,2.92,0.41,2.2,3.4,0.521,0.041,0.397,16,19.6,5,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Above Heavy,5,3.92,1.45,2.2,6.0,1.0,0.0,0.0,21,24.6,8,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Below Heavy,5,3.2,0.69,2.4,4.2,0.0,0.0,1.0,16,21,0,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Bleeding,5,3.52,0.9,2.4,4.6,0.091,0.034,0.852,19,22.6,2,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Burning,5,5.24,1.15,3.6,6.6,1.0,0.0,0.0,25,31.2,10,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Corrupted,5,4.36,1.49,1.8,6.4,0.734,0.138,0.073,23,26.8,6,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Cursed,5,3.8,0.63,2.8,4.6,0.505,0.053,0.389,20,24,6,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Demon Text,5,5.8,1.29,3.6,7.2,0.448,0.062,0.462,29,34,7,12,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Heavy Mixed,5,4.48,1.15,2.4,5.6,0.473,0.071,0.402,26,27.4,5,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Insane,5,7.04,1.56,4.4,9.0,0.517,0.091,0.364,40,40.2,8,15,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Maximum,5,12.8,1.99,9.2,15.0,0.475,0.069,0.428,55,69,14,24,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Melting,5,6.0,0.42,5.4,6.4,0.0,0.0,1.0,24,35,0,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Overload,5,5.76,1.26,3.6,7.2,0.507,0.062,0.382,30,33.8,7,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Poltergeist,5,3.88,0.71,2.6,4.4,0.454,0.124,0.412,21,24.4,5,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Possessed,5,11.12,2.84,7.2,15.0,0.486,0.011,0.489,54,60.6,11,17,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Random Scatter,5,3.0,1.01,1.8,4.8,0.56,0.027,0.387,23,20,5,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Shattered,5,7.76,1.51,5.4,9.8,0.495,0.036,0.433,38,43.8,11,20,0.64
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Submerged,5,4.04,0.27,3.6,4.4,0.238,0.129,0.574,19,25.2,3,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,hello,preset:Void,5,11.88,1.45,10.2,14.4,0.192,0.061,0.717,51,64.4,6,19,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,default,3,1.48,0.13,1.286,1.571,1.0,0.0,0.0,10,18.3,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Below Light,1,1.29,0.0,1.286,1.286,0.0,0.0,1.0,7,17,0,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Electric,1,1.29,0.0,1.286,1.286,1.0,0.0,0.0,7,17,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Flicker,1,0.57,0.0,0.571,0.571,1.0,0.0,0.0,4,12,1,1,0.571
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Frozen,1,1.43,0.0,1.429,1.429,0.1,0.2,0.7,9,18,1,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Mid Light,1,1.43,0.0,1.429,1.429,0.5,0.3,0.1,8,18,1,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Mist,1,1.0,0.0,1.0,1.0,0.0,0.0,1.0,6,15,0,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Soft Scratch,1,1.0,0.0,1.0,1.0,0.286,0.286,0.286,7,15,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Static Light,1,1.0,0.0,1.0,1.0,0.286,0.0,0.714,7,15,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Underwater,1,2.0,0.0,2.0,2.0,0.0,0.0,1.0,13,22,0,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Weathered,1,1.43,0.0,1.429,1.429,0.7,0.0,0.1,8,18,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Whisper,1,1.0,0.0,1.0,1.0,1.0,0.0,0.0,7,15,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Cascade Down,1,3.0,0.0,3.0,3.0,0.286,0.048,0.619,17,29,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Center Focus,1,2.14,0.0,2.143,2.143,0.467,0.133,0.333,14,23,2,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Data Corrupt,1,2.57,0.0,2.571,2.571,0.333,0.333,0.111,11,26,3,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Decay,1,2.86,0.0,2.857,2.857,0.55,0.0,0.45,18,28,5,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Edges Only,1,4.43,0.0,4.429,4.429,0.581,0.065,0.355,28,39,6,10,0.571
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Fragmented,1,1.14,0.0,1.143,1.143,0.625,0.0,0.375,7,16,2,3,0.571
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Glitch Scan,1,2.86,0.0,2.857,2.857,0.45,0.15,0.35,19,28,6,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Haunted,1,3.29,0.0,3.286,3.286,0.565,0.0,0.435,19,31,3,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Heartbeat,1,2.14,0.0,2.143,2.143,0.4,0.0,0.533,15,23,4,9,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Interference,1,2.14,0.0,2.143,2.143,0.4,0.0,0.6,14,23,2,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Matrix Rain,1,3.57,0.0,3.571,3.571,0.0,0.0,1.0,19,33,0,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Medium Static,1,2.71,0.0,2.714,2.714,0.211,0.0,0.737,17,27,2,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Mid Heavy,1,3.29,0.0,3.286,3.286,0.435,0.261,0.217,17,31,3,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Neon Flicker,1,1.0,0.0,1.0,1.0,0.571,0.0,0.429,7,15,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Progressive,1,4.14,0.0,4.143,4.143,0.448,0.138,0.345,28,37,3,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Pulse,1,3.0,0.0,3.0,3.0,0.429,0.0,0.524,21,29,3,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Radioactive,1,2.71,0.0,2.714,2.714,0.684,0.053,0.263,19,27,3,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Redacted,1,3.71,0.0,3.714,3.714,0.385,0.346,0.192,17,34,5,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Scratched,1,2.43,0.0,2.429,2.429,0.294,0.0,0.706,11,25,2,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Shimmer,1,2.14,0.0,2.143,2.143,1.0,0.0,0.0,13,23,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Signal Loss,1,2.71,0.0,2.714,2.714,0.368,0.158,0.474,16,27,2,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Spectral,1,2.29,0.0,2.286,2.286,0.812,0.062,0.125,13,24,3,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Tremor,1,2.0,0.0,2.0,2.0,0.0,0.0,1.0,14,22,0,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:TV Static,1,2.43,0.0,2.429,2.429,1.0,0.0,0.0,16,25,4,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Wave,1,3.14,0.0,3.143,3.143,0.5,0.0,0.455,20,30,4,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Above Heavy,1,4.86,0.0,4.857,4.857,1.0,0.0,0.0,22,42,8,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Below Heavy,1,4.71,0.0,4.714,4.714,0.0,0.0,1.0,27,41,0,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Bleeding,1,3.71,0.0,3.714,3.714,0.192,0.0,0.769,21,34,2,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Burning,1,4.71,0.0,4.714,4.714,1.0,0.0,0.0,24,41,8,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Corrupted,1,5.0,0.0,5.0,5.0,0.829,0.086,0.057,26,43,7,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Cursed,1,5.14,0.0,5.143,5.143,0.417,0.028,0.5,31,44,5,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Demon Text,1,8.71,0.0,8.714,8.714,0.361,0.066,0.557,45,69,5,12,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Heavy Mixed,1,4.29,0.0,4.286,4.286,0.5,0.133,0.333,25,38,5,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Insane,1,6.57,0.0,6.571,6.571,0.5,0.087,0.413,36,54,4,11,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Maximum,1,16.14,0.0,16.143,16.143,0.487,0.062,0.381,67,121,11,23,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Melting,1,4.86,0.0,4.857,4.857,0.0,0.0,1.0,22,42,0,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Overload,1,6.43,0.0,6.429,6.429,0.622,0.067,0.289,36,53,6,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Poltergeist,1,2.71,0.0,2.714,2.714,0.316,0.053,0.632,18,27,3,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Possessed,1,9.71,0.0,9.714,9.714,0.471,0.029,0.485,54,76,10,16,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Random Scatter,1,2.71,0.0,2.714,2.714,0.474,0.0,0.526,17,27,4,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Shattered,1,8.57,0.0,8.571,8.571,0.533,0.067,0.333,46,68,9,19,0.857
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Submerged,1,4.29,0.0,4.286,4.286,0.233,0.067,0.633,25,38,2,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,he_comes,preset:Void,1,10.86,0.0,10.857,10.857,0.211,0.079,0.684,52,84,6,18,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,default,3,1.49,0.11,1.333,1.571,1.0,0.0,0.0,24,55.3,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Below Light,1,1.52,0.0,1.524,1.524,0.0,0.0,1.0,22,56,0,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Electric,1,1.62,0.0,1.619,1.619,1.0,0.0,0.0,25,58,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Flicker,1,0.52,0.0,0.524,0.524,1.0,0.0,0.0,11,35,1,1,0.524
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Frozen,1,1.67,0.0,1.667,1.667,0.314,0.029,0.629,27,59,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Mid Light,1,1.62,0.0,1.619,1.619,0.382,0.265,0.235,19,58,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Mist,1,1.0,0.0,1.0,1.0,0.0,0.0,1.0,20,45,0,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Soft Scratch,1,1.0,0.0,1.0,1.0,0.286,0.143,0.571,15,45,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Static Light,1,1.0,0.0,1.0,1.0,0.524,0.048,0.333,21,45,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Underwater,1,2.14,0.0,2.143,2.143,0.0,0.0,1.0,29,69,0,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Weathered,1,1.52,0.0,1.524,1.524,0.594,0.125,0.188,25,56,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Whisper,1,1.0,0.0,1.0,1.0,1.0,0.0,0.0,18,45,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Cascade Down,4,3.0,0.0,3.0,3.0,0.452,0.075,0.444,51,87,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Center Focus,1,3.29,0.0,3.286,3.286,0.391,0.13,0.406,49,93,5,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Data Corrupt,1,2.62,0.0,2.619,2.619,0.618,0.091,0.218,29,79,4,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Decay,1,3.43,0.0,3.429,3.429,0.444,0.069,0.444,50,96,6,9,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Edges Only,1,1.48,0.0,1.476,1.476,0.29,0.194,0.484,27,55,4,10,0.19
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Fragmented,1,0.95,0.0,0.952,0.952,0.55,0.0,0.45,17,44,3,3,0.476
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Glitch Scan,1,2.81,0.0,2.81,2.81,0.593,0.017,0.373,42,83,5,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Haunted,1,3.19,0.0,3.19,3.19,0.463,0.0,0.537,46,91,3,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Heartbeat,1,2.24,0.0,2.238,2.238,0.447,0.085,0.426,37,71,4,9,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Interference,1,2.14,0.0,2.143,2.143,0.644,0.0,0.356,32,69,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Matrix Rain,1,2.81,0.0,2.81,2.81,0.0,0.0,1.0,32,83,0,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Medium Static,1,2.19,0.0,2.19,2.19,0.5,0.109,0.391,36,70,3,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Mid Heavy,1,3.86,0.0,3.857,3.857,0.457,0.16,0.296,23,105,5,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Neon Flicker,1,1.62,0.0,1.619,1.619,0.441,0.029,0.5,30,58,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Progressive,1,3.43,0.0,3.429,3.429,0.417,0.056,0.486,55,96,5,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Pulse,1,2.1,0.0,2.095,2.095,0.409,0.091,0.455,34,68,2,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Radioactive,1,2.43,0.0,2.429,2.429,0.569,0.098,0.294,41,75,3,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Redacted,1,3.57,0.0,3.571,3.571,0.373,0.227,0.333,22,99,3,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Scratched,1,2.29,0.0,2.286,2.286,0.333,0.271,0.333,20,72,2,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Shimmer,1,1.91,0.0,1.905,1.905,1.0,0.0,0.0,27,64,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Signal Loss,1,2.33,0.0,2.333,2.333,0.408,0.0,0.571,36,73,2,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Spectral,1,2.43,0.0,2.429,2.429,0.824,0.098,0.078,34,75,3,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Tremor,1,1.95,0.0,1.952,1.952,0.0,0.0,1.0,29,65,0,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:TV Static,1,1.95,0.0,1.952,1.952,1.0,0.0,0.0,29,65,5,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Wave,1,3.24,0.0,3.238,3.238,0.397,0.074,0.515,49,92,4,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Above Heavy,1,4.91,0.0,4.905,4.905,1.0,0.0,0.0,39,127,8,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Below Heavy,1,4.43,0.0,4.429,4.429,0.0,0.0,1.0,36,117,0,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Bleeding,1,3.95,0.0,3.952,3.952,0.084,0.072,0.807,45,107,2,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Burning,1,5.29,0.0,5.286,5.286,1.0,0.0,0.0,44,135,9,9,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Corrupted,1,3.57,0.0,3.571,3.571,0.707,0.107,0.147,46,99,6,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Cursed,1,5.09,0.0,5.095,5.095,0.421,0.103,0.458,64,131,6,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Demon Text,1,5.67,0.0,5.667,5.667,0.454,0.084,0.445,72,143,6,12,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Heavy Mixed,1,3.9,0.0,3.905,3.905,0.451,0.049,0.5,51,106,6,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Insane,1,8.48,0.0,8.476,8.476,0.427,0.056,0.5,80,202,8,15,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Maximum,1,13.24,0.0,13.238,13.238,0.464,0.05,0.478,101,302,10,24,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Melting,1,5.29,0.0,5.286,5.286,0.0,0.0,1.0,37,135,0,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Overload,1,5.09,0.0,5.095,5.095,0.402,0.065,0.477,69,131,5,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Poltergeist,1,3.33,0.0,3.333,3.333,0.429,0.043,0.443,49,94,4,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Possessed,1,6.09,0.0,6.095,6.095,0.477,0.0,0.516,73,152,8,16,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Random Scatter,1,2.62,0.0,2.619,2.619,0.473,0.109,0.4,43,79,6,9,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Shattered,1,7.05,0.0,7.048,7.048,0.419,0.088,0.466,82,172,10,18,0.619
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Submerged,1,3.62,0.0,3.619,3.619,0.171,0.118,0.632,41,100,3,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,preset:Void,1,9.9,0.0,9.905,9.905,0.192,0.053,0.75,77,232,5,20,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,default,3,1.67,0.27,1.333,2.0,1.0,0.0,0.0,10,16,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Below Light,1,1.67,0.0,1.667,1.667,0.0,0.0,1.0,10,16,0,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Electric,1,1.67,0.0,1.667,1.667,1.0,0.0,0.0,10,16,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Flicker,1,0.5,0.0,0.5,0.5,1.0,0.0,0.0,3,9,1,1,0.5
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Frozen,1,1.33,0.0,1.333,1.333,0.125,0.25,0.625,8,14,1,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Mid Light,1,1.17,0.0,1.167,1.167,0.571,0.286,0.143,7,13,1,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Mist,1,1.0,0.0,1.0,1.0,0.0,0.0,1.0,5,12,0,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Soft Scratch,1,1.0,0.0,1.0,1.0,0.333,0.0,0.5,6,12,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Static Light,1,1.0,0.0,1.0,1.0,0.5,0.333,0.167,6,12,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Underwater,1,1.5,0.0,1.5,1.5,0.0,0.0,1.0,9,15,0,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Weathered,1,1.33,0.0,1.333,1.333,0.625,0.25,0.125,8,14,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Whisper,1,1.0,0.0,1.0,1.0,1.0,0.0,0.0,6,12,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Cascade Down,1,3.0,0.0,3.0,3.0,0.389,0.111,0.5,16,24,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Center Focus,1,2.33,0.0,2.333,2.333,0.5,0.071,0.429,14,20,4,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Data Corrupt,1,1.67,0.0,1.667,1.667,0.4,0.4,0.1,9,16,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Decay,1,3.5,0.0,3.5,3.5,0.667,0.095,0.19,18,27,10,12,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Edges Only,1,3.5,0.0,3.5,3.5,0.524,0.095,0.381,21,27,5,9,0.667
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Fragmented,1,1.83,0.0,1.833,1.833,0.455,0.0,0.273,10,17,2,3,0.833
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Glitch Scan,1,2.67,0.0,2.667,2.667,0.375,0.125,0.5,16,22,3,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Haunted,1,2.0,0.0,2.0,2.0,0.417,0.0,0.583,11,18,2,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Heartbeat,1,1.67,0.0,1.667,1.667,0.5,0.0,0.5,9,16,1,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Interference,1,1.5,0.0,1.5,1.5,0.667,0.0,0.333,9,15,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Matrix Rain,1,2.83,0.0,2.833,2.833,0.0,0.0,1.0,14,23,0,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Medium Static,1,2.83,0.0,2.833,2.833,0.353,0.118,0.529,15,23,2,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Mid Heavy,1,1.83,0.0,1.833,1.833,0.455,0.273,0.273,8,17,3,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Neon Flicker,1,1.5,0.0,1.5,1.5,0.111,0.222,0.667,8,15,1,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Progressive,1,4.0,0.0,4.0,4.0,0.583,0.083,0.292,21,30,7,12,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Pulse,1,1.33,0.0,1.333,1.333,0.375,0.125,0.5,8,14,1,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Radioactive,1,1.83,0.0,1.833,1.833,0.364,0.0,0.636,9,17,2,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Redacted,1,3.17,0.0,3.167,3.167,0.579,0.158,0.211,12,25,3,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Scratched,1,2.5,0.0,2.5,2.5,0.533,0.133,0.2,12,21,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Shimmer,1,2.0,0.0,2.0,2.0,1.0,0.0,0.0,11,18,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Signal Loss,1,2.17,0.0,2.167,2.167,0.538,0.0,0.462,13,19,2,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Spectral,1,2.0,0.0,2.0,2.0,0.75,0.083,0.167,11,18,2,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Tremor,1,2.17,0.0,2.167,2.167,0.0,0.0,1.0,12,19,0,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:TV Static,1,2.5,0.0,2.5,2.5,1.0,0.0,0.0,13,21,5,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Wave,1,2.17,0.0,2.167,2.167,0.462,0.077,0.462,13,19,3,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Above Heavy,1,5.33,0.0,5.333,5.333,1.0,0.0,0.0,22,38,8,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Below Heavy,1,5.17,0.0,5.167,5.167,0.0,0.0,1.0,22,37,0,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Bleeding,1,4.33,0.0,4.333,4.333,0.077,0.0,0.923,20,32,1,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Burning,1,4.67,0.0,4.667,4.667,1.0,0.0,0.0,19,34,7,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Corrupted,1,4.5,0.0,4.5,4.5,0.667,0.259,0.074,21,33,5,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Cursed,1,3.33,0.0,3.333,3.333,0.6,0.1,0.3,19,26,4,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Demon Text,1,3.67,0.0,3.667,3.667,0.5,0.045,0.318,17,28,3,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Heavy Mixed,1,3.83,0.0,3.833,3.833,0.522,0.087,0.348,23,29,3,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Insane,1,6.83,0.0,6.833,6.833,0.439,0.098,0.439,32,47,6,11,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Maximum,1,13.83,0.0,13.833,13.833,0.446,0.084,0.458,57,89,12,20,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Melting,1,5.83,0.0,5.833,5.833,0.0,0.0,1.0,24,41,0,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Overload,1,5.83,0.0,5.833,5.833,0.286,0.057,0.629,29,41,3,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Poltergeist,1,2.83,0.0,2.833,2.833,0.353,0.0,0.588,15,23,2,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Possessed,1,8.67,0.0,8.667,8.667,0.481,0.019,0.481,38,58,11,18,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Random Scatter,1,4.33,0.0,4.333,4.333,0.423,0.077,0.5,25,32,6,9,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Shattered,1,3.17,0.0,3.167,3.167,0.316,0.105,0.579,19,25,2,7,0.667
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Submerged,1,3.83,0.0,3.833,3.833,0.174,0.043,0.696,20,29,3,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,digits,preset:Void,1,13.5,0.0,13.5,13.5,0.247,0.012,0.741,53,87,5,20,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,default,3,1.43,0.05,1.4,1.5,1.0,0.0,0.0,12,26.3,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Below Light,1,1.4,0.0,1.4,1.4,0.0,0.0,1.0,12,26,0,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Electric,1,1.6,0.0,1.6,1.6,1.0,0.0,0.0,14,28,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Flicker,1,0.5,0.0,0.5,0.5,1.0,0.0,0.0,4,17,1,1,0.5
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Frozen,1,1.5,0.0,1.5,1.5,0.0,0.133,0.8,14,27,0,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Mid Light,1,1.7,0.0,1.7,1.7,0.471,0.176,0.235,15,29,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Mist,1,1.0,0.0,1.0,1.0,0.0,0.0,1.0,9,22,0,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Soft Scratch,1,1.0,0.0,1.0,1.0,0.4,0.2,0.3,8,22,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Static Light,1,1.0,0.0,1.0,1.0,0.6,0.1,0.3,10,22,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Underwater,1,1.8,0.0,1.8,1.8,0.0,0.0,1.0,14,30,0,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Weathered,1,1.4,0.0,1.4,1.4,0.571,0.214,0.143,12,26,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Whisper,1,1.0,0.0,1.0,1.0,1.0,0.0,0.0,10,22,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Cascade Down,1,3.0,0.0,3.0,3.0,0.433,0.033,0.5,29,42,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Center Focus,1,3.5,0.0,3.5,3.5,0.314,0.086,0.6,29,47,2,9,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Data Corrupt,1,2.3,0.0,2.3,2.3,0.522,0.13,0.13,17,35,2,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Decay,1,5.2,0.0,5.2,5.2,0.462,0.077,0.423,39,64,6,11,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Edges Only,1,2.4,0.0,2.4,2.4,0.417,0.125,0.417,21,36,4,10,0.4
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Fragmented,1,1.7,0.0,1.7,1.7,0.647,0.118,0.235,17,29,2,3,0.7
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Glitch Scan,1,3.2,0.0,3.2,3.2,0.562,0.062,0.375,28,44,4,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Haunted,1,3.2,0.0,3.2,3.2,0.688,0.0,0.312,27,44,4,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Heartbeat,1,2.2,0.0,2.2,2.2,0.409,0.045,0.545,21,34,3,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Interference,1,1.9,0.0,1.9,1.9,0.368,0.0,0.632,17,31,1,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Matrix Rain,1,2.9,0.0,2.9,2.9,0.0,0.0,1.0,22,41,0,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Medium Static,1,2.0,0.0,2.0,2.0,0.6,0.05,0.3,15,32,3,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Mid Heavy,1,4.5,0.0,4.5,4.5,0.467,0.222,0.267,20,57,5,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Neon Flicker,1,1.5,0.0,1.5,1.5,0.533,0.067,0.4,15,27,2,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Progressive,1,3.8,0.0,3.8,3.8,0.526,0.053,0.421,31,50,8,12,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Pulse,1,2.7,0.0,2.7,2.7,0.519,0.074,0.407,24,39,6,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Radioactive,1,2.3,0.0,2.3,2.3,0.391,0.13,0.478,22,35,3,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Redacted,1,3.7,0.0,3.7,3.7,0.432,0.27,0.189,19,49,2,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Scratched,1,2.8,0.0,2.8,2.8,0.357,0.214,0.286,18,40,2,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Shimmer,1,1.8,0.0,1.8,1.8,1.0,0.0,0.0,16,30,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Signal Loss,1,2.2,0.0,2.2,2.2,0.455,0.045,0.5,19,34,3,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Spectral,1,3.2,0.0,3.2,3.2,0.812,0.125,0.062,24,44,4,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Tremor,1,1.7,0.0,1.7,1.7,0.0,0.0,1.0,15,29,0,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:TV Static,1,2.1,0.0,2.1,2.1,1.0,0.0,0.0,14,33,5,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Wave,1,2.0,0.0,2.0,2.0,0.2,0.1,0.7,18,32,2,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Above Heavy,1,6.0,0.0,6.0,6.0,1.0,0.0,0.0,35,72,8,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Below Heavy,1,2.9,0.0,2.9,2.9,0.0,0.0,1.0,21,41,0,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Bleeding,1,3.9,0.0,3.9,3.9,0.051,0.026,0.923,28,51,1,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Burning,1,5.9,0.0,5.9,5.9,1.0,0.0,0.0,36,71,10,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Corrupted,1,4.5,0.0,4.5,4.5,0.689,0.111,0.111,32,57,6,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Cursed,1,4.7,0.0,4.7,4.7,0.511,0.043,0.447,37,59,6,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Demon Text,1,6.9,0.0,6.9,6.9,0.406,0.043,0.493,49,81,4,12,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Heavy Mixed,1,4.2,0.0,4.2,4.2,0.476,0.024,0.476,37,54,4,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Insane,1,6.7,0.0,6.7,6.7,0.522,0.075,0.373,48,79,7,11,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Maximum,1,16.5,0.0,16.5,16.5,0.448,0.097,0.43,90,177,13,23,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Melting,1,5.0,0.0,5.0,5.0,0.0,0.0,1.0,29,62,0,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Overload,1,5.5,0.0,5.5,5.5,0.509,0.109,0.364,44,67,5,9,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Poltergeist,1,3.0,0.0,3.0,3.0,0.5,0.033,0.367,25,42,6,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Possessed,1,7.9,0.0,7.9,7.9,0.557,0.038,0.405,55,91,11,17,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Random Scatter,1,3.0,0.0,3.0,3.0,0.367,0.133,0.5,28,42,2,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Shattered,1,13.0,0.0,13.0,13.0,0.492,0.077,0.392,74,142,10,18,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Submerged,1,4.3,0.0,4.3,4.3,0.209,0.163,0.605,29,55,2,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,accents,preset:Void,1,10.0,0.0,10.0,10.0,0.23,0.06,0.67,58,112,9,20,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,default,3,1.73,0.25,1.4,2.0,1.0,0.0,0.0,12,23,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Below Light,1,1.4,0.0,1.4,1.4,0.0,0.0,1.0,10,21,0,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Electric,1,1.4,0.0,1.4,1.4,1.0,0.0,0.0,9,20,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Flicker,1,0.4,0.0,0.4,0.4,1.0,0.0,0.0,4,15,1,1,0.4
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Frozen,1,1.6,0.0,1.6,1.6,0.091,0.0,0.727,9,22,1,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Mid Light,1,1.4,0.0,1.4,1.4,0.1,0.5,0.3,8,21,1,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Mist,1,1.0,0.0,1.0,1.0,0.0,0.0,1.0,6,18,0,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Soft Scratch,1,1.0,0.0,1.0,1.0,0.714,0.143,0.143,7,18,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Static Light,1,1.0,0.0,1.0,1.0,0.143,0.0,0.714,7,18,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Underwater,1,1.8,0.0,1.8,1.8,0.0,0.0,1.0,9,22,0,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Weathered,1,2.0,0.0,2.0,2.0,0.846,0.154,0.0,10,24,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Whisper,1,1.0,0.0,1.0,1.0,1.0,0.0,0.0,7,18,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Cascade Down,1,3.0,0.0,3.0,3.0,0.381,0.048,0.476,18,32,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Center Focus,1,3.4,0.0,3.4,3.4,0.632,0.0,0.368,16,30,4,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Data Corrupt,1,2.4,0.0,2.4,2.4,0.312,0.375,0.25,12,27,2,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Decay,1,3.6,0.0,3.6,3.6,0.333,0.143,0.524,16,32,2,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Edges Only,1,1.4,0.0,1.4,1.4,0.5,0.111,0.278,15,29,4,8,0.4
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Fragmented,1,1.0,0.0,1.0,1.0,0.5,0.125,0.375,8,19,2,3,0.4
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Glitch Scan,1,3.4,0.0,3.4,3.4,0.385,0.192,0.385,22,37,5,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Haunted,1,4.6,0.0,4.6,4.6,0.6,0.0,0.4,24,41,4,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Heartbeat,1,2.2,0.0,2.2,2.2,0.615,0.231,0.154,12,24,4,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Interference,1,1.6,0.0,1.6,1.6,0.6,0.0,0.4,10,21,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Matrix Rain,1,3.6,0.0,3.6,3.6,0.0,0.0,1.0,22,38,0,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Medium Static,1,3.0,0.0,3.0,3.0,0.524,0.0,0.429,19,32,4,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Mid Heavy,1,2.6,0.0,2.6,2.6,0.318,0.227,0.227,16,33,2,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Neon Flicker,1,1.2,0.0,1.2,1.2,0.125,0.125,0.625,8,19,1,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Progressive,1,4.6,0.0,4.6,4.6,0.406,0.031,0.5,29,43,4,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Pulse,1,2.6,0.0,2.6,2.6,0.556,0.0,0.444,18,29,3,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Radioactive,1,2.6,0.0,2.6,2.6,0.667,0.0,0.333,14,29,3,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Redacted,1,4.0,0.0,4.0,4.0,0.464,0.179,0.214,16,39,4,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Scratched,1,1.6,0.0,1.6,1.6,0.462,0.0,0.385,11,24,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Shimmer,1,2.0,0.0,2.0,2.0,1.0,0.0,0.0,12,25,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Signal Loss,1,2.4,0.0,2.4,2.4,0.333,0.278,0.389,15,29,3,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Spectral,1,2.2,0.0,2.2,2.2,0.875,0.062,0.0,14,27,3,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Tremor,1,1.8,0.0,1.8,1.8,0.0,0.0,1.0,11,22,0,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:TV Static,1,2.0,0.0,2.0,2.0,1.0,0.0,0.0,13,27,5,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Wave,1,3.6,0.0,3.6,3.6,0.462,0.115,0.423,24,37,3,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Above Heavy,1,4.4,0.0,4.4,4.4,1.0,0.0,0.0,26,47,8,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Below Heavy,1,5.8,0.0,5.8,5.8,0.0,0.0,1.0,24,50,0,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Bleeding,1,4.4,0.0,4.4,4.4,0.086,0.057,0.857,29,46,2,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Burning,1,5.6,0.0,5.6,5.6,1.0,0.0,0.0,30,57,10,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Corrupted,1,3.8,0.0,3.8,3.8,0.643,0.071,0.107,22,39,5,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Cursed,1,4.0,0.0,4.0,4.0,0.793,0.069,0.138,26,40,6,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Demon Text,1,3.8,0.0,3.8,3.8,0.6,0.0,0.4,24,41,6,9,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Heavy Mixed,1,4.2,0.0,4.2,4.2,0.517,0.069,0.345,25,40,3,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Insane,1,8.4,0.0,8.4,8.4,0.556,0.074,0.37,43,65,7,12,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Maximum,1,11.4,0.0,11.4,11.4,0.36,0.116,0.512,53,97,7,19,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Melting,1,5.6,0.0,5.6,5.6,0.0,0.0,1.0,26,54,0,9,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Overload,1,4.6,0.0,4.6,4.6,0.472,0.028,0.5,33,47,4,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Poltergeist,1,5.0,0.0,5.0,5.0,0.63,0.0,0.333,25,38,7,9,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Possessed,1,6.2,0.0,6.2,6.2,0.396,0.038,0.566,39,64,5,13,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Random Scatter,1,3.6,0.0,3.6,3.6,0.375,0.083,0.542,24,35,3,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Shattered,1,12.2,0.0,12.2,12.2,0.368,0.105,0.5,53,87,8,19,0.8
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Submerged,1,4.0,0.0,4.0,4.0,0.333,0.074,0.593,24,38,3,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,emoji,preset:Void,1,11.6,0.0,11.6,11.6,0.21,0.037,0.716,51,92,6,20,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,default,3,1.51,0.01,1.494,1.519,1.0,0.0,0.0,47,225.3,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Below Light,1,1.62,0.0,1.617,1.617,0.0,0.0,1.0,37,235,0,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Electric,1,1.46,0.0,1.457,1.457,1.0,0.0,0.0,44,220,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Flicker,1,0.51,0.0,0.506,0.506,1.0,0.0,0.0,28,142,1,1,0.506
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Frozen,1,1.52,0.0,1.519,1.519,0.248,0.128,0.576,50,225,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Mid Light,1,1.48,0.0,1.481,1.481,0.48,0.154,0.276,23,223,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Mist,1,1.0,0.0,1.0,1.0,0.0,0.0,1.0,36,183,0,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Soft Scratch,1,1.0,0.0,1.0,1.0,0.349,0.241,0.361,22,183,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Static Light,1,1.0,0.0,1.0,1.0,0.542,0.048,0.398,60,183,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Underwater,1,1.99,0.0,1.988,1.988,0.0,0.0,1.0,40,264,0,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Weathered,1,1.53,0.0,1.531,1.531,0.78,0.102,0.071,57,227,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Whisper,1,1.0,0.0,1.0,1.0,1.0,0.0,0.0,43,183,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Cascade Down,1,3.0,0.0,3.0,3.0,0.474,0.1,0.394,98,349,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Center Focus,1,3.67,0.0,3.667,3.667,0.482,0.05,0.435,105,401,8,11,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Data Corrupt,1,2.4,0.0,2.395,2.395,0.462,0.156,0.296,46,299,4,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Decay,1,3.68,0.0,3.679,3.679,0.464,0.05,0.447,101,402,5,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Edges Only,1,0.33,0.0,0.333,0.333,0.382,0.029,0.588,29,134,5,10,0.037
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Fragmented,1,1.11,0.0,1.111,1.111,0.419,0.086,0.462,64,193,3,3,0.58
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Glitch Scan,1,2.93,0.0,2.926,2.926,0.455,0.074,0.446,91,342,4,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Haunted,1,3.04,0.0,3.037,3.037,0.496,0.0,0.504,81,348,4,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Heartbeat,1,1.99,0.0,1.988,1.988,0.436,0.085,0.448,89,265,6,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Interference,1,1.95,0.0,1.951,1.951,0.488,0.0,0.512,73,262,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Matrix Rain,1,2.84,0.0,2.84,2.84,0.0,0.0,1.0,40,336,0,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Medium Static,1,2.43,0.0,2.432,2.432,0.485,0.095,0.41,94,300,4,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Mid Heavy,1,3.56,0.0,3.556,3.556,0.373,0.231,0.305,23,395,4,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Neon Flicker,1,1.49,0.0,1.494,1.494,0.448,0.056,0.48,69,225,2,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Progressive,1,3.75,0.0,3.753,3.753,0.448,0.082,0.423,105,417,5,11,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Pulse,1,2.16,0.0,2.16,2.16,0.451,0.044,0.473,89,282,4,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Radioactive,1,2.53,0.0,2.531,2.531,0.502,0.075,0.385,82,313,3,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Redacted,1,3.86,0.0,3.864,3.864,0.401,0.207,0.313,23,419,4,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Scratched,1,2.44,0.0,2.444,2.444,0.377,0.216,0.338,23,304,4,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Shimmer,1,2.02,0.0,2.025,2.025,1.0,0.0,0.0,47,266,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Signal Loss,1,2.33,0.0,2.333,2.333,0.479,0.067,0.428,91,294,4,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Spectral,1,2.67,0.0,2.667,2.667,0.82,0.045,0.108,67,322,4,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Tremor,1,2.07,0.0,2.074,2.074,0.0,0.0,1.0,39,274,0,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:TV Static,1,1.79,0.0,1.79,1.79,1.0,0.0,0.0,47,248,5,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Wave,1,2.67,0.0,2.667,2.667,0.39,0.083,0.5,94,318,4,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Above Heavy,1,4.73,0.0,4.728,4.728,1.0,0.0,0.0,48,489,8,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Below Heavy,1,5.18,0.0,5.185,5.185,0.0,0.0,1.0,40,522,0,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Bleeding,1,4.11,0.0,4.111,4.111,0.086,0.042,0.857,63,436,2,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Burning,1,5.63,0.0,5.63,5.63,1.0,0.0,0.0,48,564,10,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Corrupted,1,3.84,0.0,3.84,3.84,0.702,0.111,0.152,71,415,7,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Cursed,1,4.85,0.0,4.852,4.852,0.451,0.09,0.439,107,499,5,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Demon Text,1,6.58,0.0,6.58,6.58,0.454,0.058,0.452,111,638,8,12,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Heavy Mixed,1,5.0,0.0,5.0,5.0,0.494,0.079,0.405,110,517,6,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Insane,1,8.47,0.0,8.469,8.469,0.442,0.075,0.462,111,803,11,15,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Maximum,1,10.59,0.0,10.593,10.593,0.453,0.07,0.432,111,968,17,25,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Melting,1,5.41,0.0,5.407,5.407,0.0,0.0,1.0,40,550,0,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Overload,1,5.07,0.0,5.074,5.074,0.473,0.091,0.418,106,519,8,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Poltergeist,1,3.46,0.0,3.457,3.457,0.448,0.062,0.459,104,390,5,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Possessed,1,10.12,0.0,10.123,10.123,0.485,0.019,0.491,110,951,11,18,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Random Scatter,1,3.49,0.0,3.494,3.494,0.457,0.1,0.392,103,391,8,9,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Shattered,1,6.37,0.0,6.37,6.37,0.475,0.086,0.414,109,624,11,20,0.63
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Submerged,1,3.98,0.0,3.975,3.975,0.213,0.128,0.641,62,429,3,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,long100,preset:Void,1,10.1,0.0,10.099,10.099,0.216,0.043,0.718,105,933,9,20,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,default,3,1.62,0.05,1.565,1.696,1.0,0.0,0.0,35,100.3,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Below Light,1,1.61,0.0,1.609,1.609,0.0,0.0,1.0,31,103,0,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Electric,1,1.48,0.0,1.478,1.478,1.0,0.0,0.0,30,95,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Flicker,1,0.48,0.0,0.478,0.478,1.0,0.0,0.0,15,63,1,1,0.478
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Frozen,1,1.65,0.0,1.652,1.652,0.172,0.103,0.672,40,102,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Mid Light,1,1.65,0.0,1.652,1.652,0.361,0.23,0.344,23,105,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Mist,1,1.0,0.0,1.0,1.0,0.0,0.0,1.0,23,81,0,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Soft Scratch,1,1.0,0.0,1.0,1.0,0.297,0.297,0.27,17,81,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Static Light,1,1.0,0.0,1.0,1.0,0.378,0.135,0.486,33,81,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Underwater,1,2.04,0.0,2.043,2.043,0.0,0.0,1.0,38,115,0,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Weathered,1,1.48,0.0,1.478,1.478,0.804,0.039,0.137,33,95,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Whisper,1,1.0,0.0,1.0,1.0,1.0,0.0,0.0,26,81,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Cascade Down,1,3.0,0.0,3.0,3.0,0.45,0.045,0.45,62,155,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Center Focus,1,3.39,0.0,3.391,3.391,0.445,0.039,0.484,72,172,5,9,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Data Corrupt,1,2.65,0.0,2.652,2.652,0.621,0.189,0.147,39,139,4,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Decay,1,4.26,0.0,4.261,4.261,0.5,0.093,0.386,76,184,6,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Edges Only,1,0.48,0.0,0.478,0.478,0.4,0.15,0.45,19,64,3,9,0.13
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Fragmented,1,1.74,0.0,1.739,1.739,0.492,0.068,0.441,47,103,3,3,0.826
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Glitch Scan,1,2.26,0.0,2.261,2.261,0.5,0.058,0.43,61,130,3,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Haunted,1,2.91,0.0,2.913,2.913,0.561,0.0,0.439,67,158,4,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Heartbeat,1,2.22,0.0,2.217,2.217,0.452,0.083,0.464,63,128,6,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Interference,1,1.96,0.0,1.957,1.957,0.459,0.0,0.541,48,118,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Matrix Rain,1,2.56,0.0,2.565,2.565,0.0,0.0,1.0,37,142,0,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Medium Static,1,2.44,0.0,2.435,2.435,0.553,0.059,0.376,61,129,3,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Mid Heavy,1,3.44,0.0,3.435,3.435,0.421,0.207,0.306,23,165,4,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Neon Flicker,1,1.48,0.0,1.478,1.478,0.298,0.053,0.632,43,101,2,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Progressive,1,4.39,0.0,4.391,4.391,0.484,0.052,0.431,79,197,5,12,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Pulse,1,2.17,0.0,2.174,2.174,0.429,0.039,0.519,60,121,5,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Radioactive,1,2.48,0.0,2.478,2.478,0.449,0.079,0.438,58,133,4,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Redacted,1,3.22,0.0,3.217,3.217,0.415,0.252,0.26,23,167,4,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Scratched,1,2.56,0.0,2.565,2.565,0.367,0.143,0.327,23,142,2,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Shimmer,1,1.74,0.0,1.739,1.739,1.0,0.0,0.0,36,115,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Signal Loss,1,2.39,0.0,2.391,2.391,0.506,0.082,0.365,57,129,4,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Spectral,1,2.78,0.0,2.783,2.783,0.816,0.092,0.082,57,142,4,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Tremor,1,2.04,0.0,2.043,2.043,0.0,0.0,1.0,35,121,0,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:TV Static,1,2.13,0.0,2.13,2.13,1.0,0.0,0.0,36,115,5,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Wave,1,2.78,0.0,2.783,2.783,0.391,0.057,0.483,60,131,4,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Above Heavy,1,4.39,0.0,4.391,4.391,1.0,0.0,0.0,47,200,8,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Below Heavy,1,4.17,0.0,4.174,4.174,0.0,0.0,1.0,40,231,0,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Bleeding,1,3.87,0.0,3.87,3.87,0.066,0.04,0.868,58,195,2,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Burning,1,5.22,0.0,5.217,5.217,1.0,0.0,0.0,48,234,10,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Corrupted,1,3.87,0.0,3.87,3.87,0.669,0.083,0.172,58,201,6,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Cursed,1,4.43,0.0,4.435,4.435,0.443,0.098,0.408,84,218,6,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Demon Text,1,6.3,0.0,6.304,6.304,0.372,0.098,0.509,88,278,7,12,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Heavy Mixed,1,4.96,0.0,4.957,4.957,0.457,0.069,0.428,84,217,4,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Insane,1,6.0,0.0,6.0,6.0,0.477,0.074,0.418,103,300,9,15,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Maximum,1,12.65,0.0,12.652,12.652,0.477,0.052,0.455,107,488,15,25,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Melting,1,5.65,0.0,5.652,5.652,0.0,0.0,1.0,40,260,0,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Overload,1,5.09,0.0,5.087,5.087,0.452,0.074,0.442,95,261,9,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Poltergeist,1,3.04,0.0,3.043,3.043,0.556,0.073,0.339,76,168,5,9,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Possessed,1,8.26,0.0,8.261,8.261,0.461,0.022,0.505,103,361,9,16,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Random Scatter,1,3.35,0.0,3.348,3.348,0.459,0.036,0.459,67,155,5,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Shattered,1,9.44,0.0,9.435,9.435,0.439,0.101,0.433,105,379,12,20,0.87
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Submerged,1,4.87,0.0,4.87,4.87,0.235,0.112,0.62,59,223,4,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,punct,preset:Void,1,13.65,0.0,13.652,13.652,0.184,0.057,0.742,91,517,6,20,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,default,3,1.25,0.35,1.0,1.75,1.0,0.0,0.0,7,18,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Below Light,1,1.5,0.0,1.5,1.5,0.0,0.0,1.0,6,19,0,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Electric,1,1.5,0.0,1.5,1.5,1.0,0.0,0.0,6,19,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Flicker,1,0.5,0.0,0.5,0.5,1.0,0.0,0.0,2,15,1,1,0.5
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Frozen,1,1.75,0.0,1.75,1.75,0.429,0.0,0.571,7,20,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Mid Light,1,1.5,0.0,1.5,1.5,0.333,0.167,0.333,5,19,1,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Mist,1,1.0,0.0,1.0,1.0,0.0,0.0,1.0,4,17,0,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Soft Scratch,1,1.0,0.0,1.0,1.0,0.0,0.25,0.5,3,17,0,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Static Light,1,1.0,0.0,1.0,1.0,0.75,0.25,0.0,4,17,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Underwater,1,2.0,0.0,2.0,2.0,0.0,0.0,1.0,8,21,0,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Weathered,1,1.5,0.0,1.5,1.5,0.833,0.0,0.167,6,19,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Whisper,1,1.0,0.0,1.0,1.0,1.0,0.0,0.0,4,17,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Cascade Down,1,3.0,0.0,3.0,3.0,0.417,0.0,0.583,8,25,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Center Focus,1,1.5,0.0,1.5,1.5,0.5,0.0,0.5,6,19,1,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Data Corrupt,1,2.75,0.0,2.75,2.75,0.273,0.273,0.455,7,24,2,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Decay,1,4.25,0.0,4.25,4.25,0.588,0.059,0.353,16,30,4,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Edges Only,1,2.25,0.0,2.25,2.25,0.444,0.0,0.556,9,22,2,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Fragmented,1,1.75,0.0,1.75,1.75,0.0,0.143,0.714,7,20,0,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Glitch Scan,1,3.25,0.0,3.25,3.25,0.385,0.077,0.538,13,26,3,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Haunted,1,3.0,0.0,3.0,3.0,0.75,0.0,0.25,12,25,4,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Heartbeat,1,1.5,0.0,1.5,1.5,0.5,0.0,0.333,6,19,2,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Interference,1,2.0,0.0,2.0,2.0,0.5,0.0,0.5,8,21,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Matrix Rain,1,3.0,0.0,3.0,3.0,0.0,0.0,1.0,12,25,0,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Medium Static,1,1.75,0.0,1.75,1.75,0.286,0.143,0.571,7,20,1,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Mid Heavy,1,4.0,0.0,4.0,4.0,0.562,0.188,0.25,12,29,3,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Neon Flicker,1,1.5,0.0,1.5,1.5,0.5,0.333,0.167,6,19,1,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Progressive,1,3.0,0.0,3.0,3.0,0.583,0.0,0.417,12,25,3,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Pulse,1,2.25,0.0,2.25,2.25,0.556,0.0,0.444,8,22,3,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Radioactive,1,2.0,0.0,2.0,2.0,0.375,0.125,0.375,8,21,2,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Redacted,1,4.5,0.0,4.5,4.5,0.556,0.111,0.278,11,31,5,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Scratched,1,1.75,0.0,1.75,1.75,0.429,0.0,0.571,5,20,1,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Shimmer,1,1.25,0.0,1.25,1.25,1.0,0.0,0.0,5,18,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Signal Loss,1,2.25,0.0,2.25,2.25,0.667,0.0,0.222,9,22,2,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Spectral,1,3.25,0.0,3.25,3.25,0.923,0.077,0.0,10,26,4,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Tremor,1,1.75,0.0,1.75,1.75,0.0,0.0,1.0,7,20,0,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:TV Static,1,2.0,0.0,2.0,2.0,1.0,0.0,0.0,6,21,4,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Wave,1,4.75,0.0,4.75,4.75,0.474,0.0,0.474,18,32,5,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Above Heavy,1,4.75,0.0,4.75,4.75,1.0,0.0,0.0,16,32,7,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Below Heavy,1,5.5,0.0,5.5,5.5,0.0,0.0,1.0,18,35,0,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Bleeding,1,5.5,0.0,5.5,5.5,0.045,0.045,0.864,14,35,1,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Burning,1,3.0,0.0,3.0,3.0,1.0,0.0,0.0,11,25,5,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Corrupted,1,3.0,0.0,3.0,3.0,0.667,0.083,0.167,12,25,7,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Cursed,1,4.5,0.0,4.5,4.5,0.611,0.056,0.333,17,31,4,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Demon Text,1,6.5,0.0,6.5,6.5,0.577,0.038,0.346,23,39,7,11,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Heavy Mixed,1,6.0,0.0,6.0,6.0,0.417,0.042,0.542,22,37,4,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Insane,1,4.0,0.0,4.0,4.0,0.375,0.188,0.438,16,29,3,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Maximum,1,16.75,0.0,16.75,16.75,0.537,0.03,0.388,46,80,13,24,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Melting,1,4.5,0.0,4.5,4.5,0.0,0.0,1.0,16,31,0,9,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Overload,1,3.5,0.0,3.5,3.5,0.429,0.214,0.214,12,27,3,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Poltergeist,1,4.0,0.0,4.0,4.0,0.312,0.188,0.5,16,29,2,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Possessed,1,15.75,0.0,15.75,15.75,0.508,0.0,0.476,50,76,11,17,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Random Scatter,1,1.25,0.0,1.25,1.25,0.2,0.2,0.6,5,18,1,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Shattered,1,8.5,0.0,8.5,8.5,0.471,0.265,0.265,24,47,8,17,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Submerged,1,2.75,0.0,2.75,2.75,0.091,0.091,0.727,10,24,1,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,spaces,preset:Void,1,7.5,0.0,7.5,7.5,0.133,0.1,0.733,26,43,3,15,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,default,3,1.58,0.21,1.312,1.812,1.0,0.0,0.0,21,44.3,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Below Light,1,1.31,0.0,1.312,1.312,0.0,0.0,1.0,18,40,0,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Electric,1,1.62,0.0,1.625,1.625,1.0,0.0,0.0,22,45,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Flicker,1,0.5,0.0,0.5,0.5,1.0,0.0,0.0,7,27,1,1,0.5
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Frozen,1,1.56,0.0,1.562,1.562,0.12,0.08,0.76,21,44,1,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Mid Light,1,1.69,0.0,1.688,1.688,0.37,0.222,0.407,16,46,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Mist,1,1.0,0.0,1.0,1.0,0.0,0.0,1.0,13,35,0,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Soft Scratch,1,1.0,0.0,1.0,1.0,0.312,0.25,0.312,12,35,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Static Light,1,1.0,0.0,1.0,1.0,0.688,0.0,0.25,13,35,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Underwater,1,1.94,0.0,1.938,1.938,0.0,0.0,1.0,21,50,0,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Weathered,1,1.5,0.0,1.5,1.5,0.708,0.042,0.167,18,43,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Whisper,1,1.0,0.0,1.0,1.0,1.0,0.0,0.0,13,35,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Cascade Down,1,3.0,0.0,3.0,3.0,0.417,0.062,0.521,34,67,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Center Focus,1,3.12,0.0,3.125,3.125,0.58,0.04,0.38,36,69,4,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Data Corrupt,1,2.81,0.0,2.812,2.812,0.467,0.178,0.289,25,64,3,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Decay,1,3.19,0.0,3.188,3.188,0.392,0.059,0.529,37,70,3,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Edges Only,1,1.38,0.0,1.375,1.375,0.455,0.091,0.409,19,41,5,9,0.25
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Fragmented,1,1.44,0.0,1.438,1.438,0.522,0.0,0.391,22,42,2,3,0.688
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Glitch Scan,1,2.31,0.0,2.312,2.312,0.405,0.054,0.541,34,56,4,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Haunted,1,3.31,0.0,3.312,3.312,0.528,0.0,0.472,43,72,3,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Heartbeat,1,1.88,0.0,1.875,1.875,0.4,0.033,0.533,26,49,5,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Interference,1,2.44,0.0,2.438,2.438,0.564,0.0,0.436,34,58,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Matrix Rain,1,3.12,0.0,3.125,3.125,0.0,0.0,1.0,29,69,0,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Medium Static,1,2.62,0.0,2.625,2.625,0.452,0.024,0.452,31,61,4,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Mid Heavy,1,3.06,0.0,3.062,3.062,0.592,0.102,0.265,18,68,4,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Neon Flicker,1,1.44,0.0,1.438,1.438,0.522,0.174,0.304,20,42,2,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Progressive,1,4.06,0.0,4.062,4.062,0.446,0.015,0.462,50,84,5,11,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Pulse,1,2.31,0.0,2.312,2.312,0.459,0.027,0.486,33,56,4,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Radioactive,1,2.12,0.0,2.125,2.125,0.382,0.059,0.559,27,53,2,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Redacted,1,4.0,0.0,4.0,4.0,0.375,0.25,0.328,23,83,3,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Scratched,1,2.5,0.0,2.5,2.5,0.55,0.075,0.175,20,59,4,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Shimmer,1,2.0,0.0,2.0,2.0,1.0,0.0,0.0,24,51,3,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Signal Loss,1,2.12,0.0,2.125,2.125,0.412,0.029,0.441,30,53,3,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Spectral,1,2.44,0.0,2.438,2.438,0.872,0.026,0.103,28,58,4,4,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Tremor,1,1.81,0.0,1.812,1.812,0.0,0.0,1.0,21,48,0,3,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:TV Static,1,2.19,0.0,2.188,2.188,1.0,0.0,0.0,24,54,5,5,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Wave,1,3.19,0.0,3.188,3.188,0.431,0.059,0.49,41,70,4,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Above Heavy,1,3.0,0.0,3.0,3.0,1.0,0.0,0.0,28,67,7,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Below Heavy,1,5.25,0.0,5.25,5.25,0.0,0.0,1.0,34,103,0,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Bleeding,1,4.69,0.0,4.688,4.688,0.053,0.107,0.813,46,94,2,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Burning,1,5.88,0.0,5.875,5.875,1.0,0.0,0.0,41,113,10,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Corrupted,1,4.0,0.0,4.0,4.0,0.703,0.156,0.125,35,83,6,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Cursed,1,5.0,0.0,5.0,5.0,0.525,0.037,0.375,53,99,5,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Demon Text,1,6.19,0.0,6.188,6.188,0.485,0.081,0.424,66,118,8,12,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Heavy Mixed,1,5.5,0.0,5.5,5.5,0.42,0.057,0.466,58,107,6,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Insane,1,6.69,0.0,6.688,6.688,0.514,0.056,0.402,62,126,8,14,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Maximum,1,11.62,0.0,11.625,11.625,0.419,0.075,0.457,84,205,10,21,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Melting,1,5.88,0.0,5.875,5.875,0.0,0.0,1.0,35,113,0,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Overload,1,6.38,0.0,6.375,6.375,0.549,0.029,0.402,64,121,8,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Poltergeist,1,3.0,0.0,3.0,3.0,0.562,0.062,0.354,38,67,6,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Possessed,1,9.25,0.0,9.25,9.25,0.473,0.047,0.473,78,167,12,18,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Random Scatter,1,3.19,0.0,3.188,3.188,0.49,0.039,0.451,38,70,5,7,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Shattered,1,8.81,0.0,8.812,8.812,0.504,0.05,0.404,79,160,11,20,0.812
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Submerged,1,4.5,0.0,4.5,4.5,0.194,0.069,0.694,43,91,4,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,mixed,preset:Void,1,8.88,0.0,8.875,8.875,0.197,0.077,0.718,68,161,4,18,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,task:light,2,1.0,0.0,1.0,1.0,1.0,0.0,0.0,17,45,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,task:extreme,2,14.02,0.55,13.476,14.571,0.435,0.078,0.458,105,318.5,13,25,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,task:above_only,2,3.93,0.17,3.762,4.095,1.0,0.0,0.0,39,106.5,8,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,task:below_only,2,5.38,0.05,5.333,5.429,0.0,0.0,1.0,39,137,0,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,task:middle_only,2,3.98,0.02,3.952,4.0,0.413,0.162,0.323,23,107.5,4,6,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,task:mostly_readable,2,1.0,0.0,1.0,1.0,1.0,0.0,0.0,17,45,1,1,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,task:dense_unreadable,2,14.02,0.55,13.476,14.571,0.435,0.078,0.458,105,318.5,13,25,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,task:increasing,2,3.69,0.17,3.524,3.857,0.432,0.077,0.445,59,101.5,6,9,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,task:decreasing,2,3.67,0.0,3.667,3.667,0.435,0.065,0.487,57,101,5,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,task:wave,2,3.52,0.14,3.381,3.667,0.48,0.061,0.446,60,98,4,8,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,task:middle_peak,2,3.81,0.1,3.714,3.905,0.419,0.1,0.469,59,104,6,10,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,task:middle_valley,2,1.24,0.05,1.19,1.286,0.346,0.077,0.577,24,50,4,10,0.19
+textavia-glitch,Textavia Glitch Text Generator,watching,task:strikethrough,2,1.48,0.0,1.476,1.476,0.435,0.242,0.274,17,55,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,task:tiny_stack,2,1.6,0.07,1.524,1.667,1.0,0.0,0.0,27,57.5,2,2,1.0
+textavia-glitch,Textavia Glitch Text Generator,watching,task:roots_downward,2,5.31,0.69,4.619,6.0,0.0,0.0,1.0,37,135.5,0,10,1.0
 textavia,Textavia Zalgo Text Generator,hello,default,20,3.9,0.4,3.2,4.6,0.495,0.0,0.505,21,24.5,3,6,1.0
 textavia,Textavia Zalgo Text Generator,he_comes,default,3,3.52,0.24,3.286,3.857,0.494,0.0,0.506,26,37,3,5,1.0
 textavia,Textavia Zalgo Text Generator,watching,default,3,3.81,0.21,3.524,4.0,0.514,0.0,0.486,59,116.7,3,6,1.0
