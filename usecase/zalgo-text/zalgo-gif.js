@@ -25,7 +25,10 @@
   const MAX_WIDTH = 1080;
   const MAX_HEIGHT = 1920;
   const PAD = 32;
-  const FONT_STACK = '"Segoe UI", "Noto Sans", "Noto Sans Thai", Tahoma, Arial, sans-serif';
+  // The same family the live output uses (system-ui), so the GIF stacks
+  // marks the way the preview does, with fallbacks that carry combining
+  // marks and Thai.
+  const FONT_STACK = 'system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "DejaVu Sans", "Noto Sans Thai", Tahoma, Arial, sans-serif';
 
   // ── GIF encoder ────────────────────────────────────────────────
   function ByteWriter() {
@@ -196,8 +199,10 @@
       }));
       const lineGap = font * 1.4;
       const height = ascent + descent + (lineCount - 1) * lineGap;
-      plan = { font, framesLines, width, ascent, lineGap, height };
-      if (width <= maxW) break;
+      plan = { font, framesLines, width, ascent, descent, lineGap, height };
+      // Shrink until it fits both ways; a stack taller than the canvas even
+      // at the smallest size is cropped at the top (see make()).
+      if (width <= maxW && height <= MAX_HEIGHT - PAD * 2) break;
     }
     const w = Math.min(MAX_WIDTH, Math.ceil(plan.width) + PAD * 2);
     const h = Math.min(MAX_HEIGHT, Math.ceil(plan.height) + PAD * 2);
@@ -232,8 +237,11 @@
       ctx.fillStyle = 'rgb(' + FG.join(',') + ')';
       ctx.font = plan.font + 'px ' + FONT_STACK;
       ctx.textBaseline = 'alphabetic';
+      // Anchor to the bottom: the text always shows, and a stack taller than
+      // the canvas runs off the top edge, the way it climbs over a feed.
       const lines = plan.framesLines[f];
-      lines.forEach((line, i) => ctx.fillText(line, PAD, PAD + plan.ascent + i * plan.lineGap));
+      const last = plan.h - PAD - plan.descent;
+      lines.forEach((line, i) => ctx.fillText(line, PAD, last - (lines.length - 1 - i) * plan.lineGap));
       indexed.push(toIndexes(ctx, plan.w, plan.h));
       delays.push((o.delay || 12) + (f === frames.length - 1 ? (o.holdLast || 0) : 0));
       await tick();
