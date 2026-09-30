@@ -1236,6 +1236,9 @@
     if (gif && !gif.classList.contains('is-working')) gif.disabled = !state.output;
     const hint = $('#gifHint');
     if (hint) hint.hidden = !state.output;
+    // A new output makes the last GIF's status and alt text stale.
+    const gifResult = $('#gifResult');
+    if (gifResult && gif && !gif.classList.contains('is-working')) gifResult.hidden = true;
     // The first output of the visit plays the label's glitch once, so the
     // button shows what it makes; after that it stays still until hovered.
     if (state.output && !gifIntroPlayed) {
@@ -1456,7 +1459,10 @@
     const gifBtn = $('#gifBtn');
     if (gifBtn) {
       gifBtn.addEventListener('click', () => makeGif('button'));
-      const replay = () => { if (!gifBtn.disabled) animateGifLabel(GIF_INTRO_MS); };
+      const replay = () => {
+        if (gifRefocusing) { gifRefocusing = false; return; }
+        if (!gifBtn.disabled) animateGifLabel(GIF_INTRO_MS);
+      };
       gifBtn.addEventListener('mouseenter', replay);
       gifBtn.addEventListener('focus', replay);
       gifBtn.addEventListener('mouseleave', () => { if (gifLabelTimer) stillGifLabel(); });
@@ -1648,6 +1654,7 @@
   let gifLabelTimer = null;
   let gifLabelSeed = 1;
   let gifLabelDrawn = false;
+  let gifRefocusing = false;  // focus we restore after a GIF is not a hover
 
   function gifIsNew() { return Date.now() < GIF_NEW_UNTIL; }
 
@@ -1714,6 +1721,10 @@
 
     const mode = gifMode();
     const t0 = Date.now();
+    // The alt text describes the frames captured now, not whatever is typed
+    // by the time the file is ready.
+    const input0 = $('#mainInput');
+    const plain = input0 ? input0.value.trim() : '';
     trackGif({ stage: 'attempt', mode, frames: frames.length, entry });
 
     const done = (text) => {
@@ -1723,7 +1734,10 @@
       if (status) status.textContent = text;
       if (result && !text) result.hidden = true;
       // Disabling the pressed button dropped focus to <body>; put it back.
-      if (pressed && document.activeElement === document.body) pressed.focus();
+      if (pressed && !pressed.disabled && document.activeElement === document.body) {
+        gifRefocusing = pressed.id === 'gifBtn';
+        pressed.focus();
+      }
     };
 
     let ms = 0;
@@ -1737,8 +1751,6 @@
         return deliverGif(blob);
       }))
       .then(outcome => {
-        const input = $('#mainInput');
-        const plain = input ? input.value.trim() : '';
         if (alt) alt.textContent = i18n.gifAltText.replace('{text}', plain);
         if (altCopy) altCopy.hidden = !plain;
         done(outcome === 'native' ? i18n.gifShared : (outcome === 'aborted' ? '' : i18n.gifSaved));
@@ -2001,12 +2013,6 @@
       outputSection.appendChild(row);
     }
 
-    // The PNG card is the comparator register #128 reads the GIF against,
-    // so it names this page as its surface. Only the image button: the link
-    // share keeps "generator" so its own series (#112) stays continuous.
-    document.querySelectorAll('#zalgoOutputSection .share-image-btn, #variantRows .share-image-btn').forEach(b => {
-      b.dataset.shareSurface = 'zalgo';
-    });
 
     // One compact pair per fixed-flavour variant row.
     VARIANTS.forEach(v => {
@@ -2015,6 +2021,13 @@
       const pair = UTG.buildShareActions({ styleId: 'zalgo-' + v.id, name: i18n[v.labelKey] || v.id, disabled: true });
       pair.setAttribute('data-variant-share', v.id);
       varRow.appendChild(pair);
+    });
+    // Stamped after both loops, so the variant rows' buttons exist.
+    // The PNG card is the comparator register #128 reads the GIF against,
+    // so it names this page as its surface. Only the image button: the link
+    // share keeps "generator" so its own series (#112) stays continuous.
+    document.querySelectorAll('#zalgoOutputSection .share-image-btn, #variantRows .share-image-btn').forEach(b => {
+      b.dataset.shareSurface = 'zalgo';
     });
 
     syncShareState();

@@ -527,7 +527,7 @@
   // Resolves to "native" | "aborted" | "downloaded".
   UTG.shareImageBlob = async function (blob, opts) {
     // The file's own type names the format unless the caller states one.
-    const o = Object.assign({ format: String((blob && blob.type) || "image/png").split("/")[1] || null }, opts || {});
+    const o = Object.assign({ format: String((blob && blob.type) || "image/png").split("/")[1].split("+")[0] || null }, opts || {});
     const filename = o.filename || "share.png";
     const file = new File([blob], filename, { type: blob.type || "image/png" });
     const canShareFiles = !!(navigator.canShare && navigator.canShare({ files: [file] }));

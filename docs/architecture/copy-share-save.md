@@ -105,6 +105,16 @@ stay continuous. What is new is **`item_type`** on save/unsave and **`share_surf
 did sharing actually work on* — the whole question the change exists to settle.
 `style_name` is still set for styles, so nothing downstream breaks.
 
+### `share_format` (added 2026-09-30)
+
+`share_method` says *how* something left the page; an image method carries whatever
+file the caller built, so it cannot say *what* left. `share_format` does: `link` for
+the link paths, `png` for image cards, `gif` for the Zalgo tool's animated export,
+and an honest `null` for a pin, whose format Pinterest decides. `shareImageBlob`
+reads it from the blob's MIME type unless the caller states one. It is pushed on
+every row, never omitted, because GTM's data layer keeps a key's last value and a
+missing key would inherit the previous row's format.
+
 ### `share_destination`, and the rule that a row fires on success
 
 Two changes, made a week apart by two sessions that could not see each other.

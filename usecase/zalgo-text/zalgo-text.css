@@ -11,6 +11,15 @@
   --zalgo-surface2: rgba(0, 0, 0, 0.06);
   --zalgo-green: #4ade80;
   --zalgo-red: #f87171;
+  /* Accent as TEXT: --accent-purple is 4.2:1 on white, under AA for the
+     12.5px GIF label; these clear 4.5:1 in each theme. */
+  --zalgo-accent-text: #6d4fc7;
+  --zalgo-accent-on: #ffffff;
+}
+
+body.dark-mode {
+  --zalgo-accent-text: #c4b5fd;
+  --zalgo-accent-on: #1e1b2e;
 }
 
 /* ── Layout ─────────────────────────────────────────── */
@@ -921,8 +930,8 @@
   align-items: center;
   gap: 6px;
   background: var(--bg-white);
-  color: var(--accent-purple);
-  border: 1px solid var(--accent-purple);
+  color: var(--zalgo-accent-text);
+  border: 1px solid var(--zalgo-accent-text);
   overflow: hidden;
   position: relative;
 }
@@ -954,8 +963,8 @@
   text-transform: uppercase;
   padding: 1px 5px;
   border-radius: 999px;
-  background: var(--accent-purple);
-  color: var(--bg-white);
+  background: var(--zalgo-accent-text);
+  color: var(--zalgo-accent-on);
 }
 
 /* The line under the output: when to use the GIF, and the file's result. */
@@ -975,7 +984,7 @@
   padding: 0;
   font: inherit;
   font-weight: 600;
-  color: var(--accent-purple);
+  color: var(--zalgo-accent-text);
   text-decoration: underline;
   text-underline-offset: 2px;
   cursor: pointer;
