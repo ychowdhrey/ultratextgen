@@ -1039,6 +1039,7 @@
     const measure = s => platformLength(p, s);
     const label = i18n[p.labelKey];
     let ok = true;
+    const saved = { amplitude: state.amplitude, frequency: state.frequency, zones: Object.assign({}, state.zones), depth: state.cascade.depth };
 
     if (state.cascade.enabled) {
       const d = fitValue(CASCADE_DEPTH.min, state.cascade.depth, p.limit,
@@ -1061,13 +1062,25 @@
         if (f == null) ok = false; else state.frequency = f / 100;
       }
     }
-    clearActivePreset();
+    if (!ok) {
+      // Nothing fits: leave the user's settings exactly as they were.
+      state.amplitude = saved.amplitude;
+      state.frequency = saved.frequency;
+      state.zones = saved.zones;
+      state.cascade.depth = saved.depth;
+    } else {
+      clearActivePreset();
+    }
     syncControlsToState();
     runGenerate();
     const status = $('#fitStatus');
     if (status) {
       status.textContent = (ok ? i18n.fitDone : i18n.fitImpossible).replace('{platform}', label);
       status.dataset.sticky = '1';
+      // The badge that was pressed is re-rendered, so keep keyboard focus
+      // nearby instead of dropping it to the page.
+      status.setAttribute('tabindex', '-1');
+      try { status.focus({ preventScroll: true }); } catch (e) { /* ignore */ }
     }
   }
 
@@ -1526,6 +1539,11 @@
     btn.disabled = true;
     btn.classList.add('is-working');
     btn.textContent = i18n.gifWorking;
+    const announce = (msg) => {
+      const status = $('#fitStatus');
+      if (status) { status.textContent = msg; status.dataset.sticky = '1'; }
+    };
+    announce(i18n.gifWorking);
     const done = (label) => {
       btn.classList.remove('is-working');
       btn.textContent = label;
@@ -1544,9 +1562,10 @@
         a.remove();
         setTimeout(() => URL.revokeObjectURL(url), 10000);
         trackGif(frames.length);
+        announce('');
         done(i18n.btnGif);
       })
-      .catch(() => done(i18n.gifFailed));
+      .catch(() => { announce(i18n.gifFailed); done(i18n.gifFailed); });
   }
 
   function trackGif(n) {
@@ -1632,6 +1651,8 @@
       if (CASCADE_PLACEMENTS.indexOf(params.get('place')) !== -1)        state.cascade.placement = params.get('place');
       if (CASCADE_MARKS.some(m => m.id === params.get('mark')))          state.cascade.mark      = params.get('mark');
       if (CASCADE_ANCHORS.indexOf(params.get('anchor')) !== -1)          state.cascade.anchor    = params.get('anchor');
+      // A kaomoji carrier is the Post Invader preset's signature.
+      if (state.cascade.anchor === 'kaomoji') state.preset = 'invader';
     }
     // The seed makes a shared link reproduce the exact marks, not just the
     // settings. Base 36 keeps the link short.

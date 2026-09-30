@@ -167,7 +167,21 @@
     text.split('\n').forEach(para => {
       const words = para.split(/(\s+)/);
       let line = '';
+      // A single word wider than the canvas is broken between graphemes.
+      const pieces = [];
       words.forEach(word => {
+        if (!word.trim() || ctx.measureText(word).width <= maxWidth) { pieces.push(word); return; }
+        let chunk = '';
+        const gs = (typeof Intl !== 'undefined' && Intl.Segmenter)
+          ? Array.from(new Intl.Segmenter(undefined, { granularity: 'grapheme' }).segment(word), x => x.segment)
+          : [...word];
+        gs.forEach(g => {
+          if (chunk && ctx.measureText(chunk + g).width > maxWidth) { pieces.push(chunk); pieces.push(' '); chunk = ''; }
+          chunk += g;
+        });
+        if (chunk) pieces.push(chunk);
+      });
+      pieces.forEach(word => {
         const tryLine = line + word;
         if (line && ctx.measureText(tryLine).width > maxWidth && word.trim()) {
           out.push(line.replace(/\s+$/, ''));

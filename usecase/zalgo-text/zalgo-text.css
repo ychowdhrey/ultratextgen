@@ -1002,3 +1002,10 @@ button.fit-badge.fit-no:focus-visible {
   .zalgo-page-header p { font-size: 13.5px; }
   .input-section { margin-bottom: 16px; }
 }
+
+/* Phones: Regenerate, GIF and Copy wrap onto their own row instead of
+   pushing Copy out of the header. */
+@media (max-width: 640px) {
+  .output-header { flex-wrap: wrap; row-gap: 10px; }
+  .output-actions { flex-wrap: wrap; width: 100%; justify-content: flex-end; }
+}
