@@ -47,7 +47,7 @@
 }
   </script>
 </head>
-<body class="embed-widget-body" data-static-footer="none">
+<body class="embed-widget-body" data-static-footer="none" data-embed-widget="zalgo" data-embed-source="zalgo-text-generator">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -65,7 +65,7 @@
       <!-- Intensity Presets -->
       <div class="helper-section">
         <div class="helper-section-title" id="presetLabel">Intensity: click to choose</div>
-        <div class="decoration-tabs decoration-tabs--wrap" id="presetTabs" role="group" aria-labelledby="presetLabel">
+        <div class="decoration-tabs" id="presetTabs" role="group" aria-labelledby="presetLabel">
           <button class="decoration-tab" data-preset="subtle" type="button" aria-pressed="false">Subtle</button>
           <button class="decoration-tab active" data-preset="classic" type="button" aria-pressed="true">Classic</button>
           <button class="decoration-tab" data-preset="cursed" type="button" aria-pressed="false">Cursed</button>
@@ -93,8 +93,6 @@
         <div class="variations-placeholder">Type something above to curse it</div>
       </div>
     </div>
-
-    <span class="sr-only" id="copyStatus" aria-live="polite"></span>
 
     <!-- Attribution -->
     <div class="embed-attribution">
@@ -152,55 +150,17 @@
     const zalgoCopyBtn = document.getElementById('zalgoCopyBtn');
     const variationsGrid = document.getElementById('variationsGrid');
 
-    const copyStatus = document.getElementById('copyStatus');
-
     let activePreset = 'classic';
 
-    // ── Analytics (dataLayer only; never breaks the widget) ─────────
-    // Where the widget is running: 'preview' is our own /embed/ landing page
-    // iframing it, 'third_party' is someone else's site, 'direct' is the
-    // widget URL opened on its own. On the preview the row goes to the
-    // landing page's dataLayer, so "tried the widget" and "copied the embed
-    // code" are read off one page's funnel. On a third-party site it stays in
-    // this document and carries the host's hostname (never the full URL).
-    const WIDGET_CONTEXT = (() => {
-      if (window.parent === window) return 'direct';
-      try {
-        return window.parent.location.hostname === window.location.hostname ? 'preview' : 'third_party';
-      } catch (e) { return 'third_party'; }
-    })();
-    const WIDGET_HOST = (() => {
-      if (WIDGET_CONTEXT !== 'third_party') return '';
-      try { return document.referrer ? new URL(document.referrer).hostname : ''; } catch (e) { return ''; }
-    })();
-    let typedOnce = false;
-
-    function trackInteraction(action, preset) {
-      try {
-        const target = WIDGET_CONTEXT === 'preview' ? window.parent : window;
-        target.dataLayer = target.dataLayer || [];
-        target.dataLayer.push({
-          event: 'zalgo_widget_interaction',
-          widget_action: action,
-          widget_preset: preset,
-          widget_context: WIDGET_CONTEXT,
-          widget_host: WIDGET_HOST
-        });
-      } catch (e) { /* analytics must never break the widget */ }
-    }
-
     // ── Clipboard helper (button feedback) ──────────────────────────
-    function copyWithFeedback(text, btn, onCopied) {
+    function copyWithFeedback(text, btn) {
       if (!text) return;
       navigator.clipboard.writeText(text).then(() => {
-        if (onCopied) onCopied();
-        copyStatus.textContent = 'Copied to clipboard';
         btn.textContent = 'Copied!';
         btn.classList.add('copied');
         setTimeout(() => {
           btn.textContent = 'Copy';
           btn.classList.remove('copied');
-          copyStatus.textContent = '';
         }, 1500);
       });
     }
@@ -264,8 +224,7 @@
         copyBtn.textContent = 'Copy';
         copyBtn.type = 'button';
         copyBtn.setAttribute('aria-label', 'Copy ' + variant.label + ' Zalgo text');
-        copyBtn.addEventListener('click', () => copyWithFeedback(result, copyBtn,
-          () => trackInteraction('copy_variant', variant.id)));
+        copyBtn.addEventListener('click', () => copyWithFeedback(result, copyBtn));
 
         card.appendChild(info);
         card.appendChild(copyBtn);
@@ -282,35 +241,26 @@
     // ── Events ──────────────────────────────────────────────────────
     presetTabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        presetTabs.forEach(t => {
-          t.classList.remove('active');
-          t.setAttribute('aria-pressed', 'false');
-        });
+        presetTabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
-        tab.setAttribute('aria-pressed', 'true');
         activePreset = tab.dataset.preset;
         renderMain();
-        trackInteraction('preset', activePreset);
       });
     });
 
     mainInput.addEventListener('input', () => {
       updateCharCount();
       renderAll();
-      if (!typedOnce) {
-        typedOnce = true;
-        trackInteraction('type', activePreset);
-      }
     });
 
     zalgoCopyBtn.addEventListener('click', () => {
       if (zalgoOutput.classList.contains('placeholder')) return;
-      copyWithFeedback(zalgoOutput.textContent, zalgoCopyBtn,
-        () => trackInteraction('copy', activePreset));
+      copyWithFeedback(zalgoOutput.textContent, zalgoCopyBtn);
     });
 
     // ── Init ────────────────────────────────────────────────────────
     updateCharCount();
     renderAll();
   </script>
+  <script src="/js/embed/embed-widget.js" defer></script>
 </body></html>

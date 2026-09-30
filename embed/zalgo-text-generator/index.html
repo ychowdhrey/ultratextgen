@@ -69,7 +69,7 @@
   <div id="shared-header"></div>
 <script src="/header.js" defer></script>
 
-  <main class="embed-landing-page">
+  <main class="embed-landing-page" data-embed-landing="zalgo" data-embed-source="zalgo-text-generator">
     <nav class="breadcrumbs embed-landing-crumbs" aria-label="Breadcrumb">
       <a href="/">Home</a>
       <span class="breadcrumb-separator">›</span>
@@ -104,7 +104,7 @@
           <span class="embed-preview-url">your-website.com</span>
           <span class="embed-preview-badge">Live preview</span>
         </div>
-        <iframe class="embed-preview-iframe" src="/usecase/zalgo-text/embed/" title="Live preview of the Zalgo Text Generator widget"></iframe>
+        <iframe class="embed-preview-iframe embed-preview-h700" src="/usecase/zalgo-text/embed/" title="Live preview of the Zalgo Text Generator widget"></iframe>
         <figcaption class="sr-only">The widget exactly as it appears on your site. It is fully interactive.</figcaption>
       </figure>
 
@@ -161,7 +161,7 @@
         <a href="/embed/character-counter/" class="embed-more-card" data-other-embed="character-counter">
           <span class="embed-more-sample">280 / 280 · Fits ✓</span>
           <span class="embed-more-name">Character Counter</span>
-          <span class="embed-more-desc">Live word and character stats with a 26-platform limit checker.</span>
+          <span class="embed-more-desc">Live counts plus limit checks for 39 fields on 17 platforms.</span>
         </a>
       </div>
       <a class="embed-more-all" href="/embed/" data-other-embed="all">Explore all embeddable tools →</a>
@@ -179,94 +179,5 @@
   </footer>
 
   <span class="sr-only" id="embedCopyStatus" aria-live="polite"></span>
-
-  <script>
-    (function () {
-      var SOURCE = 'zalgo-text-generator';
-      var code = document.getElementById('embedCode');
-      var status = document.getElementById('embedCopyStatus');
-      var buttons = document.querySelectorAll('[data-embed-copy]');
-
-      // dataLayer only; analytics must never break the page.
-      function track(row) {
-        try {
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push(row);
-        } catch (e) {}
-      }
-
-      // The preview widget pushes zalgo_widget_interaction into THIS page's
-      // dataLayer (it is same-origin), so "tried it first" is read from there.
-      function widgetInteracted() {
-        return (window.dataLayer || []).some(function (row) {
-          return row && row.event === 'zalgo_widget_interaction';
-        });
-      }
-
-      // Fires on a successful copy, never on intent.
-      function recordCopy(location, method) {
-        track({
-          event: 'zalgo_embed_copy',
-          embed_copy_location: location,
-          embed_copy_method: method,
-          widget_interacted: widgetInteracted()
-        });
-      }
-
-      function fallbackCopy(text) {
-        var ta = document.createElement('textarea');
-        ta.value = text;
-        ta.setAttribute('readonly', '');
-        ta.className = 'sr-only';
-        document.body.appendChild(ta);
-        ta.select();
-        var ok = false;
-        try { ok = document.execCommand('copy'); } catch (e) {}
-        document.body.removeChild(ta);
-        return ok;
-      }
-
-      function showCopied(btn) {
-        var label = btn.querySelector('.embed-copy-text');
-        buttons.forEach(function (b) { b.classList.remove('is-copied'); });
-        btn.classList.add('is-copied');
-        label.textContent = 'Copied!';
-        status.textContent = 'Embed code copied to clipboard';
-        clearTimeout(btn._copiedTimer);
-        btn._copiedTimer = setTimeout(function () {
-          btn.classList.remove('is-copied');
-          label.textContent = 'Copy embed code';
-          status.textContent = '';
-        }, 2000);
-      }
-
-      buttons.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var text = code.textContent;
-          var location = btn.getAttribute('data-embed-copy');
-          function done() { showCopied(btn); recordCopy(location, 'button'); }
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(text).then(done, function () {
-              if (fallbackCopy(text)) done();
-            });
-          } else if (fallbackCopy(text)) {
-            done();
-          }
-        });
-      });
-
-      // Someone selecting the code and pressing Ctrl+C is the same conversion.
-      code.addEventListener('copy', function () { recordCopy('code_panel', 'manual_select'); });
-
-      document.querySelectorAll('[data-other-embed]').forEach(function (link) {
-        link.addEventListener('click', function () {
-          track({
-            event: 'other_embed_click',
-            embed_target: link.getAttribute('data-other-embed'),
-            embed_source: SOURCE
-          });
-        });
-      });
-    })();
-  </script>
+  <script src="/js/embed/embed-landing.js" defer></script>
 </body></html>

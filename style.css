@@ -3036,7 +3036,7 @@ button.cta-btn { border: 0; cursor: pointer; }
 }
 /* A preset row that wraps instead of scrolling sideways: in a widget the
    host sizes, a hidden overflow hides presets nobody knows to swipe for. */
-.embed-wrapper .decoration-tabs--wrap {
+.embed-wrapper .decoration-tabs {
   flex-wrap: wrap;
   overflow-x: visible;
   padding-right: 0;
@@ -3330,6 +3330,11 @@ body.dark-mode .embed-copy-btn.is-copied {
   height: 700px;
   border: none;
 }
+/* Each widget keeps the height its published embed code already sets, so
+   the preview matches what installed sites show. */
+.embed-preview-iframe.embed-preview-h620 { height: 620px; }
+.embed-preview-iframe.embed-preview-h640 { height: 640px; }
+.embed-preview-iframe.embed-preview-h760 { height: 760px; }
 
 .embed-landing-after {
   text-align: center;
@@ -9201,6 +9206,15 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .counter-field-actions {
   display: flex;
   gap: 8px;
+}
+/* The unscoped mobile ".copy-btn { width: 100% }" rule is written for
+   full-width result cards; in this row it pushed Clear 70px past a 320px
+   viewport. Same override as .ascii-output-head. */
+.counter-field-head {
+  flex-wrap: wrap;
+}
+.counter-field-actions .copy-btn {
+  width: auto;
 }
 .counter-clear-btn {
   padding: 0.3rem 0.7rem;
