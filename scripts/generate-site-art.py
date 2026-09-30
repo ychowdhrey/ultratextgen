@@ -3007,6 +3007,8 @@ PAGES.update({
 PAGES.update({
 "learn-save-printer-ink-printables": ("Save Printer Ink on Worksheets", "Remove decoration, lighten fills, keep text dark",
     P(m_doc), K_PRINT),
+"learn-print-worksheets-for-a-class": ("Print Worksheets for a Whole Class", "One class list, a level per child, one PDF",
+    P(m_doc), K_PRINT),
 "learn-hub": ("Learn", "Stage-by-stage guides for handwriting & lettering",
     P(m_doc), K_PRINT),
 "learn-dot-to-dots": ("Dot-to-Dots & Pencil Control", "A progression guide from many dots to freehand",
