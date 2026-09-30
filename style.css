@@ -3387,7 +3387,7 @@ body.dark-mode .embed-copy-btn.is-copied {
 }
 .embed-more-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 12px;
 }
 .embed-more-card {
@@ -4735,7 +4735,7 @@ button.clear-decoration {
    ========================================================================== */
 .symbol-groups {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 1rem;
   margin-top: 1.5rem;
 }
