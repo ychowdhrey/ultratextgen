@@ -906,3 +906,106 @@
   padding: 150px 22px 150px;
   line-height: 1.6;
 }
+
+/* ── GIF export button ─────────────────────────────── */
+.btn-gif {
+  background: var(--zalgo-surface2);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-light);
+}
+
+.btn-gif:hover:not(:disabled) {
+  border-color: var(--zalgo-border-active);
+  color: var(--text-primary);
+}
+
+.btn-gif:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* ── Fit to a platform ─────────────────────────────── */
+/* A badge that does not fit is a button: pressing it shrinks the effect. */
+button.fit-badge {
+  background: transparent;
+  font-family: inherit;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+button.fit-badge.fit-no:hover,
+button.fit-badge.fit-no:focus-visible {
+  border-color: var(--zalgo-red);
+  color: var(--text-primary);
+}
+
+.fit-status {
+  flex-basis: 100%;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.fit-status:empty {
+  display: none;
+}
+
+/* ── Amount per zone (advanced) ───────────────────── */
+.zones-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.zones-sliders {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.zones-sliders[hidden] {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .zones-sliders { grid-template-columns: 1fr; }
+}
+
+.zone-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+/* Position and Amplitude are replaced while per-zone amounts are on. */
+.controls .control-group.is-muted {
+  opacity: 0.45;
+}
+
+.controls .control-group.is-muted .pill,
+.controls .control-group.is-muted .slider-track {
+  cursor: not-allowed;
+}
+
+/* ── First screen on phones ───────────────────────── */
+/* The generator is the answer: on a narrow screen the heading block is
+   tightened so the text box starts inside the first screen. */
+@media (max-width: 640px) {
+  .hero:has(.zalgo-page-header) { padding-top: 16px; }
+  .zalgo-page-header { margin-bottom: 16px; }
+  .zalgo-page-header h1.hero-headline { font-size: 24px; line-height: 1.25; margin-bottom: 6px; }
+  .zalgo-page-header p { font-size: 13.5px; }
+  .input-section { margin-bottom: 16px; }
+}
+
+/* Phones: Regenerate, GIF and Copy wrap onto their own row instead of
+   pushing Copy out of the header. */
+@media (max-width: 640px) {
+  .output-header { flex-wrap: wrap; row-gap: 10px; }
+  .output-actions { flex-wrap: wrap; width: 100%; justify-content: flex-end; }
+}

@@ -114,6 +114,7 @@ const SECTIONS = [
   { id: 'home',        title: 'Main generator',        dirs: [] },
   { id: 'fonts',       title: 'Font styles',           dirs: ['category'] },
   { id: 'use-cases',   title: 'Use-case generators',   dirs: ['usecase'] },
+  { id: 'compare',     title: 'Tool comparisons',      dirs: ['compare'] },
   { id: 'tools',       title: 'Text tools',            dirs: [] },
   { id: 'platforms',   title: 'Platform pages',        dirs: [] },
   { id: 'library',     title: 'Symbol & emoji library', dirs: ['library'] },

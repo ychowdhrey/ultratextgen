@@ -1,0 +1,44 @@
+{
+ "inputs": [
+  {
+   "id": "hello",
+   "text": "hello"
+  },
+  {
+   "id": "he_comes",
+   "text": "HE COMES"
+  },
+  {
+   "id": "watching",
+   "text": "something is watching me"
+  },
+  {
+   "id": "digits",
+   "text": "123456"
+  },
+  {
+   "id": "accents",
+   "text": "café déjà vu"
+  },
+  {
+   "id": "emoji",
+   "text": "👁 hello 👁"
+  },
+  {
+   "id": "long100",
+   "text": "The lights flickered twice, then the screen went dark and the words began to crawl across it slowly."
+  },
+  {
+   "id": "punct",
+   "text": "Wait... what?! (don't) #run - now; ok: \"yes\""
+  },
+  {
+   "id": "spaces",
+   "text": "a  b   c    d"
+  },
+  {
+   "id": "mixed",
+   "text": "ZaLgO cOmEs FoR yOu"
+  }
+ ]
+}
