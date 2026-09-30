@@ -159,6 +159,23 @@
         oneSheet: "One sheet",
         easy: "Easy", medium: "Medium", hard: "Hard"
       },
+      /* Spelling worksheet generator. English only, under the same rule as
+         the word-list tools above: no locale build of the page exists. */
+      spelling: {
+        forWhom: "for",
+        trace: { title: "Trace, Write, Remember", note: "Trace each word, saying the sounds. Fold the page back along the dashed line, write the word from memory, then unfold and check.", noteCopy: "Read each word and say the sounds. Fold the page back along the dashed line, write the word from memory, then unfold and check." },
+        lcwc: { title: "Look, Say, Cover, Write, Check", note: "Look at the word and say it. Cover it. Write it. Check it. If it was wrong, fix it.", look: "Look and say", write: "Cover and write", check: "Check", fix: "Fix it", again: "Test me again on" },
+        missing: { title: "Missing Letters", note: "Fill in the missing letters. Then write the whole word on the line." },
+        abc: { title: "ABC Order", note: "Write the words in ABC order.", fold: "Fold the list away. Write three of the words from memory." },
+        shapes: { title: "Word Shapes", note: "Write each word in the boxes that match its shape." },
+        answers: { title: "Answers", missing: "Missing letters", abc: "ABC order", shapes: "Word shapes" },
+        bank: "Word bank",
+        needWords: "Type a few words to build the sheets.",
+        needSheet: "Pick at least one sheet.",
+        words: "words", sheets: "sheets", pages: "pages", page: "page",
+        perChild: "for each child",
+        tooLong: "Left out (letters only, up to 20):"
+      },
       printOpts: { settings: "PDF settings", paper: "Paper", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Download PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
       printBook: "Save as a book: one page per letter",
       save: "Save",
@@ -1275,6 +1292,19 @@
     scPrint: $("#pt-sc-print"),
     scPng: $("#pt-sc-png"),
     scLadder: $("#pt-sc-ladder"),
+    spInput: $("#pt-sp-input"),
+    spRoster: $("#pt-sp-roster"),
+    spHeading: $("#pt-sp-heading"),
+    spSheets: $("#pt-sp-sheets"),
+    spTrace: $("#pt-sp-trace"),
+    spSize: $("#pt-sp-size"),
+    spBlank: $("#pt-sp-blank"),
+    spBank: $("#pt-sp-bank"),
+    spAnswer: $("#pt-sp-answer"),
+    spTabs: $("#pt-sp-tabs"),
+    spPreview: $("#pt-sp-preview"),
+    spMeta: $("#pt-sp-meta"),
+    spPrint: $("#pt-sp-print"),
     printRoot: $("#pt-print-root")
   };
 
@@ -3100,7 +3130,7 @@
   // typed here is ever sent to analytics (see header.js trackPrintable).
   function firstEl(list) { return list.filter(Boolean)[0] || null; }
   function primaryInput() { return firstEl([el.nameInput, el.genInput, el.designInput, el.bannerInput, el.puzzleInput]); }
-  function primaryRoster() { return firstEl([el.nameRoster, el.genRoster, el.designRoster, el.puzzleRoster, el.searchRoster, el.cwRoster, el.scRoster]); }
+  function primaryRoster() { return firstEl([el.nameRoster, el.genRoster, el.designRoster, el.puzzleRoster, el.searchRoster, el.cwRoster, el.scRoster, el.spRoster]); }
   /* presetParams() is defined above the word-search section, so it reaches the
      module through this rather than through searchBuild(). The fallback keeps a
      share link working (minus its word list) if the module has not arrived. */
@@ -3131,7 +3161,7 @@
       p.letters = setKey;
       if (setKey === "pick" && setPickText.trim()) p.pick = setPickText.trim().slice(0, 40);
     }
-    const heading = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading, el.cwHeading, el.scHeading]);
+    const heading = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading, el.cwHeading, el.scHeading, el.spHeading]);
     if (heading && heading.value.trim()) p.heading = heading.value.trim();
     if (el.searchInput && el.searchInput.value.trim()) {
       p.words = WS_NS().normalizeWords(el.searchInput.value).map((w) => w.display).join("|");
@@ -3144,7 +3174,7 @@
        rather than through normalizeWords(): that helper is the word-search
        module's own grid-placement normaliser, and neither of these builds a
        grid the same way. */
-    const puzzleWords = firstEl([el.cwInput, el.scInput]);
+    const puzzleWords = firstEl([el.cwInput, el.scInput, el.spInput]);
     if (!p.words && puzzleWords && puzzleWords.value.trim()) {
       p.words = puzzleWords.value.split(/[\n,]+/).map((w) => w.trim()).filter(Boolean).join("|");
     }
@@ -3191,13 +3221,13 @@
     const cs = presetGet("case");
     if (cs && el.genCase && ["as-typed", "upper", "lower", "title"].indexOf(cs) !== -1) el.genCase.value = cs;
     const words = presetGet("words");
-    const wordsEl = firstEl([el.searchInput, el.cwInput, el.scInput]);
+    const wordsEl = firstEl([el.searchInput, el.cwInput, el.scInput, el.spInput]);
     if (words && wordsEl) {
       wordsEl.value = String(words).split("|").map((x) => x.trim()).filter(Boolean).join("\n");
     }
     const wslevel = presetGet("wslevel");
     if (wslevel && ["easy", "medium", "hard"].indexOf(wslevel) !== -1) searchState.level = wslevel;
-    const heading = presetGet("heading"); const headingEl = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading, el.cwHeading, el.scHeading]);
+    const heading = presetGet("heading"); const headingEl = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading, el.cwHeading, el.scHeading, el.spHeading]);
     if (heading && headingEl) headingEl.value = String(heading).slice(0, 60);
     /* A link's paper seeds a visitor who has never chosen, and never
        overrides one who has. Paper is a property of the recipient's printer,
@@ -3382,7 +3412,7 @@
   function firstActionSurface() {
     const rows = [el.alphaPrint, el.practicePrint, el.namePrint, el.genPrint,
       el.designPrint, el.bannerPrint, el.puzzlePrint, el.searchPrint, el.cwPrint,
-      el.scPrint, el.bookPrint]
+      el.scPrint, el.spPrint, el.bookPrint]
       .filter(Boolean)
       .map((b) => b.closest(".bubble-actions, .pt-actions, .pt-preview-actions") || b);
     /* The character surface's own action row is built by selectChar(), which
@@ -3494,7 +3524,7 @@
      HTML changes, so no locale page is "touched" for the parity, translation
      or em-dash gates. */
   function convertPrintButtonsToPdf() {
-    [el.alphaPrint, el.practicePrint, el.namePrint, el.genPrint, el.designPrint, el.bannerPrint, el.puzzlePrint, el.searchPrint, el.cwPrint, el.scPrint].filter(Boolean).forEach((btn) => {
+    [el.alphaPrint, el.practicePrint, el.namePrint, el.genPrint, el.designPrint, el.bannerPrint, el.puzzlePrint, el.searchPrint, el.cwPrint, el.scPrint, el.spPrint].filter(Boolean).forEach((btn) => {
       if (btn.dataset.ptPdf) return;
       btn.dataset.ptPdf = "1";
       btn.textContent = PO.savePdf;
@@ -6106,7 +6136,7 @@
 
   function mountSheetCost() {
     if ($("#pt-sheet-cost")) return;
-    const btn = el.namePrint || el.genPrint || el.designPrint || el.puzzlePrint || el.searchPrint || el.cwPrint || el.scPrint || el.alphaPrint;
+    const btn = el.namePrint || el.genPrint || el.designPrint || el.puzzlePrint || el.searchPrint || el.cwPrint || el.scPrint || el.spPrint || el.alphaPrint;
     if (!btn) return;
     const out = document.createElement("p");
     out.id = "pt-sheet-cost";
@@ -7645,7 +7675,7 @@
   };
   // The word-list tools print one sheet from a LIST, not from a name, so
   // "Just this name" would describe a sheet they do not make.
-  const AUDIENCE_LIST_ROSTERS = ["pt-search-roster", "pt-cw-roster", "pt-sc-roster"];
+  const AUDIENCE_LIST_ROSTERS = ["pt-search-roster", "pt-cw-roster", "pt-sc-roster", "pt-sp-roster"];
   function rosterIsOff(mount) {
     return !!(mount && mount.dataset && mount.dataset.ptAudience === "one");
   }
@@ -7714,7 +7744,7 @@
     setRosterAudience(mount, mount.value.trim() ? "class" : "one", { quiet: true });
   }
   function mountAudiences() {
-    [el.nameRoster, el.genRoster, el.designRoster, el.puzzleRoster, el.searchRoster, el.cwRoster, el.scRoster]
+    [el.nameRoster, el.genRoster, el.designRoster, el.puzzleRoster, el.searchRoster, el.cwRoster, el.scRoster, el.spRoster]
       .forEach(mountAudience);
     /* The sheet count is bound to the roster's input event, and a list that
        arrives filled (?roster= or remembered) never fires one, so a shared
@@ -7833,7 +7863,7 @@
     /* Word: one tool per page. A tool that authored a title field keeps it,
        moved into the section. */
     if (moreRefs.word) return;
-    const authored = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading, el.cwHeading, el.scHeading]);
+    const authored = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading, el.cwHeading, el.scHeading, el.spHeading]);
     const ownCheck = el.designHeading ? el.designFooter : (el.puzzleHeading ? el.puzzleFooter : null);
     const hasRoster = !!primaryRoster() && !fixedWordSet();
     if (authored) {
@@ -7896,6 +7926,7 @@
       [typeof renderSearchPreview === "function" && el.searchPreview ? renderSearchPreview : null,
        typeof renderCwPreview === "function" && el.cwPreview ? renderCwPreview : null,
        typeof renderScPreview === "function" && el.scPreview ? renderScPreview : null,
+       typeof renderSpPreview === "function" && el.spPreview ? renderSpPreview : null,
        typeof renderGenPreview === "function" && el.genPreview ? renderGenPreview : null
       ].forEach((fn) => { if (fn) { try { fn(); } catch (err) { /* surface absent */ } } });
     };
@@ -11614,6 +11645,513 @@
     renderScPreview();
   }
 
+  /* ---- spelling worksheet generator ----
+
+     One word list, five practice sheets, printed as one PDF (owner decision
+     2026-09-30). The sheets are ordered by how well each one builds spelling
+     memory, and the two that on their own only look at a word -- tracing and
+     ABC order -- each end with a step that asks for the word from memory:
+     tracing helps a child form letters but does little for remembering a
+     spelling, and writing it from memory and then checking it is what does
+     (Berninger et al. 1997; Jones et al. 2016; UK DfE writing framework 2025).
+     Word shapes is kept and labelled a puzzle: nothing supports learning a
+     spelling from its outline.
+
+     A class set gives every child the same words in a different order, drawn
+     from the child's name, so a reprint later is the identical sheet and the
+     answer page still matches. */
+
+  const SP_DEMO = CFG.spellingDemo
+    || "friend\nbecause\nanswer\nlaugh\nwould\npeople\nthought\nbefore\nlittle\nfavorite";
+  const SP_SHEETS = ["trace", "lcwc", "missing", "abc", "shapes"];
+  const SP_MAX_WORDS = 20;
+  const SP_TRACE_LEVEL = { dotted: 2, faded: 5, copy: 1 };
+  const SP_ROWS = { large: 5, medium: 7, small: 9 };
+  const spState = { sheets: ["trace", "lcwc", "missing"], trace: "dotted", size: "medium", blank: "tricky", tab: "trace" };
+  /* The spelling patterns a child usually gets wrong, longest first so
+     "ough" wins over "ou". A teacher who knows better marks the part in
+     brackets, fr[ie]nd, and that always wins. */
+  const SP_GRAPHEMES = ["ough", "augh", "eigh", "igh", "tch", "dge", "ai", "ay", "ea", "ee", "ie", "ei",
+    "oa", "oo", "ou", "ow", "ue", "ew", "au", "aw", "oi", "oy", "ar", "er", "ir", "or", "ur",
+    "ck", "ph", "wh", "kn", "wr", "mb", "gh"];
+
+  // mulberry32 over an FNV-1a hash of the seed string: the same small,
+  // engine-independent generator js/printables/wordPuzzles.js uses.
+  function spRng(seed) {
+    let h = 2166136261;
+    const s = String(seed);
+    for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); }
+    let a = h >>> 0;
+    return () => {
+      a = (a + 0x6D2B79F5) | 0;
+      let r = Math.imul(a ^ (a >>> 15), 1 | a);
+      r = (r + Math.imul(r ^ (r >>> 7), 61 | r)) ^ r;
+      return ((r ^ (r >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function spShuffle(list, seed) {
+    const r = spRng(seed);
+    const a = list.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(r() * (i + 1));
+      const tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+  }
+
+  function spParse() {
+    const raw = el.spInput && el.spInput.value.trim() ? el.spInput.value : SP_DEMO;
+    const words = [];
+    const skipped = [];
+    const seen = new Set();
+    raw.split(/[\r\n,;]+/).map((s) => s.trim()).filter(Boolean).forEach((entry) => {
+      const m = entry.match(/^([\p{L}'-]*)\[([\p{L}'-]+)\]([\p{L}'-]*)$/u);
+      const word = m ? m[1] + m[2] + m[3] : entry;
+      if (!/^[\p{L}'-]{1,20}$/u.test(word)) { skipped.push(entry); return; }
+      const key = word.toLowerCase();
+      if (seen.has(key) || words.length >= SP_MAX_WORDS) return;
+      seen.add(key);
+      words.push({ word: word, tricky: m ? [m[1].length, m[1].length + m[2].length] : null });
+    });
+    return { words: words, skipped: skipped };
+  }
+  function spTricky(w) {
+    if (w.tricky) return w.tricky;
+    const low = w.word.toLowerCase();
+    let best = null;
+    SP_GRAPHEMES.forEach((g) => {
+      const i = low.indexOf(g, 1);
+      if (i > 0 && (!best || g.length > best[1] - best[0])) best = [i, i + g.length];
+    });
+    if (!best) {
+      const d = low.match(/(\p{L})\1/u);
+      if (d) best = [d.index, d.index + 2];
+    }
+    if (!best) {
+      const v = low.slice(1).search(/[aeiouy]/);
+      best = v >= 0 ? [v + 1, v + 2] : [Math.min(1, low.length - 1), Math.min(2, low.length)];
+    }
+    return best;
+  }
+  function spBlanks(w, seed) {
+    if (spState.blank === "tricky") {
+      const t = spTricky(w);
+      const out = new Set();
+      for (let i = t[0]; i < t[1]; i++) out.add(i);
+      return out;
+    }
+    const chars = [...w.word];
+    const idx = chars.map((c, i) => i).filter((i) => /\p{L}/u.test(chars[i]));
+    if (spState.blank === "one") {
+      const pool = idx.length > 2 ? idx.slice(1) : idx;
+      return new Set([pool[Math.floor(spRng(seed + "|" + w.word)() * pool.length)]]);
+    }
+    const n = Math.max(2, Math.round(idx.length * 0.45));
+    return new Set(spShuffle(idx, seed + "|" + w.word).slice(0, n));
+  }
+  function spBankOn() { return !!(el.spBank && el.spBank.checked); }
+  function spAnswerOn() { return !!(el.spAnswer && el.spAnswer.checked); }
+  function spSelected() { return SP_SHEETS.filter((k) => spState.sheets.indexOf(k) !== -1); }
+
+  function spHead(sheet, key, seedName, note) {
+    const L = T.spelling;
+    const typed = el.spHeading ? el.spHeading.value.trim().slice(0, 48) : "";
+    const title = key === "answers" ? L.answers.title : L[key].title;
+    const h = document.createElement("h3");
+    h.className = "pt-search-heading-text";
+    h.textContent = sheetTitle(typed ? typed + ": " + title : title, seedName, L.forWhom, false, "");
+    sheet.appendChild(h);
+    if (note) {
+      const p = document.createElement("p");
+      p.className = "pt-search-note";
+      p.textContent = note;
+      sheet.appendChild(p);
+    }
+  }
+  function spBankNode(words) {
+    const box = document.createElement("div");
+    box.className = "pt-sp-bank";
+    const t = document.createElement("span");
+    t.className = "pt-sp-bank-title";
+    t.textContent = T.spelling.bank;
+    box.appendChild(t);
+    const ul = document.createElement("ul");
+    words.forEach((w) => {
+      const li = document.createElement("li");
+      li.textContent = w.word;
+      ul.appendChild(li);
+    });
+    box.appendChild(ul);
+    return box;
+  }
+  function spSorted(words) {
+    return words.slice().sort((a, b) => a.word.localeCompare(b.word, LANG, { sensitivity: "base" }));
+  }
+  function spLine(className) {
+    const s = document.createElement("span");
+    s.className = className || "pt-sc-line";
+    return s;
+  }
+
+  /* Trace, write, remember. A .pt-gen-sheet, so the page fits it the way it
+     fits every tracing sheet: the rows share what the page has left.
+
+     Each row is ONE traced-word SVG on its own ruling, with the fold line
+     drawn inside it. Two SVGs side by side were tried first and printed with
+     their rules at different heights: each is letterboxed ("meet") on its own
+     aspect ratio, so a narrower cell scales its ruling down. Here every row of
+     the job gets the same viewBox width -- room for the longest word traced
+     and written once, then the fold -- so every row scales the same and the
+     fold line lands at one x down the whole page. The rules already bleed
+     past the viewBox (RULE_OVERHANG), so widening it never shortens a line. */
+  function spTraceGeometry(allWords, level) {
+    let widest = 360;
+    allWords.forEach((w) => {
+      const vb = traceWordSVG(w.word, level, { guides: true }).getAttribute("viewBox").split(/\s+/);
+      widest = Math.max(widest, parseFloat(vb[2]) || 0);
+    });
+    /* The traced word, then the fold, then a memory side at least as wide as
+       the traced side. An earlier version also asked for the word to be
+       copied once before the fold: three copies of a word on one line left
+       the letters at about a third of the height the row had, and copying is
+       the step the research says adds least. */
+    const fold = Math.round(widest + 40);
+    return { fold: fold, width: Math.round(fold / 0.5) };
+  }
+  function spTraceSheet(words, seedName, part, parts, allWords) {
+    const L = T.spelling.trace;
+    const level = SP_TRACE_LEVEL[spState.trace] || 2;
+    const geo = spTraceGeometry(allWords || words, level);
+    const sheet = document.createElement("div");
+    sheet.className = "pt-gen-sheet pt-sp-trace";
+    spHead(sheet, "trace", seedName, level === 1 ? L.noteCopy : L.note);
+    words.forEach((w) => {
+      const row = document.createElement("div");
+      row.className = "pt-gen-row pt-sp-row";
+      const svg = traceWordSVG(w.word, level, { guides: true });
+      const vb = svg.getAttribute("viewBox").split(/\s+/);
+      const h = parseFloat(vb[3]) || traceRowHeight();
+      svg.setAttribute("viewBox", "0 0 " + geo.width + " " + h);
+      /* The rules bleed RULE_OVERHANG past the word's own box, which a viewBox
+         this much wider can outrun on a long word, so they are carried to the
+         new edge -- a memory side with no lines to write on is no use. */
+      Array.prototype.forEach.call(svg.querySelectorAll("line"), (ln) => {
+        if (ln.getAttribute("y1") !== ln.getAttribute("y2")) return;
+        const x2 = parseFloat(ln.getAttribute("x2"));
+        if (x2 < geo.width + RULE_OVERHANG) ln.setAttribute("x2", String(geo.width + RULE_OVERHANG));
+      });
+      const line = document.createElementNS(SVGNS, "line");
+      line.setAttribute("x1", String(geo.fold));
+      line.setAttribute("x2", String(geo.fold));
+      line.setAttribute("y1", String(Math.round(h * 0.08)));
+      line.setAttribute("y2", String(Math.round(h * 0.92)));
+      line.setAttribute("stroke", "#9aa3b2");
+      line.setAttribute("stroke-width", "3");
+      line.setAttribute("stroke-dasharray", "12 9");
+      line.setAttribute("class", "pt-sp-fold-line");
+      svg.appendChild(line);
+      row.appendChild(svg);
+      sheet.appendChild(row);
+    });
+    if (moreFooterOn("word", true)) sheet.appendChild(nameDateRow());
+    if (parts > 1) sheet.dataset.part = part + "/" + parts;
+    return sheet;
+  }
+  function spPuzzleSheet(key, seedName) {
+    const sheet = document.createElement("div");
+    sheet.className = "pt-search-sheet pt-sp-sheet pt-sp-" + key;
+    return sheet;
+  }
+  function spLcwcSheet(words, seedName) {
+    const L = T.spelling.lcwc;
+    const sheet = spPuzzleSheet("lcwc", seedName);
+    spHead(sheet, "lcwc", seedName, L.note);
+    const table = document.createElement("table");
+    table.className = "pt-sp-table";
+    const thead = document.createElement("thead");
+    const hr = document.createElement("tr");
+    [L.look, L.write, L.check, L.fix].forEach((txt) => {
+      const th = document.createElement("th");
+      th.textContent = txt;
+      hr.appendChild(th);
+    });
+    thead.appendChild(hr);
+    table.appendChild(thead);
+    const tb = document.createElement("tbody");
+    spShuffle(words, seedName + "|lcwc").forEach((w) => {
+      const tr = document.createElement("tr");
+      const td0 = document.createElement("td");
+      td0.className = "pt-sp-word";
+      td0.textContent = w.word;
+      const td1 = document.createElement("td");
+      const td2 = document.createElement("td");
+      td2.className = "pt-sp-checkcell";
+      const box = document.createElement("span");
+      box.className = "pt-sp-checkbox";
+      td2.appendChild(box);
+      const td3 = document.createElement("td");
+      [td0, td1, td2, td3].forEach((td) => tr.appendChild(td));
+      tb.appendChild(tr);
+    });
+    table.appendChild(tb);
+    sheet.appendChild(table);
+    const again = document.createElement("p");
+    again.className = "pt-sp-again";
+    again.appendChild(document.createTextNode(L.again + " "));
+    again.appendChild(spLine("pt-sp-again-line"));
+    sheet.appendChild(again);
+    if (moreFooterOn("word", true)) sheet.appendChild(footerRow("pt-search-footer-row"));
+    return sheet;
+  }
+  function spMissingSheet(words, seedName) {
+    const sheet = spPuzzleSheet("missing", seedName);
+    spHead(sheet, "missing", seedName, T.spelling.missing.note);
+    if (spBankOn() || spState.blank === "several") sheet.appendChild(spBankNode(spSorted(words)));
+    const seed = seedName + "|missing|" + spState.blank;
+    const ol = document.createElement("ol");
+    ol.className = "pt-sc-list pt-sp-list";
+    spShuffle(words, seed).forEach((w) => {
+      const li = document.createElement("li");
+      li.className = "pt-sc-item";
+      const gap = document.createElement("span");
+      gap.className = "pt-sp-gapword";
+      const blanks = spBlanks(w, seed);
+      [...w.word].forEach((c, i) => {
+        const s = document.createElement("span");
+        if (blanks.has(i)) { s.className = "pt-sp-gap"; s.textContent = " "; }
+        else { s.className = "pt-sp-letter"; s.textContent = c; }
+        gap.appendChild(s);
+      });
+      li.appendChild(gap);
+      li.appendChild(spLine());
+      ol.appendChild(li);
+    });
+    sheet.appendChild(ol);
+    if (moreFooterOn("word", true)) sheet.appendChild(footerRow("pt-search-footer-row"));
+    return sheet;
+  }
+  function spAbcSheet(words, seedName) {
+    const L = T.spelling.abc;
+    const sheet = spPuzzleSheet("abc", seedName);
+    spHead(sheet, "abc", seedName, L.note);
+    const bank = spBankNode(spShuffle(words, seedName + "|abc"));
+    bank.classList.add("is-mixed");
+    sheet.appendChild(bank);
+    const ol = document.createElement("ol");
+    ol.className = "pt-sp-lines";
+    words.forEach(() => {
+      const li = document.createElement("li");
+      li.appendChild(spLine());
+      ol.appendChild(li);
+    });
+    sheet.appendChild(ol);
+    const fold = document.createElement("div");
+    fold.className = "pt-sp-fold";
+    const ft = document.createElement("p");
+    ft.className = "pt-search-note";
+    ft.textContent = L.fold;
+    fold.appendChild(ft);
+    const three = document.createElement("div");
+    three.className = "pt-sp-three";
+    for (let i = 0; i < 3; i++) three.appendChild(spLine());
+    fold.appendChild(three);
+    sheet.appendChild(fold);
+    if (moreFooterOn("word", true)) sheet.appendChild(footerRow("pt-search-footer-row"));
+    return sheet;
+  }
+  function spShapesSheet(words, seedName) {
+    const sheet = spPuzzleSheet("shapes", seedName);
+    spHead(sheet, "shapes", seedName, T.spelling.shapes.note);
+    sheet.appendChild(spBankNode(spSorted(words)));
+    const ol = document.createElement("ol");
+    ol.className = "pt-sp-shapes";
+    spShuffle(words, seedName + "|shapes").forEach((w) => {
+      const li = document.createElement("li");
+      const shape = document.createElement("span");
+      shape.className = "pt-sp-shape";
+      [...w.word].forEach((c) => {
+        const b = document.createElement("span");
+        const tall = /[bdfhklt]/.test(c) || (c !== c.toLowerCase());
+        const tail = /[gjpqy]/.test(c);
+        b.className = "pt-sp-box" + (tall ? " is-tall" : (tail ? " is-tail" : ""));
+        shape.appendChild(b);
+      });
+      li.appendChild(shape);
+      ol.appendChild(li);
+    });
+    sheet.appendChild(ol);
+    if (moreFooterOn("word", true)) sheet.appendChild(footerRow("pt-search-footer-row"));
+    return sheet;
+  }
+  // One answer page per child, matching that child's own order.
+  function spAnswerSheet(words, seedName, keys) {
+    const L = T.spelling.answers;
+    const sheet = spPuzzleSheet("answers", seedName);
+    spHead(sheet, "answers", seedName, "");
+    const cols = document.createElement("div");
+    cols.className = "pt-sp-answer-cols";
+    keys.forEach((k) => {
+      const list = k === "abc" ? spSorted(words)
+        : spShuffle(words, seedName + (k === "missing" ? "|missing|" + spState.blank : "|shapes"));
+      const col = document.createElement("div");
+      const t = document.createElement("h4");
+      t.className = "pt-cw-clues-title";
+      t.textContent = L[k];
+      col.appendChild(t);
+      const ol = document.createElement("ol");
+      ol.className = "pt-cw-clue-list";
+      list.forEach((w) => { const li = document.createElement("li"); li.textContent = w.word; ol.appendChild(li); });
+      col.appendChild(ol);
+      cols.appendChild(col);
+    });
+    sheet.appendChild(cols);
+    return sheet;
+  }
+
+  /* Every page one child gets, in sheet order: the trace sheet splits into
+     as many pages as the handwriting size needs, the others are one page
+     each, and the answer page (when asked for) covers the sheets that have
+     answers. */
+  function spPlan(words) {
+    const out = [];
+    spSelected().forEach((k) => {
+      if (k === "trace") {
+        const per = SP_ROWS[spState.size] || 7;
+        const parts = Math.max(1, Math.ceil(words.length / per));
+        for (let i = 0; i < parts; i++) out.push({ key: k, words: words.slice(i * per, i * per + per), part: i + 1, parts: parts, all: words });
+      } else {
+        out.push({ key: k, words: words });
+      }
+    });
+    const keys = spSelected().filter((k) => k === "missing" || k === "abc" || k === "shapes");
+    if (spAnswerOn() && keys.length) out.push({ key: "answers", words: words, keys: keys });
+    return out;
+  }
+  function spNode(item, seedName) {
+    const seed = seedName || "";
+    switch (item.key) {
+      case "trace": return spTraceSheet(item.words, seed, item.part, item.parts, item.all);
+      case "lcwc": return spLcwcSheet(item.words, seed);
+      case "missing": return spMissingSheet(item.words, seed);
+      case "abc": return spAbcSheet(item.words, seed);
+      case "shapes": return spShapesSheet(item.words, seed);
+      default: return spAnswerSheet(item.words, seed, item.keys || []);
+    }
+  }
+
+  function renderSpTabs(plan) {
+    if (!el.spTabs) return;
+    el.spTabs.innerHTML = "";
+    const seen = [];
+    plan.forEach((it) => { if (seen.indexOf(it.key) === -1) seen.push(it.key); });
+    if (seen.indexOf(spState.tab) === -1) spState.tab = seen[0] || "trace";
+    seen.forEach((k) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pt-choice" + (k === spState.tab ? " is-active" : "");
+      b.setAttribute("aria-pressed", k === spState.tab ? "true" : "false");
+      b.textContent = k === "answers" ? T.spelling.answers.title : T.spelling[k].title;
+      b.addEventListener("click", () => { spState.tab = k; renderSpPreview(); });
+      el.spTabs.appendChild(b);
+    });
+    el.spTabs.hidden = seen.length < 2;
+  }
+  function renderSpMeta(parsed, plan) {
+    if (!el.spMeta) return;
+    const L = T.spelling;
+    const bits = [];
+    if (!parsed.words.length) bits.push(L.needWords);
+    else if (!plan.length) bits.push(L.needSheet);
+    else {
+      const names = rosterNames(el.spRoster);
+      bits.push(parsed.words.length + " " + L.words);
+      bits.push(plan.length + " " + (plan.length === 1 ? L.page : L.pages) + (names.length >= 2 ? " " + L.perChild : ""));
+      if (names.length >= 2) bits.push(names.length + " " + T.scramble.versions);
+    }
+    if (parsed.skipped.length) bits.push(L.tooLong + " " + parsed.skipped.join(", "));
+    el.spMeta.textContent = bits.join(" · ");
+  }
+  function renderSpPreview() {
+    if (!el.spPreview) return;
+    const parsed = spParse();
+    const plan = parsed.words.length ? spPlan(parsed.words) : [];
+    renderSpTabs(plan);
+    el.spPreview.innerHTML = "";
+    const first = plan.filter((it) => it.key === spState.tab)[0];
+    if (first) el.spPreview.appendChild(spNode(first, null));
+    renderSpMeta(parsed, plan);
+    updateSheetCost();
+  }
+
+  function printSpelling() {
+    const parsed = spParse();
+    const plan = parsed.words.length ? spPlan(parsed.words) : [];
+    if (!plan.length) return;
+    const holder = document.createElement("div");
+    holder.className = "pt-search-print-holder pt-sp-print-holder";
+    const names = rosterNames(el.spRoster);
+    const items = [];
+    (names.length >= 2 ? names : [null]).forEach((n) => plan.forEach((it) => items.push({ it: it, name: n })));
+    if (names.length >= 2) holder.classList.add("pt-class-set");
+    appendSheetPages(holder, items, (x) => spNode(x.it, x.name));
+    printWrap("", holder, "spelling_worksheet");
+  }
+
+  function wireSpChoices(group, key, attr) {
+    if (!group) return;
+    const buttons = $$(".pt-choice", group);
+    const paint = () => buttons.forEach((b) => {
+      const on = b.dataset[attr] === spState[key];
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
+    });
+    buttons.forEach((b) => b.addEventListener("click", () => {
+      if (!b.dataset[attr]) return;
+      spState[key] = b.dataset[attr];
+      paint();
+      renderSpPreview();
+    }));
+    paint();
+  }
+  function wireSpSheets() {
+    const group = el.spSheets;
+    if (!group) return;
+    const buttons = $$(".pt-choice", group);
+    const paint = () => buttons.forEach((b) => {
+      const on = spState.sheets.indexOf(b.dataset.sheet) !== -1;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    buttons.forEach((b) => b.addEventListener("click", () => {
+      const k = b.dataset.sheet;
+      if (!k) return;
+      const i = spState.sheets.indexOf(k);
+      if (i === -1) { spState.sheets.push(k); spState.tab = k; }
+      else spState.sheets.splice(i, 1);
+      paint();
+      renderSpPreview();
+    }));
+    paint();
+  }
+
+  function buildSpellingSurface() {
+    if (!el.spInput || !el.spPreview) return;
+    let timer = null;
+    const schedule = () => { if (timer) clearTimeout(timer); timer = setTimeout(renderSpPreview, 160); };
+    el.spInput.addEventListener("input", schedule);
+    if (el.spHeading) el.spHeading.addEventListener("input", schedule);
+    if (el.spRoster) el.spRoster.addEventListener("input", schedule);
+    if (el.spBank) el.spBank.addEventListener("change", renderSpPreview);
+    if (el.spAnswer) el.spAnswer.addEventListener("change", renderSpPreview);
+    wireSpSheets();
+    wireSpChoices(el.spTrace, "trace", "trace");
+    wireSpChoices(el.spSize, "size", "size");
+    wireSpChoices(el.spBlank, "blank", "blank");
+    if (el.spPrint) el.spPrint.addEventListener("click", printSpelling);
+    renderSpPreview();
+  }
+
   /* ---------------------------------------------------------------
      Wiring
      --------------------------------------------------------------- */
@@ -11733,6 +12271,7 @@
     buildSearch();
     buildCrosswordSurface();
     buildScrambleSurface();
+    buildSpellingSurface();
     mountMore();
     wireMoreRepaint();
     if (moreRefs.letters && moreRefs.letters.check) moreRefs.letters.check.addEventListener("change", updateBatch);

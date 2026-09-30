@@ -8126,6 +8126,151 @@ body.dark-mode .pt-banner-index { color: var(--text-secondary); }
   letter-spacing: 0.04em;
 }
 
+/* Spelling worksheet generator (printables/spelling-worksheet-generator).
+   Ink on paper, so literal colours, the same as the word-list sheets above.
+   The trace sheet is a .pt-gen-sheet and inherits the page fit unchanged:
+   each row is one traced-word SVG with its fold line drawn inside it. */
+.pt-sp-bank {
+  width: 100%;
+  max-width: 34rem;
+  border: 1.5px solid #c9d0dd;
+  border-radius: 12px;
+  padding: 0.6rem 1rem 0.7rem;
+  background: #f7f8fb;
+  color: #1a1a2e;
+}
+.pt-sp-bank-title {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #4b5563;
+  margin-bottom: 0.3rem;
+}
+.pt-sp-bank ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.4rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.pt-sp-table {
+  width: 100%;
+  max-width: 34rem;
+  border-collapse: collapse;
+  color: #1a1a2e;
+}
+.pt-sp-table th {
+  text-align: left;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: #eef0f6;
+  padding: 0.45rem 0.5rem;
+  border: 1.5px solid #9aa3b2;
+}
+.pt-sp-table td {
+  border: 1.5px solid #9aa3b2;
+  height: 2.6rem;
+  padding: 0 0.5rem;
+  width: 30%;
+}
+.pt-sp-table td.pt-sp-word { font-size: 1.15rem; font-weight: 700; width: 26%; }
+.pt-sp-table td.pt-sp-checkcell { width: 10%; text-align: center; }
+.pt-sp-checkbox {
+  display: inline-block;
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 1.5px solid #6b7280;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+.pt-sp-again {
+  width: 100%;
+  max-width: 34rem;
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+.pt-sp-again-line { display: inline-block; width: 12rem; border-bottom: 2px solid #9aa3b2; }
+.pt-sp-gapword { flex: 0 0 auto; display: inline-flex; align-items: flex-end; gap: 0.2rem; }
+.pt-sp-letter, .pt-sp-gap {
+  display: inline-block;
+  min-width: 1.05rem;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.pt-sp-gap { border-bottom: 2px solid #1a1a2e; }
+.pt-sp-lines {
+  width: 100%;
+  max-width: 34rem;
+  margin: 0;
+  padding-left: 1.6rem;
+  columns: 2;
+  column-gap: 2rem;
+  color: #4b5563;
+  font-weight: 600;
+}
+.pt-sp-lines li { break-inside: avoid; padding: 0.55rem 0 0.15rem; }
+.pt-sp-lines .pt-sc-line { display: block; min-width: 0; height: 1.3rem; }
+.pt-sp-fold {
+  width: 100%;
+  max-width: 34rem;
+  border-top: 2px dashed #9aa3b2;
+  padding-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.pt-sp-three { display: flex; gap: 1.5rem; }
+.pt-sp-three .pt-sc-line { flex: 1 1 0; min-width: 0; height: 1.6rem; }
+.pt-sp-shapes {
+  width: 100%;
+  max-width: 34rem;
+  margin: 0;
+  padding-left: 1.6rem;
+  columns: 2;
+  column-gap: 2rem;
+  color: #4b5563;
+  font-weight: 600;
+}
+.pt-sp-shapes li { break-inside: avoid; padding: 0.5rem 0; }
+.pt-sp-shape { display: inline-flex; align-items: flex-end; height: 3.2rem; vertical-align: middle; margin-left: 0.4rem; }
+.pt-sp-box { display: inline-block; width: 1.3rem; height: 1.3rem; border: 1.5px solid #1a1a2e; margin-left: -1.5px; background: #fff; }
+.pt-sp-box.is-tall { height: 2.6rem; }
+.pt-sp-box.is-tail { height: 2.6rem; transform: translateY(1.3rem); }
+.pt-sp-answer-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem 1.5rem;
+  width: 100%;
+  max-width: 34rem;
+}
+body.pt-pdf-rendering .pt-sp-bank,
+body.is-printing #pt-print-root .pt-sp-bank,
+body.pt-pdf-rendering .pt-sp-table,
+body.is-printing #pt-print-root .pt-sp-table,
+body.pt-pdf-rendering .pt-sp-lines,
+body.is-printing #pt-print-root .pt-sp-lines,
+body.pt-pdf-rendering .pt-sp-fold,
+body.is-printing #pt-print-root .pt-sp-fold,
+body.pt-pdf-rendering .pt-sp-shapes,
+body.is-printing #pt-print-root .pt-sp-shapes,
+body.pt-pdf-rendering .pt-sp-again,
+body.is-printing #pt-print-root .pt-sp-again,
+body.pt-pdf-rendering .pt-sp-answer-cols,
+body.is-printing #pt-print-root .pt-sp-answer-cols { max-width: 6.4in; }
+
 /* ============================================================
    Contextual decoration showcase — static, crawlable SEO block
    Injected as the final section of <main> on decorator pages.
