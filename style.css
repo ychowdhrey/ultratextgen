@@ -3465,6 +3465,11 @@ body.dark-mode .embed-copy-btn.is-copied {
 }
 
 @media (min-width: 640px) {
+  /* Four items each: 2x2 rather than 3 + an orphan. */
+  .embed-benefits,
+  .embed-more-grid {
+    grid-template-columns: 1fr 1fr;
+  }
   .embed-copy-btn {
     width: auto;
   }
@@ -3487,8 +3492,8 @@ body.dark-mode .embed-copy-btn.is-copied {
   .embed-landing-after {
     display: none;
   }
-  .embed-benefits {
-    grid-template-columns: 1fr 1fr;
+  .embed-more-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
   .embed-copy-btn {
     width: 100%;
