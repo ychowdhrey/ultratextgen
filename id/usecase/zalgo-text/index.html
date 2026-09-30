@@ -206,10 +206,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 </nav>
 
 
-<figure class="page-hero-figure" data-uthero aria-hidden="true">
-  <img src="/assets/hero/id-usecase-zalgo-text.svg" width="1200" height="340"
-       fetchpriority="high" alt="">
-</figure>
   <!-- Hero Section -->
   <section class="hero">
     <div class="app">
@@ -225,16 +221,22 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <div class="char-counter"><span id="charCount">10</span>/500</div>
       </div>
 
+      <!-- Output (populated by zalgo-text.js) -->
+      <div id="zalgoOutputSection"></div>
+
       <!-- Control Panel (populated by zalgo-text.js) -->
       <div id="zalgoControlPanel" data-cascade="thai" data-extreme></div>
 
-      <!-- Output (populated by zalgo-text.js) -->
-      <div id="zalgoOutputSection"></div>
 
       <!-- Decode (populated by zalgo-text.js) -->
       <div id="zalgoDecodeSection"></div>
     </div>
   </section>
+
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/id-usecase-zalgo-text.svg" width="1200" height="340"
+       loading="lazy" alt="">
+</figure>
 
 
   <!-- Editorial Content -->
@@ -438,7 +440,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     controlCascade:          'Kaskade Thai',
     tooltipCascade:          'Satu tanda nada Thai yang diulang berkali-kali di atas satu huruf penyangga. Tergantung aplikasi dan fontnya, hasilnya bisa berupa kolom tinggi, garis miring, atau terpotong.',
     cascadeDepth:            'Kedalaman tumpukan',
-    tooltipCascadeDepth:     'Berapa kali tanda diulang (10 = pendek, 150 = tiang penuh seperti di internet)',
+    tooltipCascadeDepth:     'Berapa kali tanda diulang (10 = pendek, 250 = lebih tinggi dari layar HP, 1000 = maksimum)',
     cascadePlacement:        'Penempatan',
     cascadePrefix:           'Sebelum teks',
     cascadeSuffix:           'Setelah teks',
@@ -455,7 +457,24 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     cascadeCopyLabel:        'Salin kaskade Thai',
     cascadeOutputLabel:      'Kaskade Thai untuk: {text}',
     presetExtreme:           'Ekstrem',
-    tooltipAmplitudeExtreme: 'Mode Ekstrem: slider amplitudo bisa sampai 100 (sekitar 92 tanda per huruf jika semua posisi aktif). Teks panjang jadi sangat berat dan kebanyakan aplikasi memotongnya.'
+    tooltipAmplitudeExtreme: 'Mode Ekstrem: slider amplitudo bisa sampai 300 (sekitar 272 tanda per huruf jika semua posisi aktif). Teks panjang jadi sangat berat dan kebanyakan aplikasi memotongnya.',
+    controlZones:            'Jumlah per zona',
+    tooltipZones:            'Atur terpisah berapa banyak tanda di atas, menembus, dan di bawah setiap huruf. Menggantikan Posisi dan Amplitudo selama aktif.',
+    zonesToggle:             'Atur tiap zona terpisah',
+    zoneUp:                  'Atas',
+    zoneMid:                 'Menembus',
+    zoneDown:                'Bawah',
+    fitAction:               'Ketuk lencana merah untuk mengecilkan efek sampai muat.',
+    fitDone:                 'Sudah pas untuk {platform}',
+    fitImpossible:           'Terlalu panjang untuk {platform} bahkan di pengaturan paling ringan',
+    btnGif:                  'GIF',
+    gifLabel:                'Unduh GIF animasi dari teks ini',
+    gifWorking:              'Membuat GIF…',
+    gifFailed:               'GIF gagal',
+    cascadeMarkSaraU:        'Sara U (ke bawah)',
+    cascadeMarkSaraUu:       'Sara Uu (ke bawah)',
+    cascadeAnchorKaomoji:    'Kaomoji (つ ค c )',
+    presetInvader:           'Penyerbu Postingan'
   };
   </script>
   <script>window.UTG_HEADLESS = true;</script>

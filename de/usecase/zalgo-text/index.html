@@ -206,10 +206,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 </nav>
 
 
-<figure class="page-hero-figure" data-uthero aria-hidden="true">
-  <img src="/assets/hero/de-usecase-zalgo-text.svg" width="1200" height="340"
-       fetchpriority="high" alt="">
-</figure>
   <!-- Hero Section -->
   <section class="hero">
     <div class="app">
@@ -232,16 +228,22 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Schließen">✕</button>
       </div>
 
+      <!-- Output (populated by zalgo-text.js) -->
+      <div id="zalgoOutputSection"></div>
+
       <!-- Control Panel (populated by zalgo-text.js) -->
       <div id="zalgoControlPanel" data-cascade="thai" data-extreme></div>
 
-      <!-- Output (populated by zalgo-text.js) -->
-      <div id="zalgoOutputSection"></div>
 
       <!-- Decode (populated by zalgo-text.js) -->
       <div id="zalgoDecodeSection"></div>
     </div>
   </section>
+
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/de-usecase-zalgo-text.svg" width="1200" height="340"
+       loading="lazy" alt="">
+</figure>
 
 
   <!-- Editorial Content -->
@@ -445,7 +447,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     controlCascade:          'Thai-Kaskade',
     tooltipCascade:          'Ein thailändisches Tonzeichen, viele Male auf einem Trägerbuchstaben wiederholt. Je nach App und Schrift erscheint es als hohe Säule, als Diagonale oder wird abgeschnitten.',
     cascadeDepth:            'Stapeltiefe',
-    tooltipCascadeDepth:     'Wie oft das Zeichen wiederholt wird (10 = kurz, 150 = die volle Internet-Spitze)',
+    tooltipCascadeDepth:     'Wie oft das Zeichen wiederholt wird (10 = kurz, 250 = höher als ein Handybildschirm, 1000 = das Maximum)',
     cascadePlacement:        'Platzierung',
     cascadePrefix:           'Vor dem Text',
     cascadeSuffix:           'Nach dem Text',
@@ -462,7 +464,24 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     cascadeCopyLabel:        'Thai-Kaskade kopieren',
     cascadeOutputLabel:      'Thai-Kaskade für: {text}',
     presetExtreme:           'Extrem',
-    tooltipAmplitudeExtreme: 'Extrem-Modus: Der Amplituden-Regler geht bis 100 (etwa 92 Zeichen pro Buchstabe, wenn alle Positionen aktiv sind). Lange Texte werden sehr schwer, und die meisten Apps schneiden sie ab.'
+    tooltipAmplitudeExtreme: 'Extrem-Modus: Der Amplituden-Regler geht bis 300 (etwa 272 Zeichen pro Buchstabe, wenn alle Positionen aktiv sind). Lange Texte werden sehr schwer, und die meisten Apps schneiden sie ab.',
+    controlZones:            'Menge pro Zone',
+    tooltipZones:            'Lege getrennt fest, wie viele Zeichen über, durch und unter jedem Buchstaben stehen. Ersetzt Position und Amplitude, solange es aktiv ist.',
+    zonesToggle:             'Jede Zone einzeln einstellen',
+    zoneUp:                  'Darüber',
+    zoneMid:                 'Mittendurch',
+    zoneDown:                'Darunter',
+    fitAction:               'Tippe auf ein rotes Badge, um den Effekt zu verkleinern, bis er passt.',
+    fitDone:                 'An {platform} angepasst',
+    fitImpossible:           'Selbst bei der leichtesten Einstellung zu lang für {platform}',
+    btnGif:                  'GIF',
+    gifLabel:                'Animiertes GIF dieses Textes herunterladen',
+    gifWorking:              'GIF wird erstellt…',
+    gifFailed:               'GIF fehlgeschlagen',
+    cascadeMarkSaraU:        'Sara U (nach unten)',
+    cascadeMarkSaraUu:       'Sara Uu (nach unten)',
+    cascadeAnchorKaomoji:    'Kaomoji (つ ค c )',
+    presetInvader:           'Post-Invasor'
   };
   </script>
   <script>window.UTG_HEADLESS = true;</script>

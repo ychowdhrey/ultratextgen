@@ -193,10 +193,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 </nav>
 
 
-<figure class="page-hero-figure" data-uthero aria-hidden="true">
-  <img src="/assets/hero/ru-zalgo-text.svg" width="1200" height="340"
-       fetchpriority="high" alt="">
-</figure>
   <!-- Hero Section -->
   <section class="hero">
     <div class="app">
@@ -212,16 +208,22 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <div class="char-counter"><span id="charCount">10</span>/500</div>
       </div>
 
+      <!-- Output (populated by zalgo-text.js) -->
+      <div id="zalgoOutputSection"></div>
+
       <!-- Control Panel (populated by zalgo-text.js) -->
       <div id="zalgoControlPanel" data-cascade="thai" data-extreme></div>
 
-      <!-- Output (populated by zalgo-text.js) -->
-      <div id="zalgoOutputSection"></div>
 
       <!-- Decode (populated by zalgo-text.js) -->
       <div id="zalgoDecodeSection"></div>
     </div>
   </section>
+
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/ru-zalgo-text.svg" width="1200" height="340"
+       loading="lazy" alt="">
+</figure>
 
 
   <!-- Editorial Content -->
@@ -419,7 +421,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     controlCascade:          'Тайский каскад',
     tooltipCascade:          'Один тайский тоновый знак, повторённый много раз над одной буквой-носителем. В зависимости от приложения и шрифта он выглядит как высокий столбец, диагональ или обрезается.',
     cascadeDepth:            'Глубина',
-    tooltipCascadeDepth:     'Сколько раз повторяется знак (10 = коротко, 150 = тот самый столб из интернета)',
+    tooltipCascadeDepth:     'Сколько раз повторяется знак (10 = коротко, 250 = выше экрана телефона, 1000 = максимум)',
     cascadePlacement:        'Положение',
     cascadePrefix:           'Перед текстом',
     cascadeSuffix:           'После текста',
@@ -436,7 +438,24 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     cascadeCopyLabel:        'Скопировать тайский каскад',
     cascadeOutputLabel:      'Тайский каскад для: {text}',
     presetExtreme:           'Экстрим',
-    tooltipAmplitudeExtreme: 'Режим Экстрим: ползунок амплитуды доходит до 100 (около 92 знаков на букву, если включены все позиции). Длинный текст становится очень тяжёлым, и большинство приложений его обрезает.'
+    tooltipAmplitudeExtreme: 'Режим Экстрим: ползунок амплитуды доходит до 300 (около 272 знаков на букву, если включены все позиции). Длинный текст становится очень тяжёлым, и большинство приложений его обрезает.',
+    controlZones:            'Количество по зонам',
+    tooltipZones:            'Задайте отдельно, сколько знаков будет над, сквозь и под каждой буквой. Пока включено, заменяет Позицию и Амплитуду.',
+    zonesToggle:             'Настроить каждую зону отдельно',
+    zoneUp:                  'Сверху',
+    zoneMid:                 'Сквозь',
+    zoneDown:                'Снизу',
+    fitAction:               'Нажмите на красный значок, чтобы уменьшить эффект, пока он не поместится.',
+    fitDone:                 'Подогнано под {platform}',
+    fitImpossible:           'Слишком длинно для {platform} даже при самой лёгкой настройке',
+    btnGif:                  'GIF',
+    gifLabel:                'Скачать анимированный GIF с этим текстом',
+    gifWorking:              'Создаём GIF…',
+    gifFailed:               'Не удалось создать GIF',
+    cascadeMarkSaraU:        'Sara U (вниз)',
+    cascadeMarkSaraUu:       'Sara Uu (вниз)',
+    cascadeAnchorKaomoji:    'Kaomoji (つ ค c )',
+    presetInvader:           'Захватчик постов'
   };
   </script>
   <script>window.UTG_HEADLESS = true;</script>

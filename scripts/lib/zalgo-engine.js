@@ -36,7 +36,9 @@ const EXPORTS = [
   'MARKS_UP', 'MARKS_MID', 'MARKS_DOWN', 'CHAR_TYPE_MAP', 'generateZalgo',
   'CASCADE_MARKS', 'CASCADE_DEFAULT_MARK', 'CASCADE_ANCHOR', 'CASCADE_DEPTH',
   'CASCADE_PLACEMENTS', 'CASCADE_ANCHORS', 'generateCascade', 'decodeZalgo',
-  'AMPLITUDE_CLASSIC', 'AMPLITUDE_EXTREME', 'clampAmplitude'
+  'AMPLITUDE_CLASSIC', 'AMPLITUDE_EXTREME', 'clampAmplitude',
+  'makeRng', 'newSeed', 'graphemes', 'xWeightedLength', 'fitValue', 'clampZone', 'ZONE_DEFAULT',
+  'CASCADE_KAOMOJI_OPEN', 'CASCADE_KAOMOJI_CLOSE', 'clampDepth', 'cascadeMark'
 ];
 
 function loadZalgoEngine(file) {

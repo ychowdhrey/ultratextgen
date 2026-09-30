@@ -206,10 +206,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 </nav>
 
 
-<figure class="page-hero-figure" data-uthero aria-hidden="true">
-  <img src="/assets/hero/vi-usecase-zalgo-text.svg" width="1200" height="340"
-       fetchpriority="high" alt="">
-</figure>
   <!-- Hero Section -->
   <section class="hero">
     <div class="app">
@@ -232,16 +228,22 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Đóng">✕</button>
       </div>
 
+      <!-- Output (populated by zalgo-text.js) -->
+      <div id="zalgoOutputSection"></div>
+
       <!-- Control Panel (populated by zalgo-text.js) -->
       <div id="zalgoControlPanel" data-cascade="thai" data-extreme></div>
 
-      <!-- Output (populated by zalgo-text.js) -->
-      <div id="zalgoOutputSection"></div>
 
       <!-- Decode (populated by zalgo-text.js) -->
       <div id="zalgoDecodeSection"></div>
     </div>
   </section>
+
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/vi-usecase-zalgo-text.svg" width="1200" height="340"
+       loading="lazy" alt="">
+</figure>
 
 
   <!-- Editorial Content -->
@@ -467,7 +469,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     controlCascade:          'Thác Thái',
     tooltipCascade:          'Một dấu thanh tiếng Thái lặp lại nhiều lần trên một chữ cái mang dấu. Tùy ứng dụng và phông chữ, nó hiện thành cột cao, đường chéo, hoặc bị cắt bớt.',
     cascadeDepth:            'Độ sâu',
-    tooltipCascadeDepth:     'Số lần lặp dấu (10 = ngắn, 150 = cột cao như trên mạng)',
+    tooltipCascadeDepth:     'Số lần lặp dấu (10 = ngắn, 250 = cao hơn màn hình điện thoại, 1000 = tối đa)',
     cascadePlacement:        'Vị trí',
     cascadePrefix:           'Trước chữ',
     cascadeSuffix:           'Sau chữ',
@@ -484,7 +486,24 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     cascadeCopyLabel:        'Sao chép thác Thái',
     cascadeOutputLabel:      'Thác Thái cho: {text}',
     presetExtreme:           'Cực đại',
-    tooltipAmplitudeExtreme: 'Chế độ Cực đại: thanh trượt biên độ lên tới 100 (khoảng 92 dấu trên mỗi chữ cái khi bật mọi vị trí). Chữ dài sẽ rất nặng và hầu hết ứng dụng sẽ cắt bớt.'
+    tooltipAmplitudeExtreme: 'Chế độ Cực đại: thanh trượt biên độ lên tới 300 (khoảng 272 dấu trên mỗi chữ cái khi bật mọi vị trí). Chữ dài sẽ rất nặng và hầu hết ứng dụng sẽ cắt bớt.',
+    controlZones:            'Số lượng theo vùng',
+    tooltipZones:            'Đặt riêng số dấu ở trên, xuyên qua và ở dưới mỗi chữ cái. Khi bật sẽ thay cho Vị trí và Biên độ.',
+    zonesToggle:             'Chỉnh riêng từng vùng',
+    zoneUp:                  'Trên',
+    zoneMid:                 'Xuyên qua',
+    zoneDown:                'Dưới',
+    fitAction:               'Chạm vào huy hiệu đỏ để thu nhỏ hiệu ứng cho đến khi vừa.',
+    fitDone:                 'Đã chỉnh vừa {platform}',
+    fitImpossible:           'Quá dài cho {platform} kể cả ở mức nhẹ nhất',
+    btnGif:                  'GIF',
+    gifLabel:                'Tải ảnh GIF động của chữ này',
+    gifWorking:              'Đang tạo GIF…',
+    gifFailed:               'Tạo GIF thất bại',
+    cascadeMarkSaraU:        'Sara U (xuống)',
+    cascadeMarkSaraUu:       'Sara Uu (xuống)',
+    cascadeAnchorKaomoji:    'Kaomoji (つ ค c )',
+    presetInvader:           'Xâm lăng bài đăng'
   };
   </script>
   <script>window.UTG_HEADLESS = true;</script>

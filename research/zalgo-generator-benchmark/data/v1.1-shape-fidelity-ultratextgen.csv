@@ -1,0 +1,17 @@
+tool_id,tool,shape,frequency,n_outputs,mean_marks_per_letter,r_mean_profile,r_single_median
+ultratextgen,UltraTextGen,uniform,default (80%),20,4.85,,
+ultratextgen,UltraTextGen,slope-up,default (80%),20,2.67,0.817,0.508
+ultratextgen,UltraTextGen,slope-down,default (80%),20,2.79,0.833,0.518
+ultratextgen,UltraTextGen,wave,default (80%),20,3.62,,
+ultratextgen,UltraTextGen,pyramid,default (80%),20,2.66,0.813,0.484
+ultratextgen,UltraTextGen,valley,default (80%),20,3.06,0.802,0.374
+ultratextgen,UltraTextGen,staircase,default (80%),20,3.36,0.825,0.409
+ultratextgen,UltraTextGen,random,default (80%),20,3.15,,
+ultratextgen,UltraTextGen,uniform,100%,20,6,,
+ultratextgen,UltraTextGen,slope-up,100%,20,3.36,0.854,0.854
+ultratextgen,UltraTextGen,slope-down,100%,20,3.43,0.855,0.855
+ultratextgen,UltraTextGen,wave,100%,20,4.44,,
+ultratextgen,UltraTextGen,pyramid,100%,20,3.38,0.847,0.847
+ultratextgen,UltraTextGen,valley,100%,20,3.85,0.847,0.847
+ultratextgen,UltraTextGen,staircase,100%,20,4.22,0.906,0.906
+ultratextgen,UltraTextGen,random,100%,20,3.89,,

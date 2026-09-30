@@ -206,10 +206,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 </nav>
 
 
-<figure class="page-hero-figure" data-uthero aria-hidden="true">
-  <img src="/assets/hero/tr-usecase-zalgo-text.svg" width="1200" height="340"
-       fetchpriority="high" alt="">
-</figure>
   <!-- Hero Section -->
   <section class="hero">
     <div class="app">
@@ -232,16 +228,22 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Kapat">✕</button>
       </div>
 
+      <!-- Output (populated by zalgo-text.js) -->
+      <div id="zalgoOutputSection"></div>
+
       <!-- Control Panel (populated by zalgo-text.js) -->
       <div id="zalgoControlPanel" data-cascade="thai" data-extreme></div>
 
-      <!-- Output (populated by zalgo-text.js) -->
-      <div id="zalgoOutputSection"></div>
 
       <!-- Decode (populated by zalgo-text.js) -->
       <div id="zalgoDecodeSection"></div>
     </div>
   </section>
+
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/tr-usecase-zalgo-text.svg" width="1200" height="340"
+       loading="lazy" alt="">
+</figure>
 
 
   <!-- Editorial Content -->
@@ -467,7 +469,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     controlCascade:          'Tay kaskadı',
     tooltipCascade:          'Tek bir Tayca ton işareti, tek bir taşıyıcı harfin üstünde defalarca tekrarlanır. Uygulamaya ve yazı tipine göre uzun bir sütun ya da çapraz bir çizgi gibi görünür veya kırpılır.',
     cascadeDepth:            'Yığın derinliği',
-    tooltipCascadeDepth:     'İşaretin kaç kez tekrarlandığı (10 = kısa, 150 = internetteki tam sivri uç)',
+    tooltipCascadeDepth:     'İşaretin kaç kez tekrarlandığı (10 = kısa, 250 = telefon ekranından uzun, 1000 = en fazla)',
     cascadePlacement:        'Konum',
     cascadePrefix:           'Metnin önüne',
     cascadeSuffix:           'Metnin sonuna',
@@ -484,7 +486,24 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     cascadeCopyLabel:        'Tay kaskadını kopyala',
     cascadeOutputLabel:      'Şu metin için Tay kaskadı: {text}',
     presetExtreme:           'Aşırı',
-    tooltipAmplitudeExtreme: 'Aşırı mod: genlik kaydırıcısı 100’e kadar çıkar (tüm konumlar açıkken harf başına yaklaşık 92 işaret). Uzun metinler çok ağırlaşır ve çoğu uygulama bunları kırpar.'
+    tooltipAmplitudeExtreme: 'Aşırı mod: genlik kaydırıcısı 300’e kadar çıkar (tüm konumlar açıkken harf başına yaklaşık 272 işaret). Uzun metinler çok ağırlaşır ve çoğu uygulama bunları kırpar.',
+    controlZones:            'Bölge başına miktar',
+    tooltipZones:            'Her harfin üstüne, içinden ve altına kaç işaret geleceğini ayrı ayrı ayarla. Açıkken Konum ve Genlik ayarlarının yerini alır.',
+    zonesToggle:             'Her bölgeyi ayrı ayarla',
+    zoneUp:                  'Üstte',
+    zoneMid:                 'İçinden',
+    zoneDown:                'Altta',
+    fitAction:               'Efekti sığana kadar küçültmek için kırmızı rozete dokun.',
+    fitDone:                 '{platform} için sığdırıldı',
+    fitImpossible:           'En hafif ayarda bile {platform} için fazla uzun',
+    btnGif:                  'GIF',
+    gifLabel:                'Bu metnin hareketli GIF’ini indir',
+    gifWorking:              'GIF hazırlanıyor…',
+    gifFailed:               'GIF oluşturulamadı',
+    cascadeMarkSaraU:        'Sara U (aşağı)',
+    cascadeMarkSaraUu:       'Sara Uu (aşağı)',
+    cascadeAnchorKaomoji:    'Kaomoji (つ ค c )',
+    presetInvader:           'Gönderi İstilacısı'
   };
   </script>
   <script>window.UTG_HEADLESS = true;</script>

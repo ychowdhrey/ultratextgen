@@ -206,10 +206,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 </nav>
 
 
-<figure class="page-hero-figure" data-uthero aria-hidden="true">
-  <img src="/assets/hero/nl-usecase-zalgo-text.svg" width="1200" height="340"
-       fetchpriority="high" alt="">
-</figure>
   <!-- Hero Section -->
   <section class="hero">
     <div class="app">
@@ -232,16 +228,22 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Sluiten">✕</button>
       </div>
 
+      <!-- Output (populated by zalgo-text.js) -->
+      <div id="zalgoOutputSection"></div>
+
       <!-- Control Panel (populated by zalgo-text.js) -->
       <div id="zalgoControlPanel" data-cascade="thai" data-extreme></div>
 
-      <!-- Output (populated by zalgo-text.js) -->
-      <div id="zalgoOutputSection"></div>
 
       <!-- Decode (populated by zalgo-text.js) -->
       <div id="zalgoDecodeSection"></div>
     </div>
   </section>
+
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/nl-usecase-zalgo-text.svg" width="1200" height="340"
+       loading="lazy" alt="">
+</figure>
 
 
   <!-- Editorial Content -->
@@ -445,7 +447,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     controlCascade:          'Thaise cascade',
     tooltipCascade:          'Eén Thais toonteken, vele keren herhaald op één dragerletter. Afhankelijk van app en lettertype zie je een hoge kolom, een diagonaal, of wordt het afgekapt.',
     cascadeDepth:            'Stapeldiepte',
-    tooltipCascadeDepth:     'Hoe vaak het teken herhaald wordt (10 = kort, 150 = de volledige internetpiek)',
+    tooltipCascadeDepth:     'Hoe vaak het teken herhaald wordt (10 = kort, 250 = hoger dan een telefoonscherm, 1000 = het maximum)',
     cascadePlacement:        'Plaatsing',
     cascadePrefix:           'Voor de tekst',
     cascadeSuffix:           'Na de tekst',
@@ -462,7 +464,24 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     cascadeCopyLabel:        'Thaise cascade kopiëren',
     cascadeOutputLabel:      'Thaise cascade voor: {text}',
     presetExtreme:           'Extreem',
-    tooltipAmplitudeExtreme: 'Extreem-modus: de amplitudeschuif gaat tot 100 (ongeveer 92 tekens per letter als alle posities aan staan). Lange tekst wordt erg zwaar en de meeste apps kappen het af.'
+    tooltipAmplitudeExtreme: 'Extreem-modus: de amplitudeschuif gaat tot 300 (ongeveer 272 tekens per letter als alle posities aan staan). Lange tekst wordt erg zwaar en de meeste apps kappen het af.',
+    controlZones:            'Hoeveelheid per zone',
+    tooltipZones:            'Stel apart in hoeveel tekens boven, door en onder elke letter komen. Vervangt Positie en Amplitude zolang dit aan staat.',
+    zonesToggle:             'Elke zone apart instellen',
+    zoneUp:                  'Boven',
+    zoneMid:                 'Erdoorheen',
+    zoneDown:                'Onder',
+    fitAction:               'Tik op een rode badge om het effect te verkleinen tot het past.',
+    fitDone:                 'Passend gemaakt voor {platform}',
+    fitImpossible:           'Te lang voor {platform}, zelfs op de lichtste stand',
+    btnGif:                  'GIF',
+    gifLabel:                'Download een geanimeerde GIF van deze tekst',
+    gifWorking:              'GIF maken…',
+    gifFailed:               'GIF mislukt',
+    cascadeMarkSaraU:        'Sara U (omlaag)',
+    cascadeMarkSaraUu:       'Sara Uu (omlaag)',
+    cascadeAnchorKaomoji:    'Kaomoji (つ ค c )',
+    presetInvader:           'Post-indringer'
   };
   </script>
   <script>window.UTG_HEADLESS = true;</script>

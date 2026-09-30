@@ -206,10 +206,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 </nav>
 
 
-<figure class="page-hero-figure" data-uthero aria-hidden="true">
-  <img src="/assets/hero/pl-usecase-zalgo-text.svg" width="1200" height="340"
-       fetchpriority="high" alt="">
-</figure>
   <!-- Hero Section -->
   <section class="hero">
     <div class="app">
@@ -232,16 +228,22 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Zamknij">✕</button>
       </div>
 
+      <!-- Output (populated by zalgo-text.js) -->
+      <div id="zalgoOutputSection"></div>
+
       <!-- Control Panel (populated by zalgo-text.js) -->
       <div id="zalgoControlPanel" data-cascade="thai" data-extreme></div>
 
-      <!-- Output (populated by zalgo-text.js) -->
-      <div id="zalgoOutputSection"></div>
 
       <!-- Decode (populated by zalgo-text.js) -->
       <div id="zalgoDecodeSection"></div>
     </div>
   </section>
+
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/pl-usecase-zalgo-text.svg" width="1200" height="340"
+       loading="lazy" alt="">
+</figure>
 
 
   <!-- Editorial Content -->
@@ -445,7 +447,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     controlCascade:          'Kaskada tajska',
     tooltipCascade:          'Jeden tajski znak tonalny powtórzony wiele razy na jednej literze nośnej. Zależnie od aplikacji i czcionki wygląda jak wysoka kolumna, ukośna linia, albo zostaje przycięty.',
     cascadeDepth:            'Głębokość',
-    tooltipCascadeDepth:     'Ile razy znak się powtarza (10 = krótko, 150 = pełny internetowy słup)',
+    tooltipCascadeDepth:     'Ile razy znak się powtarza (10 = krótko, 250 = wyżej niż ekran telefonu, 1000 = maksimum)',
     cascadePlacement:        'Położenie',
     cascadePrefix:           'Przed tekstem',
     cascadeSuffix:           'Po tekście',
@@ -462,7 +464,24 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     cascadeCopyLabel:        'Kopiuj kaskadę tajską',
     cascadeOutputLabel:      'Kaskada tajska dla: {text}',
     presetExtreme:           'Ekstremalny',
-    tooltipAmplitudeExtreme: 'Tryb Ekstremalny: suwak amplitudy sięga 100 (około 92 znaków na literę przy włączonych wszystkich pozycjach). Długi tekst robi się bardzo ciężki, a większość aplikacji go przycina.'
+    tooltipAmplitudeExtreme: 'Tryb Ekstremalny: suwak amplitudy sięga 300 (około 272 znaków na literę przy włączonych wszystkich pozycjach). Długi tekst robi się bardzo ciężki, a większość aplikacji go przycina.',
+    controlZones:            'Ilość na strefę',
+    tooltipZones:            'Ustaw osobno, ile znaków trafia nad, przez i pod każdą literę. Gdy włączone, zastępuje Pozycję i Amplitudę.',
+    zonesToggle:             'Ustaw każdą strefę osobno',
+    zoneUp:                  'Nad',
+    zoneMid:                 'Przez',
+    zoneDown:                'Pod',
+    fitAction:               'Stuknij czerwoną plakietkę, aby zmniejszyć efekt, aż się zmieści.',
+    fitDone:                 'Dopasowano do platformy {platform}',
+    fitImpossible:           'Za długie dla platformy {platform} nawet przy najlżejszym ustawieniu',
+    btnGif:                  'GIF',
+    gifLabel:                'Pobierz animowany GIF z tym tekstem',
+    gifWorking:              'Tworzenie GIF-a…',
+    gifFailed:               'Nie udało się utworzyć GIF-a',
+    cascadeMarkSaraU:        'Sara U (w dół)',
+    cascadeMarkSaraUu:       'Sara Uu (w dół)',
+    cascadeAnchorKaomoji:    'Kaomoji (つ ค c )',
+    presetInvader:           'Najeźdźca postów'
   };
   </script>
   <script>window.UTG_HEADLESS = true;</script>

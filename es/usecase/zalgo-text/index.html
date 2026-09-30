@@ -206,10 +206,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 </nav>
 
 
-<figure class="page-hero-figure" data-uthero aria-hidden="true">
-  <img src="/assets/hero/es-usecase-zalgo-text.svg" width="1200" height="340"
-       fetchpriority="high" alt="">
-</figure>
   <!-- Hero Section -->
   <section class="hero">
     <div class="app">
@@ -232,16 +228,22 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Cerrar">✕</button>
       </div>
 
+      <!-- Output (populated by zalgo-text.js) -->
+      <div id="zalgoOutputSection"></div>
+
       <!-- Control Panel (populated by zalgo-text.js) -->
       <div id="zalgoControlPanel" data-cascade="thai" data-extreme></div>
 
-      <!-- Output (populated by zalgo-text.js) -->
-      <div id="zalgoOutputSection"></div>
 
       <!-- Decode (populated by zalgo-text.js) -->
       <div id="zalgoDecodeSection"></div>
     </div>
   </section>
+
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/es-usecase-zalgo-text.svg" width="1200" height="340"
+       loading="lazy" alt="">
+</figure>
 
 
   <!-- Editorial Content -->
@@ -445,7 +447,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     controlCascade:          'Cascada tailandesa',
     tooltipCascade:          'Una marca tonal tailandesa repetida muchas veces sobre una letra portadora. Según la app y la fuente se ve como una columna alta, una diagonal, o queda recortada.',
     cascadeDepth:            'Profundidad',
-    tooltipCascadeDepth:     'Cuántas veces se repite la marca (10 = corta, 150 = el pico completo de internet)',
+    tooltipCascadeDepth:     'Cuántas veces se repite la marca (10 = corta, 250 = más alta que la pantalla de un móvil, 1000 = el máximo)',
     cascadePlacement:        'Posición',
     cascadePrefix:           'Antes del texto',
     cascadeSuffix:           'Después del texto',
@@ -462,7 +464,24 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     cascadeCopyLabel:        'Copiar la cascada tailandesa',
     cascadeOutputLabel:      'Cascada tailandesa para: {text}',
     presetExtreme:           'Extremo',
-    tooltipAmplitudeExtreme: 'Modo Extremo: el control de amplitud llega hasta 100 (unas 92 marcas por letra con todas las posiciones activas). Los textos largos pesan mucho y la mayoría de apps los recortan.'
+    tooltipAmplitudeExtreme: 'Modo Extremo: el control de amplitud llega hasta 300 (unas 272 marcas por letra con todas las posiciones activas). Los textos largos pesan mucho y la mayoría de apps los recortan.',
+    controlZones:            'Cantidad por zona',
+    tooltipZones:            'Define por separado cuántas marcas van encima, a través y debajo de cada letra. Sustituye a Posición y Amplitud mientras está activo.',
+    zonesToggle:             'Ajustar cada zona por separado',
+    zoneUp:                  'Encima',
+    zoneMid:                 'A través',
+    zoneDown:                'Debajo',
+    fitAction:               'Toca una etiqueta roja para reducir el efecto hasta que quepa.',
+    fitDone:                 'Ajustado a {platform}',
+    fitImpossible:           'Demasiado largo para {platform} incluso con el ajuste más ligero',
+    btnGif:                  'GIF',
+    gifLabel:                'Descarga un GIF animado de este texto',
+    gifWorking:              'Creando GIF…',
+    gifFailed:               'Error al crear el GIF',
+    cascadeMarkSaraU:        'Sara U (hacia abajo)',
+    cascadeMarkSaraUu:       'Sara Uu (hacia abajo)',
+    cascadeAnchorKaomoji:    'Kaomoji (つ ค c )',
+    presetInvader:           'Invasor de posts'
   };
   </script>
   <script>window.UTG_HEADLESS = true;</script>
