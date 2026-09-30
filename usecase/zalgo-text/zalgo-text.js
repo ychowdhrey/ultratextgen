@@ -1647,6 +1647,7 @@
   let gifIntroPlayed = false;
   let gifLabelTimer = null;
   let gifLabelSeed = 1;
+  let gifLabelDrawn = false;
 
   function gifIsNew() { return Date.now() < GIF_NEW_UNTIL; }
 
@@ -1658,6 +1659,7 @@
     const el = $('#gifGlitch');
     if (!el) return;
     gifLabelSeed = (gifLabelSeed + 7919) >>> 0;
+    gifLabelDrawn = true;
     el.textContent = generateZalgo(i18n.btnGif, {
       charType: 'all', position: 'up-down', shape: 'uniform',
       frequency: 0.6, amplitude: 1, seed: gifLabelSeed
@@ -1672,7 +1674,9 @@
   function animateGifLabel(ms) {
     const btn = $('#gifBtn');
     if (!btn || btn.classList.contains('is-working')) return;
-    if (reducedMotion()) { if (!gifLabelTimer) stillGifLabel(); return; }
+    // Reduced motion: draw the still frame once and never swap it, not even
+    // on hover; a new frame per hover would be motion by another name.
+    if (reducedMotion()) { if (!gifLabelDrawn) stillGifLabel(); return; }
     if (gifLabelTimer) clearInterval(gifLabelTimer);
     const stopAt = Date.now() + ms;
     glitchLabelFrame();
