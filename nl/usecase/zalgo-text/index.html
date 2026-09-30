@@ -138,7 +138,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Kan ik een specifieke Zalgo-tekstconfiguratie als link delen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja. De pagina-URL wordt automatisch bijgewerkt terwijl je typt, inclusief je huidige tekst, stijl en intensiteit als URL-parameters. Kopieer de URL uit de adresbalk van je browser om je exacte configuratie te delen."
+        "text": "Ja, en precies. Het paginaadres wordt bijgewerkt terwijl je typt, met je tekst, je instellingen en de willekeurige seed achter de tekens. Kopieer het uit de adresbalk: wie het opent, krijgt dezelfde zalgo, teken voor teken. Druk op Opnieuw genereren voor een nieuwe seed en een nieuwe look."
       }
     }
   ]
@@ -211,7 +211,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="app">
       <div class="zalgo-page-header">
         <h1 class="hero-headline">Zalgo Tekstgenerator – Maak Griezelige Glitch Tekst</h1>
-        <p>Typ je tekst hieronder. Kies je ingrediënten – tekentype, positie, vorm, frequentie en amplitude – om precies het gecorrumpeerde effect te maken dat je wilt. Kopieer en plak overal.</p>
+        <p>Typ je tekst, kies een preset en kopieer vervloekte zalgo-tekst. De "Past het?"-check laat zien wat past op Discord, X en Instagram.</p>
       </div>
 
       <!-- Text Input -->
@@ -257,11 +257,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
     <section class="editorial-section">
       <h2>Hoe Deze Generator Werkt</h2>
-      <p><strong>Tekens</strong> bepaalt welk <em>type</em> combinatietekens wordt gebruikt – balken (doorstreepstijl), letters (superscript lettertekens), symbolen (omsluittekens) of ruis (accentdiacrieten). "Alle" gebruikt de volledige Unicode-pool.</p>
+      <p><strong>Tekens</strong> bepaalt welk <em>type</em> combinatietekens wordt gebruikt – balken (doorstreepstijl), letters (superscript lettertekens), symbolen (puntjes, ringen, haakjes en overlays) of ruis (accentdiacrieten). "Alle" gebruikt de volledige Unicode-pool.</p>
       <p><strong>Positie</strong> bepaalt <em>waar</em> tekens hechten – boven, onder, in het midden of een combinatie. "Boven en onder" geeft de klassieke Zalgo-look met spitsen en wortels maar zonder doorstreep.</p>
       <p><strong>Vorm</strong> bepaalt hoe de tekendichtheid <em>varieert over je tekst</em>. Uniform past overal gelijke dichtheid toe. Oplopende helling begint schoon en bouwt chaos op. Golf oscilleert. Piramide piekt in het midden.</p>
       <p><strong>Frequentie</strong> is de kans dat een gegeven karakter tekens krijgt. Bij 50% blijft ongeveer de helft van je karakters schoon. Bij 100% wordt elk karakter beïnvloed.</p>
-      <p><strong>Amplitude</strong> is hoeveel tekens er op elk beïnvloed karakter gestapeld worden. Bij 1 is het een subtiel accent. Bij 20 is het maximale visuele chaos.</p>
+      <p><strong>Amplitude</strong> is hoeveel tekens er op elk beïnvloed karakter gestapeld worden. Bij 1 is het een subtiel accent, bij 20 zware klassieke chaos. De preset <strong>Extreem</strong> zet de schuif open tot 300. Bij 300 met alle posities draagt een letter zo'n 272 tekens: dezelfde tekens en dezelfde engine, dus de decoder draait het nog steeds terug, maar de meeste apps knippen het af op de regel.</p>
 
       <h3 id="thai-cascade">Klassieke zalgo en de Thaise cascade</h3>
       <p>De hoge piek die in virale screenshots over het scherm loopt, is geen zalgo op maximum, en ook niet de preset Extreem. Het is één <strong>Thais toonteken</strong> (standaard Mai Tho, U+0E49) dat tot 1000 keer herhaald wordt op één dragerletter, de Thaise medeklinker ก. Klassieke zalgo strooit tientallen <em>verschillende</em> tekens rond <em>elke</em> letter; de cascade stapelt <em>hetzelfde</em> teken op <em>één</em>.</p>
@@ -333,8 +333,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <!-- Unzalgo / Decoder -->
     <section class="editorial-section" id="unzalgo-guide">
       <h2>Unzalgo – Verwijder Zalgo uit Elke Tekst</h2>
-      <p>De meeste zalgo-generators kunnen hun eigen resultaat niet terugdraaien. In een test van 12 generators op 29 september 2026 konden er 4 zalgo verwijderen, en deze pagina is er een van, met een ingebouwde <strong>unzalgo-decoder</strong>. Plak corrupte tekst in het vak <a href="#unzalgo">Zalgo Decoderen</a> hierboven: het verwijdert elk gecombineerd Unicode-teken en geeft je direct de originele, leesbare tekst terug. Een Thaise cascadestapel (één herhaald toonteken) verdwijnt ook, en gewone Thaise tekst blijft zoals hij is.</p>
-      <p>Gebruik het om een vervloekt bericht te lezen dat iemand je stuurde, tekst op te schonen voordat je die citeert, iets terug te halen dat je te ver hebt gecorrumpeerd of – als je een Discord-server of forum modereert – om te zien wat een zalgo-gebruikersnaam of -bericht echt zegt voordat je ingrijpt. Omdat zalgo niets meer is dan basistekens plus combinatietekens, gaat er bij het decoderen niets verloren: de originele tekst is altijd terug te halen. Voor de volledige uitleg (en hoe moderators zalgo automatisch filteren), zie de gids (Engels) over <a href="/answers/how-to-remove-zalgo-text/">hoe je zalgo-tekst verwijdert</a>.</p>
+      <p>De meeste zalgo-generators kunnen hun eigen resultaat niet terugdraaien. In een test van 12 generators op 29 september 2026 konden er 4 zalgo verwijderen, en deze pagina is er een van, met een ingebouwde <strong>unzalgo-decoder</strong>. Plak corrupte tekst in het vak <a href="#unzalgo">Zalgo Decoderen</a> hierboven: het verwijdert de reeksen combinatietekens die zalgo-generators gebruiken en geeft je direct leesbare tekst terug. Letters met een accent die je gewoon als één teken typt (é, ë), blijven zoals ze zijn. Een Thaise cascadestapel (één herhaald toonteken) verdwijnt ook, en gewone Thaise tekst blijft zoals hij is.</p>
+      <p>Gebruik het om een vervloekt bericht te lezen dat iemand je stuurde, tekst op te schonen voordat je die citeert, iets terug te halen dat je te ver hebt gecorrumpeerd of – als je een Discord-server of forum modereert – om te zien wat een zalgo-gebruikersnaam of -bericht echt zegt voordat je ingrijpt. Dat werkt bijna altijd. Alleen een accent dat is opgeslagen als basisletter plus een los combinatieteken, verdwijnt mee: zo'n é wordt dan e. Voor de volledige uitleg (en hoe moderators zalgo automatisch filteren), zie de gids (Engels) over <a href="/answers/how-to-remove-zalgo-text/">hoe je zalgo-tekst verwijdert</a>.</p>
     </section>
 
     <section class="editorial-section">
@@ -342,7 +342,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p><strong>Discord</strong> is het natuurlijke thuis van zalgo: berichten geven combinatietekens volledig weer en geen enkel filter blokkeert ze standaard (de AutoMod van de server of de MEE6-bot kunnen dat wel). <em>Weergavenamen</em> en <em>bijnamen</em> accepteren zalgo, maar zitten vast aan 32 tekens, en elk teken telt mee – gebruik de preset Subtiel voor namen. Discord-<em>gebruikersnamen</em> (sinds 2023) accepteren alleen kleine letters, cijfers, underscores en punten, dus daar is zalgo onmogelijk.</p>
       <p><strong>Roblox</strong> filtert streng: zware zalgo wordt #-symbolen of blokjes, en de middelste (overlay)tekens sneuvelen het eerst. Wil je het toch proberen, gebruik dan de preset Subtiel, zet Positie op Boven en onder, houd het kort en test het in de game – volledige uitleg in de gids (Engels) over <a href="/answers/does-zalgo-work-on-roblox/">of zalgo werkt op Roblox</a>.</p>
       <p><strong>Instagram</strong> ondersteunt zalgo in bio's, bijschriften en reacties – lichtere stijlen werken het best, en zeer hoge stapels worden door de regelhoogte afgeknipt. Gebruikersnamen weigeren het. <strong>TikTok</strong> doet precies hetzelfde: bio's, bijschriften en reacties wel, gebruikersnamen niet.</p>
-      <p><strong>Twitter / X</strong> geeft zalgo weer in posts, bio's en antwoorden, maar elk combinatieteken telt mee voor de limiet van 280 tekens – zware zalgo op één woord kan een halve tweet opslokken. Houd de "Past het?"-badges onder de uitvoer in de gaten, of haal je tekst door de <a href="/nl/woorden-en-tekens-tellen/">tekenteller</a> om hem in één keer tegen 25 platformlimieten te controleren.</p>
+      <p><strong>Twitter / X</strong> geeft zalgo weer in posts, bio's en antwoorden, maar elk combinatieteken telt mee voor de limiet van 280 tekens – zware zalgo op één woord kan een halve tweet opslokken. Houd de "Past het?"-badges onder de uitvoer in de gaten, of haal je tekst door de <a href="/nl/woorden-en-tekens-tellen/">tekenteller</a> om hem in één keer te controleren tegen 39 limieten op 17 platforms.</p>
       <p><strong>Twitch</strong> heeft gewone alfanumerieke gebruikersnamen (geen zalgo), maar de chat geeft het wel weer – al verwijderen kanaalbots zware glitch-tekst vaak of geven ze er een time-out voor. <strong>Minecraft</strong> geeft combinatietekens zonder filter weer in chat, op bordjes en in server-MOTD's. <strong>Steam</strong> geeft zalgo ongeknipt weer, en precies daarom loopt het over de interface van profielen en groepsnamen heen – spaarzaam gebruiken. <strong>WhatsApp en Telegram</strong> geven zalgo-berichten gewoon goed weer.</p>
       <p><strong>Een opmerking over etiquette:</strong> schermlezers spreken elk combinatieteken uit, waardoor één zalgo-woord een lange, onaangename woordenbrij wordt, en sommige communities (fanwiki's, forums) verbieden zalgo helemaal omdat het de opmaak breekt. Vuistregel voor horrorschrijvers: één zalgo-regel per ~200 woorden komt harder aan dan een volledig gecorrumpeerde alinea. En als iemand bang is dat de vervloekte tekst zijn apparaat kan beschadigen – dat kan niet: <a href="/answers/is-zalgo-text-safe/">zalgo is Unicode, geen code</a> (Engels).</p>
     </section>
@@ -373,7 +373,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </details>
   <details class="faq-item">
     <summary class="faq-question">Kan ik een specifieke Zalgo-tekstconfiguratie als link delen?</summary>
-    <p class="faq-answer">Ja. De pagina-URL wordt automatisch bijgewerkt terwijl je typt, inclusief je huidige tekst, stijl en intensiteit als URL-parameters. Kopieer de URL uit de adresbalk van je browser om je exacte configuratie te delen.</p>
+    <p class="faq-answer">Ja, en precies. Het paginaadres wordt bijgewerkt terwijl je typt, met je tekst, je instellingen en de willekeurige seed achter de tekens. Kopieer het uit de adresbalk: wie het opent, krijgt dezelfde zalgo, teken voor teken. Druk op Opnieuw genereren voor een nieuwe seed en een nieuwe look.</p>
   </details>
 </section>
 

@@ -138,7 +138,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Kann ich eine bestimmte Zalgo-Text-Konfiguration als Link teilen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja. Die URL der Seite aktualisiert sich automatisch während du tippst, einschließlich deines aktuellen Textes, Stils und Intensität als URL-Parameter. Kopiere die URL aus der Adressleiste des Browsers, um deine genaue Konfiguration zu teilen."
+        "text": "Ja, und zwar exakt. Die Adresse der Seite aktualisiert sich beim Tippen mit deinem Text, deinen Einstellungen und dem Zufalls-Seed hinter den Zeichen. Kopiere sie aus der Adressleiste: Wer sie öffnet, bekommt dasselbe Zalgo, Zeichen für Zeichen. Tippe auf Neu generieren für einen neuen Seed und einen neuen Look."
       }
     }
   ]
@@ -211,7 +211,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="app">
       <div class="zalgo-page-header">
         <h1 class="hero-headline">Zalgo-Textgenerator – Erstelle Gruseligen Glitch-Text</h1>
-        <p>Gib deinen Text unten ein. Wähle die Zutaten – Zeichentyp, Position, Form, Häufigkeit und Amplitude – um genau den verzerrten Effekt zu erzeugen, den du dir vorstellst. Kopieren und überall einfügen.</p>
+        <p>Gib deinen Text ein, wähle ein Preset und kopiere verfluchten Zalgo-Text. Der „Passt es?“-Check zeigt, was in Discord, X und Instagram passt.</p>
       </div>
 
       <!-- Text Input -->
@@ -257,11 +257,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
     <section class="editorial-section">
       <h2>Wie Dieser Generator Funktioniert</h2>
-      <p><strong>Zeichen</strong> steuert, welcher <em>Typ</em> von Kombinationszeichen verwendet wird – Balken (Durchstreichungsstil), Buchstaben (hochgestellte Buchstabenzeichen), Symbole (umschließende Zeichen) oder Rauschen (Akzent-Diakritika). „Alle" verwendet den vollständigen Unicode-Pool.</p>
+      <p><strong>Zeichen</strong> steuert, welcher <em>Typ</em> von Kombinationszeichen verwendet wird – Balken (Durchstreichungsstil), Buchstaben (hochgestellte Buchstabenzeichen), Symbole (Punkte, Ringe, Haken und Überlagerungen) oder Rauschen (Akzent-Diakritika). „Alle" verwendet den vollständigen Unicode-Pool.</p>
       <p><strong>Position</strong> steuert, <em>wo</em> Zeichen angeheftet werden – oben, unten, in der Mitte oder eine Kombination. „Oben und unten" gibt den klassischen Zalgo-Look mit Spitzen und Wurzeln, aber ohne Durchstreichung.</p>
       <p><strong>Form</strong> steuert, wie die Zeichendichte <em>im Text variiert</em>. Gleichmäßig wendet überall gleichmäßige Dichte an. Aufsteigende Steigung beginnt sauber und baut Chaos auf. Welle oszilliert. Pyramide erreicht in der Mitte ihren Höhepunkt.</p>
       <p><strong>Häufigkeit</strong> ist die Wahrscheinlichkeit, dass ein Zeichen Markierungen erhält. Bei 50 % bleiben etwa die Hälfte der Zeichen sauber. Bei 100 % ist jedes Zeichen betroffen.</p>
-      <p><strong>Amplitude</strong> ist die Anzahl der auf jedem betroffenen Zeichen gestapelten Markierungen. Bei 1 ist es ein subtiler Akzent. Bei 20 ist es maximales visuelles Chaos.</p>
+      <p><strong>Amplitude</strong> ist die Anzahl der auf jedem betroffenen Zeichen gestapelten Markierungen. Bei 1 ist es ein subtiler Akzent, bei 20 heftiges klassisches Chaos. Das Preset <strong>Extrem</strong> öffnet den Regler bis 300. Bei 300 mit allen Positionen trägt ein Buchstabe rund 272 Zeichen: dieselben Zeichen und dieselbe Engine, der Decoder macht es also weiterhin rückgängig, aber die meisten Apps schneiden es an der Zeile ab.</p>
 
       <h3 id="thai-cascade">Klassisches Zalgo und die Thai-Kaskade</h3>
       <p>Die hohe Spitze, die in viralen Screenshots quer über den Bildschirm läuft, ist kein Zalgo auf Maximum, und auch nicht das Preset Extrem. Es ist ein einziges <strong>thailändisches Tonzeichen</strong> (standardmäßig Mai Tho, U+0E49), bis zu 1.000 Mal auf einem Trägerbuchstaben wiederholt, dem thailändischen Konsonanten ก. Klassisches Zalgo streut Dutzende <em>verschiedene</em> Zeichen um <em>jeden</em> Buchstaben; die Kaskade stapelt <em>dasselbe</em> Zeichen auf <em>einen</em>.</p>
@@ -333,8 +333,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <!-- Unzalgo / Decoder -->
     <section class="editorial-section" id="unzalgo-guide">
       <h2>Unzalgo – Zalgo aus jedem Text entfernen</h2>
-      <p>Die meisten Zalgo-Generatoren können ihr eigenes Ergebnis nicht rückgängig machen. In einem Test von 12 Generatoren am 29. September 2026 konnten 4 Zalgo entfernen, und diese Seite ist einer davon, mit einem eingebauten <strong>Unzalgo-Decoder</strong>. Füge korrumpierten Text in das Feld <a href="#unzalgo">Zalgo Dekodieren</a> weiter oben ein: Es entfernt jedes Unicode-Kombinationszeichen und gibt sofort den ursprünglichen, lesbaren Text zurück. Ein Thai-Kaskaden-Stapel (ein wiederholtes Tonzeichen) verschwindet ebenfalls, normaler thailändischer Text bleibt, wie er ist.</p>
-      <p>Nutze es, um eine verfluchte Nachricht zu lesen, die dir jemand geschickt hat, um Text vor dem Zitieren zu bereinigen, um etwas zurückzuholen, das du zu stark korrumpiert hast – oder, wenn du einen Discord-Server oder ein Forum moderierst, um zu sehen, was ein Zalgo-Nickname oder eine Zalgo-Nachricht tatsächlich sagt, bevor du handelst. Da Zalgo nur aus Basiszeichen plus Kombinationszeichen besteht, ist das Dekodieren verlustfrei: Der Originaltext lässt sich immer wiederherstellen. Die vollständige Erklärung (und wie Moderatoren Zalgo automatisch filtern) findest du auf der Seite (auf Englisch) <a href="/answers/how-to-remove-zalgo-text/">wie man Zalgo-Text entfernt</a>.</p>
+      <p>Die meisten Zalgo-Generatoren können ihr eigenes Ergebnis nicht rückgängig machen. In einem Test von 12 Generatoren am 29. September 2026 konnten 4 Zalgo entfernen, und diese Seite ist einer davon, mit einem eingebauten <strong>Unzalgo-Decoder</strong>. Füge korrumpierten Text in das Feld <a href="#unzalgo">Zalgo Dekodieren</a> weiter oben ein: Es entfernt die Bereiche von Kombinationszeichen, die Zalgo-Generatoren verwenden, und gibt sofort lesbaren Text zurück. Umlaute und Akzente, die wie üblich als ein Zeichen getippt sind (ä, é), bleiben erhalten. Ein Thai-Kaskaden-Stapel (ein wiederholtes Tonzeichen) verschwindet ebenfalls, normaler thailändischer Text bleibt, wie er ist.</p>
+      <p>Nutze es, um eine verfluchte Nachricht zu lesen, die dir jemand geschickt hat, um Text vor dem Zitieren zu bereinigen, um etwas zurückzuholen, das du zu stark korrumpiert hast – oder, wenn du einen Discord-Server oder ein Forum moderierst, um zu sehen, was ein Zalgo-Nickname oder eine Zalgo-Nachricht tatsächlich sagt, bevor du handelst. Das klappt fast immer. Nur ein Akzent, der als Grundbuchstabe plus eigenes Kombinationszeichen gespeichert ist, fällt mit weg: Aus so einem é wird e. Die vollständige Erklärung (und wie Moderatoren Zalgo automatisch filtern) findest du auf der Seite (auf Englisch) <a href="/answers/how-to-remove-zalgo-text/">wie man Zalgo-Text entfernt</a>.</p>
     </section>
 
     <section class="editorial-section">
@@ -342,7 +342,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p><strong>Discord</strong> ist die Heimat von Zalgo: Nachrichten rendern Kombinationszeichen vollständig, und standardmäßig blockiert sie kein Filter (der AutoMod des Servers oder der MEE6-Bot können es). <em>Anzeigenamen und Nicknames</em> akzeptieren Zalgo, sind aber auf 32 Zeichen begrenzt, und jedes einzelne Zeichen zählt mit – nimm für Namen das Preset <em>Dezent</em>. Discord-<em>Benutzernamen</em> (seit 2023) erlauben nur Kleinbuchstaben, Ziffern, Unterstriche und Punkte, dort ist Zalgo also unmöglich.</p>
       <p><strong>Roblox</strong> filtert aggressiv: Schweres Zalgo wird zu #-Symbolen oder Kästchen, und die mittleren (überlagernden) Zeichen brechen zuerst weg. Wenn du es trotzdem versuchen willst, nimm das Preset <em>Dezent</em>, stelle die Position auf <em>Oben und unten</em>, halte den Text kurz und teste ihn im Spiel – die ausführliche Analyse steht auf der Seite (auf Englisch) <a href="/answers/does-zalgo-work-on-roblox/">ob Zalgo auf Roblox funktioniert</a>.</p>
       <p><strong>Instagram</strong> unterstützt Zalgo in Bio, Bildunterschriften und Kommentaren – leichtere Stile funktionieren am besten, und sehr hohe Stapel werden von der Zeilenhöhe abgeschnitten. Benutzernamen lehnen es ab. <strong>TikTok</strong> verhält sich genauso: Bio, Bildunterschriften und Kommentare ja, Benutzernamen nein.</p>
-      <p><strong>Twitter / X</strong> rendert Zalgo in Posts, Bio und Antworten, aber jedes Kombinationszeichen zählt zum 280-Zeichen-Limit – schweres Zalgo auf einem einzigen Wort kann einen halben Tweet auffressen. Behalte die „Passt es?“-Badges unter der Ausgabe im Blick, oder schick einen beliebigen Text durch den <a href="/de/woerter-zeichen-zaehlen/">Wörter- und Zeichenzähler</a>, um ihn gegen 25 Plattform-Limits auf einmal zu prüfen.</p>
+      <p><strong>Twitter / X</strong> rendert Zalgo in Posts, Bio und Antworten, aber jedes Kombinationszeichen zählt zum 280-Zeichen-Limit – schweres Zalgo auf einem einzigen Wort kann einen halben Tweet auffressen. Behalte die „Passt es?“-Badges unter der Ausgabe im Blick, oder schick einen beliebigen Text durch den <a href="/de/woerter-zeichen-zaehlen/">Wörter- und Zeichenzähler</a>, um ihn auf einmal gegen 39 Limits auf 17 Plattformen zu prüfen.</p>
       <p><strong>Twitch</strong>-Benutzernamen sind rein alphanumerisch (kein Zalgo), im Chat wird es aber gerendert – Kanal-Bots entfernen schweren Glitch-Text allerdings oft oder sperren ihn per Timeout. <strong>Minecraft</strong> rendert Kombinationszeichen ungefiltert in Chat, auf Schildern und in Server-MOTDs. <strong>Steam</strong> rendert Zalgo ohne Beschnitt – genau deshalb läuft es in Profil- und Gruppennamen aus dem Layout heraus; setze es dort sparsam ein. <strong>WhatsApp und Telegram</strong> zeigen Zalgo-Nachrichten korrekt an.</p>
       <p><strong>Eine Anmerkung zum Umgangston:</strong> Screenreader sprechen jedes Kombinationszeichen einzeln vor und machen aus einem Zalgo-Wort einen langen, unangenehmen Wortschwall; manche Communitys (Fan-Wikis, Foren) verbieten Zalgo ganz, weil es Layouts zerstört. Faustregel für Horror-Autoren: Eine Zalgo-Zeile pro rund 200 Wörter wirkt stärker als ein komplett korrumpierter Absatz. Und falls jemand fürchtet, der verfluchte Text könnte sein Gerät beschädigen – kann er nicht: <a href="/answers/is-zalgo-text-safe/">Zalgo ist Unicode, kein Code</a> (auf Englisch).</p>
     </section>
@@ -373,7 +373,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </details>
   <details class="faq-item">
     <summary class="faq-question">Kann ich eine bestimmte Zalgo-Text-Konfiguration als Link teilen?</summary>
-    <p class="faq-answer">Ja. Die URL der Seite aktualisiert sich automatisch während du tippst, einschließlich deines aktuellen Textes, Stils und Intensität als URL-Parameter. Kopiere die URL aus der Adressleiste des Browsers, um deine genaue Konfiguration zu teilen.</p>
+    <p class="faq-answer">Ja, und zwar exakt. Die Adresse der Seite aktualisiert sich beim Tippen mit deinem Text, deinen Einstellungen und dem Zufalls-Seed hinter den Zeichen. Kopiere sie aus der Adressleiste: Wer sie öffnet, bekommt dasselbe Zalgo, Zeichen für Zeichen. Tippe auf Neu generieren für einen neuen Seed und einen neuen Look.</p>
   </details>
 </section>
 
