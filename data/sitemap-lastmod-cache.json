@@ -112,8 +112,8 @@
   "lastmod": "2026-08-12"
  },
  "/answers/how-to-remove-zalgo-text/": {
-  "hash": "e82a2aad4c49a3c8",
-  "lastmod": "2026-07-26"
+  "hash": "1e43d525fc4fd19c",
+  "lastmod": "2026-09-30"
  },
  "/answers/how-to-type-kaomoji/": {
   "hash": "5998fcd8f6994c3c",
@@ -1150,6 +1150,10 @@
  "/character-counter/characters-to-words/": {
   "hash": "682fff8dcf7ed191",
   "lastmod": "2026-08-06"
+ },
+ "/compare/zalgo-generators/": {
+  "hash": "5719551319ba5dac",
+  "lastmod": "2026-09-30"
  },
  "/contact/": {
   "hash": "c002720ea0b36631",
@@ -2312,8 +2316,8 @@
   "lastmod": "2026-09-01"
  },
  "/de/usecase/zalgo-text/": {
-  "hash": "03662f77e8837b2f",
-  "lastmod": "2026-09-05"
+  "hash": "d07e840c4fbb57bd",
+  "lastmod": "2026-09-30"
  },
  "/de/woerter-zeichen-zaehlen/": {
   "hash": "ca4bdfb04ed0fa32",
@@ -4348,8 +4352,8 @@
   "lastmod": "2026-09-01"
  },
  "/es/usecase/zalgo-text/": {
-  "hash": "7d658dd1a7def1ad",
-  "lastmod": "2026-09-05"
+  "hash": "b5c6079a57117111",
+  "lastmod": "2026-09-30"
  },
  "/events/": {
   "hash": "02f03ace00cce223",
@@ -5424,8 +5428,8 @@
   "lastmod": "2026-09-01"
  },
  "/fr/usecase/zalgo-text/": {
-  "hash": "7aebef9c94526fb0",
-  "lastmod": "2026-09-05"
+  "hash": "0173cbd045368710",
+  "lastmod": "2026-09-30"
  },
  "/guide/": {
   "hash": "0a0554d8b4191662",
@@ -6784,8 +6788,8 @@
   "lastmod": "2026-08-15"
  },
  "/id/usecase/zalgo-text/": {
-  "hash": "6c46d17b3ca99e91",
-  "lastmod": "2026-09-05"
+  "hash": "b8bcddcec776a990",
+  "lastmod": "2026-09-30"
  },
  "/instagram/": {
   "hash": "92a20c131ff491ad",
@@ -7704,8 +7708,8 @@
   "lastmod": "2026-09-10"
  },
  "/it/usecase/zalgo-text/": {
-  "hash": "6ca3fec822d7805b",
-  "lastmod": "2026-09-05"
+  "hash": "34cfaf46ff2f5a28",
+  "lastmod": "2026-09-30"
  },
  "/ja/": {
   "hash": "e0faa7d1d974c759",
@@ -9476,8 +9480,8 @@
   "lastmod": "2026-08-15"
  },
  "/learn/": {
-  "hash": "f3adf6ed5fa33110",
-  "lastmod": "2026-09-26"
+  "hash": "6b5c323c80927c8a",
+  "lastmod": "2026-09-30"
  },
  "/learn/coloring-and-fine-motor/": {
   "hash": "4671058173756559",
@@ -9500,8 +9504,8 @@
   "lastmod": "2026-07-25"
  },
  "/learn/handwriting/from-tracing-to-writing/": {
-  "hash": "e5d73de664e09e0b",
-  "lastmod": "2026-07-25"
+  "hash": "34e7f5d712d0147b",
+  "lastmod": "2026-09-30"
  },
  "/learn/handwriting/how-much-practice/": {
   "hash": "ef627906818564d1",
@@ -9512,8 +9516,8 @@
   "lastmod": "2026-07-25"
  },
  "/learn/handwriting/name-writing/": {
-  "hash": "5085ab9779df4a1c",
-  "lastmod": "2026-07-25"
+  "hash": "93145d5b93db421c",
+  "lastmod": "2026-09-30"
  },
  "/learn/handwriting/pre-writing-strokes/": {
   "hash": "0dcece365cac6c66",
@@ -9531,9 +9535,13 @@
   "hash": "bf719337bdcb9815",
   "lastmod": "2026-09-26"
  },
+ "/learn/print-worksheets-for-a-class/": {
+  "hash": "6740399b6dd15855",
+  "lastmod": "2026-09-30"
+ },
  "/learn/save-printer-ink-printables/": {
-  "hash": "d9bfbf5231d56e33",
-  "lastmod": "2026-09-27"
+  "hash": "ee0cfc52edc26049",
+  "lastmod": "2026-09-30"
  },
  "/library/": {
   "hash": "1df807058ee073fd",
@@ -11800,8 +11808,8 @@
   "lastmod": "2026-09-01"
  },
  "/nl/usecase/zalgo-text/": {
-  "hash": "b0d591515365aadd",
-  "lastmod": "2026-09-05"
+  "hash": "0951bfc864226d06",
+  "lastmod": "2026-09-30"
  },
  "/nl/vetgedrukte-letters/": {
   "hash": "3aa2716f5313ca65",
@@ -12724,16 +12732,16 @@
   "lastmod": "2026-09-01"
  },
  "/pl/usecase/zalgo-text/": {
-  "hash": "0928d378d6c8e2ba",
-  "lastmod": "2026-09-05"
+  "hash": "038c9403e8cf0922",
+  "lastmod": "2026-09-30"
  },
  "/pl/wielkie-i-male-litery/": {
   "hash": "8947770b2a003976",
   "lastmod": "2026-09-01"
  },
  "/printables/": {
-  "hash": "5e189bdedbfca581",
-  "lastmod": "2026-09-26"
+  "hash": "540802fde21690b6",
+  "lastmod": "2026-09-30"
  },
  "/printables/alphabet-coloring-pages/": {
   "hash": "cf72638c7835a1a3",
@@ -14516,12 +14524,12 @@
   "lastmod": "2026-09-01"
  },
  "/pt/usecase/zalgo-text/": {
-  "hash": "437ca2f4683b969a",
-  "lastmod": "2026-09-05"
+  "hash": "9f41034d8b77e5ca",
+  "lastmod": "2026-09-30"
  },
  "/research/": {
-  "hash": "70198b0febfe2f59",
-  "lastmod": "2026-09-27"
+  "hash": "5f24562436eb5907",
+  "lastmod": "2026-09-30"
  },
  "/research/ink-saving-by-worksheet-type/": {
   "hash": "b1d80cf6193962d5",
@@ -14530,6 +14538,10 @@
  "/research/printable-ink-efficiency-study/": {
   "hash": "1e6e55cbc815e3ec",
   "lastmod": "2026-09-27"
+ },
+ "/research/zalgo-generator-benchmark/": {
+  "hash": "578a8e337d2bebca",
+  "lastmod": "2026-09-30"
  },
  "/ro/": {
   "hash": "ad8343c6fc94adff",
@@ -15312,8 +15324,8 @@
   "lastmod": "2026-08-15"
  },
  "/ru/zalgo-text/": {
-  "hash": "9caa419bf6b71b6f",
-  "lastmod": "2026-09-05"
+  "hash": "3f008a400e24f597",
+  "lastmod": "2026-09-30"
  },
  "/ru/zhirnyy-shrift/": {
   "hash": "936dab30c73a7429",
@@ -17592,8 +17604,8 @@
   "lastmod": "2026-09-01"
  },
  "/tr/usecase/zalgo-text/": {
-  "hash": "2f15e0e41bb54a3c",
-  "lastmod": "2026-09-05"
+  "hash": "ebbf7e1023f4ea65",
+  "lastmod": "2026-09-30"
  },
  "/tr/ustu-cizili-yazi/": {
   "hash": "d8614d72afcb0c80",
@@ -17828,8 +17840,8 @@
   "lastmod": "2026-09-25"
  },
  "/usecase/zalgo-text/": {
-  "hash": "7b77c5558e653d05",
-  "lastmod": "2026-09-05"
+  "hash": "406149f6304d2c83",
+  "lastmod": "2026-09-30"
  },
  "/vi/": {
   "hash": "59ff97bd3e53be50",
@@ -18568,8 +18580,8 @@
   "lastmod": "2026-09-01"
  },
  "/vi/usecase/zalgo-text/": {
-  "hash": "c297d10f29fc5021",
-  "lastmod": "2026-09-05"
+  "hash": "3d5961ea09f0130a",
+  "lastmod": "2026-09-30"
  },
  "/whatsapp/": {
   "hash": "c6b3353df7d72eae",
