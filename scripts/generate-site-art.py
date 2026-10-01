@@ -3001,6 +3001,10 @@ PAGES.update({
     P(m_doc), K_RESEARCH),
 "research-ink-saving-by-worksheet-type": ("Ink Saving by Worksheet Type", "Print treatments tested on 54 real printable cases",
     P(m_doc), K_RESEARCH),
+"research-zalgo-generator-benchmark": ("Zalgo Generator Benchmark", "13 tools, one test, 3,774 measured outputs",
+    P(m_zalgo), K_RESEARCH),
+"compare-zalgo-generators": ("Zalgo Generators Compared", "Best tool for each effect, tested 2026",
+    P(m_zalgo), K_SITE),
 })
 
 # ---- /learn/ education pillar ----

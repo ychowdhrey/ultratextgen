@@ -1,0 +1,34 @@
+/* Zalgo benchmark (research) and Zalgo comparison (compare) tables. Loaded only by those two pages. */
+.table-note { font-size: 0.85rem; color: var(--text-secondary); margin: 0.75rem 0 0.5rem; }
+.data-table tbody th[scope="row"] { color: var(--text-primary); text-transform: none; letter-spacing: 0; font-size: 0.85rem; }
+.bm-table { min-width: 64rem; }
+.bm-table.cmp-glance { min-width: 44rem; }
+.data-table.cmp-duel { min-width: 0; }
+.bm-table th[scope="row"] { position: sticky; left: 0; background: var(--bg-base); z-index: 1; min-width: 11rem; }
+.bm-table td { text-align: center; white-space: nowrap; font-size: 0.85rem; color: var(--text-primary); }
+.bm-table .bm-group th { text-align: left; font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-secondary); }
+/* The word in each cell carries the meaning; the dot is a colour cue on top of it. */
+.bm-table .bm-yes::before,
+.bm-table .bm-partial::before,
+.bm-table .bm-unclear::before,
+.bm-table .bm-untested::before { content: ""; display: inline-block; width: 0.5em; height: 0.5em; border-radius: 50%; margin-right: 0.35em; vertical-align: 0.1em; }
+.bm-table .bm-yes { font-weight: 600; }
+.bm-table .bm-yes::before { background: var(--ts-safe); }
+.bm-table .bm-partial::before { background: var(--ts-risk); }
+.bm-table .bm-unclear::before,
+.bm-table .bm-untested::before { background: var(--ts-fail); }
+.bm-table .bm-no,
+.bm-table .bm-not_found { color: var(--text-secondary); }
+.bm-table .bm-total th,
+.bm-table .bm-total td { font-weight: 600; }
+.cmp-answer { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.75rem; }
+.cmp-dates { font-size: 0.85rem; color: var(--text-secondary); }
+@media (max-width: 480px) {
+  .bm-table th[scope="row"] { min-width: 7.5rem; }
+}
+@media print {
+  .bm-table, .bm-table.cmp-glance { min-width: 0; width: 100%; font-size: 6.5pt; }
+  .bm-table td { white-space: normal; font-size: 6.5pt; padding: 2pt 1.5pt; }
+  .bm-table th { font-size: 6.5pt; padding: 2pt 1.5pt; }
+  .bm-table tbody th[scope="row"] { position: static; min-width: 0; font-size: 6.5pt; }
+}
