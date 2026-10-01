@@ -1173,7 +1173,9 @@
 
   function scheduleRender() {
     clearTimeout(renderTimer);
-    renderTimer = setTimeout(() => { makeRender(); }, 120);
+    renderTimer = setTimeout(() => {
+      makeRender().catch(() => { if (active) say(t("renderFailed")); });
+    }, 120);
   }
 
   /* Pages that show their emoji as Twemoji pictures (the flags pages) get
@@ -1198,9 +1200,13 @@
     if (!artCache[url]) {
       artCache[url] = new Promise((resolve) => {
         const img = new Image();
+        // A stalled request (slow CDN, a blocker that hangs rather than
+        // fails) must not hold the image up: after 1.5s the device glyph is
+        // used, and a Share tap is not left waiting on the network.
+        const timer = setTimeout(() => { delete artCache[url]; resolve(null); }, 1500);
         img.crossOrigin = "anonymous";
-        img.onload = () => resolve(img);
-        img.onerror = () => resolve(null);
+        img.onload = () => { clearTimeout(timer); resolve(img); };
+        img.onerror = () => { clearTimeout(timer); resolve(null); };
         img.src = url;
       });
     }
@@ -1292,6 +1298,7 @@
     } catch (err) {
       r = null;
     }
+    if (!active) { busy = false; return; } // Cancel pressed while rendering
     if (!r) {
       busy = false;
       say(t("renderFailed"));
@@ -1459,6 +1466,7 @@
     document.documentElement.classList.add("utg-image-selecting");
     if (!tray) buildTray();
     tray.hidden = false;
+    say(""); // nothing from a previous session carries over
     paintAllTiles();
     addCollectionButtons();
     paint();

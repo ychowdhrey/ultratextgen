@@ -144,8 +144,14 @@ Rules that came out of building and auditing it, each with a test:
   flags. On a page without Twemoji, Windows shows the letters on the page too.
 - **Glyphs are never upscaled past their bitmap.** Colour emoji fonts store bitmaps
   (Apple's largest is 160px, Noto's 136px); drawn larger they blur. The card is laid
-  out at a 1080px reference width and the canvas is scaled so no glyph exceeds
-  160px (never below half size): one emoji ships as a crisp ~540px card.
+  out at a 1080px reference width and, when it holds colour-emoji text, the canvas is
+  scaled so no glyph exceeds 160px: one emoji ships as a crisp 480px card. Vector
+  text (kaomoji, symbols) and Twemoji SVGs scale cleanly and keep full size.
+- **Artwork never holds the image up.** Each Twemoji picture races a 1.5s timeout
+  and falls back to the device glyph, so a stalled CDN or blocker cannot leave Share
+  stuck on "Making image…".
+- **Expressions get room.** When an item is wider than a glyph (a kaomoji, a combo)
+  the gap between items is a full em, wider than any gap inside one.
 - **The card is as tall as its content**, between 1.91:1 and square, so a row of
   three emoji is not a square that is three-quarters blank. Row choice prefers the
   fewest rows within a size-graded share of the largest possible glyph (60% up to
@@ -184,6 +190,10 @@ Screenshots and real exports (downloaded from headless Chromium at 390px, 2x) ar
 preview, ASEAN after "Add all", Arabic RTL, kaomoji text cards, and exports for one
 emoji, a combination across sections, the ASEAN set, the same set on the Twemoji page,
 and the 50-item limit.
+
+A second review pass confirmed the fixes and found three more: a stalled Twemoji
+request could hang the image, Cancel during a render left an error behind, and the
+half-size floor still blurred one emoji. Those are fixed and retested too.
 
 An independent review after the first build found seven medium issues: the empty
 card space, blurred single emoji, the page jumping on Cancel, focus lost when the

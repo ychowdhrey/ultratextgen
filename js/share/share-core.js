@@ -490,9 +490,11 @@
   /* Colour emoji fonts are bitmaps: Apple's largest strike is 160px, Noto's
      136px. Drawn bigger they are upscaled and go soft (an audit caught a
      single emoji at 360px rendering visibly blurred). So the card is laid out
-     at a 1080px reference width and then the whole canvas is scaled down
-     until no glyph is drawn above GLYPH_CAP, never below half size: a single
-     emoji ships as a crisp ~540px square instead of a blurred 1080px one. */
+     at a 1080px reference width and, when it holds colour-emoji text, the
+     whole canvas is scaled down until no glyph is drawn above GLYPH_CAP: a
+     single emoji ships as a crisp ~480px card instead of a blurred 1080px
+     one. Vector text (a kaomoji, a symbol) and picture glyphs (Twemoji SVG)
+     scale cleanly and keep the full size. */
   const GLYPH_CAP = 160;
 
   //   items: array of strings, in the order the visitor chose them
@@ -523,7 +525,11 @@
     const widths = list.map((v) => (imageOf(v) ? 1 : ctx.measureText(v).width / BASE));
     const maxW = REF - PAD * 2;
     const maxH = REF - PAD * 2 - CRED_BAND;
-    const lay = UTG.layoutSelection(widths, { maxW: maxW, maxH: maxH, maxFont: list.length === 1 ? 360 : 300 });
+    // Expressions wider than a glyph (kaomoji, combos) carry their own inner
+    // spaces, so the gap between two of them must be clearly wider than any
+    // gap inside one, or "(¬_¬) (￣ヘ￣)" reads as a single string.
+    const wide = widths.some((w) => w > 1.6);
+    const lay = UTG.layoutSelection(widths, { maxW: maxW, maxH: maxH, gapEm: wide ? 1 : 0.4, maxFont: list.length === 1 ? 360 : 300 });
     const f = lay.fontSize;
     const lineH = f * lay.lineEm;
     const gapPx = f * lay.gapEm;
@@ -532,7 +538,8 @@
     // Height follows the content: a row of three emoji is a wide card, not a
     // square that is three-quarters blank. Square is the ceiling.
     const refH = Math.min(REF, Math.max(MIN_H, Math.ceil(blockH + PAD * 2 + CRED_BAND)));
-    const k = Math.max(0.5, Math.min(1, GLYPH_CAP / Math.max(f, 1)));
+    const bitmapEmoji = list.some((v) => !imageOf(v) && /\p{Extended_Pictographic}|\p{Regional_Indicator}/u.test(v));
+    const k = bitmapEmoji ? Math.min(1, GLYPH_CAP / Math.max(f, 1)) : 1;
     canvas.width = Math.round(REF * k);
     canvas.height = Math.round(refH * k);
     ctx.scale(k, k);
@@ -569,7 +576,9 @@
     });
 
     // Attribution: one small, quiet line. Never the page or section name.
-    ctx.font = "26px -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif";
+    // Sized in reference units, so it stays about 20px on a scaled-down card.
+    const credPx = Math.max(26, Math.round(20 / k));
+    ctx.font = credPx + "px -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif";
     ctx.fillStyle = "#9ca3af";
     ctx.textAlign = "center";
     ctx.fillText("ultratextgen.com", REF / 2, refH - 46);
