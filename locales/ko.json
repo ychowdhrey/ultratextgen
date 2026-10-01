@@ -131,7 +131,8 @@
       "downloaded": "이미지 다운로드 완료",
       "shareFailed": "공유하지 못했습니다. 다운로드해 보세요.",
       "renderFailed": "이미지를 만들지 못했습니다. 다시 시도하세요.",
-      "trayLabel": "이미지 선택"
+      "trayLabel": "이미지 선택",
+      "setUnavailable": "이 세트는 아직 이미지에 넣을 수 없습니다."
     }
   }
 }

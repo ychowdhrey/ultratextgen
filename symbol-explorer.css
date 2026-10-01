@@ -710,7 +710,8 @@ body.dark-mode .symbol-collection-add { --accent-purple-text: #c4b5fd; }
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* contain, not cover: a wide card must be seen whole, never cropped. */
+  object-fit: contain;
 }
 
 .utg-sel-thumb:focus-visible,
@@ -774,6 +775,20 @@ body.dark-mode .symbol-collection-add { --accent-purple-text: #c4b5fd; }
 }
 
 .utg-sel-chip:hover { border-color: #ef4444; color: #ef4444; }
+
+/* Twemoji pages draw chips with the same pictures as the tiles. */
+.utg-sel-chip-glyph img.emoji {
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: -0.2em;
+}
+
+/* A set that cannot join an image yet says so while selecting. */
+.symbol-collection-note {
+  margin: 0.4rem 0 0.2rem;
+  font-size: 0.8125rem;
+  color: var(--text-secondary, #64748b);
+}
 
 .utg-sel-empty {
   margin: 2px 0 0;
@@ -896,8 +911,8 @@ body.dark-mode .symbol-collection-add { --accent-purple-text: #c4b5fd; }
   display: block;
   width: 100%;
   max-width: 360px;
+  height: auto;
   margin: 0 auto 10px;
-  aspect-ratio: 1;
   border: 1px solid var(--border-light, #e2e8f0);
   border-radius: 10px;
   background: #faf9f7;

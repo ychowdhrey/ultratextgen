@@ -74,6 +74,7 @@
   <h2>Invisible</h2>
   <div class="flag-rows">
     <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="&#8203;" aria-label="Copy Zero width space">ZWSP</button><span class="flag-label">Zero width space</span></div>
+    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="&#10240;" aria-label="Copy Braille blank">BLANK</button><span class="flag-label">Braille blank</span></div>
     <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="⭐" aria-label="Copy Star">⭐</button><span class="flag-label">Star</span></div>
   </div>
 </section>
@@ -184,9 +185,12 @@ window.addEventListener("load", function () {
     check("entries point at the tray", heartsEntry.getAttribute("aria-controls") === "utgImageSelection");
     check("start recorded, not as a share", events("image_selection").some(function (e) { return e.selection_action === "start"; }) &&
       events(SHARE_EVENT).length === 0);
-    check("every drawable tile becomes a toggle button (7 of 8; the invisible one is excluded)", $$(".symbol-tile[aria-pressed='false']").length === 7, $$(".symbol-tile[aria-pressed='false']").length);
+    check("every drawable tile becomes a toggle button (7 of 9; the two blank ones are excluded)", $$(".symbol-tile[aria-pressed='false']").length === 7, $$(".symbol-tile[aria-pressed='false']").length);
     check("tile named by what it is, not 'Copy …'", $("#faces .symbol-tile").getAttribute("aria-label") === "Holding back tears");
     check("the invisible tile cannot be chosen", $("#invisible .symbol-tile").getAttribute("aria-disabled") === "true");
+    check("a braille blank (U+2800) cannot be chosen either", $$("#invisible .symbol-tile")[1].getAttribute("aria-disabled") === "true");
+    check("a disabled tile is not announced as Copy", $("#invisible .symbol-tile").getAttribute("aria-label") === "Zero width space");
+    check("structured sets (trail, kaomoji) say they cannot be added yet", $$(".symbol-collection-note").length === 2, $$(".symbol-collection-note").length);
     check("save stars step aside", getComputedStyle($(".symbol-save-btn")).display === "none");
 
     /* ---- 4. pick across sections; no copy while selecting ---- */
@@ -259,7 +263,11 @@ window.addEventListener("load", function () {
     var prev = $(".utg-sel-preview", dlg);
     await until(function () { return prev.complete && prev.naturalWidth > 0; });
     check("preview is the same blob as the tray thumbnail", prev.src === thumb.src);
-    check("preview is 1080 square", prev.naturalWidth === 1080 && prev.naturalHeight === 1080, prev.naturalWidth + "x" + prev.naturalHeight);
+    check("preview is sized to its content: 540-1080 wide, between 1.91:1 and square",
+      prev.naturalWidth >= 540 && prev.naturalWidth <= 1080 &&
+      prev.naturalHeight <= prev.naturalWidth && prev.naturalHeight >= Math.floor(prev.naturalWidth * 566 / 1080),
+      prev.naturalWidth + "x" + prev.naturalHeight);
+    check("the preview is drawn without distortion", Math.abs(prev.clientWidth / prev.clientHeight - prev.naturalWidth / prev.naturalHeight) < 0.02);
     check("preview alt names the items in order", prev.alt === "Heart hands, medium-light, Sparkles, Holding back tears", prev.alt);
     check("focus moved into the dialog", dlg.contains(document.activeElement));
 
@@ -348,17 +356,22 @@ window.addEventListener("load", function () {
     check("entries back to Select and share image", $$(".symbol-select-btn").every(function (b) { return b.textContent.trim() === "Select and share image"; }));
     check("tile names restored", $("#faces .symbol-tile").getAttribute("aria-label") === "Copy Holding back tears");
     check("no tile left pressed", $$(".symbol-tile[aria-pressed]").length === 0);
-    check("Add all buttons removed", $$(".symbol-collection-add").length === 0);
+    check("Add all buttons and set notes removed", $$(".symbol-collection-add, .symbol-collection-note").length === 0);
     check("focus returns to the entry that last opened it", document.activeElement === anyEntry);
     copies = events("copy_text").length;
     $("#faces .symbol-tile").click();
     await wait(50);
     check("after Cancel, a press copies again", events("copy_text").length === copies + 1);
 
-    /* ---- 12. re-entering starts empty ---- */
+    /* ---- 12. re-entering starts empty; removing the last chip keeps focus ---- */
     $("#invisible .symbol-select-btn").click();
     await until(function () { return UTG.imageSelection.isActive(); });
     check("a new session starts with no items", UTG.imageSelection.count() === 0);
+    $("#faces .symbol-tile[data-symbol='😂']").click();
+    $(".utg-sel-chip", tray).focus();
+    $(".utg-sel-chip", tray).click();
+    check("removing the last chip moves focus to Cancel, not <body>", document.activeElement === $(".utg-sel-cancel", tray),
+      document.activeElement && document.activeElement.className);
     $(".utg-sel-cancel", tray).click();
 
     var summary = pass + " passed, " + fail + " failed";

@@ -131,7 +131,8 @@
       "downloaded": "Kuva ladattu",
       "shareFailed": "Jakaminen ei onnistunut. Kokeile latausta.",
       "renderFailed": "Kuvan luominen ei onnistunut. Yritä uudelleen.",
-      "trayLabel": "Kuvan valinta"
+      "trayLabel": "Kuvan valinta",
+      "setUnavailable": "Tätä sarjaa ei voi vielä lisätä kuvaan."
     }
   }
 }

@@ -52,7 +52,8 @@
       downloaded: "Image downloaded",
       shareFailed: "Couldn't share. Try Download.",
       renderFailed: "Couldn't make the image. Try again.",
-      trayLabel: "Image selection"
+      trayLabel: "Image selection",
+      setUnavailable: "This set can't be added to an image yet."
     },
     ar: {
       hint: "اختر رموزًا تعبيرية أو رموزًا من أي قسم لصنع صورتك.",
@@ -73,7 +74,8 @@
       downloaded: "تم تنزيل الصورة",
       shareFailed: "تعذرت المشاركة. جرّب التنزيل.",
       renderFailed: "تعذر إنشاء الصورة. حاول مرة أخرى.",
-      trayLabel: "تحديد الصورة"
+      trayLabel: "تحديد الصورة",
+      setUnavailable: "لا يمكن إضافة هذه المجموعة إلى صورة بعد."
     },
     bs: {
       hint: "Odaberi emojije ili simbole iz bilo kojeg dijela za svoju sliku.",
@@ -94,7 +96,8 @@
       downloaded: "Slika preuzeta",
       shareFailed: "Dijeljenje nije uspjelo. Probaj preuzeti.",
       renderFailed: "Slika nije napravljena. Probaj ponovo.",
-      trayLabel: "Odabir za sliku"
+      trayLabel: "Odabir za sliku",
+      setUnavailable: "Ovaj set se još ne može dodati u sliku."
     },
     cs: {
       hint: "Vyber emoji nebo symboly z libovolné sekce pro svůj obrázek.",
@@ -115,7 +118,8 @@
       downloaded: "Obrázek stažen",
       shareFailed: "Sdílení se nepovedlo. Zkus stáhnout.",
       renderFailed: "Obrázek se nepovedlo vytvořit. Zkus to znovu.",
-      trayLabel: "Výběr pro obrázek"
+      trayLabel: "Výběr pro obrázek",
+      setUnavailable: "Tuhle sadu zatím nejde přidat do obrázku."
     },
     da: {
       hint: "Vælg emojis eller symboler fra en hvilken som helst sektion til dit billede.",
@@ -136,7 +140,8 @@
       downloaded: "Billede downloadet",
       shareFailed: "Kunne ikke dele. Prøv at downloade.",
       renderFailed: "Kunne ikke lave billedet. Prøv igen.",
-      trayLabel: "Billedudvalg"
+      trayLabel: "Billedudvalg",
+      setUnavailable: "Dette sæt kan ikke tilføjes til et billede endnu."
     },
     de: {
       hint: "Wähle Emojis oder Symbole aus beliebigen Abschnitten für dein Bild.",
@@ -157,7 +162,8 @@
       downloaded: "Bild heruntergeladen",
       shareFailed: "Teilen ging nicht. Lade es herunter.",
       renderFailed: "Bild ging nicht. Versuch es noch mal.",
-      trayLabel: "Bildauswahl"
+      trayLabel: "Bildauswahl",
+      setUnavailable: "Dieses Set kann noch nicht ins Bild."
     },
     es: {
       hint: "Elige emojis o símbolos de cualquier sección para crear tu imagen.",
@@ -178,7 +184,8 @@
       downloaded: "Imagen descargada",
       shareFailed: "No se pudo compartir. Prueba a descargarla.",
       renderFailed: "No se pudo crear la imagen. Inténtalo de nuevo.",
-      trayLabel: "Selección de imagen"
+      trayLabel: "Selección de imagen",
+      setUnavailable: "Este conjunto aún no se puede añadir a una imagen."
     },
     fi: {
       hint: "Valitse emojeja tai symboleja mistä tahansa osiosta kuvaasi.",
@@ -199,7 +206,8 @@
       downloaded: "Kuva ladattu",
       shareFailed: "Jakaminen ei onnistunut. Kokeile latausta.",
       renderFailed: "Kuvan luominen ei onnistunut. Yritä uudelleen.",
-      trayLabel: "Kuvan valinta"
+      trayLabel: "Kuvan valinta",
+      setUnavailable: "Tätä sarjaa ei voi vielä lisätä kuvaan."
     },
     fr: {
       hint: "Choisis des emojis ou des symboles dans n’importe quelle section pour créer ton image.",
@@ -220,7 +228,8 @@
       downloaded: "Image téléchargée",
       shareFailed: "Partage impossible. Essaie de télécharger.",
       renderFailed: "Impossible de créer l’image. Réessaie.",
-      trayLabel: "Sélection pour l’image"
+      trayLabel: "Sélection pour l’image",
+      setUnavailable: "Cet ensemble ne peut pas encore aller dans une image."
     },
     hi: {
       hint: "अपनी इमेज के लिए किसी भी सेक्शन से इमोजी या सिंबल चुनें।",
@@ -241,7 +250,8 @@
       downloaded: "इमेज डाउनलोड हो गई",
       shareFailed: "शेयर नहीं हो पाया। डाउनलोड करके देखें।",
       renderFailed: "इमेज नहीं बन पाई। फिर से कोशिश करें।",
-      trayLabel: "इमेज के लिए चुनाव"
+      trayLabel: "इमेज के लिए चुनाव",
+      setUnavailable: "यह सेट अभी इमेज में नहीं जोड़ा जा सकता।"
     },
     hr: {
       hint: "Odaberi emojije ili simbole iz bilo kojeg odjeljka za svoju sliku.",
@@ -262,7 +272,8 @@
       downloaded: "Slika preuzeta",
       shareFailed: "Dijeljenje nije uspjelo. Pokušaj preuzeti.",
       renderFailed: "Slika nije izrađena. Pokušaj ponovno.",
-      trayLabel: "Odabir za sliku"
+      trayLabel: "Odabir za sliku",
+      setUnavailable: "Ovaj set još se ne može dodati u sliku."
     },
     hu: {
       hint: "Válassz emojikat vagy szimbólumokat bármelyik részből a képedhez.",
@@ -283,7 +294,8 @@
       downloaded: "Kép letöltve",
       shareFailed: "Nem sikerült megosztani. Próbáld letölteni.",
       renderFailed: "Nem sikerült elkészíteni a képet. Próbáld újra.",
-      trayLabel: "Képhez választás"
+      trayLabel: "Képhez választás",
+      setUnavailable: "Ez a készlet még nem tehető képre."
     },
     id: {
       hint: "Pilih emoji atau simbol dari bagian mana saja untuk membuat gambarmu.",
@@ -304,7 +316,8 @@
       downloaded: "Gambar diunduh",
       shareFailed: "Gagal membagikan. Coba unduh.",
       renderFailed: "Gagal membuat gambar. Coba lagi.",
-      trayLabel: "Pilihan gambar"
+      trayLabel: "Pilihan gambar",
+      setUnavailable: "Set ini belum bisa ditambahkan ke gambar."
     },
     it: {
       hint: "Scegli emoji o simboli da qualsiasi sezione per creare la tua immagine.",
@@ -325,7 +338,8 @@
       downloaded: "Immagine scaricata",
       shareFailed: "Condivisione non riuscita. Prova a scaricarla.",
       renderFailed: "Impossibile creare l’immagine. Riprova.",
-      trayLabel: "Selezione per l’immagine"
+      trayLabel: "Selezione per l’immagine",
+      setUnavailable: "Questo set non si può ancora aggiungere a un’immagine."
     },
     ja: {
       hint: "好きなセクションから絵文字や記号を選んで、画像を作りましょう。",
@@ -346,7 +360,8 @@
       downloaded: "画像をダウンロードしました",
       shareFailed: "共有できませんでした。ダウンロードをお試しください。",
       renderFailed: "画像を作成できませんでした。もう一度お試しください。",
-      trayLabel: "画像用の選択"
+      trayLabel: "画像用の選択",
+      setUnavailable: "このセットはまだ画像に追加できません。"
     },
     ko: {
       hint: "어느 섹션에서든 이모지나 기호를 골라 이미지를 만드세요.",
@@ -367,7 +382,8 @@
       downloaded: "이미지 다운로드 완료",
       shareFailed: "공유하지 못했습니다. 다운로드해 보세요.",
       renderFailed: "이미지를 만들지 못했습니다. 다시 시도하세요.",
-      trayLabel: "이미지 선택"
+      trayLabel: "이미지 선택",
+      setUnavailable: "이 세트는 아직 이미지에 넣을 수 없습니다."
     },
     ms: {
       hint: "Pilih emoji atau simbol dari mana-mana bahagian untuk membuat imej anda.",
@@ -388,7 +404,8 @@
       downloaded: "Imej dimuat turun",
       shareFailed: "Gagal berkongsi. Cuba muat turun.",
       renderFailed: "Gagal membuat imej. Cuba lagi.",
-      trayLabel: "Pilihan imej"
+      trayLabel: "Pilihan imej",
+      setUnavailable: "Set ini belum boleh ditambah ke imej."
     },
     nl: {
       hint: "Kies emoji's of symbolen uit elke sectie voor je afbeelding.",
@@ -409,7 +426,8 @@
       downloaded: "Afbeelding gedownload",
       shareFailed: "Delen mislukt. Probeer te downloaden.",
       renderFailed: "Afbeelding maken mislukt. Probeer het opnieuw.",
-      trayLabel: "Selectie voor afbeelding"
+      trayLabel: "Selectie voor afbeelding",
+      setUnavailable: "Deze set kan nog niet in een afbeelding."
     },
     no: {
       hint: "Velg emojier eller symboler fra hvilken som helst seksjon til bildet ditt.",
@@ -430,7 +448,8 @@
       downloaded: "Bilde lastet ned",
       shareFailed: "Kunne ikke dele. Prøv å laste ned.",
       renderFailed: "Kunne ikke lage bildet. Prøv igjen.",
-      trayLabel: "Bildeutvalg"
+      trayLabel: "Bildeutvalg",
+      setUnavailable: "Dette settet kan ikke legges i et bilde ennå."
     },
     pl: {
       hint: "Wybierz emoji lub symbole z dowolnej sekcji, żeby stworzyć obraz.",
@@ -451,7 +470,8 @@
       downloaded: "Obraz pobrany",
       shareFailed: "Nie udało się udostępnić. Spróbuj pobrać.",
       renderFailed: "Nie udało się stworzyć obrazu. Spróbuj ponownie.",
-      trayLabel: "Wybór do obrazu"
+      trayLabel: "Wybór do obrazu",
+      setUnavailable: "Tego zestawu nie można jeszcze dodać do obrazu."
     },
     pt: {
       hint: "Escolha emojis ou símbolos de qualquer seção para criar sua imagem.",
@@ -472,7 +492,8 @@
       downloaded: "Imagem baixada",
       shareFailed: "Não deu para compartilhar. Tente baixar.",
       renderFailed: "Não deu para criar a imagem. Tente de novo.",
-      trayLabel: "Seleção da imagem"
+      trayLabel: "Seleção da imagem",
+      setUnavailable: "Este conjunto ainda não pode entrar em uma imagem."
     },
     ro: {
       hint: "Alege emoji sau simboluri din orice secțiune pentru imaginea ta.",
@@ -493,7 +514,8 @@
       downloaded: "Imagine descărcată",
       shareFailed: "Nu s-a putut distribui. Încearcă descărcarea.",
       renderFailed: "Imaginea nu s-a putut crea. Încearcă din nou.",
-      trayLabel: "Selecție pentru imagine"
+      trayLabel: "Selecție pentru imagine",
+      setUnavailable: "Acest set nu poate fi adăugat încă într-o imagine."
     },
     ru: {
       hint: "Выберите эмодзи или символы из любого раздела для своей картинки.",
@@ -514,7 +536,8 @@
       downloaded: "Картинка скачана",
       shareFailed: "Не удалось поделиться. Попробуйте скачать.",
       renderFailed: "Не удалось создать картинку. Попробуйте ещё раз.",
-      trayLabel: "Выбор для картинки"
+      trayLabel: "Выбор для картинки",
+      setUnavailable: "Этот набор пока нельзя добавить в картинку."
     },
     sk: {
       hint: "Vyber emoji alebo symboly z ľubovoľnej sekcie pre svoj obrázok.",
@@ -535,7 +558,8 @@
       downloaded: "Obrázok stiahnutý",
       shareFailed: "Zdieľanie zlyhalo. Skús stiahnuť.",
       renderFailed: "Obrázok sa nepodarilo vytvoriť. Skús to znova.",
-      trayLabel: "Výber pre obrázok"
+      trayLabel: "Výber pre obrázok",
+      setUnavailable: "Túto sadu zatiaľ nemožno pridať do obrázka."
     },
     sr: {
       hint: "Izaberi emodžije ili simbole iz bilo kog odeljka za svoju sliku.",
@@ -556,7 +580,8 @@
       downloaded: "Slika preuzeta",
       shareFailed: "Deljenje nije uspelo. Probaj da preuzmeš.",
       renderFailed: "Slika nije napravljena. Probaj ponovo.",
-      trayLabel: "Izbor za sliku"
+      trayLabel: "Izbor za sliku",
+      setUnavailable: "Ovaj set još ne može da se doda u sliku."
     },
     sv: {
       hint: "Välj emojis eller symboler från valfri sektion till din bild.",
@@ -577,7 +602,8 @@
       downloaded: "Bild nedladdad",
       shareFailed: "Kunde inte dela. Prova att ladda ner.",
       renderFailed: "Kunde inte skapa bilden. Försök igen.",
-      trayLabel: "Bildurval"
+      trayLabel: "Bildurval",
+      setUnavailable: "Den här samlingen kan inte läggas i en bild än."
     },
     th: {
       hint: "เลือกอีโมจิหรือสัญลักษณ์จากส่วนไหนก็ได้เพื่อสร้างรูปภาพของคุณ",
@@ -598,7 +624,8 @@
       downloaded: "ดาวน์โหลดรูปภาพแล้ว",
       shareFailed: "แชร์ไม่สำเร็จ ลองดาวน์โหลดแทน",
       renderFailed: "สร้างรูปภาพไม่สำเร็จ ลองอีกครั้ง",
-      trayLabel: "การเลือกสำหรับรูปภาพ"
+      trayLabel: "การเลือกสำหรับรูปภาพ",
+      setUnavailable: "ชุดนี้ยังใส่ในรูปภาพไม่ได้"
     },
     tl: {
       hint: "Pumili ng emoji o simbolo mula sa kahit anong seksyon para gawin ang larawan mo.",
@@ -619,7 +646,8 @@
       downloaded: "Na-download ang larawan",
       shareFailed: "Hindi na-share. Subukang i-download.",
       renderFailed: "Hindi nagawa ang larawan. Subukan ulit.",
-      trayLabel: "Pagpili para sa larawan"
+      trayLabel: "Pagpili para sa larawan",
+      setUnavailable: "Hindi pa maidaragdag ang set na ito sa larawan."
     },
     tr: {
       hint: "Görselin için herhangi bir bölümden emoji veya sembol seç.",
@@ -640,7 +668,8 @@
       downloaded: "Görsel indirildi",
       shareFailed: "Paylaşılamadı. İndirmeyi dene.",
       renderFailed: "Görsel oluşturulamadı. Tekrar dene.",
-      trayLabel: "Görsel seçimi"
+      trayLabel: "Görsel seçimi",
+      setUnavailable: "Bu set henüz bir görsele eklenemiyor."
     },
     vi: {
       hint: "Chọn emoji hoặc ký hiệu từ bất kỳ mục nào để tạo ảnh của bạn.",
@@ -661,7 +690,8 @@
       downloaded: "Đã tải ảnh xuống",
       shareFailed: "Không chia sẻ được. Thử tải xuống.",
       renderFailed: "Không tạo được ảnh. Thử lại.",
-      trayLabel: "Chọn cho ảnh"
+      trayLabel: "Chọn cho ảnh",
+      setUnavailable: "Chưa thể thêm bộ này vào ảnh."
     },
     zh: {
       hint: "從任何區塊挑選表情符號或符號，製作你的圖片。",
@@ -682,7 +712,8 @@
       downloaded: "已下載圖片",
       shareFailed: "無法分享，試試下載。",
       renderFailed: "無法製作圖片，請再試一次。",
-      trayLabel: "圖片選取"
+      trayLabel: "圖片選取",
+      setUnavailable: "這組目前還不能加入圖片。"
     }
   };
   /* @image-selection-strings:end */
@@ -821,6 +852,8 @@
       tile.setAttribute("data-utg-aria", tile.getAttribute("aria-label") || "");
     }
     if (!v || !drawable(v)) {
+      // Named by what it is, not "Copy …": pressing it copies nothing here.
+      tile.setAttribute("aria-label", nameOf(tile));
       tile.setAttribute("aria-disabled", "true");
       tile.classList.add("is-image-unavailable");
       tile.removeAttribute("aria-pressed");
@@ -871,8 +904,29 @@
     return out;
   }
 
+  /* A set whose order, spacing or repetition is the design (a ♪ ˚ ♫ ˚ ♪
+     trail, a kaomoji set, text art) is not offered as members: which unit it
+     should join as is an open owner decision. Say so on the set, rather than
+     leaving it the one thing on the page that silently does nothing. */
+  function addCollectionNotes() {
+    const reg = ns.collectionGroups ? ns.collectionGroups() : [];
+    reg.forEach((entry) => {
+      const sections = entry.container.querySelectorAll(".flag-grid-section");
+      entry.groups.forEach((g, gi) => {
+        const section = sections[gi];
+        if (!section || !g || (ns.isMemberList && ns.isMemberList(g.flags))) return;
+        if (section.querySelector(".symbol-collection-note")) return;
+        const note = el("p", "symbol-collection-note", t("setUnavailable"));
+        const display = section.querySelector(".flag-grid-display");
+        if (display && display.nextSibling) display.parentNode.insertBefore(note, display.nextSibling);
+        else section.appendChild(note);
+      });
+    });
+  }
+
   let collectionSeq = 0;
   function addCollectionButtons() {
+    addCollectionNotes();
     collectionEntries().forEach((c) => {
       if (c.section.querySelector(".symbol-collection-add")) return;
       const heading = c.section.querySelector("h3, h2");
@@ -941,6 +995,9 @@
       b.type = "button";
       b.setAttribute("aria-label", t("remove", { item: it.label && it.label !== it.value ? it.value + " " + it.label : it.value }));
       const glyph = el("span", "utg-sel-chip-glyph", it.value);
+      if (window.twemoji && typeof window.twemoji.parse === "function") {
+        try { window.twemoji.parse(glyph, { folder: "svg", ext: ".svg" }); } catch (e) { /* text is fine */ }
+      }
       b.appendChild(glyph);
       b.insertAdjacentHTML("beforeend", X_ICON);
       b.addEventListener("click", () => {
@@ -954,8 +1011,10 @@
         const target = fresh[i] || fresh[i - 1];
         if (target) target.focus();
         else {
+          // The last chip is gone, so Share is disabled and cannot take
+          // focus: land on the dialog's Close or the tray's Cancel instead.
           const host = list.closest(".utg-sel-dialog") || list.closest(".utg-selection-tray");
-          const fallback = host ? host.querySelector(".utg-sel-share") : null;
+          const fallback = host ? host.querySelector(".utg-sel-dialog-close, .utg-sel-cancel") : null;
           if (fallback) fallback.focus();
         }
       });
@@ -1117,36 +1176,100 @@
     renderTimer = setTimeout(() => { makeRender(); }, 120);
   }
 
+  /* Pages that show their emoji as Twemoji pictures (the flags pages) get
+     the same pictures on the card, so the image matches what was tapped:
+     without this, Windows, which has no colour flag glyphs, exported
+     "SG MY ID" for flags the page showed as flags. Loaded with CORS so the
+     canvas stays exportable; anything that fails to load falls back to the
+     device's own glyph rather than holding the image up. */
+  const artCache = {};
+  function twemojiUrl(value) {
+    if (!window.twemoji || typeof window.twemoji.parse !== "function") return null;
+    const probe = document.createElement("span");
+    probe.textContent = value;
+    try { window.twemoji.parse(probe, { folder: "svg", ext: ".svg" }); } catch (e) { return null; }
+    const imgs = probe.querySelectorAll("img");
+    // Only a value that is exactly one picture and nothing else; a kaomoji
+    // with one emoji inside it stays text.
+    if (imgs.length !== 1 || probe.textContent.replace(imgs[0].alt || "", "").trim()) return null;
+    return imgs[0].src || null;
+  }
+  function loadArt(url) {
+    if (!artCache[url]) {
+      artCache[url] = new Promise((resolve) => {
+        const img = new Image();
+        img.crossOrigin = "anonymous";
+        img.onload = () => resolve(img);
+        img.onerror = () => resolve(null);
+        img.src = url;
+      });
+    }
+    return artCache[url];
+  }
+  function artworkFor(values) {
+    if (!window.twemoji) return Promise.resolve(null);
+    return Promise.all(values.map((v) => {
+      const url = twemojiUrl(v);
+      return url ? loadArt(url).then((img) => [v, img]) : Promise.resolve([v, null]);
+    })).then((pairs) => {
+      const map = new Map();
+      pairs.forEach((p) => { if (p[1]) map.set(p[0], p[1]); });
+      return map.size ? map : null;
+    });
+  }
+
+  function toBlob(canvas) {
+    return new Promise((resolve, reject) => {
+      try {
+        canvas.toBlob((blob) => (blob ? resolve(blob) : reject(new Error("toBlob"))), "image/png");
+      } catch (err) {
+        reject(err); // a tainted canvas throws SecurityError here
+      }
+    });
+  }
+
+  // One render per selection version. A second caller (Share pressed while
+  // the debounced render is still running) waits for the same one.
+  let inflight = null;
   function makeRender() {
     const v = version;
     if (render && render.version === v) return Promise.resolve(render);
+    if (inflight && inflight.version === v) return inflight.promise;
     if (!sel.count()) {
       dropRender();
       paint();
       return Promise.resolve(null);
     }
-    let out;
-    try {
-      out = ns.renderSelectionImage(sel.values(), { rtl: IS_RTL });
-    } catch (err) {
-      console.error("Selection image failed:", err);
-      out = null;
-    }
-    if (!out) return Promise.reject(new Error("render"));
-    return new Promise((resolve, reject) => {
-      out.canvas.toBlob((blob) => {
-        if (!blob) { reject(new Error("toBlob")); return; }
-        if (v !== version) { resolve(makeRender()); return; } // changed meanwhile
+    const values = sel.values();
+    const draw = (images) => {
+      const out = ns.renderSelectionImage(values, { rtl: IS_RTL, images: images });
+      if (!out) throw new Error("render");
+      return toBlob(out.canvas).then((blob) => ({ blob: blob, fits: out.fits }));
+    };
+    const promise = artworkFor(values)
+      .then((images) => draw(images).catch((err) => {
+        if (!images) throw err;
+        console.warn("Selection artwork unusable, drawing system glyphs:", err);
+        return draw(null);
+      }))
+      .then((res) => {
+        if (inflight && inflight.version === v) inflight = null;
+        if (v !== version) return makeRender(); // changed meanwhile
         dropRender();
-        render = { version: v, blob: blob, url: URL.createObjectURL(blob), fits: out.fits };
+        render = { version: v, blob: res.blob, url: URL.createObjectURL(res.blob), fits: res.fits };
         // Only this render's own message is cleared here: a "you can add
         // up to 50" said a moment ago must stay on screen.
-        if (!out.fits) say(t("tooBig"));
+        if (!res.fits) say(t("tooBig"));
         else if (currentStatus() === t("tooBig")) say("");
         paint();
-        resolve(render);
-      }, "image/png");
-    });
+        return render;
+      }, (err) => {
+        if (inflight && inflight.version === v) inflight = null;
+        console.error("Selection image failed:", err);
+        throw err;
+      });
+    inflight = { version: v, promise: promise };
+    return promise;
   }
 
   function dropRender() {
@@ -1199,6 +1322,7 @@
       outcome = "failed";
     }
     busy = false;
+    if (!active) return; // Cancel was pressed while the sheet was open
     if (outcome === "native") {
       lastShareFailed = false;
       say(t("shared"));
@@ -1364,9 +1488,11 @@
     document.documentElement.classList.remove("utg-image-selecting");
     document.documentElement.style.removeProperty("--utg-sel-tray-h");
     restoreTiles();
-    document.querySelectorAll(".symbol-collection-add").forEach((b) => b.remove());
+    document.querySelectorAll(".symbol-collection-add, .symbol-collection-note").forEach((b) => b.remove());
     announceChange();
-    if (opener && opener.isConnected) opener.focus();
+    // Without preventScroll the page jumped to the entry button, up to a
+    // couple of thousand pixels away from where the visitor was working.
+    if (opener && opener.isConnected) opener.focus({ preventScroll: true });
   }
 
   function toggleTile(tile) {

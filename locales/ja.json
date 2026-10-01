@@ -231,7 +231,8 @@
       "downloaded": "画像をダウンロードしました",
       "shareFailed": "共有できませんでした。ダウンロードをお試しください。",
       "renderFailed": "画像を作成できませんでした。もう一度お試しください。",
-      "trayLabel": "画像用の選択"
+      "trayLabel": "画像用の選択",
+      "setUnavailable": "このセットはまだ画像に追加できません。"
     }
   },
   "useCases": {

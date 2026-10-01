@@ -155,7 +155,8 @@
       "downloaded": "Bilde lastet ned",
       "shareFailed": "Kunne ikke dele. Prøv å laste ned.",
       "renderFailed": "Kunne ikke lage bildet. Prøv igjen.",
-      "trayLabel": "Bildeutvalg"
+      "trayLabel": "Bildeutvalg",
+      "setUnavailable": "Dette settet kan ikke legges i et bilde ennå."
     }
   },
   "useCases": {

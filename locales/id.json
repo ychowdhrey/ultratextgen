@@ -231,7 +231,8 @@
       "downloaded": "Gambar diunduh",
       "shareFailed": "Gagal membagikan. Coba unduh.",
       "renderFailed": "Gagal membuat gambar. Coba lagi.",
-      "trayLabel": "Pilihan gambar"
+      "trayLabel": "Pilihan gambar",
+      "setUnavailable": "Set ini belum bisa ditambahkan ke gambar."
     }
   },
   "useCases": {

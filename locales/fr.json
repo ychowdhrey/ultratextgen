@@ -231,7 +231,8 @@
       "downloaded": "Image téléchargée",
       "shareFailed": "Partage impossible. Essaie de télécharger.",
       "renderFailed": "Impossible de créer l’image. Réessaie.",
-      "trayLabel": "Sélection pour l’image"
+      "trayLabel": "Sélection pour l’image",
+      "setUnavailable": "Cet ensemble ne peut pas encore aller dans une image."
     }
   },
   "useCases": {

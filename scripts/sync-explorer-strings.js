@@ -58,7 +58,7 @@ const KEYS = {
 const SELECTION_KEYS = {};
 ['hint', 'count', 'empty', 'shareImage', 'downloadImage', 'cancel', 'preview', 'close',
   'remove', 'addAll', 'removeAll', 'limit', 'tooBig', 'making', 'shared', 'downloaded',
-  'shareFailed', 'renderFailed', 'trayLabel'].forEach((k) => { SELECTION_KEYS[k] = `imageSelection.${k}`; });
+  'shareFailed', 'renderFailed', 'trayLabel', 'setUnavailable'].forEach((k) => { SELECTION_KEYS[k] = `imageSelection.${k}`; });
 
 const TARGETS = [
   { file: path.join(ROOT, 'symbol-explorer.js'), keys: KEYS },

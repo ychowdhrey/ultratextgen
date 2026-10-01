@@ -155,7 +155,8 @@
       "downloaded": "Bild nedladdad",
       "shareFailed": "Kunde inte dela. Prova att ladda ner.",
       "renderFailed": "Kunde inte skapa bilden. Försök igen.",
-      "trayLabel": "Bildurval"
+      "trayLabel": "Bildurval",
+      "setUnavailable": "Den här samlingen kan inte läggas i en bild än."
     }
   },
   "useCases": {

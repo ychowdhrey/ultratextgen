@@ -155,7 +155,8 @@
       "downloaded": "Đã tải ảnh xuống",
       "shareFailed": "Không chia sẻ được. Thử tải xuống.",
       "renderFailed": "Không tạo được ảnh. Thử lại.",
-      "trayLabel": "Chọn cho ảnh"
+      "trayLabel": "Chọn cho ảnh",
+      "setUnavailable": "Chưa thể thêm bộ này vào ảnh."
     }
   },
   "useCases": {

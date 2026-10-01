@@ -1214,7 +1214,11 @@
 
   // Can this value be drawn? The invisible-character pages ship tiles whose
   // whole payload is a space or a joiner; a picture of one is a blank card.
-  const DRAWABLE_RE = /[^\s\p{Default_Ignorable_Code_Point}]/u;
+  // U+2800 (braille blank) and the Hangul fillers draw nothing either, and
+  // the invisible-character page ships them as tiles: an audit exported a
+  // blank card from one. They are listed because Unicode does not class all
+  // of them as ignorable.
+  const DRAWABLE_RE = /[^\s\p{Default_Ignorable_Code_Point}\u2800\u115F\u1160\u3164\uFFA0]/u;
   function isDrawable(value) {
     return DRAWABLE_RE.test(String(value == null ? "" : value));
   }

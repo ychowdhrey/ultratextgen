@@ -231,7 +231,8 @@
       "downloaded": "Obrázok stiahnutý",
       "shareFailed": "Zdieľanie zlyhalo. Skús stiahnuť.",
       "renderFailed": "Obrázok sa nepodarilo vytvoriť. Skús to znova.",
-      "trayLabel": "Výber pre obrázok"
+      "trayLabel": "Výber pre obrázok",
+      "setUnavailable": "Túto sadu zatiaľ nemožno pridať do obrázka."
     }
   },
   "useCases": {

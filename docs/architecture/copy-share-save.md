@@ -135,10 +135,28 @@ Rules that came out of building and auditing it, each with a test:
   and the native share sends the file alone (`noTitle`), so nothing arrives in a chat
   as if the visitor had typed it. The only other mark is `ultratextgen.com`, small
   and grey.
-- **The artwork is the device's.** The renderer uses the same emoji font stack as the
-  tiles, so an Android phone draws Noto and an iPhone draws Apple's; nothing promises
-  Apple artwork. On Windows, flag emoji have no colour glyphs, so a flag renders as
-  its two letters there, in the image as on the page.
+- **The artwork matches what was tapped.** The renderer uses the tiles' own emoji
+  font stack, so an Android phone draws Noto and an iPhone draws Apple's; nothing
+  promises Apple artwork. A page that shows its emoji as Twemoji pictures (the flags
+  pages) gets those pictures on the card and in the tray, loaded with CORS so the
+  canvas stays exportable; any that fail fall back to the device glyph. Without this,
+  Windows (no colour flag glyphs) exported "SG MY ID" for flags the page showed as
+  flags. On a page without Twemoji, Windows shows the letters on the page too.
+- **Glyphs are never upscaled past their bitmap.** Colour emoji fonts store bitmaps
+  (Apple's largest is 160px, Noto's 136px); drawn larger they blur. The card is laid
+  out at a 1080px reference width and the canvas is scaled so no glyph exceeds
+  160px (never below half size): one emoji ships as a crisp ~540px card.
+- **The card is as tall as its content**, between 1.91:1 and square, so a row of
+  three emoji is not a square that is three-quarters blank. Row choice prefers the
+  fewest rows within a size-graded share of the largest possible glyph (60% up to
+  four items, 65% up to twelve, 90% beyond): a short expression stays one phrase,
+  ASEAN sits 5 + 5, fifty flags fill a near-square block.
+- **Blank glyphs are not drawable.** Whitespace, default-ignorables, U+2800 (braille
+  blank) and the Hangul fillers are disabled while selecting and renamed from
+  "Copy …" to their own name; the audit exported a blank card from a braille-blank
+  tile before this.
+- **A set that cannot join yet says so.** While selecting, each structured set shows
+  "This set can't be added to an image yet." instead of silently doing nothing.
 - **Saved items stay separate.** The star is a lasting store; the selection lives
   only as long as the page and never reads or writes it. The saved strip keeps its
   own Share pair.
@@ -158,6 +176,20 @@ remove_collection | limit | cancel | share_cancelled | share_failed | render_fai
 `selection_count` and `locale`, every key on every row. **None of these is a share**,
 and none carries the chosen items. Like every new dataLayer event here, it reaches
 GA4 only once GTM has a tag for it; until then it is visible in the dataLayer only.
+
+### Evidence
+
+Screenshots and real exports (downloaded from headless Chromium at 390px, 2x) are in
+`docs/architecture/evidence/image-selection/`: the resting state, selection mode, the
+preview, ASEAN after "Add all", Arabic RTL, kaomoji text cards, and exports for one
+emoji, a combination across sections, the ASEAN set, the same set on the Twemoji page,
+and the 50-item limit.
+
+An independent review after the first build found seven medium issues: the empty
+card space, blurred single emoji, the page jumping on Cancel, focus lost when the
+last chip was removed, blank braille tiles exporting blank cards, structured sets
+skipped silently, and Twemoji artwork mismatch. All seven were fixed and retested
+before review.
 
 ### Tests
 

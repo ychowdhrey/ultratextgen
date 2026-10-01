@@ -155,7 +155,8 @@
       "downloaded": "Slika preuzeta",
       "shareFailed": "Dijeljenje nije uspjelo. Pokušaj preuzeti.",
       "renderFailed": "Slika nije izrađena. Pokušaj ponovno.",
-      "trayLabel": "Odabir za sliku"
+      "trayLabel": "Odabir za sliku",
+      "setUnavailable": "Ovaj set još se ne može dodati u sliku."
     }
   },
   "useCases": {

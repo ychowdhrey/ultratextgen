@@ -231,7 +231,8 @@
       "downloaded": "Obraz pobrany",
       "shareFailed": "Nie udało się udostępnić. Spróbuj pobrać.",
       "renderFailed": "Nie udało się stworzyć obrazu. Spróbuj ponownie.",
-      "trayLabel": "Wybór do obrazu"
+      "trayLabel": "Wybór do obrazu",
+      "setUnavailable": "Tego zestawu nie można jeszcze dodać do obrazu."
     }
   },
   "useCases": {

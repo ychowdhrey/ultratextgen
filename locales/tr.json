@@ -231,7 +231,8 @@
       "downloaded": "Görsel indirildi",
       "shareFailed": "Paylaşılamadı. İndirmeyi dene.",
       "renderFailed": "Görsel oluşturulamadı. Tekrar dene.",
-      "trayLabel": "Görsel seçimi"
+      "trayLabel": "Görsel seçimi",
+      "setUnavailable": "Bu set henüz bir görsele eklenemiyor."
     }
   },
   "useCases": {

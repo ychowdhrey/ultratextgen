@@ -231,7 +231,8 @@
       "downloaded": "Bild heruntergeladen",
       "shareFailed": "Teilen ging nicht. Lade es herunter.",
       "renderFailed": "Bild ging nicht. Versuch es noch mal.",
-      "trayLabel": "Bildauswahl"
+      "trayLabel": "Bildauswahl",
+      "setUnavailable": "Dieses Set kann noch nicht ins Bild."
     }
   },
   "useCases": {

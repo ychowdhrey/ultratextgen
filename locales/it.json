@@ -231,7 +231,8 @@
       "downloaded": "Immagine scaricata",
       "shareFailed": "Condivisione non riuscita. Prova a scaricarla.",
       "renderFailed": "Impossibile creare l’immagine. Riprova.",
-      "trayLabel": "Selezione per l’immagine"
+      "trayLabel": "Selezione per l’immagine",
+      "setUnavailable": "Questo set non si può ancora aggiungere a un’immagine."
     }
   },
   "useCases": {

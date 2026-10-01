@@ -155,7 +155,8 @@
       "downloaded": "Billede downloadet",
       "shareFailed": "Kunne ikke dele. Prøv at downloade.",
       "renderFailed": "Kunne ikke lave billedet. Prøv igen.",
-      "trayLabel": "Billedudvalg"
+      "trayLabel": "Billedudvalg",
+      "setUnavailable": "Dette sæt kan ikke tilføjes til et billede endnu."
     }
   },
   "useCases": {

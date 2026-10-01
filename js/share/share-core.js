@@ -487,57 +487,83 @@
   // nothing that promises otherwise.
   const SELECTION_FONT = '"Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", system-ui, -apple-system, "Noto Sans", sans-serif';
 
+  /* Colour emoji fonts are bitmaps: Apple's largest strike is 160px, Noto's
+     136px. Drawn bigger they are upscaled and go soft (an audit caught a
+     single emoji at 360px rendering visibly blurred). So the card is laid out
+     at a 1080px reference width and then the whole canvas is scaled down
+     until no glyph is drawn above GLYPH_CAP, never below half size: a single
+     emoji ships as a crisp ~540px square instead of a blurred 1080px one. */
+  const GLYPH_CAP = 160;
+
   //   items: array of strings, in the order the visitor chose them
-  //   opts:  { rtl }  rtl lays rows out right to left, as an Arabic page reads
+  //   opts:  { rtl, images }
+  //     rtl     lays rows out right to left, as an Arabic page reads
+  //     images  optional Map item -> loaded <img>, for a page that shows its
+  //             emoji as Twemoji pictures: the card then uses the same
+  //             artwork the visitor tapped. Items without one are text.
   // Returns { canvas, fits, fontSize } or null when there is nothing to draw.
   UTG.renderSelectionImage = function (items, opts) {
     const list = (items || []).map(String).filter((v) => v.length);
     if (!list.length) return null;
     const o = opts || {};
-    const SIZE = 1080;
+    const images = o.images && typeof o.images.get === "function" ? o.images : null;
+    const imageOf = (v) => (images ? images.get(v) : null);
+    const REF = 1080;         // layout width, before scaling
     const PAD = 110;
     const CRED_BAND = 70;
+    const MIN_H = 566;        // 1.91:1, the widest card social previews keep
+
     const canvas = document.createElement("canvas");
-    canvas.width = SIZE;
-    canvas.height = SIZE;
     const ctx = canvas.getContext("2d");
     if (!ctx) return null;
 
-    // The same ground and brand bar as the generator's card, without the dot
-    // grid: behind a few large emoji the dots read as noise, not texture.
-    ctx.fillStyle = "#faf9f7";
-    ctx.fillRect(0, 0, SIZE, SIZE);
-    const grad = ctx.createLinearGradient(0, 0, SIZE, 0);
-    grad.addColorStop(0, "#7c3aed");
-    grad.addColorStop(1, "#2563eb");
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, SIZE, 10);
-
     const BASE = 100;
     ctx.font = BASE + "px " + SELECTION_FONT;
-    const widths = list.map((v) => ctx.measureText(v).width / BASE);
-    const maxW = SIZE - PAD * 2;
-    const maxH = SIZE - PAD * 2 - CRED_BAND;
+    // A picture glyph is drawn as a square one em wide.
+    const widths = list.map((v) => (imageOf(v) ? 1 : ctx.measureText(v).width / BASE));
+    const maxW = REF - PAD * 2;
+    const maxH = REF - PAD * 2 - CRED_BAND;
     const lay = UTG.layoutSelection(widths, { maxW: maxW, maxH: maxH, maxFont: list.length === 1 ? 360 : 300 });
     const f = lay.fontSize;
     const lineH = f * lay.lineEm;
     const gapPx = f * lay.gapEm;
+    const blockH = lay.lines.length * lineH;
+
+    // Height follows the content: a row of three emoji is a wide card, not a
+    // square that is three-quarters blank. Square is the ceiling.
+    const refH = Math.min(REF, Math.max(MIN_H, Math.ceil(blockH + PAD * 2 + CRED_BAND)));
+    const k = Math.max(0.5, Math.min(1, GLYPH_CAP / Math.max(f, 1)));
+    canvas.width = Math.round(REF * k);
+    canvas.height = Math.round(refH * k);
+    ctx.scale(k, k);
+
+    // The same ground and brand bar as the generator's card, without the dot
+    // grid: behind a few large emoji the dots read as noise, not texture.
+    ctx.fillStyle = "#faf9f7";
+    ctx.fillRect(0, 0, REF, refH);
+    const grad = ctx.createLinearGradient(0, 0, REF, 0);
+    grad.addColorStop(0, "#7c3aed");
+    grad.addColorStop(1, "#2563eb");
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, REF, 10);
 
     ctx.font = f + "px " + SELECTION_FONT;
     ctx.fillStyle = "#1a1d27";
     ctx.textBaseline = "middle";
     ctx.textAlign = "left";
-    const areaTop = PAD;
-    const blockH = lay.lines.length * lineH;
-    let y = areaTop + (maxH - blockH) / 2 + lineH / 2;
+    const areaH = refH - PAD * 2 - CRED_BAND;
+    let y = PAD + (areaH - blockH) / 2 + lineH / 2;
     lay.lines.forEach((row) => {
-      const ws = row.map((idx) => ctx.measureText(list[idx]).width);
+      const ws = row.map((idx) => (imageOf(list[idx]) ? f : ctx.measureText(list[idx]).width));
       const rowW = ws.reduce((a, w) => a + w, 0) + gapPx * Math.max(row.length - 1, 0);
-      let x = (SIZE - rowW) / 2;
-      const order = o.rtl ? row.map((_, k) => row.length - 1 - k) : row.map((_, k) => k);
-      order.forEach((k) => {
-        ctx.fillText(list[row[k]], x, y);
-        x += ws[k] + gapPx;
+      let x = (REF - rowW) / 2;
+      const order = o.rtl ? row.map((_, j) => row.length - 1 - j) : row.map((_, j) => j);
+      order.forEach((j) => {
+        const v = list[row[j]];
+        const img = imageOf(v);
+        if (img) ctx.drawImage(img, x, y - f / 2, f, f);
+        else ctx.fillText(v, x, y);
+        x += ws[j] + gapPx;
       });
       y += lineH;
     });
@@ -546,7 +572,7 @@
     ctx.font = "26px -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif";
     ctx.fillStyle = "#9ca3af";
     ctx.textAlign = "center";
-    ctx.fillText("ultratextgen.com", SIZE / 2, SIZE - 56);
+    ctx.fillText("ultratextgen.com", REF / 2, refH - 46);
     return { canvas: canvas, fits: lay.fits, fontSize: f };
   };
 
