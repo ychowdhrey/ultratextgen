@@ -109,10 +109,20 @@
     fitDone:                 'Fitted to {platform}',
     fitImpossible:           'Too long for {platform} even at the lightest setting',
     // Animated GIF export (rendered and encoded in the browser).
-    btnGif:                  'GIF',
+    btnGif:                  'Animated GIF',
     gifLabel:                'Download an animated GIF of this text',
     gifWorking:              'Making GIF…',
     gifFailed:               'GIF failed',
+    gifNew:                  'New',
+    // The line under the output: when to reach for the GIF, and what it does.
+    gifHint:                 'Posting it as an image?',
+    gifHintAction:           'Make an animated GIF',
+    gifHintNote:             'It flickers. Copy keeps the text still.',
+    gifSaved:                'GIF saved.',
+    gifShared:               'GIF shared.',
+    // Suggested alt text for the GIF, built from the plain input text.
+    gifAltText:              'Glitch text that says {text}',
+    btnCopyAlt:              'Copy alt text',
     // Thai Cascade additions: marks that stack downward, the kaomoji carrier
     // from the "invade the post above" trend, and its one-click preset.
     cascadeMarkSaraU:        'Sara U (down)',
@@ -964,7 +974,11 @@
           </div>
           <div class="output-actions">
             <button class="btn btn-regen" id="regenBtn">${i18n.btnRegenerate}</button>
-            <button class="btn btn-gif" id="gifBtn" type="button" aria-label="${i18n.gifLabel}" title="${i18n.gifLabel}" disabled>${i18n.btnGif}</button>
+            <button class="btn btn-gif" id="gifBtn" type="button" aria-label="${i18n.gifLabel}" title="${i18n.gifLabel}" disabled>
+              <svg class="gif-icon" aria-hidden="true" focusable="false" viewBox="0 0 16 16" width="14" height="14"><path d="M8 2v8m0 0L4.5 6.5M8 10l3.5-3.5M3 13h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="gif-glitch" id="gifGlitch" aria-hidden="true">${i18n.btnGif}</span>
+              ${gifIsNew() ? `<span class="gif-new" aria-hidden="true">${i18n.gifNew}</span>` : ''}
+            </button>
             <button class="btn btn-copy" id="copyBtn" disabled>${i18n.btnCopy}</button>
           </div>
         </div>
@@ -977,6 +991,18 @@
           </span>
           <span class="fit-badges" id="fitBadges"></span>
           <span class="fit-status" id="fitStatus" role="status" aria-live="polite"></span>
+        </div>
+        <div class="gif-hint" id="gifHint" hidden>
+          <p class="gif-hint-line">
+            ${i18n.gifHint}
+            <button class="gif-hint-action" id="gifHintBtn" type="button">${i18n.gifHintAction}</button>.
+            <span class="gif-hint-note">${i18n.gifHintNote}</span>
+          </p>
+          <p class="gif-result" id="gifResult" hidden>
+            <span class="gif-result-status" id="gifStatus" role="status" aria-live="polite"></span>
+            <span class="gif-alt" id="gifAlt"></span>
+            <button class="btn gif-alt-copy" id="gifAltCopy" type="button">${i18n.btnCopyAlt}</button>
+          </p>
         </div>
       </div>
       <div class="variant-strip" id="variantStrip" hidden>
@@ -1208,6 +1234,17 @@
     if (btn)   btn.disabled = !state.output;
     const gif = $('#gifBtn');
     if (gif && !gif.classList.contains('is-working')) gif.disabled = !state.output;
+    const hint = $('#gifHint');
+    if (hint) hint.hidden = !state.output;
+    // A new output makes the last GIF's status and alt text stale.
+    const gifResult = $('#gifResult');
+    if (gifResult && gif && !gif.classList.contains('is-working')) gifResult.hidden = true;
+    // The first output of the visit plays the label's glitch once, so the
+    // button shows what it makes; after that it stays still until hovered.
+    if (state.output && !gifIntroPlayed) {
+      gifIntroPlayed = true;
+      animateGifLabel(GIF_INTRO_MS);
+    }
 
     // Cascade mode: clip the PREVIEW (never the copied string), keep the raw
     // stack out of accessible names, and hide Regenerate, which would do
@@ -1420,7 +1457,31 @@
     // Animated GIF: the encoder loads on first use, so the page pays nothing
     // for it until someone asks for a GIF.
     const gifBtn = $('#gifBtn');
-    if (gifBtn) gifBtn.addEventListener('click', () => makeGif(gifBtn));
+    if (gifBtn) {
+      gifBtn.addEventListener('click', () => makeGif('button'));
+      const replay = () => {
+        if (gifRefocusing) { gifRefocusing = false; return; }
+        if (!gifBtn.disabled) animateGifLabel(GIF_INTRO_MS);
+      };
+      gifBtn.addEventListener('mouseenter', replay);
+      gifBtn.addEventListener('focus', replay);
+      gifBtn.addEventListener('mouseleave', () => { if (gifLabelTimer) stillGifLabel(); });
+      gifBtn.addEventListener('blur', () => { if (gifLabelTimer) stillGifLabel(); });
+    }
+    const gifHintBtn = $('#gifHintBtn');
+    if (gifHintBtn) gifHintBtn.addEventListener('click', () => makeGif('hint'));
+    const gifAltCopy = $('#gifAltCopy');
+    if (gifAltCopy) {
+      gifAltCopy.addEventListener('click', () => {
+        const alt = $('#gifAlt');
+        const text = alt ? alt.textContent : '';
+        if (!text || !navigator.clipboard) return;
+        navigator.clipboard.writeText(text).then(() => {
+          gifAltCopy.textContent = i18n.btnCopied;
+          setTimeout(() => { gifAltCopy.textContent = i18n.btnCopyAlt; }, 1500);
+        }).catch(() => {});
+      });
+    }
 
     // Cascade depth slider
     const depthSlider = $('#cascadeDepthSlider');
@@ -1578,45 +1639,183 @@
     return frames;
   }
 
-  function makeGif(btn) {
-    const frames = gifFrames();
-    if (!frames.length) return;
-    btn.disabled = true;
-    btn.classList.add('is-working');
-    btn.textContent = i18n.gifWorking;
-    const announce = (msg) => {
-      const status = $('#fitStatus');
-      if (status) { status.textContent = msg; status.dataset.sticky = '1'; }
-    };
-    announce(i18n.gifWorking);
-    const done = (label) => {
-      btn.classList.remove('is-working');
-      btn.textContent = label;
-      btn.disabled = !state.output;
-      if (label !== i18n.btnGif) setTimeout(() => { btn.textContent = i18n.btnGif; }, 1500);
-    };
-    loadGifModule()
-      .then(G => G.make(frames, { delay: state.cascade.enabled ? 12 : 14, holdLast: state.cascade.enabled ? 120 : 0 }))
-      .then(blob => {
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'zalgo-text.gif';
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        setTimeout(() => URL.revokeObjectURL(url), 10000);
-        trackGif(frames.length);
-        announce('');
-        done(i18n.btnGif);
-      })
-      .catch(() => { announce(i18n.gifFailed); done(i18n.gifFailed); });
+  // ── The GIF button's label glitches like the file it makes ──────
+  // A short loop on the first output of the visit, and again while the
+  // button is hovered or focused, capped at GIF_INTRO_MS so nothing moves
+  // on its own for more than five seconds (WCAG 2.2.2). Reduced-motion
+  // visitors only ever see one still, glitched frame. The glitched text is
+  // aria-hidden; the button's name stays gifLabel.
+  const GIF_INTRO_MS = 4000;
+  const GIF_FRAME_MS = 140;
+  // The "New" tag comes off on its own on this date. It is part of the
+  // design register #128 measures, so the date is fixed, not open-ended.
+  const GIF_NEW_UNTIL = Date.UTC(2026, 10, 15); // 2026-11-15
+  let gifIntroPlayed = false;
+  let gifLabelTimer = null;
+  let gifLabelSeed = 1;
+  let gifLabelDrawn = false;
+  let gifRefocusing = false;  // focus we restore after a GIF is not a hover
+
+  function gifIsNew() { return Date.now() < GIF_NEW_UNTIL; }
+
+  function reducedMotion() {
+    return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   }
 
-  function trackGif(n) {
+  function glitchLabelFrame() {
+    const el = $('#gifGlitch');
+    if (!el) return;
+    gifLabelSeed = (gifLabelSeed + 7919) >>> 0;
+    gifLabelDrawn = true;
+    el.textContent = generateZalgo(i18n.btnGif, {
+      charType: 'all', position: 'up-down', shape: 'uniform',
+      frequency: 0.6, amplitude: 1, seed: gifLabelSeed
+    });
+  }
+
+  function stillGifLabel() {
+    if (gifLabelTimer) { clearInterval(gifLabelTimer); gifLabelTimer = null; }
+    glitchLabelFrame();
+  }
+
+  function animateGifLabel(ms) {
+    const btn = $('#gifBtn');
+    if (!btn || btn.classList.contains('is-working')) return;
+    // Reduced motion: draw the still frame once and never swap it, not even
+    // on hover; a new frame per hover would be motion by another name.
+    if (reducedMotion()) { if (!gifLabelDrawn) stillGifLabel(); return; }
+    if (gifLabelTimer) clearInterval(gifLabelTimer);
+    const stopAt = Date.now() + ms;
+    glitchLabelFrame();
+    gifLabelTimer = setInterval(() => {
+      if (Date.now() >= stopAt || document.hidden) stillGifLabel();
+      else glitchLabelFrame();
+    }, GIF_FRAME_MS);
+  }
+
+  function gifMode() {
+    return state.cascade.enabled ? 'cascade' : (state.extreme ? 'extreme' : 'classic');
+  }
+
+  // Both entry points (the header button and the line under the output)
+  // run this. `entry` says which one was pressed, so #128 can tell them apart.
+  function makeGif(entry) {
+    const frames = gifFrames();
+    if (!frames.length) return;
+    const btns = [$('#gifBtn'), $('#gifHintBtn')].filter(Boolean);
+    if (btns.some(b => b.classList.contains('is-working'))) return;
+    const pressed = entry === 'hint' ? $('#gifHintBtn') : $('#gifBtn');
+    const label = $('#gifGlitch');
+    stillGifLabel();
+    btns.forEach(b => { b.disabled = true; b.classList.add('is-working'); });
+    if (label) label.textContent = i18n.gifWorking;
+
+    const result = $('#gifResult');
+    const status = $('#gifStatus');
+    const alt = $('#gifAlt');
+    const altCopy = $('#gifAltCopy');
+    if (result) result.hidden = false;
+    if (status) status.textContent = i18n.gifWorking;
+    if (alt) alt.textContent = '';
+    if (altCopy) altCopy.hidden = true;
+
+    const mode = gifMode();
+    const t0 = Date.now();
+    // The alt text describes the frames captured now, not whatever is typed
+    // by the time the file is ready.
+    const input0 = $('#mainInput');
+    const plain = input0 ? input0.value.trim() : '';
+    trackGif({ stage: 'attempt', mode, frames: frames.length, entry });
+
+    const done = (text) => {
+      btns.forEach(b => { b.classList.remove('is-working'); b.disabled = !state.output; });
+      if (label) label.textContent = i18n.btnGif;
+      stillGifLabel();
+      if (status) status.textContent = text;
+      if (result && !text) result.hidden = true;
+      // Disabling the pressed button dropped focus to <body>; put it back.
+      if (pressed && !pressed.disabled && document.activeElement === document.body) {
+        gifRefocusing = pressed.id === 'gifBtn';
+        pressed.focus();
+      }
+    };
+
+    let ms = 0;
+    let completed = false;
+    loadGifModule()
+      .then(G => G.make(frames, { delay: state.cascade.enabled ? 12 : 14, holdLast: state.cascade.enabled ? 120 : 0 }))
+      .then(blob => gifSize(blob).then(size => {
+        ms = Date.now() - t0;
+        trackGif({ stage: 'complete', mode, frames: frames.length, entry, ms, bytes: blob.size, w: size.w, h: size.h });
+        completed = true;
+        return deliverGif(blob);
+      }))
+      .then(outcome => {
+        if (alt) alt.textContent = i18n.gifAltText.replace('{text}', plain);
+        if (altCopy) altCopy.hidden = !plain;
+        done(outcome === 'native' ? i18n.gifShared : (outcome === 'aborted' ? '' : i18n.gifSaved));
+      })
+      .catch(() => {
+        // A delivery error after the file was made is not an encode failure.
+        if (!completed) trackGif({ stage: 'fail', mode, frames: frames.length, entry, ms: Date.now() - t0 });
+        done(i18n.gifFailed);
+      });
+  }
+
+  // Width and height from the GIF's own logical screen descriptor.
+  function gifSize(blob) {
+    if (!blob || !blob.slice || !blob.slice(0, 10).arrayBuffer) return Promise.resolve({ w: null, h: null });
+    return blob.slice(0, 10).arrayBuffer().then(buf => {
+      const v = new DataView(buf);
+      return { w: v.getUint16(6, true), h: v.getUint16(8, true) };
+    }).catch(() => ({ w: null, h: null }));
+  }
+
+  // Hand the file to the OS share sheet where the browser can share files
+  // (phones, mostly) and download it everywhere else. The share core writes
+  // the share event; the page link rides along as text.
+  function deliverGif(blob) {
+    const UTG = window.UltraTextGen;
+    if (UTG && UTG.shareImageBlob) {
+      return UTG.shareImageBlob(blob, {
+        filename: 'zalgo-text.gif',
+        title: document.title,
+        text: window.location.href,
+        surface: 'zalgo',
+        itemType: 'gif',
+        format: 'gif'
+      });
+    }
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'zalgo-text.gif';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 10000);
+    return Promise.resolve('downloaded');
+  }
+
+  // zalgo_gif carries every parameter on every stage (null where it does not
+  // apply), because GTM's data layer keeps the last value of a key: a
+  // `gif_ms` left over from one GIF would otherwise ride on the next attempt.
+  // Never the typed text.
+  function trackGif(d) {
     try {
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: 'zalgo_gif', zalgo_mode: state.cascade.enabled ? 'cascade' : (state.extreme ? 'extreme' : 'classic'), zalgo_frames: n, zalgo_source_path: window.location.pathname });
+      window.dataLayer.push({
+        event: 'zalgo_gif',
+        gif_stage: d.stage,
+        gif_entry: d.entry || null,
+        zalgo_mode: d.mode,
+        zalgo_frames: d.frames,
+        gif_ms: d.ms != null ? d.ms : null,
+        gif_bytes: d.bytes != null ? d.bytes : null,
+        gif_w: d.w != null ? d.w : null,
+        gif_h: d.h != null ? d.h : null,
+        zalgo_source_path: window.location.pathname
+      });
     } catch (e) { /* analytics must never break the generator */ }
   }
 
@@ -1814,6 +2013,7 @@
       outputSection.appendChild(row);
     }
 
+
     // One compact pair per fixed-flavour variant row.
     VARIANTS.forEach(v => {
       const varRow = document.querySelector('.variant-row[data-variant="' + v.id + '"]');
@@ -1821,6 +2021,13 @@
       const pair = UTG.buildShareActions({ styleId: 'zalgo-' + v.id, name: i18n[v.labelKey] || v.id, disabled: true });
       pair.setAttribute('data-variant-share', v.id);
       varRow.appendChild(pair);
+    });
+    // Stamped after both loops, so the variant rows' buttons exist.
+    // The PNG card is the comparator register #128 reads the GIF against,
+    // so it names this page as its surface. Only the image button: the link
+    // share keeps "generator" so its own series (#112) stays continuous.
+    document.querySelectorAll('#zalgoOutputSection .share-image-btn, #variantRows .share-image-btn').forEach(b => {
+      b.dataset.shareSurface = 'zalgo';
     });
 
     syncShareState();

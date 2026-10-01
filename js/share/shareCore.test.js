@@ -346,6 +346,36 @@ function stubCanvas(UTG) {
   eq(dataLayer[0].share_method, 'image_download', 'with share_method image_download');
 }
 
+/* ---- share_format (2026-09-30) ----------------------------------------- */
+/* WHAT left the page. Always present as a key (GTM keeps the last value of
+   a key, so an omitted one would inherit the previous row's). */
+
+{
+  const { UTG, dataLayer } = load({});
+  await UTG.shareImageBlob({ type: 'image/gif' },
+    { filename: 'zalgo-text.gif', surface: 'zalgo', itemType: 'gif', format: 'gif' });
+  eq(dataLayer[0].share_format, 'gif', 'a GIF blob records share_format "gif"');
+  eq(dataLayer[0].share_surface, 'zalgo', 'with the zalgo surface');
+  eq(dataLayer[0].share_item_type, 'gif', 'and item type gif');
+}
+
+{
+  const { UTG, dataLayer } = load({});
+  await UTG.shareImageBlob({ type: 'image/gif' }, { filename: 'x.gif' });
+  eq(dataLayer[0].share_format, 'gif', 'an unstated format is read from the blob type');
+}
+
+{
+  const { UTG, dataLayer } = load({});
+  UTG.pushShare('image_download', { surface: 'zalgo' });
+  UTG.pushShare('link_copy', {});
+  UTG.pushShare('pinterest', {});
+  eq(dataLayer[0].share_format, 'png', 'the PNG card path defaults to png');
+  eq(dataLayer[1].share_format, 'link', 'a link share is "link"');
+  ok(Object.prototype.hasOwnProperty.call(dataLayer[2], 'share_format') && dataLayer[2].share_format === null,
+    'a pin carries the key as an honest null, never omitted');
+}
+
 /* ---- buildShareRow ----------------------------------------------------- */
 /* One primary button, labelled Share or Copy link by whether navigator.share
    exists (2026-09-13) — both route through shareCreation, so the destination

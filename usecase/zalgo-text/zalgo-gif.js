@@ -22,8 +22,11 @@
   const LEVELS = 16;                 // palette size (a power of two)
   const FONT_PX = 44;
   const MIN_FONT_PX = 20;
+  // 1080 both ways: X's upload API caps GIFs at 1280x1080, and the Post
+  // Invader preset produced 240x1820 at the old 1920 limit. A stack taller
+  // than this is cropped at the top, the way it climbs over a feed.
   const MAX_WIDTH = 1080;
-  const MAX_HEIGHT = 1920;
+  const MAX_HEIGHT = 1080;
   const PAD = 32;
   // The same family the live output uses (system-ui), so the GIF stacks
   // marks the way the preview does, with fallbacks that carry combining
@@ -264,5 +267,5 @@
     return new Blob([bytes], { type: 'image/gif' });
   }
 
-  window.UTGZalgoGif = { make, encode };
+  window.UTGZalgoGif = { make, encode, MAX_WIDTH, MAX_HEIGHT };
 })();

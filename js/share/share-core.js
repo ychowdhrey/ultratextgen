@@ -143,6 +143,22 @@
     pinterest: SHARE_DESTINATIONS.PINTEREST
   };
 
+  /* share_format (2026-09-30) says WHAT left the page: a link, a PNG card,
+     a GIF. share_method cannot, because an image method carries whatever
+     file the caller built. Always set, never omitted: GTM's data layer keeps
+     the last value of a key, so a missing key would inherit the previous
+     row's; an unknown format is pushed as null. A caller sharing something
+     other than a PNG states it. */
+  const FORMAT_FOR_METHOD = {
+    native: "link",
+    link_copy: "link",
+    image: "png",
+    image_download: "png",
+    // A pin is composed off-site from whatever Pinterest picks up, so the
+    // format is not ours to know: an honest null, not a guess.
+    pinterest: null
+  };
+
   // Read lazily rather than cached at load: costs nothing on a click, and
   // cannot be wrong if this module is ever evaluated before <html lang> is
   // settled on some future surface.
@@ -162,7 +178,8 @@
       share_method: method,
       share_destination: destination || DESTINATION_FOR_METHOD[method] || null,
       share_surface: (c && c.surface) || "generator",
-      share_item_type: (c && c.itemType) || "style"
+      share_item_type: (c && c.itemType) || "style",
+      share_format: (c && c.format) || FORMAT_FOR_METHOD[method] || null
     });
   }
   UTG.pushShare = pushShare;
@@ -506,10 +523,11 @@
   // back to a plain download where files cannot be shared. Lifted out of
   // printablesEngine.js on 2026-09-10 so the monogram and cross-stitch
   // engines share one implementation and one share_text shape.
-  //   opts: { filename, title, text, surface, itemType }
+  //   opts: { filename, title, text, surface, itemType, format }
   // Resolves to "native" | "aborted" | "downloaded".
   UTG.shareImageBlob = async function (blob, opts) {
-    const o = opts || {};
+    // The file's own type names the format unless the caller states one.
+    const o = Object.assign({ format: String((blob && blob.type) || "image/png").split("/")[1].split("+")[0] || null }, opts || {});
     const filename = o.filename || "share.png";
     const file = new File([blob], filename, { type: blob.type || "image/png" });
     const canShareFiles = !!(navigator.canShare && navigator.canShare({ files: [file] }));
