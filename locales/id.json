@@ -209,6 +209,29 @@
       "titleFor": "Pratinjau: {style}",
       "dialogAriaLabel": "Pratinjau platform",
       "closeAriaLabel": "Tutup pratinjau"
+    },
+    "imageSelection": {
+      "selectImage": "Pilih dan bagikan gambar",
+      "viewSelection": "Lihat pilihan ({n})",
+      "hint": "Pilih emoji atau simbol dari bagian mana saja untuk membuat gambarmu.",
+      "count": "{n} dipilih",
+      "empty": "Belum ada yang dipilih",
+      "shareImage": "Bagikan gambar",
+      "downloadImage": "Unduh gambar",
+      "cancel": "Batal",
+      "preview": "Pratinjau gambar",
+      "close": "Tutup",
+      "remove": "Hapus {item}",
+      "addAll": "Tambah semua {n}",
+      "removeAll": "Hapus semua {n}",
+      "limit": "Kamu bisa menambahkan hingga {max}.",
+      "tooBig": "Terlalu banyak untuk satu gambar. Hapus beberapa.",
+      "making": "Membuat gambar…",
+      "shared": "Gambar dibagikan",
+      "downloaded": "Gambar diunduh",
+      "shareFailed": "Gagal membagikan. Coba unduh.",
+      "renderFailed": "Gagal membuat gambar. Coba lagi.",
+      "trayLabel": "Pilihan gambar"
     }
   },
   "useCases": {

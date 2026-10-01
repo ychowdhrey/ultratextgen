@@ -133,6 +133,29 @@
       "titleFor": "Xem trước: {style}",
       "dialogAriaLabel": "Xem trước theo nền tảng",
       "closeAriaLabel": "Đóng xem trước"
+    },
+    "imageSelection": {
+      "selectImage": "Chọn và chia sẻ ảnh",
+      "viewSelection": "Xem lựa chọn ({n})",
+      "hint": "Chọn emoji hoặc ký hiệu từ bất kỳ mục nào để tạo ảnh của bạn.",
+      "count": "Đã chọn {n}",
+      "empty": "Chưa chọn gì",
+      "shareImage": "Chia sẻ ảnh",
+      "downloadImage": "Tải ảnh xuống",
+      "cancel": "Hủy",
+      "preview": "Xem trước ảnh",
+      "close": "Đóng",
+      "remove": "Bỏ {item}",
+      "addAll": "Thêm cả {n}",
+      "removeAll": "Bỏ cả {n}",
+      "limit": "Bạn có thể thêm tối đa {max}.",
+      "tooBig": "Quá nhiều cho một ảnh. Hãy bỏ bớt.",
+      "making": "Đang tạo ảnh…",
+      "shared": "Đã chia sẻ ảnh",
+      "downloaded": "Đã tải ảnh xuống",
+      "shareFailed": "Không chia sẻ được. Thử tải xuống.",
+      "renderFailed": "Không tạo được ảnh. Thử lại.",
+      "trayLabel": "Chọn cho ảnh"
     }
   },
   "useCases": {

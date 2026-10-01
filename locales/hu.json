@@ -109,6 +109,29 @@
       "titleFor": "Előnézet: {style}",
       "dialogAriaLabel": "Platform-előnézet",
       "closeAriaLabel": "Előnézet bezárása"
+    },
+    "imageSelection": {
+      "selectImage": "Kiválasztás és megosztás képként",
+      "viewSelection": "Kiválasztottak ({n})",
+      "hint": "Válassz emojikat vagy szimbólumokat bármelyik részből a képedhez.",
+      "count": "{n} kiválasztva",
+      "empty": "Még nincs kiválasztva semmi",
+      "shareImage": "Kép megosztása",
+      "downloadImage": "Kép letöltése",
+      "cancel": "Mégse",
+      "preview": "Kép előnézete",
+      "close": "Bezárás",
+      "remove": "{item} eltávolítása",
+      "addAll": "Mind hozzáadása ({n})",
+      "removeAll": "Mind eltávolítása ({n})",
+      "limit": "Legfeljebb {max} elemet adhatsz hozzá.",
+      "tooBig": "Túl sok egy képhez. Távolíts el néhányat.",
+      "making": "Kép készítése…",
+      "shared": "Kép megosztva",
+      "downloaded": "Kép letöltve",
+      "shareFailed": "Nem sikerült megosztani. Próbáld letölteni.",
+      "renderFailed": "Nem sikerült elkészíteni a képet. Próbáld újra.",
+      "trayLabel": "Képhez választás"
     }
   }
 }

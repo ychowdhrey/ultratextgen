@@ -209,6 +209,29 @@
       "titleFor": "Preview ng {style}",
       "dialogAriaLabel": "Preview sa platform",
       "closeAriaLabel": "Isara ang preview"
+    },
+    "imageSelection": {
+      "selectImage": "Pumili at i-share bilang larawan",
+      "viewSelection": "Tingnan ang napili ({n})",
+      "hint": "Pumili ng emoji o simbolo mula sa kahit anong seksyon para gawin ang larawan mo.",
+      "count": "{n} ang napili",
+      "empty": "Wala pang napili",
+      "shareImage": "I-share ang larawan",
+      "downloadImage": "I-download ang larawan",
+      "cancel": "Kanselahin",
+      "preview": "I-preview ang larawan",
+      "close": "Isara",
+      "remove": "Alisin ang {item}",
+      "addAll": "Idagdag lahat ({n})",
+      "removeAll": "Alisin lahat ({n})",
+      "limit": "Hanggang {max} lang ang puwede.",
+      "tooBig": "Sobrang dami para sa isang larawan. Mag-alis ng ilan.",
+      "making": "Ginagawa ang larawan…",
+      "shared": "Na-share ang larawan",
+      "downloaded": "Na-download ang larawan",
+      "shareFailed": "Hindi na-share. Subukang i-download.",
+      "renderFailed": "Hindi nagawa ang larawan. Subukan ulit.",
+      "trayLabel": "Pagpili para sa larawan"
     }
   },
   "useCases": {

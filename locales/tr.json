@@ -209,6 +209,29 @@
       "titleFor": "Önizleme: {style}",
       "dialogAriaLabel": "Platform önizlemesi",
       "closeAriaLabel": "Önizlemeyi kapat"
+    },
+    "imageSelection": {
+      "selectImage": "Seç ve görsel olarak paylaş",
+      "viewSelection": "Seçimi gör ({n})",
+      "hint": "Görselin için herhangi bir bölümden emoji veya sembol seç.",
+      "count": "{n} seçildi",
+      "empty": "Henüz bir şey seçilmedi",
+      "shareImage": "Görseli paylaş",
+      "downloadImage": "Görseli indir",
+      "cancel": "İptal",
+      "preview": "Görseli önizle",
+      "close": "Kapat",
+      "remove": "Kaldır: {item}",
+      "addAll": "Tümünü ekle ({n})",
+      "removeAll": "Tümünü kaldır ({n})",
+      "limit": "En fazla {max} tane ekleyebilirsin.",
+      "tooBig": "Bir görsele sığmayacak kadar çok. Birkaçını kaldır.",
+      "making": "Görsel hazırlanıyor…",
+      "shared": "Görsel paylaşıldı",
+      "downloaded": "Görsel indirildi",
+      "shareFailed": "Paylaşılamadı. İndirmeyi dene.",
+      "renderFailed": "Görsel oluşturulamadı. Tekrar dene.",
+      "trayLabel": "Görsel seçimi"
     }
   },
   "useCases": {

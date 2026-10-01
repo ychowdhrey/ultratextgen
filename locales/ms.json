@@ -109,6 +109,29 @@
       "titleFor": "Pratonton: {style}",
       "dialogAriaLabel": "Pratonton platform",
       "closeAriaLabel": "Tutup pratonton"
+    },
+    "imageSelection": {
+      "selectImage": "Pilih dan kongsi imej",
+      "viewSelection": "Lihat pilihan ({n})",
+      "hint": "Pilih emoji atau simbol dari mana-mana bahagian untuk membuat imej anda.",
+      "count": "{n} dipilih",
+      "empty": "Belum ada yang dipilih",
+      "shareImage": "Kongsi imej",
+      "downloadImage": "Muat turun imej",
+      "cancel": "Batal",
+      "preview": "Pratonton imej",
+      "close": "Tutup",
+      "remove": "Buang {item}",
+      "addAll": "Tambah semua {n}",
+      "removeAll": "Buang semua {n}",
+      "limit": "Anda boleh tambah sehingga {max}.",
+      "tooBig": "Terlalu banyak untuk satu imej. Buang sebahagian.",
+      "making": "Membuat imej…",
+      "shared": "Imej dikongsi",
+      "downloaded": "Imej dimuat turun",
+      "shareFailed": "Gagal berkongsi. Cuba muat turun.",
+      "renderFailed": "Gagal membuat imej. Cuba lagi.",
+      "trayLabel": "Pilihan imej"
     }
   }
 }

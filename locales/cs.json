@@ -209,6 +209,29 @@
       "titleFor": "Náhled: {style}",
       "dialogAriaLabel": "Náhled platformy",
       "closeAriaLabel": "Zavřít náhled"
+    },
+    "imageSelection": {
+      "selectImage": "Vybrat a sdílet jako obrázek",
+      "viewSelection": "Zobrazit výběr ({n})",
+      "hint": "Vyber emoji nebo symboly z libovolné sekce pro svůj obrázek.",
+      "count": "Vybráno: {n}",
+      "empty": "Zatím nic nevybráno",
+      "shareImage": "Sdílet obrázek",
+      "downloadImage": "Stáhnout obrázek",
+      "cancel": "Zrušit",
+      "preview": "Náhled obrázku",
+      "close": "Zavřít",
+      "remove": "Odebrat {item}",
+      "addAll": "Přidat všechny ({n})",
+      "removeAll": "Odebrat všechny ({n})",
+      "limit": "Můžeš přidat nejvýš {max}.",
+      "tooBig": "Na jeden obrázek je jich moc. Pár jich odeber.",
+      "making": "Vytváří se obrázek…",
+      "shared": "Obrázek sdílen",
+      "downloaded": "Obrázek stažen",
+      "shareFailed": "Sdílení se nepovedlo. Zkus stáhnout.",
+      "renderFailed": "Obrázek se nepovedlo vytvořit. Zkus to znovu.",
+      "trayLabel": "Výběr pro obrázek"
     }
   },
   "useCases": {

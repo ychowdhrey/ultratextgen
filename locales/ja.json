@@ -209,6 +209,29 @@
       "titleFor": "{style}のプレビュー",
       "dialogAriaLabel": "プラットフォームのプレビュー",
       "closeAriaLabel": "プレビューを閉じる"
+    },
+    "imageSelection": {
+      "selectImage": "選んで画像で共有",
+      "viewSelection": "選択を表示（{n}）",
+      "hint": "好きなセクションから絵文字や記号を選んで、画像を作りましょう。",
+      "count": "{n}個選択中",
+      "empty": "まだ何も選んでいません",
+      "shareImage": "画像を共有",
+      "downloadImage": "画像をダウンロード",
+      "cancel": "キャンセル",
+      "preview": "画像のプレビュー",
+      "close": "閉じる",
+      "remove": "{item}を外す",
+      "addAll": "{n}個すべて追加",
+      "removeAll": "{n}個すべて外す",
+      "limit": "追加できるのは{max}個までです。",
+      "tooBig": "1枚に収まりません。いくつか外してください。",
+      "making": "画像を作成中…",
+      "shared": "画像を共有しました",
+      "downloaded": "画像をダウンロードしました",
+      "shareFailed": "共有できませんでした。ダウンロードをお試しください。",
+      "renderFailed": "画像を作成できませんでした。もう一度お試しください。",
+      "trayLabel": "画像用の選択"
     }
   },
   "useCases": {

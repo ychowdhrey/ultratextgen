@@ -209,6 +209,29 @@
       "titleFor": "Anteprima: {style}",
       "dialogAriaLabel": "Anteprima per piattaforma",
       "closeAriaLabel": "Chiudi anteprima"
+    },
+    "imageSelection": {
+      "selectImage": "Seleziona e condividi immagine",
+      "viewSelection": "Vedi selezione ({n})",
+      "hint": "Scegli emoji o simboli da qualsiasi sezione per creare la tua immagine.",
+      "count": "Selezionati: {n}",
+      "empty": "Ancora nessuna selezione",
+      "shareImage": "Condividi immagine",
+      "downloadImage": "Scarica immagine",
+      "cancel": "Annulla",
+      "preview": "Anteprima immagine",
+      "close": "Chiudi",
+      "remove": "Rimuovi {item}",
+      "addAll": "Aggiungi tutti ({n})",
+      "removeAll": "Rimuovi tutti ({n})",
+      "limit": "Puoi aggiungerne fino a {max}.",
+      "tooBig": "Troppi per un’immagine. Rimuovine alcuni.",
+      "making": "Creazione immagine…",
+      "shared": "Immagine condivisa",
+      "downloaded": "Immagine scaricata",
+      "shareFailed": "Condivisione non riuscita. Prova a scaricarla.",
+      "renderFailed": "Impossibile creare l’immagine. Riprova.",
+      "trayLabel": "Selezione per l’immagine"
     }
   },
   "useCases": {

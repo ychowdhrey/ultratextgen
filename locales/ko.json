@@ -109,6 +109,29 @@
       "titleFor": "{style} 미리보기",
       "dialogAriaLabel": "플랫폼 미리보기",
       "closeAriaLabel": "미리보기 닫기"
+    },
+    "imageSelection": {
+      "selectImage": "골라서 이미지로 공유",
+      "viewSelection": "선택 보기 ({n})",
+      "hint": "어느 섹션에서든 이모지나 기호를 골라 이미지를 만드세요.",
+      "count": "{n}개 선택됨",
+      "empty": "선택한 항목 없음",
+      "shareImage": "이미지 공유",
+      "downloadImage": "이미지 다운로드",
+      "cancel": "취소",
+      "preview": "이미지 미리보기",
+      "close": "닫기",
+      "remove": "{item} 빼기",
+      "addAll": "{n}개 모두 추가",
+      "removeAll": "{n}개 모두 빼기",
+      "limit": "최대 {max}개까지 추가할 수 있습니다.",
+      "tooBig": "항목이 너무 많습니다. 일부를 빼 주세요.",
+      "making": "이미지 만드는 중…",
+      "shared": "이미지 공유 완료",
+      "downloaded": "이미지 다운로드 완료",
+      "shareFailed": "공유하지 못했습니다. 다운로드해 보세요.",
+      "renderFailed": "이미지를 만들지 못했습니다. 다시 시도하세요.",
+      "trayLabel": "이미지 선택"
     }
   }
 }

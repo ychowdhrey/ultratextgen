@@ -26,7 +26,7 @@ other specialized generators actually do.
 |---|---|
 | `js/share/share-core.js` | `buildShareUrl`, `shareCreation`, `shareCreationAsImage`, `renderCreationImage`, the button factories, the `?style=` reader, both delegated click handlers. Lifted **verbatim** out of `script.js`; it is now the only definition. Dependency-free. |
 | `js/saved/saved-items.js` | the typed store `{type, value, label, href, t}` with `type` in `style \| symbol \| collection`, identity on `(type, value)` — so one glyph saved under two locale labels is one record. `UltraTextGen.saved.{all,has,count,toggle,clear}`, fires `utg:savedchange`. |
-| `symbol-explorer.js` | a Save star per tile, Share + Share-image per section, the saved-symbols strip, the incoming `?symbol=` deep link — attached **at runtime** to markup the generators already emit. |
+| `symbol-explorer.js` | a Save star per tile, Share + "Select and share image" per section (see *Image content comes from deliberate selection* below; until 2026-10-01 this was a whole-section image button), the saved-symbols strip, the incoming `?symbol=` deep link — attached **at runtime** to markup the generators already emit. |
 
 **Nothing here edits a page's content**, and that was a design constraint rather than
 a happy accident: the tiles are static HTML written into 3,605 pages by the
@@ -88,6 +88,86 @@ caught.
 The 10 locale JSONs whose `copyButtons` block existed only inside `script.js`'s
 `UI_STRINGS` were backfilled from it in the same change, removing a duplicate source
 of truth that `script.js`'s own comment had flagged.
+
+## Image content comes from deliberate selection (2026-10-01)
+
+**The principle: on library and symbol pages, an image holds what the visitor
+chose, never what happens to share a section with the button they pressed.** Keep
+this true in any future change to the image path here.
+
+Until 2026-10-01 each tile section carried a Share-as-image button that drew
+**every symbol in that section** onto the card, captioned with the section heading.
+Someone who wanted one heart got forty under "iPhone Heart Emoji". The named sets
+(ASEAN, the EU, an emoji combo; `.flag-grid-section`, rendered by `buildGrids`) had
+no share at all. Both were verified against the branch before the change.
+
+| piece | owns |
+|---|---|
+| `symbol-explorer.js` | after each tile section: **Share** (unchanged action: native sheet with the section link, else copy the link; only its icon became a link) and **Select and share image**. The same entry sits under a collection container when at least one set in it is a member list. While a selection is open, a tile press is routed to the selection instead of copying. `buildGrids` registers its sets in `collectionGroups()`. |
+| `js/share/image-selection.js` | the selection itself, loaded on the first press (not on page load): one page-wide, temporary, ordered list; the sticky tray; the preview dialog; "Add all n" inside a member-list set; the share/download outcomes. |
+| `js/share/share-core.js` | `layoutSelection` (pure, tested) and `renderSelectionImage` (the 1080px PNG), and two opt-ins on the existing `shareImageBlob`: `mode: "download"`, `downloadOnError: false`, `noTitle`. No second share implementation. |
+
+Rules that came out of building and auditing it, each with a test:
+
+- **One selection per page.** Every entry button opens or shows the same one and
+  then reads "View selection (n)"; pressing any of them never resets it. Cancel
+  clears it and puts copying back.
+- **Identity is the exact string.** The same emoji in two sections is one item and
+  lights in both; pressing either removes it. A skin-tone variant is its own item.
+  Pages do repeat items (the flag list shows popular countries twice: 203 tiles for
+  195 countries), so this is not hypothetical.
+- **A set is added only by its own button**, never by the entry under it. "Add all"
+  is offered only for a **member list**: two or more single graphemes, none repeated
+  (`isMemberList`). Measured 2026-10-01 across the tree: 3,479 set sections are
+  member lists; about 2,170 are trails with repeats (`♪ ˚ ♫ ˚ ♪`), kaomoji sets or
+  text art, where splitting into removable members changes what the thing is. Those
+  are **not offered** until the owner decides the unit.
+- **Nothing is silently dropped.** 50 items is the limit; a 51st press, or a set that
+  would pass it, is refused with a message and adds nothing (never half a set). An
+  arrangement that would draw glyphs under 44px disables Share and says so.
+- **Each item is drawn with its own `fillText`**, so nothing fuses across a boundary
+  (two lone regional-indicator letters would otherwise become a flag). The layout
+  never splits an item, so ZWJ, skin-tone and flag sequences stay whole. Rows read
+  right to left on an RTL page.
+- **The preview is the export**: one render per selection state feeds the tray
+  thumbnail, the preview and the shared file (byte-identical in the browser test).
+- **No caption is invented.** No section heading, page title or SEO title is drawn,
+  and the native share sends the file alone (`noTitle`), so nothing arrives in a chat
+  as if the visitor had typed it. The only other mark is `ultratextgen.com`, small
+  and grey.
+- **The artwork is the device's.** The renderer uses the same emoji font stack as the
+  tiles, so an Android phone draws Noto and an iPhone draws Apple's; nothing promises
+  Apple artwork. On Windows, flag emoji have no colour glyphs, so a flag renders as
+  its two letters there, in the image as on the page.
+- **Saved items stay separate.** The star is a lasting store; the selection lives
+  only as long as the page and never reads or writes it. The saved strip keeps its
+  own Share pair.
+
+### Analytics for the selection
+
+`share_text` is still written only by `pushShare`. A completed share is
+`share_method: image`, a download `image_download`, both with
+`share_surface: library_selection` and `share_item_type: selection`, so the new path
+is separable from the old `library_section` image rows (which stop on the ship date:
+read any `library_section` image series across that date as a definition change).
+A cancelled sheet records no share and triggers no download.
+
+The path to a share is a separate event, `image_selection`, with
+`selection_action` in `start | reopen | preview | add_collection |
+remove_collection | limit | cancel | share_cancelled | share_failed | render_failed`,
+`selection_count` and `locale`, every key on every row. **None of these is a share**,
+and none carries the chosen items. Like every new dataLayer event here, it reaches
+GA4 only once GTM has a tag for it; until then it is visible in the dataLayer only.
+
+### Tests
+
+`npm run test:image-selection` (CI-gated): order, toggling, repeats, sets, the
+limit, and every locale string with its placeholders. `npm run test:share-core`
+adds the layout and the three `shareImageBlob` opt-ins.
+`js/share/imageSelection.test.html` drives the DOM in a browser with the Web Share
+API **mocked** (success, cancel, error; `?noshare` for a browser without file
+sharing). Mocked checks prove what the page does with each answer, not that any
+real share sheet or app received the file.
 
 ## Migration off `utg_saved_styles`
 

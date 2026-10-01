@@ -33,7 +33,6 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const TARGET = path.join(ROOT, 'symbol-explorer.js');
 
 /** symbol-explorer.js keys its table by PAGE_LANG, which is the first two
  *  characters of <html lang> — so zh-TW pages look up "zh". */
@@ -46,8 +45,25 @@ const KEYS = {
   share: 'shareResult.label',
   shareImage: 'shareResult.imageTitle',
   clearAll: 'savedStyles.clearAll',
-  copyLabel: 'copyButtons.copy'
+  copyLabel: 'copyButtons.copy',
+  // The two entry-button labels for "Select and share image" (2026-10-01).
+  selectImage: 'imageSelection.selectImage',
+  viewSelection: 'imageSelection.viewSelection'
 };
+
+/** The selection UI itself (js/share/image-selection.js) is loaded only when
+ *  a visitor asks for an image, so its strings travel with it rather than in
+ *  symbol-explorer.js, which every library page downloads. Same source, same
+ *  check, second table. */
+const SELECTION_KEYS = {};
+['hint', 'count', 'empty', 'shareImage', 'downloadImage', 'cancel', 'preview', 'close',
+  'remove', 'addAll', 'removeAll', 'limit', 'tooBig', 'making', 'shared', 'downloaded',
+  'shareFailed', 'renderFailed', 'trayLabel'].forEach((k) => { SELECTION_KEYS[k] = `imageSelection.${k}`; });
+
+const TARGETS = [
+  { file: path.join(ROOT, 'symbol-explorer.js'), keys: KEYS },
+  { file: path.join(ROOT, 'js', 'share', 'image-selection.js'), keys: SELECTION_KEYS, createMissing: true }
+];
 
 /** English is the in-code fallback and ships no copyButtons block, by design
  *  (i18n.js returns early for "en"). Its values live in the source literal. */
@@ -57,12 +73,12 @@ function get(obj, dotted) {
   return dotted.split('.').reduce((acc, k) => (acc != null ? acc[k] : undefined), obj);
 }
 
-function localeStrings(lang) {
+function localeStrings(lang, keys) {
   const file = path.join(ROOT, 'locales', `${FILE_FOR_LANG[lang] || lang}.json`);
   if (!fs.existsSync(file)) return null;
   const ui = (JSON.parse(fs.readFileSync(file, 'utf8')).ui) || {};
   const out = {};
-  for (const [key, dotted] of Object.entries(KEYS)) {
+  for (const [key, dotted] of Object.entries(keys)) {
     const val = get(ui, dotted);
     if (typeof val === 'string' && val) out[key] = val;
   }
@@ -74,7 +90,7 @@ function localeStrings(lang) {
  *  contains a nested `formats: { … }`. */
 function entries(src) {
   const start = src.indexOf('  const UI_STRINGS = {');
-  if (start === -1) throw new Error('UI_STRINGS literal not found in symbol-explorer.js');
+  if (start === -1) throw new Error('UI_STRINGS literal not found');
   const found = [];
   const re = /\n {4}([a-z]{2}): \{/g;
   re.lastIndex = start;
@@ -103,22 +119,52 @@ function currentValue(body, key) {
   return m ? m[1].replace(/\\"/g, '"').replace(/\\\\/g, '\\') : undefined;
 }
 
-function run(write) {
-  let src = fs.readFileSync(TARGET, 'utf8');
+/** Every locale this site ships a locales/<file>.json for, keyed the way
+ *  UI_STRINGS is (zh-tw -> zh). */
+function shippedLangs() {
+  return fs.readdirSync(path.join(ROOT, 'locales'))
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => f.replace(/\.json$/, ''))
+    .map((f) => (f === 'zh-tw' ? 'zh' : f))
+    .filter((l) => !SKIP_LANGS.has(l));
+}
+
+/** Insert a whole new `    <lang>: { … }` entry before UI_STRINGS' closing
+ *  brace. Only the selection table is built this way: it starts with English
+ *  alone and gains one entry per locale from the JSON. */
+function addEntry(src, lang, want, keys) {
+  const start = src.indexOf('  const UI_STRINGS = {');
+  let i = src.indexOf('{', start);
+  let depth = 0;
+  for (; i < src.length; i++) {
+    if (src[i] === '{') depth++;
+    else if (src[i] === '}') { depth--; if (depth === 0) break; }
+  }
+  const body = Object.keys(keys).filter((k) => k in want)
+    .map((k) => `      ${k}: "${esc(want[k])}"`).join(',\n');
+  // i is UI_STRINGS' closing brace; the entry before it ends with "    }".
+  const before = src.slice(0, i).replace(/\s*$/, '');
+  return `${before},\n    ${lang}: {\n${body}\n    }\n  ${src.slice(i)}`;
+}
+
+function runTarget(target, write) {
+  const label = path.relative(ROOT, target.file);
+  let src = fs.readFileSync(target.file, 'utf8');
   const drift = [];
   const missing = [];
 
   // Right-to-left so earlier offsets stay valid as we splice.
   const list = entries(src).reverse();
+  const present = new Set(list.map((e) => e.lang));
 
   for (const ent of list) {
     if (SKIP_LANGS.has(ent.lang)) continue;
-    const want = localeStrings(ent.lang);
+    const want = localeStrings(ent.lang, target.keys);
     if (!want) { missing.push(`${ent.lang}: no locales/*.json`); continue; }
 
     const body = src.slice(ent.open, ent.close);
     const patch = {};
-    for (const key of Object.keys(KEYS)) {
+    for (const key of Object.keys(target.keys)) {
       if (!(key in want)) { missing.push(`${ent.lang}.${key}: absent from locales JSON`); continue; }
       if (currentValue(body, key) !== want[key]) {
         drift.push(`${ent.lang}.${key}`);
@@ -132,35 +178,56 @@ function run(write) {
       const re = new RegExp(`(\\b${key}: )"(?:[^"\\\\]|\\\\.)*"`);
       if (re.test(next)) {
         next = next.replace(re, `$1"${esc(val)}"`);
-      } else {
+      } else if (/\n\s+formats: \{/.test(next)) {
         // New key: insert before the entry's nested formats block, which is
         // always last, so the literal keeps its existing shape.
         next = next.replace(/(\n\s+formats: \{)/, `\n      ${key}: "${esc(val)}",$1`);
+      } else {
+        // A table with no formats block: append as the entry's last key.
+        next = next.replace(/\s*$/, '') + `,\n      ${key}: "${esc(val)}"\n    `;
       }
     }
     src = src.slice(0, ent.open) + next + src.slice(ent.close);
   }
 
+  // A locale with a JSON file but no entry at all in a table that is built
+  // from the JSON (the selection table): that is drift too.
+  if (target.createMissing) {
+    for (const lang of shippedLangs()) {
+      if (present.has(lang)) continue;
+      const want = localeStrings(lang, target.keys);
+      if (!want || !Object.keys(want).length) continue;
+      drift.push(`${lang}: whole entry`);
+      if (write) src = addEntry(src, lang, want, target.keys);
+    }
+  }
+
   if (write && drift.length) {
-    fs.writeFileSync(TARGET, src);
-    console.log(`sync-explorer-strings: updated ${drift.length} string(s) in symbol-explorer.js`);
+    fs.writeFileSync(target.file, src);
+    console.log(`sync-explorer-strings: updated ${drift.length} string(s) in ${label}`);
   }
 
   if (missing.length) {
-    console.log('\nNot available in locales/*.json (left as the English fallback):');
+    console.log(`\nNot available in locales/*.json for ${label} (left as the English fallback):`);
     missing.forEach((m) => console.log(`  - ${m}`));
   }
 
   if (!write) {
     if (drift.length) {
-      console.error(`\nsymbol-explorer.js is out of sync with locales/*.json (${drift.length}):`);
+      console.error(`\n${label} is out of sync with locales/*.json (${drift.length}):`);
       drift.forEach((d) => console.error(`  - ${d}`));
       console.error('\nFix: node scripts/sync-explorer-strings.js --write');
       return 1;
     }
-    console.log('symbol-explorer.js UI strings agree with locales/*.json.');
+    console.log(`${label} UI strings agree with locales/*.json.`);
   }
   return 0;
+}
+
+function run(write) {
+  let status = 0;
+  for (const target of TARGETS) status = Math.max(status, runTarget(target, write));
+  return status;
 }
 
 process.exit(run(process.argv.includes('--write')));

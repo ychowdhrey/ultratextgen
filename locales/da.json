@@ -133,6 +133,29 @@
       "titleFor": "Forhåndsvisning: {style}",
       "dialogAriaLabel": "Platformsforhåndsvisning",
       "closeAriaLabel": "Luk forhåndsvisning"
+    },
+    "imageSelection": {
+      "selectImage": "Vælg og del som billede",
+      "viewSelection": "Se udvalg ({n})",
+      "hint": "Vælg emojis eller symboler fra en hvilken som helst sektion til dit billede.",
+      "count": "{n} valgt",
+      "empty": "Intet valgt endnu",
+      "shareImage": "Del billede",
+      "downloadImage": "Download billede",
+      "cancel": "Annuller",
+      "preview": "Forhåndsvis billede",
+      "close": "Luk",
+      "remove": "Fjern {item}",
+      "addAll": "Tilføj alle {n}",
+      "removeAll": "Fjern alle {n}",
+      "limit": "Du kan tilføje op til {max}.",
+      "tooBig": "For mange til ét billede. Fjern nogle.",
+      "making": "Laver billede…",
+      "shared": "Billede delt",
+      "downloaded": "Billede downloadet",
+      "shareFailed": "Kunne ikke dele. Prøv at downloade.",
+      "renderFailed": "Kunne ikke lave billedet. Prøv igen.",
+      "trayLabel": "Billedudvalg"
     }
   },
   "useCases": {
