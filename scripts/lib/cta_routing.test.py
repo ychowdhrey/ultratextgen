@@ -298,6 +298,8 @@ def _printables_routes():
 def _printables_holds():
     # The block-letters landing is frozen until its size-control readout.
     assert printables_route("printables/block-letters/index.html") is None
+    # Held while its September traffic loss is diagnosed (until after 2026-10-16).
+    assert printables_route("printables/cursive-alphabet/index.html") is None
     # A card pointed somewhere on purpose is not a route.
     assert printables_route("printables/spanish-alphabet-chart/index.html") is None
     # Locale pages: an English destination would break the locale-native rule.

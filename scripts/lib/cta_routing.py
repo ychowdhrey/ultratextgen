@@ -273,7 +273,10 @@ PASTE_LABELS = {
 _PRINTABLE_ROUTES = {
     "bubble-letters": (None, "bubble-name", "banner-number"),
     "block-letters": (None, "banner-word", "banner-number"),
-    "cursive-alphabet": ("cursive-name", "cursive-name", None),
+    # Landing held (None) while its September traffic loss is diagnosed: an
+    # on-page change inside that read's window is one of the causes it must rule
+    # out. Route it ("cursive-name") once that diagnosis closes (after 2026-10-16).
+    "cursive-alphabet": (None, "cursive-name", None),
     "calligraphy-alphabet": ("calligraphy-name", "calligraphy-name", None),
     "graffiti-letters": ("graffiti-name", None, None),
 }
@@ -290,7 +293,8 @@ def printables_route(rel_path):
 
     `rel_path` is repo-relative, e.g. "printables/bubble-letters/letter-a/index.html".
     The landing `block-letters` page returns None: it is held unchanged until its
-    size-control readout (owner freeze, 2026-09-22).
+    size-control readout (owner freeze, 2026-09-22). The `cursive-alphabet`
+    landing returns None until its traffic-loss diagnosis closes (see the table).
     """
     parts = [p for p in rel_path.split("/") if p]
     if not parts or parts[0] != "printables" or parts[-1] != "index.html":
