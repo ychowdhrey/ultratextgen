@@ -12,10 +12,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Embed the Character Counter on Your Website | UltraTextGen</title>
-  <meta name="description" content="Add a free character &amp; word counter widget to your website. Embed code, live preview, and a 26-platform limit checker for writing, SEO, and social blogs.">
+  <meta name="description" content="Add a free word and character counter to your website with one line of iframe code. Live counts plus limit checks for 39 fields on 17 platforms. No sign-up.">
   <link rel="canonical" href="https://ultratextgen.com/embed/character-counter/">
   <meta property="og:title" content="Embed the Character Counter on Your Website | UltraTextGen">
-  <meta property="og:description" content="Add a free character &amp; word counter widget to your website. Embed code, live preview, and a 26-platform limit checker for writing, SEO, and social blogs.">
+  <meta property="og:description" content="Add a free word and character counter to your website with one line of iframe code. Live counts plus limit checks for 39 fields on 17 platforms. No sign-up.">
   <meta property="og:url" content="https://ultratextgen.com/embed/character-counter/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://ultratextgen.com/assets/og/embed-character-counter.png">
@@ -24,7 +24,7 @@
   <meta property="og:image:type" content="image/png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Embed the Character Counter on Your Website | UltraTextGen">
-  <meta name="twitter:description" content="Add a free character &amp; word counter widget to your website. Embed code, live preview, and a 26-platform limit checker for writing, SEO, and social blogs.">
+  <meta name="twitter:description" content="Add a free word and character counter to your website with one line of iframe code. Live counts plus limit checks for 39 fields on 17 platforms. No sign-up.">
   <meta name="twitter:image" content="https://ultratextgen.com/assets/og/embed-character-counter.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,7 +59,7 @@
 }
   </script>
 </head>
-<body>
+<body data-static-footer="none">
   <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
@@ -68,146 +68,116 @@
   <div id="shared-header"></div>
 <script src="/header.js" defer></script>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-inner">
-      <h1 class="hero-headline">Embed the Character Counter</h1>
-      <p class="hero-tagline">Add a free word &amp; character counter to your website. Useful for writing blogs, SEO tools, social media guides, and anywhere visitors need to check their text against a limit.</p>
-    </div>
-  </section>
-<figure class="page-hero-figure" data-uthero aria-hidden="true">
-  <img src="/assets/hero/embed-character-counter.svg" width="1200" height="340"
-       fetchpriority="high" alt="">
-</figure>
+  <main class="embed-landing-page" data-embed-landing="character_counter" data-embed-source="character-counter">
+    <nav class="breadcrumbs embed-landing-crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb-separator">›</span>
+      <a href="/embed/">Embeddable Widgets</a>
+      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-current">Character Counter</span>
+    </nav>
 
-
-
-  <main class="container">
-    <!-- Live Preview -->
-    <section class="editorial-section" style="margin-top: 1.5rem;">
-      <h2>Live Preview</h2>
-      <p style="color: var(--text-secondary); font-size: 0.925rem; margin-bottom: 0.75rem;">This is how the widget will look on your site. It's fully interactive: try it below.</p>
-      <div class="embed-page-preview">
-        <iframe src="/character-counter/embed/" id="embedPreview" loading="lazy" title="Character Counter Widget Preview" style="height: 640px;"></iframe>
+    <!-- Hero: what it is, the live widget, and the embed code in one screen.
+         data-hero-art="none": the live widget is this page's picture, so the
+         decorative banner stays off (see scripts/wire-site-art.py). -->
+    <section class="embed-landing" data-hero-art="none" aria-labelledby="embed-title">
+      <div class="embed-landing-intro">
+        <p class="embed-landing-eyebrow">Embeddable widget</p>
+        <h1 class="embed-landing-title" id="embed-title">Embed the Character Counter</h1>
+        <p class="embed-landing-lede">Add a live word and character counter to your website. Visitors paste text and see words, characters and reading time, plus whether it fits 39 fields on 17 platforms, counted the way each platform counts, from X's weighted count to SMS segments.</p>
       </div>
-    </section>
 
-    <!-- Embed Code -->
-    <section class="editorial-section">
-      <h2>Embed Code</h2>
-      <p style="color: var(--text-secondary); font-size: 0.925rem; margin-bottom: 0.75rem;">Copy the code below and paste it into your HTML page where you want the widget to appear.</p>
-      <div class="embed-code-block">
-        <code id="embedCode">&lt;iframe src="https://ultratextgen.com/character-counter/embed/" title="Character Counter" style="width:100%;border:none;height:640px;" loading="lazy"&gt;&lt;/iframe&gt;</code>
-        <div class="embed-code-copy">
-          <button class="copy-btn" id="copyEmbedBtn" type="button">Copy</button>
+      <div class="embed-landing-code" id="embed-code">
+        <h2 class="embed-landing-label" id="embed-code-title">Embed code</h2>
+        <pre class="embed-code-box" tabindex="0" role="region" aria-labelledby="embed-code-title"><code id="embedCode">&lt;iframe src="https://ultratextgen.com/character-counter/embed/" title="Character Counter" style="width:100%;border:none;height:640px;" loading="lazy"&gt;&lt;/iframe&gt;</code></pre>
+        <button class="embed-copy-btn" type="button" data-embed-copy="code_panel">
+          <svg class="embed-copy-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+          <span class="embed-copy-text">Copy embed code</span>
+        </button>
+        <p class="embed-landing-install">Paste this code anywhere your website accepts HTML.</p>
+        <p class="embed-copy-hint" id="embedCopyHint" hidden></p>
+      </div>
+
+      <figure class="embed-preview-frame">
+        <div class="embed-preview-chrome" aria-hidden="true">
+          <span class="embed-preview-dots"><i></i><i></i><i></i></span>
+          <span class="embed-preview-url">your-website.com</span>
+          <span class="embed-preview-badge">Live preview</span>
         </div>
+        <iframe class="embed-preview-iframe embed-preview-h640" src="/character-counter/embed/" title="Live preview of the Character Counter widget"></iframe>
+        <figcaption class="sr-only">The widget exactly as it appears on your site. It is fully interactive.</figcaption>
+      </figure>
+
+      <div class="embed-landing-after">
+        <p>Looks right? The code above is all it takes.</p>
+        <button class="embed-copy-btn" type="button" data-embed-copy="after_preview">
+          <svg class="embed-copy-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+          <span class="embed-copy-text">Copy embed code</span>
+        </button>
       </div>
+
+      <section class="embed-landing-benefits" aria-labelledby="embed-benefits-title">
+        <h2 class="sr-only" id="embed-benefits-title">What you get</h2>
+        <ul class="embed-benefits">
+          <li>
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="2" y="4" width="14" height="11" rx="2"/><rect x="17" y="8" width="5" height="11" rx="1"/><path d="M6 19h6"/></svg>
+            <span><strong>Responsive</strong> Adapts to any column width, from 320px phones to full-width layouts.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/><path d="M3 3l18 18"/></svg>
+            <span><strong>No sign-up</strong> No account or API key required.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>
+            <span><strong>Isolated</strong> Runs in its own frame, so it never touches your CSS or scripts.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M20 12v9H4v-9"/><rect x="2" y="7" width="20" height="5" rx="1"/><path d="M12 21V7"/><path d="M12 7c-2-4-6-4-6-1.5S9 7 12 7c3 0 6-1 6-1.5S14 3 12 7z"/></svg>
+            <span><strong>Free to embed</strong> A small credit line inside the widget is the only cost.</span>
+          </li>
+        </ul>
+      </section>
     </section>
 
-    <!-- Where to Use -->
-    <section class="editorial-section">
-      <h2>Where This Widget Works Best</h2>
-      <p style="color: var(--text-secondary); font-size: 0.925rem; margin-bottom: 0.75rem;">The Character Counter widget is a great fit for any site whose visitors write, post, or optimize text for a limit.</p>
-      <dl class="embed-usecases-list">
-        <dt>Writing &amp; blogging tools</dt>
-        <dd>A practical companion for word-count-goal or editing content: live stats update as visitors draft.</dd>
-        <dt>SEO blogs and tools</dt>
-        <dd>Readers checking meta title/description length guidance can test their own copy right on the page.</dd>
-        <dt>Social media guides</dt>
-        <dd>The built-in 26-platform checker (X, Instagram, TikTok, LinkedIn, Discord, and more) turns a "here's the limit" article into a hands-on tool.</dd>
-        <dt>Copywriting &amp; marketing sites</dt>
-        <dd>Lets visitors test ad copy, headlines, or captions against real platform limits before publishing.</dd>
-        <dt>Student &amp; academic resources</dt>
-        <dd>A quick word/sentence/paragraph count for essay or assignment length requirements.</dd>
-        <dt>Developer &amp; documentation blogs</dt>
-        <dd>Useful alongside style guides that reference character limits for commit messages, alt text, or meta fields.</dd>
-      </dl>
-    </section>
-
-    <!-- Notes -->
-    <section class="editorial-section">
-      <h2>Notes</h2>
-      <ul class="embed-notes-list">
-        <li>The widget is responsive and works well in containers from 320px to full width.</li>
-        <li>Counts words, characters (with and without spaces), sentences, paragraphs, lines, reading time, graphemes, UTF-16 units, and UTF-8 bytes: all live, no submit button.</li>
-        <li>The platform checker covers 38 fields across 17 platforms (X/Twitter, Instagram, TikTok, LinkedIn, Discord, SMS, and more) and counts each one the way that platform actually counts: X's weighted algorithm, real SMS GSM-7/Unicode segments.</li>
-        <li>The attribution link at the bottom of the widget should remain visible. It keeps the tool free for everyone.</li>
-        <li>No API key or account needed: just paste the iframe code and you're done.</li>
-        <li>The widget loads its own styles and scripts: it won't conflict with your site's CSS or JavaScript.</li>
-      </ul>
-    </section>
-
-    <!-- CTA -->
-    <div class="cta-card">
-      <h3>Try the Full Character Counter</h3>
-      <p>The complete tool includes a platform-limit explainer and FAQ covering hard vs. soft character limits across every major platform.</p>
-      <a href="https://ultratextgen.com/character-counter/?utm_source=embed_page&utm_medium=web&utm_campaign=character_counter" class="cta-btn">
-        Open Full Tool →
-      </a>
-    </div>
-
-    <!-- More Widgets -->
-    <section class="editorial-section" aria-labelledby="more-widgets-title">
-      <span class="article-section-label">More Widgets</span>
-      <h2 id="more-widgets-title">More Embeddable Widgets</h2>
-      <div class="compare-grid">
-        <a href="/embed/linkedin-headline-generator/" class="compare-card variant-muted u-no-underline">
-          <h4>LinkedIn Headline Generator</h4>
-          <p>A headline styler for career &amp; personal-branding content.</p>
+    <!-- What else can I embed? -->
+    <section class="embed-more" aria-labelledby="embed-more-title">
+      <h2 class="embed-more-title" id="embed-more-title">More widgets for your site</h2>
+      <div class="embed-more-grid">
+        <a href="/embed/linkedin-headline-generator/" class="embed-more-card" data-other-embed="linkedin-headline-generator">
+          <span class="embed-more-sample">𝗚𝗿𝗼𝘄𝘁𝗵 𝗠𝗮𝗿𝗸𝗲𝘁𝗲𝗿 | B2B SaaS</span>
+          <span class="embed-more-name">LinkedIn Headline Generator</span>
+          <span class="embed-more-desc">Separators, emoji, and bold or italic styling for headlines.</span>
         </a>
-        <a href="/embed/bio-font-generator/" class="compare-card variant-muted u-no-underline">
-          <h4>Bio Font Generator</h4>
-          <p>Fonts, symbols, and one-click frames for any social bio.</p>
+        <a href="/embed/bio-font-generator/" class="embed-more-card" data-other-embed="bio-font-generator">
+          <span class="embed-more-sample">☾ 𝘠𝘰𝘶𝘳 𝘉𝘪𝘰 ☽</span>
+          <span class="embed-more-name">Bio Font Generator</span>
+          <span class="embed-more-desc">Fonts, symbols, and frames for any social bio.</span>
         </a>
-        <a href="/embed/nickname-generator/" class="compare-card variant-muted u-no-underline">
-          <h4>Nickname Generator</h4>
-          <p>Stylish gaming names with font + frame combos.</p>
+        <a href="/embed/name-checker/" class="embed-more-card" data-other-embed="name-checker">
+          <span class="embed-more-sample">Safe to paste ✓</span>
+          <span class="embed-more-name">Game Name Checker</span>
+          <span class="embed-more-desc">Checks a styled name against 6 platforms live.</span>
         </a>
-        <a href="/embed/name-checker/" class="compare-card variant-muted u-no-underline">
-          <h4>Game Name Checker</h4>
-          <p>Will it fit? Checks a name against 6 platforms live.</p>
-        </a>
-        <a href="/embed/zalgo-text-generator/" class="compare-card variant-muted u-no-underline">
-          <h4>Zalgo Text Generator</h4>
-          <p>Cursed glitch text with one-click intensity presets.</p>
-        </a>
-        <a href="/embed/" class="compare-card variant-muted u-no-underline">
-          <h4>Browse All Widgets</h4>
-          <p>See every embeddable UltraTextGen tool in one place.</p>
+        <a href="/embed/zalgo-text-generator/" class="embed-more-card" data-other-embed="zalgo-text-generator">
+          <span class="embed-more-sample">H̷̤̙͑ͅȩ̵̜̓l̶͓͝l̴̰̈́o̸͎͑ W̸̦̾o̶͙͘r̷͓̈l̸̰̑d̵̰̊</span>
+          <span class="embed-more-name">Zalgo Text Generator</span>
+          <span class="embed-more-desc">Cursed glitch text with one-click intensity presets.</span>
         </a>
       </div>
+      <a class="embed-more-all" href="/embed/" data-other-embed="all">Explore all embeddable tools →</a>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-inner">
-<!-- BEGIN static footer — generated by scripts/build-static-footer.js from footer.js. Do not edit by hand — run `npm run build:static-footer`. -->
-<div class="footer-columns"><div class="footer-col"><span class="footer-col-title">Explore</span><a href="/" class="footer-link">Home</a><a href="/guide/" class="footer-link">Guides</a><a href="/answers/" class="footer-link">Answers</a><a href="/usecase/" class="footer-link">Use Cases</a><a href="/category/" class="footer-link">Categories</a><a href="/library/" class="footer-link">Library</a><a href="/printables/" class="footer-link">Printables</a><a href="/events/" class="footer-link">Events</a></div><div class="footer-col"><span class="footer-col-title">Popular Tools</span><a href="/usecase/text-to-emoji/" class="footer-link">Text to Emoji</a><a href="/usecase/linkedin-headline/" class="footer-link">LinkedIn Headline</a><a href="/usecase/comment-font/" class="footer-link">Comment Font</a><a href="/usecase/bio-font/" class="footer-link">Bio Font</a><a href="/usecase/vertical-text/" class="footer-link">Vertical Text</a><a href="/usecase/scrolling-text/" class="footer-link">Scrolling Text</a><a href="/usecase/repeat-text/" class="footer-link">Repeat Text</a><a href="/usecase/zalgo-text/" class="footer-link">Zalgo Text</a><a href="/ascii-art-generator/" class="footer-link">ASCII Art Generator</a></div><div class="footer-col"><span class="footer-col-title">Popular Categories</span><a href="/category/bold-fonts/" class="footer-link">Bold Fonts</a><a href="/category/cursive-fonts/" class="footer-link">Cursive Fonts</a><a href="/category/gothic-fonts/" class="footer-link">Gothic Fonts</a><a href="/category/bubble-fonts/" class="footer-link">Bubble Fonts</a><a href="/category/strikethrough-text/" class="footer-link">Strikethrough</a></div><div class="footer-col"><span class="footer-col-title">Company</span><a href="/about/" class="footer-link">About</a><a href="/privacy/" class="footer-link">Privacy Policy</a><a href="/terms/" class="footer-link">Terms of Service</a><a href="/contact/" class="footer-link">Contact</a></div></div><div class="footer-social-links"><a href="https://www.youtube.com/@UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.facebook.com/profile.php?id=61588587387596" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.linkedin.com/company/71290348/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a></div><div class="footer-bottom">© 2026 UltraTextGen. Fast text styles that work everywhere.</div>
-<!-- END static footer -->
-</div>
+  <footer class="embed-utility-footer">
+    <span>© 2026 UltraTextGen</span>
+    <nav aria-label="Legal and contact">
+      <a href="/about/">About</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/contact/">Contact</a>
+    </nav>
   </footer>
 
-  <script>
-    // Copy embed code button
-    const copyEmbedBtn = document.getElementById('copyEmbedBtn');
-    const embedCode = document.getElementById('embedCode');
-
-    copyEmbedBtn.addEventListener('click', () => {
-      const code = embedCode.textContent
-        .replace(/&lt;/g, '<')
-        .replace(/&gt;/g, '>')
-        .replace(/&amp;/g, '&')
-        .replace(/&quot;/g, '"');
-      navigator.clipboard.writeText(code).then(() => {
-        copyEmbedBtn.textContent = 'Copied!';
-        copyEmbedBtn.classList.add('copied');
-        setTimeout(() => {
-          copyEmbedBtn.textContent = 'Copy';
-          copyEmbedBtn.classList.remove('copied');
-        }, 1500);
-      });
-    });
-  </script>
-<script src="/footer.js" defer></script>
+  <span class="sr-only" id="embedCopyStatus" aria-live="polite"></span>
+  <script src="/js/embed/embed-landing.js" defer></script>
 </body></html>
