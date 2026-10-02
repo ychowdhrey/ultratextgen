@@ -53,7 +53,10 @@
       shareFailed: "Couldn't share. Try Download.",
       renderFailed: "Couldn't make the image. Try again.",
       trayLabel: "Image selection",
-      setUnavailable: "This set can't be added to an image yet."
+      setUnavailable: "This set can't be added to an image yet.",
+      clearAll: "Clear all",
+      renderBlocked: "This browser blocked the image. Copy the emojis instead.",
+      copyLabel: "Copy"
     },
     ar: {
       hint: "اختر رموزًا تعبيرية أو رموزًا من أي قسم لصنع صورتك.",
@@ -75,7 +78,10 @@
       shareFailed: "تعذرت المشاركة. جرّب التنزيل.",
       renderFailed: "تعذر إنشاء الصورة. حاول مرة أخرى.",
       trayLabel: "تحديد الصورة",
-      setUnavailable: "لا يمكن إضافة هذه المجموعة إلى صورة بعد."
+      setUnavailable: "لا يمكن إضافة هذه المجموعة إلى صورة بعد.",
+      clearAll: "مسح الكل",
+      renderBlocked: "منع هذا المتصفح إنشاء الصورة. انسخ الرموز بدلًا من ذلك.",
+      copyLabel: "نسخ"
     },
     bs: {
       hint: "Odaberi emojije ili simbole iz bilo kojeg dijela za svoju sliku.",
@@ -97,7 +103,10 @@
       shareFailed: "Dijeljenje nije uspjelo. Probaj preuzeti.",
       renderFailed: "Slika nije napravljena. Probaj ponovo.",
       trayLabel: "Odabir za sliku",
-      setUnavailable: "Ovaj set se još ne može dodati u sliku."
+      setUnavailable: "Ovaj set se još ne može dodati u sliku.",
+      clearAll: "Obriši sve",
+      renderBlocked: "Ovaj preglednik je blokirao sliku. Umjesto toga kopiraj emojije.",
+      copyLabel: "Kopiraj"
     },
     cs: {
       hint: "Vyber emoji nebo symboly z libovolné sekce pro svůj obrázek.",
@@ -119,7 +128,10 @@
       shareFailed: "Sdílení se nepovedlo. Zkus stáhnout.",
       renderFailed: "Obrázek se nepovedlo vytvořit. Zkus to znovu.",
       trayLabel: "Výběr pro obrázek",
-      setUnavailable: "Tuhle sadu zatím nejde přidat do obrázku."
+      setUnavailable: "Tuhle sadu zatím nejde přidat do obrázku.",
+      clearAll: "Vymazat vše",
+      renderBlocked: "Tenhle prohlížeč obrázek zablokoval. Zkopíruj místo toho emoji.",
+      copyLabel: "Kopírovat"
     },
     da: {
       hint: "Vælg emojis eller symboler fra en hvilken som helst sektion til dit billede.",
@@ -141,7 +153,10 @@
       shareFailed: "Kunne ikke dele. Prøv at downloade.",
       renderFailed: "Kunne ikke lave billedet. Prøv igen.",
       trayLabel: "Billedudvalg",
-      setUnavailable: "Dette sæt kan ikke tilføjes til et billede endnu."
+      setUnavailable: "Dette sæt kan ikke tilføjes til et billede endnu.",
+      clearAll: "Ryd alle",
+      renderBlocked: "Browseren blokerede billedet. Kopiér emojierne i stedet.",
+      copyLabel: "Kopiér"
     },
     de: {
       hint: "Wähle Emojis oder Symbole aus beliebigen Abschnitten für dein Bild.",
@@ -163,7 +178,10 @@
       shareFailed: "Teilen ging nicht. Lade es herunter.",
       renderFailed: "Bild ging nicht. Versuch es noch mal.",
       trayLabel: "Bildauswahl",
-      setUnavailable: "Dieses Set kann noch nicht ins Bild."
+      setUnavailable: "Dieses Set kann noch nicht ins Bild.",
+      clearAll: "Alle löschen",
+      renderBlocked: "Dieser Browser hat das Bild blockiert. Kopiere stattdessen die Emojis.",
+      copyLabel: "Kopieren"
     },
     es: {
       hint: "Elige emojis o símbolos de cualquier sección para crear tu imagen.",
@@ -185,7 +203,10 @@
       shareFailed: "No se pudo compartir. Prueba a descargarla.",
       renderFailed: "No se pudo crear la imagen. Inténtalo de nuevo.",
       trayLabel: "Selección de imagen",
-      setUnavailable: "Este conjunto aún no se puede añadir a una imagen."
+      setUnavailable: "Este conjunto aún no se puede añadir a una imagen.",
+      clearAll: "Borrar todo",
+      renderBlocked: "Este navegador bloqueó la imagen. Copia los emojis en su lugar.",
+      copyLabel: "Copiar"
     },
     fi: {
       hint: "Valitse emojeja tai symboleja mistä tahansa osiosta kuvaasi.",
@@ -207,7 +228,10 @@
       shareFailed: "Jakaminen ei onnistunut. Kokeile latausta.",
       renderFailed: "Kuvan luominen ei onnistunut. Yritä uudelleen.",
       trayLabel: "Kuvan valinta",
-      setUnavailable: "Tätä sarjaa ei voi vielä lisätä kuvaan."
+      setUnavailable: "Tätä sarjaa ei voi vielä lisätä kuvaan.",
+      clearAll: "Tyhjennä kaikki",
+      renderBlocked: "Selain esti kuvan. Kopioi emojit sen sijaan.",
+      copyLabel: "Kopioi"
     },
     fr: {
       hint: "Choisis des emojis ou des symboles dans n’importe quelle section pour créer ton image.",
@@ -229,7 +253,10 @@
       shareFailed: "Partage impossible. Essaie de télécharger.",
       renderFailed: "Impossible de créer l’image. Réessaie.",
       trayLabel: "Sélection pour l’image",
-      setUnavailable: "Cet ensemble ne peut pas encore aller dans une image."
+      setUnavailable: "Cet ensemble ne peut pas encore aller dans une image.",
+      clearAll: "Tout effacer",
+      renderBlocked: "Ce navigateur a bloqué l’image. Copie plutôt les emojis.",
+      copyLabel: "Copier"
     },
     hi: {
       hint: "अपनी इमेज के लिए किसी भी सेक्शन से इमोजी या सिंबल चुनें।",
@@ -251,7 +278,10 @@
       shareFailed: "शेयर नहीं हो पाया। डाउनलोड करके देखें।",
       renderFailed: "इमेज नहीं बन पाई। फिर से कोशिश करें।",
       trayLabel: "इमेज के लिए चुनाव",
-      setUnavailable: "यह सेट अभी इमेज में नहीं जोड़ा जा सकता।"
+      setUnavailable: "यह सेट अभी इमेज में नहीं जोड़ा जा सकता।",
+      clearAll: "सभी हटाएं",
+      renderBlocked: "इस ब्राउज़र ने इमेज रोक दी। इसके बजाय इमोजी कॉपी करें।",
+      copyLabel: "कॉपी"
     },
     hr: {
       hint: "Odaberi emojije ili simbole iz bilo kojeg odjeljka za svoju sliku.",
@@ -273,7 +303,10 @@
       shareFailed: "Dijeljenje nije uspjelo. Pokušaj preuzeti.",
       renderFailed: "Slika nije izrađena. Pokušaj ponovno.",
       trayLabel: "Odabir za sliku",
-      setUnavailable: "Ovaj set još se ne može dodati u sliku."
+      setUnavailable: "Ovaj set još se ne može dodati u sliku.",
+      clearAll: "Obriši sve",
+      renderBlocked: "Ovaj preglednik je blokirao sliku. Umjesto toga kopiraj emojije.",
+      copyLabel: "Kopiraj"
     },
     hu: {
       hint: "Válassz emojikat vagy szimbólumokat bármelyik részből a képedhez.",
@@ -295,7 +328,10 @@
       shareFailed: "Nem sikerült megosztani. Próbáld letölteni.",
       renderFailed: "Nem sikerült elkészíteni a képet. Próbáld újra.",
       trayLabel: "Képhez választás",
-      setUnavailable: "Ez a készlet még nem tehető képre."
+      setUnavailable: "Ez a készlet még nem tehető képre.",
+      clearAll: "Összes törlése",
+      renderBlocked: "A böngésző letiltotta a képet. Másold inkább az emojikat.",
+      copyLabel: "Másolás"
     },
     id: {
       hint: "Pilih emoji atau simbol dari bagian mana saja untuk membuat gambarmu.",
@@ -317,7 +353,10 @@
       shareFailed: "Gagal membagikan. Coba unduh.",
       renderFailed: "Gagal membuat gambar. Coba lagi.",
       trayLabel: "Pilihan gambar",
-      setUnavailable: "Set ini belum bisa ditambahkan ke gambar."
+      setUnavailable: "Set ini belum bisa ditambahkan ke gambar.",
+      clearAll: "Hapus semua",
+      renderBlocked: "Browser ini memblokir gambarnya. Salin emojinya saja.",
+      copyLabel: "Salin"
     },
     it: {
       hint: "Scegli emoji o simboli da qualsiasi sezione per creare la tua immagine.",
@@ -339,7 +378,10 @@
       shareFailed: "Condivisione non riuscita. Prova a scaricarla.",
       renderFailed: "Impossibile creare l’immagine. Riprova.",
       trayLabel: "Selezione per l’immagine",
-      setUnavailable: "Questo set non si può ancora aggiungere a un’immagine."
+      setUnavailable: "Questo set non si può ancora aggiungere a un’immagine.",
+      clearAll: "Cancella tutto",
+      renderBlocked: "Questo browser ha bloccato l’immagine. Copia invece le emoji.",
+      copyLabel: "Copia"
     },
     ja: {
       hint: "好きなセクションから絵文字や記号を選んで、画像を作りましょう。",
@@ -361,7 +403,10 @@
       shareFailed: "共有できませんでした。ダウンロードをお試しください。",
       renderFailed: "画像を作成できませんでした。もう一度お試しください。",
       trayLabel: "画像用の選択",
-      setUnavailable: "このセットはまだ画像に追加できません。"
+      setUnavailable: "このセットはまだ画像に追加できません。",
+      clearAll: "すべて削除",
+      renderBlocked: "このブラウザでは画像を作成できませんでした。代わりに絵文字をコピーしてください。",
+      copyLabel: "コピー"
     },
     ko: {
       hint: "어느 섹션에서든 이모지나 기호를 골라 이미지를 만드세요.",
@@ -383,7 +428,10 @@
       shareFailed: "공유하지 못했습니다. 다운로드해 보세요.",
       renderFailed: "이미지를 만들지 못했습니다. 다시 시도하세요.",
       trayLabel: "이미지 선택",
-      setUnavailable: "이 세트는 아직 이미지에 넣을 수 없습니다."
+      setUnavailable: "이 세트는 아직 이미지에 넣을 수 없습니다.",
+      clearAll: "모두 지우기",
+      renderBlocked: "이 브라우저에서 이미지가 차단되었습니다. 대신 이모지를 복사하세요.",
+      copyLabel: "복사"
     },
     ms: {
       hint: "Pilih emoji atau simbol dari mana-mana bahagian untuk membuat imej anda.",
@@ -405,7 +453,10 @@
       shareFailed: "Gagal berkongsi. Cuba muat turun.",
       renderFailed: "Gagal membuat imej. Cuba lagi.",
       trayLabel: "Pilihan imej",
-      setUnavailable: "Set ini belum boleh ditambah ke imej."
+      setUnavailable: "Set ini belum boleh ditambah ke imej.",
+      clearAll: "Kosongkan semua",
+      renderBlocked: "Pelayar ini menyekat imej. Salin emoji sahaja.",
+      copyLabel: "Salin"
     },
     nl: {
       hint: "Kies emoji's of symbolen uit elke sectie voor je afbeelding.",
@@ -427,7 +478,10 @@
       shareFailed: "Delen mislukt. Probeer te downloaden.",
       renderFailed: "Afbeelding maken mislukt. Probeer het opnieuw.",
       trayLabel: "Selectie voor afbeelding",
-      setUnavailable: "Deze set kan nog niet in een afbeelding."
+      setUnavailable: "Deze set kan nog niet in een afbeelding.",
+      clearAll: "Alles wissen",
+      renderBlocked: "Deze browser blokkeerde de afbeelding. Kopieer de emoji's in plaats daarvan.",
+      copyLabel: "Kopieer"
     },
     no: {
       hint: "Velg emojier eller symboler fra hvilken som helst seksjon til bildet ditt.",
@@ -449,7 +503,10 @@
       shareFailed: "Kunne ikke dele. Prøv å laste ned.",
       renderFailed: "Kunne ikke lage bildet. Prøv igjen.",
       trayLabel: "Bildeutvalg",
-      setUnavailable: "Dette settet kan ikke legges i et bilde ennå."
+      setUnavailable: "Dette settet kan ikke legges i et bilde ennå.",
+      clearAll: "Fjern alle",
+      renderBlocked: "Nettleseren blokkerte bildet. Kopier emojiene i stedet.",
+      copyLabel: "Kopier"
     },
     pl: {
       hint: "Wybierz emoji lub symbole z dowolnej sekcji, żeby stworzyć obraz.",
@@ -471,7 +528,10 @@
       shareFailed: "Nie udało się udostępnić. Spróbuj pobrać.",
       renderFailed: "Nie udało się stworzyć obrazu. Spróbuj ponownie.",
       trayLabel: "Wybór do obrazu",
-      setUnavailable: "Tego zestawu nie można jeszcze dodać do obrazu."
+      setUnavailable: "Tego zestawu nie można jeszcze dodać do obrazu.",
+      clearAll: "Wyczyść wszystko",
+      renderBlocked: "Ta przeglądarka zablokowała obraz. Skopiuj zamiast tego emoji.",
+      copyLabel: "Kopiuj"
     },
     pt: {
       hint: "Escolha emojis ou símbolos de qualquer seção para criar sua imagem.",
@@ -493,7 +553,10 @@
       shareFailed: "Não deu para compartilhar. Tente baixar.",
       renderFailed: "Não deu para criar a imagem. Tente de novo.",
       trayLabel: "Seleção da imagem",
-      setUnavailable: "Este conjunto ainda não pode entrar em uma imagem."
+      setUnavailable: "Este conjunto ainda não pode entrar em uma imagem.",
+      clearAll: "Limpar tudo",
+      renderBlocked: "Este navegador bloqueou a imagem. Copie os emojis no lugar dela.",
+      copyLabel: "Copiar"
     },
     ro: {
       hint: "Alege emoji sau simboluri din orice secțiune pentru imaginea ta.",
@@ -515,7 +578,10 @@
       shareFailed: "Nu s-a putut distribui. Încearcă descărcarea.",
       renderFailed: "Imaginea nu s-a putut crea. Încearcă din nou.",
       trayLabel: "Selecție pentru imagine",
-      setUnavailable: "Acest set nu poate fi adăugat încă într-o imagine."
+      setUnavailable: "Acest set nu poate fi adăugat încă într-o imagine.",
+      clearAll: "Șterge tot",
+      renderBlocked: "Browserul a blocat imaginea. Copiază emoji-urile în schimb.",
+      copyLabel: "Copiază"
     },
     ru: {
       hint: "Выберите эмодзи или символы из любого раздела для своей картинки.",
@@ -537,7 +603,10 @@
       shareFailed: "Не удалось поделиться. Попробуйте скачать.",
       renderFailed: "Не удалось создать картинку. Попробуйте ещё раз.",
       trayLabel: "Выбор для картинки",
-      setUnavailable: "Этот набор пока нельзя добавить в картинку."
+      setUnavailable: "Этот набор пока нельзя добавить в картинку.",
+      clearAll: "Очистить всё",
+      renderBlocked: "Браузер заблокировал картинку. Скопируйте эмодзи вместо неё.",
+      copyLabel: "Копировать"
     },
     sk: {
       hint: "Vyber emoji alebo symboly z ľubovoľnej sekcie pre svoj obrázok.",
@@ -559,7 +628,10 @@
       shareFailed: "Zdieľanie zlyhalo. Skús stiahnuť.",
       renderFailed: "Obrázok sa nepodarilo vytvoriť. Skús to znova.",
       trayLabel: "Výber pre obrázok",
-      setUnavailable: "Túto sadu zatiaľ nemožno pridať do obrázka."
+      setUnavailable: "Túto sadu zatiaľ nemožno pridať do obrázka.",
+      clearAll: "Vymazať všetko",
+      renderBlocked: "Tento prehliadač obrázok zablokoval. Skopíruj radšej emoji.",
+      copyLabel: "Kopírovať"
     },
     sr: {
       hint: "Izaberi emodžije ili simbole iz bilo kog odeljka za svoju sliku.",
@@ -581,7 +653,10 @@
       shareFailed: "Deljenje nije uspelo. Probaj da preuzmeš.",
       renderFailed: "Slika nije napravljena. Probaj ponovo.",
       trayLabel: "Izbor za sliku",
-      setUnavailable: "Ovaj set još ne može da se doda u sliku."
+      setUnavailable: "Ovaj set još ne može da se doda u sliku.",
+      clearAll: "Obriši sve",
+      renderBlocked: "Ovaj pregledač je blokirao sliku. Umesto toga kopiraj emodžije.",
+      copyLabel: "Kopiraj"
     },
     sv: {
       hint: "Välj emojis eller symboler från valfri sektion till din bild.",
@@ -603,7 +678,10 @@
       shareFailed: "Kunde inte dela. Prova att ladda ner.",
       renderFailed: "Kunde inte skapa bilden. Försök igen.",
       trayLabel: "Bildurval",
-      setUnavailable: "Den här samlingen kan inte läggas i en bild än."
+      setUnavailable: "Den här samlingen kan inte läggas i en bild än.",
+      clearAll: "Rensa allt",
+      renderBlocked: "Webbläsaren blockerade bilden. Kopiera emojierna i stället.",
+      copyLabel: "Kopiera"
     },
     th: {
       hint: "เลือกอีโมจิหรือสัญลักษณ์จากส่วนไหนก็ได้เพื่อสร้างรูปภาพของคุณ",
@@ -625,7 +703,10 @@
       shareFailed: "แชร์ไม่สำเร็จ ลองดาวน์โหลดแทน",
       renderFailed: "สร้างรูปภาพไม่สำเร็จ ลองอีกครั้ง",
       trayLabel: "การเลือกสำหรับรูปภาพ",
-      setUnavailable: "ชุดนี้ยังใส่ในรูปภาพไม่ได้"
+      setUnavailable: "ชุดนี้ยังใส่ในรูปภาพไม่ได้",
+      clearAll: "ล้างทั้งหมด",
+      renderBlocked: "เบราว์เซอร์นี้บล็อกรูปภาพ คัดลอกอีโมจิแทน",
+      copyLabel: "คัดลอก"
     },
     tl: {
       hint: "Pumili ng emoji o simbolo mula sa kahit anong seksyon para gawin ang larawan mo.",
@@ -647,7 +728,10 @@
       shareFailed: "Hindi na-share. Subukang i-download.",
       renderFailed: "Hindi nagawa ang larawan. Subukan ulit.",
       trayLabel: "Pagpili para sa larawan",
-      setUnavailable: "Hindi pa maidaragdag ang set na ito sa larawan."
+      setUnavailable: "Hindi pa maidaragdag ang set na ito sa larawan.",
+      clearAll: "I-clear lahat",
+      renderBlocked: "Hinarang ng browser na ito ang larawan. Kopyahin na lang ang mga emoji.",
+      copyLabel: "Kopyahin"
     },
     tr: {
       hint: "Görselin için herhangi bir bölümden emoji veya sembol seç.",
@@ -669,7 +753,10 @@
       shareFailed: "Paylaşılamadı. İndirmeyi dene.",
       renderFailed: "Görsel oluşturulamadı. Tekrar dene.",
       trayLabel: "Görsel seçimi",
-      setUnavailable: "Bu set henüz bir görsele eklenemiyor."
+      setUnavailable: "Bu set henüz bir görsele eklenemiyor.",
+      clearAll: "Tümünü temizle",
+      renderBlocked: "Bu tarayıcı görseli engelledi. Bunun yerine emojileri kopyala.",
+      copyLabel: "Kopyala"
     },
     vi: {
       hint: "Chọn emoji hoặc ký hiệu từ bất kỳ mục nào để tạo ảnh của bạn.",
@@ -691,7 +778,10 @@
       shareFailed: "Không chia sẻ được. Thử tải xuống.",
       renderFailed: "Không tạo được ảnh. Thử lại.",
       trayLabel: "Chọn cho ảnh",
-      setUnavailable: "Chưa thể thêm bộ này vào ảnh."
+      setUnavailable: "Chưa thể thêm bộ này vào ảnh.",
+      clearAll: "Xóa tất cả",
+      renderBlocked: "Trình duyệt này đã chặn ảnh. Hãy sao chép emoji thay vào đó.",
+      copyLabel: "Sao chép"
     },
     zh: {
       hint: "從任何區塊挑選表情符號或符號，製作你的圖片。",
@@ -713,7 +803,10 @@
       shareFailed: "無法分享，試試下載。",
       renderFailed: "無法製作圖片，請再試一次。",
       trayLabel: "圖片選取",
-      setUnavailable: "這組目前還不能加入圖片。"
+      setUnavailable: "這組目前還不能加入圖片。",
+      clearAll: "全部清除",
+      renderBlocked: "這個瀏覽器封鎖了圖片。改為複製表情符號吧。",
+      copyLabel: "複製"
     }
   };
   /* @image-selection-strings:end */
@@ -801,20 +894,25 @@
 
   /* ---- analytics --------------------------------------------------------
      image_selection records what people do on the way to an image: start,
-     reopen, preview, add_collection, remove_collection, limit, cancel,
+     reopen, preview, add_collection, remove_collection, clear, limit, cancel,
+     copy_text_fallback,
      share_cancelled, share_failed, render_failed. None of these is a share.
      A completed share or download is recorded once, by share-core's
      pushShare, as a share event with share_surface "library_selection".
      Never the chosen items: a count is enough to read the feature. Every
      key is pushed on every row (null where it does not apply), because
      GTM's data layer keeps a key's last value. */
-  function track(action) {
+  // `error` is the browser's error NAME only (SecurityError, NotAllowedError,
+  // TypeError …), never a message or the content: enough to tell a privacy
+  // block from a bug when a render or share fails on someone's device.
+  function track(action, error) {
     try {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         event: "image_selection",
         selection_action: action,
         selection_count: sel.count(),
+        selection_error: error || null,
         locale: PAGE_LANG
       });
     } catch (e) { /* analytics never breaks the feature */ }
@@ -886,23 +984,10 @@
   }
 
   /* ---- named collections -------------------------------------------------
-     A set is added only by its own explicit button, "Add all 10", which
-     appears inside the set while a selection is open. The entry button
-     below a set never selects it. Members then behave like any other item:
-     each can be removed on its own from the tray. */
-  function collectionEntries() {
-    const out = [];
-    const reg = ns.collectionGroups ? ns.collectionGroups() : [];
-    reg.forEach((entry) => {
-      const sections = entry.container.querySelectorAll(".flag-grid-section");
-      entry.groups.forEach((g, gi) => {
-        const section = sections[gi];
-        if (!section || !g || !ns.isMemberList || !ns.isMemberList(g.flags)) return;
-        out.push({ section: section, name: g.label || g.name || "", values: g.flags.map((v) => String(v).trim()) });
-      });
-    });
-    return out;
-  }
+     A set joins only through its own button (rendered by symbol-explorer.js
+     on every member-list set, visible before and during the mode). The
+     entry button below a set never selects it. Members then behave like any
+     other item: each can be removed on its own from the tray. */
 
   /* A set whose order, spacing or repetition is the design (a ♪ ˚ ♫ ˚ ♪
      trail, a kaomoji set, text art) is not offered as members: which unit it
@@ -924,52 +1009,36 @@
     });
   }
 
-  let collectionSeq = 0;
-  function addCollectionButtons() {
-    addCollectionNotes();
-    collectionEntries().forEach((c) => {
-      if (c.section.querySelector(".symbol-collection-add")) return;
-      const heading = c.section.querySelector("h3, h2");
-      if (heading && !heading.id) heading.id = "utgSet" + (++collectionSeq);
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "symbol-collection-add";
-      if (heading) btn.setAttribute("aria-describedby", heading.id);
-      btn.addEventListener("click", () => toggleCollection(c, btn));
-      const display = c.section.querySelector(".flag-grid-display");
-      if (display && display.nextSibling) display.parentNode.insertBefore(btn, display.nextSibling);
-      else c.section.appendChild(btn);
-      btn._utgValues = c.values;
-    });
-    paintCollectionButtons();
-  }
-
   function paintCollectionButtons() {
+    if (!active) return; // symbol-explorer.js paints the closed state
     document.querySelectorAll(".symbol-collection-add").forEach((btn) => {
       const values = btn._utgValues || [];
       const all = values.length && values.every((v) => sel.has(v));
-      btn.textContent = all ? t("removeAll", { n: values.length }) : t("addAll", { n: values.length });
+      const label = btn.querySelector(".symbol-collection-add-label") || btn;
+      label.textContent = all ? t("removeAll", { n: values.length }) : t("addAll", { n: values.length });
       btn.classList.toggle("is-all-selected", !!all);
     });
   }
 
-  function toggleCollection(c, btn) {
-    const all = c.values.every((v) => sel.has(v));
-    if (all) {
-      sel.removeMany(c.values);
+  function toggleSet(btn) {
+    if (!active || !btn) return;
+    const values = btn._utgValues || [];
+    if (!values.length) return;
+    if (values.every((v) => sel.has(v))) {
+      sel.removeMany(values);
       track("remove_collection");
       changed();
       return;
     }
-    const r = sel.addMany(c.values.map((v) => ({ value: v, label: labelFor(v) })));
+    const r = sel.addMany(values.map((v) => ({ value: v, label: labelFor(v) })));
     if (r.result === "limit") {
-      say(t("limit", { max: MAX_ITEMS }));
+      say(t("limit", { max: MAX_ITEMS }), true);
       track("limit");
       return;
     }
     track("add_collection");
     changed();
-    if (btn) btn.focus();
+    if (btn.isConnected) btn.focus({ preventScroll: true });
   }
 
   /* ---- the tray ----------------------------------------------------------
@@ -1033,6 +1102,32 @@
     host.appendChild(buildChips(host));
   }
 
+  /* "3 selected" and, beside it, "Clear all": empties the selection but
+     keeps the mode open, so a visitor can start the picture over without
+     leaving and re-entering (2026-10-02, owner feedback). The string is the
+     site's existing "Clear all" (savedStyles.clearAll), already translated
+     in every locale. */
+  function buildCountRow() {
+    const row = el("div", "utg-sel-count-row");
+    const count = el("p", "utg-sel-count");
+    count.setAttribute("aria-live", "polite");
+    row.appendChild(count);
+    const clear = el("button", "utg-sel-clear", t("clearAll"));
+    clear.type = "button";
+    clear.addEventListener("click", () => {
+      if (!sel.count()) return;
+      sel.clear();
+      track("clear");
+      changed();
+      // The button hides at zero; keep focus inside this surface.
+      const host = clear.closest(".utg-sel-dialog") || clear.closest(".utg-selection-tray");
+      const next = host ? host.querySelector(".utg-sel-dialog-close, .utg-sel-cancel") : null;
+      if (next) next.focus({ preventScroll: true });
+    });
+    row.appendChild(clear);
+    return row;
+  }
+
   function buildTray() {
     tray = el("section", "utg-selection-tray");
     tray.id = "utgImageSelection";
@@ -1051,9 +1146,7 @@
     body.appendChild(thumb);
 
     const main = el("div", "utg-sel-main");
-    const count = el("p", "utg-sel-count");
-    count.setAttribute("aria-live", "polite");
-    main.appendChild(count);
+    main.appendChild(buildCountRow());
     main.appendChild(el("div", "utg-sel-list"));
     body.appendChild(main);
     tray.appendChild(body);
@@ -1072,6 +1165,7 @@
     cancel.type = "button";
     cancel.addEventListener("click", () => { track("cancel"); close(); });
     actions.appendChild(cancel);
+    actions.appendChild(buildCopyTextButton());
     actions.appendChild(buildDownloadButton());
     actions.appendChild(buildShareButton());
     tray.appendChild(actions);
@@ -1094,6 +1188,14 @@
   // share and then saving a file.
   function primaryIsShare() {
     return !!(ns.canShareFiles && ns.canShareFiles());
+  }
+
+  function buildCopyTextButton() {
+    const b = el("button", "utg-sel-copytext", t("copyLabel"));
+    b.type = "button";
+    b.hidden = true;
+    b.addEventListener("click", () => copySelectionAsText(b));
+    return b;
   }
 
   function buildShareButton() {
@@ -1119,30 +1221,40 @@
     const n = sel.count();
     const fits = !render || render.fits !== false;
     const count = host.querySelector(".utg-sel-count");
-    if (count) count.textContent = t("count", { n: n });
+    if (count) {
+      count.textContent = t("count", { n: n });
+      count.hidden = !n; // at zero the empty line says it once, not twice
+    }
+    host.classList.toggle("has-items", n > 0);
+    const copyText = host.querySelector(".utg-sel-copytext");
+    if (copyText) copyText.hidden = !(blocked && n);
+    const clear = host.querySelector(".utg-sel-clear");
+    if (clear) clear.hidden = !n || busy;
     const list = host.querySelector(".utg-sel-list");
     if (list) renderList(list);
     host.querySelectorAll(".utg-sel-share").forEach((b) => {
       const label = b.querySelector(".utg-sel-share-label");
       if (label) label.textContent = busy ? t("making") : (primaryIsShare() ? t("shareImage") : t("downloadImage"));
-      const off = busy || !n || !fits;
-      b.disabled = !n || !fits;
+      const off = busy || !n || !fits || blocked;
+      b.disabled = !n || !fits || blocked;
       b.setAttribute("aria-disabled", off ? "true" : "false");
       b.classList.toggle("is-busy", busy);
     });
     host.querySelectorAll(".utg-sel-download").forEach((b) => {
       b.hidden = !(lastShareFailed && primaryIsShare());
-      b.disabled = !n || !fits;
+      b.disabled = !n || !fits || blocked;
     });
     const thumb = host.querySelector(".utg-sel-thumb");
     if (thumb) {
-      thumb.hidden = !n;
+      // No picture yet (rendering, or it failed): no empty frame that
+      // promises a preview it cannot show.
+      thumb.hidden = !n || !render;
       const img = thumb.querySelector("img");
       if (img && render && render.url && img.src !== render.url) img.src = render.url;
     }
     const preview = host.querySelector(".utg-sel-preview");
     if (preview) {
-      preview.hidden = !n;
+      preview.hidden = !n || !render;
       if (render && render.url && preview.src !== render.url) preview.src = render.url;
       preview.alt = sel.items().map((i) => (i.label && i.label !== i.value ? i.label : i.value)).join(", ");
     }
@@ -1159,10 +1271,14 @@
     return st ? st.textContent : "";
   }
 
-  function say(msg) {
+  // `isError` styles the line as an error (colour AND an icon, never
+  // colour alone), so a failure does not read like neutral information.
+  function say(msg, isError) {
     [tray, dialog].forEach((host) => {
-      const s = host && host.querySelector(".utg-sel-status");
-      if (s) s.textContent = msg || "";
+      const st = host && host.querySelector(".utg-sel-status");
+      if (!st) return;
+      st.textContent = msg || "";
+      st.classList.toggle("is-error", !!(msg && isError));
     });
   }
 
@@ -1174,7 +1290,10 @@
   function scheduleRender() {
     clearTimeout(renderTimer);
     renderTimer = setTimeout(() => {
-      makeRender().catch(() => { if (active) say(t("renderFailed")); });
+      makeRender().catch(() => {
+        if (!active) return;
+        renderFailed();
+      });
     }, 120);
   }
 
@@ -1224,12 +1343,30 @@
     });
   }
 
+  // toDataURL, decoded by hand: the route when toBlob is missing or hands
+  // back null (seen on some privacy-hardened browsers), without a fetch().
+  function dataUrlBlob(canvas) {
+    const url = canvas.toDataURL("image/png");
+    const comma = url.indexOf(",");
+    if (comma < 0 || url.indexOf("image/png") < 0) throw new Error("toDataURL gave no PNG");
+    const bin = atob(url.slice(comma + 1));
+    const bytes = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return new Blob([bytes], { type: "image/png" });
+  }
+
   function toBlob(canvas) {
     return new Promise((resolve, reject) => {
+      const viaDataUrl = (why) => {
+        try { resolve(dataUrlBlob(canvas)); } catch (err) { reject(why || err); }
+      };
+      if (typeof canvas.toBlob !== "function") { viaDataUrl(); return; }
       try {
-        canvas.toBlob((blob) => (blob ? resolve(blob) : reject(new Error("toBlob"))), "image/png");
+        canvas.toBlob((blob) => (blob ? resolve(blob) : viaDataUrl(new Error("toBlob returned nothing"))), "image/png");
       } catch (err) {
-        reject(err); // a tainted canvas throws SecurityError here
+        // A tainted canvas throws SecurityError here, and toDataURL would
+        // throw the same; report the original.
+        if (err && err.name === "SecurityError") reject(err); else viaDataUrl(err);
       }
     });
   }
@@ -1237,6 +1374,58 @@
   // One render per selection version. A second caller (Share pressed while
   // the debounced render is still running) waits for the same one.
   let inflight = null;
+  let lastRenderError = null;
+  let failures = 0;     // consecutive render failures
+  let blocked = false;  // two in a row: this browser will not make the image
+
+  /* A failure that repeats is not going to fix itself on "Try again" (a
+     privacy setting that blocks canvas export, say). After the second one
+     the tray says so plainly, disables the image buttons, and offers the
+     one thing that still works here: copying the chosen emojis as text. */
+  function renderFailed() {
+    failures++;
+    blocked = failures >= 2;
+    say(blocked ? t("renderBlocked") : t("renderFailed"), true);
+    track("render_failed", lastRenderError);
+    paint();
+  }
+
+  function copySelectionAsText(btn) {
+    const text = sel.values().join(" ");
+    const done = () => {
+      if (ns.toast) ns.toast(text);
+      track("copy_text_fallback");
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(() => {
+        if (ns.fallbackCopy) { ns.fallbackCopy(text); done(); }
+      });
+    } else if (ns.fallbackCopy) {
+      ns.fallbackCopy(text);
+      done();
+    }
+    if (btn) btn.focus({ preventScroll: true });
+  }
+
+  /* Windows has no colour flag glyphs: drawn as text, 🇸🇬 comes out as the
+     letters "SG". On a page that shows Twemoji flags, exporting letters the
+     visitor never saw would be a silent wrong answer, so when the pictures
+     cannot be used and this device draws flags as letters, that counts as
+     a failure rather than a success. */
+  let flagLetters = null;
+  function deviceDrawsFlagsAsLetters() {
+    if (flagLetters !== null) return flagLetters;
+    flagLetters = false;
+    try {
+      const c = document.createElement("canvas").getContext("2d");
+      c.font = '40px "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif';
+      const pair = c.measureText("\u{1F1F8}\u{1F1EC}").width;
+      const apart = c.measureText("\u{1F1F8}").width + c.measureText("\u{1F1EC}").width;
+      flagLetters = pair > apart * 0.8;
+    } catch (e) { flagLetters = false; }
+    return flagLetters;
+  }
+  const RI_RE = /\p{Regional_Indicator}/u;
   function makeRender() {
     const v = version;
     if (render && render.version === v) return Promise.resolve(render);
@@ -1252,17 +1441,37 @@
       if (!out) throw new Error("render");
       return toBlob(out.canvas).then((blob) => ({ blob: blob, fits: out.fits }));
     };
+    // Picture glyphs first when the page has them; on any failure, the
+    // device's own glyphs. A failure that survives both is reported with the
+    // browser's own error so it can be diagnosed, not guessed at.
     const promise = artworkFor(values)
-      .then((images) => draw(images).catch((err) => {
-        if (!images) throw err;
-        console.warn("Selection artwork unusable, drawing system glyphs:", err);
-        return draw(null);
-      }))
+      .catch(() => null)
+      .then((images) => {
+        let first = null;
+        const plain = () => {
+          if (window.twemoji && values.some((v) => RI_RE.test(v)) && deviceDrawsFlagsAsLetters()) {
+            const e = new Error("This device draws flags as letters and the flag pictures could not be used.");
+            e.name = "FlagGlyphsMissing";
+            return Promise.reject(e);
+          }
+          try { return draw(null); } catch (err) { return Promise.reject(err); }
+        };
+        if (!images) return plain();
+        let attempt;
+        try { attempt = draw(images); } catch (err) { attempt = Promise.reject(err); }
+        return attempt.catch((err) => {
+          first = err;
+          console.warn("Selection image: artwork unusable (" + (err && err.name) + "), drawing device glyphs instead.", err);
+          return plain().catch((err2) => { throw err2 || first; });
+        });
+      })
       .then((res) => {
         if (inflight && inflight.version === v) inflight = null;
         if (v !== version) return makeRender(); // changed meanwhile
         dropRender();
         render = { version: v, blob: res.blob, url: URL.createObjectURL(res.blob), fits: res.fits };
+        failures = 0;
+        blocked = false;
         // Only this render's own message is cleared here: a "you can add
         // up to 50" said a moment ago must stay on screen.
         if (!res.fits) say(t("tooBig"));
@@ -1271,7 +1480,8 @@
         return render;
       }, (err) => {
         if (inflight && inflight.version === v) inflight = null;
-        console.error("Selection image failed:", err);
+        console.error("Selection image failed (" + (err && err.name) + "):", err);
+        lastRenderError = (err && err.name) || "Error";
         throw err;
       });
     inflight = { version: v, promise: promise };
@@ -1301,8 +1511,7 @@
     if (!active) { busy = false; return; } // Cancel pressed while rendering
     if (!r) {
       busy = false;
-      say(t("renderFailed"));
-      track("render_failed");
+      renderFailed();
       paint();
       refocus(btn);
       return;
@@ -1381,9 +1590,7 @@
     img.alt = "";
     dialog.appendChild(img);
 
-    const count = el("p", "utg-sel-count");
-    count.setAttribute("aria-live", "polite");
-    dialog.appendChild(count);
+    dialog.appendChild(buildCountRow());
     dialog.appendChild(el("div", "utg-sel-list"));
 
     const status = el("p", "utg-sel-status");
@@ -1391,10 +1598,8 @@
     dialog.appendChild(status);
 
     const actions = el("div", "utg-sel-actions");
-    const closeBtn = el("button", "utg-sel-cancel", t("close"));
-    closeBtn.type = "button";
-    closeBtn.addEventListener("click", () => dialog.close());
-    actions.appendChild(closeBtn);
+    // One close control (the × above), not two.
+    actions.appendChild(buildCopyTextButton());
     actions.appendChild(buildDownloadButton());
     actions.appendChild(buildShareButton());
     dialog.appendChild(actions);
@@ -1460,16 +1665,27 @@
       openDialog(entry, "reopen");
       return;
     }
+    // Entering the mode adds notes to some sets; keep the button that was
+    // pressed exactly where it was on screen, so the visitor sees what their
+    // press did instead of the page jumping (UX audit, 2026-10-02).
+    const anchorTop = entry && entry.getBoundingClientRect ? entry.getBoundingClientRect().top : null;
     active = true;
     sel.clear();
     version++;
+    failures = 0;
+    blocked = false;
     document.documentElement.classList.add("utg-image-selecting");
     if (!tray) buildTray();
     tray.hidden = false;
     say(""); // nothing from a previous session carries over
     paintAllTiles();
-    addCollectionButtons();
+    addCollectionNotes();
+    paintCollectionButtons();
     paint();
+    if (anchorTop !== null && entry.isConnected) {
+      const drift = entry.getBoundingClientRect().top - anchorTop;
+      if (Math.abs(drift) > 1) window.scrollBy(0, drift);
+    }
     // The instruction, spoken once on entry; it also stays on screen. Set
     // after a beat so the new live region is in the tree before it changes.
     const sr = tray.querySelector(".utg-sel-sr");
@@ -1493,11 +1709,21 @@
       const sr = tray.querySelector(".utg-sel-sr");
       if (sr) sr.textContent = "";
     }
+    const keep = opener && opener.isConnected ? opener : null;
+    const keepTop = keep ? keep.getBoundingClientRect().top : null;
     document.documentElement.classList.remove("utg-image-selecting");
     document.documentElement.style.removeProperty("--utg-sel-tray-h");
     restoreTiles();
-    document.querySelectorAll(".symbol-collection-add, .symbol-collection-note").forEach((b) => b.remove());
+    // The set buttons stay (they are symbol-explorer.js's, and work outside
+    // the mode); only the in-mode notes go. announceChange() below repaints
+    // the buttons' closed-state label.
+    document.querySelectorAll(".symbol-collection-note").forEach((b) => b.remove());
+    document.querySelectorAll(".symbol-collection-add").forEach((b) => b.classList.remove("is-all-selected"));
     announceChange();
+    if (keep && keep.isConnected) {
+      const drift = keep.getBoundingClientRect().top - keepTop;
+      if (Math.abs(drift) > 1) window.scrollBy(0, drift);
+    }
     // Without preventScroll the page jumped to the entry button, up to a
     // couple of thousand pixels away from where the visitor was working.
     if (opener && opener.isConnected) opener.focus({ preventScroll: true });
@@ -1509,8 +1735,13 @@
     if (!v || !drawable(v)) return;
     const r = sel.toggle(v, nameOf(tile));
     if (r === "limit") {
-      say(t("limit", { max: MAX_ITEMS }));
+      say(t("limit", { max: MAX_ITEMS }), true);
       track("limit");
+      // The tile the visitor pressed shows it was refused, not just the tray.
+      tile.classList.remove("is-image-refused");
+      void tile.offsetWidth;
+      tile.classList.add("is-image-refused");
+      setTimeout(() => tile.classList.remove("is-image-refused"), 600);
       return;
     }
     changed();
@@ -1526,6 +1757,7 @@
     count: () => sel.count(),
     values: () => sel.values(),
     toggleTile: toggleTile,
+    toggleSet: toggleSet,
     MAX_ITEMS: MAX_ITEMS
   };
   ns.createImageSelection = createSelection;

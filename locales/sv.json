@@ -156,7 +156,9 @@
       "shareFailed": "Kunde inte dela. Prova att ladda ner.",
       "renderFailed": "Kunde inte skapa bilden. Försök igen.",
       "trayLabel": "Bildurval",
-      "setUnavailable": "Den här samlingen kan inte läggas i en bild än."
+      "setUnavailable": "Den här samlingen kan inte läggas i en bild än.",
+      "addAllToImage": "Lägg alla {n} i en bild",
+      "renderBlocked": "Webbläsaren blockerade bilden. Kopiera emojierna i stället."
     }
   },
   "useCases": {

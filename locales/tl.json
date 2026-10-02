@@ -232,7 +232,9 @@
       "shareFailed": "Hindi na-share. Subukang i-download.",
       "renderFailed": "Hindi nagawa ang larawan. Subukan ulit.",
       "trayLabel": "Pagpili para sa larawan",
-      "setUnavailable": "Hindi pa maidaragdag ang set na ito sa larawan."
+      "setUnavailable": "Hindi pa maidaragdag ang set na ito sa larawan.",
+      "addAllToImage": "Idagdag lahat ({n}) sa larawan",
+      "renderBlocked": "Hinarang ng browser na ito ang larawan. Kopyahin na lang ang mga emoji."
     }
   },
   "useCases": {

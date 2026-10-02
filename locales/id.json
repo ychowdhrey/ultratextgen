@@ -232,7 +232,9 @@
       "shareFailed": "Gagal membagikan. Coba unduh.",
       "renderFailed": "Gagal membuat gambar. Coba lagi.",
       "trayLabel": "Pilihan gambar",
-      "setUnavailable": "Set ini belum bisa ditambahkan ke gambar."
+      "setUnavailable": "Set ini belum bisa ditambahkan ke gambar.",
+      "addAllToImage": "Tambah semua {n} ke gambar",
+      "renderBlocked": "Browser ini memblokir gambarnya. Salin emojinya saja."
     }
   },
   "useCases": {

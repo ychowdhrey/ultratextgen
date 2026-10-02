@@ -48,7 +48,8 @@ const KEYS = {
   copyLabel: 'copyButtons.copy',
   // The two entry-button labels for "Select and share image" (2026-10-01).
   selectImage: 'imageSelection.selectImage',
-  viewSelection: 'imageSelection.viewSelection'
+  viewSelection: 'imageSelection.viewSelection',
+  addAllToImage: 'imageSelection.addAllToImage'
 };
 
 /** The selection UI itself (js/share/image-selection.js) is loaded only when
@@ -58,7 +59,11 @@ const KEYS = {
 const SELECTION_KEYS = {};
 ['hint', 'count', 'empty', 'shareImage', 'downloadImage', 'cancel', 'preview', 'close',
   'remove', 'addAll', 'removeAll', 'limit', 'tooBig', 'making', 'shared', 'downloaded',
-  'shareFailed', 'renderFailed', 'trayLabel', 'setUnavailable'].forEach((k) => { SELECTION_KEYS[k] = `imageSelection.${k}`; });
+  'shareFailed', 'renderFailed', 'trayLabel', 'setUnavailable', 'renderBlocked'].forEach((k) => { SELECTION_KEYS[k] = `imageSelection.${k}`; });
+// Harvested from an existing key rather than authored: every locale already
+// ships "Clear all" for the saved-styles list.
+SELECTION_KEYS.clearAll = 'savedStyles.clearAll';
+SELECTION_KEYS.copyLabel = 'copyButtons.copy';
 
 const TARGETS = [
   { file: path.join(ROOT, 'symbol-explorer.js'), keys: KEYS },

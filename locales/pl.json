@@ -232,7 +232,9 @@
       "shareFailed": "Nie udało się udostępnić. Spróbuj pobrać.",
       "renderFailed": "Nie udało się stworzyć obrazu. Spróbuj ponownie.",
       "trayLabel": "Wybór do obrazu",
-      "setUnavailable": "Tego zestawu nie można jeszcze dodać do obrazu."
+      "setUnavailable": "Tego zestawu nie można jeszcze dodać do obrazu.",
+      "addAllToImage": "Dodaj wszystkie ({n}) do obrazu",
+      "renderBlocked": "Ta przeglądarka zablokowała obraz. Skopiuj zamiast tego emoji."
     }
   },
   "useCases": {

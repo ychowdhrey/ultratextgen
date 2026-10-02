@@ -561,6 +561,8 @@ html.utg-image-selecting .symbol-select-btn {
 
 body.dark-mode .symbol-select-btn { --accent-purple-text: #c4b5fd; }
 
+.symbol-section-actions--top { margin: 0.25rem 0 0.75rem; }
+
 /* The section's action row wraps rather than squeezing a long translation. */
 .symbol-section-actions .result-share-row {
   flex-wrap: wrap;
@@ -569,17 +571,21 @@ body.dark-mode .symbol-select-btn { --accent-purple-text: #c4b5fd; }
 /* ---- tiles while selecting ---- */
 /* Every choosable tile shows a faint dashed ring, so it is plain the whole
    page is in play, not just the section whose button was pressed. */
+/* Rings are outlines drawn INSIDE the tile (negative offset): entering the
+   mode must not change any layout, or the button just pressed slides off
+   screen (UX audit 2026-10-02 measured a 500px jump on a phone when the
+   rows grew). */
 html.utg-image-selecting .symbol-tile[aria-pressed] {
   outline: 1px dashed rgba(139, 92, 246, 0.55);
-  outline-offset: 3px;
+  outline-offset: -1px;
   border-radius: 10px;
 }
 
 html.utg-image-selecting .symbol-tile.is-image-selected {
   position: relative;
   outline: 3px solid var(--accent-purple, #8b5cf6);
-  outline-offset: 2px;
-  background: rgba(139, 92, 246, 0.12);
+  outline-offset: -3px;
+  background: rgba(139, 92, 246, 0.14);
   transform: none;
 }
 
@@ -590,9 +596,29 @@ html.utg-image-selecting .flag-rows--text .symbol-tile.is-image-selected {
   position: static;
 }
 
-/* Room between a tile's ring and its name, so the outline never sits on
-   the label. */
-html.utg-image-selecting .flag-row { gap: 10px; }
+/* A refused press (the 50-item limit) shakes the tile that was pressed. */
+html.utg-image-selecting .symbol-tile.is-image-refused {
+  animation: utg-sel-refuse 0.45s ease;
+}
+
+@keyframes utg-sel-refuse {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.utg-image-selecting .symbol-tile.is-image-refused {
+    animation: none;
+    outline-color: #dc2626;
+  }
+}
+
+/* On touch, a hover background would linger on the tile just tapped and
+   read as a third state. */
+@media (hover: none) {
+  html.utg-image-selecting .flag-row:hover { background: none; }
+}
 
 /* The tick, drawn as SVG rather than a ✓ glyph, which some fonts lack.
    ::before, because a text-object grid already spends ::after on the card's
@@ -600,8 +626,8 @@ html.utg-image-selecting .flag-row { gap: 10px; }
 html.utg-image-selecting .symbol-tile.is-image-selected::before {
   content: "";
   position: absolute;
-  top: -11px;
-  inset-inline-end: -11px;
+  top: -8px;
+  inset-inline-end: -8px;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -633,20 +659,26 @@ html.utg-image-selecting body {
 .symbol-collection-add {
   display: inline-flex;
   align-items: center;
-  margin: 0.5rem 0 0.25rem;
-  padding: 7px 14px;
-  border: 1px dashed var(--accent-purple, #8b5cf6);
+  gap: 6px;
+  /* Clear air above "Copy format", so the button reads as the set's own
+     action rather than part of the copy controls below it. */
+  margin: 0.6rem 0 0.9rem;
+  padding: 8px 18px;
+  border: 1px solid var(--accent-purple, #8b5cf6);
   border-radius: 8px;
   background: var(--bg-white, #fff);
   color: var(--accent-purple-text, #6d4fc7);
   font-family: inherit;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 600;
   cursor: pointer;
 }
 
+.symbol-collection-add:hover { background: rgba(139, 92, 246, 0.06); }
+
+.symbol-collection-add svg { flex: 0 0 auto; }
+
 .symbol-collection-add.is-all-selected {
-  border-style: solid;
   background: rgba(139, 92, 246, 0.12);
 }
 
@@ -735,21 +767,53 @@ body.dark-mode .symbol-collection-add { --accent-purple-text: #c4b5fd; }
   font-size: 0.8125rem;
 }
 
+.utg-sel-count-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+/* A quiet text action: secondary to Share, never mistaken for Cancel. */
+.utg-sel-clear {
+  padding: 2px 4px;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  color: var(--text-secondary, #64748b);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.utg-sel-clear[hidden] { display: none; }
+
+.utg-sel-clear:hover { color: #b91c1c; }
+
+.utg-sel-clear:focus-visible {
+  outline: 2px solid var(--accent-purple, #8b5cf6);
+  outline-offset: 2px;
+}
+
 .utg-sel-list { min-width: 0; }
 
-/* One scrolling row in the tray; it wraps in the roomier dialog. */
+/* Chips wrap, up to about two rows in the tray, then scroll vertically:
+   a mouse wheel scrolls it, and Windows shows no sideways scrollbar with
+   arrows under a clipped pill (UX audit 2026-10-02). */
 .utg-sel-chips {
   display: flex;
+  flex-wrap: wrap;
   gap: 6px;
   margin: 4px 0 0;
   padding: 2px 2px 4px;
   list-style: none;
-  overflow-x: auto;
+  max-height: 86px;
+  overflow-y: auto;
   scrollbar-width: thin;
 }
 
 .utg-sel-dialog .utg-sel-chips {
-  flex-wrap: wrap;
+  max-height: none;
   overflow: visible;
 }
 
@@ -803,6 +867,37 @@ body.dark-mode .symbol-collection-add { --accent-purple-text: #c4b5fd; }
 }
 
 .utg-sel-status:empty { display: none; }
+
+/* An error is red AND carries a mark, never colour alone. */
+.utg-sel-status.is-error {
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+.utg-sel-status.is-error::before {
+  content: "!";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.15em;
+  height: 1.15em;
+  margin-inline-end: 6px;
+  border-radius: 50%;
+  background: #b91c1c;
+  color: #fff;
+  font-size: 0.75em;
+  vertical-align: 0.05em;
+}
+
+body.dark-mode .utg-sel-status.is-error { color: #fca5a5; }
+
+.utg-sel-copytext {
+  border: 1px solid var(--border-light, #e2e8f0);
+  background: var(--bg-white, #fff);
+  color: var(--text-primary, #1a1a2e);
+}
+
+.utg-sel-copytext[hidden] { display: none; }
 
 .utg-sel-sr {
   position: absolute;
@@ -924,7 +1019,37 @@ body.dark-mode .symbol-collection-add { --accent-purple-text: #c4b5fd; }
   .utg-selection-tray { padding: 8px 10px; }
   .utg-sel-hint { font-size: 0.75rem; }
   .utg-sel-actions button { flex: 1 1 auto; }
+  /* Once something is picked, the chips show the idea; the hint's two
+     lines go back to the page, where the visitor is picking. */
+  .utg-selection-tray.has-items .utg-sel-hint { display: none; }
+  /* One visible row of chips on a phone (the rest scroll, and the preview
+     shows them all): at 320px two rows put the tray near half the screen. */
+  .utg-selection-tray .utg-sel-chips { max-height: 52px; }
 }
+
+/* On a phone the sticky header and the tray together covered up to 62% of
+   the screen (320x640). While picking, the header scrolls away with the
+   page; it is still there at the top. */
+@media (max-width: 600px) {
+  html.utg-image-selecting .header { position: static; }
+}
+
+/* Touch: 44px targets for everything in the tray. */
+@media (pointer: coarse) {
+  /* Two rows of 44px chips, never a half-cut second row. */
+  .utg-sel-chips { max-height: 100px; }
+  .utg-selection-tray .utg-sel-chips { scroll-snap-type: y mandatory; }
+  .utg-selection-tray .utg-sel-chips li { scroll-snap-align: start; }
+  .utg-sel-actions button,
+  .utg-sel-chip,
+  .utg-sel-dialog-close { min-height: 44px; }
+  .utg-sel-dialog-close { min-width: 44px; }
+  .utg-sel-clear { min-height: 44px; padding: 10px 8px; }
+}
+
+/* Korean breaks between words, never inside one. */
+.utg-selection-tray:lang(ko),
+.utg-sel-dialog:lang(ko) { word-break: keep-all; }
 
 @media (prefers-reduced-motion: reduce) {
   .symbol-select-btn { transition: none; }

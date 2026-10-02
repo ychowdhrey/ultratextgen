@@ -167,6 +167,65 @@ Rules that came out of building and auditing it, each with a test:
   only as long as the page and never reads or writes it. The saved strip keeps its
   own Share pair.
 
+### Owner feedback and the UI/UX audit (2026-10-02)
+
+Three reports from the owner, on a real Windows browser:
+
+1. **"It's not able to create an image."** The tray showed "Couldn't make the
+   image" with an empty thumbnail on the Twemoji flags page.
+   - It did not reproduce anywhere else: not in headless Chromium against the
+     live preview, the real CDN responses (which do send
+     `access-control-allow-origin: *`), the owner's exact selection, nor
+     forced cache paths.
+   - So the render path no longer trusts any single export route. It tries
+     picture glyphs, then the device's glyphs, then `toBlob`, then
+     `toDataURL`.
+   - A failure that survives all of them is logged with the browser's error
+     name, and `image_selection` carries it as `selection_error`. The name only.
+   - After two failures in a row the tray says the browser blocked the image,
+     disables the image buttons, and offers **Copy** (the chosen emojis as
+     text). The first version said "Try again" forever.
+   - On a Twemoji page, a device that draws flags as letters (Windows) is
+     treated as a failure rather than exporting "SG MY ID" for flags the
+     visitor saw as pictures.
+2. **"No Clear all while the selector stays open."** "Clear all" now sits beside
+   the count in the tray and the preview. It empties the selection and keeps
+   the mode open. The string is the existing `savedStyles.clearAll`.
+3. **"I won't see the option on a set unless I first press the button at the
+   top."** Every member-list set now carries "Add all n to an image" at rest.
+   One press opens the mode and adds that set; inside the mode it reads
+   "Add all n" / "Remove all n". It is still the set's own explicit button.
+
+Also fixed from the same audit:
+
+- **Entering the mode no longer moves the page.** Rings are drawn inside the
+  tile (negative outline offset), and the pressed button is held at its
+  on-screen position. A row-gap change had pushed the pressed button about
+  500px off a phone screen.
+- **A long first section gets the entry above its grid as well.** The flags
+  page's first button was after 203 tiles.
+- **The tray is smaller and quieter on phones.**
+  - Chips wrap to about two rows and scroll vertically.
+  - The hint hides on phones once something is picked.
+  - The sticky header unpins while selecting at ≤600px. At 320×640 the header
+    and tray had covered 62% of the screen.
+  - Touch targets are 44px.
+  - Korean wraps at word boundaries.
+- **State is clearer.**
+  - Errors are red with a mark.
+  - The 50-item limit shakes the refused tile.
+  - There is no "0 selected" alongside "Nothing selected yet".
+  - The preview has one close control.
+  - The set button carries the same weight as "Copy Collection".
+
+Kept as the brief specifies, against the audit's suggestion:
+
+- **Cancel clears the selection.** The brief asks for exactly that.
+- **"View selection (0)" marks an open session.**
+- **Pressing an already-chosen repeat removes it.** One state across
+  occurrences.
+- **Escape closes only the preview.** It never discards picks.
+
 ### Analytics for the selection
 
 `share_text` is still written only by `pushShare`. A completed share is

@@ -132,7 +132,9 @@
       "shareFailed": "Jakaminen ei onnistunut. Kokeile latausta.",
       "renderFailed": "Kuvan luominen ei onnistunut. Yritä uudelleen.",
       "trayLabel": "Kuvan valinta",
-      "setUnavailable": "Tätä sarjaa ei voi vielä lisätä kuvaan."
+      "setUnavailable": "Tätä sarjaa ei voi vielä lisätä kuvaan.",
+      "addAllToImage": "Lisää kaikki {n} kuvaan",
+      "renderBlocked": "Selain esti kuvan. Kopioi emojit sen sijaan."
     }
   }
 }

@@ -232,7 +232,9 @@
       "shareFailed": "共有できませんでした。ダウンロードをお試しください。",
       "renderFailed": "画像を作成できませんでした。もう一度お試しください。",
       "trayLabel": "画像用の選択",
-      "setUnavailable": "このセットはまだ画像に追加できません。"
+      "setUnavailable": "このセットはまだ画像に追加できません。",
+      "addAllToImage": "{n}個すべてを画像に追加",
+      "renderBlocked": "このブラウザでは画像を作成できませんでした。代わりに絵文字をコピーしてください。"
     }
   },
   "useCases": {

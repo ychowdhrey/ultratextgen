@@ -156,7 +156,9 @@
       "shareFailed": "Không chia sẻ được. Thử tải xuống.",
       "renderFailed": "Không tạo được ảnh. Thử lại.",
       "trayLabel": "Chọn cho ảnh",
-      "setUnavailable": "Chưa thể thêm bộ này vào ảnh."
+      "setUnavailable": "Chưa thể thêm bộ này vào ảnh.",
+      "addAllToImage": "Thêm cả {n} vào ảnh",
+      "renderBlocked": "Trình duyệt này đã chặn ảnh. Hãy sao chép emoji thay vào đó."
     }
   },
   "useCases": {

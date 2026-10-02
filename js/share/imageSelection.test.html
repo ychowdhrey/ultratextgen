@@ -158,7 +158,11 @@ window.addEventListener("load", function () {
     check("Share wears the link icon", share && /M13\.828 10\.172/.test(share.innerHTML));
     check("no per-section image button remains", $$(".symbol-section-actions .share-image-btn").length === 0);
     check("no image button beside each emoji", $$(".flag-row .symbol-select-btn, .flag-row .share-image-btn").length === 0);
-    check("collection sets get no Add button until a selection opens", $$(".symbol-collection-add").length === 0);
+    var restSet = $$(".symbol-collection-add");
+    check("the member-list set (ASEAN) has its own button before any selection, the trail and kaomoji sets do not",
+      restSet.length === 1, restSet.length);
+    check("at rest it says what it does: Add all 10 to an image",
+      restSet[0] && restSet[0].textContent.trim() === "Add all 10 to an image", restSet[0] && restSet[0].textContent.trim());
 
     /* ---- 2. outside the mode, a press copies ---- */
     var copies = events("copy_text").length;
@@ -233,18 +237,18 @@ window.addEventListener("load", function () {
     var adds = $$(".symbol-collection-add");
     check("Add all appears on the member-list set only (ASEAN), not on a trail or kaomoji set", adds.length === 1, adds.length);
     var asean = adds[0];
-    check("its label says Add all 10", asean && asean.textContent === "Add all 10", asean && asean.textContent);
+    check("inside the mode it says Add all 10", asean && asean.textContent.trim() === "Add all 10", asean && asean.textContent.trim());
     check("it names its set for a screen reader", asean && document.getElementById(asean.getAttribute("aria-describedby")).textContent === "ASEAN");
     check("the set was not selected by opening the mode", UTG.imageSelection.values().indexOf("🇸🇬") === -1);
     asean.click();
     var vals = UTG.imageSelection.values();
     check("Add all adds the ten flags after the existing picks", vals.length === 13 && vals[3] === "🇸🇬" && vals[12] === "🇲🇲", vals.join(""));
-    check("button now offers Remove all 10", asean.textContent === "Remove all 10");
+    check("button now offers Remove all 10", asean.textContent.trim() === "Remove all 10");
     var chip = $$(".utg-sel-chip", tray).filter(function (c) { return $(".utg-sel-chip-glyph", c).textContent === "🇮🇩"; })[0];
     chip.click();
     check("one flag removed on its own from the tray", UTG.imageSelection.values().indexOf("🇮🇩") === -1 && UTG.imageSelection.count() === 12);
     check("focus stays in the chip list after removing", document.activeElement && document.activeElement.classList.contains("utg-sel-chip"));
-    check("set button returns to Add all once partly removed", asean.textContent === "Add all 10");
+    check("set button returns to Add all once partly removed", asean.textContent.trim() === "Add all 10");
     asean.click();
     check("Add all re-adds only the missing one", UTG.imageSelection.count() === 13);
     asean.click();
@@ -356,7 +360,9 @@ window.addEventListener("load", function () {
     check("entries back to Select and share image", $$(".symbol-select-btn").every(function (b) { return b.textContent.trim() === "Select and share image"; }));
     check("tile names restored", $("#faces .symbol-tile").getAttribute("aria-label") === "Copy Holding back tears");
     check("no tile left pressed", $$(".symbol-tile[aria-pressed]").length === 0);
-    check("Add all buttons and set notes removed", $$(".symbol-collection-add, .symbol-collection-note").length === 0);
+    check("set notes removed", $$(".symbol-collection-note").length === 0);
+    check("the set button stays, back to its resting label", $$(".symbol-collection-add").length === 1 &&
+      $(".symbol-collection-add").textContent.trim() === "Add all 10 to an image");
     check("focus returns to the entry that last opened it", document.activeElement === anyEntry);
     copies = events("copy_text").length;
     $("#faces .symbol-tile").click();
@@ -372,6 +378,55 @@ window.addEventListener("load", function () {
     $(".utg-sel-chip", tray).click();
     check("removing the last chip moves focus to Cancel, not <body>", document.activeElement === $(".utg-sel-cancel", tray),
       document.activeElement && document.activeElement.className);
+    $(".utg-sel-cancel", tray).click();
+
+    /* ---- 13. a set's own button opens the mode and adds that set, in one press ---- */
+    var setTop = $(".symbol-collection-add").getBoundingClientRect().top;
+    $(".symbol-collection-add").click();
+    await until(function () { return UTG.imageSelection.isActive() && UTG.imageSelection.count() === 10; });
+    check("pressing a set's button outside the mode opens it with that set added",
+      UTG.imageSelection.isActive() && UTG.imageSelection.values().join("") === "🇸🇬🇲🇾🇮🇩🇹🇭🇵🇭🇻🇳🇧🇳🇰🇭🇱🇦🇲🇲", UTG.imageSelection.values().join(""));
+    check("and it now offers Remove all 10", $(".symbol-collection-add").textContent.trim() === "Remove all 10");
+    check("the pressed button stays where it was on screen (no layout jump)",
+      Math.abs($(".symbol-collection-add").getBoundingClientRect().top - setTop) <= 1,
+      setTop + " -> " + $(".symbol-collection-add").getBoundingClientRect().top);
+
+    /* ---- 14. Clear all empties the selection and keeps the mode open ---- */
+    var clearBtn = $(".utg-sel-clear", tray);
+    check("Clear all is shown with items selected", clearBtn && !clearBtn.hidden && clearBtn.textContent === "Clear all");
+    clearBtn.click();
+    check("Clear all empties the selection", UTG.imageSelection.count() === 0);
+    check("and keeps the mode open", UTG.imageSelection.isActive() && !tray.hidden);
+    check("Clear all hides itself at zero", clearBtn.hidden);
+    check("focus lands on Cancel, not <body>", document.activeElement === $(".utg-sel-cancel", tray));
+    check("clear recorded, not as a share", events("image_selection").some(function (e) { return e.selection_action === "clear"; }));
+    check("every funnel row carries selection_error (null unless a failure)", events("image_selection").every(function (e) {
+      return Object.prototype.hasOwnProperty.call(e, "selection_error"); }));
+    $(".utg-sel-cancel", tray).click();
+
+    /* ---- 15. a browser that blocks canvas export: a way forward, not a loop ---- */
+    var protoBlob = HTMLCanvasElement.prototype.toBlob, protoUrl = HTMLCanvasElement.prototype.toDataURL;
+    HTMLCanvasElement.prototype.toBlob = function () { var e = new Error("blocked"); e.name = "SecurityError"; throw e; };
+    HTMLCanvasElement.prototype.toDataURL = function () { var e = new Error("blocked"); e.name = "SecurityError"; throw e; };
+    $("#faces .symbol-select-btn").click();
+    await until(function () { return UTG.imageSelection.isActive(); });
+    $("#faces .symbol-tile[data-symbol='😂']").click();
+    await until(function () { return /Couldn't make/.test($(".utg-sel-status", tray).textContent); });
+    var st = $(".utg-sel-status", tray);
+    check("first failure: says so, styled as an error", /Couldn't make/.test(st.textContent) && st.classList.contains("is-error"), st.textContent);
+    check("no empty thumbnail promising a preview", $(".utg-sel-thumb", tray).hidden);
+    var failRow = events("image_selection").filter(function (e) { return e.selection_action === "render_failed"; }).pop();
+    check("the failure records the browser's error name only", failRow && failRow.selection_error === "SecurityError", failRow && failRow.selection_error);
+    $("#hearts .symbol-tile[data-symbol='✨']").click();
+    await until(function () { return /blocked the image/.test($(".utg-sel-status", tray).textContent); });
+    check("second failure: says this browser blocked it", /blocked the image/.test(st.textContent), st.textContent);
+    check("image buttons are disabled, not left to fail again", $(".utg-sel-share", tray).disabled);
+    var copyBtn = $(".utg-sel-copytext", tray);
+    check("and a Copy button offers the way forward", copyBtn && !copyBtn.hidden && copyBtn.textContent === "Copy");
+    copyBtn.click();
+    await until(function () { return events("image_selection").some(function (e) { return e.selection_action === "copy_text_fallback"; }); });
+    check("Copy copies the chosen emojis as text", events("image_selection").some(function (e) { return e.selection_action === "copy_text_fallback"; }));
+    HTMLCanvasElement.prototype.toBlob = protoBlob; HTMLCanvasElement.prototype.toDataURL = protoUrl;
     $(".utg-sel-cancel", tray).click();
 
     var summary = pass + " passed, " + fail + " failed";

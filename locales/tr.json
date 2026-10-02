@@ -232,7 +232,9 @@
       "shareFailed": "Paylaşılamadı. İndirmeyi dene.",
       "renderFailed": "Görsel oluşturulamadı. Tekrar dene.",
       "trayLabel": "Görsel seçimi",
-      "setUnavailable": "Bu set henüz bir görsele eklenemiyor."
+      "setUnavailable": "Bu set henüz bir görsele eklenemiyor.",
+      "addAllToImage": "Tümünü ({n}) görsele ekle",
+      "renderBlocked": "Bu tarayıcı görseli engelledi. Bunun yerine emojileri kopyala."
     }
   },
   "useCases": {

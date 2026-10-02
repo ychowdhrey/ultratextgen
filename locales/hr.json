@@ -156,7 +156,9 @@
       "shareFailed": "Dijeljenje nije uspjelo. Pokušaj preuzeti.",
       "renderFailed": "Slika nije izrađena. Pokušaj ponovno.",
       "trayLabel": "Odabir za sliku",
-      "setUnavailable": "Ovaj set još se ne može dodati u sliku."
+      "setUnavailable": "Ovaj set još se ne može dodati u sliku.",
+      "addAllToImage": "Dodaj sve ({n}) u sliku",
+      "renderBlocked": "Ovaj preglednik je blokirao sliku. Umjesto toga kopiraj emojije."
     }
   },
   "useCases": {

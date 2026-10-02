@@ -156,7 +156,9 @@
       "shareFailed": "Nu s-a putut distribui. Încearcă descărcarea.",
       "renderFailed": "Imaginea nu s-a putut crea. Încearcă din nou.",
       "trayLabel": "Selecție pentru imagine",
-      "setUnavailable": "Acest set nu poate fi adăugat încă într-o imagine."
+      "setUnavailable": "Acest set nu poate fi adăugat încă într-o imagine.",
+      "addAllToImage": "Adaugă toate ({n}) într-o imagine",
+      "renderBlocked": "Browserul a blocat imaginea. Copiază emoji-urile în schimb."
     }
   },
   "useCases": {

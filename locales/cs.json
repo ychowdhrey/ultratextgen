@@ -232,7 +232,9 @@
       "shareFailed": "Sdílení se nepovedlo. Zkus stáhnout.",
       "renderFailed": "Obrázek se nepovedlo vytvořit. Zkus to znovu.",
       "trayLabel": "Výběr pro obrázek",
-      "setUnavailable": "Tuhle sadu zatím nejde přidat do obrázku."
+      "setUnavailable": "Tuhle sadu zatím nejde přidat do obrázku.",
+      "addAllToImage": "Přidat všechny ({n}) do obrázku",
+      "renderBlocked": "Tenhle prohlížeč obrázek zablokoval. Zkopíruj místo toho emoji."
     }
   },
   "useCases": {

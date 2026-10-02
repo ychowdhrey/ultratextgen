@@ -132,7 +132,9 @@
       "shareFailed": "공유하지 못했습니다. 다운로드해 보세요.",
       "renderFailed": "이미지를 만들지 못했습니다. 다시 시도하세요.",
       "trayLabel": "이미지 선택",
-      "setUnavailable": "이 세트는 아직 이미지에 넣을 수 없습니다."
+      "setUnavailable": "이 세트는 아직 이미지에 넣을 수 없습니다.",
+      "addAllToImage": "{n}개 모두 이미지에 추가",
+      "renderBlocked": "이 브라우저에서 이미지가 차단되었습니다. 대신 이모지를 복사하세요."
     }
   }
 }

@@ -232,7 +232,9 @@
       "shareFailed": "Delen mislukt. Probeer te downloaden.",
       "renderFailed": "Afbeelding maken mislukt. Probeer het opnieuw.",
       "trayLabel": "Selectie voor afbeelding",
-      "setUnavailable": "Deze set kan nog niet in een afbeelding."
+      "setUnavailable": "Deze set kan nog niet in een afbeelding.",
+      "addAllToImage": "Alle {n} aan een afbeelding toevoegen",
+      "renderBlocked": "Deze browser blokkeerde de afbeelding. Kopieer de emoji's in plaats daarvan."
     }
   },
   "useCases": {

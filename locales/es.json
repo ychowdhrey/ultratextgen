@@ -232,7 +232,9 @@
       "shareFailed": "No se pudo compartir. Prueba a descargarla.",
       "renderFailed": "No se pudo crear la imagen. Inténtalo de nuevo.",
       "trayLabel": "Selección de imagen",
-      "setUnavailable": "Este conjunto aún no se puede añadir a una imagen."
+      "setUnavailable": "Este conjunto aún no se puede añadir a una imagen.",
+      "addAllToImage": "Añadir los {n} a una imagen",
+      "renderBlocked": "Este navegador bloqueó la imagen. Copia los emojis en su lugar."
     }
   },
   "useCases": {
