@@ -390,6 +390,32 @@
       ],
       "kicker": "LIB",
       "added": "2026-09-25"
+    },
+    "fr-library-signification-emoji": {
+      "title": "Signification des emojis",
+      "sub": "Ce que veulent vraiment dire les emojis les plus utilisés, classés par",
+      "glyphs": [
+        "😊",
+        "😂",
+        "🥺",
+        "😏",
+        "🤔"
+      ],
+      "kicker": "LIB",
+      "added": "2026-10-02"
+    },
+    "it-library-significato-emoji": {
+      "title": "Significato delle emoji",
+      "sub": "Cosa vogliono dire davvero le emoji più usate, divise per tema e non i",
+      "glyphs": [
+        "😊",
+        "😂",
+        "🥺",
+        "😏",
+        "🤔"
+      ],
+      "kicker": "LIB",
+      "added": "2026-10-02"
     }
   }
 }
