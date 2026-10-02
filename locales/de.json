@@ -209,6 +209,30 @@
       "titleFor": "Vorschau: {style}",
       "dialogAriaLabel": "Plattform-Vorschau",
       "closeAriaLabel": "Vorschau schließen"
+    },
+    "imageSelection": {
+      "selectImage": "Auswählen und als Bild teilen",
+      "viewSelection": "Auswahl ansehen ({n})",
+      "hint": "Wähle Emojis oder Symbole aus beliebigen Abschnitten für dein Bild.",
+      "count": "{n} ausgewählt",
+      "empty": "Noch nichts ausgewählt",
+      "shareImage": "Bild teilen",
+      "downloadImage": "Bild herunterladen",
+      "cancel": "Abbrechen",
+      "preview": "Bildvorschau",
+      "close": "Schließen",
+      "remove": "{item} entfernen",
+      "addAll": "Alle {n} hinzufügen",
+      "removeAll": "Alle {n} entfernen",
+      "limit": "Du kannst bis zu {max} hinzufügen.",
+      "tooBig": "Zu viele für ein Bild. Entferne einige.",
+      "making": "Bild wird erstellt…",
+      "shared": "Bild geteilt",
+      "downloaded": "Bild heruntergeladen",
+      "shareFailed": "Teilen ging nicht. Lade es herunter.",
+      "renderFailed": "Bild ging nicht. Versuch es noch mal.",
+      "trayLabel": "Bildauswahl",
+      "setUnavailable": "Dieses Set kann noch nicht ins Bild."
     }
   },
   "useCases": {

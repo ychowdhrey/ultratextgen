@@ -51,6 +51,8 @@
       shareImage: "Share as an image",
       clearAll: "Clear all",
       copyLabel: "Copy",
+      selectImage: "Select and share image",
+      viewSelection: "View selection ({n})",
       formats: { inline: "Inline", vertical: "Vertical", comma: "Comma", space: "Space", bullet: "Bullet" }
     },
     vi: {
@@ -64,6 +66,8 @@
       shareImage: "Chia sẻ dưới dạng ảnh",
       clearAll: "Xóa tất cả",
       copyLabel: "Sao chép",
+      selectImage: "Chọn và chia sẻ ảnh",
+      viewSelection: "Xem lựa chọn ({n})",
       formats: { inline: "Một hàng", vertical: "Dọc", comma: "Dấu phẩy", space: "Cách", bullet: "Gạch đầu dòng" }
     },
     pt: {
@@ -77,6 +81,8 @@
       shareImage: "Compartilhar como imagem",
       clearAll: "Limpar tudo",
       copyLabel: "Copiar",
+      selectImage: "Selecionar e compartilhar imagem",
+      viewSelection: "Ver seleção ({n})",
       formats: { inline: "Em linha", vertical: "Na vertical", comma: "Vírgula", space: "Espaço", bullet: "Lista" }
     },
     es: {
@@ -90,6 +96,8 @@
       shareImage: "Compartir como imagen",
       clearAll: "Borrar todo",
       copyLabel: "Copiar",
+      selectImage: "Seleccionar y compartir imagen",
+      viewSelection: "Ver selección ({n})",
       formats: { inline: "En línea", vertical: "En vertical", comma: "Coma", space: "Espacio", bullet: "Viñeta" }
     },
     de: {
@@ -103,6 +111,8 @@
       shareImage: "Als Bild teilen",
       clearAll: "Alle löschen",
       copyLabel: "Kopieren",
+      selectImage: "Auswählen und als Bild teilen",
+      viewSelection: "Auswahl ansehen ({n})",
       formats: { inline: "Nebeneinander", vertical: "Vertikal", comma: "Komma", space: "Leerzeichen", bullet: "Aufzählung" }
     },
     id: {
@@ -116,6 +126,8 @@
       shareImage: "Bagikan sebagai gambar",
       clearAll: "Hapus semua",
       copyLabel: "Salin",
+      selectImage: "Pilih dan bagikan gambar",
+      viewSelection: "Lihat pilihan ({n})",
       formats: { inline: "Sebaris", vertical: "Vertikal", comma: "Koma", space: "Spasi", bullet: "Butir" }
     },
     tr: {
@@ -129,6 +141,8 @@
       shareImage: "Görsel olarak paylaş",
       clearAll: "Tümünü temizle",
       copyLabel: "Kopyala",
+      selectImage: "Seç ve görsel olarak paylaş",
+      viewSelection: "Seçimi gör ({n})",
       formats: { inline: "Yan yana", vertical: "Alt alta", comma: "Virgüllü", space: "Boşluklu", bullet: "Maddeli" }
     },
     fr: {
@@ -142,6 +156,8 @@
       shareImage: "Partager en image",
       clearAll: "Tout effacer",
       copyLabel: "Copier",
+      selectImage: "Choisir et partager en image",
+      viewSelection: "Voir la sélection ({n})",
       formats: { inline: "En ligne", vertical: "Verticale", comma: "Virgules", space: "Espaces", bullet: "Liste" }
     },
     nl: {
@@ -155,6 +171,8 @@
       shareImage: "Delen als afbeelding",
       clearAll: "Alles wissen",
       copyLabel: "Kopieer",
+      selectImage: "Selecteer en deel als afbeelding",
+      viewSelection: "Selectie bekijken ({n})",
       formats: { inline: "Op één regel", vertical: "Verticaal", comma: "Komma's", space: "Spaties", bullet: "Lijst" }
     },
     it: {
@@ -168,6 +186,8 @@
       shareImage: "Condividi come immagine",
       clearAll: "Cancella tutto",
       copyLabel: "Copia",
+      selectImage: "Seleziona e condividi immagine",
+      viewSelection: "Vedi selezione ({n})",
       formats: { inline: "In linea", vertical: "Verticale", comma: "Virgola", space: "Spazio", bullet: "Elenco puntato" }
     },
     pl: {
@@ -181,6 +201,8 @@
       shareImage: "Udostępnij jako obraz",
       clearAll: "Wyczyść wszystko",
       copyLabel: "Kopiuj",
+      selectImage: "Wybierz i udostępnij obraz",
+      viewSelection: "Zobacz wybór ({n})",
       formats: { inline: "W linii", vertical: "Pionowo", comma: "Przecinki", space: "Spacje", bullet: "Punktory" }
     },
     th: {
@@ -194,6 +216,8 @@
       shareImage: "แชร์เป็นรูปภาพ",
       clearAll: "ล้างทั้งหมด",
       copyLabel: "คัดลอก",
+      selectImage: "เลือกแล้วแชร์เป็นรูปภาพ",
+      viewSelection: "ดูที่เลือก ({n})",
       formats: { inline: "เรียงบรรทัดเดียว", vertical: "แนวตั้ง", comma: "จุลภาค", space: "เว้นวรรค", bullet: "บุลเล็ต" }
     },
     zh: {
@@ -207,6 +231,8 @@
       shareImage: "以圖片分享",
       clearAll: "全部清除",
       copyLabel: "複製",
+      selectImage: "選取並以圖片分享",
+      viewSelection: "查看已選（{n}）",
       formats: { inline: "單行", vertical: "直式", comma: "逗號", space: "空格", bullet: "項目符號" }
     },
     ko: {
@@ -220,6 +246,8 @@
       shareImage: "이미지로 공유",
       clearAll: "모두 지우기",
       copyLabel: "복사",
+      selectImage: "골라서 이미지로 공유",
+      viewSelection: "선택 보기 ({n})",
       formats: { inline: "한 줄로", vertical: "세로로", comma: "쉼표로", space: "공백으로", bullet: "불릿으로" }
     },
     ar: {
@@ -233,6 +261,8 @@
       shareImage: "مشاركة كصورة",
       clearAll: "مسح الكل",
       copyLabel: "نسخ",
+      selectImage: "اختر وشارك كصورة",
+      viewSelection: "عرض التحديد ({n})",
       formats: { inline: "متتالٍ", vertical: "عمودي", comma: "بفواصل", space: "بمسافات", bullet: "نقطي" }
     },
     no: {
@@ -246,6 +276,8 @@
       shareImage: "Del som bilde",
       clearAll: "Fjern alle",
       copyLabel: "Kopier",
+      selectImage: "Velg og del som bilde",
+      viewSelection: "Se utvalg ({n})",
       formats: { inline: "På linje", vertical: "Vertikalt", comma: "Komma", space: "Mellomrom", bullet: "Punktliste" }
     },
     ja: {
@@ -259,6 +291,8 @@
       shareImage: "画像として共有",
       clearAll: "すべて削除",
       copyLabel: "コピー",
+      selectImage: "選んで画像で共有",
+      viewSelection: "選択を表示（{n}）",
       formats: { inline: "1行", vertical: "縦並び", comma: "カンマ区切り", space: "スペース区切り", bullet: "箇条書き" }
     },
     ru: {
@@ -272,6 +306,8 @@
       shareImage: "Поделиться картинкой",
       clearAll: "Очистить всё",
       copyLabel: "Копировать",
+      selectImage: "Выбрать и поделиться картинкой",
+      viewSelection: "Показать выбор ({n})",
       formats: { inline: "В строку", vertical: "Столбиком", comma: "Через запятую", space: "Через пробел", bullet: "Список" }
     },
     da: {
@@ -285,6 +321,8 @@
       shareImage: "Del som billede",
       clearAll: "Ryd alle",
       copyLabel: "Kopiér",
+      selectImage: "Vælg og del som billede",
+      viewSelection: "Se udvalg ({n})",
       formats: { inline: "På linje", vertical: "Lodret", comma: "Komma", space: "Mellemrum", bullet: "Punktopstilling" }
     },
     sv: {
@@ -298,6 +336,8 @@
       shareImage: "Dela som bild",
       clearAll: "Rensa allt",
       copyLabel: "Kopiera",
+      selectImage: "Välj och dela som bild",
+      viewSelection: "Visa urval ({n})",
       formats: { inline: "På rad", vertical: "Vertikalt", comma: "Kommatecken", space: "Mellanslag", bullet: "Punktlista" }
     },
     cs: {
@@ -311,6 +351,8 @@
       shareImage: "Sdílet jako obrázek",
       clearAll: "Vymazat vše",
       copyLabel: "Kopírovat",
+      selectImage: "Vybrat a sdílet jako obrázek",
+      viewSelection: "Zobrazit výběr ({n})",
       formats: { inline: "Na řádek", vertical: "Svisle", comma: "Čárky", space: "Mezery", bullet: "Odrážky" }
     },
     sk: {
@@ -324,6 +366,8 @@
       shareImage: "Zdieľať ako obrázok",
       clearAll: "Vymazať všetko",
       copyLabel: "Kopírovať",
+      selectImage: "Vybrať a zdieľať ako obrázok",
+      viewSelection: "Zobraziť výber ({n})",
       formats: { inline: "Na riadok", vertical: "Zvisle", comma: "Čiarky", space: "Medzery", bullet: "Odrážky" }
     },
     hr: {
@@ -337,6 +381,8 @@
       shareImage: "Podijeli kao sliku",
       clearAll: "Obriši sve",
       copyLabel: "Kopiraj",
+      selectImage: "Odaberi i podijeli kao sliku",
+      viewSelection: "Pogledaj odabir ({n})",
       formats: { inline: "U nizu", vertical: "Okomito", comma: "Zarezi", space: "Razmaci", bullet: "Popis" }
     },
     bs: {
@@ -350,6 +396,8 @@
       shareImage: "Podijeli kao sliku",
       clearAll: "Obriši sve",
       copyLabel: "Kopiraj",
+      selectImage: "Odaberi i podijeli kao sliku",
+      viewSelection: "Pogledaj odabir ({n})",
       formats: { inline: "U nizu", vertical: "Okomito", comma: "Zarezi", space: "Razmaci", bullet: "Spisak" }
     },
     sr: {
@@ -363,6 +411,8 @@
       shareImage: "Podeli kao sliku",
       clearAll: "Obriši sve",
       copyLabel: "Kopiraj",
+      selectImage: "Izaberi i podeli kao sliku",
+      viewSelection: "Pogledaj izbor ({n})",
       formats: { inline: "У низу", vertical: "Усправно", comma: "Зарези", space: "Размаци", bullet: "Списак" }
     },
     ro: {
@@ -376,6 +426,8 @@
       shareImage: "Distribuie ca imagine",
       clearAll: "Șterge tot",
       copyLabel: "Copiază",
+      selectImage: "Selectează și distribuie ca imagine",
+      viewSelection: "Vezi selecția ({n})",
       formats: { inline: "Pe un rând", vertical: "Pe verticală", comma: "Cu virgulă", space: "Cu spațiu", bullet: "Listă" }
     },
     hu: {
@@ -389,6 +441,8 @@
       shareImage: "Megosztás képként",
       clearAll: "Összes törlése",
       copyLabel: "Másolás",
+      selectImage: "Kiválasztás és megosztás képként",
+      viewSelection: "Kiválasztottak ({n})",
       formats: { inline: "Egy sorban", vertical: "Függőlegesen", comma: "Vesszővel", space: "Szóközzel", bullet: "Felsorolás" }
     },
     hi: {
@@ -402,6 +456,8 @@
       shareImage: "छवि के रूप में साझा करें",
       clearAll: "सभी हटाएं",
       copyLabel: "कॉपी",
+      selectImage: "चुनें और इमेज शेयर करें",
+      viewSelection: "चुने हुए देखें ({n})",
       formats: { inline: "एक लाइन में", vertical: "ऊपर-नीचे", comma: "कॉमा से", space: "स्पेस से", bullet: "बुलेट में" }
     },
     tl: {
@@ -415,6 +471,8 @@
       shareImage: "Ibahagi bilang larawan",
       clearAll: "I-clear lahat",
       copyLabel: "Kopyahin",
+      selectImage: "Pumili at i-share bilang larawan",
+      viewSelection: "Tingnan ang napili ({n})",
       formats: { inline: "Isang linya", vertical: "Patayo", comma: "Kuwit", space: "Espasyo", bullet: "Listahan" }
     },
     /* fi and ms were missing until 2026-09-10, so their 5 collection pages
@@ -435,6 +493,8 @@
       shareImage: "Jaa kuvana",
       clearAll: "Tyhjennä kaikki",
       copyLabel: "Kopioi",
+      selectImage: "Valitse ja jaa kuvana",
+      viewSelection: "Näytä valinta ({n})",
       formats: { inline: "Rivi", vertical: "Pysty", comma: "Pilkku", space: "V\u00e4lily\u00f6nti", bullet: "Luettelo" }
     },
     ms: {
@@ -448,6 +508,8 @@
       shareImage: "Kongsi sebagai imej",
       clearAll: "Kosongkan semua",
       copyLabel: "Salin",
+      selectImage: "Pilih dan kongsi imej",
+      viewSelection: "Lihat pilihan ({n})",
       formats: { inline: "Satu baris", vertical: "Menegak", comma: "Koma", space: "Ruang", bullet: "Senarai" }
     }
   };
@@ -745,9 +807,17 @@
      Call:  UltraTextGen.buildGrids("containerId", groups)
      where groups = [{ name: "EU", flags: ["\ud83c\udde6\ud83c\uddf9", \u2026] }, \u2026]
      ============================ */
+  /* Every collection set this page builds, so an image selection can offer
+     "Add all" on one. The registry holds the group's own item array rather
+     than reading the rendered text back: twemoji replaces that text with
+     <img> tags on some pages, and an item may itself contain a space. */
+  var collectionRegistry = [];
+  ns.collectionGroups = function () { return collectionRegistry.slice(); };
+
   function buildGrids(containerId, groups) {
     var container = document.getElementById(containerId);
     if (!container) return;
+    collectionRegistry.push({ container: container, groups: groups });
 
     var activeFormats = activeFormatsFor(groups);
 
@@ -832,9 +902,21 @@
   /* ============================
      Auto-wire: delegated click / keyboard for .symbol-tile
      ============================ */
+  /* While an image selection is open (js/share/image-selection.js), a tile
+     press chooses the item instead of copying it. Outside that mode nothing
+     here changes: a press copies, exactly as before. */
+  function imageSelectionActive() {
+    return !!(ns.imageSelection && ns.imageSelection.isActive());
+  }
+
   document.addEventListener("click", function (e) {
     var tile = e.target.closest(".symbol-tile");
-    if (tile) copySymbol(tile);
+    if (!tile) return;
+    if (imageSelectionActive()) {
+      ns.imageSelection.toggleTile(tile);
+      return;
+    }
+    copySymbol(tile);
   });
 
   /* ============================
@@ -857,6 +939,10 @@
     var tile = e.target.closest(".symbol-tile");
     if (!tile) return;
     e.preventDefault();
+    if (imageSelectionActive()) {
+      ns.imageSelection.toggleTile(tile);
+      return;
+    }
     copySymbol(tile);
   });
 
@@ -911,7 +997,9 @@
     share: "shareResult.label",
     shareImage: "shareResult.imageTitle",
     clearAll: "savedStyles.clearAll",
-    copyLabel: "copyButtons.copy"
+    copyLabel: "copyButtons.copy",
+    selectImage: "imageSelection.selectImage",
+    viewSelection: "imageSelection.viewSelection"
   };
 
   const STAR_OUTLINE = "☆";
@@ -1111,13 +1199,84 @@
     decorateTiles(strip);
   }
 
-  /* ---- per-section Share ------------------------------------------- */
+  /* ---- per-section Share + "Select and share image" ----------------- */
 
-  /* One Share pair per tile section, carrying that section's symbols. Placed
-     next to the collection's own copy control so the four actions read as one
-     set, which is the whole point of the rollout. */
+  /* After each tile section: "Share" (the link to this section, unchanged in
+     what it does; only its icon is now a link) and "Select and share image".
+
+     The image entry replaced a per-section image button on 2026-10-01. That
+     button drew EVERY symbol in its section onto the card, so a visitor who
+     wanted one heart got all forty, under the section heading. The image is
+     now made only from what the visitor picks: the entry opens one selection
+     for the whole page (js/share/image-selection.js), whichever section's
+     button was pressed, and every entry button then reads
+     "View selection (n)" for that same selection. */
+
+  // Can this value be drawn? The invisible-character pages ship tiles whose
+  // whole payload is a space or a joiner; a picture of one is a blank card.
+  // U+2800 (braille blank) and the Hangul fillers draw nothing either, and
+  // the invisible-character page ships them as tiles: an audit exported a
+  // blank card from one. They are listed because Unicode does not class all
+  // of them as ignorable.
+  const DRAWABLE_RE = /[^\s\p{Default_Ignorable_Code_Point}\u2800\u115F\u1160\u3164\uFFA0]/u;
+  function isDrawable(value) {
+    return DRAWABLE_RE.test(String(value == null ? "" : value));
+  }
+  ns.isDrawableSymbol = isDrawable;
+
+  /* A collection set can be added to an image as its members only when it IS
+     a list of members: two or more items, each a single grapheme (one emoji,
+     one flag, one symbol), none repeated. ASEAN's ten flags and a
+     "Soft Girl" emoji combo are lists. A bio trail such as ♪ ˚ ♫ ˚ ♪ (a
+     repeat whose spacing is the design), a kaomoji set and a text-art piece
+     are not: splitting those into removable members would change what they
+     are. They stay out of the image selection until that unit is decided. */
+  function isMemberList(items) {
+    if (!items || items.length < 2) return false;
+    if (typeof Intl === "undefined" || !Intl.Segmenter) return false;
+    const seg = new Intl.Segmenter(undefined, { granularity: "grapheme" });
+    const seen = {};
+    for (let i = 0; i < items.length; i++) {
+      const v = String(items[i] == null ? "" : items[i]).trim();
+      if (!v || !isDrawable(v) || seen[v]) return false;
+      seen[v] = true;
+      let count = 0;
+      for (const part of seg.segment(v)) { count++; if (count > 1) return false; }
+    }
+    return true;
+  }
+  ns.isMemberList = isMemberList;
+
+  function selectionCount() {
+    return ns.imageSelection && ns.imageSelection.isActive() ? ns.imageSelection.count() : null;
+  }
+
+  function paintSelectEntry(btn) {
+    const n = selectionCount();
+    const label = btn.querySelector(".symbol-select-label");
+    const text = n === null
+      ? t("selectImage", "Select and share image")
+      : t("viewSelection", "View selection ({n})").replace("{n}", String(n));
+    if (label) label.textContent = text;
+    if (n === null) {
+      btn.removeAttribute("aria-controls");
+    } else {
+      btn.setAttribute("aria-controls", "utgImageSelection");
+    }
+  }
+
+  function buildSelectEntry() {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "symbol-select-btn";
+    btn.innerHTML = (UTGX.icons && UTGX.icons.image ? UTGX.icons.image : "") +
+      '<span class="symbol-select-label"></span>';
+    paintSelectEntry(btn);
+    return btn;
+  }
+
   function decorateSections() {
-    if (!UTGX.buildShareActions) return;
+    if (!UTGX.buildShareButton) return;
     const groups = document.querySelectorAll(".flag-rows");
     Array.prototype.forEach.call(groups, function (group) {
       if (group.closest(".symbol-saved-strip")) return;      // its own row exists
@@ -1134,7 +1293,11 @@
 
       const wrap = document.createElement("div");
       wrap.className = "symbol-section-actions";
-      wrap.appendChild(UTGX.buildShareActions({
+      const row = document.createElement("div");
+      row.className = "result-share-row";
+      // The same Share as before 2026-10-01, field for field: native sheet
+      // with the section link (and its symbols as text), else copy the link.
+      row.appendChild(UTGX.buildShareButton({
         text: symbols,
         input: symbols,
         name: name,
@@ -1142,11 +1305,81 @@
         surface: "library_section",
         itemType: "collection",
         label: t("share", "Share"),
-        imageTitle: t("shareImage", "Share as an image")
+        icon: "link"
       }));
+      if (Array.prototype.some.call(tiles, function (tile) { return isDrawable(tile.getAttribute("data-symbol")); })) {
+        row.appendChild(buildSelectEntry());
+      }
+      wrap.appendChild(row);
       group.parentNode.insertBefore(wrap, group.nextSibling);
     });
+    decorateCollectionSections();
   }
+
+  /* A collection container (the named sets buildGrids renders, ASEAN among
+     them) gets the image entry only: it has never had a section Share, and
+     adding one is not part of this change. The entry appears only where at
+     least one set is a member list that "Add all" can actually offer. */
+  function decorateCollectionSections() {
+    collectionRegistry.forEach(function (entry) {
+      const container = entry.container;
+      if (!container || !container.parentNode) return;
+      const next = container.nextElementSibling;
+      if (next && next.classList.contains("symbol-section-actions")) return;
+      if (!entry.groups.some(function (g) { return isMemberList(g && g.flags); })) return;
+      const wrap = document.createElement("div");
+      wrap.className = "symbol-section-actions symbol-section-actions--collections";
+      const row = document.createElement("div");
+      row.className = "result-share-row";
+      row.appendChild(buildSelectEntry());
+      wrap.appendChild(row);
+      container.parentNode.insertBefore(wrap, container.nextSibling);
+    });
+  }
+
+  function repaintSelectEntries() {
+    document.querySelectorAll(".symbol-select-btn").forEach(paintSelectEntry);
+  }
+  document.addEventListener("utg:imageselectionchange", repaintSelectEntries);
+
+  /* The selection UI is loaded on the first press, not with the page: it is
+     only needed by visitors who ask for an image, and this file runs on
+     every library and symbol page. */
+  let selectionModule = null;
+  function loadSelectionModule() {
+    if (ns.imageSelection) return Promise.resolve(ns.imageSelection);
+    if (selectionModule) return selectionModule;
+    selectionModule = new Promise(function (resolve, reject) {
+      const s = document.createElement("script");
+      s.src = "/js/share/image-selection.js";
+      s.async = true;
+      s.onload = function () {
+        if (ns.imageSelection) resolve(ns.imageSelection);
+        else reject(new Error("image-selection.js loaded without registering"));
+      };
+      s.onerror = function () { reject(new Error("image-selection.js failed to load")); };
+      document.head.appendChild(s);
+    }).catch(function (err) {
+      selectionModule = null; // let the next press try again
+      throw err;
+    });
+    return selectionModule;
+  }
+
+  document.addEventListener("click", function (e) {
+    const btn = e.target.closest(".symbol-select-btn");
+    if (!btn || btn.getAttribute("aria-busy") === "true") return;
+    btn.setAttribute("aria-busy", "true");
+    loadSelectionModule().then(function (sel) {
+      btn.removeAttribute("aria-busy");
+      sel.open(btn);
+    }).catch(function (err) {
+      btn.removeAttribute("aria-busy");
+      console.error(err);
+      btn.classList.add("share-error");
+      setTimeout(function () { btn.classList.remove("share-error"); }, 1500);
+    });
+  });
 
   /* ---- incoming ?symbol= link -------------------------------------- */
 
@@ -1228,5 +1461,10 @@
   }
 
   ns.decorateSymbolActions = initSaveShare;
+
+  // A page that calls buildGrids from its own DOMContentLoaded handler may
+  // register its sets after initSaveShare ran; decorateSections is
+  // idempotent, so a second pass at load picks those up.
+  window.addEventListener("load", function () { decorateSections(); });
 
 })();

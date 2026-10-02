@@ -209,6 +209,30 @@
       "titleFor": "Vista previa: {style}",
       "dialogAriaLabel": "Vista previa por plataforma",
       "closeAriaLabel": "Cerrar vista previa"
+    },
+    "imageSelection": {
+      "selectImage": "Seleccionar y compartir imagen",
+      "viewSelection": "Ver selección ({n})",
+      "hint": "Elige emojis o símbolos de cualquier sección para crear tu imagen.",
+      "count": "{n} seleccionados",
+      "empty": "Aún no has elegido nada",
+      "shareImage": "Compartir imagen",
+      "downloadImage": "Descargar imagen",
+      "cancel": "Cancelar",
+      "preview": "Vista previa de la imagen",
+      "close": "Cerrar",
+      "remove": "Quitar {item}",
+      "addAll": "Añadir los {n}",
+      "removeAll": "Quitar los {n}",
+      "limit": "Puedes añadir hasta {max}.",
+      "tooBig": "Demasiados para una imagen. Quita algunos.",
+      "making": "Creando imagen…",
+      "shared": "Imagen compartida",
+      "downloaded": "Imagen descargada",
+      "shareFailed": "No se pudo compartir. Prueba a descargarla.",
+      "renderFailed": "No se pudo crear la imagen. Inténtalo de nuevo.",
+      "trayLabel": "Selección de imagen",
+      "setUnavailable": "Este conjunto aún no se puede añadir a una imagen."
     }
   },
   "useCases": {
