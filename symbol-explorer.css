@@ -622,11 +622,11 @@ html.utg-image-selecting .symbol-save-btn { display: none; }
 /* Room under the last row of tiles, and for a keyboard focus ring, while
    the tray is open. */
 html.utg-image-selecting {
-  scroll-padding-bottom: calc(var(--utg-sel-tray-h, 0px) + var(--utg-anchor-h, 0px) + 16px);
+  scroll-padding-bottom: calc(var(--utg-sel-tray-h, 0px) + var(--utg-anchor-h, 0px) + 30px);
 }
 
 html.utg-image-selecting body {
-  padding-bottom: calc(var(--utg-sel-tray-h, 0px) + var(--utg-anchor-h, 0px) + 16px);
+  padding-bottom: calc(var(--utg-sel-tray-h, 0px) + var(--utg-anchor-h, 0px) + 30px);
 }
 
 /* ---- "Add all" inside a named set ---- */
@@ -663,7 +663,10 @@ body.dark-mode .symbol-collection-add { --accent-purple-text: #c4b5fd; }
   z-index: 900;
   left: 50%;
   transform: translateX(-50%);
-  bottom: calc(10px + var(--utg-anchor-h, 0px));
+  /* 24px, not 10px: Cancel and Share Image sit directly above the anchor
+     ad, and a near-miss tap there is an ad click. Same clearance as
+     .copy-toast. */
+  bottom: calc(24px + var(--utg-anchor-h, 0px));
   width: min(640px, calc(100% - 20px));
   max-height: 45vh;
   overflow-y: auto;

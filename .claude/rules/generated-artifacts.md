@@ -8,6 +8,7 @@ paths:
   - "data/{sitemap-lastmod-cache,generated_page_art,og_style_registry,locale_glossary,editorial_footprint_baseline}.json"
   - "assets/{og,hero,specimen,printables-previews}/**"
   - "js/printables/cursiveRouteData.js"
+  - "js/search/index/**"
 ---
 
 # Generated artifacts have a generator, not an editor
@@ -19,6 +20,7 @@ is a second source of truth. When you find one of these, find its generator.
 |---|---|---|
 | `sitemap.xml` | `npm run prebuild` (`scripts/update-sitemap.js`) — daily workflow, auto-commits with `[skip ci]` | `test:sitemap-images`, `test:content-significance` |
 | `llms.txt` (whole tree, 85 files) | `npm run build:llms -- --write` | `check:llms` (whole-tree) |
+| `js/search/index/<locale>.json` (header search) | `npm run build:search-index -- --write`, from the same page reading as `llms.txt`; the daily sitemap workflow also regenerates it | `check:search-index`, `test:site-search` |
 | `library/index.html` directory block | `npm run build:library-directory` | `check:library-directory` |
 | `<lang>/library/index.html` | `node scripts/build-library-hub.js` — derives entries from **each page's own markup**, so it needs no hand-help | `check:library-hub`, `check:library-hub-parity` |
 | the static footer block | `npm run build:static-footer` | `check:static-footer` |
