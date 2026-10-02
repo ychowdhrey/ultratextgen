@@ -235,7 +235,7 @@
     },
     nl: {
       home: "/nl/",
-      guide: { label: "Guides", href: "/nl/guide/" },
+      guide: { label: "Gidsen", href: "/nl/guide/" },
       answers: { label: "Antwoorden", href: "/nl/answers/" },
       category: { label: "Categorieën", href: "/category/" },
       usecase: { label: "Toepassingen", href: "/nl/usecase/" },
