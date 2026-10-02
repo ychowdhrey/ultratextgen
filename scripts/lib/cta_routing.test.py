@@ -269,6 +269,71 @@ def _card_for_is_consistent_with_route():
 t("card_for() agrees with route()", _card_for_is_consistent_with_route)
 
 
+
+# --- printables: the next printable job ------------------------------------
+from lib.cta_routing import (  # noqa: E402
+    PRINTABLE_DESTINATIONS, PASTE_LABELS, printables_route, printables_card_inner,
+)
+
+REPO = HERE.parent.parent
+
+PCARD = """<main><p>x</p></main>
+    <div class="cta-card">
+      <h3>Want bubble letter A for a bio or caption?</h3>
+      <p>These outlines are for paper.</p>
+      <a class="cta-btn" href="/category/bubble-fonts/">Open the bubble fonts generator →</a>
+    </div>
+"""
+
+
+def _printables_routes():
+    assert printables_route("printables/bubble-letters/letter-a/index.html") == "bubble-name"
+    assert printables_route("printables/bubble-letters/number-5/index.html") == "banner-number"
+    assert printables_route("printables/block-letters/letter-q/index.html") == "banner-word"
+    assert printables_route("printables/cursive-alphabet/letter-a/index.html") == "cursive-name"
+    assert printables_route("printables/calligraphy-alphabet/index.html") == "calligraphy-name"
+    assert printables_route("printables/graffiti-letters/index.html") == "graffiti-name"
+
+
+def _printables_holds():
+    # The block-letters landing is frozen until its size-control readout.
+    assert printables_route("printables/block-letters/index.html") is None
+    # A card pointed somewhere on purpose is not a route.
+    assert printables_route("printables/spanish-alphabet-chart/index.html") is None
+    # Locale pages: an English destination would break the locale-native rule.
+    for rel in ("es/imprimibles/letras-burbuja/letra-a/index.html",
+                "de/zum-ausdrucken/blasenbuchstaben/index.html",
+                "fr/imprimables/lettres-bulles/lettre-a/index.html"):
+        assert printables_route(rel) is None, rel
+
+
+def _printables_rewrite_is_idempotent():
+    once = RC.rewrite_printable(PCARD, "bubble-name")
+    assert once and 'href="/printables/bubble-name/"' in once
+    # the copy-paste category is still one click away, inside the card
+    assert '<a href="/category/bubble-fonts/">bubble fonts generator</a>' in once
+    assert RC.rewrite_printable(once, "bubble-name") is None, "second run must be a no-op"
+    aimed = PCARD.replace("/category/bubble-fonts/", "/library/alt-codes/")
+    assert RC.rewrite_printable(aimed, "bubble-name") is None, "a deliberate card was reclaimed"
+
+
+def _printables_copy_rules():
+    for key, d in PRINTABLE_DESTINATIONS.items():
+        for field in ("h3", "cta", "button"):
+            assert "\u2014" not in d[field], f"{key}.{field} has an em dash"
+        assert len(d["button"].replace("→", "").split()) <= 4, f"{key} button over four words"
+        assert (REPO / d["href"].strip("/") / "index.html").exists(), d["href"]
+    for href in PASTE_LABELS:
+        assert href == "/" or (REPO / href.strip("/") / "index.html").exists(), href
+    # "Unicode" was the old card's only editorial mention on these pages; keep it.
+    assert "Unicode" in printables_card_inner("cursive-name", "/category/cursive-fonts/")
+
+
+t("printables pages route to the next printable job", _printables_routes)
+t("frozen, deliberate and locale printables cards are left alone", _printables_holds)
+t("the printables rewrite is idempotent and keeps the paste link", _printables_rewrite_is_idempotent)
+t("printables card copy: no em dash, short buttons, real destinations", _printables_copy_rules)
+
 print("CTA routing — tests\n")
 for line in LINES:
     print(line)
