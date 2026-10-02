@@ -3041,6 +3041,10 @@ PAGES.update({
     P(m_typo, sample="Aa", ff=SERIF, style="italic", weight="400", size=92, label="cursive"), K_PRINT),
 "learn-handwriting-how-much-practice": ("How Much Practice?", "How much helps, and how to measure progress",
     P(m_typo, sample="5m", size=92, label="practice & progress"), K_PRINT),
+"learn-spelling": ("How Children Learn to Spell", "Say it, write it from memory, check it, repeat",
+    P(m_typo, sample="Ab", size=92, label="spelling"), K_PRINT),
+"learn-spelling-does-tracing-help-spelling": ("Does Tracing Help Spelling?", "It forms the letters; memory comes from writing it unseen",
+    P(m_typo, sample="Aa", size=92, label="trace, then recall"), K_PRINT),
 })
 
 PAGES["printables-bubble-letters"] = (
@@ -3132,6 +3136,7 @@ PAGES.update({
 "printables-word-search-maker": ("Word Search Maker", "One spelling list, a different grid for every child", m_word_grid, K_PRINT),
 "printables-crossword-maker": ("Crossword Maker", "Your own words and clues, a different layout per child", m_crossword, K_PRINT),
 "printables-word-scramble-maker": ("Word Scramble Maker", "One spelling list, a different scramble per child", m_scramble, K_PRINT),
+"printables-spelling-worksheet-generator": ("Spelling Worksheet Generator", "One spelling list, five practice sheets, one PDF", P(m_trace_rows, sample="friend"), K_PRINT),
 "printables-letter-tracing": ("Letter Tracing Worksheets", "Every letter A to Z and number 0 to 9, at seven difficulty levels", P(m_trace_rows, sample="Aa"), K_PRINT),
 "printables-name-tracing": ("Name Tracing Worksheets", "Model row, faded trace rows and blank practice lines", P(m_trace_rows, sample="Emma"), K_PRINT),
 "printables-sight-word-tracing": ("Sight Word Tracing Worksheets", "Dolch sight words to trace at adjustable difficulty", P(m_trace_rows, sample="said"), K_PRINT),
