@@ -12784,7 +12784,10 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
 .research-hub.container { max-width: 900px; }
 .research-hub-hero .hero-inner { max-width: 852px; }
 .research-hub .study-section:first-child { margin-top: 2.5rem; }
-.study-section > h3.research-area { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 0.75rem; }
+.study-section > h3.research-area { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); margin: 1.5rem 0 0.75rem; }
+/* A later area opens a new group: give it the same air as a section h3 so it
+   reads as a heading for the cards below, not a caption for the card above. */
+.study-section > .study-cards + h3.research-area { margin-top: 2.5rem; }
 .study-cards { list-style: none; display: grid; gap: 1rem; margin: 0; padding: 0; }
 .study-card { padding: 1.5rem; background: var(--bg-white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); }
 .study-card-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 1rem; margin-bottom: 0.85rem; }

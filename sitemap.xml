@@ -284,7 +284,7 @@
 
   <url>
     <loc>https://ultratextgen.com/answers/how-to-remove-zalgo-text/</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -2903,6 +2903,16 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/characters-to-words.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/compare/zalgo-generators/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/compare-zalgo-generators.png</image:loc>
     </image:image>
   </url>
 
@@ -5844,7 +5854,7 @@
 
   <url>
     <loc>https://ultratextgen.com/de/usecase/zalgo-text/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -11194,7 +11204,7 @@
 
   <url>
     <loc>https://ultratextgen.com/es/usecase/zalgo-text/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -13972,7 +13982,7 @@
 
   <url>
     <loc>https://ultratextgen.com/fr/usecase/zalgo-text/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -17608,7 +17618,7 @@
 
   <url>
     <loc>https://ultratextgen.com/id/usecase/zalgo-text/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -19948,7 +19958,7 @@
 
   <url>
     <loc>https://ultratextgen.com/it/usecase/zalgo-text/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -24410,7 +24420,7 @@
 
   <url>
     <loc>https://ultratextgen.com/learn/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -24490,7 +24500,7 @@
 
   <url>
     <loc>https://ultratextgen.com/learn/handwriting/from-tracing-to-writing/</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -24532,7 +24542,7 @@
 
   <url>
     <loc>https://ultratextgen.com/learn/handwriting/name-writing/</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -24597,8 +24607,18 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/learn/print-worksheets-for-a-class/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/learn-print-worksheets-for-a-class.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/learn/save-printer-ink-printables/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -30344,7 +30364,7 @@
 
   <url>
     <loc>https://ultratextgen.com/nl/usecase/zalgo-text/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -32710,7 +32730,7 @@
 
   <url>
     <loc>https://ultratextgen.com/pl/usecase/zalgo-text/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -32730,7 +32750,7 @@
 
   <url>
     <loc>https://ultratextgen.com/printables/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -38190,7 +38210,7 @@
 
   <url>
     <loc>https://ultratextgen.com/pt/usecase/zalgo-text/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -38200,7 +38220,7 @@
 
   <url>
     <loc>https://ultratextgen.com/research/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -38285,6 +38305,16 @@
     </image:image>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/research-printable-ink-efficiency-study.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/research/zalgo-generator-benchmark/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/research-zalgo-generator-benchmark.png</image:loc>
     </image:image>
   </url>
 
@@ -40264,7 +40294,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ru/zalgo-text/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -46040,7 +46070,7 @@
 
   <url>
     <loc>https://ultratextgen.com/tr/usecase/zalgo-text/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -46634,7 +46664,7 @@
 
   <url>
     <loc>https://ultratextgen.com/usecase/zalgo-text/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -48496,7 +48526,7 @@
 
   <url>
     <loc>https://ultratextgen.com/vi/usecase/zalgo-text/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>

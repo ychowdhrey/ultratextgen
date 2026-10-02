@@ -44,8 +44,21 @@ forks the vocabulary.
 - **Pinterest is the one destination recorded on intent**, because the pin is
   composed off-site and nothing returns. It is the exception, not a precedent.
 - Event **names** are unchanged on purpose so existing GA4 history stays
-  continuous. `item_type`, `share_surface`, `share_item_type` and `locale` are the
-  dimensions that make a rollout readable.
+  continuous. `item_type`, `share_surface`, `share_item_type`, `share_format` and
+  `locale` are the dimensions that make a rollout readable. `share_format` (link /
+  png / gif; null when unknowable, as for a pin) is always pushed as a key, because
+  GTM's data layer keeps a key's last value.
+
+## A library image holds only what the visitor chose
+
+On library and symbol pages, **image content comes from deliberate user
+selection**: "Select and share image" opens one page-wide selection
+(`js/share/image-selection.js`), and the picture holds exactly the picked items, in
+order. Never reintroduce a button that renders a whole section, and never draw a
+section heading, page title or SEO title onto the image. A named set joins only
+through its own explicit "Add all" button, and only when it is a member list
+(`isMemberList` in `symbol-explorer.js`). Nothing is silently dropped to fit. Why,
+and the measured cases: `docs/architecture/copy-share-save.md`.
 
 ## Strings are harvested, never authored
 
@@ -54,6 +67,9 @@ a ~30KB locale fetch on the site's highest-traffic lane to read five short strin
 **Never hand-author a string for it** — `npm run sync:explorer-strings` copies from
 `locales/*.json` and `npm run check:explorer-strings` fails when the two drift. Do
 not "fix" an English button on a locale page by adding `i18n.js` to it.
+
+`js/share/image-selection.js` has its own table, synced by the same script from
+`ui.imageSelection` in `locales/*.json`, because it loads only on use.
 
 `share-core.js` accepts a host-supplied `label`/`imageTitle` for the same reason —
 without it a Korean library page renders Korean prose with an English **Share**

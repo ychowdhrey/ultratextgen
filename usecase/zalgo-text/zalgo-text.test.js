@@ -307,6 +307,10 @@ t('KO KAI + Mai Tho has no precomposed form, so the cascade card is NFC-stable',
   const big = Uint8Array.from({ length: 600 * 400 }, () => Math.floor(rand() * 16));
   const bigBack = readGif(G.encode(600, 400, [big], pal, [10]));
   t('GIF: a frame large enough to fill the 4096-code dictionary still decodes exactly', bigBack.frames[0].px.every((v, j) => v === big[j]), true);
+  // X's upload API caps GIFs at 1280x1080; the Post Invader preset once
+  // produced 240x1820. The rendered height of that preset is checked in a
+  // browser (canvas layout needs one); this pins the ceiling it clamps to.
+  t('GIF: the canvas ceiling fits X (at most 1080 tall and 1280 wide)', G.MAX_HEIGHT <= 1080 && G.MAX_WIDTH <= 1280, true);
 }
 
 console.log('\n' + (fail ? fail + ' assertion(s) FAILED' : 'all assertions passed'));

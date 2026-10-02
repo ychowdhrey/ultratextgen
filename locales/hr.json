@@ -133,6 +133,30 @@
       "titleFor": "Pregled: {style}",
       "dialogAriaLabel": "Pregled platforme",
       "closeAriaLabel": "Zatvori pregled"
+    },
+    "imageSelection": {
+      "selectImage": "Odaberi i podijeli kao sliku",
+      "viewSelection": "Pogledaj odabir ({n})",
+      "hint": "Odaberi emojije ili simbole iz bilo kojeg odjeljka za svoju sliku.",
+      "count": "Odabrano: {n}",
+      "empty": "Još ništa nije odabrano",
+      "shareImage": "Podijeli sliku",
+      "downloadImage": "Preuzmi sliku",
+      "cancel": "Odustani",
+      "preview": "Pregled slike",
+      "close": "Zatvori",
+      "remove": "Ukloni {item}",
+      "addAll": "Dodaj sve ({n})",
+      "removeAll": "Ukloni sve ({n})",
+      "limit": "Možeš dodati najviše {max}.",
+      "tooBig": "Previše za jednu sliku. Ukloni nekoliko.",
+      "making": "Izrada slike…",
+      "shared": "Slika podijeljena",
+      "downloaded": "Slika preuzeta",
+      "shareFailed": "Dijeljenje nije uspjelo. Pokušaj preuzeti.",
+      "renderFailed": "Slika nije izrađena. Pokušaj ponovno.",
+      "trayLabel": "Odabir za sliku",
+      "setUnavailable": "Ovaj set još se ne može dodati u sliku."
     }
   },
   "useCases": {

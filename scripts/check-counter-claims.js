@@ -172,7 +172,10 @@ function collectStrings(node, out, depth) {
 function aggregateClaims(text) {
   const claims = [];
   const words = AGGREGATE_WORDS.map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|");
-  const re = new RegExp("(\\d{1,3})\\s*(?:\\+)?\\s*(?:" + words + ")\\b", "gi");
+  /* The joint may be a hyphen ("a 26-platform limit checker"), not only a
+     space: that compound form sat on /embed/ unmatched, because the
+     pattern allowed whitespace alone. */
+  const re = new RegExp("(\\d{1,3})\\s*(?:\\+)?\\s*[-\\u2010\\u2011]?\\s*(?:" + words + ")\\b", "gi");
   let m;
   while ((m = re.exec(text))) claims.push({ n: Number(m[1]), text: m[0].trim() });
   // e.g. Japanese/Chinese put the number after the noun

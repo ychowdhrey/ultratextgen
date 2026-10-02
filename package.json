@@ -59,6 +59,7 @@
     "sync:explorer-strings": "node scripts/sync-explorer-strings.js --write",
     "test:saved-items": "node js/saved/savedItems.test.js",
     "test:share-core": "node js/share/shareCore.test.js",
+    "test:image-selection": "node js/share/imageSelection.test.js",
     "test:zalgo-engine": "node usecase/zalgo-text/zalgo-text.test.js",
     "test:qr": "node js/printables/qr.test.js",
     "test:stencil": "node js/printables/stencil.test.js",

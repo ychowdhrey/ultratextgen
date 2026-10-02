@@ -111,7 +111,11 @@ window.addEventListener("load", function () {
 
   /* ---- per-section share ---- */
   check("one share pair per section", $$(".symbol-section-actions .share-result-btn").length === 1);
-  check("share-image companion present", $$(".symbol-section-actions .share-image-btn").length === 1);
+  // Replaced 2026-10-01: the per-section image button drew every symbol in
+  // the section. The section now offers "Select and share image", which
+  // opens one selection for the whole page (imageSelection.test.html).
+  check("no whole-section image button", $$(".symbol-section-actions .share-image-btn").length === 0);
+  check("select-and-share-image entry present", $$(".symbol-section-actions .symbol-select-btn").length === 1);
   var secBtn = $(".symbol-section-actions .share-result-btn");
   check("section share carries every symbol in the section",
     secBtn && secBtn.dataset.shareText === "★ ☆ ✦", secBtn && secBtn.dataset.shareText);

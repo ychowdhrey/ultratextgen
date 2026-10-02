@@ -209,6 +209,30 @@
       "titleFor": "Podgląd: {style}",
       "dialogAriaLabel": "Podgląd platformy",
       "closeAriaLabel": "Zamknij podgląd"
+    },
+    "imageSelection": {
+      "selectImage": "Wybierz i udostępnij obraz",
+      "viewSelection": "Zobacz wybór ({n})",
+      "hint": "Wybierz emoji lub symbole z dowolnej sekcji, żeby stworzyć obraz.",
+      "count": "Wybrano: {n}",
+      "empty": "Nic jeszcze nie wybrano",
+      "shareImage": "Udostępnij obraz",
+      "downloadImage": "Pobierz obraz",
+      "cancel": "Anuluj",
+      "preview": "Podgląd obrazu",
+      "close": "Zamknij",
+      "remove": "Usuń {item}",
+      "addAll": "Dodaj wszystkie ({n})",
+      "removeAll": "Usuń wszystkie ({n})",
+      "limit": "Możesz dodać maksymalnie {max}.",
+      "tooBig": "Za dużo na jeden obraz. Usuń kilka.",
+      "making": "Tworzenie obrazu…",
+      "shared": "Obraz udostępniony",
+      "downloaded": "Obraz pobrany",
+      "shareFailed": "Nie udało się udostępnić. Spróbuj pobrać.",
+      "renderFailed": "Nie udało się stworzyć obrazu. Spróbuj ponownie.",
+      "trayLabel": "Wybór do obrazu",
+      "setUnavailable": "Tego zestawu nie można jeszcze dodać do obrazu."
     }
   },
   "useCases": {

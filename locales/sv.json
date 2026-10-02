@@ -133,6 +133,30 @@
       "titleFor": "Förhandsvisning: {style}",
       "dialogAriaLabel": "Plattformsförhandsvisning",
       "closeAriaLabel": "Stäng förhandsvisning"
+    },
+    "imageSelection": {
+      "selectImage": "Välj och dela som bild",
+      "viewSelection": "Visa urval ({n})",
+      "hint": "Välj emojis eller symboler från valfri sektion till din bild.",
+      "count": "{n} valda",
+      "empty": "Inget valt än",
+      "shareImage": "Dela bild",
+      "downloadImage": "Ladda ner bild",
+      "cancel": "Avbryt",
+      "preview": "Förhandsvisa bild",
+      "close": "Stäng",
+      "remove": "Ta bort {item}",
+      "addAll": "Lägg till alla {n}",
+      "removeAll": "Ta bort alla {n}",
+      "limit": "Du kan lägga till högst {max}.",
+      "tooBig": "För många för en bild. Ta bort några.",
+      "making": "Skapar bild…",
+      "shared": "Bild delad",
+      "downloaded": "Bild nedladdad",
+      "shareFailed": "Kunde inte dela. Prova att ladda ner.",
+      "renderFailed": "Kunde inte skapa bilden. Försök igen.",
+      "trayLabel": "Bildurval",
+      "setUnavailable": "Den här samlingen kan inte läggas i en bild än."
     }
   },
   "useCases": {

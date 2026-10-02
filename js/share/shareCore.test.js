@@ -316,6 +316,94 @@ function stubCanvas(UTG) {
   eq(dataLayer[0].share_method, 'image_download', 'and keeps share_method "image_download"');
 }
 
+/* ---- selection image: layout (2026-10-01) ------------------------------ */
+/* The library "Select and share image" picture. Its content is only what the
+   visitor picked, so the layout is the part that can go wrong silently: an
+   item dropped to make the rest fit, or a reordered phrase. */
+
+{
+  const { UTG } = load({});
+  const L = UTG.layoutSelection;
+  ok(typeof L === 'function', 'layoutSelection is exported');
+  const flat = (lay) => lay.lines.reduce((a, r) => a.concat(r), []);
+
+  const one = L([1.2], { maxW: 860, maxH: 800, maxFont: 360 });
+  eq(one.lines, [[0]], 'one item is one row');
+  ok(one.fontSize >= 300, 'one emoji is drawn large (>= 300px on the 1080 card)');
+
+  const three = L([1.2, 1.2, 1.2], { maxW: 860, maxH: 800 });
+  eq(three.lines, [[0, 1, 2]], 'three emoji stay on one row, read as one phrase');
+
+  const ten = L(new Array(10).fill(1.3), { maxW: 860, maxH: 800 });
+  eq(ten.lines.map((r) => r.length), [5, 5], 'ten flags (ASEAN) sit as 5 + 5');
+  const five = L(new Array(5).fill(1.27), { maxW: 860, maxH: 800 });
+  eq(five.lines.map((r) => r.length), [3, 2], 'five emoji sit as 3 + 2, not a two-column stack');
+
+  const seven = L([1, 1, 1, 1, 1, 1, 1], { maxW: 860, maxH: 800 });
+  eq(flat(seven), [0, 1, 2, 3, 4, 5, 6], 'every item is kept, in the order chosen');
+  const sizes = seven.lines.map((r) => r.length);
+  ok(Math.max.apply(null, sizes) - Math.min.apply(null, sizes) <= 1, 'rows are balanced (no 6 + 1)');
+
+  const fifty = L(new Array(50).fill(1.2), { maxW: 860, maxH: 800, minFont: 44 });
+  ok(fifty.lines.length >= 6, 'fifty items fill the card as a block, not a thin band of long rows');
+  ok(fifty.fontSize >= 65, 'and draw at 65px or more on the 1080 card');
+  eq(flat(fifty).length, 50, 'fifty items: none dropped');
+  ok(fifty.fits, 'fifty single emoji still fit legibly (>= 44px)');
+
+  const wide = L(new Array(50).fill(9), { maxW: 860, maxH: 800, minFont: 44 });
+  eq(flat(wide).length, 50, 'items too wide to fit are still all present in the layout');
+  eq(wide.fits, false, 'and the layout says they do not fit, instead of shrinking them silently');
+
+  eq(L([], {}).fits, false, 'an empty selection does not fit anything');
+}
+
+/* ---- shareImageBlob: the selection's opt-ins (2026-10-01) -------------- */
+
+{
+  let payload = null;
+  const { UTG, dataLayer } = load({ share: async (p) => { payload = p; }, canShare: () => true });
+  await UTG.shareImageBlob({ type: 'image/png' },
+    { filename: 'x.png', surface: 'library_selection', itemType: 'selection', noTitle: true });
+  ok(payload && !('title' in payload) && !('text' in payload),
+    'noTitle sends the file alone: no page title arrives as if the visitor wrote it');
+  eq(dataLayer[0].share_surface, 'library_selection', 'the selection is its own surface');
+  eq(dataLayer[0].share_item_type, 'selection', 'and its own item type');
+}
+
+{
+  let shared = false;
+  const { UTG, dataLayer } = load({ share: async () => { shared = true; }, canShare: () => true });
+  const out = await UTG.shareImageBlob({ type: 'image/png' }, { filename: 'x.png', mode: 'download' });
+  eq(out, 'downloaded', 'mode "download" downloads');
+  eq(shared, false, 'and never opens the share sheet');
+  eq(dataLayer[0].share_method, 'image_download', 'recorded as a download');
+}
+
+{
+  const err = new Error('nope'); err.name = 'NotAllowedError';
+  const { UTG, dataLayer } = load({ share: async () => { throw err; }, canShare: () => true });
+  const out = await UTG.shareImageBlob({ type: 'image/png' }, { filename: 'x.png', downloadOnError: false });
+  eq(out, 'failed', 'downloadOnError:false resolves "failed" when the sheet errors');
+  eq(dataLayer.length, 0, 'and records nothing: no download the visitor did not ask for');
+}
+
+{
+  const err = new Error('nope'); err.name = 'NotAllowedError';
+  const { UTG, dataLayer } = load({ share: async () => { throw err; }, canShare: () => true });
+  const out = await UTG.shareImageBlob({ type: 'image/png' }, { filename: 'x.png' });
+  eq(out, 'downloaded', 'without the opt-in an erroring sheet still falls back to a download (printables unchanged)');
+  eq(dataLayer.length, 1, 'recorded once');
+}
+
+{
+  const { UTG } = load({});
+  const b = UTG.buildShareButton({ label: 'Share', icon: 'link' });
+  ok(/M13\.828 10\.172/.test(b.innerHTML), 'icon "link" draws the link icon');
+  eq(b.className, 'share-result-btn', 'and keeps the Share class, so the same delegated share runs');
+  const plain = UTG.buildShareButton({ label: 'Share' });
+  ok(!/M13\.828 10\.172/.test(plain.innerHTML), 'the default icon is unchanged');
+}
+
 /* ---- shareImageBlob (the printables engines' path) --------------------- */
 
 {
@@ -344,6 +432,36 @@ function stubCanvas(UTG) {
   eq(dataLayer.length, 1, 'and pushes one row');
   eq(dataLayer[0].share_destination, 'download', 'recorded as download');
   eq(dataLayer[0].share_method, 'image_download', 'with share_method image_download');
+}
+
+/* ---- share_format (2026-09-30) ----------------------------------------- */
+/* WHAT left the page. Always present as a key (GTM keeps the last value of
+   a key, so an omitted one would inherit the previous row's). */
+
+{
+  const { UTG, dataLayer } = load({});
+  await UTG.shareImageBlob({ type: 'image/gif' },
+    { filename: 'zalgo-text.gif', surface: 'zalgo', itemType: 'gif', format: 'gif' });
+  eq(dataLayer[0].share_format, 'gif', 'a GIF blob records share_format "gif"');
+  eq(dataLayer[0].share_surface, 'zalgo', 'with the zalgo surface');
+  eq(dataLayer[0].share_item_type, 'gif', 'and item type gif');
+}
+
+{
+  const { UTG, dataLayer } = load({});
+  await UTG.shareImageBlob({ type: 'image/gif' }, { filename: 'x.gif' });
+  eq(dataLayer[0].share_format, 'gif', 'an unstated format is read from the blob type');
+}
+
+{
+  const { UTG, dataLayer } = load({});
+  UTG.pushShare('image_download', { surface: 'zalgo' });
+  UTG.pushShare('link_copy', {});
+  UTG.pushShare('pinterest', {});
+  eq(dataLayer[0].share_format, 'png', 'the PNG card path defaults to png');
+  eq(dataLayer[1].share_format, 'link', 'a link share is "link"');
+  ok(Object.prototype.hasOwnProperty.call(dataLayer[2], 'share_format') && dataLayer[2].share_format === null,
+    'a pin carries the key as an honest null, never omitted');
 }
 
 /* ---- buildShareRow ----------------------------------------------------- */

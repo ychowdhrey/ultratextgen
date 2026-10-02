@@ -109,6 +109,30 @@
       "titleFor": "Esikatselu: {style}",
       "dialogAriaLabel": "Alustan esikatselu",
       "closeAriaLabel": "Sulje esikatselu"
+    },
+    "imageSelection": {
+      "selectImage": "Valitse ja jaa kuvana",
+      "viewSelection": "Näytä valinta ({n})",
+      "hint": "Valitse emojeja tai symboleja mistä tahansa osiosta kuvaasi.",
+      "count": "{n} valittu",
+      "empty": "Mitään ei ole vielä valittu",
+      "shareImage": "Jaa kuva",
+      "downloadImage": "Lataa kuva",
+      "cancel": "Peruuta",
+      "preview": "Esikatsele kuvaa",
+      "close": "Sulje",
+      "remove": "Poista {item}",
+      "addAll": "Lisää kaikki {n}",
+      "removeAll": "Poista kaikki {n}",
+      "limit": "Voit lisätä enintään {max}.",
+      "tooBig": "Liian monta yhteen kuvaan. Poista muutama.",
+      "making": "Luodaan kuvaa…",
+      "shared": "Kuva jaettu",
+      "downloaded": "Kuva ladattu",
+      "shareFailed": "Jakaminen ei onnistunut. Kokeile latausta.",
+      "renderFailed": "Kuvan luominen ei onnistunut. Yritä uudelleen.",
+      "trayLabel": "Kuvan valinta",
+      "setUnavailable": "Tätä sarjaa ei voi vielä lisätä kuvaan."
     }
   }
 }
