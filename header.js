@@ -400,7 +400,7 @@
     library: { label: "Library", href: "/library/" },
     printables: { label: "Printables", href: "/printables/" },
     events: { label: "Events", href: "/events/" },
-    search: "Search font styles…",
+    search: "Search fonts, symbols…",
     darkMode: "Toggle dark mode"
   };
 
@@ -548,6 +548,76 @@
         localStorage.setItem("darkMode", isDark ? "true" : "false");
       });
     }
+
+    initializeSiteSearch();
+  }
+
+  // ── Site search ──────────────────────────────────────────────────────────
+  //
+  // The box above is on every page, but until 2026-10-02 only script.js's
+  // style filter listened to it, and script.js loads on ~544 of ~4,745 pages.
+  // Everywhere else typing and pressing Enter did nothing. The suggestions
+  // list lives in js/search/site-search.js and is loaded the first time a
+  // visitor points at, focuses or types in the box, so a page nobody searches
+  // pays nothing for it. Its index is generated:
+  // `npm run build:search-index -- --write`.
+  //
+  // Section labels reuse this file's own nav labels, which are each locale's
+  // shipped wording. Sections the nav has no word for show no label on a
+  // locale page rather than an English one.
+  function searchSectionLabels(locale) {
+    const labels = {
+      fonts: nav.category.label,
+      "use-cases": nav.usecase.label,
+      library: nav.library.label,
+      symbols: nav.library.label,
+      printables: nav.printables.label,
+      events: nav.events.label,
+      guides: nav.guide.label,
+      answers: nav.answers.label
+    };
+    if (locale === "en") {
+      Object.assign(labels, {
+        home: "Generator",
+        tools: "Tool",
+        platforms: "Platform",
+        compare: "Compare",
+        learn: "Learn",
+        research: "Research",
+        updates: "Updates",
+        embed: "Widget"
+      });
+    }
+    return labels;
+  }
+
+  function initializeSiteSearch() {
+    const input = document.getElementById("searchInput");
+    if (!input) return;
+    const locale = detectLocale();
+    let requested = false;
+    function load() {
+      if (requested) return;
+      requested = true;
+      const attach = function () {
+        if (!window.UTGSiteSearch) return;
+        window.UTGSiteSearch.attach(input, {
+          locale: locale,
+          sectionLabels: searchSectionLabels(locale),
+          emptyText: locale === "en" ? "No pages match. Try another word." : ""
+        });
+      };
+      if (window.UTGSiteSearch) { attach(); return; }
+      const s = document.createElement("script");
+      s.src = "/js/search/site-search.js";
+      s.async = true;
+      s.onload = attach;
+      s.onerror = function () { requested = false; };
+      document.head.appendChild(s);
+    }
+    input.addEventListener("focus", load);
+    input.addEventListener("input", load);
+    input.addEventListener("pointerenter", load);
   }
 
   // ── CTA card instrumentation ─────────────────────────────────────────────
