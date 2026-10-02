@@ -744,6 +744,7 @@
     }).join("");
     return '<div class="mood-explainer flag-grid-section">' +
       "<h3>" + escHtml(group.name) + "</h3>" +
+      (group.desc ? "<p>" + escHtml(group.desc) + "</p>" : "") +
       '<div class="flag-grid-display">' + escHtml(group.flags.join(" ")) + "</div>" +
       '<div class="format-selector">' +
       '<div class="format-selector-label">' + escHtml(str.copyFormat) + "</div>" +
@@ -806,6 +807,9 @@
      Build grid UI
      Call:  UltraTextGen.buildGrids("containerId", groups)
      where groups = [{ name: "EU", flags: ["\ud83c\udde6\ud83c\uddf9", \u2026] }, \u2026]
+     An optional `desc` on a group renders as one line under its heading. Use
+     it to name the members in words: a flag emoji is two regional-indicator
+     letters, so a crawler sees no country names in the grid itself.
      ============================ */
   /* Every collection set this page builds, so an image selection can offer
      "Add all" on one. The registry holds the group's own item array rather
