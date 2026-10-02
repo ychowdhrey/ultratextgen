@@ -87,6 +87,7 @@ describe its output as plain text. `search_protected` terms are asserted in
 scripts/lib/cta_routing.test.py; adding a destination means checking them again.
 """
 
+import html as _html
 import re
 
 # Destination definitions. One entry per genuinely different reader job.
@@ -177,3 +178,151 @@ def card_for(rel_path):
     """The full replacement card for a page, or None. Convenience wrapper."""
     key = route(rel_path)
     return dict(DESTINATIONS[key], key=key) if key else None
+
+
+# ---------------------------------------------------------------------------
+# PRINTABLES: the next printable job, not the font generator
+# ---------------------------------------------------------------------------
+# Measured 2026-10-02 on main: 119 cards across the EN printables pages, and 114
+# of them sat on per-letter pages and pointed at a copy-paste font category
+# (bubble 36, cursive 27, gothic 27, bold 26). A visitor on a printable letter
+# page has just printed, traced or cut something; the card sent them to a
+# different job (paste Unicode text) on a page that earns a fraction of what a
+# printable visitor does.
+#
+# So the card now offers the next thing to print, from the same family: a single
+# letter leads to a whole name (bubble, cursive, calligraphy, graffiti), and a
+# block letter or a number leads to the banner maker, which spells a word or a
+# phrase one flag per character (block-letters itself stays a single-letter
+# page; the phrase case is the banner maker's). Copy-paste text is still offered,
+# as one sentence in the card that links the category the card used to open.
+#
+# Every claim is on the destination page itself (checked 2026-10-02):
+#   * bubble-name: puffy outlines, print hollow to color, class list of up to
+#     60 names, one sheet per name.
+#   * cursive-name: model row, faded rows to trace, blank lines, class set.
+#   * calligraphy-name: blackletter, model row, faded rows to trace with a pen,
+#     blank lines; nameplates, place cards, class set.
+#   * graffiti-name: five styles (tag, marker, throw-up, spray, blockbuster),
+#     outline to colour, PNG.
+#   * banner-maker: one flag per character with a dashed cut line and string
+#     holes; long phrases paginate; digits are kept as typed
+#     (bannerCards() in js/printables/printablesEngine.js).
+#
+# English only, for the reason given above for the shared card: none of these
+# destinations has a build in every locale, and a locale page must not link an
+# English page.
+PRINTABLE_DESTINATIONS = {
+    "bubble-name": {
+        "href": "/printables/bubble-name/",
+        "h3": "Put a whole name in bubble letters",
+        "cta": ("The bubble name maker spells any name in these same puffy outlines. "
+                "Print it hollow to color, or paste a class list and get one sheet per child."),
+        "button": "Make a bubble name →",
+    },
+    "cursive-name": {
+        "href": "/printables/cursive-name/",
+        "h3": "Write a whole name in cursive",
+        "cta": ("The cursive name worksheet sets any first name in joined cursive: a model row, "
+                "faded rows to trace and blank lines to write it freehand. Paste a class list "
+                "for one sheet per child."),
+        "button": "Make a name worksheet →",
+    },
+    "calligraphy-name": {
+        "href": "/printables/calligraphy-name/",
+        "h3": "Write a whole name in calligraphy",
+        "cta": ("The calligraphy name sheet sets any name in blackletter with a model row, faded "
+                "rows to trace with a pen and blank lines, for place cards, nameplates or a "
+                "whole class."),
+        "button": "Make a name sheet →",
+    },
+    "graffiti-name": {
+        "href": "/printables/graffiti-name/",
+        "h3": "Put your name in graffiti",
+        "cta": ("The graffiti name maker writes a name in five styles: tag, marker, throw-up, "
+                "spray or blockbuster. Print the outline to colour, or download a PNG."),
+        "button": "Make a graffiti name →",
+    },
+    "banner-word": {
+        "href": "/printables/banner-maker/",
+        "h3": "Spell a word across a wall",
+        "cta": ("The banner maker gives each letter of a word or phrase its own flag, with a "
+                "dashed cut line and string holes. Long phrases run onto extra sheets in order."),
+        "button": "Make a letter banner →",
+    },
+    "banner-number": {
+        "href": "/printables/banner-maker/",
+        "h3": "Spell out an age or a year",
+        "cta": ("The banner maker turns a phrase like HAPPY 5TH BIRTHDAY into one flag per "
+                "letter and number, each with a dashed cut line and string holes."),
+        "button": "Make a banner →",
+    },
+}
+
+# The copy-paste category each card used to open, named in the one sentence the
+# new card keeps for it. "/" is the generator itself.
+PASTE_LABELS = {
+    "/category/bubble-fonts/": "bubble fonts generator",
+    "/category/bold-fonts/": "bold fonts generator",
+    "/category/gothic-fonts/": "gothic fonts generator",
+    "/category/cursive-fonts/": "cursive fonts generator",
+    "/": "UltraTextGen font generator",
+}
+
+# family -> (landing key, spoke key for letters, spoke key for numbers)
+_PRINTABLE_ROUTES = {
+    "bubble-letters": (None, "bubble-name", "banner-number"),
+    "block-letters": (None, "banner-word", "banner-number"),
+    # Landing held (None) while its September traffic loss is diagnosed: an
+    # on-page change inside that read's window is one of the causes it must rule
+    # out. Route it ("cursive-name") once that diagnosis closes (after 2026-10-16).
+    "cursive-alphabet": (None, "cursive-name", None),
+    "calligraphy-alphabet": ("calligraphy-name", "calligraphy-name", None),
+    "graffiti-letters": ("graffiti-name", None, None),
+}
+
+
+def is_paste_href(href):
+    """True when `href` is one of the copy-paste destinations a printables card
+    may be moved off. Any other href was pointed somewhere on purpose."""
+    return (href or "").strip() in PASTE_LABELS
+
+
+def printables_route(rel_path):
+    """The PRINTABLE_DESTINATIONS key for an English printables page, or None.
+
+    `rel_path` is repo-relative, e.g. "printables/bubble-letters/letter-a/index.html".
+    The landing `block-letters` page returns None: it is held unchanged until its
+    size-control readout (owner freeze, 2026-09-22). The `cursive-alphabet`
+    landing returns None until its traffic-loss diagnosis closes (see the table).
+    """
+    parts = [p for p in rel_path.split("/") if p]
+    if not parts or parts[0] != "printables" or parts[-1] != "index.html":
+        return None
+    if len(parts) == 3:
+        landing = _PRINTABLE_ROUTES.get(parts[1])
+        return landing[0] if landing else None
+    if len(parts) == 4:
+        routes = _PRINTABLE_ROUTES.get(parts[1])
+        if not routes:
+            return None
+        if parts[2].startswith("letter-"):
+            return routes[1]
+        if parts[2].startswith("number-"):
+            return routes[2]
+    return None
+
+
+def printables_card_inner(key, paste_href):
+    """The h3, p and button of a printables card, as HTML, without the wrapper.
+
+    The paragraph keeps one sentence for copy-paste text, linking `paste_href`
+    (the category the card used to open). `paste_href` must be a key of
+    PASTE_LABELS."""
+    dest = PRINTABLE_DESTINATIONS[key]
+    esc = lambda s: _html.escape(s, quote=False)  # noqa: E731
+    pointer = ('Want copy-paste text instead? The <a href="%s">%s</a> sets what you type '
+               'in Unicode.' % (_html.escape(paste_href, quote=True), esc(PASTE_LABELS[paste_href])))
+    return ('<h3>%s</h3>\n      <p>%s %s</p>\n      <a class="cta-btn" href="%s">%s</a>'
+            % (esc(dest["h3"]), esc(dest["cta"]), pointer,
+               _html.escape(dest["href"], quote=True), esc(dest["button"])))

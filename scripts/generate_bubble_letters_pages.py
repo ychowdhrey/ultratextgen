@@ -45,6 +45,7 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
 from lib.generator_parity import assert_no_regression  # noqa: E402
+from lib.cta_routing import printables_card_inner  # noqa: E402  (one owner for the card)
 REPO = SCRIPT_DIR.parent
 SPEC_PATH = REPO / "data" / "printables_bubble_letters.json"
 STYLES_PATH = REPO / "styles.js"
@@ -550,9 +551,7 @@ def render_spoke(spec, index):
     </section>
 
     <div class="cta-card">
-      <h3>Want bubble letter {esc(L)} for a bio or caption?</h3>
-      <p>These outlines are for paper. For copy-paste Unicode bubble text that pastes anywhere (no image needed), use the bubble fonts generator.</p>
-      <a class="cta-btn" href="/category/bubble-fonts/">Open the bubble fonts generator →</a>
+      {printables_card_inner("bubble-name", "/category/bubble-fonts/")}
     </div>
 
 
