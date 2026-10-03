@@ -46,6 +46,7 @@
     "check:print-export-properties": "node scripts/check-print-export-properties.js",
     "check:fitted-page-fit": "node scripts/check-fitted-page-fit.js",
     "check:share-save-tags": "node scripts/check-share-save-tags.js",
+    "check:runtime-smoke": "node scripts/smoke-runtime.js",
     "inject:share-save-tags": "node scripts/inject-share-save-tags.js",
     "check:hreflang": "node scripts/audit-hreflang.js",
     "check:hreflang-completeness": "node scripts/audit-hreflang-completeness.js",
@@ -140,5 +141,8 @@
   "dependencies": {
     "cheerio": "^1.2.0",
     "glob": "^13.0.5"
+  },
+  "devDependencies": {
+    "playwright": "1.56.1"
   }
 }
