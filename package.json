@@ -64,6 +64,8 @@
     "test:saved-items": "node js/saved/savedItems.test.js",
     "test:share-core": "node js/share/shareCore.test.js",
     "test:image-selection": "node js/share/imageSelection.test.js",
+    "test:game-rules": "node js/gamename/gameRules.test.js",
+    "test:name-reports": "node scripts/name-reports.test.mjs",
     "test:zalgo-engine": "node usecase/zalgo-text/zalgo-text.test.js",
     "test:qr": "node js/printables/qr.test.js",
     "test:stencil": "node js/printables/stencil.test.js",

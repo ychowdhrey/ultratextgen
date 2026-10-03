@@ -464,6 +464,32 @@
     return "unknown";
   }
 
+  /* Which characters of a name count toward the board's per-character tally.
+     Decoration only, never the player's letters: a tally of "𝐒 refused 4
+     times" says nothing, and a styled letter is just a letter in another font
+     (𝐒𝐚𝐧𝐳 is "Sanz" in four code points). Kept: symbols
+     that are not letters or digits even after NFKC folding (so ⓢ and Ｓ stay
+     out), plus anything in SAFE_SYMBOLS, the site's own decoration palette,
+     which is how the letter-class blanks and accents players actually ask
+     about (ㅤ U+3164, 亗, メ) get in. Returned as hex code points, first eight
+     distinct, in order of appearance. Without Unicode property escapes the
+     answer is empty rather than unfiltered. */
+  let letterLike = null;
+  try { letterLike = new RegExp("[\\p{L}\\p{N}]", "u"); } catch (e) { letterLike = null; }
+  function outcomeSymbols(str) {
+    if (!letterLike) return [];
+    const out = [];
+    Array.from(str || "").forEach(function (ch) {
+      const cls = classifyChar(ch);
+      if (cls === "ascii" || cls === "space" || cls === "styled") return;
+      const palette = SAFE_SYMBOLS.indexOf(ch) !== -1;
+      if (!palette && (letterLike.test(ch) || letterLike.test(ch.normalize("NFKC")))) return;
+      const hex = ch.codePointAt(0).toString(16).toUpperCase().padStart(4, "0");
+      if (out.indexOf(hex) === -1) out.push(hex);
+    });
+    return out.slice(0, 8);
+  }
+
   // Grapheme-cluster split (a zalgo-style base+combining-marks stack reads
   // as one glyph, not N). Display-only — analyze()'s counting below stays on
   // Array.from codepoints, since the per-game limit math is already
@@ -615,7 +641,14 @@
          issue: { 'over-limit': …, space: …, charset: …, underscore: …,
                   'unknown-chars': …, 'strict-symbols': …, 'too-short': …,
                   'weight-uncertain': … },
-         weightNote                            // e.g. "symbols count as 2"
+         weightNote,                           // e.g. "symbols count as 2"
+         outcome: {                            // optional; omit = no reporter
+           ask, publicNote,                    // "{game}" becomes the rule label
+           accepted, refused, boxes,
+           reasonAsk, reasons: { key: label }, // asked after "refused"
+           sending, thanks,
+           errors: { link, rate_limited, generic, … }  // API error code -> text
+         }                                     // needs js/gamename/name-reports.js
        }
      }
      ============================ */
@@ -643,7 +676,7 @@
     const games = (cfg.games || ["ff"]).filter(function (g) { return RULES[g]; });
     if (!games.length) return;
 
-    const state = { game: games[0], dirty: false, lastLevel: null, priming: true };
+    const state = { game: games[0], dirty: false, lastLevel: null, priming: true, touched: false };
 
     mount.innerHTML = "";
     mount.classList.add("gr-checker");
@@ -693,6 +726,26 @@
     const charRow = el("div", "gr-chars");
     mount.appendChild(charRow);
 
+    // In-game outcome reporter (opt-in: only a page that passes text.outcome
+    // AND loads js/gamename/name-reports.js gets it, so its strings are always
+    // the page's own language). No game we cover publishes the full list of
+    // characters its name field takes, so this asks the one party who finds
+    // out: the player who just tried. The answer goes on the page's public
+    // board (UltraTextGen.nameReports), where every later player can read it.
+    // Both answers are asked for, because refusals alone have no denominator,
+    // and because "it went through" on a name this checker failed is what
+    // proves a rule here too strict. The question appears only once the board
+    // has answered that it is switched on.
+    const reports = ns.nameReports || null;
+    const outcomeText = (text.outcome && reports) ? text.outcome : null;
+    const outcomeBox = outcomeText ? el("div", "gr-outcome") : null;
+    const outcomeState = { name: null, game: null, step: "ask", available: {}, error: "" };
+    const reported = {};
+    if (outcomeBox) {
+      outcomeBox.setAttribute("aria-live", "polite");
+      mount.appendChild(outcomeBox);
+    }
+
     // Mirror the main generator input until the user touches the checker, so
     // the counter feels live without any extra step. We mirror the *flaired*
     // text (name + selected decoration) when script.js exposes it, so the count
@@ -706,16 +759,18 @@
     }
     if (mainInput) {
       mainInput.addEventListener("input", function () {
+        state.touched = true;
         if (!state.dirty) { box.value = mirrorSource(); render(); }
       });
       // The selected flair changed in the generator — re-mirror so the badge
       // and counter track the decorated name, not just the typed base.
       document.addEventListener("utg:flairchange", function () {
+        state.touched = true;
         if (!state.dirty) { box.value = mirrorSource(); render(); }
       });
       box.value = mirrorSource();
     }
-    box.addEventListener("input", function () { state.dirty = true; render(); });
+    box.addEventListener("input", function () { state.dirty = true; state.touched = true; render(); });
 
     function render() {
       const report = analyze(box.value, state.game);
@@ -774,6 +829,117 @@
       }
 
       reportVerdict(report);
+      renderOutcome(report);
+    }
+
+    function outcomeButton(label, value, onClick) {
+      const btn = el("button", "gr-outcome-btn", label);
+      btn.type = "button";
+      btn.setAttribute("data-outcome", value);
+      btn.addEventListener("click", onClick);
+      return btn;
+    }
+
+    function renderOutcome(report) {
+      if (!outcomeBox) return;
+      const name = box.value;
+      if (name !== outcomeState.name || state.game !== outcomeState.game) {
+        outcomeState.name = name;
+        outcomeState.game = state.game;
+        outcomeState.step = reported[state.game + "\u0000" + name] ? "done" : "ask";
+      }
+      outcomeBox.innerHTML = "";
+      // Hidden until the player has typed or picked something: the generator
+      // arrives pre-filled with a sample name nobody has tried in a game.
+      outcomeBox.hidden = report.level === "empty" || !state.touched;
+      if (outcomeBox.hidden) return;
+      // ...and until the board says it is switched on. One request per page
+      // view at most, made only by someone who typed a name.
+      const gameId = state.game;
+      if (outcomeState.available[gameId] !== true) {
+        outcomeBox.hidden = true;
+        if (outcomeState.available[gameId] === undefined) {
+          outcomeState.available[gameId] = "pending";
+          reports.available(gameId).then(function (ok) {
+            outcomeState.available[gameId] = ok;
+            if (ok) renderOutcome(analyze(box.value, state.game));
+          });
+        }
+        return;
+      }
+      const game = report.rule.label;
+      const fill = function (s) { return String(s || "").replace("{game}", game); };
+
+      if (outcomeState.step === "done") {
+        outcomeBox.appendChild(el("p", "gr-outcome-thanks", fill(outcomeText.thanks)));
+        return;
+      }
+      if (outcomeState.step === "sending") {
+        outcomeBox.appendChild(el("p", "gr-outcome-thanks", fill(outcomeText.sending || "…")));
+        return;
+      }
+      if (outcomeState.step === "error") {
+        outcomeBox.appendChild(el("p", "gr-outcome-error", fill(outcomeState.error)));
+        return;
+      }
+      if (outcomeState.step === "reason") {
+        outcomeBox.appendChild(el("span", "gr-outcome-ask", fill(outcomeText.reasonAsk)));
+        const reasons = outcomeText.reasons || {};
+        Object.keys(reasons).forEach(function (key) {
+          outcomeBox.appendChild(outcomeButton(reasons[key], key, function () {
+            sendOutcome(report, "refused", key);
+          }));
+        });
+        return;
+      }
+      outcomeBox.appendChild(el("span", "gr-outcome-ask", fill(outcomeText.ask)));
+      if (outcomeText.publicNote) outcomeBox.appendChild(el("span", "gr-outcome-note", fill(outcomeText.publicNote)));
+      outcomeBox.appendChild(outcomeButton(outcomeText.accepted, "accepted", function () {
+        sendOutcome(report, "accepted", null);
+      }));
+      outcomeBox.appendChild(outcomeButton(outcomeText.refused, "refused", function () {
+        outcomeState.step = "reason";
+        renderOutcome(analyze(box.value, state.game));
+      }));
+      if (outcomeText.boxes) {
+        outcomeBox.appendChild(outcomeButton(outcomeText.boxes, "boxes", function () {
+          sendOutcome(report, "boxes", null);
+        }));
+      }
+    }
+
+    /* Post the answer to the public board. The name is posted as typed,
+       because the board exists to show other players which names did not
+       work; the reporter says so before anyone answers (outcomeText.publicNote).
+       `symbols` is the decoration-only subset (outcomeSymbols) the board
+       tallies per character. The API refuses anything that looks like a
+       link, so a refusal here is shown to the player rather than swallowed. */
+    function sendOutcome(report, outcome, reason) {
+      const name = box.value;
+      const key = state.game + "\u0000" + name;
+      if (reported[key]) return;
+      reported[key] = true;
+      outcomeState.step = "sending";
+      renderOutcome(report);
+      reports.submit({
+        game: state.game,
+        name: name,
+        outcome: outcome,
+        reason: reason,
+        verdict: report.level,
+        symbols: outcomeSymbols(name)
+      }).then(function (res) {
+        if (box.value !== name) return; // the player has moved on to another name
+        if (res && res.ok) {
+          outcomeState.step = "done";
+        } else {
+          const errors = outcomeText.errors || {};
+          outcomeState.step = "error";
+          outcomeState.error = errors[res && res.error] || errors.generic || "";
+          if (!res || res.error === "network" || res.error === "rate_limited") delete reported[key];
+        }
+        renderOutcome(analyze(box.value, state.game));
+      });
     }
 
     /* Completion event. render() runs on every keystroke, so this fires only
@@ -821,6 +987,7 @@
     tagBudget: tagBudget,
     initChecker: initChecker,
     classifyChar: classifyChar,
+    outcomeSymbols: outcomeSymbols,
     graphemes: graphemes,
     charVerdict: charVerdict
   };
