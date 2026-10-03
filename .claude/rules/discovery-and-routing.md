@@ -64,9 +64,16 @@ line where a cap is hit.
 route bills one Workers-quota invocation per request, and with **no**
 `_routes.json` Cloudflare auto-generates one that routes *every* request — CSS, JS,
 images, all pages — through the root middleware just to call `context.next()`. That
-state burned the entire Workers free daily quota. Only `/` needs the Function;
-static asset requests are free and unlimited **only** when they do not invoke one.
+state burned the entire Workers free daily quota. Two routes are included: `/`
+(the middleware) and `/api/name-reports` (the player report board). Static asset
+requests are free and unlimited **only** when they do not invoke one.
 An `_`-prefixed file under `functions/` stays an unrouted code module.
+
+**An included API route is called by people using the feature, never by page
+views.** `js/gamename/name-reports.js` reads the board only when it scrolls into
+view or a player has typed a name into the checker; a plain page view makes zero
+calls (measured in Chromium, 2026-10-03). Keep it that way: an API fetch on page
+load would bill one invocation per pageview, the failure above in another form.
 
 ## `sitemap.xml` is generated
 

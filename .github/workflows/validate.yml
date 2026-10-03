@@ -391,14 +391,23 @@ jobs:
         run: npm run test:image-selection | tee image-selection-tests.log
 
       # The name checker's in-game outcome reporter (js/gamename/game-rules.js),
-      # headless. Gating, no backlog: a name_outcome row may carry decoration
-      # only, never the name a player typed (a styled name decodes straight back
-      # to it), every key is pushed on every row, and the reporter appears only
-      # on a page that opts in with its own strings.
+      # headless. Gating, no backlog: it asks only where the public board is on,
+      # says the name goes public before anyone answers, tallies decoration
+      # only, and shows the board's refusals instead of swallowing them.
       - name: Run game-rules outcome reporter tests
         id: game_rules_tests
         continue-on-error: true
         run: npm run test:game-rules | tee game-rules-tests.log
+
+      # The public name-report board's server (functions/api/name-reports.js),
+      # its real SQL run by SQLite. Gating, no backlog: a name that looks like
+      # a link is refused, writes from other origins are refused, the daily
+      # rate limit holds, three spam flags hide a report, and only the owner's
+      # token can restore or delete one.
+      - name: Run name-report board tests
+        id: name_reports_tests
+        continue-on-error: true
+        run: npm run test:name-reports | tee name-reports-tests.log
 
       # Gating, no backlog: this decides WHAT GETS ANNOUNCED to Bing, Naver,
       # Seznam, Yandex and Yep. It replaced Cloudflare Crawler Hints, which
@@ -995,9 +1004,10 @@ jobs:
             echo "### share-core analytics tests — \`${{ steps.share_core_tests.outcome }}\`"
             echo "### image-selection tests — \`${{ steps.image_selection_tests.outcome }}\`"
             echo "### game-rules outcome reporter tests — \`${{ steps.game_rules_tests.outcome }}\`"
+            echo "### name-report board tests — \`${{ steps.name_reports_tests.outcome }}\`"
             echo "### IndexNow submission-policy tests — \`${{ steps.indexnow_tests.outcome }}\`"
             echo '```'
-            cat printables-surface-wiring.log print-export-properties.log fitted-page-fit.log render-invariants-tests.log practice-row-tests.log share-save-tags.log explorer-strings.log saved-items-tests.log indexnow-tests.log share-core-tests.log image-selection-tests.log game-rules-tests.log
+            cat printables-surface-wiring.log print-export-properties.log fitted-page-fit.log render-invariants-tests.log practice-row-tests.log share-save-tags.log explorer-strings.log saved-items-tests.log indexnow-tests.log share-core-tests.log image-selection-tests.log game-rules-tests.log name-reports-tests.log
             echo '```'
             echo ""
             echo "### Funding Choices tag check — \`${{ steps.funding_choices.outcome }}\`"
@@ -1316,6 +1326,7 @@ jobs:
           steps.share_core_tests.outcome == 'failure' ||
           steps.image_selection_tests.outcome == 'failure' ||
           steps.game_rules_tests.outcome == 'failure' ||
+          steps.name_reports_tests.outcome == 'failure' ||
           steps.indexnow_tests.outcome == 'failure' ||
           steps.new_images.outcome == 'failure' ||
           steps.new_symbol_peer_links.outcome == 'failure' ||

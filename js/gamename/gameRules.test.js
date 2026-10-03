@@ -1,18 +1,21 @@
 /* ==========================================================
    gameRules.test.js
-   Assertions for the name checker's in-game outcome reporter: what a
-   name_outcome row may carry, and that it never carries the name.
+   Assertions for the name checker's in-game outcome reporter: which
+   characters it tallies (decoration only), when it asks (only once the
+   public board says it is on), and what it posts to the board.
 
    No dependencies, no runner:
        node js/gamename/gameRules.test.js
    Exits non-zero if any assertion fails, and prints every assertion.
 
-   Why this exists: the reporter asks players what happened when they
-   pasted a name into the game, and a name is personal. A styled name is
-   still the name (𝐒𝐚𝐧𝐳 decodes to "Sanz" from its code points alone), so
-   the only characters a row may hold are decoration. That is a privacy
-   rule no visual check can see, so it is asserted here, on the real
-   module, through a minimal stand-in for the DOM.
+   Why this exists: the reporter posts to a public board, so the question
+   must not appear where the board is off (a promise nobody keeps), must
+   say the name goes public before anyone answers, and must send the
+   per-character tally decoration only (a styled letter is just a letter:
+   𝐒𝐚𝐧𝐳 decodes to "Sanz"). None of that is visible to a screenshot, so
+   it is asserted here, on the real module, through a minimal DOM and a
+   stand-in for js/gamename/name-reports.js. The board's server side has
+   its own test: scripts/name-reports.test.mjs.
    ========================================================== */
 const fs = require("fs");
 
@@ -98,78 +101,97 @@ t("repeats count once, in order", G.outcomeSymbols("꧁༒Sanz༒꧂"), ["A9C1",
 t("capped at eight", G.outcomeSymbols("★☆✦✧✩✪✯✰✴✵").length, 8);
 t("empty in, empty out", G.outcomeSymbols(""), []);
 
-// --- the reporter is opt-in ---
+// --- the reporter needs a page opt-in AND the board module ---
 mounts.plain = makeEl("div");
 G.initChecker({ mount: "plain", games: ["ff"], text: {} });
 t("no text.outcome, no reporter", walk(mounts.plain).filter((n) => n.className === "gr-outcome").length, 0);
 
-// --- the reporter, end to end ---
-mounts.ff = makeEl("div");
-G.initChecker({
-  mount: "ff",
-  games: ["ff"],
-  text: {
-    outcome: {
-      ask: "Tried this name in {game}?",
-      accepted: "It went through",
-      refused: "It was refused",
-      boxes: "It shows as boxes",
-      reasonAsk: "What did {game} say?",
-      reasons: { too_long: "Too long", invalid: "Invalid characters" },
-      thanks: "Thanks."
-    }
-  }
-});
-const nodes = () => walk(mounts.ff);
-const outcomeBox = nodes().find((n) => n.className === "gr-outcome");
-const input = nodes().find((n) => n.className === "gr-input");
-const button = (value) => nodes().find((n) => n.getAttribute && n.getAttribute("data-outcome") === value);
+const OUTCOME_TEXT = {
+  ask: "Tried this name in {game}?",
+  publicNote: "Your answer and this name go on the public player board.",
+  accepted: "It went through",
+  refused: "It was refused",
+  boxes: "It shows as boxes",
+  reasonAsk: "What did {game} say?",
+  reasons: { too_long: "Too long", invalid: "Invalid characters" },
+  sending: "Adding…",
+  thanks: "Thanks.",
+  errors: { link: "No links.", generic: "Try again." }
+};
+mounts.nomodule = makeEl("div");
+G.initChecker({ mount: "nomodule", games: ["ff"], text: { outcome: OUTCOME_TEXT } });
+t("text.outcome without name-reports.js, no reporter", walk(mounts.nomodule).filter((n) => n.className === "gr-outcome").length, 0);
 
-t("reporter exists when opted in", !!outcomeBox, true);
-t("hidden before the player types anything", outcomeBox.hidden, true);
+// stand-in board module
+const posted = [];
+let boardOn = true;
+let availableCalls = 0;
+let nextReply = { ok: true };
+window.UltraTextGen.nameReports = {
+  available() { availableCalls++; return Promise.resolve(boardOn); },
+  submit(r) { posted.push(r); return Promise.resolve(nextReply); }
+};
+const tick = () => new Promise((r) => setTimeout(r, 0));
 
-input.value = "꧁𝐒𝐚𝐧𝐳꧂";
-input.fire("input");
-t("shown once a name is typed", outcomeBox.hidden, false);
-t("{game} is filled with the rule label", outcomeBox.children[0].textContent, "Tried this name in Free Fire?");
-t("three answers offered", ["accepted", "refused", "boxes"].map((v) => !!button(v)), [true, true, true]);
+(async () => {
+  // board switched off: the question never shows
+  boardOn = false;
+  mounts.off = makeEl("div");
+  G.initChecker({ mount: "off", games: ["ff"], text: { outcome: OUTCOME_TEXT } });
+  const offBox = walk(mounts.off).find((n) => n.className === "gr-outcome");
+  const offInput = walk(mounts.off).find((n) => n.className === "gr-input");
+  offInput.value = "Sanz"; offInput.fire("input"); await tick();
+  t("board off: question stays hidden", offBox.hidden, true);
+  offInput.value = "Sanz2"; offInput.fire("input"); await tick();
+  t("board off: asked the board once, not per keystroke", availableCalls, 1);
 
-const before = window.dataLayer.filter((r) => r.event === "name_outcome").length;
-button("refused").fire("click");
-t("refused asks why before sending", window.dataLayer.filter((r) => r.event === "name_outcome").length, before);
-t("reason question uses the game label", outcomeBox.children[0].textContent, "What did Free Fire say?");
-button("too_long").fire("click");
+  boardOn = true;
+  mounts.ff = makeEl("div");
+  G.initChecker({ mount: "ff", games: ["ff"], text: { outcome: OUTCOME_TEXT } });
+  const nodes = () => walk(mounts.ff);
+  const outcomeBox = nodes().find((n) => n.className === "gr-outcome");
+  const input = nodes().find((n) => n.className === "gr-input");
+  const button = (value) => nodes().find((n) => n.getAttribute && n.getAttribute("data-outcome") === value);
 
-const rows = window.dataLayer.filter((r) => r.event === "name_outcome");
-const row = rows[rows.length - 1];
-t("one row sent", rows.length - before, 1);
-t("row: game", row.check_game, "ff");
-t("row: outcome", row.outcome, "refused");
-t("row: reason", row.outcome_reason, "too_long");
-t("row: checker verdict at the time", row.check_verdict, "ok");
-t("row: decoration only", row.name_symbols, "A9C1 A9C2");
-t("row: styled-letter count", row.name_styled, 4);
-t("row: code points", row.len_codepoints, 6);
-t("row: UTF-16 units", row.len_utf16, 10);
-t("row: UTF-8 bytes", row.len_utf8, 22);
-t("row: every non-ASCII as 2", row.len_x2, 12);
-t("row carries no part of the name",
-  Object.keys(row).some((k) => typeof row[k] === "string" && /[𝐒𝐚𝐧𝐳]|Sanz/u.test(row[k])), false);
-t("every key present, none undefined",
-  ["check_game", "check_verdict", "outcome", "outcome_reason", "name_symbols", "name_styled",
-   "len_codepoints", "len_utf16", "len_utf8", "len_x2"].every((k) => k in row && row[k] !== undefined), true);
-t("thanks shown after sending", outcomeBox.children[0].textContent, "Thanks.");
+  t("reporter exists when opted in with the module", !!outcomeBox, true);
+  t("hidden before the player types anything", outcomeBox.hidden, true);
+  t("no board request before the player types", availableCalls, 1);
 
-input.fire("input");
-t("same name, no second ask", !!button("accepted"), false);
+  input.value = "꧁𝐒𝐚𝐧𝐳꧂";
+  input.fire("input");
+  await tick();
+  t("shown once a name is typed and the board is on", outcomeBox.hidden, false);
+  t("{game} is filled with the rule label", outcomeBox.children[0].textContent, "Tried this name in Free Fire?");
+  t("says the name goes public before anyone answers", outcomeBox.children[1].textContent, "Your answer and this name go on the public player board.");
+  t("three answers offered", ["accepted", "refused", "boxes"].map((v) => !!button(v)), [true, true, true]);
 
-input.value = "Sanz";
-input.fire("input");
-button("accepted").fire("click");
-const accepted = window.dataLayer.filter((r) => r.event === "name_outcome").slice(-1)[0];
-t("accepted row has a null reason, not a missing one", "outcome_reason" in accepted && accepted.outcome_reason === null, true);
-t("plain name has no symbols to send", accepted.name_symbols, null);
-t("two rows in total", window.dataLayer.filter((r) => r.event === "name_outcome").length - before, 2);
+  button("refused").fire("click");
+  t("refused asks why before posting", posted.length, 0);
+  t("reason question uses the game label", outcomeBox.children[0].textContent, "What did Free Fire say?");
+  button("too_long").fire("click");
+  t("one report posted", posted.length, 1);
+  const row = posted[0];
+  t("post: game", row.game, "ff");
+  t("post: the name as typed (the board shows it)", row.name, "꧁𝐒𝐚𝐧𝐳꧂");
+  t("post: outcome", row.outcome, "refused");
+  t("post: reason", row.reason, "too_long");
+  t("post: checker verdict at the time", row.verdict, "ok");
+  t("post: tally symbols are decoration only", row.symbols, ["A9C1", "A9C2"]);
+  t("sending state while the board answers", outcomeBox.children[0].textContent, "Adding…");
+  await tick();
+  t("thanks once the board accepted it", outcomeBox.children[0].textContent, "Thanks.");
 
-console.log(fail ? "\n" + fail + " assertion(s) failed" : "\nall assertions passed");
-process.exit(fail ? 1 : 0);
+  input.fire("input"); await tick();
+  t("same name, no second ask", !!button("accepted"), false);
+
+  nextReply = { ok: false, error: "link" };
+  input.value = "visit spam.com";
+  input.fire("input"); await tick();
+  button("accepted").fire("click"); await tick();
+  t("a refusal from the board is shown, not swallowed", outcomeBox.children[0].textContent, "No links.");
+  t("accepted post has a null reason", posted[1].reason, null);
+  t("plain name has no symbols to tally", posted[1].symbols, []);
+
+  console.log(fail ? "\n" + fail + " assertion(s) failed" : "\nall assertions passed");
+  process.exit(fail ? 1 : 0);
+})();
