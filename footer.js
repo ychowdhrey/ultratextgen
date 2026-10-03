@@ -548,7 +548,7 @@
       ],
       tools: [
         { label: "바이오 폰트", href: "/usecase/bio-font/" },
-        { label: "타투 폰트", href: "/usecase/tattoo-fonts/" },
+        { label: "타투 폰트", href: "/ko/usecase/tatu-reteoring/" },
         { label: "이모지 번역기", href: "/usecase/text-to-emoji/" },
         { label: "세로 텍스트 생성기", href: "/ko/usecase/vertical-text/" }
       ],
@@ -557,7 +557,7 @@
         { label: "필기체 변환", href: "/ko/pilgichae-byeonhwan/" },
         { label: "블랙레터체", href: "/category/gothic-fonts/" },
         { label: "작은 글씨", href: "/category/small-text/" },
-        { label: "취소선 텍스트", href: "/category/strikethrough-text/" }
+        { label: "취소선 텍스트", href: "/ko/chwisoseon-tekseuteu/" }
       ],
       company: [
         { label: "소개", href: "/about/" },
