@@ -40,6 +40,16 @@
     if (el.empty) {
       el.empty.hidden = !!raw.trim();
     }
+    if (el.notice) {
+      // Say which characters were left blank instead of dropping them in
+      // silence. Accented Latin letters are folded and never listed here.
+      var missing = Banner.unsupported ? Banner.unsupported(raw) : [];
+      el.notice.textContent = missing.length
+        ? "No block letter for " + missing.join(" ") + ", so " +
+          (missing.length === 1 ? "it shows" : "they show") + " as a space."
+        : "";
+      el.notice.hidden = !missing.length;
+    }
   }
 
   function buildPicker() {
@@ -101,6 +111,7 @@
     el.picker = $("#asciiFontPicker");
     el.output = $("#asciiBannerOutput");
     el.empty = $("#asciiBannerEmpty");
+    el.notice = $("#asciiBannerNotice");
     el.copyBtn = $("#asciiBannerCopy");
 
     buildPicker();
