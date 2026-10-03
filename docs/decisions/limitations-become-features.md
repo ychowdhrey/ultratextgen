@@ -81,8 +81,10 @@ Two design choices carry the principle:
 | A character may render as boxes on some phones | Name the exact characters at risk (the checker's per-glyph panel), and let players report it ("It shows as boxes") |
 | A rule changed and nobody announced it | The same reports, dated, show the step change; that is news no one else can publish |
 
-## Not yet executed
+## Executed, and not yet executed
 
+- **Code and copy:** [`ychowdhrey/ultratextgen#998`](https://github.com/ychowdhrey/ultratextgen/pull/998)
+  (open at time of writing; record the merge commit here once it merges).
 - **The reports reach no one until the tag manager forwards them.** `name_outcome`
   is pushed to the data layer like every other product event, and GTM forwards only
   events that have a trigger and a GA4 tag. Its trigger, tag, variables and custom
