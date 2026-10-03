@@ -144,7 +144,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Voinko kirjoittaa suomen ä-, ö- ja å-kirjaimia pienellä tekstillä?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Pienet Unicode-versiot kattavat lähinnä kirjaimet A–Z ja osan numeroista, joten suomen erikoiskirjaimilla ä, ö ja å ei ole omaa pientä muotoaan, ja ne pysyvät normaalikokoisina. Yhtenäisen ilmeen saat korvaamalla ne peruskirjaimilla (a, o), tämä muuttaa kuitenkin oikeinkirjoitusta, tai jättämällä ne ennalleen, mikä lyhyessä käyttäjänimessä tai allekirjoituksessa näyttää yleensä silti hyvältä."
+        "text": "Kyllä. Generaattori säilyttää ä:n, ö:n ja å:n: se pienentää peruskirjaimen ja liittää pisteet tai renkaan takaisin (ä → ᵃ̈). Alaindeksissä Unicodessa ei kuitenkaan ole isoja kirjaimia eikä kirjaimia c, d, f, g, q, w, y, z, joten ne jäävät normaalikokoisiksi."
       }
     },
     {
@@ -459,7 +459,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
   </button>
   <div class="faq-answer">
-    Pienet Unicode-versiot kattavat lähinnä kirjaimet A–Z ja osan numeroista, joten suomen erikoiskirjaimilla ä, ö ja å ei ole omaa pientä muotoaan, ja ne pysyvät normaalikokoisina. Yhtenäisen ilmeen saat korvaamalla ne <strong>peruskirjaimilla</strong> (a, o), tämä muuttaa kuitenkin oikeinkirjoitusta, tai jättämällä ne ennalleen, mikä lyhyessä käyttäjänimessä tai allekirjoituksessa näyttää yleensä silti hyvältä.
+    Kyllä. Generaattori säilyttää ä:n, ö:n ja å:n: se pienentää peruskirjaimen ja liittää pisteet tai renkaan takaisin (ä → ᵃ̈). Alaindeksissä Unicodessa ei kuitenkaan ole isoja kirjaimia eikä kirjaimia c, d, f, g, q, w, y, z, joten ne jäävät normaalikokoisiksi.
   </div>
 </div>
 
