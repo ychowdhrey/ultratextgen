@@ -1709,6 +1709,32 @@
       "verdict": "gate-pass",
       "evidence": "User-authorized exception, not a threshold-clearing instrument pull. The user was told on 2026-09-27 that guide-type pages are gated, that the Discord guide trio translated to 28 locales drew ~18 clicks/mo across 87 pages, and that no volume check could run (Semrush: no API units); they chose to build all eight locale translations of learn/how-to-draw-bubble-letters/ in the same change as the EN guide, so the eight bubble-letter hubs could drop their how-to panels in favour of a guide in their own language. Authorizes exactly pt/aprender/como-fazer-letra-bolha/ and no other learn/* page in this locale. Head term resolved from live search results (US-localized, no volumes): \"como fazer letra bolha\" (medium): Brazilian lettering YouTube tutorials use \"letra(s) bolha\", contradicting the lexicon note PT-041 for the drawing context; \"letras gordinhas\" is a large live alias. Re-check with first-party GSC once the page has 90 days of data.",
       "recordedBy": "claude (session 01KVNMBi71LBZG9awi9WPGxB), user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "ko",
+      "checkedDate": "2026-10-03",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 2610,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "USER DECISION, 2026-10-03, in the user's words: \"I agree with all the type with a localize recommendation. Let's go and built\" (given after a Korean expansion study listed each of these pages as gated, with the evidence below). Scope: exactly three pages, ko/usecase/geullichi-tekseuteu (EN usecase/zalgo-text), ko/usecase/tatu-reteoring (EN usecase/tattoo-fonts) and ko/usecase/dantokbang-ireum (EN usecase/group-name-generator). Any other usecase/* ko page needs its own entry; this one does not authorize it, even though the checker keys on the pattern. Instruments, per page. Competitor footprint in locale (live Naver mobile SERP, fetched 2026-10-03): zalgo, the query 글리치 텍스트 returns piliapp's zalgo tool, glitch-text.com/ko, glitchtext.top and capcut effects; tattoo, 타투 레터링 폰트 returns pilgiche.com's tattoo-lettering tool and atomm's tattoo-font tool among 15 blogs; group names, 단톡방 이름 추천 returns Naver KiN threads (초등 단톡방, 여자 5명 단톡방), instiz name generators and select-helpers, with no tool ranking. Keyword volume in locale (Semrush KR, competitor organic-keyword exports, 2026-10-03): zalgo cluster 2,520/mo (글리치 텍스트 480, zalgo 590, zalgo text 390, 무서운 글씨체 390, 외계어 변환기 320, 뷁어 만들기 260, 글리치 폰트 90); tattoo 90/mo (레터링 폰트); group names unmeasured (Naver autocomplete shows 10 variants of 단톡방 이름 but no volume was pulled). The 2,610 above is the sum of the two measured clusters, deduplicated by keyword. Counter-evidence, recorded so the readout can weigh it: translated zalgo and tattoo pages in other locales are thin on live GSC (2026-08-11 entries above: zalgo de ~25, it ~29, nl ~5, tr ~16, ru ~161, pt ~188 impressions/mo; tattoo de ~43, fr ~43, it ~17, nl ~45, id ~7), and the one live ko usecase page (vertical-text) drew ~11/mo. The Korean pages are not straight translations: zalgo is titled on 글리치 텍스트 / 무서운 글씨 (not 외계어, which in Korean also means mojibake), tattoo states that Unicode lettering covers Latin letters and digits only, and the group page carries native Hangul group-chat names plus KakaoTalk rename steps. Re-check: 2026-11-14, against Naver Search Advisor and GSC page-level impressions for the three URLs; a page under 30 impressions in its first 6 weeks across both engines is reported as thin, as a finding, with no fold or de-index following from this entry alone.",
+      "recordedBy": "claude-session-01Ah8frucm7xSqzdae9zEg3o-user-authorized"
+    },
+    {
+      "pattern": "guide/*",
+      "locale": "ko",
+      "checkedDate": "2026-10-03",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "USER DECISION, 2026-10-03, in the user's words: \"I agree with all the type with a localize recommendation. Let's go and built\". Scope: exactly one page, ko/guide/insta-sogaegeul-julbakkum (EN guide/instagram-bio-line-breaks); any other guide/* ko page needs its own entry. The study offered three shapes for this job (translate the guide, build a converter tool, or a section of ko/insta-font) and the localize choice is the guide translation. Competitor footprint in locale (live Naver mobile SERP, fetched 2026-10-03): 인스타 줄바꿈 returns instablank.com (8 results), snskeyboard's line-break page, sweethero, nalmuk, allthatconverter and mgunexcel; Naver autocomplete shows 9 variants (공백, 사이트, 복사, 아이폰, 하는법, 공백닷컴, 특수기호). Keyword volume was not pulled, so that instrument is null, not zero. Counter-evidence: the cross-locale guide/* entry of 2026-08-11 records the 3-page Discord guide trio at about 1,424 impressions/mo across 87 locale pages, and the Korean SERP for this query is tool-led, which favours a tool over an article. Re-check: 2026-11-14, Naver Search Advisor and GSC page-level impressions; under 30 in 6 weeks is reported as thin, a finding only.",
+      "recordedBy": "claude-session-01Ah8frucm7xSqzdae9zEg3o-user-authorized"
     }
   ]
 }
