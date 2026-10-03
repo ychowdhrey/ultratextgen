@@ -3177,6 +3177,7 @@ PAGES.update({
 # English words, which is what these cards showed when first generated.
 "fr-imprimables-mots-croises": ("Générateur de Mots Croisés", "Tes mots et définitions, une grille par élève", P(m_crossword, across="MOTS", down="PORT", cross_col=1, cross_row=1), K_PRINT),
 "fr-imprimables-mots-meles": ("Générateur de Mots Mêlés", "Ta liste de mots, une grille par élève", P(m_word_grid, word="ECOLE"), K_PRINT),
+"es-imprimibles-sopa-de-letras": ("Generador de Sopa de Letras", "Tu lista de palabras, una cuadrícula por alumno", P(m_word_grid, word="LIBRO"), K_PRINT),
 "fr-imprimables-prenom-a-colorier": ("Prénom à Colorier", "Un prénom ou un mot en grand coloriage à imprimer", m_crayons, K_PRINT),
 "pl-do-druku-litery-do-druku": ("Litery do Druku", "Puste kontury A-Z z polskimi znakami i cyfry 0-9", P(m_letter_stencil, letter="Ł"), K_PRINT),
 "pt-imprimiveis-letra-bastao": ("Letra Bastao para Imprimir", "Moldes vazados A-Z e 0-9 para recortar", P(m_letter_stencil, letter="B"), K_PRINT),

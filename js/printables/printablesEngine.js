@@ -97,7 +97,11 @@
      is printed. The word-search and crossword modules strip the marks from the
      grid only when asked; the word list and clues keep the real spelling.
      Other languages keep their letters, as the English pages promise. */
-  const FOLD_GRID = CFG.foldAccents != null ? !!CFG.foldAccents : LANG === "fr";
+  /* Spanish sopas de letras drop the written accent as well but keep Ñ, a
+     letter of its own ("es" mode in wordSearch.js / wordPuzzles.js). */
+  const FOLD_GRID = CFG.foldAccents != null
+    ? (CFG.foldAccents === "es" ? "es" : !!CFG.foldAccents)
+    : (LANG === "fr" ? true : LANG === "es" ? "es" : false);
   const I18N = {
     en: {
       letterWord: "letter", numberWord: "number",
@@ -353,6 +357,19 @@
       bannerInstr: "Recorta cada banderín por su línea punteada, haz un agujero en cada punto y pasa un cordel o cinta en orden (1, 2, 3…) para formar la palabra.",
       puzzleCut: "Recorta por las líneas punteadas para separar cada pieza-letra.",
       puzzleTitle: "El rompecabezas de {name}",
+      wordSearch: {
+        heading: "Sopa de letras",
+        findAll: "Encuentra las",
+        wordsWord: "palabras",
+        answerKey: "Soluciones",
+        forWhom: "para",
+        tooLong: "Demasiado larga para la cuadrícula:",
+        needWords: "Escribe algunas palabras para crear la sopa de letras.",
+        gridOf: "Cuadrícula de sopa de letras",
+        lettersBy: "letras por",
+        versions: "cuadrículas distintas, una por nombre",
+        oneGrid: "Una cuadrícula"
+      },
       trace: {
         solid:    { label: "Modelo sólido", hint: "Letras oscuras y llenas — traza justo encima" },
         "bold-dot": { label: "Punteado grueso", hint: "Puntos gruesos y juntos para unir" },
