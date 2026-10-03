@@ -464,9 +464,10 @@
     return "unknown";
   }
 
-  /* Which characters of a name an outcome report may carry. Decoration only,
-     never the player's letters: a name is personal, and a styled name decodes
-     straight back to it (𝐒𝐚𝐧𝐳 is "Sanz" in four code points). Kept: symbols
+  /* Which characters of a name count toward the board's per-character tally.
+     Decoration only, never the player's letters: a tally of "𝐒 refused 4
+     times" says nothing, and a styled letter is just a letter in another font
+     (𝐒𝐚𝐧𝐳 is "Sanz" in four code points). Kept: symbols
      that are not letters or digits even after NFKC folding (so ⓢ and Ｓ stay
      out), plus anything in SAFE_SYMBOLS, the site's own decoration palette,
      which is how the letter-class blanks and accents players actually ask
@@ -642,10 +643,12 @@
                   'weight-uncertain': … },
          weightNote,                           // e.g. "symbols count as 2"
          outcome: {                            // optional; omit = no reporter
-           ask, accepted, refused, boxes,      // "{game}" becomes the rule label
+           ask, publicNote,                    // "{game}" becomes the rule label
+           accepted, refused, boxes,
            reasonAsk, reasons: { key: label }, // asked after "refused"
-           thanks
-         }
+           sending, thanks,
+           errors: { link, rate_limited, generic, … }  // API error code -> text
+         }                                     // needs js/gamename/name-reports.js
        }
      }
      ============================ */
@@ -724,15 +727,19 @@
     mount.appendChild(charRow);
 
     // In-game outcome reporter (opt-in: only a page that passes text.outcome
-    // gets it, so its strings are always the page's own language). No game we
-    // cover publishes the full list of characters its name field takes, so
-    // this asks the one party who finds out: the player who just tried. Both
-    // answers are asked for, because refusals alone have no denominator, and
-    // because "it went through" on a name this checker failed is what proves a
-    // rule here too strict.
-    const outcomeText = text.outcome || null;
+    // AND loads js/gamename/name-reports.js gets it, so its strings are always
+    // the page's own language). No game we cover publishes the full list of
+    // characters its name field takes, so this asks the one party who finds
+    // out: the player who just tried. The answer goes on the page's public
+    // board (UltraTextGen.nameReports), where every later player can read it.
+    // Both answers are asked for, because refusals alone have no denominator,
+    // and because "it went through" on a name this checker failed is what
+    // proves a rule here too strict. The question appears only once the board
+    // has answered that it is switched on.
+    const reports = ns.nameReports || null;
+    const outcomeText = (text.outcome && reports) ? text.outcome : null;
     const outcomeBox = outcomeText ? el("div", "gr-outcome") : null;
-    const outcomeState = { name: null, game: null, step: "ask" };
+    const outcomeState = { name: null, game: null, step: "ask", available: {}, error: "" };
     const reported = {};
     if (outcomeBox) {
       outcomeBox.setAttribute("aria-live", "polite");
@@ -846,11 +853,33 @@
       // arrives pre-filled with a sample name nobody has tried in a game.
       outcomeBox.hidden = report.level === "empty" || !state.touched;
       if (outcomeBox.hidden) return;
+      // ...and until the board says it is switched on. One request per page
+      // view at most, made only by someone who typed a name.
+      const gameId = state.game;
+      if (outcomeState.available[gameId] !== true) {
+        outcomeBox.hidden = true;
+        if (outcomeState.available[gameId] === undefined) {
+          outcomeState.available[gameId] = "pending";
+          reports.available(gameId).then(function (ok) {
+            outcomeState.available[gameId] = ok;
+            if (ok) renderOutcome(analyze(box.value, state.game));
+          });
+        }
+        return;
+      }
       const game = report.rule.label;
       const fill = function (s) { return String(s || "").replace("{game}", game); };
 
       if (outcomeState.step === "done") {
         outcomeBox.appendChild(el("p", "gr-outcome-thanks", fill(outcomeText.thanks)));
+        return;
+      }
+      if (outcomeState.step === "sending") {
+        outcomeBox.appendChild(el("p", "gr-outcome-thanks", fill(outcomeText.sending || "…")));
+        return;
+      }
+      if (outcomeState.step === "error") {
+        outcomeBox.appendChild(el("p", "gr-outcome-error", fill(outcomeState.error)));
         return;
       }
       if (outcomeState.step === "reason") {
@@ -864,6 +893,7 @@
         return;
       }
       outcomeBox.appendChild(el("span", "gr-outcome-ask", fill(outcomeText.ask)));
+      if (outcomeText.publicNote) outcomeBox.appendChild(el("span", "gr-outcome-note", fill(outcomeText.publicNote)));
       outcomeBox.appendChild(outcomeButton(outcomeText.accepted, "accepted", function () {
         sendOutcome(report, "accepted", null);
       }));
@@ -878,40 +908,38 @@
       }
     }
 
-    /* name_outcome: what happened when the player pasted this name into the
-       game, next to the verdict this checker gave it. The lengths are the four
-       counting rules a field might use (code points, UTF-16 units, UTF-8 bytes,
-       and every non-ASCII character as 2), so a refusal "too long", or an
-       acceptance over the limit, says which rule the game really applies.
-       name_symbols is decoration only (outcomeSymbols); the typed letters are
-       never sent. Every key is pushed on every row, null when it does not
-       apply, because GTM's data layer keeps a key's last value. */
+    /* Post the answer to the public board. The name is posted as typed,
+       because the board exists to show other players which names did not
+       work; the reporter says so before anyone answers (outcomeText.publicNote).
+       `symbols` is the decoration-only subset (outcomeSymbols) the board
+       tallies per character. The API refuses anything that looks like a
+       link, so a refusal here is shown to the player rather than swallowed. */
     function sendOutcome(report, outcome, reason) {
       const name = box.value;
       const key = state.game + "\u0000" + name;
       if (reported[key]) return;
       reported[key] = true;
-      let x2 = 0;
-      Array.from(name).forEach(function (ch) {
-        const cls = classifyChar(ch);
-        x2 += (cls === "ascii" || cls === "space") ? 1 : 2;
-      });
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: "name_outcome",
-        check_game: state.game,
-        check_verdict: report.level,
-        outcome: outcome,
-        outcome_reason: reason,
-        name_symbols: outcomeSymbols(name).join(" ") || null,
-        name_styled: report.counts.styled,
-        len_codepoints: Array.from(name).length,
-        len_utf16: report.utf16,
-        len_utf8: report.utf8,
-        len_x2: x2
-      });
-      outcomeState.step = "done";
+      outcomeState.step = "sending";
       renderOutcome(report);
+      reports.submit({
+        game: state.game,
+        name: name,
+        outcome: outcome,
+        reason: reason,
+        verdict: report.level,
+        symbols: outcomeSymbols(name)
+      }).then(function (res) {
+        if (box.value !== name) return; // the player has moved on to another name
+        if (res && res.ok) {
+          outcomeState.step = "done";
+        } else {
+          const errors = outcomeText.errors || {};
+          outcomeState.step = "error";
+          outcomeState.error = errors[res && res.error] || errors.generic || "";
+          if (!res || res.error === "network" || res.error === "rate_limited") delete reported[key];
+        }
+        renderOutcome(analyze(box.value, state.game));
+      });
     }
 
     /* Completion event. render() runs on every keystroke, so this fires only
