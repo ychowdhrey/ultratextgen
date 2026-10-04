@@ -145,7 +145,14 @@
     for (var i = 0; i < controls.length; i++) controls[i].addEventListener("change", render);
     if (copyBtn) copyBtn.addEventListener("click", function () {
       if (!output.value) return;
-      navigator.clipboard.writeText(output.value).then(function () {
+      var copied = output.value;
+      navigator.clipboard.writeText(copied).then(function () {
+        if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
+          window.UltraTextGen.trackCopy("button", copied);
+        } else {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: "copy_text", copy_method: "button" });
+        }
         var original = copyBtn.textContent;
         copyBtn.textContent = copyBtn.getAttribute("data-copied-label") || "Copied!";
         copyBtn.classList.add("wc-copied");

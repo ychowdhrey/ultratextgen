@@ -1091,9 +1091,27 @@
   // instead of the default English A-Z (+0-9) — e.g. the 27-letter Spanish
   // alphabet, which inserts Ñ between N and O. Purely additive: every page
   // that doesn't set CFG.chars keeps computing CHARS exactly as before.
+  /* The letters a language's own alphabet adds to A-Z, in the order a
+     classroom chart prints them. A Spanish or German page that never set
+     CFG.chars offered no Ñ, or no Ä Ö Ü ß, in its letter picker or on its
+     alphabet sheet, though its word field accepted them. A page's explicit
+     CFG.chars still wins. Dot-to-dot keeps A-Z: its dots are laid out per
+     letter, and a letter without a layout would print an empty frame. */
+  const RENDER_FOR_CHARS = CFG.render || "outline";
+  const LANG_LETTERS = {
+    es: { after: "N", add: ["Ñ"] },
+    de: { after: "Z", add: ["Ä", "Ö", "Ü", "ß"] }
+  };
+  function langLetters() {
+    const extra = LANG_LETTERS[LANG];
+    if (!extra || RENDER_FOR_CHARS === "dots") return LETTERS.slice();
+    const out = LETTERS.slice();
+    out.splice(out.indexOf(extra.after) + 1, 0, ...extra.add);
+    return out;
+  }
   const CHARS = (Array.isArray(CFG.chars) && CFG.chars.length)
     ? CFG.chars.slice()
-    : (CFG.charset === "alnum") ? LETTERS.concat(DIGITS) : LETTERS.slice();
+    : (CFG.charset === "alnum") ? langLetters().concat(DIGITS) : langLetters();
 
   const RENDER = CFG.render || "outline";           // "outline" | "glyph"
   /* A script page (RENDER === "glyph") prints its letter as solid ink, which
@@ -1335,10 +1353,11 @@
 
   function charLabel(ch) { return /[0-9]/.test(ch) ? (T.numberWord + " " + ch) : (T.letterWord + " " + ch); }
   // ASCII-safe slug for the Latin letters in CFG.chars sets with no plain a-z
-  // form (Ñ from the Spanish alphabet; Ç Ğ İ Ö Ş Ü from the Turkish one), so
+  // form (Ñ from the Spanish alphabet; Ç Ğ İ Ö Ş Ü from the Turkish one; Ä ß
+  // from the German one), so
   // PNG filenames and #hash anchors stay ASCII. "I" and "İ" are two Turkish
   // letters and get two slugs. Every other letter is unaffected.
-  const CHAR_SLUGS = { "Ñ": "enye", "Ç": "c-cedilla", "Ğ": "g-breve", "İ": "i-dot", "Ö": "o-umlaut", "Ş": "s-cedilla", "Ü": "u-umlaut" };
+  const CHAR_SLUGS = { "Ñ": "enye", "Ç": "c-cedilla", "Ğ": "g-breve", "İ": "i-dot", "Ö": "o-umlaut", "Ş": "s-cedilla", "Ü": "u-umlaut", "Ä": "a-umlaut", "ß": "eszett" };
   function charSlug(ch) {
     if (/[0-9]/.test(ch)) return "number-" + ch;
     const special = CHAR_SLUGS[String(ch).toUpperCase()] || CHAR_SLUGS[ch];
@@ -3994,10 +4013,18 @@
     });
     return pdfModulePromise;
   }
+  /* Sheets whose subject is a letter set, not the typed text. Named only by
+     the typed name, the single-letter, A-Z and practice sheets all saved as
+     block-luna.pdf beside the name sheet, and the browser numbered them
+     (1), (2). They lead with their kind; the name, when there is one, is
+     the suffix it personalises them with. */
+  const LETTER_SHEETS = { character: 1, alphabet_sheet: 1, alphabet_tiled: 1, alphabet_book: 1, practice_sheet: 1 };
   function pdfFilename(sheet) {
     const input = primaryInput();
     const base = input && input.value.trim() ? slugify(input.value.trim()) : "";
-    return PNG_PREFIX + "-" + (base || sheet || "sheet") + ".pdf";
+    const kind = (sheet || "sheet").replace(/_/g, "-");
+    if (sheet && LETTER_SHEETS[sheet]) return PNG_PREFIX + "-" + kind + (base ? "-" + base : "") + ".pdf";
+    return PNG_PREFIX + "-" + (base || kind) + ".pdf";
   }
   // Rasterise the mounted print surface and write the PDF. Resolves true on
   // success; false means "use the print dialog instead" (module missing,
@@ -5814,7 +5841,7 @@
   function buildPracticeSheet() {
     const overlayOn = strokeOverlayOn();
     const sheet = document.createElement("div");
-    sheet.className = "cursive-print-sheet" + (overlayOn ? " pt-stroke-on" : "");
+    sheet.className = "cursive-print-sheet" + (overlayOn ? " pt-stroke-on" : "") + (RENDER === "glyph" ? " pt-practice-glyph" : "");
     CHARS.forEach((ch) => {
       const row = document.createElement("div");
       row.className = "cursive-print-row";

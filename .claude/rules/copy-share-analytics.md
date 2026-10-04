@@ -49,6 +49,18 @@ forks the vocabulary.
   png / gif; null when unknowable, as for a pin) is always pushed as a key, because
   GTM's data layer keeps a key's last value.
 
+## Typed text never reaches the dataLayer
+
+`trackCopy()` in `header.js` sends `copy_item` (the exact copied text) only for
+methods in `CATALOGUE_COPY_METHODS`: copies of the site's own glyphs
+(`symbol_tile`, `grid_collection`, `saved_collection`, `glyph`, `ascii_art`).
+Every other method, a new one included, sends `copy_item_group` and
+`copy_item: undefined`, because visitors type names into generators. The key is
+always pushed: GTM keeps a key's last value, so an omitted key re-sends the
+previous glyph. Route a new copy surface through `trackCopy()` rather than
+pushing `copy_text` yourself, and add its method to the allowlist only when its
+payload is always catalogue content. `header.test.js` asserts both halves.
+
 ## A library image holds only what the visitor chose
 
 On library and symbol pages, **image content comes from deliberate user

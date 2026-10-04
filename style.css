@@ -1201,7 +1201,9 @@
     .style-name {
       font-size: 0.75rem;
       font-weight: 600;
-      color: var(--text-muted);
+      /* --text-muted is 2.56:1 on the light card and 3.07:1 on the dark one;
+         12px text needs 4.5:1. --text-secondary is 4.76:1 / 5.71:1. */
+      color: var(--text-secondary);
       margin-bottom: 6px;
       display: flex;
       align-items: center;
@@ -5454,12 +5456,20 @@ button.clear-decoration {
   line-height: 1;
   color: var(--text-primary);
 }
+/* A flex item will not shrink below its longest word, so on a two-column
+   phone grid a long localized name ("Decorazione Cuore") pushed the copy
+   label past the card edge. The name gives way instead: it may shrink and
+   hyphenate, and the copy label never shrinks. */
 .bubble-variant-name {
   flex: 1 1 auto;
+  min-width: 0;
   font-size: 0.8rem;
   color: var(--text-secondary);
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 .bubble-variant-copy {
+  flex-shrink: 0;
   font-size: 0.72rem;
   font-weight: 700;
   color: var(--accent-purple);
@@ -7185,6 +7195,19 @@ body.dark-mode .tattoo-badge.is-roomy {
 
 .cursive-print-line { min-height: 1.6rem; }
 
+/* A script face's ink is taller than the body's 1.6 line box: Playwrite FR
+   Trad at this size inks 43px above the baseline and 24px below, in a 41px
+   box. The descenders of g, j and y ran into the next row's capital, and the
+   PDF writer, which cuts between row boxes, sliced the row that spilled over
+   the page edge. line-height: normal is the font's own ascent + descent
+   (73px here, 50px for the other Playwrite faces), which contains the ink.
+   Glyph-mode sheets only: an outline-mode row's model is an SVG. */
+.cursive-print-sheet.pt-practice-glyph .cursive-print-model,
+.cursive-print-sheet.pt-practice-glyph .cursive-print-trace { line-height: normal; }
+/* That box already carries the face's own leading, so the row gap gives back
+   what it adds: a Playwrite US/ES row is 50 + 6 + 6px, the 61px it was. */
+.cursive-print-sheet.pt-practice-glyph { gap: 0.4rem; }
+
 /* The cursive pages' own practice sheet (#cursivePrintRoot, built by
    cursivePageController.js) prints A-M and N-Z side by side so the alphabet
    fits one sheet. In one column its 26 rows ran to a second page that was
@@ -7225,6 +7248,12 @@ body.dark-mode .cursive-word-card {
 }
 
 @media (max-width: 640px) {
+  /* The unscoped mobile ".copy-btn { width: 100% }" made Copy fill this row
+     and pushed PNG and SVG past the screen edge once a name was typed.
+     Same remedy as .style-actions: the row takes the width, Copy takes what
+     PNG and SVG leave. */
+  .cursive-card-actions { width: 100%; }
+  .cursive-card-actions .copy-btn { width: auto; flex: 1; }
   .cursive-letter-grid { grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); }
   .cursive-letter-big { font-size: 3.2rem; }
   .cursive-alphabet-row { font-size: 1.15rem; }
@@ -8162,7 +8191,7 @@ body.dark-mode .pt-design-preview { background: #1c2030; }
    the paper's width, which is what the row was always measured against. */
 .pt-paper .pt-gen-sheet { gap: 0.35rem; align-self: stretch; }
 .pt-paper .pt-gen-row .pt-trace-svg { max-height: 92px; }
-.pt-preview-actions { display: flex; gap: 0.6rem; margin-top: 0.9rem; }
+.pt-preview-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.9rem; }
 .pt-preview-actions .bubble-btn { padding: 0.72rem 1rem; font-size: 0.95rem; }
 .pt-preview-note { margin: 0.6rem 0 0; font-size: 0.78rem; color: var(--text-muted); }
 
