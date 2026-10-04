@@ -550,7 +550,8 @@
         { label: "바이오 폰트", href: "/usecase/bio-font/" },
         { label: "타투 폰트", href: "/ko/usecase/tatu-reteoring/" },
         { label: "이모지 번역기", href: "/usecase/text-to-emoji/" },
-        { label: "세로 텍스트 생성기", href: "/ko/usecase/vertical-text/" }
+        { label: "세로 텍스트 생성기", href: "/ko/usecase/vertical-text/" },
+        { label: "영문 이름 변환기", href: "/ko/yeongmun-ireum-byeonhwan/" }
       ],
       categories: [
         { label: "굵은 글씨", href: "/category/bold-fonts/" },

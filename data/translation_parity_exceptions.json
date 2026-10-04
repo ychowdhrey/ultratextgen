@@ -1963,6 +1963,17 @@
       "localeUrl": "https://ultratextgen.com/ko/library/teuksu-munja/",
       "reason": "check-translation-parity.js flags this pair because ko/library/teuksu-munja/ linked to ko/ireum-kkumigi, which public PR #959 moved to ko/usecase/ireum-kkumigi (the only usecase/nickname-generator locale sibling not following the site's <locale>/usecase/<slug>/ URL-lane convention -- confirmed against every other usecase/* page site-wide). The only change on this page is the href value of one existing link, updated to the new path; no wording, no new or removed link, no structural change (verified by direct diff). The EN sibling needs no change: it has never linked ko/ireum-kkumigi or its EN equivalent in this way. Same shape as the fr/de/pl/tr library/emoji-combos entries above (URL-target-only fix from a page move, not new translatable content). Discussed with the user 2026-09-27.",
       "agreed": "2026-09-27"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/usecase/nickname-generator/",
+      "localeUrl": "https://ultratextgen.com/ko/usecase/ireum-kkumigi/",
+      "reason": "Deliberate, user-approved Korean experiment (2026-10-04, \"Okay to experiment\"): the Korean page is retitled toward 닉네임 생성기 / 닉네임 추천 and gains a \"바로 쓰는 닉네임 추천\" block of native Korean nickname ideas plus two FAQ items, because the Korean demand for this job is for name ideas (Semrush KR 2026-10-04: 닉네임 생성기 4,400, 영어 닉네임 추천 1,900, 한글 닉네임 추천 1,000, 귀여운/웃긴/랜덤 닉네임 720 each). Hangul nicknames are Korean-language content with no EN equivalent to sync. The EN page is not changed. Scoped to the new section's h2 and FAQ items; any other divergence still flags. Re-evaluate at the experiment readout.",
+      "agreed": "2026-10-04",
+      "suppress": {
+        "h2Delta": true,
+        "faqDelta": true,
+        "symbolTilesDelta": true
+      }
     }
   ]
 }
