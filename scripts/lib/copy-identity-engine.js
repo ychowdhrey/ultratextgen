@@ -28,7 +28,7 @@ const BEGIN = '/* @copy-identity:begin */';
 const END = '/* @copy-identity:end */';
 
 /** The bindings the sliced block must define; the factory returns exactly these. */
-const EXPORTS = ['COPY_BLOCKS', 'isModifierCp', 'blockName', 'copyIdentity'];
+const EXPORTS = ['COPY_BLOCKS', 'isModifierCp', 'blockName', 'copyIdentity', 'copyPayload'];
 
 function loadCopyIdentity(file) {
   const target = file || HEADER_JS;
