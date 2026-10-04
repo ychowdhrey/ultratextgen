@@ -1,0 +1,386 @@
+{
+  "slug": "emoji-soleil-et-lune",
+  "lang": "fr",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "title": "Emoji Soleil ☀️ et Lune 🌙 : Symboles Célestes à Copier-Coller | UltraTextGen",
+  "meta_description": "Emoji soleil, emoji lune et symboles célestes à copier : les huit phases de la lune, croissants ☽ ☾, soleils ☀ ☼, étoiles et comètes, avec l'explication de chaque phase.",
+  "breadcrumb": "Emoji soleil et lune",
+  "hero_h1": "Emoji soleil et lune",
+  "hero_tagline": "Soleil, phases de la lune, étoiles et comètes à copier.",
+  "intro": "Unicode couvre le cycle lunaire complet : huit phases, de la nouvelle lune au dernier croissant, plus les croissants typographiques ☽ ☾, bien plus anciens que les emojis. Côté soleil, on trouve à la fois l'emoji ☀️, le soleil rayonnant ☼ et le symbole astronomique ☉. Cette page réunit le tout, avec les étoiles et les signes cosmiques qu'on leur associe le plus souvent.",
+  "sections": [
+    {
+      "id": "phases",
+      "label": "Phases de la lune",
+      "h2": "Emojis des phases de la lune",
+      "intro": "Le cycle complet, dans l'ordre réel des phases.",
+      "symbols": [
+        {
+          "char": "🌑",
+          "label": "Nouvelle lune"
+        },
+        {
+          "char": "🌒",
+          "label": "Premier croissant"
+        },
+        {
+          "char": "🌓",
+          "label": "Premier quartier"
+        },
+        {
+          "char": "🌔",
+          "label": "Lune gibbeuse croissante"
+        },
+        {
+          "char": "🌕",
+          "label": "Pleine lune"
+        },
+        {
+          "char": "🌖",
+          "label": "Lune gibbeuse décroissante"
+        },
+        {
+          "char": "🌗",
+          "label": "Dernier quartier"
+        },
+        {
+          "char": "🌘",
+          "label": "Dernier croissant"
+        },
+        {
+          "char": "🌙",
+          "label": "Croissant de lune"
+        },
+        {
+          "char": "🌚",
+          "label": "Nouvelle lune avec visage"
+        },
+        {
+          "char": "🌛",
+          "label": "Premier quartier avec visage"
+        },
+        {
+          "char": "🌜",
+          "label": "Dernier quartier avec visage"
+        }
+      ]
+    },
+    {
+      "id": "croissants",
+      "label": "Croissants",
+      "h2": "Symboles croissant de lune",
+      "intro": "Les caractères typographiques monochromes, pour un texte où les emojis en couleur détonnent.",
+      "symbols": [
+        {
+          "char": "☽",
+          "label": "Croissant montant"
+        },
+        {
+          "char": "☾",
+          "label": "Croissant descendant"
+        },
+        {
+          "char": "☪",
+          "label": "Étoile et croissant"
+        },
+        {
+          "char": "ⵉ",
+          "label": "Yi tifinagh (accent étoilé)"
+        }
+      ]
+    },
+    {
+      "id": "soleil",
+      "label": "Soleil",
+      "h2": "Symboles et emojis soleil",
+      "intro": "Le soleil en version texte et en version emoji.",
+      "symbols": [
+        {
+          "char": "☼",
+          "label": "Soleil rayonnant"
+        },
+        {
+          "char": "☉",
+          "label": "Symbole du Soleil (astronomie)"
+        },
+        {
+          "char": "🌞",
+          "label": "Soleil avec visage"
+        },
+        {
+          "char": "🌝",
+          "label": "Pleine lune avec visage"
+        },
+        {
+          "char": "☀",
+          "label": "Soleil noir rayonnant"
+        },
+        {
+          "char": "𖤓",
+          "label": "Étoile noire à six branches"
+        }
+      ]
+    },
+    {
+      "id": "etoiles",
+      "label": "Étoiles",
+      "h2": "Étoiles et scintillements",
+      "intro": "Pour un ciel de nuit ou une touche décorative.",
+      "symbols": [
+        {
+          "char": "⋆",
+          "label": "Petite étoile à six branches"
+        },
+        {
+          "char": "✦",
+          "label": "Étoile pleine à quatre branches"
+        },
+        {
+          "char": "✧",
+          "label": "Étoile vide à quatre branches"
+        },
+        {
+          "char": "✩",
+          "label": "Étoile détourée"
+        },
+        {
+          "char": "✪",
+          "label": "Étoile cerclée"
+        },
+        {
+          "char": "⭒",
+          "label": "Petite étoile détourée"
+        },
+        {
+          "char": "𖤐",
+          "label": "Lettre bamoum ngkeuri (« soleil noir »)"
+        }
+      ]
+    },
+    {
+      "id": "course-du-soleil",
+      "label": "Course du soleil",
+      "h2": "La course du soleil en emojis",
+      "intro": "L'arc de la journée, du lever du soleil à la nuit, à copier d'un bloc.",
+      "symbols": [
+        {
+          "char": "🌅",
+          "label": "Lever du soleil"
+        },
+        {
+          "char": "🌞",
+          "label": "Soleil de midi"
+        },
+        {
+          "char": "🌇",
+          "label": "Coucher du soleil"
+        },
+        {
+          "char": "🌃",
+          "label": "Nuit étoilée"
+        }
+      ]
+    },
+    {
+      "id": "cosmos",
+      "label": "Cosmos",
+      "h2": "Symboles cosmiques et spatiaux",
+      "intro": "Comète, planète et Voie lactée.",
+      "symbols": [
+        {
+          "char": "☄",
+          "label": "Comète"
+        },
+        {
+          "char": "🪐",
+          "label": "Planète à anneaux"
+        },
+        {
+          "char": "🌌",
+          "label": "Voie lactée"
+        },
+        {
+          "char": "✨",
+          "label": "Étincelles"
+        },
+        {
+          "char": "🛸",
+          "label": "Soucoupe volante"
+        }
+      ]
+    },
+    {
+      "id": "duos-soleil-lune",
+      "label": "Duos soleil et lune",
+      "h2": "Duos soleil et lune et décors de ciel nocturne",
+      "intro": "Des paires toutes prêtes et des décors de nuit étoilée pour une bio, un pseudo ou un statut.",
+      "symbols": [
+        {
+          "char": "☀☾",
+          "label": "Soleil et lune"
+        },
+        {
+          "char": "☼☽",
+          "label": "Jour et nuit"
+        },
+        {
+          "char": "🌞🌚",
+          "label": "Duo de visages"
+        },
+        {
+          "char": "☀️ ⋆ 🌙",
+          "label": "Soleil · lune"
+        },
+        {
+          "char": "⋆｡˚☾˚｡⋆",
+          "label": "Lune encadrée"
+        },
+        {
+          "char": "˚₊‧꒰ა ☾ ໒꒱ ‧₊˚",
+          "label": "Lune ailée"
+        },
+        {
+          "char": "✦ ˚ ☾ ˚ ✦",
+          "label": "Lune étoilée"
+        },
+        {
+          "char": "🌙✨⭐",
+          "label": "Ciel nocturne"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Questions fréquentes sur les emojis soleil et lune",
+  "faq": [
+    {
+      "q": "Comment savoir si la lune est croissante ou décroissante ?",
+      "a": "On regarde le sens du croissant. Dans l'hémisphère nord, la lune « ment » : quand le croissant dessine un C, elle décroît ; quand il forme un D avec une barre, elle croît. C'est l'inverse dans l'hémisphère sud, et les emojis montrent toujours la vue de l'hémisphère nord."
+    },
+    {
+      "q": "Quelle différence entre 🌙 et ☽ ?",
+      "a": "🌙 est un emoji, affiché en couleur ; ☽ est un caractère typographique du bloc astronomique, qui reste monochrome. Dans un texte courant, une bio ou partout où la couleur gêne, ☽ est le meilleur choix."
+    },
+    {
+      "q": "Quelle différence entre ☀️, ☀ et ☉ ?",
+      "a": "☀️ est l'emoji soleil en couleur. ☀ est le même caractère sans le sélecteur emoji : il s'affiche souvent en noir et blanc. ☉, un cercle pointé, est le symbole astronomique et astrologique du Soleil, celui des éphémérides et des thèmes astraux."
+    },
+    {
+      "q": "Pourquoi certaines lunes ont-elles un visage ?",
+      "a": "Parce que les premiers jeux d'emojis japonais en avaient. 🌚 a pris un sens à part : on l'emploie pour un sous-entendu ou une moquerie pince-sans-rire, pas pour parler de la nouvelle lune."
+    },
+    {
+      "q": "Les emojis de phases montrent-ils la lune d'aujourd'hui ?",
+      "a": "Non, chaque caractère représente une phase fixe. Pour connaître la phase du jour, il faut un calcul ou un calendrier lunaire : les emojis sont une réserve de symboles, pas un affichage en direct."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Deux systèmes pour deux usages",
+      "body": "Les symboles de lune d'Unicode viennent de deux mondes distincts. ☽ et ☾ appartiennent aux signes astronomiques, à côté des symboles des planètes : une notation technique, monochrome, utilisée depuis des siècles dans les almanachs et les éphémérides. Les emojis de phases 🌑 à 🌘 sont arrivés avec les emojis et montrent la lune comme une image. En pratique, les caractères monochromes conviennent à un texte d'astronomie ou d'astrologie, les emojis à une bio ou un message. Les deux désignent la même chose, mais pas sur le même ton."
+    }
+  ],
+  "collection_section": {
+    "id": "collections-celestes",
+    "label": "Séquences célestes",
+    "h2": "Séquences célestes",
+    "intro": "Copiez une séquence complète en un clic : les huit phases de la lune dans l'ordre astronomique, et la course du soleil, de l'aube à la nuit."
+  },
+  "collection_container_id": "celestialCollectionsContainer",
+  "collections": [
+    {
+      "name": "Phases de la lune (ordre astronomique)",
+      "flags": [
+        "🌑",
+        "🌒",
+        "🌓",
+        "🌔",
+        "🌕",
+        "🌖",
+        "🌗",
+        "🌘"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Course du soleil (cycle d'une journée)",
+      "flags": [
+        "🌅",
+        "🌞",
+        "🌇",
+        "🌃"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/fr/library/symboles-etoiles/",
+      "title": "Symboles étoiles",
+      "desc": "Étoiles de toutes les formes et de tous les styles à copier."
+    },
+    {
+      "href": "/fr/library/symboles-astrologiques/",
+      "title": "Symboles astrologiques",
+      "desc": "Les douze signes du zodiaque et les symboles des planètes."
+    },
+    {
+      "href": "/fr/library/symboles-witchy-occult/",
+      "title": "Symboles witchy et occultes",
+      "desc": "Signes ésotériques et occultes Unicode."
+    },
+    {
+      "href": "/fr/symbol/croissant-et-etoile/",
+      "title": "Croissant et étoile (☪)",
+      "desc": "L'origine du symbole et ce qu'il signifie aujourd'hui."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/fr/library/emoji-soleil-et-lune/",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "library_url": "https://ultratextgen.com/fr/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/moon-celestial-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-luna/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/ay-sembolleri/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/simvoly-luny/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/tsuki-kigou/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-luna/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/dal-giho/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/mond-symbole/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/emoji-soleil-et-lune/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/moon-celestial-symbols/"
+    }
+  ],
+  "date_published": "2026-10-03",
+  "date_modified": "2026-10-03"
+}

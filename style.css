@@ -8507,7 +8507,12 @@ body.dark-mode .pt-banner-index { color: var(--text-secondary); }
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
-.pt-search-footer-row { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+/* align-self: stretch so the row spans the sheet instead of shrink-wrapping
+   inside .pt-search-sheet's centred column. Shrink-wrapped, the export clone
+   froze the row at its content width and a sub-pixel difference in the clone's
+   text layout wrapped the Date field under the credit QR ("Nombre:"/"Fecha:"
+   measured 505.6px in a 505.6px row; FR 502.4, EN 480 sat just under it). */
+.pt-search-footer-row { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; align-self: stretch; }
 .pt-search-footer-field { display: inline-flex; align-items: baseline; gap: 0.5rem; font-size: 0.9rem; font-weight: 600; color: #1a1a2e; }
 .pt-search-footer-line { display: inline-block; width: 180px; height: 1px; border-bottom: 2px solid #9aa3b2; }
 .pt-search-meta { margin: 0.5rem 0 0; font-size: 0.85rem; color: var(--text-muted); }
