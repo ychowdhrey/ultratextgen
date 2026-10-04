@@ -25,7 +25,8 @@ is a second source of truth. When you find one of these, find its generator.
 | `<lang>/library/index.html` | `node scripts/build-library-hub.js` — derives entries from **each page's own markup**, so it needs no hand-help | `check:library-hub`, `check:library-hub-parity` |
 | the static footer block | `npm run build:static-footer` | `check:static-footer` |
 | the accent notice | `npm run build:accent-notice` | `check:accent-notice` |
-| the `@font-face` block in `style.css` | `python3 scripts/build-font-face-css.py --write` | — |
+| the `@font-face` block in `style.css`, and `assets/fonts/ja-print.css` (manifest rows with a `stylesheet`) | `python3 scripts/build-font-face-css.py --write` | — |
+| `assets/fonts/klee-one-ja-*.woff2` chunks and `js/printables/jaKanjiGrades.js` (kanji grade presets) | `python3 scripts/build-ja-print-fonts.py --ttf <KleeOne-SemiBold.ttf>` (`--grades-only` for the presets alone), from `scripts/lib/ja_print_kanji.json` | `--check` in `test:ja-sheets`'s CI step |
 | hero SVG + OG PNG | `scripts/generate-site-art.py --only <slug>` / `wire-site-art.py` | `check:new-page-images` |
 | per-style OG cards | `scripts/generate-style-og-cards.py` | — |
 | `js/printables/cursiveRouteData.js` (a cursive phrase's writing route) | `node scripts/build-cursive-routes.js --write` from `scripts/lib/cursive-route-spec.js`; it refuses to write a route that leaves the ink or skips a stroke | `--check` (build-time, needs a browser driver) |

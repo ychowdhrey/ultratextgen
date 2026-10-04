@@ -1,0 +1,6 @@
+
+> ultratextgen@1.0.0 test:ja-sheets
+> node js/printables/jaSheets.test.js
+
+jaSheets: 151 passed, 0 failed
+jaKanjiGrades.js is current

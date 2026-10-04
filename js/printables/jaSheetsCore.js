@@ -67,7 +67,13 @@
   function header(a, o) {
     if (o.header === false) return "";
     const t = esc(o.title || "");
-    let s = '<text x="0" y="9.5" font-size="7" font-family="' + FONT + '" font-weight="' + FONT_WEIGHT + '" fill="' + INK + '">' + t + "</text>";
+    // The title shrinks rather than run into the なまえ line: a CJK character
+    // is ~1em wide, Latin about 0.55em (measured: a 17-character title at 7mm
+    // overlapped the label before this).
+    const room = (o.nameLine !== false ? a.w - 82 : a.w) - 2;
+    const ems = Array.from(o.title || "").reduce((w, c) => w + (c.charCodeAt(0) < 0x2000 ? 0.55 : 1), 0) || 1;
+    const tfs = n(Math.max(4, Math.min(7, room / ems)));
+    let s = '<text x="0" y="9.5" font-size="' + tfs + '" font-family="' + FONT + '" font-weight="' + FONT_WEIGHT + '" fill="' + INK + '">' + t + "</text>";
     if (o.nameLine !== false) {
       // 「なまえ」 and a writing line, the way Japanese school sheets head a page.
       const x0 = a.w - 78;
@@ -310,7 +316,13 @@
      for this page agree on both.) Same 200x240 source box. */
   const JA_OVERRIDES = {
     t: { strokes: ["M80,70 L80,176 C80,190 90,198 104,196", "M52,88 L112,88"] },
-    f: { strokes: ["M124,60 C112,50 88,52 88,80 L88,198", "M60,88 L118,88"] }
+    f: { strokes: ["M124,60 C112,50 88,52 88,80 L88,198", "M60,88 L118,88"] },
+    // Rounder bowls: squeezed into a 6/16 middle band the source bowls read as
+    // a flat-topped "D" (seen on the romaji evidence sheet, "shinbun").
+    b: { strokes: ["M45,52 L45,198", "M45,120 C62,92 140,88 145,143 C150,198 62,202 45,176"] },
+    d: { strokes: ["M155,52 L155,198", "M155,120 C138,92 60,88 55,143 C50,198 138,202 155,176"] },
+    p: { strokes: ["M45,88 L45,237", "M45,112 C62,90 140,86 145,141 C150,196 62,200 45,172"] },
+    q: { strokes: ["M155,88 L155,237", "M155,112 C138,90 60,86 55,141 C50,196 138,200 155,172"] }
   };
   function skelFor(skel, ch) { return JA_OVERRIDES[ch] || (skel && skel[ch]); }
 
@@ -336,9 +348,15 @@
     let s = "", cx = x;
     const sw = Math.max(0.35, h * (style.weight || 0.055));
     const gap = h * 0.2;
-    Array.from(text).forEach((ch) => {
-      if (ch === " ") { cx += h * 0.45; return; }
-      const e = skelFor(skel, ch);
+    Array.from(text).forEach((ch0) => {
+      if (ch0 === " ") { cx += h * 0.45; return; }
+      // A vowel with a macron or circumflex (romaji long vowels: ā, ô) is the
+      // skeleton vowel plus the mark drawn as a stroke in the top band, so it
+      // matches the letters around it instead of switching to the font.
+      const parts = ch0.normalize("NFD");
+      const ch = parts.charAt(0);
+      const mark = parts.length === 2 && (parts.charCodeAt(1) === 0x304 || parts.charCodeAt(1) === 0x302) ? parts.charCodeAt(1) : 0;
+      const e = (parts.length === 1 || mark) ? skelFor(skel, ch) : null;
       if (e) {
         const lower = ch >= "a" && ch <= "z";
         const m = mapper(y, h, o, lower);
@@ -349,14 +367,21 @@
           s += '<path d="' + mapPath(d, cx, b.lo, m) + '" fill="none" stroke="' + style.color + '" stroke-width="' + n(sw) +
             '" stroke-linecap="round" stroke-linejoin="round"' + dash + "/>";
         });
+        if (mark) {
+          const L1 = y, L2 = y + h * r.l2;
+          const my = L1 + (L2 - L1) * 0.45, mx = cx + w / 2, half = Math.max(w * 0.4, h * 0.12);
+          const d = mark === 0x304 ? "M" + n(mx - half) + "," + n(my) + " L" + n(mx + half) + "," + n(my)
+            : "M" + n(mx - half) + "," + n(my + (L2 - L1) * 0.2) + " L" + n(mx) + "," + n(my - (L2 - L1) * 0.2) + " L" + n(mx + half) + "," + n(my + (L2 - L1) * 0.2);
+          s += '<path d="' + d + '" fill="none" stroke="' + style.color + '" stroke-width="' + n(sw) + '" stroke-linecap="round" stroke-linejoin="round"/>';
+        }
         // i and j carry their dot as a short stroke in the skeleton already.
         cx += Math.max(w, h * 0.08) + gap;
       } else {
         const capH = h * r.l3;
         const fs = capH / 0.695;          // Klee One cap height 695/1000
         s += '<text x="' + n(cx) + '" y="' + n(y + h * r.l3) + '" font-size="' + n(fs) + '" font-family="' + FONT + '" font-weight="' + FONT_WEIGHT +
-          '" fill="' + style.color + '">' + esc(ch) + "</text>";
-        cx += fs * 0.62 + gap * 0.4;
+          '" fill="' + style.color + '">' + esc(ch0) + "</text>";
+        cx += (ch0 === "'" ? fs * 0.25 : fs * 0.62) + gap * 0.4;
       }
     });
     return { svg: s, width: cx - x };
