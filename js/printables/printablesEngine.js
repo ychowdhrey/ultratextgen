@@ -7114,21 +7114,85 @@
      bubble letter, which is the opposite of the motor path a tracing sheet
      exists to teach. Audit 2026-09-17.
 
-     Returns null unless EVERY non-space character has a route, so a word with
-     a digit or an accented letter keeps one consistent rendering rather than
-     mixing centrelines and contours in one row. */
+     Accented letters (2026-10-03). The route table covers 0-9, A-Z and a-z,
+     and this used to return null for the whole word when any character had no
+     route, so "Jürgen Weiß", "Łucja", "Begoña" or "Hélène" printed EVERY letter
+     as contour dots: on the German default level a near-solid blob. Now a
+     letter that decomposes (NFD) into a routed base plus marks this file can
+     draw is traced on its base route, with the mark drawn as its own short
+     centreline strokes, so the row stays one rendering. A character with no
+     base route (ß, ł, ø, æ) is the only thing left as a contour; the result's
+     `contour` list says which, and the callers draw just those glyphs the old
+     way. Null only when nothing in the word is routable. */
   function traceRoutePaths(word, fontPx, spacingPx, baselineY, totalW) {
     if (!window.UTG_STROKE_DIRECTION_DATA) return null;
     const cells = wordCellCentres(word, fontPx, spacingPx, totalW);
     const out = [];
+    const contour = [];
     for (let i = 0; i < cells.length; i++) {
       const c = cells[i];
       if (/\s/.test(c.ch)) continue;
-      const d = fittedStrokesFor(c.ch, fontPx, c.cx, baselineY, "advance");
-      if (!d) return null;
+      const d = fittedStrokesFor(c.ch, fontPx, c.cx, baselineY, "advance") ||
+        decomposedStrokesFor(c.ch, fontPx, c.cx, baselineY);
+      if (!d) { contour.push({ ch: c.ch, cx: c.cx }); continue; }
       for (let k = 0; k < d.length; k++) out.push(d[k]);
     }
-    return out.length ? out : null;
+    if (!out.length) return null;
+    out.contour = contour;
+    return out;
+  }
+
+  /* Diacritics as centreline strokes, in the unit box of the space the mark
+     occupies (x 0..1 left to right, y 0..1 top to bottom). Dots are short
+     segments, the same device the route table uses for the tittle of i/j. */
+  const MARK_STROKES = {
+    "\u0300": ["M0.30,0.15 L0.70,0.85"],                                   // grave
+    "\u0301": ["M0.70,0.15 L0.30,0.85"],                                   // acute
+    "\u0302": ["M0.15,0.85 L0.50,0.15 L0.85,0.85"],                        // circumflex
+    "\u0303": ["M0.10,0.70 C0.25,0.15 0.45,0.20 0.50,0.50 C0.55,0.80 0.75,0.85 0.90,0.30"], // tilde
+    "\u0304": ["M0.15,0.50 L0.85,0.50"],                                   // macron
+    "\u0306": ["M0.15,0.20 C0.25,0.95 0.75,0.95 0.85,0.20"],               // breve
+    "\u0307": ["M0.50,0.40 L0.50,0.60"],                                   // dot above
+    "\u0308": ["M0.28,0.40 L0.28,0.60", "M0.72,0.40 L0.72,0.60"],          // diaeresis
+    "\u030A": ["M0.50,0.10 C0.85,0.10 0.85,0.90 0.50,0.90 C0.15,0.90 0.15,0.10 0.50,0.10"], // ring
+    "\u030B": ["M0.45,0.15 L0.20,0.85", "M0.85,0.15 L0.60,0.85"],          // double acute
+    "\u030C": ["M0.15,0.15 L0.50,0.85 L0.85,0.15"],                        // caron
+    "\u0327": ["M0.55,0.05 L0.50,0.35 C0.85,0.35 0.85,0.95 0.30,0.90"],    // cedilla (below)
+    "\u0328": ["M0.60,0.05 C0.20,0.30 0.25,0.95 0.75,0.85"]                // ogonek (below)
+  };
+  const MARKS_BELOW = { "\u0327": 1, "\u0328": 1 };
+
+  function decomposedStrokesFor(ch, fontPx, cx, baselineY) {
+    const parts = Array.from(ch.normalize("NFD"));
+    if (parts.length < 2) return null;
+    const base = parts[0];
+    const marks = parts.slice(1);
+    if (!marks.every((m) => MARK_STROKES[m])) return null;
+    let d = fittedStrokesFor(base, fontPx, cx, baselineY, "advance");
+    if (!d) return null;
+    d = d.slice();
+    // An accent replaces the tittle: fit the whole i/j skeleton (so the stem
+    // keeps its fitted proportions) and drop the dot stroke, which is first.
+    if ((base === "i" || base === "j") && marks.some((m) => !MARKS_BELOW[m])) d.shift();
+    const whole = glyphInkBox(ch, fontPx, cx, baselineY, "advance");
+    const plain = glyphInkBox(base === "i" ? "\u0131" : base === "j" ? "\u0237" : base, fontPx, cx, baselineY, "advance") ||
+      glyphInkBox(base, fontPx, cx, baselineY, "advance");
+    if (!whole || !plain) return null;
+    const gap = fontPx * 0.04;
+    for (const m of marks) {
+      const below = !!MARKS_BELOW[m];
+      const top = below ? plain.y + plain.h + gap : whole.y;
+      const bottom = below ? whole.y + whole.h : plain.y - gap;
+      if (!(bottom - top > fontPx * 0.03)) return null;   // the face drew no room for it
+      // The mark's own width, centred on the base letter's ink.
+      const mw = Math.min(plain.w, fontPx * 0.32);
+      const left = plain.x + plain.w / 2 - mw / 2;
+      MARK_STROKES[m].forEach((unit) => {
+        d.push(unit.replace(/(-?\d*\.?\d+),(-?\d*\.?\d+)/g, (_, x, y) =>
+          (+(left + parseFloat(x) * mw).toFixed(2)) + "," + (+(top + parseFloat(y) * (bottom - top)).toFixed(2))));
+      });
+    }
+    return d;
   }
 
   /* @route-dots:begin — js/printables/strokeRoute.test.html slices this block
@@ -7426,9 +7490,9 @@
       addRuling(svg, w);
     }
     /* R-001: the stroked levels draw the writing centreline, not the glyph
-       contour. traceRoutePaths returns null unless every non-space character
-       has a route, so a word carrying a digit keeps one consistent rendering
-       instead of mixing centrelines and contours in the same row. */
+       contour. traceRoutePaths routes accented letters on their base letter
+       plus a drawn mark, and returns the few characters it cannot route
+       (ß, ł, ...) in `routed.contour`, drawn below as contour glyphs alone. */
     const routed = (!spec.blank && spec.fill === "none" && spec.routeSw)
       ? traceRoutePaths(word, TRACE_FONT_SIZE, trackPx, TRACE_BASE, w)
       : null;
@@ -7455,6 +7519,27 @@
         g.appendChild(path);
       });
       svg.appendChild(g);
+      // Characters with no route (ß, ł, ...) keep the contour rendering, each
+      // at its own advance centre, instead of dragging the whole word with it.
+      (routed.contour || []).forEach((c) => {
+        const t = document.createElementNS(SVGNS, "text");
+        t.setAttribute("x", String(c.cx));
+        t.setAttribute("y", String(TRACE_BASE));
+        t.setAttribute("text-anchor", "middle");
+        t.setAttribute("font-family", FONT);
+        t.setAttribute("font-weight", String(FONT_WEIGHT));
+        t.setAttribute("font-size", String(TRACE_FONT_SIZE));
+        t.setAttribute("fill", spec.fill);
+        t.setAttribute("stroke", spec.stroke);
+        t.setAttribute("stroke-width", String(spec.sw));
+        if (spec.dash) t.setAttribute("stroke-dasharray", spec.dash);
+        t.setAttribute("stroke-linecap", spec.cap || "round");
+        t.setAttribute("stroke-linejoin", "round");
+        if (spec.opacity != null && spec.opacity !== 1) t.setAttribute("opacity", String(spec.opacity));
+        t.setAttribute("class", "pt-trace-contour");
+        t.textContent = c.ch;
+        svg.appendChild(t);
+      });
       /* routeDrawn: the dotted/dashed letter above IS the overlay's own
          skeleton, fitted by the same call. Drawing the route again on top of
          it — solid, 6 units wide, at 0.9 opacity — did not annotate the
@@ -8348,6 +8433,14 @@
               ctx.stroke(new Path2D(d));
             });
             ctx.lineDashOffset = 0;
+            // Same leftovers as the preview row: only the unrouted glyphs
+            // fall back to the contour, at their own centres.
+            if (routedPng.contour && routedPng.contour.length) {
+              ctx.lineWidth = Math.max(1, spec.sw * scale);
+              const cdash = dashOf(spec.dash);
+              ctx.setLineDash(cdash.length ? cdash : []);
+              routedPng.contour.forEach((c) => ctx.strokeText(c.ch, c.cx, base));
+            }
           } else {
             ctx.lineWidth = Math.max(1, spec.sw * scale);
             const dash = dashOf(spec.dash);

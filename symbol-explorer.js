@@ -556,18 +556,21 @@
   }
   ns.fallbackCopy = fallbackCopy;
 
-  function copyText(text, el, label) {
+  // `method` is the copy_text copy_method; it defaults to "symbol_tile" so
+  // existing callers keep their meaning. A caller that copies something other
+  // than one tile passes its own, so one action sends exactly one event.
+  function copyText(text, el, label, method) {
     label = label || text;
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(function () {
-        feedback(el, label, text);
+        feedback(el, label, text, method);
       }).catch(function () {
         fallbackCopy(text);
-        feedback(el, label, text);
+        feedback(el, label, text, method);
       });
     } else {
       fallbackCopy(text);
-      feedback(el, label, text);
+      feedback(el, label, text, method);
     }
   }
   ns.copyText = copyText;
@@ -647,7 +650,8 @@
   ns.copyItemWidth = copyItemWidth;
   ns.isTextObject = isTextObject;
 
-  function feedback(el, label, copied) {
+  function feedback(el, label, copied, method) {
+    method = method || "symbol_tile";
     el.classList.add("is-copied");
     setTimeout(function () {
       el.classList.remove("is-copied");
@@ -658,10 +662,10 @@
     // guard keeps the copy working if it is ever absent.
     var utg = window.UltraTextGen;
     if (utg && utg.trackCopy) {
-      utg.trackCopy("symbol_tile", copied === undefined ? label : copied);
+      utg.trackCopy(method, copied === undefined ? label : copied);
     } else {
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: "copy_text", copy_method: "symbol_tile" });
+      window.dataLayer.push({ event: "copy_text", copy_method: method });
     }
   }
 
@@ -935,7 +939,7 @@
     const pre = card ? card.querySelector(".art-piece-pre") : null;
     if (!pre) return;
     const label = btn.getAttribute("data-label") || "ASCII art";
-    copyText(pre.textContent.replace(/\s+$/, ""), btn, label);
+    copyText(pre.textContent.replace(/\s+$/, ""), btn, label, "ascii_art");
   });
 
   document.addEventListener("keydown", function (e) {
@@ -1009,15 +1013,22 @@
   const STAR_OUTLINE = "☆";
   const STAR_FILLED = "★";
 
-  /* The name a page gives a tile. The visible .flag-label is authoritative
-     (it is what the reader sees and what the locale pages translate); the
-     aria-label is the fallback, with its leading "Copy " verb dropped. */
-  function tileLabel(tile) {
+  /* The name a page gives a tile's ROW, for Save and its saved-strip caption.
+     The visible .flag-label is authoritative (it is what the reader sees and
+     what the locale pages translate). Without one, the glyph itself is the
+     name: the aria-label is "<copy verb> <glyph>" in the page's language
+     ("Salin ♡", "Copiar nombre"), and stripping only an English "Copy " left
+     the localized verb inside saved captions and save_style.item_label.
+
+     This used to be a second `function tileLabel` in this same scope. Function
+     declarations hoist, so it silently replaced the copy toast's glyph-first
+     tileLabel(tile, symbol) above and every toast showed a label instead of
+     the glyph. Keep the two names distinct. */
+  function rowLabel(tile) {
     const row = tile.closest(".flag-row");
     const label = row ? row.querySelector(".flag-label") : null;
     if (label && label.textContent.trim()) return label.textContent.trim();
-    const aria = (tile.getAttribute("aria-label") || "").trim();
-    return aria.replace(/^Copy\s+/i, "") || (tile.getAttribute("data-symbol") || "").trim();
+    return (tile.getAttribute("data-symbol") || "").trim();
   }
 
   function symbolOf(tile) {
@@ -1065,7 +1076,7 @@
       btn.type = "button";
       btn.className = "symbol-save-btn";
       btn.setAttribute("data-symbol", symbol);
-      btn.setAttribute("aria-label", t("save", "Save") + " " + tileLabel(tile));
+      btn.setAttribute("aria-label", t("save", "Save") + " " + rowLabel(tile));
       paintSaveBtn(btn, isSavedSymbol(symbol));
       row.insertBefore(btn, row.firstChild);
       row.classList.add("has-symbol-actions");
@@ -1082,7 +1093,7 @@
     const nowSaved = UTGX.saved.toggle({
       type: "symbol",
       value: symbol,
-      label: tile ? tileLabel(tile) : symbol,
+      label: tile ? rowLabel(tile) : symbol,
       href: window.location.pathname
     });
     if (nowSaved === null) return;
@@ -1174,9 +1185,7 @@
     copyAll.className = "copy-collection-btn";
     copyAll.textContent = (STR.copyCollection || " Copy Collection").trim();
     copyAll.addEventListener("click", function () {
-      copyText(joined, copyAll, joined);
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: "copy_text", copy_method: "saved_collection" });
+      copyText(joined, copyAll, joined, "saved_collection");
     });
     actions.appendChild(copyAll);
 
@@ -1444,7 +1453,7 @@
       // glyph: "Save Black Star" is the announcement, not "Save ★".
       const row = b.closest(".flag-row");
       const tile = row ? row.querySelector(".symbol-tile") : null;
-      b.setAttribute("aria-label", t("save", "Save") + " " + (tile ? tileLabel(tile) : b.getAttribute("data-symbol")));
+      b.setAttribute("aria-label", t("save", "Save") + " " + (tile ? rowLabel(tile) : b.getAttribute("data-symbol")));
     });
     renderSavedStrip();
   });
