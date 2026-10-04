@@ -769,6 +769,35 @@ here so they aren't lost. Update as they're closed or new ones appear.
     sitemap")`, in the same style as the `sitemap.xml`/`robots.txt` rows
     already there; not added here per this review's own
     additive-diff-to-this-file mandate.
+25. **Review of 2026-10-03 (PRs #942-#992, 44 merged): the same classifier
+    gaps, now with counts, plus two new Unclassified paths.** 25 of 44 PRs
+    surfaced as Unclassified, and every one of them traces to five path
+    groups, none of them a new content lane:
+    - root `llms.txt`, 14 PRs (#943, #945, #948, #949, #950, #953, ...):
+      gap #24 is still open, and its count has gone from six PRs to 14.
+    - `.claude/rules/` and `.claude/skills/`, 13 PRs (#942, #943, #945,
+      #948, #950, #952, ...): the `.claude/` footprint recorded in the
+      2026-09-26 update to the skills-tree entry has not closed.
+    - `reportcard.md` (#965, #971) and `.github/prompts/` (#966, #970,
+      #971): **new.** `reportcard.md` is the public report card of user-facing
+      improvements, kept current by a weekly Claude Code Routine whose
+      instruction file is `.github/prompts/reportcard-weekly.md`. It is
+      documentation, so it belongs in the "Docs" lane, and the prompt file
+      is routine configuration kept in the repo, a sibling of the
+      `.claude/` tree rather than of `.github/workflows/`.
+    - `compare/` (#973): the Compare lane has a row in the lane table
+      (added 2026-09-29) but no `LANE_RULES` prefix, so its first PR
+      classified as Unclassified.
+    The fix for all five is `LANE_RULES` entries in
+    `scripts/weekly_pr_digest.py`: `("llms.txt", "SEO / sitemap")`,
+    `(".claude/", ...)`, `("reportcard.md", "Docs")`,
+    `(".github/prompts/", ...)` and `("compare/", ...)`. Not made here, per
+    this review's mandate of a small, additive diff to this file only. Until
+    it is made, more than half of every weekly digest reads as a signal that
+    is not one, which is how a real new lane would get lost in it.
+    Input note: `gh pr list` is unavailable in sandboxed sessions (it
+    needs GraphQL), so this review rebuilt the same JSON from the REST
+    `pulls` endpoints and fed it to `weekly_pr_digest.py` on stdin.
 
 ---
 
