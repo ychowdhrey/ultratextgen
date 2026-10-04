@@ -252,12 +252,51 @@
     return BITMAPS[" "];
   }
 
+  /* Letters with no decomposition to a base capital. Everything else
+     accented (É, Ñ, Ö, Å, Ç, Ș …) folds through NFD below. */
+  var FOLD = { "ß": "SS", "ẞ": "SS", "Æ": "AE", "Œ": "OE", "Ø": "O", "Ł": "L", "Đ": "D", "Ð": "D", "Þ": "TH", "Ħ": "H", "İ": "I", "ı": "I" };
+
+  /* Map the input onto drawable characters, one code point at a time
+     (never by UTF-16 unit, which split an emoji into two blank glyphs).
+     Accented Latin folds to its base capital, so "café" draws CAFE instead
+     of silently losing the É. Returns the drawable characters plus the
+     ones that still have no glyph, so the page can say so. */
+  function prepare(text) {
+    var chars = [];
+    var missing = [];
+    Array.from(String(text == null ? "" : text)).forEach(function (raw) {
+      var ch = raw.toUpperCase();
+      if (Object.prototype.hasOwnProperty.call(FOLD, raw)) ch = FOLD[raw];
+      else if (Object.prototype.hasOwnProperty.call(FOLD, ch)) ch = FOLD[ch];
+      else if (!Object.prototype.hasOwnProperty.call(BITMAPS, ch)) {
+        ch = ch.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      }
+      Array.from(ch).forEach(function (c) {
+        if (Object.prototype.hasOwnProperty.call(BITMAPS, c)) {
+          chars.push(c);
+        } else if (/\s/.test(c)) {
+          chars.push(" ");
+        } else {
+          chars.push(" ");
+          if (missing.indexOf(raw) === -1) missing.push(raw);
+        }
+      });
+    });
+    return { chars: chars, missing: missing };
+  }
+
+  /* Characters in `text` this generator cannot draw (shown as a space). */
+  function unsupported(text) {
+    return prepare(text).missing;
+  }
+
   /* Render a whole string into a multi-line banner in the given style.
-     Unknown characters fall back to a blank glyph; input is upper-cased
-     because this genre reuses one set of capital shapes for both cases. */
+     Input is upper-cased because this genre reuses one set of capital
+     shapes for both cases; accented letters fold to their base capital and
+     anything still undrawable becomes a blank glyph (see unsupported()). */
   function render(text, fontKey) {
     var style = STYLES[fontKey] || STYLES.standard;
-    var chars = String(text == null ? "" : text).toUpperCase().split("");
+    var chars = prepare(text).chars;
     if (!chars.length) return "";
 
     // Render each glyph to its block of rows. Literal styles look up
@@ -290,5 +329,5 @@
     return lines.join("\n");
   }
 
-  window.UTG_ASCII_BANNER_FONTS = { fonts: FONTS, render: render };
+  window.UTG_ASCII_BANNER_FONTS = { fonts: FONTS, render: render, unsupported: unsupported };
 })();

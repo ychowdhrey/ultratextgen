@@ -174,6 +174,19 @@ const SPELLING = ["because", "friend", "people", "school", "water", "there",
   ok(gridText(WS.build({ words: ["école"], seed: "x" }).grid).indexOf("É") >= 0,
      "without fold, É still reaches the grid (the English page's promise)");
 
+  // A Spanish page asks for fold "es": the written accent and the diaeresis go
+  // (sopas de letras are printed that way) but Ñ stays, because it is a letter
+  // of its own: folding it would turn AÑO into ANO, a different word.
+  const esWords = WS.normalizeWords(["año", "pingüino", "canción", "Ñandú"], "es");
+  eq(esWords.map((w) => w.letters.join("")).join(" "), "AÑO PINGUINO CANCION ÑANDU",
+     "fold es: accents and ü folded, Ñ kept");
+  eq(esWords[1].display, "pingüino", "fold es: the display form keeps the real spelling");
+  eq(WS.normalizeWords(["año"], true)[0].letters.join(""), "ANO", "fold true (French) still folds every mark");
+  const esFold = WS.build({ words: ["año", "pingüino", "canción", "niño", "mañana", "árbol"], seed: "es", level: "hard", fold: "es" });
+  eq(esFold.unplaced.length, 0, "fold es: a Spanish list places completely");
+  ok(!/[ÁÉÍÓÚÜáéíóúü]/.test(gridText(esFold.grid)), "fold es: no accented vowel reaches the grid");
+  for (const w of esFold.words) ok(WS.findWord(esFold.grid, w.letters).length > 0, "fold es findable: " + w.display);
+
   // ß uppercases to SS. One grid cell holds one character, so it must stay ß
   // or every letter after it shifts and the word silently breaks.
   const de = WS.normalizeWords(["straße"]);
@@ -197,6 +210,10 @@ const SPELLING = ["because", "friend", "people", "school", "water", "there",
   eq(WS.normalizeWords("cat, dog; bird").length, 3, "commas and semicolons split entries");
   eq(WS.normalizeWords("cat\nCAT\n cat ").length, 1, "the same word twice is one entry");
   eq(WS.normalizeWords("").length, 0, "an empty list is empty, not an error");
+  // R-08: the cap is the module's, and the page counts past it to name what it dropped.
+  const class49 = Array.from({ length: 49 }, (_, i) => "Kid" + String.fromCharCode(65 + (i % 26)) + String.fromCharCode(65 + Math.floor(i / 26)));
+  eq(WS.normalizeWords(class49).length, WS.MAX_WORDS, "the default cap keeps MAX_WORDS entries");
+  eq(WS.normalizeWords(class49, false, Infinity).length, 49, "limit Infinity counts every entry typed");
   eq(WS.normalizeWords("!!! ???").length, 0, "an entry with no letters is dropped");
   eq(WS.normalizeWords(null).length, 0, "null is empty, not an error");
 

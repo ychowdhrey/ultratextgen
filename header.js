@@ -949,15 +949,32 @@
     };
   }
 
-  // Push a copy_text event carrying the item identity. Every copy surface
-  // on the site routes through here so the payload shape cannot diverge
-  // between them — the reason this is one function and not five pushes.
-  function trackCopy(method, text, extra) {
+  // Copy methods whose payload is always the site's own inventory: a tile,
+  // a saved set of tiles, a glyph button, a collection or an ASCII piece.
+  // Every other method ("button", "manual", "main_bar") copies text the
+  // visitor typed, and visitors type names. Those send copy_item_group
+  // only, which still answers the analytical question; the typed text
+  // itself never reaches the dataLayer. An allowlist, so a new copy surface
+  // is private until someone decides its payload is catalogue content.
+  var CATALOGUE_COPY_METHODS = {
+    symbol_tile: 1,
+    grid_collection: 1,
+    saved_collection: 1,
+    glyph: 1,
+    ascii_art: 1
+  };
+
+  // The copy_text payload, kept pure so a test can assert what leaves the
+  // page without a browser.
+  function copyPayload(method, text, extra) {
     var id = copyIdentity(text);
+    // copy_item is always present as a KEY: GTM's data layer keeps a key's
+    // last value, so leaving it out would re-send the previous glyph.
+    // undefined is how a data layer key is cleared.
     var payload = {
       event: "copy_text",
       copy_method: method,
-      copy_item: id.item,
+      copy_item: Object.prototype.hasOwnProperty.call(CATALOGUE_COPY_METHODS, method) ? id.item : undefined,
       copy_item_group: id.group
     };
     if (extra) {
@@ -967,6 +984,14 @@
         }
       }
     }
+    return payload;
+  }
+
+  // Push a copy_text event carrying the item identity. Every copy surface
+  // on the site routes through here so the payload shape cannot diverge
+  // between them — the reason this is one function and not five pushes.
+  function trackCopy(method, text, extra) {
+    var payload = copyPayload(method, text, extra);
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push(payload);
   }

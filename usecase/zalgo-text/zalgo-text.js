@@ -1838,6 +1838,15 @@
   // Shared clipboard helper with execCommand fallback + button feedback
   function copyToClipboard(text, btn, idleLabel) {
     const done = () => {
+      // Every copy on this page funnels through here, so this is the one
+      // place it is counted. "button" carries no copy_item: the text is
+      // generated from what the visitor typed.
+      if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
+        window.UltraTextGen.trackCopy('button', text);
+      } else {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'copy_text', copy_method: 'button' });
+      }
       if (!btn) return;
       btn.textContent = i18n.btnCopied;
       btn.classList.add('copied');

@@ -416,6 +416,19 @@
       ],
       "kicker": "LIB",
       "added": "2026-10-02"
+    },
+    "fr-library-emoji-soleil-et-lune": {
+      "title": "Emoji soleil et lune",
+      "sub": "Soleil, phases de la lune, étoiles et comètes à copier.",
+      "glyphs": [
+        "🌑",
+        "🌒",
+        "🌓",
+        "🌔",
+        "🌕"
+      ],
+      "kicker": "LIB",
+      "added": "2026-10-03"
     }
   }
 }
