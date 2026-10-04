@@ -8,6 +8,62 @@ Newest entries come first. Numbers are only given where we could count them.
 
 ---
 
+## October 2026
+
+### 4 October 2026
+
+Symbol library pages now copy, save and display symbols the way people expect, after a round of repairs to problems that had been failing without any warning.
+
+When you copy a symbol, the confirmation now shows the symbol you copied, in your own language. Before, some pages showed a label such as "Disalin: Salin ♡", and 11 translated homepages confirmed in English. A tap on the corner of a symbol tile now copies it instead of saving it by accident. In dark mode, plain black symbols were nearly invisible on the dark cards and are now readable. The style tabs on font family pages work again: before, most of them emptied the results. Four Spanish pages that showed no results at all now work, and 44 Thai symbol and Traditional Chinese pages that loaded at desktop width on phones now fit the screen.
+
+### 4 October 2026
+
+The printable worksheets and text tools now keep every letter you type, and say so when something does not fit, instead of quietly dropping it.
+
+Parents and teachers printing names such as Jürgen, Begoña or Łucja get a normal tracing sheet. Before, one accented letter turned the whole word into dots. Cursive practice sheets now print in the cursive lettering you see on screen, on one page instead of two. The word search maker now lists any words that did not fit: before, pasting 49 names printed "Find all 40 words" and nobody was told that 9 were missing. The handwriting generator now takes up to 50 characters, with a visible counter, so a full pangram no longer ends in "lazy do". The ASCII banner maker keeps accented names readable: "café" used to come out as "CAF".
+
+### 3 October 2026
+
+Korean speakers can now use nine more UltraTextGen tools and guides in Korean: the strikethrough, underline, case converter, superscript and subscript generators, glitch text, tattoo lettering, group chat name ideas, and a guide to adding line breaks in an Instagram bio.
+
+People writing in Korean can style text, name a group chat or tidy their profile without switching to an English page. The Korean site's footer links for strikethrough text and tattoo fonts now open these Korean pages instead of the English ones.
+
+### 3 October 2026
+
+Symbol and printable pages now copy the right characters and give correct facts, after a review of pages that had drifted out of date.
+
+The Ohm sign tile now copies the real Ohm sign, not the Greek capital Omega, a different character that only looks the same. Cursive word cards in Spanish, Finnish, Norwegian and Turkish now keep their accents when copied, so "cumpleaños" no longer pastes as "cumpleanos". Keyboard instructions on translated pages now name the keys on that country's keyboard instead of a translated US layout, and dates and character names that had gone stale were corrected.
+
+### 3 October 2026
+
+The emoji meanings guide is now available in French and Italian, so people in those languages can check what an emoji means before sending it and copy it from the same page.
+
+### 2 October 2026
+
+The search box at the top of UltraTextGen now suggests pages as you type, on every page that shows it.
+
+A visitor on a symbol, guide or printable page can type "heart" or "cursive" and jump straight to the right page, with the keyboard or a tap. Before, the box was on every page but did nothing on library, symbol, guide, answers and printables pages, and even on the homepage pressing Enter did nothing. Translated pages show results in their own language first.
+
+### 2 October 2026
+
+Symbol collection pages now let you pick exactly the symbols you want and share them as one image.
+
+Tap any symbols, from any section of the page, and UltraTextGen builds an image of just those, up to 50, ready to share to a chat or save. Before, the image button drew every symbol in a section, so someone who wanted one heart got forty. Named sets, such as the flags of one region, can be added in one tap. Some sets, such as kaomoji and text art, cannot be turned into an image yet, and the page says so. On phones, the selection buttons now sit clear of the ad at the bottom of the screen, so a tap is less likely to land on it.
+
+### 2 October 2026
+
+The new spelling worksheet generator turns a weekly spelling list into ready to print practice in one go.
+
+A teacher or parent types up to 20 words and gets five kinds of practice sheet in one PDF: trace and write from memory; look, say, cover, write, check; missing letters; ABC order; and word shapes, with an optional answer page. In class list mode, every child's sheets carry their name and put the words in a different order.
+
+### 1 October 2026
+
+The Zalgo glitch text generator is faster to use and gives creators and gamers more control over how their glitch text looks.
+
+The styled text now appears right under the box you type in, so copying takes two steps instead of four. You can set how much glitch goes above, through and below the letters, see whether the result fits on Discord, X or Instagram, and share a link that recreates the exact same text. Stacks can now be much taller: up to 300 marks a letter in Extreme, up from 100, and up to 1,000 in Thai Cascade, up from 150. A new animated GIF option, clearly labelled, lets you download or share the effect as an animated image. Emoji and flags in your text now stay intact.
+
+---
+
 ## September 2026
 
 ### 27 September 2026
