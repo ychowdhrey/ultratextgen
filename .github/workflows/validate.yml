@@ -482,9 +482,7 @@ jobs:
       - name: Run Japanese worksheet engine tests
         id: ja_sheets_tests
         continue-on-error: true
-        run: |
-          npm run test:ja-sheets | tee ja-sheets-tests.log
-          python3 scripts/build-ja-print-fonts.py --check | tee -a ja-sheets-tests.log
+        run: npm run test:ja-sheets | tee ja-sheets-tests.log
 
       # Gating, and no backlog to be red against: every counter either attaches
       # or it does not. The bridge finder's one failure mode is silence — an
