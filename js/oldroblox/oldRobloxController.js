@@ -214,7 +214,15 @@
   function copySvg() {
     if (!lastSvg) return;
     svgWithEmbeddedFonts().then(function (svg) {
-      const done = function () { toast("SVG copied"); };
+      const done = function () {
+        toast("SVG copied");
+        if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
+          window.UltraTextGen.trackCopy("svg", "");
+        } else {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: "copy_text", copy_method: "svg" });
+        }
+      };
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(svg).then(done, function () { fallbackCopy(svg, done); });
       } else {
