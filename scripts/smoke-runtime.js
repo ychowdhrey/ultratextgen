@@ -99,9 +99,14 @@ async function main() {
   }
 
   async function open(url, device, init) {
+    // 'narrow' is a 390px layout that cannot grow: with isMobile, Chromium
+    // widens the layout viewport to fit an overflowing element, which hides
+    // exactly the defect an overflow check is looking for.
     const opts = device === 'mobile'
       ? { viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true }
-      : { viewport: { width: 1280, height: 900 } };
+      : device === 'narrow'
+        ? { viewport: { width: 390, height: 844 } }
+        : { viewport: { width: 1280, height: 900 } };
     const ctx = await browser.newContext({ ...opts, acceptDownloads: true });
     await ctx.grantPermissions(['clipboard-read', 'clipboard-write'], { origin: BASE });
     await ctx.route(/^https?:\/\/(?!127\.0\.0\.1)/, (r) => r.abort());
@@ -132,6 +137,7 @@ async function main() {
     check('Copy puts the card text on the clipboard', (await clip(page)) === want);
     const ev = (await dl(page)).filter((e) => e.event === 'copy_text');
     check('copy_text carries a style_name', ev.length === 1 && !!ev[0].style_name, JSON.stringify(ev));
+    check('a typed-text copy sends no copy_item', ev.length === 1 && ev[0].copy_item === undefined && !!ev[0].copy_item_group, JSON.stringify(ev));
     check('no page errors', !errors.length, errors.join(' | '));
     await ctx.close();
   }
@@ -217,6 +223,7 @@ async function main() {
     check('copy toast shows the glyph, not the tile label', toast.trim().endsWith(sym) && !(verb && toast.includes(verb)), toast);
     const evs = (await dl(page)).slice(before).filter((e) => e.event === 'copy_text');
     check('one tap sends one copy_text', evs.length === 1, `${evs.length}`);
+    check('a tile copy still names its symbol', evs.length === 1 && evs[0].copy_item === sym, JSON.stringify(evs));
     const star = page.locator('.flag-row:has(.symbol-tile) .symbol-save-btn').first();
     await star.click({ force: true });
     await page.waitForTimeout(200);
@@ -297,6 +304,40 @@ async function main() {
     const plain = await routed('Jurgen');
     const accented = await routed('Jürgen');
     check('"Jürgen" is traced on centrelines like "Jurgen"', plain > 0 && accented === plain, `${accented} vs ${plain} routed rows`);
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 11. Copy paths that used to send nothing.
+  console.log('\n/usecase/zalgo-text/ and /roblox/name-generator/ (copy events)');
+  for (const [url, sel] of [['/usecase/zalgo-text/', '#copyBtn'], ['/roblox/name-generator/', '.rng-mode-panel button[data-name]']]) {
+    const { ctx, page, errors } = await open(url, 'desktop');
+    await page.waitForTimeout(500);
+    const n0 = (await dl(page)).length;
+    await page.locator(sel).first().click();
+    await page.waitForTimeout(300);
+    const ev = (await dl(page)).slice(n0).filter((e) => e.event === 'copy_text');
+    check(`${url} Copy sends one copy_text, without copy_item`, ev.length === 1 && ev[0].copy_item === undefined, JSON.stringify(ev));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 12. Nothing pushes a 390px page sideways.
+  console.log('\n390px layouts (overflow)');
+  for (const [url, typed] of [['/usecase/vertical-text/', ''], ['/it/lettere-in-corsivo/', 'Luna'], ['/de/zum-ausdrucken/buchstaben-nachspuren/', '']]) {
+    const { ctx, page } = await open(url, 'narrow');
+    if (typed) { await page.locator('#mainInput, input[type=text]:visible').first().fill(typed); await page.waitForTimeout(500); }
+    const w = await page.evaluate(() => [document.documentElement.scrollWidth, window.innerWidth]);
+    check(`${url} fits 390px${typed ? ' after typing' : ''}`, w[0] <= w[1], `scrollWidth ${w[0]} > ${w[1]}`);
+    await ctx.close();
+  }
+
+  // 13. A language's own letters are in its printable picker.
+  console.log('\n/es/imprimibles/moldes-de-letras/ and /de/zum-ausdrucken/buchstaben-vorlagen/ (letter picker)');
+  for (const [url, want] of [['/es/imprimibles/moldes-de-letras/', ['Ñ']], ['/de/zum-ausdrucken/buchstaben-vorlagen/', ['Ä', 'Ö', 'Ü', 'ß']]]) {
+    const { ctx, page, errors } = await open(url, 'desktop');
+    const chips = await page.$$eval('#pt-strip .pt-chip', (a) => a.map((b) => b.dataset.char));
+    check(`${url} picker offers ${want.join(' ')}`, want.every((c) => chips.includes(c)), chips.join(''));
     check('no page errors', !errors.length, errors.join(' | '));
     await ctx.close();
   }
