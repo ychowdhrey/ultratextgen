@@ -456,6 +456,93 @@
     '</div>' +
   '</header>';
 
+  // Phone header. The full header wraps to three rows below 641px (logo, the
+  // icon nav, the search box): 187px at 390x844 and 227px at 360 and 320
+  // wide, measured 2026-10-04 -- up to 35% of the screen. While it was sticky
+  // it covered whatever scrolled to the top: on usecase/zalgo-text a
+  // hit-test at the centre of #copyBtn returned the header, not the button.
+  // So on phones the full header scrolls away with the page, and this
+  // one-row bar slides in only while the visitor scrolls back up. It is
+  // position:fixed, so showing and hiding it never moves the content (the
+  // full header keeps its in-flow height either way). Its search button
+  // takes the visitor to the real search box rather than duplicating it.
+  // The same query gates the CSS in style.css; keep the two in step.
+  const COMPACT_HEADER_QUERY = "(max-width: 640px), (max-height: 500px)";
+
+  const miniHeaderHTML = '<div class="header-mini" aria-hidden="true" inert>' +
+      '<a href="' + nav.home + '" class="logo">' +
+        '<span class="logo-icon">U</span>' +
+        '<span>UltraTextGen</span>' +
+      '</a>' +
+      '<button class="header-btn header-mini-search" type="button" aria-label="' + nav.search + '">' +
+        '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">' +
+          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>' +
+        '</svg>' +
+      '</button>' +
+    '</div>';
+
+  function initializeMiniHeader(header) {
+    if (!header || typeof window.matchMedia !== "function") return;
+    header.insertAdjacentHTML("afterend", miniHeaderHTML);
+    const mini = header.nextElementSibling;
+    const root = document.documentElement;
+    const phone = window.matchMedia(COMPACT_HEADER_QUERY);
+    const MIN_TRAVEL = 8; // px of scroll in one direction before the bar reacts
+    let lastY = window.scrollY;
+    let shown = false;
+    let raf = 0;
+
+    // --utg-header-h on <html> is how much of the top of the viewport the
+    // header chrome covers right now, the way --utg-anchor-h publishes the
+    // anchor ad: the sticky header's height on wider screens, the bar's
+    // height while it shows on phones, 0px otherwise. Anything sticky at
+    // top:0 adds it. The library A-Z bar did not, and sat entirely under the
+    // sticky header on desktop.
+    function publishHeight() {
+      const h = phone.matches ? (shown ? mini.offsetHeight : 0) : header.offsetHeight;
+      root.style.setProperty("--utg-header-h", h + "px");
+    }
+
+    function setShown(next) {
+      if (next === shown) return;
+      shown = next;
+      mini.classList.toggle("is-shown", next);
+      mini.setAttribute("aria-hidden", next ? "false" : "true");
+      mini.toggleAttribute("inert", !next);
+      publishHeight();
+    }
+
+    function update() {
+      raf = 0;
+      publishHeight();
+      const y = window.scrollY;
+      if (!phone.matches || y <= header.offsetTop + header.offsetHeight) {
+        setShown(false);
+        lastY = y;
+        return;
+      }
+      if (Math.abs(y - lastY) < MIN_TRAVEL) return;
+      setShown(y < lastY);
+      lastY = y;
+    }
+
+    function schedule() {
+      if (!raf) raf = window.requestAnimationFrame(update);
+    }
+
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    schedule();
+
+    mini.querySelector(".header-mini-search").addEventListener("click", function () {
+      const input = document.getElementById("searchInput");
+      setShown(false);
+      window.scrollTo(0, 0);
+      lastY = 0;
+      if (input) input.focus();
+    });
+  }
+
   function initializeSharedHeader() {
     var placeholder = document.getElementById("shared-header");
     if (placeholder) {
@@ -549,6 +636,7 @@
       });
     }
 
+    initializeMiniHeader(document.querySelector("header.header"));
     initializeSiteSearch();
   }
 
