@@ -185,3 +185,28 @@ handwriting rather than a printable itself. It is close enough to this boundary
 (shape-only and pre-writing content being out of scope for printables) to be worth an
 explicit look; it is currently undocumented as a lane. See `docs/README.md`'s Known
 gaps.
+
+## 運筆 on the Japanese printables hub: an owner exception (owner decision, 2026-10-04)
+
+The owner approved ten Japanese printable pages under `/ja/purinto/`,
+including `/ja/purinto/unpitsu/`, a 運筆 (pre-writing pencil control) sheet
+generator, and directed that it be built: "a native Japanese prewriting /
+pencil control family", "a Japanese user job that does not map cleanly onto
+the English printable taxonomy".
+
+What prints there is a path, so the revised test above would exclude it.
+**The owner's decision is the exception, and it is scoped**:
+
+- It covers `/ja/purinto/unpitsu/` only. It does not make mazes, shape
+  tracing or pre-writing sheets in scope for any other page, lane or locale.
+  graphisme, Schwungübungen and szlaczki stay out until the owner decides
+  them.
+- The reason it is different: 運筆 sheets are the first step of the Japanese
+  kana sequence that the same hub teaches (native publishers order their kana
+  series 運筆 → 筆順 → なぞり書き), so the page serves the hub's text job
+  rather than standing alone as an activity sheet.
+- The page keeps the brand's other rules: no account, one engine shared with
+  the kana sheets, A4 at actual size, the credit QR.
+
+**Status (2026-10-04):** built on branch `claude/sleepy-albattani-gh2l37`,
+not yet merged.

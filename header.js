@@ -216,7 +216,7 @@
       category: { label: "カテゴリー", href: "/category/" },
       usecase: { label: "使い方", href: "/usecase/" },
       library: { label: "ライブラリ", href: "/ja/library/" },
-      printables: { label: "印刷用", href: "/printables/" },
+      printables: { label: "学習プリント", href: "/ja/purinto/" },
       events: { label: "イベント", href: "/events/" },
       search: "フォントスタイルを検索…",
       darkMode: "ダークモード切り替え"
