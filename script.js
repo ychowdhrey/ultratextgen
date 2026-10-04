@@ -923,7 +923,7 @@ const decorations = window.UTG_DECORATIONS
       </div>
       <div class="style-actions-stack">
         <div class="style-actions">
-          <button class="copy-btn" data-text="${safeText}" ${!fullText ? "disabled" : ""} title="${STR.copyTitle}">${ICONS.copy}<span class="copy-label">${STR.copy}</span> <kbd class="copy-kbd">↵</kbd></button>
+          <button class="copy-btn" data-text="${safeText}" data-style="${safeName}" ${!fullText ? "disabled" : ""} title="${STR.copyTitle}">${ICONS.copy}<span class="copy-label">${STR.copy}</span> <kbd class="copy-kbd">↵</kbd></button>
           <button class="preview-btn" data-style="${safeName}" type="button" title="${safeAttr(uiText("stylePreview.dialogAriaLabel", "Platform preview"))}">👁 <span class="preview-label">${escapeHtml(uiText("stylePreview.title", "Preview"))}</span></button>
           <button class="save-btn ${saved ? "is-saved" : ""}" data-style="${safeName}" type="button" aria-pressed="${saved}" title="${saved ? STR.unsaveTitle : STR.saveTitle}"><span class="save-icon" aria-hidden="true">${saved ? "★" : "☆"}</span><span class="save-label">${saved ? STR.saved : STR.save}</span></button>
         </div>
@@ -970,8 +970,30 @@ const decorations = window.UTG_DECORATIONS
 
     tabsContainer.innerHTML = "";
 
+    // A page scoped to one family or group (UTG_FAMILY / UTG_GROUP, without a
+    // curated UTG_FONT_SLUGS list) starts unfiltered and every category tab
+    // INTERSECTS that family. Rendered unconditionally, 16-17 of the 19 tabs
+    // returned "no styles found" and none was active, so a visitor who tapped
+    // one saw the results vanish (measured on /id/tulisan-kecil, /fr/calligraphie,
+    // /ja/hikkitai). Here a tab is shown only when it narrows the family to a
+    // non-empty, smaller set; tapping the active tab again clears the filter;
+    // and the row is hidden when no tab would do anything.
+    const familyScoped = !isCategoryMode && !window.UTG_FONT_SLUGS &&
+      (currentGroup !== "all" || currentFamily !== "all");
+    const familyNames = familyScoped
+      ? Object.entries(stylesRegistry)
+          .filter(([, style]) => style && (currentGroup !== "all"
+            ? isStyleInGroup(style, currentGroup)
+            : isStyleInFamily(style, currentFamily)))
+          .map(([name]) => name)
+      : null;
+
     // Render tabs from the loaded categories
     Object.entries(fontCategories.categories).forEach(([key, category]) => {
+      if (familyScoped) {
+        const inFamily = (categoryFontMap[key] || []).filter((n) => familyNames.includes(n)).length;
+        if (inFamily === 0 || inFamily >= familyNames.length) return;
+      }
       let tab;
       const isActive = isCategoryMode ? (key === urlCategorySlug) : (key === currentCategory);
       const tabText = categoryTabText(key, category);
@@ -1003,15 +1025,21 @@ const decorations = window.UTG_DECORATIONS
         tab.textContent = tabText;
 
         tab.addEventListener("click", () => {
+          const clearing = familyScoped && currentCategory === key;
           $$(".category-tab").forEach((t) => t.classList.remove("active"));
-          tab.classList.add("active");
-          currentCategory = key;
+          if (!clearing) tab.classList.add("active");
+          currentCategory = clearing ? null : key;
           renderResults();
         });
       }
 
       tabsContainer.appendChild(tab);
     });
+
+    if (familyScoped) {
+      const section = tabsContainer.closest(".category-section") || tabsContainer;
+      section.hidden = !tabsContainer.querySelector(".category-tab");
+    }
 
     // Defer collapse logic so layout is ready
     setTimeout(() => {
@@ -1396,7 +1424,7 @@ const decorations = window.UTG_DECORATIONS
       <span class="safemode-control-label">${escapeHtml(safeModeLabel)}</span>
       <div class="safemode-chips" role="group" aria-label="${safeAttr(safeModeAriaLabel)}">
         <button class="safemode-chip${safeMode ? " active" : ""}" type="button" data-safemode aria-pressed="${safeMode}">
-          <span class="safemode-chip-dot" aria-hidden="true"></span>${escapeHtml(safeModeToggleLabel)}
+          <span class="safemode-chip-dot" aria-hidden="true"></span><span class="safemode-chip-label">${escapeHtml(safeModeToggleLabel)}</span>
         </button>
       </div>
       <span class="safemode-hint">${escapeHtml(safeModeHint)}</span>
@@ -1719,11 +1747,31 @@ const decorations = window.UTG_DECORATIONS
     { key: "tiktok", label: "TikTok" }
   ];
 
+  // Aliases for English platform hubs whose path segment is not the key.
+  const PREVIEW_SEGMENT_ALIASES = { twitter: "x" };
+
+  function previewKeyForPath(path) {
+    const seg = (String(path || "").split("/")[1] || "").toLowerCase();
+    const key = PREVIEW_SEGMENT_ALIASES[seg] || seg;
+    return PREVIEW_PLATFORMS.some((p) => p.key === key) ? key : "";
+  }
+
   function defaultPreviewPlatform() {
     const forced = (window.UTG_PREVIEW_PLATFORM || "").toLowerCase();
     if (PREVIEW_PLATFORMS.some((p) => p.key === forced)) return forced;
-    const seg = (window.location.pathname.split("/")[1] || "").toLowerCase();
-    if (PREVIEW_PLATFORMS.some((p) => p.key === seg)) return seg;
+    const own = previewKeyForPath(window.location.pathname);
+    if (own) return own;
+    // A locale page's own slug is translated (/id/font-tiktok/, /id/font-wa/),
+    // so the first path segment is the locale code and never matched: those
+    // pages opened on Instagram while a TikTok or WhatsApp mockup existed.
+    // The page's English parent names the platform.
+    const enLink = document.querySelector('link[rel="alternate"][hreflang="en"]');
+    if (enLink) {
+      try {
+        const parent = previewKeyForPath(new URL(enLink.getAttribute("href"), window.location.origin).pathname);
+        if (parent) return parent;
+      } catch (err) { /* malformed href: fall through */ }
+    }
     return "instagram";
   }
 
@@ -2215,8 +2263,11 @@ document.addEventListener("copy", () => {
       if (chipsGroup) chipsGroup.setAttribute("aria-label", uiText("safeMode.ariaLabel", "Check which styles render on other people's devices"));
       const chip = $(".safemode-chip", safeModeControl);
       if (chip) {
-        const textNode = Array.from(chip.childNodes).find((n) => n.nodeType === Node.TEXT_NODE);
-        if (textNode) textNode.textContent = uiText("safeMode.toggleLabel", "Safe mode");
+        // The label has its own span. Patching "the first text node" here hit
+        // the whitespace before the dot, so localized pages read
+        // "Mode aman ● Safe mode": the translation was added, the English kept.
+        const labelEl = $(".safemode-chip-label", chip);
+        if (labelEl) labelEl.textContent = uiText("safeMode.toggleLabel", "Safe mode");
       }
       const hint = $(".safemode-hint", safeModeControl);
       if (hint) hint.textContent = uiText("safeMode.hint", "Flags styles that may show as boxes (▯) on other people's older phones.");

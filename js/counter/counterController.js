@@ -197,9 +197,11 @@
         btn.title = (I18N.reducerHints && I18N.reducerHints[s.id]) || s.hint || "";
         btn.appendChild(el("span", "cc-fix-btn-label",
           (I18N.reducers && I18N.reducers[s.id]) || s.label));
+        // A reducer offered at no saving (fancy → plain on a code-point
+        // field) shows what it does, not "−0".
         const tag = s.segmentsAfter != null
           ? s.segmentsBefore + " → " + s.segmentsAfter + " " + I18N.segShort
-          : "−" + s.saved;
+          : s.saved > 0 ? "−" + s.saved : "𝒜 → A";
         btn.appendChild(el("span", "cc-fix-btn-save", tag));
         btn.addEventListener("click", () => applyValue(s.result));
         actions.appendChild(btn);

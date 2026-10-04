@@ -144,8 +144,12 @@
   /* Accepts a textarea's value (one entry per line, commas also split) or an
      array. Keeps the entry's own spelling for the clue list and derives a
      separate letters-only form for the grid, so "ICE CREAM" is one nine-letter
-     run in the grid and still reads as two words underneath it. */
-  function normalizeWords(input, fold) {
+     run in the grid and still reads as two words underneath it.
+     `limit` defaults to MAX_WORDS; pass Infinity to count what was typed, so
+     the page can say which entries the cap left out instead of dropping them
+     in silence (49 names used to print as "Find all 40 words"). */
+  function normalizeWords(input, fold, limit) {
+    const cap = limit == null ? MAX_WORDS : limit;
     const raw = Array.isArray(input)
       ? input
       : String(input == null ? "" : input).split(/[\r\n,;]+/);
@@ -160,7 +164,7 @@
       if (seen[key]) continue;
       seen[key] = true;
       out.push({ display: display, letters: letters, key: key });
-      if (out.length >= MAX_WORDS) break;
+      if (out.length >= cap) break;
     }
     return out;
   }

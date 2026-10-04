@@ -17,7 +17,9 @@ Copy-paste Unicode is the front door and satisfies the job fastest. Visual asset
 the on-brand, higher-intent **follow-up** for jobs plain characters cannot do (trace,
 color, print, logo art) — added where real demand exists, never as a default.
 
-**Core philosophy: Fast > Fancy, Clean > Clever, Useful > Impressive.**
+**Core philosophy: Fast > Fancy, Clean > Clever, Useful > Impressive.** And **a limitation
+is a feature brief**: where a platform hides its rules or a device varies, ship the check
+or the feedback loop, never only a disclaimer (`docs/decisions/limitations-become-features.md`).
 
 This repository is also a long-lived operational system worked by many sessions in
 parallel. `data/*.json` ledgers are machine-read state behind CI gates, `docs/` is the
@@ -61,8 +63,7 @@ These hold everywhere, in every file, for every task.
 9. **Nothing in this repository may point at a source outside it.** No other
    repository by name, no unpublished doc path or filename, no unpublished tooling.
    `npm run check:external-refs` gates every tracked file. A public tree carries the
-   substance — the figure, the finding, the decision — never a pointer a reader cannot
-   follow.
+   substance — the figure, the finding, the decision — never a pointer a reader cannot follow.
 
 ---
 
@@ -131,8 +132,7 @@ the wrong commit; `git fetch --deepen=<n>` before trusting any first-add date.
 
 ## Git and shipping
 
-- **Conventional commits** (`feat:`, `fix:`, `chore:`, `UX:`), `[skip ci]` on
-  auto-generated commits.
+- **Conventional commits** (`feat:`, `fix:`, `chore:`, `UX:`), `[skip ci]` on auto-generated commits.
 - **All changes go through a pull request**; direct pushes to `main` are avoided.
 - AI branch naming: `claude/<description>-<session-id>`.
 - **"Shipped" means merged to `main` through a PR — nothing else.** A commit pushed

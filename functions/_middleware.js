@@ -1,5 +1,6 @@
 // ✅ THIS MIDDLEWARE IS LIVE, and its invocation scope is governed by
-// /_routes.json — only pathname `/` invokes it. Do not add routes to
+// /_routes.json — pathname `/`, plus /api/name-reports (the player report
+// board), whose requests it passes straight to context.next(). Do not add routes to
 // that include list (or new files under functions/) without checking
 // the Functions invocation budget: every included route bills one
 // Workers-quota invocation per request, and before /_routes.json

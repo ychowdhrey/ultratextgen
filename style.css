@@ -7185,6 +7185,31 @@ body.dark-mode .tattoo-badge.is-roomy {
 
 .cursive-print-line { min-height: 1.6rem; }
 
+/* The cursive pages' own practice sheet (#cursivePrintRoot, built by
+   cursivePageController.js) prints A-M and N-Z side by side so the alphabet
+   fits one sheet. In one column its 26 rows ran to a second page that was
+   half empty. Scoped to that root: printablesEngine.js renders its own
+   cursive sheet with these classes and paginates it on purpose. */
+@media print {
+  #cursivePrintRoot .cursive-print-sheet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(13, auto);
+    grid-auto-flow: column;
+    column-gap: 0.35in;
+    row-gap: 1.05rem;
+  }
+  #cursivePrintRoot .cursive-print-row {
+    grid-template-columns: 92px 92px 1fr;
+    gap: 0.5rem;
+  }
+  /* Playwrite faces carry long descenders and tall loops: at line-height 1.5
+     the FR face's g and j ran into the next row's capitals. nowrap keeps the
+     wide pairs (M m, W w) on their line. */
+  #cursivePrintRoot .cursive-print-model,
+  #cursivePrintRoot .cursive-print-trace { line-height: 2; white-space: nowrap; }
+}
+
 /* Dark mode */
 body.dark-mode .cursive-section-nav {
   background: var(--bg-base);
@@ -9426,6 +9451,32 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 }
 .gr-char-warn { color: var(--ts-risk); border-color: var(--ts-risk); }
 .gr-char-reject { color: var(--ts-fail); border-color: var(--ts-fail); }
+
+/* In-game outcome reporter: "Tried this name in Free Fire?" One row of
+   answers, then the reasons after "refused", then a thank-you line. */
+.gr-outcome {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border-light);
+}
+.gr-outcome[hidden] { display: none; }
+.gr-outcome-ask { font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); margin-right: 0.2rem; }
+.gr-outcome-btn {
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.gr-outcome-btn:hover { border-color: var(--accent-purple); }
+.gr-outcome-btn:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 1px; }
+.gr-outcome-thanks { margin: 0; font-size: 0.85rem; color: var(--text-secondary); }
 
 /* ==========================================================================
    CHARACTER & WORD COUNTER  (/character-counter/)
@@ -13201,3 +13252,64 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
   body:has(.research-page) .table-group { break-after: avoid; }
   body:has(.research-page) a { color: inherit; }
 }
+
+/* Player report board (js/gamename/name-reports.js): names players tried in
+   a game and what the game did with them. The mount is an empty div until
+   the board API answers, so nothing here shows on a page where it is off. */
+.nr-board { display: flex; flex-direction: column; gap: 0.75rem; }
+.nr-intro { color: var(--text-secondary); }
+.nr-status:empty, .nr-status[hidden] { display: none; }
+.nr-tally { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
+.nr-tally:empty { display: none; }
+.nr-tally-label { font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); margin-right: 0.2rem; }
+.nr-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: var(--bg-base);
+  font-size: 0.8rem;
+}
+.nr-chip-char { font-size: 1.05rem; }
+.nr-chip-count { color: var(--text-secondary); }
+.nr-chip-bad { border-color: var(--ts-fail); }
+.nr-chip-good { border-color: var(--ts-safe); }
+.nr-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.nr-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+}
+.nr-item-muted { opacity: 0.55; }
+.nr-item-hidden { display: none; }
+.nr-head { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; min-width: 0; }
+.nr-name { font-size: 1.1rem; overflow-wrap: anywhere; min-width: 0; }
+.nr-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--text-secondary); }
+.nr-badge { font-weight: 700; padding: 0.05rem 0.55rem; border-radius: 999px; border: 1px solid transparent; }
+.nr-badge-accepted { color: var(--ts-safe); border-color: var(--ts-safe); }
+.nr-badge-refused { color: var(--ts-fail); border-color: var(--ts-fail); }
+.nr-badge-boxes { color: var(--ts-risk); border-color: var(--ts-risk); }
+.nr-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
+.nr-btn {
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.nr-btn:disabled { opacity: 0.6; cursor: default; }
+.nr-btn:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 1px; }
+.nr-copy { flex: none; }
+.nr-state { font-size: 0.75rem; color: var(--text-muted); }
+.gr-outcome-note { flex-basis: 100%; font-size: 0.78rem; color: var(--text-secondary); }
+.gr-outcome-error { margin: 0; font-size: 0.85rem; color: var(--ts-fail); }
+.nr-chip-code { font-family: var(--font-mono, monospace); font-size: 0.75rem; }

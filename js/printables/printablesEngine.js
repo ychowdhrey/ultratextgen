@@ -125,6 +125,7 @@
         answerKey: "Answer key",
         forWhom: "for",
         tooLong: "Too long for the grid:",
+        overCap: "Only the first {n} words are used. Left out:",
         needWords: "Type a few words to build a grid.",
         gridOf: "Word search grid",
         lettersBy: "letters by",
@@ -273,6 +274,7 @@
         answerKey: "Corrigé",
         forWhom: "pour",
         tooLong: "Trop long pour la grille :",
+        overCap: "Seuls les {n} premiers mots sont utilisés. Laissés de côté :",
         needWords: "Tape quelques mots pour créer une grille.",
         gridOf: "Grille de mots mêlés",
         lettersBy: "lettres sur",
@@ -752,6 +754,7 @@
         "answerKey": "Oplossing",
         "forWhom": "voor",
         "tooLong": "Te lang voor het rooster:",
+        "overCap": "Alleen de eerste {n} woorden worden gebruikt. Weggelaten:",
         "needWords": "Typ een paar woorden om een rooster te maken.",
         "gridOf": "Woordzoekerrooster",
         "lettersBy": "letters bij",
@@ -961,6 +964,7 @@
         answerKey: "Cevap anahtarı",
         forWhom: "·",
         tooLong: "Tabloya sığmayacak kadar uzun:",
+        overCap: "Yalnızca ilk {n} kelime kullanılır. Dışarıda kalanlar:",
         needWords: "Tablo oluşturmak için birkaç kelime yaz.",
         gridOf: "Kelime avı tablosu",
         lettersBy: "x",
@@ -7127,21 +7131,85 @@
      bubble letter, which is the opposite of the motor path a tracing sheet
      exists to teach. Audit 2026-09-17.
 
-     Returns null unless EVERY non-space character has a route, so a word with
-     a digit or an accented letter keeps one consistent rendering rather than
-     mixing centrelines and contours in one row. */
+     Accented letters (2026-10-03). The route table covers 0-9, A-Z and a-z,
+     and this used to return null for the whole word when any character had no
+     route, so "Jürgen Weiß", "Łucja", "Begoña" or "Hélène" printed EVERY letter
+     as contour dots: on the German default level a near-solid blob. Now a
+     letter that decomposes (NFD) into a routed base plus marks this file can
+     draw is traced on its base route, with the mark drawn as its own short
+     centreline strokes, so the row stays one rendering. A character with no
+     base route (ß, ł, ø, æ) is the only thing left as a contour; the result's
+     `contour` list says which, and the callers draw just those glyphs the old
+     way. Null only when nothing in the word is routable. */
   function traceRoutePaths(word, fontPx, spacingPx, baselineY, totalW) {
     if (!window.UTG_STROKE_DIRECTION_DATA) return null;
     const cells = wordCellCentres(word, fontPx, spacingPx, totalW);
     const out = [];
+    const contour = [];
     for (let i = 0; i < cells.length; i++) {
       const c = cells[i];
       if (/\s/.test(c.ch)) continue;
-      const d = fittedStrokesFor(c.ch, fontPx, c.cx, baselineY, "advance");
-      if (!d) return null;
+      const d = fittedStrokesFor(c.ch, fontPx, c.cx, baselineY, "advance") ||
+        decomposedStrokesFor(c.ch, fontPx, c.cx, baselineY);
+      if (!d) { contour.push({ ch: c.ch, cx: c.cx }); continue; }
       for (let k = 0; k < d.length; k++) out.push(d[k]);
     }
-    return out.length ? out : null;
+    if (!out.length) return null;
+    out.contour = contour;
+    return out;
+  }
+
+  /* Diacritics as centreline strokes, in the unit box of the space the mark
+     occupies (x 0..1 left to right, y 0..1 top to bottom). Dots are short
+     segments, the same device the route table uses for the tittle of i/j. */
+  const MARK_STROKES = {
+    "\u0300": ["M0.30,0.15 L0.70,0.85"],                                   // grave
+    "\u0301": ["M0.70,0.15 L0.30,0.85"],                                   // acute
+    "\u0302": ["M0.15,0.85 L0.50,0.15 L0.85,0.85"],                        // circumflex
+    "\u0303": ["M0.10,0.70 C0.25,0.15 0.45,0.20 0.50,0.50 C0.55,0.80 0.75,0.85 0.90,0.30"], // tilde
+    "\u0304": ["M0.15,0.50 L0.85,0.50"],                                   // macron
+    "\u0306": ["M0.15,0.20 C0.25,0.95 0.75,0.95 0.85,0.20"],               // breve
+    "\u0307": ["M0.50,0.40 L0.50,0.60"],                                   // dot above
+    "\u0308": ["M0.28,0.40 L0.28,0.60", "M0.72,0.40 L0.72,0.60"],          // diaeresis
+    "\u030A": ["M0.50,0.10 C0.85,0.10 0.85,0.90 0.50,0.90 C0.15,0.90 0.15,0.10 0.50,0.10"], // ring
+    "\u030B": ["M0.45,0.15 L0.20,0.85", "M0.85,0.15 L0.60,0.85"],          // double acute
+    "\u030C": ["M0.15,0.15 L0.50,0.85 L0.85,0.15"],                        // caron
+    "\u0327": ["M0.55,0.05 L0.50,0.35 C0.85,0.35 0.85,0.95 0.30,0.90"],    // cedilla (below)
+    "\u0328": ["M0.60,0.05 C0.20,0.30 0.25,0.95 0.75,0.85"]                // ogonek (below)
+  };
+  const MARKS_BELOW = { "\u0327": 1, "\u0328": 1 };
+
+  function decomposedStrokesFor(ch, fontPx, cx, baselineY) {
+    const parts = Array.from(ch.normalize("NFD"));
+    if (parts.length < 2) return null;
+    const base = parts[0];
+    const marks = parts.slice(1);
+    if (!marks.every((m) => MARK_STROKES[m])) return null;
+    let d = fittedStrokesFor(base, fontPx, cx, baselineY, "advance");
+    if (!d) return null;
+    d = d.slice();
+    // An accent replaces the tittle: fit the whole i/j skeleton (so the stem
+    // keeps its fitted proportions) and drop the dot stroke, which is first.
+    if ((base === "i" || base === "j") && marks.some((m) => !MARKS_BELOW[m])) d.shift();
+    const whole = glyphInkBox(ch, fontPx, cx, baselineY, "advance");
+    const plain = glyphInkBox(base === "i" ? "\u0131" : base === "j" ? "\u0237" : base, fontPx, cx, baselineY, "advance") ||
+      glyphInkBox(base, fontPx, cx, baselineY, "advance");
+    if (!whole || !plain) return null;
+    const gap = fontPx * 0.04;
+    for (const m of marks) {
+      const below = !!MARKS_BELOW[m];
+      const top = below ? plain.y + plain.h + gap : whole.y;
+      const bottom = below ? whole.y + whole.h : plain.y - gap;
+      if (!(bottom - top > fontPx * 0.03)) return null;   // the face drew no room for it
+      // The mark's own width, centred on the base letter's ink.
+      const mw = Math.min(plain.w, fontPx * 0.32);
+      const left = plain.x + plain.w / 2 - mw / 2;
+      MARK_STROKES[m].forEach((unit) => {
+        d.push(unit.replace(/(-?\d*\.?\d+),(-?\d*\.?\d+)/g, (_, x, y) =>
+          (+(left + parseFloat(x) * mw).toFixed(2)) + "," + (+(top + parseFloat(y) * (bottom - top)).toFixed(2))));
+      });
+    }
+    return d;
   }
 
   /* @route-dots:begin — js/printables/strokeRoute.test.html slices this block
@@ -7439,9 +7507,9 @@
       addRuling(svg, w);
     }
     /* R-001: the stroked levels draw the writing centreline, not the glyph
-       contour. traceRoutePaths returns null unless every non-space character
-       has a route, so a word carrying a digit keeps one consistent rendering
-       instead of mixing centrelines and contours in the same row. */
+       contour. traceRoutePaths routes accented letters on their base letter
+       plus a drawn mark, and returns the few characters it cannot route
+       (ß, ł, ...) in `routed.contour`, drawn below as contour glyphs alone. */
     const routed = (!spec.blank && spec.fill === "none" && spec.routeSw)
       ? traceRoutePaths(word, TRACE_FONT_SIZE, trackPx, TRACE_BASE, w)
       : null;
@@ -7468,6 +7536,27 @@
         g.appendChild(path);
       });
       svg.appendChild(g);
+      // Characters with no route (ß, ł, ...) keep the contour rendering, each
+      // at its own advance centre, instead of dragging the whole word with it.
+      (routed.contour || []).forEach((c) => {
+        const t = document.createElementNS(SVGNS, "text");
+        t.setAttribute("x", String(c.cx));
+        t.setAttribute("y", String(TRACE_BASE));
+        t.setAttribute("text-anchor", "middle");
+        t.setAttribute("font-family", FONT);
+        t.setAttribute("font-weight", String(FONT_WEIGHT));
+        t.setAttribute("font-size", String(TRACE_FONT_SIZE));
+        t.setAttribute("fill", spec.fill);
+        t.setAttribute("stroke", spec.stroke);
+        t.setAttribute("stroke-width", String(spec.sw));
+        if (spec.dash) t.setAttribute("stroke-dasharray", spec.dash);
+        t.setAttribute("stroke-linecap", spec.cap || "round");
+        t.setAttribute("stroke-linejoin", "round");
+        if (spec.opacity != null && spec.opacity !== 1) t.setAttribute("opacity", String(spec.opacity));
+        t.setAttribute("class", "pt-trace-contour");
+        t.textContent = c.ch;
+        svg.appendChild(t);
+      });
       /* routeDrawn: the dotted/dashed letter above IS the overlay's own
          skeleton, fitted by the same call. Drawing the route again on top of
          it — solid, 6 units wide, at 0.9 opacity — did not annotate the
@@ -7512,6 +7601,15 @@
   }
 
   const GEN_DEMO = CFG.genDemo || "Emma";
+  /* How much of the typed text the generator keeps. It was 42, one short of
+     "The quick brown fox jumps over the lazy dog" (43), so the sentence every
+     handwriting page reaches for printed as "...over the lazy do", on pages
+     that invite "a short sentence". The row is a viewBox scaled to the paper
+     width, so a longer line sets smaller rather than running off; 50 keeps
+     the pangram plus a few characters while the type stays writable. The
+     field's maxlength is set from this at mount, and a counter appears near
+     the limit so a pasted line is never cut in silence. */
+  const GEN_MAX_CHARS = 50;
 
   function applyCase(word) {
     const mode = el.genCase ? el.genCase.value : "as-typed";
@@ -7522,7 +7620,7 @@
   }
   function genValue() {
     const raw = el.genInput ? el.genInput.value : "";
-    const v = (raw && raw.trim()) ? raw.trim().slice(0, 42) : GEN_DEMO;
+    const v = (raw && raw.trim()) ? raw.trim().slice(0, GEN_MAX_CHARS) : GEN_DEMO;
     return applyCase(CFG.genLetters === true ? lettersOnly(v) : v);
   }
   /* CFG.genLetters -- the builder on /printables/letter-tracing/ practises
@@ -7556,6 +7654,22 @@
     return Math.max(1, Math.min(8, parseInt((el.genRows && el.genRows.value) || "3", 10) || 3));
   }
   function genModelOn() { return !el.genModel || el.genModel.checked; }
+  /* Nothing typed and a level that draws no letters: the sheet is ruling
+     only, so the demo word is on no line of it. The heading and the file
+     name used to be built from genValue() anyway, which falls back to the
+     demo -- a blank French sheet printed under "Le chat dort · Ligne
+     vierge". `withModel` is false for the PNG, which has no model row. */
+  function genRulingOnly(withModel) {
+    const typed = el.genInput && el.genInput.value && el.genInput.value.trim();
+    if (typed || !levelSpec(genLevel()).blank) return false;
+    return !(withModel && genModelOn());
+  }
+  // The word a sheet's own heading names: none on a ruling-only sheet.
+  function genTitleWord() { return genRulingOnly(true) ? "" : genValue(); }
+  function genHeading(label) {
+    const word = genTitleWord();
+    return word ? joinWords([word, "\u00b7", label]) : label;
+  }
 
   // Script picker (CFG.scriptOptions only, e.g. choosing between real German
   // school handwriting standards). Reassigns the shared FONT so every render
@@ -7855,7 +7969,7 @@
   function lettersDefaultTitle() { return cap(NOUN) + " " + T.alphabetWord; }
   function wordDefaultTitle() {
     if (el.nameInput || el.namePrint) return joinWords([nameValue(), "·", cap(NOUN)]);
-    if (el.genInput) return joinWords([genValue(), "·", levelSpec(genLevel()).label]);
+    if (el.genInput) return genHeading(levelSpec(genLevel()).label);
     return "";
   }
 
@@ -8028,7 +8142,7 @@
   // name without touching the input field; `levelOverride` lets the ladder
   // pack build one sheet per difficulty level the same way.
   function genSheetNode(wordOverride, levelOverride) {
-    const word = wordOverride != null ? applyCase(String(wordOverride).slice(0, 42)) : genValue();
+    const word = wordOverride != null ? applyCase(String(wordOverride).slice(0, GEN_MAX_CHARS)) : genValue();
     const level = levelOverride != null ? levelOverride : genLevel();
     const sheet = document.createElement("div");
     sheet.className = "pt-gen-sheet";
@@ -8201,7 +8315,7 @@
       printWrap(joinWords([entries.length + " " + T.sheets, "\u00b7", mixed ? "" : spec.label, "\u00b7", siteCredit()]), set, "generator_sheet");
       return;
     }
-    printWrap(withName(moreTitle("word"), genValue()) || joinWords([genValue(), "\u00b7", spec.label]), sheetPageNode(genSheetNode()), "generator_sheet");
+    printWrap(withName(moreTitle("word"), genTitleWord()) || genHeading(spec.label), sheetPageNode(genSheetNode()), "generator_sheet");
   }
 
   // The whole difficulty ladder as one print job — one sheet per level,
@@ -8221,13 +8335,20 @@
   // Word at a level -> wide PNG (mirrors the SVG spec on Canvas).
   function genWordPNG(word, level) {
     const spec = levelSpec(level);
+    const rulingOnly = genRulingOnly(false);
     withFont(() => {
+      /* `height` is the ruled strip; the canvas adds PNG_CREDIT_BAND below
+         it. drawCredit() puts the QR in the bottom-right corner, and on a
+         460px strip that corner IS the end of the ruling, so the white chip
+         erased the last line and the last vertical. The other full-width
+         exports already sign a band under the sheet the same way. */
       const width = 1600, height = 460, pad = 96;
+      const canvasH = height + PNG_CREDIT_BAND;
       const canvas = document.createElement("canvas");
-      canvas.width = width; canvas.height = height;
+      canvas.width = width; canvas.height = canvasH;
       const ctx = canvas.getContext("2d");
       ctx.fillStyle = "#ffffff";
-      ctx.fillRect(0, 0, width, height);
+      ctx.fillRect(0, 0, width, canvasH);
 
       let fontSize = 300;
       ctx.font = FONT_WEIGHT + " " + fontSize + "px " + FONT;
@@ -8329,6 +8450,14 @@
               ctx.stroke(new Path2D(d));
             });
             ctx.lineDashOffset = 0;
+            // Same leftovers as the preview row: only the unrouted glyphs
+            // fall back to the contour, at their own centres.
+            if (routedPng.contour && routedPng.contour.length) {
+              ctx.lineWidth = Math.max(1, spec.sw * scale);
+              const cdash = dashOf(spec.dash);
+              ctx.setLineDash(cdash.length ? cdash : []);
+              routedPng.contour.forEach((c) => ctx.strokeText(c.ch, c.cx, base));
+            }
           } else {
             ctx.lineWidth = Math.max(1, spec.sw * scale);
             const dash = dashOf(spec.dash);
@@ -8342,9 +8471,10 @@
       /* Every other PNG this engine exports carries the credit block, and a
          printed worksheet with no route back to the site is the case the
          QR exists for. This path never called it. */
-      drawCredit(ctx, width, height);
+      drawCredit(ctx, width, canvasH);
+      const fileWord = rulingOnly ? slugify(spec.label) : slugify(word);
       const save = () => downloadCanvas(canvas,
-        (PNG_PREFIX || "handwriting") + "-" + (slugify(word) || "word") + "-L" + level + ".png",
+        (PNG_PREFIX || "handwriting") + "-" + (fileWord || "word") + "-L" + level + ".png",
         "generator_word");
       /* The overlay was on the screen and on the printed sheet and absent
          from the PNG — the one artifact that leaves the site. wordPNG was
@@ -8362,8 +8492,39 @@
     });
   }
 
+  /* A visible "used / max" budget on a capped text field, in the field's own
+     label, the way the coloring word field already shows one. maxlength
+     alone stops the typing and cuts a paste without a word, so a heading
+     printed as "...Grade 202" and the pangram as "...lazy do" with nothing on
+     screen saying a limit existed. Counts code points, as the engine's
+     slices do, and is purely additive: no field's value or cap changes. */
+  function attachCharCount(input, max) {
+    if (!input || !input.id || input.tagName !== "INPUT") return;
+    const label = document.querySelector('label[for="' + input.id + '"]');
+    if (!label || label.querySelector(".pt-field-count")) return;
+    const count = document.createElement("span");
+    count.className = "pt-field-count";
+    count.setAttribute("aria-live", "polite");
+    label.appendChild(document.createTextNode(" "));
+    label.appendChild(count);
+    const sync = () => {
+      const used = [...input.value].length;
+      count.textContent = used + " / " + max;
+      count.classList.toggle("is-full", used >= max);
+    };
+    input.addEventListener("input", sync);
+    sync();
+  }
+
   function initGenerator() {
     if (!el.genInput && !el.genSlider && !el.genLevels) return;
+    /* A free-text field only: sight-word-tracing mounts a <select> under this
+       id, and letter-tracing (CFG.genLetters) reduces input to letters with
+       its own budget. */
+    if (el.genInput && el.genInput.tagName === "INPUT" && CFG.genLetters !== true) {
+      el.genInput.setAttribute("maxlength", String(GEN_MAX_CHARS));
+      attachCharCount(el.genInput, GEN_MAX_CHARS);
+    }
     if (el.genInput) {
       let timer = null;
       el.genInput.addEventListener("input", () => {
@@ -10387,7 +10548,10 @@
     el.designInput.addEventListener("input", onWordInput);
     if (el.designInput2) el.designInput2.addEventListener("input", onWordInput);
     if (el.designHeading) {
-      if (DESIGN.headingMaxChars) el.designHeading.setAttribute("maxlength", String(DESIGN_HEADING_MAX));
+      if (DESIGN.headingMaxChars) {
+        el.designHeading.setAttribute("maxlength", String(DESIGN_HEADING_MAX));
+        attachCharCount(el.designHeading, DESIGN_HEADING_MAX);
+      }
       el.designHeading.addEventListener("input", schedule);
     }
     wireSwatchGroup(el.designFillGroup, "fill", fillSwatchSVG, designState, renderDesignPreview);
@@ -11115,6 +11279,19 @@
       bits.push(names.length >= 2
         ? names.length + " " + T.wordSearch.versions
         : T.wordSearch.oneGrid);
+      /* Past the module's word cap the extra entries never reach the grid.
+         The roster box takes 60 names and the word list 40, so a class of 49
+         pasted here printed "Find all 40 words" with nine children missing
+         and nothing on screen saying so. */
+      const ns = wordSearchModule();
+      const cap = ns && ns.MAX_WORDS;
+      if (cap && el.searchInput && el.searchInput.value.trim()) {
+        const typed = ns.normalizeWords(el.searchInput.value, FOLD_GRID, Infinity);
+        if (typed.length > cap) {
+          bits.push(T.wordSearch.overCap.replace("{n}", String(cap)) + " " +
+            typed.slice(cap).map((w) => w.display).join(", "));
+        }
+      }
       if (built.unplaced.length) {
         bits.push(T.wordSearch.tooLong + " " + built.unplaced.map((w) => w.display).join(", "));
       }

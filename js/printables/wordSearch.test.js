@@ -210,6 +210,10 @@ const SPELLING = ["because", "friend", "people", "school", "water", "there",
   eq(WS.normalizeWords("cat, dog; bird").length, 3, "commas and semicolons split entries");
   eq(WS.normalizeWords("cat\nCAT\n cat ").length, 1, "the same word twice is one entry");
   eq(WS.normalizeWords("").length, 0, "an empty list is empty, not an error");
+  // R-08: the cap is the module's, and the page counts past it to name what it dropped.
+  const class49 = Array.from({ length: 49 }, (_, i) => "Kid" + String.fromCharCode(65 + (i % 26)) + String.fromCharCode(65 + Math.floor(i / 26)));
+  eq(WS.normalizeWords(class49).length, WS.MAX_WORDS, "the default cap keeps MAX_WORDS entries");
+  eq(WS.normalizeWords(class49, false, Infinity).length, 49, "limit Infinity counts every entry typed");
   eq(WS.normalizeWords("!!! ???").length, 0, "an entry with no letters is dropped");
   eq(WS.normalizeWords(null).length, 0, "null is empty, not an error");
 
