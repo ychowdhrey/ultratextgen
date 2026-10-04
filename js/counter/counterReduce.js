@@ -133,7 +133,11 @@
   }
 
   const TRANSFORMS = [
-    { id: "plain", label: "Convert fancy text to plain", hint: "Styled Unicode letters cost 2 units each in most fields.", fn: toPlain },
+    // `always`: offered whenever it changes the text, even at a saving of 0.
+    // A styled letter is one code point, so on every code-point destination
+    // the saving is 0 — yet a field that rejects or mangles styled letters
+    // is exactly why someone wants plain text back.
+    { id: "plain", label: "Convert fancy text to plain", hint: "Styled Unicode letters cost 2 units each in most fields.", fn: toPlain, always: true },
     { id: "invisible", label: "Remove invisible characters", hint: "Zero-width and filler characters you cannot see but the field counts.", fn: stripInvisible },
     { id: "combining", label: "Remove stacked diacritics", hint: "Glitch/zalgo marks add a character each.", fn: stripCombining },
     { id: "emoji", label: "Remove emoji", hint: "Emoji cost 2 on X and flip an SMS to 70-character segments.", fn: stripEmoji },
@@ -156,7 +160,9 @@
   /**
    * Which reducers actually help, for this text and this destination.
    * Ordered by how much each saves. Only non-zero savings are returned,
-   * so the UI never offers a button that would do nothing.
+   * so the UI never offers a button that would do nothing — except an
+   * `always` reducer, which is returned whenever it changes the text
+   * (saved: 0 when the destination does not charge extra for it).
    */
   function suggest(text, limitId) {
     const base = measureFor(text, limitId);
@@ -189,7 +195,7 @@
       try { result = t.fn(text); } catch (e) { return; }
       if (result === text) return;
       const saved = base - measureFor(result, limitId);
-      if (saved > 0) out.push({ id: t.id, label: t.label, hint: t.hint, result, saved });
+      if (saved > 0 || t.always) out.push({ id: t.id, label: t.label, hint: t.hint, result, saved: Math.max(0, saved) });
     });
     return out.sort((a, b) => b.saved - a.saved);
   }

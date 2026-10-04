@@ -121,6 +121,7 @@
         answerKey: "Answer key",
         forWhom: "for",
         tooLong: "Too long for the grid:",
+        overCap: "Only the first {n} words are used. Left out:",
         needWords: "Type a few words to build a grid.",
         gridOf: "Word search grid",
         lettersBy: "letters by",
@@ -269,6 +270,7 @@
         answerKey: "Corrigé",
         forWhom: "pour",
         tooLong: "Trop long pour la grille :",
+        overCap: "Seuls les {n} premiers mots sont utilisés. Laissés de côté :",
         needWords: "Tape quelques mots pour créer une grille.",
         gridOf: "Grille de mots mêlés",
         lettersBy: "lettres sur",
@@ -735,6 +737,7 @@
         "answerKey": "Oplossing",
         "forWhom": "voor",
         "tooLong": "Te lang voor het rooster:",
+        "overCap": "Alleen de eerste {n} woorden worden gebruikt. Weggelaten:",
         "needWords": "Typ een paar woorden om een rooster te maken.",
         "gridOf": "Woordzoekerrooster",
         "lettersBy": "letters bij",
@@ -944,6 +947,7 @@
         answerKey: "Cevap anahtarı",
         forWhom: "·",
         tooLong: "Tabloya sığmayacak kadar uzun:",
+        overCap: "Yalnızca ilk {n} kelime kullanılır. Dışarıda kalanlar:",
         needWords: "Tablo oluşturmak için birkaç kelime yaz.",
         gridOf: "Kelime avı tablosu",
         lettersBy: "x",
@@ -7580,6 +7584,15 @@
   }
 
   const GEN_DEMO = CFG.genDemo || "Emma";
+  /* How much of the typed text the generator keeps. It was 42, one short of
+     "The quick brown fox jumps over the lazy dog" (43), so the sentence every
+     handwriting page reaches for printed as "...over the lazy do", on pages
+     that invite "a short sentence". The row is a viewBox scaled to the paper
+     width, so a longer line sets smaller rather than running off; 50 keeps
+     the pangram plus a few characters while the type stays writable. The
+     field's maxlength is set from this at mount, and a counter appears near
+     the limit so a pasted line is never cut in silence. */
+  const GEN_MAX_CHARS = 50;
 
   function applyCase(word) {
     const mode = el.genCase ? el.genCase.value : "as-typed";
@@ -7590,7 +7603,7 @@
   }
   function genValue() {
     const raw = el.genInput ? el.genInput.value : "";
-    const v = (raw && raw.trim()) ? raw.trim().slice(0, 42) : GEN_DEMO;
+    const v = (raw && raw.trim()) ? raw.trim().slice(0, GEN_MAX_CHARS) : GEN_DEMO;
     return applyCase(CFG.genLetters === true ? lettersOnly(v) : v);
   }
   /* CFG.genLetters -- the builder on /printables/letter-tracing/ practises
@@ -7624,6 +7637,22 @@
     return Math.max(1, Math.min(8, parseInt((el.genRows && el.genRows.value) || "3", 10) || 3));
   }
   function genModelOn() { return !el.genModel || el.genModel.checked; }
+  /* Nothing typed and a level that draws no letters: the sheet is ruling
+     only, so the demo word is on no line of it. The heading and the file
+     name used to be built from genValue() anyway, which falls back to the
+     demo -- a blank French sheet printed under "Le chat dort · Ligne
+     vierge". `withModel` is false for the PNG, which has no model row. */
+  function genRulingOnly(withModel) {
+    const typed = el.genInput && el.genInput.value && el.genInput.value.trim();
+    if (typed || !levelSpec(genLevel()).blank) return false;
+    return !(withModel && genModelOn());
+  }
+  // The word a sheet's own heading names: none on a ruling-only sheet.
+  function genTitleWord() { return genRulingOnly(true) ? "" : genValue(); }
+  function genHeading(label) {
+    const word = genTitleWord();
+    return word ? joinWords([word, "\u00b7", label]) : label;
+  }
 
   // Script picker (CFG.scriptOptions only, e.g. choosing between real German
   // school handwriting standards). Reassigns the shared FONT so every render
@@ -7923,7 +7952,7 @@
   function lettersDefaultTitle() { return cap(NOUN) + " " + T.alphabetWord; }
   function wordDefaultTitle() {
     if (el.nameInput || el.namePrint) return joinWords([nameValue(), "·", cap(NOUN)]);
-    if (el.genInput) return joinWords([genValue(), "·", levelSpec(genLevel()).label]);
+    if (el.genInput) return genHeading(levelSpec(genLevel()).label);
     return "";
   }
 
@@ -8096,7 +8125,7 @@
   // name without touching the input field; `levelOverride` lets the ladder
   // pack build one sheet per difficulty level the same way.
   function genSheetNode(wordOverride, levelOverride) {
-    const word = wordOverride != null ? applyCase(String(wordOverride).slice(0, 42)) : genValue();
+    const word = wordOverride != null ? applyCase(String(wordOverride).slice(0, GEN_MAX_CHARS)) : genValue();
     const level = levelOverride != null ? levelOverride : genLevel();
     const sheet = document.createElement("div");
     sheet.className = "pt-gen-sheet";
@@ -8269,7 +8298,7 @@
       printWrap(joinWords([entries.length + " " + T.sheets, "\u00b7", mixed ? "" : spec.label, "\u00b7", siteCredit()]), set, "generator_sheet");
       return;
     }
-    printWrap(withName(moreTitle("word"), genValue()) || joinWords([genValue(), "\u00b7", spec.label]), sheetPageNode(genSheetNode()), "generator_sheet");
+    printWrap(withName(moreTitle("word"), genTitleWord()) || genHeading(spec.label), sheetPageNode(genSheetNode()), "generator_sheet");
   }
 
   // The whole difficulty ladder as one print job — one sheet per level,
@@ -8289,13 +8318,20 @@
   // Word at a level -> wide PNG (mirrors the SVG spec on Canvas).
   function genWordPNG(word, level) {
     const spec = levelSpec(level);
+    const rulingOnly = genRulingOnly(false);
     withFont(() => {
+      /* `height` is the ruled strip; the canvas adds PNG_CREDIT_BAND below
+         it. drawCredit() puts the QR in the bottom-right corner, and on a
+         460px strip that corner IS the end of the ruling, so the white chip
+         erased the last line and the last vertical. The other full-width
+         exports already sign a band under the sheet the same way. */
       const width = 1600, height = 460, pad = 96;
+      const canvasH = height + PNG_CREDIT_BAND;
       const canvas = document.createElement("canvas");
-      canvas.width = width; canvas.height = height;
+      canvas.width = width; canvas.height = canvasH;
       const ctx = canvas.getContext("2d");
       ctx.fillStyle = "#ffffff";
-      ctx.fillRect(0, 0, width, height);
+      ctx.fillRect(0, 0, width, canvasH);
 
       let fontSize = 300;
       ctx.font = FONT_WEIGHT + " " + fontSize + "px " + FONT;
@@ -8418,9 +8454,10 @@
       /* Every other PNG this engine exports carries the credit block, and a
          printed worksheet with no route back to the site is the case the
          QR exists for. This path never called it. */
-      drawCredit(ctx, width, height);
+      drawCredit(ctx, width, canvasH);
+      const fileWord = rulingOnly ? slugify(spec.label) : slugify(word);
       const save = () => downloadCanvas(canvas,
-        (PNG_PREFIX || "handwriting") + "-" + (slugify(word) || "word") + "-L" + level + ".png",
+        (PNG_PREFIX || "handwriting") + "-" + (fileWord || "word") + "-L" + level + ".png",
         "generator_word");
       /* The overlay was on the screen and on the printed sheet and absent
          from the PNG — the one artifact that leaves the site. wordPNG was
@@ -8438,8 +8475,39 @@
     });
   }
 
+  /* A visible "used / max" budget on a capped text field, in the field's own
+     label, the way the coloring word field already shows one. maxlength
+     alone stops the typing and cuts a paste without a word, so a heading
+     printed as "...Grade 202" and the pangram as "...lazy do" with nothing on
+     screen saying a limit existed. Counts code points, as the engine's
+     slices do, and is purely additive: no field's value or cap changes. */
+  function attachCharCount(input, max) {
+    if (!input || !input.id || input.tagName !== "INPUT") return;
+    const label = document.querySelector('label[for="' + input.id + '"]');
+    if (!label || label.querySelector(".pt-field-count")) return;
+    const count = document.createElement("span");
+    count.className = "pt-field-count";
+    count.setAttribute("aria-live", "polite");
+    label.appendChild(document.createTextNode(" "));
+    label.appendChild(count);
+    const sync = () => {
+      const used = [...input.value].length;
+      count.textContent = used + " / " + max;
+      count.classList.toggle("is-full", used >= max);
+    };
+    input.addEventListener("input", sync);
+    sync();
+  }
+
   function initGenerator() {
     if (!el.genInput && !el.genSlider && !el.genLevels) return;
+    /* A free-text field only: sight-word-tracing mounts a <select> under this
+       id, and letter-tracing (CFG.genLetters) reduces input to letters with
+       its own budget. */
+    if (el.genInput && el.genInput.tagName === "INPUT" && CFG.genLetters !== true) {
+      el.genInput.setAttribute("maxlength", String(GEN_MAX_CHARS));
+      attachCharCount(el.genInput, GEN_MAX_CHARS);
+    }
     if (el.genInput) {
       let timer = null;
       el.genInput.addEventListener("input", () => {
@@ -10463,7 +10531,10 @@
     el.designInput.addEventListener("input", onWordInput);
     if (el.designInput2) el.designInput2.addEventListener("input", onWordInput);
     if (el.designHeading) {
-      if (DESIGN.headingMaxChars) el.designHeading.setAttribute("maxlength", String(DESIGN_HEADING_MAX));
+      if (DESIGN.headingMaxChars) {
+        el.designHeading.setAttribute("maxlength", String(DESIGN_HEADING_MAX));
+        attachCharCount(el.designHeading, DESIGN_HEADING_MAX);
+      }
       el.designHeading.addEventListener("input", schedule);
     }
     wireSwatchGroup(el.designFillGroup, "fill", fillSwatchSVG, designState, renderDesignPreview);
@@ -11191,6 +11262,19 @@
       bits.push(names.length >= 2
         ? names.length + " " + T.wordSearch.versions
         : T.wordSearch.oneGrid);
+      /* Past the module's word cap the extra entries never reach the grid.
+         The roster box takes 60 names and the word list 40, so a class of 49
+         pasted here printed "Find all 40 words" with nine children missing
+         and nothing on screen saying so. */
+      const ns = wordSearchModule();
+      const cap = ns && ns.MAX_WORDS;
+      if (cap && el.searchInput && el.searchInput.value.trim()) {
+        const typed = ns.normalizeWords(el.searchInput.value, FOLD_GRID, Infinity);
+        if (typed.length > cap) {
+          bits.push(T.wordSearch.overCap.replace("{n}", String(cap)) + " " +
+            typed.slice(cap).map((w) => w.display).join(", "));
+        }
+      }
       if (built.unplaced.length) {
         bits.push(T.wordSearch.tooLong + " " + built.unplaced.map((w) => w.display).join(", "));
       }
