@@ -132,10 +132,20 @@ sitemap has already been submitted somewhere.
   is the token `OYYRrpCRT8ceh7oE7zNlN8u55zXFZyEW` (no trailing newline).
   Keep it byte-exact. It is a `.txt`, so the HTML page-infra checks never
   read it. Served as a static asset the same way as the Naver file above.
-- **Verified:** _not yet._ Press "Ověřit doménu" in Seznam's console once
-  this file's PR has merged and Cloudflare has deployed it.
-- **Sitemap:** to submit `https://ultratextgen.com/sitemap.xml` in Seznam's
-  console after verification. Seznam already receives IndexNow pings
+- **Verified:** 2026-10-04, after
+  [PR #1005](https://github.com/ychowdhrey/ultratextgen/pull/1005) merged
+  and the file served `200` with the exact token.
+- **Baseline at verification (2026-10-04, Seznam's "Current status" table):**
+  discovered by a robot 0 · saved in the robot database 5 · in the index 2 ·
+  with redirection 0 · with an error 0. Against a `sitemap.xml` of 4,757
+  URLs, Seznam effectively does not carry the site yet. The console's
+  "Website development over time" chart shows one series rising to about
+  450 on 2026-09-08 and holding near 500; the chart has no legend, so which
+  count it plots is not recorded here.
+- **Sitemap:** the console has no sitemap-submission form (its menu is
+  Overview, APIs, User management, Trial download, Contact support, plus an
+  "Add URL to search" link for single URLs). Seznam reads the `Sitemap:`
+  line already in `robots.txt`. Seznam already receives IndexNow pings
   (`scripts/lib/indexnow.js` posts to the shared `api.indexnow.org`
   endpoint), so this adds the console view and the sitemap, not first
   contact.
