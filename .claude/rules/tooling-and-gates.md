@@ -93,6 +93,17 @@ rather than infer drift from "one side moved".
   **required status check** in branch protection before assuming the script is
   wrong. That is a repository setting, not a tracked file.
 
+## One check renders pages
+
+`npm run check:runtime-smoke` (`scripts/smoke-runtime.js`) serves the checkout and
+drives Chromium through one page per runtime architecture, asserting the job works:
+results render after typing, a tile copies its exact symbol, tabs never empty a
+family page, dark-mode tiles are legible, the cursive sheet prints on one page in a
+cursive face, an accented name traces like a plain one. Every other gate reads files
+as text, and each of those defects shipped with them green. When a shared module
+breaks in a way only a browser can see, add its assertion here rather than a page.
+It exits 2 (UNKNOWN), never 0, when Playwright or Chromium is missing.
+
 ## Surfaces that assert facts get tests
 
 A page whose value is a claim that can be wrong — a limit, a count, an encoding, a

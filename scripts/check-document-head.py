@@ -30,6 +30,7 @@ Checks (all currently at zero site-wide, which is why this gates):
   * a </head> exists
   * no rel=alternate / rel=canonical after </head>
   * at most one canonical per page
+  * a <meta name=viewport> inside <head> (added 2026-10-03, see below)
 
 Usage:  python3 scripts/check-document-head.py [paths...]
 Exit 0 when clean, 1 otherwise.
@@ -42,6 +43,15 @@ DOCTYPE_RE = re.compile(r'<!DOCTYPE', re.I)
 HEAD_END_RE = re.compile(r'</head>', re.I)
 ALT_OR_CANON_RE = re.compile(r'<link[^>]*rel=[\'"](?:alternate|canonical)[\'"][^>]*>', re.I)
 CANON_RE = re.compile(r'<link[^>]*rel=[\'"]canonical[\'"][^>]*>', re.I)
+
+# Without a viewport meta a phone lays the page out at the 980px desktop width
+# and scales it down: text and tap targets shrink to a third. On 2026-10-03 a
+# production audit found 44 hand-built pages (31 th/symbol, 13 zh-tw) rendering
+# that way. Matched in either quote style on purpose: seven es pages write
+# name='viewport', and a first count that looked for double quotes only
+# reported them as missing (the same quote blind spot this file's header
+# describes for hreflang).
+VIEWPORT_RE = re.compile(r'<meta[^>]*name=[\'"]viewport[\'"][^>]*>', re.I)
 
 # A tile button's aria-label is the last attribute on the tag, so a well-formed
 # one always closes as  aria-label="...">  — the quote is immediately followed
@@ -84,6 +94,9 @@ def check(path):
     for stray in ALT_OR_CANON_RE.findall(body):
         problems.append(f'rel=alternate/canonical after </head> (crawlers ignore it): {stray[:90]}')
 
+    if not VIEWPORT_RE.search(head):
+        problems.append('no <meta name="viewport"> in <head>: phones render the 980px desktop layout')
+
     canons = CANON_RE.findall(head)
     if len(canons) > 1:
         problems.append(f'{len(canons)} canonical tags in <head>')
@@ -121,7 +134,10 @@ def main():
     if any('aria-label' in p for _, p in bad):
         print('  Fix (aria-label): HTML-escape the value — a literal " must be &quot;.')
         print('  Anything that copies a visible label into an attribute has to escape it.')
-    if any('aria-label' not in p for _, p in bad):
+    if any('viewport' in p for _, p in bad):
+        print('  Fix (viewport): add <meta name="viewport" content="width=device-width, initial-scale=1.0">')
+        print('  inside <head>, after <meta charset>.')
+    if any('aria-label' not in p and 'viewport' not in p for _, p in bad):
         print('  Fix (placement): move the tag inside <head>, after the canonical.')
         print('  If a generator put it there, fix the generator too — see this file\'s')
         print('  header for the audit-hreflang.js insertion bug that caused the first two.')

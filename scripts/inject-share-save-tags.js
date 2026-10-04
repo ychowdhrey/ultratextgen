@@ -58,7 +58,7 @@ for (const file of files) {
   // skip-if-present pass could not.
   let next = html;
   for (const src of [L.PRINT_PREFS, L.SHARE_CORE, L.SAVED_ITEMS]) {
-    const re = new RegExp(`[ \\t]*<script src="${src.replace(/[/.]/g, '\\$&')}"[^>]*></script>\\n?`, 'g');
+    const re = new RegExp(`[ \\t]*<script src=["']${src.replace(/[/.]/g, '\\$&')}["'][^>]*></script>\\n?`, 'g');
     next = next.replace(re, '');
   }
 
@@ -68,8 +68,8 @@ for (const file of files) {
   // UTG.sharedStyleId(), and the page threw before rendering a single card.
   const hostIdx = L.firstHostIndex(next);
   const host = Object.values(L.HOST_SCRIPTS)
-    .filter((src) => next.indexOf(`src="${src}"`) === hostIdx)[0];
-  const hostTagRe = new RegExp(`([ \\t]*)<script src="${host.replace(/[/.]/g, '\\$&')}"[^>]*></script>`);
+    .filter((src) => L.srcIndex(next, src) === hostIdx)[0];
+  const hostTagRe = new RegExp(`([ \\t]*)<script src=["']${host.replace(/[/.]/g, '\\$&')}["'][^>]*></script>`);
   const m = next.match(hostTagRe);
   if (!m) { noAnchor.push(path.relative(L.ROOT, file)); continue; }
 

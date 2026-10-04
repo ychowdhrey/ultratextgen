@@ -145,10 +145,12 @@
   overflow-wrap: anywhere;
 }
 
-/* A <button> does not inherit colour, so without this a face is black on the
+/* A <button> does not inherit colour, so without this a glyph is black on the
    dark-mode card. Scoped off .is-copied so the shared copied state keeps its
-   own contrast. */
-.flag-rows--text .flag-emoji.symbol-tile:not(.is-copied) {
+   own contrast. This was first written for .flag-rows--text only; on every
+   other grid a monochrome tile (♡ ★ ꧁ ツ) rendered rgb(0,0,0) on the dark
+   card, 1.18:1, while colour emoji looked fine (they ignore `color`). */
+.flag-emoji.symbol-tile:not(.is-copied) {
   color: var(--text-primary);
 }
 
@@ -425,6 +427,17 @@
 
 .symbol-save-btn.is-saved {
   color: var(--accent-purple, #8b5cf6);
+}
+
+/* On glyph grids the star's hit box sits just OUTSIDE the ~43px tile: at
+   0.85rem from the tile's centre it overlapped the tile's top-right corner,
+   so a corner tap saved instead of copying. The padding grows the target to
+   ~24px (WCAG 2.5.8) without growing the visible star. Text-object cards are
+   wide, so the star there already sits inside the card and is left as is. */
+.flag-rows:not(.flag-rows--text) .symbol-save-btn {
+  top: -3px;
+  margin-inline-start: 1.4rem;
+  padding: 5px;
 }
 
 /* Touch devices have no hover, so the star would never appear. */

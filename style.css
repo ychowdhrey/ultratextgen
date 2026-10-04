@@ -7185,6 +7185,31 @@ body.dark-mode .tattoo-badge.is-roomy {
 
 .cursive-print-line { min-height: 1.6rem; }
 
+/* The cursive pages' own practice sheet (#cursivePrintRoot, built by
+   cursivePageController.js) prints A-M and N-Z side by side so the alphabet
+   fits one sheet. In one column its 26 rows ran to a second page that was
+   half empty. Scoped to that root: printablesEngine.js renders its own
+   cursive sheet with these classes and paginates it on purpose. */
+@media print {
+  #cursivePrintRoot .cursive-print-sheet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(13, auto);
+    grid-auto-flow: column;
+    column-gap: 0.35in;
+    row-gap: 1.05rem;
+  }
+  #cursivePrintRoot .cursive-print-row {
+    grid-template-columns: 92px 92px 1fr;
+    gap: 0.5rem;
+  }
+  /* Playwrite faces carry long descenders and tall loops: at line-height 1.5
+     the FR face's g and j ran into the next row's capitals. nowrap keeps the
+     wide pairs (M m, W w) on their line. */
+  #cursivePrintRoot .cursive-print-model,
+  #cursivePrintRoot .cursive-print-trace { line-height: 2; white-space: nowrap; }
+}
+
 /* Dark mode */
 body.dark-mode .cursive-section-nav {
   background: var(--bg-base);
