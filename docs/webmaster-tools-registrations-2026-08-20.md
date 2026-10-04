@@ -122,6 +122,46 @@ sitemap has already been submitted somewhere.
   indexed" as "IndexNow isn't working" without pulling that definition and
   the underlying URL lists first.
 
+## Seznam Webmaster (added 2026-10-04)
+
+- **Registered:** Seznam Webmaster console (page titled "Webmaster –
+  Přidat web" flow), site `https://ultratextgen.com/`. Seznam treats the
+  `http` and `https` versions as separate sites; only `https` was added.
+- **Ownership verification method:** file upload. Seznam issued
+  `/seznam-wmt-OYYRrpCRT8ceh7oE7zNlN8u55zXFZyEW.txt`, whose entire content
+  is the token `OYYRrpCRT8ceh7oE7zNlN8u55zXFZyEW` (no trailing newline).
+  Keep it byte-exact. It is a `.txt`, so the HTML page-infra checks never
+  read it. Served as a static asset the same way as the Naver file above.
+- **Verified:** _not yet._ Press "Ověřit doménu" in Seznam's console once
+  this file's PR has merged and Cloudflare has deployed it.
+- **Sitemap:** to submit `https://ultratextgen.com/sitemap.xml` in Seznam's
+  console after verification. Seznam already receives IndexNow pings
+  (`scripts/lib/indexnow.js` posts to the shared `api.indexnow.org`
+  endpoint), so this adds the console view and the sitemap, not first
+  contact.
+- **Why now, against the 2026-08-20 deferral below:** owner decision,
+  2026-10-04. Registering costs one static file. It does not promote `cs`
+  (still 14 pages); it gives a first-party view of what Seznam indexes.
+
+## Cốc Cốc (submitted 2026-10-04)
+
+- **Submitted:** `https://ultratextgen.com/` via Cốc Cốc's manual URL form
+  at `coccoc.com/search/console/en/get-your-website-on-coc-coc-search`.
+  Reply: "Your website will be available on Cốc Cốc Search within the next
+  7-10 working days."
+- **No verification file and no code change.** The form needs neither.
+  Cốc Cốc's help page ("Submit sitemap to Cốc Cốc Search") says its robots
+  read the `Sitemap:` directive in `robots.txt`, which already names
+  `https://ultratextgen.com/sitemap.xml` under `User-agent: *` with nothing
+  disallowing Cốc Cốc's crawler.
+- **Measurement:** GA4 session source `coccoc.com`, users and revenue for
+  the 45 days after submission against the 45 days before, read on
+  2026-11-18. If the site still cannot be found on Cốc Cốc by 2026-10-30,
+  check Cloudflare security events for blocked `coccocbot` requests first.
+- This corrects the 2026-08-20 note below that no Cốc Cốc webmaster portal
+  could be confirmed: a submission form and help pages exist under
+  `coccoc.com/search/console/`.
+
 ## Other search engines considered, not pursued (2026-08-20)
 
 Evaluated against this site's actual 30-locale footprint (`ar bs cs da de
@@ -153,7 +193,8 @@ scratch next time it comes up:
   [Statcounter: Thailand search engine market
   share](https://gs.statcounter.com/search-engine-market-share/all/thailand)
 - **Seznam.cz (Czech Republic) — real option, deliberately not pursued
-  yet.** Seznam is a genuinely independent Czech search engine (~11–16%
+  yet.** _(Superseded 2026-10-04: registered by owner decision; see the
+  Seznam Webmaster section above.)_ Seznam is a genuinely independent Czech search engine (~11–16%
   local market share) with its own Seznam Webmaster Tools (sitemap
   submission, indexing/crawl-issue reports)
   — [Page One Formula: Understanding
@@ -164,7 +205,8 @@ scratch next time it comes up:
   whose own content investment hasn't been decided would be getting ahead
   of the site's own governance. Revisit alongside any future `cs`
   promotion decision, not before it.
-- **Cốc Cốc (Vietnam) — low confidence, not recommended.** Cốc Cốc is a
+- **Cốc Cốc (Vietnam) — low confidence, not recommended.** _(Superseded
+  2026-10-04: submitted; see the Cốc Cốc section above.)_ Cốc Cốc is a
   real Vietnamese browser+search product, but its own search relevance
   has declined sharply from a 2017 peak (~32.5% desktop share) to a small
   single-digit share by 2024, increasingly eclipsed by Chrome/Google — see
