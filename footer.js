@@ -20,7 +20,8 @@
     de: "/de/zum-ausdrucken/",
     it: "/it/da-stampare/",
     es: "/es/imprimibles/",
-    tr: "/tr/yazdirilabilir/"
+    tr: "/tr/yazdirilabilir/",
+    ja: "/ja/purinto/"
   };
   var nativePrintablesLocale = null;
   for (var _ppl in PRINTABLES_NATIVE_PREFIX) {
@@ -510,7 +511,7 @@
         { label: "使い方", href: "/usecase/" },
         { label: "カテゴリー", href: "/category/" },
         { label: "ライブラリ", href: "/ja/library/" },
-        { label: "印刷用", href: "/printables/" },
+        { label: "学習プリント", href: "/ja/purinto/" },
         { label: "イベント", href: "/events/" }
       ],
       tools: [
@@ -1152,6 +1153,19 @@
       ],
       bridge: 'Biyografi ve gönderiler için yazı tipi mi arıyorsun? <a href="/tr/" class="footer-link">Yazı tipi oluşturucuyu dene →</a>',
       copyright: "© 2026 UltraTextGen. Yazdırılabilir harfler ve alfabeler ücretsiz."
+    },
+    ja: {
+      colTitle: "学習プリント",
+      items: [
+        { label: "学習プリントの一覧", href: "/ja/purinto/" },
+        { label: "ひらがな練習", href: "/ja/purinto/hiragana-renshu/" },
+        { label: "カタカナ練習", href: "/ja/purinto/katakana-renshu/" },
+        { label: "漢字練習", href: "/ja/purinto/kanji-renshu/" },
+        { label: "名前なぞり書き", href: "/ja/purinto/namae-nazorigaki/" },
+        { label: "運筆プリント", href: "/ja/purinto/unpitsu/" }
+      ],
+      bridge: 'SNSのプロフィールに使う文字をお探しですか？ <a href="/ja/" class="footer-link">フォント変換を試す →</a>',
+      copyright: "© 2026 UltraTextGen. 無料の学習プリント。"
     },
     id: {
       colTitle: "Cetak",
