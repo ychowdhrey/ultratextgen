@@ -1,0 +1,315 @@
+{
+  "slug": "signification-emoji",
+  "lang": "fr",
+  "title": "Signification Emoji : ce que veut vraiment dire chaque emoji (liste)",
+  "meta_description": "Signification des emojis en un coup d'œil : visages, gestes de la main, couleurs des cœurs, animaux et emojis à double sens, expliqués simplement.",
+  "breadcrumb": "Signification des emojis",
+  "hero_h1": "Signification des emojis",
+  "hero_tagline": "Ce que veulent vraiment dire les emojis les plus utilisés, classés par thème plutôt que par ordre alphabétique.",
+  "intro": "La plupart des emojis ont deux sens : celui de leur nom Unicode et celui qu'on leur prête dans les conversations. Cette liste donne les deux quand ils divergent. Elle est classée par thème (visages, mains, couleurs des cœurs, animaux, doubles sens), parce qu'on cherche rarement un emoji par ordre alphabétique : on cherche ce qu'on veut exprimer. Chaque emoji se copie d'un clic.",
+  "sections": [
+    {
+      "id": "visages",
+      "label": "Visages",
+      "h2": "Signification des emojis visages",
+      "intro": "Ce que les visages les plus courants transmettent vraiment dans une conversation.",
+      "symbols": [
+        {
+          "char": "😊",
+          "label": "Sourire : chaleur sincère, bienveillance"
+        },
+        {
+          "char": "😂",
+          "label": "Rire aux larmes"
+        },
+        {
+          "char": "🥺",
+          "label": "Regard suppliant, yeux de chien battu"
+        },
+        {
+          "char": "😏",
+          "label": "Sourire en coin : complice, un brin moqueur"
+        },
+        {
+          "char": "🤔",
+          "label": "Réflexion, doute, scepticisme"
+        },
+        {
+          "char": "😐",
+          "label": "Visage neutre : pince-sans-rire, pas impressionné"
+        },
+        {
+          "char": "🙄",
+          "label": "Yeux au ciel : agacement, lassitude"
+        },
+        {
+          "char": "😤",
+          "label": "Détermination ou bouderie, rarement de la colère"
+        }
+      ]
+    },
+    {
+      "id": "mains",
+      "label": "Mains",
+      "h2": "Signification des emojis mains",
+      "intro": "Les gestes changent de sens plus vite que le reste : plusieurs ne veulent plus dire la même chose qu'à leur apparition.",
+      "symbols": [
+        {
+          "char": "👍",
+          "label": "Pouce levé : accord, validation"
+        },
+        {
+          "char": "👎",
+          "label": "Pouce baissé : désaccord, refus"
+        },
+        {
+          "char": "🤝",
+          "label": "Poignée de main : marché conclu, partenariat"
+        },
+        {
+          "char": "🙏",
+          "label": "Mains jointes : merci, s'il te plaît, prière"
+        },
+        {
+          "char": "✌️",
+          "label": "Signe de la victoire ou de la paix"
+        },
+        {
+          "char": "🤞",
+          "label": "Doigts croisés : souhaiter bonne chance"
+        },
+        {
+          "char": "🤙",
+          "label": "Appelle-moi, ou « tranquille »"
+        },
+        {
+          "char": "👋",
+          "label": "Main qui salue : bonjour ou au revoir"
+        }
+      ]
+    },
+    {
+      "id": "couleurs-coeurs",
+      "label": "Couleurs des cœurs",
+      "h2": "Signification des cœurs selon leur couleur",
+      "intro": "Chaque couleur de cœur porte sa propre nuance. Sur Snapchat, la couleur indique en plus votre statut de meilleur ami : c'est un système à part, détaillé sur la page des couleurs des cœurs Snapchat.",
+      "symbols": [
+        {
+          "char": "❤️",
+          "label": "Rouge : amour, passion"
+        },
+        {
+          "char": "🧡",
+          "label": "Orange : chaleur, attention aux autres"
+        },
+        {
+          "char": "💛",
+          "label": "Jaune : amitié, bonne humeur"
+        },
+        {
+          "char": "💚",
+          "label": "Vert : nature, santé, parfois jalousie"
+        },
+        {
+          "char": "💙",
+          "label": "Bleu : confiance, affection amicale"
+        },
+        {
+          "char": "💜",
+          "label": "Violet : tendresse, culture fan (K-pop)"
+        },
+        {
+          "char": "🖤",
+          "label": "Noir : humour noir, deuil"
+        },
+        {
+          "char": "🤍",
+          "label": "Blanc : pureté, condoléances, esthétique épurée"
+        },
+        {
+          "char": "🤎",
+          "label": "Marron : réconfort, simplicité"
+        },
+        {
+          "char": "💗",
+          "label": "Rose : affection naissante"
+        }
+      ]
+    },
+    {
+      "id": "animaux",
+      "label": "Animaux",
+      "h2": "Signification des emojis animaux",
+      "intro": "Ce que les animaux symbolisent en ligne, au-delà de l'animal lui-même.",
+      "symbols": [
+        {
+          "char": "🦋",
+          "label": "Papillon : transformation, liberté"
+        },
+        {
+          "char": "🐍",
+          "label": "Serpent : trahison, hypocrisie"
+        },
+        {
+          "char": "🦊",
+          "label": "Renard : ruse, malice"
+        },
+        {
+          "char": "🐸",
+          "label": "Grenouille : culture mème, « pas mon problème »"
+        },
+        {
+          "char": "🐝",
+          "label": "Abeille : travailleur, toujours occupé"
+        },
+        {
+          "char": "🦄",
+          "label": "Licorne : rare, unique"
+        }
+      ]
+    },
+    {
+      "id": "double-sens",
+      "label": "Double sens",
+      "h2": "Emojis à double sens",
+      "intro": "Ces emojis ne sont presque jamais employés pour ce que dit leur nom. Les envoyer sans le savoir, c'est souvent dire tout autre chose.",
+      "symbols": [
+        {
+          "char": "🍑",
+          "label": "Pêche : presque toujours un sous-entendu (les fesses)"
+        },
+        {
+          "char": "🍆",
+          "label": "Aubergine : presque toujours un sous-entendu"
+        },
+        {
+          "char": "🔥",
+          "label": "Feu : « trop bien », « canon » ; flamme Snapchat"
+        },
+        {
+          "char": "💀",
+          "label": "Tête de mort : « je suis mort de rire »"
+        },
+        {
+          "char": "🤡",
+          "label": "Clown : s'être ridiculisé"
+        },
+        {
+          "char": "🧢",
+          "label": "Casquette : mensonge ; « no cap » veut dire « sans mentir »"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Questions fréquentes sur la signification des emojis",
+  "faq": [
+    {
+      "q": "Un emoji a-t-il le même sens partout ?",
+      "a": "Non. Le nom Unicode est le même dans le monde entier, l'interprétation ne l'est pas. 👍 passe pour un simple « d'accord » chez la plupart des gens, mais beaucoup de jeunes le trouvent sec, voire passif-agressif. En cas de doute, c'est le contexte qui tranche, pas la définition."
+    },
+    {
+      "q": "Les emojis ont-ils un sens différent sur WhatsApp ou Snapchat ?",
+      "a": "Sur WhatsApp, non : l'application n'a pas de sens propres, seulement son propre dessin des emojis. Snapchat fait exception : il place automatiquement des cœurs et des emojis à côté du nom de vos amis selon la fréquence de vos échanges, et ce code-là n'a rien à voir avec le sens courant."
+    },
+    {
+      "q": "Que veut dire 💀 dans un message ?",
+      "a": "Presque jamais la mort. 💀 signifie « je suis mort de rire » et a remplacé 😂 dans beaucoup de conversations, car 😂 passe désormais pour un emoji de parents."
+    },
+    {
+      "q": "Que signifie le cœur blanc 🤍 ?",
+      "a": "Deux choses à ne pas confondre : dans une bio au style épuré, il évoque une esthétique sobre et douce ; dans un message de condoléances, une compassion discrète. C'est le contexte qui indique lequel des deux est voulu."
+    },
+    {
+      "q": "Pourquoi le même emoji n'a-t-il pas la même tête sur tous les téléphones ?",
+      "a": "Parce qu'Unicode définit seulement quel caractère est envoyé, pas comment il est dessiné. Apple, Google, Samsung et WhatsApp ont chacun leur propre jeu de dessins. Un emoji qui paraît amical sur iPhone peut sembler plus sévère sur un autre appareil."
+    },
+    {
+      "q": "Peut-on mettre des emojis dans un nom d'utilisateur ?",
+      "a": "Rarement. Dans une bio, un nom d'affichage ou un message, ils passent presque partout, car ce sont des caractères Unicode ordinaires. Le @nom d'utilisateur fait exception : la plupart des plateformes n'y acceptent que les lettres, les chiffres, le point et le tiret bas."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Pourquoi le sens d'un emoji s'éloigne souvent de son nom",
+      "body": "Le nom officiel Unicode est une étiquette technique, pas un mode d'emploi. 😤 s'appelle FACE WITH LOOK OF TRIUMPH, mais presque personne ne le lit comme un triomphe : on y voit de la bouderie ou de l'indignation. 🥺, PLEADING FACE, est devenu en quelques mois un signe de tendresse. C'est cet écart entre le nom et l'usage qui rend une simple liste de noms inutile pour comprendre un message. Cette page donne donc d'abord le sens réellement employé, et le nom technique seulement quand il aide."
+    },
+    {
+      "h2": "Les couleurs des cœurs : le seul groupe avec son propre code parallèle",
+      "body": "Les cœurs ont une particularité : Snapchat attribue des cœurs de couleur automatiquement selon le statut d'amitié. Un cœur jaune y signifie « vous êtes mutuellement meilleurs amis », pas l'amitié au sens large. Appliquer la logique Snapchat à un message WhatsApp, ou l'inverse, fait mal lire le message. En dehors de Snapchat, c'est le tableau des couleurs ci-dessus qui s'applique."
+    }
+  ],
+  "related": [
+    {
+      "href": "/fr/library/emojis-visages/",
+      "title": "Emojis visages",
+      "desc": "Bisou, clin d'œil, sourire en coin, yeux au ciel : tous les visages à copier."
+    },
+    {
+      "href": "/fr/library/symboles-coeur/",
+      "title": "Symboles cœur",
+      "desc": "Les cœurs de toutes les couleurs et formes, emojis et caractères Unicode."
+    },
+    {
+      "href": "/fr/symbol/couleurs-des-coeurs-snapchat/",
+      "title": "Couleurs des cœurs Snapchat",
+      "desc": "Quel cœur Snapchat affiche, à quel moment, et le statut d'amitié qu'il indique."
+    },
+    {
+      "href": "/fr/library/emojis-animaux/",
+      "title": "Emojis animaux",
+      "desc": "Mammifères, oiseaux, animaux marins et créatures fantastiques à copier."
+    },
+    {
+      "href": "/fr/library/emoji-combos/",
+      "title": "Combos emoji",
+      "desc": "Des combinaisons d'emojis toutes prêtes pour une bio, un statut ou une légende."
+    },
+    {
+      "href": "/fr/usecase/traducteur-emoji/",
+      "title": "Traducteur emoji",
+      "desc": "Transformez une phrase en emojis, ou décodez des emojis en texte."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/fr/library/signification-emoji/",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "library_url": "https://ultratextgen.com/fr/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/emoji-meanings-guide/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/emoji-anlamlari/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/significado-de-los-emojis/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/emoji-betekenis/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/emoji-bedeutung/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/signification-emoji/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/significato-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/emoji-meanings-guide/"
+    }
+  ],
+  "page_type": "library",
+  "copy_pattern": "single",
+  "date_published": "2026-10-02",
+  "date_modified": "2026-10-02"
+}

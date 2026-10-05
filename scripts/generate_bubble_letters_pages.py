@@ -45,6 +45,7 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
 from lib.generator_parity import assert_no_regression  # noqa: E402
+from lib.cta_routing import printables_card_inner  # noqa: E402  (one owner for the card)
 REPO = SCRIPT_DIR.parent
 SPEC_PATH = REPO / "data" / "printables_bubble_letters.json"
 STYLES_PATH = REPO / "styles.js"
@@ -185,15 +186,6 @@ CONFIG_TEMPLATE = """  <script>
       variantFamily: "bubble",
       glyphStyle: "Ultra Bubble",
       nameDemo: "Mia",
-      howto: {
-        title: "How to draw a bubble {ch}",
-        steps: [
-          "Lightly pencil the plain {ch} as a thin skeleton.",
-          "Draw a rounded, puffy outline about a finger-width around every stroke.",
-          "Round off the corners, erase the skeleton, then ink and color it in."
-        ],
-        tip: "Tip: print the outline above and trace it a few times until the shape feels natural."
-      },
       initialChar: "__L__"
     };
   </script>"""
@@ -416,7 +408,8 @@ def render_spoke(spec, index):
             f"How do I draw a bubble letter {L} by hand?",
             f"{esc(draw)} Then erase the guide lines, ink the outline, and colour it in. "
             "Printing the outline above and tracing over it a few times is the quickest way to "
-            "learn the shape.",
+            'learn the shape, and our <a href="/learn/how-to-draw-bubble-letters/">guide to '
+            "drawing bubble letters</a> shows each step animated.",
             None,
         ),
         (
@@ -558,9 +551,7 @@ def render_spoke(spec, index):
     </section>
 
     <div class="cta-card">
-      <h3>Want bubble letter {esc(L)} for a bio or caption?</h3>
-      <p>These outlines are for paper. For copy-paste Unicode bubble text that pastes anywhere (no image needed), use the bubble fonts generator.</p>
-      <a class="cta-btn" href="/category/bubble-fonts/">Open the bubble fonts generator →</a>
+      {printables_card_inner("bubble-name", "/category/bubble-fonts/")}
     </div>
 
 

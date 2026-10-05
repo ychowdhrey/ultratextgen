@@ -51,7 +51,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free Fire Name Generator: Stylish FF Names with Symbols ꧁꧂</title>
-  <meta name="description" content="Free Fire name generator: type your name, add umbrella ꧁༒꧂, crown, and katakana symbols, then copy &amp; paste into Free Fire. Stylish FF names for boys, girls, pro, and guild. Free, no app.">
+  <meta name="description" content="Free Fire name generator: type your name, add umbrella ꧁༒꧂, crown, and katakana symbols, then copy &amp; paste into Free Fire.">
   <link rel="canonical" href="https://ultratextgen.com/usecase/free-fire-name-generator/">
   <link rel="alternate" hreflang="en" href="https://ultratextgen.com/usecase/free-fire-name-generator/">
   <link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/usecase/nama-ff-keren/">
@@ -131,7 +131,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "How many characters can a Free Fire name have?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Free Fire nickname field allows 12 characters, and decorative Unicode symbols count as 2 characters each. For example ꧁KING꧂ uses 8 of the 12 (4 letters + 2 double-width umbrellas). Use the name checker on this page before you spend a Name Change Card: it counts every decorative symbol as 2, the stricter reading."
+        "text": "The Free Fire nickname field allows 12 characters. Garena doesn't publish how styled characters are counted; players report decorative symbols counting as 2 each, so plan for ꧁KING꧂ to use 8 of the 12 (4 letters + 2 umbrellas). Use the name checker on this page before you spend a Name Change Card: it counts every decorative symbol as 2, the stricter reading."
       }
     },
     {
@@ -262,7 +262,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
-    <p>A stylish Free Fire name comes down to two things: <strong>a different font</strong> and <strong>a symbol that frames it</strong>. Type your name into the generator above and you instantly get bold, gothic, cursive, and small-caps versions you can copy. Then add an ornament from the palette below: Javanese umbrellas ꧁ ꧂, Tibetan scrolls ༺ ༻ ༒, a crown ♛, or katakana strokes メ 彡 that make a nick look fast and sharp. The Free Fire name field accepts these Unicode characters, so they render cleanly in the lobby, kill feed, and guild list.</p>
+    <p>A stylish Free Fire name comes down to two things: <strong>a different font</strong> and <strong>a symbol that frames it</strong>. Type your name into the generator above and you instantly get bold, gothic, cursive, and small-caps versions you can copy. Then add an ornament from the palette below: Javanese umbrellas ꧁ ꧂, Tibetan scrolls ༺ ༻ ༒, a crown ♛, or katakana strokes メ 彡 that make a nick look fast and sharp. Garena doesn't publish which characters a Free Fire name can hold, so we track it from player reports. The name check above flags any character players have seen refused, and after you try a name in the game, one tap adds it to the player board further down this page, so the next player can see what worked before spending a Name Change Card.</p>
     <p>Below you'll also find <strong>ready-made Free Fire names</strong> (for boys, girls, OG, pro, and 4-letter tags) just click to copy. Scroll down for how to change your name and the space trick.</p>
   </div>
 </section>
@@ -333,6 +333,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 </section>
 
 <div class="section-divider"></div>
+
+<!-- PLAYER REPORT BOARD: filled by js/gamename/name-reports.js; stays empty until the board API is on -->
+<div id="ffNameReports"></div>
 
 <!-- EDITORIAL: SPACES + UNUSED NAMES -->
 <section class="editorial-section">
@@ -428,7 +431,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </details>
   <details class="faq-item">
     <summary class="faq-question">How many characters can a Free Fire name have?</summary>
-    <p class="faq-answer">The Free Fire nickname field allows 12 characters, and decorative Unicode symbols count as 2 characters each. For example ꧁KING꧂ uses 8 of the 12 (4 letters + 2 double-width umbrellas). Use the name checker on this page before you spend a Name Change Card: it counts every decorative symbol as 2, the stricter reading.</p>
+    <p class="faq-answer">The Free Fire nickname field allows 12 characters. Garena doesn't publish how styled characters are counted; players report decorative symbols counting as 2 each, so plan for ꧁KING꧂ to use 8 of the 12 (4 letters + 2 umbrellas). Use the name checker on this page before you spend a Name Change Card: it counts every decorative symbol as 2, the stricter reading.</p>
   </details>
   <details class="faq-item">
     <summary class="faq-question">Why is my Free Fire name rejected or shown as boxes?</summary>
@@ -466,6 +469,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <!-- Symbol explorer + name checker -->
 <script src="/symbol-explorer.js" defer></script>
+<script src="/js/gamename/name-reports.js" defer></script>
 <script src="/js/gamename/game-rules.js" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -488,7 +492,44 @@ document.addEventListener("DOMContentLoaded", function () {
           "space": "A plain space is rejected — use the invisible character trick below instead.",
           "unknown-chars": "These characters are rarely supported and may render as boxes:",
           "too-short": "Too short."
+        },
+        outcome: {
+          ask: "Tried this name in {game}?",
+          publicNote: "Your answer and this name go on the public player board on this page.",
+          accepted: "It went through",
+          refused: "It was refused",
+          boxes: "It shows as boxes",
+          reasonAsk: "What did {game} say?",
+          reasons: {
+            too_long: "Too long",
+            invalid: "Invalid characters",
+            sensitive: "Sensitive name",
+            taken: "Name taken",
+            other: "Something else"
+          },
+          sending: "Adding it to the board…",
+          thanks: "Thanks. It's on the player board below, where the next player can see it.",
+          errors: {
+            link: "Names that look like links can't go on the board.",
+            rate_limited: "You've added a lot today. Try again tomorrow.",
+            name_too_long: "That's too long to be a Free Fire name.",
+            bad_characters: "That name has characters the board can't show.",
+            generic: "That didn't go through. Please try again in a moment."
+          }
         }
+      }
+    });
+  }
+  if (ns && ns.nameReports) {
+    ns.nameReports.mountBoard({
+      mount: "ffNameReports",
+      game: "ff",
+      text: {
+        label: "Player Reports",
+        heading: "Free Fire Names Players Tried: What Went Through and What Got Refused",
+        intro: "Garena doesn't publish which characters a Free Fire name can hold, so this board shows what players actually got. Each entry is a name someone pasted into Free Fire and what the game did with it. Tap Same for me if it happened to you too, and add your own from the name check at the top.",
+        empty: "No reports yet. Try a name in Free Fire, then answer the question under the name check at the top.",
+        tallyLabel: "Characters in names players tried:"
       }
     });
   }

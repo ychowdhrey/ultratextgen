@@ -149,11 +149,11 @@ STRINGS = {
                                "in your preferred format.",
         "section_kaomoji_label": "Kaomoji",
         "section_kaomoji_heading": "{event_name} Kaomoji",
-        "section_kaomoji_intro": "Each tile is a whole kaomoji — tap to copy the full "
+        "section_kaomoji_intro": "Each tile is a whole kaomoji: tap to copy the full "
                                  "string in one click.",
         "section_ascii_label": "ASCII Art",
         "section_ascii_heading": "{event_name} ASCII Art",
-        "section_ascii_intro": "Curated multi-line pieces — tap Copy to grab one with its "
+        "section_ascii_intro": "Curated multi-line pieces: tap Copy to grab one with its "
                                "line breaks and spacing intact.",
         "section_ascii_cta": 'Want to type your own name or message into a live '
                              'block-letter banner instead? Try the <a href="{href}">ASCII '
@@ -161,11 +161,11 @@ STRINGS = {
         "section_native_label": "In {script_language}",
         "section_native_heading": "{event_name} in {script_language}",
         "section_native_intro": "Tap any line to copy it in {script_language}. These are the "
-                                "native-script forms of the greetings above — paste them "
+                                "native-script forms of the greetings above: paste them "
                                 "straight into a message, card, or bio.",
         "section_phrase_label": "Wishes &amp; Messages",
         "section_phrase_heading": "{event_name} Wishes &amp; Messages",
-        "section_phrase_intro": "Tap any wish to drop it into the box above — every font "
+        "section_phrase_intro": "Tap any wish to drop it into the box above. Every font "
                                 "below then restyles it instantly, so you can copy it "
                                 "decorated in one step.",
         "cta_heading": "Transform text with Unicode fonts",

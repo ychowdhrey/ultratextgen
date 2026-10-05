@@ -228,6 +228,22 @@ t('item is capped so a paragraph copy cannot blow the event size', () => {
   eq(CI.copyIdentity('x'.repeat(500)).item.length, 60, 'capped length');
 });
 
+// ── copy_item privacy: typed text never leaves the page ─────────────────
+t('a typed-text copy sends the group but no copy_item', () => {
+  for (const m of ['button', 'manual', 'main_bar', 'some_new_surface']) {
+    const p = CI.copyPayload(m, 'Luna Maria', { style_name: 'ultra-bold' });
+    eq('copy_item' in p, true, m + ' keeps the key so GTM clears the last value');
+    eq(p.copy_item, undefined, m + ' must not carry the typed text');
+    eq(p.copy_item_group, 'Basic Latin', m + ' group');
+    eq(p.style_name, 'ultra-bold', m + ' extra survives');
+  }
+});
+t('a catalogue copy still sends the exact item', () => {
+  for (const m of ['symbol_tile', 'grid_collection', 'saved_collection', 'glyph', 'ascii_art']) {
+    eq(CI.copyPayload(m, '★').copy_item, '★', m);
+  }
+});
+
 // ── the self-maintaining coverage gate ────────────────────────────────────
 t('every data-symbol payload on the site resolves to a real Unicode block', () => {
   const files = [];

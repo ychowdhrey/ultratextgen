@@ -13,6 +13,10 @@ pre-rendering), `docs/architecture/page-art.md` (the art pipeline),
 ## Required in every page
 
 1. **Google Tag Manager** snippet in `<head>` and `<body>`. Never skip it.
+   `<meta charset="UTF-8">` and `<meta name="viewport" content="width=device-width,
+   initial-scale=1.0">` open the `<head>`; without the viewport meta a phone renders
+   the 980px desktop layout (`npm run check:document-head` gates it, either quote
+   style).
 2. **Canonical URL** meta tag.
 3. **OpenGraph + Twitter Card** meta.
 4. **JSON-LD structured data** — `WebApplication`/`WebSite`, `Organization`,

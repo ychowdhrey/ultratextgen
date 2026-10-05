@@ -235,7 +235,7 @@
     },
     nl: {
       home: "/nl/",
-      guide: { label: "Guides", href: "/nl/guide/" },
+      guide: { label: "Gidsen", href: "/nl/guide/" },
       answers: { label: "Antwoorden", href: "/nl/answers/" },
       category: { label: "Categorieën", href: "/category/" },
       usecase: { label: "Toepassingen", href: "/nl/usecase/" },
@@ -400,7 +400,7 @@
     library: { label: "Library", href: "/library/" },
     printables: { label: "Printables", href: "/printables/" },
     events: { label: "Events", href: "/events/" },
-    search: "Search font styles…",
+    search: "Search fonts, symbols…",
     darkMode: "Toggle dark mode"
   };
 
@@ -455,6 +455,93 @@
       '</div>' +
     '</div>' +
   '</header>';
+
+  // Phone header. The full header wraps to three rows below 641px (logo, the
+  // icon nav, the search box): 187px at 390x844 and 227px at 360 and 320
+  // wide, measured 2026-10-04 -- up to 35% of the screen. While it was sticky
+  // it covered whatever scrolled to the top: on usecase/zalgo-text a
+  // hit-test at the centre of #copyBtn returned the header, not the button.
+  // So on phones the full header scrolls away with the page, and this
+  // one-row bar slides in only while the visitor scrolls back up. It is
+  // position:fixed, so showing and hiding it never moves the content (the
+  // full header keeps its in-flow height either way). Its search button
+  // takes the visitor to the real search box rather than duplicating it.
+  // The same query gates the CSS in style.css; keep the two in step.
+  const COMPACT_HEADER_QUERY = "(max-width: 640px), (max-height: 500px)";
+
+  const miniHeaderHTML = '<div class="header-mini" aria-hidden="true" inert>' +
+      '<a href="' + nav.home + '" class="logo">' +
+        '<span class="logo-icon">U</span>' +
+        '<span>UltraTextGen</span>' +
+      '</a>' +
+      '<button class="header-btn header-mini-search" type="button" aria-label="' + nav.search + '">' +
+        '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">' +
+          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>' +
+        '</svg>' +
+      '</button>' +
+    '</div>';
+
+  function initializeMiniHeader(header) {
+    if (!header || typeof window.matchMedia !== "function") return;
+    header.insertAdjacentHTML("afterend", miniHeaderHTML);
+    const mini = header.nextElementSibling;
+    const root = document.documentElement;
+    const phone = window.matchMedia(COMPACT_HEADER_QUERY);
+    const MIN_TRAVEL = 8; // px of scroll in one direction before the bar reacts
+    let lastY = window.scrollY;
+    let shown = false;
+    let raf = 0;
+
+    // --utg-header-h on <html> is how much of the top of the viewport the
+    // header chrome covers right now, the way --utg-anchor-h publishes the
+    // anchor ad: the sticky header's height on wider screens, the bar's
+    // height while it shows on phones, 0px otherwise. Anything sticky at
+    // top:0 adds it. The library A-Z bar did not, and sat entirely under the
+    // sticky header on desktop.
+    function publishHeight() {
+      const h = phone.matches ? (shown ? mini.offsetHeight : 0) : header.offsetHeight;
+      root.style.setProperty("--utg-header-h", h + "px");
+    }
+
+    function setShown(next) {
+      if (next === shown) return;
+      shown = next;
+      mini.classList.toggle("is-shown", next);
+      mini.setAttribute("aria-hidden", next ? "false" : "true");
+      mini.toggleAttribute("inert", !next);
+      publishHeight();
+    }
+
+    function update() {
+      raf = 0;
+      publishHeight();
+      const y = window.scrollY;
+      if (!phone.matches || y <= header.offsetTop + header.offsetHeight) {
+        setShown(false);
+        lastY = y;
+        return;
+      }
+      if (Math.abs(y - lastY) < MIN_TRAVEL) return;
+      setShown(y < lastY);
+      lastY = y;
+    }
+
+    function schedule() {
+      if (!raf) raf = window.requestAnimationFrame(update);
+    }
+
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    schedule();
+
+    mini.querySelector(".header-mini-search").addEventListener("click", function () {
+      const input = document.getElementById("searchInput");
+      setShown(false);
+      window.scrollTo(0, 0);
+      lastY = 0;
+      if (input) input.focus();
+    });
+  }
 
   function initializeSharedHeader() {
     var placeholder = document.getElementById("shared-header");
@@ -548,6 +635,77 @@
         localStorage.setItem("darkMode", isDark ? "true" : "false");
       });
     }
+
+    initializeMiniHeader(document.querySelector("header.header"));
+    initializeSiteSearch();
+  }
+
+  // ── Site search ──────────────────────────────────────────────────────────
+  //
+  // The box above is on every page, but until 2026-10-02 only script.js's
+  // style filter listened to it, and script.js loads on ~544 of ~4,745 pages.
+  // Everywhere else typing and pressing Enter did nothing. The suggestions
+  // list lives in js/search/site-search.js and is loaded the first time a
+  // visitor points at, focuses or types in the box, so a page nobody searches
+  // pays nothing for it. Its index is generated:
+  // `npm run build:search-index -- --write`.
+  //
+  // Section labels reuse this file's own nav labels, which are each locale's
+  // shipped wording. Sections the nav has no word for show no label on a
+  // locale page rather than an English one.
+  function searchSectionLabels(locale) {
+    const labels = {
+      fonts: nav.category.label,
+      "use-cases": nav.usecase.label,
+      library: nav.library.label,
+      symbols: nav.library.label,
+      printables: nav.printables.label,
+      events: nav.events.label,
+      guides: nav.guide.label,
+      answers: nav.answers.label
+    };
+    if (locale === "en") {
+      Object.assign(labels, {
+        home: "Generator",
+        tools: "Tool",
+        platforms: "Platform",
+        compare: "Compare",
+        learn: "Learn",
+        research: "Research",
+        updates: "Updates",
+        embed: "Widget"
+      });
+    }
+    return labels;
+  }
+
+  function initializeSiteSearch() {
+    const input = document.getElementById("searchInput");
+    if (!input) return;
+    const locale = detectLocale();
+    let requested = false;
+    function load() {
+      if (requested) return;
+      requested = true;
+      const attach = function () {
+        if (!window.UTGSiteSearch) return;
+        window.UTGSiteSearch.attach(input, {
+          locale: locale,
+          sectionLabels: searchSectionLabels(locale),
+          emptyText: locale === "en" ? "No pages match. Try another word." : ""
+        });
+      };
+      if (window.UTGSiteSearch) { attach(); return; }
+      const s = document.createElement("script");
+      s.src = "/js/search/site-search.js";
+      s.async = true;
+      s.onload = attach;
+      s.onerror = function () { requested = false; };
+      document.head.appendChild(s);
+    }
+    input.addEventListener("focus", load);
+    input.addEventListener("input", load);
+    input.addEventListener("pointerenter", load);
   }
 
   // ── CTA card instrumentation ─────────────────────────────────────────────
@@ -879,15 +1037,32 @@
     };
   }
 
-  // Push a copy_text event carrying the item identity. Every copy surface
-  // on the site routes through here so the payload shape cannot diverge
-  // between them — the reason this is one function and not five pushes.
-  function trackCopy(method, text, extra) {
+  // Copy methods whose payload is always the site's own inventory: a tile,
+  // a saved set of tiles, a glyph button, a collection or an ASCII piece.
+  // Every other method ("button", "manual", "main_bar") copies text the
+  // visitor typed, and visitors type names. Those send copy_item_group
+  // only, which still answers the analytical question; the typed text
+  // itself never reaches the dataLayer. An allowlist, so a new copy surface
+  // is private until someone decides its payload is catalogue content.
+  var CATALOGUE_COPY_METHODS = {
+    symbol_tile: 1,
+    grid_collection: 1,
+    saved_collection: 1,
+    glyph: 1,
+    ascii_art: 1
+  };
+
+  // The copy_text payload, kept pure so a test can assert what leaves the
+  // page without a browser.
+  function copyPayload(method, text, extra) {
     var id = copyIdentity(text);
+    // copy_item is always present as a KEY: GTM's data layer keeps a key's
+    // last value, so leaving it out would re-send the previous glyph.
+    // undefined is how a data layer key is cleared.
     var payload = {
       event: "copy_text",
       copy_method: method,
-      copy_item: id.item,
+      copy_item: Object.prototype.hasOwnProperty.call(CATALOGUE_COPY_METHODS, method) ? id.item : undefined,
       copy_item_group: id.group
     };
     if (extra) {
@@ -897,6 +1072,14 @@
         }
       }
     }
+    return payload;
+  }
+
+  // Push a copy_text event carrying the item identity. Every copy surface
+  // on the site routes through here so the payload shape cannot diverge
+  // between them — the reason this is one function and not five pushes.
+  function trackCopy(method, text, extra) {
+    var payload = copyPayload(method, text, extra);
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push(payload);
   }

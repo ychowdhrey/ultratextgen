@@ -97,7 +97,11 @@
      is printed. The word-search and crossword modules strip the marks from the
      grid only when asked; the word list and clues keep the real spelling.
      Other languages keep their letters, as the English pages promise. */
-  const FOLD_GRID = CFG.foldAccents != null ? !!CFG.foldAccents : LANG === "fr";
+  /* Spanish sopas de letras drop the written accent as well but keep Ñ, a
+     letter of its own ("es" mode in wordSearch.js / wordPuzzles.js). */
+  const FOLD_GRID = CFG.foldAccents != null
+    ? (CFG.foldAccents === "es" ? "es" : !!CFG.foldAccents)
+    : (LANG === "fr" ? true : LANG === "es" ? "es" : false);
   const I18N = {
     en: {
       letterWord: "letter", numberWord: "number",
@@ -121,6 +125,7 @@
         answerKey: "Answer key",
         forWhom: "for",
         tooLong: "Too long for the grid:",
+        overCap: "Only the first {n} words are used. Left out:",
         needWords: "Type a few words to build a grid.",
         gridOf: "Word search grid",
         lettersBy: "letters by",
@@ -158,6 +163,23 @@
         versions: "different sheets, one per name",
         oneSheet: "One sheet",
         easy: "Easy", medium: "Medium", hard: "Hard"
+      },
+      /* Spelling worksheet generator. English only, under the same rule as
+         the word-list tools above: no locale build of the page exists. */
+      spelling: {
+        forWhom: "for",
+        trace: { title: "Trace, Write, Remember", note: "Trace each word, saying the sounds. Fold the page back along the dashed line, write the word from memory, then unfold and check.", noteCopy: "Read each word and say the sounds. Fold the page back along the dashed line, write the word from memory, then unfold and check." },
+        lcwc: { title: "Look, Say, Cover, Write, Check", note: "Look at the word and say it. Cover it. Write it. Check it. If it was wrong, fix it.", look: "Look and say", write: "Cover and write", check: "Check", fix: "Fix it", again: "Test me again on" },
+        missing: { title: "Missing Letters", note: "Fill in the missing letters. Then write the whole word on the line." },
+        abc: { title: "ABC Order", note: "Write the words in ABC order.", fold: "Fold the list away. Write three of the words from memory." },
+        shapes: { title: "Word Shapes", note: "Write each word in the boxes that match its shape." },
+        answers: { title: "Answers", missing: "Missing letters", abc: "ABC order", shapes: "Word shapes" },
+        bank: "Word bank",
+        needWords: "Type a few words to build the sheets.",
+        needSheet: "Pick at least one sheet.",
+        words: "words", sheets: "sheets", pages: "pages", page: "page",
+        perChild: "for each child",
+        tooLong: "Left out (letters only, up to 20):"
       },
       printOpts: { settings: "PDF settings", paper: "Paper", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Download PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
       printBook: "Save as a book: one page per letter",
@@ -252,6 +274,7 @@
         answerKey: "Corrigé",
         forWhom: "pour",
         tooLong: "Trop long pour la grille :",
+        overCap: "Seuls les {n} premiers mots sont utilisés. Laissés de côté :",
         needWords: "Tape quelques mots pour créer une grille.",
         gridOf: "Grille de mots mêlés",
         lettersBy: "lettres sur",
@@ -336,6 +359,19 @@
       bannerInstr: "Recorta cada banderín por su línea punteada, haz un agujero en cada punto y pasa un cordel o cinta en orden (1, 2, 3…) para formar la palabra.",
       puzzleCut: "Recorta por las líneas punteadas para separar cada pieza-letra.",
       puzzleTitle: "El rompecabezas de {name}",
+      wordSearch: {
+        heading: "Sopa de letras",
+        findAll: "Encuentra las",
+        wordsWord: "palabras",
+        answerKey: "Soluciones",
+        forWhom: "para",
+        tooLong: "Demasiado larga para la cuadrícula:",
+        needWords: "Escribe algunas palabras para crear la sopa de letras.",
+        gridOf: "Cuadrícula de sopa de letras",
+        lettersBy: "letras por",
+        versions: "cuadrículas distintas, una por nombre",
+        oneGrid: "Una cuadrícula"
+      },
       trace: {
         solid:    { label: "Modelo sólido", hint: "Letras oscuras y llenas — traza justo encima" },
         "bold-dot": { label: "Punteado grueso", hint: "Puntos gruesos y juntos para unir" },
@@ -718,6 +754,7 @@
         "answerKey": "Oplossing",
         "forWhom": "voor",
         "tooLong": "Te lang voor het rooster:",
+        "overCap": "Alleen de eerste {n} woorden worden gebruikt. Weggelaten:",
         "needWords": "Typ een paar woorden om een rooster te maken.",
         "gridOf": "Woordzoekerrooster",
         "lettersBy": "letters bij",
@@ -927,6 +964,7 @@
         answerKey: "Cevap anahtarı",
         forWhom: "·",
         tooLong: "Tabloya sığmayacak kadar uzun:",
+        overCap: "Yalnızca ilk {n} kelime kullanılır. Dışarıda kalanlar:",
         needWords: "Tablo oluşturmak için birkaç kelime yaz.",
         gridOf: "Kelime avı tablosu",
         lettersBy: "x",
@@ -977,7 +1015,13 @@
       bannerFlagsLabel: "harf bayrağı", ofWord: "/",
       flagCount: { one: "bayrak", other: "bayrak" },
       pageCount: { one: "sayfa", other: "sayfa" },
-      alphabetWord: "alfabe",
+      /* "alfabesi", not "alfabe": every use builds "<noun> <alphabetWord>"
+         ("Grafiti alfabesi", "Harf kalıbı alfabesi"), a Turkish compound
+         that takes the possessive suffix. */
+      alphabetWord: "alfabesi",
+      /* The batch picker's labels. Missing until 2026-10-05, so every tr
+         alphabet page showed "Which letters?" and "All 39" in English. */
+      set: { which: "Hangi harfler?", all: "Tümü ({n})", letters: "Harfler", pick: "Harf seç", pickLabel: "İstediğin harfleri yaz", pickHint: "Örneğin A-E ya da B D P Q.", order: "Alfabe sırasıyla basılır:", notHere: "Bu sayfada yok:", empty: "Bu sayfadaki harflerden en az birini yaz.", perPage: "sayfa başına {n}", tall: "yaklaşık {h} boyunda" },
       practiceTitle: "Çalışma sayfası · {Noun}",
       caseUpper: "Büyük harf", caseLower: "Küçük harf",
       modelCount: { one: "örnek satır", other: "örnek satır" },
@@ -1053,9 +1097,27 @@
   // instead of the default English A-Z (+0-9) — e.g. the 27-letter Spanish
   // alphabet, which inserts Ñ between N and O. Purely additive: every page
   // that doesn't set CFG.chars keeps computing CHARS exactly as before.
+  /* The letters a language's own alphabet adds to A-Z, in the order a
+     classroom chart prints them. A Spanish or German page that never set
+     CFG.chars offered no Ñ, or no Ä Ö Ü ß, in its letter picker or on its
+     alphabet sheet, though its word field accepted them. A page's explicit
+     CFG.chars still wins. Dot-to-dot keeps A-Z: its dots are laid out per
+     letter, and a letter without a layout would print an empty frame. */
+  const RENDER_FOR_CHARS = CFG.render || "outline";
+  const LANG_LETTERS = {
+    es: { after: "N", add: ["Ñ"] },
+    de: { after: "Z", add: ["Ä", "Ö", "Ü", "ß"] }
+  };
+  function langLetters() {
+    const extra = LANG_LETTERS[LANG];
+    if (!extra || RENDER_FOR_CHARS === "dots") return LETTERS.slice();
+    const out = LETTERS.slice();
+    out.splice(out.indexOf(extra.after) + 1, 0, ...extra.add);
+    return out;
+  }
   const CHARS = (Array.isArray(CFG.chars) && CFG.chars.length)
     ? CFG.chars.slice()
-    : (CFG.charset === "alnum") ? LETTERS.concat(DIGITS) : LETTERS.slice();
+    : (CFG.charset === "alnum") ? langLetters().concat(DIGITS) : langLetters();
 
   const RENDER = CFG.render || "outline";           // "outline" | "glyph"
   /* A script page (RENDER === "glyph") prints its letter as solid ink, which
@@ -1275,6 +1337,19 @@
     scPrint: $("#pt-sc-print"),
     scPng: $("#pt-sc-png"),
     scLadder: $("#pt-sc-ladder"),
+    spInput: $("#pt-sp-input"),
+    spRoster: $("#pt-sp-roster"),
+    spHeading: $("#pt-sp-heading"),
+    spSheets: $("#pt-sp-sheets"),
+    spTrace: $("#pt-sp-trace"),
+    spSize: $("#pt-sp-size"),
+    spBlank: $("#pt-sp-blank"),
+    spBank: $("#pt-sp-bank"),
+    spAnswer: $("#pt-sp-answer"),
+    spTabs: $("#pt-sp-tabs"),
+    spPreview: $("#pt-sp-preview"),
+    spMeta: $("#pt-sp-meta"),
+    spPrint: $("#pt-sp-print"),
     printRoot: $("#pt-print-root")
   };
 
@@ -1284,10 +1359,11 @@
 
   function charLabel(ch) { return /[0-9]/.test(ch) ? (T.numberWord + " " + ch) : (T.letterWord + " " + ch); }
   // ASCII-safe slug for the Latin letters in CFG.chars sets with no plain a-z
-  // form (Ñ from the Spanish alphabet; Ç Ğ İ Ö Ş Ü from the Turkish one), so
+  // form (Ñ from the Spanish alphabet; Ç Ğ İ Ö Ş Ü from the Turkish one; Ä ß
+  // from the German one), so
   // PNG filenames and #hash anchors stay ASCII. "I" and "İ" are two Turkish
   // letters and get two slugs. Every other letter is unaffected.
-  const CHAR_SLUGS = { "Ñ": "enye", "Ç": "c-cedilla", "Ğ": "g-breve", "İ": "i-dot", "Ö": "o-umlaut", "Ş": "s-cedilla", "Ü": "u-umlaut" };
+  const CHAR_SLUGS = { "Ñ": "enye", "Ç": "c-cedilla", "Ğ": "g-breve", "İ": "i-dot", "Ö": "o-umlaut", "Ş": "s-cedilla", "Ü": "u-umlaut", "Ä": "a-umlaut", "ß": "eszett" };
   function charSlug(ch) {
     if (/[0-9]/.test(ch)) return "number-" + ch;
     const special = CHAR_SLUGS[String(ch).toUpperCase()] || CHAR_SLUGS[ch];
@@ -1483,6 +1559,60 @@
     }));
   }
 
+  /* Size and shared-baseline set for a tile, so its ink stays inside the
+     200 x 240 box.
+
+     Every tile draws at font-size 210, and a tiled sheet centres the union of
+     TILE_BASELINE_SET on one shared baseline (the R-005 note below). In the
+     graffiti Tag face (Sedgwick Ave Display) and the Spray face that union,
+     lowercase descenders under accented capitals, is taller than the cell.
+     Centring it pushed the baseline up and cut the tops off the capitals the
+     sheet prints: the default Tag sheet printed de Ä Ö Ü as A O U, es Ñ as N
+     and tr Ğ as G, and flattened the top of a plain G. Rendered 2026-10-05.
+
+     So a plan changes only a tile that would otherwise lose ink. If every
+     character the sheet prints (TILE_FIT_SET) sits inside the cell at the old
+     placement, the old placement stands, byte for byte. Otherwise the cell
+     centres on TILE_FIT_SET, the characters it actually prints, and the type
+     shrinks only as far as that span needs. A single big letter centres on its
+     own ink already and only ever shrinks. Stroke-overlay and stencil tiles
+     place geometry against size 210 and never take a plan. Cached per face,
+     cleared with glyphMetrics' own cache when the webfonts arrive. */
+  const TILE_FIT_SET = CHARS.join("");
+  const tileFitCache = new Map();
+  function setExtents(GM, set, size, weight) {
+    let top = Infinity, bottom = -Infinity;
+    const chars = Array.from(set);
+    for (let k = 0; k < chars.length; k++) {
+      const i = GM.ink(chars[k], FONT, size, weight);
+      if (!i) continue;
+      if (i.top < top) top = i.top;
+      if (i.bottom > bottom) bottom = i.bottom;
+    }
+    return top < Infinity ? { top: top, bottom: bottom } : null;
+  }
+  function tilePlan(GM, ch, small, weight) {
+    const key = FONT + "|" + weight + "|" + STROKE + "|" + (small ? "\u0000set" : ch);
+    if (tileFitCache.has(key)) return tileFitCache.get(key);
+    const TILE = { w: 200, h: 240 };
+    // The stroke is centred on the outline, so half of it lies outside the ink.
+    const pad = STROKE / 2 + 2;
+    let plan = { size: 210, set: TILE_BASELINE_SET };
+    const own = setExtents(GM, small ? TILE_FIT_SET : ch, 210, weight);
+    if (own) {
+      const baseline = small
+        ? GM.centreOffsets("H", FONT, 210, TILE, weight, { shareBaselineWith: TILE_BASELINE_SET }).baselineY
+        : TILE.h / 2 - (own.top + own.bottom) / 2;
+      const clips = baseline + own.top - pad < 0 || baseline + own.bottom + pad > TILE.h;
+      if (clips) {
+        const k = Math.min(1, (TILE.h - 2 * pad - 4) / (own.bottom - own.top));
+        plan = { size: Math.round(210 * k * 100) / 100, set: TILE_FIT_SET };
+      }
+    }
+    tileFitCache.set(key, plan);
+    return plan;
+  }
+
   function outlineSVG(ch, opts) {
     const o = opts || {};
     const svg = document.createElementNS(SVGNS, "svg");
@@ -1508,11 +1638,16 @@
        cached script degrades to the previous rendering rather than to nothing. */
     const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
     const TILE = { w: 200, h: 240 };
+    const fitEligible = !o.overlay && !(o.stencil != null ? o.stencil : stencilOn());
     let place = null;
+    let size = 210;
     if (GM) {
-      place = GM.centreOffsets(ch, FONT, 210, TILE, FONT_WEIGHT,
-        o.small ? { shareBaselineWith: TILE_BASELINE_SET } : null);
+      const plan = fitEligible ? tilePlan(GM, ch, !!o.small, FONT_WEIGHT) : { size: 210, set: TILE_BASELINE_SET };
+      size = plan.size;
+      place = GM.centreOffsets(ch, FONT, size, TILE, FONT_WEIGHT,
+        o.small ? { shareBaselineWith: plan.set } : null);
     }
+    if (fitEligible) text.setAttribute("data-fit", "1");
     if (place && place.ink) {
       text.setAttribute("x", String(+(100 + place.dx).toFixed(2)));
       text.setAttribute("y", String(+place.baselineY.toFixed(2)));
@@ -1524,7 +1659,7 @@
     text.setAttribute("text-anchor", "middle");
     text.setAttribute("font-family", FONT);
     text.setAttribute("font-weight", String(FONT_WEIGHT));
-    text.setAttribute("font-size", "210");
+    text.setAttribute("font-size", String(+size.toFixed(2)));
     text.setAttribute("fill", "#ffffff");
     text.setAttribute("stroke", INK);
     /* o.strokeScale thins the outline as the printed glyph gets physically
@@ -1616,9 +1751,12 @@
       const ch = t.textContent;
       if (!ch) return;
       const small = /is-small/.test(svg.getAttribute("class") || "");
-      const place = GM.centreOffsets(ch, FONT, 210, TILE, 700,
-        small ? { shareBaselineWith: TILE_BASELINE_SET } : null);
+      const plan = t.hasAttribute("data-fit") ? tilePlan(GM, ch, small, 700) : { size: 210, set: TILE_BASELINE_SET };
+      const size = plan.size;
+      const place = GM.centreOffsets(ch, FONT, size, TILE, 700,
+        small ? { shareBaselineWith: plan.set } : null);
       if (!place || !place.ink) return;
+      if (t.hasAttribute("data-fit")) t.setAttribute("font-size", String(+size.toFixed(2)));
       t.setAttribute("x", String(+(100 + place.dx).toFixed(2)));
       t.setAttribute("y", String(+place.baselineY.toFixed(2)));
       t.removeAttribute("dominant-baseline");
@@ -3100,7 +3238,7 @@
   // typed here is ever sent to analytics (see header.js trackPrintable).
   function firstEl(list) { return list.filter(Boolean)[0] || null; }
   function primaryInput() { return firstEl([el.nameInput, el.genInput, el.designInput, el.bannerInput, el.puzzleInput]); }
-  function primaryRoster() { return firstEl([el.nameRoster, el.genRoster, el.designRoster, el.puzzleRoster, el.searchRoster, el.cwRoster, el.scRoster]); }
+  function primaryRoster() { return firstEl([el.nameRoster, el.genRoster, el.designRoster, el.puzzleRoster, el.searchRoster, el.cwRoster, el.scRoster, el.spRoster]); }
   /* presetParams() is defined above the word-search section, so it reaches the
      module through this rather than through searchBuild(). The fallback keeps a
      share link working (minus its word list) if the module has not arrived. */
@@ -3131,7 +3269,7 @@
       p.letters = setKey;
       if (setKey === "pick" && setPickText.trim()) p.pick = setPickText.trim().slice(0, 40);
     }
-    const heading = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading, el.cwHeading, el.scHeading]);
+    const heading = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading, el.cwHeading, el.scHeading, el.spHeading]);
     if (heading && heading.value.trim()) p.heading = heading.value.trim();
     if (el.searchInput && el.searchInput.value.trim()) {
       p.words = WS_NS().normalizeWords(el.searchInput.value).map((w) => w.display).join("|");
@@ -3144,7 +3282,7 @@
        rather than through normalizeWords(): that helper is the word-search
        module's own grid-placement normaliser, and neither of these builds a
        grid the same way. */
-    const puzzleWords = firstEl([el.cwInput, el.scInput]);
+    const puzzleWords = firstEl([el.cwInput, el.scInput, el.spInput]);
     if (!p.words && puzzleWords && puzzleWords.value.trim()) {
       p.words = puzzleWords.value.split(/[\n,]+/).map((w) => w.trim()).filter(Boolean).join("|");
     }
@@ -3191,13 +3329,13 @@
     const cs = presetGet("case");
     if (cs && el.genCase && ["as-typed", "upper", "lower", "title"].indexOf(cs) !== -1) el.genCase.value = cs;
     const words = presetGet("words");
-    const wordsEl = firstEl([el.searchInput, el.cwInput, el.scInput]);
+    const wordsEl = firstEl([el.searchInput, el.cwInput, el.scInput, el.spInput]);
     if (words && wordsEl) {
       wordsEl.value = String(words).split("|").map((x) => x.trim()).filter(Boolean).join("\n");
     }
     const wslevel = presetGet("wslevel");
     if (wslevel && ["easy", "medium", "hard"].indexOf(wslevel) !== -1) searchState.level = wslevel;
-    const heading = presetGet("heading"); const headingEl = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading, el.cwHeading, el.scHeading]);
+    const heading = presetGet("heading"); const headingEl = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading, el.cwHeading, el.scHeading, el.spHeading]);
     if (heading && headingEl) headingEl.value = String(heading).slice(0, 60);
     /* A link's paper seeds a visitor who has never chosen, and never
        overrides one who has. Paper is a property of the recipient's printer,
@@ -3382,7 +3520,7 @@
   function firstActionSurface() {
     const rows = [el.alphaPrint, el.practicePrint, el.namePrint, el.genPrint,
       el.designPrint, el.bannerPrint, el.puzzlePrint, el.searchPrint, el.cwPrint,
-      el.scPrint, el.bookPrint]
+      el.scPrint, el.spPrint, el.bookPrint]
       .filter(Boolean)
       .map((b) => b.closest(".bubble-actions, .pt-actions, .pt-preview-actions") || b);
     /* The character surface's own action row is built by selectChar(), which
@@ -3494,7 +3632,7 @@
      HTML changes, so no locale page is "touched" for the parity, translation
      or em-dash gates. */
   function convertPrintButtonsToPdf() {
-    [el.alphaPrint, el.practicePrint, el.namePrint, el.genPrint, el.designPrint, el.bannerPrint, el.puzzlePrint, el.searchPrint, el.cwPrint, el.scPrint].filter(Boolean).forEach((btn) => {
+    [el.alphaPrint, el.practicePrint, el.namePrint, el.genPrint, el.designPrint, el.bannerPrint, el.puzzlePrint, el.searchPrint, el.cwPrint, el.scPrint, el.spPrint].filter(Boolean).forEach((btn) => {
       if (btn.dataset.ptPdf) return;
       btn.dataset.ptPdf = "1";
       btn.textContent = PO.savePdf;
@@ -3943,10 +4081,18 @@
     });
     return pdfModulePromise;
   }
+  /* Sheets whose subject is a letter set, not the typed text. Named only by
+     the typed name, the single-letter, A-Z and practice sheets all saved as
+     block-luna.pdf beside the name sheet, and the browser numbered them
+     (1), (2). They lead with their kind; the name, when there is one, is
+     the suffix it personalises them with. */
+  const LETTER_SHEETS = { character: 1, alphabet_sheet: 1, alphabet_tiled: 1, alphabet_book: 1, practice_sheet: 1 };
   function pdfFilename(sheet) {
     const input = primaryInput();
     const base = input && input.value.trim() ? slugify(input.value.trim()) : "";
-    return PNG_PREFIX + "-" + (base || sheet || "sheet") + ".pdf";
+    const kind = (sheet || "sheet").replace(/_/g, "-");
+    if (sheet && LETTER_SHEETS[sheet]) return PNG_PREFIX + "-" + kind + (base ? "-" + base : "") + ".pdf";
+    return PNG_PREFIX + "-" + (base || kind) + ".pdf";
   }
   // Rasterise the mounted print surface and write the PDF. Resolves true on
   // success; false means "use the print dialog instead" (module missing,
@@ -4861,7 +5007,9 @@
     const fm = GM ? GM.faceMetrics(FONT, 210, FONT_WEIGHT) : null;
     const capH = fm && fm.capHeight ? fm.capHeight : 147;
     const stroke = Math.max(4, STROKE * (g.per > 1 ? tileStrokeScale(cell.h) : 1));
-    return (capH + stroke) * scale;
+    // A face too tall for its tile prints smaller (tilePlan).
+    const fit = GM && g.per > 1 && !stencilOn() ? tilePlan(GM, "", true, FONT_WEIGHT).size / 210 : 1;
+    return (capH * fit + stroke) * scale;
   }
 
   // "4½ in" on English pages, "11,5 cm" everywhere else, to the nearest step
@@ -5559,12 +5707,11 @@
     printWrap("", root, "alphabet_tiled");
   }
 
-  // Optional "print size" radiogroup (#pt-size-control). Entirely opt-in:
-  // pages that don't add the mount never call this and the alphabet-print
-  // button keeps calling exactly the same default handler it always has.
-  // "Full page" is pre-selected, so even a page that DOES add the mount
-  // still defaults to today's unaffected output until the visitor actively
-  // picks Medium or Small.
+  // "Print size" radiogroup (#pt-size-control). A page may declare the mount
+  // itself; a page that prints an alphabet sheet and does not declare it gets
+  // one created at runtime (see below), so this is not opt-in. "Full page" is
+  // pre-selected, so the default output is unchanged until the visitor
+  // actively picks Medium or Small.
   function buildSizeControl() {
     /* Mount it for a page that prints an alphabet and never declared the hook.
        All 24 English landings gained the control on 2026-09-13; sixteen locale
@@ -5764,7 +5911,7 @@
   function buildPracticeSheet() {
     const overlayOn = strokeOverlayOn();
     const sheet = document.createElement("div");
-    sheet.className = "cursive-print-sheet" + (overlayOn ? " pt-stroke-on" : "");
+    sheet.className = "cursive-print-sheet" + (overlayOn ? " pt-stroke-on" : "") + (RENDER === "glyph" ? " pt-practice-glyph" : "");
     CHARS.forEach((ch) => {
       const row = document.createElement("div");
       row.className = "cursive-print-row";
@@ -6107,7 +6254,7 @@
 
   function mountSheetCost() {
     if ($("#pt-sheet-cost")) return;
-    const btn = el.namePrint || el.genPrint || el.designPrint || el.puzzlePrint || el.searchPrint || el.cwPrint || el.scPrint || el.alphaPrint;
+    const btn = el.namePrint || el.genPrint || el.designPrint || el.puzzlePrint || el.searchPrint || el.cwPrint || el.scPrint || el.spPrint || el.alphaPrint;
     if (!btn) return;
     const out = document.createElement("p");
     out.id = "pt-sheet-cost";
@@ -7081,21 +7228,195 @@
      bubble letter, which is the opposite of the motor path a tracing sheet
      exists to teach. Audit 2026-09-17.
 
-     Returns null unless EVERY non-space character has a route, so a word with
-     a digit or an accented letter keeps one consistent rendering rather than
-     mixing centrelines and contours in one row. */
+     Accented letters (2026-10-03). The route table covers 0-9, A-Z and a-z,
+     and this used to return null for the whole word when any character had no
+     route, so "Jürgen Weiß", "Łucja", "Begoña" or "Hélène" printed EVERY letter
+     as contour dots: on the German default level a near-solid blob. Now a
+     letter that decomposes (NFD) into a routed base plus marks this file can
+     draw is traced on its base route, with the mark drawn as its own short
+     centreline strokes, so the row stays one rendering. A character with no
+     base route (ß, ł, ø, æ) is the only thing left as a contour; the result's
+     `contour` list says which, and the callers draw just those glyphs the old
+     way. Null only when nothing in the word is routable. */
   function traceRoutePaths(word, fontPx, spacingPx, baselineY, totalW) {
     if (!window.UTG_STROKE_DIRECTION_DATA) return null;
     const cells = wordCellCentres(word, fontPx, spacingPx, totalW);
     const out = [];
+    const contour = [];
     for (let i = 0; i < cells.length; i++) {
       const c = cells[i];
       if (/\s/.test(c.ch)) continue;
-      const d = fittedStrokesFor(c.ch, fontPx, c.cx, baselineY, "advance");
-      if (!d) return null;
+      const d = fittedStrokesFor(c.ch, fontPx, c.cx, baselineY, "advance") ||
+        decomposedStrokesFor(c.ch, fontPx, c.cx, baselineY);
+      if (!d) { contour.push({ ch: c.ch, cx: c.cx }); continue; }
       for (let k = 0; k < d.length; k++) out.push(d[k]);
     }
-    return out.length ? out : null;
+    if (!out.length) return null;
+    out.contour = contour;
+    return out;
+  }
+
+  /* A joined school script traces its OWN centreline, not the print route.
+
+     The route table above is US manuscript print, one skeleton per letter
+     cell. Under a joined script that is the wrong exercise: rendered on
+     de/zum-ausdrucken/schreibschrift with Schulausgangsschrift selected
+     (2026-10-05, main ba007635d), the model line read "Sonne und Mond" in
+     joined SAS and every dotted, dashed and faint row under it printed
+     separate print letters, no joins, with the M squeezed into a print cell.
+     The glyph contour is no better on these rungs (R-001: a dot on both edges
+     of every stroke, a smudged double row on a thin script).
+
+     So a script option marked `joined: true` (or a page with CFG.joinedScript)
+     takes its route from the glyph: the word is rasterised in its own face at
+     the row's own placement, js/printables/centreline.js thins the ink to a
+     skeleton and walks it into strokes, and those strokes go through the same
+     routeDotDashes() as the print route. The joins come out joined because
+     the ink is joined. Pages and scripts without the flag are untouched. */
+  // True for a centreline path that is a mark rather than a stroke: a
+  // two-point segment shorter than the rung's own line weight. A one-pixel
+  // mark comes out of centreline.js at 0.25 units, a two-pixel one at about
+  // 1-2; either is a dot on the page, never a stroke to dash.
+  function markPath(d, maxLen) {
+    const n = String(d).match(/-?\d*\.?\d+/g);
+    if (!n || n.length !== 4) return false;
+    return Math.hypot(n[2] - n[0], n[3] - n[1]) < maxLen;
+  }
+  function joinedScriptOn() {
+    if (SCRIPT_OPTIONS) {
+      const opt = SCRIPT_OPTIONS.find((s) => s.key === genScriptKey);
+      return !!(opt && opt.joined);
+    }
+    return CFG.joinedScript === true;
+  }
+  let centrelineWarned = false;
+  const CENTRELINE_CACHE = new Map();
+  /* Raster px per row unit. 1.5 leaves a SAS stem ~15px thick, which thins
+     cleanly; 2 doubled the cost for no visible change (a 50-character line
+     took ~320ms to trace at 2, measured 2026-10-05). */
+  const CENTRELINE_SCALE = 1.5;
+  /* The trace is computed once per (face, size, spacing, word) at the word's
+     own origin and shifted onto each row. Keying it on the row's width made
+     one keystroke trace the same line two or three times (preview rows,
+     difficulty legend, left-handed model), ~0.8s per keystroke. */
+  function wordCentreline(word, fontPx, spacingPx, baselineY) {
+    const fontSpec = FONT_WEIGHT + " " + fontPx + "px " + FONT;
+    const key = [fontSpec, spacingPx, baselineY, word].join("\u0001");
+    if (CENTRELINE_CACHE.has(key)) return CENTRELINE_CACHE.get(key);
+    const CL = window.UltraTextGen.centreline;
+    const S = CENTRELINE_SCALE;
+    const probe = document.createElement("canvas").getContext("2d");
+    if (!probe) return null;
+    probe.font = FONT_WEIGHT + " " + (fontPx * S) + "px " + FONT;
+    if ("letterSpacing" in probe) probe.letterSpacing = (spacingPx * S) + "px";
+    const m = probe.measureText(word);
+    const pad = Math.ceil(fontPx * 0.25 * S);
+    const inkL = Math.ceil(m.actualBoundingBoxLeft || 0);
+    const canvas = document.createElement("canvas");
+    canvas.width = Math.ceil(Math.max(m.width, (m.actualBoundingBoxRight || 0) + inkL)) + pad * 2 + inkL;
+    canvas.height = Math.ceil(traceRowHeight() * S);
+    const g = canvas.getContext("2d");
+    if (!g || !(canvas.width > 0)) return null;
+    g.font = probe.font;
+    if ("letterSpacing" in g) g.letterSpacing = probe.letterSpacing;
+    g.textAlign = "left";
+    g.textBaseline = "alphabetic";
+    g.fillStyle = "#000000";
+    const originX = pad + inkL;            // raster x of the word's pen origin
+    g.fillText(word, originX, baselineY * S);
+    const data = g.getImageData(0, 0, canvas.width, canvas.height).data;
+    const mask = new Uint8Array(canvas.width * canvas.height);
+    for (let i = 0, j = 0; i < data.length; i += 4, j++) if (data[i + 3] > 128) mask[j] = 1;
+    const res = CL.centrelines(mask, canvas.width, canvas.height);
+    // Row units, relative to the pen origin; advance is the SVG-comparable width.
+    const out = {
+      advance: m.width / S,
+      strokes: res.strokes.map((P) => P.map((p) => [(p[0] - originX) / S, p[1] / S]))
+    };
+    if (CENTRELINE_CACHE.size > 200) CENTRELINE_CACHE.clear();
+    CENTRELINE_CACHE.set(key, out);
+    return out;
+  }
+  function glyphCentrelinePaths(word, fontPx, spacingPx, baselineY, totalW) {
+    const CL = window.UltraTextGen && window.UltraTextGen.centreline;
+    if (!CL) {
+      if (!centrelineWarned) {
+        centrelineWarned = true;
+        console.warn("[printables] js/printables/centreline.js has not loaded; the joined script's trace rows fall back to the glyph contour.");
+      }
+      return null;
+    }
+    // Before the face has loaded, canvas would trace the fallback font and the
+    // cache would keep it. Return null (the contour fallback) and let the
+    // withFont() repaint ask again.
+    // Check the PRIMARY family only. check() on the whole list ("VA, SAS,
+    // cursive") is false until every listed face has loaded, so switching to
+    // VA before SAS had ever loaded left every trace row on the fallback.
+    const primary = FONT_WEIGHT + " " + fontPx + "px \"" + primaryFontName() + "\"";
+    if (document.fonts && document.fonts.check && !document.fonts.check(primary, word)) return null;
+    const wc = wordCentreline(word, fontPx, spacingPx, baselineY);
+    if (!wc || !wc.strokes.length) return null;
+    /* The SVG row sets the word with text-anchor:middle at totalW/2 and pulls
+       back half the trailing letter-spacing (dx). Both the SVG advance and
+       measureText's width include that trailing gap, so the pen origin is
+       totalW/2 - advance/2 - spacing/2. */
+    const left = totalW / 2 - wc.advance / 2 - spacingPx / 2;
+    const routed = wc.strokes.map((P) => "M" + P.map((p) => (+(p[0] + left).toFixed(2)) + "," + (+p[1].toFixed(2))).join(" L"));
+    routed.contour = [];
+    return routed;
+  }
+
+  /* Diacritics as centreline strokes, in the unit box of the space the mark
+     occupies (x 0..1 left to right, y 0..1 top to bottom). Dots are short
+     segments, the same device the route table uses for the tittle of i/j. */
+  const MARK_STROKES = {
+    "\u0300": ["M0.30,0.15 L0.70,0.85"],                                   // grave
+    "\u0301": ["M0.70,0.15 L0.30,0.85"],                                   // acute
+    "\u0302": ["M0.15,0.85 L0.50,0.15 L0.85,0.85"],                        // circumflex
+    "\u0303": ["M0.10,0.70 C0.25,0.15 0.45,0.20 0.50,0.50 C0.55,0.80 0.75,0.85 0.90,0.30"], // tilde
+    "\u0304": ["M0.15,0.50 L0.85,0.50"],                                   // macron
+    "\u0306": ["M0.15,0.20 C0.25,0.95 0.75,0.95 0.85,0.20"],               // breve
+    "\u0307": ["M0.50,0.40 L0.50,0.60"],                                   // dot above
+    "\u0308": ["M0.28,0.40 L0.28,0.60", "M0.72,0.40 L0.72,0.60"],          // diaeresis
+    "\u030A": ["M0.50,0.10 C0.85,0.10 0.85,0.90 0.50,0.90 C0.15,0.90 0.15,0.10 0.50,0.10"], // ring
+    "\u030B": ["M0.45,0.15 L0.20,0.85", "M0.85,0.15 L0.60,0.85"],          // double acute
+    "\u030C": ["M0.15,0.15 L0.50,0.85 L0.85,0.15"],                        // caron
+    "\u0327": ["M0.55,0.05 L0.50,0.35 C0.85,0.35 0.85,0.95 0.30,0.90"],    // cedilla (below)
+    "\u0328": ["M0.60,0.05 C0.20,0.30 0.25,0.95 0.75,0.85"]                // ogonek (below)
+  };
+  const MARKS_BELOW = { "\u0327": 1, "\u0328": 1 };
+
+  function decomposedStrokesFor(ch, fontPx, cx, baselineY) {
+    const parts = Array.from(ch.normalize("NFD"));
+    if (parts.length < 2) return null;
+    const base = parts[0];
+    const marks = parts.slice(1);
+    if (!marks.every((m) => MARK_STROKES[m])) return null;
+    let d = fittedStrokesFor(base, fontPx, cx, baselineY, "advance");
+    if (!d) return null;
+    d = d.slice();
+    // An accent replaces the tittle: fit the whole i/j skeleton (so the stem
+    // keeps its fitted proportions) and drop the dot stroke, which is first.
+    if ((base === "i" || base === "j") && marks.some((m) => !MARKS_BELOW[m])) d.shift();
+    const whole = glyphInkBox(ch, fontPx, cx, baselineY, "advance");
+    const plain = glyphInkBox(base === "i" ? "\u0131" : base === "j" ? "\u0237" : base, fontPx, cx, baselineY, "advance") ||
+      glyphInkBox(base, fontPx, cx, baselineY, "advance");
+    if (!whole || !plain) return null;
+    const gap = fontPx * 0.04;
+    for (const m of marks) {
+      const below = !!MARKS_BELOW[m];
+      const top = below ? plain.y + plain.h + gap : whole.y;
+      const bottom = below ? whole.y + whole.h : plain.y - gap;
+      if (!(bottom - top > fontPx * 0.03)) return null;   // the face drew no room for it
+      // The mark's own width, centred on the base letter's ink.
+      const mw = Math.min(plain.w, fontPx * 0.32);
+      const left = plain.x + plain.w / 2 - mw / 2;
+      MARK_STROKES[m].forEach((unit) => {
+        d.push(unit.replace(/(-?\d*\.?\d+),(-?\d*\.?\d+)/g, (_, x, y) =>
+          (+(left + parseFloat(x) * mw).toFixed(2)) + "," + (+(top + parseFloat(y) * (bottom - top)).toFixed(2))));
+      });
+    }
+    return d;
   }
 
   /* @route-dots:begin — js/printables/strokeRoute.test.html slices this block
@@ -7393,11 +7714,16 @@
       addRuling(svg, w);
     }
     /* R-001: the stroked levels draw the writing centreline, not the glyph
-       contour. traceRoutePaths returns null unless every non-space character
-       has a route, so a word carrying a digit keeps one consistent rendering
-       instead of mixing centrelines and contours in the same row. */
+       contour. traceRoutePaths routes accented letters on their base letter
+       plus a drawn mark, and returns the few characters it cannot route
+       (ß, ł, ...) in `routed.contour`, drawn below as contour glyphs alone. */
+    // A joined script traces its own centreline (glyphCentrelinePaths); when
+    // that cannot run, it falls to the glyph contour below, never back to the
+    // print route, which would put print letters under a cursive model.
+    const joined = joinedScriptOn();
     const routed = (!spec.blank && spec.fill === "none" && spec.routeSw)
-      ? traceRoutePaths(word, TRACE_FONT_SIZE, trackPx, TRACE_BASE, w)
+      ? (joined ? glyphCentrelinePaths(word, TRACE_FONT_SIZE, trackPx, TRACE_BASE, w)
+                : traceRoutePaths(word, TRACE_FONT_SIZE, trackPx, TRACE_BASE, w))
       : null;
     if (routed) {
       const g = document.createElementNS(SVGNS, "g");
@@ -7411,6 +7737,15 @@
         path.setAttribute("fill", "none");
         path.setAttribute("stroke", spec.stroke);
         path.setAttribute("stroke-width", String(spec.routeSw));
+        /* A centreline mark (an umlaut dot, the dot of an i) is a segment
+           half a unit long. A dash pattern draws next to nothing on it: on
+           the dashed rung both dots of "ä" and "ü" all but vanished. It is
+           drawn as one round dot instead, on every rung. */
+        if (joined && markPath(d, spec.routeSw)) {
+          path.setAttribute("stroke-linecap", "round");
+          g.appendChild(path);
+          return;
+        }
         if (dots) {
           path.setAttribute("stroke-dasharray", dots[k].dash.map((n) => +n.toFixed(3)).join(" "));
           if (dots[k].offset) path.setAttribute("stroke-dashoffset", String(+dots[k].offset.toFixed(3)));
@@ -7422,13 +7757,36 @@
         g.appendChild(path);
       });
       svg.appendChild(g);
+      // Characters with no route (ß, ł, ...) keep the contour rendering, each
+      // at its own advance centre, instead of dragging the whole word with it.
+      (routed.contour || []).forEach((c) => {
+        const t = document.createElementNS(SVGNS, "text");
+        t.setAttribute("x", String(c.cx));
+        t.setAttribute("y", String(TRACE_BASE));
+        t.setAttribute("text-anchor", "middle");
+        t.setAttribute("font-family", FONT);
+        t.setAttribute("font-weight", String(FONT_WEIGHT));
+        t.setAttribute("font-size", String(TRACE_FONT_SIZE));
+        t.setAttribute("fill", spec.fill);
+        t.setAttribute("stroke", spec.stroke);
+        t.setAttribute("stroke-width", String(spec.sw));
+        if (spec.dash) t.setAttribute("stroke-dasharray", spec.dash);
+        t.setAttribute("stroke-linecap", spec.cap || "round");
+        t.setAttribute("stroke-linejoin", "round");
+        if (spec.opacity != null && spec.opacity !== 1) t.setAttribute("opacity", String(spec.opacity));
+        t.setAttribute("class", "pt-trace-contour");
+        t.textContent = c.ch;
+        svg.appendChild(t);
+      });
       /* routeDrawn: the dotted/dashed letter above IS the overlay's own
          skeleton, fitted by the same call. Drawing the route again on top of
          it — solid, 6 units wide, at 0.9 opacity — did not annotate the
          letter, it ERASED it: at level 3 the fine dots the child is meant to
          join were completely covered by a blue line of the same shape. The
          arrow and the numbering are what this row still needs. */
-      if (o.overlay) {
+      // The overlay's arrows and numbers are print-route data; on a joined
+      // script they would number print letters over cursive ones.
+      if (o.overlay && !joined) {
         addWordStrokeOverlay(svg, word, TRACE_FONT_SIZE, trackPx, TRACE_BASE, "alphabetic", w,
                              { routeDrawn: true });
       }
@@ -7460,12 +7818,21 @@
       if (spec.opacity != null && spec.opacity !== 1) t.setAttribute("opacity", String(spec.opacity));
       t.textContent = word;
       svg.appendChild(t);
-      if (o.overlay) addWordStrokeOverlay(svg, word, TRACE_FONT_SIZE, trackPx, TRACE_BASE, "alphabetic", w);
+      if (o.overlay && !joined) addWordStrokeOverlay(svg, word, TRACE_FONT_SIZE, trackPx, TRACE_BASE, "alphabetic", w);
     }
     return svg;
   }
 
   const GEN_DEMO = CFG.genDemo || "Emma";
+  /* How much of the typed text the generator keeps. It was 42, one short of
+     "The quick brown fox jumps over the lazy dog" (43), so the sentence every
+     handwriting page reaches for printed as "...over the lazy do", on pages
+     that invite "a short sentence". The row is a viewBox scaled to the paper
+     width, so a longer line sets smaller rather than running off; 50 keeps
+     the pangram plus a few characters while the type stays writable. The
+     field's maxlength is set from this at mount, and a counter appears near
+     the limit so a pasted line is never cut in silence. */
+  const GEN_MAX_CHARS = 50;
 
   function applyCase(word) {
     const mode = el.genCase ? el.genCase.value : "as-typed";
@@ -7476,7 +7843,7 @@
   }
   function genValue() {
     const raw = el.genInput ? el.genInput.value : "";
-    const v = (raw && raw.trim()) ? raw.trim().slice(0, 42) : GEN_DEMO;
+    const v = (raw && raw.trim()) ? raw.trim().slice(0, GEN_MAX_CHARS) : GEN_DEMO;
     return applyCase(CFG.genLetters === true ? lettersOnly(v) : v);
   }
   /* CFG.genLetters -- the builder on /printables/letter-tracing/ practises
@@ -7510,6 +7877,22 @@
     return Math.max(1, Math.min(8, parseInt((el.genRows && el.genRows.value) || "3", 10) || 3));
   }
   function genModelOn() { return !el.genModel || el.genModel.checked; }
+  /* Nothing typed and a level that draws no letters: the sheet is ruling
+     only, so the demo word is on no line of it. The heading and the file
+     name used to be built from genValue() anyway, which falls back to the
+     demo -- a blank French sheet printed under "Le chat dort · Ligne
+     vierge". `withModel` is false for the PNG, which has no model row. */
+  function genRulingOnly(withModel) {
+    const typed = el.genInput && el.genInput.value && el.genInput.value.trim();
+    if (typed || !levelSpec(genLevel()).blank) return false;
+    return !(withModel && genModelOn());
+  }
+  // The word a sheet's own heading names: none on a ruling-only sheet.
+  function genTitleWord() { return genRulingOnly(true) ? "" : genValue(); }
+  function genHeading(label) {
+    const word = genTitleWord();
+    return word ? joinWords([word, "\u00b7", label]) : label;
+  }
 
   // Script picker (CFG.scriptOptions only, e.g. choosing between real German
   // school handwriting standards). Reassigns the shared FONT so every render
@@ -7646,7 +8029,7 @@
   };
   // The word-list tools print one sheet from a LIST, not from a name, so
   // "Just this name" would describe a sheet they do not make.
-  const AUDIENCE_LIST_ROSTERS = ["pt-search-roster", "pt-cw-roster", "pt-sc-roster"];
+  const AUDIENCE_LIST_ROSTERS = ["pt-search-roster", "pt-cw-roster", "pt-sc-roster", "pt-sp-roster"];
   function rosterIsOff(mount) {
     return !!(mount && mount.dataset && mount.dataset.ptAudience === "one");
   }
@@ -7715,7 +8098,7 @@
     setRosterAudience(mount, mount.value.trim() ? "class" : "one", { quiet: true });
   }
   function mountAudiences() {
-    [el.nameRoster, el.genRoster, el.designRoster, el.puzzleRoster, el.searchRoster, el.cwRoster, el.scRoster]
+    [el.nameRoster, el.genRoster, el.designRoster, el.puzzleRoster, el.searchRoster, el.cwRoster, el.scRoster, el.spRoster]
       .forEach(mountAudience);
     /* The sheet count is bound to the roster's input event, and a list that
        arrives filled (?roster= or remembered) never fires one, so a shared
@@ -7809,7 +8192,7 @@
   function lettersDefaultTitle() { return cap(NOUN) + " " + T.alphabetWord; }
   function wordDefaultTitle() {
     if (el.nameInput || el.namePrint) return joinWords([nameValue(), "·", cap(NOUN)]);
-    if (el.genInput) return joinWords([genValue(), "·", levelSpec(genLevel()).label]);
+    if (el.genInput) return genHeading(levelSpec(genLevel()).label);
     return "";
   }
 
@@ -7834,7 +8217,7 @@
     /* Word: one tool per page. A tool that authored a title field keeps it,
        moved into the section. */
     if (moreRefs.word) return;
-    const authored = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading, el.cwHeading, el.scHeading]);
+    const authored = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading, el.cwHeading, el.scHeading, el.spHeading]);
     const ownCheck = el.designHeading ? el.designFooter : (el.puzzleHeading ? el.puzzleFooter : null);
     const hasRoster = !!primaryRoster() && !fixedWordSet();
     if (authored) {
@@ -7897,6 +8280,7 @@
       [typeof renderSearchPreview === "function" && el.searchPreview ? renderSearchPreview : null,
        typeof renderCwPreview === "function" && el.cwPreview ? renderCwPreview : null,
        typeof renderScPreview === "function" && el.scPreview ? renderScPreview : null,
+       typeof renderSpPreview === "function" && el.spPreview ? renderSpPreview : null,
        typeof renderGenPreview === "function" && el.genPreview ? renderGenPreview : null
       ].forEach((fn) => { if (fn) { try { fn(); } catch (err) { /* surface absent */ } } });
     };
@@ -7981,7 +8365,7 @@
   // name without touching the input field; `levelOverride` lets the ladder
   // pack build one sheet per difficulty level the same way.
   function genSheetNode(wordOverride, levelOverride) {
-    const word = wordOverride != null ? applyCase(String(wordOverride).slice(0, 42)) : genValue();
+    const word = wordOverride != null ? applyCase(String(wordOverride).slice(0, GEN_MAX_CHARS)) : genValue();
     const level = levelOverride != null ? levelOverride : genLevel();
     const sheet = document.createElement("div");
     sheet.className = "pt-gen-sheet";
@@ -8154,7 +8538,7 @@
       printWrap(joinWords([entries.length + " " + T.sheets, "\u00b7", mixed ? "" : spec.label, "\u00b7", siteCredit()]), set, "generator_sheet");
       return;
     }
-    printWrap(withName(moreTitle("word"), genValue()) || joinWords([genValue(), "\u00b7", spec.label]), sheetPageNode(genSheetNode()), "generator_sheet");
+    printWrap(withName(moreTitle("word"), genTitleWord()) || genHeading(spec.label), sheetPageNode(genSheetNode()), "generator_sheet");
   }
 
   // The whole difficulty ladder as one print job — one sheet per level,
@@ -8174,13 +8558,20 @@
   // Word at a level -> wide PNG (mirrors the SVG spec on Canvas).
   function genWordPNG(word, level) {
     const spec = levelSpec(level);
+    const rulingOnly = genRulingOnly(false);
     withFont(() => {
+      /* `height` is the ruled strip; the canvas adds PNG_CREDIT_BAND below
+         it. drawCredit() puts the QR in the bottom-right corner, and on a
+         460px strip that corner IS the end of the ruling, so the white chip
+         erased the last line and the last vertical. The other full-width
+         exports already sign a band under the sheet the same way. */
       const width = 1600, height = 460, pad = 96;
+      const canvasH = height + PNG_CREDIT_BAND;
       const canvas = document.createElement("canvas");
-      canvas.width = width; canvas.height = height;
+      canvas.width = width; canvas.height = canvasH;
       const ctx = canvas.getContext("2d");
       ctx.fillStyle = "#ffffff";
-      ctx.fillRect(0, 0, width, height);
+      ctx.fillRect(0, 0, width, canvasH);
 
       let fontSize = 300;
       ctx.font = FONT_WEIGHT + " " + fontSize + "px " + FONT;
@@ -8282,6 +8673,14 @@
               ctx.stroke(new Path2D(d));
             });
             ctx.lineDashOffset = 0;
+            // Same leftovers as the preview row: only the unrouted glyphs
+            // fall back to the contour, at their own centres.
+            if (routedPng.contour && routedPng.contour.length) {
+              ctx.lineWidth = Math.max(1, spec.sw * scale);
+              const cdash = dashOf(spec.dash);
+              ctx.setLineDash(cdash.length ? cdash : []);
+              routedPng.contour.forEach((c) => ctx.strokeText(c.ch, c.cx, base));
+            }
           } else {
             ctx.lineWidth = Math.max(1, spec.sw * scale);
             const dash = dashOf(spec.dash);
@@ -8295,9 +8694,10 @@
       /* Every other PNG this engine exports carries the credit block, and a
          printed worksheet with no route back to the site is the case the
          QR exists for. This path never called it. */
-      drawCredit(ctx, width, height);
+      drawCredit(ctx, width, canvasH);
+      const fileWord = rulingOnly ? slugify(spec.label) : slugify(word);
       const save = () => downloadCanvas(canvas,
-        (PNG_PREFIX || "handwriting") + "-" + (slugify(word) || "word") + "-L" + level + ".png",
+        (PNG_PREFIX || "handwriting") + "-" + (fileWord || "word") + "-L" + level + ".png",
         "generator_word");
       /* The overlay was on the screen and on the printed sheet and absent
          from the PNG — the one artifact that leaves the site. wordPNG was
@@ -8315,8 +8715,39 @@
     });
   }
 
+  /* A visible "used / max" budget on a capped text field, in the field's own
+     label, the way the coloring word field already shows one. maxlength
+     alone stops the typing and cuts a paste without a word, so a heading
+     printed as "...Grade 202" and the pangram as "...lazy do" with nothing on
+     screen saying a limit existed. Counts code points, as the engine's
+     slices do, and is purely additive: no field's value or cap changes. */
+  function attachCharCount(input, max) {
+    if (!input || !input.id || input.tagName !== "INPUT") return;
+    const label = document.querySelector('label[for="' + input.id + '"]');
+    if (!label || label.querySelector(".pt-field-count")) return;
+    const count = document.createElement("span");
+    count.className = "pt-field-count";
+    count.setAttribute("aria-live", "polite");
+    label.appendChild(document.createTextNode(" "));
+    label.appendChild(count);
+    const sync = () => {
+      const used = [...input.value].length;
+      count.textContent = used + " / " + max;
+      count.classList.toggle("is-full", used >= max);
+    };
+    input.addEventListener("input", sync);
+    sync();
+  }
+
   function initGenerator() {
     if (!el.genInput && !el.genSlider && !el.genLevels) return;
+    /* A free-text field only: sight-word-tracing mounts a <select> under this
+       id, and letter-tracing (CFG.genLetters) reduces input to letters with
+       its own budget. */
+    if (el.genInput && el.genInput.tagName === "INPUT" && CFG.genLetters !== true) {
+      el.genInput.setAttribute("maxlength", String(GEN_MAX_CHARS));
+      attachCharCount(el.genInput, GEN_MAX_CHARS);
+    }
     if (el.genInput) {
       let timer = null;
       el.genInput.addEventListener("input", () => {
@@ -10340,7 +10771,10 @@
     el.designInput.addEventListener("input", onWordInput);
     if (el.designInput2) el.designInput2.addEventListener("input", onWordInput);
     if (el.designHeading) {
-      if (DESIGN.headingMaxChars) el.designHeading.setAttribute("maxlength", String(DESIGN_HEADING_MAX));
+      if (DESIGN.headingMaxChars) {
+        el.designHeading.setAttribute("maxlength", String(DESIGN_HEADING_MAX));
+        attachCharCount(el.designHeading, DESIGN_HEADING_MAX);
+      }
       el.designHeading.addEventListener("input", schedule);
     }
     wireSwatchGroup(el.designFillGroup, "fill", fillSwatchSVG, designState, renderDesignPreview);
@@ -11068,6 +11502,19 @@
       bits.push(names.length >= 2
         ? names.length + " " + T.wordSearch.versions
         : T.wordSearch.oneGrid);
+      /* Past the module's word cap the extra entries never reach the grid.
+         The roster box takes 60 names and the word list 40, so a class of 49
+         pasted here printed "Find all 40 words" with nine children missing
+         and nothing on screen saying so. */
+      const ns = wordSearchModule();
+      const cap = ns && ns.MAX_WORDS;
+      if (cap && el.searchInput && el.searchInput.value.trim()) {
+        const typed = ns.normalizeWords(el.searchInput.value, FOLD_GRID, Infinity);
+        if (typed.length > cap) {
+          bits.push(T.wordSearch.overCap.replace("{n}", String(cap)) + " " +
+            typed.slice(cap).map((w) => w.display).join(", "));
+        }
+      }
       if (built.unplaced.length) {
         bits.push(T.wordSearch.tooLong + " " + built.unplaced.map((w) => w.display).join(", "));
       }
@@ -11615,6 +12062,513 @@
     renderScPreview();
   }
 
+  /* ---- spelling worksheet generator ----
+
+     One word list, five practice sheets, printed as one PDF (owner decision
+     2026-09-30). The sheets are ordered by how well each one builds spelling
+     memory, and the two that on their own only look at a word -- tracing and
+     ABC order -- each end with a step that asks for the word from memory:
+     tracing helps a child form letters but does little for remembering a
+     spelling, and writing it from memory and then checking it is what does
+     (Berninger et al. 1997; Jones et al. 2016; UK DfE writing framework 2025).
+     Word shapes is kept and labelled a puzzle: nothing supports learning a
+     spelling from its outline.
+
+     A class set gives every child the same words in a different order, drawn
+     from the child's name, so a reprint later is the identical sheet and the
+     answer page still matches. */
+
+  const SP_DEMO = CFG.spellingDemo
+    || "friend\nbecause\nanswer\nlaugh\nwould\npeople\nthought\nbefore\nlittle\nfavorite";
+  const SP_SHEETS = ["trace", "lcwc", "missing", "abc", "shapes"];
+  const SP_MAX_WORDS = 20;
+  const SP_TRACE_LEVEL = { dotted: 2, faded: 5, copy: 1 };
+  const SP_ROWS = { large: 5, medium: 7, small: 9 };
+  const spState = { sheets: ["trace", "lcwc", "missing"], trace: "dotted", size: "medium", blank: "tricky", tab: "trace" };
+  /* The spelling patterns a child usually gets wrong, longest first so
+     "ough" wins over "ou". A teacher who knows better marks the part in
+     brackets, fr[ie]nd, and that always wins. */
+  const SP_GRAPHEMES = ["ough", "augh", "eigh", "igh", "tch", "dge", "ai", "ay", "ea", "ee", "ie", "ei",
+    "oa", "oo", "ou", "ow", "ue", "ew", "au", "aw", "oi", "oy", "ar", "er", "ir", "or", "ur",
+    "ck", "ph", "wh", "kn", "wr", "mb", "gh"];
+
+  // mulberry32 over an FNV-1a hash of the seed string: the same small,
+  // engine-independent generator js/printables/wordPuzzles.js uses.
+  function spRng(seed) {
+    let h = 2166136261;
+    const s = String(seed);
+    for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); }
+    let a = h >>> 0;
+    return () => {
+      a = (a + 0x6D2B79F5) | 0;
+      let r = Math.imul(a ^ (a >>> 15), 1 | a);
+      r = (r + Math.imul(r ^ (r >>> 7), 61 | r)) ^ r;
+      return ((r ^ (r >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function spShuffle(list, seed) {
+    const r = spRng(seed);
+    const a = list.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(r() * (i + 1));
+      const tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+  }
+
+  function spParse() {
+    const raw = el.spInput && el.spInput.value.trim() ? el.spInput.value : SP_DEMO;
+    const words = [];
+    const skipped = [];
+    const seen = new Set();
+    raw.split(/[\r\n,;]+/).map((s) => s.trim()).filter(Boolean).forEach((entry) => {
+      const m = entry.match(/^([\p{L}'-]*)\[([\p{L}'-]+)\]([\p{L}'-]*)$/u);
+      const word = m ? m[1] + m[2] + m[3] : entry;
+      if (!/^[\p{L}'-]{1,20}$/u.test(word)) { skipped.push(entry); return; }
+      const key = word.toLowerCase();
+      if (seen.has(key) || words.length >= SP_MAX_WORDS) return;
+      seen.add(key);
+      words.push({ word: word, tricky: m ? [m[1].length, m[1].length + m[2].length] : null });
+    });
+    return { words: words, skipped: skipped };
+  }
+  function spTricky(w) {
+    if (w.tricky) return w.tricky;
+    const low = w.word.toLowerCase();
+    let best = null;
+    SP_GRAPHEMES.forEach((g) => {
+      const i = low.indexOf(g, 1);
+      if (i > 0 && (!best || g.length > best[1] - best[0])) best = [i, i + g.length];
+    });
+    if (!best) {
+      const d = low.match(/(\p{L})\1/u);
+      if (d) best = [d.index, d.index + 2];
+    }
+    if (!best) {
+      const v = low.slice(1).search(/[aeiouy]/);
+      best = v >= 0 ? [v + 1, v + 2] : [Math.min(1, low.length - 1), Math.min(2, low.length)];
+    }
+    return best;
+  }
+  function spBlanks(w, seed) {
+    if (spState.blank === "tricky") {
+      const t = spTricky(w);
+      const out = new Set();
+      for (let i = t[0]; i < t[1]; i++) out.add(i);
+      return out;
+    }
+    const chars = [...w.word];
+    const idx = chars.map((c, i) => i).filter((i) => /\p{L}/u.test(chars[i]));
+    if (spState.blank === "one") {
+      const pool = idx.length > 2 ? idx.slice(1) : idx;
+      return new Set([pool[Math.floor(spRng(seed + "|" + w.word)() * pool.length)]]);
+    }
+    const n = Math.max(2, Math.round(idx.length * 0.45));
+    return new Set(spShuffle(idx, seed + "|" + w.word).slice(0, n));
+  }
+  function spBankOn() { return !!(el.spBank && el.spBank.checked); }
+  function spAnswerOn() { return !!(el.spAnswer && el.spAnswer.checked); }
+  function spSelected() { return SP_SHEETS.filter((k) => spState.sheets.indexOf(k) !== -1); }
+
+  function spHead(sheet, key, seedName, note) {
+    const L = T.spelling;
+    const typed = el.spHeading ? el.spHeading.value.trim().slice(0, 48) : "";
+    const title = key === "answers" ? L.answers.title : L[key].title;
+    const h = document.createElement("h3");
+    h.className = "pt-search-heading-text";
+    h.textContent = sheetTitle(typed ? typed + ": " + title : title, seedName, L.forWhom, false, "");
+    sheet.appendChild(h);
+    if (note) {
+      const p = document.createElement("p");
+      p.className = "pt-search-note";
+      p.textContent = note;
+      sheet.appendChild(p);
+    }
+  }
+  function spBankNode(words) {
+    const box = document.createElement("div");
+    box.className = "pt-sp-bank";
+    const t = document.createElement("span");
+    t.className = "pt-sp-bank-title";
+    t.textContent = T.spelling.bank;
+    box.appendChild(t);
+    const ul = document.createElement("ul");
+    words.forEach((w) => {
+      const li = document.createElement("li");
+      li.textContent = w.word;
+      ul.appendChild(li);
+    });
+    box.appendChild(ul);
+    return box;
+  }
+  function spSorted(words) {
+    return words.slice().sort((a, b) => a.word.localeCompare(b.word, LANG, { sensitivity: "base" }));
+  }
+  function spLine(className) {
+    const s = document.createElement("span");
+    s.className = className || "pt-sc-line";
+    return s;
+  }
+
+  /* Trace, write, remember. A .pt-gen-sheet, so the page fits it the way it
+     fits every tracing sheet: the rows share what the page has left.
+
+     Each row is ONE traced-word SVG on its own ruling, with the fold line
+     drawn inside it. Two SVGs side by side were tried first and printed with
+     their rules at different heights: each is letterboxed ("meet") on its own
+     aspect ratio, so a narrower cell scales its ruling down. Here every row of
+     the job gets the same viewBox width -- room for the longest word traced
+     and written once, then the fold -- so every row scales the same and the
+     fold line lands at one x down the whole page. The rules already bleed
+     past the viewBox (RULE_OVERHANG), so widening it never shortens a line. */
+  function spTraceGeometry(allWords, level) {
+    let widest = 360;
+    allWords.forEach((w) => {
+      const vb = traceWordSVG(w.word, level, { guides: true }).getAttribute("viewBox").split(/\s+/);
+      widest = Math.max(widest, parseFloat(vb[2]) || 0);
+    });
+    /* The traced word, then the fold, then a memory side at least as wide as
+       the traced side. An earlier version also asked for the word to be
+       copied once before the fold: three copies of a word on one line left
+       the letters at about a third of the height the row had, and copying is
+       the step the research says adds least. */
+    const fold = Math.round(widest + 40);
+    return { fold: fold, width: Math.round(fold / 0.5) };
+  }
+  function spTraceSheet(words, seedName, part, parts, allWords) {
+    const L = T.spelling.trace;
+    const level = SP_TRACE_LEVEL[spState.trace] || 2;
+    const geo = spTraceGeometry(allWords || words, level);
+    const sheet = document.createElement("div");
+    sheet.className = "pt-gen-sheet pt-sp-trace";
+    spHead(sheet, "trace", seedName, level === 1 ? L.noteCopy : L.note);
+    words.forEach((w) => {
+      const row = document.createElement("div");
+      row.className = "pt-gen-row pt-sp-row";
+      const svg = traceWordSVG(w.word, level, { guides: true });
+      const vb = svg.getAttribute("viewBox").split(/\s+/);
+      const h = parseFloat(vb[3]) || traceRowHeight();
+      svg.setAttribute("viewBox", "0 0 " + geo.width + " " + h);
+      /* The rules bleed RULE_OVERHANG past the word's own box, which a viewBox
+         this much wider can outrun on a long word, so they are carried to the
+         new edge -- a memory side with no lines to write on is no use. */
+      Array.prototype.forEach.call(svg.querySelectorAll("line"), (ln) => {
+        if (ln.getAttribute("y1") !== ln.getAttribute("y2")) return;
+        const x2 = parseFloat(ln.getAttribute("x2"));
+        if (x2 < geo.width + RULE_OVERHANG) ln.setAttribute("x2", String(geo.width + RULE_OVERHANG));
+      });
+      const line = document.createElementNS(SVGNS, "line");
+      line.setAttribute("x1", String(geo.fold));
+      line.setAttribute("x2", String(geo.fold));
+      line.setAttribute("y1", String(Math.round(h * 0.08)));
+      line.setAttribute("y2", String(Math.round(h * 0.92)));
+      line.setAttribute("stroke", "#9aa3b2");
+      line.setAttribute("stroke-width", "3");
+      line.setAttribute("stroke-dasharray", "12 9");
+      line.setAttribute("class", "pt-sp-fold-line");
+      svg.appendChild(line);
+      row.appendChild(svg);
+      sheet.appendChild(row);
+    });
+    if (moreFooterOn("word", true)) sheet.appendChild(nameDateRow());
+    if (parts > 1) sheet.dataset.part = part + "/" + parts;
+    return sheet;
+  }
+  function spPuzzleSheet(key, seedName) {
+    const sheet = document.createElement("div");
+    sheet.className = "pt-search-sheet pt-sp-sheet pt-sp-" + key;
+    return sheet;
+  }
+  function spLcwcSheet(words, seedName) {
+    const L = T.spelling.lcwc;
+    const sheet = spPuzzleSheet("lcwc", seedName);
+    spHead(sheet, "lcwc", seedName, L.note);
+    const table = document.createElement("table");
+    table.className = "pt-sp-table";
+    const thead = document.createElement("thead");
+    const hr = document.createElement("tr");
+    [L.look, L.write, L.check, L.fix].forEach((txt) => {
+      const th = document.createElement("th");
+      th.textContent = txt;
+      hr.appendChild(th);
+    });
+    thead.appendChild(hr);
+    table.appendChild(thead);
+    const tb = document.createElement("tbody");
+    spShuffle(words, seedName + "|lcwc").forEach((w) => {
+      const tr = document.createElement("tr");
+      const td0 = document.createElement("td");
+      td0.className = "pt-sp-word";
+      td0.textContent = w.word;
+      const td1 = document.createElement("td");
+      const td2 = document.createElement("td");
+      td2.className = "pt-sp-checkcell";
+      const box = document.createElement("span");
+      box.className = "pt-sp-checkbox";
+      td2.appendChild(box);
+      const td3 = document.createElement("td");
+      [td0, td1, td2, td3].forEach((td) => tr.appendChild(td));
+      tb.appendChild(tr);
+    });
+    table.appendChild(tb);
+    sheet.appendChild(table);
+    const again = document.createElement("p");
+    again.className = "pt-sp-again";
+    again.appendChild(document.createTextNode(L.again + " "));
+    again.appendChild(spLine("pt-sp-again-line"));
+    sheet.appendChild(again);
+    if (moreFooterOn("word", true)) sheet.appendChild(footerRow("pt-search-footer-row"));
+    return sheet;
+  }
+  function spMissingSheet(words, seedName) {
+    const sheet = spPuzzleSheet("missing", seedName);
+    spHead(sheet, "missing", seedName, T.spelling.missing.note);
+    if (spBankOn() || spState.blank === "several") sheet.appendChild(spBankNode(spSorted(words)));
+    const seed = seedName + "|missing|" + spState.blank;
+    const ol = document.createElement("ol");
+    ol.className = "pt-sc-list pt-sp-list";
+    spShuffle(words, seed).forEach((w) => {
+      const li = document.createElement("li");
+      li.className = "pt-sc-item";
+      const gap = document.createElement("span");
+      gap.className = "pt-sp-gapword";
+      const blanks = spBlanks(w, seed);
+      [...w.word].forEach((c, i) => {
+        const s = document.createElement("span");
+        if (blanks.has(i)) { s.className = "pt-sp-gap"; s.textContent = " "; }
+        else { s.className = "pt-sp-letter"; s.textContent = c; }
+        gap.appendChild(s);
+      });
+      li.appendChild(gap);
+      li.appendChild(spLine());
+      ol.appendChild(li);
+    });
+    sheet.appendChild(ol);
+    if (moreFooterOn("word", true)) sheet.appendChild(footerRow("pt-search-footer-row"));
+    return sheet;
+  }
+  function spAbcSheet(words, seedName) {
+    const L = T.spelling.abc;
+    const sheet = spPuzzleSheet("abc", seedName);
+    spHead(sheet, "abc", seedName, L.note);
+    const bank = spBankNode(spShuffle(words, seedName + "|abc"));
+    bank.classList.add("is-mixed");
+    sheet.appendChild(bank);
+    const ol = document.createElement("ol");
+    ol.className = "pt-sp-lines";
+    words.forEach(() => {
+      const li = document.createElement("li");
+      li.appendChild(spLine());
+      ol.appendChild(li);
+    });
+    sheet.appendChild(ol);
+    const fold = document.createElement("div");
+    fold.className = "pt-sp-fold";
+    const ft = document.createElement("p");
+    ft.className = "pt-search-note";
+    ft.textContent = L.fold;
+    fold.appendChild(ft);
+    const three = document.createElement("div");
+    three.className = "pt-sp-three";
+    for (let i = 0; i < 3; i++) three.appendChild(spLine());
+    fold.appendChild(three);
+    sheet.appendChild(fold);
+    if (moreFooterOn("word", true)) sheet.appendChild(footerRow("pt-search-footer-row"));
+    return sheet;
+  }
+  function spShapesSheet(words, seedName) {
+    const sheet = spPuzzleSheet("shapes", seedName);
+    spHead(sheet, "shapes", seedName, T.spelling.shapes.note);
+    sheet.appendChild(spBankNode(spSorted(words)));
+    const ol = document.createElement("ol");
+    ol.className = "pt-sp-shapes";
+    spShuffle(words, seedName + "|shapes").forEach((w) => {
+      const li = document.createElement("li");
+      const shape = document.createElement("span");
+      shape.className = "pt-sp-shape";
+      [...w.word].forEach((c) => {
+        const b = document.createElement("span");
+        const tall = /[bdfhklt]/.test(c) || (c !== c.toLowerCase());
+        const tail = /[gjpqy]/.test(c);
+        b.className = "pt-sp-box" + (tall ? " is-tall" : (tail ? " is-tail" : ""));
+        shape.appendChild(b);
+      });
+      li.appendChild(shape);
+      ol.appendChild(li);
+    });
+    sheet.appendChild(ol);
+    if (moreFooterOn("word", true)) sheet.appendChild(footerRow("pt-search-footer-row"));
+    return sheet;
+  }
+  // One answer page per child, matching that child's own order.
+  function spAnswerSheet(words, seedName, keys) {
+    const L = T.spelling.answers;
+    const sheet = spPuzzleSheet("answers", seedName);
+    spHead(sheet, "answers", seedName, "");
+    const cols = document.createElement("div");
+    cols.className = "pt-sp-answer-cols";
+    keys.forEach((k) => {
+      const list = k === "abc" ? spSorted(words)
+        : spShuffle(words, seedName + (k === "missing" ? "|missing|" + spState.blank : "|shapes"));
+      const col = document.createElement("div");
+      const t = document.createElement("h4");
+      t.className = "pt-cw-clues-title";
+      t.textContent = L[k];
+      col.appendChild(t);
+      const ol = document.createElement("ol");
+      ol.className = "pt-cw-clue-list";
+      list.forEach((w) => { const li = document.createElement("li"); li.textContent = w.word; ol.appendChild(li); });
+      col.appendChild(ol);
+      cols.appendChild(col);
+    });
+    sheet.appendChild(cols);
+    return sheet;
+  }
+
+  /* Every page one child gets, in sheet order: the trace sheet splits into
+     as many pages as the handwriting size needs, the others are one page
+     each, and the answer page (when asked for) covers the sheets that have
+     answers. */
+  function spPlan(words) {
+    const out = [];
+    spSelected().forEach((k) => {
+      if (k === "trace") {
+        const per = SP_ROWS[spState.size] || 7;
+        const parts = Math.max(1, Math.ceil(words.length / per));
+        for (let i = 0; i < parts; i++) out.push({ key: k, words: words.slice(i * per, i * per + per), part: i + 1, parts: parts, all: words });
+      } else {
+        out.push({ key: k, words: words });
+      }
+    });
+    const keys = spSelected().filter((k) => k === "missing" || k === "abc" || k === "shapes");
+    if (spAnswerOn() && keys.length) out.push({ key: "answers", words: words, keys: keys });
+    return out;
+  }
+  function spNode(item, seedName) {
+    const seed = seedName || "";
+    switch (item.key) {
+      case "trace": return spTraceSheet(item.words, seed, item.part, item.parts, item.all);
+      case "lcwc": return spLcwcSheet(item.words, seed);
+      case "missing": return spMissingSheet(item.words, seed);
+      case "abc": return spAbcSheet(item.words, seed);
+      case "shapes": return spShapesSheet(item.words, seed);
+      default: return spAnswerSheet(item.words, seed, item.keys || []);
+    }
+  }
+
+  function renderSpTabs(plan) {
+    if (!el.spTabs) return;
+    el.spTabs.innerHTML = "";
+    const seen = [];
+    plan.forEach((it) => { if (seen.indexOf(it.key) === -1) seen.push(it.key); });
+    if (seen.indexOf(spState.tab) === -1) spState.tab = seen[0] || "trace";
+    seen.forEach((k) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pt-choice" + (k === spState.tab ? " is-active" : "");
+      b.setAttribute("aria-pressed", k === spState.tab ? "true" : "false");
+      b.textContent = k === "answers" ? T.spelling.answers.title : T.spelling[k].title;
+      b.addEventListener("click", () => { spState.tab = k; renderSpPreview(); });
+      el.spTabs.appendChild(b);
+    });
+    el.spTabs.hidden = seen.length < 2;
+  }
+  function renderSpMeta(parsed, plan) {
+    if (!el.spMeta) return;
+    const L = T.spelling;
+    const bits = [];
+    if (!parsed.words.length) bits.push(L.needWords);
+    else if (!plan.length) bits.push(L.needSheet);
+    else {
+      const names = rosterNames(el.spRoster);
+      bits.push(parsed.words.length + " " + L.words);
+      bits.push(plan.length + " " + (plan.length === 1 ? L.page : L.pages) + (names.length >= 2 ? " " + L.perChild : ""));
+      if (names.length >= 2) bits.push(names.length + " " + T.scramble.versions);
+    }
+    if (parsed.skipped.length) bits.push(L.tooLong + " " + parsed.skipped.join(", "));
+    el.spMeta.textContent = bits.join(" · ");
+  }
+  function renderSpPreview() {
+    if (!el.spPreview) return;
+    const parsed = spParse();
+    const plan = parsed.words.length ? spPlan(parsed.words) : [];
+    renderSpTabs(plan);
+    el.spPreview.innerHTML = "";
+    const first = plan.filter((it) => it.key === spState.tab)[0];
+    if (first) el.spPreview.appendChild(spNode(first, null));
+    renderSpMeta(parsed, plan);
+    updateSheetCost();
+  }
+
+  function printSpelling() {
+    const parsed = spParse();
+    const plan = parsed.words.length ? spPlan(parsed.words) : [];
+    if (!plan.length) return;
+    const holder = document.createElement("div");
+    holder.className = "pt-search-print-holder pt-sp-print-holder";
+    const names = rosterNames(el.spRoster);
+    const items = [];
+    (names.length >= 2 ? names : [null]).forEach((n) => plan.forEach((it) => items.push({ it: it, name: n })));
+    if (names.length >= 2) holder.classList.add("pt-class-set");
+    appendSheetPages(holder, items, (x) => spNode(x.it, x.name));
+    printWrap("", holder, "spelling_worksheet");
+  }
+
+  function wireSpChoices(group, key, attr) {
+    if (!group) return;
+    const buttons = $$(".pt-choice", group);
+    const paint = () => buttons.forEach((b) => {
+      const on = b.dataset[attr] === spState[key];
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
+    });
+    buttons.forEach((b) => b.addEventListener("click", () => {
+      if (!b.dataset[attr]) return;
+      spState[key] = b.dataset[attr];
+      paint();
+      renderSpPreview();
+    }));
+    paint();
+  }
+  function wireSpSheets() {
+    const group = el.spSheets;
+    if (!group) return;
+    const buttons = $$(".pt-choice", group);
+    const paint = () => buttons.forEach((b) => {
+      const on = spState.sheets.indexOf(b.dataset.sheet) !== -1;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    buttons.forEach((b) => b.addEventListener("click", () => {
+      const k = b.dataset.sheet;
+      if (!k) return;
+      const i = spState.sheets.indexOf(k);
+      if (i === -1) { spState.sheets.push(k); spState.tab = k; }
+      else spState.sheets.splice(i, 1);
+      paint();
+      renderSpPreview();
+    }));
+    paint();
+  }
+
+  function buildSpellingSurface() {
+    if (!el.spInput || !el.spPreview) return;
+    let timer = null;
+    const schedule = () => { if (timer) clearTimeout(timer); timer = setTimeout(renderSpPreview, 160); };
+    el.spInput.addEventListener("input", schedule);
+    if (el.spHeading) el.spHeading.addEventListener("input", schedule);
+    if (el.spRoster) el.spRoster.addEventListener("input", schedule);
+    if (el.spBank) el.spBank.addEventListener("change", renderSpPreview);
+    if (el.spAnswer) el.spAnswer.addEventListener("change", renderSpPreview);
+    wireSpSheets();
+    wireSpChoices(el.spTrace, "trace", "trace");
+    wireSpChoices(el.spSize, "size", "size");
+    wireSpChoices(el.spBlank, "blank", "blank");
+    if (el.spPrint) el.spPrint.addEventListener("click", printSpelling);
+    renderSpPreview();
+  }
+
   /* ---------------------------------------------------------------
      Wiring
      --------------------------------------------------------------- */
@@ -11734,6 +12688,7 @@
     buildSearch();
     buildCrosswordSurface();
     buildScrambleSurface();
+    buildSpellingSurface();
     mountMore();
     wireMoreRepaint();
     if (moreRefs.letters && moreRefs.letters.check) moreRefs.letters.check.addEventListener("change", updateBatch);
@@ -11828,6 +12783,7 @@
     if (GMI) {
       withFont(() => {
         GMI.reset();
+        tileFitCache.clear();
         /* Tiles are re-placed in the DOM rather than rebuilt. The single-letter
            figure is assembled inside selectChar(), which also moves scroll and
            history, so calling it again to fix a coordinate would be the wrong

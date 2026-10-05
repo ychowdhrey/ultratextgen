@@ -114,6 +114,7 @@ const SECTIONS = [
   { id: 'home',        title: 'Main generator',        dirs: [] },
   { id: 'fonts',       title: 'Font styles',           dirs: ['category'] },
   { id: 'use-cases',   title: 'Use-case generators',   dirs: ['usecase'] },
+  { id: 'compare',     title: 'Tool comparisons',      dirs: ['compare'] },
   { id: 'tools',       title: 'Text tools',            dirs: [] },
   { id: 'platforms',   title: 'Platform pages',        dirs: [] },
   { id: 'library',     title: 'Symbol & emoji library', dirs: ['library'] },
@@ -129,6 +130,29 @@ const SECTIONS = [
   { id: 'local-only',  title: 'Language-specific pages', dirs: [] },
   { id: 'about',       title: 'Optional',              dirs: [] },
 ];
+
+/**
+ * Site documents that are not HTML pages but are published on purpose, listed
+ * in the root llms.txt under their own heading. The page walk only sees
+ * `index.html` files, so a published Markdown document is otherwise invisible
+ * to this index and to `validate()`'s "known route" test alike.
+ *
+ * `file` is repo-relative and served at `${BASE_URL}/<file>`. `build()` throws
+ * when a listed file is missing, so a deleted document fails the check instead
+ * of leaving a dead link in the index.
+ */
+const ROOT_DOCUMENTS = [
+  {
+    file: 'reportcard.md',
+    heading: 'Product history',
+    title: 'UltraTextGen Report Card',
+    description: 'A dated, plain-language record of meaningful improvements to UltraTextGen since launch on 31 January 2026: new tools and languages, and fixes to things that were broken.',
+  },
+];
+
+function documentUrl(doc) {
+  return `${BASE_URL}/${doc.file}`;
+}
 
 const SECTION_BY_ID = new Map(SECTIONS.map((s) => [s.id, s]));
 const SECTION_ORDER = SECTIONS.map((s) => s.id);
@@ -965,6 +989,16 @@ function renderRootFile(locales) {
 
   lines.push(...inlineSectionLines(en.sectionList, 'en', { skip: ['about'] }));
 
+  const headings = [...new Set(ROOT_DOCUMENTS.map((d) => d.heading))];
+  for (const h of headings) {
+    lines.push(`## ${h}`);
+    lines.push('');
+    for (const doc of ROOT_DOCUMENTS.filter((d) => d.heading === h)) {
+      lines.push(linkLine(documentUrl(doc), doc.title, doc.description));
+    }
+    lines.push('');
+  }
+
   // The spec reserves `## Optional` for "links an agent can skip when a shorter
   // context is needed", which is exactly what the company and policy pages are.
   const about = en.sectionList.find((s) => s.id === 'about');
@@ -1003,6 +1037,11 @@ function plan(locales) {
 }
 
 function build() {
+  for (const doc of ROOT_DOCUMENTS) {
+    if (!fs.existsSync(path.join(ROOT, doc.file))) {
+      throw new Error(`ROOT_DOCUMENTS lists ${doc.file}, which does not exist`);
+    }
+  }
   const { pages, skippedNoindex } = collectPages();
   const locales = buildTree(pages);
   return { pages, skippedNoindex, locales, files: plan(locales) };
@@ -1021,6 +1060,7 @@ function validate(result) {
   const problems = [];
   const known = new Map(result.pages.map((p) => [p.url, p]));
   const emitted = new Set(result.files.map((f) => `${BASE_URL}/${f.relPath}`));
+  const documentUrls = new Set(ROOT_DOCUMENTS.map(documentUrl));
   const seenPageUrls = new Map();
 
   for (const file of result.files) {
@@ -1055,7 +1095,7 @@ function validate(result) {
       if (inFile.has(url)) problems.push(`${where}: duplicate URL ${url}`);
       inFile.add(url);
 
-      const isIndex = emitted.has(url);
+      const isIndex = emitted.has(url) || documentUrls.has(url);
       if (!isIndex) {
         const page = known.get(url);
         if (!page) {
@@ -1124,6 +1164,7 @@ module.exports = {
   SECTION_ORDER,
   SECTION_MIN_PAGES,
   ROOT_PAGE_SECTION,
+  ROOT_DOCUMENTS,
   ROOT,
   build,
   classify,

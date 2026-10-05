@@ -548,16 +548,17 @@
       ],
       tools: [
         { label: "바이오 폰트", href: "/usecase/bio-font/" },
-        { label: "타투 폰트", href: "/usecase/tattoo-fonts/" },
+        { label: "타투 폰트", href: "/ko/usecase/tatu-reteoring/" },
         { label: "이모지 번역기", href: "/usecase/text-to-emoji/" },
-        { label: "세로 텍스트 생성기", href: "/ko/usecase/vertical-text/" }
+        { label: "세로 텍스트 생성기", href: "/ko/usecase/vertical-text/" },
+        { label: "영문 이름 변환기", href: "/ko/yeongmun-ireum-byeonhwan/" }
       ],
       categories: [
         { label: "굵은 글씨", href: "/category/bold-fonts/" },
         { label: "필기체 변환", href: "/ko/pilgichae-byeonhwan/" },
         { label: "블랙레터체", href: "/category/gothic-fonts/" },
         { label: "작은 글씨", href: "/category/small-text/" },
-        { label: "취소선 텍스트", href: "/category/strikethrough-text/" }
+        { label: "취소선 텍스트", href: "/ko/chwisoseon-tekseuteu/" }
       ],
       company: [
         { label: "소개", href: "/about/" },
@@ -1148,7 +1149,10 @@
       colTitle: "Yazdırılabilir",
       items: [
         { label: "Tüm Yazdırılabilir Sayfalar", href: "/tr/yazdirilabilir/" },
-        { label: "Harf Kalıpları", href: "/tr/yazdirilabilir/harf-kaliplari/" }
+        { label: "Harf Kalıpları", href: "/tr/yazdirilabilir/harf-kaliplari/" },
+        { label: "Harf Boyama", href: "/tr/yazdirilabilir/harf-boyama/" },
+        { label: "İsimle Noktaları Birleştir", href: "/tr/yazdirilabilir/noktalari-birlestir-isim/" },
+        { label: "Balon Harfler", href: "/tr/yazdirilabilir/balon-harfler/" }
       ],
       bridge: 'Biyografi ve gönderiler için yazı tipi mi arıyorsun? <a href="/tr/" class="footer-link">Yazı tipi oluşturucuyu dene →</a>',
       copyright: "© 2026 UltraTextGen. Yazdırılabilir harfler ve alfabeler ücretsiz."

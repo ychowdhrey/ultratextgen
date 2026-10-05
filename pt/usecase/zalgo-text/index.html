@@ -50,10 +50,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gerador de Texto Zalgo — Texto Glitch, Amaldiçoado e Assustador | UltraTextGen</title>
-  <meta name="description" content="Gere texto Zalgo assustador e glitch com marcas Unicode combinadas. Controle total sobre caracteres, posição, forma, frequência e amplitude. Copie e cole em qualquer lugar.">
+  <title>Gerador de Texto Zalgo — Texto Glitch, Amaldiçoado e Assustador</title>
+  <meta name="description" content="Gere texto Zalgo assustador e glitch com marcas Unicode combinadas. Controle total sobre caracteres, posição, forma, frequência e amplitude.">
   <link rel="canonical" href="https://ultratextgen.com/pt/usecase/zalgo-text/">
   <link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/zalgo-text/">
+  <link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/usecase/geullichi-tekseuteu/">
   <link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/usecase/zalgo-text/">
   <link rel="alternate" hreflang="en" href="https://ultratextgen.com/usecase/zalgo-text/">
   <link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/usecase/zalgo-text/">
@@ -138,7 +139,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Posso compartilhar uma configuração específica de texto Zalgo como link?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim. A URL da página é atualizada automaticamente enquanto você digita, incluindo seu texto atual, estilo e intensidade como parâmetros de URL. Copie a URL da barra de endereços do navegador para compartilhar sua configuração exata."
+        "text": "Sim, e ele é exato. O endereço da página é atualizado enquanto você digita, com seu texto, seus ajustes e a semente aleatória que define as marcas. Copie o endereço da barra do navegador, e quem abrir verá o mesmo zalgo, marca por marca. Clique em Regenerar para ter uma nova semente e um novo visual."
       }
     }
   ]
@@ -206,16 +207,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 </nav>
 
 
-<figure class="page-hero-figure" data-uthero aria-hidden="true">
-  <img src="/assets/hero/pt-usecase-zalgo-text.svg" width="1200" height="340"
-       fetchpriority="high" alt="">
-</figure>
   <!-- Hero Section -->
   <section class="hero">
     <div class="app">
       <div class="zalgo-page-header">
         <h1 class="hero-headline">Gerador de Texto Zalgo — Crie Texto Glitch e Assustador</h1>
-        <p>Digite seu texto abaixo. Escolha os ingredientes — tipo de caractere, posição, forma, frequência e amplitude — para criar exatamente o efeito corrompido que você deseja. Copie e cole em qualquer lugar.</p>
+        <p>Digite seu texto, escolha uma predefinição e copie o texto zalgo amaldiçoado. A verificação “Vai caber?” mostra o que cabe no Discord, no X e no Instagram.</p>
       </div>
 
       <!-- Text Input -->
@@ -232,16 +229,22 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Fechar">✕</button>
       </div>
 
+      <!-- Output (populated by zalgo-text.js) -->
+      <div id="zalgoOutputSection"></div>
+
       <!-- Control Panel (populated by zalgo-text.js) -->
       <div id="zalgoControlPanel" data-cascade="thai" data-extreme></div>
 
-      <!-- Output (populated by zalgo-text.js) -->
-      <div id="zalgoOutputSection"></div>
 
       <!-- Decode (populated by zalgo-text.js) -->
       <div id="zalgoDecodeSection"></div>
     </div>
   </section>
+
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/pt-usecase-zalgo-text.svg" width="1200" height="340"
+       loading="lazy" alt="">
+</figure>
 
 
   <!-- Editorial Content -->
@@ -255,14 +258,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
     <section class="editorial-section">
       <h2>Como Este Gerador Funciona</h2>
-      <p><strong>Caracteres</strong> controla qual <em>tipo</em> de marcas combinadas é usado — barras (estilo tachado), letras (marcas de letras em sobrescrito), símbolos (marcas de envolvimento) ou ruído (diacríticos de acento). "Todos" usa o conjunto Unicode completo.</p>
+      <p><strong>Caracteres</strong> controla qual <em>tipo</em> de marcas combinadas é usado — barras (estilo tachado), letras (marcas de letras em sobrescrito), símbolos (pontos, anéis, ganchos e sobreposições) ou ruído (diacríticos de acento). "Todos" usa o conjunto Unicode completo.</p>
       <p><strong>Posição</strong> controla <em>onde</em> as marcas se anexam — acima, abaixo, no meio ou uma combinação. "Cima e baixo" dá o visual Zalgo clássico com espinhos e raízes mas sem tachado.</p>
       <p><strong>Forma</strong> controla como a densidade das marcas <em>varia ao longo do texto</em>. Uniforme aplica densidade uniforme em todo lugar. Rampa ascendente começa limpo e aumenta o caos. Onda oscila. Pirâmide atinge o pico no meio.</p>
       <p><strong>Frequência</strong> é a probabilidade de que um dado caractere receba marcas. A 50%, aproximadamente metade dos seus caracteres permanece limpa. A 100%, cada caractere é afetado.</p>
-      <p><strong>Amplitude</strong> é quantas marcas se empilham em cada caractere afetado. Em 1, é um acento sutil. Em 20, é o caos visual máximo.</p>
+      <p><strong>Amplitude</strong> é quantas marcas se empilham em cada caractere afetado. Em 1, é um acento sutil. Em 20, é um caos clássico pesado. A predefinição <strong>Extremo</strong> abre o controle até 300. Em 300, com todas as posições ativas, uma letra leva cerca de 272 marcas: o decodificador ainda as remove, mas a maioria dos apps corta a pilha na altura da linha.</p>
 
       <h3 id="thai-cascade">Zalgo clássico e a cascata tailandesa</h3>
-      <p>O pico alto que atravessa a tela nas capturas virais não é zalgo no máximo, e também não é a predefinição Extremo. É uma única <strong>marca tonal tailandesa</strong> (Mai Tho, U+0E49, por padrão) repetida até 150 vezes sobre uma letra de apoio, a consoante tailandesa ก. O zalgo clássico espalha dezenas de marcas <em>diferentes</em> ao redor de <em>cada</em> letra; a cascata empilha a <em>mesma</em> marca sobre <em>uma</em>.</p>
+      <p>O pico alto que atravessa a tela nas capturas virais não é zalgo no máximo, e também não é a predefinição Extremo. É uma única <strong>marca tonal tailandesa</strong> (Mai Tho, U+0E49, por padrão) repetida até 1.000 vezes sobre uma letra de apoio, a consoante tailandesa ก. O zalgo clássico espalha dezenas de marcas <em>diferentes</em> ao redor de <em>cada</em> letra; a cascata empilha a <em>mesma</em> marca sobre <em>uma</em>.</p>
       <p>Escolha a predefinição <strong>Cascata tailandesa</strong> e o pico fica ao lado do seu texto, que continua legível. A posição <em>Cada caractere</em> põe uma pilha em cada letra, e <em>Seu texto</em> como apoio pendura a pilha na sua primeira ou última letra.</p>
       <p>Os mesmos caracteres aparecem de forma diferente em cada app: uns desenham uma diagonal alta, outros uma coluna reta, outros cortam na altura da linha. A forma é do renderizador, não da ferramenta. Cada repetição conta como um caractere, então o pico padrão de 80 marcas ocupa 82 caracteres com o espaço: longo demais para um apelido do Discord de 32 caracteres, e quase um terço de um post de 280 caracteres no X.</p>
       <p>O decodificador abaixo trata uma marca tailandesa repetida como pilha e deixa marcas isoladas em paz, então palavras tailandesas comuns voltam intactas.</p>
@@ -275,21 +278,21 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
             <tr><th>Recurso</th><th>UltraTextGen</th><th>LingoJam</th><th>Zalgo.io</th><th>TextGlitchGenerator</th><th>Outros cinco verificados</th></tr>
           </thead>
           <tbody>
-            <tr><td>Controle de intensidade</td><td>Sim, de 1 a 20, até 100 no Extremo</td><td>Sim, um controle deslizante</td><td>Sim, de 1 a 5</td><td>Sim, de 1 a 10</td><td>4 de 5</td></tr>
+            <tr><td>Controle de intensidade</td><td>Sim, de 1 a 20, até 300 no Extremo</td><td>Sim, um controle deslizante</td><td>Sim, de 1 a 20</td><td>Sim, de 1 a 10</td><td>4 de 5</td></tr>
             <tr><td>Marcas acima, no meio e abaixo escolhidas separadamente</td><td>Sim</td><td>Não</td><td>Sim</td><td>Não</td><td>1 de 5</td></tr>
             <tr><td>Escolha da família de marcas (barras, letras, símbolos, ruído)</td><td>Sim</td><td>Não</td><td>Não</td><td>10 estilos nomeados</td><td>0 de 5</td></tr>
             <tr><td>Frequência separada da intensidade</td><td>Sim</td><td>Não</td><td>Não</td><td>Não</td><td>0 de 5</td></tr>
             <tr><td>Forma ao longo do texto (rampa, onda, pirâmide, degraus)</td><td>Sim</td><td>Não</td><td>Não</td><td>Não</td><td>0 de 5</td></tr>
             <tr><td>Predefinições de um clique</td><td>7</td><td>Não</td><td>4</td><td>10</td><td>3 de 5</td></tr>
-            <tr><td>Regenerar para uma nova variação</td><td>Sim</td><td>Não</td><td>Não, mesmo resultado sempre</td><td>Não</td><td>1 de 5</td></tr>
-            <tr><td>Decodificador (unzalgo) ao lado do gerador</td><td>Sim</td><td>Não</td><td>Sim</td><td>Não</td><td>0 de 5</td></tr>
+            <tr><td>Regenerar para uma nova variação</td><td>Sim</td><td>Não</td><td>Não</td><td>Não</td><td>1 de 5</td></tr>
+            <tr><td>Decodificador (unzalgo) ao lado do gerador</td><td>Sim</td><td>Sim</td><td>Sim</td><td>Não</td><td>0 de 5</td></tr>
             <tr><td>Verificação de limites por plataforma</td><td>Sim, 4 limites, ao vivo</td><td>Não</td><td>Não</td><td>Só tabela de orientação</td><td>0 de 5</td></tr>
             <tr><td>Compartilhar as configurações exatas por link</td><td>Sim</td><td>Não</td><td>Não</td><td>Não</td><td>0 de 5</td></tr>
-            <tr><td>Cascata tailandesa (uma marca repetida de 10 a 150 vezes)</td><td>Sim</td><td>Não</td><td>Não</td><td>Não</td><td>0 de 5</td></tr>
+            <tr><td>Cascata tailandesa (uma marca repetida de 10 a 1.000 vezes)</td><td>Sim</td><td>Não</td><td>Não</td><td>Não</td><td>0 de 5</td></tr>
           </tbody>
         </table>
       </div>
-      <p>Verificado em 5 de setembro de 2026 na página real de cada gerador. Os outros cinco são FontB, PrettyText, Piliapp, Convertxt e Nepeta, o original de 2009. Zalgo.org e Namecheap bloqueiam verificações automáticas e não foram pontuados.</p>
+      <p>Verificado em 5 de setembro de 2026 na página real de cada gerador. Os outros cinco são FontB, PrettyText, Piliapp, Convertxt e Nepeta, o original de 2009. Namecheap bloqueia verificações automáticas e não foi pontuado. Os dados de LingoJam e Zalgo.io foram corrigidos em 29 de setembro de 2026.</p>
     </section>
 
     <!-- Copy & Paste Examples -->
@@ -331,8 +334,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <!-- Unzalgo / Decoder -->
     <section class="editorial-section" id="unzalgo-guide">
       <h2>Unzalgo — Remova o Zalgo de Qualquer Texto</h2>
-      <p>A maioria dos geradores de zalgo não consegue reverter o próprio resultado. Dos oito verificados em 5 de setembro de 2026, só o Zalgo.io traz um limpador ao lado do gerador; esta página também, com um <strong>decodificador unzalgo</strong> integrado. Cole o texto corrompido na caixa <a href="#unzalgo">Decodificar Zalgo</a> acima: ela remove todas as marcas Unicode combinadas e devolve na hora o texto original legível. Uma pilha de cascata tailandesa (uma marca tonal repetida) também some, e o texto tailandês normal fica como está.</p>
-      <p>Use-o para ler uma mensagem amaldiçoada que alguém lhe enviou, limpar um texto antes de citá-lo, recuperar algo que você corrompeu demais ou — se modera um servidor do Discord ou um fórum — para ver o que um nome de usuário ou uma mensagem em zalgo realmente diz antes de agir. Como o zalgo é apenas caracteres base mais marcas combinadas, a decodificação não perde nada: o texto original é sempre recuperável. Para a explicação completa (e como os moderadores filtram o zalgo automaticamente), veja o guia (em inglês) sobre <a href="/answers/how-to-remove-zalgo-text/">como remover o texto zalgo</a>.</p>
+      <p>A maioria dos geradores de zalgo não consegue reverter o próprio resultado. Em um teste de 12 geradores em 29 de setembro de 2026, 4 conseguiam remover o zalgo, e esta página está entre eles, com um <strong>decodificador unzalgo</strong> integrado. Cole o texto corrompido na caixa <a href="#unzalgo">Decodificar Zalgo</a> acima: ela remove as faixas de marcas combinadas que os geradores de zalgo usam e devolve na hora o texto legível. Uma pilha de cascata tailandesa (uma marca tonal repetida) também some, e o texto tailandês normal fica como está.</p>
+      <p>Use-o para ler uma mensagem amaldiçoada que alguém lhe enviou, limpar um texto antes de citá-lo, recuperar algo que você corrompeu demais ou — se modera um servidor do Discord ou um fórum — para ver o que um nome de usuário ou uma mensagem em zalgo realmente diz antes de agir. Como o zalgo é apenas caracteres base mais marcas combinadas, as letras quase sempre voltam. Acentos digitados do jeito normal (é como um só caractere) ficam como estão. Um acento guardado como marca separada sai junto com o zalgo, então confira nomes como João depois de decodificar. Para a explicação completa (e como os moderadores filtram o zalgo automaticamente), veja o guia (em inglês) sobre <a href="/answers/how-to-remove-zalgo-text/">como remover o texto zalgo</a>.</p>
     </section>
 
     <section class="editorial-section">
@@ -340,7 +343,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p><strong>Discord</strong> é o território natural do zalgo: as mensagens renderizam as marcas combinadas por inteiro e nenhum filtro as bloqueia por padrão (o AutoMod do servidor ou o bot MEE6 podem). Os <em>nomes de exibição</em> e os <em>apelidos</em> aceitam zalgo, mas têm limite de 32 caracteres, e cada marca conta — use a predefinição Sutil para nomes. Os <em>nomes de usuário</em> do Discord (a partir de 2023) só aceitam letras minúsculas, dígitos, sublinhados e pontos, então ali o zalgo é impossível.</p>
       <p><strong>Roblox</strong> filtra de forma agressiva: o zalgo pesado vira símbolos # ou quadradinhos, e as marcas do meio (sobrepostas) são as primeiras a quebrar. Se quiser tentar, use a predefinição Sutil, coloque a Posição em Cima e baixo, mantenha o texto curto e teste dentro do jogo — análise completa no guia (em inglês) sobre <a href="/answers/does-zalgo-work-on-roblox/">se o zalgo funciona no Roblox</a>.</p>
       <p><strong>Instagram</strong> aceita zalgo em bios, legendas e comentários — os estilos mais leves funcionam melhor, e as pilhas muito altas são cortadas pela altura da linha. Os nomes de usuário o rejeitam. <strong>TikTok</strong> se comporta igual: bios, legendas e comentários sim, nomes de usuário não.</p>
-      <p><strong>Twitter / X</strong> renderiza o zalgo em posts, bios e respostas, mas cada marca combinada conta para o limite de 280 caracteres — zalgo pesado numa única palavra pode consumir metade de um tweet. Fique de olho nos selos "Vai caber?" abaixo da saída, ou passe qualquer texto pelo <a href="/pt/contador-de-palavras-e-caracteres/">contador de caracteres</a> para conferi-lo em 25 limites de plataforma de uma vez.</p>
+      <p><strong>Twitter / X</strong> renderiza o zalgo em posts, bios e respostas, mas cada marca combinada conta para o limite de 280 caracteres — zalgo pesado numa única palavra pode consumir metade de um tweet. Fique de olho nos selos "Vai caber?" abaixo da saída, ou passe qualquer texto pelo <a href="/pt/contador-de-palavras-e-caracteres/">contador de caracteres</a> para conferi-lo em 39 limites de 17 plataformas de uma vez.</p>
       <p><strong>Twitch</strong> tem nomes de usuário puramente alfanuméricos (nada de zalgo), mas o chat renderiza — embora os bots de canal muitas vezes removam o texto glitch pesado ou deem timeout em quem o envia. <strong>Minecraft</strong> renderiza as marcas combinadas sem filtro no chat, nas placas e nos MOTDs de servidor. <strong>Steam</strong> renderiza o zalgo sem cortar, que é exatamente o motivo de ele transbordar na interface de perfis e nomes de grupo — use com parcimônia. <strong>WhatsApp e Telegram</strong> exibem as mensagens com zalgo normalmente.</p>
       <p><strong>Uma nota sobre etiqueta:</strong> os leitores de tela anunciam cada marca combinada, transformando uma única palavra em zalgo numa ladainha longa e desagradável, e algumas comunidades (wikis de fãs, fóruns) proíbem o zalgo de vez porque ele quebra os layouts. Regra prática para quem escreve terror: uma linha em zalgo a cada ~200 palavras causa mais impacto do que um parágrafo inteiro corrompido. E se alguém teme que o texto amaldiçoado possa danificar o aparelho — não pode: <a href="/answers/is-zalgo-text-safe/">o zalgo é Unicode, não código</a> (em inglês).</p>
     </section>
@@ -371,7 +374,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </details>
   <details class="faq-item">
     <summary class="faq-question">Posso compartilhar uma configuração específica de texto Zalgo como link?</summary>
-    <p class="faq-answer">Sim. A URL da página é atualizada automaticamente enquanto você digita, incluindo seu texto atual, estilo e intensidade como parâmetros de URL. Copie a URL da barra de endereços do navegador para compartilhar sua configuração exata.</p>
+    <p class="faq-answer">Sim, e ele é exato. O endereço da página é atualizado enquanto você digita, com seu texto, seus ajustes e a semente aleatória que define as marcas. Copie o endereço da barra do navegador, e quem abrir verá o mesmo zalgo, marca por marca. Clique em Regenerar para ter uma nova semente e um novo visual.</p>
   </details>
 </section>
 
@@ -445,7 +448,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     controlCascade:          'Cascata tailandesa',
     tooltipCascade:          'Uma marca tonal tailandesa repetida muitas vezes sobre uma letra de apoio. Dependendo do app e da fonte, aparece como uma coluna alta, uma diagonal, ou é cortada.',
     cascadeDepth:            'Profundidade',
-    tooltipCascadeDepth:     'Quantas vezes a marca se repete (10 = curta, 150 = o pico completo da internet)',
+    tooltipCascadeDepth:     'Quantas vezes a marca se repete (10 = curta, 250 = mais alta que a tela do celular, 1000 = o máximo)',
     cascadePlacement:        'Posição',
     cascadePrefix:           'Antes do texto',
     cascadeSuffix:           'Depois do texto',
@@ -462,7 +465,32 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     cascadeCopyLabel:        'Copiar a cascata tailandesa',
     cascadeOutputLabel:      'Cascata tailandesa para: {text}',
     presetExtreme:           'Extremo',
-    tooltipAmplitudeExtreme: 'Modo Extremo: até 100 marcas empilhadas por caractere. Textos longos ficam pesados e a maioria dos apps corta o resultado.'
+    tooltipAmplitudeExtreme: 'Modo Extremo: o controle de amplitude vai até 300 (cerca de 272 marcas por letra com todas as posições ativadas). Textos longos ficam pesados e a maioria dos apps corta o resultado.',
+    controlZones:            'Quantidade por zona',
+    tooltipZones:            'Defina separadamente quantas marcas ficam acima, através e abaixo de cada letra. Substitui Posição e Amplitude enquanto estiver ativado.',
+    zonesToggle:             'Ajustar cada zona separadamente',
+    zoneUp:                  'Acima',
+    zoneMid:                 'Através',
+    zoneDown:                'Abaixo',
+    fitAction:               'Toque em um selo vermelho para reduzir o efeito até caber.',
+    fitDone:                 'Ajustado para {platform}',
+    fitImpossible:           'Longo demais para {platform} mesmo na configuração mais leve',
+    btnGif:                  'GIF animado',
+    gifLabel:                'Baixe um GIF animado deste texto',
+    gifWorking:              'Criando GIF…',
+    gifFailed:               'Falha no GIF',
+    gifNew:                  'Novo',
+    gifHint:                 'Vai postar como imagem?',
+    gifHintAction:           'Crie um GIF animado',
+    gifHintNote:             'Ele pisca. Copiar mantém o texto parado.',
+    gifSaved:                'GIF salvo.',
+    gifShared:               'GIF compartilhado.',
+    gifAltText:              'Texto glitch que diz {text}',
+    btnCopyAlt:              'Copiar texto alt',
+    cascadeMarkSaraU:        'Sara U (para baixo)',
+    cascadeMarkSaraUu:       'Sara Uu (para baixo)',
+    cascadeAnchorKaomoji:    'Kaomoji (つ ค c )',
+    presetInvader:           'Invasor de posts'
   };
   </script>
   <script>window.UTG_HEADLESS = true;</script>

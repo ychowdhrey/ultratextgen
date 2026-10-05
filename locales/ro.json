@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Fonturi Frumoase și Text Stilizat de Copiat — Litere pentru Insta, TikTok și Nickname-uri",
-    "description": "Generator de fonturi frumoase, litere estetice și text stilizat de copiat. Îngroșat, cursiv, gotic, bubble, Zalgo și simboluri — lipește-l în bio pe Insta, în descrierea unui TikTok, într-un nickname de joc sau pe Discord. Gratuit, fără cont."
+    "title": "Fonturi Frumoase și Text Stilizat de Copiat",
+    "description": "Generator de fonturi frumoase și litere estetice: îngroșat, cursiv, gotic, bubble, Zalgo și simboluri. Lipește-le în bio pe Insta, pe TikTok sau pe Discord."
   },
   "hero": {
     "title": "Fonturi Frumoase și Litere Stilizate de Copiat",
@@ -133,6 +133,30 @@
       "titleFor": "Previzualizare: {style}",
       "dialogAriaLabel": "Previzualizare pe platforme",
       "closeAriaLabel": "Închide previzualizarea"
+    },
+    "imageSelection": {
+      "selectImage": "Selectează și distribuie ca imagine",
+      "viewSelection": "Vezi selecția ({n})",
+      "hint": "Alege emoji sau simboluri din orice secțiune pentru imaginea ta.",
+      "count": "{n} selectate",
+      "empty": "Nimic selectat încă",
+      "shareImage": "Distribuie imaginea",
+      "downloadImage": "Descarcă imaginea",
+      "cancel": "Anulează",
+      "preview": "Previzualizare imagine",
+      "close": "Închide",
+      "remove": "Elimină {item}",
+      "addAll": "Adaugă toate ({n})",
+      "removeAll": "Elimină toate ({n})",
+      "limit": "Poți adăuga cel mult {max}.",
+      "tooBig": "Prea multe pentru o imagine. Elimină câteva.",
+      "making": "Se creează imaginea…",
+      "shared": "Imagine distribuită",
+      "downloaded": "Imagine descărcată",
+      "shareFailed": "Nu s-a putut distribui. Încearcă descărcarea.",
+      "renderFailed": "Imaginea nu s-a putut crea. Încearcă din nou.",
+      "trayLabel": "Selecție pentru imagine",
+      "setUnavailable": "Acest set nu poate fi adăugat încă într-o imagine."
     }
   },
   "useCases": {

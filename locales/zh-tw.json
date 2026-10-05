@@ -109,6 +109,30 @@
       "titleFor": "{style} 預覽",
       "dialogAriaLabel": "平台預覽",
       "closeAriaLabel": "關閉預覽"
+    },
+    "imageSelection": {
+      "selectImage": "選取並以圖片分享",
+      "viewSelection": "查看已選（{n}）",
+      "hint": "從任何區塊挑選表情符號或符號，製作你的圖片。",
+      "count": "已選 {n} 個",
+      "empty": "尚未選取",
+      "shareImage": "分享圖片",
+      "downloadImage": "下載圖片",
+      "cancel": "取消",
+      "preview": "預覽圖片",
+      "close": "關閉",
+      "remove": "移除 {item}",
+      "addAll": "全部加入（{n}）",
+      "removeAll": "全部移除（{n}）",
+      "limit": "最多可加入 {max} 個。",
+      "tooBig": "太多了，一張圖放不下。請移除一些。",
+      "making": "正在製作圖片…",
+      "shared": "已分享圖片",
+      "downloaded": "已下載圖片",
+      "shareFailed": "無法分享，試試下載。",
+      "renderFailed": "無法製作圖片，請再試一次。",
+      "trayLabel": "圖片選取",
+      "setUnavailable": "這組目前還不能加入圖片。"
     }
   }
 }

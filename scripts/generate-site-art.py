@@ -2916,6 +2916,7 @@ PAGES = {
   "pl-do-druku-alfabet-do-kolorowania": ("Alfabet do kolorowania", "Darmowe litery A–Z do druku i kolorowania", m_grid, K_PRINT),
   "de-zum-ausdrucken-blasenbuchstaben": ("Blasenbuchstaben zum Ausdrucken", "Nachfahren, Ausmalen, PNG — A–Z & 0–9", m_grid, K_PRINT),
   "de-zum-ausdrucken-alphabet-ausmalbilder": ("Alphabet-Ausmalbilder", "Kostenlose Buchstaben A–Z zum Ausdrucken", m_grid, K_PRINT),
+  "tr-yazdirilabilir-balon-harfler": ("Yazdırılabilir Balon Harfler", "Boya, kes, PNG indir — 29 harf ve 0–9", m_grid, K_PRINT),
   # New symbol/ EN parents + id/ translations
   "symbol-microphone-emoji": ("Microphone Emoji", "🎤 meaning, history & every way to type it", m_microphone, K_SYM),
   "symbol-less-than-or-equal-to-symbol": ("Less Than or Equal To Symbol", "≤ meaning, Alt Code & LaTeX", glyphs("≤"), K_SYM),
@@ -3001,16 +3002,24 @@ PAGES.update({
     P(m_doc), K_RESEARCH),
 "research-ink-saving-by-worksheet-type": ("Ink Saving by Worksheet Type", "Print treatments tested on 54 real printable cases",
     P(m_doc), K_RESEARCH),
+"research-zalgo-generator-benchmark": ("Zalgo Generator Benchmark", "13 tools, one test, 3,774 measured outputs",
+    P(m_zalgo), K_RESEARCH),
+"compare-zalgo-generators": ("Zalgo Generators Compared", "Best tool for each effect, tested 2026",
+    P(m_zalgo), K_SITE),
 })
 
 # ---- /learn/ education pillar ----
 PAGES.update({
 "learn-save-printer-ink-printables": ("Save Printer Ink on Worksheets", "Remove decoration, lighten fills, keep text dark",
     P(m_doc), K_PRINT),
+"learn-print-worksheets-for-a-class": ("Print Worksheets for a Whole Class", "One class list, a level per child, one PDF",
+    P(m_doc), K_PRINT),
 "learn-hub": ("Learn", "Stage-by-stage guides for handwriting & lettering",
     P(m_doc), K_PRINT),
 "learn-dot-to-dots": ("Dot-to-Dots & Pencil Control", "A progression guide from many dots to freehand",
     P(m_typo, sample="•••", size=92, label="pencil control"), K_PRINT),
+"learn-how-to-draw-bubble-letters": ("How to Draw Bubble Letters", "Skeleton, puffy outline, ink: three steps",
+    P(m_typo, sample="Hi", size=92, label="bubble letters"), K_PRINT),
 "learn-coloring-and-fine-motor": ("Coloring Letters", "Fine motor skills through letter-shaped coloring",
     P(m_typo, sample="Aa", size=92, label="fine motor"), K_PRINT),
 "learn-handwriting": ("Teaching Handwriting", "A practical, stage-by-stage guide — readiness to cursive",
@@ -3033,6 +3042,10 @@ PAGES.update({
     P(m_typo, sample="Aa", ff=SERIF, style="italic", weight="400", size=92, label="cursive"), K_PRINT),
 "learn-handwriting-how-much-practice": ("How Much Practice?", "How much helps, and how to measure progress",
     P(m_typo, sample="5m", size=92, label="practice & progress"), K_PRINT),
+"learn-spelling": ("How Children Learn to Spell", "Say it, write it from memory, check it, repeat",
+    P(m_typo, sample="Ab", size=92, label="spelling"), K_PRINT),
+"learn-spelling-does-tracing-help-spelling": ("Does Tracing Help Spelling?", "It forms the letters; memory comes from writing it unseen",
+    P(m_typo, sample="Aa", size=92, label="trace, then recall"), K_PRINT),
 })
 
 PAGES["printables-bubble-letters"] = (
@@ -3124,6 +3137,7 @@ PAGES.update({
 "printables-word-search-maker": ("Word Search Maker", "One spelling list, a different grid for every child", m_word_grid, K_PRINT),
 "printables-crossword-maker": ("Crossword Maker", "Your own words and clues, a different layout per child", m_crossword, K_PRINT),
 "printables-word-scramble-maker": ("Word Scramble Maker", "One spelling list, a different scramble per child", m_scramble, K_PRINT),
+"printables-spelling-worksheet-generator": ("Spelling Worksheet Generator", "One spelling list, five practice sheets, one PDF", P(m_trace_rows, sample="friend"), K_PRINT),
 "printables-letter-tracing": ("Letter Tracing Worksheets", "Every letter A to Z and number 0 to 9, at seven difficulty levels", P(m_trace_rows, sample="Aa"), K_PRINT),
 "printables-name-tracing": ("Name Tracing Worksheets", "Model row, faded trace rows and blank practice lines", P(m_trace_rows, sample="Emma"), K_PRINT),
 "printables-sight-word-tracing": ("Sight Word Tracing Worksheets", "Dolch sight words to trace at adjustable difficulty", P(m_trace_rows, sample="said"), K_PRINT),
@@ -3164,6 +3178,8 @@ PAGES.update({
 # English words, which is what these cards showed when first generated.
 "fr-imprimables-mots-croises": ("Générateur de Mots Croisés", "Tes mots et définitions, une grille par élève", P(m_crossword, across="MOTS", down="PORT", cross_col=1, cross_row=1), K_PRINT),
 "fr-imprimables-mots-meles": ("Générateur de Mots Mêlés", "Ta liste de mots, une grille par élève", P(m_word_grid, word="ECOLE"), K_PRINT),
+"es-imprimibles-nombre-en-cursiva": ("Nombre en Cursiva", "Cualquier nombre en letra ligada, una ficha por niño", P(m_trace_rows, sample="Sofía"), K_PRINT),
+"es-imprimibles-sopa-de-letras": ("Generador de Sopa de Letras", "Tu lista de palabras, una cuadrícula por alumno", P(m_word_grid, word="LIBRO"), K_PRINT),
 "fr-imprimables-prenom-a-colorier": ("Prénom à Colorier", "Un prénom ou un mot en grand coloriage à imprimer", m_crayons, K_PRINT),
 "pl-do-druku-litery-do-druku": ("Litery do Druku", "Puste kontury A-Z z polskimi znakami i cyfry 0-9", P(m_letter_stencil, letter="Ł"), K_PRINT),
 "pt-imprimiveis-letra-bastao": ("Letra Bastao para Imprimir", "Moldes vazados A-Z e 0-9 para recortar", P(m_letter_stencil, letter="B"), K_PRINT),

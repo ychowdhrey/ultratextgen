@@ -650,6 +650,78 @@
       height: 16px;
     }
 
+    /* Header search suggestions (js/search/site-search.js). */
+    .site-search-results {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      right: 0;
+      min-width: 280px;
+      max-height: min(70vh, 480px);
+      overflow-y: auto;
+      margin: 0;
+      padding: 6px;
+      list-style: none;
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-hover);
+      z-index: 110;
+    }
+
+    .site-search-results[hidden] {
+      display: none;
+    }
+
+    .site-search-item a {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      column-gap: 8px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .site-search-item a:hover,
+    .site-search-item[aria-selected="true"] a {
+      background: var(--bg-base);
+    }
+
+    .site-search-item[aria-selected="true"] a {
+      box-shadow: inset 3px 0 0 var(--accent-purple);
+    }
+
+    .site-search-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .site-search-section {
+      align-self: center;
+      font-size: 0.6875rem;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+
+    .site-search-desc {
+      grid-column: 1 / -1;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .site-search-empty {
+      padding: 10px;
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+    }
+
     .header-actions {
       display: flex;
       align-items: center;
@@ -680,6 +752,69 @@
     .header-btn svg {
       width: 16px;
       height: 16px;
+    }
+
+    /* Phone header (header.js, initializeMiniHeader). The full header wraps
+       to three rows below 641px -- 187px at 390x844, 227px at 360 and 320
+       wide (measured 2026-10-04) -- and while it was sticky it covered
+       whatever scrolled to the top, the zalgo page's Copy button included.
+       On phones it now scrolls away with the page, and .header-mini, one
+       48px row, slides in only while the visitor scrolls back up. The media
+       query matches COMPACT_HEADER_QUERY in header.js. */
+    .header-mini {
+      display: none;
+    }
+
+    @media (max-width: 640px), (max-height: 500px) {
+      .header {
+        position: relative;
+      }
+
+      .header-mini {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        height: 48px;
+        padding: 0 16px;
+        background: var(--bg-white);
+        border-bottom: 1px solid var(--border-light);
+        box-shadow: var(--shadow-soft);
+        transform: translateY(-100%);
+        visibility: hidden;
+        transition: transform 0.2s ease, visibility 0s linear 0.2s;
+      }
+
+      .header-mini.is-shown {
+        transform: none;
+        visibility: visible;
+        transition: transform 0.2s ease, visibility 0s;
+      }
+
+      .header-mini .logo {
+        font-size: 1.0625rem;
+      }
+
+      .header-mini .header-btn {
+        padding: 8px;
+      }
+
+      .header-mini .header-btn svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .header-mini,
+      .header-mini.is-shown {
+        transition: none;
+      }
     }
 
     /* Hero Section */
@@ -1129,7 +1264,9 @@
     .style-name {
       font-size: 0.75rem;
       font-weight: 600;
-      color: var(--text-muted);
+      /* --text-muted is 2.56:1 on the light card and 3.07:1 on the dark one;
+         12px text needs 4.5:1. --text-secondary is 4.76:1 / 5.71:1. */
+      color: var(--text-secondary);
       margin-bottom: 6px;
       display: flex;
       align-items: center;
@@ -1893,6 +2030,15 @@
   line-height: 1.65;
 }
 
+/* The global reset zeroes every margin, so two paragraphs in a row inside
+   an editorial section used to read as one block. Direct children only:
+   paragraphs inside .editorial-block and FAQ answers keep their own
+   spacing, and a sibling that already has a margin collapses with this one
+   rather than doubling it. */
+.editorial-section > p + p {
+  margin-top: 0.75rem;
+}
+
 .editorial-section > h3 {
   margin-top: 2rem;
   margin-bottom: 0.75rem;
@@ -1983,7 +2129,7 @@
   line-height: 48px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-  color: #fff;
+  color: white;
   font-weight: 700;
   font-size: 1.2rem;
   margin: 0 auto 1rem;
@@ -2885,7 +3031,7 @@ button.cta-btn { border: 0; cursor: pointer; }
 .helper-chip:hover,
 .helper-chip.active {
   background: var(--accent-purple);
-  color: #fff;
+  color: white;
   border-color: var(--accent-purple);
 }
 
@@ -2912,7 +3058,7 @@ button.cta-btn { border: 0; cursor: pointer; }
 /* Primary action button */
 .apply-btn {
   background: var(--accent-purple);
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 8px;
   padding: 0.5rem 1.25rem;
@@ -2962,14 +3108,14 @@ button.cta-btn { border: 0; cursor: pointer; }
    <style> block — it just uses these classes.
    ============================================================ */
 
-/* <body> of a /usecase/*/embed/ iframe page — no page chrome, just the widget */
+/* <body> of a /usecase/<slug>/embed/ iframe page — no page chrome, just the widget */
 .embed-widget-body {
   min-height: auto;
   padding: 0;
   margin: 0;
 }
 
-/* Compact overrides applied to the <body> of a /usecase/*/embed/ iframe page */
+/* Compact overrides applied to the <body> of a /usecase/<slug>/embed/ iframe page */
 .embed-wrapper {
   max-width: 720px;
   margin: 0 auto;
@@ -3023,6 +3169,19 @@ button.cta-btn { border: 0; cursor: pointer; }
 .embed-wrapper .decoration-tab {
   padding: 5px 10px;
   font-size: 0.7rem;
+  min-height: 32px;
+}
+/* A preset row that wraps instead of scrolling sideways: in a widget the
+   host sizes, a hidden overflow hides presets nobody knows to swipe for. */
+.embed-wrapper .decoration-tabs {
+  flex-wrap: wrap;
+  overflow-x: visible;
+  padding-right: 0;
+}
+/* Zalgo output is one unbroken run of base + combining characters; without
+   this a long word at 320px pushes the card wider than the host's column. */
+.embed-wrapper .style-preview {
+  overflow-wrap: anywhere;
 }
 .embed-variations {
   margin-top: 1rem;
@@ -3125,6 +3284,392 @@ button.cta-btn { border: 0; cursor: pointer; }
   color: var(--text-secondary);
   font-size: 0.875rem;
   line-height: 1.6;
+}
+
+/* /embed/<slug>/ landing page, widget-distribution layout (first: zalgo).
+   Journey: understand -> try -> copy -> install, then "what else can I embed".
+   Mobile order: intro, code, live preview, copy-again, benefits.
+   Desktop (>=1000px): intro + code + benefits beside the live preview, so the
+   widget and the copy button share the first viewport. */
+.embed-landing-page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 16px 48px;
+}
+.embed-landing-page .embed-landing-crumbs {
+  max-width: none;
+  padding: 12px 0 0;
+}
+.embed-landing {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "intro" "code" "preview" "after" "benefits";
+  gap: 20px;
+  padding-top: 20px;
+}
+.embed-landing-intro { grid-area: intro; }
+.embed-landing-code { grid-area: code; }
+.embed-preview-frame { grid-area: preview; }
+.embed-landing-after { grid-area: after; }
+.embed-landing-benefits { grid-area: benefits; }
+
+.embed-landing-eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-purple);
+}
+.embed-landing-title {
+  margin: 0 0 10px;
+  font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.1rem);
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+.embed-landing-lede {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.embed-landing-code {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+}
+.embed-landing-label {
+  margin: 0 0 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.embed-code-box {
+  margin: 0 0 12px;
+  padding: 12px;
+  background: var(--bg-base);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.embed-code-box:focus-visible,
+.embed-copy-btn:focus-visible,
+.embed-more-card:focus-visible,
+.embed-more-all:focus-visible {
+  outline: 3px solid var(--accent-purple);
+  outline-offset: 2px;
+}
+/* Solid, not the .cta-btn gradient: white on --accent-purple is 4.2:1 and
+   on --accent-blue 3.7:1, so the fill is darkened toward the page's own ink
+   (about 5.6:1 in both themes). */
+.embed-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent-purple) 80%, var(--text-primary));
+  color: white;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+body.dark-mode .embed-copy-btn {
+  background: color-mix(in srgb, var(--accent-purple) 80%, var(--bg-base));
+}
+.embed-copy-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
+}
+.embed-copy-btn.is-copied {
+  background: var(--ts-safe);
+}
+body.dark-mode .embed-copy-btn.is-copied {
+  color: var(--bg-base);
+}
+.embed-copy-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+.embed-landing-install {
+  margin: 10px 0 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.embed-copy-hint {
+  margin: 8px 0 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+}
+/* The live widget, framed as a page on the visitor's own site. The iframe
+   height is the embed code's own 700px, fixed, so nothing shifts on load. */
+.embed-preview-frame {
+  margin: 0;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-base);
+  box-shadow: var(--shadow-soft);
+}
+.embed-preview-chrome {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 36px;
+  padding: 0 12px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.embed-preview-dots {
+  display: inline-flex;
+  gap: 5px;
+}
+.embed-preview-dots i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--border-light);
+}
+.embed-preview-url {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.embed-preview-badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent-purple) 12%, transparent);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.embed-preview-iframe {
+  display: block;
+  width: 100%;
+  height: 700px;
+  border: none;
+}
+/* Each widget keeps the height its published embed code already sets, so
+   the preview matches what installed sites show. */
+.embed-preview-iframe.embed-preview-h620 { height: 620px; }
+.embed-preview-iframe.embed-preview-h640 { height: 640px; }
+.embed-preview-iframe.embed-preview-h760 { height: 760px; }
+
+.embed-landing-after {
+  text-align: center;
+}
+.embed-landing-after p {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.embed-benefits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+.embed-benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+.embed-benefits svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  fill: none;
+  stroke: var(--accent-purple);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.embed-benefits strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.embed-more {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-light);
+}
+.embed-more-title {
+  margin: 0 0 16px;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+.embed-more-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+}
+.embed-more-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.embed-more-card:hover {
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-hover);
+}
+.embed-more-sample {
+  margin-bottom: 4px;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  overflow-wrap: anywhere;
+}
+.embed-more-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+.embed-more-desc {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+.embed-more-all {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 8px 0;
+  font-weight: 600;
+  color: var(--accent-purple);
+  text-decoration: none;
+}
+.embed-more-all:hover {
+  text-decoration: underline;
+}
+
+/* Utility footer: the widget page's continuation is the "More widgets"
+   section above, so the 27-link site footer is replaced by legal links. */
+.embed-utility-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 20px 16px 32px;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+.embed-utility-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+}
+.embed-utility-footer a {
+  display: inline-block;
+  padding: 6px 0;
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+.embed-utility-footer a:hover {
+  color: var(--accent-purple);
+  text-decoration: underline;
+}
+
+/* Phones: the site header already takes ~160px, so the hero is tightened
+   until the primary Copy button sits inside a 375x740 first screen. */
+@media (max-width: 639px) {
+  .embed-landing {
+    gap: 14px;
+    padding-top: 12px;
+  }
+  .embed-landing-lede {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+  .embed-landing-code {
+    padding: 12px;
+  }
+  .embed-code-box {
+    font-size: 0.75rem;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 640px) {
+  /* Four items each: 2x2 rather than 3 + an orphan. */
+  .embed-benefits,
+  .embed-more-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .embed-copy-btn {
+    width: auto;
+  }
+  .embed-landing-install {
+    text-align: left;
+  }
+}
+@media (min-width: 1000px) {
+  .embed-landing {
+    grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+    grid-template-areas:
+      "intro preview"
+      "code preview"
+      "benefits preview";
+    grid-template-rows: auto auto 1fr;
+    column-gap: 40px;
+    row-gap: 20px;
+    align-items: start;
+  }
+  .embed-landing-after {
+    display: none;
+  }
+  .embed-more-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .embed-copy-btn {
+    width: 100%;
+  }
+  .embed-landing-install {
+    text-align: center;
+  }
 }
 
 .sr-only {
@@ -3281,7 +3826,7 @@ h3 + .section-subline {
 
 .symbol-tile.is-copied {
   background: var(--accent-purple);
-  color: #fff;
+  color: white;
   border-color: var(--accent-purple);
 }
 
@@ -3409,7 +3954,7 @@ h3 + .section-subline {
 
 .symbol-hero-tile.is-copied {
   background: var(--accent-purple);
-  color: #fff;
+  color: white;
   border-color: var(--accent-purple);
 }
 
@@ -3507,13 +4052,13 @@ h3 + .section-subline {
 /* Keep active chips readable while hovered — the hover rule above would
    otherwise paint accent text on the accent background. */
 .vertical-chip.active:hover:not(:disabled) {
-  color: #fff;
+  color: white;
 }
 
 .vertical-chip.active {
   background: var(--accent, #6366f1);
   border-color: var(--accent, #6366f1);
-  color: #fff;
+  color: white;
 }
 
 .vertical-chip:disabled {
@@ -3644,7 +4189,7 @@ body.dark-mode .vertical-chip {
 body.dark-mode .vertical-chip.active {
   background: var(--accent, #6366f1);
   border-color: var(--accent, #6366f1);
-  color: #fff;
+  color: white;
 }
 
 /* Layout picker — visual buttons with a mini preview per layout */
@@ -3811,7 +4356,7 @@ body.dark-mode .vertical-fit-badge.no-fit { color: #f87171; }
 
 .vertical-caps-btn:hover {
   background: var(--accent, #6366f1);
-  color: #fff;
+  color: white;
 }
 
 /* Card meta line — char count + collapsed-duplicates note */
@@ -4063,7 +4608,7 @@ button.clear-decoration {
 }
 
 .guide-meta .guide-pill.is-accent {
-  color: #fff;
+  color: white;
   background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
   border-color: transparent;
 }
@@ -4304,7 +4849,7 @@ button.clear-decoration {
 .glyph-copy.copied {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
-  color: #fff;
+  color: white;
 }
 
 /* ==========================================================================
@@ -4364,7 +4909,7 @@ button.clear-decoration {
    ========================================================================== */
 .symbol-groups {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 1rem;
   margin-top: 1.5rem;
 }
@@ -4668,7 +5213,7 @@ button.clear-decoration {
 .ts-btn-primary {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
-  color: #fff;
+  color: white;
 }
 .ts-btn-primary:hover { opacity: 0.9; }
 .ts-btn-ghost:hover { border-color: var(--accent-purple); }
@@ -4776,7 +5321,7 @@ button.clear-decoration {
 .bubble-chip.is-active {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
-  color: #fff;
+  color: white;
 }
 .bubble-strip-digits .bubble-chip {
   color: var(--text-secondary);
@@ -4940,7 +5485,7 @@ button.clear-decoration {
 .bubble-btn-primary {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
-  color: #fff;
+  color: white;
 }
 .bubble-btn-primary:hover { background: var(--accent-blue); border-color: var(--accent-blue); }
 
@@ -4974,12 +5519,20 @@ button.clear-decoration {
   line-height: 1;
   color: var(--text-primary);
 }
+/* A flex item will not shrink below its longest word, so on a two-column
+   phone grid a long localized name ("Decorazione Cuore") pushed the copy
+   label past the card edge. The name gives way instead: it may shrink and
+   hyphenate, and the copy label never shrinks. */
 .bubble-variant-name {
   flex: 1 1 auto;
+  min-width: 0;
   font-size: 0.8rem;
   color: var(--text-secondary);
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 .bubble-variant-copy {
+  flex-shrink: 0;
   font-size: 0.72rem;
   font-weight: 700;
   color: var(--accent-purple);
@@ -5001,6 +5554,108 @@ button.clear-decoration {
   font-size: 0.88rem;
   color: var(--text-muted);
 }
+
+/* How to draw bubble letters (learn/how-to-draw-bubble-letters/).
+   Each step figure draws the same skeleton. The bubble outline is the skeleton
+   stroked thick in ink with a thinner paper-coloured stroke on top, which
+   leaves an outline a constant distance from every stroke: the method the
+   page teaches. The resting state is each step's finished frame, so
+   reduced-motion readers and crawlers see the result, not a blank. */
+.bubble-demo-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+.bubble-demo-figure { margin: 1.25rem 0; }
+.bubble-demo-row .bubble-demo-figure { margin: 0; }
+.bubble-demo {
+  display: block;
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  margin: 0 auto;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+}
+.bubble-demo-figure figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+.bubble-demo path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.bd-skel path { stroke: var(--text-muted); stroke-width: 3; }
+.bd-outer path { stroke: var(--text-primary); }
+.bd-inner path { stroke: var(--bg-white); }
+.bd-fill .bd-inner path { stroke: var(--accent-purple); }
+.bd-w-thin .bd-outer path { stroke-width: 14; }
+.bd-w-thin .bd-inner path { stroke-width: 8; }
+.bd-w-good .bd-outer path { stroke-width: 36; }
+.bd-w-good .bd-inner path { stroke-width: 28; }
+.bd-w-fat .bd-outer path { stroke-width: 58; }
+.bd-w-fat .bd-inner path { stroke-width: 50; }
+
+/* Step 1: the pencil skeleton draws on. */
+.bd-step-skeleton .bd-skel path {
+  stroke-dasharray: 1;
+  animation: bd-draw 4s ease-in-out infinite;
+}
+/* Step 2: a light pencil outline puffs out around the skeleton. */
+.bd-step-puff .bd-skel { opacity: 0.6; }
+.bd-step-puff .bd-outer path {
+  stroke: var(--text-muted);
+  animation: bd-puff-outer 4s ease-in-out infinite;
+}
+.bd-step-puff .bd-inner path { animation: bd-puff-inner 4s ease-in-out infinite; }
+/* Step 3: erase the skeleton, ink the outline, color it in. */
+.bd-step-ink .bd-skel { opacity: 0; animation: bd-erase 6s ease-in-out infinite; }
+.bd-step-ink .bd-outer path { animation: bd-ink 6s ease-in-out infinite; }
+.bd-step-ink .bd-inner path {
+  stroke: var(--accent-purple);
+  animation: bd-color 6s ease-in-out infinite;
+}
+@keyframes bd-draw {
+  0% { stroke-dashoffset: 1; }
+  60%, 100% { stroke-dashoffset: 0; }
+}
+@keyframes bd-puff-outer {
+  0% { stroke-width: 6; }
+  60%, 100% { stroke-width: 36; }
+}
+@keyframes bd-puff-inner {
+  0% { stroke-width: 0; }
+  60%, 100% { stroke-width: 28; }
+}
+@keyframes bd-erase {
+  0%, 10% { opacity: 1; }
+  30%, 100% { opacity: 0; }
+}
+@keyframes bd-ink {
+  0%, 30% { stroke: var(--text-muted); }
+  50%, 100% { stroke: var(--text-primary); }
+}
+@keyframes bd-color {
+  0%, 55% { stroke: var(--bg-white); }
+  80%, 100% { stroke: var(--accent-purple); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bd-step-skeleton .bd-skel path,
+  .bd-step-puff .bd-outer path,
+  .bd-step-puff .bd-inner path,
+  .bd-step-ink .bd-skel,
+  .bd-step-ink .bd-outer path,
+  .bd-step-ink .bd-inner path { animation: none; }
+}
+
+/* The mistakes row: the same A at three puff widths. */
+.bd-w-even .bd-outer path { stroke-width: 30; }
+.bd-w-even .bd-inner path { stroke-width: 22; }
 
 /* Printable alphabet grid */
 .bubble-alphabet-head {
@@ -5151,7 +5806,7 @@ button.clear-decoration {
 .format-chip.active {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
-  color: #fff;
+  color: white;
 }
 
 /* Safe-mode toggle row (F2) — mirrors .scope-control / .format-control.
@@ -5201,7 +5856,7 @@ button.clear-decoration {
 .safemode-chip.active {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
-  color: #fff;
+  color: white;
 }
 
 .safemode-chip-dot {
@@ -5991,7 +6646,7 @@ body.preview-open { overflow: hidden; }
 .deco-theme-chip.active {
   background: var(--accent-purple, #8b5cf6);
   border-color: var(--accent-purple, #8b5cf6);
-  color: #fff;
+  color: white;
 }
 
 .deco-theme-icon {
@@ -6029,7 +6684,7 @@ body.preview-open { overflow: hidden; }
   border: none;
   border-radius: 20px;
   background: linear-gradient(135deg, var(--accent-purple, #8b5cf6), var(--accent-blue, #3b82f6));
-  color: #fff;
+  color: white;
   font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
@@ -6059,7 +6714,7 @@ body.dark-mode .deco-theme-chip {
 body.dark-mode .deco-theme-chip.active {
   background: var(--accent-purple, #8b5cf6);
   border-color: var(--accent-purple, #8b5cf6);
-  color: #fff;
+  color: white;
 }
 
 @media (max-width: 640px) {
@@ -6237,7 +6892,7 @@ body.dark-mode .deco-symbol-input {
 .tattoo-letter-btn.active {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
-  color: #fff;
+  color: white;
 }
 
 /* Results — cards with display-size previews */
@@ -6603,6 +7258,44 @@ body.dark-mode .tattoo-badge.is-roomy {
 
 .cursive-print-line { min-height: 1.6rem; }
 
+/* A script face's ink is taller than the body's 1.6 line box: Playwrite FR
+   Trad at this size inks 43px above the baseline and 24px below, in a 41px
+   box. The descenders of g, j and y ran into the next row's capital, and the
+   PDF writer, which cuts between row boxes, sliced the row that spilled over
+   the page edge. line-height: normal is the font's own ascent + descent
+   (73px here, 50px for the other Playwrite faces), which contains the ink.
+   Glyph-mode sheets only: an outline-mode row's model is an SVG. */
+.cursive-print-sheet.pt-practice-glyph .cursive-print-model,
+.cursive-print-sheet.pt-practice-glyph .cursive-print-trace { line-height: normal; }
+/* That box already carries the face's own leading, so the row gap gives back
+   what it adds: a Playwrite US/ES row is 50 + 6 + 6px, the 61px it was. */
+.cursive-print-sheet.pt-practice-glyph { gap: 0.4rem; }
+
+/* The cursive pages' own practice sheet (#cursivePrintRoot, built by
+   cursivePageController.js) prints A-M and N-Z side by side so the alphabet
+   fits one sheet. In one column its 26 rows ran to a second page that was
+   half empty. Scoped to that root: printablesEngine.js renders its own
+   cursive sheet with these classes and paginates it on purpose. */
+@media print {
+  #cursivePrintRoot .cursive-print-sheet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(13, auto);
+    grid-auto-flow: column;
+    column-gap: 0.35in;
+    row-gap: 1.05rem;
+  }
+  #cursivePrintRoot .cursive-print-row {
+    grid-template-columns: 92px 92px 1fr;
+    gap: 0.5rem;
+  }
+  /* Playwrite faces carry long descenders and tall loops: at line-height 1.5
+     the FR face's g and j ran into the next row's capitals. nowrap keeps the
+     wide pairs (M m, W w) on their line. */
+  #cursivePrintRoot .cursive-print-model,
+  #cursivePrintRoot .cursive-print-trace { line-height: 2; white-space: nowrap; }
+}
+
 /* Dark mode */
 body.dark-mode .cursive-section-nav {
   background: var(--bg-base);
@@ -6618,6 +7311,12 @@ body.dark-mode .cursive-word-card {
 }
 
 @media (max-width: 640px) {
+  /* The unscoped mobile ".copy-btn { width: 100% }" made Copy fill this row
+     and pushed PNG and SVG past the screen edge once a name was typed.
+     Same remedy as .style-actions: the row takes the width, Copy takes what
+     PNG and SVG leave. */
+  .cursive-card-actions { width: 100%; }
+  .cursive-card-actions .copy-btn { width: auto; flex: 1; }
   .cursive-letter-grid { grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); }
   .cursive-letter-big { font-size: 3.2rem; }
   .cursive-alphabet-row { font-size: 1.15rem; }
@@ -7319,7 +8018,7 @@ body.dark-mode .printable-card-art { color: var(--accent-blue); }
 .pt-az-strip a.is-current {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
-  color: #fff;
+  color: white;
 }
 
 /* Spoke: previous / next letter navigation */
@@ -7450,7 +8149,7 @@ body.dark-mode .pt-design-preview { background: #1c2030; }
 .pt-segment .pt-gen-preset.is-active {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
-  color: #fff;
+  color: white;
 }
 .pt-segment .pt-gen-preset.is-active small { opacity: 0.9; }
 
@@ -7555,7 +8254,7 @@ body.dark-mode .pt-design-preview { background: #1c2030; }
    the paper's width, which is what the row was always measured against. */
 .pt-paper .pt-gen-sheet { gap: 0.35rem; align-self: stretch; }
 .pt-paper .pt-gen-row .pt-trace-svg { max-height: 92px; }
-.pt-preview-actions { display: flex; gap: 0.6rem; margin-top: 0.9rem; }
+.pt-preview-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.9rem; }
 .pt-preview-actions .bubble-btn { padding: 0.72rem 1rem; font-size: 0.95rem; }
 .pt-preview-note { margin: 0.6rem 0 0; font-size: 0.78rem; color: var(--text-muted); }
 
@@ -7900,7 +8599,12 @@ body.dark-mode .pt-banner-index { color: var(--text-secondary); }
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
-.pt-search-footer-row { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+/* align-self: stretch so the row spans the sheet instead of shrink-wrapping
+   inside .pt-search-sheet's centred column. Shrink-wrapped, the export clone
+   froze the row at its content width and a sub-pixel difference in the clone's
+   text layout wrapped the Date field under the credit QR ("Nombre:"/"Fecha:"
+   measured 505.6px in a 505.6px row; FR 502.4, EN 480 sat just under it). */
+.pt-search-footer-row { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; align-self: stretch; }
 .pt-search-footer-field { display: inline-flex; align-items: baseline; gap: 0.5rem; font-size: 0.9rem; font-weight: 600; color: #1a1a2e; }
 .pt-search-footer-line { display: inline-block; width: 180px; height: 1px; border-bottom: 2px solid #9aa3b2; }
 .pt-search-meta { margin: 0.5rem 0 0; font-size: 0.85rem; color: var(--text-muted); }
@@ -8023,6 +8727,151 @@ body.dark-mode .pt-banner-index { color: var(--text-secondary); }
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
+
+/* Spelling worksheet generator (printables/spelling-worksheet-generator).
+   Ink on paper, so literal colours, the same as the word-list sheets above.
+   The trace sheet is a .pt-gen-sheet and inherits the page fit unchanged:
+   each row is one traced-word SVG with its fold line drawn inside it. */
+.pt-sp-bank {
+  width: 100%;
+  max-width: 34rem;
+  border: 1.5px solid #c9d0dd;
+  border-radius: 12px;
+  padding: 0.6rem 1rem 0.7rem;
+  background: #f7f8fb;
+  color: #1a1a2e;
+}
+.pt-sp-bank-title {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #4b5563;
+  margin-bottom: 0.3rem;
+}
+.pt-sp-bank ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.4rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.pt-sp-table {
+  width: 100%;
+  max-width: 34rem;
+  border-collapse: collapse;
+  color: #1a1a2e;
+}
+.pt-sp-table th {
+  text-align: left;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: #eef0f6;
+  padding: 0.45rem 0.5rem;
+  border: 1.5px solid #9aa3b2;
+}
+.pt-sp-table td {
+  border: 1.5px solid #9aa3b2;
+  height: 2.6rem;
+  padding: 0 0.5rem;
+  width: 30%;
+}
+.pt-sp-table td.pt-sp-word { font-size: 1.15rem; font-weight: 700; width: 26%; }
+.pt-sp-table td.pt-sp-checkcell { width: 10%; text-align: center; }
+.pt-sp-checkbox {
+  display: inline-block;
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 1.5px solid #6b7280;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+.pt-sp-again {
+  width: 100%;
+  max-width: 34rem;
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+.pt-sp-again-line { display: inline-block; width: 12rem; border-bottom: 2px solid #9aa3b2; }
+.pt-sp-gapword { flex: 0 0 auto; display: inline-flex; align-items: flex-end; gap: 0.2rem; }
+.pt-sp-letter, .pt-sp-gap {
+  display: inline-block;
+  min-width: 1.05rem;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.pt-sp-gap { border-bottom: 2px solid #1a1a2e; }
+.pt-sp-lines {
+  width: 100%;
+  max-width: 34rem;
+  margin: 0;
+  padding-left: 1.6rem;
+  columns: 2;
+  column-gap: 2rem;
+  color: #4b5563;
+  font-weight: 600;
+}
+.pt-sp-lines li { break-inside: avoid; padding: 0.55rem 0 0.15rem; }
+.pt-sp-lines .pt-sc-line { display: block; min-width: 0; height: 1.3rem; }
+.pt-sp-fold {
+  width: 100%;
+  max-width: 34rem;
+  border-top: 2px dashed #9aa3b2;
+  padding-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.pt-sp-three { display: flex; gap: 1.5rem; }
+.pt-sp-three .pt-sc-line { flex: 1 1 0; min-width: 0; height: 1.6rem; }
+.pt-sp-shapes {
+  width: 100%;
+  max-width: 34rem;
+  margin: 0;
+  padding-left: 1.6rem;
+  columns: 2;
+  column-gap: 2rem;
+  color: #4b5563;
+  font-weight: 600;
+}
+.pt-sp-shapes li { break-inside: avoid; padding: 0.5rem 0; }
+.pt-sp-shape { display: inline-flex; align-items: flex-end; height: 3.2rem; vertical-align: middle; margin-left: 0.4rem; }
+.pt-sp-box { display: inline-block; width: 1.3rem; height: 1.3rem; border: 1.5px solid #1a1a2e; margin-left: -1.5px; background: #fff; }
+.pt-sp-box.is-tall { height: 2.6rem; }
+.pt-sp-box.is-tail { height: 2.6rem; transform: translateY(1.3rem); }
+.pt-sp-answer-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem 1.5rem;
+  width: 100%;
+  max-width: 34rem;
+}
+body.pt-pdf-rendering .pt-sp-bank,
+body.is-printing #pt-print-root .pt-sp-bank,
+body.pt-pdf-rendering .pt-sp-table,
+body.is-printing #pt-print-root .pt-sp-table,
+body.pt-pdf-rendering .pt-sp-lines,
+body.is-printing #pt-print-root .pt-sp-lines,
+body.pt-pdf-rendering .pt-sp-fold,
+body.is-printing #pt-print-root .pt-sp-fold,
+body.pt-pdf-rendering .pt-sp-shapes,
+body.is-printing #pt-print-root .pt-sp-shapes,
+body.pt-pdf-rendering .pt-sp-again,
+body.is-printing #pt-print-root .pt-sp-again,
+body.pt-pdf-rendering .pt-sp-answer-cols,
+body.is-printing #pt-print-root .pt-sp-answer-cols { max-width: 6.4in; }
 
 /* ============================================================
    Contextual decoration showcase — static, crawlable SEO block
@@ -8496,7 +9345,7 @@ body.dark-mode .pt-banner-index { color: var(--text-secondary); }
 .kana-btn:hover { border-color: var(--accent-purple); transform: translateY(-1px); }
 
 .kana-btn-primary {
-  color: #fff;
+  color: white;
   background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
   border-color: transparent;
 }
@@ -8632,7 +9481,7 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   cursor: pointer;
 }
 .gr-tab.active {
-  color: #fff;
+  color: white;
   background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
   border-color: transparent;
 }
@@ -8695,6 +9544,32 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .gr-char-warn { color: var(--ts-risk); border-color: var(--ts-risk); }
 .gr-char-reject { color: var(--ts-fail); border-color: var(--ts-fail); }
 
+/* In-game outcome reporter: "Tried this name in Free Fire?" One row of
+   answers, then the reasons after "refused", then a thank-you line. */
+.gr-outcome {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border-light);
+}
+.gr-outcome[hidden] { display: none; }
+.gr-outcome-ask { font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); margin-right: 0.2rem; }
+.gr-outcome-btn {
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.gr-outcome-btn:hover { border-color: var(--accent-purple); }
+.gr-outcome-btn:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 1px; }
+.gr-outcome-thanks { margin: 0; font-size: 0.85rem; color: var(--text-secondary); }
+
 /* ==========================================================================
    CHARACTER & WORD COUNTER  (/character-counter/)
    Live word/character/sentence/paragraph/reading-time stats, plus a
@@ -8723,6 +9598,15 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .counter-field-actions {
   display: flex;
   gap: 8px;
+}
+/* The unscoped mobile ".copy-btn { width: 100% }" rule is written for
+   full-width result cards; in this row it pushed Clear 70px past a 320px
+   viewport. Same override as .ascii-output-head. */
+.counter-field-head {
+  flex-wrap: wrap;
+}
+.counter-field-actions .copy-btn {
+  width: auto;
 }
 .counter-clear-btn {
   padding: 0.3rem 0.7rem;
@@ -9046,7 +9930,7 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   border: 1px solid transparent;
   border-radius: 999px;
   background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-  color: #fff;
+  color: white;
   font-size: 0.8rem;
   font-weight: 700;
   cursor: pointer;
@@ -9130,7 +10014,7 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .kao-btn.is-copied { border-color: var(--accent-purple); }
 .kao-btn-primary {
   background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-  color: #fff;
+  color: white;
   border-color: transparent;
 }
 .kao-btn-primary:hover { color: #fff; }
@@ -9165,7 +10049,7 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .kao-mood:hover { border-color: var(--accent-purple); color: var(--text-primary); }
 .kao-mood.is-active {
   background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-  color: #fff;
+  color: white;
   border-color: transparent;
 }
 .kao-presets { gap: 0.55rem; }
@@ -9305,7 +10189,7 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .kao-dec-moods, .kao-dec-similar { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: center; }
 .kao-dec-mood {
   background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-  color: #fff;
+  color: white;
   border-radius: 999px;
   padding: 0.25rem 0.75rem;
   font-size: 0.82rem;
@@ -9983,7 +10867,7 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .lib-pill.active {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
-  color: #fff;
+  color: white;
 }
 .lib-pill .pill-count {
   opacity: 0.75;
@@ -10411,7 +11295,7 @@ html.dark .wc-dir-option, html.dark .wc-input { background: transparent; }
 .lib-search-wrap svg { position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; flex-shrink: 0; }
 #libSearch { width: 100%; box-sizing: border-box; padding: 0.65rem 1rem 0.65rem 2.6rem; border: 1px solid var(--border-light); border-radius: var(--radius); background: var(--bg-white); color: var(--text-primary); font-family: inherit; font-size: 0.95rem; outline: none; transition: border-color 0.15s; }
 #libSearch:focus { border-color: var(--accent-purple); }
-.lib-alpha-bar { max-width: 900px; margin: 0 auto 2rem; padding: 0.5rem 1.25rem; display: flex; flex-wrap: wrap; gap: 0.25rem; position: sticky; top: 0; z-index: 20; background: var(--bg-page, var(--bg-base)); backdrop-filter: saturate(180%) blur(6px); -webkit-backdrop-filter: saturate(180%) blur(6px); }
+.lib-alpha-bar { max-width: 900px; margin: 0 auto 2rem; padding: 0.5rem 1.25rem; display: flex; flex-wrap: wrap; gap: 0.25rem; position: sticky; top: var(--utg-header-h, 0px); z-index: 20; background: var(--bg-page, var(--bg-base)); backdrop-filter: saturate(180%) blur(6px); -webkit-backdrop-filter: saturate(180%) blur(6px); }
 .lib-alpha-btn.is-current { background: var(--accent-purple); border-color: var(--accent-purple); color: #fff; }
 .lib-alpha-btn.is-current .alpha-count { color: rgba(255, 255, 255, 0.85); }
 .lib-alpha-btn { display: inline-flex; flex-direction: column; align-items: center; min-width: 2rem; padding: 0.3rem 0.4rem 0.2rem; border: 1px solid var(--border-light); border-radius: 6px; background: var(--bg-white); color: var(--text-secondary); font-family: inherit; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.12s, border-color 0.12s, color 0.12s; text-decoration: none; line-height: 1; }
@@ -11841,7 +12725,9 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
   .study-layout { padding: 0 16px; }
   .research-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .research-meta div:nth-child(3) { grid-column: 1 / -1; }
-  .research-page [id] { scroll-margin-top: 210px; }
+  /* The header no longer sticks on phones; this clears the 48px bar that
+     shows while scrolling up (.header-mini). */
+  .research-page [id] { scroll-margin-top: 64px; }
 }
 
 /* The floating Contents button (narrow screens, added by the script). */
@@ -12265,7 +13151,10 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
 .research-hub.container { max-width: 900px; }
 .research-hub-hero .hero-inner { max-width: 852px; }
 .research-hub .study-section:first-child { margin-top: 2.5rem; }
-.study-section > h3.research-area { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 0.75rem; }
+.study-section > h3.research-area { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); margin: 1.5rem 0 0.75rem; }
+/* A later area opens a new group: give it the same air as a section h3 so it
+   reads as a heading for the cards below, not a caption for the card above. */
+.study-section > .study-cards + h3.research-area { margin-top: 2.5rem; }
 .study-cards { list-style: none; display: grid; gap: 1rem; margin: 0; padding: 0; }
 .study-card { padding: 1.5rem; background: var(--bg-white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); }
 .study-card-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 1rem; margin-bottom: 0.85rem; }
@@ -12457,3 +13346,64 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
   body:has(.research-page) .table-group { break-after: avoid; }
   body:has(.research-page) a { color: inherit; }
 }
+
+/* Player report board (js/gamename/name-reports.js): names players tried in
+   a game and what the game did with them. The mount is an empty div until
+   the board API answers, so nothing here shows on a page where it is off. */
+.nr-board { display: flex; flex-direction: column; gap: 0.75rem; }
+.nr-intro { color: var(--text-secondary); }
+.nr-status:empty, .nr-status[hidden] { display: none; }
+.nr-tally { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
+.nr-tally:empty { display: none; }
+.nr-tally-label { font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); margin-right: 0.2rem; }
+.nr-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: var(--bg-base);
+  font-size: 0.8rem;
+}
+.nr-chip-char { font-size: 1.05rem; }
+.nr-chip-count { color: var(--text-secondary); }
+.nr-chip-bad { border-color: var(--ts-fail); }
+.nr-chip-good { border-color: var(--ts-safe); }
+.nr-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.nr-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+}
+.nr-item-muted { opacity: 0.55; }
+.nr-item-hidden { display: none; }
+.nr-head { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; min-width: 0; }
+.nr-name { font-size: 1.1rem; overflow-wrap: anywhere; min-width: 0; }
+.nr-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--text-secondary); }
+.nr-badge { font-weight: 700; padding: 0.05rem 0.55rem; border-radius: 999px; border: 1px solid transparent; }
+.nr-badge-accepted { color: var(--ts-safe); border-color: var(--ts-safe); }
+.nr-badge-refused { color: var(--ts-fail); border-color: var(--ts-fail); }
+.nr-badge-boxes { color: var(--ts-risk); border-color: var(--ts-risk); }
+.nr-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
+.nr-btn {
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.nr-btn:disabled { opacity: 0.6; cursor: default; }
+.nr-btn:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 1px; }
+.nr-copy { flex: none; }
+.nr-state { font-size: 0.75rem; color: var(--text-muted); }
+.gr-outcome-note { flex-basis: 100%; font-size: 0.78rem; color: var(--text-secondary); }
+.gr-outcome-error { margin: 0; font-size: 0.85rem; color: var(--ts-fail); }
+.nr-chip-code { font-family: var(--font-mono, monospace); font-size: 0.75rem; }

@@ -77,7 +77,7 @@
     controlCascade:          'Thai Cascade',
     tooltipCascade:          'One Thai tone mark repeated many times on one carrier letter. Depending on the app and font it renders as a tall column, a diagonal, or gets clipped.',
     cascadeDepth:            'Stack depth',
-    tooltipCascadeDepth:     'How many times the mark repeats (10 = short, 150 = the full internet spike)',
+    tooltipCascadeDepth:     'How many times the mark repeats (10 = short, 250 = taller than a phone screen, 1000 = the maximum)',
     cascadePlacement:        'Placement',
     cascadePrefix:           'Before text',
     cascadeSuffix:           'After text',
@@ -96,7 +96,39 @@
     // Extreme mode: classic marks with a far larger budget. Gated by
     // data-extreme on #zalgoControlPanel for the same reason as the cascade.
     presetExtreme:           'Extreme',
-    tooltipAmplitudeExtreme: 'Extreme mode: up to 100 marks stacked per character. Long text gets heavy; most apps clip it.'
+    tooltipAmplitudeExtreme: 'Extreme mode: the amplitude slider goes up to 300 (about 272 marks per letter with every position on). Long text gets heavy; most apps clip it.',
+    // Per-zone amounts (advanced): replaces Position + Amplitude with three sliders.
+    controlZones:            'Amount per zone',
+    tooltipZones:            'Set how many marks go above, through and below each letter, separately. Replaces Position and Amplitude while on.',
+    zonesToggle:             'Set each zone separately',
+    zoneUp:                  'Above',
+    zoneMid:                 'Through',
+    zoneDown:                'Below',
+    // Fit to a platform: a red badge becomes a button that trims the output.
+    fitAction:               'Tap a red badge to shrink the effect until it fits.',
+    fitDone:                 'Fitted to {platform}',
+    fitImpossible:           'Too long for {platform} even at the lightest setting',
+    // Animated GIF export (rendered and encoded in the browser).
+    btnGif:                  'Animated GIF',
+    gifLabel:                'Download an animated GIF of this text',
+    gifWorking:              'Making GIF…',
+    gifFailed:               'GIF failed',
+    gifNew:                  'New',
+    // The line under the output: when to reach for the GIF, and what it does.
+    gifHint:                 'Posting it as an image?',
+    gifHintAction:           'Make an animated GIF',
+    gifHintNote:             'It flickers. Copy keeps the text still.',
+    gifSaved:                'GIF saved.',
+    gifShared:               'GIF shared.',
+    // Suggested alt text for the GIF, built from the plain input text.
+    gifAltText:              'Glitch text that says {text}',
+    btnCopyAlt:              'Copy alt text',
+    // Thai Cascade additions: marks that stack downward, the kaomoji carrier
+    // from the "invade the post above" trend, and its one-click preset.
+    cascadeMarkSaraU:        'Sara U (down)',
+    cascadeMarkSaraUu:       'Sara Uu (down)',
+    cascadeAnchorKaomoji:    'Kaomoji (つ ค c )',
+    presetInvader:           'Post Invader'
   }, window.zalgoI18n || {});
 
 
@@ -189,6 +221,29 @@
     noise:   { up: CHAR_TYPE_UP_noise,   mid: CHAR_TYPE_MID_noise,   down: CHAR_TYPE_DOWN_noise }
   };
 
+  // ── Seeded randomness ──────────────────────────────────────────
+  // Every random choice goes through one generator, seeded per output, so a
+  // seed in the share link reproduces the exact marks (not just the
+  // settings). mulberry32: tiny, fast, and good enough for picking marks.
+  // Without a seed the engine falls back to Math.random, which is what the
+  // Node tests that only check shape and decode behaviour rely on.
+  function makeRng(seed) {
+    let a = (seed >>> 0) || 1;
+    return function () {
+      a = (a + 0x6D2B79F5) >>> 0;
+      let t = a;
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function newSeed() {
+    return (Math.floor(Math.random() * 4294967296) >>> 0) || 1;
+  }
+  function rngFor(opts) {
+    return opts && opts.seed != null ? makeRng(opts.seed) : Math.random;
+  }
+
   // ── Shape Functions ─────────────────────────────────────────────
   const SHAPES = {
     uniform:      (i, len) => 1.0,
@@ -210,7 +265,7 @@
       const steps = 4;
       return Math.floor((i / (len - 1)) * steps) / steps + 0.25;
     },
-    random: () => 0.2 + Math.random() * 0.8
+    random: (i, len, rnd) => 0.2 + (rnd || Math.random)() * 0.8
   };
 
   // Shape bar heights for visual selector
@@ -227,10 +282,11 @@
 
   // ── Helpers ────────────────────────────────────────────────────
   // Fisher-Yates shuffle (returns a new array)
-  function shuffle(arr) {
+  function shuffle(arr, rnd) {
+    const r = rnd || Math.random;
     const a = arr.slice();
     for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
+      const j = Math.floor(r() * (i + 1));
       const tmp = a[i]; a[i] = a[j]; a[j] = tmp;
     }
     return a;
@@ -239,24 +295,41 @@
   // Pick `count` unique marks from a pool. If count > pool size, cycle
   // through the pool again (re-shuffled) so duplicates only appear after
   // every unique mark has been used once.
-  function pickUnique(pool, count) {
-    if (!pool.length) return '';
-    let result = '';
+  function pickUnique(pool, count, rnd) {
+    if (!pool.length || count <= 0) return '';
+    const out = new Array(count);
     let deck = [];
     for (let m = 0; m < count; m++) {
-      if (deck.length === 0) deck = shuffle(pool);
-      result += deck.pop();
+      if (deck.length === 0) deck = shuffle(pool, rnd);
+      out[m] = deck.pop();
     }
-    return result;
+    return out.join('');
+  }
+
+  // User-perceived characters. Marks go after a whole grapheme so a flag,
+  // a skin-tone emoji or a family (ZWJ) emoji is never split in half; the
+  // code-point fallback only runs where Intl.Segmenter is missing.
+  function graphemes(text) {
+    const s = text == null ? '' : String(text);
+    if (typeof Intl !== 'undefined' && Intl.Segmenter) {
+      const seg = new Intl.Segmenter(undefined, { granularity: 'grapheme' });
+      return Array.from(seg.segment(s), x => x.segment);
+    }
+    return [...s];
   }
 
   // ── Core Generator ──────────────────────────────────────────────
+  // opts.zones = { up, mid, down } switches to per-zone amounts: each zone
+  // gets its own count (scaled by the shape) instead of a split of one
+  // amplitude, and the position option is ignored.
   function generateZalgo(text, opts) {
     const charType  = opts.charType  || 'all';
     const position  = opts.position  || 'all';
     const shape     = opts.shape     || 'uniform';
     const frequency = opts.frequency != null ? opts.frequency : 0.7;
     const amplitude = opts.amplitude != null ? opts.amplitude : 5;
+    const zones     = opts.zones || null;
+    const rnd       = rngFor(opts);
 
     // Resolve mark pools based on character type
     let upPool, midPool, downPool;
@@ -280,16 +353,24 @@
     const activePositions = (useUp ? 1 : 0) + (useMid ? 1 : 0) + (useDown ? 1 : 0);
 
     const shapeFn = SHAPES[shape] || SHAPES.uniform;
-    const chars = [...text];
+    const chars = graphemes(text);
     const len = chars.length;
 
     return chars.map((ch, i) => {
-      if (ch === ' ' || ch === '\n' || ch === '\t') return ch;
+      if (/^\s+$/.test(ch)) return ch;
 
       // Frequency: probability this char gets marks at all
-      if (Math.random() > frequency) return ch;
+      if (rnd() > frequency) return ch;
 
-      const shapeMultiplier = shapeFn(i, len);
+      const shapeMultiplier = shapeFn(i, len, rnd);
+
+      if (zones) {
+        const up   = Math.round((zones.up   || 0) * shapeMultiplier);
+        const mid  = Math.round((zones.mid  || 0) * shapeMultiplier);
+        const down = Math.round((zones.down || 0) * shapeMultiplier);
+        return ch + pickUnique(upPool, up, rnd) + pickUnique(midPool, mid, rnd) + pickUnique(downPool, down, rnd);
+      }
+
       // Allow 0 marks when shape multiplier is very low (preserves shape contrast)
       const markCount = Math.round(amplitude * shapeMultiplier);
       if (markCount <= 0) return ch;
@@ -300,29 +381,27 @@
 
       if (activePositions === 1) {
         // Single position gets the entire budget
-        if (useUp)   marks += pickUnique(upPool, markCount);
-        if (useMid)  marks += pickUnique(midPool, markCount);
-        if (useDown) marks += pickUnique(downPool, markCount);
+        if (useUp)   marks += pickUnique(upPool, markCount, rnd);
+        if (useMid)  marks += pickUnique(midPool, markCount, rnd);
+        if (useDown) marks += pickUnique(downPool, markCount, rnd);
       } else {
         // Multiple positions: split budget proportionally
         if (useUp && upPool.length) {
           const count = useMid
             ? Math.max(1, Math.round(markCount * 0.55))
             : Math.max(1, Math.round(markCount * 0.60));
-          marks += pickUnique(upPool, count);
+          marks += pickUnique(upPool, count, rnd);
         }
 
         if (useMid && midPool.length) {
           // Mid marks are visually dense — cap at 2 to avoid illegibility
           const count = Math.min(2, Math.max(1, Math.round(markCount * 0.10)));
-          marks += pickUnique(midPool, count);
+          marks += pickUnique(midPool, count, rnd);
         }
 
         if (useDown && downPool.length) {
-          const count = useMid
-            ? Math.max(1, Math.round(markCount * 0.35))
-            : Math.max(1, Math.round(markCount * 0.35));
-          marks += pickUnique(downPool, count);
+          const count = Math.max(1, Math.round(markCount * 0.35));
+          marks += pickUnique(downPool, count, rnd);
         }
       }
 
@@ -333,41 +412,57 @@
   // ── Cascade: the "side spike" (one script-specific mark, repeated) ──
   // The viral effect is NOT classic zalgo at a higher amplitude. Classic
   // zalgo scatters many DIFFERENT general combining marks (U+0300 block)
-  // around every letter. The cascade repeats ONE Thai tone mark dozens of
-  // times on ONE carrier glyph; the renderer's attempt to place every repeat
-  // relative to the same base is what produces the tall, often diagonal,
-  // trail. It is its own engine so the classic pools, presets and amplitude
-  // 1-20 stay exactly as they were, and so these marks never reach
+  // around every letter. The cascade repeats ONE Thai mark dozens to
+  // hundreds of times on ONE carrier glyph; the renderer's attempt to place
+  // every repeat relative to the same base is what produces the tall, often
+  // diagonal, trail. It is its own engine so the classic pools, presets and
+  // amplitude stay exactly as they were, and so these marks never reach
   // pickUnique(): they are real Thai orthography, not noise.
   //
-  // Direction and height are renderer-dependent (font, shaping engine, line
-  // clipping). The UI says so; nothing here promises a diagonal.
+  // The four tone marks stack upward; Sara U and Sara Uu (vowels written
+  // below the consonant) stack downward. Direction and height are still
+  // renderer-dependent (font, shaping engine, line clipping). The UI says
+  // so; nothing here promises a diagonal.
   const CASCADE_MARKS = [
-    { id: 'mai-ek',       char: '\u0E48', labelKey: 'cascadeMarkMaiEk' },       // THAI CHARACTER MAI EK
-    { id: 'mai-tho',      char: '\u0E49', labelKey: 'cascadeMarkMaiTho' },      // THAI CHARACTER MAI THO
-    { id: 'mai-tri',      char: '\u0E4A', labelKey: 'cascadeMarkMaiTri' },      // THAI CHARACTER MAI TRI
-    { id: 'mai-chattawa', char: '\u0E4B', labelKey: 'cascadeMarkMaiChattawa' }  // THAI CHARACTER MAI CHATTAWA
+    { id: 'mai-ek',       char: '่', dir: 'up',   labelKey: 'cascadeMarkMaiEk' },       // THAI CHARACTER MAI EK
+    { id: 'mai-tho',      char: '้', dir: 'up',   labelKey: 'cascadeMarkMaiTho' },      // THAI CHARACTER MAI THO
+    { id: 'mai-tri',      char: '๊', dir: 'up',   labelKey: 'cascadeMarkMaiTri' },      // THAI CHARACTER MAI TRI
+    { id: 'mai-chattawa', char: '๋', dir: 'up',   labelKey: 'cascadeMarkMaiChattawa' }, // THAI CHARACTER MAI CHATTAWA
+    { id: 'sara-u',       char: 'ุ', dir: 'down', labelKey: 'cascadeMarkSaraU' },       // THAI CHARACTER SARA U
+    { id: 'sara-uu',      char: 'ู', dir: 'down', labelKey: 'cascadeMarkSaraUu' }       // THAI CHARACTER SARA UU
   ];
   const CASCADE_DEFAULT_MARK = 'mai-tho';   // U+0E49, the mark in the known example
-  const CASCADE_ANCHOR      = '\u0E01';     // THAI CHARACTER KO KAI, the carrier
-  const CASCADE_DEPTH       = { min: 10, max: 150, step: 1, default: 80 };
+  const CASCADE_ANCHOR      = 'ก';     // THAI CHARACTER KO KAI, the carrier
+  // The kaomoji from the "invade the post above" trend: the stack rides on
+  // the Thai letter KHO KHWAI inside "(つ ค c )".
+  const CASCADE_KAOMOJI_OPEN  = '(つ ค';
+  const CASCADE_KAOMOJI_CLOSE = ' c )';
+  const CASCADE_DEPTH       = { min: 10, max: 1000, step: 1, default: 80 };
   const CASCADE_PLACEMENTS  = ['prefix', 'suffix', 'each'];
-  const CASCADE_ANCHORS     = ['thai', 'text'];
+  const CASCADE_ANCHORS     = ['thai', 'text', 'kaomoji'];
 
   // ── Extreme: the classic engine with a larger budget ─────────────
   // Not a new algorithm: generateZalgo() with the same pools and the same
-  // pickUnique() cycling, so a 100-mark letter is the whole up pool twice
-  // over. It is a MODE rather than a wider default slider so classic
-  // presets and amplitude 1..20 stay exactly as they were (issue #864's
-  // rule), and the URL/slider clamp knows which range is in force.
+  // pickUnique() cycling. It is a MODE rather than a wider default slider so
+  // classic presets and amplitude 1..20 stay exactly as they were, and the
+  // URL/slider clamp knows which range is in force.
   const AMPLITUDE_CLASSIC = { min: 1, max: 20 };
-  const AMPLITUDE_EXTREME = { min: 1, max: 100, default: 50 };
+  const AMPLITUDE_EXTREME = { min: 1, max: 300, default: 50 };
+  // Per-zone amounts share the mode's ceiling; 0 switches a zone off.
+  const ZONE_DEFAULT = { up: 4, mid: 1, down: 3 };
 
   function clampAmplitude(n, extreme) {
     const range = extreme ? AMPLITUDE_EXTREME : AMPLITUDE_CLASSIC;
     const a = parseInt(n, 10);
     if (!Number.isFinite(a)) return extreme ? AMPLITUDE_EXTREME.default : 5;
     return Math.min(range.max, Math.max(range.min, a));
+  }
+
+  function clampZone(n, extreme) {
+    const max = extreme ? AMPLITUDE_EXTREME.max : AMPLITUDE_CLASSIC.max;
+    const z = parseInt(n, 10);
+    if (!Number.isFinite(z)) return 0;
+    return Math.min(max, Math.max(0, z));
   }
 
   function cascadeMark(id) {
@@ -383,9 +478,10 @@
 
   // Deterministic: the same options always give the same string, which is
   // what makes it a shareable URL and a decodable example card.
-  //   prefix / suffix + 'thai' carrier:  "ก้้้…้ text"  /  "text ก้้้…้"
-  //   prefix / suffix + 'text' carrier:  "J้้้…้ust Ken" / "Just Ke้้้…้n"
-  //   each:                              every non-whitespace code point
+  //   prefix / suffix + 'thai' carrier:    "ก้้้…้ text"  /  "text ก้้้…้"
+  //   prefix / suffix + 'text' carrier:    "J้้้…้ust Ken" / "Just Ke้้้…้n"
+  //   prefix / suffix + 'kaomoji' carrier: "(つ ค้้…้ c )\ntext" / "text\n(つ ค้้…้ c )"
+  //   each:                                every non-whitespace character
   function generateCascade(text, opts) {
     const o = opts || {};
     const stack     = cascadeMark(o.mark).char.repeat(clampDepth(o.depth));
@@ -394,17 +490,23 @@
     const src       = text == null ? '' : String(text);
 
     if (placement === 'each') {
-      return [...src].map(ch => (/\s/.test(ch) ? ch : ch + stack)).join('');
+      return graphemes(src).map(ch => (/^\s+$/.test(ch) ? ch : ch + stack)).join('');
+    }
+
+    if (anchor === 'kaomoji') {
+      const face = CASCADE_KAOMOJI_OPEN + stack + CASCADE_KAOMOJI_CLOSE;
+      if (!src) return face;
+      return placement === 'suffix' ? src + '\n' + face : face + '\n' + src;
     }
 
     if (anchor === 'text' && src) {
       // Ride on the text's own first (prefix) or last (suffix) visible
       // character. Support for Thai marks on a Latin base varies more than
       // on the Thai carrier, which is why 'thai' is the default.
-      const chars = [...src];
+      const chars = graphemes(src);
       const step  = placement === 'suffix' ? -1 : 1;
       let i = placement === 'suffix' ? chars.length - 1 : 0;
-      while (i >= 0 && i < chars.length && /\s/.test(chars[i])) i += step;
+      while (i >= 0 && i < chars.length && /^\s+$/.test(chars[i])) i += step;
       if (i >= 0 && i < chars.length) {
         chars[i] += stack;
         return chars.join('');
@@ -416,24 +518,80 @@
     return placement === 'suffix' ? src + ' ' + spike : spike + ' ' + src;
   }
 
+  // ── Platform length ─────────────────────────────────────────────
+  // X counts a post the way the open-source twitter-text library does:
+  // NFC-normalised, code points from U+0000 to U+10FF (Latin, Greek,
+  // Cyrillic, combining marks, Thai…) and a few punctuation ranges weigh 1,
+  // everything else weighs 2, and an emoji sequence weighs 2 however many
+  // code points it has. Other platforms get the JavaScript length.
+  // Marks typed after an emoji are not part of its sequence, so they are
+  // weighed one by one like any other code point.
+  const X_EMOJI = /\p{Extended_Pictographic}|\p{Regional_Indicator}|\u20E3/u;
+  const X_EMOJI_SEQ = /^[0-9#*]?(?:[\p{Extended_Pictographic}\p{Regional_Indicator}\p{Emoji_Modifier}\u200D\uFE0F\u20E3]|[\u{E0020}-\u{E007F}])+/u;
+  function xCodePointWeight(text) {
+    let n = 0;
+    for (const ch of text) {
+      const cp = ch.codePointAt(0);
+      const light = cp <= 0x10FF || (cp >= 0x2000 && cp <= 0x200D) ||
+                    (cp >= 0x2010 && cp <= 0x201F) || (cp >= 0x2032 && cp <= 0x2037);
+      n += light ? 1 : 2;
+    }
+    return n;
+  }
+  function xGraphemeWeight(g) {
+    if (!X_EMOJI.test(g)) return xCodePointWeight(g);
+    const seq = g.match(X_EMOJI_SEQ);
+    return seq ? 2 + xCodePointWeight(g.slice(seq[0].length)) : xCodePointWeight(g);
+  }
+  // With `cap`, counting stops as soon as the total passes it and the partial
+  // (already larger) total is returned. Normalising a stack of 360,000 marks
+  // takes half a second; knowing it is over 280 takes one letter.
+  function xWeightedLength(s, cap) {
+    const raw = String(s == null ? '' : s);
+    let n = 0;
+    if (cap == null) {
+      for (const g of graphemes(raw.normalize('NFC'))) n += xGraphemeWeight(g);
+      return n;
+    }
+    for (const g of graphemes(raw)) {
+      n += xGraphemeWeight(g.normalize('NFC'));
+      if (n > cap) return n;
+    }
+    return n;
+  }
+
+  // The largest value in [lo, hi] for which make(value) fits `limit`
+  // under `measure`, or null if even lo does not fit. Output length only
+  // grows with amplitude/depth, so a binary search is enough.
+  function fitValue(lo, hi, limit, make, measure) {
+    if (measure(make(lo)) > limit) return null;
+    let best = lo;
+    while (lo <= hi) {
+      const mid = (lo + hi) >> 1;
+      if (measure(make(mid)) <= limit) { best = mid; lo = mid + 1; } else { hi = mid - 1; }
+    }
+    return best;
+  }
+
   // ── Decoder (unzalgo) ───────────────────────────────────────────
   // Strips by codepoint RANGE, never by decomposition, which is why every
   // example card on the site must stay base + combining mark (see
   // scripts/check-zalgo-decodes.js). Two stages:
   //   1. the classic combining-mark blocks, every occurrence;
-  //   2. cascade runs: the SAME Thai tone mark (U+0E48..U+0E4B) two or more
-  //      times in a row. Thai writes at most one tone mark per consonant, so
-  //      a repeat is never language; it is a stack. A single mark is left
-  //      alone, so "น้ำ" pasted into the box comes back as "น้ำ".
+  //   2. cascade runs: the SAME Thai tone mark (U+0E48..U+0E4B) or the same
+  //      below vowel (U+0E38..U+0E3A) two or more times in a row. Thai writes
+  //      at most one of each per consonant, so a repeat is never language; it
+  //      is a stack. A single mark is left alone, so "น้ำ" or "กุ" pasted into
+  //      the box comes back unchanged.
   // The tool's own carrier (ก + run, standing apart from the text) goes with
   // the separator space the tool inserted, so prefix and suffix output decode
   // to exactly the text that went in. No lookbehind: older mobile Safari
   // would refuse to parse the whole file.
-  const DECODE_CLASSIC      = /[\u0300-\u036f\u0488\u0489\u1AB0-\u1AFF\u1DC0-\u1DFF\u20D0-\u20FF\uFE20-\uFE2F]/g;
-  const DECODE_CASCADE_RUN  = /([\u0E48-\u0E4B])\1+/g;
-  const DECODE_SPIKE_PREFIX = /^(?:\u0E01([\u0E48-\u0E4B])\1+[ \t]?)+/;
-  const DECODE_SPIKE_SUFFIX = /(?:[ \t]?\u0E01([\u0E48-\u0E4B])\1+)+$/;
-  const DECODE_SPIKE_INLINE = /[ \t]\u0E01([\u0E48-\u0E4B])\1+(?=[ \t])/g;
+  const DECODE_CLASSIC      = /[̀-ͯ҈҉᪰-᫿᷀-᷿⃐-⃿︠-︯]/g;
+  const DECODE_CASCADE_RUN  = /([ุ-ฺ่-๋])\1+/g;
+  const DECODE_SPIKE_PREFIX = /^(?:ก([ุ-ฺ่-๋])\1+[ \t]?)+/;
+  const DECODE_SPIKE_SUFFIX = /(?:[ \t]?ก([ุ-ฺ่-๋])\1+)+$/;
+  const DECODE_SPIKE_INLINE = /[ \t]ก([ุ-ฺ่-๋])\1+(?=[ \t])/g;
 
   function decodeZalgo(raw) {
     const s = raw == null ? '' : String(raw);
@@ -445,6 +603,13 @@
       .replace(DECODE_CASCADE_RUN, '');
   }
   /* @zalgo-engine:end */
+
+  // The embeddable widget (/usecase/zalgo-text/embed/) loads this file for
+  // the engine alone, so both surfaces run one engine instead of two copies.
+  // It has no control panel, so init() below leaves its page alone.
+  window.UTGZalgoEngine = {
+    generateZalgo, generateCascade, decodeZalgo, graphemes, makeRng, newSeed
+  };
 
   // ── Presets ─────────────────────────────────────────────────────
   // One-click starting points. Previews are pre-rendered (deterministic)
@@ -469,6 +634,15 @@
     id: 'cascade', labelKey: 'presetCascade', cascade: true,
     preview: CASCADE_ANCHOR + cascadeMark(CASCADE_DEFAULT_MARK).char.repeat(8)
   };
+  // The "invade the post above" trend: a kaomoji under your text whose Thai
+  // letter carries a stack tall enough to climb over the posts above it.
+  // 230 repeats plus a caption of up to about 40 characters fits a
+  // 280-weight X post (the kaomoji itself weighs 9).
+  const INVADER_PRESET = {
+    id: 'invader', labelKey: 'presetInvader', cascade: true,
+    cascadeSettings: { anchor: 'kaomoji', placement: 'suffix', depth: 230, mark: 'mai-tho' },
+    preview: '(\u3064 \u0E04' + cascadeMark(CASCADE_DEFAULT_MARK).char.repeat(6) + ' c )'
+  };
   // Extreme rides the classic engine. The preview is a real generateZalgo()
   // render of "he" at amplitude 40 (generated, never hand-typed: see the
   // zalgo-decodes rule in CLAUDE.md), stored so the button is stable.
@@ -482,7 +656,7 @@
   function presetList() {
     let list = PRESETS;
     if (extremeAvailable) list = list.concat([EXTREME_PRESET]);
-    if (cascadeAvailable) list = list.concat([CASCADE_PRESET]);
+    if (cascadeAvailable) list = list.concat([CASCADE_PRESET, INVADER_PRESET]);
     return list;
   }
 
@@ -523,6 +697,9 @@
     output:    '',
     preset:    'classic',
     extreme:   false,
+    seed:      newSeed(),
+    zonesOn:   false,
+    zones:     { up: ZONE_DEFAULT.up, mid: ZONE_DEFAULT.mid, down: ZONE_DEFAULT.down },
     cascade: {
       enabled:   false,
       depth:     CASCADE_DEPTH.default,
@@ -598,8 +775,9 @@
           <div class="cascade-field">
             <div class="cascade-field-label">${i18n.cascadeAnchor}</div>
             ${pills('anchor', [
-              { id: 'thai', label: i18n.cascadeAnchorThai },
-              { id: 'text', label: i18n.cascadeAnchorText }
+              { id: 'thai',    label: i18n.cascadeAnchorThai },
+              { id: 'text',    label: i18n.cascadeAnchorText },
+              { id: 'kaomoji', label: i18n.cascadeAnchorKaomoji }
             ])}
           </div>
         </div>
@@ -728,8 +906,58 @@
             <span class="slider-value" id="amplitudeValue">${state.amplitude}</span>
           </div>
         </div>
+
+        <!-- Amount per zone (advanced) -->
+        <div class="control-group full-width zones-group">
+          <div class="control-label">
+            <span class="icon">☰</span> ${i18n.controlZones}
+            ${tooltip(i18n.tooltipZones)}
+          </div>
+          <label class="zones-toggle">
+            <input type="checkbox" id="zonesToggle"${state.zonesOn ? ' checked' : ''}>
+            <span>${i18n.zonesToggle}</span>
+          </label>
+          <div class="zones-sliders" id="zonesSliders"${state.zonesOn ? '' : ' hidden'}>
+            ${['up', 'mid', 'down'].map(z => `
+              <div class="zone-field">
+                <label class="zone-label" for="zone-${z}">${i18n['zone' + z.charAt(0).toUpperCase() + z.slice(1)]}</label>
+                <div class="slider-row">
+                  <input type="range" class="slider-track zone-slider" id="zone-${z}" data-zone="${z}"
+                    min="0" max="${state.extreme ? AMPLITUDE_EXTREME.max : AMPLITUDE_CLASSIC.max}" step="1" value="${state.zones[z]}">
+                  <span class="slider-value" id="zone-${z}-value">${state.zones[z]}</span>
+                </div>
+              </div>`).join('')}
+          </div>
+        </div>
       </div>
     `;
+  }
+
+  // Zones on: Position and Amplitude no longer apply, so they are disabled
+  // (visibly) instead of left live and silent.
+  function syncZonesUi() {
+    const sliders = $('#zonesSliders');
+    const toggle  = $('#zonesToggle');
+    if (toggle)  toggle.checked = state.zonesOn;
+    if (sliders) sliders.hidden = !state.zonesOn;
+    const max = state.extreme ? AMPLITUDE_EXTREME.max : AMPLITUDE_CLASSIC.max;
+    ['up', 'mid', 'down'].forEach(z => {
+      state.zones[z] = clampZone(state.zones[z], state.extreme);
+      const s = $('#zone-' + z);
+      const v = $('#zone-' + z + '-value');
+      if (s) { s.max = max; s.value = state.zones[z]; }
+      if (v) v.textContent = state.zones[z];
+    });
+    if (state.cascade.enabled) return;
+    const panel = $('#zalgoControlPanel');
+    if (!panel) return;
+    panel.querySelectorAll('.pill[data-group="position"]').forEach(p => { p.disabled = state.zonesOn; });
+    const amp = $('#amplitudeSlider');
+    if (amp) amp.disabled = state.zonesOn;
+    panel.querySelectorAll('.pill[data-group="position"], #amplitudeSlider').forEach(el => {
+      const g = el.closest('.control-group');
+      if (g) g.classList.toggle('is-muted', state.zonesOn);
+    });
   }
 
   // ── Build Output Section ────────────────────────────────────────
@@ -746,6 +974,11 @@
           </div>
           <div class="output-actions">
             <button class="btn btn-regen" id="regenBtn">${i18n.btnRegenerate}</button>
+            <button class="btn btn-gif" id="gifBtn" type="button" aria-label="${i18n.gifLabel}" title="${i18n.gifLabel}" disabled>
+              <svg class="gif-icon" aria-hidden="true" focusable="false" viewBox="0 0 16 16" width="14" height="14"><path d="M8 2v8m0 0L4.5 6.5M8 10l3.5-3.5M3 13h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="gif-glitch" id="gifGlitch" aria-hidden="true">${i18n.btnGif}</span>
+              ${gifIsNew() ? `<span class="gif-new" aria-hidden="true">${i18n.gifNew}</span>` : ''}
+            </button>
             <button class="btn btn-copy" id="copyBtn" disabled>${i18n.btnCopy}</button>
           </div>
         </div>
@@ -757,6 +990,19 @@
             ${tooltip(i18n.fitTooltip)}
           </span>
           <span class="fit-badges" id="fitBadges"></span>
+          <span class="fit-status" id="fitStatus" role="status" aria-live="polite"></span>
+        </div>
+        <div class="gif-hint" id="gifHint" hidden>
+          <p class="gif-hint-line">
+            ${i18n.gifHint}
+            <button class="gif-hint-action" id="gifHintBtn" type="button">${i18n.gifHintAction}</button>.
+            <span class="gif-hint-note">${i18n.gifHintNote}</span>
+          </p>
+          <p class="gif-result" id="gifResult" hidden>
+            <span class="gif-result-status" id="gifStatus" role="status" aria-live="polite"></span>
+            <span class="gif-alt" id="gifAlt"></span>
+            <button class="btn gif-alt-copy" id="gifAltCopy" type="button">${i18n.btnCopyAlt}</button>
+          </p>
         </div>
       </div>
       <div class="variant-strip" id="variantStrip" hidden>
@@ -781,6 +1027,7 @@
   // Full strings are kept here so Copy always copies the whole text
   // even when the visible row is ellipsis-truncated.
   const variantOutputs = {};
+  let variantsKey = '';
   function updateVariants() {
     const strip = $('#variantStrip');
     if (!strip) return;
@@ -793,8 +1040,13 @@
     }
 
     strip.hidden = false;
-    VARIANTS.forEach(v => {
-      variantOutputs[v.id] = generateZalgo(text, v.opts);
+    // The variants depend only on the text and the seed, so a slider move
+    // (which changes neither) does not pay for them again.
+    const key = state.seed + '\u0000' + text;
+    if (key === variantsKey) return;
+    variantsKey = key;
+    VARIANTS.forEach((v, i) => {
+      variantOutputs[v.id] = generateZalgo(text, Object.assign({ seed: (state.seed + i + 1) >>> 0 }, v.opts));
       const el = strip.querySelector(`[data-variant-text="${v.id}"]`);
       if (el) el.textContent = variantOutputs[v.id];
     });
@@ -814,14 +1066,82 @@
       return;
     }
 
-    const len = state.output.length;
     wrap.hidden = false;
+    let anyFail = false;
     badges.innerHTML = PLATFORM_LIMITS.map(p => {
+      const len = platformLength(p, state.output, p.limit);
       const fits = len <= p.limit;
-      return `<span class="fit-badge ${fits ? 'fit-yes' : 'fit-no'}" title="${len} / ${p.limit}">
-        ${fits ? '✓' : '✕'} ${i18n[p.labelKey]}
-      </span>`;
+      if (!fits) anyFail = true;
+      // A red badge is a button: it shrinks the effect until the output fits.
+      return fits
+        ? `<span class="fit-badge fit-yes" title="${len} / ${p.limit}">✓ ${i18n[p.labelKey]}</span>`
+        : `<button type="button" class="fit-badge fit-no" data-fit="${p.id}" title="${p.id === 'x-post' ? '&gt; ' + p.limit : len + ' / ' + p.limit}">✕ ${i18n[p.labelKey]}</button>`;
     }).join('');
+    const status = $('#fitStatus');
+    if (status && !status.dataset.sticky) status.textContent = anyFail ? i18n.fitAction : '';
+    if (status) delete status.dataset.sticky;
+  }
+
+  // X counts with its own weights (see xWeightedLength); the others count
+  // the JavaScript string length, which is what their text boxes enforce.
+  function platformLength(p, s, cap) {
+    return p.id === 'x-post' ? xWeightedLength(s, cap) : s.length;
+  }
+
+  // Shrink the current effect to the largest setting that fits the limit:
+  // cascade depth, per-zone amounts, or amplitude, then frequency as a last
+  // resort. The seed is kept, so the result is the same look, only lighter.
+  function fitTo(platformId) {
+    const p = PLATFORM_LIMITS.find(x => x.id === platformId);
+    const input = $('#mainInput');
+    const text = input ? input.value.trim() : '';
+    if (!p || !text) return;
+    const measure = s => platformLength(p, s, p.limit);
+    const label = i18n[p.labelKey];
+    let ok = true;
+    const saved = { amplitude: state.amplitude, frequency: state.frequency, zones: Object.assign({}, state.zones), depth: state.cascade.depth };
+
+    if (state.cascade.enabled) {
+      const d = fitValue(CASCADE_DEPTH.min, state.cascade.depth, p.limit,
+        v => generateCascade(text, Object.assign({}, state.cascade, { depth: v })), measure);
+      if (d == null) ok = false; else state.cascade.depth = d;
+    } else if (state.zonesOn) {
+      const base = Object.assign({}, state.zones);
+      const top = Math.max(base.up, base.mid, base.down, 1);
+      const scale = v => ({ up: Math.round(base.up * v / top), mid: Math.round(base.mid * v / top), down: Math.round(base.down * v / top) });
+      const v = fitValue(0, top, p.limit, v => generateZalgo(text, classicOpts({ zones: scale(v) })), measure);
+      if (v == null) ok = false; else state.zones = scale(v);
+    } else {
+      const a = fitValue(1, state.amplitude, p.limit, v => generateZalgo(text, classicOpts({ amplitude: v })), measure);
+      if (a != null) {
+        state.amplitude = a;
+      } else {
+        state.amplitude = 1;
+        const f = fitValue(0, Math.round(state.frequency * 100), p.limit,
+          v => generateZalgo(text, classicOpts({ amplitude: 1, frequency: v / 100 })), measure);
+        if (f == null) ok = false; else state.frequency = f / 100;
+      }
+    }
+    if (!ok) {
+      // Nothing fits: leave the user's settings exactly as they were.
+      state.amplitude = saved.amplitude;
+      state.frequency = saved.frequency;
+      state.zones = saved.zones;
+      state.cascade.depth = saved.depth;
+    } else {
+      clearActivePreset();
+    }
+    syncControlsToState();
+    runGenerate();
+    const status = $('#fitStatus');
+    if (status) {
+      status.textContent = (ok ? i18n.fitDone : i18n.fitImpossible).replace('{platform}', label);
+      status.dataset.sticky = '1';
+      // The badge that was pressed is re-rendered, so keep keyboard focus
+      // nearby instead of dropping it to the page.
+      status.setAttribute('tabindex', '-1');
+      try { status.focus({ preventScroll: true }); } catch (e) { /* ignore */ }
+    }
   }
 
   // ── Build Decode Section ────────────────────────────────────────
@@ -867,14 +1187,33 @@
 
     state.output = state.cascade.enabled
       ? generateCascade(text, state.cascade)
-      : generateZalgo(text, {
-          charType:  state.charType,
-          position:  state.position,
-          shape:     state.shape,
-          frequency: state.frequency,
-          amplitude: state.amplitude
-        });
+      : generateZalgo(text, classicOpts());
     updateOutput();
+  }
+
+  // The classic engine's options from state, with optional overrides. The
+  // seed is always passed, so the same link gives the same marks.
+  function classicOpts(over) {
+    return Object.assign({
+      charType:  state.charType,
+      position:  state.position,
+      shape:     state.shape,
+      frequency: state.frequency,
+      amplitude: state.amplitude,
+      zones:     state.zonesOn ? state.zones : null,
+      seed:      state.seed
+    }, over || {});
+  }
+
+  // Sliders fire faster than a very long output can be rebuilt; coalesce
+  // them so each frame renders the latest value once instead of queueing.
+  let generateFrame = 0;
+  function scheduleGenerate() {
+    if (generateFrame) return;
+    generateFrame = requestAnimationFrame(() => {
+      generateFrame = 0;
+      runGenerate();
+    });
   }
 
   function updateOutput() {
@@ -893,6 +1232,19 @@
 
     if (chars) chars.textContent = state.output.length + ' ' + i18n.outputChars;
     if (btn)   btn.disabled = !state.output;
+    const gif = $('#gifBtn');
+    if (gif && !gif.classList.contains('is-working')) gif.disabled = !state.output;
+    const hint = $('#gifHint');
+    if (hint) hint.hidden = !state.output;
+    // A new output makes the last GIF's status and alt text stale.
+    const gifResult = $('#gifResult');
+    if (gifResult && gif && !gif.classList.contains('is-working')) gifResult.hidden = true;
+    // The first output of the visit plays the label's glitch once, so the
+    // button shows what it makes; after that it stays still until hovered.
+    if (state.output && !gifIntroPlayed) {
+      gifIntroPlayed = true;
+      animateGifLabel(GIF_INTRO_MS);
+    }
 
     // Cascade mode: clip the PREVIEW (never the copied string), keep the raw
     // stack out of accessible names, and hide Regenerate, which would do
@@ -954,6 +1306,7 @@
       if (depthValue)  depthValue.textContent = state.cascade.depth;
     }
     setClassicControlsMuted(state.cascade.enabled);
+    syncZonesUi();
   }
 
   function setActivePreset(id) {
@@ -982,8 +1335,13 @@
         if (preset) {
           if (preset.cascade) {
             state.cascade.enabled = true;
+            // The plain Thai Cascade preset returns to the classic spike;
+            // Post Invader sets its own carrier, placement and depth.
+            Object.assign(state.cascade, preset.cascadeSettings ||
+              { anchor: 'thai', placement: 'prefix', depth: CASCADE_DEPTH.default, mark: CASCADE_DEFAULT_MARK });
           } else {
             state.cascade.enabled = false;
+            state.zonesOn = false;
             state.extreme = !!preset.extreme;
             Object.assign(state, preset.settings);
             state.amplitude = clampAmplitude(state.amplitude, state.extreme);
@@ -1052,7 +1410,7 @@
       freqSlider.addEventListener('input', () => {
         state.frequency = parseFloat(freqSlider.value);
         freqValue.textContent = Math.round(state.frequency * 100) + '%';
-        runGenerate();
+        scheduleGenerate();
       });
     }
 
@@ -1063,7 +1421,65 @@
       ampSlider.addEventListener('input', () => {
         state.amplitude = clampAmplitude(ampSlider.value, state.extreme);
         ampValue.textContent = state.amplitude;
+        scheduleGenerate();
+      });
+    }
+
+    // Amount per zone: toggle and the three sliders
+    const zonesToggle = $('#zonesToggle');
+    if (zonesToggle) {
+      zonesToggle.addEventListener('change', () => {
+        state.zonesOn = zonesToggle.checked;
+        clearActivePreset();
+        syncZonesUi();
         runGenerate();
+      });
+    }
+    panel.querySelectorAll('.zone-slider').forEach(s => {
+      s.addEventListener('input', () => {
+        state.zones[s.dataset.zone] = clampZone(s.value, state.extreme);
+        const v = $('#zone-' + s.dataset.zone + '-value');
+        if (v) v.textContent = state.zones[s.dataset.zone];
+        clearActivePreset();
+        scheduleGenerate();
+      });
+    });
+
+    // Fit badges: a red one shrinks the effect to that platform's limit
+    const fitBadges = $('#fitBadges');
+    if (fitBadges) {
+      fitBadges.addEventListener('click', (e) => {
+        const b = e.target.closest('[data-fit]');
+        if (b) fitTo(b.dataset.fit);
+      });
+    }
+
+    // Animated GIF: the encoder loads on first use, so the page pays nothing
+    // for it until someone asks for a GIF.
+    const gifBtn = $('#gifBtn');
+    if (gifBtn) {
+      gifBtn.addEventListener('click', () => makeGif('button'));
+      const replay = () => {
+        if (gifRefocusing) { gifRefocusing = false; return; }
+        if (!gifBtn.disabled) animateGifLabel(GIF_INTRO_MS);
+      };
+      gifBtn.addEventListener('mouseenter', replay);
+      gifBtn.addEventListener('focus', replay);
+      gifBtn.addEventListener('mouseleave', () => { if (gifLabelTimer) stillGifLabel(); });
+      gifBtn.addEventListener('blur', () => { if (gifLabelTimer) stillGifLabel(); });
+    }
+    const gifHintBtn = $('#gifHintBtn');
+    if (gifHintBtn) gifHintBtn.addEventListener('click', () => makeGif('hint'));
+    const gifAltCopy = $('#gifAltCopy');
+    if (gifAltCopy) {
+      gifAltCopy.addEventListener('click', () => {
+        const alt = $('#gifAlt');
+        const text = alt ? alt.textContent : '';
+        if (!text || !navigator.clipboard) return;
+        navigator.clipboard.writeText(text).then(() => {
+          gifAltCopy.textContent = i18n.btnCopied;
+          setTimeout(() => { gifAltCopy.textContent = i18n.btnCopyAlt; }, 1500);
+        }).catch(() => {});
       });
     }
 
@@ -1074,7 +1490,7 @@
       depthSlider.addEventListener('input', () => {
         state.cascade.depth = clampDepth(depthSlider.value);
         if (depthValue) depthValue.textContent = state.cascade.depth;
-        runGenerate();
+        scheduleGenerate();
       });
     }
 
@@ -1082,6 +1498,23 @@
     const mainInput  = $('#mainInput');
     const charCount  = $('#charCount');
     if (mainInput) {
+      // The page opens with a sample already converted; the first tap selects
+      // it, so typing replaces it in one step instead of clear-then-type.
+      // A tap can move the caret after focus and undo the selection, so the
+      // first edit also replaces the untouched sample outright.
+      const sample = mainInput.defaultValue;
+      let sampleUntouched = !!sample && mainInput.value === sample;
+      mainInput.addEventListener('focus', () => {
+        if (sampleUntouched && mainInput.value === sample) {
+          setTimeout(() => { try { mainInput.select(); } catch (e) { /* ignore */ } }, 0);
+        }
+      }, { once: true });
+      mainInput.addEventListener('beforeinput', (e) => {
+        if (!sampleUntouched) return;
+        sampleUntouched = false;
+        const inserting = /^insert/.test(e.inputType || '');
+        if (inserting && mainInput.value === sample) mainInput.value = '';
+      });
       mainInput.addEventListener('input', () => {
         if (mainInput.value.length > 500) {
           mainInput.value = mainInput.value.slice(0, 500);
@@ -1102,7 +1535,10 @@
     // Regenerate button
     const regenBtn = $('#regenBtn');
     if (regenBtn) {
-      regenBtn.addEventListener('click', runGenerate);
+      regenBtn.addEventListener('click', () => {
+        state.seed = newSeed();
+        runGenerate();
+      });
     }
 
     // Variant strip copy buttons (delegated — strip is rebuilt per input)
@@ -1165,6 +1601,224 @@
     });
   }
 
+  // ── Animated GIF ────────────────────────────────────────────────
+  // Frames are real outputs: classic zalgo re-rolls its marks each frame (a
+  // flicker), a cascade grows from short to its full depth. Rendering and
+  // encoding happen in the browser (zalgo-gif.js); nothing is uploaded.
+  let gifLoader = null;
+  function loadGifModule() {
+    if (window.UTGZalgoGif) return Promise.resolve(window.UTGZalgoGif);
+    if (!gifLoader) {
+      gifLoader = new Promise((resolve, reject) => {
+        const s = document.createElement('script');
+        s.src = '/usecase/zalgo-text/zalgo-gif.js';
+        s.onload = () => (window.UTGZalgoGif ? resolve(window.UTGZalgoGif) : reject(new Error('gif module missing')));
+        s.onerror = () => { gifLoader = null; reject(new Error('gif module failed to load')); };
+        document.head.appendChild(s);
+      });
+    }
+    return gifLoader;
+  }
+
+  function gifFrames() {
+    const input = $('#mainInput');
+    const text = input ? input.value.trim() : '';
+    if (!text) return [];
+    if (state.cascade.enabled) {
+      const full = state.cascade.depth;
+      const steps = 10;
+      const frames = [];
+      for (let k = 1; k <= steps; k++) {
+        const d = Math.max(CASCADE_DEPTH.min, Math.round(full * k / steps));
+        frames.push(generateCascade(text, Object.assign({}, state.cascade, { depth: d })));
+      }
+      return frames;
+    }
+    const frames = [];
+    for (let k = 0; k < 8; k++) frames.push(generateZalgo(text, classicOpts({ seed: (state.seed + k * 7919) >>> 0 })));
+    return frames;
+  }
+
+  // ── The GIF button's label glitches like the file it makes ──────
+  // A short loop on the first output of the visit, and again while the
+  // button is hovered or focused, capped at GIF_INTRO_MS so nothing moves
+  // on its own for more than five seconds (WCAG 2.2.2). Reduced-motion
+  // visitors only ever see one still, glitched frame. The glitched text is
+  // aria-hidden; the button's name stays gifLabel.
+  const GIF_INTRO_MS = 4000;
+  const GIF_FRAME_MS = 140;
+  // The "New" tag comes off on its own on this date. It is part of the
+  // design register #128 measures, so the date is fixed, not open-ended.
+  const GIF_NEW_UNTIL = Date.UTC(2026, 10, 15); // 2026-11-15
+  let gifIntroPlayed = false;
+  let gifLabelTimer = null;
+  let gifLabelSeed = 1;
+  let gifLabelDrawn = false;
+  let gifRefocusing = false;  // focus we restore after a GIF is not a hover
+
+  function gifIsNew() { return Date.now() < GIF_NEW_UNTIL; }
+
+  function reducedMotion() {
+    return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  }
+
+  function glitchLabelFrame() {
+    const el = $('#gifGlitch');
+    if (!el) return;
+    gifLabelSeed = (gifLabelSeed + 7919) >>> 0;
+    gifLabelDrawn = true;
+    el.textContent = generateZalgo(i18n.btnGif, {
+      charType: 'all', position: 'up-down', shape: 'uniform',
+      frequency: 0.6, amplitude: 1, seed: gifLabelSeed
+    });
+  }
+
+  function stillGifLabel() {
+    if (gifLabelTimer) { clearInterval(gifLabelTimer); gifLabelTimer = null; }
+    glitchLabelFrame();
+  }
+
+  function animateGifLabel(ms) {
+    const btn = $('#gifBtn');
+    if (!btn || btn.classList.contains('is-working')) return;
+    // Reduced motion: draw the still frame once and never swap it, not even
+    // on hover; a new frame per hover would be motion by another name.
+    if (reducedMotion()) { if (!gifLabelDrawn) stillGifLabel(); return; }
+    if (gifLabelTimer) clearInterval(gifLabelTimer);
+    const stopAt = Date.now() + ms;
+    glitchLabelFrame();
+    gifLabelTimer = setInterval(() => {
+      if (Date.now() >= stopAt || document.hidden) stillGifLabel();
+      else glitchLabelFrame();
+    }, GIF_FRAME_MS);
+  }
+
+  function gifMode() {
+    return state.cascade.enabled ? 'cascade' : (state.extreme ? 'extreme' : 'classic');
+  }
+
+  // Both entry points (the header button and the line under the output)
+  // run this. `entry` says which one was pressed, so #128 can tell them apart.
+  function makeGif(entry) {
+    const frames = gifFrames();
+    if (!frames.length) return;
+    const btns = [$('#gifBtn'), $('#gifHintBtn')].filter(Boolean);
+    if (btns.some(b => b.classList.contains('is-working'))) return;
+    const pressed = entry === 'hint' ? $('#gifHintBtn') : $('#gifBtn');
+    const label = $('#gifGlitch');
+    stillGifLabel();
+    btns.forEach(b => { b.disabled = true; b.classList.add('is-working'); });
+    if (label) label.textContent = i18n.gifWorking;
+
+    const result = $('#gifResult');
+    const status = $('#gifStatus');
+    const alt = $('#gifAlt');
+    const altCopy = $('#gifAltCopy');
+    if (result) result.hidden = false;
+    if (status) status.textContent = i18n.gifWorking;
+    if (alt) alt.textContent = '';
+    if (altCopy) altCopy.hidden = true;
+
+    const mode = gifMode();
+    const t0 = Date.now();
+    // The alt text describes the frames captured now, not whatever is typed
+    // by the time the file is ready.
+    const input0 = $('#mainInput');
+    const plain = input0 ? input0.value.trim() : '';
+    trackGif({ stage: 'attempt', mode, frames: frames.length, entry });
+
+    const done = (text) => {
+      btns.forEach(b => { b.classList.remove('is-working'); b.disabled = !state.output; });
+      if (label) label.textContent = i18n.btnGif;
+      stillGifLabel();
+      if (status) status.textContent = text;
+      if (result && !text) result.hidden = true;
+      // Disabling the pressed button dropped focus to <body>; put it back.
+      if (pressed && !pressed.disabled && document.activeElement === document.body) {
+        gifRefocusing = pressed.id === 'gifBtn';
+        pressed.focus();
+      }
+    };
+
+    let ms = 0;
+    let completed = false;
+    loadGifModule()
+      .then(G => G.make(frames, { delay: state.cascade.enabled ? 12 : 14, holdLast: state.cascade.enabled ? 120 : 0 }))
+      .then(blob => gifSize(blob).then(size => {
+        ms = Date.now() - t0;
+        trackGif({ stage: 'complete', mode, frames: frames.length, entry, ms, bytes: blob.size, w: size.w, h: size.h });
+        completed = true;
+        return deliverGif(blob);
+      }))
+      .then(outcome => {
+        if (alt) alt.textContent = i18n.gifAltText.replace('{text}', plain);
+        if (altCopy) altCopy.hidden = !plain;
+        done(outcome === 'native' ? i18n.gifShared : (outcome === 'aborted' ? '' : i18n.gifSaved));
+      })
+      .catch(() => {
+        // A delivery error after the file was made is not an encode failure.
+        if (!completed) trackGif({ stage: 'fail', mode, frames: frames.length, entry, ms: Date.now() - t0 });
+        done(i18n.gifFailed);
+      });
+  }
+
+  // Width and height from the GIF's own logical screen descriptor.
+  function gifSize(blob) {
+    if (!blob || !blob.slice || !blob.slice(0, 10).arrayBuffer) return Promise.resolve({ w: null, h: null });
+    return blob.slice(0, 10).arrayBuffer().then(buf => {
+      const v = new DataView(buf);
+      return { w: v.getUint16(6, true), h: v.getUint16(8, true) };
+    }).catch(() => ({ w: null, h: null }));
+  }
+
+  // Hand the file to the OS share sheet where the browser can share files
+  // (phones, mostly) and download it everywhere else. The share core writes
+  // the share event; the page link rides along as text.
+  function deliverGif(blob) {
+    const UTG = window.UltraTextGen;
+    if (UTG && UTG.shareImageBlob) {
+      return UTG.shareImageBlob(blob, {
+        filename: 'zalgo-text.gif',
+        title: document.title,
+        text: window.location.href,
+        surface: 'zalgo',
+        itemType: 'gif',
+        format: 'gif'
+      });
+    }
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'zalgo-text.gif';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 10000);
+    return Promise.resolve('downloaded');
+  }
+
+  // zalgo_gif carries every parameter on every stage (null where it does not
+  // apply), because GTM's data layer keeps the last value of a key: a
+  // `gif_ms` left over from one GIF would otherwise ride on the next attempt.
+  // Never the typed text.
+  function trackGif(d) {
+    try {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'zalgo_gif',
+        gif_stage: d.stage,
+        gif_entry: d.entry || null,
+        zalgo_mode: d.mode,
+        zalgo_frames: d.frames,
+        gif_ms: d.ms != null ? d.ms : null,
+        gif_bytes: d.bytes != null ? d.bytes : null,
+        gif_w: d.w != null ? d.w : null,
+        gif_h: d.h != null ? d.h : null,
+        zalgo_source_path: window.location.pathname
+      });
+    } catch (e) { /* analytics must never break the generator */ }
+  }
+
   // Preset selection telemetry: dataLayer -> GTM -> GA4, same shape as
   // header.js's cta_click. Exists so the cascade and extreme modes have a
   // measurable adoption number for their readout (the one thing the
@@ -1184,6 +1838,15 @@
   // Shared clipboard helper with execCommand fallback + button feedback
   function copyToClipboard(text, btn, idleLabel) {
     const done = () => {
+      // Every copy on this page funnels through here, so this is the one
+      // place it is counted. "button" carries no copy_item: the text is
+      // generated from what the visitor typed.
+      if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
+        window.UltraTextGen.trackCopy('button', text);
+      } else {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'copy_text', copy_method: 'button' });
+      }
       if (!btn) return;
       btn.textContent = i18n.btnCopied;
       btn.classList.add('copied');
@@ -1241,6 +1904,22 @@
       if (CASCADE_PLACEMENTS.indexOf(params.get('place')) !== -1)        state.cascade.placement = params.get('place');
       if (CASCADE_MARKS.some(m => m.id === params.get('mark')))          state.cascade.mark      = params.get('mark');
       if (CASCADE_ANCHORS.indexOf(params.get('anchor')) !== -1)          state.cascade.anchor    = params.get('anchor');
+      // A kaomoji carrier is the Post Invader preset's signature.
+      if (state.cascade.anchor === 'kaomoji') state.preset = 'invader';
+    }
+    // The seed makes a shared link reproduce the exact marks, not just the
+    // settings. Base 36 keeps the link short.
+    if (params.has('seed')) {
+      const s = parseInt(params.get('seed'), 36);
+      if (Number.isFinite(s) && s > 0) state.seed = s >>> 0;
+    }
+    if (params.get('zones') === '1') {
+      state.zonesOn = true;
+      state.preset = null;
+      ['up', 'mid', 'down'].forEach(z => {
+        const k = 'z' + z.charAt(0);
+        if (params.has(k)) state.zones[z] = clampZone(params.get(k), state.extreme);
+      });
     }
     if (params.has('variant') && VARIANTS.some(v => v.id === params.get('variant'))) {
       sharedVariant = params.get('variant');
@@ -1258,6 +1937,13 @@
     if (state.frequency !== 0.8)           params.set('freq',  state.frequency);
     if (state.amplitude !== 5)             params.set('amp',   state.amplitude);
     if (state.extreme && !state.cascade.enabled) params.set('extreme', '1');
+    if (state.zonesOn && !state.cascade.enabled) {
+      params.set('zones', '1');
+      params.set('zu', state.zones.up);
+      params.set('zm', state.zones.mid);
+      params.set('zd', state.zones.down);
+    }
+    if (!state.cascade.enabled) params.set('seed', state.seed.toString(36));
     if (state.cascade.enabled) {
       params.set('cascade', '1');
       if (state.cascade.depth !== CASCADE_DEPTH.default)  params.set('depth',  state.cascade.depth);
@@ -1336,6 +2022,7 @@
       outputSection.appendChild(row);
     }
 
+
     // One compact pair per fixed-flavour variant row.
     VARIANTS.forEach(v => {
       const varRow = document.querySelector('.variant-row[data-variant="' + v.id + '"]');
@@ -1343,6 +2030,13 @@
       const pair = UTG.buildShareActions({ styleId: 'zalgo-' + v.id, name: i18n[v.labelKey] || v.id, disabled: true });
       pair.setAttribute('data-variant-share', v.id);
       varRow.appendChild(pair);
+    });
+    // Stamped after both loops, so the variant rows' buttons exist.
+    // The PNG card is the comparator register #128 reads the GIF against,
+    // so it names this page as its surface. Only the image button: the link
+    // share keeps "generator" so its own series (#112) stays continuous.
+    document.querySelectorAll('#zalgoOutputSection .share-image-btn, #variantRows .share-image-btn').forEach(b => {
+      b.dataset.shareSurface = 'zalgo';
     });
 
     syncShareState();
@@ -1362,6 +2056,7 @@
 
   function init() {
     const panel = $('#zalgoControlPanel');
+    if (!panel) return;
     cascadeAvailable = !!(panel && panel.hasAttribute('data-cascade'));
     extremeAvailable = !!(panel && panel.hasAttribute('data-extreme'));
     loadFromURL();

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Ozdobné písmo a stylový text ke zkopírování — písmenka na Instagram, TikTok a nicky",
-    "description": "Generátor ozdobného písma, estetických písmenek a stylového textu ke zkopírování. Tučné, kurzíva, gotika, bublinkové, Zalgo a symboly — vlož do bia na Instagramu, do popisku na TikToku, do herního nicku nebo na Discord. Zdarma, bez účtu."
+    "title": "Ozdobné písmo a stylový text ke zkopírování",
+    "description": "Generátor ozdobného písma a stylového textu ke zkopírování: tučné, kurzíva, gotika, bublinkové, Zalgo a symboly. Pro Instagram, TikTok, herní nick i Discord."
   },
   "hero": {
     "title": "Ozdobné písmo a stylová písmenka ke zkopírování",
@@ -209,6 +209,30 @@
       "titleFor": "Náhled: {style}",
       "dialogAriaLabel": "Náhled platformy",
       "closeAriaLabel": "Zavřít náhled"
+    },
+    "imageSelection": {
+      "selectImage": "Vybrat a sdílet jako obrázek",
+      "viewSelection": "Zobrazit výběr ({n})",
+      "hint": "Vyber emoji nebo symboly z libovolné sekce pro svůj obrázek.",
+      "count": "Vybráno: {n}",
+      "empty": "Zatím nic nevybráno",
+      "shareImage": "Sdílet obrázek",
+      "downloadImage": "Stáhnout obrázek",
+      "cancel": "Zrušit",
+      "preview": "Náhled obrázku",
+      "close": "Zavřít",
+      "remove": "Odebrat {item}",
+      "addAll": "Přidat všechny ({n})",
+      "removeAll": "Odebrat všechny ({n})",
+      "limit": "Můžeš přidat nejvýš {max}.",
+      "tooBig": "Na jeden obrázek je jich moc. Pár jich odeber.",
+      "making": "Vytváří se obrázek…",
+      "shared": "Obrázek sdílen",
+      "downloaded": "Obrázek stažen",
+      "shareFailed": "Sdílení se nepovedlo. Zkus stáhnout.",
+      "renderFailed": "Obrázek se nepovedlo vytvořit. Zkus to znovu.",
+      "trayLabel": "Výběr pro obrázek",
+      "setUnavailable": "Tuhle sadu zatím nejde přidat do obrázku."
     }
   },
   "useCases": {

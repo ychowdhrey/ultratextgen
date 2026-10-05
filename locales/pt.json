@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Gerador de Fontes para Copiar e Colar — Letras Diferentes e Símbolos",
-    "description": "Gerador de fontes online: letras diferentes, fontes bonitas e símbolos aesthetic para copiar e colar na bio do Instagram, nick de Free Fire, status do WhatsApp, Discord e TikTok. Tem zalgo, sublinhado e símbolos y2k."
+    "description": "Gerador de fontes: letras diferentes, fontes bonitas e símbolos aesthetic para copiar e colar na bio do Instagram, no nick de Free Fire, Discord e TikTok."
   },
   "hero": {
     "title": "Fontes e símbolos aesthetic para copiar e colar",
@@ -209,6 +209,30 @@
       "titleFor": "Pré-visualização: {style}",
       "dialogAriaLabel": "Pré-visualização por plataforma",
       "closeAriaLabel": "Fechar pré-visualização"
+    },
+    "imageSelection": {
+      "selectImage": "Selecionar e compartilhar imagem",
+      "viewSelection": "Ver seleção ({n})",
+      "hint": "Escolha emojis ou símbolos de qualquer seção para criar sua imagem.",
+      "count": "{n} selecionados",
+      "empty": "Nada selecionado ainda",
+      "shareImage": "Compartilhar imagem",
+      "downloadImage": "Baixar imagem",
+      "cancel": "Cancelar",
+      "preview": "Prévia da imagem",
+      "close": "Fechar",
+      "remove": "Remover {item}",
+      "addAll": "Adicionar todos ({n})",
+      "removeAll": "Remover todos ({n})",
+      "limit": "Você pode adicionar até {max}.",
+      "tooBig": "Muitos para uma imagem. Remova alguns.",
+      "making": "Criando imagem…",
+      "shared": "Imagem compartilhada",
+      "downloaded": "Imagem baixada",
+      "shareFailed": "Não deu para compartilhar. Tente baixar.",
+      "renderFailed": "Não deu para criar a imagem. Tente de novo.",
+      "trayLabel": "Seleção da imagem",
+      "setUnavailable": "Este conjunto ainda não pode entrar em uma imagem."
     }
   },
   "useCases": {
@@ -304,7 +328,7 @@
           },
           {
             "question": "Dá pra usar no nick do Free Fire, Roblox e outros games?",
-            "answer": "Dá. Nick de Free Fire (FF), <a href=\"/pt/usecase/nomes-para-roblox/\">Roblox</a>, Steam, Minecraft, COD Mobile, Valorant — todos aceitam caracteres Unicode.\n    <br><br>\n    <strong>Receita pra um nick estiloso</strong><br>\n    Mistura uma letra diferente (gótica ou bubble costuma render mais) com um ou dois símbolos.\n    <br><br>\n    <strong>Exemplo</strong><br>\n    「꧁༒𝕯𝖆𝖗𝖐𝖂𝖔𝖑𝖋༒꧂」\n    <br><br>\n    Se o jogo recusar algum caractere específico (alguns são bloqueados pra evitar nicks ilegíveis), troca por outro estilo e tenta de novo. Em geral, gótica e fraktur passam bem em quase todos os games. Se o jogo recusar o nick, veja <a href=\"/pt/answers/por-que-meu-nome-foi-rejeitado-no-jogo/\">por que meu nome foi rejeitado no jogo</a>."
+            "answer": "Na maioria dos jogos, dá, mas cada um tem sua regra. Free Fire e <a href=\"/pt/usecase/nomes-para-mobile-legends/\">Mobile Legends</a> costumam aceitar letras e símbolos Unicode, e a Steam aceita quase tudo. O nome de usuário do <a href=\"/pt/usecase/nomes-para-roblox/\">Roblox</a> e o do Minecraft Java só aceitam letras, números e _ (no Roblox, o estilo vai no nome de exibição). O Valorant documenta só letras, e no COD Mobile os caracteres aceitos mudam a cada patch.\n    <br><br>\n    <strong>Receita pra um nick estiloso</strong><br>\n    Mistura uma letra diferente (gótica ou bubble costuma render mais) com um ou dois símbolos.\n    <br><br>\n    <strong>Exemplo</strong><br>\n    「꧁༒𝕯𝖆𝖗𝖐𝖂𝖔𝖑𝖋༒꧂」\n    <br><br>\n    Se o jogo recusar algum caractere específico (alguns são bloqueados pra evitar nicks ilegíveis), troca por outro estilo e tenta de novo. Gótica e fraktur passam em muitos games, mas no Fortnite podem aparecer como ponto de interrogação. Se o jogo recusar o nick, veja <a href=\"/pt/answers/por-que-meu-nome-foi-rejeitado-no-jogo/\">por que meu nome foi rejeitado no jogo</a>."
           },
           {
             "question": "E no WhatsApp e Telegram, funciona?",

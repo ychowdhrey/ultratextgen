@@ -51,7 +51,10 @@ from collections import Counter
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(REPO, "scripts"))
-from lib.cta_routing import DESTINATIONS, route, is_homepage_href  # noqa: E402
+from lib.cta_routing import (  # noqa: E402
+    DESTINATIONS, route, is_homepage_href,
+    PRINTABLE_DESTINATIONS, printables_route, printables_card_inner, is_paste_href,
+)
 
 # One card, captured in three pieces so each can be replaced without touching
 # the surrounding whitespace or any attribute the template carries.
@@ -87,6 +90,31 @@ def rewrite(page_html, dest):
     return page_html[: m.start()] + new_card + page_html[m.end():]
 
 
+# A printables card: the button carries class before href, and its paragraph is
+# plain text while it still opens a copy-paste category. Matched separately so the
+# shared-card pattern above is not loosened to fit it.
+PCARD_RE = re.compile(
+    r'(?P<open><div class="cta-card">\s*)'
+    r'<h3>(?P<h3>[^<]*)</h3>\s*'
+    r'<p>(?P<p>[^<]*)</p>\s*'
+    r'<a class="cta-btn" href="(?P<href>[^"]*)">(?P<label>[^<]*)</a>',
+)
+
+
+def rewrite_printable(page_html, key):
+    """Return the page with its printables card re-routed, or None.
+
+    Only a card still opening a copy-paste destination is eligible, so a second
+    run, or a card pointed somewhere on purpose (the Spanish chart's alt-codes
+    card), is left alone."""
+    matches = list(PCARD_RE.finditer(page_html))
+    if len(matches) != 1 or not is_paste_href(matches[0].group("href")):
+        return None
+    m = matches[0]
+    new_card = m.group("open") + printables_card_inner(key, m.group("href").strip())
+    return page_html[: m.start()] + new_card + page_html[m.end():]
+
+
 def candidates(files):
     if files:
         return [os.path.relpath(os.path.abspath(f), REPO).replace(os.sep, "/") for f in files]
@@ -94,6 +122,14 @@ def candidates(files):
         os.path.relpath(p, REPO).replace(os.sep, "/")
         for p in glob.glob(os.path.join(REPO, "**", "index.html"), recursive=True)
     )
+
+
+def _href(key):
+    if key.startswith("printables:"):
+        return PRINTABLE_DESTINATIONS[key.split(":", 1)[1]]["href"]
+    if key in PRINTABLE_DESTINATIONS:
+        return PRINTABLE_DESTINATIONS[key]["href"]
+    return DESTINATIONS[key]["href"]
 
 
 def main(argv=None):
@@ -108,6 +144,21 @@ def main(argv=None):
     by_dest = Counter()
 
     for rel in candidates(args.files):
+        pkey = printables_route(rel)
+        if pkey:
+            path = os.path.join(REPO, rel)
+            page = open(path, encoding="utf-8").read()
+            new_page = rewrite_printable(page, pkey)
+            if new_page is None:
+                skipped["printables: no copy-paste card to move"] += 1
+                continue
+            changed.append((rel, pkey))
+            by_dest["printables:" + pkey] += 1
+            if args.write:
+                open(path, "w", encoding="utf-8").write(new_page)
+            if args.limit and len(changed) >= args.limit:
+                break
+            continue
         dest_key = route(rel)
         if not dest_key:
             skipped["no routing rule for this page"] += 1
@@ -147,7 +198,7 @@ def main(argv=None):
     print("CTA card routing" + ("" if args.write else " (report only, pass --write to apply)"))
     print(f"  {verb.lower()}: {len(changed)} page(s)")
     for key, n in by_dest.most_common():
-        print(f"    {n:>5} -> {DESTINATIONS[key]['href']}")
+        print(f"    {n:>5} -> {_href(key)}")
     print("\n  skipped:")
     for reason, n in skipped.most_common():
         print(f"    {n:>5}  {reason}")
@@ -165,7 +216,7 @@ def main(argv=None):
     if changed and not args.write:
         print("\n  First few:")
         for rel, key in changed[:6]:
-            print(f"    · {rel}  ->  {DESTINATIONS[key]['href']}")
+            print(f"    · {rel}  ->  {_href(key)}")
 
     return 1 if malformed else 0
 

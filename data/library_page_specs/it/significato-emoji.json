@@ -1,0 +1,315 @@
+{
+  "slug": "significato-emoji",
+  "lang": "it",
+  "title": "Significato Emoji: cosa vuol dire davvero ogni emoji (elenco)",
+  "meta_description": "Significato delle emoji in breve: faccine, gesti delle mani, colori dei cuori, animali ed emoji a doppio senso, spiegati in modo semplice. Clicca per copiare.",
+  "breadcrumb": "Significato delle emoji",
+  "hero_h1": "Significato delle emoji",
+  "hero_tagline": "Cosa vogliono dire davvero le emoji più usate, divise per tema e non in ordine alfabetico.",
+  "intro": "Quasi ogni emoji ha due significati: quello del suo nome Unicode e quello che le si dà in chat. Questo elenco li riporta entrambi quando non coincidono. È ordinato per tema (faccine, mani, colori dei cuori, animali, doppi sensi), perché un'emoji non si cerca quasi mai in ordine alfabetico: si cerca quello che si vuole dire. Ogni emoji si copia con un clic.",
+  "sections": [
+    {
+      "id": "faccine",
+      "label": "Faccine",
+      "h2": "Significato delle faccine",
+      "intro": "Cosa trasmettono davvero in una conversazione le faccine più comuni.",
+      "symbols": [
+        {
+          "char": "😊",
+          "label": "Sorriso: calore sincero, gentilezza"
+        },
+        {
+          "char": "😂",
+          "label": "Ridere fino alle lacrime"
+        },
+        {
+          "char": "🥺",
+          "label": "Sguardo supplichevole, occhi da cucciolo"
+        },
+        {
+          "char": "😏",
+          "label": "Sorrisetto: complice, un po' beffardo"
+        },
+        {
+          "char": "🤔",
+          "label": "Pensieroso, scettico, dubbioso"
+        },
+        {
+          "char": "😐",
+          "label": "Faccia neutra: impassibile, per niente colpito"
+        },
+        {
+          "char": "🙄",
+          "label": "Occhi al cielo: scocciato, stufo"
+        },
+        {
+          "char": "😤",
+          "label": "Determinato o imbronciato, raramente arrabbiato"
+        }
+      ]
+    },
+    {
+      "id": "mani",
+      "label": "Mani",
+      "h2": "Significato delle emoji delle mani",
+      "intro": "I gesti cambiano significato più in fretta di tutto il resto: diversi oggi vogliono dire altro rispetto a quando sono nati.",
+      "symbols": [
+        {
+          "char": "👍",
+          "label": "Pollice in su: approvazione, va bene"
+        },
+        {
+          "char": "👎",
+          "label": "Pollice in giù: disapprovazione"
+        },
+        {
+          "char": "🤝",
+          "label": "Stretta di mano: accordo, collaborazione"
+        },
+        {
+          "char": "🙏",
+          "label": "Mani giunte: grazie, per favore, preghiera"
+        },
+        {
+          "char": "✌️",
+          "label": "Segno di vittoria o di pace"
+        },
+        {
+          "char": "🤞",
+          "label": "Dita incrociate: in bocca al lupo"
+        },
+        {
+          "char": "🤙",
+          "label": "Chiamami, oppure «tranquillo»"
+        },
+        {
+          "char": "👋",
+          "label": "Mano che saluta: ciao o arrivederci"
+        }
+      ]
+    },
+    {
+      "id": "colori-cuori",
+      "label": "Colori dei cuori",
+      "h2": "Significato dei cuori per colore",
+      "intro": "Ogni colore di cuore ha una sfumatura propria. Su Snapchat il colore indica anche lo stato di migliore amico: è un sistema a parte, spiegato nella pagina sui colori dei cuori di Snapchat.",
+      "symbols": [
+        {
+          "char": "❤️",
+          "label": "Rosso: amore, passione"
+        },
+        {
+          "char": "🧡",
+          "label": "Arancione: calore, premura"
+        },
+        {
+          "char": "💛",
+          "label": "Giallo: amicizia, buonumore"
+        },
+        {
+          "char": "💚",
+          "label": "Verde: natura, salute, a volte gelosia"
+        },
+        {
+          "char": "💙",
+          "label": "Blu: fiducia, affetto platonico"
+        },
+        {
+          "char": "💜",
+          "label": "Viola: tenerezza, mondo dei fan (K-pop)"
+        },
+        {
+          "char": "🖤",
+          "label": "Nero: umorismo nero, lutto"
+        },
+        {
+          "char": "🤍",
+          "label": "Bianco: purezza, condoglianze, estetica minimal"
+        },
+        {
+          "char": "🤎",
+          "label": "Marrone: conforto, semplicità"
+        },
+        {
+          "char": "💗",
+          "label": "Rosa: affetto che cresce"
+        }
+      ]
+    },
+    {
+      "id": "animali",
+      "label": "Animali",
+      "h2": "Significato delle emoji di animali",
+      "intro": "Cosa simboleggiano gli animali in chat, oltre all'animale in sé.",
+      "symbols": [
+        {
+          "char": "🦋",
+          "label": "Farfalla: trasformazione, libertà"
+        },
+        {
+          "char": "🐍",
+          "label": "Serpente: tradimento, falsità"
+        },
+        {
+          "char": "🦊",
+          "label": "Volpe: furbizia, astuzia"
+        },
+        {
+          "char": "🐸",
+          "label": "Rana: cultura dei meme, «non è un mio problema»"
+        },
+        {
+          "char": "🐝",
+          "label": "Ape: gran lavoratore, sempre indaffarato"
+        },
+        {
+          "char": "🦄",
+          "label": "Unicorno: raro, speciale"
+        }
+      ]
+    },
+    {
+      "id": "doppio-senso",
+      "label": "Doppio senso",
+      "h2": "Emoji con doppio senso",
+      "intro": "Queste emoji non si usano quasi mai per ciò che dice il loro nome. Chi le manda senza saperlo rischia di dire tutt'altro.",
+      "symbols": [
+        {
+          "char": "🍑",
+          "label": "Pesca: quasi sempre allusiva (il sedere)"
+        },
+        {
+          "char": "🍆",
+          "label": "Melanzana: quasi sempre allusiva"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuoco: «fortissimo», «che bomba»; streak di Snapchat"
+        },
+        {
+          "char": "💀",
+          "label": "Teschio: «sto morendo dal ridere»"
+        },
+        {
+          "char": "🤡",
+          "label": "Clown: aver fatto una figuraccia"
+        },
+        {
+          "char": "🧢",
+          "label": "Cappellino: bugia; «no cap» vuol dire «giuro, sul serio»"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Domande frequenti sul significato delle emoji",
+  "faq": [
+    {
+      "q": "Un'emoji ha lo stesso significato ovunque?",
+      "a": "No. Il nome Unicode è lo stesso in tutto il mondo, l'interpretazione no. 👍 per molti è un semplice «ok», ma tanti ragazzi lo leggono come freddo o perfino passivo-aggressivo. Nel dubbio decide il contesto, non la definizione."
+    },
+    {
+      "q": "Le emoji hanno un significato diverso su WhatsApp o Snapchat?",
+      "a": "Su WhatsApp no: l'app non ha significati propri, solo una propria grafica. Snapchat è l'eccezione: mette in automatico cuori ed emoji accanto al nome degli amici in base a quanto vi scrivete, e quel codice non ha niente a che vedere con il significato comune."
+    },
+    {
+      "q": "Cosa vuol dire 💀 in un messaggio?",
+      "a": "Quasi mai la morte. 💀 significa «sto morendo dal ridere» e in molte chat ha preso il posto di 😂, che ormai sembra un'emoji da genitori."
+    },
+    {
+      "q": "Cosa significa il cuore bianco 🤍?",
+      "a": "Due cose da non confondere: in una bio dallo stile minimal richiama un'estetica pulita e delicata; in un messaggio di condoglianze esprime una vicinanza discreta. È il contesto a dire quale delle due."
+    },
+    {
+      "q": "Perché la stessa emoji ha un aspetto diverso su ogni telefono?",
+      "a": "Perché Unicode stabilisce solo quale carattere viene inviato, non come va disegnato. Apple, Google, Samsung e WhatsApp hanno ciascuno il proprio set di disegni. Un'emoji che su iPhone sembra amichevole su un altro dispositivo può risultare più severa."
+    },
+    {
+      "q": "Si possono mettere le emoji nel nome utente?",
+      "a": "Raramente. Nella bio, nel nome visualizzato e nei messaggi funzionano quasi ovunque, perché sono normali caratteri Unicode. Il @nome utente è l'eccezione: la maggior parte delle piattaforme accetta solo lettere, numeri, punto e trattino basso."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Perché il significato di un'emoji si allontana spesso dal suo nome",
+      "body": "Il nome ufficiale Unicode è un'etichetta tecnica, non un libretto di istruzioni. 😤 si chiama FACE WITH LOOK OF TRIUMPH, ma quasi nessuno lo legge come un trionfo: lo si usa per il broncio o l'indignazione. 🥺, PLEADING FACE, è diventata in pochi mesi un segno di tenerezza. È questa distanza tra nome e uso a rendere inutile un semplice elenco di nomi per capire un messaggio. Per questo la pagina mette prima il significato reale, e il nome tecnico solo quando serve davvero."
+    },
+    {
+      "h2": "I colori dei cuori: l'unico gruppo con un codice parallelo",
+      "body": "I cuori hanno una particolarità: Snapchat assegna in automatico cuori colorati in base allo stato di amicizia. Lì un cuore giallo non vuol dire amicizia in generale, ma «siete migliori amici a vicenda». Chi applica la logica di Snapchat a un messaggio WhatsApp, o il contrario, legge male il messaggio. Fuori da Snapchat vale la tabella dei colori qui sopra."
+    }
+  ],
+  "related": [
+    {
+      "href": "/it/library/emoji-faccine/",
+      "title": "Emoji faccine",
+      "desc": "Bacio, occhiolino, sorrisetto, occhi al cielo: tutte le faccine da copiare."
+    },
+    {
+      "href": "/it/library/simboli-cuore/",
+      "title": "Simboli cuore",
+      "desc": "Cuori di ogni colore e forma, emoji e caratteri Unicode."
+    },
+    {
+      "href": "/it/symbol/colori-dei-cuori-su-snapchat/",
+      "title": "Colori dei cuori su Snapchat",
+      "desc": "Quale cuore mostra Snapchat, quando, e quale stato di amicizia indica."
+    },
+    {
+      "href": "/it/library/emoji-bandiere/",
+      "title": "Emoji bandiere",
+      "desc": "Bandiere di paesi e regioni da copiare e incollare."
+    },
+    {
+      "href": "/it/library/emoji-teschio/",
+      "title": "Emoji teschio",
+      "desc": "Il teschio 💀 e le sue varianti, compreso l'uso «sto morendo dal ridere»."
+    },
+    {
+      "href": "/it/usecase/traduttore-emoji/",
+      "title": "Traduttore emoji",
+      "desc": "Trasforma una frase in emoji, o decodifica le emoji in testo."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/it/library/significato-emoji/",
+  "home_url": "https://ultratextgen.com/it/",
+  "crumb_home": "Home",
+  "library_url": "https://ultratextgen.com/it/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/emoji-meanings-guide/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/emoji-anlamlari/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/significado-de-los-emojis/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/emoji-betekenis/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/emoji-bedeutung/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/signification-emoji/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/significato-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/emoji-meanings-guide/"
+    }
+  ],
+  "page_type": "library",
+  "copy_pattern": "single",
+  "date_published": "2026-10-02",
+  "date_modified": "2026-10-02"
+}

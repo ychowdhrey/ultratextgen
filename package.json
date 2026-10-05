@@ -14,6 +14,9 @@
     "check:llms": "node scripts/build-llms-index.js",
     "audit:llms": "node scripts/audit-llms-index.js",
     "test:llms": "node scripts/lib/llms-index.test.js",
+    "build:search-index": "node scripts/build-search-index.js --write",
+    "check:search-index": "node scripts/build-search-index.js --check",
+    "test:site-search": "node js/search/siteSearch.test.js",
     "check:library-directory": "node scripts/build-library-directory.js --check",
     "build:locale-library-directory": "node scripts/build-locale-library-directory.js",
     "check:locale-library-directory": "node scripts/build-locale-library-directory.js --check",
@@ -43,6 +46,7 @@
     "check:print-export-properties": "node scripts/check-print-export-properties.js",
     "check:fitted-page-fit": "node scripts/check-fitted-page-fit.js",
     "check:share-save-tags": "node scripts/check-share-save-tags.js",
+    "check:runtime-smoke": "node scripts/smoke-runtime.js",
     "inject:share-save-tags": "node scripts/inject-share-save-tags.js",
     "check:hreflang": "node scripts/audit-hreflang.js",
     "check:hreflang-completeness": "node scripts/audit-hreflang-completeness.js",
@@ -59,9 +63,14 @@
     "sync:explorer-strings": "node scripts/sync-explorer-strings.js --write",
     "test:saved-items": "node js/saved/savedItems.test.js",
     "test:share-core": "node js/share/shareCore.test.js",
+    "test:image-selection": "node js/share/imageSelection.test.js",
+    "test:game-rules": "node js/gamename/gameRules.test.js",
+    "test:name-reports": "node scripts/name-reports.test.mjs",
     "test:zalgo-engine": "node usecase/zalgo-text/zalgo-text.test.js",
+    "test:romanize": "node js/romanize/korean-romanize.test.js",
     "test:qr": "node js/printables/qr.test.js",
     "test:stencil": "node js/printables/stencil.test.js",
+    "test:centreline": "node js/printables/centreline.test.js",
     "test:word-search": "node js/printables/wordSearch.test.js",
     "test:word-puzzles": "node js/printables/wordPuzzles.test.js",
     "test:render-invariants": "node js/printables/renderInvariants.test.js",
@@ -136,5 +145,8 @@
   "dependencies": {
     "cheerio": "^1.2.0",
     "glob": "^13.0.5"
+  },
+  "devDependencies": {
+    "playwright": "1.56.1"
   }
 }

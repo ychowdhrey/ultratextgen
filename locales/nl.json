@@ -209,6 +209,30 @@
       "titleFor": "Voorbeeld: {style}",
       "dialogAriaLabel": "Platformvoorbeeld",
       "closeAriaLabel": "Voorbeeld sluiten"
+    },
+    "imageSelection": {
+      "selectImage": "Selecteer en deel als afbeelding",
+      "viewSelection": "Selectie bekijken ({n})",
+      "hint": "Kies emoji's of symbolen uit elke sectie voor je afbeelding.",
+      "count": "{n} geselecteerd",
+      "empty": "Nog niets geselecteerd",
+      "shareImage": "Afbeelding delen",
+      "downloadImage": "Afbeelding downloaden",
+      "cancel": "Annuleren",
+      "preview": "Voorbeeld van afbeelding",
+      "close": "Sluiten",
+      "remove": "{item} verwijderen",
+      "addAll": "Alle {n} toevoegen",
+      "removeAll": "Alle {n} verwijderen",
+      "limit": "Je kunt er maximaal {max} toevoegen.",
+      "tooBig": "Te veel voor één afbeelding. Verwijder er een paar.",
+      "making": "Afbeelding maken…",
+      "shared": "Afbeelding gedeeld",
+      "downloaded": "Afbeelding gedownload",
+      "shareFailed": "Delen mislukt. Probeer te downloaden.",
+      "renderFailed": "Afbeelding maken mislukt. Probeer het opnieuw.",
+      "trayLabel": "Selectie voor afbeelding",
+      "setUnavailable": "Deze set kan nog niet in een afbeelding."
     }
   },
   "useCases": {

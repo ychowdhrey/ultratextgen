@@ -296,6 +296,25 @@ jobs:
         continue-on-error: true
         run: npm run check:share-save-tags | tee share-save-tags.log
 
+      # The only check that RENDERS pages. Every other gate reads files as text,
+      # and on 2026-10-03 a production audit found four generators rendering
+      # zero results, family-page tabs that emptied the results, a toast that
+      # had shown a label instead of the glyph on 3,500 tile pages, dark-mode
+      # tiles drawn black on navy and a cursive sheet printing in the body sans,
+      # all with CI green. One page per runtime architecture, served from this
+      # checkout with every third-party request aborted, both widths where the
+      # defect was width-specific. Exits 2 (UNKNOWN), never 0, if the browser
+      # cannot start.
+      - name: Install Chromium for the runtime smoke check
+        id: playwright_install
+        continue-on-error: true
+        run: npx playwright install --with-deps chromium 2>&1 | tail -5
+
+      - name: Run runtime smoke check (real browser)
+        id: runtime_smoke
+        continue-on-error: true
+        run: npm run check:runtime-smoke | tee runtime-smoke.log
+
       # Compares printablesEngine.js against ITSELF: every action surface the
       # `el` map reads must be one firstActionSurface() can anchor on, and every
       # primary PNG surface one pngExportTarget() can reach. The three puzzle
@@ -379,6 +398,36 @@ jobs:
         continue-on-error: true
         run: npm run test:share-core | tee share-core-tests.log
 
+      # The selection behind "Select and share image" on library pages,
+      # headless. Gating, no backlog: these rules decide what ends up in the
+      # picture (order kept, a repeat is one item, a set past the limit adds
+      # nothing rather than half) and that all 30 locales carry every string
+      # with its placeholders. The DOM half runs in a browser from
+      # js/share/imageSelection.test.html.
+      - name: Run image-selection tests
+        id: image_selection_tests
+        continue-on-error: true
+        run: npm run test:image-selection | tee image-selection-tests.log
+
+      # The name checker's in-game outcome reporter (js/gamename/game-rules.js),
+      # headless. Gating, no backlog: it asks only where the public board is on,
+      # says the name goes public before anyone answers, tallies decoration
+      # only, and shows the board's refusals instead of swallowing them.
+      - name: Run game-rules outcome reporter tests
+        id: game_rules_tests
+        continue-on-error: true
+        run: npm run test:game-rules | tee game-rules-tests.log
+
+      # The public name-report board's server (functions/api/name-reports.js),
+      # its real SQL run by SQLite. Gating, no backlog: a name that looks like
+      # a link is refused, writes from other origins are refused, the daily
+      # rate limit holds, three spam flags hide a report, and only the owner's
+      # token can restore or delete one.
+      - name: Run name-report board tests
+        id: name_reports_tests
+        continue-on-error: true
+        run: npm run test:name-reports | tee name-reports-tests.log
+
       # Gating, no backlog: this decides WHAT GETS ANNOUNCED to Bing, Naver,
       # Seznam, Yandex and Yep. It replaced Cloudflare Crawler Hints, which
       # submitted 115,020 URLs in six months against a real change rate of
@@ -398,6 +447,16 @@ jobs:
         id: zalgo_engine_tests
         continue-on-error: true
         run: npm run test:zalgo-engine | tee zalgo-engine-tests.log
+
+      # Gating, no backlog: the Korean name romanizer (ko/yeongmun-ireum-byeonhwan).
+      # A wrong letter looks exactly like a right one and can end up on a
+      # passport form, so every rule the page claims is pinned against the
+      # standard's own examples, and every rule it says it does not apply is
+      # pinned as a known divergence.
+      - name: Korean romanizer tests
+        id: romanize_tests
+        continue-on-error: true
+        run: npm run test:romanize | tee romanize-tests.log
 
       # Gating, no backlog: the QR encoder that stamps a way back to the site
       # onto every printed sheet and PNG export. Its one failure mode is a
@@ -423,6 +482,17 @@ jobs:
         id: stencil_tests
         continue-on-error: true
         run: npm run test:stencil | tee stencil-tests.log
+
+      # Gating. The centreline is the route a child traces on a joined-script
+      # sheet, and every way it fails is something a child would follow: a
+      # stroke returned as two parallel edges, a join returned broken (the
+      # defect that started it: print skeletons under a joined SAS model
+      # line), an i-dot dropped, a spur added. Shapes are built in the test,
+      # so it needs no browser and no font.
+      - name: Run glyph centreline tests
+        id: centreline_tests
+        continue-on-error: true
+        run: npm run test:centreline | tee centreline-tests.log
 
       # Gating. A word search asserts one fact and its failure is silent: a word
       # in the printed clue list that is not actually in the grid is an
@@ -968,13 +1038,17 @@ jobs:
             echo "### Printables surface wiring check — \`${{ steps.printables_surface_wiring.outcome }}\`"
             echo "### Print export property check — \`${{ steps.print_export_properties.outcome }}\`"
             echo "### Share/Save module tag check — \`${{ steps.share_save_tags.outcome }}\`"
+            echo "### Runtime smoke check (real browser) — \`${{ steps.runtime_smoke.outcome }}\` (Chromium install: \`${{ steps.playwright_install.outcome }}\`)"
             echo "### glyphMetrics tag check — \`${{ steps.glyph_metrics_tag.outcome }}\`"
             echo "### symbol-explorer string sync check — \`${{ steps.explorer_strings.outcome }}\`"
             echo "### Saved-items store tests — \`${{ steps.saved_items_tests.outcome }}\`"
             echo "### share-core analytics tests — \`${{ steps.share_core_tests.outcome }}\`"
+            echo "### image-selection tests — \`${{ steps.image_selection_tests.outcome }}\`"
+            echo "### game-rules outcome reporter tests — \`${{ steps.game_rules_tests.outcome }}\`"
+            echo "### name-report board tests — \`${{ steps.name_reports_tests.outcome }}\`"
             echo "### IndexNow submission-policy tests — \`${{ steps.indexnow_tests.outcome }}\`"
             echo '```'
-            cat printables-surface-wiring.log print-export-properties.log fitted-page-fit.log render-invariants-tests.log practice-row-tests.log share-save-tags.log explorer-strings.log saved-items-tests.log indexnow-tests.log share-core-tests.log
+            cat printables-surface-wiring.log print-export-properties.log fitted-page-fit.log render-invariants-tests.log practice-row-tests.log share-save-tags.log runtime-smoke.log explorer-strings.log saved-items-tests.log indexnow-tests.log share-core-tests.log image-selection-tests.log game-rules-tests.log name-reports-tests.log
             echo '```'
             echo ""
             echo "### Funding Choices tag check — \`${{ steps.funding_choices.outcome }}\`"
@@ -1077,8 +1151,14 @@ jobs:
             cat zalgo-engine-tests.log
             echo '```'
             echo ""
+            echo "### Korean romanizer tests — \`${{ steps.romanize_tests.outcome }}\`"
+            echo '```'
+            cat romanize-tests.log
+            echo '```'
+            echo ""
             echo "### QR encoder tests — \`${{ steps.qr_tests.outcome }}\`"
             echo "### Stencil bridge tests — \`${{ steps.stencil_tests.outcome }}\`"
+            echo "### Glyph centreline tests — \`${{ steps.centreline_tests.outcome }}\`"
             echo "### Word search grid tests — \`${{ steps.word_search_tests.outcome }}\`"
             echo "### Crossword + word scramble tests — \`${{ steps.word_puzzles_tests.outcome }}\`"
             echo "### Printable render invariant tests — \`${{ steps.render_invariants_tests.outcome }}\`"
@@ -1287,10 +1367,15 @@ jobs:
           steps.render_invariants_tests.outcome == 'failure' ||
           steps.practice_row_tests.outcome == 'failure' ||
           steps.share_save_tags.outcome == 'failure' ||
+          steps.playwright_install.outcome == 'failure' ||
+          steps.runtime_smoke.outcome == 'failure' ||
           steps.glyph_metrics_tag.outcome == 'failure' ||
           steps.explorer_strings.outcome == 'failure' ||
           steps.saved_items_tests.outcome == 'failure' ||
           steps.share_core_tests.outcome == 'failure' ||
+          steps.image_selection_tests.outcome == 'failure' ||
+          steps.game_rules_tests.outcome == 'failure' ||
+          steps.name_reports_tests.outcome == 'failure' ||
           steps.indexnow_tests.outcome == 'failure' ||
           steps.new_images.outcome == 'failure' ||
           steps.new_symbol_peer_links.outcome == 'failure' ||
@@ -1308,8 +1393,10 @@ jobs:
           steps.llms_index.outcome == 'failure' ||
           steps.llms_index_tests.outcome == 'failure' ||
           steps.zalgo_engine_tests.outcome == 'failure' ||
+          steps.romanize_tests.outcome == 'failure' ||
           steps.qr_tests.outcome == 'failure' ||
           steps.stencil_tests.outcome == 'failure' ||
+          steps.centreline_tests.outcome == 'failure' ||
           steps.word_search_tests.outcome == 'failure' ||
           steps.word_puzzles_tests.outcome == 'failure' ||
           steps.numeric_parity.outcome == 'failure' ||

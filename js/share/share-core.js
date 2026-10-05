@@ -143,6 +143,22 @@
     pinterest: SHARE_DESTINATIONS.PINTEREST
   };
 
+  /* share_format (2026-09-30) says WHAT left the page: a link, a PNG card,
+     a GIF. share_method cannot, because an image method carries whatever
+     file the caller built. Always set, never omitted: GTM's data layer keeps
+     the last value of a key, so a missing key would inherit the previous
+     row's; an unknown format is pushed as null. A caller sharing something
+     other than a PNG states it. */
+  const FORMAT_FOR_METHOD = {
+    native: "link",
+    link_copy: "link",
+    image: "png",
+    image_download: "png",
+    // A pin is composed off-site from whatever Pinterest picks up, so the
+    // format is not ours to know: an honest null, not a guess.
+    pinterest: null
+  };
+
   // Read lazily rather than cached at load: costs nothing on a click, and
   // cannot be wrong if this module is ever evaluated before <html lang> is
   // settled on some future surface.
@@ -162,7 +178,8 @@
       share_method: method,
       share_destination: destination || DESTINATION_FOR_METHOD[method] || null,
       share_surface: (c && c.surface) || "generator",
-      share_item_type: (c && c.itemType) || "style"
+      share_item_type: (c && c.itemType) || "style",
+      share_format: (c && c.format) || FORMAT_FOR_METHOD[method] || null
     });
   }
   UTG.pushShare = pushShare;
@@ -222,6 +239,11 @@
 
   // One share icon, used by both the main generator's card template and the
   // buildShareButton factory below, so the two can never drift apart.
+  // A chain link, for a button whose job is "send the link to this page".
+  // Library sections use it beside "Select and share image" (2026-10-01) so
+  // the two read as different jobs: this one shares the page, that one makes
+  // a picture of what the visitor picks.
+  const LINK_ICON_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>';
   const SHARE_ICON_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342a3 3 0 100-2.684m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684m0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684"/></svg>';
 
   // Copy gets an icon too, so the three card actions read as one family
@@ -277,7 +299,9 @@
     btn.title = uiText("shareResult.title", "Share this result — the link opens with your text in this style");
     btn.setAttribute("aria-label",
       uiText("shareResult.ariaLabel", "Share {style} result").replace("{style}", o.name || ""));
-    btn.innerHTML = SHARE_ICON_SVG + '<span class="share-result-label"></span>';
+    // `icon: "link"` changes the picture only, never the action: the button
+    // still runs shareCreation (native sheet, else copy the link).
+    btn.innerHTML = (o.icon === "link" ? LINK_ICON_SVG : SHARE_ICON_SVG) + '<span class="share-result-label"></span>';
     const label = $(".share-result-label", btn);
     if (label) label.textContent = o.label || uiText("shareResult.label", "Share");
     if (o.title) btn.title = o.title;
@@ -399,6 +423,185 @@
     return canvas;
   };
 
+  /* ---- Selection image (2026-10-01) -------------------------------------
+     The picture a library visitor builds by choosing items one at a time
+     ("Select and share image" in symbol-explorer.js). Its content is the
+     visitor's choice and nothing else: no section heading, no page title, no
+     style caption. The only other mark is the small site address, kept well
+     below the items in size and contrast.
+
+     Each item is drawn with its own fillText call, never joined into one
+     string first, so nothing can fuse across a boundary: two single regional
+     indicator letters side by side would otherwise render as a flag, and a
+     joiner at the end of one item would bind it to the next. The text inside
+     an item is never split, so a ZWJ family, a skin tone or a flag stays one
+     glyph. */
+
+  // Split n items into `lines` rows as evenly as possible, earlier rows
+  // taking the remainder (7 items on 3 rows is 3, 2, 2), order kept.
+  function splitEvenly(n, lines) {
+    const out = [];
+    const base = Math.floor(n / lines);
+    let extra = n % lines;
+    let i = 0;
+    for (let l = 0; l < lines; l++) {
+      const take = base + (extra > 0 ? 1 : 0);
+      if (extra > 0) extra--;
+      const row = [];
+      for (let k = 0; k < take; k++) row.push(i++);
+      out.push(row);
+    }
+    return out;
+  }
+
+  /* Pure layout, so node can test it: widths are each item's advance at a
+     font size of 1. Tries every row count and keeps the one that lets the
+     glyphs grow largest, then takes the fewest rows within a size-graded
+     share of that: 60% up to four items (🥹 🫶 ✨ reads as one expression on
+     one row; stacking it to gain size breaks the phrase), 65% up to twelve
+     (ASEAN's ten flags as 5 + 5, not 3/3/2/2), 90% beyond (fifty flags fill
+     the card as a block, not a thin band with empty space above and below).
+     Tuned by rendering each case, not reasoned up front. `fits` is false when even the best arrangement is
+     below minFont, which is the caller's cue to say "too many" rather than
+     export something nobody can read. Nothing is ever dropped to make it fit. */
+  UTG.layoutSelection = function (widths, box) {
+    const b = box || {};
+    const n = widths.length;
+    const maxW = b.maxW || 860;
+    const maxH = b.maxH || 800;
+    const gap = b.gapEm != null ? b.gapEm : 0.4;
+    const lineEm = b.lineEm || 1.3;
+    const maxFont = b.maxFont || 320;
+    const minFont = b.minFont || 44;
+    if (!n) return { lines: [], fontSize: 0, fits: false, lineEm: lineEm, gapEm: gap };
+    const tries = [];
+    for (let lines = 1; lines <= n; lines++) {
+      const rows = splitEvenly(n, lines);
+      let widest = 0;
+      rows.forEach((row) => {
+        let w = 0;
+        row.forEach((idx, k) => { w += (widths[idx] || 0) + (k ? gap : 0); });
+        if (w > widest) widest = w;
+      });
+      const f = Math.min(maxW / Math.max(widest, 0.01), maxH / (lines * lineEm), maxFont);
+      tries.push({ lines: rows, fontSize: f });
+    }
+    const top = Math.max.apply(null, tries.map((x) => x.fontSize));
+    const share = n <= 4 ? 0.6 : (n <= 12 ? 0.65 : 0.9);
+    const pick = tries.find((x) => x.fontSize >= top * share);
+    const best = { lines: pick.lines, fontSize: pick.fontSize };
+    best.fontSize = Math.floor(best.fontSize);
+    best.fits = best.fontSize >= minFont;
+    best.lineEm = lineEm;
+    best.gapEm = gap;
+    return best;
+  };
+
+  // The emoji fonts first, in the order the library's own tiles use
+  // (.flag-emoji in symbol-explorer.css), so the picture uses the glyphs the
+  // visitor just tapped on this device. It is this device's artwork: an
+  // Android phone draws Noto, an iPhone draws Apple's, and the image says
+  // nothing that promises otherwise.
+  const SELECTION_FONT = '"Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", system-ui, -apple-system, "Noto Sans", sans-serif';
+
+  /* Colour emoji fonts are bitmaps: Apple's largest strike is 160px, Noto's
+     136px. Drawn bigger they are upscaled and go soft (an audit caught a
+     single emoji at 360px rendering visibly blurred). So the card is laid out
+     at a 1080px reference width and, when it holds colour-emoji text, the
+     whole canvas is scaled down until no glyph is drawn above GLYPH_CAP: a
+     single emoji ships as a crisp ~480px card instead of a blurred 1080px
+     one. Vector text (a kaomoji, a symbol) and picture glyphs (Twemoji SVG)
+     scale cleanly and keep the full size. */
+  const GLYPH_CAP = 160;
+
+  //   items: array of strings, in the order the visitor chose them
+  //   opts:  { rtl, images }
+  //     rtl     lays rows out right to left, as an Arabic page reads
+  //     images  optional Map item -> loaded <img>, for a page that shows its
+  //             emoji as Twemoji pictures: the card then uses the same
+  //             artwork the visitor tapped. Items without one are text.
+  // Returns { canvas, fits, fontSize } or null when there is nothing to draw.
+  UTG.renderSelectionImage = function (items, opts) {
+    const list = (items || []).map(String).filter((v) => v.length);
+    if (!list.length) return null;
+    const o = opts || {};
+    const images = o.images && typeof o.images.get === "function" ? o.images : null;
+    const imageOf = (v) => (images ? images.get(v) : null);
+    const REF = 1080;         // layout width, before scaling
+    const PAD = 110;
+    const CRED_BAND = 70;
+    const MIN_H = 566;        // 1.91:1, the widest card social previews keep
+
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return null;
+
+    const BASE = 100;
+    ctx.font = BASE + "px " + SELECTION_FONT;
+    // A picture glyph is drawn as a square one em wide.
+    const widths = list.map((v) => (imageOf(v) ? 1 : ctx.measureText(v).width / BASE));
+    const maxW = REF - PAD * 2;
+    const maxH = REF - PAD * 2 - CRED_BAND;
+    // Expressions wider than a glyph (kaomoji, combos) carry their own inner
+    // spaces, so the gap between two of them must be clearly wider than any
+    // gap inside one, or "(¬_¬) (￣ヘ￣)" reads as a single string.
+    const wide = widths.some((w) => w > 1.6);
+    const lay = UTG.layoutSelection(widths, { maxW: maxW, maxH: maxH, gapEm: wide ? 1 : 0.4, maxFont: list.length === 1 ? 360 : 300 });
+    const f = lay.fontSize;
+    const lineH = f * lay.lineEm;
+    const gapPx = f * lay.gapEm;
+    const blockH = lay.lines.length * lineH;
+
+    // Height follows the content: a row of three emoji is a wide card, not a
+    // square that is three-quarters blank. Square is the ceiling.
+    const refH = Math.min(REF, Math.max(MIN_H, Math.ceil(blockH + PAD * 2 + CRED_BAND)));
+    const bitmapEmoji = list.some((v) => !imageOf(v) && /\p{Extended_Pictographic}|\p{Regional_Indicator}/u.test(v));
+    const k = bitmapEmoji ? Math.min(1, GLYPH_CAP / Math.max(f, 1)) : 1;
+    canvas.width = Math.round(REF * k);
+    canvas.height = Math.round(refH * k);
+    ctx.scale(k, k);
+
+    // The same ground and brand bar as the generator's card, without the dot
+    // grid: behind a few large emoji the dots read as noise, not texture.
+    ctx.fillStyle = "#faf9f7";
+    ctx.fillRect(0, 0, REF, refH);
+    const grad = ctx.createLinearGradient(0, 0, REF, 0);
+    grad.addColorStop(0, "#7c3aed");
+    grad.addColorStop(1, "#2563eb");
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, REF, 10);
+
+    ctx.font = f + "px " + SELECTION_FONT;
+    ctx.fillStyle = "#1a1d27";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "left";
+    const areaH = refH - PAD * 2 - CRED_BAND;
+    let y = PAD + (areaH - blockH) / 2 + lineH / 2;
+    lay.lines.forEach((row) => {
+      const ws = row.map((idx) => (imageOf(list[idx]) ? f : ctx.measureText(list[idx]).width));
+      const rowW = ws.reduce((a, w) => a + w, 0) + gapPx * Math.max(row.length - 1, 0);
+      let x = (REF - rowW) / 2;
+      const order = o.rtl ? row.map((_, j) => row.length - 1 - j) : row.map((_, j) => j);
+      order.forEach((j) => {
+        const v = list[row[j]];
+        const img = imageOf(v);
+        if (img) ctx.drawImage(img, x, y - f / 2, f, f);
+        else ctx.fillText(v, x, y);
+        x += ws[j] + gapPx;
+      });
+      y += lineH;
+    });
+
+    // Attribution: one small, quiet line. Never the page or section name.
+    // Sized in reference units, so it stays about 20px on a scaled-down card.
+    const credPx = Math.max(26, Math.round(20 / k));
+    ctx.font = credPx + "px -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif";
+    ctx.fillStyle = "#9ca3af";
+    ctx.textAlign = "center";
+    ctx.fillText("ultratextgen.com", REF / 2, refH - 46);
+    return { canvas: canvas, fits: lay.fits, fontSize: f };
+  };
+
   // Share the creation as a PNG file via the native sheet, falling back to a
   // plain download. Resolves "image" | "image_download" | "aborted" | "failed"
   // so the caller owns its button feedback, mirroring shareCreation above.
@@ -491,7 +694,7 @@
   // that may not reach that app is a promise the button cannot keep.
   const PINTEREST_ICON_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.182-.78 1.172-4.97 1.172-4.97s-.299-.6-.299-1.486c0-1.39.806-2.428 1.81-2.428.853 0 1.265.64 1.265 1.408 0 .858-.546 2.14-.828 3.33-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.394-1.72-4.068-4.177-4.068-2.845 0-4.515 2.134-4.515 4.34 0 .859.331 1.78.744 2.281a.3.3 0 01.07.288c-.076.316-.245.995-.278 1.134-.044.183-.145.222-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.472 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.526-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>';
 
-  UTG.icons = { share: SHARE_ICON_SVG, copy: COPY_ICON_SVG, image: IMAGE_ICON_SVG, check: CHECK_ICON_SVG, pinterest: PINTEREST_ICON_SVG };
+  UTG.icons = { share: SHARE_ICON_SVG, link: LINK_ICON_SVG, copy: COPY_ICON_SVG, image: IMAGE_ICON_SVG, check: CHECK_ICON_SVG, pinterest: PINTEREST_ICON_SVG };
 
   UTG.buildShareActions = function (opts) {
     const row = document.createElement("div");
@@ -506,22 +709,33 @@
   // back to a plain download where files cannot be shared. Lifted out of
   // printablesEngine.js on 2026-09-10 so the monogram and cross-stitch
   // engines share one implementation and one share_text shape.
-  //   opts: { filename, title, text, surface, itemType }
+  //   opts: { filename, title, text, surface, itemType, format }
   // Resolves to "native" | "aborted" | "downloaded".
   UTG.shareImageBlob = async function (blob, opts) {
-    const o = opts || {};
+    // The file's own type names the format unless the caller states one.
+    const o = Object.assign({ format: String((blob && blob.type) || "image/png").split("/")[1].split("+")[0] || null }, opts || {});
     const filename = o.filename || "share.png";
     const file = new File([blob], filename, { type: blob.type || "image/png" });
-    const canShareFiles = !!(navigator.canShare && navigator.canShare({ files: [file] }));
+    // Two opt-ins for a caller that shows its own Share and Download buttons
+    // (the library image selection, 2026-10-01). `mode: "download"` skips the
+    // sheet because the visitor pressed Download. `downloadOnError: false`
+    // resolves "failed" when the sheet errors, instead of saving a file the
+    // visitor never asked for; the caller then offers Download itself.
+    // `noTitle` sends the file alone, so no page title arrives in the chat
+    // as if the visitor had written it.
+    const canShareFiles = o.mode !== "download" &&
+      !!(navigator.canShare && navigator.canShare({ files: [file] }));
     if (canShareFiles) {
       try {
-        const payload = { files: [file], title: o.title || document.title };
+        const payload = { files: [file] };
+        if (!o.noTitle) payload.title = o.title || document.title;
         if (o.text) payload.text = o.text;
         await navigator.share(payload);
         pushShare("image", SHARE_DESTINATIONS.NATIVE, o);
         return "native";
       } catch (err) {
         if (err && err.name === "AbortError") return "aborted";
+        if (o.downloadOnError === false) return "failed";
       }
     }
     const url = URL.createObjectURL(blob);

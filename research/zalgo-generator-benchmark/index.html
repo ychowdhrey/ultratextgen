@@ -1,0 +1,652 @@
+<!DOCTYPE html><html lang="en"><head>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8242324164413945?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script>(function(){'use strict';var aa=typeof Object.create=="function"?Object.create:function(a){function b(){}b.prototype=a;return new b},ba=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ca(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var da=ca(this);function l(a,b){if(b)a:{var c=da;a=a.split(".");for(var e=0;e<a.length-1;e++){var d=a[e];if(!(d in c))break a;c=c[d]}a=a[a.length-1];e=c[a];b=b(e);b!=e&&b!=null&&ba(c,a,{configurable:!0,writable:!0,value:b})}}var m;
+if(typeof Object.setPrototypeOf=="function")m=Object.setPrototypeOf;else{var n;a:{var ea={a:!0},fa={};try{fa.__proto__=ea;n=fa.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var ha=m;
+function p(a,b){a.prototype=aa(b.prototype);a.prototype.constructor=a;if(ha)ha(a,b);else for(var c in b)if(c!="prototype")if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,c);e&&Object.defineProperty(a,c,e)}else a[c]=b[c];a.C=b.prototype}function ia(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}
+function q(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ia(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function ja(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function ka(a){return la(a,a)}function la(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),Object.freeze(b));return a}
+function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}l("globalThis",function(a){return a||da});l("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});l("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});l("Number.MAX_SAFE_INTEGER",function(){return 9007199254740991});l("Number.MIN_SAFE_INTEGER",function(){return-9007199254740991});
+l("Number.isInteger",function(a){return a?a:function(b){return Number.isFinite(b)?b===Math.floor(b):!1}});l("Number.isSafeInteger",function(a){return a?a:function(b){return Number.isInteger(b)&&Math.abs(b)<=Number.MAX_SAFE_INTEGER}});l("Math.trunc",function(a){return a?a:function(b){b=Number(b);if(isNaN(b)||b===Infinity||b===-Infinity||b===0)return b;var c=Math.floor(Math.abs(b));return b<0?-c:c}});l("Number.isNaN",function(a){return a?a:function(b){return typeof b==="number"&&isNaN(b)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var t=this||self;function na(a){t.setTimeout(function(){throw a;},0)};var v,x;a:{for(var oa=["CLOSURE_FLAGS"],y=t,z=0;z<oa.length;z++)if(y=y[oa[z]],y==null){x=null;break a}x=y}var pa=x&&x[748402147];v=pa!=null?pa:!0;var qa=void 0;function A(){return typeof BigInt==="function"};var B=typeof Symbol==="function"&&typeof Symbol()==="symbol";function C(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var ra=C("jas",void 0,!0),sa=C(void 0,"0actk"),E=C("m_m","B",!0);var ta={u:{value:0,configurable:!0,writable:!0,enumerable:!1}},ua=Object.defineProperties,F=B?ra:"u";function va(a,b){B||F in a||ua(a,ta);a[F]|=b}function G(a,b){B||F in a||ua(a,ta);a[F]=b};var H={};function I(a,b){return b===void 0?a.h!==J&&!!(2&(a.g[F]|0)):!!(2&b)&&a.h!==J}var J={};function K(a){a.A=!0;return a};var wa=K(function(a){return typeof a==="number"}),xa=K(function(a){return typeof a==="string"}),ya=K(function(a){return typeof a==="boolean"});var L=typeof t.BigInt==="function"&&typeof t.BigInt(0)==="bigint";function M(a){var b=a;if(xa(b)){if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}else if(wa(b)&&!Number.isSafeInteger(b))throw Error(String(b));return L?BigInt(a):a=ya(a)?a?"1":"0":xa(a)?a.trim()||"0":String(a)}var Fa=K(function(a){return L?a>=za&&a<=Aa:a[0]==="-"?Ba(a,Ca):Ba(a,Da)}),Ca=Number.MIN_SAFE_INTEGER.toString(),za=L?BigInt(Number.MIN_SAFE_INTEGER):void 0,Da=Number.MAX_SAFE_INTEGER.toString(),Aa=L?BigInt(Number.MAX_SAFE_INTEGER):void 0;
+function Ba(a,b){if(a.length>b.length)return!1;if(a.length<b.length||a===b)return!0;for(var c=0;c<a.length;c++){var e=a[c],d=b[c];if(e>d)return!1;if(e<d)return!0}};var N=0,O=0;function Ga(a){var b=a>>>0;N=b;O=(a-b)/4294967296>>>0}function Ha(a){if(a<0){Ga(-a);var b=q(Ia(N,O));a=b.next().value;b=b.next().value;N=a>>>0;O=b>>>0}else Ga(a)}function Ja(a,b){b>>>=0;a>>>=0;if(b<=2097151)var c=""+(4294967296*b+a);else A()?c=""+(BigInt(b)<<BigInt(32)|BigInt(a)):(c=(a>>>24|b<<8)&16777215,b=b>>16&65535,a=(a&16777215)+c*6777216+b*6710656,c+=b*8147497,b*=2,a>=1E7&&(c+=a/1E7>>>0,a%=1E7),c>=1E7&&(b+=c/1E7>>>0,c%=1E7),c=b+Ka(c)+Ka(a));return c}
+function Ka(a){a=String(a);return"0000000".slice(a.length)+a}function La(){var a=N,b=O;b&2147483648?A()?a=""+(BigInt(b|0)<<BigInt(32)|BigInt(a>>>0)):(b=q(Ia(a,b)),a=b.next().value,b=b.next().value,a="-"+Ja(a,b)):a=Ja(a,b);return a}function Ia(a,b){b=~b;a?a=~a+1:b+=1;return[a,b]};var Ma=typeof BigInt==="function"?BigInt.asIntN:void 0,Q=Number.isSafeInteger,Na=Number.isFinite,Oa=Math.trunc,Pa=/^-?([1-9][0-9]*|0)(\.[0-9]+)?$/;function Qa(a){switch(typeof a){case "bigint":return!0;case "number":return Na(a);case "string":return Pa.test(a);default:return!1}}
+function Ra(a){var b=typeof a;if(a==null)return a;if(b==="bigint")return M(Ma(64,a));if(Qa(a)){if(b==="string")if(b=Oa(Number(a)),Q(b))a=M(b);else if(b=a.indexOf("."),b!==-1&&(a=a.substring(0,b)),A())a=M(Ma(64,BigInt(a)));else{b=a.length;if(!(a[0]==="-"?b<20||b===20&&a<="-9223372036854775808":b<19||b===19&&a<="9223372036854775807")){if(a.length<16)Ha(Number(a));else if(A())a=BigInt(a),N=Number(a&BigInt(4294967295))>>>0,O=Number(a>>BigInt(32)&BigInt(4294967295));else{b=+(a[0]==="-");O=N=0;for(var c=
+a.length,e=b,d=(c-b)%6+b;d<=c;e=d,d+=6)e=Number(a.slice(e,d)),O*=1E6,N=N*1E6+e,N>=4294967296&&(O+=Math.trunc(N/4294967296),O>>>=0,N>>>=0);b&&(b=q(Ia(N,O)),a=b.next().value,b=b.next().value,N=a,O=b)}a=La()}a=M(a)}else if(Q(a)){a=Oa(a);if(!Q(a)){Ha(a);b=N;c=O;if(a=c&2147483648)b=~b+1>>>0,c=~c>>>0,b==0&&(c=c+1>>>0);d=c*4294967296+(b>>>0);b=Number.isSafeInteger(d)?d:Ja(b,c);a=typeof b==="number"?a?-b:b:a?"-"+b:b}a=M(a)}else a=Oa(a),Q(a)?a=String(a):(Ha(a),a=La()),a=M(a);return a}}
+function Sa(a){return a==null||typeof a==="string"?a:void 0};function Ta(a){return a};function Ua(a,b,c,e){var d=e!==void 0;e=!!e;var f=[],g=a.length,h=4294967295,k=!1,r=!!(b&64),D=r?b&128?0:-1:void 0;if(!(b&1)){var u=g&&a[g-1];u!=null&&typeof u==="object"&&u.constructor===Object?(g--,h=g):u=void 0;if(r&&!(b&128)&&!d){k=!0;var w;h=((w=Va)!=null?w:Ta)(h-D,D,a,u,void 0)+D}}b=void 0;for(d=0;d<g;d++)if(w=a[d],w!=null&&(w=c(w,e))!=null)if(r&&d>=h){var yb=d-D,Ea=void 0;((Ea=b)!=null?Ea:b={})[yb]=w}else f[d]=w;if(u)for(var P in u)Object.prototype.hasOwnProperty.call(u,P)&&(a=u[P],a!=null&&
+(a=c(a,e))!=null&&(g=+P,d=void 0,r&&!Number.isNaN(g)&&(d=g+D)<h?f[d]=a:(g=void 0,((g=b)!=null?g:b={})[P]=a)));b&&(k?f.push(b):f[h]=b);return f}function Wa(a){switch(typeof a){case "number":return Number.isFinite(a)?a:""+a;case "bigint":return Fa(a)?Number(a):""+a;case "boolean":return a?1:0;case "object":if(Array.isArray(a)){var b=a[F]|0;return a.length===0&&b&1?void 0:Ua(a,b,Wa)}if(a!=null&&a[E]===H)return Xa(a);return}return a}var Va;function Xa(a){a=a.g;return Ua(a,a[F]|0,Wa)};function R(a,b,c,e){e=e===void 0?0:e;if(a==null){var d=32;c?(a=[c],d|=128):a=[];b&&(d=d&-16760833|(b&1023)<<14)}else{if(!Array.isArray(a))throw Error("narr");d=a[F]|0;if(v&&1&d)throw Error("rfarr");2048&d&&!(2&d)&&Ya();if(d&256)throw Error("farr");if(d&64)return(d|e)!==d&&G(a,d|e),a;if(c&&(d|=128,c!==a[0]))throw Error("mid");a:{c=a;d|=64;var f=c.length;if(f){var g=f-1,h=c[g];if(h!=null&&typeof h==="object"&&h.constructor===Object){b=d&128?0:-1;g-=b;if(g>=1024)throw Error("pvtlmt");for(var k in h)Object.prototype.hasOwnProperty.call(h,
+k)&&(f=+k,f<g&&(c[f+b]=h[k],delete h[k]));d=d&-16760833|(g&1023)<<14;break a}}if(b){k=Math.max(b,f-(d&128?0:-1));if(k>1024)throw Error("spvt");d=d&-16760833|(k&1023)<<14}}}G(a,d|64|e);return a}function Ya(){if(v)throw Error("carr");if(sa!=null){var a;var b=(a=qa)!=null?a:qa={};a=b[sa]||0;a>=5||(b[sa]=a+1,b=Error(),b.__closure__error__context__984382||(b.__closure__error__context__984382={}),b.__closure__error__context__984382.severity="incident",na(b))}};function Za(a,b){if(typeof a!=="object")return a;if(Array.isArray(a)){var c=a[F]|0;a.length===0&&c&1?a=void 0:c&2||(!b||4096&c||16&c?a=S(a,c,!1,b&&!(c&16)):(va(a,34),c&4&&Object.freeze(a)));return a}if(a!=null&&a[E]===H){b=a.g;c=b[F]|0;return I(a,c)?a:$a(a,b,c)?ab(a,b):S(b,c)}}function ab(a,b,c){a=new a.constructor(b);c&&(a.h=J);a.i=J;return a}function S(a,b,c,e){e!=null||(e=!!(34&b));a=Ua(a,b,Za,e);e=32;c&&(e|=2);b=b&16769217|e;G(a,b);return a}
+function bb(a,b){b===void 0&&(b=a[F]|0);b&32&&!(b&4096)&&G(a,b|4096)}function $a(a,b,c){return c&2?!0:c&32&&!(c&4096)?(G(b,c|2),a.h=J,!0):!1};var cb=M(0),db={};function T(a,b,c,e){b=eb(a.g,b,e);if(b!==null||c&&a.i!==J)return b}function eb(a,b,c){if(b===-1)return null;var e=b+-1,d=a.length-1;if(!(d<0)){if(e>=d){var f=a[d];if(f!=null&&typeof f==="object"&&f.constructor===Object){d=f[b];var g=!0}else if(e===d)d=f;else return}else d=a[e];if(c&&d!=null){c=c(d);if(c==null)return c;if(!Object.is(c,d))return g?f[b]=c:a[e]=c,c}return d}}
+function fb(a,b,c){var e=gb,d=!1;c=eb(a,c,function(f){if(f!=null&&f[E]===H)var g=f;else if(Array.isArray(f)){g=f[F]|0;var h=g|b&32;h|=b&2;h!==g&&G(f,h);g=new e(f)}else g=void 0;d=g!==f&&g!=null;return g});if(c!=null)return d&&!I(c)&&bb(a,b),c}
+function hb(a,b){var c=a.g,e=c[F]|0,d=fb(c,e,b);if(d==null)return d;e=c[F]|0;if(!I(a,e)){var f=d;var g=f.g,h=g[F]|0;f=I(f,h)?$a(f,g,h)?ab(f,g,!0):new f.constructor(S(g,h,!1)):f;if(f!==d){a.h===J?(d=a.g,d=S(d,d[F]|0),va(d,2048),a.g=d,a.h=void 0,a.i=void 0,d=!0):d=!1;d&&(c=a.g,e=c[F]|0);d=f;a:{a=c;f=d;g=b+-1;h=a.length-1;if(h>=0&&g>=h){var k=a[h];if(k!=null&&typeof k==="object"&&k.constructor===Object){k[b]=f;break a}}if(g<=h)a[g]=f;else if(f!==void 0){var r;h=((r=e)!=null?r:e=a[F]|0)>>14&1023||536870912;
+b>=h?f!=null&&(r={},a[h+-1]=(r[b]=f,r)):a[g]=f}}bb(c,e)}}return d}function ib(a,b){var c=c===void 0?cb:c;a=T(a,b,void 0,Ra);return a!=null?a:c}function U(a,b){var c=c===void 0?"":c;var e;return(e=Sa(T(a,b)))!=null?e:c};function V(a,b,c){this.g=R(a,b,c,2048)}V.prototype.toJSON=function(){var a=Xa(this);return a};V.prototype[E]=H;V.prototype.toString=function(){return this.g.toString()};function jb(a){return function(b){if(b==null||b=="")b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error("dnarr");va(b,32);b=new a(b)}return b}};function kb(a){this.g=R(a,void 0,void 0,2048)}p(kb,V);var lb=jb(kb);/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var mb=globalThis.trustedTypes,nb;function ob(){var a=null;if(!mb)return a;try{var b=function(c){return c};a=mb.createPolicy("goog#html",{createHTML:b,createScript:b,createScriptURL:b})}catch(c){}return a};function pb(a){this.g=a}pb.prototype.toString=function(){return this.g+""};function qb(a){var b;nb===void 0&&(nb=ob());a=(b=nb)?b.createScriptURL(a):a;return new pb(a)};function rb(a,b){if(b instanceof pb)b=b.g;else throw Error("");a.src=b;var c;b=a.ownerDocument;b=b===void 0?document:b;var e;b=(e=(c=b).querySelector)==null?void 0:e.call(c,"script[nonce]");(c=b==null?"":b.nonce||b.getAttribute("nonce")||"")&&a.setAttribute("nonce",c)};function sb(){return Math.floor(Math.random()*2147483648).toString(36)+Math.abs(Math.floor(Math.random()*2147483648)^Date.now()).toString(36)};function tb(a){var b=ma.apply(1,arguments);if(b.length===0)return qb(a[0]);for(var c=a[0],e=0;e<b.length;e++)c+=encodeURIComponent(b[e])+a[e+1];return qb(c)};function ub(a){a=a===void 0?document:a;return a.createElement("script")};function vb(a,b){b=String(b);a.contentType==="application/xhtml+xml"&&(b=b.toLowerCase());return a.createElement(b)}function wb(a){this.g=a||t.document||document};function xb(a,b,c,e,d,f){try{var g=a.g,h=ub(g);h.async=!0;rb(h,b);g.head.appendChild(h);h.addEventListener("load",function(){d();e&&g.head.removeChild(h)});h.addEventListener("error",function(){c>0?xb(a,b,c-1,e,d,f):(e&&g.head.removeChild(h),f())})}catch(k){f()}};var zb=t.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),Ab=t.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),Bb=t.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function Cb(a,b,c){this.h=a;this.m=b;this.o=c;this.g=null;this.i=[];this.l=!1;this.j=new wb(this.h)}
+function Db(a){if(a.h.body&&!a.l){var b=function(){Eb(a);t.setTimeout(function(){Fb(a,3)},50)};xb(a.j,a.m,2,!0,function(){t[a.o]||b()},b);a.l=!0}}
+function Eb(a){for(var b=W(1,5),c=0;c<b;c++){var e=X(a);a.h.body.appendChild(e);a.i.push(e)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style.backgroundColor=Gb(249,259,242,252,219,229);b.style.boxShadow="0 0 12px #888";b.style.color=Gb(0,10,0,10,0,10);b.style.display="flex";b.style.justifyContent="center";b.style.fontFamily="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+
+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style.alignItems="flex-start";c.style.justifyContent="center";e=vb(a.j.g,"IMG");e.className=sb();e.src=zb;e.alt="Warning icon";e.style.height="24px";e.style.width="24px";e.style.paddingRight="16px";var d=X(a),f=X(a);f.style.fontWeight="bold";f.textContent=Ab;var g=X(a);g.textContent=Bb;Y(a,d,f);Y(a,d,g);Y(a,c,e);Y(a,c,d);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)e=X(a),a.h.body.appendChild(e),
+a.i.push(e)}function Y(a,b,c){for(var e=W(1,5),d=0;d<e;d++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(e=0;e<c;e++)d=X(a),b.appendChild(d)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function Gb(a,b,c,e,d,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(e,255)).toString()+","+W(Math.max(d,0),Math.min(f,255)).toString()+")"}function X(a){a=vb(a.j.g,"DIV");a.className=sb();return a}
+function Fb(a,b){b<=0||a.g!=null&&a.g.offsetHeight!==0&&a.g.offsetWidth!==0||(Hb(a),Eb(a),t.setTimeout(function(){Fb(a,b-1)},50))}function Hb(a){for(var b=q(a.i),c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function Ib(a,b,c,e,d){function f(k){document.body?g(document.body):k>0?t.setTimeout(function(){f(k-1)},d):b()}function g(k){k.appendChild(h);t.setTimeout(function(){h?(h.offsetHeight!==0&&h.offsetWidth!==0?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},e)}var h=Jb(c);f(3)}function Jb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Kb(a){return Fa(a)?Number(a):String(a)};function gb(a){this.g=R(a,void 0,void 0,2048)}p(gb,V);function Lb(a){if(!a)return null;a=Sa(T(a,4,db));var b;a===null||a===void 0?b=null:b=qb(a);return b};var Mb=ka([""]),Nb=ka([""]);function Ob(a,b){this.l=a;this.g=b;this.m=new wb(a.document);this.i=U(b,1);this.v=Lb(hb(b,2))||tb(Mb);this.h=!1;this.o=Lb(hb(b,13))||tb(Nb);this.j=new Cb(a.document,this.o,U(b,12))}Ob.prototype.start=function(){Pb(this)};
+function Pb(a){Qb(a);xb(a.m,a.v,3,!1,function(){a:{var b=a.i;var c=t.btoa(b);if(c=t[c]){try{var e=lb(t.atob(c))}catch(d){b=!1;break a}b=b===Sa(T(e,1,db))}else b=!1}b?Z(a,U(a.g,14)):(Z(a,U(a.g,8)),Db(a.j))},function(){Ib(function(){Z(a,U(a.g,7));Db(a.j)},function(){Z(a,U(a.g,6))},U(a.g,9),Kb(ib(a.g,10)),Kb(ib(a.g,11)))})}function Z(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())}function Qb(a){var b=t.btoa(a.i);a.l[b]&&Z(a,U(a.g,5))};function Rb(a){this.g=R(a,void 0,void 0,2048)}p(Rb,V);var Sb=jb(Rb);(function(a,b){t[a]=function(){var c=ma.apply(0,arguments);t[a]=function(){};b.call.apply(b,[null].concat(c instanceof Array?c:ja(q(c))))}})("__h82AlnkH6D91__",function(a){typeof window.atob==="function"&&(new Ob(window,Sb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi04MjQyMzI0MTY0NDEzOTQ1Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVR095eld0N1ZaZFFlVDNQQzN4cDRWNFFpM0VQWEdpLTNSOGJjOXBFOFZlOEZRZml1VVpydFFzOGdtWjZuWkNmUDBPdmdOZXIyWmhnQ0gwNnk4cnN1TDh3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdhMFNualdkTkRnTHdYTmRPWk9Ic1c4bzFhNFRhaGY5cWhkU1JVTHdCNmN1WDBpWDBveHBBOUhEaHI4OWR0UmdFcGZONHl1Yjk4TVZZMWFqTnJPY0Q0S3dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdpSXp3QnB6TlhidjVTWkNBLTllVzNaNVZZY1p0MjQ0T2V4V096dnlKYWVpTXU2RVpmX1hDLWU2N3plaG5QcEdoeXZFcWR5YnRhYzJZNFRUU21uR3I4d2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVYT3Nibmlmemp0ei1QVlN2SmFIY004dWhoZmNxX3I0UGwwMjhteDBhNU5DeGNnLXhEcEotdlZ1blNKS3pvRkRZZ3ZGa3QyZElnNGdmLVNRU3ZCTVBONkFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUZ3lOREl6TWpReE5qUTBNVE01TkRVXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi04MjQyMzI0MTY0NDEzOTQ1LmpzP3VzcXBcdTAwM2RDQkUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4Vkl1eVduV3owazNiSTh5czVMUFg4amloM1M1LXdJVWhWNGJtb2EtcGtlazNmU0dEYVc0aXg2dDJlTEZHZWhMMWJMLXhuVTJrdTdKVkZpbXpmQzNBT0hSUVx1MDAzZFx1MDAzZCJd");</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zalgo Generator Benchmark 2026: Creative Control Across 13 Tools</title>
+  <meta name="description" content="We tested 13 Zalgo generators with the same inputs on September 29, 2026: placement, mark control, presets, decoders and 3,774 measured outputs.">
+  <link rel="canonical" href="https://ultratextgen.com/research/zalgo-generator-benchmark/">
+  <meta property="og:title" content="Zalgo Generator Benchmark 2026">
+  <meta property="og:description" content="13 Zalgo generators, one test procedure, 3,774 measured outputs: which controls each one really has, and what each one is best at.">
+  <meta property="og:url" content="https://ultratextgen.com/research/zalgo-generator-benchmark/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="UltraTextGen">
+  <meta property="og:image" content="https://ultratextgen.com/assets/og/research-zalgo-generator-benchmark.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="Zalgo Generator Benchmark 2026">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zalgo Generator Benchmark 2026">
+  <meta name="twitter:description" content="13 Zalgo generators, one test procedure, 3,774 measured outputs: which controls each one really has, and what each one is best at.">
+  <meta name="twitter:image" content="https://ultratextgen.com/assets/og/research-zalgo-generator-benchmark.png">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/research/zalgo-generator-benchmark/benchmark.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://ultratextgen.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Research",
+      "item": "https://ultratextgen.com/research/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Zalgo Generator Benchmark",
+      "item": "https://ultratextgen.com/research/zalgo-generator-benchmark/"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Zalgo Generator Benchmark 2026: Testing Creative Control Across 13 Tools",
+  "description": "We tested 13 Zalgo generators with the same inputs on September 29, 2026: placement, mark control, presets, decoders and 3,774 measured outputs.",
+  "abstract": "No tested generator led every dimension. UltraTextGen and Textavia's Glitch Text Generator were the only two with progression shapes; Zalgo.io was the only one with a same-result toggle and a platform-safe cap; Glyphy, FontCraft and Pixelied were the fastest to a copied result.",
+  "author": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "image": "https://ultratextgen.com/assets/og/research-zalgo-generator-benchmark.png",
+  "mainEntityOfPage": "https://ultratextgen.com/research/zalgo-generator-benchmark/",
+  "datePublished": "2026-09-29T00:00:00+00:00",
+  "dateModified": "2026-09-30T00:00:00+00:00",
+  "version": "1.1",
+  "about": {
+    "@type": "Thing",
+    "name": "Zalgo text generators"
+  },
+  "isBasedOn": {
+    "@type": "Dataset",
+    "name": "Zalgo generator benchmark data, September 2026",
+    "url": "https://ultratextgen.com/research/zalgo-generator-benchmark/#data",
+    "temporalCoverage": "2026-09-29",
+    "distribution": [
+      {
+        "@type": "DataDownload",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://ultratextgen.com/research/zalgo-generator-benchmark/data/capabilities.csv"
+      },
+      {
+        "@type": "DataDownload",
+        "encodingFormat": "application/json",
+        "contentUrl": "https://ultratextgen.com/research/zalgo-generator-benchmark/data/samples.json"
+      }
+    ]
+  }
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/research/">Research</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Zalgo Generator Benchmark</span>
+</nav>
+
+<section class="hero research-hero study-header">
+    <div class="hero-inner">
+      <p class="research-kicker">UltraTextGen Research · Study 3 · Unicode text tools</p>
+      <h1 class="hero-headline">Zalgo Generator Benchmark 2026: Testing Creative Control Across 13 Tools</h1>
+      <p class="hero-tagline">We ran 13 Zalgo and corrupted-text generators through one procedure on September 29, 2026: the same ten inputs, the same fifteen creative tasks, and 3,774 captured outputs measured on one scale.</p>
+      <p class="study-hero-finding"><span class="study-hero-finding-label">Main finding</span> No generator led every dimension. Two of the 12 we could test let you shape corruption across a sentence; four could remove Zalgo; the three fastest to a copied result (Glyphy, FontCraft, Pixelied) have no intensity, placement or shape controls.</p>
+      <ul class="study-status" aria-label="Validation status">
+        <li class="study-status-item is-done">Benchmark complete: 12 of 13 generators tested</li>
+        <li class="study-status-item is-done">UltraTextGen re-tested after its update (version 1.1)</li>
+        <li class="study-status-item is-pending">Pasting into Discord, X and other apps not tested</li>
+      </ul>
+      <dl class="research-meta">
+        <div><dt>Published</dt><dd><time datetime="2026-09-29">September 29, 2026</time></dd></div>
+        <div><dt>Benchmark date</dt><dd><time datetime="2026-09-29">September 29, 2026</time></dd></div>
+        <div><dt>Version</dt><dd>1.1, updated <time datetime="2026-09-30">September 30, 2026</time></dd></div>
+        <div><dt>Evidence</dt><dd>Operated controls, read page code, measured outputs</dd></div>
+      </dl>
+      <div class="research-actions">
+        <a class="cta-btn" href="/compare/zalgo-generators/">Compare Zalgo generators by use case</a>
+        <a class="research-secondary-link" href="/research/zalgo-generator-benchmark.pdf" download>Download the study (PDF)</a>
+        <a class="research-secondary-link" href="/usecase/zalgo-text/">Create Zalgo text</a>
+        <a class="research-secondary-link" href="#data">Data files</a>
+        <a class="research-secondary-link" href="#method">Method</a>
+      </div>
+      <p class="research-print-only">Canonical URL: https://ultratextgen.com/research/zalgo-generator-benchmark/<br>UltraTextGen Research · Version 1.1 · Published September 29, 2026 · Updated September 30, 2026</p>
+    </div>
+  </section>
+
+<div class="study-layout">
+  <nav class="study-toc" id="contents" aria-label="On this page">
+    <p class="study-toc-title">On this page</p>
+    <p class="study-toc-group">Quick read</p>
+    <ol class="study-toc-list">
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#strengths">Who is strongest where</a></li>
+      <li><a href="#version-1-1">Version 1.1: UltraTextGen updated</a></li>
+    </ol>
+    <p class="study-toc-group">Full study</p>
+    <ol class="study-toc-list">
+      <li><a href="#question">Question and design</a></li>
+      <li><a href="#selection">Which tools and why</a></li>
+      <li><a href="#capabilities">Capability results</a></li>
+      <li><a href="#tasks">Creative tasks</a></li>
+      <li><a href="#shapes">Shape fidelity</a></li>
+      <li><a href="#output">Output measurements</a></li>
+      <li><a href="#ease">Ease of use</a></li>
+      <li><a href="#control">Control breadth</a></li>
+      <li><a href="#claims">Claims that did not hold</a></li>
+      <li><a href="#method">Method</a></li>
+      <li><a href="#limitations">Limitations</a></li>
+    </ol>
+    <p class="study-toc-group">Record</p>
+    <ol class="study-toc-list">
+      <li><a href="#data">Data and files</a></li>
+      <li><a href="#citation">How to cite</a></li>
+    </ol>
+  </nav>
+
+  <main class="container research-page study-main">
+
+    <section class="study-section study-summary" id="summary" aria-labelledby="summary-title">
+      <span class="article-section-label">Summary</span>
+      <h2 id="summary-title">What the benchmark found</h2>
+      <ul class="key-figures">
+        <li class="key-figure">
+          <p class="key-figure-value">2 of 12</p>
+          <p class="key-figure-label">tested generators let you shape corruption across a sentence</p>
+          <p class="key-figure-detail">UltraTextGen (6 progression shapes plus Uniform and Random, which combine with its other settings) and Textavia's Glitch Text Generator (11 fixed shape presets). Textavia's increase, decrease and peak presets followed their intended profile more closely; UltraTextGen's graded Valley fit better than Textavia's hard-edged Edges Only.</p>
+          <p class="key-figure-tags"><span class="evidence-tag is-measured">Measured output</span> <span class="evidence-tag is-function">Page code</span></p>
+        </li>
+        <li class="key-figure">
+          <p class="key-figure-value">4 of 12</p>
+          <p class="key-figure-label">can remove Zalgo from pasted text</p>
+          <p class="key-figure-detail">UltraTextGen, Zalgo.io, LingoJam and Zalgo.org. All four kept é and à typed the normal way, and all four stripped accents typed as a letter plus a separate accent mark.</p>
+          <p class="key-figure-tags"><span class="evidence-tag is-function">Operated in a browser</span></p>
+        </li>
+        <li class="key-figure">
+          <p class="key-figure-value">2 clicks</p>
+          <p class="key-figure-label">from page load to copied output on the fastest tools</p>
+          <p class="key-figure-detail">Glyphy, FontCraft, Pixelied, Zalgo.io and Textavia's Zalgo page needed 2 interactions. UltraTextGen needed 4: its sample text must be cleared, and on a 1280 × 800 screen the output sits below the fold.</p>
+          <p class="key-figure-tags"><span class="evidence-tag is-function">Operated in a browser</span></p>
+        </li>
+        <li class="key-figure">
+          <p class="key-figure-value">5 of 12</p>
+          <p class="key-figure-label">broke the 👁 emoji when adding marks</p>
+          <p class="key-figure-detail">LingoJam, Glyphy, Zalgo.org, PSD-Dude and Zalgo.io split the emoji in two, so the copied text shows a broken character.</p>
+          <p class="key-figure-tags"><span class="evidence-tag is-measured">Measured output</span></p>
+        </li>
+      </ul>
+      <div class="study-caveat" role="note">
+        <p class="study-caveat-title"><span class="evidence-tag is-untested">Not tested in apps</span> What these results do not show</p>
+        <p>Every result comes from the generator pages themselves. We did not paste output into Discord, X, Instagram or any other app, so nothing here says what survives on a platform. UltraTextGen publishes this study and is one of the 13 tools. The method was written before testing, and an automated AI reviewer checked the verdicts with tool names replaced by letters; the method document still named UltraTextGen as the subject, so that review was not fully blind. <a href="#limitations">Read the limitations</a></p>
+      </div>
+    </section>
+
+    <section class="study-section" id="strengths" aria-labelledby="strengths-title">
+      <span class="article-section-label">Results</span>
+      <h2 id="strengths-title">Who is strongest where</h2>
+      <p class="study-lede">Each row names the tested generator or generators the evidence supports, and nothing is summed into an overall score. These are the results as tested on September 29, 2026; <a href="#version-1-1">version 1.1</a> shows what changed after UltraTextGen's update.</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead><tr><th scope="col">Dimension</th><th scope="col">Strongest in the tested sample</th><th scope="col">Basis</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Fastest to a copied result</th><td>Glyphy, FontCraft, Pixelied</td><td>2 interactions, a useful result before you type, controls in the first screen on phone and desktop</td></tr>
+            <tr><th scope="row">Shape across the text</th><td>UltraTextGen and Textavia Glitch Text Generator</td><td>Only two with shapes; Textavia fits slopes and peak more closely, UltraTextGen's shapes combine with its other settings and its graded Valley fits better</td></tr>
+            <tr><th scope="row">Placement</th><td>PSD-Dude; UltraTextGen for middle-only</td><td>PSD-Dude alone sets a separate amount above, through and below; UltraTextGen alone has an amount-adjustable middle-only setting that measured 100% overlay marks</td></tr>
+            <tr><th scope="row">Mark type and coverage</th><td>UltraTextGen</td><td>Only tested tool with a mark-family choice and a frequency control separate from the amount</td></tr>
+            <tr><th scope="row">Removing Zalgo</th><td>UltraTextGen, Zalgo.io, LingoJam, Zalgo.org</td><td>All four behaved the same on every accent test</td></tr>
+            <tr><th scope="row">Same result every time</th><td>Zalgo.io; Coddy, FontCraft, Pixelied</td><td>Zalgo.io has a user toggle; the other three always repeat</td></tr>
+            <tr><th scope="row">Sharing a setup</th><td>UltraTextGen</td><td>Only tested tool that saves settings in the URL; the random marks still change</td></tr>
+            <tr><th scope="row">Platform utility</th><td>UltraTextGen and Zalgo.io</td><td>UltraTextGen checks 4 platform limits live; Zalgo.io has a platform-safe intensity cap and output statistics</td></tr>
+            <tr><th scope="row">Preset selection</th><td>Textavia Glitch Text Generator</td><td>55 ready-made styles, shown as result cards under "Category filters" once you type; at least 5 pairs give the same effect</td></tr>
+            <tr><th scope="row">Highest measured classic ceiling that holds</th><td>SymbolDB</td><td>105 marks on one letter in Custom mode; Zalgo.org reached 528 but resets on the next keystroke</td></tr>
+            <tr><th scope="row">Text integrity</th><td>UltraTextGen, Coddy, Textavia Glitch Text Generator</td><td>Emoji intact, spaces left clean, no characters added</td></tr>
+            <tr><th scope="row">Measured output diversity</th><td>No defensible leader</td><td>All 12 drew on 94 to 116 different marks</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3 id="utg-strong">Where UltraTextGen performed strongly</h3>
+      <ul>
+        <li>UltraTextGen was the only tested generator with a choice of mark family (all, bars, letters, symbols, noise) and a frequency control that sets how many letters get marks, separate from how many marks each gets.</li>
+        <li>Of the 10 creative tasks that need no shape control, UltraTextGen directly produced 9, Textavia's Glitch Text Generator 8, and Zalgo.io, Coddy and PSD-Dude 7 each. Counting all 15, it was 14 against 13 for Textavia; the task list includes several effects UltraTextGen names as presets, which favours it.</li>
+        <li>UltraTextGen's Mid position is the only amount-adjustable middle-only setting that measured 100% overlay marks. The other adjustable middle modes measured 0% to 90%, because their "middle" lists also hold marks that sit above or below. It mixes five overlay marks, so it does not draw one clean strike line.</li>
+        <li>UltraTextGen was the only tested generator that saves text and settings in the page URL and the only one that checks the output against platform limits (Discord message, Discord nickname, X post and Instagram bio) as you type.</li>
+      </ul>
+      <h3 id="competitors-strong">Where other generators performed strongly</h3>
+      <ul>
+        <li>Textavia's Glitch Text Generator tracked its intended increase, decrease and peak profiles more closely than UltraTextGen's equivalents (r 0.94 to 0.95 against 0.81 to 0.86), and it offers 55 presets.</li>
+        <li>Zalgo.io was the only tested generator with a "same result each time" toggle and a platform-safe cap (it limits intensity to 5: 7.4 instead of 26.6 marks per letter on Extreme). It reaches a copied result in 2 interactions, with its input, output and Copy button in the first desktop screen.</li>
+        <li>PSD-Dude was the only tested generator with a separate amount for marks above, through and below, and it offers an animated GIF export.</li>
+        <li>Coddy gives the same output for the same text and settings, even after a reload, and combines above, through and below freely.</li>
+        <li>Glyphy, FontCraft and Pixelied need no settings at all: type once and copy. FontCraft's 400 styles include 12 fixed Zalgo levels that repeat exactly.</li>
+        <li>SymbolDB reached 105 marks on one letter, the highest measured classic ceiling that held. UltraTextGen measured 92 with every position on (100 with one position, by its code).</li>
+      </ul>
+    </section>
+
+    <section class="study-section" id="version-1-1" aria-labelledby="v11-title">
+      <span class="article-section-label">Update</span>
+      <h2 id="v11-title">Version 1.1: UltraTextGen after its update</h2>
+      <p class="study-lede">The benchmark found gaps in UltraTextGen. On September 30, 2026 UltraTextGen shipped changes aimed at them, and we re-ran its test with the same browser procedure and scripts. The other 11 generators were not re-tested: their results are still those of September 29.</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead><tr><th scope="col">UltraTextGen</th><th scope="col">September 29 (1.0)</th><th scope="col">September 30 (1.1)</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Interactions to a copied result</th><td>4</td><td>2</td></tr>
+            <tr><th scope="row">Output and Copy in the first desktop screen</th><td>No (output at about 1,400 px)</td><td>Yes (output starts at 551 px of 800)</td></tr>
+            <tr><th scope="row">Text box in the first phone screen</th><td>No</td><td>Yes, with the Copy button; the output starts just below it (English page)</td></tr>
+            <tr><th scope="row">Same output from a shared link</th><td>Settings only</td><td>Exact output (a seed travels in the link)</td></tr>
+            <tr><th scope="row">Separate amount per zone</th><td>No</td><td>Yes: above, through and below</td></tr>
+            <tr><th scope="row">Fit to a platform limit</th><td>Check only</td><td>Check, plus one tap to shrink the effect until it fits</td></tr>
+            <tr><th scope="row">Most classic marks on one letter</th><td>92</td><td>300 with one position, 272 with all (measured)</td></tr>
+            <tr><th scope="row">Thai Cascade depth</th><td>Up to 150</td><td>Up to 1,000, upward or downward, with a kaomoji carrier</td></tr>
+            <tr><th scope="row">Animated GIF</th><td>No (PNG image only)</td><td>Yes, made in the browser</td></tr>
+            <tr><th scope="row">Multi-part emoji (flags, families)</th><td>Split by marks</td><td>Kept whole</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3 id="v11-shapes">Shapes at 100% frequency</h3>
+      <p>Version 1.0 could not test UltraTextGen's shapes at 100% frequency. Version 1.1 did. At 100%, every letter gets marks and only which marks is random, so each single output follows its shape as closely as the average: r 0.85 for Slope Up, Slope Down, Pyramid and Valley, and 0.91 for Steps. At the default 80% frequency, single outputs measured 0.37 to 0.52. Textavia's shape presets still fit better on average (0.94 to 0.95), while their single outputs measured about 0.60.</p>
+      <h3 id="v11-decoders">Decoders on other tools' output</h3>
+      <p>Version 1.0 tested each decoder only on its own tool. Version 1.1 ran all 3,726 usable captured outputs through UltraTextGen's decoder and through the character ranges read in the other three decoders' page code. UltraTextGen's decoder left no combining mark in any output. The range Zalgo.io's code strips left marks in 3% of outputs, and the range LingoJam's and Zalgo.org's code strips left marks in 68%, because it stops at U+0361.</p>
+      <p>Decoding cannot restore letters a generator changed: Glyphy's underscores, PSD-Dude's added spaces and letter swaps, SymbolDB's symbol templates and FontCraft's dropped accents all survive every decoder.</p>
+      <h3 id="v11-still">What still favours other generators</h3>
+      <ul>
+        <li>Glyphy, FontCraft and Pixelied need no settings at all; UltraTextGen now matches their 2 interactions but shows far more controls.</li>
+        <li>Textavia's Glitch Text Generator offers 55 ready-made styles (result cards, not a menu) to UltraTextGen's 8 presets, and its averaged shape fit is closer.</li>
+        <li>Zalgo.io's "Consistent" toggle and PSD-Dude's per-zone sliders did the same jobs first; UltraTextGen now has equivalents, not unique features.</li>
+        <li>FontCraft's 400 styles include ready-made decorations no Zalgo engine produces.</li>
+      </ul>
+      <p>The data behind this section is in the version 1.1 files under <a href="#data">Data</a>.</p>
+    </section>
+
+    <section class="study-section" id="question" aria-labelledby="question-title">
+      <span class="article-section-label">Design</span>
+      <h2 id="question-title">What the study asked and why</h2>
+      <p><strong>Research question.</strong> How much intentional control does each popular Zalgo generator give over the result, and what does its output measure like when every tool gets the same input?</p>
+      <p><strong>Why.</strong> Zalgo generators look alike in search results and many pages claim "full control" or "50+ styles". We wanted to know which controls exist when you operate the page, not which ones the page copy lists. UltraTextGen builds one of these generators, so it is part of the sample and is tested the same way.</p>
+      <p><strong>What counts as supported.</strong> A capability is supported only if the user can request it. Random output that happens to rise or peak does not count as a shape. A page claim with no working control is recorded as a claim, not a capability.</p>
+    </section>
+
+    <section class="study-section" id="selection" aria-labelledby="selection-title">
+      <span class="article-section-label">Sample</span>
+      <h2 id="selection-title">Which tools were tested and why</h2>
+      <p>On September 29, 2026 we searched seven phrases on two web search indexes: <em>zalgo text generator</em>, <em>zalgo generator</em>, <em>corrupted text generator</em>, <em>glitch text generator</em>, <em>cursed text generator</em>, <em>creepy text generator</em> and <em>demonic text generator</em>. The selection rule was fixed before any tool was tested: keep every generator site that appeared for at least 3 of the 7 phrases, then add at most two with a stated reason.</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead><tr><th scope="col">Generator</th><th scope="col">Page tested</th><th scope="col">Why included</th><th scope="col">Status</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Coddy</th><td>coddy.tech glitch text generator</td><td>Appeared for 7 of 7 phrases</td><td>Tested</td></tr>
+            <tr><th scope="row">LingoJam</th><td>lingojam.com ZalgoText</td><td>7 of 7</td><td>Tested</td></tr>
+            <tr><th scope="row">Glyphy</th><td>glyphy.io zalgo text</td><td>7 of 7</td><td>Tested</td></tr>
+            <tr><th scope="row">Creative Fabrica</th><td>creativefabrica.com zalgo text generator</td><td>7 of 7</td><td>Blocked: a bot check returned HTTP 403 to every browser and request</td></tr>
+            <tr><th scope="row">Zalgo.org</th><td>zalgo.org</td><td>5 of 7</td><td>Tested</td></tr>
+            <tr><th scope="row">SymbolDB</th><td>symboldb.org zalgo generator</td><td>5 of 7</td><td>Tested</td></tr>
+            <tr><th scope="row">PSD-Dude</th><td>psd-dude.com zalgo text</td><td>4 of 7</td><td>Tested</td></tr>
+            <tr><th scope="row">FontCraft</th><td>fontcraft.com zalgo text</td><td>4 of 7</td><td>Tested</td></tr>
+            <tr><th scope="row">Pixelied</th><td>pixelied.com glitch text</td><td>3 of 7</td><td>Tested</td></tr>
+            <tr><th scope="row">Textavia Zalgo</th><td>textavia.com zalgo</td><td>Added: textavia.com appeared for 2 of 7 (one phrase per page); checked for a shape feature</td><td>Tested</td></tr>
+            <tr><th scope="row">Textavia Glitch Text Generator</th><td>textavia.com glitch text converter</td><td>Added during testing: the Textavia page that carries the shape presets, returned for <em>corrupted text generator</em></td><td>Tested</td></tr>
+            <tr><th scope="row">Zalgo.io</th><td>zalgo.io</td><td>Added: UltraTextGen's own page compared itself with Zalgo.io; 0 of 7 in this sample</td><td>Tested</td></tr>
+            <tr><th scope="row">UltraTextGen</th><td>ultratextgen.com Zalgo text</td><td>Subject of the study</td><td>Tested</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Results that were not generators (videos, TV listings, dictionaries) were left out; none of them reached 3 phrases. Sites that appeared for only 1 or 2 phrases (fsymbols, CodeShack, TextTrick, Monocalc, FontGenerator.org and others) were not tested. The exact addresses tested are in <a href="/research/zalgo-generator-benchmark/data/tools.csv">tools.csv</a>, and every search result is in <a href="/research/zalgo-generator-benchmark/data/serp-sample.csv">serp-sample.csv</a>.</p>
+    </section>
+
+    <section class="study-section" id="capabilities" aria-labelledby="capabilities-title">
+      <span class="article-section-label">Results</span>
+      <h2 id="capabilities-title">Capability results by generator</h2>
+      <p class="study-lede">"No" means the full list of controls on the page was checked and the capability was absent. "Not found" means we looked and did not find it, which is weaker. "Partly" is explained in the <a href="/research/zalgo-generator-benchmark/data/capabilities.csv">capabilities data</a>, one row per tool and capability with its evidence.</p>
+<p class="table-note">Capabilities found on each generator page on September 29, 2026. Creative Fabrica is not shown: it blocked every test.</p>
+<div class="data-table-wrap"><table class="data-table bm-table"><thead><tr><th scope="col">Capability</th><th scope="col">UltraTextGen</th><th scope="col">Zalgo.io</th><th scope="col">Coddy</th><th scope="col">PSD-Dude</th><th scope="col">Textavia Glitch Text Generator</th><th scope="col">LingoJam</th><th scope="col">Zalgo.org</th><th scope="col">SymbolDB</th><th scope="col">Glyphy</th><th scope="col">FontCraft</th><th scope="col">Pixelied</th><th scope="col">Textavia Zalgo</th></tr></thead><tbody>
+<tr class="bm-group"><th scope="rowgroup" colspan="13">Basic generation</th></tr>
+<tr><th scope="row">Output updates as you type</th><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td></tr>
+<tr><th scope="row">Regenerate button</th><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-yes">Yes</td><td class="bm-partial">Partly</td><td class="bm-partial">Partly</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-partial">Partly</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td></tr>
+<tr><th scope="row">Adjustable intensity</th><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-partial">Partly</td><td class="bm-yes">Yes</td><td class="bm-partial">Partly</td><td class="bm-yes">Yes</td><td class="bm-partial">Partly</td><td class="bm-partial">Partly</td><td class="bm-partial">Partly</td><td class="bm-yes">Yes</td></tr>
+<tr class="bm-group"><th scope="rowgroup" colspan="13">Placement</th></tr>
+<tr><th scope="row">Above-only on request</th><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-partial">Partly</td><td class="bm-partial">Partly</td><td class="bm-no">No</td></tr>
+<tr><th scope="row">Below-only on request</th><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-partial">Partly</td><td class="bm-no">No</td><td class="bm-partial">Partly</td><td class="bm-partial">Partly</td><td class="bm-no">No</td></tr>
+<tr><th scope="row">Middle-only (measured overlay share)</th><td class="bm-yes">Yes, 100% overlay</td><td class="bm-partial">Partly, 15%–16% overlay</td><td class="bm-partial">Partly, 73%–90% overlay</td><td class="bm-partial">Partly, 29%–32% overlay</td><td class="bm-partial">Partly, 16%–26% overlay</td><td class="bm-partial">Fixed single mark</td><td class="bm-partial">Fixed single mark</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-partial">Fixed single mark</td><td class="bm-partial">Fixed single mark</td><td class="bm-no">No</td></tr>
+<tr><th scope="row">Any combination of zones</th><td class="bm-partial">Partly</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-partial">Partly</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td></tr>
+<tr><th scope="row">Separate amount per zone</th><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td></tr>
+<tr class="bm-group"><th scope="rowgroup" colspan="13">Mark control</th></tr>
+<tr><th scope="row">Choice of mark family</th><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-partial">Partly</td><td class="bm-partial">Partly</td><td class="bm-no">No</td></tr>
+<tr><th scope="row">Frequency separate from amount</th><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-partial">Partly</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td></tr>
+<tr class="bm-group"><th scope="rowgroup" colspan="13">Shape</th></tr>
+<tr><th scope="row">Progression shapes</th><td class="bm-yes">6 + Uniform, Random; combinable</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-yes">11 fixed presets</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td></tr>
+<tr class="bm-group"><th scope="rowgroup" colspan="13">Presets</th></tr>
+<tr><th scope="row">Presets or fixed styles</th><td class="bm-yes">7</td><td class="bm-yes">4</td><td class="bm-yes">4</td><td class="bm-yes">2</td><td class="bm-yes">55</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-yes">50</td><td class="bm-yes">12 levels</td><td class="bm-yes">12 of 400 styles</td><td class="bm-yes">22 of 48 styles</td><td class="bm-partial">3 levels</td></tr>
+<tr class="bm-group"><th scope="rowgroup" colspan="13">Recoverability</th></tr>
+<tr><th scope="row">Built-in decoder</th><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td></tr>
+<tr class="bm-group"><th scope="rowgroup" colspan="13">Reproducibility</th></tr>
+<tr><th scope="row">Same output again</th><td class="bm-partial">Partly</td><td class="bm-partial">Partly</td><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-no">No</td></tr>
+<tr><th scope="row">&quot;Same result&quot; toggle</th><td class="bm-no">No</td><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td></tr>
+<tr><th scope="row">Settings saved in the URL</th><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td></tr>
+<tr class="bm-group"><th scope="rowgroup" colspan="13">Platform utility</th></tr>
+<tr><th scope="row">Output length shown</th><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-yes">Yes</td></tr>
+<tr><th scope="row">Platform limit check</th><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td></tr>
+<tr><th scope="row">Platform-safe mode</th><td class="bm-no">No</td><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td></tr>
+<tr class="bm-group"><th scope="rowgroup" colspan="13">Text integrity</th></tr>
+<tr><th scope="row">👁 emoji survives generation</th><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td><td class="bm-yes">Yes</td></tr>
+<tr class="bm-group"><th scope="rowgroup" colspan="13">Extras</th></tr>
+<tr><th scope="row">Image or GIF export</th><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-yes">Yes</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td></tr>
+</tbody></table></div>
+      <p>Evidence behind each cell is one of: operated in a browser, read in the page's own code, or measured from captured output. Claims found only in page copy were never counted as capabilities.</p>
+    </section>
+
+    <section class="study-section" id="tasks" aria-labelledby="tasks-title">
+      <span class="article-section-label">Results</span>
+      <h2 id="tasks-title">Fifteen creative tasks</h2>
+      <p class="study-lede">For each effect we asked: can a user produce it on request? Each verdict was checked against measured output where a measurement applies, such as the share of marks in the middle zone for "middle only".</p>
+<p class="table-note">Can the user produce each effect on request? Direct: a control or preset does it. Approx.: reachable with a stated limitation.</p>
+<div class="data-table-wrap"><table class="data-table bm-table"><thead><tr><th scope="col">Task</th><th scope="col">UltraTextGen</th><th scope="col">Zalgo.io</th><th scope="col">Coddy</th><th scope="col">PSD-Dude</th><th scope="col">Textavia Glitch Text Generator</th><th scope="col">LingoJam</th><th scope="col">Zalgo.org</th><th scope="col">SymbolDB</th><th scope="col">Glyphy</th><th scope="col">FontCraft</th><th scope="col">Pixelied</th><th scope="col">Textavia Zalgo</th></tr></thead><tbody>
+<tr><th scope="row">Light</th><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-partial">Approx.</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td></tr>
+<tr><th scope="row">Extreme</th><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-partial">Approx.</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td></tr>
+<tr><th scope="row">Above only</th><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-yes">Direct</td><td class="bm-no">No</td><td class="bm-partial">Approx.</td><td class="bm-partial">Approx.</td><td class="bm-no">No</td></tr>
+<tr><th scope="row">Below only</th><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-partial">Approx.</td><td class="bm-no">No</td><td class="bm-partial">Approx.</td><td class="bm-partial">Approx.</td><td class="bm-no">No</td></tr>
+<tr><th scope="row">Middle only</th><td class="bm-yes">Direct</td><td class="bm-partial">Approx.</td><td class="bm-partial">Approx.</td><td class="bm-partial">Approx.</td><td class="bm-partial">Approx.</td><td class="bm-partial">Approx.</td><td class="bm-partial">Approx.</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-partial">Approx.</td><td class="bm-partial">Approx.</td><td class="bm-no">No</td></tr>
+<tr><th scope="row">Mostly readable</th><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-partial">Approx.</td><td class="bm-yes">Direct</td><td class="bm-partial">Approx.</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td></tr>
+<tr><th scope="row">Dense, unreadable</th><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td></tr>
+<tr><th scope="row">Gradually increasing</th><td class="bm-yes">Direct</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-yes">Direct</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td></tr>
+<tr><th scope="row">Gradually decreasing</th><td class="bm-yes">Direct</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-yes">Direct</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td></tr>
+<tr><th scope="row">Wave</th><td class="bm-yes">Direct</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-yes">Direct</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td></tr>
+<tr><th scope="row">Middle peak</th><td class="bm-yes">Direct</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-yes">Direct</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td></tr>
+<tr><th scope="row">Middle valley</th><td class="bm-yes">Direct</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-yes">Direct</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-no">No</td></tr>
+<tr><th scope="row">Strikethrough</th><td class="bm-partial">Approx.</td><td class="bm-partial">Approx.</td><td class="bm-partial">Approx.</td><td class="bm-partial">Approx.</td><td class="bm-partial">Approx.</td><td class="bm-partial">Approx.</td><td class="bm-partial">Approx.</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-no">No</td></tr>
+<tr><th scope="row">Tiny stack</th><td class="bm-yes">Direct</td><td class="bm-partial">Approx.</td><td class="bm-partial">Approx.</td><td class="bm-partial">Approx.</td><td class="bm-yes">Direct</td><td class="bm-partial">Approx.</td><td class="bm-partial">Approx.</td><td class="bm-yes">Direct</td><td class="bm-partial">Approx.</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-partial">Approx.</td></tr>
+<tr><th scope="row">Roots (downward)</th><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-yes">Direct</td><td class="bm-no">No</td><td class="bm-no">No</td><td class="bm-partial">Approx.</td><td class="bm-no">No</td><td class="bm-partial">Approx.</td><td class="bm-partial">Approx.</td><td class="bm-no">No</td></tr>
+<tr class="bm-total"><th scope="row">Direct, of 15</th><td>14</td><td>7</td><td>7</td><td>7</td><td>13</td><td>4</td><td>1</td><td>6</td><td>3</td><td>6</td><td>6</td><td>4</td></tr>
+<tr class="bm-total"><th scope="row">Approx., of 15</th><td>1</td><td>3</td><td>3</td><td>3</td><td>2</td><td>3</td><td>6</td><td>2</td><td>2</td><td>4</td><td>4</td><td>1</td></tr>
+</tbody></table></div>
+      <p>Two verdicts are worth reading closely. UltraTextGen's strikethrough is "approximated": its Middle position mixes five overlay marks, while a one-mark strikethrough style such as FontCraft's or Pixelied's draws a clean line. And Zalgo.org's extreme result is "approximated" because its slider resets on the next keystroke.</p>
+    </section>
+
+    <section class="study-section" id="shapes" aria-labelledby="shapes-title">
+      <span class="article-section-label">Results</span>
+      <h2 id="shapes-title">How closely the shapes follow their promise</h2>
+      <p class="study-lede">Two tools offer progression shapes, so we captured 20 outputs of a 100-character sentence for each shape and compared the marks on every letter with the shape's ideal profile.</p>
+<p class="table-note">A 100-character sentence with 81 letters and digits, 20 outputs per shape. r is the Pearson correlation with the ideal profile (1 = perfect fit, 0 = none). "Average profile": r of the 20 outputs averaged letter by letter. "Single output": the median r of the 20 outputs taken one at a time. UltraTextGen ran at its default 80% frequency; its replicate run is in brackets.</p>
+<div class="data-table-wrap"><table class="data-table"><thead><tr><th scope="col">Shape</th><th scope="col">UltraTextGen option</th><th scope="col">r, average profile</th><th scope="col">r, single output</th><th scope="col">Textavia Glitch preset</th><th scope="col">r, average profile</th><th scope="col">r, single output</th></tr></thead><tbody>
+<tr><th scope="row">Gradually increasing</th><td>Slope Up</td><td>0.86 (0.81)</td><td>0.58 (0.53)</td><td>Progressive</td><td>0.94</td><td>0.61</td></tr>
+<tr><th scope="row">Gradually decreasing</th><td>Slope Down</td><td>0.84 (0.83)</td><td>0.51 (0.52)</td><td>Decay</td><td>0.95</td><td>0.60</td></tr>
+<tr><th scope="row">Middle peak</th><td>Pyramid</td><td>0.81 (0.82)</td><td>0.53 (0.55)</td><td>Center Focus</td><td>0.95</td><td>0.61</td></tr>
+<tr><th scope="row">Middle valley</th><td>Valley</td><td>0.75 (0.80)</td><td>0.37 (0.37)</td><td>Edges Only</td><td>0.32</td><td>0.29</td></tr>
+<tr><th scope="row">Steps</th><td>Steps</td><td>0.83 (0.82)</td><td>0.38 (0.41)</td><td>None found</td><td>–</td><td>–</td></tr>
+</tbody></table></div>
+      <p>Averaged over 20 outputs, both tools implement what they promise. A single output is noisier on both, because each letter still gets a random number of marks: that is the result a user actually copies. Textavia's Edges Only is a hard edge on the first and last two letters rather than a graded valley, so it fits a valley poorly by design.</p>
+      <p><strong>Waves.</strong> Both wave options repeat, and they are different waves. UltraTextGen's averaged profile has its dominant rhythm at 2 cycles across the text, where its other shapes peak at 1: two long swells, whatever the length. Textavia's repeats about every 6 letters (14 cycles), which shows more clearly in a single output.</p>
+      <p><strong>Two cautions.</strong> The ideal valley and steps profiles match UltraTextGen's own formulas, so they favour its versions of those two shapes. And UltraTextGen ran at its default 80% frequency, which leaves about one letter in five unmarked and lowers its r; a run at 100% did not execute.</p>
+      <p><strong>How they combine.</strong> UltraTextGen's shapes apply on top of any position, mark family, frequency and amount. Textavia's are fixed presets, each with its own marks and amount.</p>
+    </section>
+
+    <section class="study-section" id="output" aria-labelledby="output-title">
+      <span class="article-section-label">Results</span>
+      <h2 id="output-title">Output measurements</h2>
+      <p class="study-lede">Every captured output was measured by one script. A mark is any Unicode combining mark; its zone (above, middle, below) comes from Unicode's combining class, not from each tool's own labels.</p>
+<p class="table-note">Default state, input "hello". Marks per letter: mean ± population standard deviation over the captured outputs. Zones use Unicode combining classes.</p>
+<div class="data-table-wrap"><table class="data-table"><thead><tr><th scope="col">Generator</th><th scope="col">Outputs</th><th scope="col">Marks per letter</th><th scope="col">Above / middle / below</th><th scope="col">Length (UTF-16)</th><th scope="col">Most classic marks on one letter, any setting tested</th></tr></thead><tbody>
+<tr><th scope="row">UltraTextGen</th><td>20</td><td>4.56 ± 0.90</td><td>50% / 17% / 33%</td><td>27.8</td><td>92*</td></tr>
+<tr><th scope="row">Zalgo.io</th><td>20</td><td>8.03 ± 0.96</td><td>44% / 5% / 51%</td><td>45.1</td><td>49</td></tr>
+<tr><th scope="row">Coddy</th><td>20</td><td>3.37 ± 0.83</td><td>43% / 13% / 44%</td><td>21.9</td><td>18</td></tr>
+<tr><th scope="row">PSD-Dude</th><td>20</td><td>16.05 ± 1.23</td><td>47% / 3% / 50%</td><td>155.3</td><td>39</td></tr>
+<tr><th scope="row">Textavia Glitch Text Generator</th><td>20</td><td>1.52 ± 0.25</td><td>100% / 0% / 0%</td><td>12.6</td><td>25</td></tr>
+<tr><th scope="row">LingoJam</th><td>20</td><td>17.03 ± 2.44</td><td>47% / 6% / 47%</td><td>90.2</td><td>93</td></tr>
+<tr><th scope="row">Zalgo.org</th><td>20</td><td>19.90 ± 3.00</td><td>47% / 5% / 48%</td><td>104.5</td><td>528</td></tr>
+<tr><th scope="row">SymbolDB</th><td>20</td><td>6.79 ± 1.09</td><td>52% / 0% / 48%</td><td>39.0</td><td>105</td></tr>
+<tr><th scope="row">Glyphy</th><td>20</td><td>1.52 ± 0.44</td><td>53% / 5% / 42%</td><td>12.8</td><td>50</td></tr>
+<tr><th scope="row">FontCraft</th><td>5</td><td>3.00</td><td>67% / 0% / 33%</td><td>20.0</td><td>46</td></tr>
+<tr><th scope="row">Pixelied</th><td>5</td><td>1.80</td><td>0% / 100% / 0%</td><td>15.0</td><td>21</td></tr>
+<tr><th scope="row">Textavia Zalgo</th><td>20</td><td>3.90 ± 0.40</td><td>50% / 0% / 50%</td><td>24.5</td><td>15</td></tr>
+</tbody></table></div>
+<p class="table-note">* UltraTextGen: 92 with every position on, as measured. By its code, one position alone reaches 100 and the Steps shape up to 125 (not measured). Its separate Thai Cascade mode stacked 150 copies of one Thai tone mark, which this column does not count as classic marks.</p>
+      <ul>
+        <li><strong>Default strength varies 13-fold.</strong> On "hello", Glyphy's first card and Textavia's converter add about 1.5 marks per letter by default; Zalgo.org adds about 19.9.</li>
+        <li><strong>Length is the cost.</strong> Every mark is a character. Zalgo.org's default "hello" averaged 104.5 UTF-16 units, over three times Discord's 32-character nickname limit.</li>
+        <li><strong>Diversity is similar.</strong> Across all their captured outputs, every tested tool used between 94 and 116 different marks. That range also depends on how many settings each tool has, so it is not a ranking.</li>
+        <li><strong>Text integrity differs.</strong> Glyphy's mark list includes a plain underscore, so 8 of 44 default outputs changed the text itself. PSD-Dude adds a space between letters by default. FontCraft removed the accents from "café déjà vu".</li>
+      </ul>
+    </section>
+
+    <section class="study-section" id="ease" aria-labelledby="ease-title">
+      <span class="article-section-label">Results</span>
+      <h2 id="ease-title">Ease of use, measured separately from power</h2>
+      <p class="study-lede">Ease and control pull in opposite directions in this sample, so they are reported apart and never combined.</p>
+<p class="table-note">Interactions counted from page load; typing your text counts as one. Screens: 1280 × 800 desktop, 390 × 664 phone viewport. "Partly": only part of the generator is in the first screen.</p>
+<div class="data-table-wrap"><table class="data-table"><thead><tr><th scope="col">Generator</th><th scope="col">To first Zalgo of your text</th><th scope="col">To copied output</th><th scope="col">Useful before you type</th><th scope="col">Generator controls in first screen, desktop</th><th scope="col">Same, phone</th></tr></thead><tbody>
+<tr><th scope="row">UltraTextGen</th><td>3</td><td>4</td><td>Yes</td><td>Partly</td><td>No</td></tr>
+<tr><th scope="row">Zalgo.io</th><td>1</td><td>2</td><td>No</td><td>Partly</td><td>Partly</td></tr>
+<tr><th scope="row">Coddy</th><td>2</td><td>3</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+<tr><th scope="row">PSD-Dude</th><td>2</td><td>3</td><td>Yes</td><td>Yes</td><td>Partly</td></tr>
+<tr><th scope="row">Textavia Glitch Text Generator</th><td>3</td><td>4</td><td>Yes</td><td>Partly</td><td>Untested</td></tr>
+<tr><th scope="row">LingoJam</th><td>1</td><td>3</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+<tr><th scope="row">Zalgo.org</th><td>1</td><td>3</td><td>Partly</td><td>Yes</td><td>No</td></tr>
+<tr><th scope="row">SymbolDB</th><td>2</td><td>3</td><td>Yes</td><td>Yes</td><td>Partly</td></tr>
+<tr><th scope="row">Glyphy</th><td>1</td><td>2</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr><th scope="row">FontCraft</th><td>1</td><td>2</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr><th scope="row">Pixelied</th><td>1</td><td>2</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr><th scope="row">Textavia Zalgo</th><td>1</td><td>2</td><td>No</td><td>Partly</td><td>Partly</td></tr>
+</tbody></table></div>
+      <p>UltraTextGen opens with "Hello World" already converted, so a result is ready before you type. To convert your own text you clear the sample, type, and on a 1280 × 800 screen scroll to the output, which starts about 1,400 pixels down the page. On a phone the text box itself starts below the first screen. That is the largest usability gap UltraTextGen showed in this benchmark.</p>
+    </section>
+
+    <section class="study-section" id="control" aria-labelledby="control-title">
+      <span class="article-section-label">Analysis</span>
+      <h2 id="control-title">How much intentional control each tool gives</h2>
+      <p>We did not multiply slider positions into a number of "possible states". The controls are not independent (UltraTextGen's amount and shape both scale the same count), many settings look identical once rendered, and a big number would reward long sliders over useful ones. Instead we count seven independent axes a user can set on purpose. This model was built after the data was collected:</p>
+      <ol>
+        <li>amount of corruption,</li>
+        <li>which zones get marks (above, middle, below),</li>
+        <li>a separate amount per zone,</li>
+        <li>which family of marks is used,</li>
+        <li>how many letters are touched (frequency),</li>
+        <li>how corruption changes along the text (shape),</li>
+        <li>getting the same result again.</li>
+      </ol>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <caption>1 = a working control, 0.5 = partly (fixed styles, presets only, or a side effect), 0 = none. The total counts axes; it is not a quality score.</caption>
+          <thead><tr><th scope="col">Generator</th><th scope="col">Axes of control, of 7</th><th scope="col">Which</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">UltraTextGen</th><td>5.5</td><td>amount, zones, mark family, frequency, shape, repeat result (partly)</td></tr>
+            <tr><th scope="row">Zalgo.io</th><td>3</td><td>amount, zones, repeat result</td></tr>
+            <tr><th scope="row">Coddy</th><td>3</td><td>amount, zones, repeat result</td></tr>
+            <tr><th scope="row">PSD-Dude</th><td>3</td><td>amount, zones, per-zone amount</td></tr>
+            <tr><th scope="row">FontCraft</th><td>2.5</td><td>amount (partly), zones (partly), mark family (partly), repeat result</td></tr>
+            <tr><th scope="row">Pixelied</th><td>2.5</td><td>amount (partly), zones (partly), mark family (partly), repeat result</td></tr>
+            <tr><th scope="row">Textavia Glitch Text Generator</th><td>2</td><td>amount (partly), zones (partly), frequency (partly), shape (partly)</td></tr>
+            <tr><th scope="row">SymbolDB</th><td>2</td><td>amount, zones</td></tr>
+            <tr><th scope="row">LingoJam</th><td>1</td><td>amount</td></tr>
+            <tr><th scope="row">Textavia Zalgo</th><td>1</td><td>amount</td></tr>
+            <tr><th scope="row">Zalgo.org</th><td>0.5</td><td>amount (partly)</td></tr>
+            <tr><th scope="row">Glyphy</th><td>0.5</td><td>amount (partly)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>No tested generator had all seven. UltraTextGen covered 5.5, missing a per-zone amount (PSD-Dude has one) and a way to repeat an exact result (Zalgo.io, Coddy, FontCraft and Pixelied have one). The task results above measure the same question from the output side.</p>
+    </section>
+
+    <section class="study-section" id="claims" aria-labelledby="claims-title">
+      <span class="article-section-label">Record</span>
+      <h2 id="claims-title">Page claims that did not hold</h2>
+      <p>Pages were read as well as operated. These claims did not match what the page did on September 29, 2026. UltraTextGen's own page is included. Its claims below were corrected on its English page in the same release as this study. On its translated pages, the statements about other generators and the Extreme tooltip were corrected too; the translated intro, decoder and sharing text still carry some older wording about UltraTextGen itself until their next update.</p>
+      <ul>
+        <li><strong>UltraTextGen</strong> said Extreme gives "up to 100 marks a letter"; with the default Position All it gives 92, and 100 only with a single position. It said the decoder "strips every Unicode combining mark" and that decoding is lossless; it strips six mark ranges, and like every tested decoder it removes accents typed as a separate mark. It said a shared link opens your "exact configuration"; the settings return, but the random marks change.</li>
+        <li><strong>SymbolDB</strong> lists "50+ unique styles". Measured, the 50 templates reduce to about four mark patterns, and templates named Top, Middle or Bottom place marks about half above and half below.</li>
+        <li><strong>PSD-Dude</strong> calls Glitch Intensity the master Zalgo control; in the page code it only sets how often letters are swapped for look-alikes, and it did not change the marks.</li>
+        <li><strong>Zalgo.org</strong>'s slider shows one height, but every keystroke resets it to 17.</li>
+        <li><strong>Zalgo.io</strong>'s text describes a separate slider for each direction; the page has three on/off direction buttons and one intensity slider. Its "Middle" button measured 15% middle marks.</li>
+        <li><strong>Coddy</strong>'s intensity slider starts at 1, but in its code values from 1 to 12 add no marks; at 1, all 10 captured outputs were plain text.</li>
+      </ul>
+      <p>Platform claims on every page, including UltraTextGen's, were recorded but not tested, because no output was pasted into an app.</p>
+    </section>
+
+    <section class="study-section" id="method" aria-labelledby="method-title">
+      <span class="article-section-label">Method</span>
+      <h2 id="method-title">Method</h2>
+      <p><strong>Environment.</strong> Chromium driven by Playwright 1.56, logged out, at 1280 × 800 and as an iPhone 13 profile (390 × 664 viewport). Each page was loaded live on September 29, 2026. Output was read from the page as text, never from a screenshot.</p>
+      <p><strong>Planned before testing.</strong> The selection rule, the ten dimensions, the evidence types, the inputs, the fifteen tasks and the measurement definitions were written down before the first tool was tested. The method file was committed together with the first results, so that order rests on the session record. Eight amendments are recorded: Textavia counted as two tools, the phone viewport size, the shape-fidelity procedure, Creative Fabrica kept as untested, the text-integrity and extras rows, the control-axis model, the shape ideals and a record-keeping note. The text-integrity rows and the control-axis model were added after data collection.</p>
+      <p><strong>Inputs.</strong> <code>hello</code>, <code>HE COMES</code>, <code>something is watching me</code>, <code>123456</code>, <code>café déjà vu</code>, <code>👁 hello 👁</code>, a 100-character sentence, a punctuation string, a string with runs of spaces, and a mixed-case string. 20 outputs of "hello" in each tool's default state (5 for FontCraft and Pixelied, which always repeat), 3 of every other input, and 5 to 10 per preset and per placement option.</p>
+      <p><strong>Evidence types.</strong> Operated in a browser; read in the page's own code; measured from captured output. Page copy alone was recorded as a claim. When a cell needed a judgement, the rule was applied the same way to every tool, and each change a reviewer made is recorded in the data.</p>
+      <p><strong>Measurement.</strong> Marks per letter counts combining marks on letters and digits. Zones use Unicode's canonical combining class: class 1 (overlay) is middle; classes 214, 216, 228, 230, 232 and 234 are above; 202, 218, 220, 222, 233 and 240 are below; any other mark, such as an enclosing mark or a Thai tone mark, counts as other. Length is UTF-16 code units, the count most text boxes and character counters report.</p>
+      <p><strong>Review.</strong> After collection, an automated AI reviewer received the data with tool names replaced by letters and was asked for strengths by dimension, claims that should not be published, and a bias check. The method document still named UltraTextGen as the subject, so the review was not fully blind. It flagged that UltraTextGen led many dimensions and re-examined each lead against the data; the leads it did not uphold are not claimed here. Four more automated reviews then checked every number on this page against the data files.</p>
+    </section>
+
+    <section class="study-section" id="limitations" aria-labelledby="limitations-title">
+      <span class="article-section-label">Limitations</span>
+      <h2 id="limitations-title">Limitations</h2>
+      <ul>
+        <li><strong>The publisher is in the sample.</strong> UltraTextGen runs this study and one of the tools. The method written before testing, the published data and the automated review reduce that bias; they do not remove it.</li>
+        <li><strong>The task list favours rich generators.</strong> Several tasks (tiny stack, roots, strikethrough) are effects UltraTextGen names as presets. Tasks were judged by their output, not by the name of a control, but a different task list could rank tools differently.</li>
+        <li><strong>One day, one sample.</strong> Pages change. Every result is dated September 29, 2026. Search results were read from two indexes, logged out and in the US; Google's own results page could not be read by the test browser.</li>
+        <li><strong>Creative Fabrica is untested.</strong> Any "only tested generator" statement here covers 12 generators, not 13.</li>
+        <li><strong>Version 1.1 re-tested only UltraTextGen.</strong> UltraTextGen fixed its own gaps after reading this study, and only its test was re-run, on its updated build served locally the day before release. Competitors may also have changed since September 29.</li>
+        <li><strong>Deeper evidence for UltraTextGen.</strong> UltraTextGen's code was read from its source and run in a test harness as well as operated in the browser; competitors' code was read from their live pages. That surfaced UltraTextGen's own false claims, but it is an asymmetry.</li>
+        <li><strong>Embed was not searched for off-page.</strong> UltraTextGen has an embed page; we did not look for embed options on other sites beyond each generator page, so no "only" claim is made about embedding.</li>
+        <li><strong>One emoji.</strong> The emoji test used 👁, a single character. UltraTextGen's code also adds marks inside multi-part emoji such as flags and family sequences, which splits them; that was read in the code, not measured here.</li>
+        <li><strong>No app testing.</strong> Nothing here says whether output survives Discord, X, Instagram or Roblox.</li>
+        <li><strong>Small task samples.</strong> Creative-task verdicts rest on 2 to 3 outputs each plus the page's code; shape fidelity rests on 20 outputs per shape.</li>
+        <li><strong>A replicate, not a variant.</strong> A second batch of UltraTextGen shape outputs was meant to run at 100% frequency; the setting did not apply, so it is published as a replicate at the default.</li>
+      </ul>
+    </section>
+
+    <section class="study-section" id="data" aria-labelledby="data-title">
+      <span class="article-section-label">Data</span>
+      <h2 id="data-title">Data, samples and reproducibility</h2>
+      <div class="data-table-wrap">
+        <table class="data-table data-files-table">
+          <thead><tr><th scope="col">File</th><th scope="col">Contents</th><th scope="col">Size</th></tr></thead>
+          <tbody>
+            <tr><td><a href="/research/zalgo-generator-benchmark.pdf" download>zalgo-generator-benchmark.pdf</a></td><td>The full study, version 1.1, printed from this page</td><td>243 KB</td></tr>
+            <tr><td><a href="/research/zalgo-generator-benchmark/data/capabilities.csv">capabilities.csv</a></td><td>Start here: one row per generator and capability, with the result, value, evidence type and evidence</td><td>134 KB</td></tr>
+            <tr><td><a href="/research/zalgo-generator-benchmark/data/creative-tasks.csv">creative-tasks.csv</a></td><td>The 15 creative tasks for every generator, with how each was produced and the measured check</td><td>47 KB</td></tr>
+            <tr><td><a href="/research/zalgo-generator-benchmark/data/output-measurements.csv">output-measurements.csv</a></td><td>Measured output per generator, input and setting: marks per letter, zones, unique marks, length</td><td>136 KB</td></tr>
+            <tr><td><a href="/research/zalgo-generator-benchmark/data/shape-fidelity.csv">shape-fidelity.csv</a></td><td>Shape fit and wave test for the two generators with progression shapes</td><td>3 KB</td></tr>
+            <tr><td><a href="/research/zalgo-generator-benchmark/data/samples.json">samples.json</a></td><td>All 3,774 captured outputs plus the 20-per-shape samples, exactly as each page produced them (split emoji halves stored as U+FFFD)</td><td>1.6 MB</td></tr>
+            <tr><td><a href="/research/zalgo-generator-benchmark/data/tools.csv">tools.csv</a></td><td>The 13 generators, the address tested, why each was included and whether it could be tested</td><td>1 KB</td></tr>
+            <tr><td><a href="/research/zalgo-generator-benchmark/data/serp-sample.csv">serp-sample.csv</a></td><td>Every search result used to choose the sample: phrase, index, position, address, date</td><td>20 KB</td></tr>
+            <tr><td><a href="/research/zalgo-generator-benchmark/data/inputs.json">inputs.json</a></td><td>The ten standard inputs</td><td>1 KB</td></tr>
+            <tr><td><a href="/research/zalgo-generator-benchmark/data/measure.py">measure.py</a></td><td>The measurement script; rebuilds output-measurements.csv from samples.json</td><td>5 KB</td></tr>
+            <tr><td><a href="/research/zalgo-generator-benchmark/data/v1.1-ultratextgen-changes.csv">v1.1-ultratextgen-changes.csv</a></td><td>Version 1.1: every UltraTextGen capability that changed, before and after, with its evidence</td><td>4 KB</td></tr>
+            <tr><td><a href="/research/zalgo-generator-benchmark/data/v1.1-ultratextgen-samples.json">v1.1-ultratextgen-samples.json</a></td><td>Version 1.1: 474 UltraTextGen outputs captured on September 30, 2026 with the same procedure</td><td>178 KB</td></tr>
+            <tr><td><a href="/research/zalgo-generator-benchmark/data/v1.1-shape-fidelity-ultratextgen.csv">v1.1-shape-fidelity-ultratextgen.csv</a></td><td>Version 1.1: UltraTextGen shape fit at the default and at 100% frequency</td><td>1 KB</td></tr>
+            <tr><td><a href="/research/zalgo-generator-benchmark/data/v1.1-cross-decode.csv">v1.1-cross-decode.csv</a></td><td>Version 1.1: every tool's outputs through each decoder</td><td>2 KB</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>To reproduce the output measurements, put <code>measure.py</code>, <code>samples.json</code> and <code>inputs.json</code> in one folder and run <code>python3 measure.py</code> (Python 3.9 or later, standard library only). It writes <code>output-measurements.csv</code>, byte-identical to the published file. The generators themselves change over time, so a new capture will differ from this one.</p>
+      <p>To use the generator this study tests, open the <a href="/usecase/zalgo-text/">UltraTextGen Zalgo text generator</a>. To choose between the tools by what you want to make, <a href="/compare/zalgo-generators/">compare Zalgo generators by use case</a>.</p>
+    </section>
+
+    <section class="study-section" id="citation" aria-labelledby="citation-title">
+      <span class="article-section-label">Cite</span>
+      <h2 id="citation-title">How to cite this study</h2>
+      <p class="research-citation" id="citation-text">UltraTextGen Research. &ldquo;Zalgo Generator Benchmark 2026: Testing Creative Control Across 13 Tools.&rdquo; Version 1.1, September 30, 2026. https://ultratextgen.com/research/zalgo-generator-benchmark/</p>
+      <p>Please cite the version number. A later version will keep this address and state what changed. Version 1.1 (September 30, 2026) added UltraTextGen's re-test, the 100% frequency shape run and the cross-tool decoder test; nothing else changed. Last updated September 30, 2026.</p>
+    </section>
+
+    <section class="related-pages">
+      <h2>Related</h2>
+      <div class="related-pages-grid">
+        <a href="/compare/zalgo-generators/" class="related-page-card">
+          <span class="related-page-label">Choose a tool</span>
+          <h4>Zalgo generators compared</h4>
+        </a>
+        <a href="/usecase/zalgo-text/" class="related-page-card">
+          <span class="related-page-label">Tool</span>
+          <h4>Create Zalgo text</h4>
+        </a>
+        <a href="/research/" class="related-page-card">
+          <span class="related-page-label">Research</span>
+          <h4>All UltraTextGen research</h4>
+        </a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+<!-- BEGIN static footer — generated by scripts/build-static-footer.js from footer.js. Do not edit by hand — run `npm run build:static-footer`. -->
+<div class="footer-columns"><div class="footer-col"><span class="footer-col-title">Explore</span><a href="/" class="footer-link">Home</a><a href="/guide/" class="footer-link">Guides</a><a href="/answers/" class="footer-link">Answers</a><a href="/usecase/" class="footer-link">Use Cases</a><a href="/category/" class="footer-link">Categories</a><a href="/library/" class="footer-link">Library</a><a href="/printables/" class="footer-link">Printables</a><a href="/events/" class="footer-link">Events</a></div><div class="footer-col"><span class="footer-col-title">Popular Tools</span><a href="/usecase/text-to-emoji/" class="footer-link">Text to Emoji</a><a href="/usecase/linkedin-headline/" class="footer-link">LinkedIn Headline</a><a href="/usecase/comment-font/" class="footer-link">Comment Font</a><a href="/usecase/bio-font/" class="footer-link">Bio Font</a><a href="/usecase/vertical-text/" class="footer-link">Vertical Text</a><a href="/usecase/scrolling-text/" class="footer-link">Scrolling Text</a><a href="/usecase/repeat-text/" class="footer-link">Repeat Text</a><a href="/usecase/zalgo-text/" class="footer-link">Zalgo Text</a><a href="/ascii-art-generator/" class="footer-link">ASCII Art Generator</a></div><div class="footer-col"><span class="footer-col-title">Popular Categories</span><a href="/category/bold-fonts/" class="footer-link">Bold Fonts</a><a href="/category/cursive-fonts/" class="footer-link">Cursive Fonts</a><a href="/category/gothic-fonts/" class="footer-link">Gothic Fonts</a><a href="/category/bubble-fonts/" class="footer-link">Bubble Fonts</a><a href="/category/strikethrough-text/" class="footer-link">Strikethrough</a></div><div class="footer-col"><span class="footer-col-title">Company</span><a href="/about/" class="footer-link">About</a><a href="/privacy/" class="footer-link">Privacy Policy</a><a href="/terms/" class="footer-link">Terms of Service</a><a href="/contact/" class="footer-link">Contact</a></div></div><div class="footer-social-links"><a href="https://www.youtube.com/@UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.facebook.com/profile.php?id=61588587387596" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.linkedin.com/company/71290348/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a></div><div class="footer-bottom">© 2026 UltraTextGen. Fast text styles that work everywhere.</div>
+<!-- END static footer -->
+</div>
+  </footer>
+
+<script src="/js/research/research-study.js" defer></script>
+<script src="/footer.js" defer></script>
+</body>
+</html>
+

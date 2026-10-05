@@ -48,6 +48,26 @@ const HOST_SCRIPTS = {
 };
 
 /**
+ * Where `src` is referenced as a script source, in EITHER quote style; -1 if
+ * nowhere. Every match in this file goes through here.
+ *
+ * Until 2026-10-03 each check matched `src="…"` only. Four hand-built Spanish
+ * generators (es/letras-raras, es/letras-negritas, es/decorador-de-texto,
+ * es/fuentes-para-instagram) write `src='/script.js'`, so this gate saw no
+ * host script, skipped them, and passed while all four rendered zero results
+ * (script.js threw on UTG.sharedStyleId with share-core.js absent). A check
+ * that silently skips the pages it exists for is the failure CLAUDE.md hard
+ * line 8 names.
+ */
+function srcIndex(html, src) {
+  const dq = html.indexOf(`src="${src}"`);
+  const sq = html.indexOf(`src='${src}'`);
+  if (dq === -1) return sq;
+  if (sq === -1) return dq;
+  return Math.min(dq, sq);
+}
+
+/**
  * What a given page is missing.
  *
  * Deliberately NOT in this list: i18n.js. The first draft added it to every
@@ -59,18 +79,18 @@ const HOST_SCRIPTS = {
  * scripts/sync-explorer-strings.js keeps in agreement with locales/*.json.
  */
 function requiredTags(html) {
-  const hostsCopy = Object.values(HOST_SCRIPTS).some((src) => html.includes(`src="${src}"`));
+  const hostsCopy = Object.values(HOST_SCRIPTS).some((src) => srcIndex(html, src) !== -1);
   if (!hostsCopy) return [];
   const need = [SHARE_CORE, SAVED_ITEMS];
   if (hostsPrintables(html)) need.push(PRINT_PREFS);
-  return need.filter((src) => !html.includes(`src="${src}"`));
+  return need.filter((src) => srcIndex(html, src) === -1);
 }
 
 /** The three sheet engines that read printPrefs.js. */
 const PRINTABLE_HOSTS = [HOST_SCRIPTS.printables, HOST_SCRIPTS.monogram, HOST_SCRIPTS.crossStitch];
 
 function hostsPrintables(html) {
-  return PRINTABLE_HOSTS.some((src) => html.includes(`src="${src}"`));
+  return PRINTABLE_HOSTS.some((src) => srcIndex(html, src) !== -1);
 }
 
 /** Which module tags a given page owes, in the order they must appear. */
@@ -79,7 +99,7 @@ function modulesFor(html) {
 }
 
 function hasTag(html, src) {
-  return html.includes(`src="${src}"`);
+  return srcIndex(html, src) !== -1;
 }
 
 /**
@@ -96,7 +116,7 @@ function hasTag(html, src) {
  */
 function firstHostIndex(html) {
   const idx = Object.values(HOST_SCRIPTS)
-    .map((src) => html.indexOf(`src="${src}"`))
+    .map((src) => srcIndex(html, src))
     .filter((i) => i !== -1);
   return idx.length ? Math.min(...idx) : -1;
 }
@@ -106,7 +126,7 @@ function tagsAreOrdered(html) {
   const host = firstHostIndex(html);
   if (host === -1) return true;
   return modulesFor(html).every((src) => {
-    const i = html.indexOf(`src="${src}"`);
+    const i = srcIndex(html, src);
     return i !== -1 && i < host;
   });
 }
@@ -153,6 +173,6 @@ function modulesExist() {
 
 module.exports = {
   ROOT, SHARE_CORE, SAVED_ITEMS, PRINT_PREFS, HOST_SCRIPTS,
-  requiredTags, hasTag, tagFor, shouldSkip, modulesExist,
+  requiredTags, hasTag, srcIndex, tagFor, shouldSkip, modulesExist,
   firstHostIndex, tagsAreOrdered, hostsPrintables, modulesFor
 };

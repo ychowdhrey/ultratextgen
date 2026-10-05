@@ -11,6 +11,15 @@
   --zalgo-surface2: rgba(0, 0, 0, 0.06);
   --zalgo-green: #4ade80;
   --zalgo-red: #f87171;
+  /* Accent as TEXT: --accent-purple is 4.2:1 on white, under AA for the
+     12.5px GIF label; these clear 4.5:1 in each theme. */
+  --zalgo-accent-text: #6d4fc7;
+  --zalgo-accent-on: #ffffff;
+}
+
+body.dark-mode {
+  --zalgo-accent-text: #c4b5fd;
+  --zalgo-accent-on: #1e1b2e;
 }
 
 /* ── Layout ─────────────────────────────────────────── */
@@ -776,6 +785,11 @@
     flex-basis: 100%;
     order: 3;
   }
+  /* The injected Share pair comes after the text it shares, not between
+     the label and the text. */
+  .variant-row .result-share-row {
+    order: 4;
+  }
 }
 
 /* ── Editorial Sections ─────────────────────────────── */
@@ -905,4 +919,192 @@
   min-height: 360px;
   padding: 150px 22px 150px;
   line-height: 1.6;
+}
+
+/* ── GIF export button ─────────────────────────────── */
+/* Outlined in the accent so it reads as the second action, not a disabled
+   one; Copy stays the only filled button. The label is glitched text, so
+   the box clips its marks instead of letting them spill onto Copy. */
+.btn-gif {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-white);
+  color: var(--zalgo-accent-text);
+  border: 1px solid var(--zalgo-accent-text);
+  overflow: hidden;
+  position: relative;
+}
+
+.btn-gif:hover:not(:disabled),
+.btn-gif:focus-visible {
+  background: var(--zalgo-accent-dim);
+}
+
+.btn-gif:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.gif-icon {
+  flex: 0 0 auto;
+}
+
+.gif-glitch {
+  display: inline-block;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.gif-new {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 1px 5px;
+  border-radius: 999px;
+  background: var(--zalgo-accent-text);
+  color: var(--zalgo-accent-on);
+}
+
+/* The line under the output: when to use the GIF, and the file's result. */
+.gif-hint {
+  padding: 10px 18px 0;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+
+.gif-hint p {
+  margin: 0;
+}
+
+.gif-hint-action {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-weight: 600;
+  color: var(--zalgo-accent-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.gif-hint-action:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.gif-hint .gif-result {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin-top: 8px;
+}
+
+.gif-hint .gif-result[hidden] {
+  display: none;
+}
+
+.gif-alt {
+  color: var(--text-primary);
+}
+
+.gif-alt:empty {
+  display: none;
+}
+
+.gif-alt-copy {
+  padding: 4px 10px;
+  font-size: 11.5px;
+  background: var(--zalgo-surface2);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-light);
+}
+
+/* ── Fit to a platform ─────────────────────────────── */
+/* A badge that does not fit is a button: pressing it shrinks the effect. */
+button.fit-badge {
+  background: transparent;
+  font-family: inherit;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+button.fit-badge.fit-no:hover,
+button.fit-badge.fit-no:focus-visible {
+  border-color: var(--zalgo-red);
+  color: var(--text-primary);
+}
+
+.fit-status {
+  flex-basis: 100%;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.fit-status:empty {
+  display: none;
+}
+
+/* ── Amount per zone (advanced) ───────────────────── */
+.zones-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.zones-sliders {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.zones-sliders[hidden] {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .zones-sliders { grid-template-columns: 1fr; }
+}
+
+.zone-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+/* Position and Amplitude are replaced while per-zone amounts are on. */
+.controls .control-group.is-muted {
+  opacity: 0.45;
+}
+
+.controls .control-group.is-muted .pill,
+.controls .control-group.is-muted .slider-track {
+  cursor: not-allowed;
+}
+
+/* ── First screen on phones ───────────────────────── */
+/* The generator is the answer: on a narrow screen the heading block is
+   tightened so the text box starts inside the first screen. */
+@media (max-width: 640px) {
+  .hero:has(.zalgo-page-header) { padding-top: 16px; }
+  .zalgo-page-header { margin-bottom: 16px; }
+  .zalgo-page-header h1.hero-headline { font-size: 24px; line-height: 1.25; margin-bottom: 6px; }
+  .zalgo-page-header p { font-size: 13.5px; }
+  .input-section { margin-bottom: 16px; }
+}
+
+/* Phones: Regenerate, GIF and Copy wrap onto their own row instead of
+   pushing Copy out of the header. */
+@media (max-width: 640px) {
+  .output-header { flex-wrap: wrap; row-gap: 10px; }
+  .output-actions { flex-wrap: wrap; width: 100%; justify-content: flex-end; }
 }

@@ -11,7 +11,7 @@
   "sources": "Beide duimtekens, U+1FAF9 en U+1FAFA, staan met elk vijf huidskleurvarianten in het gegevensbestand <a href=\"https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt\">emoji-test.txt</a> van Unicode 18.0, gepubliceerd met de <a href=\"https://blog.unicode.org/2026/09/announcing-unicode-standard-version-180.html\">aankondiging van Unicode 18.0</a> van het Unicode Consortium op 16 september 2026. <a href=\"https://blog.emojipedia.org/whats-new-in-unicode-18-0/\">Emojipedia</a> meldde de ontwerpen van Google in Noto Color Emoji en publiceerde de schattingen voor 2027 hierboven.",
   "slug": "duim-wijsteken-emoji",
   "title": "Duim-wijsteken-emoji: Kopieer en Plak 🫹 🫺, Definitief in Emoji 18.0",
-  "meta_description": "Duim naar Links en Duim naar Rechts (🫹 U+1FAF9, 🫺 U+1FAFA) zijn sinds 16 september 2026 definitief in Emoji 18.0: richtingaanwijzende gebaren, los van Duim Omhoog/Omlaag. Op 25 september 2026 toont nog geen telefoon of computer ze standaard.",
+  "meta_description": "Duim naar Links en Duim naar Rechts (🫹 U+1FAF9, 🫺 U+1FAFA) zijn sinds 16 september 2026 definitief in Emoji 18.0, maar op 25 september 2026 nog niet te zien.",
   "canonical": "https://ultratextgen.com/nl/symbol/duim-wijsteken-emoji/",
   "breadcrumb": "Duim-wijsteken-emoji",
   "hero_h1": "Duim-wijsteken-emoji naar Links & Rechts",
@@ -114,7 +114,7 @@
       "desc": "Nog een nieuwe emoji uit Emoji 18.0, overgenomen van een uitgesteld Apple-Core-voorstel."
     },
     {
-      "href": "/updates/unicode-18-most-anticipated-emoji/",
+      "href": "/nl/updates/unicode-18-nieuwe-emoji-stemming/",
       "title": "Unicode 18.0's New Emoji",
       "desc": "Alle 9 nieuwe emoji van de definitieve release, gerangschikt op publieke stemming (Engelstalige update)."
     }

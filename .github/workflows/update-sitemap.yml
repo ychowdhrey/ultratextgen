@@ -96,3 +96,20 @@ jobs:
           git add sitemap.xml data/sitemap-lastmod-cache.json
           git diff --cached --quiet || git commit -m "chore: regenerate sitemap.xml [skip ci]"
           git push
+
+      # The header search box's index (js/search/index/<locale>.json) is read
+      # off the same pages as llms.txt, so a page added since the last run is
+      # missing from search until this regenerates it. It runs AFTER the
+      # sitemap is pushed so a failure here can never hold the sitemap back,
+      # and it fails the job visibly rather than silently skipping.
+      - name: Install build dependencies
+        run: npm ci
+
+      - name: Regenerate search index
+        run: node scripts/build-search-index.js --write
+
+      - name: Commit updated search index
+        run: |
+          git add js/search/index
+          git diff --cached --quiet || git commit -m "chore: regenerate search index [skip ci]"
+          git push

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Stylish Text & Fancy Fonts — Cool Font Generator (Copy-Paste)",
-    "description": "Gawing stylish ang text mo — fancy fonts, cool na letra & aesthetic symbols para sa FB & IG bio, TikTok caption, WhatsApp status, at name style sa Mobile Legends & Free Fire. Copy-paste, libre, walang sign up."
+    "description": "Gawing stylish ang text mo: fancy fonts, cool na letra at aesthetic symbols para sa FB & IG bio, TikTok, Mobile Legends at Free Fire. Libreng copy-paste."
   },
   "hero": {
     "title": "Stylish Text & Fancy Fonts",
@@ -209,6 +209,30 @@
       "titleFor": "Preview ng {style}",
       "dialogAriaLabel": "Preview sa platform",
       "closeAriaLabel": "Isara ang preview"
+    },
+    "imageSelection": {
+      "selectImage": "Pumili at i-share bilang larawan",
+      "viewSelection": "Tingnan ang napili ({n})",
+      "hint": "Pumili ng emoji o simbolo mula sa kahit anong seksyon para gawin ang larawan mo.",
+      "count": "{n} ang napili",
+      "empty": "Wala pang napili",
+      "shareImage": "I-share ang larawan",
+      "downloadImage": "I-download ang larawan",
+      "cancel": "Kanselahin",
+      "preview": "I-preview ang larawan",
+      "close": "Isara",
+      "remove": "Alisin ang {item}",
+      "addAll": "Idagdag lahat ({n})",
+      "removeAll": "Alisin lahat ({n})",
+      "limit": "Hanggang {max} lang ang puwede.",
+      "tooBig": "Sobrang dami para sa isang larawan. Mag-alis ng ilan.",
+      "making": "Ginagawa ang larawan…",
+      "shared": "Na-share ang larawan",
+      "downloaded": "Na-download ang larawan",
+      "shareFailed": "Hindi na-share. Subukang i-download.",
+      "renderFailed": "Hindi nagawa ang larawan. Subukan ulit.",
+      "trayLabel": "Pagpili para sa larawan",
+      "setUnavailable": "Hindi pa maidaragdag ang set na ito sa larawan."
     }
   },
   "useCases": {
@@ -309,7 +333,7 @@
           },
           {
             "question": "Pwede ba sa ML, Free Fire, o PUBG nickname?",
-            "answer": "Oo naman — marami nga ang gumagamit nito para diyan. Tanggap ang Unicode character sa username field ng Mobile Legends, Free Fire, PUBG, Genshin, hanggang Roblox.\n    <br><br>\n    <strong>Halimbawang cool nickname</strong><br>\n    Mula sa \"DarkWolf\" → pwedeng maging:<br>\n    — 𝔇𝔞𝔯𝔨𝔚𝔬𝔩𝔣 (gothic, astig na vibe)<br>\n    — ꧁༒𝓓𝓪𝓻𝓴𝓦𝓸𝓵𝓯༒꧂ (script + ornament — paborito sa ML)<br>\n    — ⓓⓐⓡⓚⓦⓞⓛⓕ (bubble, mas playful)<br>\n    — ᴅᴀʀᴋᴡᴏʟꜰ (small caps, simple pero kakaiba)\n    <br><br>\n    <strong>Tip</strong><br>\n    Kung tinanggihan ng game ang isang estilo, palitan — Small Caps at Ultra Bold ang karaniwang pinaka-safe. Gusto ng ornament? Tingnan ang Frame tab para sa ꧁ ꧂, ༒, at paboritong simbolo ng gamer."
+            "answer": "Oo naman — marami nga ang gumagamit nito para diyan. Kadalasang tanggap ito ng Mobile Legends at Free Fire, pero may sariling patakaran ang bawat game: pwedeng magbago ang Genshin at PUBG kada patch, at letra, numero at isang underscore lang ang tanggap ng Roblox username, kaya sa display name napupunta ang Unicode style.\n    <br><br>\n    <strong>Halimbawang cool nickname</strong><br>\n    Mula sa \"DarkWolf\" → pwedeng maging:<br>\n    — 𝔇𝔞𝔯𝔨𝔚𝔬𝔩𝔣 (gothic, astig na vibe)<br>\n    — ꧁༒𝓓𝓪𝓻𝓴𝓦𝓸𝓵𝓯༒꧂ (script + ornament — paborito sa ML)<br>\n    — ⓓⓐⓡⓚⓦⓞⓛⓕ (bubble, mas playful)<br>\n    — ᴅᴀʀᴋᴡᴏʟꜰ (small caps, simple pero kakaiba)\n    <br><br>\n    <strong>Tip</strong><br>\n    Kung tinanggihan ng game ang isang estilo, palitan — Small Caps at Ultra Bold ang karaniwang pinaka-safe. Gusto ng ornament? Tingnan ang Frame tab para sa ꧁ ꧂, ༒, at paboritong simbolo ng gamer."
           },
           {
             "question": "Pwede ba sa WhatsApp status at TikTok caption?",

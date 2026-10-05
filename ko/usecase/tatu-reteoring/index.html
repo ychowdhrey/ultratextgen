@@ -1,0 +1,598 @@
+<!DOCTYPE html><html lang="ko"><head>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8242324164413945?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script>(function(){'use strict';var aa=typeof Object.create=="function"?Object.create:function(a){function b(){}b.prototype=a;return new b},ba=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ca(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var da=ca(this);function l(a,b){if(b)a:{var c=da;a=a.split(".");for(var e=0;e<a.length-1;e++){var d=a[e];if(!(d in c))break a;c=c[d]}a=a[a.length-1];e=c[a];b=b(e);b!=e&&b!=null&&ba(c,a,{configurable:!0,writable:!0,value:b})}}var m;
+if(typeof Object.setPrototypeOf=="function")m=Object.setPrototypeOf;else{var n;a:{var ea={a:!0},fa={};try{fa.__proto__=ea;n=fa.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var ha=m;
+function p(a,b){a.prototype=aa(b.prototype);a.prototype.constructor=a;if(ha)ha(a,b);else for(var c in b)if(c!="prototype")if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,c);e&&Object.defineProperty(a,c,e)}else a[c]=b[c];a.C=b.prototype}function ia(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}
+function q(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ia(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function ja(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function ka(a){return la(a,a)}function la(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),Object.freeze(b));return a}
+function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}l("globalThis",function(a){return a||da});l("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});l("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});l("Number.MAX_SAFE_INTEGER",function(){return 9007199254740991});l("Number.MIN_SAFE_INTEGER",function(){return-9007199254740991});
+l("Number.isInteger",function(a){return a?a:function(b){return Number.isFinite(b)?b===Math.floor(b):!1}});l("Number.isSafeInteger",function(a){return a?a:function(b){return Number.isInteger(b)&&Math.abs(b)<=Number.MAX_SAFE_INTEGER}});l("Math.trunc",function(a){return a?a:function(b){b=Number(b);if(isNaN(b)||b===Infinity||b===-Infinity||b===0)return b;var c=Math.floor(Math.abs(b));return b<0?-c:c}});l("Number.isNaN",function(a){return a?a:function(b){return typeof b==="number"&&isNaN(b)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var t=this||self;function na(a){t.setTimeout(function(){throw a;},0)};var v,x;a:{for(var oa=["CLOSURE_FLAGS"],y=t,z=0;z<oa.length;z++)if(y=y[oa[z]],y==null){x=null;break a}x=y}var pa=x&&x[748402147];v=pa!=null?pa:!0;var qa=void 0;function A(){return typeof BigInt==="function"};var B=typeof Symbol==="function"&&typeof Symbol()==="symbol";function C(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var ra=C("jas",void 0,!0),sa=C(void 0,"0actk"),E=C("m_m","B",!0);var ta={u:{value:0,configurable:!0,writable:!0,enumerable:!1}},ua=Object.defineProperties,F=B?ra:"u";function va(a,b){B||F in a||ua(a,ta);a[F]|=b}function G(a,b){B||F in a||ua(a,ta);a[F]=b};var H={};function I(a,b){return b===void 0?a.h!==J&&!!(2&(a.g[F]|0)):!!(2&b)&&a.h!==J}var J={};function K(a){a.A=!0;return a};var wa=K(function(a){return typeof a==="number"}),xa=K(function(a){return typeof a==="string"}),ya=K(function(a){return typeof a==="boolean"});var L=typeof t.BigInt==="function"&&typeof t.BigInt(0)==="bigint";function M(a){var b=a;if(xa(b)){if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}else if(wa(b)&&!Number.isSafeInteger(b))throw Error(String(b));return L?BigInt(a):a=ya(a)?a?"1":"0":xa(a)?a.trim()||"0":String(a)}var Fa=K(function(a){return L?a>=za&&a<=Aa:a[0]==="-"?Ba(a,Ca):Ba(a,Da)}),Ca=Number.MIN_SAFE_INTEGER.toString(),za=L?BigInt(Number.MIN_SAFE_INTEGER):void 0,Da=Number.MAX_SAFE_INTEGER.toString(),Aa=L?BigInt(Number.MAX_SAFE_INTEGER):void 0;
+function Ba(a,b){if(a.length>b.length)return!1;if(a.length<b.length||a===b)return!0;for(var c=0;c<a.length;c++){var e=a[c],d=b[c];if(e>d)return!1;if(e<d)return!0}};var N=0,O=0;function Ga(a){var b=a>>>0;N=b;O=(a-b)/4294967296>>>0}function Ha(a){if(a<0){Ga(-a);var b=q(Ia(N,O));a=b.next().value;b=b.next().value;N=a>>>0;O=b>>>0}else Ga(a)}function Ja(a,b){b>>>=0;a>>>=0;if(b<=2097151)var c=""+(4294967296*b+a);else A()?c=""+(BigInt(b)<<BigInt(32)|BigInt(a)):(c=(a>>>24|b<<8)&16777215,b=b>>16&65535,a=(a&16777215)+c*6777216+b*6710656,c+=b*8147497,b*=2,a>=1E7&&(c+=a/1E7>>>0,a%=1E7),c>=1E7&&(b+=c/1E7>>>0,c%=1E7),c=b+Ka(c)+Ka(a));return c}
+function Ka(a){a=String(a);return"0000000".slice(a.length)+a}function La(){var a=N,b=O;b&2147483648?A()?a=""+(BigInt(b|0)<<BigInt(32)|BigInt(a>>>0)):(b=q(Ia(a,b)),a=b.next().value,b=b.next().value,a="-"+Ja(a,b)):a=Ja(a,b);return a}function Ia(a,b){b=~b;a?a=~a+1:b+=1;return[a,b]};var Ma=typeof BigInt==="function"?BigInt.asIntN:void 0,Q=Number.isSafeInteger,Na=Number.isFinite,Oa=Math.trunc,Pa=/^-?([1-9][0-9]*|0)(\.[0-9]+)?$/;function Qa(a){switch(typeof a){case "bigint":return!0;case "number":return Na(a);case "string":return Pa.test(a);default:return!1}}
+function Ra(a){var b=typeof a;if(a==null)return a;if(b==="bigint")return M(Ma(64,a));if(Qa(a)){if(b==="string")if(b=Oa(Number(a)),Q(b))a=M(b);else if(b=a.indexOf("."),b!==-1&&(a=a.substring(0,b)),A())a=M(Ma(64,BigInt(a)));else{b=a.length;if(!(a[0]==="-"?b<20||b===20&&a<="-9223372036854775808":b<19||b===19&&a<="9223372036854775807")){if(a.length<16)Ha(Number(a));else if(A())a=BigInt(a),N=Number(a&BigInt(4294967295))>>>0,O=Number(a>>BigInt(32)&BigInt(4294967295));else{b=+(a[0]==="-");O=N=0;for(var c=
+a.length,e=b,d=(c-b)%6+b;d<=c;e=d,d+=6)e=Number(a.slice(e,d)),O*=1E6,N=N*1E6+e,N>=4294967296&&(O+=Math.trunc(N/4294967296),O>>>=0,N>>>=0);b&&(b=q(Ia(N,O)),a=b.next().value,b=b.next().value,N=a,O=b)}a=La()}a=M(a)}else if(Q(a)){a=Oa(a);if(!Q(a)){Ha(a);b=N;c=O;if(a=c&2147483648)b=~b+1>>>0,c=~c>>>0,b==0&&(c=c+1>>>0);d=c*4294967296+(b>>>0);b=Number.isSafeInteger(d)?d:Ja(b,c);a=typeof b==="number"?a?-b:b:a?"-"+b:b}a=M(a)}else a=Oa(a),Q(a)?a=String(a):(Ha(a),a=La()),a=M(a);return a}}
+function Sa(a){return a==null||typeof a==="string"?a:void 0};function Ta(a){return a};function Ua(a,b,c,e){var d=e!==void 0;e=!!e;var f=[],g=a.length,h=4294967295,k=!1,r=!!(b&64),D=r?b&128?0:-1:void 0;if(!(b&1)){var u=g&&a[g-1];u!=null&&typeof u==="object"&&u.constructor===Object?(g--,h=g):u=void 0;if(r&&!(b&128)&&!d){k=!0;var w;h=((w=Va)!=null?w:Ta)(h-D,D,a,u,void 0)+D}}b=void 0;for(d=0;d<g;d++)if(w=a[d],w!=null&&(w=c(w,e))!=null)if(r&&d>=h){var yb=d-D,Ea=void 0;((Ea=b)!=null?Ea:b={})[yb]=w}else f[d]=w;if(u)for(var P in u)Object.prototype.hasOwnProperty.call(u,P)&&(a=u[P],a!=null&&
+(a=c(a,e))!=null&&(g=+P,d=void 0,r&&!Number.isNaN(g)&&(d=g+D)<h?f[d]=a:(g=void 0,((g=b)!=null?g:b={})[P]=a)));b&&(k?f.push(b):f[h]=b);return f}function Wa(a){switch(typeof a){case "number":return Number.isFinite(a)?a:""+a;case "bigint":return Fa(a)?Number(a):""+a;case "boolean":return a?1:0;case "object":if(Array.isArray(a)){var b=a[F]|0;return a.length===0&&b&1?void 0:Ua(a,b,Wa)}if(a!=null&&a[E]===H)return Xa(a);return}return a}var Va;function Xa(a){a=a.g;return Ua(a,a[F]|0,Wa)};function R(a,b,c,e){e=e===void 0?0:e;if(a==null){var d=32;c?(a=[c],d|=128):a=[];b&&(d=d&-16760833|(b&1023)<<14)}else{if(!Array.isArray(a))throw Error("narr");d=a[F]|0;if(v&&1&d)throw Error("rfarr");2048&d&&!(2&d)&&Ya();if(d&256)throw Error("farr");if(d&64)return(d|e)!==d&&G(a,d|e),a;if(c&&(d|=128,c!==a[0]))throw Error("mid");a:{c=a;d|=64;var f=c.length;if(f){var g=f-1,h=c[g];if(h!=null&&typeof h==="object"&&h.constructor===Object){b=d&128?0:-1;g-=b;if(g>=1024)throw Error("pvtlmt");for(var k in h)Object.prototype.hasOwnProperty.call(h,
+k)&&(f=+k,f<g&&(c[f+b]=h[k],delete h[k]));d=d&-16760833|(g&1023)<<14;break a}}if(b){k=Math.max(b,f-(d&128?0:-1));if(k>1024)throw Error("spvt");d=d&-16760833|(k&1023)<<14}}}G(a,d|64|e);return a}function Ya(){if(v)throw Error("carr");if(sa!=null){var a;var b=(a=qa)!=null?a:qa={};a=b[sa]||0;a>=5||(b[sa]=a+1,b=Error(),b.__closure__error__context__984382||(b.__closure__error__context__984382={}),b.__closure__error__context__984382.severity="incident",na(b))}};function Za(a,b){if(typeof a!=="object")return a;if(Array.isArray(a)){var c=a[F]|0;a.length===0&&c&1?a=void 0:c&2||(!b||4096&c||16&c?a=S(a,c,!1,b&&!(c&16)):(va(a,34),c&4&&Object.freeze(a)));return a}if(a!=null&&a[E]===H){b=a.g;c=b[F]|0;return I(a,c)?a:$a(a,b,c)?ab(a,b):S(b,c)}}function ab(a,b,c){a=new a.constructor(b);c&&(a.h=J);a.i=J;return a}function S(a,b,c,e){e!=null||(e=!!(34&b));a=Ua(a,b,Za,e);e=32;c&&(e|=2);b=b&16769217|e;G(a,b);return a}
+function bb(a,b){b===void 0&&(b=a[F]|0);b&32&&!(b&4096)&&G(a,b|4096)}function $a(a,b,c){return c&2?!0:c&32&&!(c&4096)?(G(b,c|2),a.h=J,!0):!1};var cb=M(0),db={};function T(a,b,c,e){b=eb(a.g,b,e);if(b!==null||c&&a.i!==J)return b}function eb(a,b,c){if(b===-1)return null;var e=b+-1,d=a.length-1;if(!(d<0)){if(e>=d){var f=a[d];if(f!=null&&typeof f==="object"&&f.constructor===Object){d=f[b];var g=!0}else if(e===d)d=f;else return}else d=a[e];if(c&&d!=null){c=c(d);if(c==null)return c;if(!Object.is(c,d))return g?f[b]=c:a[e]=c,c}return d}}
+function fb(a,b,c){var e=gb,d=!1;c=eb(a,c,function(f){if(f!=null&&f[E]===H)var g=f;else if(Array.isArray(f)){g=f[F]|0;var h=g|b&32;h|=b&2;h!==g&&G(f,h);g=new e(f)}else g=void 0;d=g!==f&&g!=null;return g});if(c!=null)return d&&!I(c)&&bb(a,b),c}
+function hb(a,b){var c=a.g,e=c[F]|0,d=fb(c,e,b);if(d==null)return d;e=c[F]|0;if(!I(a,e)){var f=d;var g=f.g,h=g[F]|0;f=I(f,h)?$a(f,g,h)?ab(f,g,!0):new f.constructor(S(g,h,!1)):f;if(f!==d){a.h===J?(d=a.g,d=S(d,d[F]|0),va(d,2048),a.g=d,a.h=void 0,a.i=void 0,d=!0):d=!1;d&&(c=a.g,e=c[F]|0);d=f;a:{a=c;f=d;g=b+-1;h=a.length-1;if(h>=0&&g>=h){var k=a[h];if(k!=null&&typeof k==="object"&&k.constructor===Object){k[b]=f;break a}}if(g<=h)a[g]=f;else if(f!==void 0){var r;h=((r=e)!=null?r:e=a[F]|0)>>14&1023||536870912;
+b>=h?f!=null&&(r={},a[h+-1]=(r[b]=f,r)):a[g]=f}}bb(c,e)}}return d}function ib(a,b){var c=c===void 0?cb:c;a=T(a,b,void 0,Ra);return a!=null?a:c}function U(a,b){var c=c===void 0?"":c;var e;return(e=Sa(T(a,b)))!=null?e:c};function V(a,b,c){this.g=R(a,b,c,2048)}V.prototype.toJSON=function(){var a=Xa(this);return a};V.prototype[E]=H;V.prototype.toString=function(){return this.g.toString()};function jb(a){return function(b){if(b==null||b=="")b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error("dnarr");va(b,32);b=new a(b)}return b}};function kb(a){this.g=R(a,void 0,void 0,2048)}p(kb,V);var lb=jb(kb);/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var mb=globalThis.trustedTypes,nb;function ob(){var a=null;if(!mb)return a;try{var b=function(c){return c};a=mb.createPolicy("goog#html",{createHTML:b,createScript:b,createScriptURL:b})}catch(c){}return a};function pb(a){this.g=a}pb.prototype.toString=function(){return this.g+""};function qb(a){var b;nb===void 0&&(nb=ob());a=(b=nb)?b.createScriptURL(a):a;return new pb(a)};function rb(a,b){if(b instanceof pb)b=b.g;else throw Error("");a.src=b;var c;b=a.ownerDocument;b=b===void 0?document:b;var e;b=(e=(c=b).querySelector)==null?void 0:e.call(c,"script[nonce]");(c=b==null?"":b.nonce||b.getAttribute("nonce")||"")&&a.setAttribute("nonce",c)};function sb(){return Math.floor(Math.random()*2147483648).toString(36)+Math.abs(Math.floor(Math.random()*2147483648)^Date.now()).toString(36)};function tb(a){var b=ma.apply(1,arguments);if(b.length===0)return qb(a[0]);for(var c=a[0],e=0;e<b.length;e++)c+=encodeURIComponent(b[e])+a[e+1];return qb(c)};function ub(a){a=a===void 0?document:a;return a.createElement("script")};function vb(a,b){b=String(b);a.contentType==="application/xhtml+xml"&&(b=b.toLowerCase());return a.createElement(b)}function wb(a){this.g=a||t.document||document};function xb(a,b,c,e,d,f){try{var g=a.g,h=ub(g);h.async=!0;rb(h,b);g.head.appendChild(h);h.addEventListener("load",function(){d();e&&g.head.removeChild(h)});h.addEventListener("error",function(){c>0?xb(a,b,c-1,e,d,f):(e&&g.head.removeChild(h),f())})}catch(k){f()}};var zb=t.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),Ab=t.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),Bb=t.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function Cb(a,b,c){this.h=a;this.m=b;this.o=c;this.g=null;this.i=[];this.l=!1;this.j=new wb(this.h)}
+function Db(a){if(a.h.body&&!a.l){var b=function(){Eb(a);t.setTimeout(function(){Fb(a,3)},50)};xb(a.j,a.m,2,!0,function(){t[a.o]||b()},b);a.l=!0}}
+function Eb(a){for(var b=W(1,5),c=0;c<b;c++){var e=X(a);a.h.body.appendChild(e);a.i.push(e)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style.backgroundColor=Gb(249,259,242,252,219,229);b.style.boxShadow="0 0 12px #888";b.style.color=Gb(0,10,0,10,0,10);b.style.display="flex";b.style.justifyContent="center";b.style.fontFamily="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+
+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style.alignItems="flex-start";c.style.justifyContent="center";e=vb(a.j.g,"IMG");e.className=sb();e.src=zb;e.alt="Warning icon";e.style.height="24px";e.style.width="24px";e.style.paddingRight="16px";var d=X(a),f=X(a);f.style.fontWeight="bold";f.textContent=Ab;var g=X(a);g.textContent=Bb;Y(a,d,f);Y(a,d,g);Y(a,c,e);Y(a,c,d);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)e=X(a),a.h.body.appendChild(e),
+a.i.push(e)}function Y(a,b,c){for(var e=W(1,5),d=0;d<e;d++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(e=0;e<c;e++)d=X(a),b.appendChild(d)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function Gb(a,b,c,e,d,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(e,255)).toString()+","+W(Math.max(d,0),Math.min(f,255)).toString()+")"}function X(a){a=vb(a.j.g,"DIV");a.className=sb();return a}
+function Fb(a,b){b<=0||a.g!=null&&a.g.offsetHeight!==0&&a.g.offsetWidth!==0||(Hb(a),Eb(a),t.setTimeout(function(){Fb(a,b-1)},50))}function Hb(a){for(var b=q(a.i),c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function Ib(a,b,c,e,d){function f(k){document.body?g(document.body):k>0?t.setTimeout(function(){f(k-1)},d):b()}function g(k){k.appendChild(h);t.setTimeout(function(){h?(h.offsetHeight!==0&&h.offsetWidth!==0?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},e)}var h=Jb(c);f(3)}function Jb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Kb(a){return Fa(a)?Number(a):String(a)};function gb(a){this.g=R(a,void 0,void 0,2048)}p(gb,V);function Lb(a){if(!a)return null;a=Sa(T(a,4,db));var b;a===null||a===void 0?b=null:b=qb(a);return b};var Mb=ka([""]),Nb=ka([""]);function Ob(a,b){this.l=a;this.g=b;this.m=new wb(a.document);this.i=U(b,1);this.v=Lb(hb(b,2))||tb(Mb);this.h=!1;this.o=Lb(hb(b,13))||tb(Nb);this.j=new Cb(a.document,this.o,U(b,12))}Ob.prototype.start=function(){Pb(this)};
+function Pb(a){Qb(a);xb(a.m,a.v,3,!1,function(){a:{var b=a.i;var c=t.btoa(b);if(c=t[c]){try{var e=lb(t.atob(c))}catch(d){b=!1;break a}b=b===Sa(T(e,1,db))}else b=!1}b?Z(a,U(a.g,14)):(Z(a,U(a.g,8)),Db(a.j))},function(){Ib(function(){Z(a,U(a.g,7));Db(a.j)},function(){Z(a,U(a.g,6))},U(a.g,9),Kb(ib(a.g,10)),Kb(ib(a.g,11)))})}function Z(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())}function Qb(a){var b=t.btoa(a.i);a.l[b]&&Z(a,U(a.g,5))};function Rb(a){this.g=R(a,void 0,void 0,2048)}p(Rb,V);var Sb=jb(Rb);(function(a,b){t[a]=function(){var c=ma.apply(0,arguments);t[a]=function(){};b.call.apply(b,[null].concat(c instanceof Array?c:ja(q(c))))}})("__h82AlnkH6D91__",function(a){typeof window.atob==="function"&&(new Ob(window,Sb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi04MjQyMzI0MTY0NDEzOTQ1Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVR095eld0N1ZaZFFlVDNQQzN4cDRWNFFpM0VQWEdpLTNSOGJjOXBFOFZlOEZRZml1VVpydFFzOGdtWjZuWkNmUDBPdmdOZXIyWmhnQ0gwNnk4cnN1TDh3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdhMFNualdkTkRnTHdYTmRPWk9Ic1c4bzFhNFRhaGY5cWhkU1JVTHdCNmN1WDBpWDBveHBBOUhEaHI4OWR0UmdFcGZONHl1Yjk4TVZZMWFqTnJPY0Q0S3dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdpSXp3QnB6TlhidjVTWkNBLTllVzNaNVZZY1p0MjQ0T2V4V096dnlKYWVpTXU2RVpmX1hDLWU2N3plaG5QcEdoeXZFcWR5YnRhYzJZNFRUU21uR3I4d2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVYT3Nibmlmemp0ei1QVlN2SmFIY004dWhoZmNxX3I0UGwwMjhteDBhNU5DeGNnLXhEcEotdlZ1blNKS3pvRkRZZ3ZGa3QyZElnNGdmLVNRU3ZCTVBONkFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUZ3lOREl6TWpReE5qUTBNVE01TkRVXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi04MjQyMzI0MTY0NDEzOTQ1LmpzP3VzcXBcdTAwM2RDQkUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4Vkl1eVduV3owazNiSTh5czVMUFg4amloM1M1LXdJVWhWNGJtb2EtcGtlazNmU0dEYVc0aXg2dDJlTEZHZWhMMWJMLXhuVTJrdTdKVkZpbXpmQzNBT0hSUVx1MDAzZFx1MDAzZCJd");</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>타투 레터링 폰트: 영문 이름·문구를 타투 글씨체로 미리 보기 | UltraTextGen</title>
+  <meta name="description" content="타투 레터링 폰트를 내 이름과 문구로 바로 비교하세요. 필기체, 고딕체, 가는 이탤릭체, 타자기체를 한 번에 보고, 날짜를 로마 숫자로 바꾸고, 이니셜과 기호까지 미리 볼 수 있습니다. 무료이며 앱 설치가 필요 없습니다.">
+  <link rel="canonical" href="https://ultratextgen.com/ko/usecase/tatu-reteoring/">
+
+  <link rel="alternate" hreflang="en" href="https://ultratextgen.com/usecase/tattoo-fonts/">
+  <link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/usecase/tattoo-schrift/">
+  <link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/usecase/letras-para-tatuajes/">
+  <link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/usecase/ecriture-tatouage/">
+  <link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/usecase/font-tato/">
+  <link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/usecase/font-tatuaggi/">
+  <link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/usecase/tattoo-letters/">
+  <link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/usecase/czcionki-tatuaze/">
+  <link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/usecase/letras-para-tatuagem/">
+  <link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/usecase/dovme-yazi-fontlari/">
+  <link rel="alternate" hreflang="zh-TW" href="https://ultratextgen.com/zh-tw/usecase/ciqing-ziti/">
+  <link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/usecase/tatu-reteoring/">
+  <link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/usecase/tattoo-fonts/">
+
+  <meta name="robots" content="index, follow">
+  <meta property="og:site_name" content="UltraTextGen">
+  <meta property="og:title" content="타투 레터링 폰트: 영문 이름·문구를 타투 글씨체로 미리 보기 | UltraTextGen">
+  <meta property="og:description" content="내 이름과 문구로 필기체, 고딕체, 이탤릭체 타투 레터링을 비교하고 캡처해서 타투이스트에게 보여 주세요. 무료입니다.">
+  <meta property="og:url" content="https://ultratextgen.com/ko/usecase/tatu-reteoring/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://ultratextgen.com/assets/og/ko-usecase-tatu-reteoring.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="타투 레터링 폰트: 영문 이름·문구를 타투 글씨체로 미리 보기 | UltraTextGen">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="타투 레터링 폰트: 영문 이름·문구를 타투 글씨체로 미리 보기 | UltraTextGen">
+  <meta name="twitter:description" content="내 이름과 문구로 필기체, 고딕체, 이탤릭체 타투 레터링을 비교하고 캡처해서 타투이스트에게 보여 주세요. 무료입니다.">
+  <meta name="twitter:image" content="https://ultratextgen.com/assets/og/ko-usecase-tatu-reteoring.png">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/symbol-explorer.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "타투 레터링 생성기",
+  "alternateName": [
+    "타투 레터링 폰트",
+    "타투 폰트",
+    "레터링 타투 글씨체",
+    "타투 필기체",
+    "타투 영문 폰트"
+  ],
+  "url": "https://ultratextgen.com/ko/usecase/tatu-reteoring/",
+  "inLanguage": "ko",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "description": "타투 전에 레터링을 미리 봅니다. 내 이름과 문구로 필기체, 고딕체, 가는 이탤릭체, 타자기체 타투 폰트를 비교하고, 날짜를 로마 숫자로 바꾸고, 이니셜 모노그램을 만들고, 뜻이 담긴 타투 기호를 둘러본 뒤 마음에 드는 것을 캡처해 타투이스트에게 보여 줄 수 있습니다. 무료이며 앱이 필요 없습니다.",
+  "featureList": [
+    "내 이름이나 단어로 타투 레터링 스타일 10가지 비교",
+    "날짜와 숫자를 타투용 로마 숫자로 변환",
+    "한 글자와 두 글자 이니셜 모노그램",
+    "뜻이 담긴 타투 기호 모음",
+    "실제로 보는 거리에서 레터링이 어떻게 보이는지 미리 보기"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  },
+  "image": "https://ultratextgen.com/assets/og/ko-usecase-tatu-reteoring.png"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ko",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "타투 레터링 스타일은 어떻게 고르나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "모양보다 뜻을 먼저 생각하세요. 이름이나 다짐 문구는 필기체가 따뜻하고 개인적이며 오래 봐도 질리지 않습니다. 강한 한 단어나 좌우명은 고딕 블랙레터가 묵직하고 단단합니다. 짧은 문구는 가는 이탤릭체가 절제되고 우아합니다. 날짜는 로마 숫자나 타자기체가 어울립니다. 이 페이지 위에 글자를 입력해 나란히 비교하고, 마음에 드는 두세 개를 남기세요. 최종 결정은 타투이스트가 함께 도와줍니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "이름 타투에는 어떤 레터링이 가장 좋나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "이름 타투의 기본은 필기체입니다. 이어진 글자가 손글씨처럼 읽혀 개인적이고 오래 지나도 보기 좋습니다. 굵은 필기체(𝓢𝓸𝓯𝓲𝓪)는 피부 위에서 존재감이 크고, 가는 필기체(𝒮ℴ𝒻𝒾𝒶)는 더 섬세합니다. 이름이 짧고 강한 느낌을 원한다면 치카노 스타일 레터링의 단골인 고딕 블랙레터도 써 보세요. 이 페이지에서 둘을 바로 비교할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "이 글씨체를 그대로 타투로 새겨도 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "안 됩니다. 이 점은 분명히 말씀드립니다. 이 유니코드 글씨는 방향을 잡기 위한 바탕이지, 바로 도안으로 쓸 수 있는 완성본이 아닙니다. 필기체, 고딕체, 이탤릭체 가운데 방향을 고르고 타투이스트에게 분명하게 보여 주는 데 쓰세요. 타투이스트가 선 굵기, 글자 사이 연결, 부위의 곡선에 맞게 피부에 맞춰 다시 그립니다. 최종 레터링은 생성기가 아니라 타투이스트의 일입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "가는 선 레터링은 최소 얼마나 커야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "레터링이 가늘고 섬세할수록 더 넓은 자리가 필요합니다. 가는 선과 작은 고리는 세월이 지나면서 굵어지고 막히기 쉬워서, 높이 1.3cm(반 인치)보다 작은 가는 필기체 단어는 알아보기 어려워질 수 있습니다. 작게 하고 싶다면 단순한 스타일(이탤릭체, 타자기체)을 고르고, 화려한 필기체를 원한다면 자리를 넉넉히 주세요. 부위별 정확한 최소 크기는 타투이스트가 알려 줍니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "타투이스트에게 레터링 스타일은 어떻게 보여 주나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "페이지 위에 예시 단어가 아니라 실제로 새길 단어를 입력하고, 가장 마음에 드는 두세 개를 캡처해 상담 때 가져가세요. 픽셀 하나까지 똑같이 해 달라고 하기보다 ‘필기체의 이어지는 느낌’, ‘고딕체의 묵직함’처럼 좋은 점을 말하세요. 좋은 타투이스트는 그 방향을 잡아 피부와 부위에 맞게 직접 다시 그립니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "날짜를 로마 숫자 타투로 쓰려면 어떻게 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "날짜를 일, 월, 연도로 나눠 각각 바꾼 뒤 구분 기호로 잇습니다. 2020년 6월 12일은 XII·VI·MMXX가 됩니다. 이 페이지의 ‘날짜 → 로마 숫자’ 모드가 자동으로 바꿔 주고, 구분 기호(점, 줄표, 세로선, 줄바꿈 쌓기)와 순서(일·월·연 또는 월·일·연)도 비교할 수 있습니다. 상담 전에 타투이스트와 숫자를 꼭 다시 확인하세요. 잘못 바꾼 날짜는 레터링 타투에서 가장 흔한 후회입니다."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "inLanguage": "ko",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "홈",
+      "item": "https://ultratextgen.com/ko/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "타투 레터링 생성기",
+      "item": "https://ultratextgen.com/ko/usecase/tatu-reteoring/"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="탐색 경로">
+  <a href="/ko/">홈</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">타투 레터링 생성기</span>
+</nav>
+
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/ko-usecase-tatu-reteoring.svg" width="1200" height="340" fetchpriority="high" alt="">
+</figure>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-card">
+      <h1 class="hero-headline">타투 레터링 생성기</h1>
+      <p class="hero-tagline">레터링 타투에 필요한 것을 한곳에 모았습니다. 내 이름이나 단어로 타투 폰트를 비교하고, 날짜를 로마 숫자로 바꾸고, 이니셜 모노그램을 만들고, 뜻이 담긴 작은 기호를 고르세요. 마음에 드는 것을 캡처해 타투이스트에게 보여 주면 됩니다. 최종 레터링은 타투이스트가 그리고, 이 페이지는 방향을 고르도록 돕습니다. 무료이며 앱이 필요 없습니다.</p>
+      <div class="tattoo-mode-tabs" id="tattooModeTabs"></div>
+      <div class="input-wrapper" id="tattooTextWrap">
+        <textarea class="main-input" id="mainInput" placeholder="이름, 단어, 문구를 입력하세요…" maxlength="500" autofocus=""></textarea>
+        <span class="char-count"><span id="charCount">0</span>/500</span>
+      </div>
+      <div id="tattooControlPanel"></div>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+  <div class="results-grid" id="resultsGrid"></div>
+
+  <section class="editorial-section">
+    <h2>새기기 전에 레터링을 미리 보세요</h2>
+    <p class="editorial-intro">레터링 타투는 세 가지를 정하는 일입니다. 단어, 스타일, 위치입니다. 이 페이지는 두 번째를 돕습니다. 실제로 새길 글자(이름, 단어, 날짜)를 입력하면 모든 <strong>타투 폰트</strong>가 한 번에 나와서, 이미지 검색으로 한 시간 걸릴 비교를 10초 만에 끝낼 수 있습니다.</p>
+    <div class="block-example">
+      <strong>방법:</strong> 1. 예시 단어가 아니라 실제로 새길 단어를 입력합니다(글자가 바뀌면 느낌이 전부 달라집니다) → 2. 레터링 스타일을 비교합니다 → 3. 마음에 드는 두세 개를 캡처합니다 → 4. 타투이스트에게 보여 줍니다
+    </div>
+    <p><strong>영문과 숫자가 바뀝니다.</strong> 이 글씨체는 유니코드에 있는 영문 필기체, 고딕체 문자로 만들기 때문에 영문 알파벳과 숫자에만 적용됩니다. 유니코드에는 한글 필기체나 고딕 블랙레터 문자가 없어서 한글은 입력한 그대로 보입니다. 그래서 영문 이름이나 문구에 쓰고, 한글은 같은 화면에서 영문과 나란히 놓고 균형을 보는 데 쓰세요. 날짜 → 로마 숫자 모드와 기호 모드는 숫자와 기호만 다루므로 그대로 쓸 수 있고, 이니셜 모드는 영문 A부터 Z 가운데에서 고릅니다.</p>
+    <p>이 페이지가 하는 일과 하지 않는 일도 분명히 하겠습니다. 방향을 찾도록 필기체, 고딕체, 이탤릭체 같은 <em>레터링의 기본 유형</em>을 보여 줍니다. 피부와 위치에 맞게 레터링을 직접 다시 그리는 타투이스트를 대신하지는 않습니다. 도안이 아니라 방향을 정찰하는 도구입니다.</p>
+  </section>
+
+  <section class="editorial-section glyph-section">
+    <h2>타투 레터링 4대 스타일</h2>
+    <p class="editorial-intro">완성된 알파벳 네 벌, 네 가지 분위기입니다. 가장 많이 쓰는 <strong>타투 글씨체</strong>입니다. 줄을 누르면 한 벌을 통째로 복사해 메모장에서 써 볼 수 있습니다.</p>
+    <div class="alpha-list">
+      <div class="alpha-row">
+        <span class="alpha-label">필기체 / 스크립트</span>
+        <button class="glyph-copy alpha-glyphs" type="button" data-text="𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩 𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃" aria-label="필기체 타투 알파벳 복사">𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩 · 𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃</button>
+      </div>
+      <div class="alpha-row">
+        <span class="alpha-label">고딕 / 블랙레터</span>
+        <button class="glyph-copy alpha-glyphs" type="button" data-text="𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ 𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷" aria-label="고딕 타투 알파벳 복사">𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ · 𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷</button>
+      </div>
+      <div class="alpha-row">
+        <span class="alpha-label">가는 이탤릭체</span>
+        <button class="glyph-copy alpha-glyphs" type="button" data-text="𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡 𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻" aria-label="가는 이탤릭체 타투 알파벳 복사">𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡 · 𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻</button>
+      </div>
+      <div class="alpha-row">
+        <span class="alpha-label">타자기체</span>
+        <button class="glyph-copy alpha-glyphs" type="button" data-text="𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉 𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣" aria-label="타자기체 타투 알파벳 복사">𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉 · 𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣</button>
+      </div>
+    </div>
+    <p class="u-mt-15"><strong>필기체</strong>는 이름과 문구의 기본입니다. 손으로 쓴 듯 개인적이고 시간이 지나도 질리지 않습니다. <strong>고딕체</strong>는 올드스쿨과 치카노 타투의 뿌리를 지녀 묵직하고 단단해서 강한 단어를 받쳐 줍니다. <strong>가는 이탤릭체</strong>는 갈비뼈나 손목을 따라 조용히 흐릅니다. <strong>타자기체</strong>는 담백하고 문학적이라 날짜나 짧은 한 줄에 잘 맞습니다. 필기체를 더 다양하게 보고 싶다면 <a href="/ko/pilgichae-byeonhwan/">필기체 변환</a>에서 전체 글씨체를 볼 수 있습니다.</p>
+  </section>
+
+  <section class="editorial-section">
+    <h2>어떤 타투에 어떤 스타일?</h2>
+    <p class="editorial-intro">레터링은 단어의 뜻을 받쳐야지 뜻과 경쟁하면 안 됩니다. 잘 맞는 조합은 다음과 같습니다.</p>
+    <div class="block-example">
+      · <strong>이름</strong> → 필기체: 𝓢𝓸𝓯𝓲𝓪, 이어진 따뜻한 글씨라 오래 지나도 보기 좋습니다<br>
+      · <strong>짧은 문구</strong> → 가는 이탤릭체: 𝘭𝘦𝘵 𝘪𝘵 𝘣𝘦, 애쓰지 않은 우아함<br>
+      · <strong>강한 단어</strong> → 고딕체: 𝔣𝔢𝔞𝔯𝔩𝔢𝔰𝔰, 촘촘한 획이 단어에 무게를 줍니다<br>
+      · <strong>날짜</strong> → 로마 숫자(XII·VI·MMXX)나 타자기체: 𝟷𝟸.𝟶𝟼.𝟸𝟶𝟸𝟶
+    </div>
+    <p>같은 단어도 스타일에 따라 성격이 완전히 달라집니다. ‘love’로 보면 이렇습니다.</p>
+    <div class="block-example">
+      ‘love’ → 𝓵𝓸𝓿𝓮(필기체) · 𝔩𝔬𝔳𝔢(고딕체) · 𝘭𝘰𝘷𝘦(이탤릭체) · 𝚕𝚘𝚟𝚎(타자기체)
+    </div>
+  </section>
+
+  <section class="editorial-section">
+    <h2>로마 숫자 날짜, 이니셜, 기호</h2>
+    <p class="editorial-intro">레터링 타투의 절반은 단어가 아닙니다. 날짜, 이니셜 두 글자, 작은 기호입니다. 페이지 위의 모드는 바로 그 일을 위해 만들었습니다.</p>
+    <div class="block-example">
+      · <strong>날짜 → 로마 숫자</strong>: 날짜를 넣으면 XII·VI·MMXX가 나오고, 구분 기호(점, 줄표, 세로선, 줄바꿈 쌓기)와 순서를 고를 수 있습니다. 같은 숫자를 필기체, 블랙레터, 타자기체로도 보여 주고 일반 숫자 글씨체도 함께 보여 줍니다<br>
+      · <strong>이니셜</strong>: 한 글자가 디자인 전체를 이끕니다. 내 이니셜을 모든 알파벳으로 비교하거나, 두 이니셜을 ♡, ∞, &amp;로 이어 보세요<br>
+      · <strong>기호</strong>: 실제로 많이 새기는 작은 표시입니다. 세미콜론(이야기는 계속된다), 무한대, 초승달, 닻 등 기호마다 뜻을 함께 적었습니다
+    </div>
+    <p>숫자에 관해 솔직한 주의 두 가지가 있습니다. 첫째, <strong>변환을 꼭 확인하세요</strong>. 잘못 바꾼 로마 숫자 날짜가 레터링 타투에서 가장 흔한 후회이므로, 이 페이지가 만든 숫자를 타투이스트와 다시 확인하세요. 둘째, <strong>필기체 알파벳 대부분에는 어울리는 장식 숫자가 없습니다</strong>. 그래서 날짜는 보통 로마 숫자나 타자기체 숫자로 바꾸며, 필기체 이름 아래 줄에 일반 숫자 날짜를 두는 것도 아주 흔하고 보기 좋은 방법입니다.</p>
+  </section>
+
+  <section class="editorial-section">
+    <h2>캡처에서 타투이스트까지</h2>
+    <p class="editorial-intro">화면의 미리 보기는 첫 단계일 뿐입니다. 타투이스트와 이야기가 잘 풀리게 하는 몇 가지 습관입니다.</p>
+    <div class="block-example">
+      · 한 가지가 아니라 <strong>두세 가지 스타일</strong>을 가져가세요. 타투이스트가 고른 위치에 무엇이 맞는지 바로 알아봅니다<br>
+      · 똑같이 베껴 달라고 하지 말고 <strong>맞게 바꿔 달라고</strong> 하세요. ‘이 느낌으로, 작가님 방식대로’가 픽셀 하나까지 똑같이 해 달라는 요청보다 늘 낫습니다<br>
+      · 작게 줄여서 <strong>글자 연결</strong>을 확인하세요. 캡처를 축소했을 때 화면에서 두 글자가 뭉치면 피부에서도 뭉칩니다<br>
+      · 가는 레터링은 <strong>세월이 지나면 번집니다</strong>. 작게 하고 싶다면 미리 말해서 타투이스트가 획을 굵게 보정할 수 있게 하세요
+    </div>
+    <p>솔직하게 말씀드리면, 최종 레터링은 생성기가 아니라 타투이스트의 기술입니다. 좋은 타투이스트는 잉크가 나이 드는 방식에 맞춰 획 굵기를 조절하고, 몸의 곡선을 따라 글자 간격을 잡고, 연결 부분을 손으로 다시 그립니다. 이 미리 보기는 원하는 것을 설명할 말을 줍니다. 그것만으로도 큰 도움이지만, 거기까지입니다.</p>
+  </section>
+
+  <section class="editorial-section">
+    <h2>별자리 기호: 또 하나의 미니멀 타투</h2>
+    <p class="editorial-intro">글자 말고 12별자리 기호 자체도 인기 있는 미니멀 타투입니다. 선 하나로 이루어져 글자 없이도 뜻이 있고, 양자리 ♈, 사자자리 ♌, 물병자리 ♒처럼 획이 단순한 기호는 오래 봐도 좋습니다. 이 페이지의 기호 모음에도 12별자리 기호가 들어 있고, 별자리 기호를 더 자세히 보려면 <a href="/ko/library/byeoljari-giho/">별자리 기호 모음</a>을 보세요.</p>
+  </section>
+
+  <section class="editorial-section">
+    <h2>더 많은 글씨체</h2>
+    <div class="compare-grid">
+      <a href="/ko/pilgichae-byeonhwan/" class="compare-card variant-muted u-no-underline">
+        <h4>필기체 변환</h4>
+        <p>필기체 전체 모음입니다. 이름과 문구 타투의 기본 선택입니다.</p>
+      </a>
+      <a href="/ko/font-byeonhwan/" class="compare-card variant-muted u-no-underline">
+        <h4>폰트 변환기</h4>
+        <p>영문 이름을 수백 가지 유니코드 글씨체로 바꿉니다.</p>
+      </a>
+      <a href="/ko/library/byeoljari-giho/" class="compare-card variant-muted u-no-underline">
+        <h4>별자리 기호</h4>
+        <p>12별자리 기호를 누르면 바로 복사합니다.</p>
+      </a>
+    </div>
+  </section>
+    <h2 class="faq-category">타투 레터링 자주 묻는 질문</h2>
+    <div class="faq-item"><button class="faq-question" type="button">타투 레터링 스타일은 어떻게 고르나요?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">모양보다 뜻을 먼저 생각하세요. 이름이나 다짐 문구는 필기체가 따뜻하고 개인적이며 오래 봐도 질리지 않습니다. 강한 한 단어나 좌우명은 고딕 블랙레터가 묵직하고 단단합니다. 짧은 문구는 가는 이탤릭체가 절제되고 우아합니다. 날짜는 로마 숫자나 타자기체가 어울립니다. 이 페이지 위에 글자를 입력해 나란히 비교하고, 마음에 드는 두세 개를 남기세요. 최종 결정은 타투이스트가 함께 도와줍니다.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">이름 타투에는 어떤 레터링이 가장 좋나요?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">이름 타투의 기본은 필기체입니다. 이어진 글자가 손글씨처럼 읽혀 개인적이고 오래 지나도 보기 좋습니다. 굵은 필기체(𝓢𝓸𝓯𝓲𝓪)는 피부 위에서 존재감이 크고, 가는 필기체(𝒮ℴ𝒻𝒾𝒶)는 더 섬세합니다. 이름이 짧고 강한 느낌을 원한다면 치카노 스타일 레터링의 단골인 고딕 블랙레터도 써 보세요. 이 페이지에서 둘을 바로 비교할 수 있습니다.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">이 글씨체를 그대로 타투로 새겨도 되나요?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">안 됩니다. 이 점은 분명히 말씀드립니다. 이 유니코드 글씨는 방향을 잡기 위한 바탕이지, 바로 도안으로 쓸 수 있는 완성본이 아닙니다. 필기체, 고딕체, 이탤릭체 가운데 방향을 고르고 타투이스트에게 분명하게 보여 주는 데 쓰세요. 타투이스트가 선 굵기, 글자 사이 연결, 부위의 곡선에 맞게 피부에 맞춰 다시 그립니다. 최종 레터링은 생성기가 아니라 타투이스트의 일입니다.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">가는 선 레터링은 최소 얼마나 커야 하나요?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">레터링이 가늘고 섬세할수록 더 넓은 자리가 필요합니다. 가는 선과 작은 고리는 세월이 지나면서 굵어지고 막히기 쉬워서, 높이 1.3cm(반 인치)보다 작은 가는 필기체 단어는 알아보기 어려워질 수 있습니다. 작게 하고 싶다면 단순한 스타일(이탤릭체, 타자기체)을 고르고, 화려한 필기체를 원한다면 자리를 넉넉히 주세요. 부위별 정확한 최소 크기는 타투이스트가 알려 줍니다.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">타투이스트에게 레터링 스타일은 어떻게 보여 주나요?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">페이지 위에 예시 단어가 아니라 실제로 새길 단어를 입력하고, 가장 마음에 드는 두세 개를 캡처해 상담 때 가져가세요. 픽셀 하나까지 똑같이 해 달라고 하기보다 ‘필기체의 이어지는 느낌’, ‘고딕체의 묵직함’처럼 좋은 점을 말하세요. 좋은 타투이스트는 그 방향을 잡아 피부와 부위에 맞게 직접 다시 그립니다.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">날짜를 로마 숫자 타투로 쓰려면 어떻게 하나요?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">날짜를 일, 월, 연도로 나눠 각각 바꾼 뒤 구분 기호로 잇습니다. 2020년 6월 12일은 XII·VI·MMXX가 됩니다. 이 페이지의 ‘날짜 → 로마 숫자’ 모드가 자동으로 바꿔 주고, 구분 기호(점, 줄표, 세로선, 줄바꿈 쌓기)와 순서(일·월·연 또는 월·일·연)도 비교할 수 있습니다. 상담 전에 타투이스트와 숫자를 꼭 다시 확인하세요. 잘못 바꾼 날짜는 레터링 타투에서 가장 흔한 후회입니다.</div></div>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher" role="navigation" aria-label="언어 선택">
+      <a class="lang-option" href="/usecase/tattoo-fonts/" hreflang="en">EN</a>
+      <a class="lang-option" href="/de/usecase/tattoo-schrift/" hreflang="de">DE</a>
+      <a class="lang-option" href="/es/usecase/letras-para-tatuajes/" hreflang="es">ES</a>
+      <a class="lang-option" href="/fr/usecase/ecriture-tatouage/" hreflang="fr">FR</a>
+      <a class="lang-option" href="/id/usecase/font-tato/" hreflang="id">ID</a>
+      <a class="lang-option" href="/it/usecase/font-tatuaggi/" hreflang="it">IT</a>
+      <a class="lang-option" href="/nl/usecase/tattoo-letters/" hreflang="nl">NL</a>
+      <a class="lang-option" href="/pl/usecase/czcionki-tatuaze/" hreflang="pl">PL</a>
+      <a class="lang-option" href="/pt/usecase/letras-para-tatuagem/" hreflang="pt">PT</a>
+      <a class="lang-option" href="/tr/usecase/dovme-yazi-fontlari/" hreflang="tr">TR</a>
+      <a class="lang-option" href="/zh-tw/usecase/ciqing-ziti/" hreflang="zh-TW">ZH</a>
+      <a class="lang-option active" href="/ko/usecase/tatu-reteoring/" hreflang="ko">KO</a>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-inner">
+<!-- BEGIN static footer — generated by scripts/build-static-footer.js from footer.js. Do not edit by hand — run `npm run build:static-footer`. -->
+<div class="footer-columns"><div class="footer-col"><span class="footer-col-title">둘러보기</span><a href="/ko/" class="footer-link">홈</a><a href="/ko/guide/" class="footer-link">가이드</a><a href="/answers/" class="footer-link">답변</a><a href="/usecase/" class="footer-link">활용법</a><a href="/category/" class="footer-link">카테고리</a><a href="/ko/library/" class="footer-link">라이브러리</a><a href="/printables/" class="footer-link">인쇄용</a><a href="/events/" class="footer-link">이벤트</a></div><div class="footer-col"><span class="footer-col-title">인기 도구</span><a href="/usecase/bio-font/" class="footer-link">바이오 폰트</a><a href="/ko/usecase/tatu-reteoring/" class="footer-link">타투 폰트</a><a href="/usecase/text-to-emoji/" class="footer-link">이모지 번역기</a><a href="/ko/usecase/vertical-text/" class="footer-link">세로 텍스트 생성기</a><a href="/ko/yeongmun-ireum-byeonhwan/" class="footer-link">영문 이름 변환기</a></div><div class="footer-col"><span class="footer-col-title">인기 카테고리</span><a href="/category/bold-fonts/" class="footer-link">굵은 글씨</a><a href="/ko/pilgichae-byeonhwan/" class="footer-link">필기체 변환</a><a href="/category/gothic-fonts/" class="footer-link">블랙레터체</a><a href="/category/small-text/" class="footer-link">작은 글씨</a><a href="/ko/chwisoseon-tekseuteu/" class="footer-link">취소선 텍스트</a></div><div class="footer-col"><span class="footer-col-title">회사</span><a href="/about/" class="footer-link">소개</a><a href="/privacy/" class="footer-link">개인정보처리방침</a><a href="/terms/" class="footer-link">이용약관</a><a href="/contact/" class="footer-link">문의하기</a></div></div><div class="footer-social-links"><a href="https://www.youtube.com/@UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.facebook.com/profile.php?id=61588587387596" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.linkedin.com/company/71290348/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a></div><div class="footer-bottom">© 2026 UltraTextGen. 어디에나 붙여넣을 수 있는 스타일리시한 글꼴.</div>
+<!-- END static footer -->
+</div>
+  </footer>
+
+<div class="copy-toast" id="copyToast">복사했습니다!</div>
+<div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
+
+<!-- Page configuration: tattoo mode flag + i18n -->
+<script>
+window.UTG_TATTOO_MODE = true;
+window.tattooI18n = {
+  "sampleName": "Sofia",
+  "modeNamesLabel": "이름과 단어",
+  "modeNamesHint": "이름, 단어, 문구를 입력하세요",
+  "modeDateLabel": "날짜 → 로마 숫자",
+  "modeDateHint": "날짜나 숫자를 로마 숫자로 바꿉니다",
+  "modeLettersLabel": "글자와 이니셜",
+  "modeLettersHint": "한 글자와 이니셜 모노그램",
+  "modeSymbolsLabel": "기호",
+  "modeSymbolsHint": "뜻이 담긴 작은 기호",
+  "sizeClose": "가까이",
+  "sizeArm": "팔 길이 거리",
+  "sizeRoom": "방 건너편",
+  "inkTest": "잉크 테스트",
+  "yourDate": "날짜",
+  "day": "일",
+  "month": "월",
+  "yearOrNumber": "연도 또는 숫자",
+  "order": "순서",
+  "separator": "구분 기호",
+  "yourLetter": "글자",
+  "secondInitial": "두 번째 이니셜",
+  "secondNone": "없음(한 글자)",
+  "joinedBy": "잇는 기호",
+  "symbolsNote": "기호를 누르면 복사됩니다. 이름이나 날짜와 함께 쓰거나 기호 하나만 새겨도 됩니다.",
+  "sampleHintName": "‘{text}’로 보여 주고 있습니다. 위에 이름, 단어, 문구를 입력하세요.",
+  "sampleHintDate": "예시 날짜(12 · 6 · 2020)로 보여 주고 있습니다. 위에 날짜나 숫자를 입력하세요.",
+  "romanRange": "로마 숫자는 1부터 3999까지만 됩니다. 위에 입력한 값을 확인하세요.",
+  "headingRoman": "로마 숫자",
+  "headingFigures": "일반 숫자",
+  "badgeSafe": "작아도 선명",
+  "badgeRoomy": "자리가 필요",
+  "copy": "복사",
+  "copyAria": "{name} 복사",
+  "families": {
+    "Script": "필기체",
+    "Gothic": "고딕",
+    "Italic": "이탤릭",
+    "Minimal": "미니멀",
+    "Roman": "로마 숫자",
+    "Figures": "숫자"
+  },
+  "orders": {
+    "dmy": "일 · 월 · 연",
+    "mdy": "월 · 일 · 연",
+    "y": "연도만"
+  },
+  "seps": {
+    "space": "띄어쓰기",
+    "stack": "줄바꿈 쌓기"
+  },
+  "joiners": {
+    "none": "없음"
+  },
+  "lettering": {
+    "Ultra Script Bold": {
+      "label": "굵은 필기체",
+      "note": "이름 타투의 기본입니다. 흐르듯 이어지면서 작은 크기에서도 형태가 뚜렷합니다."
+    },
+    "Ultra Script": {
+      "label": "가는 필기체",
+      "note": "섬세하고 가벼워 중간 크기에서 가장 예쁩니다. 작은 고리가 세월에 막히지 않도록 자리가 필요합니다."
+    },
+    "Ultra Chicano Script": {
+      "label": "치카노 네임플레이트",
+      "note": "굵은 필기체를 장식 리본이 감싼 고전적인 이름표 모양입니다."
+    },
+    "Ultra Gothic": {
+      "label": "고딕 블랙레터",
+      "note": "프락투어 스타일 블랙레터입니다. 촘촘하고 단단해 강한 단어를 받쳐 줍니다."
+    },
+    "Ultra Gothic Bold": {
+      "label": "굵은 올드 잉글리시",
+      "note": "묵직한 올드 잉글리시 스타일로, 올드스쿨과 치카노 레터링의 대표 글씨입니다."
+    },
+    "Ultra Old English Banner": {
+      "label": "올드 잉글리시 배너",
+      "note": "굵은 블랙레터에 장식 배너를 더한, 존재감이 가장 큰 이름표 글씨입니다."
+    },
+    "Ultra Italic": {
+      "label": "가는 이탤릭",
+      "note": "절제된 기울기로 갈비뼈, 손목, 쇄골을 따라 조용히 흐릅니다."
+    },
+    "Ultra Italic Serif": {
+      "label": "세리프 이탤릭",
+      "note": "세리프가 있는 이탤릭으로, 소설에서 옮겨 온 한 줄처럼 읽힙니다."
+    },
+    "Ultra Typewriter Document": {
+      "label": "타자기체",
+      "note": "담백하고 문학적인 고정폭 글씨로, 날짜나 짧은 한 줄에 가장 잘 맞습니다."
+    },
+    "Ultra Small Caps": {
+      "label": "스몰 캡스",
+      "note": "작고 고른 대문자로, 가는 선 미니멀 레터링에 가장 먼저 고를 만합니다."
+    }
+  },
+  "roman": {
+    "Classic": {
+      "label": "기본",
+      "note": "꾸밈 없는 대문자로, 타투이스트가 가장 많이 새기는 형태입니다."
+    },
+    "Serif Italic": {
+      "label": "세리프 이탤릭",
+      "note": "비석에 새긴 듯한 느낌을 기울여 표현합니다."
+    },
+    "Script": {
+      "label": "필기체",
+      "note": "흐르는 필기체로 쓴 로마 숫자입니다."
+    },
+    "Blackletter": {
+      "label": "블랙레터",
+      "note": "프락투어 숫자로, 어둡고 화려합니다."
+    },
+    "Heavy Old English": {
+      "label": "굵은 올드 잉글리시",
+      "note": "가장 무게감 있는 블랙레터 숫자입니다."
+    },
+    "Typewriter": {
+      "label": "타자기체",
+      "note": "고정폭 숫자로, 깔끔하고 기록 같은 느낌입니다."
+    }
+  },
+  "digits": {
+    "Typewriter": {
+      "label": "타자기체",
+      "note": "고정폭 숫자로, 날짜 타투의 기본 모양입니다."
+    },
+    "Bold Serif": {
+      "label": "굵은 세리프",
+      "note": "묵직한 책 활자 숫자로, 블랙레터와 잘 어울립니다."
+    },
+    "Bold Sans": {
+      "label": "굵은 산세리프",
+      "note": "현대적인 굵은 숫자로, 굵은 필기체와 잘 어울립니다."
+    },
+    "Fine Sans": {
+      "label": "가는 산세리프",
+      "note": "가벼운 숫자로, 가는 필기체와 이탤릭에 어울립니다."
+    },
+    "Double-Struck": {
+      "label": "더블 스트럭",
+      "note": "윤곽선 숫자로, 의외로 가는 선 타투에 잘 맞습니다."
+    },
+    "Wide Spaced": {
+      "label": "넓은 간격",
+      "note": "전각 숫자로, 여유 있는 잡지 같은 간격입니다."
+    },
+    "Tiny": {
+      "label": "아주 작게",
+      "note": "미니 숫자로, 귀 뒤에 새길 만한 크기입니다."
+    }
+  },
+  "groups": {
+    "minimal": "가는 선과 미니멀",
+    "celestial": "하늘",
+    "love": "사랑과 기억",
+    "faith": "믿음과 수호",
+    "journey": "힘과 여정",
+    "music": "음악과 예술",
+    "zodiac": "별자리"
+  },
+  "symbols": {
+    ";": "세미콜론: 이야기는 계속된다",
+    "∞": "무한대: 끝없이",
+    "·": "점 하나: 쉼표 같은 멈춤",
+    "—": "줄표: 하나의 선, 하나의 길",
+    "~": "물결: 평온, 흐름",
+    "✕": "엑스 표시: 교차점",
+    "°": "작은 원: 온전함",
+    "⋮": "세 점: mi vida loca(나의 미친 인생) / 끝나지 않음",
+    "☾": "초승달: 변화, 순환",
+    "☽": "차오르는 달: 성장",
+    "☼": "태양: 생명력",
+    "✦": "네 꼭지 별: 길잡이",
+    "✧": "빈 별: 희망",
+    "⋆": "작은 별: 조용한 불꽃",
+    "★": "채운 별: 야망",
+    "✵": "빛나는 별: 에너지",
+    "♡": "빈 하트: 가볍게 품은 사랑",
+    "❥": "기울어진 하트: 헌신",
+    "❦": "꽃 하트: 추억",
+    "➳": "화살: 사랑에 빠짐",
+    "✿": "꽃: 활짝 핌",
+    "❀": "꽃송이: 누군가를 기억함",
+    "✝": "라틴 십자가: 믿음",
+    "†": "단검 십자가: 희생",
+    "☦": "정교회 십자가",
+    "☯": "음양: 균형",
+    "ॐ": "옴: 태초의 소리",
+    "✡": "다윗의 별",
+    "☪": "별과 초승달",
+    "ᛉ": "알기즈 룬: 수호",
+    "⚓": "닻: 굳게 버팀",
+    "✈": "비행기: 떠남과 돌아옴",
+    "➵": "화살: 앞으로만",
+    "→": "오른쪽 화살표: 계속 나아감",
+    "⚔": "교차한 검: 끝까지 싸움",
+    "♆": "삼지창: 바다",
+    "Δ": "델타: 변화",
+    "Ω": "오메가: 끝, 인내",
+    "♪": "8분음표",
+    "♫": "이은 음표",
+    "♬": "이은 16분음표",
+    "𝄞": "높은음자리표",
+    "✎": "연필: 만드는 사람의 표시",
+    "♈": "양자리",
+    "♉": "황소자리",
+    "♊": "쌍둥이자리",
+    "♋": "게자리",
+    "♌": "사자자리",
+    "♍": "처녀자리",
+    "♎": "천칭자리",
+    "♏": "전갈자리",
+    "♐": "사수자리",
+    "♑": "염소자리",
+    "♒": "물병자리",
+    "♓": "물고기자리"
+  }
+};
+</script>
+<script src="/styles.js" defer></script>
+<script src="/renderer.js" defer></script>
+<script src="/js/tattoo/tattooData.js" defer></script>
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
+<script src="/script.js" defer></script><script src="/i18n.js" defer></script>
+<script src="/js/tattoo/tattooPageController.js" defer></script>
+<script src="/symbol-explorer.js" defer></script>
+<script src="/footer.js"></script>
+</body></html>

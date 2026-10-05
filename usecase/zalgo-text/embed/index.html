@@ -47,7 +47,7 @@
 }
   </script>
 </head>
-<body class="embed-widget-body">
+<body class="embed-widget-body" data-static-footer="none" data-embed-widget="zalgo" data-embed-source="zalgo-text-generator">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -58,20 +58,21 @@
       <p class="hero-tagline">Cursed glitch text: pick an intensity, type, copy.</p>
 
       <div class="input-wrapper">
-        <textarea class="main-input" id="mainInput" placeholder="Type something cursed..." maxlength="60">hello</textarea>
+        <textarea class="main-input" id="mainInput" placeholder="Type something cursed..." maxlength="60" aria-label="Text to turn into Zalgo">hello</textarea>
         <span class="char-count"><span id="charCount">5</span>/60</span>
       </div>
 
       <!-- Intensity Presets -->
       <div class="helper-section">
-        <div class="helper-section-title">Intensity: click to choose</div>
-        <div class="decoration-tabs" id="presetTabs">
-          <button class="decoration-tab" data-preset="subtle" type="button">Subtle</button>
-          <button class="decoration-tab active" data-preset="classic" type="button">Classic</button>
-          <button class="decoration-tab" data-preset="cursed" type="button">Cursed</button>
-          <button class="decoration-tab" data-preset="chaos" type="button">HE COMES</button>
-          <button class="decoration-tab" data-preset="tinystack" type="button">Tiny Stack</button>
-          <button class="decoration-tab" data-preset="cascade" type="button">Thai Cascade</button>
+        <div class="helper-section-title" id="presetLabel">Intensity: click to choose</div>
+        <div class="decoration-tabs" id="presetTabs" role="group" aria-labelledby="presetLabel">
+          <button class="decoration-tab" data-preset="subtle" type="button" aria-pressed="false">Subtle</button>
+          <button class="decoration-tab active" data-preset="classic" type="button" aria-pressed="true">Classic</button>
+          <button class="decoration-tab" data-preset="cursed" type="button" aria-pressed="false">Cursed</button>
+          <button class="decoration-tab" data-preset="chaos" type="button" aria-pressed="false">HE COMES</button>
+          <button class="decoration-tab" data-preset="tinystack" type="button" aria-pressed="false">Tiny Stack</button>
+          <button class="decoration-tab" data-preset="cascade" type="button" aria-pressed="false">Thai Cascade</button>
+          <button class="decoration-tab" data-preset="invader" type="button" aria-pressed="false">Post Invader</button>
         </div>
       </div>
 
@@ -81,7 +82,7 @@
           <div class="style-name" id="zalgoOutputName">Classic</div>
           <div class="style-preview" id="zalgoOutput"></div>
         </div>
-        <button class="copy-btn" id="zalgoCopyBtn" type="button">Copy</button>
+        <button class="copy-btn" id="zalgoCopyBtn" type="button" aria-label="Copy Zalgo text">Copy</button>
       </div>
     </div>
 
@@ -96,183 +97,16 @@
     <!-- Attribution -->
     <div class="embed-attribution">
       <a href="https://ultratextgen.com/usecase/zalgo-text/?utm_source=embed&utm_medium=widget&utm_campaign=zalgo_text" target="_blank" rel="noopener nofollow">Zalgo Text Generator</a> by <a href="https://ultratextgen.com/?utm_source=embed&utm_medium=widget&utm_campaign=zalgo_text" target="_blank" rel="noopener nofollow">UltraTextGen</a>
-      <span class="embed-sep">·</span>
-      <a href="https://ultratextgen.com/discord/?utm_source=embed&utm_medium=widget&utm_campaign=zalgo_text" target="_blank" rel="noopener nofollow">Style Discord Text →</a>
     </div>
   </div>
 
+  <script src="/usecase/zalgo-text/zalgo-text.js"></script>
   <script>
-    // ══════════════════════════════════════════════════════════════
-    // Zalgo generation logic — ported verbatim from
-    // /usecase/zalgo-text/zalgo-text.js (combining-mark engine).
-    // Only the pieces this scoped embed needs: the mark pools, the
-    // 'letters' sub-pool (Tiny Stack), shuffle/pickUnique, the uniform
-    // shape, generateZalgo, plus the PRESETS and VARIANTS arrays.
-    // ══════════════════════════════════════════════════════════════
-
-    // ── Unicode Combining Mark Pools ────────────────────────────────
-    // ABOVE marks (accents, dots, rings, hooks that render above)
-    const MARKS_UP = [
-      '̀','́','̂','̃','̄','̅','̆','̇',
-      '̈','̉','̊','̋','̌','̍','̎','̏',
-      '̐','̑','̒','̓','̔','̕','̚','̽',
-      '̾','̿','̀','́','͂','̓','̈́','͆',
-      '͊','͋','͌','͐','͑','͒','͗','͘',
-      '͛','͝','͞','͠','͡'
-    ];
-
-    // MID marks (strikethroughs and overlays — only the 5 that truly overlay)
-    const MARKS_MID = [
-      '̴','̵','̶','̷','̸'
-    ];
-
-    // BELOW marks (cedillas, underlines, hooks below)
-    const MARKS_DOWN = [
-      '̖','̗','̘','̙','̜','̝','̞','̟',
-      '̠','̡','̢','̣','̤','̥','̦','̧',
-      '̨','̩','̪','̫','̬','̭','̮','̯',
-      '̰','̱','̲','̳','̹','̺','̻','̼',
-      'ͅ','͇','͈','͉','͍','͎','͓','͔',
-      '͕','͖','͙','͚','͜','͟','͢'
-    ];
-
-    // ── Character Type Sub-Pools ────────────────────────────────────
-    // "letters" — superscript combining letter marks (small letters above).
-    // Drives the Tiny Stack preset / variant.
-    const CHAR_TYPE_UP_letters   = [
-      'ͣ','ͤ','ͥ','ͦ','ͧ','ͨ','ͩ','ͪ',
-      'ͫ','ͬ','ͭ','ͮ','ͯ'
-    ];
-    const CHAR_TYPE_MID_letters  = MARKS_MID;  // no letter mid marks exist
-    const CHAR_TYPE_DOWN_letters = MARKS_DOWN; // no letter below marks exist
-
-    // Map charType name → {up, mid, down} arrays. This widget only ever
-    // passes charType 'all' (most presets) or 'letters' (Tiny Stack), so
-    // only the letters sub-pool is carried over from the full generator.
-    const CHAR_TYPE_MAP = {
-      letters: { up: CHAR_TYPE_UP_letters, mid: CHAR_TYPE_MID_letters, down: CHAR_TYPE_DOWN_letters }
-    };
-
-    // ── Shape Functions ─────────────────────────────────────────────
-    // Only 'uniform' is needed — every preset/variant here uses it.
-    const SHAPES = {
-      uniform: (i, len) => 1.0
-    };
-
-    // ── Helpers ─────────────────────────────────────────────────────
-    // Fisher-Yates shuffle (returns a new array)
-    function shuffle(arr) {
-      const a = arr.slice();
-      for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        const tmp = a[i]; a[i] = a[j]; a[j] = tmp;
-      }
-      return a;
-    }
-
-    // Pick `count` unique marks from a pool, cycling (re-shuffled) once
-    // every unique mark has been used.
-    function pickUnique(pool, count) {
-      if (!pool.length) return '';
-      let result = '';
-      let deck = [];
-      for (let m = 0; m < count; m++) {
-        if (deck.length === 0) deck = shuffle(pool);
-        result += deck.pop();
-      }
-      return result;
-    }
-
-    // ── Core Generator ──────────────────────────────────────────────
-    function generateZalgo(text, opts) {
-      const charType  = opts.charType  || 'all';
-      const position  = opts.position  || 'all';
-      const shape     = opts.shape     || 'uniform';
-      const frequency = opts.frequency != null ? opts.frequency : 0.7;
-      const amplitude = opts.amplitude != null ? opts.amplitude : 5;
-
-      // Resolve mark pools based on character type
-      let upPool, midPool, downPool;
-      if (charType !== 'all' && CHAR_TYPE_MAP[charType]) {
-        const ct = CHAR_TYPE_MAP[charType];
-        upPool   = ct.up;
-        midPool  = ct.mid;
-        downPool = ct.down;
-      } else {
-        upPool   = MARKS_UP;
-        midPool  = MARKS_MID;
-        downPool = MARKS_DOWN;
-      }
-
-      // Position flags
-      const useUp   = position === 'all' || position === 'up' || position === 'up-down';
-      const useMid  = position === 'all' || position === 'mid';
-      const useDown = position === 'all' || position === 'down' || position === 'up-down';
-
-      // Count active positions for even budget distribution
-      const activePositions = (useUp ? 1 : 0) + (useMid ? 1 : 0) + (useDown ? 1 : 0);
-
-      const shapeFn = SHAPES[shape] || SHAPES.uniform;
-      const chars = [...text];
-      const len = chars.length;
-
-      return chars.map((ch, i) => {
-        if (ch === ' ' || ch === '\n' || ch === '\t') return ch;
-
-        // Frequency: probability this char gets marks at all
-        if (Math.random() > frequency) return ch;
-
-        const shapeMultiplier = shapeFn(i, len);
-        // Allow 0 marks when shape multiplier is very low (preserves shape contrast)
-        const markCount = Math.round(amplitude * shapeMultiplier);
-        if (markCount <= 0) return ch;
-
-        // Distribute full amplitude budget to active positions.
-        let marks = '';
-
-        if (activePositions === 1) {
-          // Single position gets the entire budget
-          if (useUp)   marks += pickUnique(upPool, markCount);
-          if (useMid)  marks += pickUnique(midPool, markCount);
-          if (useDown) marks += pickUnique(downPool, markCount);
-        } else {
-          // Multiple positions: split budget proportionally
-          if (useUp && upPool.length) {
-            const count = useMid
-              ? Math.max(1, Math.round(markCount * 0.55))
-              : Math.max(1, Math.round(markCount * 0.60));
-            marks += pickUnique(upPool, count);
-          }
-
-          if (useMid && midPool.length) {
-            // Mid marks are visually dense — cap at 2 to avoid illegibility
-            const count = Math.min(2, Math.max(1, Math.round(markCount * 0.10)));
-            marks += pickUnique(midPool, count);
-          }
-
-          if (useDown && downPool.length) {
-            const count = useMid
-              ? Math.max(1, Math.round(markCount * 0.35))
-              : Math.max(1, Math.round(markCount * 0.35));
-            marks += pickUnique(downPool, count);
-          }
-        }
-
-        return ch + marks;
-      }).join('');
-    }
-
-    // ── Thai Cascade (ported from zalgo-text.js generateCascade(), prefix
-    //    placement on the Thai carrier only; the full page has the controls) ──
-    // One Thai tone mark (MAI THO, U+0E49) repeated on KO KAI (U+0E01): the
-    // viral "side spike". Deterministic, so the card is stable per keystroke.
-    const CASCADE_ANCHOR = '\u0E01';
-    const CASCADE_MARK   = '\u0E49';
-    const CASCADE_DEPTH  = 60;
-    function generateCascade(text) {
-      const spike = CASCADE_ANCHOR + CASCADE_MARK.repeat(CASCADE_DEPTH);
-      return text ? spike + ' ' + text : spike;
-    }
+    // The engine is the tool page's own (window.UTGZalgoEngine, from
+    // /usecase/zalgo-text/zalgo-text.js), never a copy: marks go after whole
+    // characters, so emoji and flags are never split, and the cascade has the
+    // same marks and carriers as the full generator.
+    const { generateZalgo, generateCascade } = window.UTGZalgoEngine;
 
     // ── Presets (intensity picker) ──────────────────────────────────
     const PRESETS = [
@@ -286,7 +120,10 @@
         settings: { charType: 'all', position: 'all', shape: 'uniform', frequency: 1.0, amplitude: 18 } },
       { id: 'tinystack', label: 'Tiny Stack',
         settings: { charType: 'letters', position: 'up', shape: 'uniform', frequency: 1.0, amplitude: 1 } },
-      { id: 'cascade',   label: 'Thai Cascade', cascade: true }
+      { id: 'cascade',   label: 'Thai Cascade', cascade: { anchor: 'thai', placement: 'prefix', depth: 60 } },
+      // The "invade the post above" look from X: a tall stack on the kaomoji
+      // (つ ค c ) under the text.
+      { id: 'invader',   label: 'Post Invader', cascade: { anchor: 'kaomoji', placement: 'suffix', depth: 230 } }
     ];
 
     // ── Output Variants (More Flavors grid) ─────────────────────────
@@ -349,7 +186,7 @@
       // The cascade paints far above its line; the card clips it (CSS) and
       // the copy button still copies the full string.
       zalgoOutputCard.classList.toggle('is-cascade', !!preset.cascade);
-      zalgoOutput.textContent = preset.cascade ? generateCascade(text) : generateZalgo(text, preset.settings);
+      zalgoOutput.textContent = preset.cascade ? generateCascade(text, preset.cascade) : generateZalgo(text, preset.settings);
     }
 
     // ── Variations grid ─────────────────────────────────────────────
@@ -386,6 +223,7 @@
         copyBtn.className = 'copy-btn';
         copyBtn.textContent = 'Copy';
         copyBtn.type = 'button';
+        copyBtn.setAttribute('aria-label', 'Copy ' + variant.label + ' Zalgo text');
         copyBtn.addEventListener('click', () => copyWithFeedback(result, copyBtn));
 
         card.appendChild(info);
@@ -416,6 +254,7 @@
     });
 
     zalgoCopyBtn.addEventListener('click', () => {
+      if (zalgoOutput.classList.contains('placeholder')) return;
       copyWithFeedback(zalgoOutput.textContent, zalgoCopyBtn);
     });
 
@@ -423,11 +262,5 @@
     updateCharCount();
     renderAll();
   </script>
-<footer class="footer">
-<div class="footer-inner">
-<!-- BEGIN static footer — generated by scripts/build-static-footer.js from footer.js. Do not edit by hand — run `npm run build:static-footer`. -->
-<div class="footer-columns"><div class="footer-col"><span class="footer-col-title">Explore</span><a href="/" class="footer-link">Home</a><a href="/guide/" class="footer-link">Guides</a><a href="/answers/" class="footer-link">Answers</a><a href="/usecase/" class="footer-link">Use Cases</a><a href="/category/" class="footer-link">Categories</a><a href="/library/" class="footer-link">Library</a><a href="/printables/" class="footer-link">Printables</a><a href="/events/" class="footer-link">Events</a></div><div class="footer-col"><span class="footer-col-title">Popular Tools</span><a href="/usecase/text-to-emoji/" class="footer-link">Text to Emoji</a><a href="/usecase/linkedin-headline/" class="footer-link">LinkedIn Headline</a><a href="/usecase/comment-font/" class="footer-link">Comment Font</a><a href="/usecase/bio-font/" class="footer-link">Bio Font</a><a href="/usecase/vertical-text/" class="footer-link">Vertical Text</a><a href="/usecase/scrolling-text/" class="footer-link">Scrolling Text</a><a href="/usecase/repeat-text/" class="footer-link">Repeat Text</a><a href="/usecase/zalgo-text/" class="footer-link">Zalgo Text</a><a href="/ascii-art-generator/" class="footer-link">ASCII Art Generator</a></div><div class="footer-col"><span class="footer-col-title">Popular Categories</span><a href="/category/bold-fonts/" class="footer-link">Bold Fonts</a><a href="/category/cursive-fonts/" class="footer-link">Cursive Fonts</a><a href="/category/gothic-fonts/" class="footer-link">Gothic Fonts</a><a href="/category/bubble-fonts/" class="footer-link">Bubble Fonts</a><a href="/category/strikethrough-text/" class="footer-link">Strikethrough</a></div><div class="footer-col"><span class="footer-col-title">Company</span><a href="/about/" class="footer-link">About</a><a href="/privacy/" class="footer-link">Privacy Policy</a><a href="/terms/" class="footer-link">Terms of Service</a><a href="/contact/" class="footer-link">Contact</a></div></div><div class="footer-social-links"><a href="https://www.youtube.com/@UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.facebook.com/profile.php?id=61588587387596" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.linkedin.com/company/71290348/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a></div><div class="footer-bottom">© 2026 UltraTextGen. Fast text styles that work everywhere.</div>
-<!-- END static footer -->
-</div>
-</footer>
+  <script src="/js/embed/embed-widget.js" defer></script>
 </body></html>
