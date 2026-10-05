@@ -1553,6 +1553,60 @@
     }));
   }
 
+  /* Size and shared-baseline set for a tile, so its ink stays inside the
+     200 x 240 box.
+
+     Every tile draws at font-size 210, and a tiled sheet centres the union of
+     TILE_BASELINE_SET on one shared baseline (the R-005 note below). In the
+     graffiti Tag face (Sedgwick Ave Display) and the Spray face that union,
+     lowercase descenders under accented capitals, is taller than the cell.
+     Centring it pushed the baseline up and cut the tops off the capitals the
+     sheet prints: the default Tag sheet printed de Ä Ö Ü as A O U, es Ñ as N
+     and tr Ğ as G, and flattened the top of a plain G. Rendered 2026-10-05.
+
+     So a plan changes only a tile that would otherwise lose ink. If every
+     character the sheet prints (TILE_FIT_SET) sits inside the cell at the old
+     placement, the old placement stands, byte for byte. Otherwise the cell
+     centres on TILE_FIT_SET, the characters it actually prints, and the type
+     shrinks only as far as that span needs. A single big letter centres on its
+     own ink already and only ever shrinks. Stroke-overlay and stencil tiles
+     place geometry against size 210 and never take a plan. Cached per face,
+     cleared with glyphMetrics' own cache when the webfonts arrive. */
+  const TILE_FIT_SET = CHARS.join("");
+  const tileFitCache = new Map();
+  function setExtents(GM, set, size, weight) {
+    let top = Infinity, bottom = -Infinity;
+    const chars = Array.from(set);
+    for (let k = 0; k < chars.length; k++) {
+      const i = GM.ink(chars[k], FONT, size, weight);
+      if (!i) continue;
+      if (i.top < top) top = i.top;
+      if (i.bottom > bottom) bottom = i.bottom;
+    }
+    return top < Infinity ? { top: top, bottom: bottom } : null;
+  }
+  function tilePlan(GM, ch, small, weight) {
+    const key = FONT + "|" + weight + "|" + STROKE + "|" + (small ? "\u0000set" : ch);
+    if (tileFitCache.has(key)) return tileFitCache.get(key);
+    const TILE = { w: 200, h: 240 };
+    // The stroke is centred on the outline, so half of it lies outside the ink.
+    const pad = STROKE / 2 + 2;
+    let plan = { size: 210, set: TILE_BASELINE_SET };
+    const own = setExtents(GM, small ? TILE_FIT_SET : ch, 210, weight);
+    if (own) {
+      const baseline = small
+        ? GM.centreOffsets("H", FONT, 210, TILE, weight, { shareBaselineWith: TILE_BASELINE_SET }).baselineY
+        : TILE.h / 2 - (own.top + own.bottom) / 2;
+      const clips = baseline + own.top - pad < 0 || baseline + own.bottom + pad > TILE.h;
+      if (clips) {
+        const k = Math.min(1, (TILE.h - 2 * pad - 4) / (own.bottom - own.top));
+        plan = { size: Math.round(210 * k * 100) / 100, set: TILE_FIT_SET };
+      }
+    }
+    tileFitCache.set(key, plan);
+    return plan;
+  }
+
   function outlineSVG(ch, opts) {
     const o = opts || {};
     const svg = document.createElementNS(SVGNS, "svg");
@@ -1578,11 +1632,16 @@
        cached script degrades to the previous rendering rather than to nothing. */
     const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
     const TILE = { w: 200, h: 240 };
+    const fitEligible = !o.overlay && !(o.stencil != null ? o.stencil : stencilOn());
     let place = null;
+    let size = 210;
     if (GM) {
-      place = GM.centreOffsets(ch, FONT, 210, TILE, FONT_WEIGHT,
-        o.small ? { shareBaselineWith: TILE_BASELINE_SET } : null);
+      const plan = fitEligible ? tilePlan(GM, ch, !!o.small, FONT_WEIGHT) : { size: 210, set: TILE_BASELINE_SET };
+      size = plan.size;
+      place = GM.centreOffsets(ch, FONT, size, TILE, FONT_WEIGHT,
+        o.small ? { shareBaselineWith: plan.set } : null);
     }
+    if (fitEligible) text.setAttribute("data-fit", "1");
     if (place && place.ink) {
       text.setAttribute("x", String(+(100 + place.dx).toFixed(2)));
       text.setAttribute("y", String(+place.baselineY.toFixed(2)));
@@ -1594,7 +1653,7 @@
     text.setAttribute("text-anchor", "middle");
     text.setAttribute("font-family", FONT);
     text.setAttribute("font-weight", String(FONT_WEIGHT));
-    text.setAttribute("font-size", "210");
+    text.setAttribute("font-size", String(+size.toFixed(2)));
     text.setAttribute("fill", "#ffffff");
     text.setAttribute("stroke", INK);
     /* o.strokeScale thins the outline as the printed glyph gets physically
@@ -1686,9 +1745,12 @@
       const ch = t.textContent;
       if (!ch) return;
       const small = /is-small/.test(svg.getAttribute("class") || "");
-      const place = GM.centreOffsets(ch, FONT, 210, TILE, 700,
-        small ? { shareBaselineWith: TILE_BASELINE_SET } : null);
+      const plan = t.hasAttribute("data-fit") ? tilePlan(GM, ch, small, 700) : { size: 210, set: TILE_BASELINE_SET };
+      const size = plan.size;
+      const place = GM.centreOffsets(ch, FONT, size, TILE, 700,
+        small ? { shareBaselineWith: plan.set } : null);
       if (!place || !place.ink) return;
+      if (t.hasAttribute("data-fit")) t.setAttribute("font-size", String(+size.toFixed(2)));
       t.setAttribute("x", String(+(100 + place.dx).toFixed(2)));
       t.setAttribute("y", String(+place.baselineY.toFixed(2)));
       t.removeAttribute("dominant-baseline");
@@ -4939,7 +5001,9 @@
     const fm = GM ? GM.faceMetrics(FONT, 210, FONT_WEIGHT) : null;
     const capH = fm && fm.capHeight ? fm.capHeight : 147;
     const stroke = Math.max(4, STROKE * (g.per > 1 ? tileStrokeScale(cell.h) : 1));
-    return (capH + stroke) * scale;
+    // A face too tall for its tile prints smaller (tilePlan).
+    const fit = GM && g.per > 1 && !stencilOn() ? tilePlan(GM, "", true, FONT_WEIGHT).size / 210 : 1;
+    return (capH * fit + stroke) * scale;
   }
 
   // "4½ in" on English pages, "11,5 cm" everywhere else, to the nearest step
@@ -12713,6 +12777,7 @@
     if (GMI) {
       withFont(() => {
         GMI.reset();
+        tileFitCache.clear();
         /* Tiles are re-placed in the DOM rather than rebuilt. The single-letter
            figure is assembled inside selectChar(), which also moves scroll and
            history, so calling it again to fix a coordinate would be the wrong
