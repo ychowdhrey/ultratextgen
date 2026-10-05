@@ -70,6 +70,7 @@
     "test:romanize": "node js/romanize/korean-romanize.test.js",
     "test:qr": "node js/printables/qr.test.js",
     "test:stencil": "node js/printables/stencil.test.js",
+    "test:centreline": "node js/printables/centreline.test.js",
     "test:word-search": "node js/printables/wordSearch.test.js",
     "test:word-puzzles": "node js/printables/wordPuzzles.test.js",
     "test:render-invariants": "node js/printables/renderInvariants.test.js",
