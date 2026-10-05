@@ -11307,7 +11307,7 @@ html.dark .wc-dir-option, html.dark .wc-input { background: transparent; }
 .lib-letter-heading { display: flex; align-items: baseline; gap: 0.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border-light); margin: 0 0 0.75rem; font-size: inherit; font-weight: inherit; }
 .lib-letter-heading .letter { font-size: 1.5rem; font-weight: 700; color: var(--accent-purple); line-height: 1; }
 .lib-letter-heading .lcount { font-size: 0.75rem; color: var(--text-muted); }
-.lib-entry { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto auto; gap: 0.1rem 1rem; padding: 0.7rem 0.5rem; border-radius: 8px; color: inherit; border: 1px solid transparent; }
+.lib-entry { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto auto auto; gap: 0.1rem 1rem; padding: 0.7rem 0.5rem; border-radius: 8px; color: inherit; border: 1px solid transparent; }
 .lib-entry-title { font-weight: 600; font-size: 0.95rem; color: var(--text-primary); grid-column: 1; grid-row: 1; margin: 0; line-height: 1.3; }
 .lib-entry-title-link { color: inherit; text-decoration: none; border-radius: 3px; }
 .lib-entry-title-link:hover,
@@ -11320,7 +11320,10 @@ html.dark .wc-dir-option, html.dark .wc-input { background: transparent; }
 .lib-entry-tag:hover { background: var(--bg-white); border-color: var(--accent-purple); color: var(--accent-purple); }
 .lib-entry-tag:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 2px; }
 .lib-entry-tag.is-type { color: var(--accent-purple); border-color: var(--accent-purple); background: transparent; }
-.lib-entry-preview { grid-column: 1; grid-row: 3; text-align: left; margin-top: 0.2rem; }
+/* The preview sits in the text column and keeps white-space: nowrap, so it
+   must clip rather than size the column: a long kaomoji line widened the whole
+   hub to 425-708px on a 390px phone. */
+.lib-entry-preview { grid-column: 1; grid-row: 3; text-align: left; margin-top: 0.2rem; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
 .lib-entry-meta { grid-row: 4; }
 .lib-empty { display: none; text-align: center; padding: 3rem 1rem; color: var(--text-secondary); }
 .lib-empty.visible { display: block; }
