@@ -94,7 +94,9 @@ function serve() {
       // An empty page that loads only the site's stylesheet, so the webfont
       // resolves exactly as the sheets resolve it.
       res.writeHead(200, { "content-type": TYPES[".html"] });
-      res.end('<!doctype html><html><head><link rel="stylesheet" href="/style.css"></head><body></body></html>');
+      // centreline.js is the site's one thinning implementation (the generator
+      // traces joined scripts with it at runtime); the builder thins with it too.
+      res.end('<!doctype html><html><head><link rel="stylesheet" href="/style.css"><script src="/js/printables/centreline.js"></script></head><body></body></html>');
       return;
     }
     const file = path.join(REPO, path.normalize(p));
@@ -128,27 +130,11 @@ async function rasterInPage(args) {
   for (let x = 0; x < W; x++) {
     if (ink[x] || ink[(H - 1) * W + x]) return { error: "ink reaches the " + (ink[x] ? "top" : "bottom") + " of the " + H + "px canvas; raise this face's base or height in the spec" };
   }
-  const img = ink.slice();
-  const I = (x, y) => img[y * W + x];
-  let changed = true;
-  while (changed) {
-    changed = false;
-    for (const step of [0, 1]) {
-      const del = [];
-      for (let y = 1; y < H - 1; y++) for (let x = 1; x < W - 1; x++) {
-        if (!I(x, y)) continue;
-        const P = [I(x, y - 1), I(x + 1, y - 1), I(x + 1, y), I(x + 1, y + 1), I(x, y + 1), I(x - 1, y + 1), I(x - 1, y), I(x - 1, y - 1)];
-        const B = P.reduce((a, b) => a + b, 0);
-        if (B < 2 || B > 6) continue;
-        let A = 0; for (let k = 0; k < 8; k++) if (P[k] === 0 && P[(k + 1) % 8] === 1) A++;
-        if (A !== 1) continue;
-        if (step === 0) { if (P[0] * P[2] * P[4] !== 0 || P[2] * P[4] * P[6] !== 0) continue; }
-        else { if (P[0] * P[2] * P[6] !== 0 || P[0] * P[4] * P[6] !== 0) continue; }
-        del.push(y * W + x);
-      }
-      if (del.length) { changed = true; for (const k of del) img[k] = 0; }
-    }
-  }
+  // Zhang-Suen, from js/printables/centreline.js (loaded by the page above).
+  // Its border clear is a no-op here: the check above refuses ink on the top
+  // and bottom rows, and the pad keeps ink off the left and right columns.
+  if (!(window.UltraTextGen && window.UltraTextGen.centreline)) return { error: "js/printables/centreline.js did not load" };
+  const img = window.UltraTextGen.centreline.thin(ink, W, H);
   const skel = []; for (let k = 0; k < W * H; k++) if (img[k]) skel.push(k);
   // Stem: twice the distance from the centreline to the nearest background,
   // median over a sample of centreline pixels.

@@ -206,17 +206,17 @@ ${sections}
   </div>
 </section>
 
-<footer class="footer">
-  <div class="footer-inner">
-  </div>
-</footer>
-
 <!-- FAQ -->
 <section class="editorial-section">
   <span class="article-section-label">FAQ</span>
   <h2>Frequently Asked Questions</h2>
 ${faqItems}
 </section>
+
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
 
 <script>
   document.querySelectorAll('.faq-question').forEach(function(btn){
