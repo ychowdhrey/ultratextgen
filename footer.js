@@ -1149,7 +1149,8 @@
       colTitle: "Yazdırılabilir",
       items: [
         { label: "Tüm Yazdırılabilir Sayfalar", href: "/tr/yazdirilabilir/" },
-        { label: "Harf Kalıpları", href: "/tr/yazdirilabilir/harf-kaliplari/" }
+        { label: "Harf Kalıpları", href: "/tr/yazdirilabilir/harf-kaliplari/" },
+        { label: "Balon Harfler", href: "/tr/yazdirilabilir/balon-harfler/" }
       ],
       bridge: 'Biyografi ve gönderiler için yazı tipi mi arıyorsun? <a href="/tr/" class="footer-link">Yazı tipi oluşturucuyu dene →</a>',
       copyright: "© 2026 UltraTextGen. Yazdırılabilir harfler ve alfabeler ücretsiz."
