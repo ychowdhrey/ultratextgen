@@ -7186,6 +7186,116 @@
     return out;
   }
 
+  /* A joined school script traces its OWN centreline, not the print route.
+
+     The route table above is US manuscript print, one skeleton per letter
+     cell. Under a joined script that is the wrong exercise: rendered on
+     de/zum-ausdrucken/schreibschrift with Schulausgangsschrift selected
+     (2026-10-05, main ba007635d), the model line read "Sonne und Mond" in
+     joined SAS and every dotted, dashed and faint row under it printed
+     separate print letters, no joins, with the M squeezed into a print cell.
+     The glyph contour is no better on these rungs (R-001: a dot on both edges
+     of every stroke, a smudged double row on a thin script).
+
+     So a script option marked `joined: true` (or a page with CFG.joinedScript)
+     takes its route from the glyph: the word is rasterised in its own face at
+     the row's own placement, js/printables/centreline.js thins the ink to a
+     skeleton and walks it into strokes, and those strokes go through the same
+     routeDotDashes() as the print route. The joins come out joined because
+     the ink is joined. Pages and scripts without the flag are untouched. */
+  // True for a centreline path that is a mark rather than a stroke: a
+  // two-point segment shorter than the rung's own line weight. A one-pixel
+  // mark comes out of centreline.js at 0.25 units, a two-pixel one at about
+  // 1-2; either is a dot on the page, never a stroke to dash.
+  function markPath(d, maxLen) {
+    const n = String(d).match(/-?\d*\.?\d+/g);
+    if (!n || n.length !== 4) return false;
+    return Math.hypot(n[2] - n[0], n[3] - n[1]) < maxLen;
+  }
+  function joinedScriptOn() {
+    if (SCRIPT_OPTIONS) {
+      const opt = SCRIPT_OPTIONS.find((s) => s.key === genScriptKey);
+      return !!(opt && opt.joined);
+    }
+    return CFG.joinedScript === true;
+  }
+  let centrelineWarned = false;
+  const CENTRELINE_CACHE = new Map();
+  /* Raster px per row unit. 1.5 leaves a SAS stem ~15px thick, which thins
+     cleanly; 2 doubled the cost for no visible change (a 50-character line
+     took ~320ms to trace at 2, measured 2026-10-05). */
+  const CENTRELINE_SCALE = 1.5;
+  /* The trace is computed once per (face, size, spacing, word) at the word's
+     own origin and shifted onto each row. Keying it on the row's width made
+     one keystroke trace the same line two or three times (preview rows,
+     difficulty legend, left-handed model), ~0.8s per keystroke. */
+  function wordCentreline(word, fontPx, spacingPx, baselineY) {
+    const fontSpec = FONT_WEIGHT + " " + fontPx + "px " + FONT;
+    const key = [fontSpec, spacingPx, baselineY, word].join("\u0001");
+    if (CENTRELINE_CACHE.has(key)) return CENTRELINE_CACHE.get(key);
+    const CL = window.UltraTextGen.centreline;
+    const S = CENTRELINE_SCALE;
+    const probe = document.createElement("canvas").getContext("2d");
+    if (!probe) return null;
+    probe.font = FONT_WEIGHT + " " + (fontPx * S) + "px " + FONT;
+    if ("letterSpacing" in probe) probe.letterSpacing = (spacingPx * S) + "px";
+    const m = probe.measureText(word);
+    const pad = Math.ceil(fontPx * 0.25 * S);
+    const inkL = Math.ceil(m.actualBoundingBoxLeft || 0);
+    const canvas = document.createElement("canvas");
+    canvas.width = Math.ceil(Math.max(m.width, (m.actualBoundingBoxRight || 0) + inkL)) + pad * 2 + inkL;
+    canvas.height = Math.ceil(traceRowHeight() * S);
+    const g = canvas.getContext("2d");
+    if (!g || !(canvas.width > 0)) return null;
+    g.font = probe.font;
+    if ("letterSpacing" in g) g.letterSpacing = probe.letterSpacing;
+    g.textAlign = "left";
+    g.textBaseline = "alphabetic";
+    g.fillStyle = "#000000";
+    const originX = pad + inkL;            // raster x of the word's pen origin
+    g.fillText(word, originX, baselineY * S);
+    const data = g.getImageData(0, 0, canvas.width, canvas.height).data;
+    const mask = new Uint8Array(canvas.width * canvas.height);
+    for (let i = 0, j = 0; i < data.length; i += 4, j++) if (data[i + 3] > 128) mask[j] = 1;
+    const res = CL.centrelines(mask, canvas.width, canvas.height);
+    // Row units, relative to the pen origin; advance is the SVG-comparable width.
+    const out = {
+      advance: m.width / S,
+      strokes: res.strokes.map((P) => P.map((p) => [(p[0] - originX) / S, p[1] / S]))
+    };
+    if (CENTRELINE_CACHE.size > 200) CENTRELINE_CACHE.clear();
+    CENTRELINE_CACHE.set(key, out);
+    return out;
+  }
+  function glyphCentrelinePaths(word, fontPx, spacingPx, baselineY, totalW) {
+    const CL = window.UltraTextGen && window.UltraTextGen.centreline;
+    if (!CL) {
+      if (!centrelineWarned) {
+        centrelineWarned = true;
+        console.warn("[printables] js/printables/centreline.js has not loaded; the joined script's trace rows fall back to the glyph contour.");
+      }
+      return null;
+    }
+    // Before the face has loaded, canvas would trace the fallback font and the
+    // cache would keep it. Return null (the contour fallback) and let the
+    // withFont() repaint ask again.
+    // Check the PRIMARY family only. check() on the whole list ("VA, SAS,
+    // cursive") is false until every listed face has loaded, so switching to
+    // VA before SAS had ever loaded left every trace row on the fallback.
+    const primary = FONT_WEIGHT + " " + fontPx + "px \"" + primaryFontName() + "\"";
+    if (document.fonts && document.fonts.check && !document.fonts.check(primary, word)) return null;
+    const wc = wordCentreline(word, fontPx, spacingPx, baselineY);
+    if (!wc || !wc.strokes.length) return null;
+    /* The SVG row sets the word with text-anchor:middle at totalW/2 and pulls
+       back half the trailing letter-spacing (dx). Both the SVG advance and
+       measureText's width include that trailing gap, so the pen origin is
+       totalW/2 - advance/2 - spacing/2. */
+    const left = totalW / 2 - wc.advance / 2 - spacingPx / 2;
+    const routed = wc.strokes.map((P) => "M" + P.map((p) => (+(p[0] + left).toFixed(2)) + "," + (+p[1].toFixed(2))).join(" L"));
+    routed.contour = [];
+    return routed;
+  }
+
   /* Diacritics as centreline strokes, in the unit box of the space the mark
      occupies (x 0..1 left to right, y 0..1 top to bottom). Dots are short
      segments, the same device the route table uses for the tittle of i/j. */
@@ -7537,8 +7647,13 @@
        contour. traceRoutePaths routes accented letters on their base letter
        plus a drawn mark, and returns the few characters it cannot route
        (ß, ł, ...) in `routed.contour`, drawn below as contour glyphs alone. */
+    // A joined script traces its own centreline (glyphCentrelinePaths); when
+    // that cannot run, it falls to the glyph contour below, never back to the
+    // print route, which would put print letters under a cursive model.
+    const joined = joinedScriptOn();
     const routed = (!spec.blank && spec.fill === "none" && spec.routeSw)
-      ? traceRoutePaths(word, TRACE_FONT_SIZE, trackPx, TRACE_BASE, w)
+      ? (joined ? glyphCentrelinePaths(word, TRACE_FONT_SIZE, trackPx, TRACE_BASE, w)
+                : traceRoutePaths(word, TRACE_FONT_SIZE, trackPx, TRACE_BASE, w))
       : null;
     if (routed) {
       const g = document.createElementNS(SVGNS, "g");
@@ -7552,6 +7667,15 @@
         path.setAttribute("fill", "none");
         path.setAttribute("stroke", spec.stroke);
         path.setAttribute("stroke-width", String(spec.routeSw));
+        /* A centreline mark (an umlaut dot, the dot of an i) is a segment
+           half a unit long. A dash pattern draws next to nothing on it: on
+           the dashed rung both dots of "ä" and "ü" all but vanished. It is
+           drawn as one round dot instead, on every rung. */
+        if (joined && markPath(d, spec.routeSw)) {
+          path.setAttribute("stroke-linecap", "round");
+          g.appendChild(path);
+          return;
+        }
         if (dots) {
           path.setAttribute("stroke-dasharray", dots[k].dash.map((n) => +n.toFixed(3)).join(" "));
           if (dots[k].offset) path.setAttribute("stroke-dashoffset", String(+dots[k].offset.toFixed(3)));
@@ -7590,7 +7714,9 @@
          letter, it ERASED it: at level 3 the fine dots the child is meant to
          join were completely covered by a blue line of the same shape. The
          arrow and the numbering are what this row still needs. */
-      if (o.overlay) {
+      // The overlay's arrows and numbers are print-route data; on a joined
+      // script they would number print letters over cursive ones.
+      if (o.overlay && !joined) {
         addWordStrokeOverlay(svg, word, TRACE_FONT_SIZE, trackPx, TRACE_BASE, "alphabetic", w,
                              { routeDrawn: true });
       }
@@ -7622,7 +7748,7 @@
       if (spec.opacity != null && spec.opacity !== 1) t.setAttribute("opacity", String(spec.opacity));
       t.textContent = word;
       svg.appendChild(t);
-      if (o.overlay) addWordStrokeOverlay(svg, word, TRACE_FONT_SIZE, trackPx, TRACE_BASE, "alphabetic", w);
+      if (o.overlay && !joined) addWordStrokeOverlay(svg, word, TRACE_FONT_SIZE, trackPx, TRACE_BASE, "alphabetic", w);
     }
     return svg;
   }

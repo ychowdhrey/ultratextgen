@@ -7,7 +7,8 @@
  * every internal <a href="..."> on that page pointing at an English
  * (non-locale-prefixed) hub/spoke URL under one of the sections named in
  * the locale-native internal linking rule in `.claude/rules/localization.md` — category/, library/,
- * usecase/, guide/, answers/, symbol/, or any of the eleven platform roots —
+ * usecase/, guide/, answers/, symbol/, updates/, printables/, learn/, events/,
+ * or any of the eleven platform roots —
  * for which a locale-native equivalent already exists, in THIS page's own
  * locale, inside that URL's hreflang cluster.
  *
@@ -52,7 +53,10 @@ const PLATFORM_ROOTS = [
   'youtube',
 ];
 
-const MONITORED_SECTIONS = ['category', 'library', 'usecase', 'guide', 'answers', 'symbol', ...PLATFORM_ROOTS];
+// updates/, printables/, learn/ and events/ joined on 2026-10-05: their locale
+// pages are hreflang-clustered like every other lane, and 18 locale pages still
+// linked the English update or printable while their own-language version existed.
+const MONITORED_SECTIONS = ['category', 'library', 'usecase', 'guide', 'answers', 'symbol', 'updates', 'printables', 'learn', 'events', ...PLATFORM_ROOTS];
 
 const MONITORED_PREFIX_RE = new RegExp('^/(' + MONITORED_SECTIONS.join('|') + ')/');
 
@@ -119,6 +123,10 @@ function findRewriteCandidates({ byUrl, clusters }, page) {
       }
     }
     if (!nativeMember) continue; // no locale-native equivalent exists yet — nothing to rewrite to
+    // The page's own English counterpart: a link to it is a deliberate pointer
+    // to the English version (e.g. a locale printables hub's "English · All
+    // printables" card). Rewriting it would make the page link to itself.
+    if (nativeMember.canonical === page.canonical) continue;
 
     let rewrittenHref;
     try {
