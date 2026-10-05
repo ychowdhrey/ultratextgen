@@ -898,7 +898,7 @@
     const MODE_META = CFG.modeMeta || {
       emojify: {
         title: 'Text to Emoji Converter, Emoji Letters & Emoji to Text | UltraTextGen',
-        desc: 'Convert text to emoji instantly as you type. Emojify your words, replace them with emoji, spell in emoji letters, or decode emoji back to text. Free, no sign-up.'
+        desc: 'Convert text to emoji instantly as you type. Emojify your words, replace them with emoji, spell in emoji letters, or decode emoji back to text.'
       },
       replace: {
         title: 'Emoji Translator — Replace Words With Emoji | UltraTextGen',
@@ -906,7 +906,7 @@
       },
       letters: {
         title: 'Text to Emoji Letters — Name to Emoji Generator | UltraTextGen',
-        desc: 'Turn text and names into emoji letters. Type a name to spell it in boxed emoji letters — perfect for bios, gamertags, and Discord channel names. Free and instant.'
+        desc: 'Turn text and names into emoji letters. Type a name to spell it in boxed emoji letters — perfect for bios, gamertags, and Discord channel names.'
       },
       decode: {
         title: 'Emoji to Text — Decode Emoji Back to Words | UltraTextGen',
