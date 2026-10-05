@@ -1015,7 +1015,13 @@
       bannerFlagsLabel: "harf bayrağı", ofWord: "/",
       flagCount: { one: "bayrak", other: "bayrak" },
       pageCount: { one: "sayfa", other: "sayfa" },
-      alphabetWord: "alfabe",
+      /* "alfabesi", not "alfabe": every use builds "<noun> <alphabetWord>"
+         ("Grafiti alfabesi", "Harf kalıbı alfabesi"), a Turkish compound
+         that takes the possessive suffix. */
+      alphabetWord: "alfabesi",
+      /* The batch picker's labels. Missing until 2026-10-05, so every tr
+         alphabet page showed "Which letters?" and "All 39" in English. */
+      set: { which: "Hangi harfler?", all: "Tümü ({n})", letters: "Harfler", pick: "Harf seç", pickLabel: "İstediğin harfleri yaz", pickHint: "Örneğin A-E ya da B D P Q.", order: "Alfabe sırasıyla basılır:", notHere: "Bu sayfada yok:", empty: "Bu sayfadaki harflerden en az birini yaz.", perPage: "sayfa başına {n}", tall: "yaklaşık {h} boyunda" },
       practiceTitle: "Çalışma sayfası · {Noun}",
       caseUpper: "Büyük harf", caseLower: "Küçük harf",
       modelCount: { one: "örnek satır", other: "örnek satır" },
