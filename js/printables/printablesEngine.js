@@ -2864,7 +2864,13 @@
     const fam = famOverride || primaryFontName();
     if (fam && document.fonts && document.fonts.load) {
       const done = () => { noteFontAvailability(fam); cb(); };
-      document.fonts.load('700 200px "' + fam + '"').then(done).catch(done);
+      /* The sample text matters. A face split by unicode-range (latin,
+         latin-ext, ...) loads only the subsets that text touches, and with no
+         text that is the basic latin file alone. Ğ and İ live in latin-ext, so
+         the Turkish graffiti sheet measured them in the fallback face and its
+         Tag Ğ still lost the top of its breve (rendered 2026-10-05). The page's
+         own letters, both cases, load every subset a tile will draw from. */
+      document.fonts.load('700 200px "' + fam + '"', TILE_BASELINE_SET).then(done).catch(done);
     } else {
       cb();
     }

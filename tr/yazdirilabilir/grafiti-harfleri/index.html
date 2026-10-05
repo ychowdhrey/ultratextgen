@@ -239,12 +239,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="bubble-az-intro">Bir harfe ya da rakama dokun: büyük grafiti konturunu gör, yazdır, üzerinden geç ya da PNG olarak indir.</p>
       <div class="pt-size-field">
         <p class="pt-size-field-label">Grafiti stili</p>
-        <!-- Letter sheet: Throw-up and Blockbuster only. The tiled alphabet sheet fits
-             each tile to cap height, so Tag (Sedgwick Ave Display) and Spray cut the
-             breve off Ğ and the dot off İ (rendered 2026-10-05). The name tool below
-             keeps all four styles: it measures the whole word and prints them intact. -->
         <div class="pt-segment" id="pt-char-styles" role="radiogroup" aria-label="Grafiti stili">
           <button type="button" class="pt-gen-preset pt-char-style-opt" data-style="throwup" aria-pressed="true">Throw-up <small>kalın, yuvarlak kontur</small></button>
+          <button type="button" class="pt-gen-preset pt-char-style-opt" data-style="tag" aria-pressed="false">Tag <small>hızlı imza</small></button>
+          <button type="button" class="pt-gen-preset pt-char-style-opt" data-style="spray" aria-pressed="false">Sprey <small>sprey boya dokusu</small></button>
           <button type="button" class="pt-gen-preset pt-char-style-opt" data-style="block" aria-pressed="false">Blockbuster <small>ağır blok harfler</small></button>
         </div>
       </div>
@@ -425,10 +423,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       variantNoun: "",
       glyphStyle: "Ultra Bubble",
       nameDemo: "SOKAK",
-      /* Letter sheet: Throw-up and Blockbuster only (see the #pt-char-styles
-         comment). The name tool keeps all four in nameStyles. */
+      /* Throw-up first: the page's copy calls these throw-up letters. Marker
+         stays out: Permanent Marker has no Ğ, İ or Ş. */
       charStyles: [
         { key: "throwup", font: "Fredoka, 'Arial Black', sans-serif", strokeWidth: 10, letterSpacing: 0.06 },
+        { key: "tag", font: "'Sedgwick Ave Display', cursive", strokeWidth: 5, letterSpacing: 0.04 },
+        { key: "spray", font: "'Rubik Spray Paint', cursive", strokeWidth: 4, letterSpacing: 0.04 },
         { key: "block", font: "'Archivo Black', 'Arial Black', sans-serif", strokeWidth: 8, letterSpacing: 0.05, skew: -10 }
       ],
       nameStyles: [
