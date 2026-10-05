@@ -2496,7 +2496,7 @@
 
   <url>
     <loc>https://ultratextgen.com/bs/</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -2928,7 +2928,7 @@
 
   <url>
     <loc>https://ultratextgen.com/cs/</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -3252,7 +3252,7 @@
 
   <url>
     <loc>https://ultratextgen.com/de/</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -6430,7 +6430,7 @@
 
   <url>
     <loc>https://ultratextgen.com/es/imprimibles/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -6986,7 +6986,7 @@
 
   <url>
     <loc>https://ultratextgen.com/es/imprimibles/alfabeto-cursiva/</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -7125,6 +7125,20 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/es/imprimibles/nombre-en-cursiva/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/printables-previews/es-imprimibles-nombre-en-cursiva.png</image:loc>
+      <image:title>Nombre en cursiva: fichas para trazar: vista previa de la hoja para imprimir</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/es-imprimibles-nombre-en-cursiva.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/es/imprimibles/nombre-para-trazar/</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -7149,6 +7163,16 @@
     </image:image>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/es-imprimibles-rompecabezas-del-nombre.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/es/imprimibles/sopa-de-letras/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/es-imprimibles-sopa-de-letras.png</image:loc>
     </image:image>
   </url>
 
@@ -12048,7 +12072,7 @@
 
   <url>
     <loc>https://ultratextgen.com/fr/library/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -12183,6 +12207,16 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/fr-library-emoji-iphone.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/fr/library/emoji-soleil-et-lune/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/fr-library-emoji-soleil-et-lune.png</image:loc>
     </image:image>
   </url>
 
@@ -12398,7 +12432,7 @@
 
   <url>
     <loc>https://ultratextgen.com/fr/library/symboles-etoiles/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -12568,7 +12602,7 @@
 
   <url>
     <loc>https://ultratextgen.com/fr/library/symboles-witchy-occult/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -14852,7 +14886,7 @@
 
   <url>
     <loc>https://ultratextgen.com/id/</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -24484,11 +24518,11 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/usecase/ireum-kkumigi/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://ultratextgen.com/assets/og/ko-ireum-kkumigi.png</image:loc>
+      <image:loc>https://ultratextgen.com/assets/og/ko-usecase-ireum-kkumigi.png</image:loc>
     </image:image>
   </url>
 
@@ -24519,6 +24553,16 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/ko-wicheomja-byeonhwan.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/yeongmun-ireum-byeonhwan/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/ko-yeongmun-ireum-byeonhwan.png</image:loc>
     </image:image>
   </url>
 
@@ -25760,7 +25804,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/emoji-meanings-guide/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -30780,7 +30824,7 @@
 
   <url>
     <loc>https://ultratextgen.com/pl/</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -38464,7 +38508,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ro/</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -40458,7 +40502,7 @@
 
   <url>
     <loc>https://ultratextgen.com/sk/</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -40600,7 +40644,7 @@
 
   <url>
     <loc>https://ultratextgen.com/sr/</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -40722,7 +40766,7 @@
 
   <url>
     <loc>https://ultratextgen.com/sv/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -43856,7 +43900,7 @@
 
   <url>
     <loc>https://ultratextgen.com/tl/</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -46818,7 +46862,7 @@
 
   <url>
     <loc>https://ultratextgen.com/vi/</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
