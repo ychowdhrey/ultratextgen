@@ -124,7 +124,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   "mainEntity": [
     {"@type":"Question","name":"글자수세기는 공백을 포함하나요?","acceptedAnswer":{"@type":"Answer","text":"두 가지를 나란히 보여드려요. '글자 수(공백 포함)'는 스페이스와 줄바꿈까지 전부 세고, '글자 수(공백 제외)'는 공백류 문자를 모두 뺀 값이에요. 대부분의 플랫폼 제한과 채용 플랫폼 입력 폼은 공백 포함 기준이니, 제한에 맞추려면 공백 포함 숫자를 기준으로 확인하세요."}},
     {"@type":"Question","name":"자소서 글자수는 공백 포함인가요, 제외인가요?","acceptedAnswer":{"@type":"Answer","text":"회사와 플랫폼마다 달라요. 사람인·잡코리아 같은 주요 채용 플랫폼의 입력 폼은 대부분 공백 포함 기준이지만, 공백 제외를 명시하는 공고도 있으니 반드시 지원하는 공고의 기준을 먼저 확인하세요. 이 도구는 공백 포함·제외 글자 수를 나란히 보여 주기 때문에 어느 기준이든 바로 맞출 수 있어요."}},
-    {"@type":"Question","name":"X(트위터)에서 한글은 몇 자까지 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"X의 글자 제한은 280이지만 가중치 방식이라 한글·이모지·대부분의 특수문자는 글자당 2로 계산돼요. 그래서 한글로만 쓰면 실제로는 약 140자까지 들어가고, URL은 실제 길이와 상관없이 23자로 계산돼요. 위 플랫폼 확인에서 'X / Twitter post'를 선택하면 X의 실제 계산 방식 그대로 확인할 수 있어요."}},
+    {"@type":"Question","name":"X(트위터)에서 한글은 몇 자까지 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"X의 글자 제한은 280이지만 가중치 방식이라 한글·이모지·대부분의 특수문자는 글자당 2로 계산돼요. 그래서 한글로만 쓰면 실제로는 약 140자까지 들어가고, URL은 실제 길이와 상관없이 23자로 계산돼요. 위 플랫폼 확인에서 'X(트위터)'와 '게시물'을 선택하면 X의 실제 계산 방식 그대로 확인할 수 있어요."}},
     {"@type":"Question","name":"줄바꿈도 글자수에 포함되나요?","acceptedAnswer":{"@type":"Answer","text":"네, 줄바꿈은 공백 포함 글자 수에 1자로 들어가요(공백 제외 글자 수에서는 빠져요). 대부분의 입력 폼과 채용 플랫폼도 줄바꿈을 1자로 계산하니, 문단을 많이 나눈 자소서라면 줄바꿈 몇 자가 제한에 영향을 줄 수 있어요."}},
     {"@type":"Question","name":"이모지는 한 글자로 세나요?","acceptedAnswer":{"@type":"Answer","text":"그런 경우는 드물어요. 단순한 이모지는 코드포인트로는 1이지만 UTF-16으로는 2 단위이고, 피부색이 붙었거나 여러 개가 결합된 이모지(가족 이모지 등)는 4, 7 단위 이상이 되기도 해요. X에서는 이모지 하나가 2로 계산되고, SMS에서는 이모지 하나만 들어가도 1건당 글자 수 기준이 바뀌어요. '자소 단위(보이는 글자)' 타일이 눈에 보이는 개수, '글자 수'와 'UTF-16 단위'가 실제로 소모되는 양이에요."}},
     {"@type":"Question","name":"플랫폼은 초과라는데 글자수세기는 괜찮다고 나오는 이유가 뭔가요?","acceptedAnswer":{"@type":"Answer","text":"세는 단위가 서로 다르기 때문이에요. 한국어에서 가장 흔한 원인은 한글 한 글자가 1 코드포인트, 1 UTF-16 단위지만 UTF-8로는 3바이트라는 점이에요. 글자 수로 제한하는 서비스에서는 여유가 있어도, 바이트로 제한하는 데이터베이스 항목·업무 시스템·아마존 상품 정보란에서는 세 배 속도로 한도를 소모해 거부당해요. 예를 들어 255바이트짜리 항목에 들어가는 한글은 85자뿐이에요. 여기에 더해 X는 가중치 방식(한글 1자 = 2), 블루스카이는 자소 단위로 세요. 도구 맨 위에서 글이 올라갈 곳을 고르면 그곳이 세는 방식 그대로 계산해 주니, 일반적인 숫자 대신 실제로 맞는 숫자를 볼 수 있어요."}},
@@ -303,7 +303,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <section class="editorial-section" id="x-twitter">
     <h2>X(트위터)에서 한글은 몇 자까지?</h2>
     <p>X의 글자 제한은 280이지만, X는 글자를 그대로 세지 않고 <strong>가중치</strong>로 계산해요. 기본 라틴 문자(영어 알파벳, 숫자, 기본 문장부호)는 글자당 1이지만, <strong>한글·이모지·대부분의 특수문자는 글자당 2</strong>로 계산돼요. 그래서 한글로만 쓴 게시물은 실질적으로 <strong>약 140자</strong>가 한계예요. URL은 실제 길이와 상관없이 항상 <strong>23자</strong>로 계산되고요.</p>
-    <p>위 플랫폼 확인에서 'X / Twitter post'를 선택하면 이 가중치 방식 그대로 계산해 주니, 올리기 전에 잘리는지 미리 확인할 수 있어요.</p>
+    <p>위 플랫폼 확인에서 'X(트위터)'와 '게시물'을 선택하면 이 가중치 방식 그대로 계산해 주니, 올리기 전에 잘리는지 미리 확인할 수 있어요.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -320,7 +320,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <tr id="discord"><td>디스코드 메시지</td><td class="num">2,000</td><td>니트로 구독 시 4,000. 더 길면 .txt 첨부파일로 바뀜</td></tr>
         <tr id="instagram"><td>인스타그램 캡션</td><td class="num">2,200</td><td>첫 몇 줄 이후 '더 보기'로 접힘</td></tr>
         <tr id="tiktok"><td>틱톡 캡션</td><td class="num">2,200</td><td></td></tr>
-        <tr><td>링크드인 게시물</td><td class="num">3,000</td><td>기기에 따라 약 200~700자에서 '더 보기'로 접힘</td></tr>
+        <tr><td>링크드인 게시물</td><td class="num">3,000</td><td>'더 보기'로 접히는 지점은 휴대폰 약 140자, PC 약 210자. 140자 안에 쓰면 둘 다에서 보여요</td></tr>
         <tr><td>페이스북 게시물</td><td class="num">63,206</td><td></td></tr>
         <tr><td>유튜브 설명</td><td class="num">5,000</td><td></td></tr>
         <tr><td>핀터레스트 핀 설명</td><td class="num">500</td><td></td></tr>
@@ -376,7 +376,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </details>
     <details class="faq-item">
       <summary class="faq-question">X(트위터)에서 한글은 몇 자까지 쓸 수 있나요?</summary>
-      <p class="faq-answer">X의 글자 제한은 280이지만 가중치 방식이라 한글·이모지·대부분의 특수문자는 글자당 2로 계산돼요. 그래서 한글로만 쓰면 실제로는 약 140자까지 들어가고, URL은 실제 길이와 상관없이 23자로 계산돼요. 위 플랫폼 확인에서 'X / Twitter post'를 선택하면 X의 실제 계산 방식 그대로 확인할 수 있어요.</p>
+      <p class="faq-answer">X의 글자 제한은 280이지만 가중치 방식이라 한글·이모지·대부분의 특수문자는 글자당 2로 계산돼요. 그래서 한글로만 쓰면 실제로는 약 140자까지 들어가고, URL은 실제 길이와 상관없이 23자로 계산돼요. 위 플랫폼 확인에서 'X(트위터)'와 '게시물'을 선택하면 X의 실제 계산 방식 그대로 확인할 수 있어요.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">줄바꿈도 글자수에 포함되나요?</summary>
@@ -538,6 +538,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "discord-nick": "별명",
       "discord-status": "사용자 지정 상태",
       "telegram-message": "메시지",
+      "telegram-message-premium": "메시지(프리미엄)",
       "telegram-caption": "사진·영상 캡션",
       "telegram-bio": "소개",
       "threads-post": "게시물",
@@ -584,6 +585,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "discord-nick": "디스코드 별명",
       "discord-status": "디스코드 사용자 지정 상태",
       "telegram-message": "텔레그램 메시지",
+      "telegram-message-premium": "텔레그램 메시지(프리미엄)",
       "telegram-caption": "텔레그램 사진·영상 캡션",
       "telegram-bio": "텔레그램 소개",
       "threads-post": "스레드 게시물",
