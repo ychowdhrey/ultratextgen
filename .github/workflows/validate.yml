@@ -448,6 +448,16 @@ jobs:
         continue-on-error: true
         run: npm run test:zalgo-engine | tee zalgo-engine-tests.log
 
+      # Gating, no backlog: the Korean name romanizer (ko/yeongmun-ireum-byeonhwan).
+      # A wrong letter looks exactly like a right one and can end up on a
+      # passport form, so every rule the page claims is pinned against the
+      # standard's own examples, and every rule it says it does not apply is
+      # pinned as a known divergence.
+      - name: Korean romanizer tests
+        id: romanize_tests
+        continue-on-error: true
+        run: npm run test:romanize | tee romanize-tests.log
+
       # Gating, no backlog: the QR encoder that stamps a way back to the site
       # onto every printed sheet and PNG export. Its one failure mode is a
       # symbol that looks perfectly well-formed and that no phone can read, so
@@ -1130,6 +1140,11 @@ jobs:
             cat zalgo-engine-tests.log
             echo '```'
             echo ""
+            echo "### Korean romanizer tests — \`${{ steps.romanize_tests.outcome }}\`"
+            echo '```'
+            cat romanize-tests.log
+            echo '```'
+            echo ""
             echo "### QR encoder tests — \`${{ steps.qr_tests.outcome }}\`"
             echo "### Stencil bridge tests — \`${{ steps.stencil_tests.outcome }}\`"
             echo "### Word search grid tests — \`${{ steps.word_search_tests.outcome }}\`"
@@ -1366,6 +1381,7 @@ jobs:
           steps.llms_index.outcome == 'failure' ||
           steps.llms_index_tests.outcome == 'failure' ||
           steps.zalgo_engine_tests.outcome == 'failure' ||
+          steps.romanize_tests.outcome == 'failure' ||
           steps.qr_tests.outcome == 'failure' ||
           steps.stencil_tests.outcome == 'failure' ||
           steps.word_search_tests.outcome == 'failure' ||

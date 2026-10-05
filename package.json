@@ -67,6 +67,7 @@
     "test:game-rules": "node js/gamename/gameRules.test.js",
     "test:name-reports": "node scripts/name-reports.test.mjs",
     "test:zalgo-engine": "node usecase/zalgo-text/zalgo-text.test.js",
+    "test:romanize": "node js/romanize/korean-romanize.test.js",
     "test:qr": "node js/printables/qr.test.js",
     "test:stencil": "node js/printables/stencil.test.js",
     "test:word-search": "node js/printables/wordSearch.test.js",

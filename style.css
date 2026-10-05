@@ -754,6 +754,69 @@
       height: 16px;
     }
 
+    /* Phone header (header.js, initializeMiniHeader). The full header wraps
+       to three rows below 641px -- 187px at 390x844, 227px at 360 and 320
+       wide (measured 2026-10-04) -- and while it was sticky it covered
+       whatever scrolled to the top, the zalgo page's Copy button included.
+       On phones it now scrolls away with the page, and .header-mini, one
+       48px row, slides in only while the visitor scrolls back up. The media
+       query matches COMPACT_HEADER_QUERY in header.js. */
+    .header-mini {
+      display: none;
+    }
+
+    @media (max-width: 640px), (max-height: 500px) {
+      .header {
+        position: relative;
+      }
+
+      .header-mini {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        height: 48px;
+        padding: 0 16px;
+        background: var(--bg-white);
+        border-bottom: 1px solid var(--border-light);
+        box-shadow: var(--shadow-soft);
+        transform: translateY(-100%);
+        visibility: hidden;
+        transition: transform 0.2s ease, visibility 0s linear 0.2s;
+      }
+
+      .header-mini.is-shown {
+        transform: none;
+        visibility: visible;
+        transition: transform 0.2s ease, visibility 0s;
+      }
+
+      .header-mini .logo {
+        font-size: 1.0625rem;
+      }
+
+      .header-mini .header-btn {
+        padding: 8px;
+      }
+
+      .header-mini .header-btn svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .header-mini,
+      .header-mini.is-shown {
+        transition: none;
+      }
+    }
+
     /* Hero Section */
     .hero {
       padding: 48px 24px 32px;
@@ -11232,7 +11295,7 @@ html.dark .wc-dir-option, html.dark .wc-input { background: transparent; }
 .lib-search-wrap svg { position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; flex-shrink: 0; }
 #libSearch { width: 100%; box-sizing: border-box; padding: 0.65rem 1rem 0.65rem 2.6rem; border: 1px solid var(--border-light); border-radius: var(--radius); background: var(--bg-white); color: var(--text-primary); font-family: inherit; font-size: 0.95rem; outline: none; transition: border-color 0.15s; }
 #libSearch:focus { border-color: var(--accent-purple); }
-.lib-alpha-bar { max-width: 900px; margin: 0 auto 2rem; padding: 0.5rem 1.25rem; display: flex; flex-wrap: wrap; gap: 0.25rem; position: sticky; top: 0; z-index: 20; background: var(--bg-page, var(--bg-base)); backdrop-filter: saturate(180%) blur(6px); -webkit-backdrop-filter: saturate(180%) blur(6px); }
+.lib-alpha-bar { max-width: 900px; margin: 0 auto 2rem; padding: 0.5rem 1.25rem; display: flex; flex-wrap: wrap; gap: 0.25rem; position: sticky; top: var(--utg-header-h, 0px); z-index: 20; background: var(--bg-page, var(--bg-base)); backdrop-filter: saturate(180%) blur(6px); -webkit-backdrop-filter: saturate(180%) blur(6px); }
 .lib-alpha-btn.is-current { background: var(--accent-purple); border-color: var(--accent-purple); color: #fff; }
 .lib-alpha-btn.is-current .alpha-count { color: rgba(255, 255, 255, 0.85); }
 .lib-alpha-btn { display: inline-flex; flex-direction: column; align-items: center; min-width: 2rem; padding: 0.3rem 0.4rem 0.2rem; border: 1px solid var(--border-light); border-radius: 6px; background: var(--bg-white); color: var(--text-secondary); font-family: inherit; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.12s, border-color 0.12s, color 0.12s; text-decoration: none; line-height: 1; }
@@ -12662,7 +12725,9 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
   .study-layout { padding: 0 16px; }
   .research-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .research-meta div:nth-child(3) { grid-column: 1 / -1; }
-  .research-page [id] { scroll-margin-top: 210px; }
+  /* The header no longer sticks on phones; this clears the 48px bar that
+     shows while scrolling up (.header-mini). */
+  .research-page [id] { scroll-margin-top: 64px; }
 }
 
 /* The floating Contents button (narrow screens, added by the script). */
