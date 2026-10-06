@@ -1903,6 +1903,9 @@
 
       .style-actions {
         width: 100%;
+        /* Copy + Preview + Save do not fit 320px in longer languages
+           ("Сохранить", "Speichern"): wrap instead of overflowing the card. */
+        flex-wrap: wrap;
       }
 
       .style-actions-stack {
@@ -5716,8 +5719,10 @@ button.clear-decoration {
 .pt-spoke-batch .pt-size-field { margin-top: 0; }
 
 @media (max-width: 640px) {
-  .bubble-stage { grid-template-columns: 1fr; }
-  .bubble-stage.is-solo { grid-template-columns: 1fr; }
+  /* minmax(0, …): a plain 1fr track will not shrink below its longest word,
+     so "Großbuchstaben" widened the stage past a 320-360px phone. */
+  .bubble-stage { grid-template-columns: minmax(0, 1fr); }
+  .bubble-stage.is-solo { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* Print surface — hidden on screen, isolated when printing */
