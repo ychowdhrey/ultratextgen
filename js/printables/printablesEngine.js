@@ -96,12 +96,19 @@
      Œ takes two squares), which is how every French crossword and mots mêlés
      is printed. The word-search and crossword modules strip the marks from the
      grid only when asked; the word list and clues keep the real spelling.
-     Other languages keep their letters, as the English pages promise. */
+     Languages without a rule below keep their letters, as the English pages
+     promise. */
   /* Spanish sopas de letras drop the written accent as well but keep Ñ, a
      letter of its own ("es" mode in wordSearch.js / wordPuzzles.js). */
+  /* German grids spell Ä Ö Ü as AE OE UE and ß as SS ("de" mode), the
+     newspaper Kreuzworträtsel rule. Portuguese, Italian and Dutch puzzles are
+     printed without accents, as French ones are (Ç is C; Dutch IJ stays two
+     squares, I and J, which each page says). Polish keeps Ą Ć Ę Ł Ń Ó Ś Ź Ż:
+     they are letters of its alphabet, not letters with marks. */
   const FOLD_GRID = CFG.foldAccents != null
-    ? (CFG.foldAccents === "es" ? "es" : !!CFG.foldAccents)
-    : (LANG === "fr" ? true : LANG === "es" ? "es" : false);
+    ? (CFG.foldAccents === "es" || CFG.foldAccents === "de" ? CFG.foldAccents : !!CFG.foldAccents)
+    : (LANG === "es" ? "es" : LANG === "de" ? "de"
+      : (LANG === "fr" || LANG === "pt" || LANG === "it" || LANG === "nl") ? true : false);
   const I18N = {
     en: {
       letterWord: "letter", numberWord: "number",
@@ -359,6 +366,21 @@
       bannerInstr: "Recorta cada banderín por su línea punteada, haz un agujero en cada punto y pasa un cordel o cinta en orden (1, 2, 3…) para formar la palabra.",
       puzzleCut: "Recorta por las líneas punteadas para separar cada pieza-letra.",
       puzzleTitle: "El rompecabezas de {name}",
+      crossword: {
+        heading: "Crucigrama",
+        across: "Horizontales",
+        down: "Verticales",
+        answerKey: "Soluciones",
+        forWhom: "para",
+        clueBlank: "(escribe tu propia pista)",
+        wordBank: "Lista de palabras",
+        noFit: "No hay sitio en la cuadrícula para:",
+        needWords: "Escribe algunas palabras que compartan letras.",
+        gridOf: "Cuadrícula de crucigrama",
+        cellsBy: "casillas por",
+        versions: "crucigramas distintos, uno por nombre",
+        oneGrid: "Un crucigrama"
+      },
       wordSearch: {
         heading: "Sopa de letras",
         findAll: "Encuentra las",
@@ -434,6 +456,35 @@
       bannerInstr: "Recorte cada bandeirinha na linha pontilhada, faça um furo em cada ponto e passe um barbante ou fita na ordem (1, 2, 3…) para formar a palavra.",
       puzzleCut: "Recorte nas linhas pontilhadas para separar cada peça-letra.",
       puzzleTitle: "O quebra-cabeça de {name}",
+      wordSearch: {
+        heading: "Caça-palavras",
+        findAll: "Encontre as",
+        wordsWord: "palavras",
+        answerKey: "Respostas",
+        forWhom: "para",
+        tooLong: "Comprida demais para a grade:",
+        overCap: "Só as primeiras {n} palavras entram. Ficaram de fora:",
+        needWords: "Digite algumas palavras para montar o caça-palavras.",
+        gridOf: "Grade do caça-palavras",
+        lettersBy: "letras por",
+        versions: "grades diferentes, uma por nome",
+        oneGrid: "Uma grade"
+      },
+      crossword: {
+        heading: "Palavras cruzadas",
+        across: "Horizontais",
+        down: "Verticais",
+        answerKey: "Respostas",
+        forWhom: "para",
+        clueBlank: "(escreva a sua dica)",
+        wordBank: "Banco de palavras",
+        noFit: "Não coube na grade:",
+        needWords: "Digite algumas palavras que tenham letras em comum.",
+        gridOf: "Grade de palavras cruzadas",
+        cellsBy: "quadradinhos por",
+        versions: "grades diferentes, uma por nome",
+        oneGrid: "Uma grade"
+      },
       trace: {
         solid:    { label: "Modelo cheio", hint: "Letras escuras e cheias — trace por cima" },
         "bold-dot": { label: "Pontilhado grosso", hint: "Pontos grossos e juntos para ligar" },
@@ -496,6 +547,35 @@
       bannerInstr: "Ritaglia ogni bandierina lungo la linea tratteggiata, fai un foro su ogni punto, poi infila uno spago o un nastro in ordine (1, 2, 3…) per comporre la parola.",
       puzzleCut: "Ritaglia lungo le linee tratteggiate per separare ogni pezzo-lettera.",
       puzzleTitle: "Il puzzle di {name}",
+      wordSearch: {
+        heading: "Crucipuzzle",
+        findAll: "Trova le",
+        wordsWord: "parole",
+        answerKey: "Soluzioni",
+        forWhom: "per",
+        tooLong: "Troppo lunga per la griglia:",
+        overCap: "Si usano solo le prime {n} parole. Escluse:",
+        needWords: "Scrivi qualche parola per creare la griglia.",
+        gridOf: "Griglia del crucipuzzle",
+        lettersBy: "lettere per",
+        versions: "griglie diverse, una per nome",
+        oneGrid: "Una griglia"
+      },
+      crossword: {
+        heading: "Cruciverba",
+        across: "Orizzontali",
+        down: "Verticali",
+        answerKey: "Soluzioni",
+        forWhom: "per",
+        clueBlank: "(scrivi tu la definizione)",
+        wordBank: "Elenco delle parole",
+        noFit: "Non c'è posto nella griglia per:",
+        needWords: "Scrivi qualche parola con lettere in comune.",
+        gridOf: "Griglia del cruciverba",
+        cellsBy: "caselle per",
+        versions: "schemi diversi, uno per nome",
+        oneGrid: "Uno schema"
+      },
       trace: {
         solid:    { label: "Modello pieno", hint: "Lettere piene e scure – ricalca sopra" },
         "bold-dot": { label: "Puntinato spesso", hint: "Punti spessi e ravvicinati da unire" },
@@ -550,6 +630,36 @@
       bannerInstr: "Wytnij każdą chorągiewkę wzdłuż przerywanej linii, zrób dziurkę w każdym punkcie, a następnie przewlecz sznurek lub wstążkę po kolei (1, 2, 3…), aby ułożyć napis.",
       puzzleCut: "Tnij wzdłuż przerywanych linii, aby oddzielić każdy element-literę.",
       puzzleTitle: "Puzzle z imieniem: {name}",
+      wordSearch: {
+        heading: "Wykreślanka",
+        findAll: "Do znalezienia:",
+        wordsWord: "",
+        colon: "",
+        answerKey: "Rozwiązanie",
+        forWhom: "·",
+        tooLong: "Za długie do diagramu:",
+        overCap: "Użyto tylko pierwszych {n} słów. Pominięte:",
+        needWords: "Wpisz kilka słów, aby utworzyć diagram.",
+        gridOf: "Diagram wykreślanki",
+        lettersBy: "liter na",
+        versions: "różnych diagramów, jeden na imię",
+        oneGrid: "Jeden diagram"
+      },
+      crossword: {
+        heading: "Krzyżówka",
+        across: "Poziomo",
+        down: "Pionowo",
+        answerKey: "Rozwiązanie",
+        forWhom: "·",
+        clueBlank: "(wpisz własne pytanie)",
+        wordBank: "Lista słów",
+        noFit: "Nie zmieściło się w diagramie:",
+        needWords: "Wpisz kilka słów, które mają wspólne litery.",
+        gridOf: "Diagram krzyżówki",
+        cellsBy: "kratek na",
+        versions: "różnych układów, jeden na imię",
+        oneGrid: "Jeden układ"
+      },
       practiceTitle: "Karta pracy · {Noun}",
       modelCount: { one: "wiersz ze wzorem", few: "wiersze ze wzorem", many: "wierszy ze wzorem" },
       traceCount: { one: "wiersz do pisania", few: "wiersze do pisania", many: "wierszy do pisania" },
@@ -619,6 +729,35 @@
       bannerInstr: "Schneide jeden Wimpel entlang der gestrichelten Linie aus, stich an jedem Punkt ein Loch und fädle eine Schnur oder ein Band der Reihe nach (1, 2, 3…) durch, um das Wort zu bilden.",
       puzzleCut: "Schneide entlang der gestrichelten Linien, um jedes Buchstaben-Teil zu trennen.",
       puzzleTitle: "Namenspuzzle von {name}",
+      wordSearch: {
+        heading: "Suchsel",
+        findAll: "Finde alle",
+        wordsWord: "Wörter",
+        answerKey: "Lösung",
+        forWhom: "für",
+        tooLong: "Zu lang für das Gitter:",
+        overCap: "Nur die ersten {n} Wörter werden verwendet. Weggelassen:",
+        needWords: "Tippe ein paar Wörter ein, um ein Suchsel zu erstellen.",
+        gridOf: "Suchsel-Gitter",
+        lettersBy: "Buchstaben mal",
+        versions: "verschiedene Gitter, eines pro Name",
+        oneGrid: "Ein Gitter"
+      },
+      crossword: {
+        heading: "Kreuzworträtsel",
+        across: "Waagerecht",
+        down: "Senkrecht",
+        answerKey: "Lösung",
+        forWhom: "für",
+        clueBlank: "(schreib deine eigene Frage)",
+        wordBank: "Wörterliste",
+        noFit: "Kein Platz im Gitter für:",
+        needWords: "Tippe ein paar Wörter ein, die Buchstaben gemeinsam haben.",
+        gridOf: "Kreuzworträtsel-Gitter",
+        cellsBy: "Kästchen mal",
+        versions: "verschiedene Rätsel, eines pro Name",
+        oneGrid: "Ein Rätsel"
+      },
       usLetter: "US Letter",
       modelCount: { one: "Vorlagenzeile", other: "Vorlagenzeilen" },
       traceCount: { one: "Nachspurzeile", other: "Nachspurzeilen" },
@@ -1104,15 +1243,19 @@
      CFG.chars still wins. Dot-to-dot keeps A-Z: its dots are laid out per
      letter, and a letter without a layout would print an empty frame. */
   const RENDER_FOR_CHARS = CFG.render || "outline";
+  /* Letters a language adds to A-Z, each listed after the letter it follows
+     in that alphabet. Polish has nine, at eight places (A Ą ... Z Ź Ż); its
+     school alphabet charts keep Q, V and X for borrowed words, so they stay. */
   const LANG_LETTERS = {
-    es: { after: "N", add: ["Ñ"] },
-    de: { after: "Z", add: ["Ä", "Ö", "Ü", "ß"] }
+    es: [["N", ["Ñ"]]],
+    de: [["Z", ["Ä", "Ö", "Ü", "ß"]]],
+    pl: [["A", ["Ą"]], ["C", ["Ć"]], ["E", ["Ę"]], ["L", ["Ł"]], ["N", ["Ń"]], ["O", ["Ó"]], ["S", ["Ś"]], ["Z", ["Ź", "Ż"]]]
   };
   function langLetters() {
     const extra = LANG_LETTERS[LANG];
     if (!extra || RENDER_FOR_CHARS === "dots") return LETTERS.slice();
     const out = LETTERS.slice();
-    out.splice(out.indexOf(extra.after) + 1, 0, ...extra.add);
+    extra.forEach(([after, add]) => out.splice(out.indexOf(after) + 1, 0, ...add));
     return out;
   }
   const CHARS = (Array.isArray(CFG.chars) && CFG.chars.length)
@@ -11488,7 +11631,11 @@
     const placed = built.words.filter((w) => w.placed).length;
     const note = document.createElement("p");
     note.className = "pt-search-note";
-    note.textContent = T.wordSearch.findAll + " " + placed + " " + T.wordSearch.wordsWord + (T.wordSearch.colon || ":");
+    /* Polish counts with case endings ("12 słów", "3 słowa"), so its strings
+       put the number last ("Do znalezienia: 12") and leave wordsWord and colon
+       empty; an empty colon must stay empty, hence != null, not ||. */
+    note.textContent = (T.wordSearch.findAll + " " + placed + " " + T.wordSearch.wordsWord).trim()
+      + (T.wordSearch.colon != null ? T.wordSearch.colon : ":");
     sheet.appendChild(note);
 
     sheet.appendChild(searchWordListNode(built));

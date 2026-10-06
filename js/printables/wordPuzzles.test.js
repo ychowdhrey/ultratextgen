@@ -380,5 +380,12 @@ const CLUED = [
      "scramble: the list cap is enforced");
 }
 
+/* 22. German crosswords spell umlauts and ß out (fold "de") */
+{
+  const c = CW.build({ input: "Bär = Großes Tier\nStraße = Hier fahren Autos\nKäse = Aus Milch\nÜbung = Macht den Meister", seed: "de", fold: "de" });
+  const letters = c.words.filter((w) => w.placed).map((w) => w.letters.join("")).sort().join(" ");
+  ok(/BAER/.test(letters) && !/[ÄÖÜß]/.test(letters), "crossword fold de: " + letters);
+}
+
 console.log("\nwordPuzzles.test.js — " + pass + " passed, " + fail + " failed");
 process.exit(fail ? 1 : 0);
