@@ -8,7 +8,7 @@
   "hero_h1": "리본 특수 문자",
   "hero_tagline": "🎀 리본 이모지와 ୨୧ ʚɞ 같은 리본 모양 문자. 누르면 바로 복사됩니다.",
   "intro": "리본 특수 문자는 인스타 소개글, 닉네임, 프로필을 여리고 사랑스럽게 꾸밀 때 씁니다. 대표는 🎀 리본 이모지이고, 이모지가 아닌 문자로는 ୨୧ 와 ʚɞ 가 리본 모양을 냅니다. ୨୧ 는 원래 인도 오리야 문자의 숫자 2와 1인데, 나란히 놓으면 리본 매듭처럼 보여서 꾸밈 문자로 쓰이게 되었습니다. 아래 기호를 눌러 복사하세요.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "bow-emojis",
@@ -89,7 +89,7 @@
     {
       "id": "bow-heart-combos",
       "label": "",
-      "h2": "리본 하트 조합",
+      "h2": "리본 하트 조합 · 소개글 구분선",
       "intro": "",
       "symbols": [
         {
@@ -107,15 +107,7 @@
         {
           "char": "⊹ 🎀 ⊹ ♡ ⊹",
           "label": "반짝이 리본 하트"
-        }
-      ]
-    },
-    {
-      "id": "bow-ribbon-collections",
-      "label": "",
-      "h2": "리본 소개글 장식 세트",
-      "intro": "",
-      "symbols": [
+        },
         {
           "char": "⋆｡°✩",
           "label": "반짝이 꼬리 구분선"
@@ -145,6 +137,73 @@
           "label": "하트 반짝이 리본"
         }
       ]
+    }
+  ],
+  "collection_section": {
+    "id": "bow-ribbon-collections",
+    "label": "리본 세트",
+    "h2": "리본 소개글 장식 세트",
+    "intro": "소개글, 닉네임, 캡션에 그대로 붙여넣는 리본 조합입니다. 세트 전체를 한 번에 복사하세요."
+  },
+  "collection_container_id": "bowRibbonCollectionsContainer",
+  "collections": [
+    {
+      "name": "코켓 리본 조합",
+      "flags": [
+        "୨୧",
+        "⋆",
+        "🎀",
+        "⋆",
+        "୨୧"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "리본 하트 테두리",
+      "flags": [
+        "🎀",
+        "♡",
+        "🎀",
+        "♡",
+        "🎀"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "하트 날개 소개글",
+      "flags": [
+        "ʚ♡ɞ"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "리본 괄호 조합",
+      "flags": [
+        "꒰ ♡ ꒱"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "매듭 리본 구분선",
+      "flags": [
+        "⊰",
+        "୨୧",
+        "⋆",
+        "🎀",
+        "⋆",
+        "୨୧",
+        "⊱"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "여린 리본 닉네임",
+      "flags": [
+        "୨",
+        "♡",
+        "୧"
+      ],
+      "defaultFormat": "inline"
     }
   ],
   "editorial_sections": [
