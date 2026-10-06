@@ -296,9 +296,18 @@
       }
     }
     if (o.disabled) btn.disabled = true;
-    btn.title = uiText("shareResult.title", "Share this result — the link opens with your text in this style");
-    btn.setAttribute("aria-label",
-      uiText("shareResult.ariaLabel", "Share {style} result").replace("{style}", o.name || ""));
+    /* A caller-supplied label means the page translates its own buttons and
+       has no i18n.js strings: the English sentence below would then be read
+       out under a localized visible label ("Share 기쁘고 … result" beside
+       "공유"), failing label-in-name. Build the name and tooltip from the
+       label the visitor actually sees instead. */
+    const ownLabel = o.label && !(window.UTG_I18N && window.UTG_I18N.ui);
+    btn.title = ownLabel
+      ? String(o.label)
+      : uiText("shareResult.title", "Share this result — the link opens with your text in this style");
+    btn.setAttribute("aria-label", ownLabel
+      ? String(o.label) + (o.name ? ": " + o.name : "")
+      : uiText("shareResult.ariaLabel", "Share {style} result").replace("{style}", o.name || ""));
     // `icon: "link"` changes the picture only, never the action: the button
     // still runs shareCreation (native sheet, else copy the link).
     btn.innerHTML = (o.icon === "link" ? LINK_ICON_SVG : SHARE_ICON_SVG) + '<span class="share-result-label"></span>';
