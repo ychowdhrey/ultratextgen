@@ -848,6 +848,16 @@
       background-clip: text;
     }
 
+    /* Print drops backgrounds, and with them the gradient this text is
+       clipped to, so the transparent fill printed as a blank band. */
+    @media print {
+      .hero-headline {
+        background: none;
+        -webkit-text-fill-color: currentColor;
+        color: var(--text-primary);
+      }
+    }
+
     .input-wrapper {
       position: relative;
       width: 100%;
