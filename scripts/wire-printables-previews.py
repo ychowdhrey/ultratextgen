@@ -99,6 +99,7 @@ TARGET_IDS = (
     "pt-alphabet-grid",    # spanish-alphabet-chart
     "pt-panel",            # letter spokes and alphabet landings
     "pt-name-preview",     # name tracing, "<phrase> in cursive"
+    "lb-preview",          # name-labels (labelEngine.js)
 )
 
 

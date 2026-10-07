@@ -13620,3 +13620,53 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
 .gr-outcome-note { flex-basis: 100%; font-size: 0.78rem; color: var(--text-secondary); }
 .gr-outcome-error { margin: 0; font-size: 0.85rem; color: var(--ts-fail); }
 .nr-chip-code { font-family: var(--font-mono, monospace); font-size: 0.75rem; }
+
+/* Name label sheet maker (/printables/name-labels/ and locale siblings).
+   The sheet itself is a canvas drawn by js/printables/labelEngine.js at the
+   paper's real size, so nothing here touches the printed output; these rules
+   only lay out the controls and size the preview. */
+.lb-tool .pt-studio-controls .pt-field { margin-bottom: 1.1rem; }
+.lb-what .pt-choice { flex: 1 1 30%; min-height: 44px; }
+.lb-hint { margin: 0.45rem 0 0; font-size: 0.8rem; line-height: 1.4; color: var(--text-secondary); }
+.lb-hint:empty { display: none; }
+.lb-lines { display: grid; gap: 0.35rem; }
+.lb-line-label { font-size: 0.82rem; font-weight: 600; color: var(--text-secondary); }
+.lb-input { width: 100%; min-height: 44px; }
+.lb-list-field textarea { width: 100%; }
+.lb-list-opts { margin-top: 0.6rem; }
+.lb-size-row { margin-top: 0.6rem; }
+.lb-size-row[hidden], .lb-nudge[hidden] { display: none; }
+.lb-num { width: 4.5rem; }
+.lb-symbols .pt-choice { flex: 0 0 auto; min-width: 44px; min-height: 44px; font-size: 1.1rem; }
+.lb-font-rounded { font-family: 'Fredoka', sans-serif; font-weight: 600; }
+.lb-font-clear { font-family: 'Quicksand', sans-serif; font-weight: 700; }
+.lb-font-bold { font-family: 'Baloo 2', sans-serif; font-weight: 700; }
+.lb-font-hand { font-family: 'Comic Neue', sans-serif; font-weight: 700; }
+.lb-more { margin-top: 0.4rem; }
+.lb-more[open] { padding-bottom: 0.6rem; }
+.lb-reset { margin-top: 0.4rem; }
+.lb-paper { padding: 0.6rem; display: flex; justify-content: center; }
+.lb-preview-canvas { display: block; width: 100%; height: auto; max-height: 64vh; object-fit: contain; box-shadow: 0 0 0 1px var(--border-light); }
+.lb-summary { margin: 0.6rem 0 0; font-size: 0.86rem; font-weight: 700; color: var(--text-primary); }
+.lb-warn { margin: 0.3rem 0 0; font-size: 0.8rem; color: var(--ts-risk); }
+.lb-warn:empty { display: none; }
+@media (max-width: 900px) {
+  .lb-preview-canvas { max-height: 48vh; }
+}
+.lb-tool .main-input.is-from-list { opacity: 0.6; cursor: not-allowed; }
+.lb-tool .lb-input { height: 46px; min-height: 0; }
+.lb-line3-row { display: grid; gap: 0.35rem; }
+.lb-line3-row[hidden] { display: none; }
+.lb-count { flex-wrap: wrap; }
+.lb-count .pt-field-label { margin-bottom: 0; margin-right: 0.4rem; }
+/* On a phone the name comes before the sheet: the job starts by typing, and a
+   preview with a Download button above the name field invites downloading
+   the sample. */
+@media (max-width: 900px) {
+  .lb-tool .pt-studio-controls { order: 1; }
+  .lb-tool .pt-studio-preview { order: 2; position: static; }
+}
+.lb-list-field + .pt-field { margin-top: 1rem; }
+.lb-name-style { margin-top: 0.55rem; }
+.lb-dates[hidden] { display: none; }
+.lb-date-fill { margin-top: 0.6rem; }

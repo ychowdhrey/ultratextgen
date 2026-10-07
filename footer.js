@@ -1254,6 +1254,7 @@
         '<a href="/printables/dot-to-dot-name/" class="footer-link">Dot-to-Dot Name</a>' +
         '<a href="/printables/banner-maker/" class="footer-link">Banner Maker</a>' +
         '<a href="/printables/monogram-maker/" class="footer-link">Monogram Maker</a>' +
+        '<a href="/printables/name-labels/" class="footer-link">Name Labels</a>' +
       '</div>' +
       '<div class="footer-col">' +
         '<span class="footer-col-title">Learn</span>' +
