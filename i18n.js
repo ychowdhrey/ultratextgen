@@ -157,7 +157,7 @@
     // Locales recognized from the URL path so <html lang> and text direction get
     // set correctly. Includes the prerendered "shadow" locales (ko, hi, zh-tw) —
     // see withRuntimeJson below for what they fetch and why.
-    var supported = ["en", "es", "fr", "pt", "de", "id", "it", "nl", "tr", "pl", "vi", "tl", "da", "sv", "no", "ja", "th", "ru", "ar", "cs", "sk", "hr", "bs", "sr", "ro", "hu", "ko", "hi", "zh-tw", "fi", "ms"];
+    var supported = ["en", "es", "fr", "pt", "de", "id", "it", "nl", "tr", "pl", "vi", "tl", "da", "sv", "no", "ja", "th", "ru", "ar", "cs", "sk", "hr", "bs", "sr", "ro", "hu", "ko", "hi", "zh-tw", "fi", "ms", "uk"];
 
     // 1. Detect from URL path prefix (e.g. /fr/, /de/, /zh-tw/)
     var pathMatch = window.location.pathname.match(/^\/([a-z]{2}(?:-[a-z]{2})?)\//);
@@ -198,7 +198,7 @@
     // file's own _readme) purely to fill that object; because those pages
     // declare no data-i18n hooks, applyTranslations() cannot touch their
     // prerendered copy.
-    const withRuntimeJson = ["es", "fr", "pt", "de", "id", "it", "nl", "tr", "pl", "vi", "tl", "da", "sv", "no", "ja", "th", "ru", "ar", "cs", "sk", "hr", "bs", "sr", "ro", "ko", "hi", "zh-tw", "hu", "fi", "ms"];
+    const withRuntimeJson = ["es", "fr", "pt", "de", "id", "it", "nl", "tr", "pl", "vi", "tl", "da", "sv", "no", "ja", "th", "ru", "ar", "cs", "sk", "hr", "bs", "sr", "ro", "ko", "hi", "zh-tw", "hu", "fi", "ms", "uk"];
     if (withRuntimeJson.indexOf(lang) === -1) return;
 
     fetch("/locales/" + lang + ".json")
