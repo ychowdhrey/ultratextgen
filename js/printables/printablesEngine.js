@@ -1513,8 +1513,19 @@
     if (special) return "letter-" + special;
     return "letter-" + ch.toLowerCase();
   }
+  /* Filenames keep the Latin name the visitor typed. [^a-z0-9] dropped
+     every accented letter, so "José" saved as block-jos.pdf and "Zoë" as
+     block-zo.pdf. Accents now come off first (NFD, drop the marks), so they
+     save as jose and zoe. The result stays ASCII on purpose: a non-ASCII
+     a.download name is replaced by a bare "download" with no extension in
+     some browsers, which is worse than the generic name a non-Latin name
+     already falls back to. */
   function slugify(s) {
-    return String(s || "").toLocaleLowerCase(CASE_LOCALE).replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+    // Lowercase before decomposing: in Turkish, İ lowercases to i, but its
+    // decomposed I + dot would lowercase to the dotless ı.
+    return String(s || "").toLocaleLowerCase(CASE_LOCALE).normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .replace(/đ/g, "d").replace(/ł/g, "l").replace(/ß/g, "ss").replace(/ø/g, "o").replace(/æ/g, "ae").replace(/ı/g, "i")
+      .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   }
   function primaryFontName() {
     // "Fredoka, '…', sans-serif" -> "Fredoka" (for document.fonts.load)
@@ -4817,9 +4828,16 @@
     const u = renderGlyph(ch.toLocaleUpperCase(CASE_LOCALE));
     const l = renderGlyph(ch.toLocaleLowerCase(CASE_LOCALE));
     const pair = /[0-9]/.test(ch) ? u : (u + " " + l);
+    /* Fit to the whole set's capitals as well as its lowercase, and upward
+       too: a school script such as Playwrite FR or Playwrite ID stands well
+       above y = 0, so with lowercase-only fitting and no fitTop every tall
+       capital (and b d h k l) was cut flat at the top of the panel, the PDF
+       and the A-Z book. A face whose ink already starts inside the box gets
+       y0 = 0, so the other cursive pages are unchanged. */
     const svg = wordOutlineSVG(pair, {
       solid: false, strokeColor: INK, strokeWidth: STROKE, guides: !!o.guides,
-      fitInk: CHARS.map((c) => renderGlyph(c.toLocaleLowerCase(CASE_LOCALE))).join("")
+      fitInk: CHARS.map((c) => renderGlyph(c.toLocaleUpperCase(CASE_LOCALE)) + renderGlyph(c.toLocaleLowerCase(CASE_LOCALE))).join(""),
+      fitTop: true
     });
     svg.setAttribute("aria-label", NOUN + " " + charLabel(ch));
     return svg;
@@ -12949,6 +12967,21 @@
          renderBannerPreview, renderPuzzlePreview, updateBatch].forEach((fn) => {
           if (typeof fn === "function") { try { fn(); } catch (e) { /* surface absent on this page */ } }
         });
+        /* The single-letter figure is a word surface too: glyphPairOutline()
+           sizes its viewBox from measured ink. Built before the face arrived,
+           it kept the fallback's box, so on Playwrite FR and ID (tall, wide
+           school scripts) the capital's top and the joined lowercase were cut
+           off in the panel. Swap only the figure inside the paper preview;
+           selectChar() is not re-run, so scroll and history stay put. */
+        if (paperPreviewNode && activeChar != null) {
+          const inner = paperPreviewNode.querySelector(".pt-paper-inner");
+          if (inner && inner.firstChild) {
+            try {
+              inner.replaceChild(figureNode(activeChar), inner.firstChild);
+              paintPaperPreview();
+            } catch (e) { /* keep the figure already shown */ }
+          }
+        }
       });
     }
 

@@ -916,7 +916,7 @@ const decorations = window.UTG_DECORATIONS
       <div class="style-info">
         <p class="style-name">${name}</p>
          ${style?.note ? `<p class="style-note">${style.note}</p>` : ""}
-        <p class="style-preview ${!convertedText ? "placeholder" : ""}">${convertedText || STR.empty}</p>
+        <p class="style-preview ${!convertedText ? "placeholder" : ""}">${convertedText ? escapeHtml(convertedText) : STR.empty}</p>
         ${decoHtml}
         ${safetyPillHtml(name, style)}
         ${platformChipsHtml(style)}
