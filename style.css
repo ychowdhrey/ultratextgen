@@ -13547,3 +13547,22 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
 .blank-gen-lines { display: inline-flex; align-items: center; gap: 6px; font-size: 0.875rem; color: var(--text-secondary); cursor: pointer; }
 .blank-gen-copy { border: none; cursor: pointer; }
 .blank-gen-note { margin: 6px 0 0; font-size: 0.85rem; color: var(--text-muted); }
+
+/* Hidden-character list on /character-counter/ (counterController.js
+   renderHidden). Buttons reuse .cc-fix-actions / .cc-fix-btn. */
+.counter-hidden {
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-base);
+}
+.counter-hidden-head { margin: 0 0 0.4rem; font-size: 0.85rem; font-weight: 600; color: var(--text-primary); }
+.counter-hidden-list { margin: 0 0 0.6rem; padding-left: 1.25rem; font-size: 0.82rem; color: var(--text-secondary); }
+.counter-hidden-item { display: flex; flex-wrap: wrap; gap: 0.15rem 0.5rem; align-items: baseline; padding: 0.15rem 0; }
+.counter-hidden-code { font-family: var(--font-mono, monospace); font-size: 0.78rem; color: var(--text-primary); }
+.counter-hidden-name { color: var(--text-primary); }
+.counter-hidden-kind { font-size: 0.75rem; color: var(--text-muted); }
+.counter-hidden-kind.is-direction { color: var(--ts-fail); }
+.counter-hidden-at { font-size: 0.75rem; color: var(--text-muted); }
+.counter-hidden-more { margin: 0 0 0.6rem; font-size: 0.78rem; color: var(--text-muted); }
