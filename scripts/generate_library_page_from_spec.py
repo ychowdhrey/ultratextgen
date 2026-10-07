@@ -606,6 +606,19 @@ def render_related(related):
     return "\n".join(cards)
 
 
+
+# Save/Share modules every copy-hosting page loads (scripts/lib/share-save-tags.js
+# is the source of record; check:share-save-tags gates it). They must sit BEFORE
+# the host script: all are deferred and run in document order, and a host that
+# runs first calls into share-core before it is defined. This string is exactly
+# what inject-share-save-tags.js writes, so re-running the injector is a no-op.
+SHARE_SAVE_TAGS = (
+    '<script src="/js/share/share-core.js" defer></script>\n'
+    '<script src="/js/saved/saved-items.js" defer></script>\n'
+)
+EXPLORER_TAG = '<script src="/symbol-explorer.js"></script>'
+
+
 def render_buildgrids_script(spec):
     cid = spec.get("collection_container_id", "collectionsContainer")
     groups = []
@@ -621,7 +634,7 @@ def render_buildgrids_script(spec):
         )
     groups_js = ",\n".join(groups)
     return (
-        '<script src="/symbol-explorer.js"></script>\n'
+        f"{SHARE_SAVE_TAGS}{EXPLORER_TAG}\n"
         "<script>\n"
         'document.addEventListener("DOMContentLoaded", function () {\n'
         '  "use strict";\n'
@@ -855,7 +868,7 @@ def render_page(spec):
     if spec["copy_pattern"] == "collection":
         runtime_scripts = render_buildgrids_script(spec)
     else:
-        runtime_scripts = '<script src="/symbol-explorer.js"></script>'
+        runtime_scripts = f"{SHARE_SAVE_TAGS}{EXPLORER_TAG}"
 
     page = f"""<!DOCTYPE html>
 <html lang="{lang}"{dir_attr}>
