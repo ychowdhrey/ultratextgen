@@ -1108,3 +1108,17 @@ button.fit-badge.fit-no:focus-visible {
   .output-header { flex-wrap: wrap; row-gap: 10px; }
   .output-actions { flex-wrap: wrap; width: 100%; justify-content: flex-end; }
 }
+
+/* Reserve the output and control panel that zalgo-text.js fills after first
+   paint. Both containers are empty in the HTML, so filling them pushed the
+   hero figure and everything below down by 1,500-3,000px: CLS 0.21 at 1440px
+   and 0.79 at 390px. Each value is the SMALLEST rendered height in its width
+   band across all 13 zalgo pages (2026-10-06 sweep, 320-1440px), so a
+   reservation can only under-shoot -- a shorter locale never leaves a gap. */
+#zalgoOutputSection { min-height: 880px; }
+#zalgoControlPanel { min-height: 692px; }
+@media (max-width: 899px) { #zalgoControlPanel { min-height: 726px; } }
+@media (max-width: 699px) { #zalgoOutputSection { min-height: 941px; } #zalgoControlPanel { min-height: 790px; } }
+@media (max-width: 559px) { #zalgoOutputSection { min-height: 1382px; } #zalgoControlPanel { min-height: 975px; } }
+@media (max-width: 479px) { #zalgoControlPanel { min-height: 1058px; } }
+@media (max-width: 411px) { #zalgoOutputSection { min-height: 1421px; } #zalgoControlPanel { min-height: 1273px; } }
