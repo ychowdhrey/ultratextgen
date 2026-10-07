@@ -9569,6 +9569,29 @@ button.kana-cell:active { transform: translateY(0); }
 }
 .kana-print-wrap .kana-glyph { color: #1a1a2e; }
 .kana-print-wrap .kana-romaji { color: #64748b; }
+/* Print at paper size, not screen size. Screen tiles are square and each
+   section refused to split, so the chart printed its title alone on page 1
+   and ran to five pages (measured 2026-10-07, A4, EN and KO alike). Compact
+   tiles and splittable sections keep basic + voiced on one sheet. */
+.kana-print-wrap:not(.kana-practice-wrap) .kana-section { break-inside: auto; margin-bottom: 4mm; }
+.kana-print-wrap .kana-section-head { break-after: avoid; margin-bottom: 2mm; }
+.kana-print-wrap .kana-section-note { font-size: 8pt; }
+.kana-print-wrap .kana-grid { gap: 1.2mm; }
+.kana-print-wrap .kana-cols-5 { max-width: 125mm; }
+.kana-print-wrap .kana-cols-3 { max-width: 78mm; }
+.kana-print-wrap .kana-cell {
+  aspect-ratio: auto;
+  min-height: 0;
+  padding: 0.6mm 0;
+  border-radius: 2mm;
+  gap: 0;
+  break-inside: avoid;
+}
+.kana-print-wrap .kana-cell .kana-glyph { font-size: 14pt; }
+.kana-print-wrap .kana-cell .kana-reading { font-size: 8pt; }
+.kana-print-wrap .kana-cell .kana-romaji { font-size: 7pt; }
+/* Blank sheet: the hidden reading stays as a write-in gap. */
+.kana-print-wrap .kana-romaji.is-hidden { min-height: 6mm; }
 
 /* Locale reading line (window.UTG_KANA.readings, e.g. Hangul on /ko/).
    Three lines no longer fit a square tile on a phone, so the tile keeps a
@@ -9591,6 +9614,12 @@ button.kana-cell:active { transform: translateY(0); }
 }
 .kana-print-wrap .kana-reading { color: #1a1a2e; }
 .kana-legend { font-size: 0.85rem; color: var(--text-muted); margin: -12px 0 28px; }
+/* Phones: the decorative hero card pushed the chart below the first screen
+   on the reading-line charts, so it steps aside there; desktop keeps it. */
+@media (max-width: 640px) {
+  body:has(.kana-chart.kana-has-reading) .page-hero-figure { display: none; }
+  .kana-has-reading ~ .kana-legend { margin-top: -18px; }
+}
 .kana-print-wrap .kana-reading.is-approx::after { color: #1a1a2e; }
 
 /* Writing practice sheet (#kana-practice): model kana, then empty squares
