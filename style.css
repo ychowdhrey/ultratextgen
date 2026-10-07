@@ -7707,6 +7707,10 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
 
 /* ---- Print surfaces for the shared engine ---- */
 #pt-print-root { display: none; }
+/* RTL pages: sheet SVG coordinates are LTR, so text-anchor must read LTR.
+   The class is set by printablesEngine.js only when the page is RTL. */
+.pt-rtl-doc svg text,
+.pt-rtl-doc svg tspan { direction: ltr; }
 .bubble-print-single { text-align: center; }
 /* Single-character print: fill the printed page. These nodes only ever render
    inside the hidden print surface, so the sizes below are print sizes — the
