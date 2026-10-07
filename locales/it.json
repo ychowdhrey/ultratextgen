@@ -278,7 +278,7 @@
         "items": [
           {
             "question": "Cos'è il testo stilizzato e perché funziona ovunque?",
-            "answer": "Il testo stilizzato è testo normale in cui ogni lettera viene sostituita con un carattere Unicode che ha già un look diverso — grassetto, corsivo, gotico, bubble, calligrafico. Niente codici nascosti, niente formattazione magica: sono proprio le lettere a cambiare forma.\n    <br><br>\n    Per questo le scritte belle che generi qui restano belle anche dopo il copia-incolla, ovunque le metti: bio Instagram, nickname, caption TikTok, stato WhatsApp, descrizione YouTube, profili Discord, oggetto delle email.\n    <br><br>\n    <strong>Esempio</strong><br>\n    Scrivi \"ciao\" → 𝗰𝗶𝗮𝗼 (bold), 𝘤𝘪𝘢𝘰 (italic), 𝓬𝓲𝓪𝓸 (script), ⓒⓘⓐⓞ (bubble).\n    <br><br>\n    Niente app da scaricare, niente account, niente limiti."
+            "answer": "Il testo stilizzato è testo normale in cui ogni lettera viene sostituita con un carattere Unicode che ha già un look diverso: grassetto, corsivo, gotico, bubble, calligrafico. Niente codici nascosti, niente formattazione magica: sono proprio le lettere a cambiare forma.\n    <br><br>\n    Per questo le scritte belle che generi qui restano belle anche dopo il copia-incolla, ovunque le metti: bio Instagram, nickname, caption TikTok, stato WhatsApp, descrizione YouTube, profili Discord, oggetto delle email.\n    <br><br>\n    <strong>Esempio</strong><br>\n    Scrivi \"ciao\" → 𝗰𝗶𝗮𝗼 (bold), 𝘤𝘪𝘢𝘰 (italic), 𝓬𝓲𝓪𝓸 (script), ⓒⓘⓐⓞ (bubble).\n    <br><br>\n    Niente app da scaricare, niente account, niente limiti."
           },
           {
             "question": "Come si copiano e incollano le scritte belle?",
@@ -295,15 +295,15 @@
         "items": [
           {
             "question": "Che differenza c'è tra questo testo e il grassetto di Word, WhatsApp o Discord?",
-            "answer": "Il grassetto e il corsivo dentro le app (Word, Google Docs, *asterischi* di WhatsApp, **doppi asterischi** di Discord) sono istruzioni di formattazione. Funzionano solo se l'app le capisce. Le copi altrove e sparisce tutto.\n    <br><br>\n    Qui invece le lettere stesse sono diverse — sono caratteri Unicode che hanno già forma di bold, corsivo, gotico, bubble. Per le app sono \"testo normale\", solo con un disegno diverso.\n    <br><br>\n    <strong>Cosa cambia in pratica</strong><br>\n    Una scritta in grassetto copiata da qui resta in grassetto nella bio Instagram, nel nickname, nello stato WhatsApp, nell'oggetto della mail, ovunque. Non c'è nulla che si possa \"rompere\" nel copia-incolla."
+            "answer": "Il grassetto e il corsivo dentro le app (Word, Google Docs, *asterischi* di WhatsApp, **doppi asterischi** di Discord) sono istruzioni di formattazione. Funzionano solo se l'app le capisce. Le copi altrove e sparisce tutto.\n    <br><br>\n    Qui invece le lettere stesse sono diverse: sono caratteri Unicode che hanno già forma di bold, corsivo, gotico, bubble. Per le app sono \"testo normale\", solo con un disegno diverso.\n    <br><br>\n    <strong>Cosa cambia in pratica</strong><br>\n    Una scritta in grassetto copiata da qui resta in grassetto nella bio Instagram, nel nickname, nello stato WhatsApp, nell'oggetto della mail, ovunque. Non c'è nulla che si possa \"rompere\" nel copia-incolla."
           },
           {
             "question": "Cosa posso fare con questo strumento che con Word non posso?",
-            "answer": "In sintesi: portare grassetto, corsivo e stili decorativi dove non c'è una barra di formattazione.\n    <br><br>\n    — Bio Instagram, caption TikTok, descrizioni YouTube, profili LinkedIn → posti dove Word non c'entra niente.<br>\n    — Stili che Word non ha proprio: gothic, bubble, script, capovolto, a specchio, glitch (Zalgo), small caps.<br>\n    — Cornici, simboli aesthetic e separatori intorno alle scritte.<br>\n    — Nickname stilizzati su Discord, Roblox, Steam, Twitch, giochi mobile.<br>\n    — Barrato e sottolineato dove le app non li offrono nativamente."
+            "answer": "In sintesi: portare grassetto, corsivo e stili decorativi dove non c'è una barra di formattazione.\n    <br><br>\n    – Bio Instagram, caption TikTok, descrizioni YouTube, profili LinkedIn → posti dove Word non c'entra niente.<br>\n    – Stili che Word non ha proprio: gothic, bubble, script, capovolto, a specchio, glitch (Zalgo), small caps.<br>\n    – Cornici, simboli aesthetic e separatori intorno alle scritte.<br>\n    – Nickname stilizzati su Discord, Roblox, Steam, Twitch, giochi mobile.<br>\n    – Barrato e sottolineato dove le app non li offrono nativamente."
           },
           {
             "question": "Posso mettere il grassetto nell'oggetto delle email?",
-            "answer": "Sì, ed è uno dei trucchi più sottovalutati. L'oggetto delle email è testo normale: il bold di Gmail svanisce nel momento in cui arriva al destinatario. Il bold Unicode invece no.\n    <br><br>\n    <strong>Esempio</strong><br>\n    Oggetto normale: \"Promo lampo — 50% solo oggi\"<br>\n    Oggetto Unicode: \"𝗣𝗿𝗼𝗺𝗼 𝗹𝗮𝗺𝗽𝗼 — 𝟱𝟬% 𝘀𝗼𝗹𝗼 𝗼𝗴𝗴𝗶\"\n    <br><br>\n    Si nota di più nella casella affollata. Funziona su Gmail, Outlook, Apple Mail e in generale ovunque venga mostrato testo Unicode."
+            "answer": "Sì, ed è uno dei trucchi più sottovalutati. L'oggetto delle email è testo normale: il bold di Gmail svanisce nel momento in cui arriva al destinatario. Il bold Unicode invece no.\n    <br><br>\n    <strong>Esempio</strong><br>\n    Oggetto normale: \"Promo lampo, 50% solo oggi\"<br>\n    Oggetto Unicode: \"𝗣𝗿𝗼𝗺𝗼 𝗹𝗮𝗺𝗽𝗼, 𝟱𝟬% 𝘀𝗼𝗹𝗼 𝗼𝗴𝗴𝗶\"\n    <br><br>\n    Si nota di più nella casella affollata. Funziona su Gmail, Outlook, Apple Mail e in generale ovunque venga mostrato testo Unicode."
           }
         ]
       },
@@ -320,7 +320,7 @@
           },
           {
             "question": "Cos'è il testo Zalgo (quello con le lettere \"spaccate\")?",
-            "answer": "È quello stile horror / glitch in cui le lettere sembrano \"maledette\", con segni che sbordano sopra e sotto. Esempio: \"ciao\" → c̷i̷a̷o̷ oppure c̸̢͒i̶̗͐a̴͆ͅo̷̩͝.\n    <br><br>\n    Lo usano per:<br>\n    — Bio dark / edgy<br>\n    — Caption di meme horror o post Halloween<br>\n    — Nickname spaventosi nei giochi<br>\n    — Trollare gli amici nelle chat di gruppo (effetto \"la tua chat è rotta\")\n    <br><br>\n    Basta scrivere, scegliere lo stile Zalgo e copiare. Le sovrapposizioni le gestiamo noi."
+            "answer": "È quello stile horror / glitch in cui le lettere sembrano \"maledette\", con segni che sbordano sopra e sotto. Esempio: \"ciao\" → c̷i̷a̷o̷ oppure c̸̢͒i̶̗͐a̴͆ͅo̷̩͝.\n    <br><br>\n    Lo usano per:<br>\n    – Bio dark / edgy<br>\n    – Caption di meme horror o post Halloween<br>\n    – Nickname spaventosi nei giochi<br>\n    – Trollare gli amici nelle chat di gruppo (effetto \"la tua chat è rotta\")\n    <br><br>\n    Basta scrivere, scegliere lo stile Zalgo e copiare. Le sovrapposizioni le gestiamo noi."
           }
         ]
       },
@@ -333,7 +333,7 @@
           },
           {
             "question": "Posso usare le scritte stilizzate come nickname o nome utente?",
-            "answer": "Sì, ed è esattamente l'effetto \"nickname stiloso\" che si distingue da tutti gli altri. La maggior parte delle piattaforme accetta i caratteri Unicode nel nome visualizzato — Instagram, TikTok, Discord, Roblox, Steam, Twitch, persino diversi giochi mobile.\n    <br><br>\n    <strong>Esempi</strong><br>\n    \"LucaGamer\" → 𝓛𝓾𝓬𝓪𝓖𝓪𝓶𝓮𝓻 (script) o 𝕷𝖚𝖈𝖆𝖌𝖆𝖒𝖊𝖗 (gothic)<br>\n    \"sofia\" → ꜱᴏꜰɪᴀ (small caps) o ѕσғια (mix)\n    <br><br>\n    <strong>Piccola nota</strong><br>\n    L'@handle (lo username vero) spesso accetta solo lettere normali. Le lettere strane funzionano sicuro nel display name / nome visualizzato. Se una piattaforma rifiuta uno stile, ripiega su bold o italic — sono i più compatibili.\n    <br><br>\n    Per la mappa completa campo per campo, vedi nome utente o nome visualizzato."
+            "answer": "Sì, ed è esattamente l'effetto \"nickname stiloso\" che si distingue da tutti gli altri. La maggior parte delle piattaforme accetta i caratteri Unicode nel nome visualizzato: Instagram, TikTok, Discord, Roblox, Steam, Twitch, persino diversi giochi mobile.\n    <br><br>\n    <strong>Esempi</strong><br>\n    \"LucaGamer\" → 𝓛𝓾𝓬𝓪𝓖𝓪𝓶𝓮𝓻 (script) o 𝕷𝖚𝖈𝖆𝖌𝖆𝖒𝖊𝖗 (gothic)<br>\n    \"sofia\" → ꜱᴏꜰɪᴀ (small caps) o ѕσғια (mix)\n    <br><br>\n    <strong>Piccola nota</strong><br>\n    L'@handle (lo username vero) spesso accetta solo lettere normali. Le lettere strane funzionano sicuro nel display name / nome visualizzato. Se una piattaforma rifiuta uno stile, ripiega su bold o italic: sono i più compatibili.\n    <br><br>\n    Per la mappa completa campo per campo, vedi nome utente o nome visualizzato."
           },
           {
             "question": "Su quali app posso incollare il testo stilizzato?",
@@ -354,7 +354,7 @@
           },
           {
             "question": "Perché su alcuni telefoni vedo dei quadratini al posto delle lettere?",
-            "answer": "Succede quando il dispositivo di chi legge non ha il font installato per quei caratteri Unicode. Non è un errore del testo — è un limite del dispositivo dall'altra parte.\n    <br><br>\n    <strong>Cosa fare</strong><br>\n    Su iPhone, Android e browser aggiornati la maggior parte degli stili si vede bene. Se vedi quadratini in anteprima, cambia stile: bold, italic, bubble e small caps sono i più universali.\n    <br><br>\n    Per piattaforme specifiche (Discord, Instagram, TikTok) puoi usare le nostre pagine dedicate, dove gli stili sono già filtrati per compatibilità.\n    <br><br>\n    Per la soluzione rapida, vedi perché il mio nome appare come quadratini."
+            "answer": "Succede quando il dispositivo di chi legge non ha il font installato per quei caratteri Unicode. Non è un errore del testo: è un limite del dispositivo dall'altra parte.\n    <br><br>\n    <strong>Cosa fare</strong><br>\n    Su iPhone, Android e browser aggiornati la maggior parte degli stili si vede bene. Se vedi quadratini in anteprima, cambia stile: bold, italic, bubble e small caps sono i più universali.\n    <br><br>\n    Per piattaforme specifiche (Discord, Instagram, TikTok) puoi usare le nostre pagine dedicate, dove gli stili sono già filtrati per compatibilità.\n    <br><br>\n    Per la soluzione rapida, vedi <a href=\"/it/answers/perche-il-mio-nome-appare-come-quadratini/\">perché il mio nome appare come quadratini</a>."
           }
         ]
       },
@@ -367,7 +367,7 @@
           },
           {
             "question": "È sicuro incollare queste scritte ovunque?",
-            "answer": "Sì. È testo Unicode standard: niente script, niente link nascosti, niente formattazione invisibile. La stessa identica natura del testo che digiti normalmente — solo con un look diverso. Puoi incollarlo in app, browser, email e profili senza pensieri."
+            "answer": "Sì. È testo Unicode standard: niente script, niente link nascosti, niente formattazione invisibile. La stessa identica natura del testo che digiti normalmente, solo con un look diverso. Puoi incollarlo in app, browser, email e profili senza pensieri."
           }
         ]
       },
@@ -402,15 +402,15 @@
         "items": [
           {
             "question": "Cosa sono le scritte aesthetic e come si copiano e incollano?",
-            "answer": "Le scritte aesthetic sono lettere con un look curato e stilizzato — corsivo elegante, gotico, bubble, maiuscoletto, lettere distanziate — che si usano tanto nelle bio Instagram, su Pinterest e nelle copertine TikTok.<br><br><strong>Per copiarle e incollarle</strong><br>1. Scrivi la frase nel riquadro in alto.<br>2. Scegli lo stile che ti piace tra quelli che compaiono.<br>3. Tocca \"Copia\" e incolla dove vuoi.<br><br>Sono caratteri Unicode veri, quindi nel <strong>copia e incolla</strong> lo stile resta intatto su Instagram, WhatsApp, TikTok e ovunque ci sia un campo di testo."
+            "answer": "Le scritte aesthetic sono lettere con un look curato e stilizzato (corsivo elegante, gotico, bubble, maiuscoletto, lettere distanziate) che si usano tanto nelle bio Instagram, su Pinterest e nelle copertine TikTok.\n    <br><br>\n    <strong>Per copiarle e incollarle</strong><br>\n    1. Scrivi la frase nel riquadro in alto.<br>\n    2. Scegli lo stile che ti piace tra quelli che compaiono.<br>\n    3. Tocca \"Copia\" e incolla dove vuoi.\n    <br><br>\n    Sono caratteri Unicode veri, quindi nel <strong>copia e incolla</strong> lo stile resta intatto su Instagram, WhatsApp, TikTok e ovunque ci sia un campo di testo."
           },
           {
             "question": "Dove trovo le scritte stilizzate e le scritte aesthetic da copiare?",
-            "answer": "Scrivi la tua parola o frase nel generatore in alto e ottieni decine di scritte stilizzate da copiare con un tocco.<br><br>L'alfabeto completo A–Z e i numeri 0–9 sono nella sezione «Alfabeto in scritte aesthetic» più sotto. Per una pagina dedicata solo al copia e incolla del font, senza il resto del sito intorno, vai su <a href=\"/it/font-copia-e-incolla/\">font copia e incolla</a>."
+            "answer": "Scrivi la tua parola o frase nel generatore in alto e ottieni decine di scritte stilizzate da copiare con un tocco.\n    <br><br>\n    L'alfabeto completo A–Z e i numeri 0–9 sono nella sezione «Alfabeto in scritte aesthetic» più sotto. Per una pagina dedicata solo al copia e incolla del font, senza il resto del sito intorno, vai su <a href=\"/it/font-copia-e-incolla/\">font copia e incolla</a>."
           },
           {
             "question": "Dove trovo i simboli aesthetic da copiare e incollare?",
-            "answer": "Nella sezione «Simboli aesthetic copia e incolla» più sopra: stelle, cuori, lune, fiori, cornici e separatori, un tocco per copiarli.<br><br>Per la raccolta completa, con più varianti e categorie, vai sulla pagina <a href=\"/it/library/simboli/\">simboli da copiare e incollare</a>."
+            "answer": "Nella sezione «Simboli aesthetic copia e incolla» più sopra: stelle, cuori, lune, fiori, cornici e separatori, un tocco per copiarli.\n    <br><br>\n    Per la raccolta completa, con più varianti e categorie, vai sulla pagina <a href=\"/it/library/simboli/\">simboli da copiare e incollare</a>."
           }
         ]
       }
