@@ -69,6 +69,7 @@
     "test:zalgo-engine": "node usecase/zalgo-text/zalgo-text.test.js",
     "test:romanize": "node js/romanize/korean-romanize.test.js",
     "test:qr": "node js/printables/qr.test.js",
+    "test:kana-readings": "node js/kana/kanaReadingsKo.test.js",
     "test:stencil": "node js/printables/stencil.test.js",
     "test:centreline": "node js/printables/centreline.test.js",
     "test:word-search": "node js/printables/wordSearch.test.js",

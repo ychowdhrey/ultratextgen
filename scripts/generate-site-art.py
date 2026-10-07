@@ -3260,6 +3260,8 @@ PAGES.update({
       P(m_typo, sample="อักษร", weight="800", size=76, label="ตัวอักษรและคำ", ff="Noto Sans Thai", lab_ff="Noto Sans Thai"), K_USE),
 "hiragana-chart": ("Hiragana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
 "katakana-chart": ("Katakana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
+"ko-hiragana-pyo": ("히라가나 표", "한글 발음·로마자와 함께 보는 46자, 인쇄와 쓰기 연습", m_kana_grid, K_LIB),
+"ko-gatakana-pyo": ("가타카나 표", "한글 발음·로마자와 함께 보는 46자, 인쇄와 쓰기 연습", m_kana_grid, K_LIB),
 
 # ---- tr/library — piliapp-mining individual-symbol pages (2026-07-12) ----
 "tr-library-japon-alfabesi": ("Japon Alfabesi", "Hiragana, katakana ve kanji kopyala yapıştır", m_kana_grid, K_LIB),

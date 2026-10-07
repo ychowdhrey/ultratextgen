@@ -1748,6 +1748,32 @@
       "verdict": "gate-pass",
       "evidence": "USER DECISION, 2026-10-06, in the user's words: \"Go ahead with all 1, 2 and 3\" (approving a presented list of 24 locale pages, this one among the pilots). Scope: exactly one page, it/font-discord/ (EN parent discord/, a bare top-level page with no data/core_parent_set.json pattern, so classifyParent() reports pattern: null / tier \"unclassified\"; recorded as JSON null to match). Keyword instrument: Semrush it database, pulled 2026-10-05, the Italian Discord-font head term at 590/mo. Competitor footprint and EN GSC impressions from Italy were not pulled, so both stay null rather than guessed. This is a pilot authorization, not a pass on all it platform pages: any other it page under an unclassified parent needs its own entry. Re-check 2026-12-06 against the page's own GSC impressions; if it draws under 100 impressions/mo by then, record a gate-fail and fold it back into it/grassetto.",
       "recordedBy": "claude-session-01K7oQvxVnQbcgDz7MvVTaMb-user-authorized"
+    },
+    {
+      "pattern": "hiragana-chart/index.html",
+      "locale": "ko",
+      "checkedDate": "2026-10-07",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 12100,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "USER DECISION, 2026-10-07: the owner selected this page for implementation from a Semrush Korea (Google KR) export dated 2026-10-07 and asked for it to be built as an execution request, with the override recorded narrowly at page level. Scope: exactly one page, ko/hiragana-pyo/ (EN parent /hiragana-chart/); no other locale and no other unclassified top-level path is authorized by this entry, because the pattern is this one file. Keyword volume (owner-supplied export, Google KR estimates): 히라가나 표 12,100/mo KD 27; 히라가나 49,500/mo KD 42; 히라가나 쓰기 260/mo KD 9. The instrument field carries the chart-term figure only; the broad term is not added to it because the two intents overlap, and the writing term supports the on-page practice sheet rather than a separate page. Competitor footprint: Naver autocomplete's first suggestion for 히라가나 is 히라가나표, and the Naver web block for it shows dedicated chart tools (2026-10-03 pull recorded with the Korean expansion study); the existing ko/library/ilboneo-giho page serves decorative kana copying, a different job, and stays the owner of that one. EN GSC impressions from Korean-language queries were not pulled, so that instrument is null, not zero. Re-check: 2026-11-18, GSC and Naver Search Advisor page-level impressions for the new page; under 30 impressions in 6 weeks is reported as thin, a finding only.",
+      "recordedBy": "claude-session-01H2xhKwJTcpMiecSzKc5fyi-user-authorized"
+    },
+    {
+      "pattern": "katakana-chart/index.html",
+      "locale": "ko",
+      "checkedDate": "2026-10-07",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 9900,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "USER DECISION, 2026-10-07: the owner selected this page for implementation from a Semrush Korea (Google KR) export dated 2026-10-07 and asked for it to be built as an execution request, with the override recorded narrowly at page level. Scope: exactly one page, ko/gatakana-pyo/ (EN parent /katakana-chart/); no other locale and no other unclassified top-level path is authorized by this entry, because the pattern is this one file. Keyword volume (owner-supplied export, Google KR estimates): 가타카나 표 9,900/mo KD 17; 가타카나 40,500/mo KD 38; 가타카나 쓰기 50/mo KD 15. The instrument field carries the chart-term figure only; the broad term is not added to it because the two intents overlap, and the writing term supports the on-page practice sheet rather than a separate page. Competitor footprint: Naver autocomplete's first suggestion for 히라가나 is 히라가나표, and the Naver web block for it shows dedicated chart tools (2026-10-03 pull recorded with the Korean expansion study); the existing ko/library/ilboneo-giho page serves decorative kana copying, a different job, and stays the owner of that one. EN GSC impressions from Korean-language queries were not pulled, so that instrument is null, not zero. Re-check: 2026-11-18, GSC and Naver Search Advisor page-level impressions for the new page; under 30 impressions in 6 weeks is reported as thin, a finding only.",
+      "recordedBy": "claude-session-01H2xhKwJTcpMiecSzKc5fyi-user-authorized"
     }
   ]
 }
