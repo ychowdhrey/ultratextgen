@@ -388,6 +388,18 @@
       events: { label: "Acara", href: "/events/" },
       search: "Cari gaya font…",
       darkMode: "Tukar mod gelap"
+    },
+    uk: {
+      home: "/uk/",
+      guide: { label: "Посібники", href: "/guide/" },
+      answers: { label: "Відповіді", href: "/answers/" },
+      category: { label: "Категорії", href: "/category/" },
+      usecase: { label: "Ідеї", href: "/usecase/" },
+      library: { label: "Бібліотека", href: "/library/" },
+      printables: { label: "Для друку", href: "/printables/" },
+      events: { label: "Події", href: "/events/" },
+      search: "Шукати шрифти, символи…",
+      darkMode: "Темна тема"
     }
   };
 

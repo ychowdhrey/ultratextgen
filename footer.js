@@ -1005,6 +1005,39 @@
       colTitles: { explore: "Terokai", tools: "Alat Popular", categories: "Kategori Popular", company: "Syarikat" },
       copyright: "© 2026 UltraTextGen. Tulisan bergaya yang berfungsi di mana-mana."
     },
+    uk: {
+      home: { label: "Головна", href: "/uk/" },
+      explore: [
+        { label: "Посібники", href: "/guide/" },
+        { label: "Відповіді", href: "/answers/" },
+        { label: "Ідеї", href: "/usecase/" },
+        { label: "Категорії", href: "/category/" },
+        { label: "Бібліотека", href: "/library/" },
+        { label: "Для друку", href: "/printables/" },
+        { label: "Події", href: "/events/" }
+      ],
+      tools: [
+        { label: "Генератор ніків", href: "/uk/henerator-nikiv/" },
+        { label: "Невидимий текст", href: "/uk/nevydymyi-tekst/" },
+        { label: "Лічильник символів", href: "/character-counter/" },
+        { label: "Шрифти для тату", href: "/usecase/tattoo-fonts/" }
+      ],
+      categories: [
+        { label: "Генератор шрифтів", href: "/uk/" },
+        { label: "Жирний шрифт", href: "/category/bold-fonts/" },
+        { label: "Курсив", href: "/category/italic-fonts/" },
+        { label: "Готичний шрифт", href: "/category/gothic-fonts/" },
+        { label: "Закреслений текст", href: "/category/strikethrough-text/" }
+      ],
+      company: [
+        { label: "Про нас", href: "/about/" },
+        { label: "Конфіденційність", href: "/privacy/" },
+        { label: "Умови використання", href: "/terms/" },
+        { label: "Контакти", href: "/contact/" }
+      ],
+      colTitles: { explore: "Розділи", tools: "Популярні інструменти", categories: "Популярні стилі", company: "Компанія" },
+      copyright: "© 2026 UltraTextGen. Красивий текст, який працює всюди."
+    },
     pl: {
       home: { label: "Strona główna", href: "/pl/" },
       explore: [
