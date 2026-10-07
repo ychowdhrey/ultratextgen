@@ -88,14 +88,22 @@ def main(argv=None):
     if not args.no_locales:
         for lang in locales():
             # The locale's own translation of each EN collection, with its label.
+            # Found by its hreflang="en" parent, wherever the locale page lives:
+            # es/simbolos-de-corazon/ and vi/ki-tu-trai-tim/ translate
+            # library/heart-symbols/ from the locale root, outside library/.
+            # A library/ page wins over one elsewhere when both claim a parent.
             lib = {}
-            for page in sorted((REPO / lang / "library").glob("*/index.html")):
+            pages = sorted((REPO / lang).glob("**/index.html"),
+                           key=lambda p: (p.parts[len(REPO.parts) + 1] != "library", str(p)))
+            for page in pages:
+                if page.parts[len(REPO.parts) + 1] == "symbol":
+                    continue
                 html = read(page)
                 parent = en_parent(html, "library")
                 h1 = H1_RE.search(html)
-                if parent and h1:
-                    lib[parent] = (f"/{lang}/library/{page.parent.name}/",
-                                   scl.locale_label(h1.group(1)))
+                if parent and h1 and parent not in lib:
+                    href = "/" + page.parent.relative_to(REPO).as_posix() + "/"
+                    lib[parent] = (href, scl.locale_label(h1.group(1)))
             for page in sorted((REPO / lang / "symbol").glob("*/index.html")):
                 html = read(page)
                 parent = en_parent(html, "symbol")

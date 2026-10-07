@@ -83,7 +83,9 @@ def locale_label(h1_html):
     # sembolü") keeps only its name: the tagline is not a link label, and the
     # dash is banned on most locales' pages.
     text = re.split(r"\s[—–]\s|\s-\s", text, maxsplit=1)[0].strip()
-    return TRAILING_ASIDE_RE.sub("", text).strip() or text
+    text = TRAILING_ASIDE_RE.sub("", text).strip() or text
+    # A heading that already ends in an arrow ("Mũi Tên →") would print two.
+    return re.sub(r"\s*[→←➜➔]+$", "", text).strip() or text
 
 
 def render_locale(lang, href, label):
