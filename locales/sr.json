@@ -157,6 +157,11 @@
       "renderFailed": "Slika nije napravljena. Probaj ponovo.",
       "trayLabel": "Izbor za sliku",
       "setUnavailable": "Ovaj set još ne može da se doda u sliku."
+    },
+    "symbolLook": {
+      "plain": "Kopiraj običnu verziju",
+      "emoji": "Kopiraj emodži verziju",
+      "note": "Neke aplikacije ipak prikazuju simbol u boji."
     }
   },
   "useCases": {

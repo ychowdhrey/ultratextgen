@@ -233,6 +233,11 @@
       "renderFailed": "Nie udało się stworzyć obrazu. Spróbuj ponownie.",
       "trayLabel": "Wybór do obrazu",
       "setUnavailable": "Tego zestawu nie można jeszcze dodać do obrazu."
+    },
+    "symbolLook": {
+      "plain": "Kopiuj zwykłą wersję",
+      "emoji": "Kopiuj wersję emoji",
+      "note": "Niektóre aplikacje i tak pokazują symbol w kolorze."
     }
   },
   "useCases": {

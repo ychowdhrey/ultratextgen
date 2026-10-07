@@ -157,6 +157,11 @@
       "renderFailed": "Kunde inte skapa bilden. Försök igen.",
       "trayLabel": "Bildurval",
       "setUnavailable": "Den här samlingen kan inte läggas i en bild än."
+    },
+    "symbolLook": {
+      "plain": "Kopiera vanlig version",
+      "emoji": "Kopiera emoji-version",
+      "note": "Vissa appar visar ändå symbolen i färg."
     }
   },
   "useCases": {

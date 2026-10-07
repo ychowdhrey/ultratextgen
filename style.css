@@ -3907,6 +3907,42 @@ h3 + .section-subline {
   transform: translateX(-50%) translateY(0);
 }
 
+/* A toast offering the other look of a two-look symbol (symbol-explorer.js
+   copyLook). It takes the pointer only while it carries the button, and may
+   wrap rather than run off a phone screen in a longer language. */
+.symbol-toast.has-action {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 6px 6px 18px;
+  white-space: normal;
+  /* left: 50% leaves a fixed box only half the viewport to shrink into, so
+     the width is set from the content and capped at the screen instead. */
+  width: max-content;
+  max-width: calc(100vw - 24px);
+}
+.symbol-toast-text { flex: none; white-space: nowrap; }
+.symbol-toast-action {
+  flex: 0 1 auto;
+  min-width: 0;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  border: 0;
+  border-radius: 50px;
+  padding: 6px 12px;
+  font: inherit;
+  cursor: pointer;
+}
+.symbol-toast-glyph.is-plain {
+  font-family: "Segoe UI Symbol", "Noto Sans Symbols 2", "Noto Sans Symbols", "DejaVu Sans", sans-serif;
+  font-variant-emoji: text;
+}
+.symbol-toast-glyph.is-emoji {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  font-variant-emoji: emoji;
+}
+
 /* Responsive: tablet */
 @media (max-width: 768px) {
   .symbol-grid {
