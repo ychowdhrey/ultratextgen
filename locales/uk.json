@@ -1,0 +1,138 @@
+{
+  "_readme": "UI-only runtime translations for a prerendered locale, same shape as ms.json / fi.json / ko.json. The /uk/ pages ship fully translated HTML and carry no data-i18n attributes, so this file exists solely to populate window.UTG_I18N for the controls script.js injects at runtime (Copy/Save/Share, scope, safe mode, safety badges, saved styles, text stats). It deliberately omits ui.placeholder and ui.advertisement: those are already translated in the page HTML, and defining them here would overwrite that copy. It also omits faq, which is the HOMEPAGE's FAQ and must never be applied to a subpage (see i18n.js's updateFAQSchema guard). Written in Ukrainian for the 2026-10-07 launch, not converted from ru.json: Ukrainian and Russian diverge in exactly this register (Копіювати not Копировать, Зберегти not Сохранить, Поділитися not Поделиться). Style names match the vocabulary on the /uk/ pages (жирний, курсив, рукописний, готичний, бульбашковий, закреслений, підкреслений). NOT yet reviewed by a native speaker; a native pass is worth doing before treating this as final.",
+  "ui": {
+    "copyButtons": {
+      "copy": "Копіювати",
+      "copied": "✓ Скопійовано",
+      "failed": "✗ Помилка",
+      "copyTitle": "Скопіювати в буфер обміну",
+      "save": "Зберегти",
+      "saved": "Збережено",
+      "saveTitle": "Зберегти цей стиль",
+      "unsaveTitle": "Прибрати зі збережених стилів",
+      "empty": "Введіть щось у поле вище...",
+      "noStyles": "Стилів не знайдено. Спробуйте інший фільтр або слово."
+    },
+    "categoryTabs": {
+      "popular": "Популярні",
+      "bold-fonts": "Жирний",
+      "italic-fonts": "Курсив",
+      "bubble-fonts": "Бульбашковий",
+      "cursive-fonts": "Рукописний",
+      "gothic-fonts": "Готичний",
+      "strikethrough-text": "Закреслений",
+      "underline-text": "Підкреслений",
+      "small-text": "Малий текст",
+      "cute-fonts": "Милі шрифти",
+      "aesthetic-fonts": "Естетичні",
+      "upside-down-text": "Перевернутий",
+      "text-decorator": "Прикраси для тексту",
+      "classified": "Зафарбований текст",
+      "fullwidth-fonts": "Широкий",
+      "faux-fonts": "Схожі на інші алфавіти",
+      "ancient-fonts": "Давні письма й руни",
+      "emoji-letter-fonts": "Літери-емодзі",
+      "novelty-fonts": "Різне"
+    },
+    "scopeControl": {
+      "label": "Застосувати стиль до",
+      "ariaLabel": "Виберіть, яку частину тексту оформити",
+      "whole": "Увесь текст",
+      "wholeTitle": "Оформити кожен рядок вашого тексту.",
+      "firstLine": "Лише перший рядок",
+      "firstLineTag": "для дописів",
+      "firstLineTitle": "Оформити лише перший рядок (заголовок або першу фразу), а решту залишити звичайним текстом, який легко читати. Зручно для дописів у соцмережах."
+    },
+    "shareResult": {
+      "label": "Поділитися",
+      "title": "Поділитися результатом. Посилання відкриється з вашим текстом у цьому стилі",
+      "ariaLabel": "Поділитися результатом {style}",
+      "linkCopied": "Посилання скопійовано",
+      "afterCopy": "Поділитися цим стилем",
+      "sharedTag": "Стиль, яким поділилися",
+      "imageTitle": "Поділитися як зображенням",
+      "imageAriaLabel": "Поділитися результатом {style} як зображенням",
+      "imageSaved": "Зображення готове"
+    },
+    "safeMode": {
+      "label": "Безпечне вставлення",
+      "ariaLabel": "Перевірити, які стилі відображаються на чужих пристроях",
+      "toggleLabel": "Безпечний режим",
+      "hint": "Позначає стилі, які на старих телефонах інших людей можуть показуватися квадратиками (▯)."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ У деяких людей може показуватися квадратиками",
+      "boxesWarningTitle": "Цей стиль використовує рідкісні символи Unicode, яких немає в шрифтах деяких телефонів і старих пристроїв. У людини, якій ви надішлете текст, він може показатися квадратиками (▯). Якщо ваша аудиторія може користуватися старими пристроями, виберіть звичайний стиль або стиль із широкою підтримкою.",
+      "emojiWarning": "⚠ Містить емодзі, на старих пристроях може виглядати інакше",
+      "emojiWarningTitle": "Цей стиль містить емодзі. Сучасні пристрої їх показують, але на дуже старих телефонах вони можуть виглядати інакше або перетворитися на квадратики.",
+      "modernDevices": "Відображається на сучасних пристроях",
+      "modernDevicesTitle": "Ці стилізовані літери Unicode відображаються на всіх сучасних телефонах і комп'ютерах. На дуже старих Android (приблизно до 2016 року) або з мінімальними системними шрифтами окремі символи все ще можуть стати квадратиками (▯). Якщо ваша аудиторія користується старими пристроями, спершу перевірте.",
+      "rendersEverywhere": "✓ Відображається всюди",
+      "rendersEverywhereTitle": "Цей стиль є звичайним текстом. Він відображається всюди й ніде не перетвориться на квадратики.",
+      "deviceWarning": "⚠ Може не відображатися на вашому пристрої",
+      "deviceWarningTitle": "Шрифти на вашому пристрої не можуть показати цей стиль, тому він може відображатися квадратиками (□). На інших пристроях він усе одно може виглядати добре.",
+      "safeAnywhere": "✓ Безпечно всюди",
+      "safeAnywhereTitle": "Відображається на всіх основних платформах. Зверніть увагу: програми зчитування з екрана можуть читати стилізовані літери по одній, тому основний текст краще залишати звичайним.",
+      "worksBestOn": "⚠ Найкраще працює в {platforms}",
+      "worksBestOnTitle": "Найкраще працює в: {platforms}. Інші платформи можуть прибрати або зіпсувати його, тож спершу вставте для перевірки."
+    },
+    "savedStyles": {
+      "ariaLabel": "Ваші збережені стилі",
+      "heading": "Ваші збережені стилі",
+      "clearAll": "Очистити все",
+      "hint": "Зберігаються на цьому пристрої. Вони чекатимуть тут, коли ви повернетеся."
+    },
+    "textStats": {
+      "wordSingular": "1 слово",
+      "wordPlural": "Слів: {n}",
+      "charSingular": "1 символ",
+      "charPlural": "Символів: {n}"
+    },
+    "decorationsNone": "Без прикрас",
+    "categoryTabsToggle": {
+      "more": "Більше",
+      "less": "Менше"
+    },
+    "demoText": "Ласкаво просимо до UltraTextGen.\nВведіть будь-що. Зробіть це ultra.",
+    "formatControl": {
+      "label": "Додати форматування",
+      "groupAriaLabel": "Додати підкреслення або закреслення до кожного стилю"
+    },
+    "platformChips": {
+      "all": "Працює всюди"
+    },
+    "categoryLoad": {
+      "failed": "Не вдалося завантажити категорії. Показано всі шрифти."
+    },
+    "stylePreview": {
+      "title": "Попередній перегляд",
+      "titleFor": "Попередній перегляд: {style}",
+      "dialogAriaLabel": "Перегляд на платформі",
+      "closeAriaLabel": "Закрити перегляд"
+    },
+    "imageSelection": {
+      "selectImage": "Вибрати й поділитися зображенням",
+      "viewSelection": "Переглянути вибране ({n})",
+      "hint": "Виберіть емодзі або символи з будь-якого розділу, щоб створити своє зображення.",
+      "count": "Вибрано: {n}",
+      "empty": "Ще нічого не вибрано",
+      "shareImage": "Поділитися зображенням",
+      "downloadImage": "Завантажити зображення",
+      "cancel": "Скасувати",
+      "preview": "Попередній перегляд зображення",
+      "close": "Закрити",
+      "remove": "Прибрати {item}",
+      "addAll": "Додати всі ({n})",
+      "removeAll": "Прибрати всі ({n})",
+      "limit": "Можна додати не більше {max}.",
+      "tooBig": "Забагато для одного зображення. Приберіть частину.",
+      "making": "Створюємо зображення…",
+      "shared": "Зображенням поділилися",
+      "downloaded": "Зображення завантажено",
+      "shareFailed": "Не вдалося поділитися. Спробуйте завантажити.",
+      "renderFailed": "Не вдалося створити зображення. Спробуйте ще раз.",
+      "trayLabel": "Вибрані для зображення",
+      "setUnavailable": "Цей набір поки не можна додати до зображення."
+    }
+  }
+}

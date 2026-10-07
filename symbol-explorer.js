@@ -511,6 +511,21 @@
       selectImage: "Pilih dan kongsi imej",
       viewSelection: "Lihat pilihan ({n})",
       formats: { inline: "Satu baris", vertical: "Menegak", comma: "Koma", space: "Ruang", bullet: "Senarai" }
+    },
+    uk: {
+      copied: "Скопійовано: ",
+      copyFormat: "Формат копіювання",
+      copyCollection: " Копіювати добірку",
+      copiedBtn: " Скопійовано!",
+      save: "Зберегти",
+      saved: "Збережено",
+      share: "Поділитися",
+      shareImage: "Поділитися як зображенням",
+      clearAll: "Очистити все",
+      copyLabel: "Копіювати",
+      selectImage: "Вибрати й поділитися зображенням",
+      viewSelection: "Переглянути вибране ({n})",
+      formats: { inline: "В один рядок", vertical: "Стовпчиком", comma: "Через кому", space: "Через пробіл", bullet: "Списком" }
     }
   };
   /* @collection-grid-strings:end */

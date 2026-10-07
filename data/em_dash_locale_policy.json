@@ -254,6 +254,14 @@
    "basis": "한글 맞춤법 부록 문장 부호; native review before any rule",
    "adopted": "2026-09-02",
    "nextReview": "2026-09-26"
+  },
+  "uk": {
+   "policy": "review",
+   "nativeMark": " — (тире), spaced, is standard Ukrainian punctuation (omitted copula, ranges, asides)",
+   "replacement": null,
+   "basis": "new locale 2026-10-07 with no site corpus yet; Ukrainian orthography treats the spaced тире as standard, but no native reader has reviewed this site's uk copy, so a new dash is a warning rather than declared native",
+   "adopted": "2026-10-07",
+   "nextReview": "2026-11-07"
   }
  }
 }

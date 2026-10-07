@@ -1748,6 +1748,45 @@
       "verdict": "gate-pass",
       "evidence": "USER DECISION, 2026-10-06, in the user's words: \"Go ahead with all 1, 2 and 3\" (approving a presented list of 24 locale pages, this one among the pilots). Scope: exactly one page, it/font-discord/ (EN parent discord/, a bare top-level page with no data/core_parent_set.json pattern, so classifyParent() reports pattern: null / tier \"unclassified\"; recorded as JSON null to match). Keyword instrument: Semrush it database, pulled 2026-10-05, the Italian Discord-font head term at 590/mo. Competitor footprint and EN GSC impressions from Italy were not pulled, so both stay null rather than guessed. This is a pilot authorization, not a pass on all it platform pages: any other it page under an unclassified parent needs its own entry. Re-check 2026-12-06 against the page's own GSC impressions; if it draws under 100 impressions/mo by then, record a gate-fail and fold it back into it/grassetto.",
       "recordedBy": "claude-session-01K7oQvxVnQbcgDz7MvVTaMb-user-authorized"
+    },
+    {
+      "pattern": null,
+      "locale": "uk",
+      "checkedDate": "2026-10-07",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 12100,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "USER DECISION, 2026-10-07: the user asked for Ukrainian to be evaluated as a new locale and for a focused first release to be implemented if the evidence supports it, explicitly not a full-site translation. Locale uk is added to data/locale_qualification_tiers.json at Tier 3 (hold-stub) in this same change, so the registry default is skip-stub-locale and this entry is the recorded per-page override. Scope: exactly one page, uk/index.html (EN parent index.html, a bare top-level page with no data/core_parent_set.json pattern, so classifyParent() reports pattern: null; recorded as JSON null to match). Keyword instrument: UA-market bulk keyword export supplied by the user 2026-10-07: шрифт онлайн 12,100/mo, красивий шрифт 5,400, генератор шрифтів 480 (close variants of one job, not summed). Competitor footprint: UA-database organic results pulled 2026-10-07 show copy-paste generators with dedicated Ukrainian versions ranking for генератор шрифтів (fontiner.com/uk/ #1, charactercalculator.com/uk/font-changer/ #2, uk.piliapp.com/cool-text/ #3) and красивий шрифт (fontiner.com/uk/ #3, uk.piliapp.com #4, beautifulfonts.net/ua/ #6), so one page owns the cluster. EN GSC impressions from Ukraine were not pulled, so that stays null. Re-check 2026-12-07 against the page's own GSC impressions.",
+      "recordedBy": "claude-session-012aUoivUd44UaUQ6AW8weFH-user-authorized"
+    },
+    {
+      "pattern": "library/*",
+      "locale": "uk",
+      "checkedDate": "2026-10-07",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 590,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "mirror",
+      "evidence": "USER DECISION, 2026-10-07: the user asked for Ukrainian to be evaluated as a new locale and for a focused first release to be implemented if the evidence supports it, explicitly not a full-site translation. Locale uk is added to data/locale_qualification_tiers.json at Tier 3 (hold-stub) in this same change, so the registry default is skip-stub-locale and this entry is the recorded per-page override. Scope: exactly one page, library/invisible-character -> uk/nevydymyi-tekst/ (locale root slug, matching ru/nevidimyy-tekst/). Keyword instrument: same 2026-10-07 UA export: невидимий пробіл 590/mo (KD 6), невидимий текст 170, невидимий символ 20; not summed. Competitor footprint: UA-database organic results 2026-10-07 for невидимий пробіл: blanktexts.com/uk/ #1, charactercalculator.com/uk/invisible-character/ #3, smallseotools.com/uk/invisible-character/ #4. Autocomplete (Google hl=uk gl=ua, fetched 2026-10-07) adds для фф, інстаграм, для тг, для стима, для пабга. This is not a pass for other library/* parents in uk. Re-check 2026-12-07 against GSC impressions.",
+      "recordedBy": "claude-session-012aUoivUd44UaUQ6AW8weFH-user-authorized"
+    },
+    {
+      "pattern": "usecase/nickname-generator/*",
+      "locale": "uk",
+      "checkedDate": "2026-10-07",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 480,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "mirror",
+      "evidence": "USER DECISION, 2026-10-07: the user asked for Ukrainian to be evaluated as a new locale and for a focused first release to be implemented if the evidence supports it, explicitly not a full-site translation. Locale uk is added to data/locale_qualification_tiers.json at Tier 3 (hold-stub) in this same change, so the registry default is skip-stub-locale and this entry is the recorded per-page override. Scope: exactly one page, usecase/nickname-generator -> uk/henerator-nikiv/. Keyword instrument: same 2026-10-07 UA export: генератор нікнеймів 480/mo, генератор ніків 480, ніки для ігор 260, круті ніки 140, нік для гри 90 (overlapping variants of one job, not summed). Competitor footprint: UA-database organic results 2026-10-07 for генератор нікнеймів include plarium.com/uk/resource/generator/nickname-generator/ #3, xbitlabs.com/uk/gamertag-generator/ #2, cudekai.com/uk/ #6. Autocomplete names Standoff 2, PUBG, Free Fire, Brawl Stars, Roblox, CS 2 and Discord. Re-check 2026-12-07 against GSC impressions.",
+      "recordedBy": "claude-session-012aUoivUd44UaUQ6AW8weFH-user-authorized"
     }
   ]
 }
