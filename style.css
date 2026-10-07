@@ -9569,6 +9569,97 @@ button.kana-cell:active { transform: translateY(0); }
 }
 .kana-print-wrap .kana-glyph { color: #1a1a2e; }
 .kana-print-wrap .kana-romaji { color: #64748b; }
+/* Print at paper size, not screen size. Screen tiles are square and each
+   section refused to split, so the chart printed its title alone on page 1
+   and ran to five pages (measured 2026-10-07, A4, EN and KO alike). Compact
+   tiles and splittable sections keep basic + voiced on one sheet. */
+.kana-print-wrap:not(.kana-practice-wrap) .kana-section { break-inside: auto; margin-bottom: 4mm; }
+.kana-print-wrap .kana-section-head { break-after: avoid; margin-bottom: 2mm; }
+.kana-print-wrap .kana-section-note { font-size: 8pt; }
+.kana-print-wrap .kana-grid { gap: 1.2mm; }
+.kana-print-wrap .kana-cols-5 { max-width: 125mm; }
+.kana-print-wrap .kana-cols-3 { max-width: 78mm; }
+.kana-print-wrap .kana-cell {
+  aspect-ratio: auto;
+  min-height: 0;
+  padding: 0.6mm 0;
+  border-radius: 2mm;
+  gap: 0;
+  break-inside: avoid;
+}
+.kana-print-wrap .kana-cell .kana-glyph { font-size: 14pt; }
+.kana-print-wrap .kana-cell .kana-reading { font-size: 8pt; }
+.kana-print-wrap .kana-cell .kana-romaji { font-size: 7pt; }
+/* Blank sheet: the hidden reading stays as a write-in gap. */
+.kana-print-wrap .kana-romaji.is-hidden { min-height: 6mm; }
+
+/* Locale reading line (window.UTG_KANA.readings, e.g. Hangul on /ko/).
+   Three lines no longer fit a square tile on a phone, so the tile keeps a
+   floor height and grows instead of clipping. */
+.kana-reading {
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+.kana-reading.is-approx::after { content: "*"; color: var(--accent-purple); }
+.kana-reading.is-hidden { display: none; }
+.kana-has-reading .kana-cell { aspect-ratio: auto; min-height: 84px; }
+.kana-has-reading .kana-romaji.is-hidden { display: none; }
+@media (max-width: 640px) {
+  .kana-has-reading .kana-cell { min-height: 72px; padding: 6px 2px; }
+  .kana-has-reading .kana-glyph { font-size: 1.45rem; }
+  .kana-has-reading .kana-reading { font-size: 0.8rem; }
+  .kana-has-reading .kana-romaji { font-size: 0.68rem; }
+}
+.kana-print-wrap .kana-reading { color: #1a1a2e; }
+.kana-legend { font-size: 0.85rem; color: var(--text-muted); margin: -12px 0 28px; }
+/* Phones: the decorative hero card pushed the chart below the first screen
+   on the reading-line charts, so it steps aside there; desktop keeps it. */
+@media (max-width: 640px) {
+  body:has(.kana-chart.kana-has-reading) .page-hero-figure { display: none; }
+  .kana-has-reading ~ .kana-legend { margin-top: -18px; }
+}
+.kana-print-wrap .kana-reading.is-approx::after { color: #1a1a2e; }
+
+/* Writing practice sheet (#kana-practice): model kana, then empty squares
+   with a dashed cross guide. Guides are borders, not backgrounds, so they
+   print with "background graphics" off. */
+.kana-practice-name { font-size: 0.9rem; margin: -0.6rem 0 0.6rem; }
+.kana-practice-note { font-size: 0.8rem; color: #475569; margin: 0 0 0.8rem; }
+.kana-practice-section { margin-bottom: 0.8rem; }
+.kana-practice-section .kana-section-title { margin: 0 0 0.4rem; }
+.kana-practice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 8mm;
+  row-gap: 2.5mm;
+}
+.kana-practice-row {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  break-inside: avoid;
+}
+.kana-practice-model,
+.kana-practice-box {
+  aspect-ratio: 1 / 1;
+  border: 1px solid #94a3b8;
+  margin-left: -1px;
+  position: relative;
+}
+.kana-practice-model {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+.kana-practice-model .kana-glyph { font-size: 8mm; line-height: 1; color: #1a1a2e; }
+.kana-practice-cap { font-size: 2.3mm; color: #475569; margin-top: 0.6mm; white-space: nowrap; }
+.kana-practice-box::before,
+.kana-practice-box::after { content: ""; position: absolute; }
+.kana-practice-box::before { left: 50%; top: 0; bottom: 0; border-left: 1px dashed #cbd5e1; }
+.kana-practice-box::after { top: 50%; left: 0; right: 0; border-top: 1px dashed #cbd5e1; }
 
 /* Dark mode */
 body.dark-mode .kana-btn-primary { color: #fff; }
