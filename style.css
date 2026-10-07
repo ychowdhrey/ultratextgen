@@ -13529,3 +13529,21 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
 .gr-outcome-note { flex-basis: 100%; font-size: 0.78rem; color: var(--text-secondary); }
 .gr-outcome-error { margin: 0; font-size: 0.85rem; color: var(--ts-fail); }
 .nr-chip-code { font-family: var(--font-mono, monospace); font-size: 0.75rem; }
+
+/* Blank generator on /library/invisible-character/ (js/invisible/blankGenerator.js).
+   Chips and labels reuse .format-control / .format-chip; only the count box,
+   the per-line toggle and the live note need their own rules. */
+.blank-gen { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; margin-top: 12px; }
+.blank-gen-count {
+  width: 6.5rem;
+  padding: 8px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+.blank-gen-count:focus { outline: 2px solid var(--accent-purple); outline-offset: 1px; }
+.blank-gen-lines { display: inline-flex; align-items: center; gap: 6px; font-size: 0.875rem; color: var(--text-secondary); cursor: pointer; }
+.blank-gen-copy { border: none; cursor: pointer; }
+.blank-gen-note { margin: 6px 0 0; font-size: 0.85rem; color: var(--text-muted); }
