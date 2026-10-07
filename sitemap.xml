@@ -6502,7 +6502,7 @@
 
   <url>
     <loc>https://ultratextgen.com/es/imprimibles/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -7086,7 +7086,7 @@
 
   <url>
     <loc>https://ultratextgen.com/es/imprimibles/crucigrama/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -7231,6 +7231,16 @@
     </image:image>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/es-imprimibles-nombre-para-trazar.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/es/imprimibles/palabras-desordenadas/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/es-imprimibles-palabras-desordenadas.png</image:loc>
     </image:image>
   </url>
 
