@@ -62,6 +62,16 @@
       fileName: "name-labels",
       testFile: "label-alignment-test"
     },
+    pt: {
+      labels: "etiquetas", label: "etiqueta", page: "página", pages: "páginas",
+      howMany: "Quantas etiquetas", perNameCount: "Etiquetas por nome", perLineCount: "Etiquetas por linha", fromList: "Preenchido pela lista", tooLong: "Algum texto ficou muito pequeno neste tamanho. Tente uma linha mais curta ou uma etiqueta maior.",
+      empty: "Digite um nome para ver as etiquetas.",
+      testTitle: "Teste de posição: imprima em papel comum, encoste na folha de etiquetas e olhe contra a luz.",
+      cutHint: "Recorte nas linhas cinza",
+      stockNote: "Imprima em 100% (tamanho real). Ajustar à página tira todas as etiquetas do lugar.",
+      fileName: "etiquetas-escolares",
+      testFile: "teste-posicao-etiquetas"
+    },
     id: {
       labels: "label", label: "label", page: "halaman", pages: "halaman",
       howMany: "Jumlah label", perNameCount: "Label per nama", perLineCount: "Label per baris", fromList: "Diisi dari daftar", tooLong: "Ada tulisan yang sangat kecil di ukuran label ini. Coba baris yang lebih pendek atau label yang lebih besar.",
