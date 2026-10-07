@@ -6584,6 +6584,51 @@
         solid: false, guides: RULED_ROWS, overlay: strokeOverlayOn()
       }));
     }
+    renderSheetThumb();
+  }
+
+  /* The preview above is one bare outline, and Download PDF prints a whole
+     practice sheet: the name solid, rows to trace, blank rows and a Name and
+     Date line. Nothing on screen said so (rendering audit 2026-10-03). The
+     owner chose a picture over a sentence (2026-10-07): a small copy of the
+     sheet, built by nameSheetNode() -- the function the PDF itself uses -- so
+     it follows the typed name, the row count and the footer toggle and cannot
+     describe a sheet that is not the one printed. Ruled pages already preview
+     a real sheet row and glyph pages print text, so both are left alone. */
+  const SHEET_THUMB_I18N = {
+    en: "What \u201c{btn}\u201d prints",
+    es: "Lo que imprime \u00ab{btn}\u00bb",
+    fr: "Ce qu\u2019imprime \u00ab\u00a0{btn}\u00a0\u00bb",
+    pl: "Co drukuje \u201e{btn}\u201d",
+    it: "Cosa stampa \u00ab{btn}\u00bb",
+    de: "Das druckt \u201e{btn}\u201c",
+    pt: "O que \u201c{btn}\u201d imprime",
+    id: "Hasil cetak \u201c{btn}\u201d",
+    nl: "Wat \u2018{btn}\u2019 afdrukt",
+    tr: "\u201c{btn}\u201d ile yazd\u0131r\u0131lan sayfa"
+  };
+  function renderSheetThumb() {
+    if (!el.namePreview || !el.namePrint || RULED_ROWS || (RENDER === "glyph" && !TRACEABLE)) return;
+    let fig = document.getElementById("pt-sheet-thumb");
+    if (!fig) {
+      fig = document.createElement("figure");
+      fig.id = "pt-sheet-thumb";
+      fig.className = "pt-sheet-thumb";
+      const paper = document.createElement("div");
+      paper.className = "pt-sheet-thumb-paper";
+      paper.setAttribute("aria-hidden", "true");
+      const page = document.createElement("div");
+      page.className = "pt-sheet-thumb-page";
+      paper.appendChild(page);
+      const cap = document.createElement("figcaption");
+      cap.textContent = (SHEET_THUMB_I18N[LANG] || SHEET_THUMB_I18N.en)
+        .replace("{btn}", PO.savePdf);
+      fig.append(paper, cap);
+      el.namePreview.insertAdjacentElement("afterend", fig);
+    }
+    const page = fig.querySelector(".pt-sheet-thumb-page");
+    page.textContent = "";
+    page.appendChild(nameSheetNode());
   }
 
   // The full name worksheet as a DOM node — one primitive behind the single
@@ -12775,7 +12820,36 @@
     document.head.appendChild(sc);
   }
 
+  /* Browser Print (Ctrl+P / Cmd+P) without pressing Download PDF used to
+     print 3-5 pages of the website: header, menus, buttons and footer, and
+     no worksheet. The owner's call (2026-10-07) is to keep the page but drop
+     the site chrome in that case and open with one line pointing at the
+     button that prints the sheet. Only the print stylesheet acts on it; the
+     engine's own print path (body.is-printing) is untouched. */
+  const PRINT_NOTE_I18N = {
+    en: "This is a printout of the web page. To print the worksheet itself, press \u201c{btn}\u201d on the page.",
+    es: "Esto es una impresi\u00f3n de la p\u00e1gina web. Para imprimir la ficha, pulsa \u00ab{btn}\u00bb en la p\u00e1gina.",
+    fr: "Ceci est une impression de la page web. Pour imprimer la fiche, cliquez sur \u00ab\u00a0{btn}\u00a0\u00bb sur la page.",
+    pl: "To jest wydruk strony internetowej. Aby wydrukowa\u0107 kart\u0119 pracy, kliknij \u201e{btn}\u201d na stronie.",
+    it: "Questa \u00e8 la stampa della pagina web. Per stampare la scheda, premi \u00ab{btn}\u00bb nella pagina.",
+    de: "Das ist ein Ausdruck der Webseite. Um das Arbeitsblatt zu drucken, klicke auf der Seite auf \u201e{btn}\u201c.",
+    pt: "Esta \u00e9 uma impress\u00e3o da p\u00e1gina da web. Para imprimir a folha, clique em \u201c{btn}\u201d na p\u00e1gina.",
+    id: "Ini cetakan halaman web. Untuk mencetak lembar kerjanya, tekan \u201c{btn}\u201d di halaman.",
+    nl: "Dit is een afdruk van de webpagina. Klik op de pagina op \u2018{btn}\u2019 om het werkblad te printen.",
+    tr: "Bu, web sayfas\u0131n\u0131n \u00e7\u0131kt\u0131s\u0131d\u0131r. \u00c7al\u0131\u015fma sayfas\u0131n\u0131 yazd\u0131rmak i\u00e7in sayfadaki \u201c{btn}\u201d d\u00fc\u011fmesine bas\u0131n."
+  };
+  function mountPrintNote() {
+    if (!document.body || document.querySelector(".pt-print-note")) return;
+    const btn = (T.printOpts && T.printOpts.savePdf) || "Download PDF";
+    const note = document.createElement("p");
+    note.className = "pt-print-note";
+    note.textContent = (PRINT_NOTE_I18N[LANG] || PRINT_NOTE_I18N.en).replace("{btn}", btn);
+    document.body.insertBefore(note, document.body.firstChild);
+    document.body.classList.add("pt-engine-page");
+  }
+
   function init() {
+    mountPrintNote();
     loadQrModule();
     loadWordSearchModule();
     loadWordPuzzlesModule();

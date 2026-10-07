@@ -139,6 +139,23 @@
     });
   }
 
+  /* Scale a row down, as one unit, when its letters would not fit the space.
+     The sizes below are fixed, and with three wide initials ("WWW", "MWM") the
+     row measured -19 to 418 in a 400-unit box: clipped on both sides in the
+     preview, the PNG and the PDF. Measured in viewBox units with the same
+     canvas as layoutRow(), so preview and export scale identically; rows that
+     already fit are returned unchanged. */
+  const ROW_MARGIN = 16;              // each side of the classic row
+  const CIRCLE_ROW_WIDTH = 290;       // inside the inner ring (r = 171)
+  function fitRow(items, avail, central) {
+    if (!items.length) return items;
+    const gap = central ? 8 : 10;
+    const total = items.reduce((t, it) => t + measure(it.ch, it.size), 0) + gap * (items.length - 1);
+    if (total <= avail) return items;
+    const k = avail / total;
+    return items.map((it) => ({ ch: it.ch, size: it.size * k }));
+  }
+
   // Classic three-letter: small · BIG center (~1.7x) · small, on one baseline.
   function buildClassic(svg, v) {
     const items = [];
@@ -146,9 +163,10 @@
     if (v.c) items.push({ ch: v.c, size: 196 });
     if (v.r) items.push({ ch: v.r, size: 116 });
     if (!items.length) return;
-    const maxSize = Math.max.apply(null, items.map((it) => it.size));
+    const fitted = fitRow(items, VB - 2 * ROW_MARGIN, false);
+    const maxSize = Math.max.apply(null, fitted.map((it) => it.size));
     const baselineY = 200 + maxSize * 0.36; // vertically centers the tallest cap
-    layoutRow(svg, items, baselineY, false);
+    layoutRow(svg, fitted, baselineY, false);
   }
 
   // Stacked: the provided initials stacked vertically, centered, tight leading.
@@ -173,7 +191,7 @@
     if (v.l) items.push({ ch: v.l, size: 78 });
     if (v.c) items.push({ ch: v.c, size: 132 });
     if (v.r) items.push({ ch: v.r, size: 78 });
-    layoutRow(svg, items, 200, true);
+    layoutRow(svg, fitRow(items, CIRCLE_ROW_WIDTH, true), 200, true);
   }
 
   function buildMonogramSVG() {
@@ -317,8 +335,9 @@
     if (v.c) items.push({ ch: v.c, size: 196 });
     if (v.r) items.push({ ch: v.r, size: 116 });
     if (!items.length) return;
-    const maxSize = Math.max.apply(null, items.map((it) => it.size));
-    drawRowCanvas(ctx, s, items, (200 + maxSize * 0.36) * s, false);
+    const fitted = fitRow(items, VB - 2 * ROW_MARGIN, false);
+    const maxSize = Math.max.apply(null, fitted.map((it) => it.size));
+    drawRowCanvas(ctx, s, fitted, (200 + maxSize * 0.36) * s, false);
   }
 
   function drawStackedCanvas(ctx, s, v) {
@@ -349,7 +368,7 @@
     if (v.l) items.push({ ch: v.l, size: 78 });
     if (v.c) items.push({ ch: v.c, size: 132 });
     if (v.r) items.push({ ch: v.r, size: 78 });
-    drawRowCanvas(ctx, s, items, 200 * s, true);
+    drawRowCanvas(ctx, s, fitRow(items, CIRCLE_ROW_WIDTH, true), 200 * s, true);
   }
 
   // The 1600x1600 canvas every export path draws: PNG download, image

@@ -282,7 +282,7 @@
           },
           {
             "question": "Comment faire une écriture stylée à copier-coller ?",
-            "answer": "Trois secondes montre en main :\n    <br><br>\n    1. Tape ou colle ton texte dans la barre du haut.<br>\n    2. Les versions stylées s'affichent direct en dessous — gras, cursive, gothique, aesthetic, etc.<br>\n    3. Filtre par catégorie ou ajoute un peu de déco (cadres, symboles, séparateurs).<br>\n    4. Clique sur « Copier » à côté du style que tu préfères.<br>\n    5. Colle où tu veux : Insta, TikTok, Discord, Snap, WhatsApp, mail, jeux…\n    <br><br>\n    Pas de compte à faire, ça marche aussi bien sur ordi que sur téléphone."
+            "answer": "Trois secondes montre en main :\n    <br><br>\n    1. Tape ou colle ton texte dans la barre du haut.<br>\n    2. Les versions stylées s'affichent direct en dessous — gras, cursive, gothique, aesthetic, etc.<br>\n    3. Filtre par catégorie ou ajoute un peu de déco (cadres, symboles, séparateurs).<br>\n    4. Clique sur «Copier» à côté du style que tu préfères.<br>\n    5. Colle où tu veux : Insta, TikTok, Discord, Snap, WhatsApp, mail, jeux…\n    <br><br>\n    Pas de compte à faire, ça marche aussi bien sur ordi que sur téléphone."
           },
           {
             "question": "Est-ce que tout est gratuit ?",
@@ -295,7 +295,7 @@
         "items": [
           {
             "question": "C'est quoi la différence avec le gras de Word ou Discord ?",
-            "answer": "Le gras de Word, Google Docs ou Discord (avec **texte**), c'est de la <em>mise en forme</em> : une instruction donnée à l'appli pour afficher le texte en gras. Si tu copies-colles ce gras dans une bio Insta ou un pseudo TikTok, l'instruction se perd et tu te retrouves avec du texte tout plat.\n    <br><br>\n    UltraTextGen, c'est différent : on remplace chaque lettre par une vraie lettre Unicode qui <em>est</em> déjà en gras (ou italique, cursive, etc.). Comme c'est le caractère lui-même qui est stylé, il garde son look partout — bio, pseudo, légende, objet de mail, message Snap…\n    <br><br>\n    <strong>Concrètement</strong><br>\n    Un éditeur classique met « Promo » en gras via du code invisible. Tu le colles dans TikTok → ça redevient « Promo » tout plat. Avec UltraTextGen, « Promo » devient 𝗣𝗿𝗼𝗺𝗼 → et ça reste en gras dans ta bio, ton pseudo, ton mail, partout."
+            "answer": "Le gras de Word, Google Docs ou Discord (avec **texte**), c'est de la <em>mise en forme</em> : une instruction donnée à l'appli pour afficher le texte en gras. Si tu copies-colles ce gras dans une bio Insta ou un pseudo TikTok, l'instruction se perd et tu te retrouves avec du texte tout plat.\n    <br><br>\n    UltraTextGen, c'est différent : on remplace chaque lettre par une vraie lettre Unicode qui <em>est</em> déjà en gras (ou italique, cursive, etc.). Comme c'est le caractère lui-même qui est stylé, il garde son look partout — bio, pseudo, légende, objet de mail, message Snap…\n    <br><br>\n    <strong>Concrètement</strong><br>\n    Un éditeur classique met «Promo» en gras via du code invisible. Tu le colles dans TikTok → ça redevient «Promo» tout plat. Avec UltraTextGen, «Promo» devient 𝗣𝗿𝗼𝗺𝗼 → et ça reste en gras dans ta bio, ton pseudo, ton mail, partout."
           },
           {
             "question": "Qu'est-ce qu'un générateur Unicode peut faire qu'un traitement de texte ne peut pas ?",
@@ -303,7 +303,7 @@
           },
           {
             "question": "Je peux mettre du gras dans l'objet d'un mail ?",
-            "answer": "Oui — et c'est un des usages les plus utiles. Les objets de mail sont en texte brut : le gras classique d'Outlook ou Gmail saute avant que le destinataire ne reçoive le message.\n    <br><br>\n    Avec UltraTextGen, tu colles directement des lettres Unicode en gras dans l'objet, et elles s'affichent en gras dans la boîte de réception du destinataire.\n    <br><br>\n    <strong>Exemple</strong><br>\n    Objet normal : « Promo flash — 50 % aujourd'hui »<br>\n    Objet stylé : « 𝗣𝗿𝗼𝗺𝗼 𝗳𝗹𝗮𝘀𝗵 — 𝟱𝟬 % 𝗮𝘂𝗷𝗼𝘂𝗿𝗱'𝗵𝘂𝗶 »\n    <br><br>\n    Ça se voit direct dans une boîte saturée. Gmail, Outlook et Apple Mail affichent tous les caractères Unicode sans souci."
+            "answer": "Oui, et c'est un des usages les plus utiles. Les objets de mail sont en texte brut : le gras classique d'Outlook ou Gmail saute avant que le destinataire ne reçoive le message.\n    <br><br>\n    Avec UltraTextGen, tu colles directement des lettres Unicode en gras dans l'objet, et elles s'affichent en gras dans la boîte de réception du destinataire.\n    <br><br>\n    <strong>Exemple</strong><br>\n    Objet normal : «Promo flash — 50 % aujourd'hui»<br>\n    Objet stylé : «𝗣𝗿𝗼𝗺𝗼 𝗳𝗹𝗮𝘀𝗵 — 𝟱𝟬 % 𝗮𝘂𝗷𝗼𝘂𝗿𝗱'𝗵𝘂𝗶»\n    <br><br>\n    Ça se voit direct dans une boîte saturée. Gmail, Outlook et Apple Mail affichent tous les caractères Unicode sans souci."
           }
         ]
       },
@@ -312,15 +312,15 @@
         "items": [
           {
             "question": "Quelles polices d'écriture sont dispo ?",
-            "answer": "On a l'une des plus grosses collections d'écritures stylées Unicode, toutes préfixées « Ultra ».\n    <br><br>\n    <strong>Les classiques</strong><br>\n    Ultra Bold et Ultra Bold Serif, Ultra Italic (plusieurs versions), Ultra Script et Ultra Script Bold (les cursives), Ultra Gothic, toute la famille Ultra Bubble (Filled, Light, Tiles, Curly, Angle, Spaced…), Ultra Strike (barré), Ultra Underline (souligné).\n    <br><br>\n    <strong>Les styles spéciaux</strong><br>\n    Texte à l'envers, en miroir, Small Caps (petites majuscules), Zalgo (glitch), cadres et bordures décoratives, Double Struck, Fullwidth (large), Squared, Parenthesized, et plein d'autres.\n    <br><br>\n    De nouvelles polices arrivent régulièrement — pense à repasser de temps en temps."
+            "answer": "On a l'une des plus grosses collections d'écritures stylées Unicode, toutes préfixées «Ultra».\n    <br><br>\n    <strong>Les classiques</strong><br>\n    Ultra Bold et Ultra Bold Serif, Ultra Italic (plusieurs versions), Ultra Script et Ultra Script Bold (les cursives), Ultra Gothic, toute la famille Ultra Bubble (Filled, Light, Tiles, Curly, Angle, Spaced…), Ultra Strike (barré), Ultra Underline (souligné).\n    <br><br>\n    <strong>Les styles spéciaux</strong><br>\n    Texte à l'envers, en miroir, Small Caps (petites majuscules), Zalgo (glitch), cadres et bordures décoratives, Double Struck, Fullwidth (large), Squared, Parenthesized, et plein d'autres.\n    <br><br>\n    De nouvelles polices arrivent régulièrement — pense à repasser de temps en temps."
           },
           {
             "question": "Je peux mélanger plusieurs styles et ajouter de la déco ?",
-            "answer": "Oui, c'est même un des points forts. Tu peux empiler plusieurs effets : Bubble + Zalgo, Gothique + retournement, Small Caps + souligné… puis encadrer le tout avec des éléments décoratifs.\n    <br><br>\n    <strong>Côté déco</strong><br>\n    Cadres et bordures (du genre ★彡[ texte ]彡★ ou ╭─▸ texte ╰─▸), flèches, symboles aesthetic, séparateurs minimalistes, emojis, drapeaux.\n    <br><br>\n    <strong>Exemple</strong><br>\n    Pars de « hello » → applique Ultra Gothic → ajoute un cadre étoilé → ça donne ★彡[ 𝔥𝔢𝔩𝔩𝔬 ]彡★.\n    <br><br>\n    Très peu de générateurs rendent le mélange aussi simple."
+            "answer": "Oui, c'est même un des points forts. Tu peux empiler plusieurs effets : Bubble + Zalgo, Gothique + retournement, Small Caps + souligné… puis encadrer le tout avec des éléments décoratifs.\n    <br><br>\n    <strong>Côté déco</strong><br>\n    Cadres et bordures (du genre ★彡[ texte ]彡★ ou ╭─▸ texte ╰─▸), flèches, symboles aesthetic, séparateurs minimalistes, emojis, drapeaux.\n    <br><br>\n    <strong>Exemple</strong><br>\n    Pars de «hello» → applique Ultra Gothic → ajoute un cadre étoilé → ça donne ★彡[ 𝔥𝔢𝔩𝔩𝔬 ]彡★.\n    <br><br>\n    Très peu de générateurs rendent le mélange aussi simple."
           },
           {
             "question": "Le texte Zalgo (glitch), c'est quoi ?",
-            "answer": "Le Zalgo, c'est l'écriture « possédée » : on empile des signes diacritiques au-dessus et en dessous de chaque lettre, ce qui donne un effet glitché et corrompu, façon ambiance horreur.\n    <br><br>\n    <strong>Exemple</strong><br>\n    « hello » → h̷e̷l̷l̷o̷\n    <br><br>\n    Très utilisé pour les mèmes flippants, les bios dark, les pseudos un peu inquiétants, ou juste pour troller un pote dans une conv de groupe. Tape ton texte, choisis le style Zalgo, copie, colle — l'empilement se fait tout seul."
+            "answer": "Le Zalgo, c'est l'écriture «possédée» : on empile des signes diacritiques au-dessus et en dessous de chaque lettre, ce qui donne un effet glitché et corrompu, façon ambiance horreur.\n    <br><br>\n    <strong>Exemple</strong><br>\n    «hello» → h̷e̷l̷l̷o̷\n    <br><br>\n    Très utilisé pour les mèmes flippants, les bios dark, les pseudos un peu inquiétants, ou juste pour troller un pote dans une conv de groupe. Tape ton texte, choisis le style Zalgo, copie, colle — l'empilement se fait tout seul."
           }
         ]
       },
@@ -333,7 +333,7 @@
           },
           {
             "question": "Comment avoir un pseudo stylé sur Insta, TikTok ou Discord ?",
-            "answer": "Pour un pseudo stylé, tu tapes le nom que tu veux utiliser, tu choisis une écriture qui colle à ton vibe, et tu colles le résultat dans le champ « nom » ou « pseudo » de la plateforme.\n    <br><br>\n    <strong>Quelques exemples</strong><br>\n    — DarkWolf → 𝔇𝔞𝔯𝔨𝔚𝔬𝔩𝔣 (gothique) ou ⒹⓐⓡⓚⓌⓞⓛⓕ (bubble)<br>\n    — alice → 𝖆𝖑𝖎𝖈𝖊 (medieval) ou 𝒶𝓁𝒾𝒸𝑒 (cursive)<br>\n    — gamerz → 𝓰𝓪𝓶𝓮𝓻𝔃 ou ⓖⓐⓜⓔⓡⓩ\n    <br><br>\n    <strong>Astuce</strong><br>\n    Discord et Roblox acceptent quasiment tous les caractères. Insta et TikTok sont un peu plus stricts — si un style passe pas, essaies-en un autre, certains sont plus tolérants."
+            "answer": "Pour un pseudo stylé, tu tapes le nom que tu veux utiliser, tu choisis une écriture qui colle à ton vibe, et tu colles le résultat dans le champ «nom» ou «pseudo» de la plateforme.\n    <br><br>\n    <strong>Quelques exemples</strong><br>\n    — DarkWolf → 𝔇𝔞𝔯𝔨𝔚𝔬𝔩𝔣 (gothique) ou ⒹⓐⓡⓚⓌⓞⓛⓕ (bubble)<br>\n    — alice → 𝖆𝖑𝖎𝖈𝖊 (medieval) ou 𝒶𝓁𝒾𝒸𝑒 (cursive)<br>\n    — gamerz → 𝓰𝓪𝓶𝓮𝓻𝔃 ou ⓖⓐⓜⓔⓡⓩ\n    <br><br>\n    <strong>Astuce</strong><br>\n    Discord et Roblox acceptent quasiment tous les caractères. Insta et TikTok sont un peu plus stricts — si un style passe pas, essaies-en un autre, certains sont plus tolérants."
           },
           {
             "question": "Pourquoi je vois des carrés ou des « ? » à la place du texte ?",
@@ -385,15 +385,15 @@
         "items": [
           {
             "question": "Pourquoi choisir UltraTextGen ?",
-            "answer": "Quelques raisons concrètes :\n    <br><br>\n    — L'une des plus grosses collections de polices d'écriture Unicode, toutes en qualité « Ultra ».<br>\n    — Le mélange de styles : tu peux combiner gras + bubble, gothique + à l'envers, etc., d'un clic. Très peu de générateurs proposent ça.<br>\n    — Déco intégrée : cadres, symboles aesthetic, séparateurs ajoutés en un clic, sans copier-coller manuel.<br>\n    — Des pages dédiées par plateforme (Insta, TikTok, Discord…) pour des styles déjà testés.<br>\n    — Interface rapide et propre, sans pub qui pop ou popup qui bloque.<br>\n    — Mises à jour régulières."
+            "answer": "Quelques raisons concrètes :\n    <br><br>\n    — L'une des plus grosses collections de polices d'écriture Unicode, toutes en qualité «Ultra».<br>\n    — Le mélange de styles : tu peux combiner gras + bubble, gothique + à l'envers, etc., d'un clic. Très peu de générateurs proposent ça.<br>\n    — Déco intégrée : cadres, symboles aesthetic, séparateurs ajoutés en un clic, sans copier-coller manuel.<br>\n    — Des pages dédiées par plateforme (Insta, TikTok, Discord…) pour des styles déjà testés.<br>\n    — Interface rapide et propre, sans pub qui pop ou popup qui bloque.<br>\n    — Mises à jour régulières."
           },
           {
             "question": "Vous ajoutez régulièrement des styles ?",
-            "answer": "Oui — on ajoute régulièrement de nouvelles polices et de la déco. Pense à mettre le site en favori pour ne rien rater."
+            "answer": "Oui, on ajoute régulièrement de nouvelles polices et de la déco. Pense à mettre le site en favori pour ne rien rater."
           },
           {
             "question": "Comment trouver la bonne police selon mon besoin ?",
-            "answer": "Trois façons d'explorer :\n    <br><br>\n    <strong>Par style d'écriture</strong><br>\n    Balade-toi dans les catégories — gras, cursive, gothique, bubble, barré, souligné, à l'envers, aesthetic… Chaque catégorie a sa page avec son propre générateur.\n    <br><br>\n    <strong>Par plateforme</strong><br>\n    Utilise les pages dédiées (Instagram, TikTok, Discord, Snapchat, WhatsApp, LinkedIn…) pour des styles testés sur l'app que tu utilises.\n    <br><br>\n    <strong>Par besoin</strong><br>\n    La page « Cas d'usage » regroupe des outils ciblés — polices pour commentaires, conversion en lettres-emoji, pseudos stylés, etc."
+            "answer": "Trois façons d'explorer :\n    <br><br>\n    <strong>Par style d'écriture</strong><br>\n    Balade-toi dans les catégories — gras, cursive, gothique, bubble, barré, souligné, à l'envers, aesthetic… Chaque catégorie a sa page avec son propre générateur.\n    <br><br>\n    <strong>Par plateforme</strong><br>\n    Utilise les pages dédiées (Instagram, TikTok, Discord, Snapchat, WhatsApp, LinkedIn…) pour des styles testés sur l'app que tu utilises.\n    <br><br>\n    <strong>Par besoin</strong><br>\n    La page «Cas d'usage» regroupe des outils ciblés — polices pour commentaires, conversion en lettres-emoji, pseudos stylés, etc."
           }
         ]
       }

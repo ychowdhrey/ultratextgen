@@ -295,19 +295,19 @@
         "items": [
           {
             "question": "Jak wrzucić stylowy tekst do bio na Instagramie?",
-            "answer": "Insta nie ma żadnego paska formatowania, ale akceptuje Unicode — czyli wszystko, co u nas wygenerujesz, wleci w bio bez problemu.\n    <br><br>\n    <strong>Jak to zrobić</strong><br>\n    1. Wpisz to, co chcesz mieć w bio (np. imię, hasztag, krótki opis).<br>\n    2. Wybierz styl — pogrubione i kursywa działają najlepiej na większości urządzeń.<br>\n    3. Skopiuj wynik i wklej w „Edytuj profil → Bio\" w aplikacji.\n    <br><br>\n    Tip: jak chcesz ozdobić, dodaj ramkę typu ⋆｡˚ albo gwiazdkę ✦ z boku — wygląda dobrze, nie kradnie uwagi z reszty bio."
+            "answer": "Insta nie ma żadnego paska formatowania, ale akceptuje Unicode — czyli wszystko, co u nas wygenerujesz, wleci w bio bez problemu.\n    <br><br>\n    <strong>Jak to zrobić</strong><br>\n    1. Wpisz to, co chcesz mieć w bio (np. imię, hasztag, krótki opis).<br>\n    2. Wybierz styl — pogrubione i kursywa działają najlepiej na większości urządzeń.<br>\n    3. Skopiuj wynik i wklej w „Edytuj profil → Bio\" w aplikacji.\n    <br><br>\n    Tip: jak chcesz ozdobić, dodaj ramkę typu ⋆｡˚ albo gwiazdkę ✦ z boku — wygląda dobrze, nie kradnie uwagi z reszty bio. Więcej gotowych stylów pod bio znajdziesz na stronie <a href=\"/pl/czcionki-na-instagram/\">czcionek na Instagram</a>."
           },
           {
             "question": "Czy literki działają w podpisach na TikToku?",
-            "answer": "Tak — TikTok renderuje Unicode w podpisach, opisach profilu i komentarzach. Najlepiej sprawdzają się <strong>pogrubione</strong>, <strong>kursywa</strong>, <strong>bubble</strong> i <strong>small caps</strong>. Style z mnóstwem ozdobników potrafią się obciąć przy długich podpisach, więc dla pewności sprawdź wpis w podglądzie przed publikacją."
+            "answer": "Tak, TikTok renderuje Unicode w podpisach, opisach profilu i komentarzach. Najlepiej sprawdzają się <strong>pogrubione</strong>, <strong>kursywa</strong>, <strong>bubble</strong> i <strong>small caps</strong>. Style z mnóstwem ozdobników potrafią się obciąć przy długich podpisach, więc dla pewności sprawdź wpis w podglądzie przed publikacją."
           },
           {
             "question": "Da się zrobić nick do gry albo na Discorda?",
-            "answer": "Jasne — to chyba najczęstszy powód, dla którego ludzie wpadają na takie generatory. Discord, Roblox, Steam, Minecraft, większość gier akceptuje Unicode w nickach.\n    <br><br>\n    <strong>Przykład</strong><br>\n    Zwykły nick: „DarkWolf\"<br>\n    Po stylizacji: „𝔇𝔞𝔯𝔨𝔚𝔬𝔩𝔣\" (gotyk), „ⒹⓐⓡⓚⓌⓞⓛⓕ\" (bubble) albo „๖ۣۜDarkWolf\" (z ozdobnikiem z boku).\n    <br><br>\n    <strong>Uwaga:</strong> część gier ma filtry i nie przyjmie egzotycznych znaków. Jak jeden styl nie wchodzi, daj inny — bold i kursywa zwykle przechodzą wszędzie. Chcesz zamiast tego całkowicie pustą nazwę? Zobacz <a href=\"/pl/answers/jak-zrobic-pusta-nazwe/\">jak zrobić pustą nazwę</a>."
+            "answer": "Jasne — to chyba najczęstszy powód, dla którego ludzie wpadają na takie generatory. Discord, Roblox, Steam, Minecraft, większość gier akceptuje Unicode w nickach.\n    <br><br>\n    <strong>Przykład</strong><br>\n    Zwykły nick: „DarkWolf\"<br>\n    Po stylizacji: „𝔇𝔞𝔯𝔨𝔚𝔬𝔩𝔣\" (gotyk), „ⒹⓐⓡⓚⓌⓞⓛⓕ\" (bubble) albo „๖ۣۜDarkWolf\" (z ozdobnikiem z boku).\n    <br><br>\n    <strong>Uwaga:</strong> część gier ma filtry i nie przyjmie egzotycznych znaków. Jak jeden styl nie wchodzi, daj inny — bold i kursywa zwykle przechodzą wszędzie. Więcej gotowych stylów pod nick znajdziesz na stronie <a href=\"/pl/czcionki-discord/\">czcionek Discord</a>. Chcesz zamiast tego całkowicie pustą nazwę? Zobacz <a href=\"/pl/answers/jak-zrobic-pusta-nazwe/\">jak zrobić pustą nazwę</a>."
           },
           {
             "question": "Działa w statusie WhatsAppa, na Telegramie i w Messengerze?",
-            "answer": "Tak — WhatsApp, Telegram, Messenger, Signal, iMessage. Wszystko, co przyjmuje zwykły tekst, przyjmuje też literki Unicode. Wklejasz w status albo w wiadomość i wygląda jak ozdobna czcionka.\n    <br><br>\n    Dla WhatsAppa dorzucam: jeśli zależy ci tylko na pogrubieniu, możesz użyć ich własnej składni (`*tekst*` daje bold). Ale Unicode działa wszędzie — także tam, gdzie WhatsApp tego nie obsługuje, np. w nazwie kontaktu."
+            "answer": "Tak, WhatsApp, Telegram, Messenger, Signal, iMessage. Wszystko, co przyjmuje zwykły tekst, przyjmuje też literki Unicode. Wklejasz w status albo w wiadomość i wygląda jak ozdobna czcionka.\n    <br><br>\n    Dla WhatsAppa dorzucam: jeśli zależy ci tylko na pogrubieniu, możesz użyć ich własnej składni (<code>*tekst*</code> daje bold). Ale Unicode działa wszędzie — także tam, gdzie WhatsApp tego nie obsługuje, np. w nazwie kontaktu."
           },
           {
             "question": "A w temacie maila albo w CV?",
@@ -324,7 +324,7 @@
           },
           {
             "question": "Mogę połączyć kilka stylów naraz?",
-            "answer": "Tak — i to jest największa zaleta UltraTextGen. Można nałożyć np. <strong>bubble + Zalgo</strong>, <strong>gotyk + do góry nogami</strong> albo <strong>small caps + podkreślenie</strong>, a potem zamknąć to w ramce albo gwiazdce.\n    <br><br>\n    <strong>Przykład</strong><br>\n    „hej\" → wybierasz gotyk → dorzucasz ramkę z gwiazdkami → wychodzi: ★彡[ 𝔥𝔢𝔧 ]彡★\n    <br><br>\n    Im więcej eksperymentujesz, tym ciekawsze rzeczy wychodzą. Polecam zacząć od jednego stylu i dorzucić jeden ozdobnik — nie wszystko naraz."
+            "answer": "Tak, i to jest największa zaleta UltraTextGen. Można nałożyć np. <strong>bubble + Zalgo</strong>, <strong>gotyk + do góry nogami</strong> albo <strong>small caps + podkreślenie</strong>, a potem zamknąć to w ramce albo gwiazdce.\n    <br><br>\n    <strong>Przykład</strong><br>\n    „hej\" → wybierasz gotyk → dorzucasz ramkę z gwiazdkami → wychodzi: ★彡[ 𝔥𝔢𝔧 ]彡★\n    <br><br>\n    Im więcej eksperymentujesz, tym ciekawsze rzeczy wychodzą. Polecam zacząć od jednego stylu i dorzucić jeden ozdobnik — nie wszystko naraz."
           },
           {
             "question": "Co to jest Zalgo i te dziwne kreski nad literami?",
@@ -366,11 +366,11 @@
           },
           {
             "question": "Bezpiecznie wklejać te literki gdziekolwiek?",
-            "answer": "Tak — to standardowe znaki Unicode, identyczne z tymi, których używa cały internet. Nic w środku, żadnych skryptów, żadnego ukrytego formatowania, żadnych kodów. Wklejasz spokojnie do CV, do służbowego maila, do bio na LinkedIn — gdzie chcesz."
+            "answer": "Tak, to standardowe znaki Unicode, identyczne z tymi, których używa cały internet. Nic w środku, żadnych skryptów, żadnego ukrytego formatowania, żadnych kodów. Wklejasz spokojnie do CV, do służbowego maila, do bio na LinkedIn — gdzie chcesz."
           },
           {
             "question": "Działa na telefonie?",
-            "answer": "Tak — strona w pełni dopasowuje się do komórki. iPhone, Android, tablet — wszystko gra. Wpisujesz tekst, klikasz, kopiuje się do schowka, wklejasz w aplikacji. Bez instalowania niczego ze sklepu."
+            "answer": "Tak, strona w pełni dopasowuje się do komórki. iPhone, Android, tablet — wszystko gra. Wpisujesz tekst, klikasz, kopiuje się do schowka, wklejasz w aplikacji. Bez instalowania niczego ze sklepu."
           }
         ]
       },
