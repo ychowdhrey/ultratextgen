@@ -133,6 +133,11 @@
       "renderFailed": "無法製作圖片，請再試一次。",
       "trayLabel": "圖片選取",
       "setUnavailable": "這組目前還不能加入圖片。"
+    },
+    "symbolLook": {
+      "plain": "複製純文字版",
+      "emoji": "複製表情符號版",
+      "note": "部分 App 仍會以彩色顯示。"
     }
   }
 }

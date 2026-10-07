@@ -233,6 +233,11 @@
       "renderFailed": "Bild ging nicht. Versuch es noch mal.",
       "trayLabel": "Bildauswahl",
       "setUnavailable": "Dieses Set kann noch nicht ins Bild."
+    },
+    "symbolLook": {
+      "plain": "Schlichte Version kopieren",
+      "emoji": "Emoji-Version kopieren",
+      "note": "Manche Apps zeigen das Symbol trotzdem farbig."
     }
   },
   "useCases": {

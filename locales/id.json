@@ -233,6 +233,11 @@
       "renderFailed": "Gagal membuat gambar. Coba lagi.",
       "trayLabel": "Pilihan gambar",
       "setUnavailable": "Set ini belum bisa ditambahkan ke gambar."
+    },
+    "symbolLook": {
+      "plain": "Salin versi polos",
+      "emoji": "Salin versi emoji",
+      "note": "Beberapa aplikasi tetap menampilkannya berwarna."
     }
   },
   "useCases": {

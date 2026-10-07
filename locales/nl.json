@@ -233,6 +233,11 @@
       "renderFailed": "Afbeelding maken mislukt. Probeer het opnieuw.",
       "trayLabel": "Selectie voor afbeelding",
       "setUnavailable": "Deze set kan nog niet in een afbeelding."
+    },
+    "symbolLook": {
+      "plain": "Gewone versie kopiëren",
+      "emoji": "Emojiversie kopiëren",
+      "note": "Sommige apps tonen het symbool toch in kleur."
     }
   },
   "useCases": {
