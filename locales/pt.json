@@ -233,6 +233,11 @@
       "renderFailed": "Não deu para criar a imagem. Tente de novo.",
       "trayLabel": "Seleção da imagem",
       "setUnavailable": "Este conjunto ainda não pode entrar em uma imagem."
+    },
+    "symbolLook": {
+      "plain": "Copiar versão simples",
+      "emoji": "Copiar versão emoji",
+      "note": "Alguns apps mostram em cores mesmo assim."
     }
   },
   "useCases": {

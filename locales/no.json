@@ -157,6 +157,11 @@
       "renderFailed": "Kunne ikke lage bildet. Prøv igjen.",
       "trayLabel": "Bildeutvalg",
       "setUnavailable": "Dette settet kan ikke legges i et bilde ennå."
+    },
+    "symbolLook": {
+      "plain": "Kopier vanlig versjon",
+      "emoji": "Kopier emoji-versjon",
+      "note": "Noen apper viser symbolet i farger likevel."
     }
   },
   "useCases": {

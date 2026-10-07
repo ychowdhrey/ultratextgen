@@ -157,6 +157,11 @@
       "renderFailed": "Imaginea nu s-a putut crea. Încearcă din nou.",
       "trayLabel": "Selecție pentru imagine",
       "setUnavailable": "Acest set nu poate fi adăugat încă într-o imagine."
+    },
+    "symbolLook": {
+      "plain": "Copiază varianta simplă",
+      "emoji": "Copiază varianta emoji",
+      "note": "Unele aplicații îl afișează oricum color."
     }
   },
   "useCases": {

@@ -233,6 +233,11 @@
       "renderFailed": "No se pudo crear la imagen. Inténtalo de nuevo.",
       "trayLabel": "Selección de imagen",
       "setUnavailable": "Este conjunto aún no se puede añadir a una imagen."
+    },
+    "symbolLook": {
+      "plain": "Copiar versión simple",
+      "emoji": "Copiar versión emoji",
+      "note": "Algunas apps lo muestran en color de todos modos."
     }
   },
   "useCases": {

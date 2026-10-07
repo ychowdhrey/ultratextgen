@@ -157,6 +157,11 @@
       "renderFailed": "Không tạo được ảnh. Thử lại.",
       "trayLabel": "Chọn cho ảnh",
       "setUnavailable": "Chưa thể thêm bộ này vào ảnh."
+    },
+    "symbolLook": {
+      "plain": "Sao chép bản thường",
+      "emoji": "Sao chép bản emoji",
+      "note": "Một số ứng dụng vẫn hiển thị có màu."
     }
   },
   "useCases": {

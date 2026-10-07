@@ -48,7 +48,12 @@ const KEYS = {
   copyLabel: 'copyButtons.copy',
   // The two entry-button labels for "Select and share image" (2026-10-01).
   selectImage: 'imageSelection.selectImage',
-  viewSelection: 'imageSelection.viewSelection'
+  viewSelection: 'imageSelection.viewSelection',
+  // The "other look" button in the copy toast for symbols that have both a
+  // text and an emoji presentation (2026-10-07).
+  lookPlain: 'symbolLook.plain',
+  lookEmoji: 'symbolLook.emoji',
+  lookNote: 'symbolLook.note'
 };
 
 /** The selection UI itself (js/share/image-selection.js) is loaded only when

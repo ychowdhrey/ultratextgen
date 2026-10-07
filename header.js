@@ -1058,6 +1058,9 @@
   // is private until someone decides its payload is catalogue content.
   var CATALOGUE_COPY_METHODS = {
     symbol_tile: 1,
+    // The other look of a two-look tile (symbol-explorer.js copyLook): the
+    // same catalogue character with a variation selector.
+    symbol_look_switch: 1,
     grid_collection: 1,
     saved_collection: 1,
     glyph: 1,
@@ -1075,7 +1078,11 @@
       event: "copy_text",
       copy_method: method,
       copy_item: Object.prototype.hasOwnProperty.call(CATALOGUE_COPY_METHODS, method) ? id.item : undefined,
-      copy_item_group: id.group
+      copy_item_group: id.group,
+      // "emoji" | "plain" on a symbol that has both looks, otherwise cleared.
+      // Always present as a key for the same reason as copy_item: GTM would
+      // otherwise re-send the previous copy's look on the next copy.
+      copy_look: undefined
     };
     if (extra) {
       for (var k in extra) {

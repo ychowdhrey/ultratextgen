@@ -133,6 +133,11 @@
       "renderFailed": "Kuvan luominen ei onnistunut. Yritä uudelleen.",
       "trayLabel": "Kuvan valinta",
       "setUnavailable": "Tätä sarjaa ei voi vielä lisätä kuvaan."
+    },
+    "symbolLook": {
+      "plain": "Kopioi tavallinen versio",
+      "emoji": "Kopioi emojiversio",
+      "note": "Jotkin sovellukset näyttävät symbolin silti värillisenä."
     }
   }
 }

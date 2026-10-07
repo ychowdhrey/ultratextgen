@@ -233,6 +233,11 @@
       "renderFailed": "Görsel oluşturulamadı. Tekrar dene.",
       "trayLabel": "Görsel seçimi",
       "setUnavailable": "Bu set henüz bir görsele eklenemiyor."
+    },
+    "symbolLook": {
+      "plain": "Düz sürümü kopyala",
+      "emoji": "Emoji sürümünü kopyala",
+      "note": "Bazı uygulamalar yine de renkli gösterir."
     }
   },
   "useCases": {
