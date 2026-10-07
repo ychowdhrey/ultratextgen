@@ -6584,6 +6584,51 @@
         solid: false, guides: RULED_ROWS, overlay: strokeOverlayOn()
       }));
     }
+    renderSheetThumb();
+  }
+
+  /* The preview above is one bare outline, and Download PDF prints a whole
+     practice sheet: the name solid, rows to trace, blank rows and a Name and
+     Date line. Nothing on screen said so (rendering audit 2026-10-03). The
+     owner chose a picture over a sentence (2026-10-07): a small copy of the
+     sheet, built by nameSheetNode() -- the function the PDF itself uses -- so
+     it follows the typed name, the row count and the footer toggle and cannot
+     describe a sheet that is not the one printed. Ruled pages already preview
+     a real sheet row and glyph pages print text, so both are left alone. */
+  const SHEET_THUMB_I18N = {
+    en: "What \u201c{btn}\u201d prints",
+    es: "Lo que imprime \u00ab{btn}\u00bb",
+    fr: "Ce qu\u2019imprime \u00ab\u00a0{btn}\u00a0\u00bb",
+    pl: "Co drukuje \u201e{btn}\u201d",
+    it: "Cosa stampa \u00ab{btn}\u00bb",
+    de: "Das druckt \u201e{btn}\u201c",
+    pt: "O que \u201c{btn}\u201d imprime",
+    id: "Hasil cetak \u201c{btn}\u201d",
+    nl: "Wat \u2018{btn}\u2019 afdrukt",
+    tr: "\u201c{btn}\u201d ile yazd\u0131r\u0131lan sayfa"
+  };
+  function renderSheetThumb() {
+    if (!el.namePreview || !el.namePrint || RULED_ROWS || (RENDER === "glyph" && !TRACEABLE)) return;
+    let fig = document.getElementById("pt-sheet-thumb");
+    if (!fig) {
+      fig = document.createElement("figure");
+      fig.id = "pt-sheet-thumb";
+      fig.className = "pt-sheet-thumb";
+      const paper = document.createElement("div");
+      paper.className = "pt-sheet-thumb-paper";
+      paper.setAttribute("aria-hidden", "true");
+      const page = document.createElement("div");
+      page.className = "pt-sheet-thumb-page";
+      paper.appendChild(page);
+      const cap = document.createElement("figcaption");
+      cap.textContent = (SHEET_THUMB_I18N[LANG] || SHEET_THUMB_I18N.en)
+        .replace("{btn}", PO.savePdf);
+      fig.append(paper, cap);
+      el.namePreview.insertAdjacentElement("afterend", fig);
+    }
+    const page = fig.querySelector(".pt-sheet-thumb-page");
+    page.textContent = "";
+    page.appendChild(nameSheetNode());
   }
 
   // The full name worksheet as a DOM node — one primitive behind the single
