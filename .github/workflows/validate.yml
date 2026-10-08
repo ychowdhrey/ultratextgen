@@ -482,6 +482,16 @@ jobs:
         continue-on-error: true
         run: npm run test:qr | tee qr-tests.log
 
+      # Gating, no backlog: the moon phase readout on library/moon-celestial-
+      # symbols and its eight locale siblings. It states a fact (tonight's
+      # phase), so known new and full moons must land on the right emoji
+      # within a day, the hemisphere mirror must be an involution, and every
+      # page's static phase table must agree with the same function.
+      - name: Run moon phase tests
+        id: moon_phase_tests
+        continue-on-error: true
+        run: npm run test:moon-phase | tee moon-phase-tests.log
+
       # Gating, no backlog: the Japanese worksheet engine's facts. Kana sets
       # and the MEXT grade presets (80/160/200/202/193/191), normalisation that
       # composes ｶﾀｶﾅ and か+゛ but never alters 髙, 﨑 or a compatibility
@@ -1231,6 +1241,11 @@ jobs:
             cat qr-tests.log
             echo '```'
             echo ""
+            echo "### Moon phase tests — \`${{ steps.moon_phase_tests.outcome }}\`"
+            echo '```'
+            cat moon-phase-tests.log
+            echo '```'
+            echo ""
             echo "### Numeric parity check — \`${{ steps.numeric_parity.outcome }}\`"
             echo '```'
             cat numeric-parity.log
@@ -1458,6 +1473,7 @@ jobs:
           steps.zalgo_engine_tests.outcome == 'failure' ||
           steps.romanize_tests.outcome == 'failure' ||
           steps.qr_tests.outcome == 'failure' ||
+          steps.moon_phase_tests.outcome == 'failure' ||
           steps.ja_sheets_tests.outcome == 'failure' ||
           steps.ja_printables.outcome == 'failure' ||
           steps.label_geometry_tests.outcome == 'failure' ||
