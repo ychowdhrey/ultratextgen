@@ -45,9 +45,11 @@
     'セ': '世', 'チ': '干'
   };
 
-  // Reverse a string by code points (emoji-safe)
+  // Reverse a string by user-perceived characters, not code points. A code-point
+  // reversal turned 🇫🇷 into 🇷🇫, reordered family emoji, detached skin tones and
+  // moved Thai and Devanagari vowel and tone marks onto the wrong consonant.
   function reverseString(str) {
-    return Array.from(str).reverse().join('');
+    return splitGraphemes(str).reverse().join('');
   }
 
   // Flip a single character
@@ -55,12 +57,26 @@
     return flipMap[ch] || null;
   }
 
+  // Flip one user-perceived character. A base letter that carries combining
+  // marks (e + U+0301) keeps its marks after the flipped base; anything whose
+  // first code point has no flip (an emoji sequence, a Thai cluster) is left whole.
+  function flipCluster(cluster) {
+    const direct = flipChar(cluster);
+    if (direct) return direct;
+    const cps = Array.from(cluster);
+    if (cps.length > 1) {
+      const base = flipChar(cps[0]);
+      if (base) return base + cps.slice(1).join('');
+    }
+    return null;
+  }
+
   // Apply flip and reverse (standard upside down)
   function applyFlipAndReverse(str, fallbackMode = 'fallback') {
-    const chars = Array.from(str);
+    const chars = splitGraphemes(str);
     const reversed = chars.reverse();
     const flipped = reversed.map(ch => {
-      const flip = flipChar(ch);
+      const flip = flipCluster(ch);
       if (flip) return flip;
       if (fallbackMode === 'fallback') return ch;
       return ch;
@@ -132,10 +148,10 @@
     },
 
     mirrorIllusion: (text) => {
-      const chars = Array.from(text);
+      const chars = splitGraphemes(text);
       const reversed = chars.reverse();
       const transformed = reversed.map(ch => {
-        const flip = flipChar(ch);
+        const flip = flipCluster(ch);
         if (flip) return flip;
         
         const illusion = illusionMap[ch];
@@ -541,7 +557,11 @@ function renderMap(text, style) {
       .map(seg => caseSurnameFix(caseCapFirstAlpha(caseLower(seg)))).join('-');
   }
 
+  // "i" is the English first-person pronoun only. In Polish, Italian, Croatian
+  // and Czech it is the word "and", so the fix is gated on the page language.
   function caseFixPronounI(token) {
+    const lang = caseLocale();
+    if (lang && !/^en(-|$)/i.test(lang)) return token;
     return /^i(['’](m|ve|ll|d))?$/i.test(token) ? 'I' + token.slice(1) : token;
   }
 
