@@ -169,6 +169,44 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<!-- MOON PHASE TODAY -->
+<section class="mood-explainers" id="moon-phase-today" data-moon-phase data-moon-names="[&quot;新月&quot;, &quot;三日月（満ちゆく）&quot;, &quot;上弦の月&quot;, &quot;十三夜月&quot;, &quot;満月&quot;, &quot;十八夜月&quot;, &quot;下弦の月&quot;, &quot;有明の月&quot;]" data-moon-template="{name}・周期29.5日の{day}日目・約{pct}%が輝いています">
+  <span class="article-section-label">今日の月</span>
+  <h2>現在の月の満ち欠け絵文字</h2>
+  <p>この表示は、あなたの日付をもとにブラウザ内で月相を計算します。既知の新月からの経過時間を、平均朔望月の29.53日で割って求めます。実際の月はこの平均より最大で約18時間進んだり遅れたりするため、表示される月相と正確な月相の差は1日以内です。</p>
+  <div class="mood-explainer flag-grid-section" data-moon-readout hidden>
+    <h3 data-moon-date>今日</h3>
+    <div class="flag-grid-display" data-moon-emoji></div>
+    <p data-moon-detail></p>
+    <div class="format-selector">
+      <div class="format-selector-label">お住まいの半球</div>
+      <div class="format-tabs" role="group" aria-label="半球">
+        <button type="button" class="format-tab active" data-moon-hemi="north" aria-pressed="true">北半球</button>
+        <button type="button" class="format-tab" data-moon-hemi="south" aria-pressed="false">南半球</button>
+      </div>
+    </div>
+    <button type="button" class="copy-collection-btn" data-moon-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> 月の絵文字をコピー</button>
+  </div>
+  <p>月の絵文字は、北半球から見た月の形で描かれています。赤道より南では光っている側が左右反対になるため、満ちていく三日月は🌘のように見えます。「南半球」を選ぶと、あなたの空に合う絵文字に切り替わります。端末のタイムゾーンが赤道より南にある場合は、最初から南半球で表示します。</p>
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead><tr><th>月相</th><th>北半球</th><th>南半球</th><th>月齢（日）</th></tr></thead>
+      <tbody>
+        <tr data-moon-row="0"><td>新月</td><td>🌑</td><td>🌑</td><td>27.7〜29.5、0〜1.8</td></tr>
+        <tr data-moon-row="1"><td>三日月（満ちゆく）</td><td>🌒</td><td>🌘</td><td>1.8〜5.5</td></tr>
+        <tr data-moon-row="2"><td>上弦の月</td><td>🌓</td><td>🌗</td><td>5.5〜9.2</td></tr>
+        <tr data-moon-row="3"><td>十三夜月</td><td>🌔</td><td>🌖</td><td>9.2〜12.9</td></tr>
+        <tr data-moon-row="4"><td>満月</td><td>🌕</td><td>🌕</td><td>12.9〜16.6</td></tr>
+        <tr data-moon-row="5"><td>十八夜月</td><td>🌖</td><td>🌔</td><td>16.6〜20.3</td></tr>
+        <tr data-moon-row="6"><td>下弦の月</td><td>🌗</td><td>🌓</td><td>20.3〜24.0</td></tr>
+        <tr data-moon-row="7"><td>有明の月</td><td>🌘</td><td>🌒</td><td>24.0〜27.7</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- SECTION 1 -->
 <section class="mood-explainers" id="moon-phases">
   <span class="article-section-label">月の満ち欠け</span>
@@ -490,6 +528,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/js/share/share-core.js" defer></script>
 <script src="/js/saved/saved-items.js" defer></script>
 <script src="/symbol-explorer.js" defer></script>
+<script src="/js/moon/moon-phase.js" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
