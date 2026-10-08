@@ -169,6 +169,44 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<!-- MOON PHASE TODAY -->
+<section class="mood-explainers" id="moon-phase-today" data-moon-phase data-moon-names="[&quot;New Moon&quot;, &quot;Waxing Crescent Moon&quot;, &quot;First Quarter Moon&quot;, &quot;Waxing Gibbous Moon&quot;, &quot;Full Moon&quot;, &quot;Waning Gibbous Moon&quot;, &quot;Last Quarter Moon&quot;, &quot;Waning Crescent Moon&quot;]" data-moon-template="{name}, day {day} of the 29.5-day cycle, about {pct}% lit">
+  <span class="article-section-label">Moon Phase Today</span>
+  <h2>Current Moon Phase Emoji</h2>
+  <p>This readout works out the Moon&#39;s phase for your own date, in your browser: it counts the time since a known new moon and divides it by the average lunar cycle of 29.53 days. The real Moon runs up to about 18 hours ahead of or behind that average, so the phase shown is within a day of the exact one.</p>
+  <div class="mood-explainer flag-grid-section" data-moon-readout hidden>
+    <h3 data-moon-date>Today</h3>
+    <div class="flag-grid-display" data-moon-emoji></div>
+    <p data-moon-detail></p>
+    <div class="format-selector">
+      <div class="format-selector-label">Your hemisphere</div>
+      <div class="format-tabs" role="group" aria-label="Hemisphere">
+        <button type="button" class="format-tab active" data-moon-hemi="north" aria-pressed="true">Northern</button>
+        <button type="button" class="format-tab" data-moon-hemi="south" aria-pressed="false">Southern</button>
+      </div>
+    </div>
+    <button type="button" class="copy-collection-btn" data-moon-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy moon emoji</button>
+  </div>
+  <p>Moon emoji are drawn the way the Moon looks from the Northern Hemisphere. South of the equator the lit side is reversed, so a waxing crescent looks like 🌘 there. Choose Southern and the readout switches to the emoji that matches your sky. It starts on Southern when your device&#39;s time zone is south of the equator.</p>
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Phase</th><th>Northern Hemisphere</th><th>Southern Hemisphere</th><th>Moon age (days)</th></tr></thead>
+      <tbody>
+        <tr data-moon-row="0"><td>New Moon</td><td>🌑</td><td>🌑</td><td>27.7 to 29.5 and 0 to 1.8</td></tr>
+        <tr data-moon-row="1"><td>Waxing Crescent Moon</td><td>🌒</td><td>🌘</td><td>1.8 to 5.5</td></tr>
+        <tr data-moon-row="2"><td>First Quarter Moon</td><td>🌓</td><td>🌗</td><td>5.5 to 9.2</td></tr>
+        <tr data-moon-row="3"><td>Waxing Gibbous Moon</td><td>🌔</td><td>🌖</td><td>9.2 to 12.9</td></tr>
+        <tr data-moon-row="4"><td>Full Moon</td><td>🌕</td><td>🌕</td><td>12.9 to 16.6</td></tr>
+        <tr data-moon-row="5"><td>Waning Gibbous Moon</td><td>🌖</td><td>🌔</td><td>16.6 to 20.3</td></tr>
+        <tr data-moon-row="6"><td>Last Quarter Moon</td><td>🌗</td><td>🌓</td><td>20.3 to 24.0</td></tr>
+        <tr data-moon-row="7"><td>Waning Crescent Moon</td><td>🌘</td><td>🌒</td><td>24.0 to 27.7</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- SECTION 1 -->
 <section class="mood-explainers" id="moon-phases">
   <span class="article-section-label">Moon Phases</span>
@@ -498,6 +536,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/js/share/share-core.js" defer></script>
 <script src="/js/saved/saved-items.js" defer></script>
 <script src="/symbol-explorer.js" defer></script>
+<script src="/js/moon/moon-phase.js" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";

@@ -202,6 +202,44 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<!-- MOON PHASE TODAY -->
+<section class="mood-explainers" id="moon-phase-today" data-moon-phase data-moon-names="[&quot;Nouvelle lune&quot;, &quot;Premier croissant&quot;, &quot;Premier quartier&quot;, &quot;Lune gibbeuse croissante&quot;, &quot;Pleine lune&quot;, &quot;Lune gibbeuse décroissante&quot;, &quot;Dernier quartier&quot;, &quot;Dernier croissant&quot;]" data-moon-template="{name}, jour {day} du cycle de 29,5 jours, éclairée à environ {pct} %">
+  <span class="article-section-label">Phase de la lune aujourd&#39;hui</span>
+  <h2>Emoji de la phase actuelle de la lune</h2>
+  <p>Cet encadré calcule la phase de la Lune pour votre propre date, directement dans le navigateur : il compte le temps écoulé depuis une nouvelle lune connue et le divise par le cycle lunaire moyen de 29,53 jours. La vraie Lune avance ou retarde jusqu&#39;à environ 18 heures sur cette moyenne, donc la phase affichée reste à moins d&#39;un jour de la phase exacte.</p>
+  <div class="mood-explainer flag-grid-section" data-moon-readout hidden>
+    <h3 data-moon-date>Aujourd&#39;hui</h3>
+    <div class="flag-grid-display" data-moon-emoji></div>
+    <p data-moon-detail></p>
+    <div class="format-selector">
+      <div class="format-selector-label">Votre hémisphère</div>
+      <div class="format-tabs" role="group" aria-label="Hémisphère">
+        <button type="button" class="format-tab active" data-moon-hemi="north" aria-pressed="true">Nord</button>
+        <button type="button" class="format-tab" data-moon-hemi="south" aria-pressed="false">Sud</button>
+      </div>
+    </div>
+    <button type="button" class="copy-collection-btn" data-moon-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copier l&#39;emoji de la lune</button>
+  </div>
+  <p>Les emojis de lune montrent la Lune telle qu&#39;on la voit depuis l&#39;hémisphère nord. Au sud de l&#39;équateur, le côté éclairé est inversé : un premier croissant y ressemble à 🌘. Choisissez Sud et l&#39;encadré passe à l&#39;emoji qui correspond à votre ciel. Il démarre sur Sud quand le fuseau horaire de votre appareil est au sud de l&#39;équateur.</p>
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Phase</th><th>Hémisphère nord</th><th>Hémisphère sud</th><th>Âge de la Lune (jours)</th></tr></thead>
+      <tbody>
+        <tr data-moon-row="0"><td>Nouvelle lune</td><td>🌑</td><td>🌑</td><td>27,7 à 29,5 et 0 à 1,8</td></tr>
+        <tr data-moon-row="1"><td>Premier croissant</td><td>🌒</td><td>🌘</td><td>1,8 à 5,5</td></tr>
+        <tr data-moon-row="2"><td>Premier quartier</td><td>🌓</td><td>🌗</td><td>5,5 à 9,2</td></tr>
+        <tr data-moon-row="3"><td>Lune gibbeuse croissante</td><td>🌔</td><td>🌖</td><td>9,2 à 12,9</td></tr>
+        <tr data-moon-row="4"><td>Pleine lune</td><td>🌕</td><td>🌕</td><td>12,9 à 16,6</td></tr>
+        <tr data-moon-row="5"><td>Lune gibbeuse décroissante</td><td>🌖</td><td>🌔</td><td>16,6 à 20,3</td></tr>
+        <tr data-moon-row="6"><td>Dernier quartier</td><td>🌗</td><td>🌓</td><td>20,3 à 24,0</td></tr>
+        <tr data-moon-row="7"><td>Dernier croissant</td><td>🌘</td><td>🌒</td><td>24,0 à 27,7</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="mood-explainers" id="phases">
   <span class="article-section-label">Phases de la lune</span>
   <h2>Emojis des phases de la lune</h2>
@@ -550,6 +588,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/js/share/share-core.js" defer></script>
 <script src="/js/saved/saved-items.js" defer></script>
 <script src="/symbol-explorer.js"></script>
+<script src="/js/moon/moon-phase.js" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
