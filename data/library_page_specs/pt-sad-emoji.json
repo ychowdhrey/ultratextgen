@@ -89,6 +89,82 @@
       ]
     },
     {
+      "id": "grief-mourning",
+      "label": "Emoji de Luto e Condolências",
+      "h2": "Emoji de Luto e Condolências",
+      "intro": "Os símbolos usados em mensagens de condolências e publicações em memória de alguém. 🕯️ representa a lembrança, 🕊️ a paz, 🖤 o luto, 🤍 um apoio discreto e 💐 as flores que você levaria.",
+      "symbols": [
+        {
+          "char": "🕯️",
+          "label": "Vela"
+        },
+        {
+          "char": "🕊️",
+          "label": "Pomba"
+        },
+        {
+          "char": "🖤",
+          "label": "Coração Preto"
+        },
+        {
+          "char": "🤍",
+          "label": "Coração Branco"
+        },
+        {
+          "char": "🥀",
+          "label": "Flor Murcha"
+        },
+        {
+          "char": "💐",
+          "label": "Buquê"
+        },
+        {
+          "char": "🪦",
+          "label": "Lápide"
+        },
+        {
+          "char": "❤️‍🩹",
+          "label": "Coração Remendado"
+        }
+      ]
+    },
+    {
+      "id": "condolence-combos",
+      "label": "Combos de Emoji para Condolências e Homenagens",
+      "h2": "Combos de Emoji para Condolências e Homenagens",
+      "intro": "Sequências curtas para fechar uma mensagem de apoio ou legendar a foto de uma homenagem. Numa mensagem para quem está de luto, 🕊️ e 🤍 soam mais suaves que 🪦, que combina mais com uma homenagem pública.",
+      "symbols": [
+        {
+          "char": "🕯️🕊️🤍",
+          "label": "Lembrança"
+        },
+        {
+          "char": "🕊️🤍",
+          "label": "Descanse em Paz"
+        },
+        {
+          "char": "🖤🥀🕯️",
+          "label": "Luto"
+        },
+        {
+          "char": "💐🤍",
+          "label": "Flores de Condolência"
+        },
+        {
+          "char": "🙏🤍",
+          "label": "Pensando em Você"
+        },
+        {
+          "char": "❤️‍🩹🤍",
+          "label": "Cura"
+        },
+        {
+          "char": "🪦🥀🕯️",
+          "label": "Homenagem"
+        }
+      ]
+    },
+    {
       "id": "drained",
       "label": "Rostos Decepcionados e Esgotados",
       "h2": "Rostos Decepcionados e Esgotados",

@@ -214,6 +214,54 @@
           "label": "Aşağı Beyaz Üçgen"
         }
       ]
+    },
+    {
+      "id": "one-line-art",
+      "label": "Tek Satır",
+      "h2": "Tek Satırlık ASCII Sanatı",
+      "intro": "Tek satıra sığan parçalar. Çok satırlı bir parçanın kayacağı ya da boşluklarını kaybedeceği sohbet, yorum veya durum alanlarına temiz yapışırlar. Bazıları başka alfabelerden harf ödünç alır (kılıcın ucu Arapça bir harftir), o yazı tipi olmayan biri orada bir kutu görür.",
+      "symbols": [
+        {
+          "char": "▬▬ι═══════ﺤ",
+          "label": "Kılıç"
+        },
+        {
+          "char": "><((((º>",
+          "label": "Balık"
+        },
+        {
+          "char": "<コ:彡",
+          "label": "Mürekkep Balığı"
+        },
+        {
+          "char": "@}->--",
+          "label": "Gül"
+        },
+        {
+          "char": "~(˘▾˘~)",
+          "label": "Dans"
+        },
+        {
+          "char": "┬─┬ノ( º _ ºノ)",
+          "label": "Masayı Geri Koy"
+        },
+        {
+          "char": "ಠ_ಠ",
+          "label": "Onaylamayan Bakış"
+        },
+        {
+          "char": "ᕦ(ò_óˇ)ᕤ",
+          "label": "Kas Gösterisi"
+        },
+        {
+          "char": "(•_•) ( •_•)>⌐■-■ (⌐■_■)",
+          "label": "Deal With It"
+        },
+        {
+          "char": "(づ｡◕‿‿◕｡)づ",
+          "label": "Sarılma"
+        }
+      ]
     }
   ],
   "collection_section": {

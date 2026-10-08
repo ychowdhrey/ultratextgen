@@ -214,6 +214,54 @@
           "label": "Triângulo Branco para Baixo"
         }
       ]
+    },
+    {
+      "id": "one-line-art",
+      "label": "Uma Linha",
+      "h2": "Arte ASCII de Uma Linha",
+      "intro": "Peças que cabem numa única linha, então colam direitinho em um chat, comentário ou status onde uma peça de várias linhas quebraria ou perderia o espaçamento. Algumas usam letras de outros alfabetos (a ponta da espada é uma letra árabe), e quem não tem essa fonte vê um quadradinho no lugar.",
+      "symbols": [
+        {
+          "char": "▬▬ι═══════ﺤ",
+          "label": "Espada"
+        },
+        {
+          "char": "><((((º>",
+          "label": "Peixe"
+        },
+        {
+          "char": "<コ:彡",
+          "label": "Lula"
+        },
+        {
+          "char": "@}->--",
+          "label": "Rosa"
+        },
+        {
+          "char": "~(˘▾˘~)",
+          "label": "Dançando"
+        },
+        {
+          "char": "┬─┬ノ( º _ ºノ)",
+          "label": "Mesa de Volta"
+        },
+        {
+          "char": "ಠ_ಠ",
+          "label": "Olhar de Desaprovação"
+        },
+        {
+          "char": "ᕦ(ò_óˇ)ᕤ",
+          "label": "Mostrando o Muque"
+        },
+        {
+          "char": "(•_•) ( •_•)>⌐■-■ (⌐■_■)",
+          "label": "Deal With It"
+        },
+        {
+          "char": "(づ｡◕‿‿◕｡)づ",
+          "label": "Abraço"
+        }
+      ]
     }
   ],
   "collection_section": {

@@ -214,6 +214,54 @@
           "label": "White Down-Pointing Triangle"
         }
       ]
+    },
+    {
+      "id": "one-line-art",
+      "label": "One-Line Art",
+      "h2": "One-Line ASCII Art",
+      "intro": "Pieces that fit on a single line, so they paste cleanly into a chat, a comment or a status where a multi-line piece would wrap or lose its spacing. A few borrow letters from other scripts (the sword's tip is an Arabic letter), so a reader without that font sees a box in its place.",
+      "symbols": [
+        {
+          "char": "▬▬ι═══════ﺤ",
+          "label": "Sword"
+        },
+        {
+          "char": "><((((º>",
+          "label": "Fish"
+        },
+        {
+          "char": "<コ:彡",
+          "label": "Squid"
+        },
+        {
+          "char": "@}->--",
+          "label": "Rose"
+        },
+        {
+          "char": "~(˘▾˘~)",
+          "label": "Dancing"
+        },
+        {
+          "char": "┬─┬ノ( º _ ºノ)",
+          "label": "Table Put Back"
+        },
+        {
+          "char": "ಠ_ಠ",
+          "label": "Look of Disapproval"
+        },
+        {
+          "char": "ᕦ(ò_óˇ)ᕤ",
+          "label": "Flexing"
+        },
+        {
+          "char": "(•_•) ( •_•)>⌐■-■ (⌐■_■)",
+          "label": "Deal With It"
+        },
+        {
+          "char": "(づ｡◕‿‿◕｡)づ",
+          "label": "Hug"
+        }
+      ]
     }
   ],
   "collection_section": {

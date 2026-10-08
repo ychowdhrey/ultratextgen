@@ -89,6 +89,82 @@
       ]
     },
     {
+      "id": "grief-mourning",
+      "label": "Emoji de Duelo y Luto",
+      "h2": "Emoji de Duelo y Luto",
+      "intro": "Los símbolos que se usan en mensajes de pésame y publicaciones en memoria de alguien. 🕯️ significa recuerdo, 🕊️ paz, 🖤 luto, 🤍 apoyo sereno y 💐 las flores que llevarías.",
+      "symbols": [
+        {
+          "char": "🕯️",
+          "label": "Vela"
+        },
+        {
+          "char": "🕊️",
+          "label": "Paloma"
+        },
+        {
+          "char": "🖤",
+          "label": "Corazón Negro"
+        },
+        {
+          "char": "🤍",
+          "label": "Corazón Blanco"
+        },
+        {
+          "char": "🥀",
+          "label": "Flor Marchita"
+        },
+        {
+          "char": "💐",
+          "label": "Ramo de Flores"
+        },
+        {
+          "char": "🪦",
+          "label": "Lápida"
+        },
+        {
+          "char": "❤️‍🩹",
+          "label": "Corazón Vendado"
+        }
+      ]
+    },
+    {
+      "id": "condolence-combos",
+      "label": "Combos de Emoji para Pésame y Homenajes",
+      "h2": "Combos de Emoji para Pésame y Homenajes",
+      "intro": "Combinaciones cortas para cerrar un mensaje de condolencia o acompañar la foto de un homenaje. En un mensaje a alguien que está de duelo, 🕊️ y 🤍 suenan más suaves que 🪦, que encaja mejor en un homenaje público.",
+      "symbols": [
+        {
+          "char": "🕯️🕊️🤍",
+          "label": "Recuerdo"
+        },
+        {
+          "char": "🕊️🤍",
+          "label": "Descanse en Paz"
+        },
+        {
+          "char": "🖤🥀🕯️",
+          "label": "Luto"
+        },
+        {
+          "char": "💐🤍",
+          "label": "Flores de Condolencia"
+        },
+        {
+          "char": "🙏🤍",
+          "label": "Pienso en Ti"
+        },
+        {
+          "char": "❤️‍🩹🤍",
+          "label": "Sanación"
+        },
+        {
+          "char": "🪦🥀🕯️",
+          "label": "Homenaje"
+        }
+      ]
+    },
+    {
       "id": "drained",
       "label": "Caras Decepcionadas y Agotadas",
       "h2": "Caras Decepcionadas y Agotadas",

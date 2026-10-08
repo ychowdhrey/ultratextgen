@@ -212,6 +212,54 @@
      "label": "Leeres Dreieck (unten)"
     }
    ]
+  },
+  {
+   "id": "one-line-art",
+   "label": "Einzeiler",
+   "h2": "Einzeilige ASCII-Kunst",
+   "intro": "Stücke, die in eine einzige Zeile passen. Sie lassen sich sauber in Chats, Kommentare oder Statusmeldungen einfügen, wo ein mehrzeiliges Stück umbrechen oder seine Abstände verlieren würde. Einige leihen sich Buchstaben aus anderen Schriften (die Schwertspitze ist ein arabischer Buchstabe), und wem diese Schrift fehlt, sieht an der Stelle ein Kästchen.",
+   "symbols": [
+    {
+     "char": "▬▬ι═══════ﺤ",
+     "label": "Schwert"
+    },
+    {
+     "char": "><((((º>",
+     "label": "Fisch"
+    },
+    {
+     "char": "<コ:彡",
+     "label": "Tintenfisch"
+    },
+    {
+     "char": "@}->--",
+     "label": "Rose"
+    },
+    {
+     "char": "~(˘▾˘~)",
+     "label": "Tanzen"
+    },
+    {
+     "char": "┬─┬ノ( º _ ºノ)",
+     "label": "Tisch zurückstellen"
+    },
+    {
+     "char": "ಠ_ಠ",
+     "label": "Missbilligender Blick"
+    },
+    {
+     "char": "ᕦ(ò_óˇ)ᕤ",
+     "label": "Muskeln zeigen"
+    },
+    {
+     "char": "(•_•) ( •_•)>⌐■-■ (⌐■_■)",
+     "label": "Deal With It"
+    },
+    {
+     "char": "(づ｡◕‿‿◕｡)づ",
+     "label": "Umarmung"
+    }
+   ]
   }
  ],
  "collection_section": {
