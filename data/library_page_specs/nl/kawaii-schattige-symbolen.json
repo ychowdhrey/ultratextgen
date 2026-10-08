@@ -186,6 +186,34 @@
       ]
     },
     {
+      "id": "wing-symbols",
+      "label": "Vleugelsymbolen",
+      "h2": "Vleugelsymbolen voor namen",
+      "intro": "Vleugels zet je aan beide kanten van een naam. ༺ en ༻ zijn Tibetaanse tekens, de bredere ꧁ en ꧂ Javaanse ornamenten; in gamenamen worden ze vaak gecombineerd als ꧁༺ Naam ༻꧂. 🪽 is de enige echte vleugel-emoji: die kwam met Unicode 15.0 in 2022, dus een telefoon zonder bijgewerkte emoji toont een leeg vakje, terwijl ༺ ༻ (Unicode, 1996) en ꧁ ꧂ (2009) oudere teksttekens zijn. De hartvleugels ʚ en ɞ staan hierboven bij de haakjes.",
+      "symbols": [
+        {
+          "char": "🪽",
+          "label": "Vleugel"
+        },
+        {
+          "char": "༺",
+          "label": "Linkervleugel (Tibetaans)"
+        },
+        {
+          "char": "༻",
+          "label": "Rechtervleugel (Tibetaans)"
+        },
+        {
+          "char": "꧁",
+          "label": "Linkervleugel (Javaans)"
+        },
+        {
+          "char": "꧂",
+          "label": "Rechtervleugel (Javaans)"
+        }
+      ]
+    },
+    {
       "id": "decorative-marks-kawaii",
       "label": "Decoratieve tekens",
       "h2": "Decoratieve tekens",
