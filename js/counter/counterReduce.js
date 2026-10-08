@@ -21,6 +21,8 @@
      .suggest(text, limitId)  -> [{ id, label, hint, result, saved }]
      .trimToFit(text, limitId, opts) -> string
      .inspect(text)         -> { invisible, nonGsm, styled, combining }
+     .listHidden(text)      -> [{ cp, code, name, kind, index, line, col }]
+     .cleanHidden(text)     -> text with odd spaces normalised, the rest removed
    ========================================================== */
 (function () {
   "use strict";
@@ -242,6 +244,105 @@
     return acc + (acc && suffix ? suffix : "");
   }
 
+  /* ---------- hidden-character list ----------
+     The inspect line says HOW MANY invisible characters a text holds. This
+     says WHICH ones and WHERE, because the people who search for it are
+     debugging: a zero-width space that broke their code, a narrow no-break
+     space a chat model wrote instead of a space, a CHAR(160) that makes an
+     Excel lookup miss. Three kinds, because they need different fixes:
+       space     — a non-standard space; cleaned to a normal space
+       invisible — renders as nothing; cleaned by removing it
+       direction — a bidi control; cleaned by removing it
+     A zero-width joiner between two emoji is part of the emoji (family,
+     profession sequences) and is never listed or removed. */
+  const HIDDEN = {
+    0x00A0: ["No-Break Space", "space"],
+    0x00AD: ["Soft Hyphen", "invisible"],
+    0x034F: ["Combining Grapheme Joiner", "invisible"],
+    0x115F: ["Hangul Choseong Filler", "invisible"],
+    0x1160: ["Hangul Jungseong Filler", "invisible"],
+    0x17B4: ["Khmer Vowel Inherent Aq", "invisible"],
+    0x17B5: ["Khmer Vowel Inherent Aa", "invisible"],
+    0x180E: ["Mongolian Vowel Separator", "invisible"],
+    0x2000: ["En Quad", "space"],
+    0x2001: ["Em Quad", "space"],
+    0x2002: ["En Space", "space"],
+    0x2003: ["Em Space", "space"],
+    0x2004: ["Three-Per-Em Space", "space"],
+    0x2005: ["Four-Per-Em Space", "space"],
+    0x2006: ["Six-Per-Em Space", "space"],
+    0x2007: ["Figure Space", "space"],
+    0x2008: ["Punctuation Space", "space"],
+    0x2009: ["Thin Space", "space"],
+    0x200A: ["Hair Space", "space"],
+    0x200B: ["Zero Width Space", "invisible"],
+    0x200C: ["Zero Width Non-Joiner", "invisible"],
+    0x200D: ["Zero Width Joiner", "invisible"],
+    0x200E: ["Left-to-Right Mark", "direction"],
+    0x200F: ["Right-to-Left Mark", "direction"],
+    0x202A: ["Left-to-Right Embedding", "direction"],
+    0x202B: ["Right-to-Left Embedding", "direction"],
+    0x202C: ["Pop Directional Formatting", "direction"],
+    0x202D: ["Left-to-Right Override", "direction"],
+    0x202E: ["Right-to-Left Override", "direction"],
+    0x202F: ["Narrow No-Break Space", "space"],
+    0x205F: ["Medium Mathematical Space", "space"],
+    0x2060: ["Word Joiner", "invisible"],
+    0x2061: ["Function Application", "invisible"],
+    0x2062: ["Invisible Times", "invisible"],
+    0x2063: ["Invisible Separator", "invisible"],
+    0x2064: ["Invisible Plus", "invisible"],
+    0x2066: ["Left-to-Right Isolate", "direction"],
+    0x2067: ["Right-to-Left Isolate", "direction"],
+    0x2068: ["First Strong Isolate", "direction"],
+    0x2069: ["Pop Directional Isolate", "direction"],
+    0x2800: ["Braille Pattern Blank", "invisible"],
+    0x3000: ["Ideographic Space", "space"],
+    0x3164: ["Hangul Filler", "invisible"],
+    0xFEFF: ["Zero Width No-Break Space (BOM)", "invisible"],
+    0xFFA0: ["Halfwidth Hangul Filler", "invisible"]
+  };
+  const PICTO_RE = /\p{Extended_Pictographic}/u;
+
+  function hexCp(cp) {
+    return "U+" + cp.toString(16).toUpperCase().padStart(4, "0");
+  }
+
+  /** Every hidden character, in order: { cp, code, name, kind, index, line, col }.
+      index/col count code points from 1, the way an editor's column does. */
+  function listHidden(text) {
+    const chars = Array.from(text || "");
+    const out = [];
+    let line = 1, col = 0;
+    for (let i = 0; i < chars.length; i++) {
+      const ch = chars[i];
+      if (ch === "\n") { line++; col = 0; continue; }
+      col++;
+      const cp = ch.codePointAt(0);
+      const hit = HIDDEN[cp];
+      if (!hit) continue;
+      if (cp === 0x200D && i > 0 && i < chars.length - 1 &&
+          PICTO_RE.test(chars[i - 1]) && PICTO_RE.test(chars[i + 1])) continue;
+      out.push({ cp: cp, code: hexCp(cp), name: hit[0], kind: hit[1], index: i + 1, line: line, col: col });
+    }
+    return out;
+  }
+
+  /** The same text with every listed character fixed: odd spaces become a
+      normal space, everything else is removed. Emoji joiners are kept. */
+  function cleanHidden(text) {
+    const chars = Array.from(text || "");
+    const hits = {};
+    listHidden(text).forEach(function (h) { hits[h.index - 1] = h; });
+    let out = "";
+    for (let i = 0; i < chars.length; i++) {
+      const h = hits[i];
+      if (!h) out += chars[i];
+      else if (h.kind === "space") out += " ";
+    }
+    return out;
+  }
+
   /** What is in this text that the user cannot see but the field counts. */
   function inspect(text) {
     const s = text || "";
@@ -260,5 +361,5 @@
     return { invisible, combining, styled, nonGsm };
   }
 
-  ns.counterReduce = { TRANSFORMS, suggest, trimToFit, inspect, toPlain, gsmSafe };
+  ns.counterReduce = { TRANSFORMS, suggest, trimToFit, inspect, toPlain, gsmSafe, listHidden, cleanHidden };
 })();

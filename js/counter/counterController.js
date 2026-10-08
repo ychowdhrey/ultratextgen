@@ -95,7 +95,15 @@
     fitsHeading: "Where else this text fits",
     inspectStyled: "{n} styled Unicode letters — they cost 2 each on X and in many app fields.",
     inspectInvisible: "{n} invisible characters that still count.",
-    inspectCombining: "{n} stacked diacritic marks."
+    inspectCombining: "{n} stacked diacritic marks.",
+    /* The hidden-character list. Only pages that carry #counterHidden show
+       it, so a locale page without translated strings never renders it. */
+    hiddenHeading: "{n} hidden characters in your text",
+    hiddenAt: "line {line}, character {col}",
+    hiddenKinds: { space: "odd space", invisible: "invisible", direction: "direction mark" },
+    hiddenMore: "+{n} more",
+    hiddenClean: "Clean them in the box",
+    hiddenCopyClean: "Copy cleaned text"
   }, window.UTG_COUNTER_I18N || {});
 
   function fmt(t, vars) {
@@ -146,6 +154,7 @@
     const inspectBar = document.getElementById("counterInspect");
     const fitGrid = document.getElementById("counterFitGrid");
     const foldBar = document.getElementById("counterFold");
+    const hiddenBox = document.getElementById("counterHidden");
 
     const ns = window.UltraTextGen || {};
     const counts = ns.counterCounts || null;
@@ -308,6 +317,51 @@
       inspectBar.hidden = bits.length === 0;
     }
 
+    /* The same diagnosis, itemised: which hidden character, where, and a
+       fix. Someone pasting text that broke code, a spreadsheet lookup or a
+       form needs the location, not just the count. */
+    const HIDDEN_SHOWN = 30;
+    function renderHidden() {
+      if (!hiddenBox || !reduce || !reduce.listHidden) return;
+      const value = input.value;
+      const hits = value ? reduce.listHidden(value) : [];
+      if (!hits.length) { hiddenBox.hidden = true; hiddenBox.textContent = ""; return; }
+      hiddenBox.hidden = false;
+      hiddenBox.textContent = "";
+      hiddenBox.appendChild(el("p", "counter-hidden-head", fmt(I18N.hiddenHeading, { n: hits.length })));
+      const list = el("ol", "counter-hidden-list");
+      hits.slice(0, HIDDEN_SHOWN).forEach((h) => {
+        const li = el("li", "counter-hidden-item");
+        li.appendChild(el("code", "counter-hidden-code", h.code));
+        li.appendChild(el("span", "counter-hidden-name", h.name));
+        li.appendChild(el("span", "counter-hidden-kind is-" + h.kind, (I18N.hiddenKinds && I18N.hiddenKinds[h.kind]) || h.kind));
+        li.appendChild(el("span", "counter-hidden-at", fmt(I18N.hiddenAt, { line: h.line, col: h.col })));
+        list.appendChild(li);
+      });
+      hiddenBox.appendChild(list);
+      if (hits.length > HIDDEN_SHOWN) {
+        hiddenBox.appendChild(el("p", "counter-hidden-more", fmt(I18N.hiddenMore, { n: hits.length - HIDDEN_SHOWN })));
+      }
+      const actions = el("div", "cc-fix-actions");
+      const cleanBtn = el("button", "cc-fix-btn", I18N.hiddenClean);
+      cleanBtn.type = "button";
+      cleanBtn.addEventListener("click", () => applyValue(reduce.cleanHidden(input.value)));
+      const copyClean = el("button", "cc-fix-btn", I18N.hiddenCopyClean);
+      copyClean.type = "button";
+      copyClean.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(reduce.cleanHidden(input.value));
+          copyClean.textContent = I18N.copied;
+          setTimeout(() => { copyClean.textContent = I18N.hiddenCopyClean; }, 1500);
+        } catch (err) {
+          console.error("Copy failed:", err);
+        }
+      });
+      actions.appendChild(cleanBtn);
+      actions.appendChild(copyClean);
+      hiddenBox.appendChild(actions);
+    }
+
     /* ---------- the live count that sits with the box ---------- */
     function renderLive() {
       if (!liveCount || !rules) return;
@@ -422,6 +476,7 @@
       renderStats();
       renderLive();
       renderInspect();
+      renderHidden();
       renderFold();
       renderFix();
       renderFitGrid();
