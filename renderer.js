@@ -492,6 +492,38 @@ function renderMap(text, style) {
     return /\p{Lu}/u.test(letters.slice(1)); // internal caps: McDonald, iPhone
   }
 
+  // Caps-Lock text: it has capitals and not one lowercase letter, so an
+  // all-caps word in it is shouting, not an acronym. An acronym is only
+  // readable as one against lowercase neighbours ("the NASA team"). Text that
+  // holds a letter from an uncased script (kana, Hangul, Arabic, ...) is left
+  // alone: Caps Lock does not exist there, so a Latin "AI" next to it is far
+  // more likely an acronym than shouting.
+  function caseIsShouting(text) {
+    return /\p{Lu}/u.test(text) && !/\p{Ll}/u.test(text) && !/\p{Lo}/u.test(text);
+  }
+
+  // Applied by Capitalized, Title and Sentence case: shouting text is
+  // lower-cased first so the per-word rules below see ordinary words.
+  function caseUnshout(text) {
+    return caseIsShouting(text) ? caseLower(text) : text;
+  }
+
+  // Surnames that a lower-cased pass would flatten: mcdavid -> McDavid,
+  // o'brien -> O'Brien. Runs on a word already lower-cased and first-letter
+  // capitalised. Deliberately narrow: Mc needs three more letters with a
+  // vowel among them (so mcg, mcq stay as they are), O' skips o'clock and
+  // o'er. Mac, van, de and the like are not attempted: mac and van are also
+  // ordinary words, and no rule here can tell the two apart.
+  const CASE_O_APOSTROPHE_WORDS = new Set(['clock', 'er']);
+  function caseSurnameFix(seg) {
+    return seg
+      .replace(/^([^\p{L}]*Mc)(\p{L}{3,})/u, (m, head, rest) =>
+        /[aeiouy]/i.test(rest) ? head + caseUpper(rest[0]) + rest.slice(1) : m)
+      .replace(/^([^\p{L}]*O['\u2019])(\p{L}+)/u, (m, head, rest) =>
+        CASE_O_APOSTROPHE_WORDS.has(rest.toLowerCase())
+          ? m : head + caseUpper(rest[0]) + rest.slice(1));
+  }
+
   function caseLowerWord(token) {
     return caseHasIntentionalCasing(token) ? token : caseLower(token);
   }
@@ -505,7 +537,8 @@ function renderMap(text, style) {
 
   function caseCapWord(token) {
     if (caseHasIntentionalCasing(token)) return token;
-    return token.split('-').map(seg => caseCapFirstAlpha(caseLower(seg))).join('-');
+    return token.split('-')
+      .map(seg => caseSurnameFix(caseCapFirstAlpha(caseLower(seg)))).join('-');
   }
 
   function caseFixPronounI(token) {
@@ -646,13 +679,15 @@ function renderMap(text, style) {
 
     // First letter of every word capitalized, no small-word exceptions.
     'case-capitalized': text =>
-      text.split(/(\s+)/).map(w => (w.trim() ? caseCapWord(w) : w)).join(''),
+      caseUnshout(text).split(/(\s+)/).map(w => (w.trim() ? caseCapWord(w) : w)).join(''),
 
     // Title Case: capitalizes major words, lowercases short articles/
-    // conjunctions/prepositions (unless first/last word), always preserves
-    // acronyms and already-intentional internal caps (NASA, iPhone, McDonald).
+    // conjunctions/prepositions (unless first/last word), preserves acronyms
+    // and already-intentional internal caps (NASA, iPhone, McDonald) in text
+    // that also has lowercase letters. Text with no lowercase at all is
+    // Caps-Lock text and is lower-cased first (see caseIsShouting).
     'case-title': text => {
-      const words = text.split(/(\s+)/);
+      const words = caseUnshout(text).split(/(\s+)/);
       const wordIdxs = words.map((w, i) => (w.trim() ? i : -1)).filter(i => i >= 0);
       const first = wordIdxs[0];
       const last = wordIdxs[wordIdxs.length - 1];
@@ -671,10 +706,12 @@ function renderMap(text, style) {
     // standalone pronoun "i" / "i'm" / "i've" / "i'll" / "i'd".
     'case-sentence': text => {
       let capNext = true;
-      return text.split(/(\s+)/).map(w => {
+      return caseUnshout(text).split(/(\s+)/).map(w => {
         if (!w.trim()) return w;
         let out = caseLowerWord(w);
-        if (capNext && !caseHasIntentionalCasing(w)) out = caseCapFirstAlpha(out);
+        if (capNext && !caseHasIntentionalCasing(w)) {
+          out = caseSurnameFix(caseCapFirstAlpha(out));
+        }
         out = caseFixPronounI(out);
         capNext = /[.!?]['")\]]*$/.test(w);
         return out;
