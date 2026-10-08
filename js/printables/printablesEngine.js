@@ -92,6 +92,17 @@
      "istanbul" and pairs "I" with "i" on an alphabet sheet. For every other
      language "en" gives exactly what toUpperCase()/toLowerCase() gave before. */
   const CASE_LOCALE = LANG === "tr" ? "tr" : "en";
+  /* A right-to-left page (an `ar` page sets <html dir="rtl">) passes
+     direction:rtl into every inline SVG, and SVG reads text-anchor "start" as
+     the END of an RTL run. The engine positions words with "start" at a
+     measured x, so each repeat of a word moved left by its own width and the
+     last one fell off the sheet. Sheet geometry is LTR coordinates, so the
+     root class lets style.css hold SVG text to LTR on these pages only. The
+     browser still shapes and orders Arabic inside each run; only the anchor
+     semantics change. LTR pages never get the class. */
+  if (getComputedStyle(document.documentElement).direction === "rtl") {
+    document.documentElement.classList.add("pt-rtl-doc");
+  }
   /* Puzzle grids in French are set in unaccented capitals (É, È, Ê are all E;
      Œ takes two squares), which is how every French crossword and mots mêlés
      is printed. The word-search and crossword modules strip the marks from the
