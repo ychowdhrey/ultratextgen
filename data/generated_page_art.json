@@ -507,6 +507,19 @@
       ],
       "kicker": "LIB",
       "added": "2026-10-06"
+    },
+    "pl-library-emoji-urodzinowe": {
+      "title": "Emoji Urodzinowe",
+      "sub": "Tort, balony, konfetti i toasty do życzeń",
+      "glyphs": [
+        "🎂",
+        "🧁",
+        "🍰",
+        "🕯",
+        "🍬"
+      ],
+      "kicker": "LIB",
+      "added": "2026-10-08"
     }
   }
 }
