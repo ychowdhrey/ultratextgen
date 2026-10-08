@@ -178,6 +178,46 @@
           "label": "Hourglass Not Done"
         }
       ]
+    },
+    {
+      "id": "spinner-frame-sets",
+      "label": "Spinner Frames",
+      "h2": "Text Spinner Frame Sets",
+      "intro": "Each button copies one spinner's full frame sequence, in order. A terminal spinner prints these frames one after another in the same spot, each overwriting the last, so the shape appears to turn. In a bio or caption, paste the whole run or keep a single frame.",
+      "symbols": [
+        {
+          "char": "|/-\\",
+          "label": "Classic ASCII Spinner (4 frames)"
+        },
+        {
+          "char": "⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏",
+          "label": "Braille Dots Spinner (10 frames)"
+        },
+        {
+          "char": "⣾⣽⣻⢿⡿⣟⣯⣷",
+          "label": "Braille Ring Spinner (8 frames)"
+        },
+        {
+          "char": "◐◓◑◒",
+          "label": "Half Circle Spinner (4 frames)"
+        },
+        {
+          "char": "◴◷◶◵",
+          "label": "Quarter Circle Spinner (4 frames)"
+        },
+        {
+          "char": "◰◳◲◱",
+          "label": "Square Quadrant Spinner (4 frames)"
+        },
+        {
+          "char": "←↖↑↗→↘↓↙",
+          "label": "Arrow Spinner (8 frames)"
+        },
+        {
+          "char": "🕐🕑🕒🕓🕔🕕🕖🕗🕘🕙🕚🕛",
+          "label": "Clock Spinner (12 frames)"
+        }
+      ]
     }
   ],
   "collection_section": {

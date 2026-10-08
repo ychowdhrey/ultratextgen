@@ -39,6 +39,21 @@
       ]
     },
     {
+      "id": "sniper-text-art",
+      "label": "Sniper",
+      "h2": "Sniper Rifle Text Art",
+      "intro": "Gamer-tag and chat rifles drawn with box-drawing lines, with the katakana デ standing in for the scope. 🔫 draws as a water pistol on most current platforms, so these text pieces are the way to get a rifle outline. Each button copies the whole piece.",
+      "symbols": [
+        { "char": "▄︻デ══━一", "label": "Sniper Rifle" },
+        { "char": "( -_•)▄︻デ══━一", "label": "Sniper Taking Aim" },
+        { "char": "︻╦╤─", "label": "Compact Rifle" },
+        { "char": "︻デ═一", "label": "Short Rifle" },
+        { "char": "▄︻デ══━一💥", "label": "Rifle Shot" },
+        { "char": "🔫💥🎯", "label": "Shot on Target" },
+        { "char": "🎯🔫", "label": "Taking Aim" }
+      ]
+    },
+    {
       "id": "hammers-tools",
       "label": "Tools",
       "h2": "Hammer & Workshop Tool Emojis",

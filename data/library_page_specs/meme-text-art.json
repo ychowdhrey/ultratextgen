@@ -103,7 +103,7 @@
       "id": "face-builders",
       "label": "Face Parts",
       "h2": "Face-Building Characters",
-      "intro": "The borrowed letters and marks that form famous text faces: disapproval eyes, lenny mouths, and rage flips.",
+      "intro": "The borrowed letters and marks that form famous text faces: disapproval eyes, lenny mouths, and rage flips. ඞ is a Sinhala letter whose outline reads as an Among Us crewmate, which is how it became the \"amogus\" meme.",
       "symbols": [
         {
           "char": "ಠ",
@@ -144,6 +144,10 @@
         {
           "char": "彡",
           "label": "CJK Radical Shan (Motion Lines)"
+        },
+        {
+          "char": "ඞ",
+          "label": "Sinhala Letter Kantaja Naasikyaya (Among Us Crewmate)"
         }
       ]
     },
