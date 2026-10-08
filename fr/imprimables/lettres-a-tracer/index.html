@@ -161,6 +161,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         "@type": "Answer",
         "text": "Oui. Sur les pages françaises, la réglure Seyès est tracée : l'interligne et les lignes verticales aux proportions attendues en classe. Elle est dérivée du rapport entre la bande et la taille des lettres plutôt que fixée en millimètres, pour que réglure et lettres restent cohérentes quel que soit le format de papier."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je imprimer des fiches de chiffres à tracer ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Touchez un chiffre de 0 à 9 à la fin de la rangée pour ouvrir une page entière de ce chiffre à tracer. La fiche d'entraînement sous Imprimer l'alphabet entier en une fois se termine par 0 à 9, et le champ de saisie accepte aussi les chiffres : tapez 1 2 3 4 5 6 7 8 9 10 et imprimez."
+      }
     }
   ]
 }
@@ -205,7 +213,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <!-- Single letter or number (primary) -->
     <section class="bubble-az" aria-labelledby="ptPickHeading">
       <h2 class="bubble-az-heading" id="ptPickHeading">Tracer n'importe quelle lettre de A à Z ou chiffre de 0 à 9</h2>
-      <p class="bubble-az-intro">Touchez une lettre pour l'ouvrir. Vous obtenez une page entière de ce seul caractère à tracer, un grand contour à imprimer seul, et un PNG à télécharger.</p>
+      <p class="bubble-az-intro">Touchez une lettre pour l'ouvrir. Vous obtenez une page entière de ce seul caractère à tracer, un grand contour à imprimer seul, et un PNG à télécharger. Les chiffres de 0 à 9 sont à la fin de la rangée, donc la même page sert aussi à tracer des chiffres.</p>
       <div class="bubble-strip" id="pt-strip" role="tablist" aria-label="Choisir une lettre ou un chiffre à tracer"></div>
       <div class="bubble-letter-panel" id="pt-panel" aria-live="polite"></div>
     </section>
@@ -226,14 +234,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <!-- Custom sheet -->
     <section class="bubble-alphabet" aria-labelledby="ptGenHeading">
       <h2 id="ptGenHeading">Construire une fiche pour les lettres du moment</h2>
-      <p class="bubble-az-intro">La plupart des semaines, un enfant travaille deux ou trois lettres, pas les vingt-six. Tapez seulement celles-là, choisissez l'aide que donne la fiche, et la page se reconstruit au fur et à mesure. Mettez <strong>Lettres</strong> sur <strong>minuscules</strong> pour les minuscules, ou sur <strong>MAJUSCULES</strong> pour les capitales.</p>
+      <p class="bubble-az-intro">La plupart des semaines, un enfant travaille deux ou trois lettres, pas les vingt-six. Tapez seulement celles-là, choisissez l'aide que donne la fiche, et la page se reconstruit au fur et à mesure. Les chiffres fonctionnent pareil : tapez 1 2 3 4 5 et la fiche les prépare à tracer. Mettez <strong>Lettres</strong> sur <strong>minuscules</strong> pour les minuscules, ou sur <strong>MAJUSCULES</strong> pour les capitales.</p>
 
       <div class="pt-studio">
         <div class="pt-studio-controls">
           <div class="pt-field">
-            <label class="pt-field-label" for="pt-gen-input">Lettres à travailler</label>
+            <label class="pt-field-label" for="pt-gen-input">Lettres ou chiffres à travailler</label>
             <div class="input-wrapper">
-              <input type="text" class="main-input pt-gen-input" id="pt-gen-input" placeholder="Tapez les lettres, par ex. b d p" maxlength="42" autocomplete="off">
+              <input type="text" class="main-input pt-gen-input" id="pt-gen-input" placeholder="Tapez des lettres ou des chiffres, par ex. b d p ou 1 2 3" maxlength="42" autocomplete="off">
             </div>
           </div>
 
@@ -397,6 +405,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </button>
         <div class="faq-answer">
           Oui. Sur les pages françaises, la réglure Seyès est tracée : l'interligne et les lignes verticales aux proportions attendues en classe. Elle est dérivée du rapport entre la bande et la taille des lettres plutôt que fixée en millimètres, pour que réglure et lettres restent cohérentes quel que soit le format de papier.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          Puis-je imprimer des fiches de chiffres à tracer ?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="faq-answer">
+          Oui. Touchez un chiffre de 0 à 9 à la fin de la rangée pour ouvrir une page entière de ce chiffre à tracer. La fiche d'entraînement sous <strong>Imprimer l'alphabet entier en une fois</strong> se termine par 0 à 9, et le champ de saisie accepte aussi les chiffres : tapez 1 2 3 4 5 6 7 8 9 10 et imprimez.
         </div>
       </div>
 
