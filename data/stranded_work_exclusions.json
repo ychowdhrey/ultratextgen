@@ -1,4 +1,40 @@
 {
   "_readme": "Branches deliberately left carrying commits that no open PR tracks. Same bar as every other ledger here: entries are discussed decisions, never added to make a check pass. The default fix for a flagged branch is to open a PR from it as it stands. Ships empty.",
-  "_shape": { "origin/claude/example-branch": { "reason": "why this work is abandoned rather than untracked", "date": "YYYY-MM-DD" } }
+  "_shape": { "origin/claude/example-branch": { "reason": "why this work is abandoned rather than untracked", "date": "YYYY-MM-DD" } },
+  "origin/claude/focused-mccarthy-xmeqit": {
+    "reason": "Carries only a merge of main (PR #988); no content of its own. Owner decision 2026-10-08.",
+    "date": "2026-10-08"
+  },
+  "origin/claude/laughing-hawking-ps34ag": {
+    "reason": "Carries only a merge of main (PR #990); no content of its own. Owner decision 2026-10-08.",
+    "date": "2026-10-08"
+  },
+  "origin/claude/deep-agents-utg-vocabulary-9drsiu": {
+    "reason": "Regenerates the public local-language snapshot, which was removed on 2026-08-19 for security (6b6574a0d); must never merge. Owner decision 2026-10-08.",
+    "date": "2026-10-08"
+  },
+  "origin/claude/lexicon-promotion-pass-p4m5uv": {
+    "reason": "Resyncs the public local-language snapshot count; that snapshot was removed on 2026-08-19 for security (6b6574a0d); must never merge. Owner decision 2026-10-08.",
+    "date": "2026-10-08"
+  },
+  "origin/claude/spokes-pages-opportunities-vz17y4": {
+    "reason": "Both pages it adds (not-equal sign, hamsa) are already live on main through other PRs. Owner decision 2026-10-08.",
+    "date": "2026-10-08"
+  },
+  "origin/claude/untranslated-page-gaps-cxta9u": {
+    "reason": "The page it adds (id/tulisan-cuping) is already live on main through another PR. Owner decision 2026-10-08.",
+    "date": "2026-10-08"
+  },
+  "origin/fix-705-tmp": {
+    "reason": "All three Free Fire clan-tag pages it adds are already live on main through other PRs. Owner decision 2026-10-08.",
+    "date": "2026-10-08"
+  },
+  "origin/claude/faqpage-schema-content-fix-gcaa10": {
+    "reason": "A July CI change to validate.yml, rebuilt since; the gating it aimed at is now enforced by run-ci-gates.py. Owner decision 2026-10-08.",
+    "date": "2026-10-08"
+  },
+  "origin/claude/top-pending-lab-opportunities-o3h3oh": {
+    "reason": "July hreflang repairs superseded by the locale-mesh gates; its comment fix is already enforced by check:external-refs on main. Owner decision 2026-10-08.",
+    "date": "2026-10-08"
+  }
 }
