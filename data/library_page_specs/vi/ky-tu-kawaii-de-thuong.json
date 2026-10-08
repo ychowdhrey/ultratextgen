@@ -190,6 +190,34 @@
       ]
     },
     {
+      "id": "wing-symbols",
+      "label": "Ký hiệu cánh",
+      "h2": "Ký Hiệu Cánh Cho Tên",
+      "intro": "Cánh được đặt ở hai bên tên. ༺ và ༻ là dấu của chữ Tây Tạng, còn ꧁ và ꧂ rộng hơn là họa tiết của chữ Java; tên trong game thường ghép chúng thành ꧁༺ Tên ༻꧂. 🪽 là emoji cánh thật sự duy nhất: nó có từ Unicode 15.0 năm 2022, nên điện thoại chưa cập nhật emoji sẽ hiện ô trống, trong khi ༺ ༻ (Unicode, 1996) và ꧁ ꧂ (2009) là ký tự văn bản lâu đời hơn. Cánh trái tim ʚ và ɞ nằm trong phần ngoặc ở trên.",
+      "symbols": [
+        {
+          "char": "🪽",
+          "label": "Cánh"
+        },
+        {
+          "char": "༺",
+          "label": "Cánh trái (Tây Tạng)"
+        },
+        {
+          "char": "༻",
+          "label": "Cánh phải (Tây Tạng)"
+        },
+        {
+          "char": "꧁",
+          "label": "Cánh trái (Java)"
+        },
+        {
+          "char": "꧂",
+          "label": "Cánh phải (Java)"
+        }
+      ]
+    },
+    {
       "id": "decorative-marks-kawaii",
       "label": "Dấu trang trí",
       "h2": "Dấu Trang Trí",

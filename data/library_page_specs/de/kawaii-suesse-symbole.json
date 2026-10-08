@@ -186,6 +186,34 @@
       ]
     },
     {
+      "id": "wing-symbols",
+      "label": "Flügel-Symbole",
+      "h2": "Flügel-Symbole für Namen",
+      "intro": "Flügel stehen links und rechts von einem Namen. ༺ und ༻ sind tibetische Zeichen, die breiteren ꧁ und ꧂ javanische Ornamente; in Spielernamen werden sie oft so kombiniert: ꧁༺ Name ༻꧂. 🪽 ist das einzige echte Flügel-Emoji: Es kam mit Unicode 15.0 im Jahr 2022, deshalb zeigt ein Handy ohne aktuelle Emojis ein leeres Kästchen, während ༺ ༻ (Unicode, 1996) und ꧁ ꧂ (2009) ältere Textzeichen sind. Die Herzflügel ʚ und ɞ findest du oben bei den Klammern.",
+      "symbols": [
+        {
+          "char": "🪽",
+          "label": "Flügel"
+        },
+        {
+          "char": "༺",
+          "label": "Linker Flügel (tibetisch)"
+        },
+        {
+          "char": "༻",
+          "label": "Rechter Flügel (tibetisch)"
+        },
+        {
+          "char": "꧁",
+          "label": "Linker Flügel (javanisch)"
+        },
+        {
+          "char": "꧂",
+          "label": "Rechter Flügel (javanisch)"
+        }
+      ]
+    },
+    {
       "id": "decorative-marks-kawaii",
       "label": "Dekorative Zeichen",
       "h2": "Dekorative Zeichen",
