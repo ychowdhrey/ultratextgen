@@ -8070,16 +8070,28 @@
     return applyCase(CFG.genLetters === true ? lettersOnly(v) : v);
   }
   /* CFG.genLetters -- the builder on /printables/letter-tracing/ practises
-     LETTERS (owner decision 2026-09-22): names belong to name-tracing and
-     words to the handwriting generator. So what is typed is reduced to its
-     letters and set apart one by one -- "bdp" and "b, d, p" both print as
-     b d p, and a name typed here prints as the letters it is made of rather
-     than as a word to write. \p{L} keeps accented letters for any locale page
-     that opts in; nothing else is kept. */
+     LETTERS AND NUMBERS (owner decision 2026-09-22 for letters; numbers added
+     2026-10-08): names belong to name-tracing and words to the handwriting
+     generator. So what is typed is reduced to its letters and numbers and set
+     apart one by one -- "bdp" and "b, d, p" both print as b d p, "1, 2, 3"
+     prints as 1 2 3, and a name typed here prints as the letters it is made
+     of rather than as a word to write. A run of digits stays whole, so 10
+     prints as ten and not as 1 0 (and 12345 is one number, not five). \p{L} keeps accented
+     letters for any locale page that opts in; [0-9] keeps ASCII digits only,
+     because the trace font and the stroke data cover those and no other
+     numeral set. Nothing else is kept. */
   function lettersOnly(v) {
-    let letters;
-    try { letters = String(v).match(/\p{L}/gu); } catch (err) { letters = String(v).match(/[A-Za-z]/g); }
-    return letters && letters.length ? letters.join(" ").slice(0, 42) : GEN_DEMO;
+    let parts;
+    try { parts = String(v).match(/\p{L}|[0-9]+/gu); } catch (err) { parts = String(v).match(/[A-Za-z]|[0-9]+/g); }
+    if (!parts || !parts.length) return GEN_DEMO;
+    // Stop at a whole item rather than cutting a number in half at the cap.
+    let out = "";
+    for (const part of parts) {
+      const next = out ? out + " " + part : part;
+      if (next.length > 42) break;
+      out = next;
+    }
+    return out || String(parts[0]).slice(0, 42);
   }
 
   // Difficulty is one internal source of truth (1..7). The level buttons
