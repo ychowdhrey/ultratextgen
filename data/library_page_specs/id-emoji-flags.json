@@ -85,6 +85,258 @@
       ]
     },
     {
+      "id": "territory-flags",
+      "label": "Wilayah",
+      "h2": "Bendera Wilayah dan Kawasan",
+      "intro": "Unicode juga punya bendera untuk tempat di luar daftar 195 negara: wilayah seberang laut, wilayah dependensi, daerah administratif khusus, dan kawasan dengan kode sendiri, seperti 🇧🇱 Saint Barthélemy, 🇭🇰 Hong Kong, dan 🇽🇰 Kosovo. Beberapa tampil dengan bendera negara lain karena tidak punya bendera sendiri: 🇧🇻 Pulau Bouvet dan 🇸🇯 Svalbard memakai bendera Norwegia, 🇺🇲 Kepulauan Terluar AS memakai bendera Amerika Serikat, dan 🇭🇲 Pulau Heard dan Kepulauan McDonald memakai bendera Australia.",
+      "symbols": [
+        {
+          "char": "🇦🇮",
+          "label": "Anguilla"
+        },
+        {
+          "char": "🇦🇶",
+          "label": "Antarktika"
+        },
+        {
+          "char": "🇦🇼",
+          "label": "Aruba"
+        },
+        {
+          "char": "🇧🇶",
+          "label": "Belanda Karibia"
+        },
+        {
+          "char": "🇧🇲",
+          "label": "Bermuda"
+        },
+        {
+          "char": "🇪🇦",
+          "label": "Ceuta dan Melilla"
+        },
+        {
+          "char": "🇨🇼",
+          "label": "Curaçao"
+        },
+        {
+          "char": "🇩🇬",
+          "label": "Diego Garcia"
+        },
+        {
+          "char": "🇬🇸",
+          "label": "Georgia Selatan dan Kepulauan Sandwich Selatan"
+        },
+        {
+          "char": "🇬🇮",
+          "label": "Gibraltar"
+        },
+        {
+          "char": "🇬🇱",
+          "label": "Greenland"
+        },
+        {
+          "char": "🇬🇵",
+          "label": "Guadeloupe"
+        },
+        {
+          "char": "🇬🇺",
+          "label": "Guam"
+        },
+        {
+          "char": "🇬🇬",
+          "label": "Guernsey"
+        },
+        {
+          "char": "🇬🇫",
+          "label": "Guyana Prancis"
+        },
+        {
+          "char": "🇭🇰",
+          "label": "Hong Kong"
+        },
+        {
+          "char": "🇯🇪",
+          "label": "Jersey"
+        },
+        {
+          "char": "🇳🇨",
+          "label": "Kaledonia Baru"
+        },
+        {
+          "char": "🇦🇽",
+          "label": "Kepulauan Aland"
+        },
+        {
+          "char": "🇮🇨",
+          "label": "Kepulauan Canaria"
+        },
+        {
+          "char": "🇰🇾",
+          "label": "Kepulauan Cayman"
+        },
+        {
+          "char": "🇨🇨",
+          "label": "Kepulauan Cocos (Keeling)"
+        },
+        {
+          "char": "🇨🇰",
+          "label": "Kepulauan Cook"
+        },
+        {
+          "char": "🇫🇰",
+          "label": "Kepulauan Falkland"
+        },
+        {
+          "char": "🇫🇴",
+          "label": "Kepulauan Faroe"
+        },
+        {
+          "char": "🇲🇵",
+          "label": "Kepulauan Mariana Utara"
+        },
+        {
+          "char": "🇳🇫",
+          "label": "Kepulauan Norfolk"
+        },
+        {
+          "char": "🇵🇳",
+          "label": "Kepulauan Pitcairn"
+        },
+        {
+          "char": "🇸🇯",
+          "label": "Kepulauan Svalbard dan Jan Mayen"
+        },
+        {
+          "char": "🇺🇲",
+          "label": "Kepulauan Terluar AS"
+        },
+        {
+          "char": "🇹🇨",
+          "label": "Kepulauan Turks dan Caicos"
+        },
+        {
+          "char": "🇻🇮",
+          "label": "Kepulauan Virgin Amerika Serikat"
+        },
+        {
+          "char": "🇻🇬",
+          "label": "Kepulauan Virgin Britania Raya"
+        },
+        {
+          "char": "🇼🇫",
+          "label": "Kepulauan Wallis dan Futuna"
+        },
+        {
+          "char": "🇽🇰",
+          "label": "Kosovo"
+        },
+        {
+          "char": "🇲🇴",
+          "label": "Makau"
+        },
+        {
+          "char": "🇲🇶",
+          "label": "Martinik"
+        },
+        {
+          "char": "🇾🇹",
+          "label": "Mayotte"
+        },
+        {
+          "char": "🇲🇸",
+          "label": "Montserrat"
+        },
+        {
+          "char": "🇳🇺",
+          "label": "Niue"
+        },
+        {
+          "char": "🇵🇫",
+          "label": "Polinesia Prancis"
+        },
+        {
+          "char": "🇵🇷",
+          "label": "Puerto Riko"
+        },
+        {
+          "char": "🇦🇨",
+          "label": "Pulau Ascension"
+        },
+        {
+          "char": "🇧🇻",
+          "label": "Pulau Bouvet"
+        },
+        {
+          "char": "🇨🇵",
+          "label": "Pulau Clipperton"
+        },
+        {
+          "char": "🇭🇲",
+          "label": "Pulau Heard dan Kepulauan McDonald"
+        },
+        {
+          "char": "🇮🇲",
+          "label": "Pulau Man"
+        },
+        {
+          "char": "🇨🇽",
+          "label": "Pulau Natal"
+        },
+        {
+          "char": "🇷🇪",
+          "label": "Réunion"
+        },
+        {
+          "char": "🇪🇭",
+          "label": "Sahara Barat"
+        },
+        {
+          "char": "🇧🇱",
+          "label": "Saint Barthélemy"
+        },
+        {
+          "char": "🇸🇭",
+          "label": "Saint Helena"
+        },
+        {
+          "char": "🇲🇫",
+          "label": "Saint Martin"
+        },
+        {
+          "char": "🇵🇲",
+          "label": "Saint Pierre dan Miquelon"
+        },
+        {
+          "char": "🇦🇸",
+          "label": "Samoa Amerika"
+        },
+        {
+          "char": "🇸🇽",
+          "label": "Sint Maarten"
+        },
+        {
+          "char": "🇹🇼",
+          "label": "Taiwan"
+        },
+        {
+          "char": "🇹🇰",
+          "label": "Tokelau"
+        },
+        {
+          "char": "🇹🇦",
+          "label": "Tristan da Cunha"
+        },
+        {
+          "char": "🇮🇴",
+          "label": "Wilayah Inggris di Samudra Hindia"
+        },
+        {
+          "char": "🇹🇫",
+          "label": "Wilayah Selatan Prancis"
+        }
+      ]
+    },
+    {
       "id": "s4",
       "label": "",
       "h2": "Bendera Pelangi · Bendera Transgender",

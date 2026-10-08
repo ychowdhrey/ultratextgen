@@ -1,9 +1,9 @@
 {
   "slug": "emoji-vlaggen",
-  "title": "Vlaggen Emoji — Alle Landenvlaggen Kopiëren en Plakken",
+  "title": "Vlaggen Emoji: Alle Landenvlaggen Kopiëren en Plakken",
   "meta_description": "Nederlandse vlag 🇳🇱 en alle landenvlaggen als emoji. Klik op een vlag om te kopiëren en plak hem in je bio, naam of bericht. Ook complete vlaggensets.",
   "breadcrumb": "Vlaggen Emoji",
-  "hero_h1": "Vlaggen Emoji — Alle Landenvlaggen",
+  "hero_h1": "Vlaggen Emoji: Alle Landenvlaggen",
   "hero_tagline": "Klik op een vlag en hij staat meteen op je klembord: de Nederlandse vlag, België, Duitsland en elk ander land. Plakken in je bio, weergavenaam, caption of bericht, zonder app.",
   "intro": "Elke landenvlag is één klik weg. Blader door de vlaggen van bijna 200 landen, filter op werelddeel en kopieer elke vlagemoji direct. Vlaggen-emoji's zijn echte Unicode-tekens en geen plaatjes, dus je plakt ze net als gewone tekst in posts, bio's, captions en berichten op WhatsApp, Instagram, TikTok, Discord en Telegram, en in naamvelden van games. Bovenaan staan de Nederlandse vlag en de meestgezochte landen klaar; onderaan kopieer je een hele set in één keer, zoals de EU-landen, de G20 of de Noordse landen.",
   "copy_pattern": "collection",
@@ -81,6 +81,258 @@
         {
           "char": "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
           "label": "Wales"
+        }
+      ]
+    },
+    {
+      "id": "territory-flags",
+      "label": "Gebieden",
+      "h2": "Vlaggen van gebieden en regio's",
+      "intro": "Unicode heeft ook vlaggen voor plekken buiten de lijst van 195 landen: overzeese gebieden, afhankelijke gebieden, speciale bestuurlijke regio's en gebieden met een eigen code, zoals 🇧🇱 Saint-Barthélemy, 🇭🇰 Hongkong en 🇽🇰 Kosovo. Sommige tonen de vlag van een ander land omdat ze geen eigen vlag hebben: 🇧🇻 Bouveteiland en 🇸🇯 Spitsbergen tonen die van Noorwegen, 🇺🇲 de Kleine afgelegen eilanden van de Verenigde Staten die van de VS en 🇭🇲 Heard en McDonaldeilanden die van Australië.",
+      "symbols": [
+        {
+          "char": "🇦🇽",
+          "label": "Åland"
+        },
+        {
+          "char": "🇦🇸",
+          "label": "Amerikaans-Samoa"
+        },
+        {
+          "char": "🇻🇮",
+          "label": "Amerikaanse Maagdeneilanden"
+        },
+        {
+          "char": "🇦🇮",
+          "label": "Anguilla"
+        },
+        {
+          "char": "🇦🇶",
+          "label": "Antarctica"
+        },
+        {
+          "char": "🇦🇼",
+          "label": "Aruba"
+        },
+        {
+          "char": "🇦🇨",
+          "label": "Ascension"
+        },
+        {
+          "char": "🇧🇲",
+          "label": "Bermuda"
+        },
+        {
+          "char": "🇧🇻",
+          "label": "Bouveteiland"
+        },
+        {
+          "char": "🇮🇴",
+          "label": "Brits Indische Oceaanterritorium"
+        },
+        {
+          "char": "🇻🇬",
+          "label": "Britse Maagdeneilanden"
+        },
+        {
+          "char": "🇮🇨",
+          "label": "Canarische Eilanden"
+        },
+        {
+          "char": "🇧🇶",
+          "label": "Caribisch Nederland"
+        },
+        {
+          "char": "🇪🇦",
+          "label": "Ceuta en Melilla"
+        },
+        {
+          "char": "🇨🇽",
+          "label": "Christmaseiland"
+        },
+        {
+          "char": "🇨🇵",
+          "label": "Clipperton"
+        },
+        {
+          "char": "🇨🇨",
+          "label": "Cocoseilanden"
+        },
+        {
+          "char": "🇨🇰",
+          "label": "Cookeilanden"
+        },
+        {
+          "char": "🇨🇼",
+          "label": "Curaçao"
+        },
+        {
+          "char": "🇩🇬",
+          "label": "Diego Garcia"
+        },
+        {
+          "char": "🇫🇴",
+          "label": "Faeröer"
+        },
+        {
+          "char": "🇫🇰",
+          "label": "Falklandeilanden"
+        },
+        {
+          "char": "🇬🇫",
+          "label": "Frans-Guyana"
+        },
+        {
+          "char": "🇵🇫",
+          "label": "Frans-Polynesië"
+        },
+        {
+          "char": "🇹🇫",
+          "label": "Franse Gebieden in de zuidelijke Indische Oceaan"
+        },
+        {
+          "char": "🇬🇮",
+          "label": "Gibraltar"
+        },
+        {
+          "char": "🇬🇱",
+          "label": "Groenland"
+        },
+        {
+          "char": "🇬🇵",
+          "label": "Guadeloupe"
+        },
+        {
+          "char": "🇬🇺",
+          "label": "Guam"
+        },
+        {
+          "char": "🇬🇬",
+          "label": "Guernsey"
+        },
+        {
+          "char": "🇭🇲",
+          "label": "Heard en McDonaldeilanden"
+        },
+        {
+          "char": "🇭🇰",
+          "label": "Hongkong"
+        },
+        {
+          "char": "🇮🇲",
+          "label": "Isle of Man"
+        },
+        {
+          "char": "🇯🇪",
+          "label": "Jersey"
+        },
+        {
+          "char": "🇰🇾",
+          "label": "Kaaimaneilanden"
+        },
+        {
+          "char": "🇺🇲",
+          "label": "Kleine afgelegen eilanden van de Verenigde Staten"
+        },
+        {
+          "char": "🇽🇰",
+          "label": "Kosovo"
+        },
+        {
+          "char": "🇲🇴",
+          "label": "Macau"
+        },
+        {
+          "char": "🇲🇶",
+          "label": "Martinique"
+        },
+        {
+          "char": "🇾🇹",
+          "label": "Mayotte"
+        },
+        {
+          "char": "🇲🇸",
+          "label": "Montserrat"
+        },
+        {
+          "char": "🇳🇨",
+          "label": "Nieuw-Caledonië"
+        },
+        {
+          "char": "🇳🇺",
+          "label": "Niue"
+        },
+        {
+          "char": "🇲🇵",
+          "label": "Noordelijke Marianen"
+        },
+        {
+          "char": "🇳🇫",
+          "label": "Norfolk"
+        },
+        {
+          "char": "🇵🇳",
+          "label": "Pitcairneilanden"
+        },
+        {
+          "char": "🇵🇷",
+          "label": "Puerto Rico"
+        },
+        {
+          "char": "🇷🇪",
+          "label": "Réunion"
+        },
+        {
+          "char": "🇧🇱",
+          "label": "Saint-Barthélemy"
+        },
+        {
+          "char": "🇲🇫",
+          "label": "Saint-Martin"
+        },
+        {
+          "char": "🇵🇲",
+          "label": "Saint-Pierre en Miquelon"
+        },
+        {
+          "char": "🇸🇭",
+          "label": "Sint-Helena"
+        },
+        {
+          "char": "🇸🇽",
+          "label": "Sint-Maarten"
+        },
+        {
+          "char": "🇸🇯",
+          "label": "Spitsbergen en Jan Mayen"
+        },
+        {
+          "char": "🇹🇼",
+          "label": "Taiwan"
+        },
+        {
+          "char": "🇹🇰",
+          "label": "Tokelau"
+        },
+        {
+          "char": "🇹🇦",
+          "label": "Tristan da Cunha"
+        },
+        {
+          "char": "🇹🇨",
+          "label": "Turks- en Caicoseilanden"
+        },
+        {
+          "char": "🇼🇫",
+          "label": "Wallis en Futuna"
+        },
+        {
+          "char": "🇪🇭",
+          "label": "Westelijke Sahara"
+        },
+        {
+          "char": "🇬🇸",
+          "label": "Zuid-Georgia en Zuidelijke Sandwicheilanden"
         }
       ]
     },
