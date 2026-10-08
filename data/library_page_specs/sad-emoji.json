@@ -195,6 +195,14 @@
       "defaultFormat": "inline"
     }
   ],
+  "editorial_sections": [
+    {
+      "h2": "Why there are so many sad emojis",
+      "paragraphs": [
+        "Unicode did not add more than a dozen sad faces by excess: each one filled a use the existing ones did not cover. 😞 comes from the early Japanese emoji sets. 🥺 was added much later and almost at once became a sign of coaxing more than of sadness. 🫠 and 🫤 arrived in 2021 and mean exhaustion rather than grief. The gap between Unicode's names and how the faces are really used is why this page orders them by intensity, not by when they were added."
+      ]
+    }
+  ],
   "related": [
     {
       "href": "/library/crying-emoji/",

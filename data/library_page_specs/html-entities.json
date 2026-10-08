@@ -120,6 +120,14 @@
       ]
     }
   ],
+  "editorial_sections": [
+    {
+      "h2": "The five you must write, and the rest",
+      "paragraphs": [
+        "Entity lists grow long, but only five entries are required in practice. &amp;amp; &amp;lt; &amp;gt; are unsafe both in text and in attributes, while &amp;quot; and &amp;#x27; matter only when they collide with the quote that encloses an attribute value. The remaining hundreds are largely a legacy of the years before UTF-8 was everywhere: today © and the em dash can be typed directly. The table is still worth keeping, because other people's templates, CMS fields and old code are still full of these entries. Being able to read them and being obliged to write them are different things."
+      ]
+    }
+  ],
   "related": [
     {
       "href": "/library/alt-codes/",
