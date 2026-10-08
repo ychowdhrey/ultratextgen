@@ -31,8 +31,17 @@
     return e;
   }
 
+  /* ---- picker markup ------------------------------------------------------
+     Everything between the markers below is ALSO evaluated at build time by
+     scripts/build-kaomoji-generator-static.js, which writes the moods, presets
+     and parts into kaomoji-generator/index.html as static HTML so crawlers that
+     run no JavaScript see the tool. One definition serves both, so the static
+     markup and the runtime markup cannot drift. Keep these functions pure:
+     they may read DATA and t() and nothing else. Move the markers if you move
+     the code; the build script throws when one is missing. */
+  /* @kaomoji-markup:begin */
   /* The part categories, in the order they appear in the picker. */
-  var ORDER = [
+  const ORDER = [
     { cat: "brackets",    label: "Face" },
     { cat: "eyes",        label: "Eyes" },
     { cat: "mouths",      label: "Mouth" },
@@ -41,9 +50,79 @@
     { cat: "decorations", label: "Extra" }
   ];
 
+  function part(cat, id) {
+    const list = DATA.PARTS[cat] || [];
+    for (let i = 0; i < list.length; i++) if (list[i].id === id) return list[i];
+    return list[0];
+  }
+
+  /* arms.l + bracket.l + cheek.l + eye.l + mouth + eye.r + cheek.r
+       + bracket.r + arms.r + decoration */
+  function assembleFrom(s) {
+    const b = part("brackets", s.brackets);
+    const e = part("eyes", s.eyes);
+    const mo = part("mouths", s.mouths);
+    const c = part("cheeks", s.cheeks);
+    const a = part("arms", s.arms);
+    const d = part("decorations", s.decorations);
+    return a.l + b.l + c.l + e.l + mo.c + e.r + c.r + b.r + a.r + (d.c || "");
+  }
+
+  function optionLabel(p) {
+    if (p.id === "none") return "∅";
+    if (p.label) return p.label;
+    if (p.c != null) return p.c;
+    return (p.l || "") + (p.r || "");
+  }
+
+  function escHtml(v) {
+    return String(v).replace(/&/g, "&amp;").replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  function moodsHtml() {
+    let html = '<button type="button" class="kao-mood is-active" data-mood="all" aria-pressed="true">' +
+      escHtml(t("moodAll", "All")) + "</button>";
+    DATA.MOODS.forEach(function (m) {
+      html += '<button type="button" class="kao-mood" data-mood="' + escHtml(m.id) +
+        '" aria-pressed="false">' + escHtml(m.label) + "</button>";
+    });
+    return html;
+  }
+
+  function presetsHtml() {
+    let html = "";
+    DATA.PRESETS.forEach(function (preset, i) {
+      const face = assembleFrom(Object.assign({}, DEFAULT_SEL, preset.parts));
+      html += '<button type="button" class="kao-preset" data-preset="' + i + '">' +
+        '<span class="kao-preset-face">' + escHtml(face) + "</span>" +
+        '<span class="kao-preset-label">' + escHtml(preset.label) + "</span></button>";
+    });
+    return html;
+  }
+
+  function partsHtml() {
+    let html = "";
+    ORDER.forEach(function (row) {
+      html += '<div class="kao-part-row"><span class="kao-part-label">' +
+        escHtml(t("part_" + row.cat, row.label)) + '</span><div class="kao-part-options">';
+      (DATA.PARTS[row.cat] || []).forEach(function (p) {
+        html += '<button type="button" class="kao-part-opt" data-cat="' + escHtml(row.cat) +
+          '" data-id="' + escHtml(p.id) + '" aria-label="' +
+          escHtml(row.label + ": " + (p.label || p.c || p.id)) + '">' +
+          escHtml(optionLabel(p)) + "</button>";
+      });
+      html += "</div></div>";
+    });
+    return html;
+  }
+
+  const DEFAULT_SEL = { brackets: "round", eyes: "happy", mouths: "omega", cheeks: "none", arms: "none", decorations: "none" };
+  /* @kaomoji-markup:end */
+
   /* Current selection (part ids per category), active mood, and any freeform
      override the visitor typed/pasted into the face field. */
-  var sel = { brackets: "round", eyes: "happy", mouths: "omega", cheeks: "none", arms: "none", decorations: "none" };
+  var sel = Object.assign({}, DEFAULT_SEL);
   var activeMood = "all";
   var freeform = null;
 
@@ -85,12 +164,6 @@
     });
   }
 
-  /* ---- part lookup ------------------------------------------------------- */
-  function part(cat, id) {
-    var list = DATA.PARTS[cat] || [];
-    for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i];
-    return list[0];
-  }
   function fitsMood(p, mood) {
     if (mood === "all") return true;
     var m = p.m || [];
@@ -98,15 +171,7 @@
   }
 
   /* ---- assemble the face from the current selection ---------------------- */
-  function assemble() {
-    var b = part("brackets", sel.brackets);
-    var e = part("eyes", sel.eyes);
-    var mo = part("mouths", sel.mouths);
-    var c = part("cheeks", sel.cheeks);
-    var a = part("arms", sel.arms);
-    var d = part("decorations", sel.decorations);
-    return a.l + b.l + c.l + e.l + mo.c + e.r + c.r + b.r + a.r + (d.c || "");
-  }
+  function assemble() { return assembleFrom(sel); }
 
   /* The face currently shown/copied: freeform text if the visitor edited it,
      otherwise the assembled face. */
@@ -229,77 +294,40 @@
   }
 
   /* ---- UI construction --------------------------------------------------- */
+  /* The moods, presets and parts are pre-rendered into the page by
+     scripts/build-kaomoji-generator-static.js. Adopt that markup when it is
+     there; build it from the same functions when it is not (a page that was
+     never built, or a stale copy). Clicks are delegated, so either way the
+     wiring is identical. */
+  function fill(container, selector, html) {
+    if (!container.querySelector(selector)) container.innerHTML = html;
+  }
+
   function buildMoods() {
-    var frag = document.createDocumentFragment();
-    var all = el("button", "kao-mood is-active", t("moodAll", "All"));
-    all.type = "button";
-    all.setAttribute("data-mood", "all");
-    all.setAttribute("aria-pressed", "true");
-    frag.appendChild(all);
-    DATA.MOODS.forEach(function (m) {
-      var b = el("button", "kao-mood", m.label);
-      b.type = "button";
-      b.setAttribute("data-mood", m.id);
-      b.setAttribute("aria-pressed", "false");
-      frag.appendChild(b);
-    });
-    refs.moods.appendChild(frag);
+    fill(refs.moods, ".kao-mood", moodsHtml());
     refs.moods.addEventListener("click", function (ev) {
-      var chip = ev.target.closest(".kao-mood");
+      const chip = ev.target.closest(".kao-mood");
       if (chip) setMood(chip.getAttribute("data-mood"));
     });
   }
 
-  function optionLabel(p) {
-    if (p.id === "none") return "∅";
-    if (p.label) return p.label;
-    if (p.c != null) return p.c;
-    return (p.l || "") + (p.r || "");
-  }
-
   function buildParts() {
-    ORDER.forEach(function (row) {
-      var wrap = el("div", "kao-part-row");
-      wrap.appendChild(el("span", "kao-part-label", t("part_" + row.cat, row.label)));
-      var opts = el("div", "kao-part-options");
-      (DATA.PARTS[row.cat] || []).forEach(function (p) {
-        var b = el("button", "kao-part-opt", optionLabel(p));
-        b.type = "button";
-        b.setAttribute("data-cat", row.cat);
-        b.setAttribute("data-id", p.id);
-        b.setAttribute("aria-label", row.label + ": " + (p.label || p.c || p.id));
-        opts.appendChild(b);
-      });
-      wrap.appendChild(opts);
-      refs.parts.appendChild(wrap);
-    });
+    fill(refs.parts, ".kao-part-opt", partsHtml());
     refs.parts.addEventListener("click", function (ev) {
-      var opt = ev.target.closest(".kao-part-opt");
+      const opt = ev.target.closest(".kao-part-opt");
       if (opt) selectPart(opt.getAttribute("data-cat"), opt.getAttribute("data-id"));
     });
   }
 
   function buildPresets() {
     if (!refs.presets) return;
-    var frag = document.createDocumentFragment();
-    DATA.PRESETS.forEach(function (preset) {
-      var b = el("button", "kao-preset", "");
-      b.type = "button";
-      // preview glyph + label
-      var glyph = el("span", "kao-preset-face");
-      var saved = { s: copyObj(sel), f: freeform };
-      freeform = null; setSel(preset.parts);
-      glyph.textContent = assemble();
-      sel = saved.s; freeform = saved.f;
-      b.appendChild(glyph);
-      b.appendChild(el("span", "kao-preset-label", preset.label));
-      b.addEventListener("click", function () { applyPreset(preset); });
-      frag.appendChild(b);
+    fill(refs.presets, ".kao-preset", presetsHtml());
+    refs.presets.addEventListener("click", function (ev) {
+      const btn = ev.target.closest(".kao-preset");
+      const preset = btn && DATA.PRESETS[Number(btn.getAttribute("data-preset"))];
+      if (preset) applyPreset(preset);
     });
-    refs.presets.appendChild(frag);
   }
-  function copyObj(o) { var r = {}; for (var k in o) if (o.hasOwnProperty(k)) r[k] = o[k]; return r; }
-  function setSel(parts) { for (var k in parts) if (parts.hasOwnProperty(k)) sel[k] = parts[k]; }
 
   /* ---- init -------------------------------------------------------------- */
   function init() {
@@ -337,7 +365,7 @@
     if (clear) clear.addEventListener("click", function () {
       activeMood = "all";
       setMood("all");
-      sel = { brackets: "round", eyes: "happy", mouths: "omega", cheeks: "none", arms: "none", decorations: "none" };
+      sel = Object.assign({}, DEFAULT_SEL);
       freeform = null;
       render();
       syncUrl("");

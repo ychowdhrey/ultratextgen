@@ -18,6 +18,8 @@
     "check:search-index": "node scripts/build-search-index.js --check",
     "test:site-search": "node js/search/siteSearch.test.js",
     "check:library-directory": "node scripts/build-library-directory.js --check",
+    "build:kaomoji-generator-static": "node scripts/build-kaomoji-generator-static.js",
+    "check:kaomoji-generator-static": "node scripts/build-kaomoji-generator-static.js --check",
     "build:locale-library-directory": "node scripts/build-locale-library-directory.js",
     "check:locale-library-directory": "node scripts/build-locale-library-directory.js --check",
     "mine:locale-glossary": "python3 scripts/mine-locale-glossary.py --write",
