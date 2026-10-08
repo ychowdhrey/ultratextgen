@@ -55,6 +55,7 @@ if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 from lib.generator_parity import assert_no_regression  # noqa: E402
 from lib.cta_routing import DESTINATIONS as CTA_DESTINATIONS, route as cta_route  # noqa: E402
+from lib import symbol_collection_link  # noqa: E402
 
 # The strings a spec is allowed to carry that are NOT a real override: they are
 # the shared default, copied in. `scripts/check-spec-sentence-reuse.py` measures
@@ -1035,6 +1036,11 @@ def main(argv=None):
         return 3
 
     page = _mark_text_object_grids(render_page(spec))
+    if base_folder == "symbol" and lang == "en":
+        # The spoke -> collection line under the first copy section; one owner
+        # in scripts/lib/symbol_collection_link.py, shared with
+        # `npm run sync:symbol-collection-link`, so a regenerated spoke keeps it.
+        page, _status = symbol_collection_link.apply(page)
 
     if args.dry_run:
         print(f"[dry-run] spec OK -> would write {out_path.relative_to(REPO)} "

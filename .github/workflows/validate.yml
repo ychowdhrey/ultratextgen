@@ -677,6 +677,17 @@ jobs:
         id: static_footer
         continue-on-error: true
         run: npm run check:static-footer | tee static-footer.log
+      # Gating, zero backlog, whole-tree: every symbol spoke carries the line
+      # that sends a reader to its collection, directly under the first copy
+      # section (EN: a sentence; locales: a link worded with the locale
+      # collection's own <h1>). Whole-tree because the drift it catches lives in
+      # pages a PR does not touch: a new spoke built by hand, a regenerated one,
+      # or a collection whose translation lands later. Exits 2 (UNKNOWN) on a
+      # spoke it cannot answer. Fix is always `npm run sync:symbol-collection-link`.
+      - name: Run symbol collection link check
+        id: symbol_collection_link
+        continue-on-error: true
+        run: npm run check:symbol-collection-link | tee symbol-collection-link.log
       # Gating, zero backlog: docs/README.md's blocking-gate enumeration is
       # GENERATED from this file by scripts/build-gate-inventory.py, which
       # reuses run-ci-gates.py's own parser, so the doc and CI cannot disagree
@@ -1124,6 +1135,11 @@ jobs:
             cat static-footer.log
             echo '```'
             echo ""
+            echo "### Symbol collection link check — \`${{ steps.symbol_collection_link.outcome }}\`"
+            echo '```'
+            cat symbol-collection-link.log
+            echo '```'
+            echo ""
             echo "### Gate inventory check — \`${{ steps.gate_inventory.outcome }}\`"
             echo '```'
             cat gate-inventory.log
@@ -1428,6 +1444,7 @@ jobs:
           steps.tile_codepoints.outcome == 'failure' ||
           steps.document_head.outcome == 'failure' ||
           steps.static_footer.outcome == 'failure' ||
+          steps.symbol_collection_link.outcome == 'failure' ||
           steps.gate_inventory.outcome == 'failure' ||
           steps.accent_notice.outcome == 'failure' ||
           steps.library_directory.outcome == 'failure' ||

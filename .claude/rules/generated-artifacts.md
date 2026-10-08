@@ -34,6 +34,7 @@ is a second source of truth. When you find one of these, find its generator.
 | pre-rendered collection grids | `npm run prerender:collection-grids -- --write` | `check:collection-grids` |
 | pre-rendered country-flag tiles | `npm run prerender:country-flags -- --write` | `check:country-flags` |
 | `symbol/` hub↔spoke and peer↔peer cards | `npm run sync:symbol-peer-links` | `check:new-symbol-peer-links` |
+| the `symbol/` spoke → collection line under the first copy section (EN and locales) | `npm run sync:symbol-collection-link`; the spec generator emits it for EN | `check:symbol-collection-link` (whole-tree) |
 | locale `library/` ↔ `library/` mirror cards | `npm run fix:library-link-mirror -- --lang <code> [--page <en-slug>] --write` | `check:library-link-mirror` |
 | hreflang blocks and locale-native links | `npm run sync:locale-mesh -- --fix --files …` | `check:locale-mesh`, `check:hreflang*` |
 | CTA cards | `npm run route:cta-cards -- --write` | `test:cta-routing` |
