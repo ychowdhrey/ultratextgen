@@ -145,7 +145,8 @@
       lines: $("#statLines"),
       graphemes: $("#statGraphemes"),
       utf16: $("#statUtf16"),
-      bytes: $("#statBytes")
+      bytes: $("#statBytes"),
+      bytesKr: $("#statBytesKr")
     };
     const clearBtn = document.getElementById("counterClearBtn");
     const copyBtn = document.getElementById("counterCopyBtn");
@@ -454,6 +455,7 @@
         if (stat.graphemes) stat.graphemes.textContent = counts.graphemes(val).toLocaleString();
         if (stat.utf16) stat.utf16.textContent = counts.utf16Units(val).toLocaleString();
         if (stat.bytes) stat.bytes.textContent = counts.utf8Bytes(val).toLocaleString();
+        if (stat.bytesKr) stat.bytesKr.textContent = counts.hangul2Bytes(val).toLocaleString();
       }
 
       if (I18N.units) {

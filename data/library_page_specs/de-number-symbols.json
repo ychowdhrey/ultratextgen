@@ -12,7 +12,7 @@
       "id": "s1",
       "label": "Zahlen im Kreis",
       "h2": "Zahlen im Kreis",
-      "intro": "1 bis 20, für nummerierte Listen.",
+      "intro": "1 bis 50, für nummerierte Listen.",
       "symbols": [
         {
           "char": "①",
@@ -93,6 +93,126 @@
         {
           "char": "⑳",
           "label": "Eingekreiste 20"
+        },
+        {
+          "char": "㉑",
+          "label": "Eingekreiste 21"
+        },
+        {
+          "char": "㉒",
+          "label": "Eingekreiste 22"
+        },
+        {
+          "char": "㉓",
+          "label": "Eingekreiste 23"
+        },
+        {
+          "char": "㉔",
+          "label": "Eingekreiste 24"
+        },
+        {
+          "char": "㉕",
+          "label": "Eingekreiste 25"
+        },
+        {
+          "char": "㉖",
+          "label": "Eingekreiste 26"
+        },
+        {
+          "char": "㉗",
+          "label": "Eingekreiste 27"
+        },
+        {
+          "char": "㉘",
+          "label": "Eingekreiste 28"
+        },
+        {
+          "char": "㉙",
+          "label": "Eingekreiste 29"
+        },
+        {
+          "char": "㉚",
+          "label": "Eingekreiste 30"
+        },
+        {
+          "char": "㉛",
+          "label": "Eingekreiste 31"
+        },
+        {
+          "char": "㉜",
+          "label": "Eingekreiste 32"
+        },
+        {
+          "char": "㉝",
+          "label": "Eingekreiste 33"
+        },
+        {
+          "char": "㉞",
+          "label": "Eingekreiste 34"
+        },
+        {
+          "char": "㉟",
+          "label": "Eingekreiste 35"
+        },
+        {
+          "char": "㊱",
+          "label": "Eingekreiste 36"
+        },
+        {
+          "char": "㊲",
+          "label": "Eingekreiste 37"
+        },
+        {
+          "char": "㊳",
+          "label": "Eingekreiste 38"
+        },
+        {
+          "char": "㊴",
+          "label": "Eingekreiste 39"
+        },
+        {
+          "char": "㊵",
+          "label": "Eingekreiste 40"
+        },
+        {
+          "char": "㊶",
+          "label": "Eingekreiste 41"
+        },
+        {
+          "char": "㊷",
+          "label": "Eingekreiste 42"
+        },
+        {
+          "char": "㊸",
+          "label": "Eingekreiste 43"
+        },
+        {
+          "char": "㊹",
+          "label": "Eingekreiste 44"
+        },
+        {
+          "char": "㊺",
+          "label": "Eingekreiste 45"
+        },
+        {
+          "char": "㊻",
+          "label": "Eingekreiste 46"
+        },
+        {
+          "char": "㊼",
+          "label": "Eingekreiste 47"
+        },
+        {
+          "char": "㊽",
+          "label": "Eingekreiste 48"
+        },
+        {
+          "char": "㊾",
+          "label": "Eingekreiste 49"
+        },
+        {
+          "char": "㊿",
+          "label": "Eingekreiste 50"
         }
       ]
     },

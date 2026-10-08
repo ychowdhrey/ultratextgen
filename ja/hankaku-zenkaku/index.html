@@ -86,6 +86,23 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
+  "citation": [
+    {
+      "@type": "WebPage",
+      "name": "使用文字一覧の新旧対照表",
+      "url": "https://www.zenginkyo.or.jp/fileadmin/res/news/news311202_1.pdf"
+    },
+    {
+      "@type": "WebPage",
+      "name": "受取人名の入力方法",
+      "url": "https://www.smbc.co.jp/direct/help_furikomi/14.html"
+    },
+    {
+      "@type": "WebPage",
+      "name": "受取人名・預金者名に使用できる文字",
+      "url": "https://www.77bank.co.jp/c_inb/bizsol/manual/bsl0011.html"
+    }
+  ],
   "name": "半角・全角変換ツール",
   "description": "半角⇔全角をワンクリックで相互変換。英数字・記号・スペースに加え、半角カタカナの濁点結合（ｶﾞ→ガ）にも対応。文字種を選んで部分変換もOK。ブラウザ内で完結、登録不要。",
   "url": "https://ultratextgen.com/ja/hankaku-zenkaku/",
@@ -206,6 +223,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="width-converter" data-width-converter>
     <div class="wc-directions"><label class="wc-dir-option"><input type="radio" name="wc-dir" value="half" checked> 半角に変換</label><label class="wc-dir-option"><input type="radio" name="wc-dir" value="full"> 全角に変換</label></div>
     <div class="wc-classes"><label class="wc-class-option"><input type="checkbox" data-wc-class="alnum" checked> 英数字</label><label class="wc-class-option"><input type="checkbox" data-wc-class="punct" checked> 記号</label><label class="wc-class-option"><input type="checkbox" data-wc-class="space" checked> スペース</label><label class="wc-class-option"><input type="checkbox" data-wc-class="kana" checked> カタカナ</label></div>
+    <div class="wc-classes"><label class="wc-class-option"><input type="checkbox" data-wc-class="largekana"> 小さい仮名を大きくする（ｷｮｳｺ → ｷﾖｳｺ）</label><span class="wc-counts" data-wc-largekana-note>振込先の口座名義欄などで小さい仮名が通らないときに使います。半角に変換するときだけ有効です。</span></div>
     <div class="wc-io">
       <textarea class="wc-input" placeholder="ここにテキストを貼り付け…" maxlength="5000"></textarea>
       <textarea class="wc-output" readonly aria-label="変換結果"></textarea>
@@ -246,6 +264,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <strong>ギャル文字ジェネレーター</strong>
         <span>ひらがな・カタカナをギャル文字に変換。</span>
       </a>
+    </div>
+  </section>
+
+  <section class="editorial-section">
+    <span class="article-section-label">出典</span>
+    <div class="source-note">
+      <p>小さい仮名の扱いは銀行ごとに違います。全国銀行協会の<a href="https://www.zenginkyo.or.jp/fileadmin/res/news/news311202_1.pdf" rel="nofollow noopener" target="_blank">使用文字一覧の新旧対照表</a>は口座名・受取人名のカナから小文字を除いており、<a href="https://www.smbc.co.jp/direct/help_furikomi/14.html" rel="nofollow noopener" target="_blank">三井住友銀行</a>と<a href="https://www.77bank.co.jp/c_inb/bizsol/manual/bsl0011.html" rel="nofollow noopener" target="_blank">七十七銀行</a>の案内にも、小さい仮名は入力できないとあります（2026年10月8日に確認）。</p>
     </div>
   </section>
 

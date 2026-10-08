@@ -12,7 +12,7 @@
       "id": "s1",
       "label": "Số trong vòng tròn",
       "h2": "Số trong vòng tròn",
-      "intro": "Từ 1 đến 20, dùng cho danh sách đánh số.",
+      "intro": "Từ 1 đến 50, dùng cho danh sách đánh số.",
       "symbols": [
         {
           "char": "①",
@@ -93,6 +93,126 @@
         {
           "char": "⑳",
           "label": "Số 20 trong vòng tròn"
+        },
+        {
+          "char": "㉑",
+          "label": "Số 21 trong vòng tròn"
+        },
+        {
+          "char": "㉒",
+          "label": "Số 22 trong vòng tròn"
+        },
+        {
+          "char": "㉓",
+          "label": "Số 23 trong vòng tròn"
+        },
+        {
+          "char": "㉔",
+          "label": "Số 24 trong vòng tròn"
+        },
+        {
+          "char": "㉕",
+          "label": "Số 25 trong vòng tròn"
+        },
+        {
+          "char": "㉖",
+          "label": "Số 26 trong vòng tròn"
+        },
+        {
+          "char": "㉗",
+          "label": "Số 27 trong vòng tròn"
+        },
+        {
+          "char": "㉘",
+          "label": "Số 28 trong vòng tròn"
+        },
+        {
+          "char": "㉙",
+          "label": "Số 29 trong vòng tròn"
+        },
+        {
+          "char": "㉚",
+          "label": "Số 30 trong vòng tròn"
+        },
+        {
+          "char": "㉛",
+          "label": "Số 31 trong vòng tròn"
+        },
+        {
+          "char": "㉜",
+          "label": "Số 32 trong vòng tròn"
+        },
+        {
+          "char": "㉝",
+          "label": "Số 33 trong vòng tròn"
+        },
+        {
+          "char": "㉞",
+          "label": "Số 34 trong vòng tròn"
+        },
+        {
+          "char": "㉟",
+          "label": "Số 35 trong vòng tròn"
+        },
+        {
+          "char": "㊱",
+          "label": "Số 36 trong vòng tròn"
+        },
+        {
+          "char": "㊲",
+          "label": "Số 37 trong vòng tròn"
+        },
+        {
+          "char": "㊳",
+          "label": "Số 38 trong vòng tròn"
+        },
+        {
+          "char": "㊴",
+          "label": "Số 39 trong vòng tròn"
+        },
+        {
+          "char": "㊵",
+          "label": "Số 40 trong vòng tròn"
+        },
+        {
+          "char": "㊶",
+          "label": "Số 41 trong vòng tròn"
+        },
+        {
+          "char": "㊷",
+          "label": "Số 42 trong vòng tròn"
+        },
+        {
+          "char": "㊸",
+          "label": "Số 43 trong vòng tròn"
+        },
+        {
+          "char": "㊹",
+          "label": "Số 44 trong vòng tròn"
+        },
+        {
+          "char": "㊺",
+          "label": "Số 45 trong vòng tròn"
+        },
+        {
+          "char": "㊻",
+          "label": "Số 46 trong vòng tròn"
+        },
+        {
+          "char": "㊼",
+          "label": "Số 47 trong vòng tròn"
+        },
+        {
+          "char": "㊽",
+          "label": "Số 48 trong vòng tròn"
+        },
+        {
+          "char": "㊾",
+          "label": "Số 49 trong vòng tròn"
+        },
+        {
+          "char": "㊿",
+          "label": "Số 50 trong vòng tròn"
         }
       ]
     },

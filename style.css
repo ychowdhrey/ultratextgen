@@ -2507,6 +2507,50 @@
   color: var(--text-primary);
 }
 
+/* A three-column reference table whose cells are sentences. At phone width the
+   third column sat past the edge of the scroll wrapper with no cue, so each row
+   becomes a block and every cell names its own column from data-label. The
+   header row stays in the DOM for screen readers and is only hidden visually. */
+@media (max-width: 640px) {
+  .data-table.data-table--stack thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .data-table.data-table--stack:has(th:nth-child(3)) {
+    min-width: 0;
+  }
+  .data-table.data-table--stack,
+  .data-table.data-table--stack tbody,
+  .data-table.data-table--stack tr,
+  .data-table.data-table--stack td {
+    display: block;
+  }
+  .data-table.data-table--stack tr {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .data-table.data-table--stack tr:last-child {
+    border-bottom: none;
+  }
+  .data-table.data-table--stack td {
+    border-bottom: none;
+    padding: 0.2rem 0.75rem;
+  }
+  .data-table.data-table--stack td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+}
+
 /* -----------------------------------------------
    Component: Compare Cards (.compare-grid)
    Side-by-side comparison of anything.
