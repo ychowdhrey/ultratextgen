@@ -101,6 +101,8 @@ BUILDGRIDS_RE = re.compile(r"\.buildGrids\s*\(")
 ART_COPY_RE = re.compile(r"<button[^>]*\bclass=[\"'][^\"']*\bart-piece-copy\b[^\"']*[\"'][^>]*>",
                          re.IGNORECASE)
 SYMBOL_TOAST_RE = re.compile(r'id=["\']symbolToast["\']')
+EMPTY_EDITORIAL_RE = re.compile(
+    r'<h2[^>]*>([^<]*)</h2>\s*<div class="editorial-block">\s*</div>')
 EXPLORER_JS_RE = re.compile(r'src=["\']/symbol-explorer\.js["\']')
 RELATED_RE = re.compile(r'Related Resources|class=["\'][^"\']*compare-card',
                         re.IGNORECASE)
@@ -218,6 +220,18 @@ def validate_page(path):
                       "page declares a collections container but never calls "
                       "UltraTextGen.buildGrids()")
             )
+
+    # An editorial section whose block holds nothing. 232 live blocks were
+    # rendered this way because the generator read "paragraphs" while 235 specs
+    # wrote "body": the heading shipped over an empty block and every check
+    # that read the page as text passed.
+    empty_blocks = EMPTY_EDITORIAL_RE.findall(html)
+    if empty_blocks:
+        issues.append(
+            Issue("ERROR",
+                  f"{len(empty_blocks)} editorial section(s) with an empty "
+                  f"block under the heading: {', '.join(empty_blocks[:3])}")
+        )
 
     # symbolToast
     if not SYMBOL_TOAST_RE.search(html):
