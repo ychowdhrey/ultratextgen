@@ -31,9 +31,10 @@ not translate copy fresh. A locale line is only a link, and its text is the
 locale collection page's own <h1> (minus a trailing "(copy)"-style aside). The
 collection is the locale translation of the EN parent's collection, found through
 its `hreflang="en"` link, the same way `sync_symbol_spoke_links.py` mirrors peer
-relations. A locale with no translation of that collection gets no line: linking
-the English page from a locale page is the miswiring the locale-native linking
-rule forbids.
+relations. A locale with no translation of that collection links its own library
+hub instead (worded with the hub's own <h1>), never the English collection:
+linking the English page from a locale page is the miswiring the locale-native
+linking rule forbids. A locale with neither gets no line.
 """
 
 import re

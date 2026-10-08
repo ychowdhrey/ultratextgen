@@ -12,8 +12,11 @@ them.
           pointing at the first /library/ card the spoke already carries.
   locale  a link only, worded with the locale collection page's own <h1>,
           pointing at the locale translation of the EN parent's collection.
-          No translation of that collection in the locale -> no line (and any
-          old one is removed); reported as skipped, not as a defect.
+          No translation of that collection in the locale -> the locale's
+          own library hub (/<lc>/library/), worded with the hub's own <h1>,
+          so every spoke still offers a way to explore. A locale with no hub
+          either (fi, ms) -> no line (any old one is removed); reported as
+          skipped, not as a defect.
 
 Locales come from `data/locale_qualification_tiers.json`, never a filesystem
 glob (zh-tw is five characters).
@@ -104,13 +107,21 @@ def main(argv=None):
                 if parent and h1 and parent not in lib:
                     href = "/" + page.parent.relative_to(REPO).as_posix() + "/"
                     lib[parent] = (href, scl.locale_label(h1.group(1)))
+            # Fallback when the locale has no translation of the collection:
+            # its own library hub, never the English collection.
+            hub = (None, None)
+            hub_page = REPO / lang / "library" / "index.html"
+            if hub_page.exists():
+                h1 = H1_RE.search(read(hub_page))
+                if h1:
+                    hub = (f"/{lang}/library/", scl.locale_label(h1.group(1)))
             for page in sorted((REPO / lang / "symbol").glob("*/index.html")):
                 html = read(page)
                 parent = en_parent(html, "symbol")
                 if parent is None or parent not in en_collection:
                     results.append((page, html, html, "no-en-parent"))
                     continue
-                href, label = lib.get(en_collection[parent], (None, None))
+                href, label = lib.get(en_collection[parent], hub)
                 new, status = scl.apply_locale(html, lang, href, label)
                 results.append((page, html, new, status))
 
@@ -131,7 +142,7 @@ def main(argv=None):
 
     verb = "rewrote" if args.write else "stale"
     print(f"symbol collection link: {len(results)} spokes, {current} current, "
-          f"{len(stale)} {verb}, {skipped} skipped (no translated collection), "
+          f"{len(stale)} {verb}, {skipped} skipped (no collection and no library hub), "
           f"{len(unknown)} unknown")
     for rel in stale[:50]:
         print(f"  {verb}: {rel}")
