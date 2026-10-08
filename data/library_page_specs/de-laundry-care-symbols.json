@@ -132,15 +132,15 @@
     },
     {
      "char": "•",
-     "label": "Ein Punkt (niedrig, bis 110 °C)"
+     "label": "Ein Punkt (niedrig, bis 120 °C)"
     },
     {
      "char": "‥",
-     "label": "Zwei Punkte (mittel, bis 150 °C)"
+     "label": "Zwei Punkte (mittel, bis 160 °C)"
     },
     {
      "char": "…",
-     "label": "Drei Punkte (hoch, bis 200 °C)"
+     "label": "Drei Punkte (hoch, bis 210 °C)"
     },
     {
      "char": "♻",
@@ -211,7 +211,7 @@
   },
   {
    "h2": "Warum diese Zeichen nicht in Unicode stehen",
-   "body": "Die genormten Pflegesymbole gehören GINETEX und sind als Bildmarken geschützt: Unicode nimmt geschützte Zeichensysteme grundsätzlich nicht auf. Deshalb gibt es kein Zeichen für „Waschbottich 40 Grad“, das man in eine Nachricht kopieren könnte. Für Fließtext bleibt der Umweg über die Zeichen oben: ein Wassertropfen und eine Temperaturangabe sagen dasselbe wie das Etikett, nur eben in Textform."
+   "body": "Die genormten Pflegesymbole gehören GINETEX und sind als Bildmarken geschützt. Sie stehen nicht in Unicode, und so gibt es kein Zeichen für „Waschbottich 40 Grad“, das man in eine Nachricht kopieren könnte. Für Fließtext bleibt der Umweg über die Zeichen oben: ein Wassertropfen und eine Temperaturangabe sagen dasselbe wie das Etikett, nur eben in Textform."
   }
  ],
  "related": [
