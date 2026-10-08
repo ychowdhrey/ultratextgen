@@ -114,6 +114,27 @@ def esc(text):
     return html.escape(str(text), quote=False)
 
 
+_INLINE_TAGS = re.compile(
+    r'&lt;(/?)(strong|em)&gt;|&lt;a href="([^"<>]*)"&gt;|&lt;/a&gt;'
+)
+
+
+def esc_inline(text):
+    """HTML-escape text, then restore the few inline tags a spec's prose may carry.
+
+    The top-level "intro" of 23 specs wrote <strong>, <em> and <a href> and
+    esc() turned them into visible &lt;strong&gt; on 28 live pages. Anything else
+    stays escaped, so a spec still cannot inject a script or an attribute.
+    """
+    def _restore(m):
+        if m.group(2):
+            return f"<{m.group(1)}{m.group(2)}>"
+        if m.group(3) is not None:
+            return f'<a href="{m.group(3)}">'
+        return "</a>"
+    return _INLINE_TAGS.sub(_restore, html.escape(str(text), quote=False))
+
+
 def esc_attr(text):
     """HTML-escape for use inside a double-quoted attribute."""
     return html.escape(str(text), quote=True)
@@ -948,7 +969,7 @@ def render_page(spec):
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
-    <p>{esc(spec["intro"])}</p>
+    <p>{esc_inline(spec["intro"])}</p>
   </div>
 </section>
 
