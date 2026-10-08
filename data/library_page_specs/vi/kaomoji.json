@@ -259,6 +259,46 @@
           "label": "Mèo Cười"
         }
       ]
+    },
+    {
+      "id": "birds",
+      "label": "Chim",
+      "h2": "Kaomoji chim",
+      "intro": "Phần lớn kaomoji chim dùng chữ cái Hy Lạp theta (Θ hoặc θ) làm mỏ, nên các mặt bên dưới có chung ký tự ở giữa. ⊝ tạo mỏ tròn hơn trông như chim cánh cụt, còn ▼ tạo mỏ nhọn.",
+      "symbols": [
+        {
+          "char": "(・Θ・)",
+          "label": "Gà Con"
+        },
+        {
+          "char": "(･θ･)",
+          "label": "Chim Nhỏ"
+        },
+        {
+          "char": "(◉Θ◉)",
+          "label": "Chim Mắt To"
+        },
+        {
+          "char": "＼( ˋ Θ ´ )／",
+          "label": "Vỗ Cánh"
+        },
+        {
+          "char": "(￣Θ￣)",
+          "label": "Chim Thờ Ơ"
+        },
+        {
+          "char": "（・⊝・）",
+          "label": "Chim Cánh Cụt"
+        },
+        {
+          "char": "◎▼◎",
+          "label": "Cú Mèo"
+        },
+        {
+          "char": "(`･Θ･´)",
+          "label": "Gà Con Cáu Kỉnh"
+        }
+      ]
     }
   ]
 }

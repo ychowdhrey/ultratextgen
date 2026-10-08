@@ -280,6 +280,78 @@
           "label": "Kirschblüte"
         }
       ]
+    },
+    {
+      "id": "cutecore",
+      "label": "Cutecore-Ästhetik",
+      "h2": "Cutecore-Emojis & -Symbole",
+      "intro": "Cutecore ist eine Online-Ästhetik aus Kawaii-Grundzutaten wie Plüschtieren, Erdbeeren, Schleifen und Pastellrosa, die oft eine leicht unheimliche Note dazunimmt, etwa Pflaster oder Zähne. Damit steht sie neben Weirdcore; klassisches Kawaii bleibt bei der süßen Hälfte. 🩷 ist ein neueres Emoji und erscheint auf älteren Handys womöglich als leeres Kästchen; 💕 daneben ist der ältere Ersatz.",
+      "symbols": [
+        {
+          "char": "🍓",
+          "label": "Erdbeere"
+        },
+        {
+          "char": "🩷",
+          "label": "Rosa Herz"
+        },
+        {
+          "char": "💕",
+          "label": "Zwei Herzen"
+        },
+        {
+          "char": "🍰",
+          "label": "Kuchenstück"
+        },
+        {
+          "char": "🧁",
+          "label": "Törtchen"
+        },
+        {
+          "char": "🍼",
+          "label": "Babyfläschchen"
+        },
+        {
+          "char": "🩹",
+          "label": "Pflaster"
+        },
+        {
+          "char": "🦷",
+          "label": "Zahn"
+        }
+      ]
+    },
+    {
+      "id": "cutecore-combos",
+      "label": "Cutecore-Kombis",
+      "h2": "Cutecore-Kombis",
+      "intro": "Kurze Zeichenfolgen aus Plüsch, Süßem und einem Pflaster oder Zahn, für eine Bio-Zeile oder als Deko um den Nutzernamen.",
+      "symbols": [
+        {
+          "char": "⋆˚࿔ 🧸 ˚⋆",
+          "label": "Teddy mit Funkeln"
+        },
+        {
+          "char": "🍓🎀🧁",
+          "label": "Süße Leckereien"
+        },
+        {
+          "char": "🩹🧸🩹",
+          "label": "Geflicktes Plüschtier"
+        },
+        {
+          "char": "♡ 🐰 ♡",
+          "label": "Hasen-Herzen"
+        },
+        {
+          "char": "꒰ 🍓 ꒱",
+          "label": "Erdbeere in Klammern"
+        },
+        {
+          "char": "🦷✨🩹",
+          "label": "Zahn und Pflaster"
+        }
+      ]
     }
   ],
   "cta": "Gib deinen Namen oder Bio-Text in den Text-Dekorator ein, wähle den Kawaii-Stil und erhalte sofort Dutzende fertige Kombinationen zum Kopieren.",

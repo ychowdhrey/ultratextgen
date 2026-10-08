@@ -284,6 +284,78 @@
           "label": "Hoa anh đào"
         }
       ]
+    },
+    {
+      "id": "cutecore",
+      "label": "Phong cách cutecore",
+      "h2": "Emoji và ký tự cutecore",
+      "intro": "Cutecore là một phong cách thẩm mỹ trên mạng, dựng từ những món kawaii cơ bản (thú bông, dâu tây, nơ, hồng pastel) và thường thêm một chút gì đó hơi rợn, như miếng băng cá nhân hay răng, nên hay được xếp cạnh weirdcore. Kawaii thông thường chỉ giữ nửa ngọt ngào. 🩷 là emoji mới, điện thoại cũ có thể hiện thành ô trống; 💕 bên cạnh là lựa chọn thay thế có từ lâu.",
+      "symbols": [
+        {
+          "char": "🍓",
+          "label": "Dâu tây"
+        },
+        {
+          "char": "🩷",
+          "label": "Trái tim hồng"
+        },
+        {
+          "char": "💕",
+          "label": "Hai trái tim"
+        },
+        {
+          "char": "🍰",
+          "label": "Bánh kem"
+        },
+        {
+          "char": "🧁",
+          "label": "Bánh cốc"
+        },
+        {
+          "char": "🍼",
+          "label": "Bình sữa"
+        },
+        {
+          "char": "🩹",
+          "label": "Băng cá nhân"
+        },
+        {
+          "char": "🦷",
+          "label": "Răng"
+        }
+      ]
+    },
+    {
+      "id": "cutecore-combos",
+      "label": "Combo cutecore",
+      "h2": "Combo cutecore",
+      "intro": "Chuỗi ngắn kết hợp thú bông, đồ ngọt và miếng băng cá nhân hoặc răng, dùng cho một dòng tiểu sử hoặc trang trí tên người dùng.",
+      "symbols": [
+        {
+          "char": "⋆˚࿔ 🧸 ˚⋆",
+          "label": "Gấu bông lấp lánh"
+        },
+        {
+          "char": "🍓🎀🧁",
+          "label": "Đồ ngọt"
+        },
+        {
+          "char": "🩹🧸🩹",
+          "label": "Thú bông vá"
+        },
+        {
+          "char": "♡ 🐰 ♡",
+          "label": "Thỏ giữa tim"
+        },
+        {
+          "char": "꒰ 🍓 ꒱",
+          "label": "Dâu trong ngoặc"
+        },
+        {
+          "char": "🦷✨🩹",
+          "label": "Răng và băng cá nhân"
+        }
+      ]
     }
   ],
   "cta": "Dùng UltraTextGen để chuyển văn bản thường thành chữ đậm, nghiêng, viết tay và hơn 100 kiểu phông Unicode khác — miễn phí và tức thì.",
