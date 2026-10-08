@@ -252,7 +252,7 @@
       "id": "birds",
       "label": "Oiseaux",
       "h2": "Emojis d’Oiseaux",
-      "intro": "Des espèces communes aux plus exotiques.",
+      "intro": "Des espèces communes aux plus exotiques. 🐦‍⬛ Oiseau noir est l’emoji du corbeau et de la corneille : Emoji 15.0 (2022) l’a formé avec 🐦 et ⬛ reliés par un caractère de liaison invisible, donc un appareil plus ancien affiche les deux côte à côte.",
       "symbols": [
         {
           "char": "🐦",
@@ -293,6 +293,14 @@
         {
           "char": "🕊",
           "label": "Colombe"
+        },
+        {
+          "char": "🐦‍⬛",
+          "label": "Oiseau noir (corbeau, corneille)"
+        },
+        {
+          "char": "🪶",
+          "label": "Plume"
         },
         {
           "char": "🪿",
