@@ -174,14 +174,18 @@ that does it, then the same page in every other language.
   2026-10-08). It is a ledger: adding, removing or reordering an entry is
   discussed, never done to make a check pass.
 * **The line is read off the pages, like every other line.** Link text and note
-  are the English page's own `<h1>` and tagline. The language links are every
-  indexable page whose `hreflang="en"` parent is that page, labelled with its
-  locale code (no language names, per §4). Nothing in the line is written here.
+  are the English page's own `<h1>` and tagline. The language links are the
+  indexable pages paired with it **both ways**: the locale page names it as its
+  `hreflang="en"`, and it names the locale page as its own alternate for that
+  locale. Labelled with the locale code (no language names, per §4). Nothing in
+  the line is written here. One side alone is not a translation: on the first
+  build the Spanish Ñ colouring sheet, which names the homepage as its English
+  parent because English has no Ñ sheet, printed as "the homepage in Spanish".
 * **It is a cross-reference layer.** Each page still has exactly one home in a
   section index; `validate()` does not count a job line as a second one. It
   does check that the job is an indexable English page, that each language
   link is an indexable page in that locale, and that the page names the job as
-  its English parent. A listed path that stops being a page fails
+  its English parent from both sides. A listed path that stops being a page fails
   `npm run check:llms`.
 * **No ranking or inclusion claim** is made for it, as for the rest of the tree.
 
@@ -349,7 +353,7 @@ And verified that CI *gates* on it rather than merely running it:
 tree and **0** on a clean one; `--only llms_index_tests` returns **1** with a
 validation rule disabled and **0** restored.
 
-`npm run test:llms` is 68 assertions (58 before the jobs section) over the rules above, including a
+`npm run test:llms` is 70 assertions (58 before the jobs section) over the rules above, including a
 determinism check: the same corpus in reverse discovery order renders
 byte-identically.
 

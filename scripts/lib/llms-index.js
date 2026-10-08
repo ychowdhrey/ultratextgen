@@ -441,10 +441,12 @@ function readPage(file) {
   const noindex = /\bnoindex\b/i.test(robots);
 
   let enParent = '';
+  const alternates = {};
   $('link[rel="alternate"]').each((_, el) => {
-    if (tidy($(el).attr('hreflang')).toLowerCase() === 'en') {
-      enParent = tidy($(el).attr('href'));
-    }
+    const lang = tidy($(el).attr('hreflang')).toLowerCase();
+    if (!lang) return;
+    alternates[lang] = tidy($(el).attr('href'));
+    if (lang === 'en') enParent = alternates[lang];
   });
 
   const tagline = tidy($('p.hero-tagline').first().text());
@@ -483,6 +485,9 @@ function readPage(file) {
     summary: tidy(metaDesc || tagline || ogDesc).slice(0, 300),
     descriptionSource,
     enParent,
+    // Every hreflang this page declares, lower-cased. The jobs section uses an
+    // English page's list to confirm a locale page's claim from both sides.
+    alternates,
     breadcrumb: breadcrumbTrail($),
   };
 }
@@ -953,6 +958,13 @@ function loadJobIndex() {
  * Resolve each listed path to its English page and the locale pages that name
  * it as their English parent. A path that is not an indexable English page
  * resolves to `page: null`, which `validate()` reports rather than dropping.
+ *
+ * The pairing must hold from both sides: the locale page names the job as its
+ * `hreflang="en"`, AND the job page lists that locale page as its own
+ * alternate for that locale. One side alone is not a translation. Measured on
+ * the first build: `/es/imprimibles/abecedario-para-colorear/letra-enye/`
+ * names the homepage as its English parent (English has no Ñ sheet), which
+ * would have printed a colouring sheet as "the homepage in Spanish".
  */
 function resolveJobs(locales, jobPaths) {
   const enByUrl = new Map(locales.get('en').pages.map((p) => [p.url, p]));
@@ -967,9 +979,11 @@ function resolveJobs(locales, jobPaths) {
   }
   return jobPaths.map((p) => {
     const url = `${BASE_URL}${p}`;
-    const others = (byParent.get(url) || []).slice()
+    const page = enByUrl.get(url) || null;
+    const others = (byParent.get(url) || [])
+      .filter((o) => page && page.alternates[o.locale] === o.url)
       .sort((a, b) => (a.locale + a.url < b.locale + b.url ? -1 : 1));
-    return { path: p, url, page: enByUrl.get(url) || null, others };
+    return { path: p, url, page, others };
   });
 }
 
@@ -1177,8 +1191,9 @@ function validate(result) {
         for (const [, code, alt] of (note || '').matchAll(/\[([a-z-]+)\]\((\S+?)\)/g)) {
           const other = known.get(alt);
           if (!other) problems.push(`${where}: job ${url} links ${alt}, not a known indexable route`);
-          else if (other.locale !== code || other.enParent !== url) {
-            problems.push(`${where}: job ${url} links ${alt} as [${code}], but that page is ${other.locale} with English parent ${other.enParent || '(none)'}`);
+          else if (other.locale !== code || other.enParent !== url
+            || page.alternates[code] !== alt) {
+            problems.push(`${where}: job ${url} links ${alt} as [${code}], but the pair is not confirmed both ways (page locale ${other.locale}, its English parent ${other.enParent || '(none)'}, job's own ${code} alternate ${page.alternates[code] || '(none)'})`);
           }
         }
         continue;

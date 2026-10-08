@@ -338,8 +338,20 @@ ok(real.skippedNoindex.length > 0,
   const block = real.jobs.find((j) => j.path === '/printables/block-letters/');
   ok(block && block.others.some((p) => p.url === `${BASE}/es/imprimibles/moldes-de-letras/`),
     'jobs: block letters carries its Spanish page');
-  const bad = block.others.filter((p) => p.enParent !== block.url || p.locale === 'en');
-  eq(bad.length, 0, 'jobs: every language link names the job as its English parent');
+  const bad = block.others.filter((p) => p.enParent !== block.url || p.locale === 'en'
+    || block.page.alternates[p.locale] !== p.url);
+  eq(bad.length, 0, 'jobs: every language link is a two-way hreflang pair with the job');
+  const home = real.jobs.find((j) => j.path === '/');
+  ok(home && !home.others.some((p) => p.url.includes('/letra-enye/')),
+    'jobs: a one-sided hreflang claim (the Spanish Ñ sheet naming the homepage) is not a translation');
+  const perLocale = new Set();
+  const dupLocale = [];
+  for (const j of real.jobs) for (const o of j.others) {
+    const k = `${j.path} ${o.locale}`;
+    if (perLocale.has(k)) dupLocale.push(k);
+    perLocale.add(k);
+  }
+  eq(dupLocale.length, 0, 'jobs: at most one page per language per job', dupLocale.slice(0, 3).join(' | '));
 
   // Broken inputs go red: a path that is not a page, and a language link that
   // points at a page with a different English parent.
@@ -351,7 +363,7 @@ ok(real.skippedNoindex.length > 0,
     content: f.content.replace(`[es](${BASE}/es/imprimibles/moldes-de-letras/)`, `[es](${BASE}/es/)`),
   }));
   const p2 = L.validate({ ...real, files: wrong });
-  ok(p2.some((m) => m.includes(`links ${BASE}/es/ as [es]`)), 'jobs: a language link to the wrong page fails validation');
+  ok(p2.some((m) => m.includes(`links ${BASE}/es/ as [es]`) && m.includes('not confirmed both ways')), 'jobs: a language link to the wrong page fails validation');
 }
 
 {
