@@ -51,6 +51,7 @@ grandfathered.
 | `source_block_labels.json` | each locale's own word for "Sources" | `source-attribution.js` |
 | `accent_notice_copy.json`, `accent-support.json` | the accent notice and per-style accent coverage | `build-accent-notice.js` |
 | `character-confusions.json` | confusable-character pairs | the symbol generators |
+| `llms_job_index.json` | the owner's ordered job list (English owner paths) for the root `llms.txt` jobs section | `llms-index.js` |
 
 Policy and registry files (`core_parent_set`, `locale_qualification_tiers`,
 `em_dash_locale_policy`, `parity_catalogue_pages`, `source_authority`) are
