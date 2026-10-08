@@ -89,6 +89,82 @@
       ]
     },
     {
+      "id": "grief-mourning",
+      "label": "Emoji per Lutto e Cordoglio",
+      "h2": "Emoji per Lutto e Cordoglio",
+      "intro": "I simboli usati nei messaggi di condoglianze e nei post in memoria di qualcuno. 🕯️ indica il ricordo, 🕊️ la pace, 🖤 il lutto, 🤍 una vicinanza discreta e 💐 i fiori che porteresti.",
+      "symbols": [
+        {
+          "char": "🕯️",
+          "label": "Candela"
+        },
+        {
+          "char": "🕊️",
+          "label": "Colomba"
+        },
+        {
+          "char": "🖤",
+          "label": "Cuore Nero"
+        },
+        {
+          "char": "🤍",
+          "label": "Cuore Bianco"
+        },
+        {
+          "char": "🥀",
+          "label": "Fiore Appassito"
+        },
+        {
+          "char": "💐",
+          "label": "Mazzo di Fiori"
+        },
+        {
+          "char": "🪦",
+          "label": "Lapide"
+        },
+        {
+          "char": "❤️‍🩹",
+          "label": "Cuore Bendato"
+        }
+      ]
+    },
+    {
+      "id": "condolence-combos",
+      "label": "Combo di Emoji per Condoglianze e Ricordi",
+      "h2": "Combo di Emoji per Condoglianze e Ricordi",
+      "intro": "Sequenze brevi per chiudere un messaggio di vicinanza o accompagnare la foto di un ricordo. In un messaggio a chi è in lutto, 🕊️ e 🤍 risultano più delicati di 🪦, più adatto a un omaggio pubblico.",
+      "symbols": [
+        {
+          "char": "🕯️🕊️🤍",
+          "label": "Ricordo"
+        },
+        {
+          "char": "🕊️🤍",
+          "label": "Riposa in Pace"
+        },
+        {
+          "char": "🖤🥀🕯️",
+          "label": "Lutto"
+        },
+        {
+          "char": "💐🤍",
+          "label": "Fiori di Cordoglio"
+        },
+        {
+          "char": "🙏🤍",
+          "label": "Ti Penso"
+        },
+        {
+          "char": "❤️‍🩹🤍",
+          "label": "Guarigione"
+        },
+        {
+          "char": "🪦🥀🕯️",
+          "label": "Omaggio"
+        }
+      ]
+    },
+    {
       "id": "drained",
       "label": "Facce Deluse e Sfinite",
       "h2": "Facce Deluse e Sfinite",

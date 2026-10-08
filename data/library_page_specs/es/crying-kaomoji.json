@@ -122,6 +122,42 @@
       ]
     },
     {
+      "id": "happy-tears",
+      "label": "Lágrimas de Alegría",
+      "h2": "Kaomoji con Lágrimas de Alegría y Emoción",
+      "intro": "Lágrimas con una sonrisa debajo, para una buena noticia, un reencuentro o una escena que te llegó. La boca curva ‿ o abierta ▽ es lo que las distingue de los sollozos de arriba.",
+      "symbols": [
+        {
+          "char": "(T▽T)",
+          "label": "Lágrimas de Alegría"
+        },
+        {
+          "char": "(ಥ‿ಥ)",
+          "label": "Sonriendo entre Lágrimas"
+        },
+        {
+          "char": "(╥‿╥)",
+          "label": "Conmovido"
+        },
+        {
+          "char": "(;▽;)",
+          "label": "Emocionado hasta Llorar"
+        },
+        {
+          "char": "( ;∀;)",
+          "label": "Enternecido"
+        },
+        {
+          "char": "(ㅠ‿ㅠ)",
+          "label": "Sollozo Feliz"
+        },
+        {
+          "char": "(´；▽；`)",
+          "label": "Felicidad Desbordada"
+        }
+      ]
+    },
+    {
       "id": "sad",
       "label": "Tristes",
       "h2": "Kaomoji Tristes y Disgustados",

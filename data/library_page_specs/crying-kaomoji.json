@@ -71,6 +71,42 @@
       ]
     },
     {
+      "id": "happy-tears",
+      "label": "Happy Tears",
+      "h2": "Happy Tears & Touched Kaomoji",
+      "intro": "Tears with a smile under them, for good news, a reunion, or a scene that got to you. The curved ‿ or open ▽ mouth is what sets these apart from the sobbing faces above.",
+      "symbols": [
+        {
+          "char": "(T▽T)",
+          "label": "Tears of Joy"
+        },
+        {
+          "char": "(ಥ‿ಥ)",
+          "label": "Smiling Through Tears"
+        },
+        {
+          "char": "(╥‿╥)",
+          "label": "Touched"
+        },
+        {
+          "char": "(;▽;)",
+          "label": "Moved to Tears"
+        },
+        {
+          "char": "( ;∀;)",
+          "label": "Heartwarmed"
+        },
+        {
+          "char": "(ㅠ‿ㅠ)",
+          "label": "Happy Sniffle"
+        },
+        {
+          "char": "(´；▽；`)",
+          "label": "Overjoyed"
+        }
+      ]
+    },
+    {
       "id": "sad",
       "label": "Sad",
       "h2": "Sad & Upset Kaomoji",

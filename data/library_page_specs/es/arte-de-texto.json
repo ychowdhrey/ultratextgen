@@ -234,6 +234,54 @@
           "label": "Triángulo sin relleno hacia abajo"
         }
       ]
+    },
+    {
+      "id": "one-line-art",
+      "label": "Una línea",
+      "h2": "Arte ASCII de una línea",
+      "intro": "Piezas que caben en una sola línea, así que se pegan bien en un chat, un comentario o un estado donde una pieza de varias líneas se cortaría o perdería su espaciado. Algunas usan letras de otros alfabetos (la punta de la espada es una letra árabe), y quien no tenga esa fuente verá un recuadro en su lugar.",
+      "symbols": [
+        {
+          "char": "▬▬ι═══════ﺤ",
+          "label": "Espada"
+        },
+        {
+          "char": "><((((º>",
+          "label": "Pez"
+        },
+        {
+          "char": "<コ:彡",
+          "label": "Calamar"
+        },
+        {
+          "char": "@}->--",
+          "label": "Rosa"
+        },
+        {
+          "char": "~(˘▾˘~)",
+          "label": "Bailando"
+        },
+        {
+          "char": "┬─┬ノ( º _ ºノ)",
+          "label": "Mesa de vuelta"
+        },
+        {
+          "char": "ಠ_ಠ",
+          "label": "Mirada de desaprobación"
+        },
+        {
+          "char": "ᕦ(ò_óˇ)ᕤ",
+          "label": "Sacando músculo"
+        },
+        {
+          "char": "(•_•) ( •_•)>⌐■-■ (⌐■_■)",
+          "label": "Gafas de sol"
+        },
+        {
+          "char": "(づ｡◕‿‿◕｡)づ",
+          "label": "Abrazo"
+        }
+      ]
     }
   ],
   "collections": [
