@@ -67,6 +67,18 @@
       ]
     },
     {
+      "id": "nodding-head-shaking",
+      "label": "Nodding & Head Shaking",
+      "h2": "Nodding Yes and Shaking No Emoji",
+      "intro": "Emoji 15.1 (2023) added a nodding face for yes and a head-shaking face for no. Each one is 🙂 joined to an arrow, so a phone that has not had that update shows 🙂↕ or 🙂↔ in two pieces. 🙆 and 🙅 carry the same yes and no, and they date from the first emoji set, so they display wherever emoji do.",
+      "symbols": [
+        { "char": "🙂‍↕️", "label": "Head Shaking Vertically (Nod Yes)" },
+        { "char": "🙂‍↔️", "label": "Head Shaking Horizontally (Shake No)" },
+        { "char": "🙆", "label": "Person Gesturing OK" },
+        { "char": "🙅", "label": "Person Gesturing No" }
+      ]
+    },
+    {
       "id": "pointing-hands",
       "label": "Pointing Hands",
       "h2": "Pointing & Raised Hands",
