@@ -469,6 +469,24 @@ jobs:
         continue-on-error: true
         run: npm run test:qr | tee qr-tests.log
 
+      # Gating, no backlog: the name-label sheet prints onto pre-cut label
+      # stock, so every stock's margins, label size and gaps must sum to its
+      # own sheet, and the per-sheet counts the pages quote must be the counts
+      # the engine lays out. A wrong number moves a column off the labels and
+      # no screen preview shows it.
+      - name: Run label sheet geometry tests
+        id: label_geometry_tests
+        continue-on-error: true
+        run: npm run test:label-geometry | tee label-geometry-tests.log
+
+      # Gating, no backlog: the Korean kana charts print a Hangul reading under
+      # every kana, and a kana missing from the reading table renders an empty
+      # line with no error. The test walks both shipped datasets.
+      - name: Run Korean kana reading tests
+        id: kana_readings_tests
+        continue-on-error: true
+        run: npm run test:kana-readings | tee kana-readings-tests.log
+
       # Gating, and no backlog to be red against: every counter either attaches
       # or it does not. The bridge finder's one failure mode is silence — an
       # empty array reads exactly like a letter that needed no bridge, on
@@ -1173,6 +1191,8 @@ jobs:
             echo '```'
             echo ""
             echo "### QR encoder tests — \`${{ steps.qr_tests.outcome }}\`"
+            echo "### Label sheet geometry tests — \`${{ steps.label_geometry_tests.outcome }}\`"
+            echo "### Korean kana reading tests — \`${{ steps.kana_readings_tests.outcome }}\`"
             echo "### Stencil bridge tests — \`${{ steps.stencil_tests.outcome }}\`"
             echo "### Glyph centreline tests — \`${{ steps.centreline_tests.outcome }}\`"
             echo "### Word search grid tests — \`${{ steps.word_search_tests.outcome }}\`"
@@ -1411,6 +1431,8 @@ jobs:
           steps.zalgo_engine_tests.outcome == 'failure' ||
           steps.romanize_tests.outcome == 'failure' ||
           steps.qr_tests.outcome == 'failure' ||
+          steps.label_geometry_tests.outcome == 'failure' ||
+          steps.kana_readings_tests.outcome == 'failure' ||
           steps.stencil_tests.outcome == 'failure' ||
           steps.centreline_tests.outcome == 'failure' ||
           steps.word_search_tests.outcome == 'failure' ||

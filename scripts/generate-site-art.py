@@ -3150,6 +3150,7 @@ PAGES.update({
       P(m_typo, sample="Thee", ff=SERIF, style="italic", weight="400", size=64, label="ye olde english"), K_USE),
 "usecase-pirate-translator": ("Pirate Translator", "Arrr! Turn any text into pirate speak", m_skull, K_USE),
 "printables-monogram-maker": ("Monogram Maker", "Up to 3 initials, classic or circle-frame", P(m_circled_letter, letter="M"), K_PRINT),
+"printables-name-labels": ("Printable Name Labels", "A full sheet of name labels for school, sized to fit", m_grid, K_PRINT),
 "printables-cross-stitch-letters": ("Cross-Stitch Letters", "Any word as a charted stitch pattern", m_grid, K_PRINT),
 "printables-spanish-alphabet-chart": ("Spanish Alphabet Chart", "All 27 letters, A-Z plus Ñ, one printable chart", P(m_letter_stencil, letter="Ñ"), K_PRINT),
 "fr-imprimables-alphabet-espagnol": ("Alphabet Espagnol à Imprimer", "Les 27 lettres, A-Z plus Ñ, une seule fiche", P(m_letter_stencil, letter="Ñ"), K_PRINT),
@@ -3260,6 +3261,8 @@ PAGES.update({
       P(m_typo, sample="อักษร", weight="800", size=76, label="ตัวอักษรและคำ", ff="Noto Sans Thai", lab_ff="Noto Sans Thai"), K_USE),
 "hiragana-chart": ("Hiragana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
 "katakana-chart": ("Katakana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
+"ko-hiragana-pyo": ("히라가나 표", "한글 발음·로마자와 함께 보는 46자, 인쇄와 쓰기 연습", m_kana_grid, K_LIB),
+"ko-gatakana-pyo": ("가타카나 표", "한글 발음·로마자와 함께 보는 46자, 인쇄와 쓰기 연습", m_kana_grid, K_LIB),
 
 # ---- tr/library — piliapp-mining individual-symbol pages (2026-07-12) ----
 "tr-library-japon-alfabesi": ("Japon Alfabesi", "Hiragana, katakana ve kanji kopyala yapıştır", m_kana_grid, K_LIB),
