@@ -111,6 +111,82 @@
           "label": "Heilendes Herz"
         }
       ]
+    },
+    {
+      "id": "dental",
+      "label": "Zahnmedizin",
+      "h2": "Zahn- und Zahnmedizin-Symbole",
+      "intro": "🦷 und 🪥 sind die gängigen Zahn-Emojis. Die fünfzehn Zeichen DENTISTRY SYMBOL (U+23BE bis U+23CC) sind einfarbige Textzeichen aus der Palmer-Notation, einem Zahnschema, das jeden Zahn von der Mitte aus mit 1 bis 8 nummeriert und die Zahl in eine L-förmige Klammer setzt, die den Quadranten im Mund anzeigt. Der Block enthält außerdem Klammern mit Kreis, Dreieck oder Welle.",
+      "symbols": [
+        {
+          "char": "🦷",
+          "label": "Zahn"
+        },
+        {
+          "char": "🪥",
+          "label": "Zahnbürste"
+        },
+        {
+          "char": "⎾",
+          "label": "Senkrecht und oben rechts"
+        },
+        {
+          "char": "⎿",
+          "label": "Senkrecht und unten rechts"
+        },
+        {
+          "char": "⏀",
+          "label": "Senkrecht mit Kreis"
+        },
+        {
+          "char": "⏁",
+          "label": "Unten und waagerecht mit Kreis"
+        },
+        {
+          "char": "⏂",
+          "label": "Oben und waagerecht mit Kreis"
+        },
+        {
+          "char": "⏃",
+          "label": "Senkrecht mit Dreieck"
+        },
+        {
+          "char": "⏄",
+          "label": "Unten und waagerecht mit Dreieck"
+        },
+        {
+          "char": "⏅",
+          "label": "Oben und waagerecht mit Dreieck"
+        },
+        {
+          "char": "⏆",
+          "label": "Senkrecht und Welle"
+        },
+        {
+          "char": "⏇",
+          "label": "Unten und waagerecht mit Welle"
+        },
+        {
+          "char": "⏈",
+          "label": "Oben und waagerecht mit Welle"
+        },
+        {
+          "char": "⏉",
+          "label": "Unten und waagerecht"
+        },
+        {
+          "char": "⏊",
+          "label": "Oben und waagerecht"
+        },
+        {
+          "char": "⏋",
+          "label": "Senkrecht und oben links"
+        },
+        {
+          "char": "⏌",
+          "label": "Senkrecht und unten links"
+        }
+      ]
     }
   ],
   "faq_h2": "Häufige Fragen zu medizinischen Symbolen",

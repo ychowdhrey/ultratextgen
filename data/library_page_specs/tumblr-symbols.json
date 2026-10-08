@@ -1,0 +1,119 @@
+{
+  "slug": "tumblr-symbols",
+  "title": "Tumblr Symbols: Copy & Paste Aesthetic Symbols for Your Blog",
+  "meta_description": "Copy and paste Tumblr aesthetic symbols for a blog title, description or text post: moons ☾ ☽, soft-grunge crosses ✞, the ღ heart, sparkle lines and post dividers.",
+  "canonical": "https://ultratextgen.com/library/tumblr-symbols/",
+  "breadcrumb": "Tumblr Symbols",
+  "hero_h1": "Tumblr Symbols",
+  "hero_tagline": "Moons, crosses, soft hearts and sparkle lines in the Tumblr aesthetic, grouped by the part of a blog they decorate. Click any symbol to copy it.",
+  "intro": "Tumblr symbols are the characters that decorated blog titles, blog descriptions and text posts through the pastel and soft-grunge years of Tumblr, and they still mark a blog as Tumblr-style: crescent moons ☾ ☽, crosses like ✞ and †, the Georgian letter ღ standing in for a heart, peace and yin-yang signs, and sparkle lines such as ✧･ﾟ: *✧･ﾟ:*. They are ordinary Unicode characters, so they copy and paste like any other text. The single symbols suit a blog title, the sparkle lines frame a description, and the dividers split a long text post into parts.",
+  "date_published": "2026-10-08",
+  "date_modified": "2026-10-08",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "moon-sky",
+      "label": "Moon & Sky",
+      "h2": "Moon, Star and Sky Symbols",
+      "intro": "The night-sky set behind countless pastel blog titles. ☾ and ☽ face each other, so they make a pair around a name.",
+      "symbols": [
+        {"char": "☾", "label": "Last Quarter Moon"},
+        {"char": "☽", "label": "First Quarter Moon"},
+        {"char": "✧", "label": "White Four Pointed Star"},
+        {"char": "☆", "label": "White Star"},
+        {"char": "✩", "label": "Stress Outlined White Star"},
+        {"char": "⋆", "label": "Star Operator"},
+        {"char": "☄", "label": "Comet"},
+        {"char": "☁", "label": "Cloud"},
+        {"char": "☼", "label": "Sun With Rays"}
+      ]
+    },
+    {
+      "id": "soft-grunge",
+      "label": "Soft Grunge",
+      "h2": "Soft Grunge Crosses and Daggers",
+      "intro": "Crosses, daggers and the ankh, the darker half of the Tumblr look. The full goth set is on the goth and grunge symbols page linked below.",
+      "symbols": [
+        {"char": "✞", "label": "Shadowed White Latin Cross"},
+        {"char": "✟", "label": "Outlined Latin Cross"},
+        {"char": "†", "label": "Dagger"},
+        {"char": "‡", "label": "Double Dagger"},
+        {"char": "♱", "label": "East Syriac Cross"},
+        {"char": "⸸", "label": "Turned Dagger"},
+        {"char": "☥", "label": "Ankh"},
+        {"char": "☠", "label": "Skull and Crossbones"}
+      ]
+    },
+    {
+      "id": "retro-signs",
+      "label": "Retro Signs",
+      "h2": "Peace Signs, Smileys and Music Notes",
+      "intro": "Text smileys and hippie signs from before emoji, still common in Tumblr bios and post tags.",
+      "symbols": [
+        {"char": "☮", "label": "Peace Symbol"},
+        {"char": "☯", "label": "Yin Yang"},
+        {"char": "✌", "label": "Victory Hand"},
+        {"char": "☺", "label": "White Smiling Face"},
+        {"char": "☻", "label": "Black Smiling Face"},
+        {"char": "☹", "label": "White Frowning Face"},
+        {"char": "♫", "label": "Beamed Eighth Notes"},
+        {"char": "♪", "label": "Eighth Note"},
+        {"char": "☂", "label": "Umbrella"}
+      ]
+    },
+    {
+      "id": "hearts-flowers",
+      "label": "Hearts & Flowers",
+      "h2": "Soft Hearts and Flowers",
+      "intro": "ღ is a letter of the Georgian alphabet that looks like a heart, which is why it turns up in so many blog names.",
+      "symbols": [
+        {"char": "ღ", "label": "Georgian Letter Ghan"},
+        {"char": "♡", "label": "White Heart Suit"},
+        {"char": "❥", "label": "Rotated Heavy Black Heart Bullet"},
+        {"char": "❦", "label": "Floral Heart"},
+        {"char": "✿", "label": "Black Florette"},
+        {"char": "❀", "label": "White Florette"},
+        {"char": "❁", "label": "Eight Petalled Outlined Black Florette"}
+      ]
+    },
+    {
+      "id": "title-sparkles",
+      "label": "Title Sparkles",
+      "h2": "Sparkle Lines for a Blog Title or Description",
+      "intro": "Each button copies the whole string. Put one on each side of a title, like ✧･ﾟ: *✧･ﾟ:* dreamy *:･ﾟ✧*:･ﾟ✧.",
+      "symbols": [
+        {"char": "✧･ﾟ: *✧･ﾟ:*", "label": "Sparkle Trail"},
+        {"char": "*:･ﾟ✧*:･ﾟ✧", "label": "Sparkle Trail Reversed"},
+        {"char": "⋆｡˚ ☁︎ ˚｡⋆", "label": "Cloud and Stars"},
+        {"char": "☾ ⋆ ☽", "label": "Moon Pair"},
+        {"char": "ღ ღ ღ", "label": "Heart Row"},
+        {"char": "☆彡", "label": "Shooting Star"}
+      ]
+    },
+    {
+      "id": "post-dividers",
+      "label": "Dividers",
+      "h2": "Dividers for Text Posts",
+      "intro": "Break a long text post into sections, or close a post with one before the tags.",
+      "symbols": [
+        {"char": "‿︵‿︵‿︵‿︵‿︵", "label": "Wave Divider"},
+        {"char": "─── ⋆⋅☆⋅⋆ ───", "label": "Star Divider"},
+        {"char": "✿ ✿ ✿ ✿ ✿", "label": "Flower Divider"},
+        {"char": "☾ ⋆ ☽ ⋆ ☾ ⋆ ☽", "label": "Moon Divider"},
+        {"char": "✞ ✞ ✞ ✞ ✞", "label": "Cross Divider"}
+      ]
+    }
+  ],
+  "faq_h2": "Tumblr Symbols, Answered",
+  "faq": [
+    {"q": "What makes a symbol look Tumblr-style?", "a": "Mostly the mix: soft night-sky and flower characters like ☾ ✧ ✿ next to darker soft-grunge ones like ✞ and †, with ღ for hearts and sparkle lines around the title. None of these characters belong to Tumblr. The look comes from how its blogs combined them."},
+    {"q": "Why do some symbols show as boxes on my blog?", "a": "The text you save is the same for everyone, but each visitor's device draws it with its own fonts. A device with no font for a character draws a box in its place. Most of the single symbols here sit in the Miscellaneous Symbols and Dingbats blocks, which have been part of Unicode since its first version in 1991."},
+    {"q": "Can I make the letters of my blog title fancy too?", "a": "Yes. Symbols decorate around the words, while a font generator changes the letters themselves into bold, cursive or small-caps Unicode. The aesthetic fonts page linked below does that for any title."}
+  ],
+  "related": [
+    {"href": "/library/aesthetic-symbols/", "title": "Aesthetic Symbols", "desc": "Soft stars, sparkles and ornaments for bios."},
+    {"href": "/library/goth-grunge-symbols/", "title": "Goth & Grunge Symbols", "desc": "Crosses, daggers, skulls and dark ornaments."},
+    {"href": "/library/aesthetic-borders-frames/", "title": "Aesthetic Borders & Frames", "desc": "Borders and frames to wrap a title or a post."},
+    {"href": "/category/aesthetic-fonts/", "title": "Aesthetic Fonts", "desc": "Turn the letters of a blog title into aesthetic Unicode fonts."}
+  ]
+}

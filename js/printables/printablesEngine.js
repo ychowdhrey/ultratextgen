@@ -1420,6 +1420,7 @@
     genPng: $("#pt-gen-png"),
     genScript: $("#pt-gen-script"),
     genRoster: $("#pt-gen-roster"),
+    genWordSets: $("#pt-gen-wordsets"),
     genLadder: $("#pt-gen-ladder"),
     // Coloring-sheet designer (optional; gated on its own mounts)
     designInput: $("#pt-design-input"),
@@ -3425,6 +3426,7 @@
     const rosterList = roster ? rosterNames(roster) : [];
     if (rosterList.length) p.roster = rosterList.join("|");
     if (el.genSlider || el.genLevels) p.level = genLevel();
+    if (genWordSet && genWordSet.key) p.wset = genWordSet.key;
     const rows = firstEl([el.nameRows, el.genRows]);
     if (rows && rows.value) p.rows = rows.value;
     if (el.genCase && el.genCase.value && el.genCase.value !== "as-typed") p.case = el.genCase.value;
@@ -3528,6 +3530,11 @@
     if (!presetQuery) return;
     const level = parseInt(presetGet("level"), 10);
     if (level && typeof setGenLevel === "function" && (el.genSlider || el.genLevels)) setGenLevel(level);
+    const wset = presetGet("wset");
+    if (wset && el.genWordSets) {
+      const wb = $$(".pt-gen-wordset", el.genWordSets).find((b) => b.dataset.set === wset);
+      if (wb) setGenWordSet(wb);
+    }
     const style = presetGet("style");
     if (style && typeof setNameStyle === "function" && typeof NAME_STYLES !== "undefined" && NAME_STYLES && NAME_STYLES.some((x) => x.key === style)) setNameStyle(style);
     const script = presetGet("script");
@@ -7297,8 +7304,15 @@
 
      1600 units covers the widest case this can meet — a landscape sheet at
      narrow margins, where the viewport is about 6.7x the row height, i.e.
-     1411 units against a 522-unit box for a four-letter name. */
-  const RULE_OVERHANG = 1600;
+     1411 units against a 522-unit box for a four-letter name.
+
+     Raised to 6000 on 2026-10-08 for the ready word sets, which put 12 to 14
+     rows on one sheet: a row is then about 0.5in tall, the viewport about
+     21x the row height on US Letter portrait (some 4,400 units), and at 1600
+     the rules of every short word stopped mid-line. The overhang is clipped
+     at the element's edge, so the larger number draws nothing new where the
+     old one already reached. */
+  const RULE_OVERHANG = 6000;
 
   function addGuide(svg, w, y, dashed, faint, bleed) {
     const over = bleed ? RULE_OVERHANG : 0;
@@ -8112,18 +8126,60 @@
     return Math.max(1, Math.min(8, parseInt((el.genRows && el.genRows.value) || "3", 10) || 3));
   }
   function genModelOn() { return !el.genModel || el.genModel.checked; }
+
+  /* Ready word sets: "Days of the week", "Months of the year". A set is a
+     short, fixed list a class practises as ONE sheet, so it is not a roster:
+     a roster prints one sheet per line, and it is also the class list this
+     device remembers across the pillar, which a set must never overwrite.
+     The words are page-authored in data-words ("Monday|Tuesday|..."), in the
+     page's own language, so the list is crawlable HTML and nothing here
+     translates. One click shows the set in the preview and every action
+     (PDF, PNG, all levels) prints it; typing a word, or clicking the set
+     again, goes back to the typed word.
+
+     The sheet is one trace row per word at the chosen level, each followed
+     by a blank ruled line to write it from memory. Twelve months with a
+     blank line each would be 24 rows, too short for a child's letters, so a
+     set longer than GEN_SET_PRACTICE_MAX words drops the blank lines. The
+     model-row and trace-rows controls describe a one-word sheet; they are
+     disabled while a set is shown rather than left with no consequence. */
+  const GEN_SET_PRACTICE_MAX = 7;
+  let genWordSet = null;
+  function setGenWordSet(btn) {
+    const words = btn ? String(btn.dataset.words || "").split("|").map((w) => w.trim()).filter(Boolean) : [];
+    genWordSet = words.length ? { key: btn.dataset.set || "", title: btn.dataset.title || words.join(" "), words: words } : null;
+    [el.genRows, el.genModel].forEach((c) => { if (c) c.disabled = !!genWordSet; });
+    renderGenPreview();
+  }
+  function genSetSheetNode(level) {
+    const sheet = document.createElement("div");
+    sheet.className = "pt-gen-sheet";
+    const lefty = leftHanded && RENDER !== "glyph" && !levelSpec(level).blank;
+    const practice = genWordSet.words.length <= GEN_SET_PRACTICE_MAX && level !== TRACE_LEVELS.length;
+    genWordSet.words.forEach((w) => {
+      const word = applyCase(String(w).slice(0, GEN_MAX_CHARS));
+      sheet.appendChild(genRow(word, level, "trace", lefty));
+      if (practice) sheet.appendChild(genRow(word, TRACE_LEVELS.length, "blank", lefty));
+    });
+    if (moreFooterOn("word", true)) sheet.appendChild(nameDateRow());
+    return sheet;
+  }
   /* Nothing typed and a level that draws no letters: the sheet is ruling
      only, so the demo word is on no line of it. The heading and the file
      name used to be built from genValue() anyway, which falls back to the
      demo -- a blank French sheet printed under "Le chat dort · Ligne
      vierge". `withModel` is false for the PNG, which has no model row. */
   function genRulingOnly(withModel) {
+    if (genWordSet) return false;
     const typed = el.genInput && el.genInput.value && el.genInput.value.trim();
     if (typed || !levelSpec(genLevel()).blank) return false;
     return !(withModel && genModelOn());
   }
   // The word a sheet's own heading names: none on a ruling-only sheet.
-  function genTitleWord() { return genRulingOnly(true) ? "" : genValue(); }
+  function genTitleWord() {
+    if (genWordSet) return genWordSet.title;
+    return genRulingOnly(true) ? "" : genValue();
+  }
   function genHeading(label) {
     const word = genTitleWord();
     return word ? joinWords([word, "\u00b7", label]) : label;
@@ -8600,6 +8656,7 @@
   // name without touching the input field; `levelOverride` lets the ladder
   // pack build one sheet per difficulty level the same way.
   function genSheetNode(wordOverride, levelOverride) {
+    if (wordOverride == null && genWordSet) return genSetSheetNode(levelOverride != null ? levelOverride : genLevel());
     const word = wordOverride != null ? applyCase(String(wordOverride).slice(0, GEN_MAX_CHARS)) : genValue();
     const level = levelOverride != null ? levelOverride : genLevel();
     const sheet = document.createElement("div");
@@ -8730,7 +8787,19 @@
         b.setAttribute("aria-pressed", on ? "true" : "false");
       });
     }
-    if (el.genPreviewMeta) {
+    if (el.genWordSets) {
+      $$(".pt-gen-wordset", el.genWordSets).forEach((b) => {
+        const on = !!genWordSet && b.dataset.set === genWordSet.key;
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+    }
+    if (el.genPreviewMeta && genWordSet) {
+      const n = genWordSet.words.length;
+      const parts = [n + " " + plural(n, T.traceCount)];
+      if (n <= GEN_SET_PRACTICE_MAX && level !== TRACE_LEVELS.length) parts.push(n + " " + plural(n, T.blankCount));
+      el.genPreviewMeta.textContent = parts.join(" \u00b7 ") + " \u00b7 " + (PP && PP.paperLabel ? PP.paperLabel() : T.usLetter);
+    } else if (el.genPreviewMeta) {
       const parts = [];
       if (genModelOn() && level !== 1) parts.push("1 " + plural(1, T.modelCount));
       parts.push(genRowCount() + " " + plural(genRowCount(), T.traceCount));
@@ -8780,10 +8849,11 @@
   // easiest to hardest, same word. The graded progression is the thing the
   // level engine can batch that a static-PDF sheet never can.
   function buildGeneratorLadder() {
-    const word = genValue();
+    // With a word set shown, each level is the whole set on one sheet.
+    const word = genWordSet ? genWordSet.title : genValue();
     const set = document.createElement("div");
     set.className = "pt-class-set";
-    appendSheetPages(set, TRACE_LEVELS, (spec, i) => genSheetNode(word, i + 1));
+    appendSheetPages(set, TRACE_LEVELS, (spec, i) => genSheetNode(genWordSet ? null : word, i + 1));
     padSheetRows(set, TRACE_LEVELS.map(() => word));
     const own = withName(moreTitle("word"), word);
     if (own) stampSheetTitles(set, TRACE_LEVELS.map((spec) => own + " \u00b7 " + spec.label));
@@ -8987,6 +9057,8 @@
       let timer = null;
       el.genInput.addEventListener("input", () => {
         if (timer) clearTimeout(timer);
+        // Typing a word is choosing the typed word over a ready set.
+        if (genWordSet) { setGenWordSet(null); return; }
         timer = setTimeout(renderGenPreview, 120);
       });
     }
@@ -9040,7 +9112,17 @@
     }
     if (el.genPrint) el.genPrint.addEventListener("click", buildGeneratorSheet);
     if (el.genLadder) el.genLadder.addEventListener("click", buildGeneratorLadder);
-    if (el.genPng) el.genPng.addEventListener("click", () => genWordPNG(genValue(), genLevel()));
+    /* The PNG strip draws one word; a word set is a whole sheet, so it is
+       rasterised from the DOM that prints, as the puzzle sheets are. */
+    if (el.genPng) el.genPng.addEventListener("click", () => {
+      if (genWordSet) { pngMode = true; buildGeneratorSheet(); return; }
+      genWordPNG(genValue(), genLevel());
+    });
+    if (el.genWordSets) {
+      $$(".pt-gen-wordset", el.genWordSets).forEach((b) => {
+        b.addEventListener("click", () => setGenWordSet(genWordSet && genWordSet.key === b.dataset.set ? null : b));
+      });
+    }
     if (el.genSlider) genLevelState = clampLevel(parseInt(el.genSlider.value, 10));
     renderGenPreview();
   }

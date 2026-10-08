@@ -85,6 +85,254 @@
       ]
     },
     {
+      "id": "territory-flags",
+      "label": "Territoires",
+      "h2": "Drapeaux de Territoires et Régions",
+      "intro": "Unicode a aussi des drapeaux pour des lieux hors de la liste des 195 pays : territoires d'outre-mer, territoires dépendants, régions administratives spéciales et zones dotées de leur propre code, comme 🇧🇱 Saint-Barthélemy, 🇭🇰 Hong Kong ou 🇽🇰 Kosovo. Certains affichent le drapeau d'un autre pays faute de drapeau propre : 🇧🇻 l'île Bouvet et 🇸🇯 le Svalbard affichent celui de la Norvège, 🇺🇲 les Îles mineures éloignées des États-Unis celui des États-Unis et 🇭🇲 les Îles Heard-et-MacDonald celui de l'Australie.",
+      "symbols": [
+        {
+          "char": "🇦🇮",
+          "label": "Anguilla"
+        },
+        {
+          "char": "🇦🇶",
+          "label": "Antarctique"
+        },
+        {
+          "char": "🇦🇼",
+          "label": "Aruba"
+        },
+        {
+          "char": "🇧🇲",
+          "label": "Bermudes"
+        },
+        {
+          "char": "🇪🇦",
+          "label": "Ceuta et Melilla"
+        },
+        {
+          "char": "🇨🇼",
+          "label": "Curaçao"
+        },
+        {
+          "char": "🇩🇬",
+          "label": "Diego Garcia"
+        },
+        {
+          "char": "🇬🇸",
+          "label": "Géorgie du Sud-et-les Îles Sandwich du Sud"
+        },
+        {
+          "char": "🇬🇮",
+          "label": "Gibraltar"
+        },
+        {
+          "char": "🇬🇱",
+          "label": "Groenland"
+        },
+        {
+          "char": "🇬🇵",
+          "label": "Guadeloupe"
+        },
+        {
+          "char": "🇬🇺",
+          "label": "Guam"
+        },
+        {
+          "char": "🇬🇬",
+          "label": "Guernesey"
+        },
+        {
+          "char": "🇬🇫",
+          "label": "Guyane française"
+        },
+        {
+          "char": "🇭🇰",
+          "label": "Hong Kong"
+        },
+        {
+          "char": "🇧🇻",
+          "label": "Île Bouvet"
+        },
+        {
+          "char": "🇨🇽",
+          "label": "Île Christmas"
+        },
+        {
+          "char": "🇨🇵",
+          "label": "Île Clipperton"
+        },
+        {
+          "char": "🇦🇨",
+          "label": "Île de l'Ascension"
+        },
+        {
+          "char": "🇮🇲",
+          "label": "Île de Man"
+        },
+        {
+          "char": "🇳🇫",
+          "label": "Île Norfolk"
+        },
+        {
+          "char": "🇦🇽",
+          "label": "Îles Åland"
+        },
+        {
+          "char": "🇰🇾",
+          "label": "Îles Caïmans"
+        },
+        {
+          "char": "🇮🇨",
+          "label": "Îles Canaries"
+        },
+        {
+          "char": "🇨🇨",
+          "label": "Îles Cocos"
+        },
+        {
+          "char": "🇨🇰",
+          "label": "Îles Cook"
+        },
+        {
+          "char": "🇫🇴",
+          "label": "Îles Féroé"
+        },
+        {
+          "char": "🇭🇲",
+          "label": "Îles Heard-et-MacDonald"
+        },
+        {
+          "char": "🇫🇰",
+          "label": "Îles Malouines"
+        },
+        {
+          "char": "🇲🇵",
+          "label": "Îles Mariannes du Nord"
+        },
+        {
+          "char": "🇺🇲",
+          "label": "Îles mineures éloignées des États-Unis"
+        },
+        {
+          "char": "🇵🇳",
+          "label": "Îles Pitcairn"
+        },
+        {
+          "char": "🇹🇨",
+          "label": "Îles Turques-et-Caïques"
+        },
+        {
+          "char": "🇻🇬",
+          "label": "Îles Vierges britanniques"
+        },
+        {
+          "char": "🇻🇮",
+          "label": "Îles Vierges des États-Unis"
+        },
+        {
+          "char": "🇯🇪",
+          "label": "Jersey"
+        },
+        {
+          "char": "🇽🇰",
+          "label": "Kosovo"
+        },
+        {
+          "char": "🇷🇪",
+          "label": "La Réunion"
+        },
+        {
+          "char": "🇲🇴",
+          "label": "Macao"
+        },
+        {
+          "char": "🇲🇶",
+          "label": "Martinique"
+        },
+        {
+          "char": "🇾🇹",
+          "label": "Mayotte"
+        },
+        {
+          "char": "🇲🇸",
+          "label": "Montserrat"
+        },
+        {
+          "char": "🇳🇺",
+          "label": "Niue"
+        },
+        {
+          "char": "🇳🇨",
+          "label": "Nouvelle-Calédonie"
+        },
+        {
+          "char": "🇧🇶",
+          "label": "Pays-Bas caribéens"
+        },
+        {
+          "char": "🇵🇫",
+          "label": "Polynésie française"
+        },
+        {
+          "char": "🇪🇭",
+          "label": "Sahara occidental"
+        },
+        {
+          "char": "🇧🇱",
+          "label": "Saint-Barthélemy (St-Barth)"
+        },
+        {
+          "char": "🇲🇫",
+          "label": "Saint-Martin"
+        },
+        {
+          "char": "🇸🇽",
+          "label": "Saint-Martin (partie néerlandaise)"
+        },
+        {
+          "char": "🇵🇲",
+          "label": "Saint-Pierre-et-Miquelon"
+        },
+        {
+          "char": "🇸🇭",
+          "label": "Sainte-Hélène"
+        },
+        {
+          "char": "🇦🇸",
+          "label": "Samoa américaines"
+        },
+        {
+          "char": "🇸🇯",
+          "label": "Svalbard et Jan Mayen"
+        },
+        {
+          "char": "🇹🇼",
+          "label": "Taïwan"
+        },
+        {
+          "char": "🇹🇫",
+          "label": "Terres australes françaises"
+        },
+        {
+          "char": "🇮🇴",
+          "label": "Territoire britannique de l'océan Indien"
+        },
+        {
+          "char": "🇹🇰",
+          "label": "Tokelau"
+        },
+        {
+          "char": "🇹🇦",
+          "label": "Tristan da Cunha"
+        },
+        {
+          "char": "🇼🇫",
+          "label": "Wallis-et-Futuna"
+        }
+      ]
+    },
+    {
       "id": "identity",
       "label": "Drapeaux Identitaires",
       "h2": "Drapeaux Identitaires",

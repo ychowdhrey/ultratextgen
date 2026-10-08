@@ -54,6 +54,19 @@
       ]
     },
     {
+      "id": "starfish-alternatives",
+      "label": "Estrella de mar",
+      "h2": "Alternativas al emoji de estrella de mar",
+      "intro": "Tampoco existe un emoji de estrella de mar: Unicode nunca lo ha codificado, ni siquiera en Emoji 18.0. Estos son los sustitutos más parecidos que puedes copiar. 𓇼 es un jeroglífico egipcio con forma de estrella y aparece como un cuadro vacío en los dispositivos sin una fuente de jeroglíficos, por eso los emojis van primero.",
+      "symbols": [
+        { "char": "⭐", "label": "Estrella" },
+        { "char": "🌟", "label": "Estrella brillante" },
+        { "char": "🪸", "label": "Coral" },
+        { "char": "🐚", "label": "Caracol de mar" },
+        { "char": "𓇼", "label": "Jeroglífico egipcio de estrella (N014)" }
+      ]
+    },
+    {
       "id": "ocean-water",
       "label": "Océano y agua",
       "h2": "Emojis de océano y agua",

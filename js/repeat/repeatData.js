@@ -28,15 +28,27 @@
       "I love you",
       "I miss you",
       "Thank you",
-      "I appreciate you"
+      "I appreciate you",
+      "❤️"
+    ],
+
+    /* ----------------------------------------------------------------------
+       Quick sets: phrase + count + arrangement in one tap. The heart is
+       U+2764 U+FE0F (the variation selector makes it render as the red
+       emoji rather than a black text heart), so each copy is two code
+       points. Inline with no divider puts the hearts on one line with a
+       single space between them: 1000 hearts is 2,999 characters.
+       ---------------------------------------------------------------------- */
+    QUICK_SETS: [
+      { label: "❤️ ×1000", phrase: "❤️", count: 1000, shape: "inline", divider: "none" }
     ],
 
     /* ----------------------------------------------------------------------
        Quick-fill repeat counts. 100 is the literal searched number
        ("sorry 100 times"); the rest give a spread around it, up to the
-       shared 200 cap ("say it 200 times").
+       1000 cap ("1000 hearts").
        ---------------------------------------------------------------------- */
-    COUNT_PRESETS: [10, 25, 50, 100, 200],
+    COUNT_PRESETS: [10, 25, 50, 100, 200, 500, 1000],
 
     /* ----------------------------------------------------------------------
        First-paint defaults so there is meaningful output on load. "Sorry"

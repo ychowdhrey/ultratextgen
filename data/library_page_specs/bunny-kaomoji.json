@@ -1,7 +1,7 @@
 {
   "slug": "bunny-kaomoji",
   "title": "Bunny Kaomoji: Copy & Paste Cute Rabbit Text Faces",
-  "meta_description": "Browse and copy bunny kaomoji — also spelled kamoji — cute Japanese rabbit text faces with long ears. Happy, floppy-eared, and grumpy bunnies. Click any to copy.",
+  "meta_description": "Browse and copy bunny kaomoji (•ㅅ•), also spelled kamoji: cute Japanese rabbit text faces with long ears. Happy, floppy-eared, and grumpy bunnies, plus 🐰 🐇 bunny emoji.",
   "breadcrumb": "Bunny Kaomoji",
   "hero_h1": "Bunny Kaomoji",
   "hero_tagline": "Copy and paste bunny kaomoji: cute Japanese rabbit text faces with long ears. Click any face to copy it instantly.",
@@ -119,6 +119,62 @@
         {
           "char": "(꒰⍢꒱)",
           "label": "Blank Bunny"
+        }
+      ]
+    },
+    {
+      "id": "bunny-emoji",
+      "label": "Bunny Emoji",
+      "h2": "Bunny & Rabbit Emoji",
+      "intro": "Unicode has two rabbit emoji: 🐰 is the face and 🐇 is the whole rabbit mid-hop. Unlike the kaomoji above, they draw in each platform's own emoji art, so they look a little different on iPhone and Android.",
+      "symbols": [
+        {
+          "char": "🐰",
+          "label": "Rabbit Face"
+        },
+        {
+          "char": "🐇",
+          "label": "Rabbit"
+        },
+        {
+          "char": "🐾",
+          "label": "Paw Prints"
+        },
+        {
+          "char": "🥕",
+          "label": "Carrot"
+        }
+      ]
+    },
+    {
+      "id": "bunny-emoji-combos",
+      "label": "Bunny Combos",
+      "h2": "Bunny Emoji Combos",
+      "intro": "Short combos that pair a bunny with what it is usually up to: eating, dashing off or hopping in for Easter. Each button copies the whole combo.",
+      "symbols": [
+        {
+          "char": "🐰🥕",
+          "label": "Bunny and Carrot"
+        },
+        {
+          "char": "🐇💨",
+          "label": "Bunny Dash"
+        },
+        {
+          "char": "🐰💕",
+          "label": "Bunny Love"
+        },
+        {
+          "char": "🐰🌸",
+          "label": "Spring Bunny"
+        },
+        {
+          "char": "🐇🐾",
+          "label": "Hopping Tracks"
+        },
+        {
+          "char": "🐰🥚🧺",
+          "label": "Easter Bunny"
         }
       ]
     }

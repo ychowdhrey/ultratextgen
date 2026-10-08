@@ -89,6 +89,82 @@
       ]
     },
     {
+      "id": "grief-mourning",
+      "label": "Emoji Đau Buồn và Tưởng Niệm",
+      "h2": "Emoji Đau Buồn và Tưởng Niệm",
+      "intro": "Các ký hiệu dùng trong lời chia buồn và bài đăng tưởng niệm. 🕯️ tượng trưng cho sự tưởng nhớ, 🕊️ cho bình yên, 🖤 cho tang tóc, 🤍 cho sự cảm thông nhẹ nhàng và 💐 cho bó hoa bạn mang đến viếng.",
+      "symbols": [
+        {
+          "char": "🕯️",
+          "label": "Ngọn Nến"
+        },
+        {
+          "char": "🕊️",
+          "label": "Chim Bồ Câu"
+        },
+        {
+          "char": "🖤",
+          "label": "Trái Tim Đen"
+        },
+        {
+          "char": "🤍",
+          "label": "Trái Tim Trắng"
+        },
+        {
+          "char": "🥀",
+          "label": "Bông Hoa Héo"
+        },
+        {
+          "char": "💐",
+          "label": "Bó Hoa"
+        },
+        {
+          "char": "🪦",
+          "label": "Bia Mộ"
+        },
+        {
+          "char": "❤️‍🩹",
+          "label": "Trái Tim Băng Bó"
+        }
+      ]
+    },
+    {
+      "id": "condolence-combos",
+      "label": "Combo Emoji Chia Buồn",
+      "h2": "Combo Emoji Chia Buồn",
+      "intro": "Những bộ ngắn để kết thúc lời chia buồn hoặc làm chú thích cho ảnh tưởng niệm. Khi nhắn cho người đang có tang, 🕊️ và 🤍 nhẹ nhàng hơn 🪦, vốn hợp với bài tưởng niệm công khai hơn.",
+      "symbols": [
+        {
+          "char": "🕯️🕊️🤍",
+          "label": "Tưởng Nhớ"
+        },
+        {
+          "char": "🕊️🤍",
+          "label": "Yên Nghỉ"
+        },
+        {
+          "char": "🖤🥀🕯️",
+          "label": "Để Tang"
+        },
+        {
+          "char": "💐🤍",
+          "label": "Hoa Chia Buồn"
+        },
+        {
+          "char": "🙏🤍",
+          "label": "Nghĩ Đến Bạn"
+        },
+        {
+          "char": "❤️‍🩹🤍",
+          "label": "Chữa Lành"
+        },
+        {
+          "char": "🪦🥀🕯️",
+          "label": "Tưởng Niệm"
+        }
+      ]
+    },
+    {
       "id": "drained",
       "label": "Mặt Thất Vọng và Kiệt Sức",
       "h2": "Mặt Thất Vọng và Kiệt Sức",

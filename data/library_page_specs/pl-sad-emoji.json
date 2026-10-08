@@ -89,6 +89,82 @@
       ]
     },
     {
+      "id": "grief-mourning",
+      "label": "Emoji Żałoby i Kondolencji",
+      "h2": "Emoji Żałoby i Kondolencji",
+      "intro": "Symbole używane w kondolencjach i wpisach upamiętniających. 🕯️ oznacza pamięć, 🕊️ pokój, 🖤 żałobę, 🤍 ciche współczucie, a 💐 kwiaty, które się przynosi.",
+      "symbols": [
+        {
+          "char": "🕯️",
+          "label": "Świeca"
+        },
+        {
+          "char": "🕊️",
+          "label": "Gołąb"
+        },
+        {
+          "char": "🖤",
+          "label": "Czarne Serce"
+        },
+        {
+          "char": "🤍",
+          "label": "Białe Serce"
+        },
+        {
+          "char": "🥀",
+          "label": "Zwiędły Kwiat"
+        },
+        {
+          "char": "💐",
+          "label": "Bukiet"
+        },
+        {
+          "char": "🪦",
+          "label": "Nagrobek"
+        },
+        {
+          "char": "❤️‍🩹",
+          "label": "Opatrzone Serce"
+        }
+      ]
+    },
+    {
+      "id": "condolence-combos",
+      "label": "Zestawy Emoji na Kondolencje i Wspomnienia",
+      "h2": "Zestawy Emoji na Kondolencje i Wspomnienia",
+      "intro": "Krótkie zestawy na koniec wiadomości ze współczuciem albo pod zdjęcie wspomnieniowe. W wiadomości do osoby w żałobie 🕊️ i 🤍 brzmią łagodniej niż 🪦, który lepiej pasuje do publicznego wspomnienia.",
+      "symbols": [
+        {
+          "char": "🕯️🕊️🤍",
+          "label": "Pamięć"
+        },
+        {
+          "char": "🕊️🤍",
+          "label": "Spoczywaj w Pokoju"
+        },
+        {
+          "char": "🖤🥀🕯️",
+          "label": "Żałoba"
+        },
+        {
+          "char": "💐🤍",
+          "label": "Kwiaty Kondolencyjne"
+        },
+        {
+          "char": "🙏🤍",
+          "label": "Myślę o Tobie"
+        },
+        {
+          "char": "❤️‍🩹🤍",
+          "label": "Ukojenie"
+        },
+        {
+          "char": "🪦🥀🕯️",
+          "label": "Wspomnienie"
+        }
+      ]
+    },
+    {
       "id": "drained",
       "label": "Twarze Zawiedzione i Wyczerpane",
       "h2": "Twarze Zawiedzione i Wyczerpane",

@@ -123,7 +123,7 @@
       "id": "face-builders",
       "label": "Partes de la cara",
       "h2": "Caracteres para armar caras",
-      "intro": "Las letras y marcas prestadas que forman las caras de texto más famosas: ojos de desaprobación, bocas de Lenny y volteos de furia.",
+      "intro": "Las letras y marcas prestadas que forman las caras de texto más famosas: ojos de desaprobación, bocas de Lenny y volteos de furia. ඞ es una letra cingalesa cuya silueta recuerda a un tripulante de Among Us, y por eso se convirtió en el meme «amogus».",
       "symbols": [
         {
           "char": "ಠ",
@@ -164,6 +164,10 @@
         {
           "char": "彡",
           "label": "Radical CJK shan (líneas de movimiento)"
+        },
+        {
+          "char": "ඞ",
+          "label": "Letra cingalesa kantaja naasikyaya (tripulante de Among Us)"
         }
       ]
     },

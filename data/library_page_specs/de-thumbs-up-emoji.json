@@ -181,6 +181,30 @@
    ]
   },
   {
+   "id": "nicken",
+   "label": "Nicken & Kopfschütteln",
+   "h2": "Nicken für Ja, Kopfschütteln für Nein",
+   "intro": "Mit Emoji 15.1 (2023) kamen ein nickendes Gesicht für Ja und ein kopfschüttelndes Gesicht für Nein dazu. Beide setzen 🙂 und einen Pfeil zusammen, deshalb zeigt ein Gerät ohne dieses Update 🙂↕ oder 🙂↔ in zwei Teilen. 🙆 und 🙅 sagen dasselbe Ja und Nein, stammen aus dem ersten Emoji-Satz und erscheinen überall, wo Emojis erscheinen.",
+   "symbols": [
+    {
+     "char": "🙂‍↕️",
+     "label": "Nickender Kopf (Ja)"
+    },
+    {
+     "char": "🙂‍↔️",
+     "label": "Kopfschütteln (Nein)"
+    },
+    {
+     "char": "🙆",
+     "label": "Person mit Händen auf dem Kopf (OK)"
+    },
+    {
+     "char": "🙅",
+     "label": "Person mit überkreuzten Armen (Nein)"
+    }
+   ]
+  },
+  {
    "id": "zeigen",
    "label": "Zeigende und erhobene Hände",
    "h2": "Zeigende und erhobene Hände",

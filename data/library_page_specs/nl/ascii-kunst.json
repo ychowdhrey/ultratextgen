@@ -234,6 +234,54 @@
           "label": "Witte driehoek omlaag"
         }
       ]
+    },
+    {
+      "id": "one-line-art",
+      "label": "Eén regel",
+      "h2": "ASCII-kunst op één regel",
+      "intro": "Stukjes die op één regel passen, zodat ze netjes in een chat, reactie of status terechtkomen waar een stuk van meerdere regels zou afbreken of zijn uitlijning kwijtraakt. Een paar lenen tekens uit andere schriften (de punt van het zwaard is een Arabische letter), dus wie dat lettertype mist, ziet daar een vakje.",
+      "symbols": [
+        {
+          "char": "▬▬ι═══════ﺤ",
+          "label": "Zwaard"
+        },
+        {
+          "char": "><((((º>",
+          "label": "Vis"
+        },
+        {
+          "char": "<コ:彡",
+          "label": "Inktvis"
+        },
+        {
+          "char": "@}->--",
+          "label": "Roos"
+        },
+        {
+          "char": "~(˘▾˘~)",
+          "label": "Dansen"
+        },
+        {
+          "char": "┬─┬ノ( º _ ºノ)",
+          "label": "Tafel terugzetten"
+        },
+        {
+          "char": "ಠ_ಠ",
+          "label": "Afkeurende blik"
+        },
+        {
+          "char": "ᕦ(ò_óˇ)ᕤ",
+          "label": "Spierballen"
+        },
+        {
+          "char": "(•_•) ( •_•)>⌐■-■ (⌐■_■)",
+          "label": "Zonnebril op"
+        },
+        {
+          "char": "(づ｡◕‿‿◕｡)づ",
+          "label": "Knuffel"
+        }
+      ]
     }
   ],
   "faq_h2": "Veelgestelde vragen over ASCII kunst",

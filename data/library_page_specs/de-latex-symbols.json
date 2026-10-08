@@ -303,6 +303,10 @@
     {
      "char": "∵",
      "label": "\\because: Weil"
+    },
+    {
+     "char": "ℒ",
+     "label": "\\mathcal{L}: Laplace-Transformation (L in Schreibschrift)"
     }
    ]
   }

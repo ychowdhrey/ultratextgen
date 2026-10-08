@@ -126,6 +126,26 @@
       ]
     },
     {
+      "id": "highs-and-lows",
+      "label": "Cristianos",
+      "h2": "Símbolo «Dios es más grande que los altibajos»",
+      "intro": "Un lema de fe moderno, tomado del inglés, que se ve en tatuajes, camisetas y biografías: la G es God (Dios), > significa «mayor que», y luego un pico (^ o ∧) por los altos y un valle (v o ∨) por los bajos. Las tres formas dicen lo mismo; G>^v es texto de teclado y se ve en cualquier dispositivo.",
+      "symbols": [
+        {
+          "char": "G>^v",
+          "label": "Forma de teclado"
+        },
+        {
+          "char": "G>ΛV",
+          "label": "Con lambda griega"
+        },
+        {
+          "char": "G>∧∨",
+          "label": "Con signos lógicos"
+        }
+      ]
+    },
+    {
       "id": "islamic",
       "label": "Islámicos",
       "h2": "Símbolos Islámicos",

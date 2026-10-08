@@ -1,7 +1,7 @@
 {
   "slug": "seahorse-emoji",
   "title": "Seahorse Emoji: Is There One? 🐴🌊 Copy the Closest Alternatives",
-  "meta_description": "No seahorse emoji exists — it's a Mandela-effect myth. Copy the closest sea creatures 🐠 🦑 🐙 and ocean symbols instead. Click any symbol to copy it instantly.",
+  "meta_description": "No seahorse emoji exists: it's a Mandela-effect myth. Copy the closest sea creatures 🐠 🦑 🐙 and ocean symbols instead. Click any symbol to copy it instantly.",
   "canonical": "https://ultratextgen.com/library/seahorse-emoji/",
   "breadcrumb": "Seahorse Emoji",
   "hero_h1": "Seahorse Emoji",
@@ -41,6 +41,19 @@
         { "char": "🦀", "label": "Crab" },
         { "char": "🐬", "label": "Dolphin" },
         { "char": "🐳", "label": "Spouting Whale" }
+      ]
+    },
+    {
+      "id": "starfish-alternatives",
+      "label": "Starfish",
+      "h2": "Starfish Emoji Alternatives",
+      "intro": "There is no starfish emoji either: Unicode has never encoded one, up to and including Emoji 18.0. These are the closest stand-ins you can copy. 𓇼 is an Egyptian hieroglyph drawn as a star, and it shows as an empty box on devices with no hieroglyph font, so the emoji options sit first.",
+      "symbols": [
+        { "char": "⭐", "label": "Star" },
+        { "char": "🌟", "label": "Glowing Star" },
+        { "char": "🪸", "label": "Coral" },
+        { "char": "🐚", "label": "Spiral Shell" },
+        { "char": "𓇼", "label": "Egyptian Hieroglyph Star (N014)" }
       ]
     },
     {

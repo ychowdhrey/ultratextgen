@@ -190,6 +190,34 @@
       ]
     },
     {
+      "id": "wing-symbols",
+      "label": "Ký hiệu cánh",
+      "h2": "Ký Hiệu Cánh Cho Tên",
+      "intro": "Cánh được đặt ở hai bên tên. ༺ và ༻ là dấu của chữ Tây Tạng, còn ꧁ và ꧂ rộng hơn là họa tiết của chữ Java; tên trong game thường ghép chúng thành ꧁༺ Tên ༻꧂. 🪽 là emoji cánh thật sự duy nhất: nó có từ Unicode 15.0 năm 2022, nên điện thoại chưa cập nhật emoji sẽ hiện ô trống, trong khi ༺ ༻ (Unicode, 1996) và ꧁ ꧂ (2009) là ký tự văn bản lâu đời hơn. Cánh trái tim ʚ và ɞ nằm trong phần ngoặc ở trên.",
+      "symbols": [
+        {
+          "char": "🪽",
+          "label": "Cánh"
+        },
+        {
+          "char": "༺",
+          "label": "Cánh trái (Tây Tạng)"
+        },
+        {
+          "char": "༻",
+          "label": "Cánh phải (Tây Tạng)"
+        },
+        {
+          "char": "꧁",
+          "label": "Cánh trái (Java)"
+        },
+        {
+          "char": "꧂",
+          "label": "Cánh phải (Java)"
+        }
+      ]
+    },
+    {
       "id": "decorative-marks-kawaii",
       "label": "Dấu trang trí",
       "h2": "Dấu Trang Trí",
@@ -282,6 +310,78 @@
         {
           "char": "🌸",
           "label": "Hoa anh đào"
+        }
+      ]
+    },
+    {
+      "id": "cutecore",
+      "label": "Phong cách cutecore",
+      "h2": "Emoji và ký tự cutecore",
+      "intro": "Cutecore là một phong cách thẩm mỹ trên mạng, dựng từ những món kawaii cơ bản (thú bông, dâu tây, nơ, hồng pastel) và thường thêm một chút gì đó hơi rợn, như miếng băng cá nhân hay răng, nên hay được xếp cạnh weirdcore. Kawaii thông thường chỉ giữ nửa ngọt ngào. 🩷 là emoji mới, điện thoại cũ có thể hiện thành ô trống; 💕 bên cạnh là lựa chọn thay thế có từ lâu.",
+      "symbols": [
+        {
+          "char": "🍓",
+          "label": "Dâu tây"
+        },
+        {
+          "char": "🩷",
+          "label": "Trái tim hồng"
+        },
+        {
+          "char": "💕",
+          "label": "Hai trái tim"
+        },
+        {
+          "char": "🍰",
+          "label": "Bánh kem"
+        },
+        {
+          "char": "🧁",
+          "label": "Bánh cốc"
+        },
+        {
+          "char": "🍼",
+          "label": "Bình sữa"
+        },
+        {
+          "char": "🩹",
+          "label": "Băng cá nhân"
+        },
+        {
+          "char": "🦷",
+          "label": "Răng"
+        }
+      ]
+    },
+    {
+      "id": "cutecore-combos",
+      "label": "Combo cutecore",
+      "h2": "Combo cutecore",
+      "intro": "Chuỗi ngắn kết hợp thú bông, đồ ngọt và miếng băng cá nhân hoặc răng, dùng cho một dòng tiểu sử hoặc trang trí tên người dùng.",
+      "symbols": [
+        {
+          "char": "⋆˚࿔ 🧸 ˚⋆",
+          "label": "Gấu bông lấp lánh"
+        },
+        {
+          "char": "🍓🎀🧁",
+          "label": "Đồ ngọt"
+        },
+        {
+          "char": "🩹🧸🩹",
+          "label": "Thú bông vá"
+        },
+        {
+          "char": "♡ 🐰 ♡",
+          "label": "Thỏ giữa tim"
+        },
+        {
+          "char": "꒰ 🍓 ꒱",
+          "label": "Dâu trong ngoặc"
+        },
+        {
+          "char": "🦷✨🩹",
+          "label": "Răng và băng cá nhân"
         }
       ]
     }

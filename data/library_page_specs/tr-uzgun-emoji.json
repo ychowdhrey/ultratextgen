@@ -89,6 +89,82 @@
       ]
     },
     {
+      "id": "grief-mourning",
+      "label": "Yas ve Taziye",
+      "h2": "Yas ve Taziye Emojileri",
+      "intro": "Taziye mesajlarında ve anma paylaşımlarında kullanılan semboller. 🕯️ anmayı, 🕊️ huzuru, 🖤 yası, 🤍 sessiz bir teselliyi, 💐 ise götürülen çiçekleri anlatır.",
+      "symbols": [
+        {
+          "char": "🕯️",
+          "label": "Mum"
+        },
+        {
+          "char": "🕊️",
+          "label": "Güvercin"
+        },
+        {
+          "char": "🖤",
+          "label": "Siyah Kalp"
+        },
+        {
+          "char": "🤍",
+          "label": "Beyaz Kalp"
+        },
+        {
+          "char": "🥀",
+          "label": "Solmuş Gül"
+        },
+        {
+          "char": "💐",
+          "label": "Çiçek Buketi"
+        },
+        {
+          "char": "🪦",
+          "label": "Mezar Taşı"
+        },
+        {
+          "char": "❤️‍🩹",
+          "label": "Sarılı Kalp"
+        }
+      ]
+    },
+    {
+      "id": "condolence-combos",
+      "label": "Taziye Setleri",
+      "h2": "Taziye ve Anma İçin Emoji Setleri",
+      "intro": "Bir taziye mesajını kapatmak ya da anma fotoğrafına not düşmek için kısa setler. Yas tutan birine yazarken 🕊️ ve 🤍, 🪦 simgesinden daha yumuşak durur. 🪦 herkese açık bir anma paylaşımına daha uygundur.",
+      "symbols": [
+        {
+          "char": "🕯️🕊️🤍",
+          "label": "Anma"
+        },
+        {
+          "char": "🕊️🤍",
+          "label": "Huzur İçinde Uyu"
+        },
+        {
+          "char": "🖤🥀🕯️",
+          "label": "Yas"
+        },
+        {
+          "char": "💐🤍",
+          "label": "Taziye Çiçekleri"
+        },
+        {
+          "char": "🙏🤍",
+          "label": "Aklımdasın"
+        },
+        {
+          "char": "❤️‍🩹🤍",
+          "label": "İyileşme"
+        },
+        {
+          "char": "🪦🥀🕯️",
+          "label": "Anma Paylaşımı"
+        }
+      ]
+    },
+    {
       "id": "yorgun-yuzler",
       "label": "Bitkin",
       "h2": "Bezgin ve Tükenmiş Yüzler",

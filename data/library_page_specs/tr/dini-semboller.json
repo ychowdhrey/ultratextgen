@@ -126,6 +126,26 @@
       ]
     },
     {
+      "id": "highs-and-lows",
+      "label": "Hristiyan",
+      "h2": "\"Tanrı iniş ve çıkışlardan büyüktür\" sembolü",
+      "intro": "İngilizceden gelen, dövme, tişört ve biyografilerde görülen modern bir inanç sözü: G, God (Tanrı) demek, > \"büyüktür\" anlamına gelir, ardından gelen tepe (^ veya ∧) iyi günleri, vadi (v veya ∨) zor günleri gösterir. Üç biçim de aynı anlamı taşır; G>^v sadece klavye karakterlerinden oluşur ve her cihazda görünür.",
+      "symbols": [
+        {
+          "char": "G>^v",
+          "label": "Klavye biçimi"
+        },
+        {
+          "char": "G>ΛV",
+          "label": "Yunanca lambda ile"
+        },
+        {
+          "char": "G>∧∨",
+          "label": "Mantık işaretleriyle"
+        }
+      ]
+    },
+    {
       "id": "islamic",
       "label": "İslami",
       "h2": "İslami Semboller",

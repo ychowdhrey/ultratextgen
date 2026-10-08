@@ -44,6 +44,82 @@
       ]
     },
     {
+      "id": "grief-mourning",
+      "label": "Grief & Mourning",
+      "h2": "Grief & Mourning Emoji",
+      "intro": "The symbols people use in condolence messages and memorial posts. 🕯️ stands for remembrance, 🕊️ for peace, 🖤 for mourning, 🤍 for quiet sympathy, and 💐 for the flowers you would bring.",
+      "symbols": [
+        {
+          "char": "🕯️",
+          "label": "Candle"
+        },
+        {
+          "char": "🕊️",
+          "label": "Dove"
+        },
+        {
+          "char": "🖤",
+          "label": "Black Heart"
+        },
+        {
+          "char": "🤍",
+          "label": "White Heart"
+        },
+        {
+          "char": "🥀",
+          "label": "Wilted Flower"
+        },
+        {
+          "char": "💐",
+          "label": "Bouquet"
+        },
+        {
+          "char": "🪦",
+          "label": "Headstone"
+        },
+        {
+          "char": "❤️‍🩹",
+          "label": "Mending Heart"
+        }
+      ]
+    },
+    {
+      "id": "condolence-combos",
+      "label": "Condolence Combos",
+      "h2": "Condolence & Memorial Emoji Combos",
+      "intro": "Short sets to close a sympathy message or caption a memorial photo. In a message to someone who is grieving, 🕊️ and 🤍 read softer than 🪦, which suits a public tribute better.",
+      "symbols": [
+        {
+          "char": "🕯️🕊️🤍",
+          "label": "Remembrance"
+        },
+        {
+          "char": "🕊️🤍",
+          "label": "Rest in Peace"
+        },
+        {
+          "char": "🖤🥀🕯️",
+          "label": "Mourning"
+        },
+        {
+          "char": "💐🤍",
+          "label": "Sympathy Flowers"
+        },
+        {
+          "char": "🙏🤍",
+          "label": "Thinking of You"
+        },
+        {
+          "char": "❤️‍🩹🤍",
+          "label": "Gentle Healing"
+        },
+        {
+          "char": "🪦🥀🕯️",
+          "label": "Memorial Tribute"
+        }
+      ]
+    },
+    {
       "id": "drained-disappointed",
       "label": "Drained Faces",
       "h2": "Disappointed & Drained Faces",

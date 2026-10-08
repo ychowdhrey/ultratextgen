@@ -184,7 +184,7 @@
       "id": "aspects",
       "label": "Astrologische Aspektzeichen",
       "h2": "Astrologische Aspektzeichen",
-      "intro": "Aspekte aus dem Horoskop.",
+      "intro": "Aspekte aus dem Horoskop. Für das Halbquadrat (45°) gibt es kein eigenes Unicode-Zeichen; Horoskope verwenden dafür das Winkelzeichen ∠.",
       "symbols": [
         {
           "char": "☊",
@@ -213,6 +213,22 @@
         {
           "char": "△",
           "label": "Trigon"
+        },
+        {
+          "char": "⚺",
+          "label": "Halbsextil (30°)"
+        },
+        {
+          "char": "∠",
+          "label": "Halbquadrat (45°)"
+        },
+        {
+          "char": "⚼",
+          "label": "Anderthalbquadrat (135°)"
+        },
+        {
+          "char": "⚻",
+          "label": "Quinkunx (150°)"
         }
       ]
     },

@@ -89,6 +89,82 @@
       ]
     },
     {
+      "id": "grief-mourning",
+      "label": "Emoji de Deuil et de Recueillement",
+      "h2": "Emoji de Deuil et de Recueillement",
+      "intro": "Les symboles qu'on met dans un message de condoléances ou une publication en mémoire de quelqu'un. 🕯️ signifie le souvenir, 🕊️ la paix, 🖤 le deuil, 🤍 une sympathie discrète et 💐 les fleurs qu'on apporterait.",
+      "symbols": [
+        {
+          "char": "🕯️",
+          "label": "Bougie"
+        },
+        {
+          "char": "🕊️",
+          "label": "Colombe"
+        },
+        {
+          "char": "🖤",
+          "label": "Cœur Noir"
+        },
+        {
+          "char": "🤍",
+          "label": "Cœur Blanc"
+        },
+        {
+          "char": "🥀",
+          "label": "Fleur Fanée"
+        },
+        {
+          "char": "💐",
+          "label": "Bouquet"
+        },
+        {
+          "char": "🪦",
+          "label": "Pierre Tombale"
+        },
+        {
+          "char": "❤️‍🩹",
+          "label": "Cœur Pansé"
+        }
+      ]
+    },
+    {
+      "id": "condolence-combos",
+      "label": "Combos d'Emoji pour Condoléances et Hommages",
+      "h2": "Combos d'Emoji pour Condoléances et Hommages",
+      "intro": "Des suites courtes pour conclure un message de sympathie ou accompagner la photo d'un hommage. Dans un message à une personne en deuil, 🕊️ et 🤍 sont plus doux que 🪦, qui convient mieux à un hommage public.",
+      "symbols": [
+        {
+          "char": "🕯️🕊️🤍",
+          "label": "Souvenir"
+        },
+        {
+          "char": "🕊️🤍",
+          "label": "Repose en Paix"
+        },
+        {
+          "char": "🖤🥀🕯️",
+          "label": "Deuil"
+        },
+        {
+          "char": "💐🤍",
+          "label": "Fleurs de Sympathie"
+        },
+        {
+          "char": "🙏🤍",
+          "label": "Je Pense à Toi"
+        },
+        {
+          "char": "❤️‍🩹🤍",
+          "label": "Guérison Douce"
+        },
+        {
+          "char": "🪦🥀🕯️",
+          "label": "Hommage"
+        }
+      ]
+    },
+    {
       "id": "drained",
       "label": "Visages Déçus et Épuisés",
       "h2": "Visages Déçus et Épuisés",

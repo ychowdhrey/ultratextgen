@@ -22,6 +22,19 @@
       ]
     },
     {
+      "id": "skin-tones",
+      "label": "Skin Tones",
+      "h2": "Praying Hands in Every Skin Tone",
+      "intro": "🙏 in the five skin tones Unicode defines, from light to dark. 🙏🏿 (dark) and 🙏🏾 (medium-dark) are the two people mean by black praying hands. Each one is 🙏 followed by a tone modifier, so an app that ignores tones shows 🙏 next to a small colour swatch.",
+      "symbols": [
+        { "char": "🙏🏻", "label": "Folded Hands: Light Skin Tone" },
+        { "char": "🙏🏼", "label": "Folded Hands: Medium-Light Skin Tone" },
+        { "char": "🙏🏽", "label": "Folded Hands: Medium Skin Tone" },
+        { "char": "🙏🏾", "label": "Folded Hands: Medium-Dark Skin Tone" },
+        { "char": "🙏🏿", "label": "Folded Hands: Dark Skin Tone" }
+      ]
+    },
+    {
       "id": "related-hand-gestures",
       "label": "Hand Gestures",
       "h2": "Related Hand Gestures",

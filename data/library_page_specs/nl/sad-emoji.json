@@ -92,6 +92,82 @@
       ]
     },
     {
+      "id": "grief-mourning",
+      "label": "Rouw",
+      "h2": "Emoji voor rouw en medeleven",
+      "intro": "Symbolen die mensen gebruiken in condoleanceberichten en herdenkingsposts. 🕯️ staat voor herinnering, 🕊️ voor vrede, 🖤 voor rouw, 🤍 voor stil medeleven en 💐 voor de bloemen die je zou meebrengen.",
+      "symbols": [
+        {
+          "char": "🕯️",
+          "label": "Kaars"
+        },
+        {
+          "char": "🕊️",
+          "label": "Duif"
+        },
+        {
+          "char": "🖤",
+          "label": "Zwart hart"
+        },
+        {
+          "char": "🤍",
+          "label": "Wit hart"
+        },
+        {
+          "char": "🥀",
+          "label": "Verwelkte bloem"
+        },
+        {
+          "char": "💐",
+          "label": "Boeket"
+        },
+        {
+          "char": "🪦",
+          "label": "Grafsteen"
+        },
+        {
+          "char": "❤️‍🩹",
+          "label": "Geheeld hart"
+        }
+      ]
+    },
+    {
+      "id": "condolence-combos",
+      "label": "Condoleancecombo's",
+      "h2": "Emoji-combo's voor condoleances en herdenkingen",
+      "intro": "Korte reeksen om een condoleancebericht af te sluiten of onder een herdenkingsfoto te zetten. In een bericht aan iemand die rouwt, komen 🕊️ en 🤍 zachter over dan 🪦, dat beter past bij een openbaar eerbetoon.",
+      "symbols": [
+        {
+          "char": "🕯️🕊️🤍",
+          "label": "Herinnering"
+        },
+        {
+          "char": "🕊️🤍",
+          "label": "Rust zacht"
+        },
+        {
+          "char": "🖤🥀🕯️",
+          "label": "Rouw"
+        },
+        {
+          "char": "💐🤍",
+          "label": "Condoleancebloemen"
+        },
+        {
+          "char": "🙏🤍",
+          "label": "Ik denk aan je"
+        },
+        {
+          "char": "❤️‍🩹🤍",
+          "label": "Heling"
+        },
+        {
+          "char": "🪦🥀🕯️",
+          "label": "Eerbetoon"
+        }
+      ]
+    },
+    {
       "id": "drained-disappointed",
       "label": "Uitgeputte gezichtjes",
       "h2": "Teleurgestelde en uitgeputte gezichtjes",
