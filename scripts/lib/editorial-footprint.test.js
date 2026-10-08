@@ -768,6 +768,36 @@ t('publishers, emoji fonts and versions count; "Apple", "Word", "Signal" and "No
   assert.strictEqual(amb.byKind.organisation, undefined);
 });
 
+// ── EFR-F-004: both defects the 2026-09-26 shadow readout found ───────────
+//
+// Register #85's readout was the rule's first exposure to a month of real PRs.
+// It found two defects in one entry, and neither was visible by reading it.
+
+t('EFR-F-004 does not fire on reader-facing contact copy (the readout\'s false positive)', () => {
+  // "If you have suggestions or ideas, feel free to reach out." on about/index.html
+  // was this rule's ONLY hit anywhere on the site, and it is ordinary contact copy
+  // on the one page type where it belongs. `reach out` was dropped from the
+  // alternation; `let me know` stays, because it addresses a commissioner.
+  assert.ok(!ids(bankHits(page('<p>If you have suggestions or ideas, feel free to reach out.</p>'))).includes('EFR-F-004'),
+    '"feel free to reach out" is reader-facing copy, not scaffolding');
+  assert.ok(ids(bankHits(page('<p>Feel free to let me know if you want another pass.</p>'))).includes('EFR-F-004'),
+    '"feel free to let me know" addresses a commissioner and must still fire');
+});
+
+t('EFR-F-004 matches its punctuation-terminated alternatives at all', () => {
+  // They were UNREACHABLE from 2026-08-26 to 2026-09-26: the pattern wrapped every
+  // alternative in \b(?:…)\b, and a trailing \b cannot assert after ',' or '!' —
+  // both are non-word characters, as is the space after them. Two of five
+  // alternatives could never match, inside the rule that was up for promotion.
+  // This is the repo's most-repeated failure shape, so it gets a test, not a comment.
+  for (const copy of ['Certainly! Here is the section.', 'Certainly, here it is.', 'In conclusion, the symbol works.']) {
+    assert.ok(ids(bankHits(page(`<p>${copy}</p>`))).includes('EFR-F-004'), `must fire on: ${copy}`);
+  }
+  // …without swallowing the ordinary adverb, which carries no punctuation.
+  assert.ok(!ids(bankHits(page('<p>Certainly the most used symbol on this page.</p>'))).includes('EFR-F-004'),
+    '"Certainly the…" is an ordinary adverb, not scaffolding');
+});
+
 // ── report ─────────────────────────────────────────────────────────────────
 
 console.log('Editorial Footprint Risk — tests\n');

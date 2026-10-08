@@ -10,7 +10,7 @@
   "copy_pattern": "single",
   "slug": "dirhamteken",
   "title": "Dirhamteken van de VAE: Kopieer en Plak ⃃, Definitief in Unicode 18.0",
-  "meta_description": "Het VAE-dirhamteken (⃃, U+20C3) is sinds 16 september 2026 definitief in Unicode 18.0, maar nog op geen enkel toetsenbord te typen. Codepunt, geschiedenis en hoe ontwikkelaars het nu al gebruiken.",
+  "meta_description": "Het VAE-dirhamteken (⃃, U+20C3) is sinds 16 september 2026 definitief in Unicode 18.0, maar nog op geen enkel toetsenbord te typen.",
   "canonical": "https://ultratextgen.com/nl/symbol/dirhamteken/",
   "breadcrumb": "Dirhamteken",
   "hero_h1": "Dirhamteken",
@@ -115,7 +115,7 @@
       "desc": "Het bekendste valutateken ter wereld, en zijn omstreden oorsprong."
     },
     {
-      "href": "/updates/uae-dirham-symbol-unicode-18/",
+      "href": "/nl/updates/dirham-symbool-unicode-18/",
       "title": "UAE Dirham Symbol Update",
       "desc": "De gedateerde statustracker voor het pad van dit teken door Unicode 18.0 en naar echte toetsenborden (Engelstalige update)."
     }

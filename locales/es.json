@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Letras bonitas para copiar y pegar · Cursivas, aesthetic y símbolos para Instagram, TikTok y WhatsApp",
-    "description": "Letras bonitas y símbolos para copiar y pegar: cursivas, aesthetic, góticas, kawaii y letras en otros idiomas y alfabetos. Pásalas a tu bio de Instagram, estado de WhatsApp, nick de TikTok o Free Fire, y Discord. Sin descargas ni cuenta."
+    "title": "Conversor de Letras Bonitas para Copiar y Pegar",
+    "description": "Conversor de letras online: convierte tu texto en letras bonitas y símbolos para copiar y pegar en tu bio de Instagram, WhatsApp, TikTok, Free Fire o Discord."
   },
   "hero": {
     "title": "Letras bonitas para copiar y pegar",
-    "subtitle": "Escribe lo que quieras y mira cómo se transforma en letras cursivas, aesthetic, góticas y con símbolos. Listas para tu bio de Instagram, tu estado de WhatsApp, un nick de TikTok o Free Fire, o donde se te ocurra."
+    "subtitle": "El conversor de letras que convierte lo que escribas en letras cursivas, aesthetic, góticas y con símbolos. Listas para tu bio de Instagram, tu estado de WhatsApp, un nick de TikTok o Free Fire, o donde se te ocurra."
   },
   "decorations": {
     "label": "Añade símbolos, marcos y separadores",
@@ -233,6 +233,11 @@
       "renderFailed": "No se pudo crear la imagen. Inténtalo de nuevo.",
       "trayLabel": "Selección de imagen",
       "setUnavailable": "Este conjunto aún no se puede añadir a una imagen."
+    },
+    "symbolLook": {
+      "plain": "Copiar versión simple",
+      "emoji": "Copiar versión emoji",
+      "note": "Algunas apps lo muestran en color de todos modos."
     }
   },
   "useCases": {

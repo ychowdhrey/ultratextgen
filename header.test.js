@@ -239,9 +239,21 @@ t('a typed-text copy sends the group but no copy_item', () => {
   }
 });
 t('a catalogue copy still sends the exact item', () => {
-  for (const m of ['symbol_tile', 'grid_collection', 'saved_collection', 'glyph', 'ascii_art']) {
+  for (const m of ['symbol_tile', 'symbol_look_switch', 'grid_collection', 'saved_collection', 'glyph', 'ascii_art']) {
     eq(CI.copyPayload(m, '★').copy_item, '★', m);
   }
+});
+
+// ── copy_look: which look of a two-look symbol left the page ────────────
+t('copy_look is always a key, cleared unless the caller sets it', () => {
+  const p = CI.copyPayload('symbol_tile', '★');
+  eq('copy_look' in p, true, 'key present so GTM clears the last look');
+  eq(p.copy_look, undefined, 'cleared by default');
+});
+t('copy_look carries the look and the item stays the bare character', () => {
+  const p = CI.copyPayload('symbol_look_switch', '\u2764', { copy_look: 'plain' });
+  eq(p.copy_look, 'plain', 'look');
+  eq(p.copy_item, '\u2764', 'item');
 });
 
 // ── the self-maintaining coverage gate ────────────────────────────────────

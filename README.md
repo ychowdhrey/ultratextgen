@@ -97,16 +97,16 @@ that's the fastest way to find something. Counts are refreshed weekly from
 <!-- START_PILLARS -->
 | Section | English pages | Localized pages |
 |---|---:|---:|
-| [Library](https://ultratextgen.com/library/) | 339 | 1,181 |
+| [Library](https://ultratextgen.com/library/) | 339 | 1,184 |
 | [Symbols](https://ultratextgen.com/symbol/) | 117 | 1,653 |
 | [Answers](https://ultratextgen.com/answers/) | 65 | 76 |
-| [Use Cases](https://ultratextgen.com/usecase/) | 37 | 144 |
-| [Guides](https://ultratextgen.com/guide/) | 32 | 90 |
+| [Use Cases](https://ultratextgen.com/usecase/) | 37 | 148 |
+| [Guides](https://ultratextgen.com/guide/) | 32 | 91 |
 | [Categories](https://ultratextgen.com/category/) | 23 | 0 |
 | [Updates](https://ultratextgen.com/updates/) | 12 | 56 |
 | [Embed Tools](https://ultratextgen.com/embed/) | 6 | 0 |
 
-**4,731 URLs in total**, across 30 languages.
+**4,761 URLs in total**, across 30 languages.
 <!-- END_PILLARS -->
 
 

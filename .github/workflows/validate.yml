@@ -461,6 +461,16 @@ jobs:
         continue-on-error: true
         run: npm run test:zalgo-engine | tee zalgo-engine-tests.log
 
+      # Gating, no backlog: the Korean name romanizer (ko/yeongmun-ireum-byeonhwan).
+      # A wrong letter looks exactly like a right one and can end up on a
+      # passport form, so every rule the page claims is pinned against the
+      # standard's own examples, and every rule it says it does not apply is
+      # pinned as a known divergence.
+      - name: Korean romanizer tests
+        id: romanize_tests
+        continue-on-error: true
+        run: npm run test:romanize | tee romanize-tests.log
+
       # Gating, no backlog: the QR encoder that stamps a way back to the site
       # onto every printed sheet and PNG export. Its one failure mode is a
       # symbol that looks perfectly well-formed and that no phone can read, so
@@ -484,6 +494,24 @@ jobs:
         continue-on-error: true
         run: npm run test:ja-sheets | tee ja-sheets-tests.log
 
+      # Gating, no backlog: the name-label sheet prints onto pre-cut label
+      # stock, so every stock's margins, label size and gaps must sum to its
+      # own sheet, and the per-sheet counts the pages quote must be the counts
+      # the engine lays out. A wrong number moves a column off the labels and
+      # no screen preview shows it.
+      - name: Run label sheet geometry tests
+        id: label_geometry_tests
+        continue-on-error: true
+        run: npm run test:label-geometry | tee label-geometry-tests.log
+
+      # Gating, no backlog: the Korean kana charts print a Hangul reading under
+      # every kana, and a kana missing from the reading table renders an empty
+      # line with no error. The test walks both shipped datasets.
+      - name: Run Korean kana reading tests
+        id: kana_readings_tests
+        continue-on-error: true
+        run: npm run test:kana-readings | tee kana-readings-tests.log
+
       # Gating, and no backlog to be red against: every counter either attaches
       # or it does not. The bridge finder's one failure mode is silence — an
       # empty array reads exactly like a letter that needed no bridge, on
@@ -497,6 +525,17 @@ jobs:
         id: stencil_tests
         continue-on-error: true
         run: npm run test:stencil | tee stencil-tests.log
+
+      # Gating. The centreline is the route a child traces on a joined-script
+      # sheet, and every way it fails is something a child would follow: a
+      # stroke returned as two parallel edges, a join returned broken (the
+      # defect that started it: print skeletons under a joined SAS model
+      # line), an i-dot dropped, a spur added. Shapes are built in the test,
+      # so it needs no browser and no font.
+      - name: Run glyph centreline tests
+        id: centreline_tests
+        continue-on-error: true
+        run: npm run test:centreline | tee centreline-tests.log
 
       # Gating. A word search asserts one fact and its failure is silent: a word
       # in the printed clue list that is not actually in the grid is an
@@ -1155,10 +1194,18 @@ jobs:
             cat zalgo-engine-tests.log
             echo '```'
             echo ""
+            echo "### Korean romanizer tests — \`${{ steps.romanize_tests.outcome }}\`"
+            echo '```'
+            cat romanize-tests.log
+            echo '```'
+            echo ""
             echo "### QR encoder tests — \`${{ steps.qr_tests.outcome }}\`"
             echo "### Japanese worksheet engine tests — \`${{ steps.ja_sheets_tests.outcome }}\`"
             echo "### Japanese printables render check — \`${{ steps.ja_printables.outcome }}\`"
+            echo "### Label sheet geometry tests — \`${{ steps.label_geometry_tests.outcome }}\`"
+            echo "### Korean kana reading tests — \`${{ steps.kana_readings_tests.outcome }}\`"
             echo "### Stencil bridge tests — \`${{ steps.stencil_tests.outcome }}\`"
+            echo "### Glyph centreline tests — \`${{ steps.centreline_tests.outcome }}\`"
             echo "### Word search grid tests — \`${{ steps.word_search_tests.outcome }}\`"
             echo "### Crossword + word scramble tests — \`${{ steps.word_puzzles_tests.outcome }}\`"
             echo "### Printable render invariant tests — \`${{ steps.render_invariants_tests.outcome }}\`"
@@ -1393,10 +1440,14 @@ jobs:
           steps.llms_index.outcome == 'failure' ||
           steps.llms_index_tests.outcome == 'failure' ||
           steps.zalgo_engine_tests.outcome == 'failure' ||
+          steps.romanize_tests.outcome == 'failure' ||
           steps.qr_tests.outcome == 'failure' ||
           steps.ja_sheets_tests.outcome == 'failure' ||
           steps.ja_printables.outcome == 'failure' ||
+          steps.label_geometry_tests.outcome == 'failure' ||
+          steps.kana_readings_tests.outcome == 'failure' ||
           steps.stencil_tests.outcome == 'failure' ||
+          steps.centreline_tests.outcome == 'failure' ||
           steps.word_search_tests.outcome == 'failure' ||
           steps.word_puzzles_tests.outcome == 'failure' ||
           steps.numeric_parity.outcome == 'failure' ||

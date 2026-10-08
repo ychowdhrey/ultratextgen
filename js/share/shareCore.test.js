@@ -404,6 +404,18 @@ function stubCanvas(UTG) {
   ok(!/M13\.828 10\.172/.test(plain.innerHTML), 'the default icon is unchanged');
 }
 
+{
+  // A page that translates its own buttons (library/symbol pages, no i18n.js):
+  // the accessible name and tooltip come from the visible label, never the
+  // English fallback sentence (WCAG 2.5.3, label in name).
+  const { UTG } = load({});
+  const b = UTG.buildShareButton({ label: '공유', name: '이모티콘' });
+  eq(b.getAttribute('aria-label'), '공유: 이모티콘', 'caller label + name is the accessible name');
+  eq(b.title, '공유', 'and the tooltip is the visible label');
+  const plain = UTG.buildShareButton({ name: 'Ultra Bold' });
+  eq(plain.getAttribute('aria-label'), 'Share Ultra Bold result', 'without a caller label the i18n/English text is unchanged');
+}
+
 /* ---- shareImageBlob (the printables engines' path) --------------------- */
 
 {

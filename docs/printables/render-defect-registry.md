@@ -1233,6 +1233,58 @@ were cut off every row of the PDF, the T's crossbar entirely. A routed row now a
 whose ink already starts inside the box gets `y0 = 0`: the two English sheets rendered
 pixel-identical before and after, and so did eleven unrouted pages checked against `main`.
 
+## R-024 — The generator's trace rows print print letters under a joined school script
+
+**Severity** R1 · **Root cause** PATH_GENERATION · **Screen** FAIL · **Print** FAIL · **PNG** FAIL
+**Affects** the handwriting generator whenever its face is a joined script: on `main` that is
+`de/zum-ausdrucken/schreibschrift` with Schulausgangsschrift or Vereinfachte Ausgangsschrift
+selected. Found 2026-10-05 on `main` `ba007635d`.
+
+The generator's dotted, dashed and faint rungs draw R-001's writing route, and that route is the
+US manuscript print table in `strokeDirectionData.js`, fitted one skeleton per letter cell,
+whatever the face. Under a joined face the model line read "Sonne und Mond" in joined SAS while
+every trace row under it printed `S o n n e  u n d  M o n d` as separate print skeletons: no
+joins, print letterforms, and an M squeezed into a print cell. The page sells the German school
+script, and the rows a child traces were not that script. The two glyph rungs (solid, faded) were
+already right, which is why the model line looked correct.
+
+R-022's fix does not reach it: its routes are authored per phrase, and the generator prints
+whatever is typed. The glyph contour (the fallback) is no answer either, for R-001's reason: on a
+thin joined script it dots both edges of every stroke and prints as a smudged double row.
+
+**Fixed 2026-10-05.** A script option marked `joined: true` (or a page with `CFG.joinedScript`)
+takes its route from the glyph at runtime. `glyphCentrelinePaths()` rasterises the typed word in
+its own face at the row's own placement; `js/printables/centreline.js` thins the ink
+(Zhang-Suen), splits the skeleton at its junctions, prunes thinning spurs shorter than the
+measured stroke width, merges the two halves of a fake junction (a pixel staircase), collapses a
+junction-to-junction link shorter than the stroke width (where a stroke doubles back: inside m, k,
+ss), and smooths and simplifies each run. The strokes go through `routeDotDashes()`, so the dots
+are resolved exactly as on the print route. An i-dot or umlaut comes out as a mark and is drawn as
+one round dot on every rung (on the dashed rung a dash pattern left both dots of `ä` invisible).
+The print-route stroke overlay (arrows, numbers) is not drawn on a joined row. SAS and VA carry
+the flag; Grundschrift, print-based with optional joins, keeps the print route.
+
+`centreline.js` is now the one thinning implementation: `scripts/build-cursive-routes.js` loads
+it into its page instead of carrying its own copy, and its output was byte-identical before and
+after the change in the same environment.
+
+**Evidence** `evidence/R-024-joined-script-trace-rows.png`: the exported PDF page bitmap, US
+Letter portrait, `main` left, fix right. Measured on the fix:
+
+| check | result |
+|---|---|
+| PDF pages, SAS and VA × Letter/portrait, A4/landscape/narrow, Legal/portrait | 1 each, same as `main` |
+| credit QR decoded from each page bitmap | the page URL, all six |
+| trace-row SVG markup, 10 unflagged pages × 3 levels, against `main` | 30 of 30 identical, 0 page errors |
+| `npm run test:centreline` (bar, ring, cross, joined bodies, i-dot, empty) | 16 passed; red with the junction merge removed |
+| preview render, "Sonne und Mond" / 50-character line | 216ms / ~460ms against 135ms / 160ms on `main` |
+
+**Open.** The route has no stroke order or start marks: dots follow the ink, and a retrace (the
+stem of a u, written down over the upstroke) is one dotted line, which is what the child traces,
+but nothing numbers it. Only Chromium was checked; the rasteriser is the browser's own, so Firefox
+should be compared before this is called closed across engines. Playwrite PT and IT Trad are
+self-hosted, so a pt or it page can opt in with the same flag once one exists.
+
 ---
 
 ## Confirmed passes

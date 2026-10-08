@@ -3,7 +3,7 @@
   "lang": "fr",
   "page_type": "symbol",
   "title": "Symbole Pion : Copier-Coller ♟ ♙ — Le Fantassin qui peut Devenir Reine",
-  "meta_description": "Copie et colle le symbole pion — noir ♟ (U+265F) et blanc ♙ (U+2659) — la pièce d'échecs de plus faible valeur, nommée d'après un fantassin, capable de se promouvoir en reine. Clique sur un symbole pour le copier instantanément.",
+  "meta_description": "Copie et colle le symbole pion, noir ♟ (U+265F) et blanc ♙ (U+2659) : la pièce d'échecs de plus faible valeur, un fantassin capable de se promouvoir en reine.",
   "canonical": "https://ultratextgen.com/fr/symbol/symbole-pion/",
   "breadcrumb": "Symbole Pion",
   "hero_h1": "Symbole Pion (♟ ♙)",
@@ -130,9 +130,9 @@
   ],
   "related": [
     {
-      "href": "/library/chess-symbols/",
-      "title": "Chess Symbols",
-      "desc": "Le jeu d'échecs Unicode complet — rois, reines, tours, fous, cavaliers et les deux pions — dans une même référence à copier-coller (en anglais)."
+      "href": "/fr/library/symboles-echecs/",
+      "title": "Symboles d'Échecs",
+      "desc": "Le jeu d'échecs Unicode complet — rois, reines, tours, fous, cavaliers et les deux pions — dans une même référence à copier-coller."
     },
     {
       "href": "/library/card-suit-symbols/",
@@ -140,9 +140,9 @@
       "desc": "Piques, cœurs, carreaux et trèfles — les autres glyphes de jeu, juste à côté des pièces d'échecs dans le bloc Miscellaneous Symbols d'Unicode (en anglais)."
     },
     {
-      "href": "/library/crown-royalty-symbols/",
+      "href": "/fr/library/symbole-couronne/",
       "title": "Crown & Royalty Symbols",
-      "desc": "Couronnes, trônes et régalia — une compagnie qui sied bien à un pion qui rêve d'être promu reine (en anglais)."
+      "desc": "Couronnes, trônes et régalia — une compagnie qui sied bien à un pion qui rêve d'être promu reine."
     }
   ]
 }

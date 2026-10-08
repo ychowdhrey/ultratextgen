@@ -1735,6 +1735,84 @@
       "verdict": "gate-pass",
       "evidence": "USER DECISION, 2026-10-03, in the user's words: \"I agree with all the type with a localize recommendation. Let's go and built\". Scope: exactly one page, ko/guide/insta-sogaegeul-julbakkum (EN guide/instagram-bio-line-breaks); any other guide/* ko page needs its own entry. The study offered three shapes for this job (translate the guide, build a converter tool, or a section of ko/insta-font) and the localize choice is the guide translation. Competitor footprint in locale (live Naver mobile SERP, fetched 2026-10-03): 인스타 줄바꿈 returns instablank.com (8 results), snskeyboard's line-break page, sweethero, nalmuk, allthatconverter and mgunexcel; Naver autocomplete shows 9 variants (공백, 사이트, 복사, 아이폰, 하는법, 공백닷컴, 특수기호). Keyword volume was not pulled, so that instrument is null, not zero. Counter-evidence: the cross-locale guide/* entry of 2026-08-11 records the 3-page Discord guide trio at about 1,424 impressions/mo across 87 locale pages, and the Korean SERP for this query is tool-led, which favours a tool over an article. Re-check: 2026-11-14, Naver Search Advisor and GSC page-level impressions; under 30 in 6 weeks is reported as thin, a finding only.",
       "recordedBy": "claude-session-01Ah8frucm7xSqzdae9zEg3o-user-authorized"
+    },
+    {
+      "pattern": null,
+      "locale": "it",
+      "checkedDate": "2026-10-06",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 590,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "USER DECISION, 2026-10-06, in the user's words: \"Go ahead with all 1, 2 and 3\" (approving a presented list of 24 locale pages, this one among the pilots). Scope: exactly one page, it/font-discord/ (EN parent discord/, a bare top-level page with no data/core_parent_set.json pattern, so classifyParent() reports pattern: null / tier \"unclassified\"; recorded as JSON null to match). Keyword instrument: Semrush it database, pulled 2026-10-05, the Italian Discord-font head term at 590/mo. Competitor footprint and EN GSC impressions from Italy were not pulled, so both stay null rather than guessed. This is a pilot authorization, not a pass on all it platform pages: any other it page under an unclassified parent needs its own entry. Re-check 2026-12-06 against the page's own GSC impressions; if it draws under 100 impressions/mo by then, record a gate-fail and fold it back into it/grassetto.",
+      "recordedBy": "claude-session-01K7oQvxVnQbcgDz7MvVTaMb-user-authorized"
+    },
+    {
+      "pattern": null,
+      "locale": "uk",
+      "checkedDate": "2026-10-07",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 12100,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "USER DECISION, 2026-10-07: the user asked for Ukrainian to be evaluated as a new locale and for a focused first release to be implemented if the evidence supports it, explicitly not a full-site translation. Locale uk is added to data/locale_qualification_tiers.json at Tier 3 (hold-stub) in this same change, so the registry default is skip-stub-locale and this entry is the recorded per-page override. Scope: exactly one page, uk/index.html (EN parent index.html, a bare top-level page with no data/core_parent_set.json pattern, so classifyParent() reports pattern: null; recorded as JSON null to match). Keyword instrument: UA-market bulk keyword export supplied by the user 2026-10-07: шрифт онлайн 12,100/mo, красивий шрифт 5,400, генератор шрифтів 480 (close variants of one job, not summed). Competitor footprint: UA-database organic results pulled 2026-10-07 show copy-paste generators with dedicated Ukrainian versions ranking for генератор шрифтів (fontiner.com/uk/ #1, charactercalculator.com/uk/font-changer/ #2, uk.piliapp.com/cool-text/ #3) and красивий шрифт (fontiner.com/uk/ #3, uk.piliapp.com #4, beautifulfonts.net/ua/ #6), so one page owns the cluster. EN GSC impressions from Ukraine were not pulled, so that stays null. Re-check 2026-12-07 against the page's own GSC impressions.",
+      "recordedBy": "claude-session-012aUoivUd44UaUQ6AW8weFH-user-authorized"
+    },
+    {
+      "pattern": "library/*",
+      "locale": "uk",
+      "checkedDate": "2026-10-07",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 590,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "mirror",
+      "evidence": "USER DECISION, 2026-10-07: the user asked for Ukrainian to be evaluated as a new locale and for a focused first release to be implemented if the evidence supports it, explicitly not a full-site translation. Locale uk is added to data/locale_qualification_tiers.json at Tier 3 (hold-stub) in this same change, so the registry default is skip-stub-locale and this entry is the recorded per-page override. Scope: exactly one page, library/invisible-character -> uk/nevydymyi-tekst/ (locale root slug, matching ru/nevidimyy-tekst/). Keyword instrument: same 2026-10-07 UA export: невидимий пробіл 590/mo (KD 6), невидимий текст 170, невидимий символ 20; not summed. Competitor footprint: UA-database organic results 2026-10-07 for невидимий пробіл: blanktexts.com/uk/ #1, charactercalculator.com/uk/invisible-character/ #3, smallseotools.com/uk/invisible-character/ #4. Autocomplete (Google hl=uk gl=ua, fetched 2026-10-07) adds для фф, інстаграм, для тг, для стима, для пабга. This is not a pass for other library/* parents in uk. Re-check 2026-12-07 against GSC impressions.",
+      "recordedBy": "claude-session-012aUoivUd44UaUQ6AW8weFH-user-authorized"
+    },
+    {
+      "pattern": "usecase/nickname-generator/*",
+      "locale": "uk",
+      "checkedDate": "2026-10-07",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 480,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "mirror",
+      "evidence": "USER DECISION, 2026-10-07: the user asked for Ukrainian to be evaluated as a new locale and for a focused first release to be implemented if the evidence supports it, explicitly not a full-site translation. Locale uk is added to data/locale_qualification_tiers.json at Tier 3 (hold-stub) in this same change, so the registry default is skip-stub-locale and this entry is the recorded per-page override. Scope: exactly one page, usecase/nickname-generator -> uk/henerator-nikiv/. Keyword instrument: same 2026-10-07 UA export: генератор нікнеймів 480/mo, генератор ніків 480, ніки для ігор 260, круті ніки 140, нік для гри 90 (overlapping variants of one job, not summed). Competitor footprint: UA-database organic results 2026-10-07 for генератор нікнеймів include plarium.com/uk/resource/generator/nickname-generator/ #3, xbitlabs.com/uk/gamertag-generator/ #2, cudekai.com/uk/ #6. Autocomplete names Standoff 2, PUBG, Free Fire, Brawl Stars, Roblox, CS 2 and Discord. Re-check 2026-12-07 against GSC impressions.",
+      "recordedBy": "claude-session-012aUoivUd44UaUQ6AW8weFH-user-authorized"
+    },
+    {
+      "pattern": "hiragana-chart/index.html",
+      "locale": "ko",
+      "checkedDate": "2026-10-07",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 12100,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "USER DECISION, 2026-10-07: the owner selected this page for implementation from a Semrush Korea (Google KR) export dated 2026-10-07 and asked for it to be built as an execution request, with the override recorded narrowly at page level. Scope: exactly one page, ko/hiragana-pyo/ (EN parent /hiragana-chart/); no other locale and no other unclassified top-level path is authorized by this entry, because the pattern is this one file. Keyword volume (owner-supplied export, Google KR estimates): 히라가나 표 12,100/mo KD 27; 히라가나 49,500/mo KD 42; 히라가나 쓰기 260/mo KD 9. The instrument field carries the chart-term figure only; the broad term is not added to it because the two intents overlap, and the writing term supports the on-page practice sheet rather than a separate page. Competitor footprint: Naver autocomplete's first suggestion for 히라가나 is 히라가나표, and the Naver web block for it shows dedicated chart tools (2026-10-03 pull recorded with the Korean expansion study); the existing ko/library/ilboneo-giho page serves decorative kana copying, a different job, and stays the owner of that one. EN GSC impressions from Korean-language queries were not pulled, so that instrument is null, not zero. Re-check: 2026-11-18, GSC and Naver Search Advisor page-level impressions for the new page; under 30 impressions in 6 weeks is reported as thin, a finding only.",
+      "recordedBy": "claude-session-01H2xhKwJTcpMiecSzKc5fyi-user-authorized"
+    },
+    {
+      "pattern": "katakana-chart/index.html",
+      "locale": "ko",
+      "checkedDate": "2026-10-07",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 9900,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "USER DECISION, 2026-10-07: the owner selected this page for implementation from a Semrush Korea (Google KR) export dated 2026-10-07 and asked for it to be built as an execution request, with the override recorded narrowly at page level. Scope: exactly one page, ko/gatakana-pyo/ (EN parent /katakana-chart/); no other locale and no other unclassified top-level path is authorized by this entry, because the pattern is this one file. Keyword volume (owner-supplied export, Google KR estimates): 가타카나 표 9,900/mo KD 17; 가타카나 40,500/mo KD 38; 가타카나 쓰기 50/mo KD 15. The instrument field carries the chart-term figure only; the broad term is not added to it because the two intents overlap, and the writing term supports the on-page practice sheet rather than a separate page. Competitor footprint: Naver autocomplete's first suggestion for 히라가나 is 히라가나표, and the Naver web block for it shows dedicated chart tools (2026-10-03 pull recorded with the Korean expansion study); the existing ko/library/ilboneo-giho page serves decorative kana copying, a different job, and stays the owner of that one. EN GSC impressions from Korean-language queries were not pulled, so that instrument is null, not zero. Re-check: 2026-11-18, GSC and Naver Search Advisor page-level impressions for the new page; under 30 impressions in 6 weeks is reported as thin, a finding only.",
+      "recordedBy": "claude-session-01H2xhKwJTcpMiecSzKc5fyi-user-authorized"
     }
   ]
 }

@@ -551,7 +551,8 @@
         { label: "바이오 폰트", href: "/usecase/bio-font/" },
         { label: "타투 폰트", href: "/ko/usecase/tatu-reteoring/" },
         { label: "이모지 번역기", href: "/usecase/text-to-emoji/" },
-        { label: "세로 텍스트 생성기", href: "/ko/usecase/vertical-text/" }
+        { label: "세로 텍스트 생성기", href: "/ko/usecase/vertical-text/" },
+        { label: "영문 이름 변환기", href: "/ko/yeongmun-ireum-byeonhwan/" }
       ],
       categories: [
         { label: "굵은 글씨", href: "/category/bold-fonts/" },
@@ -1005,6 +1006,39 @@
       colTitles: { explore: "Terokai", tools: "Alat Popular", categories: "Kategori Popular", company: "Syarikat" },
       copyright: "© 2026 UltraTextGen. Tulisan bergaya yang berfungsi di mana-mana."
     },
+    uk: {
+      home: { label: "Головна", href: "/uk/" },
+      explore: [
+        { label: "Посібники", href: "/guide/" },
+        { label: "Відповіді", href: "/answers/" },
+        { label: "Ідеї", href: "/usecase/" },
+        { label: "Категорії", href: "/category/" },
+        { label: "Бібліотека", href: "/library/" },
+        { label: "Для друку", href: "/printables/" },
+        { label: "Події", href: "/events/" }
+      ],
+      tools: [
+        { label: "Генератор ніків", href: "/uk/henerator-nikiv/" },
+        { label: "Невидимий текст", href: "/uk/nevydymyi-tekst/" },
+        { label: "Лічильник символів", href: "/character-counter/" },
+        { label: "Шрифти для тату", href: "/usecase/tattoo-fonts/" }
+      ],
+      categories: [
+        { label: "Генератор шрифтів", href: "/uk/" },
+        { label: "Жирний шрифт", href: "/category/bold-fonts/" },
+        { label: "Курсив", href: "/category/italic-fonts/" },
+        { label: "Готичний шрифт", href: "/category/gothic-fonts/" },
+        { label: "Закреслений текст", href: "/category/strikethrough-text/" }
+      ],
+      company: [
+        { label: "Про нас", href: "/about/" },
+        { label: "Конфіденційність", href: "/privacy/" },
+        { label: "Умови використання", href: "/terms/" },
+        { label: "Контакти", href: "/contact/" }
+      ],
+      colTitles: { explore: "Розділи", tools: "Популярні інструменти", categories: "Популярні стилі", company: "Компанія" },
+      copyright: "© 2026 UltraTextGen. Красивий текст, який працює всюди."
+    },
     pl: {
       home: { label: "Strona główna", href: "/pl/" },
       explore: [
@@ -1149,7 +1183,10 @@
       colTitle: "Yazdırılabilir",
       items: [
         { label: "Tüm Yazdırılabilir Sayfalar", href: "/tr/yazdirilabilir/" },
-        { label: "Harf Kalıpları", href: "/tr/yazdirilabilir/harf-kaliplari/" }
+        { label: "Harf Kalıpları", href: "/tr/yazdirilabilir/harf-kaliplari/" },
+        { label: "Harf Boyama", href: "/tr/yazdirilabilir/harf-boyama/" },
+        { label: "İsimle Noktaları Birleştir", href: "/tr/yazdirilabilir/noktalari-birlestir-isim/" },
+        { label: "Balon Harfler", href: "/tr/yazdirilabilir/balon-harfler/" }
       ],
       bridge: 'Biyografi ve gönderiler için yazı tipi mi arıyorsun? <a href="/tr/" class="footer-link">Yazı tipi oluşturucuyu dene →</a>',
       copyright: "© 2026 UltraTextGen. Yazdırılabilir harfler ve alfabeler ücretsiz."
@@ -1231,6 +1268,7 @@
         '<a href="/printables/dot-to-dot-name/" class="footer-link">Dot-to-Dot Name</a>' +
         '<a href="/printables/banner-maker/" class="footer-link">Banner Maker</a>' +
         '<a href="/printables/monogram-maker/" class="footer-link">Monogram Maker</a>' +
+        '<a href="/printables/name-labels/" class="footer-link">Name Labels</a>' +
       '</div>' +
       '<div class="footer-col">' +
         '<span class="footer-col-title">Learn</span>' +

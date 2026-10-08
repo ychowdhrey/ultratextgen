@@ -2,8 +2,8 @@
   "slug": "symbole-tilde",
   "lang": "fr",
   "page_type": "symbol",
-  "title": "Symbole Tilde : Copier-Coller ~ ˜ ∼ ≈ — Du Raccourci des Scribes au ñ jusqu'au Dossier Home d'Unix",
-  "meta_description": "Copie et colle le tilde (~), le petit tilde ˜, le diacritique combinant du ñ, et les tildes mathématiques ∼ et ≈ — et découvre comment un raccourci de scribe médiéval a donné naissance au ñ. Clique sur un symbole pour le copier instantanément.",
+  "title": "Symbole Tilde : Copier-Coller ~ ˜ ∼ ≈",
+  "meta_description": "Copie et colle le tilde (~), le petit tilde ˜, le diacritique du ñ et les tildes mathématiques ∼ et ≈, nés d'un raccourci de scribe médiéval.",
   "canonical": "https://ultratextgen.com/fr/symbol/symbole-tilde/",
   "breadcrumb": "Symbole Tilde",
   "hero_h1": "Symbole Tilde (~)",
@@ -106,14 +106,14 @@
   ],
   "related": [
     {
-      "href": "/library/keyboard-symbols/",
-      "title": "Keyboard Symbols",
-      "desc": "Le tilde, l'accent grave, l'esperluette et le reste des touches de ponctuation d'un clavier standard, prêtes à copier (en anglais)."
+      "href": "/fr/library/symboles-clavier/",
+      "title": "Symboles Clavier",
+      "desc": "Le tilde, l'accent grave, l'esperluette et le reste des touches de ponctuation d'un clavier standard, prêtes à copier."
     },
     {
-      "href": "/library/math-symbols/",
-      "title": "Math Symbols",
-      "desc": "Presque-égal, semblable-à, et les opérateurs et relations qui complètent une équation aux côtés du tilde (en anglais)."
+      "href": "/fr/library/symboles-mathematiques/",
+      "title": "Symboles Mathématiques",
+      "desc": "Presque-égal, semblable-à, et les opérateurs et relations qui complètent une équation aux côtés du tilde."
     },
     {
       "href": "/library/accent-marks-diacritics/",
