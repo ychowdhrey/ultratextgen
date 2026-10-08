@@ -240,7 +240,7 @@
       category: { label: "Categorieën", href: "/category/" },
       usecase: { label: "Toepassingen", href: "/nl/usecase/" },
       library: { label: "Bibliotheek", href: "/nl/library/" },
-      printables: { label: "Afdrukbaar", href: "/printables/" },
+      printables: { label: "Afdrukbaar", href: "/nl/om-uit-te-printen/" },
       events: { label: "Evenementen", href: "/events/" },
       search: "Zoek lettertypestijlen…",
       darkMode: "Donkere modus wisselen"
