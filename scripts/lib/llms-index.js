@@ -239,6 +239,22 @@ const PRINTABLE_JOB_TITLES = new Map(Object.entries({
   craft: 'Craft & display',
 }));
 
+/**
+ * The root file's `## Jobs across languages` section: one line per job, for an
+ * agent that needs "which page does this job, in this language" in one read.
+ * Everywhere else the tree is language first, then lane, so that question took
+ * one fetch per language.
+ *
+ * A job is an English owner page plus every indexable page that declares it as
+ * its `hreflang="en"` parent: the same job in another language. Which jobs, and
+ * in what order, is an owner decision held in data/llms_job_index.json; the line
+ * itself is read off the pages, like every other line in the tree. The section
+ * is a cross-reference layer, so `validate()` checks its links resolve but does
+ * not count them as a page's home (each page still has exactly one).
+ */
+const JOB_INDEX_FILE = 'data/llms_job_index.json';
+const JOBS_HEADING = 'Jobs across languages';
+
 // ─── Small helpers ───────────────────────────────────────────────────────────
 
 function readFile(rel) {
@@ -928,7 +944,42 @@ function renderLocaleFile(loc) {
   return lines.join('\n').replace(/\n+$/, '\n');
 }
 
-function renderRootFile(locales) {
+/** The owner's ordered job list: English owner paths. */
+function loadJobIndex() {
+  return JSON.parse(readFile(JOB_INDEX_FILE)).jobs;
+}
+
+/**
+ * Resolve each listed path to its English page and the locale pages that name
+ * it as their English parent. A path that is not an indexable English page
+ * resolves to `page: null`, which `validate()` reports rather than dropping.
+ */
+function resolveJobs(locales, jobPaths) {
+  const enByUrl = new Map(locales.get('en').pages.map((p) => [p.url, p]));
+  const byParent = new Map();
+  for (const [code, loc] of locales) {
+    if (code === 'en') continue;
+    for (const page of loc.pages) {
+      if (!page.enParent || (page.canonical && page.canonical !== page.url)) continue;
+      if (!byParent.has(page.enParent)) byParent.set(page.enParent, []);
+      byParent.get(page.enParent).push(page);
+    }
+  }
+  return jobPaths.map((p) => {
+    const url = `${BASE_URL}${p}`;
+    const others = (byParent.get(url) || []).slice()
+      .sort((a, b) => (a.locale + a.url < b.locale + b.url ? -1 : 1));
+    return { path: p, url, page: enByUrl.get(url) || null, others };
+  });
+}
+
+function jobLine(job) {
+  const langs = job.others.map((p) => `[${p.locale}](${p.url})`).join(', ');
+  const note = langs ? `${job.page.description} Other languages: ${langs}` : job.page.description;
+  return linkLine(job.url, job.page.title, note);
+}
+
+function renderRootFile(locales, jobs = []) {
   const en = locales.get('en');
   const totalPages = [...locales.values()].reduce((n, l) => n + l.pages.length, 0);
   const lines = [];
@@ -959,11 +1010,27 @@ function renderRootFile(locales) {
     + `language has its own index at ${BASE_URL}/<code>/${FILE_NAME}.`
   );
   lines.push('');
+  if (jobs.some((j) => j.page)) {
+    lines.push(
+      `The "${JOBS_HEADING}" section lists the site's main jobs. Each line is the `
+      + 'English page for one job, then the same page in every other language it '
+      + 'exists in, so one read answers which page does a job in a given language.'
+    );
+    lines.push('');
+  }
 
   if (en.home) {
     lines.push('## Main generator');
     lines.push('');
     lines.push(pageLine(en.home));
+    lines.push('');
+  }
+
+  const resolved = jobs.filter((j) => j.page);
+  if (resolved.length) {
+    lines.push(`## ${JOBS_HEADING}`);
+    lines.push('');
+    for (const job of resolved) lines.push(jobLine(job));
     lines.push('');
   }
 
@@ -1015,9 +1082,9 @@ function renderRootFile(locales) {
 // ─── Plan ────────────────────────────────────────────────────────────────────
 
 /** Every file this system owns, as {relPath, content}, in deterministic order. */
-function plan(locales) {
+function plan(locales, jobs = []) {
   const files = [];
-  files.push({ relPath: FILE_NAME, content: renderRootFile(locales) });
+  files.push({ relPath: FILE_NAME, content: renderRootFile(locales, jobs) });
   for (const code of [...locales.keys()].filter((c) => c !== 'en').sort()) {
     files.push({
       relPath: `${code}/${FILE_NAME}`,
@@ -1044,7 +1111,8 @@ function build() {
   }
   const { pages, skippedNoindex } = collectPages();
   const locales = buildTree(pages);
-  return { pages, skippedNoindex, locales, files: plan(locales) };
+  const jobs = resolveJobs(locales, loadJobIndex());
+  return { pages, skippedNoindex, locales, jobs, files: plan(locales, jobs) };
 }
 
 // ─── Validation ──────────────────────────────────────────────────────────────
@@ -1076,8 +1144,11 @@ function validate(result) {
     if (!file.content.endsWith('\n')) problems.push(`${where}: no trailing newline`);
 
     const inFile = new Set();
+    const inJobs = new Set();
     let links = 0;
+    let isJobs = false;
     for (const line of lines) {
+      if (line.startsWith('## ')) { isJobs = line === `## ${JOBS_HEADING}`; continue; }
       if (!line.startsWith('- ')) continue;
       const m = LINK_RE.exec(line);
       if (!m) { problems.push(`${where}: malformed list item: ${line}`); continue; }
@@ -1092,6 +1163,27 @@ function validate(result) {
       }
       if (/[?#]/.test(url)) problems.push(`${where}: URL carries a query or fragment: ${url}`);
       if (/([^:])\/\//.test(url)) problems.push(`${where}: duplicate slash in ${url}`);
+
+      // A job line is a cross-reference: the page it names has its home in a
+      // section index. It must still resolve, and so must every language link.
+      if (isJobs) {
+        if (inJobs.has(url)) problems.push(`${where}: duplicate job ${url}`);
+        inJobs.add(url);
+        const page = known.get(url);
+        if (!page || page.locale !== 'en') {
+          problems.push(`${where}: job ${url} is not a known indexable English page`);
+          continue;
+        }
+        for (const [, code, alt] of (note || '').matchAll(/\[([a-z-]+)\]\((\S+?)\)/g)) {
+          const other = known.get(alt);
+          if (!other) problems.push(`${where}: job ${url} links ${alt}, not a known indexable route`);
+          else if (other.locale !== code || other.enParent !== url) {
+            problems.push(`${where}: job ${url} links ${alt} as [${code}], but that page is ${other.locale} with English parent ${other.enParent || '(none)'}`);
+          }
+        }
+        continue;
+      }
+
       if (inFile.has(url)) problems.push(`${where}: duplicate URL ${url}`);
       inFile.add(url);
 
@@ -1120,6 +1212,11 @@ function validate(result) {
     else if (homes.length > 1) {
       problems.push(`page listed in ${homes.length} files (${homes.join(', ')}): ${page.url}`);
     }
+  }
+
+  // Every job the owner listed resolves to a page and is printed.
+  for (const job of result.jobs || []) {
+    if (!job.page) problems.push(`${JOB_INDEX_FILE}: ${job.path} is not an indexable English page`);
   }
 
   // A locale index for every locale that has pages, and none for one that does not.
@@ -1170,6 +1267,8 @@ module.exports = {
   classify,
   collectPages,
   buildTree,
+  resolveJobs,
+  JOBS_HEADING,
   plan,
   validate,
   fileStats,

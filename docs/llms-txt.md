@@ -161,6 +161,30 @@ Only two sections carry sub-headings, and both taxonomies already exist:
 Every other section is one flat, URL-sorted list. A grouping nobody already
 maintains is a grouping that goes stale.
 
+### Jobs across languages (root file, added 2026-10-08)
+
+Everything above is language first, then lane. An assistant asked for "big
+letters to cut out, in French" had to fetch `/fr/llms.txt`, then the French
+printables index, and guess which entry matched. The root file now carries a
+`## Jobs across languages` section: one line per job, naming the English page
+that does it, then the same page in every other language.
+
+* **Which jobs, and in what order, is an owner decision** held in
+  `data/llms_job_index.json` (English site paths only, most-used first, decided
+  2026-10-08). It is a ledger: adding, removing or reordering an entry is
+  discussed, never done to make a check pass.
+* **The line is read off the pages, like every other line.** Link text and note
+  are the English page's own `<h1>` and tagline. The language links are every
+  indexable page whose `hreflang="en"` parent is that page, labelled with its
+  locale code (no language names, per §4). Nothing in the line is written here.
+* **It is a cross-reference layer.** Each page still has exactly one home in a
+  section index; `validate()` does not count a job line as a second one. It
+  does check that the job is an indexable English page, that each language
+  link is an indexable page in that locale, and that the page names the job as
+  its English parent. A listed path that stops being a page fails
+  `npm run check:llms`.
+* **No ranking or inclusion claim** is made for it, as for the rest of the tree.
+
 ---
 
 ## 4. Nothing here is authored
@@ -317,6 +341,7 @@ two controls:
 | a page stripped of tagline, meta and og description | **exit 1**, `has no description` |
 | a generated index hand-edited | **exit 1**, `tree is stale` |
 | a new English root page with no `ROOT_PAGE_SECTION` entry | **exit 1**, naming the table |
+| a job path in `data/llms_job_index.json` that is not a page (2026-10-08) | **exit 1**, `is not an indexable English page` |
 | tree restored (control) | **exit 0** |
 
 And verified that CI *gates* on it rather than merely running it:
@@ -324,7 +349,7 @@ And verified that CI *gates* on it rather than merely running it:
 tree and **0** on a clean one; `--only llms_index_tests` returns **1** with a
 validation rule disabled and **0** restored.
 
-`npm run test:llms` is 58 assertions over the rules above, including a
+`npm run test:llms` is 68 assertions (58 before the jobs section) over the rules above, including a
 determinism check: the same corpus in reverse discovery order renders
 byte-identically.
 
