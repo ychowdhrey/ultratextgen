@@ -188,14 +188,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     },
     {
       "@type": "Question",
-      "name": "口座名義の欄で、ｷｮｳｺ のような小さい仮名が使えないと言われました。どうすればいいですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "「小さい仮名を大きくする」にチェックを入れて半角に変換すると、ｷﾖｳｺ のように大きい仮名で出力されます。全国銀行協会の振込データの文字一覧は口座名や受取人名のカナから小文字を除いており、銀行の案内にも小書き文字は使えないとするものがあります。入力欄の規則は銀行ごとに違うため、このツールが直すのは小さい仮名だけです。"
-      }
-    },
-    {
-      "@type": "Question",
       "name": "入力したテキストはサーバーに送信されますか？",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -275,16 +267,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </div>
   </section>
 
-  <section class="editorial-section" id="kozameigi-kogaki">
-    <h2>口座名義で小さい仮名が通らないとき</h2>
-    <p>全国銀行協会の振込データの文字一覧は、口座名・振込依頼人名・受取人名に使うカナから小文字を除いています。三井住友銀行のインターネットバンキングは、受取人名に <code>ッ</code> <code>ャ</code> <code>ュ</code> <code>ョ</code> を入力しても確認画面で <code>ツ</code> <code>ヤ</code> <code>ユ</code> <code>ヨ</code> に直して表示すると案内しています。七十七銀行の法人向けサービスは、小書き文字は使えないとして、<code>ｶ)ﾀｶﾞｼﾞﾖｳｼﾖｳｼﾞ</code> のように大きい仮名で書く例を挙げています（いずれも 2026 年 10 月 8 日に確認）。</p>
-    <p>上の「小さい仮名を大きくする」をオンにすると、半角への変換結果が <code>ｷﾖｳｺ</code> のように大きい仮名で出ます。<code>ｬｭｮｯ</code> は <code>ﾔﾕﾖﾂ</code> に、<code>ｧｨｩｪｫ</code> は <code>ｱｲｳｴｵ</code> に直します。初期設定はオフで、オフのときの結果はこれまでと同じです。このツールが直すのは小さい仮名だけです。<code>ヲ</code> や中黒（<code>・</code>）の扱いは銀行ごとに違うため、変えません。</p>
-  </section>
-
   <section class="editorial-section">
     <span class="article-section-label">出典</span>
     <div class="source-note">
-      <p>全国銀行協会の<a href="https://www.zenginkyo.or.jp/fileadmin/res/news/news311202_1.pdf" rel="nofollow noopener" target="_blank">使用文字一覧の新旧対照表</a>は、口座名・振込依頼人名・受取人名のカナから小文字を除くと定めています。三井住友銀行の<a href="https://www.smbc.co.jp/direct/help_furikomi/14.html" rel="nofollow noopener" target="_blank">受取人名の入力方法</a>は、促音と拗音が確認画面で大きい仮名に直されると説明し、七十七銀行の<a href="https://www.77bank.co.jp/c_inb/bizsol/manual/bsl0011.html" rel="nofollow noopener" target="_blank">受取人名・預金者名に使用できる文字</a>は、小書き文字を使えないとしています。</p>
+      <p>小さい仮名の扱いは銀行ごとに違います。全国銀行協会の<a href="https://www.zenginkyo.or.jp/fileadmin/res/news/news311202_1.pdf" rel="nofollow noopener" target="_blank">使用文字一覧の新旧対照表</a>は口座名・受取人名のカナから小文字を除いており、<a href="https://www.smbc.co.jp/direct/help_furikomi/14.html" rel="nofollow noopener" target="_blank">三井住友銀行</a>と<a href="https://www.77bank.co.jp/c_inb/bizsol/manual/bsl0011.html" rel="nofollow noopener" target="_blank">七十七銀行</a>の案内にも、小さい仮名は入力できないとあります（2026年10月8日に確認）。</p>
     </div>
   </section>
 
@@ -309,10 +295,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <details class="faq-item">
         <summary class="faq-question">バイト数の表示は何の数字ですか？</summary>
         <div class="faq-answer"><p>Shift-JIS 換算の目安です（全角 = 2 バイト、半角 = 1 バイト）。銀行や役所のフォームにある「全角◯文字以内」「半角◯文字以内」の制限を確認する目安として使えます。UTF-8 でのバイト数とは異なります。</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-question">口座名義の欄で、ｷｮｳｺ のような小さい仮名が使えないと言われました。どうすればいいですか？</summary>
-        <div class="faq-answer"><p>「小さい仮名を大きくする」にチェックを入れて半角に変換すると、<code>ｷﾖｳｺ</code> のように大きい仮名で出力されます。全国銀行協会の振込データの文字一覧は口座名や受取人名のカナから小文字を除いており、銀行の案内にも小書き文字は使えないとするものがあります。入力欄の規則は銀行ごとに違うため、このツールが直すのは小さい仮名だけです。</p></div>
       </details>
       <details class="faq-item">
         <summary class="faq-question">入力したテキストはサーバーに送信されますか？</summary>
