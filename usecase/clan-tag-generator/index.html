@@ -314,6 +314,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <h3>1. A separate clan tag field, with its own stricter rules</h3>
   <p>The game stores the tag apart from your name and prefixes it automatically. These fields are typically short and plain-text only. <strong>PUBG: BATTLEGROUNDS</strong> is the clearest documented case: the clan tag is <strong>2 to 4 characters</strong>, accepts only <strong>uppercase English letters, numbers, hyphen and underscore</strong>, must start with a letter or number, allows no spaces, and needs at least two letters/numbers. Changing it costs <strong>990 G-COIN</strong>, and only the Clan Master can do it. A styled tag is rejected outright here. Put the plain letters in the tag field and save the styling for your own display name.</p>
+  <p><strong>Discord</strong> has one too, called the Server Tag, and as of October 8, 2026 Discord Help describes it as a 4-character label paired with an icon. A server owner or admin unlocks it with 3 Server Boosts and picks the tag, badge and colour; each member then chooses whether to show it on their profile, and it appears next to their name in chat, member lists and direct messages. It takes letters, numbers and certain special characters, but no spaces or emojis, and Discord does not list the special characters. Pick Discord in the studio and it checks the length and spaces, and marks anything beyond letters and numbers as unconfirmed rather than passing it. A tag typed into your display name still works, and then it shares that name's 32-character limit.</p>
 
   <h3>2. No tag field: the tag goes inside your display name</h3>
   <p>Fortnite, Valorant and Roblox have no clan tag field, so players type the tag into their own name: <em>[TAG] Name</em>. This is where decoration can work, as far as that display name allows it: Riot supports any Unicode letter in a Riot ID but documents no symbols or styled letters, Epic publishes no character list, and on September 25, 2026 Roblox's own display-name check rejected brackets, symbols and styled letters (<em>[ACE] Nova</em> failed, <em>ACE Nova</em> passed). Either way, the tag and your name now share <strong>one character budget</strong>. A 6-character framed tag in a 16-character field leaves you 10. Pick your game in the studio above and it does that subtraction for you.</p>
@@ -479,13 +480,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const f = gr.TAG_FIELDS[id] || {};
 
     if (t.kind === "dedicated") {
-      const head = t.limit
+      const head = f.summary
+        ? f.label + " has " + f.summary
+        : t.limit
         ? f.label + " has its own clan tag field: up to " + t.limit +
           " characters, letters and numbers only."
         : f.label + " has its own clan tag field.";
       verdictEl.appendChild(line("ts-verdict-head", head));
       if (!ctx.out) {
         verdictEl.className = "ts-verdict is-info";
+      } else if (t.ok && t.undocumented) {
+        verdictEl.className = "ts-verdict is-info";
+        verdictEl.appendChild(line("ts-verdict-line",
+          "“" + ctx.out + "” fits the " + t.limit + "-character limit (" + t.glyphs + "/" + t.limit + "), " +
+          "but " + f.label + " only documents letters, numbers and certain special characters here, and does not say which. " +
+          "Set the font to Plain and the frame to None for the documented set."));
       } else if (t.ok) {
         verdictEl.className = "ts-verdict is-ok";
         verdictEl.appendChild(line("ts-verdict-line", "✓ “" + ctx.out + "” fits — " + t.glyphs + "/" + t.limit + "."));
@@ -495,7 +504,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "✕ “" + ctx.out + "” will be rejected: " +
           t.issues.map(function (i) { return ISSUE_TEXT[i] || i; }).join("; ") + "."));
         const fix = [];
-        if (t.issues.indexOf("charset") !== -1) fix.push("set the font to Plain and the frame to None");
+        if (t.issues.indexOf("charset") !== -1 || t.undocumented) fix.push("set the font to Plain and the frame to None");
         if (t.issues.indexOf("too-long") !== -1) fix.push("shorten it to " + t.limit + " characters");
         if (t.issues.indexOf("space") !== -1) fix.push("remove the space");
         verdictEl.appendChild(line("ts-verdict-note",
@@ -505,6 +514,14 @@ document.addEventListener("DOMContentLoaded", function () {
             : "")));
       }
       if (t.cost) verdictEl.appendChild(line("ts-verdict-note", "Changing it costs " + t.cost + "."));
+      if (f.note) verdictEl.appendChild(line("ts-verdict-note", f.note));
+      // A tag can also be typed into a nickname, where it shares that name's budget.
+      const nb = f.nameRule && ctx.out ? gr.tagBudget(ctx.out, id, "") : null;
+      if (nb) {
+        verdictEl.appendChild(line("ts-verdict-note",
+          "Typed into your " + nb.label + " display name instead, it leaves " + Math.max(nb.left, 0) +
+          " of " + nb.limit + " characters for your name."));
+      }
     } else if (t.kind === "folded") {
       verdictEl.className = "ts-verdict is-info";
       verdictEl.appendChild(line("ts-verdict-head",
