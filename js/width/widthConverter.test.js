@@ -55,6 +55,19 @@ for (let cp = 0xff61; cp <= 0xffdc; cp++) {
 }
 eq("NFKC equivalence sweep", nfkcBad, 0);
 
+// Opt-in large-kana option (half-width output only). Default output keeps small kana.
+const LK = { alnum: true, punct: true, space: true, kana: true, jamo: true, largekana: true };
+eq("small kana default unchanged", W.convert("キョウコ ガッコウ", { direction: "half", classes: ALL }), "ｷｮｳｺ ｶﾞｯｺｳ");
+eq("largekana full->half yoon", W.convert("キョウコ ジュンコ ヒャク", { direction: "half", classes: LK }), "ｷﾖｳｺ ｼﾞﾕﾝｺ ﾋﾔｸ");
+eq("largekana sokuon", W.convert("ガッコウ", { direction: "half", classes: LK }), "ｶﾞﾂｺｳ");
+eq("largekana small vowels", W.convert("ァィゥェォ", { direction: "half", classes: LK }), "ｱｲｳｴｵ");
+eq("largekana already-half small kana", W.convert("ｷｮｳｺ ｯ ｧｨｩｪｫ", { direction: "half", classes: LK }), "ｷﾖｳｺ ﾂ ｱｲｳｴｵ");
+eq("largekana ignored toFull", W.convert("ｷｮｳｺ", { direction: "full", classes: LK }), "キョウコ");
+eq("largekana needs kana class", W.convert("キョウコ", { direction: "half", classes: { alnum: true, kana: false, largekana: true } }), "キョウコ");
+eq("largekana leaves ヮ and hiragana", W.convert("ヮゃっ", { direction: "half", classes: LK }), "ヮゃっ");
+eq("largekana leaves full-size kana alone", W.convert("ヤユヨツ", { direction: "half", classes: LK }), "ﾔﾕﾖﾂ");
+eq("largekana round trip stays full-size", W.convert(W.convert("キョウコ", { direction: "half", classes: LK }), { direction: "full", classes: ALL }), "キヨウコ");
+
 // Width census
 const c = W.counts("ABCあいう１２３");
 eq("counts.half", c.half, 3);
