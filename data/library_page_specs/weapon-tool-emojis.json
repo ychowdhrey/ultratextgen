@@ -1,7 +1,7 @@
 {
   "slug": "weapon-tool-emojis",
   "title": "Weapon & Tool Emojis: Copy & Paste ⚔ 🔪 🔨 Battle Combos",
-  "meta_description": "Reference list of weapon and tool emojis — swords ⚔️, shields 🛡️, bows 🏹, hammers 🔨, plus gaming battle combo sets. Click any emoji to copy it instantly.",
+  "meta_description": "Reference list of weapon and tool emojis: swords ⚔️, shields 🛡️, bows 🏹, hammers 🔨, plus gaming battle combo sets. Click any emoji to copy it instantly.",
   "canonical": "https://ultratextgen.com/library/weapon-tool-emojis/",
   "breadcrumb": "Weapon & Tool Emojis",
   "hero_h1": "Weapon & Tool Emojis",
@@ -36,6 +36,21 @@
         { "char": "💣", "label": "Bomb" },
         { "char": "🧨", "label": "Firecracker" },
         { "char": "🎯", "label": "Direct Hit" }
+      ]
+    },
+    {
+      "id": "sniper-text-art",
+      "label": "Sniper",
+      "h2": "Sniper Rifle Text Art",
+      "intro": "Gamer-tag and chat rifles drawn with box-drawing lines, with the katakana デ standing in for the scope. 🔫 draws as a water pistol on most current platforms, so these text pieces are the way to get a rifle outline. Each button copies the whole piece.",
+      "symbols": [
+        { "char": "▄︻デ══━一", "label": "Sniper Rifle" },
+        { "char": "( -_•)▄︻デ══━一", "label": "Sniper Taking Aim" },
+        { "char": "︻╦╤─", "label": "Compact Rifle" },
+        { "char": "︻デ═一", "label": "Short Rifle" },
+        { "char": "▄︻デ══━一💥", "label": "Rifle Shot" },
+        { "char": "🔫💥🎯", "label": "Shot on Target" },
+        { "char": "🎯🔫", "label": "Taking Aim" }
       ]
     },
     {
