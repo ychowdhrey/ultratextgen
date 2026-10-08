@@ -145,6 +145,30 @@
      "label": "Blaulicht"
     }
    ]
+  },
+  {
+   "id": "schokolade",
+   "label": "Schokolade",
+   "h2": "Schokolade oder Kackhaufen",
+   "intro": "Eine eigene Schokoladen-Version von 💩 gibt es nicht: Die großen Emoji-Sets zeichnen ihn ohnehin braun, der Witz entsteht erst durch das Zeichen daneben. Diese Kombis stellen 💩 neben 🍫 oder neben das Softeis 🍦 mit seiner Spirale.",
+   "symbols": [
+    {
+     "char": "💩🍫",
+     "label": "Kackhaufen und Tafel Schokolade"
+    },
+    {
+     "char": "🍫💩",
+     "label": "Tafel Schokolade und Kackhaufen"
+    },
+    {
+     "char": "🍫🤔💩",
+     "label": "Schokolade oder Kackhaufen?"
+    },
+    {
+     "char": "💩🍦",
+     "label": "Kackhaufen und Softeis"
+    }
+   ]
   }
  ],
  "faq_h2": "Häufige Fragen zum Kackhaufen-Emoji",

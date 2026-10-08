@@ -301,6 +301,10 @@
         {
           "char": "∵",
           "label": "\\because — 왜냐하면"
+        },
+        {
+          "char": "ℒ",
+          "label": "\\mathcal{L} (라플라스 변환, 필기체 대문자 L)"
         }
       ]
     }
