@@ -121,6 +121,62 @@
           "label": "Blank Bunny"
         }
       ]
+    },
+    {
+      "id": "bunny-emoji",
+      "label": "Bunny Emoji",
+      "h2": "Bunny & Rabbit Emoji",
+      "intro": "Unicode has two rabbit emoji: 🐰 is the face and 🐇 is the whole rabbit mid-hop. Unlike the kaomoji above, they draw in each platform's own emoji art, so they look a little different on iPhone and Android.",
+      "symbols": [
+        {
+          "char": "🐰",
+          "label": "Rabbit Face"
+        },
+        {
+          "char": "🐇",
+          "label": "Rabbit"
+        },
+        {
+          "char": "🐾",
+          "label": "Paw Prints"
+        },
+        {
+          "char": "🥕",
+          "label": "Carrot"
+        }
+      ]
+    },
+    {
+      "id": "bunny-emoji-combos",
+      "label": "Bunny Combos",
+      "h2": "Bunny Emoji Combos",
+      "intro": "Short combos that pair a bunny with what it is usually up to: eating, dashing off or hopping in for Easter. Each button copies the whole combo.",
+      "symbols": [
+        {
+          "char": "🐰🥕",
+          "label": "Bunny and Carrot"
+        },
+        {
+          "char": "🐇💨",
+          "label": "Bunny Dash"
+        },
+        {
+          "char": "🐰💕",
+          "label": "Bunny Love"
+        },
+        {
+          "char": "🐰🌸",
+          "label": "Spring Bunny"
+        },
+        {
+          "char": "🐇🐾",
+          "label": "Hopping Tracks"
+        },
+        {
+          "char": "🐰🥚🧺",
+          "label": "Easter Bunny"
+        }
+      ]
     }
   ],
   "related": [

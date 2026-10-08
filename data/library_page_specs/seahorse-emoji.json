@@ -44,6 +44,19 @@
       ]
     },
     {
+      "id": "starfish-alternatives",
+      "label": "Starfish",
+      "h2": "Starfish Emoji Alternatives",
+      "intro": "There is no starfish emoji either: Unicode has never encoded one, up to and including Emoji 18.0. These are the closest stand-ins you can copy. 𓇼 is an Egyptian hieroglyph drawn as a star, and it shows as an empty box on devices with no hieroglyph font, so the emoji options sit first.",
+      "symbols": [
+        { "char": "⭐", "label": "Star" },
+        { "char": "🌟", "label": "Glowing Star" },
+        { "char": "🪸", "label": "Coral" },
+        { "char": "🐚", "label": "Spiral Shell" },
+        { "char": "𓇼", "label": "Egyptian Hieroglyph Star (N014)" }
+      ]
+    },
+    {
       "id": "ocean-water",
       "label": "Ocean & Water",
       "h2": "Ocean & Water Emoji",

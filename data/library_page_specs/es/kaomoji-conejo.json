@@ -142,6 +142,62 @@
           "label": "Conejo sin expresión"
         }
       ]
+    },
+    {
+      "id": "bunny-emoji",
+      "label": "Emoji de conejo",
+      "h2": "Emojis de conejo",
+      "intro": "Unicode tiene dos emojis de conejo: 🐰 es la cara y 🐇 el conejo entero en pleno salto. A diferencia de los kaomoji de arriba, se ven con el dibujo propio de cada plataforma, así que cambian un poco entre iPhone y Android.",
+      "symbols": [
+        {
+          "char": "🐰",
+          "label": "Cara de conejo"
+        },
+        {
+          "char": "🐇",
+          "label": "Conejo"
+        },
+        {
+          "char": "🐾",
+          "label": "Huellas"
+        },
+        {
+          "char": "🥕",
+          "label": "Zanahoria"
+        }
+      ]
+    },
+    {
+      "id": "bunny-emoji-combos",
+      "label": "Combos de conejo",
+      "h2": "Combos de emojis de conejo",
+      "intro": "Combos cortos que juntan al conejo con lo que suele estar haciendo: comer, salir corriendo o llegar saltando en Pascua. Cada botón copia el combo completo.",
+      "symbols": [
+        {
+          "char": "🐰🥕",
+          "label": "Conejo con zanahoria"
+        },
+        {
+          "char": "🐇💨",
+          "label": "Conejo a toda prisa"
+        },
+        {
+          "char": "🐰💕",
+          "label": "Conejo enamorado"
+        },
+        {
+          "char": "🐰🌸",
+          "label": "Conejo de primavera"
+        },
+        {
+          "char": "🐇🐾",
+          "label": "Huellas saltando"
+        },
+        {
+          "char": "🐰🥚🧺",
+          "label": "Conejo de Pascua"
+        }
+      ]
     }
   ],
   "related": [

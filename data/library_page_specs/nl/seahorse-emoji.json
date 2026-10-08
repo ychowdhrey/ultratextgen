@@ -92,6 +92,34 @@
       ]
     },
     {
+      "id": "starfish-alternatives",
+      "label": "Zeester",
+      "h2": "Alternatieven voor een zeester-emoji",
+      "intro": "Een zeester-emoji bestaat ook niet: Unicode heeft er nooit een vastgelegd, ook niet in Emoji 18.0. Dit zijn de dichtstbijzijnde vervangers die je kunt kopiëren. 𓇼 is een Egyptische hiëroglief in de vorm van een ster en verschijnt als een leeg vakje op apparaten zonder hiërogliefenlettertype, daarom staan de emoji vooraan.",
+      "symbols": [
+        {
+          "char": "⭐",
+          "label": "Ster"
+        },
+        {
+          "char": "🌟",
+          "label": "Stralende ster"
+        },
+        {
+          "char": "🪸",
+          "label": "Koraal"
+        },
+        {
+          "char": "🐚",
+          "label": "Schelp"
+        },
+        {
+          "char": "𓇼",
+          "label": "Egyptische hiëroglief ster (N014)"
+        }
+      ]
+    },
+    {
       "id": "ocean-water",
       "label": "Oceaan & water",
       "h2": "Oceaan- en water-emoji",
