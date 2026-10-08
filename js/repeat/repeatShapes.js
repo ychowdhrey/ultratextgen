@@ -15,7 +15,8 @@
    into apps that strip whitespace — same split as verticalPageController.js).
 
    Deterministic: no Math.random / Date.now. Every arrangement is clamped to
-   the shared MAX_REPEATS cap so a shape can never run past the engine's limit.
+   MAX_COUNT (1000, the engine's HARD_MAX_REPEATS), and the two stepped
+   shapes to STEPPED_MAX, so a shape can never run past the engine's limit.
 
    Exposes: window.UTG_REPEAT_SHAPES
    ========================================================================== */
@@ -24,7 +25,15 @@
   "use strict";
 
   const B = window.UTG_SCROLL_BUILDERS || {};
-  const MAX = B.MAX_REPEATS || 200;
+  /* 1000 copies: "1000 hearts copy and paste" is a block people ask for by
+     that number. Measured in Chromium on 2026-10-08 with a 120-character
+     phrase, the page rebuilds all 60 style cards in well under a second. */
+  const MAX = Math.min(1000, B.HARD_MAX_REPEATS || 200);
+  /* Staircase and Diagonal indent every line further than the last, so the
+     indent grows with the square of the count: 1000 diagonal lines would be
+     about two million padding characters in each of 60 cards. They keep the
+     old 200 cap, and the page says so when a higher count is asked for. */
+  const STEPPED_MAX = Math.min(200, MAX);
 
   const DEFAULT_COLUMNS = 5;
   const MAX_COLUMNS = 12;
@@ -36,10 +45,11 @@
 
   /* Clamp a requested copy count to [1, MAX] using the SHARED cap, so no shape
      can ever render past what the repeat engine itself allows. */
-  function clampCount(n) {
+  function clampCount(n, cap) {
+    let max = cap > 0 ? Math.min(MAX, cap) : MAX;
     let r = Math.floor(Number(n));
     if (!isFinite(r) || r < 1) return 1;
-    if (r > MAX) return MAX;
+    if (r > max) return max;
     return r;
   }
 
@@ -107,6 +117,7 @@
       text: phrase,
       divider: options.divider || "",
       repeats: clampCount(count),
+      maxRepeats: MAX,
       joinMode: "inline"
     });
   }
@@ -118,6 +129,7 @@
       text: phrase,
       divider: options.divider || "",
       repeats: clampCount(count),
+      maxRepeats: MAX,
       joinMode: "own-line"
     });
   }
@@ -154,7 +166,7 @@
   function shapeStaircase(phrase, count) {
     phrase = normPhrase(phrase);
     if (!phrase) return "";
-    count = clampCount(count);
+    count = clampCount(count, STEPPED_MAX);
     const STEP = 2;
     let rows = [];
     for (let i = 0; i < count; i++) rows.push(spaces(i * STEP) + phrase);
@@ -169,7 +181,7 @@
   function shapeDiagonal(phrase, count) {
     phrase = normPhrase(phrase);
     if (!phrase) return "";
-    count = clampCount(count);
+    count = clampCount(count, STEPPED_MAX);
     const STEP = 4;
     let rows = [];
     for (let i = 0; i < count; i++) rows.push(spaces(i * STEP) + phrase);
@@ -205,12 +217,12 @@
      `columns: true` marks the one that takes a column count (box).
      -------------------------------------------------------------------------- */
   const SHAPES = [
-    { id: "block",           label: "Block",           description: "Each copy on its own line — the literal “say it N times” list.", fn: shapeBlock,          divider: true },
+    { id: "block",           label: "Block",           description: "Each copy on its own line: the literal “say it N times” list.", fn: shapeBlock,          divider: true },
     { id: "inline",          label: "Inline",          description: "Every copy on one long line, separated by your divider.",                  fn: shapeInline,         divider: true },
     { id: "pyramid",         label: "Pyramid",         description: "Copies build up row by row into a centered pyramid.",                      fn: shapePyramid },
     { id: "reverse-pyramid", label: "Reverse Pyramid", description: "Starts wide at the top and tapers down to a point.",                       fn: shapeReversePyramid },
-    { id: "staircase",       label: "Staircase",       description: "One copy per row, each stepped a little further right.",                   fn: shapeStaircase },
-    { id: "diagonal",        label: "Diagonal",        description: "One copy per row on a steeper rightward diagonal.",                        fn: shapeDiagonal },
+    { id: "staircase",       label: "Staircase",       description: "One copy per row, each stepped a little further right.",                   fn: shapeStaircase,      maxCount: STEPPED_MAX },
+    { id: "diagonal",        label: "Diagonal",        description: "One copy per row on a steeper rightward diagonal.",                        fn: shapeDiagonal,       maxCount: STEPPED_MAX },
     { id: "box",             label: "Box Grid",        description: "Copies tiled left-to-right into a rectangular grid.",                      fn: shapeBox,            columns: true }
   ];
 
@@ -218,6 +230,8 @@
     SHAPES: SHAPES,
     DEFAULT_COLUMNS: DEFAULT_COLUMNS,
     MAX_COLUMNS: MAX_COLUMNS,
+    MAX_COUNT: MAX,
+    STEPPED_MAX: STEPPED_MAX,
     clampCount: clampCount,
     clampColumns: clampColumns,
     shapeInline: shapeInline,
