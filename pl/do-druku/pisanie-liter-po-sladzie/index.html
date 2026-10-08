@@ -161,6 +161,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         "@type": "Answer",
         "text": "Tak. Ą, ć, ę, ł, ń, ó, ś, ź i ż są obsługiwane zarówno w pasku liter, jak i w generatorze, więc wyrazy z polskimi znakami wychodzą poprawnie. Ogonki i kreski są rysowane razem z literą, a nie doklejane osobno."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Czy mogę wydrukować karty do pisania cyfr po śladzie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tak. Dotknij cyfry od 0 do 9 na końcu rzędu, a otworzy się cała strona z tą cyfrą do pisania po śladzie. Karta ćwiczeniowa pod nagłówkiem Wydrukuj cały alfabet za jednym razem kończy się cyframi 0–9, a pole tekstowe przyjmuje też liczby: wpisz 1 2 3 4 5 6 7 8 9 10 i wydrukuj."
+      }
     }
   ]
 }
@@ -205,7 +213,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <!-- Single letter or number (primary) -->
     <section class="bubble-az" aria-labelledby="ptPickHeading">
       <h2 class="bubble-az-heading" id="ptPickHeading">Pisz po śladzie dowolną literę od A do Ż lub cyfrę od 0 do 9</h2>
-      <p class="bubble-az-intro">Dotknij litery, żeby ją otworzyć. Dostajesz całą stronę z tym jednym znakiem do pisania po śladzie, duży kontur do osobnego wydruku i PNG do pobrania.</p>
+      <p class="bubble-az-intro">Dotknij litery, żeby ją otworzyć. Dostajesz całą stronę z tym jednym znakiem do pisania po śladzie, duży kontur do osobnego wydruku i PNG do pobrania. Cyfry 0–9 są na końcu rzędu, więc ta sama strona służy też do pisania cyfr po śladzie.</p>
       <div class="bubble-strip" id="pt-strip" role="tablist" aria-label="Wybierz literę lub cyfrę do pisania po śladzie"></div>
       <div class="bubble-letter-panel" id="pt-panel" aria-live="polite"></div>
     </section>
@@ -226,14 +234,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <!-- Custom sheet -->
     <section class="bubble-alphabet" aria-labelledby="ptGenHeading">
       <h2 id="ptGenHeading">Zbuduj kartę z literami, nad którymi pracujecie</h2>
-      <p class="bubble-az-intro">W większości tygodni dziecko ćwiczy dwie albo trzy litery, a nie wszystkie trzydzieści dwie. Wpisz tylko te, wybierz, ile pomocy daje karta, a strona przebuduje się w trakcie pisania. Ustaw <strong>Litery</strong> na <strong>małe litery</strong> dla małych liter albo na <strong>WIELKIE LITERY</strong> dla wielkich.</p>
+      <p class="bubble-az-intro">W większości tygodni dziecko ćwiczy dwie albo trzy litery, a nie wszystkie trzydzieści dwie. Wpisz tylko te, wybierz, ile pomocy daje karta, a strona przebuduje się w trakcie pisania. Z cyframi działa to tak samo: wpisz 1 2 3 4 5, a karta przygotuje je do pisania po śladzie. Ustaw <strong>Litery</strong> na <strong>małe litery</strong> dla małych liter albo na <strong>WIELKIE LITERY</strong> dla wielkich.</p>
 
       <div class="pt-studio">
         <div class="pt-studio-controls">
           <div class="pt-field">
-            <label class="pt-field-label" for="pt-gen-input">Litery do ćwiczenia</label>
+            <label class="pt-field-label" for="pt-gen-input">Litery lub cyfry do ćwiczenia</label>
             <div class="input-wrapper">
-              <input type="text" class="main-input pt-gen-input" id="pt-gen-input" placeholder="Wpisz litery, np. b d p" maxlength="42" autocomplete="off">
+              <input type="text" class="main-input pt-gen-input" id="pt-gen-input" placeholder="Wpisz litery lub cyfry, np. b d p albo 1 2 3" maxlength="42" autocomplete="off">
             </div>
           </div>
 
@@ -397,6 +405,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </button>
         <div class="faq-answer">
           Tak. Ą, ć, ę, ł, ń, ó, ś, ź i ż są obsługiwane zarówno w pasku liter, jak i w generatorze, więc wyrazy z polskimi znakami wychodzą poprawnie. Ogonki i kreski są rysowane razem z literą, a nie doklejane osobno.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          Czy mogę wydrukować karty do pisania cyfr po śladzie?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="faq-answer">
+          Tak. Dotknij cyfry od 0 do 9 na końcu rzędu, a otworzy się cała strona z tą cyfrą do pisania po śladzie. Karta ćwiczeniowa pod nagłówkiem <strong>Wydrukuj cały alfabet za jednym razem</strong> kończy się cyframi 0–9, a pole tekstowe przyjmuje też liczby: wpisz 1 2 3 4 5 6 7 8 9 10 i wydrukuj.
         </div>
       </div>
 
