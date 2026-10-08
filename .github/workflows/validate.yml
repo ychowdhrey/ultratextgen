@@ -315,6 +315,19 @@ jobs:
         continue-on-error: true
         run: npm run check:runtime-smoke | tee runtime-smoke.log
 
+      # Gating, no backlog: the Japanese worksheet pages under /ja/purinto/,
+      # rendered. Each page's real PDF button must give the pages it promised,
+      # at A4, placed 1:1 (a 22mm masu is 22mm on paper); the print path must
+      # give the same count with no site chrome (the print root's padding once
+      # pushed every sheet onto two pages); the textbook face must cover the
+      # torture corpus and report a character it lacks; and a typed name must
+      # never reach dataLayer, the URL or the title. Exits 2 (UNKNOWN), never
+      # 0, if the browser cannot start.
+      - name: Run Japanese printables render check (real browser)
+        id: ja_printables
+        continue-on-error: true
+        run: npm run check:ja-printables | tee ja-printables.log
+
       # Compares printablesEngine.js against ITSELF: every action surface the
       # `el` map reads must be one firstActionSurface() can anchor on, and every
       # primary PNG surface one pngExportTarget() can reach. The three puzzle
@@ -468,6 +481,18 @@ jobs:
         id: qr_tests
         continue-on-error: true
         run: npm run test:qr | tee qr-tests.log
+
+      # Gating, no backlog: the Japanese worksheet engine's facts. Kana sets
+      # and the MEXT grade presets (80/160/200/202/193/191), normalisation that
+      # composes ｶﾀｶﾅ and か+゛ but never alters 髙, 﨑 or a compatibility
+      # ideograph, one cell per grapheme, romaji by the 2025 notice (maccha,
+      # shinbashi) and 訓令式, and millimetre geometry: masu pitch, four-line
+      # placement of capitals, x-height and descenders. Also confirms the
+      # generated grade preset file matches its source list.
+      - name: Run Japanese worksheet engine tests
+        id: ja_sheets_tests
+        continue-on-error: true
+        run: npm run test:ja-sheets | tee ja-sheets-tests.log
 
       # Gating, no backlog: the name-label sheet prints onto pre-cut label
       # stock, so every stock's margins, label size and gaps must sum to its
@@ -1191,6 +1216,8 @@ jobs:
             echo '```'
             echo ""
             echo "### QR encoder tests — \`${{ steps.qr_tests.outcome }}\`"
+            echo "### Japanese worksheet engine tests — \`${{ steps.ja_sheets_tests.outcome }}\`"
+            echo "### Japanese printables render check — \`${{ steps.ja_printables.outcome }}\`"
             echo "### Label sheet geometry tests — \`${{ steps.label_geometry_tests.outcome }}\`"
             echo "### Korean kana reading tests — \`${{ steps.kana_readings_tests.outcome }}\`"
             echo "### Stencil bridge tests — \`${{ steps.stencil_tests.outcome }}\`"
@@ -1431,6 +1458,8 @@ jobs:
           steps.zalgo_engine_tests.outcome == 'failure' ||
           steps.romanize_tests.outcome == 'failure' ||
           steps.qr_tests.outcome == 'failure' ||
+          steps.ja_sheets_tests.outcome == 'failure' ||
+          steps.ja_printables.outcome == 'failure' ||
           steps.label_geometry_tests.outcome == 'failure' ||
           steps.kana_readings_tests.outcome == 'failure' ||
           steps.stencil_tests.outcome == 'failure' ||

@@ -71,6 +71,8 @@
     "test:zalgo-engine": "node usecase/zalgo-text/zalgo-text.test.js",
     "test:romanize": "node js/romanize/korean-romanize.test.js",
     "test:qr": "node js/printables/qr.test.js",
+    "test:ja-sheets": "node js/printables/jaSheets.test.js && python3 scripts/build-ja-print-fonts.py --check",
+    "check:ja-printables": "node scripts/check-ja-printables.js",
     "test:label-geometry": "node js/printables/labelEngine.test.js",
     "test:kana-readings": "node js/kana/kanaReadingsKo.test.js",
     "test:stencil": "node js/printables/stencil.test.js",

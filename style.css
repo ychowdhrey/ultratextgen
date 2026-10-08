@@ -7489,6 +7489,106 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
    =========================================================== */
 
 /* Hub grid of printable cards */
+/* Japanese worksheet generators (/ja/purinto/, js/printables/jaSheets.js).
+   The sheet itself is an SVG in millimetres drawn by jaSheetsCore.js; these
+   rules only lay out the controls and the preview card around it. */
+.ja-sheet-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+@media (min-width: 900px) {
+  .ja-sheet-layout { grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr); align-items: start; }
+  .ja-sheet-output { position: sticky; top: 1rem; }
+}
+.ja-sheet-controls { display: flex; flex-direction: column; gap: 0.85rem; }
+.ja-opt { border: 0; margin: 0; padding: 0; min-width: 0; }
+.ja-opt legend, .ja-opt > span {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+  color: var(--text-primary);
+}
+.ja-opt-radio, .ja-opt-check { display: flex; flex-wrap: wrap; gap: 0.4rem 0.5rem; }
+.ja-opt-radio legend, .ja-opt-check legend { width: 100%; }
+.ja-opt-radio label, .ja-opt-check label, .ja-opt-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  background: var(--bg-white);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.ja-opt-radio label:has(input:checked), .ja-opt-check label:has(input:checked) {
+  border-color: var(--accent-purple);
+  box-shadow: inset 0 0 0 1px var(--accent-purple);
+  font-weight: 600;
+}
+.ja-opt-toggle { border: 0; padding: 0; background: none; }
+.ja-opt input[type="radio"], .ja-opt input[type="checkbox"] { width: 1.15rem; height: 1.15rem; accent-color: var(--accent-purple); }
+.ja-opt-select select, .ja-opt-select input, .ja-opt-text input, .ja-opt-text textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.5rem 0.65rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md, 8px);
+  background: var(--bg-white);
+  color: var(--text-primary);
+  box-sizing: border-box;
+}
+.ja-opt-text textarea { min-height: 7rem; resize: vertical; }
+.ja-opt-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; }
+.ja-opt-note { margin: 0 0 0.3rem; font-size: 0.85rem; color: var(--text-secondary); width: 100%; }
+.ja-opt-more > summary { cursor: pointer; font-weight: 600; min-height: 44px; display: flex; align-items: center; }
+.ja-opt-more[open] > summary { margin-bottom: 0.5rem; }
+.ja-opt-more-body { display: flex; flex-direction: column; gap: 0.85rem; }
+.ja-sheet-preview {
+  width: 100%;
+  max-height: 80vh;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+.ja-sheet-preview svg { display: block; width: 100%; height: 100%; }
+.ja-sheet-pager { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 0.5rem; }
+.ja-sheet-pager[hidden] { display: none; }
+.ja-pager-btn {
+  min-width: 44px;
+  min-height: 44px;
+  font-size: 1.4rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  background: var(--bg-white);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+.ja-sheet-actions { margin-top: 0.75rem; flex-wrap: wrap; }
+.ja-sheet-actions .bubble-btn { min-height: 44px; }
+.ja-sheet-status { min-height: 1.4em; margin: 0.5rem 0 0; font-size: 0.9rem; color: var(--text-secondary); }
+.ja-font-note { margin: 0.5rem 0 0; font-size: 0.9rem; color: #9a3412; }
+.ja-font-note[hidden] { display: none; }
+.ja-table { border-collapse: collapse; margin: 0.75rem 0; font-size: 0.95rem; }
+.ja-table th, .ja-table td { border: 1px solid var(--border-light); padding: 0.4rem 0.75rem; text-align: left; }
+#pt-print-root .ja-print-page svg { display: block; }
+/* The Japanese sheets are already exactly the page area in mm, so the print
+   root's usual 1rem padding would push every sheet onto a second page
+   (measured: 1 sheet printed as 2 before this rule). */
+body.is-printing.ja-printing #pt-print-root { padding: 0 !important; }
+body.is-printing.ja-printing { margin: 0 !important; padding: 0 !important; }
+@media print {
+  #pt-print-root .ja-print-page { break-after: page; page-break-after: always; overflow: hidden; }
+  #pt-print-root .ja-print-page:last-child { break-after: auto; page-break-after: auto; }
+}
 .printable-hub-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));

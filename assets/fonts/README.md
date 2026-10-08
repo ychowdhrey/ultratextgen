@@ -75,8 +75,19 @@ pages.
 | Sedgwick Ave Display | 400 | latin, latin-ext, vietnamese | 3 | 67 KB | OFL-1.1 |
 | UnifrakturCook | 700 | latin | 1 | 17 KB | OFL-1.1 |
 | UnifrakturMaguntia | 400 | latin | 1 | 26 KB | OFL-1.1 |
+| Klee One † | 600 | ja-kana, ja-g1…g6, ja-joyo, ja-jinmei, ja-ext-1…6 | 15 | 2812 KB | OFL-1.1 |
 
-**Total: 65 files, 1675 KB.** A visitor downloads far less than that —
+† **Klee One is not in `style.css`.** It is the textbook-style (教科書体-like)
+face of the Japanese worksheets under `/ja/purinto/`, cut by
+`scripts/build-ja-print-fonts.py` into chunks by what a sheet asks for (kana;
+each school grade's kanji; the rest of 常用漢字; 人名用漢字; everything else
+the face carries, 8,114 kanji in all). Its `@font-face` rules list thousands of
+codepoints, 61 KB of CSS, so its manifest rows carry
+`"stylesheet": "assets/fonts/ja-print.css"` and `build-font-face-css.py`
+writes them there instead; only the pages that use the face link that file. A
+kana sheet downloads the 118 KB kana chunk; a grade-1 kanji sheet adds 15 KB.
+
+**Total: 65 files, 1675 KB** in `style.css`, plus Klee One's 15 files. A visitor downloads far less than that —
 every `@font-face` carries the `unicode-range` Google served it with, so an
 English page fetches one `latin` file of one weight.
 

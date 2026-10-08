@@ -221,3 +221,26 @@ trio still carries.
 found to be **cannibalization, not a legitimate local-only case**: identical
 title/H1 to `ja/index.html`, thinner content, zero cross-links. It was
 301-redirected to `ja/index.html` instead of ratified.
+
+## `/ja/purinto/`: ten Japanese-job printables (owner decision 2026-10-04)
+
+The owner directed that the ten pages under `/ja/purinto/` are built as
+Japanese user jobs, not translations: "Do not force an English parent URL if
+this Japanese job has no equivalent. The Japanese page may be locale native
+rather than a translation child." and "Do not pair pages incorrectly through
+hreflang merely because their engines share code."
+
+Each is Argument A (genuinely local-only): hiragana, katakana and kanji
+practice, kana colouring and romaji are Japanese-script or Japanese-school
+jobs; the English four-line ruling, alphabet and name pages use Japanese
+school conventions (third line as the coloured baseline, kana/kanji masu)
+that the English pages do not print. The two English kana charts are a
+learner's reference chart, a different job, and are not paired.
+
+The pages carry `hreflang="ja"` (self) and `x-default` to the bare English
+homepage, the `ja/gal-moji/` pattern, and no `en` alternate.
+
+**Ledger:** the ten `data/english_parent_exceptions.json` rows are an owner-only
+edit. They were drafted with the build, and on 2026-10-08 the owner explicitly
+authorised applying them ("Go ahead and edit, You have my permission."). They
+are on the build branch, so `check:locale-parent-gap` passes for the ten pages.
