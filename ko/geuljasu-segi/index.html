@@ -199,7 +199,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="counter-stat"><span class="counter-stat-value" id="statGraphemes">0</span><span class="counter-stat-label">자소 단위(보이는 글자)</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statUtf16">0</span><span class="counter-stat-label">UTF-16 단위</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statBytes">0</span><span class="counter-stat-label">UTF-8 바이트</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statBytesKr">0</span><span class="counter-stat-label">바이트(한글 2바이트)</span></div>
     </div>
+    <p class="counter-footnote">'바이트(한글 2바이트)'는 예전 방식(EUC-KR·CP949)으로 센 값이에요. '600자 / 1200바이트'처럼 한글 한 글자를 2바이트, 영문·숫자·공백을 1바이트로 세는 입력란에는 이 값을 보세요.</p>
 
     <div class="counter-fits">
       <p class="counter-fits-head">이 글이 또 어디에 들어가는지 — 모든 제한을 실시간으로</p>
@@ -268,7 +270,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <section class="editorial-section" id="counting-modes">
     <h2>플랫폼이 세는 글자수와 내 글자수가 다른 이유</h2>
-    <p>'이거 몇 자예요?'에는 정답이 하나가 아니에요. 서비스마다 세는 단위가 다르기 때문이에요. 한국어 사용자에게 가장 중요한 건 이 지점이에요: <strong>한글 한 글자는 1 코드포인트, 1 UTF-16 단위지만, UTF-8로는 3바이트</strong>예요. 그래서 글자 수로는 여유가 있는데도 바이트로 제한하는 입력 폼이나 시스템에서는 '너무 깁니다'라며 거부당하는 일이 생겨요. 같은 글에 길이가 네 가지 있다고 생각하면 돼요.</p>
+    <p>'이거 몇 자예요?'에는 정답이 하나가 아니에요. 서비스마다 세는 단위가 다르기 때문이에요. 한국어 사용자에게 가장 중요한 건 이 지점이에요: <strong>한글 한 글자는 1 코드포인트, 1 UTF-16 단위지만, UTF-8로는 3바이트</strong>예요. 그래서 글자 수로는 여유가 있는데도 바이트로 제한하는 입력 폼이나 시스템에서는 '너무 깁니다'라며 거부당하는 일이 생겨요. 같은 글에 길이가 다섯 가지 있다고 생각하면 돼요.</p>
     <div class="comparison-table-wrap"><table class="comparison-table">
       <thead><tr><th>세는 방식</th><th>무엇을 재나요</th><th>한글에서는</th></tr></thead>
       <tbody>
@@ -276,9 +278,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <tr><td>코드포인트</td><td>유니코드 문자 수 — 👍🏽 는 2(손 + 피부색)</td><td>'한' = 1. 대부분의 웹 서비스와 이 도구의 '글자 수' 타일</td></tr>
         <tr><td>UTF-16 단위</td><td>자바스크립트와 많은 앱이 글을 저장하는 방식</td><td>'한' = 1이지만 특수 글꼴 영문은 2. HTML 폼의 <code>maxlength</code>, 게임·앱 백엔드</td></tr>
         <tr><td>UTF-8 바이트</td><td>저장 용량</td><td><strong>'한' = 3바이트</strong>. 데이터베이스 <code>VARCHAR</code>, 아마존 상품 정보란, 스팀 이름, 오래된 업무 시스템</td></tr>
+        <tr><td>바이트(한글 2바이트)</td><td>예전 방식(EUC-KR·CP949)의 저장 용량</td><td><strong>'한' = 2바이트</strong>, 영문·숫자·공백 = 1바이트. '600자 / 1200바이트'처럼 두 숫자를 함께 적는 입력란</td></tr>
       </tbody>
     </table></div>
-    <p>이 차이는 실무에서 그대로 드러나요. 예를 들어 '255바이트까지'인 항목에는 한글이 85자밖에 안 들어가요. 위의 '자소 단위(보이는 글자)', 'UTF-16 단위', 'UTF-8 바이트' 타일은 입력과 동시에 모두 갱신되니, 폼은 길다고 하는데 내 글자 수는 모자랄 때 그 폼이 어떤 단위로 세는지 바로 짚어낼 수 있어요. 공백 포함·제외 문제는 이와 별개의 한국식 기준이라 <a href="#gongbaek">공백 포함 vs 공백 제외</a>에서 따로 설명했어요.</p>
+    <p>이 차이는 실무에서 그대로 드러나요. 예를 들어 '255바이트까지'인 항목에는 한글이 85자밖에 안 들어가요. 위의 '자소 단위(보이는 글자)', 'UTF-16 단위', 'UTF-8 바이트', '바이트(한글 2바이트)' 타일은 입력과 동시에 모두 갱신되니, 폼은 길다고 하는데 내 글자 수는 모자랄 때 그 폼이 어떤 단위로 세는지 바로 짚어낼 수 있어요. 공백 포함·제외 문제는 이와 별개의 한국식 기준이라 <a href="#gongbaek">공백 포함 vs 공백 제외</a>에서 따로 설명했어요.</p>
     <p>여기에 더해 자기만의 규칙을 쓰는 곳이 두 군데 있어요. <strong>X(트위터)는 글자가 아니라 가중치로 세서</strong> 한글 한 글자가 2로 계산돼요(자세히는 <a href="#x-twitter">X에서 한글은 몇 자까지</a>). <strong>SMS는 '건'으로 세는데</strong>, 한글은 GSM-7 문자 집합에 없어서 항상 유니코드로 처리되고 1건당 70자(분할되면 67자)로 떨어져요. 영문·숫자만 쓰면 1건에 160자예요.</p>
   </section>
 
