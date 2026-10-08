@@ -470,7 +470,22 @@ def render_editorial_sections(sections):
             if sec.get("label")
             else ""
         )
-        paras = "\n".join(f"    <p>{p}</p>" for p in sec.get("paragraphs", []))
+        # 235 specs wrote the prose under "body" (a plain string) and this
+        # function read only "paragraphs", so 232 live blocks rendered an <h2>
+        # over nothing. "body" is plain text, so it is escaped; "paragraphs"
+        # entries stay as-is for inline markup.
+        if sec.get("paragraphs"):
+            para_html = [f"    <p>{p}</p>" for p in sec["paragraphs"]]
+        elif sec.get("body"):
+            para_html = [f"    <p>{esc(sec['body'])}</p>"]
+        else:
+            # Never emit a heading over an empty block: that is a page that
+            # looks complete in the diff and reads as broken in the browser.
+            raise ValueError(
+                f'editorial section "{sec.get("h2", "?")}" has neither '
+                '"paragraphs" nor "body"'
+            )
+        paras = "\n".join(para_html)
         sid = f' id="{esc_attr(sec["id"])}"' if sec.get("id") else ""
         blocks.append(
             f'<section class="editorial-section"{sid}>\n'
