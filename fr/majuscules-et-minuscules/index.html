@@ -118,7 +118,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {
       "@type": "Question",
       "name": "Qu'est-ce qu'un convertisseur de majuscules et minuscules ?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Un convertisseur de majuscules et minuscules change la casse du texte sans toucher aux lettres elles-mêmes — par exemple «hello world» devient «HELLO WORLD», «Hello World» ou «Hello world». C'est la solution la plus rapide quand tu as laissé le Verrouillage Majuscules activé par erreur, que tu dois capitaliser un titre correctement, ou que tu dois respecter une charte éditoriale." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Un convertisseur de majuscules et minuscules change la casse du texte sans toucher aux lettres elles-mêmes — par exemple «hello world» devient «HELLO WORLD», «Hello World» ou «Hello world». C'est la solution la plus rapide quand tu as laissé le Verrouillage Majuscules activé par erreur : colle le texte en majuscules et choisis Sentence case, Title Case ou Capitalized Case. Elle sert aussi quand tu dois capitaliser un titre correctement ou respecter une charte éditoriale." }
     },
     {
       "@type": "Question",
@@ -133,7 +133,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {
       "@type": "Question",
       "name": "Ce convertisseur va-t-il abîmer des sigles comme NASA ou des noms de marque comme iPhone ?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Non. Title Case, Sentence case et Capitalized Case détectent tous les mots déjà volontairement en majuscules — sigles tout en majuscules (NASA, FBI) et majuscules internes (iPhone, McDonald) — et les préservent exactement tels quels au lieu de les aplatir en «Nasa» ou «Iphone». Il reconnaît aussi correctement les lettres accentuées en début de mot, donc «école» devient «École» et non «éCole» — une erreur fréquente chez les outils qui ne gèrent que l'alphabet anglais." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Non, tant que ton texte contient des minuscules. Title Case, Sentence case et Capitalized Case détectent tous les mots déjà volontairement en majuscules — sigles tout en majuscules (NASA, FBI) et majuscules internes (iPhone, McDonald) — et les préservent exactement tels quels au lieu de les aplatir en «Nasa» ou «Iphone». Un texte sans aucune minuscule est lu comme saisi avec le Verrouillage Majuscules : tous les mots sont convertis, sigles compris. THE NASA TEAM devient The Nasa Team, et tu retapes le sigle ensuite. Les noms qui commencent par Mc ou O' reçoivent leur deuxième majuscule (McDavid, O'Brien), tandis que Mac, van et de sont traités comme des mots ordinaires. Il reconnaît aussi correctement les lettres accentuées en début de mot, donc «école» devient «École» et non «éCole» — une erreur fréquente chez les outils qui ne gèrent que l'alphabet anglais." }
     },
     {
       "@type": "Question",
@@ -201,7 +201,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           Qu'est-ce qu'un convertisseur de majuscules et minuscules ?
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="faq-answer">Un convertisseur de majuscules et minuscules change la casse du texte sans toucher aux lettres elles-mêmes — par exemple "hello world" devient "HELLO WORLD", "Hello World" ou "Hello world". C'est la solution la plus rapide quand tu as laissé le Verrouillage Majuscules activé par erreur, que tu dois capitaliser un titre correctement, ou que tu dois respecter une charte éditoriale.</div>
+        <div class="faq-answer">Un convertisseur de majuscules et minuscules change la casse du texte sans toucher aux lettres elles-mêmes — par exemple "hello world" devient "HELLO WORLD", "Hello World" ou "Hello world". C'est la solution la plus rapide quand tu as laissé le Verrouillage Majuscules activé par erreur : colle le texte en majuscules et choisis Sentence case, Title Case ou Capitalized Case. Elle sert aussi quand tu dois capitaliser un titre correctement ou respecter une charte éditoriale.</div>
       </div>
 
       <div class="faq-item">
@@ -225,7 +225,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           Ce convertisseur va-t-il abîmer des sigles comme NASA ou des noms de marque comme iPhone ?
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="faq-answer">Non. Title Case, Sentence case et Capitalized Case détectent tous les mots déjà volontairement en majuscules — sigles tout en majuscules (NASA, FBI) et majuscules internes (iPhone, McDonald) — et les préservent exactement tels quels au lieu de les aplatir en "Nasa" ou "Iphone". Il reconnaît aussi correctement les lettres accentuées en début de mot, donc "école" devient "École" et non "éCole" — une erreur fréquente chez les outils qui ne gèrent que l'alphabet anglais.</div>
+        <div class="faq-answer">Non, tant que ton texte contient des minuscules. Title Case, Sentence case et Capitalized Case détectent tous les mots déjà volontairement en majuscules — sigles tout en majuscules (NASA, FBI) et majuscules internes (iPhone, McDonald) — et les préservent exactement tels quels au lieu de les aplatir en "Nasa" ou "Iphone". Un texte sans aucune minuscule est lu comme saisi avec le Verrouillage Majuscules : tous les mots sont convertis, sigles compris. THE NASA TEAM devient The Nasa Team, et tu retapes le sigle ensuite. Les noms qui commencent par Mc ou O' reçoivent leur deuxième majuscule (McDavid, O'Brien), tandis que Mac, van et de sont traités comme des mots ordinaires. Il reconnaît aussi correctement les lettres accentuées en début de mot, donc "école" devient "École" et non "éCole" — une erreur fréquente chez les outils qui ne gèrent que l'alphabet anglais.</div>
       </div>
 
       <div class="faq-item">
