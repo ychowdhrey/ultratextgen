@@ -527,6 +527,15 @@ def render_symbol_section(sec, copy_label="Copy"):
         if sec.get("intro")
         else ""
     )
+    # Optional "see the full set" link under the grid, e.g. an emoji page's
+    # short kaomoji sample pointing at the subject's own kaomoji page.
+    more = sec.get("more_link")
+    more_html = (
+        f'  <p class="u-secondary-tight"><a href="{esc_attr(more["href"])}">'
+        f'{esc(more["text"])} →</a></p>\n'
+        if more
+        else ""
+    )
     return (
         f'<section class="mood-explainers" id="{esc_attr(sec["id"])}">\n'
         f"{label_html}"
@@ -535,6 +544,7 @@ def render_symbol_section(sec, copy_label="Copy"):
         '  <div class="flag-rows">\n'
         + "\n".join(rows)
         + "\n  </div>\n"
+        f"{more_html}"
         "</section>"
     )
 
