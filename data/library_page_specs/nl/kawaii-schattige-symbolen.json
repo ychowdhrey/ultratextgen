@@ -1,7 +1,7 @@
 {
   "slug": "kawaii-schattige-symbolen",
   "lang": "nl",
-  "title": "Kawaii Schattige Symbolen Kopiëren — Zachte Aesthetic Deco",
+  "title": "Kawaii Schattige Symbolen Kopiëren: Zachte Aesthetic Deco",
   "meta_description": "Kawaii en schattige symbolen voor je bio, gebruikersnaam en berichten: zachte hartjes, kleine gezichtjes, sterretjes en pastelversieringen.",
   "breadcrumb": "Kawaii & Schattige Symbolen",
   "hero_h1": "Kawaii & Schattige Symbolen",
@@ -306,6 +306,78 @@
         {
           "char": "🌸",
           "label": "Kersenbloesem"
+        }
+      ]
+    },
+    {
+      "id": "cutecore",
+      "label": "Cutecore-esthetiek",
+      "h2": "Cutecore-emoji's en -symbolen",
+      "intro": "Cutecore is een online esthetiek opgebouwd uit kawaii-basics (knuffels, aardbeien, strikken, pastelroze) die er vaak een licht verontrustend randje aan geeft, zoals een pleister of tanden, en daardoor naast weirdcore staat. Gewone kawaii houdt alleen de zoete helft. 🩷 is een nieuwere emoji, dus een oudere telefoon toont hem mogelijk als leeg vakje; 💕 ernaast is de oudere vervanger.",
+      "symbols": [
+        {
+          "char": "🍓",
+          "label": "Aardbei"
+        },
+        {
+          "char": "🩷",
+          "label": "Roze hart"
+        },
+        {
+          "char": "💕",
+          "label": "Twee harten"
+        },
+        {
+          "char": "🍰",
+          "label": "Taartpunt"
+        },
+        {
+          "char": "🧁",
+          "label": "Cakeje"
+        },
+        {
+          "char": "🍼",
+          "label": "Babyfles"
+        },
+        {
+          "char": "🩹",
+          "label": "Pleister"
+        },
+        {
+          "char": "🦷",
+          "label": "Tand"
+        }
+      ]
+    },
+    {
+      "id": "cutecore-combos",
+      "label": "Cutecore-combinaties",
+      "h2": "Cutecore-combinaties",
+      "intro": "Korte reeksen met knuffels, snoep en een pleister of tand, voor een bioregel of als versiering rond een gebruikersnaam.",
+      "symbols": [
+        {
+          "char": "⋆˚࿔ 🧸 ˚⋆",
+          "label": "Fonkelende teddy"
+        },
+        {
+          "char": "🍓🎀🧁",
+          "label": "Zoete traktaties"
+        },
+        {
+          "char": "🩹🧸🩹",
+          "label": "Opgelapte knuffel"
+        },
+        {
+          "char": "♡ 🐰 ♡",
+          "label": "Konijn tussen hartjes"
+        },
+        {
+          "char": "꒰ 🍓 ꒱",
+          "label": "Aardbei tussen haakjes"
+        },
+        {
+          "char": "🦷✨🩹",
+          "label": "Tand en pleister"
         }
       ]
     }

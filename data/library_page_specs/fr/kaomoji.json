@@ -260,6 +260,46 @@
           "label": "Chat Souriant"
         }
       ]
+    },
+    {
+      "id": "birds",
+      "label": "Oiseaux",
+      "h2": "Kaomoji oiseaux",
+      "intro": "La plupart des kaomoji oiseaux utilisent la lettre grecque thêta (Θ ou θ) comme bec, d'où le caractère central commun aux visages ci-dessous. ⊝ dessine un bec plus rond qui évoque un pingouin, ▼ un bec pointu.",
+      "symbols": [
+        {
+          "char": "(・Θ・)",
+          "label": "Poussin"
+        },
+        {
+          "char": "(･θ･)",
+          "label": "Petit Oiseau"
+        },
+        {
+          "char": "(◉Θ◉)",
+          "label": "Oiseau aux Grands Yeux"
+        },
+        {
+          "char": "＼( ˋ Θ ´ )／",
+          "label": "Ailes qui Battent"
+        },
+        {
+          "char": "(￣Θ￣)",
+          "label": "Oiseau Blasé"
+        },
+        {
+          "char": "（・⊝・）",
+          "label": "Pingouin"
+        },
+        {
+          "char": "◎▼◎",
+          "label": "Hibou"
+        },
+        {
+          "char": "(`･Θ･´)",
+          "label": "Poussin Grognon"
+        }
+      ]
     }
   ]
 }
