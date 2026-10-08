@@ -1,0 +1,117 @@
+{
+  "slug": "thumbs-up-ascii-art",
+  "title": "Thumbs Up ASCII Art: Copy & Paste Text Thumbs Up",
+  "meta_description": "Copy and paste thumbs up ASCII art: big and small multi-line thumbs drawn in plain text, two thumbs up, a thumbs down and one-line text thumbs like d-_-b and (y).",
+  "canonical": "https://ultratextgen.com/library/thumbs-up-ascii-art/",
+  "breadcrumb": "Thumbs Up ASCII Art",
+  "hero_h1": "Thumbs Up ASCII Art",
+  "hero_tagline": "A thumbs up drawn in plain text, from the one-line d-_-b to a big multi-line hand. Click Copy to take it with its spacing.",
+  "intro": "Thumbs up ASCII art draws the hand with keyboard characters: the thumb is a pair of pipes with an underscore cap, and each curled finger is a ( with underscores. The one-line versions paste anywhere. The multi-line hands line up only in a fixed-width font, such as a Discord code block, a terminal or a plain-text editor such as Notepad, and drift apart in apps that use proportional fonts. Every piece below is an original drawing, and the Copy button keeps the spaces and line breaks.",
+  "date_published": "2026-10-08",
+  "date_modified": "2026-10-08",
+  "copy_pattern": "art",
+  "copy_aria_template": "Copy {label} ASCII art",
+  "sections": [
+    {
+      "id": "one-line-thumbs",
+      "label": "One-Line",
+      "h2": "One-Line Text Thumbs Up",
+      "intro": "Typed thumbs that work in any font. (y) is the code old chat apps such as MSN Messenger turned into a thumbs-up icon.",
+      "art": [
+        {
+          "label": "(y) Shortcut",
+          "art": "(y)"
+        },
+        {
+          "label": "Double Thumbs",
+          "art": "d-_-b"
+        },
+        {
+          "label": "Plus One",
+          "art": "+1"
+        }
+      ]
+    },
+    {
+      "id": "small-thumbs",
+      "label": "Small",
+      "h2": "Small Thumbs Up ASCII Art",
+      "intro": "Compact hands, six or seven lines tall, for a reply that needs more than one character.",
+      "art": [
+        {
+          "label": "Small Thumbs Up",
+          "art": "   __\n  |  |\n _|  |__\n(___    |\n(___    |\n (______|"
+        },
+        {
+          "label": "Two Thumbs Up",
+          "art": "   __        __\n  |  |      |  |\n _|  |__  __|  |_\n(___    ||    ___)\n(___    ||    ___)\n (______||______)"
+        },
+        {
+          "label": "Hash Thumbs Up",
+          "art": "     ###\n     ###\n     ###\n ##########\n###########\n###########\n #########"
+        }
+      ]
+    },
+    {
+      "id": "big-thumbs",
+      "label": "Big",
+      "h2": "Big Thumbs Up and Thumbs Down ASCII Art",
+      "intro": "Larger hands with a rounded thumb, a version with a shirt cuff, a thumbs down and one with room for a word beside it.",
+      "art": [
+        {
+          "label": "Big Thumbs Up",
+          "art": "       __\n      /  \\\n      |  |\n  ____|  |_____\n (____         |\n (____         |\n (____         |\n  (____________|"
+        },
+        {
+          "label": "Thumbs Up With Cuff",
+          "art": "       __\n      /  \\\n      |  |\n  ____|  |_____ ____\n (____         |    |\n (____         |    |\n (____         |    |\n  (____________|____|"
+        },
+        {
+          "label": "Big Thumbs Down",
+          "art": "  ____________\n (____        |\n (____        |\n (____        |\n  (____   ____|\n      |  |\n      \\__/"
+        },
+        {
+          "label": "Thumbs Up With Caption",
+          "art": "       __\n      /  \\\n      |  |\n  ____|  |_____\n (____         |\n (____         |   NICE!\n (____         |\n  (____________|"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Thumbs Up ASCII Art, Answered",
+  "faq": [
+    {
+      "q": "What does d-_-b mean?",
+      "a": "The d and b are two thumbs pointing up on either side of a face, so it reads as a double thumbs up. Some people read the same string as a face wearing headphones."
+    },
+    {
+      "q": "Why does the thumbs up fall apart when I paste it?",
+      "a": "The app is using a proportional font, where characters have different widths, so the columns no longer line up. In Discord, put three backticks on the line above and below the art to show it in a code block."
+    },
+    {
+      "q": "Can I change the word in the caption piece?",
+      "a": "Yes. Replace NICE! with your own word. It sits at the end of its line, so nothing else moves."
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/thumbs-up-kaomoji/",
+      "title": "Thumbs Up Kaomoji",
+      "desc": "Approving text faces like (b^_^)b and d(°∀°)b."
+    },
+    {
+      "href": "/library/thumbs-up-emoji/",
+      "title": "Thumbs Up Emoji",
+      "desc": "👍 in every skin tone plus approval combos."
+    },
+    {
+      "href": "/library/heart-ascii-art/",
+      "title": "Heart ASCII Art",
+      "desc": "Text hearts from a one-line <3 to big solid hearts."
+    },
+    {
+      "href": "/ascii-art-generator/",
+      "title": "ASCII Art Generator",
+      "desc": "Type a word and turn it into big block-letter ASCII art."
+    }
+  ]
+}

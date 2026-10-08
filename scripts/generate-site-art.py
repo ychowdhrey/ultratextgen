@@ -24,6 +24,7 @@ emoji, runic and hieroglyph code points do NOT rasterize in the bundled fonts,
 so those themes use hand-drawn vector motifs instead of baked glyphs.
 """
 import glob
+import html as _htmlmod
 import json
 import io
 import os
@@ -3219,6 +3220,10 @@ PAGES.update({
 "library-heart-ascii-art": ("Heart ASCII Art", "Text hearts from tiny <3 to big solid hearts", m_heart, K_LIB),
 "library-skull-ascii-art": ("Skull ASCII Art", "Skulls and crossbones drawn in plain text", m_skull, K_LIB),
 "library-star-ascii-art": ("Star ASCII Art", "Sparkles, shooting stars & big text stars", m_star, K_LIB),
+"library-birthday-ascii-art": ("Happy Birthday ASCII Art", "Cakes, banners & balloons drawn in plain text", m_banner, K_LIB),
+"library-thumbs-up-ascii-art": ("Thumbs Up ASCII Art", "Big & small text thumbs, plus d-_-b and (y)", m_thumb, K_LIB),
+"library-tumblr-symbols": ("Tumblr Symbols", "Moons, crosses & sparkle lines for your blog",
+      glyphs("☾", "✞", "ღ", "✧", "☮"), K_LIB),
 "usecase-free-fire-guild-name-generator": ("Free Fire Guild Name Generator", "Squad tags in ꧁꧂ brackets, copy & paste", m_gamepad, K_USE),
 "usecase-mobile-legends-squad-name-generator": ("Mobile Legends Squad Name Generator", "Squad tags & aesthetic fonts, copy & paste", m_trophy, K_USE),
 "usecase-free-fire-name-generator": ("Free Fire Name Generator", "Stylish FF names with symbols & katakana", m_gamepad, K_USE),
@@ -3769,7 +3774,10 @@ def page_tiles(slug, limit=40):
         except OSError:
             html = ""
         for g in _TILE_RE.findall(html):
-            g = g.strip()
+            # The attribute value is HTML-escaped (><> is stored as
+            # &gt;&lt;&gt;). spanned() escapes again when drawing, so an
+            # unescaped read here drew the entity text itself on the card.
+            g = _htmlmod.unescape(g).strip()
             if g and g not in out:
                 out.append(g)
             if len(out) >= limit:
@@ -3949,6 +3957,18 @@ def motif_from_page(slug, current_motif):
         return P(m_specimen, lines=_spread(runs, 3))
     return P(scatter_glyphs, glyphs=_spread(tiles, 5))
 
+
+# Kaomoji pages drawn from chosen samples rather than the page's first tiles:
+# m_specimen is defined above, after the main PAGES literal, so these entries
+# cannot live in it. The samples are picked for full font coverage on the art
+# machine (a dropped glyph leaves a gap mid-face), and the angel card avoids
+# the Odia wing letters, which cairo places out of order.
+PAGES.update({
+    "library-fish-kaomoji": ("Fish Kaomoji", "><(((º> and Japanese fish in text",
+        P(m_specimen, lines=["><(((º>", ">゜))))彡", "<º))))><"]), K_LIB),
+    "library-angel-kaomoji": ("Angel Kaomoji", "Winged text faces to copy and paste",
+        P(m_specimen, lines=["˙˚ʚ(´◡`)ɞ˚˙", "˚ʚ♡ɞ˚", "ʚ₍ᐢ. .ᐢ₎ɞ"]), K_LIB),
+})
 
 
 def _warn_font_build():
