@@ -126,6 +126,26 @@
       ]
     },
     {
+      "id": "highs-and-lows",
+      "label": "Chrześcijańskie",
+      "h2": "Symbol „Bóg jest większy niż wzloty i upadki”",
+      "intro": "Współczesne hasło wiary z języka angielskiego, popularne w tatuażach, na koszulkach i w bio: G to God (Bóg), > oznacza „większy niż”, a potem szczyt (^ lub ∧) za wzloty i dolina (v lub ∨) za upadki. Wszystkie trzy formy znaczą to samo; G>^v to zwykły tekst z klawiatury, więc wyświetla się na każdym urządzeniu.",
+      "symbols": [
+        {
+          "char": "G>^v",
+          "label": "Wersja z klawiatury"
+        },
+        {
+          "char": "G>ΛV",
+          "label": "Z grecką lambdą"
+        },
+        {
+          "char": "G>∧∨",
+          "label": "Ze znakami logicznymi"
+        }
+      ]
+    },
+    {
       "id": "islamic",
       "label": "Islamskie",
       "h2": "Symbole Islamskie",

@@ -184,7 +184,7 @@
       "id": "aspects",
       "label": "Ký Hiệu Góc Chiếu Chiêm Tinh",
       "h2": "Ký Hiệu Góc Chiếu Chiêm Tinh",
-      "intro": "Các góc chiếu trong lá số.",
+      "intro": "Các góc chiếu trong lá số. Unicode không có ký tự riêng cho góc Bán Vuông Góc (45°), nên lá số dùng dấu góc ∠.",
       "symbols": [
         {
           "char": "☊",
@@ -213,6 +213,22 @@
         {
           "char": "△",
           "label": "Tam Hợp"
+        },
+        {
+          "char": "⚺",
+          "label": "Bán Lục Hợp (30°)"
+        },
+        {
+          "char": "∠",
+          "label": "Bán Vuông Góc (45°)"
+        },
+        {
+          "char": "⚼",
+          "label": "Vuông Góc Rưỡi (135°)"
+        },
+        {
+          "char": "⚻",
+          "label": "Bất Hợp (150°)"
         }
       ]
     },
