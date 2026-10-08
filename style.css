@@ -10397,7 +10397,6 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   margin: 1.6rem 0 0.6rem;
 }
 .kao-moods,
-.kao-presets,
 .kao-part-options {
   display: flex;
   flex-wrap: wrap;
@@ -10420,22 +10419,30 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   color: white;
   border-color: transparent;
 }
-.kao-presets { gap: 0.55rem; }
+/* 16 presets: 4 columns x 4 rows on a phone, 8 x 2 from tablet width up. */
+.kao-presets {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+@media (min-width: 720px) {
+  .kao-presets { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+}
 .kao-preset {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.2rem;
-  min-width: 84px;
+  min-width: 0;
   border: 1px solid var(--border-light);
   background: var(--bg-white);
   border-radius: 12px;
-  padding: 0.6rem 0.7rem;
+  padding: 0.6rem 0.35rem;
   cursor: pointer;
   transition: border-color 0.15s, transform 0.1s;
 }
 .kao-preset:hover { border-color: var(--accent-purple); transform: translateY(-1px); }
-.kao-preset-face { font-size: 1.15rem; color: var(--text-primary); }
+.kao-preset-face { font-size: 1.05rem; color: var(--text-primary); white-space: nowrap; }
 .kao-preset-label { font-size: 0.72rem; color: var(--text-muted); font-weight: 600; }
 
 .kao-part-row {
