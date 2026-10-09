@@ -246,6 +246,163 @@ async function main() {
     await ctx.close();
   }
 
+  // 6b. A copy that nothing completed says so and records nothing. Until
+  // 2026-10-09 a refused clipboard write fell through to execCommand, and the
+  // tile showed "Copied" and sent copy_text whether or not that worked.
+  console.log('\n/library/text-faces-kaomoji/ (copy outcome: failure is not "Copied")');
+  {
+    const KAO_URL = '/library/text-faces-kaomoji/';
+    // Init scripts are serialised into the page, so each one stands alone.
+    const bothFail = () => {
+      Object.defineProperty(navigator.clipboard, 'writeText', { configurable: true, value: () => Promise.reject(new Error('denied')) });
+      document.execCommand = () => false;
+    };
+    const onlyFallbackWorks = () => {
+      Object.defineProperty(navigator.clipboard, 'writeText', { configurable: true, value: () => Promise.reject(new Error('denied')) });
+      document.execCommand = () => true;
+    };
+
+    // Normal path still copies the exact string and sends one event.
+    {
+      const { ctx, page, errors } = await open(KAO_URL, 'desktop');
+      const tile = page.locator('.symbol-tile[data-symbol]').first();
+      const face = await tile.getAttribute('data-symbol');
+      await tile.scrollIntoViewIfNeeded();
+      await sentinel(page);
+      const n0 = (await dl(page)).length;
+      await tile.click();
+      await page.waitForTimeout(300);
+      check('kaomoji tile: the normal path copies the exact string', (await clip(page)) === face, face);
+      const ev = (await dl(page)).slice(n0).filter((e) => e.event === 'copy_text');
+      check('kaomoji tile: the normal path sends one copy_text', ev.length === 1 && ev[0].copy_item === face, JSON.stringify(ev));
+      check('no page errors', !errors.length, errors.join(' | '));
+      await ctx.close();
+    }
+
+    // Clipboard refused AND execCommand false: failure toast, no event, no copied state.
+    {
+      const { ctx, page, errors } = await open(KAO_URL, 'desktop', bothFail);
+      const tile = page.locator('.symbol-tile[data-symbol]').first();
+      await tile.scrollIntoViewIfNeeded();
+      const n0 = (await dl(page)).length;
+      await tile.click();
+      await page.waitForTimeout(300);
+      const toast = await page.evaluate(() => { const t = document.getElementById('symbolToast'); return { text: t.textContent, shown: t.classList.contains('is-visible') }; });
+      check('both copy paths failing shows the failure toast', toast.shown && /Failed/.test(toast.text) && !/Copied/i.test(toast.text), JSON.stringify(toast));
+      const ev = (await dl(page)).slice(n0).filter((e) => e.event === 'copy_text');
+      check('both copy paths failing sends no copy_text', ev.length === 0, JSON.stringify(ev));
+      const copied = await tile.evaluate((el) => el.classList.contains('is-copied'));
+      check('both copy paths failing leaves the tile without its copied state', !copied);
+      check('no page errors', !errors.length, errors.join(' | '));
+      await ctx.close();
+    }
+
+    // Clipboard refused but the execCommand fallback works: that is a success.
+    {
+      const { ctx, page } = await open(KAO_URL, 'desktop', onlyFallbackWorks);
+      const tile = page.locator('.symbol-tile[data-symbol]').first();
+      await tile.scrollIntoViewIfNeeded();
+      const n0 = (await dl(page)).length;
+      await tile.click();
+      await page.waitForTimeout(300);
+      const ev = (await dl(page)).slice(n0).filter((e) => e.event === 'copy_text');
+      const copied = await tile.evaluate((el) => el.classList.contains('is-copied'));
+      check('a working fallback still counts as a copy', ev.length === 1 && copied, `${ev.length} events, copied=${copied}`);
+      await ctx.close();
+    }
+  }
+
+  // 6c. The kaomoji generator: its own copy methods, its funnel rows, and no
+  // typed text anywhere in the data layer.
+  console.log('\n/kaomoji-generator/ (copy methods + generator steps)');
+  {
+    const { ctx, page, errors } = await open('/kaomoji-generator/', 'desktop');
+    const n0 = (await dl(page)).length;
+    await page.locator('.kao-mood[data-mood="happy"]').click();
+    await page.locator('.kao-preset').first().click();
+    await page.locator('.kao-part-opt[data-cat="eyes"]').nth(1).click();
+    await page.locator('#kaomojiSurpriseBtn').click();
+    await page.locator('#kaomojiFaceInput').fill('my private text 123');
+    await page.waitForTimeout(1100);
+    await page.locator('#kaomojiCopyBtn').click();
+    await page.waitForTimeout(200);
+    await page.locator('#kaomojiCopyLinkBtn').click();
+    await page.waitForTimeout(200);
+    await page.locator('#kaomojiClearBtn').click();
+    await page.waitForTimeout(200);
+    const rows = (await dl(page)).slice(n0);
+    const steps = rows.filter((e) => e.event === 'kaomoji_generator_step').map((e) => `${e.kaomoji_step}:${e.kaomoji_value === undefined ? '' : e.kaomoji_value}`);
+    check('generator steps are recorded in order, ids only', steps.join(' ') === 'mood:happy preset:happy part:eyes surprise: paste_edit: reset:', steps.join(' '));
+    const paste = rows.filter((e) => e.kaomoji_step === 'paste_edit');
+    check('typing one phrase sends one paste_edit, not one per keystroke', paste.length === 1, `${paste.length}`);
+    const copies = rows.filter((e) => e.event === 'copy_text');
+    check('generator copy and link copy have their own methods, without copy_item',
+      copies.length === 2 && copies[0].copy_method === 'kaomoji_generator' && copies[1].copy_method === 'kaomoji_link' &&
+      copies.every((e) => e.copy_item === undefined && !!e.copy_item_group), JSON.stringify(copies));
+    check('typed text reaches no data layer row', !JSON.stringify(rows).includes('private') && !JSON.stringify(rows).includes('?q='), JSON.stringify(rows).slice(0, 300));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+
+    const l = await open('/kaomoji-generator/?q=' + encodeURIComponent('(^_^) my private text'), 'desktop');
+    const loaded = (await dl(l.page)).filter((e) => e.event === 'kaomoji_generator_step');
+    check('a ?q= load sends one url_load step and not the face', loaded.length === 1 && loaded[0].kaomoji_step === 'url_load' && loaded[0].kaomoji_value === undefined && !JSON.stringify(loaded).includes('private'), JSON.stringify(loaded));
+    await l.ctx.close();
+  }
+
+  // 6d. The kaomoji hub's "browse by mood" links: one delegated listener.
+  console.log('\n/library/text-faces-kaomoji/ (mood index clicks)');
+  {
+    const { ctx, page, errors } = await open('/library/text-faces-kaomoji/', 'desktop');
+    await page.evaluate(() => document.addEventListener('click', (e) => { if (e.target.closest('.kao-mood-links a')) e.preventDefault(); }));
+    const link = page.locator('.kao-mood-links').nth(1).locator('a').first();
+    const href = await link.getAttribute('href');
+    const n0 = (await dl(page)).length;
+    await link.scrollIntoViewIfNeeded();
+    await link.click();
+    const ev = (await dl(page)).slice(n0).filter((e) => e.event === 'kaomoji_mood_index_click');
+    check('a mood-index link click sends its path and group', ev.length === 1 && ev[0].destination_path === href && ev[0].mood_group === 2, JSON.stringify(ev));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 6e. The /library/ directory: a settled filter and a settled search each
+  // send one row; a run of keystrokes does not send one per key.
+  console.log('\n/library/ (library_filter, library_search)');
+  {
+    const { ctx, page, errors } = await open('/library/', 'desktop');
+    const n0 = (await dl(page)).length;
+    await page.locator('#typeRow .lib-pill[data-value="Kaomoji"]').click();
+    await page.waitForTimeout(1100);
+    await page.locator('#libSearch').pressSequentially('angry', { delay: 60 });
+    await page.waitForTimeout(1100);
+    const rows = (await dl(page)).slice(n0);
+    const f = rows.filter((e) => e.event === 'library_filter');
+    const q = rows.filter((e) => e.event === 'library_search');
+    check('a filter chip sends one library_filter with its label and count',
+      f.length === 1 && f[0].filter_type === 'type' && f[0].filter_value === 'Kaomoji' && f[0].result_count > 0, JSON.stringify(f));
+    check('typing a word sends one library_search with the settled term and count',
+      q.length === 1 && q[0].search_term === 'angry' && q[0].result_count > 0 && q[0].result_count < f[0].result_count, JSON.stringify(q));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 6f. The header search: a zero-result query is recorded once, settled; a
+  // query with results is not.
+  console.log('\n/ (header search: site_search_no_results)');
+  {
+    const { ctx, page, errors } = await open('/', 'desktop');
+    const n0 = (await dl(page)).length;
+    await page.locator('#searchInput').pressSequentially('qzxjvk', { delay: 60 });
+    await page.waitForTimeout(1300);
+    await page.locator('#searchInput').fill('heart');
+    await page.waitForTimeout(1300);
+    const ev = (await dl(page)).slice(n0).filter((e) => e.event === 'site_search_no_results');
+    check('one zero-result query sends one site_search_no_results, with locale and surface',
+      ev.length === 1 && ev[0].search_term === 'qzxjvk' && ev[0].locale === 'en' && ev[0].search_surface === 'header', JSON.stringify(ev));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // 7. No-viewport regression: a phone gets the phone layout.
   console.log('\n/zh-tw/keai-ziti/ (viewport)');
   {
