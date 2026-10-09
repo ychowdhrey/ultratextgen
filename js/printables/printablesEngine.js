@@ -2562,7 +2562,7 @@
       return p;
     }
     if (RENDER === "dots") return singleDotSVG(ch);
-    return outlineSVG(ch);
+    return outlineSVG(ch, { overlay: strokeOverlayOn() });
   }
 
   /* ---------------------------------------------------------------
@@ -2934,6 +2934,15 @@
       try { localStorage.setItem(STROKE_TOGGLE_LS_KEY, el.strokeToggle.checked ? "1" : "0"); } catch (e) { /* noop */ }
       if (el.nameInput || el.namePreview) renderNamePreview();
       if (el.genInput || el.genPreview) renderGenPreview();
+      /* The single-letter paper preview and the letter-set preview draw the
+         same overlay the sheet prints, so they repaint with the switch: a
+         toggle whose consequence only appears in the PDF is the control with
+         no visible effect this panel already learned not to ship. */
+      if (paperPreviewNode && activeChar != null) {
+        const inner = paperPreviewNode.querySelector(".pt-paper-inner");
+        if (inner && inner.firstChild) inner.replaceChild(figureNode(activeChar), inner.firstChild);
+      }
+      if (typeof updateBatch === "function") updateBatch();
     });
   }
 
@@ -4715,7 +4724,7 @@
       pdfMode = true;
       const holder = document.createElement("div");
       holder.className = "bubble-print-single";
-      holder.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
+      holder.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { overlay: strokeOverlayOn() })));
       // First in the holder: the figure is absolutely placed to fill the
       // page, so the line sits under the title whichever way it is added.
       if (moreFooterOn("letters", false)) holder.insertBefore(nameDateRow(), holder.firstChild);
@@ -5449,7 +5458,7 @@
     chars.slice(0, g.per).forEach((ch) => {
       const cell = document.createElement("span");
       cell.className = "pt-set-preview-cell";
-      cell.appendChild(RENDER === "glyph" ? smallGlyphCell(ch) : (RENDER === "dots" ? singleDotSVG(ch, { small: true }) : outlineSVG(ch, { small: true })));
+      cell.appendChild(RENDER === "glyph" ? smallGlyphCell(ch) : (RENDER === "dots" ? singleDotSVG(ch, { small: true }) : outlineSVG(ch, { small: true, overlay: strokeOverlayOn() })));
       grid.appendChild(cell);
     });
     host.appendChild(grid);
@@ -5514,7 +5523,7 @@
     const g = setGrid(sizeKey);
     if (RENDER === "glyph") return bigGlyphForPrint(ch);
     if (RENDER === "dots") return singleDotSVG(ch, { small: g.per > 1 && cell.h <= 2.2 });
-    return outlineSVG(ch, g.per > 1 ? { small: true, strokeScale: tileStrokeScale(cell.h) } : undefined);
+    return outlineSVG(ch, g.per > 1 ? { small: true, strokeScale: tileStrokeScale(cell.h), overlay: strokeOverlayOn() } : { overlay: strokeOverlayOn() });
   }
 
   /* One print path for every size. Full page is the book page exactly as it
@@ -5747,7 +5756,7 @@
         // single-character print has one — see .pt-fill-page in style.css.
         const figure = document.createElement("div");
         figure.className = "bubble-figure";
-        figure.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
+        figure.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { overlay: strokeOverlayOn() })));
         card.appendChild(figure);
         if (per > 1) page.appendChild(card);
       });
@@ -5766,7 +5775,7 @@
   function printAlphabetSheet() {
     const sheet = document.createElement("div");
     sheet.className = "bubble-print-sheet";
-    CHARS.forEach((ch) => sheet.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { small: true }))));
+    CHARS.forEach((ch) => sheet.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { small: true, overlay: strokeOverlayOn() }))));
     // Above the letters, not below: this sheet flows across pages with no
     // page units, so a line at the end would land on the last page only.
     let body = sheet;
@@ -5882,7 +5891,7 @@
         const cell = document.createElement("div");
         cell.className = "pt-tile-cell";
         cell.style.height = heightIn.toFixed(2) + "in";
-        cell.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch, { small: small }) : outlineSVG(ch, { small: small, strokeScale: tileStrokeScale(heightIn) })));
+        cell.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch, { small: small }) : outlineSVG(ch, { small: small, strokeScale: tileStrokeScale(heightIn), overlay: strokeOverlayOn() })));
         grid.appendChild(cell);
       });
       page.appendChild(grid);
