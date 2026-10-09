@@ -639,46 +639,60 @@ module.exports = [
   slug: 'how-to-type-kaomoji',
   crumb: 'How to Type Kaomoji',
   pageTitle: 'How to Type Kaomoji',
-  metaDesc: 'The fastest way to type kaomoji is to copy them. To make them natively: Windows uses Win + . , iPhone the Japanese Kana keyboard, Android Gboard.',
-  twitterDesc: 'How to type kaomoji on any device: copy from a library, or use Win + . on Windows, the Kana keyboard on iPhone, and Gboard on Android. Full step-by-step here.',
+  metaDesc: 'The fastest way to type kaomoji is to copy them. Built-in routes: Win + . on Windows, Text Replacement on iPhone and Mac, pinned clips on Android.',
+  twitterDesc: 'How to type kaomoji on any device: copy from a library, or use the Windows emoji panel, Text Replacement on iPhone and Mac, and pinned clips on Android.',
   h1: 'How to Type Kaomoji',
-  tagline: 'The quickest way is to copy them. But every major device can also insert kaomoji natively — here is how on each one.',
-  shortAnswer: 'The <strong>fastest way to type a kaomoji is to copy it</strong> from a library and paste it wherever you need it. To insert them <strong>natively</strong>: on <strong>Windows</strong> press <strong>Win + .</strong> (or Win + ;) and open the kaomoji tab; on <strong>iPhone/iPad</strong> add the <strong>Japanese Kana keyboard</strong> and tap the <strong>^_^</strong> key; on <strong>Android</strong> open <strong>Gboard’s</strong> emoji panel and pick the <strong>kaomoji</strong> tab; on <strong>Mac</strong>, use <strong>Text Replacement</strong> or copy-paste, since there is no built-in kaomoji panel.',
-  oneLiner: '<strong>Windows:</strong> Win + . &nbsp;·&nbsp; <strong>iPhone:</strong> Kana keyboard → ^_^ &nbsp;·&nbsp; <strong>Android:</strong> Gboard → kaomoji tab &nbsp;·&nbsp; <strong>Fastest:</strong> copy &amp; paste.',
+  tagline: 'The quickest way is to copy them. Each device also has a route of its own: a built-in panel where there is one, and a saved shortcut or pinned clip where there is not.',
+  shortAnswer: 'The <strong>fastest way to type a kaomoji is to copy it</strong> from a library and paste it wherever you need it. To type one without leaving the keyboard, the routes the makers document are a saved shortcut or a pinned clip: <strong>Text Replacement</strong> on iPhone, iPad and Mac, <strong>Text shortcuts</strong> in Samsung Keyboard, pinned clips in Gboard and in the Windows clipboard (<strong>Win + V</strong>). Windows also has an emoji panel (<strong>Win + .</strong>) that Microsoft says includes Kaomoji, and Chromebooks have an Emoticons picker. Keyboard layouts change between versions, so this page names the routes and where the maker documents them, not the position of a tab.',
+  oneLiner: '<strong>Windows:</strong> Win + . or Win + V &nbsp;·&nbsp; <strong>iPhone and Mac:</strong> Text Replacement &nbsp;·&nbsp; <strong>Android:</strong> pin a clip or add a text shortcut &nbsp;·&nbsp; <strong>Fastest:</strong> copy &amp; paste.',
   sections: [
     {
       label: 'The fast way',
       h2: 'The fastest way: copy and paste',
       bodyHtml: `<div class="editorial-block">
-    <p>No setup, works on every device: open a kaomoji collection, tap a face to copy it, and paste it into your bio, caption, or chat. Start with the <a href="/library/text-faces-kaomoji/">kaomoji library</a> or build a custom one in the <a href="/kaomoji-generator/">kaomoji generator</a>.</p>
+    <p>Copying needs no setup: open a kaomoji collection, tap a face to copy it, and paste it into your bio, caption, or chat. Start with the <a href="/library/text-faces-kaomoji/">kaomoji library</a> or build a custom one in the <a href="/kaomoji-generator/">kaomoji generator</a>. A face made only of common characters looks the same in most apps; a collection that uses letters from a rarer script says so on its page, because a device without a font for that script shows a box in its place.</p>
   </div>`
     },
     {
       label: 'Windows',
       h2: 'How to type kaomoji on Windows',
       bodyHtml: `<div class="editorial-block">
-    <p>Press <strong>Windows key + . (period)</strong> or <strong>Windows key + ; (semicolon)</strong> to open the emoji panel, then click the <strong>kaomoji</strong> tab (the <strong>( •_•)</strong> icon). Pick a face to insert it. This works in Windows 10 and 11 in almost any text field.</p>
+    <p>Press <strong>Windows key + . (period)</strong> or <strong>Windows key + ; (semicolon)</strong> to open the emoji panel. Microsoft’s tips page says the panel includes Kaomoji alongside GIFs, and it has a Symbols section too, so look through the panel’s sections for it; the icon and the order can differ between Windows versions. To keep a few favourite faces one keystroke away, copy a face, press <strong>Windows key + V</strong> to open the clipboard history and pin it. Pinned items survive a restart, while the history holds 25 copied entries.</p>
+  </div>`
+    },
+    {
+      label: 'Chromebook',
+      h2: 'How to type kaomoji on a Chromebook',
+      bodyHtml: `<div class="editorial-block">
+    <p>Press <strong>Search + Shift + Space</strong>, or right-click a text field and choose <strong>Emoji</strong>, then open the <strong>Emoticons</strong> tab. Google lists fifteen categories there, including Shrugging and Table Flipping, and a search bar that finds emoticons by name.</p>
   </div>`
     },
     {
       label: 'iPhone & iPad',
       h2: 'How to type kaomoji on iPhone and iPad',
       bodyHtml: `<div class="editorial-block">
-    <p>iOS hides a full kaomoji set inside the Japanese keyboard. Go to <strong>Settings › General › Keyboard › Keyboards › Add New Keyboard › Japanese › Kana</strong>. Then, when typing, switch to the Japanese keyboard and tap the <strong>^_^</strong> key to browse and insert kaomoji. Copy-paste from a library also works everywhere.</p>
+    <p>Apple’s guides do not document a kaomoji key. Some people add the Japanese Kana keyboard (<strong>Settings › General › Keyboard › Keyboards › Add New Keyboard › Japanese › Kana</strong>) and report a <strong>^_^</strong> key that opens a list of faces; that route comes from users rather than Apple, so it can differ between iOS versions. The route Apple does document is <strong>Text Replacement</strong>: open <strong>Settings › General › Keyboard › Text Replacement</strong>, tap <strong>+</strong>, paste the face as the Phrase and type a short Shortcut such as <em>shrug</em>. Typing the shortcut then offers the face. With iCloud Drive on, the same replacements reach your Mac.</p>
   </div>`
     },
     {
       label: 'Android',
       h2: 'How to type kaomoji on Android (Gboard &amp; Samsung)',
       bodyHtml: `<div class="editorial-block">
-    <p>On <strong>Gboard</strong>, tap the <strong>emoji</strong> button, then choose the <strong>kaomoji</strong> tab labelled <strong>( ˘ε˘ )</strong> or <strong>^_^</strong> along the bottom. On <strong>Samsung Keyboard</strong>, open the emoji panel and look for the kaomoji / text-emoticon section, or install Gboard for the built-in tab. Copy-paste works on any Android keyboard.</p>
+    <p>Google’s Gboard help documents the emoji panel for emoji and GIFs and does not list a kaomoji tab. Some keyboard versions show text faces in the emoji panel, and users report finding them there, but the layout changes between versions. The route Google documents is the clipboard: copy a face, open the clipboard in Gboard, touch and hold the face and tap <strong>Pin</strong>; pinned text stays when the clipboard clears. In <strong>Samsung Keyboard</strong>, open the keyboard settings, then <strong>Smart typing › Text shortcuts</strong>, and add a short shortcut for a face. Microsoft SwiftKey can also pin a clip and turn it into a shortcut. Copy-paste works on any Android keyboard.</p>
   </div>`
     },
     {
       label: 'Mac',
       h2: 'How to type kaomoji on Mac',
       bodyHtml: `<div class="editorial-block">
-    <p>macOS has no dedicated kaomoji panel (the Character Viewer, <strong>Ctrl + Cmd + Space</strong>, covers emoji and symbols). The easiest options are to <strong>copy-paste</strong> from a library, or to set up <strong>Text Replacement</strong> under <strong>System Settings › Keyboard › Text Replacements</strong> so a shortcut like <em>shrug</em> expands to ¯\\_(ツ)_/¯.</p>
+    <p>macOS has no dedicated kaomoji panel (the Character Viewer, <strong>Ctrl + Cmd + Space</strong>, covers emoji and symbols). Copy-paste from a library works, and so does <strong>Text Replacement</strong> under <strong>System Settings › Keyboard › Text Replacements</strong>, where a shortcut like <em>shrug</em> can expand to ¯\\_(ツ)_/¯. Apple’s guide says a replacement added on a Mac also works on your other devices, with iCloud Drive and the same Apple Account, and that you can back replacements up by dragging them to the desktop as a property list file and import them by dragging the file back.</p>
+  </div>`
+    },
+    {
+      label: 'Keyboard apps',
+      h2: 'Do you need a kaomoji keyboard app?',
+      bodyHtml: `<div class="editorial-block">
+    <p>Usually not. Windows lists Kaomoji in its emoji panel, Chromebooks have an Emoticons picker, and Text Replacement, Samsung’s Text shortcuts and pinned clips turn any face you like into a shortcut. A third-party keyboard app adds bigger collections, but it asks for broad access first: on iPhone a keyboard app asks you to turn on <strong>Allow Full Access</strong>, and Android warns that a new keyboard may be able to collect all the text you type, including passwords. If you only want a handful of faces, copy-paste or a shortcut gets you there without handing a keyboard that access.</p>
   </div>`
     }
   ],
@@ -690,11 +704,12 @@ module.exports = [
   },
   related: 'Related: <a href="/answers/what-is-kaomoji/">what is a kaomoji</a>, the full <a href="/library/text-faces-kaomoji/">kaomoji library</a>, and the <a href="/kaomoji-generator/">kaomoji generator</a>.',
   faq: [
-    { q: 'How do I type kaomoji on Windows?', a: 'Press Windows key + . (period) to open the emoji panel, then click the kaomoji tab (the smiley-face icon) and choose a face. It works in Windows 10 and 11.' },
-    { q: 'How do I type kaomoji on iPhone?', a: 'Add the Japanese Kana keyboard in Settings > General > Keyboard > Keyboards > Add New Keyboard > Japanese > Kana. Switch to it while typing and tap the ^_^ key to insert kaomoji.' },
-    { q: 'How do I get the kaomoji keyboard on Android?', a: 'Open Gboard, tap the emoji button, then select the kaomoji tab along the bottom. On Samsung Keyboard, look in the emoji panel for the text-emoticon section, or install Gboard.' },
-    { q: 'How do I add kaomoji to a Samsung keyboard?', a: 'Open the emoji panel in Samsung Keyboard and look for the kaomoji or text-emoticon section. If it is missing, installing Gboard adds a dedicated kaomoji tab.' },
-    { q: 'Is there a faster way than typing kaomoji?', a: 'Yes. Copying a ready-made kaomoji from a library and pasting it is the fastest method and works identically on every device with no setup.' }
+    { q: 'How do I type kaomoji on Windows?', a: 'Press Windows key + . (period) to open the emoji panel and look for the Kaomoji section, which Microsoft lists beside GIFs and Symbols. The icon and order can differ between Windows versions. To keep favourites close, copy a face and pin it in the clipboard history with Windows key + V.' },
+    { q: 'How do I type kaomoji on iPhone?', a: 'Apple does not document a kaomoji key. The documented route is Text Replacement: Settings > General > Keyboard > Text Replacement, tap +, paste the face as the Phrase and add a short Shortcut. Some people also add the Japanese Kana keyboard (Settings > General > Keyboard > Keyboards > Add New Keyboard > Japanese > Kana) and report a ^_^ key there, which comes from users rather than Apple.' },
+    { q: 'How do I get the kaomoji keyboard on Android?', a: 'Google’s Gboard help documents emoji and GIFs and does not list a kaomoji tab, though some keyboard versions show text faces in the emoji panel. Where yours does not, copy a face, open the clipboard in Gboard, touch and hold it and tap Pin, so it stays in the Pinned section.' },
+    { q: 'How do I add kaomoji to a Samsung keyboard?', a: 'Samsung documents Text shortcuts in the keyboard settings under Smart typing: add a short shortcut for a face and type it to insert the face. Samsung’s pages do not mention a kaomoji tab, and layouts change between One UI versions.' },
+    { q: 'Is there a faster way than typing kaomoji?', a: 'Yes. Copying a ready-made kaomoji from a library and pasting it needs no setup. For the faces you use most, save them as a Text Replacement on iPhone or Mac, a Samsung text shortcut or a pinned clip.' },
+    { q: 'Do I need an app to get a kaomoji keyboard?', a: 'Usually not. Windows lists Kaomoji in its emoji panel, Chromebooks have an Emoticons picker, and Text Replacement, text shortcuts and pinned clips cover your own favourites. Third-party keyboard apps add more faces, but they ask for broad access to what you type, so copy-paste or a shortcut is the lower-risk option.' }
   ]
 },
 
