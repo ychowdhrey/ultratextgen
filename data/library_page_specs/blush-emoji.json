@@ -1,14 +1,14 @@
 {
   "slug": "blush-emoji",
-  "title": "Blush Emoji & Kaomoji: Copy & Paste ☺️😊😳 Bashful Combos",
-  "meta_description": "Blush emoji ☺️ 😊 😳, shy and flattered reaction sets, plus blushing kaomoji like (灬°ω°灬) for bashful chats and replies. Click any symbol to copy it instantly.",
+  "title": "Blush Emoji: Copy & Paste ☺️😊😳 Shy Faces, Emoticons & Combos",
+  "meta_description": "Blush emoji ☺️ 😊 😳, shy and flattered reaction sets, plus typed blushing emoticons like :$ for bashful chats and replies. Click any symbol to copy it instantly.",
   "canonical": "https://ultratextgen.com/library/blush-emoji/",
-  "breadcrumb": "Blush Emoji & Kaomoji",
-  "hero_h1": "Blush Emoji & Kaomoji",
-  "hero_tagline": "Rosy-cheeked smiles, shy hidden faces, flustered reactions, and blushing kaomoji: every shade of bashful. Click any symbol to copy it instantly.",
-  "intro": "The blush emoji is how you say 'you're making me shy' without a single word: a warm ☺️ smile, the smiling eyes of 😊, or the wide-eyed pink rush of 😳 flushed cheeks. This page gathers the whole bashful range: the shy hide-behind-your-hands reactions like 🙊 and 🫣, the warm and flattered faces for a genuine compliment, and classic blushing kaomoji like (灬°ω°灬) that paste anywhere plain text works. Grab a single face, or copy a ready-made combo set for sweet chats, comments, and replies.",
+  "breadcrumb": "Blush Emoji",
+  "hero_h1": "Blush Emoji",
+  "hero_tagline": "Rosy-cheeked smiles, shy hidden faces, flustered reactions, and typed :$ emoticons: every shade of bashful. Click any symbol to copy it instantly.",
+  "intro": "The blush emoji is how you say 'you're making me shy' without a single word: a warm ☺️ smile, the smiling eyes of 😊, or the wide-eyed pink rush of 😳 flushed cheeks. This page gathers the whole bashful range: the shy hide-behind-your-hands reactions like 🙊 and 🫣, the warm and flattered faces for a genuine compliment, typed :$ emoticons, and a few blushing kaomoji like (灬°ω°灬) that paste anywhere plain text works. Grab a single face, or copy a ready-made combo set for sweet chats, comments, and replies.",
   "date_published": "2026-07-13",
-  "date_modified": "2026-07-13",
+  "date_modified": "2026-10-09",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -53,20 +53,30 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticons",
+      "h2": "Blush Text Emoticons",
+      "intro": "A dollar sign or slashed cheeks stand in for a red face. They date from the MSN and forum days and still read as flustered.",
+      "symbols": [
+        { "char": ":$", "label": "Embarrassed Emoticon" },
+        { "char": ":-$", "label": "Embarrassed With Nose Emoticon" },
+        { "char": ":\">", "label": "Blushing Emoticon" },
+        { "char": "^///^", "label": "Red Cheeks Emoticon" },
+        { "char": ">///<", "label": "Flustered Emoticon" }
+      ]
+    },
+    {
       "id": "blushing-kaomoji",
       "label": "Kaomoji",
       "h2": "Blushing Kaomoji & Text Faces",
-      "intro": "Japanese-style text faces with rosy cheeks and shy hands, ready to paste in plain text.",
+      "intro": "Four rosy-cheeked Japanese text faces, some hiding behind their hands.",
       "symbols": [
         { "char": "(灬°ω°灬)", "label": "Blushing Cheeks Kaomoji" },
         { "char": "(⁄ ⁄•⁄ω⁄•⁄ ⁄)", "label": "Deeply Embarrassed Kaomoji" },
         { "char": "(*ﾉωﾉ)", "label": "Shy Hiding Kaomoji" },
-        { "char": "(〃▽〃)", "label": "Bashful Smile Kaomoji" },
-        { "char": "(//∇//)", "label": "Flustered Blush Kaomoji" },
-        { "char": "(^人^)", "label": "Shy Thank-You Kaomoji" },
-        { "char": "(๑´ㅂ`๑)", "label": "Happy Blush Kaomoji" },
-        { "char": "(*/▽＼*)", "label": "Peeking Shy Kaomoji" }
-      ]
+        { "char": "(〃▽〃)", "label": "Bashful Smile Kaomoji" }
+      ],
+      "more_link": { "href": "/library/blushing-kaomoji/", "text": "See every blushing kaomoji" }
     }
   ],
   "collection_section": {
@@ -120,14 +130,14 @@
   ],
   "related": [
     {
-      "href": "/library/happy-emoji/",
-      "title": "Happy Emoji & Kaomoji",
-      "desc": "Bright grins and joyful faces for every good mood."
-    },
-    {
       "href": "/library/blushing-kaomoji/",
       "title": "Blushing Kaomoji",
       "desc": "The full text-face collection of rosy, shy, and flustered kaomoji."
+    },
+    {
+      "href": "/library/happy-emoji/",
+      "title": "Happy Emoji",
+      "desc": "Bright grins and joyful faces for every good mood."
     },
     {
       "href": "/library/cute-kaomoji/",

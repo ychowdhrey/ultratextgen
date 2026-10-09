@@ -72,6 +72,7 @@ LANE_RULES = [
     ("ascii-art-generator/", "Category pages"),
     ("ascii-converter/", "Category pages"),
     ("letters-to-numbers/", "Category pages"),
+    ("image-to-ascii/", "Category pages"),
     ("kaomoji-dictionary/", "Category pages"),
     ("kaomoji-generator/", "Category pages"),
     ("character-counter/", "Category pages"),

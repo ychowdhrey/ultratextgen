@@ -1,14 +1,14 @@
 {
   "slug": "goz-kirpan-emoji",
-  "title": "Göz Kırpan Emoji 😉 ve Kaomoji: Kopyala Yapıştır Şakacı Kombinler",
-  "meta_description": "Göz kırpan emoji 😉 😜 🤪, şakacı ve takılan kombin setleri, ayrıca flörtöz yanıtlar ve sohbetler için (^_-) gibi kaomoji. Kopyalamak için tıkla.",
+  "title": "Göz Kırpan Emoji 😉 ve Emoticon: Kopyala Yapıştır Şakacı Kombinler",
+  "meta_description": "Göz kırpan emoji 😉 😜 🤪, şakacı ve takılan kombin setleri, ayrıca flörtöz yanıtlar ve sohbetler için ;) gibi emoticonlar. Kopyalamak için tıkla.",
   "canonical": "https://ultratextgen.com/tr/library/goz-kirpan-emoji/",
   "breadcrumb": "Göz Kırpan Emoji",
-  "hero_h1": "Göz Kırpan Emoji ve Kaomoji",
-  "hero_tagline": "😉 göz kırpan yüz, dil çıkaran çılgın sırıtışlar, kurnaz gülümsemeler ve şakacı kaomoji — şakanın her tonu. Kopyalamak için tıkla.",
+  "hero_h1": "Göz Kırpan Emoji",
+  "hero_tagline": "😉 göz kırpan yüz, dil çıkaran çılgın sırıtışlar, kurnaz gülümsemeler ve klavyeden yazılan göz kırpma ifadeleri: şakanın her tonu. Kopyalamak için tıkla.",
   "intro": "Göz kırpan emoji 😉 internetin dirsek dürtmesidir — düz bir cümleyi şakaya çevirir, bir takılmayı yumuşatır ve tek kelime eklemeden flörtöz bir alt anlam katar. Bu sayfa bütün şakacı yelpazeyi topluyor: klasik göz kırpan yüz ve hemen yanındaki öpücük yüzleri, dil çıkaran 😜 🤪 😝 takımı, kurnaz gülümsemeler ve ağzı kapatan kıkırdamalar, ayrıca düz metnin geçtiği her yere yapışan (^_-) ve (^_~) gibi göz kırpan kaomojiler. Tek bir yüz al ya da flörtöz yanıtlar, grup sohbetleri ve yorumlar için hazır bir kombin setini kopyala.",
   "date_published": "2026-08-15",
-  "date_modified": "2026-08-15",
+  "date_modified": "2026-10-09",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -96,10 +96,42 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Metin İfadeleri",
+      "h2": "Göz Kırpan Metin İfadeleri (Emoticon)",
+      "intro": "Noktalı virgülle göz kırpmak neredeyse gülen yüz kadar eskidir ve düz metinde bir şakayı hâlâ yumuşatır. Sonuna bir P eklersen dil de çıkar.",
+      "symbols": [
+        {
+          "char": ";)",
+          "label": "Göz Kırpma"
+        },
+        {
+          "char": ";-)",
+          "label": "Burunlu Göz Kırpma"
+        },
+        {
+          "char": ";D",
+          "label": "Göz Kırpan Sırıtış"
+        },
+        {
+          "char": ";P",
+          "label": "Dil Çıkaran Göz Kırpma"
+        },
+        {
+          "char": ";-P",
+          "label": "Burunlu Haylaz Dil"
+        },
+        {
+          "char": ";]",
+          "label": "Kurnaz Göz Kırpma"
+        }
+      ]
+    },
+    {
       "id": "wink-kaomoji",
       "label": "Kaomoji",
       "h2": "Göz Kırpan Kaomoji ve Yazı Yüzleri",
-      "intro": "Düz metinde göz kırpan, sırıtan ve takılan Japon tarzı yazı yüzleri.",
+      "intro": "Japon tarzı dört göz kırpma, birinin yanında küçük bir parıltı var.",
       "symbols": [
         {
           "char": "(^_-)",
@@ -116,24 +148,9 @@
         {
           "char": "(･ω<)",
           "label": "Afacan Göz Kırpma Kaomoji"
-        },
-        {
-          "char": "(>ω^)",
-          "label": "Kurnaz Göz Kırpma Kaomoji"
-        },
-        {
-          "char": ";)",
-          "label": "Göz Kırpan Suratlık"
-        },
-        {
-          "char": ";-)",
-          "label": "Klasik Göz Kırpan Emotikon"
-        },
-        {
-          "char": "(￣ω￣)",
-          "label": "Şakacı Gülümseme Kaomoji"
         }
-      ]
+      ],
+      "more_link": { "href": "/tr/library/kaomoji/", "text": "Bütün kaomoji koleksiyonunu gör" }
     }
   ],
   "collection_section": {

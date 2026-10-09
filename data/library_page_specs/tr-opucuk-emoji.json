@@ -1,10 +1,10 @@
 {
   "slug": "opucuk-emoji",
-  "title": "Öpücük Emoji 😘 💋 — Öpücük Emojileri ve Kaomoji Kopyala",
-  "meta_description": "Öpücük emoji 😘 😗 💋 👄, çift emojileri ve öpücük kaomoji ( ˘ ³˘)♥ tek sayfada. Tıkla kopyala, sohbete yapıştır.",
+  "title": "Öpücük Emoji 😘 💋 Kopyala: Öpücük Emojileri ve Emoticonlar",
+  "meta_description": "Öpücük emoji 😘 😗 💋 👄, çift emojileri ve :* gibi öpücük emoticonları tek sayfada. Tıkla kopyala, sohbete yapıştır.",
   "breadcrumb": "Öpücük Emoji",
-  "hero_h1": "Öpücük Emoji ve Kaomoji",
-  "hero_tagline": "Havadan öpücükten dudak izine, çift emojilerinden karakterle kurulan öpücük kaomoji'ye kadar hepsi bir arada.",
+  "hero_h1": "Öpücük Emoji",
+  "hero_tagline": "Havadan öpücükten dudak izine, çift emojilerinden klavyeyle yazılan :* öpücüğüne kadar hepsi bir arada.",
   "intro": "Öpücük emojileri arasındaki fark ince ama önemli: 😘 kalp uçuran samimi bir öpücük, 😗 ise kalpsiz ve çok daha nötr. Aşağıda hepsi tonuna göre ayrıldı — kime yazdığına göre seçmek mesajın nasıl okunacağını belirliyor.",
   "copy_pattern": "collection",
   "sections": [
@@ -89,10 +89,38 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Metin İfadeleri",
+      "h2": "Öpücük Metin İfadeleri (Emoticon)",
+      "intro": "Yıldız işareti burada büzülmüş dudakların yerini tutar; bir mesajı öpücükle bitirmenin en eski yazılı yolu budur. İki nokta yerine noktalı virgül koyarsan öpücük göz kırpar.",
+      "symbols": [
+        {
+          "char": ":*",
+          "label": "Öpücük"
+        },
+        {
+          "char": ":-*",
+          "label": "Burunlu Öpücük"
+        },
+        {
+          "char": ";*",
+          "label": "Göz Kırpan Öpücük"
+        },
+        {
+          "char": ";-*",
+          "label": "Burunlu Göz Kırpan Öpücük"
+        },
+        {
+          "char": "=*",
+          "label": "Hafif Öpücük"
+        }
+      ]
+    },
+    {
       "id": "opucuk-kaomoji",
       "label": "Kaomoji",
       "h2": "Öpücük Kaomoji ve Metin Yüzleri",
-      "intro": "Emoji çalışmayan alanlarda da görünen karakter yüzleri.",
+      "intro": "Dudaklarını büzmüş dört Japon tarzı yazı yüzü, birinin yanında kalp de var.",
       "symbols": [
         {
           "char": "( ˘ ³˘)",
@@ -107,26 +135,11 @@
           "label": "Kalpli Öpücük Kaomoji"
         },
         {
-          "char": "(*˘︶˘*).｡.:*",
-          "label": "Tatlı Huzurlu Öpücük Kaomoji"
-        },
-        {
           "char": "(っ˘з˘)っ",
           "label": "Şapır Öpücük Kaomoji"
-        },
-        {
-          "char": "( ᵔ ³ᵔ )",
-          "label": "Somurtan Öpücük Kaomoji"
-        },
-        {
-          "char": "(˘ ³˘)♡",
-          "label": "Sevgi Dolu Öpücük Kaomoji"
-        },
-        {
-          "char": "( ˘ ³˘)ﾉ",
-          "label": "Havadan Öpücük Kaomoji"
         }
-      ]
+      ],
+      "more_link": { "href": "/tr/library/kaomoji/", "text": "Bütün kaomoji koleksiyonunu gör" }
     }
   ],
   "editorial_sections": [
@@ -189,7 +202,7 @@
   ],
   "canonical": "https://ultratextgen.com/tr/library/opucuk-emoji/",
   "date_published": "2026-08-08",
-  "date_modified": "2026-08-08",
+  "date_modified": "2026-10-09",
   "cta": "UltraTextGen ile düz yazını kalın, italik, el yazısı ve 100+ Unicode stiline çevir — ücretsiz, üyeliksiz, tek tıkla kopyala.",
   "lang": "tr",
   "page_type": "library",
