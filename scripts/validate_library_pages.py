@@ -103,6 +103,7 @@ ART_COPY_RE = re.compile(r"<button[^>]*\bclass=[\"'][^\"']*\bart-piece-copy\b[^\
 SYMBOL_TOAST_RE = re.compile(r'id=["\']symbolToast["\']')
 EMPTY_EDITORIAL_RE = re.compile(
     r'<h2[^>]*>([^<]*)</h2>\s*<div class="editorial-block">\s*</div>')
+ESCAPED_MARKUP_RE = re.compile(r'&lt;/?(?:strong|em|code)&gt;|&lt;a href')
 EXPLORER_JS_RE = re.compile(r'src=["\']/symbol-explorer\.js["\']')
 RELATED_RE = re.compile(r'Related Resources|class=["\'][^"\']*compare-card',
                         re.IGNORECASE)
@@ -231,6 +232,16 @@ def validate_page(path):
             Issue("ERROR",
                   f"{len(empty_blocks)} editorial section(s) with an empty "
                   f"block under the heading: {', '.join(empty_blocks[:3])}")
+        )
+
+    # Markup shown to the reader as text. A spec field that carried <strong> or
+    # <a href> went through esc() and 28 live pages printed the tags.
+    escaped = ESCAPED_MARKUP_RE.findall(html)
+    if escaped:
+        issues.append(
+            Issue("ERROR",
+                  f"{len(escaped)} escaped inline tag(s) would print as text "
+                  f"(for example {escaped[0]})")
         )
 
     # symbolToast
