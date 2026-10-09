@@ -252,14 +252,34 @@
     render();
   }
 
-  function setMood(mood) {
+  /* Reflect the active mood in the URL (?mood=<id>) so a mood can be linked
+     to and shared; "all" clears it. */
+  function syncMoodUrl(mood) {
+    if (!window.history || !window.history.replaceState) return;
+    try {
+      var u = new URL(window.location.href);
+      if (mood && mood !== "all") u.searchParams.set("mood", mood); else u.searchParams.delete("mood");
+      window.history.replaceState(null, "", u);
+    } catch (e) { /* no-op */ }
+  }
+
+  function isMood(id) {
+    return id === "all" || DATA.MOODS.some(function (m) { return m.id === id; });
+  }
+
+  function markMood(mood) {
     activeMood = mood;
+    syncMoodUrl(mood);
     var chips = refs.moods.querySelectorAll(".kao-mood");
     for (var i = 0; i < chips.length; i++) {
       var isActive = chips[i].getAttribute("data-mood") === mood;
       chips[i].classList.toggle("is-active", isActive);
       chips[i].setAttribute("aria-pressed", isActive ? "true" : "false");
     }
+  }
+
+  function setMood(mood) {
+    markMood(mood);
     // A mood is a dial: reselect a coherent face in that mood (unless "All").
     if (mood !== "all") randomFace(mood); else render();
   }
@@ -346,10 +366,15 @@
     buildPresets();
     renderRecent();
 
-    // Deep link / "edit in generator": ?q=<face> preloads the face.
+    // Deep links: ?q=<face> preloads the face ("edit in generator");
+    // ?mood=<id> opens the generator on that mood, e.g. from a subject page.
+    var linkedMood = null;
     try {
-      var q = new URL(window.location.href).searchParams.get("q");
+      var params = new URL(window.location.href).searchParams;
+      var q = params.get("q");
       if (q) freeform = q;
+      var m = params.get("mood");
+      if (m && m !== "all" && isMood(m)) linkedMood = m;
     } catch (e) { /* no-op */ }
 
     var copyBtn = $("#kaomojiCopyBtn");
@@ -382,7 +407,13 @@
       });
     }
 
-    render();
+    // A linked mood picks a face in that mood; if ?q= already named a face,
+    // keep it and only switch the mood filter.
+    if (linkedMood && !freeform) setMood(linkedMood);
+    else {
+      if (linkedMood) markMood(linkedMood);
+      render();
+    }
   }
 
   if (document.readyState === "loading") {

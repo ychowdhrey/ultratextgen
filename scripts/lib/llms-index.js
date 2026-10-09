@@ -204,6 +204,7 @@ const ROOT_PAGE_SECTION = new Map(Object.entries({
   'curved-text': 'tools',
   'fancy-letters': 'tools',
   'hiragana-chart': 'tools',
+  'image-to-ascii': 'tools',
   'kaomoji-dictionary': 'tools',
   'kaomoji-generator': 'tools',
   'katakana-chart': 'tools',

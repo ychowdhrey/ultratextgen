@@ -3237,6 +3237,8 @@ PAGES.update({
       P(m_transform, a="A", b="█"), K_USE),
 "ascii-converter": ("ASCII Converter", "Text to hex, binary, decimal & octal, and back",
       P(m_transform, a="A", b="01"), K_USE),
+"image-to-ascii": ("Image to ASCII Art Converter", "Turn a photo into text art you can copy",
+      P(m_transform, a="\u25d0", b="@"), K_USE),
 "curved-text": ("Curved & Arc Text Generator", "Bend text into arcs, waves, spirals & shapes",
       P(m_arc, letters="ARC"), K_USE),
 # 2026-07-22 GSC 404 cleanup: shipped without og:image/twitter:image at all.

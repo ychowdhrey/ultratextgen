@@ -9559,6 +9559,214 @@ body.is-printing #pt-print-root .pt-sp-answer-cols { max-width: 6.4in; }
   margin: 8px 2px 0;
 }
 
+/* ==========================================================================
+   IMAGE TO ASCII  (/image-to-ascii/)
+   Picture -> ASCII text via Canvas (js/ascii/imageToAscii*.js). The preview
+   box is the one deliberate exception to theme tokens: it shows the art as
+   it will read (dark ink on a light page), and Invert switches it to light
+   text on a dark chat background. If the site theme flipped it as well, a
+   dark-mode visitor would see every picture as a negative. The <pre>
+   scrolls inside its own box so a 200-character line never widens the page.
+   ========================================================================== */
+.i2a-tool,
+.i2a-example {
+  --i2a-paper: #ffffff;
+  --i2a-ink: #111111;
+  --i2a-night: #1e1f22;
+  --i2a-night-ink: #f2f3f5;
+}
+.i2a-tool {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+  margin-top: 8px;
+}
+.i2a-drop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 22px 16px;
+  border: 2px dashed var(--border-light);
+  border-radius: var(--radius-lg);
+  background: var(--bg-white);
+  text-align: center;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.i2a-drop.is-dragging {
+  border-color: var(--accent-purple);
+  background: var(--bg-base);
+}
+.i2a-drop-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: var(--accent-purple);
+  color: var(--i2a-paper);
+  font-weight: 600;
+  cursor: pointer;
+}
+.i2a-drop input:focus-visible + .i2a-drop-button {
+  outline: 3px solid var(--text-primary);
+  outline-offset: 2px;
+}
+.i2a-drop-hint,
+.i2a-status {
+  margin: 0;
+  max-width: 560px;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+.i2a-status {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.i2a-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px 20px;
+}
+.i2a-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.i2a-field > label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.i2a-field select {
+  width: 100%;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  padding: 8px 10px;
+}
+.i2a-field input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent-purple);
+}
+.i2a-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.i2a-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.i2a-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+.i2a-reset {
+  padding: 6px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+.i2a-result {
+  min-width: 0;
+}
+.i2a-output-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+  margin-bottom: 6px;
+}
+.i2a-output-title {
+  margin: 0;
+  font-size: 1rem;
+}
+.i2a-stats {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+.i2a-output-wrap {
+  max-height: 70vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: var(--i2a-paper);
+  color: var(--i2a-ink);
+}
+.i2a-output-wrap.is-inverted {
+  background: var(--i2a-night);
+  color: var(--i2a-night-ink);
+}
+.i2a-output-wrap:focus-visible {
+  outline: 3px solid var(--accent-purple);
+  outline-offset: 2px;
+}
+.i2a-output {
+  margin: 0;
+  padding: 12px;
+  min-height: 120px;
+  width: max-content;
+  font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace;
+  font-size: 0.6875rem;
+  line-height: 1.2;
+  white-space: pre;
+  background: transparent;
+  color: inherit;
+}
+.i2a-example .i2a-output {
+  font-size: 0.8125rem;
+  min-height: 0;
+}
+.i2a-discord {
+  margin: 8px 2px 0;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+.i2a-discord.is-over {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.i2a-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+/* Keep these content-sized: the unscoped mobile ".copy-btn { width: 100% }"
+   rule would stack five full-width buttons. */
+.i2a-actions .copy-btn {
+  width: auto;
+  flex: 1 1 auto;
+  justify-content: center;
+}
+.i2a-actions .copy-btn[hidden] {
+  display: none;
+}
+.i2a-fit {
+  border-color: var(--accent-purple);
+  color: var(--text-primary);
+}
+.i2a-paste-note {
+  margin: 10px 2px 0;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
 /* ===========================================================
    Kana charts (/hiragana-chart/, /katakana-chart/)
    Interactive click-to-copy kana grid + print sheet + PNG.
