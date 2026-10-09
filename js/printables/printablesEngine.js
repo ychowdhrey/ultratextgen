@@ -2562,7 +2562,7 @@
       return p;
     }
     if (RENDER === "dots") return singleDotSVG(ch);
-    return outlineSVG(ch);
+    return outlineSVG(ch, strokeOverlayOn() ? { overlay: true } : undefined);
   }
 
   /* ---------------------------------------------------------------
@@ -2582,8 +2582,8 @@
      using Canvas-measured advance widths (the same "measure with a hidden
      canvas" technique already used elsewhere in this file, e.g. wordPNG).
      Off by default; gated entirely on the optional #pt-stroke-toggle mount,
-     so pages that don't add it are completely unaffected. SVG only — PNG
-     downloads intentionally don't include the overlay.
+     so pages that don't add it are completely unaffected. The word and
+     single-letter PNG exports carry the overlay too (strokeOverlayImage).
      --------------------------------------------------------------- */
 
   const STROKE_COLOR = "#2451c9";     // legible on white, distinct from the ink-black glyph
@@ -2934,6 +2934,10 @@
       try { localStorage.setItem(STROKE_TOGGLE_LS_KEY, el.strokeToggle.checked ? "1" : "0"); } catch (e) { /* noop */ }
       if (el.nameInput || el.namePreview) renderNamePreview();
       if (el.genInput || el.genPreview) renderGenPreview();
+      /* The picked-letter panel reads the toggle when it is built, so it has
+         to be built again: the control sits above it and a tick that changes
+         nothing in view is indistinguishable from a control that does nothing. */
+      if (el.panel && el.strip && activeChar != null) selectChar(activeChar, { silent: true });
     });
   }
 
@@ -4114,7 +4118,17 @@
         ctx.fillText(glyph, size / 2, size * 0.54);
       }
       drawCredit(ctx, size, size, RENDER === "glyph");
-      downloadCanvas(canvas, PNG_PREFIX + "-" + charSlug(ch) + ".png", "character");
+      const finish = () => downloadCanvas(canvas, PNG_PREFIX + "-" + charSlug(ch) + ".png", "character");
+      /* The sheet on screen and the PDF carry the stroke overlay when the
+         toggle is on, so the PNG has to as well: an image that drops the
+         start dot is a third answer to "what does this letter look like". */
+      if (RENDER === "outline" && strokeOverlayOn()) {
+        letterOverlayImage(ch, ctx, glyph, size, letterFs)
+          .then((img) => { if (img) ctx.drawImage(img, 0, 0, size, size); finish(); })
+          .catch(finish);
+      } else {
+        finish();
+      }
     });
   }
 
@@ -4123,9 +4137,9 @@
      strokeDirectionData.js has shipped on 13 pages since 2026-09-05 and
      addWordStrokeOverlay() draws it into SVG only, so the numbered start dots
      and arrows were on the screen and on the printed sheet and absent from
-     the PNG -- the one artifact that leaves the site. Every one of those 13
-     pages is a name or word tool, so the WORD export is where this is
-     reachable; the single-character export is not, because no page both
+     the PNG -- the one artifact that leaves the site. Those 13 pages were all
+     name or word tools, so the WORD export came first. The single-character
+     export followed once /printables/letter-tracing/ became a page that both
      renders one character and loads the stroke data.
 
      The overlay is rasterised from the engine's OWN addWordStrokeOverlay()
@@ -4151,6 +4165,45 @@
       const img = new Image();
       img.onload = () => { URL.revokeObjectURL(url); res(img); };
       // A failed overlay must not cost the visitor the sheet itself.
+      img.onerror = () => { URL.revokeObjectURL(url); res(null); };
+      img.src = url;
+    });
+  }
+
+  /* The single-letter PNG's overlay. A word's overlay places each letter by
+     its advance centre because one <text> node put it there; this canvas drew
+     one glyph centred by ADVANCE on a middle baseline, so the ink sits
+     wherever measureText says it does and nowhere else. Read the ink box off
+     the same context the glyph was painted with, fit the skeleton to that,
+     and draw the overlay in the canvas's own pixels. Passing the word path's
+     anchor here is what put the first attempt's arrows at 86% size and a
+     hand's width off the letter. */
+  function letterOverlayImage(ch, ctx, glyph, size, letterFs) {
+    const data = strokeDataFor(ch);
+    const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
+    if (!data || !data.strokes || !data.strokes.length || !GM || !GM.fitSkeleton) return Promise.resolve(null);
+    const k = letterFs / OUTLINE_SVG_FONT;
+    const m = ctx.measureText(glyph);
+    const ink = {
+      x: (size / 2 - m.actualBoundingBoxLeft) / k,
+      y: (size * 0.5 - m.actualBoundingBoxAscent) / k,
+      w: (m.actualBoundingBoxLeft + m.actualBoundingBoxRight) / k,
+      h: (m.actualBoundingBoxAscent + m.actualBoundingBoxDescent) / k
+    };
+    if (!(ink.w > 0) || !(ink.h > 0)) return Promise.resolve(null);
+    const fit = GM.fitSkeleton(data.strokes, ink, { inset: GM.stemWidth(FONT, OUTLINE_SVG_FONT, 700) / 2 });
+    const svg = document.createElementNS(SVGNS, "svg");
+    svg.setAttribute("xmlns", SVGNS);
+    svg.setAttribute("viewBox", "0 0 " + size + " " + size);
+    svg.setAttribute("width", size);
+    svg.setAttribute("height", size);
+    const g = svgMake("g", { transform: "scale(" + k.toFixed(4) + ")" }, svg);
+    addStrokeOverlay(g, ch, fit ? fit.d : null);
+    if (!svg.querySelector("path")) return Promise.resolve(null);
+    const url = URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(svg)], { type: "image/svg+xml;charset=utf-8" }));
+    return new Promise((res) => {
+      const img = new Image();
+      img.onload = () => { URL.revokeObjectURL(url); res(img); };
       img.onerror = () => { URL.revokeObjectURL(url); res(null); };
       img.src = url;
     });
@@ -4715,7 +4768,7 @@
       pdfMode = true;
       const holder = document.createElement("div");
       holder.className = "bubble-print-single";
-      holder.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
+      holder.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, strokeOverlayOn() ? { overlay: true } : undefined)));
       // First in the holder: the figure is absolutely placed to fill the
       // page, so the line sits under the title whichever way it is added.
       if (moreFooterOn("letters", false)) holder.insertBefore(nameDateRow(), holder.firstChild);
