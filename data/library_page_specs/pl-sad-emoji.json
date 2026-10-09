@@ -201,44 +201,64 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emotikony",
+      "h2": "Smutne emotikony tekstowe",
+      "intro": "Pierwotna smutna buźka, wpisana z dwukropkiem. Wygląda tak samo na każdym telefonie i każdej klawiaturze.",
+      "symbols": [
+        {
+          "char": ":(",
+          "label": "Smutna buźka"
+        },
+        {
+          "char": ":-(",
+          "label": "Smutna mina z noskiem"
+        },
+        {
+          "char": "=(",
+          "label": "Lekko smutna mina"
+        },
+        {
+          "char": ":c",
+          "label": "Nadąsana smutna mina"
+        },
+        {
+          "char": ":/",
+          "label": "Niepewna mina"
+        },
+        {
+          "char": "D:",
+          "label": "Przerażona mina"
+        }
+      ]
+    },
+    {
       "id": "kaomoji",
       "label": "Smutne Kaomoji",
       "h2": "Smutne Kaomoji",
-      "intro": "Buźki ze znaków, gotowe do wklejenia.",
+      "intro": "Na początek kilka przygnębionych japońskich buziek tekstowych.",
       "symbols": [
         {
           "char": "(μ_μ)",
           "label": "Kaomoji Spuszczone Oczy"
         },
         {
-          "char": "(._.)",
-          "label": "Kaomoji Pusty Wzrok"
-        },
-        {
           "char": "(´。＿。｀)",
           "label": "Kaomoji Zwieszona Głowa"
-        },
-        {
-          "char": "(◞‸◟)",
-          "label": "Kaomoji Ponura Mina"
         },
         {
           "char": "( ´•︵•` )",
           "label": "Kaomoji Smutny Dzióbek"
         },
         {
-          "char": "（ ｉдｉ ）",
-          "label": "Kaomoji Ciche Łzy"
-        },
-        {
           "char": "(〒﹏〒)",
           "label": "Kaomoji Ciężkie Serce"
-        },
-        {
-          "char": "( ︶︿︶)",
-          "label": "Kaomoji Westchnienie Rezygnacji"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/pl/library/kaomoji/",
+        "text": "Zobacz wszystkie kaomoji"
+      }
     }
   ],
   "faq_h2": "Najczęstsze Pytania o Smutne Emoji",
@@ -333,7 +353,7 @@
   ],
   "canonical": "https://ultratextgen.com/pl/library/smutne-emoji/",
   "date_published": "2026-08-10",
-  "date_modified": "2026-08-10",
+  "date_modified": "2026-10-09",
   "lang": "pl",
   "page_type": "library",
   "hreflang": [

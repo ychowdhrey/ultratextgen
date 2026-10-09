@@ -201,44 +201,64 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticons de texto",
+      "h2": "Emoticons Tristes de Texto",
+      "intro": "A carinha triste original, digitada com dois pontos. Aparece igual em qualquer celular e teclado.",
+      "symbols": [
+        {
+          "char": ":(",
+          "label": "Carinha triste"
+        },
+        {
+          "char": ":-(",
+          "label": "Cara fechada com nariz"
+        },
+        {
+          "char": "=(",
+          "label": "Tristeza suave"
+        },
+        {
+          "char": ":c",
+          "label": "Beicinho triste"
+        },
+        {
+          "char": ":/",
+          "label": "Cara de desconforto"
+        },
+        {
+          "char": "D:",
+          "label": "Cara de desânimo"
+        }
+      ]
+    },
+    {
       "id": "kaomoji",
       "label": "Kaomoji Tristes",
       "h2": "Kaomoji Tristes",
-      "intro": "Carinhas feitas de caracteres, prontas para colar.",
+      "intro": "Algumas carinhas japonesas cabisbaixas para começar.",
       "symbols": [
         {
           "char": "(μ_μ)",
           "label": "Kaomoji Olhos Baixos"
         },
         {
-          "char": "(._.)",
-          "label": "Kaomoji Olhar Vazio"
-        },
-        {
           "char": "(´。＿。｀)",
           "label": "Kaomoji Cabeça Baixa"
-        },
-        {
-          "char": "(◞‸◟)",
-          "label": "Kaomoji Ar Sombrio"
         },
         {
           "char": "( ´•︵•` )",
           "label": "Kaomoji Bico Triste"
         },
         {
-          "char": "（ ｉдｉ ）",
-          "label": "Kaomoji Lágrimas Apagadas"
-        },
-        {
           "char": "(〒﹏〒)",
           "label": "Kaomoji Coração Pesado"
-        },
-        {
-          "char": "( ︶︿︶)",
-          "label": "Kaomoji Suspiro Resignado"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/pt/library/sad-kaomoji/",
+        "text": "Ver todos os kaomoji tristes"
+      }
     }
   ],
   "faq_h2": "Perguntas Frequentes sobre o Emoji Triste",
@@ -333,7 +353,7 @@
   ],
   "canonical": "https://ultratextgen.com/pt/library/emoji-triste/",
   "date_published": "2026-08-10",
-  "date_modified": "2026-08-10",
+  "date_modified": "2026-10-09",
   "lang": "pt",
   "page_type": "library",
   "hreflang": [

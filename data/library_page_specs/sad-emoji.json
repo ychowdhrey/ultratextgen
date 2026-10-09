@@ -1,14 +1,14 @@
 {
   "slug": "sad-emoji",
-  "title": "Sad Emoji & Kaomoji: Copy & Paste 😢 Sad Face Combos",
-  "meta_description": "Sad emoji 😢 😔 for melancholy bios and captions, heartbroken 💔 combo sets, and down-mood kaomoji like (μ_μ) in one library.",
+  "title": "Sad Emoji: Copy & Paste 😢 Sad Faces, Emoticons & Combos",
+  "meta_description": "Sad emoji 😢 😔 for melancholy bios and captions, sad emoticons like :( and heartbroken 💔 combo sets in one library.",
   "canonical": "https://ultratextgen.com/library/sad-emoji/",
-  "breadcrumb": "Sad Emoji & Kaomoji",
-  "hero_h1": "Sad Emoji & Kaomoji",
-  "hero_tagline": "Melancholy faces, heartbreak symbols, and gloomy kaomoji for sad bios, captions, and late-night posts. Click any symbol to copy it instantly.",
-  "intro": "A sad emoji says what a paragraph can't: 😢 for a single tear, 😔 for quiet pensiveness, 💔 for outright heartbreak. This library covers the whole melancholy spectrum: classic sad faces, wilted-rose heartbreak symbols beloved by sad-aesthetic bios, drained and disappointed expressions, and downcast kaomoji like (μ_μ). For full-on sobbing and tears, head to the crying emoji page instead.",
+  "breadcrumb": "Sad Emoji",
+  "hero_h1": "Sad Emoji",
+  "hero_tagline": "Melancholy faces, heartbreak symbols and typed :( emoticons for sad bios, captions and late-night posts. Click any symbol to copy it instantly.",
+  "intro": "A sad emoji says what a paragraph can't: 😢 for a single tear, 😔 for quiet pensiveness, 💔 for outright heartbreak. This library covers the whole melancholy spectrum: classic sad faces, wilted-rose heartbreak symbols beloved by sad-aesthetic bios, drained and disappointed expressions, and the plain-text :( for when an emoji feels like too much. For full-on sobbing and tears, head to the crying emoji page instead.",
   "date_published": "2026-06-12",
-  "date_modified": "2026-06-12",
+  "date_modified": "2026-10-08",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -49,38 +49,14 @@
       "h2": "Grief & Mourning Emoji",
       "intro": "The symbols people use in condolence messages and memorial posts. 🕯️ stands for remembrance, 🕊️ for peace, 🖤 for mourning, 🤍 for quiet sympathy, and 💐 for the flowers you would bring.",
       "symbols": [
-        {
-          "char": "🕯️",
-          "label": "Candle"
-        },
-        {
-          "char": "🕊️",
-          "label": "Dove"
-        },
-        {
-          "char": "🖤",
-          "label": "Black Heart"
-        },
-        {
-          "char": "🤍",
-          "label": "White Heart"
-        },
-        {
-          "char": "🥀",
-          "label": "Wilted Flower"
-        },
-        {
-          "char": "💐",
-          "label": "Bouquet"
-        },
-        {
-          "char": "🪦",
-          "label": "Headstone"
-        },
-        {
-          "char": "❤️‍🩹",
-          "label": "Mending Heart"
-        }
+        { "char": "🕯️", "label": "Candle" },
+        { "char": "🕊️", "label": "Dove" },
+        { "char": "🖤", "label": "Black Heart" },
+        { "char": "🤍", "label": "White Heart" },
+        { "char": "🥀", "label": "Wilted Flower" },
+        { "char": "💐", "label": "Bouquet" },
+        { "char": "🪦", "label": "Headstone" },
+        { "char": "❤️‍🩹", "label": "Mending Heart" }
       ]
     },
     {
@@ -89,34 +65,13 @@
       "h2": "Condolence & Memorial Emoji Combos",
       "intro": "Short sets to close a sympathy message or caption a memorial photo. In a message to someone who is grieving, 🕊️ and 🤍 read softer than 🪦, which suits a public tribute better.",
       "symbols": [
-        {
-          "char": "🕯️🕊️🤍",
-          "label": "Remembrance"
-        },
-        {
-          "char": "🕊️🤍",
-          "label": "Rest in Peace"
-        },
-        {
-          "char": "🖤🥀🕯️",
-          "label": "Mourning"
-        },
-        {
-          "char": "💐🤍",
-          "label": "Sympathy Flowers"
-        },
-        {
-          "char": "🙏🤍",
-          "label": "Thinking of You"
-        },
-        {
-          "char": "❤️‍🩹🤍",
-          "label": "Gentle Healing"
-        },
-        {
-          "char": "🪦🥀🕯️",
-          "label": "Memorial Tribute"
-        }
+        { "char": "🕯️🕊️🤍", "label": "Remembrance" },
+        { "char": "🕊️🤍", "label": "Rest in Peace" },
+        { "char": "🖤🥀🕯️", "label": "Mourning" },
+        { "char": "💐🤍", "label": "Sympathy Flowers" },
+        { "char": "🙏🤍", "label": "Thinking of You" },
+        { "char": "❤️‍🩹🤍", "label": "Gentle Healing" },
+        { "char": "🪦🥀🕯️", "label": "Memorial Tribute" }
       ]
     },
     {
@@ -135,20 +90,31 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticons",
+      "h2": "Sad Text Emoticons",
+      "intro": "The original sad face, typed with a colon. These read the same on every phone and keyboard.",
+      "symbols": [
+        { "char": ":(", "label": "Sad Face Emoticon" },
+        { "char": ":-(", "label": "Frown With Nose Emoticon" },
+        { "char": "=(", "label": "Soft Frown Emoticon" },
+        { "char": ":c", "label": "Pouting Sad Emoticon" },
+        { "char": ":/", "label": "Uneasy Emoticon" },
+        { "char": "D:", "label": "Dismayed Emoticon" }
+      ]
+    },
+    {
       "id": "sad-kaomoji",
       "label": "Kaomoji",
       "h2": "Sad Kaomoji & Text Faces",
-      "intro": "Downcast Japanese-style text faces that sigh, slump, and stare at the floor.",
+      "intro": "A few downcast Japanese text faces to start with.",
       "symbols": [
         { "char": "(μ_μ)", "label": "Downcast Eyes Kaomoji" },
-        { "char": "(._.)", "label": "Blank Stare Kaomoji" },
         { "char": "(´。＿。｀)", "label": "Hanging Head Kaomoji" },
-        { "char": "(◞‸◟)", "label": "Gloomy Frown Kaomoji" },
         { "char": "( ´•︵•` )", "label": "Pouting Sadness Kaomoji" },
-        { "char": "（ ｉдｉ ）", "label": "Glum Tears Kaomoji" },
-        { "char": "(〒﹏〒)", "label": "Heavy-Hearted Kaomoji" },
-        { "char": "( ︶︿︶)", "label": "Resigned Sigh Kaomoji" }
-      ]
+        { "char": "(〒﹏〒)", "label": "Heavy-Hearted Kaomoji" }
+      ],
+      "more_link": { "href": "/library/sad-kaomoji/", "text": "See every sad kaomoji" }
     }
   ],
   "collection_section": {
@@ -205,13 +171,18 @@
   ],
   "related": [
     {
+      "href": "/library/sad-kaomoji/",
+      "title": "Sad Kaomoji",
+      "desc": "Sighing, slumping and teary Japanese text faces for low moods."
+    },
+    {
       "href": "/library/crying-emoji/",
-      "title": "Crying Emoji & Kaomoji",
+      "title": "Crying Emoji",
       "desc": "Full sobbing: 😭 tears, wailing kaomoji, and crying combos."
     },
     {
       "href": "/library/angry-emoji/",
-      "title": "Angry Emoji & Kaomoji",
+      "title": "Angry Emoji",
       "desc": "Rage faces and table-flip kaomoji when sad turns to mad."
     },
     {
