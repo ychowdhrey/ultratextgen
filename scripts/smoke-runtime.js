@@ -341,6 +341,21 @@ async function main() {
     await ctx.close();
   }
 
+  // 11c. A monogram is a personal piece, so its export carries no credit QR or
+  // site URL. The QR encoder is only ever loaded to draw one, so its absence
+  // after an export is the browser-visible proof.
+  console.log('\n/printables/monogram-maker/ (no credit QR)');
+  {
+    const { ctx, page, errors } = await open('/printables/monogram-maker/?l=J&c=S&r=L', 'desktop');
+    await page.waitForTimeout(500);
+    await page.evaluate(() => { const b = document.getElementById('mono-print'); if (b) b.click(); });
+    await page.waitForTimeout(1500);
+    const loaded = await page.evaluate(() => !!document.querySelector('script[data-pt-qr]') || !!(window.UltraTextGen && window.UltraTextGen.qr));
+    check('the monogram export loads no QR encoder', !loaded);
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // 12. Nothing pushes a 390px page sideways.
   console.log('\n390px layouts (overflow)');
   for (const [url, typed] of [['/usecase/vertical-text/', ''], ['/it/lettere-in-corsivo/', 'Luna'], ['/de/zum-ausdrucken/buchstaben-nachspuren/', '']]) {
