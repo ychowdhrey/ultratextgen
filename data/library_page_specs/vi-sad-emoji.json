@@ -201,44 +201,64 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticon",
+      "h2": "Emoticon Buồn Dạng Văn Bản",
+      "intro": "Mặt buồn nguyên bản, gõ bằng dấu hai chấm. Hiển thị giống nhau trên mọi điện thoại và bàn phím.",
+      "symbols": [
+        {
+          "char": ":(",
+          "label": "Emoticon Mặt Buồn"
+        },
+        {
+          "char": ":-(",
+          "label": "Emoticon Mặt Xị Có Mũi"
+        },
+        {
+          "char": "=(",
+          "label": "Emoticon Xị Mặt Nhẹ"
+        },
+        {
+          "char": ":c",
+          "label": "Emoticon Bĩu Môi Buồn"
+        },
+        {
+          "char": ":/",
+          "label": "Emoticon Bứt Rứt"
+        },
+        {
+          "char": "D:",
+          "label": "Emoticon Thất Vọng"
+        }
+      ]
+    },
+    {
       "id": "kaomoji",
       "label": "Kaomoji Buồn",
       "h2": "Kaomoji Buồn",
-      "intro": "Mặt ghép từ ký tự, dán được ngay.",
+      "intro": "Vài mặt chữ kiểu Nhật buồn thiu để bạn bắt đầu.",
       "symbols": [
         {
           "char": "(μ_μ)",
           "label": "Kaomoji Cụp Mắt"
         },
         {
-          "char": "(._.)",
-          "label": "Kaomoji Nhìn Vô Hồn"
-        },
-        {
           "char": "(´。＿。｀)",
           "label": "Kaomoji Cúi Gằm"
-        },
-        {
-          "char": "(◞‸◟)",
-          "label": "Kaomoji Vẻ Ảm Đạm"
         },
         {
           "char": "( ´•︵•` )",
           "label": "Kaomoji Bĩu Môi Buồn"
         },
         {
-          "char": "（ ｉдｉ ）",
-          "label": "Kaomoji Nước Mắt Lặng"
-        },
-        {
           "char": "(〒﹏〒)",
           "label": "Kaomoji Nặng Lòng"
-        },
-        {
-          "char": "( ︶︿︶)",
-          "label": "Kaomoji Thở Dài Cam Chịu"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/vi/library/kaomoji/",
+        "text": "Xem tất cả kaomoji"
+      }
     }
   ],
   "faq_h2": "Câu Hỏi Thường Gặp về Emoji Buồn",
@@ -266,8 +286,8 @@
   ],
   "editorial_sections": [
     {
-      "h2": "Vì Sao Có Nhiều Emoji Buồn Đến Thế",
-      "body": "Unicode không thêm mười lăm khuôn mặt buồn cho vui: mỗi cái ra đời để phục vụ một tình huống mà những cái trước chưa lo được. 😞 đến từ các bộ emoji Nhật đời đầu, vốn dùng khi xin lỗi. 🥺 xuất hiện muộn hơn nhiều và gần như lập tức bị đọc theo nghĩa nũng nịu chứ không phải buồn. 🫠 và 🫤 là của năm 2021, nói về sự kiệt sức chứ không phải nỗi đau. Khoảng cách giữa cái tên Unicode và cách người ta thật sự dùng là có thật — nên trang này xếp theo mức độ chứ không theo năm bổ sung."
+      "h2": "Vì sao có nhiều emoji buồn đến thế",
+      "body": "Unicode không thêm mười lăm khuôn mặt buồn cho vui: mỗi cái ra đời để phục vụ một tình huống mà những cái trước chưa đáp ứng được. 😞 đến từ các bộ emoji Nhật đời đầu. 🥺 xuất hiện muộn hơn nhiều và gần như lập tức bị đọc theo nghĩa nũng nịu chứ không phải buồn. 🫠 và 🫤 là của năm 2021, nói về sự kiệt sức chứ không phải nỗi đau. Khoảng cách giữa cái tên Unicode và cách người ta thật sự dùng là có thật — nên trang này xếp theo mức độ chứ không theo năm bổ sung."
     }
   ],
   "collection_section": {
@@ -333,7 +353,7 @@
   ],
   "canonical": "https://ultratextgen.com/vi/library/emoji-buon/",
   "date_published": "2026-08-10",
-  "date_modified": "2026-08-10",
+  "date_modified": "2026-10-09",
   "lang": "vi",
   "page_type": "library",
   "hreflang": [

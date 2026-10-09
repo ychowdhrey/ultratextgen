@@ -201,44 +201,64 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Tastatur-Smileys",
+      "h2": "Traurige Text-Emoticons",
+      "intro": "Das ursprüngliche traurige Gesicht, getippt mit einem Doppelpunkt. Es sieht auf jedem Handy und jeder Tastatur gleich aus.",
+      "symbols": [
+        {
+          "char": ":(",
+          "label": "Trauriges Gesicht"
+        },
+        {
+          "char": ":-(",
+          "label": "Traurig mit Nase"
+        },
+        {
+          "char": "=(",
+          "label": "Leicht trauriges Gesicht"
+        },
+        {
+          "char": ":c",
+          "label": "Schmollend traurig"
+        },
+        {
+          "char": ":/",
+          "label": "Verunsichertes Gesicht"
+        },
+        {
+          "char": "D:",
+          "label": "Bestürztes Gesicht"
+        }
+      ]
+    },
+    {
       "id": "kaomoji",
       "label": "Traurige Kaomoji",
       "h2": "Traurige Kaomoji",
-      "intro": "Gesichter aus Zeichen, direkt zum Einfügen.",
+      "intro": "Ein paar niedergeschlagene japanische Textgesichter für den Anfang.",
       "symbols": [
         {
           "char": "(μ_μ)",
           "label": "Kaomoji Gesenkter Blick"
         },
         {
-          "char": "(._.)",
-          "label": "Kaomoji Leerer Blick"
-        },
-        {
           "char": "(´。＿。｀)",
           "label": "Kaomoji Hängender Kopf"
-        },
-        {
-          "char": "(◞‸◟)",
-          "label": "Kaomoji Trübe Miene"
         },
         {
           "char": "( ´•︵•` )",
           "label": "Kaomoji Trauriger Schmollmund"
         },
         {
-          "char": "（ ｉдｉ ）",
-          "label": "Kaomoji Stille Tränen"
-        },
-        {
           "char": "(〒﹏〒)",
           "label": "Kaomoji Schweres Herz"
-        },
-        {
-          "char": "( ︶︿︶)",
-          "label": "Kaomoji Resignierter Seufzer"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/de/library/kaomoji/",
+        "text": "Alle Kaomoji ansehen"
+      }
     }
   ],
   "faq_h2": "Häufige Fragen zum Traurigen Emoji",
@@ -266,8 +286,8 @@
   ],
   "editorial_sections": [
     {
-      "h2": "Warum Es So Viele Traurige Emojis Gibt",
-      "body": "Unicode hat nicht aus Übermut fünfzehn traurige Gesichter aufgenommen: jedes kam für einen Zweck, den die vorhandenen nicht abdeckten. 😞 stammt aus den ersten japanischen Sätzen, wo es zum Entschuldigen diente. 🥺 kam viel später und wurde fast sofort eher zärtlich als traurig umgedeutet. 🫠 und 🫤 sind von 2021 und meinen Erschöpfung, nicht Kummer. Der Abstand zwischen dem, was der Unicode-Name ankündigt, und dem, was die Leute daraus machen, ist real, deshalb ordnet diese Seite nach Intensität statt nach Aufnahmedatum."
+      "h2": "Warum es so viele traurige Emojis gibt",
+      "body": "Unicode hat nicht aus Übermut fünfzehn traurige Gesichter aufgenommen: Jedes kam für einen Zweck, den die vorhandenen nicht abdeckten. 😞 stammt aus den ersten japanischen Emoji-Sätzen. 🥺 kam viel später und wurde fast sofort eher zärtlich als traurig umgedeutet. 🫠 und 🫤 sind von 2021 und meinen Erschöpfung, nicht Kummer. Der Abstand zwischen dem, was der Unicode-Name ankündigt, und dem, was die Leute daraus machen, ist real, deshalb ordnet diese Seite nach Intensität statt nach Aufnahmedatum."
     }
   ],
   "collection_section": {
@@ -333,7 +353,7 @@
   ],
   "canonical": "https://ultratextgen.com/de/library/trauriges-emoji/",
   "date_published": "2026-08-10",
-  "date_modified": "2026-08-10",
+  "date_modified": "2026-10-09",
   "lang": "de",
   "page_type": "library",
   "hreflang": [

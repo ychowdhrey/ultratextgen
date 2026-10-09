@@ -1,9 +1,9 @@
 {
   "slug": "aglayan-emoji",
-  "title": "Ağlayan Emoji 😭 😢 — Ağlama Emojileri ve Kaomoji Kopyala",
+  "title": "Ağlayan Emoji 😭 😢 Kopyala: Ağlama Emojileri ve Emoticonlar",
   "meta_description": "Ağlayan emoji 😭 😢 🥹, gözyaşı sembolleri ve ağlayan kaomoji (╥﹏╥) tek sayfada. Tıkla kopyala, sohbete yapıştır.",
   "breadcrumb": "Ağlayan Emoji",
-  "hero_h1": "Ağlayan Emoji ve Kaomoji",
+  "hero_h1": "Ağlayan Emoji",
   "hero_tagline": "Tek damla gözyaşından hüngür hüngür ağlamaya, oradan 'gülmekten ağladım'a kadar bütün ağlama ifadeleri ve kaomoji.",
   "intro": "Ağlayan emojinin en çok kullanılanı aslında üzüntü anlatmıyor: 😭 günlük yazışmada çoğu zaman abartı, 😂 ise doğrudan gülme. Aşağıda gerçekten üzgün olanlar, şaka amaçlı kullanılanlar ve gözyaşı sembolleri ayrı ayrı duruyor.",
   "copy_pattern": "collection",
@@ -125,26 +125,46 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Metin İfadeleri",
+      "h2": "Ağlayan Metin İfadeleri (Emoticon)",
+      "intro": "Gözyaşı bir kesme işareti ya da virgülle çizilir. Elle yazılmış bir :'( emojiyi kutuya çeviren uygulamalarda bile bozulmadan görünür.",
+      "symbols": [
+        {
+          "char": ":'(",
+          "label": "Ağlayan Yüz"
+        },
+        {
+          "char": ":'-(",
+          "label": "Burunlu Ağlayan Yüz"
+        },
+        {
+          "char": ":,(",
+          "label": "Gözyaşı Damlası"
+        },
+        {
+          "char": "D':",
+          "label": "Perişan Halde Ağlayan Yüz"
+        },
+        {
+          "char": ";(",
+          "label": "Gözü Dolu Göz Kırpma"
+        },
+        {
+          "char": "QQ",
+          "label": "Oyuncuların Ağlayan Gözleri"
+        }
+      ]
+    },
+    {
       "id": "aglayan-kaomoji",
       "label": "Kaomoji",
       "h2": "Ağlayan Kaomoji ve Metin Yüzleri",
-      "intro": "Emoji çalışmayan yerlerde de görünen, karakterle kurulmuş ağlama yüzleri.",
+      "intro": "En bilinen dört ağlayan kaomoji.",
       "symbols": [
         {
           "char": "(T_T)",
           "label": "Akan Gözyaşı Kaomoji"
-        },
-        {
-          "char": "(;_;)",
-          "label": "Sessiz Gözyaşı Kaomoji"
-        },
-        {
-          "char": "(ToT)",
-          "label": "Feryat Kaomoji"
-        },
-        {
-          "char": "(;﹏;)",
-          "label": "Titreyen Gözyaşı Kaomoji"
         },
         {
           "char": "(╥﹏╥)",
@@ -155,22 +175,14 @@
           "label": "Yaşlı Gözler Kaomoji"
         },
         {
-          "char": "( ; ω ; )",
-          "label": "Usulca Hıçkıran Kaomoji"
-        },
-        {
-          "char": "(｡•́︿•̀｡)",
-          "label": "Gözü Dolan Kaomoji"
-        },
-        {
           "char": "・゜・(ノД`)・゜・",
           "label": "Dramatik Ağlama Kaomoji"
-        },
-        {
-          "char": "(个_个)",
-          "label": "Damlayan Gözyaşı Kaomoji"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/tr/library/kaomoji/",
+        "text": "Bütün kaomoji koleksiyonunu gör"
+      }
     }
   ],
   "editorial_sections": [
@@ -233,7 +245,7 @@
   ],
   "canonical": "https://ultratextgen.com/tr/library/aglayan-emoji/",
   "date_published": "2026-08-08",
-  "date_modified": "2026-08-08",
+  "date_modified": "2026-10-09",
   "cta": "UltraTextGen ile düz yazını kalın, italik, el yazısı ve 100+ Unicode stiline çevir — ücretsiz, üyeliksiz, tek tıkla kopyala.",
   "lang": "tr",
   "page_type": "library",
