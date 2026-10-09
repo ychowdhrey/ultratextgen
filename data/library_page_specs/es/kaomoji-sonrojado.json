@@ -138,6 +138,46 @@
           "label": "Con el corazón robado"
         }
       ]
+    },
+    {
+      "id": "shy-flustered",
+      "label": "Vergüenza",
+      "h2": "Kaomoji Avergonzados y Apenados",
+      "intro": "Para los momentos de vergüenza: esconder la cara entre las manos, una gota de sudor después de hablar de más o quedarse callado y colorado. En (/ω＼) y (〃ﾉωﾉ) las barras y la ﾉ son manos que tapan la cara, y ⸝⸝ dibuja las líneas de rubor en las mejillas.",
+      "symbols": [
+        {
+          "char": "(/ω＼)",
+          "label": "Escondiendo la cara"
+        },
+        {
+          "char": "(*/ω＼*)",
+          "label": "Escondido y sonrojado"
+        },
+        {
+          "char": "(〃ﾉωﾉ)",
+          "label": "Espiando entre los dedos"
+        },
+        {
+          "char": "(〃＞＿＜;〃)",
+          "label": "Qué vergüenza"
+        },
+        {
+          "char": "(^_^;)",
+          "label": "Gota de sudor incómoda"
+        },
+        {
+          "char": "(｡>﹏<｡)",
+          "label": "Retorciéndose de vergüenza"
+        },
+        {
+          "char": "( ⸝⸝•ᴗ•⸝⸝ )",
+          "label": "Sonrisa tímida y callada"
+        },
+        {
+          "char": "(⸝⸝⸝°_°⸝⸝⸝)",
+          "label": "Mirada apenada"
+        }
+      ]
     }
   ],
   "related": [

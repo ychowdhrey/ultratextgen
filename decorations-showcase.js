@@ -29,7 +29,12 @@
       chip.setAttribute("role", "button");
       chip.setAttribute("tabindex", "0");
       function fire() {
-        copyText(chip.getAttribute("data-copy"));
+        var text = chip.getAttribute("data-copy");
+        Promise.resolve(copyText(text)).then(function () {
+          if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
+            window.UltraTextGen.trackCopy("button", text);
+          }
+        }, function () {});
         chip.classList.add("copied");
         window.setTimeout(function () { chip.classList.remove("copied"); }, 1200);
       }

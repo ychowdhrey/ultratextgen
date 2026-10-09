@@ -1,7 +1,7 @@
 {
   "slug": "sleepy-kaomoji",
-  "title": "Sleepy Kaomoji: Copy & Paste Sleeping & Tired Text Faces",
-  "meta_description": "Browse and copy sleepy kaomoji — also spelled kamoji — drowsy, dozing, and fast-asleep Japanese text faces with zzz. Click any to copy it instantly.",
+  "title": "Sleepy Kaomoji (´～`): Copy & Paste Sleeping & Tired Text Faces",
+  "meta_description": "Browse and copy sleepy kaomoji (´～`), also spelled kamoji: drowsy, dozing, and fast-asleep Japanese text faces with zzz. Click any to copy it instantly.",
   "breadcrumb": "Sleepy Kaomoji",
   "hero_h1": "Sleepy Kaomoji",
   "hero_tagline": "Copy and paste sleepy kaomoji: drowsy, dozing, and fast-asleep Japanese text faces. Click any face to copy it instantly.",
@@ -99,6 +99,46 @@
         {
           "char": "(。-ω-)zzz",
           "label": "Curled Up"
+        }
+      ]
+    },
+    {
+      "id": "tired-lying-down",
+      "label": "Tired & Lying Down",
+      "h2": "Tired and Lying Down Kaomoji",
+      "intro": "For when you are too drained to stay upright. orz and _|￣|○ are a person slumped on hands and knees seen from the side, the _(:3 」∠ )_ family is someone flopped flat on the floor, and [▓▓] is a bed with the blanket pulled up.",
+      "symbols": [
+        {
+          "char": "(x_x)",
+          "label": "Burned Out"
+        },
+        {
+          "char": "orz",
+          "label": "Given Up"
+        },
+        {
+          "char": "_|￣|○",
+          "label": "Collapsed"
+        },
+        {
+          "char": "_(:3 」∠ )_",
+          "label": "Lying Flat"
+        },
+        {
+          "char": "_(┐「ε:)_",
+          "label": "Face Down"
+        },
+        {
+          "char": "_(ˇωˇ」∠)_",
+          "label": "Lazy Sprawl"
+        },
+        {
+          "char": "(¦3[▓▓]",
+          "label": "Tucked In Bed"
+        },
+        {
+          "char": "[▓▓] ε¦)",
+          "label": "Rolled Over in Bed"
         }
       ]
     }

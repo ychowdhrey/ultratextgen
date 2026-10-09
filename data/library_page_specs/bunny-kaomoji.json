@@ -177,6 +177,46 @@
           "label": "Easter Bunny"
         }
       ]
+    },
+    {
+      "id": "roblox-bunny",
+      "label": "Roblox Bunny",
+      "h2": "Bunny Kaomoji for Roblox Bios and Display Names",
+      "intro": "Most bunnies higher up this page borrow Korean letters like ㅅ and ᆺ or Canadian syllabics like ᐢ, and faces built from rarer scripts are the ones most likely to show as empty boxes or be stopped by Roblox's filter. These are built from keyboard characters plus ★ and ♡, which our Roblox symbols page (linked at the bottom) counts among the safest single symbols. Every kaomoji is still a multi-character combo, and that page notes combos are more likely to be rejected than one symbol, so if a face will not save, paste it in piece by piece to find the character that fails. The last two use Japanese characters (・ ヽ ノ っ); Roblox accepts Japanese text in display names on some accounts and rejects it on others, so try those in the display name box first.",
+      "symbols": [
+        {
+          "char": "(='.'=)",
+          "label": "Classic Keyboard Bunny"
+        },
+        {
+          "char": "(='.'=)♡",
+          "label": "Keyboard Bunny With Heart"
+        },
+        {
+          "char": "(^x^)",
+          "label": "X-Mouth Bunny"
+        },
+        {
+          "char": "(*^x^*)",
+          "label": "Blushing X-Mouth Bunny"
+        },
+        {
+          "char": "/(^x^)\\",
+          "label": "Floppy-Eared Keyboard Bunny"
+        },
+        {
+          "char": "★(^x^)★",
+          "label": "Star Bunny"
+        },
+        {
+          "char": "ヽ(・x・)ノ",
+          "label": "Cheering Bunny (Japanese Characters)"
+        },
+        {
+          "char": "(っ^x^)っ♡",
+          "label": "Hugging Bunny (Japanese Characters)"
+        }
+      ]
     }
   ],
   "related": [
@@ -199,6 +239,11 @@
       "href": "/library/happy-kaomoji/",
       "title": "Happy Kaomoji",
       "desc": "Smiling and joyful Japanese text faces for any good mood."
+    },
+    {
+      "href": "/library/roblox-symbols/",
+      "title": "Roblox Symbols",
+      "desc": "Stars, hearts and other symbols for Roblox display names, with notes on what the name filter rejects."
     }
   ]
 }

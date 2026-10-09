@@ -10316,6 +10316,45 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 /* ==========================================================================
    Kaomoji Generator (/kaomoji-generator/)  —  js/kaomoji/
    ========================================================================== */
+/* Kaomoji hub: "browse by mood" index of every kaomoji page, grouped. */
+.kao-mood-index {
+  display: grid;
+  gap: 1.1rem;
+}
+.kao-mood-index h3 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 0.5rem;
+}
+.kao-mood-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.kao-mood-links a {
+  display: inline-block;
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+}
+.kao-mood-links a:hover,
+.kao-mood-links a:focus-visible {
+  border-color: var(--accent-purple);
+  color: var(--text-primary);
+}
+
 .kao-studio {
   max-width: 860px;
   margin: 0 auto;
@@ -10397,7 +10436,6 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   margin: 1.6rem 0 0.6rem;
 }
 .kao-moods,
-.kao-presets,
 .kao-part-options {
   display: flex;
   flex-wrap: wrap;
@@ -10420,22 +10458,30 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   color: white;
   border-color: transparent;
 }
-.kao-presets { gap: 0.55rem; }
+/* 16 presets: 4 columns x 4 rows on a phone, 8 x 2 from tablet width up. */
+.kao-presets {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+@media (min-width: 720px) {
+  .kao-presets { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+}
 .kao-preset {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.2rem;
-  min-width: 84px;
+  min-width: 0;
   border: 1px solid var(--border-light);
   background: var(--bg-white);
   border-radius: 12px;
-  padding: 0.6rem 0.7rem;
+  padding: 0.6rem 0.35rem;
   cursor: pointer;
   transition: border-color 0.15s, transform 0.1s;
 }
 .kao-preset:hover { border-color: var(--accent-purple); transform: translateY(-1px); }
-.kao-preset-face { font-size: 1.15rem; color: var(--text-primary); }
+.kao-preset-face { font-size: 1.05rem; color: var(--text-primary); white-space: nowrap; }
 .kao-preset-label { font-size: 0.72rem; color: var(--text-muted); font-weight: 600; }
 
 .kao-part-row {

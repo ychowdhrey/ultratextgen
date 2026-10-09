@@ -1,7 +1,7 @@
 {
   "slug": "blushing-kaomoji",
-  "title": "Blushing Kaomoji: Copy & Paste Shy & Blushing Text Faces",
-  "meta_description": "Browse and copy blushing kaomoji — also spelled kamoji — shy, flustered Japanese text faces with rosy cheeks. Click any to copy it instantly.",
+  "title": "Blushing Kaomoji ( 〃▽〃): Copy & Paste Shy & Blushing Text Faces",
+  "meta_description": "Browse and copy blushing kaomoji ( 〃▽〃), also spelled kamoji: shy, flustered and embarrassed Japanese text faces with rosy cheeks. Click any to copy it instantly.",
   "breadcrumb": "Blushing Kaomoji",
   "hero_h1": "Blushing Kaomoji",
   "hero_tagline": "Copy and paste blushing kaomoji: shy, flustered Japanese text faces with rosy cheeks. Click any face to copy it instantly.",
@@ -115,6 +115,46 @@
         {
           "char": "(ﾉ*°▽°*)",
           "label": "Swept Away"
+        }
+      ]
+    },
+    {
+      "id": "shy-flustered",
+      "label": "Shy & Flustered",
+      "h2": "Shy and Flustered Kaomoji",
+      "intro": "For the embarrassed moments: hiding behind both hands, a sweat drop after saying too much, or going quiet and pink. In (/ω＼) and (〃ﾉωﾉ) the slashes and ﾉ are hands covering the face, and ⸝⸝ draws blush lines on the cheeks.",
+      "symbols": [
+        {
+          "char": "(/ω＼)",
+          "label": "Hiding Face"
+        },
+        {
+          "char": "(*/ω＼*)",
+          "label": "Hiding and Blushing"
+        },
+        {
+          "char": "(〃ﾉωﾉ)",
+          "label": "Peeking Through Fingers"
+        },
+        {
+          "char": "(〃＞＿＜;〃)",
+          "label": "So Embarrassed"
+        },
+        {
+          "char": "(^_^;)",
+          "label": "Awkward Sweat Drop"
+        },
+        {
+          "char": "(｡>﹏<｡)",
+          "label": "Squirming"
+        },
+        {
+          "char": "( ⸝⸝•ᴗ•⸝⸝ )",
+          "label": "Quiet Shy Smile"
+        },
+        {
+          "char": "(⸝⸝⸝°_°⸝⸝⸝)",
+          "label": "Flustered Stare"
         }
       ]
     }
