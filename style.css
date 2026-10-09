@@ -11029,8 +11029,11 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
    ========================================================================== */
 .kao-decoder { max-width: 720px; margin: 0 auto; padding: 0 1rem; }
 .kao-dec-input-row { display: flex; gap: 0.6rem; margin-bottom: 0.6rem; }
+/* min-width: 0 lets the field shrink below its default text-input width, which
+   at 390 px pushed the Decode button past the right edge. */
 .kao-dec-input {
   flex: 1 1 auto;
+  min-width: 0;
   padding: 0.7rem 0.9rem;
   font-size: 1.25rem;
   text-align: center;
