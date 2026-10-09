@@ -10316,6 +10316,45 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 /* ==========================================================================
    Kaomoji Generator (/kaomoji-generator/)  —  js/kaomoji/
    ========================================================================== */
+/* Kaomoji hub: "browse by mood" index of every kaomoji page, grouped. */
+.kao-mood-index {
+  display: grid;
+  gap: 1.1rem;
+}
+.kao-mood-index h3 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 0.5rem;
+}
+.kao-mood-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.kao-mood-links a {
+  display: inline-block;
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+}
+.kao-mood-links a:hover,
+.kao-mood-links a:focus-visible {
+  border-color: var(--accent-purple);
+  color: var(--text-primary);
+}
+
 .kao-studio {
   max-width: 860px;
   margin: 0 auto;
