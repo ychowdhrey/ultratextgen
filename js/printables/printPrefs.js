@@ -646,7 +646,51 @@
     return out;
   }
 
+  /* Browser Print (Ctrl+P / Cmd+P) without pressing Download PDF used to
+     print 3-5 pages of the website: header, menus, buttons and footer, and
+     no worksheet. The owner's call (2026-10-07) is to keep the page but drop
+     the site chrome in that case and open with one line pointing at the
+     button that prints the sheet. Only the print stylesheet acts on it
+     (style.css, "Browser Print without the Download PDF button"); each
+     engine's own print path (body.is-printing) is untouched.
+
+     The note and its mount live here, once, because this is the one module
+     all four engines load. Until 2026-10-09 the table sat inside
+     printablesEngine.js, so the 30 pages that engine serves had the note and
+     the 14 pages served by the monogram, cross-stitch and label engines
+     (monogram-maker + 7 locales, cross-stitch-letters + 3, name-labels + 1)
+     printed the whole website. A second copy in each engine would have
+     drifted from this one; the engines call mountPrintNote() instead. */
+  const PRINT_NOTE_I18N = {
+    en: "This is a printout of the web page. To print the worksheet itself, press “{btn}” on the page.",
+    es: "Esto es una impresión de la página web. Para imprimir la ficha, pulsa «{btn}» en la página.",
+    fr: "Ceci est une impression de la page web. Pour imprimer la fiche, cliquez sur « {btn} » sur la page.",
+    pl: "To jest wydruk strony internetowej. Aby wydrukować kartę pracy, kliknij „{btn}” na stronie.",
+    it: "Questa è la stampa della pagina web. Per stampare la scheda, premi «{btn}» nella pagina.",
+    de: "Das ist ein Ausdruck der Webseite. Um das Arbeitsblatt zu drucken, klicke auf der Seite auf „{btn}“.",
+    pt: "Esta é uma impressão da página da web. Para imprimir a folha, clique em “{btn}” na página.",
+    id: "Ini cetakan halaman web. Untuk mencetak lembar kerjanya, tekan “{btn}” di halaman.",
+    nl: "Dit is een afdruk van de webpagina. Klik op de pagina op ‘{btn}’ om het werkblad te printen.",
+    tr: "Bu, web sayfasının çıktısıdır. Çalışma sayfasını yazdırmak için sayfadaki “{btn}” düğmesine basın."
+  };
+  /* o.lang and o.button are the calling engine's own page language and its
+     Download PDF label, so the note names exactly the button the visitor can
+     see. Both default to what this module already knows. */
+  function mountPrintNote(o) {
+    if (!document.body || document.querySelector(".pt-print-note")) return;
+    const opt = o || {};
+    const lang = String(opt.lang || document.documentElement.getAttribute("lang") || "en")
+      .slice(0, 2).toLowerCase();
+    const btn = opt.button || shareLabels().savePdf || "Download PDF";
+    const note = document.createElement("p");
+    note.className = "pt-print-note";
+    note.textContent = (PRINT_NOTE_I18N[lang] || PRINT_NOTE_I18N.en).replace("{btn}", btn);
+    document.body.insertBefore(note, document.body.firstChild);
+    document.body.classList.add("pt-engine-page");
+  }
+
   UTG.printPrefs = {
+    mountPrintNote: mountPrintNote,
     values: values,
     PAPERS: PAPERS,
     PAPER_FULL: PAPER_FULL,

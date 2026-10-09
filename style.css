@@ -5874,8 +5874,8 @@ button.clear-decoration {
   body.is-printing #hurufPrintRoot { display: block !important; padding: 1rem; }
 }
 
-/* Browser Print without the Download PDF button (printablesEngine.js
-   mountPrintNote): keep the page content, drop the site chrome and the
+/* Browser Print without the Download PDF button (printPrefs.js
+   mountPrintNote, called by all four printables engines): keep the page content, drop the site chrome and the
    controls, and open with one line saying which button prints the sheet.
    Scoped to engine pages and to the case where the engine is NOT printing,
    so the engine's own print path above is unaffected. */

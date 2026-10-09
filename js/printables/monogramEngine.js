@@ -620,6 +620,10 @@
   /* ---------- init ---------- */
 
   function init() {
+    /* Ctrl+P without Download PDF: hide the site chrome and say which button
+       prints the sheet. The note, its translations and the mount are
+       printPrefs.js's (the same ones printablesEngine.js uses). */
+    if (PP && PP.mountPrintNote) PP.mountPrintNote({ button: T.savePdf });
     wireInput("mono-left");
     wireInput("mono-center");
     wireInput("mono-right");

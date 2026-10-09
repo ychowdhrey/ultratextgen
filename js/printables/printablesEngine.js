@@ -13132,32 +13132,14 @@
     document.head.appendChild(sc);
   }
 
-  /* Browser Print (Ctrl+P / Cmd+P) without pressing Download PDF used to
-     print 3-5 pages of the website: header, menus, buttons and footer, and
-     no worksheet. The owner's call (2026-10-07) is to keep the page but drop
-     the site chrome in that case and open with one line pointing at the
-     button that prints the sheet. Only the print stylesheet acts on it; the
-     engine's own print path (body.is-printing) is untouched. */
-  const PRINT_NOTE_I18N = {
-    en: "This is a printout of the web page. To print the worksheet itself, press \u201c{btn}\u201d on the page.",
-    es: "Esto es una impresi\u00f3n de la p\u00e1gina web. Para imprimir la ficha, pulsa \u00ab{btn}\u00bb en la p\u00e1gina.",
-    fr: "Ceci est une impression de la page web. Pour imprimer la fiche, cliquez sur \u00ab\u00a0{btn}\u00a0\u00bb sur la page.",
-    pl: "To jest wydruk strony internetowej. Aby wydrukowa\u0107 kart\u0119 pracy, kliknij \u201e{btn}\u201d na stronie.",
-    it: "Questa \u00e8 la stampa della pagina web. Per stampare la scheda, premi \u00ab{btn}\u00bb nella pagina.",
-    de: "Das ist ein Ausdruck der Webseite. Um das Arbeitsblatt zu drucken, klicke auf der Seite auf \u201e{btn}\u201c.",
-    pt: "Esta \u00e9 uma impress\u00e3o da p\u00e1gina da web. Para imprimir a folha, clique em \u201c{btn}\u201d na p\u00e1gina.",
-    id: "Ini cetakan halaman web. Untuk mencetak lembar kerjanya, tekan \u201c{btn}\u201d di halaman.",
-    nl: "Dit is een afdruk van de webpagina. Klik op de pagina op \u2018{btn}\u2019 om het werkblad te printen.",
-    tr: "Bu, web sayfas\u0131n\u0131n \u00e7\u0131kt\u0131s\u0131d\u0131r. \u00c7al\u0131\u015fma sayfas\u0131n\u0131 yazd\u0131rmak i\u00e7in sayfadaki \u201c{btn}\u201d d\u00fc\u011fmesine bas\u0131n."
-  };
+  /* Browser Print (Ctrl+P) without Download PDF: the note, its ten-language
+     table and the mount live in printPrefs.js (mountPrintNote), the one
+     module every engine loads. This engine passes its own page language and
+     its own Download PDF label so the note names the button the visitor sees. */
   function mountPrintNote() {
-    if (!document.body || document.querySelector(".pt-print-note")) return;
-    const btn = (T.printOpts && T.printOpts.savePdf) || "Download PDF";
-    const note = document.createElement("p");
-    note.className = "pt-print-note";
-    note.textContent = (PRINT_NOTE_I18N[LANG] || PRINT_NOTE_I18N.en).replace("{btn}", btn);
-    document.body.insertBefore(note, document.body.firstChild);
-    document.body.classList.add("pt-engine-page");
+    if (PP && PP.mountPrintNote) {
+      PP.mountPrintNote({ lang: LANG, button: T.printOpts && T.printOpts.savePdf });
+    }
   }
 
   function init() {
