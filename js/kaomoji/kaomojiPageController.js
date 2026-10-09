@@ -224,16 +224,49 @@
   }
 
   /* ---- platform-compatibility hint -------------------------------------- */
-  /* Stacked combining marks (Lenny brows, blush lines, accented eyes) are the
-     glyphs most likely to break on older iOS / some apps. */
-  var RISKY = /[̀-ͯ҃-҉᪰-᫿᷀-᷿⃐-⃿︠-︯]/;
+  /* Three different ways a face can arrive changed, each named on the page's
+     FAQ ("Will my kaomoji work everywhere?"): stacked combining marks that
+     shift on older iOS, characters from scripts a device may have no font for
+     (drawn as a box), and characters Discord and Reddit read as formatting. */
+  const RISKY = /[̀-ͯ҃-҉᪰-᫿᷀-᷿⃐-⃿︠-︯]/;
+  const SCRIPTS = [
+    ["Arabic", /[\u0600-\u06FF]/],
+    ["Thai", /[\u0E00-\u0E7F]/],
+    ["Gujarati", /[\u0A80-\u0AFF]/],
+    ["Kannada", /[\u0C80-\u0CFF]/],
+    ["Tibetan", /[\u0F00-\u0FFF]/],
+    ["Canadian syllabics", /[\u1400-\u167F\u18B0-\u18FF]/],
+    ["Cherokee", /[\u13A0-\u13FF]/],
+    ["Yi", /[\uA000-\uA4CF]/]
+  ];
+  /* Underscores and asterisks italicise, a backslash escapes, a leading > quotes. */
+  const MARKDOWN = /[_*\\]|^>/;
+  function scriptsIn(face) {
+    const found = [];
+    for (let i = 0; i < SCRIPTS.length; i++) {
+      if (SCRIPTS[i][1].test(face)) found.push(SCRIPTS[i][0]);
+    }
+    return found;
+  }
   function updateHint(face) {
     if (!refs.hint) return;
+    const notes = [];
     if (RISKY.test(face)) {
-      refs.hint.textContent = t("hintRisky", "Uses stacked marks — may not show on every device (especially older iOS). Test before posting.");
+      notes.push(t("hintMarks", "Stacked marks can shift on older iOS or in some apps."));
+    }
+    const scripts = scriptsIn(face);
+    if (scripts.length) {
+      notes.push(t("hintScript", "Uses letters from {scripts}; a device without a font for them shows a box.")
+        .replace("{scripts}", scripts.join(", ")));
+    }
+    if (MARKDOWN.test(face)) {
+      notes.push(t("hintMarkdown", "Discord and Reddit read _ * \\ and a leading > as formatting; wrapping the face in backticks keeps every character."));
+    }
+    if (notes.length) {
+      refs.hint.textContent = notes.join(" ");
       refs.hint.classList.add("is-risky");
     } else {
-      refs.hint.textContent = t("hintSafe", "Built from widely supported characters — works on most platforms.");
+      refs.hint.textContent = t("hintSafe", "No stacked marks, rare-script letters or formatting characters in this face.");
       refs.hint.classList.remove("is-risky");
     }
   }

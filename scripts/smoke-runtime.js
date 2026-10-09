@@ -347,6 +347,20 @@ async function main() {
     const loaded = (await dl(l.page)).filter((e) => e.event === 'kaomoji_generator_step');
     check('a ?q= load sends one url_load step and not the face', loaded.length === 1 && loaded[0].kaomoji_step === 'url_load' && loaded[0].kaomoji_value === undefined && !JSON.stringify(loaded).includes('private'), JSON.stringify(loaded));
     await l.ctx.close();
+
+    // The line under the preview names what a face carries (FAQ promise).
+    const hintFor = async (face) => {
+      const h = await open('/kaomoji-generator/?q=' + encodeURIComponent(face), 'desktop');
+      const text = await h.page.locator('#kaomojiHint').innerText();
+      await h.ctx.close();
+      return text;
+    };
+    const safe = await hintFor('(^o^)');
+    const script = await hintFor('(\u0CA0_\u0CA0)');
+    const marks = await hintFor('( \u0361\u00B0 \u035C\u0296 \u0361\u00B0)');
+    check('a plain face says it carries nothing risky', /No stacked marks/.test(safe), safe);
+    check('a Kannada letter is named as a rare script and underscores as formatting', /Kannada/.test(script) && /formatting/.test(script), script);
+    check('stacked marks are named', /Stacked marks/.test(marks), marks);
   }
 
   // 6d. The kaomoji hub's "browse by mood" links: one delegated listener.
