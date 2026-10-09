@@ -22,6 +22,7 @@ is a second source of truth. When you find one of these, find its generator.
 | `llms.txt` (whole tree, 85 files) | `npm run build:llms -- --write` | `check:llms` (whole-tree) |
 | `js/search/index/<locale>.json` (header search) | `npm run build:search-index -- --write`, from the same page reading as `llms.txt`; the daily sitemap workflow also regenerates it | `check:search-index`, `test:site-search` |
 | `library/index.html` directory block | `npm run build:library-directory` | `check:library-directory` |
+| `kaomoji-generator/index.html` mood, preset and part picker (between `kaomoji-static:*` markers) | `npm run build:kaomoji-generator-static` — slices the `@kaomoji-markup` block of `js/kaomoji/kaomojiPageController.js` over `kaomojiData.js` | `check:kaomoji-generator-static` |
 | `<lang>/library/index.html` | `node scripts/build-library-hub.js` — derives entries from **each page's own markup**, so it needs no hand-help | `check:library-hub`, `check:library-hub-parity` |
 | the static footer block | `npm run build:static-footer` | `check:static-footer` |
 | the accent notice | `npm run build:accent-notice` | `check:accent-notice` |
