@@ -201,44 +201,64 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticonos",
+      "h2": "Emoticonos Tristes de Texto",
+      "intro": "La carita triste original, escrita con dos puntos. Se ven igual en cualquier móvil y teclado.",
+      "symbols": [
+        {
+          "char": ":(",
+          "label": "Cara triste"
+        },
+        {
+          "char": ":-(",
+          "label": "Ceño triste con nariz"
+        },
+        {
+          "char": "=(",
+          "label": "Tristeza suave"
+        },
+        {
+          "char": ":c",
+          "label": "Puchero triste"
+        },
+        {
+          "char": ":/",
+          "label": "Cara de incomodidad"
+        },
+        {
+          "char": "D:",
+          "label": "Cara de consternación"
+        }
+      ]
+    },
+    {
       "id": "kaomoji",
       "label": "Kaomoji Tristes",
       "h2": "Kaomoji Tristes",
-      "intro": "Caras hechas con caracteres, listas para pegar.",
+      "intro": "Unas cuantas caritas japonesas cabizbajas para empezar.",
       "symbols": [
         {
           "char": "(μ_μ)",
           "label": "Kaomoji Ojos Bajos"
         },
         {
-          "char": "(._.)",
-          "label": "Kaomoji Mirada Perdida"
-        },
-        {
           "char": "(´。＿。｀)",
           "label": "Kaomoji Cabeza Gacha"
-        },
-        {
-          "char": "(◞‸◟)",
-          "label": "Kaomoji Gesto Sombrío"
         },
         {
           "char": "( ´•︵•` )",
           "label": "Kaomoji Puchero Triste"
         },
         {
-          "char": "（ ｉдｉ ）",
-          "label": "Kaomoji Lágrimas Apagadas"
-        },
-        {
           "char": "(〒﹏〒)",
           "label": "Kaomoji Corazón Pesado"
-        },
-        {
-          "char": "( ︶︿︶)",
-          "label": "Kaomoji Suspiro Resignado"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/es/library/sad-kaomoji/",
+        "text": "Ver todos los kaomoji tristes"
+      }
     }
   ],
   "faq_h2": "Preguntas Frecuentes sobre el Emoji Triste",
@@ -266,8 +286,8 @@
   ],
   "editorial_sections": [
     {
-      "h2": "Por Qué Existen Tantos Emojis Tristes",
-      "body": "Unicode no añadió quince caras tristes por exceso: cada una llegó para un uso que las anteriores no cubrían. 😞 viene de los primeros juegos japoneses, donde servía para disculparse. 🥺 llegó mucho después y casi de inmediato se reinterpretó en clave tierna más que triste. 🫠 y 🫤 son de 2021 y hablan de agotamiento, no de pena. La distancia entre lo que dice el nombre Unicode y lo que la gente hace con el emoji es real, y por eso esta página los ordena por intensidad y no por fecha de incorporación."
+      "h2": "Por qué existen tantos emojis tristes",
+      "body": "Unicode no añadió quince caras tristes por capricho: cada una llegó para un uso que las anteriores no cubrían. 😞 viene de los primeros conjuntos de emoji japoneses. 🥺 llegó mucho después y casi de inmediato se reinterpretó en clave tierna más que triste. 🫠 y 🫤 son de 2021 y hablan de agotamiento, no de pena. La distancia entre lo que dice el nombre Unicode y lo que la gente hace con el emoji es real, y por eso esta página los ordena por intensidad y no por fecha de incorporación."
     }
   ],
   "collection_section": {
@@ -338,7 +358,7 @@
   ],
   "canonical": "https://ultratextgen.com/es/library/emoji-triste/",
   "date_published": "2026-08-10",
-  "date_modified": "2026-08-10",
+  "date_modified": "2026-10-09",
   "lang": "es",
   "page_type": "library",
   "hreflang": [

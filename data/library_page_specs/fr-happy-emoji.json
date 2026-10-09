@@ -1,14 +1,14 @@
 {
   "slug": "emoji-heureux",
-  "title": "Emoji Heureux 😊 et Kaomoji : Copier-Coller des Combos de Joie",
+  "title": "Emoji Heureux 😊 : Copier-Coller des Émoticônes et Combos de Joie",
   "meta_description": "Emoji heureux 😊 😄 🥰, kaomoji joyeux comme ヽ(´▽`)/ et combos ensoleillés pour égayer bios, légendes et messages. Cliquez pour copier.",
   "canonical": "https://ultratextgen.com/fr/library/emoji-heureux/",
   "breadcrumb": "Emoji Heureux",
-  "hero_h1": "Emoji Heureux et Kaomoji",
+  "hero_h1": "Emoji Heureux",
   "hero_tagline": "Sourires, soleil et kaomoji joyeux — chaque emoji heureux, du 🙂 discret au 🤩 émerveillé. Cliquez pour copier.",
   "intro": "Un emoji heureux bien placé donne le ton de tout un message — 😊 se lit chaleureux et sincère, 😄 exprime une joie franche, 🥰 ajoute de la tendresse. Cette collection rassemble tous les visages souriants, les renforts d’enthousiasme et de fête qui les accompagnent, les symboles soleil-et-fleurs pour les bios feel-good, et les kaomoji réjouis comme ヽ(´▽`)/ — avec des combos de joie en un clic pour légendes, commentaires et bonnes nouvelles.",
   "date_published": "2026-08-15",
-  "date_modified": "2026-08-15",
+  "date_modified": "2026-10-09",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -132,10 +132,46 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Émoticônes",
+      "h2": "Émoticônes Joyeuses au Clavier",
+      "intro": "Des sourires tapés avec deux-points et une parenthèse. Plus anciens que les emoji, ils restent le moyen le plus rapide de paraître sympathique en texte brut.",
+      "symbols": [
+        {
+          "char": ":)",
+          "label": "Sourire"
+        },
+        {
+          "char": ":-)",
+          "label": "Sourire classique avec nez"
+        },
+        {
+          "char": ":D",
+          "label": "Grand sourire"
+        },
+        {
+          "char": ":-D",
+          "label": "Grand sourire avec nez"
+        },
+        {
+          "char": "=)",
+          "label": "Sourire doux"
+        },
+        {
+          "char": "XD",
+          "label": "Fou rire"
+        },
+        {
+          "char": "c:",
+          "label": "Sourire jusqu'aux oreilles"
+        }
+      ]
+    },
+    {
       "id": "happy-kaomoji",
       "label": "Kaomoji",
       "h2": "Kaomoji Heureux et Visages en Texte",
-      "intro": "Des visages en texte à la japonaise qui lèvent les bras de joie.",
+      "intro": "Un petit échantillon de visages japonais pleins de joie.",
       "symbols": [
         {
           "char": "ヽ(´▽`)/",
@@ -146,34 +182,18 @@
           "label": "Kaomoji qui Acclame"
         },
         {
-          "char": "(＾▽＾)",
-          "label": "Kaomoji Sourire Éclatant"
-        },
-        {
           "char": "(◕‿◕)",
           "label": "Kaomoji Sourire Doux"
         },
         {
-          "char": "(✿◠‿◠)",
-          "label": "Kaomoji Sourire Fleuri"
-        },
-        {
           "char": "٩(◕‿◕｡)۶",
           "label": "Kaomoji Danse Enthousiaste"
-        },
-        {
-          "char": "(o^▽^o)",
-          "label": "Kaomoji Joues Roses"
-        },
-        {
-          "char": "(｡♥‿♥｡)",
-          "label": "Kaomoji Éperdu"
-        },
-        {
-          "char": "⊂((・▽・))⊃",
-          "label": "Kaomoji Gros Câlin"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/fr/library/kaomoji/",
+        "text": "Voir tous les kaomoji"
+      }
     }
   ],
   "collection_section": {

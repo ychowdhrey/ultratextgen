@@ -260,7 +260,7 @@ LOCALE_UI_STRINGS = {
     "tr": {"copy": "Kopyala", "related": "İlgili Kaynaklar", "cta_h3": "Metni Unicode fontlarla dönüştür", "cta_body": "UltraTextGen ile düz metni kalın, italik, el yazısı ve 100’den fazla Unicode yazı stiline anında ve ücretsiz çevir.", "cta_btn": "UltraTextGen'i Aç →", "home": "Ana Sayfa", "symbols": "Semboller", "library": "Kütüphane"},
     "it": {"copy": "Copia", "related": "Risorse Correlate", "cta_h3": "Trasforma il testo con i font Unicode", "cta_body": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode. Gratis e all'istante.", "cta_btn": "Apri UltraTextGen →", "home": "Home", "symbols": "Simboli", "library": "Libreria"},
     "es": {"copy": "Copiar", "related": "Recursos Relacionados", "cta_h3": "Transforma texto con fuentes Unicode", "cta_body": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode. Gratis y al instante.", "cta_btn": "Abrir UltraTextGen →", "home": "Inicio", "symbols": "Símbolos", "library": "Biblioteca"},
-    "pl": {"copy": "Kopiuj", "related": "Powiązane Zasoby", "cta_h3": "Zamień tekst na czcionki Unicode", "cta_body": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu.", "cta_btn": "Otwórz UltraTextGen →", "home": "Strona główna", "symbols": "Symbole", "library": "Biblioteka"},
+    "pl": {"copy": "Kopiuj", "copyAria": "{copy}: {label}", "related": "Powiązane Zasoby", "cta_h3": "Zamień tekst na czcionki Unicode", "cta_body": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu.", "cta_btn": "Otwórz UltraTextGen →", "home": "Strona główna", "symbols": "Symbole", "library": "Biblioteka"},
     # nl cta_btn is deliberately NOT "Open UltraTextGen →": that string is
     # byte-identical to the English default, so check-locale-translation.js
     # counts it as untranslated English surviving on a Dutch page. Use a real
@@ -534,16 +534,20 @@ def render_editorial_sections(sections):
 RTL_LANGS = {"ar", "fa", "ur", "he"}
 
 
-def render_symbol_section(sec, copy_label="Copy"):
+def render_symbol_section(sec, copy_label="Copy", copy_aria=None):
+    # copy_aria lets a locale whose labels are nominative avoid a verb + noun
+    # case error: Polish "Kopiuj Petarda" needs the accusative, "Kopiuj: Petarda"
+    # does not. Default keeps every other locale byte-identical.
     rows = []
     for sym in sec["symbols"]:
         ch = sym["char"]
         label = sym["label"]
+        aria = (copy_aria or "{copy} {label}").format(copy=copy_label, label=label)
         rows.append(
             '    <div class="flag-row">\n'
             f'      <button class="flag-emoji symbol-tile" '
             f'data-symbol="{esc_attr(ch)}" '
-            f'aria-label="{esc_attr(copy_label)} {esc_attr(label)}">{esc(ch)}</button>\n'
+            f'aria-label="{esc_attr(aria)}">{esc(ch)}</button>\n'
             f'      <span class="flag-label">{esc(label)}</span>\n'
             '    </div>'
         )
@@ -557,6 +561,15 @@ def render_symbol_section(sec, copy_label="Copy"):
         if sec.get("intro")
         else ""
     )
+    # Optional "see the full set" link under the grid, e.g. an emoji page's
+    # short kaomoji sample pointing at the subject's own kaomoji page.
+    more = sec.get("more_link")
+    more_html = (
+        f'  <p class="u-secondary-tight"><a href="{esc_attr(more["href"])}">'
+        f'{esc(more["text"])} →</a></p>\n'
+        if more
+        else ""
+    )
     return (
         f'<section class="mood-explainers" id="{esc_attr(sec["id"])}">\n'
         f"{label_html}"
@@ -565,6 +578,7 @@ def render_symbol_section(sec, copy_label="Copy"):
         '  <div class="flag-rows">\n'
         + "\n".join(rows)
         + "\n  </div>\n"
+        f"{more_html}"
         "</section>"
     )
 
@@ -904,7 +918,9 @@ def render_page(spec):
         section_blocks = [render_art_section(s, copy_label, art_aria)
                           for s in spec["sections"]]
     else:
-        section_blocks = [render_symbol_section(s, copy_label) for s in spec["sections"]]
+        symbol_aria = spec.get("copy_aria_template") or ui.get("copyAria")
+        section_blocks = [render_symbol_section(s, copy_label, symbol_aria)
+                          for s in spec["sections"]]
     if spec["copy_pattern"] == "collection":
         section_blocks.append(render_collection_section(spec))
     body_sections = "\n\n<div class=\"section-divider\"></div>\n\n".join(section_blocks)

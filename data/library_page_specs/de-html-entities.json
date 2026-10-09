@@ -322,8 +322,8 @@
   ],
   "editorial_sections": [
     {
-      "h2": "Die fünf Pflichtzeichen, und der ganze Rest",
-      "body": "Entity-Listen werden schnell lang, doch nur fünf Einträge sind wirklich verpflichtend. &amp; &lt; &gt; sind im Text wie im Attribut gefährlich; &quot; und &#x27; nur dann, wenn sie mit dem umschließenden Anführungszeichen kollidieren. Die übrigen Hunderte sind weitgehend ein Erbe der Zeit vor durchgängigem UTF-8: Heute lassen sich © und der Gedankenstrich direkt tippen. Eine Tabelle lohnt sich trotzdem, weil fremde Templates, CMS-Felder und alter Bestandscode weiter voll davon sind. Lesen können und schreiben müssen sind zwei verschiedene Dinge."
+      "h2": "Die fünf, die man immer maskiert, und der ganze Rest",
+      "body": "Entity-Listen werden schnell lang, doch in der Praxis zählen nur fünf: &amp; &lt; &gt; &quot; &#x27;. Wer alle fünf immer maskiert, geht auf Nummer sicher, so machen es auch Template-Engines. Die HTML-Spezifikation verlangt weniger: Im Text müssen nur ein < und ein mehrdeutiges & maskiert werden, in einem Attributwert in Anführungszeichen nur das umschließende Anführungszeichen und ein mehrdeutiges &; ein bloßes > ist in beiden Fällen erlaubt. Die übrigen Hunderte sind weitgehend ein Erbe der Zeit vor durchgängigem UTF-8: Heute lassen sich © und der Gedankenstrich direkt tippen. Eine Tabelle lohnt sich trotzdem, weil fremde Templates, CMS-Felder und alter Bestandscode weiter voll davon sind. Lesen können und schreiben müssen sind zwei verschiedene Dinge."
     }
   ],
   "related": [
