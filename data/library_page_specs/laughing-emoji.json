@@ -1,14 +1,14 @@
 {
   "slug": "laughing-emoji",
-  "title": "Laughing Emoji & Kaomoji: Copy & Paste 😂 LOL Combos",
-  "meta_description": "Grab laughing emoji 😂 🤣 💀, LOL kaomoji like (≧▽≦), and ready-made meme reaction combos for comments and group chats. Click any emoji to copy it instantly.",
+  "title": "Laughing Emoji: Copy & Paste 😂 LOL Faces, XD Emoticons & Combos",
+  "meta_description": "Grab laughing emoji 😂 🤣 💀, typed XD and :'D emoticons, and ready-made meme reaction combos for comments and group chats. Click any emoji to copy it instantly.",
   "canonical": "https://ultratextgen.com/library/laughing-emoji/",
-  "breadcrumb": "Laughing Emoji & Kaomoji",
-  "hero_h1": "Laughing Emoji & Kaomoji",
-  "hero_tagline": "From 😂 tears of joy to 💀 dead-from-laughing memes and (≧▽≦) kaomoji: every way to laugh in text. Click any symbol to copy it instantly.",
-  "intro": "The laughing emoji 😂 has topped most-used-emoji lists for a decade, while 💀 and 😭 have become its meme-era replacements for \"I'm dead.\" This page gathers every laughing emoji variant, the skull and pointing reactions Gen Z actually uses, playful giggle and smirk faces, and Japanese laughing kaomoji: plus one-click LOL combo sets for comments, replies, and group chats.",
+  "breadcrumb": "Laughing Emoji",
+  "hero_h1": "Laughing Emoji",
+  "hero_tagline": "From 😂 tears of joy to 💀 dead-from-laughing memes and a typed XD: every way to laugh in text. Click any symbol to copy it instantly.",
+  "intro": "The laughing emoji 😂 has topped most-used-emoji lists for a decade, while 💀 and 😭 have become its meme-era replacements for \"I'm dead.\" This page gathers every laughing emoji variant, the skull and pointing reactions Gen Z actually uses, playful giggle and smirk faces, typed XD and :'D emoticons, a sample of Japanese laughing kaomoji, and one-click LOL combo sets for comments, replies, and group chats.",
   "date_published": "2026-06-12",
-  "date_modified": "2026-06-12",
+  "date_modified": "2026-10-09",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -68,27 +68,31 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticons",
+      "h2": "Laughing Text Emoticons",
+      "intro": "XD squeezes the eyes shut mid-laugh and :'D adds tears of laughter. Both work anywhere you can type, from game chat to a plain SMS.",
+      "symbols": [
+        { "char": "XD", "label": "Laughing XD Emoticon" },
+        { "char": "xD", "label": "Lowercase XD Emoticon" },
+        { "char": ":'D", "label": "Tears of Laughter Emoticon" },
+        { "char": "X'D", "label": "Crying Laughing Emoticon" },
+        { "char": ":-D", "label": "Big Laugh With Nose Emoticon" },
+        { "char": "=D", "label": "Wide Grin Laugh Emoticon" }
+      ]
+    },
+    {
       "id": "laughing-kaomoji",
       "label": "Kaomoji",
       "h2": "Laughing Kaomoji & Text Faces",
-      "intro": "Japanese-style text faces beaming, cackling, and waving their arms with joy.",
+      "intro": "Four Japanese text faces caught mid-laugh, arms up and eyes squeezed shut.",
       "symbols": [
         { "char": "(≧▽≦)", "label": "Squinting Laugh Kaomoji" },
         { "char": "ヽ(´▽`)/", "label": "Arms-Up Laughing Kaomoji" },
-        { "char": "(´∀｀)", "label": "Easy Grin Kaomoji" },
-        { "char": "（＾ｖ＾）", "label": "Cheeky Smile Kaomoji" },
-        { "char": "(＾ω＾)", "label": "Happy Chuckle Kaomoji" },
         { "char": "(≧∇≦)/", "label": "Waving Laugh Kaomoji" },
-        { "char": "ヾ(≧▽≦*)o", "label": "Uncontrollable Laugh Kaomoji" },
-        { "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆", "label": "Sparkling Laugh Kaomoji" },
-        { "char": "(¬‿¬)", "label": "Sly Grin Kaomoji" },
-        { "char": "(＾▽＾)", "label": "Wide Smile Kaomoji" },
-        { "char": "( ˘ ³˘)", "label": "Content Kaomoji" },
-        { "char": "ヽ(♡‿♡)ノ", "label": "Delighted Kaomoji" },
-        { "char": "(ﾉ≧∀≦)ﾉ", "label": "Exuberant Laugh Kaomoji" },
-        { "char": "XD", "label": "Classic XD Emoticon" },
-        { "char": "(*≧ω≦*)", "label": "Giggling Kaomoji" }
-      ]
+        { "char": "ヾ(≧▽≦*)o", "label": "Uncontrollable Laugh Kaomoji" }
+      ],
+      "more_link": { "href": "/library/laughing-kaomoji/", "text": "See every laughing kaomoji" }
     }
   ],
   "collection_section": {
@@ -178,6 +182,11 @@
     }
   ],
   "related": [
+    {
+      "href": "/library/laughing-kaomoji/",
+      "title": "Laughing Kaomoji",
+      "desc": "Copy and paste laughing kaomoji: giggling and cackling Japanese text faces."
+    },
     {
       "href": "/library/crying-emoji/",
       "title": "Crying Emoji & Kaomoji",

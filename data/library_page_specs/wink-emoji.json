@@ -1,14 +1,14 @@
 {
   "slug": "wink-emoji",
-  "title": "Wink Emoji & Kaomoji: Copy & Paste 😉😜 Playful Combos",
-  "meta_description": "Wink emoji 😉 😜 🤪, playful and teasing combo sets, plus wink kaomoji like (^_-) for flirty replies, chats, and comments.",
+  "title": "Wink Emoji: Copy & Paste 😉😜 Winks, Emoticons & Playful Combos",
+  "meta_description": "Wink emoji 😉 😜 🤪, typed ;) wink emoticons, and playful, teasing combo sets for flirty replies, chats, and comments.",
   "canonical": "https://ultratextgen.com/library/wink-emoji/",
-  "breadcrumb": "Wink Emoji & Kaomoji",
-  "hero_h1": "Wink Emoji & Kaomoji",
-  "hero_tagline": "The 😉 winking face, tongue-out zany grins, sly smirks, and cheeky wink kaomoji: every shade of playful and just-kidding. Click any symbol to copy it instantly.",
-  "intro": "The wink emoji 😉 is the internet's nudge: it turns a flat line into a joke, softens a tease, and adds flirty subtext without a single extra word. This page gathers the whole playful range: the classic winking face and its kissy cousins, the tongue-out 😜 🤪 😝 zany crew, sly smirks and hand-over-mouth giggles, and the wink kaomoji like (^_-) and (^_~) that paste anywhere plain text works. Grab a single face, or copy a ready-made combo set for flirty replies, group chats, and comments.",
+  "breadcrumb": "Wink Emoji",
+  "hero_h1": "Wink Emoji",
+  "hero_tagline": "The 😉 winking face, tongue-out zany grins, sly smirks, and the typed ;) emoticon: every shade of playful and just-kidding. Click any symbol to copy it instantly.",
+  "intro": "The wink emoji 😉 is the internet's nudge: it turns a flat line into a joke, softens a tease, and adds flirty subtext without a single extra word. This page gathers the whole playful range: the classic winking face and its kissy cousins, the tongue-out 😜 🤪 😝 zany crew, sly smirks and hand-over-mouth giggles, the typed ;) emoticon that started it all, and wink kaomoji like (^_-) and (^_~) that paste anywhere plain text works. Grab a single face, or copy a ready-made combo set for flirty replies, group chats, and comments.",
   "date_published": "2026-07-13",
-  "date_modified": "2026-07-13",
+  "date_modified": "2026-10-09",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -51,20 +51,31 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticons",
+      "h2": "Wink Text Emoticons",
+      "intro": "The semicolon wink has been around almost as long as the smiley itself, and it still softens a joke in plain text. Add a P for a cheeky tongue.",
+      "symbols": [
+        { "char": ";)", "label": "Wink Emoticon" },
+        { "char": ";-)", "label": "Wink With Nose Emoticon" },
+        { "char": ";D", "label": "Winking Grin Emoticon" },
+        { "char": ";P", "label": "Wink With Tongue Emoticon" },
+        { "char": ";-P", "label": "Cheeky Tongue With Nose Emoticon" },
+        { "char": ";]", "label": "Sly Wink Emoticon" }
+      ]
+    },
+    {
       "id": "wink-kaomoji",
       "label": "Kaomoji",
       "h2": "Wink Kaomoji & Text Faces",
-      "intro": "Japanese-style text faces that wink, grin, and tease in plain text.",
+      "intro": "Four Japanese-style winks, one with a little sparkle on the side.",
       "symbols": [
         { "char": "(^_-)", "label": "Classic Wink Kaomoji" },
         { "char": "(^_~)", "label": "Winking Smile Kaomoji" },
         { "char": "(^_-)☆", "label": "Sparkle Wink Kaomoji" },
-        { "char": "(･ω<)", "label": "Cheeky Wink Kaomoji" },
-        { "char": "(>ω^)", "label": "Sly Wink Kaomoji" },
-        { "char": ";)", "label": "Winking Smiley Kaomoji" },
-        { "char": ";-)", "label": "Classic Winking Emoticon" },
-        { "char": "(￣ω￣)", "label": "Playful Smirk Kaomoji" }
-      ]
+        { "char": "(･ω<)", "label": "Cheeky Wink Kaomoji" }
+      ],
+      "more_link": { "href": "/library/wink-kaomoji/", "text": "See every wink kaomoji" }
     }
   ],
   "collection_section": {
@@ -117,6 +128,11 @@
     }
   ],
   "related": [
+    {
+      "href": "/library/wink-kaomoji/",
+      "title": "Wink Kaomoji",
+      "desc": "Copy and paste wink kaomoji: playful, cheeky Japanese text faces with one eye closed."
+    },
     {
       "href": "/library/laughing-emoji/",
       "title": "Laughing Emoji & Kaomoji",
