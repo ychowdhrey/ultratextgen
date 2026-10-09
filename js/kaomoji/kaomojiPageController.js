@@ -120,6 +120,49 @@
   const DEFAULT_SEL = { brackets: "round", eyes: "happy", mouths: "omega", cheeks: "none", arms: "none", decorations: "none" };
   /* @kaomoji-markup:end */
 
+  /* ---- generator-step telemetry -------------------------------------------
+     One kaomoji_generator_step row per deliberate action, so the funnel from
+     "opened the tool" to "copied a face" can be read. Pure, so header.test.js
+     slices this block out and asserts what leaves the page.
+
+     kaomoji_step is a short enum. kaomoji_value is a catalogue id and only for
+     the three steps that pick one: a mood id, a preset id, a part category id.
+     NEVER the face. Visitors paste and type faces (and sometimes more), so the
+     value of every other step is cleared, and an id that is not made of id
+     characters is cleared too, so a typed string cannot get through by accident.
+     Both keys are always present; undefined clears a key GTM would otherwise
+     carry over from the previous row. */
+  /* @kaomoji-step:begin */
+  const STEPS_WITH_VALUE = { mood: 1, preset: 1, part: 1 };
+  const STEPS_WITHOUT_VALUE = { surprise: 1, reset: 1, recent: 1, paste_edit: 1, url_load: 1 };
+
+  function presetId(preset, index) {
+    const slug = String((preset && preset.label) || "").toLowerCase()
+      .replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
+    return slug || "preset_" + index;
+  }
+
+  function stepPayload(step, value) {
+    const known = Object.prototype.hasOwnProperty.call(STEPS_WITH_VALUE, step) ||
+      Object.prototype.hasOwnProperty.call(STEPS_WITHOUT_VALUE, step);
+    if (!known) return null;
+    const keep = Object.prototype.hasOwnProperty.call(STEPS_WITH_VALUE, step) &&
+      typeof value === "string" && /^[a-z0-9_-]{1,40}$/i.test(value);
+    return {
+      event: "kaomoji_generator_step",
+      kaomoji_step: step,
+      kaomoji_value: keep ? value : undefined
+    };
+  }
+  /* @kaomoji-step:end */
+
+  function trackStep(step, value) {
+    const payload = stepPayload(step, value);
+    if (!payload) return;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(payload);
+  }
+
   /* Current selection (part ids per category), active mood, and any freeform
      override the visitor typed/pasted into the face field. */
   var sel = Object.assign({}, DEFAULT_SEL);
@@ -159,6 +202,7 @@
         freeform = face;
         render();
         syncUrl(face);
+        trackStep("recent");
       });
       refs.recent.appendChild(b);
     });
@@ -180,16 +224,49 @@
   }
 
   /* ---- platform-compatibility hint -------------------------------------- */
-  /* Stacked combining marks (Lenny brows, blush lines, accented eyes) are the
-     glyphs most likely to break on older iOS / some apps. */
-  var RISKY = /[̀-ͯ҃-҉᪰-᫿᷀-᷿⃐-⃿︠-︯]/;
+  /* Three different ways a face can arrive changed, each named on the page's
+     FAQ ("Will my kaomoji work everywhere?"): stacked combining marks that
+     shift on older iOS, characters from scripts a device may have no font for
+     (drawn as a box), and characters Discord and Reddit read as formatting. */
+  const RISKY = /[̀-ͯ҃-҉᪰-᫿᷀-᷿⃐-⃿︠-︯]/;
+  const SCRIPTS = [
+    ["Arabic", /[\u0600-\u06FF]/],
+    ["Thai", /[\u0E00-\u0E7F]/],
+    ["Gujarati", /[\u0A80-\u0AFF]/],
+    ["Kannada", /[\u0C80-\u0CFF]/],
+    ["Tibetan", /[\u0F00-\u0FFF]/],
+    ["Canadian syllabics", /[\u1400-\u167F\u18B0-\u18FF]/],
+    ["Cherokee", /[\u13A0-\u13FF]/],
+    ["Yi", /[\uA000-\uA4CF]/]
+  ];
+  /* Underscores and asterisks italicise, a backslash escapes, a leading > quotes. */
+  const MARKDOWN = /[_*\\]|^>/;
+  function scriptsIn(face) {
+    const found = [];
+    for (let i = 0; i < SCRIPTS.length; i++) {
+      if (SCRIPTS[i][1].test(face)) found.push(SCRIPTS[i][0]);
+    }
+    return found;
+  }
   function updateHint(face) {
     if (!refs.hint) return;
+    const notes = [];
     if (RISKY.test(face)) {
-      refs.hint.textContent = t("hintRisky", "Uses stacked marks — may not show on every device (especially older iOS). Test before posting.");
+      notes.push(t("hintMarks", "Stacked marks can shift on older iOS or in some apps."));
+    }
+    const scripts = scriptsIn(face);
+    if (scripts.length) {
+      notes.push(t("hintScript", "Uses letters from {scripts}; a device without a font for them shows a box.")
+        .replace("{scripts}", scripts.join(", ")));
+    }
+    if (MARKDOWN.test(face)) {
+      notes.push(t("hintMarkdown", "Discord and Reddit read _ * \\ and a leading > as formatting; wrapping the face in backticks keeps every character."));
+    }
+    if (notes.length) {
+      refs.hint.textContent = notes.join(" ");
       refs.hint.classList.add("is-risky");
     } else {
-      refs.hint.textContent = t("hintSafe", "Built from widely supported characters — works on most platforms.");
+      refs.hint.textContent = t("hintSafe", "No stacked marks, rare-script letters or formatting characters in this face.");
       refs.hint.classList.remove("is-risky");
     }
   }
@@ -295,7 +372,9 @@
     var face = currentFace();
     if (!face) return;
     if (window.UltraTextGen && window.UltraTextGen.copyText) {
-      window.UltraTextGen.copyText(face, btn, face);
+      // Its own method: a generator copy is not a library-tile copy, and the
+      // face may be text the visitor typed, so copy_item stays empty for it.
+      window.UltraTextGen.copyText(face, btn, face, "kaomoji_generator");
     }
     syncUrl(face);
     pushRecent(face);
@@ -308,7 +387,8 @@
     if (!face) return;
     syncUrl(face);
     if (window.UltraTextGen && window.UltraTextGen.copyText) {
-      window.UltraTextGen.copyText(window.location.href, btn, t("linkCopied", "link"));
+      // The payload is the page URL, never catalogue content.
+      window.UltraTextGen.copyText(window.location.href, btn, t("linkCopied", "link"), "kaomoji_link");
     }
     pushRecent(face);
   }
@@ -327,7 +407,10 @@
     fill(refs.moods, ".kao-mood", moodsHtml());
     refs.moods.addEventListener("click", function (ev) {
       const chip = ev.target.closest(".kao-mood");
-      if (chip) setMood(chip.getAttribute("data-mood"));
+      if (chip) {
+        setMood(chip.getAttribute("data-mood"));
+        trackStep("mood", chip.getAttribute("data-mood"));
+      }
     });
   }
 
@@ -335,7 +418,10 @@
     fill(refs.parts, ".kao-part-opt", partsHtml());
     refs.parts.addEventListener("click", function (ev) {
       const opt = ev.target.closest(".kao-part-opt");
-      if (opt) selectPart(opt.getAttribute("data-cat"), opt.getAttribute("data-id"));
+      if (opt) {
+        selectPart(opt.getAttribute("data-cat"), opt.getAttribute("data-id"));
+        trackStep("part", opt.getAttribute("data-cat"));
+      }
     });
   }
 
@@ -344,8 +430,12 @@
     fill(refs.presets, ".kao-preset", presetsHtml());
     refs.presets.addEventListener("click", function (ev) {
       const btn = ev.target.closest(".kao-preset");
-      const preset = btn && DATA.PRESETS[Number(btn.getAttribute("data-preset"))];
-      if (preset) applyPreset(preset);
+      const index = btn ? Number(btn.getAttribute("data-preset")) : -1;
+      const preset = btn && DATA.PRESETS[index];
+      if (preset) {
+        applyPreset(preset);
+        trackStep("preset", presetId(preset, index));
+      }
     });
   }
 
@@ -384,7 +474,10 @@
     if (copyLinkBtn) copyLinkBtn.addEventListener("click", function () { copyLink(copyLinkBtn); });
 
     var surprise = $("#kaomojiSurpriseBtn");
-    if (surprise) surprise.addEventListener("click", function () { randomFace(activeMood); });
+    if (surprise) surprise.addEventListener("click", function () {
+      randomFace(activeMood);
+      trackStep("surprise");
+    });
 
     var clear = $("#kaomojiClearBtn");
     if (clear) clear.addEventListener("click", function () {
@@ -394,10 +487,16 @@
       freeform = null;
       render();
       syncUrl("");
+      trackStep("reset");
     });
 
     if (refs.faceInput) {
+      // One paste_edit per settled edit, not per keystroke. The row says an
+      // edit happened; it never carries what was typed.
+      let editTimer = null;
       refs.faceInput.addEventListener("input", function () {
+        clearTimeout(editTimer);
+        editTimer = setTimeout(function () { trackStep("paste_edit"); }, 800);
         freeform = refs.faceInput.value;
         if (refs.preview) refs.preview.textContent = freeform || " ";
         updateHint(freeform);
@@ -406,6 +505,10 @@
         for (var i = 0; i < opts.length; i++) opts[i].classList.remove("is-selected");
       });
     }
+
+    // A face arriving by ?q= ("edit in generator", a shared link) is a start
+    // of its own kind; recorded once, without the face.
+    if (freeform) trackStep("url_load");
 
     // A linked mood picks a face in that mood; if ?q= already named a face,
     // keep it and only switch the mood filter.
