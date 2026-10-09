@@ -1,10 +1,10 @@
 {
   "slug": "emoji-ketawa",
   "title": "Emoji Ketawa 😂 🤣 💀 — Salin & Tempel Kombinasi Ngakak | UltraTextGen",
-  "meta_description": "Emoji ketawa 😂 🤣 💀, kaomoji ngakak seperti (≧▽≦), dan kombinasi reaksi meme siap pakai buat komentar dan grup chat. Klik emojinya, langsung kesalin.",
+  "meta_description": "Emoji ketawa 😂 🤣 💀, emotikon ngakak kayak XD, dan kombinasi reaksi meme siap pakai buat komentar dan grup chat. Klik emojinya, langsung kesalin.",
   "breadcrumb": "Emoji Ketawa",
-  "hero_h1": "Emoji Ketawa & Kaomoji",
-  "hero_tagline": "Dari 😂 ketawa sampai nangis, 💀 mati ketawa ala meme, sampai kaomoji (≧▽≦) — segala cara ketawa lewat teks. Klik simbolnya, langsung kesalin.",
+  "hero_h1": "Emoji Ketawa",
+  "hero_tagline": "Dari 😂 ketawa sampai nangis, 💀 mati ketawa ala meme, sampai XD yang diketik: segala cara ketawa lewat teks. Klik simbolnya, langsung kesalin.",
   "intro": "Emoji ketawa 😂 sudah satu dekade nangkring di daftar emoji paling banyak dipakai sedunia, sementara 💀 dan 😭 jadi penggantinya di era meme buat bilang \"gua mati\". Halaman ini ngumpulin semua varian emoji ketawa, reaksi tengkorak dan jari nunjuk yang beneran dipakai anak sekarang, muka cengengesan dan senyum sinis, plus kaomoji ketawa ala Jepang — lengkap sama kombinasi ngakak sekali klik buat komentar, balasan, dan grup chat.",
   "copy_pattern": "collection",
   "sections": [
@@ -161,10 +161,42 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emotikon",
+      "h2": "Emotikon Teks Ketawa",
+      "intro": "XD itu mata merem pas lagi ngakak, :'D nambahin air mata ketawa. Dua-duanya jalan di mana pun kamu bisa ngetik, dari chat game sampai SMS.",
+      "symbols": [
+        {
+          "char": "XD",
+          "label": "XD Ngakak"
+        },
+        {
+          "char": "xD",
+          "label": "xD Huruf Kecil"
+        },
+        {
+          "char": ":'D",
+          "label": "Ketawa Sampai Nangis"
+        },
+        {
+          "char": "X'D",
+          "label": "Nangis Ketawa"
+        },
+        {
+          "char": ":-D",
+          "label": "Ketawa Pakai Hidung"
+        },
+        {
+          "char": "=D",
+          "label": "Nyengir Lebar"
+        }
+      ]
+    },
+    {
       "id": "laughing-kaomoji",
       "label": "Kaomoji",
       "h2": "Kaomoji Ketawa & Wajah Teks",
-      "intro": "Wajah teks ala Jepang yang berseri, terbahak, dan melambaikan tangan.",
+      "intro": "Empat wajah teks ala Jepang yang lagi ketawa, tangan ke atas dan mata merem.",
       "symbols": [
         {
           "char": "(≧▽≦)",
@@ -175,58 +207,18 @@
           "label": "Kaomoji Ketawa Angkat Tangan"
         },
         {
-          "char": "(´∀｀)",
-          "label": "Kaomoji Nyengir Santai"
-        },
-        {
-          "char": "（＾ｖ＾）",
-          "label": "Kaomoji Senyum Usil"
-        },
-        {
-          "char": "(＾ω＾)",
-          "label": "Kaomoji Cekikikan"
-        },
-        {
           "char": "(≧∇≦)/",
           "label": "Kaomoji Ketawa Sambil Melambai"
         },
         {
           "char": "ヾ(≧▽≦*)o",
           "label": "Kaomoji Ketawa Nggak Tertahan"
-        },
-        {
-          "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆",
-          "label": "Kaomoji Ketawa Berkilau"
-        },
-        {
-          "char": "(¬‿¬)",
-          "label": "Kaomoji Nyengir Licik"
-        },
-        {
-          "char": "(＾▽＾)",
-          "label": "Kaomoji Senyum Lebar"
-        },
-        {
-          "char": "( ˘ ³˘)",
-          "label": "Kaomoji Puas"
-        },
-        {
-          "char": "ヽ(♡‿♡)ノ",
-          "label": "Kaomoji Terpesona"
-        },
-        {
-          "char": "(ﾉ≧∀≦)ﾉ",
-          "label": "Kaomoji Tertawa Riang"
-        },
-        {
-          "char": "XD",
-          "label": "Emotikon XD Klasik"
-        },
-        {
-          "char": "(*≧ω≦*)",
-          "label": "Kaomoji Cekikikan"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/id/library/kaomoji/",
+        "text": "Lihat semua kaomoji"
+      }
     }
   ],
   "collection_section": {
@@ -374,7 +366,7 @@
   ],
   "canonical": "https://ultratextgen.com/id/library/emoji-ketawa/",
   "date_published": "2026-08-08",
-  "date_modified": "2026-08-08",
+  "date_modified": "2026-10-09",
   "lang": "id",
   "page_type": "library",
   "faq_label": "FAQ",

@@ -1,14 +1,14 @@
 {
   "slug": "shocked-emoji",
   "title": "Shocked Emoji 😱 Geschokte Emoji's Kopiëren en Plakken | UltraTextGen",
-  "meta_description": "Shocked emoji 😱 😲 🤯, verbaasde kaomoji als (⊙_⊙) en kant-en-klare schrikcombo's voor reacties en replies. Klik om te kopiëren.",
+  "meta_description": "Shocked emoji 😱 😲 🤯, getypte verbaasde emoticons als :O en kant-en-klare schrikcombo's voor reacties en replies. Klik om te kopiëren.",
   "canonical": "https://ultratextgen.com/nl/library/shocked-emoji/",
-  "breadcrumb": "Shocked Emoji's & Kaomoji",
-  "hero_h1": "Shocked Emoji's & Kaomoji",
-  "hero_tagline": "Gillen, happen naar adem, mond open van verbazing en wijdogige (⊙_⊙) kaomoji: elke gradatie van schrik. Klik op een symbool om het te kopiëren.",
+  "breadcrumb": "Shocked Emoji's",
+  "hero_h1": "Shocked Emoji's",
+  "hero_tagline": "Gillen, happen naar adem, mond open van verbazing en getypte :O-emoticons: elke gradatie van schrik. Klik op een symbool om het te kopiëren.",
   "intro": "Als iets echt niet te geloven is, doet de shocked emoji het werk: 😱 gilt, 😲 hapt naar adem en bij 🤯 ontploft het hoofd volledig. Deze pagina verzamelt alle geschokte en verbaasde gezichten, de uitroeptekens die een schrikreactie extra kracht geven, nerveuze en angstige uitdrukkingen en wijdogige kaomoji zoals Σ(ﾟДﾟ), met combo's van één klik voor plotwendingen, roddelgroepjes en jumpscares.",
   "date_published": "2026-08-16",
-  "date_modified": "2026-08-16",
+  "date_modified": "2026-10-09",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -124,10 +124,42 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Tekst-emoticons",
+      "h2": "Geschokte tekst-emoticons",
+      "intro": "Een ronde O voor een openvallende mond: de getypte verbazing van lang voor 😮. Met een neus, of een 8 als ogen, wordt de blik nog groter.",
+      "symbols": [
+        {
+          "char": ":O",
+          "label": "Verbaasd"
+        },
+        {
+          "char": ":-O",
+          "label": "Verbaasd met neus"
+        },
+        {
+          "char": ":o",
+          "label": "Klein oh"
+        },
+        {
+          "char": "=O",
+          "label": "Grote verbazing"
+        },
+        {
+          "char": "O_O",
+          "label": "Wijd opengesperde ogen"
+        },
+        {
+          "char": "8-O",
+          "label": "Uitpuilende ogen"
+        }
+      ]
+    },
+    {
       "id": "shocked-kaomoji",
       "label": "Tekstgezichten",
       "h2": "Geschokte kaomoji en tekstgezichten",
-      "intro": "Japanse tekstgezichten met grote ogen en open mond, bevroren van ongeloof.",
+      "intro": "Vier Japanse tekstgezichten, bevroren op het moment van de schrik.",
       "symbols": [
         {
           "char": "(⊙_⊙)",
@@ -138,34 +170,18 @@
           "label": "Kaomoji met plotselinge schrik"
         },
         {
-          "char": "Σ(°△°|||)",
-          "label": "Opgeschrikte kaomoji"
-        },
-        {
           "char": "w(°ｏ°)w",
           "label": "Kaomoji met handen omhoog"
-        },
-        {
-          "char": "(ﾟоﾟ)",
-          "label": "Kaomoji met open mond"
-        },
-        {
-          "char": "ヽ(ﾟДﾟ)ﾉ",
-          "label": "Paniekerige kaomoji"
-        },
-        {
-          "char": "(○o○)",
-          "label": "Kaomoji met ronde ogen"
-        },
-        {
-          "char": "☉_☉",
-          "label": "Bevroren blik-kaomoji"
         },
         {
           "char": "(((ﾟДﾟ;)))",
           "label": "Trillende schrik-kaomoji"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/nl/library/tekstgezichten-kaomoji/",
+        "text": "Alle kaomoji bekijken"
+      }
     }
   ],
   "collection_section": {

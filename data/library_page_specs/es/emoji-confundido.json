@@ -8,17 +8,26 @@
   "crumb_home": "Inicio",
   "library_url": "https://ultratextgen.com/es/library/",
   "date_published": "2026-08-12",
-  "date_modified": "2026-08-12",
+  "date_modified": "2026-10-09",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/confused-emoji/" },
-    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-confundido/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/confused-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/confused-emoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-confundido/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/confused-emoji/"
+    }
   ],
-  "title": "Emoji Confundido y Kaomoji: Copiar y Pegar 😕😖🫤 Combos de Confusión",
-  "meta_description": "Emoji confundido 😕 😖 🫤, combos de confusión y kaomoji como (・・?) para chats, comentarios y respuestas. Haz clic en cualquier símbolo para copiarlo.",
-  "breadcrumb": "Emoji Confundido y Kaomoji",
-  "hero_h1": "Emoji Confundido y Kaomoji",
-  "hero_tagline": "La cara confundida 😕, los gestos de agobio, los ojos en espiral por sobrecarga y kaomoji perdidos — todos los matices de «no entiendo nada». Haz clic en cualquier símbolo para copiarlo al instante.",
+  "title": "Emoji Confundido: Copiar y Pegar 😕😖🫤 Caras de Duda, Emoticonos y Combos",
+  "meta_description": "Emoji confundido 😕 😖 🫤, emoticonos clásicos como :S y o_O, y combos de confusión para chats, comentarios y respuestas. Haz clic en cualquier símbolo para copiarlo.",
+  "breadcrumb": "Emoji Confundido",
+  "hero_h1": "Emoji Confundido",
+  "hero_tagline": "La cara confundida 😕, los gestos de agobio, los ojos en espiral por sobrecarga y el o_O escrito a mano: todos los matices de «no entiendo nada». Haz clic en cualquier símbolo para copiarlo al instante.",
   "intro": "El emoji confundido 😕 es la cara que mandas cuando algo simplemente no te cuadra: ceño fruncido, boca torcida y una duda genuina. Es el reverso de la cara pensativa 🤔: no es un «déjame pensarlo» deliberado, sino un honesto «espera, ¿qué?». Esta página reúne todo el rango de la confusión: el gesto agobiado de 😖, la incomodidad de boca torcida de 🫤, los ojos en espiral de 😵‍💫 para cuando el cerebro ya no da más, y los signos de interrogación y cejas levantadas que agregas cuando nada tiene sentido. Cuando ningún emoji alcanza, los kaomoji clásicos de confusión como (・・?) y (@_@) se pegan donde sea que funcione el texto plano. Toma una sola cara o copia un combo ya armado para tus chats, comentarios y respuestas.",
   "sections": [
     {
@@ -63,19 +72,30 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticonos",
+      "h2": "Emoticonos Confundidos de Texto",
+      "intro": "Confusión tecleada desde la época de los chats: una boca torcida o un ojo más abierto que el otro. Se pegan como texto plano en cualquier app.",
+      "symbols": [
+        { "char": ":S", "label": "Cara confundida" },
+        { "char": ":/", "label": "Cara de duda" },
+        { "char": ":-/", "label": "Duda con nariz" },
+        { "char": "o_O", "label": "Mirada desconcertada" },
+        { "char": "O.o", "label": "Ojos desparejos" }
+      ]
+    },
+    {
       "id": "confused-kaomoji",
       "label": "Kaomoji",
       "h2": "Kaomoji de Confusión y Caritas de Texto",
-      "intro": "Caritas de texto al estilo japonés para el desconcierto puro: mareos, sudores incómodos y miradas en blanco.",
+      "intro": "Algunas caritas japonesas de desconcierto, de la cabeza ladeada a los ojos en espiral.",
       "symbols": [
         { "char": "(・・?)", "label": "Kaomoji de duda" },
         { "char": "(@_@)", "label": "Kaomoji de mareo" },
-        { "char": "(ーー;)", "label": "Kaomoji de sudor incómodo" },
         { "char": "(⊙_⊙)", "label": "Kaomoji de desconcierto con ojos abiertos" },
-        { "char": "(・_・;)", "label": "Kaomoji de inseguridad nerviosa" },
-        { "char": "(￣ヘ￣;)", "label": "Kaomoji de ceño de duda" },
-        { "char": "( ﾟдﾟ)", "label": "Kaomoji de mirada en blanco" }
-      ]
+        { "char": "(・_・;)", "label": "Kaomoji de inseguridad nerviosa" }
+      ],
+      "more_link": { "href": "/es/library/kaomoji/", "text": "Ver todos los kaomoji" }
     }
   ],
   "collections": [

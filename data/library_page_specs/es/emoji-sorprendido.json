@@ -8,17 +8,26 @@
   "crumb_home": "Inicio",
   "library_url": "https://ultratextgen.com/es/library/",
   "date_published": "2026-08-12",
-  "date_modified": "2026-08-12",
+  "date_modified": "2026-10-09",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/shocked-emoji/" },
-    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-sorprendido/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/shocked-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/shocked-emoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-sorprendido/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/shocked-emoji/"
+    }
   ],
-  "title": "Emoji Sorprendido y Kaomoji: Copiar y Pegar 😱 Combos de Asombro",
-  "meta_description": "Emoji sorprendido 😱 😲 🤯, kaomoji de asombro como (⊙_⊙) y combos de reacción para giros inesperados. Haz clic en cualquier símbolo para copiarlo.",
-  "breadcrumb": "Emoji Sorprendido y Kaomoji",
-  "hero_h1": "Emoji Sorprendido y Kaomoji",
-  "hero_tagline": "Gritos, jadeos, mandíbulas caídas y kaomoji de ojos enormes (⊙_⊙) — sorpresa en todos sus niveles. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "title": "Emoji Sorprendido: Copiar y Pegar 😱 Caras de Asombro, Emoticonos y Combos",
+  "meta_description": "Emoji sorprendido 😱 😲 🤯, emoticonos de asombro como :O y combos de reacción para giros inesperados. Haz clic en cualquier símbolo para copiarlo.",
+  "breadcrumb": "Emoji Sorprendido",
+  "hero_h1": "Emoji Sorprendido",
+  "hero_tagline": "Gritos, jadeos, mandíbulas caídas y el :O de siempre: sorpresa en todos sus niveles. Haz clic en cualquier símbolo para copiarlo al instante.",
   "intro": "Cuando algo es realmente increíble, el emoji sorprendido habla por ti: 😱 grita, 😲 se queda sin aire y 🤯 simplemente explota. Esta página reúne todas las caras de sorpresa y asombro, los signos de exclamación que le suben el volumen a un jadeo, las expresiones de nervios y susto para cuando la noticia incomoda, y kaomoji de ojos desorbitados como Σ(ﾟДﾟ) que se pegan donde sea que funcione el texto plano. Abajo también encontrarás combos de un clic pensados para giros de trama, hilos de chismes y reacciones de susto repentino.",
   "sections": [
     {
@@ -68,21 +77,31 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticonos",
+      "h2": "Emoticonos de Sorpresa de Texto",
+      "intro": "Una O redonda para la boca abierta: el jadeo tecleado que existía mucho antes que 😮. Agrégale nariz o cambia los ojos por un 8 para abrir más la mirada.",
+      "symbols": [
+        { "char": ":O", "label": "Sorprendido" },
+        { "char": ":-O", "label": "Sorprendido con nariz" },
+        { "char": ":o", "label": "Pequeño asombro" },
+        { "char": "=O", "label": "Asombro grande" },
+        { "char": "O_O", "label": "Mirada de ojos abiertos" },
+        { "char": "8-O", "label": "Ojos desorbitados" }
+      ]
+    },
+    {
       "id": "shocked-kaomoji",
       "label": "Kaomoji",
       "h2": "Kaomoji de Sorpresa y Caritas de Texto",
-      "intro": "Caritas de texto al estilo japonés con los ojos desorbitados, congeladas de incredulidad.",
+      "intro": "Cuatro caritas japonesas con los ojos desorbitados, congeladas en plena sorpresa.",
       "symbols": [
         { "char": "(⊙_⊙)", "label": "Kaomoji de ojos muy abiertos" },
         { "char": "Σ(ﾟДﾟ)", "label": "Kaomoji de sobresalto repentino" },
-        { "char": "Σ(°△°|||)", "label": "Kaomoji de susto de golpe" },
         { "char": "w(°ｏ°)w", "label": "Kaomoji de asombro con las manos arriba" },
-        { "char": "(ﾟоﾟ)", "label": "Kaomoji de mirada boquiabierta" },
-        { "char": "ヽ(ﾟДﾟ)ﾉ", "label": "Kaomoji de pánico agitado" },
-        { "char": "(○o○)", "label": "Kaomoji de sorpresa con ojos redondos" },
-        { "char": "☉_☉", "label": "Kaomoji de mirada congelada" },
         { "char": "(((ﾟДﾟ;)))", "label": "Kaomoji de temblor por el susto" }
-      ]
+      ],
+      "more_link": { "href": "/es/library/kaomoji-sorprendido/", "text": "Ver todos los kaomoji de sorpresa" }
     }
   ],
   "collections": [

@@ -8,7 +8,7 @@
   "crumb_home": "Inicio",
   "library_url": "https://ultratextgen.com/es/library/",
   "date_published": "2026-08-12",
-  "date_modified": "2026-08-12",
+  "date_modified": "2026-10-09",
   "hreflang": [
     {
       "lang": "en",
@@ -23,11 +23,11 @@
       "href": "https://ultratextgen.com/library/kiss-emoji/"
     }
   ],
-  "title": "Emoji Beso y Kaomoji: Copiar y Pegar 😘💋 Combos de Besos",
-  "meta_description": "Emoji beso 😘 💋 👄, caras que besan, marcas de labial y kaomoji coquetos como ( ˘ ³˘) para mensajes y comentarios. Haz clic para copiarlos al instante.",
-  "breadcrumb": "Emoji Beso y Kaomoji",
-  "hero_h1": "Emoji Beso y Kaomoji",
-  "hero_tagline": "Besos volados, caras que besan, marcas de labial y kaomoji con los labios fruncidos: todas las formas de mandar un beso por texto. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "title": "Emoji Beso: Copiar y Pegar 😘💋 Caras de Beso, Emoticonos y Combos",
+  "meta_description": "Emoji beso 😘 💋 👄, caras que besan, marcas de labial y emoticonos de beso como :* para mensajes y comentarios. Haz clic para copiarlos al instante.",
+  "breadcrumb": "Emoji Beso",
+  "hero_h1": "Emoji Beso",
+  "hero_tagline": "Besos volados, caras que besan, marcas de labial y el clásico :* escrito: todas las formas de mandar un beso por texto. Haz clic en cualquier símbolo para copiarlo al instante.",
   "intro": "El emoji beso viene en toda una gama coqueta: la cara 😘 que manda un beso volado con su corazoncito, la más suave 😗 que solo besa, y la 💋 marca de labial que dejas al final de un mensaje. Esta página reúne todas las caras que besan, las marcas de beso y las 👄 bocas, los emojis de parejas para los momentos románticos, y los kaomoji clásicos de beso como ( ˘ ³˘), que se pegan donde funcione el texto simple. Toma un solo símbolo o copia un combo ya armado para mensajes coquetos, comentarios y mensajes directos.",
   "sections": [
     {
@@ -111,10 +111,38 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticonos",
+      "h2": "Emoticonos de Beso de Texto",
+      "intro": "El asterisco hace de labios fruncidos: es la forma tecleada más antigua de despedirse con un beso. Cambia los dos puntos por un punto y coma y el beso sale con guiño.",
+      "symbols": [
+        {
+          "char": ":*",
+          "label": "Beso"
+        },
+        {
+          "char": ":-*",
+          "label": "Beso con nariz"
+        },
+        {
+          "char": ";*",
+          "label": "Guiño y beso"
+        },
+        {
+          "char": ";-*",
+          "label": "Guiño y beso con nariz"
+        },
+        {
+          "char": "=*",
+          "label": "Beso suave"
+        }
+      ]
+    },
+    {
       "id": "kiss-kaomoji",
       "label": "Kaomoji",
       "h2": "Kaomoji y Caritas de Texto de Besos",
-      "intro": "Caritas de texto al estilo japonés que fruncen los labios, dan besitos y mandan besos volados en texto simple.",
+      "intro": "Cuatro caritas japonesas con los labios fruncidos, una de ellas con corazón incluido.",
       "symbols": [
         {
           "char": "( ˘ ³˘)",
@@ -129,26 +157,14 @@
           "label": "Kaomoji de Beso con Corazón"
         },
         {
-          "char": "(*˘︶˘*).｡.:*",
-          "label": "Kaomoji de Beso Dulce y Feliz"
-        },
-        {
           "char": "(っ˘з˘)っ",
           "label": "Kaomoji de Besito"
-        },
-        {
-          "char": "( ᵔ ³ᵔ )",
-          "label": "Kaomoji de Beso con Puchero"
-        },
-        {
-          "char": "(˘ ³˘)♡",
-          "label": "Kaomoji de Beso Amoroso"
-        },
-        {
-          "char": "( ˘ ³˘)ﾉ",
-          "label": "Kaomoji Mandando un Beso"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/es/library/kaomoji/",
+        "text": "Ver todos los kaomoji"
+      }
     }
   ],
   "collections": [

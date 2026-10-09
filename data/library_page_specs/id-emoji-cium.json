@@ -1,10 +1,10 @@
 {
   "slug": "emoji-cium",
   "title": "Emoji Cium 😘 💋 — Salin & Tempel Kombinasi Ciuman | UltraTextGen",
-  "meta_description": "Emoji cium 😘 💋 👄, wajah mencium, bekas lipstik, dan kaomoji genit seperti ( ˘ ³˘) buat chat, komentar, dan DM. Klik simbolnya, langsung kesalin.",
+  "meta_description": "Emoji cium 😘 💋 👄, wajah mencium, bekas lipstik, dan emotikon cium kayak :* buat chat, komentar, dan DM. Klik simbolnya, langsung kesalin.",
   "breadcrumb": "Emoji Cium",
-  "hero_h1": "Emoji Cium & Kaomoji",
-  "hero_tagline": "Kecupan jarak jauh, wajah mencium, bekas lipstik, dan kaomoji monyong — segala cara ngirim ciuman lewat teks. Klik simbolnya, langsung kesalin.",
+  "hero_h1": "Emoji Cium",
+  "hero_tagline": "Kecupan jarak jauh, wajah mencium, bekas lipstik, dan emotikon :* yang diketik: segala cara ngirim ciuman lewat teks. Klik simbolnya, langsung kesalin.",
   "intro": "Emoji cium datang dalam satu rentang genit: 😘 wajah yang meniupkan ciuman berbentuk hati kecil, 😗 wajah mencium yang lebih kalem, dan 💋 bekas lipstik yang kamu tinggalkan di akhir pesan. Halaman ini ngumpulin semua wajah mencium, bekas ciuman dan emoji bibir 👄, emoji pasangan buat pasangan romantis, plus kaomoji ciuman klasik kayak ( ˘ ³˘) yang nempel di mana pun teks polos masuk. Ambil satu simbol, atau salin kombinasi jadi buat chat, komentar, dan DM.",
   "copy_pattern": "collection",
   "sections": [
@@ -89,10 +89,38 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emotikon",
+      "h2": "Emotikon Teks Cium",
+      "intro": "Tanda bintang di sini jadi bibir yang monyong, cara paling lama buat nutup pesan pakai ciuman. Ganti titik dua jadi titik koma, ciumannya jadi genit.",
+      "symbols": [
+        {
+          "char": ":*",
+          "label": "Emotikon Cium"
+        },
+        {
+          "char": ":-*",
+          "label": "Cium Pakai Hidung"
+        },
+        {
+          "char": ";*",
+          "label": "Kedip Sambil Cium"
+        },
+        {
+          "char": ";-*",
+          "label": "Kedip Cium Pakai Hidung"
+        },
+        {
+          "char": "=*",
+          "label": "Cium Lembut"
+        }
+      ]
+    },
+    {
       "id": "kiss-kaomoji",
       "label": "Kaomoji",
       "h2": "Kaomoji Ciuman & Wajah Teks",
-      "intro": "Wajah teks ala Jepang yang monyong, mengecup, dan meniupkan ciuman pakai teks biasa.",
+      "intro": "Empat wajah teks ala Jepang yang lagi monyong, salah satunya bawa hati.",
       "symbols": [
         {
           "char": "( ˘ ³˘)",
@@ -107,26 +135,14 @@
           "label": "Kaomoji Cium Berhati"
         },
         {
-          "char": "(*˘︶˘*).｡.:*",
-          "label": "Kaomoji Cium Manis"
-        },
-        {
           "char": "(っ˘з˘)っ",
           "label": "Kaomoji Kecupan"
-        },
-        {
-          "char": "( ᵔ ³ᵔ )",
-          "label": "Kaomoji Cium Cemberut"
-        },
-        {
-          "char": "(˘ ³˘)♡",
-          "label": "Kaomoji Cium Sayang"
-        },
-        {
-          "char": "( ˘ ³˘)ﾉ",
-          "label": "Kaomoji Meniup Ciuman"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/id/library/kaomoji/",
+        "text": "Lihat semua kaomoji"
+      }
     }
   ],
   "collection_section": {
@@ -268,7 +284,7 @@
   ],
   "canonical": "https://ultratextgen.com/id/library/emoji-cium/",
   "date_published": "2026-08-08",
-  "date_modified": "2026-08-08",
+  "date_modified": "2026-10-09",
   "lang": "id",
   "page_type": "library",
   "faq_label": "FAQ",

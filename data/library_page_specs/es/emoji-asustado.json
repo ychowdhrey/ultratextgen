@@ -8,7 +8,7 @@
   "crumb_home": "Inicio",
   "library_url": "https://ultratextgen.com/es/library/",
   "date_published": "2026-08-12",
-  "date_modified": "2026-08-12",
+  "date_modified": "2026-10-09",
   "hreflang": [
     {
       "lang": "en",
@@ -23,11 +23,11 @@
       "href": "https://ultratextgen.com/library/scared-emoji/"
     }
   ],
-  "title": "Emoji Asustado y Kaomoji: Copiar y Pegar 😨😱 Combos de Miedo",
-  "meta_description": "Emoji asustado 😨 😱 😰, símbolos de fantasmas y arañas, y kaomoji de pánico como ((((；゜Д゜)))) para chats y comentarios. Haz clic para copiar.",
-  "breadcrumb": "Emoji Asustado y Kaomoji",
-  "hero_h1": "Emoji Asustado y Kaomoji",
-  "hero_tagline": "Caras de miedo, pánico a gritos, fantasmas y arañas de terror, y kaomoji temblorosos — susto real en todas sus intensidades. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "title": "Emoji Asustado: Copiar y Pegar 😨😱 Caras de Miedo, Emoticonos y Combos",
+  "meta_description": "Emoji asustado 😨 😱 😰, símbolos de fantasmas y arañas, y emoticonos de miedo como D: para chats y comentarios. Haz clic para copiar.",
+  "breadcrumb": "Emoji Asustado",
+  "hero_h1": "Emoji Asustado",
+  "hero_tagline": "Caras de miedo, pánico a gritos, fantasmas y arañas de terror, y el D: tecleado: susto real en todas sus intensidades. Haz clic en cualquier símbolo para copiarlo al instante.",
   "intro": "El emoji asustado abarca desde la cara de ojos muy abiertos 😨 hasta el terror absoluto de 😱 gritando de miedo — susto de verdad, no la sorpresa de un giro inesperado. Esta página reúne todas las caras de espanto y pánico, los emojis de sudor frío para esa angustia nerviosa de menor intensidad, los símbolos de fantasma, araña y murciélago que arman una escena de casa embrujada, y combos de un clic para chats, comentarios, publicaciones de terror y textos de Halloween. Cuando ningún emoji transmite el escalofrío exacto, los kaomoji de pánico como ((((；゜Д゜)))) se pegan en cualquier lugar donde funcione el texto plano.",
   "sections": [
     {
@@ -127,10 +127,38 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticonos",
+      "h2": "Emoticonos de Miedo de Texto",
+      "intro": "Leído de lado, D: es una boca abierta de horror. Estas caras de teclado siguen llegando cuando una app convierte los emoji en cuadritos.",
+      "symbols": [
+        {
+          "char": "D:",
+          "label": "Horrorizado"
+        },
+        {
+          "char": "D=",
+          "label": "Pavor"
+        },
+        {
+          "char": "DX",
+          "label": "Aterrado"
+        },
+        {
+          "char": "D8",
+          "label": "Horror con ojos enormes"
+        },
+        {
+          "char": ":-S",
+          "label": "Preocupado"
+        }
+      ]
+    },
+    {
       "id": "scared-kaomoji",
       "label": "Kaomoji",
       "h2": "Kaomoji de Miedo y Pánico",
-      "intro": "Los temblores, los sudores fríos y los gritos de las caritas de texto clásicas.",
+      "intro": "Cuatro caritas japonesas de pánico, con temblores y sudor frío incluidos.",
       "symbols": [
         {
           "char": "((((；゜Д゜))))",
@@ -141,26 +169,18 @@
           "label": "Kaomoji de susto repentino"
         },
         {
-          "char": "(ﾟдﾟ；)",
-          "label": "Kaomoji de espanto con sudor"
-        },
-        {
           "char": "(；ﾟДﾟ)",
           "label": "Kaomoji de pánico nervioso"
         },
         {
           "char": "ヽ(ﾟДﾟ)ﾉ",
           "label": "Kaomoji gritando de miedo"
-        },
-        {
-          "char": "(＠_＠;)",
-          "label": "Kaomoji aturdido del susto"
-        },
-        {
-          "char": "((；ﾟдﾟ))",
-          "label": "Kaomoji temblando de pavor"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/es/library/kaomoji/",
+        "text": "Ver todos los kaomoji"
+      }
     }
   ],
   "collections": [

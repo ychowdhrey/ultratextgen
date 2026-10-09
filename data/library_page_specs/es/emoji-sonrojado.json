@@ -8,7 +8,7 @@
   "crumb_home": "Inicio",
   "library_url": "https://ultratextgen.com/es/library/",
   "date_published": "2026-08-12",
-  "date_modified": "2026-08-12",
+  "date_modified": "2026-10-09",
   "hreflang": [
     {
       "lang": "en",
@@ -23,11 +23,11 @@
       "href": "https://ultratextgen.com/library/blush-emoji/"
     }
   ],
-  "title": "Emoji Sonrojado y Kaomoji: Copiar y Pegar ☺️😊😳 Combos Tímidos",
-  "meta_description": "Emoji sonrojado ☺️ 😊 😳, reacciones tímidas y halagadas, y kaomoji como (灬°ω°灬) para chats dulces. Haz clic en cualquier símbolo para copiarlo.",
-  "breadcrumb": "Emoji Sonrojado y Kaomoji",
-  "hero_h1": "Emoji Sonrojado y Kaomoji",
-  "hero_tagline": "Sonrisas de mejillas rosadas, caras tímidas que se esconden, reacciones de nervios y kaomoji sonrojados — todos los tonos de la pena dulce. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "title": "Emoji Sonrojado: Copiar y Pegar ☺️😊😳 Caras Tímidas, Emoticonos y Combos",
+  "meta_description": "Emoji sonrojado ☺️ 😊 😳, reacciones tímidas y halagadas, y emoticonos de rubor como :$ para chats dulces. Haz clic en cualquier símbolo para copiarlo.",
+  "breadcrumb": "Emoji Sonrojado",
+  "hero_h1": "Emoji Sonrojado",
+  "hero_tagline": "Sonrisas de mejillas rosadas, caras tímidas que se esconden, reacciones de nervios y el :$ tecleado: todos los tonos de la pena dulce. Haz clic en cualquier símbolo para copiarlo al instante.",
   "intro": "El emoji sonrojado es la forma de decir \"me estás dando pena\" sin escribir una sola palabra: la sonrisa cálida de ☺️, los ojos sonrientes de 😊 o el golpe de rubor de 😳 con las mejillas encendidas. Esta página reúne todo el rango de la timidez: las reacciones de taparse la cara como 🙊 y 🫣, las caras cálidas y halagadas para cuando un cumplido de verdad te llega, y los kaomoji sonrojados clásicos como (灬°ω°灬), que se pegan en cualquier lugar donde funcione el texto plano. Toma una sola cara o copia un combo ya armado para tus chats, comentarios y respuestas más dulces.",
   "sections": [
     {
@@ -123,10 +123,38 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticonos",
+      "h2": "Emoticonos Sonrojados de Texto",
+      "intro": "Un signo de dólar o unas mejillas rayadas hacen de cara colorada. Vienen de la época de MSN y los foros, y todavía se leen como vergüenza.",
+      "symbols": [
+        {
+          "char": ":$",
+          "label": "Avergonzado"
+        },
+        {
+          "char": ":-$",
+          "label": "Avergonzado con nariz"
+        },
+        {
+          "char": ":\">",
+          "label": "Sonrojado"
+        },
+        {
+          "char": "^///^",
+          "label": "Mejillas rojas"
+        },
+        {
+          "char": ">///<",
+          "label": "Nervioso"
+        }
+      ]
+    },
+    {
       "id": "blushing-kaomoji",
       "label": "Kaomoji",
       "h2": "Kaomoji Sonrojados y Caritas de Texto",
-      "intro": "Caritas de estilo japonés con mejillas rosadas y manos tímidas, listas para pegar en texto plano.",
+      "intro": "Cuatro caritas japonesas de mejillas rosadas, algunas escondidas detrás de las manos.",
       "symbols": [
         {
           "char": "(灬°ω°灬)",
@@ -143,24 +171,12 @@
         {
           "char": "(〃▽〃)",
           "label": "Kaomoji de sonrisa tímida"
-        },
-        {
-          "char": "(//∇//)",
-          "label": "Kaomoji sonrojado y nervioso"
-        },
-        {
-          "char": "(^人^)",
-          "label": "Kaomoji de gracias con pena"
-        },
-        {
-          "char": "(๑´ㅂ`๑)",
-          "label": "Kaomoji sonrojado y feliz"
-        },
-        {
-          "char": "(*/▽＼*)",
-          "label": "Kaomoji espiando con pena"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/es/library/kaomoji-sonrojado/",
+        "text": "Ver todos los kaomoji sonrojados"
+      }
     }
   ],
   "collections": [

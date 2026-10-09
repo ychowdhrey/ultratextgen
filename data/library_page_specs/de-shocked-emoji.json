@@ -4,10 +4,10 @@
  "page_type": "library",
  "copy_pattern": "collection",
  "title": "Schock-Emoji 😱 😲 zum Kopieren — überrascht und fassungslos",
- "meta_description": "Schock-Emoji zum Kopieren: 😱 😨 😲 😮 Schreck- und Überraschungsgesichter, explodierender Kopf 🤯 und Schock-Kaomoji — mit Erklärung, welches wann passt.",
+ "meta_description": "Schock-Emoji zum Kopieren: 😱 😨 😲 😮 Schreck- und Überraschungsgesichter, explodierender Kopf 🤯 und getippte Emoticons wie :O. Mit Erklärung, welches wann passt.",
  "breadcrumb": "Schock-Emoji",
  "hero_h1": "Schock-Emoji",
- "hero_tagline": "Von leiser Überraschung bis Fassungslosigkeit, plus die Kaomoji dazu.",
+ "hero_tagline": "Von leiser Überraschung bis Fassungslosigkeit, plus getippte Emoticons und ein paar Kaomoji.",
  "intro": "Zwischen „oh“ und „ich fasse es nicht“ liegen mehrere Gesichter, und sie sind leichter zu verwechseln als die meisten: 😮 ist bloß überrascht, 😲 erstaunt, 😱 entsetzt. Diese Seite ordnet sie nach Intensität und ergänzt die Zeichen, die für Fassungslosigkeit stehen.",
  "sections": [
   {
@@ -123,10 +123,42 @@
    ]
   },
   {
+   "id": "emoticons",
+   "label": "Tastatur-Smileys",
+   "h2": "Überraschte Text-Emoticons",
+   "intro": "Ein rundes O für den heruntergeklappten Kiefer: das getippte Staunen, lange bevor es 😮 gab. Mit Nase oder einer 8 als Augen wird der Blick noch größer.",
+   "symbols": [
+    {
+     "char": ":O",
+     "label": "Überrascht"
+    },
+    {
+     "char": ":-O",
+     "label": "Überrascht mit Nase"
+    },
+    {
+     "char": ":o",
+     "label": "Leises Staunen"
+    },
+    {
+     "char": "=O",
+     "label": "Großes Staunen"
+    },
+    {
+     "char": "O_O",
+     "label": "Weit aufgerissene Augen"
+    },
+    {
+     "char": "8-O",
+     "label": "Glotzaugen"
+    }
+   ]
+  },
+  {
    "id": "kaomoji",
    "label": "Schock-Kaomoji",
    "h2": "Schock-Kaomoji",
-   "intro": "Aus Zeichen gebaute Fassungslosigkeit.",
+   "intro": "Vier japanische Textgesichter, erstarrt im Moment der Überraschung.",
    "symbols": [
     {
      "char": "(⊙_⊙)",
@@ -137,34 +169,18 @@
      "label": "Plötzlicher Schreck"
     },
     {
-     "char": "Σ(°△°|||)",
-     "label": "Zusammenzucken"
-    },
-    {
      "char": "w(°ｏ°)w",
      "label": "Hände hoch vor Staunen"
-    },
-    {
-     "char": "(ﾟоﾟ)",
-     "label": "Offener Mund"
-    },
-    {
-     "char": "ヽ(ﾟДﾟ)ﾉ",
-     "label": "Panisches Rudern"
-    },
-    {
-     "char": "(○o○)",
-     "label": "Runde Augen"
-    },
-    {
-     "char": "☉_☉",
-     "label": "Erstarrter Blick"
     },
     {
      "char": "(((ﾟДﾟ;)))",
      "label": "Zitternder Schreck"
     }
-   ]
+   ],
+   "more_link": {
+    "href": "/de/library/kaomoji/",
+    "text": "Alle Kaomoji ansehen"
+   }
   }
  ],
  "faq_h2": "Häufige Fragen zum Schock-Emoji",
@@ -243,7 +259,7 @@
   }
  ],
  "date_published": "2026-08-16",
- "date_modified": "2026-08-16",
+ "date_modified": "2026-10-09",
  "collection_section": {
   "id": "combo-sets",
   "label": "Fertige Kombinationen",

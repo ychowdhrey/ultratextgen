@@ -1,14 +1,14 @@
 {
   "slug": "emoji-clin-doeil",
-  "title": "Emoji Clin d’Œil 😉 et Kaomoji : Copier-Coller des Combos Complices",
-  "meta_description": "Emoji clin d’œil 😉 😜 🤪, combos complices et taquins, plus les kaomoji comme (^_-) pour les réponses flirt, les chats et les commentaires.",
+  "title": "Emoji Clin d’Œil 😉 : Copier-Coller des Émoticônes et Combos Complices",
+  "meta_description": "Emoji clin d’œil 😉 😜 🤪, combos complices et taquins, plus les émoticônes comme ;) pour les réponses flirt, les chats et les commentaires.",
   "canonical": "https://ultratextgen.com/fr/library/emoji-clin-doeil/",
   "breadcrumb": "Emoji Clin d’Œil",
-  "hero_h1": "Emoji Clin d’Œil et Kaomoji",
-  "hero_tagline": "Le 😉 qui fait de l’œil, les grimaces tirant la langue, les sourires en coin et les kaomoji complices — toutes les nuances du « je plaisante ». Cliquez pour copier.",
+  "hero_h1": "Emoji Clin d’Œil",
+  "hero_tagline": "Le 😉 qui fait de l’œil, les grimaces tirant la langue, les sourires en coin et le ;) tapé au clavier : toutes les nuances du « je plaisante ». Cliquez pour copier.",
   "intro": "L’emoji clin d’œil 😉 est le petit coup de coude d’internet — il transforme une phrase plate en blague, adoucit une taquinerie et ajoute un sous-entendu complice sans un mot de plus. Cette page rassemble toute la gamme espiègle : le visage qui fait de l’œil et ses cousins bisous, la bande tire-la-langue 😜 🤪 😝, les sourires en coin et les rires main-devant-la-bouche, et les kaomoji comme (^_-) et (^_~) qui se collent partout où le texte brut passe. Prenez un visage seul, ou copiez un combo prêt à l’emploi pour vos réponses, vos groupes et vos commentaires.",
   "date_published": "2026-08-15",
-  "date_modified": "2026-08-15",
+  "date_modified": "2026-10-09",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -96,10 +96,42 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Émoticônes",
+      "h2": "Émoticônes Clin d’Œil au Clavier",
+      "intro": "Le clin d’œil au point-virgule existe presque depuis le premier smiley, et il adoucit encore une blague en texte brut. Ajoutez un P pour tirer la langue.",
+      "symbols": [
+        {
+          "char": ";)",
+          "label": "Clin d’œil"
+        },
+        {
+          "char": ";-)",
+          "label": "Clin d’œil avec nez"
+        },
+        {
+          "char": ";D",
+          "label": "Clin d’œil hilare"
+        },
+        {
+          "char": ";P",
+          "label": "Clin d’œil langue tirée"
+        },
+        {
+          "char": ";-P",
+          "label": "Langue espiègle avec nez"
+        },
+        {
+          "char": ";]",
+          "label": "Clin d’œil malicieux"
+        }
+      ]
+    },
+    {
       "id": "wink-kaomoji",
       "label": "Kaomoji",
       "h2": "Kaomoji Clin d’Œil et Visages en Texte",
-      "intro": "Des visages en texte à la japonaise qui font de l’œil, sourient et taquinent.",
+      "intro": "Quatre clins d’œil à la japonaise, dont un avec une petite étoile.",
       "symbols": [
         {
           "char": "(^_-)",
@@ -116,24 +148,12 @@
         {
           "char": "(･ω<)",
           "label": "Kaomoji Clin d’Œil Malicieux"
-        },
-        {
-          "char": "(>ω^)",
-          "label": "Kaomoji Clin d’Œil Rusé"
-        },
-        {
-          "char": ";)",
-          "label": "Frimousse Clin d’Œil"
-        },
-        {
-          "char": ";-)",
-          "label": "Émoticône Clin d’Œil Classique"
-        },
-        {
-          "char": "(￣ω￣)",
-          "label": "Kaomoji Sourire Espiègle"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/fr/library/kaomoji/",
+        "text": "Voir tous les kaomoji"
+      }
     }
   ],
   "collection_section": {

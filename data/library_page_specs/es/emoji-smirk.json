@@ -8,17 +8,26 @@
   "crumb_home": "Inicio",
   "library_url": "https://ultratextgen.com/es/library/",
   "date_published": "2026-08-12",
-  "date_modified": "2026-08-12",
+  "date_modified": "2026-10-09",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/smirk-emoji/" },
-    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-smirk/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/smirk-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/smirk-emoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-smirk/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/smirk-emoji/"
+    }
   ],
-  "title": "Emoji Smirk y Kaomoji: Copiar y Pegar 😏😌 Combos Presumidos",
-  "meta_description": "Emoji smirk 😏 😌 😼, combos de caras presumidas y seguras, más kaomoji pícaros como (¬‿¬) para respuestas coquetas. Haz clic para copiar al instante.",
-  "breadcrumb": "Emoji Smirk y Kaomoji",
-  "hero_h1": "Emoji Smirk y Kaomoji",
-  "hero_tagline": "La cara de sonrisita 😏, gestos presumidos y seguros, guiños pícaros y kaomoji de complicidad — cada matiz de 'sé algo que tú no'. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "title": "Emoji Smirk: Copiar y Pegar 😏😌 Caras Presumidas, Emoticonos y Combos",
+  "meta_description": "Emoji smirk 😏 😌 😼, combos de caras presumidas y seguras, más emoticonos pícaros como :> para respuestas coquetas. Haz clic para copiar al instante.",
+  "breadcrumb": "Emoji Smirk",
+  "hero_h1": "Emoji Smirk",
+  "hero_tagline": "La cara de sonrisita 😏, gestos presumidos y seguros, guiños pícaros y el :> tecleado: cada matiz de 'sé algo que tú no'. Haz clic en cualquier símbolo para copiarlo al instante.",
   "intro": "El emoji smirk 😏 carga dos significados a la vez: la seguridad presumida de quien está muy contento consigo mismo, y ese aire coqueto y sugerente de 'sé algo que tú no sabes'. Aquí reunimos todo el rango: la cara aliviada 😌, la sonrisa mínima y difícil de leer 🙂, el gato con sonrisa torcida 😼, y guiños pícaros como 😉 y 😜 para una reacción juguetona. Cuando un emoji no alcanza para el tono exacto, los kaomoji presumidos clásicos como (¬‿¬) y ( ͡~ ͜ʖ ͡°) se pegan donde funcione el texto plano. La cara con lentes de sol 😎 aparece aquí solo de pasada — tiene su propia página completa — porque esta se queda enfocada en la sonrisita. Toma una sola cara, o copia un combo listo para respuestas coquetas, alardes seguros y reacciones de pura complicidad.",
   "sections": [
     {
@@ -58,19 +67,30 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticonos",
+      "h2": "Emoticonos Presumidos de Texto",
+      "intro": "Un corchete en punta convierte una sonrisa en una mueca pícara. Cambia los dos puntos por punto y coma y la presunción viene con guiño.",
+      "symbols": [
+        { "char": ":>", "label": "Presumido" },
+        { "char": ":->", "label": "Presumido con nariz" },
+        { "char": ";>", "label": "Guiño pícaro" },
+        { "char": ";->", "label": "Guiño pícaro con nariz" },
+        { "char": ":^)", "label": "Satisfecho de sí mismo" }
+      ]
+    },
+    {
       "id": "smirk-kaomoji",
       "label": "Kaomoji",
       "h2": "Kaomoji Presumidos y Pícaros",
-      "intro": "Caritas al estilo japonés que sonríen de lado, guiñan y se ven demasiado satisfechas consigo mismas, todo en texto plano.",
+      "intro": "Cuatro caritas japonesas que se ven demasiado satisfechas consigo mismas.",
       "symbols": [
         { "char": "(¬‿¬)", "label": "Kaomoji de sonrisa presumida" },
         { "char": "(¬ω¬)", "label": "Kaomoji de sonrisita pícara" },
         { "char": "( ͡~ ͜ʖ ͡°)", "label": "Kaomoji Lenny guiñando" },
-        { "char": "(￢‿￢)", "label": "Kaomoji de sonrisa cómplice" },
-        { "char": "( •̀ ω •́ )✧", "label": "Kaomoji de seguridad con brillo" },
-        { "char": "(￣ー￣)", "label": "Kaomoji de sonrisa satisfecha" },
-        { "char": "(｀∀´)", "label": "Kaomoji de sonrisa malvada" }
-      ]
+        { "char": "( •̀ ω •́ )✧", "label": "Kaomoji de seguridad con brillo" }
+      ],
+      "more_link": { "href": "/es/library/kaomoji/", "text": "Ver todos los kaomoji" }
     }
   ],
   "collections": [
