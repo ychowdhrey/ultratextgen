@@ -1325,7 +1325,14 @@
      declares it here and gets the real file. Mutable for the same reason FONT
      is: a charStyles or scriptOptions entry may swap in a face with a
      different weight, and every surface reads it fresh. */
-  let FONT_WEIGHT = CFG.fontWeight || 700;
+  const DEFAULT_FONT_WEIGHT = CFG.fontWeight || 700;
+  let FONT_WEIGHT = DEFAULT_FONT_WEIGHT;
+  /* A style's own weight, or the page's when it names none. Resetting matters:
+     the weight is shared state, so a style that asks for 400 must not leave
+     the next style, which says nothing, on 400. */
+  function styleWeight(style) {
+    return style && style.fontWeight != null ? style.fontWeight : DEFAULT_FONT_WEIGHT;
+  }
   const SCRIPT_OPTIONS = Array.isArray(CFG.scriptOptions) && CFG.scriptOptions.length
     ? CFG.scriptOptions
     : null;
@@ -4847,7 +4854,7 @@
     const style = CHAR_STYLES.find((s) => s.key === key) || CHAR_STYLES[0];
     charStyleKey = style.key;
     if (style.font) FONT = style.font;
-    if (style.fontWeight != null) FONT_WEIGHT = style.fontWeight;
+    FONT_WEIGHT = styleWeight(style);
     if (style.strokeWidth != null) STROKE = style.strokeWidth;
     if (style.letterSpacing != null) LETTER_SPACING = style.letterSpacing;
     CFG.skew = style.skew;
@@ -6385,6 +6392,7 @@
     if (!NAME_STYLES) return;
     const style = NAME_STYLES.find((s) => s.key === key) || NAME_STYLES[0];
     nameStyleKey = style.key;
+    FONT_WEIGHT = styleWeight(style);
     if (el.nameStyles) {
       $$(".pt-name-style-opt", el.nameStyles).forEach((b) => {
         const on = b.dataset.style === nameStyleKey;
