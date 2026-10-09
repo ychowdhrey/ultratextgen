@@ -121,6 +121,46 @@
           "label": "Impactado"
         }
       ]
+    },
+    {
+      "id": "surprised",
+      "label": "Sorpresa",
+      "h2": "Kaomoji Sorprendidos",
+      "intro": "Menos que un susto: una segunda mirada, un pequeño «oh», un parpadeo ante una noticia inesperada. La Σ delante de una carita es la marca del manga para el sobresalto, y los ojos desiguales como ⊙_☉ muestran un ojo más abierto que el otro.",
+      "symbols": [
+        {
+          "char": "(o_O)",
+          "label": "Mirar dos veces"
+        },
+        {
+          "char": "(⊙_☉)",
+          "label": "Ojos desiguales"
+        },
+        {
+          "char": "(・o・)",
+          "label": "Pequeño «oh»"
+        },
+        {
+          "char": "(⊙ω⊙)",
+          "label": "Asombro con ojos grandes"
+        },
+        {
+          "char": "Σ(・口・)",
+          "label": "Sobresaltado"
+        },
+        {
+          "char": "(・□・;)",
+          "label": "Pillado por sorpresa"
+        },
+        {
+          "char": "(°ー°〃)",
+          "label": "Desconcertado"
+        },
+        {
+          "char": "(⊙ˍ⊙)",
+          "label": "Parpadeo"
+        }
+      ]
     }
   ],
   "related": [
