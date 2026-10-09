@@ -341,6 +341,65 @@ async function main() {
     await ctx.close();
   }
 
+  // 11c. A monogram is a personal piece, so its export carries no credit QR or
+  // site URL. The QR encoder is only ever loaded to draw one, so its absence
+  // after an export is the browser-visible proof.
+  console.log('\n/printables/monogram-maker/ (no credit QR)');
+  {
+    const { ctx, page, errors } = await open('/printables/monogram-maker/?l=J&c=S&r=L', 'desktop');
+    await page.waitForTimeout(500);
+    await page.evaluate(() => { const b = document.getElementById('mono-print'); if (b) b.click(); });
+    await page.waitForTimeout(1500);
+    const loaded = await page.evaluate(() => !!document.querySelector('script[data-pt-qr]') || !!(window.UltraTextGen && window.UltraTextGen.qr));
+    check('the monogram export loads no QR encoder', !loaded);
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 11d. Ctrl+P without Download PDF opens with a note whose button name is a
+  // link back to the page (kept clickable in a saved PDF) plus the page's
+  // address in plain text for a sheet on paper, and that link lands on the
+  // Download PDF button, focused and ringed. All four engines, EN and a locale.
+  console.log('\nbrowser-print note: link, address, and the #download-pdf jump');
+  for (const url of ['/printables/monogram-maker/', '/printables/cross-stitch-letters/', '/printables/name-labels/', '/printables/block-letters/', '/es/imprimibles/monograma/']) {
+    const { ctx, page, errors } = await open(url, 'desktop');
+    const canon = await page.evaluate(() => document.querySelector('link[rel="canonical"]').href);
+    const note = await page.evaluate(() => {
+      const a = document.querySelector('.pt-print-note a.pt-print-note-link');
+      const ad = document.querySelector('.pt-print-note .pt-print-note-addr');
+      return { href: a && a.getAttribute('href'), text: a && a.textContent, addr: ad && ad.textContent };
+    });
+    const u = new URL(canon);
+    check(`${url} note links to the canonical URL + #download-pdf`, note.href === canon + '#download-pdf' && !/\?/.test(note.href || ''), String(note.href));
+    check(`${url} note prints the page address in text`, note.addr === u.host + u.pathname.replace(/\/$/, ''), String(note.addr));
+    if (url === '/printables/monogram-maker/') {
+      await page.emulateMedia({ media: 'print' });
+      const pdf = (await page.pdf({ format: 'Letter' })).toString('latin1');
+      check('the saved PDF carries the link annotation to the canonical URL + #download-pdf', pdf.includes('/URI') && pdf.includes(canon + '#download-pdf'));
+    }
+    await ctx.close();
+    const j = await open(url + '#download-pdf', 'desktop');
+    await j.page.waitForTimeout(900);
+    const jump = await j.page.evaluate(() => {
+      const a = document.activeElement;
+      const r = a && a.getBoundingClientRect();
+      return {
+        pdf: !!(a && a.matches && a.matches('[data-pt-pdf], .pt-pdf-btn')), ring: !!(a && a.classList.contains('pt-pdf-pulse')),
+        inView: !!r && r.top >= 0 && r.bottom <= innerHeight, text: a && a.textContent.trim()
+      };
+    });
+    check(`${url}#download-pdf focuses and rings the Download PDF button, in view`, jump.pdf && jump.ring && jump.inView, JSON.stringify(jump));
+    check('no page errors', !j.errors.length && !errors.length, j.errors.concat(errors).join(' | '));
+    await j.ctx.close();
+  }
+  {
+    const { ctx, page } = await open('/printables/monogram-maker/', 'desktop');
+    await page.waitForTimeout(600);
+    const none = await page.evaluate(() => document.activeElement === document.body && !document.querySelector('.pt-pdf-pulse'));
+    check('without the hash nothing is focused or ringed', none);
+    await ctx.close();
+  }
+
   // 12. Nothing pushes a 390px page sideways.
   console.log('\n390px layouts (overflow)');
   for (const [url, typed] of [['/usecase/vertical-text/', ''], ['/it/lettere-in-corsivo/', 'Luna'], ['/de/zum-ausdrucken/buchstaben-nachspuren/', '']]) {

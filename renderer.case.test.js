@@ -25,6 +25,9 @@
  *     Croatian and Czech it is "and" and stays lower case.
  *   - Upside-down and reverse styles reverse by user-perceived character, so a
  *     flag, a family emoji, a skin tone, a Thai or Devanagari cluster survives.
+ *   - The ligature letters ß æ œ are written out as the two letters they stand
+ *     for in a styled map (Straße is Strasse, not Strase), and the one-piece
+ *     letters with no second letter (ł đ ø) still fold to their base letter.
  */
 
 const assert = require('assert');
@@ -153,6 +156,23 @@ REVERSE.forEach(name => {
 expectStyle('Reverse Order Only', 'hello', 'olleh');
 expectStyle('Reverse + Flip Combo', 'hello', 'o\u05DF\u05DF\u01DD\u0265');
 expectStyle('Reverse Order Only', 'e\u0301a', 'ae\u0301');
+
+// --- Turkish dotless i passes through as typed (a dotted i is another letter) -------
+['Ultra Bold', 'Ultra Script'].forEach(name => {
+  const st = styles[name];
+  expectStyle(name, 'ışık', '\u0131' + render('ş', st) + '\u0131' + render('k', st));
+});
+
+// --- Ligature letters are written out, not folded to one letter -----------------
+['Ultra Bold', 'Ultra Script', 'Ultra Double-Struck'].forEach(name => {
+  const st = styles[name];
+  expectStyle(name, 'Stra\u00dfe', render('Strasse', st));
+  expectStyle(name, 'GRO\u1E9E', render('GROSS', st));
+  expectStyle(name, 'c\u0153ur', render('coeur', st));
+  expectStyle(name, '\u00c6ble', render('AEble', st));
+  expectStyle(name, 'Pawe\u0142', render('Pawel', st));
+  expectStyle(name, '\u00f8l', render('ol', st));
+});
 
 if (failures) {
   console.error(`\n${failures} of ${checks} case-converter checks failed`);

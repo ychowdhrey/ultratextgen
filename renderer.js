@@ -307,11 +307,16 @@ function mapToArray(mapStrOrArr, kind) {
 const BASE_LETTER_FALLBACK = {
   'ł': 'l', 'Ł': 'L',
   'đ': 'd', 'Đ': 'D',
-  'ı': 'i',
+  // Turkish dotless ı is deliberately not here: no style has a dotless letter,
+  // and a dotted i is a different letter (ışık is not isik), so it passes
+  // through as typed, which is what the notice tells the reader.
   'ø': 'o', 'Ø': 'O',
-  'ß': 's', 'ẞ': 'S',
-  'æ': 'a', 'Æ': 'A',
-  'œ': 'o', 'Œ': 'O',
+  // Ligature letters stand for two letters, so they are written out in full
+  // (Straße -> Strasse, cœur -> coeur). Folding them to one letter changed the
+  // word (Strase, cour). mapChar styles each letter of a two-letter value.
+  'ß': 'ss', 'ẞ': 'SS',
+  'æ': 'ae', 'Æ': 'AE',
+  'œ': 'oe', 'Œ': 'OE',
   'ð': 'd', 'Ð': 'D',
   'þ': 't', 'Þ': 'T',
   'ħ': 'h', 'Ħ': 'H'
@@ -370,6 +375,11 @@ function mapChar(ch, normalUpper, normalLower, normalNums, upperArr, lowerArr, n
   if (n !== -1) return numsArr[n] || ch;
 
   const { base, marks } = resolveBaseAndMarks(ch);
+  if (base.length > 1 && !marks) {
+    return Array.from(base).map(function (letter) {
+      return mapChar(letter, normalUpper, normalLower, normalNums, upperArr, lowerArr, numsArr, accentSafe);
+    }).join('');
+  }
   if (base !== ch && (accentSafe || !marks)) {
     const bu = normalUpper.indexOf(base);
     if (bu !== -1) return attachMarks(upperArr[bu] || base, base, marks);

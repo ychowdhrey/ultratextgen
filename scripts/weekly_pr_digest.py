@@ -71,6 +71,7 @@ LANE_RULES = [
     # time as they appear; see docs/README.md Known gaps.
     ("ascii-art-generator/", "Category pages"),
     ("ascii-converter/", "Category pages"),
+    ("letters-to-numbers/", "Category pages"),
     ("image-to-ascii/", "Category pages"),
     ("kaomoji-dictionary/", "Category pages"),
     ("kaomoji-generator/", "Category pages"),

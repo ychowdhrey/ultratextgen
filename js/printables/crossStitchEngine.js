@@ -742,6 +742,9 @@
 
 
   function init() {
+    /* Ctrl+P without Download PDF: hide the site chrome and say which button
+       prints the sheet (printPrefs.js owns the note and its translations). */
+    if (PP && PP.mountPrintNote) PP.mountPrintNote({ lang: NOTE_LANG, button: T.savePdf });
     loadQrModule();
     const input = $("#cs-input");
     if (input) {

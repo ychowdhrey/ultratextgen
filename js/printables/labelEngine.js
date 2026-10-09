@@ -831,6 +831,14 @@
   let restoredOnce = false;
   function init() {
     if (!$("lb-preview")) return;
+    /* Ctrl+P without Download PDF: hide the site chrome and say which button
+       prints the sheet (printPrefs.js owns the note and its translations).
+       The button's own text is the page's label, so the note names what the
+       visitor can actually see. */
+    if (PP && PP.mountPrintNote) {
+      const pdfBtn = $("lb-pdf");
+      PP.mountPrintNote({ lang: LANG, button: pdfBtn && pdfBtn.textContent.trim() });
+    }
     if (PP && PP.values) state.sheet = "cut";
     const restored = restore();
     restoredOnce = restored;

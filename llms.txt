@@ -4,7 +4,7 @@
 
 UltraTextGen is a free, no-sign-up text tool: Unicode font styles to copy and paste, a browsable symbol and emoji library, one reference page per individual symbol, printable lettering and handwriting sheets rendered in the browser, and explanatory guides and answers. Everything runs client-side.
 
-4872 indexable pages in 32 languages. This file is a navigation index, not a URL list: https://ultratextgen.com/sitemap.xml is the complete canonical URL list and stays the authority on what exists. Links below point to a narrower llms.txt index where one exists, and straight to a page where it does not.
+4873 indexable pages in 32 languages. This file is a navigation index, not a URL list: https://ultratextgen.com/sitemap.xml is the complete canonical URL list and stays the authority on what exists. Links below point to a narrower llms.txt index where one exists, and straight to a page where it does not.
 
 English pages are served from the site root, so this file is also the English index (https://ultratextgen.com/en/llms.txt redirects here). Every other language has its own index at https://ultratextgen.com/<code>/llms.txt.
 
@@ -112,6 +112,7 @@ The "Jobs across languages" section lists the site's main jobs. Each line is the
 - [Kaomoji Dictionary & Decoder](https://ultratextgen.com/kaomoji-dictionary/): Paste any text face to decode it: its name, meaning, mood, and a part-by-part breakdown of the eyes, mouth, and arms.
 - [Kaomoji Generator](https://ultratextgen.com/kaomoji-generator/): Build your own Japanese text face: pick a mood, mix the parts, and copy it in one click.
 - [Katakana Chart](https://ultratextgen.com/katakana-chart/): All 46 basic katakana with romaji: plus the voiced kana and combinations.
+- [Letters to Numbers Converter](https://ultratextgen.com/letters-to-numbers/): Turn letters into numbers as you type (A=1, B=2, up to Z=26), or decode numbers back into letters.
 
 ## Platform pages
 

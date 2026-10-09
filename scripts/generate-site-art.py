@@ -3237,6 +3237,8 @@ PAGES.update({
       P(m_transform, a="A", b="█"), K_USE),
 "ascii-converter": ("ASCII Converter", "Text to hex, binary, decimal & octal, and back",
       P(m_transform, a="A", b="01"), K_USE),
+"letters-to-numbers": ("Letters to Numbers Converter", "A=1, B=2 up to Z=26, and numbers back to letters",
+      P(m_transform, a="A", b="1"), K_USE),
 "image-to-ascii": ("Image to ASCII Art Converter", "Turn a photo into text art you can copy",
       P(m_transform, a="\u25d0", b="@"), K_USE),
 "curved-text": ("Curved & Arc Text Generator", "Bend text into arcs, waves, spirals & shapes",
