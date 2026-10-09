@@ -5430,6 +5430,32 @@ button.clear-decoration {
   color: var(--text-secondary);
 }
 
+/* Heights the printables engine fills in after first paint.
+
+   #pt-strip and #pt-panel are empty in the static HTML and printablesEngine.js
+   mounts the letter chips and the selected-letter stage into them, so before
+   this block the first paint showed them at 0px and everything under them
+   dropped when the engine ran: 0.13-0.32 layout shift at 1440px wide under 4x
+   CPU throttle. The numbers are LOWER BOUNDS, the smallest height the mount
+   reaches on any of the 76 chip-strip pages (surveyed at 390, 768, 1024 and
+   1440px, then swept every 20px from 320 to 1100px on the pages that reached
+   the minimum). A floor never leaves a gap on a page whose mount is taller,
+   and shrinks the jump on every page instead of removing it where the mount
+   is taller than the floor: the strip is 83-131px and the panel 467-766px at
+   desktop width, by how many characters the page offers. The panel is only
+   reserved from 661px, where the stage is two columns; below that its height
+   tracks the width by 450-780px and the panel sits below the fold. */
+#pt-strip { min-height: 83px; }
+@media (max-width: 620px) { #pt-strip { min-height: 128px; } }
+@media (max-width: 440px) { #pt-strip { min-height: 173px; } }
+@media (max-width: 350px) { #pt-strip { min-height: 218px; } }
+@media (min-width: 661px) { #pt-panel { min-height: 467px; } }
+/* The frozen block-letters page is held out of the reservation above until its
+   owner releases it (separate commit). Matched by its own preview image, the
+   one attribute that names it in the static HTML. */
+.bubble-az:has(> #pt-panel[data-sheet-preview$="/printables-block-letters.png"]) > #pt-strip { min-height: 0; }
+#pt-panel[data-sheet-preview$="/printables-block-letters.png"] { min-height: 0; }
+
 /* Selected-letter stage */
 .bubble-letter-panel {
   margin-top: 1.25rem;
