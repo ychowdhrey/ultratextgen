@@ -201,44 +201,64 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticon",
+      "h2": "Emoticon Tristi da Tastiera",
+      "intro": "La faccina triste originale, scritta con i due punti. Si legge allo stesso modo su ogni telefono e tastiera.",
+      "symbols": [
+        {
+          "char": ":(",
+          "label": "Faccina triste"
+        },
+        {
+          "char": ":-(",
+          "label": "Broncio con naso"
+        },
+        {
+          "char": "=(",
+          "label": "Tristezza leggera"
+        },
+        {
+          "char": ":c",
+          "label": "Muso triste"
+        },
+        {
+          "char": ":/",
+          "label": "Faccina a disagio"
+        },
+        {
+          "char": "D:",
+          "label": "Faccina sgomenta"
+        }
+      ]
+    },
+    {
       "id": "kaomoji",
       "label": "Kaomoji Tristi",
       "h2": "Kaomoji Tristi",
-      "intro": "Faccine fatte di caratteri, pronte da incollare.",
+      "intro": "Qualche faccina giapponese malinconica per cominciare.",
       "symbols": [
         {
           "char": "(μ_μ)",
           "label": "Kaomoji Occhi Bassi"
         },
         {
-          "char": "(._.)",
-          "label": "Kaomoji Sguardo Vuoto"
-        },
-        {
           "char": "(´。＿。｀)",
           "label": "Kaomoji Testa Bassa"
-        },
-        {
-          "char": "(◞‸◟)",
-          "label": "Kaomoji Aria Cupa"
         },
         {
           "char": "( ´•︵•` )",
           "label": "Kaomoji Broncio Triste"
         },
         {
-          "char": "（ ｉдｉ ）",
-          "label": "Kaomoji Lacrime Spente"
-        },
-        {
           "char": "(〒﹏〒)",
           "label": "Kaomoji Cuore Pesante"
-        },
-        {
-          "char": "( ︶︿︶)",
-          "label": "Kaomoji Sospiro Rassegnato"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/it/library/kaomoji/",
+        "text": "Vedi tutti i kaomoji"
+      }
     }
   ],
   "faq_h2": "Domande Frequenti sull'Emoji Triste",
@@ -333,7 +353,7 @@
   ],
   "canonical": "https://ultratextgen.com/it/library/emoji-triste/",
   "date_published": "2026-08-10",
-  "date_modified": "2026-08-10",
+  "date_modified": "2026-10-09",
   "lang": "it",
   "page_type": "library",
   "hreflang": [

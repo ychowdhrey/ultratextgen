@@ -3,12 +3,12 @@
   "title": "Angry Emoji 😡 (Boze Emoji) — Kopiëren en Plakken | UltraTextGen",
   "meta_description": "Angry emoji 😡 🤬 😤, boze combo's en table-flip-kaomoji zoals (╯°□°）╯︵ ┻━┻ om stoom af te blazen in chats en comments. Klik om te kopiëren.",
   "canonical": "https://ultratextgen.com/nl/library/angry-emoji/",
-  "breadcrumb": "Angry Emoji en Kaomoji",
-  "hero_h1": "Angry Emoji en Kaomoji",
+  "breadcrumb": "Angry Emoji",
+  "hero_h1": "Angry Emoji",
   "hero_tagline": "Rode koppen, stoom, vuur en de legendarische table-flip-kaomoji: boosheid in elke gradatie. Klik op een symbool om het te kopiëren.",
   "intro": "De schaal van boze emoji loopt van een licht fronsend 😠 tot de vloekende woede van 🤬, en als emoji tekortschieten, is er altijd nog de table-flip-kaomoji (╯°□°）╯︵ ┻━┻. Deze pagina verzamelt elk boos gezicht, de vuur- en explosietekens die van een klacht een woedepost maken, geïrriteerde gezichten met rollende ogen voor de mildere ergernis, en kant-en-klare boze combo's voor chats, comments en gamemomenten waarop alles misgaat.",
   "date_published": "2026-08-16",
-  "date_modified": "2026-08-16",
+  "date_modified": "2026-10-09",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -120,22 +120,50 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticons",
+      "h2": "Boze tekst-emoticons",
+      "intro": "Een boos gezicht in toetsenbordversie, opgebouwd uit leestekens. Ze worden als gewone tekst geplakt en verschijnen dus ook waar emoji ontbreken.",
+      "symbols": [
+        {
+          "char": ">:(",
+          "label": "Boos gezicht"
+        },
+        {
+          "char": ">:-(",
+          "label": "Boos met neus"
+        },
+        {
+          "char": ">:[",
+          "label": "Nors gezicht"
+        },
+        {
+          "char": "D:<",
+          "label": "Woedende schreeuw"
+        },
+        {
+          "char": ">:O",
+          "label": "Schreeuwend gezicht"
+        },
+        {
+          "char": ":@",
+          "label": "Ziedend gezicht"
+        },
+        {
+          "char": ">:|",
+          "label": "Kokend van woede"
+        }
+      ]
+    },
+    {
       "id": "rage-kaomoji",
       "label": "Kaomoji",
       "h2": "Woede- en table-flip-kaomoji",
-      "intro": "De omgegooide tafels, boze blikken en grommen van klassieke boze tekstgezichtjes.",
+      "intro": "Vier favorieten, van een boze blik tot een omgegooide tafel.",
       "symbols": [
         {
           "char": "(╯°□°）╯︵ ┻━┻",
           "label": "Table-flip-kaomoji"
-        },
-        {
-          "char": "(┛◉Д◉)┛彡┻━┻",
-          "label": "Woedende table-flip-kaomoji"
-        },
-        {
-          "char": "┬─┬ノ( º _ ºノ)",
-          "label": "Tafel-terugzetten-kaomoji"
         },
         {
           "char": "(╬ Ò﹏Ó)",
@@ -146,22 +174,14 @@
           "label": "Schreeuwende woede-kaomoji"
         },
         {
-          "char": "(ﾉಥ益ಥ)ﾉ ┻━┻",
-          "label": "Huilende woede-flip-kaomoji"
-        },
-        {
           "char": "(¬_¬)",
           "label": "Geïrriteerde blik-kaomoji"
-        },
-        {
-          "char": "(≖_≖ )",
-          "label": "Achterdochtige blik-kaomoji"
-        },
-        {
-          "char": "(｀ﾍ´)",
-          "label": "Chagrijnige snuif-kaomoji"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/nl/library/tekstgezichten-kaomoji/",
+        "text": "Alle kaomoji bekijken"
+      }
     }
   ],
   "collection_section": {
