@@ -122,7 +122,7 @@ These run across page types rather than producing a type.
 | `update-sitemap.yml` | daily 00:00 UTC | regenerate `sitemap.xml` (`[skip ci]`), then announce the changed URLs to IndexNow (`--submit-indexnow`, opt-in flag — see the IndexNow submission row above; a local `npm run prebuild` never announces) |
 | `update_readme.yml` | weekly (Mon 03:00 UTC) | sync README from sitemap (`sync-readme.js`) |
 | `weekly-pr-digest.yml` | weekly (Mon 06:00 UTC) | classify merged PRs by lane → `docs/infra-review/<date>.md` + `latest.md` |
-| `tweet-queue.yml` | daily 09:00 UTC (+ manual) | post qualifying commits (`tweet_queue.py`) |
+| `tweet-queue.yml` | manual only (`workflow_dispatch`); daily schedule paused 2026-10-09 by user direction | post qualifying commits (`tweet_queue.py`) |
 | `css-audit.yml` | on `pull_request` | `audit-css.js` |
 | `gtm-check.yml` | on `pull_request` | `check-gtm.js` (GTM snippet present) |
 | `schedule-cache-removal.yml` | annual (Apr 10) + manual | cache maintenance |
