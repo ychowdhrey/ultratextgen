@@ -146,7 +146,15 @@
      canvas as layoutRow(), so preview and export scale identically; rows that
      already fit are returned unchanged. */
   const ROW_MARGIN = 16;              // each side of the classic row
-  const CIRCLE_ROW_WIDTH = 290;       // inside the inner ring (r = 171)
+  /* The circle frame, in viewBox units, one table for the preview, the print
+     fallback and the PNG/PDF canvas. The outer ring used to sit at r = 186,
+     which left only ~66 units in the sheet's bottom-right corner, less than
+     the credit QR needs (0.95in box = 58.5 units at 6.5in, plus its pad), so
+     the QR's white quiet zone sliced a chord out of both rings. r = 172 puts
+     the ring's outer edge at ~175.0 and the QR box's nearest corner at ~176.1:
+     clear by about a unit on both ring weights. Inner ring and letters keep
+     the proportions they had at 186. */
+  const CIRCLE = { outer: 172, inner: 158, small: 72, big: 122, rowWidth: 268 };
   function fitRow(items, avail, central) {
     if (!items.length) return items;
     const gap = central ? 8 : 10;
@@ -185,13 +193,13 @@
   // Circle frame: small · BIG · small centered inside a double ring (wax-seal look).
   function buildCircle(svg, v) {
     const ringW = state.style === "solid" ? 6 : 5;
-    svg.appendChild(svgEl("circle", { cx: 200, cy: 200, r: 186, fill: "none", stroke: INK, "stroke-width": ringW }));
-    svg.appendChild(svgEl("circle", { cx: 200, cy: 200, r: 171, fill: "none", stroke: INK, "stroke-width": 2.5 }));
+    svg.appendChild(svgEl("circle", { cx: 200, cy: 200, r: CIRCLE.outer, fill: "none", stroke: INK, "stroke-width": ringW }));
+    svg.appendChild(svgEl("circle", { cx: 200, cy: 200, r: CIRCLE.inner, fill: "none", stroke: INK, "stroke-width": 2.5 }));
     const items = [];
-    if (v.l) items.push({ ch: v.l, size: 78 });
-    if (v.c) items.push({ ch: v.c, size: 132 });
-    if (v.r) items.push({ ch: v.r, size: 78 });
-    layoutRow(svg, fitRow(items, CIRCLE_ROW_WIDTH, true), 200, true);
+    if (v.l) items.push({ ch: v.l, size: CIRCLE.small });
+    if (v.c) items.push({ ch: v.c, size: CIRCLE.big });
+    if (v.r) items.push({ ch: v.r, size: CIRCLE.small });
+    layoutRow(svg, fitRow(items, CIRCLE.rowWidth, true), 200, true);
   }
 
   function buildMonogramSVG() {
@@ -358,17 +366,17 @@
     ctx.strokeStyle = INK;
     ctx.lineWidth = (state.style === "solid" ? 6 : 5) * s;
     ctx.beginPath();
-    ctx.arc(200 * s, 200 * s, 186 * s, 0, Math.PI * 2);
+    ctx.arc(200 * s, 200 * s, CIRCLE.outer * s, 0, Math.PI * 2);
     ctx.stroke();
     ctx.lineWidth = 2.5 * s;
     ctx.beginPath();
-    ctx.arc(200 * s, 200 * s, 171 * s, 0, Math.PI * 2);
+    ctx.arc(200 * s, 200 * s, CIRCLE.inner * s, 0, Math.PI * 2);
     ctx.stroke();
     const items = [];
-    if (v.l) items.push({ ch: v.l, size: 78 });
-    if (v.c) items.push({ ch: v.c, size: 132 });
-    if (v.r) items.push({ ch: v.r, size: 78 });
-    drawRowCanvas(ctx, s, fitRow(items, CIRCLE_ROW_WIDTH, true), 200 * s, true);
+    if (v.l) items.push({ ch: v.l, size: CIRCLE.small });
+    if (v.c) items.push({ ch: v.c, size: CIRCLE.big });
+    if (v.r) items.push({ ch: v.r, size: CIRCLE.small });
+    drawRowCanvas(ctx, s, fitRow(items, CIRCLE.rowWidth, true), 200 * s, true);
   }
 
   // The 1600x1600 canvas every export path draws: PNG download, image
@@ -409,7 +417,10 @@
       const qrNs = qrModule();
       if (qrNs) {
         const qrSize = qrBoxPx(qrNs, creditUrl(), size, 6.5);
-        const qrPad = Math.round(qrSize * 0.35);
+        /* The circle frame leaves a small corner, so its QR sits closer to the
+           edge (17 units) than the other layouts' 0.35 of the box. The size is
+           unchanged: it is the physical floor, and only the pad may give. */
+        const qrPad = state.layout === "circle" ? Math.round(17 * s) : Math.round(qrSize * 0.35);
         qrNs.drawQrOnCanvas(ctx, creditUrl(), size - qrSize - qrPad, size - qrSize - qrPad, qrSize, {
           // The TEXT credit is deliberately low-contrast; the QR must not be.
           // Drawn in #aeb4c0 first, its darkest pixel measured 171/255 and no
