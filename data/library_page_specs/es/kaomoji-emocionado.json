@@ -117,6 +117,46 @@
           "label": "Vamos con todo"
         }
       ]
+    },
+    {
+      "id": "cheering",
+      "label": "Hurras y ¡yupi!",
+      "h2": "Kaomoji de Hurra y ¡Yupi!",
+      "intro": "Caritas para gritar ¡yupi!: una victoria, una buena noticia de un amigo o para darle ánimos a alguien antes de un gran día. \\(^o^)/ es la versión sencilla de teclado que funciona en cualquier app, y la ٩ y la و a cada lado de una carita son dos puños golpeando el aire.",
+      "symbols": [
+        {
+          "char": "\\(^o^)/",
+          "label": "¡Yupi! clásico"
+        },
+        {
+          "char": "＼(＾▽＾)／",
+          "label": "¡Yupi! con los brazos arriba"
+        },
+        {
+          "char": "o(〃＾▽＾〃)o",
+          "label": "¡Yupi! feliz"
+        },
+        {
+          "char": "ヾ(≧▽≦*)o",
+          "label": "Grito de alegría"
+        },
+        {
+          "char": "✧*。٩(ˊᗜˋ*)و✧*。",
+          "label": "¡Yupi! con brillos"
+        },
+        {
+          "char": "°˖✧◝(⁰▿⁰)◜✧˖°",
+          "label": "¡Yupi! enorme"
+        },
+        {
+          "char": "٩( ᐛ )و",
+          "label": "Pequeño baile de victoria"
+        },
+        {
+          "char": "(งˆ▽ˆ)ง",
+          "label": "¡Vamos, equipo!"
+        }
+      ]
     }
   ],
   "related": [

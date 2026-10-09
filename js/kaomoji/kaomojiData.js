@@ -130,7 +130,14 @@
       { label: "Lenny",   parts: { brackets: "lenny", eyes: "sadcurve",mouths: "pursed",cheeks: "none",  arms: "none",  decorations: "none" } },
       { label: "Crying",  parts: { brackets: "round", eyes: "teary",   mouths: "frown", cheeks: "none",  arms: "none",  decorations: "none" } },
       { label: "Angry",   parts: { brackets: "round", eyes: "angry",   mouths: "big",   cheeks: "none",  arms: "raise", decorations: "none" } },
-      { label: "Wink",    parts: { brackets: "round", eyes: "wink",    mouths: "smile", cheeks: "none",  arms: "none",  decorations: "star" } }
+      { label: "Wink",    parts: { brackets: "round", eyes: "wink",    mouths: "smile", cheeks: "none",  arms: "none",  decorations: "star" } },
+      { label: "Sparkle", parts: { brackets: "round", eyes: "sparkle", mouths: "omega", cheeks: "none",  arms: "none",  decorations: "sparkle" } },
+      { label: "Star",    parts: { brackets: "round", eyes: "star",    mouths: "grin",  cheeks: "none",  arms: "none",  decorations: "star" } },
+      { label: "Shy",     parts: { brackets: "round", eyes: "dot",     mouths: "smile", cheeks: "lines", arms: "none",  decorations: "none" } },
+      { label: "Kiss",    parts: { brackets: "round", eyes: "closed",  mouths: "kiss",  cheeks: "none",  arms: "none",  decorations: "heart" } },
+      { label: "Puppy",   parts: { brackets: "round", eyes: "dot",     mouths: "cat",   cheeks: "none",  arms: "none",  decorations: "none" } },
+      { label: "Sleepy",  parts: { brackets: "round", eyes: "closed",  mouths: "omega", cheeks: "none",  arms: "none",  decorations: "tilde" } },
+      { label: "Hug",     parts: { brackets: "round", eyes: "closed",  mouths: "smile", cheeks: "none",  arms: "hug",   decorations: "none" } }
     ]
   };
 })();

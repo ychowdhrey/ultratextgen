@@ -69,6 +69,20 @@
         { "char": "(´-ω-`)", "label": "Fed-Up Sigh Kaomoji" },
         { "char": "( `皿´)", "label": "Gritted Teeth Kaomoji" }
       ]
+    },
+    {
+      "id": "annoyed-kaomoji-pouts",
+      "label": "Pouts & Huffs",
+      "h2": "Annoyed Kaomoji: Pouts, Huffs and Glares",
+      "intro": "Pouts, huffs and sideways glares for when patience is running out. The ＃ and メ in two of these stand for the throbbing forehead vein manga draws on a character who is about to snap.",
+      "symbols": [
+        { "char": "(¬_¬)", "label": "Sideways Glare Kaomoji" },
+        { "char": "(￣^￣)", "label": "Nose in the Air Kaomoji" },
+        { "char": "(｀へ´)", "label": "Pouting Kaomoji" },
+        { "char": "(＃￣ω￣)", "label": "Vein Popping Kaomoji" },
+        { "char": "(-_-メ)", "label": "Losing Patience Kaomoji" },
+        { "char": "ಠ╭╮ಠ", "label": "Frowning Stare Kaomoji" }
+      ]
     }
   ],
   "collection_section": {
