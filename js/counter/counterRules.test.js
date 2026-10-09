@@ -158,5 +158,57 @@ t("hidden: kinds", D.listHidden("\u00A0\u200B\u202E").map(h => h.kind), ["space"
 t("clean: odd spaces become spaces, the rest go", D.cleanHidden("a\u00A0b\u202Fc\u200Bd\u202Ee"), "a b cde");
 t("clean: emoji joiner kept", D.cleanHidden("👨\u200D👩"), "👨\u200D👩");
 
+/* The "remove invisible characters" button, the inspect chip and the hidden
+   list used to disagree: the button knew 13 code points, the list knew 39.
+   Every invisible and direction entry of HIDDEN must now be stripped, and the
+   things that must NOT go (emoji joiner, braille word space) must stay. */
+const stripInv = D.TRANSFORMS.find(x => x.id === "invisible").fn;
+const hiddenCps = [0x00AD, 0x034F, 0x061C, 0x115F, 0x1160, 0x17B4, 0x17B5, 0x180E, 0x200B, 0x200C,
+  0x200E, 0x200F, 0x202A, 0x202B, 0x202C, 0x202D, 0x202E, 0x2060, 0x2061, 0x2062, 0x2063, 0x2064,
+  0x2066, 0x2067, 0x2068, 0x2069, 0x2800, 0x3164, 0xFEFF, 0xFFA0];
+t("invisible: every invisible/direction code point is stripped",
+  hiddenCps.filter(cp => stripInv("a" + String.fromCodePoint(cp) + "b") !== "ab").map(cp => cp.toString(16)), []);
+t("invisible: inspect counts the same set", D.inspect("a\u200Eb\u2062c\u061C").invisible, 3);
+t("invisible: emoji joiner kept", stripInv("👨\u200D👩"), "👨\u200D👩");
+t("invisible: braille word space kept beside braille cells", stripInv("\u2801\u2800\u2803"), "\u2801\u2800\u2803");
+t("invisible: blank-name U+2800 alone is stripped", stripInv("a\u2800"), "a");
+
+/* trimToFit cuts on a user-perceived character. A code-point cut left
+   a family emoji ending in a dangling joiner, and split flags. */
+const family = "👨\u200D👩\u200D👧\u200D👦";
+const cut = D.trimToFit(family.repeat(3), "discord-nick", { limit: 9 });
+t("trim: never ends on a joiner", /\u200D$/.test(cut), false);
+t("trim: only whole family emoji remain", cut.length % family.length, 0);
+const flags = D.trimToFit("🇫🇷🇩🇪🇯🇵🇧🇷🇺🇸", "discord-nick", { limit: 5 });
+t("trim: flag pairs stay whole", Array.from(flags).length % 2, 0);
+
+/* SMS: accents that GSM-7 lacks fold to plain letters only when that brings the
+   text back to 160 per segment; accents GSM-7 has are never touched. */
+const smsOffer = (txt) => D.suggest(txt, "sms").find(x => x.id === "gsm-safe");
+t("sms: Polish text gets the SMS-safe offer", smsOffer("Zażółć gęślą jaźń").result, "Zazolc gesla jazn");
+t("sms: offer returns to one GSM-7 segment", smsOffer("Zażółć gęślą jaźń").segmentsAfter, 1);
+t("sms: Czech, Turkish, Vietnamese fold", [D.gsmSafe("říšžťčýů"), D.gsmSafe("Şçığ"), D.gsmSafe("áạ")], ["risztcyu", "Scig", "aa"]);
+t("sms: GSM-7 accents survive, others fold", D.gsmSafe("café Ñandú über crème ù ł"), "café Ñandu über crème ù l");
+t("sms: text already GSM-7 is never folded", D.gsmSafe("café über"), "café über");
+t("sms: a disclosed fold says so", /spelling/.test(smsOffer("Zażółć gęślą jaźń").hint), true);
+t("sms: curly quotes still fixed with no fold", smsOffer("Hello \u201Cworld\u201D \ud83d\ude00").hint.indexOf("spelling"), -1);
+
+/* Word count for scripts written without spaces: sliced out of the shipped
+   controller (never a second copy), the same technique the zalgo tests use. */
+const ctrl = fs.readFileSync(__dirname + "/counterController.js", "utf8");
+const wcStart = ctrl.indexOf("  const UNSPACED_RE");
+const wcEnd = ctrl.indexOf("  function countSentences");
+if (wcStart < 0 || wcEnd < 0) throw new Error("countWords markers missing in counterController.js");
+global.document = { documentElement: { lang: "th" } };
+const countWords = new Function(ctrl.slice(wcStart, wcEnd) + "; return countWords;")();
+t("words: English unchanged", countWords("one two  three\nfour"), 4);
+t("words: empty is 0", countWords("   "), 0);
+t("words: Thai sentence is not 1", countWords("ฉันอยากไปกินข้าวที่ร้านอาหารใกล้บ้าน") > 5, true);
+document.documentElement.lang = "ja";
+t("words: Japanese sentence is not 1", countWords("私は昨日友達と一緒に東京で映画を見ました") > 5, true);
+document.documentElement.lang = "zh-TW";
+t("words: Traditional Chinese sentence is not 1", countWords("我昨天和朋友一起在台北看了一部電影") > 5, true);
+t("words: Latin words beside Thai are each counted", countWords("iPhone 15 ราคา") >= 3, true);
+
 console.log(fail ? "\n" + fail + " FAILURES" : "\nall green");
 process.exit(fail ? 1 : 0);

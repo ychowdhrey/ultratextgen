@@ -112,11 +112,35 @@
     return str.replace(/\n{3,}/g, "\n\n").replace(/^\s+|\s+$/g, "");
   }
 
-  /* ---------- invisible characters ---------- */
-  const INVISIBLE_RE = /[​‌⁠﻿­᠎͏឴឵ᅟᅠㅤﾠ]/g;
+  /* ---------- invisible characters ----------
+     Built from the HIDDEN table further down, so the remove button, the inspect
+     chip and the hidden-character list agree on what is invisible (before this
+     the button knew 13 code points and the list knew 39). Left alone on purpose:
+     the zero-width joiner, which holds emoji and Indic and Arabic-script clusters
+     together; and U+2800, which is the word space inside braille text, so it goes
+     only from text that holds no other braille cell. Spaces (NBSP, thin space)
+     are not removed here: cleanHidden() turns them into normal spaces. */
+  let invisibleRe = null;
+  const BRAILLE_CELL_RE = /[\u2801-\u28FF]/;
+
+  function invisibleRegex() {
+    if (!invisibleRe) {
+      const cps = Object.keys(HIDDEN).map(Number).filter((cp) =>
+        cp !== 0x200D && HIDDEN[cp][1] !== "space");
+      invisibleRe = new RegExp("[" + cps.map((cp) => "\\u{" + cp.toString(16) + "}").join("") + "]", "gu");
+    }
+    return invisibleRe;
+  }
 
   function stripInvisible(str) {
-    return (str || "").replace(INVISIBLE_RE, "");
+    const s = str || "";
+    const keepBlank = BRAILLE_CELL_RE.test(s);
+    return s.replace(invisibleRegex(), (m) => (keepBlank && m === "\u2800" ? m : ""));
+  }
+
+  function countInvisible(str) {
+    const s = str || "";
+    return Array.from(s).length - Array.from(stripInvisible(s)).length;
   }
 
   /* ---------- zalgo / stacked diacritics ---------- */
@@ -149,9 +173,55 @@
     { id: "hashtags", label: "Remove hashtags", hint: "Move them to a comment instead.", fn: stripHashtags }
   ];
 
-  /** straighten + strip the things that force UCS-2, in one move. */
-  function gsmSafe(str) {
-    return collapseSpaces(stripEmoji(stripInvisible(toPlain(straighten(str || "")))));
+  /* Letters with no GSM-7 form that fold to one that has: Polish ł, Czech ů,
+     Turkish ş, Vietnamese ạ. GSM-7 keeps é è ù ì ò ç Ñ ñ Ä Ö Ü ä ö ü ß and the
+     Scandinavian å ø æ, so those are never touched. The fold changes spelling
+     (łódź becomes lodz), so it only runs when the text would otherwise stay in
+     70-character Unicode segments, and the button says so. */
+  const ACCENT_FOLD = {
+    "ł": "l", "Ł": "L", "đ": "d", "Đ": "D", "ð": "d", "Ð": "D", "ħ": "h", "Ħ": "H",
+    "ı": "i", "œ": "oe", "Œ": "OE", "þ": "th", "Þ": "Th"
+  };
+
+  function isGsm7(str) {
+    const counts = ns.counterCounts;
+    return counts ? counts.gsmInfo(str).encoding === "GSM-7" : true;
+  }
+
+  function foldAccents(str) {
+    const memo = {};
+    let out = "";
+    for (const ch of str || "") {
+      if (!(ch in memo)) {
+        let folded = ch;
+        if (!isGsm7(ch)) {
+          const candidate = ACCENT_FOLD[ch] || ch.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+          if (candidate !== ch && candidate && isGsm7(candidate)) folded = candidate;
+        }
+        memo[ch] = folded;
+      }
+      out += memo[ch];
+    }
+    return out;
+  }
+
+  /** straighten + strip the things that force UCS-2, in one move. Accents are
+      folded only when everything else still leaves the text in Unicode mode. */
+  function gsmSafe(str, opts) {
+    const base = collapseSpaces(stripEmoji(stripInvisible(toPlain(straighten(str || "")))));
+    if (opts && opts.accents === false) return base;
+    return isGsm7(base) ? base : collapseSpaces(foldAccents(base));
+  }
+
+  /** User-perceived characters, so a cut never lands inside an emoji sequence
+      (a family emoji cut at a joiner), a flag pair or a base + combining mark. */
+  const clusterSegmenter = (typeof Intl !== "undefined" && Intl.Segmenter)
+    ? new Intl.Segmenter(undefined, { granularity: "grapheme" })
+    : null;
+
+  function clusters(str) {
+    if (!clusterSegmenter) return Array.from(str || "");
+    return Array.from(clusterSegmenter.segment(str || ""), (x) => x.segment);
   }
 
   function measureFor(text, limitId) {
@@ -180,10 +250,13 @@
         const fixed = gsmSafe(text);
         const after = ns.counterCounts.gsmInfo(fixed);
         if (after.encoding === "GSM-7") {
+          const folded = fixed !== gsmSafe(text, { accents: false });
           out.push({
             id: "gsm-safe",
             label: "Make it SMS-safe (back to 160 per segment)",
-            hint: "Removes the characters forcing Unicode mode: " + info.flipChars.slice(0, 5).join(" "),
+            hint: (folded
+              ? "Swaps accented letters for plain ones (ł becomes l), which changes the spelling, and removes what else forces Unicode mode: "
+              : "Removes the characters forcing Unicode mode: ") + info.flipChars.slice(0, 5).join(" "),
             result: fixed,
             saved: Math.max(0, base - measureFor(fixed, limitId)),
             segmentsBefore: info.segments,
@@ -233,7 +306,7 @@
     acc = acc.replace(/\s+$/, "");
     if (!acc) {
       // A single word longer than the whole limit — cut inside it.
-      const chars = Array.from(text);
+      const chars = clusters(text);
       let built = "";
       for (let i = 0; i < chars.length; i++) {
         if (measureFor(built + chars[i] + suffix, limitId) > limit) break;
@@ -259,6 +332,7 @@
     0x00A0: ["No-Break Space", "space"],
     0x00AD: ["Soft Hyphen", "invisible"],
     0x034F: ["Combining Grapheme Joiner", "invisible"],
+    0x061C: ["Arabic Letter Mark", "direction"],
     0x115F: ["Hangul Choseong Filler", "invisible"],
     0x1160: ["Hangul Jungseong Filler", "invisible"],
     0x17B4: ["Khmer Vowel Inherent Aq", "invisible"],
@@ -346,7 +420,7 @@
   /** What is in this text that the user cannot see but the field counts. */
   function inspect(text) {
     const s = text || "";
-    const invisible = (s.match(INVISIBLE_RE) || []).length;
+    const invisible = countInvisible(s);
     const combining = (s.match(COMBINING_RE) || []).length;
     let styled = 0;
     for (const ch of s) {

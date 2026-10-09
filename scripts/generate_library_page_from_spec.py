@@ -114,6 +114,36 @@ def esc(text):
     return html.escape(str(text), quote=False)
 
 
+# Inline markup a spec's prose fields may carry: emphasis and an internal link.
+# Escaping it turned "<strong>word</strong>" into literal tag text on 23 live
+# pages (21 under ko/), and 12 internal links into dead text. Anything outside
+# this whitelist, an external href included, is still escaped.
+_PROSE_MARKUP = re.compile(
+    r'&lt;(/?)(strong|em)&gt;|&lt;a href="(/[A-Za-z0-9_\-/]*)"&gt;|&lt;/a&gt;'
+)
+
+
+def esc_prose(text):
+    """HTML-escape prose, then restore the whitelisted inline markup. A closing
+    </a> is restored only for an opening tag that was itself restored, so a
+    rejected link can never leave a stray end tag behind."""
+    open_links = 0
+
+    def restore(match):
+        nonlocal open_links
+        if match.group(2):
+            return f"<{match.group(1)}{match.group(2)}>"
+        if match.group(3):
+            open_links += 1
+            return f'<a href="{match.group(3)}">'
+        if open_links:
+            open_links -= 1
+            return "</a>"
+        return match.group(0)
+
+    return _PROSE_MARKUP.sub(restore, esc(text))
+
+
 def esc_attr(text):
     """HTML-escape for use inside a double-quoted attribute."""
     return html.escape(str(text), quote=True)
@@ -477,7 +507,7 @@ def render_editorial_sections(sections):
         if sec.get("paragraphs"):
             para_html = [f"    <p>{p}</p>" for p in sec["paragraphs"]]
         elif sec.get("body"):
-            para_html = [f"    <p>{esc(sec['body'])}</p>"]
+            para_html = [f"    <p>{esc_prose(sec['body'])}</p>"]
         else:
             # Never emit a heading over an empty block: that is a page that
             # looks complete in the diff and reads as broken in the browser.
@@ -523,7 +553,7 @@ def render_symbol_section(sec, copy_label="Copy"):
         else ""
     )
     intro_html = (
-        f'  <p class="u-secondary-tight">{esc(sec["intro"])}</p>\n'
+        f'  <p class="u-secondary-tight">{esc_prose(sec["intro"])}</p>\n'
         if sec.get("intro")
         else ""
     )
@@ -575,7 +605,7 @@ def render_art_section(sec, copy_label="Copy", copy_aria=None):
         else ""
     )
     intro_html = (
-        f'  <p class="u-secondary-tight">{esc(sec["intro"])}</p>\n'
+        f'  <p class="u-secondary-tight">{esc_prose(sec["intro"])}</p>\n'
         if sec.get("intro")
         else ""
     )
@@ -948,7 +978,7 @@ def render_page(spec):
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
-    <p>{esc(spec["intro"])}</p>
+    <p>{esc_prose(spec["intro"])}</p>
   </div>
 </section>
 
