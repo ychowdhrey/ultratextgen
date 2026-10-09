@@ -7397,6 +7397,30 @@ body.dark-mode .tattoo-badge.is-roomy {
    what it adds: a Playwrite US/ES row is 50 + 6 + 6px, the 61px it was. */
 .cursive-print-sheet.pt-practice-glyph { gap: 0.4rem; }
 
+/* The glyph practice sheet on a fitted page: two columns (A-M | N-Z) of equal
+   tracks, filled down then across, and a type size the page hands down
+   (--pt-practice-k, set by fitPracticeSheet() from what the rows measure).
+   Every em below is the row's own font-size, so the columns scale with the
+   type and a wide pair (M m, W w) keeps its room. */
+.pt-sheet-page.is-fitted > .cursive-print-sheet.pt-practice-fit {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(var(--pt-practice-rows, 13), minmax(0, 1fr));
+  grid-auto-flow: column;
+  column-gap: 0.35in;
+  row-gap: 0;
+}
+.pt-practice-fit .cursive-print-row {
+  font-size: calc(1.6rem * var(--pt-practice-k, 1));
+  grid-template-columns: 3.4em 3.4em 1fr;
+  gap: 0.4em;
+}
+.pt-practice-fit .cursive-print-model,
+.pt-practice-fit .cursive-print-trace { font-size: inherit; white-space: nowrap; }
+.pt-practice-fit .cursive-print-line { min-height: 1em; }
+
 /* The cursive pages' own practice sheet (#cursivePrintRoot, built by
    cursivePageController.js) prints A-M and N-Z side by side so the alphabet
    fits one sheet. In one column its 26 rows ran to a second page that was

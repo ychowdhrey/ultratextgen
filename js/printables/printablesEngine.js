@@ -2204,6 +2204,44 @@
   function layoutPracticeRows(root) {
     if (!root || !root.querySelectorAll) return;
     $$(".pt-name-row", root).forEach(layoutPracticeRow);
+    $$(".pt-practice-fit", root).forEach(fitPracticeSheet);
+  }
+
+  /* A glyph practice sheet is ONE page, and its type takes its size from the
+     page rather than the page taking its length from the type.
+
+     The sheet used to be a flowed column of 26 rows at a fixed 1.6rem. A
+     script face's line box is 50-73px at that size, so the column was
+     1,300-1,900px against a 960px page and the PDF cut it into two or three,
+     while every one of these pages says "an A-Z page". The rows are now two
+     columns of 13 (A-M, N-Z) whose tracks are an equal share of the fitted
+     page, and this scales the type until the tallest row's content fits its
+     track. Measured, not estimated: the page's own title, name/date line and
+     credit claim their natural height in the flex column, and what is left is
+     whatever the paper and margins leave, so nothing here knows a paper size.
+     Run inside the state being measured -- the surface is display:none outside
+     it and every rect reads zero, in which case this leaves the sheet alone. */
+  const PRACTICE_FIT_MIN_K = 0.5;     // below half size the sheet stops being a model to copy
+  function fitPracticeSheet(sheet) {
+    sheet.style.removeProperty("--pt-practice-k");
+    const rows = Array.from(sheet.querySelectorAll(".cursive-print-row"));
+    let k = 1;
+    for (let pass = 0; pass < 4; pass++) {
+      let worst = 0;
+      rows.forEach((row) => {
+        const room = row.getBoundingClientRect().height;
+        if (!(room > 0)) return;
+        const cs = getComputedStyle(row);
+        const chrome = (parseFloat(cs.paddingBottom) || 0) + (parseFloat(cs.borderBottomWidth) || 0);
+        let need = 0;
+        Array.from(row.children).forEach((c) => { need = Math.max(need, c.getBoundingClientRect().height); });
+        worst = Math.max(worst, (need + chrome) / room);
+      });
+      if (worst <= 1.001) break;
+      k = Math.max(PRACTICE_FIT_MIN_K, k / worst * 0.99);
+      sheet.style.setProperty("--pt-practice-k", k.toFixed(4));
+      if (k <= PRACTICE_FIT_MIN_K) break;
+    }
   }
 
   /* The miniature is the same composition the sheet will use, drawn small --
@@ -6269,8 +6307,23 @@
        page, so the Spanish, French, Italian, Polish and Portuguese cursive
        sheets printed "Cursiva practice sheet" at the top of the PDF. The
        wording is each locale's own, harvested from its pages. */
+    const practiceTitle = withName(moreTitle("letters"), "") || T.practiceTitle.replace("{Noun}", cap(NOUN));
+    if (RENDER === "glyph") {
+      /* One page, two columns, type sized to the paper: see fitPracticeSheet().
+         The outline-mode sheet keeps flowing, because its model is a 100px
+         letter tile and 36 rows of those do not shrink to a page and stay a
+         letter to trace. */
+      sheet.classList.add("pt-practice-fit");
+      sheet.style.setProperty("--pt-practice-rows", String(Math.ceil(CHARS.length / 2)));
+      const page = document.createElement("div");
+      page.className = "pt-sheet-page is-fitted pt-practice-page";
+      page.appendChild(sheet);
+      if (moreFooterOn("letters", false)) page.appendChild(nameDateRow());
+      printWrap(practiceTitle, page, "practice_sheet");
+      return;
+    }
     if (moreFooterOn("letters", false)) sheet.appendChild(nameDateRow());
-    printWrap(withName(moreTitle("letters"), "") || T.practiceTitle.replace("{Noun}", cap(NOUN)), sheet, "practice_sheet");
+    printWrap(practiceTitle, sheet, "practice_sheet");
   }
 
   /* ---------------------------------------------------------------
