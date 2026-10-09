@@ -21,9 +21,28 @@
   const READING_WPM = 225;
   const SPEAKING_WPM = 130;
 
+  // Thai, Lao, Khmer, Burmese, Japanese and Chinese run words together, so
+  // splitting on spaces read a whole paragraph as one word, and the reading and
+  // speaking times were derived from that 1. The browser's own dictionary
+  // segmenter counts them; where it is missing the old split stays.
+  const UNSPACED_RE = /[\u0E00-\u0EFF\u1000-\u109F\u1780-\u17FF\u3040-\u30FF\u3400-\u9FFF\uF900-\uFAFF]/;
+
   function countWords(str) {
     const trimmed = str.trim();
-    return trimmed ? trimmed.split(/\s+/).length : 0;
+    if (!trimmed) return 0;
+    if (UNSPACED_RE.test(trimmed) && typeof Intl !== "undefined" && Intl.Segmenter) {
+      const lang = (typeof document !== "undefined" && document.documentElement.lang) || undefined;
+      let words = 0;
+      try {
+        for (const part of new Intl.Segmenter(lang, { granularity: "word" }).segment(trimmed)) {
+          if (part.isWordLike) words++;
+        }
+      } catch (e) {
+        return trimmed.split(/\s+/).length;
+      }
+      return words;
+    }
+    return trimmed.split(/\s+/).length;
   }
 
   function countSentences(str) {

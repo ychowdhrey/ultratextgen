@@ -416,6 +416,18 @@ function stubCanvas(UTG) {
   eq(plain.getAttribute('aria-label'), 'Share Ultra Bold result', 'without a caller label the i18n/English text is unchanged');
 }
 
+{
+  // What the button says after it copies the link, or fails to, travels with the
+  // button: library pages carry no i18n.js, so the fallback was English under
+  // Korean prose.
+  const { UTG } = load({});
+  const b = UTG.buildShareButton({ label: '공유', linkCopied: '링크 복사됨', failedLabel: '✗ 실패' });
+  eq(b.dataset.shareCopied, '링크 복사됨', 'the caller\'s "link copied" text rides on the button');
+  eq(b.dataset.shareFailed, '✗ 실패', 'and so does its failure text');
+  const plain = UTG.buildShareButton({ label: 'Share' });
+  eq(plain.dataset.shareCopied, undefined, 'a button with no caller text stays on the i18n/English path');
+}
+
 /* ---- shareImageBlob (the printables engines' path) --------------------- */
 
 {

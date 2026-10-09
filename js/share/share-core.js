@@ -288,6 +288,11 @@
     // get an English "Share" sitting under localized prose, which is the exact
     // defect i18n.js's own comment records for the shadow locales.
     if (o.label) btn.dataset.shareLabel = String(o.label);
+    // The same for what the button says after it copies the link (no native
+    // share sheet) or fails to: without these a Korean library page confirmed
+    // the copy in English.
+    if (o.linkCopied) btn.dataset.shareCopied = String(o.linkCopied);
+    if (o.failedLabel) btn.dataset.shareFailed = String(o.failedLabel);
     if (o.params && typeof o.params === "object") {
       try {
         btn.dataset.shareParams = JSON.stringify(o.params);
@@ -997,14 +1002,14 @@ document.addEventListener("click", async (e) => {
   const label = $(".share-result-label", btn);
   if (outcome === "copied") {
     btn.classList.add("copied");
-    if (label) label.textContent = uiText("shareResult.linkCopied", "Link copied");
+    if (label) label.textContent = btn.dataset.shareCopied || uiText("shareResult.linkCopied", "Link copied");
     setTimeout(() => {
       btn.classList.remove("copied");
       if (label && label.isConnected) label.textContent = btn.dataset.shareLabel || uiText("shareResult.label", "Share");
     }, 1500);
   } else if (outcome === "failed") {
     btn.classList.add("share-error");
-    if (label) label.textContent = uiText("copyButtons.failed", "✗ Failed");
+    if (label) label.textContent = btn.dataset.shareFailed || uiText("copyButtons.failed", "✗ Failed");
     setTimeout(() => {
       btn.classList.remove("share-error");
       if (label && label.isConnected) label.textContent = btn.dataset.shareLabel || uiText("shareResult.label", "Share");

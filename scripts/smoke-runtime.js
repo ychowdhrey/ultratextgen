@@ -309,8 +309,9 @@ async function main() {
   }
 
   // 11. Copy paths that used to send nothing.
-  console.log('\n/usecase/zalgo-text/ and /roblox/name-generator/ (copy events)');
-  for (const [url, sel] of [['/usecase/zalgo-text/', '#copyBtn'], ['/roblox/name-generator/', '.rng-mode-panel button[data-name]']]) {
+  console.log('\n/usecase/zalgo-text/, /roblox/, /tiktok/ and /youtube/ name generators (copy events)');
+  for (const [url, sel] of [['/usecase/zalgo-text/', '#copyBtn'], ['/roblox/name-generator/', '.rng-mode-panel button[data-name]'],
+    ['/tiktok/name-generator/', '.copy-btn'], ['/youtube/name-generator/', '.copy-btn']]) {
     const { ctx, page, errors } = await open(url, 'desktop');
     await page.waitForTimeout(500);
     const n0 = (await dl(page)).length;
@@ -318,6 +319,24 @@ async function main() {
     await page.waitForTimeout(300);
     const ev = (await dl(page)).slice(n0).filter((e) => e.event === 'copy_text');
     check(`${url} Copy sends one copy_text, without copy_item`, ev.length === 1 && ev[0].copy_item === undefined, JSON.stringify(ev));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 11b. The Share button's confirmation is in the page language. Without a
+  // native share sheet it copies the link and says so; that label used to be the
+  // English fallback under Korean prose because library pages carry no i18n.js.
+  console.log('\n/ko/library/imotikon/ (share fallback label)');
+  {
+    const { ctx, page, errors } = await open('/ko/library/imotikon/', 'desktop');
+    await page.waitForTimeout(500);
+    const hasShare = await page.evaluate(() => typeof navigator.share === 'function');
+    const btn = page.locator('.share-result-btn').first();
+    await btn.scrollIntoViewIfNeeded();
+    await btn.click();
+    await page.waitForTimeout(300);
+    const label = await btn.locator('.share-result-label').textContent();
+    check('share confirmation is not the English fallback', hasShare || (label && !/Link copied|Failed/.test(label)), label);
     check('no page errors', !errors.length, errors.join(' | '));
     await ctx.close();
   }

@@ -967,6 +967,18 @@ jobs:
         continue-on-error: true
         run: npm run test:case-converter | tee case-converter-tests.log
 
+      # Gating, zero backlog: the character counter's pure half. It exists
+      # because the counter once shipped a wrong number no visual check could
+      # catch, and the test file ran nowhere, so a repair to the reducers, the
+      # hidden-character set, trim-to-fit or the word count had no guard. It
+      # pins the SMS segment maths, every reducer, the HIDDEN table and the
+      # word count for scripts written without spaces (sliced from the shipped
+      # controller, never a second copy).
+      - name: Run character counter tests
+        id: counter_tests
+        continue-on-error: true
+        run: npm run test:counter | tee counter-tests.log
+
       # Gating, zero backlog: i18n.js rewrites a page's FAQPage JSON-LD from
       # the locale JSON it fetches, and the FAQ in a locale JSON is the
       # HOMEPAGE's FAQ. Only a homepage renders it, so on any other page that
@@ -1384,6 +1396,11 @@ jobs:
             cat case-converter-tests.log
             echo '```'
             echo ""
+            echo "### Character counter tests: \`${{ steps.counter_tests.outcome }}\`"
+            echo '```'
+            cat counter-tests.log
+            echo '```'
+            echo ""
             echo "### i18n FAQ-schema guard tests — \`${{ steps.i18n_faq_schema_tests.outcome }}\`"
             echo '```'
             cat i18n-faq-schema-tests.log
@@ -1521,6 +1538,7 @@ jobs:
           steps.spec_sentence_reuse_tests.outcome == 'failure' ||
           steps.header_analytics_tests.outcome == 'failure' ||
           steps.case_converter_tests.outcome == 'failure' ||
+          steps.counter_tests.outcome == 'failure' ||
           steps.i18n_faq_schema_tests.outcome == 'failure' ||
           steps.accessibility.outcome == 'failure' ||
           steps.collection_grids.outcome == 'failure' ||

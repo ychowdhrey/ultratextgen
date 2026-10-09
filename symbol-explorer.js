@@ -49,6 +49,8 @@
       saved: "Saved",
       share: "Share",
       shareImage: "Share as an image",
+      linkCopied: "Link copied",
+      failed: "✗ Failed",
       clearAll: "Clear all",
       copyLabel: "Copy",
       selectImage: "Select and share image",
@@ -74,6 +76,8 @@
       lookPlain: "Sao chép bản thường",
       lookEmoji: "Sao chép bản emoji",
       lookNote: "Một số ứng dụng vẫn hiển thị có màu.",
+      linkCopied: "Đã sao chép liên kết",
+      failed: "✗ Thất bại",
       formats: { inline: "Một hàng", vertical: "Dọc", comma: "Dấu phẩy", space: "Cách", bullet: "Gạch đầu dòng" }
     },
     pt: {
@@ -92,6 +96,8 @@
       lookPlain: "Copiar versão simples",
       lookEmoji: "Copiar versão emoji",
       lookNote: "Alguns apps mostram em cores mesmo assim.",
+      linkCopied: "Link copiado",
+      failed: "✗ Falhou",
       formats: { inline: "Em linha", vertical: "Na vertical", comma: "Vírgula", space: "Espaço", bullet: "Lista" }
     },
     es: {
@@ -110,6 +116,8 @@
       lookPlain: "Copiar versión simple",
       lookEmoji: "Copiar versión emoji",
       lookNote: "Algunas apps lo muestran en color de todos modos.",
+      linkCopied: "Enlace copiado",
+      failed: "✗ Falló",
       formats: { inline: "En línea", vertical: "En vertical", comma: "Coma", space: "Espacio", bullet: "Viñeta" }
     },
     de: {
@@ -128,6 +136,8 @@
       lookPlain: "Schlichte Version kopieren",
       lookEmoji: "Emoji-Version kopieren",
       lookNote: "Manche Apps zeigen das Symbol trotzdem farbig.",
+      linkCopied: "Link kopiert",
+      failed: "✗ Fehlgeschlagen",
       formats: { inline: "Nebeneinander", vertical: "Vertikal", comma: "Komma", space: "Leerzeichen", bullet: "Aufzählung" }
     },
     id: {
@@ -146,6 +156,8 @@
       lookPlain: "Salin versi polos",
       lookEmoji: "Salin versi emoji",
       lookNote: "Beberapa aplikasi tetap menampilkannya berwarna.",
+      linkCopied: "Tautan disalin",
+      failed: "✗ Gagal",
       formats: { inline: "Sebaris", vertical: "Vertikal", comma: "Koma", space: "Spasi", bullet: "Butir" }
     },
     tr: {
@@ -164,6 +176,8 @@
       lookPlain: "Düz sürümü kopyala",
       lookEmoji: "Emoji sürümünü kopyala",
       lookNote: "Bazı uygulamalar yine de renkli gösterir.",
+      linkCopied: "Bağlantı kopyalandı",
+      failed: "✗ Başarısız",
       formats: { inline: "Yan yana", vertical: "Alt alta", comma: "Virgüllü", space: "Boşluklu", bullet: "Maddeli" }
     },
     fr: {
@@ -182,6 +196,8 @@
       lookPlain: "Copier la version simple",
       lookEmoji: "Copier la version emoji",
       lookNote: "Certaines applis l’affichent quand même en couleur.",
+      linkCopied: "Lien copié",
+      failed: "✗ Échec",
       formats: { inline: "En ligne", vertical: "Verticale", comma: "Virgules", space: "Espaces", bullet: "Liste" }
     },
     nl: {
@@ -200,6 +216,8 @@
       lookPlain: "Gewone versie kopiëren",
       lookEmoji: "Emojiversie kopiëren",
       lookNote: "Sommige apps tonen het symbool toch in kleur.",
+      linkCopied: "Link gekopieerd",
+      failed: "✗ Mislukt",
       formats: { inline: "Op één regel", vertical: "Verticaal", comma: "Komma's", space: "Spaties", bullet: "Lijst" }
     },
     it: {
@@ -218,6 +236,8 @@
       lookPlain: "Copia la versione semplice",
       lookEmoji: "Copia la versione emoji",
       lookNote: "Alcune app lo mostrano comunque a colori.",
+      linkCopied: "Link copiato",
+      failed: "✗ Errore",
       formats: { inline: "In linea", vertical: "Verticale", comma: "Virgola", space: "Spazio", bullet: "Elenco puntato" }
     },
     pl: {
@@ -236,6 +256,8 @@
       lookPlain: "Kopiuj zwykłą wersję",
       lookEmoji: "Kopiuj wersję emoji",
       lookNote: "Niektóre aplikacje i tak pokazują symbol w kolorze.",
+      linkCopied: "Link skopiowany",
+      failed: "✗ Błąd",
       formats: { inline: "W linii", vertical: "Pionowo", comma: "Przecinki", space: "Spacje", bullet: "Punktory" }
     },
     th: {
@@ -254,6 +276,8 @@
       lookPlain: "คัดลอกแบบธรรมดา",
       lookEmoji: "คัดลอกแบบอีโมจิ",
       lookNote: "บางแอปยังคงแสดงเป็นสีอยู่ดี",
+      linkCopied: "คัดลอกลิงก์แล้ว",
+      failed: "✗ ล้มเหลว",
       formats: { inline: "เรียงบรรทัดเดียว", vertical: "แนวตั้ง", comma: "จุลภาค", space: "เว้นวรรค", bullet: "บุลเล็ต" }
     },
     zh: {
@@ -272,6 +296,8 @@
       lookPlain: "複製純文字版",
       lookEmoji: "複製表情符號版",
       lookNote: "部分 App 仍會以彩色顯示。",
+      linkCopied: "已複製連結",
+      failed: "✗ 失敗",
       formats: { inline: "單行", vertical: "直式", comma: "逗號", space: "空格", bullet: "項目符號" }
     },
     ko: {
@@ -290,6 +316,8 @@
       lookPlain: "기본 기호로 복사",
       lookEmoji: "이모지로 복사",
       lookNote: "일부 앱에서는 그래도 컬러로 표시됩니다.",
+      linkCopied: "링크 복사됨",
+      failed: "✗ 실패",
       formats: { inline: "한 줄로", vertical: "세로로", comma: "쉼표로", space: "공백으로", bullet: "불릿으로" }
     },
     ar: {
@@ -308,6 +336,8 @@
       lookPlain: "انسخ النسخة العادية",
       lookEmoji: "انسخ نسخة الإيموجي",
       lookNote: "بعض التطبيقات تعرض الرمز بالألوان رغم ذلك.",
+      linkCopied: "تم نسخ الرابط",
+      failed: "✗ فشل",
       formats: { inline: "متتالٍ", vertical: "عمودي", comma: "بفواصل", space: "بمسافات", bullet: "نقطي" }
     },
     no: {
@@ -326,6 +356,8 @@
       lookPlain: "Kopier vanlig versjon",
       lookEmoji: "Kopier emoji-versjon",
       lookNote: "Noen apper viser symbolet i farger likevel.",
+      linkCopied: "Lenke kopiert",
+      failed: "✗ Mislyktes",
       formats: { inline: "På linje", vertical: "Vertikalt", comma: "Komma", space: "Mellomrom", bullet: "Punktliste" }
     },
     ja: {
@@ -344,6 +376,8 @@
       lookPlain: "テキスト版をコピー",
       lookEmoji: "絵文字版をコピー",
       lookNote: "アプリによってはカラーで表示されます。",
+      linkCopied: "リンクをコピーしました",
+      failed: "✗ 失敗しました",
       formats: { inline: "1行", vertical: "縦並び", comma: "カンマ区切り", space: "スペース区切り", bullet: "箇条書き" }
     },
     ru: {
@@ -362,6 +396,8 @@
       lookPlain: "Копировать обычный символ",
       lookEmoji: "Копировать эмодзи",
       lookNote: "Некоторые приложения всё равно показывают его в цвете.",
+      linkCopied: "Ссылка скопирована",
+      failed: "✗ Ошибка",
       formats: { inline: "В строку", vertical: "Столбиком", comma: "Через запятую", space: "Через пробел", bullet: "Список" }
     },
     da: {
@@ -380,6 +416,8 @@
       lookPlain: "Kopiér almindelig version",
       lookEmoji: "Kopiér emoji-version",
       lookNote: "Nogle apps viser alligevel symbolet i farver.",
+      linkCopied: "Link kopieret",
+      failed: "✗ Mislykkedes",
       formats: { inline: "På linje", vertical: "Lodret", comma: "Komma", space: "Mellemrum", bullet: "Punktopstilling" }
     },
     sv: {
@@ -398,6 +436,8 @@
       lookPlain: "Kopiera vanlig version",
       lookEmoji: "Kopiera emoji-version",
       lookNote: "Vissa appar visar ändå symbolen i färg.",
+      linkCopied: "Länk kopierad",
+      failed: "✗ Misslyckades",
       formats: { inline: "På rad", vertical: "Vertikalt", comma: "Kommatecken", space: "Mellanslag", bullet: "Punktlista" }
     },
     cs: {
@@ -416,6 +456,8 @@
       lookPlain: "Kopírovat jednoduchou verzi",
       lookEmoji: "Kopírovat verzi emoji",
       lookNote: "Některé aplikace symbol přesto zobrazí barevně.",
+      linkCopied: "Odkaz zkopírován",
+      failed: "✗ Selhalo",
       formats: { inline: "Na řádek", vertical: "Svisle", comma: "Čárky", space: "Mezery", bullet: "Odrážky" }
     },
     sk: {
@@ -434,6 +476,8 @@
       lookPlain: "Kopírovať jednoduchú verziu",
       lookEmoji: "Kopírovať verziu emoji",
       lookNote: "Niektoré aplikácie symbol aj tak zobrazia farebne.",
+      linkCopied: "Odkaz skopírovaný",
+      failed: "✗ Zlyhalo",
       formats: { inline: "Na riadok", vertical: "Zvisle", comma: "Čiarky", space: "Medzery", bullet: "Odrážky" }
     },
     hr: {
@@ -452,6 +496,8 @@
       lookPlain: "Kopiraj običnu verziju",
       lookEmoji: "Kopiraj emoji verziju",
       lookNote: "Neke aplikacije ipak prikazuju simbol u boji.",
+      linkCopied: "Poveznica kopirana",
+      failed: "✗ Neuspjelo",
       formats: { inline: "U nizu", vertical: "Okomito", comma: "Zarezi", space: "Razmaci", bullet: "Popis" }
     },
     bs: {
@@ -470,6 +516,8 @@
       lookPlain: "Kopiraj običnu verziju",
       lookEmoji: "Kopiraj emoji verziju",
       lookNote: "Neke aplikacije ipak prikazuju simbol u boji.",
+      linkCopied: "Link kopiran",
+      failed: "✗ Neuspjelo",
       formats: { inline: "U nizu", vertical: "Okomito", comma: "Zarezi", space: "Razmaci", bullet: "Spisak" }
     },
     sr: {
@@ -488,6 +536,8 @@
       lookPlain: "Kopiraj običnu verziju",
       lookEmoji: "Kopiraj emodži verziju",
       lookNote: "Neke aplikacije ipak prikazuju simbol u boji.",
+      linkCopied: "Link kopiran",
+      failed: "✗ Neuspelo",
       formats: { inline: "У низу", vertical: "Усправно", comma: "Зарези", space: "Размаци", bullet: "Списак" }
     },
     ro: {
@@ -506,6 +556,8 @@
       lookPlain: "Copiază varianta simplă",
       lookEmoji: "Copiază varianta emoji",
       lookNote: "Unele aplicații îl afișează oricum color.",
+      linkCopied: "Link copiat",
+      failed: "✗ Eșuat",
       formats: { inline: "Pe un rând", vertical: "Pe verticală", comma: "Cu virgulă", space: "Cu spațiu", bullet: "Listă" }
     },
     hu: {
@@ -524,6 +576,8 @@
       lookPlain: "Egyszerű változat másolása",
       lookEmoji: "Emoji változat másolása",
       lookNote: "Egyes alkalmazások így is színesen jelenítik meg.",
+      linkCopied: "Link másolva",
+      failed: "✗ Sikertelen",
       formats: { inline: "Egy sorban", vertical: "Függőlegesen", comma: "Vesszővel", space: "Szóközzel", bullet: "Felsorolás" }
     },
     hi: {
@@ -542,6 +596,8 @@
       lookPlain: "सादा वर्ज़न कॉपी करें",
       lookEmoji: "इमोजी वर्ज़न कॉपी करें",
       lookNote: "कुछ ऐप फिर भी इसे रंगीन दिखाते हैं।",
+      linkCopied: "लिंक कॉपी हो गया",
+      failed: "✗ विफल",
       formats: { inline: "एक लाइन में", vertical: "ऊपर-नीचे", comma: "कॉमा से", space: "स्पेस से", bullet: "बुलेट में" }
     },
     tl: {
@@ -560,6 +616,8 @@
       lookPlain: "Kopyahin ang simpleng bersyon",
       lookEmoji: "Kopyahin ang emoji na bersyon",
       lookNote: "May mga app na nagpapakita pa rin nito nang may kulay.",
+      linkCopied: "Nakopya ang link",
+      failed: "✗ Nabigo",
       formats: { inline: "Isang linya", vertical: "Patayo", comma: "Kuwit", space: "Espasyo", bullet: "Listahan" }
     },
     /* fi and ms were missing until 2026-09-10, so their 5 collection pages
@@ -585,6 +643,8 @@
       lookPlain: "Kopioi tavallinen versio",
       lookEmoji: "Kopioi emojiversio",
       lookNote: "Jotkin sovellukset näyttävät symbolin silti värillisenä.",
+      linkCopied: "Linkki kopioitu",
+      failed: "✗ Epäonnistui",
       formats: { inline: "Rivi", vertical: "Pysty", comma: "Pilkku", space: "V\u00e4lily\u00f6nti", bullet: "Luettelo" }
     },
     ms: {
@@ -603,6 +663,8 @@
       lookPlain: "Salin versi biasa",
       lookEmoji: "Salin versi emoji",
       lookNote: "Sesetengah aplikasi tetap memaparkannya berwarna.",
+      linkCopied: "Pautan disalin",
+      failed: "✗ Gagal",
       formats: { inline: "Satu baris", vertical: "Menegak", comma: "Koma", space: "Ruang", bullet: "Senarai" }
     },
     uk: {
@@ -621,6 +683,8 @@
       lookPlain: "Скопіювати звичайну версію",
       lookEmoji: "Скопіювати версію емодзі",
       lookNote: "Деякі застосунки все одно показують його кольоровим.",
+      linkCopied: "Посилання скопійовано",
+      failed: "✗ Помилка",
       formats: { inline: "В один рядок", vertical: "Стовпчиком", comma: "Через кому", space: "Через пробіл", bullet: "Списком" }
     }
   };
@@ -1243,6 +1307,8 @@
     saved: "copyButtons.saved",
     share: "shareResult.label",
     shareImage: "shareResult.imageTitle",
+    linkCopied: "shareResult.linkCopied",
+    failed: "copyButtons.failed",
     clearAll: "savedStyles.clearAll",
     copyLabel: "copyButtons.copy",
     selectImage: "imageSelection.selectImage",
@@ -1557,6 +1623,8 @@
         surface: "library_section",
         itemType: "collection",
         label: t("share", "Share"),
+        linkCopied: t("linkCopied", "Link copied"),
+        failedLabel: t("failed", "✗ Failed"),
         icon: "link"
       }));
       if (Array.prototype.some.call(tiles, function (tile) { return isDrawable(tile.getAttribute("data-symbol")); })) {

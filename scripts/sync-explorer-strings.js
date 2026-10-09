@@ -44,6 +44,10 @@ const KEYS = {
   saved: 'copyButtons.saved',
   share: 'shareResult.label',
   shareImage: 'shareResult.imageTitle',
+  // What the Share button says after it copies the link (browsers with no
+  // native share sheet) or fails to (2026-10-08).
+  linkCopied: 'shareResult.linkCopied',
+  failed: 'copyButtons.failed',
   clearAll: 'savedStyles.clearAll',
   copyLabel: 'copyButtons.copy',
   // The two entry-button labels for "Select and share image" (2026-10-01).
