@@ -9442,6 +9442,197 @@ body.is-printing #pt-print-root .pt-sp-answer-cols { max-width: 6.4in; }
 }
 
 /* ==========================================================================
+   LETTERS TO NUMBERS TOOL  (/letters-to-numbers/)
+   Two live panels (letters -> numbers, numbers -> letters) under one shared
+   numbering switch, followed by a static A-Z position chart. Theme tokens
+   only, so dark mode needs no overrides. One column on mobile.
+   ========================================================================== */
+.l2n-numbering {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin: 8px 0 16px;
+}
+.l2n-range {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+.l2n-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+  min-height: 44px;
+}
+.l2n-check input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: var(--accent-purple);
+}
+.l2n-tool {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.l2n-panel {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+.l2n-panel-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+.l2n-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.l2n-field > label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.l2n-field select,
+.l2n-field textarea {
+  width: 100%;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  padding: 8px 10px;
+}
+.l2n-field textarea { resize: vertical; min-height: 96px; }
+.l2n-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.l2n-note {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin: -8px 0 0;
+  line-height: 1.5;
+}
+.l2n-output-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.l2n-output-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.l2n-output-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+/* Same override as .ascii-output-head .copy-btn: the unscoped mobile
+   ".copy-btn { width: 100% }" rule is for full-width style cards. */
+.l2n-output-head .copy-btn {
+  width: auto;
+}
+.l2n-output {
+  min-height: 44px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  padding: 10px 12px;
+  font-family: 'Space Mono', ui-monospace, 'Courier New', monospace;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.l2n-output-text { letter-spacing: 0.04em; }
+.l2n-offscreen {
+  position: fixed;
+  top: 0;
+  left: -9999px;
+  opacity: 0;
+}
+.l2n-steps {
+  margin: 0 0 12px;
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.l2n-chart-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+.l2n-chart {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  font-size: 0.9375rem;
+  text-align: center;
+}
+.l2n-chart caption {
+  caption-side: top;
+  text-align: left;
+  padding: 0 0 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.l2n-chart th,
+.l2n-chart td {
+  border: 1px solid var(--border-light);
+  padding: 8px 2px;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+}
+.l2n-chart thead th {
+  background: var(--bg-base);
+  font-weight: 700;
+}
+.l2n-chart tbody th {
+  background: var(--bg-base);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.l2n-chart th:first-child {
+  width: 22%;
+  text-align: left;
+  padding-left: 8px;
+}
+
+@media (max-width: 780px) {
+  .l2n-tool { grid-template-columns: 1fr; }
+  .l2n-chart { font-size: 0.8125rem; }
+  .l2n-chart tbody th { font-size: 0.6875rem; padding-left: 6px; }
+}
+
+/* ==========================================================================
    ASCII ART GENERATOR  (/ascii-art-generator/)
    Type a word -> live FIGlet-style block-letter banner, switchable between
    hand-authored font styles. Monospace <pre> output scrolls inside its own

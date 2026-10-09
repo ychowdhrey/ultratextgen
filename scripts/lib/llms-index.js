@@ -207,6 +207,7 @@ const ROOT_PAGE_SECTION = new Map(Object.entries({
   'kaomoji-dictionary': 'tools',
   'kaomoji-generator': 'tools',
   'katakana-chart': 'tools',
+  'letters-to-numbers': 'tools',
   // Legal / company. The set is `check-image-assets.py`'s own `legal/info`
   // rule, reused rather than restated.
   about: 'about',
