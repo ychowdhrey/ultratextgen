@@ -174,10 +174,49 @@ def route(rel_path):
     return None
 
 
+# A subject kaomoji page opens the generator already set to its mood, so the
+# card lands on faces in that mood instead of the full parts list. The ids are
+# the generator's own (`MOODS` in js/kaomoji/kaomojiData.js; the test pins
+# that every value here exists there). A subject with no matching mood keeps
+# the bare generator link.
+KAOMOJI_GENERATOR_MOODS = {
+    "happy-kaomoji": "happy",
+    "cute-kaomoji": "cute",
+    "love-kaomoji": "love",
+    "heart-kaomoji": "love",
+    "sad-kaomoji": "sad",
+    "crying-kaomoji": "sad",
+    "angry-kaomoji": "angry",
+    "blushing-kaomoji": "shy",
+    "shocked-kaomoji": "surprised",
+}
+
+
+def href_for(key, rel_path):
+    """The destination href for this page: the shared one, plus a mood preset
+    when the page is a subject kaomoji page the generator has a mood for."""
+    base = DESTINATIONS[key]["href"]
+    if key == "kaomoji-generator":
+        parts = [p for p in rel_path.split("/") if p]
+        mood = KAOMOJI_GENERATOR_MOODS.get(parts[1]) if len(parts) > 2 else None
+        if mood:
+            return f"{base}?mood={mood}"
+    return base
+
+
+def is_refinable(href, key, target):
+    """True when a card already points at this destination's bare href and the
+    page should carry a more specific one (a mood preset). Only this pass's own
+    default is refined; a card pointed anywhere else is still left alone."""
+    if not href or href == target:
+        return False
+    return href.split("#")[0] == DESTINATIONS[key]["href"] and target != DESTINATIONS[key]["href"]
+
+
 def card_for(rel_path):
     """The full replacement card for a page, or None. Convenience wrapper."""
     key = route(rel_path)
-    return dict(DESTINATIONS[key], key=key) if key else None
+    return dict(DESTINATIONS[key], key=key, href=href_for(key, rel_path)) if key else None
 
 
 # ---------------------------------------------------------------------------
