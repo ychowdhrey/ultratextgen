@@ -131,6 +131,38 @@
       ]
     },
     {
+      "id": "bow-font",
+      "label": "Letras con Moño",
+      "h2": "Texto con moños para copiar",
+      "intro": "El texto envuelto en moños, como 🎀 𝒽ℴ𝓁𝒶 🎀, no es una fuente que se descargue o se instale: las letras son caracteres Unicode de los alfabetos cursivo, de versalitas y de burbuja, y los moños son 🎀, ୨୧ y ʚɞ, así que cada línea se copia y se pega como texto normal en biografías, pies de foto y mensajes. Para envolver tu propia palabra, conviértela en <a href=\"/es/letras-bonitas/\">letras bonitas</a> y después enmárcala con el <a href=\"/es/decorador-de-texto/\">decorador de texto</a>, que puede poner 🎀 y ୨୧ a los dos lados.",
+      "symbols": [
+        {
+          "char": "🎀 𝒽ℴ𝓁𝒶 🎀",
+          "label": "Moño (cursiva)"
+        },
+        {
+          "char": "୨୧ 𝒷ℴ𝓃𝒾𝓉𝒶 ୨୧",
+          "label": "Onda coquette (cursiva)"
+        },
+        {
+          "char": "ʚ🎀ɞ 𝒷ℯ𝓈ℴ𝓈 ʚ🎀ɞ",
+          "label": "Moño con alas (cursiva)"
+        },
+        {
+          "char": "⋆˚🎀 𝓭𝓾𝓵𝓬𝓮 🎀˚⋆",
+          "label": "Moño con destellos (cursiva negrita)"
+        },
+        {
+          "char": "🎀 ᴀᴍᴏʀ 🎀",
+          "label": "Moño (versalitas)"
+        },
+        {
+          "char": "🎀 ⓛⓘⓝⓓⓐ 🎀",
+          "label": "Moño (burbuja)"
+        }
+      ]
+    },
+    {
       "id": "bow-ribbon-collections",
       "label": "",
       "h2": "Sets de lazos y cintas para biografías",
