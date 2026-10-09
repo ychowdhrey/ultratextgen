@@ -615,7 +615,7 @@ module.exports = [
       label: 'Where they came from',
       h2: 'A short history of kaomoji',
       bodyHtml: `<div class="editorial-block">
-    <p>Kaomoji emerged on Japanese message boards in the 1980s–1990s as a more expressive, upright alternative to Western emoticons. Japanese character sets offered a huge palette of symbols, which let creators build detailed faces — and the style spread worldwide as Unicode made those characters available everywhere.</p>
+    <p>Kaomoji began on Japanese online services in the 1980s, separately from the sideways Western emoticons. Japanese character sets offered a huge palette of symbols, which let creators build detailed faces — and the style spread worldwide as Unicode made those characters available everywhere.</p>
   </div>`
     }
   ],
@@ -629,8 +629,8 @@ module.exports = [
   faq: [
     { q: 'What is a kaomoji?', a: 'A kaomoji is a Japanese-style emoticon read upright, built from Unicode letters, punctuation, and symbols to form a face, such as (^_^). Unlike emoji, it is plain text.' },
     { q: 'What does kaomoji mean?', a: 'Kaomoji comes from the Japanese words kao (face) and moji (character), literally face characters. It refers to emoticons you read the right way up.' },
-    { q: 'What is the difference between a kaomoji and an emoji?', a: 'A kaomoji is a face built from ordinary text characters and always looks the same. An emoji is a single dedicated picture character that can render differently on each device or platform.' },
-    { q: 'Are kaomoji Japanese?', a: 'Yes. Kaomoji originated on Japanese message boards and take advantage of the large set of Japanese symbols, though Unicode now makes them usable worldwide.' },
+    { q: 'What is the difference between a kaomoji and an emoji?', a: 'A kaomoji is a face built from ordinary text characters, so no app swaps in its own picture. An emoji is a single dedicated picture character that can render differently on each device or platform.' },
+    { q: 'Are kaomoji Japanese?', a: 'Yes. Kaomoji began on Japanese online services in the 1980s and take advantage of the large set of Japanese symbols, though Unicode now makes them usable worldwide.' },
     { q: 'How do I make a kaomoji?', a: 'Combine a pair of brackets with eyes and a mouth, and add arms or decorations to taste, or use a kaomoji generator to assemble and copy one instantly.' }
   ]
 },
