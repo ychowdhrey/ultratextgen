@@ -214,7 +214,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="compare-card variant-muted">
         <span class="compare-badge">3 · Styled but stripped (đ)</span>
-        <p>A few letters (<strong>đ, ø, ß, ł, ı</strong> and kin) are single Unicode characters with no decomposition, so there's no mark to split off and reattach. They style as their nearest base shape (đ → d) and permanently lose the stroke. It's a real Unicode limit, not a bug.</p>
+        <p>A few letters (<strong>đ, ø, ß, ł, ı</strong> and kin) are single Unicode characters with no decomposition, so there's no mark to split off and reattach. <strong>ß, æ and œ</strong> are written out as the letters they stand for (ß → ss, æ → ae, œ → oe), so no letter is lost. The rest style as their nearest base shape (đ → d) and permanently lose the stroke. It's a real Unicode limit, not a bug.</p>
       </div>
     </div>
     <div class="editorial-block">
@@ -257,8 +257,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <tr>
             <td><strong>⚠ One-piece letters</strong></td>
             <td>Atomic characters with no decomposition — no mark to split off (a per-<em>letter</em> gap, inside otherwise-working styles)</td>
-            <td>đ Đ · ø Ø · ß ẞ · ł Ł · ı · æ Æ · œ Œ · ð Ð · þ Þ · ħ Ħ</td>
-            <td>styles as its base shape (đ → d, ß → s) and loses the stroke/ligature for good</td>
+            <td>đ Đ · ø Ø · ł Ł · ð Ð · þ Þ · ħ Ħ</td>
+            <td>styles as its base shape (đ → d) and loses the stroke for good</td>
+          </tr>
+          <tr>
+            <td><strong>Two-letter characters</strong></td>
+            <td>One character that stands for two letters, so the generator writes both out</td>
+            <td>ß ẞ · æ Æ · œ Œ</td>
+            <td>styles as two letters (ß → ss, æ → ae, œ → oe); the ligature itself is not kept</td>
+          </tr>
+          <tr>
+            <td><strong>Turkish dotless ı</strong></td>
+            <td>No style has a dotless letter, and a dotted i would be a different letter</td>
+            <td>ı</td>
+            <td>stays as typed (a plain ı), so the word keeps its meaning</td>
           </tr>
           <tr>
             <td><strong>— N/A</strong> (8)</td>
@@ -332,7 +344,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <tbody>
             <tr><td>English</td><td>None</td><td>Perfect — every letter has a styled twin</td></tr>
             <tr><td>Spanish, Italian, Portuguese, French</td><td>Light (á é í ó ú ñ ç ü, one per word or two)</td><td><strong>Fully styled, accent included</strong> — each mark rides on its styled letter</td></tr>
-            <tr><td>German, Nordic, Turkish, Polish</td><td>Light–medium (ä ö ü å, plus ß ø æ ı ł)</td><td>ä ö ü å ş ğ now style fully; only the one-piece letters <strong>ß ø æ ı ł</strong> keep their base shape and lose the stroke/dot</td></tr>
+            <tr><td>German, Nordic, Turkish, Polish</td><td>Light–medium (ä ö ü å, plus ø ł)</td><td>ä ö ü å ş ğ now style fully; only the one-piece letters <strong>ø ł</strong> keep their base shape and lose the stroke, <strong>ß æ</strong> are written as ss and ae, and <strong>ı</strong> stays as typed</td></tr>
             <tr><td><strong>Vietnamese</strong></td><td><strong>Heavy</strong> — most syllables carry a vowel mark <em>and</em> a tone mark, plus đ</td><td><strong>Fully styled, every tone mark included</strong> — the sole exception is <strong>đ</strong>, which never converts</td></tr>
             <tr><td>Cyrillic, Arabic, Hindi, Chinese, Japanese, Korean</td><td>Non-Latin script</td><td>No styled variants exist — the whole text stays plain (only Latin/Greek/digits transform)</td></tr>
           </tbody>
@@ -395,7 +407,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="editorial-block">
       <h3>1. Assume your accents will style: then check the exceptions</h3>
-      <p>Every core typography style now keeps accents, in any language, Vietnamese included. What to watch for: the <strong>upside-down styles</strong> (they don't flip accented letters), the <strong>13 novelty exotic-alphabet styles</strong> (bubble circles, fullwidth, katakana and the like, which keep the plain accent), and the <strong>one-piece letters</strong> (đ ø ß ł ı) that style as a bare base shape.</p>
+      <p>Every core typography style now keeps accents, in any language, Vietnamese included. What to watch for: the <strong>upside-down styles</strong> (they don't flip accented letters), the <strong>13 novelty exotic-alphabet styles</strong> (bubble circles, fullwidth, katakana and the like, which keep the plain accent), and the <strong>one-piece letters</strong> (đ ø ł) that style as a bare base shape, while the Turkish <strong>ı</strong> stays as typed.</p>
     </div>
     <div class="editorial-block">
       <h3>2. Need a guaranteed-flat mark? A mark or wrap style is the safe fallback</h3>
