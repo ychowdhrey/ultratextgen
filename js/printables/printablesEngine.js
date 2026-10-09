@@ -2677,16 +2677,16 @@
      one that ships, and the defect it guards has now been introduced,
      removed and reintroduced here three times. Keep the markers with the
      code if it moves. */
-  const BADGE_R = 11;
+  const BADGE_R = 8.5;
   const BADGE_GAP = 1;                 // white between two rings, so they read as two
   const BADGE_SLIDE_STEP = 0.5;
   const BADGE_SLIDE_CAP = 40;          // worst real requirement is A at 28.5 units
   const BADGE_SLIDE_FRAC = 0.35;       // ...and never more than this much of a short stroke
-  /* The arrowhead is 20 units long on its own, so the tail only has to carry
-     it. On a row that already draws the route, every unit of tail is a unit
-     of the child's dotted guide painted over — measured on "E", whose arms
-     are ~55 units fitted, a 28-unit tail plus the badge covered 65% of the
-     arm. Short tail, lighter line, and the head does the talking. */
+  /* The arrowhead has its own length (overlayMetrics().head), so the tail only
+     has to carry it. On a row that already draws the route, every unit of tail
+     is a unit of the child's dotted guide painted over — measured on "E",
+     whose arms are ~55 units fitted, a 28-unit tail plus the badge covered 65%
+     of the arm. Short tail, thin line, and the head does the talking. */
   const ARROW_TAIL = 18;
   const ARROW_TAIL_FRAC = 0.34;        // ...or this much of a short stroke, whichever is less
 
@@ -2741,9 +2741,9 @@
      shared rather than loaded onto one badge. Returns one point per stroke —
      the start point itself wherever nothing collided, which is every stroke
      on 41 of the 52 letters. */
-  function badgePositions(polys) {
+  function badgePositions(polys, radius) {
     if (!polys || polys.length < 2) return (polys || []).map((P) => P[0]);
-    const need = 2 * BADGE_R + BADGE_GAP;
+    const need = 2 * (radius || BADGE_R) + BADGE_GAP;
     const caps = polys.map((P) => Math.min(BADGE_SLIDE_CAP, polyLength(P) * BADGE_SLIDE_FRAC));
     const off = polys.map(() => 0);
     const at = () => off.map((s, k) => pointAt(polys[k], s));
@@ -2774,6 +2774,95 @@
 
   /* @stroke-badges:end */
 
+  /* How big each part of the guide is, as a share of the face's own stem.
+
+     The overlay is drawn in the 200 x 240 box at font-size 210, so every number
+     below is a share of that box and scales with the tile for free. What it
+     must follow is the STEM, because the route is only readable while it sits
+     inside the white channel between the two walls of the outline: measured on
+     Quicksand 700 the stem is 26 units and the outline stroke 4, so the channel
+     is 22. The first cut drew a 6-unit line at 0.9 opacity and 22-unit badges:
+     the line was a band a quarter of the channel wide, and the badge was the
+     whole channel, so it sat on the outline and, on a tile, the numerals and
+     the line together read as a smear over the letter.
+
+     A school stroke-order model is a thin guide down the centre of each stem,
+     a small dot where the pencil goes down, and one clear arrowhead where it
+     lifts. So the line is ~12% of the stem, the badge a little under a third of
+     it (a disc that leaves a clear margin either side inside the channel), the
+     head ~3.5 line widths long. Each is capped by the channel actually left
+     after the page's own outline stroke, so a heavier outline never swallows the
+     guide. Falls back to the Quicksand numbers when the face cannot be
+     measured. */
+  function overlayMetrics() {
+    const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
+    const measured = GM && GM.stemWidth ? GM.stemWidth(FONT, OUTLINE_SVG_FONT, 700) : 0;
+    const stem = measured > 8 ? measured : 26;
+    const k = Math.max(0.75, Math.min(1.5, stem / 26));
+    const channel = Math.max(8, stem - STROKE);
+    const line = Math.min(3.0 * k, 0.2 * channel);
+    const radius = Math.min(BADGE_R * k, 0.4 * channel);
+    return {
+      line: line,
+      radius: radius,
+      head: line * 3.6,               // arrowhead length
+      headHalf: line * 1.55,          // half its width
+      dot: line * 1.15,               // the start dot, under its badge or left behind when the badge slides
+      font: radius * 1.4,
+      ring: Math.max(0.8, line * 0.45)
+    };
+  }
+
+  // The part of polyline P between arc distances s0 and s1, as points.
+  function subPolyline(P, s0, s1) {
+    const out = [pointAt(P, s0)];
+    let acc = 0;
+    for (let i = 1; i < P.length; i++) {
+      acc += Math.hypot(P[i][0] - P[i - 1][0], P[i][1] - P[i - 1][1]);
+      if (acc > s0 && acc < s1) out.push(P[i]);
+    }
+    out.push(pointAt(P, s1));
+    return out;
+  }
+
+  const pointsToPath = (pts) => "M" + pts.map((q) => q[0].toFixed(2) + "," + q[1].toFixed(2)).join(" L");
+
+  /* How much of a stroke's end to give up so that its arrowhead lands clear of
+     every numeral. Two things used to hide the head: on a closed stroke (O, 0,
+     o, Q, 8) the end IS the start, so badge 1 sat on the arrow, and where one
+     stroke begins where the last one ends (L, E, T, Z) badge 2 sat on stroke
+     1's arrow. The head is the one thing a stroke needs at its end, so the
+     route stops short of the numeral instead. Never more than a third of the
+     stroke. */
+  function endClearance(P, centres, m, others) {
+    const total = polyLength(P);
+    const cap = total * 0.34;
+    const needBadge = m.radius + m.headHalf * 0.6 + 1.5;
+    /* A stroke that ends ON another stroke (the bowl of a B back at its stem,
+       the arm of an H at the far stem) puts its head on that stroke's own
+       arrow or line. The head stops one head-width short instead. */
+    const needLine = m.headHalf + m.line * 0.5 + 1;
+    const samples = [];
+    (others || []).forEach((Q) => {
+      const ql = polyLength(Q);
+      for (let s = 0; s <= ql; s += 1.5) samples.push(pointAt(Q, s));
+    });
+    let cut = 0;
+    while (cut < cap) {
+      const e = pointAt(P, total - cut);
+      let clear = true;
+      for (let k = 0; k < centres.length && clear; k++) {
+        if (centres[k] && Math.hypot(e[0] - centres[k][0], e[1] - centres[k][1]) < needBadge) clear = false;
+      }
+      for (let k = 0; k < samples.length && clear; k++) {
+        if (Math.hypot(e[0] - samples[k][0], e[1] - samples[k][1]) < needLine) clear = false;
+      }
+      if (clear) break;
+      cut += 0.5;
+    }
+    return cut;
+  }
+
   // Numbered start-dot + direction arrow for every stroke of one letter,
   // drawn directly into `parent`'s own coordinate space (the 200x240 unit
   // box, or a <g> already transformed into an equivalent local box).
@@ -2787,56 +2876,84 @@
        otherwise — a page serving a cached script, or a browser with no ink
        metrics, keeps exactly the rendering it had. */
     const paths = (fitted && fitted.length === data.strokes.length) ? fitted : data.strokes;
-    const uid = "ptsd" + (++strokeOverlayUid);
     const g = svgMake("g", { class: "pt-stroke-overlay", "aria-hidden": "true" }, parent);
-    const defs = svgMake("defs", null, g);
-    const markerId = "ptArrow" + uid;
-    // markerUnits defaults to "strokeWidth", which would silently multiply
-    // markerWidth/Height by the path's stroke-width below (6x) — pin it to
-    // userSpaceOnUse so the arrowhead size stays fixed and predictable.
-    const marker = svgMake("marker", {
-      id: markerId, viewBox: "0 0 10 10", refX: 8, refY: 5, markerUnits: "userSpaceOnUse",
-      markerWidth: 16, markerHeight: 16, orient: "auto"
-    }, defs);
-    svgMake("path", { d: "M0,0 L10,5 L0,10 Z", fill: STROKE_COLOR }, marker);
+    const m = overlayMetrics();
+    const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
 
+    /* The drawn line is flattened finely (the badge logic only needs a coarse
+       one). A browser with no ink metrics has neither, and draws the authored
+       path with a marker exactly as it always did. */
     const polys = strokePolylines(paths);
+    const fine = polys && GM ? paths.map((d, i) => (GM.flattenStrokes([d], 24)[0] || polys[i])) : null;
     /* Read the start off the polyline where there is one, so the dot and the
        badge it sits under cannot disagree by a rounding step; the regex is
        the fallback for a browser with no ink metrics, which never reaches
        badgePositions either. */
     const starts = polys ? polys.map((P) => P[0]) : paths.map((d) => {
-      const m = /M\s*([\d.\-]+)[,\s]+([\d.\-]+)/.exec(d);
-      return m ? [parseFloat(m[1]), parseFloat(m[2])] : null;
+      const mm = /M\s*([\d.\-]+)[,\s]+([\d.\-]+)/.exec(d);
+      return mm ? [parseFloat(mm[1]), parseFloat(mm[2])] : null;
     });
-    const badges = polys ? badgePositions(polys) : starts;
+    const badges = polys ? badgePositions(polys, m.radius) : starts;
 
-    /* Strokes first, then every dot, then every numeral — so a later stroke
-       can never be painted across an earlier letter's badge, which the single
-       interleaved pass allowed. */
-    paths.forEach((d, i) => {
-      const line = o.routeDrawn && polys ? tailPath(polys[i], ARROW_TAIL) : d;
-      if (!line) return;
-      svgMake("path", {
-        d: line, fill: "none", stroke: STROKE_COLOR,
-        "stroke-width": o.routeDrawn ? 4 : 6,
-        "stroke-linecap": "round", "stroke-linejoin": "round",
-        "marker-end": "url(#" + markerId + ")", opacity: 0.9
-      }, g);
-    });
+    if (!fine) {
+      const uid = "ptsd" + (++strokeOverlayUid);
+      const defs = svgMake("defs", null, g);
+      const markerId = "ptArrow" + uid;
+      // markerUnits defaults to "strokeWidth"; pin it so the head size is fixed.
+      const marker = svgMake("marker", {
+        id: markerId, viewBox: "0 0 10 10", refX: 8, refY: 5, markerUnits: "userSpaceOnUse",
+        markerWidth: m.head * 1.4, markerHeight: m.head * 1.4, orient: "auto"
+      }, defs);
+      svgMake("path", { d: "M0,0 L10,5 L0,10 Z", fill: STROKE_COLOR }, marker);
+      paths.forEach((d) => {
+        svgMake("path", {
+          d: d, fill: "none", stroke: STROKE_COLOR, "stroke-width": m.line,
+          "stroke-linecap": "round", "stroke-linejoin": "round", "marker-end": "url(#" + markerId + ")"
+        }, g);
+      });
+    } else {
+      /* Strokes first, then heads, then every dot, then every numeral, so a
+         later stroke can never be painted across an earlier letter's badge. */
+      const heads = [];
+      fine.forEach((P, idx) => {
+        const total = polyLength(P);
+        // A mark shorter than its own head (the dot of an i, a j) is just its numeral.
+        if (total < m.head * 1.3) return;
+        const end = total - endClearance(P, badges, m, fine.filter((_, j) => j !== idx));
+        if (end < m.head * 1.3) return;
+        const tip = pointAt(P, end);
+        const back = pointAt(P, end - m.head * 0.9);
+        const dx = tip[0] - back[0], dy = tip[1] - back[1];
+        const dl = Math.hypot(dx, dy) || 1;
+        const ux = dx / dl, uy = dy / dl;
+        const base = [tip[0] - ux * m.head, tip[1] - uy * m.head];
+        const from = o.routeDrawn ? Math.max(0, end - m.head - Math.min(ARROW_TAIL, total * ARROW_TAIL_FRAC)) : 0;
+        const bodyEnd = Math.max(from, end - m.head * 0.7);
+        if (bodyEnd - from > 0.4) {
+          svgMake("path", {
+            d: pointsToPath(subPolyline(P, from, bodyEnd)), fill: "none", stroke: STROKE_COLOR,
+            "stroke-width": m.line, "stroke-linecap": "round", "stroke-linejoin": "round"
+          }, g);
+        }
+        heads.push("M" + tip[0].toFixed(2) + "," + tip[1].toFixed(2) +
+          " L" + (base[0] - uy * m.headHalf).toFixed(2) + "," + (base[1] + ux * m.headHalf).toFixed(2) +
+          " L" + (base[0] + uy * m.headHalf).toFixed(2) + "," + (base[1] - ux * m.headHalf).toFixed(2) + " Z");
+      });
+      heads.forEach((d) => svgMake("path", { d: d, fill: STROKE_COLOR, stroke: STROKE_COLOR, "stroke-width": m.line * 0.35, "stroke-linejoin": "round" }, g));
+    }
     /* The truth of the overlay: where the pencil goes down. Drawn for every
        stroke, and invisible under its own badge wherever the badge did not
-       have to move — which is why 41 letters render exactly as before. */
+       have to move. */
     starts.forEach((p) => {
-      if (p) svgMake("circle", { cx: p[0], cy: p[1], r: 4.5, fill: STROKE_COLOR }, g);
+      if (p) svgMake("circle", { cx: p[0], cy: p[1], r: m.dot, fill: STROKE_COLOR }, g);
     });
     badges.forEach((p, i) => {
       if (!p) return;
-      svgMake("circle", { cx: p[0], cy: p[1], r: BADGE_R, fill: "#ffffff", stroke: STROKE_COLOR, "stroke-width": 2.5 }, g);
+      svgMake("circle", { cx: p[0], cy: p[1], r: m.radius, fill: STROKE_COLOR, stroke: "#ffffff", "stroke-width": m.ring }, g);
       const label = svgMake("text", {
-        x: p[0], y: p[1] + 0.5, "text-anchor": "middle", "dominant-baseline": "central",
+        x: p[0], y: p[1] + 0.4, "text-anchor": "middle", "dominant-baseline": "central",
         "font-family": "'Plus Jakarta Sans', sans-serif", "font-weight": 700,
-        "font-size": 13, fill: STROKE_COLOR
+        "font-size": m.font, fill: "#ffffff"
       }, g);
       label.textContent = String(i + 1);
     });
@@ -4123,7 +4240,22 @@
         ctx.fillText(glyph, size / 2, size * 0.54);
       }
       drawCredit(ctx, size, size, RENDER === "glyph");
-      downloadCanvas(canvas, PNG_PREFIX + "-" + charSlug(ch) + ".png", "character");
+      const finish = () => downloadCanvas(canvas, PNG_PREFIX + "-" + charSlug(ch) + ".png", "character");
+      /* The stroke-direction switch is on the single-letter pages now, so the
+         download carries it like the sheet does. The canvas drew this glyph on
+         textBaseline "middle"; the overlay is placed on the alphabetic baseline
+         that put it on, read back from the canvas itself. */
+      if (RENDER === "outline" && strokeOverlayOn() && strokeDataFor(ch)) {
+        // H has a flat foot, so its ink descent below "middle" IS the distance to the baseline.
+        const baseY = size * 0.5 + ctx.measureText("H").actualBoundingBoxDescent;
+        if (isFinite(baseY)) {
+          strokeOverlayImage(ch, size, size, letterFs, 0, baseY, "alphabetic")
+            .then((img) => { if (img) ctx.drawImage(img, 0, 0, size, size); finish(); })
+            .catch(finish);
+          return;
+        }
+      }
+      finish();
     });
   }
 
@@ -4238,7 +4370,12 @@
       if (!o.transparent) drawCredit(ctx, width, canvasH, RENDER === "glyph");
       const finish = () => downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(text) || "word") + ".png", "word");
       if (RENDER === "outline" && strokeOverlayOn()) {
-        strokeOverlayImage(out, width, canvasH, fontSize, spacingEm ? fontSize * spacingEm : 0, baseY)
+        /* baseY is the ALPHABETIC baseline whenever the face could be measured,
+           so the overlay is anchored on it, not on the central anchor: passing
+           it with the default "central" mode put every start dot and arrow a
+           third of a letter below the letters of the name it numbers. */
+        strokeOverlayImage(out, width, canvasH, fontSize, spacingEm ? fontSize * spacingEm : 0, baseY,
+                           central == null ? "central" : "alphabetic")
           .then((img) => { if (img) ctx.drawImage(img, 0, 0, width, canvasH); finish(); })
           .catch(finish);
       } else {
