@@ -662,6 +662,67 @@ async function main() {
     await ctx.close();
   }
 
+  // 15. A national ruling is a physical standard. The French Seyes ruling is 8 mm
+  // between heavy lines with three 2 mm interlines between them, and it printed
+  // at 2.03x that on A4 because the band was fitted to the row's box instead of
+  // to the paper. The assertion reads the bitmap the PDF embeds (the canvases
+  // renderPages hands to fromCanvases), not the DOM, because the DOM was
+  // correct throughout: the defect existed only in what reached the paper.
+  console.log('\n/fr/imprimables/modeles-d-ecriture/ (Seyes ruling is 8 mm / 2 mm on paper)');
+  for (const [paper, orient] of [['a4', 'portrait'], ['a4', 'landscape'], ['letter', 'portrait'], ['letter', 'landscape']]) {
+    const init = `try{localStorage.setItem('utg_print_prefs', JSON.stringify({paper:'${paper}',orient:'${orient}'}))}catch(e){}
+      (function () {
+        const UTG = (window.UltraTextGen = window.UltraTextGen || {});
+        let real;
+        Object.defineProperty(UTG, 'pdf', { configurable: true, get() { return real; }, set(v) {
+          real = v && Object.assign({}, v, { renderPages: async function (root, o) {
+            const c = await v.renderPages(root, o); window.__ptSheet = { canvases: c, opts: o }; return c; } });
+        } });
+      })();`;
+    const { ctx, page, errors } = await open('/fr/imprimables/modeles-d-ecriture/', 'desktop', init);
+    await page.waitForTimeout(800);
+    for (const name of ['Lea', 'Christopher']) {
+      await page.fill('#pt-gen-input', name);
+      await page.waitForTimeout(500);
+      await page.evaluate(() => { window.__ptSheet = null; });
+      await Promise.all([page.waitForEvent('download', { timeout: 60000 }), page.click('#pt-gen-print')]).catch(() => null);
+      const m = await page.evaluate(() => {
+        const s = window.__ptSheet;
+        if (!s || !s.canvases || !s.canvases.length) return null;
+        const cv = s.canvases[0];
+        const ctx2 = cv.getContext('2d');
+        const W = cv.width, H = cv.height;
+        const pxPerMm = W / (s.opts.widthPx * 25.4 / 96);
+        const data = ctx2.getImageData(0, 0, W, H).data;
+        const ys = [];
+        for (let y = 0; y < H; y++) {
+          let n = 0;
+          for (let x = 0; x < W; x++) { const i = (y * W + x) * 4; if (Math.min(data[i], data[i + 1], data[i + 2]) < 235) n++; }
+          if (n / W > 0.6) ys.push(y);
+        }
+        const lines = [];
+        ys.forEach((y) => { const l = lines[lines.length - 1]; if (l && y - l[l.length - 1] <= 1) l.push(y); else lines.push([y]); });
+        const centres = lines.map((l) => l.reduce((a, b) => a + b, 0) / l.length / pxPerMm);
+        const stacks = [];
+        centres.forEach((c) => { const s = stacks[stacks.length - 1]; if (s && c - s[s.length - 1] < 10) s.push(c); else stacks.push([c]); });
+        const five = stacks.filter((s) => s.length === 5);
+        const inter = [].concat(...five.map((s) => s.slice(1).map((c, i) => c - s[i])));
+        const span = five.map((s) => s[4] - s[0]);
+        return { stacks: five.length, pxPerMm, inter, span };
+      });
+      const tag = `${paper} ${orient} "${name}"`;
+      if (!m) { check(`${tag}: the PDF's page bitmap was captured`, false, 'no canvas from renderPages'); continue; }
+      const avg = (a) => a.reduce((x, y) => x + y, 0) / a.length;
+      const dpi = Math.round(m.pxPerMm * 25.4);
+      check(`${tag}: at least three 5-line Seyes stacks on page 1 (${dpi} dpi bitmap)`, m.stacks >= 3, `${m.stacks} stacks`);
+      const iMin = Math.min(...m.inter), iMax = Math.max(...m.inter), sMin = Math.min(...m.span), sMax = Math.max(...m.span);
+      check(`${tag}: interline is 2.0 mm +/- 0.15`, m.inter.length && iMin >= 1.85 && iMax <= 2.15, `${iMin.toFixed(2)}..${iMax.toFixed(2)} mm (mean ${m.inter.length ? avg(m.inter).toFixed(2) : 'n/a'})`);
+      check(`${tag}: heavy lines are 8.0 mm +/- 0.3 apart`, m.span.length && sMin >= 7.7 && sMax <= 8.3, `${sMin.toFixed(2)}..${sMax.toFixed(2)} mm`);
+    }
+    check(`${paper} ${orient}: no page errors`, !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
   await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });

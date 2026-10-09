@@ -144,6 +144,22 @@ option looks and behaves the same wherever it appears:
   row measured on screen is not the row on the paper.
 - **The floor is a floor.** A name wider than the line still widens its own box;
   clipping a child's name is worse than a slightly short page.
+- **A national ruling with a size in millimetres is a physical standard, not a
+  proportion.** Seyès is 8 mm between heavy lines and 2 mm interlines
+  (`RULINGS.seyes.physicalBandMm`). Fitting its band to the row's box printed it at
+  **2.03x** on A4 (16.2 mm main-line pitch, 4.06 mm interline; 14.8 mm on Letter, 8.9
+  mm on A4 landscape). `physicalRowBox()` reads the row's box, `sheetPxPerMm()` turns
+  it into paper (exact on the print surface, where a CSS pixel is 1/96 in), and the
+  viewBox is made that many units wide and tall; `layoutPracticeRow()` does it for name
+  rows and `layoutGenRow()` for the generator's trace rows. The drawing keeps its
+  coordinates, so the type stays in proportion to the band (an 8 mm band carries an
+  8 mm letter). Stroke weights are carried in millimetres (`RULE_STROKE_MM`). A row
+  too short to hold the drawing at that scale falls back to the floor and prints a
+  band under 8 mm (8 rows on A4 landscape: about 4 mm). The on-screen preview keeps
+  the proportions at a readable zoom (`PREVIEW_MIN_BAND_PX`). A ruling without
+  `physicalBandMm` (standard, Lineatur) takes none of these paths. The single-letter
+  figure is not a practice row and is not laid out this way. `npm run
+  check:runtime-smoke` reads the exported bitmap and fails above 2.15 mm / 8.3 mm.
 - **Composition is `practiceCompose()`, and there is one of it.** Model placement for
   all four practice styles is that function, in row units, driven by measured ink —
   never by a character count, because `WWW` and `iii` are three characters and two
