@@ -1,14 +1,14 @@
 {
   "slug": "emoji-colere",
-  "title": "Emoji Colère 😡 et Kaomoji : Copier-Coller des Combos de Rage",
+  "title": "Emoji Colère 😡 : Copier-Coller des Émoticônes et Combos de Rage",
   "meta_description": "Emoji colère 😡 🤬 😤, combos de rage et kaomoji renverse-table comme (╯°□°）╯︵ ┻━┻ pour se défouler en chat et en commentaire. Cliquez pour copier.",
   "canonical": "https://ultratextgen.com/fr/library/emoji-colere/",
   "breadcrumb": "Emoji Colère",
-  "hero_h1": "Emoji Colère et Kaomoji",
+  "hero_h1": "Emoji Colère",
   "hero_tagline": "Rage rouge vif, vapeur, feu et le légendaire kaomoji renverse-table — la colère à toutes les intensités. Cliquez pour copier.",
   "intro": "L’échelle de l’emoji colère va du 😠 renfrogné léger à la fureur censurée de 🤬 — et quand les emoji ne suffisent plus, il reste le kaomoji renverse-table (╯°□°）╯︵ ┻━┻. Cette page rassemble tous les visages en colère, les symboles de feu et d’explosion qui transforment une plainte en coup de gueule, les visages agacés et lève-les-yeux-au-ciel pour l’irritation de moindre intensité, et des combos de colère en un clic pour les chats, les commentaires et les moments de rage en jeu.",
   "date_published": "2026-08-15",
-  "date_modified": "2026-08-15",
+  "date_modified": "2026-10-09",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -120,22 +120,50 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Émoticônes",
+      "h2": "Émoticônes de Colère au Clavier",
+      "intro": "La version clavier d'un visage en colère, faite de ponctuation. Elles se collent en texte brut et s'affichent donc même là où les emoji ne passent pas.",
+      "symbols": [
+        {
+          "char": ">:(",
+          "label": "Visage en colère"
+        },
+        {
+          "char": ">:-(",
+          "label": "Colère avec nez"
+        },
+        {
+          "char": ">:[",
+          "label": "Regard noir"
+        },
+        {
+          "char": "D:<",
+          "label": "Cri de fureur"
+        },
+        {
+          "char": ">:O",
+          "label": "Hurlement"
+        },
+        {
+          "char": ":@",
+          "label": "Fumant de rage"
+        },
+        {
+          "char": ">:|",
+          "label": "Rage contenue"
+        }
+      ]
+    },
+    {
       "id": "rage-kaomoji",
       "label": "Kaomoji",
       "h2": "Kaomoji de Rage et Renverse-Table",
-      "intro": "Les tables renversées, les regards noirs et les grognements des visages en texte classiques.",
+      "intro": "Quatre favoris, du regard noir à la table renversée.",
       "symbols": [
         {
           "char": "(╯°□°）╯︵ ┻━┻",
           "label": "Kaomoji Renverse-Table"
-        },
-        {
-          "char": "(┛◉Д◉)┛彡┻━┻",
-          "label": "Kaomoji Renverse-Table Furieux"
-        },
-        {
-          "char": "┬─┬ノ( º _ ºノ)",
-          "label": "Kaomoji qui Remet la Table"
         },
         {
           "char": "(╬ Ò﹏Ó)",
@@ -146,22 +174,14 @@
           "label": "Kaomoji Rage Hurlante"
         },
         {
-          "char": "(ﾉಥ益ಥ)ﾉ ┻━┻",
-          "label": "Kaomoji Rage en Larmes"
-        },
-        {
           "char": "(¬_¬)",
           "label": "Kaomoji Regard Irrité"
-        },
-        {
-          "char": "(≖_≖ )",
-          "label": "Kaomoji Regard Suspicieux"
-        },
-        {
-          "char": "(｀ﾍ´)",
-          "label": "Kaomoji Grognon"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/fr/library/kaomoji/",
+        "text": "Voir tous les kaomoji"
+      }
     }
   ],
   "collection_section": {

@@ -2324,7 +2324,9 @@ document.addEventListener("copy", () => {
     if (el.mainInput) {
       const urlQ = new URLSearchParams(window.location.search).get("q");
       if (urlQ) {
-        el.mainInput.value = urlQ;
+        // A programmatic assignment bypasses the textarea's maxlength, so a
+        // long ?q= used to open a page tens of thousands of pixels tall.
+        el.mainInput.value = urlQ.slice(0, el.mainInput.maxLength > 0 ? el.mainInput.maxLength : 500);
       }
     }
 

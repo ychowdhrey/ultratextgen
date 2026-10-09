@@ -114,6 +114,36 @@ def esc(text):
     return html.escape(str(text), quote=False)
 
 
+# Inline markup a spec's prose fields may carry: emphasis and an internal link.
+# Escaping it turned "<strong>word</strong>" into literal tag text on 23 live
+# pages (21 under ko/), and 12 internal links into dead text. Anything outside
+# this whitelist, an external href included, is still escaped.
+_PROSE_MARKUP = re.compile(
+    r'&lt;(/?)(strong|em)&gt;|&lt;a href="(/[A-Za-z0-9_\-/]*)"&gt;|&lt;/a&gt;'
+)
+
+
+def esc_prose(text):
+    """HTML-escape prose, then restore the whitelisted inline markup. A closing
+    </a> is restored only for an opening tag that was itself restored, so a
+    rejected link can never leave a stray end tag behind."""
+    open_links = 0
+
+    def restore(match):
+        nonlocal open_links
+        if match.group(2):
+            return f"<{match.group(1)}{match.group(2)}>"
+        if match.group(3):
+            open_links += 1
+            return f'<a href="{match.group(3)}">'
+        if open_links:
+            open_links -= 1
+            return "</a>"
+        return match.group(0)
+
+    return _PROSE_MARKUP.sub(restore, esc(text))
+
+
 def esc_attr(text):
     """HTML-escape for use inside a double-quoted attribute."""
     return html.escape(str(text), quote=True)
@@ -230,7 +260,7 @@ LOCALE_UI_STRINGS = {
     "tr": {"copy": "Kopyala", "related": "İlgili Kaynaklar", "cta_h3": "Metni Unicode fontlarla dönüştür", "cta_body": "UltraTextGen ile düz metni kalın, italik, el yazısı ve 100’den fazla Unicode yazı stiline anında ve ücretsiz çevir.", "cta_btn": "UltraTextGen'i Aç →", "home": "Ana Sayfa", "symbols": "Semboller", "library": "Kütüphane"},
     "it": {"copy": "Copia", "related": "Risorse Correlate", "cta_h3": "Trasforma il testo con i font Unicode", "cta_body": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode. Gratis e all'istante.", "cta_btn": "Apri UltraTextGen →", "home": "Home", "symbols": "Simboli", "library": "Libreria"},
     "es": {"copy": "Copiar", "related": "Recursos Relacionados", "cta_h3": "Transforma texto con fuentes Unicode", "cta_body": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode. Gratis y al instante.", "cta_btn": "Abrir UltraTextGen →", "home": "Inicio", "symbols": "Símbolos", "library": "Biblioteca"},
-    "pl": {"copy": "Kopiuj", "related": "Powiązane Zasoby", "cta_h3": "Zamień tekst na czcionki Unicode", "cta_body": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu.", "cta_btn": "Otwórz UltraTextGen →", "home": "Strona główna", "symbols": "Symbole", "library": "Biblioteka"},
+    "pl": {"copy": "Kopiuj", "copyAria": "{copy}: {label}", "related": "Powiązane Zasoby", "cta_h3": "Zamień tekst na czcionki Unicode", "cta_body": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu.", "cta_btn": "Otwórz UltraTextGen →", "home": "Strona główna", "symbols": "Symbole", "library": "Biblioteka"},
     # nl cta_btn is deliberately NOT "Open UltraTextGen →": that string is
     # byte-identical to the English default, so check-locale-translation.js
     # counts it as untranslated English surviving on a Dutch page. Use a real
@@ -477,7 +507,7 @@ def render_editorial_sections(sections):
         if sec.get("paragraphs"):
             para_html = [f"    <p>{p}</p>" for p in sec["paragraphs"]]
         elif sec.get("body"):
-            para_html = [f"    <p>{esc(sec['body'])}</p>"]
+            para_html = [f"    <p>{esc_prose(sec['body'])}</p>"]
         else:
             # Never emit a heading over an empty block: that is a page that
             # looks complete in the diff and reads as broken in the browser.
@@ -504,16 +534,20 @@ def render_editorial_sections(sections):
 RTL_LANGS = {"ar", "fa", "ur", "he"}
 
 
-def render_symbol_section(sec, copy_label="Copy"):
+def render_symbol_section(sec, copy_label="Copy", copy_aria=None):
+    # copy_aria lets a locale whose labels are nominative avoid a verb + noun
+    # case error: Polish "Kopiuj Petarda" needs the accusative, "Kopiuj: Petarda"
+    # does not. Default keeps every other locale byte-identical.
     rows = []
     for sym in sec["symbols"]:
         ch = sym["char"]
         label = sym["label"]
+        aria = (copy_aria or "{copy} {label}").format(copy=copy_label, label=label)
         rows.append(
             '    <div class="flag-row">\n'
             f'      <button class="flag-emoji symbol-tile" '
             f'data-symbol="{esc_attr(ch)}" '
-            f'aria-label="{esc_attr(copy_label)} {esc_attr(label)}">{esc(ch)}</button>\n'
+            f'aria-label="{esc_attr(aria)}">{esc(ch)}</button>\n'
             f'      <span class="flag-label">{esc(label)}</span>\n'
             '    </div>'
         )
@@ -523,8 +557,17 @@ def render_symbol_section(sec, copy_label="Copy"):
         else ""
     )
     intro_html = (
-        f'  <p class="u-secondary-tight">{esc(sec["intro"])}</p>\n'
+        f'  <p class="u-secondary-tight">{esc_prose(sec["intro"])}</p>\n'
         if sec.get("intro")
+        else ""
+    )
+    # Optional "see the full set" link under the grid, e.g. an emoji page's
+    # short kaomoji sample pointing at the subject's own kaomoji page.
+    more = sec.get("more_link")
+    more_html = (
+        f'  <p class="u-secondary-tight"><a href="{esc_attr(more["href"])}">'
+        f'{esc(more["text"])} →</a></p>\n'
+        if more
         else ""
     )
     return (
@@ -535,6 +578,7 @@ def render_symbol_section(sec, copy_label="Copy"):
         '  <div class="flag-rows">\n'
         + "\n".join(rows)
         + "\n  </div>\n"
+        f"{more_html}"
         "</section>"
     )
 
@@ -575,7 +619,7 @@ def render_art_section(sec, copy_label="Copy", copy_aria=None):
         else ""
     )
     intro_html = (
-        f'  <p class="u-secondary-tight">{esc(sec["intro"])}</p>\n'
+        f'  <p class="u-secondary-tight">{esc_prose(sec["intro"])}</p>\n'
         if sec.get("intro")
         else ""
     )
@@ -874,7 +918,9 @@ def render_page(spec):
         section_blocks = [render_art_section(s, copy_label, art_aria)
                           for s in spec["sections"]]
     else:
-        section_blocks = [render_symbol_section(s, copy_label) for s in spec["sections"]]
+        symbol_aria = spec.get("copy_aria_template") or ui.get("copyAria")
+        section_blocks = [render_symbol_section(s, copy_label, symbol_aria)
+                          for s in spec["sections"]]
     if spec["copy_pattern"] == "collection":
         section_blocks.append(render_collection_section(spec))
     body_sections = "\n\n<div class=\"section-divider\"></div>\n\n".join(section_blocks)
@@ -948,7 +994,7 @@ def render_page(spec):
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
-    <p>{esc(spec["intro"])}</p>
+    <p>{esc_prose(spec["intro"])}</p>
   </div>
 </section>
 

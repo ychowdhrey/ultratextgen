@@ -179,6 +179,50 @@
           "label": "Dolido"
         }
       ]
+    },
+    {
+      "id": "sigh-meh",
+      "label": "Suspiros y desgana",
+      "h2": "Kaomoji de Suspiro y Desgana",
+      "intro": "Una carita que suspira suele llevar ε- o =3 a un lado: una bocanada de aire que sale de la boca. La mayoría están cansadas, decepcionadas o simplemente poco impresionadas, y la última es el suspiro de alivio que en japonés se escribe ホッ (hotto).",
+      "symbols": [
+        {
+          "char": "ε-(´・｀) ﾌ",
+          "label": "Suspiro de derrota"
+        },
+        {
+          "char": "ε-(ーдー)",
+          "label": "Suspiro profundo"
+        },
+        {
+          "char": "(´-ε-`)",
+          "label": "Resoplido"
+        },
+        {
+          "char": "( ´_ゝ`)",
+          "label": "Desgana"
+        },
+        {
+          "char": "(=_=)",
+          "label": "Harto"
+        },
+        {
+          "char": "(ーー゛)",
+          "label": "Desilusionado"
+        },
+        {
+          "char": "┐(￣ヘ￣)┌",
+          "label": "Me da igual"
+        },
+        {
+          "char": "(´._.`)",
+          "label": "Pequeña decepción"
+        },
+        {
+          "char": "ε-(´∀`*)ホッ",
+          "label": "Suspiro de alivio"
+        }
+      ]
     }
   ]
 }

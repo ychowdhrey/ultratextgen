@@ -1,7 +1,7 @@
 {
   "slug": "laughing-kaomoji",
-  "title": "Laughing Kaomoji: Copy & Paste LOL Text Faces",
-  "meta_description": "Browse and copy laughing kaomoji — also spelled kamoji — giggling, cackling, and rolling Japanese text faces. Click any to copy it instantly.",
+  "title": "Laughing Kaomoji (≧▽≦): Copy & Paste LOL Text Faces",
+  "meta_description": "Browse and copy laughing kaomoji (≧▽≦), also spelled kamoji: giggling, cackling, and rolling Japanese text faces. Click any to copy it instantly.",
   "breadcrumb": "Laughing Kaomoji",
   "hero_h1": "Laughing Kaomoji",
   "hero_tagline": "Copy and paste laughing kaomoji: giggling and cackling Japanese text faces. Click any face to copy it instantly.",
@@ -99,6 +99,42 @@
         {
           "char": "щ(ﾟДﾟщ)",
           "label": "Can't Even"
+        }
+      ]
+    },
+    {
+      "id": "happy-crying",
+      "label": "Happy Crying",
+      "h2": "Happy Crying Kaomoji",
+      "intro": "Tears of joy: laughing until you cry, or crying because something is that sweet. ಥ is a Kannada letter that reads as an eye brimming with tears, and ﾟ。 at the sides are the drops flying off.",
+      "symbols": [
+        {
+          "char": "(ಥ‿ಥ)",
+          "label": "Tears of Joy"
+        },
+        {
+          "char": "(T▽T)",
+          "label": "Happy Tears"
+        },
+        {
+          "char": "(;▽;)",
+          "label": "Smiling Through Tears"
+        },
+        {
+          "char": "(ㅠ▽ㅠ)",
+          "label": "Teary Grin"
+        },
+        {
+          "char": "。ﾟ(TヮT)ﾟ。",
+          "label": "Touched to Tears"
+        },
+        {
+          "char": "｡ﾟ( ﾟ^∀^ﾟ)ﾟ｡",
+          "label": "Laughing So Hard I'm Crying"
+        },
+        {
+          "char": "･ﾟ･(｡>ω<｡)･ﾟ･",
+          "label": "Overjoyed Sob"
         }
       ]
     }

@@ -759,6 +759,18 @@ jobs:
         continue-on-error: true
         run: npm run check:library-directory | tee library-directory.log
 
+      # Gating, with no backlog: kaomoji-generator/index.html carries its mood
+      # chips, presets and part picker as static HTML (written by
+      # build-kaomoji-generator-static.js from the same markup functions the
+      # controller runs). Before that the three containers were empty for any
+      # crawler that runs no JavaScript. A part or preset added to
+      # js/kaomoji/kaomojiData.js without regenerating would leave the static
+      # copy stale; `npm run build:kaomoji-generator-static` closes it.
+      - name: Run kaomoji generator static markup check
+        id: kaomoji_generator_static
+        continue-on-error: true
+        run: npm run check:kaomoji-generator-static | tee kaomoji-generator-static.log
+
       # The locale directory hubs are pre-rendered so a non-rendering crawler
       # sees their links. This step used to run check:locale-library-directory,
       # which reads a `const LIBRARY = [...]` array — a format every locale hub
@@ -966,6 +978,18 @@ jobs:
         id: case_converter_tests
         continue-on-error: true
         run: npm run test:case-converter | tee case-converter-tests.log
+
+      # Gating, zero backlog: the character counter's pure half. It exists
+      # because the counter once shipped a wrong number no visual check could
+      # catch, and the test file ran nowhere, so a repair to the reducers, the
+      # hidden-character set, trim-to-fit or the word count had no guard. It
+      # pins the SMS segment maths, every reducer, the HIDDEN table and the
+      # word count for scripts written without spaces (sliced from the shipped
+      # controller, never a second copy).
+      - name: Run character counter tests
+        id: counter_tests
+        continue-on-error: true
+        run: npm run test:counter | tee counter-tests.log
 
       # Gating, zero backlog: i18n.js rewrites a page's FAQPage JSON-LD from
       # the locale JSON it fetches, and the FAQ in a locale JSON is the
@@ -1306,6 +1330,11 @@ jobs:
             cat library-directory.log
             echo '```'
             echo ""
+            echo "### Kaomoji generator static markup check — \`${{ steps.kaomoji_generator_static.outcome }}\`"
+            echo '```'
+            cat kaomoji-generator-static.log
+            echo '```'
+            echo ""
             echo "### Locale library directory freshness check — \`${{ steps.locale_library_directory.outcome }}\`"
             echo '```'
             cat locale-library-directory.log
@@ -1382,6 +1411,11 @@ jobs:
             echo "### Case converter tests — \`${{ steps.case_converter_tests.outcome }}\`"
             echo '```'
             cat case-converter-tests.log
+            echo '```'
+            echo ""
+            echo "### Character counter tests: \`${{ steps.counter_tests.outcome }}\`"
+            echo '```'
+            cat counter-tests.log
             echo '```'
             echo ""
             echo "### i18n FAQ-schema guard tests — \`${{ steps.i18n_faq_schema_tests.outcome }}\`"
@@ -1508,6 +1542,7 @@ jobs:
           steps.gate_inventory.outcome == 'failure' ||
           steps.accent_notice.outcome == 'failure' ||
           steps.library_directory.outcome == 'failure' ||
+          steps.kaomoji_generator_static.outcome == 'failure' ||
           steps.locale_library_directory.outcome == 'failure' ||
           steps.library_hub_coverage.outcome == 'failure' ||
           steps.library_link_mirror.outcome == 'failure' ||
@@ -1521,6 +1556,7 @@ jobs:
           steps.spec_sentence_reuse_tests.outcome == 'failure' ||
           steps.header_analytics_tests.outcome == 'failure' ||
           steps.case_converter_tests.outcome == 'failure' ||
+          steps.counter_tests.outcome == 'failure' ||
           steps.i18n_faq_schema_tests.outcome == 'failure' ||
           steps.accessibility.outcome == 'failure' ||
           steps.collection_grids.outcome == 'failure' ||

@@ -131,10 +131,46 @@
    ]
   },
   {
+   "id": "emoticons",
+   "label": "Tastatur-Smileys",
+   "h2": "Fröhliche Text-Emoticons",
+   "intro": "Smileys aus Doppelpunkt und Klammer. Älter als jedes Emoji und immer noch der schnellste Weg, in reinem Text freundlich zu wirken.",
+   "symbols": [
+    {
+     "char": ":)",
+     "label": "Lächelndes Emoticon"
+    },
+    {
+     "char": ":-)",
+     "label": "Klassisches Lächeln mit Nase"
+    },
+    {
+     "char": ":D",
+     "label": "Breites Grinsen"
+    },
+    {
+     "char": ":-D",
+     "label": "Grinsen mit Nase"
+    },
+    {
+     "char": "=)",
+     "label": "Sanftes Lächeln"
+    },
+    {
+     "char": "XD",
+     "label": "Lachendes Grinsen"
+    },
+    {
+     "char": "c:",
+     "label": "Strahlendes Lächeln"
+    }
+   ]
+  },
+  {
    "id": "kaomoji",
    "label": "Fröhliche Kaomoji",
    "h2": "Fröhliche Kaomoji",
-   "intro": "Aus Zeichen gebaute Freude.",
+   "intro": "Eine kleine Auswahl fröhlicher japanischer Textgesichter.",
    "symbols": [
     {
      "char": "ヽ(´▽`)/",
@@ -145,34 +181,18 @@
      "label": "Jubeln"
     },
     {
-     "char": "(＾▽＾)",
-     "label": "Breites Lächeln"
-    },
-    {
      "char": "(◕‿◕)",
      "label": "Sanftes Lächeln"
     },
     {
-     "char": "(✿◠‿◠)",
-     "label": "Lächeln mit Blume"
-    },
-    {
      "char": "٩(◕‿◕｡)۶",
      "label": "Freudentanz"
-    },
-    {
-     "char": "(o^▽^o)",
-     "label": "Rote Wangen"
-    },
-    {
-     "char": "(｡♥‿♥｡)",
-     "label": "Verliebt"
-    },
-    {
-     "char": "⊂((・▽・))⊃",
-     "label": "Große Umarmung"
     }
-   ]
+   ],
+   "more_link": {
+    "href": "/de/library/kaomoji/",
+    "text": "Alle Kaomoji ansehen"
+   }
   }
  ],
  "faq_h2": "Häufige Fragen zum glücklichen Emoji",
@@ -246,7 +266,7 @@
   }
  ],
  "date_published": "2026-08-16",
- "date_modified": "2026-08-16",
+ "date_modified": "2026-10-09",
  "collection_section": {
   "id": "combo-sets",
   "label": "Fertige Kombinationen",

@@ -21,6 +21,10 @@
  *     lower-cased first; Mac, van, de and "o'clock" are left alone.
  *   - Text in an uncased script is unchanged, and an acronym beside it stays.
  *   - Turkish casing follows the page's lang attribute.
+ *   - The word "i" is capitalised to "I" in English only. In Polish, Italian,
+ *     Croatian and Czech it is "and" and stays lower case.
+ *   - Upside-down and reverse styles reverse by user-perceived character, so a
+ *     flag, a family emoji, a skin tone, a Thai or Devanagari cluster survives.
  */
 
 const assert = require('assert');
@@ -115,6 +119,40 @@ expect('capitalized', 'HELLO  WORLD\nAGAIN', 'Hello  World\nAgain');
 // --- Turkish follows the page language ---------------------------------------
 expect('capitalized', 'ISPARTA İSTANBUL', 'Isparta İstanbul', 'tr');
 expect('sentence', 'IŞIK İYİ', 'Işık iyi', 'tr');
+
+// --- "i" is a pronoun in English only ----------------------------------------
+expect('sentence', 'i think i am here. i\'m sure', "I think I am here. I'm sure");
+expect('sentence', 'ala i ola poszły do szkoły i do domu', 'Ala i ola poszły do szkoły i do domu', 'pl');
+expect('sentence', 'gli amici e i libri', 'Gli amici e i libri', 'it');
+expect('sentence', 'ana i marko idu u školu', 'Ana i marko idu u školu', 'hr');
+expect('sentence', 'petr i jana', 'Petr i jana', 'cs');
+expect('sentence', 'i think so', 'I think so', 'en-GB');
+
+// --- Reversing styles keep user-perceived characters whole ---------------------
+function expectStyle(name, input, want) {
+  checks += 1;
+  const got = render(input, styles[name]);
+  if (got !== want) {
+    failures += 1;
+    console.error(`FAIL ${name}: ${JSON.stringify(input)}\n  want ${JSON.stringify(want)}\n  got  ${JSON.stringify(got)}`);
+    return;
+  }
+  console.log(`ok   ${name}: ${JSON.stringify(input)} -> ${JSON.stringify(got)}`);
+}
+const REVERSE = ['Reverse Order Only', 'Reverse + Flip Combo', 'Fully Flipped Unicode', 'Mixed Flip Fallback'];
+REVERSE.forEach(name => {
+  const ascii = render('hello', styles[name]);
+  expectStyle(name, '\u{1F1EB}\u{1F1F7} ok', render('ok', styles[name]) + ' \u{1F1EB}\u{1F1F7}');
+  expectStyle(name, 'a \u{1F468}\u200D\u{1F469}\u200D\u{1F467}', '\u{1F468}\u200D\u{1F469}\u200D\u{1F467} ' + render('a', styles[name]));
+  expectStyle(name, '\u{1F44D}\u{1F3FD}x', render('x', styles[name]) + '\u{1F44D}\u{1F3FD}');
+  expectStyle(name, '\u0E44\u0E01\u0E48', '\u0E01\u0E48\u0E44');
+  expectStyle(name, '\u0938\u0941\u0928\u094D\u0926\u0930', '\u0930\u0928\u094D\u0926\u0938\u0941');
+  checks += 1;
+  if (!ascii) { failures += 1; console.error(`FAIL ${name}: ASCII came back empty`); }
+});
+expectStyle('Reverse Order Only', 'hello', 'olleh');
+expectStyle('Reverse + Flip Combo', 'hello', 'o\u05DF\u05DF\u01DD\u0265');
+expectStyle('Reverse Order Only', 'e\u0301a', 'ae\u0301');
 
 if (failures) {
   console.error(`\n${failures} of ${checks} case-converter checks failed`);

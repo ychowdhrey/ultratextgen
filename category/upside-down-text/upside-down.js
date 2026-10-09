@@ -53,17 +53,42 @@
     return FLIP[ch] || FLIP[ch.toLowerCase()] || FLIP[ch.toUpperCase()] || null;
   }
 
+  // Reverse by user-perceived character. Reversing code points turned a flag
+  // into its mirror image (the wrong country), reordered family emoji, split
+  // skin tones off their emoji and moved Thai and Devanagari vowel and tone
+  // marks onto the wrong consonant.
+  const segmenter = (typeof Intl !== 'undefined' && Intl.Segmenter)
+    ? new Intl.Segmenter(undefined, { granularity: 'grapheme' })
+    : null;
+
+  function clusters(str) {
+    return segmenter ? Array.from(segmenter.segment(str), x => x.segment) : Array.from(str);
+  }
+
+  // A base letter that carries combining marks keeps them after the flipped
+  // base; a cluster whose first code point has no flip stays whole.
+  function flipCluster(cl) {
+    const whole = flipChar(cl);
+    if (whole) return whole;
+    const cps = Array.from(cl);
+    if (cps.length > 1) {
+      const base = flipChar(cps[0]);
+      if (base) return base + cps.slice(1).join('');
+    }
+    return null;
+  }
+
   function flipReverse(str) {
-    return Array.from(str).reverse().map(ch => flipChar(ch) || ch).join('');
+    return clusters(str).reverse().map(ch => flipCluster(ch) || ch).join('');
   }
 
   function reverseOnly(str) {
-    return Array.from(str).reverse().join('');
+    return clusters(str).reverse().join('');
   }
 
   function mirror(str) {
-    return Array.from(str).reverse()
-      .map(ch => flipChar(ch) || ILLUSION[ch] || ILLUSION[ch.toLowerCase()] || ch)
+    return clusters(str).reverse()
+      .map(ch => flipCluster(ch) || ILLUSION[ch] || ILLUSION[ch.toLowerCase()] || ch)
       .join('');
   }
 

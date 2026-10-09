@@ -122,6 +122,42 @@
           "label": "Winged Star"
         }
       ]
+    },
+    {
+      "id": "wings-only",
+      "label": "Angel Wings",
+      "h2": "Angel Wings in Text",
+      "intro": "More wing pairs with no face between them, to frame a name or a single heart or star. ʚ ɞ are two Latin letters, ꒰ঌ ໒꒱ and ꒰ა ໒꒱ mix Yi, Bengali, Georgian and Lao characters, and ଘ ଓ are the Odia letters from the winged faces above. 🪽 is the only wing emoji; it arrived in Emoji 15.0 in 2022, so a phone that has not updated since then shows a box in its place.",
+      "symbols": [
+        {
+          "char": "ʚɞ",
+          "label": "Closed Wings"
+        },
+        {
+          "char": "ʚ ☆ ɞ",
+          "label": "Star Between Wings"
+        },
+        {
+          "char": "⋆｡°ʚ ɞ°｡⋆",
+          "label": "Open Wings With Sparkles"
+        },
+        {
+          "char": "꒰ঌ ♡ ໒꒱",
+          "label": "Heart in a Wing Frame"
+        },
+        {
+          "char": "꒰ა ໒꒱",
+          "label": "Narrow Wing Frame"
+        },
+        {
+          "char": "ଘ ♡ ଓ",
+          "label": "Odia Wings Around a Heart"
+        },
+        {
+          "char": "🪽",
+          "label": "Wing Emoji"
+        }
+      ]
     }
   ],
   "faq_h2": "Angel Kaomoji, Answered",

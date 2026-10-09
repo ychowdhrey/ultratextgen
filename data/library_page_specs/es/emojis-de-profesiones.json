@@ -172,8 +172,8 @@
       "intro": "Copia el emoji de juez y la balanza de la justicia. Unicode no tiene un emoji de mazo, así que 🔨 martillo es el sustituto habitual junto a ⚖️.",
       "symbols": [
         { "char": "🧑‍⚖️", "label": "Juez" },
-        { "char": "👨‍⚖️", "label": "Hombre juez" },
-        { "char": "👩‍⚖️", "label": "Mujer jueza" },
+        { "char": "👨‍⚖️", "label": "Juez (hombre)" },
+        { "char": "👩‍⚖️", "label": "Jueza (mujer)" },
         { "char": "⚖️", "label": "Balanza" },
         { "char": "🔨", "label": "Martillo (en lugar del mazo)" },
         { "char": "🏛️", "label": "Edificio clásico" }

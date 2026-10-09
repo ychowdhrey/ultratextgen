@@ -131,6 +131,86 @@
       ]
     },
     {
+      "id": "bow-font",
+      "label": "Letras con Moño",
+      "h2": "Texto con moños para copiar",
+      "intro": "El texto envuelto en moños, como 🎀 𝒽ℴ𝓁𝒶 🎀, no es una fuente que se descargue o se instale: las letras son caracteres Unicode de los alfabetos cursivo, de versalitas y de burbuja, y los moños son 🎀, ୨୧ y ʚɞ, así que cada línea se copia y se pega como texto normal en biografías, pies de foto y mensajes. Para envolver tu propia palabra, conviértela en <a href=\"/es/letras-bonitas/\">letras bonitas</a> y después enmárcala con el <a href=\"/es/decorador-de-texto/\">decorador de texto</a>, que puede poner 🎀 y ୨୧ a los dos lados.",
+      "symbols": [
+        {
+          "char": "🎀 𝒽ℴ𝓁𝒶 🎀",
+          "label": "Moño (cursiva)"
+        },
+        {
+          "char": "୨୧ 𝒷ℴ𝓃𝒾𝓉𝒶 ୨୧",
+          "label": "Onda coquette (cursiva)"
+        },
+        {
+          "char": "ʚ🎀ɞ 𝒷ℯ𝓈ℴ𝓈 ʚ🎀ɞ",
+          "label": "Moño con alas (cursiva)"
+        },
+        {
+          "char": "⋆˚🎀 𝓭𝓾𝓵𝓬𝓮 🎀˚⋆",
+          "label": "Moño con destellos (cursiva negrita)"
+        },
+        {
+          "char": "🎀 ᴀᴍᴏʀ 🎀",
+          "label": "Moño (versalitas)"
+        },
+        {
+          "char": "🎀 ⓛⓘⓝⓓⓐ 🎀",
+          "label": "Moño (burbuja)"
+        }
+      ]
+    },
+    {
+      "id": "bow-kaomoji",
+      "label": "Kaomoji con moño",
+      "h2": "Kaomoji con moño: caritas de texto con lazos",
+      "intro": "Estos kaomoji llevan un moño junto a la cara, como un lazo en el pelo, o lo ofrecen como regalo. El moño es ୨୧ o 🎀. ୨୧ son dos dígitos de la escritura oriya, el dos y el uno, cuyas curvas se leen como las lazadas de una cinta, así que sigue siendo texto plano y combina con la fuente de la carita que lo rodea, mientras que 🎀 se dibuja con el arte de emoji propio de cada plataforma. Aquí el moño es un adorno: no son caritas que hacen una reverencia.",
+      "symbols": [
+        {
+          "char": "୨୧(˶ᵔ ᵕ ᵔ˶)୨୧",
+          "label": "Carita entre moños"
+        },
+        {
+          "char": "🎀(｡•ᴗ•｡)",
+          "label": "Moño a un lado"
+        },
+        {
+          "char": "୨୧(๑˃ᴗ˂)",
+          "label": "Carita feliz con moño"
+        },
+        {
+          "char": "₍ᐢ. .ᐢ₎🎀",
+          "label": "Conejito con moño"
+        },
+        {
+          "char": "ฅ^•ﻌ•^ฅ ୨୧",
+          "label": "Gatito con moño"
+        },
+        {
+          "char": "(⸝⸝ᵕᴗᵕ⸝⸝)୨୧",
+          "label": "Carita tímida con moño"
+        },
+        {
+          "char": "୨୧ ʕ•ᴥ•ʔ ୨୧",
+          "label": "Osito entre moños"
+        },
+        {
+          "char": "⋆˚୨୧(｡♡‿♡｡)୨୧˚⋆",
+          "label": "Carita brillante con moño"
+        },
+        {
+          "char": "˚₊‧୨୧ (ˊᗜˋ) ୨୧‧₊˚",
+          "label": "Carita con cinta y brillos"
+        },
+        {
+          "char": "(づ｡◕‿‿◕｡)づ🎀",
+          "label": "Regalando un moño"
+        }
+      ]
+    },
+    {
       "id": "bow-ribbon-collections",
       "label": "",
       "h2": "Sets de lazos y cintas para biografías",
