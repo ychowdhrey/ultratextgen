@@ -1663,6 +1663,17 @@
     sc.src = "/js/printables/stencil.js";
     sc.async = true;
     sc.setAttribute("data-pt-stencil", "");
+    /* A shared link with ?st=1 ticks the box during init, before this async
+       script has arrived, so the first draw falls back to the plain outline
+       and nothing drew it again: the box said "bridged" and the letter had no
+       bridges. Redraw once the module is here, only if the mode is on. */
+    sc.onload = () => {
+      if (!stencilOn()) return;
+      withFont(() => {
+        paintAlphabetGrid();
+        if (activeChar) selectChar(activeChar, { silent: true });
+      });
+    };
     sc.onerror = () => console.warn("[printables] js/printables/stencil.js failed to load; the stencil mode draws the plain outline.");
     document.head.appendChild(sc);
   }
@@ -13220,6 +13231,10 @@
     buildStrip();
     buildAlphabetGrid();
     buildSpokeBatch();
+    /* Again, now that a single-letter page has its print-size field: the
+       first call above found no host there, so the 36 block-letter pages got
+       no tick box. Idempotent, and a no-op on a page without CFG.stencil. */
+    mountStencilToggle();
     initGenerator();
     buildDesigner();
     buildBanner();
