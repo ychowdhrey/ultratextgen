@@ -375,7 +375,10 @@ function mapChar(ch, normalUpper, normalLower, normalNums, upperArr, lowerArr, n
   if (n !== -1) return numsArr[n] || ch;
 
   const { base, marks } = resolveBaseAndMarks(ch);
-  if (base.length > 1 && !marks) {
+  // Only a fallback that writes a letter out as several letters (ß -> ss) recurses.
+  // A lone astral character (an emoji, a styled math letter) has .length 2 but is
+  // its own base, and recursing on it never ends.
+  if (base !== ch && base.length > 1 && !marks) {
     return Array.from(base).map(function (letter) {
       return mapChar(letter, normalUpper, normalLower, normalNums, upperArr, lowerArr, numsArr, accentSafe);
     }).join('');
