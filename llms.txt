@@ -4,7 +4,7 @@
 
 UltraTextGen is a free, no-sign-up text tool: Unicode font styles to copy and paste, a browsable symbol and emoji library, one reference page per individual symbol, printable lettering and handwriting sheets rendered in the browser, and explanatory guides and answers. Everything runs client-side.
 
-4873 indexable pages in 32 languages. This file is a navigation index, not a URL list: https://ultratextgen.com/sitemap.xml is the complete canonical URL list and stays the authority on what exists. Links below point to a narrower llms.txt index where one exists, and straight to a page where it does not.
+4874 indexable pages in 32 languages. This file is a navigation index, not a URL list: https://ultratextgen.com/sitemap.xml is the complete canonical URL list and stays the authority on what exists. Links below point to a narrower llms.txt index where one exists, and straight to a page where it does not.
 
 English pages are served from the site root, so this file is also the English index (https://ultratextgen.com/en/llms.txt redirects here). Every other language has its own index at https://ultratextgen.com/<code>/llms.txt.
 
@@ -100,6 +100,7 @@ The "Jobs across languages" section lists the site's main jobs. Each line is the
 
 ## Text tools
 
+- [AI Writing Footprint Checker](https://ultratextgen.com/ai-writing-footprint-checker/): Paste your writing to see which patterns readers link to AI-sounding text, where they are and how to fix them.
 - [ASCII Art Generator](https://ultratextgen.com/ascii-art-generator/): Type a word or name and turn it into big multi-line block-letter ASCII art, with several font styles.
 - [ASCII Converter](https://ultratextgen.com/ascii-converter/): Turn text into decimal, hex, binary and octal codes as you type, or paste codes to decode them back into text.
 - [Calligraphy Font Generator](https://ultratextgen.com/calligraphy/): Type once and get your text back in eight calligraphic hands: formal script, bold script, blackletter and chancery italic.

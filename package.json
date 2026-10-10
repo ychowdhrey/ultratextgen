@@ -129,6 +129,7 @@
     "test:case-converter": "node renderer.case.test.js",
     "test:counter": "node js/counter/counterRules.test.js",
     "test:letters-to-numbers": "node js/letters/lettersToNumbers.test.js",
+    "test:writing-footprint": "node js/writing-footprint/engine.test.js",
     "test:i18n-faq-schema": "node i18n.test.js",
     "test:cta-routing": "python3 scripts/lib/cta_routing.test.py",
     "route:cta-cards": "python3 scripts/route-cta-cards.py",
