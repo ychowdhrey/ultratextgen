@@ -662,6 +662,10 @@ async function main() {
     await ctx.close();
   }
 
+  // Reversible interactions are only tested once they have come back: every
+  // case runs A->B->A->B and reads the state after each press.
+  await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });
+
   await browser.close();
   server.close();
 
