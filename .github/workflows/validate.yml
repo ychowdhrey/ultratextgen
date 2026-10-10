@@ -1003,6 +1003,19 @@ jobs:
         continue-on-error: true
         run: npm run test:letters-to-numbers | tee letters-to-numbers-tests.log
 
+      # Gating, zero backlog: the pattern engine behind
+      # /ai-writing-footprint-checker/. The page claims that one em dash is
+      # never a signal, that short text gets no aggregate, that quoted text is
+      # left alone, that an edit never touches a number, name or link, that
+      # undo restores the original exactly, and that nothing in the engine or
+      # controller can send the text anywhere. Each is asserted here, with a
+      # corpus of casual, academic, technical, marketing, list, poetry,
+      # dialogue, non-English and emoji text.
+      - name: Run writing footprint tests
+        id: writing_footprint_tests
+        continue-on-error: true
+        run: npm run test:writing-footprint | tee writing-footprint-tests.log
+
       # Gating, zero backlog: i18n.js rewrites a page's FAQPage JSON-LD from
       # the locale JSON it fetches, and the FAQ in a locale JSON is the
       # HOMEPAGE's FAQ. Only a homepage renders it, so on any other page that
@@ -1435,6 +1448,11 @@ jobs:
             cat letters-to-numbers-tests.log
             echo '```'
             echo ""
+            echo "### Writing footprint tests: \`${{ steps.writing_footprint_tests.outcome }}\`"
+            echo '```'
+            cat writing-footprint-tests.log
+            echo '```'
+            echo ""
             echo "### i18n FAQ-schema guard tests — \`${{ steps.i18n_faq_schema_tests.outcome }}\`"
             echo '```'
             cat i18n-faq-schema-tests.log
@@ -1575,6 +1593,7 @@ jobs:
           steps.case_converter_tests.outcome == 'failure' ||
           steps.counter_tests.outcome == 'failure' ||
           steps.letters_to_numbers_tests.outcome == 'failure' ||
+          steps.writing_footprint_tests.outcome == 'failure' ||
           steps.i18n_faq_schema_tests.outcome == 'failure' ||
           steps.accessibility.outcome == 'failure' ||
           steps.collection_grids.outcome == 'failure' ||

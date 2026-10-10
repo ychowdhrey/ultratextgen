@@ -591,6 +591,77 @@ async function main() {
     await ctx.close();
   }
 
+  // 14. Writing footprint checker: analyse, highlight, apply, undo, and the text goes nowhere.
+  console.log('\n/ai-writing-footprint-checker/ (local analysis, edits, privacy)');
+  {
+    const SAMPLE = "In today's rapidly evolving landscape, teams must adapt. It's important to note that the quarterly figures were revised on 14 March. Furthermore, the board approved a budget of $4,500. Moreover, the review is not just a formality, it is a commitment. Additionally, Dr. Okafor will present at https://example.com/q1. Overall, the plan is sound. " +
+      "The warehouse in Leeds shipped 312 pallets last week, and Priya counted every one. Moreover, the forklift broke twice. Furthermore, the night shift refused overtime. Additionally, the roof leaks over bay four. Overall, it was a long week.";
+    const { ctx, page, errors } = await open('/ai-writing-footprint-checker/', 'desktop');
+    const seen = [];
+    page.on('request', (r) => seen.push(r.url() + ' ' + (r.postData() || '')));
+    await page.fill('#wfInput', SAMPLE);
+    await page.waitForTimeout(200);
+    check('the word count updates while typing', /^\d+ words/.test(await page.textContent('#wfCounts')), await page.textContent('#wfCounts'));
+    check('typing fires no analytics event', !(await dl(page)).some((e) => /^writing_/.test(e.event)));
+    await page.click('#wfAnalyse');
+    await page.waitForSelector('#wfReport:not([hidden])');
+    const marks = await page.$$eval('#wfMarked .wf-mark', (a) => a.length);
+    check('flagged patterns render as buttons', marks >= 3, `${marks} marks`);
+    check('the marked view keeps the original text exactly', (await page.textContent('#wfMarked')) === SAMPLE);
+    check('the report has no AI score or probability', !/\d+\s*%\s*(AI|likely|chance)|AI (score|probability)\s*[:\d]|\d+\s*\/\s*100/i.test(await page.textContent('#wfReport')));
+    await page.locator('#wfMarked .wf-mark').first().click();
+    check('selecting a flag shows why it was flagged', /Why it was flagged/.test(await page.textContent('#wfDetail')));
+    await page.click('#wfShowSug');
+    const sugCount = await page.$$eval('#wfSuggestions input[type=checkbox]', (a) => a.length);
+    check('suggestions are listed only for flags with a safe replacement', sugCount >= 2, `${sugCount} suggestions`);
+    check('nothing changed before Apply', (await page.isHidden('#wfImprovedWrap')));
+    await page.locator('#wfSuggestions input[type=checkbox]').first().check();
+    await page.locator('#wfSuggestions input[type=checkbox]').nth(1).check();
+    await page.click('#wfApply');
+    const improved = await page.textContent('#wfImproved');
+    check('applying produces improved text that keeps numbers, names and links',
+      improved !== SAMPLE && /\$4,500/.test(improved) && /14 March/.test(improved) && /Okafor/.test(improved) && /https:\/\/example\.com\/q1/.test(improved), improved.slice(0, 120));
+    check('before and after table appears', (await page.$$eval('#wfCompare tr', (a) => a.length)) >= 4);
+    await page.click('#wfUndo');
+    await page.click('#wfResetOrig').catch(() => {});
+    await page.locator('#wfSuggestions input[type=checkbox]').first().check();
+    await page.click('#wfApply');
+    await page.click('#wfResetOrig');
+    check('Reset to Original hides the improved text', await page.isHidden('#wfImprovedWrap'));
+    check('the typed original is untouched by edits', (await page.inputValue('#wfInput')) === SAMPLE);
+    await page.locator('#wfSuggestions input[type=checkbox]').first().check();
+    await page.click('#wfApply');
+    await sentinel(page);
+    await page.click('#wfCopy');
+    await page.waitForTimeout(300);
+    check('Copy Improved Text puts the improved text on the clipboard', (await clip(page)) === (await page.textContent('#wfImproved')));
+    const events = (await dl(page)).filter((e) => /^writing_/.test(e.event));
+    const names = events.map((e) => e.event);
+    check('the six action events fire', ['writing_analysis_started', 'writing_analysis_completed', 'writing_suggestion_applied', 'writing_suggestion_undone', 'writing_analysis_reset', 'writing_result_copied'].every((n) => names.includes(n)), names.join(','));
+    const blob = JSON.stringify(events);
+    check('no event carries the pasted text, a phrase or a name', !/Okafor|Leeds|Priya|rapidly evolving|important to note|example\.com|4,500/i.test(blob), blob.slice(0, 200));
+    check('no request carries the pasted text', !seen.some((u) => /Okafor|Priya|rapidly%20evolving|rapidly\+evolving/i.test(u)));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+  {
+    const { ctx, page } = await open('/ai-writing-footprint-checker/', 'narrow');
+    await page.fill('#wfInput', "It's important to note that the vote moved. Furthermore, the room changed. Moreover, lunch is cancelled. Additionally, bring a pen. Overall, it is fine. " + 'The cat sat on the mat and looked at the dog for a while. '.repeat(14));
+    await page.click('#wfAnalyse');
+    await page.waitForSelector('#wfReport:not([hidden])');
+    const w = await page.evaluate(() => [document.documentElement.scrollWidth, window.innerWidth]);
+    check('/ai-writing-footprint-checker/ fits 390px with a report open', w[0] <= w[1], `scrollWidth ${w[0]} > ${w[1]}`);
+    await ctx.close();
+  }
+  {
+    const { ctx, page } = await open('/ai-writing-footprint-checker/', 'desktop');
+    await page.fill('#wfInput', 'Ayer fuimos al mercado de la plaza mayor y compramos tomates, pan y un poco de queso. Despues nos sentamos en un banco a mirar a la gente pasar mientras el sol bajaba.');
+    await page.click('#wfAnalyse');
+    await page.waitForSelector('#wfReport:not([hidden])');
+    check('non-English text is declined, not analysed with English rules', /English only/.test(await page.textContent('#wfSummary')) && (await page.$$eval('#wfMarked .wf-mark', (a) => a.length)) === 0);
+    await ctx.close();
+  }
+
   await browser.close();
   server.close();
 
