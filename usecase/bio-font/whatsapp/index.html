@@ -422,6 +422,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           { id: "retro", emoji: "📟", label: "Retro / Pixel", color: "#00D4AA", count: 12, preview: { left: "►► ", right: " ◄◄" } },
         ];
 
+        function glanceEsc(s) {
+          return String(s).replace(/[&<>"']/g, function (c) {
+            return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+          });
+        }
+
         function renderGlanceGrid() {
           const grid = document.getElementById("categoriesGlanceGrid");
           if (!grid) return;
@@ -437,7 +443,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
               </div>
               <div class="glance-card-count">${cat.count} decorators</div>
               <div class="glance-card-preview" style="color: ${cat.color}">
-                ${cat.preview.left}${name}${cat.preview.right}
+                ${cat.preview.left}${glanceEsc(name)}${cat.preview.right}
               </div>
             </div>
           `).join("");

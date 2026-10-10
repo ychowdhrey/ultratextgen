@@ -236,20 +236,9 @@
      runtime with the SAME art-piece-card component/copy mechanism as
      library/heart-ascii-art/index.html: a whitespace-preserving monospace
      <pre> plus a per-piece Copy button wired through
-     UltraTextGen.copyText (symbol-explorer.js), not the .copy-btn contract.
+     the delegated .art-piece-copy handler in symbol-explorer.js, not the
+     .copy-btn contract.
      -------------------------------------------------------------------------- */
-  function copyArt(pre, btn, label) {
-    const text = pre.textContent.replace(/\s+$/, "");
-    const ns = window.UltraTextGen;
-    if (ns && typeof ns.copyText === "function") {
-      ns.copyText(text, btn, label || t("asciiArtDefaultLabel", "ASCII art"));
-      return;
-    }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text);
-    }
-  }
-
   function renderAsciiArt() {
     const grid = $("#eventAsciiGrid");
     if (!grid) return;
@@ -273,9 +262,9 @@
       body.appendChild(pre);
       card.appendChild(body);
 
-      copyBtn.addEventListener("click", function () {
-        copyArt(pre, copyBtn, piece.label);
-      });
+      // No listener of its own: symbol-explorer.js delegates .art-piece-copy
+      // at the document. A second, direct one made every click copy twice
+      // and record two copy_text rows (symbol_tile and ascii_art).
 
       grid.appendChild(card);
     });
