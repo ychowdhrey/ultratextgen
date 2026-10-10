@@ -174,6 +174,22 @@ expectStyle('Reverse Order Only', 'e\u0301a', 'ae\u0301');
   expectStyle(name, '\u00f8l', render('ol', st));
 });
 
+// --- Astral characters pass through every map style (no recursion, no throw) ---
+// An emoji, a flag, a ZWJ family, a skin tone and an already-styled math letter
+// are all pasted into the generator; one of them used to blank every card.
+['Ultra Bold', 'Ultra Script', 'Ultra Double-Struck'].forEach(name => {
+  const st = styles[name];
+  ['\u{1F642}', 'a\u{1F642}b', '\u{1F1F2}\u{1F1FE} KL', '\u{1F469}\u200D\u{1F467}', '\u{1F44D}\u{1F3FD}', '\u{1D4B4}\u{1D4B6}'].forEach(input => {
+    let out;
+    try { out = render(input, st); } catch (e) { out = 'THROW ' + e.message; }
+    checks += 1;
+    const keep = Array.from(input).filter(c => !/[A-Za-z]/.test(c)).join('');
+    if (typeof out !== 'string' || out.startsWith('THROW') || !Array.from(keep).every(c => out.includes(c))) {
+      failures += 1; console.error(`FAIL ${name}: ${JSON.stringify(input)} -> ${JSON.stringify(out)}`);
+    }
+  });
+});
+
 if (failures) {
   console.error(`\n${failures} of ${checks} case-converter checks failed`);
   process.exit(1);
