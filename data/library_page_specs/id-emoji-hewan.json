@@ -1,6 +1,6 @@
 {
   "slug": "emoji-hewan",
-  "title": "Emoji Hewan 🐶 🐱 🦁 — Salin & Tempel Semua Emoji Binatang | UltraTextGen",
+  "title": "Emoji Hewan 🐶 🐱 🦁 — Salin & Tempel Semua Emoji Binatang",
   "meta_description": "Emoji hewan lengkap — peliharaan, ternak, satwa liar, burung, hewan laut, serangga, reptil, dan makhluk mitologi. Klik emojinya, langsung kesalin.",
   "breadcrumb": "Emoji Hewan",
   "hero_h1": "Emoji Hewan",
@@ -252,7 +252,7 @@
       "id": "birds",
       "label": "Burung",
       "h2": "Emoji Burung",
-      "intro": "Emoji burung dari yang umum sampai yang eksotis.",
+      "intro": "Emoji burung dari yang umum sampai yang eksotis. 🐦‍⬛ Burung Hitam adalah emoji gagak: Emoji 15.0 (2022) menyusunnya dari 🐦 dan ⬛ yang disambung karakter penghubung tak terlihat, jadi perangkat yang lebih lama menampilkan keduanya berdampingan.",
       "symbols": [
         {
           "char": "🐦",
@@ -293,6 +293,14 @@
         {
           "char": "🕊",
           "label": "Merpati"
+        },
+        {
+          "char": "🐦‍⬛",
+          "label": "Burung Hitam (Gagak)"
+        },
+        {
+          "char": "🪶",
+          "label": "Bulu Burung"
         },
         {
           "char": "🪿",

@@ -85,6 +85,254 @@
       ]
     },
     {
+      "id": "territory-flags",
+      "label": "Bölgeler",
+      "h2": "Bölge ve Toprak Bayrakları",
+      "intro": "Unicode'da 195 ülkelik listenin dışında kalan yerlerin bayrakları da var: denizaşırı topraklar, bağımlı bölgeler, özel idari bölgeler ve kendi kodu olan alanlar, örneğin 🇧🇱 Saint Barthelemy, 🇭🇰 Hong Kong ve 🇽🇰 Kosova. Bazılarının kendi bayrağı olmadığı için başka bir ülkenin bayrağı görünür: 🇧🇻 Bouvet Adası ve 🇸🇯 Svalbard için Norveç, 🇺🇲 ABD Küçük Harici Adaları için ABD, 🇭🇲 Heard Adası ve McDonald Adaları için Avustralya bayrağı çıkar.",
+      "symbols": [
+        {
+          "char": "🇺🇲",
+          "label": "ABD Küçük Harici Adaları"
+        },
+        {
+          "char": "🇻🇮",
+          "label": "ABD Virjin Adaları"
+        },
+        {
+          "char": "🇦🇽",
+          "label": "Åland Adaları"
+        },
+        {
+          "char": "🇦🇸",
+          "label": "Amerikan Samoası"
+        },
+        {
+          "char": "🇦🇮",
+          "label": "Anguilla"
+        },
+        {
+          "char": "🇦🇶",
+          "label": "Antarktika"
+        },
+        {
+          "char": "🇦🇼",
+          "label": "Aruba"
+        },
+        {
+          "char": "🇦🇨",
+          "label": "Ascension Adası"
+        },
+        {
+          "char": "🇪🇭",
+          "label": "Batı Sahra"
+        },
+        {
+          "char": "🇧🇲",
+          "label": "Bermuda"
+        },
+        {
+          "char": "🇧🇻",
+          "label": "Bouvet Adası"
+        },
+        {
+          "char": "🇮🇴",
+          "label": "Britanya Hint Okyanusu Toprakları"
+        },
+        {
+          "char": "🇻🇬",
+          "label": "Britanya Virjin Adaları"
+        },
+        {
+          "char": "🇰🇾",
+          "label": "Cayman Adaları"
+        },
+        {
+          "char": "🇬🇮",
+          "label": "Cebelitarık"
+        },
+        {
+          "char": "🇪🇦",
+          "label": "Ceuta ve Melilla"
+        },
+        {
+          "char": "🇨🇽",
+          "label": "Christmas Adası"
+        },
+        {
+          "char": "🇨🇵",
+          "label": "Clipperton Adası"
+        },
+        {
+          "char": "🇨🇨",
+          "label": "Cocos (Keeling) Adaları"
+        },
+        {
+          "char": "🇨🇰",
+          "label": "Cook Adaları"
+        },
+        {
+          "char": "🇨🇼",
+          "label": "Curaçao"
+        },
+        {
+          "char": "🇩🇬",
+          "label": "Diego Garcia"
+        },
+        {
+          "char": "🇫🇰",
+          "label": "Falkland Adaları"
+        },
+        {
+          "char": "🇫🇴",
+          "label": "Faroe Adaları"
+        },
+        {
+          "char": "🇬🇫",
+          "label": "Fransız Guyanası"
+        },
+        {
+          "char": "🇹🇫",
+          "label": "Fransız Güney Toprakları"
+        },
+        {
+          "char": "🇵🇫",
+          "label": "Fransız Polinezyası"
+        },
+        {
+          "char": "🇬🇱",
+          "label": "Grönland"
+        },
+        {
+          "char": "🇬🇵",
+          "label": "Guadeloupe"
+        },
+        {
+          "char": "🇬🇺",
+          "label": "Guam"
+        },
+        {
+          "char": "🇬🇬",
+          "label": "Guernsey"
+        },
+        {
+          "char": "🇬🇸",
+          "label": "Güney Georgia ve Güney Sandwich Adaları"
+        },
+        {
+          "char": "🇭🇲",
+          "label": "Heard Adası ve McDonald Adaları"
+        },
+        {
+          "char": "🇭🇰",
+          "label": "Hong Kong"
+        },
+        {
+          "char": "🇯🇪",
+          "label": "Jersey"
+        },
+        {
+          "char": "🇮🇨",
+          "label": "Kanarya Adaları"
+        },
+        {
+          "char": "🇧🇶",
+          "label": "Karayip Hollandası"
+        },
+        {
+          "char": "🇽🇰",
+          "label": "Kosova"
+        },
+        {
+          "char": "🇲🇵",
+          "label": "Kuzey Mariana Adaları"
+        },
+        {
+          "char": "🇲🇴",
+          "label": "Makao"
+        },
+        {
+          "char": "🇮🇲",
+          "label": "Man Adası"
+        },
+        {
+          "char": "🇲🇶",
+          "label": "Martinik"
+        },
+        {
+          "char": "🇾🇹",
+          "label": "Mayotte"
+        },
+        {
+          "char": "🇲🇸",
+          "label": "Montserrat"
+        },
+        {
+          "char": "🇳🇺",
+          "label": "Niue"
+        },
+        {
+          "char": "🇳🇫",
+          "label": "Norfolk Adası"
+        },
+        {
+          "char": "🇵🇳",
+          "label": "Pitcairn Adaları"
+        },
+        {
+          "char": "🇷🇪",
+          "label": "Reunion"
+        },
+        {
+          "char": "🇧🇱",
+          "label": "Saint Barthelemy"
+        },
+        {
+          "char": "🇸🇭",
+          "label": "Saint Helena"
+        },
+        {
+          "char": "🇲🇫",
+          "label": "Saint Martin"
+        },
+        {
+          "char": "🇵🇲",
+          "label": "Saint Pierre ve Miquelon"
+        },
+        {
+          "char": "🇸🇽",
+          "label": "Sint Maarten"
+        },
+        {
+          "char": "🇸🇯",
+          "label": "Svalbard ve Jan Mayen"
+        },
+        {
+          "char": "🇹🇼",
+          "label": "Tayvan"
+        },
+        {
+          "char": "🇹🇰",
+          "label": "Tokelau"
+        },
+        {
+          "char": "🇹🇦",
+          "label": "Tristan da Cunha"
+        },
+        {
+          "char": "🇹🇨",
+          "label": "Turks ve Caicos Adaları"
+        },
+        {
+          "char": "🇼🇫",
+          "label": "Wallis ve Futuna"
+        },
+        {
+          "char": "🇳🇨",
+          "label": "Yeni Kaledonya"
+        }
+      ]
+    },
+    {
       "id": "s4",
       "label": "",
       "h2": "Gökkuşağı bayrağı · Trans bayrağı",
@@ -133,7 +381,7 @@
       ]
     }
   ],
-  "faq_h2": "Popüler bayraklar",
+  "faq_h2": "Bayrak emojileri hakkında sık sorulanlar",
   "faq": [
     {
       "q": "Neden bayrak yerine “TR” yazıyor?",
@@ -159,7 +407,7 @@
   "editorial_sections": [
     {
       "h2": "🇹🇷 aslında bir bayrak karakteri değil",
-      "body": "🇹🇷 diye bir karakter yok: Ⓣ + Ⓡ, iki bölge gösterge harfi var; bayrağı fontun kendisi çizer. Windows'ta iki harf görmenin sebebi bu. Unicode, hangi toprağın ülke sayılacağına karar vermemek için ISO kodlarını ödünç aldı — bazı bayrakların hiç olmaması da bundan."
+      "body": "🇹🇷 diye bir karakter yok: 🇹 + 🇷, iki bölge gösterge harfi var; bayrağı fontun kendisi çizer. Windows'ta iki harf görmenin sebebi bu. Unicode, hangi toprağın ülke sayılacağına karar vermemek için ISO kodlarını ödünç aldı — bazı bayrakların hiç olmaması da bundan."
     }
   ],
   "collection_section": {
@@ -210,7 +458,7 @@
     {
       "href": "/tr/library/alt-kodlari/",
       "title": "Alt Kodları — Türkçe Karakterler (Ç Ğ İ Ö Ş Ü) ve Tam Sembol Listesi",
-      "desc": "Alt tuş kodlarının tam listesi: Türkçe karakterler Ç Ğ İ ı Ö Ş Ü, para birimi, matematik, aksanlı harfler ve klasik DOS sembolleri. Herhangi bir karaktere tıkla, anında kopyala."
+      "desc": "Alt tuş kodlarının tam listesi: Türkçe karakterler Ç Ğ İ ı Ö Ş Ü, para birimi, matematik, aksanlı harfler ve klasik DOS sembolleri."
     },
     {
       "href": "/tr/library/ates-emoji/",
@@ -219,7 +467,7 @@
     },
     {
       "href": "/tr/library/aglayan-emoji/",
-      "title": "Ağlayan Emoji 😭 😢 — Ağlama Emojileri ve Kaomoji Kopyala",
+      "title": "Ağlayan Emoji",
       "desc": "Ağlayan emoji 😭 😢 🥹, gözyaşı sembolleri ve ağlayan kaomoji (╥﹏╥) tek sayfada. Tıkla kopyala, sohbete yapıştır."
     }
   ],

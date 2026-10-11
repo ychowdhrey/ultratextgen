@@ -1,10 +1,10 @@
 {
   "slug": "smutne-emoji",
   "title": "Smutne Emoji 😢 — Wszystkie Odmiany do Skopiowania | UltraTextGen",
-  "meta_description": "Smutne emoji 😢 😞 😔 do skopiowania: płaczące buźki, złamane serce, wyczerpane twarze i smutne kaomoji. Jedno kliknięcie i gotowe.",
+  "meta_description": "Smutne emoji 😢 😞 😔 do skopiowania: płaczące buźki, złamane serce, wyczerpane twarze, emotikony takie jak :( i kilka smutnych kaomoji. Jedno kliknięcie i gotowe.",
   "breadcrumb": "Smutne Emoji",
   "hero_h1": "Smutne Emoji",
-  "hero_tagline": "Wszystkie odcienie smutku: od lekko skrzywionej miny po płacz, a do tego smutne kaomoji.",
+  "hero_tagline": "Wszystkie odcienie smutku: od lekko skrzywionej miny po płacz, a do tego emotikony z klawiatury i kilka smutnych kaomoji.",
   "intro": "„Smutny” to nie jedna emocja i czasem jedno emoji nie wystarcza. Ta strona układa twarze od najlżejszej do najcięższej, dokłada symbole, które wstawia się zamiast słów, i kończy na kaomoji — na wypadek gdy okrągła buźka nie oddaje tego, o co chodzi. Kliknij, aby skopiować.",
   "copy_pattern": "collection",
   "sections": [
@@ -89,6 +89,82 @@
       ]
     },
     {
+      "id": "grief-mourning",
+      "label": "Emoji Żałoby i Kondolencji",
+      "h2": "Emoji Żałoby i Kondolencji",
+      "intro": "Symbole używane w kondolencjach i wpisach upamiętniających. 🕯️ oznacza pamięć, 🕊️ pokój, 🖤 żałobę, 🤍 ciche współczucie, a 💐 kwiaty, które się przynosi.",
+      "symbols": [
+        {
+          "char": "🕯️",
+          "label": "Świeca"
+        },
+        {
+          "char": "🕊️",
+          "label": "Gołąb"
+        },
+        {
+          "char": "🖤",
+          "label": "Czarne Serce"
+        },
+        {
+          "char": "🤍",
+          "label": "Białe Serce"
+        },
+        {
+          "char": "🥀",
+          "label": "Zwiędły Kwiat"
+        },
+        {
+          "char": "💐",
+          "label": "Bukiet"
+        },
+        {
+          "char": "🪦",
+          "label": "Nagrobek"
+        },
+        {
+          "char": "❤️‍🩹",
+          "label": "Opatrzone Serce"
+        }
+      ]
+    },
+    {
+      "id": "condolence-combos",
+      "label": "Zestawy Emoji na Kondolencje i Wspomnienia",
+      "h2": "Zestawy Emoji na Kondolencje i Wspomnienia",
+      "intro": "Krótkie zestawy na koniec wiadomości ze współczuciem albo pod zdjęcie wspomnieniowe. W wiadomości do osoby w żałobie 🕊️ i 🤍 brzmią łagodniej niż 🪦, który lepiej pasuje do publicznego wspomnienia.",
+      "symbols": [
+        {
+          "char": "🕯️🕊️🤍",
+          "label": "Pamięć"
+        },
+        {
+          "char": "🕊️🤍",
+          "label": "Spoczywaj w Pokoju"
+        },
+        {
+          "char": "🖤🥀🕯️",
+          "label": "Żałoba"
+        },
+        {
+          "char": "💐🤍",
+          "label": "Kwiaty Kondolencyjne"
+        },
+        {
+          "char": "🙏🤍",
+          "label": "Myślę o Tobie"
+        },
+        {
+          "char": "❤️‍🩹🤍",
+          "label": "Ukojenie"
+        },
+        {
+          "char": "🪦🥀🕯️",
+          "label": "Wspomnienie"
+        }
+      ]
+    },
+    {
       "id": "drained",
       "label": "Twarze Zawiedzione i Wyczerpane",
       "h2": "Twarze Zawiedzione i Wyczerpane",
@@ -125,44 +201,64 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emotikony",
+      "h2": "Smutne emotikony tekstowe",
+      "intro": "Pierwotna smutna buźka, wpisana z dwukropkiem. Wygląda tak samo na każdym telefonie i każdej klawiaturze.",
+      "symbols": [
+        {
+          "char": ":(",
+          "label": "Smutna buźka"
+        },
+        {
+          "char": ":-(",
+          "label": "Smutna mina z noskiem"
+        },
+        {
+          "char": "=(",
+          "label": "Lekko smutna mina"
+        },
+        {
+          "char": ":c",
+          "label": "Nadąsana smutna mina"
+        },
+        {
+          "char": ":/",
+          "label": "Niepewna mina"
+        },
+        {
+          "char": "D:",
+          "label": "Przerażona mina"
+        }
+      ]
+    },
+    {
       "id": "kaomoji",
       "label": "Smutne Kaomoji",
       "h2": "Smutne Kaomoji",
-      "intro": "Buźki ze znaków, gotowe do wklejenia.",
+      "intro": "Na początek kilka przygnębionych japońskich buziek tekstowych.",
       "symbols": [
         {
           "char": "(μ_μ)",
           "label": "Kaomoji Spuszczone Oczy"
         },
         {
-          "char": "(._.)",
-          "label": "Kaomoji Pusty Wzrok"
-        },
-        {
           "char": "(´。＿。｀)",
           "label": "Kaomoji Zwieszona Głowa"
-        },
-        {
-          "char": "(◞‸◟)",
-          "label": "Kaomoji Ponura Mina"
         },
         {
           "char": "( ´•︵•` )",
           "label": "Kaomoji Smutny Dzióbek"
         },
         {
-          "char": "（ ｉдｉ ）",
-          "label": "Kaomoji Ciche Łzy"
-        },
-        {
           "char": "(〒﹏〒)",
           "label": "Kaomoji Ciężkie Serce"
-        },
-        {
-          "char": "( ︶︿︶)",
-          "label": "Kaomoji Westchnienie Rezygnacji"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/pl/library/kaomoji/",
+        "text": "Zobacz wszystkie kaomoji"
+      }
     }
   ],
   "faq_h2": "Najczęstsze Pytania o Smutne Emoji",
@@ -190,8 +286,8 @@
   ],
   "editorial_sections": [
     {
-      "h2": "Dlaczego Smutnych Emoji Jest Aż Tyle",
-      "body": "Unicode nie dodał piętnastu smutnych twarzy z rozpędu — każda pojawiła się dla zastosowania, którego wcześniejsze nie obejmowały. 😞 pochodzi z pierwszych japońskich zestawów, gdzie służyła do przepraszania. 🥺 przyszła znacznie później i niemal od razu została odczytana raczej czule niż smutno. 🫠 i 🫤 są z 2021 roku i mówią o wyczerpaniu, nie o żalu. Rozjazd między tym, co zapowiada nazwa unicodowa, a tym, co ludzie z emoji robią, jest realny — dlatego ta strona porządkuje je według natężenia, a nie daty dodania."
+      "h2": "Dlaczego smutnych emoji jest aż tyle",
+      "body": "Unicode nie dodał piętnastu smutnych twarzy z rozpędu — każda pojawiła się dla zastosowania, którego wcześniejsze nie obejmowały. 😞 pochodzi z pierwszych japońskich zestawów emoji. 🥺 przyszła znacznie później i niemal od razu została odczytana raczej czule niż smutno. 🫠 i 🫤 są z 2021 roku i mówią o wyczerpaniu, nie o żalu. Rozjazd między tym, co zapowiada nazwa unicodowa, a tym, co ludzie z emoji robią, jest realny — dlatego ta strona porządkuje je według natężenia, a nie daty dodania."
     }
   ],
   "collection_section": {
@@ -257,7 +353,7 @@
   ],
   "canonical": "https://ultratextgen.com/pl/library/smutne-emoji/",
   "date_published": "2026-08-10",
-  "date_modified": "2026-08-10",
+  "date_modified": "2026-10-09",
   "lang": "pl",
   "page_type": "library",
   "hreflang": [

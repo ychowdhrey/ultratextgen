@@ -10,7 +10,7 @@ module.exports = [
   slug: 'do-fancy-fonts-work-on-iphone',
   crumb: 'Do Fancy Fonts Work on iPhone',
   pageTitle: 'Do Fancy Fonts Work on iPhone?',
-  metaDesc: "Yes, iPhones render bold, italic, script and small caps fine. But iOS shows the more decorative styles as empty boxes because it rarely falls back to another font. Here's what's safe.",
+  metaDesc: "Yes, iPhones render bold, italic, script and small caps fine. iOS shows the more decorative styles as empty boxes, though. Here's what's safe.",
   h1: 'Do Fancy Fonts Work on iPhone?',
   tagline: 'Mostly yes — but iOS is picky in one specific way that turns the fancier styles into empty boxes. Here’s what renders and what to avoid.',
   shortAnswer: 'Yes, for the common styles. iPhones ship fonts that cover <strong>bold, italic, sans, small caps and monospace</strong>, so those copy-and-paste fine into names, bios and Messages. The catch is that iOS is <strong>strict about fallback</strong>: if a style uses characters the system font doesn’t have, iOS often draws an empty box (□) instead of borrowing a glyph from another font. So the most decorative styles — fraktur, double-struck and obscure symbols — are the ones that break on iPhone.',
@@ -71,7 +71,7 @@ module.exports = [
   slug: 'why-fancy-text-looks-different-on-iphone-vs-android',
   crumb: 'iPhone vs Android',
   pageTitle: 'Why Does Fancy Text Look Different on iPhone vs Android?',
-  metaDesc: "The same styled text can look crisp on Android and boxed on iPhone because each OS draws the characters with its own fonts — Apple's San Francisco vs Android's Noto. Here's why.",
+  metaDesc: "Styled text can look crisp on Android and boxed on iPhone because each OS draws characters with its own fonts: Apple's San Francisco vs Android's Noto.",
   h1: 'Why Does Fancy Text Look Different on iPhone vs Android?',
   tagline: 'You send a styled name and a friend says it looks totally different — or shows as boxes. Same characters, two different sets of fonts drawing them.',
   shortAnswer: 'Because each phone draws the styled characters with <strong>its own fonts</strong>. iPhone uses Apple’s San Francisco with a limited fallback; Android uses the <strong>Noto</strong> family (“no more tofu”), which covers more of the styled-character range. So the same string can look slightly different in shape, or render on Android while boxing out on an iPhone — or box out on an <em>old</em> Android that predates the coverage. Your text isn’t broken; the reader’s device is choosing the picture.',
@@ -185,7 +185,7 @@ module.exports = [
   slug: 'why-wont-discord-accept-fancy-username',
   crumb: 'Discord Fancy Username',
   pageTitle: "Why Won't Discord Accept My Fancy Username?",
-  metaDesc: "Discord's username is ASCII-only (lowercase letters, numbers, . and _), so fancy fonts are rejected there. They work in your display name and server nickname instead — here's how.",
+  metaDesc: "Discord usernames are ASCII-only (lowercase letters, numbers, . and _), so fancy fonts are rejected. They work in your display name and server nickname.",
   h1: "Why Won't Discord Accept My Fancy Username?",
   tagline: 'Your styled username won’t save — but your styled <em>display name</em> will. Here’s the difference, and where fancy fonts actually work on Discord.',
   shortAnswer: 'Because Discord’s <strong>username</strong> (the unique @handle, since the 2023 system) is restricted to <strong>lowercase letters, numbers, dots and underscores</strong> — ASCII only. Styled Unicode, accents and symbols are rejected there so handles stay unique and typeable. Fancy fonts aren’t blocked on Discord in general; they belong in your <strong>display name</strong> and <strong>server nickname</strong>, which accept almost any Unicode. So: plain username, fancy display name.',
@@ -243,7 +243,7 @@ module.exports = [
   slug: 'is-fancy-text-bad-for-seo',
   crumb: 'Is Fancy Text Bad for SEO',
   pageTitle: 'Is Fancy Text Bad for SEO?',
-  metaDesc: "As decoration, no. But styling the words you want to rank for can hurt: search normalizes fancy Unicode to plain, so styled keywords may not match queries. Keep keywords plain.",
+  metaDesc: "As decoration, no. But styling the words you want to rank for can hurt: search normalizes fancy Unicode to plain, so styled keywords may not match queries.",
   h1: 'Is Fancy Text Bad for SEO?',
   tagline: 'Fancy Unicode won’t get you penalised — but styling the wrong text can quietly make you harder to find. Here’s the honest line.',
   shortAnswer: 'For <strong>decoration</strong>, no. For <strong>content you want to rank</strong>, yes. Search engines normalize styled Unicode toward plain text for indexing, and a styled letter (𝟲𝗼𝗹𝗱) is a different character from a plain one — so styling a keyword can stop it matching a normal search, and styling body text or headings hurts both crawlability and accessibility. The safe rule: <strong>keep keywords, headings and body copy plain; use fancy text only for a name or tagline accent.</strong>',
@@ -296,7 +296,7 @@ module.exports = [
   slug: 'can-you-search-fancy-text',
   crumb: 'Can You Search Fancy Text',
   pageTitle: 'Can You Search Fancy Text?',
-  metaDesc: "Usually not with the normal spelling — a styled 'a' (𝖆) is a different character from 'a', so Ctrl+F and most search boxes won't match it. Here's when search does find it, and what to do.",
+  metaDesc: "Usually not with the normal spelling — a styled 'a' (𝖆) is a different character from 'a', so Ctrl+F and most search boxes won't match it.",
   h1: 'Can You Search Fancy Text?',
   tagline: 'Ctrl+F comes up empty, and searching your styled name finds nothing. Here’s why — and the one habit that keeps your text findable.',
   shortAnswer: 'Usually <strong>not with the plain spelling</strong>. A styled “a” (𝖆) is a different Unicode character from a normal “a,” so Ctrl+F, in-app search and Google won’t match a search for “cafe” against 𝐜𝐚𝐟𝐞 — unless that system normalizes the text first. Some search boxes do normalize and will find it; many don’t. The safe habit: <strong>keep anything you need to find in plain text.</strong>',
@@ -345,7 +345,7 @@ module.exports = [
   slug: 'is-fancy-text-bad-for-accessibility',
   crumb: 'Fancy Text & Accessibility',
   pageTitle: 'Is Fancy Text Bad for Accessibility?',
-  metaDesc: "It can be if overused. Screen readers may skip styled Unicode, spell it out as “mathematical bold capital B…”, or mispronounce it. Here's how to style without excluding anyone.",
+  metaDesc: "It can be if overused. Screen readers may skip styled Unicode, spell it out as “mathematical bold capital B…”, or mispronounce it.",
   h1: 'Is Fancy Text Bad for Accessibility?',
   tagline: 'Not “never use it” — but a fully styled sentence can be silent or unintelligible to a screen reader. Here’s the honest picture and the simple rule.',
   shortAnswer: 'It can be, if you overuse it. Styled Unicode letters are <strong>mathematical symbols, not real letters</strong>, so a screen reader may <strong>skip them</strong> entirely (losing your meaning), <strong>spell them out</strong> one at a time as “mathematical bold capital B…”, or mispronounce them — and behaviour differs by reader. A whole styled sentence can become unusable. It’s not a reason to never use it: <strong>style a word or two for emphasis, and keep names, messages and calls to action in plain text.</strong>',
@@ -401,7 +401,7 @@ module.exports = [
   slug: 'what-does-uwu-mean',
   crumb: 'What Does UwU Mean',
   pageTitle: 'What Does UwU Mean?',
-  metaDesc: 'UwU is an emoticon of a cute, content face — closed happy eyes (u u) and a small mouth (w). It signals warmth, affection or cuteness. Here is what it means and how to use it.',
+  metaDesc: 'UwU is an emoticon of a cute, content face — closed happy eyes (u u) and a small mouth (w). It signals warmth, affection or cuteness.',
   twitterDesc: 'UwU is a cute, happy text face — closed eyes (u u) and a w mouth — that signals warmth and affection. Here is the meaning, the OwO variant, and where it comes from.',
   h1: 'What Does UwU Mean?',
   tagline: 'It is a tiny face, not a word — two happy closed eyes and a soft mouth. Here is what people mean when they send it.',
@@ -451,7 +451,7 @@ module.exports = [
   slug: 'what-does-owo-mean',
   crumb: 'What Does OwO Mean',
   pageTitle: 'What Does OwO Mean?',
-  metaDesc: 'OwO is an emoticon of a surprised, curious face — wide round eyes (o o) and a small mouth (w). Famous from “OwO what’s this?” Here is what it means and how to use it.',
+  metaDesc: 'OwO is an emoticon of a surprised, curious face: wide round eyes (o o) and a small mouth (w), famous from OwO what\'s this? What it means and how to use it.',
   twitterDesc: 'OwO is a wide-eyed, surprised text face (o o eyes, w mouth), famous from “OwO what’s this?” Here is the meaning, the UwU variant, and where it comes from.',
   h1: 'What Does OwO Mean?',
   tagline: 'Two wide eyes and a little mouth. Here is what people mean when they send OwO — and the meme behind it.',
@@ -501,7 +501,7 @@ module.exports = [
   slug: 'what-does-xd-mean',
   crumb: 'What Does XD Mean',
   pageTitle: 'What Does XD Mean?',
-  metaDesc: 'XD is an emoticon of a face laughing hard — tilt your head left and the X is scrunched-shut eyes, the D a wide open mouth. It means laughing out loud. Here is how to use it.',
+  metaDesc: 'XD is an emoticon of a face laughing hard — tilt your head left and the X is scrunched-shut eyes, the D a wide open mouth. It means laughing out loud.',
   twitterDesc: 'XD is a laughing text face: tilt your head left and X is squeezed-shut eyes, D is a wide open mouth. It means LOL. Here is the meaning and its variants (xD, XDD).',
   h1: 'What Does XD Mean?',
   tagline: 'Tilt your head to the left and it clicks: it is a face laughing so hard its eyes are shut. Here is what it means.',
@@ -543,7 +543,7 @@ module.exports = [
   slug: 'what-does-o7-mean',
   crumb: 'What Does o7 Mean',
   pageTitle: 'What Does o7 Mean?',
-  metaDesc: 'o7 is a text emoticon of a person saluting — the o is a head and the 7 is an arm raised in salute. It means respect, farewell, or “I salute you.” Here is how it is used.',
+  metaDesc: 'o7 is a text emoticon of a person saluting: the o is a head, the 7 a raised arm. It means respect, farewell, or I salute you. Here is how it is used.',
   twitterDesc: 'o7 is a saluting text face: the o is a head and the 7 is a raised, saluting arm. It means respect or “I salute you,” big in gaming and streaming. Here is the meaning.',
   h1: 'What Does o7 Mean?',
   tagline: 'A head and a raised arm: it is a salute you can type. Here is what people mean when they send o7.',
@@ -585,7 +585,7 @@ module.exports = [
   slug: 'what-is-kaomoji',
   crumb: 'What Is a Kaomoji',
   pageTitle: 'What Is a Kaomoji?',
-  metaDesc: 'A kaomoji (顔文字, “face characters”) is a Japanese-style emoticon read upright, built from Unicode characters — like (≧▽≦). Here is what it means and how it differs from emoji.',
+  metaDesc: 'A kaomoji (顔文字, “face characters”) is a Japanese-style emoticon read upright, built from Unicode characters — like (≧▽≦).',
   twitterDesc: 'A kaomoji is a Japanese emoticon read upright — like (^_^) or ¯\\_(ツ)_/¯ — built from Unicode, not pictures. Here is what it means and how it differs from emoji and emoticons.',
   h1: 'What Is a Kaomoji?',
   tagline: 'Japanese emoticons you read straight on, not sideways. Here is what a kaomoji is and how it differs from an emoji.',
@@ -615,7 +615,7 @@ module.exports = [
       label: 'Where they came from',
       h2: 'A short history of kaomoji',
       bodyHtml: `<div class="editorial-block">
-    <p>Kaomoji emerged on Japanese message boards in the 1980s–1990s as a more expressive, upright alternative to Western emoticons. Japanese character sets offered a huge palette of symbols, which let creators build detailed faces — and the style spread worldwide as Unicode made those characters available everywhere.</p>
+    <p>Kaomoji began on Japanese online services in the 1980s, separately from the sideways Western emoticons. Japanese character sets offered a huge palette of symbols, which let creators build detailed faces — and the style spread worldwide as Unicode made those characters available everywhere.</p>
   </div>`
     }
   ],
@@ -629,8 +629,8 @@ module.exports = [
   faq: [
     { q: 'What is a kaomoji?', a: 'A kaomoji is a Japanese-style emoticon read upright, built from Unicode letters, punctuation, and symbols to form a face, such as (^_^). Unlike emoji, it is plain text.' },
     { q: 'What does kaomoji mean?', a: 'Kaomoji comes from the Japanese words kao (face) and moji (character), literally face characters. It refers to emoticons you read the right way up.' },
-    { q: 'What is the difference between a kaomoji and an emoji?', a: 'A kaomoji is a face built from ordinary text characters and always looks the same. An emoji is a single dedicated picture character that can render differently on each device or platform.' },
-    { q: 'Are kaomoji Japanese?', a: 'Yes. Kaomoji originated on Japanese message boards and take advantage of the large set of Japanese symbols, though Unicode now makes them usable worldwide.' },
+    { q: 'What is the difference between a kaomoji and an emoji?', a: 'A kaomoji is a face built from ordinary text characters, so no app swaps in its own picture. An emoji is a single dedicated picture character that can render differently on each device or platform.' },
+    { q: 'Are kaomoji Japanese?', a: 'Yes. Kaomoji began on Japanese online services in the 1980s and take advantage of the large set of Japanese symbols, though Unicode now makes them usable worldwide.' },
     { q: 'How do I make a kaomoji?', a: 'Combine a pair of brackets with eyes and a mouth, and add arms or decorations to taste, or use a kaomoji generator to assemble and copy one instantly.' }
   ]
 },
@@ -639,46 +639,60 @@ module.exports = [
   slug: 'how-to-type-kaomoji',
   crumb: 'How to Type Kaomoji',
   pageTitle: 'How to Type Kaomoji',
-  metaDesc: 'The fastest way to type kaomoji is to copy them. To make them natively: Windows uses Win + . , iPhone the Japanese Kana keyboard, Android Gboard. Here is how on every device.',
-  twitterDesc: 'How to type kaomoji on any device: copy from a library, or use Win + . on Windows, the Kana keyboard on iPhone, and Gboard on Android. Full step-by-step here.',
+  metaDesc: 'The fastest way to type kaomoji is to copy them. Built-in routes: Win + . on Windows, Text Replacement on iPhone and Mac, pinned clips on Android.',
+  twitterDesc: 'How to type kaomoji on any device: copy from a library, or use the Windows emoji panel, Text Replacement on iPhone and Mac, and pinned clips on Android.',
   h1: 'How to Type Kaomoji',
-  tagline: 'The quickest way is to copy them. But every major device can also insert kaomoji natively — here is how on each one.',
-  shortAnswer: 'The <strong>fastest way to type a kaomoji is to copy it</strong> from a library and paste it wherever you need it. To insert them <strong>natively</strong>: on <strong>Windows</strong> press <strong>Win + .</strong> (or Win + ;) and open the kaomoji tab; on <strong>iPhone/iPad</strong> add the <strong>Japanese Kana keyboard</strong> and tap the <strong>^_^</strong> key; on <strong>Android</strong> open <strong>Gboard’s</strong> emoji panel and pick the <strong>kaomoji</strong> tab; on <strong>Mac</strong>, use <strong>Text Replacement</strong> or copy-paste, since there is no built-in kaomoji panel.',
-  oneLiner: '<strong>Windows:</strong> Win + . &nbsp;·&nbsp; <strong>iPhone:</strong> Kana keyboard → ^_^ &nbsp;·&nbsp; <strong>Android:</strong> Gboard → kaomoji tab &nbsp;·&nbsp; <strong>Fastest:</strong> copy &amp; paste.',
+  tagline: 'The quickest way is to copy them. Each device also has a route of its own: a built-in panel where there is one, and a saved shortcut or pinned clip where there is not.',
+  shortAnswer: 'The <strong>fastest way to type a kaomoji is to copy it</strong> from a library and paste it wherever you need it. To type one without leaving the keyboard, the routes the makers document are a saved shortcut or a pinned clip: <strong>Text Replacement</strong> on iPhone, iPad and Mac, <strong>Text shortcuts</strong> in Samsung Keyboard, pinned clips in Gboard and in the Windows clipboard (<strong>Win + V</strong>). Windows also has an emoji panel (<strong>Win + .</strong>) that Microsoft says includes Kaomoji, and Chromebooks have an Emoticons picker. Keyboard layouts change between versions, so this page names the routes and where the maker documents them, not the position of a tab.',
+  oneLiner: '<strong>Windows:</strong> Win + . or Win + V &nbsp;·&nbsp; <strong>iPhone and Mac:</strong> Text Replacement &nbsp;·&nbsp; <strong>Android:</strong> pin a clip or add a text shortcut &nbsp;·&nbsp; <strong>Fastest:</strong> copy &amp; paste.',
   sections: [
     {
       label: 'The fast way',
       h2: 'The fastest way: copy and paste',
       bodyHtml: `<div class="editorial-block">
-    <p>No setup, works on every device: open a kaomoji collection, tap a face to copy it, and paste it into your bio, caption, or chat. Start with the <a href="/library/text-faces-kaomoji/">kaomoji library</a> or build a custom one in the <a href="/kaomoji-generator/">kaomoji generator</a>.</p>
+    <p>Copying needs no setup: open a kaomoji collection, tap a face to copy it, and paste it into your bio, caption, or chat. Start with the <a href="/library/text-faces-kaomoji/">kaomoji library</a> or build a custom one in the <a href="/kaomoji-generator/">kaomoji generator</a>. A face made only of common characters looks the same in most apps; a collection that uses letters from a rarer script says so on its page, because a device without a font for that script shows a box in its place.</p>
   </div>`
     },
     {
       label: 'Windows',
       h2: 'How to type kaomoji on Windows',
       bodyHtml: `<div class="editorial-block">
-    <p>Press <strong>Windows key + . (period)</strong> or <strong>Windows key + ; (semicolon)</strong> to open the emoji panel, then click the <strong>kaomoji</strong> tab (the <strong>( •_•)</strong> icon). Pick a face to insert it. This works in Windows 10 and 11 in almost any text field.</p>
+    <p>Press <strong>Windows key + . (period)</strong> or <strong>Windows key + ; (semicolon)</strong> to open the emoji panel. Microsoft’s tips page says the panel includes Kaomoji alongside GIFs, and it has a Symbols section too, so look through the panel’s sections for it; the icon and the order can differ between Windows versions. To keep a few favourite faces one keystroke away, copy a face, press <strong>Windows key + V</strong> to open the clipboard history and pin it. Pinned items survive a restart, while the history holds 25 copied entries.</p>
+  </div>`
+    },
+    {
+      label: 'Chromebook',
+      h2: 'How to type kaomoji on a Chromebook',
+      bodyHtml: `<div class="editorial-block">
+    <p>Press <strong>Search + Shift + Space</strong>, or right-click a text field and choose <strong>Emoji</strong>, then open the <strong>Emoticons</strong> tab. Google lists fifteen categories there, including Shrugging and Table Flipping, and a search bar that finds emoticons by name.</p>
   </div>`
     },
     {
       label: 'iPhone & iPad',
       h2: 'How to type kaomoji on iPhone and iPad',
       bodyHtml: `<div class="editorial-block">
-    <p>iOS hides a full kaomoji set inside the Japanese keyboard. Go to <strong>Settings › General › Keyboard › Keyboards › Add New Keyboard › Japanese › Kana</strong>. Then, when typing, switch to the Japanese keyboard and tap the <strong>^_^</strong> key to browse and insert kaomoji. Copy-paste from a library also works everywhere.</p>
+    <p>Apple’s guides do not document a kaomoji key. Some people add the Japanese Kana keyboard (<strong>Settings › General › Keyboard › Keyboards › Add New Keyboard › Japanese › Kana</strong>) and report a <strong>^_^</strong> key that opens a list of faces; that route comes from users rather than Apple, so it can differ between iOS versions. The route Apple does document is <strong>Text Replacement</strong>: open <strong>Settings › General › Keyboard › Text Replacement</strong>, tap <strong>+</strong>, paste the face as the Phrase and type a short Shortcut such as <em>shrug</em>. Typing the shortcut then offers the face. With iCloud Drive on, the same replacements reach your Mac.</p>
   </div>`
     },
     {
       label: 'Android',
       h2: 'How to type kaomoji on Android (Gboard &amp; Samsung)',
       bodyHtml: `<div class="editorial-block">
-    <p>On <strong>Gboard</strong>, tap the <strong>emoji</strong> button, then choose the <strong>kaomoji</strong> tab labelled <strong>( ˘ε˘ )</strong> or <strong>^_^</strong> along the bottom. On <strong>Samsung Keyboard</strong>, open the emoji panel and look for the kaomoji / text-emoticon section, or install Gboard for the built-in tab. Copy-paste works on any Android keyboard.</p>
+    <p>Google’s Gboard help documents the emoji panel for emoji and GIFs and does not list a kaomoji tab. Some keyboard versions show text faces in the emoji panel, and users report finding them there, but the layout changes between versions. The route Google documents is the clipboard: copy a face, open the clipboard in Gboard, touch and hold the face and tap <strong>Pin</strong>; pinned text stays when the clipboard clears. In <strong>Samsung Keyboard</strong>, open the keyboard settings, then <strong>Smart typing › Text shortcuts</strong>, and add a short shortcut for a face. Microsoft SwiftKey can also pin a clip and turn it into a shortcut. Copy-paste works on any Android keyboard.</p>
   </div>`
     },
     {
       label: 'Mac',
       h2: 'How to type kaomoji on Mac',
       bodyHtml: `<div class="editorial-block">
-    <p>macOS has no dedicated kaomoji panel (the Character Viewer, <strong>Ctrl + Cmd + Space</strong>, covers emoji and symbols). The easiest options are to <strong>copy-paste</strong> from a library, or to set up <strong>Text Replacement</strong> under <strong>System Settings › Keyboard › Text Replacements</strong> so a shortcut like <em>shrug</em> expands to ¯\\_(ツ)_/¯.</p>
+    <p>macOS has no dedicated kaomoji panel (the Character Viewer, <strong>Ctrl + Cmd + Space</strong>, covers emoji and symbols). Copy-paste from a library works, and so does <strong>Text Replacement</strong> under <strong>System Settings › Keyboard › Text Replacements</strong>, where a shortcut like <em>shrug</em> can expand to ¯\\_(ツ)_/¯. Apple’s guide says a replacement added on a Mac also works on your other devices, with iCloud Drive and the same Apple Account, and that you can back replacements up by dragging them to the desktop as a property list file and import them by dragging the file back.</p>
+  </div>`
+    },
+    {
+      label: 'Keyboard apps',
+      h2: 'Do you need a kaomoji keyboard app?',
+      bodyHtml: `<div class="editorial-block">
+    <p>Usually not. Windows lists Kaomoji in its emoji panel, Chromebooks have an Emoticons picker, and Text Replacement, Samsung’s Text shortcuts and pinned clips turn any face you like into a shortcut. A third-party keyboard app adds bigger collections, but it asks for broad access first: on iPhone a keyboard app asks you to turn on <strong>Allow Full Access</strong>, and Android warns that a new keyboard may be able to collect all the text you type, including passwords. If you only want a handful of faces, copy-paste or a shortcut gets you there without handing a keyboard that access.</p>
   </div>`
     }
   ],
@@ -690,11 +704,12 @@ module.exports = [
   },
   related: 'Related: <a href="/answers/what-is-kaomoji/">what is a kaomoji</a>, the full <a href="/library/text-faces-kaomoji/">kaomoji library</a>, and the <a href="/kaomoji-generator/">kaomoji generator</a>.',
   faq: [
-    { q: 'How do I type kaomoji on Windows?', a: 'Press Windows key + . (period) to open the emoji panel, then click the kaomoji tab (the smiley-face icon) and choose a face. It works in Windows 10 and 11.' },
-    { q: 'How do I type kaomoji on iPhone?', a: 'Add the Japanese Kana keyboard in Settings > General > Keyboard > Keyboards > Add New Keyboard > Japanese > Kana. Switch to it while typing and tap the ^_^ key to insert kaomoji.' },
-    { q: 'How do I get the kaomoji keyboard on Android?', a: 'Open Gboard, tap the emoji button, then select the kaomoji tab along the bottom. On Samsung Keyboard, look in the emoji panel for the text-emoticon section, or install Gboard.' },
-    { q: 'How do I add kaomoji to a Samsung keyboard?', a: 'Open the emoji panel in Samsung Keyboard and look for the kaomoji or text-emoticon section. If it is missing, installing Gboard adds a dedicated kaomoji tab.' },
-    { q: 'Is there a faster way than typing kaomoji?', a: 'Yes. Copying a ready-made kaomoji from a library and pasting it is the fastest method and works identically on every device with no setup.' }
+    { q: 'How do I type kaomoji on Windows?', a: 'Press Windows key + . (period) to open the emoji panel and look for the Kaomoji section, which Microsoft lists beside GIFs and Symbols. The icon and order can differ between Windows versions. To keep favourites close, copy a face and pin it in the clipboard history with Windows key + V.' },
+    { q: 'How do I type kaomoji on iPhone?', a: 'Apple does not document a kaomoji key. The documented route is Text Replacement: Settings > General > Keyboard > Text Replacement, tap +, paste the face as the Phrase and add a short Shortcut. Some people also add the Japanese Kana keyboard (Settings > General > Keyboard > Keyboards > Add New Keyboard > Japanese > Kana) and report a ^_^ key there, which comes from users rather than Apple.' },
+    { q: 'How do I get the kaomoji keyboard on Android?', a: 'Google’s Gboard help documents emoji and GIFs and does not list a kaomoji tab, though some keyboard versions show text faces in the emoji panel. Where yours does not, copy a face, open the clipboard in Gboard, touch and hold it and tap Pin, so it stays in the Pinned section.' },
+    { q: 'How do I add kaomoji to a Samsung keyboard?', a: 'Samsung documents Text shortcuts in the keyboard settings under Smart typing: add a short shortcut for a face and type it to insert the face. Samsung’s pages do not mention a kaomoji tab, and layouts change between One UI versions.' },
+    { q: 'Is there a faster way than typing kaomoji?', a: 'Yes. Copying a ready-made kaomoji from a library and pasting it needs no setup. For the faces you use most, save them as a Text Replacement on iPhone or Mac, a Samsung text shortcut or a pinned clip.' },
+    { q: 'Do I need an app to get a kaomoji keyboard?', a: 'Usually not. Windows lists Kaomoji in its emoji panel, Chromebooks have an Emoticons picker, and Text Replacement, text shortcuts and pinned clips cover your own favourites. Third-party keyboard apps add more faces, but they ask for broad access to what you type, so copy-paste or a shortcut is the lower-risk option.' }
   ]
 },
 
@@ -703,7 +718,7 @@ module.exports = [
   slug: 'why-is-my-name-showing-as-boxes',
   crumb: 'Name Showing as Boxes',
   pageTitle: 'Why Is My Name Showing as Boxes or Question Marks?',
-  metaDesc: "Your styled name saved fine but shows as □ or ??? to friends or inside a game. That's a missing-glyph (tofu) problem on the other device — here's the quick fix and which styles are safe.",
+  metaDesc: "Styled name shows as □ or ??? to friends or in a game? That's a missing-glyph (tofu) problem on their device. The quick fix, and which styles are safe.",
   h1: 'Why Is My Name Showing as Boxes or Question Marks?',
   tagline: 'You set a fancy name, it looked perfect — then a friend (or the game) shows it as □□□ or ???. Nothing is broken on your end. The other device just can’t draw those characters.',
   shortAnswer: 'Because the app, game or phone that’s <em>displaying</em> your name doesn’t have a picture (a glyph) for the fancy characters you used, so it draws an empty box (□) or a question mark instead. This is called <strong>tofu</strong>, and it’s decided by the <strong>viewer’s</strong> device, not yours — which is why your name looks fine to you and broken to them. The fix is to switch to a widely-supported style: <strong>bold, italic, small caps</strong> and <strong>script</strong> render almost everywhere, while <strong>fraktur, double-struck, zalgo and rare symbols</strong> are the ones that box out.',
@@ -758,7 +773,7 @@ module.exports = [
   slug: 'why-was-my-game-name-rejected',
   crumb: 'Game Name Rejected',
   pageTitle: 'Why Was My Game Name Rejected?',
-  metaDesc: "Free Fire, PUBG, Roblox or Valorant won't save your stylish name? Games filter certain characters and count styled letters toward a tight limit. Here's why it's rejected and how to fix it before you spend a rename card.",
+  metaDesc: "Free Fire, PUBG, Roblox or Valorant won't save your stylish name? Games filter certain characters and count styled letters toward a tight limit.",
   h1: 'Why Was My Game Name Rejected?',
   tagline: 'You paste a decorated name, hit save, and the game says it’s invalid — or silently strips it. Two things are almost always behind it.',
   shortAnswer: 'Games run a <strong>name filter</strong> that only accepts certain characters, and a <strong>length limit</strong> where fancy Unicode letters and decorative glyphs often count for <em>more</em> than they look. So a name can be rejected because it contains a character the game blocks, because it’s over the limit once the styled characters are counted, or because it’s already taken. The fix is to keep decoration light, use symbols the game is known to accept, and <strong>preview before you spend a rename card</strong>.',
@@ -815,7 +830,7 @@ module.exports = [
   slug: 'how-to-make-a-blank-name',
   crumb: 'Blank / Invisible Name',
   pageTitle: 'How to Make a Blank (Invisible) Name',
-  metaDesc: "Want a blank or invisible username in a game, on Discord, Steam or WhatsApp? A normal space gets trimmed, so you paste an invisible Unicode character instead. Here's how — and the catch.",
+  metaDesc: "Want a blank or invisible username in a game, on Discord, Steam or WhatsApp? A normal space gets trimmed, so you paste an invisible Unicode character instead.",
   h1: 'How to Make a Blank (Invisible) Name',
   tagline: 'A plain spacebar space almost always gets stripped, so the name comes back as “required” or reverts. The trick is a character that’s invisible but still counts as text.',
   shortAnswer: 'Type a normal space and most apps trim it, so you can’t save an empty name that way. Instead you paste an <strong>invisible Unicode character</strong> that the field treats as a real letter but draws as nothing: the best-known one is the <strong>Hangul Filler (U+3164)</strong>, though players report Free Fire has rejected it since around patch OB43. Copy it, paste it into the name field, and the name shows blank. Two honest caveats: <strong>which invisible character works varies by app and can change with updates</strong>, and some games consider blank names against the rules, so there’s a small reset/ban risk.',
@@ -869,7 +884,7 @@ module.exports = [
   slug: 'where-do-fancy-fonts-work-username-vs-display-name',
   crumb: 'Username vs Display Name',
   pageTitle: 'Where Do Fancy Fonts Work — Username or Display Name?',
-  metaDesc: "Getting an “invalid characters” error pasting a fancy font? It goes in the display name, not the @username. Here's the rule, a per-platform table, and the exceptions where fancy text never works.",
+  metaDesc: "Invalid characters error when pasting a fancy font? It goes in the display name, not the @username. The rule, a per-platform table, and the exceptions.",
   h1: 'Where Do Fancy Fonts Work — Username or Display Name?',
   tagline: 'You paste a stylish name, it’s rejected as “invalid characters,” and you assume fancy fonts don’t work here. They do — you just put them in the wrong field.',
   shortAnswer: 'Fancy Unicode goes in your <strong>display name / nickname / bio</strong>, <strong>not</strong> your <strong>@username (handle)</strong>. Handles are the address people use to find and @-mention you, so nearly every app restricts them to plain ASCII — lowercase letters, numbers, dots and underscores — and rejects pasted fonts with an “invalid characters” error. The display name is a label, so it accepts styled Unicode. Put the style in the display field and leave the handle plain.',
@@ -935,7 +950,7 @@ module.exports = [
   slug: 'do-fancy-fonts-work-with-arabic',
   crumb: 'Fancy Fonts with Arabic',
   pageTitle: 'Do Fancy Fonts Work With Arabic?',
-  metaDesc: "You can't “bold” or “italicize” Arabic letters the way you can English — Arabic has no styled-letter Unicode block. Here's how Arabic name decoration actually works, plus the right-to-left gotchas.",
+  metaDesc: "You can't bold or italicize Arabic letters like English: Arabic has no styled-letter Unicode block. How Arabic name decoration works, plus RTL gotchas.",
   h1: 'Do Fancy Fonts Work With Arabic?',
   tagline: 'You run an Arabic name through a font generator and nothing changes — or it breaks. Arabic decoration works differently from English, and it’s worth knowing why.',
   shortAnswer: 'Not the same way as English. The “fancy fonts” you see for Latin text come from Unicode’s <strong>Mathematical Alphanumeric</strong> block — bold, italic, script versions of A–Z. <strong>Arabic has no equivalent block</strong>, so there’s no way to turn Arabic letters into bold or cursive Unicode. Arabic decoration (<em>zakhrafa</em>) instead works by wrapping the name in <strong>symbols and frames</strong>, adding decorative marks, and styling any <strong>Latin/transliterated</strong> part of the name. Mixed Arabic-and-Latin text also has right-to-left quirks that can flip the order or show boxes.',
@@ -991,7 +1006,7 @@ module.exports = [
   slug: 'what-are-discord-display-name-styles',
   crumb: 'What Are Discord Display Name Styles',
   pageTitle: 'What Are Discord Display Name Styles?',
-  metaDesc: "Display Name Styles are a paid Nitro feature that gives your Discord display name a font, a colour and an animated effect. Here's exactly where each part shows up, why servers strip the colour, and the free Unicode alternative.",
+  metaDesc: "Display Name Styles are a paid Nitro feature that gives your Discord display name a font, a colour and an animated effect.",
   h1: 'What Are Discord Display Name Styles?',
   tagline: 'A Nitro feature with three parts — font, colour, effect — and each part survives in a different set of places. That mismatch is why your styled name never looks the same in a server as it does on your profile.',
   shortAnswer: '<strong>Display Name Styles</strong> are a <strong>paid Discord Nitro feature</strong> that restyles your display name with a built-in <strong>font</strong>, a <strong>colour</strong> and an <strong>animated effect</strong>. The three parts do <em>not</em> travel together: inside a server, your <strong>role colour takes precedence</strong>, so the font carries over but the colour and effect generally do not. On mobile, everything renders <strong>static</strong> — no animation. If you don\'t have Nitro, <strong>Unicode fonts</strong> are the free alternative: they aren\'t a Discord feature at all, so they work on every account and in fields Nitro styles never reach.',

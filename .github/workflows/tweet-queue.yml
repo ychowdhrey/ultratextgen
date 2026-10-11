@@ -7,8 +7,18 @@ on:
         description: 'Number of recent commits to inspect'
         required: false
         default: '20'
-  schedule:
-    - cron: '0 9 * * *' # daily at 09:00 UTC
+  # ── PAUSED 2026-10-09, by explicit user direction ─────────────────────────
+  #
+  # The daily schedule (`cron: '0 9 * * *'`, 09:00 UTC) is switched off. Each
+  # run pushed a `chore: update tweet-queue state [skip ci]` commit to the
+  # default branch, which notified every watcher of the repo once a day.
+  #
+  # Kept rather than deleted, per the repo's record-hygiene rule. To resume,
+  # restore the two lines below. Manual runs via workflow_dispatch above still
+  # work, and `.tweet-queue-state.json` still marks the last commit processed.
+  #
+  # schedule:
+  #   - cron: '0 9 * * *' # daily at 09:00 UTC
 
 jobs:
   tweet-queue:

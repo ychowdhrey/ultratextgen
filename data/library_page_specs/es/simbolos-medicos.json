@@ -117,6 +117,82 @@
           "label": "Ambulancia"
         }
       ]
+    },
+    {
+      "id": "dental",
+      "label": "Odontología",
+      "h2": "Símbolos dentales y de odontología",
+      "intro": "🦷 y 🪥 son los emojis dentales de uso diario. Los quince caracteres DENTISTRY SYMBOL (de U+23BE a U+23CC) son marcas de texto monocromas de la notación de Palmer, el sistema de registro dental que numera cada diente del 1 al 8 desde la línea media y encierra el número en un corchete en forma de L que indica el cuadrante de la boca. El bloque también incluye corchetes con círculo, triángulo u onda.",
+      "symbols": [
+        {
+          "char": "🦷",
+          "label": "Diente"
+        },
+        {
+          "char": "🪥",
+          "label": "Cepillo de dientes"
+        },
+        {
+          "char": "⎾",
+          "label": "Vertical y arriba a la derecha"
+        },
+        {
+          "char": "⎿",
+          "label": "Vertical y abajo a la derecha"
+        },
+        {
+          "char": "⏀",
+          "label": "Vertical con círculo"
+        },
+        {
+          "char": "⏁",
+          "label": "Abajo y horizontal con círculo"
+        },
+        {
+          "char": "⏂",
+          "label": "Arriba y horizontal con círculo"
+        },
+        {
+          "char": "⏃",
+          "label": "Vertical con triángulo"
+        },
+        {
+          "char": "⏄",
+          "label": "Abajo y horizontal con triángulo"
+        },
+        {
+          "char": "⏅",
+          "label": "Arriba y horizontal con triángulo"
+        },
+        {
+          "char": "⏆",
+          "label": "Vertical y onda"
+        },
+        {
+          "char": "⏇",
+          "label": "Abajo y horizontal con onda"
+        },
+        {
+          "char": "⏈",
+          "label": "Arriba y horizontal con onda"
+        },
+        {
+          "char": "⏉",
+          "label": "Abajo y horizontal"
+        },
+        {
+          "char": "⏊",
+          "label": "Arriba y horizontal"
+        },
+        {
+          "char": "⏋",
+          "label": "Vertical y arriba a la izquierda"
+        },
+        {
+          "char": "⏌",
+          "label": "Vertical y abajo a la izquierda"
+        }
+      ]
     }
   ],
   "related": [

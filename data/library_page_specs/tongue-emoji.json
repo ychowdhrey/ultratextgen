@@ -1,7 +1,7 @@
 {
   "slug": "tongue-emoji",
   "title": "Tongue Emoji & Kaomoji: Copy & Paste 😛 😜 😝 Silly Combos",
-  "meta_description": "Tongue emoji 😛 😜 😝 🤪, silly and zany combo sets, plus tongue-out kaomoji like :P and (≧∇≦) for playful chats and replies. Click any symbol to copy it instantly.",
+  "meta_description": "Tongue emoji 😛 😜 😝 🤪, silly and zany combo sets, plus tongue-out kaomoji like :P and (≧∇≦) for playful chats and replies.",
   "canonical": "https://ultratextgen.com/library/tongue-emoji/",
   "breadcrumb": "Tongue Emoji & Kaomoji",
   "hero_h1": "Tongue Emoji & Kaomoji",
@@ -61,7 +61,11 @@
         { "char": "(≧∇≦)", "label": "Gleeful Squint Kaomoji" },
         { "char": "(￣ρ￣)", "label": "Drooly Tongue Kaomoji" },
         { "char": "(・ε・)", "label": "Teasing Pout Kaomoji" },
-        { "char": "ヽ(≧∀≦)ノ", "label": "Excited Silly Kaomoji" }
+        { "char": "ヽ(≧∀≦)ノ", "label": "Excited Silly Kaomoji" },
+        { "char": "=P", "label": "Wide-Eyed Tongue" },
+        { "char": "(๑´ڡ`๑)", "label": "Yummy Tongue Kaomoji" },
+        { "char": "(^ڡ^)", "label": "Licking Lips Kaomoji" },
+        { "char": "(ﾉ≧ڡ≦)", "label": "Oops, Tongue Out Kaomoji" }
       ]
     }
   ],
@@ -85,7 +89,7 @@
   "related": [
     {
       "href": "/library/laughing-emoji/",
-      "title": "Laughing Emoji & Kaomoji",
+      "title": "Laughing Emoji",
       "desc": "Crying-laughing faces and giggle combos to pair with a silly tongue."
     },
     {

@@ -66,7 +66,7 @@ const MIN_INK = 0.002;              // share of dark pixels below which a captur
 const PRIMARY = [
   "#pt-gen-print", "#pt-design-print", "#pt-banner-print", "#pt-puzzle-print",
   "#mono-print", "#cs-print", "#pt-practice-print", "#pt-alphabet-print",
-  "#pt-name-print", ".pt-pdf-btn"
+  "#pt-name-print", "#lb-pdf", ".pt-pdf-btn"
 ];
 
 function usage(code) {

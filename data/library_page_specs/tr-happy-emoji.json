@@ -1,14 +1,14 @@
 {
   "slug": "mutlu-emoji",
-  "title": "Mutlu Emoji 😊 ve Kaomoji: Kopyala Yapıştır Neşe Kombinleri | UltraTextGen",
-  "meta_description": "Mutlu emoji 😊 😄 🥰, ヽ(´▽`)/ gibi neşeli kaomoji ve biyografileri, açıklamaları ve mesajları güneşlendiren kombin setleri. Kopyalamak için tıkla.",
+  "title": "Mutlu Emoji 😊 ve Emoticonlar: Kopyala Yapıştır Neşe Kombinleri",
+  "meta_description": "Mutlu emoji 😊 😄 🥰, :) gibi emoticonlar, ヽ(´▽`)/ gibi birkaç neşeli kaomoji ve biyografileri, açıklamaları ve mesajları güneşlendiren kombin setleri. Kopyalamak için tıkla.",
   "canonical": "https://ultratextgen.com/tr/library/mutlu-emoji/",
   "breadcrumb": "Mutlu Emoji",
-  "hero_h1": "Mutlu Emoji ve Kaomoji",
-  "hero_tagline": "Gülümsemeler, güneş ve neşeli kaomoji — yumuşacık 🙂 ifadesinden hayranlıkla bakan 🤩 ifadesine kadar her mutlu emoji. Kopyalamak için tıkla.",
+  "hero_h1": "Mutlu Emoji",
+  "hero_tagline": "Gülümsemeler, güneş, klavyeyle yazılan :) ve birkaç neşeli kaomoji: yumuşacık 🙂 ifadesinden hayranlıkla bakan 🤩 ifadesine kadar her mutlu emoji. Kopyalamak için tıkla.",
   "intro": "Yerinde kullanılmış bir mutlu emoji bütün mesajın tonunu belirler — 😊 sıcak ve içten okunur, 😄 açık bir sevinçtir, 🥰 sevgi katar. Bu koleksiyon bütün gülümseyen yüzleri, onlarla birlikte kullanılan heyecan ve kutlama güçlendiricilerini, iyi hisset biyografileri için güneş ve çiçek simgelerini ve ヽ(´▽`)/ gibi neşeli kaomojileri bir araya getiriyor — üstelik açıklamalar, yorumlar ve iyi haber mesajları için tek tıkla kopyalanan neşe kombinleriyle.",
   "date_published": "2026-08-15",
-  "date_modified": "2026-08-15",
+  "date_modified": "2026-10-09",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -132,10 +132,46 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Metin İfadeleri",
+      "h2": "Mutlu Metin İfadeleri (Emoticon)",
+      "intro": "İki nokta ve parantezle yazılan gülen yüzler. Emojiden eskiler ve düz metinde samimi görünmenin hâlâ en hızlı yolu.",
+      "symbols": [
+        {
+          "char": ":)",
+          "label": "Gülümseme"
+        },
+        {
+          "char": ":-)",
+          "label": "Burunlu Klasik Gülümseme"
+        },
+        {
+          "char": ":D",
+          "label": "Kocaman Sırıtış"
+        },
+        {
+          "char": ":-D",
+          "label": "Burunlu Sırıtış"
+        },
+        {
+          "char": "=)",
+          "label": "Yumuşak Gülümseme"
+        },
+        {
+          "char": "XD",
+          "label": "Kahkaha Atan Yüz"
+        },
+        {
+          "char": "c:",
+          "label": "Geniş Gülümseme"
+        }
+      ]
+    },
+    {
       "id": "happy-kaomoji",
       "label": "Kaomoji",
       "h2": "Mutlu Kaomoji ve Yazı Yüzleri",
-      "intro": "Sevinçten kollarını havaya kaldıran Japon tarzı yazı yüzleri.",
+      "intro": "Neşeli Japon metin yüzlerinden kısa bir seçki.",
       "symbols": [
         {
           "char": "ヽ(´▽`)/",
@@ -146,34 +182,18 @@
           "label": "Tezahürat Kaomoji"
         },
         {
-          "char": "(＾▽＾)",
-          "label": "Işıl Işıl Gülümseme Kaomoji"
-        },
-        {
           "char": "(◕‿◕)",
           "label": "Tatlı Gülümseme Kaomoji"
         },
         {
-          "char": "(✿◠‿◠)",
-          "label": "Çiçekli Gülümseme Kaomoji"
-        },
-        {
           "char": "٩(◕‿◕｡)۶",
           "label": "Heyecanlı Dans Kaomoji"
-        },
-        {
-          "char": "(o^▽^o)",
-          "label": "Pembe Yanaklar Kaomoji"
-        },
-        {
-          "char": "(｡♥‿♥｡)",
-          "label": "Aşık Kaomoji"
-        },
-        {
-          "char": "⊂((・▽・))⊃",
-          "label": "Kocaman Sarılma Kaomoji"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/tr/library/kaomoji/",
+        "text": "Bütün kaomoji koleksiyonunu gör"
+      }
     }
   ],
   "collection_section": {

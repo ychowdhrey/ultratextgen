@@ -22,10 +22,12 @@ is a second source of truth. When you find one of these, find its generator.
 | `llms.txt` (whole tree, 85 files) | `npm run build:llms -- --write` | `check:llms` (whole-tree) |
 | `js/search/index/<locale>.json` (header search) | `npm run build:search-index -- --write`, from the same page reading as `llms.txt`; the daily sitemap workflow also regenerates it | `check:search-index`, `test:site-search` |
 | `library/index.html` directory block | `npm run build:library-directory` | `check:library-directory` |
+| `kaomoji-generator/index.html` mood, preset and part picker (between `kaomoji-static:*` markers) | `npm run build:kaomoji-generator-static` — slices the `@kaomoji-markup` block of `js/kaomoji/kaomojiPageController.js` over `kaomojiData.js` | `check:kaomoji-generator-static` |
 | `<lang>/library/index.html` | `node scripts/build-library-hub.js` — derives entries from **each page's own markup**, so it needs no hand-help | `check:library-hub`, `check:library-hub-parity` |
 | the static footer block | `npm run build:static-footer` | `check:static-footer` |
 | the accent notice | `npm run build:accent-notice` | `check:accent-notice` |
-| the `@font-face` block in `style.css` | `python3 scripts/build-font-face-css.py --write` | — |
+| the `@font-face` block in `style.css`, and `assets/fonts/ja-print.css` (manifest rows with a `stylesheet`) | `python3 scripts/build-font-face-css.py --write` | — |
+| `assets/fonts/klee-one-ja-*.woff2` chunks and `js/printables/jaKanjiGrades.js` (kanji grade presets) | `python3 scripts/build-ja-print-fonts.py --ttf <KleeOne-SemiBold.ttf>` (`--grades-only` for the presets alone), from `scripts/lib/ja_print_kanji.json` | `--check` in `test:ja-sheets`'s CI step |
 | hero SVG + OG PNG | `scripts/generate-site-art.py --only <slug>` / `wire-site-art.py` | `check:new-page-images` |
 | per-style OG cards | `scripts/generate-style-og-cards.py` | — |
 | `js/printables/cursiveRouteData.js` (a cursive phrase's writing route) | `node scripts/build-cursive-routes.js --write` from `scripts/lib/cursive-route-spec.js`; it refuses to write a route that leaves the ink or skips a stroke | `--check` (build-time, needs a browser driver) |
@@ -34,6 +36,7 @@ is a second source of truth. When you find one of these, find its generator.
 | pre-rendered collection grids | `npm run prerender:collection-grids -- --write` | `check:collection-grids` |
 | pre-rendered country-flag tiles | `npm run prerender:country-flags -- --write` | `check:country-flags` |
 | `symbol/` hub↔spoke and peer↔peer cards | `npm run sync:symbol-peer-links` | `check:new-symbol-peer-links` |
+| the `symbol/` spoke → collection line under the first copy section (EN and locales) | `npm run sync:symbol-collection-link`; the spec generator emits it for EN | `check:symbol-collection-link` (whole-tree) |
 | locale `library/` ↔ `library/` mirror cards | `npm run fix:library-link-mirror -- --lang <code> [--page <en-slug>] --write` | `check:library-link-mirror` |
 | hreflang blocks and locale-native links | `npm run sync:locale-mesh -- --fix --files …` | `check:locale-mesh`, `check:hreflang*` |
 | CTA cards | `npm run route:cta-cards -- --write` | `test:cta-routing` |

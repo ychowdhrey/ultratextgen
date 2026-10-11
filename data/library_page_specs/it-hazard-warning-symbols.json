@@ -1,6 +1,6 @@
 {
   "slug": "simboli-pericolo",
-  "title": "Simboli pericolo ☢ ☣ ⚠ — segnali di rischio e divieto da copiare | UltraTextGen",
+  "title": "Simboli pericolo ☢ ☣ ⚠ — segnali di rischio e divieto da copiare",
   "meta_description": "Simboli di pericolo da copiare: radioattivo ☢, biologico ☣, teschio ☠, avvertimento ⚠, alta tensione ⚡ e segnali di divieto 🚫 ⛔. Tocca per copiare.",
   "breadcrumb": "Simboli pericolo",
   "hero_h1": "Simboli di pericolo e avvertimento",
@@ -97,6 +97,26 @@
       ]
     },
     {
+      "id": "chemical-hazard",
+      "label": "Simboli chimici di pericolo: infiammabile, comburente, esplosivo",
+      "h2": "Simboli chimici di pericolo: infiammabile, comburente, esplosivo",
+      "intro": "I pittogrammi di pericolo chimico (GHS) sono disegni e Unicode non ha caratteri per essi; non esiste quindi un simbolo copiabile per corrosivo, comburente o irritante. I caratteri più vicini sono questi: la fiamma indica le sostanze infiammabili e comburenti, l'esplosione le sostanze esplosive, la provetta le sostanze chimiche in generale. Per le sostanze tossiche va bene ☠ qui sopra, per quelle nocive o irritanti ❗. Un'etichetta ufficiale richiede il pittogramma del regolamento.",
+      "symbols": [
+        {
+          "char": "🔥",
+          "label": "Fiamma (infiammabile, comburente)"
+        },
+        {
+          "char": "💥",
+          "label": "Esplosione (esplosivo)"
+        },
+        {
+          "char": "🧪",
+          "label": "Provetta (sostanza chimica)"
+        }
+      ]
+    },
+    {
       "id": "s4",
       "label": "Divieti e accessi vietati",
       "h2": "Divieti e accessi vietati",
@@ -181,7 +201,7 @@
   ],
   "canonical": "https://ultratextgen.com/it/library/simboli-pericolo/",
   "date_published": "2026-08-10",
-  "date_modified": "2026-08-10",
+  "date_modified": "2026-10-10",
   "lang": "it",
   "page_type": "library",
   "hreflang": [

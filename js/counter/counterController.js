@@ -21,9 +21,28 @@
   const READING_WPM = 225;
   const SPEAKING_WPM = 130;
 
+  // Thai, Lao, Khmer, Burmese, Japanese and Chinese run words together, so
+  // splitting on spaces read a whole paragraph as one word, and the reading and
+  // speaking times were derived from that 1. The browser's own dictionary
+  // segmenter counts them; where it is missing the old split stays.
+  const UNSPACED_RE = /[\u0E00-\u0EFF\u1000-\u109F\u1780-\u17FF\u3040-\u30FF\u3400-\u9FFF\uF900-\uFAFF]/;
+
   function countWords(str) {
     const trimmed = str.trim();
-    return trimmed ? trimmed.split(/\s+/).length : 0;
+    if (!trimmed) return 0;
+    if (UNSPACED_RE.test(trimmed) && typeof Intl !== "undefined" && Intl.Segmenter) {
+      const lang = (typeof document !== "undefined" && document.documentElement.lang) || undefined;
+      let words = 0;
+      try {
+        for (const part of new Intl.Segmenter(lang, { granularity: "word" }).segment(trimmed)) {
+          if (part.isWordLike) words++;
+        }
+      } catch (e) {
+        return trimmed.split(/\s+/).length;
+      }
+      return words;
+    }
+    return trimmed.split(/\s+/).length;
   }
 
   function countSentences(str) {
@@ -95,7 +114,15 @@
     fitsHeading: "Where else this text fits",
     inspectStyled: "{n} styled Unicode letters — they cost 2 each on X and in many app fields.",
     inspectInvisible: "{n} invisible characters that still count.",
-    inspectCombining: "{n} stacked diacritic marks."
+    inspectCombining: "{n} stacked diacritic marks.",
+    /* The hidden-character list. Only pages that carry #counterHidden show
+       it, so a locale page without translated strings never renders it. */
+    hiddenHeading: "{n} hidden characters in your text",
+    hiddenAt: "line {line}, character {col}",
+    hiddenKinds: { space: "odd space", invisible: "invisible", direction: "direction mark" },
+    hiddenMore: "+{n} more",
+    hiddenClean: "Clean them in the box",
+    hiddenCopyClean: "Copy cleaned text"
   }, window.UTG_COUNTER_I18N || {});
 
   function fmt(t, vars) {
@@ -137,7 +164,8 @@
       lines: $("#statLines"),
       graphemes: $("#statGraphemes"),
       utf16: $("#statUtf16"),
-      bytes: $("#statBytes")
+      bytes: $("#statBytes"),
+      bytesKr: $("#statBytesKr")
     };
     const clearBtn = document.getElementById("counterClearBtn");
     const copyBtn = document.getElementById("counterCopyBtn");
@@ -146,6 +174,7 @@
     const inspectBar = document.getElementById("counterInspect");
     const fitGrid = document.getElementById("counterFitGrid");
     const foldBar = document.getElementById("counterFold");
+    const hiddenBox = document.getElementById("counterHidden");
 
     const ns = window.UltraTextGen || {};
     const counts = ns.counterCounts || null;
@@ -308,6 +337,51 @@
       inspectBar.hidden = bits.length === 0;
     }
 
+    /* The same diagnosis, itemised: which hidden character, where, and a
+       fix. Someone pasting text that broke code, a spreadsheet lookup or a
+       form needs the location, not just the count. */
+    const HIDDEN_SHOWN = 30;
+    function renderHidden() {
+      if (!hiddenBox || !reduce || !reduce.listHidden) return;
+      const value = input.value;
+      const hits = value ? reduce.listHidden(value) : [];
+      if (!hits.length) { hiddenBox.hidden = true; hiddenBox.textContent = ""; return; }
+      hiddenBox.hidden = false;
+      hiddenBox.textContent = "";
+      hiddenBox.appendChild(el("p", "counter-hidden-head", fmt(I18N.hiddenHeading, { n: hits.length })));
+      const list = el("ol", "counter-hidden-list");
+      hits.slice(0, HIDDEN_SHOWN).forEach((h) => {
+        const li = el("li", "counter-hidden-item");
+        li.appendChild(el("code", "counter-hidden-code", h.code));
+        li.appendChild(el("span", "counter-hidden-name", h.name));
+        li.appendChild(el("span", "counter-hidden-kind is-" + h.kind, (I18N.hiddenKinds && I18N.hiddenKinds[h.kind]) || h.kind));
+        li.appendChild(el("span", "counter-hidden-at", fmt(I18N.hiddenAt, { line: h.line, col: h.col })));
+        list.appendChild(li);
+      });
+      hiddenBox.appendChild(list);
+      if (hits.length > HIDDEN_SHOWN) {
+        hiddenBox.appendChild(el("p", "counter-hidden-more", fmt(I18N.hiddenMore, { n: hits.length - HIDDEN_SHOWN })));
+      }
+      const actions = el("div", "cc-fix-actions");
+      const cleanBtn = el("button", "cc-fix-btn", I18N.hiddenClean);
+      cleanBtn.type = "button";
+      cleanBtn.addEventListener("click", () => applyValue(reduce.cleanHidden(input.value)));
+      const copyClean = el("button", "cc-fix-btn", I18N.hiddenCopyClean);
+      copyClean.type = "button";
+      copyClean.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(reduce.cleanHidden(input.value));
+          copyClean.textContent = I18N.copied;
+          setTimeout(() => { copyClean.textContent = I18N.hiddenCopyClean; }, 1500);
+        } catch (err) {
+          console.error("Copy failed:", err);
+        }
+      });
+      actions.appendChild(cleanBtn);
+      actions.appendChild(copyClean);
+      hiddenBox.appendChild(actions);
+    }
+
     /* ---------- the live count that sits with the box ---------- */
     function renderLive() {
       if (!liveCount || !rules) return;
@@ -400,6 +474,7 @@
         if (stat.graphemes) stat.graphemes.textContent = counts.graphemes(val).toLocaleString();
         if (stat.utf16) stat.utf16.textContent = counts.utf16Units(val).toLocaleString();
         if (stat.bytes) stat.bytes.textContent = counts.utf8Bytes(val).toLocaleString();
+        if (stat.bytesKr) stat.bytesKr.textContent = counts.hangul2Bytes(val).toLocaleString();
       }
 
       if (I18N.units) {
@@ -422,6 +497,7 @@
       renderStats();
       renderLive();
       renderInspect();
+      renderHidden();
       renderFold();
       renderFix();
       renderFitGrid();

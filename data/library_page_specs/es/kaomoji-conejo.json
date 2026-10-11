@@ -142,6 +142,102 @@
           "label": "Conejo sin expresión"
         }
       ]
+    },
+    {
+      "id": "bunny-emoji",
+      "label": "Emoji de conejo",
+      "h2": "Emojis de conejo",
+      "intro": "Unicode tiene dos emojis de conejo: 🐰 es la cara y 🐇 el conejo entero en pleno salto. A diferencia de los kaomoji de arriba, se ven con el dibujo propio de cada plataforma, así que cambian un poco entre iPhone y Android.",
+      "symbols": [
+        {
+          "char": "🐰",
+          "label": "Cara de conejo"
+        },
+        {
+          "char": "🐇",
+          "label": "Conejo"
+        },
+        {
+          "char": "🐾",
+          "label": "Huellas"
+        },
+        {
+          "char": "🥕",
+          "label": "Zanahoria"
+        }
+      ]
+    },
+    {
+      "id": "bunny-emoji-combos",
+      "label": "Combos de conejo",
+      "h2": "Combos de emojis de conejo",
+      "intro": "Combos cortos que juntan al conejo con lo que suele estar haciendo: comer, salir corriendo o llegar saltando en Pascua. Cada botón copia el combo completo.",
+      "symbols": [
+        {
+          "char": "🐰🥕",
+          "label": "Conejo con zanahoria"
+        },
+        {
+          "char": "🐇💨",
+          "label": "Conejo a toda prisa"
+        },
+        {
+          "char": "🐰💕",
+          "label": "Conejo enamorado"
+        },
+        {
+          "char": "🐰🌸",
+          "label": "Conejo de primavera"
+        },
+        {
+          "char": "🐇🐾",
+          "label": "Huellas saltando"
+        },
+        {
+          "char": "🐰🥚🧺",
+          "label": "Conejo de Pascua"
+        }
+      ]
+    },
+    {
+      "id": "roblox-bunny",
+      "label": "Conejo para Roblox",
+      "h2": "Kaomoji de conejo para biografías y nombres para mostrar de Roblox",
+      "intro": "La mayoría de los conejos de más arriba toman prestadas letras coreanas como ㅅ y ᆺ o sílabas canadienses como ᐢ, y las caritas hechas con escrituras poco comunes son las que más probabilidades tienen de verse como cuadros vacíos o de ser bloqueadas por el filtro de Roblox. Estas se arman con caracteres del teclado más ★ y ♡, que nuestra página de símbolos para Roblox cuenta entre los símbolos sueltos más seguros. Cada kaomoji sigue siendo una combinación de varios caracteres, y esa página señala que las combinaciones tienen más probabilidades de ser rechazadas que un solo símbolo, así que si una carita no se guarda, pégala por partes para encontrar el carácter que falla. Las dos últimas usan caracteres japoneses (・ ヽ ノ っ); Roblox acepta texto japonés en los nombres para mostrar en algunas cuentas y lo rechaza en otras, así que prueba esas primero en el campo del nombre para mostrar.",
+      "symbols": [
+        {
+          "char": "(='.'=)",
+          "label": "Conejo clásico de teclado"
+        },
+        {
+          "char": "(='.'=)♡",
+          "label": "Conejo de teclado con corazón"
+        },
+        {
+          "char": "(^x^)",
+          "label": "Conejo con boca de X"
+        },
+        {
+          "char": "(*^x^*)",
+          "label": "Conejo sonrojado con boca de X"
+        },
+        {
+          "char": "/(^x^)\\",
+          "label": "Conejo de teclado con orejas caídas"
+        },
+        {
+          "char": "★(^x^)★",
+          "label": "Conejo con estrellas"
+        },
+        {
+          "char": "ヽ(・x・)ノ",
+          "label": "Conejo animando (caracteres japoneses)"
+        },
+        {
+          "char": "(っ^x^)っ♡",
+          "label": "Conejo abrazando (caracteres japoneses)"
+        }
+      ]
     }
   ],
   "related": [
@@ -164,6 +260,11 @@
       "href": "/es/library/happy-kaomoji/",
       "title": "Kaomoji Felices",
       "desc": "Caritas de texto japonesas sonrientes y alegres para cualquier buen momento."
+    },
+    {
+      "href": "/es/library/kaomoji-oso/",
+      "title": "Kaomoji de Oso",
+      "desc": "Caritas de texto de ositos con orejitas redondas ʕ ʔ y hocico ᴥ."
     }
   ]
 }

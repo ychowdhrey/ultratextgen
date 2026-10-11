@@ -184,7 +184,7 @@
       "id": "aspects",
       "label": "Astrologische Aspektzeichen",
       "h2": "Astrologische Aspektzeichen",
-      "intro": "Aspekte aus dem Horoskop.",
+      "intro": "Aspekte aus dem Horoskop. Für das Halbquadrat (45°) gibt es kein eigenes Unicode-Zeichen; Horoskope verwenden dafür das Winkelzeichen ∠.",
       "symbols": [
         {
           "char": "☊",
@@ -213,6 +213,22 @@
         {
           "char": "△",
           "label": "Trigon"
+        },
+        {
+          "char": "⚺",
+          "label": "Halbsextil (30°)"
+        },
+        {
+          "char": "∠",
+          "label": "Halbquadrat (45°)"
+        },
+        {
+          "char": "⚼",
+          "label": "Anderthalbquadrat (135°)"
+        },
+        {
+          "char": "⚻",
+          "label": "Quincunx (150°)"
         }
       ]
     },
@@ -283,7 +299,7 @@
   "editorial_sections": [
     {
       "h2": "Warum Tierkreiszeichen Überhaupt Textzeichen Sind",
-      "body": "Die Tierkreis- und Planetenzeichen stammen aus astronomischen und alchemistischen Handschriften und wurden jahrhundertelang gesetzt wie Buchstaben. Genau deshalb sind sie in Unicode gelandet: nicht als Dekoration, sondern damit astronomische Fachtexte gesetzt werden können. Das erklärt auch, warum ♈ auf manchen Geräten nüchtern schwarz erscheint und auf anderen als farbiges Emoji: die einen behandeln es als Schriftzeichen, die anderen als Bildzeichen."
+      "body": "Die Tierkreis- und Planetenzeichen stammen aus astronomischen und alchemistischen Handschriften und wurden jahrhundertelang gesetzt wie Buchstaben. Genau deshalb sind sie in Unicode gelandet: nicht als Dekoration, sondern damit astronomische Fachtexte gesetzt werden können. Das erklärt auch, warum ♈ auf manchen Geräten nüchtern schwarz erscheint und auf anderen als farbiges Emoji: Die einen behandeln es als Schriftzeichen, die anderen als Bildzeichen."
     }
   ],
   "collection_section": {

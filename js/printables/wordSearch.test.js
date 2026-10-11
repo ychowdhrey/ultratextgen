@@ -174,6 +174,19 @@ const SPELLING = ["because", "friend", "people", "school", "water", "there",
   ok(gridText(WS.build({ words: ["école"], seed: "x" }).grid).indexOf("É") >= 0,
      "without fold, É still reaches the grid (the English page's promise)");
 
+  // A Spanish page asks for fold "es": the written accent and the diaeresis go
+  // (sopas de letras are printed that way) but Ñ stays, because it is a letter
+  // of its own: folding it would turn AÑO into ANO, a different word.
+  const esWords = WS.normalizeWords(["año", "pingüino", "canción", "Ñandú"], "es");
+  eq(esWords.map((w) => w.letters.join("")).join(" "), "AÑO PINGUINO CANCION ÑANDU",
+     "fold es: accents and ü folded, Ñ kept");
+  eq(esWords[1].display, "pingüino", "fold es: the display form keeps the real spelling");
+  eq(WS.normalizeWords(["año"], true)[0].letters.join(""), "ANO", "fold true (French) still folds every mark");
+  const esFold = WS.build({ words: ["año", "pingüino", "canción", "niño", "mañana", "árbol"], seed: "es", level: "hard", fold: "es" });
+  eq(esFold.unplaced.length, 0, "fold es: a Spanish list places completely");
+  ok(!/[ÁÉÍÓÚÜáéíóúü]/.test(gridText(esFold.grid)), "fold es: no accented vowel reaches the grid");
+  for (const w of esFold.words) ok(WS.findWord(esFold.grid, w.letters).length > 0, "fold es findable: " + w.display);
+
   // ß uppercases to SS. One grid cell holds one character, so it must stay ß
   // or every letter after it shifts and the word silently breaks.
   const de = WS.normalizeWords(["straße"]);
@@ -265,6 +278,22 @@ const SPELLING = ["because", "friend", "people", "school", "water", "there",
   const r = WS.build({ words: SPELLING, seed: "Emma", level: "hard" });
   const total = r.words.reduce((n, w) => n + (w.placed ? w.letters.length : 0), 0);
   ok(cellCount(r.solution) < total, "words cross each other — " + cellCount(r.solution) + " cells for " + total + " letters");
+}
+
+/* ---------------------------------------------------------------
+   11. German and Polish grid letters (fold "de", and no fold)
+   --------------------------------------------------------------- */
+{
+  // German grids take the newspaper rule: Ä Ö Ü are AE OE UE and ß is SS, so
+  // BÄR stays a different word from BAR. The word list keeps the real spelling.
+  const de = WS.normalizeWords(["Bär", "Straße", "Öl", "Café"], "de");
+  eq(de.map((w) => w.key).join(" "), "BAER STRASSE OEL CAFE", "fold de spells umlauts and ß out");
+  eq(de[1].display, "Straße", "fold de keeps the real spelling for the word list");
+  const deGrid = WS.build({ words: ["Bär", "Straße", "Übung", "Löwe", "Käse"], seed: "de", level: "hard", fold: "de" });
+  ok(!/[ÄÖÜß]/.test(gridText(deGrid.grid)), "fold de: no umlaut or ß reaches the grid");
+  // Polish letters are letters of the alphabet, not marks: no fold keeps them.
+  const pl = WS.normalizeWords(["żółw", "łódź", "jeż"], false);
+  eq(pl.map((w) => w.key).join(" "), "ŻÓŁW ŁÓDŹ JEŻ", "no fold keeps Polish letters");
 }
 
 console.log("\nwordSearch.js — " + pass + " passed, " + fail + " failed");

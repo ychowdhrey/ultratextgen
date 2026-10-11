@@ -1,7 +1,7 @@
 {
   "slug": "shocked-kaomoji",
-  "title": "Shocked Kaomoji: Copy & Paste Surprised Text Faces",
-  "meta_description": "Browse and copy shocked kaomoji — also spelled kamoji — wide-eyed, gasping, and mind-blown Japanese text faces. Click any to copy it instantly.",
+  "title": "Shocked Kaomoji (⊙_⊙): Copy & Paste Surprised Text Faces",
+  "meta_description": "Browse and copy shocked kaomoji (⊙_⊙), also spelled kamoji: wide-eyed, gasping, and mind-blown Japanese text faces. Click any to copy it instantly.",
   "breadcrumb": "Shocked Kaomoji",
   "hero_h1": "Shocked Kaomoji",
   "hero_tagline": "Copy and paste shocked kaomoji: wide-eyed, gasping, and stunned Japanese text faces. Click any face to copy it instantly.",
@@ -101,6 +101,46 @@
           "label": "Shook"
         }
       ]
+    },
+    {
+      "id": "surprised",
+      "label": "Surprised",
+      "h2": "Surprised Kaomoji",
+      "intro": "Smaller than shock: a double take, a little \"oh\", a blink at unexpected news. Σ in front of a face is the manga mark for being startled, and mismatched eyes like ⊙_☉ show one eye going wider than the other.",
+      "symbols": [
+        {
+          "char": "(o_O)",
+          "label": "Double Take"
+        },
+        {
+          "char": "(⊙_☉)",
+          "label": "Uneven Eyes"
+        },
+        {
+          "char": "(・o・)",
+          "label": "Little Oh"
+        },
+        {
+          "char": "(⊙ω⊙)",
+          "label": "Wide-Eyed Wonder"
+        },
+        {
+          "char": "Σ(・口・)",
+          "label": "Startled"
+        },
+        {
+          "char": "(・□・;)",
+          "label": "Caught Off Guard"
+        },
+        {
+          "char": "(°ー°〃)",
+          "label": "Taken Aback"
+        },
+        {
+          "char": "(⊙ˍ⊙)",
+          "label": "Blink"
+        }
+      ]
     }
   ],
   "related": [
@@ -123,6 +163,11 @@
       "href": "/library/happy-kaomoji/",
       "title": "Happy Kaomoji",
       "desc": "Smiling and joyful Japanese text faces."
+    },
+    {
+      "href": "/library/shocked-emoji/",
+      "title": "Shocked Emoji",
+      "desc": "Screams, gasps, jaw drops, and typed :O emoticons: every degree of surprise."
     }
   ]
 }

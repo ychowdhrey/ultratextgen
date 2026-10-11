@@ -184,7 +184,15 @@
 
   function copySvg() {
     if (!lastSvg) return;
-    var done = function () { toast(I18N.toastSvgCopied || "SVG copied"); };
+    var done = function () {
+      toast(I18N.toastSvgCopied || "SVG copied");
+      if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
+        window.UltraTextGen.trackCopy("svg", "");
+      } else {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "copy_text", copy_method: "svg" });
+      }
+    };
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(lastSvg).then(done, function () { fallbackCopy(lastSvg, done); });
     } else {

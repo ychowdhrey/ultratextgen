@@ -13,6 +13,11 @@
  * COMPATIBILITY jamo block deliberately — recursive NFKC lands on conjoining
  * jamo, which do not render as standalone letters.
  *
+ * Optional, off by default: the "largekana" flag (half-width output only, and
+ * only while the kana class is on) writes the small kana ｧｨｩｪｫ ｬｭｮ ｯ as their
+ * full-size letters ｱｲｳｴｵ ﾔﾕﾖ ﾂ. Some bank transfer forms do not take small
+ * kana in a payee name. Nothing else changes with it on.
+ *
  * Full katakana with no halfwidth form (ヮ ヵ ヶ ヰ ヱ etc.) pass through
  * unchanged in both directions, as does anything whose class is unchecked.
  */
@@ -23,6 +28,12 @@
   var KANA_VOICED = {"\uff66\uff9e":"\u30fa","\uff73\uff9e":"\u30f4","\uff76\uff9e":"\u30ac","\uff77\uff9e":"\u30ae","\uff78\uff9e":"\u30b0","\uff79\uff9e":"\u30b2","\uff7a\uff9e":"\u30b4","\uff7b\uff9e":"\u30b6","\uff7c\uff9e":"\u30b8","\uff7d\uff9e":"\u30ba","\uff7e\uff9e":"\u30bc","\uff7f\uff9e":"\u30be","\uff80\uff9e":"\u30c0","\uff81\uff9e":"\u30c2","\uff82\uff9e":"\u30c5","\uff83\uff9e":"\u30c7","\uff84\uff9e":"\u30c9","\uff8a\uff9e":"\u30d0","\uff8a\uff9f":"\u30d1","\uff8b\uff9e":"\u30d3","\uff8b\uff9f":"\u30d4","\uff8c\uff9e":"\u30d6","\uff8c\uff9f":"\u30d7","\uff8d\uff9e":"\u30d9","\uff8d\uff9f":"\u30da","\uff8e\uff9e":"\u30dc","\uff8e\uff9f":"\u30dd","\uff9c\uff9e":"\u30f7"};
   var KANA_PUNCT = {"\uff61":"\u3002","\uff62":"\u300c","\uff63":"\u300d","\uff64":"\u3001","\uff65":"\u30fb","\uff70":"\u30fc"};
   var HALF_JAMO = {"\uffa1":"\u3131","\uffa2":"\u3132","\uffa3":"\u3133","\uffa4":"\u3134","\uffa5":"\u3135","\uffa6":"\u3136","\uffa7":"\u3137","\uffa8":"\u3138","\uffa9":"\u3139","\uffaa":"\u313a","\uffab":"\u313b","\uffac":"\u313c","\uffad":"\u313d","\uffae":"\u313e","\uffaf":"\u313f","\uffb0":"\u3140","\uffb1":"\u3141","\uffb2":"\u3142","\uffb3":"\u3143","\uffb4":"\u3144","\uffb5":"\u3145","\uffb6":"\u3146","\uffb7":"\u3147","\uffb8":"\u3148","\uffb9":"\u3149","\uffba":"\u314a","\uffbb":"\u314b","\uffbc":"\u314c","\uffbd":"\u314d","\uffbe":"\u314e","\uffc2":"\u314f","\uffc3":"\u3150","\uffc4":"\u3151","\uffc5":"\u3152","\uffc6":"\u3153","\uffc7":"\u3154","\uffca":"\u3155","\uffcb":"\u3156","\uffcc":"\u3157","\uffcd":"\u3158","\uffce":"\u3159","\uffcf":"\u315a","\uffd2":"\u315b","\uffd3":"\u315c","\uffd4":"\u315d","\uffd5":"\u315e","\uffd6":"\u315f","\uffd7":"\u3160","\uffda":"\u3161","\uffdb":"\u3162","\uffdc":"\u3163","\uffa0":"\u3164"};
+
+  // Small kana -> the full-size letter, in the half-width output. Full-width small
+  // kana are mapped onto the full-size full-width letter first, so the ordinary
+  // table then gives the half-width form. Half-width small kana map directly.
+  var SMALL_FULL = {"\u30a1":"\u30a2","\u30a3":"\u30a4","\u30a5":"\u30a6","\u30a7":"\u30a8","\u30a9":"\u30aa","\u30e3":"\u30e4","\u30e5":"\u30e6","\u30e7":"\u30e8","\u30c3":"\u30c4"};
+  var SMALL_HALF = {"\uff67":"\uff71","\uff68":"\uff72","\uff69":"\uff73","\uff6a":"\uff74","\uff6b":"\uff75","\uff6c":"\uff94","\uff6d":"\uff95","\uff6e":"\uff96","\uff6f":"\uff82"};
 
   // Reverse maps, built once at load.
   var FULL_KANA = {}, FULL_VOICED = {}, FULL_PUNCT = {}, FULL_JAMO = {};
@@ -71,6 +82,11 @@
     while (i < text.length) {
       cp = text.codePointAt(i);
       ch = String.fromCodePoint(cp);
+      if (cls.kana && cls.largekana) {
+        if (SMALL_FULL[ch] !== undefined) ch = SMALL_FULL[ch];
+        else if (SMALL_HALF[ch] !== undefined) ch = SMALL_HALF[ch];
+        cp = ch.codePointAt(0);
+      }
       if (cls.alnum && ((cp >= 0xff10 && cp <= 0xff19) || (cp >= 0xff21 && cp <= 0xff3a) || (cp >= 0xff41 && cp <= 0xff5a))) {
         out += String.fromCodePoint(cp - 0xfee0);
       } else if (cls.punct && cp >= 0xff01 && cp <= 0xff5e) {
@@ -123,14 +139,18 @@
     function classes() {
       var cls = {};
       var boxes = root.querySelectorAll("[data-wc-class]");
-      for (var i = 0; i < boxes.length; i++) cls[boxes[i].getAttribute("data-wc-class")] = boxes[i].checked;
+      for (var i = 0; i < boxes.length; i++) cls[boxes[i].getAttribute("data-wc-class")] = boxes[i].checked && !boxes[i].disabled;
       return cls;
     }
     function direction() {
       var checked = root.querySelector("input[name='wc-dir']:checked");
       return checked ? checked.value : "full";
     }
+    // The large-kana option only acts on half-width output, so it is greyed out
+    // (and cleared of effect) while the full-width direction is selected.
+    var largeBox = root.querySelector("[data-wc-class='largekana']");
     function render() {
+      if (largeBox) largeBox.disabled = direction() !== "half";
       output.value = convert(input.value, { direction: direction(), classes: classes() });
       var c = counts(output.value);
       var elFull = root.querySelector("[data-wc-count-full]");
@@ -145,7 +165,14 @@
     for (var i = 0; i < controls.length; i++) controls[i].addEventListener("change", render);
     if (copyBtn) copyBtn.addEventListener("click", function () {
       if (!output.value) return;
-      navigator.clipboard.writeText(output.value).then(function () {
+      var copied = output.value;
+      navigator.clipboard.writeText(copied).then(function () {
+        if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
+          window.UltraTextGen.trackCopy("button", copied);
+        } else {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: "copy_text", copy_method: "button" });
+        }
         var original = copyBtn.textContent;
         copyBtn.textContent = copyBtn.getAttribute("data-copied-label") || "Copied!";
         copyBtn.classList.add("wc-copied");

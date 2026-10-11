@@ -121,15 +121,28 @@
      for it (`fold`) strips the marks from the GRID form only. The display form
      keeps the word's real spelling, so the word list under the grid is still
      correct French. ß is untouched: it is a letter, not a letter plus a mark,
-     and folding is a per-language choice this module does not make itself. */
+     and folding is a per-language choice this module does not make itself.
+     Spanish (`fold: "es"`) drops the written accent the same way (Á, É, Í,
+     Ó, Ú and Ü are A, E, I, O, U in a sopa de letras) but keeps Ñ: it is its
+     own letter of the Spanish alphabet, not N plus a mark, so folding it
+     would print AÑO as ANO, a different word. */
   const LIGATURES = { "œ": "oe", "Œ": "OE", "æ": "ae", "Æ": "AE" };
-  function foldMarks(text) {
-    return String(text).replace(/[œŒæÆ]/g, (ch) => LIGATURES[ch])
-      .normalize("NFD").replace(/\p{M}/gu, "").normalize("NFC");
+  /* German (`fold: "de"`) follows the newspaper Kreuzworträtsel rule: Ä, Ö
+     and Ü take two squares as AE, OE and UE, and ß is SS. Any other mark is
+     dropped as in French. It is its own mode because the umlaut is a sound,
+     not a decoration: folding Ä to plain A would print BAR for BÄR. */
+  const DE_PAIRS = { "ä": "ae", "Ä": "AE", "ö": "oe", "Ö": "OE", "ü": "ue", "Ü": "UE", "ß": "ss", "ẞ": "SS" };
+  function foldMarks(text, mode) {
+    let s = String(text).replace(/[œŒæÆ]/g, (ch) => LIGATURES[ch]).normalize("NFC");
+    if (mode === "de") s = s.replace(/[äÄöÖüÜßẞ]/g, (ch) => DE_PAIRS[ch]);
+    if (mode !== "es") return s.normalize("NFD").replace(/\p{M}/gu, "").normalize("NFC");
+    return Array.from(s)
+      .map((ch) => (ch === "ñ" || ch === "Ñ") ? ch : ch.normalize("NFD").replace(/\p{M}/gu, ""))
+      .join("");
   }
 
   function gridLetters(text, fold) {
-    return Array.from(fold ? foldMarks(text) : String(text))
+    return Array.from(fold ? foldMarks(text, fold) : String(text))
       .filter((ch) => LETTER_RE.test(ch))
       .map(upperOne);
   }
@@ -263,7 +276,7 @@
     const o = opts || {};
     const words = Array.isArray(o.words) && o.words.length && o.words[0] && o.words[0].letters
       ? o.words
-      : normalizeWords(o.words, !!o.fold);
+      : normalizeWords(o.words, o.fold || false);
     const level = LEVELS[o.level] ? o.level : "medium";
     const dirNames = Array.isArray(o.directions) && o.directions.length
       ? o.directions.filter((d) => DIRS[d])

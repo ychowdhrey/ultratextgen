@@ -1,0 +1,94 @@
+{
+  "slug": "fish-kaomoji",
+  "title": "Fish Kaomoji ><(((º> Copy & Paste Fish Text Art",
+  "meta_description": "Copy and paste fish kaomoji and fish text art: ><>, <><, ><(((º>, Japanese fish like >゜))))彡, fish bones, swimming scenes and hieroglyph fish 𓆝 𓆟 𓆞.",
+  "canonical": "https://ultratextgen.com/library/fish-kaomoji/",
+  "breadcrumb": "Fish Kaomoji",
+  "hero_h1": "Fish Kaomoji",
+  "hero_tagline": "Fish drawn in text, from the three-key ><> to Japanese fish with a splashing tail. Click any fish to copy it.",
+  "intro": "A fish kaomoji draws the fish side-on, so the direction matters: ><> swims right and <>< swims left. The > is the tail fin, the brackets ((( are scales, and º or ゜ is the eye. Japanese fish add 彡, a character that reads as a splash of water behind the tail. Every fish here is plain text, so it pastes into a caption, bio, comment or chat, and the longer ones make a divider between paragraphs. For fish as pictures rather than text, the 🐟 🐠 🐡 emoji are on the animal emoji page linked below.",
+  "date_published": "2026-10-08",
+  "date_modified": "2026-10-08",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "classic-fish",
+      "label": "Classic Fish",
+      "h2": "Classic Text Fish",
+      "intro": "The fish people type from memory. <>< is also the plain-text form of the Christian fish symbol.",
+      "symbols": [
+        {"char": "><>", "label": "Fish Swimming Right"},
+        {"char": "<><", "label": "Fish Swimming Left"},
+        {"char": "><(((º>", "label": "Big Fish"},
+        {"char": "<º))))><", "label": "Big Fish Swimming Left"},
+        {"char": "><((((●ﾟ<", "label": "Spotted Fish"},
+        {"char": ">゜)))><", "label": "Round Fish"}
+      ]
+    },
+    {
+      "id": "japanese-fish",
+      "label": "Japanese Fish",
+      "h2": "Japanese Fish Kaomoji With a Splash",
+      "intro": "The tail ends in 彡, so the fish looks like it is darting away through the water.",
+      "symbols": [
+        {"char": ">゜))))彡", "label": "Darting Fish"},
+        {"char": "<゜)))彡", "label": "Fish Heading Left"},
+        {"char": ">ﾟ)))彡", "label": "Small Darting Fish"},
+        {"char": "ζ°)))彡", "label": "Fish With a Fin"},
+        {"char": ">_)))彡", "label": "Sleepy Fish"},
+        {"char": ">°))彡", "label": "Tiny Fish"}
+      ]
+    },
+    {
+      "id": "fish-bones",
+      "label": "Bones & Heads",
+      "h2": "Fish Bones and Fish Heads",
+      "intro": "The # marks are ribs, so these read as a fish that has been eaten.",
+      "symbols": [
+        {"char": "(°)#))<<", "label": "Fish Skeleton"},
+        {"char": ">ﾟ)##)彡", "label": "Bony Fish"},
+        {"char": "(゜))<<", "label": "Fish Head"},
+        {"char": "<・)))><<", "label": "Fish With a Forked Tail"}
+      ]
+    },
+    {
+      "id": "fish-scenes",
+      "label": "Scenes",
+      "h2": "Swimming Fish and Fish Scenes",
+      "intro": "Longer pieces with more than one fish or a trail of water. Each button copies the whole line.",
+      "symbols": [
+        {"char": "><>     ><>", "label": "Two Fish"},
+        {"char": "´¯`·.¸¸.·´¯`·.¸ ><(((º>", "label": "Fish Riding a Wave"},
+        {"char": "><((((*ﾟ< >ﾟ*)))><", "label": "Kissing Fish"},
+        {"char": "♪ ε=>`)))>ﾟ)))彡~~", "label": "Fish Chasing a Fish"}
+      ]
+    },
+    {
+      "id": "hieroglyph-fish",
+      "label": "Hieroglyph Fish",
+      "h2": "Egyptian Hieroglyph Fish 𓆝 𓆟 𓆞",
+      "intro": "Fish signs from the Egyptian hieroglyph block, popular in aesthetic bios and ocean captions. A device without a font for this block shows a box in their place.",
+      "symbols": [
+        {"char": "𓆛", "label": "Fish Hieroglyph K001"},
+        {"char": "𓆜", "label": "Fish Hieroglyph K002"},
+        {"char": "𓆝", "label": "Fish Hieroglyph K003"},
+        {"char": "𓆞", "label": "Fish Hieroglyph K004"},
+        {"char": "𓆟", "label": "Fish Hieroglyph K005"},
+        {"char": "𓆝 𓆟 𓆞", "label": "School of Fish"},
+        {"char": "𓇼 ˚𓆝 ⋆｡𓆟 ⋆｡𓆞˚ 𓇼", "label": "Ocean Divider"}
+      ]
+    }
+  ],
+  "faq_h2": "Fish Kaomoji, Answered",
+  "faq": [
+    {"q": "What does ><> mean in a text?", "a": "It is a fish swimming to the right: > is the tail, < is the head. Written the other way round as <><, it is also the plain-text version of the Christian fish symbol, which is why it shows up in bios."},
+    {"q": "What is the 彡 at the end of some fish?", "a": "彡 is a Chinese character made of three slanted strokes. Japanese kaomoji use it for motion or splashing, so >゜))))彡 is a fish darting through water."},
+    {"q": "Why do the hieroglyph fish show as boxes?", "a": "The reader's device has no font for the Egyptian hieroglyph block. The text fish like ><(((º> use only basic punctuation, so any font can draw them."}
+  ],
+  "related": [
+    {"href": "/library/animal-emojis/", "title": "Animal Emojis", "desc": "🐟 🐠 🐡 🦈 and every other animal emoji, by type."},
+    {"href": "/library/cat-kaomoji/", "title": "Cat Kaomoji", "desc": "Cute cat text faces with whiskers and paws to copy and paste."},
+    {"href": "/library/egyptian-hieroglyphs/", "title": "Egyptian Hieroglyphs", "desc": "Unicode hieroglyphs to copy, fish included."},
+    {"href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub: every mood of Japanese text face in one place."}
+  ]
+}

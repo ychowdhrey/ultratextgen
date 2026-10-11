@@ -8,6 +8,8 @@ exceptions, and positions that look like defects to a well-meaning audit.
 | [`content-lanes.md`](./content-lanes.md) | content and product decisions: the `updates/` scope, titles that outlive a status, heading skips, printables CTAs, the image-generation boundary, flair scope, the zalgo comparison table, `answers/` homepage links |
 | [`local-only-locale-exceptions.md`](./local-only-locale-exceptions.md) | every page ratified as needing no English parent, with its evidence, plus several superseded entries (marked in place, not moved to one section) and one counter-example |
 | [`printables-scope.md`](./printables-scope.md) | the typography-native boundary and the word-search decision |
+| [`limitations-become-features.md`](./limitations-become-features.md) | why a limitation gets a feature (a check, a feedback loop, a fallback) instead of a disclaimer, and the Free Fire case that settled it |
+| [`spanish-one-market.md`](./spanish-one-market.md) | one `/es/` for every Spanish-speaking market: neutral words first, the Latin American form where it must choose, and why (2026-10-09) |
 
 A decision recorded here is not a decision executed. Where a decision required a
 change, link the commit or PR that made it, or mark it as not yet executed.

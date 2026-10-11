@@ -1,14 +1,14 @@
 {
   "slug": "smirk-emoji",
-  "title": "Smirk Emoji & Kaomoji: Copy & Paste 😏😌 Smug Combos",
-  "meta_description": "Smirk emoji 😏 😌 😼, smug and confident face combos, plus sly kaomoji like (¬‿¬) for flirty replies and knowing reactions. Click any symbol to copy it instantly.",
+  "title": "Smirk Emoji: Copy & Paste 😏😌 Smug Faces, Emoticons & Combos",
+  "meta_description": "Smirk emoji 😏 😌 😼, smug and confident face combos, plus typed smirk emoticons like :> for flirty replies and knowing reactions.",
   "canonical": "https://ultratextgen.com/library/smirk-emoji/",
-  "breadcrumb": "Smirk Emoji & Kaomoji",
-  "hero_h1": "Smirk Emoji & Kaomoji",
-  "hero_tagline": "The 😏 smirking face, smug and confident grins, sly winks, and knowing kaomoji: every shade of self-satisfied and flirty. Click any symbol to copy it instantly.",
-  "intro": "The smirk emoji 😏 carries two meanings at once: smug, self-satisfied confidence and a flirty, suggestive 'I know something you don't.' This page gathers the whole smug range: the calm 😌 relieved face, the deadpan 🙂 slightly smiling face, the 😼 wry-smiling cat, and sly winks like 😉 and 😜 for a playful reaction. When an emoji won't carry the exact vibe, classic smug kaomoji like (¬‿¬) and ( ͡~ ͜ʖ ͡°) paste anywhere plain text works. The 😎 sunglasses face gets a light nod here, it has its own full page, while this one stays focused on the smirk itself. Grab a single face, or copy a ready-made combo set for flirty replies, confident flexes, and knowing reactions.",
+  "breadcrumb": "Smirk Emoji",
+  "hero_h1": "Smirk Emoji",
+  "hero_tagline": "The 😏 smirking face, smug and confident grins, sly winks, and typed :> emoticons: every shade of self-satisfied and flirty. Click any symbol to copy it instantly.",
+  "intro": "The smirk emoji 😏 carries two meanings at once: smug, self-satisfied confidence and a flirty, suggestive 'I know something you don't.' This page gathers the whole smug range: the calm 😌 relieved face, the deadpan 🙂 slightly smiling face, the 😼 wry-smiling cat, and sly winks like 😉 and 😜 for a playful reaction. When an emoji won't carry the exact vibe, a typed :> emoticon or a smug kaomoji like (¬‿¬) pastes anywhere plain text works. The 😎 sunglasses face gets a light nod here, it has its own full page, while this one stays focused on the smirk itself. Grab a single face, or copy a ready-made combo set for flirty replies, confident flexes, and knowing reactions.",
   "date_published": "2026-07-13",
-  "date_modified": "2026-07-13",
+  "date_modified": "2026-10-09",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -48,19 +48,30 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticons",
+      "h2": "Smirk Text Emoticons",
+      "intro": "A pointed bracket turns a smile into a sly grin. Swap the colon for a semicolon and the smugness gets a wink.",
+      "symbols": [
+        { "char": ":>", "label": "Smug Emoticon" },
+        { "char": ":->", "label": "Smug With Nose Emoticon" },
+        { "char": ";>", "label": "Sly Wink Emoticon" },
+        { "char": ";->", "label": "Sly Wink With Nose Emoticon" },
+        { "char": ":^)", "label": "Self-Satisfied Emoticon" }
+      ]
+    },
+    {
       "id": "smirk-kaomoji",
       "label": "Kaomoji",
       "h2": "Smug & Sly Kaomoji",
-      "intro": "Japanese-style text faces that smirk, wink, and look far too pleased with themselves in plain text.",
+      "intro": "Four smug Japanese text faces that look far too pleased with themselves.",
       "symbols": [
         { "char": "(¬‿¬)", "label": "Smug Grin Kaomoji" },
         { "char": "(¬ω¬)", "label": "Sly Smirk Kaomoji" },
         { "char": "( ͡~ ͜ʖ ͡°)", "label": "Winking Lenny Kaomoji" },
-        { "char": "(￢‿￢)", "label": "Knowing Smirk Kaomoji" },
-        { "char": "( •̀ ω •́ )✧", "label": "Confident Sparkle Kaomoji" },
-        { "char": "(￣ー￣)", "label": "Satisfied Grin Kaomoji" },
-        { "char": "(｀∀´)", "label": "Devilish Grin Kaomoji" }
-      ]
+        { "char": "( •̀ ω •́ )✧", "label": "Confident Sparkle Kaomoji" }
+      ],
+      "more_link": { "href": "/library/smug-kaomoji/", "text": "See every smug kaomoji" }
     }
   ],
   "collection_section": {
@@ -113,6 +124,11 @@
     }
   ],
   "related": [
+    {
+      "href": "/library/smug-kaomoji/",
+      "title": "Smug Kaomoji",
+      "desc": "Half-closed eyes and lopsided smiles for winning an argument, being right, or planning something."
+    },
     {
       "href": "/library/sunglasses-emoji/",
       "title": "Sunglasses Emoji & Kaomoji",

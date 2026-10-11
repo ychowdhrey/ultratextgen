@@ -1,0 +1,164 @@
+{
+  "slug": "mouse-kaomoji",
+  "title": "Mouse Kaomoji ᘛ⁐̤ᕐᐷ: Copy & Paste Mouse and Hamster Faces",
+  "meta_description": "Copy mouse kaomoji and hamster text faces: the side-on ᘛ⁐̤ᕐᐷ mouse, <:3 )~ with a long tail, ~~(__^·> scurrying mice and round ₍ᐢ•ﻌ•ᐢ₎ hamsters to paste.",
+  "canonical": "https://ultratextgen.com/library/mouse-kaomoji/",
+  "breadcrumb": "Mouse Kaomoji",
+  "hero_h1": "Mouse Kaomoji",
+  "hero_tagline": "Mice, rats and hamsters drawn in text, from tiny tailed mice to chubby hamster cheeks. Tap one to copy.",
+  "intro": "Text mice are usually drawn from the side. In ᘛ⁐̤ᕐᐷ the ᘛ at the left is the curl of the tail, ⁐ with two dots underneath is the body and little feet, ᕐ is a round ear and ᐷ is the pointed nose. The keyboard version <:3 )~ turns the same idea around: < is the snout, :3 is the eye and whiskered mouth, and ~ is the tail trailing behind. Hamsters are drawn face-on instead, with ᐢ ears and puffed cheeks. The syllabics mice need a font for Canadian Aboriginal syllabics, so a few older devices show boxes; the punctuation mice use common characters. Picture versions, 🐭 🐁 🐀 🐹, are on the animal emoji page.",
+  "date_published": "2026-10-08",
+  "date_modified": "2026-10-08",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "side-on-mice",
+      "label": "Side-On Mice",
+      "h2": "Side-On Mouse Kaomoji ᘛ⁐̤ᕐᐷ",
+      "intro": "Built from Canadian syllabics, these read as a tiny mouse walking left to right.",
+      "symbols": [
+        {
+          "char": "ᘛ⁐̤ᕐᐷ",
+          "label": "Walking Mouse"
+        },
+        {
+          "char": "ᘛ⁐ᕐᐷ",
+          "label": "Mouse Without Feet"
+        },
+        {
+          "char": "ᘛ⁐̤ᕐᐷ ◅",
+          "label": "Mouse Chasing a Crumb"
+        },
+        {
+          "char": "ᘛ⁐̤ᕐᐷ ᘛ⁐̤ᕐᐷ ᘛ⁐̤ᕐᐷ",
+          "label": "Three Mice in a Row"
+        },
+        {
+          "char": "ᓚᘏᗢ ᘛ⁐̤ᕐᐷ",
+          "label": "Cat Stalking a Mouse"
+        }
+      ]
+    },
+    {
+      "id": "keyboard-mice",
+      "label": "Keyboard Mice",
+      "h2": "Keyboard Mice With Tails",
+      "intro": "Typed with ordinary keys. The ~ tail gets longer the more you add.",
+      "symbols": [
+        {
+          "char": "<:3 )~",
+          "label": "Classic Mouse"
+        },
+        {
+          "char": "<:3 )~~~",
+          "label": "Mouse With a Long Tail"
+        },
+        {
+          "char": "~~(__^·>",
+          "label": "Mouse Running Right"
+        },
+        {
+          "char": "<·^__)~~",
+          "label": "Mouse Running Left"
+        },
+        {
+          "char": "~~(__^•><•^__)~~",
+          "label": "Two Mice Nose to Nose"
+        },
+        {
+          "char": "----{,_,\">",
+          "label": "Mouse With a Pink Nose"
+        }
+      ]
+    },
+    {
+      "id": "mouse-faces",
+      "label": "Mouse Faces",
+      "h2": "Mouse Faces Head-On",
+      "intro": "Round ears on each side and whiskers made of = signs or a ᴥ snout.",
+      "symbols": [
+        {
+          "char": "ᘳ´• ᴥ •`ᘰ",
+          "label": "Big-Eared Mouse"
+        },
+        {
+          "char": "ᕳ•⍘•ᕲ",
+          "label": "Whiskered Mouse"
+        },
+        {
+          "char": "( ),,,( ) >( •.• )<",
+          "label": "Mouse Peeking Over a Wall"
+        },
+        {
+          "char": "(◕ᴥ◕ʋ)",
+          "label": "Mouse Nibbling"
+        }
+      ]
+    },
+    {
+      "id": "hamsters",
+      "label": "Hamsters",
+      "h2": "Hamster Kaomoji",
+      "intro": "Hamsters get small ᐢ ears and the ₍ ₎ brackets read as full cheek pouches.",
+      "symbols": [
+        {
+          "char": "₍ᐢ•ﻌ•ᐢ₎",
+          "label": "Hamster"
+        },
+        {
+          "char": "₍ᐢ. .ᐢ₎",
+          "label": "Quiet Hamster"
+        },
+        {
+          "char": "₍ᐢ ̥ ̞ ̥ᐢ₎",
+          "label": "Teary Hamster"
+        },
+        {
+          "char": "₍ᐢ˶•ᴗ•˶ᐢ₎",
+          "label": "Happy Hamster"
+        },
+        {
+          "char": "₍ᐢ‥ᐢ₎ ♡",
+          "label": "Hamster in Love"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Mouse Kaomoji, Answered",
+  "faq": [
+    {
+      "q": "What does <:3 )~ mean?",
+      "a": "It is a mouse seen from the side: < is the pointed nose, :3 is the eye and whiskery mouth, ) is the body and ~ is the tail. It is one of the oldest Western text mice and uses only keyboard characters."
+    },
+    {
+      "q": "What characters make up ᘛ⁐̤ᕐᐷ?",
+      "a": "ᘛ, ᕐ and ᐷ are Canadian Aboriginal syllabics, and ⁐ is the close-up punctuation mark U+2050 with a combining diaeresis below it for the feet. If any one of them is missing from the reader's font, the mouse shows as a box."
+    },
+    {
+      "q": "Is there a hamster kaomoji?",
+      "a": "Yes. ₍ᐢ•ﻌ•ᐢ₎ is the common one: ᐢ are the small rounded ears and the subscript brackets ₍ ₎ make the face look wide, like cheeks full of food."
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji hub: every mood of Japanese text face in one place."
+    },
+    {
+      "href": "/library/animal-emojis/",
+      "title": "Animal Emojis",
+      "desc": "🐭 🐁 🐀 🐹 and every other animal emoji, grouped by type."
+    },
+    {
+      "href": "/library/cat-kaomoji/",
+      "title": "Cat Kaomoji",
+      "desc": "Whiskered cat faces, including the ᓚᘏᗢ cat that chases the mouse."
+    },
+    {
+      "href": "/library/bunny-kaomoji/",
+      "title": "Bunny Kaomoji",
+      "desc": "Long-eared rabbit faces to copy and paste."
+    }
+  ]
+}

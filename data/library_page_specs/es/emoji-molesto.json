@@ -27,13 +27,34 @@
       "h2": "El Emoji de Cara Molesta",
       "intro": "La fila del \"no me impresiona\" de todos los días, encabezada por 😒 — el emoji que la mayoría tiene en mente al decir \"emoji molesto\".",
       "symbols": [
-        { "char": "😒", "label": "Cara sin gracia" },
-        { "char": "😑", "label": "Cara inexpresiva" },
-        { "char": "🙄", "label": "Cara con ojos en blanco" },
-        { "char": "😤", "label": "Cara con vapor en la nariz" },
-        { "char": "🤨", "label": "Cara con la ceja levantada" },
-        { "char": "😾", "label": "Gato enfurruñado" },
-        { "char": "🙃", "label": "Cara al revés" }
+        {
+          "char": "😒",
+          "label": "Cara sin gracia"
+        },
+        {
+          "char": "😑",
+          "label": "Cara inexpresiva"
+        },
+        {
+          "char": "🙄",
+          "label": "Cara con ojos en blanco"
+        },
+        {
+          "char": "😤",
+          "label": "Cara con vapor en la nariz"
+        },
+        {
+          "char": "🤨",
+          "label": "Cara con la ceja levantada"
+        },
+        {
+          "char": "😾",
+          "label": "Gato enfurruñado"
+        },
+        {
+          "char": "🙃",
+          "label": "Cara al revés"
+        }
       ]
     },
     {
@@ -42,13 +63,34 @@
       "h2": "Cuando el Fastidio Pasa a Frustración",
       "intro": "Un paso más allá de la irritación: las caras tensas y hartas para cuando el fastidio sigue creciendo.",
       "symbols": [
-        { "char": "😖", "label": "Cara desconcertada" },
-        { "char": "😣", "label": "Cara de aguante" },
-        { "char": "🫨", "label": "Cara temblando" },
-        { "char": "🙁", "label": "Cara con el ceño levemente fruncido" },
-        { "char": "☹️", "label": "Cara con el ceño fruncido" },
-        { "char": "😞", "label": "Cara decepcionada" },
-        { "char": "😕", "label": "Cara confundida" }
+        {
+          "char": "😖",
+          "label": "Cara desconcertada"
+        },
+        {
+          "char": "😣",
+          "label": "Cara de aguante"
+        },
+        {
+          "char": "🫨",
+          "label": "Cara temblando"
+        },
+        {
+          "char": "🙁",
+          "label": "Cara con el ceño levemente fruncido"
+        },
+        {
+          "char": "☹️",
+          "label": "Cara con el ceño fruncido"
+        },
+        {
+          "char": "😞",
+          "label": "Cara decepcionada"
+        },
+        {
+          "char": "😕",
+          "label": "Cara confundida"
+        }
       ]
     },
     {
@@ -57,13 +99,34 @@
       "h2": "Gestos y Lenguaje Corporal de Fastidio",
       "intro": "A veces la cara no basta: encoger los hombros o una mano que dice \"no\" deja el mismo mensaje sin una sola palabra.",
       "symbols": [
-        { "char": "🤷", "label": "Persona encogiéndose de hombros" },
-        { "char": "🤷‍♀️", "label": "Mujer encogiéndose de hombros" },
-        { "char": "🤷‍♂️", "label": "Hombre encogiéndose de hombros" },
-        { "char": "🙅", "label": "Persona haciendo el gesto de no" },
-        { "char": "🙅‍♀️", "label": "Mujer haciendo el gesto de no" },
-        { "char": "✋", "label": "Mano levantada" },
-        { "char": "🚫", "label": "Prohibido" }
+        {
+          "char": "🤷",
+          "label": "Persona encogiéndose de hombros"
+        },
+        {
+          "char": "🤷‍♀️",
+          "label": "Mujer encogiéndose de hombros"
+        },
+        {
+          "char": "🤷‍♂️",
+          "label": "Hombre encogiéndose de hombros"
+        },
+        {
+          "char": "🙅",
+          "label": "Persona haciendo el gesto de no"
+        },
+        {
+          "char": "🙅‍♀️",
+          "label": "Mujer haciendo el gesto de no"
+        },
+        {
+          "char": "✋",
+          "label": "Mano levantada"
+        },
+        {
+          "char": "🚫",
+          "label": "Prohibido"
+        }
       ]
     },
     {
@@ -72,54 +135,130 @@
       "h2": "Kaomoji y Caritas de Texto de Fastidio",
       "intro": "Caritas hechas solo con signos de puntuación que se pegan en cualquier lado, sin depender de que los emojis se vean.",
       "symbols": [
-        { "char": "( ಠ_ಠ )", "label": "Kaomoji de desaprobación" },
-        { "char": "(￣ヘ￣)", "label": "Kaomoji de \"hmpf\"" },
-        { "char": "(-_-)", "label": "Kaomoji de fastidio plano" },
-        { "char": "(ーー;)", "label": "Kaomoji de suspiro incómodo" },
-        { "char": "(´-ω-`)", "label": "Kaomoji de suspiro harto" },
-        { "char": "( `皿´)", "label": "Kaomoji de dientes apretados" }
+        {
+          "char": "( ಠ_ಠ )",
+          "label": "Kaomoji de desaprobación"
+        },
+        {
+          "char": "(￣ヘ￣)",
+          "label": "Kaomoji de \"hmpf\""
+        },
+        {
+          "char": "(-_-)",
+          "label": "Kaomoji de fastidio plano"
+        },
+        {
+          "char": "(ーー;)",
+          "label": "Kaomoji de suspiro incómodo"
+        },
+        {
+          "char": "(´-ω-`)",
+          "label": "Kaomoji de suspiro harto"
+        },
+        {
+          "char": "( `皿´)",
+          "label": "Kaomoji de dientes apretados"
+        }
+      ]
+    },
+    {
+      "id": "annoyed-kaomoji-pouts",
+      "label": "Pucheros y bufidos",
+      "h2": "Kaomoji Molestos: Pucheros, Bufidos y Miradas de Reojo",
+      "intro": "Pucheros, bufidos y miradas de reojo para cuando la paciencia se está agotando. El ＃ y la メ de dos de estas caritas representan la vena palpitante que el manga dibuja en la frente de un personaje a punto de estallar.",
+      "symbols": [
+        {
+          "char": "(¬_¬)",
+          "label": "Kaomoji de mirada de reojo"
+        },
+        {
+          "char": "(￣^￣)",
+          "label": "Kaomoji con la nariz en alto"
+        },
+        {
+          "char": "(｀へ´)",
+          "label": "Kaomoji haciendo pucheros"
+        },
+        {
+          "char": "(＃￣ω￣)",
+          "label": "Kaomoji con la vena hinchada"
+        },
+        {
+          "char": "(-_-メ)",
+          "label": "Kaomoji perdiendo la paciencia"
+        },
+        {
+          "char": "ಠ╭╮ಠ",
+          "label": "Kaomoji de mirada ceñuda"
+        }
       ]
     }
   ],
   "collections": [
     {
       "name": "Ya Me Harté",
-      "flags": ["😒", "😤"],
+      "flags": [
+        "😒",
+        "😤"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Hasta Aquí Llegué",
-      "flags": ["😑", "🙃"],
+      "flags": [
+        "😑",
+        "🙃"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Juicio en Silencio",
-      "flags": ["😒", "🤨"],
+      "flags": [
+        "😒",
+        "🤨"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Apenas Aguantando",
-      "flags": ["😣", "😖", "🫨"],
+      "flags": [
+        "😣",
+        "😖",
+        "🫨"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Habla con la Mano",
-      "flags": ["🤷", "🙅"],
+      "flags": [
+        "🤷",
+        "🙅"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Echando Humo en Silencio",
-      "flags": ["😑", "😤", "🫨"],
+      "flags": [
+        "😑",
+        "😤",
+        "🫨"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Uf, Ya Qué",
-      "flags": ["🙃", "🙄"],
+      "flags": [
+        "🙃",
+        "🙄"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Hoy No",
-      "flags": ["😑", "🚫"],
+      "flags": [
+        "😑",
+        "🚫"
+      ],
       "defaultFormat": "inline"
     }
   ],
@@ -138,7 +277,7 @@
     },
     {
       "href": "/es/library/emoji-enojado/",
-      "title": "Emoji Enojado y Kaomoji",
+      "title": "Emoji Enojado",
       "desc": "Cuando el fastidio deja de ser leve y se desborda en pura furia."
     },
     {

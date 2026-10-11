@@ -142,6 +142,105 @@
       "lastRechecked": null,
       "nextRecheck": "2026-10-11",
       "verdict": "ratified 2026-08-12. Unlike most entries in this ledger, this exception is not expected to expire: an English parent cannot appear later because the letter will not enter the English alphabet. The nextRecheck date is aligned with review-register item 42 (the ES printables 60-day readout) purely so the whole cluster is re-examined together — if that readout fires the stop rule, this page is reviewed for retirement alongside its 26 siblings, not on its own merits."
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/ko/yeongmun-ireum-byeonhwan/",
+      "reason": "Korean name romanizer under the Revised Romanization of Korean (2014-42): converts Hangul names and words to Latin letters, with Korea-specific surname spellings and the Korean passport rule beside it. The people doing this job are Korean speakers romanizing their own names, and the rule set is Korean-specific, so an EN page would not be a translation of this feature. no-EN-demand-by-construction claim. User ratification 2026-10-04: \"Go ahead\", answering \"Approve it as Korean-only?\".",
+      "agreed": "2026-10-04",
+      "enDemandBasis": "Not instrument-checked. The KR cluster (Semrush KR, 2026-10-04 user export) is about 5,200/mo Google-only: 영문 이름 변환기 2,400, 영문 이름 표기법 880, 여권 영문 이름 변환 590, 한글 로마자 변환 480, 이름 영문 표기 390, 한글 이름 영어 변환 390. English-side demand for a Korean-name romanizer (e.g. K-pop fans) was asserted to be a different job and was not measured.",
+      "lastRechecked": null,
+      "nextRecheck": "2027-01-04",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/ja/purinto/",
+      "reason": "RATIFIED LOCAL-ONLY (owner, 2026-10-04): Japanese printables hub of nine Japanese-job generators; not the Japanese sibling of /printables/ and not meshed with that cluster. x-default falls back to the bare EN homepage as a generic default only.",
+      "agreed": "2026-10-04",
+      "enDemandBasis": "Owner approved all ten /ja/purinto/ URLs on 2026-10-04 and directed they be built as Japanese user jobs, not translations: 'Do not force an English parent URL if this Japanese job has no equivalent.' JP demand (Semrush JP, 2026-10-04): children: ひらがな 練習 プリント 9,900/mo, カタカナ プリント 8,100/mo, 漢字 練習 プリント 2,400/mo.",
+      "lastRechecked": null,
+      "nextRecheck": "2027-01-04",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/ja/purinto/hiragana-renshu/",
+      "reason": "RATIFIED LOCAL-ONLY (owner, 2026-10-04): hiragana practice in masu. No-EN-demand-by-construction (Japanese script); /hiragana-chart/ is a different job and is not paired.",
+      "agreed": "2026-10-04",
+      "enDemandBasis": "Owner approved all ten /ja/purinto/ URLs on 2026-10-04 and directed they be built as Japanese user jobs, not translations: 'Do not force an English parent URL if this Japanese job has no equivalent.' JP demand (Semrush JP, 2026-10-04): ひらがな 練習 プリント 9,900/mo.",
+      "lastRechecked": null,
+      "nextRecheck": "2027-01-04",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/ja/purinto/katakana-renshu/",
+      "reason": "RATIFIED LOCAL-ONLY (owner, 2026-10-04): katakana practice in masu. No-EN-demand-by-construction (Japanese script); /katakana-chart/ is a different job and is not paired.",
+      "agreed": "2026-10-04",
+      "enDemandBasis": "Owner approved all ten /ja/purinto/ URLs on 2026-10-04 and directed they be built as Japanese user jobs, not translations: 'Do not force an English parent URL if this Japanese job has no equivalent.' JP demand (Semrush JP, 2026-10-04): カタカナ プリント 8,100/mo.",
+      "lastRechecked": null,
+      "nextRecheck": "2027-01-04",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/ja/purinto/kanji-renshu/",
+      "reason": "RATIFIED LOCAL-ONLY (owner, 2026-10-04): kanji practice with MEXT grade presets. No EN printable writes kanji.",
+      "agreed": "2026-10-04",
+      "enDemandBasis": "Owner approved all ten /ja/purinto/ URLs on 2026-10-04 and directed they be built as Japanese user jobs, not translations: 'Do not force an English parent URL if this Japanese job has no equivalent.' JP demand (Semrush JP, 2026-10-04): 漢字 練習 プリント 2,400/mo.",
+      "lastRechecked": null,
+      "nextRecheck": "2027-01-04",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/ja/purinto/namae-nazorigaki/",
+      "reason": "RATIFIED LOCAL-ONLY (owner, 2026-10-04): a name in kana/kanji masu or on the Japanese four-line ruling; shared engines do not justify an hreflang pair with /printables/name-tracing/.",
+      "agreed": "2026-10-04",
+      "enDemandBasis": "Owner approved all ten /ja/purinto/ URLs on 2026-10-04 and directed they be built as Japanese user jobs, not translations: 'Do not force an English parent URL if this Japanese job has no equivalent.' JP demand (Semrush JP, 2026-10-04): 名前 練習 プリント 480/mo.",
+      "lastRechecked": null,
+      "nextRecheck": "2027-01-04",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/ja/purinto/alphabet-renshu/",
+      "reason": "RATIFIED LOCAL-ONLY (owner, 2026-10-04): English alphabet on the Japanese school four-line ruling; an English-writing job for a Japanese user, not a translation.",
+      "agreed": "2026-10-04",
+      "enDemandBasis": "Owner approved all ten /ja/purinto/ URLs on 2026-10-04 and directed they be built as Japanese user jobs, not translations: 'Do not force an English parent URL if this Japanese job has no equivalent.' JP demand (Semrush JP, 2026-10-04): unsized.",
+      "lastRechecked": null,
+      "nextRecheck": "2027-01-04",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/ja/purinto/eigo-4sen/",
+      "reason": "RATIFIED LOCAL-ONLY (owner, 2026-10-04): blank Japanese 英語4線 paper; no EN analogue.",
+      "agreed": "2026-10-04",
+      "enDemandBasis": "Owner approved all ten /ja/purinto/ URLs on 2026-10-04 and directed they be built as Japanese user jobs, not translations: 'Do not force an English parent URL if this Japanese job has no equivalent.' JP demand (Semrush JP, 2026-10-04): unsized.",
+      "lastRechecked": null,
+      "nextRecheck": "2027-01-04",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/ja/purinto/unpitsu/",
+      "reason": "RATIFIED LOCAL-ONLY (owner, 2026-10-04): 運筆 pre-writing sheets; also the owner's scope exception for this page only (docs/decisions/printables-scope.md).",
+      "agreed": "2026-10-04",
+      "enDemandBasis": "Owner approved all ten /ja/purinto/ URLs on 2026-10-04 and directed they be built as Japanese user jobs, not translations: 'Do not force an English parent URL if this Japanese job has no equivalent.' JP demand (Semrush JP, 2026-10-04): unsized.",
+      "lastRechecked": null,
+      "nextRecheck": "2027-01-04",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/ja/purinto/romaji-renshu/",
+      "reason": "RATIFIED LOCAL-ONLY (owner, 2026-10-04): romaji practice per 令和7年内閣告示第4号 with 訓令式 for comparison; a Japanese school subject.",
+      "agreed": "2026-10-04",
+      "enDemandBasis": "Owner approved all ten /ja/purinto/ URLs on 2026-10-04 and directed they be built as Japanese user jobs, not translations: 'Do not force an English parent URL if this Japanese job has no equivalent.' JP demand (Semrush JP, 2026-10-04): unsized.",
+      "lastRechecked": null,
+      "nextRecheck": "2027-01-04",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/ja/purinto/hiragana-nurie/",
+      "reason": "RATIFIED LOCAL-ONLY (owner, 2026-10-04): hollow textbook-face hiragana to colour; Japanese script.",
+      "agreed": "2026-10-04",
+      "enDemandBasis": "Owner approved all ten /ja/purinto/ URLs on 2026-10-04 and directed they be built as Japanese user jobs, not translations: 'Do not force an English parent URL if this Japanese job has no equivalent.' JP demand (Semrush JP, 2026-10-04): ひらがな ぬりえ 590/mo.",
+      "lastRechecked": null,
+      "nextRecheck": "2027-01-04",
+      "verdict": null
     }
   ]
 }

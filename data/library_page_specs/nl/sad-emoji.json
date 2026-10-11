@@ -1,14 +1,14 @@
 {
   "slug": "sad-emoji",
-  "title": "Sad Emoji 😢 Kopiëren en Plakken — Verdrietige Gezichtjes | UltraTextGen",
-  "meta_description": "Sad emoji 😢 😔 voor melancholische bio's en captions, combo's met gebroken hart 💔 en sombere kaomoji als (μ_μ). Klik op een symbool om het te kopiëren.",
+  "title": "Sad Emoji 😢 Kopiëren en Plakken — Verdrietige Gezichtjes",
+  "meta_description": "Sad emoji 😢 😔 voor melancholische bio's en captions, combo's met gebroken hart 💔, getypte emoticons als :( en een paar sombere kaomoji als (μ_μ). Klik op een symbool om het te kopiëren.",
   "canonical": "https://ultratextgen.com/nl/library/sad-emoji/",
-  "breadcrumb": "Sad Emoji & Kaomoji",
-  "hero_h1": "Sad Emoji & Kaomoji",
-  "hero_tagline": "Melancholische gezichtjes, symbolen voor liefdesverdriet en sombere kaomoji voor verdrietige bio's, captions en late-avondposts. Klik op een symbool om het te kopiëren.",
+  "breadcrumb": "Sad Emoji (Verdrietige Emoji)",
+  "hero_h1": "Sad Emoji (Verdrietige Emoji)",
+  "hero_tagline": "Melancholische gezichtjes, symbolen voor liefdesverdriet, getypte emoticons en een paar sombere kaomoji voor verdrietige bio's, captions en late-avondposts. Klik op een symbool om het te kopiëren.",
   "intro": "Een sad emoji zegt wat een hele alinea niet lukt: 😢 voor één traan, 😔 voor stille zwaarmoedigheid, 💔 voor regelrecht liefdesverdriet. Deze bibliotheek dekt het hele melancholische spectrum: de klassieke verdrietige gezichtjes, de verwelkte-roos-symbolen die je overal in sad-aesthetic bio's ziet, uitgeputte en teleurgestelde uitdrukkingen, en neergeslagen kaomoji als (μ_μ). Gaat het om echt huilen met dikke tranen? Kijk dan op de huil-emojipagina.",
   "date_published": "2026-08-16",
-  "date_modified": "2026-08-16",
+  "date_modified": "2026-10-09",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -92,6 +92,82 @@
       ]
     },
     {
+      "id": "grief-mourning",
+      "label": "Rouw",
+      "h2": "Emoji voor rouw en medeleven",
+      "intro": "Symbolen die mensen gebruiken in condoleanceberichten en herdenkingsposts. 🕯️ staat voor herinnering, 🕊️ voor vrede, 🖤 voor rouw, 🤍 voor stil medeleven en 💐 voor de bloemen die je zou meebrengen.",
+      "symbols": [
+        {
+          "char": "🕯️",
+          "label": "Kaars"
+        },
+        {
+          "char": "🕊️",
+          "label": "Duif"
+        },
+        {
+          "char": "🖤",
+          "label": "Zwart hart"
+        },
+        {
+          "char": "🤍",
+          "label": "Wit hart"
+        },
+        {
+          "char": "🥀",
+          "label": "Verwelkte bloem"
+        },
+        {
+          "char": "💐",
+          "label": "Boeket"
+        },
+        {
+          "char": "🪦",
+          "label": "Grafsteen"
+        },
+        {
+          "char": "❤️‍🩹",
+          "label": "Helend hart"
+        }
+      ]
+    },
+    {
+      "id": "condolence-combos",
+      "label": "Condoleancecombo's",
+      "h2": "Emoji-combo's voor condoleances en herdenkingen",
+      "intro": "Korte reeksen om een condoleancebericht af te sluiten of onder een herdenkingsfoto te zetten. In een bericht aan iemand die rouwt, komen 🕊️ en 🤍 zachter over dan 🪦, dat beter past bij een openbaar eerbetoon.",
+      "symbols": [
+        {
+          "char": "🕯️🕊️🤍",
+          "label": "Herinnering"
+        },
+        {
+          "char": "🕊️🤍",
+          "label": "Rust zacht"
+        },
+        {
+          "char": "🖤🥀🕯️",
+          "label": "Rouw"
+        },
+        {
+          "char": "💐🤍",
+          "label": "Condoleancebloemen"
+        },
+        {
+          "char": "🙏🤍",
+          "label": "Ik denk aan je"
+        },
+        {
+          "char": "❤️‍🩹🤍",
+          "label": "Heling"
+        },
+        {
+          "char": "🪦🥀🕯️",
+          "label": "Eerbetoon"
+        }
+      ]
+    },
+    {
       "id": "drained-disappointed",
       "label": "Uitgeputte gezichtjes",
       "h2": "Teleurgestelde en uitgeputte gezichtjes",
@@ -128,44 +204,64 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Tekst-emoticons",
+      "h2": "Verdrietige tekst-emoticons",
+      "intro": "Het oorspronkelijke verdrietige gezicht, getypt met een dubbele punt. Het ziet er op elke telefoon en elk toetsenbord hetzelfde uit.",
+      "symbols": [
+        {
+          "char": ":(",
+          "label": "Verdrietig gezicht"
+        },
+        {
+          "char": ":-(",
+          "label": "Verdrietig met neus"
+        },
+        {
+          "char": "=(",
+          "label": "Zacht verdrietig gezicht"
+        },
+        {
+          "char": ":c",
+          "label": "Pruilend verdrietig"
+        },
+        {
+          "char": ":/",
+          "label": "Ongemakkelijk gezicht"
+        },
+        {
+          "char": "D:",
+          "label": "Ontzet gezicht"
+        }
+      ]
+    },
+    {
       "id": "sad-kaomoji",
       "label": "Kaomoji",
       "h2": "Verdrietige kaomoji en tekstgezichtjes",
-      "intro": "Neergeslagen tekstgezichtjes in Japanse stijl die zuchten, inzakken en naar de grond staren.",
+      "intro": "Een paar neerslachtige Japanse tekstgezichten om mee te beginnen.",
       "symbols": [
         {
           "char": "(μ_μ)",
           "label": "Neergeslagen-ogen kaomoji"
         },
         {
-          "char": "(._.)",
-          "label": "Lege blik-kaomoji"
-        },
-        {
           "char": "(´。＿。｀)",
           "label": "Hangend hoofd-kaomoji"
-        },
-        {
-          "char": "(◞‸◟)",
-          "label": "Somber fronsen-kaomoji"
         },
         {
           "char": "( ´•︵•` )",
           "label": "Pruilend verdriet-kaomoji"
         },
         {
-          "char": "（ ｉдｉ ）",
-          "label": "Sombere tranen-kaomoji"
-        },
-        {
           "char": "(〒﹏〒)",
           "label": "Loodzwaar hart-kaomoji"
-        },
-        {
-          "char": "( ︶︿︶)",
-          "label": "Berustende zucht-kaomoji"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/nl/library/tekstgezichten-kaomoji/",
+        "text": "Alle kaomoji bekijken"
+      }
     }
   ],
   "collection_section": {
@@ -249,7 +345,7 @@
   "related": [
     {
       "href": "/nl/library/huil-emoji/",
-      "title": "Huil Emoji & Kaomoji",
+      "title": "Huil Emoji",
       "desc": "Echt huilen: 😭 tranen, jankende kaomoji en huilcombo's."
     },
     {

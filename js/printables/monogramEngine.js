@@ -139,6 +139,23 @@
     });
   }
 
+  /* Scale a row down, as one unit, when its letters would not fit the space.
+     The sizes below are fixed, and with three wide initials ("WWW", "MWM") the
+     row measured -19 to 418 in a 400-unit box: clipped on both sides in the
+     preview, the PNG and the PDF. Measured in viewBox units with the same
+     canvas as layoutRow(), so preview and export scale identically; rows that
+     already fit are returned unchanged. */
+  const ROW_MARGIN = 16;              // each side of the classic row
+  const CIRCLE_ROW_WIDTH = 290;       // inside the inner ring (r = 171)
+  function fitRow(items, avail, central) {
+    if (!items.length) return items;
+    const gap = central ? 8 : 10;
+    const total = items.reduce((t, it) => t + measure(it.ch, it.size), 0) + gap * (items.length - 1);
+    if (total <= avail) return items;
+    const k = avail / total;
+    return items.map((it) => ({ ch: it.ch, size: it.size * k }));
+  }
+
   // Classic three-letter: small · BIG center (~1.7x) · small, on one baseline.
   function buildClassic(svg, v) {
     const items = [];
@@ -146,9 +163,10 @@
     if (v.c) items.push({ ch: v.c, size: 196 });
     if (v.r) items.push({ ch: v.r, size: 116 });
     if (!items.length) return;
-    const maxSize = Math.max.apply(null, items.map((it) => it.size));
+    const fitted = fitRow(items, VB - 2 * ROW_MARGIN, false);
+    const maxSize = Math.max.apply(null, fitted.map((it) => it.size));
     const baselineY = 200 + maxSize * 0.36; // vertically centers the tallest cap
-    layoutRow(svg, items, baselineY, false);
+    layoutRow(svg, fitted, baselineY, false);
   }
 
   // Stacked: the provided initials stacked vertically, centered, tight leading.
@@ -173,7 +191,7 @@
     if (v.l) items.push({ ch: v.l, size: 78 });
     if (v.c) items.push({ ch: v.c, size: 132 });
     if (v.r) items.push({ ch: v.r, size: 78 });
-    layoutRow(svg, items, 200, true);
+    layoutRow(svg, fitRow(items, CIRCLE_ROW_WIDTH, true), 200, true);
   }
 
   function buildMonogramSVG() {
@@ -226,44 +244,11 @@
   // Playfair Display arrives asynchronously via the page's Google Fonts <link>.
   // Canvas measuring/drawing before it loads would use fallback metrics, so we
   // re-run `cb` once the face is ready.
-  /* The QR encoder has ONE owner, js/printables/qr.js, and it is pulled in by
-     the engine rather than tagged on the page -- the same ownership
-     printablesEngine's loadQrModule() uses, so a locale build of this page
-     gets it without a markup change. Only the PLACEMENT is per-engine, because
-     the geometry differs: this canvas is a square with free corners, while the
-     coloring and puzzle sheets are full-bleed and take a strip underneath. */
-  function loadQrModule() {
-    if (window.UltraTextGen && window.UltraTextGen.qr) return;
-    if (document.querySelector('script[data-pt-qr]')) return;
-    const sc = document.createElement("script");
-    sc.src = "/js/printables/qr.js";
-    sc.async = true;
-    sc.setAttribute("data-pt-qr", "");
-    sc.onerror = function () { console.warn("[monogram] js/printables/qr.js failed to load; the sheet carries the text credit only."); };
-    document.head.appendChild(sc);
-  }
-  function qrModule() { return (window.UltraTextGen && window.UltraTextGen.qr) || null; }
-
-  /* How many canvas pixels the QR box needs so the PRINTED symbol clears the
-     ~0.5mm per module a phone camera can resolve.
-
-     Derived from the symbol actually encoded, never from a guessed version.
-     That distinction is the whole point: this shipped sized for a 33-module
-     version-4 symbol, which is what the English URL encodes to, and the French
-     cross-stitch URL is longer and encodes to version 5 at 37 modules. It
-     measured 0.210 mm/module and would not have scanned, while the English
-     page looked fine. `quiet` is qr.js's own default 4-module margin each
-     side, which is part of the drawn box but not of the symbol. */
-  function qrBoxPx(qrNs, url, canvasPx, printWidthIn) {
-    var MM_PER_MODULE = 0.59;   // the figure the coloring sheets measured at
-    var QUIET = 4;
-    var sym = qrNs.encode(url);
-    var modules = sym ? sym.size : 45;             // fail safe: assume large
-    var symbolIn = modules * MM_PER_MODULE / 25.4;
-    var boxIn = symbolIn * (modules + QUIET * 2) / modules;
-    return Math.round(boxIn / printWidthIn * canvasPx);
-  }
-
+  /* A monogram carries no credit line and no QR code. It is a personal piece
+     (a gift, a wall print, a wedding detail), not a worksheet handed around a
+     classroom, so a link to this site printed on it is somebody else's
+     advertising on the visitor's own design. Every other printable keeps its
+     credit. */
 
   function whenFontReady(cb) {
     if (document.fonts && document.fonts.load) {
@@ -317,8 +302,9 @@
     if (v.c) items.push({ ch: v.c, size: 196 });
     if (v.r) items.push({ ch: v.r, size: 116 });
     if (!items.length) return;
-    const maxSize = Math.max.apply(null, items.map((it) => it.size));
-    drawRowCanvas(ctx, s, items, (200 + maxSize * 0.36) * s, false);
+    const fitted = fitRow(items, VB - 2 * ROW_MARGIN, false);
+    const maxSize = Math.max.apply(null, fitted.map((it) => it.size));
+    drawRowCanvas(ctx, s, fitted, (200 + maxSize * 0.36) * s, false);
   }
 
   function drawStackedCanvas(ctx, s, v) {
@@ -349,7 +335,7 @@
     if (v.l) items.push({ ch: v.l, size: 78 });
     if (v.c) items.push({ ch: v.c, size: 132 });
     if (v.r) items.push({ ch: v.r, size: 78 });
-    drawRowCanvas(ctx, s, items, 200 * s, true);
+    drawRowCanvas(ctx, s, fitRow(items, CIRCLE_ROW_WIDTH, true), 200 * s, true);
   }
 
   // The 1600x1600 canvas every export path draws: PNG download, image
@@ -378,31 +364,6 @@
         else if (state.layout === "circle") drawCircleCanvas(ctx, s, v);
         else drawClassicCanvas(ctx, s, v);
       }
-
-      /* Site credit with the page path, low contrast, in the bottom margin:
-         the same line printablesEngine and crossStitchEngine draw, read from
-         header.js so the three cannot drift. The QR beside it carries the same
-         URL, because a PNG cannot carry a link.
-
-         Sized by qrBoxPx() from the symbol this page's own URL encodes to,
-         against the ~6.5in this sheet prints at. Measured on a real export,
-         the largest clear bottom-right square is 420px, so the box fits. */
-      const qrNs = qrModule();
-      if (qrNs) {
-        const qrSize = qrBoxPx(qrNs, creditUrl(), size, 6.5);
-        const qrPad = Math.round(qrSize * 0.35);
-        qrNs.drawQrOnCanvas(ctx, creditUrl(), size - qrSize - qrPad, size - qrSize - qrPad, qrSize, {
-          // The TEXT credit is deliberately low-contrast; the QR must not be.
-          // Drawn in #aeb4c0 first, its darkest pixel measured 171/255 and no
-          // decoder could read it -- a faint QR looks exactly like a QR.
-          dark: INK,
-          light: "#ffffff"
-        });
-      }
-      ctx.font = "22px 'Plus Jakarta Sans', system-ui, sans-serif";
-      ctx.fillStyle = "#aeb4c0";
-      ctx.textAlign = "center";
-      ctx.fillText(siteCredit(), size / 2, size - 24);
 
       const slug = (v.l + v.c + v.r).toLowerCase() || "initials";
       cb(PP && PP.frameCanvas ? PP.frameCanvas(canvas, { title: moreTitle(), nameDate: moreLine() }) : canvas, slug);
@@ -530,15 +491,6 @@
     PP.rememberRecent({ href: presetUrl(), label: v.l + v.c + v.r || page, page: page, sheet: sheet });
     if (memory) memory.refresh();
   }
-
-  function siteCredit() {
-    if (window.UltraTextGen && window.UltraTextGen.printableCredit) return window.UltraTextGen.printableCredit();
-    return "ultratextgen.com";
-  }
-  // Same derivation printablesEngine uses, so the scanned URL and the printed
-  // line can never name different pages.
-  function creditUrl() { return "https://" + siteCredit() + "/"; }
-
 
   /* The sheet's "More" section (title + name-and-date line), the one every
      printables sheet offers. printPrefs.js owns the control, the strings and
@@ -668,7 +620,10 @@
   /* ---------- init ---------- */
 
   function init() {
-    loadQrModule();
+    /* Ctrl+P without Download PDF: hide the site chrome and say which button
+       prints the sheet. The note, its translations and the mount are
+       printPrefs.js's (the same ones printablesEngine.js uses). */
+    if (PP && PP.mountPrintNote) PP.mountPrintNote({ button: T.savePdf });
     wireInput("mono-left");
     wireInput("mono-center");
     wireInput("mono-right");

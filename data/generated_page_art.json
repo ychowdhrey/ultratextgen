@@ -416,6 +416,110 @@
       ],
       "kicker": "LIB",
       "added": "2026-10-02"
+    },
+    "fr-library-emoji-soleil-et-lune": {
+      "title": "Emoji soleil et lune",
+      "sub": "Soleil, phases de la lune, étoiles et comètes à copier.",
+      "glyphs": [
+        "🌑",
+        "🌒",
+        "🌓",
+        "🌔",
+        "🌕"
+      ],
+      "kicker": "LIB",
+      "added": "2026-10-03"
+    },
+    "ko-library-gangaji-imotikon": {
+      "title": "강아지 이모티콘",
+      "sub": "U・ᴥ・U ໒(＾ᴥ＾)七 ∪・ω・∪: 처진 귀와 코가 있는 강아지 얼굴 문자. 누르면 바로 복사됩니다.",
+      "glyphs": [
+        "໒(＾ᴥ＾)七",
+        "∪・ω・∪",
+        "U・ᴥ・U",
+        "▼・ᴥ・▼",
+        "(◕ᴥ◕ʋ)"
+      ],
+      "kicker": "LIB",
+      "added": "2026-10-06"
+    },
+    "ko-library-jaesaeng-ba-imotikon": {
+      "title": "노래 재생 바 이모티콘",
+      "sub": "완성된 재생 바, 재생·일시정지·다음 곡 버튼, 전원 기호까지. 누르면 바로 복사됩니다.",
+      "glyphs": [
+        "0:42 ━━━━●────── 3:15",
+        "1:05 ━━━━━━⚪──── 3:30",
+        "─────⚪──────",
+        "⇆ ◁ ❚❚ ▷ ↻",
+        "◁◁ ▷ ▷▷"
+      ],
+      "kicker": "LIB",
+      "added": "2026-10-06"
+    },
+    "ko-library-saengil-chukha-imotikon": {
+      "title": "생일 축하 이모티콘",
+      "sub": "케이크, 풍선, 폭죽, 건배까지. 생일과 축하 메시지에 쓸 이모지를 눌러 바로 복사하세요.",
+      "glyphs": [
+        "🎂",
+        "🧁",
+        "🍰",
+        "🕯",
+        "🍬"
+      ],
+      "kicker": "LIB",
+      "added": "2026-10-06"
+    },
+    "ko-library-ribon-teuksu-munja": {
+      "title": "리본 특수 문자",
+      "sub": "🎀 리본 이모지와 ୨୧ ʚɞ 같은 리본 모양 문자. 누르면 바로 복사됩니다.",
+      "glyphs": [
+        "🎀",
+        "୨୧",
+        "ʚɞ",
+        "⊰",
+        "⊱"
+      ],
+      "kicker": "LIB",
+      "added": "2026-10-06"
+    },
+    "ko-library-yeongeo-bareum-giho": {
+      "title": "영어 발음기호",
+      "sub": "영어사전 대괄호 [ ] 안의 기호를 예시 단어와 함께 정리했습니다. 누르면 바로 복사됩니다.",
+      "glyphs": [
+        "ə",
+        "ɪ",
+        "ɛ",
+        "æ",
+        "ʌ"
+      ],
+      "kicker": "LIB",
+      "added": "2026-10-06"
+    },
+    "ko-library-setak-giho": {
+      "title": "세탁 기호",
+      "sub": "세탁, 표백, 건조, 다림질, 금지 표시. 각 표시의 뜻과 가장 비슷한 문자를 눌러 복사하세요.",
+      "glyphs": [
+        "🧺",
+        "🧼",
+        "🧴",
+        "💧",
+        "🚿"
+      ],
+      "kicker": "LIB",
+      "added": "2026-10-06"
+    },
+    "pl-library-emoji-urodzinowe": {
+      "title": "Emoji Urodzinowe",
+      "sub": "Tort, balony, konfetti i toasty do życzeń",
+      "glyphs": [
+        "🎂",
+        "🧁",
+        "🍰",
+        "🕯",
+        "🍬"
+      ],
+      "kicker": "LIB",
+      "added": "2026-10-08"
     }
   }
 }

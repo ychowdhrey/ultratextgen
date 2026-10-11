@@ -1,7 +1,7 @@
 {
   "slug": "uyari-sembolleri",
   "copy_pattern": "single",
-  "title": "Uyarı Sembolleri ⚠ ☢ ☣ — Kopyala Yapıştır Tehlike İşaretleri | UltraTextGen",
+  "title": "Uyarı Sembolleri ⚠ ☢ ☣ — Kopyala Yapıştır Tehlike İşaretleri",
   "meta_description": "Uyarı sembolleri kopyala yapıştır: ⚠ dikkat, ☢ radyoaktif, ☣ biyolojik tehlike, ⚡ yüksek voltaj, 🚫 yasak işaretleri. Kopyalamak için tıkla.",
   "hero_h1": "Uyarı ve Tehlike Sembolleri",
   "breadcrumb": "Uyarı Sembolleri",
@@ -97,6 +97,26 @@
       ]
     },
     {
+      "id": "chemical-hazard",
+      "label": "Kimyasal Tehlike",
+      "h2": "Kimyasal Tehlike Sembolleri: Yakıcı, Yanıcı, Patlayıcı",
+      "intro": "Kimyasal tehlike işaretleri (GHS piktogramları) çizimdir ve Unicode’da karşılıkları yok; kopyalanacak bir yakıcı, aşındırıcı ya da zararlı madde sembolü karakteri bulunmuyor. En yakın karakterler aşağıda: alev yanıcı ve yakıcı (oksitleyici) maddeyi, patlama patlayıcıyı, deney tüpü genel olarak kimyasalı anlatır. Zehirli madde için yukarıdaki ☠, zararlı madde için ❗ en yakın karakterdir. Etiketi resmî olarak basacaksan mevzuattaki piktogramı kullan.",
+      "symbols": [
+        {
+          "char": "🔥",
+          "label": "Alev (Yanıcı, Yakıcı)"
+        },
+        {
+          "char": "💥",
+          "label": "Patlama (Patlayıcı)"
+        },
+        {
+          "char": "🧪",
+          "label": "Deney Tüpü (Kimyasal Madde)"
+        }
+      ]
+    },
+    {
       "id": "no-sign",
       "label": "Yasak İşaretleri",
       "h2": "Yasak ve Girilmez İşaretleri",
@@ -154,7 +174,7 @@
   "page_type": "library",
   "canonical": "https://ultratextgen.com/tr/library/uyari-sembolleri/",
   "date_published": "2026-08-15",
-  "date_modified": "2026-08-15",
+  "date_modified": "2026-10-10",
   "hreflang": [
     {
       "lang": "en",

@@ -63,6 +63,26 @@ deliberate imperfections — that lowers a metric and lowers the page.
 to lower a score.** The SEO Preservation Gate blocks exactly that, and it has
 blocked its own author here.
 
+## A limitation is a feature brief, not a disclaimer
+
+When copy has to admit something the site cannot know or control (a platform's
+unpublished rules, a filter that changes, device rendering), **state it once as a
+plain fact, then say what the site does about it**: the checker, the report button,
+the measurement, the fallback.
+
+- **Never end on an instruction the reader carries out alone** ("check before you
+  spend", "results may vary", "try another if it fails") when a mechanism exists or
+  could. If none exists, the limitation is a product brief: raise it.
+- **Never name a mechanism that is not live on that page**, and point at it where it
+  actually is (above or below).
+- **Owning a limit never upgrades a claim.** "We track it from player reports" is
+  true; "these characters work" was not.
+- **Where a wrong answer costs money, an account or a ban**, the conservative rule
+  stays visible beside the feature.
+
+The owner decision and the Free Fire case behind it:
+`docs/decisions/limitations-become-features.md`.
+
 ## Do not paste a sentence between page specs
 
 Page copy is hand-written once per spec. `npm run check:spec-sentence-reuse` fails

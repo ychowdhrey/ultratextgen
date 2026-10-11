@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Stylish Text & Fancy Fonts — Cool Font Generator (Copy-Paste)",
-    "description": "Gawing stylish ang text mo — fancy fonts, cool na letra & aesthetic symbols para sa FB & IG bio, TikTok caption, WhatsApp status, at name style sa Mobile Legends & Free Fire. Copy-paste, libre, walang sign up."
+    "description": "Gawing stylish ang text mo: fancy fonts, cool na letra at aesthetic symbols para sa FB & IG bio, TikTok, Mobile Legends at Free Fire. Libreng copy-paste."
   },
   "hero": {
     "title": "Stylish Text & Fancy Fonts",
@@ -233,6 +233,11 @@
       "renderFailed": "Hindi nagawa ang larawan. Subukan ulit.",
       "trayLabel": "Pagpili para sa larawan",
       "setUnavailable": "Hindi pa maidaragdag ang set na ito sa larawan."
+    },
+    "symbolLook": {
+      "plain": "Kopyahin ang simpleng bersyon",
+      "emoji": "Kopyahin ang emoji na bersyon",
+      "note": "May mga app na nagpapakita pa rin nito nang may kulay."
     }
   },
   "useCases": {

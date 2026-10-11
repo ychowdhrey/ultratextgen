@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Tekstgenerator - 88 Unicode-skrifttyper (kopier og lim inn)",
-    "description": "Gjør vanlig tekst om til kul tekst med 88 Unicode-skrifttyper: fet skrift, kursiv tekst, håndskrift, gotisk, bobler, små bokstaver, aesthetic, opp ned og Zalgo. Kopier til Instagram-bio, TikTok, Discord, LinkedIn og WhatsApp. Gratis, raskt og uten konto."
+    "description": "Gjør vanlig tekst om til kul tekst med 88 Unicode-skrifttyper: fet skrift, kursiv tekst, håndskrift, gotisk, bobler, små bokstaver, aesthetic, opp ned og Zalgo."
   },
   "hero": {
     "title": "Tekstgenerator for kule skrifttyper",
@@ -157,6 +157,11 @@
       "renderFailed": "Kunne ikke lage bildet. Prøv igjen.",
       "trayLabel": "Bildeutvalg",
       "setUnavailable": "Dette settet kan ikke legges i et bilde ennå."
+    },
+    "symbolLook": {
+      "plain": "Kopier vanlig versjon",
+      "emoji": "Kopier emoji-versjon",
+      "note": "Noen apper viser symbolet i farger likevel."
     }
   },
   "useCases": {

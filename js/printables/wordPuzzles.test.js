@@ -341,6 +341,14 @@ const CLUED = [
   eq(s.words[0].letters.length, 8, "scramble: the space is not a letter");
 }
 
+/* 20a. Spanish grids fold accents but keep Ñ (fold "es"), matching wordSearch.js */
+{
+  const c = CW.build({ input: "niño = Un chico\naño = Doce meses\ncanción = Se canta\npingüino = Ave del frío", seed: "es", fold: "es" });
+  ok(c.words.every((w) => !/[ÁÉÍÓÚÜ]/.test(w.key)), "crossword fold es: no accented vowel in a grid form");
+  ok(c.words.some((w) => w.key === "NIÑO") || c.unplaced.some((w) => w.key === "NIÑO"), "crossword fold es: Ñ kept in the grid form");
+  ok(c.words.concat(c.unplaced).some((w) => w.display === "canción"), "crossword fold es: the display keeps its accent");
+}
+
 /* 20b. French grids are unaccented when the page asks (fold) */
 {
   // ÉLÈVE and TÊTE share an E only once the marks are gone, which is why
@@ -370,6 +378,13 @@ const CLUED = [
   for (let i = 0; i < 60; i++) many.push("word" + i);
   eq(SC.build({ input: many.join("\n"), seed: "x" }).words.length <= SC.MAX_WORDS, true,
      "scramble: the list cap is enforced");
+}
+
+/* 22. German crosswords spell umlauts and ß out (fold "de") */
+{
+  const c = CW.build({ input: "Bär = Großes Tier\nStraße = Hier fahren Autos\nKäse = Aus Milch\nÜbung = Macht den Meister", seed: "de", fold: "de" });
+  const letters = c.words.filter((w) => w.placed).map((w) => w.letters.join("")).sort().join(" ");
+  ok(/BAER/.test(letters) && !/[ÄÖÜß]/.test(letters), "crossword fold de: " + letters);
 }
 
 console.log("\nwordPuzzles.test.js — " + pass + " passed, " + fail + " failed");

@@ -1,10 +1,10 @@
 {
   "slug": "emoji-marah",
-  "title": "Emoji Marah 😡 🤬 — Salin & Tempel Kaomoji Gebrak Meja | UltraTextGen",
-  "meta_description": "Emoji marah 😡 🤬 😤, kombinasi ngamuk siap pakai, dan kaomoji gebrak meja (╯°□°）╯︵ ┻━┻ buat ngeluapin kesel di chat dan kolom komentar. Klik simbolnya, langsung kesalin.",
+  "title": "Emoji Marah 😡 🤬: Salin & Tempel Muka Marah & Emotikon | UltraTextGen",
+  "meta_description": "Emoji marah 😡 🤬 😤, emotikon kayak >:(, kombinasi ngamuk siap pakai, dan beberapa kaomoji termasuk gebrak meja (╯°□°）╯︵ ┻━┻ buat ngeluapin kesel di chat dan kolom komentar.",
   "breadcrumb": "Emoji Marah",
-  "hero_h1": "Emoji Marah & Kaomoji",
-  "hero_tagline": "Muka merah padam, asap, api, dan kaomoji gebrak meja yang legendaris — marah di segala tingkat. Klik simbolnya, langsung kesalin.",
+  "hero_h1": "Emoji Marah",
+  "hero_tagline": "Muka merah padam, asap, api, >:( yang diketik, dan beberapa kaomoji termasuk gebrak meja yang legendaris: marah di segala tingkat. Klik simbolnya, langsung kesalin.",
   "intro": "Skala emoji marah jalan dari 😠 yang cuma manyun sampai 🤬 yang mulutnya udah disensor — dan kalau emoji aja belum cukup, masih ada kaomoji gebrak meja (╯°□°）╯︵ ┻━┻. Halaman ini ngumpulin semua muka marah, simbol api dan ledakan yang mengubah keluhan biasa jadi postingan ngamuk, muka males dan muter bola mata buat kesel tingkat rendah, plus kombinasi marah sekali klik buat chat, komentar, dan momen tilt pas main game.",
   "copy_pattern": "collection",
   "sections": [
@@ -117,22 +117,50 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emotikon",
+      "h2": "Emotikon Teks Marah",
+      "intro": "Versi keyboard dari muka marah, dirakit dari tanda baca. Tempelnya jadi teks biasa, jadi tetap muncul walau emoji nggak kebaca.",
+      "symbols": [
+        {
+          "char": ">:(",
+          "label": "Emotikon Muka Marah"
+        },
+        {
+          "char": ">:-(",
+          "label": "Emotikon Muka Marah Berhidung"
+        },
+        {
+          "char": ">:[",
+          "label": "Emotikon Cemberut Galak"
+        },
+        {
+          "char": "D:<",
+          "label": "Emotikon Teriak Ngamuk"
+        },
+        {
+          "char": ">:O",
+          "label": "Emotikon Membentak"
+        },
+        {
+          "char": ":@",
+          "label": "Emotikon Naik Pitam"
+        },
+        {
+          "char": ">:|",
+          "label": "Emotikon Menahan Amarah"
+        }
+      ]
+    },
+    {
       "id": "rage-kaomoji",
       "label": "Kaomoji",
       "h2": "Kaomoji Ngamuk & Gebrak Meja",
-      "intro": "Gebrakan meja, tatapan tajam, dan geraman khas wajah teks marah.",
+      "intro": "Empat favorit, dari tatapan sinis sampai gebrak meja beneran.",
       "symbols": [
         {
           "char": "(╯°□°）╯︵ ┻━┻",
           "label": "Kaomoji Gebrak Meja"
-        },
-        {
-          "char": "(┛◉Д◉)┛彡┻━┻",
-          "label": "Kaomoji Gebrak Meja Murka"
-        },
-        {
-          "char": "┬─┬ノ( º _ ºノ)",
-          "label": "Kaomoji Balikin Mejanya"
         },
         {
           "char": "(╬ Ò﹏Ó)",
@@ -143,22 +171,14 @@
           "label": "Kaomoji Teriak Ngamuk"
         },
         {
-          "char": "(ﾉಥ益ಥ)ﾉ ┻━┻",
-          "label": "Kaomoji Gebrak Meja Sambil Nangis"
-        },
-        {
           "char": "(¬_¬)",
           "label": "Kaomoji Tatapan Sinis"
-        },
-        {
-          "char": "(≖_≖ )",
-          "label": "Kaomoji Tatapan Curiga"
-        },
-        {
-          "char": "(｀ﾍ´)",
-          "label": "Kaomoji Ngedumel"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/id/library/kaomoji/",
+        "text": "Lihat semua kaomoji"
+      }
     }
   ],
   "collection_section": {
@@ -297,7 +317,7 @@
   ],
   "canonical": "https://ultratextgen.com/id/library/emoji-marah/",
   "date_published": "2026-08-08",
-  "date_modified": "2026-08-08",
+  "date_modified": "2026-10-09",
   "lang": "id",
   "page_type": "library",
   "faq_label": "FAQ",

@@ -1,8 +1,8 @@
 {
   "slug": "kaomoji",
   "lang": "fr",
-  "title": "Kaomoji : Copier-coller de visages textuels japonais (mignon, chat, amour)",
-  "meta_description": "Copiez-collez des kaomoji — des visages textuels japonais faits de caractères Unicode. Parcourez par humeur : mignon, joyeux, triste, amour et chat. Cliquez pour copier.",
+  "title": "Kaomoji : Copier-coller de visages textuels japonais",
+  "meta_description": "Copiez-collez des kaomoji — des visages textuels japonais faits de caractères Unicode. Parcourez par humeur : mignon, joyeux, triste, amour et chat.",
   "breadcrumb": "Kaomoji",
   "hero_h1": "Kaomoji",
   "hero_tagline": "Copiez et collez des kaomoji — des visages textuels japonais pour chaque humeur. Cliquez sur un visage pour le copier aussitôt.",
@@ -258,6 +258,46 @@
         {
           "char": "(=^◡^=)",
           "label": "Chat Souriant"
+        }
+      ]
+    },
+    {
+      "id": "birds",
+      "label": "Oiseaux",
+      "h2": "Kaomoji oiseaux",
+      "intro": "La plupart des kaomoji oiseaux utilisent la lettre grecque thêta (Θ ou θ) comme bec, d'où le caractère central commun aux visages ci-dessous. ⊝ dessine un bec plus rond qui évoque un manchot, ▼ un bec pointu.",
+      "symbols": [
+        {
+          "char": "(・Θ・)",
+          "label": "Poussin"
+        },
+        {
+          "char": "(･θ･)",
+          "label": "Petit Oiseau"
+        },
+        {
+          "char": "(◉Θ◉)",
+          "label": "Oiseau aux Grands Yeux"
+        },
+        {
+          "char": "＼( ˋ Θ ´ )／",
+          "label": "Ailes qui Battent"
+        },
+        {
+          "char": "(￣Θ￣)",
+          "label": "Oiseau Blasé"
+        },
+        {
+          "char": "（・⊝・）",
+          "label": "Manchot"
+        },
+        {
+          "char": "◎▼◎",
+          "label": "Hibou"
+        },
+        {
+          "char": "(`･Θ･´)",
+          "label": "Poussin Grognon"
         }
       ]
     }

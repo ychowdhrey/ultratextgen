@@ -1,7 +1,7 @@
 {
   "slug": "emojis-iphone",
   "title": "Emojis iPhone 🍎 — Copiar y Pegar Emojis de Apple | UltraTextGen",
-  "meta_description": "Emojis de iPhone para copiar y pegar: caritas, corazones, manos y los emojis que se reconocen al instante como Apple. Clic para copiar — y por qué en Android cambian.",
+  "meta_description": "Emojis de iPhone para copiar y pegar: caritas, corazones, manos y los emojis que se reconocen como Apple. Clic para copiar, y por qué en Android cambian.",
   "breadcrumb": "Emojis iPhone",
   "hero_h1": "Emojis iPhone",
   "hero_tagline": "Los emojis tal y como los dibuja Apple: caras, corazones, gestos y los que delatan que es un iPhone.",
@@ -40,7 +40,7 @@
         },
         {
           "char": "😎",
-          "label": "Cara con Gafas de Sol"
+          "label": "Cara con Lentes de Sol"
         },
         {
           "char": "🤔",
@@ -300,7 +300,7 @@
       "a": "Porque Android los dibuja con el conjunto de Google en lugar del de Apple. El mensaje es idéntico, la ilustración no. No es un fallo ni un carácter equivocado."
     },
     {
-      "q": "¿Puedo copiar emojis de iPhone desde un ordenador o un Android?",
+      "q": "¿Puedo copiar emojis de iPhone desde una computadora o un Android?",
       "a": "Sí. Aquí se copia el carácter, no una imagen — funciona en cualquier sitio. En el dispositivo de quien lo recibe aparecerá con el estilo de ese dispositivo."
     },
     {
@@ -315,7 +315,7 @@
   "editorial_sections": [
     {
       "h2": "iPhone y Android: el Mismo Emoji, Distinto Dibujo",
-      "body": "Cuando envías 😂 desde un iPhone no mandas una imagen, sino un código Unicode: U+1F602. El teléfono que lo recibe lo dibuja con su propio conjunto — Apple, Google, Samsung o WhatsApp. Por eso cambia el aspecto y no el significado. Lo único que se rompe de verdad es un emoji demasiado nuevo para el sistema de quien lo recibe: entonces sale un cuadrado, y basta con actualizar."
+      "body": "Cuando envías 😂 desde un iPhone no mandas una imagen, sino un código Unicode: U+1F602. El teléfono que lo recibe lo dibuja con su propio conjunto: Apple, Google, Samsung o WhatsApp. Por eso cambia el aspecto y no el significado. Lo único que se rompe de verdad es un emoji demasiado nuevo para el sistema de quien lo recibe: entonces sale un cuadrado, y basta con actualizar."
     }
   ],
   "related": [

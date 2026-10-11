@@ -288,6 +288,11 @@
     // get an English "Share" sitting under localized prose, which is the exact
     // defect i18n.js's own comment records for the shadow locales.
     if (o.label) btn.dataset.shareLabel = String(o.label);
+    // The same for what the button says after it copies the link (no native
+    // share sheet) or fails to: without these a Korean library page confirmed
+    // the copy in English.
+    if (o.linkCopied) btn.dataset.shareCopied = String(o.linkCopied);
+    if (o.failedLabel) btn.dataset.shareFailed = String(o.failedLabel);
     if (o.params && typeof o.params === "object") {
       try {
         btn.dataset.shareParams = JSON.stringify(o.params);
@@ -296,9 +301,18 @@
       }
     }
     if (o.disabled) btn.disabled = true;
-    btn.title = uiText("shareResult.title", "Share this result — the link opens with your text in this style");
-    btn.setAttribute("aria-label",
-      uiText("shareResult.ariaLabel", "Share {style} result").replace("{style}", o.name || ""));
+    /* A caller-supplied label means the page translates its own buttons and
+       has no i18n.js strings: the English sentence below would then be read
+       out under a localized visible label ("Share 기쁘고 … result" beside
+       "공유"), failing label-in-name. Build the name and tooltip from the
+       label the visitor actually sees instead. */
+    const ownLabel = o.label && !(window.UTG_I18N && window.UTG_I18N.ui);
+    btn.title = ownLabel
+      ? String(o.label)
+      : uiText("shareResult.title", "Share this result — the link opens with your text in this style");
+    btn.setAttribute("aria-label", ownLabel
+      ? String(o.label) + (o.name ? ": " + o.name : "")
+      : uiText("shareResult.ariaLabel", "Share {style} result").replace("{style}", o.name || ""));
     // `icon: "link"` changes the picture only, never the action: the button
     // still runs shareCreation (native sheet, else copy the link).
     btn.innerHTML = (o.icon === "link" ? LINK_ICON_SVG : SHARE_ICON_SVG) + '<span class="share-result-label"></span>';
@@ -326,28 +340,12 @@
 
     const SIZE = 1080;
     const PAD = 120;
+    const BAND = 90; // the caption + cred band at the foot of the card
     const canvas = document.createElement("canvas");
     canvas.width = SIZE;
     canvas.height = SIZE;
     const ctx = canvas.getContext("2d");
     if (!ctx) return null;
-
-    // Panel: off-white ground, faint dot grid, brand gradient bar up top.
-    ctx.fillStyle = "#faf9f7";
-    ctx.fillRect(0, 0, SIZE, SIZE);
-    ctx.fillStyle = "rgba(99, 102, 241, 0.10)";
-    for (let y = 60; y < SIZE; y += 48) {
-      for (let x = 60; x < SIZE; x += 48) {
-        ctx.beginPath();
-        ctx.arc(x, y, 2, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
-    const grad = ctx.createLinearGradient(0, 0, SIZE, 0);
-    grad.addColorStop(0, "#7c3aed");
-    grad.addColorStop(1, "#2563eb");
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, SIZE, 14);
 
     // Combining-mark-heavy text (zalgo) needs tall lines and head/footroom so
     // the stacks don't collide with the frame; everything else sits tighter.
@@ -360,31 +358,36 @@
     const lineFactor = marky ? 2.6 : 1.35;
     const family = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", sans-serif';
     const maxW = SIZE - PAD * 2;
-    const maxH = SIZE - PAD * 2 - 90; // reserve the cred line's band
+    const maxH = SIZE - PAD * 2 - BAND;
 
-    // Fit: shrink until the wrapped block fits both axes. Wrapping is
-    // word-first with a raw-slice fallback for unbroken runs (usernames).
-    let fontSize = 120;
-    let lines = [];
-    while (fontSize >= 26) {
-      ctx.font = fontSize + "px " + family;
-      lines = [];
-      const paragraphs = text.split("\n");
-      for (const para of paragraphs) {
+    // Split into user-perceived characters, so a fallback break never parts
+    // a combining mark, a skin tone or a ZWJ sequence from its base.
+    const graphemes = (str) => {
+      if (typeof Intl !== "undefined" && Intl.Segmenter) {
+        return Array.from(new Intl.Segmenter(undefined, { granularity: "grapheme" }).segment(str), (g) => g.segment);
+      }
+      return Array.from(str);
+    };
+
+    // Wrap word-first with a per-character fallback for unbroken runs
+    // (usernames, vertical text) at the font size currently set on ctx.
+    const wrap = () => {
+      const out = [];
+      for (const para of text.split("\n")) {
         let line = "";
         for (const word of para.split(" ")) {
           const probe = line ? line + " " + word : word;
           if (ctx.measureText(probe).width <= maxW) {
             line = probe;
           } else {
-            if (line) lines.push(line);
+            if (line) out.push(line);
             if (ctx.measureText(word).width <= maxW) {
               line = word;
             } else {
               let chunk = "";
-              for (const ch of word) {
+              for (const ch of graphemes(word)) {
                 if (ctx.measureText(chunk + ch).width > maxW && chunk) {
-                  lines.push(chunk);
+                  out.push(chunk);
                   chunk = ch;
                 } else {
                   chunk += ch;
@@ -394,20 +397,57 @@
             }
           }
         }
-        lines.push(line);
+        out.push(line);
       }
-      if (lines.length * fontSize * lineFactor <= maxH || fontSize === 26) break;
-      fontSize -= 6;
+      return out;
+    };
+
+    // Fit: shrink until the wrapped block fits both axes, down to a floor
+    // that is still legible on the card. The old loop stepped 120, 114 … 30,
+    // 24 against a `=== 26` exit it could never hit, so it ended at 24 with
+    // lines measured at 30, and a tall result ran off the top and bottom.
+    const MIN_FONT = 20;
+    let fontSize = 120;
+    let lines = [];
+    for (;;) {
+      ctx.font = fontSize + "px " + family;
+      lines = wrap();
+      if (lines.length * fontSize * lineFactor <= maxH || fontSize === MIN_FONT) break;
+      fontSize = Math.max(MIN_FONT, fontSize - 6);
     }
 
+    // Still too tall at the floor (a long vertical-text result, a deep zalgo
+    // stack): grow the card downward instead of cropping the creation.
+    const lineH = fontSize * lineFactor;
+    const blockH = lines.length * lineH;
+    const H = Math.min(32000, Math.max(SIZE, Math.ceil(blockH + PAD * 2 + BAND)));
+    if (H !== SIZE) canvas.height = H; // resets the context, so paint after this
+
+    // Panel: off-white ground, faint dot grid, brand gradient bar up top.
+    ctx.fillStyle = "#faf9f7";
+    ctx.fillRect(0, 0, SIZE, H);
+    ctx.fillStyle = "rgba(99, 102, 241, 0.10)";
+    for (let y = 60; y < H; y += 48) {
+      for (let x = 60; x < SIZE; x += 48) {
+        ctx.beginPath();
+        ctx.arc(x, y, 2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    const grad = ctx.createLinearGradient(0, 0, SIZE, 0);
+    grad.addColorStop(0, "#7c3aed");
+    grad.addColorStop(1, "#2563eb");
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, SIZE, 14);
+
+    ctx.font = fontSize + "px " + family;
     ctx.fillStyle = "#1a1d27";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    const blockH = lines.length * fontSize * lineFactor;
-    let y = (SIZE - 90) / 2 - blockH / 2 + (fontSize * lineFactor) / 2;
+    let y = Math.max(PAD, (H - BAND) / 2 - blockH / 2) + lineH / 2;
     for (const line of lines) {
       ctx.fillText(line, SIZE / 2, y);
-      y += fontSize * lineFactor;
+      y += lineH;
     }
 
     // Style caption + cred line. The cred sits on the card, never in the
@@ -415,11 +455,11 @@
     if (c.name) {
       ctx.font = '28px ' + family;
       ctx.fillStyle = "#6b7280";
-      ctx.fillText(String(c.name), SIZE / 2, SIZE - 118);
+      ctx.fillText(String(c.name), SIZE / 2, H - 118);
     }
     ctx.font = '30px ' + family;
     ctx.fillStyle = "#9ca3af";
-    ctx.fillText("ultratextgen.com", SIZE / 2, SIZE - 64);
+    ctx.fillText("ultratextgen.com", SIZE / 2, H - 64);
     return canvas;
   };
 
@@ -903,20 +943,23 @@
     if (!card) return;
     sharedCardRevealed = true;
     setTimeout(() => {
-      // A rerender (e.g. the async i18n pass) can replace the grid before this
-      // fires — release the flag so the next render retries the reveal.
-      if (!card.isConnected) {
+      // A rerender (e.g. the async i18n pass on locale pages) can replace the
+      // card before this fires. That rerender called this function too, but
+      // returned early on the flag, so reveal the card that is in the page
+      // now; release the flag only if there is none yet.
+      const target = card.isConnected ? card : $(".style-card.is-shared", document);
+      if (!target) {
         sharedCardRevealed = false;
         return;
       }
-      const rect = card.getBoundingClientRect();
+      const rect = target.getBoundingClientRect();
       const viewportH = window.innerHeight || document.documentElement.clientHeight;
       const fullyVisible = rect.top >= 0 && rect.bottom <= viewportH;
-      if (!fullyVisible && card.scrollIntoView) {
-        card.scrollIntoView({ block: "center", behavior: "smooth" });
+      if (!fullyVisible && target.scrollIntoView) {
+        target.scrollIntoView({ block: "center", behavior: "smooth" });
       }
-      card.classList.add("shared-reveal");
-      setTimeout(() => card.classList.remove("shared-reveal"), 2400);
+      target.classList.add("shared-reveal");
+      setTimeout(() => target.classList.remove("shared-reveal"), 2400);
     }, 150);
   };
 document.addEventListener("click", async (e) => {
@@ -959,14 +1002,14 @@ document.addEventListener("click", async (e) => {
   const label = $(".share-result-label", btn);
   if (outcome === "copied") {
     btn.classList.add("copied");
-    if (label) label.textContent = uiText("shareResult.linkCopied", "Link copied");
+    if (label) label.textContent = btn.dataset.shareCopied || uiText("shareResult.linkCopied", "Link copied");
     setTimeout(() => {
       btn.classList.remove("copied");
       if (label && label.isConnected) label.textContent = btn.dataset.shareLabel || uiText("shareResult.label", "Share");
     }, 1500);
   } else if (outcome === "failed") {
     btn.classList.add("share-error");
-    if (label) label.textContent = uiText("copyButtons.failed", "✗ Failed");
+    if (label) label.textContent = btn.dataset.shareFailed || uiText("copyButtons.failed", "✗ Failed");
     setTimeout(() => {
       btn.classList.remove("share-error");
       if (label && label.isConnected) label.textContent = btn.dataset.shareLabel || uiText("shareResult.label", "Share");

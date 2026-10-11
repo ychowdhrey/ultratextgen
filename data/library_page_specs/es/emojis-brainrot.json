@@ -42,7 +42,7 @@
     },
     {
      "char": "😎",
-     "label": "Cara sonriente con gafas de sol"
+     "label": "Cara sonriente con lentes de sol"
     },
     {
      "char": "🐺",
@@ -167,6 +167,66 @@
     {
      "char": "📉",
      "label": "Gráfica bajando"
+    }
+   ]
+  },
+  {
+   "id": "slay-serve",
+   "label": "Arrasando",
+   "h2": "Emojis de Slay",
+   "intro": "💅 es el emoji del slay: impecable, sin inmutarse, misión cumplida. 💁‍♀️ con su gesto de melena y ✨ transmiten la misma energía cuando alguien la rompió.",
+   "symbols": [
+    {
+     "char": "💅",
+     "label": "Esmalte de uñas"
+    },
+    {
+     "char": "💁‍♀️",
+     "label": "Mujer con gesto de melena"
+    },
+    {
+     "char": "💁",
+     "label": "Persona con gesto de melena"
+    },
+    {
+     "char": "✨",
+     "label": "Destellos"
+    },
+    {
+     "char": "💄",
+     "label": "Labial"
+    }
+   ]
+  },
+  {
+   "id": "slay-combos",
+   "label": "Combos de slay",
+   "h2": "Combos de emojis de slay",
+   "intro": "Respuestas de slay listas para un outfit, un glow-up o una buena contestación. Cada botón copia el combo completo.",
+   "symbols": [
+    {
+     "char": "💅✨",
+     "label": "Arrasando"
+    },
+    {
+     "char": "👑💅",
+     "label": "Actitud de reina"
+    },
+    {
+     "char": "💁‍♀️✨",
+     "label": "Movimiento de melena"
+    },
+    {
+     "char": "🔥💅🔥",
+     "label": "La rompió"
+    },
+    {
+     "char": "💅👑✨",
+     "label": "Sirviendo"
+    },
+    {
+     "char": "💁‍♀️💅",
+     "label": "Sin inmutarse"
     }
    ]
   },

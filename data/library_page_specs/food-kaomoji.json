@@ -1,0 +1,196 @@
+{
+  "slug": "food-kaomoji",
+  "title": "Food Kaomoji (っ˘ڡ˘ς): Copy & Paste Eating Text Faces",
+  "meta_description": "Copy and paste food kaomoji: tasty faces (っ˘ڡ˘ς), noodle slurping 🍜, tea with 旦, coffee c[_], boba 🧋, itadakimasu (人´∀｀) and hungry faces waiting for dinner.",
+  "canonical": "https://ultratextgen.com/library/food-kaomoji/",
+  "breadcrumb": "Food Kaomoji",
+  "hero_h1": "Food Kaomoji",
+  "hero_tagline": "Faces eating noodles and rice, sipping tea or boba, cooking and waiting hungrily for the next meal. Tap a face and paste it under your food photo.",
+  "intro": "Food kaomoji lean on a few characters that have taken on a food meaning in Japanese text art. ڡ, an Arabic letter, sits in the mouth like a tongue licking the lips, so (っ˘ڡ˘ς) reads as yum. 旦, a kanji meaning dawn, looks like a cup on a saucer and is the standard teacup in kaomoji. ♨ is the hot-springs sign, used for anything steaming hot, and c[_] is a coffee mug with its handle on the left. People post these under meal photos, in group chats planning dinner and when announcing that they are hungry. The food itself as pictures, from 🍜 to 🧋, is on the food and drink emoji page linked below.",
+  "date_published": "2026-10-08",
+  "date_modified": "2026-10-08",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "yummy",
+      "label": "Yummy",
+      "h2": "Yummy and Tasty Faces",
+      "intro": "The tongue ڡ or a happy chewing mouth: the face for a dish that hit the spot.",
+      "symbols": [
+        {
+          "char": "(っ˘ڡ˘ς)",
+          "label": "Yummy"
+        },
+        {
+          "char": "(＾ڡ＾)",
+          "label": "Licking Lips"
+        },
+        {
+          "char": "( ˘ڡ˘ )",
+          "label": "Savoring a Bite"
+        },
+        {
+          "char": "(*´ч`*)",
+          "label": "Happy Chewing"
+        },
+        {
+          "char": "(人´∀｀)",
+          "label": "Itadakimasu"
+        }
+      ]
+    },
+    {
+      "id": "meals",
+      "label": "Noodles & Rice",
+      "h2": "Eating Noodles, Rice and Meals",
+      "intro": "Faces with a bowl, a rice ball or something hot. ♨ marks the steam.",
+      "symbols": [
+        {
+          "char": "(っ˘ڡ˘ς)🍜",
+          "label": "Slurping Noodles"
+        },
+        {
+          "char": "(ﾟ∀ﾟ)ﾉ🍜",
+          "label": "Ramen Time"
+        },
+        {
+          "char": "( ˘▽˘)っ♨",
+          "label": "Steaming Hot Dish"
+        },
+        {
+          "char": "(o´ω`o)ﾉ🍙",
+          "label": "Rice Ball Snack"
+        },
+        {
+          "char": "ヽ(*⌒∇⌒*)ﾉ🍣",
+          "label": "Sushi Night"
+        },
+        {
+          "char": "(ﾉ･ω･)ﾉﾞ🍳",
+          "label": "Cooking Breakfast"
+        },
+        {
+          "char": "(　´∀｀)σ🍕",
+          "label": "Pointing at Pizza"
+        }
+      ]
+    },
+    {
+      "id": "drinks",
+      "label": "Tea, Coffee & Boba",
+      "h2": "Tea, Coffee and Boba Kaomoji",
+      "intro": "旦 is the teacup and c[_] the mug, both text only. Boba needs the 🧋 emoji.",
+      "symbols": [
+        {
+          "char": "( ˘▽˘)っ旦",
+          "label": "Offering Tea"
+        },
+        {
+          "char": "(　＾∇＾)っ旦~",
+          "label": "Hot Tea Steaming"
+        },
+        {
+          "char": "( ˘ ³˘)☕",
+          "label": "Sipping Coffee"
+        },
+        {
+          "char": "(っ´ω`)c[_]",
+          "label": "Morning Mug"
+        },
+        {
+          "char": "(っ˘▽˘)っ🧋",
+          "label": "Boba Run"
+        },
+        {
+          "char": "( ´ ▽ ` )ﾉ🥤",
+          "label": "Grabbing a Drink"
+        }
+      ]
+    },
+    {
+      "id": "sweets",
+      "label": "Sweets",
+      "h2": "Dessert and Snack Kaomoji",
+      "intro": "Cake, donuts and ice cream, for the sweet tooth.",
+      "symbols": [
+        {
+          "char": "ヾ(＠⌒ー⌒＠)ノ🍰",
+          "label": "Cake Slice Joy"
+        },
+        {
+          "char": "(づ｡◕‿◕｡)づ🍩",
+          "label": "Sharing a Donut"
+        },
+        {
+          "char": "(*≧ω≦)🍦",
+          "label": "Ice Cream Bliss"
+        },
+        {
+          "char": "(｡･ω･｡)ﾉ🍪",
+          "label": "Cookie for You"
+        }
+      ]
+    },
+    {
+      "id": "hungry",
+      "label": "Hungry",
+      "h2": "Hungry Kaomoji",
+      "intro": "For the hour before dinner, or the moment the fridge turns out to be empty.",
+      "symbols": [
+        {
+          "char": "( ´•̥̥̥ω•̥̥̥` ) 🍽️",
+          "label": "Empty Plate"
+        },
+        {
+          "char": "(¬､¬) 🍔",
+          "label": "Eyeing Someone's Burger"
+        },
+        {
+          "char": "ʕ •́ ﹏•̀ʔ 🍴",
+          "label": "Hungry Bear"
+        },
+        {
+          "char": "(ﾉД`) hungry...",
+          "label": "Starving"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Food Kaomoji, Answered",
+  "faq": [
+    {
+      "q": "What is the ڡ in (っ˘ڡ˘ς)?",
+      "a": "It is the Arabic letter feh written without its dot, U+06A1. Its curl hangs below the line, so inside a face it looks like a tongue licking the lips, and the face reads as yummy or delicious."
+    },
+    {
+      "q": "Why does 旦 mean tea in kaomoji?",
+      "a": "旦 is a kanji meaning dawn or morning, but its shape is a square sitting on a line, like a cup on a saucer. Kaomoji use it as a teacup, so ( ˘▽˘)っ旦 is someone offering you tea."
+    },
+    {
+      "q": "What does (人´∀｀) mean before a meal?",
+      "a": "The 人 is two palms pressed together. In Japan people say itadakimasu with hands together before eating, so the face is a thank-you for the meal and a sign that eating is about to start."
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/food-drink-emojis/",
+      "title": "Food & Drink Emojis",
+      "desc": "🍜 🍣 🧋 ☕ and every food and drink emoji, by category."
+    },
+    {
+      "href": "/library/happy-kaomoji/",
+      "title": "Happy Kaomoji",
+      "desc": "Smiling and cheerful text faces for good news."
+    },
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji hub: every mood of Japanese text face in one place."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Kaomoji Generator",
+      "desc": "Build your own face by picking the eyes, mouth, arms and extras."
+    }
+  ]
+}

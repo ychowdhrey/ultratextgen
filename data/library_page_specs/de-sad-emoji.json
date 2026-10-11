@@ -1,10 +1,10 @@
 {
   "slug": "trauriges-emoji",
   "title": "Trauriges Emoji 😢 — Alle Varianten zum Kopieren | UltraTextGen",
-  "meta_description": "Trauriges Emoji 😢 😞 😔 zum Kopieren: weinende Gesichter, gebrochenes Herz, erschöpfte Gesichter und traurige Kaomoji. Ein Klick genügt.",
+  "meta_description": "Trauriges Emoji 😢 😞 😔 zum Kopieren: weinende Gesichter, gebrochenes Herz, erschöpfte Gesichter, getippte Emoticons wie :( und eine kleine Auswahl trauriger Kaomoji. Ein Klick genügt.",
   "breadcrumb": "Trauriges Emoji",
   "hero_h1": "Trauriges Emoji",
-  "hero_tagline": "Alle Abstufungen von Traurigkeit: vom leicht verstimmten Gesicht bis zu Tränen, dazu traurige Kaomoji.",
+  "hero_tagline": "Alle Abstufungen von Traurigkeit: vom leicht verstimmten Gesicht bis zu Tränen, dazu getippte Emoticons und ein paar traurige Kaomoji.",
   "intro": "„Traurig“ ist nicht ein Gefühl, und manchmal reicht ein Emoji nicht. Diese Seite ordnet die Gesichter vom leichtesten zum schwersten, ergänzt die Symbole, die man statt Worten setzt, und schließt mit Kaomoji für den Fall, dass ein rundes Gesicht nicht trifft, was gemeint ist. Zum Kopieren anklicken.",
   "copy_pattern": "collection",
   "sections": [
@@ -89,6 +89,82 @@
       ]
     },
     {
+      "id": "grief-mourning",
+      "label": "Emoji für Trauer und Anteilnahme",
+      "h2": "Emoji für Trauer und Anteilnahme",
+      "intro": "Die Symbole, die man in Beileidsnachrichten und Gedenkbeiträgen verwendet. 🕯️ steht für Erinnerung, 🕊️ für Frieden, 🖤 für Trauer, 🤍 für stilles Mitgefühl und 💐 für die Blumen, die man mitbringen würde.",
+      "symbols": [
+        {
+          "char": "🕯️",
+          "label": "Kerze"
+        },
+        {
+          "char": "🕊️",
+          "label": "Taube"
+        },
+        {
+          "char": "🖤",
+          "label": "Schwarzes Herz"
+        },
+        {
+          "char": "🤍",
+          "label": "Weißes Herz"
+        },
+        {
+          "char": "🥀",
+          "label": "Verwelkte Blume"
+        },
+        {
+          "char": "💐",
+          "label": "Blumenstrauß"
+        },
+        {
+          "char": "🪦",
+          "label": "Grabstein"
+        },
+        {
+          "char": "❤️‍🩹",
+          "label": "Heilendes Herz"
+        }
+      ]
+    },
+    {
+      "id": "condolence-combos",
+      "label": "Emoji-Kombis für Beileid und Gedenken",
+      "h2": "Emoji-Kombis für Beileid und Gedenken",
+      "intro": "Kurze Folgen für das Ende einer Beileidsnachricht oder als Bildunterschrift zu einem Gedenkfoto. In einer Nachricht an jemanden, der trauert, wirken 🕊️ und 🤍 sanfter als 🪦, das eher zu einem öffentlichen Nachruf passt.",
+      "symbols": [
+        {
+          "char": "🕯️🕊️🤍",
+          "label": "Erinnerung"
+        },
+        {
+          "char": "🕊️🤍",
+          "label": "Ruhe in Frieden"
+        },
+        {
+          "char": "🖤🥀🕯️",
+          "label": "Trauer"
+        },
+        {
+          "char": "💐🤍",
+          "label": "Beileidsblumen"
+        },
+        {
+          "char": "🙏🤍",
+          "label": "Ich denke an dich"
+        },
+        {
+          "char": "❤️‍🩹🤍",
+          "label": "Heilung"
+        },
+        {
+          "char": "🪦🥀🕯️",
+          "label": "Gedenken"
+        }
+      ]
+    },
+    {
       "id": "drained",
       "label": "Enttäuschte und Erschöpfte Gesichter",
       "h2": "Enttäuschte und Erschöpfte Gesichter",
@@ -125,44 +201,64 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Tastatur-Smileys",
+      "h2": "Traurige Text-Emoticons",
+      "intro": "Das ursprüngliche traurige Gesicht, getippt mit einem Doppelpunkt. Es sieht auf jedem Handy und jeder Tastatur gleich aus.",
+      "symbols": [
+        {
+          "char": ":(",
+          "label": "Trauriges Gesicht"
+        },
+        {
+          "char": ":-(",
+          "label": "Traurig mit Nase"
+        },
+        {
+          "char": "=(",
+          "label": "Leicht trauriges Gesicht"
+        },
+        {
+          "char": ":c",
+          "label": "Schmollend traurig"
+        },
+        {
+          "char": ":/",
+          "label": "Verunsichertes Gesicht"
+        },
+        {
+          "char": "D:",
+          "label": "Bestürztes Gesicht"
+        }
+      ]
+    },
+    {
       "id": "kaomoji",
       "label": "Traurige Kaomoji",
       "h2": "Traurige Kaomoji",
-      "intro": "Gesichter aus Zeichen, direkt zum Einfügen.",
+      "intro": "Ein paar niedergeschlagene japanische Textgesichter für den Anfang.",
       "symbols": [
         {
           "char": "(μ_μ)",
           "label": "Kaomoji Gesenkter Blick"
         },
         {
-          "char": "(._.)",
-          "label": "Kaomoji Leerer Blick"
-        },
-        {
           "char": "(´。＿。｀)",
           "label": "Kaomoji Hängender Kopf"
-        },
-        {
-          "char": "(◞‸◟)",
-          "label": "Kaomoji Trübe Miene"
         },
         {
           "char": "( ´•︵•` )",
           "label": "Kaomoji Trauriger Schmollmund"
         },
         {
-          "char": "（ ｉдｉ ）",
-          "label": "Kaomoji Stille Tränen"
-        },
-        {
           "char": "(〒﹏〒)",
           "label": "Kaomoji Schweres Herz"
-        },
-        {
-          "char": "( ︶︿︶)",
-          "label": "Kaomoji Resignierter Seufzer"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/de/library/kaomoji/",
+        "text": "Alle Kaomoji ansehen"
+      }
     }
   ],
   "faq_h2": "Häufige Fragen zum Traurigen Emoji",
@@ -190,8 +286,8 @@
   ],
   "editorial_sections": [
     {
-      "h2": "Warum Es So Viele Traurige Emojis Gibt",
-      "body": "Unicode hat nicht aus Übermut fünfzehn traurige Gesichter aufgenommen: jedes kam für einen Zweck, den die vorhandenen nicht abdeckten. 😞 stammt aus den ersten japanischen Sätzen, wo es zum Entschuldigen diente. 🥺 kam viel später und wurde fast sofort eher zärtlich als traurig umgedeutet. 🫠 und 🫤 sind von 2021 und meinen Erschöpfung, nicht Kummer. Der Abstand zwischen dem, was der Unicode-Name ankündigt, und dem, was die Leute daraus machen, ist real, deshalb ordnet diese Seite nach Intensität statt nach Aufnahmedatum."
+      "h2": "Warum es so viele traurige Emojis gibt",
+      "body": "Unicode hat nicht aus Übermut fünfzehn traurige Gesichter aufgenommen: Jedes kam für einen Zweck, den die vorhandenen nicht abdeckten. 😞 stammt aus den ersten japanischen Emoji-Sätzen. 🥺 kam viel später und wurde fast sofort eher zärtlich als traurig umgedeutet. 🫠 und 🫤 sind von 2021 und meinen Erschöpfung, nicht Kummer. Der Abstand zwischen dem, was der Unicode-Name ankündigt, und dem, was die Leute daraus machen, ist real, deshalb ordnet diese Seite nach Intensität statt nach Aufnahmedatum."
     }
   ],
   "collection_section": {
@@ -257,7 +353,7 @@
   ],
   "canonical": "https://ultratextgen.com/de/library/trauriges-emoji/",
   "date_published": "2026-08-10",
-  "date_modified": "2026-08-10",
+  "date_modified": "2026-10-09",
   "lang": "de",
   "page_type": "library",
   "hreflang": [

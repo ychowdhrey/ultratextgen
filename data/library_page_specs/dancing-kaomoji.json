@@ -1,0 +1,189 @@
+{
+  "slug": "dancing-kaomoji",
+  "title": "Dancing Kaomoji ┏(・o・)┛: Copy & Paste Dance Text Faces",
+  "meta_description": "Copy and paste dancing kaomoji: arm-swinging dancers like ┏(・o・)┛ and ♪┏(・o･)┛♪, wiggling (~˘▾˘)~ moves, party dances and kaomoji dancing with music notes.",
+  "canonical": "https://ultratextgen.com/library/dancing-kaomoji/",
+  "breadcrumb": "Dancing Kaomoji",
+  "hero_h1": "Dancing Kaomoji",
+  "hero_tagline": "Text faces mid-move, swinging their arms, shuffling side to side or dancing to a few music notes. Tap one to copy the whole move.",
+  "intro": "A dancing kaomoji shows movement with the arms. Box-drawing corners like ┏ ┛ and ┗ ┓ put one arm up and one down, so writing ┏(・o・)┛ and then ┗(・o・)┓ looks like a dancer switching sides. Tildes ~ trail behind a face that is wiggling, and ♪ ♫ notes say there is a song playing. Some longer lines are a short dance routine in one string. People use them to celebrate good news, react to a song drop, or hype up a party chat. For faces singing or playing instruments rather than dancing, see the music kaomoji page linked below. ᕕ and ᕗ come from Canadian syllabics, so a device without those fonts shows a box in their place.",
+  "date_published": "2026-10-08",
+  "date_modified": "2026-10-08",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "arm-dances",
+      "label": "Arm Dances",
+      "h2": "Arm-Swinging Dancing Kaomoji",
+      "intro": "The box-drawing corners ┏ ┛ ┗ ┓ are the arms, bent at the elbow. Pair two that mirror each other to show the switch.",
+      "symbols": [
+        {
+          "char": "┏(・o・)┛",
+          "label": "Arms Up Left"
+        },
+        {
+          "char": "┗(・o・)┓",
+          "label": "Arms Up Right"
+        },
+        {
+          "char": "┏( ^o^)┛",
+          "label": "Happy Dancer"
+        },
+        {
+          "char": "┗(＾0＾)┓",
+          "label": "Shouting Dancer"
+        },
+        {
+          "char": "┏(＾▽＾)┛┗(＾▽＾)┓",
+          "label": "Two-Step Combo"
+        },
+        {
+          "char": "└(＾＾)┐",
+          "label": "Little Shuffle"
+        },
+        {
+          "char": "┌(・。・)┘",
+          "label": "Robot Arms"
+        }
+      ]
+    },
+    {
+      "id": "wiggle",
+      "label": "Wiggle Dances",
+      "h2": "Wiggling and Swaying Kaomoji",
+      "intro": "Tildes show a body swaying. The ~ on one side means the dancer is leaning that way.",
+      "symbols": [
+        {
+          "char": "(~˘▾˘)~",
+          "label": "Sway Right"
+        },
+        {
+          "char": "~(˘▾˘~)",
+          "label": "Sway Left"
+        },
+        {
+          "char": "~(˘▾˘)~",
+          "label": "Wiggle in Place"
+        },
+        {
+          "char": "(~‾▿‾)~",
+          "label": "Smug Sway"
+        },
+        {
+          "char": "〜(￣▽￣〜)",
+          "label": "Wave Dance"
+        },
+        {
+          "char": "(〜￣▽￣)〜",
+          "label": "Wave Dance Back"
+        }
+      ]
+    },
+    {
+      "id": "music-dances",
+      "label": "With Music",
+      "h2": "Dancing Kaomoji With Music Notes",
+      "intro": "Notes around the face put a song behind the move. ♪ is a single note and ♫ is a pair of beamed notes.",
+      "symbols": [
+        {
+          "char": "♪┏(・o･)┛♪",
+          "label": "Dancing to a Song"
+        },
+        {
+          "char": "ヾ(⌐■_■)ノ♪",
+          "label": "Cool Dancer"
+        },
+        {
+          "char": "♪～(´ε` )",
+          "label": "Humming Along"
+        },
+        {
+          "char": "♬♩♪♩ ヽ(・ˇ∀ˇ・ゞ)",
+          "label": "Groove Mode"
+        },
+        {
+          "char": "ヘ(￣ー￣ヘ) ♫",
+          "label": "Slide Step"
+        },
+        {
+          "char": "♪(┌・。・)┌",
+          "label": "Funky Walk"
+        }
+      ]
+    },
+    {
+      "id": "party",
+      "label": "Party Dances",
+      "h2": "Party and Celebration Dances",
+      "intro": "Bigger, louder moves for a win, a birthday or the weekend. ヾ and ノ are hands thrown in the air.",
+      "symbols": [
+        {
+          "char": "ヾ(＾∇＾)ノ",
+          "label": "Hands in the Air"
+        },
+        {
+          "char": "ヽ(⌐■_■)ノ♪♬",
+          "label": "Party Shades"
+        },
+        {
+          "char": "＼(ﾟｰﾟ＼)",
+          "label": "Disco Point"
+        },
+        {
+          "char": "(／ﾟｰﾟ)／",
+          "label": "Disco Point Back"
+        },
+        {
+          "char": "✧*｡ヾ(｡>﹏<｡)ﾉﾞ✧*｡",
+          "label": "Hype Dance"
+        },
+        {
+          "char": "ᕕ(⌐■_■)ᕗ ♪♬",
+          "label": "Strutting"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Dancing Kaomoji, Answered",
+  "faq": [
+    {
+      "q": "How do I make a kaomoji look like it is dancing?",
+      "a": "Send two mirrored faces one after the other, such as ┏(・o・)┛ then ┗(・o・)┓. The arms swap sides, which reads as a dance move. Adding ♪ before or after the face tells people there is music."
+    },
+    {
+      "q": "What are the ┏ and ┛ characters?",
+      "a": "They are box-drawing characters, made for drawing tables and frames in plain text. In a kaomoji the corner shape looks like an arm bent at the elbow, one raised and one lowered."
+    },
+    {
+      "q": "What is the difference between a dancing kaomoji and the dancing emoji?",
+      "a": "The 💃 and 🕺 emoji are pictures drawn by each platform's emoji font, so they look different on each phone. A dancing kaomoji is built from ordinary text characters and keeps the same shape wherever the font has those characters."
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The kaomoji hub, with every mood and action of Japanese text face in one place."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Kaomoji Generator",
+      "desc": "Build your own text face by picking the eyes, mouth, arms and extras."
+    },
+    {
+      "href": "/library/music-kaomoji/",
+      "title": "Music Kaomoji",
+      "desc": "Singing, headphone and instrument text faces with notes."
+    },
+    {
+      "href": "/library/dancing-emoji/",
+      "title": "Dancing Emoji",
+      "desc": "💃 🕺 👯 and dance emoji combos to copy."
+    },
+    {
+      "href": "/library/excited-kaomoji/",
+      "title": "Excited Kaomoji",
+      "desc": "Hyped text faces with raised arms and sparkles."
+    }
+  ]
+}

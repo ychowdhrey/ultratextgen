@@ -2,7 +2,7 @@
  "slug": "ascii-kunst",
  "lang": "de",
  "copy_pattern": "collection",
- "title": "ASCII-Kunst & Bilder aus Zeichen — Generator-Bausteine zum Kopieren | UltraTextGen",
+ "title": "ASCII-Kunst & Bilder aus Zeichen — Generator-Bausteine zum Kopieren",
  "meta_description": "ASCII-Kunst selbst bauen: Rahmenzeichen, Blockelemente, Braille-Punkte und Formen zum Kopieren — plus fertige Bausteine für Bilder aus Zeichen.",
  "breadcrumb": "ASCII-Kunst",
  "hero_h1": "ASCII-Kunst",
@@ -212,6 +212,54 @@
      "label": "Leeres Dreieck (unten)"
     }
    ]
+  },
+  {
+   "id": "one-line-art",
+   "label": "Einzeiler",
+   "h2": "Einzeilige ASCII-Kunst",
+   "intro": "Stücke, die in eine einzige Zeile passen. Sie lassen sich sauber in Chats, Kommentare oder Statusmeldungen einfügen, wo ein mehrzeiliges Stück umbrechen oder seine Abstände verlieren würde. Einige leihen sich Buchstaben aus anderen Schriften (die Schwertspitze ist ein arabischer Buchstabe), und wem diese Schrift fehlt, sieht an der Stelle ein Kästchen.",
+   "symbols": [
+    {
+     "char": "▬▬ι═══════ﺤ",
+     "label": "Schwert"
+    },
+    {
+     "char": "><((((º>",
+     "label": "Fisch"
+    },
+    {
+     "char": "<コ:彡",
+     "label": "Tintenfisch"
+    },
+    {
+     "char": "@}->--",
+     "label": "Rose"
+    },
+    {
+     "char": "~(˘▾˘~)",
+     "label": "Tanzen"
+    },
+    {
+     "char": "┬─┬ノ( º _ ºノ)",
+     "label": "Tisch zurückstellen"
+    },
+    {
+     "char": "ಠ_ಠ",
+     "label": "Missbilligender Blick"
+    },
+    {
+     "char": "ᕦ(ò_óˇ)ᕤ",
+     "label": "Muskeln zeigen"
+    },
+    {
+     "char": "(•_•) ( •_•)>⌐■-■ (⌐■_■)",
+     "label": "Sonnenbrille auf"
+    },
+    {
+     "char": "(づ｡◕‿‿◕｡)づ",
+     "label": "Umarmung"
+    }
+   ]
   }
  ],
  "collection_section": {
@@ -339,7 +387,7 @@
   },
   {
    "h2": "Vier Zeichenfamilien, vier Aufgaben",
-   "body": "Rahmenzeichen ziehen Linien und schließen Kästen: sie stammen aus der Terminalgrafik der Achtzigerjahre und sind bis heute die sauberste Art, in Text einen Kasten zu zeichnen. Blockelemente füllen Flächen und liefern mit ░▒▓█ vier Helligkeitsstufen. Braille-Punkte sind der Sonderfall: acht Punkte pro Zeichen, also die feinste erreichbare Auflösung. Geometrische Formen schließlich sind keine Bausteine, sondern Akzente: Aufzählungspunkte, Trenner, kleine Markierungen."
+   "body": "Rahmenzeichen ziehen Linien und schließen Kästen: Sie stammen aus der Terminalgrafik der Achtzigerjahre und sind bis heute die sauberste Art, in Text einen Kasten zu zeichnen. Blockelemente füllen Flächen und liefern mit ░▒▓█ vier Helligkeitsstufen. Braille-Punkte sind der Sonderfall: acht Punkte pro Zeichen, also die feinste erreichbare Auflösung. Geometrische Formen schließlich sind keine Bausteine, sondern Akzente: Aufzählungspunkte, Trenner, kleine Markierungen."
   }
  ],
  "related": [

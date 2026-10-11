@@ -1,14 +1,14 @@
 {
   "slug": "tired-emoji",
-  "title": "Tired Emoji & Kaomoji: Copy & Paste 😴 🥱 Exhausted Combos",
-  "meta_description": "Copy and paste tired emoji like 😴 🥱 😫, sleepy kaomoji such as (-_-)zzz, and exhausted combo sets for captions and replies. Click any symbol to copy it instantly.",
+  "title": "Tired Emoji: Copy & Paste 😴 🥱 Sleepy Faces, Emoticons & Combos",
+  "meta_description": "Copy and paste tired emoji like 😴 🥱 😫, typed sleepy emoticons such as |-) and -_-, and exhausted combo sets for captions and replies.",
   "canonical": "https://ultratextgen.com/library/tired-emoji/",
-  "breadcrumb": "Tired Emoji & Kaomoji",
-  "hero_h1": "Tired Emoji & Kaomoji",
-  "hero_tagline": "From a drowsy 🥱 yawn to full 😩 burnout: every flavor of tired, plus sleepy kaomoji and ready-made combos. Click any symbol to copy it instantly.",
-  "intro": "Tired means two different things: the pleasant 😴 sleepy-and-ready-for-bed kind, and the 😫 exhausted, burned-out kind where you're running on empty. This page splits them cleanly: drowsy yawns and bedtime symbols on one side, weary and melting-from-exhaustion faces on the other. Around them sit recovery-mode props like ☕ coffee and 🌙 moons, classic sleepy kaomoji such as (-_-)zzz, and one-click combo sets for late-night captions and \"so done\" replies. Grab a single face or copy a whole combo depending on how tired you actually are.",
+  "breadcrumb": "Tired Emoji",
+  "hero_h1": "Tired Emoji",
+  "hero_tagline": "From a drowsy 🥱 yawn to full 😩 burnout: every flavor of tired, plus typed sleepy emoticons and ready-made combos. Click any symbol to copy it instantly.",
+  "intro": "Tired means two different things: the pleasant 😴 sleepy-and-ready-for-bed kind, and the 😫 exhausted, burned-out kind where you're running on empty. This page splits them cleanly: drowsy yawns and bedtime symbols on one side, weary and melting-from-exhaustion faces on the other. Around them sit recovery-mode props like ☕ coffee and 🌙 moons, typed |-) emoticons, a few sleepy kaomoji such as (-_-)zzz, and one-click combo sets for late-night captions and \"so done\" replies. Grab a single face or copy a whole combo depending on how tired you actually are.",
   "date_published": "2026-07-13",
-  "date_modified": "2026-07-13",
+  "date_modified": "2026-10-09",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -48,19 +48,30 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticons",
+      "h2": "Tired Text Emoticons",
+      "intro": "Eyes flattened into a line or a bar: the typed face of someone barely awake. They paste as plain text, emoji keyboard or not.",
+      "symbols": [
+        { "char": "|-)", "label": "Sleeping Emoticon" },
+        { "char": "I-)", "label": "Dozing Emoticon" },
+        { "char": "|-O", "label": "Yawning Emoticon" },
+        { "char": "-_-", "label": "Weary Emoticon" },
+        { "char": "=_=", "label": "Drained Emoticon" }
+      ]
+    },
+    {
       "id": "tired-kaomoji",
       "label": "Kaomoji",
       "h2": "Tired Kaomoji & Text Faces",
-      "intro": "Japanese-style text faces that doze off with full-width zzz: paste them anywhere plain text works.",
+      "intro": "Four drowsy Japanese text faces, from heavy eyelids to a full collapse into bed.",
       "symbols": [
         { "char": "(-_-)zzz", "label": "Dozing Off Kaomoji" },
-        { "char": "(=_=)", "label": "Worn Out Kaomoji" },
         { "char": "( ˘_˘ )", "label": "Drowsy Eyes Kaomoji" },
         { "char": "(。-ω-)zzz", "label": "Drifting Asleep Kaomoji" },
-        { "char": "(¦3[▓▓]", "label": "Collapsed in Bed Kaomoji" },
-        { "char": "(˘̩̩̩ε˘̩̩̩)", "label": "Exhausted Pout Kaomoji" },
-        { "char": "ヾ(_ _。)ゝ", "label": "Bowing Out Tired Kaomoji" }
-      ]
+        { "char": "(¦3[▓▓]", "label": "Collapsed in Bed Kaomoji" }
+      ],
+      "more_link": { "href": "/library/sleepy-kaomoji/", "text": "See every sleepy kaomoji" }
     }
   ],
   "collection_section": {
@@ -120,12 +131,12 @@
     },
     {
       "href": "/library/crying-emoji/",
-      "title": "Crying Emoji & Kaomoji",
+      "title": "Crying Emoji",
       "desc": "Tearful faces and sobbing kaomoji for the harder days."
     },
     {
       "href": "/library/sad-emoji/",
-      "title": "Sad Emoji & Kaomoji",
+      "title": "Sad Emoji",
       "desc": "Melancholy, low-mood faces for when tired tips into down."
     },
     {

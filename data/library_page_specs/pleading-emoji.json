@@ -1,7 +1,7 @@
 {
   "slug": "pleading-emoji",
   "title": "Pleading Emoji & Kaomoji: Copy & Paste 🥺 Puppy Eyes Combos",
-  "meta_description": "Copy and paste the pleading emoji 🥺, puppy-dog-eyes faces, begging kaomoji, and pretty-please combo sets for captions and DMs. Click any symbol to copy it instantly.",
+  "meta_description": "Copy and paste the pleading emoji 🥺, puppy-dog-eyes faces, begging kaomoji, and pretty-please combo sets for captions and DMs.",
   "canonical": "https://ultratextgen.com/library/pleading-emoji/",
   "breadcrumb": "Pleading Emoji & Kaomoji",
   "hero_h1": "Pleading Emoji & Kaomoji",
@@ -82,6 +82,21 @@
         { "char": "(´;ω;`)", "label": "Holding Back Tears Kaomoji" },
         { "char": "(´-ω-`)", "label": "Soft Please Kaomoji" },
         { "char": "(>﹏<)", "label": "Flustered Plea Kaomoji" }
+      ]
+    },
+    {
+      "id": "pleading-kaomoji-please",
+      "label": "Pretty Please",
+      "h2": "Pleading Kaomoji: Puppy Eyes and Pretty Please",
+      "intro": "Faces that ask instead of cry. 人 is two palms pressed together, the gesture that goes with onegai (please) in Japanese, and m(_ _)m is a deep bow with both hands on the floor.",
+      "symbols": [
+        { "char": "(人◕ω◕)", "label": "Palms Together Please Kaomoji" },
+        { "char": "(人 •͈ᴗ•͈)", "label": "Hopeful Please Kaomoji" },
+        { "char": "m(_ _)m", "label": "Begging Bow Kaomoji" },
+        { "char": "(｡•́︿•̀｡)", "label": "Puppy Eyes Kaomoji" },
+        { "char": "( ´•̥̥̥ω•̥̥̥` )", "label": "Teary Puppy Eyes Kaomoji" },
+        { "char": "(๑•́ ₃ •̀๑)", "label": "Pouty Please Kaomoji" },
+        { "char": "(つ﹏⊂)", "label": "Hands Over Eyes Plea Kaomoji" }
       ]
     }
   ],

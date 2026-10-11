@@ -391,9 +391,11 @@
         return "unknown";
       }
       const data = await resp.json();
-      // code 0 = valid/available, code 1 = moderated (treat as unknown — can't claim),
-      // code 2 = already in use (taken), anything else = unknown
-      const result = data.code === 0 ? "available" : data.code === 2 ? "taken" : "unknown";
+      // Codes checked against the live endpoint on 2026-10-04: 0 = valid,
+      // 1 = "Username is already in use", 2 = "not appropriate for Roblox",
+      // 3-7 = length/underscore/space/character rules. Only 0 and 1 say
+      // anything about availability; the rest stay unknown.
+      const result = data.code === 0 ? "available" : data.code === 1 ? "taken" : "unknown";
       availabilityCache.set(username, result);
       return result;
     } catch {
@@ -703,6 +705,12 @@
   async function copyName(value, btn) {
     try {
       await navigator.clipboard.writeText(value);
+      if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
+        window.UltraTextGen.trackCopy("button", value);
+      } else {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "copy_text", copy_method: "button" });
+      }
       btn.textContent = "Copied";
       setTimeout(function () { btn.textContent = "Copy"; }, 900);
     } catch (err) {

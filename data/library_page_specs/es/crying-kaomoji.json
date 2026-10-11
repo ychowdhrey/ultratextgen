@@ -53,6 +53,11 @@
       "href": "/kaomoji-generator/",
       "title": "Kaomoji Generator",
       "desc": "Crea tu propia carita — combina ojos, bocas y brazos y cópiala."
+    },
+    {
+      "href": "/es/library/emoji-llorando/",
+      "title": "Emoji Llorando",
+      "desc": "Las caras de llanto en emoji, de 😭 a 🥲, con gotas, corazón roto y combos de lágrimas."
     }
   ],
   "sections": [
@@ -113,6 +118,42 @@
         {
           "char": "(；へ：)",
           "label": "Llanto Tembloroso"
+        }
+      ]
+    },
+    {
+      "id": "happy-tears",
+      "label": "Lágrimas de Alegría",
+      "h2": "Kaomoji con Lágrimas de Alegría y Emoción",
+      "intro": "Lágrimas con una sonrisa debajo, para una buena noticia, un reencuentro o una escena que te llegó. La boca curva ‿ o abierta ▽ es lo que las distingue de los sollozos de arriba.",
+      "symbols": [
+        {
+          "char": "(T▽T)",
+          "label": "Lágrimas de Alegría"
+        },
+        {
+          "char": "(ಥ‿ಥ)",
+          "label": "Sonriendo entre Lágrimas"
+        },
+        {
+          "char": "(╥‿╥)",
+          "label": "Conmovido"
+        },
+        {
+          "char": "(;▽;)",
+          "label": "Emocionado hasta Llorar"
+        },
+        {
+          "char": "( ;∀;)",
+          "label": "Enternecido"
+        },
+        {
+          "char": "(ㅠ‿ㅠ)",
+          "label": "Sollozo Feliz"
+        },
+        {
+          "char": "(´；▽；`)",
+          "label": "Felicidad Desbordada"
         }
       ]
     },

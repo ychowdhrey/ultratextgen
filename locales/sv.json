@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Snygg Text Generator - 88 Unicode-typsnitt (kopiera och klistra in)",
-    "description": "Gör vanlig text till snygg text med 88 Unicode-typsnitt: fet, kursiv, skrivstil, gotisk, bubblor, små versaler, aesthetic, upp och ner och Zalgo. Kopiera till Instagram-bio, TikTok, Discord, LinkedIn och WhatsApp. Gratis, direkt, utan konto."
+    "description": "Gör vanlig text till snygg text med 88 Unicode-typsnitt: fet, kursiv, skrivstil, gotisk, bubblor, små versaler, aesthetic, upp och ner och Zalgo."
   },
   "hero": {
     "title": "Snygg text generator",
@@ -157,6 +157,11 @@
       "renderFailed": "Kunde inte skapa bilden. Försök igen.",
       "trayLabel": "Bildurval",
       "setUnavailable": "Den här samlingen kan inte läggas i en bild än."
+    },
+    "symbolLook": {
+      "plain": "Kopiera vanlig version",
+      "emoji": "Kopiera emoji-version",
+      "note": "Vissa appar visar ändå symbolen i färg."
     }
   },
   "useCases": {

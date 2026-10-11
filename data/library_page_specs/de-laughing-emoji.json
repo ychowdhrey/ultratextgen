@@ -1,8 +1,8 @@
 {
  "slug": "lach-emoji",
  "lang": "de",
- "title": "Lach-Emoji 😂 🤣 zum Kopieren — alle lachenden Gesichter | UltraTextGen",
- "meta_description": "Lach-Emoji zum Kopieren: 😂 Tränen lachen, 🤣 sich kugeln, 😅 verlegen lachen, 💀 „ich bin tot“ und lachende Kaomoji. Mit Erklärung, welches wann passt.",
+ "title": "Lach-Emoji 😂 🤣 zum Kopieren — alle lachenden Gesichter",
+ "meta_description": "Lach-Emoji zum Kopieren: 😂 Tränen lachen, 🤣 sich kugeln, 😅 verlegen lachen, 💀 „ich bin tot“, getippte Emoticons wie XD und ein paar lachende Kaomoji. Mit Erklärung, welches wann passt.",
  "breadcrumb": "Lach-Emoji",
  "hero_h1": "Lach-Emoji",
  "hero_tagline": "Vom höflichen Schmunzeln bis zum Lachkrampf, plus die Zeichen, die Lachen heute ersetzen.",
@@ -161,58 +161,50 @@
    ]
   },
   {
+   "id": "emoticons",
+   "label": "Tastatur-Smileys",
+   "h2": "Lachende Text-Emoticons",
+   "intro": "XD kneift die Augen mitten im Lachen zu, :'D bringt noch Lachtränen dazu. Beide funktionieren überall, wo man tippen kann, vom Gaming-Chat bis zur SMS.",
+   "symbols": [
+    {
+     "char": "XD",
+     "label": "Lachendes XD"
+    },
+    {
+     "char": "xD",
+     "label": "Kleines xD"
+    },
+    {
+     "char": ":'D",
+     "label": "Lachtränen"
+    },
+    {
+     "char": "X'D",
+     "label": "Tränen lachen"
+    },
+    {
+     "char": ":-D",
+     "label": "Lachen mit Nase"
+    },
+    {
+     "char": "=D",
+     "label": "Breites Lachen"
+    }
+   ]
+  },
+  {
    "id": "kaomoji",
    "label": "Lach-Kaomoji",
    "h2": "Lachende Kaomoji",
-   "intro": "Aus Zeichen gebaute Gesichter: funktionieren auch dort, wo Emojis nicht erwünscht sind.",
+   "intro": "Vier japanische Textgesichter mitten im Lachen, Arme hoch und Augen zugekniffen.",
    "symbols": [
     {
      "char": "(≧▽≦)",
      "label": "Fröhliches Lachen"
     },
     {
-     "char": "(＾▽＾)",
-     "label": "Breites Lächeln"
-    },
-    {
-     "char": "( ˘ ³˘)",
-     "label": "Zufrieden"
-    },
-    {
-     "char": "(¬‿¬)",
-     "label": "Süffisant"
-    },
-    {
-     "char": "ヽ(♡‿♡)ノ",
-     "label": "Begeistert"
-    },
-    {
-     "char": "(ﾉ≧∀≦)ﾉ",
-     "label": "Ausgelassen"
-    },
-    {
-     "char": "XD",
-     "label": "Klassisches Lach-Emoticon"
-    },
-    {
-     "char": "(*≧ω≦*)",
-     "label": "Kicherndes Gesicht"
-    },
-    {
      "char": "ヽ(´▽`)/",
      "label": "Lach-Kaomoji mit erhobenen Armen"
-    },
-    {
-     "char": "(´∀｀)",
-     "label": "Entspanntes Grinsen (Kaomoji)"
-    },
-    {
-     "char": "（＾ｖ＾）",
-     "label": "Freches Lächeln (Kaomoji)"
-    },
-    {
-     "char": "(＾ω＾)",
-     "label": "Fröhliches Schmunzeln (Kaomoji)"
     },
     {
      "char": "(≧∇≦)/",
@@ -221,12 +213,9 @@
     {
      "char": "ヾ(≧▽≦*)o",
      "label": "Unkontrollierbares Lachen (Kaomoji)"
-    },
-    {
-     "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆",
-     "label": "Funkelndes Lachen (Kaomoji)"
     }
-   ]
+   ],
+   "more_link": { "href": "/de/library/kaomoji/", "text": "Alle Kaomoji ansehen" }
   }
  ],
  "faq_h2": "Häufige Fragen zum Lach-Emoji",
@@ -306,7 +295,7 @@
  "page_type": "library",
  "copy_pattern": "collection",
  "date_published": "2026-08-16",
- "date_modified": "2026-08-16",
+ "date_modified": "2026-10-09",
  "collection_container_id": "laughingSetsContainer",
  "collection_section": {
   "id": "laugh-combos",

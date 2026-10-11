@@ -216,7 +216,7 @@
       category: { label: "カテゴリー", href: "/category/" },
       usecase: { label: "使い方", href: "/usecase/" },
       library: { label: "ライブラリ", href: "/ja/library/" },
-      printables: { label: "印刷用", href: "/printables/" },
+      printables: { label: "学習プリント", href: "/ja/purinto/" },
       events: { label: "イベント", href: "/events/" },
       search: "フォントスタイルを検索…",
       darkMode: "ダークモード切り替え"
@@ -240,7 +240,7 @@
       category: { label: "Categorieën", href: "/category/" },
       usecase: { label: "Toepassingen", href: "/nl/usecase/" },
       library: { label: "Bibliotheek", href: "/nl/library/" },
-      printables: { label: "Afdrukbaar", href: "/printables/" },
+      printables: { label: "Afdrukbaar", href: "/nl/om-uit-te-printen/" },
       events: { label: "Evenementen", href: "/events/" },
       search: "Zoek lettertypestijlen…",
       darkMode: "Donkere modus wisselen"
@@ -388,6 +388,18 @@
       events: { label: "Acara", href: "/events/" },
       search: "Cari gaya font…",
       darkMode: "Tukar mod gelap"
+    },
+    uk: {
+      home: "/uk/",
+      guide: { label: "Посібники", href: "/guide/" },
+      answers: { label: "Відповіді", href: "/answers/" },
+      category: { label: "Категорії", href: "/category/" },
+      usecase: { label: "Ідеї", href: "/usecase/" },
+      library: { label: "Бібліотека", href: "/library/" },
+      printables: { label: "Для друку", href: "/printables/" },
+      events: { label: "Події", href: "/events/" },
+      search: "Шукати шрифти, символи…",
+      darkMode: "Темна тема"
     }
   };
 
@@ -455,6 +467,93 @@
       '</div>' +
     '</div>' +
   '</header>';
+
+  // Phone header. The full header wraps to three rows below 641px (logo, the
+  // icon nav, the search box): 187px at 390x844 and 227px at 360 and 320
+  // wide, measured 2026-10-04 -- up to 35% of the screen. While it was sticky
+  // it covered whatever scrolled to the top: on usecase/zalgo-text a
+  // hit-test at the centre of #copyBtn returned the header, not the button.
+  // So on phones the full header scrolls away with the page, and this
+  // one-row bar slides in only while the visitor scrolls back up. It is
+  // position:fixed, so showing and hiding it never moves the content (the
+  // full header keeps its in-flow height either way). Its search button
+  // takes the visitor to the real search box rather than duplicating it.
+  // The same query gates the CSS in style.css; keep the two in step.
+  const COMPACT_HEADER_QUERY = "(max-width: 640px), (max-height: 500px)";
+
+  const miniHeaderHTML = '<div class="header-mini" aria-hidden="true" inert>' +
+      '<a href="' + nav.home + '" class="logo">' +
+        '<span class="logo-icon">U</span>' +
+        '<span>UltraTextGen</span>' +
+      '</a>' +
+      '<button class="header-btn header-mini-search" type="button" aria-label="' + nav.search + '">' +
+        '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">' +
+          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>' +
+        '</svg>' +
+      '</button>' +
+    '</div>';
+
+  function initializeMiniHeader(header) {
+    if (!header || typeof window.matchMedia !== "function") return;
+    header.insertAdjacentHTML("afterend", miniHeaderHTML);
+    const mini = header.nextElementSibling;
+    const root = document.documentElement;
+    const phone = window.matchMedia(COMPACT_HEADER_QUERY);
+    const MIN_TRAVEL = 8; // px of scroll in one direction before the bar reacts
+    let lastY = window.scrollY;
+    let shown = false;
+    let raf = 0;
+
+    // --utg-header-h on <html> is how much of the top of the viewport the
+    // header chrome covers right now, the way --utg-anchor-h publishes the
+    // anchor ad: the sticky header's height on wider screens, the bar's
+    // height while it shows on phones, 0px otherwise. Anything sticky at
+    // top:0 adds it. The library A-Z bar did not, and sat entirely under the
+    // sticky header on desktop.
+    function publishHeight() {
+      const h = phone.matches ? (shown ? mini.offsetHeight : 0) : header.offsetHeight;
+      root.style.setProperty("--utg-header-h", h + "px");
+    }
+
+    function setShown(next) {
+      if (next === shown) return;
+      shown = next;
+      mini.classList.toggle("is-shown", next);
+      mini.setAttribute("aria-hidden", next ? "false" : "true");
+      mini.toggleAttribute("inert", !next);
+      publishHeight();
+    }
+
+    function update() {
+      raf = 0;
+      publishHeight();
+      const y = window.scrollY;
+      if (!phone.matches || y <= header.offsetTop + header.offsetHeight) {
+        setShown(false);
+        lastY = y;
+        return;
+      }
+      if (Math.abs(y - lastY) < MIN_TRAVEL) return;
+      setShown(y < lastY);
+      lastY = y;
+    }
+
+    function schedule() {
+      if (!raf) raf = window.requestAnimationFrame(update);
+    }
+
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    schedule();
+
+    mini.querySelector(".header-mini-search").addEventListener("click", function () {
+      const input = document.getElementById("searchInput");
+      setShown(false);
+      window.scrollTo(0, 0);
+      lastY = 0;
+      if (input) input.focus();
+    });
+  }
 
   function initializeSharedHeader() {
     var placeholder = document.getElementById("shared-header");
@@ -549,6 +648,7 @@
       });
     }
 
+    initializeMiniHeader(document.querySelector("header.header"));
     initializeSiteSearch();
   }
 
@@ -949,16 +1049,40 @@
     };
   }
 
-  // Push a copy_text event carrying the item identity. Every copy surface
-  // on the site routes through here so the payload shape cannot diverge
-  // between them — the reason this is one function and not five pushes.
-  function trackCopy(method, text, extra) {
+  // Copy methods whose payload is always the site's own inventory: a tile,
+  // a saved set of tiles, a glyph button, a collection or an ASCII piece.
+  // Every other method ("button", "manual", "main_bar") copies text the
+  // visitor typed, and visitors type names. Those send copy_item_group
+  // only, which still answers the analytical question; the typed text
+  // itself never reaches the dataLayer. An allowlist, so a new copy surface
+  // is private until someone decides its payload is catalogue content.
+  var CATALOGUE_COPY_METHODS = {
+    symbol_tile: 1,
+    // The other look of a two-look tile (symbol-explorer.js copyLook): the
+    // same catalogue character with a variation selector.
+    symbol_look_switch: 1,
+    grid_collection: 1,
+    saved_collection: 1,
+    glyph: 1,
+    ascii_art: 1
+  };
+
+  // The copy_text payload, kept pure so a test can assert what leaves the
+  // page without a browser.
+  function copyPayload(method, text, extra) {
     var id = copyIdentity(text);
+    // copy_item is always present as a KEY: GTM's data layer keeps a key's
+    // last value, so leaving it out would re-send the previous glyph.
+    // undefined is how a data layer key is cleared.
     var payload = {
       event: "copy_text",
       copy_method: method,
-      copy_item: id.item,
-      copy_item_group: id.group
+      copy_item: Object.prototype.hasOwnProperty.call(CATALOGUE_COPY_METHODS, method) ? id.item : undefined,
+      copy_item_group: id.group,
+      // "emoji" | "plain" on a symbol that has both looks, otherwise cleared.
+      // Always present as a key for the same reason as copy_item: GTM would
+      // otherwise re-send the previous copy's look on the next copy.
+      copy_look: undefined
     };
     if (extra) {
       for (var k in extra) {
@@ -967,6 +1091,14 @@
         }
       }
     }
+    return payload;
+  }
+
+  // Push a copy_text event carrying the item identity. Every copy surface
+  // on the site routes through here so the payload shape cannot diverge
+  // between them — the reason this is one function and not five pushes.
+  function trackCopy(method, text, extra) {
+    var payload = copyPayload(method, text, extra);
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push(payload);
   }
@@ -1089,6 +1221,74 @@
     printHidden = [];
   }
 
+  /* @browse-events:begin */
+  /* Browse events: the kaomoji hub's "browse by mood" links, and the /library/
+     directory's filter chips and search box. Every payload is a pure function
+     of catalogue values and counts, so a test can assert what leaves the page
+     without a browser. Every key is always present (undefined clears it): GTM's
+     data layer keeps a key's last value.
+
+     What is deliberately NOT sent: anything a visitor typed, except the
+     library search term, which follows the site_search policy (trimmed, at most
+     100 characters). A filter value is a chip label from the page's own
+     controlled vocabulary, never free text. */
+  const BROWSE_SETTLE_MS = 800;
+  const browseTimers = {};
+
+  // `groupIndex` is the 1-based position of the link's list among the
+  // .kao-mood-links lists on the hub (the same order on every locale hub).
+  function moodIndexClickPayload(destinationPath, groupIndex) {
+    return {
+      event: "kaomoji_mood_index_click",
+      destination_path: String(destinationPath || "").slice(0, 200),
+      mood_group: groupIndex > 0 ? groupIndex : undefined
+    };
+  }
+
+  function libraryFilterPayload(filterType, filterValue, resultCount) {
+    return {
+      event: "library_filter",
+      filter_type: filterType,
+      filter_value: filterValue,
+      result_count: resultCount
+    };
+  }
+
+  function librarySearchPayload(term, resultCount) {
+    return {
+      event: "library_search",
+      search_term: String(term || "").trim().slice(0, 100),
+      result_count: resultCount
+    };
+  }
+
+  // One row per settled change: a later change within the window replaces the
+  // pending one, so a run of chip clicks or keystrokes records its end state.
+  function pushSettled(payload) {
+    clearTimeout(browseTimers[payload.event]);
+    browseTimers[payload.event] = setTimeout(function () {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(payload);
+    }, BROWSE_SETTLE_MS);
+  }
+
+  // `value` is the chip label, or "none" when the chip was switched off or the
+  // filters were cleared (then `type` is "all" for a clear).
+  function trackLibraryFilter(type, value, resultCount) {
+    pushSettled(libraryFilterPayload(type, value, resultCount));
+  }
+
+  // A search box cleared to nothing is not a search: it cancels what was pending.
+  function trackLibrarySearch(term, resultCount) {
+    const payload = librarySearchPayload(term, resultCount);
+    if (!payload.search_term) {
+      clearTimeout(browseTimers[payload.event]);
+      return;
+    }
+    pushSettled(payload);
+  }
+  /* @browse-events:end */
+
   var ns = (window.UltraTextGen = window.UltraTextGen || {});
   ns.hideForPrint = hideForPrint;
   ns.restorePrint = restorePrint;
@@ -1097,6 +1297,8 @@
   ns.trackPrintable = trackPrintable;
   ns.trackPrintableEvent = trackPrintableEvent;
   ns.printableCredit = printableCredit;
+  ns.trackLibraryFilter = trackLibraryFilter;
+  ns.trackLibrarySearch = trackLibrarySearch;
 
   function initializeCtaTracking() {
     document.addEventListener("click", function (evt) {
@@ -1147,15 +1349,28 @@
     }, false);
   }
 
+  function initializeKaomojiMoodIndexTracking() {
+    document.addEventListener("click", function (evt) {
+      const link = evt.target && evt.target.closest && evt.target.closest(".kao-mood-links a[href]");
+      if (!link) return;
+      const lists = document.querySelectorAll(".kao-mood-links");
+      const group = Array.prototype.indexOf.call(lists, link.closest(".kao-mood-links")) + 1;
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(moodIndexClickPayload(link.pathname, group));
+    }, false);
+  }
+
   if (document.body) {
     initializeSharedHeader();
     initializeCtaTracking();
     initializePrintableNavTracking();
+    initializeKaomojiMoodIndexTracking();
   } else {
     document.addEventListener("DOMContentLoaded", function () {
       initializeSharedHeader();
       initializeCtaTracking();
       initializePrintableNavTracking();
+      initializeKaomojiMoodIndexTracking();
     });
   }
 })();

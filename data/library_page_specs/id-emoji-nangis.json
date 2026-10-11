@@ -1,14 +1,14 @@
 {
   "slug": "emoji-nangis",
   "title": "Emoji Nangis 😭 😢 🥹 — Salin & Tempel Emoji Menangis | UltraTextGen",
-  "meta_description": "Emoji nangis 😭 😢 🥹, emoji nahan tangis, kaomoji menangis (T_T), dan kombinasi siap pakai buat caption dan balasan chat. Klik emojinya, langsung kesalin.",
+  "meta_description": "Emoji nangis 😭 😢 🥹, emoji nahan tangis, emotikon kayak :'(, beberapa kaomoji menangis (T_T), dan kombinasi siap pakai buat caption dan balasan chat. Klik emojinya, langsung kesalin.",
   "canonical": "https://ultratextgen.com/id/library/emoji-nangis/",
   "breadcrumb": "Emoji Nangis",
   "hero_h1": "Emoji Nangis",
-  "hero_tagline": "Semua emoji nangis — dari 😭 nangis kejer sampai 🥹 nahan air mata — plus kaomoji menangis dan kombinasi siap tempel. Klik emojinya, langsung kesalin.",
+  "hero_tagline": "Semua emoji nangis, dari 😭 nangis kejer sampai 🥹 nahan air mata, plus emotikon yang diketik, beberapa kaomoji menangis, dan kombinasi siap tempel. Klik emojinya, langsung kesalin.",
   "intro": "Emoji nangis termasuk yang paling sering dipakai di internet — 😭 sendirian bisa berarti nangis beneran, bisa juga ketawa sampai nangis. Halaman ini ngumpulin semua varian emoji menangis, simbol air dan patah hati yang biasa nemenin, kaomoji nangis ala Jepang kayak (;﹏;), sampai kombinasi sekali klik buat caption, komentar, dan balasan di grup chat. Kalau yang kamu mau lebih ke galau diam-diam daripada nangis terang-terangan, cek halaman Emoji Sedih yang ditautkan di bawah.",
   "date_published": "2026-08-07",
-  "date_modified": "2026-08-07",
+  "date_modified": "2026-10-09",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -128,26 +128,46 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emotikon",
+      "h2": "Emotikon Teks Nangis",
+      "intro": "Air matanya digambar pakai apostrof atau koma. Ketik :'( dan tetap kebaca di aplikasi yang mengubah emoji jadi kotak.",
+      "symbols": [
+        {
+          "char": ":'(",
+          "label": "Emotikon Muka Nangis"
+        },
+        {
+          "char": ":'-(",
+          "label": "Emotikon Nangis Berhidung"
+        },
+        {
+          "char": ":,(",
+          "label": "Emotikon Tetes Air Mata"
+        },
+        {
+          "char": "D':",
+          "label": "Emotikon Nangis Putus Asa"
+        },
+        {
+          "char": ";(",
+          "label": "Emotikon Kedip Berkaca-kaca"
+        },
+        {
+          "char": "QQ",
+          "label": "Emotikon Mata Nangis ala Gamer"
+        }
+      ]
+    },
+    {
       "id": "crying-kaomoji",
       "label": "Kaomoji",
       "h2": "Kaomoji Nangis & Wajah Teks",
-      "intro": "Wajah teks ala Jepang yang nangis pakai karakter biasa — nempel di mana pun teks polos bisa masuk.",
+      "intro": "Empat wajah teks nangis yang paling dikenal.",
       "symbols": [
         {
           "char": "(T_T)",
           "label": "Kaomoji Air Mata Deras"
-        },
-        {
-          "char": "(;_;)",
-          "label": "Kaomoji Nangis Diam"
-        },
-        {
-          "char": "(ToT)",
-          "label": "Kaomoji Meraung"
-        },
-        {
-          "char": "(;﹏;)",
-          "label": "Kaomoji Terisak"
         },
         {
           "char": "(╥﹏╥)",
@@ -158,22 +178,14 @@
           "label": "Kaomoji Mata Berkaca-kaca"
         },
         {
-          "char": "( ; ω ; )",
-          "label": "Kaomoji Sesenggukan Pelan"
-        },
-        {
-          "char": "(｡•́︿•̀｡)",
-          "label": "Kaomoji Mau Nangis"
-        },
-        {
           "char": "・゜・(ノД`)・゜・",
           "label": "Kaomoji Nangis Dramatis"
-        },
-        {
-          "char": "(个_个)",
-          "label": "Kaomoji Air Mata Jatuh"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/id/library/crying-kaomoji/",
+        "text": "Lihat semua kaomoji menangis"
+      }
     }
   ],
   "collection_section": {

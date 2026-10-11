@@ -1,6 +1,6 @@
 {
   "slug": "warnsymbole",
-  "title": "Warnsymbole ☢ ☣ ⚠ — Gefahren- und Verbotszeichen zum Kopieren | UltraTextGen",
+  "title": "Warnsymbole ☢ ☣ ⚠ — Gefahren- und Verbotszeichen zum Kopieren",
   "meta_description": "Warnsymbole zum Kopieren: radioaktiv ☢, Biogefährdung ☣, Totenkopf ☠, Warnung ⚠, Hochspannung ⚡ und Verbotszeichen 🚫 ⛔. Antippen zum Kopieren.",
   "breadcrumb": "Warnsymbole",
   "hero_h1": "Gefahren- und Warnsymbole",
@@ -97,6 +97,26 @@
       ]
     },
     {
+      "id": "chemical-hazard",
+      "label": "Chemische Gefahrensymbole: entzündbar, brandfördernd, explosiv",
+      "h2": "Chemische Gefahrensymbole: entzündbar, brandfördernd, explosiv",
+      "intro": "Die chemischen Gefahrenpiktogramme (GHS) sind Zeichnungen, und Unicode kennt keine Zeichen dafür; ein kopierbares Symbol für ätzend, brandfördernd oder reizend gibt es deshalb nicht. Die nächsten Zeichen stehen hier: Die Flamme steht für entzündbare und brandfördernde Stoffe, die Explosion für explosive Stoffe, das Reagenzglas für Chemikalien allgemein. Für giftige Stoffe passt ☠ von oben, für gesundheitsschädliche oder reizende Stoffe ❗. Ein amtliches Etikett braucht das Piktogramm aus der Verordnung.",
+      "symbols": [
+        {
+          "char": "🔥",
+          "label": "Flamme (entzündbar, brandfördernd)"
+        },
+        {
+          "char": "💥",
+          "label": "Explosion (explosiv)"
+        },
+        {
+          "char": "🧪",
+          "label": "Reagenzglas (Chemikalie)"
+        }
+      ]
+    },
+    {
       "id": "s4",
       "label": "Verbots- und Zutrittszeichen",
       "h2": "Verbots- und Zutrittszeichen",
@@ -159,7 +179,7 @@
   "editorial_sections": [
     {
       "h2": "Ein Gefahrensymbol ist kein Gefahrenschild",
-      "body": "Der Unterschied wiegt schwerer, als er klingt. Ein Sicherheitsschild ist ein genormtes Objekt: Größe, Farbe, Kontrast und Anbringungsort sind vorgeschrieben, weil es aus der Entfernung, im Vorbeigehen und bei schlechtem Licht funktionieren muss. Ein Unicode-Zeichen hat nichts davon: es wechselt mit dem Text die Farbe, schrumpft mit der Schriftgröße und wird auf einem anderen Gerät womöglich anders gezeichnet. Deshalb ist ☢ in einer Zeile Dokumentation genau richtig und an einer Tür völlig fehl am Platz."
+      "body": "Der Unterschied wiegt schwerer, als er klingt. Ein Sicherheitsschild ist ein genormtes Objekt: Größe, Farbe, Kontrast und Anbringungsort sind vorgeschrieben, weil es aus der Entfernung, im Vorbeigehen und bei schlechtem Licht funktionieren muss. Ein Unicode-Zeichen hat nichts davon: Es wechselt mit dem Text die Farbe, schrumpft mit der Schriftgröße und wird auf einem anderen Gerät womöglich anders gezeichnet. Deshalb ist ☢ in einer Zeile Dokumentation genau richtig und an einer Tür völlig fehl am Platz."
     }
   ],
   "related": [
@@ -181,7 +201,7 @@
   ],
   "canonical": "https://ultratextgen.com/de/library/warnsymbole/",
   "date_published": "2026-08-10",
-  "date_modified": "2026-08-10",
+  "date_modified": "2026-10-10",
   "lang": "de",
   "page_type": "library",
   "hreflang": [

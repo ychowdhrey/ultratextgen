@@ -307,6 +307,51 @@ instead of a locale slug — git merged nothing cleanly and nothing flagged it.
 inside `share-core.js`, so the second session had no way to find it without reading
 the file. See `docs/architecture/parallel-sessions.md`.
 
+## Copy outcomes and the browse events (2026-10-09)
+
+**A copy row fires on success, as `share_text` does.** `copyText()` in
+`symbol-explorer.js` used to run the `execCommand("copy")` fallback when the
+clipboard API refused, then show "Copied" and send `copy_text` whether or not the
+fallback had worked. `fallbackCopy()` now returns what `execCommand` returned
+(false on an exception). When both paths fail the tile shows the explorer's
+localized "failed" string and sends nothing, so a refused copy is neither a false
+confirmation nor a false row. Success paths are unchanged. `npm run
+check:runtime-smoke` drives a kaomoji tile with the clipboard forced to reject and
+`execCommand` forced to return false, and asserts the toast, the absence of a
+`copy_text` row and the absence of the copied state.
+
+**Three new `copy_method` values, none of them catalogue content.** The kaomoji
+generator's Copy passes `kaomoji_generator`, its Copy Link `kaomoji_link`, and the
+decoder's Copy Face `kaomoji_decoder`; before this all three inherited
+`symbol_tile`, so generator copies were indistinguishable from library-tile copies,
+Copy Link pushed the page URL as `copy_item`, and a face the visitor typed reached
+`copy_item`. None is in `CATALOGUE_COPY_METHODS`, so each sends `copy_item_group`
+and `copy_item: undefined`. `header.test.js` asserts both halves and that a typed
+string appears nowhere in the payload. The catalogue methods stay `symbol_tile`,
+`symbol_look_switch`, `grid_collection`, `saved_collection`, `glyph` and
+`ascii_art`; every other method, these three and `image_to_ascii` among them, sends
+the group only. `symbol_tile` counts on the kaomoji generator and decoder pages
+before this date include their generator copies, so read any series across
+2026-10-09 as a definition change.
+
+**Four new events.** Each has one writer, every key is pushed on every row
+(`undefined` clears a key GTM would otherwise carry over), and no parameter is typed
+text except the search term, which follows the existing `site_search` policy
+(trimmed, at most 100 characters).
+
+| event | writer | parameters |
+|---|---|---|
+| `kaomoji_generator_step` | `js/kaomoji/kaomojiPageController.js` (`stepPayload`) | `kaomoji_step`: `mood`, `preset`, `part`, `surprise`, `reset`, `recent`, `paste_edit`, `url_load`. `kaomoji_value`: the mood id, the preset id or the part category id for those three steps, otherwise cleared. Never the face. `paste_edit` fires once per settled edit (800 ms after the last keystroke) and `url_load` once when a `?q=` face loads. |
+| `kaomoji_mood_index_click` | `header.js` (one delegated listener on `.kao-mood-links a`) | `destination_path`: the link's pathname. `mood_group`: the 1-based position of its list among the hub's lists. Covers the English hub and the locale hubs with no markup change. |
+| `library_filter`, `library_search` | `header.js` (`trackLibraryFilter`, `trackLibrarySearch`), called from the `/library/` page script | `library_filter`: `filter_type` (`type`, `subject`, `use_case`, `platform`, or `all` for Clear), `filter_value` (the chip label, or `none` when a chip is switched off or filters are cleared), `result_count`. `library_search`: `search_term`, `result_count`. Both settle for 800 ms, so a run of changes records the last one; an emptied search box records nothing. The locale hubs run a different script and are not wired. |
+| `site_search_no_results` | `js/search/site-search.js` | `search_term`, `locale`, `search_surface` (`header`). One row per settled query that returned nothing (800 ms), never per keystroke and never twice for the same term in a row. `site_search` and its parameters are unchanged. |
+
+These events reach GA4 only if the GTM container forwards them. The container is not
+part of this repository, so until a tag and trigger exist for each name they are
+visible in the dataLayer only. The tests are `header.test.js` (payload shape, privacy
+and debounce, by slicing the shipped code), `npm run test:site-search` (the no-result
+reporter), and `check:runtime-smoke` (the wiring in a real browser).
+
 ## Verification
 
 Verified against seven differently-shaped broken inputs — the push moved back before

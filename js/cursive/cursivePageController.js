@@ -531,12 +531,30 @@
      Printable alphabet practice sheet
      --------------------------------------------------------------- */
 
-  function buildPracticeSheet() {
+  /* The sheet is a handwriting sheet, so both columns are set in a real
+     cursive face, the one this locale's printables pages already teach
+     (Playwrite PT on pt pages, IT Trad on it, ...). These pages do not load
+     printablesEngine.js, which is what publishes --pt-glyph-family, so until
+     2026-10-03 both columns fell back to the body sans: a "cursive" sheet
+     printed in Plus Jakarta Sans. Locales without a national Playwrite face
+     take the US traditional cursive. */
+  const PRINT_FACES = {
+    pt: "Playwrite PT", it: "Playwrite IT Trad", fr: "Playwrite FR Trad",
+    es: "Playwrite ES", de: "Playwrite DE VA", id: "Playwrite ID", pl: "Playwrite PL"
+  };
+  function printFace() {
+    const lang = (document.documentElement.lang || "en").toLowerCase().split("-")[0];
+    return PRINT_FACES[lang] || "Playwrite US Trad";
+  }
+
+  async function buildPracticeSheet() {
     if (!el.printRoot) { window.print(); return; }
     el.printRoot.innerHTML = "";
+    const face = printFace();
 
     const wrap = document.createElement("div");
     wrap.className = "bubble-print-wrap";
+    wrap.style.setProperty("--pt-glyph-family", "'" + face + "', 'Playwrite US Trad', cursive");
     const h = document.createElement("h2");
     h.className = "bubble-print-title";
     h.textContent = t("practiceTitle", "Cursive alphabet practice sheet — ultratextgen.com");
@@ -547,9 +565,12 @@
     LETTERS.forEach((ch) => {
       const row = document.createElement("div");
       row.className = "cursive-print-row";
+      // Plain letters: the face draws them joined and slanted. The Unicode
+      // "Ultra Script" glyphs this column used to carry are math-script code
+      // points a handwriting face has no glyph for.
       const model = document.createElement("span");
       model.className = "cursive-print-model";
-      model.textContent = renderWith(ch, "Ultra Script") + " " + renderWith(ch.toLowerCase(), "Ultra Script");
+      model.textContent = ch + " " + ch.toLowerCase();
       const trace = document.createElement("span");
       trace.className = "cursive-print-trace";
       trace.textContent = ch + " " + ch.toLowerCase();
@@ -561,15 +582,48 @@
     wrap.appendChild(sheet);
     el.printRoot.appendChild(wrap);
 
+    // The print root is display:none until printing, so the face has not been
+    // fetched yet; printing before it arrives prints the fallback. Bounded so
+    // a slow network can never block the dialog.
+    if (document.fonts && document.fonts.load) {
+      try {
+        await Promise.race([
+          document.fonts.load("1.6rem '" + face + "'", "Aa"),
+          new Promise((resolve) => setTimeout(resolve, 2500))
+        ]);
+      } catch (err) { /* print with the fallback */ }
+    }
+
     document.body.classList.add("is-printing");
     // Hide the page inline as well: the stylesheet rule cannot beat an
     // inline !important (an ad anchor unit), so without this the printed
     // sheet carries the page's ads. Shared with printablesEngine.js.
     if (window.UltraTextGen && window.UltraTextGen.hideForPrint) window.UltraTextGen.hideForPrint(document.getElementById("cursivePrintRoot"));
+    if (window.UltraTextGen && window.UltraTextGen.trackPrintable) window.UltraTextGen.trackPrintable("print", "cursive_practice");
+
+    // Tear down when the dialog closes, not when print() returns: on iOS and
+    // Android print() can return before the preview is composed, and a
+    // synchronous teardown there printed the whole page. Same three signals
+    // as printablesEngine.js openPrintDialog().
+    let done = false;
+    const finish = () => {
+      if (done) return;
+      done = true;
+      window.removeEventListener("afterprint", finish);
+      document.removeEventListener("visibilitychange", onVisible);
+      window.removeEventListener("focus", onVisible);
+      document.body.classList.remove("is-printing");
+      if (window.UltraTextGen && window.UltraTextGen.restorePrint) window.UltraTextGen.restorePrint();
+      el.printRoot.innerHTML = "";
+    };
+    const onVisible = () => { if (document.visibilityState !== "hidden") setTimeout(finish, 300); };
+    window.addEventListener("afterprint", finish);
+    const t0 = Date.now();
     window.print();
-    document.body.classList.remove("is-printing");
-    if (window.UltraTextGen && window.UltraTextGen.restorePrint) window.UltraTextGen.restorePrint();
-    el.printRoot.innerHTML = "";
+    if (Date.now() - t0 > 250) { setTimeout(finish, 50); return; }
+    document.addEventListener("visibilitychange", onVisible);
+    window.addEventListener("focus", onVisible);
+    setTimeout(finish, 60000);
   }
 
   /* ---------------------------------------------------------------

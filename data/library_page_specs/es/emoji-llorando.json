@@ -8,7 +8,7 @@
   "crumb_home": "Inicio",
   "library_url": "https://ultratextgen.com/es/library/",
   "date_published": "2026-08-12",
-  "date_modified": "2026-08-12",
+  "date_modified": "2026-10-09",
   "hreflang": [
     {
       "lang": "en",
@@ -23,11 +23,11 @@
       "href": "https://ultratextgen.com/library/crying-emoji/"
     }
   ],
-  "title": "Emoji Llorando: Copiar y Pegar 😭 Kaomoji y Combos de Lágrimas",
-  "meta_description": "Copia y pega el emoji llorando 😭 😢 🥹, kaomoji de llanto como (T_T) y combos de lágrimas para publicaciones y mensajes. Haz clic para copiarlo.",
-  "breadcrumb": "Emoji Llorando y Kaomoji",
-  "hero_h1": "Emoji Llorando y Kaomoji de Llanto",
-  "hero_tagline": "Todas las variantes del emoji llorando, desde el sollozo completo del 😭 hasta la lágrima contenida del 🥹, más kaomoji y combos de lágrimas listos para pegar. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "title": "Emoji Llorando: Copiar y Pegar 😭 Emoticonos y Combos de Lágrimas",
+  "meta_description": "Copia y pega el emoji llorando 😭 😢 🥹, emoticonos de llanto como :'(, algunos kaomoji como (T_T) y combos de lágrimas para publicaciones y mensajes. Haz clic para copiarlo.",
+  "breadcrumb": "Emoji Llorando",
+  "hero_h1": "Emoji Llorando",
+  "hero_tagline": "Todas las variantes del emoji llorando, desde el sollozo completo del 😭 hasta la lágrima contenida del 🥹, más emoticonos de llanto, algunos kaomoji y combos de lágrimas listos para pegar. Haz clic en cualquier símbolo para copiarlo al instante.",
   "intro": "El emoji llorando es uno de los caracteres más usados de internet: el 😭 sirve tanto para un llanto sincero como para exagerar que algo te dio demasiada risa o demasiada ternura. En los chats en español funciona como el equivalente escrito de decir que te moriste de la risa, que no puedes más o que algo te partió el corazón, y el tono lo define el resto del mensaje. Esta página reúne todas las variantes del emoji llorando, los símbolos de agua y corazón roto que suelen acompañarlas, los kaomoji japoneses clásicos como (;﹏;) y combos de un clic para publicaciones, comentarios y reacciones en grupos de WhatsApp. Si lo que buscas es una tristeza más callada, sin lágrimas a la vista, la página de emoji triste que enlazamos abajo tiene ese conjunto.",
   "sections": [
     {
@@ -147,26 +147,46 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticonos",
+      "h2": "Emoticonos de Llanto de Texto",
+      "intro": "Lágrimas dibujadas con un apóstrofo o una coma. Un :'( escrito a mano sobrevive en cualquier app que convierta los emoji en cuadritos.",
+      "symbols": [
+        {
+          "char": ":'(",
+          "label": "Cara llorando"
+        },
+        {
+          "char": ":'-(",
+          "label": "Llorando con nariz"
+        },
+        {
+          "char": ":,(",
+          "label": "Lágrima que cae"
+        },
+        {
+          "char": "D':",
+          "label": "Llanto desconsolado"
+        },
+        {
+          "char": ";(",
+          "label": "Guiño con lágrimas"
+        },
+        {
+          "char": "QQ",
+          "label": "Ojos llorando gamer"
+        }
+      ]
+    },
+    {
       "id": "crying-kaomoji",
       "label": "Kaomoji",
       "h2": "Kaomoji de llanto y caritas de texto",
-      "intro": "Caritas japonesas hechas con puros caracteres que lloran a todo dar: pégalas en cualquier lugar donde funcione el texto plano.",
+      "intro": "Cuatro de las caritas de llanto más conocidas.",
       "symbols": [
         {
           "char": "(T_T)",
           "label": "Kaomoji de lágrimas a chorros"
-        },
-        {
-          "char": "(;_;)",
-          "label": "Kaomoji de llanto silencioso"
-        },
-        {
-          "char": "(ToT)",
-          "label": "Kaomoji de llanto a gritos"
-        },
-        {
-          "char": "(;﹏;)",
-          "label": "Kaomoji de lágrimas temblorosas"
         },
         {
           "char": "(╥﹏╥)",
@@ -177,22 +197,14 @@
           "label": "Kaomoji de ojos llorosos"
         },
         {
-          "char": "( ; ω ; )",
-          "label": "Kaomoji de sollozo suave"
-        },
-        {
-          "char": "(｡•́︿•̀｡)",
-          "label": "Kaomoji a punto de llorar"
-        },
-        {
           "char": "・゜・(ノД`)・゜・",
           "label": "Kaomoji de llanto dramático"
-        },
-        {
-          "char": "(个_个)",
-          "label": "Kaomoji de lágrimas cayendo"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/es/library/crying-kaomoji/",
+        "text": "Ver todos los kaomoji llorando"
+      }
     }
   ],
   "collections": [
@@ -281,12 +293,12 @@
   "related": [
     {
       "href": "/es/library/emoji-triste/",
-      "title": "Emoji triste y kaomoji",
+      "title": "Emoji Triste",
       "desc": "Caras melancólicas, decepcionadas y con el corazón roto para una tristeza más callada."
     },
     {
       "href": "/es/library/emoji-riendo/",
-      "title": "Emoji riendo y kaomoji",
+      "title": "Emoji Riendo",
       "desc": "Caras de risa, combos con calavera y reacciones de llorar de la risa."
     },
     {

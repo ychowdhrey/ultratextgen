@@ -3,11 +3,11 @@
  "lang": "de",
  "page_type": "library",
  "copy_pattern": "collection",
- "title": "Wütendes Emoji 😡 zum Kopieren — alle Wut-Gesichter und Kaomoji | UltraTextGen",
- "meta_description": "Wütendes Emoji zum Kopieren: 😡 😠 🤬 Wutgesichter, Zornsymbol 💢, Explosionen und Tischumwerf-Kaomoji — mit Erklärung, welches wann passt.",
+ "title": "Wütendes Emoji 😡 zum Kopieren: alle Wut-Gesichter und Emoticons",
+ "meta_description": "Wütendes Emoji zum Kopieren: 😡 😠 🤬 Wutgesichter, Zornsymbol 💢, Explosionen, getippte Emoticons wie >:( und ein paar Tischumwerf-Kaomoji. Mit Erklärung, welches wann passt.",
  "breadcrumb": "Wütendes Emoji",
  "hero_h1": "Wütendes Emoji",
- "hero_tagline": "Von leichtem Ärger bis zum Wutausbruch, plus die Kaomoji, die Tische umwerfen.",
+ "hero_tagline": "Von leichtem Ärger bis zum Wutausbruch, plus getippte Emoticons und ein paar Kaomoji, die Tische umwerfen.",
  "intro": "Wut hat im Chat Abstufungen, die im Gesicht kaum zu unterscheiden sind: 😠 ist verärgert, 😡 ist wütend, 🤬 flucht. Diese Seite ordnet sie von leicht nach schwer, ergänzt die Symbole, die statt eines Gesichts gesetzt werden, und schließt mit den Kaomoji, für die es kein Emoji gibt.",
  "sections": [
   {
@@ -119,22 +119,50 @@
    ]
   },
   {
+   "id": "emoticons",
+   "label": "Tastatur-Smileys",
+   "h2": "Wütende Text-Emoticons",
+   "intro": "Das wütende Gesicht in der Tastaturversion, gebaut aus Satzzeichen. Es wird als reiner Text eingefügt und erscheint deshalb auch dort, wo Emojis fehlen.",
+   "symbols": [
+    {
+     "char": ">:(",
+     "label": "Wütendes Gesicht"
+    },
+    {
+     "char": ">:-(",
+     "label": "Wütend mit Nase"
+    },
+    {
+     "char": ">:[",
+     "label": "Finsterer Blick"
+    },
+    {
+     "char": "D:<",
+     "label": "Wütender Aufschrei"
+    },
+    {
+     "char": ">:O",
+     "label": "Lautes Schimpfen"
+    },
+    {
+     "char": ":@",
+     "label": "Schäumend vor Wut"
+    },
+    {
+     "char": ">:|",
+     "label": "Unterdrückter Zorn"
+    }
+   ]
+  },
+  {
    "id": "kaomoji",
    "label": "Wut-Kaomoji",
    "h2": "Wut-Kaomoji",
-   "intro": "Für das, was kein Emoji abbildet: der umgeworfene Tisch.",
+   "intro": "Vier Favoriten, vom bösen Blick bis zum umgeworfenen Tisch.",
    "symbols": [
     {
      "char": "(╯°□°）╯︵ ┻━┻",
      "label": "Tisch umwerfen"
-    },
-    {
-     "char": "(┛◉Д◉)┛彡┻━┻",
-     "label": "Wütend Tisch umwerfen"
-    },
-    {
-     "char": "┬─┬ノ( º _ ºノ)",
-     "label": "Tisch zurückstellen"
     },
     {
      "char": "(╬ Ò﹏Ó)",
@@ -145,22 +173,14 @@
      "label": "Schreien vor Wut"
     },
     {
-     "char": "(ﾉಥ益ಥ)ﾉ ┻━┻",
-     "label": "Wut mit Tränen"
-    },
-    {
      "char": "(¬_¬)",
      "label": "Genervter Blick"
-    },
-    {
-     "char": "(≖_≖ )",
-     "label": "Misstrauischer Blick"
-    },
-    {
-     "char": "(｀ﾍ´)",
-     "label": "Griesgrämig"
     }
-   ]
+   ],
+   "more_link": {
+    "href": "/de/library/kaomoji/",
+    "text": "Alle Kaomoji ansehen"
+   }
   }
  ],
  "faq_h2": "Häufige Fragen zum wütenden Emoji",
@@ -189,11 +209,11 @@
  "editorial_sections": [
   {
    "h2": "Warum es so viele Abstufungen gibt",
-   "body": "Der Emoji-Satz bildet Wut feiner ab als die meisten anderen Gefühle, und das hat einen historischen Grund: Die japanischen Ursprungszeichensätze der Neunzigerjahre unterschieden bereits zwischen Verärgerung, Zorn und dem Manga-Zornsymbol 💢, weil diese Unterscheidung in der japanischen Bildsprache etabliert war. Westliche Nutzerinnen und Nutzer haben das Repertoire übernommen, ohne die Abstufung immer mitzuübernehmen: weshalb 😡 im deutschsprachigen Chat häufig dort steht, wo 😠 gemeint war, und schärfer ankommt als beabsichtigt."
+   "body": "Der Emoji-Satz bildet Wut feiner ab als die meisten anderen Gefühle, und das hat einen historischen Grund: Die japanischen Ursprungszeichensätze der Neunzigerjahre unterschieden bereits zwischen Verärgerung, Zorn und dem Manga-Zornsymbol 💢, weil diese Unterscheidung in der japanischen Bildsprache etabliert war. Westliche Nutzerinnen und Nutzer haben das Repertoire übernommen, ohne die Abstufung immer mitzuübernehmen, weshalb 😡 im deutschsprachigen Chat häufig dort steht, wo 😠 gemeint war, und schärfer ankommt als beabsichtigt."
   },
   {
    "h2": "Das Kaomoji kann, was das Emoji nicht kann",
-   "body": "Kein Emoji zeigt eine Handlung: es zeigt ein Gesicht oder einen Gegenstand. Genau deshalb hat sich (╯°□°）╯︵ ┻━┻ gehalten: es erzählt eine Bewegung, jemand wirft einen Tisch um. Und weil es eine Handlung ist, gibt es eine Fortsetzung, ┬─┬ノ( º _ ºノ), die den Tisch zurückstellt. Diese Zweiteilung, Ausbruch und Beruhigung, lässt sich mit Emojis nicht ausdrücken und ist der Grund, warum die Kaomoji hier nicht bloß Dekoration sind."
+   "body": "Kein Wut-Emoji zeigt eine Handlung: Es zeigt ein Gesicht oder einen Gegenstand. Genau deshalb hat sich (╯°□°）╯︵ ┻━┻ gehalten: Es erzählt eine Bewegung: Jemand wirft einen Tisch um. Und weil es eine Handlung ist, gibt es eine Fortsetzung, ┬─┬ノ( º _ ºノ), die den Tisch zurückstellt. Diese Zweiteilung, Ausbruch und Beruhigung, lässt sich mit Emojis nicht ausdrücken und ist der Grund, warum die Kaomoji hier nicht bloß Dekoration sind."
   }
  ],
  "related": [
@@ -234,7 +254,7 @@
   }
  ],
  "date_published": "2026-08-16",
- "date_modified": "2026-08-16",
+ "date_modified": "2026-10-09",
  "collection_section": {
   "id": "combo-sets",
   "label": "Fertige Kombinationen",

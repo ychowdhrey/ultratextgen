@@ -1,11 +1,11 @@
 {
   "slug": "sad-kaomoji",
-  "title": "Sad Kaomoji: Copy & Paste Sad & Gloomy Text Faces",
-  "meta_description": "Browse and copy sad kaomoji — also spelled kamoji — Japanese text faces for sadness, disappointment, sighing, and gloomy moods. Click any to copy it instantly.",
+  "title": "Sad Kaomoji: 20+ Gloomy & Downcast Text Faces to Copy & Paste",
+  "meta_description": "20+ sad kaomoji (also spelled kamoji): Japanese text faces for sadness, disappointment, sighing, and gloomy moods, sorted by mood.",
   "breadcrumb": "Sad Kaomoji",
   "hero_h1": "Sad Kaomoji",
   "hero_tagline": "Copy and paste sad kaomoji: downcast, disappointed, and gloomy Japanese text faces. Click any face to copy it instantly.",
-  "intro": "Sad kaomoji (also spelled kamoji) are Japanese-style text faces for a low mood that stops short of full tears: disappointment, sighing, loneliness, and quiet gloom. A sad kaomoji such as (´･_･`) or (´ω`) is plain Unicode text, so it pastes cleanly into bios, captions, comments, and messages. Browse by feeling below and click any face to copy it instantly. However you search it, sad kaomoji or kaomoji sad, every face here is free to copy and paste. For tears and sobbing, see the crying kaomoji page.",
+  "intro": "Sad kaomoji (also spelled kamoji) are Japanese-style text faces for a low mood that stops short of full tears: disappointment, sighing, loneliness, and quiet gloom. A sad kaomoji such as (´･_･`) or (´ω`) is plain Unicode text, so it pastes cleanly into bios, captions, comments, and messages. Browse by feeling below and click any face to copy it instantly. However you search it, sad kaomoji or kaomoji sad, every face here is free to copy and paste. For tears and sobbing, see the crying kaomoji page. ᗒ and ᗕ come from Canadian syllabics, so a device without those fonts shows a box in their place.",
   "date_published": "2026-07-10",
   "date_modified": "2026-07-10",
   "copy_pattern": "single",
@@ -131,6 +131,50 @@
         {
           "char": "(๑◕︵◕๑)",
           "label": "Wounded"
+        }
+      ]
+    },
+    {
+      "id": "sigh-meh",
+      "label": "Sigh & Meh",
+      "h2": "Sigh and Meh Kaomoji",
+      "intro": "A sigh face often carries ε- or =3 at one side: a puff of air leaving the mouth. Most of these are tired, let down or simply unimpressed, and the last one is the sigh of relief that Japanese writes as ホッ (hotto).",
+      "symbols": [
+        {
+          "char": "ε-(´・｀) ﾌ",
+          "label": "Sigh of Defeat"
+        },
+        {
+          "char": "ε-(ーдー)",
+          "label": "Heavy Sigh"
+        },
+        {
+          "char": "(´-ε-`)",
+          "label": "Puffing Sigh"
+        },
+        {
+          "char": "( ´_ゝ`)",
+          "label": "Meh"
+        },
+        {
+          "char": "(=_=)",
+          "label": "Over It"
+        },
+        {
+          "char": "(ーー゛)",
+          "label": "Let Down"
+        },
+        {
+          "char": "┐(￣ヘ￣)┌",
+          "label": "Whatever"
+        },
+        {
+          "char": "(´._.`)",
+          "label": "Small Disappointment"
+        },
+        {
+          "char": "ε-(´∀`*)ホッ",
+          "label": "Sigh of Relief"
         }
       ]
     }

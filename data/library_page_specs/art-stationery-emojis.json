@@ -1,7 +1,7 @@
 {
   "slug": "art-stationery-emojis",
   "title": "Art & Stationery Emojis: Copy & Paste ✏ 🎨 Creative Combos",
-  "meta_description": "Art and stationery emojis to copy and paste — pencils ✏️, palettes 🎨, paintbrushes, notebooks, paper, and creative combo sets. Click any emoji to copy it instantly.",
+  "meta_description": "Art and stationery emojis to copy and paste: pencils ✏️, palettes 🎨, paintbrushes, notebooks, paper, and creative combo sets.",
   "canonical": "https://ultratextgen.com/library/art-stationery-emojis/",
   "breadcrumb": "Art & Stationery Emojis",
   "hero_h1": "Art & Stationery Emojis",
@@ -21,7 +21,8 @@
         { "char": "🖌️", "label": "Paintbrush" },
         { "char": "🖍️", "label": "Crayon" },
         { "char": "✏️", "label": "Pencil" },
-        { "char": "🖼️", "label": "Framed Picture" }
+        { "char": "🖼️", "label": "Framed Picture" },
+        { "char": "🫟", "label": "Splatter (Emoji 16.0)" }
       ]
     },
     {
@@ -76,6 +77,32 @@
         { "char": "📂", "label": "Open File Folder" },
         { "char": "📁", "label": "File Folder" },
         { "char": "🗑️", "label": "Wastebasket" }
+      ]
+    },
+    {
+      "id": "text-scissors",
+      "label": "Scissors",
+      "h2": "Text Scissors Symbols",
+      "intro": "Plain-text scissors from Unicode's Dingbats block. Only ✂ also has a colour emoji form; ✁ ✃ ✄ are always text, so they take your font and colour, which suits a coupon, a printed form or a cut line.",
+      "symbols": [
+        { "char": "✁", "label": "Upper Blade Scissors" },
+        { "char": "✂", "label": "Black Scissors (text)" },
+        { "char": "✃", "label": "Lower Blade Scissors" },
+        { "char": "✄", "label": "White Scissors" }
+      ]
+    },
+    {
+      "id": "cut-here-lines",
+      "label": "Cut Lines",
+      "h2": "Cut Here Lines",
+      "intro": "A scissors glyph followed by a dashed rule marks where to cut on a coupon, voucher or printable. Each button copies the full line, so trim it to fit your page.",
+      "symbols": [
+        { "char": "✂ - - - - - - - - - - - -", "label": "Dashed Cut Line" },
+        { "char": "✄┈┈┈┈┈┈┈┈┈┈┈┈", "label": "Dotted Cut Line" },
+        { "char": "✂┄┄┄┄┄┄┄┄┄┄┄┄", "label": "Triple-Dash Cut Line" },
+        { "char": "- - - - - - ✂ - - - - - -", "label": "Centered Scissors" },
+        { "char": "✄ cut here ┈┈┈┈┈┈┈┈", "label": "Cut Here" },
+        { "char": "┈┈┈┈┈┈✂┈┈┈┈┈┈", "label": "Centered Scissors, Dotted" }
       ]
     },
     {

@@ -1,7 +1,7 @@
 {
   "slug": "symboles-astrologiques",
-  "title": "Symboles Astrologiques ♈♉♊ — Signes du Zodiaque à Copier | UltraTextGen",
-  "meta_description": "Symboles du zodiaque ♈♉♊ à copier-coller : les 12 signes, les symboles planétaires, les animaux du zodiaque chinois et les aspects astrologiques. Cliquez pour copier.",
+  "title": "Symboles Astrologiques ♈♉♊ — Signes du Zodiaque à Copier",
+  "meta_description": "Symboles du zodiaque ♈♉♊ à copier-coller : les 12 signes, les symboles planétaires, les animaux du zodiaque chinois et les aspects astrologiques.",
   "breadcrumb": "Symboles Astrologiques",
   "hero_h1": "Symboles Astrologiques",
   "hero_tagline": "Les douze signes du zodiaque en caractères Unicode, avec les planètes, les animaux du zodiaque chinois et les aspects classiques.",
@@ -184,7 +184,7 @@
       "id": "aspects",
       "label": "Symboles d'Aspects Astrologiques",
       "h2": "Symboles d'Aspects Astrologiques",
-      "intro": "Les aspects du thème astral.",
+      "intro": "Les aspects du thème astral. Unicode n'a pas de caractère pour le semi-carré (45°) : les thèmes astraux utilisent le signe d'angle ∠.",
       "symbols": [
         {
           "char": "☊",
@@ -213,6 +213,22 @@
         {
           "char": "△",
           "label": "Trigone"
+        },
+        {
+          "char": "⚺",
+          "label": "Semi-sextile (30°)"
+        },
+        {
+          "char": "∠",
+          "label": "Semi-carré (45°)"
+        },
+        {
+          "char": "⚼",
+          "label": "Sesqui-carré (135°)"
+        },
+        {
+          "char": "⚻",
+          "label": "Quinconce (150°)"
         }
       ]
     },

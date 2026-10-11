@@ -2,7 +2,7 @@
  "slug": "satzzeichen",
  "lang": "de",
  "copy_pattern": "single",
- "title": "Satzzeichen & Sonderzeichen zum Kopieren — Fragezeichen, Kreuz, Paragraf | UltraTextGen",
+ "title": "Satzzeichen & Sonderzeichen zum Kopieren | UltraTextGen",
  "meta_description": "Satzzeichen zum Kopieren: Kreuz †, Paragraf §, Absatzzeichen ¶, Interrobang ‽, umgekehrtes Fragezeichen ¿ und Promille ‰ — mit Erklärung, wofür sie stehen.",
  "breadcrumb": "Satzzeichen",
  "hero_h1": "Satzzeichen und typografische Zeichen",
@@ -252,11 +252,11 @@
  "editorial_sections": [
   {
    "h2": "Die Reihenfolge der Fußnotenzeichen",
-   "body": "Wo Ziffern für Fußnoten nicht in Frage kommen (etwa in Tabellen, in denen Zahlen bereits Daten sind) gilt eine feste Reihenfolge: erst *, dann †, dann ‡, dann §, dann ‖, dann ¶. Danach wird verdoppelt: **, ††, ‡‡. Diese Folge stammt aus dem Bleisatz und wird von wissenschaftlichen Verlagen bis heute so verwendet. Wer nur ein Zeichen braucht, nimmt das Sternchen; wer drei braucht, sollte die Reihenfolge kennen, weil eine willkürliche Auswahl im gesetzten Text sofort auffällt."
+   "body": "Wo Ziffern für Fußnoten nicht in Frage kommen (etwa in Tabellen, in denen Zahlen bereits Daten sind), gilt eine feste Reihenfolge: erst *, dann †, dann ‡, dann §, dann ‖, dann ¶. Danach wird verdoppelt: **, ††, ‡‡. Diese Folge stammt aus dem Bleisatz und wird von wissenschaftlichen Verlagen bis heute so verwendet. Wer nur ein Zeichen braucht, nimmt das Sternchen; wer drei braucht, sollte die Reihenfolge kennen, weil eine willkürliche Auswahl im gesetzten Text sofort auffällt."
   },
   {
    "h2": "Warum ‰ und ‱ eigene Zeichen sind",
-   "body": "Das Prozentzeichen % hat zwei Nullen im Nenner, das Promillezeichen ‰ drei, das Basispunktzeichen ‱ vier: die Zeichenform bildet die Größenordnung direkt ab. ‰ ist im deutschsprachigen Raum vor allem aus dem Verkehrsrecht bekannt (Blutalkohol), ‱ fast ausschließlich aus dem Finanzwesen, wo Zinsänderungen in Basispunkten angegeben werden. Beide werden häufig durch „Promille“ beziehungsweise „bp“ ersetzt, was zulässig, aber weniger präzise ist."
+   "body": "Das Prozentzeichen % hat zwei Nullen im Nenner, das Promillezeichen ‰ drei, das Basispunktzeichen ‱ vier: Die Zeichenform bildet die Größenordnung direkt ab. ‰ ist im deutschsprachigen Raum vor allem aus dem Verkehrsrecht bekannt (Blutalkohol), ‱ fast ausschließlich aus dem Finanzwesen, wo Zinsänderungen in Basispunkten angegeben werden. Beide werden häufig durch „Promille“ beziehungsweise „bp“ ersetzt, was zulässig, aber weniger präzise ist."
   }
  ],
  "related": [

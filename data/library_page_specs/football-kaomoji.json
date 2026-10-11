@@ -6,7 +6,7 @@
   "breadcrumb": "Football Kaomoji",
   "hero_h1": "Football Kaomoji",
   "hero_tagline": "Cute football text faces: kicking, celebrating, and reacting with a soccer ball. Click any kaomoji to copy it.",
-  "intro": "Football kaomoji are Japanese-style text faces built around the game: a little character cheering a goal, kicking a ⚽, or sulking after a loss. Drop them into matchday posts, group chats, and fan bios. Click any kaomoji below to copy it.",
+  "intro": "Football kaomoji are Japanese-style text faces built around the game: a little character cheering a goal, kicking a ⚽, or sulking after a loss. Drop them into matchday posts, group chats, and fan bios. Click any kaomoji below to copy it. ಠ, ᕤ and ᕦ come from Kannada and Canadian syllabics, so a device without those fonts shows a box in their place.",
   "date_published": "2026-06-16",
   "date_modified": "2026-06-16",
   "copy_pattern": "single",
@@ -140,6 +140,16 @@
       "href": "/library/emoji-combos/",
       "title": "Emoji Combos",
       "desc": "Aesthetic emoji combinations for every mood and theme."
+    },
+    {
+      "href": "/library/football-emoji-copy-paste/",
+      "title": "Football Emoji Copy & Paste",
+      "desc": "Soccer, American football, and rugby emojis in one place: plus trophies, cards, and fan emojis."
+    },
+    {
+      "href": "/library/football-ascii-art/",
+      "title": "Football ASCII Art",
+      "desc": "Soccer ball, goal, and pitch characters plus ready-made one-line football art."
     }
   ]
 }

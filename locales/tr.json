@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Şekilli Yazı, Şekilli Harf ve Güzel Fontlar — Kopyala Yapıştır",
-    "description": "Şekilli yazı, şekilli harf ve font oluşturucu — Instagram bio, oyun nicki, WhatsApp ve Discord için kalın, italik, el yazısı, gotik, balon font ve şekilli rakam. Kopyala yapıştır, anında kullan."
+    "description": "Şekilli yazı ve font oluşturucu: Instagram bio, oyun nicki, WhatsApp ve Discord için kalın, italik, el yazısı, gotik ve balon font. Kopyala yapıştır, kullan."
   },
   "hero": {
     "title": "Şekilli Yazı, Şekilli Harf ve Font Oluşturucu",
@@ -233,6 +233,11 @@
       "renderFailed": "Görsel oluşturulamadı. Tekrar dene.",
       "trayLabel": "Görsel seçimi",
       "setUnavailable": "Bu set henüz bir görsele eklenemiyor."
+    },
+    "symbolLook": {
+      "plain": "Düz sürümü kopyala",
+      "emoji": "Emoji sürümünü kopyala",
+      "note": "Bazı uygulamalar yine de renkli gösterir."
     }
   },
   "useCases": {
@@ -401,7 +406,7 @@
         "items": [
           {
             "question": "Telefondan kullanılabiliyor mu?",
-            "answer": "Evet — iPhone, Android, iPad, tablet, her şey. Site mobile için optimize, indirilecek uygulama yok.\n    <br><br>\n    Tarayıcıdan ultratextgen.com'a gir, yazını yaz, stili seç, kopyala. Instagram'a, WhatsApp'a, oyununa direkt yapıştır."
+            "answer": "Evet, iPhone, Android, iPad, tablet, her şey. Site mobile için optimize, indirilecek uygulama yok.\n    <br><br>\n    Tarayıcıdan ultratextgen.com'a gir, yazını yaz, stili seç, kopyala. Instagram'a, WhatsApp'a, oyununa direkt yapıştır."
           }
         ]
       },

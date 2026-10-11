@@ -2,7 +2,7 @@
   "slug": "simbolos-matematicos",
   "lang": "pt",
   "title": "Símbolos Matemáticos: Copiar e Colar Caracteres de Matemática",
-  "meta_description": "Navegue e copie símbolos matemáticos — operadores, letras gregas, teoria dos conjuntos, cálculo e caracteres sobrescritos. Clique em qualquer símbolo para copiar na hora.",
+  "meta_description": "Navegue e copie símbolos matemáticos — operadores, letras gregas, teoria dos conjuntos, cálculo e caracteres sobrescritos.",
   "breadcrumb": "Símbolos Matemáticos",
   "hero_h1": "Símbolos Matemáticos",
   "hero_tagline": "Copie e cole caracteres Unicode de matemática — operadores, letras gregas, teoria dos conjuntos, cálculo e mais. Clique em qualquer símbolo para copiar na hora.",
@@ -579,6 +579,62 @@
         {
           "char": "≩",
           "label": "Maior, Não Igual"
+        }
+      ]
+    },
+    {
+      "id": "geometry-symbols",
+      "label": "Geometria",
+      "h2": "Símbolos de Geometria: Ângulo, Perpendicular e Paralelo",
+      "intro": "Sinais de ângulo, ângulo reto, perpendicular e paralelo para escrever geometria em texto simples, como ∠ABC = 90° ou AB ⊥ CD. O Unicode tem dois sinais de perpendicular que parecem iguais: ⊥ (UP TACK) é o mais usado e ⟂ (PERPENDICULAR) é o sinal de relação próprio. O símbolo de grau ° não é o indicador ordinal º, e o símbolo de diâmetro ⌀ não é o conjunto vazio ∅ nem a letra Ø. Congruente (≅) e semelhante (∼) estão na seção de comparação, mais acima.",
+      "symbols": [
+        {
+          "char": "∠",
+          "label": "Ângulo"
+        },
+        {
+          "char": "∡",
+          "label": "Ângulo Medido"
+        },
+        {
+          "char": "∢",
+          "label": "Ângulo Esférico"
+        },
+        {
+          "char": "∟",
+          "label": "Ângulo Reto"
+        },
+        {
+          "char": "⊥",
+          "label": "Perpendicular (U+22A5)"
+        },
+        {
+          "char": "⟂",
+          "label": "Perpendicular (U+27C2)"
+        },
+        {
+          "char": "∥",
+          "label": "Paralelo a"
+        },
+        {
+          "char": "∦",
+          "label": "Não Paralelo a"
+        },
+        {
+          "char": "△",
+          "label": "Triângulo"
+        },
+        {
+          "char": "□",
+          "label": "Quadrado"
+        },
+        {
+          "char": "°",
+          "label": "Símbolo de Grau"
+        },
+        {
+          "char": "⌀",
+          "label": "Símbolo de Diâmetro"
         }
       ]
     }

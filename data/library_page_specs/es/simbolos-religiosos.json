@@ -2,7 +2,7 @@
   "slug": "simbolos-religiosos",
   "lang": "es",
   "title": "Símbolos Religiosos: Copiar y Pegar ✝ ☪ ✡ ☸",
-  "meta_description": "Explora y copia símbolos religiosos, espirituales y de fe en Unicode de las grandes tradiciones del mundo. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "meta_description": "Explora y copia símbolos religiosos, espirituales y de fe en Unicode de las grandes tradiciones del mundo. Haz clic en cualquier símbolo para copiarlo. Haz clic en cualquier símbolo para copiarlo. Haz clic en cualquier símbolo para copiarlo. Haz clic en cualquier símbolo para copiarlo.",
   "breadcrumb": "Símbolos Religiosos y Espirituales",
   "hero_h1": "Símbolos Religiosos y Espirituales",
   "hero_tagline": "Una colección de referencia de símbolos Unicode religiosos, espirituales y de fe de las grandes tradiciones del mundo. Haz clic en cualquier símbolo para copiarlo al instante.",
@@ -122,6 +122,26 @@
         {
           "char": "✠",
           "label": "Cruz de Malta"
+        }
+      ]
+    },
+    {
+      "id": "highs-and-lows",
+      "label": "Cristianos",
+      "h2": "Símbolo «Dios es más grande que los altibajos»",
+      "intro": "Un lema de fe moderno, tomado del inglés, que se ve en tatuajes, camisetas y biografías: la G es God (Dios), > significa «mayor que», y luego un pico (^ o ∧) por los altos y un valle (v o ∨) por los bajos. Las tres formas dicen lo mismo; G>^v es texto de teclado y se ve en cualquier dispositivo.",
+      "symbols": [
+        {
+          "char": "G>^v",
+          "label": "Forma de teclado"
+        },
+        {
+          "char": "G>ΛV",
+          "label": "Con lambda griega"
+        },
+        {
+          "char": "G>∧∨",
+          "label": "Con signos lógicos"
         }
       ]
     },

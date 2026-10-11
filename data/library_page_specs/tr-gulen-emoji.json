@@ -1,10 +1,10 @@
 {
  "slug": "gulen-emoji",
- "title": "Gülen Emoji 😂 🤣 — Gülme Emojileri ve Kaomoji Kopyala Yapıştır | UltraTextGen",
- "meta_description": "Gülen emoji 😂 🤣 😆, meme gülme tepkileri (💀) ve gülen kaomoji (≧▽≦) tek sayfada. Tıkla kopyala, sohbete yapıştır.",
+ "title": "Gülen Emoji 😂 🤣 Kopyala Yapıştır: Gülme Emojileri ve Emoticonlar",
+ "meta_description": "Gülen emoji 😂 🤣 😆, meme gülme tepkileri (💀) ve XD gibi gülen emoticonlar tek sayfada. Tıkla kopyala, sohbete yapıştır.",
  "breadcrumb": "Gülen Emoji",
- "hero_h1": "Gülen Emoji ve Kaomoji",
- "hero_tagline": "Kıs kıs gülmekten yerlere yatmaya kadar bütün gülme ifadeleri, meme tepkileri ve karakterle kurulan gülen kaomoji.",
+ "hero_h1": "Gülen Emoji",
+ "hero_tagline": "Kıs kıs gülmekten yerlere yatmaya kadar bütün gülme ifadeleri, meme tepkileri ve klavyeyle yazılan XD.",
  "intro": "Gülen emoji seçimi artık yaş grubu belli ediyor: 😂 hâlâ dünyanın en çok kullanılan emojisi ama genç kullanıcılar aynı tepkiyi 💀 ya da 😭 ile veriyor. Aşağıda klasik gülme yüzleri, meme tepkileri ve sırıtan ifadeler ayrı ayrı — üstüne tıkladığında panoya kopyalanır.",
  "copy_pattern": "collection",
  "sections": [
@@ -161,10 +161,42 @@
    ]
   },
   {
+   "id": "emoticons",
+   "label": "Metin İfadeleri",
+   "h2": "Gülen Metin İfadeleri (Emoticon)",
+   "intro": "XD kahkahanın ortasında gözleri sıkıca kapatır, :'D ise gülmekten gelen gözyaşlarını ekler. İkisi de yazı yazabildiğin her yerde çalışır, oyun sohbetinden SMS'e kadar.",
+   "symbols": [
+    {
+     "char": "XD",
+     "label": "Kahkaha XD"
+    },
+    {
+     "char": "xD",
+     "label": "Küçük Harfli xD"
+    },
+    {
+     "char": ":'D",
+     "label": "Gülmekten Gözyaşı"
+    },
+    {
+     "char": "X'D",
+     "label": "Gülmekten Ağlama"
+    },
+    {
+     "char": ":-D",
+     "label": "Burunlu Kahkaha"
+    },
+    {
+     "char": "=D",
+     "label": "Kocaman Sırıtış"
+    }
+   ]
+  },
+  {
    "id": "gulen-kaomoji",
    "label": "Kaomoji",
    "h2": "Gülen Kaomoji ve Metin Yüzleri",
-   "intro": "Emoji desteklemeyen alanlarda da çalışan karakter yüzleri.",
+   "intro": "Kahkahanın ortasında yakalanmış dört Japon tarzı yazı yüzü.",
    "symbols": [
     {
      "char": "(≧▽≦)",
@@ -175,58 +207,15 @@
      "label": "Kollar Havada Gülen Kaomoji"
     },
     {
-     "char": "(´∀｀)",
-     "label": "Rahat Sırıtış Kaomoji"
-    },
-    {
-     "char": "（＾ｖ＾）",
-     "label": "Muzip Gülümseme Kaomoji"
-    },
-    {
-     "char": "(＾ω＾)",
-     "label": "Mutlu Kıkırdama Kaomoji"
-    },
-    {
      "char": "(≧∇≦)/",
      "label": "El Sallayan Kahkaha Kaomoji"
     },
     {
      "char": "ヾ(≧▽≦*)o",
      "label": "Durdurulamayan Kahkaha Kaomoji"
-    },
-    {
-     "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆",
-     "label": "Parıltılı Kahkaha Kaomoji"
-    },
-    {
-     "char": "(¬‿¬)",
-     "label": "Kurnaz Sırıtış Kaomoji"
-    },
-    {
-     "char": "(＾▽＾)",
-     "label": "Geniş Gülümseme Kaomoji"
-    },
-    {
-     "char": "( ˘ ³˘)",
-     "label": "Memnun Kaomoji"
-    },
-    {
-     "char": "ヽ(♡‿♡)ノ",
-     "label": "Hayran Kaomoji"
-    },
-    {
-     "char": "(ﾉ≧∀≦)ﾉ",
-     "label": "Coşkulu Kahkaha Kaomoji"
-    },
-    {
-     "char": "XD",
-     "label": "Klasik XD İfadesi"
-    },
-    {
-     "char": "(*≧ω≦*)",
-     "label": "Kıkırdayan Kaomoji"
     }
-   ]
+   ],
+   "more_link": { "href": "/tr/library/kaomoji/", "text": "Bütün kaomoji koleksiyonunu gör" }
   }
  ],
  "editorial_sections": [
@@ -289,7 +278,7 @@
  ],
  "canonical": "https://ultratextgen.com/tr/library/gulen-emoji/",
  "date_published": "2026-08-08",
- "date_modified": "2026-08-08",
+ "date_modified": "2026-10-09",
  "cta": "UltraTextGen ile düz yazını kalın, italik, el yazısı ve 100+ Unicode stiline çevir — ücretsiz, üyeliksiz, tek tıkla kopyala.",
  "lang": "tr",
  "page_type": "library",

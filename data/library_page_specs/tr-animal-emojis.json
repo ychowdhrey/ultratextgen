@@ -2,7 +2,7 @@
   "slug": "hayvan-emojileri",
   "copy_pattern": "single",
   "title": "Hayvan Emojileri 🐶 🦁 — Kopyala Yapıştır Tüm Hayvanlar | UltraTextGen",
-  "meta_description": "Hayvan emojileri kopyala yapıştır: evcil hayvanlar, çiftlik hayvanları, vahşi hayvanlar, kuşlar, deniz canlıları, böcekler ve efsanevi yaratıklar. Kopyalamak için tıkla.",
+  "meta_description": "Hayvan emojileri kopyala yapıştır: evcil hayvanlar, çiftlik hayvanları, vahşi hayvanlar, kuşlar, deniz canlıları, böcekler ve efsanevi yaratıklar.",
   "hero_h1": "Hayvan Emojileri",
   "breadcrumb": "Hayvan Emojileri",
   "hero_tagline": "Evcil hayvanlardan vahşi doğaya, deniz canlılarından efsanevi yaratıklara — eksiksiz hayvan emoji koleksiyonu. Kopyalamak için tıkla.",
@@ -252,7 +252,7 @@
       "id": "birds",
       "label": "Kuşlar",
       "h2": "Kuş Emojileri",
-      "intro": "Yaygın türlerden egzotik kuşlara.",
+      "intro": "Yaygın türlerden egzotik kuşlara. 🐦‍⬛ Kara Kuş, karga ve kuzgun emojisidir: Emoji 15.0 (2022) onu görünmez bir birleştiriciyle bağlanan 🐦 ve ⬛ ile oluşturdu, bu yüzden daha eski bir cihaz ikisini yan yana gösterir.",
       "symbols": [
         {
           "char": "🐦",
@@ -293,6 +293,14 @@
         {
           "char": "🕊",
           "label": "Güvercin"
+        },
+        {
+          "char": "🐦‍⬛",
+          "label": "Kara Kuş (Karga, Kuzgun)"
+        },
+        {
+          "char": "🪶",
+          "label": "Tüy"
         },
         {
           "char": "🪿",

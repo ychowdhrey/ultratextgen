@@ -85,6 +85,65 @@ eq(bubble.filter((t) => /^Bubble Letter [A-Z]$/.test(t)).length, 2,
 
 eq(S.tokenize('Love & Heart, kaomoji!'), ['love', 'heart', 'kaomoji'], 'tokenize splits on punctuation');
 
+/* ---- site_search_no_results: one row per settled zero-result query ----- */
+
+eq(S.noResultsPayload('  zzzq  ', 'fr'),
+  { event: 'site_search_no_results', search_term: 'zzzq', locale: 'fr', search_surface: 'header' },
+  'the payload names the term, locale and surface');
+eq(S.noResultsPayload('x'.repeat(300), 'en').search_term.length, 100, 'the term is capped at 100 characters');
+eq(Object.keys(S.noResultsPayload('a', undefined)).sort(),
+  ['event', 'locale', 'search_surface', 'search_term'], 'every key is present even when locale is unknown');
+
+function fakeClock() {
+  const q = [];
+  let now = 0;
+  return {
+    set: (fn, ms) => { q.push({ fn, at: now + ms, live: true }); return q.length - 1; },
+    clear: (id) => { if (q[id]) q[id].live = false; },
+    advance: (ms) => { now += ms; q.filter((x) => x.live && x.at <= now).forEach((x) => { x.live = false; x.fn(); }); }
+  };
+}
+function reporter() {
+  const clock = fakeClock();
+  const rows = [];
+  const r = S.createNoResultsReporter((term) => rows.push(term), 800, clock);
+  return { r, rows, advance: clock.advance };
+}
+
+{
+  const { r, rows, advance } = reporter();
+  r.miss('z'); advance(300); r.miss('zz'); advance(300); r.miss('zzq');
+  advance(799);
+  eq(rows, [], 'nothing is sent before the visitor has stopped typing');
+  advance(1);
+  eq(rows, ['zzq'], 'a run of keystrokes sends one row, with the settled term');
+}
+{
+  const { r, rows, advance } = reporter();
+  r.miss('zzq'); advance(800);
+  r.miss('zzq'); advance(2000);
+  r.miss('  zzq '); advance(2000);
+  eq(rows, ['zzq'], 'the same settled term is never sent twice in a row');
+}
+{
+  const { r, rows, advance } = reporter();
+  r.miss('zzq'); advance(800);
+  r.hit();
+  r.miss('zzq'); advance(800);
+  eq(rows, ['zzq', 'zzq'], 'after results appear (or the box is emptied) the same term is a new search');
+}
+{
+  const { r, rows, advance } = reporter();
+  r.miss('zzq'); advance(400);
+  r.hit(); advance(2000);
+  eq(rows, [], 'a query that finds results before the window closes sends nothing');
+}
+{
+  const { r, rows, advance } = reporter();
+  r.miss('   '); advance(2000);
+  eq(rows, [], 'a blank query is not a search');
+}
+
 /* ---- the generated index ---------------------------------------------- */
 
 const INDEX_DIR = path.join(ROOT, 'js', 'search', 'index');

@@ -18,9 +18,11 @@
  * reimplementing them here. A second copy of the logic would drift from the
  * first, which is the failure that technique exists to avoid.
  *
- * Scope is TWO concerns, both analytics classifiers in header.js: the pair
+ * Scope is analytics classifiers and payload builders: the pair
  * behind the `cta_click` event, and the copy-identity engine behind
- * `copy_text` (see its own section below).
+ * `copy_text` (see its own section below), plus the browse events (kaomoji
+ * hub mood links, /library/ filter and search) and the kaomoji generator's
+ * step payload, each sliced out of its shipped file the same way.
  *
  * The `cta_click` half covers the two classifiers. They decide what
  * every future CTA number means, and both have a real trap in them:
@@ -228,6 +230,52 @@ t('item is capped so a paragraph copy cannot blow the event size', () => {
   eq(CI.copyIdentity('x'.repeat(500)).item.length, 60, 'capped length');
 });
 
+// ── copy_item privacy: typed text never leaves the page ─────────────────
+t('a typed-text copy sends the group but no copy_item', () => {
+  for (const m of ['button', 'manual', 'main_bar', 'some_new_surface']) {
+    const p = CI.copyPayload(m, 'Luna Maria', { style_name: 'ultra-bold' });
+    eq('copy_item' in p, true, m + ' keeps the key so GTM clears the last value');
+    eq(p.copy_item, undefined, m + ' must not carry the typed text');
+    eq(p.copy_item_group, 'Basic Latin', m + ' group');
+    eq(p.style_name, 'ultra-bold', m + ' extra survives');
+  }
+});
+t('a catalogue copy still sends the exact item', () => {
+  for (const m of ['symbol_tile', 'symbol_look_switch', 'grid_collection', 'saved_collection', 'glyph', 'ascii_art']) {
+    eq(CI.copyPayload(m, '★').copy_item, '★', m);
+  }
+});
+
+// The kaomoji tools copy a face the visitor built, pasted or loaded from a link,
+// and the link copy sends the page URL. None of those is catalogue content, so
+// each method sends the group and clears copy_item (and the text never appears
+// anywhere in the payload).
+t('the kaomoji generator, link and decoder copies keep typed text out of the payload', () => {
+  const typed = 'my private text 123';
+  for (const m of ['kaomoji_generator', 'kaomoji_link', 'kaomoji_decoder']) {
+    const p = CI.copyPayload(m, typed);
+    eq(p.copy_method, m, m + ' method is reported as itself, not symbol_tile');
+    eq('copy_item' in p, true, m + ' keeps the key so GTM clears the last value');
+    eq(p.copy_item, undefined, m + ' must not carry the typed text');
+    eq(p.copy_item_group, 'Basic Latin', m + ' still sends the group');
+    if (JSON.stringify(p).includes('private')) throw new Error(m + ' leaked the typed text into the payload');
+  }
+  const link = CI.copyPayload('kaomoji_link', 'https://ultratextgen.com/kaomoji-generator/?q=%28my+private+text%29');
+  eq(link.copy_item, undefined, 'the link copy must not push the page URL as copy_item');
+});
+
+// ── copy_look: which look of a two-look symbol left the page ────────────
+t('copy_look is always a key, cleared unless the caller sets it', () => {
+  const p = CI.copyPayload('symbol_tile', '★');
+  eq('copy_look' in p, true, 'key present so GTM clears the last look');
+  eq(p.copy_look, undefined, 'cleared by default');
+});
+t('copy_look carries the look and the item stays the bare character', () => {
+  const p = CI.copyPayload('symbol_look_switch', '\u2764', { copy_look: 'plain' });
+  eq(p.copy_look, 'plain', 'look');
+  eq(p.copy_item, '\u2764', 'item');
+});
+
 // ── the self-maintaining coverage gate ────────────────────────────────────
 t('every data-symbol payload on the site resolves to a real Unicode block', () => {
   const files = [];
@@ -296,7 +344,118 @@ t('a printable card on the hub is still "hub_card"',
 t('an A-Z strip link inside .pt-siblings stays "az_strip"',
   () => eq(NAV_KIND(fakeLink(['.pt-az-link'], ['.pt-siblings'])), 'az_strip'));
 
-console.log('header.js — CTA click tracking + copy_text item identity\n');
+// ── browse events: kaomoji hub mood links, /library/ filter + search ─────
+//
+// The block is sliced out of header.js and evaluated with a fake clock, so the
+// debounce is asserted for real (a run of changes records only the last).
+
+const BROWSE_SRC = slice('  /* @browse-events:begin */', '  /* @browse-events:end */');
+function browseHarness() {
+  const w = { dataLayer: [] };
+  const pending = [];
+  let now = 0;
+  const fakeSet = (fn, ms) => { pending.push({ fn, at: now + ms, live: true }); return pending.length - 1; };
+  const fakeClear = (id) => { if (pending[id]) pending[id].live = false; };
+  const api = new Function(
+    'window', 'setTimeout', 'clearTimeout',
+    `${BROWSE_SRC}\nreturn { moodIndexClickPayload, libraryFilterPayload, librarySearchPayload, trackLibraryFilter, trackLibrarySearch };`
+  )(w, fakeSet, fakeClear);
+  const advance = (ms) => {
+    now += ms;
+    pending.filter((p) => p.live && p.at <= now).forEach((p) => { p.live = false; p.fn(); });
+  };
+  return { w, api, advance };
+}
+
+t('a mood-index click pushes the destination path and the 1-based group, every key present', () => {
+  const { api } = browseHarness();
+  const p = api.moodIndexClickPayload('/library/happy-kaomoji/', 1);
+  eq(JSON.stringify(p), JSON.stringify({ event: 'kaomoji_mood_index_click', destination_path: '/library/happy-kaomoji/', mood_group: 1 }), 'payload');
+  const none = api.moodIndexClickPayload('/library/x/', 0);
+  eq('mood_group' in none, true, 'mood_group key kept so GTM clears the last value');
+  eq(none.mood_group, undefined, 'an unknown group is cleared, not 0');
+});
+t('library_filter carries the chip, never free text, and every key', () => {
+  const { api } = browseHarness();
+  const p = api.libraryFilterPayload('type', 'Kaomoji', 42);
+  eq(JSON.stringify(p), JSON.stringify({ event: 'library_filter', filter_type: 'type', filter_value: 'Kaomoji', result_count: 42 }), 'payload');
+});
+t('library_search trims and caps the term at 100 characters, like site_search', () => {
+  const { api } = browseHarness();
+  eq(api.librarySearchPayload('  heart  ', 7).search_term, 'heart', 'trimmed');
+  eq(api.librarySearchPayload('x'.repeat(300), 0).search_term.length, 100, 'capped');
+  eq(api.librarySearchPayload('heart', 0).result_count, 0, 'a zero count is kept');
+});
+t('a run of library searches records one row, after the window, with the last term', () => {
+  const { w, api, advance } = browseHarness();
+  api.trackLibrarySearch('h', 300);
+  advance(300);
+  api.trackLibrarySearch('he', 120);
+  advance(300);
+  api.trackLibrarySearch('heart', 12);
+  advance(799);
+  eq(w.dataLayer.length, 0, 'nothing before the window closes');
+  advance(1);
+  eq(w.dataLayer.length, 1, 'exactly one row');
+  eq(w.dataLayer[0].search_term, 'heart', 'the settled term');
+  eq(w.dataLayer[0].result_count, 12, 'the settled count');
+});
+t('clearing the search box cancels the pending row and sends nothing', () => {
+  const { w, api, advance } = browseHarness();
+  api.trackLibrarySearch('heart', 12);
+  api.trackLibrarySearch('   ', 336);
+  advance(2000);
+  eq(w.dataLayer.length, 0, 'no row for an empty box');
+});
+t('library_filter and library_search debounce independently', () => {
+  const { w, api, advance } = browseHarness();
+  api.trackLibraryFilter('type', 'Kaomoji', 40);
+  api.trackLibrarySearch('cat', 3);
+  advance(800);
+  eq(w.dataLayer.map((r) => r.event).sort().join(','), 'library_filter,library_search', 'both fire');
+});
+
+// ── kaomoji_generator_step: the funnel row, and what it must never carry ──
+//
+// The builder is sliced out of the generator's controller (the same technique
+// the kaomoji static build uses), so the test reads the shipped code.
+
+const KAO_SRC = fs.readFileSync(path.join(__dirname, 'js', 'kaomoji', 'kaomojiPageController.js'), 'utf8');
+const KB = KAO_SRC.indexOf('/* @kaomoji-step:begin */');
+const KE = KAO_SRC.indexOf('/* @kaomoji-step:end */');
+if (KB === -1 || KE === -1 || KE < KB) throw new Error('could not slice the @kaomoji-step block out of kaomojiPageController.js — move the markers with the code');
+const KAO = new Function(`${KAO_SRC.slice(KB, KE)}\nreturn { stepPayload, presetId };`)();
+
+t('kaomoji_generator_step: mood, preset and part carry their catalogue id', () => {
+  eq(JSON.stringify(KAO.stepPayload('mood', 'happy')), JSON.stringify({ event: 'kaomoji_generator_step', kaomoji_step: 'mood', kaomoji_value: 'happy' }), 'mood');
+  eq(KAO.stepPayload('preset', 'cute').kaomoji_value, 'cute', 'preset');
+  eq(KAO.stepPayload('part', 'eyes').kaomoji_value, 'eyes', 'part category');
+});
+t('kaomoji_generator_step: every other step clears kaomoji_value, key still present', () => {
+  for (const step of ['surprise', 'reset', 'recent', 'paste_edit', 'url_load']) {
+    const p = KAO.stepPayload(step, 'ʕ•ᴥ•ʔ typed or pasted face');
+    eq('kaomoji_value' in p, true, step + ' keeps the key so GTM clears the last value');
+    eq(p.kaomoji_value, undefined, step + ' must carry no value');
+    eq(p.kaomoji_step, step, step + ' name');
+  }
+});
+t('kaomoji_generator_step: a face or typed text can never be the value, even on a value step', () => {
+  for (const typed of ['(๑•̀ㅂ•́)و✧', 'my private text 123', 'ʕ•ᴥ•ʔ', 'x'.repeat(41), '', null, undefined, 42]) {
+    for (const step of ['mood', 'preset', 'part']) {
+      const p = KAO.stepPayload(step, typed);
+      eq(p.kaomoji_value, undefined, `${step} with ${JSON.stringify(typed)}`);
+      if (typed && JSON.stringify(p).includes(String(typed))) throw new Error('leaked ' + typed);
+    }
+  }
+});
+t('kaomoji_generator_step: an unknown step is not sent at all', () => eq(KAO.stepPayload('typed_face', 'x'), null));
+t('kaomoji_generator_step: a preset id is its label as an id, or its index', () => {
+  eq(KAO.presetId({ label: 'Happy' }, 0), 'happy', 'label slug');
+  eq(KAO.presetId({ label: 'Wink Wink!' }, 3), 'wink_wink', 'punctuation folded');
+  eq(KAO.presetId({ label: '笑顔' }, 7), 'preset_7', 'a non-Latin label falls back to the index');
+});
+
+console.log('header.js — CTA click tracking + copy_text item identity + browse events + kaomoji steps\n');
 LINES.forEach((l) => console.log(l));
 console.log(`\n${PASS} passed, ${FAIL} failed`);
 

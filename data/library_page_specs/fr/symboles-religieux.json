@@ -2,7 +2,7 @@
   "slug": "symboles-religieux",
   "lang": "fr",
   "title": "Symboles Religieux : Copier-Coller ✝ ☪ ✡ ☸",
-  "meta_description": "Parcourez et copiez les symboles Unicode religieux, spirituels et liés à la foi des grandes traditions du monde. Cliquez sur un symbole pour le copier instantanément.",
+  "meta_description": "Parcourez et copiez les symboles Unicode religieux, spirituels et liés à la foi des grandes traditions du monde. Cliquez sur un symbole pour le copier. Cliquez sur un symbole pour le copier. Cliquez sur un symbole pour le copier. Cliquez sur un symbole pour le copier.",
   "breadcrumb": "Symboles Religieux et Spirituels",
   "hero_h1": "Symboles Religieux et Spirituels",
   "hero_tagline": "Une collection de référence des symboles Unicode religieux, spirituels et liés à la foi issus des grandes traditions du monde. Cliquez sur un symbole pour le copier instantanément.",
@@ -122,6 +122,26 @@
         {
           "char": "✠",
           "label": "Croix de Malte"
+        }
+      ]
+    },
+    {
+      "id": "highs-and-lows",
+      "label": "Chrétiens",
+      "h2": "Symbole « Dieu est plus grand que les hauts et les bas »",
+      "intro": "Une devise de foi moderne, venue de l'anglais, qu'on voit en tatouage, sur des t-shirts et dans les bios : G pour God (Dieu), > pour « plus grand que », puis un sommet (^ ou ∧) pour les hauts et un creux (v ou ∨) pour les bas. Les trois formes disent la même chose ; G>^v est du texte clavier et s'affiche sur tous les appareils.",
+      "symbols": [
+        {
+          "char": "G>^v",
+          "label": "Forme clavier"
+        },
+        {
+          "char": "G>ΛV",
+          "label": "Avec lambda grec"
+        },
+        {
+          "char": "G>∧∨",
+          "label": "Avec signes logiques"
         }
       ]
     },

@@ -1,8 +1,8 @@
 {
  "slug": "wassymbolen",
  "lang": "nl",
- "title": "Wassymbolen & Wasvoorschriften — Betekenis van Alle Wasetiket-Tekens | UltraTextGen",
- "meta_description": "Wassymbolen begrijpen: wassen, bleken, drogen, strijken en alle doorgestreepte tekens uitgelegd — met Unicode-tekens om te kopiëren voor etiketten, notities en berichten.",
+ "title": "Wassymbolen & Wasvoorschriften — Betekenis van Alle Wasetiket-Tekens",
+ "meta_description": "Wassymbolen begrijpen: wassen, bleken, drogen, strijken en alle doorgestreepte tekens uitgelegd, met Unicode-tekens om te kopiëren voor etiketten en notities.",
  "breadcrumb": "Wassymbolen",
  "hero_h1": "Wassymbolen en hun betekenis",
  "hero_tagline": "Wassen, bleken, drogen, strijken: de vijf tekengroepen op elk wasetiket, met Unicode-tekens om te kopiëren.",
@@ -132,15 +132,15 @@
     },
     {
      "char": "•",
-     "label": "Eén stip (laag, tot 110 °C)"
+     "label": "Eén stip (laag, tot 120 °C)"
     },
     {
      "char": "‥",
-     "label": "Twee stippen (gemiddeld, tot 150 °C)"
+     "label": "Twee stippen (gemiddeld, tot 160 °C)"
     },
     {
      "char": "…",
-     "label": "Drie stippen (hoog, tot 200 °C)"
+     "label": "Drie stippen (hoog, tot 210 °C)"
     },
     {
      "char": "♻",
@@ -211,7 +211,7 @@
   },
   {
    "h2": "Waarom deze tekens niet in Unicode staan",
-   "body": "De genormeerde wassymbolen zijn eigendom van GINETEX en beschermd als beeldmerk: Unicode neemt beschermde tekensystemen in principe niet op. Er bestaat dus geen teken voor „wasteiltje 40 graden“ dat je in een bericht kunt plakken. Voor lopende tekst blijft de omweg via de tekens hierboven: een waterdruppel met een temperatuur zegt hetzelfde als het etiket, alleen dan in woorden."
+   "body": "De genormeerde wassymbolen zijn eigendom van GINETEX en beschermd als beeldmerk. Ze staan niet in Unicode, dus er bestaat geen teken voor „wasteiltje 40 graden” dat je in een bericht kunt plakken. Voor lopende tekst blijft de omweg via de tekens hierboven: een waterdruppel met een temperatuur zegt hetzelfde als het etiket, alleen dan in woorden."
   }
  ],
  "related": [

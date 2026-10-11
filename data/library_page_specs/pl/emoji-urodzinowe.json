@@ -1,0 +1,360 @@
+{
+  "lang": "pl",
+  "page_type": "library",
+  "slug": "emoji-urodzinowe",
+  "title": "Emoji Urodzinowe 🎂🎉 do Skopiowania: Tort, Balony i Życzenia | UltraTextGen",
+  "meta_description": "Emoji urodzinowe i emotikony na urodziny do skopiowania: 🎂 tort, 🎈 balony, 🥳 imprezowa minka, toasty, fajerwerki i gotowe zestawy do życzeń. Kliknij i wklej.",
+  "breadcrumb": "Emoji Urodzinowe",
+  "hero_h1": "Emoji Urodzinowe",
+  "hero_tagline": "Tort, balony, konfetti i toasty do życzeń urodzinowych i na każdą inną okazję. Kliknij emoji, aby je od razu skopiować.",
+  "intro": "Życzenia urodzinowe na Messengerze, w komentarzu pod postem czy w SMS-ie zwykle zaczynają się od 🎂 albo 🎉, a słowa pojawiają się dopiero potem. Ta strona zbiera emotikony urodzinowe w jednym miejscu: tort, babeczki i świeczki, balony i konfetti, kieliszki do toastu, muzykę na imprezę, fajerwerki oraz puchary i kwiaty na gratulacje z okazji matury, dyplomu czy awansu. Skopiuj pojedyncze emoji albo cały gotowy zestaw z dołu strony jednym kliknięciem.",
+  "copy_pattern": "collection",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Zestawy Combo",
+    "h2": "Zestawy Emoji na Urodziny i Okazje",
+    "intro": "Cały zestaw kopiujesz jednym kliknięciem i wklejasz do życzeń urodzinowych, gratulacji albo noworocznego odliczania."
+  },
+  "collection_container_id": "partySetsContainer",
+  "collections": [
+    {
+      "name": "Urodzinowa Impreza",
+      "flags": [
+        "🎂",
+        "🎉",
+        "🎈",
+        "🥳"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Odliczanie do Nowego Roku",
+      "flags": [
+        "🎆",
+        "🥂",
+        "✨",
+        "🎊"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Wieczór na Imprezie",
+      "flags": [
+        "🪩",
+        "💃",
+        "🕺",
+        "🎶"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Gratulacje",
+      "flags": [
+        "🎉",
+        "👏",
+        "🏆",
+        "💐"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Na Zdrowie",
+      "flags": [
+        "🥂",
+        "🍾",
+        "🎊"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Impreza Niespodzianka",
+      "flags": [
+        "🎁",
+        "🎈",
+        "🤫",
+        "🥳"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Deszcz Konfetti",
+      "flags": [
+        "🎊",
+        "🎉",
+        "🎊",
+        "🎉"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Impreza z Okazji Dyplomu",
+      "flags": [
+        "🎓",
+        "🎉",
+        "👏",
+        "🥳"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "sections": [
+    {
+      "id": "birthday-treats",
+      "label": "Tort i Słodycze",
+      "h2": "Tort Urodzinowy i Słodycze",
+      "intro": "Tort, świeczki i słodkości, bez których trudno o życzenia urodzinowe.",
+      "symbols": [
+        {
+          "char": "🎂",
+          "label": "Tort Urodzinowy"
+        },
+        {
+          "char": "🧁",
+          "label": "Babeczka"
+        },
+        {
+          "char": "🍰",
+          "label": "Kawałek Tortu"
+        },
+        {
+          "char": "🕯",
+          "label": "Świeczka"
+        },
+        {
+          "char": "🍬",
+          "label": "Cukierek"
+        },
+        {
+          "char": "🍭",
+          "label": "Lizak"
+        }
+      ]
+    },
+    {
+      "id": "party-essentials",
+      "label": "Podstawy Imprezy",
+      "h2": "Podstawowe Emoji Imprezowe",
+      "intro": "Emoji, które mówią „impreza” bez jednego słowa.",
+      "symbols": [
+        {
+          "char": "🎉",
+          "label": "Petarda Imprezowa"
+        },
+        {
+          "char": "🎊",
+          "label": "Kula Konfetti"
+        },
+        {
+          "char": "🥳",
+          "label": "Imprezowa Minka"
+        },
+        {
+          "char": "🪅",
+          "label": "Piniata"
+        },
+        {
+          "char": "🎈",
+          "label": "Balon"
+        },
+        {
+          "char": "🎁",
+          "label": "Zapakowany Prezent"
+        },
+        {
+          "char": "🎀",
+          "label": "Kokarda"
+        }
+      ]
+    },
+    {
+      "id": "toasts-drinks",
+      "label": "Toasty",
+      "h2": "Toasty i Napoje na Imprezę",
+      "intro": "Szampan, drinki i kufle piwa do wzniesienia toastu.",
+      "symbols": [
+        {
+          "char": "🥂",
+          "label": "Stukające się Kieliszki"
+        },
+        {
+          "char": "🍾",
+          "label": "Butelka z Wystrzelonym Korkiem"
+        },
+        {
+          "char": "🍻",
+          "label": "Stukające się Kufle"
+        },
+        {
+          "char": "🍹",
+          "label": "Drink Tropikalny"
+        },
+        {
+          "char": "🍸",
+          "label": "Kieliszek Koktajlowy"
+        }
+      ]
+    },
+    {
+      "id": "music-dance",
+      "label": "Muzyka i Taniec",
+      "h2": "Muzyka i Parkiet",
+      "intro": "Tancerze, kula dyskotekowa i nuty na imprezowy wieczór.",
+      "symbols": [
+        {
+          "char": "💃",
+          "label": "Tańcząca Kobieta"
+        },
+        {
+          "char": "🕺",
+          "label": "Tańczący Mężczyzna"
+        },
+        {
+          "char": "🪩",
+          "label": "Kula Dyskotekowa"
+        },
+        {
+          "char": "🎶",
+          "label": "Nuty"
+        },
+        {
+          "char": "🎵",
+          "label": "Nuta"
+        },
+        {
+          "char": "🎤",
+          "label": "Mikrofon"
+        },
+        {
+          "char": "🔊",
+          "label": "Głośnik"
+        },
+        {
+          "char": "👯",
+          "label": "Osoby z Króliczymi Uszami"
+        }
+      ]
+    },
+    {
+      "id": "fireworks-sparkle",
+      "label": "Fajerwerki",
+      "h2": "Fajerwerki i Iskierki",
+      "intro": "Na odliczanie do północy i wielkie ogłoszenia.",
+      "symbols": [
+        {
+          "char": "🎆",
+          "label": "Fajerwerki"
+        },
+        {
+          "char": "🎇",
+          "label": "Zimne Ognie"
+        },
+        {
+          "char": "✨",
+          "label": "Iskierki"
+        },
+        {
+          "char": "🌟",
+          "label": "Błyszcząca Gwiazda"
+        },
+        {
+          "char": "⭐",
+          "label": "Gwiazda"
+        },
+        {
+          "char": "💫",
+          "label": "Zawrót Głowy"
+        }
+      ]
+    },
+    {
+      "id": "trophies-flowers",
+      "label": "Puchary i Kwiaty",
+      "h2": "Puchary, Medale i Kwiaty",
+      "intro": "Dodatki do gratulacji z okazji wygranej, obrony dyplomu czy awansu.",
+      "symbols": [
+        {
+          "char": "🏆",
+          "label": "Puchar"
+        },
+        {
+          "char": "🥇",
+          "label": "Złoty Medal"
+        },
+        {
+          "char": "🎓",
+          "label": "Biret Absolwenta"
+        },
+        {
+          "char": "💐",
+          "label": "Bukiet"
+        },
+        {
+          "char": "🌹",
+          "label": "Róża"
+        },
+        {
+          "char": "👑",
+          "label": "Korona"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/pl/library/emoji-prezent/",
+      "title": "Emoji Prezent",
+      "desc": "Prezent, kokarda i paczka na urodzinowe niespodzianki i podziękowania."
+    },
+    {
+      "href": "/pl/library/emoji-combos/",
+      "title": "Kombinacje Emoji",
+      "desc": "Ponad 100 gotowych zestawów emoji do bio, opisów i postów okolicznościowych."
+    },
+    {
+      "href": "/pl/library/symbole-gwiazdek/",
+      "title": "Symbole Gwiazdek",
+      "desc": "Gwiazdki, iskierki i błyski ★ ✦ ✧ do ozdobnych życzeń."
+    },
+    {
+      "href": "/pl/library/symbole-muzyczne/",
+      "title": "Symbole Muzyczne",
+      "desc": "Nuty ♪ ♫ i emoji instrumentów na imprezowe posty."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/pl/library/emoji-urodzinowe/",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "library_url": "https://ultratextgen.com/pl/library/",
+  "date_published": "2026-10-08",
+  "date_modified": "2026-10-08",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/party-celebration-emojis/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emojis-de-fiesta/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/parti-emojileri/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/party-emojis/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/saengil-chukha-imotikon/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/emoji-urodzinowe/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/party-celebration-emojis/"
+    }
+  ]
+}

@@ -1,11 +1,11 @@
 {
   "slug": "bunny-kaomoji",
   "title": "Bunny Kaomoji: Copy & Paste Cute Rabbit Text Faces",
-  "meta_description": "Browse and copy bunny kaomoji — also spelled kamoji — cute Japanese rabbit text faces with long ears. Happy, floppy-eared, and grumpy bunnies. Click any to copy.",
+  "meta_description": "Browse and copy bunny kaomoji (•ㅅ•), also spelled kamoji: cute Japanese rabbit text faces with long ears. Happy, floppy-eared, and grumpy bunnies, plus 🐰 🐇 bunny emoji.",
   "breadcrumb": "Bunny Kaomoji",
   "hero_h1": "Bunny Kaomoji",
   "hero_tagline": "Copy and paste bunny kaomoji: cute Japanese rabbit text faces with long ears. Click any face to copy it instantly.",
-  "intro": "Bunny kaomoji (also spelled kamoji) are Japanese-style text faces built around rabbit ears: rounded ears like ᐢ and ᕱ, or floppy ears drawn with ／ and ＼. A bunny kaomoji such as (•ㅅ•) or ／(^ ᆺ ^)＼ is plain Unicode text, so it pastes cleanly into bios, captions, comments, and usernames. Browse by style below and click any face to copy it instantly. Whether you search \"bunny kaomoji\" or \"kaomoji bunny,\" every rabbit here is free to copy and paste.",
+  "intro": "Bunny kaomoji (also spelled kamoji) are Japanese-style text faces built around rabbit ears: rounded ears like ᐢ and ᕱ, or floppy ears drawn with ／ and ＼. A bunny kaomoji such as (•ㅅ•) or ／(^ ᆺ ^)＼ is plain Unicode text, so it pastes into bios, captions, and comments. Browse by style below and click any face to copy it instantly. Whether you search \"bunny kaomoji\" or \"kaomoji bunny,\" every rabbit here is free to copy and paste.",
   "date_published": "2026-07-10",
   "date_modified": "2026-07-10",
   "copy_pattern": "single",
@@ -121,6 +121,102 @@
           "label": "Blank Bunny"
         }
       ]
+    },
+    {
+      "id": "bunny-emoji",
+      "label": "Bunny Emoji",
+      "h2": "Bunny & Rabbit Emoji",
+      "intro": "Unicode has two rabbit emoji: 🐰 is the face and 🐇 is the whole rabbit mid-hop. Unlike the kaomoji above, they draw in each platform's own emoji art, so they look a little different on iPhone and Android.",
+      "symbols": [
+        {
+          "char": "🐰",
+          "label": "Rabbit Face"
+        },
+        {
+          "char": "🐇",
+          "label": "Rabbit"
+        },
+        {
+          "char": "🐾",
+          "label": "Paw Prints"
+        },
+        {
+          "char": "🥕",
+          "label": "Carrot"
+        }
+      ]
+    },
+    {
+      "id": "bunny-emoji-combos",
+      "label": "Bunny Combos",
+      "h2": "Bunny Emoji Combos",
+      "intro": "Short combos that pair a bunny with what it is usually up to: eating, dashing off or hopping in for Easter. Each button copies the whole combo.",
+      "symbols": [
+        {
+          "char": "🐰🥕",
+          "label": "Bunny and Carrot"
+        },
+        {
+          "char": "🐇💨",
+          "label": "Bunny Dash"
+        },
+        {
+          "char": "🐰💕",
+          "label": "Bunny Love"
+        },
+        {
+          "char": "🐰🌸",
+          "label": "Spring Bunny"
+        },
+        {
+          "char": "🐇🐾",
+          "label": "Hopping Tracks"
+        },
+        {
+          "char": "🐰🥚🧺",
+          "label": "Easter Bunny"
+        }
+      ]
+    },
+    {
+      "id": "roblox-bunny",
+      "label": "Roblox Bunny",
+      "h2": "Bunny Kaomoji for Roblox Bios and Display Names",
+      "intro": "Most bunnies higher up this page borrow Korean letters like ㅅ and ᆺ or Canadian syllabics like ᐢ, and faces built from rarer scripts are the ones most likely to show as empty boxes or be stopped by Roblox's filter. These are built from keyboard characters plus ★ and ♡, which our Roblox symbols page (linked at the bottom) counts among the safest single symbols. Every kaomoji is still a multi-character combo, and that page notes combos are more likely to be rejected than one symbol, so if a face will not save, paste it in piece by piece to find the character that fails. The last two use Japanese characters (・ ヽ ノ っ); Roblox accepts Japanese text in display names on some accounts and rejects it on others, so try those in the display name box first.",
+      "symbols": [
+        {
+          "char": "(='.'=)",
+          "label": "Classic Keyboard Bunny"
+        },
+        {
+          "char": "(='.'=)♡",
+          "label": "Keyboard Bunny With Heart"
+        },
+        {
+          "char": "(^x^)",
+          "label": "X-Mouth Bunny"
+        },
+        {
+          "char": "(*^x^*)",
+          "label": "Blushing X-Mouth Bunny"
+        },
+        {
+          "char": "/(^x^)\\",
+          "label": "Floppy-Eared Keyboard Bunny"
+        },
+        {
+          "char": "★(^x^)★",
+          "label": "Star Bunny"
+        },
+        {
+          "char": "ヽ(・x・)ノ",
+          "label": "Cheering Bunny (Japanese Characters)"
+        },
+        {
+          "char": "(っ^x^)っ♡",
+          "label": "Hugging Bunny (Japanese Characters)"
+        }
+      ]
     }
   ],
   "related": [
@@ -143,6 +239,16 @@
       "href": "/library/happy-kaomoji/",
       "title": "Happy Kaomoji",
       "desc": "Smiling and joyful Japanese text faces for any good mood."
+    },
+    {
+      "href": "/library/roblox-symbols/",
+      "title": "Roblox Symbols",
+      "desc": "Stars, hearts and other symbols for Roblox display names, with notes on what the name filter rejects."
+    },
+    {
+      "href": "/library/animal-emojis/",
+      "title": "Animal & Creature Emojis",
+      "desc": "A reference collection of animal emojis: pets, wildlife, sea creatures, birds, and mythical beings."
     }
   ]
 }

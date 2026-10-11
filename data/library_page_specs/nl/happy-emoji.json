@@ -1,14 +1,14 @@
 {
   "slug": "happy-emoji",
   "title": "Happy Emoji 😊 Kopiëren en Plakken — Blije Gezichtjes | UltraTextGen",
-  "meta_description": "Happy emoji 😊 😄 🥰 kopiëren en plakken, vrolijke kaomoji als ヽ(´▽`)/ en zonnige combo's voor je bio, captions en berichten. Klik om te kopiëren.",
+  "meta_description": "Happy emoji 😊 😄 🥰 kopiëren en plakken, getypte emoticons als :), een paar vrolijke kaomoji als ヽ(´▽`)/ en zonnige combo's voor je bio, captions en berichten. Klik om te kopiëren.",
   "canonical": "https://ultratextgen.com/nl/library/happy-emoji/",
-  "breadcrumb": "Happy Emoji & Kaomoji",
-  "hero_h1": "Happy Emoji & Kaomoji",
-  "hero_tagline": "Glimlachjes, zonneschijn en vrolijke kaomoji: elke happy emoji, van een zachte 🙂 tot een sterrenogen-🤩. Klik op een symbool om het te kopiëren.",
+  "breadcrumb": "Happy Emoji (Blije Emoji)",
+  "hero_h1": "Happy Emoji (Blije Emoji)",
+  "hero_tagline": "Glimlachjes, zonneschijn, een getypte :) en een paar vrolijke kaomoji: elke happy emoji, van een zachte 🙂 tot een sterrenogen-🤩. Klik op een symbool om het te kopiëren.",
   "intro": "Eén goed gekozen happy emoji bepaalt de toon van een heel bericht: 😊 klinkt warm en oprecht, 😄 is open blijdschap, 🥰 voegt genegenheid toe. Deze bibliotheek verzamelt alle lachende gezichtjes, de enthousiaste feest-emoji's die er goed bij passen, zonnige en lieve symbolen voor feelgood-bio's, en vrolijke kaomoji als ヽ(´▽`)/, met kant-en-klare combo's voor captions, reacties en goednieuwsberichten.",
   "date_published": "2026-08-16",
-  "date_modified": "2026-08-16",
+  "date_modified": "2026-10-09",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -132,10 +132,46 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Tekst-emoticons",
+      "h2": "Blije tekst-emoticons",
+      "intro": "Smileys getypt met een dubbele punt en een haakje. Ouder dan emoji en nog steeds de snelste manier om vriendelijk over te komen in platte tekst.",
+      "symbols": [
+        {
+          "char": ":)",
+          "label": "Lachend gezichtje"
+        },
+        {
+          "char": ":-)",
+          "label": "Klassieke smiley met neus"
+        },
+        {
+          "char": ":D",
+          "label": "Brede grijns"
+        },
+        {
+          "char": ":-D",
+          "label": "Grijns met neus"
+        },
+        {
+          "char": "=)",
+          "label": "Zachte glimlach"
+        },
+        {
+          "char": "XD",
+          "label": "Schaterlach"
+        },
+        {
+          "char": "c:",
+          "label": "Brede glimlach"
+        }
+      ]
+    },
+    {
       "id": "happy-kaomoji",
       "label": "Kaomoji",
       "h2": "Blije kaomoji en tekstgezichtjes",
-      "intro": "Stralende tekstgezichtjes in Japanse stijl die hun armen omhoog gooien van blijdschap.",
+      "intro": "Een kleine selectie vrolijke Japanse tekstgezichten.",
       "symbols": [
         {
           "char": "ヽ(´▽`)/",
@@ -146,34 +182,18 @@
           "label": "Juichend kaomoji"
         },
         {
-          "char": "(＾▽＾)",
-          "label": "Stralende glimlach-kaomoji"
-        },
-        {
           "char": "(◕‿◕)",
           "label": "Lieve glimlach-kaomoji"
         },
         {
-          "char": "(✿◠‿◠)",
-          "label": "Bloemenglimlach-kaomoji"
-        },
-        {
           "char": "٩(◕‿◕｡)۶",
           "label": "Enthousiast dansend kaomoji"
-        },
-        {
-          "char": "(o^▽^o)",
-          "label": "Blozende wangen-kaomoji"
-        },
-        {
-          "char": "(｡♥‿♥｡)",
-          "label": "Smoorverliefd kaomoji"
-        },
-        {
-          "char": "⊂((・▽・))⊃",
-          "label": "Dikke knuffel-kaomoji"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/nl/library/tekstgezichten-kaomoji/",
+        "text": "Alle kaomoji bekijken"
+      }
     }
   ],
   "collection_section": {
@@ -257,7 +277,7 @@
   "related": [
     {
       "href": "/nl/library/lach-emoji/",
-      "title": "Lach Emoji & Kaomoji",
+      "title": "Lach Emoji (Laughing Emoji)",
       "desc": "LOL-gezichtjes en meme-lachcombo's voor als blij overgaat in hilarisch."
     },
     {

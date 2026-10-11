@@ -2,7 +2,7 @@
 
 > フォント変換ツール。英数字を太字・筆記体・ゴシック・バブルなど100種類以上のおしゃれフォントに一瞬で変換。インスタのプロフィールやTikTok、ゲームIDにそのままコピペOK。無料・登録不要。
 
-203 pages under https://ultratextgen.com/ja/, written in ja. Site index: https://ultratextgen.com/llms.txt. Complete canonical URL list for the whole site: https://ultratextgen.com/sitemap.xml
+213 pages under https://ultratextgen.com/ja/, written in ja. Site index: https://ultratextgen.com/llms.txt. Complete canonical URL list for the whole site: https://ultratextgen.com/sitemap.xml
 
 ## Main generator
 
@@ -12,6 +12,7 @@
 
 - [Symbol & emoji library](https://ultratextgen.com/ja/library/llms.txt): コピペで使える記号をまとめた特殊文字ライブラリ。ハート ♡・星 ★・矢印 →・キラキラ ✨・ギリシャ文字・顔文字・絵文字コンボまで、記号をクリックするだけでコピーできて、インスタのプロフィールや名前、Discord、ゲームIDにそのまま貼れます。 69 pages.
 - [Individual symbols (記号)](https://ultratextgen.com/ja/symbol/llms.txt): 特定の記号を1つだけ調べたいときに。このページの各リンク先では、Unicode記号を1つずつ取り上げて意味・由来・入力方法・使える場所を解説しています。カテゴリーごとに探したいときは記号ライブラリへ。 107 pages.
+- [Language-specific pages (学習プリント)](https://ultratextgen.com/ja/purinto/llms.txt): ひらがな、カタカナ、漢字、名前のなぞり書き、アルファベット、英語4線、ローマ字、運筆、ひらがなぬりえの学習プリントを無料で作成。字や形を選ぶだけで、A4のプリントをPDFで印刷できます。登録はいりません。 10 pages.
 
 ## Font styles
 
@@ -29,7 +30,7 @@
 
 ## Text tools
 
-- [文字数カウント](https://ultratextgen.com/ja/mojisu-kaunto/): 無料の文字数カウントツール。入力と同時に文字数（空白除く含む）・行数・原稿用紙換算をリアルタイムで表示します。全角・半角も1文字ずつ正確に文字カウントし、X（旧Twitter）やInstagramなど17サービス38項目の文字数制限チェックにも対応。
+- [文字数カウント](https://ultratextgen.com/ja/mojisu-kaunto/): 無料の文字数カウントツール。入力と同時に文字数（空白込み・空白除く）・行数・原稿用紙換算をリアルタイムで表示します。全角・半角も1文字ずつ正確に文字カウントし、X（旧Twitter）やInstagramなど17サービス39項目の文字数制限チェックにも対応。
 
 ## Platform pages
 
@@ -38,7 +39,7 @@
 
 ## Symbol & emoji library
 
-- [空白コピペ — 空白文字 & 見えない文字](https://ultratextgen.com/ja/kuuhaku-moji/): Unicodeが用意するすべての空白・見えない文字：ゼロ幅スペース、フィラー、点字の空白まで。文字をクリックすればそのままコピペできます。
+- [空白コピペ：空白文字 & 見えない文字](https://ultratextgen.com/ja/kuuhaku-moji/): Unicodeが用意するすべての空白・見えない文字：ゼロ幅スペース、フィラー、点字の空白まで。文字をクリックすればそのままコピペできます。
 
 ## Guides (ガイド)
 
@@ -62,6 +63,6 @@
 - [Unicode 18.0の新絵文字：「ひび割れ顔」が一般投票で1位に](https://ultratextgen.com/ja/updates/unicode-18-most-anticipated-emoji/): 2026年9月16日にリリースされたUnicode…
 - [Unicode 18.0は2026年9月16日に公開され、1つの文字体系が外れました](https://ultratextgen.com/ja/updates/unicode-18-release-date-confirmed/): 2026年7月30日のUTC第188回会議で、Unicode技術委員会はUnicode…
 
-## Language-specific pages
+## Language-specific pages (学習プリント)
 
 - [ギャル文字変換](https://ultratextgen.com/ja/gal-moji/): ひらがな・カタカナを、2000年代のケータイ文化発のギャル文字（ぁ£ⅹωのような記号文字）に変換。コピペするだけで、LINEやXのひとこと・プロフ、ネタ投稿にそのまま使えます。無料・登録不要。

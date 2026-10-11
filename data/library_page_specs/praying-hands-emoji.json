@@ -1,7 +1,7 @@
 {
   "slug": "praying-hands-emoji",
-  "title": "Praying Hands Emoji & Kaomoji: Copy & Paste 🙏 Prayer & Gratitude Combos",
-  "meta_description": "Copy and paste praying hands emoji 🙏 🤲, bowing kaomoji like m(_ _)m, and combo sets for prayers, thanks, and high-fives. Click any symbol to copy it instantly.",
+  "title": "Praying Hands Emoji & Kaomoji: Copy & Paste 🙏 Gratitude Combos",
+  "meta_description": "Copy and paste praying hands emoji 🙏 🤲, bowing kaomoji like m(_ _)m, and combo sets for prayers, thanks, and high-fives.",
   "canonical": "https://ultratextgen.com/library/praying-hands-emoji/",
   "breadcrumb": "Praying Hands Emoji & Kaomoji",
   "hero_h1": "Praying Hands Emoji & Kaomoji",
@@ -19,6 +19,19 @@
       "symbols": [
         { "char": "🙏", "label": "Folded Hands" },
         { "char": "🤲", "label": "Palms Up Together" }
+      ]
+    },
+    {
+      "id": "skin-tones",
+      "label": "Skin Tones",
+      "h2": "Praying Hands in Every Skin Tone",
+      "intro": "🙏 in the five skin tones Unicode defines, from light to dark. 🙏🏿 (dark) and 🙏🏾 (medium-dark) are the two people mean by black praying hands. Each one is 🙏 followed by a tone modifier, so an app that ignores tones shows 🙏 next to a small colour swatch.",
+      "symbols": [
+        { "char": "🙏🏻", "label": "Folded Hands: Light Skin Tone" },
+        { "char": "🙏🏼", "label": "Folded Hands: Medium-Light Skin Tone" },
+        { "char": "🙏🏽", "label": "Folded Hands: Medium Skin Tone" },
+        { "char": "🙏🏾", "label": "Folded Hands: Medium-Dark Skin Tone" },
+        { "char": "🙏🏿", "label": "Folded Hands: Dark Skin Tone" }
       ]
     },
     {

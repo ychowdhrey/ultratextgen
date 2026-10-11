@@ -8,7 +8,7 @@
   "crumb_home": "Inicio",
   "library_url": "https://ultratextgen.com/es/library/",
   "date_published": "2026-08-12",
-  "date_modified": "2026-08-12",
+  "date_modified": "2026-10-10",
   "hreflang": [
     { "lang": "en", "href": "https://ultratextgen.com/library/hazard-warning-symbols/" },
     { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-de-peligro/" },
@@ -59,6 +59,17 @@
         { "char": "❕", "label": "Signo de exclamación blanco" },
         { "char": "❌", "label": "Marca de equis" },
         { "char": "⛔", "label": "Prohibido el paso" }
+      ]
+    },
+    {
+      "id": "chemical-hazard",
+      "label": "Químico",
+      "h2": "Símbolos de Peligro Químico: Inflamable, Comburente, Explosivo",
+      "intro": "Los pictogramas de peligro químico (SGA/GHS) son dibujos y Unicode no tiene caracteres para ellos, así que no existe un símbolo copiable de corrosivo, comburente o irritante. Estos son los caracteres más cercanos: la llama representa las sustancias inflamables y comburentes, la explosión las explosivas y el tubo de ensayo las sustancias químicas en general. Para las sustancias tóxicas sirve el ☠ de arriba y para las nocivas o irritantes el ❗. Una etiqueta oficial necesita el pictograma del reglamento.",
+      "symbols": [
+        { "char": "🔥", "label": "Llama (inflamable, comburente)" },
+        { "char": "💥", "label": "Explosión (explosivo)" },
+        { "char": "🧪", "label": "Tubo de ensayo (sustancia química)" }
       ]
     }
   ],

@@ -24,6 +24,7 @@ emoji, runic and hieroglyph code points do NOT rasterize in the bundled fonts,
 so those themes use hand-drawn vector motifs instead of baked glyphs.
 """
 import glob
+import html as _htmlmod
 import json
 import io
 import os
@@ -2916,6 +2917,7 @@ PAGES = {
   "pl-do-druku-alfabet-do-kolorowania": ("Alfabet do kolorowania", "Darmowe litery A–Z do druku i kolorowania", m_grid, K_PRINT),
   "de-zum-ausdrucken-blasenbuchstaben": ("Blasenbuchstaben zum Ausdrucken", "Nachfahren, Ausmalen, PNG — A–Z & 0–9", m_grid, K_PRINT),
   "de-zum-ausdrucken-alphabet-ausmalbilder": ("Alphabet-Ausmalbilder", "Kostenlose Buchstaben A–Z zum Ausdrucken", m_grid, K_PRINT),
+  "tr-yazdirilabilir-balon-harfler": ("Yazdırılabilir Balon Harfler", "Boya, kes, PNG indir — 29 harf ve 0–9", m_grid, K_PRINT),
   # New symbol/ EN parents + id/ translations
   "symbol-microphone-emoji": ("Microphone Emoji", "🎤 meaning, history & every way to type it", m_microphone, K_SYM),
   "symbol-less-than-or-equal-to-symbol": ("Less Than or Equal To Symbol", "≤ meaning, Alt Code & LaTeX", glyphs("≤"), K_SYM),
@@ -3149,6 +3151,7 @@ PAGES.update({
       P(m_typo, sample="Thee", ff=SERIF, style="italic", weight="400", size=64, label="ye olde english"), K_USE),
 "usecase-pirate-translator": ("Pirate Translator", "Arrr! Turn any text into pirate speak", m_skull, K_USE),
 "printables-monogram-maker": ("Monogram Maker", "Up to 3 initials, classic or circle-frame", P(m_circled_letter, letter="M"), K_PRINT),
+"printables-name-labels": ("Printable Name Labels", "A full sheet of name labels for school, sized to fit", m_grid, K_PRINT),
 "printables-cross-stitch-letters": ("Cross-Stitch Letters", "Any word as a charted stitch pattern", m_grid, K_PRINT),
 "printables-spanish-alphabet-chart": ("Spanish Alphabet Chart", "All 27 letters, A-Z plus Ñ, one printable chart", P(m_letter_stencil, letter="Ñ"), K_PRINT),
 "fr-imprimables-alphabet-espagnol": ("Alphabet Espagnol à Imprimer", "Les 27 lettres, A-Z plus Ñ, une seule fiche", P(m_letter_stencil, letter="Ñ"), K_PRINT),
@@ -3177,6 +3180,8 @@ PAGES.update({
 # English words, which is what these cards showed when first generated.
 "fr-imprimables-mots-croises": ("Générateur de Mots Croisés", "Tes mots et définitions, une grille par élève", P(m_crossword, across="MOTS", down="PORT", cross_col=1, cross_row=1), K_PRINT),
 "fr-imprimables-mots-meles": ("Générateur de Mots Mêlés", "Ta liste de mots, une grille par élève", P(m_word_grid, word="ECOLE"), K_PRINT),
+"es-imprimibles-nombre-en-cursiva": ("Nombre en Cursiva", "Cualquier nombre en letra ligada, una ficha por niño", P(m_trace_rows, sample="Sofía"), K_PRINT),
+"es-imprimibles-sopa-de-letras": ("Generador de Sopa de Letras", "Tu lista de palabras, una cuadrícula por alumno", P(m_word_grid, word="LIBRO"), K_PRINT),
 "fr-imprimables-prenom-a-colorier": ("Prénom à Colorier", "Un prénom ou un mot en grand coloriage à imprimer", m_crayons, K_PRINT),
 "pl-do-druku-litery-do-druku": ("Litery do Druku", "Puste kontury A-Z z polskimi znakami i cyfry 0-9", P(m_letter_stencil, letter="Ł"), K_PRINT),
 "pt-imprimiveis-letra-bastao": ("Letra Bastao para Imprimir", "Moldes vazados A-Z e 0-9 para recortar", P(m_letter_stencil, letter="B"), K_PRINT),
@@ -3215,6 +3220,10 @@ PAGES.update({
 "library-heart-ascii-art": ("Heart ASCII Art", "Text hearts from tiny <3 to big solid hearts", m_heart, K_LIB),
 "library-skull-ascii-art": ("Skull ASCII Art", "Skulls and crossbones drawn in plain text", m_skull, K_LIB),
 "library-star-ascii-art": ("Star ASCII Art", "Sparkles, shooting stars & big text stars", m_star, K_LIB),
+"library-birthday-ascii-art": ("Happy Birthday ASCII Art", "Cakes, banners & balloons drawn in plain text", m_banner, K_LIB),
+"library-thumbs-up-ascii-art": ("Thumbs Up ASCII Art", "Big & small text thumbs, plus d-_-b and (y)", m_thumb, K_LIB),
+"library-tumblr-symbols": ("Tumblr Symbols", "Moons, crosses & sparkle lines for your blog",
+      glyphs("☾", "✞", "ღ", "✧", "☮"), K_LIB),
 "usecase-free-fire-guild-name-generator": ("Free Fire Guild Name Generator", "Squad tags in ꧁꧂ brackets, copy & paste", m_gamepad, K_USE),
 "usecase-mobile-legends-squad-name-generator": ("Mobile Legends Squad Name Generator", "Squad tags & aesthetic fonts, copy & paste", m_trophy, K_USE),
 "usecase-free-fire-name-generator": ("Free Fire Name Generator", "Stylish FF names with symbols & katakana", m_gamepad, K_USE),
@@ -3228,6 +3237,12 @@ PAGES.update({
       P(m_transform, a="A", b="█"), K_USE),
 "ascii-converter": ("ASCII Converter", "Text to hex, binary, decimal & octal, and back",
       P(m_transform, a="A", b="01"), K_USE),
+"letters-to-numbers": ("Letters to Numbers Converter", "A=1, B=2 up to Z=26, and numbers back to letters",
+      P(m_transform, a="A", b="1"), K_USE),
+"ai-writing-footprint-checker": ("AI Writing Footprint Checker", "See which wording patterns sound like AI, and fix them",
+      P(m_transform, a="\u201c", b="\u00b6"), K_USE),
+"image-to-ascii": ("Image to ASCII Art Converter", "Turn a photo into text art you can copy",
+      P(m_transform, a="\u25d0", b="@"), K_USE),
 "curved-text": ("Curved & Arc Text Generator", "Bend text into arcs, waves, spirals & shapes",
       P(m_arc, letters="ARC"), K_USE),
 # 2026-07-22 GSC 404 cleanup: shipped without og:image/twitter:image at all.
@@ -3257,6 +3272,8 @@ PAGES.update({
       P(m_typo, sample="อักษร", weight="800", size=76, label="ตัวอักษรและคำ", ff="Noto Sans Thai", lab_ff="Noto Sans Thai"), K_USE),
 "hiragana-chart": ("Hiragana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
 "katakana-chart": ("Katakana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
+"ko-hiragana-pyo": ("히라가나 표", "한글 발음·로마자와 함께 보는 46자, 인쇄와 쓰기 연습", m_kana_grid, K_LIB),
+"ko-gatakana-pyo": ("가타카나 표", "한글 발음·로마자와 함께 보는 46자, 인쇄와 쓰기 연습", m_kana_grid, K_LIB),
 
 # ---- tr/library — piliapp-mining individual-symbol pages (2026-07-12) ----
 "tr-library-japon-alfabesi": ("Japon Alfabesi", "Hiragana, katakana ve kanji kopyala yapıştır", m_kana_grid, K_LIB),
@@ -3763,7 +3780,10 @@ def page_tiles(slug, limit=40):
         except OSError:
             html = ""
         for g in _TILE_RE.findall(html):
-            g = g.strip()
+            # The attribute value is HTML-escaped (><> is stored as
+            # &gt;&lt;&gt;). spanned() escapes again when drawing, so an
+            # unescaped read here drew the entity text itself on the card.
+            g = _htmlmod.unescape(g).strip()
             if g and g not in out:
                 out.append(g)
             if len(out) >= limit:
@@ -3943,6 +3963,86 @@ def motif_from_page(slug, current_motif):
         return P(m_specimen, lines=_spread(runs, 3))
     return P(scatter_glyphs, glyphs=_spread(tiles, 5))
 
+
+# Kaomoji pages drawn from chosen samples rather than the page's first tiles:
+# m_specimen is defined above, after the main PAGES literal, so these entries
+# cannot live in it. The samples are picked for full font coverage on the art
+# machine (a dropped glyph leaves a gap mid-face), and the angel card avoids
+# the Odia wing letters, which cairo places out of order.
+PAGES.update({
+    "library-fish-kaomoji": ("Fish Kaomoji", "><(((º> and Japanese fish in text",
+        P(m_specimen, lines=["><(((º>", ">゜))))彡", "<º))))><"]), K_LIB),
+    "library-angel-kaomoji": ("Angel Kaomoji", "Winged text faces to copy and paste",
+        P(m_specimen, lines=["˙˚ʚ(´◡`)ɞ˚˙", "˚ʚ♡ɞ˚", "ʚ₍ᐢ. .ᐢ₎ɞ"]), K_LIB),
+})
+
+# The 2026-10-08 kaomoji spokes. Same treatment as fish and angel above: three
+# faces from the page itself, chosen from characters the art machine covers, since
+# the default radial motif scatters a long face into fragments around the chip.
+PAGES.update({
+    "library-strong-kaomoji": ("Strong Kaomoji", "Flexing, proud and determined faces",
+        P(m_specimen, lines=["ᕦ(ò_óˇ)ᕤ", "(￣^￣)", "ᕙ(`▽´)ᕗ"]), K_LIB),
+    "library-dancing-kaomoji": ("Dancing Kaomoji", "Text faces that dance",
+        P(m_specimen, lines=["┏(・o・)┛", "ヘ(￣ー￣ヘ) ♫", "(~‾▿‾)~"]), K_LIB),
+    "library-salute-kaomoji": ("Salute Kaomoji", "Saluting faces with a hand at the brow",
+        P(m_specimen, lines=["(￣^￣)ゞ", "(・ω・)ゞ", "o7"]), K_LIB),
+    "library-nod-kaomoji": ("Nod Kaomoji", "Nodding yes and agreeing faces",
+        P(m_specimen, lines=["(・ω・ )( ・ω・)", "(・∀・)ｳﾝ!!", "d(￣◇￣)b"]), K_LIB),
+    "library-bowing-kaomoji": ("Bowing Kaomoji", "Bows, apologies and thank-yous in text",
+        P(m_specimen, lines=["m(_ _)m", "m(；∇；)m", "orz"]), K_LIB),
+    "library-fight-kaomoji": ("Fight Kaomoji", "Punches, swords and pew pew faces",
+        P(m_specimen, lines=["(ﾉ｀Д´)ﾉ", "(｀Д´)ノ三⊃", "(⌐■_■)︻╦╤─"]), K_LIB),
+    "library-nervous-kaomoji": ("Nervous Kaomoji", "Sweat drops, worried and awkward faces",
+        P(m_specimen, lines=["(^_^;)", "(⊙_⊙;)", "(-_-;)"]), K_LIB),
+    "library-drool-kaomoji": ("Drool Kaomoji", "Drooling over food, crushes and naps",
+        P(m_specimen, lines=["(￣﹃￣)", "(´﹃｀)", "(♡﹃♡)"]), K_LIB),
+    "library-dizzy-kaomoji": ("Dizzy Kaomoji", "Spiral eyes and seeing stars",
+        P(m_specimen, lines=["(@_@)", "(＠＿＠)", "☆⌒(>。<)"]), K_LIB),
+    "library-pout-kaomoji": ("Pout Kaomoji", "Sulky, pouting and grumpy faces",
+        P(m_specimen, lines=["(｀ε´)", "(￢з￢)", "٩(๑`^´๑)۶"]), K_LIB),
+    "library-smug-kaomoji": ("Smug Kaomoji", "Smirking and scheming faces",
+        P(m_specimen, lines=["(￣ー￣)", "(¬‿¬)", "(ΦωΦ)"]), K_LIB),
+    "library-teeth-kaomoji": ("Teeth Kaomoji", "Fangs, sharp teeth and toothy grins",
+        P(m_specimen, lines=["▼ш▼", "(・ш・)", "(￣皿￣)"]), K_LIB),
+    "library-sheep-kaomoji": ("Sheep Kaomoji", "Sheep and lambs typed in text",
+        P(m_specimen, lines=["Ꮚ˘ꈊ˘Ꮚ", "@(・ェ・)@", "ᏊᵕꈊᵕᏊ"]), K_LIB),
+    "library-mouse-kaomoji": ("Mouse Kaomoji", "Mice and hamsters in text",
+        P(m_specimen, lines=["<:3 )~", "~~(__^·>", "₍ᐢ•ﻌ•ᐢ₎"]), K_LIB),
+    "library-butterfly-kaomoji": ("Butterfly Kaomoji", "Butterflies made of text",
+        P(m_specimen, lines=["ʚїɞ", "εїз", "ʚ(˘ᵕ˘)ɞ"]), K_LIB),
+    "library-seal-kaomoji": ("Seal Kaomoji", "Seals and sea lions in text",
+        P(m_specimen, lines=["ᶘ ᵒᴥᵒᶅ", "(:3 っ)っ", "(・∞・ミ∋)3"]), K_LIB),
+    "library-bird-kaomoji": ("Bird Kaomoji", "Birds, ducks, chicks and penguins",
+        P(m_specimen, lines=["(・Θ・)", "（・⊝・）", "__o<"]), K_LIB),
+    "library-fox-kaomoji": ("Fox Kaomoji", "Fox faces with pointed ears",
+        P(m_specimen, lines=["εᐟᐠ•ﻌ•ᐟᐠз", "εᐟᐠ>ﻌ<ᐟᐠз", "-^^,--,~"]), K_LIB),
+    "library-deer-kaomoji": ("Deer Kaomoji", "Deer, fawns and reindeer in text",
+        P(m_specimen, lines=["Ψ(•ᴥ•)Ψ", "Ψ(•●•)Ψ ❄", "Ψ(`ᴥ´)Ψ"]), K_LIB),
+    "library-halloween-kaomoji": ("Halloween Kaomoji", "Ghosts, bats and vampires in text",
+        P(m_specimen, lines=["[¬º-°]¬", "/|\\ ^._.^ /|\\", "ψ(｀∇´)ψ"]), K_LIB),
+    "library-christmas-kaomoji": ("Christmas Kaomoji", "Santa, snow and reindeer faces",
+        P(m_specimen, lines=["*<|:-)", "❄(◕‿◕)❄", "☃ ヽ(・∀・)ﾉ"]), K_LIB),
+    "library-birthday-kaomoji": ("Birthday Kaomoji", "Cake, gifts and party faces",
+        P(m_specimen, lines=["HBD! \\(^o^)/", "♪ヽ(^^ヽ)♪", "(ﾉ◕ヮ◕)ﾉ🎉"]), K_LIB),
+    "library-moon-kaomoji": ("Moon Kaomoji", "Moons, suns and space faces",
+        P(m_specimen, lines=["(´-ω-`)☾", "(*ﾟーﾟ)ゞ ☽", "(⌐■_■)☀"]), K_LIB),
+    "library-food-kaomoji": ("Food Kaomoji", "Eating, sipping and hungry faces",
+        P(m_specimen, lines=["(っ˘ڡ˘ς)", "(　＾∇＾)っ旦~", "(*´ч`*)"]), K_LIB),
+    "library-aesthetic-kaomoji": ("Aesthetic Kaomoji", "Framed, sparkly faces for bios",
+        P(m_specimen, lines=["ʚ(˶ˆ꒳ˆ˵)ɞ", "꒰ ˶ᵔ ᵕ ᵔ˶ ꒱ ♡", "⋆｡˚ (｡•ᴗ•｡) ˚｡⋆"]), K_LIB),
+    "library-scared-kaomoji": ("Scared Kaomoji", "Trembling, hiding and frightened faces",
+        P(m_specimen, lines=["((((；゜Д゜)))", "(/ω＼)", "Σ(っ°Д°;)っ"]), K_LIB),
+    "library-confused-kaomoji": ("Confused Kaomoji", "Puzzled and question-mark faces",
+        P(m_specimen, lines=["(・・?)", "( ´･ω･)?", "┐(´～｀)┌"]), K_LIB),
+    "library-evil-kaomoji": ("Evil Kaomoji", "Devil grins and villain laughs",
+        P(m_specimen, lines=["ψ(｀∇´)ψ", "(◣_◢)", "(¬‿¬)"]), K_LIB),
+    "library-thinking-kaomoji": ("Thinking Kaomoji", "Pondering and hmm faces",
+        P(m_specimen, lines=["(´-ω-`)ｳｰﾝ", "φ(．．)", "(ー_ー)"]), K_LIB),
+    "library-cool-kaomoji": ("Cool Kaomoji", "Sunglasses and chill faces",
+        P(m_specimen, lines=["(⌐■_■)", "(⌐□_□)", "☜(ﾟヮﾟ☜)"]), K_LIB),
+    "library-goth-kaomoji": ("Goth Kaomoji", "Crosses, pentagrams and dark faces",
+        P(m_specimen, lines=["✞(•_•)✞", "☠ (x_x) ☠", "⛧ (¬_¬) ⛧"]), K_LIB),
+})
 
 
 def _warn_font_build():

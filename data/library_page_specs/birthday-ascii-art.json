@@ -1,0 +1,146 @@
+{
+  "slug": "birthday-ascii-art",
+  "title": "Happy Birthday ASCII Art: Copy & Paste Cake, Banner & Balloon Text Art",
+  "meta_description": "Copy and paste happy birthday ASCII art: candle cakes, cupcakes, HAPPY BIRTHDAY banners, balloons and one-line wishes, drawn in plain text with spacing kept.",
+  "canonical": "https://ultratextgen.com/library/birthday-ascii-art/",
+  "breadcrumb": "Birthday ASCII Art",
+  "hero_h1": "Happy Birthday ASCII Art",
+  "hero_tagline": "Cakes, banners, balloons and one-line wishes drawn in plain text. Click Copy on any card to take it with its line breaks.",
+  "intro": "Happy birthday ASCII art is a birthday message drawn with keyboard characters instead of pictures: a cake made of pipes and tildes, a banner boxed in plus signs, a bunch of balloons on slash strings. The one-line wishes paste anywhere. The multi-line pieces hold their shape only where every character is the same width, which is true in a Discord code block, a terminal or a plain-text editor such as Notepad, and not true in an Instagram caption or a phone's message app, where the columns drift apart. Every piece below is an original drawing, and the Copy button takes the spaces and line breaks with it.",
+  "date_published": "2026-10-08",
+  "date_modified": "2026-10-08",
+  "copy_pattern": "art",
+  "copy_aria_template": "Copy {label} ASCII art",
+  "sections": [
+    {
+      "id": "one-line-wishes",
+      "label": "One-Line Wishes",
+      "h2": "One-Line Happy Birthday Text Art",
+      "intro": "Single lines that keep their look in any font, so they work in a comment, a caption or a group chat.",
+      "art": [
+        {
+          "label": "Cheering HBD",
+          "art": "\\(^o^)/ Happy Birthday!"
+        },
+        {
+          "label": "Sparkle Line",
+          "art": "*:･ﾟ✧ Happy Birthday ✧ﾟ･:*"
+        },
+        {
+          "label": "Wavy Wishes",
+          "art": "~*~*~ Happy Birthday ~*~*~"
+        },
+        {
+          "label": "Candle Row",
+          "art": "i i i i HBD i i i i"
+        }
+      ]
+    },
+    {
+      "id": "birthday-cakes",
+      "label": "Cakes",
+      "h2": "Birthday Cake ASCII Art",
+      "intro": "Cakes with candles, a two-tier cake and a cupcake. The i at the top of each candle is the flame.",
+      "art": [
+        {
+          "label": "Candle Cake",
+          "art": "    i  i  i  i\n    |  |  |  |\n ___|__|__|__|___\n|                |\n|~~~~~~~~~~~~~~~~|\n|     HAPPY      |\n|    BIRTHDAY    |\n|________________|"
+        },
+        {
+          "label": "Little Cake",
+          "art": "   , , ,\n  _|_|_|_\n |~~~~~~~|\n | HBD!! |\n |_______|"
+        },
+        {
+          "label": "Two-Tier Cake",
+          "art": "       i i i\n      _|_|_|_\n     |~~~~~~~|\n   __|_______|__\n  |~~~~~~~~~~~~~|\n  |   * * * *   |\n  |_____________|"
+        },
+        {
+          "label": "Cupcake",
+          "art": "     i\n    _|_\n  .'   '.\n (_______)\n  \\|||||/\n   \\|||/"
+        }
+      ]
+    },
+    {
+      "id": "birthday-banners",
+      "label": "Banners",
+      "h2": "Happy Birthday Banners",
+      "intro": "Boxed messages to open or close a birthday post. To put a name in the box, add or remove spaces on that line so the right edge stays straight.",
+      "art": [
+        {
+          "label": "Boxed Banner",
+          "art": "+------------------------+\n|                        |\n|    HAPPY  BIRTHDAY!    |\n|                        |\n+------------------------+"
+        },
+        {
+          "label": "Starry Banner",
+          "art": "*.*.*.*.*.*.*.*.*.*.*.*.*.*\n*                         *\n*    Happy  Birthday!     *\n*                         *\n*.*.*.*.*.*.*.*.*.*.*.*.*.*"
+        },
+        {
+          "label": "Block HBD",
+          "art": "#   #  ####   ####\n#   #  #   #  #   #\n#####  ####   #   #\n#   #  #   #  #   #\n#   #  ####   ####"
+        }
+      ]
+    },
+    {
+      "id": "party-art",
+      "label": "Party",
+      "h2": "Balloons, Party Hats and Presents",
+      "intro": "The rest of the party, for when the cake has already been sent.",
+      "art": [
+        {
+          "label": "Balloon Bunch",
+          "art": "  ,-.   ,-.   ,-.\n (   ) (   ) (   )\n  `-'   `-'   `-'\n   \\     |     /\n    \\    |    /\n     \\   |   /\n      \\  |  /\n       \\ | /\n        \\|/"
+        },
+        {
+          "label": "Party Hat",
+          "art": "     o\n    /\\\n   /**\\\n  /****\\\n /******\\\n/________\\"
+        },
+        {
+          "label": "Gift Box",
+          "art": "   \\\\ //\n ___\\V/___\n|    |    |\n|____|____|\n|    |    |\n|____|____|"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Birthday ASCII Art, Answered",
+  "faq": [
+    {
+      "q": "Why does the cake look broken after I paste it?",
+      "a": "The app is showing it in a proportional font, where an i is narrower than a W, so the columns slide out of line. In Discord, wrap the art in three backticks on the line above and the line below to turn it into a code block, which uses a fixed-width font."
+    },
+    {
+      "q": "Can I put a name on the cake or banner?",
+      "a": "Yes. Replace the words inside the box and keep the line the same length by adding or removing spaces, so the right-hand edge stays lined up. For a name in big letters, the ASCII art generator linked below turns any word into block letters."
+    },
+    {
+      "q": "Which birthday art works in an Instagram caption or a text message?",
+      "a": "The one-line wishes. Instagram captions and most phone message apps use proportional fonts, so multi-line pieces lose their shape there."
+    }
+  ],
+  "related": [
+    {
+      "href": "/ascii-art-generator/",
+      "title": "ASCII Art Generator",
+      "desc": "Type a name and turn it into big block-letter ASCII art."
+    },
+    {
+      "href": "/library/party-celebration-emojis/",
+      "title": "Party & Celebration Emojis",
+      "desc": "Cake, balloons, confetti and birthday emoji combos."
+    },
+    {
+      "href": "/library/heart-ascii-art/",
+      "title": "Heart ASCII Art",
+      "desc": "Text hearts from a one-line <3 to big solid hearts."
+    },
+    {
+      "href": "/library/text-art/",
+      "title": "Text Art",
+      "desc": "ASCII and Unicode art collections plus drawing blocks."
+    },
+    {
+      "href": "/library/birthday-kaomoji/",
+      "title": "Birthday Kaomoji",
+      "desc": "One-line birthday faces with cake, candles, party poppers and gifts, sized to drop into a message or under a photo."
+    }
+  ]
+}

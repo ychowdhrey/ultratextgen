@@ -49,10 +49,15 @@
       saved: "Saved",
       share: "Share",
       shareImage: "Share as an image",
+      linkCopied: "Link copied",
+      failed: "✗ Failed",
       clearAll: "Clear all",
       copyLabel: "Copy",
       selectImage: "Select and share image",
       viewSelection: "View selection ({n})",
+      lookPlain: "Copy plain version",
+      lookEmoji: "Copy emoji version",
+      lookNote: "Some apps show it in colour anyway.",
       formats: { inline: "Inline", vertical: "Vertical", comma: "Comma", space: "Space", bullet: "Bullet" }
     },
     vi: {
@@ -68,6 +73,11 @@
       copyLabel: "Sao chép",
       selectImage: "Chọn và chia sẻ ảnh",
       viewSelection: "Xem lựa chọn ({n})",
+      lookPlain: "Sao chép bản thường",
+      lookEmoji: "Sao chép bản emoji",
+      lookNote: "Một số ứng dụng vẫn hiển thị có màu.",
+      linkCopied: "Đã sao chép liên kết",
+      failed: "✗ Thất bại",
       formats: { inline: "Một hàng", vertical: "Dọc", comma: "Dấu phẩy", space: "Cách", bullet: "Gạch đầu dòng" }
     },
     pt: {
@@ -83,6 +93,11 @@
       copyLabel: "Copiar",
       selectImage: "Selecionar e compartilhar imagem",
       viewSelection: "Ver seleção ({n})",
+      lookPlain: "Copiar versão simples",
+      lookEmoji: "Copiar versão emoji",
+      lookNote: "Alguns apps mostram em cores mesmo assim.",
+      linkCopied: "Link copiado",
+      failed: "✗ Falhou",
       formats: { inline: "Em linha", vertical: "Na vertical", comma: "Vírgula", space: "Espaço", bullet: "Lista" }
     },
     es: {
@@ -98,6 +113,11 @@
       copyLabel: "Copiar",
       selectImage: "Seleccionar y compartir imagen",
       viewSelection: "Ver selección ({n})",
+      lookPlain: "Copiar versión simple",
+      lookEmoji: "Copiar versión emoji",
+      lookNote: "Algunas apps lo muestran en color de todos modos.",
+      linkCopied: "Enlace copiado",
+      failed: "✗ Falló",
       formats: { inline: "En línea", vertical: "En vertical", comma: "Coma", space: "Espacio", bullet: "Viñeta" }
     },
     de: {
@@ -113,6 +133,11 @@
       copyLabel: "Kopieren",
       selectImage: "Auswählen und als Bild teilen",
       viewSelection: "Auswahl ansehen ({n})",
+      lookPlain: "Schlichte Version kopieren",
+      lookEmoji: "Emoji-Version kopieren",
+      lookNote: "Manche Apps zeigen das Symbol trotzdem farbig.",
+      linkCopied: "Link kopiert",
+      failed: "✗ Fehlgeschlagen",
       formats: { inline: "Nebeneinander", vertical: "Vertikal", comma: "Komma", space: "Leerzeichen", bullet: "Aufzählung" }
     },
     id: {
@@ -128,6 +153,11 @@
       copyLabel: "Salin",
       selectImage: "Pilih dan bagikan gambar",
       viewSelection: "Lihat pilihan ({n})",
+      lookPlain: "Salin versi polos",
+      lookEmoji: "Salin versi emoji",
+      lookNote: "Beberapa aplikasi tetap menampilkannya berwarna.",
+      linkCopied: "Tautan disalin",
+      failed: "✗ Gagal",
       formats: { inline: "Sebaris", vertical: "Vertikal", comma: "Koma", space: "Spasi", bullet: "Butir" }
     },
     tr: {
@@ -143,6 +173,11 @@
       copyLabel: "Kopyala",
       selectImage: "Seç ve görsel olarak paylaş",
       viewSelection: "Seçimi gör ({n})",
+      lookPlain: "Düz sürümü kopyala",
+      lookEmoji: "Emoji sürümünü kopyala",
+      lookNote: "Bazı uygulamalar yine de renkli gösterir.",
+      linkCopied: "Bağlantı kopyalandı",
+      failed: "✗ Başarısız",
       formats: { inline: "Yan yana", vertical: "Alt alta", comma: "Virgüllü", space: "Boşluklu", bullet: "Maddeli" }
     },
     fr: {
@@ -158,6 +193,11 @@
       copyLabel: "Copier",
       selectImage: "Choisir et partager en image",
       viewSelection: "Voir la sélection ({n})",
+      lookPlain: "Copier la version simple",
+      lookEmoji: "Copier la version emoji",
+      lookNote: "Certaines applis l’affichent quand même en couleur.",
+      linkCopied: "Lien copié",
+      failed: "✗ Échec",
       formats: { inline: "En ligne", vertical: "Verticale", comma: "Virgules", space: "Espaces", bullet: "Liste" }
     },
     nl: {
@@ -173,6 +213,11 @@
       copyLabel: "Kopieer",
       selectImage: "Selecteer en deel als afbeelding",
       viewSelection: "Selectie bekijken ({n})",
+      lookPlain: "Gewone versie kopiëren",
+      lookEmoji: "Emojiversie kopiëren",
+      lookNote: "Sommige apps tonen het symbool toch in kleur.",
+      linkCopied: "Link gekopieerd",
+      failed: "✗ Mislukt",
       formats: { inline: "Op één regel", vertical: "Verticaal", comma: "Komma's", space: "Spaties", bullet: "Lijst" }
     },
     it: {
@@ -188,6 +233,11 @@
       copyLabel: "Copia",
       selectImage: "Seleziona e condividi immagine",
       viewSelection: "Vedi selezione ({n})",
+      lookPlain: "Copia la versione semplice",
+      lookEmoji: "Copia la versione emoji",
+      lookNote: "Alcune app lo mostrano comunque a colori.",
+      linkCopied: "Link copiato",
+      failed: "✗ Errore",
       formats: { inline: "In linea", vertical: "Verticale", comma: "Virgola", space: "Spazio", bullet: "Elenco puntato" }
     },
     pl: {
@@ -203,6 +253,11 @@
       copyLabel: "Kopiuj",
       selectImage: "Wybierz i udostępnij obraz",
       viewSelection: "Zobacz wybór ({n})",
+      lookPlain: "Kopiuj zwykłą wersję",
+      lookEmoji: "Kopiuj wersję emoji",
+      lookNote: "Niektóre aplikacje i tak pokazują symbol w kolorze.",
+      linkCopied: "Link skopiowany",
+      failed: "✗ Błąd",
       formats: { inline: "W linii", vertical: "Pionowo", comma: "Przecinki", space: "Spacje", bullet: "Punktory" }
     },
     th: {
@@ -218,6 +273,11 @@
       copyLabel: "คัดลอก",
       selectImage: "เลือกแล้วแชร์เป็นรูปภาพ",
       viewSelection: "ดูที่เลือก ({n})",
+      lookPlain: "คัดลอกแบบธรรมดา",
+      lookEmoji: "คัดลอกแบบอีโมจิ",
+      lookNote: "บางแอปยังคงแสดงเป็นสีอยู่ดี",
+      linkCopied: "คัดลอกลิงก์แล้ว",
+      failed: "✗ ล้มเหลว",
       formats: { inline: "เรียงบรรทัดเดียว", vertical: "แนวตั้ง", comma: "จุลภาค", space: "เว้นวรรค", bullet: "บุลเล็ต" }
     },
     zh: {
@@ -233,6 +293,11 @@
       copyLabel: "複製",
       selectImage: "選取並以圖片分享",
       viewSelection: "查看已選（{n}）",
+      lookPlain: "複製純文字版",
+      lookEmoji: "複製表情符號版",
+      lookNote: "部分 App 仍會以彩色顯示。",
+      linkCopied: "已複製連結",
+      failed: "✗ 失敗",
       formats: { inline: "單行", vertical: "直式", comma: "逗號", space: "空格", bullet: "項目符號" }
     },
     ko: {
@@ -248,6 +313,11 @@
       copyLabel: "복사",
       selectImage: "골라서 이미지로 공유",
       viewSelection: "선택 보기 ({n})",
+      lookPlain: "기본 기호로 복사",
+      lookEmoji: "이모지로 복사",
+      lookNote: "일부 앱에서는 그래도 컬러로 표시됩니다.",
+      linkCopied: "링크 복사됨",
+      failed: "✗ 실패",
       formats: { inline: "한 줄로", vertical: "세로로", comma: "쉼표로", space: "공백으로", bullet: "불릿으로" }
     },
     ar: {
@@ -263,6 +333,11 @@
       copyLabel: "نسخ",
       selectImage: "اختر وشارك كصورة",
       viewSelection: "عرض التحديد ({n})",
+      lookPlain: "انسخ النسخة العادية",
+      lookEmoji: "انسخ نسخة الإيموجي",
+      lookNote: "بعض التطبيقات تعرض الرمز بالألوان رغم ذلك.",
+      linkCopied: "تم نسخ الرابط",
+      failed: "✗ فشل",
       formats: { inline: "متتالٍ", vertical: "عمودي", comma: "بفواصل", space: "بمسافات", bullet: "نقطي" }
     },
     no: {
@@ -278,6 +353,11 @@
       copyLabel: "Kopier",
       selectImage: "Velg og del som bilde",
       viewSelection: "Se utvalg ({n})",
+      lookPlain: "Kopier vanlig versjon",
+      lookEmoji: "Kopier emoji-versjon",
+      lookNote: "Noen apper viser symbolet i farger likevel.",
+      linkCopied: "Lenke kopiert",
+      failed: "✗ Mislyktes",
       formats: { inline: "På linje", vertical: "Vertikalt", comma: "Komma", space: "Mellomrom", bullet: "Punktliste" }
     },
     ja: {
@@ -293,6 +373,11 @@
       copyLabel: "コピー",
       selectImage: "選んで画像で共有",
       viewSelection: "選択を表示（{n}）",
+      lookPlain: "テキスト版をコピー",
+      lookEmoji: "絵文字版をコピー",
+      lookNote: "アプリによってはカラーで表示されます。",
+      linkCopied: "リンクをコピーしました",
+      failed: "✗ 失敗しました",
       formats: { inline: "1行", vertical: "縦並び", comma: "カンマ区切り", space: "スペース区切り", bullet: "箇条書き" }
     },
     ru: {
@@ -308,6 +393,11 @@
       copyLabel: "Копировать",
       selectImage: "Выбрать и поделиться картинкой",
       viewSelection: "Показать выбор ({n})",
+      lookPlain: "Копировать обычный символ",
+      lookEmoji: "Копировать эмодзи",
+      lookNote: "Некоторые приложения всё равно показывают его в цвете.",
+      linkCopied: "Ссылка скопирована",
+      failed: "✗ Ошибка",
       formats: { inline: "В строку", vertical: "Столбиком", comma: "Через запятую", space: "Через пробел", bullet: "Список" }
     },
     da: {
@@ -323,6 +413,11 @@
       copyLabel: "Kopiér",
       selectImage: "Vælg og del som billede",
       viewSelection: "Se udvalg ({n})",
+      lookPlain: "Kopiér almindelig version",
+      lookEmoji: "Kopiér emoji-version",
+      lookNote: "Nogle apps viser alligevel symbolet i farver.",
+      linkCopied: "Link kopieret",
+      failed: "✗ Mislykkedes",
       formats: { inline: "På linje", vertical: "Lodret", comma: "Komma", space: "Mellemrum", bullet: "Punktopstilling" }
     },
     sv: {
@@ -338,6 +433,11 @@
       copyLabel: "Kopiera",
       selectImage: "Välj och dela som bild",
       viewSelection: "Visa urval ({n})",
+      lookPlain: "Kopiera vanlig version",
+      lookEmoji: "Kopiera emoji-version",
+      lookNote: "Vissa appar visar ändå symbolen i färg.",
+      linkCopied: "Länk kopierad",
+      failed: "✗ Misslyckades",
       formats: { inline: "På rad", vertical: "Vertikalt", comma: "Kommatecken", space: "Mellanslag", bullet: "Punktlista" }
     },
     cs: {
@@ -353,6 +453,11 @@
       copyLabel: "Kopírovat",
       selectImage: "Vybrat a sdílet jako obrázek",
       viewSelection: "Zobrazit výběr ({n})",
+      lookPlain: "Kopírovat jednoduchou verzi",
+      lookEmoji: "Kopírovat verzi emoji",
+      lookNote: "Některé aplikace symbol přesto zobrazí barevně.",
+      linkCopied: "Odkaz zkopírován",
+      failed: "✗ Selhalo",
       formats: { inline: "Na řádek", vertical: "Svisle", comma: "Čárky", space: "Mezery", bullet: "Odrážky" }
     },
     sk: {
@@ -368,6 +473,11 @@
       copyLabel: "Kopírovať",
       selectImage: "Vybrať a zdieľať ako obrázok",
       viewSelection: "Zobraziť výber ({n})",
+      lookPlain: "Kopírovať jednoduchú verziu",
+      lookEmoji: "Kopírovať verziu emoji",
+      lookNote: "Niektoré aplikácie symbol aj tak zobrazia farebne.",
+      linkCopied: "Odkaz skopírovaný",
+      failed: "✗ Zlyhalo",
       formats: { inline: "Na riadok", vertical: "Zvisle", comma: "Čiarky", space: "Medzery", bullet: "Odrážky" }
     },
     hr: {
@@ -383,6 +493,11 @@
       copyLabel: "Kopiraj",
       selectImage: "Odaberi i podijeli kao sliku",
       viewSelection: "Pogledaj odabir ({n})",
+      lookPlain: "Kopiraj običnu verziju",
+      lookEmoji: "Kopiraj emoji verziju",
+      lookNote: "Neke aplikacije ipak prikazuju simbol u boji.",
+      linkCopied: "Poveznica kopirana",
+      failed: "✗ Neuspjelo",
       formats: { inline: "U nizu", vertical: "Okomito", comma: "Zarezi", space: "Razmaci", bullet: "Popis" }
     },
     bs: {
@@ -398,6 +513,11 @@
       copyLabel: "Kopiraj",
       selectImage: "Odaberi i podijeli kao sliku",
       viewSelection: "Pogledaj odabir ({n})",
+      lookPlain: "Kopiraj običnu verziju",
+      lookEmoji: "Kopiraj emoji verziju",
+      lookNote: "Neke aplikacije ipak prikazuju simbol u boji.",
+      linkCopied: "Link kopiran",
+      failed: "✗ Neuspjelo",
       formats: { inline: "U nizu", vertical: "Okomito", comma: "Zarezi", space: "Razmaci", bullet: "Spisak" }
     },
     sr: {
@@ -413,6 +533,11 @@
       copyLabel: "Kopiraj",
       selectImage: "Izaberi i podeli kao sliku",
       viewSelection: "Pogledaj izbor ({n})",
+      lookPlain: "Kopiraj običnu verziju",
+      lookEmoji: "Kopiraj emodži verziju",
+      lookNote: "Neke aplikacije ipak prikazuju simbol u boji.",
+      linkCopied: "Link kopiran",
+      failed: "✗ Neuspelo",
       formats: { inline: "У низу", vertical: "Усправно", comma: "Зарези", space: "Размаци", bullet: "Списак" }
     },
     ro: {
@@ -428,6 +553,11 @@
       copyLabel: "Copiază",
       selectImage: "Selectează și distribuie ca imagine",
       viewSelection: "Vezi selecția ({n})",
+      lookPlain: "Copiază varianta simplă",
+      lookEmoji: "Copiază varianta emoji",
+      lookNote: "Unele aplicații îl afișează oricum color.",
+      linkCopied: "Link copiat",
+      failed: "✗ Eșuat",
       formats: { inline: "Pe un rând", vertical: "Pe verticală", comma: "Cu virgulă", space: "Cu spațiu", bullet: "Listă" }
     },
     hu: {
@@ -443,6 +573,11 @@
       copyLabel: "Másolás",
       selectImage: "Kiválasztás és megosztás képként",
       viewSelection: "Kiválasztottak ({n})",
+      lookPlain: "Egyszerű változat másolása",
+      lookEmoji: "Emoji változat másolása",
+      lookNote: "Egyes alkalmazások így is színesen jelenítik meg.",
+      linkCopied: "Link másolva",
+      failed: "✗ Sikertelen",
       formats: { inline: "Egy sorban", vertical: "Függőlegesen", comma: "Vesszővel", space: "Szóközzel", bullet: "Felsorolás" }
     },
     hi: {
@@ -458,6 +593,11 @@
       copyLabel: "कॉपी",
       selectImage: "चुनें और इमेज शेयर करें",
       viewSelection: "चुने हुए देखें ({n})",
+      lookPlain: "सादा वर्ज़न कॉपी करें",
+      lookEmoji: "इमोजी वर्ज़न कॉपी करें",
+      lookNote: "कुछ ऐप फिर भी इसे रंगीन दिखाते हैं।",
+      linkCopied: "लिंक कॉपी हो गया",
+      failed: "✗ विफल",
       formats: { inline: "एक लाइन में", vertical: "ऊपर-नीचे", comma: "कॉमा से", space: "स्पेस से", bullet: "बुलेट में" }
     },
     tl: {
@@ -473,6 +613,11 @@
       copyLabel: "Kopyahin",
       selectImage: "Pumili at i-share bilang larawan",
       viewSelection: "Tingnan ang napili ({n})",
+      lookPlain: "Kopyahin ang simpleng bersyon",
+      lookEmoji: "Kopyahin ang emoji na bersyon",
+      lookNote: "May mga app na nagpapakita pa rin nito nang may kulay.",
+      linkCopied: "Nakopya ang link",
+      failed: "✗ Nabigo",
       formats: { inline: "Isang linya", vertical: "Patayo", comma: "Kuwit", space: "Espasyo", bullet: "Listahan" }
     },
     /* fi and ms were missing until 2026-09-10, so their 5 collection pages
@@ -495,6 +640,11 @@
       copyLabel: "Kopioi",
       selectImage: "Valitse ja jaa kuvana",
       viewSelection: "Näytä valinta ({n})",
+      lookPlain: "Kopioi tavallinen versio",
+      lookEmoji: "Kopioi emojiversio",
+      lookNote: "Jotkin sovellukset näyttävät symbolin silti värillisenä.",
+      linkCopied: "Linkki kopioitu",
+      failed: "✗ Epäonnistui",
       formats: { inline: "Rivi", vertical: "Pysty", comma: "Pilkku", space: "V\u00e4lily\u00f6nti", bullet: "Luettelo" }
     },
     ms: {
@@ -510,7 +660,32 @@
       copyLabel: "Salin",
       selectImage: "Pilih dan kongsi imej",
       viewSelection: "Lihat pilihan ({n})",
+      lookPlain: "Salin versi biasa",
+      lookEmoji: "Salin versi emoji",
+      lookNote: "Sesetengah aplikasi tetap memaparkannya berwarna.",
+      linkCopied: "Pautan disalin",
+      failed: "✗ Gagal",
       formats: { inline: "Satu baris", vertical: "Menegak", comma: "Koma", space: "Ruang", bullet: "Senarai" }
+    },
+    uk: {
+      copied: "Скопійовано: ",
+      copyFormat: "Формат копіювання",
+      copyCollection: " Копіювати добірку",
+      copiedBtn: " Скопійовано!",
+      save: "Зберегти",
+      saved: "Збережено",
+      share: "Поділитися",
+      shareImage: "Поділитися як зображенням",
+      clearAll: "Очистити все",
+      copyLabel: "Копіювати",
+      selectImage: "Вибрати й поділитися зображенням",
+      viewSelection: "Переглянути вибране ({n})",
+      lookPlain: "Скопіювати звичайну версію",
+      lookEmoji: "Скопіювати версію емодзі",
+      lookNote: "Деякі застосунки все одно показують його кольоровим.",
+      linkCopied: "Посилання скопійовано",
+      failed: "✗ Помилка",
+      formats: { inline: "В один рядок", vertical: "Стовпчиком", comma: "Через кому", space: "Через пробіл", bullet: "Списком" }
     }
   };
   /* @collection-grid-strings:end */
@@ -524,19 +699,65 @@
   var toastTimer = null;
 
   function getToast() {
-    if (!toastEl) toastEl = document.getElementById("symbolToast");
+    if (!toastEl) {
+      toastEl = document.getElementById("symbolToast");
+      // A toast carrying a button stays up while the pointer or focus is on
+      // it, so the button cannot vanish under a finger that is reaching it.
+      if (toastEl) {
+        const hold = function () { if (toastTimer) clearTimeout(toastTimer); };
+        const resume = function () {
+          if (toastEl.classList.contains("has-action")) hideToastIn(1500);
+        };
+        toastEl.addEventListener("pointerenter", hold);
+        toastEl.addEventListener("focusin", hold);
+        toastEl.addEventListener("pointerleave", resume);
+        toastEl.addEventListener("focusout", resume);
+      }
+    }
     return toastEl;
   }
 
-  function showToast(msg) {
-    var t = getToast();
+  function hideToastIn(ms) {
+    const t = getToast();
     if (!t) return;
-    t.textContent = STR.copied + msg;
-    t.classList.add("is-visible");
     if (toastTimer) clearTimeout(toastTimer);
     toastTimer = setTimeout(function () {
       t.classList.remove("is-visible");
-    }, 1000);
+      t.classList.remove("has-action");
+    }, ms);
+  }
+
+  // `offer` (optional) adds one button to the toast: the other look of a
+  // two-look symbol (see copySymbol). It stays up 4s instead of 1s, because a
+  // button that disappears in one second cannot be pressed.
+  // `plain` (optional) shows `msg` as given, without the "Copied" prefix: the
+  // failure message is a whole sentence of its own.
+  function showToast(msg, offer, plain) {
+    var t = getToast();
+    if (!t) return;
+    t.textContent = plain ? msg : STR.copied + msg;
+    t.classList.toggle("has-action", !!offer);
+    if (offer) {
+      // The confirmation keeps one line; the button wraps if anything does.
+      const said = document.createElement("span");
+      said.className = "symbol-toast-text";
+      said.textContent = t.textContent;
+      t.textContent = "";
+      t.appendChild(said);
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "symbol-toast-action";
+      btn.textContent = offer.label + " ";
+      if (offer.title) btn.title = offer.title;
+      const glyph = document.createElement("span");
+      glyph.className = "symbol-toast-glyph is-" + offer.look;
+      glyph.textContent = offer.text;
+      btn.appendChild(glyph);
+      btn.addEventListener("click", offer.run);
+      t.appendChild(btn);
+    }
+    t.classList.add("is-visible");
+    hideToastIn(offer ? 4000 : 1000);
   }
   ns.toast = showToast;
 
@@ -551,23 +772,35 @@
     ta.style.left = "-9999px";
     document.body.appendChild(ta);
     ta.select();
-    try { document.execCommand("copy"); } catch (e) { /* silent */ }
+    let ok = false;
+    try { ok = !!document.execCommand("copy"); } catch (e) { ok = false; }
     document.body.removeChild(ta);
+    return ok;
   }
   ns.fallbackCopy = fallbackCopy;
 
-  function copyText(text, el, label) {
+  // `method` is the copy_text copy_method; it defaults to "symbol_tile" so
+  // existing callers keep their meaning. A caller that copies something other
+  // than one tile passes its own, so one action sends exactly one event.
+  // `opts` (optional, used by the two-look path): `item` is the identity to
+  // record when it differs from the copied text, `extra` goes on the event,
+  // `offer` goes to the toast.
+  //
+  // A copy that neither path completed says so (the localized "failed" string)
+  // and records nothing: a copy_text row fires on success, as a share row does,
+  // never on intent.
+  function copyText(text, el, label, method, opts) {
     label = label || text;
+    function viaFallback() {
+      if (fallbackCopy(text)) feedback(el, label, text, method, opts);
+      else showToast(t("failed", "✗ Failed"), null, true);
+    }
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(function () {
-        feedback(el, label, text);
-      }).catch(function () {
-        fallbackCopy(text);
-        feedback(el, label, text);
-      });
+        feedback(el, label, text, method, opts);
+      }).catch(viaFallback);
     } else {
-      fallbackCopy(text);
-      feedback(el, label, text);
+      viaFallback();
     }
   }
   ns.copyText = copyText;
@@ -594,11 +827,89 @@
     return text || tile.getAttribute("aria-label") || symbol;
   }
 
+  /* ============================
+     Symbols with two looks
+     ============================
+     About 120 characters (♥ ❤ ☀ ↗ ⚔ ☠ ✈ …) exist as plain text AND as colour
+     emoji; which one a reader sees is chosen by the font, or by a variation
+     selector after the character (U+FE0E text, U+FE0F emoji). A tile drew one
+     look and copied the bare character, so the paste could come out as the
+     other: what you saw was not what you got. Now the copy carries the
+     selector for the look the tile shows, and the toast offers the other
+     look in one tap, for readers who wanted it and never had the word for it.
+
+     The look is MEASURED on this device, not assumed from the font stack:
+     the character is drawn three ways (as is, +FE0E, +FE0F) in the tile's own
+     font and the pixels compared. Where the device draws both forms the same
+     there is nothing to offer, and the tile copies exactly as before. Emoji-
+     only characters (💕, ⚡) have one look and are never touched. */
+  const VS_TEXT = "\uFE0E";
+  const VS_EMOJI = "\uFE0F";
+  let lookCanvas = null;
+
+  function lookSignature(ch, font) {
+    const ctx = lookCanvas.getContext("2d");
+    ctx.clearRect(0, 0, 40, 40);
+    ctx.font = "32px " + font;
+    ctx.textBaseline = "top";
+    ctx.fillStyle = "#000";
+    ctx.fillText(ch, 2, 2);
+    const d = ctx.getImageData(0, 0, 40, 40).data;
+    let h = 0;
+    for (let i = 0; i < d.length; i++) h = (h * 31 + d[i]) | 0;
+    return h;
+  }
+
+  // -> { base, shown: "emoji" | "plain" } or null
+  function twoLook(tile, symbol) {
+    let base = symbol;
+    let vs = "";
+    const last = symbol.slice(-1);
+    if (last === VS_TEXT || last === VS_EMOJI) { vs = last; base = symbol.slice(0, -1); }
+    if (Array.from(base).length !== 1 || /[0-9#*]/.test(base)) return null;
+    if (!/\p{Emoji}/u.test(base) || /\p{Emoji_Presentation}/u.test(base)) return null;
+    try {
+      if (!lookCanvas) {
+        lookCanvas = document.createElement("canvas");
+        lookCanvas.width = lookCanvas.height = 40;
+      }
+      const font = getComputedStyle(tile).fontFamily || "sans-serif";
+      const asEmoji = lookSignature(base + VS_EMOJI, font);
+      const asText = lookSignature(base + VS_TEXT, font);
+      if (asEmoji === asText) return null;
+      if (vs) return { base: base, shown: vs === VS_EMOJI ? "emoji" : "plain" };
+      const asIs = lookSignature(base, font);
+      if (asIs === asEmoji) return { base: base, shown: "emoji" };
+      if (asIs === asText) return { base: base, shown: "plain" };
+    } catch (e) { /* no canvas: copy as before */ }
+    return null;
+  }
+
+  // copy_item stays the bare character, so a symbol's history in Analytics
+  // does not split in two; copy_look says which look left the page.
+  function copyLook(tile, base, look, method) {
+    const text = base + (look === "emoji" ? VS_EMOJI : VS_TEXT);
+    const other = look === "emoji" ? "plain" : "emoji";
+    copyText(text, tile, text, method, {
+      item: base,
+      extra: { copy_look: look },
+      offer: method === "symbol_tile" ? {
+        look: other,
+        label: other === "plain" ? STR.lookPlain : STR.lookEmoji,
+        title: other === "plain" ? STR.lookNote : "",
+        text: base + (other === "emoji" ? VS_EMOJI : VS_TEXT),
+        run: function () { copyLook(tile, base, other, "symbol_look_switch"); }
+      } : null
+    });
+  }
+
   function copySymbol(tile) {
     var raw = tile.getAttribute("data-symbol");
     if (raw == null) return;
     var symbol = raw.trim() || raw;
     if (!symbol) return;
+    const look = twoLook(tile, symbol);
+    if (look) { copyLook(tile, look.base, look.shown, "symbol_tile"); return; }
     copyText(symbol, tile, tileLabel(tile, symbol));
   }
   ns.copySymbol = copySymbol;
@@ -647,21 +958,25 @@
   ns.copyItemWidth = copyItemWidth;
   ns.isTextObject = isTextObject;
 
-  function feedback(el, label, copied) {
+  function feedback(el, label, copied, method, opts) {
+    method = method || "symbol_tile";
+    opts = opts || {};
     el.classList.add("is-copied");
     setTimeout(function () {
       el.classList.remove("is-copied");
     }, 1000);
-    showToast(label);
+    showToast(label, opts.offer);
+    if (opts.item !== undefined) copied = opts.item;
     // Record WHAT was copied, not just that a copy happened. header.js owns
     // the identity helper (it is on every page these tiles ship on); the
     // guard keeps the copy working if it is ever absent.
     var utg = window.UltraTextGen;
     if (utg && utg.trackCopy) {
-      utg.trackCopy("symbol_tile", copied === undefined ? label : copied);
+      utg.trackCopy(method, copied === undefined ? label : copied, opts.extra);
     } else {
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: "copy_text", copy_method: "symbol_tile" });
+      window.dataLayer.push({ event: "copy_text", copy_method: method,
+        copy_look: opts.extra ? opts.extra.copy_look : undefined });
     }
   }
 
@@ -935,7 +1250,7 @@
     const pre = card ? card.querySelector(".art-piece-pre") : null;
     if (!pre) return;
     const label = btn.getAttribute("data-label") || "ASCII art";
-    copyText(pre.textContent.replace(/\s+$/, ""), btn, label);
+    copyText(pre.textContent.replace(/\s+$/, ""), btn, label, "ascii_art");
   });
 
   document.addEventListener("keydown", function (e) {
@@ -1000,6 +1315,8 @@
     saved: "copyButtons.saved",
     share: "shareResult.label",
     shareImage: "shareResult.imageTitle",
+    linkCopied: "shareResult.linkCopied",
+    failed: "copyButtons.failed",
     clearAll: "savedStyles.clearAll",
     copyLabel: "copyButtons.copy",
     selectImage: "imageSelection.selectImage",
@@ -1009,15 +1326,22 @@
   const STAR_OUTLINE = "☆";
   const STAR_FILLED = "★";
 
-  /* The name a page gives a tile. The visible .flag-label is authoritative
-     (it is what the reader sees and what the locale pages translate); the
-     aria-label is the fallback, with its leading "Copy " verb dropped. */
-  function tileLabel(tile) {
+  /* The name a page gives a tile's ROW, for Save and its saved-strip caption.
+     The visible .flag-label is authoritative (it is what the reader sees and
+     what the locale pages translate). Without one, the glyph itself is the
+     name: the aria-label is "<copy verb> <glyph>" in the page's language
+     ("Salin ♡", "Copiar nombre"), and stripping only an English "Copy " left
+     the localized verb inside saved captions and save_style.item_label.
+
+     This used to be a second `function tileLabel` in this same scope. Function
+     declarations hoist, so it silently replaced the copy toast's glyph-first
+     tileLabel(tile, symbol) above and every toast showed a label instead of
+     the glyph. Keep the two names distinct. */
+  function rowLabel(tile) {
     const row = tile.closest(".flag-row");
     const label = row ? row.querySelector(".flag-label") : null;
     if (label && label.textContent.trim()) return label.textContent.trim();
-    const aria = (tile.getAttribute("aria-label") || "").trim();
-    return aria.replace(/^Copy\s+/i, "") || (tile.getAttribute("data-symbol") || "").trim();
+    return (tile.getAttribute("data-symbol") || "").trim();
   }
 
   function symbolOf(tile) {
@@ -1065,7 +1389,7 @@
       btn.type = "button";
       btn.className = "symbol-save-btn";
       btn.setAttribute("data-symbol", symbol);
-      btn.setAttribute("aria-label", t("save", "Save") + " " + tileLabel(tile));
+      btn.setAttribute("aria-label", t("save", "Save") + " " + rowLabel(tile));
       paintSaveBtn(btn, isSavedSymbol(symbol));
       row.insertBefore(btn, row.firstChild);
       row.classList.add("has-symbol-actions");
@@ -1082,7 +1406,7 @@
     const nowSaved = UTGX.saved.toggle({
       type: "symbol",
       value: symbol,
-      label: tile ? tileLabel(tile) : symbol,
+      label: tile ? rowLabel(tile) : symbol,
       href: window.location.pathname
     });
     if (nowSaved === null) return;
@@ -1174,9 +1498,7 @@
     copyAll.className = "copy-collection-btn";
     copyAll.textContent = (STR.copyCollection || " Copy Collection").trim();
     copyAll.addEventListener("click", function () {
-      copyText(joined, copyAll, joined);
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: "copy_text", copy_method: "saved_collection" });
+      copyText(joined, copyAll, joined, "saved_collection");
     });
     actions.appendChild(copyAll);
 
@@ -1309,6 +1631,8 @@
         surface: "library_section",
         itemType: "collection",
         label: t("share", "Share"),
+        linkCopied: t("linkCopied", "Link copied"),
+        failedLabel: t("failed", "✗ Failed"),
         icon: "link"
       }));
       if (Array.prototype.some.call(tiles, function (tile) { return isDrawable(tile.getAttribute("data-symbol")); })) {
@@ -1444,7 +1768,7 @@
       // glyph: "Save Black Star" is the announcement, not "Save ★".
       const row = b.closest(".flag-row");
       const tile = row ? row.querySelector(".symbol-tile") : null;
-      b.setAttribute("aria-label", t("save", "Save") + " " + (tile ? tileLabel(tile) : b.getAttribute("data-symbol")));
+      b.setAttribute("aria-label", t("save", "Save") + " " + (tile ? rowLabel(tile) : b.getAttribute("data-symbol")));
     });
     renderSavedStrip();
   });

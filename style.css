@@ -754,6 +754,69 @@
       height: 16px;
     }
 
+    /* Phone header (header.js, initializeMiniHeader). The full header wraps
+       to three rows below 641px -- 187px at 390x844, 227px at 360 and 320
+       wide (measured 2026-10-04) -- and while it was sticky it covered
+       whatever scrolled to the top, the zalgo page's Copy button included.
+       On phones it now scrolls away with the page, and .header-mini, one
+       48px row, slides in only while the visitor scrolls back up. The media
+       query matches COMPACT_HEADER_QUERY in header.js. */
+    .header-mini {
+      display: none;
+    }
+
+    @media (max-width: 640px), (max-height: 500px) {
+      .header {
+        position: relative;
+      }
+
+      .header-mini {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        height: 48px;
+        padding: 0 16px;
+        background: var(--bg-white);
+        border-bottom: 1px solid var(--border-light);
+        box-shadow: var(--shadow-soft);
+        transform: translateY(-100%);
+        visibility: hidden;
+        transition: transform 0.2s ease, visibility 0s linear 0.2s;
+      }
+
+      .header-mini.is-shown {
+        transform: none;
+        visibility: visible;
+        transition: transform 0.2s ease, visibility 0s;
+      }
+
+      .header-mini .logo {
+        font-size: 1.0625rem;
+      }
+
+      .header-mini .header-btn {
+        padding: 8px;
+      }
+
+      .header-mini .header-btn svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .header-mini,
+      .header-mini.is-shown {
+        transition: none;
+      }
+    }
+
     /* Hero Section */
     .hero {
       padding: 48px 24px 32px;
@@ -783,6 +846,16 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+    }
+
+    /* Print drops backgrounds, and with them the gradient this text is
+       clipped to, so the transparent fill printed as a blank band. */
+    @media print {
+      .hero-headline {
+        background: none;
+        -webkit-text-fill-color: currentColor;
+        color: var(--text-primary);
+      }
     }
 
     .input-wrapper {
@@ -1201,7 +1274,9 @@
     .style-name {
       font-size: 0.75rem;
       font-weight: 600;
-      color: var(--text-muted);
+      /* --text-muted is 2.56:1 on the light card and 3.07:1 on the dark one;
+         12px text needs 4.5:1. --text-secondary is 4.76:1 / 5.71:1. */
+      color: var(--text-secondary);
       margin-bottom: 6px;
       display: flex;
       align-items: center;
@@ -1838,6 +1913,9 @@
 
       .style-actions {
         width: 100%;
+        /* Copy + Preview + Save do not fit 320px in longer languages
+           ("Сохранить", "Speichern"): wrap instead of overflowing the card. */
+        flex-wrap: wrap;
       }
 
       .style-actions-stack {
@@ -2427,6 +2505,50 @@
   font-size: 0.8rem;
   font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
   color: var(--text-primary);
+}
+
+/* A three-column reference table whose cells are sentences. At phone width the
+   third column sat past the edge of the scroll wrapper with no cue, so each row
+   becomes a block and every cell names its own column from data-label. The
+   header row stays in the DOM for screen readers and is only hidden visually. */
+@media (max-width: 640px) {
+  .data-table.data-table--stack thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .data-table.data-table--stack:has(th:nth-child(3)) {
+    min-width: 0;
+  }
+  .data-table.data-table--stack,
+  .data-table.data-table--stack tbody,
+  .data-table.data-table--stack tr,
+  .data-table.data-table--stack td {
+    display: block;
+  }
+  .data-table.data-table--stack tr {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .data-table.data-table--stack tr:last-child {
+    border-bottom: none;
+  }
+  .data-table.data-table--stack td {
+    border-bottom: none;
+    padding: 0.2rem 0.75rem;
+  }
+  .data-table.data-table--stack td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
 }
 
 /* -----------------------------------------------
@@ -3829,6 +3951,42 @@ h3 + .section-subline {
   transform: translateX(-50%) translateY(0);
 }
 
+/* A toast offering the other look of a two-look symbol (symbol-explorer.js
+   copyLook). It takes the pointer only while it carries the button, and may
+   wrap rather than run off a phone screen in a longer language. */
+.symbol-toast.has-action {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 6px 6px 18px;
+  white-space: normal;
+  /* left: 50% leaves a fixed box only half the viewport to shrink into, so
+     the width is set from the content and capped at the screen instead. */
+  width: max-content;
+  max-width: calc(100vw - 24px);
+}
+.symbol-toast-text { flex: none; white-space: nowrap; }
+.symbol-toast-action {
+  flex: 0 1 auto;
+  min-width: 0;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  border: 0;
+  border-radius: 50px;
+  padding: 6px 12px;
+  font: inherit;
+  cursor: pointer;
+}
+.symbol-toast-glyph.is-plain {
+  font-family: "Segoe UI Symbol", "Noto Sans Symbols 2", "Noto Sans Symbols", "DejaVu Sans", sans-serif;
+  font-variant-emoji: text;
+}
+.symbol-toast-glyph.is-emoji {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  font-variant-emoji: emoji;
+}
+
 /* Responsive: tablet */
 @media (max-width: 768px) {
   .symbol-grid {
@@ -3910,6 +4068,16 @@ h3 + .section-subline {
 .symbol-hero-caption {
   color: var(--text-muted);
   font-size: 0.9rem;
+}
+
+/* Spoke -> collection line under a symbol page's first copy section.
+   Generated by scripts/lib/symbol_collection_link.py. */
+.symbol-collection-link {
+  max-width: 800px;
+  margin: 0.5rem auto 1.5rem;
+  padding: 0 1rem;
+  text-align: center;
+  color: var(--text-secondary);
 }
 
 @media (max-width: 480px) {
@@ -5262,6 +5430,32 @@ button.clear-decoration {
   color: var(--text-secondary);
 }
 
+/* Heights the printables engine fills in after first paint.
+
+   #pt-strip and #pt-panel are empty in the static HTML and printablesEngine.js
+   mounts the letter chips and the selected-letter stage into them, so before
+   this block the first paint showed them at 0px and everything under them
+   dropped when the engine ran: 0.13-0.32 layout shift at 1440px wide under 4x
+   CPU throttle. The numbers are LOWER BOUNDS, the smallest height the mount
+   reaches on any of the 76 chip-strip pages (surveyed at 390, 768, 1024 and
+   1440px, then swept every 20px from 320 to 1100px on the pages that reached
+   the minimum). A floor never leaves a gap on a page whose mount is taller,
+   and shrinks the jump on every page instead of removing it where the mount
+   is taller than the floor: the strip is 83-131px and the panel 467-766px at
+   desktop width, by how many characters the page offers. The panel is only
+   reserved from 661px, where the stage is two columns; below that its height
+   tracks the width by 450-780px and the panel sits below the fold. */
+#pt-strip { min-height: 83px; }
+@media (max-width: 620px) { #pt-strip { min-height: 128px; } }
+@media (max-width: 440px) { #pt-strip { min-height: 173px; } }
+@media (max-width: 350px) { #pt-strip { min-height: 218px; } }
+@media (min-width: 661px) { #pt-panel { min-height: 467px; } }
+/* The frozen block-letters page is held out of the reservation above until its
+   owner releases it (separate commit). Matched by its own preview image, the
+   one attribute that names it in the static HTML. */
+.bubble-az:has(> #pt-panel[data-sheet-preview$="/printables-block-letters.png"]) > #pt-strip { min-height: 0; }
+#pt-panel[data-sheet-preview$="/printables-block-letters.png"] { min-height: 0; }
+
 /* Selected-letter stage */
 .bubble-letter-panel {
   margin-top: 1.25rem;
@@ -5454,12 +5648,20 @@ button.clear-decoration {
   line-height: 1;
   color: var(--text-primary);
 }
+/* A flex item will not shrink below its longest word, so on a two-column
+   phone grid a long localized name ("Decorazione Cuore") pushed the copy
+   label past the card edge. The name gives way instead: it may shrink and
+   hyphenate, and the copy label never shrinks. */
 .bubble-variant-name {
   flex: 1 1 auto;
+  min-width: 0;
   font-size: 0.8rem;
   color: var(--text-secondary);
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 .bubble-variant-copy {
+  flex-shrink: 0;
   font-size: 0.72rem;
   font-weight: 700;
   color: var(--accent-purple);
@@ -5643,8 +5845,10 @@ button.clear-decoration {
 .pt-spoke-batch .pt-size-field { margin-top: 0; }
 
 @media (max-width: 640px) {
-  .bubble-stage { grid-template-columns: 1fr; }
-  .bubble-stage.is-solo { grid-template-columns: 1fr; }
+  /* minmax(0, …): a plain 1fr track will not shrink below its longest word,
+     so "Großbuchstaben" widened the stage past a 320-360px phone. */
+  .bubble-stage { grid-template-columns: minmax(0, 1fr); }
+  .bubble-stage.is-solo { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* Print surface — hidden on screen, isolated when printing */
@@ -5668,6 +5872,57 @@ button.clear-decoration {
   body.is-printing #pt-print-root { display: block !important; padding: 1rem; }
   body.is-printing #kana-print-root { display: block !important; padding: 1rem; }
   body.is-printing #hurufPrintRoot { display: block !important; padding: 1rem; }
+}
+
+/* Browser Print without the Download PDF button (printPrefs.js
+   mountPrintNote, called by all four printables engines): keep the page content, drop the site chrome and the
+   controls, and open with one line saying which button prints the sheet.
+   Scoped to engine pages and to the case where the engine is NOT printing,
+   so the engine's own print path above is unaffected. */
+.pt-print-note { display: none; }
+@media print {
+  body.pt-engine-page:not(.is-printing) .pt-print-note {
+    display: block;
+    margin: 0 0 1rem;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  /* The button name is a link (it stays clickable in a saved PDF); the page
+     address under it is the same destination in text, for a sheet on paper. */
+  body.pt-engine-page:not(.is-printing) .pt-print-note-link {
+    color: var(--accent-purple);
+    text-decoration: underline;
+  }
+  body.pt-engine-page:not(.is-printing) .pt-print-note-addr {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+  }
+  body.pt-engine-page:not(.is-printing) :is(#shared-header, .header, footer, .footer, nav.breadcrumbs,
+    button, .bubble-actions, .pt-size-field, .pt-share-row, .pt-recent, .pt-pdf-hint, .pt-sheet-thumb,
+    ins.adsbygoogle, .google-auto-placed, .ad-slot) { display: none !important; }
+}
+
+/* Landing on #download-pdf (the link in the browser-print note): the page
+   scrolls to its Download PDF button, focuses it and rings it for a few
+   seconds (printPrefs.js jumpToPdfControl). A pulse for people who accept
+   motion, a steady ring for people who do not. */
+.pt-pdf-pulse {
+  outline: 3px solid var(--accent-purple);
+  outline-offset: 3px;
+  animation: pt-pdf-pulse 1.1s ease-out 3;
+}
+@keyframes pt-pdf-pulse {
+  from { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.55); }
+  to { box-shadow: 0 0 0 14px rgba(139, 92, 246, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pt-pdf-pulse { animation: none; }
 }
 
 /* ===========================================================
@@ -7185,6 +7440,68 @@ body.dark-mode .tattoo-badge.is-roomy {
 
 .cursive-print-line { min-height: 1.6rem; }
 
+/* A script face's ink is taller than the body's 1.6 line box: Playwrite FR
+   Trad at this size inks 43px above the baseline and 24px below, in a 41px
+   box. The descenders of g, j and y ran into the next row's capital, and the
+   PDF writer, which cuts between row boxes, sliced the row that spilled over
+   the page edge. line-height: normal is the font's own ascent + descent
+   (73px here, 50px for the other Playwrite faces), which contains the ink.
+   Glyph-mode sheets only: an outline-mode row's model is an SVG. */
+.cursive-print-sheet.pt-practice-glyph .cursive-print-model,
+.cursive-print-sheet.pt-practice-glyph .cursive-print-trace { line-height: normal; }
+/* That box already carries the face's own leading, so the row gap gives back
+   what it adds: a Playwrite US/ES row is 50 + 6 + 6px, the 61px it was. */
+.cursive-print-sheet.pt-practice-glyph { gap: 0.4rem; }
+
+/* The glyph practice sheet on a fitted page: two columns (A-M | N-Z) of equal
+   tracks, filled down then across, and a type size the page hands down
+   (--pt-practice-k, set by fitPracticeSheet() from what the rows measure).
+   Every em below is the row's own font-size, so the columns scale with the
+   type and a wide pair (M m, W w) keeps its room. */
+.pt-sheet-page.is-fitted > .cursive-print-sheet.pt-practice-fit {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(var(--pt-practice-rows, 13), minmax(0, 1fr));
+  grid-auto-flow: column;
+  column-gap: 0.35in;
+  row-gap: 0;
+}
+.pt-practice-fit .cursive-print-row {
+  font-size: calc(1.6rem * var(--pt-practice-k, 1));
+  grid-template-columns: 3.4em 3.4em 1fr;
+  gap: 0.4em;
+}
+.pt-practice-fit .cursive-print-model,
+.pt-practice-fit .cursive-print-trace { font-size: inherit; white-space: nowrap; }
+.pt-practice-fit .cursive-print-line { min-height: 1em; }
+
+/* The cursive pages' own practice sheet (#cursivePrintRoot, built by
+   cursivePageController.js) prints A-M and N-Z side by side so the alphabet
+   fits one sheet. In one column its 26 rows ran to a second page that was
+   half empty. Scoped to that root: printablesEngine.js renders its own
+   cursive sheet with these classes and paginates it on purpose. */
+@media print {
+  #cursivePrintRoot .cursive-print-sheet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(13, auto);
+    grid-auto-flow: column;
+    column-gap: 0.35in;
+    row-gap: 1.05rem;
+  }
+  #cursivePrintRoot .cursive-print-row {
+    grid-template-columns: 92px 92px 1fr;
+    gap: 0.5rem;
+  }
+  /* Playwrite faces carry long descenders and tall loops: at line-height 1.5
+     the FR face's g and j ran into the next row's capitals. nowrap keeps the
+     wide pairs (M m, W w) on their line. */
+  #cursivePrintRoot .cursive-print-model,
+  #cursivePrintRoot .cursive-print-trace { line-height: 2; white-space: nowrap; }
+}
+
 /* Dark mode */
 body.dark-mode .cursive-section-nav {
   background: var(--bg-base);
@@ -7200,6 +7517,12 @@ body.dark-mode .cursive-word-card {
 }
 
 @media (max-width: 640px) {
+  /* The unscoped mobile ".copy-btn { width: 100% }" made Copy fill this row
+     and pushed PNG and SVG past the screen edge once a name was typed.
+     Same remedy as .style-actions: the row takes the width, Copy takes what
+     PNG and SVG leave. */
+  .cursive-card-actions { width: 100%; }
+  .cursive-card-actions .copy-btn { width: auto; flex: 1; }
   .cursive-letter-grid { grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); }
   .cursive-letter-big { font-size: 3.2rem; }
   .cursive-alphabet-row { font-size: 1.15rem; }
@@ -7290,6 +7613,106 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
    =========================================================== */
 
 /* Hub grid of printable cards */
+/* Japanese worksheet generators (/ja/purinto/, js/printables/jaSheets.js).
+   The sheet itself is an SVG in millimetres drawn by jaSheetsCore.js; these
+   rules only lay out the controls and the preview card around it. */
+.ja-sheet-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+@media (min-width: 900px) {
+  .ja-sheet-layout { grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr); align-items: start; }
+  .ja-sheet-output { position: sticky; top: 1rem; }
+}
+.ja-sheet-controls { display: flex; flex-direction: column; gap: 0.85rem; }
+.ja-opt { border: 0; margin: 0; padding: 0; min-width: 0; }
+.ja-opt legend, .ja-opt > span {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+  color: var(--text-primary);
+}
+.ja-opt-radio, .ja-opt-check { display: flex; flex-wrap: wrap; gap: 0.4rem 0.5rem; }
+.ja-opt-radio legend, .ja-opt-check legend { width: 100%; }
+.ja-opt-radio label, .ja-opt-check label, .ja-opt-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  background: var(--bg-white);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.ja-opt-radio label:has(input:checked), .ja-opt-check label:has(input:checked) {
+  border-color: var(--accent-purple);
+  box-shadow: inset 0 0 0 1px var(--accent-purple);
+  font-weight: 600;
+}
+.ja-opt-toggle { border: 0; padding: 0; background: none; }
+.ja-opt input[type="radio"], .ja-opt input[type="checkbox"] { width: 1.15rem; height: 1.15rem; accent-color: var(--accent-purple); }
+.ja-opt-select select, .ja-opt-select input, .ja-opt-text input, .ja-opt-text textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.5rem 0.65rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md, 8px);
+  background: var(--bg-white);
+  color: var(--text-primary);
+  box-sizing: border-box;
+}
+.ja-opt-text textarea { min-height: 7rem; resize: vertical; }
+.ja-opt-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; }
+.ja-opt-note { margin: 0 0 0.3rem; font-size: 0.85rem; color: var(--text-secondary); width: 100%; }
+.ja-opt-more > summary { cursor: pointer; font-weight: 600; min-height: 44px; display: flex; align-items: center; }
+.ja-opt-more[open] > summary { margin-bottom: 0.5rem; }
+.ja-opt-more-body { display: flex; flex-direction: column; gap: 0.85rem; }
+.ja-sheet-preview {
+  width: 100%;
+  max-height: 80vh;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+.ja-sheet-preview svg { display: block; width: 100%; height: 100%; }
+.ja-sheet-pager { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 0.5rem; }
+.ja-sheet-pager[hidden] { display: none; }
+.ja-pager-btn {
+  min-width: 44px;
+  min-height: 44px;
+  font-size: 1.4rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  background: var(--bg-white);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+.ja-sheet-actions { margin-top: 0.75rem; flex-wrap: wrap; }
+.ja-sheet-actions .bubble-btn { min-height: 44px; }
+.ja-sheet-status { min-height: 1.4em; margin: 0.5rem 0 0; font-size: 0.9rem; color: var(--text-secondary); }
+.ja-font-note { margin: 0.5rem 0 0; font-size: 0.9rem; color: #9a3412; }
+.ja-font-note[hidden] { display: none; }
+.ja-table { border-collapse: collapse; margin: 0.75rem 0; font-size: 0.95rem; }
+.ja-table th, .ja-table td { border: 1px solid var(--border-light); padding: 0.4rem 0.75rem; text-align: left; }
+#pt-print-root .ja-print-page svg { display: block; }
+/* The Japanese sheets are already exactly the page area in mm, so the print
+   root's usual 1rem padding would push every sheet onto a second page
+   (measured: 1 sheet printed as 2 before this rule). */
+body.is-printing.ja-printing #pt-print-root { padding: 0 !important; }
+body.is-printing.ja-printing { margin: 0 !important; padding: 0 !important; }
+@media print {
+  #pt-print-root .ja-print-page { break-after: page; page-break-after: always; overflow: hidden; }
+  #pt-print-root .ja-print-page:last-child { break-after: auto; page-break-after: auto; }
+}
 .printable-hub-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -7400,6 +7823,53 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
 }
 .pt-name-preview .pt-word-outline { max-height: 120px; }
 
+/* A small copy of the sheet Download PDF prints, beside the caption saying so
+   (printablesEngine.js renderSheetThumb). The page is laid out at a fixed
+   680x880 (US Letter's ratio) and scaled down as one drawing, so the rows keep
+   the proportions they print with. The paper is white in dark mode for the same
+   reason the preview card is: it is a picture of paper. */
+.pt-sheet-thumb {
+  margin: 0 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+}
+.pt-sheet-thumb-paper {
+  position: relative;
+  flex: none;
+  width: 120px;
+  height: 155px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  box-shadow: var(--shadow-soft);
+}
+.pt-sheet-thumb-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 680px;
+  height: 880px;
+  padding: 56px 52px;
+  box-sizing: border-box;
+  transform: scale(0.1765);
+  transform-origin: 0 0;
+  pointer-events: none;
+}
+.pt-sheet-thumb-page .pt-name-sheet {
+  height: 100%;
+  justify-content: space-between;
+}
+.pt-sheet-thumb figcaption {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
 /* On a phone the preview is width-bound, and a long name is inherently a wide
    short strip: "Christopher" has a 4.6:1 viewBox, so a 300px container renders
    it 65px tall and a 65px strip cannot show whether the sheet is right, on the
@@ -7471,6 +7941,10 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
 
 /* ---- Print surfaces for the shared engine ---- */
 #pt-print-root { display: none; }
+/* RTL pages: sheet SVG coordinates are LTR, so text-anchor must read LTR.
+   The class is set by printablesEngine.js only when the page is RTL. */
+.pt-rtl-doc svg text,
+.pt-rtl-doc svg tspan { direction: ltr; }
 .bubble-print-single { text-align: center; }
 /* Single-character print: fill the printed page. These nodes only ever render
    inside the hidden print surface, so the sizes below are print sizes — the
@@ -8137,7 +8611,7 @@ body.dark-mode .pt-design-preview { background: #1c2030; }
    the paper's width, which is what the row was always measured against. */
 .pt-paper .pt-gen-sheet { gap: 0.35rem; align-self: stretch; }
 .pt-paper .pt-gen-row .pt-trace-svg { max-height: 92px; }
-.pt-preview-actions { display: flex; gap: 0.6rem; margin-top: 0.9rem; }
+.pt-preview-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.9rem; }
 .pt-preview-actions .bubble-btn { padding: 0.72rem 1rem; font-size: 0.95rem; }
 .pt-preview-note { margin: 0.6rem 0 0; font-size: 0.78rem; color: var(--text-muted); }
 
@@ -8482,7 +8956,12 @@ body.dark-mode .pt-banner-index { color: var(--text-secondary); }
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
-.pt-search-footer-row { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+/* align-self: stretch so the row spans the sheet instead of shrink-wrapping
+   inside .pt-search-sheet's centred column. Shrink-wrapped, the export clone
+   froze the row at its content width and a sub-pixel difference in the clone's
+   text layout wrapped the Date field under the credit QR ("Nombre:"/"Fecha:"
+   measured 505.6px in a 505.6px row; FR 502.4, EN 480 sat just under it). */
+.pt-search-footer-row { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; align-self: stretch; }
 .pt-search-footer-field { display: inline-flex; align-items: baseline; gap: 0.5rem; font-size: 0.9rem; font-weight: 600; color: #1a1a2e; }
 .pt-search-footer-line { display: inline-block; width: 180px; height: 1px; border-bottom: 2px solid #9aa3b2; }
 .pt-search-meta { margin: 0.5rem 0 0; font-size: 0.85rem; color: var(--text-muted); }
@@ -9043,6 +9522,197 @@ body.is-printing #pt-print-root .pt-sp-answer-cols { max-width: 6.4in; }
 }
 
 /* ==========================================================================
+   LETTERS TO NUMBERS TOOL  (/letters-to-numbers/)
+   Two live panels (letters -> numbers, numbers -> letters) under one shared
+   numbering switch, followed by a static A-Z position chart. Theme tokens
+   only, so dark mode needs no overrides. One column on mobile.
+   ========================================================================== */
+.l2n-numbering {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin: 8px 0 16px;
+}
+.l2n-range {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+.l2n-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+  min-height: 44px;
+}
+.l2n-check input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: var(--accent-purple);
+}
+.l2n-tool {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.l2n-panel {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+.l2n-panel-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+.l2n-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.l2n-field > label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.l2n-field select,
+.l2n-field textarea {
+  width: 100%;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  padding: 8px 10px;
+}
+.l2n-field textarea { resize: vertical; min-height: 96px; }
+.l2n-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.l2n-note {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin: -8px 0 0;
+  line-height: 1.5;
+}
+.l2n-output-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.l2n-output-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.l2n-output-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+/* Same override as .ascii-output-head .copy-btn: the unscoped mobile
+   ".copy-btn { width: 100% }" rule is for full-width style cards. */
+.l2n-output-head .copy-btn {
+  width: auto;
+}
+.l2n-output {
+  min-height: 44px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  padding: 10px 12px;
+  font-family: 'Space Mono', ui-monospace, 'Courier New', monospace;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.l2n-output-text { letter-spacing: 0.04em; }
+.l2n-offscreen {
+  position: fixed;
+  top: 0;
+  left: -9999px;
+  opacity: 0;
+}
+.l2n-steps {
+  margin: 0 0 12px;
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.l2n-chart-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+.l2n-chart {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  font-size: 0.9375rem;
+  text-align: center;
+}
+.l2n-chart caption {
+  caption-side: top;
+  text-align: left;
+  padding: 0 0 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.l2n-chart th,
+.l2n-chart td {
+  border: 1px solid var(--border-light);
+  padding: 8px 2px;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+}
+.l2n-chart thead th {
+  background: var(--bg-base);
+  font-weight: 700;
+}
+.l2n-chart tbody th {
+  background: var(--bg-base);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.l2n-chart th:first-child {
+  width: 22%;
+  text-align: left;
+  padding-left: 8px;
+}
+
+@media (max-width: 780px) {
+  .l2n-tool { grid-template-columns: 1fr; }
+  .l2n-chart { font-size: 0.8125rem; }
+  .l2n-chart tbody th { font-size: 0.6875rem; padding-left: 6px; }
+}
+
+/* ==========================================================================
    ASCII ART GENERATOR  (/ascii-art-generator/)
    Type a word -> live FIGlet-style block-letter banner, switchable between
    hand-authored font styles. Monospace <pre> output scrolls inside its own
@@ -9158,6 +9828,214 @@ body.is-printing #pt-print-root .pt-sp-answer-cols { max-width: 6.4in; }
   font-size: 0.8125rem;
   color: var(--text-muted);
   margin: 8px 2px 0;
+}
+
+/* ==========================================================================
+   IMAGE TO ASCII  (/image-to-ascii/)
+   Picture -> ASCII text via Canvas (js/ascii/imageToAscii*.js). The preview
+   box is the one deliberate exception to theme tokens: it shows the art as
+   it will read (dark ink on a light page), and Invert switches it to light
+   text on a dark chat background. If the site theme flipped it as well, a
+   dark-mode visitor would see every picture as a negative. The <pre>
+   scrolls inside its own box so a 200-character line never widens the page.
+   ========================================================================== */
+.i2a-tool,
+.i2a-example {
+  --i2a-paper: #ffffff;
+  --i2a-ink: #111111;
+  --i2a-night: #1e1f22;
+  --i2a-night-ink: #f2f3f5;
+}
+.i2a-tool {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+  margin-top: 8px;
+}
+.i2a-drop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 22px 16px;
+  border: 2px dashed var(--border-light);
+  border-radius: var(--radius-lg);
+  background: var(--bg-white);
+  text-align: center;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.i2a-drop.is-dragging {
+  border-color: var(--accent-purple);
+  background: var(--bg-base);
+}
+.i2a-drop-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: var(--accent-purple);
+  color: var(--i2a-paper);
+  font-weight: 600;
+  cursor: pointer;
+}
+.i2a-drop input:focus-visible + .i2a-drop-button {
+  outline: 3px solid var(--text-primary);
+  outline-offset: 2px;
+}
+.i2a-drop-hint,
+.i2a-status {
+  margin: 0;
+  max-width: 560px;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+.i2a-status {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.i2a-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px 20px;
+}
+.i2a-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.i2a-field > label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.i2a-field select {
+  width: 100%;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  padding: 8px 10px;
+}
+.i2a-field input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent-purple);
+}
+.i2a-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.i2a-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.i2a-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+.i2a-reset {
+  padding: 6px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+.i2a-result {
+  min-width: 0;
+}
+.i2a-output-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+  margin-bottom: 6px;
+}
+.i2a-output-title {
+  margin: 0;
+  font-size: 1rem;
+}
+.i2a-stats {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+.i2a-output-wrap {
+  max-height: 70vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: var(--i2a-paper);
+  color: var(--i2a-ink);
+}
+.i2a-output-wrap.is-inverted {
+  background: var(--i2a-night);
+  color: var(--i2a-night-ink);
+}
+.i2a-output-wrap:focus-visible {
+  outline: 3px solid var(--accent-purple);
+  outline-offset: 2px;
+}
+.i2a-output {
+  margin: 0;
+  padding: 12px;
+  min-height: 120px;
+  width: max-content;
+  font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace;
+  font-size: 0.6875rem;
+  line-height: 1.2;
+  white-space: pre;
+  background: transparent;
+  color: inherit;
+}
+.i2a-example .i2a-output {
+  font-size: 0.8125rem;
+  min-height: 0;
+}
+.i2a-discord {
+  margin: 8px 2px 0;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+.i2a-discord.is-over {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.i2a-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+/* Keep these content-sized: the unscoped mobile ".copy-btn { width: 100% }"
+   rule would stack five full-width buttons. */
+.i2a-actions .copy-btn {
+  width: auto;
+  flex: 1 1 auto;
+  justify-content: center;
+}
+.i2a-actions .copy-btn[hidden] {
+  display: none;
+}
+.i2a-fit {
+  border-color: var(--accent-purple);
+  color: var(--text-primary);
+}
+.i2a-paste-note {
+  margin: 10px 2px 0;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
 }
 
 /* ===========================================================
@@ -9328,6 +10206,97 @@ button.kana-cell:active { transform: translateY(0); }
 }
 .kana-print-wrap .kana-glyph { color: #1a1a2e; }
 .kana-print-wrap .kana-romaji { color: #64748b; }
+/* Print at paper size, not screen size. Screen tiles are square and each
+   section refused to split, so the chart printed its title alone on page 1
+   and ran to five pages (measured 2026-10-07, A4, EN and KO alike). Compact
+   tiles and splittable sections keep basic + voiced on one sheet. */
+.kana-print-wrap:not(.kana-practice-wrap) .kana-section { break-inside: auto; margin-bottom: 4mm; }
+.kana-print-wrap .kana-section-head { break-after: avoid; margin-bottom: 2mm; }
+.kana-print-wrap .kana-section-note { font-size: 8pt; }
+.kana-print-wrap .kana-grid { gap: 1.2mm; }
+.kana-print-wrap .kana-cols-5 { max-width: 125mm; }
+.kana-print-wrap .kana-cols-3 { max-width: 78mm; }
+.kana-print-wrap .kana-cell {
+  aspect-ratio: auto;
+  min-height: 0;
+  padding: 0.6mm 0;
+  border-radius: 2mm;
+  gap: 0;
+  break-inside: avoid;
+}
+.kana-print-wrap .kana-cell .kana-glyph { font-size: 14pt; }
+.kana-print-wrap .kana-cell .kana-reading { font-size: 8pt; }
+.kana-print-wrap .kana-cell .kana-romaji { font-size: 7pt; }
+/* Blank sheet: the hidden reading stays as a write-in gap. */
+.kana-print-wrap .kana-romaji.is-hidden { min-height: 6mm; }
+
+/* Locale reading line (window.UTG_KANA.readings, e.g. Hangul on /ko/).
+   Three lines no longer fit a square tile on a phone, so the tile keeps a
+   floor height and grows instead of clipping. */
+.kana-reading {
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+.kana-reading.is-approx::after { content: "*"; color: var(--accent-purple); }
+.kana-reading.is-hidden { display: none; }
+.kana-has-reading .kana-cell { aspect-ratio: auto; min-height: 84px; }
+.kana-has-reading .kana-romaji.is-hidden { display: none; }
+@media (max-width: 640px) {
+  .kana-has-reading .kana-cell { min-height: 72px; padding: 6px 2px; }
+  .kana-has-reading .kana-glyph { font-size: 1.45rem; }
+  .kana-has-reading .kana-reading { font-size: 0.8rem; }
+  .kana-has-reading .kana-romaji { font-size: 0.68rem; }
+}
+.kana-print-wrap .kana-reading { color: #1a1a2e; }
+.kana-legend { font-size: 0.85rem; color: var(--text-muted); margin: -12px 0 28px; }
+/* Phones: the decorative hero card pushed the chart below the first screen
+   on the reading-line charts, so it steps aside there; desktop keeps it. */
+@media (max-width: 640px) {
+  body:has(.kana-chart.kana-has-reading) .page-hero-figure { display: none; }
+  .kana-has-reading ~ .kana-legend { margin-top: -18px; }
+}
+.kana-print-wrap .kana-reading.is-approx::after { color: #1a1a2e; }
+
+/* Writing practice sheet (#kana-practice): model kana, then empty squares
+   with a dashed cross guide. Guides are borders, not backgrounds, so they
+   print with "background graphics" off. */
+.kana-practice-name { font-size: 0.9rem; margin: -0.6rem 0 0.6rem; }
+.kana-practice-note { font-size: 0.8rem; color: #475569; margin: 0 0 0.8rem; }
+.kana-practice-section { margin-bottom: 0.8rem; }
+.kana-practice-section .kana-section-title { margin: 0 0 0.4rem; }
+.kana-practice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 8mm;
+  row-gap: 2.5mm;
+}
+.kana-practice-row {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  break-inside: avoid;
+}
+.kana-practice-model,
+.kana-practice-box {
+  aspect-ratio: 1 / 1;
+  border: 1px solid #94a3b8;
+  margin-left: -1px;
+  position: relative;
+}
+.kana-practice-model {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+.kana-practice-model .kana-glyph { font-size: 8mm; line-height: 1; color: #1a1a2e; }
+.kana-practice-cap { font-size: 2.3mm; color: #475569; margin-top: 0.6mm; white-space: nowrap; }
+.kana-practice-box::before,
+.kana-practice-box::after { content: ""; position: absolute; }
+.kana-practice-box::before { left: 50%; top: 0; bottom: 0; border-left: 1px dashed #cbd5e1; }
+.kana-practice-box::after { top: 50%; left: 0; right: 0; border-top: 1px dashed #cbd5e1; }
 
 /* Dark mode */
 body.dark-mode .kana-btn-primary { color: #fff; }
@@ -9421,6 +10390,32 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 }
 .gr-char-warn { color: var(--ts-risk); border-color: var(--ts-risk); }
 .gr-char-reject { color: var(--ts-fail); border-color: var(--ts-fail); }
+
+/* In-game outcome reporter: "Tried this name in Free Fire?" One row of
+   answers, then the reasons after "refused", then a thank-you line. */
+.gr-outcome {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border-light);
+}
+.gr-outcome[hidden] { display: none; }
+.gr-outcome-ask { font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); margin-right: 0.2rem; }
+.gr-outcome-btn {
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.gr-outcome-btn:hover { border-color: var(--accent-purple); }
+.gr-outcome-btn:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 1px; }
+.gr-outcome-thanks { margin: 0; font-size: 0.85rem; color: var(--text-secondary); }
 
 /* ==========================================================================
    CHARACTER & WORD COUNTER  (/character-counter/)
@@ -9800,6 +10795,45 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 /* ==========================================================================
    Kaomoji Generator (/kaomoji-generator/)  —  js/kaomoji/
    ========================================================================== */
+/* Kaomoji hub: "browse by mood" index of every kaomoji page, grouped. */
+.kao-mood-index {
+  display: grid;
+  gap: 1.1rem;
+}
+.kao-mood-index h3 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 0.5rem;
+}
+.kao-mood-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.kao-mood-links a {
+  display: inline-block;
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+}
+.kao-mood-links a:hover,
+.kao-mood-links a:focus-visible {
+  border-color: var(--accent-purple);
+  color: var(--text-primary);
+}
+
 .kao-studio {
   max-width: 860px;
   margin: 0 auto;
@@ -9881,7 +10915,6 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   margin: 1.6rem 0 0.6rem;
 }
 .kao-moods,
-.kao-presets,
 .kao-part-options {
   display: flex;
   flex-wrap: wrap;
@@ -9904,22 +10937,30 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   color: white;
   border-color: transparent;
 }
-.kao-presets { gap: 0.55rem; }
+/* 16 presets: 4 columns x 4 rows on a phone, 8 x 2 from tablet width up. */
+.kao-presets {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+@media (min-width: 720px) {
+  .kao-presets { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+}
 .kao-preset {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.2rem;
-  min-width: 84px;
+  min-width: 0;
   border: 1px solid var(--border-light);
   background: var(--bg-white);
   border-radius: 12px;
-  padding: 0.6rem 0.7rem;
+  padding: 0.6rem 0.35rem;
   cursor: pointer;
   transition: border-color 0.15s, transform 0.1s;
 }
 .kao-preset:hover { border-color: var(--accent-purple); transform: translateY(-1px); }
-.kao-preset-face { font-size: 1.15rem; color: var(--text-primary); }
+.kao-preset-face { font-size: 1.05rem; color: var(--text-primary); white-space: nowrap; }
 .kao-preset-label { font-size: 0.72rem; color: var(--text-muted); font-weight: 600; }
 
 .kao-part-row {
@@ -9988,8 +11029,11 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
    ========================================================================== */
 .kao-decoder { max-width: 720px; margin: 0 auto; padding: 0 1rem; }
 .kao-dec-input-row { display: flex; gap: 0.6rem; margin-bottom: 0.6rem; }
+/* min-width: 0 lets the field shrink below its default text-input width, which
+   at 390 px pushed the Decode button past the right edge. */
 .kao-dec-input {
   flex: 1 1 auto;
+  min-width: 0;
   padding: 0.7rem 0.9rem;
   font-size: 1.25rem;
   text-align: center;
@@ -11147,7 +12191,7 @@ html.dark .wc-dir-option, html.dark .wc-input { background: transparent; }
 .lib-search-wrap svg { position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; flex-shrink: 0; }
 #libSearch { width: 100%; box-sizing: border-box; padding: 0.65rem 1rem 0.65rem 2.6rem; border: 1px solid var(--border-light); border-radius: var(--radius); background: var(--bg-white); color: var(--text-primary); font-family: inherit; font-size: 0.95rem; outline: none; transition: border-color 0.15s; }
 #libSearch:focus { border-color: var(--accent-purple); }
-.lib-alpha-bar { max-width: 900px; margin: 0 auto 2rem; padding: 0.5rem 1.25rem; display: flex; flex-wrap: wrap; gap: 0.25rem; position: sticky; top: 0; z-index: 20; background: var(--bg-page, var(--bg-base)); backdrop-filter: saturate(180%) blur(6px); -webkit-backdrop-filter: saturate(180%) blur(6px); }
+.lib-alpha-bar { max-width: 900px; margin: 0 auto 2rem; padding: 0.5rem 1.25rem; display: flex; flex-wrap: wrap; gap: 0.25rem; position: sticky; top: var(--utg-header-h, 0px); z-index: 20; background: var(--bg-page, var(--bg-base)); backdrop-filter: saturate(180%) blur(6px); -webkit-backdrop-filter: saturate(180%) blur(6px); }
 .lib-alpha-btn.is-current { background: var(--accent-purple); border-color: var(--accent-purple); color: #fff; }
 .lib-alpha-btn.is-current .alpha-count { color: rgba(255, 255, 255, 0.85); }
 .lib-alpha-btn { display: inline-flex; flex-direction: column; align-items: center; min-width: 2rem; padding: 0.3rem 0.4rem 0.2rem; border: 1px solid var(--border-light); border-radius: 6px; background: var(--bg-white); color: var(--text-secondary); font-family: inherit; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.12s, border-color 0.12s, color 0.12s; text-decoration: none; line-height: 1; }
@@ -11159,7 +12203,7 @@ html.dark .wc-dir-option, html.dark .wc-input { background: transparent; }
 .lib-letter-heading { display: flex; align-items: baseline; gap: 0.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border-light); margin: 0 0 0.75rem; font-size: inherit; font-weight: inherit; }
 .lib-letter-heading .letter { font-size: 1.5rem; font-weight: 700; color: var(--accent-purple); line-height: 1; }
 .lib-letter-heading .lcount { font-size: 0.75rem; color: var(--text-muted); }
-.lib-entry { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto auto; gap: 0.1rem 1rem; padding: 0.7rem 0.5rem; border-radius: 8px; color: inherit; border: 1px solid transparent; }
+.lib-entry { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto auto auto; gap: 0.1rem 1rem; padding: 0.7rem 0.5rem; border-radius: 8px; color: inherit; border: 1px solid transparent; }
 .lib-entry-title { font-weight: 600; font-size: 0.95rem; color: var(--text-primary); grid-column: 1; grid-row: 1; margin: 0; line-height: 1.3; }
 .lib-entry-title-link { color: inherit; text-decoration: none; border-radius: 3px; }
 .lib-entry-title-link:hover,
@@ -11172,7 +12216,10 @@ html.dark .wc-dir-option, html.dark .wc-input { background: transparent; }
 .lib-entry-tag:hover { background: var(--bg-white); border-color: var(--accent-purple); color: var(--accent-purple); }
 .lib-entry-tag:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 2px; }
 .lib-entry-tag.is-type { color: var(--accent-purple); border-color: var(--accent-purple); background: transparent; }
-.lib-entry-preview { grid-column: 1; grid-row: 3; text-align: left; margin-top: 0.2rem; }
+/* The preview sits in the text column and keeps white-space: nowrap, so it
+   must clip rather than size the column: a long kaomoji line widened the whole
+   hub to 425-708px on a 390px phone. */
+.lib-entry-preview { grid-column: 1; grid-row: 3; text-align: left; margin-top: 0.2rem; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
 .lib-entry-meta { grid-row: 4; }
 .lib-empty { display: none; text-align: center; padding: 3rem 1rem; color: var(--text-secondary); }
 .lib-empty.visible { display: block; }
@@ -12577,7 +13624,9 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
   .study-layout { padding: 0 16px; }
   .research-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .research-meta div:nth-child(3) { grid-column: 1 / -1; }
-  .research-page [id] { scroll-margin-top: 210px; }
+  /* The header no longer sticks on phones; this clears the 48px bar that
+     shows while scrolling up (.header-mini). */
+  .research-page [id] { scroll-margin-top: 64px; }
 }
 
 /* The floating Contents button (narrow screens, added by the script). */
@@ -13195,4 +14244,336 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
   body:has(.research-page) thead,
   body:has(.research-page) .table-group { break-after: avoid; }
   body:has(.research-page) a { color: inherit; }
+}
+
+/* Player report board (js/gamename/name-reports.js): names players tried in
+   a game and what the game did with them. The mount is an empty div until
+   the board API answers, so nothing here shows on a page where it is off. */
+.nr-board { display: flex; flex-direction: column; gap: 0.75rem; }
+.nr-intro { color: var(--text-secondary); }
+.nr-status:empty, .nr-status[hidden] { display: none; }
+.nr-tally { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
+.nr-tally:empty { display: none; }
+.nr-tally-label { font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); margin-right: 0.2rem; }
+.nr-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: var(--bg-base);
+  font-size: 0.8rem;
+}
+.nr-chip-char { font-size: 1.05rem; }
+.nr-chip-count { color: var(--text-secondary); }
+.nr-chip-bad { border-color: var(--ts-fail); }
+.nr-chip-good { border-color: var(--ts-safe); }
+.nr-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.nr-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+}
+.nr-item-muted { opacity: 0.55; }
+.nr-item-hidden { display: none; }
+.nr-head { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; min-width: 0; }
+.nr-name { font-size: 1.1rem; overflow-wrap: anywhere; min-width: 0; }
+.nr-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--text-secondary); }
+.nr-badge { font-weight: 700; padding: 0.05rem 0.55rem; border-radius: 999px; border: 1px solid transparent; }
+.nr-badge-accepted { color: var(--ts-safe); border-color: var(--ts-safe); }
+.nr-badge-refused { color: var(--ts-fail); border-color: var(--ts-fail); }
+.nr-badge-boxes { color: var(--ts-risk); border-color: var(--ts-risk); }
+.nr-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
+.nr-btn {
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.nr-btn:disabled { opacity: 0.6; cursor: default; }
+.nr-btn:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 1px; }
+.nr-copy { flex: none; }
+.nr-state { font-size: 0.75rem; color: var(--text-muted); }
+.gr-outcome-note { flex-basis: 100%; font-size: 0.78rem; color: var(--text-secondary); }
+.gr-outcome-error { margin: 0; font-size: 0.85rem; color: var(--ts-fail); }
+.nr-chip-code { font-family: var(--font-mono, monospace); font-size: 0.75rem; }
+
+/* Blank generator on /library/invisible-character/ (js/invisible/blankGenerator.js).
+   Chips and labels reuse .format-control / .format-chip; only the count box,
+   the per-line toggle and the live note need their own rules. */
+.blank-gen { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; margin-top: 12px; }
+.blank-gen-count {
+  width: 6.5rem;
+  padding: 8px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+.blank-gen-count:focus { outline: 2px solid var(--accent-purple); outline-offset: 1px; }
+.blank-gen-lines { display: inline-flex; align-items: center; gap: 6px; font-size: 0.875rem; color: var(--text-secondary); cursor: pointer; }
+.blank-gen-copy { border: none; cursor: pointer; }
+.blank-gen-note { margin: 6px 0 0; font-size: 0.85rem; color: var(--text-muted); }
+
+/* Hidden-character list on /character-counter/ (counterController.js
+   renderHidden). Buttons reuse .cc-fix-actions / .cc-fix-btn. */
+.counter-hidden {
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-base);
+}
+.counter-hidden-head { margin: 0 0 0.4rem; font-size: 0.85rem; font-weight: 600; color: var(--text-primary); }
+.counter-hidden-list { margin: 0 0 0.6rem; padding-left: 1.25rem; font-size: 0.82rem; color: var(--text-secondary); }
+.counter-hidden-item { display: flex; flex-wrap: wrap; gap: 0.15rem 0.5rem; align-items: baseline; padding: 0.15rem 0; }
+.counter-hidden-code { font-family: var(--font-mono, monospace); font-size: 0.78rem; color: var(--text-primary); }
+.counter-hidden-name { color: var(--text-primary); }
+.counter-hidden-kind { font-size: 0.75rem; color: var(--text-muted); }
+.counter-hidden-kind.is-direction { color: var(--ts-fail); }
+.counter-hidden-at { font-size: 0.75rem; color: var(--text-muted); }
+.counter-hidden-more { margin: 0 0 0.6rem; font-size: 0.78rem; color: var(--text-muted); }
+
+/* Name label sheet maker (/printables/name-labels/ and locale siblings).
+   The sheet itself is a canvas drawn by js/printables/labelEngine.js at the
+   paper's real size, so nothing here touches the printed output; these rules
+   only lay out the controls and size the preview. */
+.lb-tool .pt-studio-controls .pt-field { margin-bottom: 1.1rem; }
+.lb-what .pt-choice { flex: 1 1 30%; min-height: 44px; }
+.lb-hint { margin: 0.45rem 0 0; font-size: 0.8rem; line-height: 1.4; color: var(--text-secondary); }
+.lb-hint:empty { display: none; }
+.lb-lines { display: grid; gap: 0.35rem; }
+.lb-line-label { font-size: 0.82rem; font-weight: 600; color: var(--text-secondary); }
+.lb-input { width: 100%; min-height: 44px; }
+.lb-list-field textarea { width: 100%; }
+.lb-list-opts { margin-top: 0.6rem; }
+.lb-size-row { margin-top: 0.6rem; }
+.lb-size-row[hidden], .lb-nudge[hidden] { display: none; }
+.lb-num { width: 4.5rem; }
+.lb-symbols .pt-choice { flex: 0 0 auto; min-width: 44px; min-height: 44px; font-size: 1.1rem; }
+.lb-font-rounded { font-family: 'Fredoka', sans-serif; font-weight: 600; }
+.lb-font-clear { font-family: 'Quicksand', sans-serif; font-weight: 700; }
+.lb-font-bold { font-family: 'Baloo 2', sans-serif; font-weight: 700; }
+.lb-font-hand { font-family: 'Comic Neue', sans-serif; font-weight: 700; }
+.lb-more { margin-top: 0.4rem; }
+.lb-more[open] { padding-bottom: 0.6rem; }
+.lb-reset { margin-top: 0.4rem; }
+.lb-paper { padding: 0.6rem; display: flex; justify-content: center; }
+.lb-preview-canvas { display: block; width: 100%; height: auto; max-height: 64vh; object-fit: contain; box-shadow: 0 0 0 1px var(--border-light); }
+.lb-summary { margin: 0.6rem 0 0; font-size: 0.86rem; font-weight: 700; color: var(--text-primary); }
+.lb-warn { margin: 0.3rem 0 0; font-size: 0.8rem; color: var(--ts-risk); }
+.lb-warn:empty { display: none; }
+@media (max-width: 900px) {
+  .lb-preview-canvas { max-height: 48vh; }
+}
+.lb-tool .main-input.is-from-list { opacity: 0.6; cursor: not-allowed; }
+.lb-tool .lb-input { height: 46px; min-height: 0; }
+.lb-line3-row { display: grid; gap: 0.35rem; }
+.lb-line3-row[hidden] { display: none; }
+.lb-count { flex-wrap: wrap; }
+.lb-count .pt-field-label { margin-bottom: 0; margin-right: 0.4rem; }
+/* On a phone the name comes before the sheet: the job starts by typing, and a
+   preview with a Download button above the name field invites downloading
+   the sample. */
+@media (max-width: 900px) {
+  .lb-tool .pt-studio-controls { order: 1; }
+  .lb-tool .pt-studio-preview { order: 2; position: static; }
+}
+.lb-list-field + .pt-field { margin-top: 1rem; }
+.lb-name-style { margin-top: 0.55rem; }
+.lb-dates[hidden] { display: none; }
+.lb-date-fill { margin-top: 0.6rem; }
+
+/* ==========================================================================
+   AI WRITING FOOTPRINT CHECKER  (/ai-writing-footprint-checker/)
+   One input panel, then a report: category table, the text with flagged
+   phrases as buttons, a detail panel, optional suggestions, before and
+   after. Theme tokens only. Flags are told apart by underline style as
+   well as tint, so no meaning rests on colour alone. One column on mobile.
+   ========================================================================== */
+.wf-tool,
+.wf-report-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+.wf-panel {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+.wf-panel-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+.wf-field { display: flex; flex-direction: column; gap: 6px; }
+.wf-field > label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.wf-field textarea,
+.wf-field select,
+.wf-sug-select {
+  width: 100%;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 10px 12px;
+}
+.wf-field textarea { resize: vertical; min-height: 220px; line-height: 1.55; }
+.wf-sug-select { width: auto; max-width: 100%; padding: 4px 8px; font-size: 0.9375rem; }
+.wf-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+}
+.wf-counts { margin: 0; font-size: 0.8125rem; color: var(--text-muted); }
+.wf-limit { margin: 0; font-size: 0.8125rem; color: var(--text-primary); font-weight: 600; }
+.wf-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.wf-btn {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+.wf-btn:hover:not(:disabled) { border-color: var(--accent-purple); }
+.wf-btn:focus-visible,
+.wf-mark:focus-visible { outline: 3px solid var(--accent-blue); outline-offset: 2px; }
+.wf-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.wf-btn-primary { background: var(--accent-purple); border-color: var(--accent-purple); color: #fff; }
+.wf-btn-small { min-height: 44px; padding: 0 14px; font-size: 0.875rem; }
+.wf-select-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; }
+.wf-select-row .wf-field { flex: 1 1 220px; }
+.wf-privacy { margin: 0; font-size: 0.8125rem; color: var(--text-muted); line-height: 1.5; }
+.wf-summary { margin: 0; font-size: 1.0625rem; font-weight: 600; color: var(--text-primary); line-height: 1.5; }
+.wf-caveat { margin: 0; font-size: 0.875rem; color: var(--text-secondary); line-height: 1.55; }
+.wf-table-wrap { overflow-x: auto; }
+.wf-table { width: 100%; border-collapse: collapse; font-size: 0.9375rem; }
+.wf-table th,
+.wf-table td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--border-light); }
+.wf-table thead th { font-size: 0.8125rem; color: var(--text-secondary); }
+.wf-table tbody th { font-weight: 600; color: var(--text-primary); white-space: nowrap; }
+.wf-level {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border-light);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+.wf-level-noticeable { border-color: var(--accent-purple); color: var(--text-primary); }
+.wf-level-high { border: 2px solid var(--accent-purple); color: var(--text-primary); }
+.wf-level-na { border-style: dashed; }
+.wf-marked-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.wf-marked-count { font-size: 0.8125rem; color: var(--text-muted); }
+.wf-marked {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  padding: 14px;
+  line-height: 1.7;
+  max-height: 480px;
+  overflow: auto;
+}
+.wf-mark {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-bottom: 2px dotted var(--accent-purple);
+  background: color-mix(in srgb, var(--accent-purple) 10%, transparent);
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  cursor: pointer;
+}
+.wf-mark-medium { border-bottom-style: dashed; background: color-mix(in srgb, var(--accent-purple) 16%, transparent); }
+.wf-mark-high { border-bottom-style: solid; background: color-mix(in srgb, var(--accent-purple) 22%, transparent); }
+.wf-selected { outline: 2px solid var(--accent-blue); outline-offset: 1px; }
+.wf-applied { text-decoration: line-through; opacity: 0.7; }
+.wf-detail {
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--bg-white);
+}
+.wf-detail-title { margin: 0; font-size: 1rem; color: var(--text-primary); }
+.wf-detail-empty,
+.wf-detail-note,
+.wf-detail-cat { margin: 0; font-size: 0.875rem; color: var(--text-muted); line-height: 1.5; }
+.wf-detail-list { margin: 0; display: grid; gap: 4px; }
+.wf-detail-list dt { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-secondary); margin-top: 8px; }
+.wf-detail-list dd { margin: 0; font-size: 0.9375rem; color: var(--text-primary); line-height: 1.55; }
+.wf-detail-actions,
+.wf-feedback { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.wf-feedback-q { font-size: 0.875rem; color: var(--text-secondary); }
+.wf-options { border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+.wf-options legend { font-size: 0.8125rem; font-weight: 600; color: var(--text-secondary); padding: 0; margin-bottom: 4px; }
+.wf-option { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 0.9375rem; color: var(--text-primary); cursor: pointer; }
+.wf-option input,
+.wf-sug input { width: 20px; height: 20px; accent-color: var(--accent-purple); flex-shrink: 0; }
+.wf-controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.wf-hint { margin: 0; font-size: 0.8125rem; color: var(--text-muted); }
+.wf-suggestions { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.wf-sug { display: flex; align-items: flex-start; gap: 10px; padding: 10px; border: 1px solid var(--border-light); border-radius: 10px; min-height: 44px; }
+.wf-sug-body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.wf-sug-body label { font-size: 0.9375rem; color: var(--text-primary); overflow-wrap: anywhere; }
+.wf-sug-tag { font-size: 0.75rem; color: var(--text-muted); }
+.wf-improved { white-space: pre-wrap; overflow-wrap: anywhere; border: 1px solid var(--border-light); border-radius: 10px; background: var(--bg-base); color: var(--text-primary); padding: 14px; line-height: 1.7; max-height: 360px; overflow: auto; }
+.wf-rule { border: 1px solid var(--border-light); border-radius: 10px; padding: 0 14px; background: var(--bg-white); }
+.wf-rule summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; font-weight: 600; color: var(--text-primary); }
+.wf-rule[open] { padding-bottom: 12px; }
+.wf-rules { display: flex; flex-direction: column; gap: 8px; }
+.wf-limits { margin: 0; padding-left: 20px; display: grid; gap: 6px; font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5; }
+.wf-status { margin: 0; min-height: 1.4em; font-size: 0.875rem; color: var(--text-secondary); }
+.wf-report[hidden],
+.wf-report-inner[hidden],
+.wf-panel[hidden] { display: none; }
+@media (max-width: 640px) {
+  .wf-panel { padding: 14px; }
+  .wf-actions .wf-btn,
+  .wf-controls .wf-btn { flex: 1 1 140px; }
+  .wf-table thead { display: none; }
+  .wf-table tr { display: block; padding: 8px 0; border-bottom: 1px solid var(--border-light); }
+  .wf-table th,
+  .wf-table td { display: block; border: 0; padding: 2px 12px; }
 }

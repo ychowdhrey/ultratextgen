@@ -130,6 +130,26 @@
       ]
     },
     {
+      "id": "highs-and-lows",
+      "label": "Kitô giáo",
+      "h2": "Ký hiệu \"Chúa lớn hơn mọi thăng trầm\"",
+      "intro": "Một câu khẳng định đức tin hiện đại bắt nguồn từ tiếng Anh, hay dùng cho hình xăm, áo thun và bio: G là God (Chúa), > nghĩa là \"lớn hơn\", tiếp theo là đỉnh núi (^ hoặc ∧) cho lúc thăng và thung lũng (v hoặc ∨) cho lúc trầm. Ba dạng đều cùng một nghĩa; G>^v chỉ gồm ký tự bàn phím nên hiển thị trên mọi thiết bị.",
+      "symbols": [
+        {
+          "char": "G>^v",
+          "label": "Dạng bàn phím"
+        },
+        {
+          "char": "G>ΛV",
+          "label": "Dạng chữ lambda Hy Lạp"
+        },
+        {
+          "char": "G>∧∨",
+          "label": "Dạng ký hiệu logic"
+        }
+      ]
+    },
+    {
       "id": "islamic",
       "label": "Hồi giáo",
       "h2": "Ký Hiệu Hồi Giáo",

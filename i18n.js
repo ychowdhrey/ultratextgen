@@ -121,6 +121,23 @@
           });
         });
 
+        /* Keep a question the page shows but the locale file does not have.
+           Some homepages carry hand-added FAQ items with no data-i18n key
+           (fr: 4, pl: 3), so rebuilding from the locale file alone dropped
+           questions the visitor can read from the markup: 25 -> 21 on /fr/.
+           Only questions whose text is on the page are kept, so this can
+           never add invisible-content markup. */
+        var have = {};
+        entities.forEach(function (q) { have[q.name] = true; });
+        var pageText = document.body ? document.body.textContent.replace(/\s+/g, " ") : "";
+        (Array.isArray(data.mainEntity) ? data.mainEntity : []).forEach(function (q) {
+          var name = q && q.name ? String(q.name) : "";
+          if (!name || have[name]) return;
+          if (pageText.indexOf(name.replace(/\s+/g, " ").trim()) === -1) return;
+          entities.push(q);
+          have[name] = true;
+        });
+
         data.mainEntity = entities;
         script.textContent = JSON.stringify(data, null, 2);
       } catch (e) {
@@ -140,7 +157,7 @@
     // Locales recognized from the URL path so <html lang> and text direction get
     // set correctly. Includes the prerendered "shadow" locales (ko, hi, zh-tw) —
     // see withRuntimeJson below for what they fetch and why.
-    var supported = ["en", "es", "fr", "pt", "de", "id", "it", "nl", "tr", "pl", "vi", "tl", "da", "sv", "no", "ja", "th", "ru", "ar", "cs", "sk", "hr", "bs", "sr", "ro", "hu", "ko", "hi", "zh-tw", "fi", "ms"];
+    var supported = ["en", "es", "fr", "pt", "de", "id", "it", "nl", "tr", "pl", "vi", "tl", "da", "sv", "no", "ja", "th", "ru", "ar", "cs", "sk", "hr", "bs", "sr", "ro", "hu", "ko", "hi", "zh-tw", "fi", "ms", "uk"];
 
     // 1. Detect from URL path prefix (e.g. /fr/, /de/, /zh-tw/)
     var pathMatch = window.location.pathname.match(/^\/([a-z]{2}(?:-[a-z]{2})?)\//);
@@ -181,7 +198,7 @@
     // file's own _readme) purely to fill that object; because those pages
     // declare no data-i18n hooks, applyTranslations() cannot touch their
     // prerendered copy.
-    const withRuntimeJson = ["es", "fr", "pt", "de", "id", "it", "nl", "tr", "pl", "vi", "tl", "da", "sv", "no", "ja", "th", "ru", "ar", "cs", "sk", "hr", "bs", "sr", "ro", "ko", "hi", "zh-tw", "hu", "fi", "ms"];
+    const withRuntimeJson = ["es", "fr", "pt", "de", "id", "it", "nl", "tr", "pl", "vi", "tl", "da", "sv", "no", "ja", "th", "ru", "ar", "cs", "sk", "hr", "bs", "sr", "ro", "ko", "hi", "zh-tw", "hu", "fi", "ms", "uk"];
     if (withRuntimeJson.indexOf(lang) === -1) return;
 
     fetch("/locales/" + lang + ".json")

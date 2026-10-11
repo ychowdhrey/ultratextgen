@@ -8,17 +8,26 @@
   "crumb_home": "Inicio",
   "library_url": "https://ultratextgen.com/es/library/",
   "date_published": "2026-08-12",
-  "date_modified": "2026-08-12",
+  "date_modified": "2026-10-09",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/happy-emoji/" },
-    { "lang": "es", "href": "https://ultratextgen.com/es/library/caritas-felices/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/happy-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/happy-emoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/caritas-felices/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/happy-emoji/"
+    }
   ],
   "title": "Caritas Felices y Emoji Feliz: Copiar y Pegar 😊 Combos de Alegría",
-  "meta_description": "Caritas felices 😊 😄 🥰, kaomoji alegres como ヽ(´▽`)/ y combos de alegría para biografías, publicaciones y mensajes. Haz clic para copiar al instante.",
-  "breadcrumb": "Caritas Felices y Kaomoji",
-  "hero_h1": "Caritas Felices y Kaomoji de Alegría",
-  "hero_tagline": "Sonrisas, sol y kaomoji alegres — todas las caritas felices, desde un 🙂 suave hasta un 🤩 deslumbrado. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "meta_description": "Caritas felices 😊 😄 🥰, emoticonos clásicos como :), algunos kaomoji alegres como ヽ(´▽`)/ y combos de alegría para biografías, publicaciones y mensajes. Haz clic para copiar al instante.",
+  "breadcrumb": "Caritas Felices",
+  "hero_h1": "Caritas Felices",
+  "hero_tagline": "Sonrisas, sol, el :) de siempre y algunos kaomoji alegres: todas las caritas felices, desde un 🙂 suave hasta un 🤩 deslumbrado. Haz clic en cualquier símbolo para copiarlo al instante.",
   "intro": "Una carita feliz bien puesta define el tono de todo un mensaje: 😊 se lee cálido y sincero, 😄 es alegría abierta y 🥰 agrega cariño. Esta biblioteca reúne todas las caritas felices que existen —desde una sonrisa suave hasta la cara deslumbrada—, junto con los emoji de emoción y celebración que combinan con ellas, los símbolos de sol, flores y mariposas que le dan ese aire luminoso a una biografía, y kaomoji alegres como ヽ(´▽`)/ para cuando quieres algo que se pegue en cualquier lado, incluso donde los emoji a color no se ven bien. Si buscas un emoji feliz para una publicación, un comentario o una buena noticia, elige un solo símbolo o copia un combo completo con un clic y pégalo donde quieras.",
   "sections": [
     {
@@ -70,21 +79,32 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticonos",
+      "h2": "Emoticonos Felices de Texto",
+      "intro": "Sonrisas escritas con dos puntos y un paréntesis. Son más antiguas que los emoji y siguen siendo la forma más rápida de sonar amable en texto plano.",
+      "symbols": [
+        { "char": ":)", "label": "Emoticono de sonrisa" },
+        { "char": ":-)", "label": "Sonrisa clásica con nariz" },
+        { "char": ":D", "label": "Emoticono de sonrisa amplia" },
+        { "char": ":-D", "label": "Sonrisa amplia con nariz" },
+        { "char": "=)", "label": "Sonrisa suave" },
+        { "char": "XD", "label": "Carcajada con ojos cerrados" },
+        { "char": "c:", "label": "Sonrisa de oreja a oreja" }
+      ]
+    },
+    {
       "id": "happy-kaomoji",
       "label": "Kaomoji",
       "h2": "Kaomoji Felices y Caras de Texto",
-      "intro": "Caras de texto al estilo japonés que levantan los brazos de pura alegría.",
+      "intro": "Una pequeña muestra de caritas japonesas llenas de alegría.",
       "symbols": [
         { "char": "ヽ(´▽`)/", "label": "Kaomoji con los brazos en alto" },
         { "char": "＼(^o^)／", "label": "Kaomoji festejando" },
-        { "char": "(＾▽＾)", "label": "Kaomoji de sonrisa radiante" },
         { "char": "(◕‿◕)", "label": "Kaomoji de sonrisa dulce" },
-        { "char": "(✿◠‿◠)", "label": "Kaomoji con florecita" },
-        { "char": "٩(◕‿◕｡)۶", "label": "Kaomoji bailando de emoción" },
-        { "char": "(o^▽^o)", "label": "Kaomoji de mejillas sonrojadas" },
-        { "char": "(｡♥‿♥｡)", "label": "Kaomoji enamorado" },
-        { "char": "⊂((・▽・))⊃", "label": "Kaomoji de abrazo grande" }
-      ]
+        { "char": "٩(◕‿◕｡)۶", "label": "Kaomoji bailando de emoción" }
+      ],
+      "more_link": { "href": "/es/library/happy-kaomoji/", "text": "Ver todos los kaomoji felices" }
     }
   ],
   "collections": [
@@ -134,7 +154,7 @@
   "related": [
     {
       "href": "/es/library/emoji-riendo/",
-      "title": "Emoji Riendo y Kaomoji",
+      "title": "Emoji Riendo",
       "desc": "Caras de risa y combos de memes para cuando lo feliz pasa a ser hilarante."
     },
     {
