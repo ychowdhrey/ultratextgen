@@ -363,6 +363,100 @@ async function runInteractionRoundTrips({ open, check, dl }) {
     check('no page errors', !errors.length, errors.join(' | '));
     await ctx.close();
   }
+
+  // 10. The preview dialog holds focus, makes the page behind inert, and gives
+  //     focus back: open -> close -> open, and Tab never leaves it.
+  console.log('\n/ (preview dialog keeps focus)');
+  {
+    const { ctx, page, errors } = await open('/', 'desktop');
+    await page.fill('#mainInput', 'Hello');
+    await page.waitForTimeout(500);
+    const opener = page.locator('.preview-btn').first();
+    for (let round = 1; round <= 2; round++) {
+      const inertBefore = await page.evaluate(() => Array.prototype.filter.call(document.body.children, (n) => n.hasAttribute('inert')).length);
+      await opener.focus();
+      await page.keyboard.press('Enter');
+      await page.waitForTimeout(250);
+      const out = [];
+      for (let i = 0; i < 16; i++) {
+        await page.keyboard.press(i % 5 === 4 ? 'Shift+Tab' : 'Tab');
+        out.push(await page.evaluate(() => { const m = document.getElementById('previewModal'); return !!(m && m.contains(document.activeElement)); }));
+      }
+      check(`round ${round}: Tab and Shift+Tab stay inside the open dialog (16 presses)`, out.every(Boolean), JSON.stringify(out));
+      const inert = await page.evaluate(() => Array.prototype.filter.call(document.body.children, (n) => n.id !== 'previewModal' && n.nodeType === 1 && !/^(SCRIPT|STYLE|LINK|NOSCRIPT)$/.test(n.tagName)).every((n) => n.hasAttribute('inert')));
+      check(`round ${round}: everything behind the dialog is inert`, inert);
+      await page.keyboard.press('Escape');
+      await page.waitForTimeout(200);
+      // Compared with before it opened: the mini header is legitimately inert.
+      const back = await page.evaluate(() => ({ inert: Array.prototype.filter.call(document.body.children, (n) => n.hasAttribute('inert')).length, onOpener: document.activeElement && document.activeElement.classList.contains('preview-btn') }));
+      check(`round ${round}: Escape restores exactly the inert state it found and returns focus to Preview`, back.inert === inertBefore && back.onOpener, JSON.stringify({ inertBefore, back }));
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 11. Enter on a name card's own Copy button copies, and does not load the name.
+  console.log('\n/category/cursive-fonts/ (a nested Copy button keeps its key)');
+  {
+    const { ctx, page, errors } = await open('/category/cursive-fonts/', 'desktop');
+    const btn = page.locator('.cursive-name-example .copy-btn').first();
+    await btn.scrollIntoViewIfNeeded();
+    const r = await countCopies(page, async () => { await btn.focus(); await page.keyboard.press('Enter'); });
+    const typed = await page.evaluate(() => { const i = document.querySelector('#cursiveNameInput, #nameInput, [id*="ameInput"]'); return i ? i.value : null; });
+    check('Enter on the card Copy button copies once', r.writes === 1, JSON.stringify(r));
+    check('and does not load the name into the studio field', typed === '' || typed === null, JSON.stringify(typed));
+    check('Enter on the card itself still loads the name', await (async () => {
+      const card = page.locator('.cursive-name-example').first();
+      await card.focus(); await page.keyboard.press('Enter'); await page.waitForTimeout(300);
+      return page.evaluate(() => { const i = document.querySelector('#cursiveNameInput, #nameInput, [id*="ameInput"]'); return !!(i && i.value); });
+    })());
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 12. Active state is exposed to assistive technology, and follows the toggle.
+  console.log('\n/ (aria state follows the active class, A->B->A)');
+  {
+    const { ctx, page, errors } = await open('/', 'desktop');
+    await page.fill('#mainInput', 'Hello');
+    await page.waitForTimeout(500);
+    const pressedOf = (sel) => page.evaluate((q) => Array.prototype.map.call(document.querySelectorAll(q), (b) => b.getAttribute('aria-pressed')), sel);
+    const one = (arr) => arr.length > 1 && arr.every((v) => v === 'true' || v === 'false') && arr.filter((v) => v === 'true').length === 1;
+    const groups = ['.category-tab', '.decoration-tab'];
+    for (const g of groups) {
+      const tabs = page.locator(g);
+      const n = await tabs.count();
+      check(`${g}: every one carries aria-pressed, exactly one true`, one(await pressedOf(g)), JSON.stringify(await pressedOf(g)));
+      if (n > 2) {
+        const active0 = (await pressedOf(g)).indexOf('true');
+        const other = active0 === 1 ? 2 : 1;
+        await roundTrip({
+          name: `${g} A->B->A`, start: active0, states: [other, active0], cycles: 3, check,
+          step: async () => { const cur = (await pressedOf(g)).indexOf('true'); await tabs.nth(cur === other ? active0 : other).click(); await page.waitForTimeout(120); },
+          read: async () => (await pressedOf(g)).indexOf('true')
+        });
+      }
+    }
+    const scope = await pressedOf('.scope-chip');
+    check('scope chips carry aria-pressed, exactly one true', one(scope), JSON.stringify(scope));
+    const dm = page.locator('#darkModeBtn');
+    await roundTrip({
+      name: 'dark mode button aria-pressed off->on->off', start: 'false', states: ['true', 'false'], cycles: 3, check,
+      step: () => dm.click(), read: () => dm.getAttribute('aria-pressed')
+    });
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+  {
+    const { ctx, page, errors } = await open('/de/nickname-generator/', 'desktop');
+    const q = page.locator('.faq-question').first();
+    await roundTrip({
+      name: 'FAQ aria-expanded false->true->false', start: 'false', states: ['true', 'false'], cycles: 3, check,
+      step: async () => { await q.click(); await page.waitForTimeout(80); }, read: () => q.getAttribute('aria-expanded')
+    });
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
 }
 
 module.exports = { roundTrip, runInteractionRoundTrips, readSelection, selectionAgrees };

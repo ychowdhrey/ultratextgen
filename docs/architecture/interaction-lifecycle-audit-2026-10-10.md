@@ -216,3 +216,24 @@ Not fixed, listed so they are not rediscovered: the bio-font "all categories" gr
 rebuilds on every keystroke and may also hold an ad (unmeasured); `emoji-tool`
 breakdown and chips, the counter fix bar and the game-name checker also rebuild
 containers with `innerHTML` but are small and have no measured ad placement.
+
+### Keyboard and assistive-technology fixes (same day)
+
+* **The preview dialog holds focus.** While it is open everything else in `<body>` is
+  `inert` (only what it set is undone on close, so the already-inert mini header stays
+  as it was), Tab and Shift+Tab wrap inside it, and focus returns to the Preview
+  button. Before: Tab #7 reached the page body, then the logo, search box and header
+  buttons behind the dimmed overlay.
+* **A name card's own Copy button keeps its key.** The card's keydown handler skipped
+  nothing, so Enter on the nested Copy loaded the name instead of copying (the click
+  handler already skipped `.copy-btn`).
+* **Active state reaches assistive technology.** `header.js` mirrors `.active`,
+  `.is-active`, `.selected` and `.is-selected` into `aria-pressed` (`aria-selected` for
+  `role=tab`, `aria-checked` for `role=radio`) after each interaction, plus
+  `aria-expanded` on FAQ questions and the More/Less button, and `aria-pressed` on the
+  dark-mode button. A group is the sibling buttons sharing a class once state and
+  layout classes are removed, and only a group with something active is touched, so a
+  row of Copy buttons is never marked. A control that carries its own attribute is left
+  to its owner. This is a mirror of the class, which stays the source of truth; moving
+  each widget to set the attribute itself is the cleaner end state and was not done
+  across ~50 sites.

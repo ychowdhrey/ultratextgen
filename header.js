@@ -642,8 +642,10 @@
     // Dark mode toggle
     var dmBtn = document.getElementById("darkModeBtn");
     if (dmBtn) {
+      dmBtn.setAttribute("aria-pressed", document.body.classList.contains("dark-mode") ? "true" : "false");
       dmBtn.addEventListener("click", function () {
         var isDark = document.body.classList.toggle("dark-mode");
+        dmBtn.setAttribute("aria-pressed", isDark ? "true" : "false");
         localStorage.setItem("darkMode", isDark ? "true" : "false");
       });
     }
@@ -1328,6 +1330,85 @@
     });
   }
   ns.rebuildGridKeepingAds = rebuildGridKeepingAds;
+
+  /* ---- Active state for assistive technology ------------------------------
+     Dozens of chips, tabs and pickers show which one is on with a CSS class
+     only (.active, .is-active, .selected, .is-selected), so a screen reader
+     hears "button" for every one and cannot tell which is chosen. This mirrors
+     that class into the right attribute after each interaction, in one place:
+       role="tab"    -> aria-selected
+       role="radio"  -> aria-checked
+       any other button -> aria-pressed
+       .faq-question -> aria-expanded, from the .open on its .faq-item
+     A group is the buttons that share a parent and the same class once the
+     state classes are removed, and only a group in which something is
+     currently active is touched, so a row of Copy buttons is never marked.
+     A control that already carries its own attribute (the Save star, the
+     format and safe-mode chips, the dark-mode button) is left to its owner;
+     what this sets carries data-utg-aria so it can always be re-synced. */
+  var ACTIVE_TOKENS = ["active", "is-active", "selected", "is-selected"];
+  // Layout-only classes that must not split a group (a tab folded under
+  // "More" is still one of the same tabs).
+  var LAYOUT_TOKENS = ["hidden-category"];
+  function stateFree(el) {
+    return Array.prototype.filter.call(el.classList, function (c) {
+      return ACTIVE_TOKENS.indexOf(c) === -1 && LAYOUT_TOKENS.indexOf(c) === -1;
+    }).join(" ");
+  }
+  function isActiveEl(el) {
+    for (var i = 0; i < ACTIVE_TOKENS.length; i++) if (el.classList.contains(ACTIVE_TOKENS[i])) return true;
+    return false;
+  }
+  function ariaAttrFor(el) {
+    var role = el.getAttribute("role");
+    return role === "tab" ? "aria-selected" : role === "radio" ? "aria-checked" : "aria-pressed";
+  }
+  function syncGroup(parent) {
+    var buttons = Array.prototype.filter.call(parent.children, function (c) {
+      return c.tagName === "BUTTON" || c.getAttribute("role") === "tab" || c.getAttribute("role") === "radio";
+    });
+    if (buttons.length < 2) return;
+    var byShape = {};
+    buttons.forEach(function (b) { (byShape[stateFree(b)] = byShape[stateFree(b)] || []).push(b); });
+    Object.keys(byShape).forEach(function (shape) {
+      var group = byShape[shape];
+      if (group.length < 2) return;
+      var marked = group.some(function (b) { return b.hasAttribute("data-utg-aria"); });
+      if (!marked && !group.some(isActiveEl)) return;
+      group.forEach(function (b) {
+        var attr = ariaAttrFor(b);
+        if (b.hasAttribute(attr) && !b.hasAttribute("data-utg-aria")) return; // owned elsewhere
+        b.setAttribute(attr, isActiveEl(b) ? "true" : "false");
+        b.setAttribute("data-utg-aria", "1");
+      });
+    });
+  }
+  function syncFaq() {
+    Array.prototype.forEach.call(document.querySelectorAll(".faq-question"), function (q) {
+      var item = q.closest(".faq-item") || q.parentElement;
+      if (item) q.setAttribute("aria-expanded", item.classList.contains("open") ? "true" : "false");
+    });
+  }
+  function syncActiveState() {
+    var parents = [];
+    Array.prototype.forEach.call(
+      document.querySelectorAll(".active, .is-active, .selected, .is-selected, [data-utg-aria]"),
+      function (el) {
+        var p = el.parentElement;
+        if (p && parents.indexOf(p) === -1 && (el.tagName === "BUTTON" || el.hasAttribute("role"))) parents.push(p);
+      }
+    );
+    parents.forEach(syncGroup);
+    syncFaq();
+  }
+  ns.syncActiveState = syncActiveState;
+  function initializeActiveStateSync() {
+    // After a click every handler on the page has already changed its classes.
+    document.addEventListener("click", function () { setTimeout(syncActiveState, 0); });
+    document.addEventListener("utg:i18nready", function () { setTimeout(syncActiveState, 0); });
+    if (document.readyState === "complete") syncActiveState();
+    else window.addEventListener("load", function () { setTimeout(syncActiveState, 0); });
+  }
   ns.restorePrint = restorePrint;
   ns.copyIdentity = copyIdentity;
   ns.trackCopy = trackCopy;
@@ -1402,12 +1483,14 @@
     initializeCtaTracking();
     initializePrintableNavTracking();
     initializeKaomojiMoodIndexTracking();
+    initializeActiveStateSync();
   } else {
     document.addEventListener("DOMContentLoaded", function () {
       initializeSharedHeader();
       initializeCtaTracking();
       initializePrintableNavTracking();
       initializeKaomojiMoodIndexTracking();
+      initializeActiveStateSync();
     });
   }
 })();

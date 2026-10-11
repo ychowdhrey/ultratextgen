@@ -734,6 +734,10 @@
         load();
       });
       card.addEventListener("keydown", (e) => {
+        // A key pressed on the card's own Copy button belongs to that button,
+        // as a click on it already does; otherwise Enter loaded the name and
+        // the copy never happened.
+        if (e.target.closest(".copy-btn")) return;
         if (e.key === "Enter" || e.key === " ") { e.preventDefault(); load(); }
       });
     });
