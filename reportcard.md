@@ -10,6 +10,108 @@ Newest entries come first. Numbers are only given where we could count them.
 
 ## October 2026
 
+### 10 October 2026
+
+The AI writing footprint checker is a new tool that shows writers which phrases in their English text tend to read as AI-sounding, and lets them decide what to change.
+
+Students, writers and anyone editing a draft can paste text and see the matching wording highlighted in place, each with a short explanation and a cautious suggested edit. The check runs in the browser, so the text is not sent anywhere. The tool gives no score and does not claim to say who wrote a piece. It points at patterns, and the writer chooses what to keep.
+
+### 9 October 2026
+
+The kaomoji pages now cover far more feelings, actions, animals and themes, and are easier to find and use, including in 16 languages.
+
+Kaomoji are text faces such as (✧ω✧). People looking for a nervous, dizzy, smug, dancing, fox or Halloween kaomoji now have a page for each of 31 new topics, and the library has a Kaomoji filter so these faces are no longer buried under single symbols. The kaomoji hub has a browse-by-mood index. The kaomoji generator offers 16 ready-made faces in two tidy rows (four columns on a phone) and can open on a chosen mood from a link, so a page about sad kaomoji sends you to the generator already set to sad. Kaomoji sections were added to 12 existing emoji pages, and 49 translated pages in 16 languages carry the same faces with labels in their own language.
+
+### 9 October 2026
+
+The image to ASCII art converter is a new tool that turns a photo or picture into ASCII art in the browser.
+
+Creators and Discord or Reddit users can drop in, paste or pick an image, choose a character set (standard, detailed, blocks or braille dots), and adjust width, brightness and contrast. They can copy the result ready for Discord or Reddit or download it as a text file. A live counter shows how close the art is to Discord's 2,000-character message limit, and one button shrinks it to fit a single message.
+
+### 9 October 2026
+
+The letters to numbers converter is a new tool for turning text into A1Z26 numbers and back again.
+
+Puzzle makers, students and anyone solving a letter-number cipher can convert in either direction, start counting at 0 or 1, pick the separator and keep or drop punctuation. The page includes an A to Z chart and answers to common questions.
+
+### 9 October 2026
+
+Printing from the browser on the printable pages is now clearer and more reliable, and several sheets print as they should.
+
+On the monogram, cross-stitch and label pages, pressing Ctrl+P used to print the whole website. It now prints only the page content with a line that points to the Download PDF button. That note links back to the button and shows the page address, so a printed sheet can still be found again. The A to Z practice sheet on the cursive, calligraphy and gothic pages now prints on one page in eight languages. Before, it ran to two pages, or three on the Polish and French A4 sheets, with the QR code alone on the last one. The Spray style on the 11 graffiti pages no longer collapses into a few lines in the preview. The letter picker on the printable pages now holds its space while it loads, so the page stops shifting as it appears.
+
+### 9 October 2026
+
+The "Show stroke direction" switch on the letter tracing worksheets now does what it says, and the guide is easier to read.
+
+Teachers and parents who turned it on for a single letter or an A to Z sheet used to get the same printout with or without it on the eight letter-tracing pages. It now adds the numbered start dots and arrows to those sheets. The guide was redrawn as a thin line with small numbered dots instead of a thick band with large badges, so the letter underneath stays clear. Routes on 31 letters and numbers that sat off the letter's centre were redrawn.
+
+### 8 October 2026
+
+The case converter and several text tools now handle text the way people expect.
+
+Text typed with Caps Lock on, such as "HELLO WORLD", used to come back unchanged from Title Case, Sentence case and Capitalized case. It now converts. The upside down and reverse text styles used to flip the order of emoji parts, so the French flag 🇫🇷 became 🇷🇫 and family emoji came out scrambled, on 11 styles across 27 pages. They now reverse whole characters. The trim-to-fit tool no longer cuts an emoji in half, the SMS-safe option now removes accents on the pages in nine languages where it did nothing, and the word counter no longer counts a sentence in Thai, Japanese or Chinese as one word.
+
+### 8 October 2026
+
+The letter tracing worksheet maker now also makes number tracing sheets.
+
+Parents and teachers who typed 1 2 3 used to get demo letters back. The page now traces the numbers, with start dots and arrows, and keeps a number such as 10 together. A new answer on the page covers printing number tracing worksheets, and the seven translated letter tracing pages carry the same note.
+
+### 8 October 2026
+
+The handwriting worksheet generator now offers the days of the week and the months of the year as one-click word sets.
+
+Teachers and parents can fill a whole practice sheet in one click, with a tracing row for every word and a blank line for each day. The sets are written in the page's own language across the English page and six translated pages. PDF, PNG and every level print the full set.
+
+### 7 October 2026
+
+The name label sheet maker is a new printable tool, in English and Indonesian, for labeling school and daycare items.
+
+Teachers, parents and daycare staff can type a name or paste a class list, subjects or a run of dates, and download a PDF laid out for common label sheets (Avery 5160, 5167 and 5163, and L7160, L7651 and L7163) or plain paper with cut lines. A daycare can print one label for each day. The PDF opens at actual size so the labels line up with the sheet, and a test page helps check the alignment before printing a full set.
+
+### 7 October 2026
+
+The Ukrainian site is now live with a font generator, invisible text and a nickname generator.
+
+Ukrainian speakers can style their text, copy invisible text and get nickname ideas in Ukrainian. The nickname generator checks names for Standoff 2, PUBG Mobile, Free Fire, Roblox and Discord. The pages say plainly that most font styles change only Latin letters and digits, and that the strikethrough, underline and overline styles work on every Ukrainian letter.
+
+### 7 October 2026
+
+Korean speakers learning Japanese can now use hiragana and katakana charts written for them.
+
+Both charts give a Hangul reading for each kana and mark the sounds Korean has no letter for as approximate. There is a write-in practice sheet. The chart starts on the first phone screen, and the English chart now prints on two A4 pages instead of five.
+
+### 7 October 2026
+
+Symbols that exist as both a plain text character and a colour emoji now copy the look shown on the tile.
+
+About 120 characters, including ♥, ☀, ↗ and ☠, used to copy as the bare character, so the paste could come out in the other look. The copy now carries the look you chose, and a message offers the other version in one tap, in all 30 languages. A device that cannot tell the two looks apart copies exactly as before.
+
+### 7 October 2026
+
+The monogram maker and cross-stitch chart maker now handle more of what people type.
+
+Three wide initials such as WWW used to run past the edge and get clipped in the preview, PNG and PDF. They now shrink to fit. In the cross-stitch maker, an accented letter such as the E in CAFÉ used to become a blank gap and be left out of the stitch count. It is now stitched as its base letter, Ñ keeps its tilde, and a note under the chart lists any substitution. On 9 October the monogram export also stopped adding a QR code and site link to a personal design.
+
+### 6 October 2026
+
+The Zalgo glitch text pages no longer jump while they load.
+
+The output and controls used to appear after the page showed, pushing everything below them down by up to 3,000 pixels. On phones, the page-jump score was as high as 0.79 and is now at most 0.055 across six languages and 11 screen widths. This helps people on slow connections tap the right button.
+
+### 6 October 2026
+
+Printable worksheets now keep accents in downloaded file names and no longer cut off French and Indonesian cursive letters.
+
+A file made for José is now named jose, and Begoña becomes begona, instead of losing the letter ("bego-a"). The single-letter cursive sheets on the French and Indonesian pages showed capital tops and joined lowercase letters clipped in the preview and in the PDF. They now print whole.
+
+### 5 October 2026
+
+Printable worksheets are now available in more languages and styles, including Dutch letter tracing and Turkish bubble letters.
+
+The dot-to-dot name worksheet now has pages in nine languages (German, Spanish, French, Indonesian, Italian, Dutch, Polish, Portuguese and Turkish). Graffiti letters, name puzzles and name tracing were added in Italian, Dutch, Polish, Portuguese and Turkish. Dutch teachers get a letter tracing page, and Turkish families get bubble letters with the full 29-letter Turkish alphabet. On the Turkish graffiti sheet, the Ğ and İ now print with their marks intact.
+
 ### 4 October 2026
 
 Symbol library pages now copy, save and display symbols the way people expect, after a round of repairs to problems that had been failing without any warning.
