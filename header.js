@@ -1291,6 +1291,43 @@
 
   var ns = (window.UltraTextGen = window.UltraTextGen || {});
   ns.hideForPrint = hideForPrint;
+
+  /* Rebuild a results grid without destroying the Auto Ads units placed in it.
+     Lives here, not in script.js, because several generators that rebuild a
+     grid on every keystroke (tattoo, scroll, repeat, decorator, events,
+     cursive, vertical, the Korean romanizer) do not all load script.js.
+     script.js keeps its own clearGridKeepingAds/appendAroundAds for the style
+     grids; both implement the same rule: an ad node is never detached, so a
+     filled iframe is not reloaded, and the new cards are seated around it at
+     the same ordinal position. `build()` appends however it likes. */
+  function isAutoPlacedAd(node) {
+    if (!node || node.nodeType !== 1) return false;
+    if (node.classList.contains("google-auto-placed")) return true;
+    return node.tagName === "INS" && node.classList.contains("adsbygoogle");
+  }
+  function rebuildGridKeepingAds(grid, build) {
+    var kept = [];
+    var seen = 0;
+    Array.prototype.slice.call(grid.childNodes).forEach(function (child) {
+      if (isAutoPlacedAd(child)) {
+        kept.push({ node: child, before: seen });
+      } else {
+        if (child.nodeType === 1) seen += 1;
+        grid.removeChild(child);
+      }
+    });
+    build();
+    if (!kept.length) return;
+    var keptNodes = kept.map(function (k) { return k.node; });
+    var fresh = Array.prototype.slice.call(grid.childNodes).filter(function (n) { return keptNodes.indexOf(n) === -1; });
+    fresh.forEach(function (n) { grid.removeChild(n); });
+    var k = 0;
+    fresh.forEach(function (node, i) {
+      while (k < kept.length && kept[k].before <= i) k += 1;
+      grid.insertBefore(node, k < kept.length ? kept[k].node : null);
+    });
+  }
+  ns.rebuildGridKeepingAds = rebuildGridKeepingAds;
   ns.restorePrint = restorePrint;
   ns.copyIdentity = copyIdentity;
   ns.trackCopy = trackCopy;

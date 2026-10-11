@@ -251,6 +251,118 @@ async function runInteractionRoundTrips({ open, check, dl }) {
     check('a ?q= value with markup creates no element and runs no script', !r.el && !r.ran, JSON.stringify(r));
     await ctx.close();
   }
+
+  // 6. A rebuilt results grid must keep an Auto Ads unit exactly where it was.
+  //    Real ads cannot load under test, so a stand-in carrying the class Auto
+  //    Ads uses (google-auto-placed) is placed in the grid; the page then
+  //    rebuilds on typing and the unit must still be there, in the same slot.
+  console.log('\nresults grids keep a placed ad unit when they rebuild');
+  const GRIDS = [
+    ['/pl/usecase/czcionki-tatuaze/', '#resultsGrid', '#mainInput'],
+    ['/usecase/scrolling-text/', '#resultsGrid', '#scrollBioInput'],
+    ['/category/text-decorator/', '#resultsGrid', '#mainInput'],
+    ['/usecase/repeat-text/', '#resultsGrid', '#repeatPhraseInput'],
+    ['/events/chinese-new-year/', '#eventFontsGrid', '#mainInput'],
+    ['/category/cursive-fonts/', '#resultsGrid', '#mainInput'],
+    ['/pl/usecase/vertical-text/', '#resultsGrid', '#mainInput'],
+    ['/ko/yeongmun-ireum-byeonhwan/', '#romanizeResults', '#romanizeInput', '홍길동'],
+    ['/', '#resultsGrid', '#mainInput']
+  ];
+  for (const [url, gridSel, inputSel, text] of GRIDS) {
+    const { ctx, page, errors } = await open(url, 'desktop');
+    await page.fill(inputSel, text || 'Hello');
+    await page.waitForTimeout(600);
+    const placed = await page.evaluate((g) => {
+      const grid = document.querySelector(g);
+      if (!grid) return null;
+      const ad = document.createElement('div');
+      ad.className = 'google-auto-placed';
+      ad.id = 'sim-ad';
+      ad.style.cssText = 'height:40px';
+      grid.insertBefore(ad, grid.children[1] || null);
+      const slot = Array.prototype.indexOf.call(grid.children, ad);
+      window.__simAd = ad;
+      return slot;
+    }, gridSel);
+    check(`${url} has a grid to test`, placed !== null);
+    if (placed === null) { await ctx.close(); continue; }
+    await page.fill(inputSel, (text || 'Hello') + '!');
+    await page.waitForTimeout(700);
+    const after = await page.evaluate((g) => {
+      const grid = document.querySelector(g);
+      const ad = document.getElementById('sim-ad');
+      return { same: ad === window.__simAd, inGrid: !!(ad && grid.contains(ad)), slot: ad ? Array.prototype.indexOf.call(grid.children, ad) : -1 };
+    }, gridSel);
+    check(`${url} keeps the same ad node, in the same slot, after the grid rebuilds`, after.same && after.inGrid && after.slot === placed, JSON.stringify({ before: placed, after }));
+    check(`${url} no page errors`, !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 7. A copy confirmation is a round trip: label -> Copied -> label, however fast the clicks.
+  console.log('\ncopy confirmation labels restore after a quick second click');
+  for (const [url, sel, text] of [['/library/norse-viking-runes/', '#runicCopy', 'Odin'], ['/ja/hankaku-zenkaku/', '.wc-copy', 'ABC abc 123']]) {
+    const { ctx, page, errors } = await open(url, 'desktop');
+    await ctx.grantPermissions(['clipboard-read', 'clipboard-write']);
+    const btn = page.locator(sel).first();
+    await page.locator('textarea, input[type=text]').first().fill(text);
+    await page.waitForTimeout(300);
+    const start = await btn.textContent();
+    await btn.click(); await page.waitForTimeout(250);
+    await btn.click(); await page.waitForTimeout(250);
+    check(`${url} shows the confirmation`, (await btn.textContent()) !== start);
+    await page.waitForTimeout(2600);
+    check(`${url} goes back to its own label after two quick clicks`, (await btn.textContent()) === start, `${start} -> ${await btn.textContent()}`);
+    check(`${url} no page errors`, !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 8. Huruf: the confirmation appears on the row that exists after the redraw.
+  console.log('\n/id/huruf-keren-a-sampai-z/ (confirmation survives the redraw)');
+  {
+    const { ctx, page, errors } = await open('/id/huruf-keren-a-sampai-z/', 'desktop');
+    await ctx.grantPermissions(['clipboard-read', 'clipboard-write']);
+    await page.locator('#hurufLetterStrip button').first().click();
+    await page.waitForSelector('.bubble-variant-copy');
+    await page.locator('.bubble-variant').nth(3).click();
+    await page.waitForTimeout(150);
+    const state = await page.evaluate(() => {
+      const rows = Array.prototype.slice.call(document.querySelectorAll('.bubble-variant'));
+      return { labels: rows.filter((r) => /Tersalin/.test(r.textContent)).length, focused: document.activeElement && document.activeElement.classList.contains('bubble-variant') };
+    });
+    check('exactly one row says Tersalin! after a click', state.labels === 1, JSON.stringify(state));
+    check('focus stays on the row that was clicked', state.focused);
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 9. One Share row per section, built from every group in it.
+  console.log('\n/library/color-emoji-combos/ (one Share row covers both groups)');
+  {
+    const { ctx, page, errors } = await open('/library/color-emoji-combos/', 'desktop');
+    const r = await page.evaluate(() => {
+      const secs = Array.prototype.filter.call(document.querySelectorAll('section'), (s) => s.querySelectorAll('.flag-rows').length > 1);
+      return { sections: secs.length, rows: secs.map((s) => s.querySelectorAll('.symbol-section-actions').length) };
+    });
+    check('sections with two groups have exactly one action row', r.sections > 0 && r.rows.every((n) => n === 1), JSON.stringify(r));
+    await page.evaluate(() => {
+      window.__shared = null;
+      Object.defineProperty(navigator, 'share', { configurable: true, value: (d) => { window.__shared = d; return Promise.resolve(); } });
+      Object.defineProperty(navigator, 'canShare', { configurable: true, value: () => true });
+    });
+    // Exact text, not a substring: the second group's emoji also occur inside the
+    // first group's combos, so "contains one of them" passes on the broken page too.
+    const expected = await page.evaluate(() => {
+      const s = Array.prototype.find.call(document.querySelectorAll('section'), (x) => x.querySelectorAll('.flag-rows').length > 1);
+      s.setAttribute('data-sec', '1');
+      return Array.prototype.map.call(s.querySelectorAll('.flag-rows .symbol-tile[data-symbol]'), (t) => t.getAttribute('data-symbol').trim()).filter(Boolean).join(' ');
+    });
+    await page.locator('[data-sec="1"] .symbol-section-actions button').first().click();
+    await page.waitForTimeout(400);
+    const shared = await page.evaluate(() => window.__shared && window.__shared.text);
+    check("the section's Share text is every tile in the section, both groups", shared === expected, JSON.stringify({ expected, shared }));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
 }
 
 module.exports = { roundTrip, runInteractionRoundTrips, readSelection, selectionAgrees };

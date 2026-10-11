@@ -185,3 +185,34 @@ are the same buttons at every width.
 ## Remaining risks
 
 Firefox/Safari behaviour is unverified here; the other latent items above remain open.
+
+## Follow-up, 2026-10-11
+
+Owner decisions and fixes after the first pass (each reproduced in a browser first;
+the cases are in `scripts/lib/interaction-round-trips.js`, red on the previous commit
+in 12 places, green now):
+
+* **One Share row per section, built from every group in it** (owner chose this over a
+  second row). `decorateSections` in `symbol-explorer.js` keeps its one-row-per-parent
+  guard but now reads every `.flag-rows` tile under that parent: 8 of 16 items before,
+  16 of 16 after, on `library/color-emoji-combos`.
+* **A copy confirmation restores the label it found.** Seven copy buttons saved the
+  button's current text as the one to restore, so a second click inside the window saved
+  "Copied" and the label stuck. Only the first click of a burst now reads the label
+  (huruf, printables, counter, width, runic, Korean romanizer; the dead bubble explorer
+  and the orphaned counter locale forks were left alone).
+* **Huruf confirmation survives the redraw.** The "Tersalin!" label was written to a
+  button the redraw had already replaced. It now goes on the row that exists afterwards,
+  and focus stays on it. The huruf explorer is loaded by exactly one page
+  (`id/huruf-keren-a-sampai-z`); the printables letter picker copies without a redraw.
+* **Ads survive a grid rebuild.** `rebuildGridKeepingAds` (in `header.js`, because the
+  Korean romanizer does not load `script.js`) keeps every auto-placed ad node where it
+  is and re-seats the new cards around it. Applied to the tattoo, scrolling-text,
+  decorator, repeat, events-fonts, cursive and vertical grids and the Korean romanizer.
+  Measured with a stand-in carrying the class Auto Ads uses: the unit was destroyed on
+  all eight before, and survives in the same slot now.
+
+Not fixed, listed so they are not rediscovered: the bio-font "all categories" grid
+rebuilds on every keystroke and may also hold an ad (unmeasured); `emoji-tool`
+breakdown and chips, the counter fix bar and the game-name checker also rebuild
+containers with `innerHTML` but are small and have no measured ad placement.

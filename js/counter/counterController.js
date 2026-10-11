@@ -520,12 +520,14 @@
         if (!input.value) return;
         try {
           await navigator.clipboard.writeText(input.value);
-          const original = copyBtn.textContent;
+          // Only the first click of a burst reads the label.
+          if (copyBtn._copyTimer) clearTimeout(copyBtn._copyTimer); else copyBtn._copyPrev = copyBtn.textContent;
           copyBtn.textContent = I18N.copied;
           copyBtn.classList.add("is-copied");
-          setTimeout(() => {
-            copyBtn.textContent = original;
+          copyBtn._copyTimer = setTimeout(() => {
+            copyBtn.textContent = copyBtn._copyPrev;
             copyBtn.classList.remove("is-copied");
+            copyBtn._copyTimer = 0;
           }, 1500);
         } catch (err) {
           console.error("Copy failed:", err);

@@ -1588,10 +1588,12 @@
   function copyText(value, btn) {
     const done = () => {
       if (!btn) return;
-      const prev = btn.textContent;
+      // Only the first click of a burst reads the label (a second click would
+      // otherwise save "Copied" as the text to restore).
+      if (btn._copyTimer) clearTimeout(btn._copyTimer); else btn._copyPrev = btn.textContent;
       btn.classList.add("is-copied");
       btn.textContent = T.copied;
-      setTimeout(() => { btn.textContent = prev; btn.classList.remove("is-copied"); }, 1400);
+      btn._copyTimer = setTimeout(() => { btn.textContent = btn._copyPrev; btn.classList.remove("is-copied"); btn._copyTimer = 0; }, 1400);
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(value).then(done).catch(done);
