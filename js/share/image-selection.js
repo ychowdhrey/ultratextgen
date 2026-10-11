@@ -800,10 +800,9 @@
         return { result: "added", added: fresh.length };
       },
       removeMany(values) {
-        const set = {};
-        values.forEach((v) => { set[v] = true; });
+        const drop = new Set(values);
         const before = items.length;
-        items = items.filter((i) => !set[i.value]);
+        items = items.filter((i) => !drop.has(i.value));
         return before - items.length;
       },
       clear() { items = []; }

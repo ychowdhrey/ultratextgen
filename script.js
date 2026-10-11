@@ -512,9 +512,20 @@ const decorations = window.UTG_DECORATIONS
     // only a real one may be saved from here. The store itself accepts other
     // types (a symbol, a collection) from the pages that own them.
     if (!name || !stylesRegistry[name] || !UTG.saved) return;
+    // Both grids are rebuilt below, which destroys the focused Save button and
+    // drops a keyboard user to <body>; put focus on its replacement. Compared
+    // by dataset, never by a selector built from the style name.
+    const focused = document.activeElement && document.activeElement.closest
+      ? document.activeElement.closest(".save-btn") : null;
+    const inSaved = !!(focused && focused.closest("#savedGrid"));
     UTG.saved.toggle({ type: "style", value: name, label: name });
     renderSavedStyles();
     renderResults();
+    if (focused) {
+      const again = Array.prototype.filter.call(document.querySelectorAll(".save-btn"), (b) => b.dataset.style === name);
+      const next = again.find((b) => !!b.closest("#savedGrid") === inSaved) || again[0];
+      if (next) next.focus({ preventScroll: true });
+    }
   }
 
   // Grapheme splitter (native) keeps a base char and its combining marks
@@ -2034,12 +2045,14 @@ const decorations = window.UTG_DECORATIONS
     if (el.inputClearBtn && el.mainInput) {
       el.inputClearBtn.addEventListener("click", () => {
         el.mainInput.value = "";
-        syncInputUI();
-        trackGenerateUse();
+        // A real input event, so every listener on the box (the accent
+        // notice, the gothic live preview, the name checker mirror) sees the
+        // clear. Setting .value fires nothing, which left the accent notice
+        // on screen above an empty box.
+        el.mainInput.dispatchEvent(new Event("input", { bubbles: true }));
+        clearTimeout(urlSyncTimer);
         pushUrlState();
         el.mainInput.focus();
-        renderSavedStyles();
-        renderResults();
       });
     }
 

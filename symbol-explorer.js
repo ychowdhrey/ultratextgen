@@ -1257,12 +1257,26 @@
     if (e.key !== "Enter" && e.key !== " ") return;
     var tile = e.target.closest(".symbol-tile");
     if (!tile) return;
+    /* The default is always cancelled, so the browser's own click never
+       arrives: a held Enter makes the browser click again on every
+       auto-repeat, and a press would otherwise run once here and again
+       there. The key then acts once, on the first keydown, never on a
+       repeat (a held key used to select, unselect, select... or copy over
+       and over). */
     e.preventDefault();
+    if (e.repeat) return;
     if (imageSelectionActive()) {
       ns.imageSelection.toggleTile(tile);
       return;
     }
     copySymbol(tile);
+  });
+
+  // Firefox clicks a button on Space KEYUP even when keydown was cancelled.
+  document.addEventListener("keyup", function (e) {
+    if (e.key !== " ") return;
+    var tile = e.target.closest && e.target.closest(".symbol-tile");
+    if (tile) e.preventDefault();
   });
 
   /* ============================
