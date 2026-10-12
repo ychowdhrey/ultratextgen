@@ -12,6 +12,7 @@
 .ch-sub { fill: var(--text-secondary); font-size: 10.5px; }
 .ch-val { fill: var(--text-primary); font-size: 11.5px; }
 .ch-segval { fill: #fff; font-size: 11.5px; font-weight: 700; }
+.ch-segval-dark { fill: #0f172a; }
 .ch-ci { stroke: var(--text-primary); stroke-width: 1.4; opacity: 0.75; }
 .ch-ci-bold { stroke-width: 2.2; opacity: 1; stroke: var(--accent-purple); }
 .ch-link { stroke: var(--text-muted); stroke-width: 1.5; }
@@ -22,22 +23,23 @@
 .ch-dot { fill: var(--accent-purple); stroke: var(--bg-white); stroke-width: 2; }
 .ch-ring { fill: var(--bg-white); stroke: var(--text-secondary); stroke-width: 2; }
 .ch-legend { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin: 0 0 0.5rem; padding: 0; font-size: 0.85rem; color: var(--text-secondary); }
-.ch-key { display: inline-block; width: 0.8rem; height: 0.8rem; border-radius: 2px; margin-right: 0.4rem; vertical-align: -0.1rem; }
+.ch-key { -webkit-print-color-adjust: exact; print-color-adjust: exact; display: inline-block; width: 0.8rem; height: 0.8rem; border-radius: 2px; margin-right: 0.4rem; vertical-align: -0.1rem; }
 .ch-key.ch-s0 { background: var(--text-muted); }
 .ch-key.ch-s1 { background: var(--accent-blue); }
 .ch-key.ch-s2 { background: var(--accent-purple); }
 .ch-key.ch-dotkey { background: var(--accent-purple); border-radius: 50%; }
 .ch-key.ch-ringkey { background: var(--bg-white); border: 2px solid var(--text-secondary); border-radius: 50%; width: 0.75rem; height: 0.75rem; }
-.ch-hint { display: none; margin: 0.35rem 0 0; font-size: 0.8rem; color: var(--text-secondary); }
+.ch-mobile-note { display: none; margin: 0 0 0.5rem; font-size: 0.85rem; color: var(--text-secondary); }
 .figure-data { margin-top: 0.75rem; font-size: 0.9rem; }
 .figure-data summary { cursor: pointer; font-weight: 600; padding: 0.25rem 0; }
 .figure-data .data-table-wrap { margin-top: 0.5rem; }
 @media (max-width: 600px) {
   .study-figure { padding: 0.75rem 0.6rem 0.5rem; }
-  .ch-hint { display: block; }
+  .ch-wrap, .ch-legend { display: none; }
+  .ch-mobile-note { display: block; }
 }
 @media print {
-  .ch-hint { display: none; }
+  .ch-mobile-note { display: none !important; }
   .ch { min-width: 0; }
   .ch-wrap { overflow: visible; }
   .study-figure { break-inside: avoid; }

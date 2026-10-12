@@ -1,8 +1,8 @@
 # Reading experiment protocol (designed, not executed)
 
-Part of the AI Writing Footprint Study (https://ultratextgen.com/research/ai-writing-footprint-study/). Written before any analysis, so the observational findings cannot be quietly reshaped into the experiment's hypotheses.
+Part of the AI Writing Footprint Study (https://ultratextgen.com/research/ai-writing-footprint-study/). Written after the observational study and before any reading data were collected, so the observational findings cannot be quietly reshaped into the experiment's hypotheses. "Question 3" and "question 4" below mean the study's third and fourth questions: which cues produce the strongest perception of AI authorship, and whether combinations matter more than single cues.
 
-**No participant data exists for this protocol. Nothing in the study reports a result from it.** It is written down before any analysis so that the observational findings cannot be quietly reshaped into the experiment's hypotheses. It answers RQ3 (which cues produce the strongest perception of AI authorship) and RQ4 (do combinations matter more), which no observational design can answer.
+**No participant data exists for this protocol. Nothing in the study reports a result from it.** It is written down before any reading data exist so that the observational findings cannot be quietly reshaped into the experiment's hypotheses. It answers question 3 (which cues produce the strongest perception of AI authorship) and question 4 (do combinations matter more), which no observational design can answer.
 
 An LLM rating text as "AI-sounding" is not this experiment. Models are not the readers this question is about, and a model asked "does this sound like AI" has its own training prior about the answer.
 
