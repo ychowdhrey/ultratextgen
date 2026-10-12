@@ -736,6 +736,10 @@ async function main() {
     check('accents alone do not trigger it', await hidden());
     await page.fill('#mainInput', '\u0436\u0438\u0440\u043d\u044b\u0439 \u0448\u0440\u0438\u0444\u0442');
     check('Cyrillic text shows the notice', !(await hidden()));
+    check('Cyrillic \u0439 does not also trigger the accent notice', await page.locator('#accentNotice').evaluate((n) => n.hidden));
+    await page.fill('#mainInput', 'caf\u00e9 \u0436');
+    check('a real Latin accent still triggers the accent notice', !(await page.locator('#accentNotice').evaluate((n) => n.hidden)));
+    await page.fill('#mainInput', '\u0436\u0438\u0440\u043d\u044b\u0439 \u0448\u0440\u0438\u0444\u0442');
     await page.fill('#mainInput', '\u062d\u0631\u0648\u0641 \u0645\u0632\u062e\u0631\u0641\u0647');
     check('Arabic text shows the notice', !(await hidden()));
     await page.fill('#mainInput', 'hello \u4f60\u597d');

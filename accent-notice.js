@@ -42,10 +42,20 @@
   // trigger it — silently, on the eight European locales that need it most.
   var UNDECOMPOSABLE = /[łŁđĐıøØßẞæÆœŒðÐþÞħĦ]/;
 
+  // A mark counts only when its base letter is Latin. Cyrillic й and ё
+  // decompose to и + breve and е + diaeresis, which made the accent notice claim
+  // "Your text has accent marks" over Russian text it has nothing to say about.
+  var LATIN_BASE = /\p{Script=Latin}/u;
+  var COMBINING = /[̀-ͯ]/;
   function hasAccentedText(value) {
     if (!value) return false;
     if (UNDECOMPOSABLE.test(value)) return true;
-    return /[̀-ͯ]/.test(value.normalize('NFD'));  // combining marks
+    var latinBase = true;  // a mark with no base before it still counts, as it always did
+    for (var ch of value.normalize('NFD')) {
+      if (COMBINING.test(ch)) { if (latinBase) return true; continue; }
+      if (/\p{L}/u.test(ch)) latinBase = LATIN_BASE.test(ch);
+    }
+    return false;
   }
 
   function update() {
