@@ -769,6 +769,7 @@ async function main() {
     check('Clear names empties the box', (await page.inputValue('#pt-name-roster')) === '');
     check('Clear names removes the stored list', (await stored()) === null, String(await stored()));
     check('Clear names hides itself when there is nothing to clear', !(await clearBtn.isVisible()));
+    await page.click('.pt-audience-field .pt-choice[data-value="class"]');
     await page.fill('#pt-name-roster', 'Mia');
     check('typing a name brings it back', await clearBtn.isVisible());
     check('no page errors', !errors.length, errors.join(' | '));
