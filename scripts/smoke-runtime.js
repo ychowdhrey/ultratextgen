@@ -723,6 +723,64 @@ async function main() {
     await ctx.close();
   }
 
+  // 16. Text in another script. Half the styles return it unchanged and the rest
+  // only add spacing or marks, so the English generator says so, once, and only
+  // when the text has a non-Latin letter. A translated page gets no English line.
+  console.log('\n/ (non-Latin text notice, English pages only)');
+  {
+    const { ctx, page, errors } = await open('/', 'desktop');
+    const hidden = () => page.locator('#scriptNotice').evaluate((n) => n.hidden);
+    await page.fill('#mainInput', 'hello world');
+    check('plain English shows no script notice', await hidden());
+    await page.fill('#mainInput', 'cafe\u0301 \u00f1and\u00fa');
+    check('accents alone do not trigger it', await hidden());
+    await page.fill('#mainInput', '\u0436\u0438\u0440\u043d\u044b\u0439 \u0448\u0440\u0438\u0444\u0442');
+    check('Cyrillic text shows the notice', !(await hidden()));
+    await page.fill('#mainInput', '\u062d\u0631\u0648\u0641 \u0645\u0632\u062e\u0631\u0641\u0647');
+    check('Arabic text shows the notice', !(await hidden()));
+    await page.fill('#mainInput', 'hello \u4f60\u597d');
+    check('Latin mixed with Chinese shows the notice', !(await hidden()));
+    await page.click('#scriptNoticeClose');
+    await page.fill('#mainInput', 'hello');
+    await page.fill('#mainInput', '\u0436');
+    check('a dismissed notice stays dismissed', await hidden());
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+    const es = await open('/es/fuentes-de-letras/', 'desktop');
+    await es.page.fill('#mainInput', '\u0436\u0438\u0440\u043d\u044b\u0439');
+    check('a Spanish page gets no English script notice', (await es.page.locator('#scriptNotice').count()) === 0);
+    check('Spanish page: no page errors', !es.errors.length, es.errors.join(' | '));
+    await es.ctx.close();
+  }
+
+  // 17. Clear names: a class list is remembered on the device, so there has to be
+  // a way to forget it. English pages only (the label has no translation), and
+  // the frozen block-letters page keeps its previous control.
+  console.log('\n/printables/name-tracing/ (Clear names forgets the saved class list)');
+  {
+    const { ctx, page, errors } = await open('/printables/name-tracing/', 'desktop');
+    const stored = () => page.evaluate(() => localStorage.getItem('utg_printables_roster'));
+    await page.evaluate(() => localStorage.setItem('utg_printables_roster', 'Emma\nNoah\nAva'));
+    await page.reload({ waitUntil: 'load' });
+    await page.waitForTimeout(700);
+    const clearBtn = page.locator('.pt-roster-clear');
+    check('the saved list is back in the box and Clear names shows', (await page.inputValue('#pt-name-roster')).includes('Noah') && await clearBtn.isVisible());
+    await clearBtn.click();
+    check('Clear names empties the box', (await page.inputValue('#pt-name-roster')) === '');
+    check('Clear names removes the stored list', (await stored()) === null, String(await stored()));
+    check('Clear names hides itself when there is nothing to clear', !(await clearBtn.isVisible()));
+    await page.fill('#pt-name-roster', 'Mia');
+    check('typing a name brings it back', await clearBtn.isVisible());
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+    const bl = await open('/printables/block-letters/', 'desktop');
+    check('block-letters is untouched (no Clear names)', (await bl.page.locator('.pt-roster-clear').count()) === 0);
+    await bl.ctx.close();
+    const fr = await open('/fr/imprimables/modeles-d-ecriture/', 'desktop');
+    check('a French sheet gets no English Clear names', (await fr.page.locator('.pt-roster-clear').count()) === 0);
+    await fr.ctx.close();
+  }
+
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
   await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });

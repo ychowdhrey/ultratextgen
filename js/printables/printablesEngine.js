@@ -8754,12 +8754,44 @@
       });
       box.appendChild(fields);
       details.replaceWith(box);
+      mountRosterClear(mount, fields);
     }
     mount.dataset.ptAudienceWired = "1";
     $$(".pt-choice", box).forEach((b) => {
       b.addEventListener("click", () => setRosterAudience(mount, b.dataset.value));
     });
     setRosterAudience(mount, mount.value.trim() ? "class" : "one", { quiet: true });
+  }
+  /* "Clear names": the roster is remembered on this device between visits
+     (readRoster/writeRoster), and until now the only way to forget a class on
+     a shared school computer was to know that clearing the box and printing
+     once overwrote it. The button empties the box, removes the stored key and
+     tells the sheet count, so what is on screen and what is stored cannot
+     disagree. It shows only while there is something to clear.
+
+     English pages only for now: the label has no translation yet, and this
+     file's own rule is that a control is mounted in a language only when its
+     label exists there. /printables/block-letters/ is left alone (BATCH_FROZEN,
+     above) for the same reason mountAudience leaves its control alone. */
+  function mountRosterClear(mount, fields) {
+    if (LANG !== "en" || BATCH_FROZEN || !mount || !fields) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "pt-roster-clear";
+    btn.textContent = "Clear names";
+    btn.setAttribute("aria-label", "Clear the saved class list from this device");
+    const sync = () => { btn.hidden = !mount.value.trim(); };
+    mount.addEventListener("input", sync);
+    btn.addEventListener("click", () => {
+      mount.value = "";
+      writeRoster("");
+      mount.dispatchEvent(new Event("input", { bubbles: true }));
+      setRosterAudience(mount, "one", { quiet: true });
+      sync();
+      mount.focus();
+    });
+    fields.appendChild(btn);
+    sync();
   }
   function mountAudiences() {
     [el.nameRoster, el.genRoster, el.designRoster, el.puzzleRoster, el.searchRoster, el.cwRoster, el.scRoster, el.spRoster]
