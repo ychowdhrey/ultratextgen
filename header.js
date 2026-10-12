@@ -1323,10 +1323,14 @@
     var keptNodes = kept.map(function (k) { return k.node; });
     var fresh = Array.prototype.slice.call(grid.childNodes).filter(function (n) { return keptNodes.indexOf(n) === -1; });
     fresh.forEach(function (n) { grid.removeChild(n); });
+    // Position counts elements only (as the kept ordinals do): a template's
+    // whitespace text nodes are not cards and must not shift the ad.
     var k = 0;
-    fresh.forEach(function (node, i) {
-      while (k < kept.length && kept[k].before <= i) k += 1;
+    var elementIndex = 0;
+    fresh.forEach(function (node) {
+      while (k < kept.length && kept[k].before <= elementIndex) k += 1;
       grid.insertBefore(node, k < kept.length ? kept[k].node : null);
+      if (node.nodeType === 1) elementIndex += 1;
     });
   }
   ns.rebuildGridKeepingAds = rebuildGridKeepingAds;
