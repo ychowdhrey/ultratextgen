@@ -97,7 +97,7 @@ that's the fastest way to find something. Counts are refreshed weekly from
 <!-- START_PILLARS -->
 | Section | English pages | Localized pages |
 |---|---:|---:|
-| [Library](https://ultratextgen.com/library/) | 339 | 1,184 |
+| [Library](https://ultratextgen.com/library/) | 375 | 1,191 |
 | [Symbols](https://ultratextgen.com/symbol/) | 117 | 1,653 |
 | [Answers](https://ultratextgen.com/answers/) | 65 | 76 |
 | [Use Cases](https://ultratextgen.com/usecase/) | 37 | 148 |
@@ -106,7 +106,7 @@ that's the fastest way to find something. Counts are refreshed weekly from
 | [Updates](https://ultratextgen.com/updates/) | 12 | 56 |
 | [Embed Tools](https://ultratextgen.com/embed/) | 6 | 0 |
 
-**4,761 URLs in total**, across 30 languages.
+**4,874 URLs in total**, across 30 languages.
 <!-- END_PILLARS -->
 
 
