@@ -237,3 +237,19 @@ containers with `innerHTML` but are small and have no measured ad placement.
   to its owner. This is a mirror of the class, which stays the source of truth; moving
   each widget to set the attribute itself is the cleaner end state and was not done
   across ~50 sites.
+
+### Three loose ends (2026-10-12)
+
+* **Zodiac strings in `locale_translation`.** Not a defect on this branch: the gate
+  compared against a stale local `origin/main`, and main already carried the
+  translations of the two minor-aspect labels on the `id` and `nl` zodiac pages.
+  Merging main in cleared it; nothing was translated or ledgered here.
+* **Tag-studio copies no longer record typed text.** Its own Copy buttons, the share
+  link and the rare-tag and live chips all copied through the default `symbol_tile`
+  method, which is allow-listed as catalogue content, so the visitor's exact tag
+  reached `copy_item`. They now name `tag_studio` (a tile via `data-copy-method`,
+  honoured by `copySymbol`), which is not catalogue content: `copy_item` is cleared and
+  `copy_item_group` is sent. `header.test.js` and the round-trip suite assert it.
+* **Bio-font "all categories" grid keeps a placed ad** the same way the other
+  per-keystroke grids now do (18 pages). Whether Auto Ads actually places a unit inside
+  that grid is still unmeasured; this stops it from being destroyed if it does.

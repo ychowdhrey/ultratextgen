@@ -908,9 +908,13 @@
     if (raw == null) return;
     var symbol = raw.trim() || raw;
     if (!symbol) return;
-    const look = twoLook(tile, symbol);
+    /* A tile built from what the visitor typed (the tag studio's chips) names
+       its own copy method, so the copy is not recorded as catalogue content:
+       copy_item carries the exact text only for the catalogue methods. */
+    const own = tile.getAttribute("data-copy-method");
+    const look = own ? null : twoLook(tile, symbol);
     if (look) { copyLook(tile, look.base, look.shown, "symbol_tile"); return; }
-    copyText(symbol, tile, tileLabel(tile, symbol));
+    copyText(symbol, tile, tileLabel(tile, symbol), own || undefined);
   }
   ns.copySymbol = copySymbol;
 

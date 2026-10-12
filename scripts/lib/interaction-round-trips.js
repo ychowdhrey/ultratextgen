@@ -181,6 +181,16 @@ async function runInteractionRoundTrips({ open, check, dl }) {
       const r = await countCopies(page, () => chip.click());
       check('a rare-tag chip click copies once and records one row', r.writes === 1 && r.rows.length === 1, JSON.stringify(r));
     }
+    // Typed text is the visitor's own: a tag copy is not catalogue content, so
+    // the exact text must not reach copy_item.
+    await page.fill('#mainInput', 'ZqTypedTag7');
+    await page.waitForTimeout(500);
+    const typedChip = page.locator('.ts-rare-chip[data-symbol]').first();
+    await typedChip.scrollIntoViewIfNeeded();
+    const t = await countCopies(page, () => typedChip.click());
+    const row = (await dl(page)).filter((e) => e.event === 'copy_text').slice(-1)[0] || {};
+    check('a tag chip copy is recorded as tag_studio, not as catalogue content', row.copy_method === 'tag_studio' && row.copy_item === undefined, JSON.stringify(row));
+    check('and still copies once', t.writes === 1, JSON.stringify(t));
     check('no page errors', !errors.length, errors.join(' | '));
     await ctx.close();
   }
@@ -266,6 +276,7 @@ async function runInteractionRoundTrips({ open, check, dl }) {
     ['/category/cursive-fonts/', '#resultsGrid', '#mainInput'],
     ['/pl/usecase/vertical-text/', '#resultsGrid', '#mainInput'],
     ['/ko/yeongmun-ireum-byeonhwan/', '#romanizeResults', '#romanizeInput', '홍길동'],
+    ['/usecase/bio-font/', '#categoriesGlanceGrid', '#mainInput'],
     ['/', '#resultsGrid', '#mainInput']
   ];
   for (const [url, gridSel, inputSel, text] of GRIDS) {

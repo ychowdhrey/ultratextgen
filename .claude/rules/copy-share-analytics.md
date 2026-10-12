@@ -57,7 +57,7 @@ methods in `CATALOGUE_COPY_METHODS`: copies of the site's own glyphs
 Every other method, a new one included, sends `copy_item_group` and
 `copy_item: undefined`, because visitors type names into generators. The key is
 always pushed: GTM keeps a key's last value, so an omitted key re-sends the
-previous glyph. Route a new copy surface through `trackCopy()` rather than
+previous glyph. A tile built from typed text (the tag studio's chips) names its own method with `data-copy-method="tag_studio"`, which `copySymbol` passes through. Route a new copy surface through `trackCopy()` rather than
 pushing `copy_text` yourself, and add its method to the allowlist only when its
 payload is always catalogue content. `header.test.js` asserts both halves.
 

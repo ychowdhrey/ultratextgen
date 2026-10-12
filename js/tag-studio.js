@@ -58,9 +58,15 @@
     return parts.join(sep || "");
   }
 
+  /* Every copy here is the visitor's own typed text, styled. "tag_studio" is
+     not a catalogue method, so header.js records copy_item_group and clears
+     copy_item; without a method the copy was recorded as "symbol_tile" and the
+     exact typed tag went to the data layer. */
+  const COPY_METHOD = "tag_studio";
+
   function copy(text, sourceEl, label) {
     if (ns.copyText) {
-      ns.copyText(text, sourceEl, label || text);
+      ns.copyText(text, sourceEl, label || text, COPY_METHOD);
     } else if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text);
     }
@@ -351,6 +357,7 @@
       for (let i = 0; i < RARE_COUNT; i++) {
         const chip = el("button", "uname-chip symbol-tile ts-rare-chip");
         chip.type = "button";
+        chip.setAttribute("data-copy-method", COPY_METHOD);
         chip.id = "ts-rare-" + i;
         grid.appendChild(chip);
       }
@@ -464,6 +471,7 @@
     const chips = items.map(function () {
       const chip = el("button", "uname-chip symbol-tile");
       chip.type = "button";
+      chip.setAttribute("data-copy-method", COPY_METHOD);
       chip.setAttribute("aria-label", copyLabel);
       mount.appendChild(chip);
       return chip;

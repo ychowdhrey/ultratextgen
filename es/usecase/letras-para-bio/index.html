@@ -531,7 +531,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           const mainInput = document.getElementById("mainInput");
           const name = (mainInput && mainInput.value.trim()) || "Sombra";
 
-          grid.innerHTML = GLANCE_CATEGORIES.map(cat => `
+          const glanceHtml = GLANCE_CATEGORIES.map(cat => `
             <div class="glance-card" data-glance-cat="${cat.id}">
               <div class="glance-card-header">
                 <span>${cat.emoji}</span>
@@ -543,6 +543,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
               </div>
             </div>
           `).join("");
+
+          // Rebuild without destroying an Auto Ads unit placed in the grid.
+          const glanceBuild = function () { grid.insertAdjacentHTML("beforeend", glanceHtml); };
+          const glanceNs = window.UltraTextGen;
+          if (glanceNs && glanceNs.rebuildGridKeepingAds) glanceNs.rebuildGridKeepingAds(grid, glanceBuild);
+          else { grid.innerHTML = ""; glanceBuild(); }
 
           // Click: sube al inicio y cambia la pestaña de decoración
           grid.querySelectorAll(".glance-card").forEach(card => {
