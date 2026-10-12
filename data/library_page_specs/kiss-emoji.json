@@ -1,14 +1,14 @@
 {
   "slug": "kiss-emoji",
-  "title": "Kiss Emoji & Kaomoji: Copy & Paste 😘💋 Kissing Combos",
-  "meta_description": "Kiss emoji 😘 💋 👄, kissing faces, lipstick kiss marks, and flirty kaomoji like ( ˘ ³˘) for texts, comments, and DMs. Click any symbol to copy it instantly.",
+  "title": "Kiss Emoji: Copy & Paste 😘💋 Kissing Faces, Emoticons & Combos",
+  "meta_description": "Kiss emoji 😘 💋 👄, kissing faces, lipstick kiss marks, and typed :* kiss emoticons for texts, comments, and DMs. Click any symbol to copy it instantly.",
   "canonical": "https://ultratextgen.com/library/kiss-emoji/",
-  "breadcrumb": "Kiss Emoji & Kaomoji",
-  "hero_h1": "Kiss Emoji & Kaomoji",
-  "hero_tagline": "Blown kisses, kissing faces, lipstick marks, and puckered-up kaomoji: every way to send a smooch in text. Click any symbol to copy it instantly.",
-  "intro": "The kiss emoji comes in a whole flirty range: the 😘 face blowing a kiss with a little heart, the softer 😗 kissing face, and the 💋 lipstick kiss mark you leave at the end of a message. This page gathers all the kissing faces, the kiss marks and 👄 mouths, the couple emojis for romantic pairings, and classic kissing kaomoji like ( ˘ ³˘) that paste anywhere plain text works. Grab a single symbol, or copy a ready-made combo set for flirty texts, comments, and DMs.",
+  "breadcrumb": "Kiss Emoji",
+  "hero_h1": "Kiss Emoji",
+  "hero_tagline": "Blown kisses, kissing faces, lipstick marks, and typed :* emoticons: every way to send a smooch in text. Click any symbol to copy it instantly.",
+  "intro": "The kiss emoji comes in a whole flirty range: the 😘 face blowing a kiss with a little heart, the softer 😗 kissing face, and the 💋 lipstick kiss mark you leave at the end of a message. This page gathers all the kissing faces, the kiss marks and 👄 mouths, the couple emojis for romantic pairings, typed :* kiss emoticons, and a few kissing kaomoji like ( ˘ ³˘) that paste anywhere plain text works. Grab a single symbol, or copy a ready-made combo set for flirty texts, comments, and DMs.",
   "date_published": "2026-07-13",
-  "date_modified": "2026-07-13",
+  "date_modified": "2026-10-09",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -50,20 +50,30 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticons",
+      "h2": "Kiss Text Emoticons",
+      "intro": "The asterisk stands in for puckered lips, the oldest typed way to sign off with a kiss. Swap the colon for a semicolon to make it a cheeky one.",
+      "symbols": [
+        { "char": ":*", "label": "Kiss Emoticon" },
+        { "char": ":-*", "label": "Kiss With Nose Emoticon" },
+        { "char": ";*", "label": "Wink and Kiss Emoticon" },
+        { "char": ";-*", "label": "Wink and Kiss With Nose Emoticon" },
+        { "char": "=*", "label": "Soft Kiss Emoticon" }
+      ]
+    },
+    {
       "id": "kiss-kaomoji",
       "label": "Kaomoji",
       "h2": "Kissing Kaomoji & Text Faces",
-      "intro": "Japanese-style text faces that pucker up, smooch, and blow kisses in plain text.",
+      "intro": "Four puckered-up Japanese text faces, one of them already holding a heart.",
       "symbols": [
         { "char": "( ˘ ³˘)", "label": "Puckered Kiss Kaomoji" },
         { "char": "(づ￣ ³￣)づ", "label": "Come Here and Kiss Kaomoji" },
         { "char": "( ˘ ³˘)♥", "label": "Kiss With Heart Kaomoji" },
-        { "char": "(*˘︶˘*).｡.:*", "label": "Sweet Content Kiss Kaomoji" },
-        { "char": "(っ˘з˘)っ", "label": "Smooch Kaomoji" },
-        { "char": "( ᵔ ³ᵔ )", "label": "Pouty Kiss Kaomoji" },
-        { "char": "(˘ ³˘)♡", "label": "Loving Kiss Kaomoji" },
-        { "char": "( ˘ ³˘)ﾉ", "label": "Blowing a Kiss Kaomoji" }
-      ]
+        { "char": "(っ˘з˘)っ", "label": "Smooch Kaomoji" }
+      ],
+      "more_link": { "href": "/library/kiss-kaomoji/", "text": "See every kiss kaomoji" }
     }
   ],
   "collection_section": {
@@ -116,6 +126,11 @@
     }
   ],
   "related": [
+    {
+      "href": "/library/kiss-kaomoji/",
+      "title": "Kiss Kaomoji",
+      "desc": "Copy and paste kiss kaomoji: puckering, kiss-blowing Japanese text faces."
+    },
     {
       "href": "/library/heart-symbols/",
       "title": "Heart Emoji & Kaomoji",

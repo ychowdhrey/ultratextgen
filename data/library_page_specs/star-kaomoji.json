@@ -5,7 +5,7 @@
   "breadcrumb": "Star Kaomoji",
   "hero_h1": "Star Kaomoji",
   "hero_tagline": "Copy and paste star kaomoji: starry-eyed and dazzled Japanese text faces. Click any face to copy it instantly.",
-  "intro": "Star kaomoji (also spelled kamoji) are Japanese-style text faces built around the star symbol ★: star-shaped eyes, dazzled wonder, and starstruck excitement. A star kaomoji such as (★ω★) or (☆▽☆) is plain Unicode text, so it pastes cleanly into bios, captions, comments, and usernames. Browse by style below and click any face to copy it instantly. Whether you search \"star kaomoji\" or \"kaomoji star,\" every face here is free to copy and paste.",
+  "intro": "Star kaomoji (also spelled kamoji) are Japanese-style text faces built around the star symbol ★: star-shaped eyes, dazzled wonder, and starstruck excitement. A star kaomoji such as (★ω★) or (☆▽☆) is plain Unicode text, so it pastes into bios, captions, and comments. Browse by style below and click any face to copy it instantly. Whether you search \"star kaomoji\" or \"kaomoji star,\" every face here is free to copy and paste.",
   "date_published": "2026-07-10",
   "date_modified": "2026-07-10",
   "copy_pattern": "single",
@@ -143,6 +143,16 @@
       "href": "/library/cute-kaomoji/",
       "title": "Cute Kaomoji",
       "desc": "Kawaii text faces with sparkly eyes and blushing cheeks."
+    },
+    {
+      "href": "/library/star-emoji/",
+      "title": "Star Emoji",
+      "desc": "Rating stars, glowing stars, shooting stars and sparkles: the full picture-emoji star set."
+    },
+    {
+      "href": "/library/star-ascii-art/",
+      "title": "Star ASCII Art",
+      "desc": "Original star pictures drawn entirely in plain text: sparkles, shooting stars, and a giant five-point star."
     }
   ]
 }

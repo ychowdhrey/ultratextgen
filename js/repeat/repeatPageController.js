@@ -42,6 +42,26 @@
   const INITIAL_CARDS = 18;
   const MAX_STYLE_CARDS = 60;
 
+  /* Restyling is per line, and a handful of styles (the alternating ones)
+     cost about 0.1ms per character, so the cost is set by how much DIFFERENT
+     text there is to restyle, not by the copy count: a 1000-line block is one
+     line restyled and reused. Above this many characters of distinct text the
+     page shows the plain block only and says why. Measured in Chromium on
+     2026-10-08: 1000 hearts on one line is 2,999 characters and restyles in
+     about a second spread over small tasks; a 120-character phrase on one
+     line at 1000 copies would be 121,000 characters and about 12 seconds for
+     each alternating style. */
+  const STYLE_CHAR_BUDGET = 4000;
+  /* And a ceiling on the block itself: every styled card is another copy of
+     it in the page, so 18 cards of a 121,000-character block held the main
+     thread for up to 1.8 seconds in layout alone, after the styling was
+     memoised. The plain card always renders, at any size. */
+  const STYLE_OUTPUT_BUDGET = 30000;
+  /* Styles are computed in slices of about this many milliseconds, yielding
+     between slices, so typing and scrolling stay responsive while the cards
+     fill in. */
+  const STYLE_SLICE_MS = 40;
+
   /* Invisible-but-real character (Braille Pattern Blank). Instagram/TikTok and
      similar apps strip empty lines and leading spaces on save; indentation and
      blank lines rebuilt from U+2800 survive (same trick as vertical text). */
@@ -58,6 +78,7 @@
   let currentDividerTab = dividerTabFor(currentDivider) || Object.keys(SCROLL_DATA.DIVIDERS)[0] || "basics";
   let lazyObserver = null;
   let renderTimer = null;
+  let renderToken = 0;
 
   /* ---- Helpers ---- */
   function $(sel, root) { return (root || document).querySelector(sel); }
@@ -103,13 +124,36 @@
 
   /* Style a possibly multi-line string line-by-line, so reversing/transform
      styles never fold across newlines. Blank lines stay blank. */
+  /* A line's leading indent is kept out of the style and put back after it,
+     so the lines of a shape that differ only by indent (staircase, diagonal,
+     the pyramids' padding) are restyled once, and a reversing style cannot
+     carry the indent to the end of the line where it would be trimmed. */
   function applyStylePerLine(text, key) {
     let style = key ? stylesRegistry[key] : null;
     if (!style) return text;
+    let memo = new Map();
     return text.split("\n").map(function (line) {
       if (line === "") return "";
-      try { return Render.renderAny(line, style); } catch (e) { return line; }
+      let lead = line.match(/^ */)[0];
+      let body = line.slice(lead.length);
+      if (!memo.has(body)) {
+        let out;
+        try { out = Render.renderAny(body, style); } catch (e) { out = body; }
+        memo.set(body, out);
+      }
+      return lead + memo.get(body);
     }).join("\n");
+  }
+
+  /* How much distinct text applyStylePerLine would restyle. */
+  function distinctStyleLength(text) {
+    let seenLines = new Set();
+    let total = 0;
+    text.split("\n").forEach(function (line) {
+      let body = line.replace(/^ +/, "");
+      if (body && !seenLines.has(body)) { seenLines.add(body); total += body.length; }
+    });
+    return total;
   }
 
   /* Pad blank lines and rebuild leading indents from U+2800 so a shape's
@@ -133,6 +177,13 @@
     return input ? input.value : "";
   }
 
+  /* The copy count the current shape will actually build: the stepped shapes
+     stop at STEPPED_MAX (see repeatShapes.js). */
+  function shapeCount() {
+    let shape = shapeById(currentShapeId);
+    return SHAPES_API.clampCount(repeatCount, shape.maxCount);
+  }
+
   function buildArrangement() {
     let shape = shapeById(currentShapeId);
     return shape.fn(currentPhrase(), repeatCount, {
@@ -149,10 +200,16 @@
     if (!note) return;
     note.innerHTML = "";
     if (!rawText) return;
-    let copies = SHAPES_API.clampCount(repeatCount);
+    let copies = shapeCount();
     let lines = rawText.split("\n").length;
     note.appendChild(el("span", "scroll-fit-count",
       "Output: " + copies + " copies · " + charLen(rawText) + " characters · " + lines + " lines"));
+    /* Say it when the shape built fewer copies than were asked for, rather
+       than letting the count read 1000 over a 200-line staircase. */
+    if (copies < SHAPES_API.clampCount(repeatCount)) {
+      note.appendChild(el("span", "scroll-fit-count",
+        shapeById(currentShapeId).label + " stops at " + copies + " copies, because each line indents further than the last. Block, Inline, the pyramids and Box Grid go to " + SHAPES_API.MAX_COUNT + "."));
+    }
   }
 
   /* --------------------------------------------------------------------------
@@ -167,7 +224,7 @@
   }
 
   function shareParams() {
-    return { shape: currentShapeId, n: SHAPES_API.clampCount(repeatCount) };
+    return { shape: currentShapeId, n: shapeCount() };
   }
 
   function buildCard(name, text) {
@@ -217,36 +274,42 @@
     if (!grid) return;
     if (lazyObserver) { lazyObserver.disconnect(); lazyObserver = null; }
     grid.innerHTML = "";
+    let token = ++renderToken;
 
     let rawText = buildArrangement();
     renderNote(rawText);
     if (!rawText) return;
 
-    /* Compute every style's output, collapsing identical results. The plain
-       (unstyled) block is the primary want on this page ("sorry 100 times"),
-       so it leads as its own "Normal" card before the Unicode styles. */
-    let items = [];
-    let seen = {};
-
+    /* The plain (unstyled) block is the primary want on this page ("sorry
+       100 times"), so it leads as its own "Normal" card, built at once. The
+       Unicode styles follow, collapsing identical results. */
     let plain = makePlatformSafe(rawText);
-    items.push({ name: "Normal", text: plain });
+    let items = [{ name: "Normal", text: plain }];
+    let seen = {};
     seen[plain] = true;
+    grid.appendChild(buildCard("Normal", plain));
 
-    Object.keys(stylesRegistry).forEach(function (name) {
-      if (items.length >= MAX_STYLE_CARDS) return;
-      let styled = makePlatformSafe(applyStylePerLine(rawText, name));
-      if (seen[styled]) return;
-      seen[styled] = true;
-      items.push({ name: name, text: styled });
-    });
+    if (rawText.length > STYLE_OUTPUT_BUDGET || distinctStyleLength(rawText) > STYLE_CHAR_BUDGET) {
+      let note = $("#repeatNote");
+      if (note) {
+        note.appendChild(el("span", "scroll-fit-count",
+          "Font styles are skipped for a block this large, so the page stays responsive. The plain block above is complete; a lower count or a shorter phrase brings the styled cards back."));
+      }
+      if (UTG && UTG.revealSharedCard) UTG.revealSharedCard(grid);
+      return;
+    }
 
-    items.slice(0, INITIAL_CARDS).forEach(function (item) {
-      grid.appendChild(buildCard(item.name, item.text));
-    });
-
-    if (UTG && UTG.revealSharedCard) UTG.revealSharedCard(grid);
-
-    if (items.length > INITIAL_CARDS) {
+    let names = Object.keys(stylesRegistry);
+    let next = 0;
+    let revealed = false;
+    function reveal() {
+      if (revealed) return;
+      revealed = true;
+      if (UTG && UTG.revealSharedCard) UTG.revealSharedCard(grid);
+    }
+    function finish() {
+      reveal();
+      if (items.length <= INITIAL_CARDS) return;
       let sentinel = el("div", "scroll-lazy-sentinel");
       grid.appendChild(sentinel);
       let renderRest = function () {
@@ -266,6 +329,22 @@
         renderRest();
       }
     }
+    function step() {
+      if (token !== renderToken) return;   // a newer render replaced this one
+      let began = performance.now();
+      while (next < names.length && items.length < MAX_STYLE_CARDS && performance.now() - began < STYLE_SLICE_MS) {
+        let name = names[next++];
+        let styled = makePlatformSafe(applyStylePerLine(rawText, name));
+        if (seen[styled]) continue;
+        seen[styled] = true;
+        items.push({ name: name, text: styled });
+        if (items.length <= INITIAL_CARDS) grid.appendChild(buildCard(name, styled));
+        if (items.length === INITIAL_CARDS) reveal();
+      }
+      if (next < names.length && items.length < MAX_STYLE_CARDS) { setTimeout(step, 0); return; }
+      finish();
+    }
+    step();
   }
 
   /* --------------------------------------------------------------------------
@@ -289,6 +368,22 @@
         let input = $("#repeatPhraseInput");
         if (!input) return;
         input.value = phrase;
+        renderResults();
+      });
+      host.appendChild(chip);
+    });
+    /* Quick sets fill the phrase, the count and the arrangement in one tap:
+       "❤️ ×1000" is the whole job for someone who came for 1000 hearts. */
+    (DATA.QUICK_SETS || []).forEach(function (set) {
+      let chip = el("button", "scroll-preset-chip", set.label);
+      chip.type = "button";
+      chip.addEventListener("click", function () {
+        let input = $("#repeatPhraseInput");
+        if (!input) return;
+        input.value = set.phrase;
+        if (set.shape) selectShape(set.shape);
+        if (set.divider === "none") selectDivider(pickDefaultDivider());
+        setCount(set.count);
         renderResults();
       });
       host.appendChild(chip);
@@ -330,17 +425,22 @@
       btn.appendChild(el("span", "repeat-shape-name", shape.label));
 
       btn.addEventListener("click", function () {
-        currentShapeId = shape.id;
-        $$(".repeat-shape-option", host).forEach(function (b) {
-          let on = b.dataset.shape === currentShapeId;
-          b.classList.toggle("active", on);
-          b.setAttribute("aria-pressed", String(on));
-        });
-        syncContextControls();
+        selectShape(shape.id);
         renderResults();
       });
       host.appendChild(btn);
     });
+  }
+
+  function selectShape(id) {
+    if (!SHAPES.some(function (s) { return s.id === id; })) return;
+    currentShapeId = id;
+    $$("#repeatShapePicker .repeat-shape-option").forEach(function (b) {
+      let on = b.dataset.shape === currentShapeId;
+      b.classList.toggle("active", on);
+      b.setAttribute("aria-pressed", String(on));
+    });
+    syncContextControls();
   }
 
   /* Show the divider block only for inline/block, the columns block only for
@@ -357,7 +457,7 @@
      Count controls — quick-fill chips + a slider bounded by MAX_REPEATS
      -------------------------------------------------------------------------- */
   function setCount(n) {
-    repeatCount = Math.max(1, Math.min(B.MAX_REPEATS, Math.floor(Number(n)) || 1));
+    repeatCount = SHAPES_API.clampCount(n);
     let range = $("#repeatCountRange");
     if (range) range.value = String(repeatCount);
     let label = $("#repeatCountValue");
@@ -388,7 +488,7 @@
 
     let range = $("#repeatCountRange");
     if (range) {
-      range.max = String(B.MAX_REPEATS);
+      range.max = String(SHAPES_API.MAX_COUNT);
       range.value = String(repeatCount);
       let label = $("#repeatCountValue");
       if (label) label.textContent = String(repeatCount);
@@ -451,13 +551,20 @@
       let chip = el("button", "vertical-chip" + (active ? " active" : ""), item.label);
       chip.type = "button";
       chip.title = item.symbol ? "Divider: " + item.symbol : "No divider";
+      chip.dataset.dividerId = item.id;
       chip.addEventListener("click", function () {
-        currentDivider = item;
-        $$(".vertical-chip", gridHost).forEach(function (c) { c.classList.remove("active"); });
-        chip.classList.add("active");
+        selectDivider(item);
         renderResults();
       });
       gridHost.appendChild(chip);
+    });
+  }
+
+  function selectDivider(item) {
+    if (!item) return;
+    currentDivider = item;
+    $$("#repeatDividerGrid .vertical-chip").forEach(function (c) {
+      c.classList.toggle("active", c.dataset.dividerId === item.id);
     });
   }
 
@@ -477,7 +584,7 @@
       if (text && input && !input.value) input.value = text;
 
       let n = params.get("n") || params.get("count");
-      if (n != null && n !== "") repeatCount = Math.max(1, Math.min(B.MAX_REPEATS, parseInt(n, 10) || repeatCount));
+      if (n != null && n !== "") repeatCount = SHAPES_API.clampCount(parseInt(n, 10) || repeatCount);
 
       let shape = params.get("shape");
       if (shape && SHAPES.some(function (s) { return s.id === shape; })) currentShapeId = shape;

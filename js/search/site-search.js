@@ -131,6 +131,57 @@
     return out;
   }
 
+  /* ── Zero-result reporting ─────────────────────────────────────────────────
+     site_search records a search that ended in a click. It cannot see the
+     searches that found nothing, which are the ones that say what the site is
+     missing. site_search_no_results records those: once per settled query (the
+     visitor stopped typing for DELAY ms), never per keystroke, and never twice
+     for the same term in a row. Same term policy as site_search: trimmed, at
+     most 100 characters. Pure, with injected timers, so the test can drive it. */
+  const NO_RESULTS_DELAY = 800;
+
+  function noResultsPayload(term, locale) {
+    return {
+      event: "site_search_no_results",
+      search_term: String(term || "").trim().slice(0, 100),
+      locale: locale,
+      search_surface: "header"
+    };
+  }
+
+  function createNoResultsReporter(report, delay, timers) {
+    // Wrapped, not stored bare: a window timer called as a method of another
+    // object throws "Illegal invocation".
+    const clock = timers || {
+      set: function (fn, ms) { return setTimeout(fn, ms); },
+      clear: function (id) { clearTimeout(id); }
+    };
+    let timer = null;
+    let reported = "";
+    function cancel() {
+      if (timer !== null) { clock.clear(timer); timer = null; }
+    }
+    return {
+      // The list rendered with nothing in it for this query.
+      miss: function (term) {
+        const settled = String(term || "").trim().slice(0, 100);
+        cancel();
+        if (!settled || settled === reported) return;
+        timer = clock.set(function () {
+          timer = null;
+          reported = settled;
+          report(settled);
+        }, delay);
+      },
+      // The list rendered results, or the box was emptied: nothing is pending,
+      // and the same term typed again later is a new search.
+      hit: function () {
+        cancel();
+        reported = "";
+      }
+    };
+  }
+
   /* ── Index loading ─────────────────────────────────────────────────────── */
 
   const cache = {};
@@ -187,6 +238,10 @@
     let results = [];
     let active = -1;
     let seq = 0;
+    const noResults = createNoResultsReporter(function (term) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(noResultsPayload(term, locale));
+    }, NO_RESULTS_DELAY);
 
     function close() {
       list.hidden = true;
@@ -210,11 +265,13 @@
       results = query ? merged(query) : [];
       active = -1;
       input.removeAttribute("aria-activedescendant");
-      if (!query.trim()) { close(); return; }
+      if (!query.trim()) { noResults.hit(); close(); return; }
       if (!results.length) {
+        noResults.miss(query);
         if (!emptyText) { close(); return; }
         list.innerHTML = '<li class="site-search-empty" role="presentation">' + escapeHtml(emptyText) + "</li>";
       } else {
+        noResults.hit();
         list.innerHTML = results.map(function (r, i) {
           const label = labels[r.section] || "";
           return '<li class="site-search-item" role="option" id="siteSearchOpt' + i + '" aria-selected="false">' +
@@ -317,6 +374,8 @@
     normalize: normalize,
     tokenize: tokenize,
     prepare: prepare,
-    search: search
+    search: search,
+    noResultsPayload: noResultsPayload,
+    createNoResultsReporter: createNoResultsReporter
   };
 })();

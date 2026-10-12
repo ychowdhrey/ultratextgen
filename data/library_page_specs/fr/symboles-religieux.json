@@ -126,6 +126,26 @@
       ]
     },
     {
+      "id": "highs-and-lows",
+      "label": "Chrétiens",
+      "h2": "Symbole « Dieu est plus grand que les hauts et les bas »",
+      "intro": "Une devise de foi moderne, venue de l'anglais, qu'on voit en tatouage, sur des t-shirts et dans les bios : G pour God (Dieu), > pour « plus grand que », puis un sommet (^ ou ∧) pour les hauts et un creux (v ou ∨) pour les bas. Les trois formes disent la même chose ; G>^v est du texte clavier et s'affiche sur tous les appareils.",
+      "symbols": [
+        {
+          "char": "G>^v",
+          "label": "Forme clavier"
+        },
+        {
+          "char": "G>ΛV",
+          "label": "Avec lambda grec"
+        },
+        {
+          "char": "G>∧∨",
+          "label": "Avec signes logiques"
+        }
+      ]
+    },
+    {
       "id": "islamic",
       "label": "Islamiques",
       "h2": "Symboles Islamiques",

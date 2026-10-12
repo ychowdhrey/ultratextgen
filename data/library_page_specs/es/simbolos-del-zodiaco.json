@@ -206,7 +206,7 @@
    "id": "astrological-symbols",
    "label": "",
    "h2": "Símbolos de Notación Astrológica",
-   "intro": "Símbolos adicionales de notación astrológica.",
+   "intro": "Símbolos adicionales de notación astrológica. Unicode no tiene un carácter para la semicuadratura (45°), así que las cartas astrales usan el signo de ángulo ∠.",
    "symbols": [
     {
      "char": "☊",
@@ -235,6 +235,22 @@
     {
      "char": "△",
      "label": "Trígono"
+    },
+    {
+     "char": "⚺",
+     "label": "Semisextil (30°)"
+    },
+    {
+     "char": "∠",
+     "label": "Semicuadratura (45°)"
+    },
+    {
+     "char": "⚼",
+     "label": "Sesquicuadratura (135°)"
+    },
+    {
+     "char": "⚻",
+     "label": "Quincuncio (150°)"
     }
    ]
   },

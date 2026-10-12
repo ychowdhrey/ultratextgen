@@ -126,6 +126,26 @@
       ]
     },
     {
+      "id": "highs-and-lows",
+      "label": "Christlich",
+      "h2": "Symbol „Gott ist größer als die Höhen und Tiefen“",
+      "intro": "Ein moderner Glaubensspruch für Tattoos, Shirts und Bios, aus dem Englischen übernommen: G steht für God (Gott), > für „größer als“, dann ein Gipfel (^ oder ∧) für die Höhen und ein Tal (v oder ∨) für die Tiefen. Alle drei Formen bedeuten dasselbe; G>^v ist reiner Tastaturtext und wird auf jedem Gerät angezeigt.",
+      "symbols": [
+        {
+          "char": "G>^v",
+          "label": "Tastaturform"
+        },
+        {
+          "char": "G>ΛV",
+          "label": "Mit griechischem Lambda"
+        },
+        {
+          "char": "G>∧∨",
+          "label": "Mit Logikzeichen"
+        }
+      ]
+    },
+    {
       "id": "islamic",
       "label": "Islamisch",
       "h2": "Islamische Symbole",

@@ -127,6 +127,10 @@
     // unverified. Verified 2026-09-25.
     lienquan: { label: "Liên Quân Mobile", limit: 12, min: 1, weighted: false, noSpace: true, field: "display" },
     standoff2: { label: "Standoff 2", limit: 16, min: 2, weighted: false, noSpace: false, field: "display" },
+    // Display names: at least 1 and at most 32 characters, special characters
+    // and emojis allowed (Discord Help, "New Usernames & Display Names",
+    // support.discord.com/hc/en-us/articles/12620128861463, updated
+    // 2026-10-08, read 2026-10-08).
     discord: { label: "Discord", limit: 32, min: 1, weighted: false, noSpace: false, field: "display" },
     tiktok: { label: "TikTok", limit: 30, min: 1, weighted: false, noSpace: false, field: "display" },
     // Epic display name: 3-16 characters, changeable once every two weeks.
@@ -315,7 +319,27 @@
     roblox: { label: "Roblox", kind: "folded", nameRule: "robloxDisplay" },
     coc: { label: "Clash of Clans", kind: "identifier" },
     clashroyale: { label: "Clash Royale", kind: "identifier" },
-    discord: { label: "Discord", kind: "folded", nameRule: "discord" }
+    // Discord has a dedicated tag: the Server Tag. Discord Help, "Server Tags"
+    // (support.discord.com/hc/en-us/articles/31444248479639, updated
+    // 2026-10-08, read 2026-10-08): a custom 4-character label paired with an
+    // icon; a server owner or admin unlocks it with 3 Server Boosts and picks
+    // the characters ("alphanumeric and certain special characters"; "certain
+    // characters, spaces, and emojis are not supported"), badge and colour;
+    // any member of the server may choose to show it on their profile, and it
+    // then appears next to their name across Discord. Tags are not unique.
+    // Discord does not list the special characters it accepts, so only length
+    // and spaces are checked, and `plainPattern` marks the documented set so a
+    // styled tag is flagged as unconfirmed rather than passed. `nameRule`
+    // stays because a tag typed into a nickname still spends that budget.
+    discord: {
+      label: "Discord", kind: "dedicated",
+      limit: 4, noSpace: true,
+      plainPattern: /^[A-Za-z0-9]+$/,
+      nameRule: "discord",
+      summary: "its own tag, the Server Tag: up to 4 characters, letters, numbers and some special characters. Spaces and emojis are not supported.",
+      note: "A server owner or admin unlocks it with 3 Server Boosts and chooses the tag, badge and colour. Each member decides whether to show it on their profile. Discord does not list which special characters it accepts (Discord Help, read October 8, 2026).",
+      source: "Discord Help, Server Tags"
+    }
   };
 
   /* Validate a clan tag against a game's TAG field.
@@ -360,6 +384,9 @@
     }
     out.level = out.issues.length ? "fail" : "ok";
     out.ok = !out.issues.length;
+    // A field whose full charset is unpublished: letters and digits are the
+    // documented set, anything else is unconfirmed (not refused).
+    out.undocumented = !!(f.plainPattern && tag && !out.issues.length && !f.plainPattern.test(tag));
     return out;
   }
 

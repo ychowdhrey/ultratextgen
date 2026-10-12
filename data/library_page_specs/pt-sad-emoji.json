@@ -1,10 +1,10 @@
 {
   "slug": "emoji-triste",
   "title": "Emoji Triste 😢 — Todas as Variações para Copiar | UltraTextGen",
-  "meta_description": "Emoji triste 😢 😞 😔 para copiar e colar: rostos chorando, coração partido, rostos esgotados e kaomoji tristes. Um clique e está copiado.",
+  "meta_description": "Emoji triste 😢 😞 😔 para copiar e colar: rostos chorando, coração partido, rostos esgotados, emoticons como :( e alguns kaomoji tristes. Um clique e está copiado.",
   "breadcrumb": "Emoji Triste",
   "hero_h1": "Emoji Triste",
-  "hero_tagline": "Todos os graus de tristeza: do rosto levemente contrariado ao choro, mais os kaomoji tristes.",
+  "hero_tagline": "Todos os graus de tristeza: do rosto levemente contrariado ao choro, mais emoticons de texto e alguns kaomoji tristes.",
   "intro": "«Triste» não é uma emoção só, e às vezes um emoji não dá conta. Esta página organiza os rostos do mais leve ao mais pesado, junta os símbolos que a gente põe no lugar das palavras e fecha com kaomoji para quando um rostinho redondo não diz o que você quer. Clique para copiar.",
   "copy_pattern": "collection",
   "sections": [
@@ -89,6 +89,82 @@
       ]
     },
     {
+      "id": "grief-mourning",
+      "label": "Emoji de Luto e Condolências",
+      "h2": "Emoji de Luto e Condolências",
+      "intro": "Os símbolos usados em mensagens de condolências e publicações em memória de alguém. 🕯️ representa a lembrança, 🕊️ a paz, 🖤 o luto, 🤍 um apoio discreto e 💐 as flores que você levaria.",
+      "symbols": [
+        {
+          "char": "🕯️",
+          "label": "Vela"
+        },
+        {
+          "char": "🕊️",
+          "label": "Pomba"
+        },
+        {
+          "char": "🖤",
+          "label": "Coração Preto"
+        },
+        {
+          "char": "🤍",
+          "label": "Coração Branco"
+        },
+        {
+          "char": "🥀",
+          "label": "Flor Murcha"
+        },
+        {
+          "char": "💐",
+          "label": "Buquê"
+        },
+        {
+          "char": "🪦",
+          "label": "Lápide"
+        },
+        {
+          "char": "❤️‍🩹",
+          "label": "Coração Remendado"
+        }
+      ]
+    },
+    {
+      "id": "condolence-combos",
+      "label": "Combos de Emoji para Condolências e Homenagens",
+      "h2": "Combos de Emoji para Condolências e Homenagens",
+      "intro": "Sequências curtas para fechar uma mensagem de apoio ou legendar a foto de uma homenagem. Numa mensagem para quem está de luto, 🕊️ e 🤍 soam mais suaves que 🪦, que combina mais com uma homenagem pública.",
+      "symbols": [
+        {
+          "char": "🕯️🕊️🤍",
+          "label": "Lembrança"
+        },
+        {
+          "char": "🕊️🤍",
+          "label": "Descanse em Paz"
+        },
+        {
+          "char": "🖤🥀🕯️",
+          "label": "Luto"
+        },
+        {
+          "char": "💐🤍",
+          "label": "Flores de Condolência"
+        },
+        {
+          "char": "🙏🤍",
+          "label": "Pensando em Você"
+        },
+        {
+          "char": "❤️‍🩹🤍",
+          "label": "Cura"
+        },
+        {
+          "char": "🪦🥀🕯️",
+          "label": "Homenagem"
+        }
+      ]
+    },
+    {
       "id": "drained",
       "label": "Rostos Decepcionados e Esgotados",
       "h2": "Rostos Decepcionados e Esgotados",
@@ -125,44 +201,64 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticons de texto",
+      "h2": "Emoticons Tristes de Texto",
+      "intro": "A carinha triste original, digitada com dois pontos. Aparece igual em qualquer celular e teclado.",
+      "symbols": [
+        {
+          "char": ":(",
+          "label": "Carinha triste"
+        },
+        {
+          "char": ":-(",
+          "label": "Cara fechada com nariz"
+        },
+        {
+          "char": "=(",
+          "label": "Tristeza suave"
+        },
+        {
+          "char": ":c",
+          "label": "Beicinho triste"
+        },
+        {
+          "char": ":/",
+          "label": "Cara de desconforto"
+        },
+        {
+          "char": "D:",
+          "label": "Cara de desânimo"
+        }
+      ]
+    },
+    {
       "id": "kaomoji",
       "label": "Kaomoji Tristes",
       "h2": "Kaomoji Tristes",
-      "intro": "Carinhas feitas de caracteres, prontas para colar.",
+      "intro": "Algumas carinhas japonesas cabisbaixas para começar.",
       "symbols": [
         {
           "char": "(μ_μ)",
           "label": "Kaomoji Olhos Baixos"
         },
         {
-          "char": "(._.)",
-          "label": "Kaomoji Olhar Vazio"
-        },
-        {
           "char": "(´。＿。｀)",
           "label": "Kaomoji Cabeça Baixa"
-        },
-        {
-          "char": "(◞‸◟)",
-          "label": "Kaomoji Ar Sombrio"
         },
         {
           "char": "( ´•︵•` )",
           "label": "Kaomoji Bico Triste"
         },
         {
-          "char": "（ ｉдｉ ）",
-          "label": "Kaomoji Lágrimas Apagadas"
-        },
-        {
           "char": "(〒﹏〒)",
           "label": "Kaomoji Coração Pesado"
-        },
-        {
-          "char": "( ︶︿︶)",
-          "label": "Kaomoji Suspiro Resignado"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/pt/library/sad-kaomoji/",
+        "text": "Ver todos os kaomoji tristes"
+      }
     }
   ],
   "faq_h2": "Perguntas Frequentes sobre o Emoji Triste",
@@ -190,8 +286,8 @@
   ],
   "editorial_sections": [
     {
-      "h2": "Por Que Existem Tantos Emojis Tristes",
-      "body": "O Unicode não colocou quinze rostos tristes por exagero: cada um entrou para um uso que os anteriores não cobriam. 😞 vem dos primeiros conjuntos japoneses, onde servia para pedir desculpa. 🥺 chegou bem depois e quase na hora foi relido como fofo em vez de triste. 🫠 e 🫤 são de 2021 e falam de esgotamento, não de dor. A distância entre o que o nome Unicode diz e o que as pessoas fazem com o emoji é real — por isso aqui eles estão em ordem de intensidade, e não de data de entrada."
+      "h2": "Por que existem tantos emojis tristes",
+      "body": "O Unicode não colocou quinze rostos tristes por exagero: cada um foi incluído para um uso que os anteriores não cobriam. 😞 vem dos primeiros conjuntos de emoji japoneses. 🥺 chegou bem depois e quase na hora foi relido como fofo em vez de triste. 🫠 e 🫤 são de 2021 e falam de esgotamento, não de dor. A distância entre o que o nome Unicode diz e o que as pessoas fazem com o emoji é real — por isso aqui eles estão em ordem de intensidade, e não de data de entrada."
     }
   ],
   "collection_section": {
@@ -257,7 +353,7 @@
   ],
   "canonical": "https://ultratextgen.com/pt/library/emoji-triste/",
   "date_published": "2026-08-10",
-  "date_modified": "2026-08-10",
+  "date_modified": "2026-10-09",
   "lang": "pt",
   "page_type": "library",
   "hreflang": [

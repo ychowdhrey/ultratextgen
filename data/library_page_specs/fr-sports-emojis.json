@@ -161,6 +161,42 @@
         {
           "char": "🛶",
           "label": "Canoë"
+        },
+        {
+          "char": "🎣",
+          "label": "Canne à Pêche"
+        }
+      ]
+    },
+    {
+      "id": "fishing-combos",
+      "label": "Pêche",
+      "h2": "Combos d’Emojis de Pêche",
+      "intro": "Unicode ne compte qu’un seul emoji de pêche, 🎣 la canne à pêche, alors ces combos l’associent à des poissons, à l’eau et à l’appât pour légender une sortie ou une belle prise. Chaque bouton copie le combo entier.",
+      "symbols": [
+        {
+          "char": "🎣🐟",
+          "label": "Canne et poisson"
+        },
+        {
+          "char": "🎣🐠🌊",
+          "label": "Pêche sur le récif"
+        },
+        {
+          "char": "🚣🎣🌅",
+          "label": "Sortie en barque à l’aube"
+        },
+        {
+          "char": "🧊🎣❄️",
+          "label": "Pêche sur glace"
+        },
+        {
+          "char": "🪱🎣🐟",
+          "label": "Ver d’appât et prise"
+        },
+        {
+          "char": "🎣🦈",
+          "label": "Requin au bout de la ligne"
         }
       ]
     },

@@ -34,9 +34,10 @@
   // to a plain ASCII letter instead. Measured 2026-08-31: 63 of 106 non-redact
   // styles do this, regardless of a style's own accentSafe flag, so the notice
   // is the only thing that can warn the user. What it costs them:
-  //     Straße → Strase   (ß→s, not ss — a letter is lost)
-  //     cœur   → cour     (a different French word)
-  //     Paweł  → Pawel · æble → able · Đông → Dông · ışık → isik
+  //     Paweł  → Pawel · Đông → Dông
+  // Turkish ı passes through as typed (a dotted i would be another letter).
+  // ß æ œ are the exception: they stand for two letters, so renderer.js writes
+  // them out (Straße → Strasse, cœur → coeur) and nothing is lost.
   // The original test covered only đ/Đ/ı, so ł ø ß æ œ þ ð ħ could never
   // trigger it — silently, on the eight European locales that need it most.
   var UNDECOMPOSABLE = /[łŁđĐıøØßẞæÆœŒðÐþÞħĦ]/;

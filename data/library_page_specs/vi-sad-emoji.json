@@ -1,10 +1,10 @@
 {
   "slug": "emoji-buon",
   "title": "Emoji Buồn 😢 — Đủ Kiểu Mặt Buồn Copy Paste | UltraTextGen",
-  "meta_description": "Emoji buồn 😢 😞 😔 để copy paste: mặt khóc, trái tim tan vỡ, mặt kiệt sức và kaomoji buồn. Bấm một cái là sao chép xong.",
+  "meta_description": "Emoji buồn 😢 😞 😔 để copy paste: mặt khóc, trái tim tan vỡ, mặt kiệt sức, emoticon gõ phím như :( và vài kaomoji buồn. Bấm một cái là sao chép xong.",
   "breadcrumb": "Emoji Buồn",
   "hero_h1": "Emoji Buồn",
-  "hero_tagline": "Đủ mọi mức độ buồn: từ mặt hơi xị xuống cho tới khóc oà, kèm cả kaomoji buồn.",
+  "hero_tagline": "Đủ mọi mức độ buồn: từ mặt hơi xị xuống cho tới khóc oà, kèm emoticon gõ phím và vài kaomoji buồn.",
   "intro": "«Buồn» không phải chỉ một cảm xúc, và đôi khi một emoji là không đủ. Trang này xếp các khuôn mặt từ nhẹ tới nặng, thêm những ký hiệu người ta chèn vào thay lời nói, rồi tới kaomoji cho lúc một cái mặt tròn không diễn tả nổi. Bấm để sao chép.",
   "copy_pattern": "collection",
   "sections": [
@@ -89,6 +89,82 @@
       ]
     },
     {
+      "id": "grief-mourning",
+      "label": "Emoji Đau Buồn và Tưởng Niệm",
+      "h2": "Emoji Đau Buồn và Tưởng Niệm",
+      "intro": "Các ký hiệu dùng trong lời chia buồn và bài đăng tưởng niệm. 🕯️ tượng trưng cho sự tưởng nhớ, 🕊️ cho bình yên, 🖤 cho tang tóc, 🤍 cho sự cảm thông nhẹ nhàng và 💐 cho bó hoa bạn mang đến viếng.",
+      "symbols": [
+        {
+          "char": "🕯️",
+          "label": "Ngọn Nến"
+        },
+        {
+          "char": "🕊️",
+          "label": "Chim Bồ Câu"
+        },
+        {
+          "char": "🖤",
+          "label": "Trái Tim Đen"
+        },
+        {
+          "char": "🤍",
+          "label": "Trái Tim Trắng"
+        },
+        {
+          "char": "🥀",
+          "label": "Bông Hoa Héo"
+        },
+        {
+          "char": "💐",
+          "label": "Bó Hoa"
+        },
+        {
+          "char": "🪦",
+          "label": "Bia Mộ"
+        },
+        {
+          "char": "❤️‍🩹",
+          "label": "Trái Tim Băng Bó"
+        }
+      ]
+    },
+    {
+      "id": "condolence-combos",
+      "label": "Combo Emoji Chia Buồn",
+      "h2": "Combo Emoji Chia Buồn",
+      "intro": "Những bộ ngắn để kết thúc lời chia buồn hoặc làm chú thích cho ảnh tưởng niệm. Khi nhắn cho người đang có tang, 🕊️ và 🤍 nhẹ nhàng hơn 🪦, vốn hợp với bài tưởng niệm công khai hơn.",
+      "symbols": [
+        {
+          "char": "🕯️🕊️🤍",
+          "label": "Tưởng Nhớ"
+        },
+        {
+          "char": "🕊️🤍",
+          "label": "Yên Nghỉ"
+        },
+        {
+          "char": "🖤🥀🕯️",
+          "label": "Để Tang"
+        },
+        {
+          "char": "💐🤍",
+          "label": "Hoa Chia Buồn"
+        },
+        {
+          "char": "🙏🤍",
+          "label": "Nghĩ Đến Bạn"
+        },
+        {
+          "char": "❤️‍🩹🤍",
+          "label": "Chữa Lành"
+        },
+        {
+          "char": "🪦🥀🕯️",
+          "label": "Tưởng Niệm"
+        }
+      ]
+    },
+    {
       "id": "drained",
       "label": "Mặt Thất Vọng và Kiệt Sức",
       "h2": "Mặt Thất Vọng và Kiệt Sức",
@@ -125,44 +201,64 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticon",
+      "h2": "Emoticon Buồn Dạng Văn Bản",
+      "intro": "Mặt buồn nguyên bản, gõ bằng dấu hai chấm. Hiển thị giống nhau trên mọi điện thoại và bàn phím.",
+      "symbols": [
+        {
+          "char": ":(",
+          "label": "Emoticon Mặt Buồn"
+        },
+        {
+          "char": ":-(",
+          "label": "Emoticon Mặt Xị Có Mũi"
+        },
+        {
+          "char": "=(",
+          "label": "Emoticon Xị Mặt Nhẹ"
+        },
+        {
+          "char": ":c",
+          "label": "Emoticon Bĩu Môi Buồn"
+        },
+        {
+          "char": ":/",
+          "label": "Emoticon Bứt Rứt"
+        },
+        {
+          "char": "D:",
+          "label": "Emoticon Thất Vọng"
+        }
+      ]
+    },
+    {
       "id": "kaomoji",
       "label": "Kaomoji Buồn",
       "h2": "Kaomoji Buồn",
-      "intro": "Mặt ghép từ ký tự, dán được ngay.",
+      "intro": "Vài mặt chữ kiểu Nhật buồn thiu để bạn bắt đầu.",
       "symbols": [
         {
           "char": "(μ_μ)",
           "label": "Kaomoji Cụp Mắt"
         },
         {
-          "char": "(._.)",
-          "label": "Kaomoji Nhìn Vô Hồn"
-        },
-        {
           "char": "(´。＿。｀)",
           "label": "Kaomoji Cúi Gằm"
-        },
-        {
-          "char": "(◞‸◟)",
-          "label": "Kaomoji Vẻ Ảm Đạm"
         },
         {
           "char": "( ´•︵•` )",
           "label": "Kaomoji Bĩu Môi Buồn"
         },
         {
-          "char": "（ ｉдｉ ）",
-          "label": "Kaomoji Nước Mắt Lặng"
-        },
-        {
           "char": "(〒﹏〒)",
           "label": "Kaomoji Nặng Lòng"
-        },
-        {
-          "char": "( ︶︿︶)",
-          "label": "Kaomoji Thở Dài Cam Chịu"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/vi/library/kaomoji/",
+        "text": "Xem tất cả kaomoji"
+      }
     }
   ],
   "faq_h2": "Câu Hỏi Thường Gặp về Emoji Buồn",
@@ -190,8 +286,8 @@
   ],
   "editorial_sections": [
     {
-      "h2": "Vì Sao Có Nhiều Emoji Buồn Đến Thế",
-      "body": "Unicode không thêm mười lăm khuôn mặt buồn cho vui: mỗi cái ra đời để phục vụ một tình huống mà những cái trước chưa lo được. 😞 đến từ các bộ emoji Nhật đời đầu, vốn dùng khi xin lỗi. 🥺 xuất hiện muộn hơn nhiều và gần như lập tức bị đọc theo nghĩa nũng nịu chứ không phải buồn. 🫠 và 🫤 là của năm 2021, nói về sự kiệt sức chứ không phải nỗi đau. Khoảng cách giữa cái tên Unicode và cách người ta thật sự dùng là có thật — nên trang này xếp theo mức độ chứ không theo năm bổ sung."
+      "h2": "Vì sao có nhiều emoji buồn đến thế",
+      "body": "Unicode không thêm mười lăm khuôn mặt buồn cho vui: mỗi cái ra đời để phục vụ một tình huống mà những cái trước chưa đáp ứng được. 😞 đến từ các bộ emoji Nhật đời đầu. 🥺 xuất hiện muộn hơn nhiều và gần như lập tức bị đọc theo nghĩa nũng nịu chứ không phải buồn. 🫠 và 🫤 là của năm 2021, nói về sự kiệt sức chứ không phải nỗi đau. Khoảng cách giữa cái tên Unicode và cách người ta thật sự dùng là có thật — nên trang này xếp theo mức độ chứ không theo năm bổ sung."
     }
   ],
   "collection_section": {
@@ -257,7 +353,7 @@
   ],
   "canonical": "https://ultratextgen.com/vi/library/emoji-buon/",
   "date_published": "2026-08-10",
-  "date_modified": "2026-08-10",
+  "date_modified": "2026-10-09",
   "lang": "vi",
   "page_type": "library",
   "hreflang": [

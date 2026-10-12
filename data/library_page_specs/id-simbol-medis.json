@@ -111,6 +111,82 @@
           "label": "Hati Diperban"
         }
       ]
+    },
+    {
+      "id": "dental",
+      "label": "Gigi",
+      "h2": "Simbol Gigi & Kedokteran Gigi",
+      "intro": "🦷 dan 🪥 adalah emoji gigi sehari-hari. Lima belas karakter DENTISTRY SYMBOL (U+23BE sampai U+23CC) adalah tanda teks hitam-putih dari notasi Palmer, sistem pencatatan gigi yang memberi nomor 1 sampai 8 pada tiap gigi dari garis tengah dan membingkai nomor itu dengan kurung berbentuk L yang menunjukkan kuadran mulut tempat gigi itu berada. Blok ini juga punya versi kurung dengan lingkaran, segitiga, atau gelombang.",
+      "symbols": [
+        {
+          "char": "🦷",
+          "label": "Gigi"
+        },
+        {
+          "char": "🪥",
+          "label": "Sikat Gigi"
+        },
+        {
+          "char": "⎾",
+          "label": "Vertikal dan Kanan Atas"
+        },
+        {
+          "char": "⎿",
+          "label": "Vertikal dan Kanan Bawah"
+        },
+        {
+          "char": "⏀",
+          "label": "Vertikal dengan Lingkaran"
+        },
+        {
+          "char": "⏁",
+          "label": "Bawah dan Horizontal dengan Lingkaran"
+        },
+        {
+          "char": "⏂",
+          "label": "Atas dan Horizontal dengan Lingkaran"
+        },
+        {
+          "char": "⏃",
+          "label": "Vertikal dengan Segitiga"
+        },
+        {
+          "char": "⏄",
+          "label": "Bawah dan Horizontal dengan Segitiga"
+        },
+        {
+          "char": "⏅",
+          "label": "Atas dan Horizontal dengan Segitiga"
+        },
+        {
+          "char": "⏆",
+          "label": "Vertikal dan Gelombang"
+        },
+        {
+          "char": "⏇",
+          "label": "Bawah dan Horizontal dengan Gelombang"
+        },
+        {
+          "char": "⏈",
+          "label": "Atas dan Horizontal dengan Gelombang"
+        },
+        {
+          "char": "⏉",
+          "label": "Bawah dan Horizontal"
+        },
+        {
+          "char": "⏊",
+          "label": "Atas dan Horizontal"
+        },
+        {
+          "char": "⏋",
+          "label": "Vertikal dan Kiri Atas"
+        },
+        {
+          "char": "⏌",
+          "label": "Vertikal dan Kiri Bawah"
+        }
+      ]
     }
   ],
   "editorial_sections": [

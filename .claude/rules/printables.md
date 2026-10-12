@@ -1,7 +1,7 @@
 ---
 paths:
   - "printables/**"
-  - "{de/zum-ausdrucken,es/imprimibles,fr/imprimables,id/printables,it/da-stampare,nl/om-uit-te-printen,pl/do-druku,pt/imprimiveis,tr/yazdirilabilir}/**"
+  - "{de/zum-ausdrucken,es/imprimibles,fr/imprimables,id/printables,it/da-stampare,nl/om-uit-te-printen,pl/do-druku,pt/imprimiveis,tr/yazdirilabilir,ja/purinto}/**"
   - "js/printables/**"
   - "data/printables_*.json"
   - "data/printable_tool_duplication_exclusions.json"
@@ -38,9 +38,19 @@ worksheets. What they print is a shape, a path or a sum, not text anyone could
 type. That demand is real and belongs to a possible future separate property; do
 not build it under this brand.
 
+**One owner exception (2026-10-04):** `/ja/purinto/unpitsu/` prints 運筆
+pre-writing paths. The owner approved it as a native Japanese school job; it
+does not reopen the boundary for any other page or locale
+(`docs/decisions/printables-scope.md`).
+
 Nothing here bypasses the rest of the rules: a new URL still goes through
 `.claude/rules/content-architecture.md` (Hub-vs-Spoke, "check who already owns it")
 and, for a locale page, `.claude/rules/localization.md`.
+
+**Japanese sheets have their own engine** (`js/printables/jaSheets*.js`): every
+sheet is an SVG whose user unit is a millimetre, exported by rasterising that
+SVG, not by cloning HTML. Its architecture and how a new Japanese page plugs
+in: `docs/printables/ja-worksheets.md`.
 
 Word-search entry is the **long tail and the anti-copying batch feature**, never
 the head terms — `word search maker` is KD 72 and `crossword puzzle maker` KD 56.

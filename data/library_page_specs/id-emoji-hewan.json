@@ -252,7 +252,7 @@
       "id": "birds",
       "label": "Burung",
       "h2": "Emoji Burung",
-      "intro": "Emoji burung dari yang umum sampai yang eksotis.",
+      "intro": "Emoji burung dari yang umum sampai yang eksotis. 🐦‍⬛ Burung Hitam adalah emoji gagak: Emoji 15.0 (2022) menyusunnya dari 🐦 dan ⬛ yang disambung karakter penghubung tak terlihat, jadi perangkat yang lebih lama menampilkan keduanya berdampingan.",
       "symbols": [
         {
           "char": "🐦",
@@ -293,6 +293,14 @@
         {
           "char": "🕊",
           "label": "Merpati"
+        },
+        {
+          "char": "🐦‍⬛",
+          "label": "Burung Hitam (Gagak)"
+        },
+        {
+          "char": "🪶",
+          "label": "Bulu Burung"
         },
         {
           "char": "🪿",

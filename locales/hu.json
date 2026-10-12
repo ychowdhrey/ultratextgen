@@ -133,6 +133,11 @@
       "renderFailed": "Nem sikerült elkészíteni a képet. Próbáld újra.",
       "trayLabel": "Képhez választás",
       "setUnavailable": "Ez a készlet még nem tehető képre."
+    },
+    "symbolLook": {
+      "plain": "Egyszerű változat másolása",
+      "emoji": "Emoji változat másolása",
+      "note": "Egyes alkalmazások így is színesen jelenítik meg."
     }
   }
 }

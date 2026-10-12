@@ -1073,6 +1073,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Quincunx (150°)",
+        "reason": "astrological aspect name, written Quincunx in German (de search: 'quincunx' 260/mo vs 'quinkunx' 20/mo); the degree is a number. Owner decision 2026-10-09",
+        "found_on": "de/library/sternzeichen-symbole/",
+        "added": "2026-10-09"
+      },
+      {
         "string": "Radio",
         "reason": "identical noun in German",
         "found_on": "de/library/tanz-emoji/",
@@ -5147,6 +5153,12 @@
         "reason": "an English meme phrase quoted as the phrase itself — translating it would stop it being the meme",
         "found_on": "id/library/emoji-damai/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Penguin",
+        "reason": "Indonesian for the bird is 'penguin' (KBBI), identical to English; the site's id animal page already labels 🐧 'Penguin' (id search: 'penguin' 40,500/mo vs 'burung penguin' 390/mo). Owner decision 2026-10-09",
+        "found_on": "id/library/kaomoji/",
+        "added": "2026-10-09"
       },
       {
         "string": "Pentagram",

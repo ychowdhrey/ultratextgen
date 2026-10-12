@@ -25,13 +25,13 @@ REPO = os.path.dirname(os.path.dirname(HERE))
 OUT_DIR = os.path.join(REPO, "assets", "printables-previews")
 OUT_URL = "/assets/printables-previews"
 
-ENGINE_MARKERS = ("window.UTG_PRINTABLE", "crossStitchEngine.js", "monogramEngine.js")
+ENGINE_MARKERS = ("window.UTG_PRINTABLE", "crossStitchEngine.js", "monogramEngine.js", "labelEngine.js")
 LOCALE_DIRS = ("de", "es", "fr", "id", "it", "nl", "pl", "pt", "tr")
 
 # The PDF buttons capture-printables-previews.js presses, in its PRIMARY order.
 # Listed here only so capture_query() can tell which one a page will use.
 TOOL_PDF_IDS = ("pt-gen-print", "pt-design-print", "pt-banner-print", "pt-puzzle-print",
-                "mono-print", "cs-print", "pt-practice-print")
+                "mono-print", "cs-print", "pt-practice-print", "lb-pdf")
 
 
 def esc(s):
@@ -76,9 +76,11 @@ def parse_page(rel):
         engine = "printables"
     elif "crossStitchEngine.js" in h:
         engine = "cross-stitch"
+    elif "labelEngine.js" in h:
+        engine = "labels"
     else:
         engine = "monogram"
-    key = _cfg_str(cfg, "key") or ("cross-stitch-letters" if engine == "cross-stitch" else "monogram-maker")
+    key = _cfg_str(cfg, "key") or {"cross-stitch": "cross-stitch-letters", "labels": "name-labels"}.get(engine, "monogram-maker")
     return {
         "rel": rel,
         "slug": slug_for(rel),
@@ -267,6 +269,9 @@ EN_ALT = {
     },
     "monogram-maker": {
         "landing": "Monogram sample: the initials J, S and L in an elegant serif, small, large, small",
+    },
+    "name-labels": {
+        "landing": "Name label sheet sample: Maya Lopez on small rounded labels, four across, with dashed cut lines",
     },
     "cursive-name": {
         "landing": "Cursive name tracing worksheet sample for {demo}: a joined cursive model above outlined rows to trace, then blank ruled lines",

@@ -315,10 +315,55 @@ ok(real.skippedNoindex.length > 0,
 {
   // Determinism: the same corpus in a different order renders byte-identically.
   const shuffled = real.pages.slice().reverse();
-  const again = L.plan(L.buildTree(shuffled));
+  const tree = L.buildTree(shuffled);
+  const again = L.plan(tree, L.resolveJobs(tree, real.jobs.map((j) => j.path)));
   const a = real.files.map((f) => `${f.relPath}\n${f.content}`).join('\u0000');
   const b = again.map((f) => `${f.relPath}\n${f.content}`).join('\u0000');
   eq(b, a, 'build: output does not depend on page discovery order');
+}
+
+{
+  // The owner's job list: every entry resolves and is printed once, in order,
+  // in the root file only; each language link is that locale's page whose
+  // English parent is the job.
+  const root = real.files.find((f) => f.relPath === 'llms.txt').content;
+  const unresolved = real.jobs.filter((j) => !j.page).map((j) => j.path);
+  eq(unresolved.length, 0, 'jobs: every listed job is an indexable English page', unresolved.join(', '));
+  const section = root.split(`## ${L.JOBS_HEADING}\n\n`)[1].split('\n\n')[0].split('\n');
+  eq(section.length, real.jobs.length, 'jobs: one line per listed job');
+  eq(section.map((l) => /\]\((\S+?)\)/.exec(l)[1]).join(' '), real.jobs.map((j) => j.url).join(' '),
+    'jobs: printed in the owner\'s order');
+  const others = real.files.filter((f) => f.relPath !== 'llms.txt' && f.content.includes(`## ${L.JOBS_HEADING}`));
+  eq(others.length, 0, 'jobs: the section appears in the root file only');
+  const block = real.jobs.find((j) => j.path === '/printables/block-letters/');
+  ok(block && block.others.some((p) => p.url === `${BASE}/es/imprimibles/moldes-de-letras/`),
+    'jobs: block letters carries its Spanish page');
+  const bad = block.others.filter((p) => p.enParent !== block.url || p.locale === 'en'
+    || block.page.alternates[p.locale] !== p.url);
+  eq(bad.length, 0, 'jobs: every language link is a two-way hreflang pair with the job');
+  const home = real.jobs.find((j) => j.path === '/');
+  ok(home && !home.others.some((p) => p.url.includes('/letra-enye/')),
+    'jobs: a one-sided hreflang claim (the Spanish Ñ sheet naming the homepage) is not a translation');
+  const perLocale = new Set();
+  const dupLocale = [];
+  for (const j of real.jobs) for (const o of j.others) {
+    const k = `${j.path} ${o.locale}`;
+    if (perLocale.has(k)) dupLocale.push(k);
+    perLocale.add(k);
+  }
+  eq(dupLocale.length, 0, 'jobs: at most one page per language per job', dupLocale.slice(0, 3).join(' | '));
+
+  // Broken inputs go red: a path that is not a page, and a language link that
+  // points at a page with a different English parent.
+  const broken = L.resolveJobs(real.locales, ['/no-such-page/']);
+  const p1 = L.validate({ ...real, jobs: broken });
+  ok(p1.some((m) => m.includes('/no-such-page/')), 'jobs: an unknown job path fails validation');
+  const wrong = real.files.map((f) => (f.relPath !== 'llms.txt' ? f : {
+    ...f,
+    content: f.content.replace(`[es](${BASE}/es/imprimibles/moldes-de-letras/)`, `[es](${BASE}/es/)`),
+  }));
+  const p2 = L.validate({ ...real, files: wrong });
+  ok(p2.some((m) => m.includes(`links ${BASE}/es/ as [es]`) && m.includes('not confirmed both ways')), 'jobs: a language link to the wrong page fails validation');
 }
 
 {

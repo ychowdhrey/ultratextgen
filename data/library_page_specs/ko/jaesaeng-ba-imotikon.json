@@ -1,0 +1,202 @@
+{
+  "lang": "ko",
+  "page_type": "library",
+  "slug": "jaesaeng-ba-imotikon",
+  "title": "노래 재생 바 이모티콘 ▷ ❚❚ · 음악 재생 특수 문자 복사 | UltraTextGen",
+  "meta_description": "노래 재생 바 이모티콘과 음악 재생 특수 문자 모음. 0:42 ━━━━●────── 3:15 같은 재생 바, ▶ ⏸ ⏭ 버튼, 전원 기호까지 눌러서 바로 복사하세요.",
+  "breadcrumb": "노래 재생 바 이모티콘",
+  "hero_h1": "노래 재생 바 이모티콘",
+  "hero_tagline": "완성된 재생 바, 재생·일시정지·다음 곡 버튼, 전원 기호까지. 누르면 바로 복사됩니다.",
+  "intro": "노래 재생 바 이모티콘은 음악 앱 화면을 문자로 옮긴 장식입니다. 진행 막대 ━ ─ 와 현재 위치 ● ⚪, 그리고 ◁ ❚❚ ▷ 버튼을 한 줄로 이어 붙이면 인스타 소개글, 프로필, 플레이리스트 제목에 지금 듣는 노래를 표시할 수 있습니다. 맨 위 묶음은 그대로 쓰는 완성형 재생 바이고, 그 아래에는 직접 조합할 때 쓰는 재생, 곡 이동, 전원 기호를 모았습니다.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "player-bars",
+      "label": "재생 바",
+      "h2": "완성형 노래 재생 바",
+      "intro": "노래 제목 아래에 그대로 붙여넣으세요.",
+      "symbols": [
+        {
+          "char": "0:42 ━━━━●────── 3:15",
+          "label": "진행 중인 재생 바"
+        },
+        {
+          "char": "1:05 ━━━━━━⚪──── 3:30",
+          "label": "흰 점 재생 바"
+        },
+        {
+          "char": "─────⚪──────",
+          "label": "재생 위치 막대"
+        },
+        {
+          "char": "⇆ ◁ ❚❚ ▷ ↻",
+          "label": "셔플 · 이전 · 일시정지 · 다음 · 반복"
+        },
+        {
+          "char": "◁◁ ▷ ▷▷",
+          "label": "되감기 · 재생 · 빨리 감기"
+        },
+        {
+          "char": "♪ ılıılıılıılıılı",
+          "label": "이퀄라이저 막대"
+        },
+        {
+          "char": "🔈 ▂▃▄▅▆▇ 🔊",
+          "label": "볼륨 막대"
+        }
+      ]
+    },
+    {
+      "id": "playback-controls",
+      "label": "재생",
+      "h2": "재생 · 일시정지 · 정지 기호",
+      "intro": "재생, 일시정지, 정지, 녹화에 쓰는 기본 버튼입니다.",
+      "symbols": [
+        {
+          "char": "▶",
+          "label": "재생"
+        },
+        {
+          "char": "⏸",
+          "label": "일시정지"
+        },
+        {
+          "char": "⏹",
+          "label": "정지"
+        },
+        {
+          "char": "⏺",
+          "label": "녹화"
+        },
+        {
+          "char": "⏯",
+          "label": "재생/일시정지"
+        },
+        {
+          "char": "◀",
+          "label": "거꾸로 재생"
+        }
+      ]
+    },
+    {
+      "id": "skip-seek-eject",
+      "label": "곡 이동",
+      "h2": "다음 곡 · 빨리 감기 · 꺼내기 기호",
+      "intro": "곡 이동, 빨리 감기, 되감기, 꺼내기 버튼입니다.",
+      "symbols": [
+        {
+          "char": "⏭",
+          "label": "다음 곡"
+        },
+        {
+          "char": "⏮",
+          "label": "이전 곡"
+        },
+        {
+          "char": "⏩",
+          "label": "빨리 감기"
+        },
+        {
+          "char": "⏪",
+          "label": "되감기"
+        },
+        {
+          "char": "⏫",
+          "label": "위로 빠르게"
+        },
+        {
+          "char": "⏬",
+          "label": "아래로 빠르게"
+        },
+        {
+          "char": "⏏",
+          "label": "꺼내기"
+        }
+      ]
+    },
+    {
+      "id": "power-symbols",
+      "label": "전원",
+      "h2": "전원 · 대기 기호",
+      "intro": "기기 전원 버튼에 쓰이는 IEC 60417 전원, 대기, 절전 기호입니다.",
+      "symbols": [
+        {
+          "char": "⏻",
+          "label": "전원"
+        },
+        {
+          "char": "⏼",
+          "label": "전원 켜기/끄기"
+        },
+        {
+          "char": "⏽",
+          "label": "전원 켜기"
+        },
+        {
+          "char": "⏾",
+          "label": "절전"
+        },
+        {
+          "char": "⭘",
+          "label": "굵은 원 (전원 끄기)"
+        }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "id": "emoji-vs-text",
+      "h2": "재생 바에 ▶ 대신 ▷ 를 쓰는 이유",
+      "paragraphs": [
+        "▶ 와 ⏸ ⏭ 는 이모지 버전이 있는 문자라서, 아이폰과 일부 안드로이드에서는 색이 들어간 네모 버튼으로 바뀌어 보일 수 있습니다. 재생 바 한 줄 가운데에 버튼 하나만 크게 튀어나오는 이유가 이것입니다.",
+        "◁ ▷ ❚❚ ━ ─ 는 이모지 버전이 없는 문자라서 어느 기기에서나 글자처럼 같은 굵기로 보입니다. 위의 완성형 재생 바가 이 문자들로 만들어진 이유입니다. 버튼을 이모지처럼 크게 보이고 싶을 때만 ▶ ⏸ ⏭ 를 쓰세요."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/ko/library/eumak-giho/",
+      "title": "음악 기호 모음",
+      "desc": "음표, 음자리표, 셈여림 기호와 오디오 이모지."
+    },
+    {
+      "href": "/ko/library/eumak-imotikon/",
+      "title": "음악 이모티콘",
+      "desc": "노래하고 춤추는 텍스트 얼굴 문자."
+    },
+    {
+      "href": "/ko/library/hwasalpyo-giho/",
+      "title": "화살표 기호",
+      "desc": "방향 화살표와 삼각형 기호 모음."
+    },
+    {
+      "href": "/ko/library/dohyeong-giho/",
+      "title": "도형 기호 모음",
+      "desc": "삼각형, 네모, 원 같은 유니코드 도형."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ko/library/jaesaeng-ba-imotikon/",
+  "home_url": "https://ultratextgen.com/ko/",
+  "crumb_home": "홈",
+  "library_url": "https://ultratextgen.com/ko/library/",
+  "date_published": "2026-10-06",
+  "date_modified": "2026-10-06",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/media-control-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/wiedergabe-symbole/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/jaesaeng-ba-imotikon/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/media-control-symbols/"
+    }
+  ]
+}

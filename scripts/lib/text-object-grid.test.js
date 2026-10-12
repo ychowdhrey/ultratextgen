@@ -30,7 +30,12 @@ for (const t of ['(◕‿◕)', '¯\\_(ツ)_/¯', '(╯°□°）╯︵ ┻━�
 // Width counts grapheme clusters, so combining marks and ZWJ add nothing.
 eq('width ( ͡° ͜ʖ ͡°)', lib.copyItemWidth('( ͡° ͜ʖ ͡°)'), 8);
 eq('width family', lib.copyItemWidth('👨‍👩‍👧'), 2);
-eq('width padded', lib.copyItemWidth('  ★  '), 1);
+// Surrounding spaces are trimmed, never counted. The case used to read
+// copyItemWidth('  ★  ') === 1, which has failed since the day it was added:
+// ★ (U+2605) is Extended_Pictographic, so the shipped rule weights it 2 like
+// any pictograph. The assertion was about trimming, so it now says that.
+eq('width padded', lib.copyItemWidth('  √  '), 1);
+eq('width padded pictograph', lib.copyItemWidth('  ★  '), lib.copyItemWidth('★'));
 
 // Entities are decoded before judging.
 eq('entity laquo', lib.decodeAttr('&laquo;'), '«');

@@ -92,16 +92,34 @@
      "istanbul" and pairs "I" with "i" on an alphabet sheet. For every other
      language "en" gives exactly what toUpperCase()/toLowerCase() gave before. */
   const CASE_LOCALE = LANG === "tr" ? "tr" : "en";
+  /* A right-to-left page (an `ar` page sets <html dir="rtl">) passes
+     direction:rtl into every inline SVG, and SVG reads text-anchor "start" as
+     the END of an RTL run. The engine positions words with "start" at a
+     measured x, so each repeat of a word moved left by its own width and the
+     last one fell off the sheet. Sheet geometry is LTR coordinates, so the
+     root class lets style.css hold SVG text to LTR on these pages only. The
+     browser still shapes and orders Arabic inside each run; only the anchor
+     semantics change. LTR pages never get the class. */
+  if (getComputedStyle(document.documentElement).direction === "rtl") {
+    document.documentElement.classList.add("pt-rtl-doc");
+  }
   /* Puzzle grids in French are set in unaccented capitals (É, È, Ê are all E;
      Œ takes two squares), which is how every French crossword and mots mêlés
      is printed. The word-search and crossword modules strip the marks from the
      grid only when asked; the word list and clues keep the real spelling.
-     Other languages keep their letters, as the English pages promise. */
+     Languages without a rule below keep their letters, as the English pages
+     promise. */
   /* Spanish sopas de letras drop the written accent as well but keep Ñ, a
      letter of its own ("es" mode in wordSearch.js / wordPuzzles.js). */
+  /* German grids spell Ä Ö Ü as AE OE UE and ß as SS ("de" mode), the
+     newspaper Kreuzworträtsel rule. Portuguese, Italian and Dutch puzzles are
+     printed without accents, as French ones are (Ç is C; Dutch IJ stays two
+     squares, I and J, which each page says). Polish keeps Ą Ć Ę Ł Ń Ó Ś Ź Ż:
+     they are letters of its alphabet, not letters with marks. */
   const FOLD_GRID = CFG.foldAccents != null
-    ? (CFG.foldAccents === "es" ? "es" : !!CFG.foldAccents)
-    : (LANG === "fr" ? true : LANG === "es" ? "es" : false);
+    ? (CFG.foldAccents === "es" || CFG.foldAccents === "de" ? CFG.foldAccents : !!CFG.foldAccents)
+    : (LANG === "es" ? "es" : LANG === "de" ? "de"
+      : (LANG === "fr" || LANG === "pt" || LANG === "it" || LANG === "nl") ? true : false);
   const I18N = {
     en: {
       letterWord: "letter", numberWord: "number",
@@ -359,6 +377,21 @@
       bannerInstr: "Recorta cada banderín por su línea punteada, haz un agujero en cada punto y pasa un cordel o cinta en orden (1, 2, 3…) para formar la palabra.",
       puzzleCut: "Recorta por las líneas punteadas para separar cada pieza-letra.",
       puzzleTitle: "El rompecabezas de {name}",
+      crossword: {
+        heading: "Crucigrama",
+        across: "Horizontales",
+        down: "Verticales",
+        answerKey: "Soluciones",
+        forWhom: "para",
+        clueBlank: "(escribe tu propia pista)",
+        wordBank: "Lista de palabras",
+        noFit: "No hay sitio en la cuadrícula para:",
+        needWords: "Escribe algunas palabras que compartan letras.",
+        gridOf: "Cuadrícula de crucigrama",
+        cellsBy: "casillas por",
+        versions: "crucigramas distintos, uno por nombre",
+        oneGrid: "Un crucigrama"
+      },
       wordSearch: {
         heading: "Sopa de letras",
         findAll: "Encuentra las",
@@ -434,6 +467,35 @@
       bannerInstr: "Recorte cada bandeirinha na linha pontilhada, faça um furo em cada ponto e passe um barbante ou fita na ordem (1, 2, 3…) para formar a palavra.",
       puzzleCut: "Recorte nas linhas pontilhadas para separar cada peça-letra.",
       puzzleTitle: "O quebra-cabeça de {name}",
+      wordSearch: {
+        heading: "Caça-palavras",
+        findAll: "Encontre as",
+        wordsWord: "palavras",
+        answerKey: "Respostas",
+        forWhom: "para",
+        tooLong: "Comprida demais para a grade:",
+        overCap: "Só as primeiras {n} palavras entram. Ficaram de fora:",
+        needWords: "Digite algumas palavras para montar o caça-palavras.",
+        gridOf: "Grade do caça-palavras",
+        lettersBy: "letras por",
+        versions: "grades diferentes, uma por nome",
+        oneGrid: "Uma grade"
+      },
+      crossword: {
+        heading: "Palavras cruzadas",
+        across: "Horizontais",
+        down: "Verticais",
+        answerKey: "Respostas",
+        forWhom: "para",
+        clueBlank: "(escreva a sua dica)",
+        wordBank: "Banco de palavras",
+        noFit: "Não coube na grade:",
+        needWords: "Digite algumas palavras que tenham letras em comum.",
+        gridOf: "Grade de palavras cruzadas",
+        cellsBy: "quadradinhos por",
+        versions: "grades diferentes, uma por nome",
+        oneGrid: "Uma grade"
+      },
       trace: {
         solid:    { label: "Modelo cheio", hint: "Letras escuras e cheias — trace por cima" },
         "bold-dot": { label: "Pontilhado grosso", hint: "Pontos grossos e juntos para ligar" },
@@ -496,6 +558,35 @@
       bannerInstr: "Ritaglia ogni bandierina lungo la linea tratteggiata, fai un foro su ogni punto, poi infila uno spago o un nastro in ordine (1, 2, 3…) per comporre la parola.",
       puzzleCut: "Ritaglia lungo le linee tratteggiate per separare ogni pezzo-lettera.",
       puzzleTitle: "Il puzzle di {name}",
+      wordSearch: {
+        heading: "Crucipuzzle",
+        findAll: "Trova le",
+        wordsWord: "parole",
+        answerKey: "Soluzioni",
+        forWhom: "per",
+        tooLong: "Troppo lunga per la griglia:",
+        overCap: "Si usano solo le prime {n} parole. Escluse:",
+        needWords: "Scrivi qualche parola per creare la griglia.",
+        gridOf: "Griglia del crucipuzzle",
+        lettersBy: "lettere per",
+        versions: "griglie diverse, una per nome",
+        oneGrid: "Una griglia"
+      },
+      crossword: {
+        heading: "Cruciverba",
+        across: "Orizzontali",
+        down: "Verticali",
+        answerKey: "Soluzioni",
+        forWhom: "per",
+        clueBlank: "(scrivi tu la definizione)",
+        wordBank: "Elenco delle parole",
+        noFit: "Non c'è posto nella griglia per:",
+        needWords: "Scrivi qualche parola con lettere in comune.",
+        gridOf: "Griglia del cruciverba",
+        cellsBy: "caselle per",
+        versions: "schemi diversi, uno per nome",
+        oneGrid: "Uno schema"
+      },
       trace: {
         solid:    { label: "Modello pieno", hint: "Lettere piene e scure – ricalca sopra" },
         "bold-dot": { label: "Puntinato spesso", hint: "Punti spessi e ravvicinati da unire" },
@@ -550,6 +641,36 @@
       bannerInstr: "Wytnij każdą chorągiewkę wzdłuż przerywanej linii, zrób dziurkę w każdym punkcie, a następnie przewlecz sznurek lub wstążkę po kolei (1, 2, 3…), aby ułożyć napis.",
       puzzleCut: "Tnij wzdłuż przerywanych linii, aby oddzielić każdy element-literę.",
       puzzleTitle: "Puzzle z imieniem: {name}",
+      wordSearch: {
+        heading: "Wykreślanka",
+        findAll: "Do znalezienia:",
+        wordsWord: "",
+        colon: "",
+        answerKey: "Rozwiązanie",
+        forWhom: "·",
+        tooLong: "Za długie do diagramu:",
+        overCap: "Użyto tylko pierwszych {n} słów. Pominięte:",
+        needWords: "Wpisz kilka słów, aby utworzyć diagram.",
+        gridOf: "Diagram wykreślanki",
+        lettersBy: "liter na",
+        versions: "różnych diagramów, jeden na imię",
+        oneGrid: "Jeden diagram"
+      },
+      crossword: {
+        heading: "Krzyżówka",
+        across: "Poziomo",
+        down: "Pionowo",
+        answerKey: "Rozwiązanie",
+        forWhom: "·",
+        clueBlank: "(wpisz własne pytanie)",
+        wordBank: "Lista słów",
+        noFit: "Nie zmieściło się w diagramie:",
+        needWords: "Wpisz kilka słów, które mają wspólne litery.",
+        gridOf: "Diagram krzyżówki",
+        cellsBy: "kratek na",
+        versions: "różnych układów, jeden na imię",
+        oneGrid: "Jeden układ"
+      },
       practiceTitle: "Karta pracy · {Noun}",
       modelCount: { one: "wiersz ze wzorem", few: "wiersze ze wzorem", many: "wierszy ze wzorem" },
       traceCount: { one: "wiersz do pisania", few: "wiersze do pisania", many: "wierszy do pisania" },
@@ -619,6 +740,35 @@
       bannerInstr: "Schneide jeden Wimpel entlang der gestrichelten Linie aus, stich an jedem Punkt ein Loch und fädle eine Schnur oder ein Band der Reihe nach (1, 2, 3…) durch, um das Wort zu bilden.",
       puzzleCut: "Schneide entlang der gestrichelten Linien, um jedes Buchstaben-Teil zu trennen.",
       puzzleTitle: "Namenspuzzle von {name}",
+      wordSearch: {
+        heading: "Suchsel",
+        findAll: "Finde alle",
+        wordsWord: "Wörter",
+        answerKey: "Lösung",
+        forWhom: "für",
+        tooLong: "Zu lang für das Gitter:",
+        overCap: "Nur die ersten {n} Wörter werden verwendet. Weggelassen:",
+        needWords: "Tippe ein paar Wörter ein, um ein Suchsel zu erstellen.",
+        gridOf: "Suchsel-Gitter",
+        lettersBy: "Buchstaben mal",
+        versions: "verschiedene Gitter, eines pro Name",
+        oneGrid: "Ein Gitter"
+      },
+      crossword: {
+        heading: "Kreuzworträtsel",
+        across: "Waagerecht",
+        down: "Senkrecht",
+        answerKey: "Lösung",
+        forWhom: "für",
+        clueBlank: "(schreib deine eigene Frage)",
+        wordBank: "Wörterliste",
+        noFit: "Kein Platz im Gitter für:",
+        needWords: "Tippe ein paar Wörter ein, die Buchstaben gemeinsam haben.",
+        gridOf: "Kreuzworträtsel-Gitter",
+        cellsBy: "Kästchen mal",
+        versions: "verschiedene Rätsel, eines pro Name",
+        oneGrid: "Ein Rätsel"
+      },
       usLetter: "US Letter",
       modelCount: { one: "Vorlagenzeile", other: "Vorlagenzeilen" },
       traceCount: { one: "Nachspurzeile", other: "Nachspurzeilen" },
@@ -1104,15 +1254,19 @@
      CFG.chars still wins. Dot-to-dot keeps A-Z: its dots are laid out per
      letter, and a letter without a layout would print an empty frame. */
   const RENDER_FOR_CHARS = CFG.render || "outline";
+  /* Letters a language adds to A-Z, each listed after the letter it follows
+     in that alphabet. Polish has nine, at eight places (A Ą ... Z Ź Ż); its
+     school alphabet charts keep Q, V and X for borrowed words, so they stay. */
   const LANG_LETTERS = {
-    es: { after: "N", add: ["Ñ"] },
-    de: { after: "Z", add: ["Ä", "Ö", "Ü", "ß"] }
+    es: [["N", ["Ñ"]]],
+    de: [["Z", ["Ä", "Ö", "Ü", "ß"]]],
+    pl: [["A", ["Ą"]], ["C", ["Ć"]], ["E", ["Ę"]], ["L", ["Ł"]], ["N", ["Ń"]], ["O", ["Ó"]], ["S", ["Ś"]], ["Z", ["Ź", "Ż"]]]
   };
   function langLetters() {
     const extra = LANG_LETTERS[LANG];
     if (!extra || RENDER_FOR_CHARS === "dots") return LETTERS.slice();
     const out = LETTERS.slice();
-    out.splice(out.indexOf(extra.after) + 1, 0, ...extra.add);
+    extra.forEach(([after, add]) => out.splice(out.indexOf(after) + 1, 0, ...add));
     return out;
   }
   const CHARS = (Array.isArray(CFG.chars) && CFG.chars.length)
@@ -1171,7 +1325,14 @@
      declares it here and gets the real file. Mutable for the same reason FONT
      is: a charStyles or scriptOptions entry may swap in a face with a
      different weight, and every surface reads it fresh. */
-  let FONT_WEIGHT = CFG.fontWeight || 700;
+  const DEFAULT_FONT_WEIGHT = CFG.fontWeight || 700;
+  let FONT_WEIGHT = DEFAULT_FONT_WEIGHT;
+  /* A style's own weight, or the page's when it names none. Resetting matters:
+     the weight is shared state, so a style that asks for 400 must not leave
+     the next style, which says nothing, on 400. */
+  function styleWeight(style) {
+    return style && style.fontWeight != null ? style.fontWeight : DEFAULT_FONT_WEIGHT;
+  }
   const SCRIPT_OPTIONS = Array.isArray(CFG.scriptOptions) && CFG.scriptOptions.length
     ? CFG.scriptOptions
     : null;
@@ -1266,6 +1427,7 @@
     genPng: $("#pt-gen-png"),
     genScript: $("#pt-gen-script"),
     genRoster: $("#pt-gen-roster"),
+    genWordSets: $("#pt-gen-wordsets"),
     genLadder: $("#pt-gen-ladder"),
     // Coloring-sheet designer (optional; gated on its own mounts)
     designInput: $("#pt-design-input"),
@@ -1370,8 +1532,19 @@
     if (special) return "letter-" + special;
     return "letter-" + ch.toLowerCase();
   }
+  /* Filenames keep the Latin name the visitor typed. [^a-z0-9] dropped
+     every accented letter, so "José" saved as block-jos.pdf and "Zoë" as
+     block-zo.pdf. Accents now come off first (NFD, drop the marks), so they
+     save as jose and zoe. The result stays ASCII on purpose: a non-ASCII
+     a.download name is replaced by a bare "download" with no extension in
+     some browsers, which is worse than the generic name a non-Latin name
+     already falls back to. */
   function slugify(s) {
-    return String(s || "").toLocaleLowerCase(CASE_LOCALE).replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+    // Lowercase before decomposing: in Turkish, İ lowercases to i, but its
+    // decomposed I + dot would lowercase to the dotless ı.
+    return String(s || "").toLocaleLowerCase(CASE_LOCALE).normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .replace(/đ/g, "d").replace(/ł/g, "l").replace(/ß/g, "ss").replace(/ø/g, "o").replace(/æ/g, "ae").replace(/ı/g, "i")
+      .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   }
   function primaryFontName() {
     // "Fredoka, '…', sans-serif" -> "Fredoka" (for document.fonts.load)
@@ -1490,6 +1663,17 @@
     sc.src = "/js/printables/stencil.js";
     sc.async = true;
     sc.setAttribute("data-pt-stencil", "");
+    /* A shared link with ?st=1 ticks the box during init, before this async
+       script has arrived, so the first draw falls back to the plain outline
+       and nothing drew it again: the box said "bridged" and the letter had no
+       bridges. Redraw once the module is here, only if the mode is on. */
+    sc.onload = () => {
+      if (!stencilOn()) return;
+      withFont(() => {
+        paintAlphabetGrid();
+        if (activeChar) selectChar(activeChar, { silent: true });
+      });
+    };
     sc.onerror = () => console.warn("[printables] js/printables/stencil.js failed to load; the stencil mode draws the plain outline.");
     document.head.appendChild(sc);
   }
@@ -2038,6 +2222,44 @@
   function layoutPracticeRows(root) {
     if (!root || !root.querySelectorAll) return;
     $$(".pt-name-row", root).forEach(layoutPracticeRow);
+    $$(".pt-practice-fit", root).forEach(fitPracticeSheet);
+  }
+
+  /* A glyph practice sheet is ONE page, and its type takes its size from the
+     page rather than the page taking its length from the type.
+
+     The sheet used to be a flowed column of 26 rows at a fixed 1.6rem. A
+     script face's line box is 50-73px at that size, so the column was
+     1,300-1,900px against a 960px page and the PDF cut it into two or three,
+     while every one of these pages says "an A-Z page". The rows are now two
+     columns of 13 (A-M, N-Z) whose tracks are an equal share of the fitted
+     page, and this scales the type until the tallest row's content fits its
+     track. Measured, not estimated: the page's own title, name/date line and
+     credit claim their natural height in the flex column, and what is left is
+     whatever the paper and margins leave, so nothing here knows a paper size.
+     Run inside the state being measured -- the surface is display:none outside
+     it and every rect reads zero, in which case this leaves the sheet alone. */
+  const PRACTICE_FIT_MIN_K = 0.5;     // below half size the sheet stops being a model to copy
+  function fitPracticeSheet(sheet) {
+    sheet.style.removeProperty("--pt-practice-k");
+    const rows = Array.from(sheet.querySelectorAll(".cursive-print-row"));
+    let k = 1;
+    for (let pass = 0; pass < 4; pass++) {
+      let worst = 0;
+      rows.forEach((row) => {
+        const room = row.getBoundingClientRect().height;
+        if (!(room > 0)) return;
+        const cs = getComputedStyle(row);
+        const chrome = (parseFloat(cs.paddingBottom) || 0) + (parseFloat(cs.borderBottomWidth) || 0);
+        let need = 0;
+        Array.from(row.children).forEach((c) => { need = Math.max(need, c.getBoundingClientRect().height); });
+        worst = Math.max(worst, (need + chrome) / room);
+      });
+      if (worst <= 1.001) break;
+      k = Math.max(PRACTICE_FIT_MIN_K, k / worst * 0.99);
+      sheet.style.setProperty("--pt-practice-k", k.toFixed(4));
+      if (k <= PRACTICE_FIT_MIN_K) break;
+    }
   }
 
   /* The miniature is the same composition the sheet will use, drawn small --
@@ -2396,7 +2618,7 @@
       return p;
     }
     if (RENDER === "dots") return singleDotSVG(ch);
-    return outlineSVG(ch);
+    return outlineSVG(ch, { overlay: strokeOverlayOn() });
   }
 
   /* ---------------------------------------------------------------
@@ -2511,16 +2733,16 @@
      one that ships, and the defect it guards has now been introduced,
      removed and reintroduced here three times. Keep the markers with the
      code if it moves. */
-  const BADGE_R = 11;
+  const BADGE_R = 8.5;
   const BADGE_GAP = 1;                 // white between two rings, so they read as two
   const BADGE_SLIDE_STEP = 0.5;
   const BADGE_SLIDE_CAP = 40;          // worst real requirement is A at 28.5 units
   const BADGE_SLIDE_FRAC = 0.35;       // ...and never more than this much of a short stroke
-  /* The arrowhead is 20 units long on its own, so the tail only has to carry
-     it. On a row that already draws the route, every unit of tail is a unit
-     of the child's dotted guide painted over — measured on "E", whose arms
-     are ~55 units fitted, a 28-unit tail plus the badge covered 65% of the
-     arm. Short tail, lighter line, and the head does the talking. */
+  /* The arrowhead has its own length (overlayMetrics().head), so the tail only
+     has to carry it. On a row that already draws the route, every unit of tail
+     is a unit of the child's dotted guide painted over — measured on "E",
+     whose arms are ~55 units fitted, a 28-unit tail plus the badge covered 65%
+     of the arm. Short tail, thin line, and the head does the talking. */
   const ARROW_TAIL = 18;
   const ARROW_TAIL_FRAC = 0.34;        // ...or this much of a short stroke, whichever is less
 
@@ -2575,9 +2797,9 @@
      shared rather than loaded onto one badge. Returns one point per stroke —
      the start point itself wherever nothing collided, which is every stroke
      on 41 of the 52 letters. */
-  function badgePositions(polys) {
+  function badgePositions(polys, radius) {
     if (!polys || polys.length < 2) return (polys || []).map((P) => P[0]);
-    const need = 2 * BADGE_R + BADGE_GAP;
+    const need = 2 * (radius || BADGE_R) + BADGE_GAP;
     const caps = polys.map((P) => Math.min(BADGE_SLIDE_CAP, polyLength(P) * BADGE_SLIDE_FRAC));
     const off = polys.map(() => 0);
     const at = () => off.map((s, k) => pointAt(polys[k], s));
@@ -2608,6 +2830,95 @@
 
   /* @stroke-badges:end */
 
+  /* How big each part of the guide is, as a share of the face's own stem.
+
+     The overlay is drawn in the 200 x 240 box at font-size 210, so every number
+     below is a share of that box and scales with the tile for free. What it
+     must follow is the STEM, because the route is only readable while it sits
+     inside the white channel between the two walls of the outline: measured on
+     Quicksand 700 the stem is 26 units and the outline stroke 4, so the channel
+     is 22. The first cut drew a 6-unit line at 0.9 opacity and 22-unit badges:
+     the line was a band a quarter of the channel wide, and the badge was the
+     whole channel, so it sat on the outline and, on a tile, the numerals and
+     the line together read as a smear over the letter.
+
+     A school stroke-order model is a thin guide down the centre of each stem,
+     a small dot where the pencil goes down, and one clear arrowhead where it
+     lifts. So the line is ~12% of the stem, the badge a little under a third of
+     it (a disc that leaves a clear margin either side inside the channel), the
+     head ~3.5 line widths long. Each is capped by the channel actually left
+     after the page's own outline stroke, so a heavier outline never swallows the
+     guide. Falls back to the Quicksand numbers when the face cannot be
+     measured. */
+  function overlayMetrics() {
+    const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
+    const measured = GM && GM.stemWidth ? GM.stemWidth(FONT, OUTLINE_SVG_FONT, 700) : 0;
+    const stem = measured > 8 ? measured : 26;
+    const k = Math.max(0.75, Math.min(1.5, stem / 26));
+    const channel = Math.max(8, stem - STROKE);
+    const line = Math.min(3.0 * k, 0.2 * channel);
+    const radius = Math.min(BADGE_R * k, 0.4 * channel);
+    return {
+      line: line,
+      radius: radius,
+      head: line * 3.6,               // arrowhead length
+      headHalf: line * 1.55,          // half its width
+      dot: line * 1.15,               // the start dot, under its badge or left behind when the badge slides
+      font: radius * 1.4,
+      ring: Math.max(0.8, line * 0.45)
+    };
+  }
+
+  // The part of polyline P between arc distances s0 and s1, as points.
+  function subPolyline(P, s0, s1) {
+    const out = [pointAt(P, s0)];
+    let acc = 0;
+    for (let i = 1; i < P.length; i++) {
+      acc += Math.hypot(P[i][0] - P[i - 1][0], P[i][1] - P[i - 1][1]);
+      if (acc > s0 && acc < s1) out.push(P[i]);
+    }
+    out.push(pointAt(P, s1));
+    return out;
+  }
+
+  const pointsToPath = (pts) => "M" + pts.map((q) => q[0].toFixed(2) + "," + q[1].toFixed(2)).join(" L");
+
+  /* How much of a stroke's end to give up so that its arrowhead lands clear of
+     every numeral. Two things used to hide the head: on a closed stroke (O, 0,
+     o, Q, 8) the end IS the start, so badge 1 sat on the arrow, and where one
+     stroke begins where the last one ends (L, E, T, Z) badge 2 sat on stroke
+     1's arrow. The head is the one thing a stroke needs at its end, so the
+     route stops short of the numeral instead. Never more than a third of the
+     stroke. */
+  function endClearance(P, centres, m, others) {
+    const total = polyLength(P);
+    const cap = total * 0.34;
+    const needBadge = m.radius + m.headHalf * 0.6 + 1.5;
+    /* A stroke that ends ON another stroke (the bowl of a B back at its stem,
+       the arm of an H at the far stem) puts its head on that stroke's own
+       arrow or line. The head stops one head-width short instead. */
+    const needLine = m.headHalf + m.line * 0.5 + 1;
+    const samples = [];
+    (others || []).forEach((Q) => {
+      const ql = polyLength(Q);
+      for (let s = 0; s <= ql; s += 1.5) samples.push(pointAt(Q, s));
+    });
+    let cut = 0;
+    while (cut < cap) {
+      const e = pointAt(P, total - cut);
+      let clear = true;
+      for (let k = 0; k < centres.length && clear; k++) {
+        if (centres[k] && Math.hypot(e[0] - centres[k][0], e[1] - centres[k][1]) < needBadge) clear = false;
+      }
+      for (let k = 0; k < samples.length && clear; k++) {
+        if (Math.hypot(e[0] - samples[k][0], e[1] - samples[k][1]) < needLine) clear = false;
+      }
+      if (clear) break;
+      cut += 0.5;
+    }
+    return cut;
+  }
+
   // Numbered start-dot + direction arrow for every stroke of one letter,
   // drawn directly into `parent`'s own coordinate space (the 200x240 unit
   // box, or a <g> already transformed into an equivalent local box).
@@ -2621,56 +2932,84 @@
        otherwise — a page serving a cached script, or a browser with no ink
        metrics, keeps exactly the rendering it had. */
     const paths = (fitted && fitted.length === data.strokes.length) ? fitted : data.strokes;
-    const uid = "ptsd" + (++strokeOverlayUid);
     const g = svgMake("g", { class: "pt-stroke-overlay", "aria-hidden": "true" }, parent);
-    const defs = svgMake("defs", null, g);
-    const markerId = "ptArrow" + uid;
-    // markerUnits defaults to "strokeWidth", which would silently multiply
-    // markerWidth/Height by the path's stroke-width below (6x) — pin it to
-    // userSpaceOnUse so the arrowhead size stays fixed and predictable.
-    const marker = svgMake("marker", {
-      id: markerId, viewBox: "0 0 10 10", refX: 8, refY: 5, markerUnits: "userSpaceOnUse",
-      markerWidth: 16, markerHeight: 16, orient: "auto"
-    }, defs);
-    svgMake("path", { d: "M0,0 L10,5 L0,10 Z", fill: STROKE_COLOR }, marker);
+    const m = overlayMetrics();
+    const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
 
+    /* The drawn line is flattened finely (the badge logic only needs a coarse
+       one). A browser with no ink metrics has neither, and draws the authored
+       path with a marker exactly as it always did. */
     const polys = strokePolylines(paths);
+    const fine = polys && GM ? paths.map((d, i) => (GM.flattenStrokes([d], 24)[0] || polys[i])) : null;
     /* Read the start off the polyline where there is one, so the dot and the
        badge it sits under cannot disagree by a rounding step; the regex is
        the fallback for a browser with no ink metrics, which never reaches
        badgePositions either. */
     const starts = polys ? polys.map((P) => P[0]) : paths.map((d) => {
-      const m = /M\s*([\d.\-]+)[,\s]+([\d.\-]+)/.exec(d);
-      return m ? [parseFloat(m[1]), parseFloat(m[2])] : null;
+      const mm = /M\s*([\d.\-]+)[,\s]+([\d.\-]+)/.exec(d);
+      return mm ? [parseFloat(mm[1]), parseFloat(mm[2])] : null;
     });
-    const badges = polys ? badgePositions(polys) : starts;
+    const badges = polys ? badgePositions(polys, m.radius) : starts;
 
-    /* Strokes first, then every dot, then every numeral — so a later stroke
-       can never be painted across an earlier letter's badge, which the single
-       interleaved pass allowed. */
-    paths.forEach((d, i) => {
-      const line = o.routeDrawn && polys ? tailPath(polys[i], ARROW_TAIL) : d;
-      if (!line) return;
-      svgMake("path", {
-        d: line, fill: "none", stroke: STROKE_COLOR,
-        "stroke-width": o.routeDrawn ? 4 : 6,
-        "stroke-linecap": "round", "stroke-linejoin": "round",
-        "marker-end": "url(#" + markerId + ")", opacity: 0.9
-      }, g);
-    });
+    if (!fine) {
+      const uid = "ptsd" + (++strokeOverlayUid);
+      const defs = svgMake("defs", null, g);
+      const markerId = "ptArrow" + uid;
+      // markerUnits defaults to "strokeWidth"; pin it so the head size is fixed.
+      const marker = svgMake("marker", {
+        id: markerId, viewBox: "0 0 10 10", refX: 8, refY: 5, markerUnits: "userSpaceOnUse",
+        markerWidth: m.head * 1.4, markerHeight: m.head * 1.4, orient: "auto"
+      }, defs);
+      svgMake("path", { d: "M0,0 L10,5 L0,10 Z", fill: STROKE_COLOR }, marker);
+      paths.forEach((d) => {
+        svgMake("path", {
+          d: d, fill: "none", stroke: STROKE_COLOR, "stroke-width": m.line,
+          "stroke-linecap": "round", "stroke-linejoin": "round", "marker-end": "url(#" + markerId + ")"
+        }, g);
+      });
+    } else {
+      /* Strokes first, then heads, then every dot, then every numeral, so a
+         later stroke can never be painted across an earlier letter's badge. */
+      const heads = [];
+      fine.forEach((P, idx) => {
+        const total = polyLength(P);
+        // A mark shorter than its own head (the dot of an i, a j) is just its numeral.
+        if (total < m.head * 1.3) return;
+        const end = total - endClearance(P, badges, m, fine.filter((_, j) => j !== idx));
+        if (end < m.head * 1.3) return;
+        const tip = pointAt(P, end);
+        const back = pointAt(P, end - m.head * 0.9);
+        const dx = tip[0] - back[0], dy = tip[1] - back[1];
+        const dl = Math.hypot(dx, dy) || 1;
+        const ux = dx / dl, uy = dy / dl;
+        const base = [tip[0] - ux * m.head, tip[1] - uy * m.head];
+        const from = o.routeDrawn ? Math.max(0, end - m.head - Math.min(ARROW_TAIL, total * ARROW_TAIL_FRAC)) : 0;
+        const bodyEnd = Math.max(from, end - m.head * 0.7);
+        if (bodyEnd - from > 0.4) {
+          svgMake("path", {
+            d: pointsToPath(subPolyline(P, from, bodyEnd)), fill: "none", stroke: STROKE_COLOR,
+            "stroke-width": m.line, "stroke-linecap": "round", "stroke-linejoin": "round"
+          }, g);
+        }
+        heads.push("M" + tip[0].toFixed(2) + "," + tip[1].toFixed(2) +
+          " L" + (base[0] - uy * m.headHalf).toFixed(2) + "," + (base[1] + ux * m.headHalf).toFixed(2) +
+          " L" + (base[0] + uy * m.headHalf).toFixed(2) + "," + (base[1] - ux * m.headHalf).toFixed(2) + " Z");
+      });
+      heads.forEach((d) => svgMake("path", { d: d, fill: STROKE_COLOR, stroke: STROKE_COLOR, "stroke-width": m.line * 0.35, "stroke-linejoin": "round" }, g));
+    }
     /* The truth of the overlay: where the pencil goes down. Drawn for every
        stroke, and invisible under its own badge wherever the badge did not
-       have to move — which is why 41 letters render exactly as before. */
+       have to move. */
     starts.forEach((p) => {
-      if (p) svgMake("circle", { cx: p[0], cy: p[1], r: 4.5, fill: STROKE_COLOR }, g);
+      if (p) svgMake("circle", { cx: p[0], cy: p[1], r: m.dot, fill: STROKE_COLOR }, g);
     });
     badges.forEach((p, i) => {
       if (!p) return;
-      svgMake("circle", { cx: p[0], cy: p[1], r: BADGE_R, fill: "#ffffff", stroke: STROKE_COLOR, "stroke-width": 2.5 }, g);
+      svgMake("circle", { cx: p[0], cy: p[1], r: m.radius, fill: STROKE_COLOR, stroke: "#ffffff", "stroke-width": m.ring }, g);
       const label = svgMake("text", {
-        x: p[0], y: p[1] + 0.5, "text-anchor": "middle", "dominant-baseline": "central",
+        x: p[0], y: p[1] + 0.4, "text-anchor": "middle", "dominant-baseline": "central",
         "font-family": "'Plus Jakarta Sans', sans-serif", "font-weight": 700,
-        "font-size": 13, fill: STROKE_COLOR
+        "font-size": m.font, fill: "#ffffff"
       }, g);
       label.textContent = String(i + 1);
     });
@@ -2768,6 +3107,15 @@
       try { localStorage.setItem(STROKE_TOGGLE_LS_KEY, el.strokeToggle.checked ? "1" : "0"); } catch (e) { /* noop */ }
       if (el.nameInput || el.namePreview) renderNamePreview();
       if (el.genInput || el.genPreview) renderGenPreview();
+      /* The single-letter paper preview and the letter-set preview draw the
+         same overlay the sheet prints, so they repaint with the switch: a
+         toggle whose consequence only appears in the PDF is the control with
+         no visible effect this panel already learned not to ship. */
+      if (paperPreviewNode && activeChar != null) {
+        const inner = paperPreviewNode.querySelector(".pt-paper-inner");
+        if (inner && inner.firstChild) inner.replaceChild(figureNode(activeChar), inner.firstChild);
+      }
+      if (typeof updateBatch === "function") updateBatch();
     });
   }
 
@@ -2864,7 +3212,13 @@
     const fam = famOverride || primaryFontName();
     if (fam && document.fonts && document.fonts.load) {
       const done = () => { noteFontAvailability(fam); cb(); };
-      document.fonts.load('700 200px "' + fam + '"').then(done).catch(done);
+      /* The sample text matters. A face split by unicode-range (latin,
+         latin-ext, ...) loads only the subsets that text touches, and with no
+         text that is the basic latin file alone. Ğ and İ live in latin-ext, so
+         the Turkish graffiti sheet measured them in the fallback face and its
+         Tag Ğ still lost the top of its breve (rendered 2026-10-05). The page's
+         own letters, both cases, load every subset a tile will draw from. */
+      document.fonts.load('700 200px "' + fam + '"', TILE_BASELINE_SET).then(done).catch(done);
     } else {
       cb();
     }
@@ -3254,6 +3608,7 @@
     const rosterList = roster ? rosterNames(roster) : [];
     if (rosterList.length) p.roster = rosterList.join("|");
     if (el.genSlider || el.genLevels) p.level = genLevel();
+    if (genWordSet && genWordSet.key) p.wset = genWordSet.key;
     const rows = firstEl([el.nameRows, el.genRows]);
     if (rows && rows.value) p.rows = rows.value;
     if (el.genCase && el.genCase.value && el.genCase.value !== "as-typed") p.case = el.genCase.value;
@@ -3357,6 +3712,11 @@
     if (!presetQuery) return;
     const level = parseInt(presetGet("level"), 10);
     if (level && typeof setGenLevel === "function" && (el.genSlider || el.genLevels)) setGenLevel(level);
+    const wset = presetGet("wset");
+    if (wset && el.genWordSets) {
+      const wb = $$(".pt-gen-wordset", el.genWordSets).find((b) => b.dataset.set === wset);
+      if (wb) setGenWordSet(wb);
+    }
     const style = presetGet("style");
     if (style && typeof setNameStyle === "function" && typeof NAME_STYLES !== "undefined" && NAME_STYLES && NAME_STYLES.some((x) => x.key === style)) setNameStyle(style);
     const script = presetGet("script");
@@ -3936,7 +4296,22 @@
         ctx.fillText(glyph, size / 2, size * 0.54);
       }
       drawCredit(ctx, size, size, RENDER === "glyph");
-      downloadCanvas(canvas, PNG_PREFIX + "-" + charSlug(ch) + ".png", "character");
+      const finish = () => downloadCanvas(canvas, PNG_PREFIX + "-" + charSlug(ch) + ".png", "character");
+      /* The stroke-direction switch is on the single-letter pages now, so the
+         download carries it like the sheet does. The canvas drew this glyph on
+         textBaseline "middle"; the overlay is placed on the alphabetic baseline
+         that put it on, read back from the canvas itself. */
+      if (RENDER === "outline" && strokeOverlayOn() && strokeDataFor(ch)) {
+        // H has a flat foot, so its ink descent below "middle" IS the distance to the baseline.
+        const baseY = size * 0.5 + ctx.measureText("H").actualBoundingBoxDescent;
+        if (isFinite(baseY)) {
+          strokeOverlayImage(ch, size, size, letterFs, 0, baseY, "alphabetic")
+            .then((img) => { if (img) ctx.drawImage(img, 0, 0, size, size); finish(); })
+            .catch(finish);
+          return;
+        }
+      }
+      finish();
     });
   }
 
@@ -4051,7 +4426,12 @@
       if (!o.transparent) drawCredit(ctx, width, canvasH, RENDER === "glyph");
       const finish = () => downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(text) || "word") + ".png", "word");
       if (RENDER === "outline" && strokeOverlayOn()) {
-        strokeOverlayImage(out, width, canvasH, fontSize, spacingEm ? fontSize * spacingEm : 0, baseY)
+        /* baseY is the ALPHABETIC baseline whenever the face could be measured,
+           so the overlay is anchored on it, not on the central anchor: passing
+           it with the default "central" mode put every start dot and arrow a
+           third of a letter below the letters of the name it numbers. */
+        strokeOverlayImage(out, width, canvasH, fontSize, spacingEm ? fontSize * spacingEm : 0, baseY,
+                           central == null ? "central" : "alphabetic")
           .then((img) => { if (img) ctx.drawImage(img, 0, 0, width, canvasH); finish(); })
           .catch(finish);
       } else {
@@ -4485,7 +4865,7 @@
     const style = CHAR_STYLES.find((s) => s.key === key) || CHAR_STYLES[0];
     charStyleKey = style.key;
     if (style.font) FONT = style.font;
-    if (style.fontWeight != null) FONT_WEIGHT = style.fontWeight;
+    FONT_WEIGHT = styleWeight(style);
     if (style.strokeWidth != null) STROKE = style.strokeWidth;
     if (style.letterSpacing != null) LETTER_SPACING = style.letterSpacing;
     CFG.skew = style.skew;
@@ -4537,7 +4917,7 @@
       pdfMode = true;
       const holder = document.createElement("div");
       holder.className = "bubble-print-single";
-      holder.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
+      holder.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { overlay: strokeOverlayOn() })));
       // First in the holder: the figure is absolutely placed to fill the
       // page, so the line sits under the title whichever way it is added.
       if (moreFooterOn("letters", false)) holder.insertBefore(nameDateRow(), holder.firstChild);
@@ -4668,9 +5048,16 @@
     const u = renderGlyph(ch.toLocaleUpperCase(CASE_LOCALE));
     const l = renderGlyph(ch.toLocaleLowerCase(CASE_LOCALE));
     const pair = /[0-9]/.test(ch) ? u : (u + " " + l);
+    /* Fit to the whole set's capitals as well as its lowercase, and upward
+       too: a school script such as Playwrite FR or Playwrite ID stands well
+       above y = 0, so with lowercase-only fitting and no fitTop every tall
+       capital (and b d h k l) was cut flat at the top of the panel, the PDF
+       and the A-Z book. A face whose ink already starts inside the box gets
+       y0 = 0, so the other cursive pages are unchanged. */
     const svg = wordOutlineSVG(pair, {
       solid: false, strokeColor: INK, strokeWidth: STROKE, guides: !!o.guides,
-      fitInk: CHARS.map((c) => renderGlyph(c.toLocaleLowerCase(CASE_LOCALE))).join("")
+      fitInk: CHARS.map((c) => renderGlyph(c.toLocaleUpperCase(CASE_LOCALE)) + renderGlyph(c.toLocaleLowerCase(CASE_LOCALE))).join(""),
+      fitTop: true
     });
     svg.setAttribute("aria-label", NOUN + " " + charLabel(ch));
     return svg;
@@ -5264,7 +5651,7 @@
     chars.slice(0, g.per).forEach((ch) => {
       const cell = document.createElement("span");
       cell.className = "pt-set-preview-cell";
-      cell.appendChild(RENDER === "glyph" ? smallGlyphCell(ch) : (RENDER === "dots" ? singleDotSVG(ch, { small: true }) : outlineSVG(ch, { small: true })));
+      cell.appendChild(RENDER === "glyph" ? smallGlyphCell(ch) : (RENDER === "dots" ? singleDotSVG(ch, { small: true }) : outlineSVG(ch, { small: true, overlay: strokeOverlayOn() })));
       grid.appendChild(cell);
     });
     host.appendChild(grid);
@@ -5329,7 +5716,7 @@
     const g = setGrid(sizeKey);
     if (RENDER === "glyph") return bigGlyphForPrint(ch);
     if (RENDER === "dots") return singleDotSVG(ch, { small: g.per > 1 && cell.h <= 2.2 });
-    return outlineSVG(ch, g.per > 1 ? { small: true, strokeScale: tileStrokeScale(cell.h) } : undefined);
+    return outlineSVG(ch, g.per > 1 ? { small: true, strokeScale: tileStrokeScale(cell.h), overlay: strokeOverlayOn() } : { overlay: strokeOverlayOn() });
   }
 
   /* One print path for every size. Full page is the book page exactly as it
@@ -5562,7 +5949,7 @@
         // single-character print has one — see .pt-fill-page in style.css.
         const figure = document.createElement("div");
         figure.className = "bubble-figure";
-        figure.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
+        figure.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { overlay: strokeOverlayOn() })));
         card.appendChild(figure);
         if (per > 1) page.appendChild(card);
       });
@@ -5581,7 +5968,7 @@
   function printAlphabetSheet() {
     const sheet = document.createElement("div");
     sheet.className = "bubble-print-sheet";
-    CHARS.forEach((ch) => sheet.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { small: true }))));
+    CHARS.forEach((ch) => sheet.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { small: true, overlay: strokeOverlayOn() }))));
     // Above the letters, not below: this sheet flows across pages with no
     // page units, so a line at the end would land on the last page only.
     let body = sheet;
@@ -5697,7 +6084,7 @@
         const cell = document.createElement("div");
         cell.className = "pt-tile-cell";
         cell.style.height = heightIn.toFixed(2) + "in";
-        cell.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch, { small: small }) : outlineSVG(ch, { small: small, strokeScale: tileStrokeScale(heightIn) })));
+        cell.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch, { small: small }) : outlineSVG(ch, { small: small, strokeScale: tileStrokeScale(heightIn), overlay: strokeOverlayOn() })));
         grid.appendChild(cell);
       });
       page.appendChild(grid);
@@ -5938,8 +6325,23 @@
        page, so the Spanish, French, Italian, Polish and Portuguese cursive
        sheets printed "Cursiva practice sheet" at the top of the PDF. The
        wording is each locale's own, harvested from its pages. */
+    const practiceTitle = withName(moreTitle("letters"), "") || T.practiceTitle.replace("{Noun}", cap(NOUN));
+    if (RENDER === "glyph") {
+      /* One page, two columns, type sized to the paper: see fitPracticeSheet().
+         The outline-mode sheet keeps flowing, because its model is a 100px
+         letter tile and 36 rows of those do not shrink to a page and stay a
+         letter to trace. */
+      sheet.classList.add("pt-practice-fit");
+      sheet.style.setProperty("--pt-practice-rows", String(Math.ceil(CHARS.length / 2)));
+      const page = document.createElement("div");
+      page.className = "pt-sheet-page is-fitted pt-practice-page";
+      page.appendChild(sheet);
+      if (moreFooterOn("letters", false)) page.appendChild(nameDateRow());
+      printWrap(practiceTitle, page, "practice_sheet");
+      return;
+    }
     if (moreFooterOn("letters", false)) sheet.appendChild(nameDateRow());
-    printWrap(withName(moreTitle("letters"), "") || T.practiceTitle.replace("{Noun}", cap(NOUN)), sheet, "practice_sheet");
+    printWrap(practiceTitle, sheet, "practice_sheet");
   }
 
   /* ---------------------------------------------------------------
@@ -6001,6 +6403,7 @@
     if (!NAME_STYLES) return;
     const style = NAME_STYLES.find((s) => s.key === key) || NAME_STYLES[0];
     nameStyleKey = style.key;
+    FONT_WEIGHT = styleWeight(style);
     if (el.nameStyles) {
       $$(".pt-name-style-opt", el.nameStyles).forEach((b) => {
         const on = b.dataset.style === nameStyleKey;
@@ -6417,6 +6820,51 @@
         solid: false, guides: RULED_ROWS, overlay: strokeOverlayOn()
       }));
     }
+    renderSheetThumb();
+  }
+
+  /* The preview above is one bare outline, and Download PDF prints a whole
+     practice sheet: the name solid, rows to trace, blank rows and a Name and
+     Date line. Nothing on screen said so (rendering audit 2026-10-03). The
+     owner chose a picture over a sentence (2026-10-07): a small copy of the
+     sheet, built by nameSheetNode() -- the function the PDF itself uses -- so
+     it follows the typed name, the row count and the footer toggle and cannot
+     describe a sheet that is not the one printed. Ruled pages already preview
+     a real sheet row and glyph pages print text, so both are left alone. */
+  const SHEET_THUMB_I18N = {
+    en: "What \u201c{btn}\u201d prints",
+    es: "Lo que imprime \u00ab{btn}\u00bb",
+    fr: "Ce qu\u2019imprime \u00ab\u00a0{btn}\u00a0\u00bb",
+    pl: "Co drukuje \u201e{btn}\u201d",
+    it: "Cosa stampa \u00ab{btn}\u00bb",
+    de: "Das druckt \u201e{btn}\u201c",
+    pt: "O que \u201c{btn}\u201d imprime",
+    id: "Hasil cetak \u201c{btn}\u201d",
+    nl: "Wat \u2018{btn}\u2019 afdrukt",
+    tr: "\u201c{btn}\u201d ile yazd\u0131r\u0131lan sayfa"
+  };
+  function renderSheetThumb() {
+    if (!el.namePreview || !el.namePrint || RULED_ROWS || (RENDER === "glyph" && !TRACEABLE)) return;
+    let fig = document.getElementById("pt-sheet-thumb");
+    if (!fig) {
+      fig = document.createElement("figure");
+      fig.id = "pt-sheet-thumb";
+      fig.className = "pt-sheet-thumb";
+      const paper = document.createElement("div");
+      paper.className = "pt-sheet-thumb-paper";
+      paper.setAttribute("aria-hidden", "true");
+      const page = document.createElement("div");
+      page.className = "pt-sheet-thumb-page";
+      paper.appendChild(page);
+      const cap = document.createElement("figcaption");
+      cap.textContent = (SHEET_THUMB_I18N[LANG] || SHEET_THUMB_I18N.en)
+        .replace("{btn}", PO.savePdf);
+      fig.append(paper, cap);
+      el.namePreview.insertAdjacentElement("afterend", fig);
+    }
+    const page = fig.querySelector(".pt-sheet-thumb-page");
+    page.textContent = "";
+    page.appendChild(nameSheetNode());
   }
 
   // The full name worksheet as a DOM node — one primitive behind the single
@@ -7074,8 +7522,15 @@
 
      1600 units covers the widest case this can meet — a landscape sheet at
      narrow margins, where the viewport is about 6.7x the row height, i.e.
-     1411 units against a 522-unit box for a four-letter name. */
-  const RULE_OVERHANG = 1600;
+     1411 units against a 522-unit box for a four-letter name.
+
+     Raised to 6000 on 2026-10-08 for the ready word sets, which put 12 to 14
+     rows on one sheet: a row is then about 0.5in tall, the viewport about
+     21x the row height on US Letter portrait (some 4,400 units), and at 1600
+     the rules of every short word stopped mid-line. The overhang is clipped
+     at the element's edge, so the larger number draws nothing new where the
+     old one already reached. */
+  const RULE_OVERHANG = 6000;
 
   function addGuide(svg, w, y, dashed, faint, bleed) {
     const over = bleed ? RULE_OVERHANG : 0;
@@ -7847,16 +8302,28 @@
     return applyCase(CFG.genLetters === true ? lettersOnly(v) : v);
   }
   /* CFG.genLetters -- the builder on /printables/letter-tracing/ practises
-     LETTERS (owner decision 2026-09-22): names belong to name-tracing and
-     words to the handwriting generator. So what is typed is reduced to its
-     letters and set apart one by one -- "bdp" and "b, d, p" both print as
-     b d p, and a name typed here prints as the letters it is made of rather
-     than as a word to write. \p{L} keeps accented letters for any locale page
-     that opts in; nothing else is kept. */
+     LETTERS AND NUMBERS (owner decision 2026-09-22 for letters; numbers added
+     2026-10-08): names belong to name-tracing and words to the handwriting
+     generator. So what is typed is reduced to its letters and numbers and set
+     apart one by one -- "bdp" and "b, d, p" both print as b d p, "1, 2, 3"
+     prints as 1 2 3, and a name typed here prints as the letters it is made
+     of rather than as a word to write. A run of digits stays whole, so 10
+     prints as ten and not as 1 0 (and 12345 is one number, not five). \p{L} keeps accented
+     letters for any locale page that opts in; [0-9] keeps ASCII digits only,
+     because the trace font and the stroke data cover those and no other
+     numeral set. Nothing else is kept. */
   function lettersOnly(v) {
-    let letters;
-    try { letters = String(v).match(/\p{L}/gu); } catch (err) { letters = String(v).match(/[A-Za-z]/g); }
-    return letters && letters.length ? letters.join(" ").slice(0, 42) : GEN_DEMO;
+    let parts;
+    try { parts = String(v).match(/\p{L}|[0-9]+/gu); } catch (err) { parts = String(v).match(/[A-Za-z]|[0-9]+/g); }
+    if (!parts || !parts.length) return GEN_DEMO;
+    // Stop at a whole item rather than cutting a number in half at the cap.
+    let out = "";
+    for (const part of parts) {
+      const next = out ? out + " " + part : part;
+      if (next.length > 42) break;
+      out = next;
+    }
+    return out || String(parts[0]).slice(0, 42);
   }
 
   // Difficulty is one internal source of truth (1..7). The level buttons
@@ -7877,18 +8344,60 @@
     return Math.max(1, Math.min(8, parseInt((el.genRows && el.genRows.value) || "3", 10) || 3));
   }
   function genModelOn() { return !el.genModel || el.genModel.checked; }
+
+  /* Ready word sets: "Days of the week", "Months of the year". A set is a
+     short, fixed list a class practises as ONE sheet, so it is not a roster:
+     a roster prints one sheet per line, and it is also the class list this
+     device remembers across the pillar, which a set must never overwrite.
+     The words are page-authored in data-words ("Monday|Tuesday|..."), in the
+     page's own language, so the list is crawlable HTML and nothing here
+     translates. One click shows the set in the preview and every action
+     (PDF, PNG, all levels) prints it; typing a word, or clicking the set
+     again, goes back to the typed word.
+
+     The sheet is one trace row per word at the chosen level, each followed
+     by a blank ruled line to write it from memory. Twelve months with a
+     blank line each would be 24 rows, too short for a child's letters, so a
+     set longer than GEN_SET_PRACTICE_MAX words drops the blank lines. The
+     model-row and trace-rows controls describe a one-word sheet; they are
+     disabled while a set is shown rather than left with no consequence. */
+  const GEN_SET_PRACTICE_MAX = 7;
+  let genWordSet = null;
+  function setGenWordSet(btn) {
+    const words = btn ? String(btn.dataset.words || "").split("|").map((w) => w.trim()).filter(Boolean) : [];
+    genWordSet = words.length ? { key: btn.dataset.set || "", title: btn.dataset.title || words.join(" "), words: words } : null;
+    [el.genRows, el.genModel].forEach((c) => { if (c) c.disabled = !!genWordSet; });
+    renderGenPreview();
+  }
+  function genSetSheetNode(level) {
+    const sheet = document.createElement("div");
+    sheet.className = "pt-gen-sheet";
+    const lefty = leftHanded && RENDER !== "glyph" && !levelSpec(level).blank;
+    const practice = genWordSet.words.length <= GEN_SET_PRACTICE_MAX && level !== TRACE_LEVELS.length;
+    genWordSet.words.forEach((w) => {
+      const word = applyCase(String(w).slice(0, GEN_MAX_CHARS));
+      sheet.appendChild(genRow(word, level, "trace", lefty));
+      if (practice) sheet.appendChild(genRow(word, TRACE_LEVELS.length, "blank", lefty));
+    });
+    if (moreFooterOn("word", true)) sheet.appendChild(nameDateRow());
+    return sheet;
+  }
   /* Nothing typed and a level that draws no letters: the sheet is ruling
      only, so the demo word is on no line of it. The heading and the file
      name used to be built from genValue() anyway, which falls back to the
      demo -- a blank French sheet printed under "Le chat dort · Ligne
      vierge". `withModel` is false for the PNG, which has no model row. */
   function genRulingOnly(withModel) {
+    if (genWordSet) return false;
     const typed = el.genInput && el.genInput.value && el.genInput.value.trim();
     if (typed || !levelSpec(genLevel()).blank) return false;
     return !(withModel && genModelOn());
   }
   // The word a sheet's own heading names: none on a ruling-only sheet.
-  function genTitleWord() { return genRulingOnly(true) ? "" : genValue(); }
+  function genTitleWord() {
+    if (genWordSet) return genWordSet.title;
+    return genRulingOnly(true) ? "" : genValue();
+  }
   function genHeading(label) {
     const word = genTitleWord();
     return word ? joinWords([word, "\u00b7", label]) : label;
@@ -8365,6 +8874,7 @@
   // name without touching the input field; `levelOverride` lets the ladder
   // pack build one sheet per difficulty level the same way.
   function genSheetNode(wordOverride, levelOverride) {
+    if (wordOverride == null && genWordSet) return genSetSheetNode(levelOverride != null ? levelOverride : genLevel());
     const word = wordOverride != null ? applyCase(String(wordOverride).slice(0, GEN_MAX_CHARS)) : genValue();
     const level = levelOverride != null ? levelOverride : genLevel();
     const sheet = document.createElement("div");
@@ -8495,7 +9005,19 @@
         b.setAttribute("aria-pressed", on ? "true" : "false");
       });
     }
-    if (el.genPreviewMeta) {
+    if (el.genWordSets) {
+      $$(".pt-gen-wordset", el.genWordSets).forEach((b) => {
+        const on = !!genWordSet && b.dataset.set === genWordSet.key;
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+    }
+    if (el.genPreviewMeta && genWordSet) {
+      const n = genWordSet.words.length;
+      const parts = [n + " " + plural(n, T.traceCount)];
+      if (n <= GEN_SET_PRACTICE_MAX && level !== TRACE_LEVELS.length) parts.push(n + " " + plural(n, T.blankCount));
+      el.genPreviewMeta.textContent = parts.join(" \u00b7 ") + " \u00b7 " + (PP && PP.paperLabel ? PP.paperLabel() : T.usLetter);
+    } else if (el.genPreviewMeta) {
       const parts = [];
       if (genModelOn() && level !== 1) parts.push("1 " + plural(1, T.modelCount));
       parts.push(genRowCount() + " " + plural(genRowCount(), T.traceCount));
@@ -8545,10 +9067,11 @@
   // easiest to hardest, same word. The graded progression is the thing the
   // level engine can batch that a static-PDF sheet never can.
   function buildGeneratorLadder() {
-    const word = genValue();
+    // With a word set shown, each level is the whole set on one sheet.
+    const word = genWordSet ? genWordSet.title : genValue();
     const set = document.createElement("div");
     set.className = "pt-class-set";
-    appendSheetPages(set, TRACE_LEVELS, (spec, i) => genSheetNode(word, i + 1));
+    appendSheetPages(set, TRACE_LEVELS, (spec, i) => genSheetNode(genWordSet ? null : word, i + 1));
     padSheetRows(set, TRACE_LEVELS.map(() => word));
     const own = withName(moreTitle("word"), word);
     if (own) stampSheetTitles(set, TRACE_LEVELS.map((spec) => own + " \u00b7 " + spec.label));
@@ -8752,6 +9275,8 @@
       let timer = null;
       el.genInput.addEventListener("input", () => {
         if (timer) clearTimeout(timer);
+        // Typing a word is choosing the typed word over a ready set.
+        if (genWordSet) { setGenWordSet(null); return; }
         timer = setTimeout(renderGenPreview, 120);
       });
     }
@@ -8805,7 +9330,17 @@
     }
     if (el.genPrint) el.genPrint.addEventListener("click", buildGeneratorSheet);
     if (el.genLadder) el.genLadder.addEventListener("click", buildGeneratorLadder);
-    if (el.genPng) el.genPng.addEventListener("click", () => genWordPNG(genValue(), genLevel()));
+    /* The PNG strip draws one word; a word set is a whole sheet, so it is
+       rasterised from the DOM that prints, as the puzzle sheets are. */
+    if (el.genPng) el.genPng.addEventListener("click", () => {
+      if (genWordSet) { pngMode = true; buildGeneratorSheet(); return; }
+      genWordPNG(genValue(), genLevel());
+    });
+    if (el.genWordSets) {
+      $$(".pt-gen-wordset", el.genWordSets).forEach((b) => {
+        b.addEventListener("click", () => setGenWordSet(genWordSet && genWordSet.key === b.dataset.set ? null : b));
+      });
+    }
     if (el.genSlider) genLevelState = clampLevel(parseInt(el.genSlider.value, 10));
     renderGenPreview();
   }
@@ -11482,7 +12017,11 @@
     const placed = built.words.filter((w) => w.placed).length;
     const note = document.createElement("p");
     note.className = "pt-search-note";
-    note.textContent = T.wordSearch.findAll + " " + placed + " " + T.wordSearch.wordsWord + (T.wordSearch.colon || ":");
+    /* Polish counts with case endings ("12 słów", "3 słowa"), so its strings
+       put the number last ("Do znalezienia: 12") and leave wordsWord and colon
+       empty; an empty colon must stay empty, hence != null, not ||. */
+    note.textContent = (T.wordSearch.findAll + " " + placed + " " + T.wordSearch.wordsWord).trim()
+      + (T.wordSearch.colon != null ? T.wordSearch.colon : ":");
     sheet.appendChild(note);
 
     sheet.appendChild(searchWordListNode(built));
@@ -12604,7 +13143,18 @@
     document.head.appendChild(sc);
   }
 
+  /* Browser Print (Ctrl+P) without Download PDF: the note, its ten-language
+     table and the mount live in printPrefs.js (mountPrintNote), the one
+     module every engine loads. This engine passes its own page language and
+     its own Download PDF label so the note names the button the visitor sees. */
+  function mountPrintNote() {
+    if (PP && PP.mountPrintNote) {
+      PP.mountPrintNote({ lang: LANG, button: T.printOpts && T.printOpts.savePdf });
+    }
+  }
+
   function init() {
+    mountPrintNote();
     loadQrModule();
     loadWordSearchModule();
     loadWordPuzzlesModule();
@@ -12681,6 +13231,10 @@
     buildStrip();
     buildAlphabetGrid();
     buildSpokeBatch();
+    /* Again, now that a single-letter page has its print-size field: the
+       first call above found no host there, so the 36 block-letter pages got
+       no tick box. Idempotent, and a no-op on a page without CFG.stencil. */
+    mountStencilToggle();
     initGenerator();
     buildDesigner();
     buildBanner();
@@ -12796,6 +13350,21 @@
          renderBannerPreview, renderPuzzlePreview, updateBatch].forEach((fn) => {
           if (typeof fn === "function") { try { fn(); } catch (e) { /* surface absent on this page */ } }
         });
+        /* The single-letter figure is a word surface too: glyphPairOutline()
+           sizes its viewBox from measured ink. Built before the face arrived,
+           it kept the fallback's box, so on Playwrite FR and ID (tall, wide
+           school scripts) the capital's top and the joined lowercase were cut
+           off in the panel. Swap only the figure inside the paper preview;
+           selectChar() is not re-run, so scroll and history stay put. */
+        if (paperPreviewNode && activeChar != null) {
+          const inner = paperPreviewNode.querySelector(".pt-paper-inner");
+          if (inner && inner.firstChild) {
+            try {
+              inner.replaceChild(figureNode(activeChar), inner.firstChild);
+              paintPaperPreview();
+            } catch (e) { /* keep the figure already shown */ }
+          }
+        }
       });
     }
 

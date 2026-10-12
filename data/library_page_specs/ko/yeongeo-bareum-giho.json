@@ -1,0 +1,260 @@
+{
+  "lang": "ko",
+  "page_type": "library",
+  "slug": "yeongeo-bareum-giho",
+  "title": "영어 발음기호 ə ʃ θ ð · 읽는 법과 복사 | UltraTextGen",
+  "meta_description": "영어 발음기호 모음: 모음 ə ɪ æ ʌ, 자음 ʃ ʒ θ ð ŋ, 강세 ˈ 와 장음 ː 까지. 기호마다 예시 단어와 가장 가까운 우리말 소리를 붙였습니다. 눌러서 바로 복사하세요.",
+  "breadcrumb": "영어 발음기호",
+  "hero_h1": "영어 발음기호",
+  "hero_tagline": "영어사전 대괄호 [ ] 안의 기호를 예시 단어와 함께 정리했습니다. 누르면 바로 복사됩니다.",
+  "intro": "영어사전에서 단어 옆 대괄호 [ ] 안에 적힌 기호가 영어 발음기호입니다. 대부분 국제음성기호(IPA)에서 왔기 때문에 ə ʃ θ 처럼 키보드로는 칠 수 없는 문자가 많습니다. 아래에는 모음, 마찰음, 그 밖의 자음, 강세와 길이 표시를 나누어 모았고, 기호마다 이름과 예시 단어를 달았습니다. 우리말로 적은 소리는 가장 가까운 소리일 뿐 같은 소리는 아닙니다. 특히 θ ð æ 는 한국어에 없는 소리입니다.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "ipa-vowels",
+      "label": "모음",
+      "h2": "영어 발음기호: 모음",
+      "intro": "영어 발음 표기와 일반 음성 표기에서 가장 많이 쓰는 모음 기호입니다.",
+      "symbols": [
+        {
+          "char": "ə",
+          "label": "슈와: about의 a, 힘을 뺀 약한 '어'"
+        },
+        {
+          "char": "ɪ",
+          "label": "짧은 i: kit의 i, 짧은 '이'"
+        },
+        {
+          "char": "ɛ",
+          "label": "열린 e: dress의 e, '에'"
+        },
+        {
+          "char": "æ",
+          "label": "애쉬: trap의 a, '애'보다 입을 크게"
+        },
+        {
+          "char": "ʌ",
+          "label": "뒤집힌 v: strut의 u, 짧고 강한 '어'"
+        },
+        {
+          "char": "ɑ",
+          "label": "알파: father의 a, 입을 크게 연 '아'"
+        },
+        {
+          "char": "ɒ",
+          "label": "뒤집힌 알파: 영국식 lot의 o"
+        },
+        {
+          "char": "ɔ",
+          "label": "열린 o: thought의 aw, '오'와 '어' 사이"
+        },
+        {
+          "char": "ʊ",
+          "label": "입실론: foot의 oo, 짧은 '우'"
+        },
+        {
+          "char": "ɜ",
+          "label": "뒤집힌 열린 e: nurse의 ur"
+        },
+        {
+          "char": "ɨ",
+          "label": "가로줄 i: 중설 고모음"
+        },
+        {
+          "char": "ɐ",
+          "label": "뒤집힌 a: 중설 근저모음"
+        }
+      ]
+    },
+    {
+      "id": "ipa-fricatives",
+      "label": "마찰음",
+      "h2": "마찰음 · 치찰음 기호",
+      "intro": "공기를 비벼 내는 소리입니다. 에쉬, 에즈, 세타, 에드가 여기에 있습니다.",
+      "symbols": [
+        {
+          "char": "ʃ",
+          "label": "에쉬: ship의 sh, '쉬'"
+        },
+        {
+          "char": "ʒ",
+          "label": "에즈: vision의 s"
+        },
+        {
+          "char": "θ",
+          "label": "세타: think의 th, 혀끝을 이 사이에 둔 무성음"
+        },
+        {
+          "char": "ð",
+          "label": "에드: this의 th, 혀끝을 이 사이에 둔 유성음"
+        },
+        {
+          "char": "ɸ",
+          "label": "파이: 두 입술 무성 마찰음"
+        },
+        {
+          "char": "β",
+          "label": "베타: 두 입술 유성 마찰음"
+        },
+        {
+          "char": "ç",
+          "label": "세디유 c: hue의 h"
+        },
+        {
+          "char": "x",
+          "label": "x: 스코틀랜드어 loch의 ch"
+        },
+        {
+          "char": "ʁ",
+          "label": "뒤집힌 작은 대문자 R: 프랑스어 R"
+        },
+        {
+          "char": "ɣ",
+          "label": "감마: 연구개 유성 마찰음"
+        }
+      ]
+    },
+    {
+      "id": "ipa-consonants",
+      "label": "그 밖의 자음",
+      "h2": "비음 · 탄음 · 그 밖의 자음 기호",
+      "intro": "비음, 접근음, 권설음, 성문음 기호입니다.",
+      "symbols": [
+        {
+          "char": "ŋ",
+          "label": "엥: sing의 ng, 받침 'ㅇ'"
+        },
+        {
+          "char": "ɲ",
+          "label": "왼쪽 갈고리 n: 스페인어 señor의 ñ"
+        },
+        {
+          "char": "ɹ",
+          "label": "뒤집힌 r: red의 r"
+        },
+        {
+          "char": "ɾ",
+          "label": "낚싯바늘 r: 미국식 butter의 tt, 'ㄹ'에 가까움"
+        },
+        {
+          "char": "ʔ",
+          "label": "성문 파열음: uh-oh 가운데 끊기는 소리"
+        },
+        {
+          "char": "ʈ",
+          "label": "권설 t"
+        },
+        {
+          "char": "ɖ",
+          "label": "권설 d"
+        },
+        {
+          "char": "ʎ",
+          "label": "뒤집힌 y: 이탈리아어 famiglia의 gl"
+        },
+        {
+          "char": "ɫ",
+          "label": "어두운 l: feel의 l"
+        },
+        {
+          "char": "ʍ",
+          "label": "뒤집힌 w: which의 무성 wh"
+        }
+      ]
+    },
+    {
+      "id": "ipa-suprasegmentals",
+      "label": "강세와 길이",
+      "h2": "강세 · 길이 · 보조 기호",
+      "intro": "강세와 모음 길이를 나타내는 기호와 위첨자 보조 기호입니다.",
+      "symbols": [
+        {
+          "char": "ˈ",
+          "label": "제1강세: 뒤 음절을 가장 세게"
+        },
+        {
+          "char": "ˌ",
+          "label": "제2강세: 뒤 음절을 조금 세게"
+        },
+        {
+          "char": "ː",
+          "label": "장음: 앞 모음을 길게"
+        },
+        {
+          "char": "ˑ",
+          "label": "반장음: 앞 모음을 조금 길게"
+        },
+        {
+          "char": "ʰ",
+          "label": "위첨자 h: 숨이 섞이는 기식음"
+        },
+        {
+          "char": "ʷ",
+          "label": "위첨자 w: 입술을 둥글게"
+        },
+        {
+          "char": "ʲ",
+          "label": "위첨자 j: 구개음화"
+        },
+        {
+          "char": "ⁿ",
+          "label": "위첨자 n: 비음 파열"
+        },
+        {
+          "char": "ʼ",
+          "label": "수식 아포스트로피: 방출음"
+        },
+        {
+          "char": "ˀ",
+          "label": "수식 성문 파열음: 성문화"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/ko/library/teuksu-munja/",
+      "title": "특수문자 모음",
+      "desc": "닉네임과 프로필을 꾸미는 특수문자 전체 모음."
+    },
+    {
+      "href": "/ko/library/alt-kodeu/",
+      "title": "알트 코드",
+      "desc": "Alt 키와 숫자로 입력하는 문자표."
+    },
+    {
+      "href": "/ko/library/keyboard-giho/",
+      "title": "키보드 특수문자",
+      "desc": "키보드로 바로 칠 수 있는 기호."
+    },
+    {
+      "href": "/ko/library/munjangbuho-giho/",
+      "title": "문장부호와 따옴표",
+      "desc": "따옴표, 괄호, 문장부호 모음."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ko/library/yeongeo-bareum-giho/",
+  "home_url": "https://ultratextgen.com/ko/",
+  "crumb_home": "홈",
+  "library_url": "https://ultratextgen.com/ko/library/",
+  "date_published": "2026-10-06",
+  "date_modified": "2026-10-06",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/ipa-phonetic-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-ipa/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/yeongeo-bareum-giho/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/ipa-phonetic-symbols/"
+    }
+  ]
+}

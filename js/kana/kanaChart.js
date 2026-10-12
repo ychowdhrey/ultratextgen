@@ -11,10 +11,21 @@
  *
  * Controls (authored as crawlable HTML, wired here):
  *   #kana-romaji-toggle   show / hide romaji  (hidden = self-quiz mode)
+ *   #kana-reading-toggle  show / hide the locale reading line (optional)
  *   #kana-sec-dakuten     include the voiced section
  *   #kana-sec-yoon        include the combinations section
  *   #kana-print / #kana-png   export the visible chart
+ *   #kana-practice        print a write-in practice sheet (optional)
  * Mounts: #kana-chart (grids), #kana-print-root (print surface), #kana-toast.
+ *
+ * Locale pages add three optional keys to window.UTG_KANA, all absent on the
+ * English pages so their output is unchanged:
+ *   text      UI strings (toast, copy label, print titles), see TEXT below
+ *   sections  { <section key>: { label, note } } replacing the English labels
+ *   readings  a key into window.UltraKanaReadings (js/kana/kanaReadings<Xx>.js):
+ *             a second reading line per cell, e.g. Hangul for Korean learners.
+ *             Katakana is looked up through its hiragana twin (U+30A1..30F6 is
+ *             U+3041..3096 + 0x60), so one table serves both charts.
  *
  * IIFE + global-namespace, matching the rest of the frontend (no imports).
  */
@@ -33,12 +44,55 @@
   const KANA_FONT =
     "'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic', 'YuGothic', " +
     "'Noto Sans JP', 'Noto Sans CJK JP', Meiryo, 'MS PGothic', sans-serif";
-  const ROMAJI_FONT = "'Plus Jakarta Sans', -apple-system, sans-serif";
+  const ROMAJI_FONT =
+    "'Plus Jakarta Sans', -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', " +
+    "'Noto Sans KR', 'Noto Sans CJK KR', sans-serif";
   const INK = "#1a1a2e";
+
+  // UI strings. English defaults are the strings the English pages always
+  // shipped; a locale page overrides any of them through CFG.text.
+  const TEXT = Object.assign({
+    copied: "Copied {k}",
+    copiedWithReading: "Copied {k} ({r})",
+    copyLabel: "Copy {k} — {r}",
+    blankSuffix: " (blank — fill in the romaji)",
+    practiceTitle: NAME + " — writing practice",
+    practiceNote: "",
+    practiceName: ""
+  }, CFG.text || {});
+  const SECTION_TEXT = CFG.sections || {};
+  const READINGS = CFG.readings
+    ? ((window.UltraKanaReadings || {})[CFG.readings] || null)
+    : null;
+
+  function fill(tpl, k, r) {
+    return String(tpl).replace("{k}", k).replace("{r}", r || "");
+  }
+
+  // Reading for one cell from the locale table: { h: text, approx: bool }.
+  function toHiragana(str) {
+    return String(str).replace(/[\u30A1-\u30F6]/g, (ch) =>
+      String.fromCharCode(ch.charCodeAt(0) - 0x60));
+  }
+  function readingOf(kana) {
+    if (!READINGS) return null;
+    const v = READINGS[toHiragana(kana)];
+    if (!v) return null;
+    return typeof v === "string" ? { h: v, approx: false } : v;
+  }
+  function sectionLabel(section) {
+    return (SECTION_TEXT[section.key] && SECTION_TEXT[section.key].label) || section.label;
+  }
+  function sectionNote(section) {
+    const o = SECTION_TEXT[section.key];
+    return o && Object.prototype.hasOwnProperty.call(o, "note") ? o.note : section.note;
+  }
 
   const el = {
     chart: $("#kana-chart"),
     romaji: $("#kana-romaji-toggle"),
+    reading: $("#kana-reading-toggle"),
+    practice: $("#kana-practice"),
     dakuten: $("#kana-sec-dakuten"),
     yoon: $("#kana-sec-yoon"),
     print: $("#kana-print"),
@@ -47,7 +101,7 @@
     toast: $("#kana-toast")
   };
 
-  const state = { romaji: true, dakuten: true, yoon: true };
+  const state = { romaji: true, reading: !!READINGS, dakuten: true, yoon: true };
 
   function dataset() {
     return (window.UltraKanaData || {})[SET] || null;
@@ -81,7 +135,7 @@
   }
 
   function copyKana(kana, romaji) {
-    const done = () => showToast("Copied " + kana + (romaji ? " (" + romaji + ")" : ""));
+    const done = () => showToast(fill(romaji ? TEXT.copiedWithReading : TEXT.copied, kana, romaji));
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(kana).then(done).catch(done);
     } else {
@@ -104,6 +158,7 @@
   function buildSection(section, opts) {
     const o = opts || {};
     const showRomaji = o.showRomaji !== false;
+    const showReading = !!READINGS && o.showReading !== false;
     const wrap = document.createElement("section");
     wrap.className = "kana-section";
     wrap.dataset.section = section.key;
@@ -112,12 +167,13 @@
     head.className = "kana-section-head";
     const h = document.createElement("h2");
     h.className = "kana-section-title";
-    h.textContent = section.label;
+    h.textContent = sectionLabel(section);
     head.appendChild(h);
-    if (section.note && o.notes !== false) {
+    const note = sectionNote(section);
+    if (note && o.notes !== false) {
       const p = document.createElement("p");
       p.className = "kana-section-note";
-      p.textContent = section.note;
+      p.textContent = note;
       head.appendChild(p);
     }
     wrap.appendChild(head);
@@ -136,15 +192,24 @@
         }
         const node = o.interactive ? document.createElement("button") : document.createElement("div");
         node.className = "kana-cell";
+        const rd = readingOf(cell.k);
         if (o.interactive) {
           node.type = "button";
-          node.setAttribute("aria-label", "Copy " + cell.k + " — " + cell.r);
-          node.addEventListener("click", () => copyKana(cell.k, cell.r));
+          node.setAttribute("aria-label", fill(TEXT.copyLabel, cell.k, rd ? rd.h + " · " + cell.r : cell.r));
+          node.addEventListener("click", () => copyKana(cell.k, rd ? rd.h : cell.r));
         }
         const glyph = document.createElement("span");
         glyph.className = "kana-glyph";
+        glyph.lang = "ja";
         glyph.textContent = cell.k;
         node.appendChild(glyph);
+        if (READINGS) {
+          const rl = document.createElement("span");
+          rl.className = "kana-reading" + (rd && rd.approx ? " is-approx" : "");
+          rl.textContent = rd ? rd.h : "";
+          if (!showReading) rl.classList.add("is-hidden");
+          node.appendChild(rl);
+        }
         const rom = document.createElement("span");
         rom.className = "kana-romaji";
         rom.textContent = cell.r;
@@ -160,10 +225,11 @@
 
   function renderChart() {
     if (!el.chart) return;
-    el.chart.classList.toggle("kana-no-romaji", !state.romaji);
+    el.chart.classList.toggle("kana-no-romaji", !state.romaji && !(READINGS && state.reading));
+    el.chart.classList.toggle("kana-has-reading", !!READINGS);
     el.chart.innerHTML = "";
     visibleSections().forEach((section) => {
-      el.chart.appendChild(buildSection(section, { interactive: true, showRomaji: state.romaji }));
+      el.chart.appendChild(buildSection(section, { interactive: true, showRomaji: state.romaji, showReading: state.reading }));
     });
   }
 
@@ -178,16 +244,21 @@
     wrap.className = "kana-print-wrap";
     const title = document.createElement("h1");
     title.className = "kana-print-title";
-    title.textContent = NAME + (state.romaji ? "" : " (blank — fill in the romaji)");
+    const anyReading = state.romaji || (READINGS && state.reading);
+    title.textContent = NAME + (anyReading ? "" : TEXT.blankSuffix);
     wrap.appendChild(title);
     visibleSections().forEach((section) => {
-      wrap.appendChild(buildSection(section, { interactive: false, showRomaji: state.romaji }));
+      wrap.appendChild(buildSection(section, { interactive: false, showRomaji: state.romaji, showReading: state.reading }));
     });
     const cred = document.createElement("p");
     cred.className = "kana-print-cred";
     cred.textContent = URL_LINE;
     wrap.appendChild(cred);
     el.printRoot.appendChild(wrap);
+    sendToPrinter();
+  }
+
+  function sendToPrinter() {
     document.body.classList.add("is-printing");
     // Hide the page inline as well: the stylesheet rule cannot beat an
     // inline !important (an ad anchor unit), so without this the printed
@@ -197,6 +268,85 @@
     document.body.classList.remove("is-printing");
     if (window.UltraTextGen && window.UltraTextGen.restorePrint) window.UltraTextGen.restorePrint();
     el.printRoot.innerHTML = "";
+  }
+
+  /* --------------------------------------------------------------
+     Writing practice sheet (print). One row per single kana: the model
+     glyph with its readings, then empty squares carrying a dashed cross
+     guide. No faint tracing glyphs: the system font is a printed (gothic)
+     form, not a handwriting model, so it is shown once as a reference and
+     the squares are left for the learner's own hand. Combinations (yōon)
+     are two shapes already practised, so the sheet covers single kana from
+     the visible sections only.
+     -------------------------------------------------------------- */
+
+  const PRACTICE_BOXES = 5;
+
+  function printPractice() {
+    if (!el.printRoot) return;
+    el.printRoot.innerHTML = "";
+    const wrap = document.createElement("div");
+    wrap.className = "kana-print-wrap kana-practice-wrap";
+    const title = document.createElement("h1");
+    title.className = "kana-print-title";
+    title.textContent = TEXT.practiceTitle;
+    wrap.appendChild(title);
+    if (TEXT.practiceName) {
+      const nm = document.createElement("p");
+      nm.className = "kana-practice-name";
+      nm.textContent = TEXT.practiceName;
+      wrap.appendChild(nm);
+    }
+    if (TEXT.practiceNote) {
+      const p = document.createElement("p");
+      p.className = "kana-practice-note";
+      p.textContent = TEXT.practiceNote;
+      wrap.appendChild(p);
+    }
+    visibleSections().filter((s) => s.key !== "yoon").forEach((section) => {
+      const sec = document.createElement("section");
+      sec.className = "kana-practice-section";
+      const h = document.createElement("h2");
+      h.className = "kana-section-title";
+      h.textContent = sectionLabel(section);
+      sec.appendChild(h);
+      const grid = document.createElement("div");
+      grid.className = "kana-practice-grid";
+      section.rows.forEach((row) => {
+        row.cells.forEach((cell) => {
+          if (!cell) return;
+          const line = document.createElement("div");
+          line.className = "kana-practice-row";
+          const model = document.createElement("div");
+          model.className = "kana-practice-model";
+          const g = document.createElement("span");
+          g.className = "kana-glyph";
+          g.lang = "ja";
+          g.textContent = cell.k;
+          model.appendChild(g);
+          const rd = readingOf(cell.k);
+          const cap = document.createElement("span");
+          cap.className = "kana-practice-cap";
+          cap.textContent = rd ? rd.h + " · " + cell.r : cell.r;
+          model.appendChild(cap);
+          line.appendChild(model);
+          for (let i = 0; i < PRACTICE_BOXES; i++) {
+            const box = document.createElement("div");
+            box.className = "kana-practice-box";
+            line.appendChild(box);
+          }
+          grid.appendChild(line);
+        });
+      });
+      sec.appendChild(grid);
+      wrap.appendChild(sec);
+    });
+    const cred = document.createElement("p");
+    cred.className = "kana-print-cred";
+    cred.textContent = URL_LINE;
+    wrap.appendChild(cred);
+    el.printRoot.appendChild(wrap);
+    sendToPrinter();
   }
 
   /* --------------------------------------------------------------
@@ -221,10 +371,12 @@
     const sections = visibleSections();
     if (!sections.length) return;
     const showRomaji = state.romaji;
+    const showReading = !!READINGS && state.reading;
     const scale = 2;
     const MARGIN = 48;
     const CELL_W = 132;
-    const CELL_H = showRomaji ? 132 : 112;
+    const lines = (showRomaji ? 1 : 0) + (showReading ? 1 : 0);
+    const CELL_H = lines === 2 ? 156 : lines === 1 ? 132 : 112;
     const TITLE_H = 70;
     const SECTION_GAP = 40;
     const HEADER_H = 96;
@@ -260,7 +412,7 @@
       ctx.fillStyle = INK;
       ctx.textAlign = "left";
       ctx.font = "700 24px " + ROMAJI_FONT;
-      ctx.fillText(section.label, MARGIN, y + 30);
+      ctx.fillText(sectionLabel(section), MARGIN, y + 30);
       y += TITLE_H;
 
       section.rows.forEach((row, ri) => {
@@ -274,20 +426,28 @@
           if (!cell) { drawGap(ctx, x, cy, CELL_W, CELL_H); return; }
           ctx.fillStyle = INK;
           ctx.textAlign = "center";
-          ctx.font = "500 " + (showRomaji ? 52 : 60) + "px " + KANA_FONT;
+          ctx.font = "500 " + (lines ? 52 : 60) + "px " + KANA_FONT;
           ctx.textBaseline = "middle";
-          ctx.fillText(cell.k, x + CELL_W / 2, cy + (showRomaji ? CELL_H * 0.42 : CELL_H * 0.5));
+          ctx.fillText(cell.k, x + CELL_W / 2, cy + (lines === 2 ? 52 : lines ? CELL_H * 0.42 : CELL_H * 0.5));
+          let ly = lines === 2 ? 108 : CELL_H * 0.82;
+          if (showReading) {
+            const rd = readingOf(cell.k);
+            ctx.fillStyle = INK;
+            ctx.font = "700 22px " + ROMAJI_FONT;
+            ctx.fillText(rd ? rd.h : "", x + CELL_W / 2, cy + ly);
+            ly += 28;
+          }
           if (showRomaji) {
             ctx.fillStyle = "#64748b";
             ctx.font = "600 20px " + ROMAJI_FONT;
-            ctx.fillText(cell.r, x + CELL_W / 2, cy + CELL_H * 0.82);
+            ctx.fillText(cell.r, x + CELL_W / 2, cy + ly);
           }
         });
       });
       y += section.rows.length * CELL_H + SECTION_GAP;
     });
 
-    downloadCanvas(canvas, PNG_PREFIX + (showRomaji ? "" : "-blank") + ".png");
+    downloadCanvas(canvas, PNG_PREFIX + (lines ? "" : "-blank") + ".png");
   }
 
   // Faint diagonal hatch for empty grid slots (yi/ye, wi/wu/we) so the PNG
@@ -313,6 +473,10 @@
       state.romaji = el.romaji.checked;
       el.romaji.addEventListener("change", () => { state.romaji = el.romaji.checked; renderChart(); });
     }
+    if (el.reading) {
+      state.reading = !!READINGS && el.reading.checked;
+      el.reading.addEventListener("change", () => { state.reading = el.reading.checked; renderChart(); });
+    }
     if (el.dakuten) {
       state.dakuten = el.dakuten.checked;
       el.dakuten.addEventListener("change", () => { state.dakuten = el.dakuten.checked; renderChart(); });
@@ -323,6 +487,7 @@
     }
     if (el.print) el.print.addEventListener("click", printChart);
     if (el.png) el.png.addEventListener("click", chartPNG);
+    if (el.practice) el.practice.addEventListener("click", printPractice);
     renderChart();
   }
 

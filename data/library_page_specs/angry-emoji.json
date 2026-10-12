@@ -1,14 +1,14 @@
 {
   "slug": "angry-emoji",
-  "title": "Angry Emoji & Kaomoji: Copy & Paste 😡 Rage Combos",
-  "meta_description": "Angry emoji 😡 🤬 😤, rage combo sets, and table-flip kaomoji like (╯°□°）╯︵ ┻━┻ for venting in chats and comments. Click any symbol to copy it instantly.",
+  "title": "Angry Emoji: Copy & Paste 😡 Mad Faces, Emoticons & Combos",
+  "meta_description": "Angry emoji 😡 🤬 😤, classic angry emoticons like >:( and rage combo sets for venting in chats and comments. Click any symbol to copy it instantly.",
   "canonical": "https://ultratextgen.com/library/angry-emoji/",
-  "breadcrumb": "Angry Emoji & Kaomoji",
-  "hero_h1": "Angry Emoji & Kaomoji",
-  "hero_tagline": "Red-faced rage, steam, fire, and the legendary table-flip kaomoji: anger in every intensity. Click any symbol to copy it instantly.",
-  "intro": "The angry emoji scale runs from a mild 😠 scowl to the censor-grawlix fury of 🤬, and when emoji aren't enough, there's always the table-flip kaomoji (╯°□°）╯︵ ┻━┻. This page gathers every mad face, the fire-and-explosion symbols that turn a complaint into a rage post, eye-rolling annoyed faces for lower-grade irritation, and one-click angry combo sets for chats, comments, and gaming rage moments.",
+  "breadcrumb": "Angry Emoji",
+  "hero_h1": "Angry Emoji",
+  "hero_tagline": "Red-faced rage, steam, fire and typed-out >:( emoticons: anger in every intensity. Click any symbol to copy it instantly.",
+  "intro": "The angry emoji scale runs from a mild 😠 scowl to the censor-grawlix fury of 🤬, and when an app shows emoji as boxes, a typed >:( still gets the point across. This page gathers every mad face, the fire-and-explosion symbols that turn a complaint into a rage post, eye-rolling annoyed faces for lower-grade irritation, and one-click angry combo sets for chats, comments, and gaming rage moments.",
   "date_published": "2026-06-12",
-  "date_modified": "2026-06-12",
+  "date_modified": "2026-10-08",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -57,21 +57,32 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticons",
+      "h2": "Angry Text Emoticons",
+      "intro": "The keyboard versions of an angry face, built from punctuation. They paste as plain text, so they show up even where emoji don't.",
+      "symbols": [
+        { "char": ">:(", "label": "Angry Face Emoticon" },
+        { "char": ">:-(", "label": "Angry Face With Nose Emoticon" },
+        { "char": ">:[", "label": "Scowling Emoticon" },
+        { "char": "D:<", "label": "Furious Shout Emoticon" },
+        { "char": ">:O", "label": "Yelling Emoticon" },
+        { "char": ":@", "label": "Fuming Emoticon" },
+        { "char": ">:|", "label": "Seething Emoticon" }
+      ]
+    },
+    {
       "id": "rage-kaomoji",
       "label": "Kaomoji",
       "h2": "Rage & Table-Flip Kaomoji",
-      "intro": "The table flips, glares, and growls of classic angry text faces.",
+      "intro": "Four favourites, from a glare to a full table flip.",
       "symbols": [
         { "char": "(╯°□°）╯︵ ┻━┻", "label": "Table Flip Kaomoji" },
-        { "char": "(┛◉Д◉)┛彡┻━┻", "label": "Furious Table Flip Kaomoji" },
-        { "char": "┬─┬ノ( º _ ºノ)", "label": "Putting Table Back Kaomoji" },
         { "char": "(╬ Ò﹏Ó)", "label": "Boiling Anger Kaomoji" },
         { "char": "ヽ(`Д´)ﾉ", "label": "Shouting Rage Kaomoji" },
-        { "char": "(ﾉಥ益ಥ)ﾉ ┻━┻", "label": "Tearful Rage Flip Kaomoji" },
-        { "char": "(¬_¬)", "label": "Irritated Glare Kaomoji" },
-        { "char": "(≖_≖ )", "label": "Suspicious Glare Kaomoji" },
-        { "char": "(｀ﾍ´)", "label": "Grumpy Huff Kaomoji" }
-      ]
+        { "char": "(¬_¬)", "label": "Irritated Glare Kaomoji" }
+      ],
+      "more_link": { "href": "/library/angry-kaomoji/", "text": "See every angry kaomoji" }
     }
   ],
   "collection_section": {
@@ -120,13 +131,18 @@
   ],
   "related": [
     {
+      "href": "/library/angry-kaomoji/",
+      "title": "Angry Kaomoji",
+      "desc": "Mad, annoyed and table-flipping Japanese text faces, sorted by intensity."
+    },
+    {
       "href": "/library/sad-emoji/",
-      "title": "Sad Emoji & Kaomoji",
+      "title": "Sad Emoji",
       "desc": "Melancholy and heartbreak faces for the quieter low moods."
     },
     {
       "href": "/library/shocked-emoji/",
-      "title": "Shocked Emoji & Kaomoji",
+      "title": "Shocked Emoji",
       "desc": "Wide-eyed surprise and plot-twist reaction combos."
     },
     {

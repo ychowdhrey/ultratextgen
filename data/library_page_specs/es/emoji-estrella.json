@@ -8,7 +8,7 @@
  "crumb_home": "Inicio",
  "library_url": "https://ultratextgen.com/es/library/",
  "date_published": "2026-08-12",
- "date_modified": "2026-08-12",
+ "date_modified": "2026-10-09",
  "hreflang": [
   {
    "lang": "en",
@@ -23,11 +23,11 @@
    "href": "https://ultratextgen.com/library/star-emoji/"
   }
  ],
- "title": "Emoji Estrella y Kaomoji: Copiar y Pegar ⭐ 🌟 ✨ Combos Estrellados",
- "meta_description": "Emoji estrella ⭐ 🌟 ✨, combos de cinco estrellas, sets de cielo nocturno y kaomoji estrellados. Haz clic en cualquiera para copiarlo al instante.",
- "breadcrumb": "Emoji Estrella y Kaomoji",
- "hero_h1": "Emoji Estrella y Kaomoji",
- "hero_tagline": "Estrellas de calificación, estrellas brillantes, estrellas fugaces, destellos y kaomoji con ojos de estrella: el set completo de estrellas en formato emoji. Haz clic en cualquier símbolo para copiarlo al instante.",
+ "title": "Emoji Estrella: Copiar y Pegar ⭐ 🌟 ✨ Estrellas de Calificación y Combos",
+ "meta_description": "Emoji estrella ⭐ 🌟 ✨, combos de cinco estrellas, sets de cielo nocturno y algunos kaomoji con ojos de estrella. Haz clic en cualquiera para copiarlo al instante.",
+ "breadcrumb": "Emoji Estrella",
+ "hero_h1": "Emoji Estrella",
+ "hero_tagline": "Estrellas de calificación, estrellas brillantes, estrellas fugaces y destellos: el set completo de estrellas en formato emoji. Haz clic en cualquier símbolo para copiarlo al instante.",
  "intro": "El emoji estrella ⭐ es uno de los más prácticos de internet: con un solo toque armas una reseña de cinco estrellas ⭐⭐⭐⭐⭐, calificas un producto o coronas a tu favorito en un pie de foto. Esta página reúne toda la familia de estrellas en formato emoji, desde la ⭐ de calificación hasta la 🌟 estrella brillante, los ✨ destellos y la 🌠 estrella fugaz, además de los compañeros del cielo nocturno y los kaomoji con ojos de estrella como (☆ω☆). Son emojis a todo color que se ven como pequeñas imágenes; si lo que buscas son estrellas Unicode de texto plano como ★ y ☆, que se pegan como caracteres en cualquier parte, revisa la colección de símbolos de estrella en /es/simbolos-de-estrella/ (los kaomoji y el arte ASCII de estrellas también tienen su propia página enlazada más abajo). Copia una estrella suelta, un kaomoji o un combo completo con un clic.",
  "sections": [
   {
@@ -106,7 +106,7 @@
    "id": "star-kaomoji-section",
    "label": "Kaomoji",
    "h2": "Kaomoji y Caritas de Estrella",
-   "intro": "Caritas japonesas con ojos de estrella que puedes pegar en cualquier lugar donde funcione el texto plano.",
+   "intro": "Una primera selección de caritas japonesas con ojos de estrella.",
    "symbols": [
     {
      "char": "(☆ω☆)",
@@ -117,26 +117,15 @@
      "label": "Kaomoji de sonrisa brillante"
     },
     {
-     "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆",
-     "label": "Kaomoji de alegría con destellos"
-    },
-    {
      "char": "★~(◠‿◕✿)",
      "label": "Kaomoji de guiño estrellado"
     },
     {
-     "char": "(๑>ᴗ<)☆",
-     "label": "Kaomoji de emoción con estrella"
-    },
-    {
      "char": "✩‿✩",
      "label": "Kaomoji de ojos centelleantes"
-    },
-    {
-     "char": "(⋆❛ ہ ❛⋆)",
-     "label": "Kaomoji de mirada resplandeciente"
     }
-   ]
+   ],
+   "more_link": { "href": "/es/library/kaomoji-estrella/", "text": "Ver todos los kaomoji de estrella" }
   }
  ],
  "collections": [

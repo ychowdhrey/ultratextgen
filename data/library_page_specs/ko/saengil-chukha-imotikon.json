@@ -1,0 +1,356 @@
+{
+  "lang": "ko",
+  "page_type": "library",
+  "slug": "saengil-chukha-imotikon",
+  "title": "생일 축하 이모티콘 🎂🎉 · 파티 축하 이모지 복사 | UltraTextGen",
+  "meta_description": "생일 축하 이모티콘 모음 🎂🎉🥳. 케이크, 풍선, 폭죽, 건배, 트로피와 생일 축하 조합까지. 카톡 생일 메시지에 눌러서 바로 붙여넣으세요.",
+  "breadcrumb": "생일 축하 이모티콘",
+  "hero_h1": "생일 축하 이모티콘",
+  "hero_tagline": "케이크, 풍선, 폭죽, 건배까지. 생일과 축하 메시지에 쓸 이모지를 눌러 바로 복사하세요.",
+  "intro": "생일 축하 메시지에서는 글보다 이모지가 먼저 눈에 들어옵니다. 🎂 케이크와 🎉 폭죽, 🥳 파티 얼굴 하나만 붙여도 축하하는 마음이 전해집니다. 여기에는 생일 케이크와 간식, 건배, 파티 음악, 불꽃놀이, 합격과 졸업을 축하하는 트로피와 꽃다발까지 모았습니다. 하나씩 눌러 복사하거나, 아래 축하 세트에서 조합을 한 번에 복사해 카톡 단톡방과 댓글에 붙여넣으세요.",
+  "copy_pattern": "collection",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "축하 세트",
+    "h2": "생일 · 축하 이모지 세트",
+    "intro": "축하 조합을 한 번에 복사하세요. 생일 메시지, 축하 댓글, 새해 인사에 바로 쓸 수 있습니다."
+  },
+  "collection_container_id": "partySetsContainer",
+  "collections": [
+    {
+      "name": "생일 파티",
+      "flags": [
+        "🎂",
+        "🎉",
+        "🎈",
+        "🥳"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "새해 카운트다운",
+      "flags": [
+        "🎆",
+        "🥂",
+        "✨",
+        "🎊"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "파티의 밤",
+      "flags": [
+        "🪩",
+        "💃",
+        "🕺",
+        "🎶"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "축하해요",
+      "flags": [
+        "🎉",
+        "👏",
+        "🏆",
+        "💐"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "건배",
+      "flags": [
+        "🥂",
+        "🍾",
+        "🎊"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "깜짝 파티",
+      "flags": [
+        "🎁",
+        "🎈",
+        "🤫",
+        "🥳"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "색종이 비",
+      "flags": [
+        "🎊",
+        "🎉",
+        "🎊",
+        "🎉"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "졸업 축하",
+      "flags": [
+        "🎓",
+        "🎉",
+        "👏",
+        "🥳"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "sections": [
+    {
+      "id": "birthday-treats",
+      "label": "생일 케이크",
+      "h2": "생일 케이크 · 간식 이모지",
+      "intro": "생일 축하 글에 빠지지 않는 케이크, 촛불, 사탕입니다.",
+      "symbols": [
+        {
+          "char": "🎂",
+          "label": "생일 케이크"
+        },
+        {
+          "char": "🧁",
+          "label": "컵케이크"
+        },
+        {
+          "char": "🍰",
+          "label": "조각 케이크"
+        },
+        {
+          "char": "🕯",
+          "label": "촛불"
+        },
+        {
+          "char": "🍬",
+          "label": "사탕"
+        },
+        {
+          "char": "🍭",
+          "label": "막대사탕"
+        }
+      ]
+    },
+    {
+      "id": "party-essentials",
+      "label": "파티 기본",
+      "h2": "파티 기본 이모지",
+      "intro": "말없이도 축하한다는 뜻이 전해지는 기본 이모지입니다.",
+      "symbols": [
+        {
+          "char": "🎉",
+          "label": "폭죽"
+        },
+        {
+          "char": "🎊",
+          "label": "색종이 공"
+        },
+        {
+          "char": "🥳",
+          "label": "파티 얼굴"
+        },
+        {
+          "char": "🪅",
+          "label": "피냐타"
+        },
+        {
+          "char": "🎈",
+          "label": "풍선"
+        },
+        {
+          "char": "🎁",
+          "label": "선물 상자"
+        },
+        {
+          "char": "🎀",
+          "label": "리본"
+        }
+      ]
+    },
+    {
+      "id": "toasts-drinks",
+      "label": "건배",
+      "h2": "건배 · 축하 음료 이모지",
+      "intro": "샴페인과 맥주로 건배할 때 씁니다.",
+      "symbols": [
+        {
+          "char": "🥂",
+          "label": "건배 잔"
+        },
+        {
+          "char": "🍾",
+          "label": "샴페인"
+        },
+        {
+          "char": "🍻",
+          "label": "맥주 건배"
+        },
+        {
+          "char": "🍹",
+          "label": "열대 음료"
+        },
+        {
+          "char": "🍸",
+          "label": "칵테일"
+        }
+      ]
+    },
+    {
+      "id": "music-dance",
+      "label": "음악과 춤",
+      "h2": "파티 음악 · 춤 이모지",
+      "intro": "노래와 춤으로 분위기를 띄울 때 씁니다.",
+      "symbols": [
+        {
+          "char": "💃",
+          "label": "춤추는 여자"
+        },
+        {
+          "char": "🕺",
+          "label": "춤추는 남자"
+        },
+        {
+          "char": "🪩",
+          "label": "미러볼"
+        },
+        {
+          "char": "🎶",
+          "label": "음표들"
+        },
+        {
+          "char": "🎵",
+          "label": "음표"
+        },
+        {
+          "char": "🎤",
+          "label": "마이크"
+        },
+        {
+          "char": "🔊",
+          "label": "큰 소리 스피커"
+        },
+        {
+          "char": "👯",
+          "label": "토끼 귀 친구들"
+        }
+      ]
+    },
+    {
+      "id": "fireworks-sparkle",
+      "label": "불꽃놀이",
+      "h2": "불꽃놀이 · 반짝임 이모지",
+      "intro": "새해 카운트다운과 기쁜 소식에 씁니다.",
+      "symbols": [
+        {
+          "char": "🎆",
+          "label": "불꽃놀이"
+        },
+        {
+          "char": "🎇",
+          "label": "폭죽 불꽃"
+        },
+        {
+          "char": "✨",
+          "label": "반짝임"
+        },
+        {
+          "char": "🌟",
+          "label": "빛나는 별"
+        },
+        {
+          "char": "⭐",
+          "label": "별"
+        },
+        {
+          "char": "💫",
+          "label": "어지러운 별"
+        }
+      ]
+    },
+    {
+      "id": "trophies-flowers",
+      "label": "트로피와 꽃",
+      "h2": "트로피 · 메달 · 꽃다발 이모지",
+      "intro": "합격, 졸업, 승진을 축하할 때 씁니다.",
+      "symbols": [
+        {
+          "char": "🏆",
+          "label": "트로피"
+        },
+        {
+          "char": "🥇",
+          "label": "금메달"
+        },
+        {
+          "char": "🎓",
+          "label": "학사모"
+        },
+        {
+          "char": "💐",
+          "label": "꽃다발"
+        },
+        {
+          "char": "🌹",
+          "label": "장미"
+        },
+        {
+          "char": "👑",
+          "label": "왕관"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/ko/library/imoji-johap/",
+      "title": "이모지 조합",
+      "desc": "상황별로 바로 쓰는 이모지 조합 모음."
+    },
+    {
+      "href": "/ko/library/insa-imotikon/",
+      "title": "인사 이모티콘",
+      "desc": "안녕, 고마워 같은 인사용 얼굴 문자."
+    },
+    {
+      "href": "/ko/library/banjjagi-giho/",
+      "title": "반짝이 특수문자",
+      "desc": "✨ ✦ ✧ 같은 반짝이는 기호 모음."
+    },
+    {
+      "href": "/ko/library/sinnan-imotikon/",
+      "title": "신난 이모티콘",
+      "desc": "기쁘고 들뜬 마음을 담은 얼굴 문자."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ko/library/saengil-chukha-imotikon/",
+  "home_url": "https://ultratextgen.com/ko/",
+  "crumb_home": "홈",
+  "library_url": "https://ultratextgen.com/ko/library/",
+  "date_published": "2026-10-06",
+  "date_modified": "2026-10-06",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/party-celebration-emojis/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emojis-de-fiesta/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/parti-emojileri/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/party-emojis/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/saengil-chukha-imotikon/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/party-celebration-emojis/"
+    }
+  ]
+}

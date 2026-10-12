@@ -147,6 +147,38 @@
           "label": "Kaomoji Gigi Terkatup"
         }
       ]
+    },
+    {
+      "id": "annoyed-kaomoji-pouts",
+      "label": "Cemberut & Dengus",
+      "h2": "Kaomoji Kesal: Cemberut, Dengusan dan Lirikan Sinis",
+      "intro": "Cemberut, dengusan, dan lirikan sinis buat saat kesabaran mulai habis. Tanda ＃ dan メ di dua wajah ini melambangkan urat dahi berdenyut yang biasa digambar manga pada karakter yang sebentar lagi meledak.",
+      "symbols": [
+        {
+          "char": "(¬_¬)",
+          "label": "Kaomoji Lirikan Sinis"
+        },
+        {
+          "char": "(￣^￣)",
+          "label": "Kaomoji Mendongak Sombong"
+        },
+        {
+          "char": "(｀へ´)",
+          "label": "Kaomoji Cemberut"
+        },
+        {
+          "char": "(＃￣ω￣)",
+          "label": "Kaomoji Urat Dahi Menonjol"
+        },
+        {
+          "char": "(-_-メ)",
+          "label": "Kaomoji Hampir Habis Sabar"
+        },
+        {
+          "char": "ಠ╭╮ಠ",
+          "label": "Kaomoji Tatapan Cemberut"
+        }
+      ]
     }
   ],
   "collection_section": {

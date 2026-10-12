@@ -55,7 +55,7 @@ const path = require('path');
 const LOCALES = new Set([
   'ar', 'bs', 'cs', 'da', 'de', 'es', 'fi', 'fr', 'hi', 'hr', 'hu', 'id', 'it',
   'ja', 'ko', 'ms', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sk', 'sr', 'sv', 'th',
-  'tl', 'tr', 'vi', 'zh-tw'
+  'tl', 'tr', 'uk', 'vi', 'zh-tw'
 ]);
 
 /**

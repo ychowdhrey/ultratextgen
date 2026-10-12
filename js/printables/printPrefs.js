@@ -646,7 +646,143 @@
     return out;
   }
 
+  /* Browser Print (Ctrl+P / Cmd+P) without pressing Download PDF used to
+     print 3-5 pages of the website: header, menus, buttons and footer, and
+     no worksheet. The owner's call (2026-10-07) is to keep the page but drop
+     the site chrome in that case and open with one line pointing at the
+     button that prints the sheet. Only the print stylesheet acts on it
+     (style.css, "Browser Print without the Download PDF button"); each
+     engine's own print path (body.is-printing) is untouched.
+
+     The note and its mount live here, once, because this is the one module
+     all four engines load. Until 2026-10-09 the table sat inside
+     printablesEngine.js, so the 30 pages that engine serves had the note and
+     the 14 pages served by the monogram, cross-stitch and label engines
+     (monogram-maker + 7 locales, cross-stitch-letters + 3, name-labels + 1)
+     printed the whole website. A second copy in each engine would have
+     drifted from this one; the engines call mountPrintNote() instead. */
+  const PRINT_NOTE_I18N = {
+    en: "This is a printout of the web page. To print the worksheet itself, press “{btn}” on the page.",
+    es: "Esto es una impresión de la página web. Para imprimir la ficha, pulsa «{btn}» en la página.",
+    fr: "Ceci est une impression de la page web. Pour imprimer la fiche, cliquez sur « {btn} » sur la page.",
+    pl: "To jest wydruk strony internetowej. Aby wydrukować kartę pracy, kliknij „{btn}” na stronie.",
+    it: "Questa è la stampa della pagina web. Per stampare la scheda, premi «{btn}» nella pagina.",
+    de: "Das ist ein Ausdruck der Webseite. Um das Arbeitsblatt zu drucken, klicke auf der Seite auf „{btn}“.",
+    pt: "Esta é uma impressão da página da web. Para imprimir a folha, clique em “{btn}” na página.",
+    id: "Ini cetakan halaman web. Untuk mencetak lembar kerjanya, tekan “{btn}” di halaman.",
+    nl: "Dit is een afdruk van de webpagina. Klik op de pagina op ‘{btn}’ om het werkblad te printen.",
+    tr: "Bu, web sayfasının çıktısıdır. Çalışma sayfasını yazdırmak için sayfadaki “{btn}” düğmesine basın."
+  };
+  /* The note's button name is a real link back to the live page, and the page
+     answers that link by finding its Download PDF button and pointing at it.
+     A saved PDF from the browser's own "Save as PDF" keeps links clickable, so
+     a person reading the file on a screen is one click from the button. On
+     paper a link cannot be clicked, so the note is followed by the page's
+     short address, in text a person can type.
+     The address is the page's canonical URL with the query and fragment
+     removed. Nothing the visitor typed is ever put into it: names and words
+     live in the page's own state, never in a URL this module writes. */
+  const PDF_HASH = "download-pdf";
+  const PDF_CONTROLS = "[data-pt-pdf], .pt-pdf-btn";
+
+  function pageUrl() {
+    try {
+      const canon = document.querySelector('link[rel="canonical"]');
+      const u = new URL((canon && canon.getAttribute("href")) || location.href, location.href);
+      u.search = "";
+      u.hash = "";
+      return /^https?:$/.test(u.protocol) ? u : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function isShown(el) {
+    if (!el || !el.getClientRects().length || el.disabled) return false;
+    if (el.closest("[hidden]")) return false;
+    return window.getComputedStyle(el).visibility !== "hidden";
+  }
+
+  /* The visible control whose text is the note's button name wins; the sheet's
+     other save actions ("Save all 7 levels", the A-Z book) carry the same
+     marker and are only a fallback. "Visible" is checked at call time, so a
+     section on a hidden tab is skipped rather than scrolled to. */
+  function findPdfControl(label) {
+    const shown = Array.prototype.filter.call(document.querySelectorAll(PDF_CONTROLS), isShown);
+    const named = shown.filter((b) => b.textContent.trim() === label);
+    return named[0] || shown[0] || null;
+  }
+
+  function highlightPdfControl(btn) {
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    btn.scrollIntoView({ block: "center", behavior: reduce ? "auto" : "smooth" });
+    /* Moves focus onto one button and nothing else: no tabindex is written and
+       no handler holds it there, so Tab and Shift+Tab leave it as usual. */
+    btn.focus({ preventScroll: true });
+    btn.classList.remove("pt-pdf-pulse");
+    void btn.offsetWidth;
+    btn.classList.add("pt-pdf-pulse");
+    window.setTimeout(() => btn.classList.remove("pt-pdf-pulse"), 4000);
+  }
+
+  /* The engines build their buttons after the HTML parses, and a restored
+     sheet can build them later still, so wait for load and then retry for a
+     few seconds before giving up quietly. */
+  function jumpToPdfControl(label) {
+    let tries = 0;
+    (function attempt() {
+      const btn = findPdfControl(label);
+      if (btn) return highlightPdfControl(btn);
+      if (++tries < 25) window.setTimeout(attempt, 200);
+    })();
+  }
+
+  function wirePdfJump(label) {
+    const run = () => { if (location.hash === "#" + PDF_HASH) jumpToPdfControl(label); };
+    if (document.readyState === "complete") run();
+    else window.addEventListener("load", run, { once: true });
+    window.addEventListener("hashchange", run);
+  }
+
+  /* o.lang and o.button are the calling engine's own page language and its
+     Download PDF label, so the note names exactly the button the visitor can
+     see. Both default to what this module already knows. */
+  function mountPrintNote(o) {
+    if (!document.body || document.querySelector(".pt-print-note")) return;
+    const opt = o || {};
+    const lang = String(opt.lang || document.documentElement.getAttribute("lang") || "en")
+      .slice(0, 2).toLowerCase();
+    const btn = opt.button || shareLabels().savePdf || "Download PDF";
+    /* The existing string is split around its {btn} slot, never retranslated:
+       the words before and after stay exactly as the table has them. */
+    const parts = (PRINT_NOTE_I18N[lang] || PRINT_NOTE_I18N.en).split("{btn}");
+    const url = pageUrl();
+    const note = document.createElement("p");
+    note.className = "pt-print-note";
+    note.appendChild(document.createTextNode(parts[0]));
+    if (url) {
+      const a = document.createElement("a");
+      a.className = "pt-print-note-link";
+      a.href = url.href + "#" + PDF_HASH;
+      a.textContent = btn;
+      note.appendChild(a);
+    } else {
+      note.appendChild(document.createTextNode(btn));
+    }
+    note.appendChild(document.createTextNode(parts.slice(1).join("{btn}")));
+    if (url) {
+      const addr = document.createElement("span");
+      addr.className = "pt-print-note-addr";
+      addr.textContent = url.host + url.pathname.replace(/\/$/, "");
+      note.appendChild(addr);
+    }
+    document.body.insertBefore(note, document.body.firstChild);
+    document.body.classList.add("pt-engine-page");
+    wirePdfJump(btn);
+  }
+
   UTG.printPrefs = {
+    mountPrintNote: mountPrintNote,
     values: values,
     PAPERS: PAPERS,
     PAPER_FULL: PAPER_FULL,

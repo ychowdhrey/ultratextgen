@@ -100,7 +100,12 @@ Both were recorded after `answers/` was once wrongly "corrected" on exactly that
 basis. Reasoning: `docs/decisions/content-lanes.md`.
 
 `symbol/` hub↔spoke and peer↔peer links are **generated**, never hand-written:
-`npm run sync:symbol-peer-links`. A declared peer relation must be reciprocal, and
+`npm run sync:symbol-peer-links`. Every spoke also carries a generated line under its first copy
+section that sends a reader wanting more than one character to the collection
+(`npm run sync:symbol-collection-link`, gated whole-tree). A locale spoke's line is
+worded only with its locale collection's own `<h1>`; a locale without a
+translation of that collection links its own library hub instead, never an
+English page. A declared peer relation must be reciprocal, and
 the generator mirrors the peer and hub graphs into every locale where both ends have
 a live sibling.
 

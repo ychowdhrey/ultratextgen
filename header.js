@@ -216,7 +216,7 @@
       category: { label: "カテゴリー", href: "/category/" },
       usecase: { label: "使い方", href: "/usecase/" },
       library: { label: "ライブラリ", href: "/ja/library/" },
-      printables: { label: "印刷用", href: "/printables/" },
+      printables: { label: "学習プリント", href: "/ja/purinto/" },
       events: { label: "イベント", href: "/events/" },
       search: "フォントスタイルを検索…",
       darkMode: "ダークモード切り替え"
@@ -240,7 +240,7 @@
       category: { label: "Categorieën", href: "/category/" },
       usecase: { label: "Toepassingen", href: "/nl/usecase/" },
       library: { label: "Bibliotheek", href: "/nl/library/" },
-      printables: { label: "Afdrukbaar", href: "/printables/" },
+      printables: { label: "Afdrukbaar", href: "/nl/om-uit-te-printen/" },
       events: { label: "Evenementen", href: "/events/" },
       search: "Zoek lettertypestijlen…",
       darkMode: "Donkere modus wisselen"
@@ -388,6 +388,18 @@
       events: { label: "Acara", href: "/events/" },
       search: "Cari gaya font…",
       darkMode: "Tukar mod gelap"
+    },
+    uk: {
+      home: "/uk/",
+      guide: { label: "Посібники", href: "/guide/" },
+      answers: { label: "Відповіді", href: "/answers/" },
+      category: { label: "Категорії", href: "/category/" },
+      usecase: { label: "Ідеї", href: "/usecase/" },
+      library: { label: "Бібліотека", href: "/library/" },
+      printables: { label: "Для друку", href: "/printables/" },
+      events: { label: "Події", href: "/events/" },
+      search: "Шукати шрифти, символи…",
+      darkMode: "Темна тема"
     }
   };
 
@@ -1046,6 +1058,9 @@
   // is private until someone decides its payload is catalogue content.
   var CATALOGUE_COPY_METHODS = {
     symbol_tile: 1,
+    // The other look of a two-look tile (symbol-explorer.js copyLook): the
+    // same catalogue character with a variation selector.
+    symbol_look_switch: 1,
     grid_collection: 1,
     saved_collection: 1,
     glyph: 1,
@@ -1063,7 +1078,11 @@
       event: "copy_text",
       copy_method: method,
       copy_item: Object.prototype.hasOwnProperty.call(CATALOGUE_COPY_METHODS, method) ? id.item : undefined,
-      copy_item_group: id.group
+      copy_item_group: id.group,
+      // "emoji" | "plain" on a symbol that has both looks, otherwise cleared.
+      // Always present as a key for the same reason as copy_item: GTM would
+      // otherwise re-send the previous copy's look on the next copy.
+      copy_look: undefined
     };
     if (extra) {
       for (var k in extra) {
@@ -1202,6 +1221,74 @@
     printHidden = [];
   }
 
+  /* @browse-events:begin */
+  /* Browse events: the kaomoji hub's "browse by mood" links, and the /library/
+     directory's filter chips and search box. Every payload is a pure function
+     of catalogue values and counts, so a test can assert what leaves the page
+     without a browser. Every key is always present (undefined clears it): GTM's
+     data layer keeps a key's last value.
+
+     What is deliberately NOT sent: anything a visitor typed, except the
+     library search term, which follows the site_search policy (trimmed, at most
+     100 characters). A filter value is a chip label from the page's own
+     controlled vocabulary, never free text. */
+  const BROWSE_SETTLE_MS = 800;
+  const browseTimers = {};
+
+  // `groupIndex` is the 1-based position of the link's list among the
+  // .kao-mood-links lists on the hub (the same order on every locale hub).
+  function moodIndexClickPayload(destinationPath, groupIndex) {
+    return {
+      event: "kaomoji_mood_index_click",
+      destination_path: String(destinationPath || "").slice(0, 200),
+      mood_group: groupIndex > 0 ? groupIndex : undefined
+    };
+  }
+
+  function libraryFilterPayload(filterType, filterValue, resultCount) {
+    return {
+      event: "library_filter",
+      filter_type: filterType,
+      filter_value: filterValue,
+      result_count: resultCount
+    };
+  }
+
+  function librarySearchPayload(term, resultCount) {
+    return {
+      event: "library_search",
+      search_term: String(term || "").trim().slice(0, 100),
+      result_count: resultCount
+    };
+  }
+
+  // One row per settled change: a later change within the window replaces the
+  // pending one, so a run of chip clicks or keystrokes records its end state.
+  function pushSettled(payload) {
+    clearTimeout(browseTimers[payload.event]);
+    browseTimers[payload.event] = setTimeout(function () {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(payload);
+    }, BROWSE_SETTLE_MS);
+  }
+
+  // `value` is the chip label, or "none" when the chip was switched off or the
+  // filters were cleared (then `type` is "all" for a clear).
+  function trackLibraryFilter(type, value, resultCount) {
+    pushSettled(libraryFilterPayload(type, value, resultCount));
+  }
+
+  // A search box cleared to nothing is not a search: it cancels what was pending.
+  function trackLibrarySearch(term, resultCount) {
+    const payload = librarySearchPayload(term, resultCount);
+    if (!payload.search_term) {
+      clearTimeout(browseTimers[payload.event]);
+      return;
+    }
+    pushSettled(payload);
+  }
+  /* @browse-events:end */
+
   var ns = (window.UltraTextGen = window.UltraTextGen || {});
   ns.hideForPrint = hideForPrint;
   ns.restorePrint = restorePrint;
@@ -1210,6 +1297,8 @@
   ns.trackPrintable = trackPrintable;
   ns.trackPrintableEvent = trackPrintableEvent;
   ns.printableCredit = printableCredit;
+  ns.trackLibraryFilter = trackLibraryFilter;
+  ns.trackLibrarySearch = trackLibrarySearch;
 
   function initializeCtaTracking() {
     document.addEventListener("click", function (evt) {
@@ -1260,15 +1349,28 @@
     }, false);
   }
 
+  function initializeKaomojiMoodIndexTracking() {
+    document.addEventListener("click", function (evt) {
+      const link = evt.target && evt.target.closest && evt.target.closest(".kao-mood-links a[href]");
+      if (!link) return;
+      const lists = document.querySelectorAll(".kao-mood-links");
+      const group = Array.prototype.indexOf.call(lists, link.closest(".kao-mood-links")) + 1;
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(moodIndexClickPayload(link.pathname, group));
+    }, false);
+  }
+
   if (document.body) {
     initializeSharedHeader();
     initializeCtaTracking();
     initializePrintableNavTracking();
+    initializeKaomojiMoodIndexTracking();
   } else {
     document.addEventListener("DOMContentLoaded", function () {
       initializeSharedHeader();
       initializeCtaTracking();
       initializePrintableNavTracking();
+      initializeKaomojiMoodIndexTracking();
     });
   }
 })();

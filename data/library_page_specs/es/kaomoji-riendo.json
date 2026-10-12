@@ -121,6 +121,42 @@
           "label": "No puedo más"
         }
       ]
+    },
+    {
+      "id": "happy-crying",
+      "label": "Llorar de risa",
+      "h2": "Kaomoji llorando de felicidad",
+      "intro": "Lágrimas de alegría: reírse hasta llorar, o llorar porque algo es demasiado tierno. ಥ es una letra del canarés que se lee como un ojo a punto de desbordarse de lágrimas, y los ﾟ。 a los lados son las gotas que salen volando.",
+      "symbols": [
+        {
+          "char": "(ಥ‿ಥ)",
+          "label": "Lágrimas de alegría"
+        },
+        {
+          "char": "(T▽T)",
+          "label": "Lágrimas felices"
+        },
+        {
+          "char": "(;▽;)",
+          "label": "Sonriendo entre lágrimas"
+        },
+        {
+          "char": "(ㅠ▽ㅠ)",
+          "label": "Sonrisa llorosa"
+        },
+        {
+          "char": "。ﾟ(TヮT)ﾟ。",
+          "label": "Emocionado hasta las lágrimas"
+        },
+        {
+          "char": "｡ﾟ( ﾟ^∀^ﾟ)ﾟ｡",
+          "label": "Llorando de la risa"
+        },
+        {
+          "char": "･ﾟ･(｡>ω<｡)･ﾟ･",
+          "label": "Sollozo de felicidad"
+        }
+      ]
     }
   ],
   "related": [

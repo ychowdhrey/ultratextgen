@@ -45,9 +45,11 @@
     'セ': '世', 'チ': '干'
   };
 
-  // Reverse a string by code points (emoji-safe)
+  // Reverse a string by user-perceived characters, not code points. A code-point
+  // reversal turned 🇫🇷 into 🇷🇫, reordered family emoji, detached skin tones and
+  // moved Thai and Devanagari vowel and tone marks onto the wrong consonant.
   function reverseString(str) {
-    return Array.from(str).reverse().join('');
+    return splitGraphemes(str).reverse().join('');
   }
 
   // Flip a single character
@@ -55,12 +57,26 @@
     return flipMap[ch] || null;
   }
 
+  // Flip one user-perceived character. A base letter that carries combining
+  // marks (e + U+0301) keeps its marks after the flipped base; anything whose
+  // first code point has no flip (an emoji sequence, a Thai cluster) is left whole.
+  function flipCluster(cluster) {
+    const direct = flipChar(cluster);
+    if (direct) return direct;
+    const cps = Array.from(cluster);
+    if (cps.length > 1) {
+      const base = flipChar(cps[0]);
+      if (base) return base + cps.slice(1).join('');
+    }
+    return null;
+  }
+
   // Apply flip and reverse (standard upside down)
   function applyFlipAndReverse(str, fallbackMode = 'fallback') {
-    const chars = Array.from(str);
+    const chars = splitGraphemes(str);
     const reversed = chars.reverse();
     const flipped = reversed.map(ch => {
-      const flip = flipChar(ch);
+      const flip = flipCluster(ch);
       if (flip) return flip;
       if (fallbackMode === 'fallback') return ch;
       return ch;
@@ -132,10 +148,10 @@
     },
 
     mirrorIllusion: (text) => {
-      const chars = Array.from(text);
+      const chars = splitGraphemes(text);
       const reversed = chars.reverse();
       const transformed = reversed.map(ch => {
-        const flip = flipChar(ch);
+        const flip = flipCluster(ch);
         if (flip) return flip;
         
         const illusion = illusionMap[ch];
@@ -291,11 +307,16 @@ function mapToArray(mapStrOrArr, kind) {
 const BASE_LETTER_FALLBACK = {
   'ł': 'l', 'Ł': 'L',
   'đ': 'd', 'Đ': 'D',
-  'ı': 'i',
+  // Turkish dotless ı is deliberately not here: no style has a dotless letter,
+  // and a dotted i is a different letter (ışık is not isik), so it passes
+  // through as typed, which is what the notice tells the reader.
   'ø': 'o', 'Ø': 'O',
-  'ß': 's', 'ẞ': 'S',
-  'æ': 'a', 'Æ': 'A',
-  'œ': 'o', 'Œ': 'O',
+  // Ligature letters stand for two letters, so they are written out in full
+  // (Straße -> Strasse, cœur -> coeur). Folding them to one letter changed the
+  // word (Strase, cour). mapChar styles each letter of a two-letter value.
+  'ß': 'ss', 'ẞ': 'SS',
+  'æ': 'ae', 'Æ': 'AE',
+  'œ': 'oe', 'Œ': 'OE',
   'ð': 'd', 'Ð': 'D',
   'þ': 't', 'Þ': 'T',
   'ħ': 'h', 'Ħ': 'H'
@@ -354,6 +375,14 @@ function mapChar(ch, normalUpper, normalLower, normalNums, upperArr, lowerArr, n
   if (n !== -1) return numsArr[n] || ch;
 
   const { base, marks } = resolveBaseAndMarks(ch);
+  // Only a fallback that writes a letter out as several letters (ß -> ss) recurses.
+  // A lone astral character (an emoji, a styled math letter) has .length 2 but is
+  // its own base, and recursing on it never ends.
+  if (base !== ch && base.length > 1 && !marks) {
+    return Array.from(base).map(function (letter) {
+      return mapChar(letter, normalUpper, normalLower, normalNums, upperArr, lowerArr, numsArr, accentSafe);
+    }).join('');
+  }
   if (base !== ch && (accentSafe || !marks)) {
     const bu = normalUpper.indexOf(base);
     if (bu !== -1) return attachMarks(upperArr[bu] || base, base, marks);
@@ -492,6 +521,38 @@ function renderMap(text, style) {
     return /\p{Lu}/u.test(letters.slice(1)); // internal caps: McDonald, iPhone
   }
 
+  // Caps-Lock text: it has capitals and not one lowercase letter, so an
+  // all-caps word in it is shouting, not an acronym. An acronym is only
+  // readable as one against lowercase neighbours ("the NASA team"). Text that
+  // holds a letter from an uncased script (kana, Hangul, Arabic, ...) is left
+  // alone: Caps Lock does not exist there, so a Latin "AI" next to it is far
+  // more likely an acronym than shouting.
+  function caseIsShouting(text) {
+    return /\p{Lu}/u.test(text) && !/\p{Ll}/u.test(text) && !/\p{Lo}/u.test(text);
+  }
+
+  // Applied by Capitalized, Title and Sentence case: shouting text is
+  // lower-cased first so the per-word rules below see ordinary words.
+  function caseUnshout(text) {
+    return caseIsShouting(text) ? caseLower(text) : text;
+  }
+
+  // Surnames that a lower-cased pass would flatten: mcdavid -> McDavid,
+  // o'brien -> O'Brien. Runs on a word already lower-cased and first-letter
+  // capitalised. Deliberately narrow: Mc needs three more letters with a
+  // vowel among them (so mcg, mcq stay as they are), O' skips o'clock and
+  // o'er. Mac, van, de and the like are not attempted: mac and van are also
+  // ordinary words, and no rule here can tell the two apart.
+  const CASE_O_APOSTROPHE_WORDS = new Set(['clock', 'er']);
+  function caseSurnameFix(seg) {
+    return seg
+      .replace(/^([^\p{L}]*Mc)(\p{L}{3,})/u, (m, head, rest) =>
+        /[aeiouy]/i.test(rest) ? head + caseUpper(rest[0]) + rest.slice(1) : m)
+      .replace(/^([^\p{L}]*O['\u2019])(\p{L}+)/u, (m, head, rest) =>
+        CASE_O_APOSTROPHE_WORDS.has(rest.toLowerCase())
+          ? m : head + caseUpper(rest[0]) + rest.slice(1));
+  }
+
   function caseLowerWord(token) {
     return caseHasIntentionalCasing(token) ? token : caseLower(token);
   }
@@ -505,10 +566,15 @@ function renderMap(text, style) {
 
   function caseCapWord(token) {
     if (caseHasIntentionalCasing(token)) return token;
-    return token.split('-').map(seg => caseCapFirstAlpha(caseLower(seg))).join('-');
+    return token.split('-')
+      .map(seg => caseSurnameFix(caseCapFirstAlpha(caseLower(seg)))).join('-');
   }
 
+  // "i" is the English first-person pronoun only. In Polish, Italian, Croatian
+  // and Czech it is the word "and", so the fix is gated on the page language.
   function caseFixPronounI(token) {
+    const lang = caseLocale();
+    if (lang && !/^en(-|$)/i.test(lang)) return token;
     return /^i(['’](m|ve|ll|d))?$/i.test(token) ? 'I' + token.slice(1) : token;
   }
 
@@ -646,13 +712,15 @@ function renderMap(text, style) {
 
     // First letter of every word capitalized, no small-word exceptions.
     'case-capitalized': text =>
-      text.split(/(\s+)/).map(w => (w.trim() ? caseCapWord(w) : w)).join(''),
+      caseUnshout(text).split(/(\s+)/).map(w => (w.trim() ? caseCapWord(w) : w)).join(''),
 
     // Title Case: capitalizes major words, lowercases short articles/
-    // conjunctions/prepositions (unless first/last word), always preserves
-    // acronyms and already-intentional internal caps (NASA, iPhone, McDonald).
+    // conjunctions/prepositions (unless first/last word), preserves acronyms
+    // and already-intentional internal caps (NASA, iPhone, McDonald) in text
+    // that also has lowercase letters. Text with no lowercase at all is
+    // Caps-Lock text and is lower-cased first (see caseIsShouting).
     'case-title': text => {
-      const words = text.split(/(\s+)/);
+      const words = caseUnshout(text).split(/(\s+)/);
       const wordIdxs = words.map((w, i) => (w.trim() ? i : -1)).filter(i => i >= 0);
       const first = wordIdxs[0];
       const last = wordIdxs[wordIdxs.length - 1];
@@ -671,10 +739,12 @@ function renderMap(text, style) {
     // standalone pronoun "i" / "i'm" / "i've" / "i'll" / "i'd".
     'case-sentence': text => {
       let capNext = true;
-      return text.split(/(\s+)/).map(w => {
+      return caseUnshout(text).split(/(\s+)/).map(w => {
         if (!w.trim()) return w;
         let out = caseLowerWord(w);
-        if (capNext && !caseHasIntentionalCasing(w)) out = caseCapFirstAlpha(out);
+        if (capNext && !caseHasIntentionalCasing(w)) {
+          out = caseSurnameFix(caseCapFirstAlpha(out));
+        }
         out = caseFixPronounI(out);
         capNext = /[.!?]['")\]]*$/.test(w);
         return out;

@@ -8,7 +8,7 @@
   "crumb_home": "Inicio",
   "library_url": "https://ultratextgen.com/es/library/",
   "date_published": "2026-08-12",
-  "date_modified": "2026-08-12",
+  "date_modified": "2026-10-09",
   "hreflang": [
     {
       "lang": "en",
@@ -23,11 +23,11 @@
       "href": "https://ultratextgen.com/library/laughing-emoji/"
     }
   ],
-  "title": "Emoji Riendo: Copiar y Pegar 😂 Kaomoji y Combos de Risa",
-  "meta_description": "Copia y pega el emoji riendo 😂 🤣 💀, kaomoji como (≧▽≦) y combos de reacción para comentarios y chats. Haz clic en cualquiera para copiarlo.",
-  "breadcrumb": "Emoji Riendo y Kaomoji",
-  "hero_h1": "Emoji Riendo y Kaomoji de Risa",
-  "hero_tagline": "Desde el 😂 con lágrimas de alegría hasta el 💀 de me morí de risa y los kaomoji (≧▽≦): todas las formas de reírte por escrito. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "title": "Emoji Riendo: Copiar y Pegar 😂 Caras de Risa, Emoticonos XD y Combos",
+  "meta_description": "Copia emojis riendo 😂 🤣 💀, emoticonos de risa como XD y :'D, y combos de reacción para comentarios y chats. Haz clic en cualquier símbolo para copiarlo.",
+  "breadcrumb": "Emoji Riendo",
+  "hero_h1": "Emoji Riendo",
+  "hero_tagline": "Desde el 😂 con lágrimas de alegría hasta el 💀 de me morí de risa y el XD de toda la vida: todas las formas de reírte por escrito. Haz clic en cualquier símbolo para copiarlo al instante.",
   "intro": "El emoji riendo 😂 lleva una década encabezando las listas de emojis más usados, aunque en el lenguaje de los memes ya lo desplazaron el 💀 y el 😭: en español los dos equivalen a decir me morí o me mató, y no tienen nada que ver con la tristeza. Esta página reúne todas las variantes del emoji riendo, las calaveras y el dedo que señala que de verdad usa la gente joven, las risitas traviesas y sonrisas pícaras, y los kaomoji japoneses de risa, además de combos de un clic pensados para comentarios, respuestas y chats de grupo. Copia un solo carácter o un set completo y pégalo en donde estés escribiendo, desde una publicación de Instagram hasta un mensaje de WhatsApp.",
   "sections": [
     {
@@ -139,10 +139,42 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticonos",
+      "h2": "Emoticonos de Risa de Texto",
+      "intro": "XD aprieta los ojos en plena carcajada y :'D le suma lágrimas de risa. Los dos funcionan en cualquier lugar donde se pueda escribir, del chat de un juego a un SMS.",
+      "symbols": [
+        {
+          "char": "XD",
+          "label": "XD de risa"
+        },
+        {
+          "char": "xD",
+          "label": "xD en minúscula"
+        },
+        {
+          "char": ":'D",
+          "label": "Lágrimas de risa"
+        },
+        {
+          "char": "X'D",
+          "label": "Llorando de risa"
+        },
+        {
+          "char": ":-D",
+          "label": "Carcajada con nariz"
+        },
+        {
+          "char": "=D",
+          "label": "Sonrisa enorme"
+        }
+      ]
+    },
+    {
       "id": "laughing-kaomoji",
       "label": "Kaomoji",
       "h2": "Kaomoji de risa y caritas de texto",
-      "intro": "Caritas japonesas de texto que sonríen, se carcajean y levantan los brazos de pura alegría.",
+      "intro": "Cuatro caritas japonesas en plena risa, con los brazos arriba y los ojos cerrados.",
       "symbols": [
         {
           "char": "(≧▽≦)",
@@ -153,34 +185,15 @@
           "label": "Kaomoji riendo con los brazos arriba"
         },
         {
-          "char": "(´∀｀)",
-          "label": "Kaomoji de sonrisa relajada"
-        },
-        {
-          "char": "（＾ｖ＾）",
-          "label": "Kaomoji de sonrisa traviesa"
-        },
-        {
-          "char": "(＾ω＾)",
-          "label": "Kaomoji de risita feliz"
-        },
-        {
           "char": "(≧∇≦)/",
           "label": "Kaomoji riendo y saludando"
         },
         {
           "char": "ヾ(≧▽≦*)o",
           "label": "Kaomoji de risa incontrolable"
-        },
-        {
-          "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆",
-          "label": "Kaomoji de risa con brillos"
-        },
-        {
-          "char": "(¬‿¬)",
-          "label": "Kaomoji de sonrisa astuta"
         }
-      ]
+      ],
+      "more_link": { "href": "/es/library/kaomoji-riendo/", "text": "Ver todos los kaomoji de risa" }
     }
   ],
   "collections": [
@@ -272,7 +285,7 @@
   "related": [
     {
       "href": "/es/library/emoji-llorando/",
-      "title": "Emoji llorando y kaomoji",
+      "title": "Emoji Llorando",
       "desc": "Caras de llanto y combos de lágrimas de risa, el pariente más cercano de la carcajada."
     },
     {
@@ -282,7 +295,7 @@
     },
     {
       "href": "/es/library/caritas-felices/",
-      "title": "Emoji feliz y kaomoji",
+      "title": "Caritas Felices",
       "desc": "Sonrisas, combos de alegría y sets de emojis con ánimo de día soleado."
     },
     {

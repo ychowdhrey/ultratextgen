@@ -1,14 +1,14 @@
 {
   "slug": "happy-emoji",
-  "title": "Happy Emoji & Kaomoji: Copy & Paste 😊 Joy Combos",
-  "meta_description": "Happy emoji 😊 😄 🥰, joyful kaomoji like ヽ(´▽`)/, and sunny combo sets to brighten bios, captions, and messages. Click any symbol to copy it instantly.",
+  "title": "Happy Emoji: Copy & Paste 😊 Smiles, Emoticons & Joy Combos",
+  "meta_description": "Happy emoji 😊 😄 🥰, classic smiley emoticons like :D and sunny combo sets to brighten bios, captions and messages. Click any symbol to copy it instantly.",
   "canonical": "https://ultratextgen.com/library/happy-emoji/",
-  "breadcrumb": "Happy Emoji & Kaomoji",
-  "hero_h1": "Happy Emoji & Kaomoji",
-  "hero_tagline": "Smiles, sunshine, and joyful kaomoji: every happy emoji from a soft 🙂 to a starstruck 🤩. Click any symbol to copy it instantly.",
-  "intro": "A well-placed happy emoji sets the tone of a whole message: 😊 reads warm and sincere, 😄 is open delight, 🥰 adds affection. This library collects every smiling face, the excitement and celebration boosters that pair with them, wholesome sunshine-and-flower symbols for feel-good bios, and cheerful kaomoji like ヽ(´▽`)/: with one-click joy combos for captions, comments, and good-news messages.",
+  "breadcrumb": "Happy Emoji",
+  "hero_h1": "Happy Emoji",
+  "hero_tagline": "Smiles, sunshine and typed :D emoticons: every happy emoji from a soft 🙂 to a starstruck 🤩. Click any symbol to copy it instantly.",
+  "intro": "A well-placed happy emoji sets the tone of a whole message: 😊 reads warm and sincere, 😄 is open delight, 🥰 adds affection. This library collects every smiling face, the excitement and celebration boosters that pair with them, wholesome sunshine-and-flower symbols for feel-good bios, and keyboard smileys like :D, with one-click joy combos for captions, comments, and good-news messages.",
   "date_published": "2026-06-12",
-  "date_modified": "2026-06-12",
+  "date_modified": "2026-10-08",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -60,21 +60,32 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticons",
+      "h2": "Happy Text Emoticons",
+      "intro": "Smileys typed with a colon and a bracket. Older than emoji, and still the quickest way to look friendly in plain text.",
+      "symbols": [
+        { "char": ":)", "label": "Smile Emoticon" },
+        { "char": ":-)", "label": "Classic Smile With Nose Emoticon" },
+        { "char": ":D", "label": "Big Grin Emoticon" },
+        { "char": ":-D", "label": "Grin With Nose Emoticon" },
+        { "char": "=)", "label": "Soft Smile Emoticon" },
+        { "char": "XD", "label": "Laughing Grin Emoticon" },
+        { "char": "c:", "label": "Wide Smile Emoticon" }
+      ]
+    },
+    {
       "id": "happy-kaomoji",
       "label": "Kaomoji",
       "h2": "Happy Kaomoji & Text Faces",
-      "intro": "Beaming Japanese-style text faces throwing their arms up in joy.",
+      "intro": "A short sample of joyful Japanese text faces.",
       "symbols": [
         { "char": "ヽ(´▽`)/", "label": "Arms Raised Joy Kaomoji" },
         { "char": "＼(^o^)／", "label": "Cheering Kaomoji" },
-        { "char": "(＾▽＾)", "label": "Bright Smile Kaomoji" },
         { "char": "(◕‿◕)", "label": "Sweet Smile Kaomoji" },
-        { "char": "(✿◠‿◠)", "label": "Flower Smile Kaomoji" },
-        { "char": "٩(◕‿◕｡)۶", "label": "Excited Dance Kaomoji" },
-        { "char": "(o^▽^o)", "label": "Rosy Cheeks Kaomoji" },
-        { "char": "(｡♥‿♥｡)", "label": "Love-Struck Kaomoji" },
-        { "char": "⊂((・▽・))⊃", "label": "Big Hug Kaomoji" }
-      ]
+        { "char": "٩(◕‿◕｡)۶", "label": "Excited Dance Kaomoji" }
+      ],
+      "more_link": { "href": "/library/happy-kaomoji/", "text": "See every happy kaomoji" }
     }
   ],
   "collection_section": {
@@ -123,8 +134,13 @@
   ],
   "related": [
     {
+      "href": "/library/happy-kaomoji/",
+      "title": "Happy Kaomoji",
+      "desc": "Cheering, dancing and beaming Japanese text faces for every kind of good mood."
+    },
+    {
       "href": "/library/laughing-emoji/",
-      "title": "Laughing Emoji & Kaomoji",
+      "title": "Laughing Emoji",
       "desc": "LOL faces and meme laughing combos when happy turns hilarious."
     },
     {
@@ -141,6 +157,11 @@
       "href": "/library/text-faces-kaomoji/",
       "title": "Text Faces & Kaomoji",
       "desc": "The full kaomoji library for every mood."
+    },
+    {
+      "href": "/library/excited-kaomoji/",
+      "title": "Excited Kaomoji",
+      "desc": "Copy and paste excited kaomoji: hyped, arms-up Japanese text faces bursting with energy."
     }
   ]
 }

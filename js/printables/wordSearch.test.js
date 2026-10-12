@@ -280,5 +280,21 @@ const SPELLING = ["because", "friend", "people", "school", "water", "there",
   ok(cellCount(r.solution) < total, "words cross each other — " + cellCount(r.solution) + " cells for " + total + " letters");
 }
 
+/* ---------------------------------------------------------------
+   11. German and Polish grid letters (fold "de", and no fold)
+   --------------------------------------------------------------- */
+{
+  // German grids take the newspaper rule: Ä Ö Ü are AE OE UE and ß is SS, so
+  // BÄR stays a different word from BAR. The word list keeps the real spelling.
+  const de = WS.normalizeWords(["Bär", "Straße", "Öl", "Café"], "de");
+  eq(de.map((w) => w.key).join(" "), "BAER STRASSE OEL CAFE", "fold de spells umlauts and ß out");
+  eq(de[1].display, "Straße", "fold de keeps the real spelling for the word list");
+  const deGrid = WS.build({ words: ["Bär", "Straße", "Übung", "Löwe", "Käse"], seed: "de", level: "hard", fold: "de" });
+  ok(!/[ÄÖÜß]/.test(gridText(deGrid.grid)), "fold de: no umlaut or ß reaches the grid");
+  // Polish letters are letters of the alphabet, not marks: no fold keeps them.
+  const pl = WS.normalizeWords(["żółw", "łódź", "jeż"], false);
+  eq(pl.map((w) => w.key).join(" "), "ŻÓŁW ŁÓDŹ JEŻ", "no fold keeps Polish letters");
+}
+
 console.log("\nwordSearch.js — " + pass + " passed, " + fail + " failed");
 process.exit(fail ? 1 : 0);

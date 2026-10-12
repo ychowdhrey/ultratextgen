@@ -133,6 +133,11 @@
       "renderFailed": "Gagal membuat imej. Cuba lagi.",
       "trayLabel": "Pilihan imej",
       "setUnavailable": "Set ini belum boleh ditambah ke imej."
+    },
+    "symbolLook": {
+      "plain": "Salin versi biasa",
+      "emoji": "Salin versi emoji",
+      "note": "Sesetengah aplikasi tetap memaparkannya berwarna."
     }
   }
 }

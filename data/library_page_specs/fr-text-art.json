@@ -214,6 +214,54 @@
           "label": "Triangle Blanc vers le Bas"
         }
       ]
+    },
+    {
+      "id": "one-line-art",
+      "label": "Une Ligne",
+      "h2": "ASCII Art sur Une Ligne",
+      "intro": "Des pièces qui tiennent sur une seule ligne, donc qui se collent proprement dans un chat, un commentaire ou un statut, là où une pièce sur plusieurs lignes se couperait ou perdrait ses espacements. Quelques-unes empruntent des lettres à d'autres écritures (la pointe de l'épée est une lettre arabe), et sans la police adéquate on voit un carré à la place.",
+      "symbols": [
+        {
+          "char": "▬▬ι═══════ﺤ",
+          "label": "Épée"
+        },
+        {
+          "char": "><((((º>",
+          "label": "Poisson"
+        },
+        {
+          "char": "<コ:彡",
+          "label": "Calmar"
+        },
+        {
+          "char": "@}->--",
+          "label": "Rose"
+        },
+        {
+          "char": "~(˘▾˘~)",
+          "label": "Danse"
+        },
+        {
+          "char": "┬─┬ノ( º _ ºノ)",
+          "label": "Table Remise en Place"
+        },
+        {
+          "char": "ಠ_ಠ",
+          "label": "Regard Désapprobateur"
+        },
+        {
+          "char": "ᕦ(ò_óˇ)ᕤ",
+          "label": "Muscles"
+        },
+        {
+          "char": "(•_•) ( •_•)>⌐■-■ (⌐■_■)",
+          "label": "Lunettes de Soleil"
+        },
+        {
+          "char": "(づ｡◕‿‿◕｡)づ",
+          "label": "Câlin"
+        }
+      ]
     }
   ],
   "collection_section": {

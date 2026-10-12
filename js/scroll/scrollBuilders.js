@@ -20,16 +20,22 @@
      its "200 times" sibling), so the cap is 200 — read dynamically by both
      pages, so raising it just gives the scrolling-text slider more headroom. */
   const MAX_REPEATS = 200;
+  /* The highest cap a caller may ask buildBioScrollText for (opts.maxRepeats).
+     The repeat-text page takes 1000 for its "1000 hearts" block; the
+     scrolling-text page keeps MAX_REPEATS, because a bio block that long has
+     no field to paste into. */
+  const HARD_MAX_REPEATS = 1000;
 
   /* Unicode-aware length (counts code points the way platforms roughly do). */
   function charLen(str) {
     return str ? Array.from(str).length : 0;
   }
 
-  function clampRepeats(n) {
+  function clampRepeats(n, cap) {
+    let max = cap > 0 ? Math.min(HARD_MAX_REPEATS, Math.floor(cap)) : MAX_REPEATS;
     let r = Math.floor(Number(n));
     if (!isFinite(r) || r < 1) return 1;
-    if (r > MAX_REPEATS) return MAX_REPEATS;
+    if (r > max) return max;
     return r;
   }
 
@@ -53,7 +59,7 @@
 
     let divider = opts.divider == null ? "" : String(opts.divider);
     let joinMode = opts.joinMode === "inline" ? "inline" : "own-line";
-    let repeats = clampRepeats(opts.repeats);
+    let repeats = clampRepeats(opts.repeats, opts.maxRepeats);
 
     let parts = [];
     for (let i = 0; i < repeats; i++) parts.push(text);
@@ -216,6 +222,7 @@
 
   window.UTG_SCROLL_BUILDERS = {
     MAX_REPEATS: MAX_REPEATS,
+    HARD_MAX_REPEATS: HARD_MAX_REPEATS,
     charLen: charLen,
     buildBioScrollText: buildBioScrollText,
     computeFillRepeats: computeFillRepeats,

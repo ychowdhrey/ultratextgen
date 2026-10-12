@@ -68,6 +68,18 @@
         { "char": "🚧", "label": "Construction" },
         { "char": "🚨", "label": "Police Car Light" }
       ]
+    },
+    {
+      "id": "chocolate-poop",
+      "label": "Chocolate Poop",
+      "h2": "Chocolate Poop Emoji Combos",
+      "intro": "No separate chocolate version of 💩 exists: the major emoji sets already draw it brown, so the joke comes from what sits next to it. These pair 💩 with 🍫 or with the swirl of 🍦 for the classic chocolate or poop gag.",
+      "symbols": [
+        { "char": "💩🍫", "label": "Poop and Chocolate Bar" },
+        { "char": "🍫💩", "label": "Chocolate Bar and Poop" },
+        { "char": "🍫🤔💩", "label": "Chocolate or Poop?" },
+        { "char": "💩🍦", "label": "Poop and Soft Ice Cream" }
+      ]
     }
   ],
   "collection_section": {

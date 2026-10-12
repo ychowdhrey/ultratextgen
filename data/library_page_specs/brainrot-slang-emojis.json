@@ -71,6 +71,33 @@
       ]
     },
     {
+      "id": "slay-serve",
+      "label": "Slay",
+      "h2": "Slay & Serve Emojis",
+      "intro": "💅 is the slay emoji: polished, unbothered, done. The hair-flip 💁‍♀️ and ✨ carry the same energy when someone ate.",
+      "symbols": [
+        { "char": "💅", "label": "Nail Polish" },
+        { "char": "💁‍♀️", "label": "Woman Tipping Hand" },
+        { "char": "💁", "label": "Person Tipping Hand" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "💄", "label": "Lipstick" }
+      ]
+    },
+    {
+      "id": "slay-combos",
+      "label": "Slay Combos",
+      "h2": "Slay Emoji Combos",
+      "intro": "Ready-made slay replies for a fit check, a glow-up or a comeback. Each button copies the whole combo.",
+      "symbols": [
+        { "char": "💅✨", "label": "Slay" },
+        { "char": "👑💅", "label": "Queen Behavior" },
+        { "char": "💁‍♀️✨", "label": "Hair Flip" },
+        { "char": "🔥💅🔥", "label": "Ate, No Crumbs" },
+        { "char": "💅👑✨", "label": "Serving" },
+        { "char": "💁‍♀️💅", "label": "Unbothered" }
+      ]
+    },
+    {
       "id": "sus-chaos",
       "label": "Sus & Chaos",
       "h2": "Sus, NPC & Chaos Emojis",

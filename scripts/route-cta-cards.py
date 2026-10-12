@@ -52,7 +52,7 @@ from collections import Counter
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(REPO, "scripts"))
 from lib.cta_routing import (  # noqa: E402
-    DESTINATIONS, route, is_homepage_href,
+    DESTINATIONS, route, is_homepage_href, card_for, is_refinable, href_for,
     PRINTABLE_DESTINATIONS, printables_route, printables_card_inner, is_paste_href,
 )
 
@@ -80,6 +80,10 @@ def rewrite(page_html, dest):
     m = CARD_RE.search(page_html)
     if not m:
         return None
+    if dest.get("key") and is_refinable(m.group("href"), dest["key"], dest["href"]):
+        # Same destination, more specific link: change the href only.
+        return (page_html[: m.start("href")] + esc_attr(dest["href"])
+                + page_html[m.end("href"):])
     if not is_homepage_href(m.group("href")):
         return None
     new_card = (
@@ -179,11 +183,13 @@ def main(argv=None):
             # markup is how one gets silently broken.
             malformed.append(rel)
             continue
-        if not is_homepage_href(m.group("href")):
+        dest = card_for(rel)
+        if not (is_homepage_href(m.group("href"))
+                or is_refinable(m.group("href"), dest_key, dest["href"])):
             skipped["already routed somewhere specific"] += 1
             continue
 
-        new_page = rewrite(page, DESTINATIONS[dest_key])
+        new_page = rewrite(page, dest)
         if new_page is None or new_page == page:
             skipped["unchanged"] += 1
             continue
@@ -216,7 +222,7 @@ def main(argv=None):
     if changed and not args.write:
         print("\n  First few:")
         for rel, key in changed[:6]:
-            print(f"    · {rel}  ->  {_href(key)}")
+            print(f"    · {rel}  ->  {href_for(key, rel) if key in DESTINATIONS else _href(key)}")
 
     return 1 if malformed else 0
 

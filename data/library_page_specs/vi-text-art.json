@@ -214,6 +214,54 @@
           "label": "Tam Giác Trắng Hướng Xuống"
         }
       ]
+    },
+    {
+      "id": "one-line-art",
+      "label": "Một Dòng",
+      "h2": "ASCII Art Một Dòng",
+      "intro": "Những tác phẩm gói gọn trong một dòng, nên dán vào tin nhắn, bình luận hay trạng thái vẫn gọn gàng, trong khi tác phẩm nhiều dòng dễ bị xuống dòng hoặc lệch khoảng cách. Một vài mẫu mượn chữ của hệ chữ khác (mũi kiếm là một chữ cái Ả Rập), nên máy thiếu phông đó sẽ hiện một ô vuông.",
+      "symbols": [
+        {
+          "char": "▬▬ι═══════ﺤ",
+          "label": "Thanh Kiếm"
+        },
+        {
+          "char": "><((((º>",
+          "label": "Con Cá"
+        },
+        {
+          "char": "<コ:彡",
+          "label": "Con Mực"
+        },
+        {
+          "char": "@}->--",
+          "label": "Bông Hồng"
+        },
+        {
+          "char": "~(˘▾˘~)",
+          "label": "Nhảy Múa"
+        },
+        {
+          "char": "┬─┬ノ( º _ ºノ)",
+          "label": "Dựng Lại Bàn"
+        },
+        {
+          "char": "ಠ_ಠ",
+          "label": "Ánh Nhìn Phản Đối"
+        },
+        {
+          "char": "ᕦ(ò_óˇ)ᕤ",
+          "label": "Khoe Cơ Bắp"
+        },
+        {
+          "char": "(•_•) ( •_•)>⌐■-■ (⌐■_■)",
+          "label": "Đeo Kính Ngầu"
+        },
+        {
+          "char": "(づ｡◕‿‿◕｡)づ",
+          "label": "Ôm"
+        }
+      ]
     }
   ],
   "collection_section": {

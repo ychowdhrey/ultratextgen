@@ -1,0 +1,192 @@
+{
+  "slug": "bird-kaomoji",
+  "title": "Bird Kaomoji (・Θ・): Copy & Paste Bird, Duck and Chick Faces",
+  "meta_description": "Copy bird kaomoji with a Θ beak: (・Θ・) and (◉Θ◉) birds, ( •ө• ) chicks, <(￣︶￣)> penguins, ε( 'Θ' )϶ ducks, {O,o} owls and flying ＼( ˋ Θ ´ )／ birds.",
+  "canonical": "https://ultratextgen.com/library/bird-kaomoji/",
+  "breadcrumb": "Bird Kaomoji",
+  "hero_h1": "Bird Kaomoji",
+  "hero_tagline": "Birds, chicks, ducks, penguins and owls typed in text. Tap any bird to copy it.",
+  "intro": "The beak is what makes a text bird. Most bird kaomoji put the Greek capital theta Θ in the middle of the face, a round shape with a line across it that looks like a closed beak. Chicks swap it for the smaller Cyrillic ө, penguins use the rounded ⊝ or flap their wings with < and >, and ducks spread ε and ϶ on either side as wings. Owls skip the beak almost entirely and let two big eyes do the work, as in {O,o}. Each bird here is plain text that pastes into chats and captions. For bird pictures such as 🐦 🐤 🦆 🐧 🦉, see the animal emoji page.",
+  "date_published": "2026-10-08",
+  "date_modified": "2026-10-08",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "theta-birds",
+      "label": "Birds",
+      "h2": "Bird Kaomoji With a Θ Beak",
+      "intro": "The Θ beak stays in the centre and the eyes and wings change around it.",
+      "symbols": [
+        {
+          "char": "(・Θ・)",
+          "label": "Little Bird"
+        },
+        {
+          "char": "(･θ･)",
+          "label": "Small Bird"
+        },
+        {
+          "char": "(◉Θ◉)",
+          "label": "Startled Bird"
+        },
+        {
+          "char": "(￣Θ￣)",
+          "label": "Unimpressed Bird"
+        },
+        {
+          "char": "(`･Θ･´)",
+          "label": "Stern Bird"
+        },
+        {
+          "char": "( ˋ Θ ´ )",
+          "label": "Annoyed Bird"
+        },
+        {
+          "char": "(´Θ｀)",
+          "label": "Sighing Bird"
+        }
+      ]
+    },
+    {
+      "id": "flying-birds",
+      "label": "Flying Birds",
+      "h2": "Flying and Flapping Birds",
+      "intro": "Arms become wings: ＼ ／ and ヾ ノ lift up on each side.",
+      "symbols": [
+        {
+          "char": "＼( ˋ Θ ´ )／",
+          "label": "Bird Spreading Its Wings"
+        },
+        {
+          "char": "ヾ(￣◇￣)ノ〃",
+          "label": "Bird Flapping"
+        },
+        {
+          "char": "ε( 'Θ' )϶",
+          "label": "Duck Flapping"
+        },
+        {
+          "char": "＼Σ^)／",
+          "label": "Bird Taking Off"
+        }
+      ]
+    },
+    {
+      "id": "chicks-and-ducks",
+      "label": "Chicks & Ducks",
+      "h2": "Chick and Duck Kaomoji",
+      "intro": "Chicks have the small ө beak; the duck shapes are drawn side-on.",
+      "symbols": [
+        {
+          "char": "( •ө• )",
+          "label": "Baby Chick"
+        },
+        {
+          "char": "(・ө・)",
+          "label": "Curious Chick"
+        },
+        {
+          "char": "(｡•ө•｡)",
+          "label": "Rosy Chick"
+        },
+        {
+          "char": "( •ө• )ﾉ",
+          "label": "Chick Waving"
+        },
+        {
+          "char": "ヘ(ё)ヘ",
+          "label": "Chick Running"
+        },
+        {
+          "char": "__o<",
+          "label": "Duck Swimming Left"
+        },
+        {
+          "char": ">o__",
+          "label": "Duck Swimming Right"
+        },
+        {
+          "char": "<o)__ __(o>",
+          "label": "Two Ducks Meeting"
+        }
+      ]
+    },
+    {
+      "id": "penguins-and-owls",
+      "label": "Penguins & Owls",
+      "h2": "Penguin and Owl Kaomoji",
+      "intro": "Penguins hold their flippers out with < >; owls are all eyes.",
+      "symbols": [
+        {
+          "char": "（・⊝・）",
+          "label": "Penguin"
+        },
+        {
+          "char": "<(￣︶￣)>",
+          "label": "Proud Penguin"
+        },
+        {
+          "char": "<( ・⊝・ )>",
+          "label": "Waddling Penguin"
+        },
+        {
+          "char": "(О^)‹",
+          "label": "Penguin in Profile"
+        },
+        {
+          "char": "{O,o}",
+          "label": "Owl"
+        },
+        {
+          "char": "{o,O}",
+          "label": "Winking Owl"
+        },
+        {
+          "char": "◎▼◎",
+          "label": "Wide-Eyed Owl"
+        },
+        {
+          "char": "(⊙Θ⊙)",
+          "label": "Staring Owl"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Bird Kaomoji, Answered",
+  "faq": [
+    {
+      "q": "What is the Θ in bird kaomoji?",
+      "a": "It is the Greek capital letter theta (U+0398). Its oval with a bar across the middle looks like a closed beak seen from the front, so (・Θ・) reads as a small bird."
+    },
+    {
+      "q": "How do you make a penguin in text?",
+      "a": "Use ⊝ (circled minus, U+229D) for a round penguin beak, as in （・⊝・）, or hold the arms out stiffly with < and > around the face, as in <(￣︶￣)>."
+    },
+    {
+      "q": "What is the owl kaomoji?",
+      "a": "{O,o} is the classic one: the curly braces are the feathered head, O and o are the big eyes and the comma is the small hooked beak. Swap the eyes to {o,O} for a wink."
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji hub: every mood of Japanese text face in one place."
+    },
+    {
+      "href": "/library/animal-emojis/",
+      "title": "Animal Emojis",
+      "desc": "🐦 🐤 🦆 🐧 🦉 and every other animal emoji, grouped by type."
+    },
+    {
+      "href": "/library/cat-kaomoji/",
+      "title": "Cat Kaomoji",
+      "desc": "Cat text faces with whiskers and paws."
+    },
+    {
+      "href": "/library/fish-kaomoji/",
+      "title": "Fish Kaomoji",
+      "desc": "Fish in text, for the bird that went fishing."
+    }
+  ]
+}

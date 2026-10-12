@@ -31,7 +31,8 @@
         { "char": "🖌️", "label": "Pincel" },
         { "char": "🖍️", "label": "Crayón" },
         { "char": "✏️", "label": "Lápiz" },
-        { "char": "🖼️", "label": "Cuadro con marco" }
+        { "char": "🖼️", "label": "Cuadro con marco" },
+        { "char": "🫟", "label": "Salpicadura (Emoji 16.0)" }
       ]
     },
     {
@@ -86,6 +87,32 @@
         { "char": "📂", "label": "Carpeta abierta" },
         { "char": "📁", "label": "Carpeta" },
         { "char": "🗑️", "label": "Papelera" }
+      ]
+    },
+    {
+      "id": "text-scissors",
+      "label": "Tijeras",
+      "h2": "Símbolos de tijeras de texto",
+      "intro": "Tijeras de texto plano del bloque Dingbats de Unicode. Solo ✂ tiene además forma de emoji a color; ✁ ✃ ✄ son siempre texto, así que toman tu fuente y tu color, algo útil para un cupón, un formulario impreso o una línea de corte.",
+      "symbols": [
+        { "char": "✁", "label": "Tijeras de hoja superior" },
+        { "char": "✂", "label": "Tijeras negras (texto)" },
+        { "char": "✃", "label": "Tijeras de hoja inferior" },
+        { "char": "✄", "label": "Tijeras blancas" }
+      ]
+    },
+    {
+      "id": "cut-here-lines",
+      "label": "Líneas de corte",
+      "h2": "Líneas de «cortar aquí»",
+      "intro": "Unas tijeras seguidas de una línea discontinua marcan por dónde recortar un cupón, un vale o una hoja imprimible. Cada botón copia la línea entera, así que acórtala para que quepa en tu página.",
+      "symbols": [
+        { "char": "✂ - - - - - - - - - - - -", "label": "Línea de corte discontinua" },
+        { "char": "✄┈┈┈┈┈┈┈┈┈┈┈┈", "label": "Línea de corte punteada" },
+        { "char": "✂┄┄┄┄┄┄┄┄┄┄┄┄", "label": "Línea de corte de tres trazos" },
+        { "char": "- - - - - - ✂ - - - - - -", "label": "Tijeras al centro" },
+        { "char": "✄ cortar aquí ┈┈┈┈┈┈┈┈", "label": "Cortar aquí" },
+        { "char": "┈┈┈┈┈┈✂┈┈┈┈┈┈", "label": "Tijeras al centro, punteada" }
       ]
     },
     {

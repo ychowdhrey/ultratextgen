@@ -183,6 +183,41 @@
         {
           "char": "🛶",
           "label": "Canoa"
+        },
+        {
+          "char": "🎣",
+          "label": "Caña de Pescar"
+        }
+      ]
+    },
+    {
+      "id": "fishing-combos",
+      "h2": "Combos de Emojis de Pesca",
+      "intro": "Unicode tiene un solo emoji de pesca, 🎣 caña de pescar, así que estos combos lo juntan con peces, agua y cebo para el pie de foto de una salida o de una captura. Cada botón copia el combo completo.",
+      "symbols": [
+        {
+          "char": "🎣🐟",
+          "label": "Caña y pez"
+        },
+        {
+          "char": "🎣🐠🌊",
+          "label": "Pesca en arrecife"
+        },
+        {
+          "char": "🚣🎣🌅",
+          "label": "Salir a remar al amanecer"
+        },
+        {
+          "char": "🧊🎣❄️",
+          "label": "Pesca en hielo"
+        },
+        {
+          "char": "🪱🎣🐟",
+          "label": "Lombriz de cebo y captura"
+        },
+        {
+          "char": "🎣🦈",
+          "label": "Tiburón en el anzuelo"
         }
       ]
     },

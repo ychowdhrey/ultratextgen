@@ -5,7 +5,7 @@
   },
   "hero": {
     "title": "Schriftgenerator — Schöne Schrift & coole Symbole zum Kopieren",
-    "subtitle": "Tipp dein Wort, such dir den Look aus, klick auf Kopieren — fertig. Ästhetische, fette, kursive, verschnörkelte und stylische Schriftarten für Insta-Bio, TikTok-Caption, Discord- oder Gamer-Namen, WhatsApp-Status und überall, wo normale Buchstaben einfach zu langweilig sind."
+    "subtitle": "Tipp dein Wort, such dir den Look aus, klick auf Kopieren, fertig. Ästhetische, fette, kursive, verschnörkelte und stylische Schriftarten für Insta-Bio, TikTok-Caption, Discord- oder Gamer-Namen, WhatsApp-Status und überall, wo normale Buchstaben einfach zu langweilig sind."
   },
   "decorations": {
     "label": "Symbole & Deko direkt um deinen Text legen",
@@ -233,6 +233,11 @@
       "renderFailed": "Bild ging nicht. Versuch es noch mal.",
       "trayLabel": "Bildauswahl",
       "setUnavailable": "Dieses Set kann noch nicht ins Bild."
+    },
+    "symbolLook": {
+      "plain": "Schlichte Version kopieren",
+      "emoji": "Emoji-Version kopieren",
+      "note": "Manche Apps zeigen das Symbol trotzdem farbig."
     }
   },
   "useCases": {
@@ -241,15 +246,15 @@
     "items": [
       {
         "title": "Schrift für die Insta-Bio",
-        "description": "Heb deine Bio aus dem Feed — stylische Schriftarten, die Instagram nicht wieder rausrechnet. Reinkopieren, speichern, fertig."
+        "description": "Heb deine Bio aus dem Feed: stylische Schriftarten, die Instagram nicht wieder rausrechnet. Reinkopieren, speichern, fertig."
       },
       {
         "title": "Kommentare mit Style",
-        "description": "Schreib deinen Kommentar fett, kursiv oder verschnörkelt — egal ob unter Insta-Posts, YouTube-Videos oder TikToks."
+        "description": "Schreib deinen Kommentar fett, kursiv oder verschnörkelt, egal ob unter Insta-Posts, YouTube-Videos oder TikToks."
       },
       {
         "title": "Auffällige LinkedIn-Headline",
-        "description": "Eine fette oder kursive Headline springt in der LinkedIn-Suche sofort ins Auge — ganz ohne Hack oder Plugin."
+        "description": "Eine fette oder kursive Headline springt in der LinkedIn-Suche sofort ins Auge, ganz ohne Hack oder Plugin."
       }
     ]
   },
@@ -259,7 +264,7 @@
     "items": [
       {
         "title": "Warum Schrift überhaupt wirkt",
-        "description": "Welche Schrift Vertrauen aufbaut, welche flirtet, welche schreit — und wie du das gezielt für deinen Auftritt nutzt."
+        "description": "Welche Schrift Vertrauen aufbaut, welche flirtet, welche schreit, und wie du das gezielt für deinen Auftritt nutzt."
       },
       {
         "title": "Personal Branding mit Schrift",
@@ -267,7 +272,7 @@
       },
       {
         "title": "Schrift, die den Scroll stoppt",
-        "description": "Wie ein Schriftwechsel im Feed den Daumen kurz anhält — und was du daraus für deinen nächsten Post mitnimmst."
+        "description": "Wie ein Schriftwechsel im Feed den Daumen kurz anhält, und was du daraus für deinen nächsten Post mitnimmst."
       }
     ]
   },
@@ -278,15 +283,15 @@
         "items": [
           {
             "question": "Was genau macht UltraTextGen?",
-            "answer": "UltraTextGen verwandelt das, was du tippst, in echte Unicode-Zeichen — also in Buchstaben, die schon fett, kursiv, verschnörkelt oder ästhetisch aussehen, ganz ohne App und ohne Schriftart-Installation.\n    <br><br>\n    <strong>Schnellbeispiel</strong><br>\n    «hallo» wird zu 𝗵𝗮𝗹𝗹𝗼 (fett), 𝘩𝘢𝘭𝘭𝘰 (kursiv), 𝒽𝒶𝓁𝓁ℴ (Schreibschrift) oder ⓗⓐⓛⓛⓞ (Bubble).\n    <br><br>\n    Weil das echte Zeichen sind und kein Formatierungs-Code, halten sie überall, wo du sie hinkopierst: Insta-Bio, TikTok-Caption, Discord-Name, WhatsApp-Status, E-Mail-Betreff. Keine Anmeldung, kein Download, kein Limit."
+            "answer": "UltraTextGen verwandelt das, was du tippst, in echte Unicode-Zeichen: also in Buchstaben, die schon fett, kursiv, verschnörkelt oder ästhetisch aussehen, ganz ohne App und ohne Schriftart-Installation.\n    <br><br>\n    <strong>Schnellbeispiel</strong><br>\n    «hallo» wird zu 𝗵𝗮𝗹𝗹𝗼 (fett), 𝘩𝘢𝘭𝘭𝘰 (kursiv), 𝒽𝒶𝓁𝓁ℴ (Schreibschrift) oder ⓗⓐⓛⓛⓞ (Bubble).\n    <br><br>\n    Weil das echte Zeichen sind und kein Formatierungs-Code, halten sie überall, wo du sie hinkopierst: Insta-Bio, TikTok-Caption, Discord-Name, WhatsApp-Status, E-Mail-Betreff. Keine Anmeldung, kein Download, kein Limit."
           },
           {
             "question": "Wie kopiere ich mir eine Schrift?",
-            "answer": "Geht in ein paar Sekunden:\n    <br><br>\n    1. Text oben ins Feld tippen oder einfügen.<br>\n    2. Direkt darunter erscheinen alle Stile — fett, kursiv, Schreibschrift, Gothic, Bubble, ästhetisch, Zalgo und mehr.<br>\n    3. Optional: ein Symbol, einen Rahmen oder eine Trennlinie dazuklicken.<br>\n    4. Auf «Kopieren» neben dem Look tippen, der dir gefällt — und überall einfügen.\n    <br><br>\n    Funktioniert genauso am Handy wie am Laptop. Account brauchst du keinen."
+            "answer": "Geht in ein paar Sekunden:\n    <br><br>\n    1. Text oben ins Feld tippen oder einfügen.<br>\n    2. Direkt darunter erscheinen alle Stile: fett, kursiv, Schreibschrift, Gothic, Bubble, ästhetisch, Zalgo und mehr.<br>\n    3. Optional: ein Symbol, einen Rahmen oder eine Trennlinie dazuklicken.<br>\n    4. Auf «Kopieren» neben dem Look tippen, der dir gefällt, und überall einfügen.\n    <br><br>\n    Funktioniert genauso am Handy wie am Laptop. Account brauchst du keinen."
           },
           {
             "question": "Ist das wirklich kostenlos?",
-            "answer": "Ja, komplett. Kein Konto, kein Tageslimit, kein Wasserzeichen, keine Bezahlversion versteckt hinter den schönen Schriftarten. Du kannst so viel kopieren, wie du willst — auch jeden Tag."
+            "answer": "Ja, komplett. Kein Konto, kein Tageslimit, kein Wasserzeichen, keine Bezahlversion versteckt hinter den schönen Schriftarten. Du kannst so viel kopieren, wie du willst, auch jeden Tag."
           }
         ]
       },
@@ -295,15 +300,15 @@
         "items": [
           {
             "question": "Warum bleibt meine fette Schrift aus Word nicht in der Insta-Bio?",
-            "answer": "Word, Google Docs und Co. machen Text fett, indem sie unsichtbare Formatierungs-Codes drumherumlegen. Insta, TikTok, Discord oder die Betreffzeile einer E-Mail werfen diese Codes wieder raus — übrig bleibt ganz normaler Text.\n    <br><br>\n    UltraTextGen geht anders ran: Statt einen Code mitzuliefern, tauscht es jeden Buchstaben gegen ein Unicode-Zeichen, das schon von Haus aus fett, kursiv oder verschnörkelt aussieht. Da gibt's nichts zum Rausrechnen.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    «Sale» aus Word → in der TikTok-Bio wieder bloß „Sale“.<br>\n    «Sale» bei uns → 𝗦𝗮𝗹𝗲 — und das bleibt so, in Bio, Namen, Betreff, überall."
+            "answer": "Word, Google Docs und Co. machen Text fett, indem sie unsichtbare Formatierungs-Codes drumherumlegen. Insta, TikTok, Discord oder die Betreffzeile einer E-Mail werfen diese Codes wieder raus. Übrig bleibt ganz normaler Text.\n    <br><br>\n    UltraTextGen geht anders ran: Statt einen Code mitzuliefern, tauscht es jeden Buchstaben gegen ein Unicode-Zeichen, das schon von Haus aus fett, kursiv oder verschnörkelt aussieht. Da gibt’s nichts zum Rausrechnen.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    «Sale» aus Word → in der TikTok-Bio wieder bloß „Sale“.<br>\n    «Sale» bei uns → 𝗦𝗮𝗹𝗲, und das bleibt so, in Bio, Namen, Betreff, überall."
           },
           {
             "question": "Was kann ein Unicode-Generator, was Word & Docs nicht können?",
-            "answer": "Im Grunde alles, was außerhalb vom eigenen Editor passieren soll:\n    <br><br>\n    — Fette und kursive Schrift in Insta-Bios, TikTok-Captions und YouTube-Beschreibungen, wo es gar keinen Formatierungs-Button gibt.<br>\n    — Gothic-, Bubble-, Schreibschrift- und ästhetische Stile, die Word überhaupt nicht anbietet.<br>\n    — Umgedrehte und gespiegelte Schrift.<br>\n    — Glitch- bzw. Zalgo-Schrift mit gestapelten Zeichen.<br>\n    — Rahmen, Trennlinien, Pfeile und Symbole direkt um den Text herum.<br>\n    — Stylische Namen für Discord, Roblox, Steam, CS, TikTok und Co.\n    <br><br>\n    Kurz gesagt: Schrift, die mitwandert — egal wohin du sie kopierst."
+            "answer": "Im Grunde alles, was außerhalb vom eigenen Editor passieren soll:\n    <br><br>\n    – Fette und kursive Schrift in Insta-Bios, TikTok-Captions und YouTube-Beschreibungen, wo es gar keinen Formatierungs-Button gibt.<br>\n    – Gothic-, Bubble-, Schreibschrift- und ästhetische Stile, die Word überhaupt nicht anbietet.<br>\n    – Umgedrehte und gespiegelte Schrift.<br>\n    – Glitch- bzw. Zalgo-Schrift mit gestapelten Zeichen.<br>\n    – Rahmen, Trennlinien, Pfeile und Symbole direkt um den Text herum.<br>\n    – Stylische Namen für Discord, Roblox, Steam, CS, TikTok und Co.\n    <br><br>\n    Kurz gesagt: Schrift, die mitwandert: egal wohin du sie kopierst."
           },
           {
             "question": "Funktioniert fette Schrift auch in der E-Mail-Betreffzeile?",
-            "answer": "Ja, und genau dafür wird's gerne genommen. Betreffzeilen sind reiner Text — fett aus Outlook oder Gmail wird auf dem Weg zum Empfänger entfernt. Unicode-Fettschrift bleibt drin, weil sie kein Format ist, sondern selbst schon das Zeichen.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    Normal: „Letzte Chance — 50 % heute“<br>\n    Mit UltraTextGen: „𝗟𝗲𝘁𝘇𝘁𝗲 𝗖𝗵𝗮𝗻𝗰𝗲 — 𝟱𝟬 % 𝗵𝗲𝘂𝘁𝗲“\n    <br><br>\n    Im vollen Posteingang fällt das sofort auf. Gmail, Outlook und Apple Mail rendern Unicode sauber."
+            "answer": "Ja, und genau dafür wird’s gerne genommen. Betreffzeilen sind reiner Text: fett aus Outlook oder Gmail wird auf dem Weg zum Empfänger entfernt. Unicode-Fettschrift bleibt drin, weil sie kein Format ist, sondern selbst schon das Zeichen.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    Normal: „Letzte Chance, 50 % heute“<br>\n    Mit UltraTextGen: „𝗟𝗲𝘁𝘇𝘁𝗲 𝗖𝗵𝗮𝗻𝗰𝗲, 𝟱𝟬 % 𝗵𝗲𝘂𝘁𝗲“\n    <br><br>\n    Im vollen Posteingang fällt das sofort auf. Gmail, Outlook und Apple Mail rendern Unicode sauber."
           }
         ]
       },
@@ -311,33 +316,33 @@
         "title": "Schriftarten, Symbole und Deko",
         "items": [
           {
-            "question": "Welche Schriftarten gibt's hier?",
-            "answer": "Eine ziemlich große Auswahl — und alle mit echter Bandbreite, nicht bloß die typischen drei Stile.\n    <br><br>\n    <strong>Klassiker</strong><br>\n    Fett (Bold), Fett-Serifen, mehrere Kursiv-Varianten, Schreibschrift, Schreibschrift fett, Gothic/Fraktur, Bubble in mehreren Varianten, durchgestrichen, unterstrichen.\n    <br><br>\n    <strong>Spezial</strong><br>\n    Umgedreht, gespiegelt, Small Caps, Zalgo (Glitch), Wort-Wrapper und Rahmen, Backwards, Double Struck, breite Schrift (Fullwidth), Squared, Eingeklammert — und etliche mehr.\n    <br><br>\n    Es kommen regelmäßig neue dazu — Lesezeichen setzen lohnt sich."
+            "question": "Welche Schriftarten gibt’s hier?",
+            "answer": "Eine ziemlich große Auswahl, und alle mit echter Bandbreite, nicht bloß die typischen drei Stile.\n    <br><br>\n    <strong>Klassiker</strong><br>\n    Fett (Bold), Fett-Serifen, mehrere Kursiv-Varianten, Schreibschrift, Schreibschrift fett, Gothic/Fraktur, Bubble in mehreren Varianten, durchgestrichen, unterstrichen.\n    <br><br>\n    <strong>Spezial</strong><br>\n    Umgedreht, gespiegelt, Small Caps, Zalgo (Glitch), Wort-Wrapper und Rahmen, Backwards, Double Struck, breite Schrift (Fullwidth), Squared, Eingeklammert, und etliche mehr.\n    <br><br>\n    Es kommen regelmäßig neue dazu: Lesezeichen setzen lohnt sich."
           },
           {
             "question": "Kann ich Schriftarten kombinieren und Symbole drumrum bauen?",
-            "answer": "Klar — das ist sogar einer der Gründe, warum Leute hier hängenbleiben. Du kannst Stile übereinanderlegen, z. B. Bubble + Zalgo, Gothic + umgedreht oder Small Caps + Unterstrich, und dann noch Symbole oder einen Rahmen drüberlegen.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    «hallo» → Gothic anwenden → Sternenrahmen drumrum → ★彡[ 𝔥𝔞𝔩𝔩𝔬 ]彡★\n    <br><br>\n    <strong>Was als Deko bereitliegt</strong><br>\n    Rahmen, Pfeile, kleine Symbole, minimalistische Trennlinien, Emojis und Flaggen — alles ein Klick."
+            "answer": "Klar: das ist sogar einer der Gründe, warum Leute hier hängenbleiben. Du kannst Stile übereinanderlegen, z. B. Bubble + Zalgo, Gothic + umgedreht oder Small Caps + Unterstrich, und dann noch Symbole oder einen Rahmen drüberlegen.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    «hallo» → Gothic anwenden → Sternenrahmen drumrum → ★彡[ 𝔥𝔞𝔩𝔩𝔬 ]彡★\n    <br><br>\n    <strong>Was als Deko bereitliegt</strong><br>\n    Rahmen, Pfeile, kleine Symbole, minimalistische Trennlinien, Emojis und Flaggen, alles ein Klick."
           },
           {
             "question": "Was ist eigentlich Zalgo- bzw. Glitch-Schrift?",
-            "answer": "Das ist der „verfluchte“ Look — Buchstaben, über und unter denen sich krakelige Zeichen stapeln, sodass der Text aussieht, als wäre er kaputt oder verhext.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    «hallo» → h̷a̷l̷l̷o̷\n    <br><br>\n    Beliebt für Horror-Posts, düstere Bios, gruselige Gamer-Namen oder um den Gruppenchat kurz zu erschrecken. Einfach Text eintippen, Zalgo wählen, kopieren — die Stapelung passiert automatisch."
+            "answer": "Das ist der „verfluchte“ Look: Buchstaben, über und unter denen sich krakelige Zeichen stapeln, sodass der Text aussieht, als wäre er kaputt oder verhext.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    «hallo» → h̷a̷l̷l̷o̷\n    <br><br>\n    Beliebt für Horror-Posts, düstere Bios, gruselige Gamer-Namen oder um den Gruppenchat kurz zu erschrecken. Einfach Text eintippen, Zalgo wählen, kopieren. Die Stapelung passiert automatisch."
           }
         ]
       },
       {
-        "title": "Plattformen — Insta, TikTok, Discord & Co.",
+        "title": "Plattformen: Insta, TikTok, Discord & Co.",
         "items": [
           {
             "question": "Auf welchen Apps funktioniert das überhaupt?",
-            "answer": "Überall, wo du normalen Text reinschreiben kannst. Die stilisierten Buchstaben sind echtes Unicode — sie reisen mit, egal wohin du sie einfügst.\n    <br><br>\n    <strong>Social</strong><br>\n    Instagram, TikTok, YouTube, X (Twitter), Facebook, LinkedIn, Pinterest, Snapchat.\n    <br><br>\n    <strong>Messenger</strong><br>\n    WhatsApp (auch im Status), Telegram, Discord, Signal, iMessage.\n    <br><br>\n    <strong>Außerdem</strong><br>\n    E-Mail-Betreff und Signatur, Gamer-Profile (Roblox, Minecraft, Steam, CS), Foren, Lebensläufe, Präsentationen.\n    <br><br>\n    Für die größten Plattformen gibt's eigene Seiten mit Schriften, die dort getestet wurden — z. B. für Insta und Discord."
+            "answer": "Überall, wo du normalen Text reinschreiben kannst. Die stilisierten Buchstaben sind echtes Unicode: sie reisen mit, egal wohin du sie einfügst.\n    <br><br>\n    <strong>Social</strong><br>\n    Instagram, TikTok, YouTube, X (Twitter), Facebook, LinkedIn, Pinterest, Snapchat.\n    <br><br>\n    <strong>Messenger</strong><br>\n    WhatsApp (auch im Status), Telegram, Discord, Signal, iMessage.\n    <br><br>\n    <strong>Außerdem</strong><br>\n    E-Mail-Betreff und Signatur, Gamer-Profile (Roblox, Minecraft, Steam, CS), Foren, Lebensläufe, Präsentationen.\n    <br><br>\n    Für die größten Plattformen gibt’s eigene Seiten mit Schriften, die dort getestet wurden, z. B. für <a href=\"/de/schriftarten-fuer-instagram/\">Insta</a> und <a href=\"/de/discord-schriftart/\">Discord</a>."
           },
           {
             "question": "Kann ich das auch für meinen Insta-Namen oder Gamer-Namen nehmen?",
-            "answer": "Ja — und genau dafür wird's am häufigsten benutzt. Unicode-Zeichen zählen als normaler Text, also schluckt sie das Namensfeld bei Instagram, TikTok, Discord, Roblox, Steam oder CS in den meisten Fällen problemlos.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    Normaler Name: „DarkWolf“<br>\n    Mit UltraTextGen: „𝔇𝔞𝔯𝔨𝔚𝔬𝔩𝔣“ (Gothic) oder „ⒹⓐⓡⓚⓌⓞⓛⓕ“ (Bubble).\n    <br><br>\n    <strong>Tipp</strong><br>\n    Wenn ein Stil bei einer Plattform zickt (z. B. Zalgo bei Discord), probier einen Klassiker wie Bold oder Bubble — die haben fast überall freie Fahrt."
+            "answer": "Ja, und genau dafür wird’s am häufigsten benutzt. Unicode-Zeichen zählen als normaler Text, also schluckt sie das Namensfeld bei Instagram, TikTok, Discord, Roblox, Steam oder CS in den meisten Fällen problemlos.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    Normaler Name: „DarkWolf“<br>\n    Mit UltraTextGen: „𝔇𝔞𝔯𝔨𝔚𝔬𝔩𝔣“ (Gothic) oder „ⒹⓐⓡⓚⓌⓞⓛⓕ“ (Bubble).\n    <br><br>\n    <strong>Tipp</strong><br>\n    Wenn ein Stil bei einer Plattform zickt (z. B. Zalgo bei Discord), probier einen Klassiker wie Bold oder Bubble. Die haben fast überall freie Fahrt."
           },
           {
             "question": "Warum sieht meine Schrift bei manchen Leuten wie Kästchen aus?",
-            "answer": "Das liegt am Gerät der anderen Person: Wenn deren Schriftart kein Glyph für ein bestimmtes Unicode-Zeichen kennt, erscheint ein leeres Kästchen oder Fragezeichen. Mit dem Text selbst stimmt nichts, und bei modernen Smartphones passiert das selten.\n    <br><br>\n    <strong>Was hilft</strong><br>\n    Auf einen Klassiker wechseln — Bold, Italic oder Bubble laufen praktisch auf jedem Gerät. Wenn du für eine bestimmte App stylst, lohnt sich ein Blick auf die jeweilige Plattform-Seite (Insta, Discord, …)."
+            "answer": "Das liegt am Gerät der anderen Person: Wenn deren Schriftart kein Glyph für ein bestimmtes Unicode-Zeichen kennt, erscheint ein leeres Kästchen oder Fragezeichen. Mit dem Text selbst stimmt nichts, und bei modernen Smartphones passiert das selten.\n    <br><br>\n    <strong>Was hilft</strong><br>\n    Auf einen Klassiker wechseln: Bold, Italic oder Bubble laufen praktisch auf jedem Gerät. Wenn du für eine bestimmte App stylst, lohnt sich ein Blick auf die jeweilige Plattform-Seite (Insta, Discord, …). Passiert es bei einem Namen (z. B. in einem Spiel), lies warum wird mein Name als Kästchen angezeigt."
           }
         ]
       },
@@ -346,15 +351,15 @@
         "items": [
           {
             "question": "Funktioniert das auch mit Umlauten und anderen Sprachen?",
-            "answer": "Latein-Schriften ja — also alles, was A–Z benutzt, inklusive Umlaute (ä, ö, ü), ß sowie Akzente wie á, é, ñ, ç.\n    <br><br>\n    <strong>Funktioniert zuverlässig für</strong><br>\n    Deutsch, Englisch, Spanisch, Französisch, Italienisch, Portugiesisch, Niederländisch, Polnisch, Türkisch, Indonesisch, Vietnamesisch — und viele mehr.\n    <br><br>\n    Kleiner Hinweis: Bei sehr exotischen Stilen (z. B. manchen Schreibschrift-Varianten) gibt's Umlaute nicht in der gleichen Variante — dann bleibt der Buchstabe normal, der Rest stylisch."
+            "answer": "Latein-Schriften ja: also alles, was A–Z benutzt, inklusive Umlaute (ä, ö, ü), ß sowie Akzente wie á, é, ñ, ç.\n    <br><br>\n    <strong>Funktioniert zuverlässig für</strong><br>\n    Deutsch, Englisch, Spanisch, Französisch, Italienisch, Portugiesisch, Niederländisch, Polnisch, Türkisch, Indonesisch, Vietnamesisch, und viele mehr.\n    <br><br>\n    Kleiner Hinweis: Bei sehr exotischen Stilen (z. B. manchen Schreibschrift-Varianten) gibt’s Umlaute nicht in der gleichen Variante, dann bleibt der Buchstabe normal, der Rest stylisch."
           },
           {
             "question": "Und Arabisch, Russisch, Chinesisch?",
-            "answer": "Nicht-lateinische Schriften lassen sich leider nicht in fette oder kursive Unicode-Stile umwandeln — der Standard kennt dafür keine stilisierten Varianten.\n    <br><br>\n    <strong>Aktuell nicht stylebar</strong><br>\n    Arabisch, Persisch, Hebräisch, Hindi, Bengalisch, Tamil, Thai, Chinesisch, Japanisch, Koreanisch, Singhalesisch — und ja, auch Russisch/Kyrillisch.\n    <br><br>\n    Wenn du z. B. einen deutsch-russischen Mix schreibst, bleibt der kyrillische Teil normal, nur die lateinischen Wörter werden stylisch."
+            "answer": "Nicht-lateinische Schriften lassen sich leider nicht in fette oder kursive Unicode-Stile umwandeln: der Standard kennt dafür keine stilisierten Varianten.\n    <br><br>\n    <strong>Aktuell nicht stylebar</strong><br>\n    Arabisch, Persisch, Hebräisch, Hindi, Bengalisch, Tamil, Thai, Chinesisch, Japanisch, Koreanisch, Singhalesisch, und ja, auch Russisch/Kyrillisch.\n    <br><br>\n    Wenn du z. B. einen deutsch-russischen Mix schreibst, bleibt der kyrillische Teil normal, nur die lateinischen Wörter werden stylisch."
           },
           {
             "question": "Werden wirklich alle Zeichen umgewandelt?",
-            "answer": "Buchstaben A–Z, a–z, Zahlen 0–9 und die normalen Satzzeichen — ja, in praktisch jedem Stil. Bei sehr seltenen Sonderzeichen kann es passieren, dass Unicode keine schicke Variante hat; dann bleibt das Zeichen einfach wie es ist. Kaputt geht dabei nichts — kopieren kannst du immer."
+            "answer": "Buchstaben A–Z, a–z, Zahlen 0–9 und die normalen Satzzeichen, ja, in praktisch jedem Stil. Bei sehr seltenen Sonderzeichen kann es passieren, dass Unicode keine schicke Variante hat; dann bleibt das Zeichen einfach wie es ist. Kaputt geht dabei nichts: kopieren kannst du immer."
           }
         ]
       },
@@ -363,11 +368,11 @@
         "items": [
           {
             "question": "Speichert ihr, was ich eintippe?",
-            "answer": "Nein. Die ganze Umwandlung läuft direkt in deinem Browser, ohne dass dein Text irgendwo zwischengespeichert oder an einen Server geschickt wird. Was du am Ende kopierst, ist sauberes Unicode — keine versteckten Tracking-Zeichen, nichts."
+            "answer": "Nein. Die ganze Umwandlung läuft direkt in deinem Browser, ohne dass dein Text irgendwo zwischengespeichert oder an einen Server geschickt wird. Was du am Ende kopierst, ist sauberes Unicode, keine versteckten Tracking-Zeichen, nichts."
           },
           {
             "question": "Ist der Text wirklich sicher zum Einfügen?",
-            "answer": "Ja. Was kopiert wird, ist Standard-Unicode — kein Skript, keine versteckte Formatierung, kein Tracking-Code. Du kannst es ohne schlechtes Gefühl in jede App oder Website einfügen."
+            "answer": "Ja. Was kopiert wird, ist Standard-Unicode: kein Skript, keine versteckte Formatierung, kein Tracking-Code. Du kannst es ohne schlechtes Gefühl in jede App oder Website einfügen."
           }
         ]
       },
@@ -376,7 +381,7 @@
         "items": [
           {
             "question": "Geht das auch am Handy?",
-            "answer": "Klar — die Seite läuft am iPhone, Android und iPad genauso gut wie am Laptop. Keine App, kein Download. Browser auf, Text rein, Stil wählen, kopieren. Den kopierten Text kannst du danach direkt in Insta, TikTok, WhatsApp oder Discord einfügen."
+            "answer": "Klar: die Seite läuft am iPhone, Android und iPad genauso gut wie am Laptop. Keine App, kein Download. Browser auf, Text rein, Stil wählen, kopieren. Den kopierten Text kannst du danach direkt in Insta, TikTok, WhatsApp oder Discord einfügen."
           }
         ]
       },
@@ -385,15 +390,15 @@
         "items": [
           {
             "question": "Was kann UltraTextGen besser als andere Schriftgeneratoren?",
-            "answer": "Ein paar Sachen, die zusammen den Unterschied machen:\n    <br><br>\n    — Eine der größten Auswahlen an «Ultra»-Stilen — von klassisch fett bis ästhetisch verschnörkelt.<br>\n    — Echtes Schriften-Kombinieren mit einem Klick (Gothic + Zalgo, Small Caps + Unterstrich …).<br>\n    — Symbole, Rahmen, Trennlinien und Pfeile direkt mit dazu — kein extra Kopieren nötig.<br>\n    — Eigene Seiten für die wichtigsten Plattformen (Insta, TikTok, Discord, LinkedIn …) mit Stilen, die dort getestet sind.<br>\n    — Schnelle Oberfläche, keine Werbe-Popups, die alles blockieren.<br>\n    — Regelmäßig neue Stile."
+            "answer": "Ein paar Sachen, die zusammen den Unterschied machen:\n    <br><br>\n    – Eine der größten Auswahlen an «Ultra»-Stilen: von klassisch fett bis ästhetisch verschnörkelt.<br>\n    – Echtes Schriften-Kombinieren mit einem Klick (Gothic + Zalgo, Small Caps + Unterstrich …).<br>\n    – Symbole, Rahmen, Trennlinien und Pfeile direkt mit dazu: kein extra Kopieren nötig.<br>\n    – Eigene Seiten für die wichtigsten Plattformen (Insta, TikTok, Discord, LinkedIn …) mit Stilen, die dort getestet sind.<br>\n    – Schnelle Oberfläche, keine Werbe-Popups, die alles blockieren.<br>\n    – Regelmäßig neue Stile."
           },
           {
             "question": "Kommen neue Schriftarten dazu?",
-            "answer": "Ja, ständig. Speicher die Seite als Lesezeichen — neue Stile und Deko-Sets tauchen alle paar Wochen auf."
+            "answer": "Ja, ständig. Speicher die Seite als Lesezeichen: neue Stile und Deko-Sets tauchen alle paar Wochen auf."
           },
           {
             "question": "Wie finde ich am schnellsten den richtigen Stil?",
-            "answer": "Drei Wege funktionieren:\n    <br><br>\n    <strong>Nach Look</strong><br>\n    Schau in den Schriftkategorien — fett, kursiv, Gothic, Bubble, ästhetisch, Schreibschrift, durchgestrichen, umgedreht. Jede Kategorie hat ihre eigene Seite mit Fokus auf diesen Stil.\n    <br><br>\n    <strong>Nach Plattform</strong><br>\n    Wenn du weißt, wofür der Text gedacht ist (Insta, TikTok, Discord, LinkedIn …), nimm direkt die jeweilige Plattformseite — da sind die Schriften vorgefiltert.\n    <br><br>\n    <strong>Nach Anlass</strong><br>\n    Brauchst du eine Bio-Schrift, einen Kommentar-Stil, Symbole für deinen Status? Über die Anwendungsfälle landest du beim passenden Tool — zum Beispiel den <a href=\"/de/usecase/bio-schriftart/\">Bio-Schriftart Generator</a> für Instagram, TikTok, Discord & Co."
+            "answer": "Drei Wege funktionieren:\n    <br><br>\n    <strong>Nach Look</strong><br>\n    Schau in den Schriftkategorien: <a href=\"/de/fette-schrift/\">fett</a>, <a href=\"/de/kursive-schrift/\">kursiv</a>, <a href=\"/de/altdeutsche-schrift/\">Gothic</a>, Bubble, <a href=\"/de/aesthetic-schrift/\">ästhetisch</a>, <a href=\"/de/schreibschrift/\">Schreibschrift</a>, <a href=\"/de/durchgestrichener-text/\">durchgestrichen</a>, <a href=\"/de/unterstrichener-text/\">unterstrichen</a>, <a href=\"/de/kopfueber-text/\">umgedreht</a>. Jede Kategorie hat ihre eigene Seite mit Fokus auf diesen Stil.\n    <br><br>\n    <strong>Nach Plattform</strong><br>\n    Wenn du weißt, wofür der Text gedacht ist (Insta, TikTok, Discord, LinkedIn …), nimm direkt die jeweilige Plattformseite: da sind die Schriften vorgefiltert.\n    <br><br>\n    <strong>Nach Anlass</strong><br>\n    Brauchst du eine Bio-Schrift, einen Kommentar-Stil, Symbole für deinen Status? Über die Anwendungsfälle landest du beim passenden Tool: zum Beispiel den <a href=\"/de/usecase/bio-schriftart/\">Bio-Schriftart Generator</a> für Instagram, TikTok, Discord &amp; Co."
           }
         ]
       }

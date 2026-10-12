@@ -1,0 +1,240 @@
+{
+  "lang": "ko",
+  "page_type": "library",
+  "slug": "setak-giho",
+  "title": "세탁 기호 뜻 · 세탁 표시 기호 복사 | UltraTextGen",
+  "meta_description": "세탁 표시 기호의 뜻을 세탁, 표백, 건조, 다림질, 금지 표시로 나누어 정리하고, 비슷한 모양의 유니코드 문자를 모았습니다. 눌러서 바로 복사하세요.",
+  "breadcrumb": "세탁 기호",
+  "hero_h1": "세탁 기호",
+  "hero_tagline": "세탁, 표백, 건조, 다림질, 금지 표시. 각 표시의 뜻과 가장 비슷한 문자를 눌러 복사하세요.",
+  "intro": "옷 안쪽 라벨에 그려진 세탁 표시 기호는 국제 표준 ISO 3758의 그림이지만, 유니코드 문자로는 따로 등록되어 있지 않습니다. 그래서 이 페이지는 각 표시가 무슨 뜻인지 설명하고, 메모나 라벨, 게시글에 옮겨 적을 때 쓸 수 있는 가장 비슷한 이모지와 도형 문자를 모았습니다. 세탁, 표백, 건조, 다림질, 금지 표시 순서입니다. 국내 의류 라벨은 그림 옆에 '손세탁', '중성' 같은 한글과 온도 숫자가 함께 적힌 경우가 많아서, 그림과 글자를 같이 보면 뜻이 분명해집니다.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "washing",
+      "label": "세탁",
+      "h2": "세탁 · 물 관련 기호",
+      "intro": "물이 담긴 통 모양의 물세탁 표시를 대신할 문자입니다. 물, 세제, 세탁을 떠올리게 합니다.",
+      "symbols": [
+        {
+          "char": "🧺",
+          "label": "빨래 바구니"
+        },
+        {
+          "char": "🧼",
+          "label": "비누"
+        },
+        {
+          "char": "🧴",
+          "label": "세제 통"
+        },
+        {
+          "char": "💧",
+          "label": "물방울"
+        },
+        {
+          "char": "🚿",
+          "label": "샤워기"
+        },
+        {
+          "char": "🛁",
+          "label": "욕조"
+        },
+        {
+          "char": "♨",
+          "label": "온천 (뜨거운 물)"
+        },
+        {
+          "char": "🌊",
+          "label": "물결"
+        }
+      ]
+    },
+    {
+      "id": "bleaching",
+      "label": "표백",
+      "h2": "표백 기호",
+      "intro": "표백 표시는 삼각형입니다. 빈 삼각형은 표백 가능, X가 그어진 삼각형은 표백 금지입니다.",
+      "symbols": [
+        {
+          "char": "△",
+          "label": "빈 삼각형 (표백 가능)"
+        },
+        {
+          "char": "▲",
+          "label": "검은 삼각형"
+        },
+        {
+          "char": "⚠",
+          "label": "경고 표시"
+        },
+        {
+          "char": "🧪",
+          "label": "시험관 (화학 약품)"
+        },
+        {
+          "char": "☣",
+          "label": "생물 위험 표시"
+        },
+        {
+          "char": "🚫",
+          "label": "금지 (표백 금지)"
+        }
+      ]
+    },
+    {
+      "id": "drying",
+      "label": "건조",
+      "h2": "건조 기호",
+      "intro": "해, 원, 네모 모양이 기계 건조와 자연 건조 표시를 닮았습니다.",
+      "symbols": [
+        {
+          "char": "☀",
+          "label": "해 (햇볕 건조)"
+        },
+        {
+          "char": "🌞",
+          "label": "웃는 해"
+        },
+        {
+          "char": "◯",
+          "label": "큰 원 (기계 건조)"
+        },
+        {
+          "char": "□",
+          "label": "빈 네모 (뉘어서 건조)"
+        },
+        {
+          "char": "💨",
+          "label": "바람 (자연 건조)"
+        },
+        {
+          "char": "🧷",
+          "label": "옷핀 (빨랫줄 건조)"
+        },
+        {
+          "char": "🌡",
+          "label": "온도계 (건조 온도)"
+        }
+      ]
+    },
+    {
+      "id": "ironing",
+      "label": "다림질",
+      "h2": "다림질 · 온도 기호",
+      "intro": "다리미 표시는 점 1개, 2개, 3개로 낮은 온도, 중간 온도, 높은 온도를 나타냅니다. 아래 점 문자로 같은 단계를 적을 수 있습니다.",
+      "symbols": [
+        {
+          "char": "🔥",
+          "label": "불 (높은 온도)"
+        },
+        {
+          "char": "♨",
+          "label": "온천 (스팀)"
+        },
+        {
+          "char": "•",
+          "label": "점 1개 (낮은 온도)"
+        },
+        {
+          "char": "‥",
+          "label": "점 2개 (중간 온도)"
+        },
+        {
+          "char": "…",
+          "label": "점 3개 (높은 온도)"
+        },
+        {
+          "char": "♻",
+          "label": "재활용 (친환경 세탁)"
+        }
+      ]
+    },
+    {
+      "id": "do-not",
+      "label": "금지",
+      "h2": "'하지 마세요' 금지 기호",
+      "intro": "라벨에서 어떤 표시든 X가 그어져 있으면 그 처리를 하지 말라는 뜻입니다. 위 기호와 함께 쓰면 세탁, 표백, 건조, 다림질 금지를 나타낼 수 있습니다.",
+      "symbols": [
+        {
+          "char": "🚫",
+          "label": "금지 표시"
+        },
+        {
+          "char": "⛔",
+          "label": "진입 금지"
+        },
+        {
+          "char": "❌",
+          "label": "X 표시"
+        },
+        {
+          "char": "✗",
+          "label": "가는 X"
+        },
+        {
+          "char": "✘",
+          "label": "굵은 X"
+        },
+        {
+          "char": "⊘",
+          "label": "사선 원"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/ko/library/gyeonggo-giho/",
+      "title": "경고 기호",
+      "desc": "경고, 위험, 주의 표시 기호."
+    },
+    {
+      "href": "/ko/library/dohyeong-giho/",
+      "title": "도형 기호 모음",
+      "desc": "삼각형, 네모, 원 같은 유니코드 도형."
+    },
+    {
+      "href": "/ko/library/nalssi-giho/",
+      "title": "날씨 기호와 이모지",
+      "desc": "해, 구름, 비, 눈 기호."
+    },
+    {
+      "href": "/ko/library/teuksu-munja/",
+      "title": "특수문자 모음",
+      "desc": "자주 쓰는 특수문자 전체 모음."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ko/library/setak-giho/",
+  "home_url": "https://ultratextgen.com/ko/",
+  "crumb_home": "홈",
+  "library_url": "https://ultratextgen.com/ko/library/",
+  "date_published": "2026-10-06",
+  "date_modified": "2026-10-06",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/laundry-care-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-lavado/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/wassymbolen/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/waschsymbole/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/setak-giho/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/laundry-care-symbols/"
+    }
+  ]
+}

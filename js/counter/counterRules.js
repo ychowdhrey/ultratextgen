@@ -56,6 +56,19 @@
     return bytes;
   }
 
+  /* The older Korean convention, EUC-KR / CP949: ASCII is 1 byte and a Hangul
+     syllable is 2. Korean application portals that state a limit like "600자 /
+     1200바이트" count this way, not in UTF-8 (where a syllable is 3).
+     Every code point outside ASCII counts 2, which is exact for Hangul, hanja and
+     the symbols CP949 holds. Emoji and other characters CP949 has no code for
+     cannot be stored there at all, so a portal's own count for them varies. */
+  function hangul2Bytes(str) {
+    if (!str) return 0;
+    let bytes = 0;
+    for (const ch of str) bytes += ch.codePointAt(0) <= 0x7f ? 1 : 2;
+    return bytes;
+  }
+
   const graphemeSegmenter = (typeof Intl !== "undefined" && Intl.Segmenter)
     ? new Intl.Segmenter(undefined, { granularity: "grapheme" })
     : null;
@@ -562,7 +575,7 @@
   }
 
   ns.counterCounts = {
-    codePoints, utf16Units, utf8Bytes, graphemes, takeGraphemes, xWeightedLength, gsmInfo
+    codePoints, utf16Units, utf8Bytes, hangul2Bytes, graphemes, takeGraphemes, xWeightedLength, gsmInfo
   };
   ns.counterRules = {
     LIMITS, PLATFORMS, DEFAULT_GROUPS,

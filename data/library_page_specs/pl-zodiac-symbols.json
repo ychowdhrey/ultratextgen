@@ -184,7 +184,7 @@
       "id": "aspects",
       "label": "Symbole Aspektów Astrologicznych",
       "h2": "Symbole Aspektów Astrologicznych",
-      "intro": "Aspekty z horoskopu.",
+      "intro": "Aspekty z horoskopu. Unicode nie ma osobnego znaku półkwadratu (45°), dlatego w horoskopach zapisuje się go znakiem kąta ∠.",
       "symbols": [
         {
           "char": "☊",
@@ -213,6 +213,22 @@
         {
           "char": "△",
           "label": "Trygon"
+        },
+        {
+          "char": "⚺",
+          "label": "Półsekstyl (30°)"
+        },
+        {
+          "char": "∠",
+          "label": "Półkwadrat (45°)"
+        },
+        {
+          "char": "⚼",
+          "label": "Półtorakwadrat (135°)"
+        },
+        {
+          "char": "⚻",
+          "label": "Kwinkunks (150°)"
         }
       ]
     },

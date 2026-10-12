@@ -127,16 +127,22 @@
      own letter of the Spanish alphabet, not N plus a mark, so folding it
      would print AÑO as ANO, a different word. */
   const LIGATURES = { "œ": "oe", "Œ": "OE", "æ": "ae", "Æ": "AE" };
-  function foldMarks(text, keepEnye) {
-    const s = String(text).replace(/[œŒæÆ]/g, (ch) => LIGATURES[ch]).normalize("NFC");
-    if (!keepEnye) return s.normalize("NFD").replace(/\p{M}/gu, "").normalize("NFC");
+  /* German (`fold: "de"`) follows the newspaper Kreuzworträtsel rule: Ä, Ö
+     and Ü take two squares as AE, OE and UE, and ß is SS. Any other mark is
+     dropped as in French. It is its own mode because the umlaut is a sound,
+     not a decoration: folding Ä to plain A would print BAR for BÄR. */
+  const DE_PAIRS = { "ä": "ae", "Ä": "AE", "ö": "oe", "Ö": "OE", "ü": "ue", "Ü": "UE", "ß": "ss", "ẞ": "SS" };
+  function foldMarks(text, mode) {
+    let s = String(text).replace(/[œŒæÆ]/g, (ch) => LIGATURES[ch]).normalize("NFC");
+    if (mode === "de") s = s.replace(/[äÄöÖüÜßẞ]/g, (ch) => DE_PAIRS[ch]);
+    if (mode !== "es") return s.normalize("NFD").replace(/\p{M}/gu, "").normalize("NFC");
     return Array.from(s)
       .map((ch) => (ch === "ñ" || ch === "Ñ") ? ch : ch.normalize("NFD").replace(/\p{M}/gu, ""))
       .join("");
   }
 
   function gridLetters(text, fold) {
-    return Array.from(fold ? foldMarks(text, fold === "es") : String(text))
+    return Array.from(fold ? foldMarks(text, fold) : String(text))
       .filter((ch) => LETTER_RE.test(ch))
       .map(upperOne);
   }

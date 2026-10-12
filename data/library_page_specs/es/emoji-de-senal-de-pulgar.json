@@ -7,7 +7,7 @@
   "canonical": "https://ultratextgen.com/es/symbol/emoji-de-senal-de-pulgar/",
   "breadcrumb": "Emoji de Señal de Pulgar",
   "hero_h1": "Emoji de Señal de Pulgar, Izquierda y Derecha",
-  "hero_tagline": "Un par direccional para señalar, no otro gesto de aprobación, definitivo en Emoji 18.0 junto a Unicode 18.0 desde el 16 de septiembre de 2026. A 25 de septiembre de 2026, ningún móvil ni ordenador lo muestra de serie, pero ya puedes copiar cualquiera de los dos códigos con un clic.",
+  "hero_tagline": "Un par direccional para señalar, no otro gesto de aprobación, definitivo en Emoji 18.0 junto a Unicode 18.0 desde el 16 de septiembre de 2026. A 25 de septiembre de 2026, ningún teléfono ni computadora lo muestra de serie, pero ya puedes copiar cualquiera de los dos códigos con un clic.",
   "intro": "Señal de Pulgar hacia la Izquierda (🫹, U+1FAF9) y Señal de Pulgar hacia la Derecha (🫺, U+1FAFA) forman un par de emoji nuevos de Emoji 18.0, la actualización de emoji que acompaña a Unicode 18.0, definitiva desde el 16 de septiembre de 2026. Pese al nombre, no son otro gesto de aprobación junto a Pulgar Arriba y Pulgar Abajo — son señales horizontales, de señalar, más cercanas en su función a los emoji ya existentes de Mano hacia Atrás Señalando a la Izquierda/Derecha que a un pulgar vertical. El par responde a una queja recurrente de la comunidad: el repertorio de gestos de Unicode siempre se ha inclinado hacia signos de aprobación verticales y diestros, sin una forma clara de señalar con el pulgar «a este» frente a «a aquel» dentro de una respuesta o una comparación. Hay un precedente real para esta categoría — la propuesta de la Mano Empujando de 2021 ya estableció los gestos direccionales de mano como un carril legítimo de emoji más allá del simple pulgar de aprobación. Los datos de emoji definitivos de Unicode dan a cada señal los cinco modificadores de tono de piel, así que el par suma 10 variantes de tono de piel (cinco cada una). Ser definitivos los mete en el estándar, pero todavía no en la pantalla. Google ha publicado diseños de ambos en su fuente Noto Color Emoji, pero a 25 de septiembre de 2026 ningún sistema operativo, teclado ni fuente de emoji del sistema los incluye, así que espera un cuadro en blanco o un glifo de marcador de posición hasta que las plataformas incorporen soporte. Emojipedia estima, a partir del calendario del año pasado, WhatsApp, Samsung y Google en el primer trimestre de 2027, Apple hacia marzo o abril de 2027 y Microsoft entre finales del verano y principios del otoño de 2027.",
   "date_published": "2026-07-25",
   "date_modified": "2026-09-26",
@@ -23,7 +23,7 @@
       "id": "senal-de-pulgar",
       "label": "Señal de Pulgar",
       "h2": "Señal de Pulgar hacia la Izquierda y hacia la Derecha",
-      "intro": "Los dos caracteres definitivos propiamente dichos: copiables hoy como códigos, aunque ningún móvil ni ordenador los muestre todavía de serie.",
+      "intro": "Los dos caracteres definitivos propiamente dichos: copiables hoy como códigos, aunque ningún teléfono ni computadora los muestre todavía de serie.",
       "symbols": [
         { "char": "🫹", "label": "Señal de Pulgar hacia la Izquierda (U+1FAF9, Emoji 18.0)" },
         { "char": "🫺", "label": "Señal de Pulgar hacia la Derecha (U+1FAFA, Emoji 18.0)" }

@@ -139,7 +139,7 @@
   "editorial_sections": [
     {
       "h2": "Perché i Tasti Hanno un Carattere Proprio",
-      "body": "Questi simboli esistono in Unicode perché la documentazione tecnica ne aveva bisogno molto prima del web: un manuale stampato non poteva inserire una figura ogni volta che citava una scorciatoia. Per questo ⌘, ⌥ e ⇧ sono caratteri veri e propri, componibili in una riga di testo come qualsiasi lettera: ed è anche il motivo per cui, incollati in una chat, restano leggibili invece di diventare un allegato."
+      "body": "Questi simboli esistono in Unicode perché la documentazione tecnica ne aveva bisogno molto prima del web: un manuale stampato non poteva inserire una figura ogni volta che citava una scorciatoia. Per questo ⌘, ⌥ e ⇧ sono caratteri veri e propri, componibili in una riga di testo come qualsiasi lettera, ed è anche il motivo per cui, incollati in una chat, restano leggibili invece di diventare un allegato."
     }
   ],
   "related": [

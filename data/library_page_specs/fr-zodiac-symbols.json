@@ -184,7 +184,7 @@
       "id": "aspects",
       "label": "Symboles d'Aspects Astrologiques",
       "h2": "Symboles d'Aspects Astrologiques",
-      "intro": "Les aspects du thème astral.",
+      "intro": "Les aspects du thème astral. Unicode n'a pas de caractère pour le semi-carré (45°) : les thèmes astraux utilisent le signe d'angle ∠.",
       "symbols": [
         {
           "char": "☊",
@@ -213,6 +213,22 @@
         {
           "char": "△",
           "label": "Trigone"
+        },
+        {
+          "char": "⚺",
+          "label": "Semi-sextile (30°)"
+        },
+        {
+          "char": "∠",
+          "label": "Semi-carré (45°)"
+        },
+        {
+          "char": "⚼",
+          "label": "Sesqui-carré (135°)"
+        },
+        {
+          "char": "⚻",
+          "label": "Quinconce (150°)"
         }
       ]
     },

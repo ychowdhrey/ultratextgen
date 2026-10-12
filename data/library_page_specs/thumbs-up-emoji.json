@@ -67,6 +67,18 @@
       ]
     },
     {
+      "id": "nodding-head-shaking",
+      "label": "Nodding & Head Shaking",
+      "h2": "Nodding Yes and Shaking No Emoji",
+      "intro": "Emoji 15.1 (2023) added a nodding face for yes and a head-shaking face for no. Each one is 🙂 joined to an arrow, so a phone that has not had that update shows 🙂↕ or 🙂↔ in two pieces. 🙆 and 🙅 carry the same yes and no, and they date from the first emoji set, so they display wherever emoji do.",
+      "symbols": [
+        { "char": "🙂‍↕️", "label": "Head Shaking Vertically (Nod Yes)" },
+        { "char": "🙂‍↔️", "label": "Head Shaking Horizontally (Shake No)" },
+        { "char": "🙆", "label": "Person Gesturing OK" },
+        { "char": "🙅", "label": "Person Gesturing No" }
+      ]
+    },
+    {
       "id": "pointing-hands",
       "label": "Pointing Hands",
       "h2": "Pointing & Raised Hands",
@@ -208,6 +220,16 @@
       "href": "/library/achievement-symbols/",
       "title": "Achievement Symbols",
       "desc": "Trophies, medals, and winner symbols for celebrating success."
+    },
+    {
+      "href": "/library/thumbs-up-kaomoji/",
+      "title": "Thumbs Up Kaomoji",
+      "desc": "Copy and paste thumbs up kaomoji: approving, confident Japanese text faces."
+    },
+    {
+      "href": "/library/thumbs-up-ascii-art/",
+      "title": "Thumbs Up ASCII Art",
+      "desc": "A thumbs up drawn in plain text, from the one-line d-_-b to a big multi-line hand."
     }
   ]
 }

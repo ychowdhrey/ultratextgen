@@ -50,6 +50,31 @@
         { "char": "🧬", "label": "DNA" },
         { "char": "🚑", "label": "Ambulance" }
       ]
+    },
+    {
+      "id": "dental",
+      "label": "Dental",
+      "h2": "Dental & Dentistry Symbols",
+      "intro": "🦷 and 🪥 are the everyday dental emoji. The fifteen DENTISTRY SYMBOL characters (U+23BE to U+23CC) are monochrome text marks from Palmer notation, the dental charting system that numbers each tooth 1 to 8 from the midline and wraps the number in an L-shaped bracket showing which quadrant of the mouth it sits in. The block also has brackets with a circle, triangle or wave.",
+      "symbols": [
+        { "char": "🦷", "label": "Tooth" },
+        { "char": "🪥", "label": "Toothbrush" },
+        { "char": "⎾", "label": "Vertical and Top Right" },
+        { "char": "⎿", "label": "Vertical and Bottom Right" },
+        { "char": "⏀", "label": "Vertical with Circle" },
+        { "char": "⏁", "label": "Down and Horizontal with Circle" },
+        { "char": "⏂", "label": "Up and Horizontal with Circle" },
+        { "char": "⏃", "label": "Vertical with Triangle" },
+        { "char": "⏄", "label": "Down and Horizontal with Triangle" },
+        { "char": "⏅", "label": "Up and Horizontal with Triangle" },
+        { "char": "⏆", "label": "Vertical and Wave" },
+        { "char": "⏇", "label": "Down and Horizontal with Wave" },
+        { "char": "⏈", "label": "Up and Horizontal with Wave" },
+        { "char": "⏉", "label": "Down and Horizontal" },
+        { "char": "⏊", "label": "Up and Horizontal" },
+        { "char": "⏋", "label": "Vertical and Top Left" },
+        { "char": "⏌", "label": "Vertical and Bottom Left" }
+      ]
     }
   ],
   "related": [

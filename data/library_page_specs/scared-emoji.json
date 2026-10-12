@@ -1,14 +1,14 @@
 {
   "slug": "scared-emoji",
-  "title": "Scared Emoji & Kaomoji: Copy & Paste 😨😱 Fear Combos",
-  "meta_description": "Scared emoji 😨 😱 😰, spooky ghost and spider symbols, plus panicked kaomoji like ((((；゜Д゜)))) for chats and comments. Click any symbol to copy it instantly.",
+  "title": "Scared Emoji: Copy & Paste 😨😱 Fear Faces, Emoticons & Combos",
+  "meta_description": "Scared emoji 😨 😱 😰, spooky ghost and spider symbols, plus typed fear emoticons like D: for chats and comments. Click any symbol to copy it instantly.",
   "canonical": "https://ultratextgen.com/library/scared-emoji/",
-  "breadcrumb": "Scared Emoji & Kaomoji",
-  "hero_h1": "Scared Emoji & Kaomoji",
-  "hero_tagline": "Fearful faces, screaming panic, spooky ghosts and spiders, and trembling kaomoji: real fright in every intensity. Click any symbol to copy it instantly.",
-  "intro": "The scared emoji range runs from a wide-eyed 😨 fearful face to the full-blown terror of 😱 screaming in fear, genuine fright, not the plot-twist surprise of a shocked face. This page gathers every frightened and panicked face, the cold-sweat anxious emojis for nervous dread, the spooky ghost, spider, and bat symbols that set a haunted-house scene, and one-click scared combo sets for chats, comments, horror posts, and Halloween captions. When an emoji won't carry the exact shiver, classic panicked kaomoji like ((((；゜Д゜)))) paste anywhere plain text works.",
+  "breadcrumb": "Scared Emoji",
+  "hero_h1": "Scared Emoji",
+  "hero_tagline": "Fearful faces, screaming panic, spooky ghosts and spiders, and typed D: emoticons: real fright in every intensity. Click any symbol to copy it instantly.",
+  "intro": "The scared emoji range runs from a wide-eyed 😨 fearful face to the full-blown terror of 😱 screaming in fear, genuine fright, not the plot-twist surprise of a shocked face. This page gathers every frightened and panicked face, the cold-sweat anxious emojis for nervous dread, the spooky ghost, spider, and bat symbols that set a haunted-house scene, and one-click scared combo sets for chats, comments, horror posts, and Halloween captions. When an emoji won't carry the exact shiver, a typed D: emoticon or a trembling kaomoji like ((((；゜Д゜)))) pastes anywhere plain text works.",
   "date_published": "2026-07-13",
-  "date_modified": "2026-07-13",
+  "date_modified": "2026-10-09",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -54,19 +54,30 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticons",
+      "h2": "Scared Text Emoticons",
+      "intro": "Read sideways, D: is a mouth stretched wide in horror. Keyboard fear faces like these still get through where an app turns emoji into boxes.",
+      "symbols": [
+        { "char": "D:", "label": "Horrified Emoticon" },
+        { "char": "D=", "label": "Dread Emoticon" },
+        { "char": "DX", "label": "Terrified Emoticon" },
+        { "char": "D8", "label": "Wide-Eyed Horror Emoticon" },
+        { "char": ":-S", "label": "Worried Emoticon" }
+      ]
+    },
+    {
       "id": "scared-kaomoji",
       "label": "Kaomoji",
       "h2": "Scared & Panicked Kaomoji",
-      "intro": "The trembles, cold sweats, and screams of classic frightened text faces.",
+      "intro": "Four panicked Japanese text faces, trembling lines and cold sweat included.",
       "symbols": [
         { "char": "((((；゜Д゜))))", "label": "Trembling With Fear Kaomoji" },
         { "char": "Σ(ﾟдﾟ|||)", "label": "Startled Shock Kaomoji" },
-        { "char": "(ﾟдﾟ；)", "label": "Frightened Sweat Kaomoji" },
         { "char": "(；ﾟДﾟ)", "label": "Nervous Panic Kaomoji" },
-        { "char": "ヽ(ﾟДﾟ)ﾉ", "label": "Screaming In Fear Kaomoji" },
-        { "char": "(＠_＠;)", "label": "Dazed Fright Kaomoji" },
-        { "char": "((；ﾟдﾟ))", "label": "Shaking Dread Kaomoji" }
-      ]
+        { "char": "ヽ(ﾟДﾟ)ﾉ", "label": "Screaming In Fear Kaomoji" }
+      ],
+      "more_link": { "href": "/library/scared-kaomoji/", "text": "See every scared kaomoji" }
     }
   ],
   "collection_section": {
@@ -120,8 +131,13 @@
   ],
   "related": [
     {
+      "href": "/library/scared-kaomoji/",
+      "title": "Scared Kaomoji",
+      "desc": "Shaking, hiding, screaming and running away, all drawn in text."
+    },
+    {
       "href": "/library/shocked-emoji/",
-      "title": "Shocked Emoji & Kaomoji",
+      "title": "Shocked Emoji",
       "desc": "Wide-eyed surprise and plot-twist reactions, the surprise to this page's fear."
     },
     {

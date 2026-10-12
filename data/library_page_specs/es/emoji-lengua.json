@@ -143,6 +143,22 @@
         {
           "char": "ヽ(≧∀≦)ノ",
           "label": "Kaomoji emocionado y bobo"
+        },
+        {
+          "char": "=P",
+          "label": "Lengua con ojos abiertos"
+        },
+        {
+          "char": "(๑´ڡ`๑)",
+          "label": "Kaomoji de lengua golosa"
+        },
+        {
+          "char": "(^ڡ^)",
+          "label": "Kaomoji relamiéndose"
+        },
+        {
+          "char": "(ﾉ≧ڡ≦)",
+          "label": "Kaomoji de «¡ups!» con la lengua afuera"
         }
       ]
     }
@@ -232,7 +248,7 @@
   "related": [
     {
       "href": "/es/library/emoji-riendo/",
-      "title": "Emoji Riendo y Kaomoji",
+      "title": "Emoji Riendo",
       "desc": "Caras llorando de risa y combos de carcajada para acompañar una lengua traviesa."
     },
     {

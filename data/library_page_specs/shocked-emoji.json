@@ -1,14 +1,14 @@
 {
   "slug": "shocked-emoji",
-  "title": "Shocked Emoji & Kaomoji: Copy & Paste 😱 Surprise Combos",
-  "meta_description": "Shocked emoji 😱 😲 🤯, surprised kaomoji like (⊙_⊙), and plot-twist combo sets for jaw-drop reactions and replies. Click any symbol to copy it instantly.",
+  "title": "Shocked Emoji: Copy & Paste 😱 Surprise Faces, Emoticons & Combos",
+  "meta_description": "Shocked emoji 😱 😲 🤯, typed gasp emoticons like :O, and plot-twist combo sets for jaw-drop reactions and replies. Click any symbol to copy it instantly.",
   "canonical": "https://ultratextgen.com/library/shocked-emoji/",
-  "breadcrumb": "Shocked Emoji & Kaomoji",
-  "hero_h1": "Shocked Emoji & Kaomoji",
-  "hero_tagline": "Screams, gasps, jaw drops, and wide-eyed (⊙_⊙) kaomoji: every degree of surprise. Click any symbol to copy it instantly.",
-  "intro": "When something is genuinely unbelievable, the shocked emoji does the talking: 😱 screams, 😲 gasps, and 🤯 has its mind blown entirely. This page rounds up every shocked and surprised face, the exclamation marks that punch up a gasp, nervous and spooked expressions, and bug-eyed kaomoji like Σ(ﾟДﾟ): with one-click surprise combos for plot twists, gossip threads, and jump-scare reactions.",
+  "breadcrumb": "Shocked Emoji",
+  "hero_h1": "Shocked Emoji",
+  "hero_tagline": "Screams, gasps, jaw drops, and typed :O emoticons: every degree of surprise. Click any symbol to copy it instantly.",
+  "intro": "When something is genuinely unbelievable, the shocked emoji does the talking: 😱 screams, 😲 gasps, and 🤯 has its mind blown entirely. This page rounds up every shocked and surprised face, the exclamation marks that punch up a gasp, nervous and spooked expressions, typed :O emoticons, a few bug-eyed kaomoji like Σ(ﾟДﾟ), and one-click surprise combos for plot twists, gossip threads, and jump-scare reactions.",
   "date_published": "2026-06-12",
-  "date_modified": "2026-06-12",
+  "date_modified": "2026-10-09",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -58,21 +58,31 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticons",
+      "h2": "Shocked Text Emoticons",
+      "intro": "A round O for a dropped jaw: the typed gasp that came long before 😮. Add a nose, or swap the eyes for an 8 to widen the stare.",
+      "symbols": [
+        { "char": ":O", "label": "Surprised Emoticon" },
+        { "char": ":-O", "label": "Surprised With Nose Emoticon" },
+        { "char": ":o", "label": "Small Gasp Emoticon" },
+        { "char": "=O", "label": "Wide Gasp Emoticon" },
+        { "char": "O_O", "label": "Wide-Eyed Stare Emoticon" },
+        { "char": "8-O", "label": "Goggle-Eyed Shock Emoticon" }
+      ]
+    },
+    {
       "id": "shocked-kaomoji",
       "label": "Kaomoji",
       "h2": "Shocked Kaomoji & Text Faces",
-      "intro": "Bug-eyed, jaw-dropped Japanese-style text faces frozen in disbelief.",
+      "intro": "Four bug-eyed Japanese text faces frozen at the moment of surprise.",
       "symbols": [
         { "char": "(⊙_⊙)", "label": "Wide Eyes Kaomoji" },
         { "char": "Σ(ﾟДﾟ)", "label": "Sudden Shock Kaomoji" },
-        { "char": "Σ(°△°|||)", "label": "Startled Jolt Kaomoji" },
         { "char": "w(°ｏ°)w", "label": "Hands-Up Gasp Kaomoji" },
-        { "char": "(ﾟоﾟ)", "label": "Open-Mouth Stare Kaomoji" },
-        { "char": "ヽ(ﾟДﾟ)ﾉ", "label": "Panicked Flail Kaomoji" },
-        { "char": "(○o○)", "label": "Round-Eyed Surprise Kaomoji" },
-        { "char": "☉_☉", "label": "Frozen Stare Kaomoji" },
         { "char": "(((ﾟДﾟ;)))", "label": "Trembling Shock Kaomoji" }
-      ]
+      ],
+      "more_link": { "href": "/library/shocked-kaomoji/", "text": "See every shocked kaomoji" }
     }
   ],
   "collection_section": {
@@ -121,8 +131,13 @@
   ],
   "related": [
     {
+      "href": "/library/shocked-kaomoji/",
+      "title": "Shocked Kaomoji",
+      "desc": "Copy and paste shocked kaomoji: wide-eyed, gasping, and stunned Japanese text faces."
+    },
+    {
       "href": "/library/angry-emoji/",
-      "title": "Angry Emoji & Kaomoji",
+      "title": "Angry Emoji",
       "desc": "Rage faces and table-flip kaomoji when shock turns to fury."
     },
     {

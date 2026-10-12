@@ -101,6 +101,22 @@ t("repeats count once, in order", G.outcomeSymbols("꧁༒Sanz༒꧂"), ["A9C1",
 t("capped at eight", G.outcomeSymbols("★☆✦✧✩✪✯✰✴✵").length, 8);
 t("empty in, empty out", G.outcomeSymbols(""), []);
 
+// --- Discord's Server Tag: a dedicated 4-character field (Discord Help, read 2026-10-08) ---
+const dTag = (s) => G.analyzeTag(s, "discord");
+t("discord tag field is dedicated, not folded", dTag("ABCD").kind, "dedicated");
+t("discord tag limit is 4", dTag("ABCD").limit, 4);
+t("a 4-character tag fits", dTag("ABCD").ok, true);
+t("a 5-character tag is too long", dTag("ABCDE").issues, ["too-long"]);
+t("a space is not supported", dTag("AB C").issues, ["space"]);
+t("letters and digits are the documented set", dTag("AB12").undocumented, false);
+t("a special character is unconfirmed, not refused", [dTag("A-B").ok, dTag("A-B").undocumented], [true, true]);
+t("a styled tag is unconfirmed, not refused", [dTag("𝐍𝐑𝐆").ok, dTag("𝐍𝐑𝐆").undocumented], [true, true]);
+t("a refused tag is a failure, not also unconfirmed", dTag("A B").undocumented, false);
+t("an empty tag is not flagged", dTag("").undocumented, false);
+t("pubg stays strict ascii (no plainPattern change)", G.analyzeTag("𝐍𝐑𝐆", "pubgPc").issues.includes("charset"), true);
+t("discord nickname budget still 32", G.tagBudget("ABCD", "discord", "").limit, 32);
+t("fortnite is still folded", G.analyzeTag("ABC", "fortnite").kind, "folded");
+
 // --- the reporter needs a page opt-in AND the board module ---
 mounts.plain = makeEl("div");
 G.initChecker({ mount: "plain", games: ["ff"], text: {} });

@@ -27,6 +27,34 @@
    ]
   },
   {
+   "id": "hauttoene",
+   "label": "Hauttöne",
+   "h2": "Betende Hände in allen Hauttönen",
+   "intro": "🙏 in den fünf Hauttönen, die Unicode festlegt, von hell bis dunkel. 🙏🏿 (dunkel) und 🙏🏾 (mitteldunkel) sind die beiden, die mit schwarzen betenden Händen gemeint sind. Jede Variante ist 🙏 plus ein Hautton-Modifikator, deshalb zeigt eine App ohne Hauttöne 🙏 neben einem kleinen Farbfeld.",
+   "symbols": [
+    {
+     "char": "🙏🏻",
+     "label": "Gefaltete Hände, heller Hautton"
+    },
+    {
+     "char": "🙏🏼",
+     "label": "Gefaltete Hände, mittelheller Hautton"
+    },
+    {
+     "char": "🙏🏽",
+     "label": "Gefaltete Hände, mittlerer Hautton"
+    },
+    {
+     "char": "🙏🏾",
+     "label": "Gefaltete Hände, mitteldunkler Hautton"
+    },
+    {
+     "char": "🙏🏿",
+     "label": "Gefaltete Hände, dunkler Hautton"
+    }
+   ]
+  },
+  {
    "id": "gesten",
    "label": "Verwandte Gesten",
    "h2": "Verwandte Gesten",

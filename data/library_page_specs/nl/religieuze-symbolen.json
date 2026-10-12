@@ -126,6 +126,26 @@
       ]
     },
     {
+      "id": "highs-and-lows",
+      "label": "Christelijk",
+      "h2": "Symbool \"God is groter dan de hoogte- en dieptepunten\"",
+      "intro": "Een moderne geloofsspreuk uit het Engels, vaak gebruikt voor tatoeages, shirts en bio's: G staat voor God, > voor \"groter dan\", daarna een top (^ of ∧) voor de hoogtepunten en een dal (v of ∨) voor de dieptepunten. De drie vormen betekenen hetzelfde; G>^v is gewone toetsenbordtekst en is op elk apparaat te zien.",
+      "symbols": [
+        {
+          "char": "G>^v",
+          "label": "Toetsenbordvorm"
+        },
+        {
+          "char": "G>ΛV",
+          "label": "Met Griekse lambda"
+        },
+        {
+          "char": "G>∧∨",
+          "label": "Met logische tekens"
+        }
+      ]
+    },
+    {
       "id": "islamic",
       "label": "Islamitisch",
       "h2": "Islamitische Symbolen",

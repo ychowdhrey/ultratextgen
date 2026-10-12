@@ -1,11 +1,11 @@
 {
   "slug": "excited-kaomoji",
-  "title": "Excited Kaomoji: Copy & Paste Hyped Text Faces",
-  "meta_description": "Browse and copy excited kaomoji — also spelled kamoji — hyped, arms-up, can't-wait Japanese text faces. Click any to copy it instantly.",
+  "title": "Excited Kaomoji ٩(◕‿◕)۶: Copy & Paste Hyped Text Faces",
+  "meta_description": "Browse and copy excited kaomoji ٩(◕‿◕)۶, also spelled kamoji: hyped, arms-up, can't-wait Japanese text faces. Click any to copy it instantly.",
   "breadcrumb": "Excited Kaomoji",
   "hero_h1": "Excited Kaomoji",
   "hero_tagline": "Copy and paste excited kaomoji: hyped, arms-up Japanese text faces bursting with energy. Click any face to copy it instantly.",
-  "intro": "Excited kaomoji (also spelled kamoji) are high-energy Japanese-style text faces: arms up, eyes sparkling, and ready to burst. An excited kaomoji such as ヽ(>∀<☆)ノ or ٩(◕‿◕)۶ is plain Unicode text, so it pastes cleanly into bios, captions, comments, and chats. Browse by style below and click any face to copy it instantly. Whether you search \"excited kaomoji\" or \"kaomoji excited,\" every face here is free to copy and paste.",
+  "intro": "Excited kaomoji (also spelled kamoji) are high-energy Japanese-style text faces: arms up, eyes sparkling, and ready to burst. An excited kaomoji such as ヽ(>∀<☆)ノ or ٩(◕‿◕)۶ is plain Unicode text, so it pastes cleanly into bios, captions, comments, and chats. Browse by style below and click any face to copy it instantly. Whether you search \"excited kaomoji\" or \"kaomoji excited,\" every face here is free to copy and paste. ᗜ and ᐛ come from Canadian syllabics, so a device without those fonts shows a box in their place.",
   "date_published": "2026-07-10",
   "date_modified": "2026-07-10",
   "copy_pattern": "single",
@@ -97,6 +97,46 @@
           "label": "Let's Go"
         }
       ]
+    },
+    {
+      "id": "cheering",
+      "label": "Cheering & Yay",
+      "h2": "Cheering and Yay Kaomoji",
+      "intro": "Faces for shouting yay: a win, good news from a friend, or cheering someone on before a big day. \\(^o^)/ is the plain keyboard version that works in any app, and ٩ and و on either side of a face are two fists punching the air.",
+      "symbols": [
+        {
+          "char": "\\(^o^)/",
+          "label": "Classic Yay"
+        },
+        {
+          "char": "＼(＾▽＾)／",
+          "label": "Arms Up Yay"
+        },
+        {
+          "char": "o(〃＾▽＾〃)o",
+          "label": "Happy Yay"
+        },
+        {
+          "char": "ヾ(≧▽≦*)o",
+          "label": "Squealing Cheer"
+        },
+        {
+          "char": "✧*。٩(ˊᗜˋ*)و✧*。",
+          "label": "Sparkly Yay"
+        },
+        {
+          "char": "°˖✧◝(⁰▿⁰)◜✧˖°",
+          "label": "Big Yay"
+        },
+        {
+          "char": "٩( ᐛ )و",
+          "label": "Little Victory Dance"
+        },
+        {
+          "char": "(งˆ▽ˆ)ง",
+          "label": "Go Team"
+        }
+      ]
     }
   ],
   "related": [
@@ -119,6 +159,11 @@
       "href": "/library/sparkle-kaomoji/",
       "title": "Sparkle & Star Kaomoji",
       "desc": "Glitter, sparkles, and starry shine."
+    },
+    {
+      "href": "/library/happy-emoji/",
+      "title": "Happy Emoji",
+      "desc": "Smiles, sunshine and typed :D emoticons: every happy emoji from a soft 🙂 to a starstruck 🤩."
     }
   ]
 }

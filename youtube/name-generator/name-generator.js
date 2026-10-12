@@ -139,6 +139,9 @@
     const original = btn.textContent;
     try {
       await navigator.clipboard.writeText(value);
+      if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
+        window.UltraTextGen.trackCopy("button", value);
+      }
       btn.textContent = "Copied!";
       setTimeout(function () { btn.textContent = original; }, 1000);
     } catch (err) {

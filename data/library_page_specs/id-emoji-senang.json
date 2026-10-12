@@ -1,10 +1,10 @@
 {
   "slug": "emoji-senang",
   "title": "Emoji Senang 😊 😄 — Salin & Tempel Kombinasi Bahagia | UltraTextGen",
-  "meta_description": "Emoji senang 😊 😄 🥰, kaomoji ceria seperti ヽ(´▽`)/, dan kombinasi cerah buat bio, caption, dan chat. Klik simbolnya, langsung kesalin.",
+  "meta_description": "Emoji senang 😊 😄 🥰, emotikon kayak :), beberapa kaomoji ceria seperti ヽ(´▽`)/, dan kombinasi cerah buat bio, caption, dan chat. Klik simbolnya, langsung kesalin.",
   "breadcrumb": "Emoji Senang",
-  "hero_h1": "Emoji Senang & Kaomoji",
-  "hero_tagline": "Senyum, matahari, dan kaomoji ceria — semua emoji senang dari 🙂 yang kalem sampai 🤩 yang matanya bintang. Klik simbolnya, langsung kesalin.",
+  "hero_h1": "Emoji Senang",
+  "hero_tagline": "Senyum, matahari, emotikon :) yang diketik, dan beberapa kaomoji ceria: semua emoji senang dari 🙂 yang kalem sampai 🤩 yang matanya bintang. Klik simbolnya, langsung kesalin.",
   "intro": "Satu emoji senang yang pas bisa menentukan nada seluruh pesan — 😊 kebaca hangat dan tulus, 😄 senang terang-terangan, 🥰 nambahin rasa sayang. Halaman ini ngumpulin semua wajah tersenyum, emoji semangat dan perayaan yang cocok dipasangkan, simbol matahari dan bunga buat bio yang adem, plus kaomoji ceria kayak ヽ(´▽`)/ — lengkap sama kombinasi bahagia sekali klik buat caption, komentar, dan kabar baik.",
   "copy_pattern": "collection",
   "sections": [
@@ -129,10 +129,46 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emotikon",
+      "h2": "Emotikon Teks Senang",
+      "intro": "Senyuman yang diketik pakai titik dua dan kurung. Lebih tua dari emoji, dan masih jadi cara tercepat buat kelihatan ramah di teks biasa.",
+      "symbols": [
+        {
+          "char": ":)",
+          "label": "Emotikon Senyum"
+        },
+        {
+          "char": ":-)",
+          "label": "Emotikon Senyum Klasik Berhidung"
+        },
+        {
+          "char": ":D",
+          "label": "Emotikon Nyengir Lebar"
+        },
+        {
+          "char": ":-D",
+          "label": "Emotikon Nyengir Berhidung"
+        },
+        {
+          "char": "=)",
+          "label": "Emotikon Senyum Lembut"
+        },
+        {
+          "char": "XD",
+          "label": "Emotikon Ketawa Ngakak"
+        },
+        {
+          "char": "c:",
+          "label": "Emotikon Senyum Lebar"
+        }
+      ]
+    },
+    {
       "id": "happy-kaomoji",
       "label": "Kaomoji",
       "h2": "Kaomoji Senang & Wajah Teks",
-      "intro": "Wajah teks ala Jepang yang berseri sambil mengangkat kedua tangan.",
+      "intro": "Sedikit contoh wajah teks Jepang yang ceria.",
       "symbols": [
         {
           "char": "ヽ(´▽`)/",
@@ -143,34 +179,18 @@
           "label": "Kaomoji Bersorak"
         },
         {
-          "char": "(＾▽＾)",
-          "label": "Kaomoji Senyum Cerah"
-        },
-        {
           "char": "(◕‿◕)",
           "label": "Kaomoji Senyum Manis"
         },
         {
-          "char": "(✿◠‿◠)",
-          "label": "Kaomoji Senyum Berbunga"
-        },
-        {
           "char": "٩(◕‿◕｡)۶",
           "label": "Kaomoji Joget Semangat"
-        },
-        {
-          "char": "(o^▽^o)",
-          "label": "Kaomoji Pipi Merona"
-        },
-        {
-          "char": "(｡♥‿♥｡)",
-          "label": "Kaomoji Jatuh Cinta"
-        },
-        {
-          "char": "⊂((・▽・))⊃",
-          "label": "Kaomoji Peluk Erat"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/id/library/happy-kaomoji/",
+        "text": "Lihat semua kaomoji senang"
+      }
     }
   ],
   "collection_section": {
@@ -310,7 +330,7 @@
   ],
   "canonical": "https://ultratextgen.com/id/library/emoji-senang/",
   "date_published": "2026-08-08",
-  "date_modified": "2026-08-08",
+  "date_modified": "2026-10-09",
   "lang": "id",
   "page_type": "library",
   "faq_label": "FAQ",

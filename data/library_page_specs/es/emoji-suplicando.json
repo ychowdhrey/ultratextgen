@@ -201,6 +201,42 @@
           "label": "Kaomoji de súplica nerviosa"
         }
       ]
+    },
+    {
+      "id": "pleading-kaomoji-please",
+      "label": "Porfis",
+      "h2": "Kaomoji de súplica: ojitos de cachorro y porfa, porfa",
+      "intro": "Caritas que piden en vez de llorar. 人 son dos palmas juntas, el gesto que acompaña a onegai (por favor) en japonés, y m(_ _)m es una reverencia profunda con las dos manos en el suelo.",
+      "symbols": [
+        {
+          "char": "(人◕ω◕)",
+          "label": "Kaomoji de palmas juntas pidiendo por favor"
+        },
+        {
+          "char": "(人 •͈ᴗ•͈)",
+          "label": "Kaomoji de súplica esperanzada"
+        },
+        {
+          "char": "m(_ _)m",
+          "label": "Kaomoji de reverencia suplicante"
+        },
+        {
+          "char": "(｡•́︿•̀｡)",
+          "label": "Kaomoji de ojitos de cachorro"
+        },
+        {
+          "char": "( ´•̥̥̥ω•̥̥̥` )",
+          "label": "Kaomoji de ojitos de cachorro llorosos"
+        },
+        {
+          "char": "(๑•́ ₃ •̀๑)",
+          "label": "Kaomoji de puchero suplicante"
+        },
+        {
+          "char": "(つ﹏⊂)",
+          "label": "Kaomoji tapándose los ojos al suplicar"
+        }
+      ]
     }
   ],
   "collections": [

@@ -84,6 +84,18 @@
 
   let items = load();
 
+  /* The stored list as it is now, or null when storage cannot be read (private
+     mode, blocked storage). Null keeps the in-memory list, which is then the
+     only copy there is; reading "empty" there would drop it. */
+  function current() {
+    try {
+      localStorage.getItem(KEY);
+    } catch (err) {
+      return null;
+    }
+    return load();
+  }
+
   function persist() {
     try {
       localStorage.setItem(KEY, JSON.stringify(items.slice(0, MAX)));
@@ -131,6 +143,10 @@
         null when the record was malformed and nothing changed. */
     toggle(rec) {
       if (!isRecord(rec)) return null;
+      // Re-read before writing: persist() writes the whole list, so a tab
+      // working from the list it loaded would erase anything another tab
+      // saved since. Each change is applied to the current stored list.
+      items = current() || items;
       const i = indexOf(rec.type, rec.value);
       const nowSaved = i === -1;
       if (nowSaved) {
@@ -162,9 +178,21 @@
     },
 
     clear(type) {
+      items = current() || items;
       items = type ? items.filter((r) => r.type !== type) : [];
       persist();
       emit();
     }
   };
+
+  // Another tab saved or removed something: pick it up, so this tab's stars
+  // and saved strip reflect the store rather than the list it loaded with.
+  // The storage event never fires in the tab that made the change.
+  try {
+    window.addEventListener("storage", (e) => {
+      if (e.key !== KEY && e.key !== LEGACY_STYLE_KEY && e.key !== null) return;
+      items = current() || items;
+      emit();
+    });
+  } catch (err) { /* no window events (tests) — nothing to keep in step */ }
 })();

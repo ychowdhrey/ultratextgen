@@ -50,7 +50,11 @@ function load(seed) {
   const events = [];
   const dataLayer = [];
   const storage = makeStorage(seed || {});
-  const win = { localStorage: storage, dataLayer };
+  const listeners = {};
+  const win = {
+    localStorage: storage, dataLayer,
+    addEventListener(type, fn) { (listeners[type] = listeners[type] || []).push(fn); }
+  };
   const sandbox = {
     window: win,
     localStorage: storage,
@@ -64,7 +68,39 @@ function load(seed) {
   sandbox.globalThis = sandbox;
   vm.createContext(sandbox);
   vm.runInContext(src, sandbox);
-  return { api: win.UltraTextGen.saved, dataLayer, events, storage };
+  const fire = (type, ev) => (listeners[type] || []).forEach((fn) => fn(ev));
+  return { api: win.UltraTextGen.saved, dataLayer, events, storage, fire };
+}
+
+/** Two tabs over one localStorage: the same module evaluated twice. */
+function loadTwoTabs(seed) {
+  const a = load(seed);
+  const b = load();
+  // Point tab B at tab A's storage, then reload B's view of it.
+  const fs = require('fs');
+  const path = require('path');
+  const vm = require('vm');
+  const src = fs.readFileSync(path.join(__dirname, 'saved-items.js'), 'utf8');
+  const listeners = {};
+  const win = {
+    localStorage: a.storage, dataLayer: [],
+    addEventListener(type, fn) { (listeners[type] = listeners[type] || []).push(fn); }
+  };
+  const events = [];
+  const sandbox = {
+    window: win, localStorage: a.storage,
+    document: { addEventListener() {}, dispatchEvent(e) { events.push(e); return true; } },
+    CustomEvent: function (type, init) { this.type = type; this.detail = init && init.detail; },
+    Date
+  };
+  sandbox.globalThis = sandbox;
+  vm.createContext(sandbox);
+  vm.runInContext(src, sandbox);
+  void b;
+  return {
+    a,
+    b: { api: win.UltraTextGen.saved, events, fire: (type, ev) => (listeners[type] || []).forEach((fn) => fn(ev)) }
+  };
 }
 
 /* ---- a fresh store ----------------------------------------------------- */
@@ -232,6 +268,36 @@ function load(seed) {
   eq(api.toggle({ type: 'symbol', value: '★', label: '★' }), true,
     'and saving still works in memory for the life of the page');
   eq(api.has('symbol', '★'), true, 'the in-memory record is readable');
+  api.toggle({ type: 'symbol', value: '♥', label: '♥' });
+  eq(api.count(), 2, 'a second save keeps the first when storage cannot be read');
+}
+
+/* ---- two tabs: no save is lost ---------------------------------------- */
+
+{
+  // Both tabs open first, so each loaded an empty list. Tab A saves, then
+  // tab B (still holding the list it loaded) saves something else. Before
+  // the re-read, B's write replaced the whole store and A's save was gone.
+  const { a, b } = loadTwoTabs();
+  a.api.toggle({ type: 'symbol', value: '★', label: 'Star' });
+  b.api.toggle({ type: 'style', value: 'Ultra Bold', label: 'Ultra Bold' });
+  const stored = JSON.parse(a.storage.getItem('utg_saved_items')).map((r) => r.type + ':' + r.value).sort();
+  eq(stored, ['style:Ultra Bold', 'symbol:★'], 'a save in a stale tab keeps the other tab\'s save');
+
+  // Removing in the stale tab removes only that record.
+  b.api.toggle({ type: 'style', value: 'Ultra Bold' });
+  eq(JSON.parse(a.storage.getItem('utg_saved_items')).map((r) => r.value), ['★'],
+    'an unsave in one tab does not resurrect or drop the other tab\'s records');
+
+  // Tab B learns about A's change from the storage event, without reloading.
+  a.api.toggle({ type: 'symbol', value: '♥', label: 'Heart' });
+  eq(b.api.has('symbol', '♥'), false, 'before the storage event, tab B still shows its old list');
+  const before = b.events.length;
+  b.fire('storage', { key: 'utg_saved_items' });
+  eq(b.api.has('symbol', '♥'), true, 'a storage event refreshes the other tab');
+  eq(b.events.length, before + 1, 'and announces the change so stars and the strip re-render');
+  b.fire('storage', { key: 'some_other_key' });
+  eq(b.events.length, before + 1, 'unrelated storage keys are ignored');
 }
 
 /* ---- report ------------------------------------------------------------ */

@@ -121,7 +121,9 @@
         { "char": "✆", "label": "Ubicación telefónica (texto)" },
         { "char": "☏", "label": "Teléfono hueco (texto)" },
         { "char": "⌂", "label": "Casa / dirección (texto)" },
-        { "char": "✎", "label": "Lápiz (texto)" }
+        { "char": "✎", "label": "Lápiz (texto)" },
+        { "char": "📠", "label": "Máquina de fax" },
+        { "char": "℻", "label": "Signo de facsímil (texto)" }
       ]
     },
     {

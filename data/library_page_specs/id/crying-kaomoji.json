@@ -114,6 +114,42 @@
       ]
     },
     {
+      "id": "happy-tears",
+      "label": "Tangis Bahagia",
+      "h2": "Kaomoji Tangis Bahagia & Terharu",
+      "intro": "Air mata dengan senyum di bawahnya, untuk kabar baik, reuni, atau adegan yang bikin tersentuh. Mulut melengkung ‿ atau terbuka ▽ yang membedakannya dari wajah terisak di atas.",
+      "symbols": [
+        {
+          "char": "(T▽T)",
+          "label": "Tangis Bahagia"
+        },
+        {
+          "char": "(ಥ‿ಥ)",
+          "label": "Senyum dalam Tangis"
+        },
+        {
+          "char": "(╥‿╥)",
+          "label": "Tersentuh"
+        },
+        {
+          "char": "(;▽;)",
+          "label": "Terharu"
+        },
+        {
+          "char": "( ;∀;)",
+          "label": "Hati Hangat"
+        },
+        {
+          "char": "(ㅠ‿ㅠ)",
+          "label": "Terisak Bahagia"
+        },
+        {
+          "char": "(´；▽；`)",
+          "label": "Bahagia Banget"
+        }
+      ]
+    },
+    {
       "id": "sad",
       "label": "Sedih",
       "h2": "Kaomoji Sedih & Kesal",

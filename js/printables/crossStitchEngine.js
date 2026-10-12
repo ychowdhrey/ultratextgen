@@ -41,6 +41,20 @@
     pinterest:       CS_CFG.pinterest       || SL.pinterest,
     savePdf:         CS_CFG.savePdf         || SL.savePdf
   };
+  /* Shown under the chart when a typed letter is not in the 5x7 alphabet.
+     Until 2026-10-07 such letters became a silent blank column, so "CAFÉ"
+     charted as C, A, F and an empty gap, with a stitch count that simply
+     left the É out. Keyed by the page language; a page config may override. */
+  const NOTE_STRINGS = {
+    en: { simplified: "Stitched without the accent: {list}.", unsupported: "Not in the stitch alphabet, left blank: {list}." },
+    es: { simplified: "Se borda sin la tilde: {list}.", unsupported: "No está en el alfabeto de punto de cruz y queda en blanco: {list}." },
+    fr: { simplified: "Brodé sans l\u2019accent : {list}.", unsupported: "Absent de l\u2019alphabet au point de croix, laissé vide : {list}." },
+    id: { simplified: "Dijahit tanpa tanda aksen: {list}.", unsupported: "Tidak ada di alfabet kristik, dibiarkan kosong: {list}." }
+  };
+  const NOTE_LANG = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();
+  const NOTE = NOTE_STRINGS[NOTE_LANG] || NOTE_STRINGS.en;
+  T.simplifiedNote = CS_CFG.simplifiedNote || NOTE.simplified;
+  T.unsupportedNote = CS_CFG.unsupportedNote || NOTE.unsupported;
   const INK_SAVER_ALPHA = 0.72;   // the value style.css already prints at
   const inkSaverOn = () => !!(PP && PP.values.ink === "saver");
 
@@ -63,6 +77,8 @@
     "L": ["10000","10000","10000","10000","10000","10000","11111"],
     "M": ["10001","11011","10101","10101","10001","10001","10001"],
     "N": ["10001","11001","10101","10101","10011","10001","10001"],
+    // Ñ keeps its tilde: stitched as plain N, Spanish AÑO would read ANO.
+    "Ñ": ["01101","10010","10001","11001","10101","10011","10001"],
     "O": ["01110","10001","10001","10001","10001","10001","01110"],
     "P": ["11110","10001","10001","11110","10000","10000","10000"],
     "Q": ["01110","10001","10001","10001","10101","10010","01101"],
@@ -131,8 +147,19 @@
     if (memory) memory.refresh();
   }
 
+  /* Filenames keep the Latin name the visitor typed. [^a-z0-9] dropped
+     every accented letter, so "José" saved as block-jos.pdf and "Zoë" as
+     block-zo.pdf. Accents now come off first (NFD, drop the marks), so they
+     save as jose and zoe. The result stays ASCII on purpose: a non-ASCII
+     a.download name is replaced by a bare "download" with no extension in
+     some browsers, which is worse than the generic name a non-Latin name
+     already falls back to. */
   function slugify(s) {
-    return String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+    // Lowercase before decomposing: in Turkish, İ lowercases to i, but its
+    // decomposed I + dot would lowercase to the dotless ı.
+    return String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .replace(/đ/g, "d").replace(/ł/g, "l").replace(/ß/g, "ss").replace(/ø/g, "o").replace(/æ/g, "ae").replace(/ı/g, "i")
+      .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   }
 
   /* ── State ─────────────────────────────────────────────────────── */
@@ -149,10 +176,25 @@
   function buildRows(text) {
     // Keep every input char; map anything without a glyph (punctuation,
     // accents, symbols) to a blank space column — never invent a glyph.
-    const chars = String(text).toUpperCase().split("");
+    // NFC first, so a letter typed as base + combining accent is one char.
+    const chars = Array.from(String(text).normalize("NFC").toUpperCase());
     const rows = ["", "", "", "", "", "", ""];
+    const simplified = [];
+    const unsupported = [];
     chars.forEach((ch, idx) => {
-      const glyph = STITCH_FONT[ch] || STITCH_FONT[" "];
+      let glyph = STITCH_FONT[ch];
+      if (!glyph) {
+        // An accented Latin letter is stitched as its base letter, and the
+        // panel says so; anything else stays a blank column, also reported.
+        const base = ch.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/Ø/g, "O");
+        if (base !== ch && STITCH_FONT[base]) {
+          glyph = STITCH_FONT[base];
+          if (simplified.indexOf(ch + " \u2192 " + base) === -1) simplified.push(ch + " \u2192 " + base);
+        } else {
+          glyph = STITCH_FONT[" "];
+          if (ch.trim() && unsupported.indexOf(ch) === -1) unsupported.push(ch);
+        }
+      }
       for (let r = 0; r < GLYPH_ROWS; r++) {
         rows[r] += glyph[r];
         if (idx < chars.length - 1) {
@@ -160,7 +202,8 @@
         }
       }
     });
-    return { rows: rows, cols: rows[0] ? rows[0].length : 0, empty: chars.length === 0 };
+    return { rows: rows, cols: rows[0] ? rows[0].length : 0, empty: chars.length === 0,
+      simplified: simplified, unsupported: unsupported };
   }
 
   function countStitches(rows) {
@@ -276,7 +319,19 @@
     // Ink saver is visible on screen, not only in the export: a control with
     // no on-screen consequence is indistinguishable from one that does nothing.
     chart.style.opacity = inkSaverOn() ? String(INK_SAVER_ALPHA) : "";
-    if (legend) legend.innerHTML = legendHTML(model.rows, state.color, state.style);
+    if (legend) {
+      legend.innerHTML = legendHTML(model.rows, state.color, state.style);
+      const notes = [];
+      if (model.simplified.length) notes.push(T.simplifiedNote.replace("{list}", model.simplified.join(", ")));
+      if (model.unsupported.length) notes.push(T.unsupportedNote.replace("{list}", model.unsupported.join(" ")));
+      if (notes.length) {
+        const p = document.createElement("p");
+        p.className = "cross-stitch-note";
+        p.style.cssText = "margin:.5rem 0 0;font-size:.85rem;color:var(--text-secondary);text-align:center";
+        p.textContent = notes.join(" ");
+        legend.appendChild(p);
+      }
+    }
   }
 
   /* ── Canvas / PNG export ───────────────────────────────────────────
@@ -687,6 +742,9 @@
 
 
   function init() {
+    /* Ctrl+P without Download PDF: hide the site chrome and say which button
+       prints the sheet (printPrefs.js owns the note and its translations). */
+    if (PP && PP.mountPrintNote) PP.mountPrintNote({ lang: NOTE_LANG, button: T.savePdf });
     loadQrModule();
     const input = $("#cs-input");
     if (input) {

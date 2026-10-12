@@ -126,6 +126,26 @@
       ]
     },
     {
+      "id": "highs-and-lows",
+      "label": "Cristiani",
+      "h2": "Simbolo \"Dio è più grande degli alti e bassi\"",
+      "intro": "Un motto di fede moderno, nato in inglese, che si vede su tatuaggi, magliette e bio: G sta per God (Dio), > per \"più grande di\", poi una vetta (^ o ∧) per gli alti e una valle (v o ∨) per i bassi. Le tre forme dicono la stessa cosa; G>^v è testo da tastiera e si vede su qualsiasi dispositivo.",
+      "symbols": [
+        {
+          "char": "G>^v",
+          "label": "Forma da tastiera"
+        },
+        {
+          "char": "G>ΛV",
+          "label": "Con lambda greca"
+        },
+        {
+          "char": "G>∧∨",
+          "label": "Con segni logici"
+        }
+      ]
+    },
+    {
       "id": "islamic",
       "label": "Islamici",
       "h2": "Simboli Islamici",

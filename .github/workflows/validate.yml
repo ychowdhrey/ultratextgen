@@ -315,6 +315,19 @@ jobs:
         continue-on-error: true
         run: npm run check:runtime-smoke | tee runtime-smoke.log
 
+      # Gating, no backlog: the Japanese worksheet pages under /ja/purinto/,
+      # rendered. Each page's real PDF button must give the pages it promised,
+      # at A4, placed 1:1 (a 22mm masu is 22mm on paper); the print path must
+      # give the same count with no site chrome (the print root's padding once
+      # pushed every sheet onto two pages); the textbook face must cover the
+      # torture corpus and report a character it lacks; and a typed name must
+      # never reach dataLayer, the URL or the title. Exits 2 (UNKNOWN), never
+      # 0, if the browser cannot start.
+      - name: Run Japanese printables render check (real browser)
+        id: ja_printables
+        continue-on-error: true
+        run: npm run check:ja-printables | tee ja-printables.log
+
       # Compares printablesEngine.js against ITSELF: every action surface the
       # `el` map reads must be one firstActionSurface() can anchor on, and every
       # primary PNG surface one pngExportTarget() can reach. The three puzzle
@@ -468,6 +481,46 @@ jobs:
         id: qr_tests
         continue-on-error: true
         run: npm run test:qr | tee qr-tests.log
+
+      # Gating, no backlog: the moon phase readout on library/moon-celestial-
+      # symbols and its eight locale siblings. It states a fact (tonight's
+      # phase), so known new and full moons must land on the right emoji
+      # within a day, the hemisphere mirror must be an involution, and every
+      # page's static phase table must agree with the same function.
+      - name: Run moon phase tests
+        id: moon_phase_tests
+        continue-on-error: true
+        run: npm run test:moon-phase | tee moon-phase-tests.log
+
+      # Gating, no backlog: the Japanese worksheet engine's facts. Kana sets
+      # and the MEXT grade presets (80/160/200/202/193/191), normalisation that
+      # composes ｶﾀｶﾅ and か+゛ but never alters 髙, 﨑 or a compatibility
+      # ideograph, one cell per grapheme, romaji by the 2025 notice (maccha,
+      # shinbashi) and 訓令式, and millimetre geometry: masu pitch, four-line
+      # placement of capitals, x-height and descenders. Also confirms the
+      # generated grade preset file matches its source list.
+      - name: Run Japanese worksheet engine tests
+        id: ja_sheets_tests
+        continue-on-error: true
+        run: npm run test:ja-sheets | tee ja-sheets-tests.log
+
+      # Gating, no backlog: the name-label sheet prints onto pre-cut label
+      # stock, so every stock's margins, label size and gaps must sum to its
+      # own sheet, and the per-sheet counts the pages quote must be the counts
+      # the engine lays out. A wrong number moves a column off the labels and
+      # no screen preview shows it.
+      - name: Run label sheet geometry tests
+        id: label_geometry_tests
+        continue-on-error: true
+        run: npm run test:label-geometry | tee label-geometry-tests.log
+
+      # Gating, no backlog: the Korean kana charts print a Hangul reading under
+      # every kana, and a kana missing from the reading table renders an empty
+      # line with no error. The test walks both shipped datasets.
+      - name: Run Korean kana reading tests
+        id: kana_readings_tests
+        continue-on-error: true
+        run: npm run test:kana-readings | tee kana-readings-tests.log
 
       # Gating, and no backlog to be red against: every counter either attaches
       # or it does not. The bridge finder's one failure mode is silence — an
@@ -659,6 +712,17 @@ jobs:
         id: static_footer
         continue-on-error: true
         run: npm run check:static-footer | tee static-footer.log
+      # Gating, zero backlog, whole-tree: every symbol spoke carries the line
+      # that sends a reader to its collection, directly under the first copy
+      # section (EN: a sentence; locales: a link worded with the locale
+      # collection's own <h1>). Whole-tree because the drift it catches lives in
+      # pages a PR does not touch: a new spoke built by hand, a regenerated one,
+      # or a collection whose translation lands later. Exits 2 (UNKNOWN) on a
+      # spoke it cannot answer. Fix is always `npm run sync:symbol-collection-link`.
+      - name: Run symbol collection link check
+        id: symbol_collection_link
+        continue-on-error: true
+        run: npm run check:symbol-collection-link | tee symbol-collection-link.log
       # Gating, zero backlog: docs/README.md's blocking-gate enumeration is
       # GENERATED from this file by scripts/build-gate-inventory.py, which
       # reuses run-ci-gates.py's own parser, so the doc and CI cannot disagree
@@ -694,6 +758,18 @@ jobs:
         id: library_directory
         continue-on-error: true
         run: npm run check:library-directory | tee library-directory.log
+
+      # Gating, with no backlog: kaomoji-generator/index.html carries its mood
+      # chips, presets and part picker as static HTML (written by
+      # build-kaomoji-generator-static.js from the same markup functions the
+      # controller runs). Before that the three containers were empty for any
+      # crawler that runs no JavaScript. A part or preset added to
+      # js/kaomoji/kaomojiData.js without regenerating would leave the static
+      # copy stale; `npm run build:kaomoji-generator-static` closes it.
+      - name: Run kaomoji generator static markup check
+        id: kaomoji_generator_static
+        continue-on-error: true
+        run: npm run check:kaomoji-generator-static | tee kaomoji-generator-static.log
 
       # The locale directory hubs are pre-rendered so a non-rendering crawler
       # sees their links. This step used to run check:locale-library-directory,
@@ -892,6 +968,53 @@ jobs:
         id: header_analytics_tests
         continue-on-error: true
         run: npm run test:header-analytics | tee header-analytics-tests.log
+
+      # Gating, zero backlog: the case converter's Capitalized, Title and
+      # Sentence modes. The page promises to fix Caps-Lock text, and the
+      # acronym guard (NASA, FBI) once made all three return it unchanged.
+      # The test drives the real renderer.js through renderAny and pins both
+      # sides: shouting text converts, an acronym in mixed text survives.
+      - name: Run case converter tests
+        id: case_converter_tests
+        continue-on-error: true
+        run: npm run test:case-converter | tee case-converter-tests.log
+
+      # Gating, zero backlog: the character counter's pure half. It exists
+      # because the counter once shipped a wrong number no visual check could
+      # catch, and the test file ran nowhere, so a repair to the reducers, the
+      # hidden-character set, trim-to-fit or the word count had no guard. It
+      # pins the SMS segment maths, every reducer, the HIDDEN table and the
+      # word count for scripts written without spaces (sliced from the shipped
+      # controller, never a second copy).
+      - name: Run character counter tests
+        id: counter_tests
+        continue-on-error: true
+        run: npm run test:counter | tee counter-tests.log
+
+      # Gating, zero backlog: the A1Z26 letter-position engine behind
+      # /letters-to-numbers/. The page's value is a claim that can be wrong
+      # (H is 8, Z is 26, a digit typed beside a letter stays readable), so the
+      # pure half is pinned: both numberings, accents by base letter, every
+      # non-Latin letter left as typed and counted, the three separators, and
+      # the out-of-range rule on decode. The controller only reads and writes
+      # the DOM around this file, which the node test loads unchanged.
+      - name: Run letters-to-numbers tests
+        id: letters_to_numbers_tests
+        continue-on-error: true
+        run: npm run test:letters-to-numbers | tee letters-to-numbers-tests.log
+
+      # Gating, zero backlog: the pattern engine behind
+      # /ai-writing-footprint-checker/. The page claims that one em dash is
+      # never a signal, that short text gets no aggregate, that quoted text is
+      # left alone, that an edit never touches a number, name or link, that
+      # undo restores the original exactly, and that nothing in the engine or
+      # controller can send the text anywhere. Each is asserted here, with a
+      # corpus of casual, academic, technical, marketing, list, poetry,
+      # dialogue, non-English and emoji text.
+      - name: Run writing footprint tests
+        id: writing_footprint_tests
+        continue-on-error: true
+        run: npm run test:writing-footprint | tee writing-footprint-tests.log
 
       # Gating, zero backlog: i18n.js rewrites a page's FAQPage JSON-LD from
       # the locale JSON it fetches, and the FAQ in a locale JSON is the
@@ -1106,6 +1229,11 @@ jobs:
             cat static-footer.log
             echo '```'
             echo ""
+            echo "### Symbol collection link check — \`${{ steps.symbol_collection_link.outcome }}\`"
+            echo '```'
+            cat symbol-collection-link.log
+            echo '```'
+            echo ""
             echo "### Gate inventory check — \`${{ steps.gate_inventory.outcome }}\`"
             echo '```'
             cat gate-inventory.log
@@ -1157,6 +1285,10 @@ jobs:
             echo '```'
             echo ""
             echo "### QR encoder tests — \`${{ steps.qr_tests.outcome }}\`"
+            echo "### Japanese worksheet engine tests — \`${{ steps.ja_sheets_tests.outcome }}\`"
+            echo "### Japanese printables render check — \`${{ steps.ja_printables.outcome }}\`"
+            echo "### Label sheet geometry tests — \`${{ steps.label_geometry_tests.outcome }}\`"
+            echo "### Korean kana reading tests — \`${{ steps.kana_readings_tests.outcome }}\`"
             echo "### Stencil bridge tests — \`${{ steps.stencil_tests.outcome }}\`"
             echo "### Glyph centreline tests — \`${{ steps.centreline_tests.outcome }}\`"
             echo "### Word search grid tests — \`${{ steps.word_search_tests.outcome }}\`"
@@ -1166,6 +1298,11 @@ jobs:
             echo "### Fitted page fit — \`${{ steps.fitted_page_fit.outcome }}\`"
             echo '```'
             cat qr-tests.log
+            echo '```'
+            echo ""
+            echo "### Moon phase tests — \`${{ steps.moon_phase_tests.outcome }}\`"
+            echo '```'
+            cat moon-phase-tests.log
             echo '```'
             echo ""
             echo "### Numeric parity check — \`${{ steps.numeric_parity.outcome }}\`"
@@ -1216,6 +1353,11 @@ jobs:
             echo "### Library directory freshness check — \`${{ steps.library_directory.outcome }}\`"
             echo '```'
             cat library-directory.log
+            echo '```'
+            echo ""
+            echo "### Kaomoji generator static markup check — \`${{ steps.kaomoji_generator_static.outcome }}\`"
+            echo '```'
+            cat kaomoji-generator-static.log
             echo '```'
             echo ""
             echo "### Locale library directory freshness check — \`${{ steps.locale_library_directory.outcome }}\`"
@@ -1289,6 +1431,26 @@ jobs:
             echo "### header.js analytics tests — \`${{ steps.header_analytics_tests.outcome }}\`"
             echo '```'
             cat header-analytics-tests.log
+            echo '```'
+            echo ""
+            echo "### Case converter tests — \`${{ steps.case_converter_tests.outcome }}\`"
+            echo '```'
+            cat case-converter-tests.log
+            echo '```'
+            echo ""
+            echo "### Character counter tests: \`${{ steps.counter_tests.outcome }}\`"
+            echo '```'
+            cat counter-tests.log
+            echo '```'
+            echo ""
+            echo "### Letters-to-numbers tests: \`${{ steps.letters_to_numbers_tests.outcome }}\`"
+            echo '```'
+            cat letters-to-numbers-tests.log
+            echo '```'
+            echo ""
+            echo "### Writing footprint tests: \`${{ steps.writing_footprint_tests.outcome }}\`"
+            echo '```'
+            cat writing-footprint-tests.log
             echo '```'
             echo ""
             echo "### i18n FAQ-schema guard tests — \`${{ steps.i18n_faq_schema_tests.outcome }}\`"
@@ -1395,6 +1557,11 @@ jobs:
           steps.zalgo_engine_tests.outcome == 'failure' ||
           steps.romanize_tests.outcome == 'failure' ||
           steps.qr_tests.outcome == 'failure' ||
+          steps.moon_phase_tests.outcome == 'failure' ||
+          steps.ja_sheets_tests.outcome == 'failure' ||
+          steps.ja_printables.outcome == 'failure' ||
+          steps.label_geometry_tests.outcome == 'failure' ||
+          steps.kana_readings_tests.outcome == 'failure' ||
           steps.stencil_tests.outcome == 'failure' ||
           steps.centreline_tests.outcome == 'failure' ||
           steps.word_search_tests.outcome == 'failure' ||
@@ -1406,9 +1573,11 @@ jobs:
           steps.tile_codepoints.outcome == 'failure' ||
           steps.document_head.outcome == 'failure' ||
           steps.static_footer.outcome == 'failure' ||
+          steps.symbol_collection_link.outcome == 'failure' ||
           steps.gate_inventory.outcome == 'failure' ||
           steps.accent_notice.outcome == 'failure' ||
           steps.library_directory.outcome == 'failure' ||
+          steps.kaomoji_generator_static.outcome == 'failure' ||
           steps.locale_library_directory.outcome == 'failure' ||
           steps.library_hub_coverage.outcome == 'failure' ||
           steps.library_link_mirror.outcome == 'failure' ||
@@ -1421,6 +1590,10 @@ jobs:
           steps.spec_sentence_reuse.outcome == 'failure' ||
           steps.spec_sentence_reuse_tests.outcome == 'failure' ||
           steps.header_analytics_tests.outcome == 'failure' ||
+          steps.case_converter_tests.outcome == 'failure' ||
+          steps.counter_tests.outcome == 'failure' ||
+          steps.letters_to_numbers_tests.outcome == 'failure' ||
+          steps.writing_footprint_tests.outcome == 'failure' ||
           steps.i18n_faq_schema_tests.outcome == 'failure' ||
           steps.accessibility.outcome == 'failure' ||
           steps.collection_grids.outcome == 'failure' ||

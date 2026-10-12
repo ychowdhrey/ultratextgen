@@ -10,7 +10,7 @@
    page image is embedded as JPEG (DCTDecode) instead, so the file still
    opens everywhere.
 
-   Loaded on demand by the printables engines (printablesEngine.js,
+   Loaded on demand by the printables engines (printablesEngine.js, labelEngine.js,
    monogramEngine.js, crossStitchEngine.js) the first time a visitor asks
    for a PDF, never on page load.
 
@@ -20,7 +20,7 @@
        rootEl must already be laid out in the document at the sheet's
        width. opts: { widthPx, pageHeightPx, scale }
      fromCanvases(canvases, opts)       -> Promise<Blob>
-       opts: { paperIn: {w,h}, marginIn: {x,y}, title }
+       opts: { paperIn: {w,h}, marginIn: {x,y}, title, printScaling }
      download(blob, filename)
 
    Rasterising a DOM subtree paints it through an <img> whose source is an
@@ -503,8 +503,14 @@
     push("%PDF-1.4\n"); push(new Uint8Array([0x25, 0xE2, 0xE3, 0xCF, 0xD3, 0x0A]));
     const n = canvases.length;
     const pageNum = (i) => 4 + i * 3, contentNum = (i) => 5 + i * 3, imageNum = (i) => 6 + i * 3;
+    /* o.printScaling "none" asks the reader's print dialog to default to
+       actual size instead of fit-to-page. Only a sheet that must land on
+       pre-cut stock asks for it (the label maker): a 97% fit moves the
+       last row of an Avery 5160 sheet by about 0.3in. Readers may still
+       let the visitor override it, which is why the page also says so. */
+    const viewerPrefs = o.printScaling === "none" ? " /ViewerPreferences << /PrintScaling /None >>" : "";
     obj(1, "<< /Type /Catalog /Pages 2 0 R" +
-      (marks.length ? " /Outlines " + outlineRoot + " 0 R /PageMode /UseOutlines" : "") + " >>");
+      (marks.length ? " /Outlines " + outlineRoot + " 0 R /PageMode /UseOutlines" : "") + viewerPrefs + " >>");
     obj(2, "<< /Type /Pages /Kids [" + canvases.map((c, i) => pageNum(i) + " 0 R").join(" ") + "] /Count " + n + " >>");
     const d = new Date();
     const stamp = "D:" + d.getUTCFullYear() + String(d.getUTCMonth() + 1).padStart(2, "0") + String(d.getUTCDate()).padStart(2, "0") +

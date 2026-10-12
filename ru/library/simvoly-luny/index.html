@@ -169,6 +169,44 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<!-- MOON PHASE TODAY -->
+<section class="mood-explainers" id="moon-phase-today" data-moon-phase data-moon-names="[&quot;Новолуние&quot;, &quot;Растущий месяц&quot;, &quot;Первая четверть&quot;, &quot;Растущая луна&quot;, &quot;Полнолуние&quot;, &quot;Убывающая луна&quot;, &quot;Последняя четверть&quot;, &quot;Убывающий месяц&quot;]" data-moon-template="{name}, {day}-й день 29,5-дневного цикла, освещено около {pct}%">
+  <span class="article-section-label">Фаза Луны сегодня</span>
+  <h2>Эмодзи текущей фазы Луны</h2>
+  <p>Этот блок рассчитывает фазу Луны на вашу дату прямо в браузере: он считает время, прошедшее с известного новолуния, и делит его на средний лунный цикл в 29,53 дня. Настоящая Луна опережает это среднее или отстаёт от него примерно на 18 часов, поэтому показанная фаза отличается от точной меньше чем на сутки.</p>
+  <div class="mood-explainer flag-grid-section" data-moon-readout hidden>
+    <h3 data-moon-date>Сегодня</h3>
+    <div class="flag-grid-display" data-moon-emoji></div>
+    <p data-moon-detail></p>
+    <div class="format-selector">
+      <div class="format-selector-label">Ваше полушарие</div>
+      <div class="format-tabs" role="group" aria-label="Полушарие">
+        <button type="button" class="format-tab active" data-moon-hemi="north" aria-pressed="true">Северное</button>
+        <button type="button" class="format-tab" data-moon-hemi="south" aria-pressed="false">Южное</button>
+      </div>
+    </div>
+    <button type="button" class="copy-collection-btn" data-moon-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Скопировать эмодзи Луны</button>
+  </div>
+  <p>Эмодзи Луны нарисованы так, как Луна видна из Северного полушария. К югу от экватора освещённая сторона меняется местами, поэтому растущий месяц там выглядит как 🌘. Выберите «Южное», и блок покажет эмодзи, совпадающий с вашим небом. Если часовой пояс устройства находится к югу от экватора, блок сразу открывается на «Южном».</p>
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Фаза</th><th>Северное полушарие</th><th>Южное полушарие</th><th>Возраст Луны (дни)</th></tr></thead>
+      <tbody>
+        <tr data-moon-row="0"><td>Новолуние</td><td>🌑</td><td>🌑</td><td>от 27,7 до 29,5 и от 0 до 1,8</td></tr>
+        <tr data-moon-row="1"><td>Растущий месяц</td><td>🌒</td><td>🌘</td><td>от 1,8 до 5,5</td></tr>
+        <tr data-moon-row="2"><td>Первая четверть</td><td>🌓</td><td>🌗</td><td>от 5,5 до 9,2</td></tr>
+        <tr data-moon-row="3"><td>Растущая луна</td><td>🌔</td><td>🌖</td><td>от 9,2 до 12,9</td></tr>
+        <tr data-moon-row="4"><td>Полнолуние</td><td>🌕</td><td>🌕</td><td>от 12,9 до 16,6</td></tr>
+        <tr data-moon-row="5"><td>Убывающая луна</td><td>🌖</td><td>🌔</td><td>от 16,6 до 20,3</td></tr>
+        <tr data-moon-row="6"><td>Последняя четверть</td><td>🌗</td><td>🌓</td><td>от 20,3 до 24,0</td></tr>
+        <tr data-moon-row="7"><td>Убывающий месяц</td><td>🌘</td><td>🌒</td><td>от 24,0 до 27,7</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- SECTION 1 -->
 <section class="mood-explainers" id="moon-phases">
   <span class="article-section-label">Фазы луны</span>
@@ -490,6 +528,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/js/share/share-core.js" defer></script>
 <script src="/js/saved/saved-items.js" defer></script>
 <script src="/symbol-explorer.js" defer></script>
+<script src="/js/moon/moon-phase.js" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";

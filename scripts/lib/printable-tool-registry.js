@@ -69,6 +69,11 @@ const WORD_SURFACES = {
      would have made a second word-search page invisible to the duplication
      gate, which is the exact class of miss that gate exists for. */
   search: 'pt-search-input',
+  /* The name-label sheet maker (labelEngine.js). It reads window.UTG_LABELS,
+     not UTG_PRINTABLE, so its noun/render/font read as empty here; that is
+     still a signature, and it is what makes a second label page in one
+     locale a collision the gate can see. */
+  label: 'lb-name',
 };
 
 const CONFIG_RE = /window\.UTG_PRINTABLE\s*=\s*\{([\s\S]*?)\n\s*\};/;
