@@ -1,0 +1,5 @@
+check,items,identical_class,identical_pixels,note
+"Dataset 1 redrawn in the published container, A_minimal",60600,60600,432,"container: Ubuntu 24.04 with the pinned font packages, Chrome for Testing 155.0.8059.39, inputs re-downloaded 2026-10-13"
+"Dataset 1 redrawn in the published container, A_distro",60600,60599,49325,"container: Ubuntu 24.04 with the pinned font packages, Chrome for Testing 155.0.8059.39, inputs re-downloaded 2026-10-13"
+Dataset 1 rebuilt from re-downloaded Unicode files,59852,59852,,byte-identical file
+Dataset 2 rebuilt from re-downloaded Unicode files,5244,5244,,byte-identical file

@@ -39671,6 +39671,24 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/research/unicode-rendering-support-study/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/research/unicode-rendering-support-study/img/chrome141-vs-142.png</image:loc>
+      <image:title>Two columns of rendered emoji. In Chrome 141 the two-skin-tone people wrestling sequences appear as person, fight cloud, person side by side. In Chrome 142 each appears as one picture of two people wrestling. A family emoji row below is drawn as one picture in both.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/research/unicode-rendering-support-study/img/failure-gallery.png</image:loc>
+      <image:title>A grid of 14 rows by 5 columns showing the same characters in five font sets. Rows show missing-glyph boxes, blank output, a replacement symbol, monochrome emoji, broken keycaps, split ZWJ sequences, letters instead of flags and split skin tones. The newest Noto column draws all emoji except where no font exists.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/research-unicode-rendering-support-study.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/research/zalgo-generator-benchmark/</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>

@@ -1,0 +1,10 @@
+fonttools==4.66.1
+uharfbuzz==0.56.3
+playwright==1.63.0
+pillow==12.3.0
+numpy==2.5.3
+pandas==3.0.5
+scipy==1.18.1
+matplotlib==3.11.2
+regex==2026.9.29
+brotli==1.2.0

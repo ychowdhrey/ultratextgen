@@ -116,6 +116,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "headline": "What Makes Writing Sound AI Generated? A Study of Public Accusations, Writing Patterns and False Alarms",
       "url": "https://ultratextgen.com/research/ai-writing-footprint-study/",
       "datePublished": "2026-10-12"
+    },
+    {
+      "@type": "TechArticle",
+      "headline": "How Fast Do New Unicode Characters and Emoji Show Up? A Rendering Study",
+      "url": "https://ultratextgen.com/research/unicode-rendering-support-study/",
+      "datePublished": "2026-10-13"
     }
   ]
 }
@@ -139,7 +145,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="hero research-hero research-hub-hero">
     <div class="hero-inner">
       <h1 class="hero-headline">UltraTextGen Research</h1>
-      <p class="hero-tagline">Experiments and observational studies, published with the method, data and limitations needed to check them. The first two studies measure what common ink-saving methods remove from worksheet pages and what they break. The third tests 13 Zalgo text generators with the same inputs. The fourth reads 787 public accusations that a text was written by AI and tests what a writing checker flags.</p>
+      <p class="hero-tagline">Experiments and observational studies, published with the method, data and limitations needed to check them. The first two studies measure what common ink-saving methods remove from worksheet pages and what they break. The third tests 13 Zalgo text generators with the same inputs. The fourth reads 787 public accusations that a text was written by AI and tests what a writing checker flags. The fifth draws every Unicode character and emoji in three browser engines and asks how fast new ones show up.</p>
     </div>
   </section>
 
@@ -230,6 +236,32 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
             <li><a href="/compare/zalgo-generators/">Which tool to use</a></li>
           </ul>
           <p class="study-card-meta">Published <time datetime="2026-09-29">September 29, 2026</time> · Version 1.1, updated <time datetime="2026-09-30">September 30, 2026</time> · 12 generators tested, 3,774 measured outputs</p>
+        </li>
+        <li class="study-card">
+          <div class="study-card-head">
+            <span class="study-card-number">Study 5</span>
+            <ul class="study-status" aria-label="Validation status">
+              <li class="study-status-item is-done">Chromium, Firefox and WebKit on Linux complete</li>
+              <li class="study-status-item is-pending">Windows, macOS, iOS and Android not measured</li>
+            </ul>
+          </div>
+          <h4 class="study-card-title"><a href="/research/unicode-rendering-support-study/">Unicode Rendering Support Study</a></h4>
+          <p class="study-card-subtitle">How Fast Do New Unicode Characters and Emoji Show Up?</p>
+          <p class="study-card-summary">Every Unicode character from 8.0 to 18.0 and every emoji sequence, drawn in three browser engines with four font sets, 45 historical emoji fonts and 25 Chrome versions, and the Chromium changes that fixed what fonts could not.</p>
+          <p class="study-card-finding"><span class="study-card-finding-label">Main finding</span> New characters fail because no installed font has a glyph, not because of the browser. New emoji reach the newest Noto font a median of 55 days after release, new scripts take about two years.</p>
+          <ul class="study-card-results">
+            <li>With Ubuntu 24.04&rsquo;s own fonts, 0 of 19 Emoji 18.0 sequences drew correctly; with the newest Noto, 19 of 19.</li>
+            <li>Two Chrome changes (131 and 142) fixed emoji that no font update could, and we traced each to a Chromium change.</li>
+            <li>Our own device check could see 4 of 47,696 missing glyphs; the corrected check sees all of them in Chromium and WebKit, none in Firefox.</li>
+          </ul>
+          <ul class="study-card-links" aria-label="Study resources">
+            <li><a class="is-primary" href="/research/unicode-rendering-support-study/">Read the study</a></li>
+            <li><a href="/research/unicode-rendering-support-study.pdf" download>PDF, 721 KB</a></li>
+            <li><a href="/research/unicode-rendering-support-study/#data">Data files</a></li>
+            <li><a href="/research/unicode-rendering-support-study/#method">Method</a></li>
+            <li><a href="/research/unicode-rendering-support-study/#device-test">Test your device</a></li>
+          </ul>
+          <p class="study-card-meta">Published <time datetime="2026-10-13">October 13, 2026</time> · Version 1.0 · 59,852 code points, 5,244 emoji sequences, 45 emoji fonts</p>
         </li>
       </ol>
 
