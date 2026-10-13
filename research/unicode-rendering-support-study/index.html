@@ -101,12 +101,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   "citation": [
     {
       "@type": "WebPage",
-      "name": "Unicode publication dates",
+      "name": "publication dates page",
       "url": "https://www.unicode.org/history/publicationdates.html"
     },
     {
       "@type": "WebPage",
-      "name": "UTS #51 Unicode Emoji",
+      "name": "UTS #51, Unicode Emoji",
       "url": "https://www.unicode.org/reports/tr51/"
     },
     {
@@ -121,7 +121,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     },
     {
       "@type": "WebPage",
-      "name": "Windows 11 Release Preview build 26100.9539",
+      "name": "Release Preview notes for build 26100.9539",
       "url": "https://learn.microsoft.com/en-us/windows-insider/release-notes/release-preview-24h2-25h2/build-26100-9539-26200-9539"
     },
     {
@@ -131,17 +131,17 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     },
     {
       "@type": "WebPage",
-      "name": "Apple security releases",
+      "name": "security releases page",
       "url": "https://support.apple.com/en-us/100100"
     },
     {
       "@type": "WebPage",
-      "name": "iOS 26 release notes",
+      "name": "iOS 26",
       "url": "https://support.apple.com/en-us/123075"
     },
     {
       "@type": "WebPage",
-      "name": "Chromium commit fb172d8c5b7d",
+      "name": "commit fb172d8c5b7d",
       "url": "https://chromium.googlesource.com/chromium/src/+/fb172d8c5b7d"
     },
     {
@@ -151,7 +151,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     },
     {
       "@type": "WebPage",
-      "name": "twemoji-colr repository",
+      "name": "Mozilla&rsquo;s twemoji-colr repository",
       "url": "https://github.com/mozilla/twemoji-colr"
     }
   ],
@@ -469,7 +469,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <span class="article-section-label">Help wanted</span>
       <h2 id="help-title">What we could not do, and how you can help</h2>
       <p>Four things need people or devices we do not have. We say what each one blocks and what we will do with what you send.</p>
-      <ol class="study-list">
+      <ol>
         <li><strong>Windows, macOS, iOS and Android rendering.</strong> We have no Windows, Mac or phone in this study, and Android emulators need hardware virtualization our test machine lacks. Without them, this study cannot say what a Windows 10 PC, a Mac or a phone shows. <a href="#device-test">The 30-second device test</a> below is how a device you own becomes data. Send it from any phone or computer. If you can run the draw harness we publish on another system, or have a device lab, write to us.</li>
         <li><strong>Independent review of the detector.</strong> One reader (an AI model working through blind sheets) labelled the checks. A fresh sample of 274 cells and rating instructions are in the <a href="/research/unicode-rendering-support-study/data/rater-packet/INSTRUCTIONS.md">rater packet</a>. It takes about an hour, needs no Unicode knowledge, and we publish agreement figures and the labels, credited to you if you want.</li>
         <li><strong>A real-device check of our missing-glyph test.</strong> The check was calibrated on Linux. The device test gives us the other outcome, the characters where it says <em>Shows</em> and you see a box, and the ones where it says <em>Missing</em> and you see a picture. We use both to recalibrate the check.</li>
@@ -510,7 +510,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <span class="article-section-label">Limits</span>
       <h2 id="limitations-title">Limitations</h2>
       <p>Ordered by how much each could change a conclusion.</p>
-      <ol class="study-list"><li><strong>One operating system image.</strong> Every rendering result is Chromium, Firefox or WebKit on Ubuntu 24.04 in a container, with a named font set. No statement is made about Windows, macOS, iOS, Android or about a share of devices. The Firefox and WebKit builds are the ones Playwright ships, not release builds of Firefox on Windows or Safari.</li><li><strong>Rendering only.</strong> Keyboard and input availability, and text in browser menus and address bars, are different steps and were not measured.</li><li><strong>One reader labelled the detector.</strong> The checks that validate the detector were labelled by one reader, an AI model, not by independent people. Independent raters are wanted (see Help wanted). Round 1 was used to tune the detector, so only round 2 is an honest estimate.</li><li><strong>Pooled coverage mostly measures block size.</strong> Unicode 18.0 is 87% Seal, 10.0 is 88% and 13.0 is 83% Han extensions. Every headline also appears for a stratum without the huge blocks, and none of that removes the problem.</li><li><strong>Age is release.</strong> There are nine distinct release ages, so &ldquo;failure against age&rdquo; is &ldquo;failure against release&rdquo;, and releases differ in content.</li><li><strong>Items of one release are not independent.</strong> They share a font file and often a block, so item-level intervals are optimistic. For emoji the lag is 12 batch values, not 1,559 independent items.</li><li><strong>Left and right censoring.</strong> The oldest emoji font is from 2017-03-10 and monthly Noto releases start in 2023. Anything supported then has no first-support date. Lags for recent releases are cut short because the window closes in 2026-10.</li><li><strong>The commit date is not the build date.</strong> Fonts were sometimes committed months after they were built. Both are shown. A monthly tag is not the date a character first reached the font&rsquo;s main branch.</li><li><strong>A character map entry is not quality.</strong> A font that maps a code point may draw it badly. The monthly lag for scripts is at character-map level.</li><li><strong>The Chromium bisect isolates ten commits.</strong> We did not rebuild Chromium with and without the segmentation change. The attribution rests on it being the only text-related commit in the window and on its message and test.</li><li><strong>Marks and sequences.</strong> Combining marks were tested on a dotted circle in the main run and re-tested on real letters only for those that failed. The sequence test in other engines is a width test, so black symbols count as composed. Right-to-left characters are excluded from the cross-engine code point comparison.</li><li><strong>Stacks are choices.</strong> With the same fonts, the CSS order changed results by up to 5 points. Our stacks are plausible, not exhaustive. OpenMoji was not tested, and only one version of each other font was.</li><li><strong>Replays are not history.</strong> Swapping an old emoji font into a current browser isolates font evolution. It is not what a person saw in 2020 on a 2020 system.</li><li><strong>Vendor dates are what vendors published.</strong> The vendor table comes from vendor release pages, not from drawing anything. Apple does not name the Emoji version, so those rows are inferred. We found no primary page for Android or Samsung, or for an Emoji 18.0 date for Apple or Microsoft.</li><li><strong>We make a tool that depends on this.</strong> UltraTextGen publishes this study and offers the characters it tests. We found and report the defect in our own device check, and we want the real-device data.</li></ol>
+      <ol><li><strong>One operating system image.</strong> Every rendering result is Chromium, Firefox or WebKit on Ubuntu 24.04 in a container, with a named font set. No statement is made about Windows, macOS, iOS, Android or about a share of devices. The Firefox and WebKit builds are the ones Playwright ships, not release builds of Firefox on Windows or Safari.</li><li><strong>Rendering only.</strong> Keyboard and input availability, and text in browser menus and address bars, are different steps and were not measured.</li><li><strong>One reader labelled the detector.</strong> The checks that validate the detector were labelled by one reader, an AI model, not by independent people. Independent raters are wanted (see Help wanted). Round 1 was used to tune the detector, so only round 2 is an honest estimate.</li><li><strong>Pooled coverage mostly measures block size.</strong> Unicode 18.0 is 87% Seal, 10.0 is 88% and 13.0 is 83% Han extensions. Every headline also appears for a stratum without the huge blocks, and none of that removes the problem.</li><li><strong>Age is release.</strong> There are nine distinct release ages, so &ldquo;failure against age&rdquo; is &ldquo;failure against release&rdquo;, and releases differ in content.</li><li><strong>Items of one release are not independent.</strong> They share a font file and often a block, so item-level intervals are optimistic. For emoji the lag is 12 batch values, not 1,559 independent items.</li><li><strong>Left and right censoring.</strong> The oldest emoji font is from 2017-03-10 and monthly Noto releases start in 2023. Anything supported then has no first-support date. Lags for recent releases are cut short because the window closes in 2026-10.</li><li><strong>The commit date is not the build date.</strong> Fonts were sometimes committed months after they were built. Both are shown. A monthly tag is not the date a character first reached the font&rsquo;s main branch.</li><li><strong>A character map entry is not quality.</strong> A font that maps a code point may draw it badly. The monthly lag for scripts is at character-map level.</li><li><strong>The Chromium bisect isolates ten commits.</strong> We did not rebuild Chromium with and without the segmentation change. The attribution rests on it being the only text-related commit in the window and on its message and test.</li><li><strong>Marks and sequences.</strong> Combining marks were tested on a dotted circle in the main run and re-tested on real letters only for those that failed. The sequence test in other engines is a width test, so black symbols count as composed. Right-to-left characters are excluded from the cross-engine code point comparison.</li><li><strong>Stacks are choices.</strong> With the same fonts, the CSS order changed results by up to 5 points. Our stacks are plausible, not exhaustive. OpenMoji was not tested, and only one version of each other font was.</li><li><strong>Replays are not history.</strong> Swapping an old emoji font into a current browser isolates font evolution. It is not what a person saw in 2020 on a 2020 system.</li><li><strong>Vendor dates are what vendors published.</strong> The vendor table comes from vendor release pages, not from drawing anything. Apple does not name the Emoji version, so those rows are inferred. We found no primary page for Android or Samsung, or for an Emoji 18.0 date for Apple or Microsoft.</li><li><strong>We make a tool that depends on this.</strong> UltraTextGen publishes this study and offers the characters it tests. We found and report the defect in our own device check, and we want the real-device data.</li></ol>
       <p>What we do about each one: the device test and the rater packet turn the two largest gaps into data, every run is repeatable from the files below, and a later version keeps this address and says what changed.</p>
     </section>
 
@@ -539,8 +539,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="source-note">
         <p>Unicode and Emoji release dates come from the Unicode Consortium&rsquo;s <a target="_blank" rel="noopener" href="https://www.unicode.org/history/publicationdates.html">publication dates page</a> and the release table in <a target="_blank" rel="noopener" href="https://www.unicode.org/reports/tr51/">UTS #51, Unicode Emoji</a>. The character and emoji data files are the consortium&rsquo;s own, read from the latest published versions at the time of measurement.</p>
         <p>When Windows 11 shipped each Emoji version is taken from Microsoft&rsquo;s pages: <a target="_blank" rel="noopener" href="https://support.microsoft.com/en-us/topic/november-14-2023-kb5032190-os-builds-22621-2715-and-22631-2715-f9e3e13c-5e98-42c2-add8-f075841ca812">KB5032190</a> for Emoji 15.0, <a target="_blank" rel="noopener" href="https://support.microsoft.com/en-us/topic/february-24-2026-kb5077241-os-builds-26200-7922-and-26100-7922-preview-b8cc7bc8-d640-4f18-9437-3ee59298b970">KB5077241</a> for Emoji 16.0 and the <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/windows-insider/release-notes/release-preview-24h2-25h2/build-26100-9539-26200-9539">Release Preview notes for build 26100.9539</a> for Emoji 17.0. That Microsoft lists Emoji 15.1 only under Windows 11 comes from its <a target="_blank" rel="noopener" href="https://support.microsoft.com/en-us/windows/inside-this-update-93c5c27c-f96e-43c2-a08e-5812d92f220d">Inside this update</a> page.</p>
-        <p>iPhone release dates come from Apple&rsquo;s <a target="_blank" rel="noopener" href="https://support.apple.com/en-us/100100">security releases page</a>, and the emoji each release added from its release notes, for example <a target="_blank" rel="noopener" href="https://support.apple.com/en-us/123075">iOS 26</a>. Apple does not state the Emoji version, so the pairing is ours.</p>
-        <p>The Chromium change is <a target="_blank" rel="noopener" href="https://chromium.googlesource.com/chromium/src/+/fb172d8c5b7d">commit fb172d8c5b7d</a>. Noto Color Emoji files and release history come from the <a target="_blank" rel="noopener" href="https://github.com/googlefonts/noto-emoji">noto-emoji repository</a>, and the Twemoji colour font from <a target="_blank" rel="noopener" href="https://github.com/mozilla/twemoji-colr">Mozilla&rsquo;s twemoji-colr repository</a>.</p>
+        <p>iPhone release dates come from Apple&rsquo;s <a target="_blank" rel="nofollow noopener" href="https://support.apple.com/en-us/100100">security releases page</a>, and the emoji each release added from its release notes, for example <a target="_blank" rel="nofollow noopener" href="https://support.apple.com/en-us/123075">iOS 26</a>. Apple does not state the Emoji version, so the pairing is ours.</p>
+        <p>The Chromium change is <a target="_blank" rel="nofollow noopener" href="https://chromium.googlesource.com/chromium/src/+/fb172d8c5b7d">commit fb172d8c5b7d</a>. Noto Color Emoji files and release history come from the <a target="_blank" rel="noopener" href="https://github.com/googlefonts/noto-emoji">noto-emoji repository</a>, and the Twemoji colour font from <a target="_blank" rel="noopener" href="https://github.com/mozilla/twemoji-colr">Mozilla&rsquo;s twemoji-colr repository</a>.</p>
       </div>
     </section>
     </div>

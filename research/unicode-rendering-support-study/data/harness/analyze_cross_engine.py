@@ -9,8 +9,8 @@ def rtl(item):      # the harness anchors each cell at its left edge; right-to-l
     except Exception: return False
 rows = []
 for e in ('chromium', 'webkit', 'firefox'):
-    p = f'{RAW}/cross_engine_full_{e}.csv'
-    if os.path.exists(p): rows += list(csv.DictReader(open(p, encoding='utf-8')))
+    p = f'{RAW}/cross_engine_full_{e}.csv.gz'
+    if os.path.exists(p): rows += list(csv.DictReader(gzip.open(p, 'rt', encoding='utf-8')))
 out = []; dis = []
 for eng in ('chromium', 'webkit', 'firefox'):
     for cond in ('A_minimal', 'A_distro', 'B_noto'):
