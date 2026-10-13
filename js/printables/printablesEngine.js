@@ -2060,13 +2060,19 @@
        single-letter surface reads. This surface draws at font-size 150, so the
        number has to be converted or the same style renders a stroke 40% fatter
        relative to the type on a name than on a letter. */
-    const wordStroke = o.strokeWidth != null ? o.strokeWidth * WORD_OUTLINE_FS / OUTLINE_SVG_FONT : 3;
+    /* A physical ruling puts the row in a viewBox about twice as large as the
+       one the weights were chosen in (o.ruleK), so the outline is carried in
+       millimetres like the ruling's own lines: a hollow letter whose outline
+       halves with the scale is thinner than the rule behind it. */
+    const wordStroke = (o.strokeWidth != null ? o.strokeWidth * WORD_OUTLINE_FS / OUTLINE_SVG_FONT : 3) * (o.ruleK || 1);
     /* A ruled row is taller than an unruled one only where the ruling itself
        reaches below the baseline -- German Lineatur carries a fourth line for
        the Unterlange that a three-line rule does not, which is the same reason
        traceRowHeight() exists on the trace surface. Without this the line is
        drawn outside the viewBox and an SVG root clips by default. */
     const gRul = o.guides ? wordRulingGeom(font, WORD_OUTLINE_FS, WORD_OUTLINE_ANCHOR_Y) : null;
+    // A physical ruling hands its stroke scale through (layoutPracticeRow).
+    if (gRul && o.ruleK) gRul.strokeK = o.ruleK;
     let h = WORD_OUTLINE_H;
     if (gRul) {
       const r = ruling();
@@ -2105,8 +2111,16 @@
         }
       }
     }
+    /* A physical ruling asks for a taller box than the drawing (o.rowVH, the
+       row's own height at the standard's scale). The drawing stays where it
+       was relative to itself and is centred in that box, so the ruled row
+       sits in the middle of the row the page gave it. Absent, vy and vh are
+       y0 and h - y0, which is what the viewBox has always been. */
+    const contentH = h - y0;
+    const vh = o.rowVH ? Math.max(contentH, o.rowVH) : contentH;
+    const vy = y0 - (vh - contentH) / 2;
     return {
-      w: w, h: h, y0: y0, model: model, inkLeft: inkLeft,
+      w: w, h: h, y0: y0, vy: vy, vh: vh, model: model, inkLeft: inkLeft,
       fontSize: WORD_OUTLINE_FS, font: font, spacing: spacing,
       anchorY: WORD_OUTLINE_ANCHOR_Y, guides: gRul,
       fill: o.solid ? (o.fill || INK) : "#ffffff",
@@ -2207,9 +2221,17 @@
     const old = row.querySelector(":scope > svg.pt-word-outline");
     if (!old) return;
     const g = wordOutlineGeom(d.word, d.opts);
-    const vw = practiceRowVW(row, g.h - g.y0);
+    /* A physical ruling (Seyes) measures the row in millimetres instead of
+       fitting the band to it: see physicalRowBox. The box it returns already
+       holds the whole drawing, so g.w is a floor on its width and g.h - g.y0
+       on its height. */
+    const phys = g.guides
+      ? physicalRowBox(row, row.getBoundingClientRect(), g.guides.band, g.w, g.h - g.y0)
+      : null;
+    const vw = phys ? phys.vw : practiceRowVW(row, g.h - g.y0);
     if (!vw) return;
     const o = Object.assign({}, d.opts, { rowVW: vw });
+    if (phys) { o.rowVH = phys.vh; o.ruleK = phys.rule.strokeK; }
     if (!d.opts.blank) o.practice = practiceStyle;
     row.replaceChild(wordOutlineSVG(d.word, o), old);
   }
@@ -2223,6 +2245,9 @@
     if (!root || !root.querySelectorAll) return;
     $$(".pt-name-row", root).forEach(layoutPracticeRow);
     $$(".pt-practice-fit", root).forEach(fitPracticeSheet);
+    // The generator's trace rows are laid out only for a physical ruling; a
+    // proportional one is fitted by the CSS letterbox, as it always was.
+    if (physicalBandMm()) $$(".pt-gen-row", root).forEach(layoutGenRow);
   }
 
   /* A glyph practice sheet is ONE page, and its type takes its size from the
@@ -2260,6 +2285,27 @@
       sheet.style.setProperty("--pt-practice-k", k.toFixed(4));
       if (k <= PRACTICE_FIT_MIN_K) break;
     }
+  }
+
+  /* A trace row on the generator sheet, for a physical ruling.
+
+     traceWordSVG() draws in a viewBox sized from the word and lets the CSS box
+     letterbox it, which is why the band was whatever the row's height made it.
+     Here the row's box is read and the drawing is rebuilt in a viewBox that
+     holds that box at the standard's scale (physicalRowBox). The pristine
+     viewBox is put back before measuring, because on a row whose height is
+     `auto` (the on-screen preview) the box depends on the viewBox, and a layout
+     that read its own previous answer would not be the same layout twice. */
+  function layoutGenRow(row) {
+    // The spelling sheet carries its own fold line in a viewBox it widened.
+    if (row.classList.contains("pt-sp-row")) return;
+    const old = row.querySelector(":scope > svg.pt-trace-svg");
+    const d = old && old.__ptTrace;
+    if (!d) return;
+    old.setAttribute("viewBox", d.vb0);
+    const phys = physicalRowBox(row, old.getBoundingClientRect(), traceBand(), d.w, d.h);
+    if (!phys) return;
+    row.replaceChild(traceWordSVG(d.word, d.level, Object.assign({}, d.opts, { phys: phys })), old);
   }
 
   /* The miniature is the same composition the sheet will use, drawn small --
@@ -2388,6 +2434,10 @@
        for a name whose sheet does change, and show it on a laptop for one
        whose sheet does not. The row's height is the same band in both, so the
        print width is all that has to be carried across. */
+    // A physical ruling knows the sheet's line in millimetres, so the width
+    // the sheet's row holds is the printable line at the standard's scale.
+    const rule = g.guides ? physicalRule(g.guides.band) : null;
+    if (rule) return practiceStylesDiffer(Math.max(printableWidthMm() * rule.upm, g.w), g.model, g.fontSize);
     const r = probe.getBoundingClientRect();
     const full = paperFull();
     const marginIn = parseFloat(MARGINS[printPrefs.margin] || MARGINS.normal) || 0.5;
@@ -2404,7 +2454,7 @@
     const g = wordOutlineGeom(word, o);
     const w = g.w, fontSize = g.fontSize, spacing = g.spacing;
     const svg = document.createElementNS(SVGNS, "svg");
-    svg.setAttribute("viewBox", "0 " + g.y0 + " " + w + " " + (g.h - g.y0));
+    svg.setAttribute("viewBox", "0 " + g.vy + " " + w + " " + g.vh);
     svg.setAttribute("class", "pt-word-outline");
     svg.setAttribute("role", "img");
     svg.setAttribute("aria-label", word);
@@ -4678,7 +4728,7 @@
      screen happened to be. */
   let practiceBeforePrintBound = false;
   function bindPracticeBeforePrint() {
-    if (practiceBeforePrintBound || !RULED_ROWS) return;
+    if (practiceBeforePrintBound || !(RULED_ROWS || physicalBandMm())) return;
     practiceBeforePrintBound = true;
     window.addEventListener("beforeprint", () => {
       if (el.printRoot) layoutPracticeRows(el.printRoot);
@@ -7488,7 +7538,12 @@
     seyes: {
       lines: [{ at: 0 }, { at: 0.25, faint: true }, { at: 0.5, faint: true },
               { at: 0.75, faint: true }, { at: 1 }],
-      band: null, verticals: 1, extra: 0
+      /* `physicalBandMm` is what makes this a national STANDARD rather than a
+         shape: the source gives millimetres (8 mm between heavy lines, so a
+         2 mm interline), and the ruled-row layout uses it to put the band on
+         the paper at that size. A ruling without it keeps the proportional
+         behaviour it had -- the band is whatever the row's box makes it. */
+      band: null, verticals: 1, extra: 0, physicalBandMm: 8
     },
     lineatur: {
       lines: [{ at: 1 }, { at: 0.5, faint: true, dashed: true }, { at: 0 }, { at: -0.5 }],
@@ -7496,6 +7551,85 @@
     }
   };
   function ruling() { return RULINGS[rulingKey()] || RULINGS.standard; }
+
+  /* A ruling that is a physical standard (Seyes: 8 mm between heavy lines).
+
+     Every other ruling here is proportional: its band is a fraction of
+     whatever box the row is drawn in, which is right for a face-derived rule
+     and wrong for an exercise book, whose lines are a fixed distance apart on
+     the paper whatever the sheet. Measured on A4 before this existed, rows
+     laid out the old way printed Seyes at a 16.2 mm main-line pitch and a
+     4.06 mm interline -- 2.03x the standard -- because the band was sized from
+     the viewBox and the viewBox was fitted to the row.
+
+     So a physical ruling asks the row what a millimetre is. The row's box is
+     measured in CSS pixels, a pixel is turned into paper through
+     sheetPxPerMm(), and the viewBox is made as many units wide and tall as
+     that box holds at `band units = physicalBandMm`. The drawing inside --
+     type, ruling, route, dots -- keeps every coordinate it had and simply sits
+     in a larger box, so the type stays in proportion to the band it was
+     designed against (a letter that fills the band is an 8 mm letter, not a
+     16 mm letter on an 8 mm ruling). */
+  function physicalBandMm() { return ruling().physicalBandMm || 0; }
+  /* One base stroke unit (the "2" and "1.5" addGuide draws) in millimetres,
+     as it printed when the band was 108 units in a 16.2 mm box. Held in
+     millimetres so the lines keep the weight they had on paper instead of
+     halving with the scale: a 0.15 mm Seyes interline is below what a
+     photocopier keeps. */
+  const RULE_STROKE_MM = 0.15;
+  function physicalRule(bandUnits) {
+    const mm = physicalBandMm();
+    if (!(mm > 0) || !(bandUnits > 0)) return null;
+    const upm = bandUnits / mm;               // viewBox units per millimetre of paper
+    return { upm: upm, strokeK: upm * RULE_STROKE_MM };
+  }
+  /* Width of the printable line on the chosen paper, in millimetres. */
+  function printableWidthMm() {
+    const full = paperFull();
+    const marginIn = parseFloat(MARGINS[printPrefs.margin] || MARGINS.normal) || 0.5;
+    return Math.max(1, (full.w - 2 * marginIn) * 25.4);
+  }
+  /* CSS pixels per millimetre of PAPER for a node on a sheet.
+
+     On the print surface (the PDF, PNG and print-dialog states) a CSS pixel
+     is 1/96 in by definition, so the answer is exact. On screen the preview
+     is the same sheet drawn at whatever width its card has, so a millimetre
+     is that width over the printable line -- the preview then shows the
+     proportion the paper will have, which is what a preview is for. 0 when
+     the node has no measurable sheet (display:none). */
+  function sheetPxPerMm(node) {
+    if (el.printRoot && el.printRoot.contains(node)) return 96 / 25.4;
+    const sheet = node.closest(".pt-name-sheet, .pt-gen-sheet");
+    const w = sheet ? sheet.getBoundingClientRect().width : 0;
+    if (!(w > 0)) return 0;
+    /* A card 300px wide holding a 184 mm line would draw an 8 mm band 13px
+       tall, and a dotted name in it could not be read. So the preview has a
+       floor on the band, and below it the card shows the left end of the line
+       at a readable zoom rather than the whole line at thumbnail size. The
+       proportions are the standard's either way (8 mm band, 2 mm interline,
+       square 8 mm cells); only the zoom differs, which it always does between
+       a card and a sheet. */
+    return Math.max(w / printableWidthMm(), PREVIEW_MIN_BAND_PX / (physicalBandMm() || 8));
+  }
+  const PREVIEW_MIN_BAND_PX = 44;
+  /* The viewBox a physical ruling needs for a row whose box is `rect`, or null
+     when the ruling is proportional or the row cannot be measured. `needW` and
+     `needH` are the drawing's own extent in viewBox units; if the box holds
+     less than that at the standard's scale, the box grows uniformly and the
+     band comes out under 8 mm -- the same "floor, never a cap" the rows
+     already follow, because clipping a child's name is worse than a ruling a
+     little under standard. */
+  function physicalRowBox(node, rect, bandUnits, needW, needH) {
+    const rule = physicalRule(bandUnits);
+    if (!rule || !(rect.width > 0) || !(rect.height > 0)) return null;
+    const P = sheetPxPerMm(node);
+    if (!(P > 0)) return null;
+    const vw0 = rect.width / P * rule.upm;
+    const vh0 = rect.height / P * rule.upm;
+    const k = Math.max(1, needW / vw0, needH / vh0);
+    const r2 = (n) => Math.round(n * 100) / 100;
+    return { vw: r2(vw0 * k), vh: r2(vh0 * k), rule: rule };
+  }
 
   /* `faint` and `dashed` are separate properties. The house three-line rule
      draws its midline dashed, but a Seyes interline is lighter and SOLID --
@@ -7532,7 +7666,10 @@
      old one already reached. */
   const RULE_OVERHANG = 6000;
 
-  function addGuide(svg, w, y, dashed, faint, bleed) {
+  /* `k` scales the stroke only, for a ruling drawn in a viewBox that is not
+     at the scale the weights were chosen at (see physicalRule). Omitted, the
+     strings are the ones this function has always written. */
+  function addGuide(svg, w, y, dashed, faint, bleed, k) {
     const over = bleed ? RULE_OVERHANG : 0;
     const l = document.createElementNS(SVGNS, "line");
     l.setAttribute("x1", String(8 - over));
@@ -7542,7 +7679,8 @@
     const hc = highContrastOn();
     const light = dashed || faint;
     l.setAttribute("stroke", hc ? CONTRAST_INK : (light ? GUIDE_MID : GUIDE));
-    l.setAttribute("stroke-width", hc ? (light ? "2" : "2.5") : (light ? "1.5" : "2"));
+    const sw = hc ? (light ? 2 : 2.5) : (light ? 1.5 : 2);
+    l.setAttribute("stroke-width", k ? String(Math.round(sw * k * 100) / 100) : String(sw));
     if (dashed) l.setAttribute("stroke-dasharray", "6 8");
     svg.appendChild(l);
   }
@@ -7567,6 +7705,8 @@
     const BASE = geo && geo.base != null ? geo.base : TRACE_BASE;
     const FPX = geo && geo.fontPx != null ? geo.fontPx : TRACE_FONT_SIZE;
     const over = RULE_OVERHANG;
+    // A physical ruling's stroke scale, from the row layout; undefined otherwise.
+    const sk = geo && geo.strokeK ? geo.strokeK : 0;
     const y = (at) => BASE - at * band;
     // The shaded Mittelband goes down first so every line still reads over it.
     if (r.band) {
@@ -7594,12 +7734,13 @@
         l.setAttribute("y1", String(y(1)));
         l.setAttribute("y2", String(y(r.extra ? -r.extra : 0)));
         l.setAttribute("stroke", hc ? CONTRAST_INK : GUIDE_MID);
-        l.setAttribute("stroke-width", hc ? "2" : "1.5");
+        const vsw = hc ? 2 : 1.5;
+        l.setAttribute("stroke-width", sk ? String(Math.round(vsw * sk * 100) / 100) : String(vsw));
         svg.appendChild(l);
       }
     }
     rulingGuides(BASE, band, FPX)
-      .forEach((line) => addGuide(svg, w, line.y, line.dashed, line.faint, true));
+      .forEach((line) => addGuide(svg, w, line.y, line.dashed, line.faint, true, sk));
   }
 
   // A word rendered at a difficulty level, on a ruled baseline. The single
@@ -8140,7 +8281,21 @@
       ? Math.max(360, Math.ceil(Math.max(tm.right, tm.advance) - Math.min(0, tm.left) + track + 120))
       : Math.max(360, chars.length * (116 + trackPx) + 120);
     const svg = document.createElementNS(SVGNS, "svg");
-    svg.setAttribute("viewBox", "0 0 " + w + " " + traceRowHeight());
+    const rowH = traceRowHeight();
+    const vb0 = "0 0 " + w + " " + rowH;
+    /* A physical ruling asks for a box of its own (o.phys, from layoutGenRow):
+       the drawing keeps its coordinates and is centred in a taller, wider
+       viewBox. Without it the viewBox is the word's, as it has always been. */
+    const phys = o.phys || null;
+    svg.setAttribute("viewBox", phys ? "0 " + (rowH - phys.vh) / 2 + " " + phys.vw + " " + phys.vh : vb0);
+    /* What layoutGenRow needs to lay this row out again: the pristine box and
+       the inputs that built it. A property, not an attribute, so the markup of
+       every row is what it was. */
+    if (o.guides !== false) {
+      const base = Object.assign({}, o);
+      delete base.phys;
+      svg.__ptTrace = { word: word, level: level, opts: base, vb0: vb0, w: w, h: rowH };
+    }
     svg.setAttribute("class", "pt-trace-svg");
     svg.setAttribute("role", "img");
     svg.setAttribute("aria-label", word + " — " + spec.label);
@@ -8166,7 +8321,7 @@
          model pass guides:false, they are sized to their own box rather than
          letterboxed inside a wider one, and centring is right for both. */
       svg.setAttribute("preserveAspectRatio", "xMinYMid meet");
-      addRuling(svg, w);
+      addRuling(svg, w, phys ? { strokeK: phys.rule.strokeK } : undefined);
     }
     /* R-001: the stroked levels draw the writing centreline, not the glyph
        contour. traceRoutePaths routes accented letters on their base letter
@@ -8599,12 +8754,44 @@
       });
       box.appendChild(fields);
       details.replaceWith(box);
+      mountRosterClear(mount, fields);
     }
     mount.dataset.ptAudienceWired = "1";
     $$(".pt-choice", box).forEach((b) => {
       b.addEventListener("click", () => setRosterAudience(mount, b.dataset.value));
     });
     setRosterAudience(mount, mount.value.trim() ? "class" : "one", { quiet: true });
+  }
+  /* "Clear names": the roster is remembered on this device between visits
+     (readRoster/writeRoster), and until now the only way to forget a class on
+     a shared school computer was to know that clearing the box and printing
+     once overwrote it. The button empties the box, removes the stored key and
+     tells the sheet count, so what is on screen and what is stored cannot
+     disagree. It shows only while there is something to clear.
+
+     English pages only for now: the label has no translation yet, and this
+     file's own rule is that a control is mounted in a language only when its
+     label exists there. /printables/block-letters/ is left alone (BATCH_FROZEN,
+     above) for the same reason mountAudience leaves its control alone. */
+  function mountRosterClear(mount, fields) {
+    if (LANG !== "en" || BATCH_FROZEN || !mount || !fields) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "pt-roster-clear";
+    btn.textContent = "Clear names";
+    btn.setAttribute("aria-label", "Clear the saved class list from this device");
+    const sync = () => { btn.hidden = !mount.value.trim(); };
+    mount.addEventListener("input", sync);
+    btn.addEventListener("click", () => {
+      mount.value = "";
+      writeRoster("");
+      mount.dispatchEvent(new Event("input", { bubbles: true }));
+      setRosterAudience(mount, "one", { quiet: true });
+      sync();
+      mount.focus();
+    });
+    fields.appendChild(btn);
+    sync();
   }
   function mountAudiences() {
     [el.nameRoster, el.genRoster, el.designRoster, el.puzzleRoster, el.searchRoster, el.cwRoster, el.scRoster, el.spRoster]
@@ -9038,6 +9225,8 @@
     if (!el.genPreview) return;
     el.genPreview.innerHTML = "";
     el.genPreview.appendChild(genSheetNode());
+    // A physical ruling is sized from the card it is in; a no-op otherwise.
+    layoutPracticeRows(el.genPreview);
   }
 
   function buildGeneratorSheet() {
@@ -9343,6 +9532,17 @@
     }
     if (el.genSlider) genLevelState = clampLevel(parseInt(el.genSlider.value, 10));
     renderGenPreview();
+    /* A physical ruling is sized from the card's width, so a narrower window is
+       a different card. The name preview re-composes on resize for the same
+       reason; this is its generator twin, and does nothing for a proportional
+       ruling, whose letterbox already follows the card. */
+    if (el.genPreview && physicalBandMm()) {
+      let resizeTimer = null;
+      window.addEventListener("resize", () => {
+        if (resizeTimer) clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => layoutPracticeRows(el.genPreview), 160);
+      });
+    }
   }
 
   /* ---------------------------------------------------------------
