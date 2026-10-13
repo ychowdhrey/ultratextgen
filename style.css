@@ -12730,6 +12730,20 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
 .pt-audience-field .pt-choice { flex: 1 1 auto; }
 .pt-class-fields { margin-top: 0.9rem; }
 .pt-class-fields textarea { min-height: 104px; resize: vertical; }
+.pt-roster-clear {
+  margin-top: 0.4rem;
+  min-height: 2.75rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.pt-roster-clear:hover { color: var(--text-primary); }
+.pt-roster-clear[hidden] { display: none; }
 .pt-more-field { margin-top: 1.2rem; }
 .pt-more-field summary {
   cursor: pointer;

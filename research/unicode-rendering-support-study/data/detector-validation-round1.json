@@ -1,0 +1,109 @@
+{
+ "cp": {
+  "n": 259,
+  "confusion": {
+   "B->B": 7,
+   "G->?": 52,
+   "G->G": 99,
+   "G->H": 1,
+   "H->G": 2,
+   "H->H": 11,
+   "H->T": 10,
+   "O->?": 2,
+   "T->T": 75
+  }
+ },
+ "seq": {
+  "n": 103,
+  "confusion": {
+   "DEC->DEC": 12,
+   "FULL->FULL": 52,
+   "MISS->MISS": 12,
+   "MISS->PART": 8,
+   "PART->PART": 4,
+   "TEXT->TEXT": 15
+  }
+ },
+ "cp_binary_glyph_drawn": {
+  "tp": 99,
+  "fp": 2,
+  "fn": 1,
+  "tn": 103,
+  "precision": 0.9801980198019802,
+  "recall": 0.99,
+  "false_positive_rate": 0.01904761904761905,
+  "false_negative_rate": 0.01,
+  "fp_rate_ci95": [
+   0.005239072265250377,
+   0.06680691015323667
+  ],
+  "fn_rate_ci95": [
+   0.0017673865655472639,
+   0.05448752476093461
+  ],
+  "false_positives": [
+   [
+    "V0054",
+    "U+1ADE",
+    "A_stock",
+    "H"
+   ],
+   [
+    "V0276",
+    "U+1D25F",
+    "A_stock",
+    "H"
+   ]
+  ],
+  "false_negatives": [
+   [
+    "V0218",
+    "U+1F23B",
+    "A_stock",
+    "LASTRESORT_HEXBOX"
+   ]
+  ],
+  "n_abstained_unknown": 54,
+  "n_manual_unsure": 2
+ },
+ "cp_unsupported_subtype": {
+  "B->B": 7,
+  "G->H": 1,
+  "H->H": 11,
+  "H->T": 10,
+  "T->T": 75
+ },
+ "seq_exact_class_agreement": {
+  "agree": 95,
+  "n": 103,
+  "rate": 0.9223300970873787,
+  "ci95": [
+   0.8541694444816941,
+   0.9601201206315204
+  ]
+ },
+ "seq_FULL_decision": {
+  "tp": 52,
+  "fp": 0,
+  "fn": 0,
+  "tn": 51,
+  "false_positive_rate": 0.0,
+  "false_negative_rate": 0.0,
+  "fp_rate_ci95": [
+   0.0,
+   0.07004901388726806
+  ],
+  "fn_rate_ci95": [
+   0.0,
+   0.06879459041288215
+  ]
+ },
+ "strata_sizes": {
+  "Q_OK": 52,
+  "S_SUP": 100,
+  "S_ODD": 61,
+  "Q_BAD": 51,
+  "S_UNS": 98
+ },
+ "low_confidence_labels": 27
+}

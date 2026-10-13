@@ -1,0 +1,18 @@
+{
+ "question": "Which Chromium change makes the 60 Emoji 17.0 two-tone 'people wrestling' sequences (U+1F9D1 tone ZWJ U+1FAEF ZWJ U+1F9D1 tone) compose with NotoColorEmoji 2.051?",
+ "method": "bisect over chromium-browser-snapshots Linux_x64 between main positions 1509326 (141 branch point) and 1522578 (142 branch point); each build tested with scripts/bisect_probe.py (60 sequences, advance width < 1.6 x one plain emoji = composed), same fontconfig set R_2025-09-12_f3ae03f",
+ "last_bad_snapshot": 1516483,
+ "first_good_snapshot": 1516493,
+ "commits_in_window": "positions 1516484..1516493 (10 commits), listed by git log f6a4156af879..6ed02679c529 on chromium/src",
+ "only_text_segmentation_commit": {
+   "sha": "fb172d8c5b7dffd63f68857d96a61c842e4c4e15",
+   "position": 1516492,
+   "date": "2025-09-17",
+   "title": "[icu] Include reserved ranges for Emoji to GetEmojiSegmentationCategory",
+   "files": ["third_party/blink/renderer/platform/text/character.h", "character_emoji.cc", "character_test.cc", "emoji_segmentation_category_inline_header.h"],
+   "mechanism": "Blink's emoji segmenter classified a code point as EMOJI only if ICU knew it as Emoji. U+1FAEF (Unicode 17) is unassigned in the ICU the build carried, so the run was split around it. The commit also treats Extended_Pictographic code points that are still unassigned (GC=Cn) as EMOJI. The commit's own unit test names U+1FAEF.",
+   "caveat": "The bisect isolates a 10-commit window. The attribution to this commit rests on it being the only commit in the window that touches text or emoji segmentation and on its test naming the affected code point; it was not confirmed by building Chromium with and without it."
+ },
+ "chrome_stable_first_good": "142.0.7444.175 (CfT)",
+ "chrome_stable_last_bad": "141.0.7390.122 (CfT)"
+}

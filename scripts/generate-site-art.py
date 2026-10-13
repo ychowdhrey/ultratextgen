@@ -3007,6 +3007,8 @@ PAGES.update({
     P(m_zalgo), K_RESEARCH),
 "research-ai-writing-footprint-study": ("AI Writing Footprint Study", "787 public accusations, tested against ordinary writing",
     P(m_doc), K_RESEARCH),
+"research-unicode-rendering-support-study": ("Unicode Rendering Support", "Every character and emoji, 3 engines, 45 emoji fonts",
+    P(m_doc), K_RESEARCH),
 "research-emoji-name-drift": ("Emoji Name Drift", "1,400 emoji, two official names each, 31 search words",
     P(m_doc), K_RESEARCH),
 "compare-zalgo-generators": ("Zalgo Generators Compared", "Best tool for each effect, tested 2026",

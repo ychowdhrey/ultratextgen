@@ -662,6 +662,130 @@ async function main() {
     await ctx.close();
   }
 
+  // 15. A national ruling is a physical standard. The French Seyes ruling is 8 mm
+  // between heavy lines with three 2 mm interlines between them, and it printed
+  // at 2.03x that on A4 because the band was fitted to the row's box instead of
+  // to the paper. The assertion reads the bitmap the PDF embeds (the canvases
+  // renderPages hands to fromCanvases), not the DOM, because the DOM was
+  // correct throughout: the defect existed only in what reached the paper.
+  console.log('\n/fr/imprimables/modeles-d-ecriture/ (Seyes ruling is 8 mm / 2 mm on paper)');
+  for (const [paper, orient] of [['a4', 'portrait'], ['a4', 'landscape'], ['letter', 'portrait'], ['letter', 'landscape']]) {
+    const init = `try{localStorage.setItem('utg_print_prefs', JSON.stringify({paper:'${paper}',orient:'${orient}'}))}catch(e){}
+      (function () {
+        const UTG = (window.UltraTextGen = window.UltraTextGen || {});
+        let real;
+        Object.defineProperty(UTG, 'pdf', { configurable: true, get() { return real; }, set(v) {
+          real = v && Object.assign({}, v, { renderPages: async function (root, o) {
+            const c = await v.renderPages(root, o); window.__ptSheet = { canvases: c, opts: o }; return c; } });
+        } });
+      })();`;
+    const { ctx, page, errors } = await open('/fr/imprimables/modeles-d-ecriture/', 'desktop', init);
+    await page.waitForTimeout(800);
+    for (const name of ['Lea', 'Christopher']) {
+      await page.fill('#pt-gen-input', name);
+      await page.waitForTimeout(500);
+      await page.evaluate(() => { window.__ptSheet = null; });
+      await Promise.all([page.waitForEvent('download', { timeout: 60000 }), page.click('#pt-gen-print')]).catch(() => null);
+      const m = await page.evaluate(() => {
+        const s = window.__ptSheet;
+        if (!s || !s.canvases || !s.canvases.length) return null;
+        const cv = s.canvases[0];
+        const ctx2 = cv.getContext('2d');
+        const W = cv.width, H = cv.height;
+        const pxPerMm = W / (s.opts.widthPx * 25.4 / 96);
+        const data = ctx2.getImageData(0, 0, W, H).data;
+        const ys = [];
+        for (let y = 0; y < H; y++) {
+          let n = 0;
+          for (let x = 0; x < W; x++) { const i = (y * W + x) * 4; if (Math.min(data[i], data[i + 1], data[i + 2]) < 235) n++; }
+          if (n / W > 0.6) ys.push(y);
+        }
+        const lines = [];
+        ys.forEach((y) => { const l = lines[lines.length - 1]; if (l && y - l[l.length - 1] <= 1) l.push(y); else lines.push([y]); });
+        const centres = lines.map((l) => l.reduce((a, b) => a + b, 0) / l.length / pxPerMm);
+        const stacks = [];
+        centres.forEach((c) => { const s = stacks[stacks.length - 1]; if (s && c - s[s.length - 1] < 10) s.push(c); else stacks.push([c]); });
+        const five = stacks.filter((s) => s.length === 5);
+        const inter = [].concat(...five.map((s) => s.slice(1).map((c, i) => c - s[i])));
+        const span = five.map((s) => s[4] - s[0]);
+        return { stacks: five.length, pxPerMm, inter, span };
+      });
+      const tag = `${paper} ${orient} "${name}"`;
+      if (!m) { check(`${tag}: the PDF's page bitmap was captured`, false, 'no canvas from renderPages'); continue; }
+      const avg = (a) => a.reduce((x, y) => x + y, 0) / a.length;
+      const dpi = Math.round(m.pxPerMm * 25.4);
+      check(`${tag}: at least three 5-line Seyes stacks on page 1 (${dpi} dpi bitmap)`, m.stacks >= 3, `${m.stacks} stacks`);
+      const iMin = Math.min(...m.inter), iMax = Math.max(...m.inter), sMin = Math.min(...m.span), sMax = Math.max(...m.span);
+      check(`${tag}: interline is 2.0 mm +/- 0.15`, m.inter.length && iMin >= 1.85 && iMax <= 2.15, `${iMin.toFixed(2)}..${iMax.toFixed(2)} mm (mean ${m.inter.length ? avg(m.inter).toFixed(2) : 'n/a'})`);
+      check(`${tag}: heavy lines are 8.0 mm +/- 0.3 apart`, m.span.length && sMin >= 7.7 && sMax <= 8.3, `${sMin.toFixed(2)}..${sMax.toFixed(2)} mm`);
+    }
+    check(`${paper} ${orient}: no page errors`, !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 16. Text in another script. Half the styles return it unchanged and the rest
+  // only add spacing or marks, so the English generator says so, once, and only
+  // when the text has a non-Latin letter. A translated page gets no English line.
+  console.log('\n/ (non-Latin text notice, English pages only)');
+  {
+    const { ctx, page, errors } = await open('/', 'desktop');
+    const hidden = () => page.locator('#scriptNotice').evaluate((n) => n.hidden);
+    await page.fill('#mainInput', 'hello world');
+    check('plain English shows no script notice', await hidden());
+    await page.fill('#mainInput', 'cafe\u0301 \u00f1and\u00fa');
+    check('accents alone do not trigger it', await hidden());
+    await page.fill('#mainInput', '\u0436\u0438\u0440\u043d\u044b\u0439 \u0448\u0440\u0438\u0444\u0442');
+    check('Cyrillic text shows the notice', !(await hidden()));
+    check('Cyrillic \u0439 does not also trigger the accent notice', await page.locator('#accentNotice').evaluate((n) => n.hidden));
+    await page.fill('#mainInput', 'caf\u00e9 \u0436');
+    check('a real Latin accent still triggers the accent notice', !(await page.locator('#accentNotice').evaluate((n) => n.hidden)));
+    await page.fill('#mainInput', '\u0436\u0438\u0440\u043d\u044b\u0439 \u0448\u0440\u0438\u0444\u0442');
+    await page.fill('#mainInput', '\u062d\u0631\u0648\u0641 \u0645\u0632\u062e\u0631\u0641\u0647');
+    check('Arabic text shows the notice', !(await hidden()));
+    await page.fill('#mainInput', 'hello \u4f60\u597d');
+    check('Latin mixed with Chinese shows the notice', !(await hidden()));
+    await page.click('#scriptNoticeClose');
+    await page.fill('#mainInput', 'hello');
+    await page.fill('#mainInput', '\u0436');
+    check('a dismissed notice stays dismissed', await hidden());
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+    const es = await open('/es/fuentes-de-letras/', 'desktop');
+    await es.page.fill('#mainInput', '\u0436\u0438\u0440\u043d\u044b\u0439');
+    check('a Spanish page gets no English script notice', (await es.page.locator('#scriptNotice').count()) === 0);
+    check('Spanish page: no page errors', !es.errors.length, es.errors.join(' | '));
+    await es.ctx.close();
+  }
+
+  // 17. Clear names: a class list is remembered on the device, so there has to be
+  // a way to forget it. English pages only (the label has no translation), and
+  // the frozen block-letters page keeps its previous control.
+  console.log('\n/printables/name-tracing/ (Clear names forgets the saved class list)');
+  {
+    const { ctx, page, errors } = await open('/printables/name-tracing/', 'desktop');
+    const stored = () => page.evaluate(() => localStorage.getItem('utg_printables_roster'));
+    await page.evaluate(() => localStorage.setItem('utg_printables_roster', 'Emma\nNoah\nAva'));
+    await page.reload({ waitUntil: 'load' });
+    await page.waitForTimeout(700);
+    const clearBtn = page.locator('.pt-roster-clear');
+    check('the saved list is back in the box and Clear names shows', (await page.inputValue('#pt-name-roster')).includes('Noah') && await clearBtn.isVisible());
+    await clearBtn.click();
+    check('Clear names empties the box', (await page.inputValue('#pt-name-roster')) === '');
+    check('Clear names removes the stored list', (await stored()) === null, String(await stored()));
+    check('Clear names hides itself when there is nothing to clear', !(await clearBtn.isVisible()));
+    await page.click('.pt-audience-field .pt-choice[data-value="class"]');
+    await page.fill('#pt-name-roster', 'Mia');
+    check('typing a name brings it back', await clearBtn.isVisible());
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+    const bl = await open('/printables/block-letters/', 'desktop');
+    check('block-letters is untouched (no Clear names)', (await bl.page.locator('.pt-roster-clear').count()) === 0);
+    await bl.ctx.close();
+    const fr = await open('/fr/imprimables/modeles-d-ecriture/', 'desktop');
+    check('a French sheet gets no English Clear names', (await fr.page.locator('.pt-roster-clear').count()) === 0);
+    await fr.ctx.close();
+  }
+
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
   await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });

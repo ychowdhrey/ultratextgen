@@ -1,0 +1,457 @@
+condition,style,old_sample,old_probe,new_sample,new_probe,truly_supported
+A_stock,Ultra Bold,U+FFFD,1.0,U+1D5D4,1.0,True
+A_stock,Ultra Bold Serif,U+FFFD,1.0,U+1D400,1.0,True
+A_stock,Ultra Double-Struck,U+FFFD,1.0,U+1D538,1.0,True
+A_stock,Ultra Italic,U+FFFD,1.0,U+1D608,1.0,True
+A_stock,Ultra Italic Serif,U+FFFD,1.0,U+1D434,1.0,True
+A_stock,Ultra Bold Italic,U+FFFD,1.0,U+1D63C,1.0,True
+A_stock,Ultra Bold Italic Serif,U+FFFD,1.0,U+1D468,1.0,True
+A_stock,Ultra Alternating Bold,,,,,
+A_stock,Ultra Alternating Italic,,,,,
+A_stock,Ultra Bold w Alternating Italic,,,,,
+A_stock,Ultra Italic Switch Serifs,,,,,
+A_stock,Ultra Script,U+FFFD,1.0,U+1D49C,1.0,True
+A_stock,Ultra Script Bold,U+FFFD,1.0,U+1D4D0,1.0,True
+A_stock,Ultra Script Elegant,U+FFFD,1.0,U+1D49C,1.0,True
+A_stock,Ultra Script Bold Elegant,U+FFFD,1.0,U+1D4D0,1.0,True
+A_stock,Ultra Gothic Script,U+FFFD,1.0,U+1D56C,1.0,True
+A_stock,Ultra Chicano Script,,,,,
+A_stock,Ultra Script Sparkle,,,,,
+A_stock,Ultra Gothic,U+FFFD,1.0,U+1D504,1.0,True
+A_stock,Ultra Gothic Bold,U+FFFD,1.0,U+1D56C,1.0,True
+A_stock,Ultra Gothic Underline,,,,,
+A_stock,Ultra Gothic Cross,,,,,
+A_stock,Ultra Gothic Occult,,,,,
+A_stock,Ultra Gothic Strikethrough,,,,,
+A_stock,Ultra Old English Banner,,,,,
+A_stock,Ultra Bubble,U+24B6,1.0,U+24B6,1.0,True
+A_stock,Ultra Bubble Filled,U+FFFD,1.0,U+1F150,1.0,True
+A_stock,Ultra Bubble Light,U+24B6,1.0,U+24B6,1.0,True
+A_stock,Ultra Bubble Tiles,U+FFFD,1.0,U+1F130,1.0,True
+A_stock,Ultra Bubble Parentheses,U+0028,1.0,U+0028,1.0,
+A_stock,Ultra Bubble Curly,U+2768,1.0,U+2768,1.0,True
+A_stock,Ultra Bubble Angle,U+2985,1.0,U+2985,1.0,True
+A_stock,Ultra Bubble Spaced,U+24B6,1.0,U+24B6,1.0,True
+A_stock,Ultra Bubble Filled Spaced,U+FFFD,1.0,U+1F150,1.0,True
+A_stock,Ultra Bubble Tiles Spaced,U+FFFD,1.0,U+1F130,1.0,True
+A_stock,Ultra Bubble Curly Spaced,U+2768,1.0,U+2768,1.0,True
+A_stock,Ultra Bubble Angle Spaced,U+2985,1.0,U+2985,1.0,True
+A_stock,Ultra Strike,,,,,
+A_stock,Ultra Double Strike,,,,,
+A_stock,Ultra Crossed-Out,,,,,
+A_stock,Ultra Slash,,,,,
+A_stock,Ultra Thin Strike,,,,,
+A_stock,Ultra Heavy Strike,,,,,
+A_stock,Ultra Wavy Strike,,,,,
+A_stock,Ultra Light Slash,,,,,
+A_stock,Ultra Strike + Underline,,,,,
+A_stock,Ultra Underline,,,,,
+A_stock,Ultra Double Underline,,,,,
+A_stock,Ultra Wavy Underline,,,,,
+A_stock,Ultra Overline,,,,,
+A_stock,Ultra Double Overline,,,,,
+A_stock,Ultra Wavy,,,,,
+A_stock,Fully Flipped Unicode,,,,,
+A_stock,Mixed Flip Fallback,,,,,
+A_stock,Reverse Order Only,,,,,
+A_stock,Reverse + Flip Combo,,,,,
+A_stock,Partial Upside Emphasis,,,,,
+A_stock,Line Level Upside Down,,,,,
+A_stock,Alternating Upside Down,,,,,
+A_stock,Mirror Illusion,,,,,
+A_stock,Emoji Assisted Upside Down,,,,,
+A_stock,Faux Upside Down Symbols,,,,,
+A_stock,Upside Down Micro Text,,,,,
+A_stock,Ultra Word Curly Wrap,,,,,
+A_stock,Ultra Word Angle Wrap,,,,,
+A_stock,Ultra Word Double Wrap,,,,,
+A_stock,Ultra Word Arrow Wrap,,,,,
+A_stock,Ultra Word Forward Arrow Wrap,,,,,
+A_stock,Ultra Word Backward Arrow Wrap,,,,,
+A_stock,Ultra Word Bracket Wrap,,,,,
+A_stock,Ultra Word Chevron Wrap,,,,,
+A_stock,Ultra Word Bar Wrap,,,,,
+A_stock,Ultra Word Double Bar Wrap,,,,,
+A_stock,Ultra Small Superscript Style,U+1D2C,1.0,U+1D2C,1.0,True
+A_stock,Ultra Tiny Subscript,U+0041,1.0,U+0041,1.0,
+A_stock,Ultra Small Caps,U+1D00,1.0,U+1D00,1.0,True
+A_stock,Ultra Cute Script,U+FFFD,1.0,U+1D49C,1.0,True
+A_stock,Ultra Cute Bubble,U+24B6,1.0,U+24B6,1.0,True
+A_stock,Ultra Aesthetic Gothic,U+FFFD,1.0,U+1D504,1.0,True
+A_stock,Ultra Redacted,,,,,
+A_stock,Ultra Redacted Heavy Shade,,,,,
+A_stock,Ultra Redacted Light Shade,,,,,
+A_stock,Ultra Redacted Squares,,,,,
+A_stock,Ultra Redacted Emoji,,,,,
+A_stock,Ultra White Redacted,,,,,
+A_stock,Ultra Selective Redact,,,,,
+A_stock,Ultra Alternate Redact,,,,,
+A_stock,Ultra Typewriter Document,U+FFFD,1.0,U+1D670,1.0,True
+A_stock,Ultra Fullwidth,U+FF21,1.0,U+FF21,1.0,True
+A_stock,Ultra Faux Cyrillic,U+0410,1.0,U+0410,1.0,True
+A_stock,Ultra Faux Greek,U+0391,1.0,U+0391,1.0,True
+A_stock,Ultra Katakana,U+30A2,1.0,U+30A2,1.0,True
+A_stock,Ultra Runic,U+16A8,1.0,U+16A8,1.0,True
+A_stock,Ultra Old Italic,U+FFFD,1.0,U+10300,1.0,True
+A_stock,Ultra Cherokee,U+13AA,1.0,U+13AA,1.0,True
+A_stock,Ultra Canadian Syllabics,U+15C5,1.0,U+15C5,1.0,True
+A_stock,Ultra Ethiopic,U+1200,1.0,U+1200,1.0,True
+A_stock,Ultra Tibetan,U+0F40,1.0,U+0F40,1.0,True
+A_stock,Ultra Bopomofo,U+3105,1.0,U+3105,1.0,True
+A_stock,Ultra Yi,U+A000,1.0,U+A000,1.0,True
+A_stock,Ultra Emoji Block,U+FFFD,1.0,U+1F170,1.0,True
+A_stock,Ultra Squared,U+FFFD,1.0,U+1F130,1.0,True
+A_stock,Ultra Regional Indicator,U+1F1E6,1.0,U+1F1E6,1.0,True
+A_stock,Ultra Keycap Numbers,U+0041,1.0,U+0041,1.0,
+A_stock,Ultra Currency,U+20B3,1.0,U+20B3,1.0,True
+A_stock,Ultra Gal Moji,,,,,
+A_stock,Ultra Cuping,,,,,
+A_stock,UPPERCASE,,,,,
+A_stock,lowercase,,,,,
+A_stock,Capitalized Case,,,,,
+A_stock,Title Case,,,,,
+A_stock,Sentence case,,,,,
+A_stock,aLtErNaTiNg CaSe,,,,,
+A_stock,tOGGLE cASE,,,,,
+A_minimal,Ultra Bold,U+FFFD,1.0,U+1D5D4,1.0,True
+A_minimal,Ultra Bold Serif,U+FFFD,1.0,U+1D400,1.0,True
+A_minimal,Ultra Double-Struck,U+FFFD,1.0,U+1D538,1.0,True
+A_minimal,Ultra Italic,U+FFFD,1.0,U+1D608,1.0,True
+A_minimal,Ultra Italic Serif,U+FFFD,1.0,U+1D434,1.0,True
+A_minimal,Ultra Bold Italic,U+FFFD,1.0,U+1D63C,1.0,True
+A_minimal,Ultra Bold Italic Serif,U+FFFD,1.0,U+1D468,1.0,True
+A_minimal,Ultra Alternating Bold,,,,,
+A_minimal,Ultra Alternating Italic,,,,,
+A_minimal,Ultra Bold w Alternating Italic,,,,,
+A_minimal,Ultra Italic Switch Serifs,,,,,
+A_minimal,Ultra Script,U+FFFD,1.0,U+1D49C,1.0,True
+A_minimal,Ultra Script Bold,U+FFFD,1.0,U+1D4D0,1.0,True
+A_minimal,Ultra Script Elegant,U+FFFD,1.0,U+1D49C,1.0,True
+A_minimal,Ultra Script Bold Elegant,U+FFFD,1.0,U+1D4D0,1.0,True
+A_minimal,Ultra Gothic Script,U+FFFD,1.0,U+1D56C,1.0,True
+A_minimal,Ultra Chicano Script,,,,,
+A_minimal,Ultra Script Sparkle,,,,,
+A_minimal,Ultra Gothic,U+FFFD,1.0,U+1D504,1.0,True
+A_minimal,Ultra Gothic Bold,U+FFFD,1.0,U+1D56C,1.0,True
+A_minimal,Ultra Gothic Underline,,,,,
+A_minimal,Ultra Gothic Cross,,,,,
+A_minimal,Ultra Gothic Occult,,,,,
+A_minimal,Ultra Gothic Strikethrough,,,,,
+A_minimal,Ultra Old English Banner,,,,,
+A_minimal,Ultra Bubble,U+24B6,1.0,U+24B6,1.0,True
+A_minimal,Ultra Bubble Filled,U+FFFD,1.0,U+1F150,1.0,True
+A_minimal,Ultra Bubble Light,U+24B6,1.0,U+24B6,1.0,True
+A_minimal,Ultra Bubble Tiles,U+FFFD,1.0,U+1F130,1.0,True
+A_minimal,Ultra Bubble Parentheses,U+0028,1.0,U+0028,1.0,
+A_minimal,Ultra Bubble Curly,U+2768,1.0,U+2768,1.0,True
+A_minimal,Ultra Bubble Angle,U+2985,1.0,U+2985,1.0,True
+A_minimal,Ultra Bubble Spaced,U+24B6,1.0,U+24B6,1.0,True
+A_minimal,Ultra Bubble Filled Spaced,U+FFFD,1.0,U+1F150,1.0,True
+A_minimal,Ultra Bubble Tiles Spaced,U+FFFD,1.0,U+1F130,1.0,True
+A_minimal,Ultra Bubble Curly Spaced,U+2768,1.0,U+2768,1.0,True
+A_minimal,Ultra Bubble Angle Spaced,U+2985,1.0,U+2985,1.0,True
+A_minimal,Ultra Strike,,,,,
+A_minimal,Ultra Double Strike,,,,,
+A_minimal,Ultra Crossed-Out,,,,,
+A_minimal,Ultra Slash,,,,,
+A_minimal,Ultra Thin Strike,,,,,
+A_minimal,Ultra Heavy Strike,,,,,
+A_minimal,Ultra Wavy Strike,,,,,
+A_minimal,Ultra Light Slash,,,,,
+A_minimal,Ultra Strike + Underline,,,,,
+A_minimal,Ultra Underline,,,,,
+A_minimal,Ultra Double Underline,,,,,
+A_minimal,Ultra Wavy Underline,,,,,
+A_minimal,Ultra Overline,,,,,
+A_minimal,Ultra Double Overline,,,,,
+A_minimal,Ultra Wavy,,,,,
+A_minimal,Fully Flipped Unicode,,,,,
+A_minimal,Mixed Flip Fallback,,,,,
+A_minimal,Reverse Order Only,,,,,
+A_minimal,Reverse + Flip Combo,,,,,
+A_minimal,Partial Upside Emphasis,,,,,
+A_minimal,Line Level Upside Down,,,,,
+A_minimal,Alternating Upside Down,,,,,
+A_minimal,Mirror Illusion,,,,,
+A_minimal,Emoji Assisted Upside Down,,,,,
+A_minimal,Faux Upside Down Symbols,,,,,
+A_minimal,Upside Down Micro Text,,,,,
+A_minimal,Ultra Word Curly Wrap,,,,,
+A_minimal,Ultra Word Angle Wrap,,,,,
+A_minimal,Ultra Word Double Wrap,,,,,
+A_minimal,Ultra Word Arrow Wrap,,,,,
+A_minimal,Ultra Word Forward Arrow Wrap,,,,,
+A_minimal,Ultra Word Backward Arrow Wrap,,,,,
+A_minimal,Ultra Word Bracket Wrap,,,,,
+A_minimal,Ultra Word Chevron Wrap,,,,,
+A_minimal,Ultra Word Bar Wrap,,,,,
+A_minimal,Ultra Word Double Bar Wrap,,,,,
+A_minimal,Ultra Small Superscript Style,U+1D2C,1.0,U+1D2C,1.0,True
+A_minimal,Ultra Tiny Subscript,U+0041,1.0,U+0041,1.0,
+A_minimal,Ultra Small Caps,U+1D00,1.0,U+1D00,1.0,True
+A_minimal,Ultra Cute Script,U+FFFD,1.0,U+1D49C,1.0,True
+A_minimal,Ultra Cute Bubble,U+24B6,1.0,U+24B6,1.0,True
+A_minimal,Ultra Aesthetic Gothic,U+FFFD,1.0,U+1D504,1.0,True
+A_minimal,Ultra Redacted,,,,,
+A_minimal,Ultra Redacted Heavy Shade,,,,,
+A_minimal,Ultra Redacted Light Shade,,,,,
+A_minimal,Ultra Redacted Squares,,,,,
+A_minimal,Ultra Redacted Emoji,,,,,
+A_minimal,Ultra White Redacted,,,,,
+A_minimal,Ultra Selective Redact,,,,,
+A_minimal,Ultra Alternate Redact,,,,,
+A_minimal,Ultra Typewriter Document,U+FFFD,1.0,U+1D670,1.0,True
+A_minimal,Ultra Fullwidth,U+FF21,1.0,U+FF21,1.0,True
+A_minimal,Ultra Faux Cyrillic,U+0410,1.0,U+0410,1.0,True
+A_minimal,Ultra Faux Greek,U+0391,1.0,U+0391,1.0,True
+A_minimal,Ultra Katakana,U+30A2,1.0,U+30A2,1.0,True
+A_minimal,Ultra Runic,U+16A8,1.0,U+16A8,1.0,True
+A_minimal,Ultra Old Italic,U+FFFD,1.0,U+10300,1.0,True
+A_minimal,Ultra Cherokee,U+13AA,1.0,U+13AA,1.0,True
+A_minimal,Ultra Canadian Syllabics,U+15C5,1.0,U+15C5,1.0,True
+A_minimal,Ultra Ethiopic,U+1200,1.0,U+1200,1.0,True
+A_minimal,Ultra Tibetan,U+0F40,1.0,U+0F40,0.0,False
+A_minimal,Ultra Bopomofo,U+3105,1.0,U+3105,1.0,True
+A_minimal,Ultra Yi,U+A000,1.0,U+A000,0.0,False
+A_minimal,Ultra Emoji Block,U+FFFD,1.0,U+1F170,1.0,True
+A_minimal,Ultra Squared,U+FFFD,1.0,U+1F130,1.0,True
+A_minimal,Ultra Regional Indicator,U+1F1E6,1.0,U+1F1E6,1.0,True
+A_minimal,Ultra Keycap Numbers,U+0041,1.0,U+0041,1.0,
+A_minimal,Ultra Currency,U+20B3,1.0,U+20B3,1.0,True
+A_minimal,Ultra Gal Moji,,,,,
+A_minimal,Ultra Cuping,,,,,
+A_minimal,UPPERCASE,,,,,
+A_minimal,lowercase,,,,,
+A_minimal,Capitalized Case,,,,,
+A_minimal,Title Case,,,,,
+A_minimal,Sentence case,,,,,
+A_minimal,aLtErNaTiNg CaSe,,,,,
+A_minimal,tOGGLE cASE,,,,,
+A_distro,Ultra Bold,U+FFFD,1.0,U+1D5D4,1.0,True
+A_distro,Ultra Bold Serif,U+FFFD,1.0,U+1D400,1.0,True
+A_distro,Ultra Double-Struck,U+FFFD,1.0,U+1D538,1.0,True
+A_distro,Ultra Italic,U+FFFD,1.0,U+1D608,1.0,True
+A_distro,Ultra Italic Serif,U+FFFD,1.0,U+1D434,1.0,True
+A_distro,Ultra Bold Italic,U+FFFD,1.0,U+1D63C,1.0,True
+A_distro,Ultra Bold Italic Serif,U+FFFD,1.0,U+1D468,1.0,True
+A_distro,Ultra Alternating Bold,,,,,
+A_distro,Ultra Alternating Italic,,,,,
+A_distro,Ultra Bold w Alternating Italic,,,,,
+A_distro,Ultra Italic Switch Serifs,,,,,
+A_distro,Ultra Script,U+FFFD,1.0,U+1D49C,1.0,True
+A_distro,Ultra Script Bold,U+FFFD,1.0,U+1D4D0,1.0,True
+A_distro,Ultra Script Elegant,U+FFFD,1.0,U+1D49C,1.0,True
+A_distro,Ultra Script Bold Elegant,U+FFFD,1.0,U+1D4D0,1.0,True
+A_distro,Ultra Gothic Script,U+FFFD,1.0,U+1D56C,1.0,True
+A_distro,Ultra Chicano Script,,,,,
+A_distro,Ultra Script Sparkle,,,,,
+A_distro,Ultra Gothic,U+FFFD,1.0,U+1D504,1.0,True
+A_distro,Ultra Gothic Bold,U+FFFD,1.0,U+1D56C,1.0,True
+A_distro,Ultra Gothic Underline,,,,,
+A_distro,Ultra Gothic Cross,,,,,
+A_distro,Ultra Gothic Occult,,,,,
+A_distro,Ultra Gothic Strikethrough,,,,,
+A_distro,Ultra Old English Banner,,,,,
+A_distro,Ultra Bubble,U+24B6,1.0,U+24B6,1.0,True
+A_distro,Ultra Bubble Filled,U+FFFD,1.0,U+1F150,1.0,True
+A_distro,Ultra Bubble Light,U+24B6,1.0,U+24B6,1.0,True
+A_distro,Ultra Bubble Tiles,U+FFFD,1.0,U+1F130,1.0,True
+A_distro,Ultra Bubble Parentheses,U+0028,1.0,U+0028,1.0,
+A_distro,Ultra Bubble Curly,U+2768,1.0,U+2768,1.0,True
+A_distro,Ultra Bubble Angle,U+2985,1.0,U+2985,1.0,True
+A_distro,Ultra Bubble Spaced,U+24B6,1.0,U+24B6,1.0,True
+A_distro,Ultra Bubble Filled Spaced,U+FFFD,1.0,U+1F150,1.0,True
+A_distro,Ultra Bubble Tiles Spaced,U+FFFD,1.0,U+1F130,1.0,True
+A_distro,Ultra Bubble Curly Spaced,U+2768,1.0,U+2768,1.0,True
+A_distro,Ultra Bubble Angle Spaced,U+2985,1.0,U+2985,1.0,True
+A_distro,Ultra Strike,,,,,
+A_distro,Ultra Double Strike,,,,,
+A_distro,Ultra Crossed-Out,,,,,
+A_distro,Ultra Slash,,,,,
+A_distro,Ultra Thin Strike,,,,,
+A_distro,Ultra Heavy Strike,,,,,
+A_distro,Ultra Wavy Strike,,,,,
+A_distro,Ultra Light Slash,,,,,
+A_distro,Ultra Strike + Underline,,,,,
+A_distro,Ultra Underline,,,,,
+A_distro,Ultra Double Underline,,,,,
+A_distro,Ultra Wavy Underline,,,,,
+A_distro,Ultra Overline,,,,,
+A_distro,Ultra Double Overline,,,,,
+A_distro,Ultra Wavy,,,,,
+A_distro,Fully Flipped Unicode,,,,,
+A_distro,Mixed Flip Fallback,,,,,
+A_distro,Reverse Order Only,,,,,
+A_distro,Reverse + Flip Combo,,,,,
+A_distro,Partial Upside Emphasis,,,,,
+A_distro,Line Level Upside Down,,,,,
+A_distro,Alternating Upside Down,,,,,
+A_distro,Mirror Illusion,,,,,
+A_distro,Emoji Assisted Upside Down,,,,,
+A_distro,Faux Upside Down Symbols,,,,,
+A_distro,Upside Down Micro Text,,,,,
+A_distro,Ultra Word Curly Wrap,,,,,
+A_distro,Ultra Word Angle Wrap,,,,,
+A_distro,Ultra Word Double Wrap,,,,,
+A_distro,Ultra Word Arrow Wrap,,,,,
+A_distro,Ultra Word Forward Arrow Wrap,,,,,
+A_distro,Ultra Word Backward Arrow Wrap,,,,,
+A_distro,Ultra Word Bracket Wrap,,,,,
+A_distro,Ultra Word Chevron Wrap,,,,,
+A_distro,Ultra Word Bar Wrap,,,,,
+A_distro,Ultra Word Double Bar Wrap,,,,,
+A_distro,Ultra Small Superscript Style,U+1D2C,1.0,U+1D2C,1.0,True
+A_distro,Ultra Tiny Subscript,U+0041,1.0,U+0041,1.0,
+A_distro,Ultra Small Caps,U+1D00,1.0,U+1D00,1.0,True
+A_distro,Ultra Cute Script,U+FFFD,1.0,U+1D49C,1.0,True
+A_distro,Ultra Cute Bubble,U+24B6,1.0,U+24B6,1.0,True
+A_distro,Ultra Aesthetic Gothic,U+FFFD,1.0,U+1D504,1.0,True
+A_distro,Ultra Redacted,,,,,
+A_distro,Ultra Redacted Heavy Shade,,,,,
+A_distro,Ultra Redacted Light Shade,,,,,
+A_distro,Ultra Redacted Squares,,,,,
+A_distro,Ultra Redacted Emoji,,,,,
+A_distro,Ultra White Redacted,,,,,
+A_distro,Ultra Selective Redact,,,,,
+A_distro,Ultra Alternate Redact,,,,,
+A_distro,Ultra Typewriter Document,U+FFFD,1.0,U+1D670,1.0,True
+A_distro,Ultra Fullwidth,U+FF21,1.0,U+FF21,1.0,True
+A_distro,Ultra Faux Cyrillic,U+0410,1.0,U+0410,1.0,True
+A_distro,Ultra Faux Greek,U+0391,1.0,U+0391,1.0,True
+A_distro,Ultra Katakana,U+30A2,1.0,U+30A2,1.0,True
+A_distro,Ultra Runic,U+16A8,1.0,U+16A8,1.0,True
+A_distro,Ultra Old Italic,U+FFFD,1.0,U+10300,1.0,True
+A_distro,Ultra Cherokee,U+13AA,1.0,U+13AA,1.0,True
+A_distro,Ultra Canadian Syllabics,U+15C5,1.0,U+15C5,1.0,True
+A_distro,Ultra Ethiopic,U+1200,1.0,U+1200,1.0,True
+A_distro,Ultra Tibetan,U+0F40,1.0,U+0F40,1.0,True
+A_distro,Ultra Bopomofo,U+3105,1.0,U+3105,1.0,True
+A_distro,Ultra Yi,U+A000,1.0,U+A000,1.0,True
+A_distro,Ultra Emoji Block,U+FFFD,1.0,U+1F170,1.0,True
+A_distro,Ultra Squared,U+FFFD,1.0,U+1F130,1.0,True
+A_distro,Ultra Regional Indicator,U+1F1E6,1.0,U+1F1E6,1.0,True
+A_distro,Ultra Keycap Numbers,U+0041,1.0,U+0041,1.0,
+A_distro,Ultra Currency,U+20B3,1.0,U+20B3,1.0,True
+A_distro,Ultra Gal Moji,,,,,
+A_distro,Ultra Cuping,,,,,
+A_distro,UPPERCASE,,,,,
+A_distro,lowercase,,,,,
+A_distro,Capitalized Case,,,,,
+A_distro,Title Case,,,,,
+A_distro,Sentence case,,,,,
+A_distro,aLtErNaTiNg CaSe,,,,,
+A_distro,tOGGLE cASE,,,,,
+B_noto,Ultra Bold,U+FFFD,1.0,U+1D5D4,1.0,True
+B_noto,Ultra Bold Serif,U+FFFD,1.0,U+1D400,1.0,True
+B_noto,Ultra Double-Struck,U+FFFD,1.0,U+1D538,1.0,True
+B_noto,Ultra Italic,U+FFFD,1.0,U+1D608,1.0,True
+B_noto,Ultra Italic Serif,U+FFFD,1.0,U+1D434,1.0,True
+B_noto,Ultra Bold Italic,U+FFFD,1.0,U+1D63C,1.0,True
+B_noto,Ultra Bold Italic Serif,U+FFFD,1.0,U+1D468,1.0,True
+B_noto,Ultra Alternating Bold,,,,,
+B_noto,Ultra Alternating Italic,,,,,
+B_noto,Ultra Bold w Alternating Italic,,,,,
+B_noto,Ultra Italic Switch Serifs,,,,,
+B_noto,Ultra Script,U+FFFD,1.0,U+1D49C,1.0,True
+B_noto,Ultra Script Bold,U+FFFD,1.0,U+1D4D0,1.0,True
+B_noto,Ultra Script Elegant,U+FFFD,1.0,U+1D49C,1.0,True
+B_noto,Ultra Script Bold Elegant,U+FFFD,1.0,U+1D4D0,1.0,True
+B_noto,Ultra Gothic Script,U+FFFD,1.0,U+1D56C,1.0,True
+B_noto,Ultra Chicano Script,,,,,
+B_noto,Ultra Script Sparkle,,,,,
+B_noto,Ultra Gothic,U+FFFD,1.0,U+1D504,1.0,True
+B_noto,Ultra Gothic Bold,U+FFFD,1.0,U+1D56C,1.0,True
+B_noto,Ultra Gothic Underline,,,,,
+B_noto,Ultra Gothic Cross,,,,,
+B_noto,Ultra Gothic Occult,,,,,
+B_noto,Ultra Gothic Strikethrough,,,,,
+B_noto,Ultra Old English Banner,,,,,
+B_noto,Ultra Bubble,U+24B6,1.0,U+24B6,1.0,True
+B_noto,Ultra Bubble Filled,U+FFFD,1.0,U+1F150,1.0,True
+B_noto,Ultra Bubble Light,U+24B6,1.0,U+24B6,1.0,True
+B_noto,Ultra Bubble Tiles,U+FFFD,1.0,U+1F130,1.0,True
+B_noto,Ultra Bubble Parentheses,U+0028,1.0,U+0028,1.0,
+B_noto,Ultra Bubble Curly,U+2768,1.0,U+2768,1.0,True
+B_noto,Ultra Bubble Angle,U+2985,1.0,U+2985,1.0,True
+B_noto,Ultra Bubble Spaced,U+24B6,1.0,U+24B6,1.0,True
+B_noto,Ultra Bubble Filled Spaced,U+FFFD,1.0,U+1F150,1.0,True
+B_noto,Ultra Bubble Tiles Spaced,U+FFFD,1.0,U+1F130,1.0,True
+B_noto,Ultra Bubble Curly Spaced,U+2768,1.0,U+2768,1.0,True
+B_noto,Ultra Bubble Angle Spaced,U+2985,1.0,U+2985,1.0,True
+B_noto,Ultra Strike,,,,,
+B_noto,Ultra Double Strike,,,,,
+B_noto,Ultra Crossed-Out,,,,,
+B_noto,Ultra Slash,,,,,
+B_noto,Ultra Thin Strike,,,,,
+B_noto,Ultra Heavy Strike,,,,,
+B_noto,Ultra Wavy Strike,,,,,
+B_noto,Ultra Light Slash,,,,,
+B_noto,Ultra Strike + Underline,,,,,
+B_noto,Ultra Underline,,,,,
+B_noto,Ultra Double Underline,,,,,
+B_noto,Ultra Wavy Underline,,,,,
+B_noto,Ultra Overline,,,,,
+B_noto,Ultra Double Overline,,,,,
+B_noto,Ultra Wavy,,,,,
+B_noto,Fully Flipped Unicode,,,,,
+B_noto,Mixed Flip Fallback,,,,,
+B_noto,Reverse Order Only,,,,,
+B_noto,Reverse + Flip Combo,,,,,
+B_noto,Partial Upside Emphasis,,,,,
+B_noto,Line Level Upside Down,,,,,
+B_noto,Alternating Upside Down,,,,,
+B_noto,Mirror Illusion,,,,,
+B_noto,Emoji Assisted Upside Down,,,,,
+B_noto,Faux Upside Down Symbols,,,,,
+B_noto,Upside Down Micro Text,,,,,
+B_noto,Ultra Word Curly Wrap,,,,,
+B_noto,Ultra Word Angle Wrap,,,,,
+B_noto,Ultra Word Double Wrap,,,,,
+B_noto,Ultra Word Arrow Wrap,,,,,
+B_noto,Ultra Word Forward Arrow Wrap,,,,,
+B_noto,Ultra Word Backward Arrow Wrap,,,,,
+B_noto,Ultra Word Bracket Wrap,,,,,
+B_noto,Ultra Word Chevron Wrap,,,,,
+B_noto,Ultra Word Bar Wrap,,,,,
+B_noto,Ultra Word Double Bar Wrap,,,,,
+B_noto,Ultra Small Superscript Style,U+1D2C,1.0,U+1D2C,1.0,True
+B_noto,Ultra Tiny Subscript,U+0041,1.0,U+0041,1.0,
+B_noto,Ultra Small Caps,U+1D00,1.0,U+1D00,1.0,True
+B_noto,Ultra Cute Script,U+FFFD,1.0,U+1D49C,1.0,True
+B_noto,Ultra Cute Bubble,U+24B6,1.0,U+24B6,1.0,True
+B_noto,Ultra Aesthetic Gothic,U+FFFD,1.0,U+1D504,1.0,True
+B_noto,Ultra Redacted,,,,,
+B_noto,Ultra Redacted Heavy Shade,,,,,
+B_noto,Ultra Redacted Light Shade,,,,,
+B_noto,Ultra Redacted Squares,,,,,
+B_noto,Ultra Redacted Emoji,,,,,
+B_noto,Ultra White Redacted,,,,,
+B_noto,Ultra Selective Redact,,,,,
+B_noto,Ultra Alternate Redact,,,,,
+B_noto,Ultra Typewriter Document,U+FFFD,1.0,U+1D670,1.0,True
+B_noto,Ultra Fullwidth,U+FF21,1.0,U+FF21,1.0,True
+B_noto,Ultra Faux Cyrillic,U+0410,1.0,U+0410,1.0,True
+B_noto,Ultra Faux Greek,U+0391,1.0,U+0391,1.0,True
+B_noto,Ultra Katakana,U+30A2,1.0,U+30A2,1.0,True
+B_noto,Ultra Runic,U+16A8,1.0,U+16A8,1.0,True
+B_noto,Ultra Old Italic,U+FFFD,1.0,U+10300,1.0,True
+B_noto,Ultra Cherokee,U+13AA,1.0,U+13AA,1.0,True
+B_noto,Ultra Canadian Syllabics,U+15C5,1.0,U+15C5,1.0,True
+B_noto,Ultra Ethiopic,U+1200,1.0,U+1200,1.0,True
+B_noto,Ultra Tibetan,U+0F40,1.0,U+0F40,1.0,True
+B_noto,Ultra Bopomofo,U+3105,1.0,U+3105,1.0,True
+B_noto,Ultra Yi,U+A000,1.0,U+A000,1.0,True
+B_noto,Ultra Emoji Block,U+FFFD,1.0,U+1F170,1.0,True
+B_noto,Ultra Squared,U+FFFD,1.0,U+1F130,1.0,True
+B_noto,Ultra Regional Indicator,U+1F1E6,1.0,U+1F1E6,1.0,True
+B_noto,Ultra Keycap Numbers,U+0041,1.0,U+0041,1.0,
+B_noto,Ultra Currency,U+20B3,1.0,U+20B3,1.0,True
+B_noto,Ultra Gal Moji,,,,,
+B_noto,Ultra Cuping,,,,,
+B_noto,UPPERCASE,,,,,
+B_noto,lowercase,,,,,
+B_noto,Capitalized Case,,,,,
+B_noto,Title Case,,,,,
+B_noto,Sentence case,,,,,
+B_noto,aLtErNaTiNg CaSe,,,,,
+B_noto,tOGGLE cASE,,,,,
