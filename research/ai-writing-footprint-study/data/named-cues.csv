@@ -1,0 +1,52 @@
+unit,pattern_id,pattern,accusations_naming_it,of_accusations,share_pct,ci95_lo,ci95_hi
+comment,OTHER,Other free-text reason,25,287,8.7,6.0,12.5
+comment,ARP-27,Off-topic or non-responsive reply,21,287,7.3,4.8,10.9
+comment,ARP-18,Unspecified 'tone' / 'voice',20,287,7.0,4.6,10.5
+comment,ARP-16,Low information density / vague claims,11,287,3.8,2.2,6.7
+comment,ARP-17,Stock vocabulary (e.g. 'delve'),6,287,2.1,1.0,4.5
+comment,ARP-01,Em dash use,6,287,2.1,1.0,4.5
+comment,ARP-29,Specific quoted stock phrase or opener,6,287,2.1,1.0,4.5
+comment,ARP-07,Bold / headings in casual text,5,287,1.7,0.7,4.0
+comment,ARP-28,Marketing / advertisement / SEO / self-help tone,2,287,0.7,0.2,2.5
+comment,ARP-08,Generic affirmation / enthusiasm opener,2,287,0.7,0.2,2.5
+comment,ARP-04,Repeated sentence openings,1,287,0.3,0.1,1.9
+comment,ARP-06,Bullets / numbered lists,1,287,0.3,0.1,1.9
+comment,ARP-12,Generic metaphor / hyperbole / stock phrase,1,287,0.3,0.1,1.9
+comment,ARP-02,Contrast frame ('not X but Y'),1,287,0.3,0.1,1.9
+comment,ARP-19,Length / verbosity,1,287,0.3,0.1,1.9
+comment,ARP-15,Closing engagement question,1,287,0.3,0.1,1.9
+comment,ARP-30,Repetition / duplicated or templated text,1,287,0.3,0.1,1.9
+comment,ANY,Named any reason,99,287,34.5,29.2,40.2
+article,ARP-16,Low information density / vague claims,57,426,13.4,10.5,16.9
+article,OTHER,Other free-text reason,46,426,10.8,8.2,14.1
+article,ARP-18,Unspecified 'tone' / 'voice',41,426,9.6,7.2,12.8
+article,ARP-27,Off-topic or non-responsive reply,21,426,4.9,3.2,7.4
+article,ARP-19,Length / verbosity,15,426,3.5,2.1,5.7
+article,ARP-28,Marketing / advertisement / SEO / self-help tone,13,426,3.1,1.8,5.2
+article,ARP-29,Specific quoted stock phrase or opener,12,426,2.8,1.6,4.9
+article,ARP-07,Bold / headings in casual text,12,426,2.8,1.6,4.9
+article,ARP-17,Stock vocabulary (e.g. 'delve'),12,426,2.8,1.6,4.9
+article,ARP-01,Em dash use,12,426,2.8,1.6,4.9
+article,ARP-02,Contrast frame ('not X but Y'),10,426,2.3,1.3,4.3
+article,ARP-06,Bullets / numbered lists,9,426,2.1,1.1,4.0
+article,ARP-30,Repetition / duplicated or templated text,8,426,1.9,1.0,3.7
+article,ARP-12,Generic metaphor / hyperbole / stock phrase,6,426,1.4,0.6,3.0
+article,ARP-14,Repetitive short fragments (staccato),5,426,1.2,0.5,2.7
+article,ARP-20,Emoji,3,426,0.7,0.2,2.0
+article,ARP-03,Rhetorical question + short fragment answer,1,426,0.2,0.0,1.3
+article,ARP-10,Uniform sentence rhythm,1,426,0.2,0.0,1.3
+article,ARP-13,Balanced paragraphs,1,426,0.2,0.0,1.3
+article,ARP-11,Polish / register mismatch for the context,1,426,0.2,0.0,1.3
+article,ARP-05,Three-part construction,1,426,0.2,0.0,1.3
+article,ANY,Named any reason,213,426,50.0,45.3,54.7
+other_platforms,ARP-18,Unspecified 'tone' / 'voice',7,74,9.5,4.7,18.3
+other_platforms,ARP-16,Low information density / vague claims,6,74,8.1,3.8,16.6
+other_platforms,ARP-19,Length / verbosity,4,74,5.4,2.1,13.1
+other_platforms,OTHER,Other free-text reason,4,74,5.4,2.1,13.1
+other_platforms,ARP-01,Em dash use,1,74,1.4,0.2,7.3
+other_platforms,ARP-07,Bold / headings in casual text,1,74,1.4,0.2,7.3
+other_platforms,ARP-17,Stock vocabulary (e.g. 'delve'),1,74,1.4,0.2,7.3
+other_platforms,ARP-30,Repetition / duplicated or templated text,1,74,1.4,0.2,7.3
+other_platforms,ARP-28,Marketing / advertisement / SEO / self-help tone,1,74,1.4,0.2,7.3
+other_platforms,ARP-29,Specific quoted stock phrase or opener,1,74,1.4,0.2,7.3
+other_platforms,ANY,Named any reason,24,74,32.4,22.9,43.7

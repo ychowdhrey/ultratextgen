@@ -119,7 +119,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "What makes writing sound AI generated?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Readers most often name stock vocabulary such as \"delve\", stock lead-ins such as \"it's important to note\", contrasts like \"not just X but Y\", and heavy use of dashes, bullets and bold. This checker also reads sentence rhythm, repeated openings and how many concrete details a text has, which are style judgements rather than signs readers report. People write all of these patterns and a model can avoid them, so none of them shows who wrote a text."
+        "text": "Most people who accuse a text of being AI-written name no reason at all. When they do, the commonest reasons are that the text says very little, a feeling about its tone, or that it is off-topic. Fewer than 1 in 6 accusers named a feature of the wording or formatting, and the em dash was named by about 1 in 40, in a study of 787 public accusations. This checker reads wording patterns, sentence rhythm, repeated openings and how many concrete details a text has. People write all of these patterns and a model can avoid them, so none of them shows who wrote a text."
       }
     },
     {
@@ -325,7 +325,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <h2>Eight kinds of pattern, each with its own evidence</h2>
     <p>The checker reads wording in eight categories: punctuation, stock phrases, sentence rhythm, paragraph structure, rhetorical constructions, transition openers, vocabulary and specificity. Every result says what was measured, what was seen, why a reader might notice it, how to improve it and how certain the rule is.</p>
     <p>The categories do not add up to a score. A category level is the highest level reached by its own rules, so two measures that move together are never counted twice. Short texts get individual observations only: exact stock phrases are reported at any length, but density and rhythm readings need about 150 words.</p>
-    <p>Each pattern carries one of three evidence labels, and they are different claims. A measured shift means a published study found the word or phrase became more frequent in text after 2022. A reader report means readers and editors often name it. A house style judgement means it is plain editorial advice. None of them is evidence that the pattern predicts who wrote a text, and the checker never says so.</p>
+    <p>Each pattern carries one of three evidence labels, and they are different claims. A measured shift means a published study found the word or phrase became more frequent in some text after 2022, such as biomedical abstracts. A reader report means some readers name it; nothing shows it predicts who wrote a text. A house style judgement means it is plain editorial advice. None of them is evidence that the pattern predicts who wrote a text, and the checker never says so.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -334,8 +334,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <span class="article-section-label">Limits</span>
     <h2>What it cannot see, and what it does about that</h2>
     <p>A regular expression cannot read intent. The checker does not judge whether your claims are accurate, whether the piece has a real point of view, whether its hedging is balanced or whether its argument flows. It also does not use perplexity or burstiness, the signals detectors rely on, because they need a language model and they misjudge non-native writers.</p>
-    <p>The thresholds are provisional. They were tuned on ten public-domain books so that ordinary human prose is not flagged by default, and they have not been validated on a large modern sample. Dash-heavy human writing, such as Victorian prose, still trips the dash rule, because a count cannot know who wrote the text.</p>
-    <p>Two features exist because of those limits. Every flag has a Useful and Not useful button, and the answer is recorded with the pattern name only, so wrong flags can be measured and the thresholds corrected. The Kind of writing setting raises the thresholds for formal and technical prose, where linking words and stock vocabulary are normal.</p>
+    <p>The thresholds are provisional. They were tuned on ten books published before 1910 (one of them a 1908 translation) and a small set of texts we wrote, and they still flag about 21% of those books (63 of 300 chunks). They have not been validated on modern writing, on writers using English as an additional language, or against text of confirmed AI authorship. Dash-heavy human writing, such as Victorian prose, still trips the dash rule, because a count cannot know who wrote the text.</p>
+    <p>Two features exist because of those limits. Most flags have a Useful and Not useful button, and the answer is recorded with the pattern name only, so wrong flags can be measured. We have not yet analysed any answers, so no threshold has been changed because of them. The Kind of writing setting raises the thresholds for formal and technical prose, where linking words and stock vocabulary are normal.</p>
+    <p>Cleaning these patterns does not prevent an accusation. In our <a href="/research/ai-writing-footprint-study/">study of public accusations</a>, 27% of challenged comments carried none of the 21 patterns measured, and the overall flag fired on 64% of ordinary long articles that nobody had challenged.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -343,7 +344,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <section class="editorial-section" id="make-it-natural">
     <span class="article-section-label">Rewriting</span>
     <h2>How the suggestions stay safe</h2>
-    <p>Most flags get an explanation and no replacement, because fixing them depends on what you meant. A replacement is offered only where it rewrites the matched words and nothing around them: removing a lead-in such as "it's important to note that", dropping a linking word at the start of a sentence, or swapping "delve into" for "look at". Numbers, names, links, quotes and citations are never touched.</p>
+    <p>Most flags get an explanation and no replacement, because fixing them depends on what you meant. Dashes get an explanation and no replacement: in blind comparisons of dash edits on modern text, readers preferred the original far more often than the edit. A replacement is offered only where it rewrites the matched words and nothing around them: removing a lead-in such as "it's important to note that", dropping a linking word at the start of a sentence, or swapping "delve into" for "look at". Numbers, names, links, quotes and citations are never touched.</p>
     <p>Every change is optional and reversible. The original text is kept, the improved text is built from your accepted choices, and Undo or Reset to Original brings back the exact original. The checker never invents an example, a number or a personal story to make the text sound human. Add those yourself, where you have them.</p>
   </section>
 
@@ -361,7 +362,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <h2>AI writing patterns, answered</h2>
     <details class="faq-item">
       <summary class="faq-question">What makes writing sound AI generated?</summary>
-      <p class="faq-answer">Readers most often name stock vocabulary such as "delve", stock lead-ins such as "it's important to note", contrasts like "not just X but Y", and heavy use of dashes, bullets and bold. This checker also reads sentence rhythm, repeated openings and how many concrete details a text has, which are style judgements rather than signs readers report. People write all of these patterns and a model can avoid them, so none of them shows who wrote a text.</p>
+      <p class="faq-answer">Most people who accuse a text of being AI-written name no reason at all. When they do, the commonest reasons are that the text says very little, a feeling about its tone, or that it is off-topic. Fewer than 1 in 6 accusers named a feature of the wording or formatting, and the em dash was named by about 1 in 40, in a study of 787 public accusations. This checker reads wording patterns, sentence rhythm, repeated openings and how many concrete details a text has. People write all of these patterns and a model can avoid them, so none of them shows who wrote a text.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">Are em dashes a sign of AI writing?</summary>

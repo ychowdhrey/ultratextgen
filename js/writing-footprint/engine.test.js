@@ -235,10 +235,36 @@ corpus.forEach(function (s) {
     E.analyze("In today's rapidly evolving landscape we sell chairs.", {}).findings[0].options.length, 0);
   const emd = "First point " + EM + " then second " + EM + " then third " + EM + " then fourth " + EM + " then fifth " + EM + " done. ";
   const d = E.analyze((emd + "Plain sentence number one is here to pad the length of this paragraph a little. ").repeat(9), {});
-  ok("12 dash replacement offers comma, colon and full stop", d.findings.some(function (f) { return f.patternId === "PUN-EMDASH" && f.options.length === 3; }));
-  const dashFinding = d.findings.filter(function (f) { return f.patternId === "PUN-EMDASH"; })[0];
-  const fs2 = dashFinding.options.filter(function (o) { return o.label === "Full stop"; })[0];
-  ok("12 the full-stop option capitalises the next word", /^\. [A-Z]$/.test(fs2.replacement), JSON.stringify(fs2));
+  const dashFindings = d.findings.filter(function (f) { return f.patternId === "PUN-EMDASH"; });
+  ok("12 a dash-heavy text raises dash findings", dashFindings.length >= 5, String(dashFindings.length));
+  // Blind comparisons of modern passages found that replacing every flagged dash read worse far more often than better, so none is offered.
+  ok("12 no dash finding offers a replacement", dashFindings.every(function (f) { return f.options.length === 0 && f.safety === "explanation_only"; }));
+  // A dash after another mark made two marks in a row in 30% of the dashes in pre-1910 books; with no replacement offered it cannot.
+  const victorian = ("I had heard of Miss Havisham up town,\u2014everybody for miles round had heard of her,\u2014as a rich lady, and so the story went\u2014 or so I thought\u2014 for years. " +
+    "The plain sentence here only pads the paragraph out to a sensible length for the checker. ").repeat(8);
+  const vf = E.analyze(victorian, {}).findings.filter(function (f) { return f.patternId === "PUN-EMDASH"; });
+  ok("12 a dash after a comma is found, and no option can double the mark", vf.length >= 4 && vf.every(function (f) { return f.options.length === 0; }), String(vf.length));
+  // Command-line flags are not dashes.
+  const cli = ("To see history run git log --oneline --graph --all and then npm test --watch --coverage in the same folder. " +
+    "The plain sentence here only pads the paragraph out to a sensible length for the checker. ").repeat(8);
+  const ca = E.analyze(cli, { genre: "technical" });
+  const cliRule = ca.rules.filter(function (r) { return r.id === "RULE-EMDASH"; })[0];
+  t("12 command-line flags do not count as dashes", cliRule.count, 0);
+  ok("12 command-line flags raise no dash finding", !ca.findings.some(function (f) { return f.patternId === "PUN-EMDASH"; }));
+  const typed = ("A typed double hyphen -- used as a dash -- still counts, and so does word--word, " +
+    "which is fine. The plain sentence here only pads the paragraph out to a sensible length for the checker. ").repeat(6);
+  t("12 a typed double hyphen used as a dash still counts", E.analyze(typed, {}).rules.filter(function (r) { return r.id === "RULE-EMDASH"; })[0].count, 18);
+  // Lead-in removals must leave a sentence.
+  const lead1 = E.analyze("It is important to remember your password.", {}).findings.filter(function (f) { return f.patternId === "PHR-NOTE-THAT"; })[0];
+  ok("12 'It is important to remember your password' is found but not removable", lead1 && lead1.options.length === 0, JSON.stringify(lead1 && lead1.options));
+  const lead2 = E.analyze("Before you start, it is important to mention it to your doctor.", {}).findings.filter(function (f) { return f.patternId === "PHR-NOTE-THAT"; })[0];
+  ok("12 'it is important to mention it to your doctor' is not removable", !lead2 || lead2.options.length === 0, JSON.stringify(lead2 && lead2.options));
+  const lead3 = E.analyze("It is important to note that the file is large.", {}).findings.filter(function (f) { return f.patternId === "PHR-NOTE-THAT"; })[0];
+  ok("12 'It is important to note that' is still removable", lead3 && lead3.options.length === 1);
+  const trn = "Furthermore, the vote is Tuesday. Moreover, the room is small. In addition to the cost, we pay tax. The plan is simple and everyone understood it. The team met twice before the deadline. We wrote it all down for the record. Nobody objected to any part of it. The meeting ended early that afternoon. People went home happy with the result.";
+  const ta = E.analyze(trn, {}).findings.filter(function (f) { return f.patternId === "TRN-OPENER"; });
+  ok("12 'In addition to the cost' is flagged but not removable", ta.some(function (f) { return /in addition/i.test(trn.slice(f.start, f.end)) && f.options.length === 0; }), JSON.stringify(ta.map(function (f) { return [trn.slice(f.start, f.end), f.options.length]; })));
+  ok("12 'Furthermore,' is still removable", ta.some(function (f) { return /furthermore/i.test(trn.slice(f.start, f.end)) && f.options.length > 0; }));
   ok("12 genre 'formal' is at least as tolerant as 'general'",
     E.analyze(corpus[5].text, { genre: "formal" }).findings.length <= E.analyze(corpus[5].text, { genre: "general" }).findings.length);
 })();

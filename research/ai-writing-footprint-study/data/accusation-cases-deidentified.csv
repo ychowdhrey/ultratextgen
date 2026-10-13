@@ -1,0 +1,788 @@
+case_ref,platform,unit,year,evidence_type,target_words,accuser_named_cue_patterns,accusation_strength,accused_text_status,other_commenters_agreeing,other_commenters_disagreeing,target_author_response,authorship_independently_verified,sampling_method,n_matched_controls_analysed
+C0001,stackexchange,other,2022,direct accusation of a specific text,52,ARP-16,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0002,Hacker News,article,2023,direct accusation of a specific text,571,,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0003,Hacker News,article,2023,direct accusation of a specific text,1015,,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0004,Hacker News,comment,2023,direct accusation of a specific text,216,ARP-18,question,retrieved as posted,0,0,unclear,no,"phrase-search discovery, model-assisted labels",1
+C0005,Hacker News,comment,2023,direct accusation of a specific text,564,,assertion,retrieved as posted,0,1,none,no,"phrase-search discovery, model-assisted labels",2
+C0006,Hacker News,comment,2023,direct accusation of a specific text,80,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0007,Hacker News,comment,2023,direct accusation of a specific text,198,,question,retrieved as posted,0,0,admits_ai,no,"phrase-search discovery, model-assisted labels",0
+C0008,Hacker News,article,2023,direct accusation of a specific text,1475,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0009,Hacker News,comment,2023,direct accusation of a specific text,113,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0010,Hacker News,comment,2023,direct accusation of a specific text,210,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0011,Hacker News,comment,2023,direct accusation of a specific text,241,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0012,Hacker News,comment,2023,direct accusation of a specific text,64,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0013,Hacker News,article,2023,direct accusation of a specific text,1183,,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0014,Hacker News,comment,2023,direct accusation of a specific text,564,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0015,Hacker News,comment,2023,direct accusation of a specific text,323,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0016,Hacker News,comment,2023,direct accusation of a specific text,53,ARP-18,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0017,Hacker News,article,2023,direct accusation of a specific text,4762,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0018,Hacker News,comment,2023,direct accusation of a specific text,46,,hedged_assertion,retrieved as posted,1,4,denies_ai,no,"phrase-search discovery, model-assisted labels",2
+C0019,Hacker News,article,2023,direct accusation of a specific text,7461,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0020,Hacker News,article,2023,direct accusation of a specific text,3278,ARP-19;ARP-30,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0021,Hacker News,comment,2023,direct accusation of a specific text,189,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0022,Hacker News,article,2023,direct accusation of a specific text,237,ARP-16;ARP-18,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0023,Hacker News,article,2023,direct accusation of a specific text,589,ARP-27,question,current version of linked article,0,2,none,no,"phrase-search discovery, model-assisted labels",1
+C0024,Hacker News,comment,2023,direct accusation of a specific text,110,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0025,Hacker News,comment,2023,direct accusation of a specific text,197,,question,retrieved as posted,1,2,none,no,"phrase-search discovery, model-assisted labels",2
+C0026,Hacker News,comment,2023,direct accusation of a specific text,345,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0027,Hacker News,comment,2023,direct accusation of a specific text,38,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0028,lemmy,other,2023,direct accusation of a specific text,378,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0029,Hacker News,article,2023,direct accusation of a specific text,2366,,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0030,Hacker News,comment,2023,direct accusation of a specific text,70,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0031,lemmy,other,2023,direct accusation of a specific text,418,,assertion,retrieved as posted,2,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0032,lemmy,other,2023,direct accusation of a specific text,245,,hedged_assertion,retrieved as posted,2,0,admits_ai,no,"phrase-search discovery, model-assisted labels",0
+C0033,lemmy,other,2023,direct accusation of a specific text,269,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0034,Hacker News,article,2023,direct accusation of a specific text,733,,assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0035,Hacker News,comment,2023,direct accusation of a specific text,44,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0036,Hacker News,comment,2023,direct accusation of a specific text,77,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0037,Hacker News,article,2023,direct accusation of a specific text,2600,OTHER,hedged_assertion,current version of linked article,1,0,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",1
+C0038,Hacker News,article,2023,direct accusation of a specific text,367,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0039,Hacker News,article,2023,direct accusation of a specific text,785,ARP-29,question,current version of linked article,2,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0040,Hacker News,comment,2023,direct accusation of a specific text,163,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0041,Hacker News,article,2023,direct accusation of a specific text,181,ARP-16,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0042,Hacker News,comment,2023,direct accusation of a specific text,136,,question,retrieved as posted,1,0,admits_ai,no,"phrase-search discovery, model-assisted labels",3
+C0043,lemmy,other,2023,direct accusation of a specific text,130,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0044,discourse,other,2023,direct accusation of a specific text,157,ARP-16,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0045,Hacker News,comment,2023,direct accusation of a specific text,121,,hedged_assertion,retrieved as posted,0,2,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0046,lemmy,other,2023,direct accusation of a specific text,112,ARP-16;OTHER,hedged_assertion,retrieved as posted,0,1,none,no,"phrase-search discovery, model-assisted labels",0
+C0047,discourse,other,2023,direct accusation of a specific text,371,ARP-16,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0048,lemmy,other,2023,direct accusation of a specific text,167,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0049,Hacker News,comment,2023,direct accusation of a specific text,138,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0050,Hacker News,comment,2023,direct accusation of a specific text,133,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0051,Hacker News,comment,2023,direct accusation of a specific text,91,ARP-04,hedged_assertion,retrieved as posted,0,0,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0052,Hacker News,comment,2023,direct accusation of a specific text,309,,question,retrieved as posted,2,0,admits_ai,no,"phrase-search discovery, model-assisted labels",3
+C0053,Hacker News,article,2023,direct accusation of a specific text,345,,question,post submitted to HN directly: the page the accuser read was not analysed,0,0,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",0
+C0054,Hacker News,comment,2023,direct accusation of a specific text,137,ARP-27,question,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0055,Hacker News,article,2023,direct accusation of a specific text,585,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0056,Hacker News,article,2023,direct accusation of a specific text,1149,ARP-06;ARP-27,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0057,Hacker News,comment,2023,direct accusation of a specific text,2,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0058,lemmy,other,2023,direct accusation of a specific text,174,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0059,Hacker News,comment,2023,direct accusation of a specific text,84,ARP-27,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0060,lemmy,other,2023,direct accusation of a specific text,147,,hedged_assertion,retrieved as posted,3,0,unclear,no,"phrase-search discovery, model-assisted labels",0
+C0061,Hacker News,article,2023,direct accusation of a specific text,608,,question,post submitted to HN directly: the page the accuser read was not analysed,0,1,none,no,"phrase-search discovery, model-assisted labels",0
+C0062,Hacker News,comment,2023,direct accusation of a specific text,97,ARP-18,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0063,Hacker News,comment,2023,direct accusation of a specific text,184,ARP-18,hedged_assertion,retrieved as posted,1,0,unclear,no,"phrase-search discovery, model-assisted labels",0
+C0064,Hacker News,article,2023,direct accusation of a specific text,3,,question,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0065,discourse,other,2023,direct accusation of a specific text,335,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0066,Hacker News,comment,2023,direct accusation of a specific text,76,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0067,Hacker News,article,2023,direct accusation of a specific text,4605,ARP-16;ARP-19;ARP-27,question,current version of linked article,0,4,none,no,"phrase-search discovery, model-assisted labels",1
+C0068,Hacker News,article,2023,direct accusation of a specific text,884,ARP-16;ARP-18,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0069,Hacker News,comment,2024,direct accusation of a specific text,148,ARP-07,question,retrieved as posted,0,2,denies_ai,no,"phrase-search discovery, model-assisted labels",1
+C0070,discourse,other,2024,direct accusation of a specific text,159,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0071,Hacker News,article,2024,direct accusation of a specific text,510,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0072,Hacker News,article,2024,direct accusation of a specific text,318,OTHER,question,current version of linked article,0,2,none,no,"phrase-search discovery, model-assisted labels",1
+C0073,Hacker News,article,2024,direct accusation of a specific text,2258,,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0074,Hacker News,article,2024,direct accusation of a specific text,2269,ARP-19,question,current version of linked article,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",2
+C0075,lemmy,other,2024,direct accusation of a specific text,427,ARP-17;OTHER,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0076,Hacker News,comment,2024,direct accusation of a specific text,20,OTHER,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0077,Hacker News,article,2024,direct accusation of a specific text,675,ARP-16,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,1,2,none,no,"phrase-search discovery, model-assisted labels",0
+C0078,Hacker News,article,2024,direct accusation of a specific text,289,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0079,discourse,other,2024,direct accusation of a specific text,68,ARP-18,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0080,lemmy,other,2024,direct accusation of a specific text,295,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0081,Hacker News,comment,2024,direct accusation of a specific text,164,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0082,lemmy,other,2024,direct accusation of a specific text,334,,question,retrieved as posted,1,1,denies_ai,no,"phrase-search discovery, model-assisted labels",0
+C0083,Hacker News,article,2024,direct accusation of a specific text,2846,ARP-28,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0084,Hacker News,comment,2024,direct accusation of a specific text,160,OTHER,question,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0085,Hacker News,comment,2024,direct accusation of a specific text,306,ARP-27,question,retrieved as posted,0,0,denies_ai,no,"phrase-search discovery, model-assisted labels",0
+C0086,Hacker News,article,2024,direct accusation of a specific text,1488,ARP-18,hedged_assertion,current version of linked article,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",2
+C0087,Hacker News,comment,2024,direct accusation of a specific text,367,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0088,lemmy,other,2024,direct accusation of a specific text,87,ARP-18,hedged_assertion,retrieved as posted,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0089,Hacker News,comment,2024,direct accusation of a specific text,66,ARP-27,hedged_assertion,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0090,Hacker News,article,2024,direct accusation of a specific text,1659,OTHER,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0091,lemmy,other,2024,direct accusation of a specific text,39,,hedged_assertion,retrieved as posted,2,1,unclear,no,"phrase-search discovery, model-assisted labels",0
+C0092,Hacker News,article,2024,direct accusation of a specific text,893,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0093,Hacker News,comment,2024,direct accusation of a specific text,499,ARP-19,question,retrieved as posted,0,1,none,no,"phrase-search discovery, model-assisted labels",0
+C0094,lemmy,other,2024,direct accusation of a specific text,35,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0095,Hacker News,comment,2024,direct accusation of a specific text,204,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0096,Hacker News,article,2024,direct accusation of a specific text,2285,ARP-16;ARP-19,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0097,Hacker News,article,2024,direct accusation of a specific text,84,,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0098,lemmy,other,2024,direct accusation of a specific text,75,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0099,Hacker News,article,2024,direct accusation of a specific text,2556,ARP-28,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0100,Hacker News,comment,2024,direct accusation of a specific text,26,ARP-17,hedged_assertion,retrieved as posted,0,1,none,no,"phrase-search discovery, model-assisted labels",2
+C0101,Hacker News,comment,2024,direct accusation of a specific text,6,,hedged_assertion,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0102,Hacker News,article,2024,direct accusation of a specific text,1507,OTHER,assertion,current version of linked article,1,0,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",2
+C0103,Hacker News,article,2024,direct accusation of a specific text,3356,ARP-29,question,current version of linked article,0,0,unclear,no,"phrase-search discovery, model-assisted labels",0
+C0104,Hacker News,comment,2024,direct accusation of a specific text,2,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0105,Hacker News,article,2024,direct accusation of a specific text,2770,,hedged_assertion,current version of linked article,2,0,admits_ai,no,"phrase-search discovery, model-assisted labels",0
+C0106,Hacker News,comment,2024,direct accusation of a specific text,283,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0107,Hacker News,article,2024,direct accusation of a specific text,1622,ARP-16;OTHER,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0108,Hacker News,article,2024,direct accusation of a specific text,1381,,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0109,lemmy,other,2024,direct accusation of a specific text,265,ARP-18,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0110,Hacker News,article,2024,direct accusation of a specific text,1530,,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0111,Hacker News,article,2024,direct accusation of a specific text,2327,,hedged_assertion,current version of linked article,0,1,none,no,"phrase-search discovery, model-assisted labels",0
+C0112,Hacker News,article,2024,direct accusation of a specific text,801,ARP-30,question,current version of linked article,0,1,none,no,"phrase-search discovery, model-assisted labels",2
+C0113,lemmy,other,2024,direct accusation of a specific text,30,,hedged_assertion,retrieved as posted,0,1,none,no,"phrase-search discovery, model-assisted labels",0
+C0114,Hacker News,article,2024,direct accusation of a specific text,1408,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0115,Hacker News,comment,2024,direct accusation of a specific text,91,,question,retrieved as posted,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0116,Hacker News,comment,2024,direct accusation of a specific text,317,,question,retrieved as posted,0,2,denies_ai,no,"phrase-search discovery, model-assisted labels",1
+C0117,Hacker News,article,2024,direct accusation of a specific text,3366,ARP-19,hedged_assertion,current version of linked article,0,1,none,no,"phrase-search discovery, model-assisted labels",1
+C0118,Hacker News,comment,2024,direct accusation of a specific text,292,ARP-07,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0119,Hacker News,comment,2024,direct accusation of a specific text,72,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0120,Hacker News,comment,2024,direct accusation of a specific text,7,ARP-18,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0121,discourse,other,2024,direct accusation of a specific text,95,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0122,lemmy,other,2024,direct accusation of a specific text,263,OTHER,hedged_assertion,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",0
+C0123,Hacker News,comment,2024,direct accusation of a specific text,159,OTHER,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0124,lemmy,other,2024,direct accusation of a specific text,381,,hedged_assertion,retrieved as posted,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0125,lemmy,other,2024,direct accusation of a specific text,69,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0126,Hacker News,article,2024,direct accusation of a specific text,678,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0127,Hacker News,article,2024,direct accusation of a specific text,136,OTHER,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0128,Hacker News,comment,2024,direct accusation of a specific text,51,ARP-18,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0129,Hacker News,comment,2024,direct accusation of a specific text,127,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0130,Hacker News,article,2024,direct accusation of a specific text,1532,ARP-28,hedged_assertion,current version of linked article,0,1,none,no,"phrase-search discovery, model-assisted labels",1
+C0131,lemmy,other,2024,direct accusation of a specific text,221,ARP-19,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0132,Hacker News,comment,2024,direct accusation of a specific text,100,ARP-29,hedged_assertion,retrieved as posted,0,1,unclear,no,"phrase-search discovery, model-assisted labels",3
+C0133,Hacker News,comment,2024,direct accusation of a specific text,33,ARP-27,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0134,Hacker News,comment,2024,direct accusation of a specific text,251,ARP-16,hedged_assertion,retrieved as posted,0,1,unclear,no,"phrase-search discovery, model-assisted labels",1
+C0135,Hacker News,article,2024,direct accusation of a specific text,990,OTHER,question,current version of linked article,0,3,none,no,"phrase-search discovery, model-assisted labels",1
+C0136,Hacker News,comment,2024,direct accusation of a specific text,74,ARP-29,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0137,lemmy,other,2024,direct accusation of a specific text,265,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0138,lemmy,other,2024,direct accusation of a specific text,51,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0139,Hacker News,comment,2024,direct accusation of a specific text,308,ARP-16;OTHER,hedged_assertion,retrieved as posted,0,1,unclear,no,"phrase-search discovery, model-assisted labels",3
+C0140,lemmy,other,2024,direct accusation of a specific text,396,ARP-19,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0141,Hacker News,comment,2024,direct accusation of a specific text,228,OTHER,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0142,Hacker News,article,2024,direct accusation of a specific text,1142,OTHER,assertion,current version of linked article,1,2,none,no,"phrase-search discovery, model-assisted labels",2
+C0143,Hacker News,comment,2024,direct accusation of a specific text,97,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0144,Hacker News,comment,2024,direct accusation of a specific text,85,ARP-30,assertion,retrieved as posted,2,0,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",3
+C0145,Hacker News,article,2024,direct accusation of a specific text,2406,ARP-06;ARP-16,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0146,Hacker News,comment,2024,direct accusation of a specific text,263,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0147,Hacker News,article,2024,direct accusation of a specific text,1324,,hedged_assertion,current version of linked article,5,1,denies_ai,no,"phrase-search discovery, model-assisted labels",2
+C0148,discourse,other,2024,direct accusation of a specific text,404,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0149,Hacker News,comment,2024,direct accusation of a specific text,46,ARP-28,hedged_assertion,retrieved as posted,1,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0150,lemmy,other,2024,direct accusation of a specific text,41,,hedged_assertion,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",0
+C0151,Hacker News,comment,2024,direct accusation of a specific text,45,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0152,Hacker News,comment,2024,direct accusation of a specific text,60,OTHER,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0153,Hacker News,article,2025,direct accusation of a specific text,752,ARP-06;ARP-07,hedged_assertion,current version of linked article,2,2,none,no,"phrase-search discovery, model-assisted labels",1
+C0154,Hacker News,comment,2025,direct accusation of a specific text,177,ARP-27,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0155,Hacker News,article,2025,direct accusation of a specific text,16,ARP-27,question,post submitted to HN directly: the page the accuser read was not analysed,1,0,admits_ai,no,"phrase-search discovery, model-assisted labels",0
+C0156,lemmy,other,2025,direct accusation of a specific text,208,,question,retrieved as posted,1,0,unclear,no,"phrase-search discovery, model-assisted labels",0
+C0157,Hacker News,article,2025,direct accusation of a specific text,49,ARP-18,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0158,Hacker News,article,2025,direct accusation of a specific text,1382,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0159,discourse,other,2025,direct accusation of a specific text,112,ARP-16,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0160,Hacker News,article,2025,direct accusation of a specific text,876,ARP-16,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0161,Hacker News,comment,2025,direct accusation of a specific text,102,,hedged_assertion,retrieved as posted,2,0,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",3
+C0162,Hacker News,article,2025,direct accusation of a specific text,944,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0163,Hacker News,comment,2025,direct accusation of a specific text,94,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0164,Hacker News,comment,2025,direct accusation of a specific text,170,ARP-18,hedged_assertion,retrieved as posted,0,0,unclear,no,"phrase-search discovery, model-assisted labels",3
+C0165,Hacker News,comment,2025,direct accusation of a specific text,125,,hedged_assertion,retrieved as posted,0,1,unclear,no,"phrase-search discovery, model-assisted labels",2
+C0166,Hacker News,article,2025,direct accusation of a specific text,86,,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0167,Hacker News,article,2025,direct accusation of a specific text,206,OTHER,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0168,Hacker News,article,2025,direct accusation of a specific text,808,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0169,Hacker News,comment,2025,direct accusation of a specific text,223,,assertion,retrieved as posted,1,0,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",3
+C0170,Hacker News,comment,2025,direct accusation of a specific text,163,ARP-18,hedged_assertion,retrieved as posted,1,1,none,no,"phrase-search discovery, model-assisted labels",1
+C0171,Hacker News,article,2025,direct accusation of a specific text,775,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0172,Hacker News,article,2025,direct accusation of a specific text,1033,OTHER,hedged_assertion,current version of linked article,0,1,none,no,"phrase-search discovery, model-assisted labels",1
+C0173,lemmy,other,2025,direct accusation of a specific text,806,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0174,Hacker News,comment,2025,direct accusation of a specific text,53,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0175,Hacker News,comment,2025,direct accusation of a specific text,45,ARP-16,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0176,Hacker News,article,2025,direct accusation of a specific text,2008,ARP-16,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0177,Hacker News,article,2025,direct accusation of a specific text,959,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0178,Hacker News,article,2025,direct accusation of a specific text,640,ARP-27,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0179,Hacker News,comment,2025,direct accusation of a specific text,193,,hedged_assertion,retrieved as posted,0,1,none,no,"phrase-search discovery, model-assisted labels",0
+C0180,Hacker News,article,2025,direct accusation of a specific text,1075,,assertion,current version of linked article,2,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0181,Hacker News,comment,2025,direct accusation of a specific text,51,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0182,Hacker News,comment,2025,direct accusation of a specific text,147,ARP-27,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0183,Hacker News,comment,2025,direct accusation of a specific text,97,ARP-16,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0184,Hacker News,comment,2025,direct accusation of a specific text,83,ARP-18,hedged_assertion,retrieved as posted,1,2,none,no,"phrase-search discovery, model-assisted labels",3
+C0185,Hacker News,article,2025,direct accusation of a specific text,652,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0186,Hacker News,article,2025,direct accusation of a specific text,2994,ARP-12;ARP-17,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0187,Hacker News,comment,2025,direct accusation of a specific text,76,,assertion,retrieved as posted,2,2,denies_ai,no,"phrase-search discovery, model-assisted labels",1
+C0188,Hacker News,comment,2025,direct accusation of a specific text,181,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0189,Hacker News,article,2025,direct accusation of a specific text,885,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0190,Hacker News,article,2025,direct accusation of a specific text,456,ARP-30;OTHER,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0191,Hacker News,article,2025,direct accusation of a specific text,200,,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0192,Hacker News,comment,2025,direct accusation of a specific text,1,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0193,Hacker News,article,2025,direct accusation of a specific text,369,ARP-18,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0194,Hacker News,comment,2025,direct accusation of a specific text,36,,question,retrieved as posted,0,0,unclear,no,"phrase-search discovery, model-assisted labels",0
+C0195,Hacker News,article,2025,direct accusation of a specific text,2368,,question,current version of linked article,0,2,none,no,"phrase-search discovery, model-assisted labels",2
+C0196,Hacker News,article,2025,direct accusation of a specific text,7857,ARP-18;ARP-19,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0197,Hacker News,comment,2025,direct accusation of a specific text,214,,hedged_assertion,retrieved as posted,2,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0198,Hacker News,comment,2025,direct accusation of a specific text,188,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0199,Hacker News,article,2025,direct accusation of a specific text,167,ARP-18,question,post submitted to HN directly: the page the accuser read was not analysed,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0200,Hacker News,comment,2025,direct accusation of a specific text,246,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0201,Hacker News,article,2025,direct accusation of a specific text,771,,question,current version of linked article,1,1,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",2
+C0202,Hacker News,article,2025,direct accusation of a specific text,49,ARP-28,assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0203,Hacker News,comment,2025,direct accusation of a specific text,66,,question,retrieved as posted,3,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0204,Hacker News,comment,2025,direct accusation of a specific text,60,ARP-27,question,retrieved as posted,0,1,unclear,no,"phrase-search discovery, model-assisted labels",1
+C0205,Hacker News,comment,2025,direct accusation of a specific text,75,,question,retrieved as posted,0,0,denies_ai,no,"phrase-search discovery, model-assisted labels",1
+C0206,Hacker News,article,2025,direct accusation of a specific text,719,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0207,Hacker News,comment,2025,direct accusation of a specific text,70,,assertion,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0208,Hacker News,comment,2025,direct accusation of a specific text,10,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0209,Hacker News,article,2025,direct accusation of a specific text,1362,ARP-27,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0210,Hacker News,comment,2025,direct accusation of a specific text,41,ARP-07;OTHER,question,retrieved as posted,1,1,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",3
+C0211,Hacker News,article,2025,direct accusation of a specific text,1194,,hedged_assertion,current version of linked article,0,1,none,no,"phrase-search discovery, model-assisted labels",1
+C0212,Hacker News,article,2025,direct accusation of a specific text,737,ARP-17,assertion,current version of linked article,2,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0213,Hacker News,comment,2025,direct accusation of a specific text,178,ARP-18,question,retrieved as posted,0,2,none,no,"phrase-search discovery, model-assisted labels",2
+C0214,Hacker News,comment,2025,direct accusation of a specific text,164,,question,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0215,discourse,other,2025,direct accusation of a specific text,353,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0216,Hacker News,article,2025,direct accusation of a specific text,2851,ARP-16,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0217,discourse,other,2025,direct accusation of a specific text,131,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0218,Hacker News,article,2025,direct accusation of a specific text,829,ARP-02;ARP-07;ARP-14,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0219,Hacker News,comment,2025,direct accusation of a specific text,7,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0220,Hacker News,article,2025,direct accusation of a specific text,532,OTHER,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0221,Hacker News,article,2025,direct accusation of a specific text,1392,OTHER,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0222,Hacker News,comment,2025,direct accusation of a specific text,56,ARP-16,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0223,Hacker News,comment,2025,direct accusation of a specific text,133,OTHER,question,retrieved as posted,0,1,unclear,no,"phrase-search discovery, model-assisted labels",1
+C0224,Hacker News,article,2025,direct accusation of a specific text,1081,,assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0225,lemmy,other,2025,direct accusation of a specific text,715,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0226,Hacker News,comment,2025,direct accusation of a specific text,167,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0227,Hacker News,comment,2025,direct accusation of a specific text,82,,hedged_assertion,retrieved as posted,0,5,none,no,"phrase-search discovery, model-assisted labels",2
+C0228,Hacker News,comment,2025,direct accusation of a specific text,105,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0229,Hacker News,comment,2025,direct accusation of a specific text,98,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0230,Hacker News,article,2025,direct accusation of a specific text,2832,,hedged_assertion,current version of linked article,1,1,none,no,"phrase-search discovery, model-assisted labels",2
+C0231,Hacker News,comment,2025,direct accusation of a specific text,44,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0232,Hacker News,comment,2025,direct accusation of a specific text,92,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0233,Hacker News,article,2025,direct accusation of a specific text,1069,ARP-03,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0234,Hacker News,article,2025,direct accusation of a specific text,118,OTHER,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0235,Hacker News,comment,2025,direct accusation of a specific text,80,,question,retrieved as posted,0,1,unclear,no,"phrase-search discovery, model-assisted labels",3
+C0236,Hacker News,article,2025,direct accusation of a specific text,1266,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0237,Hacker News,article,2025,direct accusation of a specific text,89,,assertion,post submitted to HN directly: the page the accuser read was not analysed,1,0,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",0
+C0238,Hacker News,comment,2025,direct accusation of a specific text,225,ARP-18,question,retrieved as posted,1,2,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0239,Hacker News,article,2025,direct accusation of a specific text,1604,ARP-17,question,current version of linked article,0,2,denies_ai,no,"phrase-search discovery, model-assisted labels",2
+C0240,Hacker News,comment,2025,direct accusation of a specific text,282,,hedged_assertion,retrieved as posted,1,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0241,Hacker News,comment,2025,direct accusation of a specific text,50,,hedged_assertion,retrieved as posted,1,2,unclear,no,"phrase-search discovery, model-assisted labels",3
+C0242,Hacker News,article,2025,direct accusation of a specific text,1659,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0243,Hacker News,article,2025,direct accusation of a specific text,2025,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0244,lemmy,other,2025,direct accusation of a specific text,180,,hedged_assertion,retrieved as posted,0,2,denies_ai,no,"phrase-search discovery, model-assisted labels",0
+C0245,Hacker News,comment,2025,direct accusation of a specific text,116,ARP-18,hedged_assertion,retrieved as posted,1,1,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",2
+C0246,Hacker News,article,2025,direct accusation of a specific text,661,ARP-01,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0247,Hacker News,article,2025,direct accusation of a specific text,1458,ARP-16;ARP-19,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0248,Hacker News,comment,2025,direct accusation of a specific text,44,,question,retrieved as posted,2,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0249,Hacker News,article,2025,direct accusation of a specific text,685,ARP-07;ARP-13;ARP-16;ARP-17,assertion,current version of linked article,2,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0250,Hacker News,comment,2025,direct accusation of a specific text,527,,assertion,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",0
+C0251,Hacker News,comment,2025,direct accusation of a specific text,32,OTHER,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0252,Hacker News,comment,2025,direct accusation of a specific text,64,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0253,Hacker News,comment,2025,direct accusation of a specific text,124,,assertion,retrieved as posted,1,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0254,Hacker News,article,2025,direct accusation of a specific text,953,ARP-06,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0255,Hacker News,comment,2025,direct accusation of a specific text,112,,question,retrieved as posted,1,1,denies_ai,no,"phrase-search discovery, model-assisted labels",0
+C0256,Hacker News,article,2025,direct accusation of a specific text,319,ARP-27,question,current version of linked article,5,1,none,no,"phrase-search discovery, model-assisted labels",1
+C0257,Hacker News,comment,2025,direct accusation of a specific text,71,,assertion,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0258,Hacker News,comment,2025,direct accusation of a specific text,188,ARP-01;ARP-02,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0259,Hacker News,article,2025,direct accusation of a specific text,774,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0260,Hacker News,article,2025,direct accusation of a specific text,984,,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0261,discourse,other,2025,direct accusation of a specific text,882,ARP-28,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0262,Hacker News,article,2025,direct accusation of a specific text,758,OTHER,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0263,Hacker News,article,2025,direct accusation of a specific text,1979,ARP-16,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0264,Hacker News,article,2025,direct accusation of a specific text,2328,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0265,Hacker News,article,2025,direct accusation of a specific text,526,ARP-02;ARP-18,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0266,Hacker News,article,2025,direct accusation of a specific text,216,OTHER,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0267,Hacker News,comment,2025,direct accusation of a specific text,189,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0268,Hacker News,article,2025,direct accusation of a specific text,2235,,hedged_assertion,current version of linked article,3,2,none,no,"phrase-search discovery, model-assisted labels",2
+C0269,Hacker News,article,2025,direct accusation of a specific text,937,ARP-18,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0270,Hacker News,article,2025,direct accusation of a specific text,967,ARP-16;OTHER,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0271,Hacker News,article,2025,direct accusation of a specific text,2411,ARP-27,question,current version of linked article,1,3,unclear,no,"phrase-search discovery, model-assisted labels",1
+C0272,Hacker News,comment,2025,direct accusation of a specific text,95,ARP-27,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0273,Hacker News,article,2025,direct accusation of a specific text,2623,,hedged_assertion,current version of linked article,0,1,none,no,"phrase-search discovery, model-assisted labels",1
+C0274,Hacker News,article,2025,direct accusation of a specific text,1548,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0275,Hacker News,article,2025,direct accusation of a specific text,1524,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0276,lemmy,other,2025,direct accusation of a specific text,322,ARP-18,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0277,Hacker News,article,2025,direct accusation of a specific text,151,,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,unclear,no,"phrase-search discovery, model-assisted labels",0
+C0278,Hacker News,comment,2025,direct accusation of a specific text,305,,assertion,retrieved as posted,1,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0279,Hacker News,article,2025,direct accusation of a specific text,161,ARP-16;ARP-19,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0280,Hacker News,article,2025,direct accusation of a specific text,260,ARP-18,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,1,0,admits_ai,no,"phrase-search discovery, model-assisted labels",0
+C0281,Hacker News,article,2025,direct accusation of a specific text,523,ARP-18,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0282,Hacker News,comment,2025,direct accusation of a specific text,69,OTHER,hedged_assertion,retrieved as posted,0,1,none,no,"phrase-search discovery, model-assisted labels",2
+C0283,Hacker News,article,2025,direct accusation of a specific text,2574,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0284,Hacker News,article,2025,direct accusation of a specific text,11894,ARP-29,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0285,Hacker News,comment,2025,direct accusation of a specific text,57,ARP-27,question,retrieved as posted,0,4,none,no,"phrase-search discovery, model-assisted labels",3
+C0286,Hacker News,article,2025,direct accusation of a specific text,92,ARP-01,question,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0287,Hacker News,article,2025,direct accusation of a specific text,2516,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0288,Hacker News,comment,2025,direct accusation of a specific text,186,ARP-01;OTHER,question,retrieved as posted,1,0,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",0
+C0289,Hacker News,article,2025,direct accusation of a specific text,973,ARP-16,assertion,current version of linked article,0,0,unclear,no,"phrase-search discovery, model-assisted labels",1
+C0290,Hacker News,article,2025,direct accusation of a specific text,948,ARP-16,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0291,Hacker News,article,2025,direct accusation of a specific text,7898,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0292,Hacker News,article,2025,direct accusation of a specific text,220,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0293,Hacker News,article,2025,direct accusation of a specific text,1351,ARP-06;ARP-20;OTHER,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0294,Hacker News,comment,2025,direct accusation of a specific text,125,,hedged_assertion,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",0
+C0295,Hacker News,comment,2025,direct accusation of a specific text,241,ARP-27,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0296,Hacker News,comment,2025,direct accusation of a specific text,86,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0297,Hacker News,article,2025,direct accusation of a specific text,783,ARP-16,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0298,Hacker News,comment,2025,direct accusation of a specific text,101,ARP-17;OTHER,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0299,Hacker News,article,2025,direct accusation of a specific text,876,ARP-27,question,current version of linked article,0,1,none,no,"phrase-search discovery, model-assisted labels",2
+C0300,Hacker News,article,2025,direct accusation of a specific text,2336,ARP-16;ARP-28,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0301,Hacker News,article,2025,direct accusation of a specific text,1832,ARP-28,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0302,Hacker News,article,2025,direct accusation of a specific text,1581,ARP-18,hedged_assertion,current version of linked article,2,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0303,Hacker News,comment,2025,direct accusation of a specific text,200,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0304,Hacker News,article,2025,direct accusation of a specific text,1820,ARP-01;ARP-02;OTHER,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0305,Hacker News,article,2025,direct accusation of a specific text,1301,ARP-29,question,current version of linked article,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",1
+C0306,Hacker News,comment,2025,direct accusation of a specific text,88,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0307,Hacker News,article,2025,direct accusation of a specific text,2297,ARP-02;ARP-12,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0308,Hacker News,comment,2025,direct accusation of a specific text,193,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0309,Hacker News,article,2025,direct accusation of a specific text,80,,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0310,Hacker News,comment,2025,direct accusation of a specific text,73,ARP-16,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0311,Hacker News,article,2025,direct accusation of a specific text,1318,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0312,Hacker News,comment,2025,direct accusation of a specific text,33,,question,retrieved as posted,0,1,none,no,"phrase-search discovery, model-assisted labels",2
+C0313,Hacker News,comment,2025,direct accusation of a specific text,60,,question,retrieved as posted,0,0,unclear,no,"phrase-search discovery, model-assisted labels",3
+C0314,Hacker News,article,2025,direct accusation of a specific text,358,OTHER,question,current version of linked article,1,0,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",0
+C0315,Hacker News,article,2025,direct accusation of a specific text,201,ARP-16,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0316,Hacker News,article,2025,direct accusation of a specific text,1153,ARP-07,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0317,Hacker News,article,2025,direct accusation of a specific text,4015,ARP-16,hedged_assertion,current version of linked article,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",1
+C0318,lemmy,other,2025,direct accusation of a specific text,153,ARP-18,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0319,Hacker News,article,2025,direct accusation of a specific text,1020,,hedged_assertion,current version of linked article,2,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0320,Hacker News,article,2025,direct accusation of a specific text,649,,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0321,Hacker News,article,2025,direct accusation of a specific text,637,ARP-06;ARP-16,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0322,Hacker News,comment,2025,direct accusation of a specific text,691,,question,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",1
+C0323,Hacker News,comment,2025,direct accusation of a specific text,84,ARP-17,question,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",0
+C0324,Hacker News,comment,2025,direct accusation of a specific text,145,,assertion,retrieved as posted,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0325,Hacker News,comment,2025,direct accusation of a specific text,110,,assertion,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",1
+C0326,Hacker News,comment,2025,direct accusation of a specific text,59,ARP-27,question,retrieved as posted,0,1,unclear,no,"phrase-search discovery, model-assisted labels",3
+C0327,Hacker News,comment,2025,direct accusation of a specific text,59,,question,retrieved as posted,0,1,none,no,"phrase-search discovery, model-assisted labels",3
+C0328,Hacker News,comment,2025,direct accusation of a specific text,48,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0329,Hacker News,article,2025,direct accusation of a specific text,620,ARP-01,hedged_assertion,current version of linked article,3,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0330,Hacker News,article,2025,direct accusation of a specific text,1,ARP-01;ARP-02;ARP-07;ARP-20,assertion,post submitted to HN directly: the page the accuser read was not analysed,4,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0331,Hacker News,article,2025,direct accusation of a specific text,1809,ARP-16;ARP-30,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0332,Hacker News,article,2025,direct accusation of a specific text,2503,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0333,Hacker News,article,2025,direct accusation of a specific text,1287,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0334,Hacker News,article,2025,direct accusation of a specific text,3930,OTHER,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0335,Hacker News,comment,2025,direct accusation of a specific text,33,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0336,Hacker News,article,2025,direct accusation of a specific text,1509,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0337,Hacker News,article,2025,direct accusation of a specific text,261,,assertion,current version of linked article,2,1,none,no,"phrase-search discovery, model-assisted labels",1
+C0338,Hacker News,article,2025,direct accusation of a specific text,412,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0339,Hacker News,article,2025,direct accusation of a specific text,2936,OTHER,assertion,current version of linked article,0,4,none,no,"phrase-search discovery, model-assisted labels",2
+C0340,Hacker News,article,2025,direct accusation of a specific text,2751,,hedged_assertion,current version of linked article,1,1,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",2
+C0341,Hacker News,comment,2025,direct accusation of a specific text,104,,question,retrieved as posted,0,1,none,no,"phrase-search discovery, model-assisted labels",3
+C0342,Hacker News,article,2025,direct accusation of a specific text,1749,,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0343,Hacker News,comment,2025,direct accusation of a specific text,323,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0344,Hacker News,article,2025,direct accusation of a specific text,737,ARP-27,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0345,Hacker News,comment,2025,direct accusation of a specific text,21,ARP-27,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0346,Hacker News,article,2025,direct accusation of a specific text,605,ARP-28,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,1,unclear,no,"phrase-search discovery, model-assisted labels",0
+C0347,Hacker News,article,2025,direct accusation of a specific text,2788,,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0348,Hacker News,comment,2025,direct accusation of a specific text,74,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0349,Hacker News,comment,2025,direct accusation of a specific text,1,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0350,Hacker News,comment,2025,direct accusation of a specific text,50,,assertion,retrieved as posted,0,0,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",3
+C0351,Hacker News,article,2025,direct accusation of a specific text,854,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0352,Hacker News,article,2025,direct accusation of a specific text,162,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0353,Hacker News,article,2025,direct accusation of a specific text,897,ARP-16;ARP-18,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0354,Hacker News,article,2025,direct accusation of a specific text,772,ARP-07;ARP-16,hedged_assertion,current version of linked article,2,1,none,no,"phrase-search discovery, model-assisted labels",1
+C0355,Hacker News,article,2025,direct accusation of a specific text,1801,,assertion,current version of linked article,0,1,none,no,"phrase-search discovery, model-assisted labels",2
+C0356,Hacker News,comment,2025,direct accusation of a specific text,103,,assertion,retrieved as posted,0,0,unclear,no,"phrase-search discovery, model-assisted labels",1
+C0357,lemmy,other,2025,direct accusation of a specific text,197,ARP-01;ARP-07,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0358,Hacker News,article,2025,direct accusation of a specific text,605,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0359,Hacker News,article,2025,direct accusation of a specific text,263,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0360,Hacker News,article,2025,direct accusation of a specific text,10,ARP-01;ARP-02,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0361,Hacker News,article,2025,direct accusation of a specific text,9372,ARP-16,assertion,current version of linked article,0,2,none,no,"phrase-search discovery, model-assisted labels",0
+C0362,Hacker News,comment,2025,direct accusation of a specific text,14,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0363,Hacker News,article,2025,direct accusation of a specific text,1559,ARP-17;OTHER,assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0364,Hacker News,article,2025,direct accusation of a specific text,2191,ARP-27;OTHER,question,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0365,Hacker News,comment,2025,direct accusation of a specific text,53,ARP-16,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0366,Hacker News,comment,2025,direct accusation of a specific text,284,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0367,Hacker News,article,2025,direct accusation of a specific text,1683,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0368,Hacker News,comment,2025,direct accusation of a specific text,232,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0369,Hacker News,article,2025,direct accusation of a specific text,1095,,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0370,Hacker News,article,2025,direct accusation of a specific text,1271,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0371,Hacker News,article,2025,direct accusation of a specific text,5216,ARP-28,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0372,Hacker News,article,2025,direct accusation of a specific text,2555,ARP-18,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0373,Hacker News,article,2025,direct accusation of a specific text,513,ARP-18,hedged_assertion,current version of linked article,1,0,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",1
+C0374,Hacker News,comment,2025,direct accusation of a specific text,70,ARP-17,hedged_assertion,retrieved as posted,0,4,none,no,"phrase-search discovery, model-assisted labels",3
+C0375,Hacker News,article,2025,direct accusation of a specific text,1657,ARP-06;ARP-07;OTHER,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0376,Hacker News,article,2025,direct accusation of a specific text,2112,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0377,Hacker News,article,2025,direct accusation of a specific text,1038,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0378,Hacker News,article,2025,direct accusation of a specific text,2859,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0379,Hacker News,comment,2025,direct accusation of a specific text,50,ARP-18,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0380,Hacker News,article,2025,direct accusation of a specific text,597,ARP-28,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0381,Hacker News,comment,2025,direct accusation of a specific text,85,OTHER,assertion,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0382,Hacker News,article,2025,direct accusation of a specific text,774,,question,current version of linked article,0,2,none,no,"phrase-search discovery, model-assisted labels",2
+C0383,Hacker News,comment,2025,direct accusation of a specific text,101,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0384,Hacker News,article,2025,direct accusation of a specific text,1006,ARP-27,assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0385,Hacker News,comment,2025,direct accusation of a specific text,65,,question,retrieved as posted,0,0,unclear,no,"phrase-search discovery, model-assisted labels",2
+C0386,Hacker News,article,2025,direct accusation of a specific text,1262,ARP-06;ARP-18,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0387,Hacker News,article,2025,direct accusation of a specific text,5214,ARP-19,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0388,Hacker News,comment,2025,direct accusation of a specific text,188,,question,retrieved as posted,0,3,none,no,"phrase-search discovery, model-assisted labels",3
+C0389,Hacker News,article,2025,direct accusation of a specific text,1577,ARP-16;ARP-19,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0390,Hacker News,article,2025,direct accusation of a specific text,679,ARP-18,question,current version of linked article,0,1,none,no,"phrase-search discovery, model-assisted labels",0
+C0391,Hacker News,article,2025,direct accusation of a specific text,3252,ARP-16,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0392,Hacker News,comment,2025,direct accusation of a specific text,3,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0393,Hacker News,comment,2026,direct accusation of a specific text,217,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0394,Hacker News,article,2026,direct accusation of a specific text,3289,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0395,Hacker News,comment,2026,direct accusation of a specific text,171,,hedged_assertion,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0396,Hacker News,article,2026,direct accusation of a specific text,615,OTHER,hedged_assertion,current version of linked article,2,2,none,no,"phrase-search discovery, model-assisted labels",2
+C0397,Hacker News,article,2026,direct accusation of a specific text,2269,ARP-16,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0398,Hacker News,comment,2026,direct accusation of a specific text,69,ARP-17,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0399,Hacker News,article,2026,direct accusation of a specific text,996,ARP-30,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0400,Hacker News,article,2026,direct accusation of a specific text,1245,ARP-27,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0401,Hacker News,article,2026,direct accusation of a specific text,839,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0402,Hacker News,article,2026,direct accusation of a specific text,191,,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0403,Hacker News,comment,2026,direct accusation of a specific text,121,ARP-16,hedged_assertion,retrieved as posted,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0404,Hacker News,comment,2026,direct accusation of a specific text,71,OTHER,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0405,Hacker News,article,2026,direct accusation of a specific text,1423,ARP-16;ARP-18,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0406,Hacker News,article,2026,direct accusation of a specific text,67,,assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0407,Hacker News,comment,2026,direct accusation of a specific text,23,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0408,Hacker News,article,2026,direct accusation of a specific text,1128,ARP-01;ARP-17,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0409,Hacker News,comment,2026,direct accusation of a specific text,195,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0410,Hacker News,article,2026,direct accusation of a specific text,340,ARP-16,assertion,post submitted to HN directly: the page the accuser read was not analysed,0,1,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",0
+C0411,discourse,other,2026,direct accusation of a specific text,163,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0412,Hacker News,comment,2026,direct accusation of a specific text,49,ARP-27,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0413,Hacker News,article,2026,direct accusation of a specific text,265,,assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0414,Hacker News,article,2026,direct accusation of a specific text,422,,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0415,Hacker News,article,2026,direct accusation of a specific text,620,OTHER,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0416,Hacker News,comment,2026,direct accusation of a specific text,44,,hedged_assertion,retrieved as posted,0,1,none,no,"phrase-search discovery, model-assisted labels",3
+C0417,Hacker News,article,2026,direct accusation of a specific text,1,,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0418,Hacker News,comment,2026,direct accusation of a specific text,98,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0419,Hacker News,comment,2026,direct accusation of a specific text,163,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0420,Hacker News,article,2026,direct accusation of a specific text,2181,ARP-18,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0421,Hacker News,article,2026,direct accusation of a specific text,873,ARP-18,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0422,Hacker News,article,2026,direct accusation of a specific text,1315,,hedged_assertion,current version of linked article,0,2,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",2
+C0423,Hacker News,comment,2026,direct accusation of a specific text,57,,hedged_assertion,retrieved as posted,0,0,denies_ai,no,"phrase-search discovery, model-assisted labels",0
+C0424,Hacker News,article,2026,direct accusation of a specific text,1389,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0425,Hacker News,comment,2026,direct accusation of a specific text,366,OTHER,assertion,retrieved as posted,1,0,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",2
+C0426,Hacker News,comment,2026,direct accusation of a specific text,280,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0427,Hacker News,comment,2026,direct accusation of a specific text,187,ARP-08,hedged_assertion,retrieved as posted,0,0,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",3
+C0428,Hacker News,comment,2026,direct accusation of a specific text,298,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0429,Hacker News,comment,2026,direct accusation of a specific text,82,ARP-18,question,retrieved as posted,0,0,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0430,Hacker News,article,2026,direct accusation of a specific text,4549,OTHER,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0431,Hacker News,article,2026,direct accusation of a specific text,787,,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0432,Hacker News,comment,2026,direct accusation of a specific text,51,,assertion,retrieved as posted,0,2,denies_ai,no,"phrase-search discovery, model-assisted labels",1
+C0433,Hacker News,comment,2026,direct accusation of a specific text,23,ARP-01,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0434,Hacker News,article,2026,direct accusation of a specific text,636,ARP-16,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0435,Hacker News,article,2026,direct accusation of a specific text,1447,ARP-07,assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0436,Hacker News,article,2026,direct accusation of a specific text,3486,,question,current version of linked article,0,4,denies_ai,no,"phrase-search discovery, model-assisted labels",2
+C0437,Hacker News,article,2026,direct accusation of a specific text,1865,ARP-07;ARP-27,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0438,Hacker News,comment,2026,direct accusation of a specific text,72,ARP-27,hedged_assertion,retrieved as posted,0,1,none,no,"phrase-search discovery, model-assisted labels",3
+C0439,Hacker News,comment,2026,direct accusation of a specific text,99,ARP-16,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0440,Hacker News,comment,2026,direct accusation of a specific text,206,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0441,Hacker News,comment,2026,direct accusation of a specific text,96,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0442,Hacker News,article,2026,direct accusation of a specific text,921,ARP-01;ARP-16,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0443,Hacker News,comment,2026,direct accusation of a specific text,62,ARP-01,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0444,Hacker News,article,2026,direct accusation of a specific text,2587,ARP-14;OTHER,assertion,current version of linked article,0,1,none,no,"phrase-search discovery, model-assisted labels",0
+C0445,Hacker News,article,2026,direct accusation of a specific text,1886,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0446,Hacker News,comment,2026,direct accusation of a specific text,137,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0447,Hacker News,comment,2026,direct accusation of a specific text,167,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0448,Hacker News,article,2026,direct accusation of a specific text,1265,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0449,Hacker News,comment,2026,direct accusation of a specific text,22,ARP-01,hedged_assertion,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0450,Hacker News,comment,2026,direct accusation of a specific text,100,,hedged_assertion,retrieved as posted,0,3,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0451,Hacker News,article,2026,direct accusation of a specific text,825,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0452,discourse,other,2026,direct accusation of a specific text,266,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0453,Hacker News,article,2026,direct accusation of a specific text,265,ARP-16,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0454,Hacker News,article,2026,direct accusation of a specific text,710,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0455,Hacker News,article,2026,direct accusation of a specific text,1187,,assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0456,Hacker News,comment,2026,direct accusation of a specific text,157,,assertion,retrieved as posted,0,1,none,no,"phrase-search discovery, model-assisted labels",0
+C0457,Hacker News,comment,2026,direct accusation of a specific text,78,,hedged_assertion,retrieved as posted,1,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0458,Hacker News,comment,2026,direct accusation of a specific text,56,ARP-06;ARP-07,assertion,retrieved as posted,0,1,unclear,no,"phrase-search discovery, model-assisted labels",2
+C0459,Hacker News,article,2026,direct accusation of a specific text,717,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0460,Hacker News,comment,2026,direct accusation of a specific text,20,,assertion,retrieved as posted,0,1,unclear,no,"phrase-search discovery, model-assisted labels",3
+C0461,Hacker News,comment,2026,direct accusation of a specific text,60,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0462,Hacker News,comment,2026,direct accusation of a specific text,5,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0463,Hacker News,article,2026,direct accusation of a specific text,2367,,assertion,current version of linked article,0,5,none,no,"phrase-search discovery, model-assisted labels",0
+C0464,Hacker News,comment,2026,direct accusation of a specific text,149,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0465,Hacker News,comment,2026,direct accusation of a specific text,35,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0466,Hacker News,article,2026,direct accusation of a specific text,1939,,assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0467,Hacker News,article,2026,direct accusation of a specific text,162,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0468,Hacker News,article,2026,direct accusation of a specific text,425,,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0469,Hacker News,comment,2026,direct accusation of a specific text,135,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0470,Hacker News,comment,2026,direct accusation of a specific text,131,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0471,Hacker News,comment,2026,direct accusation of a specific text,40,,hedged_assertion,retrieved as posted,0,1,none,no,"phrase-search discovery, model-assisted labels",3
+C0472,Hacker News,comment,2026,direct accusation of a specific text,205,,question,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",2
+C0473,lemmy,other,2026,direct accusation of a specific text,175,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0474,Hacker News,comment,2026,direct accusation of a specific text,328,,hedged_assertion,retrieved as posted,1,0,unclear,no,"phrase-search discovery, model-assisted labels",0
+C0475,Hacker News,comment,2026,direct accusation of a specific text,63,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0476,Hacker News,article,2026,direct accusation of a specific text,915,ARP-27,hedged_assertion,current version of linked article,0,1,none,no,"phrase-search discovery, model-assisted labels",0
+C0477,Hacker News,comment,2026,direct accusation of a specific text,202,ARP-18;ARP-29,assertion,retrieved as posted,1,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0478,Hacker News,article,2026,direct accusation of a specific text,174,,assertion,current version of linked article,0,1,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",0
+C0479,Hacker News,comment,2026,direct accusation of a specific text,589,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0480,Hacker News,article,2026,direct accusation of a specific text,7595,ARP-18,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0481,Hacker News,article,2026,direct accusation of a specific text,2541,OTHER,assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0482,Hacker News,comment,2026,direct accusation of a specific text,60,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0483,Hacker News,article,2026,direct accusation of a specific text,3485,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0484,Hacker News,comment,2026,direct accusation of a specific text,100,,question,retrieved as posted,0,1,unclear,no,"phrase-search discovery, model-assisted labels",1
+C0485,Hacker News,comment,2026,direct accusation of a specific text,45,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0486,Hacker News,article,2026,direct accusation of a specific text,1573,ARP-18,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0487,Hacker News,comment,2026,direct accusation of a specific text,20,OTHER,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0488,Hacker News,comment,2026,direct accusation of a specific text,51,,assertion,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",1
+C0489,Hacker News,comment,2026,direct accusation of a specific text,59,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0490,Hacker News,comment,2026,direct accusation of a specific text,63,,assertion,retrieved as posted,0,0,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",3
+C0491,Hacker News,article,2026,direct accusation of a specific text,2762,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0492,Hacker News,article,2026,direct accusation of a specific text,1632,,hedged_assertion,current version of linked article,2,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0493,Hacker News,comment,2026,direct accusation of a specific text,7,ARP-27,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0494,Hacker News,comment,2026,direct accusation of a specific text,83,,hedged_assertion,retrieved as posted,0,1,none,no,"phrase-search discovery, model-assisted labels",3
+C0495,Hacker News,article,2026,direct accusation of a specific text,1514,ARP-01,hedged_assertion,current version of linked article,0,1,none,no,"phrase-search discovery, model-assisted labels",1
+C0496,Hacker News,article,2026,direct accusation of a specific text,1198,,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0497,Hacker News,article,2026,direct accusation of a specific text,1834,ARP-16,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0498,Hacker News,comment,2026,direct accusation of a specific text,67,,assertion,retrieved as posted,0,2,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0499,Hacker News,comment,2026,direct accusation of a specific text,42,OTHER,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0500,Hacker News,article,2026,direct accusation of a specific text,2377,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0501,Hacker News,article,2026,direct accusation of a specific text,305,,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,1,0,admits_ai,no,"phrase-search discovery, model-assisted labels",0
+C0502,Hacker News,article,2026,direct accusation of a specific text,1218,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0503,Hacker News,comment,2026,direct accusation of a specific text,16,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0504,Hacker News,comment,2026,direct accusation of a specific text,584,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0505,Hacker News,comment,2026,direct accusation of a specific text,322,,hedged_assertion,retrieved as posted,0,1,unclear,no,"phrase-search discovery, model-assisted labels",1
+C0506,Hacker News,article,2026,direct accusation of a specific text,6124,,hedged_assertion,current version of linked article,1,0,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",0
+C0507,Hacker News,comment,2026,direct accusation of a specific text,111,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0508,Hacker News,article,2026,direct accusation of a specific text,1413,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0509,Hacker News,article,2026,direct accusation of a specific text,1697,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0510,Hacker News,article,2026,direct accusation of a specific text,720,ARP-29,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0511,Hacker News,comment,2026,direct accusation of a specific text,162,,question,retrieved as posted,0,1,none,no,"phrase-search discovery, model-assisted labels",1
+C0512,Hacker News,comment,2026,direct accusation of a specific text,41,OTHER,question,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0513,lemmy,other,2026,direct accusation of a specific text,207,ARP-30,question,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",0
+C0514,Hacker News,article,2026,direct accusation of a specific text,6010,ARP-18,hedged_assertion,current version of linked article,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",0
+C0515,Hacker News,article,2026,direct accusation of a specific text,1117,ARP-16,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0516,Hacker News,article,2026,direct accusation of a specific text,120,,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0517,Hacker News,article,2026,direct accusation of a specific text,2554,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0518,Hacker News,article,2026,direct accusation of a specific text,1232,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0519,Hacker News,article,2026,direct accusation of a specific text,967,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0520,Hacker News,article,2026,direct accusation of a specific text,5891,OTHER,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0521,Hacker News,article,2026,direct accusation of a specific text,253,,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,1,none,no,"phrase-search discovery, model-assisted labels",0
+C0522,Hacker News,article,2026,direct accusation of a specific text,710,ARP-18;ARP-30,hedged_assertion,current version of linked article,0,2,none,no,"phrase-search discovery, model-assisted labels",2
+C0523,Hacker News,article,2026,direct accusation of a specific text,1304,ARP-18,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0524,Hacker News,comment,2026,direct accusation of a specific text,110,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0525,Hacker News,article,2026,direct accusation of a specific text,151,ARP-02;ARP-12;ARP-16,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0526,Hacker News,comment,2026,direct accusation of a specific text,45,ARP-15;ARP-29,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0527,Hacker News,comment,2026,direct accusation of a specific text,61,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0528,Hacker News,article,2026,direct accusation of a specific text,1,,assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0529,Hacker News,comment,2026,direct accusation of a specific text,25,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0530,Hacker News,article,2026,direct accusation of a specific text,1426,ARP-16;OTHER,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0531,Hacker News,article,2026,direct accusation of a specific text,258,,assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",0
+C0532,Hacker News,comment,2026,direct accusation of a specific text,16,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0533,Hacker News,comment,2026,direct accusation of a specific text,65,,hedged_assertion,retrieved as posted,1,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0534,Hacker News,comment,2026,direct accusation of a specific text,102,,hedged_assertion,retrieved as posted,0,2,none,no,"phrase-search discovery, model-assisted labels",2
+C0535,Hacker News,article,2026,direct accusation of a specific text,1032,ARP-16,question,current version of linked article,1,1,none,no,"phrase-search discovery, model-assisted labels",2
+C0536,Hacker News,article,2026,direct accusation of a specific text,2605,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0537,lemmy,other,2026,direct accusation of a specific text,494,OTHER,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0538,Hacker News,article,2026,direct accusation of a specific text,194,ARP-16,question,post submitted to HN directly: the page the accuser read was not analysed,1,2,none,no,"phrase-search discovery, model-assisted labels",0
+C0539,Hacker News,article,2026,direct accusation of a specific text,4975,,assertion,current version of linked article,2,1,none,no,"phrase-search discovery, model-assisted labels",0
+C0540,Hacker News,comment,2026,direct accusation of a specific text,131,ARP-17,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0541,Hacker News,comment,2026,direct accusation of a specific text,108,ARP-18,hedged_assertion,retrieved as posted,0,3,none,no,"phrase-search discovery, model-assisted labels",3
+C0542,Hacker News,article,2026,direct accusation of a specific text,4302,ARP-19,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0543,Hacker News,comment,2026,direct accusation of a specific text,55,ARP-18;OTHER,question,retrieved as posted,0,0,unclear,no,"phrase-search discovery, model-assisted labels",2
+C0544,Hacker News,article,2026,direct accusation of a specific text,1616,,assertion,current version of linked article,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",1
+C0545,Hacker News,article,2026,direct accusation of a specific text,1696,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0546,Hacker News,article,2026,direct accusation of a specific text,940,,question,current version of linked article,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",1
+C0547,Hacker News,article,2026,direct accusation of a specific text,3716,,question,current version of linked article,0,1,none,no,"phrase-search discovery, model-assisted labels",0
+C0548,Hacker News,article,2026,direct accusation of a specific text,3428,,question,current version of linked article,0,1,none,no,"phrase-search discovery, model-assisted labels",2
+C0549,Hacker News,article,2026,direct accusation of a specific text,1700,OTHER,hedged_assertion,current version of linked article,4,1,none,no,"phrase-search discovery, model-assisted labels",0
+C0550,Hacker News,comment,2026,direct accusation of a specific text,83,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0551,Hacker News,comment,2026,direct accusation of a specific text,32,,hedged_assertion,retrieved as posted,0,1,none,no,"phrase-search discovery, model-assisted labels",3
+C0552,Hacker News,article,2026,direct accusation of a specific text,428,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0553,Hacker News,article,2026,direct accusation of a specific text,45,,assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0554,discourse,other,2026,direct accusation of a specific text,338,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0555,Hacker News,comment,2026,direct accusation of a specific text,157,ARP-29,question,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",2
+C0556,Hacker News,article,2026,direct accusation of a specific text,2728,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0557,Hacker News,comment,2026,direct accusation of a specific text,164,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0558,Hacker News,article,2026,direct accusation of a specific text,2473,,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0559,Hacker News,article,2026,direct accusation of a specific text,248,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0560,Hacker News,article,2026,direct accusation of a specific text,2098,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0561,Hacker News,comment,2026,direct accusation of a specific text,12,,hedged_assertion,retrieved as posted,1,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0562,Hacker News,article,2026,direct accusation of a specific text,1682,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0563,Hacker News,comment,2026,direct accusation of a specific text,79,ARP-01;ARP-07,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0564,Hacker News,comment,2026,direct accusation of a specific text,38,ARP-18,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0565,Hacker News,comment,2026,direct accusation of a specific text,81,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0566,Hacker News,article,2026,direct accusation of a specific text,2587,ARP-01;ARP-19,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0567,Hacker News,article,2026,direct accusation of a specific text,1145,,assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0568,Hacker News,article,2026,direct accusation of a specific text,1351,ARP-18,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0569,Hacker News,comment,2026,direct accusation of a specific text,39,ARP-18,assertion,retrieved as posted,1,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0570,Hacker News,comment,2026,direct accusation of a specific text,654,,hedged_assertion,retrieved as posted,0,0,unclear,no,"phrase-search discovery, model-assisted labels",1
+C0571,Hacker News,article,2026,direct accusation of a specific text,2651,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0572,Hacker News,article,2026,direct accusation of a specific text,4232,ARP-14;ARP-18,hedged_assertion,current version of linked article,3,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0573,Hacker News,article,2026,direct accusation of a specific text,4861,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0574,Hacker News,article,2026,direct accusation of a specific text,194,ARP-16,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0575,Hacker News,article,2026,direct accusation of a specific text,1494,ARP-06,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0576,Hacker News,article,2026,direct accusation of a specific text,568,ARP-27,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0577,Hacker News,article,2026,direct accusation of a specific text,947,ARP-17,hedged_assertion,current version of linked article,1,1,none,no,"phrase-search discovery, model-assisted labels",1
+C0578,Hacker News,article,2026,direct accusation of a specific text,1,ARP-18,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0579,Hacker News,article,2026,direct accusation of a specific text,1796,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0580,Hacker News,article,2026,direct accusation of a specific text,595,ARP-05,hedged_assertion,current version of linked article,1,1,none,no,"phrase-search discovery, model-assisted labels",2
+C0581,Hacker News,article,2026,direct accusation of a specific text,691,ARP-16,question,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0582,Hacker News,article,2026,direct accusation of a specific text,2038,,assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0583,Hacker News,article,2026,direct accusation of a specific text,2045,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0584,Hacker News,article,2026,direct accusation of a specific text,3017,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0585,Hacker News,article,2026,direct accusation of a specific text,1954,,assertion,current version of linked article,0,1,none,no,"phrase-search discovery, model-assisted labels",1
+C0586,Hacker News,article,2026,direct accusation of a specific text,1913,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0587,Hacker News,article,2026,direct accusation of a specific text,3599,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0588,Hacker News,article,2026,direct accusation of a specific text,6594,,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0589,Hacker News,article,2026,direct accusation of a specific text,333,ARP-28,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0590,Hacker News,article,2026,direct accusation of a specific text,4619,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0591,Hacker News,comment,2026,direct accusation of a specific text,137,ARP-12;ARP-27,hedged_assertion,retrieved as posted,1,1,denies_ai,no,"phrase-search discovery, model-assisted labels",2
+C0592,Hacker News,comment,2026,direct accusation of a specific text,32,ARP-08,question,retrieved as posted,1,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0593,Hacker News,comment,2026,direct accusation of a specific text,196,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0594,Hacker News,article,2026,direct accusation of a specific text,812,ARP-28,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0595,Hacker News,article,2026,direct accusation of a specific text,1304,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0596,Hacker News,article,2026,direct accusation of a specific text,1,,assertion,post submitted to HN directly: the page the accuser read was not analysed,2,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0597,Hacker News,comment,2026,direct accusation of a specific text,114,,assertion,retrieved as posted,1,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0598,Hacker News,article,2026,direct accusation of a specific text,2385,ARP-12;ARP-18,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0599,Hacker News,article,2026,direct accusation of a specific text,5859,ARP-29,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0600,Hacker News,comment,2026,direct accusation of a specific text,45,ARP-29,question,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0601,Hacker News,article,2026,direct accusation of a specific text,1037,ARP-11,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0602,Hacker News,article,2026,direct accusation of a specific text,2014,,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0603,Hacker News,comment,2026,direct accusation of a specific text,377,,hedged_assertion,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",0
+C0604,Hacker News,comment,2026,direct accusation of a specific text,33,OTHER,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0605,Hacker News,article,2026,direct accusation of a specific text,1295,OTHER,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0606,Hacker News,comment,2026,direct accusation of a specific text,15,,assertion,retrieved as posted,0,1,unclear,no,"phrase-search discovery, model-assisted labels",2
+C0607,Hacker News,comment,2026,direct accusation of a specific text,309,,assertion,retrieved as posted,0,1,none,no,"phrase-search discovery, model-assisted labels",2
+C0608,Hacker News,article,2026,direct accusation of a specific text,504,,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0609,Hacker News,article,2026,direct accusation of a specific text,148,,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",0
+C0610,discourse,other,2026,direct accusation of a specific text,215,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0611,discourse,other,2026,direct accusation of a specific text,184,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0612,discourse,other,2026,direct accusation of a specific text,226,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0613,lemmy,other,2026,direct accusation of a specific text,90,,hedged_assertion,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",0
+C0614,discourse,other,2026,direct accusation of a specific text,89,ARP-29,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0615,Hacker News,comment,2026,direct accusation of a specific text,96,,question,retrieved as posted,0,0,unclear,no,"phrase-search discovery, model-assisted labels",3
+C0616,Hacker News,article,2026,direct accusation of a specific text,2510,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0617,Hacker News,comment,2026,direct accusation of a specific text,31,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0618,Hacker News,comment,2026,direct accusation of a specific text,296,OTHER,hedged_assertion,retrieved as posted,0,3,unclear,no,"phrase-search discovery, model-assisted labels",3
+C0619,Hacker News,article,2026,direct accusation of a specific text,3768,ARP-18,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0620,Hacker News,article,2026,direct accusation of a specific text,1969,,assertion,current version of linked article,4,0,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",2
+C0621,Hacker News,article,2026,direct accusation of a specific text,2144,ARP-29,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0622,Hacker News,article,2026,direct accusation of a specific text,1434,OTHER,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0623,Hacker News,comment,2026,direct accusation of a specific text,118,,question,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0624,Hacker News,article,2026,direct accusation of a specific text,2142,ARP-12;ARP-17,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0625,Hacker News,article,2026,direct accusation of a specific text,3114,ARP-16,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0626,Hacker News,article,2026,direct accusation of a specific text,2119,ARP-01;ARP-02,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0627,Hacker News,article,2026,direct accusation of a specific text,1,ARP-18,question,post submitted to HN directly: the page the accuser read was not analysed,0,1,none,no,"phrase-search discovery, model-assisted labels",0
+C0628,Hacker News,article,2026,direct accusation of a specific text,4091,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0629,lemmy,other,2026,direct accusation of a specific text,183,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0630,Hacker News,article,2026,direct accusation of a specific text,1359,,question,current version of linked article,0,2,none,no,"phrase-search discovery, model-assisted labels",1
+C0631,Hacker News,article,2026,direct accusation of a specific text,1216,,assertion,current version of linked article,0,0,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",2
+C0632,Hacker News,article,2026,direct accusation of a specific text,2366,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0633,Hacker News,article,2026,direct accusation of a specific text,1,,question,post submitted to HN directly: the page the accuser read was not analysed,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0634,Hacker News,article,2026,direct accusation of a specific text,382,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0635,Hacker News,article,2026,direct accusation of a specific text,574,ARP-07,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0636,Hacker News,article,2026,direct accusation of a specific text,742,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0637,Hacker News,article,2026,direct accusation of a specific text,2047,ARP-10;ARP-14;ARP-30;OTHER,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0638,Hacker News,article,2026,direct accusation of a specific text,3687,ARP-29,question,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0639,Hacker News,article,2026,direct accusation of a specific text,4199,ARP-16;ARP-18,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0640,Hacker News,comment,2026,direct accusation of a specific text,212,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0641,Hacker News,article,2026,direct accusation of a specific text,3,,assertion,post submitted to HN directly: the page the accuser read was not analysed,3,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0642,Hacker News,comment,2026,direct accusation of a specific text,14,OTHER,assertion,retrieved as posted,1,0,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0643,Hacker News,article,2026,direct accusation of a specific text,1520,ARP-18;ARP-27,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0644,discourse,other,2026,direct accusation of a specific text,427,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0645,Hacker News,comment,2026,direct accusation of a specific text,98,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0646,Hacker News,article,2026,direct accusation of a specific text,1502,,hedged_assertion,current version of linked article,4,1,none,no,"phrase-search discovery, model-assisted labels",1
+C0647,Hacker News,article,2026,direct accusation of a specific text,3102,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0648,Hacker News,article,2026,direct accusation of a specific text,1537,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0649,Hacker News,comment,2026,direct accusation of a specific text,41,,question,retrieved as posted,0,2,none,no,"phrase-search discovery, model-assisted labels",3
+C0650,Hacker News,article,2026,direct accusation of a specific text,755,ARP-07;ARP-16,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0651,Hacker News,article,2026,direct accusation of a specific text,644,OTHER,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0652,Hacker News,article,2026,direct accusation of a specific text,2336,ARP-16,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0653,Hacker News,article,2026,direct accusation of a specific text,1459,ARP-17,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0654,Hacker News,comment,2026,direct accusation of a specific text,36,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0655,Hacker News,article,2026,direct accusation of a specific text,1286,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0656,Hacker News,article,2026,direct accusation of a specific text,1522,ARP-01,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0657,Hacker News,comment,2026,direct accusation of a specific text,216,ARP-27,question,retrieved as posted,0,1,unclear,no,"phrase-search discovery, model-assisted labels",3
+C0658,Hacker News,article,2026,direct accusation of a specific text,237,ARP-27,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0659,Hacker News,article,2026,direct accusation of a specific text,2098,,hedged_assertion,current version of linked article,6,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0660,Hacker News,article,2026,direct accusation of a specific text,1719,,question,current version of linked article,0,0,unclear,no,"phrase-search discovery, model-assisted labels",2
+C0661,Hacker News,article,2026,direct accusation of a specific text,764,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0662,Hacker News,article,2026,direct accusation of a specific text,2678,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0663,Hacker News,article,2026,direct accusation of a specific text,2631,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0664,Hacker News,article,2026,direct accusation of a specific text,1234,ARP-16,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0665,Hacker News,article,2026,direct accusation of a specific text,4293,ARP-27,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0666,Hacker News,comment,2026,direct accusation of a specific text,276,ARP-28,hedged_assertion,retrieved as posted,0,3,none,no,"phrase-search discovery, model-assisted labels",3
+C0667,Hacker News,article,2026,direct accusation of a specific text,1216,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0668,Hacker News,article,2026,direct accusation of a specific text,5127,ARP-17;ARP-18,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0669,Hacker News,article,2026,direct accusation of a specific text,1226,,assertion,current version of linked article,0,1,none,no,"phrase-search discovery, model-assisted labels",1
+C0670,Hacker News,comment,2026,direct accusation of a specific text,132,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0671,Hacker News,comment,2026,direct accusation of a specific text,262,,assertion,retrieved as posted,1,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0672,Hacker News,article,2026,direct accusation of a specific text,886,ARP-16,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0673,lemmy,other,2026,direct accusation of a specific text,299,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0674,Hacker News,comment,2026,direct accusation of a specific text,28,OTHER,question,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0675,lemmy,other,2026,direct accusation of a specific text,53,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0676,Hacker News,article,2026,direct accusation of a specific text,3835,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0677,Hacker News,comment,2026,direct accusation of a specific text,117,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0678,Hacker News,comment,2026,direct accusation of a specific text,126,ARP-27,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0679,Hacker News,comment,2026,direct accusation of a specific text,145,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0680,Hacker News,article,2026,direct accusation of a specific text,1491,ARP-18,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0681,lemmy,other,2026,direct accusation of a specific text,344,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0682,Hacker News,article,2026,direct accusation of a specific text,2089,ARP-16,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0683,Hacker News,comment,2026,direct accusation of a specific text,162,,question,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0684,Hacker News,article,2026,direct accusation of a specific text,594,ARP-02,question,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0685,Hacker News,article,2026,direct accusation of a specific text,1267,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0686,Hacker News,article,2026,direct accusation of a specific text,3566,ARP-18,assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0687,Hacker News,comment,2026,direct accusation of a specific text,15,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0688,lemmy,other,2026,direct accusation of a specific text,270,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0689,Hacker News,comment,2026,direct accusation of a specific text,190,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0690,Hacker News,comment,2026,direct accusation of a specific text,11,ARP-27,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0691,Hacker News,article,2026,direct accusation of a specific text,697,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0692,Hacker News,article,2026,direct accusation of a specific text,4830,ARP-29,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0693,Hacker News,article,2026,direct accusation of a specific text,348,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0694,Hacker News,article,2026,direct accusation of a specific text,696,OTHER,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0695,Hacker News,article,2026,direct accusation of a specific text,4182,,assertion,current version of linked article,4,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0696,Hacker News,article,2026,direct accusation of a specific text,758,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0697,Hacker News,article,2026,direct accusation of a specific text,3010,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0698,Hacker News,article,2026,direct accusation of a specific text,1697,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0699,Hacker News,article,2026,direct accusation of a specific text,785,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0700,Hacker News,article,2026,direct accusation of a specific text,1216,ARP-20,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0701,Hacker News,article,2026,direct accusation of a specific text,3784,ARP-29,assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0702,Hacker News,article,2026,direct accusation of a specific text,1147,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0703,lemmy,other,2026,direct accusation of a specific text,180,ARP-16,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0704,Hacker News,article,2026,direct accusation of a specific text,654,,assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0705,Hacker News,article,2026,direct accusation of a specific text,2289,,assertion,current version of linked article,4,2,none,no,"phrase-search discovery, model-assisted labels",1
+C0706,Hacker News,comment,2026,direct accusation of a specific text,101,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0707,Hacker News,article,2026,direct accusation of a specific text,1196,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0708,Hacker News,article,2026,direct accusation of a specific text,600,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0709,Hacker News,article,2026,direct accusation of a specific text,164,,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0710,Hacker News,comment,2026,direct accusation of a specific text,139,,hedged_assertion,retrieved as posted,0,1,none,no,"phrase-search discovery, model-assisted labels",0
+C0711,Hacker News,article,2026,direct accusation of a specific text,1262,,hedged_assertion,current version of linked article,0,1,none,no,"phrase-search discovery, model-assisted labels",2
+C0712,Hacker News,article,2026,direct accusation of a specific text,1110,ARP-19;OTHER,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0713,Hacker News,article,2026,direct accusation of a specific text,2831,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0714,Hacker News,article,2026,direct accusation of a specific text,3685,ARP-16,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0715,Hacker News,article,2026,direct accusation of a specific text,3047,,hedged_assertion,current version of linked article,0,2,none,no,"phrase-search discovery, model-assisted labels",2
+C0716,Hacker News,article,2026,direct accusation of a specific text,3222,ARP-16;ARP-18,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0717,Hacker News,article,2026,direct accusation of a specific text,370,ARP-29,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0718,Hacker News,article,2026,direct accusation of a specific text,9321,ARP-16;ARP-30,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0719,Hacker News,article,2026,direct accusation of a specific text,575,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0720,Hacker News,comment,2026,direct accusation of a specific text,38,OTHER,assertion,retrieved as posted,1,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0721,Hacker News,article,2026,direct accusation of a specific text,3417,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0722,Hacker News,comment,2026,direct accusation of a specific text,47,ARP-16,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0723,lemmy,other,2026,direct accusation of a specific text,65,ARP-18,hedged_assertion,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",0
+C0724,Hacker News,article,2026,direct accusation of a specific text,2988,OTHER,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0725,Hacker News,article,2026,direct accusation of a specific text,1645,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0726,Hacker News,article,2026,direct accusation of a specific text,899,ARP-12,assertion,current version of linked article,2,0,admits_ai,no,"phrase-search discovery, model-assisted labels",0
+C0727,Hacker News,article,2026,direct accusation of a specific text,2540,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0728,Hacker News,article,2026,direct accusation of a specific text,2674,ARP-07;ARP-14;ARP-16;ARP-17,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0729,Hacker News,article,2026,direct accusation of a specific text,997,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0730,lemmy,other,2026,direct accusation of a specific text,931,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0731,Hacker News,article,2026,direct accusation of a specific text,451,,hedged_assertion,current version of linked article,1,0,unclear,no,"phrase-search discovery, model-assisted labels",0
+C0732,Hacker News,article,2026,direct accusation of a specific text,1941,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0733,Hacker News,comment,2026,direct accusation of a specific text,123,,question,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",0
+C0734,Hacker News,article,2026,direct accusation of a specific text,2456,ARP-16,assertion,current version of linked article,0,0,denies_ai,no,"phrase-search discovery, model-assisted labels",2
+C0735,Hacker News,article,2026,direct accusation of a specific text,1973,ARP-29,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0736,Hacker News,article,2026,direct accusation of a specific text,3133,ARP-18,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0737,Hacker News,article,2026,direct accusation of a specific text,2024,ARP-02;OTHER,assertion,current version of linked article,2,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0738,Hacker News,article,2026,direct accusation of a specific text,785,,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0739,lemmy,other,2026,direct accusation of a specific text,395,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0740,lemmy,other,2026,direct accusation of a specific text,32,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0741,Hacker News,article,2026,direct accusation of a specific text,3676,ARP-16;ARP-17;ARP-19,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0742,Hacker News,comment,2026,direct accusation of a specific text,102,ARP-18;OTHER,hedged_assertion,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",1
+C0743,Hacker News,comment,2026,direct accusation of a specific text,49,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0744,Hacker News,article,2026,direct accusation of a specific text,1445,,assertion,current version of linked article,1,0,admits_ai,no,"phrase-search discovery, model-assisted labels",2
+C0745,Hacker News,article,2026,direct accusation of a specific text,1454,,assertion,current version of linked article,0,1,none,no,"phrase-search discovery, model-assisted labels",2
+C0746,lemmy,other,2026,direct accusation of a specific text,208,ARP-19,question,retrieved as posted,1,1,denies_ai,no,"phrase-search discovery, model-assisted labels",0
+C0747,Hacker News,article,2026,direct accusation of a specific text,2014,ARP-28,hedged_assertion,current version of linked article,3,1,none,no,"phrase-search discovery, model-assisted labels",1
+C0748,Hacker News,article,2026,direct accusation of a specific text,1534,OTHER,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0749,Hacker News,article,2026,direct accusation of a specific text,1174,ARP-19;OTHER,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0750,Hacker News,article,2026,direct accusation of a specific text,497,,question,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0751,Hacker News,article,2026,direct accusation of a specific text,811,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0752,lemmy,other,2026,direct accusation of a specific text,839,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0753,Hacker News,article,2026,direct accusation of a specific text,338,,assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0754,Hacker News,comment,2026,direct accusation of a specific text,41,,hedged_assertion,retrieved as posted,1,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0755,Hacker News,article,2026,direct accusation of a specific text,1262,ARP-18,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0756,Hacker News,article,2026,direct accusation of a specific text,839,ARP-27,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0757,Hacker News,article,2026,direct accusation of a specific text,1667,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0758,Hacker News,article,2026,direct accusation of a specific text,3489,ARP-18,hedged_assertion,current version of linked article,2,0,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",1
+C0759,Hacker News,comment,2026,direct accusation of a specific text,7,,question,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0760,Hacker News,article,2026,direct accusation of a specific text,3371,ARP-28,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0761,Hacker News,article,2026,direct accusation of a specific text,1533,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0762,Hacker News,comment,2026,direct accusation of a specific text,875,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0763,Hacker News,article,2026,direct accusation of a specific text,1967,OTHER,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0764,Hacker News,comment,2026,direct accusation of a specific text,73,,assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",3
+C0765,Hacker News,article,2026,direct accusation of a specific text,668,ARP-16,hedged_assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0766,Hacker News,article,2026,direct accusation of a specific text,1669,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0767,Hacker News,article,2026,direct accusation of a specific text,1578,ARP-27,assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",1
+C0768,Hacker News,comment,2026,direct accusation of a specific text,81,,assertion,retrieved as posted,0,1,none,no,"phrase-search discovery, model-assisted labels",1
+C0769,Hacker News,comment,2026,direct accusation of a specific text,69,ARP-27,question,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0770,Hacker News,article,2026,direct accusation of a specific text,2594,,assertion,current version of linked article,1,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0771,Hacker News,article,2026,direct accusation of a specific text,127,,hedged_assertion,post submitted to HN directly: the page the accuser read was not analysed,0,0,unclear,no,"phrase-search discovery, model-assisted labels",0
+C0772,Hacker News,article,2026,direct accusation of a specific text,4255,ARP-18;OTHER,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0773,Hacker News,comment,2026,direct accusation of a specific text,59,,question,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0774,Hacker News,comment,2026,direct accusation of a specific text,362,ARP-16,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0775,Hacker News,article,2026,direct accusation of a specific text,1595,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0776,Hacker News,article,2026,direct accusation of a specific text,9475,,hedged_assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0777,Hacker News,article,2026,direct accusation of a specific text,912,,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0778,lemmy,other,2026,direct accusation of a specific text,38,,hedged_assertion,retrieved as posted,0,1,none,no,"phrase-search discovery, model-assisted labels",0
+C0779,Hacker News,article,2026,direct accusation of a specific text,1652,,assertion,current version of linked article,0,2,none,no,"phrase-search discovery, model-assisted labels",2
+C0780,Hacker News,comment,2026,direct accusation of a specific text,68,,hedged_assertion,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",3
+C0781,lemmy,other,2026,direct accusation of a specific text,111,,hedged_assertion,retrieved as posted,1,0,admits_partial_ai_assist,no,"phrase-search discovery, model-assisted labels",0
+C0782,Hacker News,article,2026,direct accusation of a specific text,1019,OTHER,assertion,current version of linked article,0,0,none,no,"phrase-search discovery, model-assisted labels",2
+C0783,lemmy,other,2026,direct accusation of a specific text,202,ARP-18,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0784,lemmy,other,2026,direct accusation of a specific text,736,ARP-19,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
+C0785,Hacker News,article,2026,direct accusation of a specific text,2488,,hedged_assertion,current version of linked article,0,1,none,no,"phrase-search discovery, model-assisted labels",1
+C0786,Hacker News,comment,2026,direct accusation of a specific text,185,,question,retrieved as posted,0,1,denies_ai,no,"phrase-search discovery, model-assisted labels",2
+C0787,lemmy,other,2026,direct accusation of a specific text,59,,hedged_assertion,retrieved as posted,0,0,none,no,"phrase-search discovery, model-assisted labels",0
