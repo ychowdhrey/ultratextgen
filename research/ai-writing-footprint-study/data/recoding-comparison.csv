@@ -1,0 +1,46 @@
+table,subset,coder,kind_of_text,n_or_sets,value,ci_low,ci_high,note
+named_reason,all 787,original,comment,287,65.5,,,percent naming no reason; wording or format named: 26; em dash named: 6
+named_reason,all 787,original,article,426,50.0,,,percent naming no reason; wording or format named: 65; em dash named: 12
+named_reason,all 787,original,all,787,57.3,,,percent naming no reason; wording or format named: 94; em dash named: 19
+named_reason,all 787,A,comment,287,61.7,,,percent naming no reason; wording or format named: 23; em dash named: 5
+named_reason,all 787,A,article,426,50.0,,,percent naming no reason; wording or format named: 60; em dash named: 12
+named_reason,all 787,A,all,787,55.5,,,percent naming no reason; wording or format named: 85; em dash named: 18
+named_reason,all 787,B,comment,287,73.2,,,percent naming no reason; wording or format named: 24; em dash named: 5
+named_reason,all 787,B,article,426,58.2,,,percent naming no reason; wording or format named: 58; em dash named: 12
+named_reason,all 787,B,all,787,65.8,,,percent naming no reason; wording or format named: 84; em dash named: 18
+named_reason,minus 23 cases either coder rejected,original,comment,284,65.8,,,percent naming no reason; wording or format named: 26; em dash named: 6
+named_reason,minus 23 cases either coder rejected,original,article,407,50.1,,,percent naming no reason; wording or format named: 63; em dash named: 12
+named_reason,minus 23 cases either coder rejected,original,all,764,57.7,,,percent naming no reason; wording or format named: 92; em dash named: 19
+named_reason,minus 23 cases either coder rejected,A,comment,284,61.3,,,percent naming no reason; wording or format named: 23; em dash named: 5
+named_reason,minus 23 cases either coder rejected,A,article,407,49.9,,,percent naming no reason; wording or format named: 58; em dash named: 12
+named_reason,minus 23 cases either coder rejected,A,all,764,55.4,,,percent naming no reason; wording or format named: 83; em dash named: 18
+named_reason,minus 23 cases either coder rejected,B,comment,284,72.9,,,percent naming no reason; wording or format named: 24; em dash named: 5
+named_reason,minus 23 cases either coder rejected,B,article,407,57.7,,,percent naming no reason; wording or format named: 56; em dash named: 12
+named_reason,minus 23 cases either coder rejected,B,all,764,65.6,,,percent naming no reason; wording or format named: 82; em dash named: 18
+named_reason,minus rejected and doubtful,original,comment,215,64.2,,,percent naming no reason; wording or format named: 20; em dash named: 5
+named_reason,minus rejected and doubtful,original,article,333,52.3,,,percent naming no reason; wording or format named: 56; em dash named: 12
+named_reason,minus rejected and doubtful,original,all,606,58.6,,,percent naming no reason; wording or format named: 79; em dash named: 18
+named_reason,minus rejected and doubtful,A,comment,215,60.5,,,percent naming no reason; wording or format named: 16; em dash named: 5
+named_reason,minus rejected and doubtful,A,article,333,50.5,,,percent naming no reason; wording or format named: 50; em dash named: 12
+named_reason,minus rejected and doubtful,A,all,606,55.4,,,percent naming no reason; wording or format named: 68; em dash named: 18
+named_reason,minus rejected and doubtful,B,comment,215,69.3,,,percent naming no reason; wording or format named: 19; em dash named: 5
+named_reason,minus rejected and doubtful,B,article,333,57.1,,,percent naming no reason; wording or format named: 50; em dash named: 12
+named_reason,minus rejected and doubtful,B,all,606,63.9,,,percent naming no reason; wording or format named: 71; em dash named: 18
+matched_odds_ratio,all 787,original labels,comment,229,5.35,3.25,9.72,em dash or typed --
+matched_odds_ratio,all 787,original labels,comment,229,8.37,4.39,20.8,em dash character
+matched_odds_ratio,all 787,original labels,comment,229,6.44,2.52,30.25,3+ short sentences in a row
+matched_odds_ratio,all 787,original labels,article,260,1.01,0.74,1.4,em dash or typed --
+matched_odds_ratio,all 787,original labels,article,260,1.02,0.75,1.4,em dash character
+matched_odds_ratio,all 787,original labels,article,260,2.73,1.93,3.99,3+ short sentences in a row
+matched_odds_ratio,minus rejected,original labels,comment,226,5.59,3.32,10.36,em dash or typed --
+matched_odds_ratio,minus rejected,original labels,comment,226,9.09,4.55,24.56,em dash character
+matched_odds_ratio,minus rejected,original labels,comment,226,6.44,2.34,29.0,3+ short sentences in a row
+matched_odds_ratio,minus rejected,original labels,article,250,1.0,0.72,1.41,em dash or typed --
+matched_odds_ratio,minus rejected,original labels,article,250,1.02,0.73,1.42,em dash character
+matched_odds_ratio,minus rejected,original labels,article,250,2.69,1.85,4.05,3+ short sentences in a row
+matched_odds_ratio,minus rejected and doubtful,original labels,comment,166,5.74,3.26,11.63,em dash or typed --
+matched_odds_ratio,minus rejected and doubtful,original labels,comment,166,9.72,4.53,31.7,em dash character
+matched_odds_ratio,minus rejected and doubtful,original labels,comment,166,5.31,1.91,25.0,3+ short sentences in a row
+matched_odds_ratio,minus rejected and doubtful,original labels,article,211,0.94,0.65,1.32,em dash or typed --
+matched_odds_ratio,minus rejected and doubtful,original labels,article,211,0.97,0.68,1.38,em dash character
+matched_odds_ratio,minus rejected and doubtful,original labels,article,211,2.66,1.83,4.11,3+ short sentences in a row

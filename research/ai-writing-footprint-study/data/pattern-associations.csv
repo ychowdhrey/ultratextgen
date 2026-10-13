@@ -1,0 +1,91 @@
+pattern_id,pattern,unit,primary_flag,prespecified_or_exploratory,n_accused,B_accused_prevalence_n,C_control_n,C_control_prevalence_n,D_matched_sets,D_mh_odds_ratio,D_ci95_lo,D_ci95_hi,D_adjusted_or_length_aitopic,D_or_structure_exposure_adjusted,D_q_bh,D_or_pre_2025,D_or_from_2025,evidence_status
+ARP-01,Em dash use,comment,emdash_any,prespecified,287,60,564,24,229,5.35,3.2,9.66,4.63,4.95,0.0005,0.27,7.72,associated (higher in accused)
+ARP-02,'Not X but Y' / contrast frame,comment,nxby_strict,prespecified,287,12,564,8,229,3.36,1.25,10.44,1.75,1.95,0.0681,,,suggestive (higher in accused)
+ARP-03,Rhetorical question + short fragment answer,comment,rhetq_fragment,prespecified,287,17,564,8,229,4.0,1.62,13.71,3.92,2.82,0.0211,1.91,5.77,suggestive (higher in accused)
+ARP-04,Repeated sentence openings,comment,opening_run_ge3,prespecified,287,8,564,16,229,0.84,0.21,2.38,0.76,0.55,1.0,,,inconclusive
+ARP-05,Three-part construction (adjective triple),comment,list3_adj,prespecified,287,47,564,38,229,2.2,1.28,3.8,2.14,2.21,0.0196,0.89,2.69,associated (higher in accused)
+ARP-06,Bullets / numbered lists,comment,md_bullet,prespecified,287,24,564,18,229,1.66,0.73,3.77,1.23,1.16,0.3307,3.0,1.38,inconclusive
+ARP-07,Bold or headings in casual text,comment,md_bold,prespecified,287,0,564,0,229,,,,,,1.0,,,unknown
+ARP-08,Generic affirmation / enthusiasm opener,comment,generic_affirm,prespecified,287,8,564,1,229,12.33,2.0,not estimable (open-ended),4.37,,0.0568,,,suggestive (higher in accused)
+ARP-09,Formulaic transition openers,comment,transition_opener,prespecified,287,14,564,6,229,2.67,0.67,10.5,2.05,1.98,0.2886,,,inconclusive
+ARP-10,Uniform sentence rhythm,comment,,,,,,,,,,,,,,,,not measurable here
+ARP-11,Polish / register mismatch for the context,comment,,,,,,,,,,,,,,,,not measurable here
+ARP-12,Generic metaphor / hyperbole / stock phrase,comment,stock_hyperbole,prespecified,287,14,564,9,229,2.54,0.89,8.44,2.11,2.02,0.1247,,,inconclusive
+ARP-13,Unnaturally balanced paragraphs,comment,,,,,,,,,,,,,,,,not measurable here
+ARP-14,Repetitive short fragments (staccato),comment,staccato_ge3,prespecified,287,18,564,5,229,6.44,2.34,32.0,8.21,5.58,0.0027,8.0,6.08,associated (higher in accused)
+ARP-15,Closing engagement question,comment,closing_question,prespecified,287,16,564,19,229,1.75,0.76,3.76,1.84,1.81,0.2611,,,inconclusive
+ARP-16,Low information density / vague claims,comment,zero_concrete_ge80w,prespecified,287,32,564,67,229,0.99,0.56,1.65,1.26,1.43,1.0,,,no association detected
+ARP-17,Stock vocabulary (e.g. 'delve'),comment,stock_phrase,prespecified,287,3,564,1,229,5.75,0.0,not estimable (open-ended),3.52,,0.2248,,,unknown
+ARP-18,Unspecified 'tone' / 'voice',comment,,,,,,,,,,,,,,,,not measurable here
+ARP-19,Length / verbosity,comment,,,,,,,,,,,,,,,,not measurable here
+ARP-20,Emoji,comment,emoji,exploratory,287,0,564,0,229,,,,,,1.0,,,unknown
+ARP-21,Curly quotes / apostrophes (typography),comment,curly_apos,exploratory,287,73,564,72,229,2.24,1.45,3.4,2.28,2.24,0.0017,1.88,2.33,suggestive (higher in accused)
+ARP-22,Semicolon,comment,semicolon,exploratory,287,28,564,39,229,1.07,0.52,1.96,1.18,1.31,1.0,,,no association detected
+ARP-23,Ellipsis,comment,ellipsis,exploratory,287,22,564,77,229,0.51,0.27,0.84,0.54,0.55,0.0381,0.57,0.49,suggestive (lower in accused)
+ARP-24,"Hedge-balance ('on the other hand', 'that said')",comment,hedge_balance,exploratory,287,7,564,10,229,1.06,0.18,3.4,1.08,1.15,1.0,,,inconclusive
+ARP-25,"Listicle scaffolding ('here's the thing', 'let's dive')",comment,heres_the_thing,exploratory,287,8,564,6,229,1.44,0.31,6.0,2.01,1.98,0.9848,3.0,1.0,inconclusive
+ARP-26,Label-colon lines,comment,colon_label,exploratory,287,35,564,23,229,2.12,1.1,4.72,1.75,1.41,0.0453,,,suggestive (higher in accused)
+ARP-27,"Off-topic / non-responsive / factually off (a content judgement, not a wording pattern)",comment,,,,,,,,,,,,,,,,not measurable here
+ARP-28,Marketing / advertisement / SEO / self-help tone,comment,,,,,,,,,,,,,,,,not measurable here
+ARP-29,A specific quoted stock phrase or opener,comment,,,,,,,,,,,,,,,,not measurable here
+ARP-30,Repetition / duplicated or templated text,comment,,,,,,,,,,,,,,,,not measurable here
+ARP-01,Em dash use,article,emdash_any,prespecified,377,193,403,210,260,1.01,0.75,1.42,0.96,0.91,1.0,0.67,1.06,no association detected
+ARP-02,'Not X but Y' / contrast frame,article,nxby_strict,prespecified,377,80,403,67,260,1.17,0.76,1.79,1.16,1.23,0.9311,,,no association detected
+ARP-03,Rhetorical question + short fragment answer,article,rhetq_fragment,prespecified,377,141,403,103,260,1.82,1.29,2.7,1.52,1.22,0.0075,0.79,1.98,suggestive (higher in accused)
+ARP-04,Repeated sentence openings,article,opening_run_ge3,prespecified,377,167,403,123,260,1.87,1.32,2.7,1.59,1.24,0.0075,,,suggestive (higher in accused)
+ARP-05,Three-part construction (adjective triple),article,list3_adj,prespecified,377,304,403,311,260,1.38,0.92,2.2,1.29,1.21,0.4213,2.5,1.28,inconclusive
+ARP-06,Bullets / numbered lists,article,md_bullet,prespecified,377,68,403,34,260,2.11,1.3,3.7,2.06,2.04,0.0075,1.36,2.25,associated (higher in accused)
+ARP-07,Bold or headings in casual text,article,md_bold,prespecified,377,11,403,8,260,1.33,0.35,4.4,1.44,2.37,1.0,,,inconclusive
+ARP-08,Generic affirmation / enthusiasm opener,article,generic_affirm,prespecified,377,0,403,0,260,,,,,,1.0,,,unknown
+ARP-09,Formulaic transition openers,article,transition_opener,prespecified,377,62,403,94,260,0.51,0.31,0.8,0.54,0.58,0.0166,,,suggestive (lower in accused)
+ARP-10,Uniform sentence rhythm,article,,,,,,,,,,,,,,,,not measurable here
+ARP-11,Polish / register mismatch for the context,article,,,,,,,,,,,,,,,,not measurable here
+ARP-12,Generic metaphor / hyperbole / stock phrase,article,stock_hyperbole,prespecified,377,128,403,130,260,1.04,0.72,1.48,1.1,1.13,1.0,,,no association detected
+ARP-13,Unnaturally balanced paragraphs,article,,,,,,,,,,,,,,,,not measurable here
+ARP-14,Repetitive short fragments (staccato),article,staccato_ge3,prespecified,377,154,403,80,260,2.73,1.92,4.04,2.51,1.83,0.0014,5.0,2.6,associated (higher in accused)
+ARP-15,Closing engagement question,article,closing_question,prespecified,377,2,403,0,260,not estimable (6 vs 0),not estimable (open-ended),not estimable (open-ended),,,1.0,,,unknown
+ARP-16,Low information density / vague claims,article,zero_concrete_ge80w,prespecified,377,1,403,0,260,not estimable (3 vs 0),,,,,1.0,,,unknown
+ARP-17,Stock vocabulary (e.g. 'delve'),article,stock_phrase,prespecified,377,30,403,22,260,1.19,0.57,2.41,1.11,1.15,1.0,,,inconclusive
+ARP-18,Unspecified 'tone' / 'voice',article,,,,,,,,,,,,,,,,not measurable here
+ARP-19,Length / verbosity,article,,,,,,,,,,,,,,,,not measurable here
+ARP-20,Emoji,article,emoji,exploratory,377,45,403,41,260,1.32,0.78,2.23,1.32,1.63,0.7804,,,inconclusive
+ARP-21,Curly quotes / apostrophes (typography),article,curly_apos,exploratory,377,259,403,294,260,0.94,0.66,1.36,0.99,0.94,1.0,3.75,0.82,no association detected
+ARP-22,Semicolon,article,semicolon,exploratory,377,200,403,211,260,1.02,0.73,1.46,1.0,1.1,1.0,,,no association detected
+ARP-23,Ellipsis,article,ellipsis,exploratory,377,152,403,153,260,1.1,0.77,1.52,1.11,1.18,0.9963,0.82,1.14,no association detected
+ARP-24,"Hedge-balance ('on the other hand', 'that said')",article,hedge_balance,exploratory,377,25,403,32,260,0.62,0.29,1.17,0.57,0.64,0.5472,,,inconclusive
+ARP-25,"Listicle scaffolding ('here's the thing', 'let's dive')",article,heres_the_thing,exploratory,377,94,403,51,260,2.4,1.58,3.76,2.23,1.7,0.0022,not estimable (open-ended),2.11,suggestive (higher in accused)
+ARP-26,Label-colon lines,article,colon_label,exploratory,377,289,403,286,260,1.59,1.1,2.42,1.57,1.76,0.1189,,,suggestive (higher in accused)
+ARP-27,"Off-topic / non-responsive / factually off (a content judgement, not a wording pattern)",article,,,,,,,,,,,,,,,,not measurable here
+ARP-28,Marketing / advertisement / SEO / self-help tone,article,,,,,,,,,,,,,,,,not measurable here
+ARP-29,A specific quoted stock phrase or opener,article,,,,,,,,,,,,,,,,not measurable here
+ARP-30,Repetition / duplicated or templated text,article,,,,,,,,,,,,,,,,not measurable here
+ARP-01,Em dash use,other,emdash_any,prespecified,74,12,0,0,0,,,,,,,,,descriptive only (no matched controls)
+ARP-02,'Not X but Y' / contrast frame,other,nxby_strict,prespecified,74,2,0,0,0,,,,,,,,,descriptive only (no matched controls)
+ARP-03,Rhetorical question + short fragment answer,other,rhetq_fragment,prespecified,74,11,0,0,0,,,,,,,,,descriptive only (no matched controls)
+ARP-04,Repeated sentence openings,other,opening_run_ge3,prespecified,74,5,0,0,0,,,,,,,,,descriptive only (no matched controls)
+ARP-05,Three-part construction (adjective triple),other,list3_adj,prespecified,74,18,0,0,0,,,,,,,,,descriptive only (no matched controls)
+ARP-06,Bullets / numbered lists,other,md_bullet,prespecified,74,18,0,0,0,,,,,,,,,descriptive only (no matched controls)
+ARP-07,Bold or headings in casual text,other,md_bold,prespecified,74,20,0,0,0,,,,,,,,,descriptive only (no matched controls)
+ARP-08,Generic affirmation / enthusiasm opener,other,generic_affirm,prespecified,74,2,0,0,0,,,,,,,,,descriptive only (no matched controls)
+ARP-09,Formulaic transition openers,other,transition_opener,prespecified,74,10,0,0,0,,,,,,,,,descriptive only (no matched controls)
+ARP-10,Uniform sentence rhythm,other,,,,,,,,,,,,,,,,not measurable here
+ARP-11,Polish / register mismatch for the context,other,,,,,,,,,,,,,,,,not measurable here
+ARP-12,Generic metaphor / hyperbole / stock phrase,other,stock_hyperbole,prespecified,74,9,0,0,0,,,,,,,,,descriptive only (no matched controls)
+ARP-13,Unnaturally balanced paragraphs,other,,,,,,,,,,,,,,,,not measurable here
+ARP-14,Repetitive short fragments (staccato),other,staccato_ge3,prespecified,74,6,0,0,0,,,,,,,,,descriptive only (no matched controls)
+ARP-15,Closing engagement question,other,closing_question,prespecified,74,2,0,0,0,,,,,,,,,descriptive only (no matched controls)
+ARP-16,Low information density / vague claims,other,zero_concrete_ge80w,prespecified,74,12,0,0,0,,,,,,,,,descriptive only (no matched controls)
+ARP-17,Stock vocabulary (e.g. 'delve'),other,stock_phrase,prespecified,74,1,0,0,0,,,,,,,,,descriptive only (no matched controls)
+ARP-18,Unspecified 'tone' / 'voice',other,,,,,,,,,,,,,,,,not measurable here
+ARP-19,Length / verbosity,other,,,,,,,,,,,,,,,,not measurable here
+ARP-20,Emoji,other,emoji,exploratory,74,3,0,0,0,,,,,,,,,descriptive only (no matched controls)
+ARP-21,Curly quotes / apostrophes (typography),other,curly_apos,exploratory,74,21,0,0,0,,,,,,,,,descriptive only (no matched controls)
+ARP-22,Semicolon,other,semicolon,exploratory,74,9,0,0,0,,,,,,,,,descriptive only (no matched controls)
+ARP-23,Ellipsis,other,ellipsis,exploratory,74,7,0,0,0,,,,,,,,,descriptive only (no matched controls)
+ARP-24,"Hedge-balance ('on the other hand', 'that said')",other,hedge_balance,exploratory,74,1,0,0,0,,,,,,,,,descriptive only (no matched controls)
+ARP-25,"Listicle scaffolding ('here's the thing', 'let's dive')",other,heres_the_thing,exploratory,74,3,0,0,0,,,,,,,,,descriptive only (no matched controls)
+ARP-26,Label-colon lines,other,colon_label,exploratory,74,14,0,0,0,,,,,,,,,descriptive only (no matched controls)
+ARP-27,"Off-topic / non-responsive / factually off (a content judgement, not a wording pattern)",other,,,,,,,,,,,,,,,,not measurable here
+ARP-28,Marketing / advertisement / SEO / self-help tone,other,,,,,,,,,,,,,,,,not measurable here
+ARP-29,A specific quoted stock phrase or opener,other,,,,,,,,,,,,,,,,not measurable here
+ARP-30,Repetition / duplicated or templated text,other,,,,,,,,,,,,,,,,not measurable here

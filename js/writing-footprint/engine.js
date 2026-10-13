@@ -512,6 +512,8 @@
     const dashes = [];
     let m;
     while ((m = dashRe.exec(text)) !== null) {
+      // A double hyphen glued to a following letter or digit after a space or line start is a command-line flag (git log --oneline), not a dash.
+      if (/^\s*--$/.test(m[0]) && /[A-Za-z0-9]/.test(text.charAt(m.index + m[0].length)) && (m.index === 0 || /^\s/.test(m[0]) || /\s/.test(text.charAt(m.index - 1)))) continue;
       const dashIdx = m.index + m[0].search(/—|--/);
       const dashLen = m[0].indexOf("--") >= 0 && m[0].indexOf("—") < 0 ? 2 : 1;
       dashes.push({ editStart: m.index, editEnd: m.index + m[0].length, start: dashIdx, end: dashIdx + dashLen });
@@ -528,7 +530,7 @@
         observed: live.length ? live.length + " (" + round(d, 1) + " per 1,000 words)" : "None found",
         why: "Frequent dashes make sentences read as a series of asides, and readers who associate them with machine-written text may notice them.",
         improve: "Keep the dashes that do real work. Where a dash only joins two clauses, a full stop, comma or colon is usually clearer.",
-        certainty: "Medium that the count is right. Dash frequency in web text rose after 2022 at population level; many careful human writers use dashes heavily. This says nothing about who wrote the text.",
+        certainty: "Medium that the count is right. People used dashes long before 2022, and many careful writers use them heavily. In one study of public comments, challenged ones carried the em dash character more often than unchallenged ones, and long articles showed no such difference. This says nothing about who wrote the text.",
         count: live.length, density: round(d, 2)
       }));
     } else {
@@ -540,29 +542,16 @@
         const f = {
           key: "PUN-EMDASH:" + dd.start, patternId: "PUN-EMDASH", name: "Frequent em dashes", category: "punctuation",
           start: dd.start, end: dd.end, editStart: dd.editStart, editEnd: dd.editEnd,
-          prominence: "low", evidence: "population",
+          prominence: "low", evidence: "reader",
           explanation: "One of several dashes in a text that uses them often.",
           why: "Repeated dashes make each sentence read as an aside.",
-          suggestion: "Choose the punctuation that matches the relationship: a comma for an aside, a full stop for a new thought, a colon for an explanation.",
+          suggestion: "Leave the dashes that join two thoughts. Where one is not doing that, a full stop for a new thought, a comma for an aside or a colon for an explanation reads best when you choose it sentence by sentence.",
           falsePositives: "A deliberate stylistic choice. Dashes are standard in good prose.",
           ruleConfidence: "medium", references: ["housestyle"], safety: "requires_context", options: []
         };
-        const hasWordBefore = dd.editStart > 0 && !/\n\s*$/.test(text.slice(0, dd.editStart));
-        const hasWordAfter = dd.editEnd < text.length && !/^\s*\n/.test(text.slice(dd.editEnd));
-        if (hasWordBefore && hasWordAfter && !/\n/.test(around)) {
-          f.options = [
-            { label: "Comma", start: dd.editStart, end: dd.editEnd, replacement: ", " },
-            { label: "Colon", start: dd.editStart, end: dd.editEnd, replacement: ": " }
-          ];
-          const nextCh = text.charAt(dd.editEnd);
-          if (/\p{Ll}/u.test(nextCh)) {
-            f.options.push({ label: "Full stop", start: dd.editStart, end: dd.editEnd + 1, replacement: ". " + nextCh.toUpperCase() });
-          } else {
-            f.options.push({ label: "Full stop", start: dd.editStart, end: dd.editEnd, replacement: ". " });
-          }
-        } else {
-          f.safety = "explanation_only";
-        }
+        // No replacement is offered. Blind comparisons of modern passages found that replacing flagged dashes read worse more often than better,
+        // and a dash after another mark produced two marks in a row in 30% of the dashes in pre-1910 books.
+        f.safety = "explanation_only";
         pushFinding(f);
       });
     }
@@ -638,7 +627,7 @@
       if (m) {
         const lead = m[0].indexOf(m[1]);
         const wordStart = s.start + lead;
-        hits.push({ sentence: s, word: m[1].toLowerCase().replace(/\s+/g, " "), start: wordStart, end: s.start + m[0].length, rawEnd: wordStart + m[1].length });
+        hits.push({ sentence: s, word: m[1].toLowerCase().replace(/\s+/g, " "), start: wordStart, end: s.start + m[0].length, rawEnd: wordStart + m[1].length, comma: /^,/.test(m[0].slice(lead + m[1].length)) });
       }
     });
     const enough = sentences.length >= T.minSentencesForRhythm;
@@ -674,7 +663,7 @@
           falsePositives: "Appropriate in formal and academic writing.", ruleConfidence: "medium",
           references: ["housestyle"], safety: "explanation_only", options: []
         };
-        if (P.TRANSITION_ALSO.indexOf(h.word) >= 0) {
+        if (P.TRANSITION_ALSO.indexOf(h.word) >= 0 && h.comma) {   // 'In addition to the cost' is not a linking word: removal needs the comma
           f.safety = "safe_to_propose";
           f.editStart = h.start; f.editEnd = h.end;
           f.options = [resolveOption(text, f, { label: "Remove it", text: "", capitalizeNext: true }, text.slice(h.start, h.rawEnd))];
