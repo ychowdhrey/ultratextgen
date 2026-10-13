@@ -1,0 +1,668 @@
+<!DOCTYPE html><html lang="en"><head>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8242324164413945?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script>(function(){'use strict';var aa=typeof Object.create=="function"?Object.create:function(a){function b(){}b.prototype=a;return new b},ba=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ca(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var da=ca(this);function l(a,b){if(b)a:{var c=da;a=a.split(".");for(var e=0;e<a.length-1;e++){var d=a[e];if(!(d in c))break a;c=c[d]}a=a[a.length-1];e=c[a];b=b(e);b!=e&&b!=null&&ba(c,a,{configurable:!0,writable:!0,value:b})}}var m;
+if(typeof Object.setPrototypeOf=="function")m=Object.setPrototypeOf;else{var n;a:{var ea={a:!0},fa={};try{fa.__proto__=ea;n=fa.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var ha=m;
+function p(a,b){a.prototype=aa(b.prototype);a.prototype.constructor=a;if(ha)ha(a,b);else for(var c in b)if(c!="prototype")if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,c);e&&Object.defineProperty(a,c,e)}else a[c]=b[c];a.C=b.prototype}function ia(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}
+function q(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ia(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function ja(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function ka(a){return la(a,a)}function la(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),Object.freeze(b));return a}
+function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}l("globalThis",function(a){return a||da});l("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});l("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});l("Number.MAX_SAFE_INTEGER",function(){return 9007199254740991});l("Number.MIN_SAFE_INTEGER",function(){return-9007199254740991});
+l("Number.isInteger",function(a){return a?a:function(b){return Number.isFinite(b)?b===Math.floor(b):!1}});l("Number.isSafeInteger",function(a){return a?a:function(b){return Number.isInteger(b)&&Math.abs(b)<=Number.MAX_SAFE_INTEGER}});l("Math.trunc",function(a){return a?a:function(b){b=Number(b);if(isNaN(b)||b===Infinity||b===-Infinity||b===0)return b;var c=Math.floor(Math.abs(b));return b<0?-c:c}});l("Number.isNaN",function(a){return a?a:function(b){return typeof b==="number"&&isNaN(b)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var t=this||self;function na(a){t.setTimeout(function(){throw a;},0)};var v,x;a:{for(var oa=["CLOSURE_FLAGS"],y=t,z=0;z<oa.length;z++)if(y=y[oa[z]],y==null){x=null;break a}x=y}var pa=x&&x[748402147];v=pa!=null?pa:!0;var qa=void 0;function A(){return typeof BigInt==="function"};var B=typeof Symbol==="function"&&typeof Symbol()==="symbol";function C(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var ra=C("jas",void 0,!0),sa=C(void 0,"0actk"),E=C("m_m","B",!0);var ta={u:{value:0,configurable:!0,writable:!0,enumerable:!1}},ua=Object.defineProperties,F=B?ra:"u";function va(a,b){B||F in a||ua(a,ta);a[F]|=b}function G(a,b){B||F in a||ua(a,ta);a[F]=b};var H={};function I(a,b){return b===void 0?a.h!==J&&!!(2&(a.g[F]|0)):!!(2&b)&&a.h!==J}var J={};function K(a){a.A=!0;return a};var wa=K(function(a){return typeof a==="number"}),xa=K(function(a){return typeof a==="string"}),ya=K(function(a){return typeof a==="boolean"});var L=typeof t.BigInt==="function"&&typeof t.BigInt(0)==="bigint";function M(a){var b=a;if(xa(b)){if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}else if(wa(b)&&!Number.isSafeInteger(b))throw Error(String(b));return L?BigInt(a):a=ya(a)?a?"1":"0":xa(a)?a.trim()||"0":String(a)}var Fa=K(function(a){return L?a>=za&&a<=Aa:a[0]==="-"?Ba(a,Ca):Ba(a,Da)}),Ca=Number.MIN_SAFE_INTEGER.toString(),za=L?BigInt(Number.MIN_SAFE_INTEGER):void 0,Da=Number.MAX_SAFE_INTEGER.toString(),Aa=L?BigInt(Number.MAX_SAFE_INTEGER):void 0;
+function Ba(a,b){if(a.length>b.length)return!1;if(a.length<b.length||a===b)return!0;for(var c=0;c<a.length;c++){var e=a[c],d=b[c];if(e>d)return!1;if(e<d)return!0}};var N=0,O=0;function Ga(a){var b=a>>>0;N=b;O=(a-b)/4294967296>>>0}function Ha(a){if(a<0){Ga(-a);var b=q(Ia(N,O));a=b.next().value;b=b.next().value;N=a>>>0;O=b>>>0}else Ga(a)}function Ja(a,b){b>>>=0;a>>>=0;if(b<=2097151)var c=""+(4294967296*b+a);else A()?c=""+(BigInt(b)<<BigInt(32)|BigInt(a)):(c=(a>>>24|b<<8)&16777215,b=b>>16&65535,a=(a&16777215)+c*6777216+b*6710656,c+=b*8147497,b*=2,a>=1E7&&(c+=a/1E7>>>0,a%=1E7),c>=1E7&&(b+=c/1E7>>>0,c%=1E7),c=b+Ka(c)+Ka(a));return c}
+function Ka(a){a=String(a);return"0000000".slice(a.length)+a}function La(){var a=N,b=O;b&2147483648?A()?a=""+(BigInt(b|0)<<BigInt(32)|BigInt(a>>>0)):(b=q(Ia(a,b)),a=b.next().value,b=b.next().value,a="-"+Ja(a,b)):a=Ja(a,b);return a}function Ia(a,b){b=~b;a?a=~a+1:b+=1;return[a,b]};var Ma=typeof BigInt==="function"?BigInt.asIntN:void 0,Q=Number.isSafeInteger,Na=Number.isFinite,Oa=Math.trunc,Pa=/^-?([1-9][0-9]*|0)(\.[0-9]+)?$/;function Qa(a){switch(typeof a){case "bigint":return!0;case "number":return Na(a);case "string":return Pa.test(a);default:return!1}}
+function Ra(a){var b=typeof a;if(a==null)return a;if(b==="bigint")return M(Ma(64,a));if(Qa(a)){if(b==="string")if(b=Oa(Number(a)),Q(b))a=M(b);else if(b=a.indexOf("."),b!==-1&&(a=a.substring(0,b)),A())a=M(Ma(64,BigInt(a)));else{b=a.length;if(!(a[0]==="-"?b<20||b===20&&a<="-9223372036854775808":b<19||b===19&&a<="9223372036854775807")){if(a.length<16)Ha(Number(a));else if(A())a=BigInt(a),N=Number(a&BigInt(4294967295))>>>0,O=Number(a>>BigInt(32)&BigInt(4294967295));else{b=+(a[0]==="-");O=N=0;for(var c=
+a.length,e=b,d=(c-b)%6+b;d<=c;e=d,d+=6)e=Number(a.slice(e,d)),O*=1E6,N=N*1E6+e,N>=4294967296&&(O+=Math.trunc(N/4294967296),O>>>=0,N>>>=0);b&&(b=q(Ia(N,O)),a=b.next().value,b=b.next().value,N=a,O=b)}a=La()}a=M(a)}else if(Q(a)){a=Oa(a);if(!Q(a)){Ha(a);b=N;c=O;if(a=c&2147483648)b=~b+1>>>0,c=~c>>>0,b==0&&(c=c+1>>>0);d=c*4294967296+(b>>>0);b=Number.isSafeInteger(d)?d:Ja(b,c);a=typeof b==="number"?a?-b:b:a?"-"+b:b}a=M(a)}else a=Oa(a),Q(a)?a=String(a):(Ha(a),a=La()),a=M(a);return a}}
+function Sa(a){return a==null||typeof a==="string"?a:void 0};function Ta(a){return a};function Ua(a,b,c,e){var d=e!==void 0;e=!!e;var f=[],g=a.length,h=4294967295,k=!1,r=!!(b&64),D=r?b&128?0:-1:void 0;if(!(b&1)){var u=g&&a[g-1];u!=null&&typeof u==="object"&&u.constructor===Object?(g--,h=g):u=void 0;if(r&&!(b&128)&&!d){k=!0;var w;h=((w=Va)!=null?w:Ta)(h-D,D,a,u,void 0)+D}}b=void 0;for(d=0;d<g;d++)if(w=a[d],w!=null&&(w=c(w,e))!=null)if(r&&d>=h){var yb=d-D,Ea=void 0;((Ea=b)!=null?Ea:b={})[yb]=w}else f[d]=w;if(u)for(var P in u)Object.prototype.hasOwnProperty.call(u,P)&&(a=u[P],a!=null&&
+(a=c(a,e))!=null&&(g=+P,d=void 0,r&&!Number.isNaN(g)&&(d=g+D)<h?f[d]=a:(g=void 0,((g=b)!=null?g:b={})[P]=a)));b&&(k?f.push(b):f[h]=b);return f}function Wa(a){switch(typeof a){case "number":return Number.isFinite(a)?a:""+a;case "bigint":return Fa(a)?Number(a):""+a;case "boolean":return a?1:0;case "object":if(Array.isArray(a)){var b=a[F]|0;return a.length===0&&b&1?void 0:Ua(a,b,Wa)}if(a!=null&&a[E]===H)return Xa(a);return}return a}var Va;function Xa(a){a=a.g;return Ua(a,a[F]|0,Wa)};function R(a,b,c,e){e=e===void 0?0:e;if(a==null){var d=32;c?(a=[c],d|=128):a=[];b&&(d=d&-16760833|(b&1023)<<14)}else{if(!Array.isArray(a))throw Error("narr");d=a[F]|0;if(v&&1&d)throw Error("rfarr");2048&d&&!(2&d)&&Ya();if(d&256)throw Error("farr");if(d&64)return(d|e)!==d&&G(a,d|e),a;if(c&&(d|=128,c!==a[0]))throw Error("mid");a:{c=a;d|=64;var f=c.length;if(f){var g=f-1,h=c[g];if(h!=null&&typeof h==="object"&&h.constructor===Object){b=d&128?0:-1;g-=b;if(g>=1024)throw Error("pvtlmt");for(var k in h)Object.prototype.hasOwnProperty.call(h,
+k)&&(f=+k,f<g&&(c[f+b]=h[k],delete h[k]));d=d&-16760833|(g&1023)<<14;break a}}if(b){k=Math.max(b,f-(d&128?0:-1));if(k>1024)throw Error("spvt");d=d&-16760833|(k&1023)<<14}}}G(a,d|64|e);return a}function Ya(){if(v)throw Error("carr");if(sa!=null){var a;var b=(a=qa)!=null?a:qa={};a=b[sa]||0;a>=5||(b[sa]=a+1,b=Error(),b.__closure__error__context__984382||(b.__closure__error__context__984382={}),b.__closure__error__context__984382.severity="incident",na(b))}};function Za(a,b){if(typeof a!=="object")return a;if(Array.isArray(a)){var c=a[F]|0;a.length===0&&c&1?a=void 0:c&2||(!b||4096&c||16&c?a=S(a,c,!1,b&&!(c&16)):(va(a,34),c&4&&Object.freeze(a)));return a}if(a!=null&&a[E]===H){b=a.g;c=b[F]|0;return I(a,c)?a:$a(a,b,c)?ab(a,b):S(b,c)}}function ab(a,b,c){a=new a.constructor(b);c&&(a.h=J);a.i=J;return a}function S(a,b,c,e){e!=null||(e=!!(34&b));a=Ua(a,b,Za,e);e=32;c&&(e|=2);b=b&16769217|e;G(a,b);return a}
+function bb(a,b){b===void 0&&(b=a[F]|0);b&32&&!(b&4096)&&G(a,b|4096)}function $a(a,b,c){return c&2?!0:c&32&&!(c&4096)?(G(b,c|2),a.h=J,!0):!1};var cb=M(0),db={};function T(a,b,c,e){b=eb(a.g,b,e);if(b!==null||c&&a.i!==J)return b}function eb(a,b,c){if(b===-1)return null;var e=b+-1,d=a.length-1;if(!(d<0)){if(e>=d){var f=a[d];if(f!=null&&typeof f==="object"&&f.constructor===Object){d=f[b];var g=!0}else if(e===d)d=f;else return}else d=a[e];if(c&&d!=null){c=c(d);if(c==null)return c;if(!Object.is(c,d))return g?f[b]=c:a[e]=c,c}return d}}
+function fb(a,b,c){var e=gb,d=!1;c=eb(a,c,function(f){if(f!=null&&f[E]===H)var g=f;else if(Array.isArray(f)){g=f[F]|0;var h=g|b&32;h|=b&2;h!==g&&G(f,h);g=new e(f)}else g=void 0;d=g!==f&&g!=null;return g});if(c!=null)return d&&!I(c)&&bb(a,b),c}
+function hb(a,b){var c=a.g,e=c[F]|0,d=fb(c,e,b);if(d==null)return d;e=c[F]|0;if(!I(a,e)){var f=d;var g=f.g,h=g[F]|0;f=I(f,h)?$a(f,g,h)?ab(f,g,!0):new f.constructor(S(g,h,!1)):f;if(f!==d){a.h===J?(d=a.g,d=S(d,d[F]|0),va(d,2048),a.g=d,a.h=void 0,a.i=void 0,d=!0):d=!1;d&&(c=a.g,e=c[F]|0);d=f;a:{a=c;f=d;g=b+-1;h=a.length-1;if(h>=0&&g>=h){var k=a[h];if(k!=null&&typeof k==="object"&&k.constructor===Object){k[b]=f;break a}}if(g<=h)a[g]=f;else if(f!==void 0){var r;h=((r=e)!=null?r:e=a[F]|0)>>14&1023||536870912;
+b>=h?f!=null&&(r={},a[h+-1]=(r[b]=f,r)):a[g]=f}}bb(c,e)}}return d}function ib(a,b){var c=c===void 0?cb:c;a=T(a,b,void 0,Ra);return a!=null?a:c}function U(a,b){var c=c===void 0?"":c;var e;return(e=Sa(T(a,b)))!=null?e:c};function V(a,b,c){this.g=R(a,b,c,2048)}V.prototype.toJSON=function(){var a=Xa(this);return a};V.prototype[E]=H;V.prototype.toString=function(){return this.g.toString()};function jb(a){return function(b){if(b==null||b=="")b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error("dnarr");va(b,32);b=new a(b)}return b}};function kb(a){this.g=R(a,void 0,void 0,2048)}p(kb,V);var lb=jb(kb);/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var mb=globalThis.trustedTypes,nb;function ob(){var a=null;if(!mb)return a;try{var b=function(c){return c};a=mb.createPolicy("goog#html",{createHTML:b,createScript:b,createScriptURL:b})}catch(c){}return a};function pb(a){this.g=a}pb.prototype.toString=function(){return this.g+""};function qb(a){var b;nb===void 0&&(nb=ob());a=(b=nb)?b.createScriptURL(a):a;return new pb(a)};function rb(a,b){if(b instanceof pb)b=b.g;else throw Error("");a.src=b;var c;b=a.ownerDocument;b=b===void 0?document:b;var e;b=(e=(c=b).querySelector)==null?void 0:e.call(c,"script[nonce]");(c=b==null?"":b.nonce||b.getAttribute("nonce")||"")&&a.setAttribute("nonce",c)};function sb(){return Math.floor(Math.random()*2147483648).toString(36)+Math.abs(Math.floor(Math.random()*2147483648)^Date.now()).toString(36)};function tb(a){var b=ma.apply(1,arguments);if(b.length===0)return qb(a[0]);for(var c=a[0],e=0;e<b.length;e++)c+=encodeURIComponent(b[e])+a[e+1];return qb(c)};function ub(a){a=a===void 0?document:a;return a.createElement("script")};function vb(a,b){b=String(b);a.contentType==="application/xhtml+xml"&&(b=b.toLowerCase());return a.createElement(b)}function wb(a){this.g=a||t.document||document};function xb(a,b,c,e,d,f){try{var g=a.g,h=ub(g);h.async=!0;rb(h,b);g.head.appendChild(h);h.addEventListener("load",function(){d();e&&g.head.removeChild(h)});h.addEventListener("error",function(){c>0?xb(a,b,c-1,e,d,f):(e&&g.head.removeChild(h),f())})}catch(k){f()}};var zb=t.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),Ab=t.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),Bb=t.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function Cb(a,b,c){this.h=a;this.m=b;this.o=c;this.g=null;this.i=[];this.l=!1;this.j=new wb(this.h)}
+function Db(a){if(a.h.body&&!a.l){var b=function(){Eb(a);t.setTimeout(function(){Fb(a,3)},50)};xb(a.j,a.m,2,!0,function(){t[a.o]||b()},b);a.l=!0}}
+function Eb(a){for(var b=W(1,5),c=0;c<b;c++){var e=X(a);a.h.body.appendChild(e);a.i.push(e)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style.backgroundColor=Gb(249,259,242,252,219,229);b.style.boxShadow="0 0 12px #888";b.style.color=Gb(0,10,0,10,0,10);b.style.display="flex";b.style.justifyContent="center";b.style.fontFamily="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+
+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style.alignItems="flex-start";c.style.justifyContent="center";e=vb(a.j.g,"IMG");e.className=sb();e.src=zb;e.alt="Warning icon";e.style.height="24px";e.style.width="24px";e.style.paddingRight="16px";var d=X(a),f=X(a);f.style.fontWeight="bold";f.textContent=Ab;var g=X(a);g.textContent=Bb;Y(a,d,f);Y(a,d,g);Y(a,c,e);Y(a,c,d);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)e=X(a),a.h.body.appendChild(e),
+a.i.push(e)}function Y(a,b,c){for(var e=W(1,5),d=0;d<e;d++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(e=0;e<c;e++)d=X(a),b.appendChild(d)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function Gb(a,b,c,e,d,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(e,255)).toString()+","+W(Math.max(d,0),Math.min(f,255)).toString()+")"}function X(a){a=vb(a.j.g,"DIV");a.className=sb();return a}
+function Fb(a,b){b<=0||a.g!=null&&a.g.offsetHeight!==0&&a.g.offsetWidth!==0||(Hb(a),Eb(a),t.setTimeout(function(){Fb(a,b-1)},50))}function Hb(a){for(var b=q(a.i),c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function Ib(a,b,c,e,d){function f(k){document.body?g(document.body):k>0?t.setTimeout(function(){f(k-1)},d):b()}function g(k){k.appendChild(h);t.setTimeout(function(){h?(h.offsetHeight!==0&&h.offsetWidth!==0?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},e)}var h=Jb(c);f(3)}function Jb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Kb(a){return Fa(a)?Number(a):String(a)};function gb(a){this.g=R(a,void 0,void 0,2048)}p(gb,V);function Lb(a){if(!a)return null;a=Sa(T(a,4,db));var b;a===null||a===void 0?b=null:b=qb(a);return b};var Mb=ka([""]),Nb=ka([""]);function Ob(a,b){this.l=a;this.g=b;this.m=new wb(a.document);this.i=U(b,1);this.v=Lb(hb(b,2))||tb(Mb);this.h=!1;this.o=Lb(hb(b,13))||tb(Nb);this.j=new Cb(a.document,this.o,U(b,12))}Ob.prototype.start=function(){Pb(this)};
+function Pb(a){Qb(a);xb(a.m,a.v,3,!1,function(){a:{var b=a.i;var c=t.btoa(b);if(c=t[c]){try{var e=lb(t.atob(c))}catch(d){b=!1;break a}b=b===Sa(T(e,1,db))}else b=!1}b?Z(a,U(a.g,14)):(Z(a,U(a.g,8)),Db(a.j))},function(){Ib(function(){Z(a,U(a.g,7));Db(a.j)},function(){Z(a,U(a.g,6))},U(a.g,9),Kb(ib(a.g,10)),Kb(ib(a.g,11)))})}function Z(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())}function Qb(a){var b=t.btoa(a.i);a.l[b]&&Z(a,U(a.g,5))};function Rb(a){this.g=R(a,void 0,void 0,2048)}p(Rb,V);var Sb=jb(Rb);(function(a,b){t[a]=function(){var c=ma.apply(0,arguments);t[a]=function(){};b.call.apply(b,[null].concat(c instanceof Array?c:ja(q(c))))}})("__h82AlnkH6D91__",function(a){typeof window.atob==="function"&&(new Ob(window,Sb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi04MjQyMzI0MTY0NDEzOTQ1Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVR095eld0N1ZaZFFlVDNQQzN4cDRWNFFpM0VQWEdpLTNSOGJjOXBFOFZlOEZRZml1VVpydFFzOGdtWjZuWkNmUDBPdmdOZXIyWmhnQ0gwNnk4cnN1TDh3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdhMFNualdkTkRnTHdYTmRPWk9Ic1c4bzFhNFRhaGY5cWhkU1JVTHdCNmN1WDBpWDBveHBBOUhEaHI4OWR0UmdFcGZONHl1Yjk4TVZZMWFqTnJPY0Q0S3dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdpSXp3QnB6TlhidjVTWkNBLTllVzNaNVZZY1p0MjQ0T2V4V096dnlKYWVpTXU2RVpmX1hDLWU2N3plaG5QcEdoeXZFcWR5YnRhYzJZNFRUU21uR3I4d2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVYT3Nibmlmemp0ei1QVlN2SmFIY004dWhoZmNxX3I0UGwwMjhteDBhNU5DeGNnLXhEcEotdlZ1blNKS3pvRkRZZ3ZGa3QyZElnNGdmLVNRU3ZCTVBONkFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUZ3lOREl6TWpReE5qUTBNVE01TkRVXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi04MjQyMzI0MTY0NDEzOTQ1LmpzP3VzcXBcdTAwM2RDQkUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4Vkl1eVduV3owazNiSTh5czVMUFg4amloM1M1LXdJVWhWNGJtb2EtcGtlazNmU0dEYVc0aXg2dDJlTEZHZWhMMWJMLXhuVTJrdTdKVkZpbXpmQzNBT0hSUVx1MDAzZFx1MDAzZCJd");</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emoji Name Drift: Unicode Names vs CLDR Names vs Search Words</title>
+  <meta name="description" content="We compared the Unicode and CLDR names of 1,400 emoji, tracked CLDR renames across 21 releases and checked 31 search words from Reddit.">
+  <link rel="canonical" href="https://ultratextgen.com/research/emoji-name-drift/">
+  <meta property="og:title" content="Emoji Name Drift">
+  <meta property="og:description" content="1,400 emoji, two official names each: how far Unicode and CLDR names differ, how CLDR renamed them, and which search words neither lists.">
+  <meta property="og:url" content="https://ultratextgen.com/research/emoji-name-drift/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="UltraTextGen">
+  <meta property="og:image" content="https://ultratextgen.com/assets/og/research-emoji-name-drift.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="Emoji Name Drift">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Emoji Name Drift">
+  <meta name="twitter:description" content="1,400 emoji, two official names each: how far Unicode and CLDR names differ, how CLDR renamed them, and which search words neither lists.">
+  <meta name="twitter:image" content="https://ultratextgen.com/assets/og/research-emoji-name-drift.png">
+  <link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ultratextgen.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Research", "item": "https://ultratextgen.com/research/"},
+    {"@type": "ListItem", "position": 3, "name": "Emoji Name Drift", "item": "https://ultratextgen.com/research/emoji-name-drift/"}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "citation": [
+    {
+      "@type": "WebPage",
+      "name": "chapter 4, section 4.8",
+      "url": "https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-4/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Stability Policy",
+      "url": "https://www.unicode.org/policies/stability_policy.html"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Unicode Emoji report (UTS #51)",
+      "url": "https://www.unicode.org/reports/tr51/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "UTS #35, Annotations",
+      "url": "https://www.unicode.org/reports/tr35/tr35-general.html#Annotations"
+    },
+    {
+      "@type": "WebPage",
+      "name": "short names and keywords guide",
+      "url": "https://cldr.unicode.org/translation/characters/short-names-and-keywords"
+    },
+    {
+      "@type": "WebPage",
+      "name": "UnicodeData.txt 18.0.0",
+      "url": "https://www.unicode.org/Public/18.0.0/ucd/UnicodeData.txt"
+    },
+    {
+      "@type": "WebPage",
+      "name": "emoji-test.txt 18.0",
+      "url": "https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt"
+    },
+    {
+      "@type": "WebPage",
+      "name": "CLDR repository",
+      "url": "https://github.com/unicode-org/cldr/tree/release-48/common/annotations"
+    },
+    {
+      "@type": "WebPage",
+      "name": "CLDR 32",
+      "url": "https://cldr.unicode.org/downloads/cldr-32"
+    },
+    {
+      "@type": "WebPage",
+      "name": "CLDR 34",
+      "url": "https://cldr.unicode.org/downloads/cldr-34"
+    },
+    {
+      "@type": "WebPage",
+      "name": "CLDR 36",
+      "url": "https://cldr.unicode.org/downloads/cldr-36"
+    },
+    {
+      "@type": "WebPage",
+      "name": "CLDR 40",
+      "url": "https://cldr.unicode.org/downloads/cldr-40"
+    },
+    {
+      "@type": "WebPage",
+      "name": "&ldquo;The vocabulary problem in human-system communication&rdquo;",
+      "url": "https://doi.org/10.1145/32206.32212"
+    },
+    {
+      "@type": "WebPage",
+      "name": "&ldquo;Blissfully Happy&rdquo; or &ldquo;Ready to Fight&rdquo;",
+      "url": "https://doi.org/10.1609/icwsm.v10i1.14757"
+    },
+    {
+      "@type": "WebPage",
+      "name": "&ldquo;Semantic Journeys&rdquo;",
+      "url": "https://arxiv.org/abs/2105.00846"
+    },
+    {
+      "@type": "WebPage",
+      "name": "r/Emoji, March 2021",
+      "url": "https://www.reddit.com/r/Emoji/comments/m4gnn7/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "r/askSouthAfrica, July 2026",
+      "url": "https://www.reddit.com/r/askSouthAfrica/comments/1uorpjv/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "r/Emoji, March 2026",
+      "url": "https://www.reddit.com/r/Emoji/comments/1s1z82m/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "r/discordapp, April 2020",
+      "url": "https://www.reddit.com/r/discordapp/comments/g7mz0y/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "r/MisreadSprites, October 2026",
+      "url": "https://www.reddit.com/r/MisreadSprites/comments/1wyge2n/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "r/monarchapp, April 2026",
+      "url": "https://www.reddit.com/r/monarchapp/comments/1stwqrq/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "r/Emoji, March 2026",
+      "url": "https://www.reddit.com/r/Emoji/comments/1rv7ooe/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "r/apple, January 2017",
+      "url": "https://www.reddit.com/r/apple/comments/5nukgw/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "r/ios, January 2020",
+      "url": "https://www.reddit.com/r/ios/comments/eta6lb/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "r/ios, December 2024",
+      "url": "https://www.reddit.com/r/ios/comments/1hjjtjy/"
+    }
+  ],
+  "headline": "Emoji Name Drift: How Unicode's Stable Names Diverge From the Words People Actually Use",
+  "description": "We compared the Unicode and CLDR names of 1,400 emoji, tracked CLDR renames across 21 releases and checked 31 search words from Reddit.",
+  "abstract": "Most emoji names still match: 68% read the same in Unicode and CLDR. About 1 in 7 (13.6%) differ in a way that changes how you would describe the emoji, and most of that gap was there from the first CLDR release.",
+  "author": {"@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/"},
+  "publisher": {"@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/"},
+  "image": "https://ultratextgen.com/assets/og/research-emoji-name-drift.png",
+  "mainEntityOfPage": "https://ultratextgen.com/research/emoji-name-drift/",
+  "datePublished": "2026-10-13T00:00:00+00:00",
+  "dateModified": "2026-10-13T00:00:00+00:00",
+  "version": "1.0"
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/research/">Research</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Emoji Name Drift</span>
+</nav>
+
+<section class="hero research-hero study-header">
+    <div class="hero-inner">
+      <p class="research-kicker">UltraTextGen Research · Study 4 · Emoji names</p>
+      <h1 class="hero-headline">Emoji Name Drift: How Unicode&rsquo;s Stable Names Diverge From the Words People Actually Use</h1>
+      <p class="hero-tagline">Every emoji has a formal Unicode name that never changes and a CLDR short name that can. This study compares the two for all 1,400 emoji that have a formal name, tracks how CLDR&rsquo;s names changed across 21 releases, and checks a small sample of real search words against both.</p>
+      <p class="study-hero-finding"><span class="study-hero-finding-label">Main finding</span> Most emoji names still match: 68% read the same in both systems. About 1 in 7 (13.6%) differ in a way that changes how you would describe the emoji, and most of that gap was there from the first CLDR release.</p>
+      <ul class="study-status" aria-label="Validation status">
+        <li class="study-status-item is-done">Comparison complete for Unicode 18.0 and Emoji 18.0</li>
+        <li class="study-status-item is-pending">Severity labels not yet reviewed by people</li>
+        <li class="study-status-item is-pending">CLDR 49 final not yet used (beta 2 data)</li>
+      </ul>
+      <dl class="research-meta">
+        <div><dt>Published</dt><dd><time datetime="2026-10-13">October 13, 2026</time></dd></div>
+        <div><dt>Version</dt><dd>1.0</dd></div>
+        <div><dt>Evidence</dt><dd>Unicode and CLDR data files, model-assigned labels, a hand-picked sample of Reddit threads</dd></div>
+      </dl>
+      <div class="research-actions">
+        <a class="cta-btn" href="/research/emoji-name-drift.pdf" download>Download the full study (PDF, 1.8 MB)</a>
+        <a class="research-secondary-link" href="/library/emoji-meanings-guide/">Emoji meanings guide</a>
+        <a class="research-secondary-link" href="#data">Data files</a>
+        <a class="research-secondary-link" href="#method">Method</a>
+      </div>
+      <p class="research-print-only">Canonical URL: https://ultratextgen.com/research/emoji-name-drift/<br>UltraTextGen Research · Version 1.0 · Published October 13, 2026</p>
+    </div>
+  </section>
+
+<div class="study-layout">
+  <nav class="study-toc" id="contents" aria-label="On this page">
+    <p class="study-toc-title">On this page</p>
+    <p class="study-toc-group">Quick read</p>
+    <ol class="study-toc-list">
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#two-names">Two names, two jobs</a></li>
+      <li><a href="#how-many">How many names differ</a></li>
+      <li><a href="#examples">Twenty examples</a></li>
+    </ol>
+    <p class="study-toc-group">Full study</p>
+    <ol class="study-toc-list">
+      <li><a href="#what-changes">What changes</a></li>
+      <li><a href="#where">Which emoji differ most</a></li>
+      <li><a href="#drift">Is it drift?</a></li>
+      <li><a href="#keywords">Keywords close part of the gap</a></li>
+      <li><a href="#words">The words people use</a></li>
+      <li><a href="#search">What this means for emoji search</a></li>
+      <li><a href="#limitations">Limitations</a></li>
+    </ol>
+    <p class="study-toc-group">Record</p>
+    <ol class="study-toc-list">
+      <li><a href="#method">Method</a></li>
+      <li><a href="#corrections">Corrections</a></li>
+      <li><a href="#data">Data and files</a></li>
+      <li><a href="#citation">How to cite</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
+    <div class="study-toc-actions">
+      <a href="/research/emoji-name-drift.pdf" download>Download PDF (1.8 MB)</a>
+      <a href="#data">Data files (9)</a>
+    </div>
+  </nav>
+
+  <main class="container research-page study-main">
+
+    <section class="study-section study-summary" id="summary" aria-labelledby="summary-title">
+      <span class="article-section-label">Summary</span>
+      <h2 id="summary-title">What the study found</h2>
+      <ul class="key-figures">
+        <li class="key-figure">
+          <p class="key-figure-value">952 of 1,400</p>
+          <p class="key-figure-label">emoji have the same name in Unicode and CLDR</p>
+          <p class="key-figure-detail">That is 68.0% once capital letters, hyphens and punctuation are ignored. None match letter for letter, because Unicode writes names in capitals.</p>
+          <p class="key-figure-tags"><span class="evidence-tag is-measured">Measured from the data files</span></p>
+        </li>
+        <li class="key-figure">
+          <p class="key-figure-value">190 (13.6%)</p>
+          <p class="key-figure-label">differ in a way that changes how you would describe the emoji</p>
+          <p class="key-figure-detail">62 of them (4.4%) differ substantially. Depending on which of two reviewers you trust, the share is 11.1% to 15.2%.</p>
+          <p class="key-figure-tags"><span class="evidence-tag is-simulated">Model-assigned labels</span></p>
+        </li>
+        <li class="key-figure">
+          <p class="key-figure-value">74%</p>
+          <p class="key-figure-label">of today&rsquo;s differences were already there when CLDR first named the emoji</p>
+          <p class="key-figure-detail">CLDR has renamed 171 of these emoji across 21 releases. The last rename that changed more than capital letters or an ampersand was in CLDR 40.</p>
+          <p class="key-figure-tags"><span class="evidence-tag is-measured">Measured from release history</span></p>
+        </li>
+        <li class="key-figure">
+          <p class="key-figure-value">58%</p>
+          <p class="key-figure-label">of differing names keep a word the formal name lost as a CLDR keyword</p>
+          <p class="key-figure-detail">Keywords carry words like <em>hocho</em>, <em>aubergine</em> and <em>pray</em>, so a search by the old word can still land on the emoji.</p>
+          <p class="key-figure-tags"><span class="evidence-tag is-measured">Measured from the data files</span></p>
+        </li>
+        <li class="key-figure">
+          <p class="key-figure-value">15 of 31</p>
+          <p class="key-figure-label">words real people typed are found in a CLDR name or keyword</p>
+          <p class="key-figure-detail">The 16 misses are mostly feelings, picture descriptions, occasions and slang, not object names. This is a hand-picked sample of 9 Reddit threads, so it shows how searches fail, not how often.</p>
+          <p class="key-figure-tags"><span class="evidence-tag is-interpretation">Diagnostic sample</span></p>
+        </li>
+      </ul>
+      <h3>What this means for you</h3>
+      <ul class="study-bullets">
+        <li>If an emoji search fails, check the word before blaming the emoji&rsquo;s name. Three cases in the sample (<em>hatchet</em> for 🪓, <em>high</em> and <em>pray</em> for 🙏, <em>heart eyes</em> for 😍) involve words CLDR already lists, so the gap is not in CLDR&rsquo;s vocabulary. The likely cause is how the app matches words, though we did not test the apps.</li>
+        <li>Some of the emoji people struggle with have the same name in both systems. 😪 and 🪓 do. The trouble with 😪 is what it means, and the trouble with 🪓 is how one app searches, not what either is called.</li>
+        <li>The part of the gap that is real is vocabulary no standard lists: occasions such as St. Patrick&rsquo;s Day, feelings such as <em>sigh</em>, and community nicknames. Search tools have to supply those themselves.</li>
+      </ul>
+    </section>
+
+    <section class="study-section" id="two-names" aria-labelledby="two-names-title">
+      <span class="article-section-label">Background</span>
+      <h2 id="two-names-title">Two names, two jobs</h2>
+      <p>Every emoji that is a single character has a formal Unicode name, such as <code>SMILING FACE WITH HEART-SHAPED EYES</code> for 😍. Unicode treats that name as an identifier and never changes it. It also has a CLDR short name, such as <em>smiling face with heart-eyes</em>, which screen readers speak and keyboards search. CLDR can revise that name between releases.</p>
+      <p>The two names are built for different jobs, so a difference between them is not a mistake. This study measures how far apart they are and what kind of change separates them. It does not treat distance as error. Whether the gap helps or hurts is a question the evidence below answers case by case.</p>
+      <p>A third layer sits outside both standards: the words people actually type when they look for an emoji. Neither Unicode nor CLDR promises to match it. The study keeps three questions apart. <strong>Naming drift</strong> is a label that changed. <strong>Meaning drift</strong> is people using an emoji for more than its label says. <strong>Search-vocabulary drift</strong> is people typing words that appear in no name.</p>
+      <p>Emoji that are built from several characters, such as skin-tone, flag and family emoji, have no formal Unicode name. They only have CLDR names assembled by rule. The comparison here therefore covers the 1,400 emoji that have both names, and leaves the other 2,572 out. Skin-tone names mostly inherit the base emoji&rsquo;s name (655 of 665), so the gap measured here carries over to them.</p>
+    </section>
+
+    <section class="study-section" id="how-many" aria-labelledby="how-many-title">
+      <span class="article-section-label">Results</span>
+      <h2 id="how-many-title">How many names differ</h2>
+      <p>Of the 3,972 emoji in Emoji 18.0, 1,400 have a formal Unicode name: 1,193 single characters and 207 written as a character plus the emoji-style selector U+FE0F (such as ❤️ and ☹️). Of those, 952 match after capitals, accents, hyphens and punctuation are ignored. The other 448 differ in at least one word.</p>
+      <figure class="research-figure is-chart">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="From all emoji to meaningful differences, scrollable chart">
+          <a href="/assets/research/emoji-name-drift/from-all-emoji-to-meaningful-differences.png"><img src="/assets/research/emoji-name-drift/from-all-emoji-to-meaningful-differences.png" width="1590" height="784" alt="Flow chart: 3,972 emoji in Emoji 18.0; 1,400 have a formal Unicode name; 952 match after normalization and 448 differ in words; of those, 258 are cosmetic or minor and 190 are meaningful, 62 of them substantial." loading="lazy"></a>
+        </div>
+        <figcaption>From the full emoji list to meaningful differences. The 2,572 emoji built from several characters have no formal name and are not compared.</figcaption>
+      </figure>
+      <p>A small share of the 448 differences matter. The study scored each one from 0 (same words) to 4 (major difference, or the formal name is opaque). Most are small: 258 score 0 or 1, usually a dropped word like <em>face</em> or <em>sign</em>.</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead><tr><th scope="col">Result</th><th scope="col">Emoji</th><th scope="col">Share of 1,400</th></tr></thead>
+          <tbody>
+            <tr><td>Letter-for-letter match</td><td>0</td><td>0.0%</td></tr>
+            <tr><td>Same after normalization</td><td>952</td><td>68.0%</td></tr>
+            <tr><td>Differ in words</td><td>448</td><td>32.0% (95% interval 29.6 to 34.5)</td></tr>
+            <tr><td>Meaningful, score 2 or more</td><td>190</td><td>13.6% (11.9 to 15.5); 11.1 to 15.2 by reviewer</td></tr>
+            <tr><td>Substantial, score 3 or more</td><td>62</td><td>4.4% (3.5 to 5.6); 3.9 to 5.4 by reviewer</td></tr>
+            <tr><td>Major, score 4</td><td>18</td><td>1.3% (0.8 to 2.0)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The 1,400 are the whole set, not a sample, so the intervals only describe how firm the labels are. The spread between the two reviewers is the better guide to uncertainty. Treat any count as roughly two percentage points either way.</p>
+    </section>
+
+    <section class="study-section" id="examples" aria-labelledby="examples-title">
+      <span class="article-section-label">Examples</span>
+      <h2 id="examples-title">Twenty examples</h2>
+      <p>The table shows the range from a formatting change to a change of subject. Every row was checked against the Unicode and CLDR files themselves. The last two rows are controls: their names did not change at all.</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead><tr><th scope="col">Emoji</th><th scope="col">Unicode name</th><th scope="col">CLDR name</th><th scope="col">Kind, score</th><th scope="col">What happened</th></tr></thead>
+          <tbody>
+            <tr><td>😤</td><td>FACE WITH LOOK OF TRIUMPH</td><td>face with steam from nose</td><td>F, 3</td><td>The formal name records an interpretation (triumph); CLDR describes the picture (steam from the nose), so the emotion label that gave the emoji its meaning is gone from the name.</td></tr>
+            <tr><td>🤗</td><td>HUGGING FACE</td><td>smiling face with open hands</td><td>E, 3</td><td>CLDR 40 replaced the colloquial 'hugging face' with the literal 'smiling face with open hands', a rename that moved away from ordinary speech (the word 'hug' survives only as a keyword).</td></tr>
+            <tr><td>😁</td><td>GRINNING FACE WITH SMILING EYES</td><td>beaming face with smiling eyes</td><td>D, 3</td><td>The formal name is word-for-word the CLDR name of a different emoji (😄), so searching by formal name finds the wrong face.</td></tr>
+            <tr><td>❤️</td><td>HEAVY BLACK HEART</td><td>red heart</td><td>N, 3</td><td>'Black heart' is now the name of a separate emoji (🖤); the legacy black = filled convention would send a formal-name searcher to the wrong one.</td></tr>
+            <tr><td>🖖</td><td>RAISED HAND WITH PART BETWEEN MIDDLE AND RING FINGERS</td><td>vulcan salute</td><td>I, 4</td><td>An anatomical description became a fandom reference; nobody could derive 'Vulcan' from the formal name.</td></tr>
+            <tr><td>🔪</td><td>HOCHO</td><td>kitchen knife</td><td>I, 4</td><td>A Japanese loanword is replaced by plain English; 'hocho' survives only as a keyword.</td></tr>
+            <tr><td>♾️</td><td>PERMANENT PAPER SIGN</td><td>infinity</td><td>K, 4</td><td>A legacy glyph-source name ('permanent paper sign') versus the concept everyone calls it (infinity); the two names share no word.</td></tr>
+            <tr><td>🔫</td><td>PISTOL</td><td>water pistol</td><td>N, 3</td><td>A neutral 'pistol' becomes 'water pistol' (CLDR 38), tracking how vendors draw it; a rename that narrowed the object.</td></tr>
+            <tr><td>▶️</td><td>BLACK RIGHT-POINTING TRIANGLE</td><td>play button</td><td>M, 3</td><td>A geometric description ('black right-pointing triangle') becomes a function ('play button').</td></tr>
+            <tr><td>🔀</td><td>TWISTED RIGHTWARDS ARROWS</td><td>shuffle tracks button</td><td>M, 3</td><td>Twisted arrows become 'shuffle tracks button': what the symbol does replaces what it looks like.</td></tr>
+            <tr><td>💃</td><td>DANCER</td><td>woman dancing</td><td>G, 3</td><td>Formal DANCER has no gender; CLDR 30 renamed it 'woman dancing', adding a gender that the name never had.</td></tr>
+            <tr><td>🧕</td><td>PERSON WITH HEADSCARF</td><td>woman with headscarf</td><td>G, 3</td><td>One of three moves in the opposite direction from gender-neutralisation (with 💃 and 👯): 'person with headscarf' becomes 'woman with headscarf'.</td></tr>
+            <tr><td>🏋️</td><td>WEIGHT LIFTER</td><td>person lifting weights</td><td>G, 2</td><td>'Weight lifter' becomes the gender-neutral 'person lifting weights' (CLDR 30), the pattern repeated across the sports people.</td></tr>
+            <tr><td>🍆</td><td>AUBERGINE</td><td>eggplant</td><td>D, 2</td><td>British 'aubergine' becomes American 'eggplant'; the old word is kept as a keyword, so both dialects can search it.</td></tr>
+            <tr><td>🎅</td><td>FATHER CHRISTMAS</td><td>Santa Claus</td><td>I, 2</td><td>British 'Father Christmas' becomes 'Santa Claus' (a regional-name change that CLDR keywords bridge with 'Christmas' and 'claus').</td></tr>
+            <tr><td>🚙</td><td>RECREATIONAL VEHICLE</td><td>sport utility vehicle</td><td>E, 3</td><td>'Recreational vehicle' (an RV) became 'sport utility vehicle': two different vehicles for one glyph.</td></tr>
+            <tr><td>🌍</td><td>EARTH GLOBE EUROPE-AFRICA</td><td>globe showing Europe-Africa</td><td>C, 1</td><td>A pure formatting change: 'earth globe europe-africa' becomes 'globe showing Europe-Africa' (severity 1).</td></tr>
+            <tr><td>🏳️</td><td>WAVING WHITE FLAG</td><td>white flag</td><td>B, 1</td><td>Control for a trivial rename: 'waving white flag' becomes 'white flag' (the word 'waving' is dropped; severity 1).</td></tr>
+            <tr><td>😪</td><td>SLEEPY FACE</td><td>sleepy face</td><td>none, 0</td><td>Control: formal and CLDR names are identical ('sleepy face'), yet Reddit readers disagree on what it means (snoring, sighing, exhaustion): meaning drift without name drift.</td></tr>
+            <tr><td>🪓</td><td>AXE</td><td>axe</td><td>none, 0</td><td>Control: formal and CLDR names are identical ('axe') and CLDR keywords already include 'hatchet'; the reported search failure cannot be a vocabulary gap there.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Kinds: A cosmetic, B simplification, C expansion, D synonym, E different main noun, F emotion reworded, G person or role wording, I cultural or regional, K substantial change, M function relabel, N colour or rendering legacy. Scores run from 0 (same words) to 4.</p>
+    </section>
+
+    <section class="study-section" id="what-changes" aria-labelledby="what-changes-title">
+      <span class="article-section-label">Results</span>
+      <h2 id="what-changes-title">What changes</h2>
+      <p>Most differences are Unicode&rsquo;s older vocabulary being dropped. The words that disappear most often are <em>face</em> (51 emoji), <em>symbol</em> (34), <em>squared</em> (29), <em>black</em> (28), <em>sign</em> (27) and <em>clock</em> (24). The words that appear most often are <em>button</em> (55), <em>person</em> (28) and <em>Japanese</em> (17).</p>
+      <p>CLDR names are almost always the shorter ones. Where the names differ, the CLDR name is shorter in 383 of 448 pairs (median 13 characters against 20) and shorter in words in 321 (median 2 words against 3).</p>
+      <figure class="research-figure is-chart">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="Formal name length against CLDR name length, scrollable chart">
+          <a href="/assets/research/emoji-name-drift/name-length.png"><img src="/assets/research/emoji-name-drift/name-length.png" width="1280" height="1120" alt="Scatter plot of formal Unicode name length against CLDR short name length in characters for the 448 differing pairs. Almost all points fall below the diagonal, meaning the CLDR name is shorter: 383 of 448." loading="lazy"></a>
+        </div>
+        <figcaption>Name length in characters for the 448 differing pairs. Points below the dashed line have a shorter CLDR name.</figcaption>
+      </figure>
+      <figure class="research-figure is-chart is-tall">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="Kinds of change by severity, scrollable chart">
+          <a href="/assets/research/emoji-name-drift/what-changes-by-type.png"><img src="/assets/research/emoji-name-drift/what-changes-by-type.png" width="1800" height="1080" alt="Horizontal stacked bars of the 448 differing names by kind of change: simplification 203, synonym 46, expansion 46, colour or rendering legacy 38, person or role wording 29, function relabel 28, cosmetic 15, different main noun 13, orientation 11, cultural or regional 10, emotion 8, substantial semantic change 1. Colours show severity 0 to 4." loading="lazy"></a>
+        </div>
+        <figcaption>The 448 differing names by main kind of change and severity. Simplification dominates, and it is almost always severity 1 or 2.</figcaption>
+      </figure>
+      <figure class="research-figure is-chart">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="Words removed and added most often, scrollable chart">
+          <a href="/assets/research/emoji-name-drift/words-removed-and-added.png"><img src="/assets/research/emoji-name-drift/words-removed-and-added.png" width="1900" height="960" alt="Two bar charts. Words removed most often: face 51, symbol 34, squared 29, black 28, sign 27, clock 24. Words added most often: button 55, person 28, Japanese 17." loading="lazy"></a>
+        </div>
+        <figcaption>Words that leave the Unicode name and words that enter the CLDR name, counted over the 448 differing pairs.</figcaption>
+      </figure>
+      <p>The heavy changes fall in a few kinds. Function relabels turn a shape into a job: <em>black right-pointing triangle</em> becomes <em>play button</em> (28 emoji). Colour and rendering legacy removes Unicode&rsquo;s black-and-white convention, which describes filled versus outline and not hue (38 emoji). Person wording follows a Unicode policy of using &ldquo;person&rdquo; for human-form emoji (29 emoji).</p>
+      <p>Eighteen emoji score 4. Eleven of them have a formal name that is a code point, such as <code>SQUARED CJK UNIFIED IDEOGRAPH-6708</code>, which CLDR turns into <em>Japanese &ldquo;monthly amount&rdquo; button</em>. The rest are cases where the formal name is opaque or points at something else, such as <em>permanent paper sign</em> for <em>infinity</em> and <em>hocho</em> for <em>kitchen knife</em>.</p>
+      <p>The main noun changes in 75 of the 448 pairs (16.7%), judged by hand. A simple rule that guesses the head noun from word order flagged 258, so it is not used here. Counting words alone also misleads: edit distance, which punishes long names, was the weakest guide to how much a change matters, and a sentence-meaning score was among the best (0.90 area under the curve for scores of 3 or more).</p>
+      <p>Two formal names are now another emoji&rsquo;s CLDR name, which is the one place where the gap has a practical cost. <code>GRINNING FACE WITH SMILING EYES</code> is the CLDR name of 😄, and searching it finds the wrong face. <code>HEAVY BLACK HEART</code> contains &ldquo;black heart&rdquo;, which is now the name of 🖤.</p>
+    </section>
+
+    <section class="study-section" id="where" aria-labelledby="where-title">
+      <span class="article-section-label">Results</span>
+      <h2 id="where-title">Which emoji differ most</h2>
+      <p>Symbols differ most, then people, then faces. Animals, food and travel hardly differ at all. Group sizes are shown because the flag group has only 5 emoji with a formal name and should be ignored.</p>
+      <figure class="research-figure is-chart">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="Share of meaningful differences by emoji group, scrollable chart">
+          <a href="/assets/research/emoji-name-drift/difference-by-emoji-group.png"><img src="/assets/research/emoji-name-drift/difference-by-emoji-group.png" width="1640" height="960" alt="Bar chart of the share of emoji with a meaningful difference by Unicode group: Symbols 31.1%, People and Body 27.5%, Smileys and Emotion 19.5%, Objects 8.6%, Activities 7.1%, Travel and Places 4.5%, Animals and Nature 3.2%, Food and Drink 3.1%, Flags 0%." loading="lazy"></a>
+        </div>
+        <figcaption>Share of single-character emoji in each Unicode group whose names differ meaningfully (score 2 or more, light bars) or substantially (score 3 or more, orange bars).</figcaption>
+      </figure>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead><tr><th scope="col">Group</th><th scope="col">Emoji</th><th scope="col">Differ in words</th><th scope="col">Score 2 or more</th><th scope="col">Score 3 or more</th></tr></thead>
+          <tbody>
+            <tr><td>Symbols</td><td>212</td><td>137 (64.6%)</td><td>31.1% (25.3 to 37.7)</td><td>14.2%</td></tr>
+            <tr><td>People &amp; Body</td><td>160</td><td>71 (44.4%)</td><td>27.5% (21.2 to 34.9)</td><td>6.2%</td></tr>
+            <tr><td>Smileys &amp; Emotion</td><td>164</td><td>57 (34.8%)</td><td>19.5% (14.2 to 26.2)</td><td>6.1%</td></tr>
+            <tr><td>Objects</td><td>267</td><td>57 (21.3%)</td><td>8.6% (5.8 to 12.6)</td><td>2.6%</td></tr>
+            <tr><td>Activities</td><td>85</td><td>31 (36.5%)</td><td>7.1% (3.3 to 14.6)</td><td>1.2%</td></tr>
+            <tr><td>Travel &amp; Places</td><td>221</td><td>66 (29.9%)</td><td>4.5% (2.5 to 8.1)</td><td>0.9%</td></tr>
+            <tr><td>Animals &amp; Nature</td><td>156</td><td>15 (9.6%)</td><td>3.2% (1.4 to 7.3)</td><td>0.6%</td></tr>
+            <tr><td>Food &amp; Drink</td><td>130</td><td>11 (8.5%)</td><td>3.1% (1.2 to 7.6)</td><td>0.8%</td></tr>
+            <tr><td>Flags</td><td>5</td><td>3 (60.0%)</td><td>0.0%</td><td>0.0%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The people-versus-objects gap needs a caveat. People &amp; Body sits 15.7 points above the rest of the set (interval 8.6 to 22.5), but 28 of its 44 meaningful differences are one rule: formal names such as <em>weight lifter</em> became <em>person lifting weights</em>. Without that rule the group is at 10.0%, level with Objects. The extra distance for people is mostly one documented policy, not a general habit of ambiguity. Symbols is highest for a different reason: 28 function relabels and 11 Japanese button names that are code points.</p>
+      <p>Emoji written as a character plus the emoji-style selector differ more: 43.5% differ in words against 30.0% for the others, and 18.8% differ meaningfully against 12.7%. The old text-style symbols in that group carry more of Unicode&rsquo;s black, white and heavy vocabulary (38 of 207 names, against 33 of 1,193).</p>
+      <h3>Does age predict it?</h3>
+      <p>Older emoji differ more, but the pattern is a cliff, not a slope. Of the 135 emoji encoded in 2020 or later, none differs from its CLDR name. Among older emoji, age adds almost nothing once the group is accounted for (0.05 severity points per decade, interval &minus;0.04 to 0.14).</p>
+      <figure class="research-figure is-chart">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="Differences by Unicode age, scrollable chart">
+          <a href="/assets/research/emoji-name-drift/difference-by-unicode-age.png"><img src="/assets/research/emoji-name-drift/difference-by-unicode-age.png" width="1520" height="880" alt="Grouped bars by the Unicode age of each emoji. Differing names: 42.8% for 2009 or earlier, 38.0% for 2010, 31.6% for 2011 to 2014, 26.8% for 2015 to 2019, 0% for 2020 and later." loading="lazy"></a>
+        </div>
+        <figcaption>Share of emoji whose names differ, by the year Unicode encoded the base character. None of the 135 encoded since 2020 differs.</figcaption>
+      </figure>
+      <p><span class="evidence-tag is-interpretation">Interpretation</span> The cliff is consistent with Unicode naming new characters in CLDR&rsquo;s style from about 2020. We found no policy statement saying so, so treat it as a reading of the data. It does not support the idea that formal names stay still while language moves: most of the gap was in place from CLDR&rsquo;s first release, as the next section shows.</p>
+    </section>
+
+    <section class="study-section" id="drift" aria-labelledby="drift-title">
+      <span class="article-section-label">Results</span>
+      <h2 id="drift-title">Is it drift? What CLDR&rsquo;s rename history shows</h2>
+      <p>A gap measured on one day is not change over time. To test for drift, the study read the English short names in every CLDR release from 29 to 49 beta 2 (21 releases that carry names). We use <strong>divergence</strong> for the gap on one date and <strong>drift</strong> only for CLDR renames between releases.</p>
+      <p>CLDR renamed 171 of the 1,400 emoji in ways that go beyond case or an ampersand, in 188 separate changes. Almost all fell in the early releases: 96 in CLDR 30, 33 in CLDR 32 and 32 in CLDR 35. The last non-cosmetic rename was in CLDR 40.</p>
+      <figure class="research-figure is-chart">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="CLDR renames by release, scrollable chart">
+          <a href="/assets/research/emoji-name-drift/cldr-renames-by-release.png"><img src="/assets/research/emoji-name-drift/cldr-renames-by-release.png" width="1500" height="800" alt="Bar chart of 188 non-cosmetic CLDR renames by release: CLDR 30 has 96, CLDR 32 has 33, CLDR 35 has 32, CLDR 37 has 9, CLDR 38 has 6, CLDR 34 has 4, CLDR 40 has 3, others 2 or fewer, none after CLDR 40." loading="lazy"></a>
+        </div>
+        <figcaption>Non-cosmetic CLDR renames of single-character emoji, by release. Releases 41 to 49 beta 2 changed none.</figcaption>
+      </figure>
+      <p>Most of the gap predates the history. When CLDR first named these emoji, 337 already differed from the formal name. Today 448 do. Of those 448, 331 (73.9%) differed from the start, and 117 departed later, only 8 of them after CLDR 35.</p>
+      <p>Renames mostly moved names away from the formal one: 164 of 188 did, 14 moved closer and 10 did not change the overlap. That headline needs care. 132 of the 188 started from a name identical to the formal one, so they could only move away, and 96 are the single step from CLDR 29 to 30. Among renames that did not start identical, 38 moved away and 12 moved closer.</p>
+      <p>Some renames moved away from everyday speech. CLDR 40 replaced <em>hugging face</em> with <em>smiling face with open hands</em>. CLDR 38 added a colour to <em>question mark</em> (now <em>red question mark</em>) and narrowed <em>pistol</em> to <em>water pistol</em>. Others went the other way: <em>dancer</em> and <em>weight lifter</em> became <em>woman dancing</em> and <em>person lifting weights</em>.</p>
+      <p>CLDR&rsquo;s release notes record English name updates from the Emoji Subcommittee (CLDR 32), a review and revision of names and keywords (CLDR 34), refinements for Emoji 12 (CLDR 36) and the renames of <em>dizzy face</em> and <em>hugging face</em> (CLDR 40). They give a reason for almost none of the individual names, so this study does not claim a reason for any single rename.</p>
+    </section>
+
+    <section class="study-section" id="keywords" aria-labelledby="keywords-title">
+      <span class="article-section-label">Results</span>
+      <h2 id="keywords-title">Keywords close part of the gap</h2>
+      <p>A short name is not supposed to hold every synonym. CLDR keeps those in a separate keyword list, and it is that list that bridges the formal name to everyday words. Of the 424 differing pairs where a word left the name, 245 (57.8%) keep at least one of those words as a keyword, and 146 (34.4%) keep all of them.</p>
+      <p>In 27 pairs the whole formal name is itself a keyword, for example <em>hocho</em> on 🔪 and <em>aubergine</em> on 🍆. In only 12 of the 448 pairs does no word of the formal name survive anywhere in the name or keywords. A comparison of names alone would have overstated what a searcher loses. A second tokenizer gave 244 of 427 for the same count, so the safe statement is about 58%.</p>
+    </section>
+
+    <section class="study-section" id="words" aria-labelledby="words-title">
+      <span class="article-section-label">Results</span>
+      <h2 id="words-title">The words people use</h2>
+      <div class="study-caveat" role="note"><p class="study-caveat-title"><span class="evidence-tag is-interpretation">Diagnostic sample</span> Read this first</p><p>This section rests on 9 Reddit threads (2017 to 2026) that were picked by hand because they show people struggling to find or name an emoji. Threads where nobody complained are invisible, and one is a post by someone promoting their own emoji search tool. It shows which kinds of failure exist, not how common they are.</p></div>
+      <p>From the nine threads the study took 31 words people typed or proposed and checked each one against the Unicode name, the CLDR name and the CLDR keywords. Seven appear in the formal name and seven in the CLDR short name. Fifteen appear somewhere in the CLDR name or keywords, eight of them in keywords only. Sixteen appear nowhere.</p>
+      <figure class="research-figure is-chart">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="Where people's words were found, scrollable chart">
+          <a href="/assets/research/emoji-name-drift/reddit-sample-coverage.png"><img src="/assets/research/emoji-name-drift/reddit-sample-coverage.png" width="2200" height="880" alt="Two charts for a diagnostic sample of 31 words from Reddit threads. Left: 7 found in the formal name, 7 in the CLDR short name, 15 in the CLDR name or keywords. Right: found in name or keywords for actions 4 of 4, social functions 3 of 3, literal objects 3 of 4, synonyms 1 of 2, visual descriptions 3 of 7, emotions 1 of 6, and none of the physical-attribute, association, occasion or slang words." loading="lazy"></a>
+        </div>
+        <figcaption>Diagnostic sample of 31 words from 9 Reddit threads. Hand-picked threads, not a benchmark.</figcaption>
+      </figure>
+      <p>The pattern is in the kind of word. Actions and social functions were found 7 times out of 7, and literal objects 3 out of 4. Feelings were found 1 time out of 6, and picture descriptions 3 out of 7. Occasion, slang and association words (St. Patrick&rsquo;s Day, <em>bottom emoji</em>, <em>think</em> for 🧠) were found 0 times out of 4. Of the 16 misses, only two are object or synonym words.</p>
+      <p>Across all 1,400 emoji, <em>Patrick</em> and <em>Nevada</em> appear in no name or keyword. <em>Snore</em> and <em>snot</em> appear nowhere, and <em>sigh</em> only on 😮&zwj;💨. The occasion vocabulary people type is simply not in the data for any emoji.</p>
+      <figure class="research-figure is-chart">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="Three layers for two emoji, scrollable chart">
+          <a href="/assets/research/emoji-name-drift/three-layers.png"><img src="/assets/research/emoji-name-drift/three-layers.png" width="2087" height="1014" alt="Three-layer diagram for two emoji. For 🤬: formal name serious face with symbols covering mouth, CLDR name face with symbols on mouth with keywords including swearing, and Reddit users typing swear and swearing. For 🙏: formal name person with folded hands, CLDR name folded hands with keywords pray, thanks, please, high and five, and Reddit users typing praying, high five, thank you and please." loading="lazy"></a>
+        </div>
+        <figcaption>Three layers for two emoji: the frozen Unicode name, the revisable CLDR name and keywords, and the words people typed.</figcaption>
+      </figure>
+      <h3>Six cases</h3>
+      <ul class="study-bullets">
+        <li><strong>🪓 axe, hatchet, tomahawk.</strong> The poster could use the emoji elsewhere but not find it in a chat app&rsquo;s search. The CLDR keywords for 🪓 are <em>ax, axe, chop, hatchet, split, wood</em>, and they were the same in CLDR 36 and 39. Only <em>tomahawk</em> was missing, so this is not a vocabulary gap. We could not test the app, so the cause is its own matching or data.</li>
+        <li><strong>🙏 praying, high five, thank you.</strong> The name <em>folded hands</em> dropped the word <em>person</em>, and every word the thread offered is already a keyword. The argument is about meaning, which no name can settle. This is the cleanest case of meaning drift being a different thing from naming drift.</li>
+        <li><strong>😪 snoring, sighing, exhaustion.</strong> Both names are <em>sleepy face</em>. Readers disagree about what it shows, and none of their words (<em>snore</em>, <em>sigh</em>, <em>tear</em>, <em>sweat</em>) is a keyword, though <em>sleep</em>, <em>tired</em> and <em>crying</em> are.</li>
+        <li><strong>🤬 swear.</strong> One chat app&rsquo;s emoji code reads <code>face_with_symbols_over_mouth</code>, which equals the CLDR name before CLDR 32 changed <em>over</em> to <em>on</em>. That match is our inference, because the app does not document where its names come from. <em>Swearing</em> is a keyword.</li>
+        <li><strong>🥺 bottom emoji.</strong> A joke nickname in one reply. No standard would adopt it, and it is a fair search alias for a product to add.</li>
+        <li><strong>🧠 think.</strong> <em>Thinking</em> matches 🤔 by name. 🧠 is linked to the idea only by association (<em>intelligent</em>, <em>smart</em>), which is what the person asking for semantic search wanted.</li>
+      </ul>
+    </section>
+
+    <section class="study-section" id="search" aria-labelledby="search-title">
+      <span class="article-section-label">Reading</span>
+      <h2 id="search-title">What this means for emoji search</h2>
+      <p><span class="evidence-tag is-implication">Product implication</span> <span class="evidence-tag is-interpretation">Educated guess</span> The leverage for better emoji search is in aliases and meaning, not in new names. The basis: names are identifiers and CLDR keywords already carry much of the old vocabulary (58% of differing pairs), while the 16 misses in the sample are occasions, feelings, picture descriptions and slang that no standard lists.</p>
+      <p>Before fixing a failed search, sort it into one of three causes. A <strong>vocabulary gap</strong> means CLDR lacks the word (<em>tomahawk</em>, <em>snore</em>, <em>St. Patrick&rsquo;s Day</em>). A <strong>platform failure</strong> means CLDR has the word and the app still misses it (<em>hatchet</em>, <em>high</em>). A <strong>meaning dispute</strong> means people agree on the word and disagree on the emoji (🙏). The fixes differ, and looking the word up in the CLDR keyword list takes a minute.</p>
+      <p>Language adds a further layer this study did not measure. Unicode says annotations are language-specific, and <a target="_blank" rel="nofollow noopener" href="https://www.reddit.com/r/ios/comments/1hjjtjy/">one thread</a> describes a German speaker who could search in English but not German on a phone; commenters blame the active keyboard language, with no vendor documentation to confirm it. CLDR&rsquo;s German data had names and keywords for every emoji we spot-checked, and gaps for ☘️ and 🍀. A German, French or Japanese version of this study is the natural next step.</p>
+      <p>We found no vendor documentation of semantic, meaning-based emoji search from Apple, Google or Microsoft. Absence in our search is not proof that none exists.</p>
+    </section>
+
+    <section class="study-section" id="limitations" aria-labelledby="limitations-title">
+      <span class="article-section-label">Limits</span>
+      <h2 id="limitations-title">Limitations</h2>
+      <ul class="study-bullets">
+        <li><strong>The severity labels come from language models.</strong> Two models from the same family labeled all 448 differing pairs without seeing each other, and a third pass resolved the 166 where they split or either scored 3 or more. They agreed on exact score 71.7% of the time and within one point 98.4% of the time. No person has reviewed the labels, so every label and its one-line reason is in the data file for you to check or overrule.</li>
+        <li><strong>Score 4 leans on one rule.</strong> We scored code-point names as 4 because they are opaque. That rule accounts for 11 of the 18.</li>
+        <li><strong>The CLDR 49 data is beta 2.</strong> The names Unicode published for Emoji 18.0 equal it for all 1,400 emoji, so we expect the final release to change little. That is an educated guess based on that match, not a check against the final files. Later versions keep this address and say what changed.</li>
+        <li><strong>Only the renames are measured over time.</strong> The Unicode-versus-CLDR gap is a snapshot. CLDR 29 to 30 mixes first-draft names with first-release names, and the history does not separate them.</li>
+        <li><strong>English only.</strong> The names, keywords and Reddit sample are all English.</li>
+        <li><strong>The Reddit sample is small and hand-picked.</strong> We read the threads through a public archive because Reddit blocks automated reads, so vote counts are snapshots. Two secondary threads could not be found and are not used.</li>
+        <li><strong>&ldquo;Found&rdquo; means present in CLDR&rsquo;s data.</strong> It does not mean an app will return the emoji. Apps may stem or prefix-match words differently, and we tested no app.</li>
+        <li><strong>Drawings are not compared.</strong> Studies by others attribute much emoji misreading to how a platform draws the emoji. This study measures names only.</li>
+      </ul>
+    </section>
+
+    <section class="study-section" id="method" aria-labelledby="method-title">
+      <span class="article-section-label">Method</span>
+      <h2 id="method-title">How the comparison was made</h2>
+      <p>Names come from Unicode 18.0.0 (<code>UnicodeData.txt</code> for formal names, <code>emoji-test.txt</code> for CLDR short names as published) and from the CLDR English annotation files for releases 29 to 48 and 49 beta 2 (keywords and rename history). Every source file was fetched on October 12, 2026 and its SHA-256 hash is in <a href="/research/emoji-name-drift/data/source-files.csv">source-files.csv</a>.</p>
+      <p><strong>Which emoji count.</strong> An emoji is in the comparison if it is fully qualified and is one base character, optionally followed by U+FE0F, with a name in <code>UnicodeData.txt</code>. That gives 1,400. Nine building-block components and 2,563 sequences are left out because they have no formal name. The 12 keycap sequences have formal names as named sequences but are not compared.</p>
+      <p><strong>Normalization.</strong> Names are lower-cased, accents are removed, hyphens and punctuation become spaces, apostrophes are dropped and <em>&amp;</em> is read as <em>and</em>. Anything that still differs after that is a difference in words.</p>
+      <p><strong>Severity.</strong> Each of the 448 differing pairs got a score from 0 to 4 and a main kind of change (A to N, listed under the examples). The rules were written down before labeling. Two language models labeled every pair separately, a third pass applied written tie-break rules to the 166 pairs where the two split or either scored 3 or more, and we report the spread between the two models as the uncertainty. The data dictionary explains each column.</p>
+      <p><strong>Text measures.</strong> Character similarity, word overlap, which words left and entered each name, whether a word that left is still a keyword, and a sentence-embedding similarity (all-MiniLM-L6-v2). None is treated as ground truth. Severity is the measure of how much a change matters.</p>
+      <p><strong>Rename history.</strong> The English short name of each emoji was read in every CLDR release and compared with the release before. A change that is only case or <em>&amp;</em> versus <em>and</em> is cosmetic and not counted as a rename.</p>
+      <p><strong>Reddit sample.</strong> We took the words people typed or proposed from 9 threads, matched each against the formal name, the CLDR name and the keywords after stemming, and added the closest CLDR word and a likely cause by hand. Usernames are not recorded.</p>
+      <p>You can reproduce the 1,400 and the 952 and 448 split from two public files with <a href="/research/emoji-name-drift/data/reproduce-denominator.py">reproduce-denominator.py</a>.</p>
+    </section>
+
+    <section class="study-section" id="corrections" aria-labelledby="corrections-title">
+      <span class="article-section-label">Record</span>
+      <h2 id="corrections-title">Corrections</h2>
+      <p>Version 1.0, October 13, 2026. No corrections yet. A corrected version keeps this address, gets a new version number and says what changed.</p>
+    </section>
+
+    <section class="study-section" id="data" aria-labelledby="data-title">
+      <span class="article-section-label">Data</span>
+      <h2 id="data-title">Data and files</h2>
+      <ul class="download-list">
+        <li class="download-item is-primary">
+          <a href="/research/emoji-name-drift.pdf" download><span class="download-name">Full study, version 1.0</span> <span class="download-meta">PDF · 1.8 MB</span></a>
+          <p>The same text as this page, with title, version and canonical URL on every page.</p>
+        </li>
+        <li class="download-item">
+          <a href="/research/emoji-name-drift/data/emoji-name-comparison.csv"><span class="download-name">emoji-name-comparison.csv</span> <span class="download-meta">CSV · 318 KB</span></a>
+          <p>Start here: all 1,400 emoji with both names, keywords, severity, kind of change and the reason for each label.</p>
+        </li>
+      </ul>
+      <div class="data-table-wrap">
+        <table class="data-table data-files-table">
+          <thead><tr><th scope="col">File</th><th scope="col">Contents</th><th scope="col">Size</th></tr></thead>
+          <tbody>
+            <tr><td><a href="/research/emoji-name-drift/data/emoji-name-comparison.csv">emoji-name-comparison.csv</a></td><td>The 1,400 emoji with a formal name: both names, keywords, group, Unicode and Emoji version, severity, kind of change, reason, text measures</td><td>318 KB</td></tr>
+            <tr><td><a href="/research/emoji-name-drift/data/emoji-universe.csv">emoji-universe.csv</a></td><td>All 3,972 emoji in Emoji 18.0 with type, CLDR name and keywords</td><td>880 KB</td></tr>
+            <tr><td><a href="/research/emoji-name-drift/data/cldr-name-changes.csv">cldr-name-changes.csv</a></td><td>Every English short-name change from CLDR 29 to 49 beta 2, for all emoji types</td><td>82 KB</td></tr>
+            <tr><td><a href="/research/emoji-name-drift/data/single-base-renames.csv">single-base-renames.csv</a></td><td>The renames of the 1,400 emoji, with whether each began identical to the formal name and which way it moved</td><td>24 KB</td></tr>
+            <tr><td><a href="/research/emoji-name-drift/data/reddit-vocabulary-sample.csv">reddit-vocabulary-sample.csv</a></td><td>The 31 words from Reddit threads, where each was found, closest CLDR word and likely cause. Thread, month and link only</td><td>10 KB</td></tr>
+            <tr><td><a href="/research/emoji-name-drift/data/summary-statistics.json">summary-statistics.json</a></td><td>Every figure on this page as machine-readable numbers</td><td>12 KB</td></tr>
+            <tr><td><a href="/research/emoji-name-drift/data/source-files.csv">source-files.csv</a></td><td>Address, size and SHA-256 hash of every Unicode and CLDR file used</td><td>12 KB</td></tr>
+            <tr><td><a href="/research/emoji-name-drift/data/data-dictionary.csv">data-dictionary.csv</a></td><td>What the main columns mean</td><td>2 KB</td></tr>
+            <tr><td><a href="/research/emoji-name-drift/data/reproduce-denominator.py">reproduce-denominator.py</a></td><td>Standard-library script that rebuilds the 1,400 and the 952 and 448 split from two Unicode files</td><td>3 KB</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="study-section" id="citation" aria-labelledby="citation-title">
+      <span class="article-section-label">Cite</span>
+      <h2 id="citation-title">How to cite this study</h2>
+      <p class="research-citation" id="citation-text">UltraTextGen Research. &ldquo;Emoji Name Drift: How Unicode&rsquo;s Stable Names Diverge From the Words People Actually Use.&rdquo; Version 1.0, October 13, 2026. https://ultratextgen.com/research/emoji-name-drift/</p>
+      <p>Please cite the version number and say that the severity labels are model-assigned.</p>
+    </section>
+
+    <div id="sources" class="study-sources">
+    <section class="editorial-section">
+      <span class="article-section-label">Sources</span>
+      <h2>External sources</h2>
+      <div class="source-note">
+        <p>That a formal Unicode name is an identifier that is never changed once assigned comes from the Unicode Standard&rsquo;s chapter on character names (<a target="_blank" rel="noopener" href="https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-4/">chapter 4, section 4.8</a>) and the Consortium&rsquo;s <a target="_blank" rel="noopener" href="https://www.unicode.org/policies/stability_policy.html">Stability Policy</a>, which also says names do not always express a character&rsquo;s full meaning and that outright errors get a formal alias.</p>
+        <p>That a CLDR short name can change, that sequences have only CLDR names, that gender-neutral &ldquo;person&rdquo; names were adopted for human-form emoji, and that annotations are language-specific come from the Consortium&rsquo;s <a target="_blank" rel="noopener" href="https://www.unicode.org/reports/tr51/">Unicode Emoji report (UTS #51)</a>; how short names and keywords are defined comes from <a target="_blank" rel="noopener" href="https://www.unicode.org/reports/tr35/tr35-general.html#Annotations">UTS #35, Annotations</a>.</p>
+        <p>CLDR&rsquo;s goals for short names (unique, short, descriptive, not literal) and its guidance that keywords are what people might search for in addition to the name are in the CLDR project&rsquo;s <a target="_blank" rel="nofollow noopener" href="https://cldr.unicode.org/translation/characters/short-names-and-keywords">short names and keywords guide</a>.</p>
+        <p>The data files are <a target="_blank" rel="noopener" href="https://www.unicode.org/Public/18.0.0/ucd/UnicodeData.txt">UnicodeData.txt 18.0.0</a>, <a target="_blank" rel="noopener" href="https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt">emoji-test.txt 18.0</a> and the English annotation files in the <a target="_blank" rel="noopener" href="https://github.com/unicode-org/cldr/tree/release-48/common/annotations">CLDR repository</a>, with the full list of files and hashes in the data section.</p>
+        <p>That CLDR revised English names in specific releases is recorded in the release notes for <a target="_blank" rel="nofollow noopener" href="https://cldr.unicode.org/downloads/cldr-32">CLDR 32</a>, <a target="_blank" rel="nofollow noopener" href="https://cldr.unicode.org/downloads/cldr-34">CLDR 34</a>, <a target="_blank" rel="nofollow noopener" href="https://cldr.unicode.org/downloads/cldr-36">CLDR 36</a> and <a target="_blank" rel="nofollow noopener" href="https://cldr.unicode.org/downloads/cldr-40">CLDR 40</a>.</p>
+        <p>That two people rarely pick the same word for the same thing comes from Furnas, Landauer, Gomez and Dumais, <a target="_blank" rel="nofollow noopener" href="https://doi.org/10.1145/32206.32212">&ldquo;The vocabulary problem in human-system communication&rdquo;</a> (1987), where two people chose the same term with probability under 0.20. That people read the same emoji rendering differently comes from Miller and colleagues, <a target="_blank" rel="nofollow noopener" href="https://doi.org/10.1609/icwsm.v10i1.14757">&ldquo;Blissfully Happy&rdquo; or &ldquo;Ready to Fight&rdquo;</a> (2016), and that emoji meaning shifts in use over time comes from Robertson and colleagues, <a target="_blank" rel="nofollow noopener" href="https://arxiv.org/abs/2105.00846">&ldquo;Semantic Journeys&rdquo;</a> (2021).</p>
+        <p>The words people typed come from these threads: <a target="_blank" rel="nofollow noopener" href="https://www.reddit.com/r/Emoji/comments/m4gnn7/">r/Emoji, March 2021</a> (🪓), <a target="_blank" rel="nofollow noopener" href="https://www.reddit.com/r/askSouthAfrica/comments/1uorpjv/">r/askSouthAfrica, July 2026</a> (🙏), <a target="_blank" rel="nofollow noopener" href="https://www.reddit.com/r/Emoji/comments/1s1z82m/">r/Emoji, March 2026</a> (😪), <a target="_blank" rel="nofollow noopener" href="https://www.reddit.com/r/discordapp/comments/g7mz0y/">r/discordapp, April 2020</a> (🤬), <a target="_blank" rel="nofollow noopener" href="https://www.reddit.com/r/MisreadSprites/comments/1wyge2n/">r/MisreadSprites, October 2026</a> (🥺), <a target="_blank" rel="nofollow noopener" href="https://www.reddit.com/r/monarchapp/comments/1stwqrq/">r/monarchapp, April 2026</a> (🧠), <a target="_blank" rel="nofollow noopener" href="https://www.reddit.com/r/Emoji/comments/1rv7ooe/">r/Emoji, March 2026</a> (🍀), <a target="_blank" rel="nofollow noopener" href="https://www.reddit.com/r/apple/comments/5nukgw/">r/apple, January 2017</a> (☹️), <a target="_blank" rel="nofollow noopener" href="https://www.reddit.com/r/ios/comments/eta6lb/">r/ios, January 2020</a> (😍), and, for the German search report, <a target="_blank" rel="nofollow noopener" href="https://www.reddit.com/r/ios/comments/1hjjtjy/">r/ios, December 2024</a>.</p>
+      </div>
+    </section>
+    </div>
+
+    <section class="related-pages">
+      <h2>Related</h2>
+      <div class="related-pages-grid">
+        <a href="/library/emoji-meanings-guide/" class="related-page-card">
+          <span class="related-page-label">Emoji reference</span>
+          <h4>Emoji Meanings Guide</h4>
+        </a>
+        <a href="/research/zalgo-generator-benchmark/" class="related-page-card">
+          <span class="related-page-label">Study 3</span>
+          <h4>Zalgo Generator Benchmark 2026</h4>
+        </a>
+        <a href="/research/" class="related-page-card">
+          <span class="related-page-label">Research</span>
+          <h4>All UltraTextGen research</h4>
+        </a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+<!-- BEGIN static footer — generated by scripts/build-static-footer.js from footer.js. Do not edit by hand — run `npm run build:static-footer`. -->
+<div class="footer-columns"><div class="footer-col"><span class="footer-col-title">Explore</span><a href="/" class="footer-link">Home</a><a href="/guide/" class="footer-link">Guides</a><a href="/answers/" class="footer-link">Answers</a><a href="/usecase/" class="footer-link">Use Cases</a><a href="/category/" class="footer-link">Categories</a><a href="/library/" class="footer-link">Library</a><a href="/printables/" class="footer-link">Printables</a><a href="/events/" class="footer-link">Events</a></div><div class="footer-col"><span class="footer-col-title">Popular Tools</span><a href="/usecase/text-to-emoji/" class="footer-link">Text to Emoji</a><a href="/usecase/linkedin-headline/" class="footer-link">LinkedIn Headline</a><a href="/usecase/comment-font/" class="footer-link">Comment Font</a><a href="/usecase/bio-font/" class="footer-link">Bio Font</a><a href="/usecase/vertical-text/" class="footer-link">Vertical Text</a><a href="/usecase/scrolling-text/" class="footer-link">Scrolling Text</a><a href="/usecase/repeat-text/" class="footer-link">Repeat Text</a><a href="/usecase/zalgo-text/" class="footer-link">Zalgo Text</a><a href="/ascii-art-generator/" class="footer-link">ASCII Art Generator</a></div><div class="footer-col"><span class="footer-col-title">Popular Categories</span><a href="/category/bold-fonts/" class="footer-link">Bold Fonts</a><a href="/category/cursive-fonts/" class="footer-link">Cursive Fonts</a><a href="/category/gothic-fonts/" class="footer-link">Gothic Fonts</a><a href="/category/bubble-fonts/" class="footer-link">Bubble Fonts</a><a href="/category/strikethrough-text/" class="footer-link">Strikethrough</a></div><div class="footer-col"><span class="footer-col-title">Company</span><a href="/about/" class="footer-link">About</a><a href="/privacy/" class="footer-link">Privacy Policy</a><a href="/terms/" class="footer-link">Terms of Service</a><a href="/contact/" class="footer-link">Contact</a></div></div><div class="footer-social-links"><a href="https://www.youtube.com/@UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.facebook.com/profile.php?id=61588587387596" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.linkedin.com/company/71290348/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a></div><div class="footer-bottom">© 2026 UltraTextGen. Fast text styles that work everywhere.</div>
+<!-- END static footer -->
+</div>
+  </footer>
+
+<script src="/js/research/research-study.js" defer></script>
+<script src="/footer.js" defer></script>
+</body>
+</html>
