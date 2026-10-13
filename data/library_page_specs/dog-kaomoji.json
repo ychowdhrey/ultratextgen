@@ -5,7 +5,7 @@
   "breadcrumb": "Dog Kaomoji",
   "hero_h1": "Dog Kaomoji",
   "hero_tagline": "Copy and paste dog kaomoji: cute Japanese puppy text faces with floppy ears and paws. Click any face to copy it instantly.",
-  "intro": "Dog kaomoji (also spelled kamoji) are Japanese-style text faces built around a dog's snout ᴥ or ▼ and floppy ∪ ears. A dog kaomoji such as ໒(＾ᴥ＾)七 or U・ᴥ・U is plain Unicode text, so it pastes cleanly into bios, captions, comments, and usernames. Browse by mood below and click any face to copy it instantly. Whether you search \"dog kaomoji\" or \"kaomoji dog,\" every pup here is free to copy and paste.",
+  "intro": "Dog kaomoji (also spelled kamoji) are Japanese-style text faces built around a dog's snout ᴥ or ▼ and floppy ∪ ears. A dog kaomoji such as ໒(＾ᴥ＾)七 or U・ᴥ・U is plain Unicode text, so it pastes into bios, captions, and comments. Browse by mood below and click any face to copy it instantly. Whether you search \"dog kaomoji\" or \"kaomoji dog,\" every pup here is free to copy and paste. ૮, ᐛ and ᕡ come from Gujarati and Canadian syllabics, so a device without those fonts shows a box in their place.",
   "date_published": "2026-07-10",
   "date_modified": "2026-07-10",
   "copy_pattern": "single",
@@ -119,6 +119,16 @@
       "href": "/library/bunny-kaomoji/",
       "title": "Bunny Kaomoji",
       "desc": "Cute rabbit text faces with long ears."
+    },
+    {
+      "href": "/library/dog-ascii-art/",
+      "title": "Dog ASCII Art",
+      "desc": "Original multi-line text dogs: puppy faces, floppy ears, sitting dogs, and bones drawn in plain characters."
+    },
+    {
+      "href": "/library/animal-emojis/",
+      "title": "Animal & Creature Emojis",
+      "desc": "A reference collection of animal emojis: pets, wildlife, sea creatures, birds, and mythical beings."
     }
   ]
 }

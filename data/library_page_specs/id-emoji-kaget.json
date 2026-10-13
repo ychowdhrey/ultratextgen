@@ -1,10 +1,10 @@
 {
   "slug": "emoji-kaget",
   "title": "Emoji Kaget 😱 😲 — Salin & Tempel Kombinasi Terkejut | UltraTextGen",
-  "meta_description": "Emoji kaget 😱 😲 🤯, kaomoji terkejut seperti (⊙_⊙), dan kombinasi plot twist buat reaksi melongo di chat dan komentar. Klik simbolnya, langsung kesalin.",
+  "meta_description": "Emoji kaget 😱 😲 🤯, emotikon terkejut kayak :O, dan kombinasi plot twist buat reaksi melongo di chat dan komentar. Klik simbolnya, langsung kesalin.",
   "breadcrumb": "Emoji Kaget",
-  "hero_h1": "Emoji Kaget & Kaomoji",
-  "hero_tagline": "Teriakan, terkesiap, rahang jatuh, dan kaomoji mata belo (⊙_⊙) — kaget di segala tingkat. Klik simbolnya, langsung kesalin.",
+  "hero_h1": "Emoji Kaget",
+  "hero_tagline": "Teriakan, terkesiap, rahang jatuh, dan :O yang diketik: kaget di segala tingkat. Klik simbolnya, langsung kesalin.",
   "intro": "Kalau sesuatu benar-benar di luar dugaan, emoji kaget yang ngomong — 😱 teriak, 😲 melongo, dan 🤯 kepalanya meledak. Halaman ini ngumpulin semua wajah kaget dan terkejut, tanda seru yang bikin reaksinya makin kerasa, ekspresi gugup dan ngeri, plus kaomoji mata belo kayak Σ(ﾟДﾟ) — lengkap sama kombinasi kaget sekali klik buat plot twist, thread gosip, dan reaksi jumpscare.",
   "copy_pattern": "collection",
   "sections": [
@@ -121,10 +121,42 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emotikon",
+      "h2": "Emotikon Teks Kaget",
+      "intro": "Huruf O bulat buat mulut yang menganga: kaget versi ketikan yang udah ada jauh sebelum 😮. Tambah hidung, atau ganti matanya pakai angka 8 biar makin melotot.",
+      "symbols": [
+        {
+          "char": ":O",
+          "label": "Kaget"
+        },
+        {
+          "char": ":-O",
+          "label": "Kaget Pakai Hidung"
+        },
+        {
+          "char": ":o",
+          "label": "Kaget Kecil"
+        },
+        {
+          "char": "=O",
+          "label": "Melongo Lebar"
+        },
+        {
+          "char": "O_O",
+          "label": "Mata Melotot"
+        },
+        {
+          "char": "8-O",
+          "label": "Mata Belo Kaget"
+        }
+      ]
+    },
+    {
       "id": "shocked-kaomoji",
       "label": "Kaomoji",
       "h2": "Kaomoji Kaget & Wajah Teks",
-      "intro": "Wajah teks ala Jepang dengan mata belo dan rahang jatuh, membeku nggak percaya.",
+      "intro": "Empat wajah teks ala Jepang dengan mata belo, membeku pas lagi kaget.",
       "symbols": [
         {
           "char": "(⊙_⊙)",
@@ -135,34 +167,15 @@
           "label": "Kaomoji Kaget Mendadak"
         },
         {
-          "char": "Σ(°△°|||)",
-          "label": "Kaomoji Tersentak"
-        },
-        {
           "char": "w(°ｏ°)w",
           "label": "Kaomoji Terkesiap Angkat Tangan"
-        },
-        {
-          "char": "(ﾟоﾟ)",
-          "label": "Kaomoji Melongo"
-        },
-        {
-          "char": "ヽ(ﾟДﾟ)ﾉ",
-          "label": "Kaomoji Panik"
-        },
-        {
-          "char": "(○o○)",
-          "label": "Kaomoji Mata Bulat Kaget"
-        },
-        {
-          "char": "☉_☉",
-          "label": "Kaomoji Tatapan Membeku"
         },
         {
           "char": "(((ﾟДﾟ;)))",
           "label": "Kaomoji Gemetar Kaget"
         }
-      ]
+      ],
+      "more_link": { "href": "/id/library/kaomoji/", "text": "Lihat semua kaomoji" }
     }
   ],
   "collection_section": {
@@ -300,7 +313,7 @@
   ],
   "canonical": "https://ultratextgen.com/id/library/emoji-kaget/",
   "date_published": "2026-08-08",
-  "date_modified": "2026-08-08",
+  "date_modified": "2026-10-09",
   "lang": "id",
   "page_type": "library",
   "faq_label": "FAQ",

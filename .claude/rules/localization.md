@@ -178,6 +178,11 @@ it is evidenced for, and its `avoid_when` field says where to skip it. Respect
 promoted into a title or H1, and community or gaming jargon does not belong in legal,
 accessibility or technical copy.
 
+*Note 2026-10-09 (owner decision).* `/es/` is not `es_ES`-targeted: it is one Spanish
+for every market, neutral words first and the Latin American form where no neutral
+word exists. The example above about Mexican Spanish no longer applies to `/es/`. See
+`docs/decisions/spanish-one-market.md`.
+
 Use a local phrase only when it naturally fits the exact meaning, platform,
 audience and register of the sentence. It supports the page's one primary query
 target; it never competes with it, never justifies a new page, and a phrase

@@ -5108,6 +5108,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var activeType = null;
   var searchQuery = "";
 
+  /* ── Browse telemetry ──
+     header.js owns library_filter and library_search (one writer, debounced
+     to the settled state). This page only reports what changed: a chip label
+     from the vocabularies above, and the result count. The search term is
+     trimmed and capped there. */
+  const FILTER_TYPE = { type: "type", subject: "subject", useCases: "use_case", platforms: "platform" };
+  function noteFilter(key, value) {
+    const utg = window.UltraTextGen;
+    if (utg && utg.trackLibraryFilter) {
+      utg.trackLibraryFilter(FILTER_TYPE[key] || key, value || "none", getFiltered().length);
+    }
+  }
+  function noteSearch() {
+    const utg = window.UltraTextGen;
+    if (utg && utg.trackLibrarySearch) utg.trackLibrarySearch(searchQuery, getFiltered().length);
+  }
+
   /* ── Helpers ── */
   function countBy(data, key, value) {
     return data.filter(function (item) {
@@ -5136,6 +5153,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           setActive(val);
         }
         render();
+        noteFilter(key, getActive());
       });
       row.appendChild(btn);
     });
@@ -5390,6 +5408,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     searchQuery = "";
     document.getElementById("libSearch").value = "";
     render();
+    noteSearch();
+    noteFilter("all", null);
   }
 
   /* ── Init ── */
@@ -5412,6 +5432,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   document.getElementById("libSearch").addEventListener("input", function () {
     searchQuery = this.value.trim();
     render();
+    noteSearch();
   });
 
   document.getElementById("clearFilters").addEventListener("click", clearAll);
@@ -5424,16 +5445,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var key = btn.dataset.filter;
     var val = btn.dataset.value;
     if (!key || !val) return;
+    let now;
     if (key === "type") {
       activeType = (activeType === val) ? null : val;
+      now = activeType;
     } else if (key === "useCases") {
       activeUseCase = (activeUseCase === val) ? null : val;
+      now = activeUseCase;
     } else if (key === "platforms") {
       activePlatform = (activePlatform === val) ? null : val;
+      now = activePlatform;
     } else {
       return;
     }
     render();
+    noteFilter(key, now);
   });
 
   /* ── Back-to-top ── */

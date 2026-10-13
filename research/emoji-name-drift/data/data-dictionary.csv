@@ -1,0 +1,11 @@
+file,column,meaning
+emoji-name-comparison.csv,severity_0_to_4,"Size of the difference between the two names: 0 same words, 1 minor wording, 2 meaningful rewording of one concept, 3 substantial difference in interpretation, 4 major difference or the formal name is opaque. Assigned by two language-model raters and adjudicated; not human-validated."
+emoji-name-comparison.csv,primary_type,"Main kind of change: A cosmetic, B lexical simplification, C lexical expansion, D synonym substitution, E head-concept change, F emotional reinterpretation, G role or person wording, H orientation or physical description, I cultural or regional, K substantial semantic drift, M function relabel, N colour or rendering legacy. NONE when the names match after normalization."
+emoji-name-comparison.csv,same_after_normalization,"yes when the names are equal after lower-casing, removing accents, hyphens and punctuation, and treating & as and."
+emoji-name-comparison.csv,char_similarity / token_jaccard / embedding_cosine,"Descriptive text measures (character similarity, word-set overlap, sentence-embedding cosine with all-MiniLM-L6-v2). None is ground truth."
+emoji-name-comparison.csv,removed_words_found_in_keywords,Words that left the formal name and are still CLDR keywords.
+emoji-universe.csv,in_comparison,"True for the 1,400 emoji with a formal Unicode name (single code point, or base + U+FE0F)."
+cldr-name-changes.csv,changed_in_cldr,CLDR release in which the English short name took its new value. Releases 29 to 48 and 49 beta 2; CLDR 27 and 28 hold no emoji short names we could read.
+single-base-renames.csv,moved,"closer, farther or same: whether the new name overlaps more or less with the formal Unicode name than the old one (content-word overlap)."
+reddit-vocabulary-sample.csv,found_where,"short name, keywords only, formal name only, or absent from all three (stemmed word match)."
+reddit-vocabulary-sample.csv,likely_cause,vocabulary: the word is missing from CLDR; platform: CLDR has it and the product still failed; meaning: the dispute is about what the emoji means; none: the name or a keyword already matches.

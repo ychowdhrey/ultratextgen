@@ -8,7 +8,7 @@
   "crumb_home": "Inicio",
   "library_url": "https://ultratextgen.com/es/library/",
   "date_published": "2026-08-12",
-  "date_modified": "2026-08-12",
+  "date_modified": "2026-10-09",
   "hreflang": [
     {
       "lang": "en",
@@ -23,11 +23,11 @@
       "href": "https://ultratextgen.com/library/tired-emoji/"
     }
   ],
-  "title": "Emoji Cansado y Kaomoji: Copiar y Pegar 😴 🥱 Combos de Agotamiento",
-  "meta_description": "Copia y pega el emoji cansado 😴 🥱 😫, kaomoji con sueño como (-_-)zzz y combos de agotamiento. Haz clic en cualquier símbolo para copiarlo.",
-  "breadcrumb": "Emoji Cansado y Kaomoji",
-  "hero_h1": "Emoji Cansado y Kaomoji",
-  "hero_tagline": "Desde un 🥱 bostezo de sueño hasta el 😩 agotamiento total: todas las formas de estar cansado, más kaomoji dormilones y combos listos para usar. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "title": "Emoji Cansado: Copiar y Pegar 😴 🥱 Caras de Sueño, Emoticonos y Combos",
+  "meta_description": "Copia y pega el emoji cansado 😴 🥱 😫, emoticonos de sueño como |-) y -_-, y combos de agotamiento. Haz clic en cualquier símbolo para copiarlo.",
+  "breadcrumb": "Emoji Cansado",
+  "hero_h1": "Emoji Cansado",
+  "hero_tagline": "Desde un 🥱 bostezo de sueño hasta el 😩 agotamiento total: todas las formas de estar cansado, más emoticonos de sueño y combos listos para usar. Haz clic en cualquier símbolo para copiarlo al instante.",
   "intro": "El emoji cansado abarca dos estados muy distintos: el sueño rico del final del día 😴, cuando ya solo quieres cama, y el 😫 agotamiento de quien anda con las pilas en cero. Esta página los separa con claridad: de un lado los bostezos y los símbolos de irse a dormir, del otro las caras exhaustas y derretidas de tanto cansancio. Alrededor están los accesorios del modo recuperación, como el ☕ café y la 🌙 luna, los kaomoji clásicos de sueño como (-_-)zzz, y combos de un solo clic para leyendas de madrugada y respuestas de \"ya no puedo más\". Toma una sola cara o copia el combo completo, según qué tan cansado estés en realidad.",
   "sections": [
     {
@@ -103,18 +103,42 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Emoticonos",
+      "h2": "Emoticonos de Cansancio de Texto",
+      "intro": "Ojos convertidos en una raya o una barra: la cara tecleada de alguien que apenas sigue despierto. Se pegan como texto plano, con o sin teclado de emojis.",
+      "symbols": [
+        {
+          "char": "|-)",
+          "label": "Durmiendo"
+        },
+        {
+          "char": "I-)",
+          "label": "Cabeceando"
+        },
+        {
+          "char": "|-O",
+          "label": "Bostezo"
+        },
+        {
+          "char": "-_-",
+          "label": "Agotado"
+        },
+        {
+          "char": "=_=",
+          "label": "Sin energía"
+        }
+      ]
+    },
+    {
       "id": "tired-kaomoji",
       "label": "Kaomoji",
       "h2": "Kaomoji y Caritas de Texto de Cansancio",
-      "intro": "Caritas de texto al estilo japonés que se quedan dormidas con sus zzz: pégalas donde funcione el texto simple.",
+      "intro": "Cuatro caritas japonesas con sueño, de los párpados pesados a desplomarse en la cama.",
       "symbols": [
         {
           "char": "(-_-)zzz",
           "label": "Kaomoji Quedándose Dormido"
-        },
-        {
-          "char": "(=_=)",
-          "label": "Kaomoji Agotado"
         },
         {
           "char": "( ˘_˘ )",
@@ -127,16 +151,9 @@
         {
           "char": "(¦3[▓▓]",
           "label": "Kaomoji Desplomado en la Cama"
-        },
-        {
-          "char": "(˘̩̩̩ε˘̩̩̩)",
-          "label": "Kaomoji con Puchero de Agotamiento"
-        },
-        {
-          "char": "ヾ(_ _。)ゝ",
-          "label": "Kaomoji que se Despide Cansado"
         }
-      ]
+      ],
+      "more_link": { "href": "/es/library/kaomoji/", "text": "Ver todos los kaomoji" }
     }
   ],
   "collections": [
@@ -222,12 +239,12 @@
     },
     {
       "href": "/es/library/emoji-llorando/",
-      "title": "Emoji Llorando y Kaomoji",
+      "title": "Emoji Llorando",
       "desc": "Caras con lágrimas y kaomoji de llanto para los días más difíciles."
     },
     {
       "href": "/es/library/emoji-triste/",
-      "title": "Emoji Triste y Kaomoji",
+      "title": "Emoji Triste",
       "desc": "Caras melancólicas y de ánimo bajo para cuando el cansancio se vuelve tristeza."
     },
     {

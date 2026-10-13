@@ -1221,6 +1221,74 @@
     printHidden = [];
   }
 
+  /* @browse-events:begin */
+  /* Browse events: the kaomoji hub's "browse by mood" links, and the /library/
+     directory's filter chips and search box. Every payload is a pure function
+     of catalogue values and counts, so a test can assert what leaves the page
+     without a browser. Every key is always present (undefined clears it): GTM's
+     data layer keeps a key's last value.
+
+     What is deliberately NOT sent: anything a visitor typed, except the
+     library search term, which follows the site_search policy (trimmed, at most
+     100 characters). A filter value is a chip label from the page's own
+     controlled vocabulary, never free text. */
+  const BROWSE_SETTLE_MS = 800;
+  const browseTimers = {};
+
+  // `groupIndex` is the 1-based position of the link's list among the
+  // .kao-mood-links lists on the hub (the same order on every locale hub).
+  function moodIndexClickPayload(destinationPath, groupIndex) {
+    return {
+      event: "kaomoji_mood_index_click",
+      destination_path: String(destinationPath || "").slice(0, 200),
+      mood_group: groupIndex > 0 ? groupIndex : undefined
+    };
+  }
+
+  function libraryFilterPayload(filterType, filterValue, resultCount) {
+    return {
+      event: "library_filter",
+      filter_type: filterType,
+      filter_value: filterValue,
+      result_count: resultCount
+    };
+  }
+
+  function librarySearchPayload(term, resultCount) {
+    return {
+      event: "library_search",
+      search_term: String(term || "").trim().slice(0, 100),
+      result_count: resultCount
+    };
+  }
+
+  // One row per settled change: a later change within the window replaces the
+  // pending one, so a run of chip clicks or keystrokes records its end state.
+  function pushSettled(payload) {
+    clearTimeout(browseTimers[payload.event]);
+    browseTimers[payload.event] = setTimeout(function () {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(payload);
+    }, BROWSE_SETTLE_MS);
+  }
+
+  // `value` is the chip label, or "none" when the chip was switched off or the
+  // filters were cleared (then `type` is "all" for a clear).
+  function trackLibraryFilter(type, value, resultCount) {
+    pushSettled(libraryFilterPayload(type, value, resultCount));
+  }
+
+  // A search box cleared to nothing is not a search: it cancels what was pending.
+  function trackLibrarySearch(term, resultCount) {
+    const payload = librarySearchPayload(term, resultCount);
+    if (!payload.search_term) {
+      clearTimeout(browseTimers[payload.event]);
+      return;
+    }
+    pushSettled(payload);
+  }
+  /* @browse-events:end */
+
   var ns = (window.UltraTextGen = window.UltraTextGen || {});
   ns.hideForPrint = hideForPrint;
   ns.restorePrint = restorePrint;
@@ -1229,6 +1297,8 @@
   ns.trackPrintable = trackPrintable;
   ns.trackPrintableEvent = trackPrintableEvent;
   ns.printableCredit = printableCredit;
+  ns.trackLibraryFilter = trackLibraryFilter;
+  ns.trackLibrarySearch = trackLibrarySearch;
 
   function initializeCtaTracking() {
     document.addEventListener("click", function (evt) {
@@ -1279,15 +1349,28 @@
     }, false);
   }
 
+  function initializeKaomojiMoodIndexTracking() {
+    document.addEventListener("click", function (evt) {
+      const link = evt.target && evt.target.closest && evt.target.closest(".kao-mood-links a[href]");
+      if (!link) return;
+      const lists = document.querySelectorAll(".kao-mood-links");
+      const group = Array.prototype.indexOf.call(lists, link.closest(".kao-mood-links")) + 1;
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(moodIndexClickPayload(link.pathname, group));
+    }, false);
+  }
+
   if (document.body) {
     initializeSharedHeader();
     initializeCtaTracking();
     initializePrintableNavTracking();
+    initializeKaomojiMoodIndexTracking();
   } else {
     document.addEventListener("DOMContentLoaded", function () {
       initializeSharedHeader();
       initializeCtaTracking();
       initializePrintableNavTracking();
+      initializeKaomojiMoodIndexTracking();
     });
   }
 })();

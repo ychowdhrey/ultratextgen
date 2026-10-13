@@ -1,0 +1,6 @@
+run,condition,false_alarms,of_supported,pct_detected,note
+1,A_distro,5,11380,100.0,"run after the plain two-reference check had already drawn every character on the same page"
+2,A_distro,1382,11380,100.0,"fresh page, frame variant only"
+3,A_distro,1185,11380,100.0,"fresh page, frame variant only"
+4,A_distro,1382,11380,100.0,"fresh page, frame variant only"
+5,A_distro,1382,11380,100.0,"fresh page, frame variant only"

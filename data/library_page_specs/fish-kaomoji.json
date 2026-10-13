@@ -83,7 +83,7 @@
   "faq": [
     {"q": "What does ><> mean in a text?", "a": "It is a fish swimming to the right: > is the tail, < is the head. Written the other way round as <><, it is also the plain-text version of the Christian fish symbol, which is why it shows up in bios."},
     {"q": "What is the 彡 at the end of some fish?", "a": "彡 is a Chinese character made of three slanted strokes. Japanese kaomoji use it for motion or splashing, so >゜))))彡 is a fish darting through water."},
-    {"q": "Why do the hieroglyph fish show as boxes?", "a": "The reader's device has no font for the Egyptian hieroglyph block. The text fish like ><(((º> use only basic punctuation, so they display everywhere."}
+    {"q": "Why do the hieroglyph fish show as boxes?", "a": "The reader's device has no font for the Egyptian hieroglyph block. The text fish like ><(((º> use only basic punctuation, so any font can draw them."}
   ],
   "related": [
     {"href": "/library/animal-emojis/", "title": "Animal Emojis", "desc": "🐟 🐠 🐡 🦈 and every other animal emoji, by type."},

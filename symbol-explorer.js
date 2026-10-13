@@ -730,10 +730,12 @@
   // `offer` (optional) adds one button to the toast: the other look of a
   // two-look symbol (see copySymbol). It stays up 4s instead of 1s, because a
   // button that disappears in one second cannot be pressed.
-  function showToast(msg, offer) {
+  // `plain` (optional) shows `msg` as given, without the "Copied" prefix: the
+  // failure message is a whole sentence of its own.
+  function showToast(msg, offer, plain) {
     var t = getToast();
     if (!t) return;
-    t.textContent = STR.copied + msg;
+    t.textContent = plain ? msg : STR.copied + msg;
     t.classList.toggle("has-action", !!offer);
     if (offer) {
       // The confirmation keeps one line; the button wraps if anything does.
@@ -770,8 +772,10 @@
     ta.style.left = "-9999px";
     document.body.appendChild(ta);
     ta.select();
-    try { document.execCommand("copy"); } catch (e) { /* silent */ }
+    let ok = false;
+    try { ok = !!document.execCommand("copy"); } catch (e) { ok = false; }
     document.body.removeChild(ta);
+    return ok;
   }
   ns.fallbackCopy = fallbackCopy;
 
@@ -781,18 +785,22 @@
   // `opts` (optional, used by the two-look path): `item` is the identity to
   // record when it differs from the copied text, `extra` goes on the event,
   // `offer` goes to the toast.
+  //
+  // A copy that neither path completed says so (the localized "failed" string)
+  // and records nothing: a copy_text row fires on success, as a share row does,
+  // never on intent.
   function copyText(text, el, label, method, opts) {
     label = label || text;
+    function viaFallback() {
+      if (fallbackCopy(text)) feedback(el, label, text, method, opts);
+      else showToast(t("failed", "✗ Failed"), null, true);
+    }
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(function () {
         feedback(el, label, text, method, opts);
-      }).catch(function () {
-        fallbackCopy(text);
-        feedback(el, label, text, method, opts);
-      });
+      }).catch(viaFallback);
     } else {
-      fallbackCopy(text);
-      feedback(el, label, text, method, opts);
+      viaFallback();
     }
   }
   ns.copyText = copyText;
@@ -1249,12 +1257,26 @@
     if (e.key !== "Enter" && e.key !== " ") return;
     var tile = e.target.closest(".symbol-tile");
     if (!tile) return;
+    /* The default is always cancelled, so the browser's own click never
+       arrives: a held Enter makes the browser click again on every
+       auto-repeat, and a press would otherwise run once here and again
+       there. The key then acts once, on the first keydown, never on a
+       repeat (a held key used to select, unselect, select... or copy over
+       and over). */
     e.preventDefault();
+    if (e.repeat) return;
     if (imageSelectionActive()) {
       ns.imageSelection.toggleTile(tile);
       return;
     }
     copySymbol(tile);
+  });
+
+  // Firefox clicks a button on Space KEYUP even when keydown was cancelled.
+  document.addEventListener("keyup", function (e) {
+    if (e.key !== " ") return;
+    var tile = e.target.closest && e.target.closest(".symbol-tile");
+    if (tile) e.preventDefault();
   });
 
   /* ============================

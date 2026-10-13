@@ -246,6 +246,177 @@ async function main() {
     await ctx.close();
   }
 
+  // 6b. A copy that nothing completed says so and records nothing. Until
+  // 2026-10-09 a refused clipboard write fell through to execCommand, and the
+  // tile showed "Copied" and sent copy_text whether or not that worked.
+  console.log('\n/library/text-faces-kaomoji/ (copy outcome: failure is not "Copied")');
+  {
+    const KAO_URL = '/library/text-faces-kaomoji/';
+    // Init scripts are serialised into the page, so each one stands alone.
+    const bothFail = () => {
+      Object.defineProperty(navigator.clipboard, 'writeText', { configurable: true, value: () => Promise.reject(new Error('denied')) });
+      document.execCommand = () => false;
+    };
+    const onlyFallbackWorks = () => {
+      Object.defineProperty(navigator.clipboard, 'writeText', { configurable: true, value: () => Promise.reject(new Error('denied')) });
+      document.execCommand = () => true;
+    };
+
+    // Normal path still copies the exact string and sends one event.
+    {
+      const { ctx, page, errors } = await open(KAO_URL, 'desktop');
+      const tile = page.locator('.symbol-tile[data-symbol]').first();
+      const face = await tile.getAttribute('data-symbol');
+      await tile.scrollIntoViewIfNeeded();
+      await sentinel(page);
+      const n0 = (await dl(page)).length;
+      await tile.click();
+      await page.waitForTimeout(300);
+      check('kaomoji tile: the normal path copies the exact string', (await clip(page)) === face, face);
+      const ev = (await dl(page)).slice(n0).filter((e) => e.event === 'copy_text');
+      check('kaomoji tile: the normal path sends one copy_text', ev.length === 1 && ev[0].copy_item === face, JSON.stringify(ev));
+      check('no page errors', !errors.length, errors.join(' | '));
+      await ctx.close();
+    }
+
+    // Clipboard refused AND execCommand false: failure toast, no event, no copied state.
+    {
+      const { ctx, page, errors } = await open(KAO_URL, 'desktop', bothFail);
+      const tile = page.locator('.symbol-tile[data-symbol]').first();
+      await tile.scrollIntoViewIfNeeded();
+      const n0 = (await dl(page)).length;
+      await tile.click();
+      await page.waitForTimeout(300);
+      const toast = await page.evaluate(() => { const t = document.getElementById('symbolToast'); return { text: t.textContent, shown: t.classList.contains('is-visible') }; });
+      check('both copy paths failing shows the failure toast', toast.shown && /Failed/.test(toast.text) && !/Copied/i.test(toast.text), JSON.stringify(toast));
+      const ev = (await dl(page)).slice(n0).filter((e) => e.event === 'copy_text');
+      check('both copy paths failing sends no copy_text', ev.length === 0, JSON.stringify(ev));
+      const copied = await tile.evaluate((el) => el.classList.contains('is-copied'));
+      check('both copy paths failing leaves the tile without its copied state', !copied);
+      check('no page errors', !errors.length, errors.join(' | '));
+      await ctx.close();
+    }
+
+    // Clipboard refused but the execCommand fallback works: that is a success.
+    {
+      const { ctx, page } = await open(KAO_URL, 'desktop', onlyFallbackWorks);
+      const tile = page.locator('.symbol-tile[data-symbol]').first();
+      await tile.scrollIntoViewIfNeeded();
+      const n0 = (await dl(page)).length;
+      await tile.click();
+      await page.waitForTimeout(300);
+      const ev = (await dl(page)).slice(n0).filter((e) => e.event === 'copy_text');
+      const copied = await tile.evaluate((el) => el.classList.contains('is-copied'));
+      check('a working fallback still counts as a copy', ev.length === 1 && copied, `${ev.length} events, copied=${copied}`);
+      await ctx.close();
+    }
+  }
+
+  // 6c. The kaomoji generator: its own copy methods, its funnel rows, and no
+  // typed text anywhere in the data layer.
+  console.log('\n/kaomoji-generator/ (copy methods + generator steps)');
+  {
+    const { ctx, page, errors } = await open('/kaomoji-generator/', 'desktop');
+    const n0 = (await dl(page)).length;
+    await page.locator('.kao-mood[data-mood="happy"]').click();
+    await page.locator('.kao-preset').first().click();
+    await page.locator('.kao-part-opt[data-cat="eyes"]').nth(1).click();
+    await page.locator('#kaomojiSurpriseBtn').click();
+    await page.locator('#kaomojiFaceInput').fill('my private text 123');
+    await page.waitForTimeout(1100);
+    await page.locator('#kaomojiCopyBtn').click();
+    await page.waitForTimeout(200);
+    await page.locator('#kaomojiCopyLinkBtn').click();
+    await page.waitForTimeout(200);
+    await page.locator('#kaomojiClearBtn').click();
+    await page.waitForTimeout(200);
+    const rows = (await dl(page)).slice(n0);
+    const steps = rows.filter((e) => e.event === 'kaomoji_generator_step').map((e) => `${e.kaomoji_step}:${e.kaomoji_value === undefined ? '' : e.kaomoji_value}`);
+    check('generator steps are recorded in order, ids only', steps.join(' ') === 'mood:happy preset:happy part:eyes surprise: paste_edit: reset:', steps.join(' '));
+    const paste = rows.filter((e) => e.kaomoji_step === 'paste_edit');
+    check('typing one phrase sends one paste_edit, not one per keystroke', paste.length === 1, `${paste.length}`);
+    const copies = rows.filter((e) => e.event === 'copy_text');
+    check('generator copy and link copy have their own methods, without copy_item',
+      copies.length === 2 && copies[0].copy_method === 'kaomoji_generator' && copies[1].copy_method === 'kaomoji_link' &&
+      copies.every((e) => e.copy_item === undefined && !!e.copy_item_group), JSON.stringify(copies));
+    check('typed text reaches no data layer row', !JSON.stringify(rows).includes('private') && !JSON.stringify(rows).includes('?q='), JSON.stringify(rows).slice(0, 300));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+
+    const l = await open('/kaomoji-generator/?q=' + encodeURIComponent('(^_^) my private text'), 'desktop');
+    const loaded = (await dl(l.page)).filter((e) => e.event === 'kaomoji_generator_step');
+    check('a ?q= load sends one url_load step and not the face', loaded.length === 1 && loaded[0].kaomoji_step === 'url_load' && loaded[0].kaomoji_value === undefined && !JSON.stringify(loaded).includes('private'), JSON.stringify(loaded));
+    await l.ctx.close();
+
+    // The line under the preview names what a face carries (FAQ promise).
+    const hintFor = async (face) => {
+      const h = await open('/kaomoji-generator/?q=' + encodeURIComponent(face), 'desktop');
+      const text = await h.page.locator('#kaomojiHint').innerText();
+      await h.ctx.close();
+      return text;
+    };
+    const safe = await hintFor('(^o^)');
+    const script = await hintFor('(\u0CA0_\u0CA0)');
+    const marks = await hintFor('( \u0361\u00B0 \u035C\u0296 \u0361\u00B0)');
+    check('a plain face says it carries nothing risky', /No stacked marks/.test(safe), safe);
+    check('a Kannada letter is named as a rare script and underscores as formatting', /Kannada/.test(script) && /formatting/.test(script), script);
+    check('stacked marks are named', /Stacked marks/.test(marks), marks);
+  }
+
+  // 6d. The kaomoji hub's "browse by mood" links: one delegated listener.
+  console.log('\n/library/text-faces-kaomoji/ (mood index clicks)');
+  {
+    const { ctx, page, errors } = await open('/library/text-faces-kaomoji/', 'desktop');
+    await page.evaluate(() => document.addEventListener('click', (e) => { if (e.target.closest('.kao-mood-links a')) e.preventDefault(); }));
+    const link = page.locator('.kao-mood-links').nth(1).locator('a').first();
+    const href = await link.getAttribute('href');
+    const n0 = (await dl(page)).length;
+    await link.scrollIntoViewIfNeeded();
+    await link.click();
+    const ev = (await dl(page)).slice(n0).filter((e) => e.event === 'kaomoji_mood_index_click');
+    check('a mood-index link click sends its path and group', ev.length === 1 && ev[0].destination_path === href && ev[0].mood_group === 2, JSON.stringify(ev));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 6e. The /library/ directory: a settled filter and a settled search each
+  // send one row; a run of keystrokes does not send one per key.
+  console.log('\n/library/ (library_filter, library_search)');
+  {
+    const { ctx, page, errors } = await open('/library/', 'desktop');
+    const n0 = (await dl(page)).length;
+    await page.locator('#typeRow .lib-pill[data-value="Kaomoji"]').click();
+    await page.waitForTimeout(1100);
+    await page.locator('#libSearch').pressSequentially('angry', { delay: 60 });
+    await page.waitForTimeout(1100);
+    const rows = (await dl(page)).slice(n0);
+    const f = rows.filter((e) => e.event === 'library_filter');
+    const q = rows.filter((e) => e.event === 'library_search');
+    check('a filter chip sends one library_filter with its label and count',
+      f.length === 1 && f[0].filter_type === 'type' && f[0].filter_value === 'Kaomoji' && f[0].result_count > 0, JSON.stringify(f));
+    check('typing a word sends one library_search with the settled term and count',
+      q.length === 1 && q[0].search_term === 'angry' && q[0].result_count > 0 && q[0].result_count < f[0].result_count, JSON.stringify(q));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 6f. The header search: a zero-result query is recorded once, settled; a
+  // query with results is not.
+  console.log('\n/ (header search: site_search_no_results)');
+  {
+    const { ctx, page, errors } = await open('/', 'desktop');
+    const n0 = (await dl(page)).length;
+    await page.locator('#searchInput').pressSequentially('qzxjvk', { delay: 60 });
+    await page.waitForTimeout(1300);
+    await page.locator('#searchInput').fill('heart');
+    await page.waitForTimeout(1300);
+    const ev = (await dl(page)).slice(n0).filter((e) => e.event === 'site_search_no_results');
+    check('one zero-result query sends one site_search_no_results, with locale and surface',
+      ev.length === 1 && ev[0].search_term === 'qzxjvk' && ev[0].locale === 'en' && ev[0].search_surface === 'header', JSON.stringify(ev));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // 7. No-viewport regression: a phone gets the phone layout.
   console.log('\n/zh-tw/keai-ziti/ (viewport)');
   {
@@ -341,6 +512,65 @@ async function main() {
     await ctx.close();
   }
 
+  // 11c. A monogram is a personal piece, so its export carries no credit QR or
+  // site URL. The QR encoder is only ever loaded to draw one, so its absence
+  // after an export is the browser-visible proof.
+  console.log('\n/printables/monogram-maker/ (no credit QR)');
+  {
+    const { ctx, page, errors } = await open('/printables/monogram-maker/?l=J&c=S&r=L', 'desktop');
+    await page.waitForTimeout(500);
+    await page.evaluate(() => { const b = document.getElementById('mono-print'); if (b) b.click(); });
+    await page.waitForTimeout(1500);
+    const loaded = await page.evaluate(() => !!document.querySelector('script[data-pt-qr]') || !!(window.UltraTextGen && window.UltraTextGen.qr));
+    check('the monogram export loads no QR encoder', !loaded);
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 11d. Ctrl+P without Download PDF opens with a note whose button name is a
+  // link back to the page (kept clickable in a saved PDF) plus the page's
+  // address in plain text for a sheet on paper, and that link lands on the
+  // Download PDF button, focused and ringed. All four engines, EN and a locale.
+  console.log('\nbrowser-print note: link, address, and the #download-pdf jump');
+  for (const url of ['/printables/monogram-maker/', '/printables/cross-stitch-letters/', '/printables/name-labels/', '/printables/block-letters/', '/es/imprimibles/monograma/']) {
+    const { ctx, page, errors } = await open(url, 'desktop');
+    const canon = await page.evaluate(() => document.querySelector('link[rel="canonical"]').href);
+    const note = await page.evaluate(() => {
+      const a = document.querySelector('.pt-print-note a.pt-print-note-link');
+      const ad = document.querySelector('.pt-print-note .pt-print-note-addr');
+      return { href: a && a.getAttribute('href'), text: a && a.textContent, addr: ad && ad.textContent };
+    });
+    const u = new URL(canon);
+    check(`${url} note links to the canonical URL + #download-pdf`, note.href === canon + '#download-pdf' && !/\?/.test(note.href || ''), String(note.href));
+    check(`${url} note prints the page address in text`, note.addr === u.host + u.pathname.replace(/\/$/, ''), String(note.addr));
+    if (url === '/printables/monogram-maker/') {
+      await page.emulateMedia({ media: 'print' });
+      const pdf = (await page.pdf({ format: 'Letter' })).toString('latin1');
+      check('the saved PDF carries the link annotation to the canonical URL + #download-pdf', pdf.includes('/URI') && pdf.includes(canon + '#download-pdf'));
+    }
+    await ctx.close();
+    const j = await open(url + '#download-pdf', 'desktop');
+    await j.page.waitForTimeout(900);
+    const jump = await j.page.evaluate(() => {
+      const a = document.activeElement;
+      const r = a && a.getBoundingClientRect();
+      return {
+        pdf: !!(a && a.matches && a.matches('[data-pt-pdf], .pt-pdf-btn')), ring: !!(a && a.classList.contains('pt-pdf-pulse')),
+        inView: !!r && r.top >= 0 && r.bottom <= innerHeight, text: a && a.textContent.trim()
+      };
+    });
+    check(`${url}#download-pdf focuses and rings the Download PDF button, in view`, jump.pdf && jump.ring && jump.inView, JSON.stringify(jump));
+    check('no page errors', !j.errors.length && !errors.length, j.errors.concat(errors).join(' | '));
+    await j.ctx.close();
+  }
+  {
+    const { ctx, page } = await open('/printables/monogram-maker/', 'desktop');
+    await page.waitForTimeout(600);
+    const none = await page.evaluate(() => document.activeElement === document.body && !document.querySelector('.pt-pdf-pulse'));
+    check('without the hash nothing is focused or ringed', none);
+    await ctx.close();
+  }
+
   // 12. Nothing pushes a 390px page sideways.
   console.log('\n390px layouts (overflow)');
   for (const [url, typed] of [['/usecase/vertical-text/', ''], ['/it/lettere-in-corsivo/', 'Luna'], ['/de/zum-ausdrucken/buchstaben-nachspuren/', '']]) {
@@ -360,6 +590,205 @@ async function main() {
     check('no page errors', !errors.length, errors.join(' | '));
     await ctx.close();
   }
+
+  // 14. Writing footprint checker: analyse, highlight, apply, undo, and the text goes nowhere.
+  console.log('\n/ai-writing-footprint-checker/ (local analysis, edits, privacy)');
+  {
+    const SAMPLE = "In today's rapidly evolving landscape, teams must adapt. It's important to note that the quarterly figures were revised on 14 March. Furthermore, the board approved a budget of $4,500. Moreover, the review is not just a formality, it is a commitment. Additionally, Dr. Okafor will present at https://example.com/q1. Overall, the plan is sound. " +
+      "The warehouse in Leeds shipped 312 pallets last week, and Priya counted every one. Moreover, the forklift broke twice. Furthermore, the night shift refused overtime. Additionally, the roof leaks over bay four. Overall, it was a long week.";
+    const { ctx, page, errors } = await open('/ai-writing-footprint-checker/', 'desktop');
+    const seen = [];
+    page.on('request', (r) => seen.push(r.url() + ' ' + (r.postData() || '')));
+    await page.fill('#wfInput', SAMPLE);
+    await page.waitForTimeout(200);
+    check('the word count updates while typing', /^\d+ words/.test(await page.textContent('#wfCounts')), await page.textContent('#wfCounts'));
+    check('typing fires no analytics event', !(await dl(page)).some((e) => /^writing_/.test(e.event)));
+    await page.click('#wfAnalyse');
+    await page.waitForSelector('#wfReport:not([hidden])');
+    const marks = await page.$$eval('#wfMarked .wf-mark', (a) => a.length);
+    check('flagged patterns render as buttons', marks >= 3, `${marks} marks`);
+    check('the marked view keeps the original text exactly', (await page.textContent('#wfMarked')) === SAMPLE);
+    check('the report has no AI score or probability', !/\d+\s*%\s*(AI|likely|chance)|AI (score|probability)\s*[:\d]|\d+\s*\/\s*100/i.test(await page.textContent('#wfReport')));
+    await page.locator('#wfMarked .wf-mark').first().click();
+    check('selecting a flag shows why it was flagged', /Why it was flagged/.test(await page.textContent('#wfDetail')));
+    await page.click('#wfShowSug');
+    const sugCount = await page.$$eval('#wfSuggestions input[type=checkbox]', (a) => a.length);
+    check('suggestions are listed only for flags with a safe replacement', sugCount >= 2, `${sugCount} suggestions`);
+    check('nothing changed before Apply', (await page.isHidden('#wfImprovedWrap')));
+    await page.locator('#wfSuggestions input[type=checkbox]').first().check();
+    await page.locator('#wfSuggestions input[type=checkbox]').nth(1).check();
+    await page.click('#wfApply');
+    const improved = await page.textContent('#wfImproved');
+    check('applying produces improved text that keeps numbers, names and links',
+      improved !== SAMPLE && /\$4,500/.test(improved) && /14 March/.test(improved) && /Okafor/.test(improved) && /https:\/\/example\.com\/q1/.test(improved), improved.slice(0, 120));
+    check('before and after table appears', (await page.$$eval('#wfCompare tr', (a) => a.length)) >= 4);
+    await page.click('#wfUndo');
+    await page.click('#wfResetOrig').catch(() => {});
+    await page.locator('#wfSuggestions input[type=checkbox]').first().check();
+    await page.click('#wfApply');
+    await page.click('#wfResetOrig');
+    check('Reset to Original hides the improved text', await page.isHidden('#wfImprovedWrap'));
+    check('the typed original is untouched by edits', (await page.inputValue('#wfInput')) === SAMPLE);
+    await page.locator('#wfSuggestions input[type=checkbox]').first().check();
+    await page.click('#wfApply');
+    await sentinel(page);
+    await page.click('#wfCopy');
+    await page.waitForTimeout(300);
+    check('Copy Improved Text puts the improved text on the clipboard', (await clip(page)) === (await page.textContent('#wfImproved')));
+    const events = (await dl(page)).filter((e) => /^writing_/.test(e.event));
+    const names = events.map((e) => e.event);
+    check('the six action events fire', ['writing_analysis_started', 'writing_analysis_completed', 'writing_suggestion_applied', 'writing_suggestion_undone', 'writing_analysis_reset', 'writing_result_copied'].every((n) => names.includes(n)), names.join(','));
+    const blob = JSON.stringify(events);
+    check('no event carries the pasted text, a phrase or a name', !/Okafor|Leeds|Priya|rapidly evolving|important to note|example\.com|4,500/i.test(blob), blob.slice(0, 200));
+    check('no request carries the pasted text', !seen.some((u) => /Okafor|Priya|rapidly%20evolving|rapidly\+evolving/i.test(u)));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+  {
+    const { ctx, page } = await open('/ai-writing-footprint-checker/', 'narrow');
+    await page.fill('#wfInput', "It's important to note that the vote moved. Furthermore, the room changed. Moreover, lunch is cancelled. Additionally, bring a pen. Overall, it is fine. " + 'The cat sat on the mat and looked at the dog for a while. '.repeat(14));
+    await page.click('#wfAnalyse');
+    await page.waitForSelector('#wfReport:not([hidden])');
+    const w = await page.evaluate(() => [document.documentElement.scrollWidth, window.innerWidth]);
+    check('/ai-writing-footprint-checker/ fits 390px with a report open', w[0] <= w[1], `scrollWidth ${w[0]} > ${w[1]}`);
+    await ctx.close();
+  }
+  {
+    const { ctx, page } = await open('/ai-writing-footprint-checker/', 'desktop');
+    await page.fill('#wfInput', 'Ayer fuimos al mercado de la plaza mayor y compramos tomates, pan y un poco de queso. Despues nos sentamos en un banco a mirar a la gente pasar mientras el sol bajaba.');
+    await page.click('#wfAnalyse');
+    await page.waitForSelector('#wfReport:not([hidden])');
+    check('non-English text is declined, not analysed with English rules', /English only/.test(await page.textContent('#wfSummary')) && (await page.$$eval('#wfMarked .wf-mark', (a) => a.length)) === 0);
+    await ctx.close();
+  }
+
+  // 15. A national ruling is a physical standard. The French Seyes ruling is 8 mm
+  // between heavy lines with three 2 mm interlines between them, and it printed
+  // at 2.03x that on A4 because the band was fitted to the row's box instead of
+  // to the paper. The assertion reads the bitmap the PDF embeds (the canvases
+  // renderPages hands to fromCanvases), not the DOM, because the DOM was
+  // correct throughout: the defect existed only in what reached the paper.
+  console.log('\n/fr/imprimables/modeles-d-ecriture/ (Seyes ruling is 8 mm / 2 mm on paper)');
+  for (const [paper, orient] of [['a4', 'portrait'], ['a4', 'landscape'], ['letter', 'portrait'], ['letter', 'landscape']]) {
+    const init = `try{localStorage.setItem('utg_print_prefs', JSON.stringify({paper:'${paper}',orient:'${orient}'}))}catch(e){}
+      (function () {
+        const UTG = (window.UltraTextGen = window.UltraTextGen || {});
+        let real;
+        Object.defineProperty(UTG, 'pdf', { configurable: true, get() { return real; }, set(v) {
+          real = v && Object.assign({}, v, { renderPages: async function (root, o) {
+            const c = await v.renderPages(root, o); window.__ptSheet = { canvases: c, opts: o }; return c; } });
+        } });
+      })();`;
+    const { ctx, page, errors } = await open('/fr/imprimables/modeles-d-ecriture/', 'desktop', init);
+    await page.waitForTimeout(800);
+    for (const name of ['Lea', 'Christopher']) {
+      await page.fill('#pt-gen-input', name);
+      await page.waitForTimeout(500);
+      await page.evaluate(() => { window.__ptSheet = null; });
+      await Promise.all([page.waitForEvent('download', { timeout: 60000 }), page.click('#pt-gen-print')]).catch(() => null);
+      const m = await page.evaluate(() => {
+        const s = window.__ptSheet;
+        if (!s || !s.canvases || !s.canvases.length) return null;
+        const cv = s.canvases[0];
+        const ctx2 = cv.getContext('2d');
+        const W = cv.width, H = cv.height;
+        const pxPerMm = W / (s.opts.widthPx * 25.4 / 96);
+        const data = ctx2.getImageData(0, 0, W, H).data;
+        const ys = [];
+        for (let y = 0; y < H; y++) {
+          let n = 0;
+          for (let x = 0; x < W; x++) { const i = (y * W + x) * 4; if (Math.min(data[i], data[i + 1], data[i + 2]) < 235) n++; }
+          if (n / W > 0.6) ys.push(y);
+        }
+        const lines = [];
+        ys.forEach((y) => { const l = lines[lines.length - 1]; if (l && y - l[l.length - 1] <= 1) l.push(y); else lines.push([y]); });
+        const centres = lines.map((l) => l.reduce((a, b) => a + b, 0) / l.length / pxPerMm);
+        const stacks = [];
+        centres.forEach((c) => { const s = stacks[stacks.length - 1]; if (s && c - s[s.length - 1] < 10) s.push(c); else stacks.push([c]); });
+        const five = stacks.filter((s) => s.length === 5);
+        const inter = [].concat(...five.map((s) => s.slice(1).map((c, i) => c - s[i])));
+        const span = five.map((s) => s[4] - s[0]);
+        return { stacks: five.length, pxPerMm, inter, span };
+      });
+      const tag = `${paper} ${orient} "${name}"`;
+      if (!m) { check(`${tag}: the PDF's page bitmap was captured`, false, 'no canvas from renderPages'); continue; }
+      const avg = (a) => a.reduce((x, y) => x + y, 0) / a.length;
+      const dpi = Math.round(m.pxPerMm * 25.4);
+      check(`${tag}: at least three 5-line Seyes stacks on page 1 (${dpi} dpi bitmap)`, m.stacks >= 3, `${m.stacks} stacks`);
+      const iMin = Math.min(...m.inter), iMax = Math.max(...m.inter), sMin = Math.min(...m.span), sMax = Math.max(...m.span);
+      check(`${tag}: interline is 2.0 mm +/- 0.15`, m.inter.length && iMin >= 1.85 && iMax <= 2.15, `${iMin.toFixed(2)}..${iMax.toFixed(2)} mm (mean ${m.inter.length ? avg(m.inter).toFixed(2) : 'n/a'})`);
+      check(`${tag}: heavy lines are 8.0 mm +/- 0.3 apart`, m.span.length && sMin >= 7.7 && sMax <= 8.3, `${sMin.toFixed(2)}..${sMax.toFixed(2)} mm`);
+    }
+    check(`${paper} ${orient}: no page errors`, !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 16. Text in another script. Half the styles return it unchanged and the rest
+  // only add spacing or marks, so the English generator says so, once, and only
+  // when the text has a non-Latin letter. A translated page gets no English line.
+  console.log('\n/ (non-Latin text notice, English pages only)');
+  {
+    const { ctx, page, errors } = await open('/', 'desktop');
+    const hidden = () => page.locator('#scriptNotice').evaluate((n) => n.hidden);
+    await page.fill('#mainInput', 'hello world');
+    check('plain English shows no script notice', await hidden());
+    await page.fill('#mainInput', 'cafe\u0301 \u00f1and\u00fa');
+    check('accents alone do not trigger it', await hidden());
+    await page.fill('#mainInput', '\u0436\u0438\u0440\u043d\u044b\u0439 \u0448\u0440\u0438\u0444\u0442');
+    check('Cyrillic text shows the notice', !(await hidden()));
+    check('Cyrillic \u0439 does not also trigger the accent notice', await page.locator('#accentNotice').evaluate((n) => n.hidden));
+    await page.fill('#mainInput', 'caf\u00e9 \u0436');
+    check('a real Latin accent still triggers the accent notice', !(await page.locator('#accentNotice').evaluate((n) => n.hidden)));
+    await page.fill('#mainInput', '\u0436\u0438\u0440\u043d\u044b\u0439 \u0448\u0440\u0438\u0444\u0442');
+    await page.fill('#mainInput', '\u062d\u0631\u0648\u0641 \u0645\u0632\u062e\u0631\u0641\u0647');
+    check('Arabic text shows the notice', !(await hidden()));
+    await page.fill('#mainInput', 'hello \u4f60\u597d');
+    check('Latin mixed with Chinese shows the notice', !(await hidden()));
+    await page.click('#scriptNoticeClose');
+    await page.fill('#mainInput', 'hello');
+    await page.fill('#mainInput', '\u0436');
+    check('a dismissed notice stays dismissed', await hidden());
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+    const es = await open('/es/fuentes-de-letras/', 'desktop');
+    await es.page.fill('#mainInput', '\u0436\u0438\u0440\u043d\u044b\u0439');
+    check('a Spanish page gets no English script notice', (await es.page.locator('#scriptNotice').count()) === 0);
+    check('Spanish page: no page errors', !es.errors.length, es.errors.join(' | '));
+    await es.ctx.close();
+  }
+
+  // 17. Clear names: a class list is remembered on the device, so there has to be
+  // a way to forget it. English pages only (the label has no translation), and
+  // the frozen block-letters page keeps its previous control.
+  console.log('\n/printables/name-tracing/ (Clear names forgets the saved class list)');
+  {
+    const { ctx, page, errors } = await open('/printables/name-tracing/', 'desktop');
+    const stored = () => page.evaluate(() => localStorage.getItem('utg_printables_roster'));
+    await page.evaluate(() => localStorage.setItem('utg_printables_roster', 'Emma\nNoah\nAva'));
+    await page.reload({ waitUntil: 'load' });
+    await page.waitForTimeout(700);
+    const clearBtn = page.locator('.pt-roster-clear');
+    check('the saved list is back in the box and Clear names shows', (await page.inputValue('#pt-name-roster')).includes('Noah') && await clearBtn.isVisible());
+    await clearBtn.click();
+    check('Clear names empties the box', (await page.inputValue('#pt-name-roster')) === '');
+    check('Clear names removes the stored list', (await stored()) === null, String(await stored()));
+    check('Clear names hides itself when there is nothing to clear', !(await clearBtn.isVisible()));
+    await page.click('.pt-audience-field .pt-choice[data-value="class"]');
+    await page.fill('#pt-name-roster', 'Mia');
+    check('typing a name brings it back', await clearBtn.isVisible());
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+    const bl = await open('/printables/block-letters/', 'desktop');
+    check('block-letters is untouched (no Clear names)', (await bl.page.locator('.pt-roster-clear').count()) === 0);
+    await bl.ctx.close();
+    const fr = await open('/fr/imprimables/modeles-d-ecriture/', 'desktop');
+    check('a French sheet gets no English Clear names', (await fr.page.locator('.pt-roster-clear').count()) === 0);
+    await fr.ctx.close();
+  }
+
+  // Reversible interactions are only tested once they have come back: every
+  // case runs A->B->A->B and reads the state after each press.
+  await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });
 
   await browser.close();
   server.close();

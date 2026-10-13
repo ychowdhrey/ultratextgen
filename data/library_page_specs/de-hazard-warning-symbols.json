@@ -97,6 +97,26 @@
       ]
     },
     {
+      "id": "chemical-hazard",
+      "label": "Chemische Gefahrensymbole: entzündbar, brandfördernd, explosiv",
+      "h2": "Chemische Gefahrensymbole: entzündbar, brandfördernd, explosiv",
+      "intro": "Die chemischen Gefahrenpiktogramme (GHS) sind Zeichnungen, und Unicode kennt keine Zeichen dafür; ein kopierbares Symbol für ätzend, brandfördernd oder reizend gibt es deshalb nicht. Die nächsten Zeichen stehen hier: Die Flamme steht für entzündbare und brandfördernde Stoffe, die Explosion für explosive Stoffe, das Reagenzglas für Chemikalien allgemein. Für giftige Stoffe passt ☠ von oben, für gesundheitsschädliche oder reizende Stoffe ❗. Ein amtliches Etikett braucht das Piktogramm aus der Verordnung.",
+      "symbols": [
+        {
+          "char": "🔥",
+          "label": "Flamme (entzündbar, brandfördernd)"
+        },
+        {
+          "char": "💥",
+          "label": "Explosion (explosiv)"
+        },
+        {
+          "char": "🧪",
+          "label": "Reagenzglas (Chemikalie)"
+        }
+      ]
+    },
+    {
       "id": "s4",
       "label": "Verbots- und Zutrittszeichen",
       "h2": "Verbots- und Zutrittszeichen",
@@ -181,7 +201,7 @@
   ],
   "canonical": "https://ultratextgen.com/de/library/warnsymbole/",
   "date_published": "2026-08-10",
-  "date_modified": "2026-08-10",
+  "date_modified": "2026-10-10",
   "lang": "de",
   "page_type": "library",
   "hreflang": [

@@ -25,6 +25,9 @@
  *     Croatian and Czech it is "and" and stays lower case.
  *   - Upside-down and reverse styles reverse by user-perceived character, so a
  *     flag, a family emoji, a skin tone, a Thai or Devanagari cluster survives.
+ *   - The ligature letters ß æ œ are written out as the two letters they stand
+ *     for in a styled map (Straße is Strasse, not Strase), and the one-piece
+ *     letters with no second letter (ł đ ø) still fold to their base letter.
  */
 
 const assert = require('assert');
@@ -153,6 +156,39 @@ REVERSE.forEach(name => {
 expectStyle('Reverse Order Only', 'hello', 'olleh');
 expectStyle('Reverse + Flip Combo', 'hello', 'o\u05DF\u05DF\u01DD\u0265');
 expectStyle('Reverse Order Only', 'e\u0301a', 'ae\u0301');
+
+// --- Turkish dotless i passes through as typed (a dotted i is another letter) -------
+['Ultra Bold', 'Ultra Script'].forEach(name => {
+  const st = styles[name];
+  expectStyle(name, 'ışık', '\u0131' + render('ş', st) + '\u0131' + render('k', st));
+});
+
+// --- Ligature letters are written out, not folded to one letter -----------------
+['Ultra Bold', 'Ultra Script', 'Ultra Double-Struck'].forEach(name => {
+  const st = styles[name];
+  expectStyle(name, 'Stra\u00dfe', render('Strasse', st));
+  expectStyle(name, 'GRO\u1E9E', render('GROSS', st));
+  expectStyle(name, 'c\u0153ur', render('coeur', st));
+  expectStyle(name, '\u00c6ble', render('AEble', st));
+  expectStyle(name, 'Pawe\u0142', render('Pawel', st));
+  expectStyle(name, '\u00f8l', render('ol', st));
+});
+
+// --- Astral characters pass through every map style (no recursion, no throw) ---
+// An emoji, a flag, a ZWJ family, a skin tone and an already-styled math letter
+// are all pasted into the generator; one of them used to blank every card.
+['Ultra Bold', 'Ultra Script', 'Ultra Double-Struck'].forEach(name => {
+  const st = styles[name];
+  ['\u{1F642}', 'a\u{1F642}b', '\u{1F1F2}\u{1F1FE} KL', '\u{1F469}\u200D\u{1F467}', '\u{1F44D}\u{1F3FD}', '\u{1D4B4}\u{1D4B6}'].forEach(input => {
+    let out;
+    try { out = render(input, st); } catch (e) { out = 'THROW ' + e.message; }
+    checks += 1;
+    const keep = Array.from(input).filter(c => !/[A-Za-z]/.test(c)).join('');
+    if (typeof out !== 'string' || out.startsWith('THROW') || !Array.from(keep).every(c => out.includes(c))) {
+      failures += 1; console.error(`FAIL ${name}: ${JSON.stringify(input)} -> ${JSON.stringify(out)}`);
+    }
+  });
+});
 
 if (failures) {
   console.error(`\n${failures} of ${checks} case-converter checks failed`);

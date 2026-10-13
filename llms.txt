@@ -4,7 +4,7 @@
 
 UltraTextGen is a free, no-sign-up text tool: Unicode font styles to copy and paste, a browsable symbol and emoji library, one reference page per individual symbol, printable lettering and handwriting sheets rendered in the browser, and explanatory guides and answers. Everything runs client-side.
 
-4871 indexable pages in 32 languages. This file is a navigation index, not a URL list: https://ultratextgen.com/sitemap.xml is the complete canonical URL list and stays the authority on what exists. Links below point to a narrower llms.txt index where one exists, and straight to a page where it does not.
+4877 indexable pages in 32 languages. This file is a navigation index, not a URL list: https://ultratextgen.com/sitemap.xml is the complete canonical URL list and stays the authority on what exists. Links below point to a narrower llms.txt index where one exists, and straight to a page where it does not.
 
 English pages are served from the site root, so this file is also the English index (https://ultratextgen.com/en/llms.txt redirects here). Every other language has its own index at https://ultratextgen.com/<code>/llms.txt.
 
@@ -100,6 +100,7 @@ The "Jobs across languages" section lists the site's main jobs. Each line is the
 
 ## Text tools
 
+- [AI Writing Footprint Checker](https://ultratextgen.com/ai-writing-footprint-checker/): Paste your writing to see which patterns readers link to AI-sounding text, where they are and how to fix them.
 - [ASCII Art Generator](https://ultratextgen.com/ascii-art-generator/): Type a word or name and turn it into big multi-line block-letter ASCII art, with several font styles.
 - [ASCII Converter](https://ultratextgen.com/ascii-converter/): Turn text into decimal, hex, binary and octal codes as you type, or paste codes to decode them back into text.
 - [Calligraphy Font Generator](https://ultratextgen.com/calligraphy/): Type once and get your text back in eight calligraphic hands: formal script, bold script, blackletter and chancery italic.
@@ -108,9 +109,11 @@ The "Jobs across languages" section lists the site's main jobs. Each line is the
 - [Curved & Arc Text Generator](https://ultratextgen.com/curved-text/): Bend text into 15 shapes, from arch and wave to spiral and heart, on one or more lines, then download it as SVG or PNG.
 - [Fancy Letters A to Z](https://ultratextgen.com/fancy-letters/): The full alphabet (A–Z, a–z and 0–9) in 20 Unicode styles: bold, italic, script, gothic, double-struck, bubble, squared, small caps…
 - [Hiragana Chart](https://ultratextgen.com/hiragana-chart/): All 46 basic hiragana with romaji: plus the voiced kana and combinations.
+- [Image to ASCII Art Converter](https://ultratextgen.com/image-to-ascii/): Convert an image or photo to ASCII art in your browser.
 - [Kaomoji Dictionary & Decoder](https://ultratextgen.com/kaomoji-dictionary/): Paste any text face to decode it: its name, meaning, mood, and a part-by-part breakdown of the eyes, mouth, and arms.
 - [Kaomoji Generator](https://ultratextgen.com/kaomoji-generator/): Build your own Japanese text face: pick a mood, mix the parts, and copy it in one click.
 - [Katakana Chart](https://ultratextgen.com/katakana-chart/): All 46 basic katakana with romaji: plus the voiced kana and combinations.
+- [Letters to Numbers Converter](https://ultratextgen.com/letters-to-numbers/): Turn letters into numbers as you type (A=1, B=2, up to Z=26), or decode numbers back into letters.
 
 ## Platform pages
 
@@ -134,9 +137,12 @@ The "Jobs across languages" section lists the site's main jobs. Each line is the
 
 ## Research
 
-- [UltraTextGen Research](https://ultratextgen.com/research/): Controlled experiments, published with the method, data and limitations needed to check them.
+- [UltraTextGen Research](https://ultratextgen.com/research/): Experiments and observational studies, published with the method, data and limitations needed to check them.
+- [What Makes Writing Sound AI Generated? A Study of Public Accusations, Writing Patterns and False Alarms](https://ultratextgen.com/research/ai-writing-footprint-study/): We read 787 public accusations that a text was written by AI, compared the accused texts with unchallenged ones, and measured how often a…
+- [Emoji Name Drift: How Unicode’s Stable Names Diverge From the Words People Actually Use](https://ultratextgen.com/research/emoji-name-drift/): Every emoji has a formal Unicode name that never changes and a CLDR short name that can.
 - [Ink Saving by Worksheet Type: Which Print Treatments Keep a Worksheet Working](https://ultratextgen.com/research/ink-saving-by-worksheet-type/): We exported 54 real printable test cases, from name tracing sheets to word searches, under ink-saving treatments carried over from Study 1…
 - [Printable Ink Efficiency: Measuring Coverage Reduction Across Common Worksheet Rendering Methods](https://ultratextgen.com/research/printable-ink-efficiency-study/): A controlled experiment on 108 computer-generated worksheet pages, 36 rendering methods and 36 unseen holdout pages.
+- [How Fast Do New Unicode Characters and Emoji Show Up? A Browser and Font Rendering Study](https://ultratextgen.com/research/unicode-rendering-support-study/): We drew every Unicode character from 8.0 to 18.0 and every emoji sequence in three browser engines, four font sets, 45 historical emoji…
 - [Zalgo Generator Benchmark 2026: Testing Creative Control Across 13 Tools](https://ultratextgen.com/research/zalgo-generator-benchmark/): We ran 13 Zalgo and corrupted-text generators through one procedure on September 29, 2026: the same ten inputs, the same fifteen creative…
 
 ## Embeddable widgets

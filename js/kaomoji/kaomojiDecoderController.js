@@ -138,7 +138,7 @@
     var copyBtn = el("button", "kao-btn kao-btn-primary", t("decCopy", "Copy Face"));
     copyBtn.type = "button";
     copyBtn.addEventListener("click", function () {
-      if (window.UltraTextGen && window.UltraTextGen.copyText) window.UltraTextGen.copyText(face, copyBtn, face);
+      if (window.UltraTextGen && window.UltraTextGen.copyText) window.UltraTextGen.copyText(face, copyBtn, face, "kaomoji_decoder");
     });
     var remix = el("a", "kao-btn", t("decRemix", "Remix in Generator →"));
     remix.href = "/kaomoji-generator/?q=" + encodeURIComponent(face);

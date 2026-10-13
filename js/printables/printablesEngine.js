@@ -1325,7 +1325,14 @@
      declares it here and gets the real file. Mutable for the same reason FONT
      is: a charStyles or scriptOptions entry may swap in a face with a
      different weight, and every surface reads it fresh. */
-  let FONT_WEIGHT = CFG.fontWeight || 700;
+  const DEFAULT_FONT_WEIGHT = CFG.fontWeight || 700;
+  let FONT_WEIGHT = DEFAULT_FONT_WEIGHT;
+  /* A style's own weight, or the page's when it names none. Resetting matters:
+     the weight is shared state, so a style that asks for 400 must not leave
+     the next style, which says nothing, on 400. */
+  function styleWeight(style) {
+    return style && style.fontWeight != null ? style.fontWeight : DEFAULT_FONT_WEIGHT;
+  }
   const SCRIPT_OPTIONS = Array.isArray(CFG.scriptOptions) && CFG.scriptOptions.length
     ? CFG.scriptOptions
     : null;
@@ -1656,6 +1663,17 @@
     sc.src = "/js/printables/stencil.js";
     sc.async = true;
     sc.setAttribute("data-pt-stencil", "");
+    /* A shared link with ?st=1 ticks the box during init, before this async
+       script has arrived, so the first draw falls back to the plain outline
+       and nothing drew it again: the box said "bridged" and the letter had no
+       bridges. Redraw once the module is here, only if the mode is on. */
+    sc.onload = () => {
+      if (!stencilOn()) return;
+      withFont(() => {
+        paintAlphabetGrid();
+        if (activeChar) selectChar(activeChar, { silent: true });
+      });
+    };
     sc.onerror = () => console.warn("[printables] js/printables/stencil.js failed to load; the stencil mode draws the plain outline.");
     document.head.appendChild(sc);
   }
@@ -2042,13 +2060,19 @@
        single-letter surface reads. This surface draws at font-size 150, so the
        number has to be converted or the same style renders a stroke 40% fatter
        relative to the type on a name than on a letter. */
-    const wordStroke = o.strokeWidth != null ? o.strokeWidth * WORD_OUTLINE_FS / OUTLINE_SVG_FONT : 3;
+    /* A physical ruling puts the row in a viewBox about twice as large as the
+       one the weights were chosen in (o.ruleK), so the outline is carried in
+       millimetres like the ruling's own lines: a hollow letter whose outline
+       halves with the scale is thinner than the rule behind it. */
+    const wordStroke = (o.strokeWidth != null ? o.strokeWidth * WORD_OUTLINE_FS / OUTLINE_SVG_FONT : 3) * (o.ruleK || 1);
     /* A ruled row is taller than an unruled one only where the ruling itself
        reaches below the baseline -- German Lineatur carries a fourth line for
        the Unterlange that a three-line rule does not, which is the same reason
        traceRowHeight() exists on the trace surface. Without this the line is
        drawn outside the viewBox and an SVG root clips by default. */
     const gRul = o.guides ? wordRulingGeom(font, WORD_OUTLINE_FS, WORD_OUTLINE_ANCHOR_Y) : null;
+    // A physical ruling hands its stroke scale through (layoutPracticeRow).
+    if (gRul && o.ruleK) gRul.strokeK = o.ruleK;
     let h = WORD_OUTLINE_H;
     if (gRul) {
       const r = ruling();
@@ -2087,8 +2111,16 @@
         }
       }
     }
+    /* A physical ruling asks for a taller box than the drawing (o.rowVH, the
+       row's own height at the standard's scale). The drawing stays where it
+       was relative to itself and is centred in that box, so the ruled row
+       sits in the middle of the row the page gave it. Absent, vy and vh are
+       y0 and h - y0, which is what the viewBox has always been. */
+    const contentH = h - y0;
+    const vh = o.rowVH ? Math.max(contentH, o.rowVH) : contentH;
+    const vy = y0 - (vh - contentH) / 2;
     return {
-      w: w, h: h, y0: y0, model: model, inkLeft: inkLeft,
+      w: w, h: h, y0: y0, vy: vy, vh: vh, model: model, inkLeft: inkLeft,
       fontSize: WORD_OUTLINE_FS, font: font, spacing: spacing,
       anchorY: WORD_OUTLINE_ANCHOR_Y, guides: gRul,
       fill: o.solid ? (o.fill || INK) : "#ffffff",
@@ -2189,9 +2221,17 @@
     const old = row.querySelector(":scope > svg.pt-word-outline");
     if (!old) return;
     const g = wordOutlineGeom(d.word, d.opts);
-    const vw = practiceRowVW(row, g.h - g.y0);
+    /* A physical ruling (Seyes) measures the row in millimetres instead of
+       fitting the band to it: see physicalRowBox. The box it returns already
+       holds the whole drawing, so g.w is a floor on its width and g.h - g.y0
+       on its height. */
+    const phys = g.guides
+      ? physicalRowBox(row, row.getBoundingClientRect(), g.guides.band, g.w, g.h - g.y0)
+      : null;
+    const vw = phys ? phys.vw : practiceRowVW(row, g.h - g.y0);
     if (!vw) return;
     const o = Object.assign({}, d.opts, { rowVW: vw });
+    if (phys) { o.rowVH = phys.vh; o.ruleK = phys.rule.strokeK; }
     if (!d.opts.blank) o.practice = practiceStyle;
     row.replaceChild(wordOutlineSVG(d.word, o), old);
   }
@@ -2204,6 +2244,68 @@
   function layoutPracticeRows(root) {
     if (!root || !root.querySelectorAll) return;
     $$(".pt-name-row", root).forEach(layoutPracticeRow);
+    $$(".pt-practice-fit", root).forEach(fitPracticeSheet);
+    // The generator's trace rows are laid out only for a physical ruling; a
+    // proportional one is fitted by the CSS letterbox, as it always was.
+    if (physicalBandMm()) $$(".pt-gen-row", root).forEach(layoutGenRow);
+  }
+
+  /* A glyph practice sheet is ONE page, and its type takes its size from the
+     page rather than the page taking its length from the type.
+
+     The sheet used to be a flowed column of 26 rows at a fixed 1.6rem. A
+     script face's line box is 50-73px at that size, so the column was
+     1,300-1,900px against a 960px page and the PDF cut it into two or three,
+     while every one of these pages says "an A-Z page". The rows are now two
+     columns of 13 (A-M, N-Z) whose tracks are an equal share of the fitted
+     page, and this scales the type until the tallest row's content fits its
+     track. Measured, not estimated: the page's own title, name/date line and
+     credit claim their natural height in the flex column, and what is left is
+     whatever the paper and margins leave, so nothing here knows a paper size.
+     Run inside the state being measured -- the surface is display:none outside
+     it and every rect reads zero, in which case this leaves the sheet alone. */
+  const PRACTICE_FIT_MIN_K = 0.5;     // below half size the sheet stops being a model to copy
+  function fitPracticeSheet(sheet) {
+    sheet.style.removeProperty("--pt-practice-k");
+    const rows = Array.from(sheet.querySelectorAll(".cursive-print-row"));
+    let k = 1;
+    for (let pass = 0; pass < 4; pass++) {
+      let worst = 0;
+      rows.forEach((row) => {
+        const room = row.getBoundingClientRect().height;
+        if (!(room > 0)) return;
+        const cs = getComputedStyle(row);
+        const chrome = (parseFloat(cs.paddingBottom) || 0) + (parseFloat(cs.borderBottomWidth) || 0);
+        let need = 0;
+        Array.from(row.children).forEach((c) => { need = Math.max(need, c.getBoundingClientRect().height); });
+        worst = Math.max(worst, (need + chrome) / room);
+      });
+      if (worst <= 1.001) break;
+      k = Math.max(PRACTICE_FIT_MIN_K, k / worst * 0.99);
+      sheet.style.setProperty("--pt-practice-k", k.toFixed(4));
+      if (k <= PRACTICE_FIT_MIN_K) break;
+    }
+  }
+
+  /* A trace row on the generator sheet, for a physical ruling.
+
+     traceWordSVG() draws in a viewBox sized from the word and lets the CSS box
+     letterbox it, which is why the band was whatever the row's height made it.
+     Here the row's box is read and the drawing is rebuilt in a viewBox that
+     holds that box at the standard's scale (physicalRowBox). The pristine
+     viewBox is put back before measuring, because on a row whose height is
+     `auto` (the on-screen preview) the box depends on the viewBox, and a layout
+     that read its own previous answer would not be the same layout twice. */
+  function layoutGenRow(row) {
+    // The spelling sheet carries its own fold line in a viewBox it widened.
+    if (row.classList.contains("pt-sp-row")) return;
+    const old = row.querySelector(":scope > svg.pt-trace-svg");
+    const d = old && old.__ptTrace;
+    if (!d) return;
+    old.setAttribute("viewBox", d.vb0);
+    const phys = physicalRowBox(row, old.getBoundingClientRect(), traceBand(), d.w, d.h);
+    if (!phys) return;
+    row.replaceChild(traceWordSVG(d.word, d.level, Object.assign({}, d.opts, { phys: phys })), old);
   }
 
   /* The miniature is the same composition the sheet will use, drawn small --
@@ -2332,6 +2434,10 @@
        for a name whose sheet does change, and show it on a laptop for one
        whose sheet does not. The row's height is the same band in both, so the
        print width is all that has to be carried across. */
+    // A physical ruling knows the sheet's line in millimetres, so the width
+    // the sheet's row holds is the printable line at the standard's scale.
+    const rule = g.guides ? physicalRule(g.guides.band) : null;
+    if (rule) return practiceStylesDiffer(Math.max(printableWidthMm() * rule.upm, g.w), g.model, g.fontSize);
     const r = probe.getBoundingClientRect();
     const full = paperFull();
     const marginIn = parseFloat(MARGINS[printPrefs.margin] || MARGINS.normal) || 0.5;
@@ -2348,7 +2454,7 @@
     const g = wordOutlineGeom(word, o);
     const w = g.w, fontSize = g.fontSize, spacing = g.spacing;
     const svg = document.createElementNS(SVGNS, "svg");
-    svg.setAttribute("viewBox", "0 " + g.y0 + " " + w + " " + (g.h - g.y0));
+    svg.setAttribute("viewBox", "0 " + g.vy + " " + w + " " + g.vh);
     svg.setAttribute("class", "pt-word-outline");
     svg.setAttribute("role", "img");
     svg.setAttribute("aria-label", word);
@@ -2562,7 +2668,7 @@
       return p;
     }
     if (RENDER === "dots") return singleDotSVG(ch);
-    return outlineSVG(ch, strokeOverlayOn() ? { overlay: true } : undefined);
+    return outlineSVG(ch, { overlay: strokeOverlayOn() });
   }
 
   /* ---------------------------------------------------------------
@@ -2677,16 +2783,16 @@
      one that ships, and the defect it guards has now been introduced,
      removed and reintroduced here three times. Keep the markers with the
      code if it moves. */
-  const BADGE_R = 11;
+  const BADGE_R = 8.5;
   const BADGE_GAP = 1;                 // white between two rings, so they read as two
   const BADGE_SLIDE_STEP = 0.5;
   const BADGE_SLIDE_CAP = 40;          // worst real requirement is A at 28.5 units
   const BADGE_SLIDE_FRAC = 0.35;       // ...and never more than this much of a short stroke
-  /* The arrowhead is 20 units long on its own, so the tail only has to carry
-     it. On a row that already draws the route, every unit of tail is a unit
-     of the child's dotted guide painted over — measured on "E", whose arms
-     are ~55 units fitted, a 28-unit tail plus the badge covered 65% of the
-     arm. Short tail, lighter line, and the head does the talking. */
+  /* The arrowhead has its own length (overlayMetrics().head), so the tail only
+     has to carry it. On a row that already draws the route, every unit of tail
+     is a unit of the child's dotted guide painted over — measured on "E",
+     whose arms are ~55 units fitted, a 28-unit tail plus the badge covered 65%
+     of the arm. Short tail, thin line, and the head does the talking. */
   const ARROW_TAIL = 18;
   const ARROW_TAIL_FRAC = 0.34;        // ...or this much of a short stroke, whichever is less
 
@@ -2741,9 +2847,9 @@
      shared rather than loaded onto one badge. Returns one point per stroke —
      the start point itself wherever nothing collided, which is every stroke
      on 41 of the 52 letters. */
-  function badgePositions(polys) {
+  function badgePositions(polys, radius) {
     if (!polys || polys.length < 2) return (polys || []).map((P) => P[0]);
-    const need = 2 * BADGE_R + BADGE_GAP;
+    const need = 2 * (radius || BADGE_R) + BADGE_GAP;
     const caps = polys.map((P) => Math.min(BADGE_SLIDE_CAP, polyLength(P) * BADGE_SLIDE_FRAC));
     const off = polys.map(() => 0);
     const at = () => off.map((s, k) => pointAt(polys[k], s));
@@ -2774,6 +2880,95 @@
 
   /* @stroke-badges:end */
 
+  /* How big each part of the guide is, as a share of the face's own stem.
+
+     The overlay is drawn in the 200 x 240 box at font-size 210, so every number
+     below is a share of that box and scales with the tile for free. What it
+     must follow is the STEM, because the route is only readable while it sits
+     inside the white channel between the two walls of the outline: measured on
+     Quicksand 700 the stem is 26 units and the outline stroke 4, so the channel
+     is 22. The first cut drew a 6-unit line at 0.9 opacity and 22-unit badges:
+     the line was a band a quarter of the channel wide, and the badge was the
+     whole channel, so it sat on the outline and, on a tile, the numerals and
+     the line together read as a smear over the letter.
+
+     A school stroke-order model is a thin guide down the centre of each stem,
+     a small dot where the pencil goes down, and one clear arrowhead where it
+     lifts. So the line is ~12% of the stem, the badge a little under a third of
+     it (a disc that leaves a clear margin either side inside the channel), the
+     head ~3.5 line widths long. Each is capped by the channel actually left
+     after the page's own outline stroke, so a heavier outline never swallows the
+     guide. Falls back to the Quicksand numbers when the face cannot be
+     measured. */
+  function overlayMetrics() {
+    const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
+    const measured = GM && GM.stemWidth ? GM.stemWidth(FONT, OUTLINE_SVG_FONT, 700) : 0;
+    const stem = measured > 8 ? measured : 26;
+    const k = Math.max(0.75, Math.min(1.5, stem / 26));
+    const channel = Math.max(8, stem - STROKE);
+    const line = Math.min(3.0 * k, 0.2 * channel);
+    const radius = Math.min(BADGE_R * k, 0.4 * channel);
+    return {
+      line: line,
+      radius: radius,
+      head: line * 3.6,               // arrowhead length
+      headHalf: line * 1.55,          // half its width
+      dot: line * 1.15,               // the start dot, under its badge or left behind when the badge slides
+      font: radius * 1.4,
+      ring: Math.max(0.8, line * 0.45)
+    };
+  }
+
+  // The part of polyline P between arc distances s0 and s1, as points.
+  function subPolyline(P, s0, s1) {
+    const out = [pointAt(P, s0)];
+    let acc = 0;
+    for (let i = 1; i < P.length; i++) {
+      acc += Math.hypot(P[i][0] - P[i - 1][0], P[i][1] - P[i - 1][1]);
+      if (acc > s0 && acc < s1) out.push(P[i]);
+    }
+    out.push(pointAt(P, s1));
+    return out;
+  }
+
+  const pointsToPath = (pts) => "M" + pts.map((q) => q[0].toFixed(2) + "," + q[1].toFixed(2)).join(" L");
+
+  /* How much of a stroke's end to give up so that its arrowhead lands clear of
+     every numeral. Two things used to hide the head: on a closed stroke (O, 0,
+     o, Q, 8) the end IS the start, so badge 1 sat on the arrow, and where one
+     stroke begins where the last one ends (L, E, T, Z) badge 2 sat on stroke
+     1's arrow. The head is the one thing a stroke needs at its end, so the
+     route stops short of the numeral instead. Never more than a third of the
+     stroke. */
+  function endClearance(P, centres, m, others) {
+    const total = polyLength(P);
+    const cap = total * 0.34;
+    const needBadge = m.radius + m.headHalf * 0.6 + 1.5;
+    /* A stroke that ends ON another stroke (the bowl of a B back at its stem,
+       the arm of an H at the far stem) puts its head on that stroke's own
+       arrow or line. The head stops one head-width short instead. */
+    const needLine = m.headHalf + m.line * 0.5 + 1;
+    const samples = [];
+    (others || []).forEach((Q) => {
+      const ql = polyLength(Q);
+      for (let s = 0; s <= ql; s += 1.5) samples.push(pointAt(Q, s));
+    });
+    let cut = 0;
+    while (cut < cap) {
+      const e = pointAt(P, total - cut);
+      let clear = true;
+      for (let k = 0; k < centres.length && clear; k++) {
+        if (centres[k] && Math.hypot(e[0] - centres[k][0], e[1] - centres[k][1]) < needBadge) clear = false;
+      }
+      for (let k = 0; k < samples.length && clear; k++) {
+        if (Math.hypot(e[0] - samples[k][0], e[1] - samples[k][1]) < needLine) clear = false;
+      }
+      if (clear) break;
+      cut += 0.5;
+    }
+    return cut;
+  }
+
   // Numbered start-dot + direction arrow for every stroke of one letter,
   // drawn directly into `parent`'s own coordinate space (the 200x240 unit
   // box, or a <g> already transformed into an equivalent local box).
@@ -2787,56 +2982,84 @@
        otherwise — a page serving a cached script, or a browser with no ink
        metrics, keeps exactly the rendering it had. */
     const paths = (fitted && fitted.length === data.strokes.length) ? fitted : data.strokes;
-    const uid = "ptsd" + (++strokeOverlayUid);
     const g = svgMake("g", { class: "pt-stroke-overlay", "aria-hidden": "true" }, parent);
-    const defs = svgMake("defs", null, g);
-    const markerId = "ptArrow" + uid;
-    // markerUnits defaults to "strokeWidth", which would silently multiply
-    // markerWidth/Height by the path's stroke-width below (6x) — pin it to
-    // userSpaceOnUse so the arrowhead size stays fixed and predictable.
-    const marker = svgMake("marker", {
-      id: markerId, viewBox: "0 0 10 10", refX: 8, refY: 5, markerUnits: "userSpaceOnUse",
-      markerWidth: 16, markerHeight: 16, orient: "auto"
-    }, defs);
-    svgMake("path", { d: "M0,0 L10,5 L0,10 Z", fill: STROKE_COLOR }, marker);
+    const m = overlayMetrics();
+    const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
 
+    /* The drawn line is flattened finely (the badge logic only needs a coarse
+       one). A browser with no ink metrics has neither, and draws the authored
+       path with a marker exactly as it always did. */
     const polys = strokePolylines(paths);
+    const fine = polys && GM ? paths.map((d, i) => (GM.flattenStrokes([d], 24)[0] || polys[i])) : null;
     /* Read the start off the polyline where there is one, so the dot and the
        badge it sits under cannot disagree by a rounding step; the regex is
        the fallback for a browser with no ink metrics, which never reaches
        badgePositions either. */
     const starts = polys ? polys.map((P) => P[0]) : paths.map((d) => {
-      const m = /M\s*([\d.\-]+)[,\s]+([\d.\-]+)/.exec(d);
-      return m ? [parseFloat(m[1]), parseFloat(m[2])] : null;
+      const mm = /M\s*([\d.\-]+)[,\s]+([\d.\-]+)/.exec(d);
+      return mm ? [parseFloat(mm[1]), parseFloat(mm[2])] : null;
     });
-    const badges = polys ? badgePositions(polys) : starts;
+    const badges = polys ? badgePositions(polys, m.radius) : starts;
 
-    /* Strokes first, then every dot, then every numeral — so a later stroke
-       can never be painted across an earlier letter's badge, which the single
-       interleaved pass allowed. */
-    paths.forEach((d, i) => {
-      const line = o.routeDrawn && polys ? tailPath(polys[i], ARROW_TAIL) : d;
-      if (!line) return;
-      svgMake("path", {
-        d: line, fill: "none", stroke: STROKE_COLOR,
-        "stroke-width": o.routeDrawn ? 4 : 6,
-        "stroke-linecap": "round", "stroke-linejoin": "round",
-        "marker-end": "url(#" + markerId + ")", opacity: 0.9
-      }, g);
-    });
+    if (!fine) {
+      const uid = "ptsd" + (++strokeOverlayUid);
+      const defs = svgMake("defs", null, g);
+      const markerId = "ptArrow" + uid;
+      // markerUnits defaults to "strokeWidth"; pin it so the head size is fixed.
+      const marker = svgMake("marker", {
+        id: markerId, viewBox: "0 0 10 10", refX: 8, refY: 5, markerUnits: "userSpaceOnUse",
+        markerWidth: m.head * 1.4, markerHeight: m.head * 1.4, orient: "auto"
+      }, defs);
+      svgMake("path", { d: "M0,0 L10,5 L0,10 Z", fill: STROKE_COLOR }, marker);
+      paths.forEach((d) => {
+        svgMake("path", {
+          d: d, fill: "none", stroke: STROKE_COLOR, "stroke-width": m.line,
+          "stroke-linecap": "round", "stroke-linejoin": "round", "marker-end": "url(#" + markerId + ")"
+        }, g);
+      });
+    } else {
+      /* Strokes first, then heads, then every dot, then every numeral, so a
+         later stroke can never be painted across an earlier letter's badge. */
+      const heads = [];
+      fine.forEach((P, idx) => {
+        const total = polyLength(P);
+        // A mark shorter than its own head (the dot of an i, a j) is just its numeral.
+        if (total < m.head * 1.3) return;
+        const end = total - endClearance(P, badges, m, fine.filter((_, j) => j !== idx));
+        if (end < m.head * 1.3) return;
+        const tip = pointAt(P, end);
+        const back = pointAt(P, end - m.head * 0.9);
+        const dx = tip[0] - back[0], dy = tip[1] - back[1];
+        const dl = Math.hypot(dx, dy) || 1;
+        const ux = dx / dl, uy = dy / dl;
+        const base = [tip[0] - ux * m.head, tip[1] - uy * m.head];
+        const from = o.routeDrawn ? Math.max(0, end - m.head - Math.min(ARROW_TAIL, total * ARROW_TAIL_FRAC)) : 0;
+        const bodyEnd = Math.max(from, end - m.head * 0.7);
+        if (bodyEnd - from > 0.4) {
+          svgMake("path", {
+            d: pointsToPath(subPolyline(P, from, bodyEnd)), fill: "none", stroke: STROKE_COLOR,
+            "stroke-width": m.line, "stroke-linecap": "round", "stroke-linejoin": "round"
+          }, g);
+        }
+        heads.push("M" + tip[0].toFixed(2) + "," + tip[1].toFixed(2) +
+          " L" + (base[0] - uy * m.headHalf).toFixed(2) + "," + (base[1] + ux * m.headHalf).toFixed(2) +
+          " L" + (base[0] + uy * m.headHalf).toFixed(2) + "," + (base[1] - ux * m.headHalf).toFixed(2) + " Z");
+      });
+      heads.forEach((d) => svgMake("path", { d: d, fill: STROKE_COLOR, stroke: STROKE_COLOR, "stroke-width": m.line * 0.35, "stroke-linejoin": "round" }, g));
+    }
     /* The truth of the overlay: where the pencil goes down. Drawn for every
        stroke, and invisible under its own badge wherever the badge did not
-       have to move — which is why 41 letters render exactly as before. */
+       have to move. */
     starts.forEach((p) => {
-      if (p) svgMake("circle", { cx: p[0], cy: p[1], r: 4.5, fill: STROKE_COLOR }, g);
+      if (p) svgMake("circle", { cx: p[0], cy: p[1], r: m.dot, fill: STROKE_COLOR }, g);
     });
     badges.forEach((p, i) => {
       if (!p) return;
-      svgMake("circle", { cx: p[0], cy: p[1], r: BADGE_R, fill: "#ffffff", stroke: STROKE_COLOR, "stroke-width": 2.5 }, g);
+      svgMake("circle", { cx: p[0], cy: p[1], r: m.radius, fill: STROKE_COLOR, stroke: "#ffffff", "stroke-width": m.ring }, g);
       const label = svgMake("text", {
-        x: p[0], y: p[1] + 0.5, "text-anchor": "middle", "dominant-baseline": "central",
+        x: p[0], y: p[1] + 0.4, "text-anchor": "middle", "dominant-baseline": "central",
         "font-family": "'Plus Jakarta Sans', sans-serif", "font-weight": 700,
-        "font-size": 13, fill: STROKE_COLOR
+        "font-size": m.font, fill: "#ffffff"
       }, g);
       label.textContent = String(i + 1);
     });
@@ -2934,10 +3157,15 @@
       try { localStorage.setItem(STROKE_TOGGLE_LS_KEY, el.strokeToggle.checked ? "1" : "0"); } catch (e) { /* noop */ }
       if (el.nameInput || el.namePreview) renderNamePreview();
       if (el.genInput || el.genPreview) renderGenPreview();
-      /* The picked-letter panel reads the toggle when it is built, so it has
-         to be built again: the control sits above it and a tick that changes
-         nothing in view is indistinguishable from a control that does nothing. */
-      if (el.panel && el.strip && activeChar != null) selectChar(activeChar, { silent: true });
+      /* The single-letter paper preview and the letter-set preview draw the
+         same overlay the sheet prints, so they repaint with the switch: a
+         toggle whose consequence only appears in the PDF is the control with
+         no visible effect this panel already learned not to ship. */
+      if (paperPreviewNode && activeChar != null) {
+        const inner = paperPreviewNode.querySelector(".pt-paper-inner");
+        if (inner && inner.firstChild) inner.replaceChild(figureNode(activeChar), inner.firstChild);
+      }
+      if (typeof updateBatch === "function") updateBatch();
     });
   }
 
@@ -4119,16 +4347,21 @@
       }
       drawCredit(ctx, size, size, RENDER === "glyph");
       const finish = () => downloadCanvas(canvas, PNG_PREFIX + "-" + charSlug(ch) + ".png", "character");
-      /* The sheet on screen and the PDF carry the stroke overlay when the
-         toggle is on, so the PNG has to as well: an image that drops the
-         start dot is a third answer to "what does this letter look like". */
-      if (RENDER === "outline" && strokeOverlayOn()) {
-        letterOverlayImage(ch, ctx, glyph, size, letterFs)
-          .then((img) => { if (img) ctx.drawImage(img, 0, 0, size, size); finish(); })
-          .catch(finish);
-      } else {
-        finish();
+      /* The stroke-direction switch is on the single-letter pages now, so the
+         download carries it like the sheet does. The canvas drew this glyph on
+         textBaseline "middle"; the overlay is placed on the alphabetic baseline
+         that put it on, read back from the canvas itself. */
+      if (RENDER === "outline" && strokeOverlayOn() && strokeDataFor(ch)) {
+        // H has a flat foot, so its ink descent below "middle" IS the distance to the baseline.
+        const baseY = size * 0.5 + ctx.measureText("H").actualBoundingBoxDescent;
+        if (isFinite(baseY)) {
+          strokeOverlayImage(ch, size, size, letterFs, 0, baseY, "alphabetic")
+            .then((img) => { if (img) ctx.drawImage(img, 0, 0, size, size); finish(); })
+            .catch(finish);
+          return;
+        }
       }
+      finish();
     });
   }
 
@@ -4165,45 +4398,6 @@
       const img = new Image();
       img.onload = () => { URL.revokeObjectURL(url); res(img); };
       // A failed overlay must not cost the visitor the sheet itself.
-      img.onerror = () => { URL.revokeObjectURL(url); res(null); };
-      img.src = url;
-    });
-  }
-
-  /* The single-letter PNG's overlay. A word's overlay places each letter by
-     its advance centre because one <text> node put it there; this canvas drew
-     one glyph centred by ADVANCE on a middle baseline, so the ink sits
-     wherever measureText says it does and nowhere else. Read the ink box off
-     the same context the glyph was painted with, fit the skeleton to that,
-     and draw the overlay in the canvas's own pixels. Passing the word path's
-     anchor here is what put the first attempt's arrows at 86% size and a
-     hand's width off the letter. */
-  function letterOverlayImage(ch, ctx, glyph, size, letterFs) {
-    const data = strokeDataFor(ch);
-    const GM = window.UltraTextGen && window.UltraTextGen.glyphMetrics;
-    if (!data || !data.strokes || !data.strokes.length || !GM || !GM.fitSkeleton) return Promise.resolve(null);
-    const k = letterFs / OUTLINE_SVG_FONT;
-    const m = ctx.measureText(glyph);
-    const ink = {
-      x: (size / 2 - m.actualBoundingBoxLeft) / k,
-      y: (size * 0.5 - m.actualBoundingBoxAscent) / k,
-      w: (m.actualBoundingBoxLeft + m.actualBoundingBoxRight) / k,
-      h: (m.actualBoundingBoxAscent + m.actualBoundingBoxDescent) / k
-    };
-    if (!(ink.w > 0) || !(ink.h > 0)) return Promise.resolve(null);
-    const fit = GM.fitSkeleton(data.strokes, ink, { inset: GM.stemWidth(FONT, OUTLINE_SVG_FONT, 700) / 2 });
-    const svg = document.createElementNS(SVGNS, "svg");
-    svg.setAttribute("xmlns", SVGNS);
-    svg.setAttribute("viewBox", "0 0 " + size + " " + size);
-    svg.setAttribute("width", size);
-    svg.setAttribute("height", size);
-    const g = svgMake("g", { transform: "scale(" + k.toFixed(4) + ")" }, svg);
-    addStrokeOverlay(g, ch, fit ? fit.d : null);
-    if (!svg.querySelector("path")) return Promise.resolve(null);
-    const url = URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(svg)], { type: "image/svg+xml;charset=utf-8" }));
-    return new Promise((res) => {
-      const img = new Image();
-      img.onload = () => { URL.revokeObjectURL(url); res(img); };
       img.onerror = () => { URL.revokeObjectURL(url); res(null); };
       img.src = url;
     });
@@ -4282,7 +4476,12 @@
       if (!o.transparent) drawCredit(ctx, width, canvasH, RENDER === "glyph");
       const finish = () => downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(text) || "word") + ".png", "word");
       if (RENDER === "outline" && strokeOverlayOn()) {
-        strokeOverlayImage(out, width, canvasH, fontSize, spacingEm ? fontSize * spacingEm : 0, baseY)
+        /* baseY is the ALPHABETIC baseline whenever the face could be measured,
+           so the overlay is anchored on it, not on the central anchor: passing
+           it with the default "central" mode put every start dot and arrow a
+           third of a letter below the letters of the name it numbers. */
+        strokeOverlayImage(out, width, canvasH, fontSize, spacingEm ? fontSize * spacingEm : 0, baseY,
+                           central == null ? "central" : "alphabetic")
           .then((img) => { if (img) ctx.drawImage(img, 0, 0, width, canvasH); finish(); })
           .catch(finish);
       } else {
@@ -4529,7 +4728,7 @@
      screen happened to be. */
   let practiceBeforePrintBound = false;
   function bindPracticeBeforePrint() {
-    if (practiceBeforePrintBound || !RULED_ROWS) return;
+    if (practiceBeforePrintBound || !(RULED_ROWS || physicalBandMm())) return;
     practiceBeforePrintBound = true;
     window.addEventListener("beforeprint", () => {
       if (el.printRoot) layoutPracticeRows(el.printRoot);
@@ -4716,7 +4915,7 @@
     const style = CHAR_STYLES.find((s) => s.key === key) || CHAR_STYLES[0];
     charStyleKey = style.key;
     if (style.font) FONT = style.font;
-    if (style.fontWeight != null) FONT_WEIGHT = style.fontWeight;
+    FONT_WEIGHT = styleWeight(style);
     if (style.strokeWidth != null) STROKE = style.strokeWidth;
     if (style.letterSpacing != null) LETTER_SPACING = style.letterSpacing;
     CFG.skew = style.skew;
@@ -4768,7 +4967,7 @@
       pdfMode = true;
       const holder = document.createElement("div");
       holder.className = "bubble-print-single";
-      holder.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, strokeOverlayOn() ? { overlay: true } : undefined)));
+      holder.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { overlay: strokeOverlayOn() })));
       // First in the holder: the figure is absolutely placed to fill the
       // page, so the line sits under the title whichever way it is added.
       if (moreFooterOn("letters", false)) holder.insertBefore(nameDateRow(), holder.firstChild);
@@ -5502,7 +5701,7 @@
     chars.slice(0, g.per).forEach((ch) => {
       const cell = document.createElement("span");
       cell.className = "pt-set-preview-cell";
-      cell.appendChild(RENDER === "glyph" ? smallGlyphCell(ch) : (RENDER === "dots" ? singleDotSVG(ch, { small: true }) : outlineSVG(ch, { small: true })));
+      cell.appendChild(RENDER === "glyph" ? smallGlyphCell(ch) : (RENDER === "dots" ? singleDotSVG(ch, { small: true }) : outlineSVG(ch, { small: true, overlay: strokeOverlayOn() })));
       grid.appendChild(cell);
     });
     host.appendChild(grid);
@@ -5567,7 +5766,7 @@
     const g = setGrid(sizeKey);
     if (RENDER === "glyph") return bigGlyphForPrint(ch);
     if (RENDER === "dots") return singleDotSVG(ch, { small: g.per > 1 && cell.h <= 2.2 });
-    return outlineSVG(ch, g.per > 1 ? { small: true, strokeScale: tileStrokeScale(cell.h) } : undefined);
+    return outlineSVG(ch, g.per > 1 ? { small: true, strokeScale: tileStrokeScale(cell.h), overlay: strokeOverlayOn() } : { overlay: strokeOverlayOn() });
   }
 
   /* One print path for every size. Full page is the book page exactly as it
@@ -5800,7 +5999,7 @@
         // single-character print has one — see .pt-fill-page in style.css.
         const figure = document.createElement("div");
         figure.className = "bubble-figure";
-        figure.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
+        figure.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { overlay: strokeOverlayOn() })));
         card.appendChild(figure);
         if (per > 1) page.appendChild(card);
       });
@@ -5819,7 +6018,7 @@
   function printAlphabetSheet() {
     const sheet = document.createElement("div");
     sheet.className = "bubble-print-sheet";
-    CHARS.forEach((ch) => sheet.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { small: true }))));
+    CHARS.forEach((ch) => sheet.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { small: true, overlay: strokeOverlayOn() }))));
     // Above the letters, not below: this sheet flows across pages with no
     // page units, so a line at the end would land on the last page only.
     let body = sheet;
@@ -5935,7 +6134,7 @@
         const cell = document.createElement("div");
         cell.className = "pt-tile-cell";
         cell.style.height = heightIn.toFixed(2) + "in";
-        cell.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch, { small: small }) : outlineSVG(ch, { small: small, strokeScale: tileStrokeScale(heightIn) })));
+        cell.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch, { small: small }) : outlineSVG(ch, { small: small, strokeScale: tileStrokeScale(heightIn), overlay: strokeOverlayOn() })));
         grid.appendChild(cell);
       });
       page.appendChild(grid);
@@ -6176,8 +6375,23 @@
        page, so the Spanish, French, Italian, Polish and Portuguese cursive
        sheets printed "Cursiva practice sheet" at the top of the PDF. The
        wording is each locale's own, harvested from its pages. */
+    const practiceTitle = withName(moreTitle("letters"), "") || T.practiceTitle.replace("{Noun}", cap(NOUN));
+    if (RENDER === "glyph") {
+      /* One page, two columns, type sized to the paper: see fitPracticeSheet().
+         The outline-mode sheet keeps flowing, because its model is a 100px
+         letter tile and 36 rows of those do not shrink to a page and stay a
+         letter to trace. */
+      sheet.classList.add("pt-practice-fit");
+      sheet.style.setProperty("--pt-practice-rows", String(Math.ceil(CHARS.length / 2)));
+      const page = document.createElement("div");
+      page.className = "pt-sheet-page is-fitted pt-practice-page";
+      page.appendChild(sheet);
+      if (moreFooterOn("letters", false)) page.appendChild(nameDateRow());
+      printWrap(practiceTitle, page, "practice_sheet");
+      return;
+    }
     if (moreFooterOn("letters", false)) sheet.appendChild(nameDateRow());
-    printWrap(withName(moreTitle("letters"), "") || T.practiceTitle.replace("{Noun}", cap(NOUN)), sheet, "practice_sheet");
+    printWrap(practiceTitle, sheet, "practice_sheet");
   }
 
   /* ---------------------------------------------------------------
@@ -6239,6 +6453,7 @@
     if (!NAME_STYLES) return;
     const style = NAME_STYLES.find((s) => s.key === key) || NAME_STYLES[0];
     nameStyleKey = style.key;
+    FONT_WEIGHT = styleWeight(style);
     if (el.nameStyles) {
       $$(".pt-name-style-opt", el.nameStyles).forEach((b) => {
         const on = b.dataset.style === nameStyleKey;
@@ -7323,7 +7538,12 @@
     seyes: {
       lines: [{ at: 0 }, { at: 0.25, faint: true }, { at: 0.5, faint: true },
               { at: 0.75, faint: true }, { at: 1 }],
-      band: null, verticals: 1, extra: 0
+      /* `physicalBandMm` is what makes this a national STANDARD rather than a
+         shape: the source gives millimetres (8 mm between heavy lines, so a
+         2 mm interline), and the ruled-row layout uses it to put the band on
+         the paper at that size. A ruling without it keeps the proportional
+         behaviour it had -- the band is whatever the row's box makes it. */
+      band: null, verticals: 1, extra: 0, physicalBandMm: 8
     },
     lineatur: {
       lines: [{ at: 1 }, { at: 0.5, faint: true, dashed: true }, { at: 0 }, { at: -0.5 }],
@@ -7331,6 +7551,85 @@
     }
   };
   function ruling() { return RULINGS[rulingKey()] || RULINGS.standard; }
+
+  /* A ruling that is a physical standard (Seyes: 8 mm between heavy lines).
+
+     Every other ruling here is proportional: its band is a fraction of
+     whatever box the row is drawn in, which is right for a face-derived rule
+     and wrong for an exercise book, whose lines are a fixed distance apart on
+     the paper whatever the sheet. Measured on A4 before this existed, rows
+     laid out the old way printed Seyes at a 16.2 mm main-line pitch and a
+     4.06 mm interline -- 2.03x the standard -- because the band was sized from
+     the viewBox and the viewBox was fitted to the row.
+
+     So a physical ruling asks the row what a millimetre is. The row's box is
+     measured in CSS pixels, a pixel is turned into paper through
+     sheetPxPerMm(), and the viewBox is made as many units wide and tall as
+     that box holds at `band units = physicalBandMm`. The drawing inside --
+     type, ruling, route, dots -- keeps every coordinate it had and simply sits
+     in a larger box, so the type stays in proportion to the band it was
+     designed against (a letter that fills the band is an 8 mm letter, not a
+     16 mm letter on an 8 mm ruling). */
+  function physicalBandMm() { return ruling().physicalBandMm || 0; }
+  /* One base stroke unit (the "2" and "1.5" addGuide draws) in millimetres,
+     as it printed when the band was 108 units in a 16.2 mm box. Held in
+     millimetres so the lines keep the weight they had on paper instead of
+     halving with the scale: a 0.15 mm Seyes interline is below what a
+     photocopier keeps. */
+  const RULE_STROKE_MM = 0.15;
+  function physicalRule(bandUnits) {
+    const mm = physicalBandMm();
+    if (!(mm > 0) || !(bandUnits > 0)) return null;
+    const upm = bandUnits / mm;               // viewBox units per millimetre of paper
+    return { upm: upm, strokeK: upm * RULE_STROKE_MM };
+  }
+  /* Width of the printable line on the chosen paper, in millimetres. */
+  function printableWidthMm() {
+    const full = paperFull();
+    const marginIn = parseFloat(MARGINS[printPrefs.margin] || MARGINS.normal) || 0.5;
+    return Math.max(1, (full.w - 2 * marginIn) * 25.4);
+  }
+  /* CSS pixels per millimetre of PAPER for a node on a sheet.
+
+     On the print surface (the PDF, PNG and print-dialog states) a CSS pixel
+     is 1/96 in by definition, so the answer is exact. On screen the preview
+     is the same sheet drawn at whatever width its card has, so a millimetre
+     is that width over the printable line -- the preview then shows the
+     proportion the paper will have, which is what a preview is for. 0 when
+     the node has no measurable sheet (display:none). */
+  function sheetPxPerMm(node) {
+    if (el.printRoot && el.printRoot.contains(node)) return 96 / 25.4;
+    const sheet = node.closest(".pt-name-sheet, .pt-gen-sheet");
+    const w = sheet ? sheet.getBoundingClientRect().width : 0;
+    if (!(w > 0)) return 0;
+    /* A card 300px wide holding a 184 mm line would draw an 8 mm band 13px
+       tall, and a dotted name in it could not be read. So the preview has a
+       floor on the band, and below it the card shows the left end of the line
+       at a readable zoom rather than the whole line at thumbnail size. The
+       proportions are the standard's either way (8 mm band, 2 mm interline,
+       square 8 mm cells); only the zoom differs, which it always does between
+       a card and a sheet. */
+    return Math.max(w / printableWidthMm(), PREVIEW_MIN_BAND_PX / (physicalBandMm() || 8));
+  }
+  const PREVIEW_MIN_BAND_PX = 44;
+  /* The viewBox a physical ruling needs for a row whose box is `rect`, or null
+     when the ruling is proportional or the row cannot be measured. `needW` and
+     `needH` are the drawing's own extent in viewBox units; if the box holds
+     less than that at the standard's scale, the box grows uniformly and the
+     band comes out under 8 mm -- the same "floor, never a cap" the rows
+     already follow, because clipping a child's name is worse than a ruling a
+     little under standard. */
+  function physicalRowBox(node, rect, bandUnits, needW, needH) {
+    const rule = physicalRule(bandUnits);
+    if (!rule || !(rect.width > 0) || !(rect.height > 0)) return null;
+    const P = sheetPxPerMm(node);
+    if (!(P > 0)) return null;
+    const vw0 = rect.width / P * rule.upm;
+    const vh0 = rect.height / P * rule.upm;
+    const k = Math.max(1, needW / vw0, needH / vh0);
+    const r2 = (n) => Math.round(n * 100) / 100;
+    return { vw: r2(vw0 * k), vh: r2(vh0 * k), rule: rule };
+  }
 
   /* `faint` and `dashed` are separate properties. The house three-line rule
      draws its midline dashed, but a Seyes interline is lighter and SOLID --
@@ -7367,7 +7666,10 @@
      old one already reached. */
   const RULE_OVERHANG = 6000;
 
-  function addGuide(svg, w, y, dashed, faint, bleed) {
+  /* `k` scales the stroke only, for a ruling drawn in a viewBox that is not
+     at the scale the weights were chosen at (see physicalRule). Omitted, the
+     strings are the ones this function has always written. */
+  function addGuide(svg, w, y, dashed, faint, bleed, k) {
     const over = bleed ? RULE_OVERHANG : 0;
     const l = document.createElementNS(SVGNS, "line");
     l.setAttribute("x1", String(8 - over));
@@ -7377,7 +7679,8 @@
     const hc = highContrastOn();
     const light = dashed || faint;
     l.setAttribute("stroke", hc ? CONTRAST_INK : (light ? GUIDE_MID : GUIDE));
-    l.setAttribute("stroke-width", hc ? (light ? "2" : "2.5") : (light ? "1.5" : "2"));
+    const sw = hc ? (light ? 2 : 2.5) : (light ? 1.5 : 2);
+    l.setAttribute("stroke-width", k ? String(Math.round(sw * k * 100) / 100) : String(sw));
     if (dashed) l.setAttribute("stroke-dasharray", "6 8");
     svg.appendChild(l);
   }
@@ -7402,6 +7705,8 @@
     const BASE = geo && geo.base != null ? geo.base : TRACE_BASE;
     const FPX = geo && geo.fontPx != null ? geo.fontPx : TRACE_FONT_SIZE;
     const over = RULE_OVERHANG;
+    // A physical ruling's stroke scale, from the row layout; undefined otherwise.
+    const sk = geo && geo.strokeK ? geo.strokeK : 0;
     const y = (at) => BASE - at * band;
     // The shaded Mittelband goes down first so every line still reads over it.
     if (r.band) {
@@ -7429,12 +7734,13 @@
         l.setAttribute("y1", String(y(1)));
         l.setAttribute("y2", String(y(r.extra ? -r.extra : 0)));
         l.setAttribute("stroke", hc ? CONTRAST_INK : GUIDE_MID);
-        l.setAttribute("stroke-width", hc ? "2" : "1.5");
+        const vsw = hc ? 2 : 1.5;
+        l.setAttribute("stroke-width", sk ? String(Math.round(vsw * sk * 100) / 100) : String(vsw));
         svg.appendChild(l);
       }
     }
     rulingGuides(BASE, band, FPX)
-      .forEach((line) => addGuide(svg, w, line.y, line.dashed, line.faint, true));
+      .forEach((line) => addGuide(svg, w, line.y, line.dashed, line.faint, true, sk));
   }
 
   // A word rendered at a difficulty level, on a ruled baseline. The single
@@ -7975,7 +8281,21 @@
       ? Math.max(360, Math.ceil(Math.max(tm.right, tm.advance) - Math.min(0, tm.left) + track + 120))
       : Math.max(360, chars.length * (116 + trackPx) + 120);
     const svg = document.createElementNS(SVGNS, "svg");
-    svg.setAttribute("viewBox", "0 0 " + w + " " + traceRowHeight());
+    const rowH = traceRowHeight();
+    const vb0 = "0 0 " + w + " " + rowH;
+    /* A physical ruling asks for a box of its own (o.phys, from layoutGenRow):
+       the drawing keeps its coordinates and is centred in a taller, wider
+       viewBox. Without it the viewBox is the word's, as it has always been. */
+    const phys = o.phys || null;
+    svg.setAttribute("viewBox", phys ? "0 " + (rowH - phys.vh) / 2 + " " + phys.vw + " " + phys.vh : vb0);
+    /* What layoutGenRow needs to lay this row out again: the pristine box and
+       the inputs that built it. A property, not an attribute, so the markup of
+       every row is what it was. */
+    if (o.guides !== false) {
+      const base = Object.assign({}, o);
+      delete base.phys;
+      svg.__ptTrace = { word: word, level: level, opts: base, vb0: vb0, w: w, h: rowH };
+    }
     svg.setAttribute("class", "pt-trace-svg");
     svg.setAttribute("role", "img");
     svg.setAttribute("aria-label", word + " — " + spec.label);
@@ -8001,7 +8321,7 @@
          model pass guides:false, they are sized to their own box rather than
          letterboxed inside a wider one, and centring is right for both. */
       svg.setAttribute("preserveAspectRatio", "xMinYMid meet");
-      addRuling(svg, w);
+      addRuling(svg, w, phys ? { strokeK: phys.rule.strokeK } : undefined);
     }
     /* R-001: the stroked levels draw the writing centreline, not the glyph
        contour. traceRoutePaths routes accented letters on their base letter
@@ -8434,12 +8754,44 @@
       });
       box.appendChild(fields);
       details.replaceWith(box);
+      mountRosterClear(mount, fields);
     }
     mount.dataset.ptAudienceWired = "1";
     $$(".pt-choice", box).forEach((b) => {
       b.addEventListener("click", () => setRosterAudience(mount, b.dataset.value));
     });
     setRosterAudience(mount, mount.value.trim() ? "class" : "one", { quiet: true });
+  }
+  /* "Clear names": the roster is remembered on this device between visits
+     (readRoster/writeRoster), and until now the only way to forget a class on
+     a shared school computer was to know that clearing the box and printing
+     once overwrote it. The button empties the box, removes the stored key and
+     tells the sheet count, so what is on screen and what is stored cannot
+     disagree. It shows only while there is something to clear.
+
+     English pages only for now: the label has no translation yet, and this
+     file's own rule is that a control is mounted in a language only when its
+     label exists there. /printables/block-letters/ is left alone (BATCH_FROZEN,
+     above) for the same reason mountAudience leaves its control alone. */
+  function mountRosterClear(mount, fields) {
+    if (LANG !== "en" || BATCH_FROZEN || !mount || !fields) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "pt-roster-clear";
+    btn.textContent = "Clear names";
+    btn.setAttribute("aria-label", "Clear the saved class list from this device");
+    const sync = () => { btn.hidden = !mount.value.trim(); };
+    mount.addEventListener("input", sync);
+    btn.addEventListener("click", () => {
+      mount.value = "";
+      writeRoster("");
+      mount.dispatchEvent(new Event("input", { bubbles: true }));
+      setRosterAudience(mount, "one", { quiet: true });
+      sync();
+      mount.focus();
+    });
+    fields.appendChild(btn);
+    sync();
   }
   function mountAudiences() {
     [el.nameRoster, el.genRoster, el.designRoster, el.puzzleRoster, el.searchRoster, el.cwRoster, el.scRoster, el.spRoster]
@@ -8873,6 +9225,8 @@
     if (!el.genPreview) return;
     el.genPreview.innerHTML = "";
     el.genPreview.appendChild(genSheetNode());
+    // A physical ruling is sized from the card it is in; a no-op otherwise.
+    layoutPracticeRows(el.genPreview);
   }
 
   function buildGeneratorSheet() {
@@ -9178,6 +9532,17 @@
     }
     if (el.genSlider) genLevelState = clampLevel(parseInt(el.genSlider.value, 10));
     renderGenPreview();
+    /* A physical ruling is sized from the card's width, so a narrower window is
+       a different card. The name preview re-composes on resize for the same
+       reason; this is its generator twin, and does nothing for a proportional
+       ruling, whose letterbox already follows the card. */
+    if (el.genPreview && physicalBandMm()) {
+      let resizeTimer = null;
+      window.addEventListener("resize", () => {
+        if (resizeTimer) clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => layoutPracticeRows(el.genPreview), 160);
+      });
+    }
   }
 
   /* ---------------------------------------------------------------
@@ -12978,32 +13343,14 @@
     document.head.appendChild(sc);
   }
 
-  /* Browser Print (Ctrl+P / Cmd+P) without pressing Download PDF used to
-     print 3-5 pages of the website: header, menus, buttons and footer, and
-     no worksheet. The owner's call (2026-10-07) is to keep the page but drop
-     the site chrome in that case and open with one line pointing at the
-     button that prints the sheet. Only the print stylesheet acts on it; the
-     engine's own print path (body.is-printing) is untouched. */
-  const PRINT_NOTE_I18N = {
-    en: "This is a printout of the web page. To print the worksheet itself, press \u201c{btn}\u201d on the page.",
-    es: "Esto es una impresi\u00f3n de la p\u00e1gina web. Para imprimir la ficha, pulsa \u00ab{btn}\u00bb en la p\u00e1gina.",
-    fr: "Ceci est une impression de la page web. Pour imprimer la fiche, cliquez sur \u00ab\u00a0{btn}\u00a0\u00bb sur la page.",
-    pl: "To jest wydruk strony internetowej. Aby wydrukowa\u0107 kart\u0119 pracy, kliknij \u201e{btn}\u201d na stronie.",
-    it: "Questa \u00e8 la stampa della pagina web. Per stampare la scheda, premi \u00ab{btn}\u00bb nella pagina.",
-    de: "Das ist ein Ausdruck der Webseite. Um das Arbeitsblatt zu drucken, klicke auf der Seite auf \u201e{btn}\u201c.",
-    pt: "Esta \u00e9 uma impress\u00e3o da p\u00e1gina da web. Para imprimir a folha, clique em \u201c{btn}\u201d na p\u00e1gina.",
-    id: "Ini cetakan halaman web. Untuk mencetak lembar kerjanya, tekan \u201c{btn}\u201d di halaman.",
-    nl: "Dit is een afdruk van de webpagina. Klik op de pagina op \u2018{btn}\u2019 om het werkblad te printen.",
-    tr: "Bu, web sayfas\u0131n\u0131n \u00e7\u0131kt\u0131s\u0131d\u0131r. \u00c7al\u0131\u015fma sayfas\u0131n\u0131 yazd\u0131rmak i\u00e7in sayfadaki \u201c{btn}\u201d d\u00fc\u011fmesine bas\u0131n."
-  };
+  /* Browser Print (Ctrl+P) without Download PDF: the note, its ten-language
+     table and the mount live in printPrefs.js (mountPrintNote), the one
+     module every engine loads. This engine passes its own page language and
+     its own Download PDF label so the note names the button the visitor sees. */
   function mountPrintNote() {
-    if (!document.body || document.querySelector(".pt-print-note")) return;
-    const btn = (T.printOpts && T.printOpts.savePdf) || "Download PDF";
-    const note = document.createElement("p");
-    note.className = "pt-print-note";
-    note.textContent = (PRINT_NOTE_I18N[LANG] || PRINT_NOTE_I18N.en).replace("{btn}", btn);
-    document.body.insertBefore(note, document.body.firstChild);
-    document.body.classList.add("pt-engine-page");
+    if (PP && PP.mountPrintNote) {
+      PP.mountPrintNote({ lang: LANG, button: T.printOpts && T.printOpts.savePdf });
+    }
   }
 
   function init() {
@@ -13084,6 +13431,10 @@
     buildStrip();
     buildAlphabetGrid();
     buildSpokeBatch();
+    /* Again, now that a single-letter page has its print-size field: the
+       first call above found no host there, so the 36 block-letter pages got
+       no tick box. Idempotent, and a no-op on a page without CFG.stencil. */
+    mountStencilToggle();
     initGenerator();
     buildDesigner();
     buildBanner();

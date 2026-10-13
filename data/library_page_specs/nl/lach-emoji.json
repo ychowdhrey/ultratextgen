@@ -1,14 +1,14 @@
 {
   "slug": "lach-emoji",
   "title": "Lach Emoji 😂 (Laughing Emoji) — Kopiëren en Plakken | UltraTextGen",
-  "meta_description": "Lach emoji 😂 🤣 💀 kopiëren en plakken, LOL-kaomoji als (≧▽≦) en kant-en-klare meme-reacties voor reacties en groepschats. Klik om te kopiëren.",
+  "meta_description": "Lach emoji 😂 🤣 💀 kopiëren en plakken, getypte emoticons als XD en :'D en kant-en-klare meme-reacties voor reacties en groepschats. Klik om te kopiëren.",
   "canonical": "https://ultratextgen.com/nl/library/lach-emoji/",
-  "breadcrumb": "Lach Emoji & Kaomoji",
-  "hero_h1": "Lach Emoji & Kaomoji (Laughing Emoji)",
-  "hero_tagline": "Van 😂 met vreugdetranen tot 💀 dood-van-het-lachen-memes en (≧▽≦) kaomoji: elke manier om te lachen in tekst. Klik op een symbool om het te kopiëren.",
+  "breadcrumb": "Lach Emoji",
+  "hero_h1": "Lach Emoji (Laughing Emoji)",
+  "hero_tagline": "Van 😂 met vreugdetranen tot 💀 dood-van-het-lachen-memes en een getypte XD: elke manier om te lachen in tekst. Klik op een symbool om het te kopiëren.",
   "intro": "De lach emoji 😂 staat al tien jaar bovenaan de lijstjes van meest gebruikte emoji, terwijl 💀 en 😭 in de meme-tijd zijn plek hebben overgenomen als manier om \"ik ben dood\" te zeggen. Op deze pagina staan alle varianten van de laughing emoji, de doodshoofd- en wijsvinger-reacties die Gen Z echt gebruikt, speelse giechel- en grijnsgezichtjes, en Japanse lach-kaomoji, plus kant-en-klare LOL-combo's voor reacties, antwoorden en groepschats.",
   "date_published": "2026-08-16",
-  "date_modified": "2026-08-16",
+  "date_modified": "2026-10-09",
   "copy_pattern": "collection",
   "sections": [
     {
@@ -120,10 +120,42 @@
       ]
     },
     {
+      "id": "emoticons",
+      "label": "Tekst-emoticons",
+      "h2": "Lachende tekst-emoticons",
+      "intro": "XD knijpt de ogen dicht midden in een lachbui en :'D voegt er lachtranen aan toe. Beide werken overal waar je kunt typen, van gamechat tot sms.",
+      "symbols": [
+        {
+          "char": "XD",
+          "label": "Lachende XD"
+        },
+        {
+          "char": "xD",
+          "label": "Kleine xD"
+        },
+        {
+          "char": ":'D",
+          "label": "Lachtranen"
+        },
+        {
+          "char": "X'D",
+          "label": "Huilen van het lachen"
+        },
+        {
+          "char": ":-D",
+          "label": "Lach met neus"
+        },
+        {
+          "char": "=D",
+          "label": "Brede lach"
+        }
+      ]
+    },
+    {
       "id": "laughing-kaomoji",
       "label": "Kaomoji",
       "h2": "Lach-kaomoji en tekstgezichtjes",
-      "intro": "Tekstgezichtjes in Japanse stijl die stralen, schateren en met hun armen zwaaien van plezier.",
+      "intro": "Vier Japanse tekstgezichtjes midden in een lachbui, armen omhoog en ogen dicht.",
       "symbols": [
         {
           "char": "(≧▽≦)",
@@ -134,34 +166,15 @@
           "label": "Armen omhoog-kaomoji"
         },
         {
-          "char": "(´∀｀)",
-          "label": "Ontspannen grijns-kaomoji"
-        },
-        {
-          "char": "（＾ｖ＾）",
-          "label": "Brutale glimlach-kaomoji"
-        },
-        {
-          "char": "(＾ω＾)",
-          "label": "Vrolijk gniffel-kaomoji"
-        },
-        {
           "char": "(≧∇≦)/",
           "label": "Zwaaiend lach-kaomoji"
         },
         {
           "char": "ヾ(≧▽≦*)o",
           "label": "Onbedaarlijk lach-kaomoji"
-        },
-        {
-          "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆",
-          "label": "Fonkelend lach-kaomoji"
-        },
-        {
-          "char": "(¬‿¬)",
-          "label": "Sluwe grijns-kaomoji"
         }
-      ]
+      ],
+      "more_link": { "href": "/nl/library/tekstgezichten-kaomoji/", "text": "Alle kaomoji bekijken" }
     }
   ],
   "collection_section": {
@@ -253,7 +266,7 @@
   "related": [
     {
       "href": "/nl/library/huil-emoji/",
-      "title": "Huil Emoji & Kaomoji",
+      "title": "Huil Emoji",
       "desc": "Huilende gezichtjes en vreugdetranen-combo's, de naaste familie van lachen."
     },
     {
@@ -263,7 +276,7 @@
     },
     {
       "href": "/nl/library/happy-emoji/",
-      "title": "Happy Emoji & Kaomoji",
+      "title": "Happy Emoji (Blije Emoji)",
       "desc": "Blije gezichtjes, vreugdecombo's en zonnige emoji-sets."
     },
     {

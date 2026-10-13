@@ -361,6 +361,11 @@
       "href": "/library/braille-pattern-symbols/",
       "title": "Braille Pattern Symbols",
       "desc": "Every braille dot pattern used in high-resolution dot art."
+    },
+    {
+      "href": "/image-to-ascii/",
+      "title": "Image to ASCII Converter",
+      "desc": "Turn your own photo into ASCII, block or braille dot art."
     }
   ]
 }

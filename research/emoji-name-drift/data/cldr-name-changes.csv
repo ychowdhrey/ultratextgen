@@ -1,0 +1,711 @@
+emoji,codepoint_or_sequence,type,in_comparison,group,changed_in_cldr,previous_cldr,old_name,new_name,cosmetic_only
+😃,U+1F603,single_emoji_presentation,True,Smileys & Emotion,32,31,smiling face with open mouth,grinning face with big eyes,False
+😄,U+1F604,single_emoji_presentation,True,Smileys & Emotion,30,29,smiling face with open mouth and smiling eyes,smiling face with open mouth & smiling eyes,True
+😄,U+1F604,single_emoji_presentation,True,Smileys & Emotion,32,31,smiling face with open mouth & smiling eyes,grinning face with smiling eyes,False
+😁,U+1F601,single_emoji_presentation,True,Smileys & Emotion,32,31,grinning face with smiling eyes,beaming face with smiling eyes,False
+😆,U+1F606,single_emoji_presentation,True,Smileys & Emotion,30,29,smiling face with open mouth and tightly-closed eyes,smiling face with open mouth & closed eyes,False
+😆,U+1F606,single_emoji_presentation,True,Smileys & Emotion,32,31,smiling face with open mouth & closed eyes,grinning squinting face,False
+😅,U+1F605,single_emoji_presentation,True,Smileys & Emotion,30,29,smiling face with open mouth and cold sweat,smiling face with open mouth & cold sweat,True
+😅,U+1F605,single_emoji_presentation,True,Smileys & Emotion,32,31,smiling face with open mouth & cold sweat,grinning face with sweat,False
+🥰,U+1F970,single_emoji_presentation,True,Smileys & Emotion,35,34,smiling face with 3 hearts,smiling face with hearts,False
+😍,U+1F60D,single_emoji_presentation,True,Smileys & Emotion,30,29,smiling face with heart-shaped eyes,smiling face with heart-eyes,False
+😘,U+1F618,single_emoji_presentation,True,Smileys & Emotion,30,29,face throwing a kiss,face blowing a kiss,False
+😋,U+1F60B,single_emoji_presentation,True,Smileys & Emotion,32,31,face savouring delicious food,face savoring food,False
+😛,U+1F61B,single_emoji_presentation,True,Smileys & Emotion,32,31,face with stuck-out tongue,face with tongue,False
+😜,U+1F61C,single_emoji_presentation,True,Smileys & Emotion,30,29,face with stuck-out tongue and winking eye,face with stuck-out tongue & winking eye,True
+😜,U+1F61C,single_emoji_presentation,True,Smileys & Emotion,32,31,face with stuck-out tongue & winking eye,winking face with tongue,False
+🤪,U+1F92A,single_emoji_presentation,True,Smileys & Emotion,32,31,crazy face,zany face,False
+😝,U+1F61D,single_emoji_presentation,True,Smileys & Emotion,30,29,face with stuck-out tongue and tightly-closed eyes,face with stuck-out tongue & closed eyes,False
+😝,U+1F61D,single_emoji_presentation,True,Smileys & Emotion,32,31,face with stuck-out tongue & closed eyes,squinting face with tongue,False
+🤗,U+1F917,single_emoji_presentation,True,Smileys & Emotion,40,39,hugging face,smiling face with open hands,False
+😵,U+1F635,single_emoji_presentation,True,Smileys & Emotion,38,37,dizzy face,knocked-out face,False
+😵,U+1F635,single_emoji_presentation,True,Smileys & Emotion,40,39,knocked-out face,face with crossed-out eyes,False
+😰,U+1F630,single_emoji_presentation,True,Smileys & Emotion,30,29,face with open mouth and cold sweat,face with open mouth & cold sweat,True
+😰,U+1F630,single_emoji_presentation,True,Smileys & Emotion,32,31,face with open mouth & cold sweat,anxious face with sweat,False
+😥,U+1F625,single_emoji_presentation,True,Smileys & Emotion,32,31,disappointed but relieved face,sad but relieved face,False
+😓,U+1F613,single_emoji_presentation,True,Smileys & Emotion,32,31,face with cold sweat,downcast face with sweat,False
+😡,U+1F621,single_emoji_presentation,True,Smileys & Emotion,40,39,pouting face,enraged face,False
+🤬,U+1F92C,single_emoji_presentation,True,Smileys & Emotion,32,31,face with symbols over mouth,face with symbols on mouth,False
+👿,U+1F47F,single_emoji_presentation,True,Smileys & Emotion,30,29,imp,angry face with horns,False
+🤖,U+1F916,single_emoji_presentation,True,Smileys & Emotion,35,34,robot face,robot,False
+😺,U+1F63A,single_emoji_presentation,True,Smileys & Emotion,32,31,smiling cat face with open mouth,grinning cat face,False
+😺,U+1F63A,single_emoji_presentation,True,Smileys & Emotion,35,34,grinning cat face,grinning cat,False
+😸,U+1F638,single_emoji_presentation,True,Smileys & Emotion,35,34,grinning cat face with smiling eyes,grinning cat with smiling eyes,False
+😹,U+1F639,single_emoji_presentation,True,Smileys & Emotion,35,34,cat face with tears of joy,cat with tears of joy,False
+😻,U+1F63B,single_emoji_presentation,True,Smileys & Emotion,30,29,smiling cat face with heart-shaped eyes,smiling cat face with heart-eyes,False
+😻,U+1F63B,single_emoji_presentation,True,Smileys & Emotion,35,34,smiling cat face with heart-eyes,smiling cat with heart-eyes,False
+😼,U+1F63C,single_emoji_presentation,True,Smileys & Emotion,35,34,cat face with wry smile,cat with wry smile,False
+😽,U+1F63D,single_emoji_presentation,True,Smileys & Emotion,32,31,kissing cat face with closed eyes,kissing cat face,False
+😽,U+1F63D,single_emoji_presentation,True,Smileys & Emotion,35,34,kissing cat face,kissing cat,False
+🙀,U+1F640,single_emoji_presentation,True,Smileys & Emotion,35,34,weary cat face,weary cat,False
+😿,U+1F63F,single_emoji_presentation,True,Smileys & Emotion,35,34,crying cat face,crying cat,False
+😾,U+1F63E,single_emoji_presentation,True,Smileys & Emotion,35,34,pouting cat face,pouting cat,False
+🙈,U+1F648,single_emoji_presentation,True,Smileys & Emotion,30,29,see-no-evil,see-no-evil monkey,False
+🙉,U+1F649,single_emoji_presentation,True,Smileys & Emotion,30,29,hear-no-evil,hear-no-evil monkey,False
+🙊,U+1F64A,single_emoji_presentation,True,Smileys & Emotion,30,29,speak-no-evil,speak-no-evil monkey,False
+❣️,U+2763+FE0F,single_text_default_vs16,True,Smileys & Emotion,30,29,heavy heart exclamation mark ornament,heavy heart exclamation,False
+❣️,U+2763+FE0F,single_text_default_vs16,True,Smileys & Emotion,35,34,heavy heart exclamation,heart exclamation,False
+💨,U+1F4A8,single_emoji_presentation,True,Smileys & Emotion,30,29,dashing,dashing away,False
+💤,U+1F4A4,single_emoji_presentation,True,Smileys & Emotion,40,39,zzz,ZZZ,True
+🖐️,U+1F590+FE0F,single_text_default_vs16,True,People & Body,32,31,raised hand with fingers splayed,hand with fingers splayed,False
+👌,U+1F44C,single_emoji_presentation,True,People & Body,30,29,ok hand,OK hand,True
+🙌,U+1F64C,single_emoji_presentation,True,People & Body,30,29,person raising hands,raising hands,False
+🧑,U+1F9D1,single_emoji_presentation,True,People & Body,34,33,adult,person,False
+🧑🏻,U+1F9D1+1F3FB,modifier_sequence,False,People & Body,34,33,adult: light skin tone,person: light skin tone,False
+🧑🏼,U+1F9D1+1F3FC,modifier_sequence,False,People & Body,34,33,adult: medium-light skin tone,person: medium-light skin tone,False
+🧑🏽,U+1F9D1+1F3FD,modifier_sequence,False,People & Body,34,33,adult: medium skin tone,person: medium skin tone,False
+🧑🏾,U+1F9D1+1F3FE,modifier_sequence,False,People & Body,34,33,adult: medium-dark skin tone,person: medium-dark skin tone,False
+🧑🏿,U+1F9D1+1F3FF,modifier_sequence,False,People & Body,34,33,adult: dark skin tone,person: dark skin tone,False
+👱,U+1F471,single_emoji_presentation,True,People & Body,30,29,person with blond hair,blond-haired person,False
+👱,U+1F471,single_emoji_presentation,True,People & Body,34,33,blond-haired person,person: blond hair,False
+👱🏻,U+1F471+1F3FB,modifier_sequence,False,People & Body,34,33,blond-haired person: light skin tone,"person: light skin tone, blond hair",False
+👱🏼,U+1F471+1F3FC,modifier_sequence,False,People & Body,34,33,blond-haired person: medium-light skin tone,"person: medium-light skin tone, blond hair",False
+👱🏽,U+1F471+1F3FD,modifier_sequence,False,People & Body,34,33,blond-haired person: medium skin tone,"person: medium skin tone, blond hair",False
+👱🏾,U+1F471+1F3FE,modifier_sequence,False,People & Body,34,33,blond-haired person: medium-dark skin tone,"person: medium-dark skin tone, blond hair",False
+👱🏿,U+1F471+1F3FF,modifier_sequence,False,People & Body,34,33,blond-haired person: dark skin tone,"person: dark skin tone, blond hair",False
+🧔,U+1F9D4,single_emoji_presentation,True,People & Body,34,33,bearded person,man: beard,False
+🧔,U+1F9D4,single_emoji_presentation,True,People & Body,38,37,man: beard,person: beard,False
+🧔🏻,U+1F9D4+1F3FB,modifier_sequence,False,People & Body,34,33,bearded person: light skin tone,"man: light skin tone, beard",False
+🧔🏻,U+1F9D4+1F3FB,modifier_sequence,False,People & Body,38,37,"man: light skin tone, beard","person: light skin tone, beard",False
+🧔🏼,U+1F9D4+1F3FC,modifier_sequence,False,People & Body,34,33,bearded person: medium-light skin tone,"man: medium-light skin tone, beard",False
+🧔🏼,U+1F9D4+1F3FC,modifier_sequence,False,People & Body,38,37,"man: medium-light skin tone, beard","person: medium-light skin tone, beard",False
+🧔🏽,U+1F9D4+1F3FD,modifier_sequence,False,People & Body,34,33,bearded person: medium skin tone,"man: medium skin tone, beard",False
+🧔🏽,U+1F9D4+1F3FD,modifier_sequence,False,People & Body,38,37,"man: medium skin tone, beard","person: medium skin tone, beard",False
+🧔🏾,U+1F9D4+1F3FE,modifier_sequence,False,People & Body,34,33,bearded person: medium-dark skin tone,"man: medium-dark skin tone, beard",False
+🧔🏾,U+1F9D4+1F3FE,modifier_sequence,False,People & Body,38,37,"man: medium-dark skin tone, beard","person: medium-dark skin tone, beard",False
+🧔🏿,U+1F9D4+1F3FF,modifier_sequence,False,People & Body,34,33,bearded person: dark skin tone,"man: dark skin tone, beard",False
+🧔🏿,U+1F9D4+1F3FF,modifier_sequence,False,People & Body,38,37,"man: dark skin tone, beard","person: dark skin tone, beard",False
+👱‍♀️,U+1F471+200D+2640+FE0F,zwj_sequence,False,People & Body,34,33,blond-haired woman,woman: blond hair,False
+👱🏻‍♀️,U+1F471+1F3FB+200D+2640+FE0F,zwj_sequence,False,People & Body,34,33,blond-haired woman: light skin tone,"woman: light skin tone, blond hair",False
+👱🏼‍♀️,U+1F471+1F3FC+200D+2640+FE0F,zwj_sequence,False,People & Body,34,33,blond-haired woman: medium-light skin tone,"woman: medium-light skin tone, blond hair",False
+👱🏽‍♀️,U+1F471+1F3FD+200D+2640+FE0F,zwj_sequence,False,People & Body,34,33,blond-haired woman: medium skin tone,"woman: medium skin tone, blond hair",False
+👱🏾‍♀️,U+1F471+1F3FE+200D+2640+FE0F,zwj_sequence,False,People & Body,34,33,blond-haired woman: medium-dark skin tone,"woman: medium-dark skin tone, blond hair",False
+👱🏿‍♀️,U+1F471+1F3FF+200D+2640+FE0F,zwj_sequence,False,People & Body,34,33,blond-haired woman: dark skin tone,"woman: dark skin tone, blond hair",False
+👱‍♂️,U+1F471+200D+2642+FE0F,zwj_sequence,False,People & Body,34,33,blond-haired man,man: blond hair,False
+👱🏻‍♂️,U+1F471+1F3FB+200D+2642+FE0F,zwj_sequence,False,People & Body,34,33,blond-haired man: light skin tone,"man: light skin tone, blond hair",False
+👱🏼‍♂️,U+1F471+1F3FC+200D+2642+FE0F,zwj_sequence,False,People & Body,34,33,blond-haired man: medium-light skin tone,"man: medium-light skin tone, blond hair",False
+👱🏽‍♂️,U+1F471+1F3FD+200D+2642+FE0F,zwj_sequence,False,People & Body,34,33,blond-haired man: medium skin tone,"man: medium skin tone, blond hair",False
+👱🏾‍♂️,U+1F471+1F3FE+200D+2642+FE0F,zwj_sequence,False,People & Body,34,33,blond-haired man: medium-dark skin tone,"man: medium-dark skin tone, blond hair",False
+👱🏿‍♂️,U+1F471+1F3FF+200D+2642+FE0F,zwj_sequence,False,People & Body,34,33,blond-haired man: dark skin tone,"man: dark skin tone, blond hair",False
+🧓,U+1F9D3,single_emoji_presentation,True,People & Body,34,33,older adult,older person,False
+🧓🏻,U+1F9D3+1F3FB,modifier_sequence,False,People & Body,34,33,older adult: light skin tone,older person: light skin tone,False
+🧓🏼,U+1F9D3+1F3FC,modifier_sequence,False,People & Body,34,33,older adult: medium-light skin tone,older person: medium-light skin tone,False
+🧓🏽,U+1F9D3+1F3FD,modifier_sequence,False,People & Body,34,33,older adult: medium skin tone,older person: medium skin tone,False
+🧓🏾,U+1F9D3+1F3FE,modifier_sequence,False,People & Body,34,33,older adult: medium-dark skin tone,older person: medium-dark skin tone,False
+🧓🏿,U+1F9D3+1F3FF,modifier_sequence,False,People & Body,34,33,older adult: dark skin tone,older person: dark skin tone,False
+🙅,U+1F645,single_emoji_presentation,True,People & Body,30,29,gesturing no,person gesturing NO,False
+🙆,U+1F646,single_emoji_presentation,True,People & Body,30,29,gesturing ok,person gesturing OK,False
+💁,U+1F481,single_emoji_presentation,True,People & Body,30,29,information desk person,person tipping hand,False
+🙋,U+1F64B,single_emoji_presentation,True,People & Body,30,29,happy person raising hand,person raising hand,False
+💂,U+1F482,single_emoji_presentation,True,People & Body,30,29,guardsman,guard,False
+👳,U+1F473,single_emoji_presentation,True,People & Body,30,29,man with turban,person wearing turban,False
+👲,U+1F472,single_emoji_presentation,True,People & Body,30,29,man with chinese cap,man with Chinese cap,True
+👲,U+1F472,single_emoji_presentation,True,People & Body,36,35,man with Chinese cap,man with skullcap,False
+👲,U+1F472,single_emoji_presentation,True,People & Body,37,36,man with skullcap,person with skullcap,False
+👲🏻,U+1F472+1F3FB,modifier_sequence,False,People & Body,36,35,man with Chinese cap: light skin tone,man with skullcap: light skin tone,False
+👲🏻,U+1F472+1F3FB,modifier_sequence,False,People & Body,37,36,man with skullcap: light skin tone,person with skullcap: light skin tone,False
+👲🏼,U+1F472+1F3FC,modifier_sequence,False,People & Body,36,35,man with Chinese cap: medium-light skin tone,man with skullcap: medium-light skin tone,False
+👲🏼,U+1F472+1F3FC,modifier_sequence,False,People & Body,37,36,man with skullcap: medium-light skin tone,person with skullcap: medium-light skin tone,False
+👲🏽,U+1F472+1F3FD,modifier_sequence,False,People & Body,36,35,man with Chinese cap: medium skin tone,man with skullcap: medium skin tone,False
+👲🏽,U+1F472+1F3FD,modifier_sequence,False,People & Body,37,36,man with skullcap: medium skin tone,person with skullcap: medium skin tone,False
+👲🏾,U+1F472+1F3FE,modifier_sequence,False,People & Body,36,35,man with Chinese cap: medium-dark skin tone,man with skullcap: medium-dark skin tone,False
+👲🏾,U+1F472+1F3FE,modifier_sequence,False,People & Body,37,36,man with skullcap: medium-dark skin tone,person with skullcap: medium-dark skin tone,False
+👲🏿,U+1F472+1F3FF,modifier_sequence,False,People & Body,36,35,man with Chinese cap: dark skin tone,man with skullcap: dark skin tone,False
+👲🏿,U+1F472+1F3FF,modifier_sequence,False,People & Body,37,36,man with skullcap: dark skin tone,person with skullcap: dark skin tone,False
+🤵,U+1F935,single_emoji_presentation,True,People & Body,37,36,man in tuxedo,person in tuxedo,False
+🤵🏻,U+1F935+1F3FB,modifier_sequence,False,People & Body,37,36,man in tuxedo: light skin tone,person in tuxedo: light skin tone,False
+🤵🏼,U+1F935+1F3FC,modifier_sequence,False,People & Body,37,36,man in tuxedo: medium-light skin tone,person in tuxedo: medium-light skin tone,False
+🤵🏽,U+1F935+1F3FD,modifier_sequence,False,People & Body,37,36,man in tuxedo: medium skin tone,person in tuxedo: medium skin tone,False
+🤵🏾,U+1F935+1F3FE,modifier_sequence,False,People & Body,37,36,man in tuxedo: medium-dark skin tone,person in tuxedo: medium-dark skin tone,False
+🤵🏿,U+1F935+1F3FF,modifier_sequence,False,People & Body,37,36,man in tuxedo: dark skin tone,person in tuxedo: dark skin tone,False
+👰,U+1F470,single_emoji_presentation,True,People & Body,37,36,bride with veil,person with veil,False
+👰🏻,U+1F470+1F3FB,modifier_sequence,False,People & Body,37,36,bride with veil: light skin tone,person with veil: light skin tone,False
+👰🏼,U+1F470+1F3FC,modifier_sequence,False,People & Body,37,36,bride with veil: medium-light skin tone,person with veil: medium-light skin tone,False
+👰🏽,U+1F470+1F3FD,modifier_sequence,False,People & Body,37,36,bride with veil: medium skin tone,person with veil: medium skin tone,False
+👰🏾,U+1F470+1F3FE,modifier_sequence,False,People & Body,37,36,bride with veil: medium-dark skin tone,person with veil: medium-dark skin tone,False
+👰🏿,U+1F470+1F3FF,modifier_sequence,False,People & Body,37,36,bride with veil: dark skin tone,person with veil: dark skin tone,False
+🎅,U+1F385,single_emoji_presentation,True,People & Body,30,29,santa claus,Santa Claus,True
+🧑‍🎄,U+1F9D1+200D+1F384,zwj_sequence,False,People & Body,46,45,mx claus,Mx Claus,True
+🧑🏻‍🎄,U+1F9D1+1F3FB+200D+1F384,zwj_sequence,False,People & Body,46,45,mx claus: light skin tone,Mx Claus: light skin tone,True
+🧑🏼‍🎄,U+1F9D1+1F3FC+200D+1F384,zwj_sequence,False,People & Body,46,45,mx claus: medium-light skin tone,Mx Claus: medium-light skin tone,True
+🧑🏽‍🎄,U+1F9D1+1F3FD+200D+1F384,zwj_sequence,False,People & Body,46,45,mx claus: medium skin tone,Mx Claus: medium skin tone,True
+🧑🏾‍🎄,U+1F9D1+1F3FE+200D+1F384,zwj_sequence,False,People & Body,46,45,mx claus: medium-dark skin tone,Mx Claus: medium-dark skin tone,True
+🧑🏿‍🎄,U+1F9D1+1F3FF+200D+1F384,zwj_sequence,False,People & Body,46,45,mx claus: dark skin tone,Mx Claus: dark skin tone,True
+💆,U+1F486,single_emoji_presentation,True,People & Body,30,29,face massage,person getting massage,False
+💇,U+1F487,single_emoji_presentation,True,People & Body,30,29,haircut,person getting haircut,False
+🚶,U+1F6B6,single_emoji_presentation,True,People & Body,30,29,pedestrian,person walking,False
+🚶‍➡️,U+1F6B6+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person walking facing right,person walking: facing right,True
+🚶🏻‍➡️,U+1F6B6+1F3FB+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person walking facing right,"person walking: light skin tone, facing right",False
+🚶🏼‍➡️,U+1F6B6+1F3FC+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person walking facing right,"person walking: medium-light skin tone, facing right",False
+🚶🏽‍➡️,U+1F6B6+1F3FD+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person walking facing right,"person walking: medium skin tone, facing right",False
+🚶🏾‍➡️,U+1F6B6+1F3FE+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person walking facing right,"person walking: medium-dark skin tone, facing right",False
+🚶🏿‍➡️,U+1F6B6+1F3FF+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person walking facing right,"person walking: dark skin tone, facing right",False
+🚶‍♀️‍➡️,U+1F6B6+200D+2640+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman walking facing right,woman walking: facing right,True
+🚶🏻‍♀️‍➡️,U+1F6B6+1F3FB+200D+2640+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman walking facing right,"woman walking: light skin tone, facing right",False
+🚶🏼‍♀️‍➡️,U+1F6B6+1F3FC+200D+2640+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman walking facing right,"woman walking: medium-light skin tone, facing right",False
+🚶🏽‍♀️‍➡️,U+1F6B6+1F3FD+200D+2640+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman walking facing right,"woman walking: medium skin tone, facing right",False
+🚶🏾‍♀️‍➡️,U+1F6B6+1F3FE+200D+2640+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman walking facing right,"woman walking: medium-dark skin tone, facing right",False
+🚶🏿‍♀️‍➡️,U+1F6B6+1F3FF+200D+2640+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman walking facing right,"woman walking: dark skin tone, facing right",False
+🚶‍♂️‍➡️,U+1F6B6+200D+2642+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man walking facing right,man walking: facing right,True
+🚶🏻‍♂️‍➡️,U+1F6B6+1F3FB+200D+2642+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man walking facing right,"man walking: light skin tone, facing right",False
+🚶🏼‍♂️‍➡️,U+1F6B6+1F3FC+200D+2642+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man walking facing right,"man walking: medium-light skin tone, facing right",False
+🚶🏽‍♂️‍➡️,U+1F6B6+1F3FD+200D+2642+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man walking facing right,"man walking: medium skin tone, facing right",False
+🚶🏾‍♂️‍➡️,U+1F6B6+1F3FE+200D+2642+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man walking facing right,"man walking: medium-dark skin tone, facing right",False
+🚶🏿‍♂️‍➡️,U+1F6B6+1F3FF+200D+2642+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man walking facing right,"man walking: dark skin tone, facing right",False
+🧎‍➡️,U+1F9CE+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person kneeling facing right,person kneeling: facing right,True
+🧎🏻‍➡️,U+1F9CE+1F3FB+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person kneeling facing right,"person kneeling: light skin tone, facing right",False
+🧎🏼‍➡️,U+1F9CE+1F3FC+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person kneeling facing right,"person kneeling: medium-light skin tone, facing right",False
+🧎🏽‍➡️,U+1F9CE+1F3FD+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person kneeling facing right,"person kneeling: medium skin tone, facing right",False
+🧎🏾‍➡️,U+1F9CE+1F3FE+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person kneeling facing right,"person kneeling: medium-dark skin tone, facing right",False
+🧎🏿‍➡️,U+1F9CE+1F3FF+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person kneeling facing right,"person kneeling: dark skin tone, facing right",False
+🧎‍♀️‍➡️,U+1F9CE+200D+2640+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman kneeling facing right,woman kneeling: facing right,True
+🧎🏻‍♀️‍➡️,U+1F9CE+1F3FB+200D+2640+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman kneeling facing right,"woman kneeling: light skin tone, facing right",False
+🧎🏼‍♀️‍➡️,U+1F9CE+1F3FC+200D+2640+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman kneeling facing right,"woman kneeling: medium-light skin tone, facing right",False
+🧎🏽‍♀️‍➡️,U+1F9CE+1F3FD+200D+2640+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman kneeling facing right,"woman kneeling: medium skin tone, facing right",False
+🧎🏾‍♀️‍➡️,U+1F9CE+1F3FE+200D+2640+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman kneeling facing right,"woman kneeling: medium-dark skin tone, facing right",False
+🧎🏿‍♀️‍➡️,U+1F9CE+1F3FF+200D+2640+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman kneeling facing right,"woman kneeling: dark skin tone, facing right",False
+🧎‍♂️‍➡️,U+1F9CE+200D+2642+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man kneeling facing right,man kneeling: facing right,True
+🧎🏻‍♂️‍➡️,U+1F9CE+1F3FB+200D+2642+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man kneeling facing right,"man kneeling: light skin tone, facing right",False
+🧎🏼‍♂️‍➡️,U+1F9CE+1F3FC+200D+2642+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man kneeling facing right,"man kneeling: medium-light skin tone, facing right",False
+🧎🏽‍♂️‍➡️,U+1F9CE+1F3FD+200D+2642+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man kneeling facing right,"man kneeling: medium skin tone, facing right",False
+🧎🏾‍♂️‍➡️,U+1F9CE+1F3FE+200D+2642+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man kneeling facing right,"man kneeling: medium-dark skin tone, facing right",False
+🧎🏿‍♂️‍➡️,U+1F9CE+1F3FF+200D+2642+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man kneeling facing right,"man kneeling: dark skin tone, facing right",False
+🧑‍🦯,U+1F9D1+200D+1F9AF,zwj_sequence,False,People & Body,37,36,person with probing cane,person with white cane,False
+🧑🏻‍🦯,U+1F9D1+1F3FB+200D+1F9AF,zwj_sequence,False,People & Body,37,36,person with probing cane: light skin tone,person with white cane: light skin tone,False
+🧑🏼‍🦯,U+1F9D1+1F3FC+200D+1F9AF,zwj_sequence,False,People & Body,37,36,person with probing cane: medium-light skin tone,person with white cane: medium-light skin tone,False
+🧑🏽‍🦯,U+1F9D1+1F3FD+200D+1F9AF,zwj_sequence,False,People & Body,37,36,person with probing cane: medium skin tone,person with white cane: medium skin tone,False
+🧑🏾‍🦯,U+1F9D1+1F3FE+200D+1F9AF,zwj_sequence,False,People & Body,37,36,person with probing cane: medium-dark skin tone,person with white cane: medium-dark skin tone,False
+🧑🏿‍🦯,U+1F9D1+1F3FF+200D+1F9AF,zwj_sequence,False,People & Body,37,36,person with probing cane: dark skin tone,person with white cane: dark skin tone,False
+🧑‍🦯‍➡️,U+1F9D1+200D+1F9AF+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person with white cane facing right,person with white cane: facing right,True
+🧑🏻‍🦯‍➡️,U+1F9D1+1F3FB+200D+1F9AF+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person with white cane facing right,"person with white cane: light skin tone, facing right",False
+🧑🏼‍🦯‍➡️,U+1F9D1+1F3FC+200D+1F9AF+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person with white cane facing right,"person with white cane: medium-light skin tone, facing right",False
+🧑🏽‍🦯‍➡️,U+1F9D1+1F3FD+200D+1F9AF+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person with white cane facing right,"person with white cane: medium skin tone, facing right",False
+🧑🏾‍🦯‍➡️,U+1F9D1+1F3FE+200D+1F9AF+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person with white cane facing right,"person with white cane: medium-dark skin tone, facing right",False
+🧑🏿‍🦯‍➡️,U+1F9D1+1F3FF+200D+1F9AF+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person with white cane facing right,"person with white cane: dark skin tone, facing right",False
+👨‍🦯,U+1F468+200D+1F9AF,zwj_sequence,False,People & Body,37,36,man with probing cane,man with white cane,False
+👨🏻‍🦯,U+1F468+1F3FB+200D+1F9AF,zwj_sequence,False,People & Body,37,36,man with probing cane: light skin tone,man with white cane: light skin tone,False
+👨🏼‍🦯,U+1F468+1F3FC+200D+1F9AF,zwj_sequence,False,People & Body,37,36,man with probing cane: medium-light skin tone,man with white cane: medium-light skin tone,False
+👨🏽‍🦯,U+1F468+1F3FD+200D+1F9AF,zwj_sequence,False,People & Body,37,36,man with probing cane: medium skin tone,man with white cane: medium skin tone,False
+👨🏾‍🦯,U+1F468+1F3FE+200D+1F9AF,zwj_sequence,False,People & Body,37,36,man with probing cane: medium-dark skin tone,man with white cane: medium-dark skin tone,False
+👨🏿‍🦯,U+1F468+1F3FF+200D+1F9AF,zwj_sequence,False,People & Body,37,36,man with probing cane: dark skin tone,man with white cane: dark skin tone,False
+👨‍🦯‍➡️,U+1F468+200D+1F9AF+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man with white cane facing right,man with white cane: facing right,True
+👨🏻‍🦯‍➡️,U+1F468+1F3FB+200D+1F9AF+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man with white cane facing right,"man with white cane: light skin tone, facing right",False
+👨🏼‍🦯‍➡️,U+1F468+1F3FC+200D+1F9AF+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man with white cane facing right,"man with white cane: medium-light skin tone, facing right",False
+👨🏽‍🦯‍➡️,U+1F468+1F3FD+200D+1F9AF+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man with white cane facing right,"man with white cane: medium skin tone, facing right",False
+👨🏾‍🦯‍➡️,U+1F468+1F3FE+200D+1F9AF+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man with white cane facing right,"man with white cane: medium-dark skin tone, facing right",False
+👨🏿‍🦯‍➡️,U+1F468+1F3FF+200D+1F9AF+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man with white cane facing right,"man with white cane: dark skin tone, facing right",False
+👩‍🦯,U+1F469+200D+1F9AF,zwj_sequence,False,People & Body,37,36,woman with probing cane,woman with white cane,False
+👩🏻‍🦯,U+1F469+1F3FB+200D+1F9AF,zwj_sequence,False,People & Body,37,36,woman with probing cane: light skin tone,woman with white cane: light skin tone,False
+👩🏼‍🦯,U+1F469+1F3FC+200D+1F9AF,zwj_sequence,False,People & Body,37,36,woman with probing cane: medium-light skin tone,woman with white cane: medium-light skin tone,False
+👩🏽‍🦯,U+1F469+1F3FD+200D+1F9AF,zwj_sequence,False,People & Body,37,36,woman with probing cane: medium skin tone,woman with white cane: medium skin tone,False
+👩🏾‍🦯,U+1F469+1F3FE+200D+1F9AF,zwj_sequence,False,People & Body,37,36,woman with probing cane: medium-dark skin tone,woman with white cane: medium-dark skin tone,False
+👩🏿‍🦯,U+1F469+1F3FF+200D+1F9AF,zwj_sequence,False,People & Body,37,36,woman with probing cane: dark skin tone,woman with white cane: dark skin tone,False
+👩‍🦯‍➡️,U+1F469+200D+1F9AF+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman with white cane facing right,woman with white cane: facing right,True
+👩🏻‍🦯‍➡️,U+1F469+1F3FB+200D+1F9AF+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman with white cane facing right,"woman with white cane: light skin tone, facing right",False
+👩🏼‍🦯‍➡️,U+1F469+1F3FC+200D+1F9AF+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman with white cane facing right,"woman with white cane: medium-light skin tone, facing right",False
+👩🏽‍🦯‍➡️,U+1F469+1F3FD+200D+1F9AF+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman with white cane facing right,"woman with white cane: medium skin tone, facing right",False
+👩🏾‍🦯‍➡️,U+1F469+1F3FE+200D+1F9AF+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman with white cane facing right,"woman with white cane: medium-dark skin tone, facing right",False
+👩🏿‍🦯‍➡️,U+1F469+1F3FF+200D+1F9AF+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman with white cane facing right,"woman with white cane: dark skin tone, facing right",False
+🧑‍🦼‍➡️,U+1F9D1+200D+1F9BC+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person in motorized wheelchair facing right,person in motorized wheelchair: facing right,True
+🧑🏻‍🦼‍➡️,U+1F9D1+1F3FB+200D+1F9BC+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person in motorized wheelchair facing right,"person in motorized wheelchair: light skin tone, facing right",False
+🧑🏼‍🦼‍➡️,U+1F9D1+1F3FC+200D+1F9BC+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person in motorized wheelchair facing right,"person in motorized wheelchair: medium-light skin tone, facing right",False
+🧑🏽‍🦼‍➡️,U+1F9D1+1F3FD+200D+1F9BC+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person in motorized wheelchair facing right,"person in motorized wheelchair: medium skin tone, facing right",False
+🧑🏾‍🦼‍➡️,U+1F9D1+1F3FE+200D+1F9BC+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person in motorized wheelchair facing right,"person in motorized wheelchair: medium-dark skin tone, facing right",False
+🧑🏿‍🦼‍➡️,U+1F9D1+1F3FF+200D+1F9BC+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person in motorized wheelchair facing right,"person in motorized wheelchair: dark skin tone, facing right",False
+👨‍🦼‍➡️,U+1F468+200D+1F9BC+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man in motorized wheelchair facing right,man in motorized wheelchair: facing right,True
+👨🏻‍🦼‍➡️,U+1F468+1F3FB+200D+1F9BC+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man in motorized wheelchair facing right,"man in motorized wheelchair: light skin tone, facing right",False
+👨🏼‍🦼‍➡️,U+1F468+1F3FC+200D+1F9BC+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man in motorized wheelchair facing right,"man in motorized wheelchair: medium-light skin tone, facing right",False
+👨🏽‍🦼‍➡️,U+1F468+1F3FD+200D+1F9BC+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man in motorized wheelchair facing right,"man in motorized wheelchair: medium skin tone, facing right",False
+👨🏾‍🦼‍➡️,U+1F468+1F3FE+200D+1F9BC+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man in motorized wheelchair facing right,"man in motorized wheelchair: medium-dark skin tone, facing right",False
+👨🏿‍🦼‍➡️,U+1F468+1F3FF+200D+1F9BC+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man in motorized wheelchair facing right,"man in motorized wheelchair: dark skin tone, facing right",False
+👩‍🦼‍➡️,U+1F469+200D+1F9BC+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman in motorized wheelchair facing right,woman in motorized wheelchair: facing right,True
+👩🏻‍🦼‍➡️,U+1F469+1F3FB+200D+1F9BC+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman in motorized wheelchair facing right,"woman in motorized wheelchair: light skin tone, facing right",False
+👩🏼‍🦼‍➡️,U+1F469+1F3FC+200D+1F9BC+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman in motorized wheelchair facing right,"woman in motorized wheelchair: medium-light skin tone, facing right",False
+👩🏽‍🦼‍➡️,U+1F469+1F3FD+200D+1F9BC+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman in motorized wheelchair facing right,"woman in motorized wheelchair: medium skin tone, facing right",False
+👩🏾‍🦼‍➡️,U+1F469+1F3FE+200D+1F9BC+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman in motorized wheelchair facing right,"woman in motorized wheelchair: medium-dark skin tone, facing right",False
+👩🏿‍🦼‍➡️,U+1F469+1F3FF+200D+1F9BC+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman in motorized wheelchair facing right,"woman in motorized wheelchair: dark skin tone, facing right",False
+🧑‍🦽‍➡️,U+1F9D1+200D+1F9BD+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person in manual wheelchair facing right,person in manual wheelchair: facing right,True
+🧑🏻‍🦽‍➡️,U+1F9D1+1F3FB+200D+1F9BD+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person in manual wheelchair facing right,"person in manual wheelchair: light skin tone, facing right",False
+🧑🏼‍🦽‍➡️,U+1F9D1+1F3FC+200D+1F9BD+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person in manual wheelchair facing right,"person in manual wheelchair: medium-light skin tone, facing right",False
+🧑🏽‍🦽‍➡️,U+1F9D1+1F3FD+200D+1F9BD+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person in manual wheelchair facing right,"person in manual wheelchair: medium skin tone, facing right",False
+🧑🏾‍🦽‍➡️,U+1F9D1+1F3FE+200D+1F9BD+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person in manual wheelchair facing right,"person in manual wheelchair: medium-dark skin tone, facing right",False
+🧑🏿‍🦽‍➡️,U+1F9D1+1F3FF+200D+1F9BD+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person in manual wheelchair facing right,"person in manual wheelchair: dark skin tone, facing right",False
+👨‍🦽‍➡️,U+1F468+200D+1F9BD+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man in manual wheelchair facing right,man in manual wheelchair: facing right,True
+👨🏻‍🦽‍➡️,U+1F468+1F3FB+200D+1F9BD+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man in manual wheelchair facing right,"man in manual wheelchair: light skin tone, facing right",False
+👨🏼‍🦽‍➡️,U+1F468+1F3FC+200D+1F9BD+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man in manual wheelchair facing right,"man in manual wheelchair: medium-light skin tone, facing right",False
+👨🏽‍🦽‍➡️,U+1F468+1F3FD+200D+1F9BD+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man in manual wheelchair facing right,"man in manual wheelchair: medium skin tone, facing right",False
+👨🏾‍🦽‍➡️,U+1F468+1F3FE+200D+1F9BD+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man in manual wheelchair facing right,"man in manual wheelchair: medium-dark skin tone, facing right",False
+👨🏿‍🦽‍➡️,U+1F468+1F3FF+200D+1F9BD+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man in manual wheelchair facing right,"man in manual wheelchair: dark skin tone, facing right",False
+👩‍🦽‍➡️,U+1F469+200D+1F9BD+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman in manual wheelchair facing right,woman in manual wheelchair: facing right,True
+👩🏻‍🦽‍➡️,U+1F469+1F3FB+200D+1F9BD+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman in manual wheelchair facing right,"woman in manual wheelchair: light skin tone, facing right",False
+👩🏼‍🦽‍➡️,U+1F469+1F3FC+200D+1F9BD+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman in manual wheelchair facing right,"woman in manual wheelchair: medium-light skin tone, facing right",False
+👩🏽‍🦽‍➡️,U+1F469+1F3FD+200D+1F9BD+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman in manual wheelchair facing right,"woman in manual wheelchair: medium skin tone, facing right",False
+👩🏾‍🦽‍➡️,U+1F469+1F3FE+200D+1F9BD+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman in manual wheelchair facing right,"woman in manual wheelchair: medium-dark skin tone, facing right",False
+👩🏿‍🦽‍➡️,U+1F469+1F3FF+200D+1F9BD+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman in manual wheelchair facing right,"woman in manual wheelchair: dark skin tone, facing right",False
+🏃,U+1F3C3,single_emoji_presentation,True,People & Body,30,29,runner,person running,False
+🏃‍➡️,U+1F3C3+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person running facing right,person running: facing right,True
+🏃🏻‍➡️,U+1F3C3+1F3FB+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person running facing right,"person running: light skin tone, facing right",False
+🏃🏼‍➡️,U+1F3C3+1F3FC+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person running facing right,"person running: medium-light skin tone, facing right",False
+🏃🏽‍➡️,U+1F3C3+1F3FD+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person running facing right,"person running: medium skin tone, facing right",False
+🏃🏾‍➡️,U+1F3C3+1F3FE+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person running facing right,"person running: medium-dark skin tone, facing right",False
+🏃🏿‍➡️,U+1F3C3+1F3FF+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,person running facing right,"person running: dark skin tone, facing right",False
+🏃‍♀️‍➡️,U+1F3C3+200D+2640+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman running facing right,woman running: facing right,True
+🏃🏻‍♀️‍➡️,U+1F3C3+1F3FB+200D+2640+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman running facing right,"woman running: light skin tone, facing right",False
+🏃🏼‍♀️‍➡️,U+1F3C3+1F3FC+200D+2640+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman running facing right,"woman running: medium-light skin tone, facing right",False
+🏃🏽‍♀️‍➡️,U+1F3C3+1F3FD+200D+2640+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman running facing right,"woman running: medium skin tone, facing right",False
+🏃🏾‍♀️‍➡️,U+1F3C3+1F3FE+200D+2640+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman running facing right,"woman running: medium-dark skin tone, facing right",False
+🏃🏿‍♀️‍➡️,U+1F3C3+1F3FF+200D+2640+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,woman running facing right,"woman running: dark skin tone, facing right",False
+🏃‍♂️‍➡️,U+1F3C3+200D+2642+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man running facing right,man running: facing right,True
+🏃🏻‍♂️‍➡️,U+1F3C3+1F3FB+200D+2642+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man running facing right,"man running: light skin tone, facing right",False
+🏃🏼‍♂️‍➡️,U+1F3C3+1F3FC+200D+2642+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man running facing right,"man running: medium-light skin tone, facing right",False
+🏃🏽‍♂️‍➡️,U+1F3C3+1F3FD+200D+2642+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man running facing right,"man running: medium skin tone, facing right",False
+🏃🏾‍♂️‍➡️,U+1F3C3+1F3FE+200D+2642+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man running facing right,"man running: medium-dark skin tone, facing right",False
+🏃🏿‍♂️‍➡️,U+1F3C3+1F3FF+200D+2642+FE0F+200D+27A1+FE0F,zwj_sequence,False,People & Body,47,46,man running facing right,"man running: dark skin tone, facing right",False
+💃,U+1F483,single_emoji_presentation,True,People & Body,30,29,dancer,woman dancing,False
+🕴️,U+1F574+FE0F,single_text_default_vs16,True,People & Body,32,31,man in business suit levitating,man in suit levitating,False
+🕴️,U+1F574+FE0F,single_text_default_vs16,True,People & Body,37,36,man in suit levitating,person in suit levitating,False
+🕴🏻,U+1F574+1F3FB,modifier_sequence,False,People & Body,37,36,man in suit levitating: light skin tone,person in suit levitating: light skin tone,False
+🕴🏼,U+1F574+1F3FC,modifier_sequence,False,People & Body,37,36,man in suit levitating: medium-light skin tone,person in suit levitating: medium-light skin tone,False
+🕴🏽,U+1F574+1F3FD,modifier_sequence,False,People & Body,37,36,man in suit levitating: medium skin tone,person in suit levitating: medium skin tone,False
+🕴🏾,U+1F574+1F3FE,modifier_sequence,False,People & Body,37,36,man in suit levitating: medium-dark skin tone,person in suit levitating: medium-dark skin tone,False
+🕴🏿,U+1F574+1F3FF,modifier_sequence,False,People & Body,37,36,man in suit levitating: dark skin tone,person in suit levitating: dark skin tone,False
+👯,U+1F46F,single_emoji_presentation,True,People & Body,30,29,women partying,people with bunny ears partying,False
+👯,U+1F46F,single_emoji_presentation,True,People & Body,32,31,people with bunny ears partying,people with bunny ears,False
+👯‍♂️,U+1F46F+200D+2642+FE0F,zwj_sequence,False,People & Body,32,31,men with bunny ears partying,men with bunny ears,False
+👯‍♀️,U+1F46F+200D+2640+FE0F,zwj_sequence,False,People & Body,32,31,women with bunny ears partying,women with bunny ears,False
+🏌️,U+1F3CC+FE0F,single_text_default_vs16,True,People & Body,30,29,golfer,person golfing,False
+🏄,U+1F3C4,single_emoji_presentation,True,People & Body,30,29,surfer,person surfing,False
+🚣,U+1F6A3,single_emoji_presentation,True,People & Body,30,29,rowboat,person rowing boat,False
+🏊,U+1F3CA,single_emoji_presentation,True,People & Body,30,29,swimmer,person swimming,False
+⛹️,U+26F9+FE0F,single_text_default_vs16,True,People & Body,30,29,person with ball,person bouncing ball,False
+🏋️,U+1F3CB+FE0F,single_text_default_vs16,True,People & Body,30,29,weight lifter,person lifting weights,False
+🚴,U+1F6B4,single_emoji_presentation,True,People & Body,30,29,bicyclist,person biking,False
+🚵,U+1F6B5,single_emoji_presentation,True,People & Body,30,29,mountain biker,person mountain biking,False
+👭,U+1F46D,single_emoji_presentation,True,People & Body,35,34,two women holding hands,women holding hands,False
+👫,U+1F46B,single_emoji_presentation,True,People & Body,35,34,man and woman holding hands,woman and man holding hands,False
+👬,U+1F46C,single_emoji_presentation,True,People & Body,35,34,two men holding hands,men holding hands,False
+🏻,U+1F3FB,component,False,Component,30,29,skin type-1-2,light skin tone,False
+🏼,U+1F3FC,component,False,Component,30,29,skin type-3,medium-light skin tone,False
+🏽,U+1F3FD,component,False,Component,30,29,skin type-4,medium skin tone,False
+🏾,U+1F3FE,component,False,Component,30,29,skin type-5,medium-dark skin tone,False
+🏿,U+1F3FF,component,False,Component,30,29,skin type-6,dark skin tone,False
+🐺,U+1F43A,single_emoji_presentation,True,Animals & Nature,35,34,wolf face,wolf,False
+🦊,U+1F98A,single_emoji_presentation,True,Animals & Nature,35,34,fox face,fox,False
+🦁,U+1F981,single_emoji_presentation,True,Animals & Nature,35,34,lion face,lion,False
+🦄,U+1F984,single_emoji_presentation,True,Animals & Nature,35,34,unicorn face,unicorn,False
+🐑,U+1F411,single_emoji_presentation,True,Animals & Nature,31,30,sheep,ewe,False
+🐹,U+1F439,single_emoji_presentation,True,Animals & Nature,35,34,hamster face,hamster,False
+🐻,U+1F43B,single_emoji_presentation,True,Animals & Nature,35,34,bear face,bear,False
+🐼,U+1F43C,single_emoji_presentation,True,Animals & Nature,35,34,panda face,panda,False
+🐸,U+1F438,single_emoji_presentation,True,Animals & Nature,35,34,frog face,frog,False
+🌲,U+1F332,single_emoji_presentation,True,Animals & Nature,30,29,evergreen,evergreen tree,False
+🌍,U+1F30D,single_emoji_presentation,True,Travel & Places,30,29,globe showing europe-africa,globe showing Europe-Africa,True
+🌎,U+1F30E,single_emoji_presentation,True,Travel & Places,30,29,globe showing americas,globe showing Americas,True
+🌏,U+1F30F,single_emoji_presentation,True,Travel & Places,30,29,globe showing asia-australia,globe showing Asia-Australia,True
+🗾,U+1F5FE,single_emoji_presentation,True,Travel & Places,30,29,map of japan,map of Japan,True
+🏘️,U+1F3D8+FE0F,single_text_default_vs16,True,Travel & Places,30,29,house buildings,house,False
+🏘️,U+1F3D8+FE0F,single_text_default_vs16,True,Travel & Places,32,31,house,houses,False
+🏚️,U+1F3DA+FE0F,single_text_default_vs16,True,Travel & Places,30,29,derelict house building,derelict house,False
+🏠,U+1F3E0,single_emoji_presentation,True,Travel & Places,30,29,house building,house,False
+🏣,U+1F3E3,single_emoji_presentation,True,Travel & Places,30,29,japanese post office,Japanese post office,True
+🏯,U+1F3EF,single_emoji_presentation,True,Travel & Places,30,29,japanese castle,Japanese castle,True
+🗼,U+1F5FC,single_emoji_presentation,True,Travel & Places,30,29,tokyo tower,Tokyo tower,True
+🗽,U+1F5FD,single_emoji_presentation,True,Travel & Places,30,29,statue of liberty,Statue of Liberty,True
+🚅,U+1F685,single_emoji_presentation,True,Travel & Places,32,31,high-speed train with bullet nose,bullet train,False
+🚙,U+1F699,single_emoji_presentation,True,Travel & Places,30,29,recreational vehicle,sport utility vehicle,False
+🚨,U+1F6A8,single_emoji_presentation,True,Travel & Places,30,29,police car’s light,police car light,False
+⌛,U+231B,single_emoji_presentation,True,Travel & Places,32,31,hourglass,hourglass done,False
+⏳,U+23F3,single_emoji_presentation,True,Travel & Places,32,31,hourglass with flowing sand,hourglass not done,False
+🌛,U+1F31B,single_emoji_presentation,True,Travel & Places,32,31,first quarter moon with face,first quarter moon face,False
+🌜,U+1F31C,single_emoji_presentation,True,Travel & Places,32,31,last quarter moon with face,last quarter moon face,False
+🌝,U+1F31D,single_emoji_presentation,True,Travel & Places,32,31,full moon with face,full moon face,False
+⭐,U+2B50,single_emoji_presentation,True,Travel & Places,33,32,white medium star,star,False
+🌦️,U+1F326+FE0F,single_text_default_vs16,True,Travel & Places,30,29,sun behind cloud with rain,sun behind rain cloud,False
+🎄,U+1F384,single_emoji_presentation,True,Activities,30,29,christmas tree,Christmas tree,True
+🎎,U+1F38E,single_emoji_presentation,True,Activities,30,29,japanese dolls,Japanese dolls,True
+🎑,U+1F391,single_emoji_presentation,True,Activities,30,29,moon ceremony,moon viewing ceremony,False
+🎁,U+1F381,single_emoji_presentation,True,Activities,30,29,wrapped present,wrapped gift,False
+🏏,U+1F3CF,single_emoji_presentation,True,Activities,32,31,cricket,cricket game,False
+🏒,U+1F3D2,single_emoji_presentation,True,Activities,30,29,ice hockey stick and puck,ice hockey,False
+🎯,U+1F3AF,single_emoji_presentation,True,Activities,38,37,direct hit,bullseye,False
+🔫,U+1F52B,single_emoji_presentation,True,Activities,38,37,pistol,water pistol,False
+🎱,U+1F3B1,single_emoji_presentation,True,Activities,30,29,billiards,pool 8 ball,False
+🧩,U+1F9E9,single_emoji_presentation,True,Activities,35,34,jigsaw,puzzle piece,False
+🖼️,U+1F5BC+FE0F,single_text_default_vs16,True,Activities,30,29,frame with picture,framed picture,False
+👝,U+1F45D,single_emoji_presentation,True,Objects,30,29,pouch,clutch bag,False
+🎒,U+1F392,single_emoji_presentation,True,Objects,33,32,school backpack,backpack,False
+⛑️,U+26D1+FE0F,single_text_default_vs16,True,Objects,30,29,helmet with white cross,rescue worker’s helmet,False
+🔇,U+1F507,single_emoji_presentation,True,Objects,30,29,speaker off,muted speaker,False
+🔈,U+1F508,single_emoji_presentation,True,Objects,30,29,speaker,speaker low volume,False
+🔉,U+1F509,single_emoji_presentation,True,Objects,30,29,speaker on,speaker medium volume,False
+🔊,U+1F50A,single_emoji_presentation,True,Objects,30,29,speaker loud,speaker high volume,False
+💻,U+1F4BB,single_emoji_presentation,True,Objects,36,35,laptop computer,laptop,False
+💽,U+1F4BD,single_emoji_presentation,True,Objects,30,29,minidisc,computer disk,False
+💿,U+1F4BF,single_emoji_presentation,True,Objects,30,29,optical disc,optical disk,False
+🔍,U+1F50D,single_emoji_presentation,True,Objects,32,31,left-pointing magnifying glass,magnifying glass tilted left,False
+🔎,U+1F50E,single_emoji_presentation,True,Objects,32,31,right-pointing magnifying glass,magnifying glass tilted right,False
+🔒,U+1F512,single_emoji_presentation,True,Objects,30,29,lock,locked,False
+🔓,U+1F513,single_emoji_presentation,True,Objects,30,29,open lock,unlocked,False
+🔏,U+1F50F,single_emoji_presentation,True,Objects,30,29,lock with pen,locked with pen,False
+🔐,U+1F510,single_emoji_presentation,True,Objects,30,29,closed lock with key,locked with key,False
+🗜️,U+1F5DC+FE0F,single_text_default_vs16,True,Objects,30,29,compression,clamp,False
+🦯,U+1F9AF,single_emoji_presentation,True,Objects,37,36,probing cane,white cane,False
+🚬,U+1F6AC,single_emoji_presentation,True,Objects,30,29,smoking,cigarette,False
+♿,U+267F,single_emoji_presentation,True,Symbols,30,29,wheelchair,wheelchair symbol,False
+🔄,U+1F504,single_emoji_presentation,True,Symbols,32,31,anticlockwise arrows button,counterclockwise arrows button,False
+🔙,U+1F519,single_emoji_presentation,True,Symbols,30,29,back arrow,BACK arrow,True
+🔚,U+1F51A,single_emoji_presentation,True,Symbols,30,29,end arrow,END arrow,True
+🔛,U+1F51B,single_emoji_presentation,True,Symbols,30,29,on! arrow,ON! arrow,True
+🔜,U+1F51C,single_emoji_presentation,True,Symbols,30,29,soon arrow,SOON arrow,True
+🔝,U+1F51D,single_emoji_presentation,True,Symbols,30,29,top arrow,TOP arrow,True
+✡️,U+2721+FE0F,single_text_default_vs16,True,Symbols,30,29,star of david,star of David,True
+♈,U+2648,single_emoji_presentation,True,Symbols,30,29,aries,Aries,True
+♉,U+2649,single_emoji_presentation,True,Symbols,30,29,taurus,Taurus,True
+♊,U+264A,single_emoji_presentation,True,Symbols,30,29,gemini,Gemini,True
+♋,U+264B,single_emoji_presentation,True,Symbols,30,29,cancer,Cancer,True
+♌,U+264C,single_emoji_presentation,True,Symbols,30,29,leo,Leo,True
+♍,U+264D,single_emoji_presentation,True,Symbols,30,29,virgo,Virgo,True
+♎,U+264E,single_emoji_presentation,True,Symbols,30,29,libra,Libra,True
+♏,U+264F,single_emoji_presentation,True,Symbols,30,29,scorpius,Scorpius,True
+♏,U+264F,single_emoji_presentation,True,Symbols,32,31,Scorpius,Scorpio,False
+♐,U+2650,single_emoji_presentation,True,Symbols,30,29,sagittarius,Sagittarius,True
+♑,U+2651,single_emoji_presentation,True,Symbols,30,29,capricorn,Capricorn,True
+♒,U+2652,single_emoji_presentation,True,Symbols,30,29,aquarius,Aquarius,True
+♓,U+2653,single_emoji_presentation,True,Symbols,30,29,pisces,Pisces,True
+⛎,U+26CE,single_emoji_presentation,True,Symbols,30,29,ophiuchus,Ophiuchus,True
+⏩,U+23E9,single_emoji_presentation,True,Symbols,30,29,fast-forword button,fast-forward button,False
+🔼,U+1F53C,single_emoji_presentation,True,Symbols,32,31,up button,upwards button,False
+🔽,U+1F53D,single_emoji_presentation,True,Symbols,32,31,down button,downwards button,False
+✖️,U+2716+FE0F,single_text_default_vs16,True,Symbols,35,34,heavy multiplication x,multiplication sign,False
+✖️,U+2716+FE0F,single_text_default_vs16,True,Symbols,37,36,multiplication sign,multiply,False
+➕,U+2795,single_emoji_presentation,True,Symbols,35,34,heavy plus sign,plus sign,False
+➕,U+2795,single_emoji_presentation,True,Symbols,37,36,plus sign,plus,False
+➖,U+2796,single_emoji_presentation,True,Symbols,35,34,heavy minus sign,minus sign,False
+➖,U+2796,single_emoji_presentation,True,Symbols,37,36,minus sign,minus,False
+➗,U+2797,single_emoji_presentation,True,Symbols,35,34,heavy division sign,division sign,False
+➗,U+2797,single_emoji_presentation,True,Symbols,37,36,division sign,divide,False
+❓,U+2753,single_emoji_presentation,True,Symbols,38,37,question mark,red question mark,False
+❗,U+2757,single_emoji_presentation,True,Symbols,38,37,exclamation mark,red exclamation mark,False
+🔰,U+1F530,single_emoji_presentation,True,Symbols,30,29,japanese symbol for beginner,Japanese symbol for beginner,True
+⭕,U+2B55,single_emoji_presentation,True,Symbols,35,34,heavy large circle,hollow red circle,False
+✅,U+2705,single_emoji_presentation,True,Symbols,35,34,white heavy check mark,check mark button,False
+☑️,U+2611+FE0F,single_text_default_vs16,True,Symbols,35,34,ballot box with check,check box with check,False
+✔️,U+2714+FE0F,single_text_default_vs16,True,Symbols,35,34,heavy check mark,check mark,False
+#️⃣,U+0023+FE0F+20E3,keycap,False,Symbols,32,29,keycap number,keycap: #,False
+*️⃣,U+002A+FE0F+20E3,keycap,False,Symbols,32,29,keycap asterisk,keycap: *,False
+0️⃣,U+0030+FE0F+20E3,keycap,False,Symbols,32,29,keycap digit zero,keycap: 0,False
+1️⃣,U+0031+FE0F+20E3,keycap,False,Symbols,32,29,keycap digit one,keycap: 1,False
+2️⃣,U+0032+FE0F+20E3,keycap,False,Symbols,32,29,keycap digit two,keycap: 2,False
+3️⃣,U+0033+FE0F+20E3,keycap,False,Symbols,32,29,keycap digit three,keycap: 3,False
+4️⃣,U+0034+FE0F+20E3,keycap,False,Symbols,32,29,keycap digit four,keycap: 4,False
+5️⃣,U+0035+FE0F+20E3,keycap,False,Symbols,32,29,keycap digit five,keycap: 5,False
+6️⃣,U+0036+FE0F+20E3,keycap,False,Symbols,32,29,keycap digit six,keycap: 6,False
+7️⃣,U+0037+FE0F+20E3,keycap,False,Symbols,32,29,keycap digit seven,keycap: 7,False
+8️⃣,U+0038+FE0F+20E3,keycap,False,Symbols,32,29,keycap digit eight,keycap: 8,False
+9️⃣,U+0039+FE0F+20E3,keycap,False,Symbols,32,29,keycap digit nine,keycap: 9,False
+🔟,U+1F51F,single_emoji_presentation,True,Symbols,30,29,keycap ten,keycap 10,False
+🔟,U+1F51F,single_emoji_presentation,True,Symbols,32,31,keycap 10,keycap: 10,True
+🅰️,U+1F170+FE0F,single_text_default_vs16,True,Symbols,30,29,a button,A button (blood type),False
+🆎,U+1F18E,single_emoji_presentation,True,Symbols,30,29,ab button,AB button (blood type),False
+🅱️,U+1F171+FE0F,single_text_default_vs16,True,Symbols,30,29,b button,B button (blood type),False
+🆑,U+1F191,single_emoji_presentation,True,Symbols,30,29,squared cl,CL button,False
+🆒,U+1F192,single_emoji_presentation,True,Symbols,30,29,squared cool,COOL button,False
+🆓,U+1F193,single_emoji_presentation,True,Symbols,30,29,squared free,FREE button,False
+ℹ️,U+2139+FE0F,single_text_default_vs16,True,Symbols,30,29,information source,information,False
+🆔,U+1F194,single_emoji_presentation,True,Symbols,30,29,squared id,ID button,False
+Ⓜ️,U+24C2+FE0F,single_text_default_vs16,True,Symbols,30,29,circled letter m,circled M,False
+🆕,U+1F195,single_emoji_presentation,True,Symbols,30,29,squared new,NEW button,False
+🆖,U+1F196,single_emoji_presentation,True,Symbols,30,29,squared ng,NG button,False
+🅾️,U+1F17E+FE0F,single_text_default_vs16,True,Symbols,30,29,o button,O button (blood type),False
+🆗,U+1F197,single_emoji_presentation,True,Symbols,30,29,squared ok,OK button,False
+🅿️,U+1F17F+FE0F,single_text_default_vs16,True,Symbols,30,29,p button,P button,True
+🆘,U+1F198,single_emoji_presentation,True,Symbols,30,29,squared sos,SOS button,False
+🆙,U+1F199,single_emoji_presentation,True,Symbols,30,29,up! button,UP! button,True
+🆚,U+1F19A,single_emoji_presentation,True,Symbols,30,29,squared vs,VS button,False
+🈁,U+1F201,single_emoji_presentation,True,Symbols,30,29,squared katakana koko,Japanese “here” button,False
+🈂️,U+1F202+FE0F,single_text_default_vs16,True,Symbols,30,29,squared katakana sa,Japanese “service charge” button,False
+🈷️,U+1F237+FE0F,single_text_default_vs16,True,Symbols,30,29,squared moon ideograph,Japanese “monthly amount” button,False
+🈶,U+1F236,single_emoji_presentation,True,Symbols,30,29,squared exist ideograph,Japanese “not free of charge” button,False
+🈯,U+1F22F,single_emoji_presentation,True,Symbols,30,29,squared finger ideograph,Japanese “reserved” button,False
+🉐,U+1F250,single_emoji_presentation,True,Symbols,30,29,circled advantage ideograph,Japanese “bargain” button,False
+🈹,U+1F239,single_emoji_presentation,True,Symbols,30,29,squared divide ideograph,Japanese “discount” button,False
+🈚,U+1F21A,single_emoji_presentation,True,Symbols,30,29,squared negation ideograph,Japanese “free of charge” button,False
+🈲,U+1F232,single_emoji_presentation,True,Symbols,30,29,squared prohibit ideograph,Japanese “prohibited” button,False
+🉑,U+1F251,single_emoji_presentation,True,Symbols,30,29,circled accept ideograph,Japanese “acceptable” button,False
+🈸,U+1F238,single_emoji_presentation,True,Symbols,30,29,squared apply ideograph,Japanese “application” button,False
+🈴,U+1F234,single_emoji_presentation,True,Symbols,30,29,squared together ideograph,Japanese “passing grade” button,False
+🈳,U+1F233,single_emoji_presentation,True,Symbols,30,29,squared empty ideograph,Japanese “vacancy” button,False
+㊗️,U+3297+FE0F,single_text_default_vs16,True,Symbols,30,29,circled congratulate ideograph,Japanese “congratulations” button,False
+㊙️,U+3299+FE0F,single_text_default_vs16,True,Symbols,30,29,circled secret ideograph,Japanese “secret” button,False
+🈺,U+1F23A,single_emoji_presentation,True,Symbols,30,29,squared operating ideograph,Japanese “open for business” button,False
+🈵,U+1F235,single_emoji_presentation,True,Symbols,30,29,squared fullness ideograph,Japanese “no vacancy” button,False
+🏴,U+1F3F4,single_emoji_presentation,True,Flags,30,29,waving black flag,black flag,False
+🏳️,U+1F3F3+FE0F,single_text_default_vs16,True,Flags,30,29,waving white flag,white flag,False
+🇦🇨,U+1F1E6+1F1E8,flag_regional,False,Flags,34,33,Ascension Island,flag: Ascension Island,False
+🇦🇩,U+1F1E6+1F1E9,flag_regional,False,Flags,34,33,Andorra,flag: Andorra,False
+🇦🇪,U+1F1E6+1F1EA,flag_regional,False,Flags,34,33,United Arab Emirates,flag: United Arab Emirates,False
+🇦🇫,U+1F1E6+1F1EB,flag_regional,False,Flags,34,33,Afghanistan,flag: Afghanistan,False
+🇦🇬,U+1F1E6+1F1EC,flag_regional,False,Flags,34,33,Antigua & Barbuda,flag: Antigua & Barbuda,False
+🇦🇮,U+1F1E6+1F1EE,flag_regional,False,Flags,34,33,Anguilla,flag: Anguilla,False
+🇦🇱,U+1F1E6+1F1F1,flag_regional,False,Flags,34,33,Albania,flag: Albania,False
+🇦🇲,U+1F1E6+1F1F2,flag_regional,False,Flags,34,33,Armenia,flag: Armenia,False
+🇦🇴,U+1F1E6+1F1F4,flag_regional,False,Flags,34,33,Angola,flag: Angola,False
+🇦🇶,U+1F1E6+1F1F6,flag_regional,False,Flags,34,33,Antarctica,flag: Antarctica,False
+🇦🇷,U+1F1E6+1F1F7,flag_regional,False,Flags,34,33,Argentina,flag: Argentina,False
+🇦🇸,U+1F1E6+1F1F8,flag_regional,False,Flags,34,33,American Samoa,flag: American Samoa,False
+🇦🇹,U+1F1E6+1F1F9,flag_regional,False,Flags,34,33,Austria,flag: Austria,False
+🇦🇺,U+1F1E6+1F1FA,flag_regional,False,Flags,34,33,Australia,flag: Australia,False
+🇦🇼,U+1F1E6+1F1FC,flag_regional,False,Flags,34,33,Aruba,flag: Aruba,False
+🇦🇽,U+1F1E6+1F1FD,flag_regional,False,Flags,34,33,Åland Islands,flag: Åland Islands,False
+🇦🇿,U+1F1E6+1F1FF,flag_regional,False,Flags,34,33,Azerbaijan,flag: Azerbaijan,False
+🇧🇦,U+1F1E7+1F1E6,flag_regional,False,Flags,34,33,Bosnia & Herzegovina,flag: Bosnia & Herzegovina,False
+🇧🇧,U+1F1E7+1F1E7,flag_regional,False,Flags,34,33,Barbados,flag: Barbados,False
+🇧🇩,U+1F1E7+1F1E9,flag_regional,False,Flags,34,33,Bangladesh,flag: Bangladesh,False
+🇧🇪,U+1F1E7+1F1EA,flag_regional,False,Flags,34,33,Belgium,flag: Belgium,False
+🇧🇫,U+1F1E7+1F1EB,flag_regional,False,Flags,34,33,Burkina Faso,flag: Burkina Faso,False
+🇧🇬,U+1F1E7+1F1EC,flag_regional,False,Flags,34,33,Bulgaria,flag: Bulgaria,False
+🇧🇭,U+1F1E7+1F1ED,flag_regional,False,Flags,34,33,Bahrain,flag: Bahrain,False
+🇧🇮,U+1F1E7+1F1EE,flag_regional,False,Flags,34,33,Burundi,flag: Burundi,False
+🇧🇯,U+1F1E7+1F1EF,flag_regional,False,Flags,34,33,Benin,flag: Benin,False
+🇧🇱,U+1F1E7+1F1F1,flag_regional,False,Flags,34,33,St. Barthélemy,flag: St. Barthélemy,False
+🇧🇲,U+1F1E7+1F1F2,flag_regional,False,Flags,34,33,Bermuda,flag: Bermuda,False
+🇧🇳,U+1F1E7+1F1F3,flag_regional,False,Flags,34,33,Brunei,flag: Brunei,False
+🇧🇴,U+1F1E7+1F1F4,flag_regional,False,Flags,34,33,Bolivia,flag: Bolivia,False
+🇧🇶,U+1F1E7+1F1F6,flag_regional,False,Flags,34,33,Caribbean Netherlands,flag: Caribbean Netherlands,False
+🇧🇷,U+1F1E7+1F1F7,flag_regional,False,Flags,34,33,Brazil,flag: Brazil,False
+🇧🇸,U+1F1E7+1F1F8,flag_regional,False,Flags,34,33,Bahamas,flag: Bahamas,False
+🇧🇹,U+1F1E7+1F1F9,flag_regional,False,Flags,34,33,Bhutan,flag: Bhutan,False
+🇧🇻,U+1F1E7+1F1FB,flag_regional,False,Flags,34,33,Bouvet Island,flag: Bouvet Island,False
+🇧🇼,U+1F1E7+1F1FC,flag_regional,False,Flags,34,33,Botswana,flag: Botswana,False
+🇧🇾,U+1F1E7+1F1FE,flag_regional,False,Flags,34,33,Belarus,flag: Belarus,False
+🇧🇿,U+1F1E7+1F1FF,flag_regional,False,Flags,34,33,Belize,flag: Belize,False
+🇨🇦,U+1F1E8+1F1E6,flag_regional,False,Flags,34,33,Canada,flag: Canada,False
+🇨🇨,U+1F1E8+1F1E8,flag_regional,False,Flags,34,33,Cocos (Keeling) Islands,flag: Cocos (Keeling) Islands,False
+🇨🇩,U+1F1E8+1F1E9,flag_regional,False,Flags,34,33,Congo - Kinshasa,flag: Congo - Kinshasa,False
+🇨🇫,U+1F1E8+1F1EB,flag_regional,False,Flags,34,33,Central African Republic,flag: Central African Republic,False
+🇨🇬,U+1F1E8+1F1EC,flag_regional,False,Flags,34,33,Congo - Brazzaville,flag: Congo - Brazzaville,False
+🇨🇭,U+1F1E8+1F1ED,flag_regional,False,Flags,34,33,Switzerland,flag: Switzerland,False
+🇨🇮,U+1F1E8+1F1EE,flag_regional,False,Flags,34,33,Côte d’Ivoire,flag: Côte d’Ivoire,False
+🇨🇰,U+1F1E8+1F1F0,flag_regional,False,Flags,34,33,Cook Islands,flag: Cook Islands,False
+🇨🇱,U+1F1E8+1F1F1,flag_regional,False,Flags,34,33,Chile,flag: Chile,False
+🇨🇲,U+1F1E8+1F1F2,flag_regional,False,Flags,34,33,Cameroon,flag: Cameroon,False
+🇨🇳,U+1F1E8+1F1F3,flag_regional,False,Flags,34,33,China,flag: China,False
+🇨🇴,U+1F1E8+1F1F4,flag_regional,False,Flags,34,33,Colombia,flag: Colombia,False
+🇨🇵,U+1F1E8+1F1F5,flag_regional,False,Flags,34,33,Clipperton Island,flag: Clipperton Island,False
+🇨🇷,U+1F1E8+1F1F7,flag_regional,False,Flags,34,33,Costa Rica,flag: Costa Rica,False
+🇨🇺,U+1F1E8+1F1FA,flag_regional,False,Flags,34,33,Cuba,flag: Cuba,False
+🇨🇻,U+1F1E8+1F1FB,flag_regional,False,Flags,34,33,Cape Verde,flag: Cape Verde,False
+🇨🇼,U+1F1E8+1F1FC,flag_regional,False,Flags,34,33,Curaçao,flag: Curaçao,False
+🇨🇽,U+1F1E8+1F1FD,flag_regional,False,Flags,34,33,Christmas Island,flag: Christmas Island,False
+🇨🇾,U+1F1E8+1F1FE,flag_regional,False,Flags,34,33,Cyprus,flag: Cyprus,False
+🇨🇿,U+1F1E8+1F1FF,flag_regional,False,Flags,34,33,Czechia,flag: Czechia,False
+🇩🇪,U+1F1E9+1F1EA,flag_regional,False,Flags,34,33,Germany,flag: Germany,False
+🇩🇬,U+1F1E9+1F1EC,flag_regional,False,Flags,34,33,Diego Garcia,flag: Diego Garcia,False
+🇩🇯,U+1F1E9+1F1EF,flag_regional,False,Flags,34,33,Djibouti,flag: Djibouti,False
+🇩🇰,U+1F1E9+1F1F0,flag_regional,False,Flags,34,33,Denmark,flag: Denmark,False
+🇩🇲,U+1F1E9+1F1F2,flag_regional,False,Flags,34,33,Dominica,flag: Dominica,False
+🇩🇴,U+1F1E9+1F1F4,flag_regional,False,Flags,34,33,Dominican Republic,flag: Dominican Republic,False
+🇩🇿,U+1F1E9+1F1FF,flag_regional,False,Flags,34,33,Algeria,flag: Algeria,False
+🇪🇦,U+1F1EA+1F1E6,flag_regional,False,Flags,34,33,Ceuta & Melilla,flag: Ceuta & Melilla,False
+🇪🇨,U+1F1EA+1F1E8,flag_regional,False,Flags,34,33,Ecuador,flag: Ecuador,False
+🇪🇪,U+1F1EA+1F1EA,flag_regional,False,Flags,34,33,Estonia,flag: Estonia,False
+🇪🇬,U+1F1EA+1F1EC,flag_regional,False,Flags,34,33,Egypt,flag: Egypt,False
+🇪🇭,U+1F1EA+1F1ED,flag_regional,False,Flags,34,33,Western Sahara,flag: Western Sahara,False
+🇪🇷,U+1F1EA+1F1F7,flag_regional,False,Flags,34,33,Eritrea,flag: Eritrea,False
+🇪🇸,U+1F1EA+1F1F8,flag_regional,False,Flags,34,33,Spain,flag: Spain,False
+🇪🇹,U+1F1EA+1F1F9,flag_regional,False,Flags,34,33,Ethiopia,flag: Ethiopia,False
+🇪🇺,U+1F1EA+1F1FA,flag_regional,False,Flags,34,33,European Union,flag: European Union,False
+🇫🇮,U+1F1EB+1F1EE,flag_regional,False,Flags,34,33,Finland,flag: Finland,False
+🇫🇯,U+1F1EB+1F1EF,flag_regional,False,Flags,34,33,Fiji,flag: Fiji,False
+🇫🇰,U+1F1EB+1F1F0,flag_regional,False,Flags,34,33,Falkland Islands,flag: Falkland Islands,False
+🇫🇲,U+1F1EB+1F1F2,flag_regional,False,Flags,34,33,Micronesia,flag: Micronesia,False
+🇫🇴,U+1F1EB+1F1F4,flag_regional,False,Flags,34,33,Faroe Islands,flag: Faroe Islands,False
+🇫🇷,U+1F1EB+1F1F7,flag_regional,False,Flags,34,33,France,flag: France,False
+🇬🇦,U+1F1EC+1F1E6,flag_regional,False,Flags,34,33,Gabon,flag: Gabon,False
+🇬🇧,U+1F1EC+1F1E7,flag_regional,False,Flags,34,33,United Kingdom,flag: United Kingdom,False
+🇬🇩,U+1F1EC+1F1E9,flag_regional,False,Flags,34,33,Grenada,flag: Grenada,False
+🇬🇪,U+1F1EC+1F1EA,flag_regional,False,Flags,34,33,Georgia,flag: Georgia,False
+🇬🇫,U+1F1EC+1F1EB,flag_regional,False,Flags,34,33,French Guiana,flag: French Guiana,False
+🇬🇬,U+1F1EC+1F1EC,flag_regional,False,Flags,34,33,Guernsey,flag: Guernsey,False
+🇬🇭,U+1F1EC+1F1ED,flag_regional,False,Flags,34,33,Ghana,flag: Ghana,False
+🇬🇮,U+1F1EC+1F1EE,flag_regional,False,Flags,34,33,Gibraltar,flag: Gibraltar,False
+🇬🇱,U+1F1EC+1F1F1,flag_regional,False,Flags,34,33,Greenland,flag: Greenland,False
+🇬🇲,U+1F1EC+1F1F2,flag_regional,False,Flags,34,33,Gambia,flag: Gambia,False
+🇬🇳,U+1F1EC+1F1F3,flag_regional,False,Flags,34,33,Guinea,flag: Guinea,False
+🇬🇵,U+1F1EC+1F1F5,flag_regional,False,Flags,34,33,Guadeloupe,flag: Guadeloupe,False
+🇬🇶,U+1F1EC+1F1F6,flag_regional,False,Flags,34,33,Equatorial Guinea,flag: Equatorial Guinea,False
+🇬🇷,U+1F1EC+1F1F7,flag_regional,False,Flags,34,33,Greece,flag: Greece,False
+🇬🇸,U+1F1EC+1F1F8,flag_regional,False,Flags,34,33,South Georgia & South Sandwich Islands,flag: South Georgia & South Sandwich Islands,False
+🇬🇹,U+1F1EC+1F1F9,flag_regional,False,Flags,34,33,Guatemala,flag: Guatemala,False
+🇬🇺,U+1F1EC+1F1FA,flag_regional,False,Flags,34,33,Guam,flag: Guam,False
+🇬🇼,U+1F1EC+1F1FC,flag_regional,False,Flags,34,33,Guinea-Bissau,flag: Guinea-Bissau,False
+🇬🇾,U+1F1EC+1F1FE,flag_regional,False,Flags,34,33,Guyana,flag: Guyana,False
+🇭🇰,U+1F1ED+1F1F0,flag_regional,False,Flags,34,33,Hong Kong SAR China,flag: Hong Kong SAR China,False
+🇭🇲,U+1F1ED+1F1F2,flag_regional,False,Flags,34,33,Heard & McDonald Islands,flag: Heard & McDonald Islands,False
+🇭🇲,U+1F1ED+1F1F2,flag_regional,False,Flags,49-beta2,48,flag: Heard & McDonald Islands,flag: Heard Island & McDonald Islands,False
+🇭🇳,U+1F1ED+1F1F3,flag_regional,False,Flags,34,33,Honduras,flag: Honduras,False
+🇭🇷,U+1F1ED+1F1F7,flag_regional,False,Flags,34,33,Croatia,flag: Croatia,False
+🇭🇹,U+1F1ED+1F1F9,flag_regional,False,Flags,34,33,Haiti,flag: Haiti,False
+🇭🇺,U+1F1ED+1F1FA,flag_regional,False,Flags,34,33,Hungary,flag: Hungary,False
+🇮🇨,U+1F1EE+1F1E8,flag_regional,False,Flags,34,33,Canary Islands,flag: Canary Islands,False
+🇮🇩,U+1F1EE+1F1E9,flag_regional,False,Flags,34,33,Indonesia,flag: Indonesia,False
+🇮🇪,U+1F1EE+1F1EA,flag_regional,False,Flags,34,33,Ireland,flag: Ireland,False
+🇮🇱,U+1F1EE+1F1F1,flag_regional,False,Flags,34,33,Israel,flag: Israel,False
+🇮🇲,U+1F1EE+1F1F2,flag_regional,False,Flags,34,33,Isle of Man,flag: Isle of Man,False
+🇮🇳,U+1F1EE+1F1F3,flag_regional,False,Flags,34,33,India,flag: India,False
+🇮🇴,U+1F1EE+1F1F4,flag_regional,False,Flags,34,33,British Indian Ocean Territory,flag: British Indian Ocean Territory,False
+🇮🇶,U+1F1EE+1F1F6,flag_regional,False,Flags,34,33,Iraq,flag: Iraq,False
+🇮🇷,U+1F1EE+1F1F7,flag_regional,False,Flags,34,33,Iran,flag: Iran,False
+🇮🇸,U+1F1EE+1F1F8,flag_regional,False,Flags,34,33,Iceland,flag: Iceland,False
+🇮🇹,U+1F1EE+1F1F9,flag_regional,False,Flags,34,33,Italy,flag: Italy,False
+🇯🇪,U+1F1EF+1F1EA,flag_regional,False,Flags,34,33,Jersey,flag: Jersey,False
+🇯🇲,U+1F1EF+1F1F2,flag_regional,False,Flags,34,33,Jamaica,flag: Jamaica,False
+🇯🇴,U+1F1EF+1F1F4,flag_regional,False,Flags,34,33,Jordan,flag: Jordan,False
+🇯🇵,U+1F1EF+1F1F5,flag_regional,False,Flags,34,33,Japan,flag: Japan,False
+🇰🇪,U+1F1F0+1F1EA,flag_regional,False,Flags,34,33,Kenya,flag: Kenya,False
+🇰🇬,U+1F1F0+1F1EC,flag_regional,False,Flags,34,33,Kyrgyzstan,flag: Kyrgyzstan,False
+🇰🇭,U+1F1F0+1F1ED,flag_regional,False,Flags,34,33,Cambodia,flag: Cambodia,False
+🇰🇮,U+1F1F0+1F1EE,flag_regional,False,Flags,34,33,Kiribati,flag: Kiribati,False
+🇰🇲,U+1F1F0+1F1F2,flag_regional,False,Flags,34,33,Comoros,flag: Comoros,False
+🇰🇳,U+1F1F0+1F1F3,flag_regional,False,Flags,34,33,St. Kitts & Nevis,flag: St. Kitts & Nevis,False
+🇰🇵,U+1F1F0+1F1F5,flag_regional,False,Flags,34,33,North Korea,flag: North Korea,False
+🇰🇷,U+1F1F0+1F1F7,flag_regional,False,Flags,34,33,South Korea,flag: South Korea,False
+🇰🇼,U+1F1F0+1F1FC,flag_regional,False,Flags,34,33,Kuwait,flag: Kuwait,False
+🇰🇾,U+1F1F0+1F1FE,flag_regional,False,Flags,34,33,Cayman Islands,flag: Cayman Islands,False
+🇰🇿,U+1F1F0+1F1FF,flag_regional,False,Flags,34,33,Kazakhstan,flag: Kazakhstan,False
+🇱🇦,U+1F1F1+1F1E6,flag_regional,False,Flags,34,33,Laos,flag: Laos,False
+🇱🇧,U+1F1F1+1F1E7,flag_regional,False,Flags,34,33,Lebanon,flag: Lebanon,False
+🇱🇨,U+1F1F1+1F1E8,flag_regional,False,Flags,34,33,St. Lucia,flag: St. Lucia,False
+🇱🇮,U+1F1F1+1F1EE,flag_regional,False,Flags,34,33,Liechtenstein,flag: Liechtenstein,False
+🇱🇰,U+1F1F1+1F1F0,flag_regional,False,Flags,34,33,Sri Lanka,flag: Sri Lanka,False
+🇱🇷,U+1F1F1+1F1F7,flag_regional,False,Flags,34,33,Liberia,flag: Liberia,False
+🇱🇸,U+1F1F1+1F1F8,flag_regional,False,Flags,34,33,Lesotho,flag: Lesotho,False
+🇱🇹,U+1F1F1+1F1F9,flag_regional,False,Flags,34,33,Lithuania,flag: Lithuania,False
+🇱🇺,U+1F1F1+1F1FA,flag_regional,False,Flags,34,33,Luxembourg,flag: Luxembourg,False
+🇱🇻,U+1F1F1+1F1FB,flag_regional,False,Flags,34,33,Latvia,flag: Latvia,False
+🇱🇾,U+1F1F1+1F1FE,flag_regional,False,Flags,34,33,Libya,flag: Libya,False
+🇲🇦,U+1F1F2+1F1E6,flag_regional,False,Flags,34,33,Morocco,flag: Morocco,False
+🇲🇨,U+1F1F2+1F1E8,flag_regional,False,Flags,34,33,Monaco,flag: Monaco,False
+🇲🇩,U+1F1F2+1F1E9,flag_regional,False,Flags,34,33,Moldova,flag: Moldova,False
+🇲🇪,U+1F1F2+1F1EA,flag_regional,False,Flags,34,33,Montenegro,flag: Montenegro,False
+🇲🇫,U+1F1F2+1F1EB,flag_regional,False,Flags,34,33,St. Martin,flag: St. Martin,False
+🇲🇬,U+1F1F2+1F1EC,flag_regional,False,Flags,34,33,Madagascar,flag: Madagascar,False
+🇲🇭,U+1F1F2+1F1ED,flag_regional,False,Flags,34,33,Marshall Islands,flag: Marshall Islands,False
+🇲🇰,U+1F1F2+1F1F0,flag_regional,False,Flags,34,33,Macedonia,flag: Macedonia,False
+🇲🇰,U+1F1F2+1F1F0,flag_regional,False,Flags,35,34,flag: Macedonia,flag: North Macedonia,False
+🇲🇱,U+1F1F2+1F1F1,flag_regional,False,Flags,34,33,Mali,flag: Mali,False
+🇲🇲,U+1F1F2+1F1F2,flag_regional,False,Flags,34,33,Myanmar (Burma),flag: Myanmar (Burma),False
+🇲🇳,U+1F1F2+1F1F3,flag_regional,False,Flags,34,33,Mongolia,flag: Mongolia,False
+🇲🇴,U+1F1F2+1F1F4,flag_regional,False,Flags,34,33,Macau SAR China,flag: Macau SAR China,False
+🇲🇴,U+1F1F2+1F1F4,flag_regional,False,Flags,35,34,flag: Macau SAR China,flag: Macao SAR China,False
+🇲🇵,U+1F1F2+1F1F5,flag_regional,False,Flags,34,33,Northern Mariana Islands,flag: Northern Mariana Islands,False
+🇲🇶,U+1F1F2+1F1F6,flag_regional,False,Flags,34,33,Martinique,flag: Martinique,False
+🇲🇷,U+1F1F2+1F1F7,flag_regional,False,Flags,34,33,Mauritania,flag: Mauritania,False
+🇲🇸,U+1F1F2+1F1F8,flag_regional,False,Flags,34,33,Montserrat,flag: Montserrat,False
+🇲🇹,U+1F1F2+1F1F9,flag_regional,False,Flags,34,33,Malta,flag: Malta,False
+🇲🇺,U+1F1F2+1F1FA,flag_regional,False,Flags,34,33,Mauritius,flag: Mauritius,False
+🇲🇻,U+1F1F2+1F1FB,flag_regional,False,Flags,34,33,Maldives,flag: Maldives,False
+🇲🇼,U+1F1F2+1F1FC,flag_regional,False,Flags,34,33,Malawi,flag: Malawi,False
+🇲🇽,U+1F1F2+1F1FD,flag_regional,False,Flags,34,33,Mexico,flag: Mexico,False
+🇲🇾,U+1F1F2+1F1FE,flag_regional,False,Flags,34,33,Malaysia,flag: Malaysia,False
+🇲🇿,U+1F1F2+1F1FF,flag_regional,False,Flags,34,33,Mozambique,flag: Mozambique,False
+🇳🇦,U+1F1F3+1F1E6,flag_regional,False,Flags,34,33,Namibia,flag: Namibia,False
+🇳🇨,U+1F1F3+1F1E8,flag_regional,False,Flags,34,33,New Caledonia,flag: New Caledonia,False
+🇳🇪,U+1F1F3+1F1EA,flag_regional,False,Flags,34,33,Niger,flag: Niger,False
+🇳🇫,U+1F1F3+1F1EB,flag_regional,False,Flags,34,33,Norfolk Island,flag: Norfolk Island,False
+🇳🇬,U+1F1F3+1F1EC,flag_regional,False,Flags,34,33,Nigeria,flag: Nigeria,False
+🇳🇮,U+1F1F3+1F1EE,flag_regional,False,Flags,34,33,Nicaragua,flag: Nicaragua,False
+🇳🇱,U+1F1F3+1F1F1,flag_regional,False,Flags,34,33,Netherlands,flag: Netherlands,False
+🇳🇴,U+1F1F3+1F1F4,flag_regional,False,Flags,34,33,Norway,flag: Norway,False
+🇳🇵,U+1F1F3+1F1F5,flag_regional,False,Flags,34,33,Nepal,flag: Nepal,False
+🇳🇷,U+1F1F3+1F1F7,flag_regional,False,Flags,34,33,Nauru,flag: Nauru,False
+🇳🇺,U+1F1F3+1F1FA,flag_regional,False,Flags,34,33,Niue,flag: Niue,False
+🇳🇿,U+1F1F3+1F1FF,flag_regional,False,Flags,34,33,New Zealand,flag: New Zealand,False
+🇴🇲,U+1F1F4+1F1F2,flag_regional,False,Flags,34,33,Oman,flag: Oman,False
+🇵🇦,U+1F1F5+1F1E6,flag_regional,False,Flags,34,33,Panama,flag: Panama,False
+🇵🇪,U+1F1F5+1F1EA,flag_regional,False,Flags,34,33,Peru,flag: Peru,False
+🇵🇫,U+1F1F5+1F1EB,flag_regional,False,Flags,34,33,French Polynesia,flag: French Polynesia,False
+🇵🇬,U+1F1F5+1F1EC,flag_regional,False,Flags,34,33,Papua New Guinea,flag: Papua New Guinea,False
+🇵🇭,U+1F1F5+1F1ED,flag_regional,False,Flags,34,33,Philippines,flag: Philippines,False
+🇵🇰,U+1F1F5+1F1F0,flag_regional,False,Flags,34,33,Pakistan,flag: Pakistan,False
+🇵🇱,U+1F1F5+1F1F1,flag_regional,False,Flags,34,33,Poland,flag: Poland,False
+🇵🇲,U+1F1F5+1F1F2,flag_regional,False,Flags,34,33,St. Pierre & Miquelon,flag: St. Pierre & Miquelon,False
+🇵🇳,U+1F1F5+1F1F3,flag_regional,False,Flags,34,33,Pitcairn Islands,flag: Pitcairn Islands,False
+🇵🇷,U+1F1F5+1F1F7,flag_regional,False,Flags,34,33,Puerto Rico,flag: Puerto Rico,False
+🇵🇸,U+1F1F5+1F1F8,flag_regional,False,Flags,34,33,Palestinian Territories,flag: Palestinian Territories,False
+🇵🇹,U+1F1F5+1F1F9,flag_regional,False,Flags,34,33,Portugal,flag: Portugal,False
+🇵🇼,U+1F1F5+1F1FC,flag_regional,False,Flags,34,33,Palau,flag: Palau,False
+🇵🇾,U+1F1F5+1F1FE,flag_regional,False,Flags,34,33,Paraguay,flag: Paraguay,False
+🇶🇦,U+1F1F6+1F1E6,flag_regional,False,Flags,34,33,Qatar,flag: Qatar,False
+🇷🇪,U+1F1F7+1F1EA,flag_regional,False,Flags,34,33,Réunion,flag: Réunion,False
+🇷🇴,U+1F1F7+1F1F4,flag_regional,False,Flags,34,33,Romania,flag: Romania,False
+🇷🇸,U+1F1F7+1F1F8,flag_regional,False,Flags,34,33,Serbia,flag: Serbia,False
+🇷🇺,U+1F1F7+1F1FA,flag_regional,False,Flags,34,33,Russia,flag: Russia,False
+🇷🇼,U+1F1F7+1F1FC,flag_regional,False,Flags,34,33,Rwanda,flag: Rwanda,False
+🇸🇦,U+1F1F8+1F1E6,flag_regional,False,Flags,34,33,Saudi Arabia,flag: Saudi Arabia,False
+🇸🇧,U+1F1F8+1F1E7,flag_regional,False,Flags,34,33,Solomon Islands,flag: Solomon Islands,False
+🇸🇨,U+1F1F8+1F1E8,flag_regional,False,Flags,34,33,Seychelles,flag: Seychelles,False
+🇸🇩,U+1F1F8+1F1E9,flag_regional,False,Flags,34,33,Sudan,flag: Sudan,False
+🇸🇪,U+1F1F8+1F1EA,flag_regional,False,Flags,34,33,Sweden,flag: Sweden,False
+🇸🇬,U+1F1F8+1F1EC,flag_regional,False,Flags,34,33,Singapore,flag: Singapore,False
+🇸🇭,U+1F1F8+1F1ED,flag_regional,False,Flags,34,33,St. Helena,flag: St. Helena,False
+🇸🇭,U+1F1F8+1F1ED,flag_regional,False,Flags,49-beta2,48,flag: St. Helena,"flag: St. Helena, Ascension & Tristan da Cunha",False
+🇸🇮,U+1F1F8+1F1EE,flag_regional,False,Flags,34,33,Slovenia,flag: Slovenia,False
+🇸🇯,U+1F1F8+1F1EF,flag_regional,False,Flags,34,33,Svalbard & Jan Mayen,flag: Svalbard & Jan Mayen,False
+🇸🇰,U+1F1F8+1F1F0,flag_regional,False,Flags,34,33,Slovakia,flag: Slovakia,False
+🇸🇱,U+1F1F8+1F1F1,flag_regional,False,Flags,34,33,Sierra Leone,flag: Sierra Leone,False
+🇸🇲,U+1F1F8+1F1F2,flag_regional,False,Flags,34,33,San Marino,flag: San Marino,False
+🇸🇳,U+1F1F8+1F1F3,flag_regional,False,Flags,34,33,Senegal,flag: Senegal,False
+🇸🇴,U+1F1F8+1F1F4,flag_regional,False,Flags,34,33,Somalia,flag: Somalia,False
+🇸🇷,U+1F1F8+1F1F7,flag_regional,False,Flags,34,33,Suriname,flag: Suriname,False
+🇸🇸,U+1F1F8+1F1F8,flag_regional,False,Flags,34,33,South Sudan,flag: South Sudan,False
+🇸🇹,U+1F1F8+1F1F9,flag_regional,False,Flags,34,33,São Tomé & Príncipe,flag: São Tomé & Príncipe,False
+🇸🇻,U+1F1F8+1F1FB,flag_regional,False,Flags,34,33,El Salvador,flag: El Salvador,False
+🇸🇽,U+1F1F8+1F1FD,flag_regional,False,Flags,34,33,Sint Maarten,flag: Sint Maarten,False
+🇸🇾,U+1F1F8+1F1FE,flag_regional,False,Flags,34,33,Syria,flag: Syria,False
+🇸🇿,U+1F1F8+1F1FF,flag_regional,False,Flags,34,33,Swaziland,flag: Swaziland,False
+🇸🇿,U+1F1F8+1F1FF,flag_regional,False,Flags,35,34,flag: Swaziland,flag: Eswatini,False
+🇹🇦,U+1F1F9+1F1E6,flag_regional,False,Flags,34,33,Tristan da Cunha,flag: Tristan da Cunha,False
+🇹🇨,U+1F1F9+1F1E8,flag_regional,False,Flags,34,33,Turks & Caicos Islands,flag: Turks & Caicos Islands,False
+🇹🇩,U+1F1F9+1F1E9,flag_regional,False,Flags,34,33,Chad,flag: Chad,False
+🇹🇫,U+1F1F9+1F1EB,flag_regional,False,Flags,34,33,French Southern Territories,flag: French Southern Territories,False
+🇹🇫,U+1F1F9+1F1EB,flag_regional,False,Flags,49-beta2,48,flag: French Southern Territories,flag: French Southern and Antarctic Lands,False
+🇹🇬,U+1F1F9+1F1EC,flag_regional,False,Flags,34,33,Togo,flag: Togo,False
+🇹🇭,U+1F1F9+1F1ED,flag_regional,False,Flags,34,33,Thailand,flag: Thailand,False
+🇹🇯,U+1F1F9+1F1EF,flag_regional,False,Flags,34,33,Tajikistan,flag: Tajikistan,False
+🇹🇰,U+1F1F9+1F1F0,flag_regional,False,Flags,34,33,Tokelau,flag: Tokelau,False
+🇹🇱,U+1F1F9+1F1F1,flag_regional,False,Flags,34,33,Timor-Leste,flag: Timor-Leste,False
+🇹🇲,U+1F1F9+1F1F2,flag_regional,False,Flags,34,33,Turkmenistan,flag: Turkmenistan,False
+🇹🇳,U+1F1F9+1F1F3,flag_regional,False,Flags,34,33,Tunisia,flag: Tunisia,False
+🇹🇴,U+1F1F9+1F1F4,flag_regional,False,Flags,34,33,Tonga,flag: Tonga,False
+🇹🇷,U+1F1F9+1F1F7,flag_regional,False,Flags,34,33,Turkey,flag: Turkey,False
+🇹🇷,U+1F1F9+1F1F7,flag_regional,False,Flags,43,42,flag: Turkey,flag: Türkiye,False
+🇹🇹,U+1F1F9+1F1F9,flag_regional,False,Flags,34,33,Trinidad & Tobago,flag: Trinidad & Tobago,False
+🇹🇻,U+1F1F9+1F1FB,flag_regional,False,Flags,34,33,Tuvalu,flag: Tuvalu,False
+🇹🇼,U+1F1F9+1F1FC,flag_regional,False,Flags,34,33,Taiwan,flag: Taiwan,False
+🇹🇿,U+1F1F9+1F1FF,flag_regional,False,Flags,34,33,Tanzania,flag: Tanzania,False
+🇺🇦,U+1F1FA+1F1E6,flag_regional,False,Flags,34,33,Ukraine,flag: Ukraine,False
+🇺🇬,U+1F1FA+1F1EC,flag_regional,False,Flags,34,33,Uganda,flag: Uganda,False
+🇺🇲,U+1F1FA+1F1F2,flag_regional,False,Flags,34,33,U.S. Outlying Islands,flag: U.S. Outlying Islands,False
+🇺🇳,U+1F1FA+1F1F3,flag_regional,False,Flags,34,33,United Nations,flag: United Nations,False
+🇺🇸,U+1F1FA+1F1F8,flag_regional,False,Flags,34,33,United States,flag: United States,False
+🇺🇾,U+1F1FA+1F1FE,flag_regional,False,Flags,34,33,Uruguay,flag: Uruguay,False
+🇺🇿,U+1F1FA+1F1FF,flag_regional,False,Flags,34,33,Uzbekistan,flag: Uzbekistan,False
+🇻🇦,U+1F1FB+1F1E6,flag_regional,False,Flags,34,33,Vatican City,flag: Vatican City,False
+🇻🇨,U+1F1FB+1F1E8,flag_regional,False,Flags,34,33,St. Vincent & Grenadines,flag: St. Vincent & Grenadines,False
+🇻🇪,U+1F1FB+1F1EA,flag_regional,False,Flags,34,33,Venezuela,flag: Venezuela,False
+🇻🇬,U+1F1FB+1F1EC,flag_regional,False,Flags,34,33,British Virgin Islands,flag: British Virgin Islands,False
+🇻🇮,U+1F1FB+1F1EE,flag_regional,False,Flags,34,33,U.S. Virgin Islands,flag: U.S. Virgin Islands,False
+🇻🇳,U+1F1FB+1F1F3,flag_regional,False,Flags,34,33,Vietnam,flag: Vietnam,False
+🇻🇺,U+1F1FB+1F1FA,flag_regional,False,Flags,34,33,Vanuatu,flag: Vanuatu,False
+🇼🇫,U+1F1FC+1F1EB,flag_regional,False,Flags,34,33,Wallis & Futuna,flag: Wallis & Futuna,False
+🇼🇸,U+1F1FC+1F1F8,flag_regional,False,Flags,34,33,Samoa,flag: Samoa,False
+🇽🇰,U+1F1FD+1F1F0,flag_regional,False,Flags,34,33,Kosovo,flag: Kosovo,False
+🇾🇪,U+1F1FE+1F1EA,flag_regional,False,Flags,34,33,Yemen,flag: Yemen,False
+🇾🇹,U+1F1FE+1F1F9,flag_regional,False,Flags,34,33,Mayotte,flag: Mayotte,False
+🇿🇦,U+1F1FF+1F1E6,flag_regional,False,Flags,34,33,South Africa,flag: South Africa,False
+🇿🇲,U+1F1FF+1F1F2,flag_regional,False,Flags,34,33,Zambia,flag: Zambia,False
+🇿🇼,U+1F1FF+1F1FC,flag_regional,False,Flags,34,33,Zimbabwe,flag: Zimbabwe,False
+🏴󠁧󠁢󠁥󠁮󠁧󠁿,U+1F3F4+E0067+E0062+E0065+E006E+E0067+E007F,flag_subdivision,False,Flags,34,33,England,flag: England,False
+🏴󠁧󠁢󠁳󠁣󠁴󠁿,U+1F3F4+E0067+E0062+E0073+E0063+E0074+E007F,flag_subdivision,False,Flags,34,33,Scotland,flag: Scotland,False
+🏴󠁧󠁢󠁷󠁬󠁳󠁿,U+1F3F4+E0067+E0062+E0077+E006C+E0073+E007F,flag_subdivision,False,Flags,34,33,Wales,flag: Wales,False

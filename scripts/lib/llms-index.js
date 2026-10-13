@@ -197,6 +197,7 @@ const ROOT_PAGE_SECTION = new Map(Object.entries({
   x: 'platforms',
   youtube: 'platforms',
   // Standalone tools and reference charts.
+  'ai-writing-footprint-checker': 'tools',
   'ascii-art-generator': 'tools',
   'ascii-converter': 'tools',
   calligraphy: 'tools',
@@ -204,9 +205,11 @@ const ROOT_PAGE_SECTION = new Map(Object.entries({
   'curved-text': 'tools',
   'fancy-letters': 'tools',
   'hiragana-chart': 'tools',
+  'image-to-ascii': 'tools',
   'kaomoji-dictionary': 'tools',
   'kaomoji-generator': 'tools',
   'katakana-chart': 'tools',
+  'letters-to-numbers': 'tools',
   // Legal / company. The set is `check-image-assets.py`'s own `legal/info`
   // rule, reused rather than restated.
   about: 'about',

@@ -645,10 +645,20 @@
     st.textContent = "@page { size: " + g.paper.w + "in " + g.paper.h + "in; margin: 0 } #pt-print-root { padding: 0 !important }";
     root.appendChild(st);
     document.body.classList.add("is-printing");
-    if (UTG.hideForPrint) UTG.hideForPrint();
-    setTimeout(() => {
-      window.print();
+    // Keep the print root itself visible (hiding every body child, root
+    // included, printed a blank page) and always put the page back: nothing
+    // used to restore it, so the fallback left the whole site display:none
+    // until reload, and its @page rule behind.
+    if (UTG.hideForPrint) UTG.hideForPrint(root);
+    const done = () => {
+      window.removeEventListener("afterprint", done);
       document.body.classList.remove("is-printing");
+      if (UTG.restorePrint) UTG.restorePrint();
+      if (st.parentNode) st.parentNode.removeChild(st);
+    };
+    window.addEventListener("afterprint", done);
+    setTimeout(() => {
+      try { window.print(); } catch (e) { done(); }
     }, 60);
     track(test ? "print_test" : "print");
   }
@@ -831,6 +841,14 @@
   let restoredOnce = false;
   function init() {
     if (!$("lb-preview")) return;
+    /* Ctrl+P without Download PDF: hide the site chrome and say which button
+       prints the sheet (printPrefs.js owns the note and its translations).
+       The button's own text is the page's label, so the note names what the
+       visitor can actually see. */
+    if (PP && PP.mountPrintNote) {
+      const pdfBtn = $("lb-pdf");
+      PP.mountPrintNote({ lang: LANG, button: pdfBtn && pdfBtn.textContent.trim() });
+    }
     if (PP && PP.values) state.sheet = "cut";
     const restored = restore();
     restoredOnce = restored;

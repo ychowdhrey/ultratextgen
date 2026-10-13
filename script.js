@@ -512,9 +512,20 @@ const decorations = window.UTG_DECORATIONS
     // only a real one may be saved from here. The store itself accepts other
     // types (a symbol, a collection) from the pages that own them.
     if (!name || !stylesRegistry[name] || !UTG.saved) return;
+    // Both grids are rebuilt below, which destroys the focused Save button and
+    // drops a keyboard user to <body>; put focus on its replacement. Compared
+    // by dataset, never by a selector built from the style name.
+    const focused = document.activeElement && document.activeElement.closest
+      ? document.activeElement.closest(".save-btn") : null;
+    const inSaved = !!(focused && focused.closest("#savedGrid"));
     UTG.saved.toggle({ type: "style", value: name, label: name });
     renderSavedStyles();
     renderResults();
+    if (focused) {
+      const again = Array.prototype.filter.call(document.querySelectorAll(".save-btn"), (b) => b.dataset.style === name);
+      const next = again.find((b) => !!b.closest("#savedGrid") === inSaved) || again[0];
+      if (next) next.focus({ preventScroll: true });
+    }
   }
 
   // Grapheme splitter (native) keeps a base char and its combining marks
@@ -660,10 +671,22 @@ const decorations = window.UTG_DECORATIONS
      RENDER SAFETY
      =================== */
   // Does the visitor's own device have a glyph for this character? Compares
-  // the canvas rasterization against a guaranteed-unassigned code point: an
-  // identical bitmap means the font fell back to the same missing-glyph box.
-  // Results are cached per character — the check runs once per style.
+  // the canvas rasterization against characters that are guaranteed to have no
+  // glyph: an identical bitmap means the font fell back to the same
+  // missing-glyph box. Results are cached per character — the check runs once
+  // per style.
+  //
+  // The references must be code points that really draw a box. The previous
+  // reference, U+E01ED, is VARIATION SELECTOR-254: a default-ignorable that
+  // draws nothing, so every box was read as "supported". Measured in headless
+  // Chromium 155 over about 67,000 code points, that probe flagged 4 of 47,696
+  // unsupported code points (Ubuntu 24.04 fonts); U+0378 alone flags 47,692, and
+  // U+0378 plus U+FFFF flag all of them, with no false alarms.
+  // Known limit: a platform that draws a different placeholder per character
+  // (GNU Unifont's hex-code boxes, Apple's Last Resort glyphs per block) cannot
+  // be caught by comparing bitmaps; there this probe still answers "supported".
   const glyphSupportCache = {};
+  const GLYPH_PROBE_REFERENCES = ["\u0378", "\uFFFF"]; // unassigned / noncharacter: no font maps them
   let glyphCtx = null;
   function deviceRendersGlyph(ch) {
     if (!ch) return true;
@@ -681,8 +704,8 @@ const decorations = window.UTG_DECORATIONS
         glyphCtx.fillText(c, 2, 18);
         return glyphCtx.getImageData(0, 0, 24, 24).data.join(",");
       };
-      const tofu = "\u{E01ED}"; // unassigned code point → always the .notdef box
-      supported = draw(ch) !== draw(tofu);
+      const bitmap = draw(ch);
+      supported = !GLYPH_PROBE_REFERENCES.some((ref) => draw(ref) === bitmap);
     } catch (err) {
       supported = true; // canvas unavailable → don't cry wolf
     }
@@ -691,14 +714,21 @@ const decorations = window.UTG_DECORATIONS
   }
 
   // A representative converted character for a style (astral-safe), used to
-  // probe device support for the style's Unicode block.
+  // probe device support for the style's Unicode block. A style's map is
+  // usually one string of astral characters, and `for…in` over a string yields
+  // UTF-16 code units, so the first "character" used to be a lone surrogate
+  // (U+D835) for 24 styles. Iterate code points instead.
   function sampleGlyph(style) {
     const maps = [style && style.upper, style && style.lower, style && style.nums];
     for (const map of maps) {
-      if (map) {
-        for (const key in map) {
-          if (map[key]) return [...String(map[key])][0];
-        }
+      if (!map) continue;
+      if (typeof map === "string") {
+        const first = [...map].find((c) => c.trim() !== "");
+        if (first) return first;
+        continue;
+      }
+      for (const key in map) {
+        if (map[key]) return [...String(map[key])][0];
       }
     }
     return "";
@@ -2034,12 +2064,14 @@ const decorations = window.UTG_DECORATIONS
     if (el.inputClearBtn && el.mainInput) {
       el.inputClearBtn.addEventListener("click", () => {
         el.mainInput.value = "";
-        syncInputUI();
-        trackGenerateUse();
+        // A real input event, so every listener on the box (the accent
+        // notice, the gothic live preview, the name checker mirror) sees the
+        // clear. Setting .value fires nothing, which left the accent notice
+        // on screen above an empty box.
+        el.mainInput.dispatchEvent(new Event("input", { bubbles: true }));
+        clearTimeout(urlSyncTimer);
         pushUrlState();
         el.mainInput.focus();
-        renderSavedStyles();
-        renderResults();
       });
     }
 

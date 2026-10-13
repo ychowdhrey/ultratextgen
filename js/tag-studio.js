@@ -355,13 +355,10 @@
         grid.appendChild(chip);
       }
       rareMount.appendChild(grid);
-
-      grid.addEventListener("click", function (e) {
-        const chip = e.target.closest(".ts-rare-chip");
-        if (!chip) return;
-        const val = chip.getAttribute("data-symbol");
-        if (val) copy(val, chip, val);
-      });
+      // No click listener: the chips carry .symbol-tile, which
+      // symbol-explorer.js already delegates at the document. A direct one
+      // here copied twice per click, and (with an image selection open)
+      // copied while also selecting.
     }
 
     function renderRare() {

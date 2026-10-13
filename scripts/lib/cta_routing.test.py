@@ -336,6 +336,43 @@ t("frozen, deliberate and locale printables cards are left alone", _printables_h
 t("the printables rewrite is idempotent and keeps the paste link", _printables_rewrite_is_idempotent)
 t("printables card copy: no em dash, short buttons, real destinations", _printables_copy_rules)
 
+
+# ── kaomoji mood presets ───────────────────────────────────────────────────
+
+def _kaomoji_moods_exist():
+    import re as _re
+    from lib.cta_routing import KAOMOJI_GENERATOR_MOODS
+    data = (REPO / "js" / "kaomoji" / "kaomojiData.js").read_text(encoding="utf-8")
+    block = data[data.index("MOODS"):]
+    block = block[: block.index("]")]
+    ids = set(_re.findall(r'id:\s*"([a-z-]+)"', block))
+    assert ids, "no mood ids parsed from kaomojiData.js"
+    for slug, mood in KAOMOJI_GENERATOR_MOODS.items():
+        assert mood in ids, f"{slug} -> {mood} is not a generator mood {sorted(ids)}"
+
+
+def _kaomoji_mood_href():
+    c = card_for("library/angry-kaomoji/index.html")
+    assert c["href"] == "/kaomoji-generator/?mood=angry", c["href"]
+    assert card_for("library/bear-kaomoji/index.html")["href"] == "/kaomoji-generator/"
+    assert card_for("es/library/angry-kaomoji/index.html") is None
+
+
+def _kaomoji_mood_refines_once():
+    bare = PAGE.replace("https://ultratextgen.com/", "/kaomoji-generator/")
+    dest = card_for("library/angry-kaomoji/index.html")
+    once = RC.rewrite(bare, dest)
+    assert once and 'href="/kaomoji-generator/?mood=angry"' in once, "bare generator link not refined"
+    assert "Open UltraTextGen" in once, "a refinement must change the href only"
+    assert RC.rewrite(once, dest) is None, "second run must be a no-op"
+    aimed = PAGE.replace("https://ultratextgen.com/", "/library/text-faces-kaomoji/")
+    assert RC.rewrite(aimed, dest) is None, "a deliberate card was reclaimed"
+
+
+t("every kaomoji mood preset is a real generator mood", _kaomoji_moods_exist)
+t("subject kaomoji pages get a mood preset, others the bare generator", _kaomoji_mood_href)
+t("the mood refinement changes the href only, once", _kaomoji_mood_refines_once)
+
 print("CTA routing — tests\n")
 for line in LINES:
     print(line)
