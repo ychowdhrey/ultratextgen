@@ -171,7 +171,7 @@ function assertShape(row, label) {
   eq(D.PINTEREST, 'pinterest', 'Pinterest is share_destination "pinterest"');
   eq(D.DOWNLOAD, 'download', 'a saved image is share_destination "download"');
   // Named now so the first platform button built cannot invent a spelling.
-  ['whatsapp', 'facebook', 'telegram', 'x', 'reddit', 'email'].forEach((v) => {
+  ['whatsapp', 'facebook', 'telegram', 'vk', 'x', 'reddit', 'email'].forEach((v) => {
     ok(Object.keys(D).some((k) => D[k] === v), `the vocabulary reserves "${v}"`);
   });
   ok(typeof UTG.pushShare === 'function', 'the one writer stays exported for reuse');
@@ -556,6 +556,45 @@ function rowButtons(UTG, opts) {
   const { UTG } = load({});
   eq(rowButtons(UTG).filter((b) => b._label() === 'Save to Pinterest').length, 0,
     'no Pinterest button without pinMedia — unchanged behaviour');
+}
+
+/* ---- buildPlatformShareRow: Telegram and VK (ru test, 2026-10-12) ------- */
+
+{
+  const { UTG, dataLayer } = load({ lang: 'ru' });
+  const row = UTG.buildPlatformShareRow({
+    url: 'https://ultratextgen.com/ru/shrift-dlya-telegram/',
+    title: 'Шрифт для Телеграм | UltraTextGen',
+    platforms: ['telegram', 'vk'],
+    labels: { telegram: 'Отправить в Telegram', vk: 'Поделиться во ВКонтакте' }
+  });
+  eq(row.children.length, 2, 'one link per requested platform');
+  const [tg, vk] = row.children;
+  eq(tg.textContent, 'Отправить в Telegram', 'the host-supplied label is used verbatim');
+  ok(tg.href.indexOf('https://t.me/share/url?url=https%3A%2F%2Fultratextgen.com%2Fru%2Fshrift-dlya-telegram%2F') === 0,
+    'the Telegram link carries the encoded page URL');
+  ok(tg.href.indexOf('UltraTextGen') === -1, 'the brand suffix is dropped from the shared title');
+  ok(vk.href.indexOf('https://vk.com/share.php?url=') === 0, 'the VK link is the share.php dialog');
+  eq(tg.target, '_blank', 'it opens in a new tab');
+  eq(tg.rel, 'noopener', 'with rel=noopener');
+  eq(dataLayer.length, 0, 'building the row pushes nothing');
+  await tg.click();
+  eq(dataLayer.length, 1, 'a click pushes exactly one row');
+  assertShape(dataLayer[0], 'telegram click');
+  eq(dataLayer[0].share_destination, 'telegram', 'recorded as telegram');
+  eq(dataLayer[0].share_method, 'telegram', 'with share_method telegram');
+  eq(dataLayer[0].share_surface, 'platform_row', 'on its own surface');
+  eq(dataLayer[0].share_format, 'link', 'and the format is a link');
+  eq(dataLayer[0].locale, 'ru', 'carrying the page locale');
+  await vk.click();
+  eq(dataLayer[1].share_destination, 'vk', 'VK is recorded as vk');
+}
+
+{
+  const { UTG } = load({});
+  eq(UTG.buildPlatformShareRow({ platforms: ['telegram', 'nonsense'] }).children.length, 1,
+    'an unknown platform is ignored, never rendered');
+  eq(UTG.buildPlatformShareRow({}).children.length, 0, 'no platforms, no links');
 }
 
 /* ---- the single-writer invariant --------------------------------------- */

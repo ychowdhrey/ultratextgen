@@ -116,14 +116,20 @@
     CLIPBOARD: "clipboard",   // the copy-link path, however it was labelled
     DOWNLOAD: "download",     // an image saved to the device: no share target
     PINTEREST: "pinterest",
-    // Defined, not yet used: no explicit platform share button exists on this
-    // site today (audited 2026-09-19 -- the only platform-named links in the
-    // tree are mailto: contact addresses). They are named here so the first
-    // one built takes the spelling this vocabulary already has, instead of
-    // inventing "Twitter", "tg" or "mail" at the call site.
+    // Defined, not yet used (except TELEGRAM and VK, below): no other explicit
+    // platform share button exists on this site (audited 2026-09-19 -- the
+    // only platform-named links in the tree are mailto: contact addresses).
+    // They are named here so the first one built takes the spelling this
+    // vocabulary already has, instead of inventing "Twitter", "tg" or "mail"
+    // at the call site.
     WHATSAPP: "whatsapp",
     FACEBOOK: "facebook",
+    // TELEGRAM and VK are in use since 2026-10-12, on the ru pages that opt in
+    // through data-share-platforms (buildPlatformShareRow). Like Pinterest they
+    // are recorded on intent: the dialog is composed off-site and nothing
+    // returns to the page.
     TELEGRAM: "telegram",
+    VK: "vk",
     X: "x",
     REDDIT: "reddit",
     EMAIL: "email"
@@ -140,7 +146,9 @@
     link_copy: SHARE_DESTINATIONS.CLIPBOARD,
     image: SHARE_DESTINATIONS.NATIVE,
     image_download: SHARE_DESTINATIONS.DOWNLOAD,
-    pinterest: SHARE_DESTINATIONS.PINTEREST
+    pinterest: SHARE_DESTINATIONS.PINTEREST,
+    telegram: SHARE_DESTINATIONS.TELEGRAM,
+    vk: SHARE_DESTINATIONS.VK
   };
 
   /* share_format (2026-09-30) says WHAT left the page: a link, a PNG card,
@@ -156,7 +164,10 @@
     image_download: "png",
     // A pin is composed off-site from whatever Pinterest picks up, so the
     // format is not ours to know: an honest null, not a guess.
-    pinterest: null
+    pinterest: null,
+    // A link: the one thing these two buttons hand to the share dialog.
+    telegram: "link",
+    vk: "link"
   };
 
   // Read lazily rather than cached at load: costs nothing on a click, and
@@ -903,6 +914,64 @@
     }
     return row;
   };
+
+  // A Telegram / VK share-link row for the pages that opt in with
+  // data-share-platforms="telegram vk" (a 28-day test on selected ru pages).
+  // The links open the platform's own share dialog in a new tab, so a row is
+  // recorded on click, on intent, exactly as the Pinterest button is: the
+  // dialog is composed off-site and nothing returns to this page.
+  //   opts: { url, title, text, surface, itemType, platforms: ["telegram","vk"],
+  //           labels: { telegram, vk }, className, buttonClass }
+  const PLATFORM_SHARE_URLS = {
+    telegram: (url, title) => "https://t.me/share/url?url=" + encodeURIComponent(url) +
+      "&text=" + encodeURIComponent(title),
+    vk: (url, title) => "https://vk.com/share.php?url=" + encodeURIComponent(url) +
+      "&title=" + encodeURIComponent(title)
+  };
+  UTG.buildPlatformShareRow = function (opts) {
+    const o = opts || {};
+    const L = o.labels || {};
+    const surface = o.surface || "platform_row";
+    const itemType = o.itemType || "page";
+    const canonical = document.querySelector('link[rel="canonical"]');
+    const urlOf = () => (typeof o.url === "function" ? o.url() : (o.url ||
+      (canonical && canonical.href) || (window.location.origin + window.location.pathname)));
+    // The brand suffix every <title> carries is spent characters in a chat.
+    const titleOf = () => String(typeof o.title === "function" ? o.title() : (o.title || document.title))
+      .replace(/\s*\|\s*[^|]*$/, "").trim() || document.title;
+    const row = document.createElement("div");
+    row.className = o.className || "result-share-row";
+    (o.platforms || []).filter((p) => PLATFORM_SHARE_URLS[p]).forEach((p) => {
+      const a = document.createElement("a");
+      a.className = o.buttonClass || "share-result-btn";
+      a.textContent = L[p] || (p === "vk" ? "Share on VK" : "Share on Telegram");
+      a.href = PLATFORM_SHARE_URLS[p](urlOf(), titleOf());
+      a.target = "_blank"; a.rel = "noopener";
+      a.addEventListener("click", () => {
+        a.href = PLATFORM_SHARE_URLS[p](urlOf(), titleOf());
+        pushShare(p, SHARE_DESTINATIONS[p.toUpperCase()], { surface: surface, itemType: itemType, format: "link" });
+      });
+      row.appendChild(a);
+    });
+    return row;
+  };
+
+  // Progressive enhancement: any <div data-share-platforms="telegram vk"
+  // data-label-telegram="..." data-label-vk="..."> on the page is filled in.
+  // share-core is a deferred script, so the markup is already parsed.
+  function mountPlatformRows() {
+    document.querySelectorAll("[data-share-platforms]").forEach((host) => {
+      if (host.dataset.shareMounted) return;
+      host.dataset.shareMounted = "1";
+      const platforms = String(host.getAttribute("data-share-platforms") || "").split(/[\s,]+/).filter(Boolean);
+      host.appendChild(UTG.buildPlatformShareRow({
+        platforms: platforms,
+        surface: host.getAttribute("data-share-surface") || "platform_row",
+        labels: { telegram: host.getAttribute("data-label-telegram"), vk: host.getAttribute("data-label-vk") }
+      }));
+    });
+  }
+  mountPlatformRows();
 
   // The ?style= value this page was opened with, normalized. Only ever
   // compared against ids the page itself produced — never rendered.
