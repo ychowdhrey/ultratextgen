@@ -1,0 +1,82 @@
+{
+ "cp": {
+  "n": 189,
+  "confusion": {
+   "B->B": 13,
+   "G->G": 97,
+   "H->H": 3,
+   "T->T": 76
+  }
+ },
+ "seq": {
+  "n": 85,
+  "confusion": {
+   "DEC->DEC": 21,
+   "FULL->FULL": 40,
+   "MISS->MISS": 6,
+   "PART->PART": 4,
+   "TEXT->TEXT": 14
+  }
+ },
+ "cp_binary_glyph_drawn": {
+  "tp": 97,
+  "fp": 0,
+  "fn": 0,
+  "tn": 92,
+  "precision": 1.0,
+  "recall": 1.0,
+  "false_positive_rate": 0.0,
+  "false_negative_rate": 0.0,
+  "fp_rate_ci95": [
+   -3.330381792246086e-18,
+   0.04008280329209862
+  ],
+  "fn_rate_ci95": [
+   0.0,
+   0.03809538920445529
+  ],
+  "false_positives": [],
+  "false_negatives": [],
+  "n_abstained_unknown": 0,
+  "n_manual_unsure": 0
+ },
+ "cp_unsupported_subtype": {
+  "B->B": 13,
+  "H->H": 3,
+  "T->T": 76
+ },
+ "seq_exact_class_agreement": {
+  "agree": 85,
+  "n": 85,
+  "rate": 1.0,
+  "ci95": [
+   0.9567589957857581,
+   1.0000000000000002
+  ]
+ },
+ "seq_FULL_decision": {
+  "tp": 40,
+  "fp": 0,
+  "fn": 0,
+  "tn": 45,
+  "false_positive_rate": 0.0,
+  "false_negative_rate": 0.0,
+  "fp_rate_ci95": [
+   0.0,
+   0.07865426194064076
+  ],
+  "fn_rate_ci95": [
+   -6.330876522670002e-18,
+   0.08762453925039232
+  ]
+ },
+ "strata_sizes": {
+  "S_UNS": 60,
+  "S_ODD": 12,
+  "S_SUP": 60,
+  "U_UTG": 57,
+  "Q_BAD": 45,
+  "Q_OK": 40
+ },
+ "low_confidence_labels": 0
+}
