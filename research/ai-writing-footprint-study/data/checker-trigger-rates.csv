@@ -1,0 +1,1079 @@
+grouping,group,rule_or_ANY_CATEGORY,n_texts,n_rule_applicable,n_triggered_noticeable_or_high,pct_triggered,ci95_lo,ci95_hi,n_any_level,pct_any_level
+kind of text,article | case,ANY_CATEGORY,377,377,244,64.7,59.8,69.4,,
+kind of text,article | case,RULE-COLON,377,377,0,0.0,0,1.0,268,71.1
+kind of text,article | case,RULE-CORPORATE,377,377,2,0.5,0.1,1.9,43,11.4
+kind of text,article | case,RULE-ELLIPSIS,377,377,0,0.0,0,1.0,39,10.3
+kind of text,article | case,RULE-EMDASH,377,377,62,16.4,13.0,20.5,126,33.4
+kind of text,article | case,RULE-EMDASH-PAIRS,377,377,32,8.5,6.1,11.7,85,22.5
+kind of text,article | case,RULE-INTENSIFIERS,377,377,1,0.3,0.0,1.5,80,21.2
+kind of text,article | case,RULE-LENGTH-RUNS,377,377,163,43.2,38.3,48.3,163,43.2
+kind of text,article | case,RULE-LISTS,377,377,0,0.0,0,1.0,2,0.5
+kind of text,article | case,RULE-OPENINGS,377,377,85,22.5,18.6,27.0,85,22.5
+kind of text,article | case,RULE-PARA-ENDINGS,377,296,0,0.0,0,1.3,4,1.4
+kind of text,article | case,RULE-PARA-UNIFORM,377,296,1,0.3,0.1,1.9,1,0.3
+kind of text,article | case,RULE-PARENS,377,377,0,0.0,0,1.0,154,40.8
+kind of text,article | case,RULE-PHRASES,377,377,0,0.0,0,1.0,30,8.0
+kind of text,article | case,RULE-POSITIVE,377,377,0,0.0,0,1.0,48,12.7
+kind of text,article | case,RULE-REPEATS,377,377,78,20.7,16.9,25.1,198,52.5
+kind of text,article | case,RULE-RHETORIC,377,377,3,0.8,0.3,2.3,92,24.4
+kind of text,article | case,RULE-SEMICOLON,377,377,0,0.0,0,1.0,80,21.2
+kind of text,article | case,RULE-SPECIFIC,377,370,0,0.0,0,1.0,0,0.0
+kind of text,article | case,RULE-STOCKWORDS,377,377,4,1.1,0.4,2.7,47,12.5
+kind of text,article | case,RULE-TRANSITIONS,377,377,1,0.3,0.0,1.5,64,17.0
+kind of text,article | case,RULE-VAGUE,377,377,0,0.0,0,1.0,29,7.7
+kind of text,article | case,RULE-VARIATION,377,377,1,0.3,0.0,1.5,1,0.3
+kind of text,article | control,ANY_CATEGORY,403,403,208,51.6,46.7,56.5,,
+kind of text,article | control,RULE-COLON,403,403,0,0.0,0,0.9,252,62.5
+kind of text,article | control,RULE-CORPORATE,403,403,1,0.2,0.0,1.4,22,5.5
+kind of text,article | control,RULE-ELLIPSIS,403,403,0,0.0,0,0.9,36,8.9
+kind of text,article | control,RULE-EMDASH,403,403,39,9.7,7.2,13.0,108,26.8
+kind of text,article | control,RULE-EMDASH-PAIRS,403,403,19,4.7,3.0,7.2,79,19.6
+kind of text,article | control,RULE-INTENSIFIERS,403,403,0,0.0,0,0.9,75,18.6
+kind of text,article | control,RULE-LENGTH-RUNS,403,403,125,31.0,26.7,35.7,125,31.0
+kind of text,article | control,RULE-LISTS,403,403,0,0.0,0,0.9,1,0.2
+kind of text,article | control,RULE-OPENINGS,403,403,48,11.9,9.1,15.4,48,11.9
+kind of text,article | control,RULE-PARA-ENDINGS,403,348,0,0.0,0,1.1,1,0.3
+kind of text,article | control,RULE-PARA-UNIFORM,403,348,0,0.0,0,1.1,0,0.0
+kind of text,article | control,RULE-PARENS,403,403,0,0.0,0,0.9,174,43.2
+kind of text,article | control,RULE-PHRASES,403,403,0,0.0,0,0.9,20,5.0
+kind of text,article | control,RULE-POSITIVE,403,403,0,0.0,0,0.9,29,7.2
+kind of text,article | control,RULE-REPEATS,403,403,74,18.4,14.9,22.4,235,58.3
+kind of text,article | control,RULE-RHETORIC,403,403,1,0.2,0.0,1.4,70,17.4
+kind of text,article | control,RULE-SEMICOLON,403,403,0,0.0,0,0.9,67,16.6
+kind of text,article | control,RULE-SPECIFIC,403,403,0,0.0,0,0.9,0,0.0
+kind of text,article | control,RULE-STOCKWORDS,403,403,1,0.2,0.0,1.4,19,4.7
+kind of text,article | control,RULE-TRANSITIONS,403,403,2,0.5,0.1,1.8,101,25.1
+kind of text,article | control,RULE-VAGUE,403,403,0,0.0,0,0.9,10,2.5
+kind of text,article | control,RULE-VARIATION,403,403,2,0.5,0.1,1.8,2,0.5
+kind of text,comment | case,ANY_CATEGORY,287,287,30,10.5,7.4,14.5,,
+kind of text,comment | case,RULE-COLON,287,88,0,0.0,0.0,4.2,14,15.9
+kind of text,comment | case,RULE-CORPORATE,287,88,0,0.0,0.0,4.2,0,0.0
+kind of text,comment | case,RULE-ELLIPSIS,287,88,0,0.0,0.0,4.2,0,0.0
+kind of text,comment | case,RULE-EMDASH,287,88,3,3.4,1.2,9.5,3,3.4
+kind of text,comment | case,RULE-EMDASH-PAIRS,287,88,0,0.0,0.0,4.2,8,9.1
+kind of text,comment | case,RULE-INTENSIFIERS,287,88,0,0.0,0.0,4.2,1,1.1
+kind of text,comment | case,RULE-LENGTH-RUNS,287,85,4,4.7,1.8,11.5,4,4.7
+kind of text,comment | case,RULE-LISTS,287,287,0,0.0,0,1.3,3,1.0
+kind of text,comment | case,RULE-OPENINGS,287,85,1,1.2,0.2,6.4,1,1.2
+kind of text,comment | case,RULE-PARA-ENDINGS,287,74,0,0.0,0,4.9,0,0.0
+kind of text,comment | case,RULE-PARA-UNIFORM,287,74,0,0.0,0,4.9,0,0.0
+kind of text,comment | case,RULE-PARENS,287,88,0,0.0,0.0,4.2,3,3.4
+kind of text,comment | case,RULE-PHRASES,287,287,0,0.0,0,1.3,3,1.0
+kind of text,comment | case,RULE-POSITIVE,287,88,1,1.1,0.2,6.2,1,1.1
+kind of text,comment | case,RULE-REPEATS,287,88,0,0.0,0.0,4.2,5,5.7
+kind of text,comment | case,RULE-RHETORIC,287,287,0,0.0,0,1.3,13,4.5
+kind of text,comment | case,RULE-SEMICOLON,287,88,0,0.0,0.0,4.2,1,1.1
+kind of text,comment | case,RULE-SPECIFIC,287,52,4,7.7,3.0,18.2,4,7.7
+kind of text,comment | case,RULE-STOCKWORDS,287,88,0,0.0,0.0,4.2,1,1.1
+kind of text,comment | case,RULE-TRANSITIONS,287,287,0,0.0,0,1.3,14,4.9
+kind of text,comment | case,RULE-VAGUE,287,88,0,0.0,0.0,4.2,0,0.0
+kind of text,comment | case,RULE-VARIATION,287,85,19,22.4,14.8,32.3,19,22.4
+kind of text,comment | control,ANY_CATEGORY,564,564,16,2.8,1.8,4.6,,
+kind of text,comment | control,RULE-COLON,564,108,0,0.0,0.0,3.4,1,0.9
+kind of text,comment | control,RULE-CORPORATE,564,108,0,0.0,0.0,3.4,0,0.0
+kind of text,comment | control,RULE-ELLIPSIS,564,108,0,0.0,0.0,3.4,0,0.0
+kind of text,comment | control,RULE-EMDASH,564,108,1,0.9,0.2,5.1,1,0.9
+kind of text,comment | control,RULE-EMDASH-PAIRS,564,108,0,0.0,0.0,3.4,1,0.9
+kind of text,comment | control,RULE-INTENSIFIERS,564,108,3,2.8,0.9,7.9,3,2.8
+kind of text,comment | control,RULE-LENGTH-RUNS,564,94,2,2.1,0.6,7.4,2,2.1
+kind of text,comment | control,RULE-LISTS,564,564,0,0.0,0,0.7,0,0.0
+kind of text,comment | control,RULE-OPENINGS,564,94,0,0.0,0.0,3.9,0,0.0
+kind of text,comment | control,RULE-PARA-ENDINGS,564,70,0,0.0,0,5.2,1,1.4
+kind of text,comment | control,RULE-PARA-UNIFORM,564,70,0,0.0,0,5.2,0,0.0
+kind of text,comment | control,RULE-PARENS,564,108,0,0.0,0.0,3.4,2,1.9
+kind of text,comment | control,RULE-PHRASES,564,564,0,0.0,0,0.7,1,0.2
+kind of text,comment | control,RULE-POSITIVE,564,108,0,0.0,0.0,3.4,0,0.0
+kind of text,comment | control,RULE-REPEATS,564,108,0,0.0,0.0,3.4,2,1.9
+kind of text,comment | control,RULE-RHETORIC,564,564,0,0.0,0,0.7,9,1.6
+kind of text,comment | control,RULE-SEMICOLON,564,108,0,0.0,0.0,3.4,1,0.9
+kind of text,comment | control,RULE-SPECIFIC,564,45,4,8.9,3.5,20.7,4,8.9
+kind of text,comment | control,RULE-STOCKWORDS,564,108,0,0.0,0.0,3.4,0,0.0
+kind of text,comment | control,RULE-TRANSITIONS,564,564,0,0.0,0,0.7,6,1.1
+kind of text,comment | control,RULE-VAGUE,564,108,0,0.0,0.0,3.4,0,0.0
+kind of text,comment | control,RULE-VARIATION,564,94,8,8.5,4.4,15.9,8,8.5
+kind of text and length band (words),article | case | 1200+,ANY_CATEGORY,230,230,175,76.1,70.2,81.1,,
+kind of text and length band (words),article | case | 1200+,RULE-COLON,230,230,0,0.0,0,1.6,199,86.5
+kind of text and length band (words),article | case | 1200+,RULE-CORPORATE,230,230,0,0.0,0,1.6,35,15.2
+kind of text and length band (words),article | case | 1200+,RULE-ELLIPSIS,230,230,0,0.0,0,1.6,32,13.9
+kind of text and length band (words),article | case | 1200+,RULE-EMDASH,230,230,39,17.0,12.7,22.3,97,42.2
+kind of text and length band (words),article | case | 1200+,RULE-EMDASH-PAIRS,230,230,28,12.2,8.6,17.0,64,27.8
+kind of text and length band (words),article | case | 1200+,RULE-INTENSIFIERS,230,230,0,0.0,0,1.6,72,31.3
+kind of text and length band (words),article | case | 1200+,RULE-LENGTH-RUNS,230,230,122,53.0,46.6,59.4,122,53.0
+kind of text and length band (words),article | case | 1200+,RULE-LISTS,230,230,0,0.0,0,1.6,2,0.9
+kind of text and length band (words),article | case | 1200+,RULE-OPENINGS,230,230,68,29.6,24.0,35.8,68,29.6
+kind of text and length band (words),article | case | 1200+,RULE-PARA-ENDINGS,230,186,0,0.0,0,2.0,4,2.2
+kind of text and length band (words),article | case | 1200+,RULE-PARA-UNIFORM,230,186,0,0.0,0,2.0,0,0.0
+kind of text and length band (words),article | case | 1200+,RULE-PARENS,230,230,0,0.0,0,1.6,126,54.8
+kind of text and length band (words),article | case | 1200+,RULE-PHRASES,230,230,0,0.0,0,1.6,23,10.0
+kind of text and length band (words),article | case | 1200+,RULE-POSITIVE,230,230,0,0.0,0,1.6,40,17.4
+kind of text and length band (words),article | case | 1200+,RULE-REPEATS,230,230,73,31.7,26.1,38.0,154,67.0
+kind of text and length band (words),article | case | 1200+,RULE-RHETORIC,230,230,2,0.9,0.2,3.1,71,30.9
+kind of text and length band (words),article | case | 1200+,RULE-SEMICOLON,230,230,0,0.0,0,1.6,73,31.7
+kind of text and length band (words),article | case | 1200+,RULE-SPECIFIC,230,230,0,0.0,0,1.6,0,0.0
+kind of text and length band (words),article | case | 1200+,RULE-STOCKWORDS,230,230,1,0.4,0.1,2.4,38,16.5
+kind of text and length band (words),article | case | 1200+,RULE-TRANSITIONS,230,230,1,0.4,0.1,2.4,46,20.0
+kind of text and length band (words),article | case | 1200+,RULE-VAGUE,230,230,0,0.0,0,1.6,28,12.2
+kind of text and length band (words),article | case | 1200+,RULE-VARIATION,230,230,1,0.4,0.1,2.4,1,0.4
+kind of text and length band (words),article | case | 150-399,ANY_CATEGORY,26,26,8,30.8,16.5,50.0,,
+kind of text and length band (words),article | case | 150-399,RULE-COLON,26,26,0,0.0,0,12.9,2,7.7
+kind of text and length band (words),article | case | 150-399,RULE-CORPORATE,26,26,2,7.7,2.1,24.1,2,7.7
+kind of text and length band (words),article | case | 150-399,RULE-ELLIPSIS,26,26,0,0.0,0,12.9,0,0.0
+kind of text and length band (words),article | case | 150-399,RULE-EMDASH,26,26,1,3.8,0.7,18.9,1,3.8
+kind of text and length band (words),article | case | 150-399,RULE-EMDASH-PAIRS,26,26,0,0.0,0,12.9,0,0.0
+kind of text and length band (words),article | case | 150-399,RULE-INTENSIFIERS,26,26,1,3.8,0.7,18.9,1,3.8
+kind of text and length band (words),article | case | 150-399,RULE-LENGTH-RUNS,26,26,2,7.7,2.1,24.1,2,7.7
+kind of text and length band (words),article | case | 150-399,RULE-LISTS,26,26,0,0.0,0,12.9,0,0.0
+kind of text and length band (words),article | case | 150-399,RULE-OPENINGS,26,26,2,7.7,2.1,24.1,2,7.7
+kind of text and length band (words),article | case | 150-399,RULE-PARA-ENDINGS,26,18,0,0.0,0,17.6,0,0.0
+kind of text and length band (words),article | case | 150-399,RULE-PARA-UNIFORM,26,18,1,5.6,1.0,25.8,1,5.6
+kind of text and length band (words),article | case | 150-399,RULE-PARENS,26,26,0,0.0,0,12.9,1,3.8
+kind of text and length band (words),article | case | 150-399,RULE-PHRASES,26,26,0,0.0,0,12.9,0,0.0
+kind of text and length band (words),article | case | 150-399,RULE-POSITIVE,26,26,0,0.0,0,12.9,1,3.8
+kind of text and length band (words),article | case | 150-399,RULE-REPEATS,26,26,0,0.0,0,12.9,2,7.7
+kind of text and length band (words),article | case | 150-399,RULE-RHETORIC,26,26,1,3.8,0.7,18.9,3,11.5
+kind of text and length band (words),article | case | 150-399,RULE-SEMICOLON,26,26,0,0.0,0,12.9,0,0.0
+kind of text and length band (words),article | case | 150-399,RULE-SPECIFIC,26,19,0,0.0,0,16.8,0,0.0
+kind of text and length band (words),article | case | 150-399,RULE-STOCKWORDS,26,26,1,3.8,0.7,18.9,1,3.8
+kind of text and length band (words),article | case | 150-399,RULE-TRANSITIONS,26,26,0,0.0,0,12.9,1,3.8
+kind of text and length band (words),article | case | 150-399,RULE-VAGUE,26,26,0,0.0,0,12.9,0,0.0
+kind of text and length band (words),article | case | 150-399,RULE-VARIATION,26,26,0,0.0,0,12.9,0,0.0
+kind of text and length band (words),article | case | 400-1199,ANY_CATEGORY,121,121,61,50.4,41.6,59.2,,
+kind of text and length band (words),article | case | 400-1199,RULE-COLON,121,121,0,0.0,0,3.1,67,55.4
+kind of text and length band (words),article | case | 400-1199,RULE-CORPORATE,121,121,0,0.0,0,3.1,6,5.0
+kind of text and length band (words),article | case | 400-1199,RULE-ELLIPSIS,121,121,0,0.0,0,3.1,7,5.8
+kind of text and length band (words),article | case | 400-1199,RULE-EMDASH,121,121,22,18.2,12.3,26.0,28,23.1
+kind of text and length band (words),article | case | 400-1199,RULE-EMDASH-PAIRS,121,121,4,3.3,1.3,8.2,21,17.4
+kind of text and length band (words),article | case | 400-1199,RULE-INTENSIFIERS,121,121,0,0.0,0,3.1,7,5.8
+kind of text and length band (words),article | case | 400-1199,RULE-LENGTH-RUNS,121,121,39,32.2,24.6,41.0,39,32.2
+kind of text and length band (words),article | case | 400-1199,RULE-LISTS,121,121,0,0.0,0,3.1,0,0.0
+kind of text and length band (words),article | case | 400-1199,RULE-OPENINGS,121,121,15,12.4,7.7,19.4,15,12.4
+kind of text and length band (words),article | case | 400-1199,RULE-PARA-ENDINGS,121,92,0,0.0,0,4.0,0,0.0
+kind of text and length band (words),article | case | 400-1199,RULE-PARA-UNIFORM,121,92,0,0.0,0,4.0,0,0.0
+kind of text and length band (words),article | case | 400-1199,RULE-PARENS,121,121,0,0.0,0,3.1,27,22.3
+kind of text and length band (words),article | case | 400-1199,RULE-PHRASES,121,121,0,0.0,0,3.1,7,5.8
+kind of text and length band (words),article | case | 400-1199,RULE-POSITIVE,121,121,0,0.0,0,3.1,7,5.8
+kind of text and length band (words),article | case | 400-1199,RULE-REPEATS,121,121,5,4.1,1.8,9.3,42,34.7
+kind of text and length band (words),article | case | 400-1199,RULE-RHETORIC,121,121,0,0.0,0,3.1,18,14.9
+kind of text and length band (words),article | case | 400-1199,RULE-SEMICOLON,121,121,0,0.0,0,3.1,7,5.8
+kind of text and length band (words),article | case | 400-1199,RULE-SPECIFIC,121,121,0,0.0,0,3.1,0,0.0
+kind of text and length band (words),article | case | 400-1199,RULE-STOCKWORDS,121,121,2,1.7,0.5,5.8,8,6.6
+kind of text and length band (words),article | case | 400-1199,RULE-TRANSITIONS,121,121,0,0.0,0,3.1,17,14.0
+kind of text and length band (words),article | case | 400-1199,RULE-VAGUE,121,121,0,0.0,0,3.1,1,0.8
+kind of text and length band (words),article | case | 400-1199,RULE-VARIATION,121,121,0,0.0,0,3.1,0,0.0
+kind of text and length band (words),article | control | 1200+,ANY_CATEGORY,219,219,141,64.4,57.8,70.4,,
+kind of text and length band (words),article | control | 1200+,RULE-COLON,219,219,0,0.0,0,1.7,180,82.2
+kind of text and length band (words),article | control | 1200+,RULE-CORPORATE,219,219,0,0.0,0,1.7,15,6.8
+kind of text and length band (words),article | control | 1200+,RULE-ELLIPSIS,219,219,0,0.0,0,1.7,29,13.2
+kind of text and length band (words),article | control | 1200+,RULE-EMDASH,219,219,23,10.5,7.1,15.3,75,34.2
+kind of text and length band (words),article | control | 1200+,RULE-EMDASH-PAIRS,219,219,16,7.3,4.5,11.5,50,22.8
+kind of text and length band (words),article | control | 1200+,RULE-INTENSIFIERS,219,219,0,0.0,0,1.7,67,30.6
+kind of text and length band (words),article | control | 1200+,RULE-LENGTH-RUNS,219,219,85,38.8,32.6,45.4,85,38.8
+kind of text and length band (words),article | control | 1200+,RULE-LISTS,219,219,0,0.0,0,1.7,0,0.0
+kind of text and length band (words),article | control | 1200+,RULE-OPENINGS,219,219,37,16.9,12.5,22.4,37,16.9
+kind of text and length band (words),article | control | 1200+,RULE-PARA-ENDINGS,219,188,0,0.0,0.0,2.0,1,0.5
+kind of text and length band (words),article | control | 1200+,RULE-PARA-UNIFORM,219,188,0,0.0,0.0,2.0,0,0.0
+kind of text and length band (words),article | control | 1200+,RULE-PARENS,219,219,0,0.0,0,1.7,127,58.0
+kind of text and length band (words),article | control | 1200+,RULE-PHRASES,219,219,0,0.0,0,1.7,18,8.2
+kind of text and length band (words),article | control | 1200+,RULE-POSITIVE,219,219,0,0.0,0,1.7,28,12.8
+kind of text and length band (words),article | control | 1200+,RULE-REPEATS,219,219,64,29.2,23.6,35.6,155,70.8
+kind of text and length band (words),article | control | 1200+,RULE-RHETORIC,219,219,0,0.0,0,1.7,54,24.7
+kind of text and length band (words),article | control | 1200+,RULE-SEMICOLON,219,219,0,0.0,0,1.7,54,24.7
+kind of text and length band (words),article | control | 1200+,RULE-SPECIFIC,219,219,0,0.0,0,1.7,0,0.0
+kind of text and length band (words),article | control | 1200+,RULE-STOCKWORDS,219,219,1,0.5,0.1,2.5,18,8.2
+kind of text and length band (words),article | control | 1200+,RULE-TRANSITIONS,219,219,2,0.9,0.3,3.3,71,32.4
+kind of text and length band (words),article | control | 1200+,RULE-VAGUE,219,219,0,0.0,0,1.7,8,3.7
+kind of text and length band (words),article | control | 1200+,RULE-VARIATION,219,219,0,0.0,0,1.7,0,0.0
+kind of text and length band (words),article | control | 150-399,ANY_CATEGORY,7,7,2,28.6,8.2,64.1,,
+kind of text and length band (words),article | control | 150-399,RULE-COLON,7,7,0,0.0,0,35.4,0,0.0
+kind of text and length band (words),article | control | 150-399,RULE-CORPORATE,7,7,0,0.0,0,35.4,0,0.0
+kind of text and length band (words),article | control | 150-399,RULE-ELLIPSIS,7,7,0,0.0,0,35.4,0,0.0
+kind of text and length band (words),article | control | 150-399,RULE-EMDASH,7,7,0,0.0,0,35.4,0,0.0
+kind of text and length band (words),article | control | 150-399,RULE-EMDASH-PAIRS,7,7,0,0.0,0,35.4,0,0.0
+kind of text and length band (words),article | control | 150-399,RULE-INTENSIFIERS,7,7,0,0.0,0,35.4,0,0.0
+kind of text and length band (words),article | control | 150-399,RULE-LENGTH-RUNS,7,7,1,14.3,2.6,51.3,1,14.3
+kind of text and length band (words),article | control | 150-399,RULE-LISTS,7,7,0,0.0,0,35.4,0,0.0
+kind of text and length band (words),article | control | 150-399,RULE-OPENINGS,7,7,0,0.0,0,35.4,0,0.0
+kind of text and length band (words),article | control | 150-399,RULE-PARA-ENDINGS,7,5,0,0.0,0,43.4,0,0.0
+kind of text and length band (words),article | control | 150-399,RULE-PARA-UNIFORM,7,5,0,0.0,0,43.4,0,0.0
+kind of text and length band (words),article | control | 150-399,RULE-PARENS,7,7,0,0.0,0,35.4,0,0.0
+kind of text and length band (words),article | control | 150-399,RULE-PHRASES,7,7,0,0.0,0,35.4,0,0.0
+kind of text and length band (words),article | control | 150-399,RULE-POSITIVE,7,7,0,0.0,0,35.4,0,0.0
+kind of text and length band (words),article | control | 150-399,RULE-REPEATS,7,7,0,0.0,0,35.4,0,0.0
+kind of text and length band (words),article | control | 150-399,RULE-RHETORIC,7,7,0,0.0,0,35.4,0,0.0
+kind of text and length band (words),article | control | 150-399,RULE-SEMICOLON,7,7,0,0.0,0,35.4,0,0.0
+kind of text and length band (words),article | control | 150-399,RULE-SPECIFIC,7,7,0,0.0,0,35.4,0,0.0
+kind of text and length band (words),article | control | 150-399,RULE-STOCKWORDS,7,7,0,0.0,0,35.4,0,0.0
+kind of text and length band (words),article | control | 150-399,RULE-TRANSITIONS,7,7,0,0.0,0,35.4,0,0.0
+kind of text and length band (words),article | control | 150-399,RULE-VAGUE,7,7,0,0.0,0,35.4,0,0.0
+kind of text and length band (words),article | control | 150-399,RULE-VARIATION,7,7,1,14.3,2.6,51.3,1,14.3
+kind of text and length band (words),article | control | 400-1199,ANY_CATEGORY,177,177,65,36.7,30.0,44.0,,
+kind of text and length band (words),article | control | 400-1199,RULE-COLON,177,177,0,0.0,0,2.1,72,40.7
+kind of text and length band (words),article | control | 400-1199,RULE-CORPORATE,177,177,1,0.6,0.1,3.1,7,4.0
+kind of text and length band (words),article | control | 400-1199,RULE-ELLIPSIS,177,177,0,0.0,0,2.1,7,4.0
+kind of text and length band (words),article | control | 400-1199,RULE-EMDASH,177,177,16,9.0,5.6,14.2,33,18.6
+kind of text and length band (words),article | control | 400-1199,RULE-EMDASH-PAIRS,177,177,3,1.7,0.6,4.9,29,16.4
+kind of text and length band (words),article | control | 400-1199,RULE-INTENSIFIERS,177,177,0,0.0,0,2.1,8,4.5
+kind of text and length band (words),article | control | 400-1199,RULE-LENGTH-RUNS,177,177,39,22.0,16.6,28.7,39,22.0
+kind of text and length band (words),article | control | 400-1199,RULE-LISTS,177,177,0,0.0,0,2.1,1,0.6
+kind of text and length band (words),article | control | 400-1199,RULE-OPENINGS,177,177,11,6.2,3.5,10.8,11,6.2
+kind of text and length band (words),article | control | 400-1199,RULE-PARA-ENDINGS,177,155,0,0.0,0,2.4,0,0.0
+kind of text and length band (words),article | control | 400-1199,RULE-PARA-UNIFORM,177,155,0,0.0,0,2.4,0,0.0
+kind of text and length band (words),article | control | 400-1199,RULE-PARENS,177,177,0,0.0,0,2.1,47,26.6
+kind of text and length band (words),article | control | 400-1199,RULE-PHRASES,177,177,0,0.0,0,2.1,2,1.1
+kind of text and length band (words),article | control | 400-1199,RULE-POSITIVE,177,177,0,0.0,0,2.1,1,0.6
+kind of text and length band (words),article | control | 400-1199,RULE-REPEATS,177,177,10,5.6,3.1,10.1,80,45.2
+kind of text and length band (words),article | control | 400-1199,RULE-RHETORIC,177,177,1,0.6,0.1,3.1,16,9.0
+kind of text and length band (words),article | control | 400-1199,RULE-SEMICOLON,177,177,0,0.0,0,2.1,13,7.3
+kind of text and length band (words),article | control | 400-1199,RULE-SPECIFIC,177,177,0,0.0,0,2.1,0,0.0
+kind of text and length band (words),article | control | 400-1199,RULE-STOCKWORDS,177,177,0,0.0,0,2.1,1,0.6
+kind of text and length band (words),article | control | 400-1199,RULE-TRANSITIONS,177,177,0,0.0,0,2.1,30,16.9
+kind of text and length band (words),article | control | 400-1199,RULE-VAGUE,177,177,0,0.0,0,2.1,2,1.1
+kind of text and length band (words),article | control | 400-1199,RULE-VARIATION,177,177,1,0.6,0.1,3.1,1,0.6
+kind of text and length band (words),comment | case | 150-399,ANY_CATEGORY,79,79,29,36.7,26.9,47.7,,
+kind of text and length band (words),comment | case | 150-399,RULE-COLON,79,79,0,0.0,0,4.6,11,13.9
+kind of text and length band (words),comment | case | 150-399,RULE-CORPORATE,79,79,0,0.0,0,4.6,0,0.0
+kind of text and length band (words),comment | case | 150-399,RULE-ELLIPSIS,79,79,0,0.0,0,4.6,0,0.0
+kind of text and length band (words),comment | case | 150-399,RULE-EMDASH,79,79,3,3.8,1.3,10.6,3,3.8
+kind of text and length band (words),comment | case | 150-399,RULE-EMDASH-PAIRS,79,79,0,0.0,0,4.6,6,7.6
+kind of text and length band (words),comment | case | 150-399,RULE-INTENSIFIERS,79,79,0,0.0,0,4.6,0,0.0
+kind of text and length band (words),comment | case | 150-399,RULE-LENGTH-RUNS,79,76,4,5.3,2.1,12.8,4,5.3
+kind of text and length band (words),comment | case | 150-399,RULE-LISTS,79,79,0,0.0,0,4.6,2,2.5
+kind of text and length band (words),comment | case | 150-399,RULE-OPENINGS,79,76,1,1.3,0.2,7.1,1,1.3
+kind of text and length band (words),comment | case | 150-399,RULE-PARA-ENDINGS,79,65,0,0.0,0,5.6,0,0.0
+kind of text and length band (words),comment | case | 150-399,RULE-PARA-UNIFORM,79,65,0,0.0,0,5.6,0,0.0
+kind of text and length band (words),comment | case | 150-399,RULE-PARENS,79,79,0,0.0,0,4.6,3,3.8
+kind of text and length band (words),comment | case | 150-399,RULE-PHRASES,79,79,0,0.0,0,4.6,2,2.5
+kind of text and length band (words),comment | case | 150-399,RULE-POSITIVE,79,79,1,1.3,0.2,6.8,1,1.3
+kind of text and length band (words),comment | case | 150-399,RULE-REPEATS,79,79,0,0.0,0,4.6,3,3.8
+kind of text and length band (words),comment | case | 150-399,RULE-RHETORIC,79,79,0,0.0,0,4.6,3,3.8
+kind of text and length band (words),comment | case | 150-399,RULE-SEMICOLON,79,79,0,0.0,0,4.6,0,0.0
+kind of text and length band (words),comment | case | 150-399,RULE-SPECIFIC,79,43,3,7.0,2.4,18.6,3,7.0
+kind of text and length band (words),comment | case | 150-399,RULE-STOCKWORDS,79,79,0,0.0,0,4.6,0,0.0
+kind of text and length band (words),comment | case | 150-399,RULE-TRANSITIONS,79,79,0,0.0,0,4.6,7,8.9
+kind of text and length band (words),comment | case | 150-399,RULE-VAGUE,79,79,0,0.0,0,4.6,0,0.0
+kind of text and length band (words),comment | case | 150-399,RULE-VARIATION,79,76,19,25.0,16.6,35.8,19,25.0
+kind of text and length band (words),comment | case | 400-1199,ANY_CATEGORY,9,9,1,11.1,2.0,43.5,,
+kind of text and length band (words),comment | case | 400-1199,RULE-COLON,9,9,0,0.0,0,29.9,3,33.3
+kind of text and length band (words),comment | case | 400-1199,RULE-CORPORATE,9,9,0,0.0,0,29.9,0,0.0
+kind of text and length band (words),comment | case | 400-1199,RULE-ELLIPSIS,9,9,0,0.0,0,29.9,0,0.0
+kind of text and length band (words),comment | case | 400-1199,RULE-EMDASH,9,9,0,0.0,0,29.9,0,0.0
+kind of text and length band (words),comment | case | 400-1199,RULE-EMDASH-PAIRS,9,9,0,0.0,0,29.9,2,22.2
+kind of text and length band (words),comment | case | 400-1199,RULE-INTENSIFIERS,9,9,0,0.0,0,29.9,1,11.1
+kind of text and length band (words),comment | case | 400-1199,RULE-LENGTH-RUNS,9,9,0,0.0,0,29.9,0,0.0
+kind of text and length band (words),comment | case | 400-1199,RULE-LISTS,9,9,0,0.0,0,29.9,1,11.1
+kind of text and length band (words),comment | case | 400-1199,RULE-OPENINGS,9,9,0,0.0,0,29.9,0,0.0
+kind of text and length band (words),comment | case | 400-1199,RULE-PARA-ENDINGS,9,9,0,0.0,0,29.9,0,0.0
+kind of text and length band (words),comment | case | 400-1199,RULE-PARA-UNIFORM,9,9,0,0.0,0,29.9,0,0.0
+kind of text and length band (words),comment | case | 400-1199,RULE-PARENS,9,9,0,0.0,0,29.9,0,0.0
+kind of text and length band (words),comment | case | 400-1199,RULE-PHRASES,9,9,0,0.0,0,29.9,0,0.0
+kind of text and length band (words),comment | case | 400-1199,RULE-POSITIVE,9,9,0,0.0,0,29.9,0,0.0
+kind of text and length band (words),comment | case | 400-1199,RULE-REPEATS,9,9,0,0.0,0,29.9,2,22.2
+kind of text and length band (words),comment | case | 400-1199,RULE-RHETORIC,9,9,0,0.0,0,29.9,2,22.2
+kind of text and length band (words),comment | case | 400-1199,RULE-SEMICOLON,9,9,0,0.0,0,29.9,1,11.1
+kind of text and length band (words),comment | case | 400-1199,RULE-SPECIFIC,9,9,1,11.1,2.0,43.5,1,11.1
+kind of text and length band (words),comment | case | 400-1199,RULE-STOCKWORDS,9,9,0,0.0,0,29.9,1,11.1
+kind of text and length band (words),comment | case | 400-1199,RULE-TRANSITIONS,9,9,0,0.0,0,29.9,2,22.2
+kind of text and length band (words),comment | case | 400-1199,RULE-VAGUE,9,9,0,0.0,0,29.9,0,0.0
+kind of text and length band (words),comment | case | 400-1199,RULE-VARIATION,9,9,0,0.0,0,29.9,0,0.0
+kind of text and length band (words),comment | case | 80-149,ANY_CATEGORY,79,79,0,0.0,0,4.6,,
+kind of text and length band (words),comment | case | 80-149,RULE-LISTS,79,79,0,0.0,0,4.6,0,0.0
+kind of text and length band (words),comment | case | 80-149,RULE-PHRASES,79,79,0,0.0,0,4.6,0,0.0
+kind of text and length band (words),comment | case | 80-149,RULE-RHETORIC,79,79,0,0.0,0,4.6,6,7.6
+kind of text and length band (words),comment | case | 80-149,RULE-TRANSITIONS,79,79,0,0.0,0,4.6,3,3.8
+kind of text and length band (words),comment | case | <80,ANY_CATEGORY,120,120,0,0.0,0,3.1,,
+kind of text and length band (words),comment | case | <80,RULE-LISTS,120,120,0,0.0,0,3.1,0,0.0
+kind of text and length band (words),comment | case | <80,RULE-PHRASES,120,120,0,0.0,0,3.1,1,0.8
+kind of text and length band (words),comment | case | <80,RULE-RHETORIC,120,120,0,0.0,0,3.1,2,1.7
+kind of text and length band (words),comment | case | <80,RULE-TRANSITIONS,120,120,0,0.0,0,3.1,2,1.7
+kind of text and length band (words),comment | control | 150-399,ANY_CATEGORY,104,104,16,15.4,9.7,23.5,,
+kind of text and length band (words),comment | control | 150-399,RULE-COLON,104,104,0,0.0,0,3.6,1,1.0
+kind of text and length band (words),comment | control | 150-399,RULE-CORPORATE,104,104,0,0.0,0,3.6,0,0.0
+kind of text and length band (words),comment | control | 150-399,RULE-ELLIPSIS,104,104,0,0.0,0,3.6,0,0.0
+kind of text and length band (words),comment | control | 150-399,RULE-EMDASH,104,104,1,1.0,0.2,5.2,1,1.0
+kind of text and length band (words),comment | control | 150-399,RULE-EMDASH-PAIRS,104,104,0,0.0,0,3.6,1,1.0
+kind of text and length band (words),comment | control | 150-399,RULE-INTENSIFIERS,104,104,3,2.9,1.0,8.1,3,2.9
+kind of text and length band (words),comment | control | 150-399,RULE-LENGTH-RUNS,104,90,2,2.2,0.6,7.7,2,2.2
+kind of text and length band (words),comment | control | 150-399,RULE-LISTS,104,104,0,0.0,0,3.6,0,0.0
+kind of text and length band (words),comment | control | 150-399,RULE-OPENINGS,104,90,0,0.0,0,4.1,0,0.0
+kind of text and length band (words),comment | control | 150-399,RULE-PARA-ENDINGS,104,67,0,0.0,0,5.4,1,1.5
+kind of text and length band (words),comment | control | 150-399,RULE-PARA-UNIFORM,104,67,0,0.0,0,5.4,0,0.0
+kind of text and length band (words),comment | control | 150-399,RULE-PARENS,104,104,0,0.0,0,3.6,1,1.0
+kind of text and length band (words),comment | control | 150-399,RULE-PHRASES,104,104,0,0.0,0,3.6,0,0.0
+kind of text and length band (words),comment | control | 150-399,RULE-POSITIVE,104,104,0,0.0,0,3.6,0,0.0
+kind of text and length band (words),comment | control | 150-399,RULE-REPEATS,104,104,0,0.0,0,3.6,1,1.0
+kind of text and length band (words),comment | control | 150-399,RULE-RHETORIC,104,104,0,0.0,0,3.6,3,2.9
+kind of text and length band (words),comment | control | 150-399,RULE-SEMICOLON,104,104,0,0.0,0,3.6,1,1.0
+kind of text and length band (words),comment | control | 150-399,RULE-SPECIFIC,104,41,4,9.8,3.9,22.5,4,9.8
+kind of text and length band (words),comment | control | 150-399,RULE-STOCKWORDS,104,104,0,0.0,0,3.6,0,0.0
+kind of text and length band (words),comment | control | 150-399,RULE-TRANSITIONS,104,104,0,0.0,0,3.6,2,1.9
+kind of text and length band (words),comment | control | 150-399,RULE-VAGUE,104,104,0,0.0,0,3.6,0,0.0
+kind of text and length band (words),comment | control | 150-399,RULE-VARIATION,104,90,8,8.9,4.6,16.6,8,8.9
+kind of text and length band (words),comment | control | 400-1199,ANY_CATEGORY,4,4,0,0.0,0,49.0,,
+kind of text and length band (words),comment | control | 400-1199,RULE-COLON,4,4,0,0.0,0,49.0,0,0.0
+kind of text and length band (words),comment | control | 400-1199,RULE-CORPORATE,4,4,0,0.0,0,49.0,0,0.0
+kind of text and length band (words),comment | control | 400-1199,RULE-ELLIPSIS,4,4,0,0.0,0,49.0,0,0.0
+kind of text and length band (words),comment | control | 400-1199,RULE-EMDASH,4,4,0,0.0,0,49.0,0,0.0
+kind of text and length band (words),comment | control | 400-1199,RULE-EMDASH-PAIRS,4,4,0,0.0,0,49.0,0,0.0
+kind of text and length band (words),comment | control | 400-1199,RULE-INTENSIFIERS,4,4,0,0.0,0,49.0,0,0.0
+kind of text and length band (words),comment | control | 400-1199,RULE-LENGTH-RUNS,4,4,0,0.0,0,49.0,0,0.0
+kind of text and length band (words),comment | control | 400-1199,RULE-LISTS,4,4,0,0.0,0,49.0,0,0.0
+kind of text and length band (words),comment | control | 400-1199,RULE-OPENINGS,4,4,0,0.0,0,49.0,0,0.0
+kind of text and length band (words),comment | control | 400-1199,RULE-PARA-ENDINGS,4,3,0,0.0,0,56.2,0,0.0
+kind of text and length band (words),comment | control | 400-1199,RULE-PARA-UNIFORM,4,3,0,0.0,0,56.2,0,0.0
+kind of text and length band (words),comment | control | 400-1199,RULE-PARENS,4,4,0,0.0,0,49.0,1,25.0
+kind of text and length band (words),comment | control | 400-1199,RULE-PHRASES,4,4,0,0.0,0,49.0,0,0.0
+kind of text and length band (words),comment | control | 400-1199,RULE-POSITIVE,4,4,0,0.0,0,49.0,0,0.0
+kind of text and length band (words),comment | control | 400-1199,RULE-REPEATS,4,4,0,0.0,0,49.0,1,25.0
+kind of text and length band (words),comment | control | 400-1199,RULE-RHETORIC,4,4,0,0.0,0,49.0,0,0.0
+kind of text and length band (words),comment | control | 400-1199,RULE-SEMICOLON,4,4,0,0.0,0,49.0,0,0.0
+kind of text and length band (words),comment | control | 400-1199,RULE-SPECIFIC,4,4,0,0.0,0,49.0,0,0.0
+kind of text and length band (words),comment | control | 400-1199,RULE-STOCKWORDS,4,4,0,0.0,0,49.0,0,0.0
+kind of text and length band (words),comment | control | 400-1199,RULE-TRANSITIONS,4,4,0,0.0,0,49.0,0,0.0
+kind of text and length band (words),comment | control | 400-1199,RULE-VAGUE,4,4,0,0.0,0,49.0,0,0.0
+kind of text and length band (words),comment | control | 400-1199,RULE-VARIATION,4,4,0,0.0,0,49.0,0,0.0
+kind of text and length band (words),comment | control | 80-149,ANY_CATEGORY,153,153,0,0.0,0,2.4,,
+kind of text and length band (words),comment | control | 80-149,RULE-LISTS,153,153,0,0.0,0,2.4,0,0.0
+kind of text and length band (words),comment | control | 80-149,RULE-PHRASES,153,153,0,0.0,0,2.4,1,0.7
+kind of text and length band (words),comment | control | 80-149,RULE-RHETORIC,153,153,0,0.0,0,2.4,1,0.7
+kind of text and length band (words),comment | control | 80-149,RULE-TRANSITIONS,153,153,0,0.0,0,2.4,1,0.7
+kind of text and length band (words),comment | control | <80,ANY_CATEGORY,303,303,0,0.0,0,1.3,,
+kind of text and length band (words),comment | control | <80,RULE-LISTS,303,303,0,0.0,0,1.3,0,0.0
+kind of text and length band (words),comment | control | <80,RULE-PHRASES,303,303,0,0.0,0,1.3,0,0.0
+kind of text and length band (words),comment | control | <80,RULE-RHETORIC,303,303,0,0.0,0,1.3,5,1.7
+kind of text and length band (words),comment | control | <80,RULE-TRANSITIONS,303,303,0,0.0,0,1.3,3,1.0
+kind of text and year,article | case | 2023,ANY_CATEGORY,19,19,8,42.1,23.1,63.7,,
+kind of text and year,article | case | 2023,RULE-COLON,19,19,0,0.0,0,16.8,7,36.8
+kind of text and year,article | case | 2023,RULE-CORPORATE,19,19,0,0.0,0,16.8,1,5.3
+kind of text and year,article | case | 2023,RULE-ELLIPSIS,19,19,0,0.0,0,16.8,1,5.3
+kind of text and year,article | case | 2023,RULE-EMDASH,19,19,0,0.0,0,16.8,1,5.3
+kind of text and year,article | case | 2023,RULE-EMDASH-PAIRS,19,19,0,0.0,0,16.8,1,5.3
+kind of text and year,article | case | 2023,RULE-INTENSIFIERS,19,19,0,0.0,0,16.8,5,26.3
+kind of text and year,article | case | 2023,RULE-LENGTH-RUNS,19,19,6,31.6,15.4,54.0,6,31.6
+kind of text and year,article | case | 2023,RULE-LISTS,19,19,0,0.0,0,16.8,0,0.0
+kind of text and year,article | case | 2023,RULE-OPENINGS,19,19,2,10.5,2.9,31.4,2,10.5
+kind of text and year,article | case | 2023,RULE-PARA-ENDINGS,19,17,0,0.0,0,18.4,0,0.0
+kind of text and year,article | case | 2023,RULE-PARA-UNIFORM,19,17,0,0.0,0,18.4,0,0.0
+kind of text and year,article | case | 2023,RULE-PARENS,19,19,0,0.0,0,16.8,7,36.8
+kind of text and year,article | case | 2023,RULE-PHRASES,19,19,0,0.0,0,16.8,2,10.5
+kind of text and year,article | case | 2023,RULE-POSITIVE,19,19,0,0.0,0,16.8,4,21.1
+kind of text and year,article | case | 2023,RULE-REPEATS,19,19,3,15.8,5.5,37.6,11,57.9
+kind of text and year,article | case | 2023,RULE-RHETORIC,19,19,0,0.0,0,16.8,7,36.8
+kind of text and year,article | case | 2023,RULE-SEMICOLON,19,19,0,0.0,0,16.8,3,15.8
+kind of text and year,article | case | 2023,RULE-SPECIFIC,19,18,0,0.0,0,17.6,0,0.0
+kind of text and year,article | case | 2023,RULE-STOCKWORDS,19,19,0,0.0,0,16.8,1,5.3
+kind of text and year,article | case | 2023,RULE-TRANSITIONS,19,19,0,0.0,0,16.8,4,21.1
+kind of text and year,article | case | 2023,RULE-VAGUE,19,19,0,0.0,0,16.8,1,5.3
+kind of text and year,article | case | 2023,RULE-VARIATION,19,19,0,0.0,0,16.8,0,0.0
+kind of text and year,article | case | 2024,ANY_CATEGORY,27,27,16,59.3,40.7,75.5,,
+kind of text and year,article | case | 2024,RULE-COLON,27,27,0,0.0,0.0,12.5,15,55.6
+kind of text and year,article | case | 2024,RULE-CORPORATE,27,27,0,0.0,0.0,12.5,4,14.8
+kind of text and year,article | case | 2024,RULE-ELLIPSIS,27,27,0,0.0,0.0,12.5,1,3.7
+kind of text and year,article | case | 2024,RULE-EMDASH,27,27,1,3.7,0.7,18.3,8,29.6
+kind of text and year,article | case | 2024,RULE-EMDASH-PAIRS,27,27,2,7.4,2.1,23.4,5,18.5
+kind of text and year,article | case | 2024,RULE-INTENSIFIERS,27,27,0,0.0,0.0,12.5,7,25.9
+kind of text and year,article | case | 2024,RULE-LENGTH-RUNS,27,27,9,33.3,18.6,52.2,9,33.3
+kind of text and year,article | case | 2024,RULE-LISTS,27,27,0,0.0,0.0,12.5,0,0.0
+kind of text and year,article | case | 2024,RULE-OPENINGS,27,27,3,11.1,3.9,28.1,3,11.1
+kind of text and year,article | case | 2024,RULE-PARA-ENDINGS,27,24,0,0.0,0,13.8,0,0.0
+kind of text and year,article | case | 2024,RULE-PARA-UNIFORM,27,24,0,0.0,0,13.8,0,0.0
+kind of text and year,article | case | 2024,RULE-PARENS,27,27,0,0.0,0.0,12.5,8,29.6
+kind of text and year,article | case | 2024,RULE-PHRASES,27,27,0,0.0,0.0,12.5,5,18.5
+kind of text and year,article | case | 2024,RULE-POSITIVE,27,27,0,0.0,0.0,12.5,5,18.5
+kind of text and year,article | case | 2024,RULE-REPEATS,27,27,9,33.3,18.6,52.2,15,55.6
+kind of text and year,article | case | 2024,RULE-RHETORIC,27,27,1,3.7,0.7,18.3,7,25.9
+kind of text and year,article | case | 2024,RULE-SEMICOLON,27,27,0,0.0,0.0,12.5,2,7.4
+kind of text and year,article | case | 2024,RULE-SPECIFIC,27,27,0,0.0,0.0,12.5,0,0.0
+kind of text and year,article | case | 2024,RULE-STOCKWORDS,27,27,1,3.7,0.7,18.3,10,37.0
+kind of text and year,article | case | 2024,RULE-TRANSITIONS,27,27,0,0.0,0.0,12.5,12,44.4
+kind of text and year,article | case | 2024,RULE-VAGUE,27,27,0,0.0,0.0,12.5,5,18.5
+kind of text and year,article | case | 2024,RULE-VARIATION,27,27,0,0.0,0.0,12.5,0,0.0
+kind of text and year,article | case | 2025,ANY_CATEGORY,117,117,76,65.0,56.0,73.0,,
+kind of text and year,article | case | 2025,RULE-COLON,117,117,0,0.0,0,3.2,90,76.9
+kind of text and year,article | case | 2025,RULE-CORPORATE,117,117,2,1.7,0.5,6.0,15,12.8
+kind of text and year,article | case | 2025,RULE-ELLIPSIS,117,117,0,0.0,0,3.2,17,14.5
+kind of text and year,article | case | 2025,RULE-EMDASH,117,117,19,16.2,10.6,24.0,37,31.6
+kind of text and year,article | case | 2025,RULE-EMDASH-PAIRS,117,117,4,3.4,1.3,8.5,23,19.7
+kind of text and year,article | case | 2025,RULE-INTENSIFIERS,117,117,0,0.0,0,3.2,30,25.6
+kind of text and year,article | case | 2025,RULE-LENGTH-RUNS,117,117,50,42.7,34.1,51.8,50,42.7
+kind of text and year,article | case | 2025,RULE-LISTS,117,117,0,0.0,0,3.2,1,0.9
+kind of text and year,article | case | 2025,RULE-OPENINGS,117,117,24,20.5,14.2,28.7,24,20.5
+kind of text and year,article | case | 2025,RULE-PARA-ENDINGS,117,100,0,0.0,0,3.7,1,1.0
+kind of text and year,article | case | 2025,RULE-PARA-UNIFORM,117,100,1,1.0,0.2,5.4,1,1.0
+kind of text and year,article | case | 2025,RULE-PARENS,117,117,0,0.0,0,3.2,51,43.6
+kind of text and year,article | case | 2025,RULE-PHRASES,117,117,0,0.0,0,3.2,12,10.3
+kind of text and year,article | case | 2025,RULE-POSITIVE,117,117,0,0.0,0,3.2,23,19.7
+kind of text and year,article | case | 2025,RULE-REPEATS,117,117,21,17.9,12.0,25.9,56,47.9
+kind of text and year,article | case | 2025,RULE-RHETORIC,117,117,2,1.7,0.5,6.0,39,33.3
+kind of text and year,article | case | 2025,RULE-SEMICOLON,117,117,0,0.0,0,3.2,21,17.9
+kind of text and year,article | case | 2025,RULE-SPECIFIC,117,116,0,0.0,0,3.2,0,0.0
+kind of text and year,article | case | 2025,RULE-STOCKWORDS,117,117,1,0.9,0.2,4.7,14,12.0
+kind of text and year,article | case | 2025,RULE-TRANSITIONS,117,117,0,0.0,0,3.2,22,18.8
+kind of text and year,article | case | 2025,RULE-VAGUE,117,117,0,0.0,0,3.2,13,11.1
+kind of text and year,article | case | 2025,RULE-VARIATION,117,117,0,0.0,0,3.2,0,0.0
+kind of text and year,article | case | 2026,ANY_CATEGORY,214,214,144,67.3,60.7,73.2,,
+kind of text and year,article | case | 2026,RULE-COLON,214,214,0,0.0,0,1.8,156,72.9
+kind of text and year,article | case | 2026,RULE-CORPORATE,214,214,0,0.0,0,1.8,23,10.7
+kind of text and year,article | case | 2026,RULE-ELLIPSIS,214,214,0,0.0,0,1.8,20,9.3
+kind of text and year,article | case | 2026,RULE-EMDASH,214,214,42,19.6,14.9,25.5,80,37.4
+kind of text and year,article | case | 2026,RULE-EMDASH-PAIRS,214,214,26,12.1,8.4,17.2,56,26.2
+kind of text and year,article | case | 2026,RULE-INTENSIFIERS,214,214,1,0.5,0.1,2.6,38,17.8
+kind of text and year,article | case | 2026,RULE-LENGTH-RUNS,214,214,98,45.8,39.3,52.5,98,45.8
+kind of text and year,article | case | 2026,RULE-LISTS,214,214,0,0.0,0,1.8,1,0.5
+kind of text and year,article | case | 2026,RULE-OPENINGS,214,214,56,26.2,20.7,32.4,56,26.2
+kind of text and year,article | case | 2026,RULE-PARA-ENDINGS,214,155,0,0.0,0,2.4,3,1.9
+kind of text and year,article | case | 2026,RULE-PARA-UNIFORM,214,155,0,0.0,0,2.4,0,0.0
+kind of text and year,article | case | 2026,RULE-PARENS,214,214,0,0.0,0,1.8,88,41.1
+kind of text and year,article | case | 2026,RULE-PHRASES,214,214,0,0.0,0,1.8,11,5.1
+kind of text and year,article | case | 2026,RULE-POSITIVE,214,214,0,0.0,0,1.8,16,7.5
+kind of text and year,article | case | 2026,RULE-REPEATS,214,214,45,21.0,16.1,27.0,116,54.2
+kind of text and year,article | case | 2026,RULE-RHETORIC,214,214,0,0.0,0,1.8,39,18.2
+kind of text and year,article | case | 2026,RULE-SEMICOLON,214,214,0,0.0,0,1.8,54,25.2
+kind of text and year,article | case | 2026,RULE-SPECIFIC,214,209,0,0.0,0,1.8,0,0.0
+kind of text and year,article | case | 2026,RULE-STOCKWORDS,214,214,2,0.9,0.3,3.3,22,10.3
+kind of text and year,article | case | 2026,RULE-TRANSITIONS,214,214,1,0.5,0.1,2.6,26,12.1
+kind of text and year,article | case | 2026,RULE-VAGUE,214,214,0,0.0,0,1.8,10,4.7
+kind of text and year,article | case | 2026,RULE-VARIATION,214,214,1,0.5,0.1,2.6,1,0.5
+kind of text and year,article | control | 2023,ANY_CATEGORY,16,16,7,43.8,23.1,66.8,,
+kind of text and year,article | control | 2023,RULE-COLON,16,16,0,0.0,0,19.4,6,37.5
+kind of text and year,article | control | 2023,RULE-CORPORATE,16,16,0,0.0,0,19.4,0,0.0
+kind of text and year,article | control | 2023,RULE-ELLIPSIS,16,16,0,0.0,0,19.4,2,12.5
+kind of text and year,article | control | 2023,RULE-EMDASH,16,16,2,12.5,3.5,36.0,4,25.0
+kind of text and year,article | control | 2023,RULE-EMDASH-PAIRS,16,16,2,12.5,3.5,36.0,4,25.0
+kind of text and year,article | control | 2023,RULE-INTENSIFIERS,16,16,0,0.0,0,19.4,4,25.0
+kind of text and year,article | control | 2023,RULE-LENGTH-RUNS,16,16,2,12.5,3.5,36.0,2,12.5
+kind of text and year,article | control | 2023,RULE-LISTS,16,16,0,0.0,0,19.4,0,0.0
+kind of text and year,article | control | 2023,RULE-OPENINGS,16,16,1,6.2,1.1,28.3,1,6.2
+kind of text and year,article | control | 2023,RULE-PARA-ENDINGS,16,13,0,0.0,0,22.8,0,0.0
+kind of text and year,article | control | 2023,RULE-PARA-UNIFORM,16,13,0,0.0,0,22.8,0,0.0
+kind of text and year,article | control | 2023,RULE-PARENS,16,16,0,0.0,0,19.4,6,37.5
+kind of text and year,article | control | 2023,RULE-PHRASES,16,16,0,0.0,0,19.4,0,0.0
+kind of text and year,article | control | 2023,RULE-POSITIVE,16,16,0,0.0,0,19.4,3,18.8
+kind of text and year,article | control | 2023,RULE-REPEATS,16,16,3,18.8,6.6,43.0,8,50.0
+kind of text and year,article | control | 2023,RULE-RHETORIC,16,16,0,0.0,0,19.4,3,18.8
+kind of text and year,article | control | 2023,RULE-SEMICOLON,16,16,0,0.0,0,19.4,5,31.2
+kind of text and year,article | control | 2023,RULE-SPECIFIC,16,16,0,0.0,0,19.4,0,0.0
+kind of text and year,article | control | 2023,RULE-STOCKWORDS,16,16,0,0.0,0,19.4,2,12.5
+kind of text and year,article | control | 2023,RULE-TRANSITIONS,16,16,0,0.0,0,19.4,3,18.8
+kind of text and year,article | control | 2023,RULE-VAGUE,16,16,0,0.0,0,19.4,0,0.0
+kind of text and year,article | control | 2023,RULE-VARIATION,16,16,1,6.2,1.1,28.3,1,6.2
+kind of text and year,article | control | 2024,ANY_CATEGORY,29,29,11,37.9,22.7,56.0,,
+kind of text and year,article | control | 2024,RULE-COLON,29,29,0,0.0,0,11.7,17,58.6
+kind of text and year,article | control | 2024,RULE-CORPORATE,29,29,0,0.0,0,11.7,2,6.9
+kind of text and year,article | control | 2024,RULE-ELLIPSIS,29,29,0,0.0,0,11.7,3,10.3
+kind of text and year,article | control | 2024,RULE-EMDASH,29,29,2,6.9,1.9,22.0,8,27.6
+kind of text and year,article | control | 2024,RULE-EMDASH-PAIRS,29,29,0,0.0,0,11.7,4,13.8
+kind of text and year,article | control | 2024,RULE-INTENSIFIERS,29,29,0,0.0,0,11.7,6,20.7
+kind of text and year,article | control | 2024,RULE-LENGTH-RUNS,29,29,5,17.2,7.6,34.5,5,17.2
+kind of text and year,article | control | 2024,RULE-LISTS,29,29,0,0.0,0,11.7,0,0.0
+kind of text and year,article | control | 2024,RULE-OPENINGS,29,29,3,10.3,3.6,26.4,3,10.3
+kind of text and year,article | control | 2024,RULE-PARA-ENDINGS,29,23,0,0.0,0,14.3,0,0.0
+kind of text and year,article | control | 2024,RULE-PARA-UNIFORM,29,23,0,0.0,0,14.3,0,0.0
+kind of text and year,article | control | 2024,RULE-PARENS,29,29,0,0.0,0,11.7,12,41.4
+kind of text and year,article | control | 2024,RULE-PHRASES,29,29,0,0.0,0,11.7,4,13.8
+kind of text and year,article | control | 2024,RULE-POSITIVE,29,29,0,0.0,0,11.7,0,0.0
+kind of text and year,article | control | 2024,RULE-REPEATS,29,29,5,17.2,7.6,34.5,19,65.5
+kind of text and year,article | control | 2024,RULE-RHETORIC,29,29,0,0.0,0,11.7,5,17.2
+kind of text and year,article | control | 2024,RULE-SEMICOLON,29,29,0,0.0,0,11.7,6,20.7
+kind of text and year,article | control | 2024,RULE-SPECIFIC,29,29,0,0.0,0,11.7,0,0.0
+kind of text and year,article | control | 2024,RULE-STOCKWORDS,29,29,0,0.0,0,11.7,1,3.4
+kind of text and year,article | control | 2024,RULE-TRANSITIONS,29,29,0,0.0,0,11.7,11,37.9
+kind of text and year,article | control | 2024,RULE-VAGUE,29,29,0,0.0,0,11.7,2,6.9
+kind of text and year,article | control | 2024,RULE-VARIATION,29,29,0,0.0,0,11.7,0,0.0
+kind of text and year,article | control | 2025,ANY_CATEGORY,141,141,63,44.7,36.7,52.9,,
+kind of text and year,article | control | 2025,RULE-COLON,141,141,0,0.0,0,2.7,83,58.9
+kind of text and year,article | control | 2025,RULE-CORPORATE,141,141,1,0.7,0.1,3.9,9,6.4
+kind of text and year,article | control | 2025,RULE-ELLIPSIS,141,141,0,0.0,0,2.7,16,11.3
+kind of text and year,article | control | 2025,RULE-EMDASH,141,141,11,7.8,4.4,13.4,34,24.1
+kind of text and year,article | control | 2025,RULE-EMDASH-PAIRS,141,141,7,5.0,2.4,9.9,34,24.1
+kind of text and year,article | control | 2025,RULE-INTENSIFIERS,141,141,0,0.0,0,2.7,23,16.3
+kind of text and year,article | control | 2025,RULE-LENGTH-RUNS,141,141,34,24.1,17.8,31.8,34,24.1
+kind of text and year,article | control | 2025,RULE-LISTS,141,141,0,0.0,0,2.7,1,0.7
+kind of text and year,article | control | 2025,RULE-OPENINGS,141,141,11,7.8,4.4,13.4,11,7.8
+kind of text and year,article | control | 2025,RULE-PARA-ENDINGS,141,125,0,0.0,0,3.0,0,0.0
+kind of text and year,article | control | 2025,RULE-PARA-UNIFORM,141,125,0,0.0,0,3.0,0,0.0
+kind of text and year,article | control | 2025,RULE-PARENS,141,141,0,0.0,0,2.7,61,43.3
+kind of text and year,article | control | 2025,RULE-PHRASES,141,141,0,0.0,0,2.7,5,3.5
+kind of text and year,article | control | 2025,RULE-POSITIVE,141,141,0,0.0,0,2.7,7,5.0
+kind of text and year,article | control | 2025,RULE-REPEATS,141,141,23,16.3,11.1,23.3,78,55.3
+kind of text and year,article | control | 2025,RULE-RHETORIC,141,141,0,0.0,0,2.7,22,15.6
+kind of text and year,article | control | 2025,RULE-SEMICOLON,141,141,0,0.0,0,2.7,19,13.5
+kind of text and year,article | control | 2025,RULE-SPECIFIC,141,141,0,0.0,0,2.7,0,0.0
+kind of text and year,article | control | 2025,RULE-STOCKWORDS,141,141,0,0.0,0,2.7,4,2.8
+kind of text and year,article | control | 2025,RULE-TRANSITIONS,141,141,1,0.7,0.1,3.9,40,28.4
+kind of text and year,article | control | 2025,RULE-VAGUE,141,141,0,0.0,0,2.7,4,2.8
+kind of text and year,article | control | 2025,RULE-VARIATION,141,141,1,0.7,0.1,3.9,1,0.7
+kind of text and year,article | control | 2026,ANY_CATEGORY,217,217,127,58.5,51.9,64.9,,
+kind of text and year,article | control | 2026,RULE-COLON,217,217,0,0.0,0,1.7,146,67.3
+kind of text and year,article | control | 2026,RULE-CORPORATE,217,217,0,0.0,0,1.7,11,5.1
+kind of text and year,article | control | 2026,RULE-ELLIPSIS,217,217,0,0.0,0,1.7,15,6.9
+kind of text and year,article | control | 2026,RULE-EMDASH,217,217,24,11.1,7.5,15.9,62,28.6
+kind of text and year,article | control | 2026,RULE-EMDASH-PAIRS,217,217,10,4.6,2.5,8.3,37,17.1
+kind of text and year,article | control | 2026,RULE-INTENSIFIERS,217,217,0,0.0,0,1.7,42,19.4
+kind of text and year,article | control | 2026,RULE-LENGTH-RUNS,217,217,84,38.7,32.5,45.3,84,38.7
+kind of text and year,article | control | 2026,RULE-LISTS,217,217,0,0.0,0,1.7,0,0.0
+kind of text and year,article | control | 2026,RULE-OPENINGS,217,217,33,15.2,11.0,20.6,33,15.2
+kind of text and year,article | control | 2026,RULE-PARA-ENDINGS,217,187,0,0.0,0,2.0,1,0.5
+kind of text and year,article | control | 2026,RULE-PARA-UNIFORM,217,187,0,0.0,0,2.0,0,0.0
+kind of text and year,article | control | 2026,RULE-PARENS,217,217,0,0.0,0,1.7,95,43.8
+kind of text and year,article | control | 2026,RULE-PHRASES,217,217,0,0.0,0,1.7,11,5.1
+kind of text and year,article | control | 2026,RULE-POSITIVE,217,217,0,0.0,0,1.7,19,8.8
+kind of text and year,article | control | 2026,RULE-REPEATS,217,217,43,19.8,15.1,25.6,130,59.9
+kind of text and year,article | control | 2026,RULE-RHETORIC,217,217,1,0.5,0.1,2.6,40,18.4
+kind of text and year,article | control | 2026,RULE-SEMICOLON,217,217,0,0.0,0,1.7,37,17.1
+kind of text and year,article | control | 2026,RULE-SPECIFIC,217,217,0,0.0,0,1.7,0,0.0
+kind of text and year,article | control | 2026,RULE-STOCKWORDS,217,217,1,0.5,0.1,2.6,12,5.5
+kind of text and year,article | control | 2026,RULE-TRANSITIONS,217,217,1,0.5,0.1,2.6,47,21.7
+kind of text and year,article | control | 2026,RULE-VAGUE,217,217,0,0.0,0,1.7,4,1.8
+kind of text and year,article | control | 2026,RULE-VARIATION,217,217,0,0.0,0,1.7,0,0.0
+kind of text and year,comment | case | 2023,ANY_CATEGORY,33,33,6,18.2,8.6,34.4,,
+kind of text and year,comment | case | 2023,RULE-COLON,33,13,0,0.0,0,22.8,2,15.4
+kind of text and year,comment | case | 2023,RULE-CORPORATE,33,13,0,0.0,0,22.8,0,0.0
+kind of text and year,comment | case | 2023,RULE-ELLIPSIS,33,13,0,0.0,0,22.8,0,0.0
+kind of text and year,comment | case | 2023,RULE-EMDASH,33,13,0,0.0,0,22.8,0,0.0
+kind of text and year,comment | case | 2023,RULE-EMDASH-PAIRS,33,13,0,0.0,0,22.8,1,7.7
+kind of text and year,comment | case | 2023,RULE-INTENSIFIERS,33,13,0,0.0,0,22.8,0,0.0
+kind of text and year,comment | case | 2023,RULE-LENGTH-RUNS,33,11,0,0.0,0.0,25.9,0,0.0
+kind of text and year,comment | case | 2023,RULE-LISTS,33,33,0,0.0,0,10.4,1,3.0
+kind of text and year,comment | case | 2023,RULE-OPENINGS,33,11,0,0.0,0.0,25.9,0,0.0
+kind of text and year,comment | case | 2023,RULE-PARA-ENDINGS,33,11,0,0.0,0.0,25.9,0,0.0
+kind of text and year,comment | case | 2023,RULE-PARA-UNIFORM,33,11,0,0.0,0.0,25.9,0,0.0
+kind of text and year,comment | case | 2023,RULE-PARENS,33,13,0,0.0,0,22.8,0,0.0
+kind of text and year,comment | case | 2023,RULE-PHRASES,33,33,0,0.0,0,10.4,2,6.1
+kind of text and year,comment | case | 2023,RULE-POSITIVE,33,13,0,0.0,0,22.8,0,0.0
+kind of text and year,comment | case | 2023,RULE-REPEATS,33,13,0,0.0,0,22.8,2,15.4
+kind of text and year,comment | case | 2023,RULE-RHETORIC,33,33,0,0.0,0,10.4,5,15.2
+kind of text and year,comment | case | 2023,RULE-SEMICOLON,33,13,0,0.0,0,22.8,0,0.0
+kind of text and year,comment | case | 2023,RULE-SPECIFIC,33,8,0,0.0,0,32.4,0,0.0
+kind of text and year,comment | case | 2023,RULE-STOCKWORDS,33,13,0,0.0,0,22.8,1,7.7
+kind of text and year,comment | case | 2023,RULE-TRANSITIONS,33,33,0,0.0,0,10.4,4,12.1
+kind of text and year,comment | case | 2023,RULE-VAGUE,33,13,0,0.0,0,22.8,0,0.0
+kind of text and year,comment | case | 2023,RULE-VARIATION,33,11,6,54.5,28.0,78.7,6,54.5
+kind of text and year,comment | case | 2024,ANY_CATEGORY,33,33,4,12.1,4.8,27.3,,
+kind of text and year,comment | case | 2024,RULE-COLON,33,14,0,0.0,0,21.5,2,14.3
+kind of text and year,comment | case | 2024,RULE-CORPORATE,33,14,0,0.0,0,21.5,0,0.0
+kind of text and year,comment | case | 2024,RULE-ELLIPSIS,33,14,0,0.0,0,21.5,0,0.0
+kind of text and year,comment | case | 2024,RULE-EMDASH,33,14,0,0.0,0,21.5,0,0.0
+kind of text and year,comment | case | 2024,RULE-EMDASH-PAIRS,33,14,0,0.0,0,21.5,0,0.0
+kind of text and year,comment | case | 2024,RULE-INTENSIFIERS,33,14,0,0.0,0,21.5,0,0.0
+kind of text and year,comment | case | 2024,RULE-LENGTH-RUNS,33,14,0,0.0,0,21.5,0,0.0
+kind of text and year,comment | case | 2024,RULE-LISTS,33,33,0,0.0,0,10.4,0,0.0
+kind of text and year,comment | case | 2024,RULE-OPENINGS,33,14,0,0.0,0,21.5,0,0.0
+kind of text and year,comment | case | 2024,RULE-PARA-ENDINGS,33,12,0,0.0,0,24.3,0,0.0
+kind of text and year,comment | case | 2024,RULE-PARA-UNIFORM,33,12,0,0.0,0,24.3,0,0.0
+kind of text and year,comment | case | 2024,RULE-PARENS,33,14,0,0.0,0,21.5,0,0.0
+kind of text and year,comment | case | 2024,RULE-PHRASES,33,33,0,0.0,0,10.4,0,0.0
+kind of text and year,comment | case | 2024,RULE-POSITIVE,33,14,0,0.0,0,21.5,0,0.0
+kind of text and year,comment | case | 2024,RULE-REPEATS,33,14,0,0.0,0,21.5,0,0.0
+kind of text and year,comment | case | 2024,RULE-RHETORIC,33,33,0,0.0,0,10.4,0,0.0
+kind of text and year,comment | case | 2024,RULE-SEMICOLON,33,14,0,0.0,0,21.5,1,7.1
+kind of text and year,comment | case | 2024,RULE-SPECIFIC,33,11,0,0.0,0.0,25.9,0,0.0
+kind of text and year,comment | case | 2024,RULE-STOCKWORDS,33,14,0,0.0,0,21.5,0,0.0
+kind of text and year,comment | case | 2024,RULE-TRANSITIONS,33,33,0,0.0,0,10.4,3,9.1
+kind of text and year,comment | case | 2024,RULE-VAGUE,33,14,0,0.0,0,21.5,0,0.0
+kind of text and year,comment | case | 2024,RULE-VARIATION,33,14,4,28.6,11.7,54.6,4,28.6
+kind of text and year,comment | case | 2025,ANY_CATEGORY,93,93,12,12.9,7.5,21.2,,
+kind of text and year,comment | case | 2025,RULE-COLON,93,27,0,0.0,0.0,12.5,5,18.5
+kind of text and year,comment | case | 2025,RULE-CORPORATE,93,27,0,0.0,0.0,12.5,0,0.0
+kind of text and year,comment | case | 2025,RULE-ELLIPSIS,93,27,0,0.0,0.0,12.5,0,0.0
+kind of text and year,comment | case | 2025,RULE-EMDASH,93,27,2,7.4,2.1,23.4,2,7.4
+kind of text and year,comment | case | 2025,RULE-EMDASH-PAIRS,93,27,0,0.0,0.0,12.5,6,22.2
+kind of text and year,comment | case | 2025,RULE-INTENSIFIERS,93,27,0,0.0,0.0,12.5,0,0.0
+kind of text and year,comment | case | 2025,RULE-LENGTH-RUNS,93,27,2,7.4,2.1,23.4,2,7.4
+kind of text and year,comment | case | 2025,RULE-LISTS,93,93,0,0.0,0,4.0,1,1.1
+kind of text and year,comment | case | 2025,RULE-OPENINGS,93,27,1,3.7,0.7,18.3,1,3.7
+kind of text and year,comment | case | 2025,RULE-PARA-ENDINGS,93,21,0,0.0,0,15.5,0,0.0
+kind of text and year,comment | case | 2025,RULE-PARA-UNIFORM,93,21,0,0.0,0,15.5,0,0.0
+kind of text and year,comment | case | 2025,RULE-PARENS,93,27,0,0.0,0.0,12.5,1,3.7
+kind of text and year,comment | case | 2025,RULE-PHRASES,93,93,0,0.0,0,4.0,1,1.1
+kind of text and year,comment | case | 2025,RULE-POSITIVE,93,27,0,0.0,0.0,12.5,0,0.0
+kind of text and year,comment | case | 2025,RULE-REPEATS,93,27,0,0.0,0.0,12.5,1,3.7
+kind of text and year,comment | case | 2025,RULE-RHETORIC,93,93,0,0.0,0,4.0,6,6.5
+kind of text and year,comment | case | 2025,RULE-SEMICOLON,93,27,0,0.0,0.0,12.5,0,0.0
+kind of text and year,comment | case | 2025,RULE-SPECIFIC,93,12,2,16.7,4.7,44.8,2,16.7
+kind of text and year,comment | case | 2025,RULE-STOCKWORDS,93,27,0,0.0,0.0,12.5,0,0.0
+kind of text and year,comment | case | 2025,RULE-TRANSITIONS,93,93,0,0.0,0,4.0,1,1.1
+kind of text and year,comment | case | 2025,RULE-VAGUE,93,27,0,0.0,0.0,12.5,0,0.0
+kind of text and year,comment | case | 2025,RULE-VARIATION,93,27,6,22.2,10.6,40.8,6,22.2
+kind of text and year,comment | case | 2026,ANY_CATEGORY,128,128,8,6.2,3.2,11.8,,
+kind of text and year,comment | case | 2026,RULE-COLON,128,34,0,0.0,0,10.2,5,14.7
+kind of text and year,comment | case | 2026,RULE-CORPORATE,128,34,0,0.0,0,10.2,0,0.0
+kind of text and year,comment | case | 2026,RULE-ELLIPSIS,128,34,0,0.0,0,10.2,0,0.0
+kind of text and year,comment | case | 2026,RULE-EMDASH,128,34,1,2.9,0.5,14.9,1,2.9
+kind of text and year,comment | case | 2026,RULE-EMDASH-PAIRS,128,34,0,0.0,0,10.2,1,2.9
+kind of text and year,comment | case | 2026,RULE-INTENSIFIERS,128,34,0,0.0,0,10.2,1,2.9
+kind of text and year,comment | case | 2026,RULE-LENGTH-RUNS,128,33,2,6.1,1.7,19.6,2,6.1
+kind of text and year,comment | case | 2026,RULE-LISTS,128,128,0,0.0,0,2.9,1,0.8
+kind of text and year,comment | case | 2026,RULE-OPENINGS,128,33,0,0.0,0,10.4,0,0.0
+kind of text and year,comment | case | 2026,RULE-PARA-ENDINGS,128,30,0,0.0,0,11.4,0,0.0
+kind of text and year,comment | case | 2026,RULE-PARA-UNIFORM,128,30,0,0.0,0,11.4,0,0.0
+kind of text and year,comment | case | 2026,RULE-PARENS,128,34,0,0.0,0,10.2,2,5.9
+kind of text and year,comment | case | 2026,RULE-PHRASES,128,128,0,0.0,0,2.9,0,0.0
+kind of text and year,comment | case | 2026,RULE-POSITIVE,128,34,1,2.9,0.5,14.9,1,2.9
+kind of text and year,comment | case | 2026,RULE-REPEATS,128,34,0,0.0,0,10.2,2,5.9
+kind of text and year,comment | case | 2026,RULE-RHETORIC,128,128,0,0.0,0,2.9,2,1.6
+kind of text and year,comment | case | 2026,RULE-SEMICOLON,128,34,0,0.0,0,10.2,0,0.0
+kind of text and year,comment | case | 2026,RULE-SPECIFIC,128,21,2,9.5,2.7,28.9,2,9.5
+kind of text and year,comment | case | 2026,RULE-STOCKWORDS,128,34,0,0.0,0,10.2,0,0.0
+kind of text and year,comment | case | 2026,RULE-TRANSITIONS,128,128,0,0.0,0,2.9,6,4.7
+kind of text and year,comment | case | 2026,RULE-VAGUE,128,34,0,0.0,0,10.2,0,0.0
+kind of text and year,comment | case | 2026,RULE-VARIATION,128,33,3,9.1,3.1,23.6,3,9.1
+kind of text and year,comment | control | 2023,ANY_CATEGORY,53,53,1,1.9,0.3,9.9,,
+kind of text and year,comment | control | 2023,RULE-COLON,53,12,0,0.0,0,24.3,1,8.3
+kind of text and year,comment | control | 2023,RULE-CORPORATE,53,12,0,0.0,0,24.3,0,0.0
+kind of text and year,comment | control | 2023,RULE-ELLIPSIS,53,12,0,0.0,0,24.3,0,0.0
+kind of text and year,comment | control | 2023,RULE-EMDASH,53,12,0,0.0,0,24.3,0,0.0
+kind of text and year,comment | control | 2023,RULE-EMDASH-PAIRS,53,12,0,0.0,0,24.3,0,0.0
+kind of text and year,comment | control | 2023,RULE-INTENSIFIERS,53,12,0,0.0,0,24.3,0,0.0
+kind of text and year,comment | control | 2023,RULE-LENGTH-RUNS,53,11,0,0.0,0.0,25.9,0,0.0
+kind of text and year,comment | control | 2023,RULE-LISTS,53,53,0,0.0,0,6.8,0,0.0
+kind of text and year,comment | control | 2023,RULE-OPENINGS,53,11,0,0.0,0.0,25.9,0,0.0
+kind of text and year,comment | control | 2023,RULE-PARA-ENDINGS,53,8,0,0.0,0,32.4,0,0.0
+kind of text and year,comment | control | 2023,RULE-PARA-UNIFORM,53,8,0,0.0,0,32.4,0,0.0
+kind of text and year,comment | control | 2023,RULE-PARENS,53,12,0,0.0,0,24.3,0,0.0
+kind of text and year,comment | control | 2023,RULE-PHRASES,53,53,0,0.0,0,6.8,0,0.0
+kind of text and year,comment | control | 2023,RULE-POSITIVE,53,12,0,0.0,0,24.3,0,0.0
+kind of text and year,comment | control | 2023,RULE-REPEATS,53,12,0,0.0,0,24.3,1,8.3
+kind of text and year,comment | control | 2023,RULE-RHETORIC,53,53,0,0.0,0,6.8,0,0.0
+kind of text and year,comment | control | 2023,RULE-SEMICOLON,53,12,0,0.0,0,24.3,0,0.0
+kind of text and year,comment | control | 2023,RULE-SPECIFIC,53,5,1,20.0,3.6,62.4,1,20.0
+kind of text and year,comment | control | 2023,RULE-STOCKWORDS,53,12,0,0.0,0,24.3,0,0.0
+kind of text and year,comment | control | 2023,RULE-TRANSITIONS,53,53,0,0.0,0,6.8,1,1.9
+kind of text and year,comment | control | 2023,RULE-VAGUE,53,12,0,0.0,0,24.3,0,0.0
+kind of text and year,comment | control | 2023,RULE-VARIATION,53,11,0,0.0,0.0,25.9,0,0.0
+kind of text and year,comment | control | 2024,ANY_CATEGORY,54,54,2,3.7,1.0,12.5,,
+kind of text and year,comment | control | 2024,RULE-COLON,54,9,0,0.0,0,29.9,0,0.0
+kind of text and year,comment | control | 2024,RULE-CORPORATE,54,9,0,0.0,0,29.9,0,0.0
+kind of text and year,comment | control | 2024,RULE-ELLIPSIS,54,9,0,0.0,0,29.9,0,0.0
+kind of text and year,comment | control | 2024,RULE-EMDASH,54,9,0,0.0,0,29.9,0,0.0
+kind of text and year,comment | control | 2024,RULE-EMDASH-PAIRS,54,9,0,0.0,0,29.9,0,0.0
+kind of text and year,comment | control | 2024,RULE-INTENSIFIERS,54,9,0,0.0,0,29.9,0,0.0
+kind of text and year,comment | control | 2024,RULE-LENGTH-RUNS,54,9,0,0.0,0,29.9,0,0.0
+kind of text and year,comment | control | 2024,RULE-LISTS,54,54,0,0.0,0.0,6.6,0,0.0
+kind of text and year,comment | control | 2024,RULE-OPENINGS,54,9,0,0.0,0,29.9,0,0.0
+kind of text and year,comment | control | 2024,RULE-PARA-ENDINGS,54,5,0,0.0,0,43.4,0,0.0
+kind of text and year,comment | control | 2024,RULE-PARA-UNIFORM,54,5,0,0.0,0,43.4,0,0.0
+kind of text and year,comment | control | 2024,RULE-PARENS,54,9,0,0.0,0,29.9,0,0.0
+kind of text and year,comment | control | 2024,RULE-PHRASES,54,54,0,0.0,0.0,6.6,0,0.0
+kind of text and year,comment | control | 2024,RULE-POSITIVE,54,9,0,0.0,0,29.9,0,0.0
+kind of text and year,comment | control | 2024,RULE-REPEATS,54,9,0,0.0,0,29.9,0,0.0
+kind of text and year,comment | control | 2024,RULE-RHETORIC,54,54,0,0.0,0.0,6.6,0,0.0
+kind of text and year,comment | control | 2024,RULE-SEMICOLON,54,9,0,0.0,0,29.9,0,0.0
+kind of text and year,comment | control | 2024,RULE-SPECIFIC,54,7,0,0.0,0,35.4,0,0.0
+kind of text and year,comment | control | 2024,RULE-STOCKWORDS,54,9,0,0.0,0,29.9,0,0.0
+kind of text and year,comment | control | 2024,RULE-TRANSITIONS,54,54,0,0.0,0.0,6.6,1,1.9
+kind of text and year,comment | control | 2024,RULE-VAGUE,54,9,0,0.0,0,29.9,0,0.0
+kind of text and year,comment | control | 2024,RULE-VARIATION,54,9,2,22.2,6.3,54.7,2,22.2
+kind of text and year,comment | control | 2025,ANY_CATEGORY,197,197,6,3.0,1.4,6.5,,
+kind of text and year,comment | control | 2025,RULE-COLON,197,43,0,0.0,0,8.2,0,0.0
+kind of text and year,comment | control | 2025,RULE-CORPORATE,197,43,0,0.0,0,8.2,0,0.0
+kind of text and year,comment | control | 2025,RULE-ELLIPSIS,197,43,0,0.0,0,8.2,0,0.0
+kind of text and year,comment | control | 2025,RULE-EMDASH,197,43,1,2.3,0.4,12.1,1,2.3
+kind of text and year,comment | control | 2025,RULE-EMDASH-PAIRS,197,43,0,0.0,0,8.2,1,2.3
+kind of text and year,comment | control | 2025,RULE-INTENSIFIERS,197,43,1,2.3,0.4,12.1,1,2.3
+kind of text and year,comment | control | 2025,RULE-LENGTH-RUNS,197,36,1,2.8,0.5,14.2,1,2.8
+kind of text and year,comment | control | 2025,RULE-LISTS,197,197,0,0.0,0.0,1.9,0,0.0
+kind of text and year,comment | control | 2025,RULE-OPENINGS,197,36,0,0.0,0,9.6,0,0.0
+kind of text and year,comment | control | 2025,RULE-PARA-ENDINGS,197,29,0,0.0,0,11.7,1,3.4
+kind of text and year,comment | control | 2025,RULE-PARA-UNIFORM,197,29,0,0.0,0,11.7,0,0.0
+kind of text and year,comment | control | 2025,RULE-PARENS,197,43,0,0.0,0,8.2,0,0.0
+kind of text and year,comment | control | 2025,RULE-PHRASES,197,197,0,0.0,0.0,1.9,1,0.5
+kind of text and year,comment | control | 2025,RULE-POSITIVE,197,43,0,0.0,0,8.2,0,0.0
+kind of text and year,comment | control | 2025,RULE-REPEATS,197,43,0,0.0,0,8.2,0,0.0
+kind of text and year,comment | control | 2025,RULE-RHETORIC,197,197,0,0.0,0.0,1.9,2,1.0
+kind of text and year,comment | control | 2025,RULE-SEMICOLON,197,43,0,0.0,0,8.2,0,0.0
+kind of text and year,comment | control | 2025,RULE-SPECIFIC,197,18,2,11.1,3.1,32.8,2,11.1
+kind of text and year,comment | control | 2025,RULE-STOCKWORDS,197,43,0,0.0,0,8.2,0,0.0
+kind of text and year,comment | control | 2025,RULE-TRANSITIONS,197,197,0,0.0,0.0,1.9,2,1.0
+kind of text and year,comment | control | 2025,RULE-VAGUE,197,43,0,0.0,0,8.2,0,0.0
+kind of text and year,comment | control | 2025,RULE-VARIATION,197,36,2,5.6,1.5,18.1,2,5.6
+kind of text and year,comment | control | 2026,ANY_CATEGORY,260,260,7,2.7,1.3,5.5,,
+kind of text and year,comment | control | 2026,RULE-COLON,260,44,0,0.0,0.0,8.0,0,0.0
+kind of text and year,comment | control | 2026,RULE-CORPORATE,260,44,0,0.0,0.0,8.0,0,0.0
+kind of text and year,comment | control | 2026,RULE-ELLIPSIS,260,44,0,0.0,0.0,8.0,0,0.0
+kind of text and year,comment | control | 2026,RULE-EMDASH,260,44,0,0.0,0.0,8.0,0,0.0
+kind of text and year,comment | control | 2026,RULE-EMDASH-PAIRS,260,44,0,0.0,0.0,8.0,0,0.0
+kind of text and year,comment | control | 2026,RULE-INTENSIFIERS,260,44,2,4.5,1.3,15.1,2,4.5
+kind of text and year,comment | control | 2026,RULE-LENGTH-RUNS,260,38,1,2.6,0.5,13.5,1,2.6
+kind of text and year,comment | control | 2026,RULE-LISTS,260,260,0,0.0,0,1.5,0,0.0
+kind of text and year,comment | control | 2026,RULE-OPENINGS,260,38,0,0.0,0,9.2,0,0.0
+kind of text and year,comment | control | 2026,RULE-PARA-ENDINGS,260,28,0,0.0,0,12.1,0,0.0
+kind of text and year,comment | control | 2026,RULE-PARA-UNIFORM,260,28,0,0.0,0,12.1,0,0.0
+kind of text and year,comment | control | 2026,RULE-PARENS,260,44,0,0.0,0.0,8.0,2,4.5
+kind of text and year,comment | control | 2026,RULE-PHRASES,260,260,0,0.0,0,1.5,0,0.0
+kind of text and year,comment | control | 2026,RULE-POSITIVE,260,44,0,0.0,0.0,8.0,0,0.0
+kind of text and year,comment | control | 2026,RULE-REPEATS,260,44,0,0.0,0.0,8.0,1,2.3
+kind of text and year,comment | control | 2026,RULE-RHETORIC,260,260,0,0.0,0,1.5,7,2.7
+kind of text and year,comment | control | 2026,RULE-SEMICOLON,260,44,0,0.0,0.0,8.0,1,2.3
+kind of text and year,comment | control | 2026,RULE-SPECIFIC,260,15,1,6.7,1.2,29.8,1,6.7
+kind of text and year,comment | control | 2026,RULE-STOCKWORDS,260,44,0,0.0,0.0,8.0,0,0.0
+kind of text and year,comment | control | 2026,RULE-TRANSITIONS,260,260,0,0.0,0,1.5,2,0.8
+kind of text and year,comment | control | 2026,RULE-VAGUE,260,44,0,0.0,0.0,8.0,0,0.0
+kind of text and year,comment | control | 2026,RULE-VARIATION,260,38,4,10.5,4.2,24.1,4,10.5
+article role and website genre,article | case | academic,ANY_CATEGORY,9,9,2,22.2,6.3,54.7,,
+article role and website genre,article | case | academic,RULE-COLON,9,9,0,0.0,0,29.9,7,77.8
+article role and website genre,article | case | academic,RULE-CORPORATE,9,9,0,0.0,0,29.9,0,0.0
+article role and website genre,article | case | academic,RULE-ELLIPSIS,9,9,0,0.0,0,29.9,0,0.0
+article role and website genre,article | case | academic,RULE-EMDASH,9,9,0,0.0,0,29.9,1,11.1
+article role and website genre,article | case | academic,RULE-EMDASH-PAIRS,9,9,0,0.0,0,29.9,1,11.1
+article role and website genre,article | case | academic,RULE-INTENSIFIERS,9,9,0,0.0,0,29.9,0,0.0
+article role and website genre,article | case | academic,RULE-LENGTH-RUNS,9,9,1,11.1,2.0,43.5,1,11.1
+article role and website genre,article | case | academic,RULE-LISTS,9,9,0,0.0,0,29.9,0,0.0
+article role and website genre,article | case | academic,RULE-OPENINGS,9,9,1,11.1,2.0,43.5,1,11.1
+article role and website genre,article | case | academic,RULE-PARA-ENDINGS,9,8,0,0.0,0,32.4,0,0.0
+article role and website genre,article | case | academic,RULE-PARA-UNIFORM,9,8,0,0.0,0,32.4,0,0.0
+article role and website genre,article | case | academic,RULE-PARENS,9,9,0,0.0,0,29.9,6,66.7
+article role and website genre,article | case | academic,RULE-PHRASES,9,9,0,0.0,0,29.9,0,0.0
+article role and website genre,article | case | academic,RULE-POSITIVE,9,9,0,0.0,0,29.9,0,0.0
+article role and website genre,article | case | academic,RULE-REPEATS,9,9,1,11.1,2.0,43.5,8,88.9
+article role and website genre,article | case | academic,RULE-RHETORIC,9,9,0,0.0,0,29.9,0,0.0
+article role and website genre,article | case | academic,RULE-SEMICOLON,9,9,0,0.0,0,29.9,2,22.2
+article role and website genre,article | case | academic,RULE-SPECIFIC,9,8,0,0.0,0,32.4,0,0.0
+article role and website genre,article | case | academic,RULE-STOCKWORDS,9,9,0,0.0,0,29.9,1,11.1
+article role and website genre,article | case | academic,RULE-TRANSITIONS,9,9,0,0.0,0,29.9,2,22.2
+article role and website genre,article | case | academic,RULE-VAGUE,9,9,0,0.0,0,29.9,1,11.1
+article role and website genre,article | case | academic,RULE-VARIATION,9,9,0,0.0,0,29.9,0,0.0
+article role and website genre,article | case | company_blog,ANY_CATEGORY,73,73,47,64.4,52.9,74.4,,
+article role and website genre,article | case | company_blog,RULE-COLON,73,73,0,0.0,0,5.0,52,71.2
+article role and website genre,article | case | company_blog,RULE-CORPORATE,73,73,1,1.4,0.2,7.4,14,19.2
+article role and website genre,article | case | company_blog,RULE-ELLIPSIS,73,73,0,0.0,0,5.0,5,6.8
+article role and website genre,article | case | company_blog,RULE-EMDASH,73,73,10,13.7,7.6,23.4,23,31.5
+article role and website genre,article | case | company_blog,RULE-EMDASH-PAIRS,73,73,5,6.8,3.0,15.1,17,23.3
+article role and website genre,article | case | company_blog,RULE-INTENSIFIERS,73,73,1,1.4,0.2,7.4,18,24.7
+article role and website genre,article | case | company_blog,RULE-LENGTH-RUNS,73,73,30,41.1,30.5,52.6,30,41.1
+article role and website genre,article | case | company_blog,RULE-LISTS,73,73,0,0.0,0,5.0,1,1.4
+article role and website genre,article | case | company_blog,RULE-OPENINGS,73,73,14,19.2,11.8,29.7,14,19.2
+article role and website genre,article | case | company_blog,RULE-PARA-ENDINGS,73,65,0,0.0,0,5.6,0,0.0
+article role and website genre,article | case | company_blog,RULE-PARA-UNIFORM,73,65,1,1.5,0.3,8.2,1,1.5
+article role and website genre,article | case | company_blog,RULE-PARENS,73,73,0,0.0,0,5.0,32,43.8
+article role and website genre,article | case | company_blog,RULE-PHRASES,73,73,0,0.0,0,5.0,8,11.0
+article role and website genre,article | case | company_blog,RULE-POSITIVE,73,73,0,0.0,0,5.0,12,16.4
+article role and website genre,article | case | company_blog,RULE-REPEATS,73,73,15,20.5,12.9,31.2,40,54.8
+article role and website genre,article | case | company_blog,RULE-RHETORIC,73,73,1,1.4,0.2,7.4,20,27.4
+article role and website genre,article | case | company_blog,RULE-SEMICOLON,73,73,0,0.0,0,5.0,14,19.2
+article role and website genre,article | case | company_blog,RULE-SPECIFIC,73,71,0,0.0,0,5.1,0,0.0
+article role and website genre,article | case | company_blog,RULE-STOCKWORDS,73,73,1,1.4,0.2,7.4,12,16.4
+article role and website genre,article | case | company_blog,RULE-TRANSITIONS,73,73,0,0.0,0,5.0,18,24.7
+article role and website genre,article | case | company_blog,RULE-VAGUE,73,73,0,0.0,0,5.0,8,11.0
+article role and website genre,article | case | company_blog,RULE-VARIATION,73,73,0,0.0,0,5.0,0,0.0
+article role and website genre,article | case | news,ANY_CATEGORY,25,25,12,48.0,30.0,66.5,,
+article role and website genre,article | case | news,RULE-COLON,25,25,0,0.0,0,13.3,10,40.0
+article role and website genre,article | case | news,RULE-CORPORATE,25,25,0,0.0,0,13.3,1,4.0
+article role and website genre,article | case | news,RULE-ELLIPSIS,25,25,0,0.0,0,13.3,2,8.0
+article role and website genre,article | case | news,RULE-EMDASH,25,25,5,20.0,8.9,39.1,9,36.0
+article role and website genre,article | case | news,RULE-EMDASH-PAIRS,25,25,3,12.0,4.2,30.0,9,36.0
+article role and website genre,article | case | news,RULE-INTENSIFIERS,25,25,0,0.0,0,13.3,4,16.0
+article role and website genre,article | case | news,RULE-LENGTH-RUNS,25,25,4,16.0,6.4,34.7,4,16.0
+article role and website genre,article | case | news,RULE-LISTS,25,25,0,0.0,0,13.3,0,0.0
+article role and website genre,article | case | news,RULE-OPENINGS,25,25,3,12.0,4.2,30.0,3,12.0
+article role and website genre,article | case | news,RULE-PARA-ENDINGS,25,23,0,0.0,0,14.3,0,0.0
+article role and website genre,article | case | news,RULE-PARA-UNIFORM,25,23,0,0.0,0,14.3,0,0.0
+article role and website genre,article | case | news,RULE-PARENS,25,25,0,0.0,0,13.3,6,24.0
+article role and website genre,article | case | news,RULE-PHRASES,25,25,0,0.0,0,13.3,5,20.0
+article role and website genre,article | case | news,RULE-POSITIVE,25,25,0,0.0,0,13.3,4,16.0
+article role and website genre,article | case | news,RULE-REPEATS,25,25,7,28.0,14.3,47.6,15,60.0
+article role and website genre,article | case | news,RULE-RHETORIC,25,25,0,0.0,0,13.3,9,36.0
+article role and website genre,article | case | news,RULE-SEMICOLON,25,25,0,0.0,0,13.3,2,8.0
+article role and website genre,article | case | news,RULE-SPECIFIC,25,25,0,0.0,0,13.3,0,0.0
+article role and website genre,article | case | news,RULE-STOCKWORDS,25,25,0,0.0,0,13.3,3,12.0
+article role and website genre,article | case | news,RULE-TRANSITIONS,25,25,0,0.0,0,13.3,9,36.0
+article role and website genre,article | case | news,RULE-VAGUE,25,25,0,0.0,0,13.3,1,4.0
+article role and website genre,article | case | news,RULE-VARIATION,25,25,0,0.0,0,13.3,0,0.0
+article role and website genre,article | case | other_unknown,ANY_CATEGORY,67,67,44,65.7,53.7,75.9,,
+article role and website genre,article | case | other_unknown,RULE-COLON,67,67,0,0.0,0,5.4,47,70.1
+article role and website genre,article | case | other_unknown,RULE-CORPORATE,67,67,0,0.0,0,5.4,8,11.9
+article role and website genre,article | case | other_unknown,RULE-ELLIPSIS,67,67,0,0.0,0,5.4,4,6.0
+article role and website genre,article | case | other_unknown,RULE-EMDASH,67,67,13,19.4,11.7,30.4,25,37.3
+article role and website genre,article | case | other_unknown,RULE-EMDASH-PAIRS,67,67,7,10.4,5.2,20.0,19,28.4
+article role and website genre,article | case | other_unknown,RULE-INTENSIFIERS,67,67,0,0.0,0,5.4,10,14.9
+article role and website genre,article | case | other_unknown,RULE-LENGTH-RUNS,67,67,31,46.3,34.9,58.1,31,46.3
+article role and website genre,article | case | other_unknown,RULE-LISTS,67,67,0,0.0,0,5.4,1,1.5
+article role and website genre,article | case | other_unknown,RULE-OPENINGS,67,67,14,20.9,12.9,32.1,14,20.9
+article role and website genre,article | case | other_unknown,RULE-PARA-ENDINGS,67,48,0,0.0,0,7.4,1,2.1
+article role and website genre,article | case | other_unknown,RULE-PARA-UNIFORM,67,48,0,0.0,0,7.4,0,0.0
+article role and website genre,article | case | other_unknown,RULE-PARENS,67,67,0,0.0,0,5.4,28,41.8
+article role and website genre,article | case | other_unknown,RULE-PHRASES,67,67,0,0.0,0,5.4,7,10.4
+article role and website genre,article | case | other_unknown,RULE-POSITIVE,67,67,0,0.0,0,5.4,9,13.4
+article role and website genre,article | case | other_unknown,RULE-REPEATS,67,67,13,19.4,11.7,30.4,34,50.7
+article role and website genre,article | case | other_unknown,RULE-RHETORIC,67,67,0,0.0,0,5.4,16,23.9
+article role and website genre,article | case | other_unknown,RULE-SEMICOLON,67,67,0,0.0,0,5.4,14,20.9
+article role and website genre,article | case | other_unknown,RULE-SPECIFIC,67,65,0,0.0,0,5.6,0,0.0
+article role and website genre,article | case | other_unknown,RULE-STOCKWORDS,67,67,0,0.0,0,5.4,6,9.0
+article role and website genre,article | case | other_unknown,RULE-TRANSITIONS,67,67,0,0.0,0,5.4,7,10.4
+article role and website genre,article | case | other_unknown,RULE-VAGUE,67,67,0,0.0,0,5.4,5,7.5
+article role and website genre,article | case | other_unknown,RULE-VARIATION,67,67,1,1.5,0.3,8.0,1,1.5
+article role and website genre,article | case | personal_blog,ANY_CATEGORY,171,171,126,73.7,66.6,79.7,,
+article role and website genre,article | case | personal_blog,RULE-COLON,171,171,0,0.0,0,2.2,133,77.8
+article role and website genre,article | case | personal_blog,RULE-CORPORATE,171,171,1,0.6,0.1,3.2,16,9.4
+article role and website genre,article | case | personal_blog,RULE-ELLIPSIS,171,171,0,0.0,0,2.2,25,14.6
+article role and website genre,article | case | personal_blog,RULE-EMDASH,171,171,29,17.0,12.1,23.3,57,33.3
+article role and website genre,article | case | personal_blog,RULE-EMDASH-PAIRS,171,171,14,8.2,4.9,13.3,33,19.3
+article role and website genre,article | case | personal_blog,RULE-INTENSIFIERS,171,171,0,0.0,0,2.2,40,23.4
+article role and website genre,article | case | personal_blog,RULE-LENGTH-RUNS,171,171,92,53.8,46.3,61.1,92,53.8
+article role and website genre,article | case | personal_blog,RULE-LISTS,171,171,0,0.0,0,2.2,0,0.0
+article role and website genre,article | case | personal_blog,RULE-OPENINGS,171,171,49,28.7,22.4,35.8,49,28.7
+article role and website genre,article | case | personal_blog,RULE-PARA-ENDINGS,171,121,0,0.0,0,3.1,1,0.8
+article role and website genre,article | case | personal_blog,RULE-PARA-UNIFORM,171,121,0,0.0,0,3.1,0,0.0
+article role and website genre,article | case | personal_blog,RULE-PARENS,171,171,0,0.0,0,2.2,73,42.7
+article role and website genre,article | case | personal_blog,RULE-PHRASES,171,171,0,0.0,0,2.2,8,4.7
+article role and website genre,article | case | personal_blog,RULE-POSITIVE,171,171,0,0.0,0,2.2,23,13.5
+article role and website genre,article | case | personal_blog,RULE-REPEATS,171,171,35,20.5,15.1,27.1,82,48.0
+article role and website genre,article | case | personal_blog,RULE-RHETORIC,171,171,2,1.2,0.3,4.2,41,24.0
+article role and website genre,article | case | personal_blog,RULE-SEMICOLON,171,171,0,0.0,0,2.2,41,24.0
+article role and website genre,article | case | personal_blog,RULE-SPECIFIC,171,170,0,0.0,0,2.2,0,0.0
+article role and website genre,article | case | personal_blog,RULE-STOCKWORDS,171,171,3,1.8,0.6,5.0,19,11.1
+article role and website genre,article | case | personal_blog,RULE-TRANSITIONS,171,171,1,0.6,0.1,3.2,20,11.7
+article role and website genre,article | case | personal_blog,RULE-VAGUE,171,171,0,0.0,0,2.2,12,7.0
+article role and website genre,article | case | personal_blog,RULE-VARIATION,171,171,0,0.0,0,2.2,0,0.0
+article role and website genre,article | case | reference_docs,ANY_CATEGORY,4,4,3,75.0,30.1,95.4,,
+article role and website genre,article | case | reference_docs,RULE-COLON,4,4,0,0.0,0,49.0,4,100.0
+article role and website genre,article | case | reference_docs,RULE-CORPORATE,4,4,0,0.0,0,49.0,1,25.0
+article role and website genre,article | case | reference_docs,RULE-ELLIPSIS,4,4,0,0.0,0,49.0,0,0.0
+article role and website genre,article | case | reference_docs,RULE-EMDASH,4,4,0,0.0,0,49.0,2,50.0
+article role and website genre,article | case | reference_docs,RULE-EMDASH-PAIRS,4,4,0,0.0,0,49.0,1,25.0
+article role and website genre,article | case | reference_docs,RULE-INTENSIFIERS,4,4,0,0.0,0,49.0,2,50.0
+article role and website genre,article | case | reference_docs,RULE-LENGTH-RUNS,4,4,2,50.0,15.0,85.0,2,50.0
+article role and website genre,article | case | reference_docs,RULE-LISTS,4,4,0,0.0,0,49.0,0,0.0
+article role and website genre,article | case | reference_docs,RULE-OPENINGS,4,4,1,25.0,4.6,69.9,1,25.0
+article role and website genre,article | case | reference_docs,RULE-PARA-ENDINGS,4,4,0,0.0,0,49.0,0,0.0
+article role and website genre,article | case | reference_docs,RULE-PARA-UNIFORM,4,4,0,0.0,0,49.0,0,0.0
+article role and website genre,article | case | reference_docs,RULE-PARENS,4,4,0,0.0,0,49.0,1,25.0
+article role and website genre,article | case | reference_docs,RULE-PHRASES,4,4,0,0.0,0,49.0,1,25.0
+article role and website genre,article | case | reference_docs,RULE-POSITIVE,4,4,0,0.0,0,49.0,0,0.0
+article role and website genre,article | case | reference_docs,RULE-REPEATS,4,4,2,50.0,15.0,85.0,3,75.0
+article role and website genre,article | case | reference_docs,RULE-RHETORIC,4,4,0,0.0,0,49.0,1,25.0
+article role and website genre,article | case | reference_docs,RULE-SEMICOLON,4,4,0,0.0,0,49.0,2,50.0
+article role and website genre,article | case | reference_docs,RULE-SPECIFIC,4,4,0,0.0,0,49.0,0,0.0
+article role and website genre,article | case | reference_docs,RULE-STOCKWORDS,4,4,0,0.0,0,49.0,1,25.0
+article role and website genre,article | case | reference_docs,RULE-TRANSITIONS,4,4,0,0.0,0,49.0,3,75.0
+article role and website genre,article | case | reference_docs,RULE-VAGUE,4,4,0,0.0,0,49.0,1,25.0
+article role and website genre,article | case | reference_docs,RULE-VARIATION,4,4,0,0.0,0,49.0,0,0.0
+article role and website genre,article | case | social_or_forum,ANY_CATEGORY,8,8,5,62.5,30.6,86.3,,
+article role and website genre,article | case | social_or_forum,RULE-COLON,8,8,0,0.0,0,32.4,6,75.0
+article role and website genre,article | case | social_or_forum,RULE-CORPORATE,8,8,0,0.0,0,32.4,0,0.0
+article role and website genre,article | case | social_or_forum,RULE-ELLIPSIS,8,8,0,0.0,0,32.4,1,12.5
+article role and website genre,article | case | social_or_forum,RULE-EMDASH,8,8,1,12.5,2.2,47.1,3,37.5
+article role and website genre,article | case | social_or_forum,RULE-EMDASH-PAIRS,8,8,0,0.0,0,32.4,1,12.5
+article role and website genre,article | case | social_or_forum,RULE-INTENSIFIERS,8,8,0,0.0,0,32.4,2,25.0
+article role and website genre,article | case | social_or_forum,RULE-LENGTH-RUNS,8,8,1,12.5,2.2,47.1,1,12.5
+article role and website genre,article | case | social_or_forum,RULE-LISTS,8,8,0,0.0,0,32.4,0,0.0
+article role and website genre,article | case | social_or_forum,RULE-OPENINGS,8,8,3,37.5,13.7,69.4,3,37.5
+article role and website genre,article | case | social_or_forum,RULE-PARA-ENDINGS,8,8,0,0.0,0,32.4,0,0.0
+article role and website genre,article | case | social_or_forum,RULE-PARA-UNIFORM,8,8,0,0.0,0,32.4,0,0.0
+article role and website genre,article | case | social_or_forum,RULE-PARENS,8,8,0,0.0,0,32.4,4,50.0
+article role and website genre,article | case | social_or_forum,RULE-PHRASES,8,8,0,0.0,0,32.4,0,0.0
+article role and website genre,article | case | social_or_forum,RULE-POSITIVE,8,8,0,0.0,0,32.4,0,0.0
+article role and website genre,article | case | social_or_forum,RULE-REPEATS,8,8,4,50.0,21.5,78.5,6,75.0
+article role and website genre,article | case | social_or_forum,RULE-RHETORIC,8,8,0,0.0,0,32.4,2,25.0
+article role and website genre,article | case | social_or_forum,RULE-SEMICOLON,8,8,0,0.0,0,32.4,3,37.5
+article role and website genre,article | case | social_or_forum,RULE-SPECIFIC,8,7,0,0.0,0,35.4,0,0.0
+article role and website genre,article | case | social_or_forum,RULE-STOCKWORDS,8,8,0,0.0,0,32.4,2,25.0
+article role and website genre,article | case | social_or_forum,RULE-TRANSITIONS,8,8,0,0.0,0,32.4,1,12.5
+article role and website genre,article | case | social_or_forum,RULE-VAGUE,8,8,0,0.0,0,32.4,0,0.0
+article role and website genre,article | case | social_or_forum,RULE-VARIATION,8,8,0,0.0,0,32.4,0,0.0
+article role and website genre,article | case | tech_press,ANY_CATEGORY,20,20,5,25.0,11.2,46.9,,
+article role and website genre,article | case | tech_press,RULE-COLON,20,20,0,0.0,0,16.1,9,45.0
+article role and website genre,article | case | tech_press,RULE-CORPORATE,20,20,0,0.0,0,16.1,3,15.0
+article role and website genre,article | case | tech_press,RULE-ELLIPSIS,20,20,0,0.0,0,16.1,2,10.0
+article role and website genre,article | case | tech_press,RULE-EMDASH,20,20,4,20.0,8.1,41.6,6,30.0
+article role and website genre,article | case | tech_press,RULE-EMDASH-PAIRS,20,20,3,15.0,5.2,36.0,4,20.0
+article role and website genre,article | case | tech_press,RULE-INTENSIFIERS,20,20,0,0.0,0,16.1,4,20.0
+article role and website genre,article | case | tech_press,RULE-LENGTH-RUNS,20,20,2,10.0,2.8,30.1,2,10.0
+article role and website genre,article | case | tech_press,RULE-LISTS,20,20,0,0.0,0,16.1,0,0.0
+article role and website genre,article | case | tech_press,RULE-OPENINGS,20,20,0,0.0,0,16.1,0,0.0
+article role and website genre,article | case | tech_press,RULE-PARA-ENDINGS,20,19,0,0.0,0,16.8,2,10.5
+article role and website genre,article | case | tech_press,RULE-PARA-UNIFORM,20,19,0,0.0,0,16.8,0,0.0
+article role and website genre,article | case | tech_press,RULE-PARENS,20,20,0,0.0,0,16.1,4,20.0
+article role and website genre,article | case | tech_press,RULE-PHRASES,20,20,0,0.0,0,16.1,1,5.0
+article role and website genre,article | case | tech_press,RULE-POSITIVE,20,20,0,0.0,0,16.1,0,0.0
+article role and website genre,article | case | tech_press,RULE-REPEATS,20,20,1,5.0,0.9,23.6,10,50.0
+article role and website genre,article | case | tech_press,RULE-RHETORIC,20,20,0,0.0,0,16.1,3,15.0
+article role and website genre,article | case | tech_press,RULE-SEMICOLON,20,20,0,0.0,0,16.1,2,10.0
+article role and website genre,article | case | tech_press,RULE-SPECIFIC,20,20,0,0.0,0,16.1,0,0.0
+article role and website genre,article | case | tech_press,RULE-STOCKWORDS,20,20,0,0.0,0,16.1,3,15.0
+article role and website genre,article | case | tech_press,RULE-TRANSITIONS,20,20,0,0.0,0,16.1,4,20.0
+article role and website genre,article | case | tech_press,RULE-VAGUE,20,20,0,0.0,0,16.1,1,5.0
+article role and website genre,article | case | tech_press,RULE-VARIATION,20,20,0,0.0,0,16.1,0,0.0
+article role and website genre,article | control | academic,ANY_CATEGORY,15,15,7,46.7,24.8,69.9,,
+article role and website genre,article | control | academic,RULE-COLON,15,15,0,0.0,0,20.4,13,86.7
+article role and website genre,article | control | academic,RULE-CORPORATE,15,15,0,0.0,0,20.4,1,6.7
+article role and website genre,article | control | academic,RULE-ELLIPSIS,15,15,0,0.0,0,20.4,0,0.0
+article role and website genre,article | control | academic,RULE-EMDASH,15,15,2,13.3,3.7,37.9,2,13.3
+article role and website genre,article | control | academic,RULE-EMDASH-PAIRS,15,15,1,6.7,1.2,29.8,2,13.3
+article role and website genre,article | control | academic,RULE-INTENSIFIERS,15,15,0,0.0,0,20.4,2,13.3
+article role and website genre,article | control | academic,RULE-LENGTH-RUNS,15,15,3,20.0,7.0,45.2,3,20.0
+article role and website genre,article | control | academic,RULE-LISTS,15,15,0,0.0,0,20.4,0,0.0
+article role and website genre,article | control | academic,RULE-OPENINGS,15,15,0,0.0,0,20.4,0,0.0
+article role and website genre,article | control | academic,RULE-PARA-ENDINGS,15,13,0,0.0,0,22.8,0,0.0
+article role and website genre,article | control | academic,RULE-PARA-UNIFORM,15,13,0,0.0,0,22.8,0,0.0
+article role and website genre,article | control | academic,RULE-PARENS,15,15,0,0.0,0,20.4,9,60.0
+article role and website genre,article | control | academic,RULE-PHRASES,15,15,0,0.0,0,20.4,3,20.0
+article role and website genre,article | control | academic,RULE-POSITIVE,15,15,0,0.0,0,20.4,2,13.3
+article role and website genre,article | control | academic,RULE-REPEATS,15,15,3,20.0,7.0,45.2,9,60.0
+article role and website genre,article | control | academic,RULE-RHETORIC,15,15,0,0.0,0,20.4,4,26.7
+article role and website genre,article | control | academic,RULE-SEMICOLON,15,15,0,0.0,0,20.4,2,13.3
+article role and website genre,article | control | academic,RULE-SPECIFIC,15,15,0,0.0,0,20.4,0,0.0
+article role and website genre,article | control | academic,RULE-STOCKWORDS,15,15,0,0.0,0,20.4,2,13.3
+article role and website genre,article | control | academic,RULE-TRANSITIONS,15,15,0,0.0,0,20.4,2,13.3
+article role and website genre,article | control | academic,RULE-VAGUE,15,15,0,0.0,0,20.4,1,6.7
+article role and website genre,article | control | academic,RULE-VARIATION,15,15,0,0.0,0,20.4,0,0.0
+article role and website genre,article | control | company_blog,ANY_CATEGORY,70,70,39,55.7,44.1,66.8,,
+article role and website genre,article | control | company_blog,RULE-COLON,70,70,0,0.0,0,5.2,48,68.6
+article role and website genre,article | control | company_blog,RULE-CORPORATE,70,70,0,0.0,0,5.2,4,5.7
+article role and website genre,article | control | company_blog,RULE-ELLIPSIS,70,70,0,0.0,0,5.2,2,2.9
+article role and website genre,article | control | company_blog,RULE-EMDASH,70,70,7,10.0,4.9,19.2,15,21.4
+article role and website genre,article | control | company_blog,RULE-EMDASH-PAIRS,70,70,1,1.4,0.3,7.7,8,11.4
+article role and website genre,article | control | company_blog,RULE-INTENSIFIERS,70,70,0,0.0,0,5.2,9,12.9
+article role and website genre,article | control | company_blog,RULE-LENGTH-RUNS,70,70,23,32.9,23.0,44.5,23,32.9
+article role and website genre,article | control | company_blog,RULE-LISTS,70,70,0,0.0,0,5.2,0,0.0
+article role and website genre,article | control | company_blog,RULE-OPENINGS,70,70,7,10.0,4.9,19.2,7,10.0
+article role and website genre,article | control | company_blog,RULE-PARA-ENDINGS,70,58,0,0.0,0,6.2,0,0.0
+article role and website genre,article | control | company_blog,RULE-PARA-UNIFORM,70,58,0,0.0,0,6.2,0,0.0
+article role and website genre,article | control | company_blog,RULE-PARENS,70,70,0,0.0,0,5.2,37,52.9
+article role and website genre,article | control | company_blog,RULE-PHRASES,70,70,0,0.0,0,5.2,5,7.1
+article role and website genre,article | control | company_blog,RULE-POSITIVE,70,70,0,0.0,0,5.2,5,7.1
+article role and website genre,article | control | company_blog,RULE-REPEATS,70,70,16,22.9,14.6,34.0,44,62.9
+article role and website genre,article | control | company_blog,RULE-RHETORIC,70,70,0,0.0,0,5.2,16,22.9
+article role and website genre,article | control | company_blog,RULE-SEMICOLON,70,70,0,0.0,0,5.2,10,14.3
+article role and website genre,article | control | company_blog,RULE-SPECIFIC,70,70,0,0.0,0,5.2,0,0.0
+article role and website genre,article | control | company_blog,RULE-STOCKWORDS,70,70,1,1.4,0.3,7.7,9,12.9
+article role and website genre,article | control | company_blog,RULE-TRANSITIONS,70,70,0,0.0,0,5.2,20,28.6
+article role and website genre,article | control | company_blog,RULE-VAGUE,70,70,0,0.0,0,5.2,1,1.4
+article role and website genre,article | control | company_blog,RULE-VARIATION,70,70,0,0.0,0,5.2,0,0.0
+article role and website genre,article | control | news,ANY_CATEGORY,67,67,25,37.3,26.7,49.3,,
+article role and website genre,article | control | news,RULE-COLON,67,67,0,0.0,0,5.4,30,44.8
+article role and website genre,article | control | news,RULE-CORPORATE,67,67,0,0.0,0,5.4,1,1.5
+article role and website genre,article | control | news,RULE-ELLIPSIS,67,67,0,0.0,0,5.4,3,4.5
+article role and website genre,article | control | news,RULE-EMDASH,67,67,3,4.5,1.5,12.4,21,31.3
+article role and website genre,article | control | news,RULE-EMDASH-PAIRS,67,67,6,9.0,4.2,18.2,20,29.9
+article role and website genre,article | control | news,RULE-INTENSIFIERS,67,67,0,0.0,0,5.4,3,4.5
+article role and website genre,article | control | news,RULE-LENGTH-RUNS,67,67,9,13.4,7.2,23.6,9,13.4
+article role and website genre,article | control | news,RULE-LISTS,67,67,0,0.0,0,5.4,0,0.0
+article role and website genre,article | control | news,RULE-OPENINGS,67,67,5,7.5,3.2,16.3,5,7.5
+article role and website genre,article | control | news,RULE-PARA-ENDINGS,67,63,0,0.0,0,5.7,1,1.6
+article role and website genre,article | control | news,RULE-PARA-UNIFORM,67,63,0,0.0,0,5.7,0,0.0
+article role and website genre,article | control | news,RULE-PARENS,67,67,0,0.0,0,5.4,15,22.4
+article role and website genre,article | control | news,RULE-PHRASES,67,67,0,0.0,0,5.4,1,1.5
+article role and website genre,article | control | news,RULE-POSITIVE,67,67,0,0.0,0,5.4,5,7.5
+article role and website genre,article | control | news,RULE-REPEATS,67,67,11,16.4,9.4,27.1,45,67.2
+article role and website genre,article | control | news,RULE-RHETORIC,67,67,0,0.0,0,5.4,8,11.9
+article role and website genre,article | control | news,RULE-SEMICOLON,67,67,0,0.0,0,5.4,5,7.5
+article role and website genre,article | control | news,RULE-SPECIFIC,67,67,0,0.0,0,5.4,0,0.0
+article role and website genre,article | control | news,RULE-STOCKWORDS,67,67,0,0.0,0,5.4,3,4.5
+article role and website genre,article | control | news,RULE-TRANSITIONS,67,67,0,0.0,0,5.4,12,17.9
+article role and website genre,article | control | news,RULE-VAGUE,67,67,0,0.0,0,5.4,0,0.0
+article role and website genre,article | control | news,RULE-VARIATION,67,67,1,1.5,0.3,8.0,1,1.5
+article role and website genre,article | control | other_unknown,ANY_CATEGORY,41,41,25,61.0,45.7,74.3,,
+article role and website genre,article | control | other_unknown,RULE-COLON,41,41,0,0.0,0,8.6,28,68.3
+article role and website genre,article | control | other_unknown,RULE-CORPORATE,41,41,0,0.0,0,8.6,4,9.8
+article role and website genre,article | control | other_unknown,RULE-ELLIPSIS,41,41,0,0.0,0,8.6,4,9.8
+article role and website genre,article | control | other_unknown,RULE-EMDASH,41,41,5,12.2,5.3,25.5,11,26.8
+article role and website genre,article | control | other_unknown,RULE-EMDASH-PAIRS,41,41,0,0.0,0,8.6,4,9.8
+article role and website genre,article | control | other_unknown,RULE-INTENSIFIERS,41,41,0,0.0,0,8.6,7,17.1
+article role and website genre,article | control | other_unknown,RULE-LENGTH-RUNS,41,41,20,48.8,34.3,63.5,20,48.8
+article role and website genre,article | control | other_unknown,RULE-LISTS,41,41,0,0.0,0,8.6,0,0.0
+article role and website genre,article | control | other_unknown,RULE-OPENINGS,41,41,5,12.2,5.3,25.5,5,12.2
+article role and website genre,article | control | other_unknown,RULE-PARA-ENDINGS,41,35,0,0.0,0,9.9,0,0.0
+article role and website genre,article | control | other_unknown,RULE-PARA-UNIFORM,41,35,0,0.0,0,9.9,0,0.0
+article role and website genre,article | control | other_unknown,RULE-PARENS,41,41,0,0.0,0,8.6,19,46.3
+article role and website genre,article | control | other_unknown,RULE-PHRASES,41,41,0,0.0,0,8.6,2,4.9
+article role and website genre,article | control | other_unknown,RULE-POSITIVE,41,41,0,0.0,0,8.6,4,9.8
+article role and website genre,article | control | other_unknown,RULE-REPEATS,41,41,10,24.4,13.8,39.3,27,65.9
+article role and website genre,article | control | other_unknown,RULE-RHETORIC,41,41,0,0.0,0,8.6,4,9.8
+article role and website genre,article | control | other_unknown,RULE-SEMICOLON,41,41,0,0.0,0,8.6,8,19.5
+article role and website genre,article | control | other_unknown,RULE-SPECIFIC,41,41,0,0.0,0,8.6,0,0.0
+article role and website genre,article | control | other_unknown,RULE-STOCKWORDS,41,41,0,0.0,0,8.6,1,2.4
+article role and website genre,article | control | other_unknown,RULE-TRANSITIONS,41,41,2,4.9,1.3,16.1,13,31.7
+article role and website genre,article | control | other_unknown,RULE-VAGUE,41,41,0,0.0,0,8.6,2,4.9
+article role and website genre,article | control | other_unknown,RULE-VARIATION,41,41,0,0.0,0,8.6,0,0.0
+article role and website genre,article | control | personal_blog,ANY_CATEGORY,108,108,73,67.6,58.3,75.7,,
+article role and website genre,article | control | personal_blog,RULE-COLON,108,108,0,0.0,0.0,3.4,83,76.9
+article role and website genre,article | control | personal_blog,RULE-CORPORATE,108,108,0,0.0,0.0,3.4,7,6.5
+article role and website genre,article | control | personal_blog,RULE-ELLIPSIS,108,108,0,0.0,0.0,3.4,18,16.7
+article role and website genre,article | control | personal_blog,RULE-EMDASH,108,108,14,13.0,7.9,20.6,31,28.7
+article role and website genre,article | control | personal_blog,RULE-EMDASH-PAIRS,108,108,7,6.5,3.2,12.8,19,17.6
+article role and website genre,article | control | personal_blog,RULE-INTENSIFIERS,108,108,0,0.0,0.0,3.4,44,40.7
+article role and website genre,article | control | personal_blog,RULE-LENGTH-RUNS,108,108,50,46.3,37.2,55.7,50,46.3
+article role and website genre,article | control | personal_blog,RULE-LISTS,108,108,0,0.0,0.0,3.4,0,0.0
+article role and website genre,article | control | personal_blog,RULE-OPENINGS,108,108,25,23.1,16.2,31.9,25,23.1
+article role and website genre,article | control | personal_blog,RULE-PARA-ENDINGS,108,83,0,0.0,0.0,4.4,0,0.0
+article role and website genre,article | control | personal_blog,RULE-PARA-UNIFORM,108,83,0,0.0,0.0,4.4,0,0.0
+article role and website genre,article | control | personal_blog,RULE-PARENS,108,108,0,0.0,0.0,3.4,67,62.0
+article role and website genre,article | control | personal_blog,RULE-PHRASES,108,108,0,0.0,0.0,3.4,6,5.6
+article role and website genre,article | control | personal_blog,RULE-POSITIVE,108,108,0,0.0,0.0,3.4,11,10.2
+article role and website genre,article | control | personal_blog,RULE-REPEATS,108,108,25,23.1,16.2,31.9,65,60.2
+article role and website genre,article | control | personal_blog,RULE-RHETORIC,108,108,0,0.0,0.0,3.4,20,18.5
+article role and website genre,article | control | personal_blog,RULE-SEMICOLON,108,108,0,0.0,0.0,3.4,31,28.7
+article role and website genre,article | control | personal_blog,RULE-SPECIFIC,108,108,0,0.0,0.0,3.4,0,0.0
+article role and website genre,article | control | personal_blog,RULE-STOCKWORDS,108,108,0,0.0,0.0,3.4,3,2.8
+article role and website genre,article | control | personal_blog,RULE-TRANSITIONS,108,108,0,0.0,0.0,3.4,27,25.0
+article role and website genre,article | control | personal_blog,RULE-VAGUE,108,108,0,0.0,0.0,3.4,5,4.6
+article role and website genre,article | control | personal_blog,RULE-VARIATION,108,108,0,0.0,0.0,3.4,0,0.0
+article role and website genre,article | control | reference_docs,ANY_CATEGORY,25,25,13,52.0,33.5,70.0,,
+article role and website genre,article | control | reference_docs,RULE-COLON,25,25,0,0.0,0,13.3,19,76.0
+article role and website genre,article | control | reference_docs,RULE-CORPORATE,25,25,0,0.0,0,13.3,2,8.0
+article role and website genre,article | control | reference_docs,RULE-ELLIPSIS,25,25,0,0.0,0,13.3,4,16.0
+article role and website genre,article | control | reference_docs,RULE-EMDASH,25,25,4,16.0,6.4,34.7,10,40.0
+article role and website genre,article | control | reference_docs,RULE-EMDASH-PAIRS,25,25,2,8.0,2.2,25.0,8,32.0
+article role and website genre,article | control | reference_docs,RULE-INTENSIFIERS,25,25,0,0.0,0,13.3,1,4.0
+article role and website genre,article | control | reference_docs,RULE-LENGTH-RUNS,25,25,8,32.0,17.2,51.6,8,32.0
+article role and website genre,article | control | reference_docs,RULE-LISTS,25,25,0,0.0,0,13.3,0,0.0
+article role and website genre,article | control | reference_docs,RULE-OPENINGS,25,25,2,8.0,2.2,25.0,2,8.0
+article role and website genre,article | control | reference_docs,RULE-PARA-ENDINGS,25,22,0,0.0,0.0,14.9,0,0.0
+article role and website genre,article | control | reference_docs,RULE-PARA-UNIFORM,25,22,0,0.0,0.0,14.9,0,0.0
+article role and website genre,article | control | reference_docs,RULE-PARENS,25,25,0,0.0,0,13.3,13,52.0
+article role and website genre,article | control | reference_docs,RULE-PHRASES,25,25,0,0.0,0,13.3,1,4.0
+article role and website genre,article | control | reference_docs,RULE-POSITIVE,25,25,0,0.0,0,13.3,1,4.0
+article role and website genre,article | control | reference_docs,RULE-REPEATS,25,25,4,16.0,6.4,34.7,16,64.0
+article role and website genre,article | control | reference_docs,RULE-RHETORIC,25,25,0,0.0,0,13.3,3,12.0
+article role and website genre,article | control | reference_docs,RULE-SEMICOLON,25,25,0,0.0,0,13.3,6,24.0
+article role and website genre,article | control | reference_docs,RULE-SPECIFIC,25,25,0,0.0,0,13.3,0,0.0
+article role and website genre,article | control | reference_docs,RULE-STOCKWORDS,25,25,0,0.0,0,13.3,1,4.0
+article role and website genre,article | control | reference_docs,RULE-TRANSITIONS,25,25,0,0.0,0,13.3,4,16.0
+article role and website genre,article | control | reference_docs,RULE-VAGUE,25,25,0,0.0,0,13.3,0,0.0
+article role and website genre,article | control | reference_docs,RULE-VARIATION,25,25,0,0.0,0,13.3,0,0.0
+article role and website genre,article | control | social_or_forum,ANY_CATEGORY,6,6,4,66.7,30.0,90.3,,
+article role and website genre,article | control | social_or_forum,RULE-COLON,6,6,0,0.0,0,39.0,4,66.7
+article role and website genre,article | control | social_or_forum,RULE-CORPORATE,6,6,0,0.0,0,39.0,0,0.0
+article role and website genre,article | control | social_or_forum,RULE-ELLIPSIS,6,6,0,0.0,0,39.0,1,16.7
+article role and website genre,article | control | social_or_forum,RULE-EMDASH,6,6,0,0.0,0,39.0,1,16.7
+article role and website genre,article | control | social_or_forum,RULE-EMDASH-PAIRS,6,6,0,0.0,0,39.0,0,0.0
+article role and website genre,article | control | social_or_forum,RULE-INTENSIFIERS,6,6,0,0.0,0,39.0,1,16.7
+article role and website genre,article | control | social_or_forum,RULE-LENGTH-RUNS,6,6,1,16.7,3.0,56.4,1,16.7
+article role and website genre,article | control | social_or_forum,RULE-LISTS,6,6,0,0.0,0,39.0,0,0.0
+article role and website genre,article | control | social_or_forum,RULE-OPENINGS,6,6,1,16.7,3.0,56.4,1,16.7
+article role and website genre,article | control | social_or_forum,RULE-PARA-ENDINGS,6,6,0,0.0,0,39.0,0,0.0
+article role and website genre,article | control | social_or_forum,RULE-PARA-UNIFORM,6,6,0,0.0,0,39.0,0,0.0
+article role and website genre,article | control | social_or_forum,RULE-PARENS,6,6,0,0.0,0,39.0,2,33.3
+article role and website genre,article | control | social_or_forum,RULE-PHRASES,6,6,0,0.0,0,39.0,0,0.0
+article role and website genre,article | control | social_or_forum,RULE-POSITIVE,6,6,0,0.0,0,39.0,0,0.0
+article role and website genre,article | control | social_or_forum,RULE-REPEATS,6,6,2,33.3,9.7,70.0,3,50.0
+article role and website genre,article | control | social_or_forum,RULE-RHETORIC,6,6,1,16.7,3.0,56.4,1,16.7
+article role and website genre,article | control | social_or_forum,RULE-SEMICOLON,6,6,0,0.0,0,39.0,1,16.7
+article role and website genre,article | control | social_or_forum,RULE-SPECIFIC,6,6,0,0.0,0,39.0,0,0.0
+article role and website genre,article | control | social_or_forum,RULE-STOCKWORDS,6,6,0,0.0,0,39.0,0,0.0
+article role and website genre,article | control | social_or_forum,RULE-TRANSITIONS,6,6,0,0.0,0,39.0,2,33.3
+article role and website genre,article | control | social_or_forum,RULE-VAGUE,6,6,0,0.0,0,39.0,0,0.0
+article role and website genre,article | control | social_or_forum,RULE-VARIATION,6,6,0,0.0,0,39.0,0,0.0
+article role and website genre,article | control | tech_press,ANY_CATEGORY,71,71,22,31.0,21.4,42.5,,
+article role and website genre,article | control | tech_press,RULE-COLON,71,71,0,0.0,0,5.1,27,38.0
+article role and website genre,article | control | tech_press,RULE-CORPORATE,71,71,1,1.4,0.2,7.6,3,4.2
+article role and website genre,article | control | tech_press,RULE-ELLIPSIS,71,71,0,0.0,0,5.1,4,5.6
+article role and website genre,article | control | tech_press,RULE-EMDASH,71,71,4,5.6,2.2,13.6,17,23.9
+article role and website genre,article | control | tech_press,RULE-EMDASH-PAIRS,71,71,2,2.8,0.8,9.7,18,25.4
+article role and website genre,article | control | tech_press,RULE-INTENSIFIERS,71,71,0,0.0,0,5.1,8,11.3
+article role and website genre,article | control | tech_press,RULE-LENGTH-RUNS,71,71,11,15.5,8.9,25.7,11,15.5
+article role and website genre,article | control | tech_press,RULE-LISTS,71,71,0,0.0,0,5.1,1,1.4
+article role and website genre,article | control | tech_press,RULE-OPENINGS,71,71,3,4.2,1.4,11.7,3,4.2
+article role and website genre,article | control | tech_press,RULE-PARA-ENDINGS,71,68,0,0.0,0,5.3,0,0.0
+article role and website genre,article | control | tech_press,RULE-PARA-UNIFORM,71,68,0,0.0,0,5.3,0,0.0
+article role and website genre,article | control | tech_press,RULE-PARENS,71,71,0,0.0,0,5.1,12,16.9
+article role and website genre,article | control | tech_press,RULE-PHRASES,71,71,0,0.0,0,5.1,2,2.8
+article role and website genre,article | control | tech_press,RULE-POSITIVE,71,71,0,0.0,0,5.1,1,1.4
+article role and website genre,article | control | tech_press,RULE-REPEATS,71,71,3,4.2,1.4,11.7,26,36.6
+article role and website genre,article | control | tech_press,RULE-RHETORIC,71,71,0,0.0,0,5.1,14,19.7
+article role and website genre,article | control | tech_press,RULE-SEMICOLON,71,71,0,0.0,0,5.1,4,5.6
+article role and website genre,article | control | tech_press,RULE-SPECIFIC,71,71,0,0.0,0,5.1,0,0.0
+article role and website genre,article | control | tech_press,RULE-STOCKWORDS,71,71,0,0.0,0,5.1,0,0.0
+article role and website genre,article | control | tech_press,RULE-TRANSITIONS,71,71,0,0.0,0,5.1,21,29.6
+article role and website genre,article | control | tech_press,RULE-VAGUE,71,71,0,0.0,0,5.1,1,1.4
+article role and website genre,article | control | tech_press,RULE-VARIATION,71,71,1,1.4,0.2,7.6,1,1.4

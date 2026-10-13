@@ -1,0 +1,318 @@
+period,length_band,measure,n_texts,k,pct,ci_lo,ci_hi
+2019-2021 (before ChatGPT),all,flag:dash_char,1705,21,1.2,0.8,1.9
+2019-2021 (before ChatGPT),all,flag:dash_double_hyphen,1705,41,2.4,1.8,3.2
+2019-2021 (before ChatGPT),all,flag:dash_spaced_endash,1705,5,0.3,0.1,0.7
+2019-2021 (before ChatGPT),all,flag:emdash_any,1705,61,3.6,2.8,4.6
+2019-2021 (before ChatGPT),all,flag:emdash_ge2,1705,21,1.2,0.8,1.9
+2019-2021 (before ChatGPT),all,flag:emdash_closed,1705,7,0.4,0.2,0.8
+2019-2021 (before ChatGPT),all,flag:x_not_y,1705,72,4.2,3.4,5.3
+2019-2021 (before ChatGPT),all,flag:nxby_strict,1705,29,1.7,1.2,2.4
+2019-2021 (before ChatGPT),all,flag:rhetq_fragment,1705,47,2.8,2.1,3.6
+2019-2021 (before ChatGPT),all,flag:staccato_ge3,1705,28,1.6,1.1,2.4
+2019-2021 (before ChatGPT),all,flag:list3_adj,1705,117,6.9,5.8,8.2
+2019-2021 (before ChatGPT),all,flag:md_bullet,1705,66,3.9,3.1,4.9
+2019-2021 (before ChatGPT),all,flag:curly_apos,1705,189,11.1,9.7,12.7
+2019-2021 (before ChatGPT),all,flag:semicolon,1705,79,4.6,3.7,5.7
+2019-2021 (before ChatGPT),all,flag:ellipsis,1705,237,13.9,12.3,15.6
+2019-2021 (before ChatGPT),all,flag:transition_opener,1705,19,1.1,0.7,1.7
+2019-2021 (before ChatGPT),all,flag:heres_the_thing,1705,13,0.8,0.4,1.3
+2019-2021 (before ChatGPT),all,flag:closing_question,1705,31,1.8,1.3,2.6
+2019-2021 (before ChatGPT),all,checker:any_category_noticeable,1691,57,3.4,2.6,4.3
+2019-2021 (before ChatGPT),all,checker:RULE-COLON,214,0,0.0,0,1.8
+2019-2021 (before ChatGPT),all,checker:RULE-CORPORATE,214,1,0.5,0.1,2.6
+2019-2021 (before ChatGPT),all,checker:RULE-ELLIPSIS,214,0,0.0,0,1.8
+2019-2021 (before ChatGPT),all,checker:RULE-EMDASH,214,2,0.9,0.3,3.3
+2019-2021 (before ChatGPT),all,checker:RULE-EMDASH-PAIRS,214,0,0.0,0,1.8
+2019-2021 (before ChatGPT),all,checker:RULE-INTENSIFIERS,214,5,2.3,1.0,5.4
+2019-2021 (before ChatGPT),all,checker:RULE-LENGTH-RUNS,177,1,0.6,0.1,3.1
+2019-2021 (before ChatGPT),all,checker:RULE-LISTS,1691,0,0.0,0,0.2
+2019-2021 (before ChatGPT),all,checker:RULE-OPENINGS,177,4,2.3,0.9,5.7
+2019-2021 (before ChatGPT),all,checker:RULE-PARA-ENDINGS,141,0,0.0,0,2.7
+2019-2021 (before ChatGPT),all,checker:RULE-PARA-UNIFORM,141,3,2.1,0.7,6.1
+2019-2021 (before ChatGPT),all,checker:RULE-PARENS,214,0,0.0,0,1.8
+2019-2021 (before ChatGPT),all,checker:RULE-PHRASES,1691,0,0.0,0,0.2
+2019-2021 (before ChatGPT),all,checker:RULE-POSITIVE,214,1,0.5,0.1,2.6
+2019-2021 (before ChatGPT),all,checker:RULE-REPEATS,214,0,0.0,0,1.8
+2019-2021 (before ChatGPT),all,checker:RULE-RHETORIC,1691,0,0.0,0,0.2
+2019-2021 (before ChatGPT),all,checker:RULE-SEMICOLON,214,0,0.0,0,1.8
+2019-2021 (before ChatGPT),all,checker:RULE-SPECIFIC,103,10,9.7,5.4,17.0
+2019-2021 (before ChatGPT),all,checker:RULE-STOCKWORDS,214,0,0.0,0,1.8
+2019-2021 (before ChatGPT),all,checker:RULE-TRANSITIONS,1691,0,0.0,0,0.2
+2019-2021 (before ChatGPT),all,checker:RULE-VAGUE,214,0,0.0,0,1.8
+2019-2021 (before ChatGPT),all,checker:RULE-VARIATION,177,37,20.9,15.6,27.5
+2019-2021 (before ChatGPT),40-79,flag:dash_char,946,2,0.2,0.1,0.8
+2019-2021 (before ChatGPT),40-79,flag:dash_double_hyphen,946,13,1.4,0.8,2.3
+2019-2021 (before ChatGPT),40-79,flag:dash_spaced_endash,946,1,0.1,0.0,0.6
+2019-2021 (before ChatGPT),40-79,flag:emdash_any,946,15,1.6,1.0,2.6
+2019-2021 (before ChatGPT),40-79,flag:emdash_ge2,946,3,0.3,0.1,0.9
+2019-2021 (before ChatGPT),40-79,flag:emdash_closed,946,0,0.0,0,0.4
+2019-2021 (before ChatGPT),40-79,flag:x_not_y,946,33,3.5,2.5,4.9
+2019-2021 (before ChatGPT),40-79,flag:nxby_strict,946,8,0.8,0.4,1.7
+2019-2021 (before ChatGPT),40-79,flag:rhetq_fragment,946,22,2.3,1.5,3.5
+2019-2021 (before ChatGPT),40-79,flag:staccato_ge3,946,14,1.5,0.9,2.5
+2019-2021 (before ChatGPT),40-79,flag:list3_adj,946,37,3.9,2.9,5.3
+2019-2021 (before ChatGPT),40-79,flag:md_bullet,946,13,1.4,0.8,2.3
+2019-2021 (before ChatGPT),40-79,flag:curly_apos,946,100,10.6,8.8,12.7
+2019-2021 (before ChatGPT),40-79,flag:semicolon,946,21,2.2,1.5,3.4
+2019-2021 (before ChatGPT),40-79,flag:ellipsis,946,104,11.0,9.2,13.1
+2019-2021 (before ChatGPT),40-79,flag:transition_opener,946,7,0.7,0.4,1.5
+2019-2021 (before ChatGPT),40-79,flag:heres_the_thing,946,5,0.5,0.2,1.2
+2019-2021 (before ChatGPT),40-79,flag:closing_question,946,20,2.1,1.4,3.2
+2019-2021 (before ChatGPT),40-79,checker:any_category_noticeable,938,0,0.0,0,0.4
+2019-2021 (before ChatGPT),80-149,flag:dash_char,543,11,2.0,1.1,3.6
+2019-2021 (before ChatGPT),80-149,flag:dash_double_hyphen,543,8,1.5,0.7,2.9
+2019-2021 (before ChatGPT),80-149,flag:dash_spaced_endash,543,2,0.4,0.1,1.3
+2019-2021 (before ChatGPT),80-149,flag:emdash_any,543,18,3.3,2.1,5.2
+2019-2021 (before ChatGPT),80-149,flag:emdash_ge2,543,6,1.1,0.5,2.4
+2019-2021 (before ChatGPT),80-149,flag:emdash_closed,543,4,0.7,0.3,1.9
+2019-2021 (before ChatGPT),80-149,flag:x_not_y,543,23,4.2,2.8,6.3
+2019-2021 (before ChatGPT),80-149,flag:nxby_strict,543,11,2.0,1.1,3.6
+2019-2021 (before ChatGPT),80-149,flag:rhetq_fragment,543,17,3.1,2.0,5.0
+2019-2021 (before ChatGPT),80-149,flag:staccato_ge3,543,9,1.7,0.9,3.1
+2019-2021 (before ChatGPT),80-149,flag:list3_adj,543,41,7.6,5.6,10.1
+2019-2021 (before ChatGPT),80-149,flag:md_bullet,543,27,5.0,3.4,7.1
+2019-2021 (before ChatGPT),80-149,flag:curly_apos,543,65,12.0,9.5,15.0
+2019-2021 (before ChatGPT),80-149,flag:semicolon,543,32,5.9,4.2,8.2
+2019-2021 (before ChatGPT),80-149,flag:ellipsis,543,80,14.7,12.0,18.0
+2019-2021 (before ChatGPT),80-149,flag:transition_opener,543,5,0.9,0.4,2.1
+2019-2021 (before ChatGPT),80-149,flag:heres_the_thing,543,5,0.9,0.4,2.1
+2019-2021 (before ChatGPT),80-149,flag:closing_question,543,11,2.0,1.1,3.6
+2019-2021 (before ChatGPT),80-149,checker:any_category_noticeable,539,0,0.0,0,0.7
+2019-2021 (before ChatGPT),150-400,flag:dash_char,216,8,3.7,1.9,7.1
+2019-2021 (before ChatGPT),150-400,flag:dash_double_hyphen,216,20,9.3,6.1,13.9
+2019-2021 (before ChatGPT),150-400,flag:dash_spaced_endash,216,2,0.9,0.3,3.3
+2019-2021 (before ChatGPT),150-400,flag:emdash_any,216,28,13.0,9.1,18.1
+2019-2021 (before ChatGPT),150-400,flag:emdash_ge2,216,12,5.6,3.2,9.5
+2019-2021 (before ChatGPT),150-400,flag:emdash_closed,216,3,1.4,0.5,4.0
+2019-2021 (before ChatGPT),150-400,flag:x_not_y,216,16,7.4,4.6,11.7
+2019-2021 (before ChatGPT),150-400,flag:nxby_strict,216,10,4.6,2.5,8.3
+2019-2021 (before ChatGPT),150-400,flag:rhetq_fragment,216,8,3.7,1.9,7.1
+2019-2021 (before ChatGPT),150-400,flag:staccato_ge3,216,5,2.3,1.0,5.3
+2019-2021 (before ChatGPT),150-400,flag:list3_adj,216,39,18.1,13.5,23.7
+2019-2021 (before ChatGPT),150-400,flag:md_bullet,216,26,12.0,8.3,17.1
+2019-2021 (before ChatGPT),150-400,flag:curly_apos,216,24,11.1,7.6,16.0
+2019-2021 (before ChatGPT),150-400,flag:semicolon,216,26,12.0,8.3,17.1
+2019-2021 (before ChatGPT),150-400,flag:ellipsis,216,53,24.5,19.3,30.7
+2019-2021 (before ChatGPT),150-400,flag:transition_opener,216,7,3.2,1.6,6.5
+2019-2021 (before ChatGPT),150-400,flag:heres_the_thing,216,3,1.4,0.5,4.0
+2019-2021 (before ChatGPT),150-400,flag:closing_question,216,0,0.0,0.0,1.7
+2019-2021 (before ChatGPT),150-400,checker:any_category_noticeable,214,57,26.6,21.2,32.9
+2019-2021 (before ChatGPT),150-400,checker:RULE-CORPORATE,214,1,0.5,0.1,2.6
+2019-2021 (before ChatGPT),150-400,checker:RULE-EMDASH,214,2,0.9,0.3,3.3
+2019-2021 (before ChatGPT),150-400,checker:RULE-INTENSIFIERS,214,5,2.3,1.0,5.4
+2019-2021 (before ChatGPT),150-400,checker:RULE-LENGTH-RUNS,177,1,0.6,0.1,3.1
+2019-2021 (before ChatGPT),150-400,checker:RULE-OPENINGS,177,4,2.3,0.9,5.7
+2019-2021 (before ChatGPT),150-400,checker:RULE-PARA-UNIFORM,141,3,2.1,0.7,6.1
+2019-2021 (before ChatGPT),150-400,checker:RULE-POSITIVE,214,1,0.5,0.1,2.6
+2019-2021 (before ChatGPT),150-400,checker:RULE-SPECIFIC,103,10,9.7,5.4,17.0
+2019-2021 (before ChatGPT),150-400,checker:RULE-VARIATION,177,37,20.9,15.6,27.5
+2023-2024H1,all,flag:dash_char,1489,13,0.9,0.5,1.5
+2023-2024H1,all,flag:dash_double_hyphen,1489,25,1.7,1.1,2.5
+2023-2024H1,all,flag:dash_spaced_endash,1489,10,0.7,0.4,1.2
+2023-2024H1,all,flag:emdash_any,1489,38,2.6,1.9,3.5
+2023-2024H1,all,flag:emdash_ge2,1489,8,0.5,0.3,1.1
+2023-2024H1,all,flag:emdash_closed,1489,5,0.3,0.1,0.8
+2023-2024H1,all,flag:x_not_y,1489,51,3.4,2.6,4.5
+2023-2024H1,all,flag:nxby_strict,1489,23,1.5,1.0,2.3
+2023-2024H1,all,flag:rhetq_fragment,1489,40,2.7,2.0,3.6
+2023-2024H1,all,flag:staccato_ge3,1489,20,1.3,0.9,2.1
+2023-2024H1,all,flag:list3_adj,1489,88,5.9,4.8,7.2
+2023-2024H1,all,flag:md_bullet,1489,31,2.1,1.5,2.9
+2023-2024H1,all,flag:curly_apos,1489,224,15.0,13.3,16.9
+2023-2024H1,all,flag:semicolon,1489,93,6.2,5.1,7.6
+2023-2024H1,all,flag:ellipsis,1489,224,15.0,13.3,16.9
+2023-2024H1,all,flag:transition_opener,1489,17,1.1,0.7,1.8
+2023-2024H1,all,flag:heres_the_thing,1489,15,1.0,0.6,1.7
+2023-2024H1,all,flag:closing_question,1489,28,1.9,1.3,2.7
+2023-2024H1,all,checker:any_category_noticeable,1479,25,1.7,1.1,2.5
+2023-2024H1,all,checker:RULE-COLON,185,0,0.0,0,2.0
+2023-2024H1,all,checker:RULE-CORPORATE,185,0,0.0,0,2.0
+2023-2024H1,all,checker:RULE-ELLIPSIS,185,0,0.0,0,2.0
+2023-2024H1,all,checker:RULE-EMDASH,185,0,0.0,0,2.0
+2023-2024H1,all,checker:RULE-EMDASH-PAIRS,185,0,0.0,0,2.0
+2023-2024H1,all,checker:RULE-INTENSIFIERS,185,3,1.6,0.6,4.7
+2023-2024H1,all,checker:RULE-LENGTH-RUNS,147,3,2.0,0.7,5.8
+2023-2024H1,all,checker:RULE-LISTS,1479,0,0.0,0,0.3
+2023-2024H1,all,checker:RULE-OPENINGS,147,0,0.0,0,2.5
+2023-2024H1,all,checker:RULE-PARA-ENDINGS,125,0,0.0,0,3.0
+2023-2024H1,all,checker:RULE-PARA-UNIFORM,125,4,3.2,1.3,7.9
+2023-2024H1,all,checker:RULE-PARENS,185,0,0.0,0,2.0
+2023-2024H1,all,checker:RULE-PHRASES,1479,0,0.0,0,0.3
+2023-2024H1,all,checker:RULE-POSITIVE,185,1,0.5,0.1,3.0
+2023-2024H1,all,checker:RULE-REPEATS,185,0,0.0,0,2.0
+2023-2024H1,all,checker:RULE-RHETORIC,1479,0,0.0,0,0.3
+2023-2024H1,all,checker:RULE-SEMICOLON,185,0,0.0,0,2.0
+2023-2024H1,all,checker:RULE-SPECIFIC,80,4,5.0,2.0,12.2
+2023-2024H1,all,checker:RULE-STOCKWORDS,185,0,0.0,0,2.0
+2023-2024H1,all,checker:RULE-TRANSITIONS,1479,0,0.0,0,0.3
+2023-2024H1,all,checker:RULE-VAGUE,185,0,0.0,0,2.0
+2023-2024H1,all,checker:RULE-VARIATION,147,11,7.5,4.2,12.9
+2023-2024H1,40-79,flag:dash_char,843,6,0.7,0.3,1.5
+2023-2024H1,40-79,flag:dash_double_hyphen,843,5,0.6,0.3,1.4
+2023-2024H1,40-79,flag:dash_spaced_endash,843,4,0.5,0.2,1.2
+2023-2024H1,40-79,flag:emdash_any,843,11,1.3,0.7,2.3
+2023-2024H1,40-79,flag:emdash_ge2,843,1,0.1,0.0,0.7
+2023-2024H1,40-79,flag:emdash_closed,843,2,0.2,0.1,0.9
+2023-2024H1,40-79,flag:x_not_y,843,22,2.6,1.7,3.9
+2023-2024H1,40-79,flag:nxby_strict,843,7,0.8,0.4,1.7
+2023-2024H1,40-79,flag:rhetq_fragment,843,16,1.9,1.2,3.1
+2023-2024H1,40-79,flag:staccato_ge3,843,9,1.1,0.6,2.0
+2023-2024H1,40-79,flag:list3_adj,843,33,3.9,2.8,5.4
+2023-2024H1,40-79,flag:md_bullet,843,5,0.6,0.3,1.4
+2023-2024H1,40-79,flag:curly_apos,843,123,14.6,12.4,17.1
+2023-2024H1,40-79,flag:semicolon,843,27,3.2,2.2,4.6
+2023-2024H1,40-79,flag:ellipsis,843,110,13.0,10.9,15.5
+2023-2024H1,40-79,flag:transition_opener,843,6,0.7,0.3,1.5
+2023-2024H1,40-79,flag:heres_the_thing,843,3,0.4,0.1,1.0
+2023-2024H1,40-79,flag:closing_question,843,17,2.0,1.3,3.2
+2023-2024H1,40-79,checker:any_category_noticeable,836,0,0.0,0,0.5
+2023-2024H1,80-149,flag:dash_char,460,3,0.7,0.2,1.9
+2023-2024H1,80-149,flag:dash_double_hyphen,460,10,2.2,1.2,4.0
+2023-2024H1,80-149,flag:dash_spaced_endash,460,1,0.2,0.0,1.2
+2023-2024H1,80-149,flag:emdash_any,460,13,2.8,1.7,4.8
+2023-2024H1,80-149,flag:emdash_ge2,460,5,1.1,0.5,2.5
+2023-2024H1,80-149,flag:emdash_closed,460,3,0.7,0.2,1.9
+2023-2024H1,80-149,flag:x_not_y,460,14,3.0,1.8,5.0
+2023-2024H1,80-149,flag:nxby_strict,460,12,2.6,1.5,4.5
+2023-2024H1,80-149,flag:rhetq_fragment,460,11,2.4,1.3,4.2
+2023-2024H1,80-149,flag:staccato_ge3,460,5,1.1,0.5,2.5
+2023-2024H1,80-149,flag:list3_adj,460,32,7.0,5.0,9.7
+2023-2024H1,80-149,flag:md_bullet,460,11,2.4,1.3,4.2
+2023-2024H1,80-149,flag:curly_apos,460,72,15.7,12.6,19.3
+2023-2024H1,80-149,flag:semicolon,460,33,7.2,5.2,9.9
+2023-2024H1,80-149,flag:ellipsis,460,68,14.8,11.8,18.3
+2023-2024H1,80-149,flag:transition_opener,460,3,0.7,0.2,1.9
+2023-2024H1,80-149,flag:heres_the_thing,460,4,0.9,0.3,2.2
+2023-2024H1,80-149,flag:closing_question,460,9,2.0,1.0,3.7
+2023-2024H1,80-149,checker:any_category_noticeable,458,0,0.0,0,0.8
+2023-2024H1,150-400,flag:dash_char,186,4,2.2,0.8,5.4
+2023-2024H1,150-400,flag:dash_double_hyphen,186,10,5.4,2.9,9.6
+2023-2024H1,150-400,flag:dash_spaced_endash,186,5,2.7,1.2,6.1
+2023-2024H1,150-400,flag:emdash_any,186,14,7.5,4.5,12.2
+2023-2024H1,150-400,flag:emdash_ge2,186,2,1.1,0.3,3.8
+2023-2024H1,150-400,flag:emdash_closed,186,0,0.0,0,2.0
+2023-2024H1,150-400,flag:x_not_y,186,15,8.1,4.9,12.9
+2023-2024H1,150-400,flag:nxby_strict,186,4,2.2,0.8,5.4
+2023-2024H1,150-400,flag:rhetq_fragment,186,13,7.0,4.1,11.6
+2023-2024H1,150-400,flag:staccato_ge3,186,6,3.2,1.5,6.9
+2023-2024H1,150-400,flag:list3_adj,186,23,12.4,8.4,17.9
+2023-2024H1,150-400,flag:md_bullet,186,15,8.1,4.9,12.9
+2023-2024H1,150-400,flag:curly_apos,186,29,15.6,11.1,21.5
+2023-2024H1,150-400,flag:semicolon,186,33,17.7,12.9,23.9
+2023-2024H1,150-400,flag:ellipsis,186,46,24.7,19.1,31.4
+2023-2024H1,150-400,flag:transition_opener,186,8,4.3,2.2,8.3
+2023-2024H1,150-400,flag:heres_the_thing,186,8,4.3,2.2,8.3
+2023-2024H1,150-400,flag:closing_question,186,2,1.1,0.3,3.8
+2023-2024H1,150-400,checker:any_category_noticeable,185,25,13.5,9.3,19.2
+2023-2024H1,150-400,checker:RULE-INTENSIFIERS,185,3,1.6,0.6,4.7
+2023-2024H1,150-400,checker:RULE-LENGTH-RUNS,147,3,2.0,0.7,5.8
+2023-2024H1,150-400,checker:RULE-PARA-UNIFORM,125,4,3.2,1.3,7.9
+2023-2024H1,150-400,checker:RULE-POSITIVE,185,1,0.5,0.1,3.0
+2023-2024H1,150-400,checker:RULE-SPECIFIC,80,4,5.0,2.0,12.2
+2023-2024H1,150-400,checker:RULE-VARIATION,147,11,7.5,4.2,12.9
+2025-2026,all,flag:dash_char,1363,20,1.5,1.0,2.3
+2025-2026,all,flag:dash_double_hyphen,1363,14,1.0,0.6,1.7
+2025-2026,all,flag:dash_spaced_endash,1363,3,0.2,0.1,0.6
+2025-2026,all,flag:emdash_any,1363,34,2.5,1.8,3.5
+2025-2026,all,flag:emdash_ge2,1363,10,0.7,0.4,1.3
+2025-2026,all,flag:emdash_closed,1363,8,0.6,0.3,1.2
+2025-2026,all,flag:x_not_y,1363,62,4.5,3.6,5.8
+2025-2026,all,flag:nxby_strict,1363,14,1.0,0.6,1.7
+2025-2026,all,flag:rhetq_fragment,1363,30,2.2,1.5,3.1
+2025-2026,all,flag:staccato_ge3,1363,15,1.1,0.7,1.8
+2025-2026,all,flag:list3_adj,1363,72,5.3,4.2,6.6
+2025-2026,all,flag:md_bullet,1363,40,2.9,2.2,4.0
+2025-2026,all,flag:curly_apos,1363,181,13.3,11.6,15.2
+2025-2026,all,flag:semicolon,1363,71,5.2,4.2,6.5
+2025-2026,all,flag:ellipsis,1363,166,12.2,10.5,14.0
+2025-2026,all,flag:transition_opener,1363,17,1.2,0.8,2.0
+2025-2026,all,flag:heres_the_thing,1363,12,0.9,0.5,1.5
+2025-2026,all,flag:closing_question,1363,21,1.5,1.0,2.3
+2025-2026,all,checker:any_category_noticeable,1356,33,2.4,1.7,3.4
+2025-2026,all,checker:RULE-COLON,175,0,0.0,0,2.1
+2025-2026,all,checker:RULE-CORPORATE,175,0,0.0,0,2.1
+2025-2026,all,checker:RULE-ELLIPSIS,175,0,0.0,0,2.1
+2025-2026,all,checker:RULE-EMDASH,175,2,1.1,0.3,4.1
+2025-2026,all,checker:RULE-EMDASH-PAIRS,175,0,0.0,0,2.1
+2025-2026,all,checker:RULE-INTENSIFIERS,175,6,3.4,1.6,7.3
+2025-2026,all,checker:RULE-LENGTH-RUNS,144,2,1.4,0.4,4.9
+2025-2026,all,checker:RULE-LISTS,1356,0,0.0,0,0.3
+2025-2026,all,checker:RULE-OPENINGS,144,2,1.4,0.4,4.9
+2025-2026,all,checker:RULE-PARA-ENDINGS,120,0,0.0,0,3.1
+2025-2026,all,checker:RULE-PARA-UNIFORM,120,1,0.8,0.1,4.6
+2025-2026,all,checker:RULE-PARENS,175,0,0.0,0,2.1
+2025-2026,all,checker:RULE-PHRASES,1356,0,0.0,0,0.3
+2025-2026,all,checker:RULE-POSITIVE,175,1,0.6,0.1,3.2
+2025-2026,all,checker:RULE-REPEATS,175,0,0.0,0,2.1
+2025-2026,all,checker:RULE-RHETORIC,1356,0,0.0,0,0.3
+2025-2026,all,checker:RULE-SEMICOLON,175,0,0.0,0,2.1
+2025-2026,all,checker:RULE-SPECIFIC,88,8,9.1,4.7,16.9
+2025-2026,all,checker:RULE-STOCKWORDS,175,0,0.0,0,2.1
+2025-2026,all,checker:RULE-TRANSITIONS,1356,0,0.0,0,0.3
+2025-2026,all,checker:RULE-VAGUE,175,0,0.0,0,2.1
+2025-2026,all,checker:RULE-VARIATION,144,15,10.4,6.4,16.5
+2025-2026,40-79,flag:dash_char,776,7,0.9,0.4,1.9
+2025-2026,40-79,flag:dash_double_hyphen,776,5,0.6,0.3,1.5
+2025-2026,40-79,flag:dash_spaced_endash,776,0,0.0,0,0.5
+2025-2026,40-79,flag:emdash_any,776,12,1.5,0.9,2.7
+2025-2026,40-79,flag:emdash_ge2,776,2,0.3,0.1,0.9
+2025-2026,40-79,flag:emdash_closed,776,3,0.4,0.1,1.1
+2025-2026,40-79,flag:x_not_y,776,24,3.1,2.1,4.6
+2025-2026,40-79,flag:nxby_strict,776,5,0.6,0.3,1.5
+2025-2026,40-79,flag:rhetq_fragment,776,12,1.5,0.9,2.7
+2025-2026,40-79,flag:staccato_ge3,776,5,0.6,0.3,1.5
+2025-2026,40-79,flag:list3_adj,776,24,3.1,2.1,4.6
+2025-2026,40-79,flag:md_bullet,776,13,1.7,1.0,2.8
+2025-2026,40-79,flag:curly_apos,776,104,13.4,11.2,16.0
+2025-2026,40-79,flag:semicolon,776,28,3.6,2.5,5.2
+2025-2026,40-79,flag:ellipsis,776,71,9.1,7.3,11.4
+2025-2026,40-79,flag:transition_opener,776,6,0.8,0.4,1.7
+2025-2026,40-79,flag:heres_the_thing,776,6,0.8,0.4,1.7
+2025-2026,40-79,flag:closing_question,776,14,1.8,1.1,3.0
+2025-2026,40-79,checker:any_category_noticeable,771,0,0.0,0,0.5
+2025-2026,80-149,flag:dash_char,411,8,1.9,1.0,3.8
+2025-2026,80-149,flag:dash_double_hyphen,411,6,1.5,0.7,3.1
+2025-2026,80-149,flag:dash_spaced_endash,411,2,0.5,0.1,1.8
+2025-2026,80-149,flag:emdash_any,411,14,3.4,2.0,5.6
+2025-2026,80-149,flag:emdash_ge2,411,3,0.7,0.2,2.1
+2025-2026,80-149,flag:emdash_closed,411,2,0.5,0.1,1.8
+2025-2026,80-149,flag:x_not_y,411,24,5.8,4.0,8.5
+2025-2026,80-149,flag:nxby_strict,411,5,1.2,0.5,2.8
+2025-2026,80-149,flag:rhetq_fragment,411,9,2.2,1.2,4.1
+2025-2026,80-149,flag:staccato_ge3,411,7,1.7,0.8,3.5
+2025-2026,80-149,flag:list3_adj,411,29,7.1,5.0,9.9
+2025-2026,80-149,flag:md_bullet,411,12,2.9,1.7,5.0
+2025-2026,80-149,flag:curly_apos,411,55,13.4,10.4,17.0
+2025-2026,80-149,flag:semicolon,411,22,5.4,3.6,8.0
+2025-2026,80-149,flag:ellipsis,411,54,13.1,10.2,16.7
+2025-2026,80-149,flag:transition_opener,411,5,1.2,0.5,2.8
+2025-2026,80-149,flag:heres_the_thing,411,4,1.0,0.4,2.5
+2025-2026,80-149,flag:closing_question,411,4,1.0,0.4,2.5
+2025-2026,80-149,checker:any_category_noticeable,410,0,0.0,0,0.9
+2025-2026,150-400,flag:dash_char,176,5,2.8,1.2,6.5
+2025-2026,150-400,flag:dash_double_hyphen,176,3,1.7,0.6,4.9
+2025-2026,150-400,flag:dash_spaced_endash,176,1,0.6,0.1,3.1
+2025-2026,150-400,flag:emdash_any,176,8,4.5,2.3,8.7
+2025-2026,150-400,flag:emdash_ge2,176,5,2.8,1.2,6.5
+2025-2026,150-400,flag:emdash_closed,176,3,1.7,0.6,4.9
+2025-2026,150-400,flag:x_not_y,176,14,8.0,4.8,12.9
+2025-2026,150-400,flag:nxby_strict,176,4,2.3,0.9,5.7
+2025-2026,150-400,flag:rhetq_fragment,176,9,5.1,2.7,9.4
+2025-2026,150-400,flag:staccato_ge3,176,3,1.7,0.6,4.9
+2025-2026,150-400,flag:list3_adj,176,19,10.8,7.0,16.2
+2025-2026,150-400,flag:md_bullet,176,15,8.5,5.2,13.6
+2025-2026,150-400,flag:curly_apos,176,22,12.5,8.4,18.2
+2025-2026,150-400,flag:semicolon,176,21,11.9,7.9,17.6
+2025-2026,150-400,flag:ellipsis,176,41,23.3,17.7,30.1
+2025-2026,150-400,flag:transition_opener,176,6,3.4,1.6,7.2
+2025-2026,150-400,flag:heres_the_thing,176,2,1.1,0.3,4.0
+2025-2026,150-400,flag:closing_question,176,3,1.7,0.6,4.9
+2025-2026,150-400,checker:any_category_noticeable,175,33,18.9,13.8,25.3
+2025-2026,150-400,checker:RULE-EMDASH,175,2,1.1,0.3,4.1
+2025-2026,150-400,checker:RULE-INTENSIFIERS,175,6,3.4,1.6,7.3
+2025-2026,150-400,checker:RULE-LENGTH-RUNS,144,2,1.4,0.4,4.9
+2025-2026,150-400,checker:RULE-OPENINGS,144,2,1.4,0.4,4.9
+2025-2026,150-400,checker:RULE-PARA-UNIFORM,120,1,0.8,0.1,4.6
+2025-2026,150-400,checker:RULE-POSITIVE,175,1,0.6,0.1,3.2
+2025-2026,150-400,checker:RULE-SPECIFIC,88,8,9.1,4.7,16.9
+2025-2026,150-400,checker:RULE-VARIATION,144,15,10.4,6.4,16.5

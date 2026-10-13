@@ -39572,11 +39572,21 @@
 
   <url>
     <loc>https://ultratextgen.com/research/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/research-hub.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/research/ai-writing-footprint-study/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/research-ai-writing-footprint-study.png</image:loc>
     </image:image>
   </url>
 
