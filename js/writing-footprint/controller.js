@@ -27,8 +27,8 @@
   const $ = function (id) { return document.getElementById(id); };
   const LEVEL_LABEL = { none: "Not observed", low: "Observed, below threshold", noticeable: "Noticeable", high: "Frequent" };
   const EVIDENCE_LABEL = {
-    population: "Measured shift in published text. Says nothing about this one text.",
-    reader: "Readers and editors often name this. Nothing shows it predicts who wrote a text.",
+    population: "A measured shift in some published text after 2022, such as biomedical abstracts. Says nothing about this one text.",
+    reader: "Some readers name this. Nothing shows it predicts who wrote a text.",
     house: "A style judgement, with no authorship claim."
   };
   const SAFETY_LABEL = {
@@ -271,7 +271,7 @@
       if (state.edits.has(f.key)) undoKey(f.key);
       state.selected = null;
       renderAll();
-      liveStatus("Ignored. It no longer counts.");
+      liveStatus("Ignored for edits. The report numbers stay the same.");
     });
     actions.appendChild(ig);
     d.appendChild(actions);
