@@ -173,6 +173,28 @@ t("invisible: emoji joiner kept", stripInv("👨\u200D👩"), "👨\u200D👩");
 t("invisible: braille word space kept beside braille cells", stripInv("\u2801\u2800\u2803"), "\u2801\u2800\u2803");
 t("invisible: blank-name U+2800 alone is stripped", stripInv("a\u2800"), "a");
 
+/* Script-aware: the zero-width non-joiner is a spelling character in Persian
+   (mi-khaham, "I want"), Hindi and Bengali, and the bidi marks fix number and
+   punctuation order in Arabic and Hebrew. Stripping them broke the word, so
+   they stay in that context and still go from Latin text. */
+const faWant = "\u0645\u06CC\u200C\u062E\u0648\u0627\u0647\u0645"; // می‌خواهم
+t("invisible: Persian ZWNJ kept", stripInv(faWant), faWant);
+t("hidden: Persian ZWNJ not listed", hid(faWant), []);
+t("clean: Persian ZWNJ kept", D.cleanHidden(faWant), faWant);
+t("inspect: Persian ZWNJ not counted", D.inspect(faWant).invisible, 0);
+const hiZwnj = "\u0915\u094D\u200C\u0937"; // क्‌ष, half-form request
+t("invisible: Devanagari ZWNJ after virama kept", stripInv(hiZwnj), hiZwnj);
+t("invisible: ZWNJ in Latin text still stripped", stripInv("ab\u200Ccd"), "abcd");
+t("invisible: ZWNJ at a Persian word edge stripped", stripInv("\u200C" + faWant), faWant);
+const arRlm = "\u0627\u0644\u0633\u0639\u0631 \u200F100\u200F \u0631\u064A\u0627\u0644";
+t("invisible: RLM kept in Arabic text", stripInv(arRlm), arRlm);
+const heLrm = "\u05E9\u05DC\u05D5\u05DD \u200Eabc\u200E";
+t("invisible: LRM kept in Hebrew text", stripInv(heLrm), heLrm);
+t("hidden: RLM in Arabic text not listed", hid(arRlm), []);
+t("invisible: RLM in Latin-only text stripped", stripInv("a\u200Fb\u200Ec"), "abc");
+t("invisible: RLO stripped even in Arabic text", stripInv("\u0627\u202E\u0628"), "\u0627\u0628");
+t("invisible: emoji ZWJ still kept beside Persian", stripInv(faWant + " 👨\u200D👩"), faWant + " 👨\u200D👩");
+
 /* trimToFit cuts on a user-perceived character. A code-point cut left
    a family emoji ending in a dangling joiner, and split flags. */
 const family = "👨\u200D👩\u200D👧\u200D👦";
