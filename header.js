@@ -1343,8 +1343,14 @@
     if (link.closest(".pt-siblings")) return "sibling_card";
     return "hub_card";
   }
+  /* The printables directory in each language, as the site actually names it.
+     The list used to carry "druckvorlagen", which no page has ever used, and it
+     missed five real ones, so printable_nav never fired on the German, Italian,
+     Japanese, Dutch or Turkish printables. header.test.js checks it against
+     every page that loads a js/printables/ script. */
+  const PRINTABLES_PATH_RE = /\/(printables|zum-ausdrucken|imprimibles|imprimables|da-stampare|purinto|om-uit-te-printen|do-druku|imprimiveis|yazdirilabilir)\//;
   function initializePrintableNavTracking() {
-    if (!/\/(printables|imprimibles|druckvorlagen|do-druku|imprimables|imprimiveis)\//.test(window.location.pathname || "")) return;
+    if (!PRINTABLES_PATH_RE.test(window.location.pathname || "")) return;
     document.addEventListener("click", function (evt) {
       var link = evt.target && evt.target.closest && evt.target.closest(PRINTABLE_NAV_SELECTOR);
       if (!link) return;

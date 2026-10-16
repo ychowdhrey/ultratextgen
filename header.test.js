@@ -344,6 +344,42 @@ t('a printable card on the hub is still "hub_card"',
 t('an A-Z strip link inside .pt-siblings stays "az_strip"',
   () => eq(NAV_KIND(fakeLink(['.pt-az-link'], ['.pt-siblings'])), 'az_strip'));
 
+// ── printable_nav: which paths it listens on ─────────────────────────────
+//
+// The path list was written by hand and named a German directory no page uses,
+// while five real locale printables directories were missing, so the event was
+// silent there. This reads the list from header.js and checks it against every
+// page that loads a printables sheet engine, so a new locale directory fails
+// here instead of going quiet.
+
+const PRINTABLES_PATH_RE = new Function(
+  `${slice('  const PRINTABLES_PATH_RE = ', '  function initializePrintableNavTracking()')}\nreturn PRINTABLES_PATH_RE;`
+)();
+t('printable_nav listens on every page that loads a printables sheet engine', () => {
+  const missed = [];
+  let seen = 0;
+  (function walk(dir) {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (e.name === 'node_modules' || e.name === '.git') continue;
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) walk(p);
+      else if (e.name === 'index.html') {
+        const text = fs.readFileSync(p, 'utf8');
+        if (!/src="\/js\/printables\/(printablesEngine|jaSheets)\.js/.test(text)) continue;
+        seen++;
+        const url = '/' + path.relative(__dirname, path.dirname(p)).split(path.sep).join('/') + '/';
+        if (!PRINTABLES_PATH_RE.test(url)) missed.push(url);
+      }
+    }
+  })(__dirname);
+  if (seen < 100) throw new Error(`found only ${seen} printables pages: the scan is broken, not the list`);
+  if (missed.length) throw new Error(`${missed.length} printables page(s) outside PRINTABLES_PATH_RE, e.g. ${missed.slice(0, 5).join(', ')}`);
+});
+t('printable_nav does not listen on a library page', () => {
+  eq(PRINTABLES_PATH_RE.test('/library/roblox-symbols/'), false, 'library');
+  eq(PRINTABLES_PATH_RE.test('/de/library/herz-symbole/'), false, 'locale library');
+});
+
 // ── browse events: kaomoji hub mood links, /library/ filter + search ─────
 //
 // The block is sliced out of header.js and evaluated with a fake clock, so the
