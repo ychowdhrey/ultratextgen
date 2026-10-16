@@ -387,5 +387,39 @@ const CLUED = [
   ok(/BAER/.test(letters) && !/[ÄÖÜß]/.test(letters), "crossword fold de: " + letters);
 }
 
+/* ===============================================================
+   SCRIPTS AND PASTED LISTS
+   A square is one written character: Hindi कि is a consonant plus its vowel
+   sign, and the old letter-only filter printed किताब as three bare
+   consonants. And a list pasted from a chat assistant arrives numbered, with
+   a definition after each word.
+   =============================================================== */
+{
+  const hi = SC.normalizeWords("किताब")[0];
+  eq(hi.letters.join("|"), "कि|ता|ब", "scramble: Hindi keeps vowel signs in their square");
+  const th = SC.normalizeWords("สวัสดี")[0];
+  eq(th.letters.join("|"), "ส|วั|ส|ดี", "scramble: Thai keeps the marks above");
+  const hs = SC.build({ input: "किताब\nपानी", seed: "hi" });
+  eq(hs.words.length, 2, "scramble: both Hindi words scramble");
+  ok(hs.words.every((w) => bag(w.scrambled) === bag(w.letters) && w.length === w.letters.length),
+    "scramble: the Hindi squares are a permutation of the word's own squares");
+  const p = CW.build({ input: "किताब = book\nताला = lock\nबस = bus", seed: "hi" });
+  const kitab = p.entries.find((e) => e.display === "किताब");
+  ok(!!kitab, "crossword: the Hindi word is placed");
+  if (kitab) eq(kitab.length, 3, "crossword: the clue length counts squares, not code units");
+  if (kitab) eq(CW.readRun(p.grid, kitab.row, kitab.col, kitab.dir), "किताब", "crossword: the Hindi run reads back whole");
+
+  const sc = (x) => SC.normalizeWords(x).map((w) => w.key).join(" ");
+  eq(sc("1. Apple - a red fruit\n2) **Banana**: a yellow fruit, curved\n\u2022 cherry"), "APPLE BANANA CHERRY",
+    "scramble: numbering, bullets, bold and definitions removed");
+  eq(sc("ice-cream"), "ICECREAM", "scramble: an unspaced hyphen stays part of the word");
+  eq(sc("Fruits: pear, plum, fig"), "PEAR PLUM FIG", "scramble: a heading over a short list is dropped");
+  const cw = CW.normalizeWords("1. Apple - a red fruit\n2. **Banana**: a yellow fruit, curved");
+  eq(cw.map((w) => w.display + "=" + w.clue).join("|"), "Apple=a red fruit|Banana=a yellow fruit, curved",
+    "crossword: a pasted definition becomes the clue");
+  eq(CW.normalizeWords("capital = The city a country governs from")[0].clue, "The city a country governs from",
+    "crossword: = still separates the clue");
+}
+
 console.log("\nwordPuzzles.test.js — " + pass + " passed, " + fail + " failed");
 process.exit(fail ? 1 : 0);
