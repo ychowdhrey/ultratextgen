@@ -7880,20 +7880,37 @@
     sc.async = true;
     sc.onload = () => {
       CHAR_CENTRELINE_CACHE.clear();
-      withFont(() => {
-        if (el.nameInput || el.namePreview) renderNamePreview();
-        if (el.genInput || el.genPreview) renderGenPreview();
-      });
+      withFont(repaintTraceRows);
     };
     sc.onerror = () => console.warn("[printables] js/printables/centreline.js failed to load; characters with no writing route keep the contour.");
     document.head.appendChild(sc);
+  }
+  function repaintTraceRows() {
+    if (el.nameInput || el.namePreview) renderNamePreview();
+    if (el.genInput || el.genPreview) renderGenPreview();
+  }
+  /* A face split by unicode-range loads a subset only when text needs it, so
+     ẞ (latin-ext) can still be missing when its row is drawn. Ask for that
+     subset once per character and repaint when it arrives; until then the
+     row shows the contour. */
+  const CHAR_FONT_REQUESTED = new Set();
+  function requestCharFont(spec, ch) {
+    const key = spec + "\u0001" + ch;
+    if (CHAR_FONT_REQUESTED.has(key) || !document.fonts || !document.fonts.load) return;
+    CHAR_FONT_REQUESTED.add(key);
+    document.fonts.load(spec, ch).then(() => {
+      if (document.fonts.check(spec, ch)) repaintTraceRows();
+    }).catch(() => {});
   }
   function glyphCharStrokes(ch, fontPx, cx, baselineY) {
     const CL = window.UltraTextGen && window.UltraTextGen.centreline;
     if (!CL) { loadCentrelineModule(); return null; }
     if (!(fontPx > 0)) return null;
     const primary = FONT_WEIGHT + " " + fontPx + "px \"" + primaryFontName() + "\"";
-    if (document.fonts && document.fonts.check && !document.fonts.check(primary, ch)) return null;
+    if (document.fonts && document.fonts.check && !document.fonts.check(primary, ch)) {
+      requestCharFont(primary, ch);
+      return null;
+    }
     const key = [FONT_WEIGHT, FONT, fontPx, ch].join("\u0001");
     let rel = CHAR_CENTRELINE_CACHE.get(key);
     if (rel === undefined) {
