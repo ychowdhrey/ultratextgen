@@ -634,17 +634,25 @@
       schedule();
     })();
 
-    // Dark mode: apply saved preference immediately (before paint)
-    if (localStorage.getItem("darkMode") === "true") {
-      document.body.classList.add("dark-mode");
-    }
+    // Dark mode: apply saved preference immediately (before paint).
+    // Reading window.localStorage throws a SecurityError when the browser
+    // blocks site data. Unguarded, that one throw ended this function, so the
+    // dark-mode toggle, the compact phone header and the site search never
+    // wired up on any page. The preference is optional; the header is not.
+    try {
+      if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark-mode");
+      }
+    } catch (e) { /* storage blocked: no saved preference */ }
 
     // Dark mode toggle
     var dmBtn = document.getElementById("darkModeBtn");
     if (dmBtn) {
       dmBtn.addEventListener("click", function () {
         var isDark = document.body.classList.toggle("dark-mode");
-        localStorage.setItem("darkMode", isDark ? "true" : "false");
+        try {
+          localStorage.setItem("darkMode", isDark ? "true" : "false");
+        } catch (e) { /* storage blocked: the toggle still works for this page */ }
       });
     }
 

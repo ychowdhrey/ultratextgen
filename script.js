@@ -11,6 +11,40 @@
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
+  // Clipboard write with the textarea fallback. navigator.clipboard is missing
+  // outside a secure context and rejects when the browser denies the
+  // permission (some in-app browsers, sandboxed frames). Both copy buttons
+  // below used to give up there, so the site's main job failed on exactly the
+  // browsers least able to help. Resolves on a copy, rejects when neither
+  // path wrote anything, so callers keep their success-only feedback.
+  // While the fallback runs, the browser fires a native "copy" event; the
+  // manual-copy listener below skips it, so one press records one row. Focus
+  // goes back to the button the visitor pressed.
+  let programmaticCopy = false;
+  function writeClipboard(text) {
+    const legacy = () => {
+      const focused = document.activeElement;
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      let ok = false;
+      programmaticCopy = true;
+      try { ok = !!document.execCommand("copy"); } catch (e) { ok = false; }
+      programmaticCopy = false;
+      document.body.removeChild(ta);
+      if (focused && typeof focused.focus === "function") focused.focus();
+      return ok ? Promise.resolve() : Promise.reject(new Error("copy refused"));
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text).catch(legacy);
+    }
+    return legacy();
+  }
+
   // Shared namespace (also owned by game-rules.js / symbol-explorer.js). Used
   // to bridge the live decoration ("flair") state to the game name-checker.
   const UTG = (window.UltraTextGen = window.UltraTextGen || {});
@@ -2150,7 +2184,7 @@ document.addEventListener("click", async (e) => {
   if (!text) return;
 
   try {
-    await navigator.clipboard.writeText(text);
+    await writeClipboard(text);
 
     // header.js owns the copy-identity helper (it loads on every page this
     // does); the guard keeps the copy working if it is ever absent.
@@ -2186,6 +2220,7 @@ document.addEventListener("click", (e) => {
 });
 
 document.addEventListener("copy", () => {
+  if (programmaticCopy) return;
   const selection = window.getSelection()?.toString();
   if (selection && selection.length > 0) {
     if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
@@ -2456,7 +2491,7 @@ document.addEventListener("click", async (e) => {
   const text = btn.dataset.text || "";
 
   try {
-    await navigator.clipboard.writeText(text);
+    await writeClipboard(text);
 
     const styleName = btn.dataset.style || "";
     recordStyleUsage(styleName);
