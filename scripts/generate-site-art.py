@@ -3160,6 +3160,7 @@ PAGES.update({
 "usecase-pirate-translator": ("Pirate Translator", "Arrr! Turn any text into pirate speak", m_skull, K_USE),
 "printables-monogram-maker": ("Monogram Maker", "Up to 3 initials, classic or circle-frame", P(m_circled_letter, letter="M"), K_PRINT),
 "printables-name-labels": ("Printable Name Labels", "A full sheet of name labels for school, sized to fit", m_grid, K_PRINT),
+"printables-bulletin-board-letters": ("Printable Bulletin Board Letters", "Any height, split across sheets to tape and cut out", m_letter_outline, K_PRINT),
 "printables-cross-stitch-letters": ("Cross-Stitch Letters", "Any word as a charted stitch pattern", m_grid, K_PRINT),
 "printables-spanish-alphabet-chart": ("Spanish Alphabet Chart", "All 27 letters, A-Z plus Ñ, one printable chart", P(m_letter_stencil, letter="Ñ"), K_PRINT),
 "fr-imprimables-alphabet-espagnol": ("Alphabet Espagnol à Imprimer", "Les 27 lettres, A-Z plus Ñ, une seule fiche", P(m_letter_stencil, letter="Ñ"), K_PRINT),
