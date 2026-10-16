@@ -786,6 +786,66 @@ async function main() {
     await fr.ctx.close();
   }
 
+  // 18. Storage blocked. Reading window.localStorage throws a SecurityError
+  // when the browser blocks site data; header.js read it unguarded, so the
+  // throw ended its init and the dark-mode toggle, compact header and site
+  // search were dead on every page.
+  console.log('\nheader.js with storage blocked (dark mode still toggles, no page error)');
+  {
+    const blockStorage = () => {
+      Object.defineProperty(window, 'localStorage', { get() { throw new DOMException('blocked', 'SecurityError'); } });
+    };
+    for (const url of ['/', '/library/heart-symbols/', '/printables/name-tracing/']) {
+      const { ctx, page, errors } = await open(url, 'desktop', blockStorage);
+      const toggled = await page.evaluate(() => {
+        const b = document.getElementById('darkModeBtn');
+        if (!b) return null;
+        b.click();
+        return document.body.classList.contains('dark-mode');
+      });
+      check(`${url}: dark-mode toggle works`, toggled === true, String(toggled));
+      check(`${url}: no page errors`, !errors.length, errors.join(' | '));
+      await ctx.close();
+    }
+  }
+
+  // 19. A copy is reported only when one happened. The Clipboard API rejects in
+  // some in-app browsers and sandboxed frames. The collection Copy button used
+  // to say "Copied" and record copy_text either way; the generator's Copy had
+  // no fallback at all. Each case refuses the API, then the textarea fallback.
+  console.log('\nCopy honesty (API refused -> fallback; both refused -> failure, no event)');
+  {
+    const refuse = (fallbackWorks) => `
+      Object.defineProperty(navigator, 'clipboard', { value: { writeText: () => Promise.reject(new Error('NotAllowed')) } });
+      const orig = document.execCommand.bind(document);
+      document.execCommand = function (c) { if (c === 'copy') return ${fallbackWorks}; return orig.apply(null, arguments); };`;
+    const copies = async (page) => (await dl(page)).filter((x) => x.event === 'copy_text').length;
+    for (const fallbackWorks of [true, false]) {
+      const tag = fallbackWorks ? 'API refused' : 'both refused';
+      const lib = await open('/library/heart-symbols/', 'desktop', refuse(fallbackWorks));
+      const cbtn = lib.page.locator('.copy-collection-btn').first();
+      await cbtn.click();
+      await lib.page.waitForTimeout(200);
+      const clabel = (await cbtn.textContent()).trim();
+      check(`collection Copy, ${tag}: label ${fallbackWorks ? 'confirms' : 'does not claim'} the copy`,
+        fallbackWorks ? /Copied/.test(clabel) : !/Copied/.test(clabel), clabel);
+      check(`collection Copy, ${tag}: ${fallbackWorks ? 'one' : 'no'} copy_text row`, (await copies(lib.page)) === (fallbackWorks ? 1 : 0), String(await copies(lib.page)));
+      await lib.ctx.close();
+
+      const gen = await open('/', 'desktop', refuse(fallbackWorks));
+      await gen.page.fill('#mainInput', 'Luna');
+      await gen.page.waitForTimeout(300);
+      const gbtn = gen.page.locator('#resultsGrid .copy-btn:not([disabled])').first();
+      await gbtn.click();
+      await gen.page.waitForTimeout(200);
+      const glabel = (await gbtn.textContent()).trim();
+      check(`generator Copy, ${tag}: label ${fallbackWorks ? 'confirms' : 'reports failure'}`,
+        fallbackWorks ? /Copied/.test(glabel) : /Failed/.test(glabel), glabel);
+      check(`generator Copy, ${tag}: ${fallbackWorks ? 'one' : 'no'} copy_text row`, (await copies(gen.page)) === (fallbackWorks ? 1 : 0), String(await copies(gen.page)));
+      await gen.ctx.close();
+    }
+  }
+
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
   await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });
