@@ -958,7 +958,7 @@
       sample.addEventListener("focus", once);
     }
 
-    // The name kit row, under the name line. On load: the English list is
+    // The name kit row. On load: the English list is
     // read from the footer, which footer.js renders.
     const mountCarry = () => {
       const box = $("lb-name");
@@ -968,9 +968,9 @@
         // so it is not carried. A name typed here, restored or carried in is.
         word: () => (box.value !== box.defaultValue || carried) ? box.value : "",
         watch: [box],
+        // At the end of the tool's section, where the sheet engine puts it.
         place: (row) => {
-          const field = box.closest(".pt-field") || box.parentNode;
-          field.insertAdjacentElement("afterend", row);
+          (box.closest("section") || box.parentNode).appendChild(row);
         }
       });
     };

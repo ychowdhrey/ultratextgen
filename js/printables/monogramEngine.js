@@ -748,7 +748,7 @@
     render();
     // Re-render once Playfair loads so measured positions are exact.
     whenFontReady(render);
-    // The name kit row, under the initials. On load: the English list is read
+    // The name kit row. On load: the English list is read
     // from the footer, which footer.js renders.
     if (document.readyState === "complete") mountCarry();
     else window.addEventListener("load", mountCarry, { once: true });
@@ -760,9 +760,9 @@
     PP.mountNameCarry({
       word: carryWord,
       watch: [byId("mono-left"), byId("mono-center"), byId("mono-right")],
+      // At the end of the tool's section, where the sheet engine puts it.
       place: function (row) {
-        const field = first.closest(".pt-field") || first.parentNode;
-        field.insertAdjacentElement("afterend", row);
+        (first.closest("section") || first.parentNode).appendChild(row);
       }
     });
   }
