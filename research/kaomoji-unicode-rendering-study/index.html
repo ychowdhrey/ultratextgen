@@ -1,0 +1,578 @@
+<!DOCTYPE html><html lang="en"><head>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8242324164413945?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script>(function(){'use strict';var aa=typeof Object.create=="function"?Object.create:function(a){function b(){}b.prototype=a;return new b},ba=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ca(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var da=ca(this);function l(a,b){if(b)a:{var c=da;a=a.split(".");for(var e=0;e<a.length-1;e++){var d=a[e];if(!(d in c))break a;c=c[d]}a=a[a.length-1];e=c[a];b=b(e);b!=e&&b!=null&&ba(c,a,{configurable:!0,writable:!0,value:b})}}var m;
+if(typeof Object.setPrototypeOf=="function")m=Object.setPrototypeOf;else{var n;a:{var ea={a:!0},fa={};try{fa.__proto__=ea;n=fa.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var ha=m;
+function p(a,b){a.prototype=aa(b.prototype);a.prototype.constructor=a;if(ha)ha(a,b);else for(var c in b)if(c!="prototype")if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,c);e&&Object.defineProperty(a,c,e)}else a[c]=b[c];a.C=b.prototype}function ia(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}
+function q(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ia(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function ja(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function ka(a){return la(a,a)}function la(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),Object.freeze(b));return a}
+function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}l("globalThis",function(a){return a||da});l("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});l("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});l("Number.MAX_SAFE_INTEGER",function(){return 9007199254740991});l("Number.MIN_SAFE_INTEGER",function(){return-9007199254740991});
+l("Number.isInteger",function(a){return a?a:function(b){return Number.isFinite(b)?b===Math.floor(b):!1}});l("Number.isSafeInteger",function(a){return a?a:function(b){return Number.isInteger(b)&&Math.abs(b)<=Number.MAX_SAFE_INTEGER}});l("Math.trunc",function(a){return a?a:function(b){b=Number(b);if(isNaN(b)||b===Infinity||b===-Infinity||b===0)return b;var c=Math.floor(Math.abs(b));return b<0?-c:c}});l("Number.isNaN",function(a){return a?a:function(b){return typeof b==="number"&&isNaN(b)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var t=this||self;function na(a){t.setTimeout(function(){throw a;},0)};var v,x;a:{for(var oa=["CLOSURE_FLAGS"],y=t,z=0;z<oa.length;z++)if(y=y[oa[z]],y==null){x=null;break a}x=y}var pa=x&&x[748402147];v=pa!=null?pa:!0;var qa=void 0;function A(){return typeof BigInt==="function"};var B=typeof Symbol==="function"&&typeof Symbol()==="symbol";function C(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var ra=C("jas",void 0,!0),sa=C(void 0,"0actk"),E=C("m_m","B",!0);var ta={u:{value:0,configurable:!0,writable:!0,enumerable:!1}},ua=Object.defineProperties,F=B?ra:"u";function va(a,b){B||F in a||ua(a,ta);a[F]|=b}function G(a,b){B||F in a||ua(a,ta);a[F]=b};var H={};function I(a,b){return b===void 0?a.h!==J&&!!(2&(a.g[F]|0)):!!(2&b)&&a.h!==J}var J={};function K(a){a.A=!0;return a};var wa=K(function(a){return typeof a==="number"}),xa=K(function(a){return typeof a==="string"}),ya=K(function(a){return typeof a==="boolean"});var L=typeof t.BigInt==="function"&&typeof t.BigInt(0)==="bigint";function M(a){var b=a;if(xa(b)){if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}else if(wa(b)&&!Number.isSafeInteger(b))throw Error(String(b));return L?BigInt(a):a=ya(a)?a?"1":"0":xa(a)?a.trim()||"0":String(a)}var Fa=K(function(a){return L?a>=za&&a<=Aa:a[0]==="-"?Ba(a,Ca):Ba(a,Da)}),Ca=Number.MIN_SAFE_INTEGER.toString(),za=L?BigInt(Number.MIN_SAFE_INTEGER):void 0,Da=Number.MAX_SAFE_INTEGER.toString(),Aa=L?BigInt(Number.MAX_SAFE_INTEGER):void 0;
+function Ba(a,b){if(a.length>b.length)return!1;if(a.length<b.length||a===b)return!0;for(var c=0;c<a.length;c++){var e=a[c],d=b[c];if(e>d)return!1;if(e<d)return!0}};var N=0,O=0;function Ga(a){var b=a>>>0;N=b;O=(a-b)/4294967296>>>0}function Ha(a){if(a<0){Ga(-a);var b=q(Ia(N,O));a=b.next().value;b=b.next().value;N=a>>>0;O=b>>>0}else Ga(a)}function Ja(a,b){b>>>=0;a>>>=0;if(b<=2097151)var c=""+(4294967296*b+a);else A()?c=""+(BigInt(b)<<BigInt(32)|BigInt(a)):(c=(a>>>24|b<<8)&16777215,b=b>>16&65535,a=(a&16777215)+c*6777216+b*6710656,c+=b*8147497,b*=2,a>=1E7&&(c+=a/1E7>>>0,a%=1E7),c>=1E7&&(b+=c/1E7>>>0,c%=1E7),c=b+Ka(c)+Ka(a));return c}
+function Ka(a){a=String(a);return"0000000".slice(a.length)+a}function La(){var a=N,b=O;b&2147483648?A()?a=""+(BigInt(b|0)<<BigInt(32)|BigInt(a>>>0)):(b=q(Ia(a,b)),a=b.next().value,b=b.next().value,a="-"+Ja(a,b)):a=Ja(a,b);return a}function Ia(a,b){b=~b;a?a=~a+1:b+=1;return[a,b]};var Ma=typeof BigInt==="function"?BigInt.asIntN:void 0,Q=Number.isSafeInteger,Na=Number.isFinite,Oa=Math.trunc,Pa=/^-?([1-9][0-9]*|0)(\.[0-9]+)?$/;function Qa(a){switch(typeof a){case "bigint":return!0;case "number":return Na(a);case "string":return Pa.test(a);default:return!1}}
+function Ra(a){var b=typeof a;if(a==null)return a;if(b==="bigint")return M(Ma(64,a));if(Qa(a)){if(b==="string")if(b=Oa(Number(a)),Q(b))a=M(b);else if(b=a.indexOf("."),b!==-1&&(a=a.substring(0,b)),A())a=M(Ma(64,BigInt(a)));else{b=a.length;if(!(a[0]==="-"?b<20||b===20&&a<="-9223372036854775808":b<19||b===19&&a<="9223372036854775807")){if(a.length<16)Ha(Number(a));else if(A())a=BigInt(a),N=Number(a&BigInt(4294967295))>>>0,O=Number(a>>BigInt(32)&BigInt(4294967295));else{b=+(a[0]==="-");O=N=0;for(var c=
+a.length,e=b,d=(c-b)%6+b;d<=c;e=d,d+=6)e=Number(a.slice(e,d)),O*=1E6,N=N*1E6+e,N>=4294967296&&(O+=Math.trunc(N/4294967296),O>>>=0,N>>>=0);b&&(b=q(Ia(N,O)),a=b.next().value,b=b.next().value,N=a,O=b)}a=La()}a=M(a)}else if(Q(a)){a=Oa(a);if(!Q(a)){Ha(a);b=N;c=O;if(a=c&2147483648)b=~b+1>>>0,c=~c>>>0,b==0&&(c=c+1>>>0);d=c*4294967296+(b>>>0);b=Number.isSafeInteger(d)?d:Ja(b,c);a=typeof b==="number"?a?-b:b:a?"-"+b:b}a=M(a)}else a=Oa(a),Q(a)?a=String(a):(Ha(a),a=La()),a=M(a);return a}}
+function Sa(a){return a==null||typeof a==="string"?a:void 0};function Ta(a){return a};function Ua(a,b,c,e){var d=e!==void 0;e=!!e;var f=[],g=a.length,h=4294967295,k=!1,r=!!(b&64),D=r?b&128?0:-1:void 0;if(!(b&1)){var u=g&&a[g-1];u!=null&&typeof u==="object"&&u.constructor===Object?(g--,h=g):u=void 0;if(r&&!(b&128)&&!d){k=!0;var w;h=((w=Va)!=null?w:Ta)(h-D,D,a,u,void 0)+D}}b=void 0;for(d=0;d<g;d++)if(w=a[d],w!=null&&(w=c(w,e))!=null)if(r&&d>=h){var yb=d-D,Ea=void 0;((Ea=b)!=null?Ea:b={})[yb]=w}else f[d]=w;if(u)for(var P in u)Object.prototype.hasOwnProperty.call(u,P)&&(a=u[P],a!=null&&
+(a=c(a,e))!=null&&(g=+P,d=void 0,r&&!Number.isNaN(g)&&(d=g+D)<h?f[d]=a:(g=void 0,((g=b)!=null?g:b={})[P]=a)));b&&(k?f.push(b):f[h]=b);return f}function Wa(a){switch(typeof a){case "number":return Number.isFinite(a)?a:""+a;case "bigint":return Fa(a)?Number(a):""+a;case "boolean":return a?1:0;case "object":if(Array.isArray(a)){var b=a[F]|0;return a.length===0&&b&1?void 0:Ua(a,b,Wa)}if(a!=null&&a[E]===H)return Xa(a);return}return a}var Va;function Xa(a){a=a.g;return Ua(a,a[F]|0,Wa)};function R(a,b,c,e){e=e===void 0?0:e;if(a==null){var d=32;c?(a=[c],d|=128):a=[];b&&(d=d&-16760833|(b&1023)<<14)}else{if(!Array.isArray(a))throw Error("narr");d=a[F]|0;if(v&&1&d)throw Error("rfarr");2048&d&&!(2&d)&&Ya();if(d&256)throw Error("farr");if(d&64)return(d|e)!==d&&G(a,d|e),a;if(c&&(d|=128,c!==a[0]))throw Error("mid");a:{c=a;d|=64;var f=c.length;if(f){var g=f-1,h=c[g];if(h!=null&&typeof h==="object"&&h.constructor===Object){b=d&128?0:-1;g-=b;if(g>=1024)throw Error("pvtlmt");for(var k in h)Object.prototype.hasOwnProperty.call(h,
+k)&&(f=+k,f<g&&(c[f+b]=h[k],delete h[k]));d=d&-16760833|(g&1023)<<14;break a}}if(b){k=Math.max(b,f-(d&128?0:-1));if(k>1024)throw Error("spvt");d=d&-16760833|(k&1023)<<14}}}G(a,d|64|e);return a}function Ya(){if(v)throw Error("carr");if(sa!=null){var a;var b=(a=qa)!=null?a:qa={};a=b[sa]||0;a>=5||(b[sa]=a+1,b=Error(),b.__closure__error__context__984382||(b.__closure__error__context__984382={}),b.__closure__error__context__984382.severity="incident",na(b))}};function Za(a,b){if(typeof a!=="object")return a;if(Array.isArray(a)){var c=a[F]|0;a.length===0&&c&1?a=void 0:c&2||(!b||4096&c||16&c?a=S(a,c,!1,b&&!(c&16)):(va(a,34),c&4&&Object.freeze(a)));return a}if(a!=null&&a[E]===H){b=a.g;c=b[F]|0;return I(a,c)?a:$a(a,b,c)?ab(a,b):S(b,c)}}function ab(a,b,c){a=new a.constructor(b);c&&(a.h=J);a.i=J;return a}function S(a,b,c,e){e!=null||(e=!!(34&b));a=Ua(a,b,Za,e);e=32;c&&(e|=2);b=b&16769217|e;G(a,b);return a}
+function bb(a,b){b===void 0&&(b=a[F]|0);b&32&&!(b&4096)&&G(a,b|4096)}function $a(a,b,c){return c&2?!0:c&32&&!(c&4096)?(G(b,c|2),a.h=J,!0):!1};var cb=M(0),db={};function T(a,b,c,e){b=eb(a.g,b,e);if(b!==null||c&&a.i!==J)return b}function eb(a,b,c){if(b===-1)return null;var e=b+-1,d=a.length-1;if(!(d<0)){if(e>=d){var f=a[d];if(f!=null&&typeof f==="object"&&f.constructor===Object){d=f[b];var g=!0}else if(e===d)d=f;else return}else d=a[e];if(c&&d!=null){c=c(d);if(c==null)return c;if(!Object.is(c,d))return g?f[b]=c:a[e]=c,c}return d}}
+function fb(a,b,c){var e=gb,d=!1;c=eb(a,c,function(f){if(f!=null&&f[E]===H)var g=f;else if(Array.isArray(f)){g=f[F]|0;var h=g|b&32;h|=b&2;h!==g&&G(f,h);g=new e(f)}else g=void 0;d=g!==f&&g!=null;return g});if(c!=null)return d&&!I(c)&&bb(a,b),c}
+function hb(a,b){var c=a.g,e=c[F]|0,d=fb(c,e,b);if(d==null)return d;e=c[F]|0;if(!I(a,e)){var f=d;var g=f.g,h=g[F]|0;f=I(f,h)?$a(f,g,h)?ab(f,g,!0):new f.constructor(S(g,h,!1)):f;if(f!==d){a.h===J?(d=a.g,d=S(d,d[F]|0),va(d,2048),a.g=d,a.h=void 0,a.i=void 0,d=!0):d=!1;d&&(c=a.g,e=c[F]|0);d=f;a:{a=c;f=d;g=b+-1;h=a.length-1;if(h>=0&&g>=h){var k=a[h];if(k!=null&&typeof k==="object"&&k.constructor===Object){k[b]=f;break a}}if(g<=h)a[g]=f;else if(f!==void 0){var r;h=((r=e)!=null?r:e=a[F]|0)>>14&1023||536870912;
+b>=h?f!=null&&(r={},a[h+-1]=(r[b]=f,r)):a[g]=f}}bb(c,e)}}return d}function ib(a,b){var c=c===void 0?cb:c;a=T(a,b,void 0,Ra);return a!=null?a:c}function U(a,b){var c=c===void 0?"":c;var e;return(e=Sa(T(a,b)))!=null?e:c};function V(a,b,c){this.g=R(a,b,c,2048)}V.prototype.toJSON=function(){var a=Xa(this);return a};V.prototype[E]=H;V.prototype.toString=function(){return this.g.toString()};function jb(a){return function(b){if(b==null||b=="")b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error("dnarr");va(b,32);b=new a(b)}return b}};function kb(a){this.g=R(a,void 0,void 0,2048)}p(kb,V);var lb=jb(kb);/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var mb=globalThis.trustedTypes,nb;function ob(){var a=null;if(!mb)return a;try{var b=function(c){return c};a=mb.createPolicy("goog#html",{createHTML:b,createScript:b,createScriptURL:b})}catch(c){}return a};function pb(a){this.g=a}pb.prototype.toString=function(){return this.g+""};function qb(a){var b;nb===void 0&&(nb=ob());a=(b=nb)?b.createScriptURL(a):a;return new pb(a)};function rb(a,b){if(b instanceof pb)b=b.g;else throw Error("");a.src=b;var c;b=a.ownerDocument;b=b===void 0?document:b;var e;b=(e=(c=b).querySelector)==null?void 0:e.call(c,"script[nonce]");(c=b==null?"":b.nonce||b.getAttribute("nonce")||"")&&a.setAttribute("nonce",c)};function sb(){return Math.floor(Math.random()*2147483648).toString(36)+Math.abs(Math.floor(Math.random()*2147483648)^Date.now()).toString(36)};function tb(a){var b=ma.apply(1,arguments);if(b.length===0)return qb(a[0]);for(var c=a[0],e=0;e<b.length;e++)c+=encodeURIComponent(b[e])+a[e+1];return qb(c)};function ub(a){a=a===void 0?document:a;return a.createElement("script")};function vb(a,b){b=String(b);a.contentType==="application/xhtml+xml"&&(b=b.toLowerCase());return a.createElement(b)}function wb(a){this.g=a||t.document||document};function xb(a,b,c,e,d,f){try{var g=a.g,h=ub(g);h.async=!0;rb(h,b);g.head.appendChild(h);h.addEventListener("load",function(){d();e&&g.head.removeChild(h)});h.addEventListener("error",function(){c>0?xb(a,b,c-1,e,d,f):(e&&g.head.removeChild(h),f())})}catch(k){f()}};var zb=t.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),Ab=t.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),Bb=t.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function Cb(a,b,c){this.h=a;this.m=b;this.o=c;this.g=null;this.i=[];this.l=!1;this.j=new wb(this.h)}
+function Db(a){if(a.h.body&&!a.l){var b=function(){Eb(a);t.setTimeout(function(){Fb(a,3)},50)};xb(a.j,a.m,2,!0,function(){t[a.o]||b()},b);a.l=!0}}
+function Eb(a){for(var b=W(1,5),c=0;c<b;c++){var e=X(a);a.h.body.appendChild(e);a.i.push(e)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style.backgroundColor=Gb(249,259,242,252,219,229);b.style.boxShadow="0 0 12px #888";b.style.color=Gb(0,10,0,10,0,10);b.style.display="flex";b.style.justifyContent="center";b.style.fontFamily="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+
+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style.alignItems="flex-start";c.style.justifyContent="center";e=vb(a.j.g,"IMG");e.className=sb();e.src=zb;e.alt="Warning icon";e.style.height="24px";e.style.width="24px";e.style.paddingRight="16px";var d=X(a),f=X(a);f.style.fontWeight="bold";f.textContent=Ab;var g=X(a);g.textContent=Bb;Y(a,d,f);Y(a,d,g);Y(a,c,e);Y(a,c,d);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)e=X(a),a.h.body.appendChild(e),
+a.i.push(e)}function Y(a,b,c){for(var e=W(1,5),d=0;d<e;d++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(e=0;e<c;e++)d=X(a),b.appendChild(d)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function Gb(a,b,c,e,d,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(e,255)).toString()+","+W(Math.max(d,0),Math.min(f,255)).toString()+")"}function X(a){a=vb(a.j.g,"DIV");a.className=sb();return a}
+function Fb(a,b){b<=0||a.g!=null&&a.g.offsetHeight!==0&&a.g.offsetWidth!==0||(Hb(a),Eb(a),t.setTimeout(function(){Fb(a,b-1)},50))}function Hb(a){for(var b=q(a.i),c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function Ib(a,b,c,e,d){function f(k){document.body?g(document.body):k>0?t.setTimeout(function(){f(k-1)},d):b()}function g(k){k.appendChild(h);t.setTimeout(function(){h?(h.offsetHeight!==0&&h.offsetWidth!==0?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},e)}var h=Jb(c);f(3)}function Jb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Kb(a){return Fa(a)?Number(a):String(a)};function gb(a){this.g=R(a,void 0,void 0,2048)}p(gb,V);function Lb(a){if(!a)return null;a=Sa(T(a,4,db));var b;a===null||a===void 0?b=null:b=qb(a);return b};var Mb=ka([""]),Nb=ka([""]);function Ob(a,b){this.l=a;this.g=b;this.m=new wb(a.document);this.i=U(b,1);this.v=Lb(hb(b,2))||tb(Mb);this.h=!1;this.o=Lb(hb(b,13))||tb(Nb);this.j=new Cb(a.document,this.o,U(b,12))}Ob.prototype.start=function(){Pb(this)};
+function Pb(a){Qb(a);xb(a.m,a.v,3,!1,function(){a:{var b=a.i;var c=t.btoa(b);if(c=t[c]){try{var e=lb(t.atob(c))}catch(d){b=!1;break a}b=b===Sa(T(e,1,db))}else b=!1}b?Z(a,U(a.g,14)):(Z(a,U(a.g,8)),Db(a.j))},function(){Ib(function(){Z(a,U(a.g,7));Db(a.j)},function(){Z(a,U(a.g,6))},U(a.g,9),Kb(ib(a.g,10)),Kb(ib(a.g,11)))})}function Z(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())}function Qb(a){var b=t.btoa(a.i);a.l[b]&&Z(a,U(a.g,5))};function Rb(a){this.g=R(a,void 0,void 0,2048)}p(Rb,V);var Sb=jb(Rb);(function(a,b){t[a]=function(){var c=ma.apply(0,arguments);t[a]=function(){};b.call.apply(b,[null].concat(c instanceof Array?c:ja(q(c))))}})("__h82AlnkH6D91__",function(a){typeof window.atob==="function"&&(new Ob(window,Sb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi04MjQyMzI0MTY0NDEzOTQ1Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVR095eld0N1ZaZFFlVDNQQzN4cDRWNFFpM0VQWEdpLTNSOGJjOXBFOFZlOEZRZml1VVpydFFzOGdtWjZuWkNmUDBPdmdOZXIyWmhnQ0gwNnk4cnN1TDh3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdhMFNualdkTkRnTHdYTmRPWk9Ic1c4bzFhNFRhaGY5cWhkU1JVTHdCNmN1WDBpWDBveHBBOUhEaHI4OWR0UmdFcGZONHl1Yjk4TVZZMWFqTnJPY0Q0S3dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdpSXp3QnB6TlhidjVTWkNBLTllVzNaNVZZY1p0MjQ0T2V4V096dnlKYWVpTXU2RVpmX1hDLWU2N3plaG5QcEdoeXZFcWR5YnRhYzJZNFRUU21uR3I4d2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVYT3Nibmlmemp0ei1QVlN2SmFIY004dWhoZmNxX3I0UGwwMjhteDBhNU5DeGNnLXhEcEotdlZ1blNKS3pvRkRZZ3ZGa3QyZElnNGdmLVNRU3ZCTVBONkFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUZ3lOREl6TWpReE5qUTBNVE01TkRVXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi04MjQyMzI0MTY0NDEzOTQ1LmpzP3VzcXBcdTAwM2RDQkUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4Vkl1eVduV3owazNiSTh5czVMUFg4amloM1M1LXdJVWhWNGJtb2EtcGtlazNmU0dEYVc0aXg2dDJlTEZHZWhMMWJMLXhuVTJrdTdKVkZpbXpmQzNBT0hSUVx1MDAzZFx1MDAzZCJd");</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaomoji Under the Hood: Scripts, Fonts and Markdown Tested</title>
+  <meta name="description" content="We took apart 1,616 kaomoji by Unicode script, tested which fonts can draw them and checked what copy-paste and Markdown do to each face.">
+  <link rel="canonical" href="https://ultratextgen.com/research/kaomoji-unicode-rendering-study/">
+  <meta property="og:title" content="Kaomoji Under the Hood">
+  <meta property="og:description" content="1,616 kaomoji: which writing systems they use, which fonts can draw them, and what copy-paste and Markdown do to them.">
+  <meta property="og:url" content="https://ultratextgen.com/research/kaomoji-unicode-rendering-study/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="UltraTextGen">
+  <meta property="og:image" content="https://ultratextgen.com/assets/og/research-kaomoji-unicode-rendering-study.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="Kaomoji Under the Hood">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kaomoji Under the Hood">
+  <meta name="twitter:description" content="1,616 kaomoji: which writing systems they use, which fonts can draw them, and what copy-paste and Markdown do to them.">
+  <meta name="twitter:image" content="https://ultratextgen.com/assets/og/research-kaomoji-unicode-rendering-study.png">
+  <link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ultratextgen.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Research", "item": "https://ultratextgen.com/research/"},
+    {"@type": "ListItem", "position": 3, "name": "Kaomoji Under the Hood", "item": "https://ultratextgen.com/research/kaomoji-unicode-rendering-study/"}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "citation": [
+    {
+      "@type": "WebPage",
+      "name": "Scripts.txt",
+      "url": "https://www.unicode.org/Public/18.0.0/ucd/Scripts.txt"
+    },
+    {
+      "@type": "WebPage",
+      "name": "ScriptExtensions.txt",
+      "url": "https://www.unicode.org/Public/18.0.0/ucd/ScriptExtensions.txt"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Blocks.txt",
+      "url": "https://www.unicode.org/Public/18.0.0/ucd/Blocks.txt"
+    },
+    {
+      "@type": "WebPage",
+      "name": "EastAsianWidth.txt",
+      "url": "https://www.unicode.org/Public/18.0.0/ucd/EastAsianWidth.txt"
+    },
+    {
+      "@type": "WebPage",
+      "name": "UnicodeData.txt",
+      "url": "https://www.unicode.org/Public/18.0.0/ucd/UnicodeData.txt"
+    },
+    {
+      "@type": "WebPage",
+      "name": "UAX #11",
+      "url": "https://www.unicode.org/reports/tr11/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "UAX #29",
+      "url": "https://www.unicode.org/reports/tr29/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "UAX #15",
+      "url": "https://www.unicode.org/reports/tr15/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "UAX #24",
+      "url": "https://www.unicode.org/reports/tr24/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "CommonMark specification, version 0.31.2",
+      "url": "https://spec.commonmark.org/0.31.2/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "markdown-it",
+      "url": "https://github.com/markdown-it/markdown-it"
+    },
+    {
+      "@type": "WebPage",
+      "name": "marked",
+      "url": "https://github.com/markedjs/marked"
+    },
+    {
+      "@type": "WebPage",
+      "name": "&ldquo;Robust kaomoji detection in Twitter&rdquo;",
+      "url": "https://aclanthology.org/W12-2107/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "&ldquo;Blissfully Happy&rdquo; or &ldquo;Ready to Fight&rdquo;",
+      "url": "https://doi.org/10.1609/icwsm.v10i1.14757"
+    }
+  ],
+  "headline": "What Kaomoji Are Made Of, and Where They Break in Basic Fonts and Markdown",
+  "description": "We took apart 1,616 kaomoji by Unicode script, tested which fonts can draw them and checked what copy-paste and Markdown do to each face.",
+  "abstract": "Copying a face never altered one in our browser tests, but whether you see it depends on fonts: with basic fonts only, 61% of faces had a character the fonts could not draw. Standard Markdown changed 4% to 6% of faces, depending on the engine and where the face sits.",
+  "author": {"@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/"},
+  "publisher": {"@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/"},
+  "image": "https://ultratextgen.com/assets/og/research-kaomoji-unicode-rendering-study.png",
+  "mainEntityOfPage": "https://ultratextgen.com/research/kaomoji-unicode-rendering-study/",
+  "datePublished": "2026-10-16T00:00:00+00:00",
+  "dateModified": "2026-10-16T00:00:00+00:00",
+  "version": "1.0"
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/research/">Research</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Kaomoji Under the Hood</span>
+</nav>
+
+<section class="hero research-hero study-header">
+    <div class="hero-inner">
+      <p class="research-kicker">UltraTextGen Research · Study 7 · Kaomoji and Unicode</p>
+      <h1 class="hero-headline">What Kaomoji Are Made Of, and Where They Break in Basic Fonts and Markdown</h1>
+      <p class="hero-tagline">A kaomoji looks like one picture, but it is a short string of characters, often borrowed from several writing systems. This study takes apart the 1,616 faces our site publishes, tests which ones a basic set of fonts can draw, and checks what copying, pasting and Markdown do to each.</p>
+      <p class="study-hero-finding"><span class="study-hero-finding-label">Main finding</span> Copying a face never altered one in our browser tests, but whether you see it depends on fonts: with basic fonts only, 61% of faces had a character the fonts could not draw. Standard Markdown changed 4% to 6% of faces, depending on the engine and where the face sits.</p>
+      <ul class="study-status" aria-label="Validation status">
+        <li class="study-status-item is-done">Unicode 18.0 breakdown, Linux font tests and Markdown tests complete</li>
+        <li class="study-status-item is-pending">Not tested on Windows, Mac, iPhone, Android or inside any chat app</li>
+        <li class="study-status-item is-pending">How people read the faces was not studied</li>
+      </ul>
+      <dl class="research-meta">
+        <div><dt>Published</dt><dd><time datetime="2026-10-16">October 16, 2026</time></dd></div>
+        <div><dt>Version</dt><dd>1.0</dd></div>
+        <div><dt>Evidence</dt><dd>Unicode data files, our own collection pages, headless Chromium 141 on Linux, three Markdown engines. No people took part.</dd></div>
+      </dl>
+      <div class="research-actions">
+        <a class="cta-btn" href="/research/kaomoji-unicode-rendering-study.pdf" download>Download the full study (PDF, 614 KB)</a>
+        <a class="research-secondary-link" href="/library/text-faces-kaomoji/">Kaomoji collection</a>
+        <a class="research-secondary-link" href="#data">Data files</a>
+        <a class="research-secondary-link" href="#method">Method</a>
+      </div>
+      <p class="research-print-only">Canonical URL: https://ultratextgen.com/research/kaomoji-unicode-rendering-study/<br>UltraTextGen Research · Version 1.0 · Published October 16, 2026</p>
+    </div>
+  </section>
+
+<div class="study-layout">
+  <nav class="study-toc" id="contents" aria-label="On this page">
+    <p class="study-toc-title">On this page</p>
+    <p class="study-toc-group">Quick read</p>
+    <ol class="study-toc-list">
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#you">What this means for you</a></li>
+      <li><a href="#counted">What we counted</a></li>
+    </ol>
+    <p class="study-toc-group">Full study</p>
+    <ol class="study-toc-list">
+      <li><a href="#scripts">Writing systems inside faces</a></li>
+      <li><a href="#shape">The shape of a face</a></li>
+      <li><a href="#normalization">Normalization can merge faces</a></li>
+      <li><a href="#fonts">Which faces break in which fonts</a></li>
+      <li><a href="#copy">Copy and paste</a></li>
+      <li><a href="#markdown">Markdown</a></li>
+      <li><a href="#predictions">What we predicted</a></li>
+      <li><a href="#limitations">Limitations</a></li>
+    </ol>
+    <p class="study-toc-group">Record</p>
+    <ol class="study-toc-list">
+      <li><a href="#method">Method</a></li>
+      <li><a href="#corrections">Corrections</a></li>
+      <li><a href="#data">Data and files</a></li>
+      <li><a href="#citation">How to cite</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
+    <div class="study-toc-actions">
+      <a href="/research/kaomoji-unicode-rendering-study.pdf" download>Download PDF (614 KB)</a>
+      <a href="#data">Data files (12)</a>
+    </div>
+  </nav>
+
+  <main class="container research-page study-main">
+
+    <section class="study-section study-summary" id="summary" aria-labelledby="summary-title">
+      <span class="article-section-label">Summary</span>
+      <h2 id="summary-title">What the study found</h2>
+      <ul class="key-figures">
+        <li class="key-figure">
+          <p class="key-figure-value">1,616</p>
+          <p class="key-figure-label">different kaomoji published on our site</p>
+          <p class="key-figure-detail">They come from 7,085 placements: 4,955 on 187 collection pages, the rest in kaomoji sections of other pages, face-shaped tiles elsewhere, the generator and the decoder. Translated pages reuse faces, so each distinct string is counted once.</p>
+          <p class="key-figure-tags"><span class="evidence-tag is-measured">Measured from our pages</span></p>
+        </li>
+        <li class="key-figure">
+          <p class="key-figure-value">23.6%</p>
+          <p class="key-figure-label">of faces mix two or more writing systems</p>
+          <p class="key-figure-detail">382 faces. Greek letters next to Japanese katakana or hiragana is the most common pairing (36 and 35 faces). Faces borrow characters for their shape, not their script.</p>
+          <p class="key-figure-tags"><span class="evidence-tag is-measured">Measured from Unicode data</span></p>
+        </li>
+        <li class="key-figure">
+          <p class="key-figure-value">1,616 of 1,616</p>
+          <p class="key-figure-label">faces came through copy and paste unchanged</p>
+          <p class="key-figure-detail">We inserted each face (no key presses) into a text box, a text area and an editable region, and passed it through the browser clipboard inside one page, JSON, a web address and local storage in Chromium. Only two faces changed, and only in how an editable region reports its spaces.</p>
+          <p class="key-figure-tags"><span class="evidence-tag is-measured">Measured in a browser</span></p>
+        </li>
+        <li class="key-figure">
+          <p class="key-figure-value">61%, or 21%</p>
+          <p class="key-figure-label">of faces had a character the test fonts could not draw</p>
+          <p class="key-figure-detail">With basic fonts only, 986 of 1,616 faces lost a character. With two Japanese fonts (IPAGothic and its proportional sibling IPAPGothic) and one Chinese font (WenQuanYi Zen Hei) added, 334 did. Faces using another writing system fared worst: 92% against 39%.</p>
+          <p class="key-figure-tags"><span class="evidence-tag is-measured">Measured, Linux fonts only</span></p>
+        </li>
+        <li class="key-figure">
+          <p class="key-figure-value">5.3%</p>
+          <p class="key-figure-label">of faces were altered by a standard Markdown engine</p>
+          <p class="key-figure-detail">86 faces in the CommonMark reference engine when the face stood alone: backslashes eaten, asterisks and underscores turned into italics, a leading &gt; turned into a quote. Across three engines and three placements (the third gave the same result as a face alone) the range is 4.1% to 5.8%.</p>
+          <p class="key-figure-tags"><span class="evidence-tag is-measured">Measured, three Markdown engines</span></p>
+        </li>
+        <li class="key-figure">
+          <p class="key-figure-value">49.9%</p>
+          <p class="key-figure-label">of faces would change under Unicode compatibility normalization</p>
+          <p class="key-figure-detail">That is the NFKC form that some tools apply to text. It would merge 88 distinct faces into 43. The gentler NFC form changes none.</p>
+          <p class="key-figure-tags"><span class="evidence-tag is-measured">Measured from Unicode data</span></p>
+        </li>
+      </ul>
+      <h3>How to read these numbers</h3>
+      <p>The faces are the ones this site publishes, so the figures describe our collection, not every kaomoji in the world. The font results come from Linux fonts we chose, which is a test of what fonts cover, not a share of devices. We did not test Windows, Apple or Android systems or any chat app, and we did not ask anyone how they read a face.</p>
+    </section>
+
+    <section class="study-section" id="you" aria-labelledby="you-title">
+      <span class="article-section-label">What to do</span>
+      <h2 id="you-title">What this means for you</h2>
+      <ul class="study-bullets">
+        <li><strong>Need a face that draws with the fewest fonts?</strong> In our tests plain keyboard characters were the safe choice: all 166 faces built only from ASCII characters, such as <code>(^_^)</code> and <code>(T_T)</code>, drew with the basic fonts. They are not safe from Markdown: 16 of them changed, mostly because a leading &gt; starts a quote. The faces that failed most often in basic fonts used Japanese punctuation and halfwidth katakana (<code>・</code> <code>ﾉ</code> <code>｡</code> <code>￣</code> <code>ヽ</code>), which need a font with Japanese coverage, or characters from Thai, Gujarati, Tibetan or Yi.</li>
+        <li><strong>Pasting a face into a chat or post that reads Markdown?</strong> Four characters cause nearly all the damage: the backslash (33 faces contain one, 28 changed), the asterisk (84 contain one, 28 changed), the underscore (220, 20 changed) and a leading &gt; (all 21 changed). The shrug <code>¯\_(ツ)_/¯</code> loses its backslash. Typing three backslashes before the underscore, <code>¯\\\_(ツ)_/¯</code>, brought it back in all three engines we tested, and so did wrapping the face in backticks, which shows it unchanged in code formatting. Apps with their own Markdown rules may differ, and we did not test them.</li>
+        <li><strong>Building a tool that handles faces?</strong> Keep the exact string the person gave you. Normalizing with NFKC would change half of them and merge some into others. Which Unicode version your language ships also matters: the same character can be classed differently between versions (see <a href="#normalization">normalization</a>).</li>
+        <li><strong>Seeing empty boxes where a face should be?</strong> The box is drawn by your device because none of its fonts has that character. The guide to <a href="/guide/why-fonts-show-as-boxes/">why text shows as boxes</a> explains the three kinds of failure and how to tell them apart. The <a href="/research/unicode-rendering-support-study/">Unicode rendering study</a> shows how fast new characters reach fonts.</li>
+      </ul>
+    </section>
+
+    <section class="study-section" id="counted" aria-labelledby="counted-title">
+      <span class="article-section-label">Scope</span>
+      <h2 id="counted-title">What we counted</h2>
+      <p>A kaomoji here is a face that appears as a copy tile on our site: on a collection page, in a kaomoji or emoticon section of another page, as one of the generator&rsquo;s sixteen starter faces, or as one of the forty named faces in the decoder. A tile whose text is built like a face but sits on some other page also counts, when it has a pair of brackets, a body between them, no emoji picture and no ordinary words. Pictures alone, such as a bunny emoji, are not faces. Faces the generator could combine but that nobody published are not counted.</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead><tr><th scope="col">Where a face was found</th><th scope="col">Placements</th></tr></thead>
+          <tbody>
+            <tr><td>Collection pages (187 pages in 17 languages; the English ones hold 1,300 distinct faces)</td><td>4,955</td></tr>
+            <tr><td>Kaomoji or emoticon sections on other pages</td><td>1,824</td></tr>
+            <tr><td>Face-shaped tiles elsewhere on the site</td><td>250</td></tr>
+            <tr><td>Generator starter faces</td><td>16</td></tr>
+            <tr><td>Decoder named faces</td><td>40</td></tr>
+            <tr><td><strong>All placements</strong></td><td><strong>7,085</strong></td></tr>
+            <tr><td><strong>Distinct faces</strong> (byte for byte)</td><td><strong>1,616</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Faces are shared between languages, so the 7,085 placements are not independent observations; every figure on this page counts each distinct face once unless it says otherwise. We took the list from the live site at one commit and rebuilt it on a later commit with identical results.</p>
+    </section>
+
+    <section class="study-section" id="scripts" aria-labelledby="scripts-title">
+      <span class="article-section-label">Results</span>
+      <h2 id="scripts-title">Writing systems inside faces</h2>
+      <p>Unicode gives every character a script, such as Latin, Greek, Katakana or Thai, plus a catch-all called Common for punctuation and symbols and one called Inherited for marks that attach to another character. The 1,616 faces use 39 of these and 83 of Unicode&rsquo;s character blocks, with 692 different characters in total. 97.1% of faces contain at least one Common character, because that is where brackets, dots and most symbols live.</p>
+      <figure class="research-figure is-chart">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="Faces containing at least one character from each script, Common and Inherited left out, scrollable chart">
+          <a href="/assets/research/kaomoji-unicode-rendering-study/scripts-in-kaomoji.png"><img src="/assets/research/kaomoji-unicode-rendering-study/scripts-in-kaomoji.png" width="1280" height="736" alt="Horizontal bar chart of twelve Unicode scripts by the share of 1,616 faces that contain at least one character from them: Latin 25.9%; Greek 16.7%; Katakana 13.4%; Hiragana 6.6%; Cyrillic 6.1%; Canadian Aboriginal 5.4%; Arabic 4.6%; Han 4.0%; Thai 3.4%; Yi 3.0%; Hangul 2.4%; Oriya 1.8%. Common and Inherited characters (punctuation, symbols, combining marks) are left out." loading="lazy"></a>
+        </div>
+        <figcaption>Faces containing at least one character from each script, Common and Inherited left out. Latin (25.9%), Greek (16.7%) and Katakana (13.4%) lead.</figcaption>
+      </figure>
+      <p>Most faces stay inside one writing system, but 23.6% do not. Greek and Cyrillic letters often stand in for eyes (<code>ω</code>, <code>д</code>), katakana and hiragana supply arms and cheeks, and Thai, Tibetan, Arabic and Canadian Aboriginal characters appear for their shapes. One face uses six scripts.</p>
+      <figure class="research-figure is-chart">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="Number of writing systems per face, not counting Common and Inherited, scrollable chart">
+          <a href="/assets/research/kaomoji-unicode-rendering-study/scripts-per-face.png"><img src="/assets/research/kaomoji-unicode-rendering-study/scripts-per-face.png" width="1280" height="608" alt="Bar chart of faces by number of writing systems they contain: 0: 460 faces (28.5%); 1: 774 faces (47.9%); 2: 278 faces (17.2%); 3: 71 faces (4.4%); 4+: 33 faces (2.0%). The last three bars (two or more) are highlighted." loading="lazy"></a>
+        </div>
+        <figcaption>Number of writing systems per face, not counting Common and Inherited. 460 faces use none, 774 use one.</figcaption>
+      </figure>
+      <h3>A Script label is not an origin</h3>
+      <p>A Katakana or Thai label says which block of Unicode a character belongs to. It does not say where the kaomoji was invented or that the face is Japanese or Thai. Unicode&rsquo;s data also shows why plain labels mislead: 21 of the Common characters here, such as the middle dot <code>・</code> and the halfwidth full stop <code>｡</code>, are listed by Unicode as also used with one or more East Asian scripts. They appear in 360 faces. We report scripts as a count of what is in the text and make no claim about where a face came from.</p>
+    </section>
+
+    <section class="study-section" id="shape" aria-labelledby="shape-title">
+      <span class="article-section-label">Results</span>
+      <h2 id="shape-title">The shape of a face</h2>
+      <ul class="study-bullets">
+        <li><strong>Short.</strong> The median face is 7 characters long, nine in ten are 12 or shorter, and the longest has 34.</li>
+        <li><strong>A short list does most of the work.</strong> 21 characters fill half of all character positions across the faces, 121 fill 80% and 344 fill 95%. A long tail of 233 characters appears in only one face, and 155 occur only once in the whole list. The brackets <code>(</code> and <code>)</code> are in 77.5% and 78.3% of faces.</li>
+        <li><strong>Width is not fixed.</strong> 66.1% of faces (1,068) contain a character whose East Asian Width is Ambiguous: Unicode leaves it to the font and language whether the character takes one column or two. 1,038 of them change their column count between the two treatments. The same face can be wider on a Japanese system than on a Western one.</li>
+        <li><strong>Marks and astral characters.</strong> 127 faces (7.9%) contain a combining mark that attaches to the character before it, such as the eyelids in the lenny face. 77 faces (4.8%) contain a character above U+FFFF, which some older software counts as two characters.</li>
+      </ul>
+    </section>
+
+    <section class="study-section" id="normalization" aria-labelledby="normalization-title">
+      <span class="article-section-label">Results</span>
+      <h2 id="normalization-title">Normalization can merge faces</h2>
+      <p>Some tools rewrite text into a standard form before they store or compare it. The NFC form joins letters with their accents and changed none of the 1,616 faces. The NFKC form also folds compatibility characters into plain ones, and it changed 807 faces (49.9%): a little over half through fullwidth and halfwidth forms, which it turns into ordinary ones, and most of the rest through spacing accents such as <code>´</code> and <code>˘</code>, which it turns into a space plus a combining mark. That matters if you deduplicate faces: 88 distinct faces would collapse into 43. For example <code>＼(＾▽＾)／</code>, <code>＼(^▽^)／</code> and <code>\(^▽^)/</code> become one face under NFKC, although they look and measure differently.</p>
+      <p>The version of Unicode behind your tools can change answers too. The character <code>ʕ</code>, one side of the bear face <code>ʕ•ᴥ•ʔ</code>, is a lowercase letter in the Unicode 15.1 tables that Python 3.13 ships and an &ldquo;other letter&rdquo; in Unicode 18.0, which we used. Every count on this page names the version it used.</p>
+    </section>
+
+    <section class="study-section" id="fonts" aria-labelledby="fonts-title">
+      <span class="article-section-label">Results</span>
+      <h2 id="fonts-title">Which faces break in which fonts</h2>
+      <p>A device draws a character only if one of its fonts has it. We checked every character of every face against three font sets in a Linux container. <strong>Basic fonts</strong> are DejaVu (Sans, Sans Mono, Serif) and Liberation (Sans, Mono, Serif), which stand in for a bare-bones system. <strong>Basic plus Japanese and Chinese fonts</strong> adds two Japanese fonts (IPAGothic and its proportional sibling IPAPGothic) and one Chinese font (WenQuanYi Zen Hei). The third set, every font in the container, includes a near-universal fallback font and could not be validated, as we explain below. We counted a face as broken when at least one of its characters had no glyph in any font of the set.</p>
+      <figure class="research-figure is-chart">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="Faces with a missing character, scrollable chart">
+          <a href="/assets/research/kaomoji-unicode-rendering-study/missing-characters-by-fonts.png"><img src="/assets/research/kaomoji-unicode-rendering-study/missing-characters-by-fonts.png" width="1280" height="704" alt="Grouped bar chart of the share of faces with at least one character no installed font covers. With basic fonts only: 39% of faces that use only punctuation, Latin, Greek or Cyrillic, and 92% of faces that use another writing system. With two Japanese and Chinese fonts added: 5% and 42%." loading="lazy"></a>
+        </div>
+        <figcaption>Faces with a missing character. Basic fonts: 39% of faces without another writing system and 92% of faces with one. With Japanese and Chinese fonts added: 5% and 42%.</figcaption>
+      </figure>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead><tr><th scope="col">Font set</th><th scope="col">Faces with a missing character</th><th scope="col">Faces using another writing system</th><th scope="col">Other faces</th></tr></thead>
+          <tbody>
+            <tr><td>Basic fonts</td><td>986 of 1,616 (61.0%)</td><td>614 of 671 (91.5%)</td><td>372 of 945 (39.4%)</td></tr>
+            <tr><td>Basic plus Japanese and Chinese</td><td>334 of 1,616 (20.7%)</td><td>283 of 671 (42.2%)</td><td>51 of 945 (5.4%)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Faces that use another writing system broke 2.3 times as often with basic fonts (91.5% against 39.4%). The odds were 16 times higher (95% interval 12 to 22). Part of that is plain: katakana needs a Japanese font. So we repeated the comparison after setting aside faces whose only extra scripts are katakana, hiragana or Chinese characters. The odds were still 7.8 times higher (290 of 347 against 372 of 945).</p>
+      <p>Faces without another writing system broke too: 339 of those 372 broken faces lost a character from the Japanese, Chinese or fullwidth blocks, almost always one that Unicode labels Common, such as the middle dot and the halfwidth full stop. The characters that left the most faces broken with basic fonts were:</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead><tr><th scope="col">Character</th><th scope="col">Name</th><th scope="col">Faces broken, basic fonts</th><th scope="col">Faces broken, plus Japanese and Chinese</th></tr></thead>
+          <tbody>
+            <tr><td><code>・</code></td><td>Katakana Middle Dot</td><td>91</td><td>0</td></tr>
+            <tr><td><code>ﾉ</code></td><td>Halfwidth Katakana Letter No</td><td>83</td><td>0</td></tr>
+            <tr><td><code>｡</code></td><td>Halfwidth Ideographic Full Stop</td><td>69</td><td>0</td></tr>
+            <tr><td><code>￣</code></td><td>Fullwidth Macron</td><td>69</td><td>0</td></tr>
+            <tr><td><code>ヽ</code></td><td>Katakana Iteration Mark</td><td>61</td><td>0</td></tr>
+            <tr><td><code>ﾟ</code></td><td>Halfwidth Katakana Semi-Voiced Sound Mark</td><td>61</td><td>0</td></tr>
+            <tr><td><code>ノ</code></td><td>Katakana Letter No</td><td>53</td><td>0</td></tr>
+            <tr><td><code>｀</code></td><td>Fullwidth Grave Accent</td><td>50</td><td>0</td></tr>
+            <tr><td><code>･</code></td><td>Halfwidth Katakana Middle Dot</td><td>43</td><td>0</td></tr>
+            <tr><td><code>๑</code></td><td>Thai Digit One</td><td>40</td><td>40</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>With the Japanese and Chinese fonts added, the faces that still broke mostly used characters from other scripts, led by <code>๑</code> (40), <code>꒰</code> (20), <code>꒱</code> (19), <code>૮</code> (17), <code>ᗜ</code> (16), <code>༼</code> (15), <code>༽</code> (15); they are a Thai digit, Yi radicals used as brackets, a Gujarati digit, a Canadian syllable and Tibetan brackets. The full list is in the characters file. As a rough guide to fallback work, 77% of faces needed two or more fonts to draw in the container with all its fonts, 49% with the Japanese and Chinese set, and 4% with basic fonts.</p>
+      <h3>The container with every font hid the problem</h3>
+      <p>Our container with all its fonts includes one that draws something for almost any code point. The usual check for a missing character, drawing it and comparing it with a code point nobody has assigned, failed its own test there: the unassigned character was not flagged. Reading the fonts&rsquo; character tables failed the same way. Under the rule we wrote down in advance, the missing-character check is void in that set, so we publish no missing-character rate for it. We can say that seven characters, in 10 faces, are in none of those fonts: the Egyptian hieroglyph fish (U+1319B to U+1319F), U+131FC and U+16910. A real phone or laptop has a different set of fonts, so the two sets above are tests, not forecasts for your device.</p>
+    </section>
+
+    <section class="study-section" id="copy" aria-labelledby="copy-title">
+      <span class="article-section-label">Results</span>
+      <h2 id="copy-title">Copy and paste</h2>
+      <p>For each face we checked that the string a person types or pastes comes back byte for byte. We used Chromium&rsquo;s text insertion into a text box, a text area and an editable region, a write and read through the browser clipboard inside one page, JSON, web-address encoding and local storage. All 1,616 faces came back identical in every one of them. The one difference is cosmetic: an editable region collapsed the runs of spaces in two faces (<code>&gt;&lt;&gt;     &gt;&lt;&gt;</code> and <code>(  ._. )?</code>) when asked for its visible text, while its stored text kept them.</p>
+      <p>This tests the browser, not the apps people paste into. Text insertion here does not fire key presses, the clipboard test stays inside one page, and a messenger or social app can still rewrite a face after you paste it. Separately, on each of the 404 site pages that carry kaomoji tiles, a browser check found every tile showing the same text it carries for copying (that check script is not in the data folder).</p>
+    </section>
+
+    <section class="study-section" id="markdown" aria-labelledby="markdown-title">
+      <span class="article-section-label">Results</span>
+      <h2 id="markdown-title">Markdown</h2>
+      <p>Chat apps, forums and note tools often read a small formatting language called Markdown. We passed every face through three engines that follow the standard (CommonMark 0.31.2, markdown-it 14.1.0 and marked 15.0.12) with the face alone on a line, inside a sentence and on the line after other text, and counted a face as changed when the visible text differed or the engine produced formatting. We had made no prediction about this test.</p>
+      <figure class="research-figure is-chart">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="Share of faces changed or marked up by each Markdown engine, alone on a line and inside a sentence, between 4, scrollable chart">
+          <a href="/assets/research/kaomoji-unicode-rendering-study/markdown-changes.png"><img src="/assets/research/kaomoji-unicode-rendering-study/markdown-changes.png" width="1280" height="608" alt="Grouped bar chart of the share of faces altered or turned into formatting by three Markdown engines (commonmark, markdown-it, marked): commonmark 5.3% alone, 4.1% inside a sentence; markdown-it 5.3% alone, 4.1% inside a sentence; marked 5.8% alone, 4.6% inside a sentence." loading="lazy"></a>
+        </div>
+        <figcaption>Share of faces changed or marked up by each Markdown engine, alone on a line and inside a sentence, between 4.1% and 5.8%.</figcaption>
+      </figure>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead><tr><th scope="col">Engine</th><th scope="col">Face alone</th><th scope="col">Face inside a sentence</th></tr></thead>
+          <tbody>
+            <tr><td><code>commonmark</code></td><td>86 of 1,616 (5.3%)</td><td>66 of 1,616 (4.1%)</td></tr>
+            <tr><td><code>markdown-it</code></td><td>86 of 1,616 (5.3%)</td><td>66 of 1,616 (4.1%)</td></tr>
+            <tr><td><code>marked</code></td><td>94 of 1,616 (5.8%)</td><td>74 of 1,616 (4.6%)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The two engines that follow CommonMark agree exactly. The damage is easy to predict. A backslash before a punctuation mark disappears (28 of the 33 faces with a backslash changed). A pair of asterisks or underscores turns the text between them into italics (28 of 84 faces with an asterisk and 20 of 220 with an underscore changed). A <code>&gt;</code> at the start of a line starts a quote (21 of 21). A tilde mattered little in CommonMark (1 of 35) and more in marked (9), which reads a pair of tildes as strikethrough. The face <code>(*´ω`*)</code> comes back as <code>(´ω`)</code> in italics. The most common casualty is the shrug: typed as <code>¯\_(ツ)_/¯</code>, it comes back as <code>¯_(ツ)_/¯</code>. Three backslashes before the underscore restored it exactly in all three engines, and so did putting the face in backticks, which shows it unchanged in code formatting. We did not test Discord, Reddit, WhatsApp, Slack or any other app, and their rules differ from the standard.</p>
+    </section>
+
+    <section class="study-section" id="predictions" aria-labelledby="predictions-title">
+      <span class="article-section-label">Check</span>
+      <h2 id="predictions-title">What we predicted, and what happened</h2>
+      <p>Before running the font and copy-and-paste tests we wrote down five predictions, P1 to P5. The text is in <a href="/research/kaomoji-unicode-rendering-study/data/predictions-as-written.md">predictions-as-written.md</a>, with a list of every place we departed from it. This page cannot prove when we wrote them. The Markdown test, the character counts and the normalization counts had no predictions.</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead><tr><th scope="col">Prediction</th><th scope="col">Result</th></tr></thead>
+          <tbody>
+            <tr><td>P1. Faces survive copy and paste unchanged</td><td><strong>Held.</strong> 1,616 of 1,616 in every context we tried.</td></tr>
+            <tr><td>P2. With basic fonts, faces using another writing system break more often</td><td><strong>Held.</strong> 91.5% against 39.4%; adjusted p-value below 0.001.</td></tr>
+            <tr><td>P3. With every container font, fewer than 1% of faces break</td><td><strong>Could not be tested.</strong> The missing-character check failed its own control in that set, so its results are void.</td></tr>
+            <tr><td>P4. The drawing check and the second check agree on 98% of faces or more</td><td><strong>Held, for a substitute check.</strong> They agree on 1615 of 1,616 (basic fonts) and 1616 of 1,616 (with Japanese and Chinese fonts). We had named a browser font query as the second check. It cannot flag a missing glyph, so we read the fonts&rsquo; character tables instead.</td></tr>
+            <tr><td>P5. Faces with width-ambiguous characters change width by 10% or more between two monospace fonts more often</td><td><strong>Failed, in the opposite direction.</strong> With the Japanese and Chinese fonts, 39.9% of those faces against 52.0% of the others (odds ratio 0.61, interval 0.5 to 0.75). The container&rsquo;s full font set gave the same direction (34.6% against 46.0%).</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>A face &ldquo;swings&rdquo; when its width in a Japanese-capable monospace font (WenQuanYi Zen Hei Mono) differs from its width in DejaVu Sans Mono by 10% or more, both at 24 pixels; the definition is in the statistics script. We do not know why P5 failed. A look we did not plan shows faces with wide or fullwidth characters change width <em>less</em> (180 of 710, 25%, against 441 of 906, 49%), which suggests the measure mostly reflects how the two monospace fonts size ordinary Latin letters, not the East Asian Width property. Treat that as a guess. We corrected the two p-values behind our conclusions (P2 and P5) for testing several things at once with the Holm method; the odds ratios and intervals are not adjusted.</p>
+    </section>
+
+    <section class="study-section" id="limitations" aria-labelledby="limitations-title">
+      <span class="article-section-label">Limits</span>
+      <h2 id="limitations-title">Limitations</h2>
+      <ul class="study-bullets">
+        <li><strong>Linux and one browser.</strong> Every rendering result is headless Chromium 141 in a Linux container, with font sets we chose. It does not tell you the share of readers who see a box. Windows, macOS, iOS and Android ship different fonts, and we did not test them.</li>
+        <li><strong>One site&rsquo;s faces.</strong> The faces are the ones we publish. They lean towards cute and chat-style faces and are not a sample of kaomoji at large. The rule for finding face-shaped tiles outside our collections is structural; it misses faces with no bracket pair and keeps two scene-like strings that are not single faces.</li>
+        <li><strong>No full-font result.</strong> The container with every font could not be validated, so we cannot say how many faces break on an ordinary desktop.</li>
+        <li><strong>Standard Markdown only.</strong> Three engines that follow the specification. Chat apps and forums add their own rules, and the Markdown test had no prediction written beforehand.</li>
+        <li><strong>Nothing about people.</strong> We did not ask anyone how they read a face, whether a face with a missing character is still recognisable, or how screen readers speak these characters. No results on those questions exist yet.</li>
+        <li><strong>A model-assisted review.</strong> Separate reviewing models, not people, recomputed the main counts with their own code and rebuilt the published scripts. The check that rendered pages match our list ran in the same browser.</li>
+        <li><strong>The width test did not isolate what it meant to.</strong> See the predictions table.</li>
+      </ul>
+    </section>
+
+    <section class="study-section" id="method" aria-labelledby="method-title">
+      <span class="article-section-label">Method</span>
+      <h2 id="method-title">How the work was done</h2>
+      <p><strong>The list of faces.</strong> A script reads the site&rsquo;s source files, collects every copy tile (a button whose text is what gets copied) on collection pages, in kaomoji or emoticon sections and anywhere a tile is face-shaped, and adds the generator&rsquo;s starter faces and the decoder&rsquo;s named faces, which it reads by running their data files, not by pattern matching. Pure-emoji tiles are logged and left out. Distinct faces are counted byte for byte. The commit used starts <code>761bda3b9426</code> (the full hash is in <a href="/research/kaomoji-unicode-rendering-study/data/summary-statistics.json">summary-statistics.json</a>); a rebuild on a later commit gave identical files. On each of the 404 site pages that carry kaomoji tiles, a browser check confirmed that what the page shows equals the list; that check script is not published.</p>
+      <p><strong>Unicode properties.</strong> Script, Script_Extensions, block, East Asian Width, General_Category, grapheme break and emoji properties come from the Unicode 18.0.0 data files listed in <a href="/research/kaomoji-unicode-rendering-study/data/source-files.csv">source-files.csv</a> with their SHA-256 hashes. Visible units follow the grapheme rules in UAX #29, which we implemented ourselves and checked against the browser&rsquo;s own segmenter: they agreed on all 1,616 faces.</p>
+      <p><strong>Fonts.</strong> For each font set a fontconfig file restricted Chromium to its fonts. We checked every character two ways: by drawing it in the browser and comparing it with an unassigned character, and by reading each font file&rsquo;s character table. Characters that Unicode marks as invisible are not required to have a glyph. Controls were the plain text <code>abc</code> and <code>(^_^)</code>, which must never be flagged, and unassigned code points, which must always be.</p>
+      <p><strong>Copy and paste and Markdown.</strong> Chromium 141.0.7390.37 driven by Playwright 1.56.1; Markdown engines at the versions named above. A face counts as altered when the visible text differs from the input or when the engine emits any tag.</p>
+      <p><strong>Statistics.</strong> Fisher exact tests and odds ratios with a half added to every cell, intervals by the Woolf method, one logistic regression on the number of other scripts, and Holm adjustment across the two tests that produced the p-values behind our conclusions (P2 and P5). The faces are the whole list, so the intervals describe how firm the comparison is, not a sample.</p>
+      <p>You can rebuild the list, the font results and the Markdown results with the scripts in the data folder, and recompute the figures on this page from the CSV files with <code>compute-statistics.py</code>. <a href="/research/kaomoji-unicode-rendering-study/data/REPRODUCE.md">REPRODUCE.md</a> gives the commands.</p>
+    </section>
+
+    <section class="study-section" id="corrections" aria-labelledby="corrections-title">
+      <span class="article-section-label">Record</span>
+      <h2 id="corrections-title">Corrections</h2>
+      <p>Version 1.0, October 16, 2026. Before publication an independent review by a model, not a person, found that our first list of 1,597 faces missed face-shaped tiles outside the collection pages and counted 11 pictures as faces. We widened the rule, removed the pictures, rebuilt the list (now 1,616 faces) and reran every test. No conclusion changed. We also withdrew an early statement that fewer than 1% of faces break in the full-font container, because that set&rsquo;s detector failed its own check. A second review changed how we word several claims and the title. A corrected version keeps this address, gets a new version number and says what changed.</p>
+    </section>
+
+    <section class="study-section" id="data" aria-labelledby="data-title">
+      <span class="article-section-label">Data</span>
+      <h2 id="data-title">Data and files</h2>
+      <ul class="download-list">
+        <li class="download-item is-primary">
+          <a href="/research/kaomoji-unicode-rendering-study.pdf" download><span class="download-name">Full study, version 1.0</span> <span class="download-meta">PDF · 614 KB</span></a>
+          <p>The same text as this page, with title, version and canonical URL on every page.</p>
+        </li>
+        <li class="download-item">
+          <a href="/research/kaomoji-unicode-rendering-study/data/faces.csv"><span class="download-name">faces.csv</span> <span class="download-meta">CSV · 149 KB</span></a>
+          <p>Start here: every face, with its characters, scripts, font results and Markdown results.</p>
+        </li>
+      </ul>
+      <div class="data-table-wrap">
+        <table class="data-table data-files-table">
+          <thead><tr><th scope="col">File</th><th scope="col">Contents</th><th scope="col">Size</th></tr></thead>
+          <tbody>
+            <tr><td><a href="/research/kaomoji-unicode-rendering-study/data/faces.csv">faces.csv</a></td><td>Start here: all 1,616 faces with their characters, scripts, whether they break in each font set, and whether Markdown changes them</td><td>149 KB</td></tr>
+            <tr><td><a href="/research/kaomoji-unicode-rendering-study/data/characters.csv">characters.csv</a></td><td>All 692 characters with name, script, block, width class, how many faces use each and how many break it in each font set</td><td>51 KB</td></tr>
+            <tr><td><a href="/research/kaomoji-unicode-rendering-study/data/markdown-results.csv">markdown-results.csv</a></td><td>For every face, whether each Markdown engine changed it, in each placement</td><td>78 KB</td></tr>
+            <tr><td><a href="/research/kaomoji-unicode-rendering-study/data/script-distribution.csv">script-distribution.csv</a></td><td>Faces and characters per Unicode script</td><td>1 KB</td></tr>
+            <tr><td><a href="/research/kaomoji-unicode-rendering-study/data/block-distribution.csv">block-distribution.csv</a></td><td>Faces and characters per Unicode block</td><td>3 KB</td></tr>
+            <tr><td><a href="/research/kaomoji-unicode-rendering-study/data/script-pairs.csv">script-pairs.csv</a></td><td>How often two scripts appear in the same face</td><td>2 KB</td></tr>
+            <tr><td><a href="/research/kaomoji-unicode-rendering-study/data/summary-statistics.json">summary-statistics.json</a></td><td>Every figure on this page as machine-readable numbers</td><td>11 KB</td></tr>
+            <tr><td><a href="/research/kaomoji-unicode-rendering-study/data/source-files.csv">source-files.csv</a></td><td>Address, size and SHA-256 hash of each Unicode 18.0.0 file used</td><td>1 KB</td></tr>
+            <tr><td><a href="/research/kaomoji-unicode-rendering-study/data/data-dictionary.csv">data-dictionary.csv</a></td><td>What every column in the CSV files means</td><td>4 KB</td></tr>
+            <tr><td><a href="/research/kaomoji-unicode-rendering-study/data/predictions-as-written.md">predictions-as-written.md</a></td><td>The predictions we wrote down before running the font and Markdown tests, and every way the tests departed from them</td><td>6 KB</td></tr>
+            <tr><td><a href="/research/kaomoji-unicode-rendering-study/data/REPRODUCE.md">REPRODUCE.md</a></td><td>Commands that rebuild the list and every result</td><td>3 KB</td></tr>
+            <tr><td>Scripts</td><td><a href="/research/kaomoji-unicode-rendering-study/data/scripts/compute-statistics.py">compute-statistics.py</a>, <a href="/research/kaomoji-unicode-rendering-study/data/scripts/dump-kaomoji-data.mjs">dump-kaomoji-data.mjs</a>, <a href="/research/kaomoji-unicode-rendering-study/data/scripts/font-coverage.py">font-coverage.py</a>, <a href="/research/kaomoji-unicode-rendering-study/data/scripts/font-test-browser.mjs">font-test-browser.mjs</a>, <a href="/research/kaomoji-unicode-rendering-study/data/scripts/fontconfig-basic-plus-cjk.conf">fontconfig-basic-plus-cjk.conf</a>, <a href="/research/kaomoji-unicode-rendering-study/data/scripts/fontconfig-basic.conf">fontconfig-basic.conf</a>, <a href="/research/kaomoji-unicode-rendering-study/data/scripts/make-font-test-input.py">make-font-test-input.py</a>, <a href="/research/kaomoji-unicode-rendering-study/data/scripts/markdown-package-lock.json">markdown-package-lock.json</a>, <a href="/research/kaomoji-unicode-rendering-study/data/scripts/markdown-package.json">markdown-package.json</a>, <a href="/research/kaomoji-unicode-rendering-study/data/scripts/markdown-test.mjs">markdown-test.mjs</a>, <a href="/research/kaomoji-unicode-rendering-study/data/scripts/reproduce-corpus.py">reproduce-corpus.py</a>, <a href="/research/kaomoji-unicode-rendering-study/data/scripts/ucd_reader.py">ucd_reader.py</a></td><td>48 KB</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="study-section" id="citation" aria-labelledby="citation-title">
+      <span class="article-section-label">Cite</span>
+      <h2 id="citation-title">How to cite this study</h2>
+      <p class="research-citation" id="citation-text">UltraTextGen Research. &ldquo;What Kaomoji Are Made Of, and Where They Break in Basic Fonts and Markdown&rdquo; Version 1.0, October 16, 2026. https://ultratextgen.com/research/kaomoji-unicode-rendering-study/</p>
+      <p>Please cite the version number and say that the font results are from Linux fonts and that the faces are those on our collection pages.</p>
+    </section>
+
+    <div id="sources" class="study-sources">
+    <section class="editorial-section">
+      <span class="article-section-label">Sources</span>
+      <h2>External sources</h2>
+      <div class="source-note">
+        <p>The scripts, blocks, character names, categories, widths and break classes counted here come from the Unicode Character Database 18.0.0 (<a target="_blank" rel="noopener" href="https://www.unicode.org/Public/18.0.0/ucd/Scripts.txt">Scripts.txt</a>, <a target="_blank" rel="noopener" href="https://www.unicode.org/Public/18.0.0/ucd/ScriptExtensions.txt">ScriptExtensions.txt</a>, <a target="_blank" rel="noopener" href="https://www.unicode.org/Public/18.0.0/ucd/Blocks.txt">Blocks.txt</a>, <a target="_blank" rel="noopener" href="https://www.unicode.org/Public/18.0.0/ucd/EastAsianWidth.txt">EastAsianWidth.txt</a> and <a target="_blank" rel="noopener" href="https://www.unicode.org/Public/18.0.0/ucd/UnicodeData.txt">UnicodeData.txt</a>), with the file list and hashes in <a href="/research/kaomoji-unicode-rendering-study/data/source-files.csv">source-files.csv</a>.</p>
+        <p>That East Asian Width can be Ambiguous and so depend on the context comes from <a target="_blank" rel="noopener" href="https://www.unicode.org/reports/tr11/">UAX #11</a>; the rules for visible units (grapheme clusters) are in <a target="_blank" rel="noopener" href="https://www.unicode.org/reports/tr29/">UAX #29</a>; NFC and NFKC are defined in <a target="_blank" rel="noopener" href="https://www.unicode.org/reports/tr15/">UAX #15</a>; and the Script and Script_Extensions properties, including why a Common character can be shared by several scripts, are described in <a target="_blank" rel="noopener" href="https://www.unicode.org/reports/tr24/">UAX #24</a>.</p>
+        <p>How Markdown treats backslashes, emphasis and block quotes is the <a target="_blank" rel="nofollow noopener" href="https://spec.commonmark.org/0.31.2/">CommonMark specification, version 0.31.2</a>; the engines we ran are <a target="_blank" rel="noopener" href="https://github.com/markdown-it/markdown-it">markdown-it</a> and <a target="_blank" rel="noopener" href="https://github.com/markedjs/marked">marked</a>, alongside CommonMark&rsquo;s own reference implementation.</p>
+        <p>That kaomoji draw on many scripts and use combining marks was noted for a Twitter sample by Bedrick, Beckley, Roark and Sproat, <a target="_blank" rel="nofollow noopener" href="https://aclanthology.org/W12-2107/">&ldquo;Robust kaomoji detection in Twitter&rdquo;</a> (2012). That the same emoji can be read differently on different platforms comes from Miller and colleagues, <a target="_blank" rel="nofollow noopener" href="https://doi.org/10.1609/icwsm.v10i1.14757">&ldquo;Blissfully Happy&rdquo; or &ldquo;Ready to Fight&rdquo;</a> (2016), a study of pictures that this study of characters does not repeat.</p>
+      </div>
+    </section>
+    </div>
+
+    <section class="related-pages">
+      <h2>Related</h2>
+      <div class="related-pages-grid">
+        <a href="/library/text-faces-kaomoji/" class="related-page-card">
+          <span class="related-page-label">Collection</span>
+          <h4>Kaomoji Copy and Paste</h4>
+        </a>
+        <a href="/research/unicode-rendering-support-study/" class="related-page-card">
+          <span class="related-page-label">Study 5</span>
+          <h4>Unicode Rendering Support Study</h4>
+        </a>
+        <a href="/guide/why-fonts-show-as-boxes/" class="related-page-card">
+          <span class="related-page-label">Guide</span>
+          <h4>Why text shows as boxes</h4>
+        </a>
+        <a href="/research/" class="related-page-card">
+          <span class="related-page-label">Research</span>
+          <h4>All UltraTextGen research</h4>
+        </a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+<!-- BEGIN static footer — generated by scripts/build-static-footer.js from footer.js. Do not edit by hand — run `npm run build:static-footer`. -->
+<div class="footer-columns"><div class="footer-col"><span class="footer-col-title">Explore</span><a href="/" class="footer-link">Home</a><a href="/guide/" class="footer-link">Guides</a><a href="/answers/" class="footer-link">Answers</a><a href="/usecase/" class="footer-link">Use Cases</a><a href="/category/" class="footer-link">Categories</a><a href="/library/" class="footer-link">Library</a><a href="/printables/" class="footer-link">Printables</a><a href="/events/" class="footer-link">Events</a></div><div class="footer-col"><span class="footer-col-title">Popular Tools</span><a href="/usecase/text-to-emoji/" class="footer-link">Text to Emoji</a><a href="/usecase/linkedin-headline/" class="footer-link">LinkedIn Headline</a><a href="/usecase/comment-font/" class="footer-link">Comment Font</a><a href="/usecase/bio-font/" class="footer-link">Bio Font</a><a href="/usecase/vertical-text/" class="footer-link">Vertical Text</a><a href="/usecase/scrolling-text/" class="footer-link">Scrolling Text</a><a href="/usecase/repeat-text/" class="footer-link">Repeat Text</a><a href="/usecase/zalgo-text/" class="footer-link">Zalgo Text</a><a href="/ascii-art-generator/" class="footer-link">ASCII Art Generator</a></div><div class="footer-col"><span class="footer-col-title">Popular Categories</span><a href="/category/bold-fonts/" class="footer-link">Bold Fonts</a><a href="/category/cursive-fonts/" class="footer-link">Cursive Fonts</a><a href="/category/gothic-fonts/" class="footer-link">Gothic Fonts</a><a href="/category/bubble-fonts/" class="footer-link">Bubble Fonts</a><a href="/category/strikethrough-text/" class="footer-link">Strikethrough</a></div><div class="footer-col"><span class="footer-col-title">Company</span><a href="/about/" class="footer-link">About</a><a href="/privacy/" class="footer-link">Privacy Policy</a><a href="/terms/" class="footer-link">Terms of Service</a><a href="/contact/" class="footer-link">Contact</a></div></div><div class="footer-social-links"><a href="https://www.youtube.com/@UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.facebook.com/profile.php?id=61588587387596" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.linkedin.com/company/71290348/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a></div><div class="footer-bottom">© 2026 UltraTextGen. Fast text styles that work everywhere.</div>
+<!-- END static footer -->
+</div>
+  </footer>
+
+<script src="/js/research/research-study.js" defer></script>
+<script src="/footer.js" defer></script>
+</body>
+</html>

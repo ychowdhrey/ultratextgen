@@ -1,0 +1,51 @@
+file,column,meaning
+faces.csv,face_id,Stable id: first 12 hex digits of the SHA-256 of the face's UTF-8 bytes
+faces.csv,face,"The face exactly as published, with its spaces and combining marks"
+faces.csv,characters,Number of Unicode characters (code points) in the face
+faces.csv,visible_units,"Extended grapheme clusters (Unicode UAX 29), the units a person would count"
+faces.csv,scripts,"Unicode Script property values other than Common and Inherited, separated by |"
+faces.csv,has_combining_mark,Contains a mark that attaches to the character before it
+faces.csv,has_character_above_U+FFFF,"Contains a character above U+FFFF, which some older software counts as two"
+faces.csv,changes_under_NFKC,Unicode compatibility normalization (NFKC) would change the string
+faces.csv,has_ambiguous_width_character,"Contains a character whose East Asian Width is Ambiguous, so its column width depends on the font and locale (1,038 of the 1,068 such faces also change column count between the two treatments)"
+faces.csv,found_on_pages,Number of page files or data files that carry the face
+faces.csv,found_in_languages,Number of site languages in which the face appears
+faces.csv,found_as,"Where it was found, joined by +: tile-dedicated (kaomoji collection page), tile-embedded (kaomoji or emoticon section of another page), tile-facey-outside-lane (face-shaped tile elsewhere), generator-preset, decoder-named"
+faces.csv,missing_character_basic_fonts,"At least one character is covered by none of DejaVu Sans, DejaVu Sans Mono, DejaVu Serif, Liberation Sans, Liberation Mono, Liberation Serif"
+faces.csv,missing_character_basic_plus_cjk_fonts,"Same, after adding IPAGothic, IPAPGothic and WenQuanYi Zen Hei"
+faces.csv,changed_by_commonmark_alone,A CommonMark 0.31.2 renderer changed the visible text or produced markup when the face stood alone on a line
+faces.csv,changed_by_commonmark_in_sentence,"Same, with the face inside a sentence"
+faces.csv,changed_by_marked_alone,"Same for marked 15.0.12, face alone"
+characters.csv,character,The character
+characters.csv,code_point,Unicode code point
+characters.csv,name,Unicode character name
+characters.csv,script,Unicode Script property
+characters.csv,script_extensions,Scripts that share this character (Script_Extensions)
+characters.csv,block,Unicode block
+characters.csv,general_category,Unicode General_Category
+characters.csv,east_asian_width,East Asian Width class (A is Ambiguous)
+characters.csv,faces_containing,Faces that contain this character
+characters.csv,faces_missing_it_basic_fonts,Faces in which this character is covered by none of the basic fonts
+characters.csv,faces_missing_it_basic_plus_cjk_fonts,"Same, with the Japanese and Chinese fonts added"
+markdown-results.csv,face_id,As in faces.csv
+markdown-results.csv,face,The face
+markdown-results.csv,(engine)__(placement),"Columns named like commonmark__alone: 1 if that engine changed the visible text or produced markup, 0 if the text came back identical with no markup. Engines: commonmark, markdown-it, marked. Placements: alone, inline (inside a sentence), line_start_after_text (after another line; the result matched alone in every engine)"
+script-distribution.csv,script,Unicode script
+script-distribution.csv,scalar_slots_in_unique_faces,Character positions across the distinct faces
+script-distribution.csv,share_of_slots,Share of all positions
+script-distribution.csv,distinct_scalars,Different characters of this script
+script-distribution.csv,faces_containing,Faces with at least one
+script-distribution.csv,share_of_faces,Share of faces
+block-distribution.csv,block,Unicode block
+block-distribution.csv,scalar_slots,Character positions
+block-distribution.csv,distinct_scalars,Different characters
+block-distribution.csv,faces_containing,Faces with at least one
+block-distribution.csv,share_of_faces,Share of faces
+script-pairs.csv,script_a,First script
+script-pairs.csv,script_b,Second script
+script-pairs.csv,faces,Faces containing both
+source-files.csv,file,Unicode data file
+source-files.csv,address,Where it was fetched
+source-files.csv,bytes,Size
+source-files.csv,sha256,SHA-256 of the file used
+summary-statistics.json,(all),Every figure on the study page as machine-readable numbers. Predictions are labelled P1 to P5

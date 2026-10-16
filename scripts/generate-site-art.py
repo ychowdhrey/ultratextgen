@@ -3011,6 +3011,8 @@ PAGES.update({
     P(m_doc), K_RESEARCH),
 "research-emoji-name-drift": ("Emoji Name Drift", "1,400 emoji, two official names each, 31 search words",
     P(m_doc), K_RESEARCH),
+"research-kaomoji-unicode-rendering-study": ("Kaomoji Under the Hood", "1,616 faces, 39 scripts, fonts and Markdown tested",
+    P(m_doc), K_RESEARCH),
 "compare-zalgo-generators": ("Zalgo Generators Compared", "Best tool for each effect, tested 2026",
     P(m_zalgo), K_SITE),
 })
