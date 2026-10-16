@@ -1,0 +1,693 @@
+character,code_point,name,script,script_extensions,block,general_category,east_asian_width,faces_containing,faces_missing_it_basic_fonts,faces_missing_it_basic_plus_cjk_fonts
+),U+0029,RIGHT PARENTHESIS,Common,,Basic Latin,Pe,Na,1265,0,0
+(,U+0028,LEFT PARENTHESIS,Common,,Basic Latin,Ps,Na,1252,0,0
+ ,U+0020,SPACE,Common,,Basic Latin,Zs,Na,495,0,0
+_,U+005F,LOW LINE,Common,,Basic Latin,Pc,Na,220,0,0
+•,U+2022,BULLET,Common,,General Punctuation,Po,A,170,0,0
+´,U+00B4,ACUTE ACCENT,Common,,Latin-1 Supplement,Sk,A,168,0,0
+ω,U+03C9,GREEK SMALL LETTER OMEGA,Greek,,Greek and Coptic,Ll,A,159,0,0
+`,U+0060,GRAVE ACCENT,Common,,Basic Latin,Sk,Na,122,0,0
+^,U+005E,CIRCUMFLEX ACCENT,Common,,Basic Latin,Sk,Na,93,0,0
+▽,U+25BD,WHITE DOWN-POINTING TRIANGLE,Common,,Geometric Shapes,So,A,91,0,0
+・,U+30FB,KATAKANA MIDDLE DOT,Common,Bopo Hang Hani Hira Kana Yiii,Katakana,Po,W,91,91,0
+-,U+002D,HYPHEN-MINUS,Common,,Basic Latin,Pd,Na,89,0,0
+*,U+002A,ASTERISK,Common,,Basic Latin,Po,Na,84,0,0
+‿,U+203F,UNDERTIE,Common,,General Punctuation,Pc,N,83,0,0
+ﾉ,U+FF89,HALFWIDTH KATAKANA LETTER NO,Katakana,,Halfwidth and Fullwidth Forms,Lo,H,83,83,0
+˘,U+02D8,BREVE,Common,,Spacing Modifier Letters,Sk,A,79,0,0
+o,U+006F,LATIN SMALL LETTER O,Latin,,Basic Latin,Ll,Na,75,0,0
+°,U+00B0,DEGREE SIGN,Common,,Latin-1 Supplement,So,A,73,0,0
+♡,U+2661,WHITE HEART SUIT,Common,,Miscellaneous Symbols,So,A,73,0,0
+;,U+003B,SEMICOLON,Common,,Basic Latin,Po,Na,72,0,0
+>,U+003E,GREATER-THAN SIGN,Common,,Basic Latin,Sm,Na,70,0,0
+｡,U+FF61,HALFWIDTH IDEOGRAPHIC FULL STOP,Common,Bopo Hang Hani Hira Kana Yiii,Halfwidth and Fullwidth Forms,Po,H,69,69,0
+￣,U+FFE3,FULLWIDTH MACRON,Common,,Halfwidth and Fullwidth Forms,Sk,F,69,69,0
+:,U+003A,COLON,Common,,Basic Latin,Po,Na,65,0,0
+ヽ,U+30FD,KATAKANA ITERATION MARK,Katakana,,Katakana,Lm,W,61,61,0
+ﾟ,U+FF9F,HALFWIDTH KATAKANA SEMI-VOICED SOUND MARK,Common,Hira Kana,Halfwidth and Fullwidth Forms,Lm,H,61,61,0
+/,U+002F,SOLIDUS,Common,,Basic Latin,Po,Na,60,0,0
+.,U+002E,FULL STOP,Common,,Basic Latin,Po,Na,59,0,0
+<,U+003C,LESS-THAN SIGN,Common,,Basic Latin,Sm,Na,58,0,0
+ᴗ,U+1D17,LATIN SMALL LETTER BOTTOM HALF O,Latin,,Phonetic Extensions,Ll,N,58,0,0
+ノ,U+30CE,KATAKANA LETTER NO,Katakana,,Katakana,Lo,W,53,53,0
+ε,U+03B5,GREEK SMALL LETTER EPSILON,Greek,,Greek and Coptic,Ll,A,50,0,0
+｀,U+FF40,FULLWIDTH GRAVE ACCENT,Common,,Halfwidth and Fullwidth Forms,Sk,F,50,50,0
+∀,U+2200,FOR ALL,Common,,Mathematical Operators,Sm,A,49,0,0
+̀,U+0300,COMBINING GRAVE ACCENT,Inherited,Cher Copt Cyrl Grek Latn Perm Sunu Tale,Combining Diacritical Marks,Mn,A,47,0,0
+ᴥ,U+1D25,LATIN LETTER AIN,Latin,,Phonetic Extensions,Ll,N,45,0,0
+=,U+003D,EQUALS SIGN,Common,,Basic Latin,Sm,Na,43,0,0
+́,U+0301,COMBINING ACUTE ACCENT,Inherited,Cher Cyrl Grek Latn Osge Sunu Tale Todr,Combining Diacritical Marks,Mn,A,43,0,0
+◕,U+25D5,CIRCLE WITH ALL BUT UPPER LEFT QUADRANT BLACK,Common,,Geometric Shapes,So,N,43,0,0
+･,U+FF65,HALFWIDTH KATAKANA MIDDLE DOT,Common,Bopo Hang Hani Hira Kana Yiii,Halfwidth and Fullwidth Forms,Po,H,43,43,0
+☆,U+2606,WHITE STAR,Common,,Miscellaneous Symbols,So,A,41,0,0
+Д,U+0414,CYRILLIC CAPITAL LETTER DE,Cyrillic,,Cyrillic,Lu,A,40,0,0
+๑,U+0E51,THAI DIGIT ONE,Thai,,Thai,Nd,N,40,40,40
+ᵕ,U+1D55,MODIFIER LETTER SMALL BOTTOM HALF O,Latin,,Phonetic Extensions,Lm,N,40,0,0
+っ,U+3063,HIRAGANA LETTER SMALL TU,Hiragana,,Hiragana,Lo,W,39,39,0
+~,U+007E,TILDE,Common,,Basic Latin,Sm,Na,35,0,0
+ゞ,U+309E,HIRAGANA VOICED ITERATION MARK,Hiragana,,Hiragana,Lm,W,35,35,0
+✧,U+2727,WHITE FOUR POINTED STAR,Common,,Dingbats,So,N,34,0,0
+\,U+005C,REVERSE SOLIDUS,Common,,Basic Latin,Po,Na,33,0,0
+͜,U+035C,COMBINING DOUBLE BREVE BELOW,Inherited,,Combining Diacritical Marks,Mn,A,31,0,0
+≦,U+2266,LESS-THAN OVER EQUAL TO,Common,,Mathematical Operators,Sm,A,31,0,0
+≧,U+2267,GREATER-THAN OVER EQUAL TO,Common,,Mathematical Operators,Sm,A,31,0,0
+˶,U+02F6,MODIFIER LETTER MIDDLE DOUBLE ACUTE ACCENT,Common,,Spacing Modifier Letters,Sk,N,29,0,0
+♪,U+266A,EIGHTH NOTE,Common,,Miscellaneous Symbols,So,A,28,0,0
+ʖ,U+0296,LATIN LETTER INVERTED GLOTTAL STOP,Latin,,IPA Extensions,Ll,N,27,0,0
+˚,U+02DA,RING ABOVE,Common,,Spacing Modifier Letters,Sk,A,26,0,0
+ー,U+30FC,KATAKANA-HIRAGANA PROLONGED SOUND MARK,Common,Hira Kana,Katakana,Lm,W,26,26,0
+³,U+00B3,SUPERSCRIPT THREE,Common,,Latin-1 Supplement,No,A,25,0,0
+ʚ,U+029A,LATIN SMALL LETTER CLOSED OPEN E,Latin,,IPA Extensions,Ll,N,25,0,0
+﹏,U+FE4F,WAVY LOW LINE,Common,,CJK Compatibility Forms,Pc,W,25,25,0
+ɞ,U+025E,LATIN SMALL LETTER CLOSED REVERSED OPEN E,Latin,,IPA Extensions,Ll,N,24,0,0
+ʔ,U+0294,LATIN LETTER GLOTTAL STOP,Latin,,IPA Extensions,Lo,N,24,0,0
+ʕ,U+0295,LATIN LETTER PHARYNGEAL VOICED FRICATIVE,Latin,,IPA Extensions,Lo,N,24,0,0
+з,U+0437,CYRILLIC SMALL LETTER ZE,Cyrillic,,Cyrillic,Ll,A,24,0,0
+͡,U+0361,COMBINING DOUBLE INVERTED BREVE,Inherited,,Combining Diacritical Marks,Mn,A,23,0,0
+ა,U+10D0,GEORGIAN LETTER AN,Georgian,,Georgian,Ll,N,22,0,0
+ﻌ,U+FECC,ARABIC LETTER AIN MEDIAL FORM,Arabic,,Arabic Presentation Forms-B,Lo,N,22,0,0
+✿,U+273F,BLACK FLORETTE,Common,,Dingbats,So,N,21,0,0
+。,U+3002,IDEOGRAPHIC FULL STOP,Common,Bopo Hang Hani Hira Kana Mong Phag Yiii,CJK Symbols and Punctuation,Po,W,21,21,0
+＾,U+FF3E,FULLWIDTH CIRCUMFLEX ACCENT,Common,,Halfwidth and Fullwidth Forms,Sk,F,21,21,0
+¬,U+00AC,NOT SIGN,Common,,Latin-1 Supplement,Sm,Na,20,0,0
+˂,U+02C2,MODIFIER LETTER LEFT ARROWHEAD,Common,,Spacing Modifier Letters,Sk,N,20,0,0
+˃,U+02C3,MODIFIER LETTER RIGHT ARROWHEAD,Common,,Spacing Modifier Letters,Sk,N,20,0,0
+ˋ,U+02CB,MODIFIER LETTER GRAVE ACCENT,Common,Bopo Latn,Spacing Modifier Letters,Lm,A,20,0,0
+ᵔ,U+1D54,MODIFIER LETTER SMALL TOP HALF O,Latin,,Phonetic Extensions,Lm,N,20,0,0
+₍,U+208D,SUBSCRIPT LEFT PARENTHESIS,Common,,Superscripts and Subscripts,Ps,N,20,0,0
+₎,U+208E,SUBSCRIPT RIGHT PARENTHESIS,Common,,Superscripts and Subscripts,Pe,N,20,0,0
+╯,U+256F,BOX DRAWINGS LIGHT ARC UP AND LEFT,Common,,Box Drawing,So,A,20,0,0
+◡,U+25E1,LOWER HALF CIRCLE,Common,,Geometric Shapes,So,N,20,0,0
+꒰,U+A4B0,YI RADICAL SHY,Yi,,Yi Radicals,So,W,20,20,20
+；,U+FF1B,FULLWIDTH SEMICOLON,Common,,Halfwidth and Fullwidth Forms,Po,F,20,20,0
+＼,U+FF3C,FULLWIDTH REVERSE SOLIDUS,Common,,Halfwidth and Fullwidth Forms,Po,F,20,20,0
+O,U+004F,LATIN CAPITAL LETTER O,Latin,,Basic Latin,Lu,Na,19,0,0
+٩,U+0669,ARABIC-INDIC DIGIT NINE,Arabic,Arab Thaa Yezi,Arabic,Nd,N,19,0,0
+ᐟ,U+141F,CANADIAN SYLLABICS FINAL ACUTE,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,19,0,0
+─,U+2500,BOX DRAWINGS LIGHT HORIZONTAL,Common,,Box Drawing,So,A,19,0,0
+꒱,U+A4B1,YI RADICAL VEP,Yi,,Yi Radicals,So,W,19,19,19
+D,U+0044,LATIN CAPITAL LETTER D,Latin,,Basic Latin,Lu,Na,18,0,0
+ˊ,U+02CA,MODIFIER LETTER ACUTE ACCENT,Common,Bopo Latn,Spacing Modifier Letters,Lm,A,18,0,0
+ᐠ,U+1420,CANADIAN SYLLABICS FINAL GRAVE,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,18,0,0
+⋆,U+22C6,STAR OPERATOR,Common,,Mathematical Operators,Sm,N,18,0,0
+⌐,U+2310,REVERSED NOT SIGN,Common,,Miscellaneous Technical,So,N,18,0,0
+／,U+FF0F,FULLWIDTH SOLIDUS,Common,,Halfwidth and Fullwidth Forms,Po,F,18,18,0
+3,U+0033,DIGIT THREE,Common,,Basic Latin,Nd,Na,17,0,0
+૮,U+0AEE,GUJARATI DIGIT EIGHT,Gujarati,Gujr Khoj,Gujarati,Nd,N,17,17,17
+━,U+2501,BOX DRAWINGS HEAVY HORIZONTAL,Common,,Box Drawing,So,A,17,0,0
+■,U+25A0,BLACK SQUARE,Common,,Geometric Shapes,So,A,17,0,0
+★,U+2605,BLACK STAR,Common,,Miscellaneous Symbols,So,A,17,0,0
+゜,U+309C,KATAKANA-HIRAGANA SEMI-VOICED SOUND MARK,Common,Hira Kana,Hiragana,Sk,W,17,17,0
+",",U+002C,COMMA,Common,,Basic Latin,Po,Na,16,0,0
+|,U+007C,VERTICAL LINE,Common,,Basic Latin,Sm,Na,16,0,0
+ᗜ,U+15DC,CANADIAN SYLLABICS CARRIER THU,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,16,16,16
+⊙,U+2299,CIRCLED DOT OPERATOR,Common,,Mathematical Operators,Sm,A,16,0,0
+@,U+0040,COMMERCIAL AT,Common,,Basic Latin,Po,Na,15,0,0
+m,U+006D,LATIN SMALL LETTER M,Latin,,Basic Latin,Ll,Na,15,0,0
+z,U+007A,LATIN SMALL LETTER Z,Latin,,Basic Latin,Ll,Na,15,0,0
+و,U+0648,ARABIC LETTER WAW,Arabic,,Arabic,Lo,N,15,0,0
+༼,U+0F3C,TIBETAN MARK ANG KHANG GYON,Tibetan,,Tibetan,Ps,N,15,15,15
+༽,U+0F3D,TIBETAN MARK ANG KHANG GYAS,Tibetan,,Tibetan,Pe,N,15,15,15
+₊,U+208A,SUBSCRIPT PLUS SIGN,Common,,Superscripts and Subscripts,Sm,N,15,0,0
+∇,U+2207,NABLA,Common,,Mathematical Operators,Sm,A,15,0,0
+┌,U+250C,BOX DRAWINGS LIGHT DOWN AND RIGHT,Common,,Box Drawing,So,A,15,0,0
+﹃,U+FE43,PRESENTATION FORM FOR VERTICAL LEFT WHITE CORNER BRACKET,Common,,CJK Compatibility Forms,Ps,W,15,15,0
+?,U+003F,QUESTION MARK,Common,,Basic Latin,Po,Na,14,0,0
+b,U+0062,LATIN SMALL LETTER B,Latin,,Basic Latin,Ll,Na,14,0,0
+x,U+0078,LATIN SMALL LETTER X,Latin,,Basic Latin,Ll,Na,14,0,0
+۶,U+06F6,EXTENDED ARABIC-INDIC DIGIT SIX,Arabic,,Arabic,Nd,N,14,0,0
+୨,U+0B68,ORIYA DIGIT TWO,Oriya,,Oriya,Nd,N,14,14,14
+╰,U+2570,BOX DRAWINGS LIGHT ARC UP AND RIGHT,Common,,Box Drawing,So,A,14,0,0
+ヮ,U+30EE,KATAKANA LETTER SMALL WA,Katakana,,Katakana,Lo,W,14,14,0
+',U+0027,APOSTROPHE,Common,,Basic Latin,Po,Na,13,0,0
+º,U+00BA,MASCULINE ORDINAL INDICATOR,Latin,,Latin-1 Supplement,Lo,A,13,0,0
+ˆ,U+02C6,MODIFIER LETTER CIRCUMFLEX ACCENT,Common,,Spacing Modifier Letters,Lm,N,13,0,0
+ಠ,U+0CA0,KANNADA LETTER TTHA,Kannada,,Kannada,Lo,N,13,13,13
+ᐢ,U+1422,CANADIAN SYLLABICS FINAL TOP HALF RING,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,13,0,0
+┐,U+2510,BOX DRAWINGS LIGHT DOWN AND LEFT,Common,,Box Drawing,So,A,13,0,0
+╭,U+256D,BOX DRAWINGS LIGHT ARC DOWN AND RIGHT,Common,,Box Drawing,So,A,13,0,0
+╮,U+256E,BOX DRAWINGS LIGHT ARC DOWN AND LEFT,Common,,Box Drawing,So,A,13,0,0
+♥,U+2665,BLACK HEART SUIT,Common,,Miscellaneous Symbols,So,A,13,0,0
+ꈊ,U+A20A,YI SYLLABLE KET,Yi,,Yi Syllables,Lo,W,13,13,13
+!,U+0021,EXCLAMATION MARK,Common,,Basic Latin,Po,Na,12,0,0
+Σ,U+03A3,GREEK CAPITAL LETTER SIGMA,Greek,,Greek and Coptic,Lu,A,12,0,0
+୧,U+0B67,ORIYA DIGIT ONE,Oriya,,Oriya,Nd,N,12,12,12
+Ꮚ,U+13CA,CHEROKEE LETTER QUU,Cherokee,,Cherokee,Lu,N,12,12,12
+ᕗ,U+1557,CANADIAN SYLLABICS FO,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,12,0,0
+⸝,U+2E1D,RIGHT LOW PARAPHRASE BRACKET,Common,,Supplemental Punctuation,Pf,N,12,12,12
+〃,U+3003,DITTO MARK,Common,Bopo Hang Hani Hira Kana,CJK Symbols and Punctuation,Po,W,12,12,0
+づ,U+3065,HIRAGANA LETTER DU,Hiragana,,Hiragana,Lo,W,12,12,0
+ヾ,U+30FE,KATAKANA VOICED ITERATION MARK,Katakana,,Katakana,Lm,W,12,12,0
+～,U+FF5E,FULLWIDTH TILDE,Common,,Halfwidth and Fullwidth Forms,Sm,F,12,12,0
+Ψ,U+03A8,GREEK CAPITAL LETTER PSI,Greek,,Greek and Coptic,Lu,A,11,0,0
+д,U+0434,CYRILLIC SMALL LETTER DE,Cyrillic,,Cyrillic,Ll,A,11,0,0
+໒,U+0ED2,LAO DIGIT TWO,Lao,,Lao,Nd,N,11,0,0
+⊃,U+2283,SUPERSET OF,Common,,Mathematical Operators,Sm,A,11,0,0
+□,U+25A1,WHITE SQUARE,Common,,Geometric Shapes,So,A,11,0,0
+彡,U+5F61,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,11,11,0
+︵,U+FE35,PRESENTATION FORM FOR VERTICAL LEFT PARENTHESIS,Common,,CJK Compatibility Forms,Ps,W,11,11,0
+·,U+00B7,MIDDLE DOT,Common,Avst Cari Copt Dupl Elba Geor Glag Gong Goth Grek Hani Latn Lydi Mahj Perm Shaw,Latin-1 Supplement,Po,A,10,0,0
+ڡ,U+06A1,ARABIC LETTER DOTLESS FEH,Arabic,,Arabic,Lo,N,10,0,0
+ଘ,U+0B18,ORIYA LETTER GHA,Oriya,,Oriya,Lo,N,10,10,10
+∩,U+2229,INTERSECTION,Common,,Mathematical Operators,Sm,A,10,0,0
+▿,U+25BF,WHITE DOWN-POINTING SMALL TRIANGLE,Common,,Geometric Shapes,So,N,10,0,0
+ヘ,U+30D8,KATAKANA LETTER HE,Katakana,,Katakana,Lo,W,10,10,0
+益,U+76CA,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,10,10,0
+¯,U+00AF,MACRON,Common,,Latin-1 Supplement,Sk,Na,9,0,0
+˵,U+02F5,MODIFIER LETTER MIDDLE DOUBLE GRAVE ACCENT,Common,,Spacing Modifier Letters,Sk,N,9,0,0
+Θ,U+0398,GREEK CAPITAL LETTER THETA,Greek,,Greek and Coptic,Lu,A,9,0,0
+ง,U+0E07,THAI CHARACTER NGO NGU,Thai,,Thai,Lo,N,9,9,9
+ᐛ,U+141B,CANADIAN SYLLABICS NASKAPI WAA,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,9,0,0
+‧,U+2027,HYPHENATION POINT,Common,,General Punctuation,Po,A,9,0,0
+○,U+25CB,WHITE CIRCLE,Common,,Geometric Shapes,So,A,9,0,0
+⚽,U+26BD,SOCCER BALL,Common,,Miscellaneous Symbols,So,W,9,9,9
+つ,U+3064,HIRAGANA LETTER TU,Hiragana,,Hiragana,Lo,W,9,9,0
+︶,U+FE36,PRESENTATION FORM FOR VERTICAL RIGHT PARENTHESIS,Common,,CJK Compatibility Forms,Pe,W,9,9,0
+e,U+0065,LATIN SMALL LETTER E,Latin,,Basic Latin,Ll,Na,8,0,0
+r,U+0072,LATIN SMALL LETTER R,Latin,,Basic Latin,Ll,Na,8,0,0
+˙,U+02D9,DOT ABOVE,Common,Bopo Latn,Spacing Modifier Letters,Sk,A,8,0,0
+ل,U+0644,ARABIC LETTER LAM,Arabic,,Arabic,Lo,N,8,0,0
+ຈ,U+0E88,LAO LETTER CO,Lao,,Lao,Lo,N,8,0,0
+‸,U+2038,CARET,Common,,General Punctuation,Po,N,8,0,0
+⊂,U+2282,SUBSET OF,Common,,Mathematical Operators,Sm,A,8,0,0
+⌒,U+2312,ARC,Common,,Miscellaneous Technical,So,A,8,0,0
+◉,U+25C9,FISHEYE,Common,,Geometric Shapes,So,N,8,0,0
+❀,U+2740,WHITE FLORETTE,Common,,Dingbats,So,N,8,0,0
+ㅅ,U+3145,HANGUL LETTER SIOS,Hangul,,Hangul Compatibility Jamo,Lo,W,8,8,0
+꒳,U+A4B3,YI RADICAL JO,Yi,,Yi Radicals,So,W,8,8,8
+ｰ,U+FF70,HALFWIDTH KATAKANA-HIRAGANA PROLONGED SOUND MARK,Common,Hira Kana,Halfwidth and Fullwidth Forms,Lm,H,8,8,0
+U,U+0055,LATIN CAPITAL LETTER U,Latin,,Basic Latin,Lu,Na,7,0,0
+Z,U+005A,LATIN CAPITAL LETTER Z,Latin,,Basic Latin,Lu,Na,7,0,0
+a,U+0061,LATIN SMALL LETTER A,Latin,,Basic Latin,Ll,Na,7,0,0
+h,U+0068,LATIN SMALL LETTER H,Latin,,Basic Latin,Ll,Na,7,0,0
+n,U+006E,LATIN SMALL LETTER N,Latin,,Basic Latin,Ll,Na,7,0,0
+t,U+0074,LATIN SMALL LETTER T,Latin,,Basic Latin,Ll,Na,7,0,0
+y,U+0079,LATIN SMALL LETTER Y,Latin,,Basic Latin,Ll,Na,7,0,0
+̥,U+0325,COMBINING RING BELOW,Inherited,Latn Syrc,Combining Diacritical Marks,Mn,A,7,0,0
+ς,U+03C2,GREEK SMALL LETTER FINAL SIGMA,Greek,,Greek and Coptic,Ll,N,7,0,0
+ଓ,U+0B13,ORIYA LETTER O,Oriya,,Oriya,Lo,N,7,7,7
+ᕕ,U+1555,CANADIAN SYLLABICS FI,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,7,0,0
+ᕦ,U+1566,CANADIAN SYLLABICS THA,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,7,0,0
+ᶅ,U+1D85,LATIN SMALL LETTER L WITH PALATAL HOOK,Latin,,Phonetic Extensions Supplement,Ll,N,7,0,0
+ᶘ,U+1D98,LATIN SMALL LETTER ESH WITH RETROFLEX HOOK,Latin,,Phonetic Extensions Supplement,Ll,N,7,0,0
+⁄,U+2044,FRACTION SLASH,Common,,General Punctuation,Sm,N,7,0,0
+⊹,U+22B9,HERMITIAN CONJUGATE MATRIX,Common,,Mathematical Operators,Sm,N,7,0,0
+⌣,U+2323,SMILE,Common,,Miscellaneous Technical,So,N,7,7,7
+┏,U+250F,BOX DRAWINGS HEAVY DOWN AND RIGHT,Common,,Box Drawing,So,A,7,0,0
+┛,U+251B,BOX DRAWINGS HEAVY UP AND LEFT,Common,,Box Drawing,So,A,7,0,0
+┻,U+253B,BOX DRAWINGS HEAVY UP AND HORIZONTAL,Common,,Box Drawing,So,A,7,0,0
+═,U+2550,BOX DRAWINGS DOUBLE HORIZONTAL,Common,,Box Drawing,So,A,7,0,0
+╥,U+2565,BOX DRAWINGS DOWN DOUBLE AND HORIZONTAL SINGLE,Common,,Box Drawing,So,A,7,0,0
+☾,U+263E,LAST QUARTER MOON,Common,,Miscellaneous Symbols,So,N,7,0,0
+♬,U+266C,BEAMED SIXTEENTH NOTES,Common,,Miscellaneous Symbols,So,A,7,0,0
+　,U+3000,IDEOGRAPHIC SPACE,Common,,CJK Symbols and Punctuation,Zs,F,7,7,0
+ロ,U+30ED,KATAKANA LETTER RO,Katakana,,Katakana,Lo,W,7,7,0
+ﾝ,U+FF9D,HALFWIDTH KATAKANA LETTER N,Katakana,,Halfwidth and Fullwidth Forms,Lo,H,7,7,0
+7,U+0037,DIGIT SEVEN,Common,,Basic Latin,Nd,Na,6,0,0
+P,U+0050,LATIN CAPITAL LETTER P,Latin,,Basic Latin,Lu,Na,6,0,0
+T,U+0054,LATIN CAPITAL LETTER T,Latin,,Basic Latin,Lu,Na,6,0,0
+[,U+005B,LEFT SQUARE BRACKET,Common,,Basic Latin,Ps,Na,6,0,0
+],U+005D,RIGHT SQUARE BRACKET,Common,,Basic Latin,Pe,Na,6,0,0
+d,U+0064,LATIN SMALL LETTER D,Latin,,Basic Latin,Ll,Na,6,0,0
+g,U+0067,LATIN SMALL LETTER G,Latin,,Basic Latin,Ll,Na,6,0,0
+i,U+0069,LATIN SMALL LETTER I,Latin,,Basic Latin,Ll,Na,6,0,0
+w,U+0077,LATIN SMALL LETTER W,Latin,,Basic Latin,Ll,Na,6,0,0
+¸,U+00B8,CEDILLA,Common,,Latin-1 Supplement,Sk,A,6,0,0
+×,U+00D7,MULTIPLICATION SIGN,Common,,Latin-1 Supplement,Sm,A,6,0,0
+ˇ,U+02C7,CARON,Common,Bopo Latn,Spacing Modifier Letters,Lm,A,6,0,0
+ρ,U+03C1,GREEK SMALL LETTER RHO,Greek,,Greek and Coptic,Ll,A,6,0,0
+੭,U+0A6D,GURMUKHI DIGIT SEVEN,Gurmukhi,Guru Mult,Gurmukhi,Nd,N,6,6,6
+ฅ,U+0E05,THAI CHARACTER KHO KHON,Thai,,Thai,Lo,N,6,6,6
+ᆺ,U+11BA,HANGUL JONGSEONG SIOS,Hangul,,Hangul Jamo,Lo,N,6,6,0
+ᕤ,U+1564,CANADIAN SYLLABICS THO,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,6,0,0
+🎁,U+1F381,WRAPPED PRESENT,Common,,Miscellaneous Symbols and Pictographs,So,W,6,6,6
+🎂,U+1F382,BIRTHDAY CAKE,Common,,Miscellaneous Symbols and Pictographs,So,W,6,6,6
+◍,U+25CD,CIRCLE WITH VERTICAL FILL,Common,,Geometric Shapes,So,N,6,0,0
+●,U+25CF,BLACK CIRCLE,Common,,Geometric Shapes,So,A,6,0,0
+✩,U+2729,STRESS OUTLINED WHITE STAR,Common,,Dingbats,So,N,6,0,0
+一,U+4E00,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,6,6,0
+人,U+4EBA,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,6,6,0
+皿,U+76BF,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,6,6,0
+︻,U+FE3B,PRESENTATION FORM FOR VERTICAL LEFT BLACK LENTICULAR BRACKET,Common,,CJK Compatibility Forms,Ps,W,6,6,0
+＠,U+FF20,FULLWIDTH COMMERCIAL AT,Common,,Halfwidth and Fullwidth Forms,Po,F,6,6,0
+ｳ,U+FF73,HALFWIDTH KATAKANA LETTER U,Katakana,,Halfwidth and Fullwidth Forms,Lo,H,6,6,0
+ﾛ,U+FF9B,HALFWIDTH KATAKANA LETTER RO,Katakana,,Halfwidth and Fullwidth Forms,Lo,H,6,6,0
+0,U+0030,DIGIT ZERO,Common,,Basic Latin,Nd,Na,5,0,0
+c,U+0063,LATIN SMALL LETTER C,Latin,,Basic Latin,Ll,Na,5,0,0
+s,U+0073,LATIN SMALL LETTER S,Latin,,Basic Latin,Ll,Na,5,0,0
+ò,U+00F2,LATIN SMALL LETTER O WITH GRAVE,Latin,,Latin-1 Supplement,Ll,A,5,0,0
+ó,U+00F3,LATIN SMALL LETTER O WITH ACUTE,Latin,,Latin-1 Supplement,Ll,A,5,0,0
+ʘ,U+0298,LATIN LETTER BILABIAL CLICK,Latin,,IPA Extensions,Ll,N,5,0,0
+˖,U+02D6,MODIFIER LETTER PLUS SIGN,Common,,Spacing Modifier Letters,Sk,N,5,0,0
+̤,U+0324,COMBINING DIAERESIS BELOW,Inherited,Cher Dupl Latn Syrc,Combining Diacritical Marks,Mn,A,5,0,0
+͈,U+0348,COMBINING DOUBLE VERTICAL LINE BELOW,Inherited,,Combining Diacritical Marks,Mn,A,5,0,0
+σ,U+03C3,GREEK SMALL LETTER SIGMA,Greek,,Greek and Coptic,Ll,A,5,0,0
+ш,U+0448,CYRILLIC SMALL LETTER SHA,Cyrillic,,Cyrillic,Ll,A,5,0,0
+ಥ,U+0CA5,KANNADA LETTER THA,Kannada,,Kannada,Lo,N,5,5,5
+༝,U+0F1D,TIBETAN SIGN RDEL NAG GCIG,Tibetan,,Tibetan,So,N,5,5,5
+ᐷ,U+1437,CANADIAN SYLLABICS CARRIER HI,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,5,0,0
+ᕐ,U+1550,CANADIAN SYLLABICS R,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,5,0,0
+ᕙ,U+1559,CANADIAN SYLLABICS FA,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,5,0,0
+ᘛ,U+161B,CANADIAN SYLLABICS CARRIER JA,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,5,5,5
+🎀,U+1F380,RIBBON,Common,,Miscellaneous Symbols and Pictographs,So,W,5,5,5
+⁐,U+2050,CLOSE UP,Common,,General Punctuation,Po,N,5,0,0
+ↀ,U+2180,ROMAN NUMERAL ONE THOUSAND C D,Latin,,Number Forms,Nl,N,5,0,0
+≖,U+2256,RING IN EQUAL TO,Common,,Mathematical Operators,Sm,N,5,0,0
+⋅,U+22C5,DOT OPERATOR,Common,,Mathematical Operators,Sm,N,5,0,0
+┓,U+2513,BOX DRAWINGS HEAVY DOWN AND LEFT,Common,,Box Drawing,So,A,5,0,0
+┗,U+2517,BOX DRAWINGS HEAVY UP AND RIGHT,Common,,Box Drawing,So,A,5,0,0
+▼,U+25BC,BLACK DOWN-POINTING TRIANGLE,Common,,Geometric Shapes,So,A,5,0,0
+▾,U+25BE,BLACK DOWN-POINTING SMALL TRIANGLE,Common,,Geometric Shapes,So,N,5,0,0
+◎,U+25CE,BULLSEYE,Common,,Geometric Shapes,So,A,5,0,0
+◜,U+25DC,UPPER LEFT QUADRANT CIRCULAR ARC,Common,,Geometric Shapes,So,N,5,0,0
+◝,U+25DD,UPPER RIGHT QUADRANT CIRCULAR ARC,Common,,Geometric Shapes,So,N,5,0,0
+◞,U+25DE,LOWER RIGHT QUADRANT CIRCULAR ARC,Common,,Geometric Shapes,So,N,5,0,0
+◟,U+25DF,LOWER LEFT QUADRANT CIRCULAR ARC,Common,,Geometric Shapes,So,N,5,0,0
+◠,U+25E0,UPPER HALF CIRCLE,Common,,Geometric Shapes,So,N,5,0,0
+☀,U+2600,BLACK SUN WITH RAYS,Common,,Miscellaneous Symbols,So,N,5,0,0
+☽,U+263D,FIRST QUARTER MOON,Common,,Miscellaneous Symbols,So,N,5,0,0
+♫,U+266B,BEAMED EIGHTH NOTES,Common,,Miscellaneous Symbols,So,N,5,0,0
+✌,U+270C,VICTORY HAND,Common,,Dingbats,So,N,5,0,0
+❄,U+2744,SNOWFLAKE,Common,,Dingbats,So,N,5,0,0
+⤙,U+2919,LEFTWARDS ARROW-TAIL,Common,,Supplemental Arrows-B,Sm,N,5,0,0
+」,U+300D,RIGHT CORNER BRACKET,Common,Bopo Hang Hani Hira Kana Yiii,CJK Symbols and Punctuation,Pe,W,5,5,0
+〜,U+301C,WAVE DASH,Common,Bopo Hang Hani Hira Kana,CJK Symbols and Punctuation,Pd,W,5,5,0
+ゝ,U+309D,HIRAGANA ITERATION MARK,Hiragana,,Hiragana,Lm,W,5,5,0
+ェ,U+30A7,KATAKANA LETTER SMALL E,Katakana,,Katakana,Lo,W,5,5,0
+デ,U+30C7,KATAKANA LETTER DE,Katakana,,Katakana,Lo,W,5,5,0
+ㅂ,U+3142,HANGUL LETTER PIEUP,Hangul,,Hangul Compatibility Jamo,Lo,W,5,5,0
+︿,U+FE3F,PRESENTATION FORM FOR VERTICAL LEFT ANGLE BRACKET,Common,,CJK Compatibility Forms,Ps,W,5,5,0
+＿,U+FF3F,FULLWIDTH LOW LINE,Common,,Halfwidth and Fullwidth Forms,Pc,F,5,5,0
+#,U+0023,NUMBER SIGN,Common,,Basic Latin,Po,Na,4,0,0
+X,U+0058,LATIN CAPITAL LETTER X,Latin,,Basic Latin,Lu,Na,4,0,0
+p,U+0070,LATIN SMALL LETTER P,Latin,,Basic Latin,Ll,Na,4,0,0
+u,U+0075,LATIN SMALL LETTER U,Latin,,Basic Latin,Ll,Na,4,0,0
+¨,U+00A8,DIAERESIS,Common,,Latin-1 Supplement,Sk,A,4,0,0
+̄,U+0304,COMBINING MACRON,Inherited,Aghb Cher Copt Cyrl Goth Grek Latn Osge Syrc Tfng Todr,Combining Diacritical Marks,Mn,A,4,0,0
+̫,U+032B,COMBINING INVERTED DOUBLE ARCH BELOW,Inherited,,Combining Diacritical Marks,Mn,A,4,0,0
+͟,U+035F,COMBINING DOUBLE MACRON BELOW,Inherited,,Combining Diacritical Marks,Mn,A,4,0,0
+φ,U+03C6,GREEK SMALL LETTER PHI,Greek,,Greek and Coptic,Ll,A,4,0,0
+ψ,U+03C8,GREEK SMALL LETTER PSI,Greek,,Greek and Coptic,Ll,A,4,0,0
+ө,U+04E9,CYRILLIC SMALL LETTER BARRED O,Cyrillic,,Cyrillic,Ll,N,4,0,0
+ঌ,U+098C,BENGALI LETTER VOCALIC L,Bengali,,Bengali,Lo,N,4,4,4
+ᗣ,U+15E3,CANADIAN SYLLABICS CARRIER TTO,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,4,4,4
+ᵒ,U+1D52,MODIFIER LETTER SMALL O,Latin,,Phonetic Extensions,Lm,N,4,0,0
+🎄,U+1F384,CHRISTMAS TREE,Common,,Miscellaneous Symbols and Pictographs,So,W,4,4,4
+→,U+2192,RIGHTWARDS ARROW,Common,,Arrows,Sm,A,4,0,0
+∠,U+2220,ANGLE,Common,,Mathematical Operators,Sm,A,4,0,0
+∪,U+222A,UNION,Common,,Mathematical Operators,Sm,A,4,0,0
+≡,U+2261,IDENTICAL TO,Common,,Mathematical Operators,Sm,A,4,0,0
+⎛,U+239B,LEFT PARENTHESIS UPPER HOOK,Common,,Miscellaneous Technical,Sm,N,4,0,0
+⎝,U+239D,LEFT PARENTHESIS LOWER HOOK,Common,,Miscellaneous Technical,Sm,N,4,0,0
+⎞,U+239E,RIGHT PARENTHESIS UPPER HOOK,Common,,Miscellaneous Technical,Sm,N,4,0,0
+⎠,U+23A0,RIGHT PARENTHESIS LOWER HOOK,Common,,Miscellaneous Technical,Sm,N,4,0,0
+┘,U+2518,BOX DRAWINGS LIGHT UP AND LEFT,Common,,Box Drawing,So,A,4,0,0
+┬,U+252C,BOX DRAWINGS LIGHT DOWN AND HORIZONTAL,Common,,Box Drawing,So,A,4,0,0
+╤,U+2564,BOX DRAWINGS DOWN SINGLE AND HORIZONTAL DOUBLE,Common,,Box Drawing,So,A,4,0,0
+╦,U+2566,BOX DRAWINGS DOUBLE DOWN AND HORIZONTAL,Common,,Box Drawing,So,A,4,0,0
+╬,U+256C,BOX DRAWINGS DOUBLE VERTICAL AND HORIZONTAL,Common,,Box Drawing,So,A,4,0,0
+▀,U+2580,UPPER HALF BLOCK,Common,,Block Elements,So,A,4,0,0
+◔,U+25D4,CIRCLE WITH UPPER RIGHT QUADRANT BLACK,Common,,Geometric Shapes,So,N,4,0,0
+☉,U+2609,SUN,Common,,Miscellaneous Symbols,So,A,4,0,0
+✞,U+271E,SHADOWED WHITE LATIN CROSS,Common,,Dingbats,So,N,4,0,0
+へ,U+3078,HIRAGANA LETTER HE,Hiragana,,Hiragana,Lo,W,4,4,0
+ㅠ,U+3160,HANGUL LETTER YU,Hangul,,Hangul Compatibility Jamo,Lo,W,4,4,0
+ㆆ,U+3186,HANGUL LETTER YEORINHIEUH,Hangul,,Hangul Compatibility Jamo,Lo,W,4,4,0
+ꈍ,U+A20D,YI SYLLABLE KEP,Yi,,Yi Syllables,Lo,W,4,4,4
+（,U+FF08,FULLWIDTH LEFT PARENTHESIS,Common,,Halfwidth and Fullwidth Forms,Ps,F,4,4,0
+）,U+FF09,FULLWIDTH RIGHT PARENTHESIS,Common,,Halfwidth and Fullwidth Forms,Pe,F,4,4,0
+￢,U+FFE2,FULLWIDTH NOT SIGN,Common,,Halfwidth and Fullwidth Forms,Sm,F,4,4,0
++,U+002B,PLUS SIGN,Common,,Basic Latin,Sm,Na,3,0,0
+B,U+0042,LATIN CAPITAL LETTER B,Latin,,Basic Latin,Lu,Na,3,0,0
+H,U+0048,LATIN CAPITAL LETTER H,Latin,,Basic Latin,Lu,Na,3,0,0
+v,U+0076,LATIN SMALL LETTER V,Latin,,Basic Latin,Ll,Na,3,0,0
+{,U+007B,LEFT CURLY BRACKET,Common,,Basic Latin,Ps,Na,3,0,0
+},U+007D,RIGHT CURLY BRACKET,Common,,Basic Latin,Pe,Na,3,0,0
+Ò,U+00D2,LATIN CAPITAL LETTER O WITH GRAVE,Latin,,Latin-1 Supplement,Lu,N,3,0,0
+Ó,U+00D3,LATIN CAPITAL LETTER O WITH ACUTE,Latin,,Latin-1 Supplement,Lu,N,3,0,0
+˳,U+02F3,MODIFIER LETTER LOW RING,Common,,Spacing Modifier Letters,Sk,N,3,0,0
+̯,U+032F,COMBINING INVERTED BREVE BELOW,Inherited,,Combining Diacritical Marks,Mn,A,3,0,0
+҂,U+0482,CYRILLIC THOUSANDS SIGN,Cyrillic,,Cyrillic,So,N,3,0,0
+ପ,U+0B2A,ORIYA LETTER PA,Oriya,,Oriya,Lo,N,3,3,3
+𓆝,U+1319D,EGYPTIAN HIEROGLYPH K003,Egyptian_Hieroglyphs,,Egyptian Hieroglyphs,Lo,N,3,3,3
+𓆞,U+1319E,EGYPTIAN HIEROGLYPH K004,Egyptian_Hieroglyphs,,Egyptian Hieroglyphs,Lo,N,3,3,3
+𓆟,U+1319F,EGYPTIAN HIEROGLYPH K005,Egyptian_Hieroglyphs,,Egyptian Hieroglyphs,Lo,N,3,3,3
+ᗧ,U+15E7,CANADIAN SYLLABICS CARRIER TTA,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,3,3,3
+ᶻ,U+1DBB,MODIFIER LETTER SMALL Z,Latin,,Phonetic Extensions Supplement,Lm,N,3,0,0
+🍜,U+1F35C,STEAMING BOWL,Common,,Miscellaneous Symbols and Pictographs,So,W,3,3,3
+🍰,U+1F370,SHORTCAKE,Common,,Miscellaneous Symbols and Pictographs,So,W,3,3,3
+🎉,U+1F389,PARTY POPPER,Common,,Miscellaneous Symbols and Pictographs,So,W,3,3,3
+👻,U+1F47B,GHOST,Common,,Miscellaneous Symbols and Pictographs,So,W,3,3,3
+„,U+201E,DOUBLE LOW-9 QUOTATION MARK,Common,,General Punctuation,Ps,N,3,0,0
+†,U+2020,DAGGER,Common,,General Punctuation,Po,A,3,0,0
+‥,U+2025,TWO DOT LEADER,Common,,General Punctuation,Po,A,3,0,0
+‾,U+203E,OVERLINE,Common,,General Punctuation,Po,A,3,0,0
+⇀,U+21C0,RIGHTWARDS HARPOON WITH BARB UPWARDS,Common,,Arrows,So,N,3,0,0
+◇,U+25C7,WHITE DIAMOND,Common,,Geometric Shapes,So,A,3,0,0
+◢,U+25E2,BLACK LOWER RIGHT TRIANGLE,Common,,Geometric Shapes,So,A,3,0,0
+◣,U+25E3,BLACK LOWER LEFT TRIANGLE,Common,,Geometric Shapes,So,A,3,0,0
+☞,U+261E,WHITE RIGHT POINTING INDEX,Common,,Miscellaneous Symbols,So,A,3,0,0
+☠,U+2620,SKULL AND CROSSBONES,Common,,Miscellaneous Symbols,So,N,3,0,0
+♩,U+2669,QUARTER NOTE,Common,,Miscellaneous Symbols,So,A,3,0,0
+⛧,U+26E7,INVERTED PENTAGRAM,Common,,Miscellaneous Symbols,So,N,3,3,3
+✦,U+2726,BLACK FOUR POINTED STAR,Common,,Dingbats,So,N,3,0,0
+❤,U+2764,HEAVY BLACK HEART,Common,,Dingbats,So,N,3,0,0
+ⱅ,U+2C45,GLAGOLITIC SMALL LETTER TVRIDO,Glagolitic,,Glagolitic,Ll,N,3,3,3
+⸸,U+2E38,TURNED DAGGER,Common,,Supplemental Punctuation,Po,N,3,3,3
+〇,U+3007,IDEOGRAPHIC NUMBER ZERO,Han,,CJK Symbols and Punctuation,Nl,W,3,3,0
+シ,U+30B7,KATAKANA LETTER SI,Katakana,,Katakana,Lo,W,3,3,0
+ㅇ,U+3147,HANGUL LETTER IEUNG,Hangul,,Hangul Compatibility Jamo,Lo,W,3,3,0
+凸,U+51F8,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,3,3,0
+口,U+53E3,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,3,3,0
+꒪,U+A4AA,YI RADICAL JJUT,Yi,,Yi Radicals,So,W,3,3,3
+꩜,U+AA5C,CHAM PUNCTUATION SPIRAL,Cham,,Cham,Po,N,3,3,3
+︹,U+FE39,PRESENTATION FORM FOR VERTICAL LEFT TORTOISE SHELL BRACKET,Common,,CJK Compatibility Forms,Ps,W,3,3,0
+ﻭ,U+FEED,ARABIC LETTER WAW ISOLATED FORM,Arabic,,Arabic Presentation Forms-B,Lo,N,3,0,0
+＃,U+FF03,FULLWIDTH NUMBER SIGN,Common,,Halfwidth and Fullwidth Forms,Po,F,3,3,0
+ｏ,U+FF4F,FULLWIDTH LATIN SMALL LETTER O,Latin,,Halfwidth and Fullwidth Forms,Ll,F,3,3,0
+ﾊ,U+FF8A,HALFWIDTH KATAKANA LETTER HA,Katakana,,Halfwidth and Fullwidth Forms,Lo,H,3,3,0
+ﾌ,U+FF8C,HALFWIDTH KATAKANA LETTER HU,Katakana,,Halfwidth and Fullwidth Forms,Lo,H,3,3,0
+ﾞ,U+FF9E,HALFWIDTH KATAKANA VOICED SOUND MARK,Common,Hira Kana,Halfwidth and Fullwidth Forms,Lm,H,3,3,0
+"""",U+0022,QUOTATION MARK,Common,,Basic Latin,Po,Na,2,0,0
+$,U+0024,DOLLAR SIGN,Common,,Basic Latin,Sc,Na,2,0,0
+8,U+0038,DIGIT EIGHT,Common,,Basic Latin,Nd,Na,2,0,0
+A,U+0041,LATIN CAPITAL LETTER A,Latin,,Basic Latin,Lu,Na,2,0,0
+Q,U+0051,LATIN CAPITAL LETTER Q,Latin,,Basic Latin,Lu,Na,2,0,0
+S,U+0053,LATIN CAPITAL LETTER S,Latin,,Basic Latin,Lu,Na,2,0,0
+k,U+006B,LATIN SMALL LETTER K,Latin,,Basic Latin,Ll,Na,2,0,0
+l,U+006C,LATIN SMALL LETTER L,Latin,,Basic Latin,Ll,Na,2,0,0
+¦,U+00A6,BROKEN BAR,Common,,Latin-1 Supplement,So,Na,2,0,0
+ï,U+00EF,LATIN SMALL LETTER I WITH DIAERESIS,Latin,,Latin-1 Supplement,Ll,N,2,0,0
+Ĺ,U+0139,LATIN CAPITAL LETTER L WITH ACUTE,Latin,,Latin Extended-A,Lu,N,2,0,0
+ʋ,U+028B,LATIN SMALL LETTER V WITH HOOK,Latin,,IPA Extensions,Ll,N,2,0,0
+̑,U+0311,COMBINING INVERTED BREVE,Inherited,Cyrl Latn Todr,Combining Diacritical Marks,Mn,A,2,0,0
+̩,U+0329,COMBINING VERTICAL LINE BELOW,Inherited,,Combining Diacritical Marks,Mn,A,2,0,0
+̵,U+0335,COMBINING SHORT STROKE OVERLAY,Inherited,,Combining Diacritical Marks,Mn,A,2,0,0
+̿,U+033F,COMBINING DOUBLE OVERLINE,Inherited,,Combining Diacritical Marks,Mn,A,2,0,0
+͠,U+0360,COMBINING DOUBLE TILDE,Inherited,,Combining Diacritical Marks,Mn,A,2,0,0
+Φ,U+03A6,GREEK CAPITAL LETTER PHI,Greek,,Greek and Coptic,Lu,A,2,0,0
+μ,U+03BC,GREEK SMALL LETTER MU,Greek,,Greek and Coptic,Ll,A,2,0,0
+ξ,U+03BE,GREEK SMALL LETTER XI,Greek,,Greek and Coptic,Ll,A,2,0,0
+щ,U+0449,CYRILLIC SMALL LETTER SHCHA,Cyrillic,,Cyrillic,Ll,A,2,0,0
+ї,U+0457,CYRILLIC SMALL LETTER YI,Cyrillic,,Cyrillic,Ll,N,2,0,0
+Ѡ,U+0460,CYRILLIC CAPITAL LETTER OMEGA,Cyrillic,,Cyrillic,Lu,N,2,0,0
+Ҙ,U+0498,CYRILLIC CAPITAL LETTER ZE WITH DESCENDER,Cyrillic,,Cyrillic,Lu,N,2,0,0
+࣪,U+08EA,ARABIC TONE ONE DOT ABOVE,Arabic,,Arabic Extended-A,Mn,N,2,2,2
+ৎ,U+09CE,BENGALI LETTER KHANDA TA,Bengali,,Bengali,Lo,N,2,2,2
+ઇ,U+0A87,GUJARATI LETTER I,Gujarati,,Gujarati,Lo,N,2,2,2
+ರ,U+0CB0,KANNADA LETTER RA,Kannada,,Kannada,Lo,N,2,2,2
+ლ,U+10DA,GEORGIAN LETTER LAS,Georgian,,Georgian,Ll,N,2,0,0
+𓇼,U+131FC,EGYPTIAN HIEROGLYPH N014,Egyptian_Hieroglyphs,,Egyptian Hieroglyphs,Lo,N,2,2,2
+ᐧ,U+1427,CANADIAN SYLLABICS FINAL MIDDLE DOT,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,2,0,0
+ᗒ,U+15D2,CANADIAN SYLLABICS CARRIER WE,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,2,2,2
+ᗕ,U+15D5,CANADIAN SYLLABICS CARRIER WA,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,2,2,2
+𖤐,U+16910,BAMUM LETTER PHASE-D NGKEURI,Bamum,,Bamum Supplement,Lo,N,2,2,2
+ᴖ,U+1D16,LATIN SMALL LETTER TOP HALF O,Latin,,Phonetic Extensions,Ll,N,2,0,0
+🌙,U+1F319,CRESCENT MOON,Common,,Miscellaneous Symbols and Pictographs,So,W,2,2,2
+🎃,U+1F383,JACK-O-LANTERN,Common,,Miscellaneous Symbols and Pictographs,So,W,2,2,2
+🎅,U+1F385,FATHER CHRISTMAS,Common,,Miscellaneous Symbols and Pictographs,So,W,2,2,2
+🚀,U+1F680,ROCKET,Common,,Transport and Map Symbols,So,W,2,2,2
+‘,U+2018,LEFT SINGLE QUOTATION MARK,Common,,General Punctuation,Pi,A,2,0,0
+‶,U+2036,REVERSED DOUBLE PRIME,Common,,General Punctuation,Po,N,2,0,0
+‹,U+2039,SINGLE LEFT-POINTING ANGLE QUOTATION MARK,Common,,General Punctuation,Pi,N,2,0,0
+⁰,U+2070,SUPERSCRIPT ZERO,Common,,Superscripts and Subscripts,No,N,2,0,0
+↼,U+21BC,LEFTWARDS HARPOON WITH BARB UPWARDS,Common,,Arrows,So,N,2,0,0
+∋,U+220B,CONTAINS AS MEMBER,Common,,Mathematical Operators,Sm,A,2,0,0
+∞,U+221E,INFINITY,Common,,Mathematical Operators,Sm,A,2,0,0
+⊝,U+229D,CIRCLED DASH,Common,,Mathematical Operators,Sm,N,2,0,0
+⌓,U+2313,SEGMENT,Common,,Miscellaneous Technical,So,N,2,0,0
+⑅,U+2445,OCR BOW TIE,Common,,Optical Character Recognition,So,N,2,2,2
+└,U+2514,BOX DRAWINGS LIGHT UP AND RIGHT,Common,,Box Drawing,So,A,2,0,0
+╹,U+2579,BOX DRAWINGS HEAVY UP,Common,,Box Drawing,So,N,2,0,0
+▂,U+2582,LOWER ONE QUARTER BLOCK,Common,,Block Elements,So,A,2,0,0
+▄,U+2584,LOWER HALF BLOCK,Common,,Block Elements,So,A,2,0,0
+▓,U+2593,DARK SHADE,Common,,Block Elements,So,A,2,0,0
+☃,U+2603,SNOWMAN,Common,,Miscellaneous Symbols,So,N,2,0,0
+☕,U+2615,HOT BEVERAGE,Common,,Miscellaneous Symbols,So,W,2,0,0
+☝,U+261D,WHITE UP POINTING INDEX,Common,,Miscellaneous Symbols,So,N,2,0,0
+♨,U+2668,HOT SPRINGS,Common,,Miscellaneous Symbols,So,A,2,0,0
+⚔,U+2694,CROSSED SWORDS,Common,,Miscellaneous Symbols,So,N,2,0,0
+⛓,U+26D3,CHAINS,Common,,Miscellaneous Symbols,So,A,2,2,2
+✖,U+2716,HEAVY MULTIPLICATION X,Common,,Dingbats,So,N,2,0,0
+✪,U+272A,CIRCLED WHITE STAR,Common,,Dingbats,So,N,2,0,0
+❁,U+2741,EIGHT PETALLED OUTLINED BLACK FLORETTE,Common,,Dingbats,So,N,2,0,0
+❛,U+275B,HEAVY SINGLE TURNED COMMA QUOTATION MARK ORNAMENT,Common,,Dingbats,So,N,2,0,0
+❦,U+2766,FLORAL HEART,Common,,Dingbats,So,N,2,0,0
+➳,U+27B3,WHITE-FEATHERED RIGHTWARDS ARROW,Common,,Dingbats,So,N,2,0,0
+⟡,U+27E1,WHITE CONCAVE-SIDED DIAMOND,Common,,Miscellaneous Mathematical Symbols-A,Sm,N,2,2,2
+⩊,U+2A4A,UNION BESIDE AND JOINED WITH UNION,Common,,Supplemental Mathematical Operators,Sm,N,2,2,2
+⸜,U+2E1C,LEFT LOW PARAPHRASE BRACKET,Common,,Supplemental Punctuation,Pi,N,2,2,2
+゚,U+309A,COMBINING KATAKANA-HIRAGANA SEMI-VOICED SOUND MARK,Inherited,Hira Kana,Hiragana,Mn,W,2,2,0
+ッ,U+30C3,KATAKANA LETTER SMALL TU,Katakana,,Katakana,Lo,W,2,2,0
+ツ,U+30C4,KATAKANA LETTER TU,Katakana,,Katakana,Lo,W,2,2,0
+メ,U+30E1,KATAKANA LETTER ME,Katakana,,Katakana,Lo,W,2,2,0
+三,U+4E09,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,2,2,0
+丿,U+4E3F,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,2,2,0
+八,U+516B,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,2,2,0
+旦,U+65E6,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,2,2,0
+艸,U+8278,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,2,2,0
+눈,U+B208,Hangul Syllable (range),Hangul,,Hangul Syllables,Lo,W,2,2,0
+️,U+FE0F,VARIATION SELECTOR-16,Inherited,,Variation Selectors,Mn,A,2,0,0
+－,U+FF0D,FULLWIDTH HYPHEN-MINUS,Common,,Halfwidth and Fullwidth Forms,Pd,F,2,2,0
+＜,U+FF1C,FULLWIDTH LESS-THAN SIGN,Common,,Halfwidth and Fullwidth Forms,Sm,F,2,2,0
+＞,U+FF1E,FULLWIDTH GREATER-THAN SIGN,Common,,Halfwidth and Fullwidth Forms,Sm,F,2,2,0
+ｂ,U+FF42,FULLWIDTH LATIN SMALL LETTER B,Latin,,Halfwidth and Fullwidth Forms,Ll,F,2,2,0
+､,U+FF64,HALFWIDTH IDEOGRAPHIC COMMA,Common,Bopo Hang Hani Hira Kana Yiii,Halfwidth and Fullwidth Forms,Po,H,2,2,0
+ｸ,U+FF78,HALFWIDTH KATAKANA LETTER KU,Katakana,,Halfwidth and Fullwidth Forms,Lo,H,2,2,0
+ｽ,U+FF7D,HALFWIDTH KATAKANA LETTER SU,Katakana,,Halfwidth and Fullwidth Forms,Lo,H,2,2,0
+ﾔ,U+FF94,HALFWIDTH KATAKANA LETTER YA,Katakana,,Halfwidth and Fullwidth Forms,Lo,H,2,2,0
+￩,U+FFE9,HALFWIDTH LEFTWARDS ARROW,Common,,Halfwidth and Fullwidth Forms,Sm,H,2,2,2
+￫,U+FFEB,HALFWIDTH RIGHTWARDS ARROW,Common,,Halfwidth and Fullwidth Forms,Sm,H,2,2,2
+I,U+0049,LATIN CAPITAL LETTER I,Latin,,Basic Latin,Lu,Na,1,0,0
+L,U+004C,LATIN CAPITAL LETTER L,Latin,,Basic Latin,Lu,Na,1,0,0
+¤,U+00A4,CURRENCY SIGN,Common,,Latin-1 Supplement,Sc,A,1,0,0
+ĭ,U+012D,LATIN SMALL LETTER I WITH BREVE,Latin,,Latin Extended-A,Ll,N,1,0,0
+Ʒ,U+01B7,LATIN CAPITAL LETTER EZH,Latin,,Latin Extended-B,Lu,N,1,0,0
+Ƹ,U+01B8,LATIN CAPITAL LETTER EZH REVERSED,Latin,,Latin Extended-B,Lu,N,1,0,0
+ʟ,U+029F,LATIN LETTER SMALL CAPITAL L,Latin,,IPA Extensions,Ll,N,1,0,0
+ˍ,U+02CD,MODIFIER LETTER LOW MACRON,Common,Latn Lisu,Spacing Modifier Letters,Lm,A,1,0,0
+ˎ,U+02CE,MODIFIER LETTER LOW GRAVE ACCENT,Common,,Spacing Modifier Letters,Lm,N,1,0,0
+ˏ,U+02CF,MODIFIER LETTER LOW ACUTE ACCENT,Common,,Spacing Modifier Letters,Lm,N,1,0,0
+˕,U+02D5,MODIFIER LETTER DOWN TACK,Common,,Spacing Modifier Letters,Sk,N,1,0,0
+˗,U+02D7,MODIFIER LETTER MINUS SIGN,Common,Latn Thai,Spacing Modifier Letters,Sk,N,1,0,0
+ˬ,U+02EC,MODIFIER LETTER VOICING,Common,,Spacing Modifier Letters,Lm,N,1,0,0
+̞,U+031E,COMBINING DOWN TACK BELOW,Inherited,,Combining Diacritical Marks,Mn,A,1,0,0
+̡,U+0321,COMBINING PALATALIZED HOOK BELOW,Inherited,,Combining Diacritical Marks,Mn,A,1,0,0
+̣,U+0323,COMBINING DOT BELOW,Inherited,Cher Dupl Kana Latn Syrc Tfng,Combining Diacritical Marks,Mn,A,1,0,0
+̨,U+0328,COMBINING OGONEK,Inherited,,Combining Diacritical Marks,Mn,A,1,0,0
+̴,U+0334,COMBINING TILDE OVERLAY,Inherited,,Combining Diacritical Marks,Mn,A,1,0,0
+̶,U+0336,COMBINING LONG STROKE OVERLAY,Inherited,,Combining Diacritical Marks,Mn,A,1,0,0
+͞,U+035E,COMBINING DOUBLE MACRON,Inherited,Aghb Latn Todr,Combining Diacritical Marks,Mn,A,1,0,0
+ζ,U+03B6,GREEK SMALL LETTER ZETA,Greek,,Greek and Coptic,Ll,A,1,0,0
+θ,U+03B8,GREEK SMALL LETTER THETA,Greek,,Greek and Coptic,Ll,A,1,0,0
+ο,U+03BF,GREEK SMALL LETTER OMICRON,Greek,,Greek and Coptic,Ll,A,1,0,0
+π,U+03C0,GREEK SMALL LETTER PI,Greek,,Greek and Coptic,Ll,A,1,0,0
+ϊ,U+03CA,GREEK SMALL LETTER IOTA WITH DIALYTIKA,Greek,,Greek and Coptic,Ll,N,1,0,0
+ϖ,U+03D6,GREEK PI SYMBOL,Greek,,Greek and Coptic,Ll,N,1,0,0
+϶,U+03F6,GREEK REVERSED LUNATE EPSILON SYMBOL,Greek,,Greek and Coptic,Sm,N,1,0,0
+З,U+0417,CYRILLIC CAPITAL LETTER ZE,Cyrillic,,Cyrillic,Lu,A,1,0,0
+О,U+041E,CYRILLIC CAPITAL LETTER O,Cyrillic,,Cyrillic,Lu,A,1,0,0
+ч,U+0447,CYRILLIC SMALL LETTER CHE,Cyrillic,,Cyrillic,Ll,A,1,0,0
+ё,U+0451,CYRILLIC SMALL LETTER IO,Cyrillic,,Cyrillic,Ll,A,1,0,0
+Ӝ,U+04DC,CYRILLIC CAPITAL LETTER ZHE WITH DIAERESIS,Cyrillic,,Cyrillic,Lu,N,1,0,0
+Ӧ,U+04E6,CYRILLIC CAPITAL LETTER O WITH DIAERESIS,Cyrillic,,Cyrillic,Lu,N,1,0,0
+ԅ,U+0505,CYRILLIC SMALL LETTER KOMI ZJE,Cyrillic,,Cyrillic Supplement,Ll,N,1,0,0
+՞,U+055E,ARMENIAN QUESTION MARK,Armenian,,Armenian,Po,N,1,0,0
+֊,U+058A,ARMENIAN HYPHEN,Armenian,,Armenian,Pd,N,1,0,0
+؂,U+0602,ARABIC FOOTNOTE MARKER,Arabic,,Arabic,Cf,N,1,1,1
+۹,U+06F9,EXTENDED ARABIC-INDIC DIGIT NINE,Arabic,,Arabic,Nd,N,1,0,0
+ॱ,U+0971,DEVANAGARI SIGN HIGH SPACING DOT,Devanagari,,Devanagari,Lm,N,1,1,1
+১,U+09E7,BENGALI DIGIT ONE,Bengali,Beng Cakm Sylo,Bengali,Nd,N,1,1,1
+ਏ,U+0A0F,GURMUKHI LETTER EE,Gurmukhi,,Gurmukhi,Lo,N,1,1,1
+ਓ,U+0A13,GURMUKHI LETTER OO,Gurmukhi,,Gurmukhi,Lo,N,1,1,1
+ੈ,U+0A48,GURMUKHI VOWEL SIGN AI,Gurmukhi,,Gurmukhi,Mn,N,1,1,1
+દ,U+0AA6,GUJARATI LETTER DA,Gujarati,,Gujarati,Lo,N,1,1,1
+௰,U+0BF0,TAMIL NUMBER TEN,Tamil,Gran Taml,Tamil,No,N,1,1,1
+ఠ,U+0C20,TELUGU LETTER TTHA,Telugu,,Telugu,Lo,N,1,1,1
+౪,U+0C6A,TELUGU DIGIT FOUR,Telugu,,Telugu,Nd,N,1,1,1
+ಡ,U+0CA1,KANNADA LETTER DDA,Kannada,,Kannada,Lo,N,1,1,1
+ಸ,U+0CB8,KANNADA LETTER SA,Kannada,,Kannada,Lo,N,1,1,1
+ೃ,U+0CC3,KANNADA VOWEL SIGN VOCALIC R,Kannada,,Kannada,Mc,N,1,1,1
+ว,U+0E27,THAI CHARACTER WO WAEN,Thai,,Thai,Lo,N,1,1,1
+๓,U+0E53,THAI DIGIT THREE,Thai,,Thai,Nd,N,1,1,1
+ຶ,U+0EB6,LAO VOWEL SIGN Y,Lao,,Lao,Mn,N,1,0,0
+༎,U+0F0E,TIBETAN MARK NYIS SHAD,Tibetan,,Tibetan,Po,N,1,1,1
+༒,U+0F12,TIBETAN MARK RGYA GRAM SHAD,Tibetan,,Tibetan,Po,N,1,1,1
+༘,U+0F18,TIBETAN ASTROLOGICAL SIGN -KHYUD PA,Tibetan,,Tibetan,Mn,N,1,1,1
+༚,U+0F1A,TIBETAN SIGN RDEL DKAR GCIG,Tibetan,,Tibetan,So,N,1,1,1
+༶,U+0F36,TIBETAN MARK CARET -DZUD RTAGS BZHI MIG CAN,Tibetan,,Tibetan,So,N,1,1,1
+ཀ,U+0F40,TIBETAN LETTER KA,Tibetan,,Tibetan,Lo,N,1,1,1
+ི,U+0F72,TIBETAN VOWEL SIGN I,Tibetan,,Tibetan,Mn,N,1,1,1
+ྀ,U+0F80,TIBETAN VOWEL SIGN REVERSED I,Tibetan,,Tibetan,Mn,N,1,1,1
+࿔,U+0FD4,TIBETAN MARK CLOSING BRDA RNYING YIG MGO SGAB MA,Tibetan,,Tibetan,Po,N,1,1,1
+𐰁,U+10C01,OLD TURKIC LETTER YENISEI A,Old_Turkic,,Old Turkic,Lo,N,1,1,1
+ᄇ,U+1107,HANGUL CHOSEONG PIEUP,Hangul,,Hangul Jamo,Lo,W,1,1,1
+ᄑ,U+1111,HANGUL CHOSEONG PHIEUPH,Hangul,,Hangul Jamo,Lo,W,1,1,1
+𓆛,U+1319B,EGYPTIAN HIEROGLYPH K001,Egyptian_Hieroglyphs,,Egyptian Hieroglyphs,Lo,N,1,1,1
+𓆜,U+1319C,EGYPTIAN HIEROGLYPH K002,Egyptian_Hieroglyphs,,Egyptian Hieroglyphs,Lo,N,1,1,1
+᎑,U+1391,ETHIOPIC TONAL MARK DERET,Ethiopic,,Ethiopic Supplement,So,N,1,1,1
+᎔,U+1394,ETHIOPIC TONAL MARK DIFAT,Ethiopic,,Ethiopic Supplement,So,N,1,1,1
+ᐡ,U+1421,CANADIAN SYLLABICS FINAL BOTTOM HALF RING,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,1,0,0
+ᓚ,U+14DA,CANADIAN SYLLABICS LA,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,1,0,0
+ᕡ,U+1561,CANADIAN SYLLABICS N-CREE THI,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,1,0,0
+ᕱ,U+1571,CANADIAN SYLLABICS TYI,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,1,1,1
+ᕲ,U+1572,CANADIAN SYLLABICS TYO,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,1,1,1
+ᕳ,U+1573,CANADIAN SYLLABICS TYA,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,1,1,1
+ᗢ,U+15E2,CANADIAN SYLLABICS CARRIER TTU,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,1,1,1
+ᗤ,U+15E4,CANADIAN SYLLABICS CARRIER TTE,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,1,1,1
+ᗨ,U+15E8,CANADIAN SYLLABICS CARRIER PU,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,1,1,1
+ᘏ,U+160F,CANADIAN SYLLABICS CARRIER YO,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,1,1,1
+ᘰ,U+1630,CANADIAN SYLLABICS CARRIER LHE,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,1,1,1
+ᘳ,U+1633,CANADIAN SYLLABICS CARRIER LHA,Canadian_Aboriginal,,Unified Canadian Aboriginal Syllabics,Lo,N,1,1,1
+ᜊ,U+170A,TAGALOG LETTER BA,Tagalog,,Tagalog,Lo,N,1,1,1
+ᢍ,U+188D,MONGOLIAN LETTER ALI GALI TTHA,Mongolian,,Mongolian,Lo,N,1,1,1
+ᥫ,U+196B,TAI LE LETTER E,Tai_Le,,Tai Le,Lo,N,1,1,1
+᭡,U+1B61,BALINESE MUSICAL SYMBOL DONG,Balinese,,Balinese,So,N,1,1,1
+ᯅ,U+1BC5,BATAK LETTER BA,Batak,,Batak,Lo,N,1,1,1
+𝗓,U+1D5D3,MATHEMATICAL SANS-SERIF SMALL Z,Common,,Mathematical Alphanumeric Symbols,Ll,N,1,0,0
+𝜗,U+1D717,MATHEMATICAL ITALIC THETA SYMBOL,Common,,Mathematical Alphanumeric Symbols,Ll,N,1,1,1
+𝜚,U+1D71A,MATHEMATICAL ITALIC RHO SYMBOL,Common,,Mathematical Alphanumeric Symbols,Ll,N,1,1,1
+᷄,U+1DC4,COMBINING MACRON-ACUTE,Inherited,,Combining Diacritical Marks Supplement,Mn,N,1,0,0
+᷅,U+1DC5,COMBINING GRAVE-MACRON,Inherited,,Combining Diacritical Marks Supplement,Mn,N,1,0,0
+🌌,U+1F30C,MILKY WAY,Common,,Miscellaneous Symbols and Pictographs,So,W,1,1,1
+🍔,U+1F354,HAMBURGER,Common,,Miscellaneous Symbols and Pictographs,So,W,1,1,1
+🍕,U+1F355,SLICE OF PIZZA,Common,,Miscellaneous Symbols and Pictographs,So,W,1,1,1
+🍙,U+1F359,RICE BALL,Common,,Miscellaneous Symbols and Pictographs,So,W,1,1,1
+🍣,U+1F363,SUSHI,Common,,Miscellaneous Symbols and Pictographs,So,W,1,1,1
+🍦,U+1F366,SOFT ICE CREAM,Common,,Miscellaneous Symbols and Pictographs,So,W,1,1,1
+🍩,U+1F369,DOUGHNUT,Common,,Miscellaneous Symbols and Pictographs,So,W,1,1,1
+🍪,U+1F36A,COOKIE,Common,,Miscellaneous Symbols and Pictographs,So,W,1,1,1
+🍳,U+1F373,COOKING,Common,,Miscellaneous Symbols and Pictographs,So,W,1,1,1
+🍴,U+1F374,FORK AND KNIFE,Common,,Miscellaneous Symbols and Pictographs,So,W,1,1,1
+🍹,U+1F379,TROPICAL DRINK,Common,,Miscellaneous Symbols and Pictographs,So,W,1,1,1
+🍽,U+1F37D,FORK AND KNIFE WITH PLATE,Common,,Miscellaneous Symbols and Pictographs,So,N,1,1,1
+🎈,U+1F388,BALLOON,Common,,Miscellaneous Symbols and Pictographs,So,W,1,1,1
+👽,U+1F47D,EXTRATERRESTRIAL ALIEN,Common,,Miscellaneous Symbols and Pictographs,So,W,1,1,1
+🕯,U+1F56F,CANDLE,Common,,Miscellaneous Symbols and Pictographs,So,N,1,1,1
+ὤ,U+1F64,GREEK SMALL LETTER OMEGA WITH PSILI AND OXIA,Greek,,Greek Extended,Ll,N,1,0,0
+🛸,U+1F6F8,FLYING SAUCER,Common,,Transport and Map Symbols,So,W,1,1,1
+🥂,U+1F942,CLINKING GLASSES,Common,,Supplemental Symbols and Pictographs,So,W,1,1,1
+🥤,U+1F964,CUP WITH STRAW,Common,,Supplemental Symbols and Pictographs,So,W,1,1,1
+🦇,U+1F987,BAT,Common,,Supplemental Symbols and Pictographs,So,W,1,1,1
+🦌,U+1F98C,DEER,Common,,Supplemental Symbols and Pictographs,So,W,1,1,1
+🧋,U+1F9CB,BUBBLE TEA,Common,,Supplemental Symbols and Pictographs,So,W,1,1,1
+🧹,U+1F9F9,BROOM,Common,,Supplemental Symbols and Pictographs,So,W,1,1,1
+🩸,U+1FA78,DROP OF BLOOD,Common,,Symbols and Pictographs Extended-A,So,W,1,1,1
+🪐,U+1FA90,RINGED PLANET,Common,,Symbols and Pictographs Extended-A,So,W,1,1,1
+—,U+2014,EM DASH,Common,,General Punctuation,Pd,A,1,0,0
+―,U+2015,HORIZONTAL BAR,Common,,General Punctuation,Pd,A,1,0,0
+‡,U+2021,DOUBLE DAGGER,Common,,General Punctuation,Po,A,1,0,0
+′,U+2032,PRIME,Common,,General Punctuation,Po,A,1,0,0
+‵,U+2035,REVERSED PRIME,Common,,General Punctuation,Po,A,1,0,0
+›,U+203A,SINGLE RIGHT-POINTING ANGLE QUOTATION MARK,Common,,General Punctuation,Pf,N,1,0,0
+⁎,U+204E,LOW ASTERISK,Common,,General Punctuation,Po,N,1,0,0
+⁠,U+2060,WORD JOINER,Common,,General Punctuation,Cf,N,1,0,0
+⁺,U+207A,SUPERSCRIPT PLUS SIGN,Common,,Superscripts and Subscripts,Sm,N,1,0,0
+₃,U+2083,SUBSCRIPT THREE,Common,,Superscripts and Subscripts,No,A,1,0,0
+⃛,U+20DB,COMBINING THREE DOTS ABOVE,Inherited,,Combining Diacritical Marks for Symbols,Mn,N,1,0,0
+←,U+2190,LEFTWARDS ARROW,Common,,Arrows,Sm,A,1,0,0
+∂,U+2202,PARTIAL DIFFERENTIAL,Common,,Mathematical Operators,Sm,A,1,0,0
+∑,U+2211,N-ARY SUMMATION,Common,,Mathematical Operators,Sm,A,1,0,0
+⊰,U+22B0,PRECEDES UNDER RELATION,Common,,Mathematical Operators,Sm,N,1,0,0
+⊱,U+22B1,SUCCEEDS UNDER RELATION,Common,,Mathematical Operators,Sm,N,1,0,0
+⌤,U+2324,UP ARROWHEAD BETWEEN TWO HORIZONTAL BARS,Common,,Miscellaneous Technical,So,N,1,0,0
+⍘,U+2358,APL FUNCTIONAL SYMBOL QUOTE UNDERBAR,Common,,Miscellaneous Technical,So,N,1,0,0
+⍢,U+2362,APL FUNCTIONAL SYMBOL DEL DIAERESIS,Common,,Miscellaneous Technical,So,N,1,0,0
+⑉,U+2449,OCR CUSTOMER ACCOUNT NUMBER,Common,,Optical Character Recognition,So,N,1,1,1
+①,U+2460,CIRCLED DIGIT ONE,Common,,Enclosed Alphanumerics,No,A,1,0,0
+ⓛ,U+24DB,CIRCLED LATIN SMALL LETTER L,Common,,Enclosed Alphanumerics,So,A,1,1,0
+┈,U+2508,BOX DRAWINGS LIGHT QUADRUPLE DASH HORIZONTAL,Common,,Box Drawing,So,A,1,0,0
+├,U+251C,BOX DRAWINGS LIGHT VERTICAL AND RIGHT,Common,,Box Drawing,So,A,1,0,0
+┤,U+2524,BOX DRAWINGS LIGHT VERTICAL AND LEFT,Common,,Box Drawing,So,A,1,0,0
+┴,U+2534,BOX DRAWINGS LIGHT UP AND HORIZONTAL,Common,,Box Drawing,So,A,1,0,0
+╱,U+2571,BOX DRAWINGS LIGHT DIAGONAL UPPER RIGHT TO LOWER LEFT,Common,,Box Drawing,So,A,1,0,0
+╲,U+2572,BOX DRAWINGS LIGHT DIAGONAL UPPER LEFT TO LOWER RIGHT,Common,,Box Drawing,So,A,1,0,0
+╾,U+257E,BOX DRAWINGS HEAVY LEFT AND LIGHT RIGHT,Common,,Box Drawing,So,N,1,0,0
+▔,U+2594,UPPER ONE EIGHTH BLOCK,Common,,Block Elements,So,A,1,0,0
+▬,U+25AC,BLACK RECTANGLE,Common,,Geometric Shapes,So,N,1,0,0
+△,U+25B3,WHITE UP-POINTING TRIANGLE,Common,,Geometric Shapes,So,A,1,0,0
+◅,U+25C5,WHITE LEFT-POINTING POINTER,Common,,Geometric Shapes,So,N,1,0,0
+◦,U+25E6,WHITE BULLET,Common,,Geometric Shapes,So,N,1,0,0
+☁,U+2601,CLOUD,Common,,Miscellaneous Symbols,So,N,1,0,0
+☄,U+2604,COMET,Common,,Miscellaneous Symbols,So,N,1,0,0
+☌,U+260C,CONJUNCTION,Common,,Miscellaneous Symbols,So,N,1,0,0
+☍,U+260D,OPPOSITION,Common,,Miscellaneous Symbols,So,N,1,0,0
+☜,U+261C,WHITE LEFT POINTING INDEX,Common,,Miscellaneous Symbols,So,A,1,0,0
+☼,U+263C,WHITE SUN WITH RAYS,Common,,Miscellaneous Symbols,So,N,1,0,0
+♱,U+2671,EAST SYRIAC CROSS,Common,,Miscellaneous Symbols,So,N,1,0,0
+⚆,U+2686,WHITE CIRCLE WITH DOT RIGHT,Common,,Miscellaneous Symbols,So,N,1,0,0
+✍,U+270D,WRITING HAND,Common,,Dingbats,So,N,1,0,0
+✫,U+272B,OPEN CENTRE BLACK STAR,Common,,Dingbats,So,N,1,0,0
+✯,U+272F,PINWHEEL STAR,Common,,Dingbats,So,N,1,0,0
+✽,U+273D,HEAVY TEARDROP-SPOKED ASTERISK,Common,,Dingbats,So,A,1,0,0
+✾,U+273E,SIX PETALLED BLACK AND WHITE FLORETTE,Common,,Dingbats,So,N,1,0,0
+❍,U+274D,SHADOWED WHITE CIRCLE,Common,,Dingbats,So,N,1,0,0
+➤,U+27A4,BLACK RIGHTWARDS ARROWHEAD,Common,,Dingbats,So,N,1,0,0
+⭑,U+2B51,BLACK SMALL STAR,Common,,Miscellaneous Symbols and Arrows,So,N,1,1,1
+「,U+300C,LEFT CORNER BRACKET,Common,Bopo Hang Hani Hira Kana Yiii,CJK Symbols and Punctuation,Ps,W,1,1,0
+〒,U+3012,POSTAL MARK,Common,,CJK Symbols and Punctuation,So,W,1,1,0
+う,U+3046,HIRAGANA LETTER U,Hiragana,,Hiragana,Lo,W,1,1,0
+ふ,U+3075,HIRAGANA LETTER HU,Hiragana,,Hiragana,Lo,W,1,1,0
+ん,U+3093,HIRAGANA LETTER N,Hiragana,,Hiragana,Lo,W,1,1,0
+゛,U+309B,KATAKANA-HIRAGANA VOICED SOUND MARK,Common,Hira Kana,Hiragana,Sk,W,1,1,0
+イ,U+30A4,KATAKANA LETTER I,Katakana,,Katakana,Lo,W,1,1,0
+ガ,U+30AC,KATAKANA LETTER GA,Katakana,,Katakana,Lo,W,1,1,0
+ク,U+30AF,KATAKANA LETTER KU,Katakana,,Katakana,Lo,W,1,1,0
+コ,U+30B3,KATAKANA LETTER KO,Katakana,,Katakana,Lo,W,1,1,0
+ハ,U+30CF,KATAKANA LETTER HA,Katakana,,Katakana,Lo,W,1,1,0
+バ,U+30D0,KATAKANA LETTER BA,Katakana,,Katakana,Lo,W,1,1,0
+ペ,U+30DA,KATAKANA LETTER PE,Katakana,,Katakana,Lo,W,1,1,0
+ホ,U+30DB,KATAKANA LETTER HO,Katakana,,Katakana,Lo,W,1,1,0
+ミ,U+30DF,KATAKANA LETTER MI,Katakana,,Katakana,Lo,W,1,1,0
+ヨ,U+30E8,KATAKANA LETTER YO,Katakana,,Katakana,Lo,W,1,1,0
+ㄎ,U+310E,BOPOMOFO LETTER K,Bopomofo,,Bopomofo,Lo,W,1,1,0
+ㄏ,U+310F,BOPOMOFO LETTER H,Bopomofo,,Bopomofo,Lo,W,1,1,0
+ㄒ,U+3112,BOPOMOFO LETTER X,Bopomofo,,Bopomofo,Lo,W,1,1,0
+ㄷ,U+3137,HANGUL LETTER TIKEUT,Hangul,,Hangul Compatibility Jamo,Lo,W,1,1,0
+ㅁ,U+3141,HANGUL LETTER MIEUM,Hangul,,Hangul Compatibility Jamo,Lo,W,1,1,0
+ㅋ,U+314B,HANGUL LETTER KHIEUKH,Hangul,,Hangul Compatibility Jamo,Lo,W,1,1,0
+ㅎ,U+314E,HANGUL LETTER HIEUH,Hangul,,Hangul Compatibility Jamo,Lo,W,1,1,0
+ㅗ,U+3157,HANGUL LETTER O,Hangul,,Hangul Compatibility Jamo,Lo,W,1,1,0
+ㅜ,U+315C,HANGUL LETTER U,Hangul,,Hangul Compatibility Jamo,Lo,W,1,1,0
+ㅡ,U+3161,HANGUL LETTER EU,Hangul,,Hangul Compatibility Jamo,Lo,W,1,1,0
+七,U+4E03,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,1,1,0
+个,U+4E2A,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,1,1,0
+囧,U+56E7,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,1,1,0
+廿,U+5EFF,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,1,1,0
+敬,U+656C,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,1,1,0
+灬,U+706C,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,1,1,0
+甘,U+7518,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,1,1,0
+礼,U+793C,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,1,1,0
+笑,U+7B11,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,1,1,0
+自,U+81EA,CJK Ideograph (range),Han,,CJK Unified Ideographs,Lo,W,1,1,0
+ꉂ,U+A242,YI SYLLABLE MGU,Yi,,Yi Syllables,Lo,W,1,1,1
+ꏿ,U+A3FF,YI SYLLABLE QIP,Yi,,Yi Syllables,Lo,W,1,1,1
+꒦,U+A4A6,YI RADICAL GGUO,Yi,,Yi Radicals,So,W,1,1,1
+꒷,U+A4B7,YI RADICAL JJIE,Yi,,Yi Radicals,So,W,1,1,1
+ꕤ,U+A564,VAI SYLLABLE ZA,Vai,,Vai,Lo,N,1,1,1
+꜆,U+A706,MODIFIER LETTER CHINESE TONE YIN RU,Common,Hani Latn,Modifier Tone Letters,Sk,N,1,1,1
+ꞈ,U+A788,MODIFIER LETTER LOW CIRCUMFLEX ACCENT,Common,,Latin Extended-D,Lm,N,1,0,0
+︎,U+FE0E,VARIATION SELECTOR-15,Inherited,,Variation Selectors,Mn,A,1,0,0
+︺,U+FE3A,PRESENTATION FORM FOR VERTICAL RIGHT TORTOISE SHELL BRACKET,Common,,CJK Compatibility Forms,Pe,W,1,1,0
+＊,U+FF0A,FULLWIDTH ASTERISK,Common,,Halfwidth and Fullwidth Forms,Po,F,1,1,0
+．,U+FF0E,FULLWIDTH FULL STOP,Common,,Halfwidth and Fullwidth Forms,Po,F,1,1,0
+：,U+FF1A,FULLWIDTH COLON,Common,,Halfwidth and Fullwidth Forms,Po,F,1,1,0
+？,U+FF1F,FULLWIDTH QUESTION MARK,Common,,Halfwidth and Fullwidth Forms,Po,F,1,1,0
+Ｏ,U+FF2F,FULLWIDTH LATIN CAPITAL LETTER O,Latin,,Halfwidth and Fullwidth Forms,Lu,F,1,1,0
+Ｔ,U+FF34,FULLWIDTH LATIN CAPITAL LETTER T,Latin,,Halfwidth and Fullwidth Forms,Lu,F,1,1,0
+ｒ,U+FF52,FULLWIDTH LATIN SMALL LETTER R,Latin,,Halfwidth and Fullwidth Forms,Ll,F,1,1,0
+ｖ,U+FF56,FULLWIDTH LATIN SMALL LETTER V,Latin,,Halfwidth and Fullwidth Forms,Ll,F,1,1,0
+ｗ,U+FF57,FULLWIDTH LATIN SMALL LETTER W,Latin,,Halfwidth and Fullwidth Forms,Ll,F,1,1,0
+ｘ,U+FF58,FULLWIDTH LATIN SMALL LETTER X,Latin,,Halfwidth and Fullwidth Forms,Ll,F,1,1,0
+ｚ,U+FF5A,FULLWIDTH LATIN SMALL LETTER Z,Latin,,Halfwidth and Fullwidth Forms,Ll,F,1,1,0
+ｧ,U+FF67,HALFWIDTH KATAKANA LETTER SMALL A,Katakana,,Halfwidth and Fullwidth Forms,Lo,H,1,1,0
+ｪ,U+FF6A,HALFWIDTH KATAKANA LETTER SMALL E,Katakana,,Halfwidth and Fullwidth Forms,Lo,H,1,1,0
+ｱ,U+FF71,HALFWIDTH KATAKANA LETTER A,Katakana,,Halfwidth and Fullwidth Forms,Lo,H,1,1,0
+ｴ,U+FF74,HALFWIDTH KATAKANA LETTER E,Katakana,,Halfwidth and Fullwidth Forms,Lo,H,1,1,0
+ｹ,U+FF79,HALFWIDTH KATAKANA LETTER KE,Katakana,,Halfwidth and Fullwidth Forms,Lo,H,1,1,0
+ﾆ,U+FF86,HALFWIDTH KATAKANA LETTER NI,Katakana,,Halfwidth and Fullwidth Forms,Lo,H,1,1,0
+ﾐ,U+FF90,HALFWIDTH KATAKANA LETTER MI,Katakana,,Halfwidth and Fullwidth Forms,Lo,H,1,1,0
+ﾑ,U+FF91,HALFWIDTH KATAKANA LETTER MU,Katakana,,Halfwidth and Fullwidth Forms,Lo,H,1,1,0
+ﾒ,U+FF92,HALFWIDTH KATAKANA LETTER ME,Katakana,,Halfwidth and Fullwidth Forms,Lo,H,1,1,0
+ﾓ,U+FF93,HALFWIDTH KATAKANA LETTER MO,Katakana,,Halfwidth and Fullwidth Forms,Lo,H,1,1,0
+ﾘ,U+FF98,HALFWIDTH KATAKANA LETTER RI,Katakana,,Halfwidth and Fullwidth Forms,Lo,H,1,1,0
