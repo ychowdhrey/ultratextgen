@@ -238,6 +238,14 @@
       "plain": "Schlichte Version kopieren",
       "emoji": "Emoji-Version kopieren",
       "note": "Manche Apps zeigen das Symbol trotzdem farbig."
+    },
+    "styleNotes": {
+      "case-upper": "Schreibt den ganzen Text in Großbuchstaben. ß wird dabei zu SS.",
+      "case-lower": "Schreibt den ganzen Text in Kleinbuchstaben.",
+      "case-capitalized": "Schreibt den ersten Buchstaben jedes Wortes groß, auch bei „und“ oder „der“.",
+      "case-sentence": "Schreibt nur den Satzanfang groß und alles andere klein, auch Nomen.",
+      "case-alternating": "Wechselt Groß- und Kleinbuchstaben ab, der Spott-Stil aus dem SpongeBob-Meme.",
+      "case-toggle": "Kehrt die Schreibung jedes Buchstabens um: groß wird klein, klein wird groß."
     }
   },
   "useCases": {
