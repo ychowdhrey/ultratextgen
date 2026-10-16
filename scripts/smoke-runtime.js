@@ -882,6 +882,21 @@ async function main() {
     await ctx.close();
   }
 
+  // 20b. Title case on a letter-row page runs on the words, then splits the
+  // letters. It ran after the split, so every letter was a word: "ijsje"
+  // printed I J S J E, the same as upper case.
+  console.log('\n/nl/om-uit-te-printen/letters-overtrekken/ (title case on a letter row keeps the IJ digraph)');
+  {
+    const { ctx, page, errors } = await open('/nl/om-uit-te-printen/letters-overtrekken/', 'desktop');
+    await page.selectOption('#pt-gen-case', 'title');
+    await page.fill('#pt-gen-input', 'ijsje');
+    await page.waitForTimeout(500);
+    const texts = await page.evaluate(() => Array.from(document.querySelectorAll('#pt-gen-preview svg text')).map((n) => n.textContent));
+    check('title case prints "I J s j e"', texts.includes('I J s j e'), texts.filter(Boolean).slice(0, 2).join(' | '));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // 21. ß and ẞ on a dotted row. Neither has a print route, so both used to be
   // drawn as a stroked contour: a dense double ring of dots between clean
   // dotted letters. They now take a centreline from their own glyph, which

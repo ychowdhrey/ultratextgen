@@ -8549,6 +8549,15 @@
   function genValue() {
     const raw = el.genInput ? el.genInput.value : "";
     const v = (raw && raw.trim()) ? raw.trim().slice(0, GEN_MAX_CHARS) : GEN_DEMO;
+    /* A letter-row page splits the text into single letters first, so title
+       case read every letter as a word and printed "Emma" as E M M A, and
+       Dutch "ijsje" as I J S J E. On those pages title case now runs on the
+       words as typed and the letters are split afterwards: E m m a, and
+       I J s j e with the IJ digraph kept together. The other modes give the
+       same letters in either order and are left as they were. */
+    if (CFG.genLetters === true && el.genCase && el.genCase.value === "title") {
+      return lettersOnly(titleCase(v));
+    }
     return applyCase(CFG.genLetters === true ? lettersOnly(v) : v);
   }
   /* CFG.genLetters -- the builder on /printables/letter-tracing/ practises
