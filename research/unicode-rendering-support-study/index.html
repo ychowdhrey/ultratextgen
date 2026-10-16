@@ -171,8 +171,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   "image": "https://ultratextgen.com/assets/og/research-unicode-rendering-support-study.png",
   "mainEntityOfPage": "https://ultratextgen.com/research/unicode-rendering-support-study/",
   "datePublished": "2026-10-13T00:00:00+00:00",
-  "dateModified": "2026-10-13T00:00:00+00:00",
-  "version": "1.0",
+  "dateModified": "2026-10-16T00:00:00+00:00",
+  "version": "1.1",
   "about": {
     "@type": "Thing",
     "name": "Rendering support for newly standardized Unicode characters and emoji"
@@ -252,7 +252,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <dl class="research-meta">
         <div><dt>Published</dt><dd><time datetime="2026-10-13">October 13, 2026</time></dd></div>
         <div><dt>Measured</dt><dd>October 12 to 13, 2026, Chrome 155, Firefox 155, WebKit 26.6</dd></div>
-        <div><dt>Version</dt><dd>1.0</dd></div>
+        <div><dt>Version</dt><dd>1.1 (corrected October 16, 2026)</dd></div>
         <div><dt>Evidence</dt><dd>Rendered pixels, font files, browser builds, vendor release pages</dd></div>
       </dl>
       <div class="research-actions">
@@ -295,6 +295,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </ol>
     <p class="study-toc-group">Record</p>
     <ol class="study-toc-list">
+      <li><a href="#corrections">Corrections</a></li>
       <li><a href="#data">Data and files</a></li>
       <li><a href="#citation">How to cite</a></li>
       <li><a href="#sources">External sources</a></li>
@@ -311,7 +312,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <li class="key-figure">
           <p class="key-figure-value">55 days</p>
           <p class="key-figure-label">median wait from an Emoji release to the first Noto font file that draws it</p>
-          <p class="key-figure-detail">Twelve Emoji releases, 5.0 to 18.0. The middle half ran from 3 to 94 days, the extremes from a font that came 32 days before the release to a wait of 273 days. The six releases from 14.0 on had a median of 12.5 days, the five before them 132. Every day from 2017 to 2026, the newest font drew on average 93% of the emoji already standardized, and the longest stretch below 100% lasted 273 days.</p>
+          <p class="key-figure-detail">Twelve Emoji releases, 5.0 to 18.0. The middle half ran from 3 to 94 days, the extremes from a font that came 32 days before the release to a wait of 273 days. The six releases from 14.0 on had a median of 12.5 days, the six before them 106.5. Every day from 2017 to 2026, the newest font drew on average 93% of the emoji already standardized, and the longest stretch below 100% lasted 273 days.</p>
           <p class="key-figure-tags"><span class="evidence-tag is-measured">Measured from font files</span></p>
         </li>
         <li class="key-figure">
@@ -324,7 +325,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <p class="key-figure-value">2</p>
           <p class="key-figure-label">Chrome changes that decided whether the same font worked</p>
           <p class="key-figure-detail">Up to Chrome 130, the red heart and 83 other text-default emoji followed by the emoji selector are drawn as black symbols when the page lists a text font first, and from Chrome 131 all are drawn in colour. Chrome 113 to 141 splits 60 two-tone &ldquo;people wrestling&rdquo; emoji into pieces and Chrome 142 draws them whole. Bisecting Chromium builds narrowed each to a few commits. In each the only emoji change is one that makes the browser treat a variation selector or a not-yet-known emoji code point as emoji.</p>
-          <p class="key-figure-tags"><span class="evidence-tag is-measured">Tested on 25 releases and 26 builds</span> <span class="evidence-tag is-renderer">Chromium-specific</span></p>
+          <p class="key-figure-tags"><span class="evidence-tag is-measured">Tested on 25 releases and 25 builds</span> <span class="evidence-tag is-renderer">Chromium-specific</span></p>
         </li>
         <li class="key-figure">
           <p class="key-figure-value">0.01% to 99.99%</p>
@@ -363,7 +364,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <tr><th scope="row">Ubuntu packaged</th><td>Minimal plus the Noto font packages Ubuntu 24.04 ships (core, extra, mono, UI, dated 2020 and 2023; CJK dated 2023)</td></tr>
         <tr><th scope="row">Newest Noto</th><td>The newest Regular file of every Noto family, Noto CJK, and the newest Noto Color Emoji (2.057)</td></tr>
       </tbody></table></div>
-      <p>The layers: (A) every item in the four sets; (B) font support lag, from the dates of 45 committed Noto Color Emoji files and 45 monthly Noto releases; (C) a historical replay that holds Chromium 155 fixed and swaps in each of the 45 emoji fonts; (D) a browser matrix of Chrome 113, 120, 128, 135, 141 and 155 against eight emoji fonts, plus a check of every Chrome release between the versions that differ, and two bisects over 26 Chromium snapshot builds; (E) other engines and font formats: Firefox and WebKit, and the Windows-compatible, COLRv1 and Twemoji COLR emoji fonts. The browser is Chrome for Testing 155.0.8059.39, headless, with fixed flags, viewport and scale.</p>
+      <p>The layers: (A) every item in the four sets; (B) font support lag, from the dates of 45 committed Noto Color Emoji files and 45 monthly Noto releases; (C) a historical replay that holds Chromium 155 fixed and swaps in each of the 45 emoji fonts; (D) a browser matrix of Chrome 113, 120, 128, 135, 141 and 155 against eight emoji fonts, plus a check of every Chrome release between the versions that differ, and two bisects over 25 Chromium snapshot builds; (E) other engines and font formats: Firefox and WebKit, and the Windows-compatible, COLRv1 and Twemoji COLR emoji fonts. The browser is Chrome for Testing 155.0.8059.39, headless, with fixed flags, viewport and scale.</p>
     </section>
 
     <section class="study-section" id="codepoints" aria-labelledby="codepoints-title">
@@ -374,7 +375,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p><strong>The curve is a map of font build dates.</strong> With Ubuntu&rsquo;s fonts coverage is 73% for Unicode 13.0 and 6% for 14.0. That cliff is the date of Ubuntu&rsquo;s Noto snapshot (December 25, 2020), not a property of the characters. Coverage by age therefore has nine distinct ages, one per release, so &ldquo;age&rdquo; and &ldquo;release&rdquo; cannot be separated in this data.</p>
       <p><strong>When one block decides the total.</strong> Han (27,389), Seal (11,328), Tangut (7,061), Egyptian hieroglyphs (4,034) and Jurchen (965) are 85% of Dataset 1. Unicode 18.0 is 87% Seal, 11,328 of 13,007 code points, and no font in any condition has a glyph for Seal. The pooled share for the newest releases is near 0% under every condition for that reason alone.</p>
       <p><strong>Single-character failure is font coverage.</strong> Of the code points that were not drawn as intended with the packaged fonts, 99.96% had no installed font that maps them. A box can also come from a font that maps a character but draws nothing (6 code points) or from a pan-Unicode placeholder font (stock set: 7,220 hex-code boxes). A replacement symbol never appeared on its own.</p>
-      <p><strong>Newest Noto closes much of the gap, not all.</strong> It rescued 57.5% of the code points that failed in the minimal set and 41.2% of those that failed with the packaged fonts. It cannot help where no Noto font exists: 2,100 non-logographic code points fail in every condition, and the three Unicode 18.0 currency signs (U+20C2, U+20C3, U+20C4) are drawn by none.</p>
+      <p><strong>Newest Noto closes much of the gap, not all.</strong> It rescued 57.5% of the code points that failed in the minimal set and 41.2% of those that failed with the packaged fonts. It cannot help where no Noto font exists: 2,039 non-logographic code points are not drawn as intended in any of the four font sets, and the three Unicode 18.0 currency signs (U+20C2, U+20C3, U+20C4) are drawn by none.</p>
     </section>
 
     <section class="study-section" id="emoji" aria-labelledby="emoji-title">
@@ -408,7 +409,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <h3 id="chrome-131">Chrome 131: the emoji selector</h3>
       <p>A character such as the red heart has a text form and an emoji form, and U+FE0F asks for the emoji form. We drew 207 such sequences with a stack that lists a text font with the glyph (DejaVu Sans) before the emoji font, which is how many websites are written. In Chrome 113, 120 and 128, 84 of them (the red heart, the smiling face, the warning sign and similar) were drawn by the text font as black symbols, with the selector ignored. In Chrome 135, 141 and 155 all 207 were drawn in colour. A direct test of 12 of them across 13 releases places the step exactly: 0 of 12 in colour up to Chrome 130 and 12 of 12 from 131.</p>
       <div class="data-table-wrap"><table class="data-table"><thead><tr><th scope="col">Chrome release</th><th scope="col">Drawn in colour, of 12 test sequences</th></tr></thead><tbody><tr><th scope="row">113.0.5672.63</th><td>0 of 12</td></tr><tr><th scope="row">120.0.6099.109</th><td>0 of 12</td></tr><tr><th scope="row">128.0.6613.137</th><td>0 of 12</td></tr><tr><th scope="row">129.0.6668.100</th><td>0 of 12</td></tr><tr><th scope="row">130.0.6723.116</th><td>0 of 12</td></tr><tr><th scope="row">131.0.6778.264</th><td>12 of 12</td></tr><tr><th scope="row">132.0.6834.159</th><td>12 of 12</td></tr><tr><th scope="row">133.0.6943.141</th><td>12 of 12</td></tr><tr><th scope="row">134.0.6998.165</th><td>12 of 12</td></tr><tr><th scope="row">135.0.7049.114</th><td>12 of 12</td></tr><tr><th scope="row">141.0.7390.122</th><td>12 of 12</td></tr><tr><th scope="row">142.0.7444.175</th><td>12 of 12</td></tr><tr><th scope="row">155.0.8059.39</th><td>12 of 12</td></tr></tbody></table></div>
-      <p>We bisected Chromium snapshots between the 130 and 131 branch points (positions 1356013 to 1368529; 13 builds). The last build that draws black symbols is position 1359599 and the first that draws colour is 1359605, six commits apart, all from September 24, 2024.</p>
+      <p>We bisected Chromium snapshots between the 130 and 131 branch points (positions 1356013 to 1368529; 12 builds). The last build that draws black symbols is position 1359599 and the first that draws colour is 1359605, six commits apart, all from September 24, 2024.</p>
       <div class="data-table-wrap"><table class="data-table"><thead><tr><th scope="col">Chromium snapshot position</th><th scope="col">Version string</th><th scope="col">Drawn in colour, of 12</th></tr></thead><tbody><tr><th scope="row">1356035</th><td>130.0.6723.0</td><td>0 of 12</td></tr><tr><th scope="row">1359161</th><td>131.0.6737.0</td><td>0 of 12</td></tr><tr><th scope="row">1359563</th><td>131.0.6738.0</td><td>0 of 12</td></tr><tr><th scope="row">1359599</th><td>131.0.6738.0</td><td>0 of 12</td></tr><tr><th scope="row">1359605</th><td>131.0.6738.0</td><td>12 of 12</td></tr><tr><th scope="row">1359618</th><td>131.0.6738.0</td><td>12 of 12</td></tr><tr><th scope="row">1359668</th><td>131.0.6738.0</td><td>12 of 12</td></tr><tr><th scope="row">1359758</th><td>131.0.6739.0</td><td>12 of 12</td></tr><tr><th scope="row">1359946</th><td>131.0.6740.0</td><td>12 of 12</td></tr><tr><th scope="row">1360727</th><td>131.0.6742.0</td><td>12 of 12</td></tr><tr><th scope="row">1362283</th><td>131.0.6751.0</td><td>12 of 12</td></tr><tr><th scope="row">1368524</th><td>131.0.6778.0</td><td>12 of 12</td></tr></tbody></table></div>
       <p>Only one of the six concerns emoji. Its title is &ldquo;Move FontVariantEmoji and FontVariationSequences to stable&rdquo; (commit <code>1d107b950528</code>, position 1359605, September 24, 2024). It switches on two features at once: the CSS property that chooses text or emoji presentation, and the handling of Unicode variation sequences, which is what makes the browser take U+FE0F into account when it picks a font. The first snapshot that draws colour is exactly that position.</p>
       <p><strong>What this shows, and what it does not.</strong> Each bisect isolates a window of commits, and in each the change we name is the only one that touches emoji or text handling. Its message and the behavior we measure fit. We did not rebuild Chromium with and without either change, so the attribution rests on that fit and not on a controlled build. The earlier hypothesis in this study, that very long sequences hit a shaping limit, was wrong: the 60 sequences have seven code points, and other sequences of up to ten code points compose in Chrome 113 with the same font. The second effect needs a stack with a text font before the emoji font: put the emoji family first and the same text draws in colour in every Chrome we tested.</p>
@@ -514,12 +515,25 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p>What we do about each one: the device test and the rater packet turn the two largest gaps into data, every run is repeatable from the files below, and a later version keeps this address and says what changed.</p>
     </section>
 
+    <section class="study-section" id="corrections" aria-labelledby="corrections-title">
+      <span class="article-section-label">Record</span>
+      <h2 id="corrections-title">Corrections</h2>
+      <p><strong>Version 1.1, October 16, 2026.</strong> Three statements in version 1.0 did not match this study&rsquo;s own data files. We found them when we recomputed the study from its published files. No conclusion changes.</p>
+      <ul class="study-bullets">
+        <li><strong>Emoji font wait before Emoji 14.0.</strong> Version 1.0 said the five releases before 14.0 had a median of 132 days. Six releases come before 14.0 (5.0, 11.0, 12.0, 12.1, 13.0 and 13.1), and their median is 106.5 days. The 132 was the median of five, with Emoji 13.1 left out. The 106.5 uses the later of Emoji 12.1&rsquo;s two font batches (273 days); with the earlier batch (18 days before the release) the median is 73.5. The 12.5 days for the six releases from 14.0 on is unchanged.</li>
+        <li><strong>Chromium builds bisected.</strong> Version 1.0 said 26 builds. The two bisects tested 13 builds (two-tone people wrestling) and 12 builds (emoji selector), 25 in all. Version 1.0 gave 13 for both.</li>
+        <li><strong>Code points that fail in every condition.</strong> Version 1.0 said 2,100 non-logographic code points. We cannot reproduce that figure from the class columns in the data files. The number not drawn as intended in any of the four font sets is 2,039. The earlier figure may have used a different definition (no Noto font maps the code point), which the published files do not let us check.</li>
+      </ul>
+      <p>A clarification, with no change to any figure: the 55-day median is the median of 12 per-release values (54.5). The median across individual emoji sequences is 66 days.</p>
+      <p>Some statements rest on files we have not published (the character-map index of the installed fonts, and the Chrome 113 to 128 emoji-selector run on all 207 sequences), so we could not re-check them. They are unchanged and unverified.</p>
+    </section>
+
     <section class="study-section" id="data" aria-labelledby="data-title">
       <span class="article-section-label">Data</span>
       <h2 id="data-title">Data, files and reproducibility</h2>
       <p>The files hold results for characters and fonts: counts, classes and dates. They hold no screenshots of vendor emoji, no personal data and nothing from the site&rsquo;s analytics. The rendering of every item is repeatable by anyone who runs the harness, and the per-item class files let you check any number on this page.</p>
       <div class="data-table-wrap"><table class="data-table data-files-table"><thead><tr><th scope="col">File</th><th scope="col">Contents</th><th scope="col">Size</th></tr></thead><tbody>
-        <tr><td><a href="/research/unicode-rendering-support-study.pdf" download>unicode-rendering-support-study.pdf</a></td><td>The full study, printed from this page</td><td>721 KB</td></tr>
+        <tr><td><a href="/research/unicode-rendering-support-study.pdf" download>unicode-rendering-support-study.pdf</a></td><td>The full study, printed from this page</td><td>846 KB</td></tr>
       </tbody></table></div>
       <p>Also published: the <a href="/research/unicode-rendering-support-study/data/rater-packet/INSTRUCTIONS.md">rater packet</a> (instructions, a blank label sheet and eight contact sheets) and the <a href="/research/unicode-rendering-support-study/data/harness/run_study.py">harness</a>, 54 scripts that build the datasets, draw every item, classify it and make every table. To rerun a layer, read <a href="/research/unicode-rendering-support-study/data/REPRODUCE.md">REPRODUCE.md</a>. The measurements were made on October 12 and 13, 2026. The source data (the Unicode files, Noto releases and Chrome builds) keeps changing, so a later rerun will differ and the harness records the version of each input.</p>
     </section>
@@ -527,7 +541,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <section class="study-section" id="citation" aria-labelledby="citation-title">
       <span class="article-section-label">Cite</span>
       <h2 id="citation-title">How to cite this study</h2>
-      <p class="research-citation" id="citation-text">UltraTextGen Research. &ldquo;How Fast Do New Unicode Characters and Emoji Show Up? A Browser and Font Rendering Study.&rdquo; Version 1.0, October 13, 2026. https://ultratextgen.com/research/unicode-rendering-support-study/</p>
+      <p class="research-citation" id="citation-text">UltraTextGen Research. &ldquo;How Fast Do New Unicode Characters and Emoji Show Up? A Browser and Font Rendering Study.&rdquo; Version 1.1, October 16, 2026 (first published October 13, 2026). https://ultratextgen.com/research/unicode-rendering-support-study/</p>
       <p>Please cite the version number. A later version will keep this address and say what changed.</p>
       <p><strong>Version 1.0 (October 13, 2026):</strong> first publication. It covers Chromium, Firefox and WebKit on Linux, 45 historical emoji fonts, 25 Chrome versions, the causes of two Chrome changes, other emoji font formats, a re-test of combining marks and the device check on our own site. Windows, macOS, iOS and Android are not measured; the device test and rater packet are how they will be added.</p>
     </section>
