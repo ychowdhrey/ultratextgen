@@ -982,10 +982,17 @@ const decorations = window.UTG_DECORATIONS
     const shareAria = uiText("shareResult.ariaLabel", "Share {style} result").replace("{style}", name);
     const shareId = (style && style.slug) || "";
 
+    // A style's note is its English one unless the locale file carries
+    // ui.styleNotes.<slug>: on /de/gross-und-kleinschreibung/ every card
+    // explained itself in English under German prose. Locales without the
+    // key keep the English note, exactly as before.
+    const localNote = style && style.slug ? uiText("styleNotes." + style.slug, null) : null;
+    const noteHtml = localNote ? escapeHtml(localNote) : (style && style.note) || "";
+
     card.innerHTML = `
       <div class="style-info">
         <p class="style-name">${name}</p>
-         ${style?.note ? `<p class="style-note">${style.note}</p>` : ""}
+         ${noteHtml ? `<p class="style-note">${noteHtml}</p>` : ""}
         <p class="style-preview ${!convertedText ? "placeholder" : ""}">${convertedText ? escapeHtml(convertedText) : STR.empty}</p>
         ${decoHtml}
         ${safetyPillHtml(name, style, !isDemo && !!untouched)}
