@@ -6503,7 +6503,13 @@
 
      Runtime rather than static markup, unlike the /learn/ bridge: the href
      carries a word that only exists once someone types it, so there is no
-     crawlable link to lose. */
+     crawlable link to lose.
+
+     Revised 2026-10-16: the English-only bail was right for English
+     destinations, and the locale pages now link to their own name sheets
+     instead (printPrefs.js NAME_KIT). This list is what the frozen
+     block-letters page still renders; every other page reads
+     printPrefs.js NAME_SHEETS_EN, which adds the monogram and label tools. */
   const CARRY_TOOLS = [
     "/printables/name-tracing/", "/printables/cursive-name/",
     "/printables/handwriting-worksheet-generator/",
@@ -6728,7 +6734,27 @@
     updateSheetCost();
   }
 
+  /* The name kit (2026-10-16): the row now reaches every locale that has these
+     sheets, plus the monogram and name-label tools, through printPrefs.js's
+     mountNameCarry(), which the monogram and label engines call too. Each
+     locale links only to its own pages, so the internal-linking rule that
+     kept this English-only still holds. The frozen block-letters page keeps
+     the row it had, built by the original code below with the original list,
+     so its markup does not change while the freeze is on. */
   function mountCarryRow() {
+    if (BATCH_FROZEN) return mountCarryRowFrozen();
+    const input = primaryInput();
+    if (!input || $("#pt-carry-row") || !PP || !PP.mountNameCarry) return null;
+    return PP.mountNameCarry({
+      word: () => input.value,
+      watch: [input],
+      place: (row) => {
+        const host = input.closest(".pt-field, .pt-name-field") || input.parentElement;
+        (host.closest("section") || host).appendChild(row);
+      }
+    });
+  }
+  function mountCarryRowFrozen() {
     const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
     if (lang !== "en") return null;
     const input = primaryInput();
@@ -7076,8 +7102,8 @@
      opts.spacing, and overwriting either would silently undo a chosen
      letterform's own tracking.
 
-     English only, the same bail mountCarryRow and mountLeftHanded already
-     take. "Letter spacing" is a new string and the site's own corpus does not
+     English only, the same bail mountLeftHanded takes (and mountCarryRow
+     took until it gained locale strings on 2026-10-16). "Letter spacing" is a new string and the site's own corpus does not
      attest a translation of it in six of the seven other locales (de, it and
      pl have none at all; fr, es and pt have one page each), so there is
      nothing to harvest and nothing here will be invented. */
@@ -7148,8 +7174,8 @@
     host.insertAdjacentElement("afterend", field);
   }
 
-  /* OUT-15's control. ENGLISH ONLY, the same bail mountCarryRow and
-     mountLeftHanded take: "bridged stencil" is a new string and neither the
+  /* OUT-15's control. ENGLISH ONLY, the same bail mountLeftHanded
+     takes: "bridged stencil" is a new string and neither the
      engine's I18N table nor locales/*.json carries a word for a stencil
      bridge in any of the eight, so the four locale siblings keep today's
      behaviour until a native reading exists. Per the owner's decision of

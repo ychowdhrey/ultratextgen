@@ -852,6 +852,15 @@
     if (PP && PP.values) state.sheet = "cut";
     const restored = restore();
     restoredOnce = restored;
+    /* A name carried from another sheet (?name=, the name kit row) fills the
+       name line, over whatever this device remembered: the link is the newer
+       intent. Only the name line; the detail lines and the class list stay. */
+    const carried = PP && PP.carriedName ? PP.carriedName() : "";
+    const nameBox = $("lb-name");
+    if (carried && nameBox) {
+      nameBox.value = carried.slice(0, nameBox.maxLength > 0 ? nameBox.maxLength : 40);
+      nameBox.dataset.auto = "";
+    }
     applyPreset(state.preset, false);
     if (!restored) {
       const listEl = $("lb-list");
@@ -948,6 +957,25 @@
       const once = () => { if (sample.value === sample.defaultValue) sample.select(); sample.removeEventListener("focus", once); };
       sample.addEventListener("focus", once);
     }
+
+    // The name kit row. On load: the English list is
+    // read from the footer, which footer.js renders.
+    const mountCarry = () => {
+      const box = $("lb-name");
+      if (!box || !PP || !PP.mountNameCarry) return;
+      PP.mountNameCarry({
+        // The sample name shows what a label looks like; it is nobody's name,
+        // so it is not carried. A name typed here, restored or carried in is.
+        word: () => (box.value !== box.defaultValue || carried) ? box.value : "",
+        watch: [box],
+        // At the end of the tool's section, where the sheet engine puts it.
+        place: (row) => {
+          (box.closest("section") || box.parentNode).appendChild(row);
+        }
+      });
+    };
+    if (document.readyState === "complete") mountCarry();
+    else window.addEventListener("load", mountCarry, { once: true });
 
     // printable_generate: the visitor typed (a count, never the text).
     const nm = $("lb-name");

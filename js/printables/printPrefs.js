@@ -25,6 +25,8 @@
  *                   the recent and saved strips under the share row
  *   moreSection(scope, o) / nameDateRow() / frameCanvas(art, o)
  *                   the sheet's title + name-and-date line, for all three engines
+ *   mountNameCarry(o) / nameKitLinks(lang, path) / carriedName()
+ *                   the "same word, another sheet" row and its per-locale list
  *
  * Load it BEFORE any engine that uses it. It has no dependencies.
  */
@@ -781,8 +783,195 @@
     wirePdfJump(btn);
   }
 
+  /* ---------- the name kit: one typed word, every sheet that takes it ----------
+
+     A parent with one name wants the tracing sheet, the puzzle, the monogram
+     and the labels without typing it four times. The row under the input on
+     every one of those tools links to the others with ?name= in the href; each
+     destination already fills its input from that parameter. The word lives in
+     the link the visitor follows and nowhere else: nothing here stores it and
+     no analytics payload carries it (header.js strips the query from the click
+     it records).
+
+     English labels are read from the page's own rendered footer, so they
+     cannot drift from the site's own names for these tools. The locale
+     footers do not list their name sheets, so each locale's list is written
+     out below: only pages that exist in that locale, each labelled with that
+     page's own heading. A locale with one name sheet has nothing to link to
+     and gets no row. /ja/purinto/ prints its name sheet from a different
+     engine and has one, so it is not listed. */
+  const NAME_SHEETS_EN = [
+    "/printables/name-tracing/", "/printables/cursive-name/",
+    "/printables/handwriting-worksheet-generator/",
+    "/printables/coloring-page-maker/", "/printables/dot-to-dot-name/",
+    "/printables/name-puzzle-maker/", "/printables/banner-maker/",
+    "/printables/bubble-name/", "/printables/graffiti-name/", "/printables/calligraphy-name/",
+    "/printables/monogram-maker/", "/printables/name-labels/"
+  ];
+  const NAME_KIT = {
+    de: [
+      ["/de/zum-ausdrucken/namen-schreiben/", "Namen nachspuren"],
+      ["/de/zum-ausdrucken/schreibuebungen/", "Schreibübungen"],
+      ["/de/zum-ausdrucken/name-ausmalen/", "Name-Ausmalbild"],
+      ["/de/zum-ausdrucken/name-punkte-verbinden/", "Punkte verbinden"],
+      ["/de/zum-ausdrucken/namenspuzzle/", "Namenspuzzle"],
+      ["/de/zum-ausdrucken/monogramm/", "Monogramm"]
+    ],
+    es: [
+      ["/es/imprimibles/nombre-para-trazar/", "Nombre para trazar"],
+      ["/es/imprimibles/nombre-en-cursiva/", "Nombre en cursiva"],
+      ["/es/imprimibles/ejercicios-de-caligrafia/", "Ejercicios de caligrafía"],
+      ["/es/imprimibles/unir-puntos-nombre/", "Unir puntos"],
+      ["/es/imprimibles/rompecabezas-del-nombre/", "Rompecabezas del nombre"],
+      ["/es/imprimibles/monograma/", "Monograma"]
+    ],
+    fr: [
+      ["/fr/imprimables/prenom-a-tracer/", "Prénom à tracer"],
+      ["/fr/imprimables/modeles-d-ecriture/", "Modèles d'écriture"],
+      ["/fr/imprimables/prenom-a-colorier/", "Prénom à colorier"],
+      ["/fr/imprimables/prenom-points-a-relier/", "Points à relier"],
+      ["/fr/imprimables/puzzle-prenom/", "Puzzle prénom"],
+      ["/fr/imprimables/monogramme/", "Monogramme"]
+    ],
+    id: [
+      ["/id/printables/menebalkan-nama/", "Menebalkan nama"],
+      ["/id/printables/menebalkan-huruf/", "Menebalkan huruf"],
+      ["/id/printables/menghubungkan-titik-nama/", "Menghubungkan titik"],
+      ["/id/printables/puzzle-nama/", "Puzzle nama"],
+      ["/id/printables/grafiti-nama/", "Grafiti nama"],
+      ["/id/printables/label-nama/", "Label nama"]
+    ],
+    it: [
+      ["/it/da-stampare/tracciare-il-nome/", "Nome da tracciare"],
+      ["/it/da-stampare/esercizi-di-scrittura/", "Esercizi di scrittura"],
+      ["/it/da-stampare/nome-da-colorare/", "Nome da colorare"],
+      ["/it/da-stampare/unisci-i-puntini-nome/", "Unisci i puntini"],
+      ["/it/da-stampare/puzzle-con-nome/", "Puzzle con nome"],
+      ["/it/da-stampare/monogramma/", "Monogramma"]
+    ],
+    nl: [
+      ["/nl/om-uit-te-printen/naam-leren-schrijven/", "Naam leren schrijven"],
+      ["/nl/om-uit-te-printen/cijfertekening-naam/", "Cijfertekening"],
+      ["/nl/om-uit-te-printen/naampuzzel/", "Naampuzzel"],
+      ["/nl/om-uit-te-printen/monogram/", "Monogram"]
+    ],
+    pl: [
+      ["/pl/do-druku/pisanie-imienia/", "Nauka pisania imienia"],
+      ["/pl/do-druku/cwiczenia-kaligraficzne/", "Ćwiczenia kaligraficzne"],
+      ["/pl/do-druku/pokoloruj-imie/", "Kolorowanka z imieniem"],
+      ["/pl/do-druku/polacz-kropki-imie/", "Połącz kropki"],
+      ["/pl/do-druku/puzzle-z-imieniem/", "Puzzle z imieniem"],
+      ["/pl/do-druku/banery-z-literami/", "Baner z literami"],
+      ["/pl/do-druku/monogram/", "Monogram"]
+    ],
+    pt: [
+      ["/pt/imprimiveis/nome-para-tracar/", "Nome para traçar"],
+      ["/pt/imprimiveis/atividades-de-caligrafia/", "Atividades de caligrafia"],
+      ["/pt/imprimiveis/ligue-os-pontos-nome/", "Ligue os pontos"],
+      ["/pt/imprimiveis/quebra-cabeca-do-nome/", "Quebra-cabeça do nome"],
+      ["/pt/imprimiveis/monograma/", "Monograma"]
+    ],
+    tr: [
+      ["/tr/yazdirilabilir/isim-yazma-calismasi/", "İsim yazma çalışması"],
+      ["/tr/yazdirilabilir/noktalari-birlestir-isim/", "Noktaları birleştir"],
+      ["/tr/yazdirilabilir/isim-yapbozu/", "İsim yapbozu"]
+    ]
+  };
+  const CARRY_I18N = {
+    en: "Same word, another sheet:",
+    de: "Dasselbe Wort auf einem anderen Blatt:",
+    es: "La misma palabra en otra ficha:",
+    fr: "Le même mot sur une autre fiche :",
+    id: "Kata yang sama di lembar lain:",
+    it: "La stessa parola su un'altra scheda:",
+    nl: "Hetzelfde woord op een ander werkblad:",
+    pl: "To samo słowo na innej karcie:",
+    pt: "A mesma palavra em outra ficha:",
+    tr: "Aynı kelime, başka bir sayfada:"
+  };
+  const CARRY_MAX = 40;
+  function slashPath(p) { return String(p || "").replace(/\/?$/, "/"); }
+  /* The sheets this page links to: every name sheet in its own language
+     except itself. English reads the footer (see above); it is empty until
+     footer.js has run, so callers mount on window load. */
+  function nameKitLinks(lang, here) {
+    const at = slashPath(here);
+    const out = [];
+    if (lang === "en") {
+      Array.prototype.forEach.call(document.querySelectorAll("footer .footer-link"), function (a) {
+        const href = slashPath(a.getAttribute("href"));
+        if (href === at || NAME_SHEETS_EN.indexOf(href) === -1) return;
+        if (out.some(function (l) { return l.href === href; })) return;
+        out.push({ href: href, label: a.textContent.trim() });
+      });
+      return out;
+    }
+    (NAME_KIT[lang] || []).forEach(function (pair) {
+      if (pair[0] !== at) out.push({ href: pair[0], label: pair[1] });
+    });
+    return out;
+  }
+  function carryHref(href, word) {
+    const w = String(word || "").trim().slice(0, CARRY_MAX);
+    return href + (w ? "?name=" + encodeURIComponent(w) : "");
+  }
+  /* The ?name= this page was opened with, for the two tools that do not run
+     printablesEngine's own preset reader. */
+  function carriedName() {
+    try {
+      const v = new URLSearchParams(window.location.search).get("name");
+      return v ? String(v).trim().slice(0, CARRY_MAX) : "";
+    } catch (e) { return ""; }
+  }
+  /* o.word()  the word to carry now ("" carries nothing)
+     o.place(row)  puts the row on the page
+     o.watch   inputs whose edits change the word
+     Returns the row, or null when there is nothing to link to. */
+  function mountNameCarry(o) {
+    if (!o || typeof o.word !== "function" || typeof o.place !== "function") return null;
+    if (document.getElementById("pt-carry-row")) return null;
+    const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
+    const label = CARRY_I18N[lang];
+    if (!label) return null;
+    const links = nameKitLinks(lang, window.location.pathname);
+    if (!links.length) return null;
+    const row = document.createElement("div");
+    row.id = "pt-carry-row";
+    row.className = "pt-carry-row";
+    const lab = document.createElement("span");
+    lab.className = "pt-carry-label";
+    lab.textContent = label;
+    row.appendChild(lab);
+    links.forEach(function (l) {
+      const a = document.createElement("a");
+      a.className = "pt-carry-link";
+      a.href = l.href;
+      a.textContent = l.label;
+      a.dataset.carry = l.href;
+      row.appendChild(a);
+    });
+    const update = function () {
+      const w = o.word();
+      Array.prototype.forEach.call(row.querySelectorAll(".pt-carry-link"), function (a) {
+        a.href = carryHref(a.dataset.carry, w);
+      });
+    };
+    o.place(row);
+    update();
+    (o.watch || []).forEach(function (input) {
+      if (input) input.addEventListener("input", update);
+    });
+    row.refresh = update;
+    return row;
+  }
+
   UTG.printPrefs = {
     mountPrintNote: mountPrintNote,
+    mountNameCarry: mountNameCarry,
+    nameKitLinks: nameKitLinks,
+    carriedName: carriedName,
+    NAME_KIT: NAME_KIT,
+    NAME_SHEETS_EN: NAME_SHEETS_EN,
     values: values,
     PAPERS: PAPERS,
     PAPER_FULL: PAPER_FULL,
