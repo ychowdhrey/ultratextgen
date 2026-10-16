@@ -765,6 +765,7 @@
      Clipboard helpers
      ============================ */
   function fallbackCopy(text) {
+    var focused = document.activeElement;
     var ta = document.createElement("textarea");
     ta.value = text;
     ta.setAttribute("readonly", "");
@@ -775,6 +776,8 @@
     let ok = false;
     try { ok = !!document.execCommand("copy"); } catch (e) { ok = false; }
     document.body.removeChild(ta);
+    // Give focus back to the tile or button that was pressed.
+    if (focused && typeof focused.focus === "function") focused.focus();
     return ok;
   }
   ns.fallbackCopy = fallbackCopy;
@@ -1206,7 +1209,8 @@
         };
 
         if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(text).then(copied).catch(viaFallback);
+          // Two-argument then: an error inside copied() must not run a second copy.
+          navigator.clipboard.writeText(text).then(copied, viaFallback);
         } else {
           viaFallback();
         }

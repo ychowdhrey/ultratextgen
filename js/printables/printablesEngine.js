@@ -8444,11 +8444,24 @@
      the limit so a pasted line is never cut in silence. */
   const GEN_MAX_CHARS = 50;
 
+  /* Title case capitalises the first letter of each word. It used \b\w,
+     which only knows ASCII, so every accented letter counted as a word break:
+     "müller" printed as "MüLler" and "élève" as "éLèVe" on the 17 tracing and
+     handwriting pages that offer the case control. A word now starts after
+     anything that is not a letter, mark, digit or apostrophe (so "don't" and
+     Dutch "'t" stay lowercase after the apostrophe), and Dutch keeps the IJ
+     digraph together ("ijsselmeer" -> "IJsselmeer"). */
+  const TITLE_START = /(^|[^\p{L}\p{M}\p{N}'\u2019])(\p{L})/gu;
+  const NL_IJ_START = /(^|[^\p{L}\p{M}\p{N}'\u2019])Ij/gu;
+  function titleCase(text) {
+    const out = text.replace(TITLE_START, (m, pre, c) => pre + c.toLocaleUpperCase(CASE_LOCALE));
+    return LANG === "nl" ? out.replace(NL_IJ_START, "$1IJ") : out;
+  }
   function applyCase(word) {
     const mode = el.genCase ? el.genCase.value : "as-typed";
     if (mode === "upper") return word.toLocaleUpperCase(CASE_LOCALE);
     if (mode === "lower") return word.toLocaleLowerCase(CASE_LOCALE);
-    if (mode === "title") return word.replace(/\b\w/g, (c) => c.toLocaleUpperCase(CASE_LOCALE));
+    if (mode === "title") return titleCase(word);
     return word;
   }
   function genValue() {

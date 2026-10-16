@@ -17,8 +17,13 @@
   // below used to give up there, so the site's main job failed on exactly the
   // browsers least able to help. Resolves on a copy, rejects when neither
   // path wrote anything, so callers keep their success-only feedback.
+  // While the fallback runs, the browser fires a native "copy" event; the
+  // manual-copy listener below skips it, so one press records one row. Focus
+  // goes back to the button the visitor pressed.
+  let programmaticCopy = false;
   function writeClipboard(text) {
     const legacy = () => {
+      const focused = document.activeElement;
       const ta = document.createElement("textarea");
       ta.value = text;
       ta.setAttribute("readonly", "");
@@ -27,8 +32,11 @@
       document.body.appendChild(ta);
       ta.select();
       let ok = false;
+      programmaticCopy = true;
       try { ok = !!document.execCommand("copy"); } catch (e) { ok = false; }
+      programmaticCopy = false;
       document.body.removeChild(ta);
+      if (focused && typeof focused.focus === "function") focused.focus();
       return ok ? Promise.resolve() : Promise.reject(new Error("copy refused"));
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -2212,6 +2220,7 @@ document.addEventListener("click", (e) => {
 });
 
 document.addEventListener("copy", () => {
+  if (programmaticCopy) return;
   const selection = window.getSelection()?.toString();
   if (selection && selection.length > 0) {
     if (window.UltraTextGen && window.UltraTextGen.trackCopy) {

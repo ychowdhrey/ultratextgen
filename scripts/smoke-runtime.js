@@ -844,6 +844,42 @@ async function main() {
       check(`generator Copy, ${tag}: ${fallbackWorks ? 'one' : 'no'} copy_text row`, (await copies(gen.page)) === (fallbackWorks ? 1 : 0), String(await copies(gen.page)));
       await gen.ctx.close();
     }
+
+    // The real textarea fallback fires a native "copy" event. The manual-copy
+    // listener must not record it as a second row, focus must come back to
+    // the button, and a real manual copy must still record.
+    const real = await open('/', 'desktop', `Object.defineProperty(navigator, 'clipboard', { value: { writeText: () => Promise.reject(new Error('NotAllowed')) } });`);
+    await real.page.fill('#mainInput', 'Luna');
+    await real.page.waitForTimeout(300);
+    await real.page.locator('#resultsGrid .copy-btn:not([disabled])').first().click();
+    await real.page.waitForTimeout(200);
+    const methods = (await dl(real.page)).filter((x) => x.event === 'copy_text').map((x) => x.copy_method);
+    check('real fallback copy records exactly one row (no extra "manual")', methods.length === 1 && methods[0] === 'button', methods.join(','));
+    check('focus returns to the pressed Copy button', await real.page.evaluate(() => !!(document.activeElement && document.activeElement.classList.contains('copy-btn'))));
+    await real.page.evaluate(() => {
+      const h = document.querySelector('h1');
+      const r = document.createRange(); r.selectNodeContents(h);
+      const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      document.execCommand('copy');
+    });
+    const after = (await dl(real.page)).filter((x) => x.event === 'copy_text').map((x) => x.copy_method);
+    check('a manual selection copy still records "manual"', after.length === 2 && after[1] === 'manual', after.join(','));
+    check('no page errors', !real.errors.length, real.errors.join(' | '));
+    await real.ctx.close();
+  }
+
+  // 20. Title case on a tracing sheet. \b\w is ASCII-only, so every accented
+  // letter counted as a word break and "jürgen größe" printed "JüRgen GrößE".
+  console.log('\n/de/zum-ausdrucken/schreibuebungen/ (title case keeps accented words whole)');
+  {
+    const { ctx, page, errors } = await open('/de/zum-ausdrucken/schreibuebungen/', 'desktop');
+    await page.selectOption('#pt-gen-case', 'title');
+    await page.fill('#pt-gen-input', 'jürgen größe');
+    await page.waitForTimeout(500);
+    const texts = await page.evaluate(() => Array.from(document.querySelectorAll('svg text')).map((n) => n.textContent));
+    check('title case prints "Jürgen Größe"', texts.includes('Jürgen Größe'), texts.filter((x) => /rgen/i.test(x || '')).join(' | '));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
   }
 
   // Reversible interactions are only tested once they have come back: every
