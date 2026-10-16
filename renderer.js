@@ -413,6 +413,15 @@ function renderMap(text, style) {
 
   const accentSafe = style.accentSafe !== false;
 
+  // Optional per-style sign map (superscript and subscript only): + - = ( )
+  // have real raised and lowered forms, and a formula with a bare + in it
+  // reads wrong. A style without `signs` takes the plain path unchanged.
+  const signs = style.signs || null;
+  const mapOne = signs
+    ? (char) => (Object.prototype.hasOwnProperty.call(signs, char) ? signs[char]
+      : mapChar(char, normalUpper, normalLower, normalNums, upperArr, lowerArr, numsArr, accentSafe))
+    : (char) => mapChar(char, normalUpper, normalLower, normalNums, upperArr, lowerArr, numsArr, accentSafe);
+
   // Map integrity check — only warn when a debug flag is set, never in production
   if (window.UTG_DEBUG &&
       (upperArr.length !== 26 || lowerArr.length !== 26 || numsArr.length !== 10)) {
@@ -424,9 +433,7 @@ function renderMap(text, style) {
   }
 
   if (!isSpaced) {
-    return Array.from(text)
-      .map(char => mapChar(char, normalUpper, normalLower, normalNums, upperArr, lowerArr, numsArr, accentSafe))
-      .join('');
+    return Array.from(text).map(mapOne).join('');
   }
 
   // Spaced output mode (adds spacing after each mapped glyph)
@@ -444,7 +451,7 @@ function renderMap(text, style) {
       continue;
     }
 
-    out.push(mapChar(ch, normalUpper, normalLower, normalNums, upperArr, lowerArr, numsArr, accentSafe));
+    out.push(mapOne(ch));
     out.push(' ');
   }
 

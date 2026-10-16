@@ -141,10 +141,68 @@
       .join("");
   }
 
+  /* One grid cell is one user-perceived character, not one code point. Hindi
+     कि is a consonant plus a vowel sign, Thai กิ a consonant plus a mark above,
+     and splitting them dropped the mark (the old filter kept letters only), so
+     किताब printed as three bare consonants. Intl.Segmenter gives the clusters;
+     where it is missing, a base character with the marks that follow it is the
+     same answer for every script these pages take. Anything in a cluster that
+     is not a letter, mark or digit (a joiner, a non-joiner) is left out of the
+     cell, since a lone cell has nothing to join. */
+  const SEGMENTER = (typeof Intl !== "undefined" && typeof Intl.Segmenter === "function")
+    ? new Intl.Segmenter(undefined, { granularity: "grapheme" })
+    : null;
+  const CLUSTER_RE = /\P{M}\p{M}*|\p{M}+/gu;
+  const NOT_CELL_RE = /[^\p{L}\p{M}\p{N}]/gu;
+
+  function clusters(text) {
+    const s = String(text).normalize("NFC");
+    if (SEGMENTER) return Array.from(SEGMENTER.segment(s), (x) => x.segment);
+    return s.match(CLUSTER_RE) || [];
+  }
+
   function gridLetters(text, fold) {
-    return Array.from(fold ? foldMarks(text, fold) : String(text))
-      .filter((ch) => LETTER_RE.test(ch))
-      .map(upperOne);
+    const out = [];
+    for (const g of clusters(fold ? foldMarks(text, fold) : String(text))) {
+      const cell = g.replace(NOT_CELL_RE, "");
+      if (LETTER_RE.test(cell)) out.push(upperOne(cell));
+    }
+    return out;
+  }
+
+  /* A pasted list often arrives numbered, bulleted, or with a definition after
+     each word, the way a chat assistant or a vocabulary handout writes it:
+     "1. Apple - a red fruit", "• **Apple**: a red fruit". The word is the part
+     before the definition, so that is what goes in the grid and the word list.
+     A dash only counts as the separator with a space either side, so ice-cream
+     stays one entry. One exception: when what follows the colon or dash is
+     itself a list of short items ("Fruits: apple, pear, plum"), the part before
+     is a heading and the items are the words. */
+  const LIST_MARK_RE = /^\s*(?:[-*+\u2022\u2023\u2043\u25AA\u25AB\u25CF\u25CB\u25A0\u25A1\u25BA\u25B8\u2013\u2014\u00B7]+\s*|\(?\d{1,3}[.)\]](?=\s|\p{L})\s*|\d{1,3}\s+[-\u2013\u2014:]\s+)/u;
+  const TAIL_RE = /\s+[-\u2013\u2014]\s+|\s*[:=]\s*/u;
+  const EMPHASIS_RE = /^[*_`"]+|[*_`"]+$/g;
+
+  function unmark(text) {
+    return String(text).replace(LIST_MARK_RE, "").replace(EMPHASIS_RE, "").trim();
+  }
+
+  function splitHeadTail(line) {
+    const m = TAIL_RE.exec(line);
+    if (!m || m.index === 0) return { head: line, tail: "" };
+    return { head: line.slice(0, m.index), tail: line.slice(m.index + m[0].length) };
+  }
+
+  function isShortList(text) {
+    const items = String(text).split(/[,;]/).map((x) => x.trim()).filter(Boolean);
+    return items.length >= 2 && items.every((x) => x.split(/\s+/).length <= 2);
+  }
+
+  function entriesFromLine(line) {
+    const bare = unmark(line);
+    if (!bare) return [];
+    const parts = splitHeadTail(bare);
+    const body = !parts.tail ? bare : (isShortList(parts.tail) ? parts.tail : parts.head);
+    return body.split(/[,;]+/).map(unmark).filter(Boolean);
   }
 
   /* Accepts a textarea's value (one entry per line, commas also split) or an
@@ -158,7 +216,7 @@
     const cap = limit == null ? MAX_WORDS : limit;
     const raw = Array.isArray(input)
       ? input
-      : String(input == null ? "" : input).split(/[\r\n,;]+/);
+      : String(input == null ? "" : input).split(/[\r\n]+/).reduce((all, line) => all.concat(entriesFromLine(line)), []);
     const seen = Object.create(null);
     const out = [];
     for (const entry of raw) {
