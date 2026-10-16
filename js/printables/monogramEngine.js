@@ -445,9 +445,44 @@
     return window.location.origin + window.location.pathname + (qs ? "?" + qs : "");
   }
 
+  /* A name carried from another sheet (?name=, the name kit row) becomes
+     initials the way the classic layout reads them: first name left, last
+     name in the large centre, a middle name right. One word is a single
+     centre initial. Explicit l/c/r in the same link still win. */
+  let carriedName = "";
+  function initialsFromName(name) {
+    const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2);
+    const firsts = String(name || "").trim().split(/\s+/).map(function (w) {
+      const ch = Array.from(w).find(function (c) { return /\p{L}/u.test(c); });
+      return ch ? ch.toLocaleUpperCase(lang).slice(0, 1) : "";
+    }).filter(Boolean);
+    if (!firsts.length) return null;
+    if (firsts.length === 1) return { l: "", c: firsts[0], r: "" };
+    if (firsts.length === 2) return { l: firsts[0], c: firsts[1], r: "" };
+    return { l: firsts[0], c: firsts[firsts.length - 1], r: firsts[1] };
+  }
+  /* The word the row carries on: the name this page was opened with, while
+     the initials still spell it. Initials alone are not a name, so a monogram
+     typed here carries nothing. */
+  function carryWord() {
+    const ini = carriedName && initialsFromName(carriedName);
+    if (!ini) return "";
+    const v = vals();
+    return ini.l === v.l && ini.c === v.c && ini.r === v.r ? carriedName : "";
+  }
+
   function applyPreset() {
     let q = null;
     try { q = new URLSearchParams(window.location.search); } catch (err) { return; }
+    const nm = PP && PP.carriedName ? PP.carriedName() : "";
+    const ini = nm && initialsFromName(nm);
+    if (ini) {
+      carriedName = nm;
+      [["l", "mono-left"], ["c", "mono-center"], ["r", "mono-right"]].forEach(function (pair) {
+        const input = byId(pair[1]);
+        if (input) input.value = ini[pair[0]];
+      });
+    }
     [["l", "mono-left"], ["c", "mono-center"], ["r", "mono-right"]].forEach(function (pair) {
       const val = q.get(pair[0]);
       const input = byId(pair[1]);
@@ -713,6 +748,23 @@
     render();
     // Re-render once Playfair loads so measured positions are exact.
     whenFontReady(render);
+    // The name kit row, under the initials. On load: the English list is read
+    // from the footer, which footer.js renders.
+    if (document.readyState === "complete") mountCarry();
+    else window.addEventListener("load", mountCarry, { once: true });
+  }
+
+  function mountCarry() {
+    const first = byId("mono-left");
+    if (!first || !PP || !PP.mountNameCarry) return;
+    PP.mountNameCarry({
+      word: carryWord,
+      watch: [byId("mono-left"), byId("mono-center"), byId("mono-right")],
+      place: function (row) {
+        const field = first.closest(".pt-field") || first.parentNode;
+        field.insertAdjacentElement("afterend", row);
+      }
+    });
   }
 
   /* Keyed on "complete", not on "loading" — the idiom symbol-explorer.js
