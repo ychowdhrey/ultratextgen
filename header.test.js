@@ -341,6 +341,10 @@ t('a printable card inside .pt-siblings is "sibling_card"',
   () => eq(NAV_KIND(fakeLink(['a.printable-card[href]'], ['.pt-siblings'])), 'sibling_card'));
 t('a printable card on the hub is still "hub_card"',
   () => eq(NAV_KIND(fakeLink(['a.printable-card[href]'], [])), 'hub_card'));
+t('a related card inside .next-step is "next_step"',
+  () => eq(NAV_KIND(fakeLink(['.related-page-card'], ['.next-step'])), 'next_step'));
+t('a related card elsewhere is still "related_card"',
+  () => eq(NAV_KIND(fakeLink(['.related-page-card'], [])), 'related_card'));
 t('an A-Z strip link inside .pt-siblings stays "az_strip"',
   () => eq(NAV_KIND(fakeLink(['.pt-az-link'], ['.pt-siblings'])), 'az_strip'));
 

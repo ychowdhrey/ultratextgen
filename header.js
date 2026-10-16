@@ -1337,6 +1337,9 @@
     if (link.matches(".pt-az-link")) return "az_strip";
     if (link.matches("a[rel=\"next\"], a[rel=\"prev\"]")) return link.getAttribute("rel");
     if (link.matches(".pt-chip")) return "chip";
+    // The "Next step" block reuses the related card, so it is told apart by
+    // its section; otherwise its clicks would merge into the related row.
+    if (link.closest(".next-step")) return "next_step";
     if (link.matches(".related-page-card, .related-page-card a")) return "related_card";
     // The same .printable-card, placed at the foot of a family page to name
     // its sibling printables. Without this it would count as a hub click.
