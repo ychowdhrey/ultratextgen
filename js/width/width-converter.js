@@ -173,10 +173,11 @@
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({ event: "copy_text", copy_method: "button" });
         }
-        var original = copyBtn.textContent;
+        // Only the first click of a burst reads the label.
+        if (copyBtn._copyTimer) clearTimeout(copyBtn._copyTimer); else copyBtn._copyPrev = copyBtn.textContent;
         copyBtn.textContent = copyBtn.getAttribute("data-copied-label") || "Copied!";
         copyBtn.classList.add("wc-copied");
-        setTimeout(function () { copyBtn.textContent = original; copyBtn.classList.remove("wc-copied"); }, 1400);
+        copyBtn._copyTimer = setTimeout(function () { copyBtn.textContent = copyBtn._copyPrev; copyBtn.classList.remove("wc-copied"); copyBtn._copyTimer = 0; }, 1400);
       });
     });
     render();

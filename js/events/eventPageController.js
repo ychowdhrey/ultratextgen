@@ -148,11 +148,22 @@
     return card;
   }
 
+  /* Rebuild a results grid without destroying the Auto Ads units placed inside
+     it (see clearGridKeepingAds in script.js). Falls back to a plain clear
+     where script.js is not loaded. */
+  function rebuildGrid(grid, build) {
+    var U = window.UltraTextGen;
+    if (U && U.rebuildGridKeepingAds) U.rebuildGridKeepingAds(grid, build);
+    else { grid.innerHTML = ""; build(); }
+  }
+
   function renderFonts() {
     const grid = $("#eventFontsGrid");
     if (!grid) return;
-    grid.innerHTML = "";
+    rebuildGrid(grid, function () { buildFonts(grid); });
+  }
 
+  function buildFonts(grid) {
     const input = $("#mainInput");
     const raw = input ? input.value.trim() : "";
     const text = raw || SAMPLE_TEXT;

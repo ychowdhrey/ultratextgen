@@ -185,3 +185,71 @@ are the same buttons at every width.
 ## Remaining risks
 
 Firefox/Safari behaviour is unverified here; the other latent items above remain open.
+
+## Follow-up, 2026-10-11
+
+Owner decisions and fixes after the first pass (each reproduced in a browser first;
+the cases are in `scripts/lib/interaction-round-trips.js`, red on the previous commit
+in 12 places, green now):
+
+* **One Share row per section, built from every group in it** (owner chose this over a
+  second row). `decorateSections` in `symbol-explorer.js` keeps its one-row-per-parent
+  guard but now reads every `.flag-rows` tile under that parent: 8 of 16 items before,
+  16 of 16 after, on `library/color-emoji-combos`.
+* **A copy confirmation restores the label it found.** Seven copy buttons saved the
+  button's current text as the one to restore, so a second click inside the window saved
+  "Copied" and the label stuck. Only the first click of a burst now reads the label
+  (huruf, printables, counter, width, runic, Korean romanizer; the dead bubble explorer
+  and the orphaned counter locale forks were left alone).
+* **Huruf confirmation survives the redraw.** The "Tersalin!" label was written to a
+  button the redraw had already replaced. It now goes on the row that exists afterwards,
+  and focus stays on it. The huruf explorer is loaded by exactly one page
+  (`id/huruf-keren-a-sampai-z`); the printables letter picker copies without a redraw.
+* **Ads survive a grid rebuild.** `rebuildGridKeepingAds` (in `header.js`, because the
+  Korean romanizer does not load `script.js`) keeps every auto-placed ad node where it
+  is and re-seats the new cards around it. Applied to the tattoo, scrolling-text,
+  decorator, repeat, events-fonts, cursive and vertical grids and the Korean romanizer.
+  Measured with a stand-in carrying the class Auto Ads uses: the unit was destroyed on
+  all eight before, and survives in the same slot now.
+
+Not fixed, listed so they are not rediscovered: the bio-font "all categories" grid
+rebuilds on every keystroke and may also hold an ad (unmeasured); `emoji-tool`
+breakdown and chips, the counter fix bar and the game-name checker also rebuild
+containers with `innerHTML` but are small and have no measured ad placement.
+
+### Keyboard and assistive-technology fixes (same day)
+
+* **The preview dialog holds focus.** While it is open everything else in `<body>` is
+  `inert` (only what it set is undone on close, so the already-inert mini header stays
+  as it was), Tab and Shift+Tab wrap inside it, and focus returns to the Preview
+  button. Before: Tab #7 reached the page body, then the logo, search box and header
+  buttons behind the dimmed overlay.
+* **A name card's own Copy button keeps its key.** The card's keydown handler skipped
+  nothing, so Enter on the nested Copy loaded the name instead of copying (the click
+  handler already skipped `.copy-btn`).
+* **Active state reaches assistive technology.** `header.js` mirrors `.active`,
+  `.is-active`, `.selected` and `.is-selected` into `aria-pressed` (`aria-selected` for
+  `role=tab`, `aria-checked` for `role=radio`) after each interaction, plus
+  `aria-expanded` on FAQ questions and the More/Less button, and `aria-pressed` on the
+  dark-mode button. A group is the sibling buttons sharing a class once state and
+  layout classes are removed, and only a group with something active is touched, so a
+  row of Copy buttons is never marked. A control that carries its own attribute is left
+  to its owner. This is a mirror of the class, which stays the source of truth; moving
+  each widget to set the attribute itself is the cleaner end state and was not done
+  across ~50 sites.
+
+### Three loose ends (2026-10-12)
+
+* **Zodiac strings in `locale_translation`.** Not a defect on this branch: the gate
+  compared against a stale local `origin/main`, and main already carried the
+  translations of the two minor-aspect labels on the `id` and `nl` zodiac pages.
+  Merging main in cleared it; nothing was translated or ledgered here.
+* **Tag-studio copies no longer record typed text.** Its own Copy buttons, the share
+  link and the rare-tag and live chips all copied through the default `symbol_tile`
+  method, which is allow-listed as catalogue content, so the visitor's exact tag
+  reached `copy_item`. They now name `tag_studio` (a tile via `data-copy-method`,
+  honoured by `copySymbol`), which is not catalogue content: `copy_item` is cleared and
+  `copy_item_group` is sent. `header.test.js` and the round-trip suite assert it.
+* **Bio-font "all categories" grid keeps a placed ad** the same way the other
+  per-keystroke grids now do (18 pages). Whether Auto Ads actually places a unit inside
+  that grid is still unmeasured; this stops it from being destroyed if it does.
