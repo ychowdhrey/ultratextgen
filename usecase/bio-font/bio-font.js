@@ -21,7 +21,7 @@
     all:       { label: "All platforms", limit: 500, note: "Unicode fonts and symbols work anywhere text is supported — bios, usernames, captions and more. Always paste-test in the field before saving." },
     instagram: { label: "Instagram bio",  limit: 150, note: "Instagram bios support most Unicode fonts and emoji. A few characters are blocked in usernames specifically — paste-test before saving." },
     tiktok:    { label: "TikTok bio",      limit: 80,  note: "TikTok bios render Unicode fonts well. The field is short — only 80 characters — so style a key phrase, not everything." },
-    discord:   { label: "Discord About Me", limit: 190, note: "Discord “About Me” supports full Unicode — styled fonts, symbols and emoji all work in bios, nicknames and server names." },
+    discord:   { label: "Discord About Me", limit: 300, note: "Discord “About Me” supports full Unicode — styled fonts, symbols and emoji all work in bios, nicknames and server names." },
     x:         { label: "X (Twitter) bio", limit: 160, note: "X supports Unicode in both your bio and display name. Bold or script styles help a personal brand stand out." },
     tinder:    { label: "Tinder About me", limit: 500, note: "Tinder has no native font option, so Unicode is the only way to style your profile. Style your name or one key line so it stays readable." },
     whatsapp:  { label: "WhatsApp About", limit: 139, note: "WhatsApp's About field supports Unicode fonts and emoji. It's short — 139 characters — so style your name or one short line, not a paragraph." },

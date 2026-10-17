@@ -46,7 +46,7 @@
       placeholder: "Wumpus"
     },
     "bio": {
-      limit: 190,
+      limit: 300,
       guidance:
         "Your About Me. Supports Unicode characters and emoji. Only the first line shows in profile popouts.",
       previewType: "bio",
