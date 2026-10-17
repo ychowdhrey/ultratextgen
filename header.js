@@ -1330,26 +1330,42 @@
      whether a visitor who lands on a hub or a per-letter page ever reaches
      a second printable, because nothing recorded the click. Only the
      printables' own link surfaces are watched (hub cards, sibling cards,
-     the A-Z strip, prev/next, chips, related cards); header nav and footer are the site's
-     shared chrome and stay under cta_click / plain page_view. */
-  var PRINTABLE_NAV_SELECTOR = ".printable-card a[href], a.printable-card[href], .pt-az-link[href], a[rel=\"next\"][href], a[rel=\"prev\"][href], .pt-chip[href], .related-page-card a[href], a.related-page-card[href]";
+     the A-Z strip, prev/next, chips, related cards, the "same word, another
+     sheet" row); header nav and footer are the site's
+     shared chrome and stay under cta_click / plain page_view. The row's links
+     carry the typed name in ?name=, so their href is recorded without the
+     query: the event says which sheet was opened, never for whom. */
+  var PRINTABLE_NAV_SELECTOR = ".printable-card a[href], a.printable-card[href], .pt-az-link[href], a[rel=\"next\"][href], a[rel=\"prev\"][href], .pt-chip[href], .related-page-card a[href], a.related-page-card[href], a.pt-carry-link[href]";
   function printableNavKind(link) {
+    // The "same word, another sheet" row. Its href carries the typed name.
+    if (link.matches(".pt-carry-link")) return "name_carry";
     if (link.matches(".pt-az-link")) return "az_strip";
     if (link.matches("a[rel=\"next\"], a[rel=\"prev\"]")) return link.getAttribute("rel");
     if (link.matches(".pt-chip")) return "chip";
+    // The "Next step" block reuses the related card, so it is told apart by
+    // its section; otherwise its clicks would merge into the related row.
+    if (link.closest(".next-step")) return "next_step";
     if (link.matches(".related-page-card, .related-page-card a")) return "related_card";
     // The same .printable-card, placed at the foot of a family page to name
     // its sibling printables. Without this it would count as a hub click.
     if (link.closest(".pt-siblings")) return "sibling_card";
     return "hub_card";
   }
+  /* The printables directory in each language, as the site actually names it.
+     The list used to carry "druckvorlagen", which no page has ever used, and it
+     missed five real ones, so printable_nav never fired on the German, Italian,
+     Japanese, Dutch or Turkish printables. header.test.js checks it against
+     every page that loads a js/printables/ script. */
+  const PRINTABLES_PATH_RE = /\/(printables|zum-ausdrucken|imprimibles|imprimables|da-stampare|purinto|om-uit-te-printen|do-druku|imprimiveis|yazdirilabilir)\//;
   function initializePrintableNavTracking() {
-    if (!/\/(printables|imprimibles|druckvorlagen|do-druku|imprimables|imprimiveis)\//.test(window.location.pathname || "")) return;
+    if (!PRINTABLES_PATH_RE.test(window.location.pathname || "")) return;
     document.addEventListener("click", function (evt) {
       var link = evt.target && evt.target.closest && evt.target.closest(PRINTABLE_NAV_SELECTOR);
       if (!link) return;
       var href = link.getAttribute("href");
       if (!href || href.charAt(0) === "#") return;
+      // A carry link's query is the visitor's typed name: record the page only.
+      if (link.matches(".pt-carry-link")) href = href.split("?")[0];
       trackPrintableEvent("printable_nav", {
         printable_nav_kind: printableNavKind(link),
         printable_nav_href: href

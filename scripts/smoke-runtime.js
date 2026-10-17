@@ -882,6 +882,38 @@ async function main() {
     await ctx.close();
   }
 
+  // 20b. Title case on a letter-row page runs on the words, then splits the
+  // letters. It ran after the split, so every letter was a word: "ijsje"
+  // printed I J S J E, the same as upper case.
+  console.log('\n/nl/om-uit-te-printen/letters-overtrekken/ (title case on a letter row keeps the IJ digraph)');
+  {
+    const { ctx, page, errors } = await open('/nl/om-uit-te-printen/letters-overtrekken/', 'desktop');
+    await page.selectOption('#pt-gen-case', 'title');
+    await page.fill('#pt-gen-input', 'ijsje');
+    await page.waitForTimeout(500);
+    const texts = await page.evaluate(() => Array.from(document.querySelectorAll('#pt-gen-preview svg text')).map((n) => n.textContent));
+    check('title case prints "I J s j e"', texts.includes('I J s j e'), texts.filter(Boolean).slice(0, 2).join(' | '));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 21. ß and ẞ on a dotted row. Neither has a print route, so both used to be
+  // drawn as a stroked contour: a dense double ring of dots between clean
+  // dotted letters. They now take a centreline from their own glyph, which
+  // loads centreline.js on demand on pages that do not ship it.
+  console.log('\n/de/zum-ausdrucken/schreibuebungen/ (ß traces on a centreline, not a contour)');
+  {
+    const { ctx, page, errors } = await open('/de/zum-ausdrucken/schreibuebungen/', 'desktop');
+    await page.fill('#pt-gen-input', 'Straße ẞ');
+    await page.waitForFunction(() => !!(window.UltraTextGen && window.UltraTextGen.centreline), null, { timeout: 10000 }).catch(() => {});
+    await page.waitForTimeout(800);
+    const contour = await page.locator('#pt-gen-preview .pt-trace-contour').count();
+    const rows = await page.locator('#pt-gen-preview .pt-trace-route').count();
+    check('"Straße ẞ" dotted rows draw no contour glyph', rows > 0 && contour === 0, `${contour} contour glyphs in ${rows} routed rows`);
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
   await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });

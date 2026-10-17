@@ -6503,7 +6503,13 @@
 
      Runtime rather than static markup, unlike the /learn/ bridge: the href
      carries a word that only exists once someone types it, so there is no
-     crawlable link to lose. */
+     crawlable link to lose.
+
+     Revised 2026-10-16: the English-only bail was right for English
+     destinations, and the locale pages now link to their own name sheets
+     instead (printPrefs.js NAME_KIT). This list is what the frozen
+     block-letters page still renders; every other page reads
+     printPrefs.js NAME_SHEETS_EN, which adds the monogram and label tools. */
   const CARRY_TOOLS = [
     "/printables/name-tracing/", "/printables/cursive-name/",
     "/printables/handwriting-worksheet-generator/",
@@ -6728,7 +6734,27 @@
     updateSheetCost();
   }
 
+  /* The name kit (2026-10-16): the row now reaches every locale that has these
+     sheets, plus the monogram and name-label tools, through printPrefs.js's
+     mountNameCarry(), which the monogram and label engines call too. Each
+     locale links only to its own pages, so the internal-linking rule that
+     kept this English-only still holds. The frozen block-letters page keeps
+     the row it had, built by the original code below with the original list,
+     so its markup does not change while the freeze is on. */
   function mountCarryRow() {
+    if (BATCH_FROZEN) return mountCarryRowFrozen();
+    const input = primaryInput();
+    if (!input || $("#pt-carry-row") || !PP || !PP.mountNameCarry) return null;
+    return PP.mountNameCarry({
+      word: () => input.value,
+      watch: [input],
+      place: (row) => {
+        const host = input.closest(".pt-field, .pt-name-field") || input.parentElement;
+        (host.closest("section") || host).appendChild(row);
+      }
+    });
+  }
+  function mountCarryRowFrozen() {
     const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
     if (lang !== "en") return null;
     const input = primaryInput();
@@ -7076,8 +7102,8 @@
      opts.spacing, and overwriting either would silently undo a chosen
      letterform's own tracking.
 
-     English only, the same bail mountCarryRow and mountLeftHanded already
-     take. "Letter spacing" is a new string and the site's own corpus does not
+     English only, the same bail mountLeftHanded takes (and mountCarryRow
+     took until it gained locale strings on 2026-10-16). "Letter spacing" is a new string and the site's own corpus does not
      attest a translation of it in six of the seven other locales (de, it and
      pl have none at all; fr, es and pt have one page each), so there is
      nothing to harvest and nothing here will be invented. */
@@ -7148,8 +7174,8 @@
     host.insertAdjacentElement("afterend", field);
   }
 
-  /* OUT-15's control. ENGLISH ONLY, the same bail mountCarryRow and
-     mountLeftHanded take: "bridged stencil" is a new string and neither the
+  /* OUT-15's control. ENGLISH ONLY, the same bail mountLeftHanded
+     takes: "bridged stencil" is a new string and neither the
      engine's I18N table nor locales/*.json carries a word for a stencil
      bridge in any of the eight, so the four locale siblings keep today's
      behaviour until a native reading exists. Per the owner's decision of
@@ -7833,7 +7859,18 @@
      centreline strokes, so the row stays one rendering. A character with no
      base route (ß, ł, ø, æ) is the only thing left as a contour; the result's
      `contour` list says which, and the callers draw just those glyphs the old
-     way. Null only when nothing in the word is routable. */
+     way. Null only when nothing in the word is routable.
+
+     ß (2026-10-16). A contour on a dotted rung is a dot on both edges of
+     every stroke, so on the German sheets "Straße" printed five clean dotted
+     letters around a dense double ring of dots where the ß should be, and
+     ẞ did the same. A character with no route now takes its centreline from
+     its own glyph (glyphCharStrokes, the same thinning a joined script uses),
+     so it prints as one dotted line like its neighbours. Only when that
+     cannot run (centreline.js not loaded yet, the face not loaded yet) does
+     the character fall back to the contour, and the module is fetched so the
+     next paint has it. A word with only routed letters never reaches this,
+     so A-Z, a-z and 0-9 rows are unchanged. */
   function traceRoutePaths(word, fontPx, spacingPx, baselineY, totalW) {
     if (!window.UTG_STROKE_DIRECTION_DATA) return null;
     const cells = wordCellCentres(word, fontPx, spacingPx, totalW);
@@ -7843,13 +7880,101 @@
       const c = cells[i];
       if (/\s/.test(c.ch)) continue;
       const d = fittedStrokesFor(c.ch, fontPx, c.cx, baselineY, "advance") ||
-        decomposedStrokesFor(c.ch, fontPx, c.cx, baselineY);
+        decomposedStrokesFor(c.ch, fontPx, c.cx, baselineY) ||
+        glyphCharStrokes(c.ch, fontPx, c.cx, baselineY);
       if (!d) { contour.push({ ch: c.ch, cx: c.cx }); continue; }
       for (let k = 0; k < d.length; k++) out.push(d[k]);
     }
     if (!out.length) return null;
     out.contour = contour;
     return out;
+  }
+
+  /* One character's centreline from its own glyph, centred on its advance
+     cell like the contour glyph it replaces. Strokes are cached per (face,
+     size, character) relative to the cell centre and the baseline, so the
+     preview, the sheet and the PNG (which pass different sizes) each trace
+     once. */
+  const CHAR_CENTRELINE_CACHE = new Map();
+  let charCentrelineLoading = false;
+  function loadCentrelineModule() {
+    if (charCentrelineLoading || (window.UltraTextGen && window.UltraTextGen.centreline)) return;
+    if (document.querySelector('script[src="/js/printables/centreline.js"]')) return;
+    charCentrelineLoading = true;
+    const sc = document.createElement("script");
+    sc.src = "/js/printables/centreline.js";
+    sc.async = true;
+    sc.onload = () => {
+      CHAR_CENTRELINE_CACHE.clear();
+      withFont(repaintTraceRows);
+    };
+    sc.onerror = () => console.warn("[printables] js/printables/centreline.js failed to load; characters with no writing route keep the contour.");
+    document.head.appendChild(sc);
+  }
+  function repaintTraceRows() {
+    if (el.nameInput || el.namePreview) renderNamePreview();
+    if (el.genInput || el.genPreview) renderGenPreview();
+  }
+  /* A face split by unicode-range loads a subset only when text needs it, so
+     ẞ (latin-ext) can still be missing when its row is drawn. Ask for that
+     subset once per character and repaint when it arrives; until then the
+     row shows the contour. */
+  const CHAR_FONT_REQUESTED = new Set();
+  function requestCharFont(spec, ch) {
+    const key = spec + "\u0001" + ch;
+    if (CHAR_FONT_REQUESTED.has(key) || !document.fonts || !document.fonts.load) return;
+    CHAR_FONT_REQUESTED.add(key);
+    document.fonts.load(spec, ch).then(() => {
+      if (document.fonts.check(spec, ch)) repaintTraceRows();
+    }).catch(() => {});
+  }
+  function glyphCharStrokes(ch, fontPx, cx, baselineY) {
+    const CL = window.UltraTextGen && window.UltraTextGen.centreline;
+    if (!CL) { loadCentrelineModule(); return null; }
+    if (!(fontPx > 0)) return null;
+    const primary = FONT_WEIGHT + " " + fontPx + "px \"" + primaryFontName() + "\"";
+    if (document.fonts && document.fonts.check && !document.fonts.check(primary, ch)) {
+      requestCharFont(primary, ch);
+      return null;
+    }
+    const key = [FONT_WEIGHT, FONT, fontPx, ch].join("\u0001");
+    let rel = CHAR_CENTRELINE_CACHE.get(key);
+    if (rel === undefined) {
+      rel = null;
+      const S = CENTRELINE_SCALE;
+      const probe = document.createElement("canvas").getContext("2d");
+      if (probe) {
+        probe.font = FONT_WEIGHT + " " + (fontPx * S) + "px " + FONT;
+        const m = probe.measureText(ch);
+        const asc = Math.ceil(m.actualBoundingBoxAscent || fontPx * S);
+        const desc = Math.ceil(m.actualBoundingBoxDescent || 0);
+        const half = Math.ceil(Math.max(m.width, (m.actualBoundingBoxLeft || 0) + (m.actualBoundingBoxRight || 0)) / 2);
+        const pad = Math.ceil(fontPx * 0.1 * S);
+        const canvas = document.createElement("canvas");
+        canvas.width = (half + pad) * 2;
+        canvas.height = asc + desc + pad * 2;
+        const g = canvas.getContext("2d");
+        if (g && canvas.width > 0 && canvas.height > 0) {
+          g.font = probe.font;
+          g.textAlign = "center";
+          g.textBaseline = "alphabetic";
+          g.fillStyle = "#000000";
+          const ox = canvas.width / 2, oy = pad + asc;
+          g.fillText(ch, ox, oy);
+          const data = g.getImageData(0, 0, canvas.width, canvas.height).data;
+          const mask = new Uint8Array(canvas.width * canvas.height);
+          for (let i = 0, j = 0; i < data.length; i += 4, j++) if (data[i + 3] > 128) mask[j] = 1;
+          const res = CL.centrelines(mask, canvas.width, canvas.height);
+          if (res && res.strokes && res.strokes.length) {
+            rel = res.strokes.map((P) => P.map((p) => [(p[0] - ox) / S, (p[1] - oy) / S]));
+          }
+        }
+      }
+      if (CHAR_CENTRELINE_CACHE.size > 200) CHAR_CENTRELINE_CACHE.clear();
+      CHAR_CENTRELINE_CACHE.set(key, rel);
+    }
+    if (!rel) return null;
+    return rel.map((P) => "M" + P.map((p) => (+(p[0] + cx).toFixed(2)) + "," + (+(p[1] + baselineY).toFixed(2))).join(" L"));
   }
 
   /* A joined school script traces its OWN centreline, not the print route.
@@ -8467,6 +8592,15 @@
   function genValue() {
     const raw = el.genInput ? el.genInput.value : "";
     const v = (raw && raw.trim()) ? raw.trim().slice(0, GEN_MAX_CHARS) : GEN_DEMO;
+    /* A letter-row page splits the text into single letters first, so title
+       case read every letter as a word and printed "Emma" as E M M A, and
+       Dutch "ijsje" as I J S J E. On those pages title case now runs on the
+       words as typed and the letters are split afterwards: E m m a, and
+       I J s j e with the IJ digraph kept together. The other modes give the
+       same letters in either order and are left as they were. */
+    if (CFG.genLetters === true && el.genCase && el.genCase.value === "title") {
+      return lettersOnly(titleCase(v));
+    }
     return applyCase(CFG.genLetters === true ? lettersOnly(v) : v);
   }
   /* CFG.genLetters -- the builder on /printables/letter-tracing/ practises

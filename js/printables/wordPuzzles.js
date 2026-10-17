@@ -130,28 +130,75 @@
       .join("");
   }
 
+  /* One square per user-perceived character, as in gridLetters() in
+     wordSearch.js, which this must match: Hindi कि and Thai กิ are one square
+     each with their vowel sign or mark, not a bare consonant with the mark
+     thrown away. Intl.Segmenter where it exists, else a base character plus
+     the marks after it. */
+  const SEGMENTER = (typeof Intl !== "undefined" && typeof Intl.Segmenter === "function")
+    ? new Intl.Segmenter(undefined, { granularity: "grapheme" })
+    : null;
+  const CLUSTER_RE = /\P{M}\p{M}*|\p{M}+/gu;
+  const NOT_CELL_RE = /[^\p{L}\p{M}\p{N}]/gu;
+
+  function clusters(text) {
+    const s = String(text).normalize("NFC");
+    if (SEGMENTER) return Array.from(SEGMENTER.segment(s), (x) => x.segment);
+    return s.match(CLUSTER_RE) || [];
+  }
+
   function puzzleLetters(text, fold) {
-    return Array.from(fold ? foldMarks(text, fold) : String(text))
-      .filter((ch) => LETTER_RE.test(ch))
-      .map(upperOne);
+    const out = [];
+    for (const g of clusters(fold ? foldMarks(text, fold) : String(text))) {
+      const cell = g.replace(NOT_CELL_RE, "");
+      if (LETTER_RE.test(cell)) out.push(upperOne(cell));
+    }
+    return out;
+  }
+
+  /* A pasted list arrives numbered, bulleted or bold ("1. **Apple** - a red
+     fruit"), the way a chat assistant writes one. The marks are not the word.
+     Same rules as entriesFromLine() in wordSearch.js: a dash separates only
+     with a space either side, and a colon or dash followed by a short list
+     ("Fruits: apple, pear, plum") is a heading over the items. */
+  const LIST_MARK_RE = /^\s*(?:[-*+\u2022\u2023\u2043\u25AA\u25AB\u25CF\u25CB\u25A0\u25A1\u25BA\u25B8\u2013\u2014\u00B7]+\s*|\(?\d{1,3}[.)\]](?=\s|\p{L})\s*|\d{1,3}\s+[-\u2013\u2014:]\s+)/u;
+  const TAIL_RE = /\s+[-\u2013\u2014]\s+|\s*[:=]\s*/u;
+  const EMPHASIS_RE = /^[*_`"]+|[*_`"]+$/g;
+
+  function unmark(text) {
+    return String(text).replace(LIST_MARK_RE, "").replace(EMPHASIS_RE, "").trim();
+  }
+
+  function isShortList(text) {
+    const items = String(text).split(/[,;]/).map((x) => x.trim()).filter(Boolean);
+    return items.length >= 2 && items.every((x) => x.split(/\s+/).length <= 2);
+  }
+
+  function entriesFromLine(line) {
+    const bare = unmark(line);
+    if (!bare) return [];
+    const m = TAIL_RE.exec(bare);
+    let body = bare;
+    if (m && m.index > 0) {
+      const tail = bare.slice(m.index + m[0].length);
+      body = isShortList(tail) ? tail : bare.slice(0, m.index);
+    }
+    return body.split(/[,;]+/).map(unmark).filter(Boolean);
   }
 
   /* A crossword needs clues, and a teacher types them on the same line as the
-     word. Split on the FIRST "=" or the first ":", so "capital = Paris is the
+     word. Split on the FIRST "=", ":" or spaced dash, so "capital = Paris is the
      ___ of France" and "capital: the ___ of France" both work and a clue may
      then contain anything, commas included. That is also why clue-bearing
      input splits on newlines only: a comma is punctuation inside a clue, not a
-     separator between entries. */
+     separator between entries. A dash with a space either side ("Apple - a
+     red fruit") separates too, since that is how a pasted vocabulary list
+     writes it; leading numbering and bullets are dropped first. */
   function splitEntry(line) {
-    const s = String(line);
-    const eq = s.indexOf("=");
-    const co = s.indexOf(":");
-    let at = -1;
-    if (eq >= 0 && co >= 0) at = Math.min(eq, co);
-    else if (eq >= 0) at = eq;
-    else if (co >= 0) at = co;
-    if (at < 0) return { display: s.trim(), clue: "" };
-    return { display: s.slice(0, at).trim(), clue: s.slice(at + 1).trim() };
+    const s = String(line).replace(LIST_MARK_RE, "");
+    const m = TAIL_RE.exec(s);
+    if (!m || m.index === 0) return { display: unmark(s), clue: "" };
+    return { display: unmark(s.slice(0, m.index)), clue: s.slice(m.index + m[0].length).trim() };
   }
 
   /* Accepts a textarea's value or an array. Keeps the entry's own spelling for
@@ -160,9 +207,11 @@
      With `clues` off, commas and semicolons separate entries too, which is how
      a scramble list is usually pasted. */
   function normalizeWords(input, clues, fold) {
+    const text = String(input == null ? "" : input);
     const raw = Array.isArray(input)
       ? input
-      : String(input == null ? "" : input).split(clues ? /[\r\n]+/ : /[\r\n,;]+/);
+      : (clues ? text.split(/[\r\n]+/)
+        : text.split(/[\r\n]+/).reduce((all, line) => all.concat(entriesFromLine(line)), []));
     const seen = Object.create(null);
     const out = [];
     for (const entry of raw) {
@@ -427,7 +476,8 @@
       found[run] = true;
       entries.push({
         number: s.number, dir: s.dir, row: s.row, col: s.col,
-        length: run.length, display: word.display, letters: run, clue: word.clue || ""
+        // Squares, not string length: a Hindi square such as कि is two code units.
+        length: word.letters.length, display: word.display, letters: run, clue: word.clue || ""
       });
     }
     entries.sort((a, b) => (a.dir === b.dir ? a.number - b.number : (a.dir === ACROSS ? -1 : 1)));

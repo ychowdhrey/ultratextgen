@@ -119,9 +119,30 @@
      the zero-width joiner, which holds emoji and Indic and Arabic-script clusters
      together; and U+2800, which is the word space inside braille text, so it goes
      only from text that holds no other braille cell. Spaces (NBSP, thin space)
-     are not removed here: cleanHidden() turns them into normal spaces. */
+     are not removed here: cleanHidden() turns them into normal spaces.
+     Also kept, by keepsMeaning() below: a zero-width non-joiner between two
+     letters of a script that spells with it (Persian, Hindi, Bengali), and the
+     left-to-right, right-to-left and Arabic letter marks in text that holds
+     Arabic or Hebrew letters, where they fix the order of numbers and
+     punctuation. In Latin text all of these are noise and still go. */
   let invisibleRe = null;
   const BRAILLE_CELL_RE = /[\u2801-\u28FF]/;
+  const RTL_LETTER_RE = /(?=\p{L})[\p{Script=Arabic}\p{Script=Hebrew}\p{Script=Syriac}\p{Script=Thaana}\p{Script=Nko}]/u;
+  const JOINING_LETTER_RE = /[\p{L}\p{M}]/u;
+  const LATIN_RE = /\p{Script=Latin}/u;
+
+  function isScriptLetter(ch) {
+    return !!ch && JOINING_LETTER_RE.test(ch) && !LATIN_RE.test(ch);
+  }
+
+  /** True when the hidden character at chars[i] is part of the writing, not
+      noise: ZWNJ inside a non-Latin word, or a bidi mark in right-to-left text. */
+  function keepsMeaning(chars, i, hasRtl) {
+    const cp = chars[i].codePointAt(0);
+    if (cp === 0x200C) return isScriptLetter(chars[i - 1]) && isScriptLetter(chars[i + 1]);
+    if (cp === 0x200E || cp === 0x200F || cp === 0x061C) return hasRtl;
+    return false;
+  }
 
   function invisibleRegex() {
     if (!invisibleRe) {
@@ -134,8 +155,19 @@
 
   function stripInvisible(str) {
     const s = str || "";
+    const re = invisibleRegex();
+    re.lastIndex = 0;
+    if (!re.test(s)) return s;
     const keepBlank = BRAILLE_CELL_RE.test(s);
-    return s.replace(invisibleRegex(), (m) => (keepBlank && m === "\u2800" ? m : ""));
+    const hasRtl = RTL_LETTER_RE.test(s);
+    const chars = Array.from(s);
+    let out = "";
+    for (let i = 0; i < chars.length; i++) {
+      const ch = chars[i];
+      re.lastIndex = 0;
+      if (!re.test(ch) || (keepBlank && ch === "\u2800") || keepsMeaning(chars, i, hasRtl)) out += ch;
+    }
+    return out;
   }
 
   function countInvisible(str) {
@@ -327,7 +359,9 @@
        invisible — renders as nothing; cleaned by removing it
        direction — a bidi control; cleaned by removing it
      A zero-width joiner between two emoji is part of the emoji (family,
-     profession sequences) and is never listed or removed. */
+     profession sequences) and is never listed or removed. Nor is a character
+     keepsMeaning() says belongs to the writing (ZWNJ in Persian, a bidi mark
+     in Arabic or Hebrew text). */
   const HIDDEN = {
     0x00A0: ["No-Break Space", "space"],
     0x00AD: ["Soft Hyphen", "invisible"],
@@ -387,6 +421,7 @@
   function listHidden(text) {
     const chars = Array.from(text || "");
     const out = [];
+    const hasRtl = RTL_LETTER_RE.test(text || "");
     let line = 1, col = 0;
     for (let i = 0; i < chars.length; i++) {
       const ch = chars[i];
@@ -397,6 +432,7 @@
       if (!hit) continue;
       if (cp === 0x200D && i > 0 && i < chars.length - 1 &&
           PICTO_RE.test(chars[i - 1]) && PICTO_RE.test(chars[i + 1])) continue;
+      if (keepsMeaning(chars, i, hasRtl)) continue;
       out.push({ cp: cp, code: hexCp(cp), name: hit[0], kind: hit[1], index: i + 1, line: line, col: col });
     }
     return out;

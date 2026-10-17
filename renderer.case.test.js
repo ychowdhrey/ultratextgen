@@ -28,6 +28,8 @@
  *   - The ligature letters ß æ œ are written out as the two letters they stand
  *     for in a styled map (Straße is Strasse, not Strase), and the one-piece
  *     letters with no second letter (ł đ ø) still fold to their base letter.
+ *   - The superscript and subscript styles raise or lower + - = ( ) with the
+ *     digits (Ca2+ is ᶜᵃ²⁺), and no other style's signs change.
  */
 
 const assert = require('assert');
@@ -188,6 +190,25 @@ expectStyle('Reverse Order Only', 'e\u0301a', 'ae\u0301');
       failures += 1; console.error(`FAIL ${name}: ${JSON.stringify(input)} -> ${JSON.stringify(out)}`);
     }
   });
+});
+
+// --- Formula signs on the superscript and subscript styles -----------------------
+// Ca2+ used to come out with a bare + beside a raised or lowered 2.
+expectStyle('Ultra Small Superscript Style', 'Ca2+', '\u1D9C\u1D43\u00B2\u207A');
+expectStyle('Ultra Small Superscript Style', 'x-1', '\u02E3\u207B\u00B9');
+expectStyle('Ultra Small Superscript Style', '(1+2)=3', '\u207D\u00B9\u207A\u00B2\u207E\u207C\u00B3');
+expectStyle('Ultra Tiny Subscript', 'Ca2+', 'C\u2090\u2082\u208A');
+expectStyle('Ultra Tiny Subscript', 'SO4 2\u2212', 'SO\u2084 \u2082\u208B');
+expectStyle('Ultra Tiny Subscript', 'H2O(l)', 'H\u2082O\u208D\u2097\u208E');
+// Every other style keeps its signs exactly as typed.
+Object.keys(styles).forEach(name => {
+  const st = styles[name];
+  if (!st || st.signs || st.type !== 'map') return;
+  const out = render('+-=()', st);
+  checks += 1;
+  if (/[\u207A-\u207E\u208A-\u208E]/.test(out)) {
+    failures += 1; console.error(`FAIL ${name}: signs changed -> ${JSON.stringify(out)}`);
+  }
 });
 
 if (failures) {

@@ -920,8 +920,12 @@ const decorations = window.UTG_DECORATIONS
   // Compact per-card trust signal built from the style's own `platforms`
   // data plus the device glyph probe. Tooltips carry the honest caveats no
   // competitor surfaces (platform filters, screen readers, tofu boxes).
-  function safetyPillHtml(name, style) {
+  function safetyPillHtml(name, style, untouched) {
     if (!style) return "";
+    // The style left the text exactly as typed (Bengali, Tamil or any script
+    // it has no letters for): nothing on the card was styled, so a verdict on
+    // the style's characters would describe output that is not there.
+    if (untouched) return "";
     const glyph = sampleGlyph(style);
     if (glyph && !deviceRendersGlyph(glyph)) {
       const title = uiText("safetyBadges.deviceWarningTitle", "Your device's fonts can't display this style — it may show as boxes (□). It can still look fine on other devices.");
@@ -952,7 +956,9 @@ const decorations = window.UTG_DECORATIONS
     return "";
   }
 
-  function createStyleCard(name, convertedText, decoratedText, style, isDemo) {
+  // `untouched`: the style returned the text as typed, so the card carries no
+  // styled characters to make a claim about.
+  function createStyleCard(name, convertedText, decoratedText, style, isDemo, untouched) {
     const card = document.createElement("div");
     card.className = "style-card";
 
@@ -976,13 +982,20 @@ const decorations = window.UTG_DECORATIONS
     const shareAria = uiText("shareResult.ariaLabel", "Share {style} result").replace("{style}", name);
     const shareId = (style && style.slug) || "";
 
+    // A style's note is its English one unless the locale file carries
+    // ui.styleNotes.<slug>: on /de/gross-und-kleinschreibung/ every card
+    // explained itself in English under German prose. Locales without the
+    // key keep the English note, exactly as before.
+    const localNote = style && style.slug ? uiText("styleNotes." + style.slug, null) : null;
+    const noteHtml = localNote ? escapeHtml(localNote) : (style && style.note) || "";
+
     card.innerHTML = `
       <div class="style-info">
         <p class="style-name">${name}</p>
-         ${style?.note ? `<p class="style-note">${style.note}</p>` : ""}
+         ${noteHtml ? `<p class="style-note">${noteHtml}</p>` : ""}
         <p class="style-preview ${!convertedText ? "placeholder" : ""}">${convertedText ? escapeHtml(convertedText) : STR.empty}</p>
         ${decoHtml}
-        ${safetyPillHtml(name, style)}
+        ${safetyPillHtml(name, style, !isDemo && !!untouched)}
         ${platformChipsHtml(style)}
       </div>
       <div class="style-actions-stack">
@@ -1649,12 +1662,13 @@ const decorations = window.UTG_DECORATIONS
 
     const inputText = el.mainInput ? el.mainInput.value : "";
     const isDemo = !inputText;
+    const asTyped = applyFormatMarks(inputText || DEMO_TEXT);
     const cards = [];
     valid.forEach((name) => {
       const style = stylesRegistry[name];
       const converted = applyFormatMarks(applyScope(inputText || DEMO_TEXT, style));
       const decorated = converted ? applyDecoration(converted) : "";
-      cards.push(createStyleCard(name, converted, selectedDecoration ? decorated : null, style, isDemo));
+      cards.push(createStyleCard(name, converted, selectedDecoration ? decorated : null, style, isDemo, converted === asTyped));
     });
     appendAroundAds(grid, keptAds, cards);
   }
@@ -1772,13 +1786,14 @@ const decorations = window.UTG_DECORATIONS
     );
 
     const isDemo = !inputText;
+    const asTyped = applyFormatMarks(inputText || DEMO_TEXT);
     let count = 0;
 
     const cards = [];
     filtered.forEach(([name, style]) => {
       const converted = applyFormatMarks(applyScope(inputText || DEMO_TEXT, style));
       const decorated = converted ? applyDecoration(converted) : "";
-      cards.push(createStyleCard(name, converted, selectedDecoration ? decorated : null, style, isDemo));
+      cards.push(createStyleCard(name, converted, selectedDecoration ? decorated : null, style, isDemo, converted === asTyped));
       count += 1;
     });
     appendAroundAds(grid, keptAds, cards);
