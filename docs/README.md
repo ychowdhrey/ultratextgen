@@ -829,6 +829,35 @@ here so they aren't lost. Update as they're closed or new ones appear.
     and cross-checked against the GitHub PR search (60 merged since
     2026-10-03); the digest in `infra-review/` was not regenerated.
 
+26. **Review of 2026-10-17 (PRs #1055-#1074, 19 merged): two lane-table
+    updates and the classifier gaps again, now on a smaller sample.** 9 of 19
+    PRs surfaced as Unclassified; none is a new content lane.
+    - **Research grew from five studies to seven.** #1065/#1066 (Study 4,
+      AI writing footprint, v1.1), #1067/#1072 (Study 5, Unicode rendering
+      support, v1.1), #1068 (Study 6, `emoji-name-drift`) and #1074 (Study 7,
+      `kaomoji-unicode-rendering-study`). The Research row above still says
+      "five studies"; the two new slugs are not listed there. Four of the six
+      Research PRs are corrections to a study shipped days earlier (v1.1),
+      the pattern `build-research-pdf.js` already warns about: the PDF and
+      the page must change in one commit.
+    - **Root-level tool page `/ai-writing-footprint-checker/`** (#1057,
+      #1065, #1066, #1067, #1074) has no `LANE_RULES` prefix, the same
+      shape as gap #11 (root-level standalone tool pages). Its engine under
+      `js/writing-footprint/` is already documented in the operational-tracks
+      table; only the page directory is unplaced.
+    - **Open classifier gaps, unchanged:** root `llms.txt` (5 PRs; gap #24),
+      `.claude/rules/` (1 PR; gap #25), `reportcard.md` (#1061; gap #25), and
+      root `renderer.case.test.js` (#1055; gap #18's root-level test file
+      shape, now a third example).
+    The fix is still `LANE_RULES` entries in `scripts/weekly_pr_digest.py`:
+    `("ai-writing-footprint-checker/", "Category pages")`,
+    `("llms.txt", "SEO / sitemap")`, `(".claude/", ...)`,
+    `("reportcard.md", "Docs")` and a root `*.test.js` rule. Not made here,
+    per this review's mandate of a small, additive diff to this file only.
+    Input note: `gh pr list` is blocked (GraphQL), so the digest was rebuilt
+    from the REST `pulls` and `pulls/<n>/files` endpoints and fed to
+    `weekly_pr_digest.py` on stdin, as in #25.
+
 ---
 
 ## Weekly infrastructure review
