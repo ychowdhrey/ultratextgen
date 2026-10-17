@@ -1,0 +1,16 @@
+{
+ "question": "Why do text-default emoji followed by U+FE0F (for example U+2764 U+FE0F) draw as black symbols in Chrome 128 but as colour emoji in Chrome 135, with the same fonts and a stack that lists DejaVu Sans before Noto Color Emoji?",
+ "method": "12 test sequences, CDP platform fonts for each node (colour = only Noto Color Emoji used); Chrome releases 113 to 155, then Chromium snapshot bisect between main positions 1356013 (130.0.6723) and 1368529 (131.0.6778)",
+ "last_bad_snapshot": 1359599,
+ "first_good_snapshot": 1359605,
+ "commit_in_window": {
+  "sha": "1d107b950528",
+  "position": "within 1359600..1359605",
+  "date": "2024-09-24",
+  "title": "Move FontVariantEmoji and FontVariationSequences to stable",
+  "mechanism": "From the build that ships this feature, an emoji variation selector (U+FE0F) makes the browser pick a font that has an emoji presentation of the character; before it, the first font in the stack with the glyph won and drew a black symbol.",
+  "caveat": "The window is six commits. This is the only one that concerns emoji or variation sequences. We did not rebuild Chromium with and without it."
+ },
+ "first_good_release": "131.0.6778.264 (last tested 130: 130.0.6723.116)",
+ "affected_items": "84 of 207 fully-qualified text-default emoji presentation sequences in the replay stack (Chrome 128: 84 split, 123 colour; Chrome 135: all 207 colour)"
+}

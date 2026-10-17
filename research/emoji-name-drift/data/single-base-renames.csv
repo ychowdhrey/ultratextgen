@@ -1,0 +1,230 @@
+emoji,formal_unicode_name,changed_in_cldr,old_name,new_name,cosmetic_only,started_identical_to_formal,pure_addition,from_cldr_29,overlap_with_formal_before,overlap_with_formal_after,moved
+😃,SMILING FACE WITH OPEN MOUTH,32,smiling face with open mouth,grinning face with big eyes,False,True,False,False,1.0,0.143,farther
+😄,SMILING FACE WITH OPEN MOUTH AND SMILING EYES,30,smiling face with open mouth and smiling eyes,smiling face with open mouth & smiling eyes,True,True,False,True,1.0,1.0,same
+😄,SMILING FACE WITH OPEN MOUTH AND SMILING EYES,32,smiling face with open mouth & smiling eyes,grinning face with smiling eyes,False,True,False,False,1.0,0.5,farther
+😁,GRINNING FACE WITH SMILING EYES,32,grinning face with smiling eyes,beaming face with smiling eyes,False,True,False,False,1.0,0.6,farther
+😆,SMILING FACE WITH OPEN MOUTH AND TIGHTLY-CLOSED EYES,30,smiling face with open mouth and tightly-closed eyes,smiling face with open mouth & closed eyes,False,True,False,True,1.0,0.857,farther
+😆,SMILING FACE WITH OPEN MOUTH AND TIGHTLY-CLOSED EYES,32,smiling face with open mouth & closed eyes,grinning squinting face,False,True,False,False,0.857,0.111,farther
+😅,SMILING FACE WITH OPEN MOUTH AND COLD SWEAT,30,smiling face with open mouth and cold sweat,smiling face with open mouth & cold sweat,True,True,False,True,1.0,1.0,same
+😅,SMILING FACE WITH OPEN MOUTH AND COLD SWEAT,32,smiling face with open mouth & cold sweat,grinning face with sweat,False,True,False,False,1.0,0.286,farther
+🥰,SMILING FACE WITH SMILING EYES AND THREE HEARTS,35,smiling face with 3 hearts,smiling face with hearts,False,False,False,False,0.5,0.6,closer
+😍,SMILING FACE WITH HEART-SHAPED EYES,30,smiling face with heart-shaped eyes,smiling face with heart-eyes,False,True,False,True,1.0,0.8,farther
+😘,FACE THROWING A KISS,30,face throwing a kiss,face blowing a kiss,False,True,False,True,1.0,0.5,farther
+😋,FACE SAVOURING DELICIOUS FOOD,32,face savouring delicious food,face savoring food,False,True,False,False,1.0,0.4,farther
+😛,FACE WITH STUCK-OUT TONGUE,32,face with stuck-out tongue,face with tongue,False,True,False,False,1.0,0.5,farther
+😜,FACE WITH STUCK-OUT TONGUE AND WINKING EYE,30,face with stuck-out tongue and winking eye,face with stuck-out tongue & winking eye,True,True,False,True,1.0,1.0,same
+😜,FACE WITH STUCK-OUT TONGUE AND WINKING EYE,32,face with stuck-out tongue & winking eye,winking face with tongue,False,True,False,False,1.0,0.5,farther
+🤪,GRINNING FACE WITH ONE LARGE AND ONE SMALL EYE,32,crazy face,zany face,False,False,False,False,0.143,0.143,same
+😝,FACE WITH STUCK-OUT TONGUE AND TIGHTLY-CLOSED EYES,30,face with stuck-out tongue and tightly-closed eyes,face with stuck-out tongue & closed eyes,False,True,False,True,1.0,0.857,farther
+😝,FACE WITH STUCK-OUT TONGUE AND TIGHTLY-CLOSED EYES,32,face with stuck-out tongue & closed eyes,squinting face with tongue,False,True,False,False,0.857,0.25,farther
+🤗,HUGGING FACE,40,hugging face,smiling face with open hands,False,True,False,False,1.0,0.2,farther
+😵,DIZZY FACE,38,dizzy face,knocked-out face,False,True,False,False,1.0,0.25,farther
+😵,DIZZY FACE,40,knocked-out face,face with crossed-out eyes,False,True,False,False,0.25,0.2,farther
+😰,FACE WITH OPEN MOUTH AND COLD SWEAT,30,face with open mouth and cold sweat,face with open mouth & cold sweat,True,True,False,True,1.0,1.0,same
+😰,FACE WITH OPEN MOUTH AND COLD SWEAT,32,face with open mouth & cold sweat,anxious face with sweat,False,True,False,False,1.0,0.333,farther
+😥,DISAPPOINTED BUT RELIEVED FACE,32,disappointed but relieved face,sad but relieved face,False,True,False,False,1.0,0.6,farther
+😓,FACE WITH COLD SWEAT,32,face with cold sweat,downcast face with sweat,False,True,False,False,1.0,0.5,farther
+😡,POUTING FACE,40,pouting face,enraged face,False,True,False,False,1.0,0.333,farther
+🤬,SERIOUS FACE WITH SYMBOLS COVERING MOUTH,32,face with symbols over mouth,face with symbols on mouth,False,False,False,False,0.5,0.6,closer
+👿,IMP,30,imp,angry face with horns,False,True,False,True,1.0,0.0,farther
+🤖,ROBOT FACE,35,robot face,robot,False,True,False,False,1.0,0.5,farther
+😺,SMILING CAT FACE WITH OPEN MOUTH,32,smiling cat face with open mouth,grinning cat face,False,True,False,False,1.0,0.333,farther
+😺,SMILING CAT FACE WITH OPEN MOUTH,35,grinning cat face,grinning cat,False,True,False,False,0.333,0.167,farther
+😸,GRINNING CAT FACE WITH SMILING EYES,35,grinning cat face with smiling eyes,grinning cat with smiling eyes,False,True,False,False,1.0,0.8,farther
+😹,CAT FACE WITH TEARS OF JOY,35,cat face with tears of joy,cat with tears of joy,False,True,False,False,1.0,0.75,farther
+😻,SMILING CAT FACE WITH HEART-SHAPED EYES,30,smiling cat face with heart-shaped eyes,smiling cat face with heart-eyes,False,True,False,True,1.0,0.833,farther
+😻,SMILING CAT FACE WITH HEART-SHAPED EYES,35,smiling cat face with heart-eyes,smiling cat with heart-eyes,False,True,False,False,0.833,0.667,farther
+😼,CAT FACE WITH WRY SMILE,35,cat face with wry smile,cat with wry smile,False,True,False,False,1.0,0.75,farther
+😽,KISSING CAT FACE WITH CLOSED EYES,32,kissing cat face with closed eyes,kissing cat face,False,True,False,False,1.0,0.6,farther
+😽,KISSING CAT FACE WITH CLOSED EYES,35,kissing cat face,kissing cat,False,True,False,False,0.6,0.4,farther
+🙀,WEARY CAT FACE,35,weary cat face,weary cat,False,True,False,False,1.0,0.667,farther
+😿,CRYING CAT FACE,35,crying cat face,crying cat,False,True,False,False,1.0,0.667,farther
+😾,POUTING CAT FACE,35,pouting cat face,pouting cat,False,True,False,False,1.0,0.667,farther
+🙈,SEE-NO-EVIL MONKEY,30,see-no-evil,see-no-evil monkey,False,False,True,True,0.75,1.0,closer
+🙉,HEAR-NO-EVIL MONKEY,30,hear-no-evil,hear-no-evil monkey,False,False,True,True,0.75,1.0,closer
+🙊,SPEAK-NO-EVIL MONKEY,30,speak-no-evil,speak-no-evil monkey,False,False,True,True,0.75,1.0,closer
+❣️,HEAVY HEART EXCLAMATION MARK ORNAMENT,30,heavy heart exclamation mark ornament,heavy heart exclamation,False,True,False,True,1.0,0.6,farther
+❣️,HEAVY HEART EXCLAMATION MARK ORNAMENT,35,heavy heart exclamation,heart exclamation,False,True,False,False,0.6,0.4,farther
+💨,DASH SYMBOL,30,dashing,dashing away,False,False,True,True,0.0,0.0,same
+💤,SLEEPING SYMBOL,40,zzz,ZZZ,True,False,False,False,0.0,0.0,same
+🖐️,RAISED HAND WITH FINGERS SPLAYED,32,raised hand with fingers splayed,hand with fingers splayed,False,True,False,False,1.0,0.75,farther
+👌,OK HAND SIGN,30,ok hand,OK hand,True,False,False,True,0.667,0.667,same
+🙌,PERSON RAISING BOTH HANDS IN CELEBRATION,30,person raising hands,raising hands,False,False,False,True,0.6,0.4,farther
+🧑,ADULT,34,adult,person,False,True,False,False,1.0,0.0,farther
+👱,PERSON WITH BLOND HAIR,30,person with blond hair,blond-haired person,False,True,False,True,1.0,0.5,farther
+👱,PERSON WITH BLOND HAIR,34,blond-haired person,person: blond hair,False,True,False,False,0.5,1.0,closer
+🧔,BEARDED PERSON,34,bearded person,man: beard,False,True,False,False,1.0,0.0,farther
+🧔,BEARDED PERSON,38,man: beard,person: beard,False,True,False,False,0.0,0.333,closer
+🧓,OLDER ADULT,34,older adult,older person,False,True,False,False,1.0,0.333,farther
+🙅,FACE WITH NO GOOD GESTURE,30,gesturing no,person gesturing NO,False,False,True,True,0.2,0.167,farther
+🙆,FACE WITH OK GESTURE,30,gesturing ok,person gesturing OK,False,False,True,True,0.25,0.2,farther
+💁,INFORMATION DESK PERSON,30,information desk person,person tipping hand,False,True,False,True,1.0,0.2,farther
+🙋,HAPPY PERSON RAISING ONE HAND,30,happy person raising hand,person raising hand,False,False,False,True,0.8,0.6,farther
+💂,GUARDSMAN,30,guardsman,guard,False,True,False,True,1.0,0.0,farther
+👳,MAN WITH TURBAN,30,man with turban,person wearing turban,False,True,False,True,1.0,0.25,farther
+👲,MAN WITH GUA PI MAO,30,man with chinese cap,man with Chinese cap,True,False,False,True,0.167,0.167,same
+👲,MAN WITH GUA PI MAO,36,man with Chinese cap,man with skullcap,False,False,False,False,0.167,0.2,closer
+👲,MAN WITH GUA PI MAO,37,man with skullcap,person with skullcap,False,False,False,False,0.2,0.0,farther
+🤵,MAN IN TUXEDO,37,man in tuxedo,person in tuxedo,False,True,False,False,1.0,0.333,farther
+👰,BRIDE WITH VEIL,37,bride with veil,person with veil,False,True,False,False,1.0,0.333,farther
+🎅,FATHER CHRISTMAS,30,santa claus,Santa Claus,True,False,False,True,0.0,0.0,same
+💆,FACE MASSAGE,30,face massage,person getting massage,False,True,False,True,1.0,0.25,farther
+💇,HAIRCUT,30,haircut,person getting haircut,False,True,True,True,1.0,0.333,farther
+🚶,PEDESTRIAN,30,pedestrian,person walking,False,True,False,True,1.0,0.0,farther
+🏃,RUNNER,30,runner,person running,False,True,False,True,1.0,0.0,farther
+💃,DANCER,30,dancer,woman dancing,False,True,False,True,1.0,0.0,farther
+🕴️,MAN IN BUSINESS SUIT LEVITATING,32,man in business suit levitating,man in suit levitating,False,True,False,False,1.0,0.75,farther
+🕴️,MAN IN BUSINESS SUIT LEVITATING,37,man in suit levitating,person in suit levitating,False,True,False,False,0.75,0.4,farther
+👯,WOMAN WITH BUNNY EARS,30,women partying,people with bunny ears partying,False,False,False,True,0.0,0.4,closer
+👯,WOMAN WITH BUNNY EARS,32,people with bunny ears partying,people with bunny ears,False,False,False,False,0.4,0.5,closer
+🏌️,GOLFER,30,golfer,person golfing,False,True,False,True,1.0,0.0,farther
+🏄,SURFER,30,surfer,person surfing,False,True,False,True,1.0,0.0,farther
+🚣,ROWBOAT,30,rowboat,person rowing boat,False,True,False,True,1.0,0.0,farther
+🏊,SWIMMER,30,swimmer,person swimming,False,True,False,True,1.0,0.0,farther
+⛹️,PERSON WITH BALL,30,person with ball,person bouncing ball,False,True,False,True,1.0,0.667,farther
+🏋️,WEIGHT LIFTER,30,weight lifter,person lifting weights,False,True,False,True,1.0,0.0,farther
+🚴,BICYCLIST,30,bicyclist,person biking,False,True,False,True,1.0,0.0,farther
+🚵,MOUNTAIN BICYCLIST,30,mountain biker,person mountain biking,False,False,False,True,0.333,0.25,farther
+👭,TWO WOMEN HOLDING HANDS,35,two women holding hands,women holding hands,False,True,False,False,1.0,0.75,farther
+👫,MAN AND WOMAN HOLDING HANDS,35,man and woman holding hands,woman and man holding hands,False,True,False,False,1.0,1.0,same
+👬,TWO MEN HOLDING HANDS,35,two men holding hands,men holding hands,False,True,False,False,1.0,0.75,farther
+🐺,WOLF FACE,35,wolf face,wolf,False,True,False,False,1.0,0.5,farther
+🦊,FOX FACE,35,fox face,fox,False,True,False,False,1.0,0.5,farther
+🦁,LION FACE,35,lion face,lion,False,True,False,False,1.0,0.5,farther
+🦄,UNICORN FACE,35,unicorn face,unicorn,False,True,False,False,1.0,0.5,farther
+🐑,SHEEP,31,sheep,ewe,False,True,False,False,1.0,0.0,farther
+🐹,HAMSTER FACE,35,hamster face,hamster,False,True,False,False,1.0,0.5,farther
+🐻,BEAR FACE,35,bear face,bear,False,True,False,False,1.0,0.5,farther
+🐼,PANDA FACE,35,panda face,panda,False,True,False,False,1.0,0.5,farther
+🐸,FROG FACE,35,frog face,frog,False,True,False,False,1.0,0.5,farther
+🌲,EVERGREEN TREE,30,evergreen,evergreen tree,False,False,True,True,0.5,1.0,closer
+🌍,EARTH GLOBE EUROPE-AFRICA,30,globe showing europe-africa,globe showing Europe-Africa,True,False,False,True,0.6,0.6,same
+🌎,EARTH GLOBE AMERICAS,30,globe showing americas,globe showing Americas,True,False,False,True,0.5,0.5,same
+🌏,EARTH GLOBE ASIA-AUSTRALIA,30,globe showing asia-australia,globe showing Asia-Australia,True,False,False,True,0.6,0.6,same
+🗾,SILHOUETTE OF JAPAN,30,map of japan,map of Japan,True,False,False,True,0.333,0.333,same
+🏘️,HOUSE BUILDINGS,30,house buildings,house,False,True,False,True,1.0,0.5,farther
+🏘️,HOUSE BUILDINGS,32,house,houses,False,True,False,False,0.5,0.0,farther
+🏚️,DERELICT HOUSE BUILDING,30,derelict house building,derelict house,False,True,False,True,1.0,0.667,farther
+🏠,HOUSE BUILDING,30,house building,house,False,True,False,True,1.0,0.5,farther
+🏣,JAPANESE POST OFFICE,30,japanese post office,Japanese post office,True,True,False,True,1.0,1.0,same
+🏯,JAPANESE CASTLE,30,japanese castle,Japanese castle,True,True,False,True,1.0,1.0,same
+🗼,TOKYO TOWER,30,tokyo tower,Tokyo tower,True,True,False,True,1.0,1.0,same
+🗽,STATUE OF LIBERTY,30,statue of liberty,Statue of Liberty,True,True,False,True,1.0,1.0,same
+🚅,HIGH-SPEED TRAIN WITH BULLET NOSE,32,high-speed train with bullet nose,bullet train,False,True,False,False,1.0,0.4,farther
+🚙,RECREATIONAL VEHICLE,30,recreational vehicle,sport utility vehicle,False,True,False,True,1.0,0.25,farther
+🚨,POLICE CARS REVOLVING LIGHT,30,police car’s light,police car light,False,False,False,True,0.75,0.4,farther
+⌛,HOURGLASS,32,hourglass,hourglass done,False,True,True,False,1.0,0.5,farther
+⏳,HOURGLASS WITH FLOWING SAND,32,hourglass with flowing sand,hourglass not done,False,True,False,False,1.0,0.2,farther
+🌛,FIRST QUARTER MOON WITH FACE,32,first quarter moon with face,first quarter moon face,False,True,False,False,1.0,1.0,same
+🌜,LAST QUARTER MOON WITH FACE,32,last quarter moon with face,last quarter moon face,False,True,False,False,1.0,1.0,same
+🌝,FULL MOON WITH FACE,32,full moon with face,full moon face,False,True,False,False,1.0,1.0,same
+⭐,WHITE MEDIUM STAR,33,white medium star,star,False,True,False,False,1.0,0.333,farther
+🌦️,WHITE SUN BEHIND CLOUD WITH RAIN,30,sun behind cloud with rain,sun behind rain cloud,False,False,False,True,0.8,0.8,same
+🎄,CHRISTMAS TREE,30,christmas tree,Christmas tree,True,True,False,True,1.0,1.0,same
+🎎,JAPANESE DOLLS,30,japanese dolls,Japanese dolls,True,True,False,True,1.0,1.0,same
+🎑,MOON VIEWING CEREMONY,30,moon ceremony,moon viewing ceremony,False,False,True,True,0.667,1.0,closer
+🎁,WRAPPED PRESENT,30,wrapped present,wrapped gift,False,True,False,True,1.0,0.333,farther
+🏏,CRICKET BAT AND BALL,32,cricket,cricket game,False,False,True,False,0.333,0.25,farther
+🏒,ICE HOCKEY STICK AND PUCK,30,ice hockey stick and puck,ice hockey,False,True,False,True,1.0,0.5,farther
+🎯,DIRECT HIT,38,direct hit,bullseye,False,True,False,False,1.0,0.0,farther
+🔫,PISTOL,38,pistol,water pistol,False,True,True,False,1.0,0.5,farther
+🎱,BILLIARDS,30,billiards,pool 8 ball,False,True,False,True,1.0,0.0,farther
+🧩,JIGSAW PUZZLE PIECE,35,jigsaw,puzzle piece,False,False,False,False,0.333,0.667,closer
+🖼️,FRAME WITH PICTURE,30,frame with picture,framed picture,False,True,False,True,1.0,0.333,farther
+👝,POUCH,30,pouch,clutch bag,False,True,False,True,1.0,0.0,farther
+🎒,SCHOOL SATCHEL,33,school backpack,backpack,False,False,False,False,0.333,0.0,farther
+⛑️,HELMET WITH WHITE CROSS,30,helmet with white cross,rescue worker’s helmet,False,True,False,True,1.0,0.2,farther
+🔇,SPEAKER WITH CANCELLATION STROKE,30,speaker off,muted speaker,False,False,False,True,0.25,0.25,same
+🔈,SPEAKER,30,speaker,speaker low volume,False,True,True,True,1.0,0.333,farther
+🔉,SPEAKER WITH ONE SOUND WAVE,30,speaker on,speaker medium volume,False,False,False,True,0.25,0.167,farther
+🔊,SPEAKER WITH THREE SOUND WAVES,30,speaker loud,speaker high volume,False,False,False,True,0.2,0.167,farther
+💻,PERSONAL COMPUTER,36,laptop computer,laptop,False,False,False,False,0.333,0.0,farther
+💽,MINIDISC,30,minidisc,computer disk,False,True,False,True,1.0,0.0,farther
+💿,OPTICAL DISC,30,optical disc,optical disk,False,True,False,True,1.0,0.333,farther
+🔍,LEFT-POINTING MAGNIFYING GLASS,32,left-pointing magnifying glass,magnifying glass tilted left,False,True,False,False,1.0,0.6,farther
+🔎,RIGHT-POINTING MAGNIFYING GLASS,32,right-pointing magnifying glass,magnifying glass tilted right,False,True,False,False,1.0,0.6,farther
+🔒,LOCK,30,lock,locked,False,True,False,True,1.0,0.0,farther
+🔓,OPEN LOCK,30,open lock,unlocked,False,True,False,True,1.0,0.0,farther
+🔏,LOCK WITH INK PEN,30,lock with pen,locked with pen,False,False,False,True,0.667,0.25,farther
+🔐,CLOSED LOCK WITH KEY,30,closed lock with key,locked with key,False,True,False,True,1.0,0.25,farther
+🗜️,COMPRESSION,30,compression,clamp,False,True,False,True,1.0,0.0,farther
+🦯,PROBING CANE,37,probing cane,white cane,False,True,False,False,1.0,0.333,farther
+🚬,SMOKING SYMBOL,30,smoking,cigarette,False,False,False,True,0.5,0.0,farther
+♿,WHEELCHAIR SYMBOL,30,wheelchair,wheelchair symbol,False,False,True,True,0.5,1.0,closer
+🔄,ANTICLOCKWISE DOWNWARDS AND UPWARDS OPEN CIRCLE ARROWS,32,anticlockwise arrows button,counterclockwise arrows button,False,False,False,False,0.286,0.125,farther
+🔙,BACK WITH LEFTWARDS ARROW ABOVE,30,back arrow,BACK arrow,True,False,False,True,0.5,0.5,same
+🔚,END WITH LEFTWARDS ARROW ABOVE,30,end arrow,END arrow,True,False,False,True,0.5,0.5,same
+🔛,ON WITH EXCLAMATION MARK WITH LEFT RIGHT ARROW ABOVE,30,on! arrow,ON! arrow,True,False,False,True,0.167,0.167,same
+🔜,SOON WITH RIGHTWARDS ARROW ABOVE,30,soon arrow,SOON arrow,True,False,False,True,0.5,0.5,same
+🔝,TOP WITH UPWARDS ARROW ABOVE,30,top arrow,TOP arrow,True,False,False,True,0.5,0.5,same
+✡️,STAR OF DAVID,30,star of david,star of David,True,True,False,True,1.0,1.0,same
+♈,ARIES,30,aries,Aries,True,True,False,True,1.0,1.0,same
+♉,TAURUS,30,taurus,Taurus,True,True,False,True,1.0,1.0,same
+♊,GEMINI,30,gemini,Gemini,True,True,False,True,1.0,1.0,same
+♋,CANCER,30,cancer,Cancer,True,True,False,True,1.0,1.0,same
+♌,LEO,30,leo,Leo,True,True,False,True,1.0,1.0,same
+♍,VIRGO,30,virgo,Virgo,True,True,False,True,1.0,1.0,same
+♎,LIBRA,30,libra,Libra,True,True,False,True,1.0,1.0,same
+♏,SCORPIUS,30,scorpius,Scorpius,True,True,False,True,1.0,1.0,same
+♏,SCORPIUS,32,Scorpius,Scorpio,False,True,False,False,1.0,0.0,farther
+♐,SAGITTARIUS,30,sagittarius,Sagittarius,True,True,False,True,1.0,1.0,same
+♑,CAPRICORN,30,capricorn,Capricorn,True,True,False,True,1.0,1.0,same
+♒,AQUARIUS,30,aquarius,Aquarius,True,True,False,True,1.0,1.0,same
+♓,PISCES,30,pisces,Pisces,True,True,False,True,1.0,1.0,same
+⛎,OPHIUCHUS,30,ophiuchus,Ophiuchus,True,True,False,True,1.0,1.0,same
+⏩,BLACK RIGHT-POINTING DOUBLE TRIANGLE,30,fast-forword button,fast-forward button,False,False,False,True,0.0,0.0,same
+🔼,UP-POINTING SMALL RED TRIANGLE,32,up button,upwards button,False,False,False,False,0.167,0.0,farther
+🔽,DOWN-POINTING SMALL RED TRIANGLE,32,down button,downwards button,False,False,False,False,0.167,0.0,farther
+✖️,HEAVY MULTIPLICATION X,35,heavy multiplication x,multiplication sign,False,True,False,False,1.0,0.25,farther
+✖️,HEAVY MULTIPLICATION X,37,multiplication sign,multiply,False,True,False,False,0.25,0.0,farther
+➕,HEAVY PLUS SIGN,35,heavy plus sign,plus sign,False,True,False,False,1.0,0.667,farther
+➕,HEAVY PLUS SIGN,37,plus sign,plus,False,True,False,False,0.667,0.333,farther
+➖,HEAVY MINUS SIGN,35,heavy minus sign,minus sign,False,True,False,False,1.0,0.667,farther
+➖,HEAVY MINUS SIGN,37,minus sign,minus,False,True,False,False,0.667,0.333,farther
+➗,HEAVY DIVISION SIGN,35,heavy division sign,division sign,False,True,False,False,1.0,0.667,farther
+➗,HEAVY DIVISION SIGN,37,division sign,divide,False,True,False,False,0.667,0.0,farther
+❓,BLACK QUESTION MARK ORNAMENT,38,question mark,red question mark,False,False,True,False,0.5,0.4,farther
+❗,HEAVY EXCLAMATION MARK SYMBOL,38,exclamation mark,red exclamation mark,False,False,True,False,0.5,0.4,farther
+🔰,JAPANESE SYMBOL FOR BEGINNER,30,japanese symbol for beginner,Japanese symbol for beginner,True,True,False,True,1.0,1.0,same
+⭕,HEAVY LARGE CIRCLE,35,heavy large circle,hollow red circle,False,True,False,False,1.0,0.2,farther
+✅,WHITE HEAVY CHECK MARK,35,white heavy check mark,check mark button,False,True,False,False,1.0,0.4,farther
+☑️,BALLOT BOX WITH CHECK,35,ballot box with check,check box with check,False,True,False,False,1.0,0.667,farther
+✔️,HEAVY CHECK MARK,35,heavy check mark,check mark,False,True,False,False,1.0,0.667,farther
+🔟,KEYCAP TEN,30,keycap ten,keycap 10,False,True,False,True,1.0,0.333,farther
+🔟,KEYCAP TEN,32,keycap 10,keycap: 10,True,True,False,False,0.333,0.333,same
+🅰️,NEGATIVE SQUARED LATIN CAPITAL LETTER A,30,a button,A button (blood type),False,False,True,True,0.0,0.0,same
+🆎,NEGATIVE SQUARED AB,30,ab button,AB button (blood type),False,False,True,True,0.25,0.167,farther
+🅱️,NEGATIVE SQUARED LATIN CAPITAL LETTER B,30,b button,B button (blood type),False,False,True,True,0.143,0.111,farther
+🆑,SQUARED CL,30,squared cl,CL button,False,True,False,True,1.0,0.333,farther
+🆒,SQUARED COOL,30,squared cool,COOL button,False,True,False,True,1.0,0.333,farther
+🆓,SQUARED FREE,30,squared free,FREE button,False,True,False,True,1.0,0.333,farther
+ℹ️,INFORMATION SOURCE,30,information source,information,False,True,False,True,1.0,0.5,farther
+🆔,SQUARED ID,30,squared id,ID button,False,True,False,True,1.0,0.333,farther
+Ⓜ️,CIRCLED LATIN CAPITAL LETTER M,30,circled letter m,circled M,False,False,False,True,0.6,0.4,farther
+🆕,SQUARED NEW,30,squared new,NEW button,False,True,False,True,1.0,0.333,farther
+🆖,SQUARED NG,30,squared ng,NG button,False,True,False,True,1.0,0.333,farther
+🅾️,NEGATIVE SQUARED LATIN CAPITAL LETTER O,30,o button,O button (blood type),False,False,True,True,0.143,0.111,farther
+🆗,SQUARED OK,30,squared ok,OK button,False,True,False,True,1.0,0.333,farther
+🅿️,NEGATIVE SQUARED LATIN CAPITAL LETTER P,30,p button,P button,True,False,False,True,0.143,0.143,same
+🆘,SQUARED SOS,30,squared sos,SOS button,False,True,False,True,1.0,0.333,farther
+🆙,SQUARED UP WITH EXCLAMATION MARK,30,up! button,UP! button,True,False,False,True,0.2,0.2,same
+🆚,SQUARED VS,30,squared vs,VS button,False,True,False,True,1.0,0.333,farther
+🈁,SQUARED KATAKANA KOKO,30,squared katakana koko,Japanese “here” button,False,True,False,True,1.0,0.0,farther
+🈂️,SQUARED KATAKANA SA,30,squared katakana sa,Japanese “service charge” button,False,True,False,True,1.0,0.0,farther
+🈷️,SQUARED CJK UNIFIED IDEOGRAPH-6708,30,squared moon ideograph,Japanese “monthly amount” button,False,False,False,True,0.333,0.0,farther
+🈶,SQUARED CJK UNIFIED IDEOGRAPH-6709,30,squared exist ideograph,Japanese “not free of charge” button,False,False,False,True,0.333,0.0,farther
+🈯,SQUARED CJK UNIFIED IDEOGRAPH-6307,30,squared finger ideograph,Japanese “reserved” button,False,False,False,True,0.333,0.0,farther
+🉐,CIRCLED IDEOGRAPH ADVANTAGE,30,circled advantage ideograph,Japanese “bargain” button,False,False,False,True,1.0,0.0,farther
+🈹,SQUARED CJK UNIFIED IDEOGRAPH-5272,30,squared divide ideograph,Japanese “discount” button,False,False,False,True,0.333,0.0,farther
+🈚,SQUARED CJK UNIFIED IDEOGRAPH-7121,30,squared negation ideograph,Japanese “free of charge” button,False,False,False,True,0.333,0.0,farther
+🈲,SQUARED CJK UNIFIED IDEOGRAPH-7981,30,squared prohibit ideograph,Japanese “prohibited” button,False,False,False,True,0.333,0.0,farther
+🉑,CIRCLED IDEOGRAPH ACCEPT,30,circled accept ideograph,Japanese “acceptable” button,False,False,False,True,1.0,0.0,farther
+🈸,SQUARED CJK UNIFIED IDEOGRAPH-7533,30,squared apply ideograph,Japanese “application” button,False,False,False,True,0.333,0.0,farther
+🈴,SQUARED CJK UNIFIED IDEOGRAPH-5408,30,squared together ideograph,Japanese “passing grade” button,False,False,False,True,0.333,0.0,farther
+🈳,SQUARED CJK UNIFIED IDEOGRAPH-7A7A,30,squared empty ideograph,Japanese “vacancy” button,False,False,False,True,0.333,0.0,farther
+㊗️,CIRCLED IDEOGRAPH CONGRATULATION,30,circled congratulate ideograph,Japanese “congratulations” button,False,False,False,True,0.5,0.0,farther
+㊙️,CIRCLED IDEOGRAPH SECRET,30,circled secret ideograph,Japanese “secret” button,False,False,False,True,1.0,0.2,farther
+🈺,SQUARED CJK UNIFIED IDEOGRAPH-55B6,30,squared operating ideograph,Japanese “open for business” button,False,False,False,True,0.333,0.0,farther
+🈵,SQUARED CJK UNIFIED IDEOGRAPH-6E80,30,squared fullness ideograph,Japanese “no vacancy” button,False,False,False,True,0.333,0.0,farther
+🏴,WAVING BLACK FLAG,30,waving black flag,black flag,False,True,False,True,1.0,0.667,farther
+🏳️,WAVING WHITE FLAG,30,waving white flag,white flag,False,True,False,True,1.0,0.667,farther

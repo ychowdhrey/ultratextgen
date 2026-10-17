@@ -1665,6 +1665,17 @@
     sc.src = "/js/printables/stencil.js";
     sc.async = true;
     sc.setAttribute("data-pt-stencil", "");
+    /* A shared link with ?st=1 ticks the box during init, before this async
+       script has arrived, so the first draw falls back to the plain outline
+       and nothing drew it again: the box said "bridged" and the letter had no
+       bridges. Redraw once the module is here, only if the mode is on. */
+    sc.onload = () => {
+      if (!stencilOn()) return;
+      withFont(() => {
+        paintAlphabetGrid();
+        if (activeChar) selectChar(activeChar, { silent: true });
+      });
+    };
     sc.onerror = () => console.warn("[printables] js/printables/stencil.js failed to load; the stencil mode draws the plain outline.");
     document.head.appendChild(sc);
   }
@@ -2051,13 +2062,19 @@
        single-letter surface reads. This surface draws at font-size 150, so the
        number has to be converted or the same style renders a stroke 40% fatter
        relative to the type on a name than on a letter. */
-    const wordStroke = o.strokeWidth != null ? o.strokeWidth * WORD_OUTLINE_FS / OUTLINE_SVG_FONT : 3;
+    /* A physical ruling puts the row in a viewBox about twice as large as the
+       one the weights were chosen in (o.ruleK), so the outline is carried in
+       millimetres like the ruling's own lines: a hollow letter whose outline
+       halves with the scale is thinner than the rule behind it. */
+    const wordStroke = (o.strokeWidth != null ? o.strokeWidth * WORD_OUTLINE_FS / OUTLINE_SVG_FONT : 3) * (o.ruleK || 1);
     /* A ruled row is taller than an unruled one only where the ruling itself
        reaches below the baseline -- German Lineatur carries a fourth line for
        the Unterlange that a three-line rule does not, which is the same reason
        traceRowHeight() exists on the trace surface. Without this the line is
        drawn outside the viewBox and an SVG root clips by default. */
     const gRul = o.guides ? wordRulingGeom(font, WORD_OUTLINE_FS, WORD_OUTLINE_ANCHOR_Y) : null;
+    // A physical ruling hands its stroke scale through (layoutPracticeRow).
+    if (gRul && o.ruleK) gRul.strokeK = o.ruleK;
     let h = WORD_OUTLINE_H;
     if (gRul) {
       const r = ruling();
@@ -2096,8 +2113,16 @@
         }
       }
     }
+    /* A physical ruling asks for a taller box than the drawing (o.rowVH, the
+       row's own height at the standard's scale). The drawing stays where it
+       was relative to itself and is centred in that box, so the ruled row
+       sits in the middle of the row the page gave it. Absent, vy and vh are
+       y0 and h - y0, which is what the viewBox has always been. */
+    const contentH = h - y0;
+    const vh = o.rowVH ? Math.max(contentH, o.rowVH) : contentH;
+    const vy = y0 - (vh - contentH) / 2;
     return {
-      w: w, h: h, y0: y0, model: model, inkLeft: inkLeft,
+      w: w, h: h, y0: y0, vy: vy, vh: vh, model: model, inkLeft: inkLeft,
       fontSize: WORD_OUTLINE_FS, font: font, spacing: spacing,
       anchorY: WORD_OUTLINE_ANCHOR_Y, guides: gRul,
       fill: o.solid ? (o.fill || INK) : "#ffffff",
@@ -2198,9 +2223,17 @@
     const old = row.querySelector(":scope > svg.pt-word-outline");
     if (!old) return;
     const g = wordOutlineGeom(d.word, d.opts);
-    const vw = practiceRowVW(row, g.h - g.y0);
+    /* A physical ruling (Seyes) measures the row in millimetres instead of
+       fitting the band to it: see physicalRowBox. The box it returns already
+       holds the whole drawing, so g.w is a floor on its width and g.h - g.y0
+       on its height. */
+    const phys = g.guides
+      ? physicalRowBox(row, row.getBoundingClientRect(), g.guides.band, g.w, g.h - g.y0)
+      : null;
+    const vw = phys ? phys.vw : practiceRowVW(row, g.h - g.y0);
     if (!vw) return;
     const o = Object.assign({}, d.opts, { rowVW: vw });
+    if (phys) { o.rowVH = phys.vh; o.ruleK = phys.rule.strokeK; }
     if (!d.opts.blank) o.practice = practiceStyle;
     row.replaceChild(wordOutlineSVG(d.word, o), old);
   }
@@ -2214,6 +2247,9 @@
     if (!root || !root.querySelectorAll) return;
     $$(".pt-name-row", root).forEach(layoutPracticeRow);
     $$(".pt-practice-fit", root).forEach(fitPracticeSheet);
+    // The generator's trace rows are laid out only for a physical ruling; a
+    // proportional one is fitted by the CSS letterbox, as it always was.
+    if (physicalBandMm()) $$(".pt-gen-row", root).forEach(layoutGenRow);
   }
 
   /* A glyph practice sheet is ONE page, and its type takes its size from the
@@ -2251,6 +2287,27 @@
       sheet.style.setProperty("--pt-practice-k", k.toFixed(4));
       if (k <= PRACTICE_FIT_MIN_K) break;
     }
+  }
+
+  /* A trace row on the generator sheet, for a physical ruling.
+
+     traceWordSVG() draws in a viewBox sized from the word and lets the CSS box
+     letterbox it, which is why the band was whatever the row's height made it.
+     Here the row's box is read and the drawing is rebuilt in a viewBox that
+     holds that box at the standard's scale (physicalRowBox). The pristine
+     viewBox is put back before measuring, because on a row whose height is
+     `auto` (the on-screen preview) the box depends on the viewBox, and a layout
+     that read its own previous answer would not be the same layout twice. */
+  function layoutGenRow(row) {
+    // The spelling sheet carries its own fold line in a viewBox it widened.
+    if (row.classList.contains("pt-sp-row")) return;
+    const old = row.querySelector(":scope > svg.pt-trace-svg");
+    const d = old && old.__ptTrace;
+    if (!d) return;
+    old.setAttribute("viewBox", d.vb0);
+    const phys = physicalRowBox(row, old.getBoundingClientRect(), traceBand(), d.w, d.h);
+    if (!phys) return;
+    row.replaceChild(traceWordSVG(d.word, d.level, Object.assign({}, d.opts, { phys: phys })), old);
   }
 
   /* The miniature is the same composition the sheet will use, drawn small --
@@ -2379,6 +2436,10 @@
        for a name whose sheet does change, and show it on a laptop for one
        whose sheet does not. The row's height is the same band in both, so the
        print width is all that has to be carried across. */
+    // A physical ruling knows the sheet's line in millimetres, so the width
+    // the sheet's row holds is the printable line at the standard's scale.
+    const rule = g.guides ? physicalRule(g.guides.band) : null;
+    if (rule) return practiceStylesDiffer(Math.max(printableWidthMm() * rule.upm, g.w), g.model, g.fontSize);
     const r = probe.getBoundingClientRect();
     const full = paperFull();
     const marginIn = parseFloat(MARGINS[printPrefs.margin] || MARGINS.normal) || 0.5;
@@ -2395,7 +2456,7 @@
     const g = wordOutlineGeom(word, o);
     const w = g.w, fontSize = g.fontSize, spacing = g.spacing;
     const svg = document.createElementNS(SVGNS, "svg");
-    svg.setAttribute("viewBox", "0 " + g.y0 + " " + w + " " + (g.h - g.y0));
+    svg.setAttribute("viewBox", "0 " + g.vy + " " + w + " " + g.vh);
     svg.setAttribute("class", "pt-word-outline");
     svg.setAttribute("role", "img");
     svg.setAttribute("aria-label", word);
@@ -2629,8 +2690,8 @@
      using Canvas-measured advance widths (the same "measure with a hidden
      canvas" technique already used elsewhere in this file, e.g. wordPNG).
      Off by default; gated entirely on the optional #pt-stroke-toggle mount,
-     so pages that don't add it are completely unaffected. SVG only — PNG
-     downloads intentionally don't include the overlay.
+     so pages that don't add it are completely unaffected. The word and
+     single-letter PNG exports carry the overlay too (strokeOverlayImage).
      --------------------------------------------------------------- */
 
   const STROKE_COLOR = "#2451c9";     // legible on white, distinct from the ink-black glyph
@@ -4311,9 +4372,9 @@
      strokeDirectionData.js has shipped on 13 pages since 2026-09-05 and
      addWordStrokeOverlay() draws it into SVG only, so the numbered start dots
      and arrows were on the screen and on the printed sheet and absent from
-     the PNG -- the one artifact that leaves the site. Every one of those 13
-     pages is a name or word tool, so the WORD export is where this is
-     reachable; the single-character export is not, because no page both
+     the PNG -- the one artifact that leaves the site. Those 13 pages were all
+     name or word tools, so the WORD export came first. The single-character
+     export followed once /printables/letter-tracing/ became a page that both
      renders one character and loads the stroke data.
 
      The overlay is rasterised from the engine's OWN addWordStrokeOverlay()
@@ -4669,7 +4730,7 @@
      screen happened to be. */
   let practiceBeforePrintBound = false;
   function bindPracticeBeforePrint() {
-    if (practiceBeforePrintBound || !RULED_ROWS) return;
+    if (practiceBeforePrintBound || !(RULED_ROWS || physicalBandMm())) return;
     practiceBeforePrintBound = true;
     window.addEventListener("beforeprint", () => {
       if (el.printRoot) layoutPracticeRows(el.printRoot);
@@ -6444,7 +6505,13 @@
 
      Runtime rather than static markup, unlike the /learn/ bridge: the href
      carries a word that only exists once someone types it, so there is no
-     crawlable link to lose. */
+     crawlable link to lose.
+
+     Revised 2026-10-16: the English-only bail was right for English
+     destinations, and the locale pages now link to their own name sheets
+     instead (printPrefs.js NAME_KIT). This list is what the frozen
+     block-letters page still renders; every other page reads
+     printPrefs.js NAME_SHEETS_EN, which adds the monogram and label tools. */
   const CARRY_TOOLS = [
     "/printables/name-tracing/", "/printables/cursive-name/",
     "/printables/handwriting-worksheet-generator/",
@@ -6669,7 +6736,27 @@
     updateSheetCost();
   }
 
+  /* The name kit (2026-10-16): the row now reaches every locale that has these
+     sheets, plus the monogram and name-label tools, through printPrefs.js's
+     mountNameCarry(), which the monogram and label engines call too. Each
+     locale links only to its own pages, so the internal-linking rule that
+     kept this English-only still holds. The frozen block-letters page keeps
+     the row it had, built by the original code below with the original list,
+     so its markup does not change while the freeze is on. */
   function mountCarryRow() {
+    if (BATCH_FROZEN) return mountCarryRowFrozen();
+    const input = primaryInput();
+    if (!input || $("#pt-carry-row") || !PP || !PP.mountNameCarry) return null;
+    return PP.mountNameCarry({
+      word: () => input.value,
+      watch: [input],
+      place: (row) => {
+        const host = input.closest(".pt-field, .pt-name-field") || input.parentElement;
+        (host.closest("section") || host).appendChild(row);
+      }
+    });
+  }
+  function mountCarryRowFrozen() {
     const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
     if (lang !== "en") return null;
     const input = primaryInput();
@@ -7017,8 +7104,8 @@
      opts.spacing, and overwriting either would silently undo a chosen
      letterform's own tracking.
 
-     English only, the same bail mountCarryRow and mountLeftHanded already
-     take. "Letter spacing" is a new string and the site's own corpus does not
+     English only, the same bail mountLeftHanded takes (and mountCarryRow
+     took until it gained locale strings on 2026-10-16). "Letter spacing" is a new string and the site's own corpus does not
      attest a translation of it in six of the seven other locales (de, it and
      pl have none at all; fr, es and pt have one page each), so there is
      nothing to harvest and nothing here will be invented. */
@@ -7089,8 +7176,8 @@
     host.insertAdjacentElement("afterend", field);
   }
 
-  /* OUT-15's control. ENGLISH ONLY, the same bail mountCarryRow and
-     mountLeftHanded take: "bridged stencil" is a new string and neither the
+  /* OUT-15's control. ENGLISH ONLY, the same bail mountLeftHanded
+     takes: "bridged stencil" is a new string and neither the
      engine's I18N table nor locales/*.json carries a word for a stencil
      bridge in any of the eight, so the four locale siblings keep today's
      behaviour until a native reading exists. Per the owner's decision of
@@ -7479,7 +7566,12 @@
     seyes: {
       lines: [{ at: 0 }, { at: 0.25, faint: true }, { at: 0.5, faint: true },
               { at: 0.75, faint: true }, { at: 1 }],
-      band: null, verticals: 1, extra: 0
+      /* `physicalBandMm` is what makes this a national STANDARD rather than a
+         shape: the source gives millimetres (8 mm between heavy lines, so a
+         2 mm interline), and the ruled-row layout uses it to put the band on
+         the paper at that size. A ruling without it keeps the proportional
+         behaviour it had -- the band is whatever the row's box makes it. */
+      band: null, verticals: 1, extra: 0, physicalBandMm: 8
     },
     lineatur: {
       lines: [{ at: 1 }, { at: 0.5, faint: true, dashed: true }, { at: 0 }, { at: -0.5 }],
@@ -7487,6 +7579,85 @@
     }
   };
   function ruling() { return RULINGS[rulingKey()] || RULINGS.standard; }
+
+  /* A ruling that is a physical standard (Seyes: 8 mm between heavy lines).
+
+     Every other ruling here is proportional: its band is a fraction of
+     whatever box the row is drawn in, which is right for a face-derived rule
+     and wrong for an exercise book, whose lines are a fixed distance apart on
+     the paper whatever the sheet. Measured on A4 before this existed, rows
+     laid out the old way printed Seyes at a 16.2 mm main-line pitch and a
+     4.06 mm interline -- 2.03x the standard -- because the band was sized from
+     the viewBox and the viewBox was fitted to the row.
+
+     So a physical ruling asks the row what a millimetre is. The row's box is
+     measured in CSS pixels, a pixel is turned into paper through
+     sheetPxPerMm(), and the viewBox is made as many units wide and tall as
+     that box holds at `band units = physicalBandMm`. The drawing inside --
+     type, ruling, route, dots -- keeps every coordinate it had and simply sits
+     in a larger box, so the type stays in proportion to the band it was
+     designed against (a letter that fills the band is an 8 mm letter, not a
+     16 mm letter on an 8 mm ruling). */
+  function physicalBandMm() { return ruling().physicalBandMm || 0; }
+  /* One base stroke unit (the "2" and "1.5" addGuide draws) in millimetres,
+     as it printed when the band was 108 units in a 16.2 mm box. Held in
+     millimetres so the lines keep the weight they had on paper instead of
+     halving with the scale: a 0.15 mm Seyes interline is below what a
+     photocopier keeps. */
+  const RULE_STROKE_MM = 0.15;
+  function physicalRule(bandUnits) {
+    const mm = physicalBandMm();
+    if (!(mm > 0) || !(bandUnits > 0)) return null;
+    const upm = bandUnits / mm;               // viewBox units per millimetre of paper
+    return { upm: upm, strokeK: upm * RULE_STROKE_MM };
+  }
+  /* Width of the printable line on the chosen paper, in millimetres. */
+  function printableWidthMm() {
+    const full = paperFull();
+    const marginIn = parseFloat(MARGINS[printPrefs.margin] || MARGINS.normal) || 0.5;
+    return Math.max(1, (full.w - 2 * marginIn) * 25.4);
+  }
+  /* CSS pixels per millimetre of PAPER for a node on a sheet.
+
+     On the print surface (the PDF, PNG and print-dialog states) a CSS pixel
+     is 1/96 in by definition, so the answer is exact. On screen the preview
+     is the same sheet drawn at whatever width its card has, so a millimetre
+     is that width over the printable line -- the preview then shows the
+     proportion the paper will have, which is what a preview is for. 0 when
+     the node has no measurable sheet (display:none). */
+  function sheetPxPerMm(node) {
+    if (el.printRoot && el.printRoot.contains(node)) return 96 / 25.4;
+    const sheet = node.closest(".pt-name-sheet, .pt-gen-sheet");
+    const w = sheet ? sheet.getBoundingClientRect().width : 0;
+    if (!(w > 0)) return 0;
+    /* A card 300px wide holding a 184 mm line would draw an 8 mm band 13px
+       tall, and a dotted name in it could not be read. So the preview has a
+       floor on the band, and below it the card shows the left end of the line
+       at a readable zoom rather than the whole line at thumbnail size. The
+       proportions are the standard's either way (8 mm band, 2 mm interline,
+       square 8 mm cells); only the zoom differs, which it always does between
+       a card and a sheet. */
+    return Math.max(w / printableWidthMm(), PREVIEW_MIN_BAND_PX / (physicalBandMm() || 8));
+  }
+  const PREVIEW_MIN_BAND_PX = 44;
+  /* The viewBox a physical ruling needs for a row whose box is `rect`, or null
+     when the ruling is proportional or the row cannot be measured. `needW` and
+     `needH` are the drawing's own extent in viewBox units; if the box holds
+     less than that at the standard's scale, the box grows uniformly and the
+     band comes out under 8 mm -- the same "floor, never a cap" the rows
+     already follow, because clipping a child's name is worse than a ruling a
+     little under standard. */
+  function physicalRowBox(node, rect, bandUnits, needW, needH) {
+    const rule = physicalRule(bandUnits);
+    if (!rule || !(rect.width > 0) || !(rect.height > 0)) return null;
+    const P = sheetPxPerMm(node);
+    if (!(P > 0)) return null;
+    const vw0 = rect.width / P * rule.upm;
+    const vh0 = rect.height / P * rule.upm;
+    const k = Math.max(1, needW / vw0, needH / vh0);
+    const r2 = (n) => Math.round(n * 100) / 100;
+    return { vw: r2(vw0 * k), vh: r2(vh0 * k), rule: rule };
+  }
 
   /* `faint` and `dashed` are separate properties. The house three-line rule
      draws its midline dashed, but a Seyes interline is lighter and SOLID --
@@ -7523,7 +7694,10 @@
      old one already reached. */
   const RULE_OVERHANG = 6000;
 
-  function addGuide(svg, w, y, dashed, faint, bleed) {
+  /* `k` scales the stroke only, for a ruling drawn in a viewBox that is not
+     at the scale the weights were chosen at (see physicalRule). Omitted, the
+     strings are the ones this function has always written. */
+  function addGuide(svg, w, y, dashed, faint, bleed, k) {
     const over = bleed ? RULE_OVERHANG : 0;
     const l = document.createElementNS(SVGNS, "line");
     l.setAttribute("x1", String(8 - over));
@@ -7533,7 +7707,8 @@
     const hc = highContrastOn();
     const light = dashed || faint;
     l.setAttribute("stroke", hc ? CONTRAST_INK : (light ? GUIDE_MID : GUIDE));
-    l.setAttribute("stroke-width", hc ? (light ? "2" : "2.5") : (light ? "1.5" : "2"));
+    const sw = hc ? (light ? 2 : 2.5) : (light ? 1.5 : 2);
+    l.setAttribute("stroke-width", k ? String(Math.round(sw * k * 100) / 100) : String(sw));
     if (dashed) l.setAttribute("stroke-dasharray", "6 8");
     svg.appendChild(l);
   }
@@ -7558,6 +7733,8 @@
     const BASE = geo && geo.base != null ? geo.base : TRACE_BASE;
     const FPX = geo && geo.fontPx != null ? geo.fontPx : TRACE_FONT_SIZE;
     const over = RULE_OVERHANG;
+    // A physical ruling's stroke scale, from the row layout; undefined otherwise.
+    const sk = geo && geo.strokeK ? geo.strokeK : 0;
     const y = (at) => BASE - at * band;
     // The shaded Mittelband goes down first so every line still reads over it.
     if (r.band) {
@@ -7585,12 +7762,13 @@
         l.setAttribute("y1", String(y(1)));
         l.setAttribute("y2", String(y(r.extra ? -r.extra : 0)));
         l.setAttribute("stroke", hc ? CONTRAST_INK : GUIDE_MID);
-        l.setAttribute("stroke-width", hc ? "2" : "1.5");
+        const vsw = hc ? 2 : 1.5;
+        l.setAttribute("stroke-width", sk ? String(Math.round(vsw * sk * 100) / 100) : String(vsw));
         svg.appendChild(l);
       }
     }
     rulingGuides(BASE, band, FPX)
-      .forEach((line) => addGuide(svg, w, line.y, line.dashed, line.faint, true));
+      .forEach((line) => addGuide(svg, w, line.y, line.dashed, line.faint, true, sk));
   }
 
   // A word rendered at a difficulty level, on a ruled baseline. The single
@@ -7683,7 +7861,18 @@
      centreline strokes, so the row stays one rendering. A character with no
      base route (ß, ł, ø, æ) is the only thing left as a contour; the result's
      `contour` list says which, and the callers draw just those glyphs the old
-     way. Null only when nothing in the word is routable. */
+     way. Null only when nothing in the word is routable.
+
+     ß (2026-10-16). A contour on a dotted rung is a dot on both edges of
+     every stroke, so on the German sheets "Straße" printed five clean dotted
+     letters around a dense double ring of dots where the ß should be, and
+     ẞ did the same. A character with no route now takes its centreline from
+     its own glyph (glyphCharStrokes, the same thinning a joined script uses),
+     so it prints as one dotted line like its neighbours. Only when that
+     cannot run (centreline.js not loaded yet, the face not loaded yet) does
+     the character fall back to the contour, and the module is fetched so the
+     next paint has it. A word with only routed letters never reaches this,
+     so A-Z, a-z and 0-9 rows are unchanged. */
   function traceRoutePaths(word, fontPx, spacingPx, baselineY, totalW) {
     if (!window.UTG_STROKE_DIRECTION_DATA) return null;
     const cells = wordCellCentres(word, fontPx, spacingPx, totalW);
@@ -7693,13 +7882,101 @@
       const c = cells[i];
       if (/\s/.test(c.ch)) continue;
       const d = fittedStrokesFor(c.ch, fontPx, c.cx, baselineY, "advance") ||
-        decomposedStrokesFor(c.ch, fontPx, c.cx, baselineY);
+        decomposedStrokesFor(c.ch, fontPx, c.cx, baselineY) ||
+        glyphCharStrokes(c.ch, fontPx, c.cx, baselineY);
       if (!d) { contour.push({ ch: c.ch, cx: c.cx }); continue; }
       for (let k = 0; k < d.length; k++) out.push(d[k]);
     }
     if (!out.length) return null;
     out.contour = contour;
     return out;
+  }
+
+  /* One character's centreline from its own glyph, centred on its advance
+     cell like the contour glyph it replaces. Strokes are cached per (face,
+     size, character) relative to the cell centre and the baseline, so the
+     preview, the sheet and the PNG (which pass different sizes) each trace
+     once. */
+  const CHAR_CENTRELINE_CACHE = new Map();
+  let charCentrelineLoading = false;
+  function loadCentrelineModule() {
+    if (charCentrelineLoading || (window.UltraTextGen && window.UltraTextGen.centreline)) return;
+    if (document.querySelector('script[src="/js/printables/centreline.js"]')) return;
+    charCentrelineLoading = true;
+    const sc = document.createElement("script");
+    sc.src = "/js/printables/centreline.js";
+    sc.async = true;
+    sc.onload = () => {
+      CHAR_CENTRELINE_CACHE.clear();
+      withFont(repaintTraceRows);
+    };
+    sc.onerror = () => console.warn("[printables] js/printables/centreline.js failed to load; characters with no writing route keep the contour.");
+    document.head.appendChild(sc);
+  }
+  function repaintTraceRows() {
+    if (el.nameInput || el.namePreview) renderNamePreview();
+    if (el.genInput || el.genPreview) renderGenPreview();
+  }
+  /* A face split by unicode-range loads a subset only when text needs it, so
+     ẞ (latin-ext) can still be missing when its row is drawn. Ask for that
+     subset once per character and repaint when it arrives; until then the
+     row shows the contour. */
+  const CHAR_FONT_REQUESTED = new Set();
+  function requestCharFont(spec, ch) {
+    const key = spec + "\u0001" + ch;
+    if (CHAR_FONT_REQUESTED.has(key) || !document.fonts || !document.fonts.load) return;
+    CHAR_FONT_REQUESTED.add(key);
+    document.fonts.load(spec, ch).then(() => {
+      if (document.fonts.check(spec, ch)) repaintTraceRows();
+    }).catch(() => {});
+  }
+  function glyphCharStrokes(ch, fontPx, cx, baselineY) {
+    const CL = window.UltraTextGen && window.UltraTextGen.centreline;
+    if (!CL) { loadCentrelineModule(); return null; }
+    if (!(fontPx > 0)) return null;
+    const primary = FONT_WEIGHT + " " + fontPx + "px \"" + primaryFontName() + "\"";
+    if (document.fonts && document.fonts.check && !document.fonts.check(primary, ch)) {
+      requestCharFont(primary, ch);
+      return null;
+    }
+    const key = [FONT_WEIGHT, FONT, fontPx, ch].join("\u0001");
+    let rel = CHAR_CENTRELINE_CACHE.get(key);
+    if (rel === undefined) {
+      rel = null;
+      const S = CENTRELINE_SCALE;
+      const probe = document.createElement("canvas").getContext("2d");
+      if (probe) {
+        probe.font = FONT_WEIGHT + " " + (fontPx * S) + "px " + FONT;
+        const m = probe.measureText(ch);
+        const asc = Math.ceil(m.actualBoundingBoxAscent || fontPx * S);
+        const desc = Math.ceil(m.actualBoundingBoxDescent || 0);
+        const half = Math.ceil(Math.max(m.width, (m.actualBoundingBoxLeft || 0) + (m.actualBoundingBoxRight || 0)) / 2);
+        const pad = Math.ceil(fontPx * 0.1 * S);
+        const canvas = document.createElement("canvas");
+        canvas.width = (half + pad) * 2;
+        canvas.height = asc + desc + pad * 2;
+        const g = canvas.getContext("2d");
+        if (g && canvas.width > 0 && canvas.height > 0) {
+          g.font = probe.font;
+          g.textAlign = "center";
+          g.textBaseline = "alphabetic";
+          g.fillStyle = "#000000";
+          const ox = canvas.width / 2, oy = pad + asc;
+          g.fillText(ch, ox, oy);
+          const data = g.getImageData(0, 0, canvas.width, canvas.height).data;
+          const mask = new Uint8Array(canvas.width * canvas.height);
+          for (let i = 0, j = 0; i < data.length; i += 4, j++) if (data[i + 3] > 128) mask[j] = 1;
+          const res = CL.centrelines(mask, canvas.width, canvas.height);
+          if (res && res.strokes && res.strokes.length) {
+            rel = res.strokes.map((P) => P.map((p) => [(p[0] - ox) / S, (p[1] - oy) / S]));
+          }
+        }
+      }
+      if (CHAR_CENTRELINE_CACHE.size > 200) CHAR_CENTRELINE_CACHE.clear();
+      CHAR_CENTRELINE_CACHE.set(key, rel);
+    }
+    if (!rel) return null;
+    return rel.map((P) => "M" + P.map((p) => (+(p[0] + cx).toFixed(2)) + "," + (+(p[1] + baselineY).toFixed(2))).join(" L"));
   }
 
   /* A joined school script traces its OWN centreline, not the print route.
@@ -8131,7 +8408,21 @@
       ? Math.max(360, Math.ceil(Math.max(tm.right, tm.advance) - Math.min(0, tm.left) + track + 120))
       : Math.max(360, chars.length * (116 + trackPx) + 120);
     const svg = document.createElementNS(SVGNS, "svg");
-    svg.setAttribute("viewBox", "0 0 " + w + " " + traceRowHeight());
+    const rowH = traceRowHeight();
+    const vb0 = "0 0 " + w + " " + rowH;
+    /* A physical ruling asks for a box of its own (o.phys, from layoutGenRow):
+       the drawing keeps its coordinates and is centred in a taller, wider
+       viewBox. Without it the viewBox is the word's, as it has always been. */
+    const phys = o.phys || null;
+    svg.setAttribute("viewBox", phys ? "0 " + (rowH - phys.vh) / 2 + " " + phys.vw + " " + phys.vh : vb0);
+    /* What layoutGenRow needs to lay this row out again: the pristine box and
+       the inputs that built it. A property, not an attribute, so the markup of
+       every row is what it was. */
+    if (o.guides !== false) {
+      const base = Object.assign({}, o);
+      delete base.phys;
+      svg.__ptTrace = { word: word, level: level, opts: base, vb0: vb0, w: w, h: rowH };
+    }
     svg.setAttribute("class", "pt-trace-svg");
     svg.setAttribute("role", "img");
     svg.setAttribute("aria-label", word + " — " + spec.label);
@@ -8157,7 +8448,7 @@
          model pass guides:false, they are sized to their own box rather than
          letterboxed inside a wider one, and centring is right for both. */
       svg.setAttribute("preserveAspectRatio", "xMinYMid meet");
-      addRuling(svg, w);
+      addRuling(svg, w, phys ? { strokeK: phys.rule.strokeK } : undefined);
     }
     /* R-001: the stroked levels draw the writing centreline, not the glyph
        contour. traceRoutePaths routes accented letters on their base letter
@@ -8280,16 +8571,38 @@
      the limit so a pasted line is never cut in silence. */
   const GEN_MAX_CHARS = 50;
 
+  /* Title case capitalises the first letter of each word. It used \b\w,
+     which only knows ASCII, so every accented letter counted as a word break:
+     "müller" printed as "MüLler" and "élève" as "éLèVe" on the 17 tracing and
+     handwriting pages that offer the case control. A word now starts after
+     anything that is not a letter, mark, digit or apostrophe (so "don't" and
+     Dutch "'t" stay lowercase after the apostrophe), and Dutch keeps the IJ
+     digraph together ("ijsselmeer" -> "IJsselmeer"). */
+  const TITLE_START = /(^|[^\p{L}\p{M}\p{N}'\u2019])(\p{L})/gu;
+  const NL_IJ_START = /(^|[^\p{L}\p{M}\p{N}'\u2019])Ij/gu;
+  function titleCase(text) {
+    const out = text.replace(TITLE_START, (m, pre, c) => pre + c.toLocaleUpperCase(CASE_LOCALE));
+    return LANG === "nl" ? out.replace(NL_IJ_START, "$1IJ") : out;
+  }
   function applyCase(word) {
     const mode = el.genCase ? el.genCase.value : "as-typed";
     if (mode === "upper") return word.toLocaleUpperCase(CASE_LOCALE);
     if (mode === "lower") return word.toLocaleLowerCase(CASE_LOCALE);
-    if (mode === "title") return word.replace(/\b\w/g, (c) => c.toLocaleUpperCase(CASE_LOCALE));
+    if (mode === "title") return titleCase(word);
     return word;
   }
   function genValue() {
     const raw = el.genInput ? el.genInput.value : "";
     const v = (raw && raw.trim()) ? raw.trim().slice(0, GEN_MAX_CHARS) : GEN_DEMO;
+    /* A letter-row page splits the text into single letters first, so title
+       case read every letter as a word and printed "Emma" as E M M A, and
+       Dutch "ijsje" as I J S J E. On those pages title case now runs on the
+       words as typed and the letters are split afterwards: E m m a, and
+       I J s j e with the IJ digraph kept together. The other modes give the
+       same letters in either order and are left as they were. */
+    if (CFG.genLetters === true && el.genCase && el.genCase.value === "title") {
+      return lettersOnly(titleCase(v));
+    }
     return applyCase(CFG.genLetters === true ? lettersOnly(v) : v);
   }
   /* CFG.genLetters -- the builder on /printables/letter-tracing/ practises
@@ -8590,12 +8903,44 @@
       });
       box.appendChild(fields);
       details.replaceWith(box);
+      mountRosterClear(mount, fields);
     }
     mount.dataset.ptAudienceWired = "1";
     $$(".pt-choice", box).forEach((b) => {
       b.addEventListener("click", () => setRosterAudience(mount, b.dataset.value));
     });
     setRosterAudience(mount, mount.value.trim() ? "class" : "one", { quiet: true });
+  }
+  /* "Clear names": the roster is remembered on this device between visits
+     (readRoster/writeRoster), and until now the only way to forget a class on
+     a shared school computer was to know that clearing the box and printing
+     once overwrote it. The button empties the box, removes the stored key and
+     tells the sheet count, so what is on screen and what is stored cannot
+     disagree. It shows only while there is something to clear.
+
+     English pages only for now: the label has no translation yet, and this
+     file's own rule is that a control is mounted in a language only when its
+     label exists there. /printables/block-letters/ is left alone (BATCH_FROZEN,
+     above) for the same reason mountAudience leaves its control alone. */
+  function mountRosterClear(mount, fields) {
+    if (LANG !== "en" || BATCH_FROZEN || !mount || !fields) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "pt-roster-clear";
+    btn.textContent = "Clear names";
+    btn.setAttribute("aria-label", "Clear the saved class list from this device");
+    const sync = () => { btn.hidden = !mount.value.trim(); };
+    mount.addEventListener("input", sync);
+    btn.addEventListener("click", () => {
+      mount.value = "";
+      writeRoster("");
+      mount.dispatchEvent(new Event("input", { bubbles: true }));
+      setRosterAudience(mount, "one", { quiet: true });
+      sync();
+      mount.focus();
+    });
+    fields.appendChild(btn);
+    sync();
   }
   function mountAudiences() {
     [el.nameRoster, el.genRoster, el.designRoster, el.puzzleRoster, el.searchRoster, el.cwRoster, el.scRoster, el.spRoster]
@@ -9029,6 +9374,8 @@
     if (!el.genPreview) return;
     el.genPreview.innerHTML = "";
     el.genPreview.appendChild(genSheetNode());
+    // A physical ruling is sized from the card it is in; a no-op otherwise.
+    layoutPracticeRows(el.genPreview);
   }
 
   function buildGeneratorSheet() {
@@ -9334,6 +9681,17 @@
     }
     if (el.genSlider) genLevelState = clampLevel(parseInt(el.genSlider.value, 10));
     renderGenPreview();
+    /* A physical ruling is sized from the card's width, so a narrower window is
+       a different card. The name preview re-composes on resize for the same
+       reason; this is its generator twin, and does nothing for a proportional
+       ruling, whose letterbox already follows the card. */
+    if (el.genPreview && physicalBandMm()) {
+      let resizeTimer = null;
+      window.addEventListener("resize", () => {
+        if (resizeTimer) clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => layoutPracticeRows(el.genPreview), 160);
+      });
+    }
   }
 
   /* ---------------------------------------------------------------
@@ -13222,6 +13580,10 @@
     buildStrip();
     buildAlphabetGrid();
     buildSpokeBatch();
+    /* Again, now that a single-letter page has its print-size field: the
+       first call above found no host there, so the 36 block-letter pages got
+       no tick box. Idempotent, and a no-op on a page without CFG.stencil. */
+    mountStencilToggle();
     initGenerator();
     buildDesigner();
     buildBanner();

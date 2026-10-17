@@ -1,0 +1,10 @@
+file,address,bytes,sha256
+Blocks.txt,https://www.unicode.org/Public/18.0.0/ucd/Blocks.txt,11906,a58f8d322f3c5e254f9f97b1cbf76a454a7e02de6ac35619a5e4f27aaabfd553
+DerivedCoreProperties.txt,https://www.unicode.org/Public/18.0.0/ucd/DerivedCoreProperties.txt,1159889,09c928886a178fcafd93c29e4bd59073a058e5a100b716d425cb563ab50f68c9
+EastAsianWidth.txt,https://www.unicode.org/Public/18.0.0/ucd/EastAsianWidth.txt,204705,a0cf29eacd00cfcaec4381c6b7c281685f18dbb4e7ff82b4076ccb342ca839aa
+GraphemeBreakProperty.txt,https://www.unicode.org/Public/18.0.0/ucd/auxiliary/GraphemeBreakProperty.txt,100009,0839dcb79e4ac639ecd538b1abf7c9d22e3f9dd265b7e182d33627aa4d75b45a
+PropList.txt,https://www.unicode.org/Public/18.0.0/ucd/PropList.txt,149040,f438f532e8737bb8a2702126cdf9c4af5e357c58c7acf9d9eb2fc7c1a1d955d6
+ScriptExtensions.txt,https://www.unicode.org/Public/18.0.0/ucd/ScriptExtensions.txt,21145,5c9d34a922f687726f2a8bcf57d49f905987e51f1b21b58c95a00fbe255cec23
+Scripts.txt,https://www.unicode.org/Public/18.0.0/ucd/Scripts.txt,196089,0071fd81b6aeae25f6e8bce8efec3066a6476a91b49bdb2f52dc76e817862a6a
+UnicodeData.txt,https://www.unicode.org/Public/18.0.0/ucd/UnicodeData.txt,2243593,0736451de439ae7baf1425136617da495e09ee5afbe6e394374db7009ea08950
+emoji-data.txt,https://www.unicode.org/Public/18.0.0/emoji/emoji-data.txt,108719,80d00f8e616a0ef27fd6b8de3b758c06383b5d917e2977709578e68baf733bf1

@@ -4,7 +4,7 @@
 
 UltraTextGen is a free, no-sign-up text tool: Unicode font styles to copy and paste, a browsable symbol and emoji library, one reference page per individual symbol, printable lettering and handwriting sheets rendered in the browser, and explanatory guides and answers. Everything runs client-side.
 
-4874 indexable pages in 32 languages. This file is a navigation index, not a URL list: https://ultratextgen.com/sitemap.xml is the complete canonical URL list and stays the authority on what exists. Links below point to a narrower llms.txt index where one exists, and straight to a page where it does not.
+4879 indexable pages in 32 languages. This file is a navigation index, not a URL list: https://ultratextgen.com/sitemap.xml is the complete canonical URL list and stays the authority on what exists. Links below point to a narrower llms.txt index where one exists, and straight to a page where it does not.
 
 English pages are served from the site root, so this file is also the English index (https://ultratextgen.com/en/llms.txt redirects here). Every other language has its own index at https://ultratextgen.com/<code>/llms.txt.
 
@@ -87,7 +87,7 @@ The "Jobs across languages" section lists the site's main jobs. Each line is the
 - [Use-case generators (Use Cases)](https://ultratextgen.com/usecase/llms.txt): Pick the social media tool that matches your moment: comment fonts, bio fonts, LinkedIn headlines, emoji combinations and more, each built for one use case. 42 pages.
 - [Symbol & emoji library (Library)](https://ultratextgen.com/library/llms.txt): Browse the UltraTextGen Library, an A–Z directory of 339 reference collections covering Unicode symbols, emoji, and formatting guides. 376 pages.
 - [Individual symbols (Symbols)](https://ultratextgen.com/symbol/llms.txt): Look up one symbol at a time: meaning, history, how to type it, and where it's safe to use. Browse individual symbol pages, or see the full category libraries. 118 pages.
-- [Printables](https://ultratextgen.com/printables/llms.txt): Printable tracing worksheets, name sheets, coloring pages, word puzzles and block letters. Each prints as a PDF or saves as a PNG, with a class set option. 220 pages.
+- [Printables](https://ultratextgen.com/printables/llms.txt): Printable tracing worksheets, name sheets, coloring pages, word puzzles and block letters. Each prints as a PDF or saves as a PNG, with a class set option. 221 pages.
 - [Seasonal & event text (Events)](https://ultratextgen.com/events/llms.txt): Live font, emoji, kaomoji, ASCII art and phrase generators for holidays: Chinese New Year, Eid, Christmas, Diwali, Halloween, Valentine's Day and more. 17 pages.
 - [Guides](https://ultratextgen.com/guide/llms.txt): Fonts are not decoration. They are signals. Explore guides on how Unicode typography encodes tone, authority, irony, and emphasis across social platforms. 33 pages.
 - [Learn](https://ultratextgen.com/learn/llms.txt): UltraTextGen's education library: stage-by-stage, tool-connected guides for parents and teachers. First topic: teaching handwriting, from readiness to cursive. 18 pages.
@@ -137,9 +137,13 @@ The "Jobs across languages" section lists the site's main jobs. Each line is the
 
 ## Research
 
-- [UltraTextGen Research](https://ultratextgen.com/research/): Controlled experiments, published with the method, data and limitations needed to check them.
+- [UltraTextGen Research](https://ultratextgen.com/research/): Experiments and observational studies, published with the method, data and limitations needed to check them.
+- [What Makes Writing Sound AI Generated? A Study of Public Accusations, Writing Patterns and False Alarms](https://ultratextgen.com/research/ai-writing-footprint-study/): We read 787 public accusations that a text was written by AI, compared the accused texts with unchallenged ones, and measured how often a…
+- [Emoji Name Drift: How Unicode’s Stable Names Diverge From the Words People Actually Use](https://ultratextgen.com/research/emoji-name-drift/): Every emoji has a formal Unicode name that never changes and a CLDR short name that can.
 - [Ink Saving by Worksheet Type: Which Print Treatments Keep a Worksheet Working](https://ultratextgen.com/research/ink-saving-by-worksheet-type/): We exported 54 real printable test cases, from name tracing sheets to word searches, under ink-saving treatments carried over from Study 1…
+- [What Kaomoji Are Made Of, and Where They Break in Basic Fonts and Markdown](https://ultratextgen.com/research/kaomoji-unicode-rendering-study/): A kaomoji looks like one picture, but it is a short string of characters, often borrowed from several writing systems.
 - [Printable Ink Efficiency: Measuring Coverage Reduction Across Common Worksheet Rendering Methods](https://ultratextgen.com/research/printable-ink-efficiency-study/): A controlled experiment on 108 computer-generated worksheet pages, 36 rendering methods and 36 unseen holdout pages.
+- [How Fast Do New Unicode Characters and Emoji Show Up? A Browser and Font Rendering Study](https://ultratextgen.com/research/unicode-rendering-support-study/): We drew every Unicode character from 8.0 to 18.0 and every emoji sequence in three browser engines, four font sets, 45 historical emoji…
 - [Zalgo Generator Benchmark 2026: Testing Creative Control Across 13 Tools](https://ultratextgen.com/research/zalgo-generator-benchmark/): We ran 13 Zalgo and corrupted-text generators through one procedure on September 29, 2026: the same ten inputs, the same fifteen creative…
 
 ## Embeddable widgets

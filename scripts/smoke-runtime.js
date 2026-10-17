@@ -662,6 +662,258 @@ async function main() {
     await ctx.close();
   }
 
+  // 15. A national ruling is a physical standard. The French Seyes ruling is 8 mm
+  // between heavy lines with three 2 mm interlines between them, and it printed
+  // at 2.03x that on A4 because the band was fitted to the row's box instead of
+  // to the paper. The assertion reads the bitmap the PDF embeds (the canvases
+  // renderPages hands to fromCanvases), not the DOM, because the DOM was
+  // correct throughout: the defect existed only in what reached the paper.
+  console.log('\n/fr/imprimables/modeles-d-ecriture/ (Seyes ruling is 8 mm / 2 mm on paper)');
+  for (const [paper, orient] of [['a4', 'portrait'], ['a4', 'landscape'], ['letter', 'portrait'], ['letter', 'landscape']]) {
+    const init = `try{localStorage.setItem('utg_print_prefs', JSON.stringify({paper:'${paper}',orient:'${orient}'}))}catch(e){}
+      (function () {
+        const UTG = (window.UltraTextGen = window.UltraTextGen || {});
+        let real;
+        Object.defineProperty(UTG, 'pdf', { configurable: true, get() { return real; }, set(v) {
+          real = v && Object.assign({}, v, { renderPages: async function (root, o) {
+            const c = await v.renderPages(root, o); window.__ptSheet = { canvases: c, opts: o }; return c; } });
+        } });
+      })();`;
+    const { ctx, page, errors } = await open('/fr/imprimables/modeles-d-ecriture/', 'desktop', init);
+    await page.waitForTimeout(800);
+    for (const name of ['Lea', 'Christopher']) {
+      await page.fill('#pt-gen-input', name);
+      await page.waitForTimeout(500);
+      await page.evaluate(() => { window.__ptSheet = null; });
+      await Promise.all([page.waitForEvent('download', { timeout: 60000 }), page.click('#pt-gen-print')]).catch(() => null);
+      const m = await page.evaluate(() => {
+        const s = window.__ptSheet;
+        if (!s || !s.canvases || !s.canvases.length) return null;
+        const cv = s.canvases[0];
+        const ctx2 = cv.getContext('2d');
+        const W = cv.width, H = cv.height;
+        const pxPerMm = W / (s.opts.widthPx * 25.4 / 96);
+        const data = ctx2.getImageData(0, 0, W, H).data;
+        const ys = [];
+        for (let y = 0; y < H; y++) {
+          let n = 0;
+          for (let x = 0; x < W; x++) { const i = (y * W + x) * 4; if (Math.min(data[i], data[i + 1], data[i + 2]) < 235) n++; }
+          if (n / W > 0.6) ys.push(y);
+        }
+        const lines = [];
+        ys.forEach((y) => { const l = lines[lines.length - 1]; if (l && y - l[l.length - 1] <= 1) l.push(y); else lines.push([y]); });
+        const centres = lines.map((l) => l.reduce((a, b) => a + b, 0) / l.length / pxPerMm);
+        const stacks = [];
+        centres.forEach((c) => { const s = stacks[stacks.length - 1]; if (s && c - s[s.length - 1] < 10) s.push(c); else stacks.push([c]); });
+        const five = stacks.filter((s) => s.length === 5);
+        const inter = [].concat(...five.map((s) => s.slice(1).map((c, i) => c - s[i])));
+        const span = five.map((s) => s[4] - s[0]);
+        return { stacks: five.length, pxPerMm, inter, span };
+      });
+      const tag = `${paper} ${orient} "${name}"`;
+      if (!m) { check(`${tag}: the PDF's page bitmap was captured`, false, 'no canvas from renderPages'); continue; }
+      const avg = (a) => a.reduce((x, y) => x + y, 0) / a.length;
+      const dpi = Math.round(m.pxPerMm * 25.4);
+      check(`${tag}: at least three 5-line Seyes stacks on page 1 (${dpi} dpi bitmap)`, m.stacks >= 3, `${m.stacks} stacks`);
+      const iMin = Math.min(...m.inter), iMax = Math.max(...m.inter), sMin = Math.min(...m.span), sMax = Math.max(...m.span);
+      check(`${tag}: interline is 2.0 mm +/- 0.15`, m.inter.length && iMin >= 1.85 && iMax <= 2.15, `${iMin.toFixed(2)}..${iMax.toFixed(2)} mm (mean ${m.inter.length ? avg(m.inter).toFixed(2) : 'n/a'})`);
+      check(`${tag}: heavy lines are 8.0 mm +/- 0.3 apart`, m.span.length && sMin >= 7.7 && sMax <= 8.3, `${sMin.toFixed(2)}..${sMax.toFixed(2)} mm`);
+    }
+    check(`${paper} ${orient}: no page errors`, !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 16. Text in another script. Half the styles return it unchanged and the rest
+  // only add spacing or marks, so the English generator says so, once, and only
+  // when the text has a non-Latin letter. A translated page gets no English line.
+  console.log('\n/ (non-Latin text notice, English pages only)');
+  {
+    const { ctx, page, errors } = await open('/', 'desktop');
+    const hidden = () => page.locator('#scriptNotice').evaluate((n) => n.hidden);
+    await page.fill('#mainInput', 'hello world');
+    check('plain English shows no script notice', await hidden());
+    await page.fill('#mainInput', 'cafe\u0301 \u00f1and\u00fa');
+    check('accents alone do not trigger it', await hidden());
+    await page.fill('#mainInput', '\u0436\u0438\u0440\u043d\u044b\u0439 \u0448\u0440\u0438\u0444\u0442');
+    check('Cyrillic text shows the notice', !(await hidden()));
+    check('Cyrillic \u0439 does not also trigger the accent notice', await page.locator('#accentNotice').evaluate((n) => n.hidden));
+    await page.fill('#mainInput', 'caf\u00e9 \u0436');
+    check('a real Latin accent still triggers the accent notice', !(await page.locator('#accentNotice').evaluate((n) => n.hidden)));
+    await page.fill('#mainInput', '\u0436\u0438\u0440\u043d\u044b\u0439 \u0448\u0440\u0438\u0444\u0442');
+    await page.fill('#mainInput', '\u062d\u0631\u0648\u0641 \u0645\u0632\u062e\u0631\u0641\u0647');
+    check('Arabic text shows the notice', !(await hidden()));
+    await page.fill('#mainInput', 'hello \u4f60\u597d');
+    check('Latin mixed with Chinese shows the notice', !(await hidden()));
+    await page.click('#scriptNoticeClose');
+    await page.fill('#mainInput', 'hello');
+    await page.fill('#mainInput', '\u0436');
+    check('a dismissed notice stays dismissed', await hidden());
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+    const es = await open('/es/fuentes-de-letras/', 'desktop');
+    await es.page.fill('#mainInput', '\u0436\u0438\u0440\u043d\u044b\u0439');
+    check('a Spanish page gets no English script notice', (await es.page.locator('#scriptNotice').count()) === 0);
+    check('Spanish page: no page errors', !es.errors.length, es.errors.join(' | '));
+    await es.ctx.close();
+  }
+
+  // 17. Clear names: a class list is remembered on the device, so there has to be
+  // a way to forget it. English pages only (the label has no translation), and
+  // the frozen block-letters page keeps its previous control.
+  console.log('\n/printables/name-tracing/ (Clear names forgets the saved class list)');
+  {
+    const { ctx, page, errors } = await open('/printables/name-tracing/', 'desktop');
+    const stored = () => page.evaluate(() => localStorage.getItem('utg_printables_roster'));
+    await page.evaluate(() => localStorage.setItem('utg_printables_roster', 'Emma\nNoah\nAva'));
+    await page.reload({ waitUntil: 'load' });
+    await page.waitForTimeout(700);
+    const clearBtn = page.locator('.pt-roster-clear');
+    check('the saved list is back in the box and Clear names shows', (await page.inputValue('#pt-name-roster')).includes('Noah') && await clearBtn.isVisible());
+    await clearBtn.click();
+    check('Clear names empties the box', (await page.inputValue('#pt-name-roster')) === '');
+    check('Clear names removes the stored list', (await stored()) === null, String(await stored()));
+    check('Clear names hides itself when there is nothing to clear', !(await clearBtn.isVisible()));
+    await page.click('.pt-audience-field .pt-choice[data-value="class"]');
+    await page.fill('#pt-name-roster', 'Mia');
+    check('typing a name brings it back', await clearBtn.isVisible());
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+    const bl = await open('/printables/block-letters/', 'desktop');
+    check('block-letters is untouched (no Clear names)', (await bl.page.locator('.pt-roster-clear').count()) === 0);
+    await bl.ctx.close();
+    const fr = await open('/fr/imprimables/modeles-d-ecriture/', 'desktop');
+    check('a French sheet gets no English Clear names', (await fr.page.locator('.pt-roster-clear').count()) === 0);
+    await fr.ctx.close();
+  }
+
+  // 18. Storage blocked. Reading window.localStorage throws a SecurityError
+  // when the browser blocks site data; header.js read it unguarded, so the
+  // throw ended its init and the dark-mode toggle, compact header and site
+  // search were dead on every page.
+  console.log('\nheader.js with storage blocked (dark mode still toggles, no page error)');
+  {
+    const blockStorage = () => {
+      Object.defineProperty(window, 'localStorage', { get() { throw new DOMException('blocked', 'SecurityError'); } });
+    };
+    for (const url of ['/', '/library/heart-symbols/', '/printables/name-tracing/']) {
+      const { ctx, page, errors } = await open(url, 'desktop', blockStorage);
+      const toggled = await page.evaluate(() => {
+        const b = document.getElementById('darkModeBtn');
+        if (!b) return null;
+        b.click();
+        return document.body.classList.contains('dark-mode');
+      });
+      check(`${url}: dark-mode toggle works`, toggled === true, String(toggled));
+      check(`${url}: no page errors`, !errors.length, errors.join(' | '));
+      await ctx.close();
+    }
+  }
+
+  // 19. A copy is reported only when one happened. The Clipboard API rejects in
+  // some in-app browsers and sandboxed frames. The collection Copy button used
+  // to say "Copied" and record copy_text either way; the generator's Copy had
+  // no fallback at all. Each case refuses the API, then the textarea fallback.
+  console.log('\nCopy honesty (API refused -> fallback; both refused -> failure, no event)');
+  {
+    const refuse = (fallbackWorks) => `
+      Object.defineProperty(navigator, 'clipboard', { value: { writeText: () => Promise.reject(new Error('NotAllowed')) } });
+      const orig = document.execCommand.bind(document);
+      document.execCommand = function (c) { if (c === 'copy') return ${fallbackWorks}; return orig.apply(null, arguments); };`;
+    const copies = async (page) => (await dl(page)).filter((x) => x.event === 'copy_text').length;
+    for (const fallbackWorks of [true, false]) {
+      const tag = fallbackWorks ? 'API refused' : 'both refused';
+      const lib = await open('/library/heart-symbols/', 'desktop', refuse(fallbackWorks));
+      const cbtn = lib.page.locator('.copy-collection-btn').first();
+      await cbtn.click();
+      await lib.page.waitForTimeout(200);
+      const clabel = (await cbtn.textContent()).trim();
+      check(`collection Copy, ${tag}: label ${fallbackWorks ? 'confirms' : 'does not claim'} the copy`,
+        fallbackWorks ? /Copied/.test(clabel) : !/Copied/.test(clabel), clabel);
+      check(`collection Copy, ${tag}: ${fallbackWorks ? 'one' : 'no'} copy_text row`, (await copies(lib.page)) === (fallbackWorks ? 1 : 0), String(await copies(lib.page)));
+      await lib.ctx.close();
+
+      const gen = await open('/', 'desktop', refuse(fallbackWorks));
+      await gen.page.fill('#mainInput', 'Luna');
+      await gen.page.waitForTimeout(300);
+      const gbtn = gen.page.locator('#resultsGrid .copy-btn:not([disabled])').first();
+      await gbtn.click();
+      await gen.page.waitForTimeout(200);
+      const glabel = (await gbtn.textContent()).trim();
+      check(`generator Copy, ${tag}: label ${fallbackWorks ? 'confirms' : 'reports failure'}`,
+        fallbackWorks ? /Copied/.test(glabel) : /Failed/.test(glabel), glabel);
+      check(`generator Copy, ${tag}: ${fallbackWorks ? 'one' : 'no'} copy_text row`, (await copies(gen.page)) === (fallbackWorks ? 1 : 0), String(await copies(gen.page)));
+      await gen.ctx.close();
+    }
+
+    // The real textarea fallback fires a native "copy" event. The manual-copy
+    // listener must not record it as a second row, focus must come back to
+    // the button, and a real manual copy must still record.
+    const real = await open('/', 'desktop', `Object.defineProperty(navigator, 'clipboard', { value: { writeText: () => Promise.reject(new Error('NotAllowed')) } });`);
+    await real.page.fill('#mainInput', 'Luna');
+    await real.page.waitForTimeout(300);
+    await real.page.locator('#resultsGrid .copy-btn:not([disabled])').first().click();
+    await real.page.waitForTimeout(200);
+    const methods = (await dl(real.page)).filter((x) => x.event === 'copy_text').map((x) => x.copy_method);
+    check('real fallback copy records exactly one row (no extra "manual")', methods.length === 1 && methods[0] === 'button', methods.join(','));
+    check('focus returns to the pressed Copy button', await real.page.evaluate(() => !!(document.activeElement && document.activeElement.classList.contains('copy-btn'))));
+    await real.page.evaluate(() => {
+      const h = document.querySelector('h1');
+      const r = document.createRange(); r.selectNodeContents(h);
+      const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      document.execCommand('copy');
+    });
+    const after = (await dl(real.page)).filter((x) => x.event === 'copy_text').map((x) => x.copy_method);
+    check('a manual selection copy still records "manual"', after.length === 2 && after[1] === 'manual', after.join(','));
+    check('no page errors', !real.errors.length, real.errors.join(' | '));
+    await real.ctx.close();
+  }
+
+  // 20. Title case on a tracing sheet. \b\w is ASCII-only, so every accented
+  // letter counted as a word break and "jürgen größe" printed "JüRgen GrößE".
+  console.log('\n/de/zum-ausdrucken/schreibuebungen/ (title case keeps accented words whole)');
+  {
+    const { ctx, page, errors } = await open('/de/zum-ausdrucken/schreibuebungen/', 'desktop');
+    await page.selectOption('#pt-gen-case', 'title');
+    await page.fill('#pt-gen-input', 'jürgen größe');
+    await page.waitForTimeout(500);
+    const texts = await page.evaluate(() => Array.from(document.querySelectorAll('svg text')).map((n) => n.textContent));
+    check('title case prints "Jürgen Größe"', texts.includes('Jürgen Größe'), texts.filter((x) => /rgen/i.test(x || '')).join(' | '));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 20b. Title case on a letter-row page runs on the words, then splits the
+  // letters. It ran after the split, so every letter was a word: "ijsje"
+  // printed I J S J E, the same as upper case.
+  console.log('\n/nl/om-uit-te-printen/letters-overtrekken/ (title case on a letter row keeps the IJ digraph)');
+  {
+    const { ctx, page, errors } = await open('/nl/om-uit-te-printen/letters-overtrekken/', 'desktop');
+    await page.selectOption('#pt-gen-case', 'title');
+    await page.fill('#pt-gen-input', 'ijsje');
+    await page.waitForTimeout(500);
+    const texts = await page.evaluate(() => Array.from(document.querySelectorAll('#pt-gen-preview svg text')).map((n) => n.textContent));
+    check('title case prints "I J s j e"', texts.includes('I J s j e'), texts.filter(Boolean).slice(0, 2).join(' | '));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 21. ß and ẞ on a dotted row. Neither has a print route, so both used to be
+  // drawn as a stroked contour: a dense double ring of dots between clean
+  // dotted letters. They now take a centreline from their own glyph, which
+  // loads centreline.js on demand on pages that do not ship it.
+  console.log('\n/de/zum-ausdrucken/schreibuebungen/ (ß traces on a centreline, not a contour)');
+  {
+    const { ctx, page, errors } = await open('/de/zum-ausdrucken/schreibuebungen/', 'desktop');
+    await page.fill('#pt-gen-input', 'Straße ẞ');
+    await page.waitForFunction(() => !!(window.UltraTextGen && window.UltraTextGen.centreline), null, { timeout: 10000 }).catch(() => {});
+    await page.waitForTimeout(800);
+    const contour = await page.locator('#pt-gen-preview .pt-trace-contour').count();
+    const rows = await page.locator('#pt-gen-preview .pt-trace-route').count();
+    check('"Straße ẞ" dotted rows draw no contour glyph', rows > 0 && contour === 0, `${contour} contour glyphs in ${rows} routed rows`);
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
   await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });

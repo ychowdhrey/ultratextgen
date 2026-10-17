@@ -1080,6 +1080,9 @@ const textStyles = {
   upper: 'ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾQᴿˢᵀᵁⱽᵂˣʸᶻ',
   lower: 'ᵃᵇᶜᵈᵉᶠᵍʰᶦʲᵏˡᵐⁿᵒᵖqʳˢᵗᵘᵛʷˣʸᶻ',
   nums: '⁰¹²³⁴⁵⁶⁷⁸⁹',
+  // Formula signs, so x2+1 and Ca2+ raise the sign with the digit. Optional
+  // field, keyed by character; renderMap reads it only for styles that set it.
+  signs: { '+': '⁺', '-': '⁻', '\u2212': '⁻', '=': '⁼', '(': '⁽', ')': '⁾' },
   type: 'map',
   category: 'small-text',
   familySlug: ['small-text', 'aesthetic-fonts', 'superscript'],
@@ -1093,6 +1096,8 @@ const textStyles = {
   upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
   lower: 'ₐᵦcdₑfgₕᵢⱼₖₗₘₙₒₚqᵣₛₜᵤᵥwₓyz',
   nums: '₀₁₂₃₄₅₆₇₈₉',
+  // Formula signs, so SO4 2- and H2O(l) lower the sign with the digit.
+  signs: { '+': '₊', '-': '₋', '\u2212': '₋', '=': '₌', '(': '₍', ')': '₎' },
   type: 'map',
   category: 'small-text',
   familySlug: ['small-text', 'subscript'],

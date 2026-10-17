@@ -765,6 +765,7 @@
      Clipboard helpers
      ============================ */
   function fallbackCopy(text) {
+    var focused = document.activeElement;
     var ta = document.createElement("textarea");
     ta.value = text;
     ta.setAttribute("readonly", "");
@@ -775,6 +776,8 @@
     let ok = false;
     try { ok = !!document.execCommand("copy"); } catch (e) { ok = false; }
     document.body.removeChild(ta);
+    // Give focus back to the tile or button that was pressed.
+    if (focused && typeof focused.focus === "function") focused.focus();
     return ok;
   }
   ns.fallbackCopy = fallbackCopy;
@@ -1181,32 +1184,39 @@
       if (btn) {
         var gi2 = parseInt(btn.getAttribute("data-group"), 10);
         var text = formatItems(groups[gi2].flags, activeFormats[gi2]);
+        var group = groups[gi2];
+
+        // Same contract as copyText(): the button, the toast and the
+        // copy_text row follow a copy that happened. This branch used to show
+        // "Copied", toast and record the event whether or not either path
+        // wrote anything, so a refused clipboard looked like a success.
+        var copied = function () {
+          copyCollectionFeedback(btn);
+          showToast(group.flags[0] + "…");
+          var utgGrid = window.UltraTextGen;
+          if (utgGrid && utgGrid.trackCopy) {
+            // For a whole collection the group's own name is the identity that
+            // matters; the concatenated payload would be neither readable nor
+            // within the event's size budget.
+            utgGrid.trackCopy("grid_collection", group.flags[0], {
+              copy_collection: (group.label || group.name || "").slice(0, 80),
+              copy_item_count: group.flags.length
+            });
+          } else {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ event: "copy_text", copy_method: "grid_collection" });
+          }
+        };
+        var viaFallback = function () {
+          if (fallbackCopy(text)) copied();
+          else showToast(t("failed", "✗ Failed"), null, true);
+        };
 
         if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(text).then(function () {
-            copyCollectionFeedback(btn);
-          }).catch(function () {
-            fallbackCopy(text);
-            copyCollectionFeedback(btn);
-          });
+          // Two-argument then: an error inside copied() must not run a second copy.
+          navigator.clipboard.writeText(text).then(copied, viaFallback);
         } else {
-          fallbackCopy(text);
-          copyCollectionFeedback(btn);
-        }
-
-        showToast(groups[gi2].flags[0] + "…");
-        var utgGrid = window.UltraTextGen;
-        if (utgGrid && utgGrid.trackCopy) {
-          // For a whole collection the group's own name is the identity that
-          // matters; the concatenated payload would be neither readable nor
-          // within the event's size budget.
-          utgGrid.trackCopy("grid_collection", groups[gi2].flags[0], {
-            copy_collection: (groups[gi2].label || groups[gi2].name || "").slice(0, 80),
-            copy_item_count: groups[gi2].flags.length
-          });
-        } else {
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({ event: "copy_text", copy_method: "grid_collection" });
+          viaFallback();
         }
       }
     });

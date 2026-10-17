@@ -296,5 +296,57 @@ const SPELLING = ["because", "friend", "people", "school", "water", "there",
   eq(pl.map((w) => w.key).join(" "), "ŻÓŁW ŁÓDŹ JEŻ", "no fold keeps Polish letters");
 }
 
+/* ---------------------------------------------------------------
+   9. One cell per written character, in every script
+   A cell used to be one letter code point, so a vowel sign or a mark above
+   was dropped: Hindi किताब printed as क त ब, three bare consonants.
+   --------------------------------------------------------------- */
+{
+  const hi = WS.normalizeWords(["किताब"])[0];
+  eq(hi.letters.join("|"), "कि|ता|ब", "Hindi: three cells, each with its vowel sign");
+  const th = WS.normalizeWords(["สวัสดี"])[0];
+  eq(th.letters.join("|"), "ส|วั|ส|ดี", "Thai: the marks above stay on their consonant");
+  const ar = WS.normalizeWords(["كِتَاب"])[0];
+  eq(ar.letters.join("|"), "كِ|تَ|ا|ب", "Arabic: typed vowel marks stay in their cell");
+  eq(WS.normalizeWords(["e\u0301cole"])[0].letters.join(""), "ÉCOLE", "a decomposed accent joins its letter");
+  const hiGrid = WS.build({ words: ["किताब", "पानी", "घर", "स्कूल"], seed: "hi", level: "medium" });
+  eq(hiGrid.unplaced.length, 0, "a Hindi list places and re-scans completely");
+  const cells = [].concat.apply([], hiGrid.grid);
+  ok(cells.every((c) => !/^\p{M}/u.test(c)), "no Hindi cell starts with a lone mark");
+  ok(cells.indexOf("कि") !== -1, "the grid carries the whole cluster कि");
+
+  // Without Intl.Segmenter (older browsers) a base letter keeps the marks after it.
+  const realSegmenter = Intl.Segmenter;
+  const realNs = global.window.UltraTextGen;
+  try {
+    Intl.Segmenter = undefined;
+    global.window.UltraTextGen = {};
+    new Function(fs.readFileSync(path.join(__dirname, "wordSearch.js"), "utf8"))();
+    const bare = global.window.UltraTextGen.wordSearch;
+    eq(bare.normalizeWords(["किताब"])[0].letters.join("|"), "कि|ता|ब", "fallback: Hindi still three cells");
+    eq(bare.normalizeWords(["สวัสดี"])[0].letters.join("|"), "ส|วั|ส|ดี", "fallback: Thai marks still kept");
+  } finally {
+    Intl.Segmenter = realSegmenter;
+    global.window.UltraTextGen = realNs;
+  }
+}
+
+/* ---------------------------------------------------------------
+   10. A pasted list: numbering, bullets and definitions are not the word
+   --------------------------------------------------------------- */
+{
+  const keys = (x) => WS.normalizeWords(x).map((w) => w.key).join(" ");
+  const disp = (x) => WS.normalizeWords(x).map((w) => w.display).join("|");
+  eq(keys("1. Apple - a red fruit"), "APPLE", "number and dash definition removed");
+  eq(disp("1. Apple - a red fruit"), "Apple", "the word list shows the word, not the definition");
+  eq(keys("2) **Banana**: a yellow fruit, curved"), "BANANA", "markdown bold and colon definition removed, comma in it ignored");
+  eq(keys("(3) grape \u2014 a small fruit"), "GRAPE", "parenthesised number and em dash definition");
+  eq(keys("\u2022 cherry\n- plum\n* fig"), "CHERRY PLUM FIG", "bullets removed");
+  eq(keys("ice-cream\nwell-known"), "ICECREAM WELLKNOWN", "an unspaced hyphen is part of the word");
+  eq(keys("Fruits: pear, plum, fig"), "PEAR PLUM FIG", "a heading before a short list is dropped");
+  eq(keys("3.14\n2024"), "314 2024", "a number that is the entry stays");
+  eq(keys("cat, dog; bird"), "CAT DOG BIRD", "plain separators unchanged");
+}
+
 console.log("\nwordSearch.js — " + pass + " passed, " + fail + " failed");
 process.exit(fail ? 1 : 0);

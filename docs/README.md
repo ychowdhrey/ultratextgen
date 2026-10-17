@@ -36,7 +36,7 @@ workflow that produces it.
 | **Usecase** | `/usecase/` | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
 | **Guide** (articles) | `/guide/` | `Article` | [`guide-content-workflow.md`](./guide-content-workflow.md) | `the internal opportunity backlog` (`page_type=guide`) | ❌ none (hand-built) | ⚠️ workflow + backlog, no generator |
 | **Learn** (education pillar — handwriting/pre-writing/tracing articles) | `/learn/` | `Article` + `BreadcrumbList` + `FAQPage` | ❌ undocumented | ❌ none | ❌ none (hand-built) | ❌ undocumented — new this review (PRs #625, #650: handwriting hub + 9 articles, `dot-to-dots`, `coloring-and-fine-motor`). Content is *about* handwriting/tracing/coloring rather than a printable itself, but sits close enough to the Printables scope boundary in `CLAUDE.md` (shape-only/pre-writing content is out of scope there) to be worth an explicit look |
-| **Research** (published studies: the public evidence record for an experiment) | `/research/` | `CollectionPage` (index) · `Article` + `BreadcrumbList` (study) | Hand-built; the study page is the canonical record and the PDF beside it (`/research/<study>.pdf`) is rendered from that page by `scripts/build-research-pdf.js` | the study page itself (key findings, method, limitations in HTML); data files under `/research/<study>/data/` | ❌ none (hand-built); PDF via `build-research-pdf.js` (local, `playwright-core --no-save`) | ⚠️ new 2026-09-26: one study (`printable-ink-efficiency-study`), paired with the practical guide `/learn/save-printer-ink-printables/` |
+| **Research** (published studies: the public evidence record for an experiment) | `/research/` | `CollectionPage` (index) · `Article` + `BreadcrumbList` (study) | Hand-built; the study page is the canonical record and the PDF beside it (`/research/<study>.pdf`) is rendered from that page by `scripts/build-research-pdf.js` | the study page itself (key findings, method, limitations in HTML); data files under `/research/<study>/data/` | ❌ none (hand-built); PDF via `build-research-pdf.js` (local, `playwright-core --no-save`) | ⚠️ new 2026-09-26: five studies (`printable-ink-efficiency-study`, `ink-saving-by-worksheet-type`, `zalgo-generator-benchmark`, `ai-writing-footprint-study`, `unicode-rendering-support-study`); the first is paired with the practical guide `/learn/save-printer-ink-printables/`, the fourth with the tool `/ai-writing-footprint-checker/`; the fifth backs the site's device glyph check and `/guide/why-fonts-show-as-boxes/` |
 | **Compare** (tool comparisons: interprets a published study for a reader choosing between tools) | `/compare/` | `WebPage` (with `ItemList`) + `BreadcrumbList` | Hand-built. Each page must rest on a `/research/` study whose data backs every comparative claim, and must link that study and the tool it compares; it does not target the tool's own head terms | the study it interprets | ❌ none (hand-built) | ⚠️ new 2026-09-29: one page (`zalgo-generators`), interpreting `/research/zalgo-generator-benchmark/` |
 | **Events** (seasonal/holiday pages) | `/events/` (+ locale variants, e.g. `/es/events/`) | `WebApplication` + `FAQPage` | ❌ undocumented | `data/event_page_specs/*.json` (no CSV backlog row) | `generate_event_page_from_spec.py` (mirrors `generate_library_page_from_spec.py`; validation is built into the generator, no separate validator script) | ⚠️ generator exists, no backlog/governing doc — new this review (PR #457 + Spanish `es/events/` pages) |
 | **Updates** (dated Unicode/platform/game rule-change log) | `/updates/` | `NewsArticle` + `BreadcrumbList` + `FAQPage` | `.claude/rules/content-architecture.md` (documented there in depth; no dedicated file under `docs/`) | ❌ none (entries register directly in `scripts/generate-site-art.py`'s `PAGES` dict; no CSV backlog row) | ❌ none (hand-built) | ⚠️ actively shipping — 10 PRs this week alone (#607, #608, #610, #615, #616, #619, #620, #628, #634, #646) — but this map and the digest classifier had no row/rule for it until now |
@@ -143,6 +143,7 @@ not files in this repo. They run as full Claude sessions and open PRs for review
 | Routine | Trigger | Action |
 |---|---|---|
 | Weekly infrastructure review | weekly schedule | run the [Weekly infrastructure review](#weekly-infrastructure-review); open a PR updating this map (no auto-merge) |
+| Weekly updates opportunity scan | weekly schedule | check the three event types `updates/` tracks (`.claude/rules/content-architecture.md`) for anything genuinely new since the last run, cross-check against what the site already publishes, and write a dated record to `docs/updates-scan/` (no page is built or published without a separate decision) |
 
 ---
 
@@ -799,6 +800,63 @@ here so they aren't lost. Update as they're closed or new ones appear.
     Input note: `gh pr list` is unavailable in sandboxed sessions (it
     needs GraphQL), so this review rebuilt the same JSON from the REST
     `pulls` endpoints and fed it to `weekly_pr_digest.py` on stdin.
+26. **Review of 2026-10-10 (PRs #991-#1052, 59 merged): no new lane; the
+    Unclassified signal is still the unfixed gaps #24/#25, plus four
+    one-off root paths.** 34 of 59 PRs surfaced as Unclassified, and none of
+    it is a content lane:
+    - root `llms.txt`, 21 PRs (gap #24, now 6 → 14 → 21): still open.
+    - `.claude/rules/` and `.claude/skills/`, 10 PRs: gap #25, still open.
+    - `reportcard.md` (#1004) and `compare/` (#1009): gap #25, still open.
+    - **New, all one PR each:** root `*.test.js` unit tests
+      (`header.test.js`, `renderer.case.test.js`; 6 PRs: #1002, #1027, #1039,
+      #1045, #1048, #1052), which belong with "Scripts / tooling" or "Core
+      JS"; the Seznam verification stub `seznam-wmt-<hash>.txt` (#1005), a
+      third verification-stub shape that `ROOT_VERIFICATION_RE` (`.html`
+      only) does not cover (compare gap #22); `package-lock.json` (#995);
+      and root `decorations-showcase.js` (#1045), the second root-level
+      module with no rule after gap #21.
+    Placed this week, no map change needed: the Kaomoji lane
+    (#1042, #1046, #1049, #1052), the Ukrainian locale (#1028), the Japanese
+    printables platform (#1003), and the Free Fire player board
+    (#998, #999) all sit in lanes the map already names; `check:runtime-smoke`
+    (#995) is already in the generated gate inventory.
+    Still unmade, per this review's additive-diff-to-this-file mandate: the
+    `LANE_RULES` additions named in #24/#25, plus `("*.test.js", ...)` for
+    root tests and a `.txt` arm on `ROOT_VERIFICATION_RE`; with them, nearly
+    all of this week's 34 Unclassified PRs would have classified.
+    Input note: `gh` is unavailable here, so the PR set was rebuilt from
+    `origin/main` merge commits (`git diff --name-only <parent> <merge>`)
+    and cross-checked against the GitHub PR search (60 merged since
+    2026-10-03); the digest in `infra-review/` was not regenerated.
+
+26. **Review of 2026-10-17 (PRs #1055-#1074, 19 merged): two lane-table
+    updates and the classifier gaps again, now on a smaller sample.** 9 of 19
+    PRs surfaced as Unclassified; none is a new content lane.
+    - **Research grew from five studies to seven.** #1065/#1066 (Study 4,
+      AI writing footprint, v1.1), #1067/#1072 (Study 5, Unicode rendering
+      support, v1.1), #1068 (Study 6, `emoji-name-drift`) and #1074 (Study 7,
+      `kaomoji-unicode-rendering-study`). The Research row above still says
+      "five studies"; the two new slugs are not listed there. Four of the six
+      Research PRs are corrections to a study shipped days earlier (v1.1),
+      the pattern `build-research-pdf.js` already warns about: the PDF and
+      the page must change in one commit.
+    - **Root-level tool page `/ai-writing-footprint-checker/`** (#1057,
+      #1065, #1066, #1067, #1074) has no `LANE_RULES` prefix, the same
+      shape as gap #11 (root-level standalone tool pages). Its engine under
+      `js/writing-footprint/` is already documented in the operational-tracks
+      table; only the page directory is unplaced.
+    - **Open classifier gaps, unchanged:** root `llms.txt` (5 PRs; gap #24),
+      `.claude/rules/` (1 PR; gap #25), `reportcard.md` (#1061; gap #25), and
+      root `renderer.case.test.js` (#1055; gap #18's root-level test file
+      shape, now a third example).
+    The fix is still `LANE_RULES` entries in `scripts/weekly_pr_digest.py`:
+    `("ai-writing-footprint-checker/", "Category pages")`,
+    `("llms.txt", "SEO / sitemap")`, `(".claude/", ...)`,
+    `("reportcard.md", "Docs")` and a root `*.test.js` rule. Not made here,
+    per this review's mandate of a small, additive diff to this file only.
+    Input note: `gh pr list` is blocked (GraphQL), so the digest was rebuilt
+    from the REST `pulls` and `pulls/<n>/files` endpoints and fed to
+    `weekly_pr_digest.py` on stdin, as in #25.
 
 ---
 

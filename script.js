@@ -11,6 +11,40 @@
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
+  // Clipboard write with the textarea fallback. navigator.clipboard is missing
+  // outside a secure context and rejects when the browser denies the
+  // permission (some in-app browsers, sandboxed frames). Both copy buttons
+  // below used to give up there, so the site's main job failed on exactly the
+  // browsers least able to help. Resolves on a copy, rejects when neither
+  // path wrote anything, so callers keep their success-only feedback.
+  // While the fallback runs, the browser fires a native "copy" event; the
+  // manual-copy listener below skips it, so one press records one row. Focus
+  // goes back to the button the visitor pressed.
+  let programmaticCopy = false;
+  function writeClipboard(text) {
+    const legacy = () => {
+      const focused = document.activeElement;
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      let ok = false;
+      programmaticCopy = true;
+      try { ok = !!document.execCommand("copy"); } catch (e) { ok = false; }
+      programmaticCopy = false;
+      document.body.removeChild(ta);
+      if (focused && typeof focused.focus === "function") focused.focus();
+      return ok ? Promise.resolve() : Promise.reject(new Error("copy refused"));
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text).catch(legacy);
+    }
+    return legacy();
+  }
+
   // Shared namespace (also owned by game-rules.js / symbol-explorer.js). Used
   // to bridge the live decoration ("flair") state to the game name-checker.
   const UTG = (window.UltraTextGen = window.UltraTextGen || {});
@@ -671,10 +705,22 @@ const decorations = window.UTG_DECORATIONS
      RENDER SAFETY
      =================== */
   // Does the visitor's own device have a glyph for this character? Compares
-  // the canvas rasterization against a guaranteed-unassigned code point: an
-  // identical bitmap means the font fell back to the same missing-glyph box.
-  // Results are cached per character — the check runs once per style.
+  // the canvas rasterization against characters that are guaranteed to have no
+  // glyph: an identical bitmap means the font fell back to the same
+  // missing-glyph box. Results are cached per character — the check runs once
+  // per style.
+  //
+  // The references must be code points that really draw a box. The previous
+  // reference, U+E01ED, is VARIATION SELECTOR-254: a default-ignorable that
+  // draws nothing, so every box was read as "supported". Measured in headless
+  // Chromium 155 over about 67,000 code points, that probe flagged 4 of 47,696
+  // unsupported code points (Ubuntu 24.04 fonts); U+0378 alone flags 47,692, and
+  // U+0378 plus U+FFFF flag all of them, with no false alarms.
+  // Known limit: a platform that draws a different placeholder per character
+  // (GNU Unifont's hex-code boxes, Apple's Last Resort glyphs per block) cannot
+  // be caught by comparing bitmaps; there this probe still answers "supported".
   const glyphSupportCache = {};
+  const GLYPH_PROBE_REFERENCES = ["\u0378", "\uFFFF"]; // unassigned / noncharacter: no font maps them
   let glyphCtx = null;
   function deviceRendersGlyph(ch) {
     if (!ch) return true;
@@ -692,8 +738,8 @@ const decorations = window.UTG_DECORATIONS
         glyphCtx.fillText(c, 2, 18);
         return glyphCtx.getImageData(0, 0, 24, 24).data.join(",");
       };
-      const tofu = "\u{E01ED}"; // unassigned code point → always the .notdef box
-      supported = draw(ch) !== draw(tofu);
+      const bitmap = draw(ch);
+      supported = !GLYPH_PROBE_REFERENCES.some((ref) => draw(ref) === bitmap);
     } catch (err) {
       supported = true; // canvas unavailable → don't cry wolf
     }
@@ -702,14 +748,21 @@ const decorations = window.UTG_DECORATIONS
   }
 
   // A representative converted character for a style (astral-safe), used to
-  // probe device support for the style's Unicode block.
+  // probe device support for the style's Unicode block. A style's map is
+  // usually one string of astral characters, and `for…in` over a string yields
+  // UTF-16 code units, so the first "character" used to be a lone surrogate
+  // (U+D835) for 24 styles. Iterate code points instead.
   function sampleGlyph(style) {
     const maps = [style && style.upper, style && style.lower, style && style.nums];
     for (const map of maps) {
-      if (map) {
-        for (const key in map) {
-          if (map[key]) return [...String(map[key])][0];
-        }
+      if (!map) continue;
+      if (typeof map === "string") {
+        const first = [...map].find((c) => c.trim() !== "");
+        if (first) return first;
+        continue;
+      }
+      for (const key in map) {
+        if (map[key]) return [...String(map[key])][0];
       }
     }
     return "";
@@ -867,8 +920,12 @@ const decorations = window.UTG_DECORATIONS
   // Compact per-card trust signal built from the style's own `platforms`
   // data plus the device glyph probe. Tooltips carry the honest caveats no
   // competitor surfaces (platform filters, screen readers, tofu boxes).
-  function safetyPillHtml(name, style) {
+  function safetyPillHtml(name, style, untouched) {
     if (!style) return "";
+    // The style left the text exactly as typed (Bengali, Tamil or any script
+    // it has no letters for): nothing on the card was styled, so a verdict on
+    // the style's characters would describe output that is not there.
+    if (untouched) return "";
     const glyph = sampleGlyph(style);
     if (glyph && !deviceRendersGlyph(glyph)) {
       const title = uiText("safetyBadges.deviceWarningTitle", "Your device's fonts can't display this style — it may show as boxes (□). It can still look fine on other devices.");
@@ -899,7 +956,9 @@ const decorations = window.UTG_DECORATIONS
     return "";
   }
 
-  function createStyleCard(name, convertedText, decoratedText, style, isDemo) {
+  // `untouched`: the style returned the text as typed, so the card carries no
+  // styled characters to make a claim about.
+  function createStyleCard(name, convertedText, decoratedText, style, isDemo, untouched) {
     const card = document.createElement("div");
     card.className = "style-card";
 
@@ -923,13 +982,20 @@ const decorations = window.UTG_DECORATIONS
     const shareAria = uiText("shareResult.ariaLabel", "Share {style} result").replace("{style}", name);
     const shareId = (style && style.slug) || "";
 
+    // A style's note is its English one unless the locale file carries
+    // ui.styleNotes.<slug>: on /de/gross-und-kleinschreibung/ every card
+    // explained itself in English under German prose. Locales without the
+    // key keep the English note, exactly as before.
+    const localNote = style && style.slug ? uiText("styleNotes." + style.slug, null) : null;
+    const noteHtml = localNote ? escapeHtml(localNote) : (style && style.note) || "";
+
     card.innerHTML = `
       <div class="style-info">
         <p class="style-name">${name}</p>
-         ${style?.note ? `<p class="style-note">${style.note}</p>` : ""}
+         ${noteHtml ? `<p class="style-note">${noteHtml}</p>` : ""}
         <p class="style-preview ${!convertedText ? "placeholder" : ""}">${convertedText ? escapeHtml(convertedText) : STR.empty}</p>
         ${decoHtml}
-        ${safetyPillHtml(name, style)}
+        ${safetyPillHtml(name, style, !isDemo && !!untouched)}
         ${platformChipsHtml(style)}
       </div>
       <div class="style-actions-stack">
@@ -1598,12 +1664,13 @@ const decorations = window.UTG_DECORATIONS
 
     const inputText = el.mainInput ? el.mainInput.value : "";
     const isDemo = !inputText;
+    const asTyped = applyFormatMarks(inputText || DEMO_TEXT);
     const cards = [];
     valid.forEach((name) => {
       const style = stylesRegistry[name];
       const converted = applyFormatMarks(applyScope(inputText || DEMO_TEXT, style));
       const decorated = converted ? applyDecoration(converted) : "";
-      cards.push(createStyleCard(name, converted, selectedDecoration ? decorated : null, style, isDemo));
+      cards.push(createStyleCard(name, converted, selectedDecoration ? decorated : null, style, isDemo, converted === asTyped));
     });
     appendAroundAds(grid, keptAds, cards);
   }
@@ -1721,13 +1788,14 @@ const decorations = window.UTG_DECORATIONS
     );
 
     const isDemo = !inputText;
+    const asTyped = applyFormatMarks(inputText || DEMO_TEXT);
     let count = 0;
 
     const cards = [];
     filtered.forEach(([name, style]) => {
       const converted = applyFormatMarks(applyScope(inputText || DEMO_TEXT, style));
       const decorated = converted ? applyDecoration(converted) : "";
-      cards.push(createStyleCard(name, converted, selectedDecoration ? decorated : null, style, isDemo));
+      cards.push(createStyleCard(name, converted, selectedDecoration ? decorated : null, style, isDemo, converted === asTyped));
       count += 1;
     });
     appendAroundAds(grid, keptAds, cards);
@@ -2169,7 +2237,7 @@ document.addEventListener("click", async (e) => {
   if (!text) return;
 
   try {
-    await navigator.clipboard.writeText(text);
+    await writeClipboard(text);
 
     // header.js owns the copy-identity helper (it loads on every page this
     // does); the guard keeps the copy working if it is ever absent.
@@ -2205,6 +2273,7 @@ document.addEventListener("click", (e) => {
 });
 
 document.addEventListener("copy", () => {
+  if (programmaticCopy) return;
   const selection = window.getSelection()?.toString();
   if (selection && selection.length > 0) {
     if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
@@ -2475,7 +2544,7 @@ document.addEventListener("click", async (e) => {
   const text = btn.dataset.text || "";
 
   try {
-    await navigator.clipboard.writeText(text);
+    await writeClipboard(text);
 
     const styleName = btn.dataset.style || "";
     recordStyleUsage(styleName);

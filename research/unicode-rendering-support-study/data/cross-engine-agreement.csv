@@ -1,0 +1,22 @@
+excluded_right_to_left,engine,engine_version,condition,arm,n,agree,agree_pct,engine_draws_study_chromium_does_not,study_chromium_draws_engine_does_not,engine_unsupported,study_chromium_unsupported
+716,chromium,155.0.8059.39,A_minimal,code points,57916,57916,100.0,0,0,57740,57740
+0,chromium,155.0.8059.39,A_minimal,emoji sequences,3963,3963,100.0,0,0,142,142
+716,chromium,155.0.8059.39,A_distro,code points,57915,57915,100.0,0,0,47500,47500
+0,chromium,155.0.8059.39,A_distro,emoji sequences,3963,3963,100.0,0,0,141,141
+716,chromium,155.0.8059.39,B_noto,code points,57913,57901,99.98,0,12,45769,45757
+0,chromium,155.0.8059.39,B_noto,emoji sequences,3963,3963,100.0,0,0,0,0
+716,webkit,26.6,A_minimal,code points,57916,57913,99.99,0,3,57743,57740
+0,webkit,26.6,A_minimal,emoji sequences,3963,3962,99.97,1,0,141,142
+716,webkit,26.6,A_distro,code points,57915,57912,99.99,0,3,47503,47500
+0,webkit,26.6,A_distro,emoji sequences,3963,3963,100.0,0,0,141,141
+716,webkit,26.6,B_noto,code points,57913,57908,99.99,0,5,45762,45757
+0,webkit,26.6,B_noto,emoji sequences,3963,3963,100.0,0,0,0,0
+716,firefox,155.0,A_minimal,code points,57916,57915,100.0,0,1,57741,57740
+0,firefox,155.0,A_minimal,emoji sequences,3963,3952,99.72,1,10,151,142
+716,firefox,155.0,A_distro,code points,57915,57914,100.0,0,1,47501,47500
+0,firefox,155.0,A_distro,emoji sequences,3963,3953,99.75,0,10,151,141
+716,firefox,155.0,B_noto,code points,57913,57913,100.0,0,0,45757,45757
+0,firefox,155.0,B_noto,emoji sequences,3963,3963,100.0,0,0,0,0
+0,chromium (width test vs full detector),155.0.8059.39,A_minimal,emoji sequences,3963,3840,96.9,123,0,142,265
+0,chromium (width test vs full detector),155.0.8059.39,A_distro,emoji sequences,3963,3937,99.34,26,0,141,167
+0,chromium (width test vs full detector),155.0.8059.39,B_noto,emoji sequences,3963,3963,100.0,0,0,0,0

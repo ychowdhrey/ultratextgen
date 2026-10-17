@@ -1,0 +1,158 @@
+{
+ "comment | all years | any dash (character or double hyphen)": {
+  "sets": 229,
+  "or": 5.35,
+  "ci": [
+   3.25,
+   9.72
+  ],
+  "accused_with": 48,
+  "accused_n": 229,
+  "controls_with": 24,
+  "controls_n": 564,
+  "informative_sets": 67
+ },
+ "comment | all years | em dash character only (U+2014)": {
+  "sets": 229,
+  "or": 8.37,
+  "ci": [
+   4.39,
+   20.8
+  ],
+  "accused_with": 41,
+  "accused_n": 229,
+  "controls_with": 12,
+  "controls_n": 564,
+  "informative_sets": 50
+ },
+ "comment | all years | typed double hyphen only": {
+  "sets": 229,
+  "or": 1.54,
+  "ci": [
+   0.5,
+   4.05
+  ],
+  "accused_with": 7,
+  "accused_n": 229,
+  "controls_with": 12,
+  "controls_n": 564,
+  "informative_sets": 19
+ },
+ "comment | 2025 and later | any dash (character or double hyphen)": {
+  "sets": 186,
+  "or": 7.72,
+  "ci": [
+   4.33,
+   16.2
+  ],
+  "accused_with": 47,
+  "accused_n": 186,
+  "controls_with": 17,
+  "controls_n": 457,
+  "informative_sets": 59
+ },
+ "comment | 2025 and later | em dash character only (U+2014)": {
+  "sets": 186,
+  "or": 10.76,
+  "ci": [
+   5.17,
+   32.42
+  ],
+  "accused_with": 40,
+  "accused_n": 186,
+  "controls_with": 9,
+  "controls_n": 457,
+  "informative_sets": 46
+ },
+ "comment | 2025 and later | typed double hyphen only": {
+  "sets": 186,
+  "or": 2.38,
+  "ci": [
+   0.71,
+   7.42
+  ],
+  "accused_with": 7,
+  "accused_n": 186,
+  "controls_with": 8,
+  "controls_n": 457,
+  "informative_sets": 15
+ },
+ "comment | 2023 to 2024 | any dash (character or double hyphen)": {
+  "sets": 43,
+  "or": 0.27,
+  "ci": [
+   0.0,
+   1.33
+  ],
+  "accused_with": 1,
+  "accused_n": 43,
+  "controls_with": 7,
+  "controls_n": 107,
+  "informative_sets": 8
+ },
+ "comment | 2023 to 2024 | em dash character only (U+2014)": {
+  "sets": 43,
+  "or": 0.67,
+  "ci": [
+   0.0,
+   null
+  ],
+  "accused_with": 1,
+  "accused_n": 43,
+  "controls_with": 3,
+  "controls_n": 107,
+  "informative_sets": 4
+ },
+ "comment | 2023 to 2024 | typed double hyphen only": {
+  "sets": 43,
+  "or": 0.0,
+  "ci": [
+   0.0,
+   0.0
+  ],
+  "accused_with": 0,
+  "accused_n": 43,
+  "controls_with": 4,
+  "controls_n": 107,
+  "informative_sets": 4
+ },
+ "article | all years | any dash (character or double hyphen)": {
+  "sets": 260,
+  "or": 1.01,
+  "ci": [
+   0.74,
+   1.4
+  ],
+  "accused_with": 136,
+  "accused_n": 260,
+  "controls_with": 210,
+  "controls_n": 403,
+  "informative_sets": 163
+ },
+ "article | all years | em dash character only (U+2014)": {
+  "sets": 260,
+  "or": 1.02,
+  "ci": [
+   0.75,
+   1.4
+  ],
+  "accused_with": 122,
+  "accused_n": 260,
+  "controls_with": 186,
+  "controls_n": 403,
+  "informative_sets": 166
+ },
+ "article | all years | typed double hyphen only": {
+  "sets": 260,
+  "or": 0.96,
+  "ci": [
+   0.41,
+   1.92
+  ],
+  "accused_with": 14,
+  "accused_n": 260,
+  "controls_with": 24,
+  "controls_n": 403,
+  "informative_sets": 34
+ }
+}

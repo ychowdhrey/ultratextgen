@@ -43,6 +43,11 @@
     return normalize(s).split(/[^\p{L}\p{N}]+/u).filter(Boolean);
   }
 
+  // A visitor's spelling of a word the index spells another way. "kamoji" is
+  // the common spelling of kaomoji (the kaomoji hub says so in its own text),
+  // and the index has no page that contains it.
+  const QUERY_ALIASES = { kamoji: "kaomoji" };
+
   function slugWords(path) {
     return path.replace(/^\/[a-z]{2}(?:-[a-z]{2})?\//, "/").split(/[\/-]+/).filter(Boolean).join(" ");
   }
@@ -77,6 +82,14 @@
       if (w === token) return field.weight * 1.5;
       if (w.indexOf(token) === 0) best = field.weight;
     }
+    // A plural the index never writes ("kaomojis" for kaomoji). Only tried
+    // when nothing else matched, so it can never outrank a real match.
+    if (!best && token.length > 3 && token.charAt(token.length - 1) === "s") {
+      const singular = token.slice(0, -1);
+      for (let i = 0; i < field.words.length; i++) {
+        if (field.words[i].indexOf(singular) === 0) return field.weight * 0.8;
+      }
+    }
     return best;
   }
 
@@ -103,7 +116,9 @@
   }
 
   function search(entries, query, limit) {
-    const tokens = tokenize(query);
+    const tokens = tokenize(query).map(function (t) {
+      return QUERY_ALIASES[t] || QUERY_ALIASES[t.replace(/s$/, "")] || t;
+    });
     if (!tokens.length) return [];
     const phrase = tokens.join(" ");
     const hits = [];

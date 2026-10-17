@@ -180,6 +180,17 @@ if (files.includes('en.json')) {
     'live: "heart" lists the heart symbol collection');
   ok(S.search(en, 'bubble', 8).some((e) => e.path === '/printables/bubble-letters/'),
     'live: "bubble" lists the bubble letters printables hub');
+  // Three spellings that reached no page: the common "kamoji" and the plurals
+  // of kaomoji, which the word-prefix matcher could not see (2,281 Google
+  // impressions in July 2026 arrived on exactly these words).
+  const kaomoji = (q) => S.search(en, q, 8).some((e) => /kaomoji/.test(e.path));
+  ok(kaomoji('kaomoji'), 'live: "kaomoji" finds a kaomoji page');
+  ok(kaomoji('kamoji'), 'live: "kamoji" finds a kaomoji page');
+  ok(kaomoji('kamojis'), 'live: "kamojis" finds a kaomoji page');
+  ok(kaomoji('kaomojis'), 'live: "kaomojis" finds a kaomoji page');
+  ok(kaomoji('sad kamoji'), 'live: "sad kamoji" finds a kaomoji page');
+  eq(S.search(en, 'zzzs', 8).length, 0, 'live: a plural fallback does not invent matches for nonsense');
+  eq(top('bold'), '/category/bold-fonts/', 'live: the plural fallback leaves an exact match on top');
 }
 
 /* ---- report ------------------------------------------------------------ */

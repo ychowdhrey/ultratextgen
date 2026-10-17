@@ -60,6 +60,8 @@
     {
       id: "PHR-NOTE-THAT", name: "'It's important to note' lead-in", category: "phrases", method: "phrase",
       regex: /\b(?:it(?:'s|’s| is) (?:important|worth|crucial|essential) (?:to )?(?:note|noting|mention(?:ing)?|remember(?:ing)?|highlight(?:ing)?|emphasi[sz]e)(?: that)?,?)\s+/gi,
+      // Removal is offered only when the lead-in ends in "that" or a comma. "It is important to remember your password" is not a lead-in.
+      noOptionsIf: /^(?![\s\S]*(?:that|,)\s*$)/i,
       explanation: "Announces that a fact matters instead of stating it.",
       why: "Readers skim past the announcement, and a page full of them reads as padding.",
       references: ["housestyle"], ruleConfidence: "high", evidence: "reader",
@@ -168,12 +170,12 @@
     {
       id: "RHE-NOT-JUST", name: "'Not just X but Y'", category: "rhetoric", method: "regex",
       regex: /\bnot (?:just|only|merely|simply) [^.!?\n]{2,100}?,? but (?:also )?/gi,
-      explanation: "Negative parallelism: denies a reading nobody proposed, then offers the 'real' one.",
+      explanation: "A two-part frame that adds a second point to a first. In its 'not X but Y' form it also denies a reading nobody proposed.",
       why: "One use is ordinary. Repeated use makes every point sound like a rebuttal.",
-      references: ["housestyle"], ruleConfidence: "medium", evidence: "population",
+      references: ["housestyle"], ruleConfidence: "medium", evidence: "house",
       falsePositives: "Natural in speeches and persuasive writing. Frequency matters more than any single use.",
       exemptions: ["quoted"],
-      suggestion: "State the positive claim directly: 'It does Y.'",
+      suggestion: "Keep both halves if both matter. If only the second does, state it directly: 'It does Y.'",
       prominence: "medium", safety: "explanation_only", options: []
     },
     {

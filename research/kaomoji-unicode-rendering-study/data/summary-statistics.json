@@ -1,0 +1,558 @@
+{
+ "site_commit_used": "761bda3b9426b62c61c355a56684c3a79e025c13",
+ "unicode_version": "18.0.0",
+ "faces": 1616,
+ "placements": 7085,
+ "by_source_type": {
+  "decoder-named": 40,
+  "generator-preset": 16,
+  "tile-dedicated": 4955,
+  "tile-embedded": 1824,
+  "tile-facey-outside-lane": 250
+ },
+ "collection_pages": 187,
+ "languages_with_collection_pages": 17,
+ "site_pages_with_kaomoji_tiles_loaded_in_browser": 404,
+ "english_collection": {
+  "en_dedicated_pages": 63,
+  "en_dedicated_tiles": 1498,
+  "en_dedicated_unique_faces": 1300
+ },
+ "prevalence_all_faces": {
+  "has_combining": {
+   "faces": 127,
+   "of": 1616,
+   "share": 0.0786
+  },
+  "has_variation_selector": {
+   "faces": 3,
+   "of": 1616,
+   "share": 0.0019
+  },
+  "has_astral": {
+   "faces": 77,
+   "of": 1616,
+   "share": 0.0476
+  },
+  "has_default_ignorable": {
+   "faces": 4,
+   "of": 1616,
+   "share": 0.0025
+  },
+  "has_ambiguous_eaw": {
+   "faces": 1068,
+   "of": 1616,
+   "share": 0.6609
+  },
+  "nfkc_changed": {
+   "faces": 807,
+   "of": 1616,
+   "share": 0.4994
+  },
+  "has_extended_pictographic": {
+   "faces": 124,
+   "of": 1616,
+   "share": 0.0767
+  },
+  "has_zwj": {
+   "faces": 0,
+   "of": 1616,
+   "share": 0.0
+  },
+  "mixed_scripts_ge2": {
+   "faces": 382,
+   "of": 1616,
+   "share": 0.2364
+  },
+  "no_noncommon_script": {
+   "faces": 460,
+   "of": 1616,
+   "share": 0.2847
+  },
+  "single_script": {
+   "faces": 774,
+   "of": 1616,
+   "share": 0.479
+  }
+ },
+ "scripts_found": 39,
+ "blocks_found": 83,
+ "distinct_characters": 692,
+ "characters_to_cover_share_of_positions": {
+  "0.5": 21,
+  "0.8": 121,
+  "0.95": 344
+ },
+ "characters_in_exactly_one_face": 233,
+ "characters_occurring_once_in_the_whole_list": 155,
+ "common_characters_also_used_with_east_asian_scripts": {
+  "distinct": 21,
+  "faces_containing_any": 360
+ },
+ "faces_by_number_of_scripts": {
+  "0": 460,
+  "1": 774,
+  "2": 278,
+  "3": 71,
+  "4": 30,
+  "5": 2,
+  "6": 1
+ },
+ "length": {
+  "characters": {
+   "min": 1,
+   "median": 7.0,
+   "mean": 7.83,
+   "max": 34,
+   "p90": 12
+  },
+  "visible_units": {
+   "min": 1,
+   "median": 7.0,
+   "mean": 7.58,
+   "max": 34,
+   "p90": 12
+  }
+ },
+ "faces_whose_column_count_changes_with_ambiguous_width_treatment": {
+  "faces_whose_width_depends_on_EAW_ambiguous_treatment": 1038,
+  "share": 0.6423,
+  "max_swing_columns": 14
+ },
+ "dedup_levels": {
+  "A_byte_identical_unique": 1616,
+  "B_scalar_sequence_unique": 1616,
+  "C_NFC_groups": 1616,
+  "D_NFKC_groups_flag_only": 1571,
+  "D_groups_with_multiple_faces": 43,
+  "D_faces_in_multi_groups": 88
+ },
+ "script_top": [
+  {
+   "script": "Common",
+   "scalar_slots_in_unique_faces": 9642,
+   "share_of_slots": 0.7623,
+   "distinct_scalars": 340,
+   "faces_containing": 1569,
+   "share_of_faces": 0.9709
+  },
+  {
+   "script": "Latin",
+   "scalar_slots_in_unique_faces": 869,
+   "share_of_slots": 0.0687,
+   "distinct_scalars": 74,
+   "faces_containing": 419,
+   "share_of_faces": 0.2593
+  },
+  {
+   "script": "Katakana",
+   "scalar_slots_in_unique_faces": 370,
+   "share_of_slots": 0.0293,
+   "distinct_scalars": 42,
+   "faces_containing": 217,
+   "share_of_faces": 0.1343
+  },
+  {
+   "script": "Greek",
+   "scalar_slots_in_unique_faces": 306,
+   "share_of_slots": 0.0242,
+   "distinct_scalars": 21,
+   "faces_containing": 270,
+   "share_of_faces": 0.1671
+  },
+  {
+   "script": "Inherited",
+   "scalar_slots_in_unique_faces": 268,
+   "share_of_slots": 0.0212,
+   "distinct_scalars": 29,
+   "faces_containing": 121,
+   "share_of_faces": 0.0749
+  },
+  {
+   "script": "Canadian_Aboriginal",
+   "scalar_slots_in_unique_faces": 209,
+   "share_of_slots": 0.0165,
+   "distinct_scalars": 30,
+   "faces_containing": 87,
+   "share_of_faces": 0.0538
+  },
+  {
+   "script": "Hiragana",
+   "scalar_slots_in_unique_faces": 144,
+   "share_of_slots": 0.0114,
+   "distinct_scalars": 9,
+   "faces_containing": 106,
+   "share_of_faces": 0.0656
+  },
+  {
+   "script": "Cyrillic",
+   "scalar_slots_in_unique_faces": 105,
+   "share_of_slots": 0.0083,
+   "distinct_scalars": 17,
+   "faces_containing": 98,
+   "share_of_faces": 0.0606
+  }
+ ],
+ "script_pairs_top": [
+  {
+   "script_a": "Greek",
+   "script_b": "Katakana",
+   "faces": 36
+  },
+  {
+   "script_a": "Greek",
+   "script_b": "Hiragana",
+   "faces": 35
+  },
+  {
+   "script_a": "Katakana",
+   "script_b": "Latin",
+   "faces": 30
+  },
+  {
+   "script_a": "Cyrillic",
+   "script_b": "Greek",
+   "faces": 27
+  },
+  {
+   "script_a": "Arabic",
+   "script_b": "Canadian_Aboriginal",
+   "faces": 27
+  },
+  {
+   "script_a": "Greek",
+   "script_b": "Latin",
+   "faces": 23
+  }
+ ],
+ "font_sets": {
+  "E1_full": {
+   "fonts": 103,
+   "pixel_detector_valid_by_controls": false,
+   "face_missing_cmap": 10,
+   "face_missing_pixel": 0,
+   "face_level_agreement_pixel_vs_cmap": {
+    "agree": 1606,
+    "of": 1616,
+    "share": 0.9938
+   },
+   "note": "both missing-character checks failed their controls in this set; no missing-character rate is reported for it"
+  },
+  "E2_minimal": {
+   "fonts": 20,
+   "pixel_detector_valid_by_controls": true,
+   "face_missing_cmap": 986,
+   "face_missing_pixel": 985,
+   "face_level_agreement_pixel_vs_cmap": {
+    "agree": 1615,
+    "of": 1616,
+    "share": 0.9994
+   }
+  },
+  "E3_cjk": {
+   "fonts": 25,
+   "pixel_detector_valid_by_controls": true,
+   "face_missing_cmap": 334,
+   "face_missing_pixel": 334,
+   "face_level_agreement_pixel_vs_cmap": {
+    "agree": 1616,
+    "of": 1616,
+    "share": 1.0
+   }
+  }
+ },
+ "missing_character_tests": {
+  "basic_fonts": {
+   "env": "E2_minimal",
+   "detector": "cmap",
+   "noncore_faces": 671,
+   "noncore_missing": 614,
+   "core_only_faces": 945,
+   "core_only_missing": 372,
+   "share_noncore": 0.9151,
+   "share_core": 0.3937,
+   "fisher_p": 3.1076783697030444e-111,
+   "OR": 16.45,
+   "OR_ci95": [
+    12.19,
+    22.21
+   ],
+   "logit": {
+    "coef_per_extra_noncore_script": 2.196,
+    "OR": 8.988,
+    "ci95": [
+     6.903,
+     11.702
+    ],
+    "p": 8.426274841512177e-60
+   }
+  },
+  "basic_plus_cjk_fonts": {
+   "env": "E3_cjk",
+   "detector": "cmap",
+   "noncore_faces": 671,
+   "noncore_missing": 283,
+   "core_only_faces": 945,
+   "core_only_missing": 51,
+   "share_noncore": 0.4218,
+   "share_core": 0.054,
+   "fisher_p": 8.873714815860822e-75,
+   "OR": 12.67,
+   "OR_ci95": [
+    9.2,
+    17.45
+   ],
+   "logit": {
+    "coef_per_extra_noncore_script": 1.806,
+    "OR": 6.088,
+    "ci95": [
+     4.933,
+     7.514
+    ],
+    "p": 1.5504932424692472e-63
+   }
+  },
+  "without_faces_whose_only_extra_scripts_are_kana_or_han": {
+   "E2_other_noncore_missing": 290,
+   "E2_other_noncore_n": 347,
+   "E2_core_only_missing": 372,
+   "E2_core_only_n": 945,
+   "fisher_p": 4.7110200637357244e-48,
+   "sample_OR": 7.84
+  },
+  "broken_faces_without_another_script": {
+   "faces": 372,
+   "lost_a_character_from_a_cjk_or_fullwidth_block": 339
+  }
+ },
+ "prediction_P5_width": {
+  "basic_plus_cjk_fonts": {
+   "env": "E3_cjk",
+   "amb_faces": 1068,
+   "amb_swing": 426,
+   "nonamb_faces": 548,
+   "nonamb_swing": 285,
+   "share_amb": 0.3989,
+   "share_nonamb": 0.5201,
+   "fisher_p": 4.008714653503936e-06,
+   "OR": 0.61,
+   "OR_ci95": [
+    0.5,
+    0.75
+   ]
+  },
+  "container_with_all_fonts": {
+   "env": "E1_full",
+   "amb_faces": 1068,
+   "amb_swing": 369,
+   "nonamb_faces": 548,
+   "nonamb_swing": 252,
+   "share_amb": 0.3455,
+   "share_nonamb": 0.4599,
+   "fisher_p": 9.243577806765185e-06,
+   "OR": 0.62,
+   "OR_ci95": [
+    0.5,
+    0.77
+   ]
+  },
+  "unplanned_look_wide_or_fullwidth_characters": {
+   "wide_or_fullwidth_swing": 180,
+   "wide_or_fullwidth_faces": 710,
+   "others_swing": 441,
+   "others_faces": 906
+  }
+ },
+ "prediction_P3_all_fonts": {
+  "void": true,
+  "reason": "the missing-character check failed its control in this set"
+ },
+ "fallback_fonts_needed_per_face": {
+  "E1_full": {
+   "1": 375,
+   "2": 844,
+   "3": 325,
+   "4": 64,
+   "5": 8
+  },
+  "E2_minimal": {
+   "1": 1544,
+   "2": 70,
+   "3": 2
+  },
+  "E3_cjk": {
+   "1": 825,
+   "2": 745,
+   "3": 46
+  }
+ },
+ "round_trip": {
+  "input": {
+   "identical": 1616,
+   "of": 1616,
+   "share": 1.0
+  },
+  "textarea": {
+   "identical": 1616,
+   "of": 1616,
+   "share": 1.0
+  },
+  "contenteditable": {
+   "identical": 1616,
+   "of": 1616,
+   "share": 1.0
+  },
+  "contenteditable_innerText": {
+   "identical": 1614,
+   "of": 1616,
+   "share": 0.9988
+  },
+  "clipboard": {
+   "identical": 1616,
+   "of": 1616,
+   "share": 1.0
+  },
+  "json": {
+   "identical": 1616,
+   "of": 1616,
+   "share": 1.0
+  },
+  "uri": {
+   "identical": 1616,
+   "of": 1616,
+   "share": 1.0
+  },
+  "localStorage": {
+   "identical": 1616,
+   "of": 1616,
+   "share": 1.0
+  }
+ },
+ "markdown": {
+  "commonmark": {
+   "alone": {
+    "faces": 1616,
+    "text_identical_and_no_markup": 1530,
+    "markup_tags_created": 61,
+    "visible_text_changed": 86,
+    "share_changed_or_marked": 0.0532
+   },
+   "inline": {
+    "faces": 1616,
+    "text_identical_and_no_markup": 1550,
+    "markup_tags_created": 41,
+    "visible_text_changed": 66,
+    "share_changed_or_marked": 0.0408
+   },
+   "line_start_after_text": {
+    "faces": 1616,
+    "text_identical_and_no_markup": 1530,
+    "markup_tags_created": 61,
+    "visible_text_changed": 86,
+    "share_changed_or_marked": 0.0532
+   }
+  },
+  "markdown-it": {
+   "alone": {
+    "faces": 1616,
+    "text_identical_and_no_markup": 1530,
+    "markup_tags_created": 61,
+    "visible_text_changed": 86,
+    "share_changed_or_marked": 0.0532
+   },
+   "inline": {
+    "faces": 1616,
+    "text_identical_and_no_markup": 1550,
+    "markup_tags_created": 41,
+    "visible_text_changed": 66,
+    "share_changed_or_marked": 0.0408
+   },
+   "line_start_after_text": {
+    "faces": 1616,
+    "text_identical_and_no_markup": 1530,
+    "markup_tags_created": 61,
+    "visible_text_changed": 86,
+    "share_changed_or_marked": 0.0532
+   }
+  },
+  "marked": {
+   "alone": {
+    "faces": 1616,
+    "text_identical_and_no_markup": 1522,
+    "markup_tags_created": 69,
+    "visible_text_changed": 94,
+    "share_changed_or_marked": 0.0582
+   },
+   "inline": {
+    "faces": 1616,
+    "text_identical_and_no_markup": 1542,
+    "markup_tags_created": 49,
+    "visible_text_changed": 74,
+    "share_changed_or_marked": 0.0458
+   },
+   "line_start_after_text": {
+    "faces": 1616,
+    "text_identical_and_no_markup": 1522,
+    "markup_tags_created": 69,
+    "visible_text_changed": 94,
+    "share_changed_or_marked": 0.0582
+   }
+  }
+ },
+ "markdown_trigger_characters": {
+  "backslash": {
+   "faces_containing": 33,
+   "changed_commonmark_alone": 28,
+   "changed_marked_alone": 28
+  },
+  "underscore": {
+   "faces_containing": 220,
+   "changed_commonmark_alone": 20,
+   "changed_marked_alone": 21
+  },
+  "asterisk": {
+   "faces_containing": 84,
+   "changed_commonmark_alone": 28,
+   "changed_marked_alone": 28
+  },
+  "tilde": {
+   "faces_containing": 35,
+   "changed_commonmark_alone": 1,
+   "changed_marked_alone": 9
+  },
+  "leading_greater_than": {
+   "faces_containing": 21,
+   "changed_commonmark_alone": 21,
+   "changed_marked_alone": 21
+  }
+ },
+ "markdown_versions": {
+  "commonmark": "0.31.2",
+  "markdown-it": "14.1.0",
+  "marked": "15.0.12",
+  "node": "v22.22.0"
+ },
+ "shrug_check": {
+  "as_typed": {
+   "commonmark": false,
+   "markdown-it": false,
+   "marked": false
+  },
+  "three_backslashes": {
+   "commonmark": true,
+   "markdown-it": true,
+   "marked": true
+  },
+  "code_span": {
+   "commonmark": true,
+   "markdown-it": true,
+   "marked": true
+  }
+ },
+ "ascii_only_faces": {
+  "faces": 166,
+  "missing_a_character_basic_fonts": 0,
+  "changed_by_commonmark_alone": 16
+ },
+ "faces_found_on_a_collection_page": 1337
+}
