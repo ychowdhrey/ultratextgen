@@ -18374,7 +18374,7 @@
 
   <url>
     <loc>https://ultratextgen.com/it/library/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -18404,7 +18404,7 @@
 
   <url>
     <loc>https://ultratextgen.com/it/library/codici-alt/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -18694,7 +18694,7 @@
 
   <url>
     <loc>https://ultratextgen.com/it/library/simboli-greci/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -39572,7 +39572,7 @@
 
   <url>
     <loc>https://ultratextgen.com/research/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -39671,6 +39671,32 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/research/kaomoji-unicode-rendering-study/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/kaomoji-unicode-rendering-study/scripts-in-kaomoji.png</image:loc>
+      <image:title>Horizontal bar chart of twelve Unicode scripts by the share of 1,616 faces that contain at least one character from them: Latin 25.9%; Greek 16.7%; Katakana 13.4%; Hiragana 6.6%; Cyrillic 6.1%; Canadian Aboriginal 5.4%; Arabic 4.6%; Han 4.0%; Thai 3.4%; Yi 3.0%; Hangul 2.4%; Oriya 1.8%. Common and Inherited characters (punctuation, symbols, combining marks) are left out.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/kaomoji-unicode-rendering-study/scripts-per-face.png</image:loc>
+      <image:title>Bar chart of faces by number of writing systems they contain: 0: 460 faces (28.5%); 1: 774 faces (47.9%); 2: 278 faces (17.2%); 3: 71 faces (4.4%); 4+: 33 faces (2.0%). The last three bars (two or more) are highlighted.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/kaomoji-unicode-rendering-study/missing-characters-by-fonts.png</image:loc>
+      <image:title>Grouped bar chart of the share of faces with at least one character no installed font covers. With basic fonts only: 39% of faces that use only punctuation, Latin, Greek or Cyrillic, and 92% of faces that use another writing system. With two Japanese and Chinese fonts added: 5% and 42%.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/research/kaomoji-unicode-rendering-study/markdown-changes.png</image:loc>
+      <image:title>Grouped bar chart of the share of faces altered or turned into formatting by three Markdown engines (commonmark, markdown-it, marked): commonmark 5.3% alone, 4.1% inside a sentence; markdown-it 5.3% alone, 4.1% inside a sentence; marked 5.8% alone, 4.6% inside a sentence.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/research-kaomoji-unicode-rendering-study.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/research/printable-ink-efficiency-study/</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -39718,7 +39744,7 @@
 
   <url>
     <loc>https://ultratextgen.com/research/unicode-rendering-support-study/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
