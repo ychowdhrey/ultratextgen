@@ -2688,8 +2688,8 @@
      using Canvas-measured advance widths (the same "measure with a hidden
      canvas" technique already used elsewhere in this file, e.g. wordPNG).
      Off by default; gated entirely on the optional #pt-stroke-toggle mount,
-     so pages that don't add it are completely unaffected. SVG only — PNG
-     downloads intentionally don't include the overlay.
+     so pages that don't add it are completely unaffected. The word and
+     single-letter PNG exports carry the overlay too (strokeOverlayImage).
      --------------------------------------------------------------- */
 
   const STROKE_COLOR = "#2451c9";     // legible on white, distinct from the ink-black glyph
@@ -4370,9 +4370,9 @@
      strokeDirectionData.js has shipped on 13 pages since 2026-09-05 and
      addWordStrokeOverlay() draws it into SVG only, so the numbered start dots
      and arrows were on the screen and on the printed sheet and absent from
-     the PNG -- the one artifact that leaves the site. Every one of those 13
-     pages is a name or word tool, so the WORD export is where this is
-     reachable; the single-character export is not, because no page both
+     the PNG -- the one artifact that leaves the site. Those 13 pages were all
+     name or word tools, so the WORD export came first. The single-character
+     export followed once /printables/letter-tracing/ became a page that both
      renders one character and loads the stroke data.
 
      The overlay is rasterised from the engine's OWN addWordStrokeOverlay()
