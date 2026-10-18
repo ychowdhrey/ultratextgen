@@ -211,6 +211,32 @@ Object.keys(styles).forEach(name => {
   }
 });
 
+// Spaced styles space GLYPHS, not code points: a pre-decomposed accent stays on
+// its letter and a ZWJ emoji sequence stays whole (it used to come out as
+// "e ́" and "👨 ‍ 👩 ‍ 👧").
+{
+  const spacedNames = Object.keys(styles).filter(k => styles[k].groupSlug === 'spaced' || (styles[k].slug || '').endsWith('-spaced'));
+  assert(spacedNames.length > 0, 'found spaced styles');
+  spacedNames.forEach(name => {
+    const st = styles[name];
+    checks += 1;
+    const decomposed = render('cafe\u0301', st);
+    const precomposed = render('caf\u00e9', st);
+    // no space may sit directly before a combining mark
+    if (/ [\u0300-\u036f]/.test(decomposed)) { failures += 1; console.error(`FAIL ${name}: accent detached -> ${JSON.stringify(decomposed)}`); }
+    checks += 1;
+    // the decomposed form must have the same number of spaced glyphs as the precomposed form
+    if (decomposed.split(' ').length !== precomposed.split(' ').length) { failures += 1; console.error(`FAIL ${name}: glyph count differs -> ${JSON.stringify([decomposed, precomposed])}`); }
+    checks += 1;
+    const family = '\u{1F468}\u200D\u{1F469}\u200D\u{1F467}';
+    if (!render(family + ' hi', st).startsWith(family + ' ')) { failures += 1; console.error(`FAIL ${name}: ZWJ sequence broken -> ${JSON.stringify(render(family + ' hi', st))}`); }
+    checks += 1;
+    // plain behaviour is unchanged: letters spaced, a single space at the word gap, no trailing space
+    const plain = render('ab cd', st);
+    if (/ {2}/.test(plain) || plain.endsWith(' ') || plain.split(' ').length !== 4) { failures += 1; console.error(`FAIL ${name}: plain spacing changed -> ${JSON.stringify(plain)}`); }
+  });
+}
+
 if (failures) {
   console.error(`\n${failures} of ${checks} case-converter checks failed`);
   process.exit(1);

@@ -436,22 +436,26 @@ function renderMap(text, style) {
     return Array.from(text).map(mapOne).join('');
   }
 
-  // Spaced output mode (adds spacing after each mapped glyph)
+  // Spaced output mode (adds spacing after each mapped glyph). Walks grapheme
+  // clusters, not code points: a pre-decomposed accent (e + U+0301) or a ZWJ
+  // emoji sequence is ONE glyph, and a space wedged inside it detaches the mark
+  // or breaks the sequence apart. Each cluster is mapped code point by code
+  // point exactly as the unspaced path does, then followed by one space.
   const out = [];
-  for (const ch of Array.from(text)) {
-    if (ch === '\n') {
+  for (const cluster of splitGraphemes(text)) {
+    if (cluster === '\n' || cluster === '\r\n') {
       if (out[out.length - 1] === ' ') out.pop();
-      out.push('\n');
+      out.push(cluster);
       continue;
     }
 
-    if (ch === ' ') {
+    if (cluster === ' ') {
       if (out[out.length - 1] === ' ') out.pop();
       out.push(' ');
       continue;
     }
 
-    out.push(mapOne(ch));
+    out.push(Array.from(cluster).map(mapOne).join(''));
     out.push(' ');
   }
 

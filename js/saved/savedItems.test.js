@@ -272,6 +272,44 @@ function loadTwoTabs(seed) {
   eq(api.count(), 2, 'a second save keeps the first when storage cannot be read');
 }
 
+/* ---- storage readable but refusing writes (quota) ---------------------- */
+
+{
+  // getItem works and setItem throws QuotaExceededError. Each toggle re-reads
+  // the stored list first; with writes refused that re-read returned the OLD
+  // list and replaced the in-memory one, so the second save erased the first.
+  const fs = require('fs');
+  const path = require('path');
+  const vm = require('vm');
+  const src = fs.readFileSync(path.join(__dirname, 'saved-items.js'), 'utf8');
+  const map = {};
+  let refuse = true;
+  const quota = {
+    getItem: (k) => (k in map ? map[k] : null),
+    setItem: (k, v) => { if (refuse) throw new Error('QuotaExceededError'); map[k] = String(v); }
+  };
+  const win = { localStorage: quota, dataLayer: [], addEventListener() {} };
+  const sandbox = {
+    window: win, localStorage: quota,
+    document: { addEventListener() {}, dispatchEvent() {} },
+    CustomEvent: function () {}, Date
+  };
+  sandbox.globalThis = sandbox;
+  vm.createContext(sandbox);
+  vm.runInContext(src, sandbox);
+  const api = win.UltraTextGen.saved;
+  api.toggle({ type: 'symbol', value: '★', label: 'Star' });
+  api.toggle({ type: 'symbol', value: '♥', label: 'Heart' });
+  eq(api.count(), 2, 'a refused write does not make the next save erase the first');
+  ok(api.has('symbol', '★') && api.has('symbol', '♥'), 'both saves stay readable for the life of the page');
+  api.toggle({ type: 'symbol', value: '★', label: 'Star' });
+  eq(api.has('symbol', '★'), false, 'unsaving still works while storage refuses writes');
+  refuse = false;
+  api.toggle({ type: 'symbol', value: '☆', label: 'Outline' });
+  const stored = JSON.parse(map['utg_saved_items']).map((r) => r.value).sort();
+  eq(stored, ['☆', '♥'], 'once storage accepts writes again, memory (not the stale store) is what is saved');
+}
+
 /* ---- two tabs: no save is lost ---------------------------------------- */
 
 {

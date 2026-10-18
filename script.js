@@ -2430,6 +2430,20 @@ document.addEventListener("copy", () => {
   /* ===================
      INIT
      =================== */
+  // The generator input carries a placeholder and nothing else on ~630 pages, so
+  // a screen reader announces an unnamed text box. Name it from the placeholder
+  // unless the page already did; i18n.js keeps the name in step with a
+  // translated placeholder (data-autolabel marks the ones this function owns).
+  function labelMainInput() {
+    const input = el.mainInput;
+    if (!input || input.hasAttribute("aria-label") || input.hasAttribute("aria-labelledby")) return;
+    if (input.id && document.querySelector('label[for="' + input.id + '"]')) return;
+    const text = input.getAttribute("placeholder");
+    if (!text) return;
+    input.setAttribute("aria-label", text);
+    input.setAttribute("data-autolabel", "");
+  }
+
   function init() {
     // Headless mode: pages that opt in via window.UTG_HEADLESS (currently the
     // zalgo pages) load this file only for the shared result-sharing core and
@@ -2439,6 +2453,8 @@ document.addEventListener("copy", () => {
     // may be injected — the anchors those helpers target belong to a
     // different tool on such pages.
     if (window.UTG_HEADLESS) return;
+
+    labelMainInput();
 
     // Restore input text from URL ?q= param (shareable links)
     if (el.mainInput) {

@@ -65,7 +65,12 @@
     // Replace placeholder for data-i18n-placeholder elements
     document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
       var val = getNestedValue(t, el.getAttribute("data-i18n-placeholder"));
-      if (val) el.setAttribute("placeholder", val);
+      if (val) {
+        el.setAttribute("placeholder", val);
+        // script.js names an unlabelled generator input from its placeholder;
+        // keep that name in the page language.
+        if (el.hasAttribute("data-autolabel")) el.setAttribute("aria-label", val);
+      }
     });
 
     // Update FAQ JSON-LD schema

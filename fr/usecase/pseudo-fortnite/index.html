@@ -184,6 +184,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <span class="accent-notice-text">Ton texte contient des accents. Gras, script, gothique et la plupart des autres styles gardent maintenant <b>é</b>, <b>à</b> et <b>ç</b> accentués — quelques-uns (le texte à l’envers, et des lettres sans forme accentuée comme <b>ł ø</b>) reviennent en lettres normales. <a href="/guide/fancy-fonts-and-accents/">Quels styles gardent les accents →</a></span>
     <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Fermer">✕</button>
   </div>
+  <div class="decoration-section namecheck-inline"><div class="decoration-label">Vérificateur de pseudo Fortnite : en direct</div><div id="fortniteNameChecker"></div></div>
   <div class="decoration-section"><div class="decoration-label">Ajoute de la déco au résultat</div><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Symboles</button><button class="decoration-tab" data-deco-tab="frames">Cadres</button><button class="decoration-tab" data-deco-tab="minimal">Minimaliste</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
 </div></div></section>
 
@@ -452,6 +453,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
   ns.buildGrids("frFortniteWrappersContainer", GROUPS);
   if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
+
+<!-- Name checker (same rule set as the English Fortnite page) -->
+<script src="/js/gamename/game-rules.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (ns && ns.gameRules) {
+    ns.gameRules.initChecker({
+      mount: "fortniteNameChecker",
+      games: ["fortnite"],
+      inputId: "mainInput",
+      text: {
+        placeholder: "Ton pseudo du dessus, ou modifie-le pour en tester un autre",
+        ok: "Compatible Fortnite ✓",
+        warn: "Risque de ne pas passer : caractères non testés",
+        fail: "Fortnite va refuser ce pseudo",
+        empty: "Écris ton pseudo au-dessus : la vérification se fait en direct",
+        charsToWatch: "Caractères à surveiller :",
+        issue: {
+          "over-limit": "Trop long : Fortnite accepte 16 caractères au maximum.",
+          "too-short": "Trop court : Fortnite demande au moins 3 caractères.",
+          "unknown-chars": "Ces caractères sont rarement pris en charge et peuvent s'afficher en carrés :",
+          "strict-symbols": "Le champ de pseudo Fortnite est strict : les cadres et ornements décoratifs seront probablement refusés. Les lettres stylisées passent beaucoup mieux."
+        }
+      }
+    });
+  }
 });
 </script>
 

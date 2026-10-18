@@ -96,12 +96,26 @@
     return load();
   }
 
+  // True while the last write was refused (quota, private mode): memory is then
+  // AHEAD of storage, and re-reading the stored list would throw the change away.
+  let unsaved = false;
+
+  // Re-read before writing so a stale tab does not erase another tab's save,
+  // unless storage refused our last write: then memory is the newer truth.
+  function refresh() {
+    if (unsaved) return;
+    items = current() || items;
+  }
+
   function persist() {
+    let wrote = true;
     try {
       localStorage.setItem(KEY, JSON.stringify(items.slice(0, MAX)));
     } catch (err) {
       // Storage unavailable — the in-memory list still works for this page.
+      wrote = false;
     }
+    unsaved = !wrote;
     // Keep the legacy key in step so an older cached script.js in another
     // tab cannot resurrect styles this one just removed.
     try {
@@ -146,7 +160,7 @@
       // Re-read before writing: persist() writes the whole list, so a tab
       // working from the list it loaded would erase anything another tab
       // saved since. Each change is applied to the current stored list.
-      items = current() || items;
+      refresh();
       const i = indexOf(rec.type, rec.value);
       const nowSaved = i === -1;
       if (nowSaved) {
@@ -178,7 +192,7 @@
     },
 
     clear(type) {
-      items = current() || items;
+      refresh();
       items = type ? items.filter((r) => r.type !== type) : [];
       persist();
       emit();
@@ -191,7 +205,7 @@
   try {
     window.addEventListener("storage", (e) => {
       if (e.key !== KEY && e.key !== LEGACY_STYLE_KEY && e.key !== null) return;
-      items = current() || items;
+      refresh();
       emit();
     });
   } catch (err) { /* no window events (tests) — nothing to keep in step */ }

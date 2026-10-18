@@ -117,6 +117,14 @@ t("pubg stays strict ascii (no plainPattern change)", G.analyzeTag("𝐍𝐑𝐆
 t("discord nickname budget still 32", G.tagBudget("ABCD", "discord", "").limit, 32);
 t("fortnite is still folded", G.analyzeTag("ABC", "fortnite").kind, "folded");
 
+// An unknown game id must not borrow Free Fire's rule (a false all-clear on a paid rename).
+const unk = G.analyze("a name that is far too long for any game to accept", "no-such-game");
+t("unknown game: level is unknown, not another game's verdict", unk.level, "unknown");
+t("unknown game: carries no rule", unk.rule, null);
+t("unknown game: says why", unk.issues, ["unknown-game"]);
+t("unknown game: no limit is invented", unk.limit, 0);
+t("known game is unchanged: ff still fails an over-long name", G.analyze("a name that is far too long for any game to accept", "ff").level, "fail");
+
 // --- the reporter needs a page opt-in AND the board module ---
 mounts.plain = makeEl("div");
 G.initChecker({ mount: "plain", games: ["ff"], text: {} });
