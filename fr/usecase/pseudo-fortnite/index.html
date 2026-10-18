@@ -433,36 +433,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/i18n.js" defer></script>
 <script src="/accent-notice.js" defer></script>
 
-<!-- Symbol explorer + wrappers + name checker -->
+<!-- Symbol explorer + wrappers -->
 <script src="/symbol-explorer.js"></script>
-<script src="/js/gamename/game-rules.js" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
   const ns = window.UltraTextGen;
-
-  if (ns && ns.gameRules) {
-    ns.gameRules.initChecker({
-      mount: "fortniteNameChecker",
-      games: ["fortnite"],
-      inputId: "mainInput",
-      text: {
-        placeholder: "Ton nom du dessus, ou modifie-le pour en tester un autre",
-        ok: "Passe dans Fortnite ✓",
-        warn: "Peut ne pas passer : caractères non testés",
-        fail: "Fortnite va refuser ce pseudo",
-        empty: "Écris ton nom au-dessus, ça se vérifie en direct",
-        charsToWatch: "Caractères à surveiller :",
-        issue: {
-          "over-limit": "Trop long : Fortnite autorise jusqu'à 16 caractères.",
-          "too-short": "Trop court : Fortnite demande au moins 3 caractères.",
-          "unknown-chars": "Ces caractères sont rarement supportés et peuvent s'afficher en carrés :",
-          "strict-symbols": "Le champ de nom de Fortnite est strict : les cadres et ornements décoratifs risquent d'être refusés. Les lettres stylées passent bien plus souvent."
-        }
-      }
-    });
-  }
-
   if (!ns || !ns.buildGrids) return;
 
   const GROUPS = [
@@ -502,7 +478,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "over-limit": "Trop long : Fortnite accepte 16 caractères au maximum.",
           "too-short": "Trop court : Fortnite demande au moins 3 caractères.",
           "unknown-chars": "Ces caractères sont rarement pris en charge et peuvent s'afficher en carrés :",
-          "strict-symbols": "Le champ de pseudo Fortnite est strict : les cadres et ornements décoratifs seront probablement refusés. Les lettres stylisées passent beaucoup mieux."
+          "strict-symbols": "Le champ de pseudo Fortnite est strict : les cadres et ornements décoratifs seront probablement refusés. Les lettres stylées ne sont pas garanties non plus : des joueurs signalent des pseudos gothiques qui s'affichent en ?."
         }
       }
     });
