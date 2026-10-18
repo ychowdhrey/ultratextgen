@@ -560,7 +560,17 @@
      analyze(str, gameId) → report
      ============================ */
   function analyze(str, gameId) {
-    const rule = RULES[gameId] || RULES.ff;
+    const rule = RULES[gameId];
+    if (!rule) {
+      // An unknown id must not borrow another game's rule: a rename is paid, so
+      // a verdict from the wrong game is a false all-clear. Say "unknown".
+      const n = Array.from(str || "").length;
+      return {
+        game: gameId, rule: null, glyphs: n, effective: n, utf16: (str || "").length, utf8: 0, limit: 0,
+        counts: { plain: 0, safe: 0, styled: 0, emoji: 0, unknown: 0, spaces: 0 },
+        badChars: [], perChar: [], issues: ["unknown-game"], level: "unknown"
+      };
+    }
     const chars = Array.from(str || "");
     let weightedLen = 0;
     let plain = 0, safe = 0, styled = 0, emoji = 0, unknown = 0, spaces = 0;
