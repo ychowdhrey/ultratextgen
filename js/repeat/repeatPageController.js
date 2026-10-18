@@ -269,12 +269,24 @@
     return card;
   }
 
+  /* Rebuild a results grid without destroying the Auto Ads units placed inside
+     it (see clearGridKeepingAds in script.js). Falls back to a plain clear
+     where script.js is not loaded. */
+  function rebuildGrid(grid, build) {
+    var U = window.UltraTextGen;
+    if (U && U.rebuildGridKeepingAds) U.rebuildGridKeepingAds(grid, build);
+    else { grid.innerHTML = ""; build(); }
+  }
+
   function renderResults() {
     let grid = $("#resultsGrid");
     if (!grid) return;
     if (lazyObserver) { lazyObserver.disconnect(); lazyObserver = null; }
-    grid.innerHTML = "";
     let token = ++renderToken;
+    rebuildGrid(grid, function () { buildResults(grid, token); });
+  }
+
+  function buildResults(grid, token) {
 
     let rawText = buildArrangement();
     renderNote(rawText);

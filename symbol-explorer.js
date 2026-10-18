@@ -911,9 +911,13 @@
     if (raw == null) return;
     var symbol = raw.trim() || raw;
     if (!symbol) return;
-    const look = twoLook(tile, symbol);
+    /* A tile built from what the visitor typed (the tag studio's chips) names
+       its own copy method, so the copy is not recorded as catalogue content:
+       copy_item carries the exact text only for the catalogue methods. */
+    const own = tile.getAttribute("data-copy-method");
+    const look = own ? null : twoLook(tile, symbol);
     if (look) { copyLook(tile, look.base, look.shown, "symbol_tile"); return; }
-    copyText(symbol, tile, tileLabel(tile, symbol));
+    copyText(symbol, tile, tileLabel(tile, symbol), own || undefined);
   }
   ns.copySymbol = copySymbol;
 
@@ -1632,7 +1636,14 @@
       if (group.closest(".symbol-saved-strip")) return;      // its own row exists
       if (group.parentNode.querySelector(".symbol-section-actions")) return;
 
-      const tiles = group.querySelectorAll(".symbol-tile[data-symbol]");
+      /* One Share row per section, carrying every group in it. The guard above
+         keeps a section to one row; the text used to come from the first group
+         only, so a second group's tiles (and "Or mix your own" emoji lists
+         under a set of combos) never reached it. */
+      const tiles = Array.prototype.filter.call(
+        group.parentNode.querySelectorAll(".flag-rows .symbol-tile[data-symbol]"),
+        function (tile) { return !tile.closest(".symbol-saved-strip"); }
+      );
       if (tiles.length < 2) return;   // a lone tile shares fine on its own
       const symbols = Array.prototype.map.call(tiles, symbolOf).filter(Boolean).join(" ");
       if (!symbols) return;

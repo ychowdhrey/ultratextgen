@@ -199,10 +199,18 @@
       frag.appendChild(buildCard(pick("presets", preset.name, preset.name), out, { demo: isDemo, styleName: preset.name, shareId: presetId }));
     });
 
-    el.resultsGrid.innerHTML = "";
-    el.resultsGrid.appendChild(frag);
+    rebuildGrid(el.resultsGrid, function () { el.resultsGrid.appendChild(frag); });
     if (UTG.revealSharedCard) UTG.revealSharedCard(el.resultsGrid);
     renderFitBadges(isDemo ? "" : renderWith(raw, "Ultra Script"));
+  }
+
+  /* Rebuild a results grid without destroying the Auto Ads units placed inside
+     it (see clearGridKeepingAds in script.js). Falls back to a plain clear
+     where script.js is not loaded. */
+  function rebuildGrid(grid, build) {
+    var U = window.UltraTextGen;
+    if (U && U.rebuildGridKeepingAds) U.rebuildGridKeepingAds(grid, build);
+    else { grid.innerHTML = ""; build(); }
   }
 
   function renderFitBadges(rendered) {
@@ -726,6 +734,10 @@
         load();
       });
       card.addEventListener("keydown", (e) => {
+        // A key pressed on the card's own Copy button belongs to that button,
+        // as a click on it already does; otherwise Enter loaded the name and
+        // the copy never happened.
+        if (e.target.closest(".copy-btn")) return;
         if (e.key === "Enter" || e.key === " ") { e.preventDefault(); load(); }
       });
     });

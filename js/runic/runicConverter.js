@@ -117,9 +117,10 @@
     const text = el.copy && el.copy.dataset.text;
     if (!text || !navigator.clipboard) return;
     navigator.clipboard.writeText(text).then(() => {
-      const original = el.copy.textContent;
+      // Only the first click of a burst reads the label.
+      if (el.copy._copyTimer) clearTimeout(el.copy._copyTimer); else el.copy._copyPrev = el.copy.textContent;
       el.copy.textContent = t("copied", "Copied");
-      setTimeout(() => { el.copy.textContent = original; }, 1400);
+      el.copy._copyTimer = setTimeout(() => { el.copy.textContent = el.copy._copyPrev; el.copy._copyTimer = 0; }, 1400);
     }).catch(() => {});
   }
 

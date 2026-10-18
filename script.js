@@ -1212,6 +1212,7 @@ const decorations = window.UTG_DECORATIONS
     moreBtn.className = "category-more";
     moreBtn.type = "button";
     moreBtn.textContent = uiText("categoryTabsToggle.more", "More");
+    moreBtn.setAttribute("aria-expanded", "false");
     moreBtn.addEventListener("click", () => {
       const isExpanded = tabsContainer.classList.contains("expanded");
       if (isExpanded) {
@@ -1225,6 +1226,7 @@ const decorations = window.UTG_DECORATIONS
           h.classList.remove("hidden-category");
         });
         moreBtn.textContent = uiText("categoryTabsToggle.less", "Less");
+        moreBtn.setAttribute("aria-expanded", "true");
         tabsContainer.classList.add("expanded");
       }
     });
@@ -1959,6 +1961,21 @@ const decorations = window.UTG_DECORATIONS
     `;
     document.body.appendChild(modal);
 
+    // Tab wraps inside the dialog (first <-> last) as a second guard; the page
+    // behind is also made inert while it is open (setPageInert).
+    modal.addEventListener("keydown", (e) => {
+      if (e.key !== "Tab") return;
+      const items = Array.prototype.filter.call(
+        modal.querySelectorAll("button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])"),
+        (n) => !n.disabled && !n.hidden
+      );
+      if (!items.length) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+
     modal.addEventListener("click", (e) => {
       if (e.target.closest("[data-preview-close]")) closePreview();
       const tab = e.target.closest(".preview-tab");
@@ -2002,6 +2019,25 @@ const decorations = window.UTG_DECORATIONS
     if (textEl) textEl.textContent = previewTextFor(previewStyleName);
   }
 
+  /* While the dialog is open the rest of the page is inert: not focusable, not
+     clickable, hidden from assistive tech. Only what this sets is undone on
+     close, so an element that was already inert stays that way. */
+  let previewInerted = [];
+  function setPageInert(on) {
+    if (on) {
+      previewInerted = [];
+      Array.prototype.forEach.call(document.body.children, (n) => {
+        if (n.nodeType !== 1 || n.id === "previewModal") return;
+        if (/^(SCRIPT|STYLE|LINK|NOSCRIPT)$/.test(n.tagName) || n.hasAttribute("inert")) return;
+        n.setAttribute("inert", "");
+        previewInerted.push(n);
+      });
+    } else {
+      previewInerted.forEach((n) => n.removeAttribute("inert"));
+      previewInerted = [];
+    }
+  }
+
   function openPreview(styleName) {
     if (!stylesRegistry[styleName]) return;
     previewStyleName = styleName;
@@ -2010,6 +2046,7 @@ const decorations = window.UTG_DECORATIONS
     renderPreviewBody();
     modal.hidden = false;
     document.body.classList.add("preview-open");
+    setPageInert(true);
     const closeBtn = $(".preview-close", modal);
     if (closeBtn) closeBtn.focus();
 
@@ -2026,6 +2063,7 @@ const decorations = window.UTG_DECORATIONS
     if (!modal) return;
     modal.hidden = true;
     document.body.classList.remove("preview-open");
+    setPageInert(false);
     if (previewLastFocus && typeof previewLastFocus.focus === "function") {
       previewLastFocus.focus();
     }

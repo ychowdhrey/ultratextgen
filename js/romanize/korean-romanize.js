@@ -199,11 +199,18 @@
         '<p class="style-preview">' + esc(value) + '</p></div><div class="style-actions-stack"><div class="style-actions">' +
         '<button class="copy-btn" type="button" data-text="' + esc(value) + '">' + esc(t('copy', 'Copy')) + '</button></div></div></div>';
     }
+    // Replace the cards without destroying an Auto Ads unit placed in the grid.
+    function setGrid(html) {
+      const U = window.UltraTextGen;
+      const build = function () { grid.insertAdjacentHTML('beforeend', html); };
+      if (U && U.rebuildGridKeepingAds) U.rebuildGridKeepingAds(grid, build);
+      else { grid.innerHTML = ''; build(); }
+    }
     function render() {
       const text = input.value.trim();
-      if (!text) { grid.innerHTML = ''; return; }
+      if (!text) { setGrid(''); return; }
       if (mode === 'word') {
-        grid.innerHTML = card(t('wordLabel', 'Standard romanization'), t('wordNote', ''), romanizeText(text, 'word'));
+        setGrid(card(t('wordLabel', 'Standard romanization'), t('wordNote', ''), romanizeText(text, 'word')));
         return;
       }
       const lines = text.split(/\n+/).map(s => s.trim()).filter(Boolean).slice(0, 20);
@@ -224,13 +231,18 @@
             (r.surnameCommon[0] || r.surnameStandard) + ' ' + r.givenOlder);
         }
       });
-      grid.innerHTML = html;
+      setGrid(html);
     }
     grid.addEventListener('click', function (e) {
       const btn = e.target.closest('.copy-btn');
       if (!btn) return;
       const text = btn.getAttribute('data-text') || '';
-      const done = () => { const old = btn.textContent; btn.textContent = t('copied', 'Copied'); setTimeout(() => { btn.textContent = old; }, 1200); };
+      const done = () => {
+        // Only the first click of a burst reads the label.
+        if (btn._copyTimer) clearTimeout(btn._copyTimer); else btn._copyPrev = btn.textContent;
+        btn.textContent = t('copied', 'Copied');
+        btn._copyTimer = setTimeout(() => { btn.textContent = btn._copyPrev; btn._copyTimer = 0; }, 1200);
+      };
       if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, done);
       else { const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (err) { /* ignore */ } ta.remove(); done(); }
     });

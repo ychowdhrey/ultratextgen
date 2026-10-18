@@ -359,13 +359,26 @@
     });
   }
 
+  /* Rebuild a results grid without destroying the Auto Ads units placed inside
+     it (see clearGridKeepingAds in script.js). Falls back to a plain clear
+     where script.js is not loaded. */
+  function rebuildGrid(grid, build) {
+    var U = window.UltraTextGen;
+    if (U && U.rebuildGridKeepingAds) U.rebuildGridKeepingAds(grid, build);
+    else { grid.innerHTML = ''; build(); }
+  }
+
   /* --------------------------------------------------------------------------
      Master render
      -------------------------------------------------------------------------- */
   function render() {
     const grid = $('#resultsGrid');
     if (!grid) return;
-    grid.innerHTML = '';
+    rebuildGrid(grid, function () { buildResults(grid); });
+    if (UTG && UTG.revealSharedCard) UTG.revealSharedCard(grid);
+  }
+
+  function buildResults(grid) {
     grid.classList.remove('tattoo-size-arm', 'tattoo-size-room');
     if (sizeView === 'arm') grid.classList.add('tattoo-size-arm');
     if (sizeView === 'room') grid.classList.add('tattoo-size-room');
@@ -374,8 +387,6 @@
     else if (mode === 'date') renderDate(grid);
     else if (mode === 'letters') renderLetters(grid);
     else renderSymbols(grid);
-
-    if (UTG && UTG.revealSharedCard) UTG.revealSharedCard(grid);
   }
 
   function triggerRender() {

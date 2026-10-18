@@ -345,11 +345,22 @@
     return Render.renderAny(text, style);
   }
 
+  /* Rebuild a results grid without destroying the Auto Ads units placed inside
+     it (see clearGridKeepingAds in script.js). Falls back to a plain clear
+     where script.js is not loaded. */
+  function rebuildGrid(grid, build) {
+    var U = window.UltraTextGen;
+    if (U && U.rebuildGridKeepingAds) U.rebuildGridKeepingAds(grid, build);
+    else { grid.innerHTML = ''; build(); }
+  }
+
   function renderDecoratorResults() {
     var grid = $('#resultsGrid');
     if (!grid) return;
-    grid.innerHTML = '';
+    rebuildGrid(grid, function () { buildDecoratorResults(grid); });
+  }
 
+  function buildDecoratorResults(grid) {
     var inputText = ($('#mainInput') || {}).value || '';
     inputText = inputText.trim();
     if (!inputText) {

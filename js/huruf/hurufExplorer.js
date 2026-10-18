@@ -93,10 +93,12 @@
 
   function copyText(value, btn) {
     const done = () => {
-      const prev = btn.textContent;
+      // A second click while "Tersalin!" shows must not save that text as the
+      // one to restore: only the first click of a burst reads the label.
+      if (btn._copyTimer) clearTimeout(btn._copyTimer); else btn._copyPrev = btn.textContent;
       btn.classList.add("is-copied");
       btn.textContent = "Tersalin!";
-      setTimeout(() => { btn.textContent = prev; btn.classList.remove("is-copied"); }, 1400);
+      btn._copyTimer = setTimeout(() => { btn.textContent = btn._copyPrev; btn.classList.remove("is-copied"); btn._copyTimer = 0; }, 1400);
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(value).then(done).catch(done);
@@ -188,9 +190,15 @@
       row.appendChild(glyph);
       row.appendChild(meta);
       row.appendChild(cta);
+      row.dataset.style = name;
       row.addEventListener("click", () => {
-        copyText(rendered, cta);
+        // onPick redraws the panel and replaces every row, so the confirmation
+        // goes on the row that exists afterwards. Written before, it landed on
+        // a button already gone and nobody saw it; focus went with it.
         onPick(name);
+        const again = Array.prototype.find.call(panel.querySelectorAll(".bubble-variant"), (r) => r.dataset.style === name);
+        copyText(rendered, again ? again.querySelector(".bubble-variant-copy") : cta);
+        if (again) again.focus({ preventScroll: true });
       });
       list.appendChild(row);
     });
