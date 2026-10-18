@@ -2,7 +2,7 @@
   "lang": "vi",
   "slug": "ky-tu-no",
   "page_type": "library",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "canonical": "https://ultratextgen.com/vi/library/ky-tu-no/",
   "home_url": "https://ultratextgen.com/vi/",
   "crumb_home": "Trang chủ",
@@ -272,6 +272,73 @@
       "href": "/vi/library/emoji-hoa/",
       "title": "Emoji Hoa",
       "desc": "Hoa và ký hiệu thiên nhiên."
+    }
+  ],
+  "collection_container_id": "bowRibbonCollectionsContainer",
+  "collection_section": {
+    "id": "bow-ribbon-combo-sets",
+    "label": "Combo Nơ và Ruy Băng",
+    "h2": "Combo nơ và ruy băng để dán thẳng vào bio",
+    "intro": "Combo nơ và ruy băng làm sẵn để dán vào bio, tên người dùng hay chú thích: chọn kiểu sao chép rồi sao chép cả bộ chỉ với một cú nhấp."
+  },
+  "collections": [
+    {
+      "name": "Combo nơ coquette",
+      "flags": [
+        "୨୧",
+        "⋆",
+        "🎀",
+        "⋆",
+        "୨୧"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Viền nơ và trái tim",
+      "flags": [
+        "🎀",
+        "♡",
+        "🎀",
+        "♡",
+        "🎀"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Khung bio cánh trái tim",
+      "flags": [
+        "ʚ♡ɞ"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Combo ruy băng trong ngoặc",
+      "flags": [
+        "꒰ ♡ ꒱"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Vạch ngăn ruy băng thắt nút",
+      "flags": [
+        "⊰",
+        "୨୧",
+        "⋆",
+        "🎀",
+        "⋆",
+        "୨୧",
+        "⊱"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tên người dùng ruy băng mềm",
+      "flags": [
+        "୨",
+        "♡",
+        "୧"
+      ],
+      "defaultFormat": "inline"
     }
   ]
 }
