@@ -433,12 +433,36 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/i18n.js" defer></script>
 <script src="/accent-notice.js" defer></script>
 
-<!-- Symbol explorer + wrappers -->
+<!-- Symbol explorer + wrappers + name checker -->
 <script src="/symbol-explorer.js"></script>
+<script src="/js/gamename/game-rules.js" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
   const ns = window.UltraTextGen;
+
+  if (ns && ns.gameRules) {
+    ns.gameRules.initChecker({
+      mount: "fortniteNameChecker",
+      games: ["fortnite"],
+      inputId: "mainInput",
+      text: {
+        placeholder: "Ton nom du dessus, ou modifie-le pour en tester un autre",
+        ok: "Passe dans Fortnite ✓",
+        warn: "Peut ne pas passer : caractères non testés",
+        fail: "Fortnite va refuser ce pseudo",
+        empty: "Écris ton nom au-dessus, ça se vérifie en direct",
+        charsToWatch: "Caractères à surveiller :",
+        issue: {
+          "over-limit": "Trop long : Fortnite autorise jusqu'à 16 caractères.",
+          "too-short": "Trop court : Fortnite demande au moins 3 caractères.",
+          "unknown-chars": "Ces caractères sont rarement supportés et peuvent s'afficher en carrés :",
+          "strict-symbols": "Le champ de nom de Fortnite est strict : les cadres et ornements décoratifs risquent d'être refusés. Les lettres stylées passent bien plus souvent."
+        }
+      }
+    });
+  }
+
   if (!ns || !ns.buildGrids) return;
 
   const GROUPS = [
