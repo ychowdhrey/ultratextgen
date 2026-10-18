@@ -88,7 +88,7 @@
       { id: "tiktok",    label: "TikTok bio",    limit: 80 },
       { id: "x",         label: "X / Twitter bio", limit: 160 },
       { id: "facebook",  label: "Facebook bio",  limit: 101 },
-      { id: "discord",   label: "Discord About Me", limit: 190 },
+      { id: "discord",   label: "Discord About Me", limit: 300 },
       { id: "snapchat",  label: "Snapchat bio",  limit: 80 },
       { id: "pinterest", label: "Pinterest about", limit: 160 },
       { id: "linkedin",  label: "LinkedIn headline", limit: 220 },
