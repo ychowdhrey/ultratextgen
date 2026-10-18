@@ -10,6 +10,72 @@ Newest entries come first. Numbers are only given where we could count them.
 
 ## October 2026
 
+### 16 October 2026
+
+The bulletin board letters maker is a new printable tool that turns a letter, number or word into letters of a chosen height, split across several sheets.
+
+Teachers, parents and anyone decorating a classroom or party can type a word, choose how tall the finished letters should be in inches or centimetres, and download a PDF. Each letter is divided across US Letter or A4 pages with cut lines, line-up lines and a sheet map, so the pieces join into one large letter. A one inch check bar on the printout shows whether the sheet printed at true size. Block, bubble and stencil styles are available, as outline or filled, and the assembled letters can also be saved as a picture.
+
+### 16 October 2026
+
+The name tracing, name puzzle, monogram and name label tools now carry one typed name from sheet to sheet, in ten languages.
+
+Teachers and parents who typed a child's name on one printable can follow a link to another name sheet with the name already filled in. Before, this link existed only in English and did not reach the monogram or name label tools. It now appears in English, German, Spanish, French, Indonesian, Italian, Dutch, Polish, Portuguese and Turkish, and each language links only to its own name sheets. The monogram tool places the first name on the left, the last name in the centre and any middle name on the right. The link does not send the typed name to the site's analytics.
+
+### 16 October 2026
+
+The tracing worksheets and word puzzle makers now handle accents, the German ß and non-Latin scripts correctly.
+
+Before, a word such as "Straße" printed on the dotted tracing rows with five clean dotted letters and a dense double ring of dots around the ß. Every German name or word with ß now traces like its neighbouring letters. The "First Letter Capital" choice on the eight letter tracing pages used to print "Emma" as E M M A, the same as capitals. It now prints E m m a, keeps the Dutch IJ together and no longer turns "jürgen" into "JüRgen". The word search, crossword and word scramble makers used to drop vowel marks, so Hindi "किताब" printed as three bare consonants and Thai and Arabic words lost their marks. Each square now holds a whole letter with its marks. Pasted lists such as "1. Apple - a red fruit" now give APPLE, and on the crossword the definition becomes the clue.
+
+### 16 October 2026
+
+The copy buttons and the page header now keep working in browsers that block site data or limit copying.
+
+Before, a browser that blocked site data stopped the header from loading on every page, so the dark mode switch, the compact phone header and the site search were all missing. The generator copy buttons also failed in some in-app browsers that refuse the standard copy method, which is the main job of the site. They now fall back to a second copy method, and the library collection Copy button says "Copied" only when text was really copied, and reports a failure when it was not. This helps anyone opening UltraTextGen from inside another app or with strict privacy settings.
+
+### 16 October 2026
+
+The superscript and subscript generators now raise and lower the plus, minus, equals and bracket signs along with the digits.
+
+Before, a chemical formula such as Ca2+ came out with a raised 2 and a full size plus sign beside it. Students and teachers writing formulas, ions or powers now get a plus sign that matches. Of the 114 styles checked, only these two changed.
+
+### 16 October 2026
+
+The character counter now keeps the invisible marks that are part of the writing in Persian, Arabic, Hebrew and Indic text.
+
+The "remove hidden characters" button used to delete every zero-width non-joiner, which breaks Persian words such as "می‌خواهم" and Indic half-forms, and it removed the left-to-right and right-to-left marks that keep numbers and punctuation in order in Arabic and Hebrew. These marks are now kept where the language needs them. In Latin text they are still removed, so hidden characters pasted into English text are still found and cleaned. A note on the page also says how the Words count treats an emoji.
+
+### 16 October 2026
+
+The style cards on the generator pages no longer say "Safe anywhere" about text they did not change, and the device warning now appears when a symbol is missing.
+
+Before, typing Bengali or Tamil text into a Latin style returned the text as typed, yet every such card still said "Safe anywhere". On the homepage with the Bengali text "বাংলা লেখা", 9 of 11 cards were unchanged and all 9 carried the label. Now those 9 show no label, and the 2 cards that styled the text keep theirs. Separately, the "May not show on your device" notice could never appear, because the check treated a missing symbol as a working one. In testing, the Tibetan and Yi cards now show the notice on a browser without those fonts, and no card shows it on a browser with full fonts. Some devices draw a different empty box for each character, and the check cannot catch those.
+
+### 13 October 2026
+
+Six Russian pages now offer Telegram and VK share buttons.
+
+Russian speakers sharing styled text or symbols can send it straight to Telegram or VK from the page, instead of copying it and opening the app by hand.
+
+### 12 October 2026
+
+The Discord pages and bio font pages now give Discord's current About Me limit of 300 characters, up from 190.
+
+Discord raised the limit on 25 September 2026, and UltraTextGen still showed the old figure for about two weeks. The live character counter, the Discord page, the Discord bio font page, the allowed characters answer and the translated pages now use 300, so a bio is no longer cut short or flagged as too long when it fits. The page about Discord display name styles also names the four new name fonts and two new name effects from the same update.
+
+### 12 October 2026
+
+The French Seyès ruled writing sheets now print at the standard ruling size.
+
+French teachers and parents printing a Seyès practice sheet used to get lines about twice the proper spacing: 16.2 mm between the heavy lines on A4, instead of the standard 8 mm, and 4.06 mm between the lighter lines, instead of 2 mm. The ruling now prints at 8 mm and 2 mm in the PDF, the picture download, the browser print and the preview, on A4 and Letter in portrait and landscape.
+
+### 12 October 2026
+
+The class set worksheets now have a Clear names button, and the English text generators warn when text is in a script they style only in part.
+
+Teachers who typed a class list used to have no way to remove it, because the list is remembered on the device. The English class set sheets now have a Clear names button, which helps on a shared or school computer. Text typed in Cyrillic, Arabic, Thai, Hebrew, Devanagari or Chinese, Japanese and Korean comes back in its own shape from about half of the styles and with extra spacing or marks from the rest. The English generator now says so once, and says what still works.
+
 ### 10 October 2026
 
 The AI writing footprint checker is a new tool that shows writers which phrases in their English text tend to read as AI-sounding, and lets them decide what to change.
