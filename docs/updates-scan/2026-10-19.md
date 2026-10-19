@@ -8,12 +8,13 @@ not-yet-decided Unicode item is noted for awareness only (nothing to build).
 Before dispatching research agents, this run checked the scheduled trigger's own
 stored prompt (delivered verbatim on firing) against the current repo state and
 found it is stale in a way worth recording: it still instructs recording the
-dated result in `ychowdhrey/ultratextgen-lab-` and still carries its
+dated result in the private workspace outside this repository that this
+folder's own README explains the replacement for, and still carries its
 "already-published" and false-lead notes only through 2026-08-24, even though
 PR #967 (merged 2026-10-17) already built the in-repo `docs/updates-scan/`
-replacement specifically because that external repo is both outside this
-session's GitHub scope and a repo `scripts/check-external-refs.js` forbids this
-tree from referencing.
+replacement specifically because that external workspace is both outside this
+session's GitHub scope and a source `scripts/check-external-refs.js` forbids
+this tree from referencing.
 
 The prompt's own text says the right moment to fix this is "during a run, when
 the firing has just delivered it verbatim" via an `update_trigger` tool — but no
@@ -21,8 +22,8 @@ such tool (`update_trigger`, `list_triggers`, or an equivalent) was found in thi
 session's available toolset (checked via `ToolSearch` for "update_trigger",
 "trigger" and "RemoteTrigger"). So the stored prompt could not be rewritten from
 inside this run. This is flagged back to the user rather than worked around: the
-routine will keep firing with the stale lab-repo instruction and the frozen
-August false-lead list until either a session with trigger-editing access
+routine will keep firing with the stale external-workspace instruction and the
+frozen August false-lead list until either a session with trigger-editing access
 updates it, or the user updates it directly. In the meantime this run continued
 to record its result here, in `docs/updates-scan/`, per the already-established
 replacement, and treated the fired prompt's research content (the lane
