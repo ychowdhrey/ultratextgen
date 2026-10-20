@@ -141,7 +141,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {
       "@type": "Question",
       "name": "なぜ ² と ³ はどこでも表示されるのに、⁴〜⁹ は表示されないことがあるの？",
-      "acceptedAnswer": { "@type": "Answer", "text": "² と ³ は、1980年代後半のISO 8859-1規格以来「Latin-1 Supplement」ブロック（U+00B2／U+00B3）に含まれており、古い8ビットのフォントや文字コードにもほぼ例外なく入っています。一方 ⁰・¹・⁴〜⁹ は、Unicodeが専用の「Superscripts and Subscripts」ブロックを作ったずっと後に追加されたため、古いフォントやシステムには入っていないことがあります。" }
+      "acceptedAnswer": { "@type": "Answer", "text": "¹・²・³ は、1980年代後半のISO 8859-1規格以来「Latin-1 Supplement」ブロック（U+00B9／U+00B2／U+00B3）に含まれており、古い8ビットのフォントや文字コードにもほぼ例外なく入っています。一方 ⁰・⁴〜⁹ は、Unicodeが専用の「Superscripts and Subscripts」ブロックを作ったずっと後に追加されたため、古いフォントやシステムには入っていないことがあります。" }
     },
     {
       "@type": "Question",
@@ -190,7 +190,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
-    <p>² と ³（上付きの2と3、U+00B2 と U+00B3）は、x²・E=mc²・m²・cm³ のような単位の略記の背後にある、累乗の文字です。ほかの上付き数字と違い、この2つは1980年代から標準の「Latin-1」文字セットに含まれています。だからこそ、⁰・¹・⁴〜⁹ よりもずっと多くの場所で正しく表示されます。</p>
+    <p>² と ³（上付きの2と3、U+00B2 と U+00B3）は、x²・E=mc²・m²・cm³ のような単位の略記の背後にある、累乗の文字です。この2つは、¹（U+00B9）とともに、1980年代から標準の「Latin-1」文字セットに含まれています。だからこそ、⁰・⁴〜⁹ よりもずっと多くの場所で正しく表示されます。</p>
   </div>
 </section>
 
@@ -302,7 +302,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <h2>² と ³ はどこから来たのか</h2>
   <div class="editorial-block">
     <p>² と ³ は、数学の記法であると同時に、文字コードの歴史が生んだ偶然の産物でもあります。1987年、西ヨーロッパのコンピューティングを席巻する8ビット文字セットとしてISO 8859-1（Latin-1）が採用されたとき、そこに含まれた上付き数字は ² と ³ の2つだけでした。もともとフランスや北欧のタイプライターのフォントで、科学・技術の文章、とりわけ m² や cm³ のような単位の略記によく使われていたからです。ほかの上付き数字はこの採用にあずかれませんでした。</p>
-    <p>その結果、隙間が生まれました。⁰・¹・⁴〜⁹ が標準のコードポイントを得たのは何年も後、Unicodeが専用の「Superscripts and Subscripts」ブロック（U+2070〜U+209F）を作り、代数や化学の記法を完全に支えられるようにしたときです。² と ³ は先に到着し、Windows-1252を含むLatin-1採用のあらゆるシステムへ広まったため、ほぼどこでも正しく表示されると当てにできる上付き数字になりました。一方、残りは新しい追加で、ときに未対応です。</p>
+    <p>その結果、隙間が生まれました。⁰・⁴〜⁹ が標準のコードポイントを得たのは何年も後、Unicodeが専用の「Superscripts and Subscripts」ブロック（U+2070〜U+209F）を作り、代数や化学の記法を完全に支えられるようにしたときです。¹・²・³ は先に到着し、Windows-1252を含むLatin-1採用のあらゆるシステムへ広まったため、ほぼどこでも正しく表示されると当てにできる上付き数字になりました。一方、残りは新しい追加で、ときに未対応です。</p>
   </div>
 </section>
 
@@ -338,7 +338,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="faq-item">
     <button class="faq-question" type="button">なぜ ² と ³ はどこでも表示されるのに、⁴〜⁹ は表示されないことがあるの？</button>
     <div class="faq-answer">
-      <p>² と ³ は、1980年代後半のISO 8859-1規格以来「Latin-1 Supplement」ブロック（U+00B2／U+00B3）に含まれており、古い8ビットのフォントや文字コードにもほぼ例外なく入っています。一方 ⁰・¹・⁴〜⁹ は、Unicodeが専用の「Superscripts and Subscripts」ブロックを作ったずっと後に追加されたため、古いフォントやシステムには入っていないことがあります。</p>
+      <p>¹・²・³ は、1980年代後半のISO 8859-1規格以来「Latin-1 Supplement」ブロック（U+00B9／U+00B2／U+00B3）に含まれており、古い8ビットのフォントや文字コードにもほぼ例外なく入っています。一方 ⁰・⁴〜⁹ は、Unicodeが専用の「Superscripts and Subscripts」ブロックを作ったずっと後に追加されたため、古いフォントやシステムには入っていないことがあります。</p>
     </div>
   </div>
   <div class="faq-item">
