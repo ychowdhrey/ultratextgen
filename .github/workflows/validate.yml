@@ -234,6 +234,18 @@ jobs:
         continue-on-error: true
         run: npm run check:faq-schema -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee faq-schema.log
 
+      # State check on changed symbol pages (FAQ above the footer, no copy of an unassigned code point without a
+      # disclosed data-provisional, no double-escaped entity). The lane stands at zero, so nothing is red by default.
+      - name: Run symbol page state check
+        id: symbol_pages
+        continue-on-error: true
+        run: npm run check:symbol-pages -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee symbol-pages.log
+
+      - name: Run symbol page gate tests
+        id: symbol_pages_tests
+        continue-on-error: true
+        run: npm run test:symbol-pages | tee symbol-pages-tests.log
+
       # Whole-site and gating, like the Funding Choices tag check and unlike the
       # informational whole-site audits: there is no backlog to be permanently
       # red against — a zalgo example card either decodes back to its own label
@@ -1254,6 +1266,16 @@ jobs:
             cat faq-schema.log
             echo '```'
             echo ""
+            echo "### Symbol page state check — \`${{ steps.symbol_pages.outcome }}\`"
+            echo '```'
+            cat symbol-pages.log
+            echo '```'
+            echo ""
+            echo "### Symbol page gate tests — \`${{ steps.symbol_pages_tests.outcome }}\`"
+            echo '```'
+            cat symbol-pages-tests.log
+            echo '```'
+            echo ""
             echo "### Zalgo example decode check — \`${{ steps.zalgo_decodes.outcome }}\`"
             echo '```'
             cat zalgo-decodes.log
@@ -1550,6 +1572,8 @@ jobs:
           steps.locale_spec.outcome == 'failure' ||
           steps.locale_collection_parity.outcome == 'failure' ||
           steps.faq_schema.outcome == 'failure' ||
+          steps.symbol_pages.outcome == 'failure' ||
+          steps.symbol_pages_tests.outcome == 'failure' ||
           steps.zalgo_decodes.outcome == 'failure' ||
           steps.redirects.outcome == 'failure' ||
           steps.llms_index.outcome == 'failure' ||
