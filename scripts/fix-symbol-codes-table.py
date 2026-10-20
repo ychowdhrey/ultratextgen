@@ -79,8 +79,8 @@ def rows_for(ch, labels):
     return rows
 
 
-def block(rows, labels):
-    t = '<!-- TYPING -->\n<section class="editorial-section">\n  <span class="article-section-label">%s</span>\n  <h2>%s</h2>\n' % (labels["label"], labels["h2"])
+def block(rows, labels, ch=""):
+    t = '<!-- TYPING -->\n<section class="editorial-section">\n  <span class="article-section-label">%s</span>\n  <h2>%s</h2>\n' % (html.escape(labels["label"], quote=False), html.escape(labels["h2"], quote=False) + (" (%s)" % html.escape(ch, quote=False) if ch else ""))
     t += '  <div class="data-table-wrap">\n    <table class="data-table">\n      <thead>\n        <tr><th>%s</th><th>%s</th></tr>\n      </thead>\n      <tbody>\n' % (labels["th_method"], labels["th_input"])
     for a, b in rows:
         t += "        <tr><td>%s</td><td>%s</td></tr>\n" % (a, b)
@@ -88,10 +88,13 @@ def block(rows, labels):
 
 
 def insert(src, blk):
-    m = re.search(r"<!-- (?:SOURCES|FAQ|CTA)[^>]*-->", src)
+    m = re.search(r"<!-- (?:SOURCES|FAQ|CTA)[^>]*-->", src) or re.search(r"<!-- (?:RELATED|FOOTER)[^>]*-->", src)
     if not m:
         return None
-    return src[: m.start()] + blk + src[m.start():]
+    head = src[: m.start()]
+    if not head.rstrip().endswith('<div class="section-divider"></div>'):
+        blk = '<div class="section-divider"></div>\n\n' + blk
+    return head + blk + src[m.start():]
 
 
 def qualifies(rel, src):
@@ -127,7 +130,7 @@ if __name__ == "__main__":
             continue
         n += 1
         if "--write" in sys.argv:
-            new = insert(src, block(rows_for(ch, labels), labels))
+            new = insert(src, block(rows_for(ch, labels), labels, ch))
             if new is None:
                 print("no insertion point:", rel)
                 continue
