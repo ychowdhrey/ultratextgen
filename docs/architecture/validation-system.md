@@ -176,3 +176,14 @@ cannot catch that.
 Any page that *asserts facts* — limits, counts, encodings, decodes — deserves the same
 treatment; a page that merely renders copy does not. See
 `docs/architecture/check-surfaces.md`.
+
+## Symbol page state check (`check:symbol-pages`)
+
+Added 2026-10-20 after a whole-lane audit of 1,770 symbol pages. It gates the changed pages on three deterministic
+defects that stood at zero after the repair pass: FAQ below the footer, a copied code point the pinned Unicode table does
+not assign, and a double-escaped entity. Two heuristics (`tile-glyph-mismatch`, `alt-code-mismatch`) were measured at 13
+pages, every one a legitimate mention of another character or a paired tile such as `<>`; they stay in
+`audit:symbol-pages` because a gate red on them would train people to ignore it. Proof it gates: three differently shaped
+broken inputs each returned 1 through `run-ci-gates.py --only symbol_pages`, a clean tree returned 0. Detector lesson: the
+first FAQ check keyed on `id="faq"` and undercounted 263 pages as 79; a blind read of 38 pages found it.
+
