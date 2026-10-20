@@ -88,7 +88,7 @@ def block(rows, labels, ch=""):
 
 
 def insert(src, blk):
-    m = re.search(r"<!-- (?:SOURCES|FAQ|CTA)[^>]*-->", src) or re.search(r"<!-- (?:RELATED|FOOTER)[^>]*-->", src)
+    m = re.search(r"<!-- (?:SOURCES|FAQ|CTA)[^>]*-->", src) or re.search(r"<!-- (?:RELATED|FOOTER)[^>]*-->", src) or re.search(r"<footer\b", src)
     if not m:
         return None
     head = src[: m.start()]
