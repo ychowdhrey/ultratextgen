@@ -62,7 +62,9 @@ def rows_for(ch, labels):
     cp = ord(ch)
     emoji = "emoji" in unicodedata.name(ch, "").lower() or cp >= 0x1F000 or sp.is_default_emoji(ch)
     esc = lambda s: s.replace("&", "&amp;")
-    rows = []
+    # the first row names the character the table is about (language-neutral, so the heading stays a fixed template string)
+    shown = "U+%04X" % cp if cp == 0x2014 else ch   # a literal em dash would read as a banned dash in copy
+    rows = [("Unicode", ("<code>U+%04X</code> %s" % (cp, html.escape(shown, quote=False))) if cp != 0x2014 else "<code>U+2014</code>")]
     if emoji:
         rows.append(("Windows", "<code>Win+.</code>"))
         rows.append((labels["mac"], "<code>Control+Command+Space</code>"))
@@ -80,7 +82,7 @@ def rows_for(ch, labels):
 
 
 def block(rows, labels, ch=""):
-    t = '<!-- TYPING -->\n<section class="editorial-section">\n  <span class="article-section-label">%s</span>\n  <h2>%s</h2>\n' % (html.escape(labels["label"], quote=False), html.escape(labels["h2"], quote=False) + (" (%s)" % html.escape(ch, quote=False) if ch else ""))
+    t = '<!-- TYPING -->\n<section class="editorial-section">\n  <span class="article-section-label">%s</span>\n  <h2>%s</h2>\n' % (html.escape(labels["label"], quote=False), html.escape(labels["h2"], quote=False))
     t += '  <div class="data-table-wrap">\n    <table class="data-table">\n      <thead>\n        <tr><th>%s</th><th>%s</th></tr>\n      </thead>\n      <tbody>\n' % (labels["th_method"], labels["th_input"])
     for a, b in rows:
         t += "        <tr><td>%s</td><td>%s</td></tr>\n" % (a, b)
@@ -88,7 +90,7 @@ def block(rows, labels, ch=""):
 
 
 def insert(src, blk):
-    m = re.search(r"<!-- (?:SOURCES|FAQ|CTA)[^>]*-->", src) or re.search(r"<!-- (?:RELATED|FOOTER)[^>]*-->", src)
+    m = re.search(r"<!-- (?:SOURCES|FAQ|CTA)[^>]*-->", src) or re.search(r"<!-- (?:RELATED|FOOTER)[^>]*-->", src) or re.search(r"<footer\b", src)
     if not m:
         return None
     head = src[: m.start()]
