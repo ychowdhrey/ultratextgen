@@ -120,8 +120,7 @@ with CI's own merge base. **Never assemble the gate list by hand** — a list wr
 in prose has drifted twice, and one such sweep passed locally while CI was red on a
 gate the prose had never named. The generated inventory is in `docs/README.md`.
 
-`npm run check:pr-overlap` names other PRs touching your files;
-`npm run audit:claude-context` reports this file's budget and rule scoping.
+`npm run check:pr-overlap` names other PRs touching your files; `npm run audit:claude-context` reports this file's budget and rule scoping.
 
 Two local-run traps: several `check:*` scripts diff `merge-base..HEAD`, so
 **uncommitted work is invisible to them** — commit first, or you get a false green. And
@@ -187,6 +186,7 @@ without `paths` would load every session, so every rule has one.
 | `css.md` | any `.css` |
 | `frontend-javascript.md` | any root or `js/` script |
 | `unicode-style-registry.md` | `styles.js` or `renderer.js` |
+| `symbol-pages.md` | a symbol page, its generators, or the pinned Unicode table |
 | `copy-share-analytics.md` | the share/saved modules, `script.js`, `header.js`, `symbol-explorer.js`, `locales/` |
 | `printables.md` | `printables/`, a locale printables directory, or `js/printables/` |
 | `fonts.md` | `assets/fonts/`, any `.css`, or a font script |
