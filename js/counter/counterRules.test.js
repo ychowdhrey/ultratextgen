@@ -157,6 +157,12 @@ t("hidden: braille blank and hangul filler", hid("\u2800\u3164"), ["U+2800@1:1",
 t("hidden: kinds", D.listHidden("\u00A0\u200B\u202E").map(h => h.kind), ["space", "invisible", "direction"]);
 t("clean: odd spaces become spaces, the rest go", D.cleanHidden("a\u00A0b\u202Fc\u200Bd\u202Ee"), "a b cde");
 t("clean: emoji joiner kept", D.cleanHidden("👨\u200D👩"), "👨\u200D👩");
+// The joiner must survive when U+FE0F or a skin-tone modifier sits before it (the cleaner used to remove it).
+[["rainbow flag", "\u{1F3F3}\uFE0F\u200D\u{1F308}"], ["heart on fire", "\u2764\uFE0F\u200D\u{1F525}"],
+ ["man astronaut, medium skin", "\u{1F468}\u{1F3FD}\u200D\u{1F680}"], ["eye in speech bubble", "\u{1F441}\uFE0F\u200D\u{1F5E8}\uFE0F"],
+ ["kiss, two skin tones", "\u{1F9D1}\u{1F3FB}\u200D\u2764\uFE0F\u200D\u{1F48B}\u200D\u{1F9D1}\u{1F3FF}"]
+].forEach(([name, seq]) => t("clean: " + name + " keeps its joiners", D.cleanHidden(seq), seq));
+t("clean: a joiner after a modifier but before a letter is still removed", D.cleanHidden("\u{1F3FD}\u200Da"), "\u{1F3FD}a");
 
 /* The "remove invisible characters" button, the inspect chip and the hidden
    list used to disagree: the button knew 13 code points, the list knew 39.
