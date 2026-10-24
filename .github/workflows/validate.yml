@@ -246,6 +246,19 @@ jobs:
         continue-on-error: true
         run: npm run test:symbol-pages | tee symbol-pages-tests.log
 
+      # Delta check on EVERY page type: a changed page must not gain a copy tile with an unassigned code point, a
+      # malformed flag, keycap or joiner string, or an NFC-fragile literal. Pre-existing ones are reported by
+      # `npm run audit:tile-unicode`, not failed (a standing backlog exists).
+      - name: Run tile Unicode delta check
+        id: tile_unicode
+        continue-on-error: true
+        run: npm run check:tile-unicode -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee tile-unicode.log
+
+      - name: Run tile Unicode gate tests
+        id: tile_unicode_tests
+        continue-on-error: true
+        run: npm run test:tile-unicode | tee tile-unicode-tests.log
+
       # Whole-site and gating, like the Funding Choices tag check and unlike the
       # informational whole-site audits: there is no backlog to be permanently
       # red against — a zalgo example card either decodes back to its own label
@@ -1276,6 +1289,16 @@ jobs:
             cat symbol-pages-tests.log
             echo '```'
             echo ""
+            echo "### Tile Unicode delta check — \`${{ steps.tile_unicode.outcome }}\`"
+            echo '```'
+            cat tile-unicode.log
+            echo '```'
+            echo ""
+            echo "### Tile Unicode gate tests — \`${{ steps.tile_unicode_tests.outcome }}\`"
+            echo '```'
+            cat tile-unicode-tests.log
+            echo '```'
+            echo ""
             echo "### Zalgo example decode check — \`${{ steps.zalgo_decodes.outcome }}\`"
             echo '```'
             cat zalgo-decodes.log
@@ -1574,6 +1597,8 @@ jobs:
           steps.faq_schema.outcome == 'failure' ||
           steps.symbol_pages.outcome == 'failure' ||
           steps.symbol_pages_tests.outcome == 'failure' ||
+          steps.tile_unicode.outcome == 'failure' ||
+          steps.tile_unicode_tests.outcome == 'failure' ||
           steps.zalgo_decodes.outcome == 'failure' ||
           steps.redirects.outcome == 'failure' ||
           steps.llms_index.outcome == 'failure' ||

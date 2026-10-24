@@ -64,6 +64,7 @@
     "check:symbol-pages": "python3 scripts/check-symbol-pages.py",
     "audit:symbol-pages": "python3 scripts/audit-symbol-pages.py",
     "test:symbol-pages": "python3 scripts/test-symbol-pages.py",
+    "check:tile-unicode": "python3 scripts/check-tile-unicode.py",
     "audit:tile-unicode": "python3 scripts/audit-tile-unicode.py",
     "test:tile-unicode": "python3 scripts/test-tile-unicode.py",
     "check:zalgo-decodes": "node scripts/check-zalgo-decodes.js",
