@@ -567,8 +567,8 @@
     {
       "id": "keycap-number-emoji",
       "label": "Tasten-Emoji",
-      "h2": "Zahlen-Emoji als Taste: 0️⃣ bis 🔟, #️⃣ und *️⃣",
-      "intro": "Tasten-Emoji für nummerierte Listen, Umfragen und Schritte. Eine Zifferntaste besteht aus drei Codepunkten: der Ziffer, dem Emoji-Selektor U+FE0F und der kombinierenden Taste U+20E3. Deshalb wird eine normale Ziffer nie von allein zum Emoji. 🔟 ist ein einzelnes Emoji.",
+      "h2": "Zahlen-Emojis in Tastenform: 0️⃣ bis 🔟, #️⃣ und *️⃣",
+      "intro": "Tasten-Emoji für nummerierte Listen, Umfragen und Schritte. Eine Zifferntaste besteht aus drei Codepunkten: der Ziffer, dem Emoji-Selektor U+FE0F und dem kombinierenden Tastenrahmen U+20E3. Deshalb wird eine normale Ziffer nie von allein zum Emoji. 🔟 ist ein einzelnes Emoji.",
       "symbols": [
         {
           "char": "0️⃣",
