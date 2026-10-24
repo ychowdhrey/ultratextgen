@@ -73,8 +73,8 @@
     },
     {
       "id": "hiragana-gojuon-chart",
-      "label": "Hiragana Chart",
-      "h2": "Full Hiragana Chart: All 46 Basic Kana",
+      "label": "Copy Hiragana",
+      "h2": "Copy and Paste Hiragana: All 46 Basic Kana",
       "intro": "The 46 basic hiragana in gojūon order, row by row: a, ka, sa, ta, na, ha, ma, ya, ra, wa, then n. Each tile shows its Hepburn romaji. ゐ (wi) and ゑ (we) are left out: they dropped out of standard spelling in 1946. For a printable table, see the <a href=\"/hiragana-chart/\">hiragana chart</a>.",
       "symbols": [
         { "char": "あ", "label": "a" },
@@ -170,8 +170,8 @@
     },
     {
       "id": "katakana-gojuon-chart",
-      "label": "Katakana Chart",
-      "h2": "Full Katakana Chart: All 46 Basic Kana",
+      "label": "Copy Katakana",
+      "h2": "Copy and Paste Katakana: All 46 Basic Kana",
       "intro": "The same 46 sounds in katakana, the script for loanwords, foreign names and emphasis, in gojūon order with Hepburn romaji. The <a href=\"/katakana-chart/\">katakana chart</a> has a printable version.",
       "symbols": [
         { "char": "ア", "label": "a" },
