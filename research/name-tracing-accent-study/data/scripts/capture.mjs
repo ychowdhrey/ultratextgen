@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Accent study: capture exact UTG native previews, PDF exports, and PNG exports.
 // No published research conclusion is encoded here; this is an evidence collector.
-// Run from the repository root: node <this-file> --repo . --out /tmp/accent-study
+// Run from the repository root: node <this-file> --repo . --out /tmp/accent-study [--fixtures <names.json>] [--limit N]
 import fs from "node:fs";
 import path from "node:path";
 import http from "node:http";
@@ -11,7 +11,7 @@ import {fileURLToPath} from "node:url";
 
 const require = createRequire(import.meta.url);
 const here = path.dirname(fileURLToPath(import.meta.url));
-const spec = JSON.parse(fs.readFileSync(path.join(here,"fixtures.json"),"utf8"));
+const spec = JSON.parse(fs.readFileSync(flag("--fixtures",path.join(here,"../fixtures/names-main-26.json")),"utf8"));
 function flag(n,fallback="") { const i=process.argv.indexOf(n); return i<0?fallback:(process.argv[i+1]||fallback); }
 const root = path.resolve(flag("--repo"));
 const out = path.resolve(flag("--out",path.join(here,"local-output")));
