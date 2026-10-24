@@ -7,10 +7,13 @@ Four library pages carry sections that promise a complete, ordered Unicode set,
 and their locale siblings carry the same sections:
 
   * braille-pattern-symbols  (en, de, es): the braille alphabet and all 256 cells
-  * box-drawing-symbols      (en, de, ko): the rest of U+2500..U+259F
-  * card-suit-symbols        (en + 9 locales): the 52-card deck, the tarot knights
+  * box-drawing-symbols      (en, de; ko held, see HELD): the rest of U+2500..U+259F
+  * card-suit-symbols        (en + 8 locales; sv held): the 52-card deck, the tarot knights
                                            and the white joker
   * dice-domino-symbols      (en): every domino tile and the mahjong set
+  * number-symbols           (en + 6 locales): Roman numerals past XII and the
+                                           keycap emoji (id/font-angka is a
+                                           generator page with no tiles)
 
 A tile on these pages is a promise about one exact code point, and a label is a
 promise about what that code point is. Neither shows up as broken in a
@@ -21,7 +24,8 @@ UCD names, block arithmetic), never from a second hand-typed list.
 Checks, per section and per locale:
   1. the section exists exactly once;
   2. every tile is assigned, free of variation selectors and joiners, and is a
-     single scalar (except the braille number tiles: number sign + letter);
+     single scalar (except the braille number tiles: number sign + letter, and
+     keycaps, which must be exactly base + U+FE0F + U+20E3);
   3. the set is exactly the expected one, in the expected order, no duplicate;
   4. the label agrees with the code point (dot numbers, UCD names, card ranks);
   5. the aria-label is present and contains the visible label (WCAG 2.5.3);
@@ -127,6 +131,21 @@ def domino_label(cp):
     return unicodedata.name(chr(cp)).title()
 
 
+ROMAN_EXT = list(range(0x216C, 0x2180)) + [0x2180, 0x2181, 0x2182, 0x2187, 0x2188]
+KEYCAPS = [(d + '\ufe0f\u20e3', d) for d in '0123456789'] + [('\U0001F51F', '10'), ('#\ufe0f\u20e3', '#'), ('*\ufe0f\u20e3', '*')]
+
+
+def roman_en_label(cp):
+    n = unicodedata.name(chr(cp))  # ROMAN NUMERAL FIFTY / SMALL ROMAN NUMERAL ONE / ROMAN NUMERAL ONE THOUSAND C D
+    letters = {0x216C: 'L', 0x216D: 'C', 0x216E: 'D', 0x216F: 'M'}
+    if cp in letters:
+        return 'Roman Numeral ' + letters[cp]
+    if n.startswith('SMALL ROMAN NUMERAL'):
+        return 'Small Roman Numeral ' + 'i ii iii iv v vi vii viii ix x xi xii l c d m'.split()[cp - 0x2170]
+    value = {0x2180: '1000', 0x2181: '5000', 0x2182: '10000', 0x2187: '50000', 0x2188: '100000'}[cp]
+    return 'Roman Numeral ' + value + (', old form' if cp == 0x2180 else '')
+
+
 def cps(seq):
     return [(chr(cp), None) for cp in seq]
 
@@ -144,17 +163,25 @@ CLUSTERS = {
         },
     },
     'box': {
-        'pages': {'en': 'library/box-drawing-symbols', 'de': 'de/library/rahmenzeichen', 'ko': 'ko/library/nemo-giho'},
+        'pages': {'en': 'library/box-drawing-symbols', 'de': 'de/library/rahmenzeichen'},
         'sections': {sid: ((lambda s: lambda lc: cps(s))(seq), 'box') for sid, seq in box_sections().items()},
     },
     'cards': {
         'pages': {'en': 'library/card-suit-symbols', 'pt': 'pt/library/naipes-de-baralho', 'de': 'de/library/spielkarten-symbole',
                   'pl': 'pl/library/symbole-kart', 'ja': 'ja/library/trump-kigou', 'ko': 'ko/library/teureompeu-kadeu-giho',
                   'es': 'es/library/simbolos-de-cartas', 'tr': 'tr/library/iskambil-sembolleri',
-                  'it': 'it/library/simboli-carte-da-gioco', 'sv': 'sv/library/kortfarg-symboler'},
+                  'it': 'it/library/simboli-carte-da-gioco'},
         'sections': {
             'full-deck-52-cards': (lambda lc: cps(DECK), 'card'),
             'tarot-knights-white-joker': (lambda lc: cps(KNIGHTS + [0x1F0DF]), 'card'),
+        },
+    },
+    'numbers': {
+        'pages': {'en': 'library/number-symbols', 'ar': 'ar/library/number-symbols', 'es': 'es/library/simbolos-de-numero',
+                  'ko': 'ko/library/sutja-giho', 'ja': 'ja/library/suuji-kigou', 'vi': 'vi/library/ky-tu-so', 'de': 'de/library/zahlen-symbole'},
+        'sections': {
+            'roman-numerals-extended': (lambda lc: cps(ROMAN_EXT), 'roman'),
+            'keycap-number-emoji': (lambda lc: KEYCAPS, 'keycap'),
         },
     },
     'dice': {
@@ -165,6 +192,14 @@ CLUSTERS = {
             'mahjong-full-set': (lambda lc: cps(MAHJONG_REST), 'mahjong'),
         },
     },
+}
+
+# Siblings deliberately not carrying the sections yet. Both pages sit in a measurement
+# window that started before these sections were written; changing them now would change
+# what is being measured. Sync them when the window closes, then move them into CLUSTERS.
+HELD = {
+    'ko/library/nemo-giho': 'box-drawing sibling; observation window to 2026-12-09',
+    'sv/library/kortfarg-symboler': 'card-suit sibling; observation window to 2026-12-09',
 }
 
 # ---------------------------------------------------------------- parsing
@@ -195,7 +230,10 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors):
     for i, (sym, aria, label) in enumerate(tiles):
         tag = f'{where} tile {i + 1} {sym!r}'
         cpl = [ord(c) for c in sym]
-        if any(c in VS_OR_JOINER for c in cpl):
+        if kind == 'keycap':
+            if not (len(cpl) == 3 and cpl[1:] == [0xFE0F, 0x20E3] and sym[0] in '0123456789#*') and sym != '\U0001F51F':
+                errors.append(f'{tag}: not a fully-qualified keycap (base + U+FE0F + U+20E3)')
+        elif any(c in VS_OR_JOINER for c in cpl):
             errors.append(f'{tag}: carries a variation selector or joiner')
         for c in cpl:
             try:
@@ -204,7 +242,7 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors):
                 errors.append(f'{tag}: U+{c:04X} is unassigned or unnamed')
             if c in EXCLUDED:
                 errors.append(f'{tag}: U+{c:04X} is excluded (no Android system glyph)')
-        if len(cpl) != 1 and not (kind == 'braille-alphabet' and len(cpl) == 2 and sym[0] == NUMBER_SIGN):
+        if len(cpl) != 1 and kind != 'keycap' and not (kind == 'braille-alphabet' and len(cpl) == 2 and sym[0] == NUMBER_SIGN):
             errors.append(f'{tag}: {len(cpl)} code points in a single-character tile')
         if not label.strip() or not aria.strip():
             errors.append(f'{tag}: empty label or aria-label')
@@ -213,6 +251,8 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors):
         exp_label = expected[i][1] if i < len(expected) else None
         if kind == 'dots' and exp_label and label != exp_label:
             errors.append(f'{tag}: label {label!r} but the cell raises dots {exp_label}')
+        if kind == 'keycap' and exp_label and label != exp_label:
+            errors.append(f'{tag}: label {label!r} but the keycap is {exp_label}')
         if kind == 'braille-alphabet' and exp_label and label != exp_label:
             errors.append(f'{tag}: label {label!r} but the cell is {exp_label}')
         if lc == 'en':
@@ -225,9 +265,11 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors):
                 errors.append(f'{tag}: label {label!r}, UCD says {card_en_label(cp)!r}')
             if kind == 'domino' and label != domino_label(cp):
                 errors.append(f'{tag}: label {label!r}, UCD says {domino_label(cp)!r}')
+            if kind == 'roman' and label != roman_en_label(cp):
+                errors.append(f'{tag}: label {label!r}, expected {roman_en_label(cp)!r}')
             if kind == 'mahjong' and label != unicodedata.name(chr(cp)).title().replace(' Of ', ' of '):
                 errors.append(f'{tag}: label {label!r} does not match its UCD name')
-        elif en_tiles is not None and kind in ('box', 'card'):
+        elif en_tiles is not None and kind in ('box', 'card', 'roman'):
             en_label = dict((t[0], t[2]) for t in en_tiles).get(sym)
             if en_label is not None and label == en_label:
                 errors.append(f'{tag}: label is the English one ({label!r}); a {lc} page needs its own wording')
@@ -278,13 +320,17 @@ def self_test():
                                            .replace('aria-label="Kopieren Pik-Drei"', 'aria-label="Kopieren Three of Spades"', 1), 'is the English one'),
         'excluded trump': (cpath, cgood.replace('data-symbol="🃟"', 'data-symbol="🃠"', 1).replace('>🃟<', '>🃠<', 1), 'excluded'),
     }
+    npath = CLUSTERS['numbers']['pages']['ja']
+    ngood = open(os.path.join(ROOT, npath, 'index.html'), encoding='utf-8').read()
+    mutations['keycap without U+FE0F'] = (npath, ngood.replace('data-symbol="3&#xFE0F;&#x20E3;"', 'data-symbol="3&#x20E3;"', 1)
+                                          .replace('data-symbol="3️⃣"', 'data-symbol="3⃣"', 1), 'fully-qualified keycap')
     failed = []
     for name, (mpath, text, expect) in mutations.items():
-        orig = good if mpath == path else cgood
+        orig = {path: good, cpath: cgood, npath: ngood}[mpath]
         if text == orig:
             failed.append(f'{name}: the mutation did not apply (fixture drifted)')
             continue
-        only = 'braille' if mpath == path else 'cards'
+        only = {path: 'braille', cpath: 'cards', npath: 'numbers'}[mpath]
         errs, _, _ = run(lambda p, mp=mpath, t=text: t if p == mp else open(os.path.join(ROOT, p, 'index.html'), encoding='utf-8').read(), only)
         hit = [e for e in errs if expect in e]
         if not hit:
@@ -308,6 +354,8 @@ def main():
         print(f'  MISSING PAGE  /{p}/')
     for e in errors:
         print('  ' + e)
+    for p, why in HELD.items():
+        print(f'  held   /{p}/  ({why})')
     if missing:
         return 2
     if errors:

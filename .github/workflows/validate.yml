@@ -505,7 +505,7 @@ jobs:
         run: npm run test:moon-phase | tee moon-phase-tests.log
 
       # Gating, no backlog: the complete Unicode reference sets on the braille,
-      # box-drawing, playing-card and dice/domino library pages and their locale
+      # box-drawing, playing-card, dice/domino and number library pages and their locale
       # siblings. Each section promises an exact, ordered Unicode set; the test
       # derives every expected code point and label from the code points
       # (dot bits, UCD names), checks label-in-name, locale wording and the
