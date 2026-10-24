@@ -2107,19 +2107,24 @@
         : (im.emAscent != null ? WORD_OUTLINE_ANCHOR_Y + (im.emAscent - im.emDescent) / 2 : null);
       if (base != null) {
         const needBottom = base + Math.max(im.bottom, fit.bottom) + wordStroke;
-        /* o.fitIfClipped: grow only when the INK really overflows the default
-           box, by more than FIT_CLIP_TOL units. Neither the 8-unit safety margin
-           below nor a ruling line drawn outside the box is a reason to resize a
-           face that fits: Quicksand's descenders end within 1-4 units of 200
-           (stroke width and rounding, nothing visible is cut) and the margin
+        /* o.fitIfClipped: grow only when the INK really overflows the box the row
+           will have, by more than FIT_CLIP_TOL units. Neither the 8-unit safety
+           margin below nor a ruling line drawn outside the box is a reason to
+           resize a face that fits: Quicksand's descenders end within 1-4 units of
+           200 (stroke width and rounding, nothing visible is cut) and the margin
            alone would shrink every print name page's letters by about 5%. A cut
-           script glyph is 13-78 units over. */
-        if (!o.fitIfClipped || needBottom > h + FIT_CLIP_TOL) h = Math.max(h, Math.ceil(needBottom + 8));
+           script glyph is 13-78 units over. "The box the row will have" matters on
+           a physical ruling (the French Seyes row): the page hands it a box far
+           taller than 200 (o.rowVH), centred on the drawing, so ink that is past
+           200 is still inside it and nothing is cut. */
+        const boxH = o.rowVH ? Math.max(h, o.rowVH) : h;
+        const boxTop = -(boxH - h) / 2, boxBottom = boxTop + boxH;
+        if (!o.fitIfClipped || needBottom > boxBottom + FIT_CLIP_TOL) h = Math.max(h, Math.ceil(needBottom + 8));
         if (o.fitTop) {
           const inkTop = base + Math.min(im.top, fit.top) - wordStroke - 8;
           const ruleTop = gRul ? gRul.base - gRul.band * Math.max.apply(null, ruling().lines.map((l) => l.at)) - 4 : 0;
           const needTop = base + Math.min(im.top, fit.top) - wordStroke;   // ink only, not the ruling
-          if (!o.fitIfClipped || needTop < -FIT_CLIP_TOL) y0 = Math.min(0, Math.floor(Math.min(inkTop, ruleTop)));
+          if (!o.fitIfClipped || needTop < boxTop - FIT_CLIP_TOL) y0 = Math.min(0, Math.floor(Math.min(inkTop, ruleTop)));
         }
       }
     }
@@ -7393,10 +7398,7 @@
        rows through nameRenderOpts() and stays as it was, blank rows included, so
        the ruling still lines up down the sheet. */
     const fitName = routedSheet || !NAME_STYLES;
-    /* A physical ruling (the French Seyes row, the German Lineatur) takes its box
-       from the page, in millimetres, so what the unrouted rows may not do is move
-       that box: those pages keep their geometry, and none of them clipped ink. */
-    const fitUnrouted = !routedSheet && !physicalBandMm();
+    const fitUnrouted = !routedSheet;
     if (kind === "blank") {
       if (RULED_ROWS) {
         const o = { blank: true, guides: true };
