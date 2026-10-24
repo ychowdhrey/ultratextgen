@@ -15,6 +15,10 @@ and their locale siblings carry the same sections:
   * number-symbols           (en + 6 locales): Roman numerals past XII and the
                                            keycap emoji (id/font-angka is a
                                            generator page with no tiles)
+  * witchy-occult-symbols    (en + 9 locales): every ALCHEMICAL SYMBOL FOR ... character,
+                                           U+1F700..U+1F773, labelled from its UCD name
+  * keyboard-symbols         (en + 10 locales): the ISO/IEC 9995-7 function-key symbols
+  * chess-symbols            (en + 16 locales): draughts and shogi pieces
 
 A tile on these pages is a promise about one exact code point, and a label is a
 promise about what that code point is. Neither shows up as broken in a
@@ -35,7 +39,9 @@ Checks, per section and per locale:
      language-neutral and must match instead);
   7. the sets Android's system fonts cannot draw (tarot trumps U+1F0E0..U+1F0F5 and the red
      joker U+1F0BF) appear only in their own section, and that section must tell the reader so;
-     every arrow in the arrow sections is one Android draws.
+     every arrow in the arrow sections is one Android draws. U+1F774..U+1F77F (the astrological
+     signs at the end of the Alchemical block) and the U+1FA00 chess block have no Android glyph and
+     may not appear in the alchemy, keyboard or checkers sections at all.
 
 `--self-test` runs the checker against deliberately broken copies of a page and
 fails unless every mutation is caught, so this cannot go quietly inert.
@@ -158,6 +164,35 @@ def cps(seq):
     return [(chr(cp), None) for cp in seq]
 
 
+ALCHEMY_OVERRIDE = {0x1F70E: 'Philosophers’ Sulfur', 0x1F739: 'Sal Ammoniac', 0x1F741: 'Quicklime'}
+
+
+def alchemy_en_label(cp):
+    """UCD name without the ALCHEMICAL SYMBOL FOR prefix, title case, -2/-3.. as II/III.."""
+    if cp in ALCHEMY_OVERRIDE:
+        return ALCHEMY_OVERRIDE[cp]
+    n = unicodedata.name(chr(cp)).replace('ALCHEMICAL SYMBOL FOR ', '')
+    m = re.match(r'(.*)-(\d)$', n)
+    base, num = (m.group(1), int(m.group(2))) if m else (n, 1)
+    return base.title().replace(' Of ', ' of ') + (' ' + ['', '', 'II', 'III', 'IV', 'V'][num] if num > 1 else '')
+
+
+# Every character the UCD names "ALCHEMICAL SYMBOL FOR ...": U+1F700..U+1F773. The 12 after it in the
+# block (LOT OF FORTUNE .. ORCUS) are astrological, and Android draws none of them.
+ALCHEMY_ALL = [cp for cp in range(0x1F700, 0x1F780) if unicodedata.name(chr(cp), '').startswith('ALCHEMICAL SYMBOL FOR ')]
+assert ALCHEMY_ALL == list(range(0x1F700, 0x1F774))
+NO_ANDROID_GLYPH = set(range(0x1F774, 0x1F780)) | set(range(0x1FA00, 0x1FA70))
+ISO_KEYS = [0x2324, 0x2327, 0x2380, 0x2381, 0x2382, 0x2383, 0x2384, 0x2386, 0x2387, 0x2389, 0x238A, 0x238C,
+            0x2396, 0x2397, 0x2398, 0x239A]
+# The key each glyph stands for, from the UCD (NamesList aliases "= enter key", "= clear key", "= pause",
+# "= interrupt, break"; the rest are in the character names themselves). The EN label must name it.
+ISO_KEY_WORD = {0x2324: 'Enter', 0x2327: 'Clear', 0x2380: 'Insert', 0x2381: 'Continuous Underline',
+                0x2382: 'Discontinuous Underline', 0x2383: 'Emphasis', 0x2384: 'Compos', 0x2386: 'Enter',
+                0x2387: 'Alt', 0x2389: 'Pause', 0x238A: 'Break', 0x238C: 'Undo', 0x2396: 'Decimal Separator',
+                0x2397: 'Previous Page', 0x2398: 'Next Page', 0x239A: 'Clear Screen'}
+CHECKERS_SHOGI = [0x26C0, 0x26C1, 0x26C2, 0x26C3, 0x2616, 0x2617, 0x26C9, 0x26CA]
+
+
 # label kinds: 'neutral' (must equal EN), 'worded' (EN checked against UCD, locales must differ from EN)
 CLUSTERS = {
     'braille': {
@@ -206,6 +241,41 @@ CLUSTERS = {
             'roman-numerals-extended': (lambda lc: cps(ROMAN_EXT), 'roman'),
             'keycap-number-emoji': (lambda lc: KEYCAPS, 'keycap'),
         },
+    },
+    'alchemy': {
+        'pages': {'en': 'library/witchy-occult-symbols', 'es': 'es/library/simbolos-witchy-occult',
+                  'fr': 'fr/library/symboles-witchy-occult', 'id': 'id/library/simbol-witchy-occult',
+                  'it': 'it/library/simboli-witchy-occult', 'pl': 'pl/library/symbole-witchy-occult',
+                  'pt': 'pt/library/simbolos-witchy-occult', 'tr': 'tr/library/witchy-occult-sembolleri',
+                  'ru': 'ru/library/magicheskie-simvoly', 'de': 'de/library/okkulte-symbole'},
+        'sections': {
+            'alchemical-substances': (lambda lc: cps(range(0x1F740, 0x1F75C)), 'alchemy'),
+            'alchemical-processes-apparatus': (lambda lc: cps(range(0x1F75C, 0x1F76E)), 'alchemy'),
+            'alchemical-time-measures': (lambda lc: cps(range(0x1F76E, 0x1F774)), 'alchemy'),
+        },
+    },
+    # The first 64 alchemical tiles predate the sections above and carry a different section id on
+    # two locales; their labels drifted off their code points once (U+1F710 "Salt", ...), so the EN
+    # labels are held to the UCD here.
+    'alchemy-first-64': {
+        'pages': {'en': 'library/witchy-occult-symbols'},
+        'sections': {'alchemical': (lambda lc: cps(range(0x1F700, 0x1F740)), 'alchemy')},
+    },
+    'keyboard': {
+        'pages': {'en': 'library/keyboard-symbols', 'es': 'es/library/simbolos-de-teclado', 'tr': 'tr/library/klavye-sembolleri',
+                  'it': 'it/library/simboli-tastiera', 'fr': 'fr/library/symboles-clavier', 'ru': 'ru/library/simvoly-na-klaviature',
+                  'de': 'de/library/tastatur-symbole', 'ja': 'ja/library/keyboard-kigou', 'ar': 'ar/library/rumuz-alkibord',
+                  'ko': 'ko/library/keyboard-giho', 'sv': 'sv/library/tangentbord-symboler'},
+        'sections': {'iso-function-key-symbols': (lambda lc: cps(ISO_KEYS), 'isokey')},
+    },
+    'checkers': {
+        'pages': {'en': 'library/chess-symbols', 'de': 'de/library/schach-symbole', 'pt': 'pt/library/simbolos-de-xadrez',
+                  'ar': 'ar/library/chess-symbols', 'es': 'es/library/simbolos-de-ajedrez', 'fr': 'fr/library/symboles-echecs',
+                  'id': 'id/library/simbol-catur', 'it': 'it/library/simboli-scacchi', 'ja': 'ja/library/chess-symbols',
+                  'ko': 'ko/library/chess-gihou', 'nl': 'nl/library/schaaksymbolen', 'pl': 'pl/library/symbole-szachowe',
+                  'ru': 'ru/library/shakhmatnye-simvoly', 'th': 'th/library/chess-symbols', 'tr': 'tr/library/satranc-sembolleri',
+                  'vi': 'vi/library/ky-hieu-co-vua', 'zh-TW': 'zh-tw/library/guojixiangqi-fuhao'},
+        'sections': {'checkers-shogi-pieces': (lambda lc: cps(CHECKERS_SHOGI), 'ucdname')},
     },
     'dice': {
         'pages': {'en': 'library/dice-domino-symbols'},
@@ -289,6 +359,14 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors, page_text=No
                 errors.append(f'{tag}: label {label!r}, expected {roman_en_label(cp)!r}')
             if kind == 'mahjong' and label != unicodedata.name(chr(cp)).title().replace(' Of ', ' of '):
                 errors.append(f'{tag}: label {label!r} does not match its UCD name')
+        if kind in ('alchemy', 'isokey', 'ucdname') and cpl[0] in NO_ANDROID_GLYPH:
+            errors.append(f'{tag}: U+{cpl[0]:04X} has no Android system glyph')
+        if lc == 'en' and kind == 'alchemy' and label != alchemy_en_label(cpl[0]):
+            errors.append(f'{tag}: label {label!r}, UCD says {alchemy_en_label(cpl[0])!r}')
+        if lc == 'en' and kind == 'isokey' and ISO_KEY_WORD.get(cpl[0], '\0') not in label:
+            errors.append(f'{tag}: label {label!r} does not name the {ISO_KEY_WORD.get(cpl[0])} key')
+        if lc == 'en' and kind == 'ucdname' and label != unicodedata.name(chr(cpl[0])).title():
+            errors.append(f'{tag}: label {label!r}, UCD says {unicodedata.name(chr(cpl[0])).title()!r}')
         if kind == 'tarot':
             cp = cpl[0]
             if 0x1F0E1 <= cp <= 0x1F0F5 and label != ROMAN_21[cp - 0x1F0E1]:
@@ -303,7 +381,7 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors, page_text=No
             en_label = dict((t[0], t[2]) for t in en_tiles).get(sym)
             if en_label is not None and label == en_label:
                 errors.append(f'{tag}: label is the English one ({label!r}); a {lc} page needs its own wording')
-        if en_tiles is not None and kind in ('box', 'card', 'roman', 'arrow'):
+        if en_tiles is not None and kind in ('box', 'card', 'roman', 'arrow', 'alchemy', 'isokey', 'ucdname'):
             en_label = dict((t[0], t[2]) for t in en_tiles).get(sym)
             if en_label is not None and label == en_label:
                 errors.append(f'{tag}: label is the English one ({label!r}); a {lc} page needs its own wording')
@@ -363,13 +441,23 @@ def self_test():
                                           .replace('data-symbol="3️⃣"', 'data-symbol="3⃣"', 1), 'fully-qualified keycap')
     mutations['Android note removed'] = (cpath, cgood.replace('Android', 'XXXX'), 'must say so')
     mutations['trump numeral wrong'] = (cpath, cgood.replace('<span class="flag-label">XIV</span>', '<span class="flag-label">XV</span>', 1), 'expected trump XIV')
+    apath = CLUSTERS['alchemy']['pages']['en']
+    agood = open(os.path.join(ROOT, apath, 'index.html'), encoding='utf-8').read()
+    kpath = CLUSTERS['checkers']['pages']['nl']
+    kgood = open(os.path.join(ROOT, kpath, 'index.html'), encoding='utf-8').read()
+    mutations['alchemy label drift'] = (apath, agood.replace('<span class="flag-label">Borax II</span>', '<span class="flag-label">Borax III</span>', 1)
+                                        .replace('aria-label="Copy Borax II"', 'aria-label="Copy Borax III"', 1), "UCD says 'Borax II'")
+    mutations['glyph Android cannot draw'] = (apath, agood.replace('data-symbol="🝳"', 'data-symbol="🝴"', 1).replace('>🝳<', '>🝴<', 1), 'no Android system glyph')
+    mutations['English checkers label on a locale page'] = (kpath, kgood.replace('<span class="flag-label">Witte dam</span>', '<span class="flag-label">White Draughts King</span>', 1)
+                                                            .replace('aria-label="Kopiëren Witte dam"', 'aria-label="Kopiëren White Draughts King"', 1), 'is the English one')
     failed = []
+    fixtures = {path: (good, 'braille'), cpath: (cgood, 'cards'), npath: (ngood, 'numbers'), apath: (agood, 'alchemy'), kpath: (kgood, 'checkers')}
     for name, (mpath, text, expect) in mutations.items():
-        orig = {path: good, cpath: cgood, npath: ngood}[mpath]
+        orig = fixtures[mpath][0]
         if text == orig:
             failed.append(f'{name}: the mutation did not apply (fixture drifted)')
             continue
-        only = {path: 'braille', cpath: 'cards', npath: 'numbers'}[mpath]
+        only = fixtures[mpath][1]
         errs, _, _ = run(lambda p, mp=mpath, t=text: t if p == mp else open(os.path.join(ROOT, p, 'index.html'), encoding='utf-8').read(), only)
         hit = [e for e in errs if expect in e]
         if not hit:
