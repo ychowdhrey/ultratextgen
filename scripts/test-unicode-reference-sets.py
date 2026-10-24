@@ -15,6 +15,12 @@ and their locale siblings carry the same sections:
   * number-symbols           (en + 6 locales): Roman numerals past XII and the
                                            keycap emoji (id/font-angka is a
                                            generator page with no tiles)
+  * greek-letter-symbols      (en + 19 locales): mathematical bold, italic, bold
+                                           italic, sans-serif bold and sans-serif
+                                           bold italic Greek, archaic letters,
+                                           lunate sigma forms and accented vowels
+                                           (a code point a page already shows in an
+                                           older section is not repeated)
 
 A tile on these pages is a promise about one exact code point, and a label is a
 promise about what that code point is. Neither shows up as broken in a
@@ -158,6 +164,88 @@ def cps(seq):
     return [(chr(cp), None) for cp in seq]
 
 
+# ---------------------------------------------------------------- greek-letter-symbols (mathematical styled Greek, archaic, lunate, accented)
+# Every set is derived from UCD names. A code point the page already carries as a tile in one of its own
+# older sections is left out of the new section (no duplicate tiles), so the expected set is page-aware.
+GREEK_NAMES = [unicodedata.name(chr(c)).split()[-1] for c in range(0x3B1, 0x3CA) if c != 0x3C2]
+GREEK_VARIANT_KEYS = ['CAPITAL THETA SYMBOL', 'NABLA', 'PARTIAL DIFFERENTIAL', 'EPSILON SYMBOL', 'THETA SYMBOL',
+                      'KAPPA SYMBOL', 'PHI SYMBOL', 'RHO SYMBOL', 'PI SYMBOL']
+GREEK_STYLES = {'greek-math-bold': ('BOLD', 0x1D6A8), 'greek-math-italic': ('ITALIC', 0x1D6E2),
+                'greek-math-bold-italic': ('BOLD ITALIC', 0x1D71C), 'greek-math-sans-bold': ('SANS-SERIF BOLD', 0x1D756),
+                'greek-math-sans-bold-italic': ('SANS-SERIF BOLD ITALIC', 0x1D790)}
+GREEK_NEW_IDS = list(GREEK_STYLES) + ['greek-archaic-letters', 'greek-lunate-sigma', 'greek-accented-vowels']
+_GC = {unicodedata.name(chr(c), ''): c for c in range(0x370, 0x400)}
+
+
+def greek_styled(sid):
+    word, base = GREEK_STYLES[sid]
+    pre = f'MATHEMATICAL {word} '
+    block = {unicodedata.name(chr(c))[len(pre):]: c for c in range(base, base + 58)}
+    out = [block['CAPITAL ' + g] for g in GREEK_NAMES]
+    for g in GREEK_NAMES:
+        out += ([block['SMALL FINAL SIGMA']] if g == 'SIGMA' else []) + [block['SMALL ' + g]]
+    out += [block[k] for k in GREEK_VARIANT_KEYS]
+    if word == 'BOLD':
+        out += [ord(unicodedata.lookup(pre + 'CAPITAL DIGAMMA')), ord(unicodedata.lookup(pre + 'SMALL DIGAMMA'))]
+    return out
+
+
+def greek_archaic():
+    out = []
+    for k in ['DIGAMMA', 'PAMPHYLIAN DIGAMMA', 'STIGMA', 'HETA', 'SAN', 'ARCHAIC KOPPA', 'KOPPA', 'SAMPI', 'ARCHAIC SAMPI', 'SHO']:
+        out += [_GC.get('GREEK CAPITAL LETTER ' + k) or _GC['GREEK LETTER ' + k], _GC['GREEK SMALL LETTER ' + k]]
+    return out
+
+
+def greek_lunate():
+    out = []
+    for k in ['LUNATE SIGMA SYMBOL', 'REVERSED LUNATE SIGMA SYMBOL', 'DOTTED LUNATE SIGMA SYMBOL', 'REVERSED DOTTED LUNATE SIGMA SYMBOL']:
+        out += [_GC['GREEK CAPITAL ' + k], _GC.get('GREEK SMALL ' + k) or _GC['GREEK ' + k]]
+    return out + [_GC['GREEK REVERSED LUNATE EPSILON SYMBOL']]
+
+
+def greek_accented():
+    v = ['ALPHA', 'EPSILON', 'ETA', 'IOTA', 'OMICRON', 'UPSILON', 'OMEGA']
+    return ([_GC[f'GREEK CAPITAL LETTER {x} WITH TONOS'] for x in v] + [_GC[f'GREEK SMALL LETTER {x} WITH TONOS'] for x in v]
+            + [_GC[f'GREEK CAPITAL LETTER {x} WITH DIALYTIKA'] for x in ('IOTA', 'UPSILON')]
+            + [_GC[f'GREEK SMALL LETTER {x} WITH DIALYTIKA'] for x in ('IOTA', 'UPSILON')]
+            + [_GC[f'GREEK SMALL LETTER {x} WITH DIALYTIKA AND TONOS'] for x in ('IOTA', 'UPSILON')])
+
+
+def greek_older_tiles(page_text):
+    """Tiles the page carries outside the new sections."""
+    for sid in GREEK_NEW_IDS:
+        page_text = re.sub(rf'<section class="mood-explainers" id="{sid}">.*?</section>', '', page_text, flags=re.S)
+    return {html.unescape(x) for x in re.findall(r'data-symbol="([^"]*)"', page_text)}
+
+
+def greek_expect(seq_fn):
+    def expect(lc, page_text):
+        have = greek_older_tiles(page_text)
+        return [(chr(cp), None) for cp in seq_fn() if chr(cp) not in have]
+    return expect
+
+
+def greek_en_label_problem(cp, label):
+    """The EN label must name what the UCD name says: the letter, its case, and its accent."""
+    name = unicodedata.name(chr(cp))
+    lab = label.casefold()
+    words = name.replace('LAMDA', 'LAMBDA').split()
+    if 'CAPITAL' in words and 'capital' not in lab:
+        return 'UCD says CAPITAL'
+    if 'SMALL' in words and 'small' not in lab:
+        return 'UCD says SMALL'
+    for w in ('TONOS', 'DIALYTIKA', 'NABLA', 'PARTIAL', 'FINAL', 'REVERSED', 'DOTTED', 'ARCHAIC', 'PAMPHYLIAN'):
+        if w in words and w.casefold() not in lab:
+            return f'UCD says {w}'
+    tail = [w for w in words if w not in ('MATHEMATICAL', 'BOLD', 'ITALIC', 'SANS-SERIF', 'GREEK', 'CAPITAL', 'SMALL', 'LETTER',
+                                          'SYMBOL', 'WITH', 'AND', 'TONOS', 'DIALYTIKA', 'FINAL', 'REVERSED', 'DOTTED', 'LUNATE',
+                                          'ARCHAIC', 'PAMPHYLIAN', 'DIFFERENTIAL')]
+    if tail and tail[-1].casefold() not in lab:
+        return f'UCD letter is {tail[-1]}'
+    return None
+
+
 # label kinds: 'neutral' (must equal EN), 'worded' (EN checked against UCD, locales must differ from EN)
 CLUSTERS = {
     'braille': {
@@ -214,6 +302,20 @@ CLUSTERS = {
             'dominoes-vertical': (lambda lc: cps(DOMINO_V), 'domino'),
             'mahjong-full-set': (lambda lc: cps(MAHJONG_REST), 'mahjong'),
         },
+    },
+    'greek': {
+        'page_aware': True,
+        'pages': {'en': 'library/greek-letter-symbols', 'ar': 'ar/library/greek-letter-symbols', 'es': 'es/letras-griegas',
+                  'fr': 'fr/library/alphabet-grec', 'id': 'id/library/simbol-yunani', 'it': 'it/library/simboli-greci',
+                  'ko': 'ko/library/geurisa-munja', 'pt': 'pt/library/alfabeto-grego', 'nl': 'nl/library/griekse-letters',
+                  'pl': 'pl/library/alfabet-grecki', 'ja': 'ja/library/greek-letter-symbols', 'tr': 'tr/library/yunan-alfabesi-sembolleri',
+                  'de': 'de/library/griechische-symbole', 'sv': 'sv/library/grekiska-bokstaver', 'da': 'da/library/graeske-bogstaver',
+                  'ru': 'ru/library/grecheskiy-alfavit', 'th': 'th/library/greek-letter-symbols', 'zh-TW': 'zh-tw/library/xila-zimu-fuhao',
+                  'vi': 'vi/library/ky-tu-hy-lap', 'no': 'no/library/greske-bokstaver'},
+        'sections': dict([(sid, (greek_expect((lambda x: lambda: greek_styled(x))(sid)), 'greek')) for sid in GREEK_STYLES]
+                         + [('greek-archaic-letters', (greek_expect(greek_archaic), 'greek')),
+                            ('greek-lunate-sigma', (greek_expect(greek_lunate), 'greek')),
+                            ('greek-accented-vowels', (greek_expect(greek_accented), 'greek'))]),
     },
 }
 
@@ -287,6 +389,8 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors, page_text=No
                 errors.append(f'{tag}: label {label!r}, UCD says {domino_label(cp)!r}')
             if kind == 'roman' and label != roman_en_label(cp):
                 errors.append(f'{tag}: label {label!r}, expected {roman_en_label(cp)!r}')
+            if kind == 'greek' and greek_en_label_problem(cp, label):
+                errors.append(f'{tag}: label {label!r}: {greek_en_label_problem(cp, label)}')
             if kind == 'mahjong' and label != unicodedata.name(chr(cp)).title().replace(' Of ', ' of '):
                 errors.append(f'{tag}: label {label!r} does not match its UCD name')
         if kind == 'tarot':
@@ -303,7 +407,7 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors, page_text=No
             en_label = dict((t[0], t[2]) for t in en_tiles).get(sym)
             if en_label is not None and label == en_label:
                 errors.append(f'{tag}: label is the English one ({label!r}); a {lc} page needs its own wording')
-        if en_tiles is not None and kind in ('box', 'card', 'roman', 'arrow'):
+        if en_tiles is not None and kind in ('box', 'card', 'roman', 'arrow', 'greek'):
             en_label = dict((t[0], t[2]) for t in en_tiles).get(sym)
             if en_label is not None and label == en_label:
                 errors.append(f'{tag}: label is the English one ({label!r}); a {lc} page needs its own wording')
@@ -335,7 +439,8 @@ def run(read=lambda p: open(os.path.join(ROOT, p, 'index.html'), encoding='utf-8
                     errors.append(f'{where}: the section carrying glyphs Android cannot draw must say so')
                 n_tiles += len(tiles)
                 en_tiles = en_secs.get(sid, [None])[0] if en_secs and lc != 'en' else None
-                check_tiles(where, tiles, expect(lc), kind, lc, en_tiles, errors, read(path))
+                want = expect(lc, read(path)) if c.get('page_aware') else expect(lc)
+                check_tiles(where, tiles, want, kind, lc, en_tiles, errors, read(path))
     return errors, missing_pages, n_tiles
 
 
@@ -363,13 +468,21 @@ def self_test():
                                           .replace('data-symbol="3️⃣"', 'data-symbol="3⃣"', 1), 'fully-qualified keycap')
     mutations['Android note removed'] = (cpath, cgood.replace('Android', 'XXXX'), 'must say so')
     mutations['trump numeral wrong'] = (cpath, cgood.replace('<span class="flag-label">XIV</span>', '<span class="flag-label">XV</span>', 1), 'expected trump XIV')
+    gpath, gdpath = CLUSTERS['greek']['pages']['en'], CLUSTERS['greek']['pages']['de']
+    ggood = open(os.path.join(ROOT, gpath, 'index.html'), encoding='utf-8').read()
+    gdgood = open(os.path.join(ROOT, gdpath, 'index.html'), encoding='utf-8').read()
+    mutations['greek wrong case'] = (gpath, ggood.replace('<span class="flag-label">Capital Omega with Tonos</span>', '<span class="flag-label">Small Omega with Tonos</span>', 1)
+                                     .replace('aria-label="Copy Capital Omega with Tonos"', 'aria-label="Copy Small Omega with Tonos"', 1), 'UCD says CAPITAL')
+    mutations['greek dropped bold psi'] = (gdpath, re.sub(r'\s*<div class="flag-row">\s*<button[^>]*data-symbol="𝚿"[^<]*</button>\s*<span[^<]*</span>\s*</div>', '', gdgood, count=1), 'missing')
+    mutations['greek English label on de'] = (gdpath, gdgood.replace('<span class="flag-label">Großes Alpha mit Tonos</span>', '<span class="flag-label">Capital Alpha with Tonos</span>', 1)
+                                              .replace('aria-label="Kopieren Großes Alpha mit Tonos"', 'aria-label="Kopieren Capital Alpha with Tonos"', 1), 'is the English one')
     failed = []
     for name, (mpath, text, expect) in mutations.items():
-        orig = {path: good, cpath: cgood, npath: ngood}[mpath]
+        orig = {path: good, cpath: cgood, npath: ngood, gpath: ggood, gdpath: gdgood}[mpath]
         if text == orig:
             failed.append(f'{name}: the mutation did not apply (fixture drifted)')
             continue
-        only = {path: 'braille', cpath: 'cards', npath: 'numbers'}[mpath]
+        only = {path: 'braille', cpath: 'cards', npath: 'numbers', gpath: 'greek', gdpath: 'greek'}[mpath]
         errs, _, _ = run(lambda p, mp=mpath, t=text: t if p == mp else open(os.path.join(ROOT, p, 'index.html'), encoding='utf-8').read(), only)
         hit = [e for e in errs if expect in e]
         if not hit:
