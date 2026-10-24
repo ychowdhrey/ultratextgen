@@ -15,6 +15,9 @@ and their locale siblings carry the same sections:
   * number-symbols           (en + 6 locales): Roman numerals past XII and the
                                            keycap emoji (id/font-angka is a
                                            generator page with no tiles)
+  * emoji runs added into existing sections (2026-10-24): face (+11 locales),
+    food (+4), travel (+1), objects (+2), road signs (+1) and the Sark flag
+    on emoji-flags (+16); see EMOJI_RUNS
 
 A tile on these pages is a promise about one exact code point, and a label is a
 promise about what that code point is. Neither shows up as broken in a
@@ -217,6 +220,117 @@ CLUSTERS = {
     },
 }
 
+# Emoji runs added INTO existing thematic sections (2026-10-24). A run is the exact
+# sequence of tiles that must sit immediately after an anchor tile, in a section
+# named by id (or, where the locale sections carry no ids, the page's only copy of
+# the anchor). Sequences are written as code points, so a fully-qualified emoji
+# (U+FE0F, ZWJ, regional-indicator pair) is checked byte for byte. 'worded' runs
+# must not reuse the English label on a locale page; 'place' runs are proper names
+# (Sark) that several languages write the same way.
+def seq(*cps_):
+    return ''.join(chr(int(c, 16)) for c in cps_)
+
+
+FACE_PAGES = {'en': 'library/face-emojis', 'de': 'de/library/gesichts-emojis', 'es': 'es/library/emojis-de-caras',
+              'fr': 'fr/library/emojis-visages', 'id': 'id/library/emoji-wajah', 'it': 'it/library/emoji-faccine',
+              'pt': 'pt/library/emojis-de-rosto', 'tr': 'tr/library/yuz-emojileri', 'ja': 'ja/library/kao-emoji',
+              'vi': 'vi/library/emoji-mat-cuoi', 'zh-TW': 'zh-tw/library/biaoqing-emoji', 'ko': 'ko/library/eolgul-imoji'}
+FLAG_PAGES = {'en': 'library/emoji-flags', 'de': 'de/library/emoji-flags', 'es': 'es/library/emoji-flags',
+              'pt': 'pt/library/emoji-flags', 'vi': 'vi/library/emoji-flags', 'ar': 'ar/library/emoji-flags',
+              'pl': 'pl/library/emoji-flags', 'th': 'th/library/emoji-flags', 'fr': 'fr/library/emoji-drapeaux',
+              'ja': 'ja/library/kokki-emoji', 'it': 'it/library/emoji-bandiere', 'zh-TW': 'zh-tw/library/guoqi-emoji',
+              'ko': 'ko/library/gukgi-imoji', 'id': 'id/library/emoji-bendera', 'tr': 'tr/library/emoji-bayraklar',
+              'nl': 'nl/library/emoji-vlaggen', 'ru': 'ru/library/emodzi-flagi'}
+SARK = seq('1F1E8', '1F1F6')
+EMOJI_RUNS = {
+    'face': {'pages': FACE_PAGES, 'runs': [
+        (None, seq('1F973'), [seq('1F638')], 'worded'),            # grinning cat with smiling eyes
+        (None, seq('1F971'), [seq('1FAE9')], 'worded'),            # face with bags under eyes (E16.0)
+    ]},
+    'food': {'pages': {'en': 'library/food-drink-emojis', 'th': 'th/library/food-drink-emojis',
+                       'es': 'es/library/emojis-de-comida', 'tr': 'tr/library/yemek-emojileri', 'ko': 'ko/library/eumsik-imoji'},
+             'runs': [
+        (None, seq('1FAD8'), [seq('1F95C'), seq('1FADA'), seq('1FADB'), seq('1F344', '200D', '1F7EB'), seq('1FADC')], 'worded'),
+        (None, seq('1F365'), [seq(c) for c in ('1F358', '1F35B', '1F362', '1F364', '1F96E', '1F361', '1F95F', '1F960', '1F961')], 'worded'),
+    ]},
+    'travel': {'pages': {'en': 'library/travel-vacation-emojis', 'es': 'es/library/emojis-de-viaje'}, 'runs': [
+        ('sightseeing', seq('1F3A1'), [seq(c) for c in ('1F3EF', '26F2')] + [seq('1F3D9', 'FE0F')]
+         + [seq(c) for c in ('1F309', '1F3A2', '1F3E2', '1F3EC', '1F3EA', '1F3E3', '1F3E4', '1F3ED')]
+         + [seq('1F3D8', 'FE0F'), seq('1F9F1'), seq('1F488')], 'worded'),
+        ('packing-hotel', seq('1F3E8'), [seq('1F6D6'), seq('1F3E9')], 'worded'),
+        ('packing-hotel', seq('1F6C2'), [seq('1F6C3'), seq('1F6C4'), seq('1F6C5')], 'worded'),
+    ]},
+    'objects': {'pages': {'en': 'library/object-emojis', 'es': 'es/library/emojis-de-objetos', 'ko': 'ko/library/samul-imoji'}, 'runs': [
+        ('everyday-items', seq('1F4E6'), [seq('1FAAA'), seq('1FAA7'), seq('1F6AC')], 'worded'),
+    ]},
+    'signs': {'pages': {'en': 'library/traffic-road-sign-symbols', 'es': 'es/library/simbolos-de-transito'}, 'runs': [
+        ('facilities-services', seq('26FD'), [seq('1F6AE'), seq('1F6B0'), seq('1F6BC')], 'worded'),
+    ]},
+    'flags': {'pages': FLAG_PAGES, 'runs': [
+        ('territory-flags', None, [SARK], 'place'),
+    ]},
+}
+
+
+def check_runs(read, only=None):
+    """Each run must sit right after its anchor; Sark must appear once, in territory-flags, with the Android note."""
+    errors, n = [], 0
+    for cname, c in EMOJI_RUNS.items():
+        if only and cname != only:
+            continue
+        en_labels = {}
+        for lc, path in c['pages'].items():
+            try:
+                text = read(path)
+            except FileNotFoundError:
+                errors.append(f'/{path}/: missing page')
+                continue
+            for sid, anchor, run_, kind in c['runs']:
+                if sid:
+                    found = sections_of(text).get(sid, [])
+                    if len(found) != 1:
+                        errors.append(f'/{path}/#{sid}: section found {len(found)} times, expected once')
+                        continue
+                    tiles = found[0]
+                else:
+                    tiles = [tuple(html.unescape(x) for x in m) for m in TILE_RE.findall(text)]
+                where = f'/{path}/#{sid or "page"}'
+                syms = [t[0] for t in tiles]
+                if anchor is None:
+                    if syms.count(run_[0]) != 1:
+                        errors.append(f'{where}: {run_[0]!r} found {syms.count(run_[0])} times, expected once')
+                        continue
+                    i = syms.index(run_[0])
+                    got = tiles[i:i + len(run_)]
+                    if SARK in run_ and 'CQ' not in text:
+                        errors.append(f'{where}: the Emoji 16.0 Sark tile needs its one-sentence note (letters CQ on older Android)')
+                else:
+                    if syms.count(anchor) != 1:
+                        errors.append(f'{where}: anchor {anchor!r} found {syms.count(anchor)} times, expected once')
+                        continue
+                    i = syms.index(anchor)
+                    got = tiles[i + 1:i + 1 + len(run_)]
+                    # nothing in the run may also appear elsewhere on the same section/page
+                for s in run_:
+                    if syms.count(s) > 1:
+                        errors.append(f'{where}: duplicate tile {s!r}')
+                if [g[0] for g in got] != run_:
+                    errors.append(f'{where}: run after {anchor!r} differs: expected {run_}, got {[g[0] for g in got]}')
+                    continue
+                for sym, aria, label in got:
+                    n += 1
+                    tag = f'{where} {sym!r}'
+                    if not label.strip():
+                        errors.append(f'{tag}: empty label')
+                    elif label.casefold() not in aria.casefold():
+                        errors.append(f'{tag}: aria-label {aria!r} does not contain the visible label {label!r}')
+                    if lc == 'en':
+                        en_labels[sym] = label
+                    elif kind == 'worded' and en_labels.get(sym) == label:
+                        errors.append(f'{tag}: label is the English one ({label!r}); a {lc} page needs its own wording')
+    return errors, n
+
+
 # Siblings deliberately not carrying the sections yet, with the reason. Empty since
 # 2026-10-24: the owner released ko/library/nemo-giho and sv/library/kortfarg-symboler
 # from their forward-prediction windows, and both now carry the sections.
@@ -364,6 +478,28 @@ def self_test():
     mutations['Android note removed'] = (cpath, cgood.replace('Android', 'XXXX'), 'must say so')
     mutations['trump numeral wrong'] = (cpath, cgood.replace('<span class="flag-label">XIV</span>', '<span class="flag-label">XV</span>', 1), 'expected trump XIV')
     failed = []
+    fpath, epath = EMOJI_RUNS['food']['pages']['ko'], EMOJI_RUNS['flags']['pages']['ru']
+    fgood = open(os.path.join(ROOT, fpath, 'index.html'), encoding='utf-8').read()
+    egood = open(os.path.join(ROOT, epath, 'index.html'), encoding='utf-8').read()
+    run_mutations = {
+        'emoji run reordered': ('food', fpath, fgood.replace('data-symbol="🍘"', 'data-symbol="🍛X"', 1), 'differs'),
+        'brown mushroom unqualified': ('food', fpath, fgood.replace('data-symbol="🍄\u200d🟫"', 'data-symbol="🍄🟫"', 1), 'differs'),
+        'English label on a locale emoji tile': ('food', fpath, fgood.replace('<span class="flag-label">땅콩</span>', '<span class="flag-label">Peanuts</span>', 1)
+                                                 .replace('aria-label="복사 땅콩"', 'aria-label="복사 Peanuts"', 1), 'is the English one'),
+        'Sark note removed': ('flags', epath, egood.replace('буквы CQ', 'буквы', 1), 'needs its one-sentence note'),
+        'Sark dropped': ('flags', epath, re.sub(r'\s*<div class="flag-row">\s*<button[^>]*data-symbol="🇨🇶"[^<]*</button>\s*<span[^<]*</span>\s*</div>', '', egood, count=1), 'found 0 times'),
+    }
+    for name, (cl, mpath, text, expect) in run_mutations.items():
+        orig = fgood if mpath == fpath else egood
+        if text == orig:
+            failed.append(f'{name}: the mutation did not apply (fixture drifted)')
+            continue
+        errs, _ = check_runs(lambda p, mp=mpath, tx=text: tx if p == mp else open(os.path.join(ROOT, p, 'index.html'), encoding='utf-8').read(), cl)
+        hit = [e for e in errs if expect in e]
+        if not hit:
+            failed.append(f'{name}: NOT caught (errors: {errs[:2]})')
+        else:
+            print(f'  caught  {name}: {hit[0][:110]}')
     for name, (mpath, text, expect) in mutations.items():
         orig = {path: good, cpath: cgood, npath: ngood}[mpath]
         if text == orig:
@@ -387,6 +523,9 @@ def main():
         print('self-test:', 'FAILED' if failed else 'every mutation caught')
         return 1 if failed else 0
     errors, missing, n = run()
+    run_errors, rn = check_runs(lambda p: open(os.path.join(ROOT, p, 'index.html'), encoding='utf-8').read())
+    errors += run_errors
+    n += rn
     print('Unicode reference sets')
     print(f'  pages checked: {sum(len(c["pages"]) for c in CLUSTERS.values()) - len(missing)}  tiles checked: {n}')
     for p in missing:

@@ -88,7 +88,7 @@
       "id": "territory-flags",
       "label": "Territori",
       "h2": "Bandiere di Territori e Regioni",
-      "intro": "Unicode ha anche bandiere per luoghi fuori dall'elenco dei 195 Paesi: territori d'oltremare, territori dipendenti, regioni amministrative speciali e aree con un codice proprio, come 🇧🇱 Saint-Barthélemy, 🇭🇰 Hong Kong e 🇽🇰 Kosovo. Alcune mostrano la bandiera di un altro Paese perché non ne hanno una propria: 🇧🇻 l'Isola Bouvet e 🇸🇯 le Svalbard mostrano quella della Norvegia, 🇺🇲 le Isole Minori Esterne degli Stati Uniti quella degli Stati Uniti e 🇭🇲 le Isole Heard e McDonald quella dell'Australia.",
+      "intro": "Unicode ha anche bandiere per luoghi fuori dall'elenco dei 195 Paesi: territori d'oltremare, territori dipendenti, regioni amministrative speciali e aree con un codice proprio, come 🇧🇱 Saint-Barthélemy, 🇭🇰 Hong Kong e 🇽🇰 Kosovo. Alcune mostrano la bandiera di un altro Paese perché non ne hanno una propria: 🇧🇻 l'Isola Bouvet e 🇸🇯 le Svalbard mostrano quella della Norvegia, 🇺🇲 le Isole Minori Esterne degli Stati Uniti quella degli Stati Uniti e 🇭🇲 le Isole Heard e McDonald quella dell'Australia. 🇨🇶 Sark è arrivata con Emoji 16.0 (2024), quindi i telefoni Android senza questo aggiornamento mostrano al suo posto le lettere CQ, come fa Windows con tutte le bandiere.",
       "symbols": [
         {
           "char": "🇦🇮",
@@ -297,6 +297,10 @@
         {
           "char": "🇸🇭",
           "label": "Sant'Elena"
+        },
+        {
+          "char": "🇨🇶",
+          "label": "Sark"
         },
         {
           "char": "🇸🇽",

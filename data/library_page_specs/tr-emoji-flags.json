@@ -88,7 +88,7 @@
       "id": "territory-flags",
       "label": "Bölgeler",
       "h2": "Bölge ve Toprak Bayrakları",
-      "intro": "Unicode'da 195 ülkelik listenin dışında kalan yerlerin bayrakları da var: denizaşırı topraklar, bağımlı bölgeler, özel idari bölgeler ve kendi kodu olan alanlar, örneğin 🇧🇱 Saint Barthelemy, 🇭🇰 Hong Kong ve 🇽🇰 Kosova. Bazılarının kendi bayrağı olmadığı için başka bir ülkenin bayrağı görünür: 🇧🇻 Bouvet Adası ve 🇸🇯 Svalbard için Norveç, 🇺🇲 ABD Küçük Harici Adaları için ABD, 🇭🇲 Heard Adası ve McDonald Adaları için Avustralya bayrağı çıkar.",
+      "intro": "Unicode'da 195 ülkelik listenin dışında kalan yerlerin bayrakları da var: denizaşırı topraklar, bağımlı bölgeler, özel idari bölgeler ve kendi kodu olan alanlar, örneğin 🇧🇱 Saint Barthelemy, 🇭🇰 Hong Kong ve 🇽🇰 Kosova. Bazılarının kendi bayrağı olmadığı için başka bir ülkenin bayrağı görünür: 🇧🇻 Bouvet Adası ve 🇸🇯 Svalbard için Norveç, 🇺🇲 ABD Küçük Harici Adaları için ABD, 🇭🇲 Heard Adası ve McDonald Adaları için Avustralya bayrağı çıkar. 🇨🇶 Sark, Emoji 16.0 (2024) ile eklendi; bu güncellemeyi almamış Android telefonlar onun yerine CQ harflerini gösterir, Windows da tüm bayraklarda böyle yapar.",
       "symbols": [
         {
           "char": "🇺🇲",
@@ -297,6 +297,10 @@
         {
           "char": "🇵🇲",
           "label": "Saint Pierre ve Miquelon"
+        },
+        {
+          "char": "🇨🇶",
+          "label": "Sark"
         },
         {
           "char": "🇸🇽",
