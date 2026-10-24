@@ -308,9 +308,7 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors, page_text=No
                 errors.append(f'{tag}: label is the English one ({label!r}); a {lc} page needs its own wording')
         if en_tiles is not None and kind in ('box', 'card', 'roman', 'arrow'):
             en_label = dict((t[0], t[2]) for t in en_tiles).get(sym)
-            # "Upload ⤒" is the established loanword where the same page already labels ⤓ "Download ⤓" (de, pt, da)
-            loan = kind == 'arrow' and label == 'Upload ⤒' and page_text and '>Download ⤓</span>' in page_text
-            if en_label is not None and label == en_label and not loan:
+            if en_label is not None and label == en_label:
                 errors.append(f'{tag}: label is the English one ({label!r}); a {lc} page needs its own wording')
 
 
