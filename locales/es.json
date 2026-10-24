@@ -238,6 +238,15 @@
       "plain": "Copiar versión simple",
       "emoji": "Copiar versión emoji",
       "note": "Algunas apps lo muestran en color de todos modos."
+    },
+    "skinTone": {
+      "label": "Tono de piel",
+      "default": "Predeterminado (amarillo)",
+      "light": "Claro",
+      "mediumLight": "Claro medio",
+      "medium": "Medio",
+      "mediumDark": "Oscuro medio",
+      "dark": "Oscuro"
     }
   },
   "useCases": {
