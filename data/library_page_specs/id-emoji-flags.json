@@ -88,7 +88,7 @@
       "id": "territory-flags",
       "label": "Wilayah",
       "h2": "Bendera Wilayah dan Kawasan",
-      "intro": "Unicode juga punya bendera untuk tempat di luar daftar 195 negara: wilayah seberang laut, wilayah dependensi, daerah administratif khusus, dan kawasan dengan kode sendiri, seperti 🇧🇱 Saint Barthélemy, 🇭🇰 Hong Kong, dan 🇽🇰 Kosovo. Beberapa tampil dengan bendera negara lain karena tidak punya bendera sendiri: 🇧🇻 Pulau Bouvet dan 🇸🇯 Svalbard memakai bendera Norwegia, 🇺🇲 Kepulauan Terluar AS memakai bendera Amerika Serikat, dan 🇭🇲 Pulau Heard dan Kepulauan McDonald memakai bendera Australia.",
+      "intro": "Unicode juga punya bendera untuk tempat di luar daftar 195 negara: wilayah seberang laut, wilayah dependensi, daerah administratif khusus, dan kawasan dengan kode sendiri, seperti 🇧🇱 Saint Barthélemy, 🇭🇰 Hong Kong, dan 🇽🇰 Kosovo. Beberapa tampil dengan bendera negara lain karena tidak punya bendera sendiri: 🇧🇻 Pulau Bouvet dan 🇸🇯 Svalbard memakai bendera Norwegia, 🇺🇲 Kepulauan Terluar AS memakai bendera Amerika Serikat, dan 🇭🇲 Pulau Heard dan Kepulauan McDonald memakai bendera Australia. 🇨🇶 Sark baru hadir di Emoji 16.0 (2024), jadi ponsel Android yang belum mendapat pembaruan itu menampilkan huruf CQ sebagai gantinya, seperti Windows untuk semua bendera.",
       "symbols": [
         {
           "char": "🇦🇮",
@@ -305,6 +305,10 @@
         {
           "char": "🇦🇸",
           "label": "Samoa Amerika"
+        },
+        {
+          "char": "🇨🇶",
+          "label": "Sark"
         },
         {
           "char": "🇸🇽",
