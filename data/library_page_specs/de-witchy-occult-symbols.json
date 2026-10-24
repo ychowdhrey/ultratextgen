@@ -250,51 +250,51 @@
     },
     {
      "char": "🜎",
-     "label": "Schwefel II"
+     "label": "Philosophenschwefel"
     },
     {
      "char": "🜏",
-     "label": "Schwefel III"
+     "label": "Schwarzer Schwefel"
     },
     {
      "char": "🜐",
-     "label": "Salz"
-    },
-    {
-     "char": "🜑",
-     "label": "Salz II"
-    },
-    {
-     "char": "🜒",
-     "label": "Salz III"
-    },
-    {
-     "char": "🜓",
      "label": "Quecksilbersublimat"
     },
     {
-     "char": "🜔",
+     "char": "🜑",
      "label": "Quecksilbersublimat II"
     },
     {
-     "char": "🜕",
+     "char": "🜒",
      "label": "Quecksilbersublimat III"
     },
     {
-     "char": "🜖",
+     "char": "🜓",
      "label": "Zinnober"
     },
     {
-     "char": "🜗",
-     "label": "Ammoniaksalz"
+     "char": "🜔",
+     "label": "Salz"
     },
     {
-     "char": "🜘",
+     "char": "🜕",
+     "label": "Salpeter"
+    },
+    {
+     "char": "🜖",
      "label": "Vitriol"
     },
     {
-     "char": "🜙",
+     "char": "🜗",
      "label": "Vitriol II"
+    },
+    {
+     "char": "🜘",
+     "label": "Steinsalz"
+    },
+    {
+     "char": "🜙",
+     "label": "Steinsalz II"
     },
     {
      "char": "🜚",
@@ -338,115 +338,347 @@
     },
     {
      "char": "🜤",
-     "label": "Kupferantimoniat"
+     "label": "Kupfersafran II"
     },
     {
      "char": "🜥",
-     "label": "Salz des Kupferantimoniats"
+     "label": "Kupferantimoniat"
     },
     {
      "char": "🜦",
-     "label": "Sublimat des Kupfersalzes"
+     "label": "Salz des Kupferantimoniats"
     },
     {
      "char": "🜧",
-     "label": "Grünspan"
+     "label": "Sublimat des Kupfersalzes"
     },
     {
      "char": "🜨",
-     "label": "Zinnerz"
+     "label": "Grünspan"
     },
     {
      "char": "🜩",
-     "label": "Bleierz"
+     "label": "Zinnerz"
     },
     {
      "char": "🜪",
-     "label": "Erde des Bleierzes"
+     "label": "Bleierz"
     },
     {
      "char": "🜫",
-     "label": "Antimon"
+     "label": "Antimonerz"
     },
     {
      "char": "🜬",
-     "label": "Antimon II"
-    },
-    {
-     "char": "🜭",
      "label": "Antimonsublimat"
     },
     {
-     "char": "🜮",
+     "char": "🜭",
      "label": "Antimonsalz"
     },
     {
-     "char": "🜯",
+     "char": "🜮",
      "label": "Sublimat des Antimonsalzes"
     },
     {
-     "char": "🜰",
+     "char": "🜯",
      "label": "Antimonessig"
     },
     {
-     "char": "🜱",
+     "char": "🜰",
      "label": "Antimonregulus"
     },
     {
-     "char": "🜲",
+     "char": "🜱",
      "label": "Antimonregulus II"
     },
     {
-     "char": "🜳",
+     "char": "🜲",
      "label": "Regulus"
     },
     {
-     "char": "🜴",
+     "char": "🜳",
      "label": "Regulus II"
     },
     {
-     "char": "🜵",
+     "char": "🜴",
      "label": "Regulus III"
     },
     {
-     "char": "🜶",
+     "char": "🜵",
      "label": "Regulus IV"
     },
     {
-     "char": "🜷",
+     "char": "🜶",
      "label": "Alkali"
     },
     {
-     "char": "🜸",
+     "char": "🜷",
      "label": "Alkali II"
     },
     {
-     "char": "🜹",
+     "char": "🜸",
      "label": "Markasit"
     },
     {
-     "char": "🜺",
+     "char": "🜹",
      "label": "Salmiak"
     },
     {
-     "char": "🜻",
+     "char": "🜺",
      "label": "Arsen"
     },
     {
-     "char": "🜼",
+     "char": "🜻",
      "label": "Realgar"
     },
     {
-     "char": "🜽",
+     "char": "🜼",
      "label": "Realgar II"
     },
     {
-     "char": "🜾",
+     "char": "🜽",
      "label": "Auripigment"
     },
     {
-     "char": "🜿",
+     "char": "🜾",
      "label": "Wismuterz"
+    },
+    {
+     "char": "🜿",
+     "label": "Weinstein"
+    }
+   ]
+  },
+  {
+   "id": "alchemical-substances",
+   "label": "Stoffe",
+   "h2": "Alchemistische Stoffe und Materialien",
+   "intro": "Die zweite Hälfte des Unicode-Blocks für alchemistische Symbole, U+1F740 bis U+1F75B: Salze, Öle, Erden und die alltäglichen Materialien im Labor, von Borax und Alaun bis zu Asche, Ziegel und Amalgam. Endet eine Beschriftung auf II oder III, ist es eine andere Form des Zeichens für denselben Stoff.",
+   "symbols": [
+    {
+     "char": "🝀",
+     "label": "Weinstein II"
+    },
+    {
+     "char": "🝁",
+     "label": "Branntkalk"
+    },
+    {
+     "char": "🝂",
+     "label": "Natriumborat (Borax)"
+    },
+    {
+     "char": "🝃",
+     "label": "Natriumborat (Borax) II"
+    },
+    {
+     "char": "🝄",
+     "label": "Natriumborat (Borax) III"
+    },
+    {
+     "char": "🝅",
+     "label": "Alaun"
+    },
+    {
+     "char": "🝆",
+     "label": "Öl"
+    },
+    {
+     "char": "🝇",
+     "label": "Geist"
+    },
+    {
+     "char": "🝈",
+     "label": "Tinktur"
+    },
+    {
+     "char": "🝉",
+     "label": "Gummi"
+    },
+    {
+     "char": "🝊",
+     "label": "Wachs"
+    },
+    {
+     "char": "🝋",
+     "label": "Pulver"
+    },
+    {
+     "char": "🝌",
+     "label": "Metallkalk"
+    },
+    {
+     "char": "🝍",
+     "label": "Tutia"
+    },
+    {
+     "char": "🝎",
+     "label": "Totenkopf (Caput mortuum)"
+    },
+    {
+     "char": "🝏",
+     "label": "Zepter des Jupiter"
+    },
+    {
+     "char": "🝐",
+     "label": "Hermesstab"
+    },
+    {
+     "char": "🝑",
+     "label": "Dreizack"
+    },
+    {
+     "char": "🝒",
+     "label": "Dreizack mit Stern"
+    },
+    {
+     "char": "🝓",
+     "label": "Magnetstein"
+    },
+    {
+     "char": "🝔",
+     "label": "Seife"
+    },
+    {
+     "char": "🝕",
+     "label": "Urin"
+    },
+    {
+     "char": "🝖",
+     "label": "Pferdemist"
+    },
+    {
+     "char": "🝗",
+     "label": "Asche"
+    },
+    {
+     "char": "🝘",
+     "label": "Pottasche"
+    },
+    {
+     "char": "🝙",
+     "label": "Ziegel"
+    },
+    {
+     "char": "🝚",
+     "label": "Ziegelmehl"
+    },
+    {
+     "char": "🝛",
+     "label": "Quecksilberlegierung (Amalgam)"
+    }
+   ]
+  },
+  {
+   "id": "alchemical-processes-apparatus",
+   "label": "Verfahren",
+   "h2": "Alchemistische Verfahren und Geräte",
+   "intro": "Zeichen für die Arbeitsschritte, etwa Destillieren, Auflösen, Sublimieren und Fäulnis, und für die Gefäße dazu: Schmelztiegel, Destillierhelm, Retorte und Wasserbad.",
+   "symbols": [
+    {
+     "char": "🝜",
+     "label": "Schicht auf Schicht"
+    },
+    {
+     "char": "🝝",
+     "label": "Schicht auf Schicht II"
+    },
+    {
+     "char": "🝞",
+     "label": "Sublimieren"
+    },
+    {
+     "char": "🝟",
+     "label": "Niederschlag"
+    },
+    {
+     "char": "🝠",
+     "label": "Destillieren"
+    },
+    {
+     "char": "🝡",
+     "label": "Auflösen"
+    },
+    {
+     "char": "🝢",
+     "label": "Auflösen II"
+    },
+    {
+     "char": "🝣",
+     "label": "Reinigen"
+    },
+    {
+     "char": "🝤",
+     "label": "Fäulnis"
+    },
+    {
+     "char": "🝥",
+     "label": "Schmelztiegel"
+    },
+    {
+     "char": "🝦",
+     "label": "Schmelztiegel II"
+    },
+    {
+     "char": "🝧",
+     "label": "Schmelztiegel III"
+    },
+    {
+     "char": "🝨",
+     "label": "Schmelztiegel IV"
+    },
+    {
+     "char": "🝩",
+     "label": "Schmelztiegel V"
+    },
+    {
+     "char": "🝪",
+     "label": "Destillierhelm (Alembik)"
+    },
+    {
+     "char": "🝫",
+     "label": "Wasserbad (Marienbad)"
+    },
+    {
+     "char": "🝬",
+     "label": "Dampfbad"
+    },
+    {
+     "char": "🝭",
+     "label": "Retorte"
+    }
+   ]
+  },
+  {
+   "id": "alchemical-time-measures",
+   "label": "Zeit und Gewicht",
+   "h2": "Alchemistische Zeichen für Zeit und Gewicht",
+   "intro": "Die Rezeptschrift für Dauer und Menge: Stunde, Nacht, Tag und Nacht, Monat, halbe Drachme und halbe Unze. Mit den Abschnitten darüber versammelt die Seite alle 116 Zeichen, die Unicode als alchemistische Symbole führt.",
+   "symbols": [
+    {
+     "char": "🝮",
+     "label": "Stunde"
+    },
+    {
+     "char": "🝯",
+     "label": "Nacht"
+    },
+    {
+     "char": "🝰",
+     "label": "Tag und Nacht"
+    },
+    {
+     "char": "🝱",
+     "label": "Monat"
+    },
+    {
+     "char": "🝲",
+     "label": "Halbe Drachme"
+    },
+    {
+     "char": "🝳",
+     "label": "Halbe Unze"
     }
    ]
   },
