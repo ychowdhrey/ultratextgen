@@ -197,6 +197,250 @@
       ]
     },
     {
+      "id": "full-deck-52-cards",
+      "label": "Pełna talia",
+      "h2": "Wszystkie 52 karty do gry",
+      "intro": "Każda karta od asa do króla w pikach, kierach, karach i treflach, z bloku Unicode Playing Cards. To znaki tekstowe, a nie emoji, więc przyjmują kolor otaczającego tekstu.",
+      "symbols": [
+        {
+          "char": "🂡",
+          "label": "As pik"
+        },
+        {
+          "char": "🂢",
+          "label": "Dwójka pik"
+        },
+        {
+          "char": "🂣",
+          "label": "Trójka pik"
+        },
+        {
+          "char": "🂤",
+          "label": "Czwórka pik"
+        },
+        {
+          "char": "🂥",
+          "label": "Piątka pik"
+        },
+        {
+          "char": "🂦",
+          "label": "Szóstka pik"
+        },
+        {
+          "char": "🂧",
+          "label": "Siódemka pik"
+        },
+        {
+          "char": "🂨",
+          "label": "Ósemka pik"
+        },
+        {
+          "char": "🂩",
+          "label": "Dziewiątka pik"
+        },
+        {
+          "char": "🂪",
+          "label": "Dziesiątka pik"
+        },
+        {
+          "char": "🂫",
+          "label": "Walet pik"
+        },
+        {
+          "char": "🂭",
+          "label": "Dama pik"
+        },
+        {
+          "char": "🂮",
+          "label": "Król pik"
+        },
+        {
+          "char": "🂱",
+          "label": "As kier"
+        },
+        {
+          "char": "🂲",
+          "label": "Dwójka kier"
+        },
+        {
+          "char": "🂳",
+          "label": "Trójka kier"
+        },
+        {
+          "char": "🂴",
+          "label": "Czwórka kier"
+        },
+        {
+          "char": "🂵",
+          "label": "Piątka kier"
+        },
+        {
+          "char": "🂶",
+          "label": "Szóstka kier"
+        },
+        {
+          "char": "🂷",
+          "label": "Siódemka kier"
+        },
+        {
+          "char": "🂸",
+          "label": "Ósemka kier"
+        },
+        {
+          "char": "🂹",
+          "label": "Dziewiątka kier"
+        },
+        {
+          "char": "🂺",
+          "label": "Dziesiątka kier"
+        },
+        {
+          "char": "🂻",
+          "label": "Walet kier"
+        },
+        {
+          "char": "🂽",
+          "label": "Dama kier"
+        },
+        {
+          "char": "🂾",
+          "label": "Król kier"
+        },
+        {
+          "char": "🃁",
+          "label": "As karo"
+        },
+        {
+          "char": "🃂",
+          "label": "Dwójka karo"
+        },
+        {
+          "char": "🃃",
+          "label": "Trójka karo"
+        },
+        {
+          "char": "🃄",
+          "label": "Czwórka karo"
+        },
+        {
+          "char": "🃅",
+          "label": "Piątka karo"
+        },
+        {
+          "char": "🃆",
+          "label": "Szóstka karo"
+        },
+        {
+          "char": "🃇",
+          "label": "Siódemka karo"
+        },
+        {
+          "char": "🃈",
+          "label": "Ósemka karo"
+        },
+        {
+          "char": "🃉",
+          "label": "Dziewiątka karo"
+        },
+        {
+          "char": "🃊",
+          "label": "Dziesiątka karo"
+        },
+        {
+          "char": "🃋",
+          "label": "Walet karo"
+        },
+        {
+          "char": "🃍",
+          "label": "Dama karo"
+        },
+        {
+          "char": "🃎",
+          "label": "Król karo"
+        },
+        {
+          "char": "🃑",
+          "label": "As trefl"
+        },
+        {
+          "char": "🃒",
+          "label": "Dwójka trefl"
+        },
+        {
+          "char": "🃓",
+          "label": "Trójka trefl"
+        },
+        {
+          "char": "🃔",
+          "label": "Czwórka trefl"
+        },
+        {
+          "char": "🃕",
+          "label": "Piątka trefl"
+        },
+        {
+          "char": "🃖",
+          "label": "Szóstka trefl"
+        },
+        {
+          "char": "🃗",
+          "label": "Siódemka trefl"
+        },
+        {
+          "char": "🃘",
+          "label": "Ósemka trefl"
+        },
+        {
+          "char": "🃙",
+          "label": "Dziewiątka trefl"
+        },
+        {
+          "char": "🃚",
+          "label": "Dziesiątka trefl"
+        },
+        {
+          "char": "🃛",
+          "label": "Walet trefl"
+        },
+        {
+          "char": "🃝",
+          "label": "Dama trefl"
+        },
+        {
+          "char": "🃞",
+          "label": "Król trefl"
+        }
+      ]
+    },
+    {
+      "id": "tarot-knights-white-joker",
+      "label": "Rycerze i joker",
+      "h2": "Rycerze z tarota i biały joker",
+      "intro": "Talie tarota mają rycerza między waletem a damą. Unicode zawiera po jednym rycerzu dla każdego koloru oraz białego jokera.",
+      "symbols": [
+        {
+          "char": "🂬",
+          "label": "Rycerz pik"
+        },
+        {
+          "char": "🂼",
+          "label": "Rycerz kier"
+        },
+        {
+          "char": "🃌",
+          "label": "Rycerz karo"
+        },
+        {
+          "char": "🃜",
+          "label": "Rycerz trefl"
+        },
+        {
+          "char": "🃟",
+          "label": "Biały joker"
+        }
+      ]
+    },
+    {
       "id": "s7",
       "label": "Symbole gier",
       "h2": "Symbole gier",
