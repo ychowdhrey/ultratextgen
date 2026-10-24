@@ -7,8 +7,8 @@ Four library pages carry sections that promise a complete, ordered Unicode set,
 and their locale siblings carry the same sections:
 
   * braille-pattern-symbols  (en, de, es): the braille alphabet and all 256 cells
-  * box-drawing-symbols      (en, de; ko held, see HELD): the rest of U+2500..U+259F
-  * card-suit-symbols        (en + 8 locales; sv held): the 52-card deck, the tarot knights
+  * box-drawing-symbols      (en, de, ko): the rest of U+2500..U+259F
+  * card-suit-symbols        (en + 9 locales): the 52-card deck, the tarot knights
                                            and the white joker
   * dice-domino-symbols      (en): every domino tile and the mahjong set
   * arrow-symbols            (en + 19 locales): 40 curated arrows, each drawn by Android
@@ -171,14 +171,14 @@ CLUSTERS = {
         },
     },
     'box': {
-        'pages': {'en': 'library/box-drawing-symbols', 'de': 'de/library/rahmenzeichen'},
+        'pages': {'en': 'library/box-drawing-symbols', 'de': 'de/library/rahmenzeichen', 'ko': 'ko/library/nemo-giho'},
         'sections': {sid: ((lambda s: lambda lc: cps(s))(seq), 'box') for sid, seq in box_sections().items()},
     },
     'cards': {
         'pages': {'en': 'library/card-suit-symbols', 'pt': 'pt/library/naipes-de-baralho', 'de': 'de/library/spielkarten-symbole',
                   'pl': 'pl/library/symbole-kart', 'ja': 'ja/library/trump-kigou', 'ko': 'ko/library/teureompeu-kadeu-giho',
                   'es': 'es/library/simbolos-de-cartas', 'tr': 'tr/library/iskambil-sembolleri',
-                  'it': 'it/library/simboli-carte-da-gioco'},
+                  'it': 'it/library/simboli-carte-da-gioco', 'sv': 'sv/library/kortfarg-symboler'},
         'sections': {
             'full-deck-52-cards': (lambda lc: cps(DECK), 'card'),
             'tarot-knights-white-joker': (lambda lc: cps(KNIGHTS + [0x1F0DF]), 'card'),
@@ -217,13 +217,10 @@ CLUSTERS = {
     },
 }
 
-# Siblings deliberately not carrying the sections yet. Both pages sit in a measurement
-# window that started before these sections were written; changing them now would change
-# what is being measured. Sync them when the window closes, then move them into CLUSTERS.
-HELD = {
-    'ko/library/nemo-giho': 'box-drawing sibling; its first-60-day forward-prediction window runs to 2026-10-29 (spec already carries the sections)',
-    'sv/library/kortfarg-symboler': 'card-suit sibling; its first-60-day forward-prediction window runs to 2026-11-09',
-}
+# Siblings deliberately not carrying the sections yet, with the reason. Empty since
+# 2026-10-24: the owner released ko/library/nemo-giho and sv/library/kortfarg-symboler
+# from their forward-prediction windows, and both now carry the sections.
+HELD = {}
 
 # ---------------------------------------------------------------- parsing
 
