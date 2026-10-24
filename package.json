@@ -73,6 +73,8 @@
     "test:image-selection": "node js/share/imageSelection.test.js",
     "test:game-rules": "node js/gamename/gameRules.test.js",
     "test:moon-phase": "node js/moon/moonPhase.test.js",
+    "test:skin-tone": "node js/skintone/skinTone.test.js",
+    "build:skin-tone-fixture": "python3 scripts/build-skin-tone-fixture.py",
     "test:unicode-reference-sets": "python3 scripts/test-unicode-reference-sets.py && python3 scripts/test-unicode-reference-sets.py --self-test",
     "test:name-reports": "node scripts/name-reports.test.mjs",
     "test:zalgo-engine": "node usecase/zalgo-text/zalgo-text.test.js",

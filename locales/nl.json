@@ -238,6 +238,15 @@
       "plain": "Gewone versie kopiëren",
       "emoji": "Emojiversie kopiëren",
       "note": "Sommige apps tonen het symbool toch in kleur."
+    },
+    "skinTone": {
+      "label": "Huidskleur",
+      "default": "Standaard (geel)",
+      "light": "Licht",
+      "mediumLight": "Middellicht",
+      "medium": "Middel",
+      "mediumDark": "Middeldonker",
+      "dark": "Donker"
     }
   },
   "useCases": {
