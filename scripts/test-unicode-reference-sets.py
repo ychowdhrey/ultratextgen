@@ -199,7 +199,7 @@ MUSIC_RESTS = {
     'id': ('Istirahat Penuh', 'Istirahat Setengah'), 'ko': ('온쉼표', '2분쉼표(반쉼표)'), 'pt': ('Pausa de Semibreve', 'Pausa de Mínima'),
     'de': ('Ganze Pause', 'Halbe Pause'), 'fr': ('Pause', 'Demi-pause'), 'it': ('Pausa di semibreve', 'Pausa di minima'),
     'ja': ('全休符', '二分休符'), 'nl': ('Hele rust', 'Halve rust'), 'pl': ('Pauza całonutowa', 'Pauza półnutowa'),
-    'ru': ('Целая пауза', 'Половинная пауза'), 'th': ('ตัวหยุดตัวกลม', 'ตัวหยุดขาว'), 'tr': ('Birlik sus', 'İkilik sus'),
+    'ru': ('Целая пауза', 'Половинная пауза'), 'th': ('ตัวหยุดตัวกลม', 'ตัวหยุดตัวขาว'), 'tr': ('Birlik sus', 'İkilik sus'),
     'vi': ('Lặng tròn', 'Lặng trắng'), 'zh-TW': ('全休止符', '二分休止符'),
 }
 

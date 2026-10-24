@@ -238,5 +238,28 @@ document.documentElement.lang = "zh-TW";
 t("words: Traditional Chinese sentence is not 1", countWords("我昨天和朋友一起在台北看了一部電影") > 5, true);
 t("words: Latin words beside Thai are each counted", countWords("iPhone 15 ราคา") >= 3, true);
 
+/* ---------- Remove emoji: whole sequences, not the pictographs inside them ----------
+   The reducer once left a stray zero width joiner behind a skin-toned person inside a
+   ZWJ sequence, left every flag and keycap in place, and left the invisible tag run of
+   the England flag. Each case below is a sequence a reader would call "one emoji". */
+const stripE = D.TRANSFORMS.find(x => x.id === "emoji").fn;
+const gone = (name, emoji) => t("emoji removal: " + name, stripE("a " + emoji + " b"), "a b");
+gone("toned technologist", "\u{1F469}\u{1F3FD}\u200D\u{1F4BB}");
+gone("two toned people shaking hands", "\u{1FAF1}\u{1F3FB}\u200D\u{1FAF2}\u{1F3FF}");
+gone("toned couple with heart and kiss", "\u{1F469}\u{1F3FB}\u200D\u2764\uFE0F\u200D\u{1F48B}\u200D\u{1F468}\u{1F3FF}");
+gone("toned swimmer with VS16 gender sign", "\u{1F3CA}\u{1F3FD}\u200D\u2640\uFE0F");
+gone("family", "\u{1F468}\u200D\u{1F469}\u200D\u{1F467}\u200D\u{1F466}");
+gone("rainbow flag", "\u{1F3F3}\uFE0F\u200D\u{1F308}");
+gone("heart on fire", "\u2764\uFE0F\u200D\u{1F525}");
+gone("country flag", "\u{1F1FA}\u{1F1F8}");
+gone("keycap one", "1\uFE0F\u20E3");
+gone("keycap hash", "#\uFE0F\u20E3");
+gone("England flag (tag sequence)", "\u{1F3F4}\u{E0067}\u{E0062}\u{E0065}\u{E006E}\u{E0067}\u{E007F}");
+gone("lone skin tone", "\u{1F3FD}");
+t("emoji removal: nothing but emoji leaves nothing", stripE("\u{1F469}\u{1F3FD}\u200D\u{1F4BB}\u{1F1E9}\u{1F1EA}"), "");
+t("emoji removal: digits, hash and asterisk stay", stripE("#1 *a* 2025"), "#1 *a* 2025");
+t("emoji removal: a joiner between non-emoji letters stays", stripE("\u0915\u094D\u200D\u0937 ok"), "\u0915\u094D\u200D\u0937 ok");
+t("emoji removal: a single regional indicator is not a flag", stripE("a\u{1F1FA}b"), "a\u{1F1FA}b");
+
 console.log(fail ? "\n" + fail + " FAILURES" : "\nall green");
 process.exit(fail ? 1 : 0);
