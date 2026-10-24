@@ -164,6 +164,17 @@ MUSIC_SHOWN = set(map(ord, '\U0001D100\U0001D101\U0001D102\U0001D103\U0001D106\U
                           '\U0001D121\U0001D122\U0001D12A\U0001D12B\U0001D13B\U0001D13C\U0001D13E\U0001D13F\U0001D18F\U0001D191'))
 MUSIC_U18 = {0x1D1ED, 0x1D1EE, 0x1D1F3, 0x1D1F4, 0x1D1F5, 0x1D1F6, 0x1D1FF}
 MUSIC_NOTE_HOME = 'barlines-repeats-segno-coda'
+# The existing rests section once labelled U+1D13B (WHOLE REST) as the half rest and U+1D13C (HALF REST) as
+# the quarter rest, on all 17 pages. Repaired 2026-10-24; these are the labels, per page language, so they
+# cannot drift back. Keys are the cluster's locale keys.
+MUSIC_RESTS = {
+    'en': ('Whole Rest', 'Half Rest'), 'ar': ('صمت كامل', 'صمت نصفي'), 'es': ('Silencio de redonda', 'Silencio de blanca'),
+    'id': ('Istirahat Penuh', 'Istirahat Setengah'), 'ko': ('온쉼표', '2분쉼표(반쉼표)'), 'pt': ('Pausa de Semibreve', 'Pausa de Mínima'),
+    'de': ('Ganze Pause', 'Halbe Pause'), 'fr': ('Pause', 'Demi-pause'), 'it': ('Pausa di semibreve', 'Pausa di minima'),
+    'ja': ('全休符', '二分休符'), 'nl': ('Hele rust', 'Halve rust'), 'pl': ('Pauza całonutowa', 'Pauza półnutowa'),
+    'ru': ('Целая пауза', 'Половинная пауза'), 'th': ('ตัวหยุดตัวกลม', 'ตัวหยุดขาว'), 'tr': ('Birlik sus', 'İkilik sus'),
+    'vi': ('Lặng tròn', 'Lặng trắng'), 'zh-TW': ('全休止符', '二分休止符'),
+}
 
 
 def music_sections():
@@ -362,6 +373,12 @@ def run(read=lambda p: open(os.path.join(ROOT, p, 'index.html'), encoding='utf-8
                 continue
             if lc == 'en':
                 en_secs = secs
+            if cname == 'music':
+                page_tiles = [tuple(html.unescape(x) for x in t) for t in TILE_RE.findall(read(path))]
+                for sym, want in zip(('\U0001D13B', '\U0001D13C'), MUSIC_RESTS[lc]):
+                    hits = [t for t in page_tiles if t[0] == sym]
+                    if len(hits) != 1 or hits[0][2] != want or want.casefold() not in hits[0][1].casefold():
+                        errors.append(f'/{path}/: U+{ord(sym):04X} must be labelled {want!r} ({unicodedata.name(sym).title()}); found {hits}')
             for sid, (expect, kind) in c['sections'].items():
                 where = f'/{path}/#{sid}'
                 found = secs.get(sid, [])
@@ -410,6 +427,7 @@ def self_test():
     half = '\U0001D15E'
     mutations['decomposed half note'] = (mpath_, mgood.replace(f'data-symbol="{half}"', 'data-symbol="\U0001D157\U0001D165"', 1), 'code points in a single-character tile')
     mutations['Unicode 18 musical symbol'] = (mpath_, mgood.replace('data-symbol="\U0001D104"', 'data-symbol="\U0001D1FF"', 1), 'Unicode 18.0')
+    mutations['whole rest labelled as half rest'] = (mpath_, mgood.replace('<span class="flag-label">Ganze Pause</span>', '<span class="flag-label">Halbe Pause</span>', 1), 'must be labelled')
     mutations['music font note removed'] = (mpath_, mgood.replace('iPhon', 'XXXX'), 'font note')
     failed = []
     for name, (mpath, text, expect) in mutations.items():
