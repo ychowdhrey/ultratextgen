@@ -29,6 +29,9 @@ and their locale siblings carry the same sections:
                                            lunate sigma forms and accented vowels
                                            (a code point a page already shows in an
                                            older section is not repeated)
+  * japanese-symbols         (en + 9 locales): the hiragana and katakana gojūon
+                                           charts, dakuten/handakuten and small kana
+  * unit-measurement-symbols (en + 3 locales): 44 CJK squared units
 
 Emoji tiles (kind 'emoji') are checked against data/emoji_sequences.json (generated from
 emoji-test.txt): every tile must be a fully-qualified sequence with no skin-tone modifier.
@@ -326,6 +329,45 @@ def greek_en_label_problem(cp, label):
     return None
 
 
+KANA_VOWELS = 'AIUEO'
+KANA_BASIC = list(KANA_VOWELS) + [c + v for c in 'KSTNHM' for v in KANA_VOWELS] + ['YA', 'YU', 'YO'] + \
+    ['R' + v for v in KANA_VOWELS] + ['WA', 'WO', 'N']
+KANA_VOICED = [c + v for c in 'GZDBP' for v in KANA_VOWELS]
+KANA_SMALL = ['A', 'I', 'U', 'E', 'O', 'TU', 'YA', 'YU', 'YO', 'WA']
+# UCD kana names are Nihon-shiki; the tiles carry Hepburn (ぢ/づ also show the keys typed for them).
+KANA_HEPBURN = {'SI': 'shi', 'TI': 'chi', 'TU': 'tsu', 'HU': 'fu', 'ZI': 'ji', 'DI': 'ji (di)', 'DU': 'zu (du)'}
+
+
+def kana_chart(script):
+    return [(unicodedata.lookup(f'{script} LETTER {s}'), KANA_HEPBURN.get(s, s.lower())) for s in KANA_BASIC]
+
+
+def kana_extras(script):
+    """Voiced forms (plus ヴ in katakana), then small kana. A small kana's expected label is '~romaji':
+    the label must carry the romaji as a word, worded in the page's language."""
+    out = [(unicodedata.lookup(f'{script} LETTER {s}'), KANA_HEPBURN.get(s, s.lower())) for s in KANA_VOICED]
+    if script == 'KATAKANA':
+        out.append(('\u30F4', 'vu'))
+    out += [(unicodedata.lookup(f'{script} LETTER SMALL {s}'), '~' + KANA_HEPBURN.get(s, s.lower())) for s in KANA_SMALL]
+    return out
+
+
+# CJK Compatibility squares chosen as units in everyday Japanese/Korean/Chinese text, minus the nine
+# the pages already carried (㎏㎜㎝㎞㎡㎥㎒㎓㏄). Each tile's label must carry the unit as its decomposition spells it.
+CJK_UNITS = [0x339F, 0x33A0, 0x33A2, 0x33CA, 0x33A3, 0x33A4, 0x33A6, 0x339A, 0x339B, 0x338D, 0x338E,
+             0x3395, 0x3396, 0x3397, 0x3398, 0x3385, 0x3386, 0x3387, 0x3390, 0x3391, 0x3394,
+             0x3383, 0x33B7, 0x33B8, 0x33C0, 0x33C1, 0x33BD, 0x33BE, 0x33BF, 0x3388, 0x3389,
+             0x33A9, 0x3371, 0x33AA, 0x33AB, 0x33A7, 0x33A8, 0x33B0, 0x33B1, 0x33B2, 0x33B3, 0x33C8, 0x33D6, 0x33D7]
+
+
+def unit_abbr(cp):
+    d = unicodedata.decomposition(chr(cp))
+    raw = ''.join(chr(int(h, 16)) for h in d.split()[1:]) if d.startswith('<square>') else None
+    if raw is None:
+        return None
+    return 'pH' if raw == 'PH' else raw.replace('\u2113', 'l').replace('\u2215', '/')
+
+
 # label kinds: 'neutral' (must equal EN), 'worded' (EN checked against UCD, locales must differ from EN)
 CLUSTERS = {
     'braille': {
@@ -397,6 +439,23 @@ CLUSTERS = {
         'pages': {'en': 'library/hand-symbols', 'de': 'de/library/hand-symbole', 'ru': 'ru/library/simvoly-ruk',
                   'es': 'es/library/simbolos-de-manos', 'ja': 'ja/library/te-emoji', 'ko': 'ko/library/son-giho'},
         'sections': {},
+    },
+    'kana': {
+        'pages': {'en': 'library/japanese-symbols', 'es': 'es/library/simbolos-japoneses', 'id': 'id/library/simbol-jepang',
+                  'ja': 'ja/library/japanese-symbols', 'ko': 'ko/library/ilboneo-giho', 'pt': 'pt/library/simbolos-japoneses',
+                  'ar': 'ar/library/japanese-symbols', 'tr': 'tr/library/japon-alfabesi', 'de': 'de/library/japanische-symbole',
+                  'sv': 'sv/library/japanska-tecken'},
+        'sections': {
+            'hiragana-gojuon-chart': (lambda lc: kana_chart('HIRAGANA'), 'kana'),
+            'hiragana-dakuten-small-kana': (lambda lc: kana_extras('HIRAGANA'), 'kana'),
+            'katakana-gojuon-chart': (lambda lc: kana_chart('KATAKANA'), 'kana'),
+            'katakana-dakuten-small-kana': (lambda lc: kana_extras('KATAKANA'), 'kana'),
+        },
+    },
+    'units': {
+        'pages': {'en': 'library/unit-measurement-symbols', 'ko': 'ko/library/danwi-giho', 'tr': 'tr/library/derece-isareti',
+                  'es': 'es/library/simbolos-de-unidades'},
+        'sections': {'cjk-squared-units': (lambda lc: [(chr(cp), unit_abbr(cp)) for cp in CJK_UNITS], 'unit')},
     },
     'dice': {
         'pages': {'en': 'library/dice-domino-symbols'},
@@ -596,6 +655,17 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors, page_text=No
             errors.append(f'{tag}: label {label!r} but the keycap is {exp_label}')
         if kind == 'braille-alphabet' and exp_label and label != exp_label:
             errors.append(f'{tag}: label {label!r} but the cell is {exp_label}')
+        if kind == 'kana' and exp_label:
+            if exp_label.startswith('~'):
+                if not re.search(r'(?<![a-z])' + re.escape(exp_label[1:]) + r'(?![a-z])', label):
+                    errors.append(f'{tag}: small kana label {label!r} does not carry its romaji {exp_label[1:]!r}')
+            elif label != exp_label:
+                errors.append(f'{tag}: label {label!r} but the Hepburn reading is {exp_label!r}')
+        if kind == 'unit':
+            if not exp_label:
+                errors.append(f'{tag}: not a squared unit (no <square> decomposition)')
+            elif exp_label not in label and sym not in label:
+                errors.append(f'{tag}: label {label!r} names neither the unit {exp_label!r} nor the character')
         if lc == 'en':
             cp = cpl[0]
             if kind == 'box':
@@ -626,7 +696,8 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors, page_text=No
             en_label = dict((t[0], t[2]) for t in en_tiles).get(sym)
             if en_label is not None and label == en_label:
                 errors.append(f'{tag}: label is the English one ({label!r}); a {lc} page needs its own wording')
-        if en_tiles is not None and kind in ('box', 'card', 'roman', 'arrow', 'emoji', 'greek'):
+        if en_tiles is not None and (kind in ('box', 'card', 'roman', 'arrow', 'emoji', 'greek', 'unit')
+                                     or (kind == 'kana' and exp_label and exp_label.startswith('~'))):
             en_label = dict((t[0], t[2]) for t in en_tiles).get(sym)
             if en_label is not None and label == en_label:
                 errors.append(f'{tag}: label is the English one ({label!r}); a {lc} page needs its own wording')
@@ -709,6 +780,17 @@ def self_test():
     mutations['greek dropped bold psi'] = (gdpath, re.sub(r'\s*<div class="flag-row">\s*<button[^>]*data-symbol="𝚿"[^<]*</button>\s*<span[^<]*</span>\s*</div>', '', gdgood, count=1), 'missing')
     mutations['greek English label on de'] = (gdpath, gdgood.replace('<span class="flag-label">Großes Alpha mit Tonos</span>', '<span class="flag-label">Capital Alpha with Tonos</span>', 1)
                                               .replace('aria-label="Kopieren Großes Alpha mit Tonos"', 'aria-label="Kopieren Capital Alpha with Tonos"', 1), 'is the English one')
+    kpath = CLUSTERS['kana']['pages']['de']
+    kgood = open(os.path.join(ROOT, kpath, 'index.html'), encoding='utf-8').read()
+    upath = CLUSTERS['units']['pages']['es']
+    ugood = open(os.path.join(ROOT, upath, 'index.html'), encoding='utf-8').read()
+    mutations['wrong romaji'] = (kpath, kgood.replace('aria-label="Kopieren Hiragana shi">し</button>\n      <span class="flag-label">shi</span>',
+                                                      'aria-label="Kopieren Hiragana si">し</button>\n      <span class="flag-label">si</span>', 1), 'Hepburn reading is')
+    mutations['English small-kana label'] = (kpath, kgood.replace('aria-label="Kopieren Katakana kleines tsu">ッ</button>\n      <span class="flag-label">kleines tsu</span>',
+                                                                  'aria-label="Kopieren Katakana small tsu">ッ</button>\n      <span class="flag-label">small tsu</span>', 1), 'is the English one')
+    mutations['unit label without unit'] = (upath, ugood.replace('<span class="flag-label">kW (kilovatio)</span>', '<span class="flag-label">kilovatio</span>', 1)
+                                            .replace('aria-label="Copiar kW (kilovatio)"', 'aria-label="Copiar kilovatio"', 1), 'names neither the unit')
+    mutations['katakana-word square'] = (upath, ugood.replace('data-symbol="㏖"', 'data-symbol="㌔"', 1).replace('>㏖<', '>㌔<', 1), 'set/order differs')
     failed = []
     fpath, epath = EMOJI_RUNS['food']['pages']['ko'], EMOJI_RUNS['flags']['pages']['ru']
     fgood = open(os.path.join(ROOT, fpath, 'index.html'), encoding='utf-8').read()
@@ -733,11 +815,11 @@ def self_test():
         else:
             print(f'  caught  {name}: {hit[0][:110]}')
     for name, (mpath, text, expect) in mutations.items():
-        orig = {path: good, cpath: cgood, npath: ngood, ppath: pgood, gpath: ggood, gdpath: gdgood}[mpath]
+        orig = {path: good, cpath: cgood, npath: ngood, ppath: pgood, gpath: ggood, gdpath: gdgood, kpath: kgood, upath: ugood}[mpath]
         if text == orig:
             failed.append(f'{name}: the mutation did not apply (fixture drifted)')
             continue
-        only = {path: 'braille', cpath: 'cards', npath: 'numbers', ppath: 'people', gpath: 'greek', gdpath: 'greek'}[mpath]
+        only = {path: 'braille', cpath: 'cards', npath: 'numbers', ppath: 'people', gpath: 'greek', gdpath: 'greek', kpath: 'kana', upath: 'units'}[mpath]
         errs, _, _ = run(lambda p, mp=mpath, t=text: t if p == mp else open(os.path.join(ROOT, p, 'index.html'), encoding='utf-8').read(), only)
         hit = [e for e in errs if expect in e]
         if not hit:
