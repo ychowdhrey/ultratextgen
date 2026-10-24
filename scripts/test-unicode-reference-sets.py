@@ -198,8 +198,8 @@ CLUSTERS = {
 # window that started before these sections were written; changing them now would change
 # what is being measured. Sync them when the window closes, then move them into CLUSTERS.
 HELD = {
-    'ko/library/nemo-giho': 'box-drawing sibling; observation window to 2026-12-09',
-    'sv/library/kortfarg-symboler': 'card-suit sibling; observation window to 2026-12-09',
+    'ko/library/nemo-giho': 'box-drawing sibling; its first-60-day forward-prediction window runs to 2026-10-29 (spec already carries the sections)',
+    'sv/library/kortfarg-symboler': 'card-suit sibling; its first-60-day forward-prediction window runs to 2026-11-09',
 }
 
 # ---------------------------------------------------------------- parsing

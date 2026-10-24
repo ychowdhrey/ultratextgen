@@ -197,6 +197,250 @@
       ]
     },
     {
+      "id": "full-deck-52-cards",
+      "label": "Tam deste",
+      "h2": "52 İskambil Kartının Tamamı",
+      "intro": "Unicode Playing Cards bloğundaki maça, kupa, karo ve sinek takımlarının astan papaza kadar bütün kartları. Emoji değil metin karakteri oldukları için çevredeki yazının rengini alırlar.",
+      "symbols": [
+        {
+          "char": "🂡",
+          "label": "Maça Ası"
+        },
+        {
+          "char": "🂢",
+          "label": "Maça İkilisi"
+        },
+        {
+          "char": "🂣",
+          "label": "Maça Üçlüsü"
+        },
+        {
+          "char": "🂤",
+          "label": "Maça Dörtlüsü"
+        },
+        {
+          "char": "🂥",
+          "label": "Maça Beşlisi"
+        },
+        {
+          "char": "🂦",
+          "label": "Maça Altılısı"
+        },
+        {
+          "char": "🂧",
+          "label": "Maça Yedilisi"
+        },
+        {
+          "char": "🂨",
+          "label": "Maça Sekizlisi"
+        },
+        {
+          "char": "🂩",
+          "label": "Maça Dokuzlusu"
+        },
+        {
+          "char": "🂪",
+          "label": "Maça Onlusu"
+        },
+        {
+          "char": "🂫",
+          "label": "Maça Valesi"
+        },
+        {
+          "char": "🂭",
+          "label": "Maça Kızı"
+        },
+        {
+          "char": "🂮",
+          "label": "Maça Papazı"
+        },
+        {
+          "char": "🂱",
+          "label": "Kupa Ası"
+        },
+        {
+          "char": "🂲",
+          "label": "Kupa İkilisi"
+        },
+        {
+          "char": "🂳",
+          "label": "Kupa Üçlüsü"
+        },
+        {
+          "char": "🂴",
+          "label": "Kupa Dörtlüsü"
+        },
+        {
+          "char": "🂵",
+          "label": "Kupa Beşlisi"
+        },
+        {
+          "char": "🂶",
+          "label": "Kupa Altılısı"
+        },
+        {
+          "char": "🂷",
+          "label": "Kupa Yedilisi"
+        },
+        {
+          "char": "🂸",
+          "label": "Kupa Sekizlisi"
+        },
+        {
+          "char": "🂹",
+          "label": "Kupa Dokuzlusu"
+        },
+        {
+          "char": "🂺",
+          "label": "Kupa Onlusu"
+        },
+        {
+          "char": "🂻",
+          "label": "Kupa Valesi"
+        },
+        {
+          "char": "🂽",
+          "label": "Kupa Kızı"
+        },
+        {
+          "char": "🂾",
+          "label": "Kupa Papazı"
+        },
+        {
+          "char": "🃁",
+          "label": "Karo Ası"
+        },
+        {
+          "char": "🃂",
+          "label": "Karo İkilisi"
+        },
+        {
+          "char": "🃃",
+          "label": "Karo Üçlüsü"
+        },
+        {
+          "char": "🃄",
+          "label": "Karo Dörtlüsü"
+        },
+        {
+          "char": "🃅",
+          "label": "Karo Beşlisi"
+        },
+        {
+          "char": "🃆",
+          "label": "Karo Altılısı"
+        },
+        {
+          "char": "🃇",
+          "label": "Karo Yedilisi"
+        },
+        {
+          "char": "🃈",
+          "label": "Karo Sekizlisi"
+        },
+        {
+          "char": "🃉",
+          "label": "Karo Dokuzlusu"
+        },
+        {
+          "char": "🃊",
+          "label": "Karo Onlusu"
+        },
+        {
+          "char": "🃋",
+          "label": "Karo Valesi"
+        },
+        {
+          "char": "🃍",
+          "label": "Karo Kızı"
+        },
+        {
+          "char": "🃎",
+          "label": "Karo Papazı"
+        },
+        {
+          "char": "🃑",
+          "label": "Sinek Ası"
+        },
+        {
+          "char": "🃒",
+          "label": "Sinek İkilisi"
+        },
+        {
+          "char": "🃓",
+          "label": "Sinek Üçlüsü"
+        },
+        {
+          "char": "🃔",
+          "label": "Sinek Dörtlüsü"
+        },
+        {
+          "char": "🃕",
+          "label": "Sinek Beşlisi"
+        },
+        {
+          "char": "🃖",
+          "label": "Sinek Altılısı"
+        },
+        {
+          "char": "🃗",
+          "label": "Sinek Yedilisi"
+        },
+        {
+          "char": "🃘",
+          "label": "Sinek Sekizlisi"
+        },
+        {
+          "char": "🃙",
+          "label": "Sinek Dokuzlusu"
+        },
+        {
+          "char": "🃚",
+          "label": "Sinek Onlusu"
+        },
+        {
+          "char": "🃛",
+          "label": "Sinek Valesi"
+        },
+        {
+          "char": "🃝",
+          "label": "Sinek Kızı"
+        },
+        {
+          "char": "🃞",
+          "label": "Sinek Papazı"
+        }
+      ]
+    },
+    {
+      "id": "tarot-knights-white-joker",
+      "label": "Şövalyeler ve joker",
+      "h2": "Tarot Şövalyeleri ve Beyaz Joker",
+      "intro": "Tarot destelerinde vale ile kız arasında bir şövalye bulunur. Unicode her takım için bir şövalye ve bir beyaz joker içerir.",
+      "symbols": [
+        {
+          "char": "🂬",
+          "label": "Maça Şövalyesi"
+        },
+        {
+          "char": "🂼",
+          "label": "Kupa Şövalyesi"
+        },
+        {
+          "char": "🃌",
+          "label": "Karo Şövalyesi"
+        },
+        {
+          "char": "🃜",
+          "label": "Sinek Şövalyesi"
+        },
+        {
+          "char": "🃟",
+          "label": "Beyaz Joker"
+        }
+      ]
+    },
+    {
       "id": "game-symbols",
       "label": "Oyun",
       "h2": "Oyun Sembolleri",
