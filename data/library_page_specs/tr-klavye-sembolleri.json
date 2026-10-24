@@ -115,6 +115,78 @@
           "label": "Ekran Görüntüsü Sembolü"
         }
       ]
+    },
+    {
+      "id": "iso-function-key-symbols",
+      "label": "ISO Tuşları",
+      "h2": "ISO İşlev Tuşu Sembolleri",
+      "intro": "Uluslararası klavye standardı ISO/IEC 9995-7’deki tuş sembolleri. Bazı PC, terminal ve Linux klavyelerinde kelime yerine bunlar basılıdır: Alt, Compose, Insert, Pause, Geri Al ve sayfa tuşları. Mac’te ⌤ ve ⌧, sayısal tuş takımındaki Enter ve Clear tuşlarını gösterir.",
+      "symbols": [
+        {
+          "char": "⌤",
+          "label": "Enter Tuşu (İki Yatay Çizgi Arasında Yukarı Ok Başı)"
+        },
+        {
+          "char": "⌧",
+          "label": "Temizle Tuşu (Dikdörtgen İçinde X)"
+        },
+        {
+          "char": "⎀",
+          "label": "Insert Tuşu (Ekleme Sembolü)"
+        },
+        {
+          "char": "⎁",
+          "label": "Sürekli Alt Çizgi Tuşu"
+        },
+        {
+          "char": "⎂",
+          "label": "Kesik Alt Çizgi Tuşu"
+        },
+        {
+          "char": "⎃",
+          "label": "Vurgu Tuşu"
+        },
+        {
+          "char": "⎄",
+          "label": "Compose Tuşu (Birleştirme Sembolü)"
+        },
+        {
+          "char": "⎆",
+          "label": "Enter Tuşu (ISO Sembolü)"
+        },
+        {
+          "char": "⎇",
+          "label": "Alt Tuşu (Alternatif Tuş Sembolü)"
+        },
+        {
+          "char": "⎉",
+          "label": "Pause Tuşu (Çentikli Yatay Çizgili Daire)"
+        },
+        {
+          "char": "⎊",
+          "label": "Break / Kesme Tuşu (Daire İçinde Aşağı Üçgen)"
+        },
+        {
+          "char": "⎌",
+          "label": "Geri Al Tuşu"
+        },
+        {
+          "char": "⎖",
+          "label": "Ondalık Ayırıcı Tuşu"
+        },
+        {
+          "char": "⎗",
+          "label": "Önceki Sayfa Tuşu (Page Up)"
+        },
+        {
+          "char": "⎘",
+          "label": "Sonraki Sayfa Tuşu (Page Down)"
+        },
+        {
+          "char": "⎚",
+          "label": "Ekranı Temizle Tuşu"
+        }
+      ]
     }
   ],
   "editorial_sections": [

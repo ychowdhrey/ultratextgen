@@ -246,6 +246,46 @@
       ]
     },
     {
+      "id": "checkers-shogi-pieces",
+      "label": "Dama e shogi",
+      "h2": "Pedine della dama e pezzi dello shogi",
+      "intro": "Le pedine della dama in bianco e nero, semplici e promosse a dama, e il pezzo dello shogi in quattro forme. Nelle trascrizioni delle partite di shogi, ☗ indica il primo giocatore (sente) e ☖ il secondo (gote).",
+      "symbols": [
+        {
+          "char": "⛀",
+          "label": "Pedina bianca (dama)"
+        },
+        {
+          "char": "⛁",
+          "label": "Dama bianca (pedina promossa)"
+        },
+        {
+          "char": "⛂",
+          "label": "Pedina nera (dama)"
+        },
+        {
+          "char": "⛃",
+          "label": "Dama nera (pedina promossa)"
+        },
+        {
+          "char": "☖",
+          "label": "Pezzo bianco dello shogi"
+        },
+        {
+          "char": "☗",
+          "label": "Pezzo nero dello shogi"
+        },
+        {
+          "char": "⛉",
+          "label": "Pezzo bianco dello shogi capovolto"
+        },
+        {
+          "char": "⛊",
+          "label": "Pezzo nero dello shogi capovolto"
+        }
+      ]
+    },
+    {
       "id": "notation-symbols",
       "label": "Notazione",
       "h2": "Simboli di Notazione e Annotazione",
