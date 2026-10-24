@@ -419,7 +419,11 @@ def alchemy_en_label(cp):
     """UCD name without the ALCHEMICAL SYMBOL FOR prefix, title case, -2/-3.. as II/III.."""
     if cp in ALCHEMY_OVERRIDE:
         return ALCHEMY_OVERRIDE[cp]
-    n = unicodedata.name(chr(cp)).replace('ALCHEMICAL SYMBOL FOR ', '')
+    # A code point newer than this Python's UCD has no name here (CI's Python 3.11 ships Unicode 14);
+    # report it as a label mismatch rather than crash.
+    n = unicodedata.name(chr(cp), '').replace('ALCHEMICAL SYMBOL FOR ', '')
+    if not n:
+        return f'<U+{cp:04X} unnamed in Unicode {unicodedata.unidata_version}>'
     m = re.match(r'(.*)-(\d)$', n)
     base, num = (m.group(1), int(m.group(2))) if m else (n, 1)
     return base.title().replace(' Of ', ' of ') + (' ' + ['', '', 'II', 'III', 'IV', 'V'][num] if num > 1 else '')
