@@ -15,6 +15,10 @@ and their locale siblings carry the same sections:
   * number-symbols           (en + 6 locales): Roman numerals past XII and the
                                            keycap emoji (id/font-angka is a
                                            generator page with no tiles)
+  * music-symbols            (en + 16 locales): the 79 Musical Symbols (U+1D100..U+1D1FF)
+                                           the original sections left out, in four
+                                           sections; the precomposed notes
+                                           U+1D15E..U+1D164 must stay one scalar each
 
 A tile on these pages is a promise about one exact code point, and a label is a
 promise about what that code point is. Neither shows up as broken in a
@@ -154,6 +158,29 @@ def roman_en_label(cp):
     return 'Roman Numeral ' + value + (', old form' if cp == 0x2180 else '')
 
 
+# Musical Symbols: what the original sections already carried, and the Unicode 18.0 additions no
+# device has a font for yet. Everything else in the block's job subset is laid out in four sections.
+MUSIC_SHOWN = set(map(ord, '\U0001D100\U0001D101\U0001D102\U0001D103\U0001D106\U0001D107\U0001D110\U0001D111\U0001D11E'
+                          '\U0001D121\U0001D122\U0001D12A\U0001D12B\U0001D13B\U0001D13C\U0001D13E\U0001D13F\U0001D18F\U0001D191'))
+MUSIC_U18 = {0x1D1ED, 0x1D1EE, 0x1D1F3, 0x1D1F4, 0x1D1F5, 0x1D1F6, 0x1D1FF}
+MUSIC_NOTE_HOME = 'barlines-repeats-segno-coda'
+
+
+def music_sections():
+    secs = {
+        MUSIC_NOTE_HOME: [0x1D104, 0x1D105] + list(range(0x1D108, 0x1D110)),
+        'clefs-staff-time-signatures': list(range(0x1D116, 0x1D11C)) + [0x1D11F, 0x1D120, 0x1D123, 0x1D124, 0x1D125, 0x1D126,
+                                        0x1D134, 0x1D135, 0x1D12C, 0x1D12D, 0x1D12E, 0x1D12F, 0x1D133],
+        'notes-grace-notes-rests': list(range(0x1D15C, 0x1D165)) + [0x1D194, 0x1D195, 0x1D129, 0x1D13A, 0x1D13D, 0x1D140, 0x1D141,
+                                    0x1D142] + list(range(0x1D1C1, 0x1D1C7)),
+        'noteheads-mezzo-pedal': list(range(0x1D143, 0x1D15A)) + [0x1D190, 0x1D1AE, 0x1D1AF, 0x1D1B0],
+    }
+    allcp = [cp for v in secs.values() for cp in v]
+    assert len(allcp) == len(set(allcp)) == 79 and not set(allcp) & (MUSIC_SHOWN | MUSIC_U18)
+    assert all(unicodedata.name(chr(cp)).startswith('MUSICAL SYMBOL ') for cp in allcp)
+    return secs
+
+
 def cps(seq):
     return [(chr(cp), None) for cp in seq]
 
@@ -206,6 +233,15 @@ CLUSTERS = {
             'roman-numerals-extended': (lambda lc: cps(ROMAN_EXT), 'roman'),
             'keycap-number-emoji': (lambda lc: KEYCAPS, 'keycap'),
         },
+    },
+    'music': {
+        'pages': {'en': 'library/music-symbols', 'ar': 'ar/library/music-symbols', 'es': 'es/library/simbolos-de-musica',
+                  'id': 'id/library/simbol-musik', 'ko': 'ko/library/eumak-giho', 'pt': 'pt/library/simbolos-musicais',
+                  'de': 'de/library/musik-symbole', 'fr': 'fr/library/symboles-musicaux', 'it': 'it/library/simboli-musicali',
+                  'ja': 'ja/library/music-symbols', 'nl': 'nl/library/muzieksymbolen', 'pl': 'pl/library/symbole-muzyczne',
+                  'ru': 'ru/library/muzykalnye-simvoly', 'th': 'th/library/music-symbols', 'tr': 'tr/library/muzik-sembolleri',
+                  'vi': 'vi/library/ky-hieu-am-nhac', 'zh-TW': 'zh-tw/library/yinyue-fuhao'},
+        'sections': {sid: ((lambda s: lambda lc: cps(s))(seq), 'music') for sid, seq in music_sections().items()},
     },
     'dice': {
         'pages': {'en': 'library/dice-domino-symbols'},
@@ -260,6 +296,8 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors, page_text=No
                 unicodedata.name(chr(c))
             except ValueError:
                 errors.append(f'{tag}: U+{c:04X} is unassigned or unnamed')
+            if c in MUSIC_U18:
+                errors.append(f'{tag}: U+{c:04X} is Unicode 18.0 (no device font yet)')
             if c in EXCLUDED and not where.endswith('#' + EXCLUDED_HOME):
                 errors.append(f'{tag}: U+{c:04X} is excluded (no Android system glyph)')
         if len(cpl) != 1 and kind != 'keycap' and not (kind == 'braille-alphabet' and len(cpl) == 2 and sym[0] == NUMBER_SIGN):
@@ -303,7 +341,7 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors, page_text=No
             en_label = dict((t[0], t[2]) for t in en_tiles).get(sym)
             if en_label is not None and label == en_label:
                 errors.append(f'{tag}: label is the English one ({label!r}); a {lc} page needs its own wording')
-        if en_tiles is not None and kind in ('box', 'card', 'roman', 'arrow'):
+        if en_tiles is not None and kind in ('box', 'card', 'roman', 'arrow', 'music'):
             en_label = dict((t[0], t[2]) for t in en_tiles).get(sym)
             if en_label is not None and label == en_label:
                 errors.append(f'{tag}: label is the English one ({label!r}); a {lc} page needs its own wording')
@@ -333,6 +371,10 @@ def run(read=lambda p: open(os.path.join(ROOT, p, 'index.html'), encoding='utf-8
                 tiles = found[0]
                 if sid == EXCLUDED_HOME and not any(w in read(path) for w in ('Android', '안드로이드')):
                     errors.append(f'{where}: the section carrying glyphs Android cannot draw must say so')
+                if sid == MUSIC_NOTE_HOME:
+                    para = re.search(r'id="%s">.*?<p[^>]*>(.*?)</p>' % sid, read(path), re.S).group(1)
+                    if 'Android' not in para and '안드로이드' not in para or 'iPhon' not in para:  # pl declines it: iPhonie
+                        errors.append(f'{where}: the first music section must carry the Android/iPhone font note')
                 n_tiles += len(tiles)
                 en_tiles = en_secs.get(sid, [None])[0] if en_secs and lc != 'en' else None
                 check_tiles(where, tiles, expect(lc), kind, lc, en_tiles, errors, read(path))
@@ -363,13 +405,19 @@ def self_test():
                                           .replace('data-symbol="3️⃣"', 'data-symbol="3⃣"', 1), 'fully-qualified keycap')
     mutations['Android note removed'] = (cpath, cgood.replace('Android', 'XXXX'), 'must say so')
     mutations['trump numeral wrong'] = (cpath, cgood.replace('<span class="flag-label">XIV</span>', '<span class="flag-label">XV</span>', 1), 'expected trump XIV')
+    mpath_ = CLUSTERS['music']['pages']['de']
+    mgood = open(os.path.join(ROOT, mpath_, 'index.html'), encoding='utf-8').read()
+    half = '\U0001D15E'
+    mutations['decomposed half note'] = (mpath_, mgood.replace(f'data-symbol="{half}"', 'data-symbol="\U0001D157\U0001D165"', 1), 'code points in a single-character tile')
+    mutations['Unicode 18 musical symbol'] = (mpath_, mgood.replace('data-symbol="\U0001D104"', 'data-symbol="\U0001D1FF"', 1), 'Unicode 18.0')
+    mutations['music font note removed'] = (mpath_, mgood.replace('iPhon', 'XXXX'), 'font note')
     failed = []
     for name, (mpath, text, expect) in mutations.items():
-        orig = {path: good, cpath: cgood, npath: ngood}[mpath]
+        orig = {path: good, cpath: cgood, npath: ngood, mpath_: mgood}[mpath]
         if text == orig:
             failed.append(f'{name}: the mutation did not apply (fixture drifted)')
             continue
-        only = {path: 'braille', cpath: 'cards', npath: 'numbers'}[mpath]
+        only = {path: 'braille', cpath: 'cards', npath: 'numbers', mpath_: 'music'}[mpath]
         errs, _, _ = run(lambda p, mp=mpath, t=text: t if p == mp else open(os.path.join(ROOT, p, 'index.html'), encoding='utf-8').read(), only)
         hit = [e for e in errs if expect in e]
         if not hit:
