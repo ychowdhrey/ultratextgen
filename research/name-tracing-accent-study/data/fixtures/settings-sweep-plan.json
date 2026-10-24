@@ -1,0 +1,186 @@
+{
+ "routes": [
+  "en_name",
+  "en_cursive",
+  "tr_name",
+  "pl_name"
+ ],
+ "fixtures": [
+  "control-short",
+  "fr-nfd",
+  "es-capital",
+  "pt-circumflex",
+  "pl-stroke",
+  "tr-dot",
+  "tr-cedilla",
+  "vi-tone",
+  "stress-long"
+ ],
+ "settings": [
+  {
+   "id": "letter-portrait-r1",
+   "rows": 1,
+   "prefs": {
+    "paper": "letter",
+    "orient": "portrait",
+    "margin": "normal",
+    "ink": "normal",
+    "quality": "high"
+   }
+  },
+  {
+   "id": "letter-portrait-r6",
+   "rows": 6,
+   "prefs": {
+    "paper": "letter",
+    "orient": "portrait",
+    "margin": "normal",
+    "ink": "normal",
+    "quality": "high"
+   }
+  },
+  {
+   "id": "letter-landscape-r1",
+   "rows": 1,
+   "prefs": {
+    "paper": "letter",
+    "orient": "landscape",
+    "margin": "normal",
+    "ink": "normal",
+    "quality": "high"
+   }
+  },
+  {
+   "id": "letter-landscape-r6",
+   "rows": 6,
+   "prefs": {
+    "paper": "letter",
+    "orient": "landscape",
+    "margin": "normal",
+    "ink": "normal",
+    "quality": "high"
+   }
+  },
+  {
+   "id": "a4-portrait-r1",
+   "rows": 1,
+   "prefs": {
+    "paper": "a4",
+    "orient": "portrait",
+    "margin": "normal",
+    "ink": "normal",
+    "quality": "high"
+   }
+  },
+  {
+   "id": "a4-portrait-r6",
+   "rows": 6,
+   "prefs": {
+    "paper": "a4",
+    "orient": "portrait",
+    "margin": "normal",
+    "ink": "normal",
+    "quality": "high"
+   }
+  },
+  {
+   "id": "a4-landscape-r1",
+   "rows": 1,
+   "prefs": {
+    "paper": "a4",
+    "orient": "landscape",
+    "margin": "normal",
+    "ink": "normal",
+    "quality": "high"
+   }
+  },
+  {
+   "id": "a4-landscape-r6",
+   "rows": 6,
+   "prefs": {
+    "paper": "a4",
+    "orient": "landscape",
+    "margin": "normal",
+    "ink": "normal",
+    "quality": "high"
+   }
+  },
+  {
+   "id": "legal-portrait-r1",
+   "rows": 1,
+   "prefs": {
+    "paper": "legal",
+    "orient": "portrait",
+    "margin": "normal",
+    "ink": "normal",
+    "quality": "high"
+   }
+  },
+  {
+   "id": "legal-portrait-r6",
+   "rows": 6,
+   "prefs": {
+    "paper": "legal",
+    "orient": "portrait",
+    "margin": "normal",
+    "ink": "normal",
+    "quality": "high"
+   }
+  },
+  {
+   "id": "legal-landscape-r1",
+   "rows": 1,
+   "prefs": {
+    "paper": "legal",
+    "orient": "landscape",
+    "margin": "normal",
+    "ink": "normal",
+    "quality": "high"
+   }
+  },
+  {
+   "id": "legal-landscape-r6",
+   "rows": 6,
+   "prefs": {
+    "paper": "legal",
+    "orient": "landscape",
+    "margin": "normal",
+    "ink": "normal",
+    "quality": "high"
+   }
+  },
+  {
+   "id": "default-narrow-margin",
+   "rows": 3,
+   "prefs": {
+    "paper": "letter",
+    "orient": "portrait",
+    "margin": "narrow",
+    "ink": "normal",
+    "quality": "high"
+   }
+  },
+  {
+   "id": "default-ink-saver",
+   "rows": 3,
+   "prefs": {
+    "paper": "letter",
+    "orient": "portrait",
+    "margin": "normal",
+    "ink": "saver",
+    "quality": "high"
+   }
+  },
+  {
+   "id": "default-ink-contrast",
+   "rows": 3,
+   "prefs": {
+    "paper": "letter",
+    "orient": "portrait",
+    "margin": "normal",
+    "ink": "contrast",
+    "quality": "high"
+   }
+  }
+ ]
+}

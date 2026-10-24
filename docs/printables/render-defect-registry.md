@@ -1233,6 +1233,38 @@ were cut off every row of the PDF, the T's crossbar entirely. A routed row now a
 whose ink already starts inside the box gets `y0 = 0`: the two English sheets rendered
 pixel-identical before and after, and so did eleven unrouted pages checked against `main`.
 
+**Closed 2026-10-24 on every unrouted name page, measured, not on the strength of the code change.**
+The 2026-09-25 "open on the other cursive and calligraphy sheets" note was half right. Measured with
+the in-browser clip probe (text ink outside the SVG box, 35 names, 14 script-face name pages, the
+commit before the fix): **eight cursive pages cut 16 to 22 names each (158 of 280 name and page pairs)
+and the six calligraphy and gothic pages cut none (0 of 210)**, so the Fraktur sheets were never
+affected and need no change. The cut is a straight line (12 of the 16 flagged English cursive names;
+the other 4 lose about 0.03 inch off a capital's accent tip), in the preview and in the PDF; the PNG
+export draws on its own canvas and was never cut. Marks below the baseline are the sharpest case:
+a below-the-line mark survives only about 40% (nine extra names, cursive 9 of 9 flagged, the six
+print-style worksheets 0 of 54). Names with no marks but a descender (Gypsy) are cut too, so the cause
+is the 200-unit box, not accents.
+
+**Fix.** `nameRow()` now passes `fitInk`/`fitTop` on unrouted rows too, as `fitIfClipped`: the box grows
+only when the ink overflows the box the row will actually have by more than `FIT_CLIP_TOL` (6 units).
+The margin alone, or a ruling line outside the box, is not a reason to resize. Three earlier versions
+were rejected by comparing every one of the 58 name pages for 10 names against `main`: always fitting
+shrank the print name pages by about 5% (Quicksand's descenders end 1 to 4 units past 200), counting
+the ruling moved the French Seyès sheet by 7.5 units, and excluding physical rulings left the French
+cursive page cut. Final: 580 page and name pairs compared, 71 changed, all on the eight cursive pages;
+the print, calligraphy, bubble and physical-ruling pages keep their viewBox (two bubble-page pairs
+differed in the comparison run and were identical in six fresh loads of each version: font-subset load
+order, which also varies on `main`). **Re-run after the fix: 0 of 490 name and page pairs cut; 182
+worksheet cells 0 flagged (16 before); nine below-the-line names 0 of 63 (9 before); 540 settings
+cells 0 cut ink and 0 multi-page exports.** 25 long-name cells (María-José Fernández) stay flagged by
+the comparison check, all cleared by a horizontal stretch (0.00% ink missing): the page spaces a long
+fitted name 2 to 4% wider than the check's drawing.
+
+**Cost, stated.** A cursive name that needed room now prints at 74% to 90% of its old size on the
+English page (box 200 to 221, 227, 233, 242 or 270 units; Emma is unchanged), because the row keeps its
+CSS height. Whether a child traces it as well is untested. The study and its data are
+`/research/name-tracing-accent-study/`.
+
 ## R-024 — The generator's trace rows print print letters under a joined school script
 
 **Severity** R1 · **Root cause** PATH_GENERATION · **Screen** FAIL · **Print** FAIL · **PNG** FAIL
