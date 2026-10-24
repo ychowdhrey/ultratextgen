@@ -32,6 +32,10 @@ and their locale siblings carry the same sections:
   * japanese-symbols         (en + 9 locales): the hiragana and katakana gojūon
                                            charts, dakuten/handakuten and small kana
   * unit-measurement-symbols (en + 3 locales): 44 CJK squared units
+  * music-symbols            (en + 16 locales): the 79 Musical Symbols (U+1D100..U+1D1FF)
+                                           the original sections left out, in four
+                                           sections; the precomposed notes
+                                           U+1D15E..U+1D164 must stay one scalar each
 
 Emoji tiles (kind 'emoji') are checked against data/emoji_sequences.json (generated from
 emoji-test.txt): every tile must be a fully-qualified sequence with no skin-tone modifier.
@@ -173,6 +177,40 @@ def roman_en_label(cp):
         return 'Small Roman Numeral ' + 'i ii iii iv v vi vii viii ix x xi xii l c d m'.split()[cp - 0x2170]
     value = {0x2180: '1000', 0x2181: '5000', 0x2182: '10000', 0x2187: '50000', 0x2188: '100000'}[cp]
     return 'Roman Numeral ' + value + (', old form' if cp == 0x2180 else '')
+
+
+# Musical Symbols: what the original sections already carried, and the Unicode 18.0 additions no
+# device has a font for yet. Everything else in the block's job subset is laid out in four sections.
+MUSIC_SHOWN = set(map(ord, '\U0001D100\U0001D101\U0001D102\U0001D103\U0001D106\U0001D107\U0001D110\U0001D111\U0001D11E'
+                          '\U0001D121\U0001D122\U0001D12A\U0001D12B\U0001D13B\U0001D13C\U0001D13E\U0001D13F\U0001D18F\U0001D191'))
+MUSIC_U18 = {0x1D1ED, 0x1D1EE, 0x1D1F3, 0x1D1F4, 0x1D1F5, 0x1D1F6, 0x1D1FF}
+MUSIC_NOTE_HOME = 'barlines-repeats-segno-coda'
+# The existing rests section once labelled U+1D13B (WHOLE REST) as the half rest and U+1D13C (HALF REST) as
+# the quarter rest, on all 17 pages. Repaired 2026-10-24; these are the labels, per page language, so they
+# cannot drift back. Keys are the cluster's locale keys.
+MUSIC_RESTS = {
+    'en': ('Whole Rest', 'Half Rest'), 'ar': ('صمت كامل', 'صمت نصفي'), 'es': ('Silencio de redonda', 'Silencio de blanca'),
+    'id': ('Istirahat Penuh', 'Istirahat Setengah'), 'ko': ('온쉼표', '2분쉼표(반쉼표)'), 'pt': ('Pausa de Semibreve', 'Pausa de Mínima'),
+    'de': ('Ganze Pause', 'Halbe Pause'), 'fr': ('Pause', 'Demi-pause'), 'it': ('Pausa di semibreve', 'Pausa di minima'),
+    'ja': ('全休符', '二分休符'), 'nl': ('Hele rust', 'Halve rust'), 'pl': ('Pauza całonutowa', 'Pauza półnutowa'),
+    'ru': ('Целая пауза', 'Половинная пауза'), 'th': ('ตัวหยุดตัวกลม', 'ตัวหยุดขาว'), 'tr': ('Birlik sus', 'İkilik sus'),
+    'vi': ('Lặng tròn', 'Lặng trắng'), 'zh-TW': ('全休止符', '二分休止符'),
+}
+
+
+def music_sections():
+    secs = {
+        MUSIC_NOTE_HOME: [0x1D104, 0x1D105] + list(range(0x1D108, 0x1D110)),
+        'clefs-staff-time-signatures': list(range(0x1D116, 0x1D11C)) + [0x1D11F, 0x1D120, 0x1D123, 0x1D124, 0x1D125, 0x1D126,
+                                        0x1D134, 0x1D135, 0x1D12C, 0x1D12D, 0x1D12E, 0x1D12F, 0x1D133],
+        'notes-grace-notes-rests': list(range(0x1D15C, 0x1D165)) + [0x1D194, 0x1D195, 0x1D129, 0x1D13A, 0x1D13D, 0x1D140, 0x1D141,
+                                    0x1D142] + list(range(0x1D1C1, 0x1D1C7)),
+        'noteheads-mezzo-pedal': list(range(0x1D143, 0x1D15A)) + [0x1D190, 0x1D1AE, 0x1D1AF, 0x1D1B0],
+    }
+    allcp = [cp for v in secs.values() for cp in v]
+    assert len(allcp) == len(set(allcp)) == 79 and not set(allcp) & (MUSIC_SHOWN | MUSIC_U18)
+    assert all(unicodedata.name(chr(cp)).startswith('MUSICAL SYMBOL ') for cp in allcp)
+    return secs
 
 
 def cps(seq):
@@ -457,6 +495,15 @@ CLUSTERS = {
                   'es': 'es/library/simbolos-de-unidades'},
         'sections': {'cjk-squared-units': (lambda lc: [(chr(cp), unit_abbr(cp)) for cp in CJK_UNITS], 'unit')},
     },
+    'music': {
+        'pages': {'en': 'library/music-symbols', 'ar': 'ar/library/music-symbols', 'es': 'es/library/simbolos-de-musica',
+                  'id': 'id/library/simbol-musik', 'ko': 'ko/library/eumak-giho', 'pt': 'pt/library/simbolos-musicais',
+                  'de': 'de/library/musik-symbole', 'fr': 'fr/library/symboles-musicaux', 'it': 'it/library/simboli-musicali',
+                  'ja': 'ja/library/music-symbols', 'nl': 'nl/library/muzieksymbolen', 'pl': 'pl/library/symbole-muzyczne',
+                  'ru': 'ru/library/muzykalnye-simvoly', 'th': 'th/library/music-symbols', 'tr': 'tr/library/muzik-sembolleri',
+                  'vi': 'vi/library/ky-hieu-am-nhac', 'zh-TW': 'zh-tw/library/yinyue-fuhao'},
+        'sections': {sid: ((lambda s: lambda lc: cps(s))(seq), 'music') for sid, seq in music_sections().items()},
+    },
     'dice': {
         'pages': {'en': 'library/dice-domino-symbols'},
         'sections': {
@@ -640,6 +687,8 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors, page_text=No
                 unicodedata.name(chr(c))
             except ValueError:
                 errors.append(f'{tag}: U+{c:04X} is unassigned or unnamed')
+            if c in MUSIC_U18:
+                errors.append(f'{tag}: U+{c:04X} is Unicode 18.0 (no device font yet)')
             if c in EXCLUDED and not where.endswith('#' + EXCLUDED_HOME):
                 errors.append(f'{tag}: U+{c:04X} is excluded (no Android system glyph)')
         if len(cpl) != 1 and kind not in ('keycap', 'emoji') and not (kind == 'braille-alphabet' and len(cpl) == 2 and sym[0] == NUMBER_SIGN):
@@ -696,7 +745,7 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors, page_text=No
             en_label = dict((t[0], t[2]) for t in en_tiles).get(sym)
             if en_label is not None and label == en_label:
                 errors.append(f'{tag}: label is the English one ({label!r}); a {lc} page needs its own wording')
-        if en_tiles is not None and (kind in ('box', 'card', 'roman', 'arrow', 'emoji', 'greek', 'unit')
+        if en_tiles is not None and (kind in ('box', 'card', 'roman', 'arrow', 'emoji', 'greek', 'unit', 'music')
                                      or (kind == 'kana' and exp_label and exp_label.startswith('~'))):
             en_label = dict((t[0], t[2]) for t in en_tiles).get(sym)
             if en_label is not None and label == en_label:
@@ -726,6 +775,12 @@ def run(read=lambda p: open(os.path.join(ROOT, p, 'index.html'), encoding='utf-8
                         errors.append(f'/{path}/: missing the tile {seq!r}')
                     elif seq not in FQ:
                         errors.append(f'/{path}/: {seq!r} is not a fully-qualified emoji sequence')
+            if cname == 'music':
+                page_tiles = [tuple(html.unescape(x) for x in t) for t in TILE_RE.findall(read(path))]
+                for sym, want in zip(('\U0001D13B', '\U0001D13C'), MUSIC_RESTS[lc]):
+                    hits = [t for t in page_tiles if t[0] == sym]
+                    if len(hits) != 1 or hits[0][2] != want or want.casefold() not in hits[0][1].casefold():
+                        errors.append(f'/{path}/: U+{ord(sym):04X} must be labelled {want!r} ({unicodedata.name(sym).title()}); found {hits}')
             for sid, (expect, kind) in c['sections'].items():
                 where = f'/{path}/#{sid}'
                 found = secs.get(sid, [])
@@ -735,6 +790,10 @@ def run(read=lambda p: open(os.path.join(ROOT, p, 'index.html'), encoding='utf-8
                 tiles = found[0]
                 if sid == EXCLUDED_HOME and not any(w in read(path) for w in ('Android', '안드로이드')):
                     errors.append(f'{where}: the section carrying glyphs Android cannot draw must say so')
+                if sid == MUSIC_NOTE_HOME:
+                    para = re.search(r'id="%s">.*?<p[^>]*>(.*?)</p>' % sid, read(path), re.S).group(1)
+                    if 'Android' not in para and '안드로이드' not in para or 'iPhon' not in para:  # pl declines it: iPhonie
+                        errors.append(f'{where}: the first music section must carry the Android/iPhone font note')
                 n_tiles += len(tiles)
                 en_tiles = en_secs.get(sid, [None])[0] if en_secs and lc != 'en' else None
                 want = expect(lc, read(path)) if c.get('page_aware') else expect(lc)
@@ -791,6 +850,13 @@ def self_test():
     mutations['unit label without unit'] = (upath, ugood.replace('<span class="flag-label">kW (kilovatio)</span>', '<span class="flag-label">kilovatio</span>', 1)
                                             .replace('aria-label="Copiar kW (kilovatio)"', 'aria-label="Copiar kilovatio"', 1), 'names neither the unit')
     mutations['katakana-word square'] = (upath, ugood.replace('data-symbol="㏖"', 'data-symbol="㌔"', 1).replace('>㏖<', '>㌔<', 1), 'set/order differs')
+    mpath_ = CLUSTERS['music']['pages']['de']
+    mgood = open(os.path.join(ROOT, mpath_, 'index.html'), encoding='utf-8').read()
+    half = '\U0001D15E'
+    mutations['decomposed half note'] = (mpath_, mgood.replace(f'data-symbol="{half}"', 'data-symbol="\U0001D157\U0001D165"', 1), 'code points in a single-character tile')
+    mutations['Unicode 18 musical symbol'] = (mpath_, mgood.replace('data-symbol="\U0001D104"', 'data-symbol="\U0001D1FF"', 1), 'Unicode 18.0')
+    mutations['whole rest labelled as half rest'] = (mpath_, mgood.replace('<span class="flag-label">Ganze Pause</span>', '<span class="flag-label">Halbe Pause</span>', 1), 'must be labelled')
+    mutations['music font note removed'] = (mpath_, mgood.replace('iPhon', 'XXXX'), 'font note')
     failed = []
     fpath, epath = EMOJI_RUNS['food']['pages']['ko'], EMOJI_RUNS['flags']['pages']['ru']
     fgood = open(os.path.join(ROOT, fpath, 'index.html'), encoding='utf-8').read()
@@ -815,11 +881,11 @@ def self_test():
         else:
             print(f'  caught  {name}: {hit[0][:110]}')
     for name, (mpath, text, expect) in mutations.items():
-        orig = {path: good, cpath: cgood, npath: ngood, ppath: pgood, gpath: ggood, gdpath: gdgood, kpath: kgood, upath: ugood}[mpath]
+        orig = {path: good, cpath: cgood, npath: ngood, ppath: pgood, gpath: ggood, gdpath: gdgood, kpath: kgood, upath: ugood, mpath_: mgood}[mpath]
         if text == orig:
             failed.append(f'{name}: the mutation did not apply (fixture drifted)')
             continue
-        only = {path: 'braille', cpath: 'cards', npath: 'numbers', ppath: 'people', gpath: 'greek', gdpath: 'greek', kpath: 'kana', upath: 'units'}[mpath]
+        only = {path: 'braille', cpath: 'cards', npath: 'numbers', ppath: 'people', gpath: 'greek', gdpath: 'greek', kpath: 'kana', upath: 'units', mpath_: 'music'}[mpath]
         errs, _, _ = run(lambda p, mp=mpath, t=text: t if p == mp else open(os.path.join(ROOT, p, 'index.html'), encoding='utf-8').read(), only)
         hit = [e for e in errs if expect in e]
         if not hit:
