@@ -15,6 +15,14 @@ and their locale siblings carry the same sections:
   * number-symbols           (en + 6 locales): Roman numerals past XII and the
                                            keycap emoji (id/font-angka is a
                                            generator page with no tiles)
+  * people-profession-emojis (en, es): every person-role emoji as person, man and
+                                           woman, every couple and every family sequence
+  * body-language-emojis     (en, es): frowning, pouting and deaf person, and the man
+                                           and woman forms of every person gesture
+  * hand-symbols             (en + 5 locales): the pushing hands and the selfie hand
+
+Emoji tiles (kind 'emoji') are checked against data/emoji_sequences.json (generated from
+emoji-test.txt): every tile must be a fully-qualified sequence with no skin-tone modifier.
 
 A tile on these pages is a promise about one exact code point, and a label is a
 promise about what that code point is. Neither shows up as broken in a
@@ -48,6 +56,7 @@ import os
 import re
 import sys
 import unicodedata
+import json
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 VS_OR_JOINER = {0xFE0E, 0xFE0F, 0x200D}
@@ -158,6 +167,74 @@ def cps(seq):
     return [(chr(cp), None) for cp in seq]
 
 
+# ---------------------------------------------------------------- emoji sequences
+# Derived from data/emoji_sequences.json (generated from emoji-test.txt) plus code-point rules, never a
+# hand-typed list of sequences.
+def _fq():
+    d = json.load(open(os.path.join(ROOT, 'data', 'emoji_sequences.json'), encoding='utf-8'))
+    return [''.join(chr(int(h, 16)) for h in x.split()) for x in d['fully_qualified']]
+
+
+FQ_LIST = _fq()
+FQ = set(FQ_LIST)
+ZWJ, VS16, MALE, FEMALE = '\u200d', '\ufe0f', '\u2642\ufe0f', '\u2640\ufe0f'
+TONES = {chr(c) for c in range(0x1F3FB, 0x1F400)}
+PERSON, MAN, WOMAN = '\U0001F9D1', '\U0001F468', '\U0001F469'
+BOY, GIRL, CHILD = '\U0001F466', '\U0001F467', '\U0001F9D2'
+
+
+def q(base):
+    """The fully-qualified form of a base: as is, or with U+FE0F."""
+    for c in (base, base + VS16):
+        if c in FQ:
+            return c
+    raise KeyError(f'no fully-qualified form of {base!r}')
+
+
+def by_role(obj):
+    """person, man, woman + ZWJ + object (the profession pattern)."""
+    return [q(p + ZWJ + obj) if (p + ZWJ + obj) in FQ else q(p + ZWJ + obj.rstrip(VS16)) for p in (PERSON, MAN, WOMAN)]
+
+
+def by_gender(base):
+    """base, base + ZWJ + male sign, base + ZWJ + female sign."""
+    b = q(base)
+    return [b, b + ZWJ + MALE, b + ZWJ + FEMALE]
+
+
+def people_only(seq, members):
+    parts = seq.split(ZWJ)
+    return len(parts) >= 2 and all(p in members for p in parts)
+
+
+def families():
+    adults = [s for s in FQ_LIST if people_only(s, {PERSON, CHILD}) and CHILD in s and not (TONES & set(s))]
+    parents = [s for s in FQ_LIST if people_only(s, {MAN, WOMAN, BOY, GIRL}) and (BOY in s or GIRL in s)]
+    shown = MAN + ZWJ + WOMAN + ZWJ + GIRL + ZWJ + BOY  # carried by the page's older children section
+    return ['\U0001F46A'] + adults + [s for s in parents if s != shown]
+
+
+def couples():
+    toneless = [s for s in FQ_LIST if not (TONES & set(s))]
+    kiss = [s for s in toneless if '\U0001F48B' in s and ZWJ in s]
+    heart = [s for s in toneless if s.split(ZWJ)[0] in (MAN, WOMAN) and '\u2764\ufe0f' in s and '\U0001F48B' not in s]
+    return [PERSON + ZWJ + '\U0001F91D' + ZWJ + PERSON, '\U0001F46D', '\U0001F46B', '\U0001F46C', '\U0001F48F'] + kiss + ['\U0001F491'] + heart
+
+
+def emo(seqs):
+    return [(s, None) for s in seqs]
+
+
+GESTURE_PERSONS = '\U0001F647\U0001F481\U0001F926\U0001F937\U0001F64B\U0001F646\U0001F645'  # bowing, tipping hand, facepalm, shrug, raising hand, OK, NO
+# Tiles a page must carry somewhere (added inside existing sections, whose other tiles are curated).
+INCLUDES = {
+    'people': lambda: [x for o in ('\U0001F393', '\U0001F4BC', '\U0001F3A8', '\U0001F3A4', '\U0001F52C', '\U0001F527', '\U0001F37C')
+                       for x in by_role(o)],
+    'gestures': lambda: [x for b in GESTURE_PERSONS for x in by_gender(b)] + ['\U0001FAC6'],
+    'hands': lambda: ['\U0001FAF7', '\U0001FAF8', '\U0001F933'],
+}
+
+
 # label kinds: 'neutral' (must equal EN), 'worded' (EN checked against UCD, locales must differ from EN)
 CLUSTERS = {
     'braille': {
@@ -207,6 +284,29 @@ CLUSTERS = {
             'keycap-number-emoji': (lambda lc: KEYCAPS, 'keycap'),
         },
     },
+    'people': {
+        'pages': {'en': 'library/people-profession-emojis', 'es': 'es/library/emojis-de-profesiones'},
+        'sections': {
+            'farm-factory-emoji': (lambda lc: emo(by_role('\U0001F33E') + by_role('\U0001F3ED')), 'emoji'),
+            'pilot-astronaut-emoji': (lambda lc: emo(by_role('\u2708\ufe0f') + by_role('\U0001F680')), 'emoji'),
+            'detective-guard-emoji': (lambda lc: emo(by_gender('\U0001F575') + by_gender('\U0001F482') + ['\U0001F977']), 'emoji'),
+            'royalty-wedding-emoji': (lambda lc: emo(['\U0001FAC5', '\U0001F934', '\U0001F478'] + by_gender('\U0001F935') + by_gender('\U0001F470')), 'emoji'),
+            'head-covering-emoji': (lambda lc: emo(by_gender('\U0001F473') + ['\U0001F472', '\U0001F9D5']), 'emoji'),
+            'couples-emoji': (lambda lc: emo(couples()), 'emoji'),
+            'family-emoji': (lambda lc: emo(families()), 'emoji'),
+        },
+    },
+    'gestures': {
+        'pages': {'en': 'library/body-language-emojis', 'es': 'es/library/emojis-lenguaje-corporal'},
+        'sections': {
+            'frowning-pouting-deaf': (lambda lc: emo(by_gender('\U0001F64D') + by_gender('\U0001F64E') + by_gender('\U0001F9CF')), 'emoji'),
+        },
+    },
+    'hands': {
+        'pages': {'en': 'library/hand-symbols', 'de': 'de/library/hand-symbole', 'ru': 'ru/library/simvoly-ruk',
+                  'es': 'es/library/simbolos-de-manos', 'ja': 'ja/library/te-emoji', 'ko': 'ko/library/son-giho'},
+        'sections': {},
+    },
     'dice': {
         'pages': {'en': 'library/dice-domino-symbols'},
         'sections': {
@@ -230,7 +330,7 @@ TILE_RE = re.compile(r'<button class="flag-emoji symbol-tile" data-symbol="([^"]
 
 def sections_of(text):
     out = {}
-    for m in re.finditer(r'<section class="mood-explainers" id="([^"]+)">(.*?)</section>', text, re.S):
+    for m in re.finditer(r'<section class="mood-explainers" id="([^"]+)"[^>]*>(.*?)</section>', text, re.S):
         out.setdefault(m.group(1), []).append(
             [(html.unescape(a), html.unescape(b), html.unescape(c)) for a, b, c in TILE_RE.findall(m.group(2))])
     return out
@@ -250,7 +350,12 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors, page_text=No
     for i, (sym, aria, label) in enumerate(tiles):
         tag = f'{where} tile {i + 1} {sym!r}'
         cpl = [ord(c) for c in sym]
-        if kind == 'keycap':
+        if kind == 'emoji':
+            if sym not in FQ:
+                errors.append(f'{tag}: not a fully-qualified emoji sequence')
+            if TONES & set(sym):
+                errors.append(f'{tag}: carries a skin-tone modifier')
+        elif kind == 'keycap':
             if not (len(cpl) == 3 and cpl[1:] == [0xFE0F, 0x20E3] and sym[0] in '0123456789#*') and sym != '\U0001F51F':
                 errors.append(f'{tag}: not a fully-qualified keycap (base + U+FE0F + U+20E3)')
         elif any(c in VS_OR_JOINER for c in cpl):
@@ -262,7 +367,7 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors, page_text=No
                 errors.append(f'{tag}: U+{c:04X} is unassigned or unnamed')
             if c in EXCLUDED and not where.endswith('#' + EXCLUDED_HOME):
                 errors.append(f'{tag}: U+{c:04X} is excluded (no Android system glyph)')
-        if len(cpl) != 1 and kind != 'keycap' and not (kind == 'braille-alphabet' and len(cpl) == 2 and sym[0] == NUMBER_SIGN):
+        if len(cpl) != 1 and kind not in ('keycap', 'emoji') and not (kind == 'braille-alphabet' and len(cpl) == 2 and sym[0] == NUMBER_SIGN):
             errors.append(f'{tag}: {len(cpl)} code points in a single-character tile')
         if not label.strip() or not aria.strip():
             errors.append(f'{tag}: empty label or aria-label')
@@ -303,7 +408,7 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors, page_text=No
             en_label = dict((t[0], t[2]) for t in en_tiles).get(sym)
             if en_label is not None and label == en_label:
                 errors.append(f'{tag}: label is the English one ({label!r}); a {lc} page needs its own wording')
-        if en_tiles is not None and kind in ('box', 'card', 'roman', 'arrow'):
+        if en_tiles is not None and kind in ('box', 'card', 'roman', 'arrow', 'emoji'):
             en_label = dict((t[0], t[2]) for t in en_tiles).get(sym)
             if en_label is not None and label == en_label:
                 errors.append(f'{tag}: label is the English one ({label!r}); a {lc} page needs its own wording')
@@ -324,6 +429,14 @@ def run(read=lambda p: open(os.path.join(ROOT, p, 'index.html'), encoding='utf-8
                 continue
             if lc == 'en':
                 en_secs = secs
+            if cname in INCLUDES:
+                text = read(path)
+                have = {html.unescape(x) for x in re.findall(r'data-symbol="([^"]*)"', text)}
+                for seq in INCLUDES[cname]():
+                    if seq not in have:
+                        errors.append(f'/{path}/: missing the tile {seq!r}')
+                    elif seq not in FQ:
+                        errors.append(f'/{path}/: {seq!r} is not a fully-qualified emoji sequence')
             for sid, (expect, kind) in c['sections'].items():
                 where = f'/{path}/#{sid}'
                 found = secs.get(sid, [])
@@ -363,13 +476,19 @@ def self_test():
                                           .replace('data-symbol="3️⃣"', 'data-symbol="3⃣"', 1), 'fully-qualified keycap')
     mutations['Android note removed'] = (cpath, cgood.replace('Android', 'XXXX'), 'must say so')
     mutations['trump numeral wrong'] = (cpath, cgood.replace('<span class="flag-label">XIV</span>', '<span class="flag-label">XV</span>', 1), 'expected trump XIV')
+    ppath = CLUSTERS['people']['pages']['es']
+    pgood = open(os.path.join(ROOT, ppath, 'index.html'), encoding='utf-8').read()
+    mutations['emoji not fully qualified'] = (ppath, pgood.replace('data-symbol="🕵️"', 'data-symbol="🕵"', 1), 'not a fully-qualified emoji')
+    mutations['family tile dropped'] = (ppath, re.sub(r'\s*<div class="flag-row">\s*<button[^>]*data-symbol="👩‍👧‍👧"[^<]*</button>\s*<span[^<]*</span>\s*</div>', '', pgood, count=1), 'set/order differs')
+    mutations['toned tile'] = (ppath, pgood.replace('data-symbol="👨‍✈️"', 'data-symbol="👨🏽‍✈️"', 1), 'skin-tone modifier')
+    mutations['inserted tile missing'] = (ppath, pgood.replace('data-symbol="👩‍🎓"', 'data-symbol="🎓"', 1), "missing the tile")
     failed = []
     for name, (mpath, text, expect) in mutations.items():
-        orig = {path: good, cpath: cgood, npath: ngood}[mpath]
+        orig = {path: good, cpath: cgood, npath: ngood, ppath: pgood}[mpath]
         if text == orig:
             failed.append(f'{name}: the mutation did not apply (fixture drifted)')
             continue
-        only = {path: 'braille', cpath: 'cards', npath: 'numbers'}[mpath]
+        only = {path: 'braille', cpath: 'cards', npath: 'numbers', ppath: 'people'}[mpath]
         errs, _, _ = run(lambda p, mp=mpath, t=text: t if p == mp else open(os.path.join(ROOT, p, 'index.html'), encoding='utf-8').read(), only)
         hit = [e for e in errs if expect in e]
         if not hit:
