@@ -857,6 +857,28 @@ here so they aren't lost. Update as they're closed or new ones appear.
     Input note: `gh pr list` is blocked (GraphQL), so the digest was rebuilt
     from the REST `pulls` and `pulls/<n>/files` endpoints and fed to
     `weekly_pr_digest.py` on stdin, as in #25.
+27. **Review of 2026-10-24 (PRs #1075-#1085, 12 merged since the 10-17
+    review): no new lane; the symbol lane's gate changed, and the classifier
+    gaps are unchanged.**
+    - **Symbol pages gained a state gate** (#1083): `check-symbol-pages.py`
+      grew a page-state check, with `audit-symbol-pages.py` and
+      `test-symbol-pages.py` beside it, all wired into `validate.yml`. The
+      same PR put a codes-and-typing table on about 700 symbol pages across
+      the locales and moved the FAQ block above the footer on 263. Follow-ups
+      #1084 and #1085 are content fixes in the same lane. The gate is already
+      in the generated inventory; the lane row's validator column is the only
+      place that may now read short.
+    - **Open classifier gaps, unchanged:** root `llms.txt` (#1079, #1080;
+      gap #24), `reportcard.md` (#1078; gap #25) and root `renderer.case.test.js`
+      (#1080; gaps #18 and #26). The `LANE_RULES` additions named in #24, #25
+      and #26 are still unmade; nothing here is a new lane.
+    - **Placed, no map change:** the French Fortnite name checker and
+      `vi/library/ky-tu-no` (#1079, #1081), the Wave 0 repairs (#1080, #1062)
+      and the character-counter emoji note (#1076).
+    Input note: `gh` and the API file lists were too large to use, so the PR
+    set came from the REST merged-PR search (15 merged since 2026-10-17) and
+    per-PR file lists from `origin/main` merge commits; the digest was not
+    regenerated.
 
 ---
 
