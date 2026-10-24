@@ -162,6 +162,15 @@
       "plain": "Kopier vanlig versjon",
       "emoji": "Kopier emoji-versjon",
       "note": "Noen apper viser symbolet i farger likevel."
+    },
+    "skinTone": {
+      "label": "Hudfarge",
+      "default": "Standard (gul)",
+      "light": "Lys",
+      "mediumLight": "Middels lys",
+      "medium": "Middels",
+      "mediumDark": "Middels mørk",
+      "dark": "Mørk"
     }
   },
   "useCases": {

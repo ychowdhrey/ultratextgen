@@ -57,7 +57,15 @@ const KEYS = {
   // text and an emoji presentation (2026-10-07).
   lookPlain: 'symbolLook.plain',
   lookEmoji: 'symbolLook.emoji',
-  lookNote: 'symbolLook.note'
+  lookNote: 'symbolLook.note',
+  // The skin-tone picker on opted-in library sections (2026-10-24).
+  skinTone: 'skinTone.label',
+  toneDefault: 'skinTone.default',
+  toneLight: 'skinTone.light',
+  toneMediumLight: 'skinTone.mediumLight',
+  toneMedium: 'skinTone.medium',
+  toneMediumDark: 'skinTone.mediumDark',
+  toneDark: 'skinTone.dark'
 };
 
 /** The selection UI itself (js/share/image-selection.js) is loaded only when

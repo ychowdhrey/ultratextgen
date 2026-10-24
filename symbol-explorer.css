@@ -945,3 +945,37 @@ body.dark-mode .symbol-collection-add { --accent-purple-text: #c4b5fd; }
 @media (prefers-reduced-motion: reduce) {
   .symbol-select-btn { transition: none; }
 }
+
+/* ---- Skin tone picker (opt-in sections: section[data-skin-tone]) ---- */
+.skin-tone-picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin: 0 auto 1rem;
+}
+.skin-tone-picker-label {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.skin-tone-picker button {
+  min-width: 44px;
+  min-height: 44px;
+  font-size: 1.35rem;
+  line-height: 1;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: var(--bg-white);
+  cursor: pointer;
+}
+.skin-tone-picker button[aria-pressed="true"] {
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 2px var(--accent-purple);
+}
+.skin-tone-picker button:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 2px;
+}

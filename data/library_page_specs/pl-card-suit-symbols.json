@@ -441,6 +441,106 @@
       ]
     },
     {
+      "id": "tarot-trumps-red-joker",
+      "label": "Atuty tarota",
+      "h2": "Atuty tarota i czerwony joker",
+      "intro": "21 numerowanych atutów i Głupiec z francuskiego tarota oraz czerwony joker. Wbudowane czcionki Androida nie mają glifów dla tych 23 kart (sprawdzone w plikach czcionek dostarczanych z Androidem), więc większość telefonów z Androidem pokaże puste pole. Skopiowany znak jest nadal poprawny i wyświetli się na każdym urządzeniu, którego czcionki go zawierają.",
+      "symbols": [
+        {
+          "char": "🃠",
+          "label": "Głupiec (0)"
+        },
+        {
+          "char": "🃡",
+          "label": "I"
+        },
+        {
+          "char": "🃢",
+          "label": "II"
+        },
+        {
+          "char": "🃣",
+          "label": "III"
+        },
+        {
+          "char": "🃤",
+          "label": "IV"
+        },
+        {
+          "char": "🃥",
+          "label": "V"
+        },
+        {
+          "char": "🃦",
+          "label": "VI"
+        },
+        {
+          "char": "🃧",
+          "label": "VII"
+        },
+        {
+          "char": "🃨",
+          "label": "VIII"
+        },
+        {
+          "char": "🃩",
+          "label": "IX"
+        },
+        {
+          "char": "🃪",
+          "label": "X"
+        },
+        {
+          "char": "🃫",
+          "label": "XI"
+        },
+        {
+          "char": "🃬",
+          "label": "XII"
+        },
+        {
+          "char": "🃭",
+          "label": "XIII"
+        },
+        {
+          "char": "🃮",
+          "label": "XIV"
+        },
+        {
+          "char": "🃯",
+          "label": "XV"
+        },
+        {
+          "char": "🃰",
+          "label": "XVI"
+        },
+        {
+          "char": "🃱",
+          "label": "XVII"
+        },
+        {
+          "char": "🃲",
+          "label": "XVIII"
+        },
+        {
+          "char": "🃳",
+          "label": "XIX"
+        },
+        {
+          "char": "🃴",
+          "label": "XX"
+        },
+        {
+          "char": "🃵",
+          "label": "XXI"
+        },
+        {
+          "char": "🂿",
+          "label": "Czerwony joker"
+        }
+      ]
+    },
+    {
       "id": "s7",
       "label": "Symbole gier",
       "h2": "Symbole gier",
