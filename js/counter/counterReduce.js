@@ -411,6 +411,16 @@
     0xFFA0: ["Halfwidth Hangul Filler", "invisible"]
   };
   const PICTO_RE = /\p{Extended_Pictographic}/u;
+  const EMOJI_MOD_RE = /\p{Emoji_Modifier}/u;
+
+  /** A joiner inside an emoji sequence. The character before it is often not the
+      pictograph itself: U+FE0F (rainbow flag, heart on fire) or a skin-tone
+      modifier (a toned astronaut) sits between the two, so look back past those. */
+  function joinsEmoji(chars, i) {
+    let j = i - 1;
+    while (j >= 0 && (chars[j] === "\uFE0F" || EMOJI_MOD_RE.test(chars[j]))) j--;
+    return j >= 0 && i < chars.length - 1 && PICTO_RE.test(chars[j]) && PICTO_RE.test(chars[i + 1]);
+  }
 
   function hexCp(cp) {
     return "U+" + cp.toString(16).toUpperCase().padStart(4, "0");
@@ -430,8 +440,7 @@
       const cp = ch.codePointAt(0);
       const hit = HIDDEN[cp];
       if (!hit) continue;
-      if (cp === 0x200D && i > 0 && i < chars.length - 1 &&
-          PICTO_RE.test(chars[i - 1]) && PICTO_RE.test(chars[i + 1])) continue;
+      if (cp === 0x200D && joinsEmoji(chars, i)) continue;
       if (keepsMeaning(chars, i, hasRtl)) continue;
       out.push({ cp: cp, code: hexCp(cp), name: hit[0], kind: hit[1], index: i + 1, line: line, col: col });
     }
