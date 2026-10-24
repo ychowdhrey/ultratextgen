@@ -441,6 +441,106 @@
       ]
     },
     {
+      "id": "tarot-trumps-red-joker",
+      "label": "Tarot Kozları",
+      "h2": "Tarot Kozları ve Kırmızı Joker",
+      "intro": "Fransız tarot destesindeki numaralı 21 koz ile Deli kartı ve kırmızı joker. Android’in yerleşik yazı tiplerinde bu 23 kartın çizimi yok (Android ile gelen yazı tipi dosyalarında kontrol edildi), bu yüzden çoğu Android telefonda boş bir kutu görünür. Kopyaladığınız karakter yine doğrudur ve yazı tiplerinde bu karakter bulunan her cihazda görünür.",
+      "symbols": [
+        {
+          "char": "🃠",
+          "label": "Deli (0)"
+        },
+        {
+          "char": "🃡",
+          "label": "I"
+        },
+        {
+          "char": "🃢",
+          "label": "II"
+        },
+        {
+          "char": "🃣",
+          "label": "III"
+        },
+        {
+          "char": "🃤",
+          "label": "IV"
+        },
+        {
+          "char": "🃥",
+          "label": "V"
+        },
+        {
+          "char": "🃦",
+          "label": "VI"
+        },
+        {
+          "char": "🃧",
+          "label": "VII"
+        },
+        {
+          "char": "🃨",
+          "label": "VIII"
+        },
+        {
+          "char": "🃩",
+          "label": "IX"
+        },
+        {
+          "char": "🃪",
+          "label": "X"
+        },
+        {
+          "char": "🃫",
+          "label": "XI"
+        },
+        {
+          "char": "🃬",
+          "label": "XII"
+        },
+        {
+          "char": "🃭",
+          "label": "XIII"
+        },
+        {
+          "char": "🃮",
+          "label": "XIV"
+        },
+        {
+          "char": "🃯",
+          "label": "XV"
+        },
+        {
+          "char": "🃰",
+          "label": "XVI"
+        },
+        {
+          "char": "🃱",
+          "label": "XVII"
+        },
+        {
+          "char": "🃲",
+          "label": "XVIII"
+        },
+        {
+          "char": "🃳",
+          "label": "XIX"
+        },
+        {
+          "char": "🃴",
+          "label": "XX"
+        },
+        {
+          "char": "🃵",
+          "label": "XXI"
+        },
+        {
+          "char": "🂿",
+          "label": "Kırmızı Joker"
+        }
+      ]
+    },
+    {
       "id": "game-symbols",
       "label": "Oyun",
       "h2": "Oyun Sembolleri",

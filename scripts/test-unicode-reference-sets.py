@@ -11,6 +11,7 @@ and their locale siblings carry the same sections:
   * card-suit-symbols        (en + 8 locales; sv held): the 52-card deck, the tarot knights
                                            and the white joker
   * dice-domino-symbols      (en): every domino tile and the mahjong set
+  * arrow-symbols            (en + 19 locales): 40 curated arrows, each drawn by Android
   * number-symbols           (en + 6 locales): Roman numerals past XII and the
                                            keycap emoji (id/font-angka is a
                                            generator page with no tiles)
@@ -32,8 +33,9 @@ Checks, per section and per locale:
   6. a locale sibling carries the same code points in the same order, and its
      worded labels are not the English ones (dot numbers and letters are
      language-neutral and must match instead);
-  7. nothing from the excluded sets ships: tarot trumps U+1F0E0..U+1F0F5 and
-     the red joker U+1F0BF, which Android's system symbol font does not draw.
+  7. the sets Android's system fonts cannot draw (tarot trumps U+1F0E0..U+1F0F5 and the red
+     joker U+1F0BF) appear only in their own section, and that section must tell the reader so;
+     every arrow in the arrow sections is one Android draws.
 
 `--self-test` runs the checker against deliberately broken copies of a page and
 fails unless every mutation is caught, so this cannot go quietly inert.
@@ -49,7 +51,13 @@ import unicodedata
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 VS_OR_JOINER = {0xFE0E, 0xFE0F, 0x200D}
+# Android's system fonts draw none of these (AOSP font cmaps, 2026-10-24). They may appear ONLY in the
+# section whose paragraph tells the reader so, never mixed into a set presented as drawable.
 EXCLUDED = set(range(0x1F0E0, 0x1F0F6)) | {0x1F0BF}
+EXCLUDED_HOME = 'tarot-trumps-red-joker'
+TAROT = [0x1F0E0] + list(range(0x1F0E1, 0x1F0F6)) + [0x1F0BF]
+ROMAN_21 = 'I II III IV V VI VII VIII IX X XI XII XIII XIV XV XVI XVII XVIII XIX XX XXI'.split()
+ARROWS = '⤒⤡⤢⥀⥁⟲⤸⤹⤺⤻⤶⤷' + '⟺⟻⟼⟽⟾⟿⟰⟱⟴' + '⬀⬁⬂⬃⬄⬈⬉⬊⬋⬌⬍⬎⬏⬐⬑⤣⤤⤥⤦'
 
 # ---------------------------------------------------------------- expected sets
 
@@ -174,6 +182,21 @@ CLUSTERS = {
         'sections': {
             'full-deck-52-cards': (lambda lc: cps(DECK), 'card'),
             'tarot-knights-white-joker': (lambda lc: cps(KNIGHTS + [0x1F0DF]), 'card'),
+            'tarot-trumps-red-joker': (lambda lc: cps(TAROT), 'tarot'),
+        },
+    },
+    'arrows': {
+        'pages': {'en': 'library/arrow-symbols', 'ar': 'ar/library/arrow-symbols', 'de': 'de/library/pfeil-symbole',
+                  'es': 'es/simbolos-de-flechas', 'fr': 'fr/library/symboles-fleches', 'id': 'id/library/simbol-panah',
+                  'ja': 'ja/library/arrow-symbols', 'ko': 'ko/library/hwasalpyo-giho', 'pt': 'pt/library/setas',
+                  'vi': 'vi/ki-tu-mui-ten', 'nl': 'nl/library/pijl-symbolen', 'tr': 'tr/library/ok-isaretleri',
+                  'sv': 'sv/library/pil-symboler', 'da': 'da/library/pil-symboler', 'zh-TW': 'zh-tw/library/jiantou-fuhao',
+                  'it': 'it/library/simboli-freccia', 'pl': 'pl/library/symbole-strzalek', 'ru': 'ru/library/strelki',
+                  'th': 'th/library/arrow-symbols', 'no': 'no/library/pilsymboler'},
+        'sections': {
+            'arrows-upload-resize-circle': (lambda lc: cps(map(ord, ARROWS[:12])), 'arrow'),
+            'arrows-long-extended': (lambda lc: cps(map(ord, ARROWS[12:21])), 'arrow'),
+            'arrows-diagonal-bent-hooked': (lambda lc: cps(map(ord, ARROWS[21:])), 'arrow'),
         },
     },
     'numbers': {
@@ -218,7 +241,7 @@ def sections_of(text):
 
 # ---------------------------------------------------------------- checks
 
-def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors):
+def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors, page_text=None):
     syms = [t[0] for t in tiles]
     want = [e[0] for e in expected]
     if syms != want:
@@ -240,7 +263,7 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors):
                 unicodedata.name(chr(c))
             except ValueError:
                 errors.append(f'{tag}: U+{c:04X} is unassigned or unnamed')
-            if c in EXCLUDED:
+            if c in EXCLUDED and not where.endswith('#' + EXCLUDED_HOME):
                 errors.append(f'{tag}: U+{c:04X} is excluded (no Android system glyph)')
         if len(cpl) != 1 and kind != 'keycap' and not (kind == 'braille-alphabet' and len(cpl) == 2 and sym[0] == NUMBER_SIGN):
             errors.append(f'{tag}: {len(cpl)} code points in a single-character tile')
@@ -269,14 +292,31 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors):
                 errors.append(f'{tag}: label {label!r}, expected {roman_en_label(cp)!r}')
             if kind == 'mahjong' and label != unicodedata.name(chr(cp)).title().replace(' Of ', ' of '):
                 errors.append(f'{tag}: label {label!r} does not match its UCD name')
-        elif en_tiles is not None and kind in ('box', 'card', 'roman'):
+        if kind == 'tarot':
+            cp = cpl[0]
+            if 0x1F0E1 <= cp <= 0x1F0F5 and label != ROMAN_21[cp - 0x1F0E1]:
+                errors.append(f'{tag}: label {label!r}, expected trump {ROMAN_21[cp - 0x1F0E1]}')
+            if cp == 0x1F0E0 and not label.endswith('(0)') and not label.endswith('（0）'):
+                errors.append(f'{tag}: the Fool is numbered 0; label {label!r}')
+        if kind in ('tarot',) and lc == 'en' and cpl[0] in (0x1F0E0, 0x1F0BF) and label not in ('Fool (0)', 'Red Joker'):
+            errors.append(f'{tag}: label {label!r}')
+        if kind == 'arrow' and lc == 'en' and not label:
+            errors.append(f'{tag}: empty label')
+        if en_tiles is not None and kind == 'tarot' and cpl[0] in (0x1F0E0, 0x1F0BF):
             en_label = dict((t[0], t[2]) for t in en_tiles).get(sym)
             if en_label is not None and label == en_label:
+                errors.append(f'{tag}: label is the English one ({label!r}); a {lc} page needs its own wording')
+        if en_tiles is not None and kind in ('box', 'card', 'roman', 'arrow'):
+            en_label = dict((t[0], t[2]) for t in en_tiles).get(sym)
+            # "Upload ⤒" is the established loanword where the same page already labels ⤓ "Download ⤓" (de, pt, da)
+            loan = kind == 'arrow' and label == 'Upload ⤒' and page_text and '>Download ⤓</span>' in page_text
+            if en_label is not None and label == en_label and not loan:
                 errors.append(f'{tag}: label is the English one ({label!r}); a {lc} page needs its own wording')
 
 
 def run(read=lambda p: open(os.path.join(ROOT, p, 'index.html'), encoding='utf-8').read(), only=None):
     errors, missing_pages, n_tiles = [], [], 0
+    android_note_missing = []
     for cname, c in CLUSTERS.items():
         if only and cname != only:
             continue
@@ -296,9 +336,11 @@ def run(read=lambda p: open(os.path.join(ROOT, p, 'index.html'), encoding='utf-8
                     errors.append(f'{where}: section found {len(found)} times, expected once')
                     continue
                 tiles = found[0]
+                if sid == EXCLUDED_HOME and not any(w in read(path) for w in ('Android', '안드로이드')):
+                    errors.append(f'{where}: the section carrying glyphs Android cannot draw must say so')
                 n_tiles += len(tiles)
                 en_tiles = en_secs.get(sid, [None])[0] if en_secs and lc != 'en' else None
-                check_tiles(where, tiles, expect(lc), kind, lc, en_tiles, errors)
+                check_tiles(where, tiles, expect(lc), kind, lc, en_tiles, errors, read(path))
     return errors, missing_pages, n_tiles
 
 
@@ -324,6 +366,8 @@ def self_test():
     ngood = open(os.path.join(ROOT, npath, 'index.html'), encoding='utf-8').read()
     mutations['keycap without U+FE0F'] = (npath, ngood.replace('data-symbol="3&#xFE0F;&#x20E3;"', 'data-symbol="3&#x20E3;"', 1)
                                           .replace('data-symbol="3️⃣"', 'data-symbol="3⃣"', 1), 'fully-qualified keycap')
+    mutations['Android note removed'] = (cpath, cgood.replace('Android', 'XXXX'), 'must say so')
+    mutations['trump numeral wrong'] = (cpath, cgood.replace('<span class="flag-label">XIV</span>', '<span class="flag-label">XV</span>', 1), 'expected trump XIV')
     failed = []
     for name, (mpath, text, expect) in mutations.items():
         orig = {path: good, cpath: cgood, npath: ngood}[mpath]

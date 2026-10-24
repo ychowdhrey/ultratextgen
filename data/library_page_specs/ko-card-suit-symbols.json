@@ -409,6 +409,106 @@
       ]
     },
     {
+      "id": "tarot-trumps-red-joker",
+      "label": "타로 트럼프",
+      "h2": "타로 트럼프와 빨간 조커",
+      "intro": "프랑스식 타로의 번호가 있는 트럼프 21장과 바보 카드, 그리고 빨간 조커입니다. 안드로이드 기본 글꼴에는 이 23장의 글자 모양이 없어서(안드로이드에 들어 있는 글꼴 파일로 확인) 대부분의 안드로이드 휴대폰에서는 빈 네모로 보입니다. 복사되는 문자는 그대로 정확하며, 이 문자가 들어 있는 글꼴이 있는 기기에서는 제대로 보입니다.",
+      "symbols": [
+        {
+          "char": "🃠",
+          "label": "바보 (0)"
+        },
+        {
+          "char": "🃡",
+          "label": "I"
+        },
+        {
+          "char": "🃢",
+          "label": "II"
+        },
+        {
+          "char": "🃣",
+          "label": "III"
+        },
+        {
+          "char": "🃤",
+          "label": "IV"
+        },
+        {
+          "char": "🃥",
+          "label": "V"
+        },
+        {
+          "char": "🃦",
+          "label": "VI"
+        },
+        {
+          "char": "🃧",
+          "label": "VII"
+        },
+        {
+          "char": "🃨",
+          "label": "VIII"
+        },
+        {
+          "char": "🃩",
+          "label": "IX"
+        },
+        {
+          "char": "🃪",
+          "label": "X"
+        },
+        {
+          "char": "🃫",
+          "label": "XI"
+        },
+        {
+          "char": "🃬",
+          "label": "XII"
+        },
+        {
+          "char": "🃭",
+          "label": "XIII"
+        },
+        {
+          "char": "🃮",
+          "label": "XIV"
+        },
+        {
+          "char": "🃯",
+          "label": "XV"
+        },
+        {
+          "char": "🃰",
+          "label": "XVI"
+        },
+        {
+          "char": "🃱",
+          "label": "XVII"
+        },
+        {
+          "char": "🃲",
+          "label": "XVIII"
+        },
+        {
+          "char": "🃳",
+          "label": "XIX"
+        },
+        {
+          "char": "🃴",
+          "label": "XX"
+        },
+        {
+          "char": "🃵",
+          "label": "XXI"
+        },
+        {
+          "char": "🂿",
+          "label": "빨간 조커"
+        }
+      ]
+    },
+    {
       "id": "s6",
       "label": "주사위 눈",
       "h2": "주사위 눈 1~6",

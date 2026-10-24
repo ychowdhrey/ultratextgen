@@ -441,6 +441,106 @@
       ]
     },
     {
+      "id": "tarot-trumps-red-joker",
+      "label": "タロットの切り札",
+      "h2": "タロットの切り札と赤いジョーカー",
+      "intro": "フランス式タロットの番号付き切り札21枚と愚者、そして赤いジョーカーです。Androidの標準フォントにはこの23枚の字形がないため（Androidに同梱されているフォントファイルで確認）、多くのAndroid端末では空の四角で表示されます。コピーされる文字自体は正しく、その文字を含むフォントがある端末では表示されます。",
+      "symbols": [
+        {
+          "char": "🃠",
+          "label": "愚者（0）"
+        },
+        {
+          "char": "🃡",
+          "label": "I"
+        },
+        {
+          "char": "🃢",
+          "label": "II"
+        },
+        {
+          "char": "🃣",
+          "label": "III"
+        },
+        {
+          "char": "🃤",
+          "label": "IV"
+        },
+        {
+          "char": "🃥",
+          "label": "V"
+        },
+        {
+          "char": "🃦",
+          "label": "VI"
+        },
+        {
+          "char": "🃧",
+          "label": "VII"
+        },
+        {
+          "char": "🃨",
+          "label": "VIII"
+        },
+        {
+          "char": "🃩",
+          "label": "IX"
+        },
+        {
+          "char": "🃪",
+          "label": "X"
+        },
+        {
+          "char": "🃫",
+          "label": "XI"
+        },
+        {
+          "char": "🃬",
+          "label": "XII"
+        },
+        {
+          "char": "🃭",
+          "label": "XIII"
+        },
+        {
+          "char": "🃮",
+          "label": "XIV"
+        },
+        {
+          "char": "🃯",
+          "label": "XV"
+        },
+        {
+          "char": "🃰",
+          "label": "XVI"
+        },
+        {
+          "char": "🃱",
+          "label": "XVII"
+        },
+        {
+          "char": "🃲",
+          "label": "XVIII"
+        },
+        {
+          "char": "🃳",
+          "label": "XIX"
+        },
+        {
+          "char": "🃴",
+          "label": "XX"
+        },
+        {
+          "char": "🃵",
+          "label": "XXI"
+        },
+        {
+          "char": "🂿",
+          "label": "赤いジョーカー"
+        }
+      ]
+    },
+    {
       "id": "s7",
       "label": "ゲームの記号",
       "h2": "ゲームの記号",
