@@ -217,6 +217,690 @@
       ]
     },
     {
+      "id": "hiragana-gojuon-chart",
+      "label": "Hiragana-Tabelle",
+      "h2": "Vollständige Hiragana-Tabelle: alle 46 Grundzeichen",
+      "intro": "Die 46 Grundzeichen der Hiragana in Gojūon-Reihenfolge, Zeile für Zeile: a, ka, sa, ta, na, ha, ma, ya, ra, wa und zum Schluss n. Unter jedem Zeichen steht die Hepburn-Umschrift. ゐ (wi) und ゑ (we) fehlen, weil sie seit 1946 nicht mehr zur Standardschreibung gehören.",
+      "symbols": [
+        {
+          "char": "あ",
+          "label": "a"
+        },
+        {
+          "char": "い",
+          "label": "i"
+        },
+        {
+          "char": "う",
+          "label": "u"
+        },
+        {
+          "char": "え",
+          "label": "e"
+        },
+        {
+          "char": "お",
+          "label": "o"
+        },
+        {
+          "char": "か",
+          "label": "ka"
+        },
+        {
+          "char": "き",
+          "label": "ki"
+        },
+        {
+          "char": "く",
+          "label": "ku"
+        },
+        {
+          "char": "け",
+          "label": "ke"
+        },
+        {
+          "char": "こ",
+          "label": "ko"
+        },
+        {
+          "char": "さ",
+          "label": "sa"
+        },
+        {
+          "char": "し",
+          "label": "shi"
+        },
+        {
+          "char": "す",
+          "label": "su"
+        },
+        {
+          "char": "せ",
+          "label": "se"
+        },
+        {
+          "char": "そ",
+          "label": "so"
+        },
+        {
+          "char": "た",
+          "label": "ta"
+        },
+        {
+          "char": "ち",
+          "label": "chi"
+        },
+        {
+          "char": "つ",
+          "label": "tsu"
+        },
+        {
+          "char": "て",
+          "label": "te"
+        },
+        {
+          "char": "と",
+          "label": "to"
+        },
+        {
+          "char": "な",
+          "label": "na"
+        },
+        {
+          "char": "に",
+          "label": "ni"
+        },
+        {
+          "char": "ぬ",
+          "label": "nu"
+        },
+        {
+          "char": "ね",
+          "label": "ne"
+        },
+        {
+          "char": "の",
+          "label": "no"
+        },
+        {
+          "char": "は",
+          "label": "ha"
+        },
+        {
+          "char": "ひ",
+          "label": "hi"
+        },
+        {
+          "char": "ふ",
+          "label": "fu"
+        },
+        {
+          "char": "へ",
+          "label": "he"
+        },
+        {
+          "char": "ほ",
+          "label": "ho"
+        },
+        {
+          "char": "ま",
+          "label": "ma"
+        },
+        {
+          "char": "み",
+          "label": "mi"
+        },
+        {
+          "char": "む",
+          "label": "mu"
+        },
+        {
+          "char": "め",
+          "label": "me"
+        },
+        {
+          "char": "も",
+          "label": "mo"
+        },
+        {
+          "char": "や",
+          "label": "ya"
+        },
+        {
+          "char": "ゆ",
+          "label": "yu"
+        },
+        {
+          "char": "よ",
+          "label": "yo"
+        },
+        {
+          "char": "ら",
+          "label": "ra"
+        },
+        {
+          "char": "り",
+          "label": "ri"
+        },
+        {
+          "char": "る",
+          "label": "ru"
+        },
+        {
+          "char": "れ",
+          "label": "re"
+        },
+        {
+          "char": "ろ",
+          "label": "ro"
+        },
+        {
+          "char": "わ",
+          "label": "wa"
+        },
+        {
+          "char": "を",
+          "label": "wo"
+        },
+        {
+          "char": "ん",
+          "label": "n"
+        }
+      ]
+    },
+    {
+      "id": "hiragana-dakuten-small-kana",
+      "label": "Dakuten & kleine Kana",
+      "h2": "Hiragana mit Dakuten, Handakuten und kleinen Kana",
+      "intro": "Zwei kleine Striche (Dakuten) machen aus k, s, t und h die Laute g, z, d und b, ein kleiner Kreis (Handakuten) macht aus h ein p. Kleine Kana schreiben zusammengesetzte Laute: き + ゃ liest du als kya, ein kleines っ verdoppelt den folgenden Konsonanten. Bei Romaji-Eingabe entsteht ぢ aus di und づ aus du.",
+      "symbols": [
+        {
+          "char": "が",
+          "label": "ga"
+        },
+        {
+          "char": "ぎ",
+          "label": "gi"
+        },
+        {
+          "char": "ぐ",
+          "label": "gu"
+        },
+        {
+          "char": "げ",
+          "label": "ge"
+        },
+        {
+          "char": "ご",
+          "label": "go"
+        },
+        {
+          "char": "ざ",
+          "label": "za"
+        },
+        {
+          "char": "じ",
+          "label": "ji"
+        },
+        {
+          "char": "ず",
+          "label": "zu"
+        },
+        {
+          "char": "ぜ",
+          "label": "ze"
+        },
+        {
+          "char": "ぞ",
+          "label": "zo"
+        },
+        {
+          "char": "だ",
+          "label": "da"
+        },
+        {
+          "char": "ぢ",
+          "label": "ji (di)"
+        },
+        {
+          "char": "づ",
+          "label": "zu (du)"
+        },
+        {
+          "char": "で",
+          "label": "de"
+        },
+        {
+          "char": "ど",
+          "label": "do"
+        },
+        {
+          "char": "ば",
+          "label": "ba"
+        },
+        {
+          "char": "び",
+          "label": "bi"
+        },
+        {
+          "char": "ぶ",
+          "label": "bu"
+        },
+        {
+          "char": "べ",
+          "label": "be"
+        },
+        {
+          "char": "ぼ",
+          "label": "bo"
+        },
+        {
+          "char": "ぱ",
+          "label": "pa"
+        },
+        {
+          "char": "ぴ",
+          "label": "pi"
+        },
+        {
+          "char": "ぷ",
+          "label": "pu"
+        },
+        {
+          "char": "ぺ",
+          "label": "pe"
+        },
+        {
+          "char": "ぽ",
+          "label": "po"
+        },
+        {
+          "char": "ぁ",
+          "label": "kleines a"
+        },
+        {
+          "char": "ぃ",
+          "label": "kleines i"
+        },
+        {
+          "char": "ぅ",
+          "label": "kleines u"
+        },
+        {
+          "char": "ぇ",
+          "label": "kleines e"
+        },
+        {
+          "char": "ぉ",
+          "label": "kleines o"
+        },
+        {
+          "char": "っ",
+          "label": "kleines tsu"
+        },
+        {
+          "char": "ゃ",
+          "label": "kleines ya"
+        },
+        {
+          "char": "ゅ",
+          "label": "kleines yu"
+        },
+        {
+          "char": "ょ",
+          "label": "kleines yo"
+        },
+        {
+          "char": "ゎ",
+          "label": "kleines wa"
+        }
+      ]
+    },
+    {
+      "id": "katakana-gojuon-chart",
+      "label": "Katakana-Tabelle",
+      "h2": "Vollständige Katakana-Tabelle: alle 46 Grundzeichen",
+      "intro": "Dieselben 46 Laute in Katakana, der Schrift für Lehnwörter, ausländische Namen und Betonung, in Gojūon-Reihenfolge mit Hepburn-Umschrift.",
+      "symbols": [
+        {
+          "char": "ア",
+          "label": "a"
+        },
+        {
+          "char": "イ",
+          "label": "i"
+        },
+        {
+          "char": "ウ",
+          "label": "u"
+        },
+        {
+          "char": "エ",
+          "label": "e"
+        },
+        {
+          "char": "オ",
+          "label": "o"
+        },
+        {
+          "char": "カ",
+          "label": "ka"
+        },
+        {
+          "char": "キ",
+          "label": "ki"
+        },
+        {
+          "char": "ク",
+          "label": "ku"
+        },
+        {
+          "char": "ケ",
+          "label": "ke"
+        },
+        {
+          "char": "コ",
+          "label": "ko"
+        },
+        {
+          "char": "サ",
+          "label": "sa"
+        },
+        {
+          "char": "シ",
+          "label": "shi"
+        },
+        {
+          "char": "ス",
+          "label": "su"
+        },
+        {
+          "char": "セ",
+          "label": "se"
+        },
+        {
+          "char": "ソ",
+          "label": "so"
+        },
+        {
+          "char": "タ",
+          "label": "ta"
+        },
+        {
+          "char": "チ",
+          "label": "chi"
+        },
+        {
+          "char": "ツ",
+          "label": "tsu"
+        },
+        {
+          "char": "テ",
+          "label": "te"
+        },
+        {
+          "char": "ト",
+          "label": "to"
+        },
+        {
+          "char": "ナ",
+          "label": "na"
+        },
+        {
+          "char": "ニ",
+          "label": "ni"
+        },
+        {
+          "char": "ヌ",
+          "label": "nu"
+        },
+        {
+          "char": "ネ",
+          "label": "ne"
+        },
+        {
+          "char": "ノ",
+          "label": "no"
+        },
+        {
+          "char": "ハ",
+          "label": "ha"
+        },
+        {
+          "char": "ヒ",
+          "label": "hi"
+        },
+        {
+          "char": "フ",
+          "label": "fu"
+        },
+        {
+          "char": "ヘ",
+          "label": "he"
+        },
+        {
+          "char": "ホ",
+          "label": "ho"
+        },
+        {
+          "char": "マ",
+          "label": "ma"
+        },
+        {
+          "char": "ミ",
+          "label": "mi"
+        },
+        {
+          "char": "ム",
+          "label": "mu"
+        },
+        {
+          "char": "メ",
+          "label": "me"
+        },
+        {
+          "char": "モ",
+          "label": "mo"
+        },
+        {
+          "char": "ヤ",
+          "label": "ya"
+        },
+        {
+          "char": "ユ",
+          "label": "yu"
+        },
+        {
+          "char": "ヨ",
+          "label": "yo"
+        },
+        {
+          "char": "ラ",
+          "label": "ra"
+        },
+        {
+          "char": "リ",
+          "label": "ri"
+        },
+        {
+          "char": "ル",
+          "label": "ru"
+        },
+        {
+          "char": "レ",
+          "label": "re"
+        },
+        {
+          "char": "ロ",
+          "label": "ro"
+        },
+        {
+          "char": "ワ",
+          "label": "wa"
+        },
+        {
+          "char": "ヲ",
+          "label": "wo"
+        },
+        {
+          "char": "ン",
+          "label": "n"
+        }
+      ]
+    },
+    {
+      "id": "katakana-dakuten-small-kana",
+      "label": "Katakana mit Dakuten",
+      "h2": "Katakana mit Dakuten, Handakuten und kleinen Kana",
+      "intro": "Stimmhafte Katakana und die p-Reihe, dazu ヴ (vu) für den v-Laut in Lehnwörtern wie ヴァイオリン (Violine). Kleine Katakana liest du zusammen mit dem Zeichen davor: シ + ェ ergibt she, ッ verdoppelt den folgenden Konsonanten.",
+      "symbols": [
+        {
+          "char": "ガ",
+          "label": "ga"
+        },
+        {
+          "char": "ギ",
+          "label": "gi"
+        },
+        {
+          "char": "グ",
+          "label": "gu"
+        },
+        {
+          "char": "ゲ",
+          "label": "ge"
+        },
+        {
+          "char": "ゴ",
+          "label": "go"
+        },
+        {
+          "char": "ザ",
+          "label": "za"
+        },
+        {
+          "char": "ジ",
+          "label": "ji"
+        },
+        {
+          "char": "ズ",
+          "label": "zu"
+        },
+        {
+          "char": "ゼ",
+          "label": "ze"
+        },
+        {
+          "char": "ゾ",
+          "label": "zo"
+        },
+        {
+          "char": "ダ",
+          "label": "da"
+        },
+        {
+          "char": "ヂ",
+          "label": "ji (di)"
+        },
+        {
+          "char": "ヅ",
+          "label": "zu (du)"
+        },
+        {
+          "char": "デ",
+          "label": "de"
+        },
+        {
+          "char": "ド",
+          "label": "do"
+        },
+        {
+          "char": "バ",
+          "label": "ba"
+        },
+        {
+          "char": "ビ",
+          "label": "bi"
+        },
+        {
+          "char": "ブ",
+          "label": "bu"
+        },
+        {
+          "char": "ベ",
+          "label": "be"
+        },
+        {
+          "char": "ボ",
+          "label": "bo"
+        },
+        {
+          "char": "パ",
+          "label": "pa"
+        },
+        {
+          "char": "ピ",
+          "label": "pi"
+        },
+        {
+          "char": "プ",
+          "label": "pu"
+        },
+        {
+          "char": "ペ",
+          "label": "pe"
+        },
+        {
+          "char": "ポ",
+          "label": "po"
+        },
+        {
+          "char": "ヴ",
+          "label": "vu"
+        },
+        {
+          "char": "ァ",
+          "label": "kleines a"
+        },
+        {
+          "char": "ィ",
+          "label": "kleines i"
+        },
+        {
+          "char": "ゥ",
+          "label": "kleines u"
+        },
+        {
+          "char": "ェ",
+          "label": "kleines e"
+        },
+        {
+          "char": "ォ",
+          "label": "kleines o"
+        },
+        {
+          "char": "ッ",
+          "label": "kleines tsu"
+        },
+        {
+          "char": "ャ",
+          "label": "kleines ya"
+        },
+        {
+          "char": "ュ",
+          "label": "kleines yu"
+        },
+        {
+          "char": "ョ",
+          "label": "kleines yo"
+        },
+        {
+          "char": "ヮ",
+          "label": "kleines wa"
+        }
+      ]
+    },
+    {
       "id": "japanese-punctuation",
       "label": "Satzzeichen",
       "h2": "Japanische Satzzeichen & Sonderzeichen",

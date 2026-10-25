@@ -88,7 +88,7 @@
       "id": "territory-flags",
       "label": "Gebieden",
       "h2": "Vlaggen van gebieden en regio's",
-      "intro": "Unicode heeft ook vlaggen voor plekken buiten de lijst van 195 landen: overzeese gebieden, afhankelijke gebieden, speciale bestuurlijke regio's en gebieden met een eigen code, zoals 🇧🇱 Saint-Barthélemy, 🇭🇰 Hongkong en 🇽🇰 Kosovo. Sommige tonen de vlag van een ander land omdat ze geen eigen vlag hebben: 🇧🇻 Bouveteiland en 🇸🇯 Spitsbergen tonen die van Noorwegen, 🇺🇲 de Kleine afgelegen eilanden van de Verenigde Staten die van de VS en 🇭🇲 Heard en McDonaldeilanden die van Australië.",
+      "intro": "Unicode heeft ook vlaggen voor plekken buiten de lijst van 195 landen: overzeese gebieden, afhankelijke gebieden, speciale bestuurlijke regio's en gebieden met een eigen code, zoals 🇧🇱 Saint-Barthélemy, 🇭🇰 Hongkong en 🇽🇰 Kosovo. Sommige tonen de vlag van een ander land omdat ze geen eigen vlag hebben: 🇧🇻 Bouveteiland en 🇸🇯 Spitsbergen tonen die van Noorwegen, 🇺🇲 de Kleine afgelegen eilanden van de Verenigde Staten die van de VS en 🇭🇲 Heard en McDonaldeilanden die van Australië. 🇨🇶 Sark kwam erbij in Emoji 16.0 (2024), dus Android-telefoons zonder die update tonen in plaats daarvan de letters CQ, zoals Windows bij elke vlag doet.",
       "symbols": [
         {
           "char": "🇦🇽",
@@ -289,6 +289,10 @@
         {
           "char": "🇵🇲",
           "label": "Saint-Pierre en Miquelon"
+        },
+        {
+          "char": "🇨🇶",
+          "label": "Sark"
         },
         {
           "char": "🇸🇭",

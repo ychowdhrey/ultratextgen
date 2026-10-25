@@ -155,6 +155,78 @@
      "label": "Print Screen (skärmdump)"
     }
    ]
+  },
+  {
+   "id": "iso-function-key-symbols",
+   "label": "ISO-tangenter",
+   "h2": "ISO-symboler för funktionstangenter",
+   "intro": "Tangentsymboler från den internationella tangentbordsstandarden ISO/IEC 9995-7, tryckta på vissa tangentbord för pc, terminaler och Linux i stället för ord: Alt, Compose, Insert, Paus, Ångra och sidtangenterna. På en Mac står ⌤ och ⌧ för Enter- och Clear-tangenten på det numeriska tangentbordet.",
+   "symbols": [
+    {
+     "char": "⌤",
+     "label": "Enter-tangent (pilspets mellan två streck)"
+    },
+    {
+     "char": "⌧",
+     "label": "Rensa-tangent (X i en rektangel)"
+    },
+    {
+     "char": "⎀",
+     "label": "Insert-tangent (infogningssymbol)"
+    },
+    {
+     "char": "⎁",
+     "label": "Tangent för heldragen understrykning"
+    },
+    {
+     "char": "⎂",
+     "label": "Tangent för streckad understrykning"
+    },
+    {
+     "char": "⎃",
+     "label": "Betoningstangent"
+    },
+    {
+     "char": "⎄",
+     "label": "Compose-tangent (sammansättningssymbol)"
+    },
+    {
+     "char": "⎆",
+     "label": "Enter-tangent (ISO-symbol)"
+    },
+    {
+     "char": "⎇",
+     "label": "Alt-tangent (symbol för alternativtangent)"
+    },
+    {
+     "char": "⎉",
+     "label": "Paus-tangent (inringat streck med skåra)"
+    },
+    {
+     "char": "⎊",
+     "label": "Avbrottstangent (inringad triangel nedåt)"
+    },
+    {
+     "char": "⎌",
+     "label": "Ångra-tangent"
+    },
+    {
+     "char": "⎖",
+     "label": "Decimaltecken-tangent"
+    },
+    {
+     "char": "⎗",
+     "label": "Föregående sida (Page Up)"
+    },
+    {
+     "char": "⎘",
+     "label": "Nästa sida (Page Down)"
+    },
+    {
+     "char": "⎚",
+     "label": "Rensa skärmen-tangent"
+    }
+   ]
   }
  ]
 }
