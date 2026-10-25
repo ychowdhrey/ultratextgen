@@ -14361,18 +14361,60 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
 /* Name label sheet maker (/printables/name-labels/ and locale siblings).
    The sheet itself is a canvas drawn by js/printables/labelEngine.js at the
    paper's real size, so nothing here touches the printed output; these rules
-   only lay out the controls and size the preview. */
+   only lay out the controls and size the preview.
+   Journey order (2026-10-25): name, then the sheet and Download, then the
+   choices that refine it. Every control here is 44px tall or more, and text
+   on the accent colour uses --lb-accent-ink, which passes AA where the
+   shared #8b5cf6 does not (4.2:1 on white). */
+/* The preview is always white paper, dark mode included, so what sits on
+   it takes paper colours that do not follow the theme. */
+/* A short hero, so the name field and the sheet's Download PDF both sit
+   above a 1366x768 fold. */
+.lb-hero { padding: 24px 24px 4px; }
+.lb-hero .hero-tagline { margin-bottom: 0; }
+.lb-tool { --lb-accent-ink: #6d28d9; --lb-paper: #ffffff; --lb-paper-ink: #1a1a2e; --lb-paper-accent: #6d28d9; }
+body.dark-mode .lb-tool { --lb-accent-ink: #c4b5fd; }
 .lb-tool .pt-studio-controls .pt-field { margin-bottom: 1.1rem; }
 .lb-what .pt-choice { flex: 1 1 30%; min-height: 44px; }
+.lb-tool .pt-choice { min-height: 44px; }
+.lb-tool .pt-choice.is-active { color: var(--lb-accent-ink); }
+.lb-tool .pt-field-opt { opacity: 1; color: var(--text-secondary); }
+.lb-tool .pt-choice small { opacity: 1; color: var(--text-secondary); }
+.lb-tool .pt-preview-note { color: var(--text-secondary); }
+.lb-tool .bubble-btn { min-height: 44px; }
+.lb-tool .pt-select { min-height: 44px; }
+.lb-tool .pt-check { min-height: 44px; display: inline-flex; align-items: center; gap: 0.5rem; }
+.lb-tool .pt-check input { width: 20px; height: 20px; }
+.lb-tool details > summary { min-height: 44px; display: flex; align-items: center; }
+.lb-tool .bubble-btn-primary { background: var(--lb-accent-ink); border-color: var(--lb-accent-ink); }
+body.dark-mode .lb-tool .bubble-btn-primary { color: var(--lb-paper-ink); }
+.lb-tool .pt-preview-tag { color: var(--lb-accent-ink); }
+.lb-tool .pt-preview-meta { color: var(--text-secondary); }
 .lb-hint { margin: 0.45rem 0 0; font-size: 0.8rem; line-height: 1.4; color: var(--text-secondary); }
-.lb-hint:empty { display: none; }
+.lb-hint:empty, .lb-hint[hidden] { display: none; }
+.lb-note, .lb-restored {
+  margin: 0.55rem 0 0; padding: 0.55rem 0.75rem; font-size: 0.82rem; line-height: 1.4;
+  color: var(--text-primary); background: var(--bg-base); border: 1px solid var(--border-light); border-radius: 10px;
+}
+.lb-restored { margin: 0 0 1rem; }
+.lb-note[hidden], .lb-restored[hidden] { display: none; }
+.lb-link-btn {
+  min-height: 44px; padding: 0 0.25rem; border: 0; background: none; cursor: pointer;
+  font: inherit; font-weight: 700; color: var(--lb-accent-ink); text-decoration: underline; text-underline-offset: 2px;
+}
+.lb-link-btn[hidden] { display: none; }
+.lb-from-list { margin: 0; min-height: 46px; display: flex; flex-wrap: wrap; align-items: center; gap: 0 0.4rem; font-size: 0.86rem; color: var(--text-secondary); }
+.lb-from-list[hidden] { display: none; }
+.lb-tool .main-input[hidden] { display: none; }
 .lb-lines { display: grid; gap: 0.35rem; }
 .lb-line-label { font-size: 0.82rem; font-weight: 600; color: var(--text-secondary); }
 .lb-input { width: 100%; min-height: 44px; }
 .lb-list-field textarea { width: 100%; }
+.lb-list-field[hidden] { display: none; }
 .lb-list-opts { margin-top: 0.6rem; }
-.lb-size-row { margin-top: 0.6rem; }
-.lb-size-row[hidden], .lb-nudge[hidden] { display: none; }
+.lb-size-row, .lb-stock-row, .lb-count-row, .lb-date-opts { margin-top: 0.6rem; }
+.lb-size-row[hidden], .lb-stock-row[hidden], .lb-nudge[hidden], .lb-count-row[hidden], .lb-date-opts[hidden] { display: none; }
+.lb-nudge { margin-top: 0.6rem; display: grid; gap: 0.35rem; }
 .lb-num { width: 4.5rem; }
 .lb-symbols .pt-choice { flex: 0 0 auto; min-width: 44px; min-height: 44px; font-size: 1.1rem; }
 .lb-font-rounded { font-family: 'Fredoka', sans-serif; font-weight: 600; }
@@ -14381,32 +14423,69 @@ body.pt-pdf-rendering.pt-high-contrast #pt-print-root .pt-name-glyph {
 .lb-font-hand { font-family: 'Comic Neue', sans-serif; font-weight: 700; }
 .lb-more { margin-top: 0.4rem; }
 .lb-more[open] { padding-bottom: 0.6rem; }
-.lb-reset { margin-top: 0.4rem; }
-.lb-paper { padding: 0.6rem; display: flex; justify-content: center; }
-.lb-preview-canvas { display: block; width: 100%; height: auto; max-height: 64vh; object-fit: contain; box-shadow: 0 0 0 1px var(--border-light); }
+.lb-memory { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.25rem 1rem; margin-top: 0.8rem; font-size: 0.86rem; }
+/* The preview: never a scroll box (axe: a scrollable region must be
+   focusable), a click on the sheet goes to the field that makes it. */
+.lb-paper { position: relative; padding: 0.6rem; display: flex; justify-content: center; overflow: hidden; max-height: none; }
+.lb-preview-canvas { display: block; width: 100%; height: auto; max-height: max(300px, min(64vh, calc(100vh - 420px))); object-fit: contain; box-shadow: 0 0 0 1px var(--border-light); cursor: text; }
+.lb-preview-canvas.is-example { opacity: 0.38; }
+.lb-example-badge {
+  position: absolute; left: 50%; top: 40%; transform: translate(-50%, -50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.2rem;
+  padding: 0.75rem 1.4rem; min-height: 44px; border: 2px solid var(--lb-paper-accent); border-radius: 12px;
+  background: var(--lb-paper); color: var(--lb-paper-ink); font: inherit; font-size: 0.9rem; cursor: text; box-shadow: var(--shadow-hover);
+}
+.lb-example-badge span { color: var(--lb-paper-accent); font-weight: 700; }
+.lb-actual { margin-top: 0.9rem; }
+.lb-actual[hidden] { display: none; }
+.lb-actual-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 0.75rem; }
+.lb-actual-cap { font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); }
+.lb-actual-canvas { display: block; max-width: 100%; cursor: text; }
+.lb-actual-canvas.is-example { opacity: 0.38; }
+.lb-example-badge[hidden], .lb-edit-pill[hidden] { display: none; }
+.lb-pages { display: inline-flex; align-items: center; gap: 0.25rem; }
+.lb-page-btn {
+  min-width: 44px; min-height: 44px; border: 1px solid var(--border-light); border-radius: 10px;
+  background: var(--bg-white); color: var(--text-primary); font-size: 1.1rem; cursor: pointer;
+}
+.lb-page-btn[disabled] { opacity: 0.4; cursor: default; }
+.lb-page-btn[hidden] { display: none; }
 .lb-summary { margin: 0.6rem 0 0; font-size: 0.86rem; font-weight: 700; color: var(--text-primary); }
 .lb-warn { margin: 0.3rem 0 0; font-size: 0.8rem; color: var(--ts-risk); }
 .lb-warn:empty { display: none; }
-@media (max-width: 900px) {
-  .lb-preview-canvas { max-height: 48vh; }
-}
-.lb-tool .main-input.is-from-list { opacity: 0.6; cursor: not-allowed; }
-.lb-tool .lb-input { height: 46px; min-height: 0; }
+.lb-need { margin: 0.4rem 0 0; font-size: 0.86rem; font-weight: 700; color: var(--ts-fail); }
+.lb-need:empty, .lb-need[hidden] { display: none; }
 .lb-line3-row { display: grid; gap: 0.35rem; }
 .lb-line3-row[hidden] { display: none; }
 .lb-count { flex-wrap: wrap; }
-.lb-count .pt-field-label { margin-bottom: 0; margin-right: 0.4rem; }
-/* On a phone the name comes before the sheet: the job starts by typing, and a
-   preview with a Download button above the name field invites downloading
-   the sample. */
-@media (max-width: 900px) {
-  .lb-tool .pt-studio-controls { order: 1; }
-  .lb-tool .pt-studio-preview { order: 2; position: static; }
-}
-.lb-list-field + .pt-field { margin-top: 1rem; }
 .lb-name-style { margin-top: 0.55rem; }
 .lb-dates[hidden] { display: none; }
-.lb-date-fill { margin-top: 0.6rem; }
+.lb-sticky[hidden] { display: none; }
+/* On a phone the name comes first, the sheet and its Download right under
+   it, then the choices that refine it. Measured before (390x844): the name
+   sat 1,141px down and the preview 649px below the name, behind every
+   option. The controls column dissolves into the grid (display: contents)
+   so the preview can sit between its fields. The sticky bar keeps
+   Download one tap away once the in-flow button scrolls off. */
+@media (max-width: 900px) {
+  .lb-tool .pt-studio { gap: 0; }
+  .lb-tool .pt-studio-controls { display: contents; }
+  .lb-tool .pt-studio-controls > * { order: 3; }
+  .lb-tool .pt-studio-controls > .lb-restored { order: 0; }
+  .lb-tool .pt-studio-controls > .lb-name-field { order: 1; }
+  .lb-tool .pt-studio-preview { order: 2; position: static; margin-bottom: 1.4rem; }
+  .lb-preview-canvas { max-height: 42vh; }
+  .lb-sticky {
+    position: fixed; left: 0; right: 0; bottom: var(--utg-anchor-h, 0px); z-index: 40;
+    display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+    padding: 0.6rem 1rem; background: var(--bg-white); border-top: 1px solid var(--border-light); box-shadow: var(--shadow-hover);
+  }
+  .lb-sticky-text { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 0.82rem; font-weight: 700; color: var(--text-primary); }
+  .lb-sticky .bubble-btn { flex: 0 0 auto; min-height: 44px; }
+}
+@media (min-width: 901px) {
+  .lb-sticky { display: none; }
+}
 
 /* Bulletin board letters (/printables/bulletin-board-letters/). Each sheet is
    a canvas drawn by js/printables/posterTiles.js at the paper's real size, so
