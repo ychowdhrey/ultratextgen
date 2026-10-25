@@ -10,6 +10,42 @@ Newest entries come first. Numbers are only given where we could count them.
 
 ## October 2026
 
+### 24 October 2026
+
+The character counter's "Remove emoji" and "remove hidden characters" buttons now handle whole emoji correctly.
+
+Before, "remove hidden characters" broke most emoji that are built from several parts. Of the 1,614 joined emoji in Unicode's official list, 1,391 were split apart, including the rainbow flag, the heart on fire and emoji with a skin tone. None are split now. "Remove emoji" used to leave pieces behind: country flags kept their two letter marks, number keycaps kept the digit, and people with a skin tone left an invisible joiner. Across the 5,244 emoji in the official list it left something behind on 2,531. It now removes all of them. People checking a post against a character limit, or cleaning text before pasting it, get a count that matches what they see.
+
+### 24 October 2026
+
+Five symbol collections are now complete, and a skin tone picker was added to three emoji pages.
+
+Anyone copying symbols for frames, braille, dice games or numbers used to find only part of the set. The braille page now shows all 256 cells, up from 32, and the box drawing page all 160 characters, up from 69, so heavy and double frames can be closed at every corner. The dominoes page shows all 150 tiles, up from 22. The playing cards page has the full 52 card deck and reaches 82 of 82 symbols, up from 11. The number page adds the larger Roman numerals, so 50, 100, 500 and 1000 can be written, and all 13 keycap emoji, up from 6. The Android note on the playing cards page says plainly that most Android phones show an empty box for the 23 tarot cards, while the copied character is still correct. Twenty arrow pages gained 40 more arrows that Android phones can display, such as long arrows, circular arrows and bent arrows. The hand symbols, thumbs up and body language emoji pages now let people choose a skin tone once and copy every matching emoji in that tone. Translated pages use their own language for names and labels.
+
+### 24 October 2026
+
+The ASCII table now lists all the letters it promises, and 40 symbol pages had wrong or misleading details corrected.
+
+The ASCII table page said it covered printable characters 33 to 126, but it listed only 14 of the 52 letters. The 38 missing rows were added in English, Spanish, French, Korean, Thai, Turkish and Vietnamese. Other repairs help people who copy symbols to be sure they have the right one. Several characters in the Portuguese goth, Y2K, Islamic, music and Twitter symbol pages had the wrong name. The football card page no longer calls an orange card a second yellow. The World Cup emoji pages now speak about the tournament in the past tense, as it ended on 19 July. Spanish pages no longer claim to list every emoji or to look identical on Android and iPhone. A few translated pages had a frequently asked question that did not match the visible answer, and those now agree.
+
+### 24 October 2026
+
+The Ultra Cherokee text style no longer produces an empty box for the letter K.
+
+Before, typing a K or k in the Ultra Cherokee style copied a character that does not exist in Unicode, so it showed as a box on every device. The letter now stays as a plain K, as Q and X already do in that style. The stylish name page also had a sample with the wrong double-struck N, and it now matches what the generator produces. All 114 text styles were checked across the full alphabet, and Ultra Cherokee was the only one that changed.
+
+### 20 October 2026
+
+About 700 symbol pages now include a table showing how to type the symbol, and 263 pages show their questions above the footer.
+
+People who land on a symbol page in one of 21 languages can now see its Unicode code point and the typing shortcuts in a table, so they can type the symbol by hand when copying does not work. Every row is worked out from the symbol's own code. Six Spanish, Korean and Russian symbol pages also gained verified typing instructions. A wrong claim about superscript characters was corrected on 11 pages.
+
+### 18 October 2026
+
+The French Fortnite name page now checks whether Fortnite will accept a name.
+
+French players who type a name on the Fortnite username page now see "Passe dans Fortnite" for an accepted name. A name that is too short or too long, or that uses symbols Fortnite may reject, gets a warning with the reason, in French. The page already offered the same check in English and on the French Free Fire and Stumble Guys pages. A duplicate copy of the check that briefly loaded twice was removed the same day, so each name is checked once.
+
 ### 16 October 2026
 
 The bulletin board letters maker is a new printable tool that turns a letter, number or word into letters of a chosen height, split across several sheets.
