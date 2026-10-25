@@ -2020,6 +2020,7 @@
     return { base: wordBaselineY(font, fontSize, anchorY), band: band, fontPx: fontSize };
   }
 
+  const FIT_CLIP_TOL = 6;   // units of overflow below which fitIfClipped leaves the box alone
   function wordOutlineGeom(word, opts) {
     const o = opts || {};
     const font = o.font || FONT;
@@ -2105,11 +2106,25 @@
       const base = gRul ? gRul.base
         : (im.emAscent != null ? WORD_OUTLINE_ANCHOR_Y + (im.emAscent - im.emDescent) / 2 : null);
       if (base != null) {
-        h = Math.max(h, Math.ceil(base + Math.max(im.bottom, fit.bottom) + wordStroke + 8));
+        const needBottom = base + Math.max(im.bottom, fit.bottom) + wordStroke;
+        /* o.fitIfClipped: grow only when the INK really overflows the box the row
+           will have, by more than FIT_CLIP_TOL units. Neither the 8-unit safety
+           margin below nor a ruling line drawn outside the box is a reason to
+           resize a face that fits: Quicksand's descenders end within 1-4 units of
+           200 (stroke width and rounding, nothing visible is cut) and the margin
+           alone would shrink every print name page's letters by about 5%. A cut
+           script glyph is 13-78 units over. "The box the row will have" matters on
+           a physical ruling (the French Seyes row): the page hands it a box far
+           taller than 200 (o.rowVH), centred on the drawing, so ink that is past
+           200 is still inside it and nothing is cut. */
+        const boxH = o.rowVH ? Math.max(h, o.rowVH) : h;
+        const boxTop = -(boxH - h) / 2, boxBottom = boxTop + boxH;
+        if (!o.fitIfClipped || needBottom > boxBottom + FIT_CLIP_TOL) h = Math.max(h, Math.ceil(needBottom + 8));
         if (o.fitTop) {
           const inkTop = base + Math.min(im.top, fit.top) - wordStroke - 8;
           const ruleTop = gRul ? gRul.base - gRul.band * Math.max.apply(null, ruling().lines.map((l) => l.at)) - 4 : 0;
-          y0 = Math.min(0, Math.floor(Math.min(inkTop, ruleTop)));
+          const needTop = base + Math.min(im.top, fit.top) - wordStroke;   // ink only, not the ruling
+          if (!o.fitIfClipped || needTop < boxTop - FIT_CLIP_TOL) y0 = Math.min(0, Math.floor(Math.min(inkTop, ruleTop)));
         }
       }
     }
@@ -7373,10 +7388,21 @@
        sheet takes both, blank rows included, so the ruling lines up down the
        page. */
     const routedSheet = !!cursiveRouteFor(name);
+    /* Every name row fits its box to the name's own ink, routed or not (R-023,
+       2026-10-24). Until then only a routed sheet did, so the other cursive and
+       calligraphy name pages cut off the bottom of the glyph -- a cedilla, a
+       descender, an ogonek -- and the top of a capital's accent, in the preview and
+       in the PDF (the PNG draws on its own canvas and was never affected). An
+       unrouted page asks for fitIfClipped, so the box grows only when the ink
+       really overflows it and a face that already fits keeps its viewBox. A page with name styles composes its own
+       rows through nameRenderOpts() and stays as it was, blank rows included, so
+       the ruling still lines up down the sheet. */
+    const fitName = routedSheet || !NAME_STYLES;
+    const fitUnrouted = !routedSheet;
     if (kind === "blank") {
       if (RULED_ROWS) {
         const o = { blank: true, guides: true };
-        if (routedSheet) { o.fitInk = name; o.fitTop = true; }
+        if (fitName && (routedSheet || fitUnrouted)) { o.fitInk = name; o.fitTop = true; if (!routedSheet) o.fitIfClipped = true; }
         row.appendChild(wordOutlineSVG(name, o));
         stashPracticeRow(row, name, o);
       }
@@ -7399,9 +7425,12 @@
         solid: kind === "model", guides: RULED_ROWS, overlay: strokeOverlayOn()
       };
       if (RULED_ROWS) o.practice = practiceStyle;
-      if (routedSheet) {
+      if (fitName && (routedSheet || fitUnrouted)) {
         o.fitInk = name;
         o.fitTop = true;
+        if (!routedSheet) o.fitIfClipped = true;   // routed sheets keep their always-fit behaviour (R-023)
+      }
+      if (routedSheet) {
         if (kind === "trace" || kind === "start") {
           o.route = { mode: kind, level: level || ROUTE_TRACE_LEVELS[0] };
           o.overlay = false;   // the route's own start marks are the overlay

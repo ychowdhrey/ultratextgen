@@ -3013,6 +3013,8 @@ PAGES.update({
     P(m_doc), K_RESEARCH),
 "research-kaomoji-unicode-rendering-study": ("Kaomoji Under the Hood", "1,616 faces, 39 scripts, fonts and Markdown tested",
     P(m_doc), K_RESEARCH),
+"research-name-tracing-accent-study": ("Name Tracing and Accents", "7 worksheets, 35 names, cursive cut-off found and fixed",
+    P(m_doc), K_RESEARCH),
 "compare-zalgo-generators": ("Zalgo Generators Compared", "Best tool for each effect, tested 2026",
     P(m_zalgo), K_SITE),
 })
