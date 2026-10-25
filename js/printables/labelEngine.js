@@ -94,6 +94,28 @@
       closeUp: "One label, up close",
       listCount: "{n} on your list"
     },
+    pt: {
+      labels: "etiquetas", label: "etiqueta", page: "página", pages: "páginas",
+      howMany: "Quantas etiquetas", perNameCount: "Etiquetas por nome", perLineCount: "Etiquetas por linha", tooLong: "Algum texto ficou muito pequeno neste tamanho. Tente uma linha mais curta ou uma etiqueta maior.",
+      empty: "Digite um nome para ver as etiquetas.",
+      testTitle: "Teste de posição: imprima em papel comum, encoste na folha de etiquetas e olhe contra a luz.",
+      cutHint: "Recorte nas linhas cinza",
+      stockNote: "Imprima em 100% (tamanho real). Ajustar à página tira todas as etiquetas do lugar.",
+      fileName: "etiquetas-escolares",
+      testFile: "teste-posicao-etiquetas",
+      needName: "Digite o nome que vai na etiqueta.", needList: "Escreva a lista, um item por linha.",
+      example: "Folha de exemplo", exampleEdit: "\u270e Digite o seu nome", exampleSummary: "Exemplo",
+      editName: "\u270e Editar nome", editList: "\u270e Editar lista",
+      pageOf: "Página {n} de {t}", prevPage: "Página anterior", nextPage: "Próxima página",
+      keptSize: "Mantivemos {what}. {preset} costuma usar {want}.", useIt: "Usar",
+      fromList: "Preenchido pela lista abaixo.", typeOne: "Digitar um só",
+      dateHere: "A data de cada dia sai nesta linha.",
+      restored: "Suas últimas etiquetas voltaram: {what}.", startFresh: "Começar do zero",
+      datesResult: "{n} etiquetas: de {first} a {last}, {per} por dia", datesResultOne: "{n} etiquetas para {first}",
+      maxLen: "Cada linha cabe até 40 caracteres.",
+      closeUp: "Uma etiqueta, de perto",
+      listCount: "{n} na lista"
+    },
     id: {
       labels: "label", label: "label", page: "halaman", pages: "halaman",
       howMany: "Jumlah label", perNameCount: "Label per nama", perLineCount: "Label per baris", tooLong: "Ada tulisan yang sangat kecil di ukuran label ini. Coba baris yang lebih pendek atau label yang lebih besar.",
@@ -608,9 +630,17 @@
     const name = (CFG.sizeNames || {})[key] || key;
     return z ? name + " " + fmtWH(z.w, z.h) : name;
   }
+  /* A sheet's name as this page's own picker writes it ("Pimaco 6180 /
+     Avery 5160" on the Brazilian page), without its count; the engine's
+     Avery name is the fallback. */
+  function stockName(key) {
+    const opt = document.querySelector("#lb-stock option[value='" + key + "']");
+    const own = opt ? opt.textContent.replace(/\s*\([^)]*\)\s*$/, "").trim() : "";
+    return own || (STOCKS[key] ? STOCKS[key].name : key);
+  }
   function stockLabel(key) {
     const s = STOCKS[key];
-    return s ? s.name + " (" + fmtWH(s.w, s.h) + ")" : key;
+    return s ? stockName(key) + " (" + fmtWH(s.w, s.h) + ")" : key;
   }
   function presetName(key) {
     const b = document.querySelector("#lb-what [data-value='" + key + "']");
@@ -709,7 +739,7 @@
     let text = T.empty;
     if (labels.length) {
       const n = labels.length;
-      const where = g.stock ? g.name : (paperKey() === "a4" ? "A4" : "US Letter");
+      const where = g.stock ? stockName(state.sheet) : (paperKey() === "a4" ? "A4" : "US Letter");
       text = (labels.example ? T.exampleSummary + " · " : "") + n + " " + (n === 1 ? T.label : T.labels) + " · " + fmtSize(g) +
         " · " + pages + " " + (pages === 1 ? T.page : T.pages) + " · " + where;
     }
@@ -1122,7 +1152,7 @@
       const want = SIZE_STOCK[STOCKS[state.sheet].paper][p.size];
       if (!state.sizeChosen) state.size = p.size;
       if (fromUser && want && want !== state.sheet) {
-        note = fill(T.keptSize, { what: STOCKS[state.sheet].name, preset: presetName(key), want: stockLabel(want) });
+        note = fill(T.keptSize, { what: stockName(state.sheet), preset: presetName(key), want: stockLabel(want) });
         apply = () => { state.sheet = want; };
       }
     } else if (!state.sizeChosen) {
@@ -1193,7 +1223,7 @@
     const box = $("lb-restored");
     if (!box) return;
     const parts = [presetName(state.preset)];
-    parts.push(state.sheet !== "cut" ? STOCKS[state.sheet].name : sizeLabel(state.size));
+    parts.push(state.sheet !== "cut" ? stockName(state.sheet) : sizeLabel(state.size));
     const n = readList().length;
     if (n) parts.push(fill(T.listCount, { n: n }));
     box.textContent = "";
