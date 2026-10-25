@@ -914,6 +914,58 @@ async function main() {
     await ctx.close();
   }
 
+  // 22. Name labels: the example is never printed, and a preset never
+  // rewrites what the visitor chose. On 2026-10-25 a live audit found a week
+  // of dated bottle labels printed as the child's name after one preset
+  // click, a chosen Avery 5160 silently swapped for a 5163 grid, a name field
+  // disabled by a list nothing on screen showed, and a remembered sample that
+  // turned "type Ava" into "Maya LopezAva". Each is asserted here through the
+  // page's own controls; the PDF is read, not the DOM.
+  console.log('\n/printables/name-labels/ (example never prints; presets never undo a choice)');
+  {
+    const { ctx, page, errors } = await open('/printables/name-labels/', 'desktop');
+    const first = () => page.evaluate(() => { const L = window.UltraTextGen.labels; const labs = L.labelsFor(L.geometry()); return { name: labs[0] && labs[0].name, line2: labs[0] && labs[0].line2, n: labs.length, example: !!labs.example }; });
+    check('first load: the name field is empty and the sheet is the example', (await page.inputValue('#lb-name')) === '' && (await first()).example);
+    check('first load: nothing is remembered', (await page.evaluate(() => localStorage.getItem('utg_label_sheet'))) === null);
+    let got = false;
+    page.once('download', () => { got = true; });
+    await page.click('#lb-pdf');
+    await page.waitForTimeout(600);
+    check('Download with no name asks for one and saves nothing', !got && (await page.evaluate(() => document.activeElement.id)) === 'lb-name');
+    await page.click('canvas.lb-preview-canvas');
+    await page.keyboard.type('Ava Chen');
+    await page.click('#lb-what [data-value=bottles]');
+    await page.click('#lb-date-mode [data-value=print]');
+    await page.waitForTimeout(300);
+    const dated = await first();
+    check('dated labels: name stays the name, the date fills line 2', dated.name === 'Ava Chen' && /\d/.test(dated.line2 || '') && dated.n === 15, JSON.stringify(dated));
+    await page.click('#lb-what [data-value=supplies]');
+    await page.waitForTimeout(300);
+    const after = await first();
+    check('a preset after dated labels keeps the name as the name', after.name === 'Ava Chen', JSON.stringify(after));
+    await page.click('#lb-on [data-value=stock]');
+    await page.selectOption('#lb-stock', 'avery-5160');
+    const stocks = [];
+    for (const p of ['bins', 'supplies', 'books']) {
+      await page.click('#lb-what [data-value=' + p + ']');
+      stocks.push(await page.inputValue('#lb-stock'));
+    }
+    check('a chosen Avery 5160 survives every preset', stocks.every((v) => v === 'avery-5160'), stocks.join(','));
+    await page.click('#lb-mode [data-value=list]');
+    await page.fill('#lb-list', 'Noah Kim\nAisha Rahman');
+    await page.waitForTimeout(300);
+    const fields = await page.evaluate(() => ['lb-name', 'lb-line2', 'lb-line3'].filter((id) => document.getElementById(id).disabled));
+    check('a list replaces the name field; no field is disabled', !fields.length && (await first()).name === 'Noah Kim', fields.join(','));
+    const [download] = await Promise.all([page.waitForEvent('download'), page.click('#lb-pdf')]);
+    const buf = fs.readFileSync(await download.path());
+    check('the list PDF is one Letter page set to print at actual size', pdfPages(buf) === 1 && /PrintScaling\s*\/None/.test(buf.toString('latin1')), `${pdfPages(buf)} pages`);
+    await page.reload({ waitUntil: 'load' });
+    await page.waitForTimeout(700);
+    check('a remembered list is visible on return', await page.evaluate(() => !document.getElementById('lb-list-box').hidden && /Noah Kim/.test(document.getElementById('lb-list').value)));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
   await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });
