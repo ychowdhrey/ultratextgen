@@ -924,6 +924,9 @@ async function main() {
   console.log('\n/printables/name-labels/ (example never prints; presets never undo a choice)');
   {
     const { ctx, page, errors } = await open('/printables/name-labels/', 'desktop');
+    // A control that is gone fails this case; it does not end the run as UNKNOWN.
+    page.setDefaultTimeout(5000);
+    try {
     const first = () => page.evaluate(() => { const L = window.UltraTextGen.labels; const labs = L.labelsFor(L.geometry()); return { name: labs[0] && labs[0].name, line2: labs[0] && labs[0].line2, n: labs.length, example: !!labs.example }; });
     check('first load: the name field is empty and the sheet is the example', (await page.inputValue('#lb-name')) === '' && (await first()).example);
     check('first load: nothing is remembered', (await page.evaluate(() => localStorage.getItem('utg_label_sheet'))) === null);
@@ -962,6 +965,9 @@ async function main() {
     await page.reload({ waitUntil: 'load' });
     await page.waitForTimeout(700);
     check('a remembered list is visible on return', await page.evaluate(() => !document.getElementById('lb-list-box').hidden && /Noah Kim/.test(document.getElementById('lb-list').value)));
+    } catch (e) {
+      check('name labels: every step ran', false, e.message.split('\n')[0]);
+    }
     check('no page errors', !errors.length, errors.join(' | '));
     await ctx.close();
   }
