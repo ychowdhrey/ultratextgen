@@ -972,6 +972,226 @@ async function main() {
     await ctx.close();
   }
 
+  // 27. Locale strings that only a rendered sheet shows. Turkish has eight
+  // vowels and the vowel chip printed five (A E I O U, no İ Ö Ü). Its class
+  // set read "3 sayfa · 3 sayfa" because the sheet and the page were one word.
+  // A one-word word search read "Finde alle 1 Wörter". The PDF is counted and
+  // the line under the button is read as text.
+  console.log('\n/tr/yazdirilabilir/harf-boyama/ + /de/zum-ausdrucken/suchsel/ (locale counts and sets)');
+  {
+    const { ctx, page, errors } = await open('/tr/yazdirilabilir/harf-boyama/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      const chip = await page.evaluate(() => { const i = document.querySelector('input[name=pt-set-letters][value=vow]'); return i ? i.parentNode.textContent.trim() : null; });
+      check('tr vowel chip names all eight Turkish vowels', chip === 'AEIİOÖUÜ', chip);
+      await page.click('label:has(input[name=pt-set-letters][value=vow])');
+      await page.click('label:has(input[name=pt-set-size][value=full])');
+      const [d] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#pt-alphabet-print')]);
+      const n = pdfPages(fs.readFileSync(await d.path()));
+      check('tr vowels at full page size print 8 pages, one per vowel', n === 8, `${n} pages`);
+    } catch (e) {
+      check('tr vowel set: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+  {
+    const { ctx, page, errors } = await open('/tr/yazdirilabilir/isim-yazma-calismasi/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.evaluate(() => { const d = document.querySelector('details.pt-roster-field'); if (d) d.open = true; });
+      await page.click('.pt-audience-field [data-value=class]');
+      await page.fill('#pt-name-roster', 'Ali\nAyşe\nCan');
+      await page.waitForTimeout(300);
+      const cost = (await page.textContent('#pt-sheet-cost')).trim();
+      const counts = cost.split(' · ').filter((b) => /^\d/.test(b)).map((b) => b.replace(/^\d+\s*/, ''));
+      check('tr class set: the sheet count and the page count use different words', counts.length === 2 && counts[0] !== counts[1], cost);
+    } catch (e) {
+      check('tr class set: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+  {
+    const { ctx, page, errors } = await open('/de/zum-ausdrucken/suchsel/', 'desktop');
+    await page.fill('#pt-search-input', 'Apfel');
+    await page.waitForTimeout(600);
+    const note = await page.evaluate(() => { const n = document.querySelector('.pt-search-note'); return n ? n.textContent : null; });
+    check('de word search with one word does not say "alle 1 Wörter"', !!note && !/\b1 Wörter/.test(note), note);
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 28. A promised tool that never rendered. Both Indonesian letter pages say
+  // "type a name" and mounted an empty div the engine has no id for, so no
+  // field appeared. Typing must draw the name, and Download PDF must write
+  // that name's sheet.
+  for (const url of ['/id/printables/huruf-bubble/', '/id/printables/huruf-kaligrafi/']) {
+    console.log(`\n${url} (the name tool renders and downloads)`);
+    const { ctx, page, errors } = await open(url, 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.fill('#pt-name-input', 'Rizky');
+      await page.waitForTimeout(400);
+      const drawn = await page.locator('#pt-name-preview svg').count();
+      check('typing a name draws it in the preview', drawn > 0, `${drawn} svg`);
+      const [d] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#pt-name-print')]);
+      const buf = fs.readFileSync(await d.path());
+      check('Download PDF writes a PDF of that name', buf.slice(0, 4).toString() === '%PDF' && pdfPages(buf) >= 1 && /rizky/i.test(d.suggestedFilename()), d.suggestedFilename());
+    } catch (e) {
+      check('id name tool: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 29. A monogram with accented initials downloaded as "download", with no
+  // extension: the browser drops a non-ASCII filename. The initials fold to
+  // ASCII, so the file keeps its name and its type.
+  console.log('\n/printables/monogram-maker/ (accented initials keep the file name)');
+  {
+    const { ctx, page, errors } = await open('/printables/monogram-maker/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      for (const [id, v] of [['mono-left', 'Ä'], ['mono-center', 'Ö'], ['mono-right', 'Ü']]) await page.fill('#' + id, v);
+      await page.waitForTimeout(300);
+      const [pdf] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#mono-print')]);
+      check('ÄÖÜ downloads monogram-aou.pdf', pdf.suggestedFilename() === 'monogram-aou.pdf', pdf.suggestedFilename());
+      const [png] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#mono-png')]);
+      check('ÄÖÜ downloads monogram-aou.png', png.suggestedFilename() === 'monogram-aou.png', png.suggestedFilename());
+    } catch (e) {
+      check('monogram filename: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 23. Sharing a saved set shares the set. Without a native share sheet the
+  // strip's Share copied the PAGE URL for two or more saved symbols, so the
+  // recipient got a page instead of the shortlist, and it confirmed that in
+  // English ("Link copied") under Korean prose.
+  console.log('\n/ko/library/imotikon/ (saved strip Share without a share sheet)');
+  {
+    const { ctx, page, errors } = await open('/ko/library/imotikon/', 'desktop', () => {
+      try { delete Navigator.prototype.share; } catch (e) { /* already absent */ }
+      if (!localStorage.getItem('utg_saved_items')) {
+        localStorage.setItem('utg_saved_items', JSON.stringify([
+          { type: 'symbol', value: '★', label: '★', href: '', t: 2 },
+          { type: 'symbol', value: '♥', label: '♥', href: '', t: 1 }
+        ]));
+      }
+    });
+    page.setDefaultTimeout(5000);
+    try {
+      check('the page has no native share sheet', await page.evaluate(() => typeof navigator.share !== 'function'));
+      await sentinel(page);
+      const before = (await dl(page)).length;
+      const btn = page.locator('.symbol-saved-strip .share-result-btn').first();
+      await btn.scrollIntoViewIfNeeded();
+      await btn.click();
+      await page.waitForTimeout(300);
+      const copied = await clip(page);
+      check('strip Share with two saved items copies the items, not a URL', copied === '★ ♥', JSON.stringify(copied));
+      const label = (await btn.locator('.share-result-label').textContent()) || '';
+      check('strip Share confirms in the page language', /[가-힣]/.test(label) && !/Link copied|Copied|Failed/.test(label), label);
+      // Share rows are read by their share_method key: the event name is a
+      // literal only share-core.js may contain (test:share-core asserts it).
+      const rows = (await dl(page)).slice(before).filter((e) => e.share_method);
+      check('the strip copy records one clipboard share row, format text',
+        rows.length === 1 && rows[0].share_method === 'link_copy' && rows[0].share_destination === 'clipboard'
+          && rows[0].share_surface === 'library_saved' && rows[0].share_format === 'text', JSON.stringify(rows));
+    } catch (e) {
+      check('saved strip Share: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 24. The generator's Save follows the store, not the list it loaded with.
+  // script.js repainted its stars only after its own clicks, so a style saved
+  // in another tab still read "Save" here, and pressing it flipped the store:
+  // it REMOVED the style the visitor had just asked to keep.
+  console.log('\n/ (generator Save across tabs)');
+  {
+    const { ctx, page, errors } = await open('/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.fill('#mainInput', 'Luna');
+      await page.waitForTimeout(300);
+      const names = await page.evaluate(() => [...document.querySelectorAll('#resultsGrid .save-btn')].slice(0, 2).map((b) => b.dataset.style));
+      const [x, y] = names;
+      const star = (name) => page.evaluate((n) => {
+        const b = [...document.querySelectorAll('#resultsGrid .save-btn')].find((e) => e.dataset.style === n);
+        return b ? b.getAttribute('aria-pressed') : null;
+      }, name);
+      const stored = () => page.evaluate(() => JSON.parse(localStorage.getItem('utg_saved_items') || '[]').filter((r) => r.type === 'style').map((r) => r.value));
+      check('two unsaved styles to work with', !!x && !!y && (await star(x)) === 'false' && (await star(y)) === 'false', JSON.stringify(names));
+
+      // Another tab in the same browser saves x; this tab hears the storage event.
+      const other = await ctx.newPage();
+      await other.goto(BASE + '/', { waitUntil: 'load' });
+      await other.waitForTimeout(700);
+      await other.fill('#mainInput', 'Luna');
+      await other.waitForTimeout(300);
+      await other.locator(`#resultsGrid .save-btn[data-style="${x.replace(/"/g, '\\"')}"]`).first().click();
+      await other.waitForTimeout(400);
+      check('a save in another tab repaints this tab\'s star', (await star(x)) === 'true', await star(x));
+      check('and lists the style in this tab\'s saved section',
+        await page.evaluate((n) => [...document.querySelectorAll('#savedGrid .save-btn')].some((b) => b.dataset.style === n), x));
+      await other.close();
+
+      // The race the listener cannot close: storage changes before this tab
+      // hears about it (written here directly, so no event arrives). The star
+      // still reads "Save"; pressing it must keep y saved, not remove it.
+      await page.evaluate((n) => {
+        const list = JSON.parse(localStorage.getItem('utg_saved_items') || '[]');
+        list.unshift({ type: 'style', value: n, label: n, href: '', t: Date.now() });
+        localStorage.setItem('utg_saved_items', JSON.stringify(list));
+      }, y);
+      check('the stale star still reads Save before the press', (await star(y)) === 'false', await star(y));
+      await page.locator(`#resultsGrid .save-btn[data-style="${y.replace(/"/g, '\\"')}"]`).first().click();
+      await page.waitForTimeout(300);
+      check('pressing a stale Save keeps the style saved', (await stored()).includes(y), JSON.stringify(await stored()));
+      check('and the star now reads Saved', (await star(y)) === 'true', await star(y));
+      check('the other tab\'s save survives', (await stored()).includes(x), JSON.stringify(await stored()));
+    } catch (e) {
+      check('generator Save across tabs: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 25. The library star carries the same intent. A storage write this tab
+  // has not heard about yet leaves a star reading "Save"; pressing it must
+  // keep the symbol saved, where a flip of the store removed it.
+  console.log('\n/library/heart-symbols/ (stale Save star keeps the symbol)');
+  {
+    const { ctx, page, errors } = await open('/library/heart-symbols/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      const sym = await page.locator('.flag-row .symbol-save-btn').first().getAttribute('data-symbol');
+      const starState = () => page.evaluate((v) => {
+        const b = [...document.querySelectorAll('.symbol-save-btn')].find((e) => e.getAttribute('data-symbol') === v);
+        return b ? b.getAttribute('aria-pressed') : null;
+      }, sym);
+      await page.evaluate((v) => {
+        const list = JSON.parse(localStorage.getItem('utg_saved_items') || '[]');
+        list.unshift({ type: 'symbol', value: v, label: v, href: '', t: Date.now() });
+        localStorage.setItem('utg_saved_items', JSON.stringify(list));
+      }, sym);
+      check('the stale star still reads Save before the press', (await starState()) === 'false', await starState());
+      await page.locator('.flag-row .symbol-save-btn').first().click({ force: true });
+      await page.waitForTimeout(300);
+      const kept = await page.evaluate((v) => JSON.parse(localStorage.getItem('utg_saved_items') || '[]').some((r) => r.type === 'symbol' && r.value === v), sym);
+      check('pressing a stale library Save star keeps the symbol saved', kept, sym);
+      check('and the star now reads Saved', (await starState()) === 'true', await starState());
+    } catch (e) {
+      check('library stale star: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
   await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });
