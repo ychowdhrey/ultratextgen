@@ -3393,6 +3393,28 @@
       localStorage.removeItem(ROSTER_KEY_LEGACY);
     } catch (err) { /* optional */ }
   }
+  /* A WORD list is not a class. The handwriting generator's spelling list
+     (data-roster-kind="words") shared ROSTER_KEY with the name tools, so a
+     remembered class filled it on load and "cat" printed as one sheet per
+     child (three names, three pages), and a spelling list typed there came
+     back as "names" on name-tracing. A word list keeps its own memory, per
+     page; a curated-word page (CFG.fixedWords) keeps none, as before. */
+  const WORDLIST_KEY = "utg_printables_wordlist:" + window.location.pathname;
+  function rosterIsWordList(mount) {
+    const details = mount && mount.closest ? mount.closest("details.pt-roster-field") : null;
+    return !!(details && details.dataset.rosterKind === "words");
+  }
+  function readRosterFor(mount) {
+    if (!rosterIsWordList(mount)) return readRoster();
+    try { return localStorage.getItem(WORDLIST_KEY); } catch (err) { return null; }
+  }
+  function writeRosterFor(mount, value) {
+    if (!rosterIsWordList(mount)) { writeRoster(value); return; }
+    try {
+      if (value && value.trim()) localStorage.setItem(WORDLIST_KEY, value);
+      else localStorage.removeItem(WORDLIST_KEY);
+    } catch (err) { /* optional */ }
+  }
   /* Sheet setup (paper, orientation, margins, ink saver, render scale) is
      owned by js/printables/printPrefs.js, so this engine, monogramEngine and
      crossStitchEngine cannot disagree about what page a sheet is written on.
@@ -3771,7 +3793,7 @@
     if (!roster && rosterEl && !rosterEl.value.trim() && !fixedWordSet()) {
       // Roster memory: a teacher's class list stays on the device between
       // visits (this device only, never sent anywhere).
-      const remembered = readRoster(); if (remembered) rosterEl.value = remembered;
+      const remembered = readRosterFor(rosterEl); if (remembered) rosterEl.value = remembered;
     }
   }
   // Phase 2 (after the sections initialise): apply state that has setters.
@@ -3841,7 +3863,7 @@
       PP.rememberRecent({ href: presetUrl(), label: label, page: (document.title || "").split("|")[0].trim(), sheet: sheet });
     }
     const roster = primaryRoster();
-    if (roster) writeRoster(roster.value);
+    if (roster && !fixedWordSet()) writeRosterFor(roster, roster.value);
     renderRecent();
   }
   let recentMount = null;
@@ -4143,7 +4165,7 @@
     const roster = primaryRoster();
     if (roster && !fixedWordSet()) {
       let t2 = null;
-      roster.addEventListener("input", () => { clearTimeout(t2); t2 = setTimeout(() => writeRoster(roster.value), 800); });
+      roster.addEventListener("input", () => { clearTimeout(t2); t2 = setTimeout(() => writeRosterFor(roster, roster.value), 800); });
     }
   }
 
