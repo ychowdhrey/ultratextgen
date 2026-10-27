@@ -4497,6 +4497,26 @@ button.clear-decoration {
   -webkit-appearance: none;
 }
 
+/* The generator's own chips (#decorationGrid, built by script.js) are
+   buttons too, and two things the reset above leaves alone would change how
+   they look: a button's line-height is the UA's "normal" rather than the
+   page's, and color: inherit at (0,1,1) outranks .clear-decoration's muted
+   colour. A button also centres its label vertically where a span set it at
+   the top, which moved "None" (shorter text, stretched to the row) by 1.6px;
+   flex-start keeps it where it was. Scoped to that grid so the other
+   decoration grids keep theirs. */
+#decorationGrid > .decoration-item,
+#decorationGrid > .clear-decoration {
+  display: flex;
+  align-items: flex-start;
+  line-height: inherit;
+  margin: 0;
+}
+
+#decorationGrid > .clear-decoration:not(:hover) {
+  color: var(--text-muted);
+}
+
 /* Which-format comparison table (was inline-styled in the page HTML) */
 /* Reference tables carry a lot of this site's value, so they get a real
    style rather than bare padding: row rules for tracking across a wide row,

@@ -1327,12 +1327,21 @@ const decorations = window.UTG_DECORATIONS
     const grid = el.decorationGrid;
     grid.innerHTML = "";
 
-    const clearBtn = document.createElement("span");
+    // Real <button>s, not spans: a span with a click handler cannot be
+    // reached with Tab or pressed with Enter/Space, and a screen reader does
+    // not announce it as a control. Each chip is a toggle (pressing the
+    // selected one clears it), so it carries aria-pressed; "None" is a plain
+    // action. The CSS reset on these classes keeps the span look.
+    const clearBtn = document.createElement("button");
+    clearBtn.type = "button";
     clearBtn.className = "clear-decoration";
     clearBtn.textContent = "✕ " + uiText("decorationsNone", "None");
     clearBtn.addEventListener("click", () => {
       selectedDecoration = null;
-      $$(".decoration-item").forEach((i) => i.classList.remove("selected"));
+      $$(".decoration-item").forEach((i) => {
+        i.classList.remove("selected");
+        i.setAttribute("aria-pressed", "false");
+      });
       renderResults();
       notifyFlairChange();
     });
@@ -1340,22 +1349,27 @@ const decorations = window.UTG_DECORATIONS
 
     const list = decorations[currentDecoTab] || [];
     list.forEach((deco) => {
-      const item = document.createElement("span");
+      const item = document.createElement("button");
+      item.type = "button";
       item.className = "decoration-item";
-      if (selectedDecoration && selectedDecoration.text === deco.text) {
-        item.classList.add("selected");
-      }
+      const isSelected = !!(selectedDecoration && selectedDecoration.text === deco.text);
+      if (isSelected) item.classList.add("selected");
+      item.setAttribute("aria-pressed", String(isSelected));
       item.textContent = deco.text;
       item.addEventListener("click", () => {
         const isSame = selectedDecoration && selectedDecoration.text === deco.text;
 
-        $$(".decoration-item").forEach((i) => i.classList.remove("selected"));
+        $$(".decoration-item").forEach((i) => {
+          i.classList.remove("selected");
+          i.setAttribute("aria-pressed", "false");
+        });
 
         if (isSame) {
           selectedDecoration = null;
         } else {
           selectedDecoration = deco;
           item.classList.add("selected");
+          item.setAttribute("aria-pressed", "true");
         }
         renderResults();
         notifyFlairChange();
