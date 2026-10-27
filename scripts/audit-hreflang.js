@@ -96,11 +96,13 @@ for (const file of files) {
   const html = fs.readFileSync(file, 'utf8');
   const { canonical, alternates } = extractLinks(html);
   if (!canonical) continue; // no canonical at all — not part of any hreflang audit
+  const htmlLangMatch = /<html\b[^>]*\blang="([^"]+)"/i.exec(html);
 
   const canon = normalize(canonical);
   const alts = alternates.map((a) => ({ hreflang: a.hreflang, href: normalize(a.href) }));
   const selfEntry = alts.find((a) => a.href === canon && a.hreflang !== 'x-default');
-  const record = { rel, filePath: file, canonical: canon, alternates: alts, ownLang: selfEntry ? selfEntry.hreflang : null };
+  const record = { rel, filePath: file, canonical: canon, alternates: alts, ownLang: selfEntry ? selfEntry.hreflang : null,
+    htmlLang: htmlLangMatch ? htmlLangMatch[1].toLowerCase() : null };
 
   byUrl.set(canon, record);
   if (alts.length > 0) pages.push(record);
@@ -250,6 +252,33 @@ for (const record of byUrl.values()) {
   missingSelfRef.push(record);
 }
 
+// ─── Code language vs the target page's own language ──────────────────────────
+// A cluster can be fully reciprocal and still send a language to the wrong page.
+// Until 2026-10-27 hr/, bs/ and sr/ declared hreflang="sr-ME" and "bs-ME" ->
+// /hr/: Serbian and Bosnian readers in Montenegro routed to the Croatian
+// homepage, with every other check here at zero. A regional alias names its own
+// language's page (ro-MD -> /ro/ is the shape). This compares the code's primary
+// subtag with the target's <html lang>. Never auto-fixed: which page a language
+// should get is a decision, not a repair.
+const LANG_ALIASES = [['nb', 'nn', 'no'], ['fil', 'tl']];
+function sameLanguage(a, b) {
+  const pa = a.split('-')[0];
+  const pb = b.split('-')[0];
+  if (pa === pb) return true;
+  return LANG_ALIASES.some((g) => g.includes(pa) && g.includes(pb));
+}
+const langMismatch = []; // { page, hreflang, target, targetLang }
+for (const record of pages) {
+  for (const a of record.alternates) {
+    if (a.hreflang.toLowerCase() === 'x-default') continue;
+    const target = byUrl.get(a.href);
+    if (!target || !target.htmlLang) continue; // broken / unreadable targets are reported by their own rows
+    if (!sameLanguage(a.hreflang.toLowerCase(), target.htmlLang)) {
+      langMismatch.push({ page: record.rel, hreflang: a.hreflang, target: a.href, targetLang: target.htmlLang });
+    }
+  }
+}
+
 console.log(`  Non-reciprocal pairs:            ${nonReciprocal.length}`);
 console.log(`  Placeholder EN-homepage claims:  ${placeholderEnFallback.length} (informational)`);
 console.log(`  Headless targets (no hreflang):  ${headless.size}`);
@@ -257,6 +286,12 @@ console.log(`  Locale pages with no self-ref:   ${missingSelfRef.length}`);
 console.log(`  Broken hreflang targets:         ${brokenList.length}`);
 console.log(`  x-default not pointing at EN:    ${badXDefault.length}`);
 console.log(`  x-default missing entirely:      ${missingXDefault.length}`);
+console.log(`  Code language ≠ target language: ${langMismatch.length}`);
+if (langMismatch.length) {
+  console.log('');
+  console.log('hreflang codes pointing at a page in another language (fix by hand: name that language\'s own page, or drop the code):');
+  for (const m of langMismatch) console.log(`  · ${m.page}: hreflang="${m.hreflang}" -> ${m.target} (that page is lang="${m.targetLang}")`);
+}
 
 if (nonReciprocal.length) {
   console.log('');
@@ -573,10 +608,14 @@ if (FIX) {
 
 const totalIssues =
   nonReciprocal.length + headless.size + brokenList.length + badXDefault.length + missingXDefault.length +
-  missingSelfRef.length;
+  missingSelfRef.length + langMismatch.length;
 if (totalIssues && !FIX) {
   console.log('');
   console.log(`❌ ${totalIssues} hreflang issue(s) found. Run with --fix to auto-repair non-reciprocal pairs, headless targets, and missing or misdirected x-default tags.`);
+  process.exit(1);
+} else if (langMismatch.length) {
+  console.log('');
+  console.log(`❌ ${langMismatch.length} hreflang code(s) point at a page in another language (never auto-fixed; see the list above).`);
   process.exit(1);
 } else if (brokenList.length) {
   console.log('');
