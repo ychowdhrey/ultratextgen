@@ -5192,6 +5192,20 @@
      Section: picker strip
      --------------------------------------------------------------- */
 
+  /* A tap on a strip chip only recoloured it: on a phone the letter it opened
+     sits far below the strip, so the tap looked like it did nothing. After a
+     tap (never on load) the panel is scrolled up under the header when its
+     top is in the lower 40% of the screen, instantly under reduced motion.
+     The frozen block-letters page keeps its behaviour (BATCH_FROZEN). */
+  function revealPanel() {
+    if (BATCH_FROZEN || !el.panel) return;
+    const top = el.panel.getBoundingClientRect().top;
+    if (top <= window.innerHeight * 0.6) return;
+    const headerH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--utg-header-h")) || 0;
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: Math.max(0, window.scrollY + top - headerH - 8), behavior: reduce ? "auto" : "smooth" });
+  }
+
   function buildStrip() {
     if (!el.strip) return;
     const make = (ch) => {
@@ -5203,7 +5217,11 @@
       b.setAttribute("aria-selected", "false");
       b.setAttribute("aria-label", cap(NOUN) + " " + charLabel(ch));
       b.textContent = ch;
-      b.addEventListener("click", () => { selectChar(ch); trackEngage("letter_pick", charKind(ch)); });
+      b.addEventListener("click", (e) => {
+        selectChar(ch);
+        trackEngage("letter_pick", charKind(ch));
+        if (e.isTrusted) revealPanel();
+      });
       return b;
     };
     const letterRow = document.createElement("div");
