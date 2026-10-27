@@ -10249,6 +10249,22 @@ button.kana-cell:active { transform: translateY(0); }
 .kana-print-wrap .kana-cell .kana-romaji { font-size: 7pt; }
 /* Blank sheet: the hidden reading stays as a write-in gap. */
 .kana-print-wrap .kana-romaji.is-hidden { min-height: 6mm; }
+/* Download PDF (kanaChart.js writePdf): while the chart is rasterised the
+   print surface is laid out for real, off screen, at the paper's content
+   width, with the print sheet's own rules, so the file matches the printout.
+   Each page unit contains its children's margins so it measures true. */
+body.kana-pdf-rendering #kana-print-root {
+  display: block;
+  position: fixed;
+  left: -300vw;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  z-index: -1;
+  pointer-events: none;
+}
+.kana-pdf-page { display: flow-root; }
 
 /* Locale reading line (window.UTG_KANA.readings, e.g. Hangul on /ko/).
    Three lines no longer fit a square tile on a phone, so the tile keeps a
