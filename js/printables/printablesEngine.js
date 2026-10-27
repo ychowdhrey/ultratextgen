@@ -2599,6 +2599,7 @@
        would be a control with no visible consequence, which is the exact
        report this whole panel was rebuilt for. */
     if (el.designPreview && typeof renderDesignPreview === "function") renderDesignPreview();
+    if (el.bannerMeta && typeof syncBannerMeta === "function") syncBannerMeta();
     // No isConnected guard: paperPreview() paints once while the holder is
     // still detached (selectChar appends it afterwards), and an isConnected
     // check there silently skipped that first paint — the sheet took the
@@ -11913,10 +11914,25 @@
     const pages = bannerPages(cards);
     el.bannerPreview.innerHTML = "";
     el.bannerPreview.appendChild(bannerPagesNode(phrase));
-    if (el.bannerMeta) {
-      el.bannerMeta.textContent = total + " " + plural(total, T.flagCount) + " · " +
-        pages.length + " " + plural(pages.length, T.pageCount) + " · " + T.usLetter;
-    }
+    syncBannerMeta(total, pages.length);
+  }
+  /* The line under the banner names the paper the PDF is written on. It
+     printed T.usLetter, a constant, so after choosing A4 or landscape it still
+     read "US Letter", in English on the Polish page. It now names the live
+     paper and orientation the way the letter-set summary does, from strings
+     the print panel already ships in every language, and the panel repaints it. */
+  let bannerCounts = null;
+  function syncBannerMeta(total, pageCount) {
+    if (!el.bannerMeta) return;
+    if (total != null) bannerCounts = { total: total, pages: pageCount };
+    if (!bannerCounts) return;
+    const paper = PP && PP.paperLabel ? PP.paperLabel() : T.usLetter;
+    const orient = printPrefs.orient === "landscape" ? PO.landscape : PO.portrait;
+    el.bannerMeta.textContent = [
+      bannerCounts.total + " " + plural(bannerCounts.total, T.flagCount),
+      bannerCounts.pages + " " + plural(bannerCounts.pages, T.pageCount),
+      paper, orient
+    ].filter(Boolean).join(" · ");
   }
 
   function printBanner() {
