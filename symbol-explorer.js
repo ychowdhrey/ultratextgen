@@ -1494,12 +1494,14 @@
     const symbol = btn.getAttribute("data-symbol");
     const row = btn.closest(".flag-row");
     const tile = row ? row.querySelector(".symbol-tile") : null;
-    const nowSaved = UTGX.saved.toggle({
+    // The press means what the star showed, never a flip of the store: a star
+    // painted before another tab's save arrived still reads "Save".
+    const nowSaved = UTGX.saved.set({
       type: "symbol",
       value: symbol,
       label: tile ? rowLabel(tile) : symbol,
       href: window.location.pathname
-    });
+    }, btn.getAttribute("aria-pressed") !== "true");
     if (nowSaved === null) return;
     paintSaveBtn(btn, nowSaved);
   });

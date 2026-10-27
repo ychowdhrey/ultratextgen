@@ -1067,6 +1067,37 @@ async function main() {
     await ctx.close();
   }
 
+  // 25. The library star carries the same intent. A storage write this tab
+  // has not heard about yet leaves a star reading "Save"; pressing it must
+  // keep the symbol saved, where a flip of the store removed it.
+  console.log('\n/library/heart-symbols/ (stale Save star keeps the symbol)');
+  {
+    const { ctx, page, errors } = await open('/library/heart-symbols/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      const sym = await page.locator('.flag-row .symbol-save-btn').first().getAttribute('data-symbol');
+      const starState = () => page.evaluate((v) => {
+        const b = [...document.querySelectorAll('.symbol-save-btn')].find((e) => e.getAttribute('data-symbol') === v);
+        return b ? b.getAttribute('aria-pressed') : null;
+      }, sym);
+      await page.evaluate((v) => {
+        const list = JSON.parse(localStorage.getItem('utg_saved_items') || '[]');
+        list.unshift({ type: 'symbol', value: v, label: v, href: '', t: Date.now() });
+        localStorage.setItem('utg_saved_items', JSON.stringify(list));
+      }, sym);
+      check('the stale star still reads Save before the press', (await starState()) === 'false', await starState());
+      await page.locator('.flag-row .symbol-save-btn').first().click({ force: true });
+      await page.waitForTimeout(300);
+      const kept = await page.evaluate((v) => JSON.parse(localStorage.getItem('utg_saved_items') || '[]').some((r) => r.type === 'symbol' && r.value === v), sym);
+      check('pressing a stale library Save star keeps the symbol saved', kept, sym);
+      check('and the star now reads Saved', (await starState()) === 'true', await starState());
+    } catch (e) {
+      check('library stale star: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
   await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });
