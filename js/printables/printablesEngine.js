@@ -3417,7 +3417,8 @@
      remembered class filled it on load and "cat" printed as one sheet per
      child (three names, three pages), and a spelling list typed there came
      back as "names" on name-tracing. A word list keeps its own memory, per
-     page; a curated-word page (CFG.fixedWords) keeps none, as before. */
+     page, cleared by emptying its box. A curated-word page (CFG.fixedWords)
+     keeps none; it used to write its list into the class key on every print. */
   const WORDLIST_KEY = "utg_printables_wordlist:" + window.location.pathname;
   function rosterIsWordList(mount) {
     const details = mount && mount.closest ? mount.closest("details.pt-roster-field") : null;
@@ -11520,7 +11521,9 @@
       ctx.strokeStyle = "#e2e6ee"; ctx.lineWidth = 3;
       roundRectPath(ctx, 18, 18, W - 36, H - 36, 26); ctx.stroke();
 
-      const text = designText(), line2 = designLine2(), heading = designHeadingText();
+      // The same heading the preview and the PDF carry: {name} becomes the
+      // Step-1 name here too (it printed literally in the PNG).
+      const text = designText(), line2 = designLine2(), heading = headingForName(designHeadingText(), null);
       let lines = line2 ? [text, line2] : [text];
     let wrapped = false;
       const borderSym = designBorderSym();
