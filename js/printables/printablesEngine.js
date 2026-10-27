@@ -132,14 +132,17 @@
       dotLadderTitle: "Practice ladder",
       dotLadderText: "Start easy and add dots as it gets comfortable. Mastered Expert? Turn the numbers off, then try drawing it freehand.",
       pdfHint: "Tip: Print → “Save as PDF” downloads this sheet as a PDF.",
-      /* Word search maker. English only for now: no locale build of this page
-         exists, so nothing can render these in the wrong language. When one
-         ships, harvest each string per docs/em-dash-policy.md's sibling rule
-         and attest it with npm run audit:locale-attestation. */
+      /* Word search maker. Seven locales ship this page besides English, each
+         with its own block. The merge with English (T, below) is shallow, so a locale
+         block must carry every key the page reads: es lacked overCap, and a
+         Spanish list over the cap threw instead of saying what was left out.
+         A new string is harvested per docs/em-dash-policy.md's sibling rule
+         and attested with npm run audit:locale-attestation. */
       wordSearch: {
         heading: "Word Search",
         findAll: "Find all",
         wordsWord: "words",
+        findOne: "Find the word",
         answerKey: "Answer key",
         forWhom: "for",
         tooLong: "Too long for the grid:",
@@ -150,11 +153,11 @@
         versions: "different grids, one per name",
         oneGrid: "One grid"
       },
-      /* Crossword and word scramble. English only, for the same reason and
-         under the same rule as wordSearch above: no locale build of either
-         page exists, so nothing can render these in the wrong language. When
-         one ships, harvest each string per docs/em-dash-policy.md's sibling
-         rule and attest it with npm run audit:locale-attestation. */
+      /* Crossword and word scramble, under the same rule as wordSearch
+         above: a locale that ships the page carries the whole block. The
+         scramble page exists in English and es (the es block was added on
+         2026-10-27; until then that page printed this English block); nl and
+         tr carry a block with no page yet. */
       crossword: {
         heading: "Crossword",
         across: "Across",
@@ -400,11 +403,28 @@
         answerKey: "Soluciones",
         forWhom: "para",
         tooLong: "Demasiado larga para la cuadrícula:",
+        overCap: "Solo se usan las primeras {n} palabras. Quedan fuera:",
         needWords: "Escribe algunas palabras para crear la sopa de letras.",
         gridOf: "Cuadrícula de sopa de letras",
         lettersBy: "letras por",
         versions: "cuadrículas distintas, una por nombre",
         oneGrid: "Una cuadrícula"
+      },
+      /* Word scramble: es/imprimibles/palabras-desordenadas exists, so the
+         English block above was printing on it. Each string is built from
+         words the es pages already publish (npm run audit:locale-attestation:
+         attested); the level names are that page's own. */
+      scramble: {
+        heading: "Palabras desordenadas",
+        unscramble: "Ordena las letras de cada palabra.",
+        answerKey: "Soluciones",
+        forWhom: "para",
+        startsWith: "empieza por",
+        noScramble: "Demasiado corta para desordenar:",
+        needWords: "Escribe algunas palabras para desordenarlas.",
+        versions: "fichas distintas, una por nombre",
+        oneSheet: "Una ficha",
+        easy: "Fácil", medium: "Medio", hard: "Difícil"
       },
       trace: {
         solid:    { label: "Modelo sólido", hint: "Letras oscuras y llenas — traza justo encima" },
@@ -745,6 +765,7 @@
         heading: "Suchsel",
         findAll: "Finde alle",
         wordsWord: "Wörter",
+        findOne: "Finde das Wort",
         answerKey: "Lösung",
         forWhom: "für",
         tooLong: "Zu lang für das Gitter:",
@@ -1156,7 +1177,11 @@
       nameStyleLabel: "Stil", nameFillLabel: "Dolgu", nameStrokeLabel: "Kontur",
       nameSolidLabel: "Şimdi boya (tam dolgu)",
       pngTransparent: "PNG (şeffaf)",
-      classSet: "Sınıf seti: her isim için bir sayfa", sheets: "sayfa",
+      /* `sheets` counts one child's worksheet and `pageCount` a side of
+         paper; both were "sayfa", so a class of three read "3 sayfa · 3
+         sayfa". "çalışma sayfası" is the drill-sheet term above, the one the
+         tr pages print, and the word sheetsPerPage already abbreviates. */
+      classSet: "Sınıf seti: her isim için bir sayfa", sheets: "çalışma sayfası",
       classSetPngHint: "PNG yalnızca şu anki ismi indirir; setin tamamı için PDF olarak kaydet'i kullan.",
       sheetsPerPage: "Sayfa başına çalışma",
       bannerInstr: "Her bayrağı kesikli çizgisinden kes, her noktaya bir delik aç, sonra ipi ya da kurdeleyi sırayla (1, 2, 3…) geçir; kelime ortaya çıksın.",
@@ -3394,6 +3419,29 @@
       localStorage.removeItem(ROSTER_KEY_LEGACY);
     } catch (err) { /* optional */ }
   }
+  /* A WORD list is not a class. The handwriting generator's spelling list
+     (data-roster-kind="words") shared ROSTER_KEY with the name tools, so a
+     remembered class filled it on load and "cat" printed as one sheet per
+     child (three names, three pages), and a spelling list typed there came
+     back as "names" on name-tracing. A word list keeps its own memory, per
+     page, cleared by emptying its box. A curated-word page (CFG.fixedWords)
+     keeps none; it used to write its list into the class key on every print. */
+  const WORDLIST_KEY = "utg_printables_wordlist:" + window.location.pathname;
+  function rosterIsWordList(mount) {
+    const details = mount && mount.closest ? mount.closest("details.pt-roster-field") : null;
+    return !!(details && details.dataset.rosterKind === "words");
+  }
+  function readRosterFor(mount) {
+    if (!rosterIsWordList(mount)) return readRoster();
+    try { return localStorage.getItem(WORDLIST_KEY); } catch (err) { return null; }
+  }
+  function writeRosterFor(mount, value) {
+    if (!rosterIsWordList(mount)) { writeRoster(value); return; }
+    try {
+      if (value && value.trim()) localStorage.setItem(WORDLIST_KEY, value);
+      else localStorage.removeItem(WORDLIST_KEY);
+    } catch (err) { /* optional */ }
+  }
   /* Sheet setup (paper, orientation, margins, ink saver, render scale) is
      owned by js/printables/printPrefs.js, so this engine, monogramEngine and
      crossStitchEngine cannot disagree about what page a sheet is written on.
@@ -3772,7 +3820,7 @@
     if (!roster && rosterEl && !rosterEl.value.trim() && !fixedWordSet()) {
       // Roster memory: a teacher's class list stays on the device between
       // visits (this device only, never sent anywhere).
-      const remembered = readRoster(); if (remembered) rosterEl.value = remembered;
+      const remembered = readRosterFor(rosterEl); if (remembered) rosterEl.value = remembered;
     }
   }
   // Phase 2 (after the sections initialise): apply state that has setters.
@@ -3842,7 +3890,7 @@
       PP.rememberRecent({ href: presetUrl(), label: label, page: (document.title || "").split("|")[0].trim(), sheet: sheet });
     }
     const roster = primaryRoster();
-    if (roster) writeRoster(roster.value);
+    if (roster && !fixedWordSet()) writeRosterFor(roster, roster.value);
     renderRecent();
   }
   let recentMount = null;
@@ -4144,7 +4192,7 @@
     const roster = primaryRoster();
     if (roster && !fixedWordSet()) {
       let t2 = null;
-      roster.addEventListener("input", () => { clearTimeout(t2); t2 = setTimeout(() => writeRoster(roster.value), 800); });
+      roster.addEventListener("input", () => { clearTimeout(t2); t2 = setTimeout(() => writeRosterFor(roster, roster.value), 800); });
     }
   }
 
@@ -5353,10 +5401,13 @@
      print at 2.7pt, which nobody can follow. */
   const SET_SIZE_KEYS = RENDER === "dots" ? ["full", "medium"] : ["full", "medium", "small"];
   /* Vowels in the page's own language, kept to the characters the page
-     prints. A chip labelled AEIOU on a Polish page would miss Ą, Ę, Ó and Y. */
+     prints. A chip labelled AEIOU on a Polish page would miss Ą, Ę, Ó and Y.
+     Turkish has eight, two of them the dotted/dotless I pair, so its letters
+     are matched through CASE_LOCALE: an English uppercase turns "i" into "I"
+     and would put the wrong one of the pair on the sheet. */
   const SET_VOWELS = {
     en: "AEIOU", es: "AEIOU", pt: "AEIOU", it: "AEIOU", id: "AEIOU", nl: "AEIOU",
-    fr: "AEIOUY", de: "AEIOUÄÖÜ", pl: "AĄEĘIOÓUY"
+    fr: "AEIOUY", de: "AEIOUÄÖÜ", pl: "AĄEĘIOÓUY", tr: "AEIİOÖUÜ"
   };
   // What a set page spends on things that are not letter, in inches,
   // measured on the print surface (US Letter, normal margins): title + credit
@@ -5385,9 +5436,10 @@
       opts.push({ key: "num", label: digits[0] + "–" + digits[digits.length - 1], chars: digits });
     }
     const vowelSet = (SET_VOWELS[LANG] || SET_VOWELS.en).split("");
-    const vowels = CHARS.filter((c) => vowelSet.indexOf(c.toUpperCase()) !== -1);
+    const up = (c) => c.toLocaleUpperCase(CASE_LOCALE);
+    const vowels = CHARS.filter((c) => vowelSet.indexOf(up(c)) !== -1);
     if (vowels.length >= 2 && vowels.length < letters.length) {
-      opts.push({ key: "vow", label: vowels.map((c) => c.toUpperCase()).join(""), chars: vowels });
+      opts.push({ key: "vow", label: vowels.map(up).join(""), chars: vowels });
     }
     opts.push({ key: "pick", label: T.set.pick + "…", chars: null });
     setOptsCache = opts;
@@ -9858,7 +9910,10 @@
   // author used one; otherwise the Step-1 word is substituted, which is the
   // case a placeholder-follower actually lands in.
   function headingForName(heading, name) {
-    if (!heading || !name) return heading;
+    if (!heading) return heading;
+    // A single sheet has no roster name, but the token still means the name
+    // on the sheet: the Step-1 word. It used to print "{name}" itself.
+    if (!name) return heading.indexOf(DESIGN_NAME_TOKEN) !== -1 ? heading.split(DESIGN_NAME_TOKEN).join(designText()) : heading;
     if (heading.indexOf(DESIGN_NAME_TOKEN) !== -1) return heading.split(DESIGN_NAME_TOKEN).join(name);
     const word = designText();
     if (!word) return heading;
@@ -11477,7 +11532,9 @@
       ctx.strokeStyle = "#e2e6ee"; ctx.lineWidth = 3;
       roundRectPath(ctx, 18, 18, W - 36, H - 36, 26); ctx.stroke();
 
-      const text = designText(), line2 = designLine2(), heading = designHeadingText();
+      // The same heading the preview and the PDF carry: {name} becomes the
+      // Step-1 name here too (it printed literally in the PNG).
+      const text = designText(), line2 = designLine2(), heading = headingForName(designHeadingText(), null);
       let lines = line2 ? [text, line2] : [text];
     let wrapped = false;
       const borderSym = designBorderSym();
@@ -12414,8 +12471,13 @@
     note.className = "pt-search-note";
     /* Polish counts with case endings ("12 słów", "3 słowa"), so its strings
        put the number last ("Do znalezienia: 12") and leave wordsWord and colon
-       empty; an empty colon must stay empty, hence != null, not ||. */
-    note.textContent = (T.wordSearch.findAll + " " + placed + " " + T.wordSearch.wordsWord).trim()
+       empty; an empty colon must stay empty, hence != null, not ||.
+       One placed word printed "Find all 1 words:", so a locale with a
+       singular sentence (findOne) uses it, without the count, at one. */
+    const findText = placed === 1 && T.wordSearch.findOne
+      ? T.wordSearch.findOne
+      : T.wordSearch.findAll + " " + placed + " " + T.wordSearch.wordsWord;
+    note.textContent = findText.trim()
       + (T.wordSearch.colon != null ? T.wordSearch.colon : ":");
     sheet.appendChild(note);
 
