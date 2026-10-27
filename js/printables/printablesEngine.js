@@ -11171,9 +11171,30 @@
   // is the class-set print path (one roster name per sheet — always a single
   // line); interactive use reads the input fields, including the optional
   // second line.
+  /* The lines one child's sheet carries. A class set used to print the
+     roster name INSTEAD of the typed design, so "Happy Birthday / Emma" with
+     a class of three printed three sheets reading only "Noah", "Ava", "Liam":
+     one of the two typed lines was dropped from every sheet. The name now
+     takes ONE line and the other stays: the line that holds the {name}
+     token, else the line that already is a name (a roster entry or the demo
+     name), else the first line, which is the field's "word or name" line. */
+  function designLinesFor(name) {
+    const child = String(name).slice(0, DESIGN_MAX);
+    const typed = designLines();
+    if (typed.length < 2) return [child];
+    if (typed.some((l) => l.indexOf(DESIGN_NAME_TOKEN) !== -1)) {
+      return typed.map((l) => l.split(DESIGN_NAME_TOKEN).join(child));
+    }
+    const known = rosterNames(el.designRoster).concat([DESIGN_DEMO]).map((n) => String(n).toLowerCase());
+    let at = typed.findIndex((l) => known.indexOf(l.toLowerCase()) !== -1);
+    if (at === -1) at = 0;
+    return typed.map((l, i) => (i === at ? child : l));
+  }
+
   function designSheetSVG(textOverride) {
-    const text = textOverride != null ? String(textOverride).slice(0, DESIGN_MAX) : designText();
-    const line2 = textOverride != null ? "" : designLine2();
+    const classLines = textOverride != null ? designLinesFor(textOverride) : null;
+    const text = classLines ? classLines[0] : designText();
+    const line2 = classLines ? (classLines[1] || "") : designLine2();
     let lines = line2 ? [text, line2] : [text];
     let wrapped = false;
     const heading = headingForName(designHeadingText(), textOverride != null ? String(textOverride) : null);
