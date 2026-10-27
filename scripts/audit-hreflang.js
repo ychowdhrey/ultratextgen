@@ -608,14 +608,15 @@ if (FIX) {
 
 const totalIssues =
   nonReciprocal.length + headless.size + brokenList.length + badXDefault.length + missingXDefault.length +
-  missingSelfRef.length + langMismatch.length;
-if (totalIssues && !FIX) {
-  console.log('');
-  console.log(`❌ ${totalIssues} hreflang issue(s) found. Run with --fix to auto-repair non-reciprocal pairs, headless targets, and missing or misdirected x-default tags.`);
-  process.exit(1);
-} else if (langMismatch.length) {
+  missingSelfRef.length;
+if (langMismatch.length) {
+  // checked first: --fix cannot repair it, so the generic "run with --fix" advice would mislead
   console.log('');
   console.log(`❌ ${langMismatch.length} hreflang code(s) point at a page in another language (never auto-fixed; see the list above).`);
+  process.exit(1);
+} else if (totalIssues && !FIX) {
+  console.log('');
+  console.log(`❌ ${totalIssues} hreflang issue(s) found. Run with --fix to auto-repair non-reciprocal pairs, headless targets, and missing or misdirected x-default tags.`);
   process.exit(1);
 } else if (brokenList.length) {
   console.log('');
