@@ -1022,6 +1022,29 @@ async function main() {
     await ctx.close();
   }
 
+  // 28. A promised tool that never rendered. Both Indonesian letter pages say
+  // "type a name" and mounted an empty div the engine has no id for, so no
+  // field appeared. Typing must draw the name, and Download PDF must write
+  // that name's sheet.
+  for (const url of ['/id/printables/huruf-bubble/', '/id/printables/huruf-kaligrafi/']) {
+    console.log(`\n${url} (the name tool renders and downloads)`);
+    const { ctx, page, errors } = await open(url, 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.fill('#pt-name-input', 'Rizky');
+      await page.waitForTimeout(400);
+      const drawn = await page.locator('#pt-name-preview svg').count();
+      check('typing a name draws it in the preview', drawn > 0, `${drawn} svg`);
+      const [d] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#pt-name-print')]);
+      const buf = fs.readFileSync(await d.path());
+      check('Download PDF writes a PDF of that name', buf.slice(0, 4).toString() === '%PDF' && pdfPages(buf) >= 1 && /rizky/i.test(d.suggestedFilename()), d.suggestedFilename());
+    } catch (e) {
+      check('id name tool: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
   await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });
