@@ -110,7 +110,10 @@
   function persist() {
     let wrote = true;
     try {
-      localStorage.setItem(KEY, JSON.stringify(items.slice(0, MAX)));
+      // No positional slice here: the cap is enforced where a record is
+      // added (evictFor), by type. Slicing by array position dropped whatever
+      // sat at the end, which after a legacy fold is the visitor's styles.
+      localStorage.setItem(KEY, JSON.stringify(items));
     } catch (err) {
       // Storage unavailable — the in-memory list still works for this page.
       wrote = false;
@@ -131,11 +134,82 @@
     return -1;
   }
 
-  function emit() {
+  function emit(evicted) {
     try {
-      document.dispatchEvent(new CustomEvent("utg:savedchange", { detail: { count: items.length } }));
+      // detail.evicted lists the records the cap pushed out to make room
+      // (empty when none): enough for a host to say so ("your oldest saved
+      // symbol was removed") instead of a record vanishing in silence.
+      document.dispatchEvent(new CustomEvent("utg:savedchange", { detail: { count: items.length, evicted: (evicted || []).slice() } }));
     } catch (err) { /* CustomEvent unsupported — callers re-read on next render */ }
   }
+
+  /* The one write path behind toggle() and set(): add a record that is absent
+     or remove one that is present (the caller has validated it, re-read the
+     store and decided), then persist, record and announce it. Returns the
+     resulting state. */
+  function apply(rec, save) {
+    const i = indexOf(rec.type, rec.value);
+    const evicted = [];
+    if (save) {
+      items.unshift({
+        type: rec.type,
+        value: rec.value,
+        label: rec.label || rec.value,
+        href: rec.href || "",
+        t: Date.now()
+      });
+      // Usually one record; more only when the stored list was already over
+      // the cap (an older script.js, or a legacy fold, wrote past it).
+      while (items.length > MAX) {
+        const gone = evictFor(rec.type);
+        if (!gone) break;
+        evicted.push(gone);
+      }
+    } else if (i !== -1) {
+      items.splice(i, 1);
+    }
+    persist();
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      // save_style is kept as the event name so the existing GA4 reports and
+      // their history stay continuous. item_type is what separates a saved
+      // symbol from a saved font from here on.
+      event: save ? "save_style" : "unsave_style",
+      item_type: rec.type,
+      item_label: rec.label || rec.value,
+      style_name: rec.type === "style" ? rec.value : undefined
+    });
+    lastEvicted = evicted;
+    emit(evicted);
+    return save;
+  }
+
+  /* The store is one shared list with one cap, so the cap is enforced by
+     type. Trimming the list's tail used to evict the oldest record of ANY
+     type: saving a 201st symbol silently deleted a saved font style. Now a
+     new record of type T pushes out the oldest record of type T (the new
+     record itself, at index 0, is never the candidate). Only when T has
+     nothing else to give, because other types fill the store, does the
+     oldest record overall go. "Oldest" is the smallest saved-at time; on a
+     tie, the one later in the list. Removes one record and returns it. */
+  function evictFor(type) {
+    let pick = -1;
+    let pickAny = -1;
+    for (let i = 1; i < items.length; i++) {
+      const t = items[i].t || 0;
+      if (pickAny === -1 || t <= (items[pickAny].t || 0)) pickAny = i;
+      if (items[i].type === type && (pick === -1 || t <= (items[pick].t || 0))) pick = i;
+    }
+    const at = pick !== -1 ? pick : pickAny;
+    if (at === -1) return null;
+    const gone = items.splice(at, 1)[0];
+    return { type: gone.type, value: gone.value, label: gone.label || gone.value };
+  }
+
+  // The records the most recent change evicted (empty when none). Read it
+  // right after toggle() / set() when the event detail is not to hand.
+  let lastEvicted = [];
 
   UTG.saved = {
     /** Every saved record of a type (or all of them), newest first. Returns
@@ -161,39 +235,40 @@
       // working from the list it loaded would erase anything another tab
       // saved since. Each change is applied to the current stored list.
       refresh();
-      const i = indexOf(rec.type, rec.value);
-      const nowSaved = i === -1;
-      if (nowSaved) {
-        items.unshift({
-          type: rec.type,
-          value: rec.value,
-          label: rec.label || rec.value,
-          href: rec.href || "",
-          t: Date.now()
-        });
-        if (items.length > MAX) items.length = MAX;
-      } else {
-        items.splice(i, 1);
-      }
-      persist();
+      return apply(rec, indexOf(rec.type, rec.value) === -1);
+    },
 
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        // save_style is kept as the event name so the existing GA4 reports and
-        // their history stay continuous. item_type is what separates a saved
-        // symbol from a saved font from here on.
-        event: nowSaved ? "save_style" : "unsave_style",
-        item_type: rec.type,
-        item_label: rec.label || rec.value,
-        style_name: rec.type === "style" ? rec.value : undefined
-      });
-      emit();
-      return nowSaved;
+    /** Make the record saved (on = true) or not saved (on = false), and do
+        nothing when the store already says so. Returns the resulting state,
+        or null when the record was malformed.
+
+        A control should call this with the state it SHOWS the visitor, not
+        toggle(). toggle() flips whatever the store holds, so a star painted
+        before another tab (or another surface on this page) saved the same
+        item reads "Save", and pressing it removed the item instead. A press
+        is an intent ("save this"), and set() carries the intent; toggle()
+        carries only "change something". */
+    set(rec, on) {
+      if (!isRecord(rec)) return null;
+      refresh();
+      const want = !!on;
+      if ((indexOf(rec.type, rec.value) !== -1) === want) { // already so: no write, no event
+        lastEvicted = [];
+        return want;
+      }
+      return apply(rec, want);
+    },
+
+    /** The records the last save pushed out to stay under the cap, oldest
+        first, as {type, value, label}; empty when it evicted nothing. */
+    lastEvicted() {
+      return lastEvicted.slice();
     },
 
     clear(type) {
       refresh();
       items = type ? items.filter((r) => r.type !== type) : [];
+      lastEvicted = [];
       persist();
       emit();
     }
