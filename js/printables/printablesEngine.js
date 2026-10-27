@@ -9898,7 +9898,10 @@
   // author used one; otherwise the Step-1 word is substituted, which is the
   // case a placeholder-follower actually lands in.
   function headingForName(heading, name) {
-    if (!heading || !name) return heading;
+    if (!heading) return heading;
+    // A single sheet has no roster name, but the token still means the name
+    // on the sheet: the Step-1 word. It used to print "{name}" itself.
+    if (!name) return heading.indexOf(DESIGN_NAME_TOKEN) !== -1 ? heading.split(DESIGN_NAME_TOKEN).join(designText()) : heading;
     if (heading.indexOf(DESIGN_NAME_TOKEN) !== -1) return heading.split(DESIGN_NAME_TOKEN).join(name);
     const word = designText();
     if (!word) return heading;
