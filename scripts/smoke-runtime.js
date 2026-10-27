@@ -972,6 +972,100 @@ async function main() {
     await ctx.close();
   }
 
+  // 27. Locale strings that only a rendered sheet shows. Turkish has eight
+  // vowels and the vowel chip printed five (A E I O U, no İ Ö Ü). Its class
+  // set read "3 sayfa · 3 sayfa" because the sheet and the page were one word.
+  // A one-word word search read "Finde alle 1 Wörter". The PDF is counted and
+  // the line under the button is read as text.
+  console.log('\n/tr/yazdirilabilir/harf-boyama/ + /de/zum-ausdrucken/suchsel/ (locale counts and sets)');
+  {
+    const { ctx, page, errors } = await open('/tr/yazdirilabilir/harf-boyama/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      const chip = await page.evaluate(() => { const i = document.querySelector('input[name=pt-set-letters][value=vow]'); return i ? i.parentNode.textContent.trim() : null; });
+      check('tr vowel chip names all eight Turkish vowels', chip === 'AEIİOÖUÜ', chip);
+      await page.click('label:has(input[name=pt-set-letters][value=vow])');
+      await page.click('label:has(input[name=pt-set-size][value=full])');
+      const [d] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#pt-alphabet-print')]);
+      const n = pdfPages(fs.readFileSync(await d.path()));
+      check('tr vowels at full page size print 8 pages, one per vowel', n === 8, `${n} pages`);
+    } catch (e) {
+      check('tr vowel set: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+  {
+    const { ctx, page, errors } = await open('/tr/yazdirilabilir/isim-yazma-calismasi/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.evaluate(() => { const d = document.querySelector('details.pt-roster-field'); if (d) d.open = true; });
+      await page.click('.pt-audience-field [data-value=class]');
+      await page.fill('#pt-name-roster', 'Ali\nAyşe\nCan');
+      await page.waitForTimeout(300);
+      const cost = (await page.textContent('#pt-sheet-cost')).trim();
+      const counts = cost.split(' · ').filter((b) => /^\d/.test(b)).map((b) => b.replace(/^\d+\s*/, ''));
+      check('tr class set: the sheet count and the page count use different words', counts.length === 2 && counts[0] !== counts[1], cost);
+    } catch (e) {
+      check('tr class set: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+  {
+    const { ctx, page, errors } = await open('/de/zum-ausdrucken/suchsel/', 'desktop');
+    await page.fill('#pt-search-input', 'Apfel');
+    await page.waitForTimeout(600);
+    const note = await page.evaluate(() => { const n = document.querySelector('.pt-search-note'); return n ? n.textContent : null; });
+    check('de word search with one word does not say "alle 1 Wörter"', !!note && !/\b1 Wörter/.test(note), note);
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 28. A promised tool that never rendered. Both Indonesian letter pages say
+  // "type a name" and mounted an empty div the engine has no id for, so no
+  // field appeared. Typing must draw the name, and Download PDF must write
+  // that name's sheet.
+  for (const url of ['/id/printables/huruf-bubble/', '/id/printables/huruf-kaligrafi/']) {
+    console.log(`\n${url} (the name tool renders and downloads)`);
+    const { ctx, page, errors } = await open(url, 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.fill('#pt-name-input', 'Rizky');
+      await page.waitForTimeout(400);
+      const drawn = await page.locator('#pt-name-preview svg').count();
+      check('typing a name draws it in the preview', drawn > 0, `${drawn} svg`);
+      const [d] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#pt-name-print')]);
+      const buf = fs.readFileSync(await d.path());
+      check('Download PDF writes a PDF of that name', buf.slice(0, 4).toString() === '%PDF' && pdfPages(buf) >= 1 && /rizky/i.test(d.suggestedFilename()), d.suggestedFilename());
+    } catch (e) {
+      check('id name tool: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 29. A monogram with accented initials downloaded as "download", with no
+  // extension: the browser drops a non-ASCII filename. The initials fold to
+  // ASCII, so the file keeps its name and its type.
+  console.log('\n/printables/monogram-maker/ (accented initials keep the file name)');
+  {
+    const { ctx, page, errors } = await open('/printables/monogram-maker/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      for (const [id, v] of [['mono-left', 'Ä'], ['mono-center', 'Ö'], ['mono-right', 'Ü']]) await page.fill('#' + id, v);
+      await page.waitForTimeout(300);
+      const [pdf] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#mono-print')]);
+      check('ÄÖÜ downloads monogram-aou.pdf', pdf.suggestedFilename() === 'monogram-aou.pdf', pdf.suggestedFilename());
+      const [png] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#mono-png')]);
+      check('ÄÖÜ downloads monogram-aou.png', png.suggestedFilename() === 'monogram-aou.png', png.suggestedFilename());
+    } catch (e) {
+      check('monogram filename: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // 26. Decoration chips are buttons. They were spans with a click handler,
   // so Tab never reached them, Enter and Space did nothing, and a screen
   // reader did not announce them as controls: without a mouse, nobody could

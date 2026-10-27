@@ -96,7 +96,10 @@ option looks and behaves the same wherever it appears:
   reader of the switch; read the roster through it.
   The remembered list has one way out: `mountRosterClear()`'s "Clear names" button empties the box
   and removes `utg_printables_roster`. English pages only until its label is translated, and not on
-  the frozen `block-letters` page (`BATCH_FROZEN`).
+  the frozen `block-letters` page (`BATCH_FROZEN`). That key holds **class lists only**: a word list
+  (`data-roster-kind="words"`) is remembered per page under `utg_printables_wordlist:<path>` and
+  cleared by emptying its box, and a `CFG.fixedWords` page remembers nothing. Sharing one key filled
+  the handwriting generator's spelling list with a remembered class.
 - **Title and name/date line** live in one "More" section per tool, built by
   `mountMore()` in two scopes, `letters` and `word`. Read them through
   `moreTitle()` / `moreFooterOn()`, never from an element id. The name/date default
