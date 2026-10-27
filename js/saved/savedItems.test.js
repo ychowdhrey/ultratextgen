@@ -338,6 +338,40 @@ function loadTwoTabs(seed) {
   eq(b.events.length, before + 1, 'unrelated storage keys are ignored');
 }
 
+/* ---- set(): a press carries its intent, not a flip --------------------- */
+
+{
+  const { api, dataLayer, events } = load();
+  eq(api.set({ type: 'style', value: 'Bold', label: 'Bold' }, true), true, 'set(rec, true) saves an absent record');
+  eq(api.has('style', 'Bold'), true, 'and it is stored');
+  const rows = dataLayer.length;
+  const evs = events.length;
+  eq(api.set({ type: 'style', value: 'Bold', label: 'Bold' }, true), true, 'set(rec, true) on a saved record keeps it saved');
+  eq(api.has('style', 'Bold'), true, 'rather than removing it the way toggle() would');
+  eq(dataLayer.length, rows, 'a no-op set records no save_style row');
+  eq(events.length, evs, 'and announces no change');
+  eq(api.set({ type: 'style', value: 'Bold' }, false), false, 'set(rec, false) removes a saved record');
+  eq(api.has('style', 'Bold'), false, 'and it is gone');
+  eq(api.set({ type: 'style', value: 'Bold' }, false), false, 'set(rec, false) on an absent record is a no-op');
+  eq(dataLayer.map((e) => e.event), ['save_style', 'unsave_style'], 'only the two real changes fired events');
+  eq(api.set({ type: 'font', value: 'x' }, true), null, 'set() rejects a malformed record like toggle()');
+}
+
+{
+  // The defect set() exists for. Tab B painted its star while the store was
+  // empty; tab A then saved the style. B's visitor sees "Save" and presses it.
+  // toggle() re-read the store, found the style, and REMOVED it. set(…, true)
+  // re-reads the same store and leaves it saved.
+  const { a, b } = loadTwoTabs();
+  a.api.toggle({ type: 'style', value: 'Ultra Bold', label: 'Ultra Bold' });
+  eq(b.api.has('style', 'Ultra Bold'), false, 'the stale tab still believes the style is unsaved');
+  eq(b.api.set({ type: 'style', value: 'Ultra Bold', label: 'Ultra Bold' }, true), true,
+    'pressing a stale "Save" in the other tab keeps the item saved');
+  eq(JSON.parse(a.storage.getItem('utg_saved_items')).map((r) => r.value), ['Ultra Bold'],
+    'the stored list still holds it, once');
+  eq(b.api.has('style', 'Ultra Bold'), true, 'and the stale tab now knows it is saved');
+}
+
 /* ---- report ------------------------------------------------------------ */
 
 console.log(`saved-items: ${pass} passed, ${failures.length} failed`);

@@ -137,6 +137,40 @@
     } catch (err) { /* CustomEvent unsupported — callers re-read on next render */ }
   }
 
+  /* The one write path behind toggle() and set(): add a record that is absent
+     or remove one that is present (the caller has validated it, re-read the
+     store and decided), then persist, record and announce it. Returns the
+     resulting state. */
+  function apply(rec, save) {
+    const i = indexOf(rec.type, rec.value);
+    if (save) {
+      items.unshift({
+        type: rec.type,
+        value: rec.value,
+        label: rec.label || rec.value,
+        href: rec.href || "",
+        t: Date.now()
+      });
+      if (items.length > MAX) items.length = MAX;
+    } else if (i !== -1) {
+      items.splice(i, 1);
+    }
+    persist();
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      // save_style is kept as the event name so the existing GA4 reports and
+      // their history stay continuous. item_type is what separates a saved
+      // symbol from a saved font from here on.
+      event: save ? "save_style" : "unsave_style",
+      item_type: rec.type,
+      item_label: rec.label || rec.value,
+      style_name: rec.type === "style" ? rec.value : undefined
+    });
+    emit();
+    return save;
+  }
+
   UTG.saved = {
     /** Every saved record of a type (or all of them), newest first. Returns
         a copy, so a caller cannot mutate the store by editing the result. */
@@ -161,34 +195,25 @@
       // working from the list it loaded would erase anything another tab
       // saved since. Each change is applied to the current stored list.
       refresh();
-      const i = indexOf(rec.type, rec.value);
-      const nowSaved = i === -1;
-      if (nowSaved) {
-        items.unshift({
-          type: rec.type,
-          value: rec.value,
-          label: rec.label || rec.value,
-          href: rec.href || "",
-          t: Date.now()
-        });
-        if (items.length > MAX) items.length = MAX;
-      } else {
-        items.splice(i, 1);
-      }
-      persist();
+      return apply(rec, indexOf(rec.type, rec.value) === -1);
+    },
 
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        // save_style is kept as the event name so the existing GA4 reports and
-        // their history stay continuous. item_type is what separates a saved
-        // symbol from a saved font from here on.
-        event: nowSaved ? "save_style" : "unsave_style",
-        item_type: rec.type,
-        item_label: rec.label || rec.value,
-        style_name: rec.type === "style" ? rec.value : undefined
-      });
-      emit();
-      return nowSaved;
+    /** Make the record saved (on = true) or not saved (on = false), and do
+        nothing when the store already says so. Returns the resulting state,
+        or null when the record was malformed.
+
+        A control should call this with the state it SHOWS the visitor, not
+        toggle(). toggle() flips whatever the store holds, so a star painted
+        before another tab (or another surface on this page) saved the same
+        item reads "Save", and pressing it removed the item instead. A press
+        is an intent ("save this"), and set() carries the intent; toggle()
+        carries only "change something". */
+    set(rec, on) {
+      if (!isRecord(rec)) return null;
+      refresh();
+      const want = !!on;
+      if ((indexOf(rec.type, rec.value) !== -1) === want) return want; // already so: no write, no event
+      return apply(rec, want);
     },
 
     clear(type) {

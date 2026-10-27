@@ -21,6 +21,9 @@ Architecture, the store's data model, and the incident history:
   site-wide (presence **and** position); `npm run inject:share-save-tags` closes any
   gap in one idempotent run.
 - Never add a second implementation of either.
+- A Save control calls `UTG.saved.set(rec, on)` with the state it showed and
+  repaints on `utg:savedchange`; `toggle()` flips the store, so a stale control
+  removes what the visitor asked to keep.
 
 ## `share_text` has exactly one writer
 

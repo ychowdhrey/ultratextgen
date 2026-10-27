@@ -1013,6 +1013,60 @@ async function main() {
     await ctx.close();
   }
 
+  // 24. The generator's Save follows the store, not the list it loaded with.
+  // script.js repainted its stars only after its own clicks, so a style saved
+  // in another tab still read "Save" here, and pressing it flipped the store:
+  // it REMOVED the style the visitor had just asked to keep.
+  console.log('\n/ (generator Save across tabs)');
+  {
+    const { ctx, page, errors } = await open('/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.fill('#mainInput', 'Luna');
+      await page.waitForTimeout(300);
+      const names = await page.evaluate(() => [...document.querySelectorAll('#resultsGrid .save-btn')].slice(0, 2).map((b) => b.dataset.style));
+      const [x, y] = names;
+      const star = (name) => page.evaluate((n) => {
+        const b = [...document.querySelectorAll('#resultsGrid .save-btn')].find((e) => e.dataset.style === n);
+        return b ? b.getAttribute('aria-pressed') : null;
+      }, name);
+      const stored = () => page.evaluate(() => JSON.parse(localStorage.getItem('utg_saved_items') || '[]').filter((r) => r.type === 'style').map((r) => r.value));
+      check('two unsaved styles to work with', !!x && !!y && (await star(x)) === 'false' && (await star(y)) === 'false', JSON.stringify(names));
+
+      // Another tab in the same browser saves x; this tab hears the storage event.
+      const other = await ctx.newPage();
+      await other.goto(BASE + '/', { waitUntil: 'load' });
+      await other.waitForTimeout(700);
+      await other.fill('#mainInput', 'Luna');
+      await other.waitForTimeout(300);
+      await other.locator(`#resultsGrid .save-btn[data-style="${x.replace(/"/g, '\\"')}"]`).first().click();
+      await other.waitForTimeout(400);
+      check('a save in another tab repaints this tab\'s star', (await star(x)) === 'true', await star(x));
+      check('and lists the style in this tab\'s saved section',
+        await page.evaluate((n) => [...document.querySelectorAll('#savedGrid .save-btn')].some((b) => b.dataset.style === n), x));
+      await other.close();
+
+      // The race the listener cannot close: storage changes before this tab
+      // hears about it (written here directly, so no event arrives). The star
+      // still reads "Save"; pressing it must keep y saved, not remove it.
+      await page.evaluate((n) => {
+        const list = JSON.parse(localStorage.getItem('utg_saved_items') || '[]');
+        list.unshift({ type: 'style', value: n, label: n, href: '', t: Date.now() });
+        localStorage.setItem('utg_saved_items', JSON.stringify(list));
+      }, y);
+      check('the stale star still reads Save before the press', (await star(y)) === 'false', await star(y));
+      await page.locator(`#resultsGrid .save-btn[data-style="${y.replace(/"/g, '\\"')}"]`).first().click();
+      await page.waitForTimeout(300);
+      check('pressing a stale Save keeps the style saved', (await stored()).includes(y), JSON.stringify(await stored()));
+      check('and the star now reads Saved', (await star(y)) === 'true', await star(y));
+      check('the other tab\'s save survives', (await stored()).includes(x), JSON.stringify(await stored()));
+    } catch (e) {
+      check('generator Save across tabs: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
   await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });
