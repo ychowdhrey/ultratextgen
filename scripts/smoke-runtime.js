@@ -972,6 +972,30 @@ async function main() {
     await ctx.close();
   }
 
+  // 27. Locale strings that only a rendered sheet shows. Turkish has eight
+  // vowels and the vowel chip printed five (A E I O U, no İ Ö Ü). Its class
+  // set read "3 sayfa · 3 sayfa" because the sheet and the page were one word.
+  // A one-word word search read "Finde alle 1 Wörter". The PDF is counted and
+  // the line under the button is read as text.
+  console.log('\n/tr/yazdirilabilir/harf-boyama/ + /de/zum-ausdrucken/suchsel/ (locale counts and sets)');
+  {
+    const { ctx, page, errors } = await open('/tr/yazdirilabilir/harf-boyama/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      const chip = await page.evaluate(() => { const i = document.querySelector('input[name=pt-set-letters][value=vow]'); return i ? i.parentNode.textContent.trim() : null; });
+      check('tr vowel chip names all eight Turkish vowels', chip === 'AEIİOÖUÜ', chip);
+      await page.click('label:has(input[name=pt-set-letters][value=vow])');
+      await page.click('label:has(input[name=pt-set-size][value=full])');
+      const [d] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#pt-alphabet-print')]);
+      const n = pdfPages(fs.readFileSync(await d.path()));
+      check('tr vowels at full page size print 8 pages, one per vowel', n === 8, `${n} pages`);
+    } catch (e) {
+      check('tr vowel set: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
   await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });

@@ -5352,10 +5352,13 @@
      print at 2.7pt, which nobody can follow. */
   const SET_SIZE_KEYS = RENDER === "dots" ? ["full", "medium"] : ["full", "medium", "small"];
   /* Vowels in the page's own language, kept to the characters the page
-     prints. A chip labelled AEIOU on a Polish page would miss Ą, Ę, Ó and Y. */
+     prints. A chip labelled AEIOU on a Polish page would miss Ą, Ę, Ó and Y.
+     Turkish has eight, two of them the dotted/dotless I pair, so its letters
+     are matched through CASE_LOCALE: an English uppercase turns "i" into "I"
+     and would put the wrong one of the pair on the sheet. */
   const SET_VOWELS = {
     en: "AEIOU", es: "AEIOU", pt: "AEIOU", it: "AEIOU", id: "AEIOU", nl: "AEIOU",
-    fr: "AEIOUY", de: "AEIOUÄÖÜ", pl: "AĄEĘIOÓUY"
+    fr: "AEIOUY", de: "AEIOUÄÖÜ", pl: "AĄEĘIOÓUY", tr: "AEIİOÖUÜ"
   };
   // What a set page spends on things that are not letter, in inches,
   // measured on the print surface (US Letter, normal margins): title + credit
@@ -5384,9 +5387,10 @@
       opts.push({ key: "num", label: digits[0] + "–" + digits[digits.length - 1], chars: digits });
     }
     const vowelSet = (SET_VOWELS[LANG] || SET_VOWELS.en).split("");
-    const vowels = CHARS.filter((c) => vowelSet.indexOf(c.toUpperCase()) !== -1);
+    const up = (c) => c.toLocaleUpperCase(CASE_LOCALE);
+    const vowels = CHARS.filter((c) => vowelSet.indexOf(up(c)) !== -1);
     if (vowels.length >= 2 && vowels.length < letters.length) {
-      opts.push({ key: "vow", label: vowels.map((c) => c.toUpperCase()).join(""), chars: vowels });
+      opts.push({ key: "vow", label: vowels.map(up).join(""), chars: vowels });
     }
     opts.push({ key: "pick", label: T.set.pick + "…", chars: null });
     setOptsCache = opts;
