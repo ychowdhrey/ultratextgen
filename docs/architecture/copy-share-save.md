@@ -223,6 +223,19 @@ no `save_style` row, no event) when the store already matches, which covers the
 window before another tab's `storage` event arrives. `test:saved-items` and
 `check:runtime-smoke` (case 24) assert both halves.
 
+## The cap evicts by type (2026-10-27)
+
+The store is one list with one cap of 200 records across every type. Trimming the
+list's tail on save evicted the oldest record of **any** type, so a visitor who
+saved 200 symbols silently lost a font style saved earlier. A save of type T now
+evicts the oldest record of type T (smallest saved-at time); only when T has
+nothing older to give, because other types fill the store, does the oldest record
+overall go. The write no longer slices by position either. What was evicted is
+reported, never silent: `utg:savedchange` carries `detail.evicted` (a list of
+`{type, value, label}`, empty when nothing went) and `UTG.saved.lastEvicted()`
+returns the same, so a host can tell the visitor. No host shows it yet; that needs
+a localized string. `test:saved-items` asserts it.
+
 ## Migration off `utg_saved_styles`
 
 The old flat array is read and folded in as `type: "style"` records, **and kept in

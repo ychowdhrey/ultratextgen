@@ -110,7 +110,10 @@
   function persist() {
     let wrote = true;
     try {
-      localStorage.setItem(KEY, JSON.stringify(items.slice(0, MAX)));
+      // No positional slice here: the cap is enforced where a record is
+      // added (evictFor), by type. Slicing by array position dropped whatever
+      // sat at the end, which after a legacy fold is the visitor's styles.
+      localStorage.setItem(KEY, JSON.stringify(items));
     } catch (err) {
       // Storage unavailable — the in-memory list still works for this page.
       wrote = false;
@@ -131,9 +134,12 @@
     return -1;
   }
 
-  function emit() {
+  function emit(evicted) {
     try {
-      document.dispatchEvent(new CustomEvent("utg:savedchange", { detail: { count: items.length } }));
+      // detail.evicted lists the records the cap pushed out to make room
+      // (empty when none): enough for a host to say so ("your oldest saved
+      // symbol was removed") instead of a record vanishing in silence.
+      document.dispatchEvent(new CustomEvent("utg:savedchange", { detail: { count: items.length, evicted: (evicted || []).slice() } }));
     } catch (err) { /* CustomEvent unsupported — callers re-read on next render */ }
   }
 
@@ -143,6 +149,7 @@
      resulting state. */
   function apply(rec, save) {
     const i = indexOf(rec.type, rec.value);
+    const evicted = [];
     if (save) {
       items.unshift({
         type: rec.type,
@@ -151,7 +158,13 @@
         href: rec.href || "",
         t: Date.now()
       });
-      if (items.length > MAX) items.length = MAX;
+      // Usually one record; more only when the stored list was already over
+      // the cap (an older script.js, or a legacy fold, wrote past it).
+      while (items.length > MAX) {
+        const gone = evictFor(rec.type);
+        if (!gone) break;
+        evicted.push(gone);
+      }
     } else if (i !== -1) {
       items.splice(i, 1);
     }
@@ -167,9 +180,36 @@
       item_label: rec.label || rec.value,
       style_name: rec.type === "style" ? rec.value : undefined
     });
-    emit();
+    lastEvicted = evicted;
+    emit(evicted);
     return save;
   }
+
+  /* The store is one shared list with one cap, so the cap is enforced by
+     type. Trimming the list's tail used to evict the oldest record of ANY
+     type: saving a 201st symbol silently deleted a saved font style. Now a
+     new record of type T pushes out the oldest record of type T (the new
+     record itself, at index 0, is never the candidate). Only when T has
+     nothing else to give, because other types fill the store, does the
+     oldest record overall go. "Oldest" is the smallest saved-at time; on a
+     tie, the one later in the list. Removes one record and returns it. */
+  function evictFor(type) {
+    let pick = -1;
+    let pickAny = -1;
+    for (let i = 1; i < items.length; i++) {
+      const t = items[i].t || 0;
+      if (pickAny === -1 || t <= (items[pickAny].t || 0)) pickAny = i;
+      if (items[i].type === type && (pick === -1 || t <= (items[pick].t || 0))) pick = i;
+    }
+    const at = pick !== -1 ? pick : pickAny;
+    if (at === -1) return null;
+    const gone = items.splice(at, 1)[0];
+    return { type: gone.type, value: gone.value, label: gone.label || gone.value };
+  }
+
+  // The records the most recent change evicted (empty when none). Read it
+  // right after toggle() / set() when the event detail is not to hand.
+  let lastEvicted = [];
 
   UTG.saved = {
     /** Every saved record of a type (or all of them), newest first. Returns
@@ -212,13 +252,23 @@
       if (!isRecord(rec)) return null;
       refresh();
       const want = !!on;
-      if ((indexOf(rec.type, rec.value) !== -1) === want) return want; // already so: no write, no event
+      if ((indexOf(rec.type, rec.value) !== -1) === want) { // already so: no write, no event
+        lastEvicted = [];
+        return want;
+      }
       return apply(rec, want);
+    },
+
+    /** The records the last save pushed out to stay under the cap, oldest
+        first, as {type, value, label}; empty when it evicted nothing. */
+    lastEvicted() {
+      return lastEvicted.slice();
     },
 
     clear(type) {
       refresh();
       items = type ? items.filter((r) => r.type !== type) : [];
+      lastEvicted = [];
       persist();
       emit();
     }
