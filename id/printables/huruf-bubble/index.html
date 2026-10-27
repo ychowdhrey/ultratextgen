@@ -135,7 +135,16 @@
   <div class="editorial-block">
     <p>Ketik nama atau kata apa pun, dan hurufnya langsung dirangkai dalam bentuk bubble — siap dicetak sebagai satu baris utuh, bukan huruf per huruf. Berguna untuk nama di mading, judul tugas kelompok, hiasan pintu kamar, atau papan nama ulang tahun.</p>
   </div>
-  <div id="pt-name-tool"></div>
+  <div class="pt-name-tool">
+    <div class="input-wrapper">
+      <input type="text" class="main-input pt-name-input" id="pt-name-input" placeholder="Ketik nama apa pun" maxlength="40" aria-label="Ketik nama atau kata apa pun">
+    </div>
+    <div class="pt-name-preview" id="pt-name-preview" aria-live="polite"></div>
+    <div class="bubble-actions pt-name-actions">
+      <button type="button" class="bubble-btn bubble-btn-primary" id="pt-name-print">Unduh PDF</button>
+      <button type="button" class="bubble-btn" id="pt-name-png">Unduh PNG</button>
+    </div>
+  </div>
 </section>
 
 <div class="section-divider"></div>

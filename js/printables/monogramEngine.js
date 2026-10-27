@@ -338,6 +338,21 @@
     drawRowCanvas(ctx, s, fitRow(items, CIRCLE_ROW_WIDTH, true), 200 * s, true);
   }
 
+  /* The file's name, from the initials. Chromium names a download
+     "download", with no extension, when the name it is given carries a
+     non-ASCII letter, so "ÄÖÜ" saved as a file the visitor could not open.
+     Accents fold to their base letter (NFD, then the combining marks drop),
+     the letters NFD leaves whole are spelled out, anything still outside
+     a-z0-9 is removed, and initials that leave nothing name the file after
+     the tool alone. */
+  const FOLD = { "\u00df": "ss", "\u0142": "l", "\u00f8": "o", "\u0111": "d", "\u0131": "i", "\u00e6": "ae", "\u0153": "oe" };
+  function fileBase(text) {
+    const slug = String(text || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+      .replace(/[\u00df\u0142\u00f8\u0111\u0131\u00e6\u0153]/g, (ch) => FOLD[ch])
+      .replace(/[^a-z0-9]+/g, "");
+    return slug ? "monogram-" + slug : "monogram";
+  }
+
   // The 1600x1600 canvas every export path draws: PNG download, image
   // share and the PDF page all come from this one builder.
   function withCanvas(cb) {
@@ -365,19 +380,18 @@
         else drawClassicCanvas(ctx, s, v);
       }
 
-      const slug = (v.l + v.c + v.r).toLowerCase() || "initials";
-      cb(PP && PP.frameCanvas ? PP.frameCanvas(canvas, { title: moreTitle(), nameDate: moreLine() }) : canvas, slug);
+      cb(PP && PP.frameCanvas ? PP.frameCanvas(canvas, { title: moreTitle(), nameDate: moreLine() }) : canvas, fileBase(v.l + v.c + v.r));
     });
   }
 
   function downloadPNG() {
-    withCanvas(function (canvas, slug) {
+    withCanvas(function (canvas, base) {
       canvas.toBlob(function (blob) {
         if (!blob) return;
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
-        a.download = "monogram-" + slug + ".png";
+        a.download = base + ".png";
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
@@ -388,12 +402,12 @@
   }
 
   function shareImage() {
-    withCanvas(function (canvas, slug) {
+    withCanvas(function (canvas, base) {
       canvas.toBlob(function (blob) {
         if (!blob) return;
         const ns = window.UltraTextGen;
         if (ns && ns.shareImageBlob) {
-          ns.shareImageBlob(blob, { filename: "monogram-" + slug + ".png", title: document.title, text: presetUrl(), surface: "printables", itemType: "printable" });
+          ns.shareImageBlob(blob, { filename: base + ".png", title: document.title, text: presetUrl(), surface: "printables", itemType: "printable" });
         }
       }, "image/png");
     });
@@ -417,7 +431,7 @@
   }
 
   function savePdf() {
-    withCanvas(function (canvas, slug) {
+    withCanvas(function (canvas, base) {
       loadPdfModule().then(function (P) {
         if (!P || !P.supported()) { printMonogram(); return; }
         /* The page the visitor chose, not a hardcoded US Letter. The margin
@@ -426,7 +440,7 @@
         const paper = PP ? PP.paperFull() : { w: 8.5, h: 11 };
         const m = PP ? PP.marginIn() : 0.5;
         return P.fromCanvases([canvas], { paperIn: paper, marginIn: { x: Math.max(0.75, m), y: Math.max(1.0, m) }, title: document.title })
-          .then(function (blob) { P.download(blob, "monogram-" + slug + ".pdf"); trackPrintable("download_pdf", "monogram"); });
+          .then(function (blob) { P.download(blob, base + ".pdf"); trackPrintable("download_pdf", "monogram"); });
       }).catch(function () { printMonogram(); });
     });
   }
