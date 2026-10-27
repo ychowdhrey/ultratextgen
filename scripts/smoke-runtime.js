@@ -972,6 +972,179 @@ async function main() {
     await ctx.close();
   }
 
+  // 23. Monogram initials. Each box is prefilled with maxlength=1, and a full
+  // box dropped the keystroke: tapping S and typing Q left J S L, and "ERM"
+  // typed into the first box gave E S L. All three boxes empty downloaded a
+  // blank page. Driven through the boxes themselves, on a phone; the PDF's
+  // file name carries the initials the export drew.
+  for (const [url, device, reason] of [['/printables/monogram-maker/', 'mobile', 'Type initials'], ['/pl/do-druku/monogram/', 'desktop', 'Wpisz inicjały']]) {
+    console.log(`\n${url} (monogram initials overtype, advance, paste; empty waits)`);
+    const { ctx, page, errors } = await open(url, device);
+    page.setDefaultTimeout(5000);
+    try {
+      const boxes = () => page.evaluate(() => ['mono-left', 'mono-center', 'mono-right'].map((i) => document.getElementById(i).value).join(''));
+      const tap = (sel) => (device === 'mobile' ? page.tap(sel) : page.click(sel));
+      const first = await boxes();
+      await tap('#mono-center');
+      await page.keyboard.type('Q');
+      const q = await boxes();
+      check('tap the middle box and type Q: only the middle letter changes', q === first[0] + 'Q' + first[2], `${first} -> ${q}`);
+      await tap('#mono-left');
+      await page.keyboard.type('erm');
+      check('"erm" typed into the first box fills all three, uppercased', (await boxes()) === 'ERM', await boxes());
+      await page.evaluate(() => {
+        const dt = new DataTransfer(); dt.setData('text/plain', 'a.b c');
+        document.getElementById('mono-left').dispatchEvent(new ClipboardEvent('paste', { clipboardData: dt, bubbles: true, cancelable: true }));
+      });
+      check('a paste of "a.b c" fills the boxes in order', (await boxes()) === 'ABC', await boxes());
+      await page.waitForTimeout(300);
+      const [d] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#mono-print')]);
+      const buf = fs.readFileSync(await d.path());
+      check('the PDF is written for the typed initials', buf.slice(0, 4).toString() === '%PDF' && d.suggestedFilename() === 'monogram-abc.pdf', d.suggestedFilename());
+      for (const id of ['mono-left', 'mono-center', 'mono-right']) await page.fill('#' + id, '');
+      await page.waitForTimeout(300);
+      const empty = await page.evaluate(() => {
+        const n = document.getElementById('mono-empty-note');
+        return { pdf: document.getElementById('mono-print').disabled, png: document.getElementById('mono-png').disabled, note: n && !n.hidden ? n.textContent : '' };
+      });
+      check('all boxes empty: Download PDF and PNG wait, with the page\'s own reason', empty.pdf && empty.png && empty.note === reason, JSON.stringify(empty));
+      await tap('#mono-right');
+      await page.keyboard.type('k');
+      await page.waitForTimeout(200);
+      check('a letter typed back in re-enables the downloads', await page.evaluate(() => !document.getElementById('mono-print').disabled && document.getElementById('mono-empty-note').hidden));
+    } catch (e) {
+      check('monogram: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // Captures what each PDF export hands the PDF writer: the text of every SVG
+  // on the print surface, page unit by page unit, read from the root
+  // renderPages() is given.
+  const sheetTextCapture = `(function () {
+    const UTG = (window.UltraTextGen = window.UltraTextGen || {});
+    let real;
+    Object.defineProperty(UTG, 'pdf', { configurable: true, get() { return real; }, set(v) {
+      real = v && Object.assign({}, v, { renderPages: async function (root, o) {
+        window.__ptPages = Array.from(root.querySelectorAll('.pt-sheet-page, .pt-banner-page')).map((p) => Array.from(p.querySelectorAll('svg text')).map((t) => t.textContent.trim()).filter(Boolean));
+        window.__ptText = Array.from(root.querySelectorAll('svg text')).map((t) => t.textContent.trim()).filter(Boolean);
+        return v.renderPages(root, o);
+      } });
+    } });
+  })();`;
+
+  // 24. Sight words. The "friend" chip set the word picker to a value it has no
+  // option for, so the picker selected nothing and the sheet printed "said".
+  // Every chip is checked against the picker, and the last chip's PDF is read.
+  console.log('\n/printables/sight-word-tracing/ (every chip prints its own word)');
+  {
+    const { ctx, page, errors } = await open('/printables/sight-word-tracing/', 'desktop', sheetTextCapture);
+    page.setDefaultTimeout(5000);
+    try {
+      const chips = await page.$$eval('.quickfill [data-fill]', (bs) => bs.map((b) => [b.dataset.fill, b.textContent.trim()]));
+      const off = [];
+      for (const [w, label] of chips) {
+        await page.click(`.quickfill [data-fill="${w}"]`);
+        const v = await page.inputValue('#pt-gen-input');
+        if (v !== w || label !== w) off.push(`${label} -> ${v || '(nothing)'}`);
+      }
+      check(`all ${chips.length} chips select their own word in the picker`, chips.length > 0 && !off.length, off.join(', '));
+      const last = chips[chips.length - 1][0];
+      await page.click(`.quickfill [data-fill="${last}"]`);
+      await page.waitForTimeout(400);
+      await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#pt-gen-print')]);
+      const text = await page.evaluate(() => window.__ptText || []);
+      check(`the "${last}" chip's PDF traces "${last}", not "said"`, text.includes(last) && !text.includes('said'), JSON.stringify(text.slice(0, 4)));
+    } catch (e) {
+      check('sight words: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 25. Coloring page maker, Whole class, two typed lines. Each child's sheet
+  // printed the roster name instead of the design, so one of the two lines
+  // was dropped from every sheet. The PDF's pages are read.
+  console.log('\n/printables/coloring-page-maker/ (a class set keeps both lines)');
+  {
+    const { ctx, page, errors } = await open('/printables/coloring-page-maker/', 'desktop', sheetTextCapture);
+    page.setDefaultTimeout(5000);
+    try {
+      await page.fill('#pt-design-input', 'Happy Birthday\nEmma');
+      await page.click('#pt-design-audience [data-value=class]');
+      await page.fill('#pt-design-roster', 'Noah\nAva\nLiam');
+      await page.waitForTimeout(400);
+      const [d] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#pt-design-print')]);
+      const buf = fs.readFileSync(await d.path());
+      const pages = await page.evaluate(() => window.__ptPages || []);
+      const want = ['Noah', 'Ava', 'Liam'].map((n) => ['Happy Birthday', n]);
+      const ok = pages.length === 3 && want.every((w, i) => w.every((s) => (pages[i] || []).includes(s)));
+      check('3 children, 3 pages, each with "Happy Birthday" and that child\'s name', ok && pdfPages(buf) === 3, `${pdfPages(buf)} PDF pages; ${JSON.stringify(pages)}`);
+    } catch (e) {
+      check('coloring class set: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 26. Banner maker size line. It ended in a constant "US Letter" whatever
+  // paper was chosen, in English on the Polish page. The line is compared
+  // with the PDF's own MediaBox and page count.
+  for (const [url, a4, land, letter] of [['/printables/banner-maker/', 'A4', 'Landscape', 'US Letter'], ['/pl/do-druku/banery-z-literami/', 'A4', 'Pozioma', 'US Letter']]) {
+    console.log(`\n${url} (the size line names the PDF's paper)`);
+    const { ctx, page, errors } = await open(url, 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.fill('#pt-banner-input', 'HAPPY BIRTHDAY');
+      const sum = await page.$('#pt-print-settings summary');
+      if (sum) await sum.click();
+      await page.click('#pt-print-settings button:text-is("A4")');
+      await page.click(`#pt-print-settings button:text-is("${land}")`);
+      await page.waitForTimeout(400);
+      const line = await page.textContent('#pt-banner-meta');
+      const [d] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#pt-banner-print')]);
+      const buf = fs.readFileSync(await d.path());
+      const box = (buf.toString('latin1').match(/MediaBox \[0 0 ([\d.]+) ([\d.]+)\]/) || []).slice(1).map(Number);
+      check(`A4 + ${land}: the line names them and not ${letter}`, line.includes(a4) && line.includes(land) && !line.includes(letter), line);
+      check('the PDF is A4 landscape (842 x 595 pt)', Math.round(box[0]) === 842 && Math.round(box[1]) === 595, box.join(' x '));
+      check('the line\'s page count is the PDF\'s', (line.match(/\d+/g) || [])[1] == pdfPages(buf), `${line} vs ${pdfPages(buf)} pages`);
+    } catch (e) {
+      check('banner size line: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 27. A letter chip tap on a phone. The tap only recoloured the chip; the
+  // letter it opened sat below the fold. Now the panel comes up under the
+  // header, at once under reduced motion. block-letters is revenue-frozen and
+  // must not move.
+  for (const [url, moves, reduce] of [['/printables/bubble-letters/', true, false], ['/es/imprimibles/letras-burbuja/', true, true], ['/printables/block-letters/', false, false]]) {
+    console.log(`\n${url} (390x844: a chip tap ${moves ? 'scrolls the letter into view' : 'does not scroll, frozen page'})`);
+    const { ctx, page, errors } = await open(url, 'mobile');
+    page.setDefaultTimeout(5000);
+    try {
+      if (reduce) await page.emulateMedia({ reducedMotion: 'reduce' });
+      await page.evaluate(() => { const s = document.getElementById('pt-strip'); window.scrollTo(0, s.getBoundingClientRect().top + window.scrollY - 200); });
+      await page.waitForTimeout(400);
+      const before = await page.evaluate(() => ({ y: Math.round(window.scrollY), top: Math.round(document.getElementById('pt-panel').getBoundingClientRect().top) }));
+      await page.tap('#pt-strip .pt-chip[data-char="M"]');
+      await page.waitForTimeout(reduce ? 80 : 1200);
+      const after = await page.evaluate(() => ({ y: Math.round(window.scrollY), top: Math.round(document.getElementById('pt-panel').getBoundingClientRect().top), on: document.querySelector('#pt-strip .pt-chip.is-active').dataset.char }));
+      check('the tapped chip is selected', after.on === 'M', after.on);
+      if (moves) {
+        check(`the panel starts below 60% of the screen and ends in the top quarter${reduce ? ', at once under reduced motion' : ''}`, before.top > 844 * 0.6 && after.top >= 0 && after.top < 844 * 0.25, `${before.top}px -> ${after.top}px`);
+      } else {
+        check('the page does not scroll', after.y === before.y, `${before.y} -> ${after.y}`);
+      }
+    } catch (e) {
+      check('chip tap: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
   await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });
