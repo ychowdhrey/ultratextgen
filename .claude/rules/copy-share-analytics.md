@@ -46,7 +46,7 @@ forks the vocabulary.
 - Event **names** are unchanged on purpose so existing GA4 history stays
   continuous. `item_type`, `share_surface`, `share_item_type`, `share_format` and
   `locale` are the dimensions that make a rollout readable. `share_format` (link /
-  png / gif; null when unknowable, as for a pin) is always pushed as a key, because
+  png / gif / text; null when unknowable, as for a pin) is always pushed as a key, because
   GTM's data layer keeps a key's last value.
 
 ## Typed text never reaches the dataLayer

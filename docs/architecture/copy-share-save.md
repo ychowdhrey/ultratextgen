@@ -237,6 +237,17 @@ reads it from the blob's MIME type unless the caller states one. It is pushed on
 every row, never omitted, because GTM's data layer keeps a key's last value and a
 missing key would inherit the previous row's format.
 
+**`text` (added 2026-10-27).** The saved-symbols strip shares a set of two or
+more items. No link carries a set, so without a native share sheet its Share
+used to copy the page URL, and the recipient got a page instead of the shortlist.
+It now passes `fallback: "text"` to `buildShareButton`, `shareCreation` copies the
+items, and the row is the existing clipboard copy (`link_copy` / `clipboard`)
+with `share_format: "text"`, because text is what left the page. One saved item
+still copies its `?symbol=` deep link. The strip also passes its localized
+confirmation (the explorer table's `copiedBtn` for a set, `linkCopied` for one
+item) and `failed` label, as the section Share does. `test:share-core` and
+`check:runtime-smoke` (case 23) assert it.
+
 ### `share_destination`, and the rule that a row fires on success
 
 Two changes, made a week apart by two sessions that could not see each other.

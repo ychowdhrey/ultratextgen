@@ -972,6 +972,47 @@ async function main() {
     await ctx.close();
   }
 
+  // 23. Sharing a saved set shares the set. Without a native share sheet the
+  // strip's Share copied the PAGE URL for two or more saved symbols, so the
+  // recipient got a page instead of the shortlist, and it confirmed that in
+  // English ("Link copied") under Korean prose.
+  console.log('\n/ko/library/imotikon/ (saved strip Share without a share sheet)');
+  {
+    const { ctx, page, errors } = await open('/ko/library/imotikon/', 'desktop', () => {
+      try { delete Navigator.prototype.share; } catch (e) { /* already absent */ }
+      if (!localStorage.getItem('utg_saved_items')) {
+        localStorage.setItem('utg_saved_items', JSON.stringify([
+          { type: 'symbol', value: '★', label: '★', href: '', t: 2 },
+          { type: 'symbol', value: '♥', label: '♥', href: '', t: 1 }
+        ]));
+      }
+    });
+    page.setDefaultTimeout(5000);
+    try {
+      check('the page has no native share sheet', await page.evaluate(() => typeof navigator.share !== 'function'));
+      await sentinel(page);
+      const before = (await dl(page)).length;
+      const btn = page.locator('.symbol-saved-strip .share-result-btn').first();
+      await btn.scrollIntoViewIfNeeded();
+      await btn.click();
+      await page.waitForTimeout(300);
+      const copied = await clip(page);
+      check('strip Share with two saved items copies the items, not a URL', copied === '★ ♥', JSON.stringify(copied));
+      const label = (await btn.locator('.share-result-label').textContent()) || '';
+      check('strip Share confirms in the page language', /[가-힣]/.test(label) && !/Link copied|Copied|Failed/.test(label), label);
+      // Share rows are read by their share_method key: the event name is a
+      // literal only share-core.js may contain (test:share-core asserts it).
+      const rows = (await dl(page)).slice(before).filter((e) => e.share_method);
+      check('the strip copy records one clipboard share row, format text',
+        rows.length === 1 && rows[0].share_method === 'link_copy' && rows[0].share_destination === 'clipboard'
+          && rows[0].share_surface === 'library_saved' && rows[0].share_format === 'text', JSON.stringify(rows));
+    } catch (e) {
+      check('saved strip Share: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
   await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });

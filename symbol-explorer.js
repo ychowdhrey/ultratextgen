@@ -1603,12 +1603,21 @@
         // This is also what makes ?symbol= a link anything actually produces
         // rather than a reader with no writer.
         url: items.length === 1 ? symbolShareUrl(items[0].value) : pageUrl(),
+        // Without a native share sheet (most desktops) Share copies instead.
+        // For one item the deep link carries it. For a set no link does: the
+        // page URL handed the recipient a page, not the shortlist. So a set
+        // copies its items, and says "Copied!" rather than "Link copied".
+        fallback: items.length > 1 ? "text" : undefined,
         surface: "library_saved",
         itemType: "collection",
         // These pages carry no window.UTG_I18N, so the share core's own
         // lookup would fall back to English under localized prose. Hand it
         // this file's table instead.
         label: t("share", "Share"),
+        linkCopied: items.length > 1
+          ? (STR.copiedBtn || " Copied!").trim()
+          : t("linkCopied", "Link copied"),
+        failedLabel: t("failed", "✗ Failed"),
         imageTitle: t("shareImage", "Share as an image")
       }));
     }
