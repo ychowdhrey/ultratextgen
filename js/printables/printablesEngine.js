@@ -1155,7 +1155,11 @@
       nameStyleLabel: "Stil", nameFillLabel: "Dolgu", nameStrokeLabel: "Kontur",
       nameSolidLabel: "Şimdi boya (tam dolgu)",
       pngTransparent: "PNG (şeffaf)",
-      classSet: "Sınıf seti: her isim için bir sayfa", sheets: "sayfa",
+      /* `sheets` counts one child's worksheet and `pageCount` a side of
+         paper; both were "sayfa", so a class of three read "3 sayfa · 3
+         sayfa". "çalışma sayfası" is the drill-sheet term above, the one the
+         tr pages print, and the word sheetsPerPage already abbreviates. */
+      classSet: "Sınıf seti: her isim için bir sayfa", sheets: "çalışma sayfası",
       classSetPngHint: "PNG yalnızca şu anki ismi indirir; setin tamamı için PDF olarak kaydet'i kullan.",
       sheetsPerPage: "Sayfa başına çalışma",
       bannerInstr: "Her bayrağı kesikli çizgisinden kes, her noktaya bir delik aç, sonra ipi ya da kurdeleyi sırayla (1, 2, 3…) geçir; kelime ortaya çıksın.",

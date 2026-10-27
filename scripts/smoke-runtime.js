@@ -995,6 +995,23 @@ async function main() {
     check('no page errors', !errors.length, errors.join(' | '));
     await ctx.close();
   }
+  {
+    const { ctx, page, errors } = await open('/tr/yazdirilabilir/isim-yazma-calismasi/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.evaluate(() => { const d = document.querySelector('details.pt-roster-field'); if (d) d.open = true; });
+      await page.click('.pt-audience-field [data-value=class]');
+      await page.fill('#pt-name-roster', 'Ali\nAyşe\nCan');
+      await page.waitForTimeout(300);
+      const cost = (await page.textContent('#pt-sheet-cost')).trim();
+      const counts = cost.split(' · ').filter((b) => /^\d/.test(b)).map((b) => b.replace(/^\d+\s*/, ''));
+      check('tr class set: the sheet count and the page count use different words', counts.length === 2 && counts[0] !== counts[1], cost);
+    } catch (e) {
+      check('tr class set: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
 
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
