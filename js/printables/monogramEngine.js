@@ -642,14 +642,101 @@
 
   /* ---------- inputs ---------- */
 
+  /* Three one-letter boxes that behave as one field. Each box arrives
+     prefilled (J S L) with maxlength=1, and a full maxlength box ignores a
+     keystroke: tapping S and typing Q left S, and "ERM" typed into the first
+     box gave E S L. So a box selects its letter on focus (a keystroke replaces
+     it), a typed letter moves on to the next box, Backspace in an empty box
+     goes back one, and a paste of several letters fills the boxes in order
+     from the one pasted into. */
+  const BOX_IDS = ["mono-left", "mono-center", "mono-right"];
+  const boxes = () => BOX_IDS.map(byId);
+  function setBox(box, ch) {
+    box.value = ch ? ch.toUpperCase() : "";
+  }
+  function focusBox(i) {
+    const box = boxes()[i];
+    if (box) { box.focus(); box.select(); }
+  }
+  // Fill from box `from` onward with `chars`; returns the index after the last box filled.
+  function fillFrom(from, chars) {
+    const list = boxes();
+    let i = from;
+    chars.forEach(function (ch) {
+      if (i < list.length && list[i]) { setBox(list[i], ch); i++; }
+    });
+    return i;
+  }
+  function boxChanged() {
+    schedule();
+    syncActions();
+  }
   function wireInput(id) {
     const el = byId(id);
     if (!el) return;
-    el.addEventListener("input", function () {
-      const up = el.value.toUpperCase();
-      if (el.value !== up) el.value = up;
-      schedule();
+    const index = BOX_IDS.indexOf(id);
+    /* A box takes one letter, but it must accept the keystroke that replaces
+       it; the value is cut back to one letter below. */
+    el.removeAttribute("maxlength");
+    let pointerFocus = false;
+    el.addEventListener("pointerdown", function () { pointerFocus = document.activeElement !== el; });
+    el.addEventListener("focus", function () { el.select(); });
+    // A click that focused the box must not collapse the selection it just made.
+    el.addEventListener("mouseup", function (e) { if (pointerFocus) { e.preventDefault(); pointerFocus = false; } });
+    el.addEventListener("keydown", function (e) {
+      if (e.key === "Backspace" && !el.value && index > 0) { e.preventDefault(); focusBox(index - 1); }
     });
+    el.addEventListener("paste", function (e) {
+      const text = e.clipboardData ? e.clipboardData.getData("text") : "";
+      const chars = Array.from(String(text)).filter(function (c) { return /[\p{L}\p{N}]/u.test(c); });
+      if (!chars.length) return;
+      e.preventDefault();
+      const next = fillFrom(index, chars.slice(0, BOX_IDS.length - index));
+      focusBox(Math.min(next, BOX_IDS.length - 1));
+      boxChanged();
+    });
+    el.addEventListener("input", function (e) {
+      const typed = e.data ? Array.from(e.data) : [];
+      const all = Array.from(el.value);
+      if (typed.length > 1) {
+        // A keyboard that inserts a run at once (autocomplete, IME): spread it.
+        const next = fillFrom(index, typed.slice(0, BOX_IDS.length - index));
+        focusBox(Math.min(next, BOX_IDS.length - 1));
+      } else if (all.length) {
+        // The letter just typed wins over the one already in the box.
+        setBox(el, typed.length ? typed[0] : all[all.length - 1]);
+        if (typed.length && index < BOX_IDS.length - 1) focusBox(index + 1);
+      }
+      boxChanged();
+    });
+  }
+
+  /* All three boxes empty is a blank page, so the downloads wait for a
+     letter. The reason is the page's own "Type initials" string, shown only
+     where the page supplies it or the page is English: an English sentence
+     never lands on a translated page. */
+  let emptyNote = null;
+  function syncActions() {
+    const v = vals();
+    const empty = !v.l && !v.c && !v.r;
+    ["mono-print", "mono-png"].forEach(function (id) {
+      const b = byId(id);
+      if (!b) return;
+      b.disabled = empty;
+      if (emptyNote && empty) b.setAttribute("aria-describedby", emptyNote.id);
+      else b.removeAttribute("aria-describedby");
+    });
+    if (emptyNote) emptyNote.hidden = !empty;
+  }
+  function mountEmptyNote(actionRow) {
+    const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
+    if (!actionRow || (CFG.typeInitials == null && lang !== "en")) return;
+    emptyNote = document.createElement("p");
+    emptyNote.className = "pt-field-note";
+    emptyNote.id = "mono-empty-note";
+    emptyNote.textContent = T.typeInitials;
+    emptyNote.hidden = true;
+    actionRow.insertAdjacentElement("afterend", emptyNote);
   }
 
   /* ---------- init ---------- */
@@ -744,8 +831,10 @@
       shareRow.insertAdjacentElement("afterend", memory.node);
     }
 
+    mountEmptyNote(actionRow);
     applyPreset();
     render();
+    syncActions();
     // Re-render once Playfair loads so measured positions are exact.
     whenFontReady(render);
     // The name kit row. On load: the English list is read
