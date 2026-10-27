@@ -140,6 +140,7 @@
         heading: "Word Search",
         findAll: "Find all",
         wordsWord: "words",
+        findOne: "Find the word",
         answerKey: "Answer key",
         forWhom: "for",
         tooLong: "Too long for the grid:",
@@ -744,6 +745,7 @@
         heading: "Suchsel",
         findAll: "Finde alle",
         wordsWord: "Wörter",
+        findOne: "Finde das Wort",
         answerKey: "Lösung",
         forWhom: "für",
         tooLong: "Zu lang für das Gitter:",
@@ -12405,8 +12407,13 @@
     note.className = "pt-search-note";
     /* Polish counts with case endings ("12 słów", "3 słowa"), so its strings
        put the number last ("Do znalezienia: 12") and leave wordsWord and colon
-       empty; an empty colon must stay empty, hence != null, not ||. */
-    note.textContent = (T.wordSearch.findAll + " " + placed + " " + T.wordSearch.wordsWord).trim()
+       empty; an empty colon must stay empty, hence != null, not ||.
+       One placed word printed "Find all 1 words:", so a locale with a
+       singular sentence (findOne) uses it, without the count, at one. */
+    const findText = placed === 1 && T.wordSearch.findOne
+      ? T.wordSearch.findOne
+      : T.wordSearch.findAll + " " + placed + " " + T.wordSearch.wordsWord;
+    note.textContent = findText.trim()
       + (T.wordSearch.colon != null ? T.wordSearch.colon : ":");
     sheet.appendChild(note);
 

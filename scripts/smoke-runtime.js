@@ -1012,6 +1012,15 @@ async function main() {
     check('no page errors', !errors.length, errors.join(' | '));
     await ctx.close();
   }
+  {
+    const { ctx, page, errors } = await open('/de/zum-ausdrucken/suchsel/', 'desktop');
+    await page.fill('#pt-search-input', 'Apfel');
+    await page.waitForTimeout(600);
+    const note = await page.evaluate(() => { const n = document.querySelector('.pt-search-note'); return n ? n.textContent : null; });
+    check('de word search with one word does not say "alle 1 Wörter"', !!note && !/\b1 Wörter/.test(note), note);
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
 
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
