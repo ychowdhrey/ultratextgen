@@ -1045,6 +1045,27 @@ async function main() {
     await ctx.close();
   }
 
+  // 29. A monogram with accented initials downloaded as "download", with no
+  // extension: the browser drops a non-ASCII filename. The initials fold to
+  // ASCII, so the file keeps its name and its type.
+  console.log('\n/printables/monogram-maker/ (accented initials keep the file name)');
+  {
+    const { ctx, page, errors } = await open('/printables/monogram-maker/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      for (const [id, v] of [['mono-left', 'Ä'], ['mono-center', 'Ö'], ['mono-right', 'Ü']]) await page.fill('#' + id, v);
+      await page.waitForTimeout(300);
+      const [pdf] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#mono-print')]);
+      check('ÄÖÜ downloads monogram-aou.pdf', pdf.suggestedFilename() === 'monogram-aou.pdf', pdf.suggestedFilename());
+      const [png] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#mono-png')]);
+      check('ÄÖÜ downloads monogram-aou.png', png.suggestedFilename() === 'monogram-aou.png', png.suggestedFilename());
+    } catch (e) {
+      check('monogram filename: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
   await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });
