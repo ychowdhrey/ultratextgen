@@ -142,6 +142,7 @@
         heading: "Word Search",
         findAll: "Find all",
         wordsWord: "words",
+        findOne: "Find the word",
         answerKey: "Answer key",
         forWhom: "for",
         tooLong: "Too long for the grid:",
@@ -763,6 +764,7 @@
         heading: "Suchsel",
         findAll: "Finde alle",
         wordsWord: "Wörter",
+        findOne: "Finde das Wort",
         answerKey: "Lösung",
         forWhom: "für",
         tooLong: "Zu lang für das Gitter:",
@@ -1174,7 +1176,11 @@
       nameStyleLabel: "Stil", nameFillLabel: "Dolgu", nameStrokeLabel: "Kontur",
       nameSolidLabel: "Şimdi boya (tam dolgu)",
       pngTransparent: "PNG (şeffaf)",
-      classSet: "Sınıf seti: her isim için bir sayfa", sheets: "sayfa",
+      /* `sheets` counts one child's worksheet and `pageCount` a side of
+         paper; both were "sayfa", so a class of three read "3 sayfa · 3
+         sayfa". "çalışma sayfası" is the drill-sheet term above, the one the
+         tr pages print, and the word sheetsPerPage already abbreviates. */
+      classSet: "Sınıf seti: her isim için bir sayfa", sheets: "çalışma sayfası",
       classSetPngHint: "PNG yalnızca şu anki ismi indirir; setin tamamı için PDF olarak kaydet'i kullan.",
       sheetsPerPage: "Sayfa başına çalışma",
       bannerInstr: "Her bayrağı kesikli çizgisinden kes, her noktaya bir delik aç, sonra ipi ya da kurdeleyi sırayla (1, 2, 3…) geçir; kelime ortaya çıksın.",
@@ -5394,10 +5400,13 @@
      print at 2.7pt, which nobody can follow. */
   const SET_SIZE_KEYS = RENDER === "dots" ? ["full", "medium"] : ["full", "medium", "small"];
   /* Vowels in the page's own language, kept to the characters the page
-     prints. A chip labelled AEIOU on a Polish page would miss Ą, Ę, Ó and Y. */
+     prints. A chip labelled AEIOU on a Polish page would miss Ą, Ę, Ó and Y.
+     Turkish has eight, two of them the dotted/dotless I pair, so its letters
+     are matched through CASE_LOCALE: an English uppercase turns "i" into "I"
+     and would put the wrong one of the pair on the sheet. */
   const SET_VOWELS = {
     en: "AEIOU", es: "AEIOU", pt: "AEIOU", it: "AEIOU", id: "AEIOU", nl: "AEIOU",
-    fr: "AEIOUY", de: "AEIOUÄÖÜ", pl: "AĄEĘIOÓUY"
+    fr: "AEIOUY", de: "AEIOUÄÖÜ", pl: "AĄEĘIOÓUY", tr: "AEIİOÖUÜ"
   };
   // What a set page spends on things that are not letter, in inches,
   // measured on the print surface (US Letter, normal margins): title + credit
@@ -5426,9 +5435,10 @@
       opts.push({ key: "num", label: digits[0] + "–" + digits[digits.length - 1], chars: digits });
     }
     const vowelSet = (SET_VOWELS[LANG] || SET_VOWELS.en).split("");
-    const vowels = CHARS.filter((c) => vowelSet.indexOf(c.toUpperCase()) !== -1);
+    const up = (c) => c.toLocaleUpperCase(CASE_LOCALE);
+    const vowels = CHARS.filter((c) => vowelSet.indexOf(up(c)) !== -1);
     if (vowels.length >= 2 && vowels.length < letters.length) {
-      opts.push({ key: "vow", label: vowels.map((c) => c.toUpperCase()).join(""), chars: vowels });
+      opts.push({ key: "vow", label: vowels.map(up).join(""), chars: vowels });
     }
     opts.push({ key: "pick", label: T.set.pick + "…", chars: null });
     setOptsCache = opts;
@@ -12444,8 +12454,13 @@
     note.className = "pt-search-note";
     /* Polish counts with case endings ("12 słów", "3 słowa"), so its strings
        put the number last ("Do znalezienia: 12") and leave wordsWord and colon
-       empty; an empty colon must stay empty, hence != null, not ||. */
-    note.textContent = (T.wordSearch.findAll + " " + placed + " " + T.wordSearch.wordsWord).trim()
+       empty; an empty colon must stay empty, hence != null, not ||.
+       One placed word printed "Find all 1 words:", so a locale with a
+       singular sentence (findOne) uses it, without the count, at one. */
+    const findText = placed === 1 && T.wordSearch.findOne
+      ? T.wordSearch.findOne
+      : T.wordSearch.findAll + " " + placed + " " + T.wordSearch.wordsWord;
+    note.textContent = findText.trim()
       + (T.wordSearch.colon != null ? T.wordSearch.colon : ":");
     sheet.appendChild(note);
 
