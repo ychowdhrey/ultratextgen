@@ -217,9 +217,16 @@
     return canShareFilesCache;
   };
 
-  // creation: { input, output, styleId, title, url? } — url wins when given.
-  // Resolves to "native" | "aborted" | "copied" | "failed" so the caller owns
-  // its own button feedback.
+  // creation: { input, output, styleId, title, url?, fallback? } — url wins
+  // when given. Resolves to "native" | "aborted" | "copied" | "failed" so the
+  // caller owns its own button feedback.
+  //
+  // fallback: "text" changes only what the no-native-sheet path copies: the
+  // output itself instead of the link. A share of several items (a saved
+  // shortlist) has no link that carries them, so copying the page URL handed
+  // the recipient a page instead of the items. The row is still the clipboard
+  // copy (link_copy / clipboard); its share_format says text, because that is
+  // what left the page.
   UTG.shareCreation = async function (creation) {
     const c = creation || {};
     const url = c.url || UTG.buildShareUrl(c);
@@ -238,9 +245,10 @@
         // Any other native failure falls through to the link-copy fallback.
       }
     }
+    const copyText = c.fallback === "text" && c.output;
     try {
-      await navigator.clipboard.writeText(url);
-      pushShare("link_copy", SHARE_DESTINATIONS.CLIPBOARD, c);
+      await navigator.clipboard.writeText(copyText ? c.output : url);
+      pushShare("link_copy", SHARE_DESTINATIONS.CLIPBOARD, copyText ? Object.assign({}, c, { format: "text" }) : c);
       return "copied";
     } catch (err) {
       console.error("Share failed:", err);
@@ -304,6 +312,10 @@
     // the copy in English.
     if (o.linkCopied) btn.dataset.shareCopied = String(o.linkCopied);
     if (o.failedLabel) btn.dataset.shareFailed = String(o.failedLabel);
+    // fallback: "text" — with no native sheet, copy `text` rather than the
+    // link (see shareCreation). Pass a matching `linkCopied` ("Copied!"), since
+    // what lands on the clipboard is then not a link.
+    if (o.fallback === "text") btn.dataset.shareFallback = "text";
     if (o.params && typeof o.params === "object") {
       try {
         btn.dataset.shareParams = JSON.stringify(o.params);
@@ -1065,7 +1077,8 @@ document.addEventListener("click", async (e) => {
     url: btn.dataset.shareUrl || undefined,
     title: document.title,
     surface: surfaceOf(btn),
-    itemType: btn.dataset.shareItemType || "style"
+    itemType: btn.dataset.shareItemType || "style",
+    fallback: btn.dataset.shareFallback || undefined
   });
 
   const label = $(".share-result-label", btn);

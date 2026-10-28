@@ -1,0 +1,29 @@
+file,column,meaning
+cells-before-fix.csv,phase,"before = the worksheets as they were on 24 October 2026; three full runs (run 1 to 3)"
+cells-before-fix.csv,run,Which of the three repeat runs the row comes from
+cells-before-fix.csv,surface,"Worksheet: en_name, en_cursive, fr_name, es_name, de_name, pl_name or tr_name (name tracing in each language; en_cursive is the English cursive name worksheet)"
+cells-before-fix.csv,name_id,"Short id of the test name; see fixtures/names-main-26.json"
+cells-before-fix.csv,name,The name typed into the worksheet
+cells-before-fix.csv,flagged,"True when the check found ink missing, a mark region less than 60% present, or a poor fit; see scripts/classify-cells.py"
+cells-before-fix.csv,reasons,Which of the three conditions fired
+cells-before-fix.csv,fit,"How well the expected name matches the saved PDF's model row (0 to 1); below 0.85 is flagged"
+cells-before-fix.csv,weakest_mark_recall,"Share of the least-present accent or mark region that appears in the export (0 to 1); blank when the name has no marks"
+cells-before-fix.csv,missing_ink_share,Share of the expected glyph ink that is absent from the export
+cells-before-fix.csv,clip_line,True when everything missing lies beyond one straight horizontal line, the signature of a clipping box
+cells-before-fix.csv,missing_rows_below_clip_px,"Pixel rows of the glyph that lie beyond the clip line (canvas pixels, 254 per inch on Letter)"
+cells-before-fix.csv,expected_height_px,Height of the expected name in the same pixels
+cells-after-fix.csv,*,Same columns; phase = after; one run after the fix
+below-marks-cells.csv,*,Same columns for the 9 extra names with marks below the baseline; before (two repeats) and after
+fault-injection-cells.csv,*,"Same columns. The pages were fed every name with its marks removed and the result judged against the real name, to test that the check can fail (161 names with marks)"
+settings-sweep-cells.csv,setting,"Paper, orientation and rows (for example a4-landscape-r6), or default-narrow-margin, default-ink-saver, default-ink-contrast"
+settings-sweep-cells.csv,long_name_spacing_check,"For the long name only: cleared when a horizontal stretch of the expected name leaves 0.00% ink missing, meaning the page spaced a long name slightly differently and nothing was cut"
+preview-clip-probe.csv,page,"One of 14 script-face name pages (en_cursive, es_cursive, fr_cursive, it_cursive, pt_cursive, pl_cursive, nl_cursive, id_cursive, and six calligraphy or gothic pages)"
+preview-clip-probe.csv,text_ink_outside_box_px,"Pixels of name ink that fall outside the preview's SVG box, found by drawing the page with the box clipping text and again with it visible (2x screen pixels)"
+preview-clip-probe.csv,clipped,True when more than 30 pixels of ink fall outside the box
+viewbox-before-after.csv,viewbox_before,"The preview's SVG viewBox on the commit before the fix (x y width height)"
+viewbox-before-after.csv,viewbox_after,The same after the fix
+viewbox-before-after.csv,changed,Whether the viewBox differs; 58 name pages and 10 names
+repeat-runs.csv,identical_across_3_runs,True when the exported canvas is byte-identical in all three runs
+repeat-runs.csv,verdict_identical_across_3_runs,True when the flagged verdict is the same in all three runs
+long-name-stretch-check.csv,best_horizontal_stretch,The horizontal stretch of the expected name (1.00 to 1.08) that fits best
+long-name-stretch-check.csv,flag_cleared,True when the missing-ink share after stretching is at or below 0.2%

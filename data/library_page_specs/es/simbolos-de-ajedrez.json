@@ -246,6 +246,46 @@
       ]
     },
     {
+      "id": "checkers-shogi-pieces",
+      "label": "Damas y shogi",
+      "h2": "Fichas de damas y piezas de shogi",
+      "intro": "Las fichas de damas en blanco y negro, como ficha simple y como dama coronada, y la pieza de shogi en cuatro formas. En los registros de partidas de shogi, ☗ marca al primer jugador (sente) y ☖ al segundo (gote).",
+      "symbols": [
+        {
+          "char": "⛀",
+          "label": "Ficha blanca de damas"
+        },
+        {
+          "char": "⛁",
+          "label": "Dama blanca (damas)"
+        },
+        {
+          "char": "⛂",
+          "label": "Ficha negra de damas"
+        },
+        {
+          "char": "⛃",
+          "label": "Dama negra (damas)"
+        },
+        {
+          "char": "☖",
+          "label": "Pieza blanca de shogi"
+        },
+        {
+          "char": "☗",
+          "label": "Pieza negra de shogi"
+        },
+        {
+          "char": "⛉",
+          "label": "Pieza blanca de shogi girada"
+        },
+        {
+          "char": "⛊",
+          "label": "Pieza negra de shogi girada"
+        }
+      ]
+    },
+    {
       "id": "notation-symbols",
       "label": "Notación",
       "h2": "Símbolos de Notación y Anotación",

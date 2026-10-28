@@ -338,6 +338,21 @@
     drawRowCanvas(ctx, s, fitRow(items, CIRCLE_ROW_WIDTH, true), 200 * s, true);
   }
 
+  /* The file's name, from the initials. Chromium names a download
+     "download", with no extension, when the name it is given carries a
+     non-ASCII letter, so "ÄÖÜ" saved as a file the visitor could not open.
+     Accents fold to their base letter (NFD, then the combining marks drop),
+     the letters NFD leaves whole are spelled out, anything still outside
+     a-z0-9 is removed, and initials that leave nothing name the file after
+     the tool alone. */
+  const FOLD = { "\u00df": "ss", "\u0142": "l", "\u00f8": "o", "\u0111": "d", "\u0131": "i", "\u00e6": "ae", "\u0153": "oe" };
+  function fileBase(text) {
+    const slug = String(text || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+      .replace(/[\u00df\u0142\u00f8\u0111\u0131\u00e6\u0153]/g, (ch) => FOLD[ch])
+      .replace(/[^a-z0-9]+/g, "");
+    return slug ? "monogram-" + slug : "monogram";
+  }
+
   // The 1600x1600 canvas every export path draws: PNG download, image
   // share and the PDF page all come from this one builder.
   function withCanvas(cb) {
@@ -365,19 +380,18 @@
         else drawClassicCanvas(ctx, s, v);
       }
 
-      const slug = (v.l + v.c + v.r).toLowerCase() || "initials";
-      cb(PP && PP.frameCanvas ? PP.frameCanvas(canvas, { title: moreTitle(), nameDate: moreLine() }) : canvas, slug);
+      cb(PP && PP.frameCanvas ? PP.frameCanvas(canvas, { title: moreTitle(), nameDate: moreLine() }) : canvas, fileBase(v.l + v.c + v.r));
     });
   }
 
   function downloadPNG() {
-    withCanvas(function (canvas, slug) {
+    withCanvas(function (canvas, base) {
       canvas.toBlob(function (blob) {
         if (!blob) return;
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
-        a.download = "monogram-" + slug + ".png";
+        a.download = base + ".png";
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
@@ -388,12 +402,12 @@
   }
 
   function shareImage() {
-    withCanvas(function (canvas, slug) {
+    withCanvas(function (canvas, base) {
       canvas.toBlob(function (blob) {
         if (!blob) return;
         const ns = window.UltraTextGen;
         if (ns && ns.shareImageBlob) {
-          ns.shareImageBlob(blob, { filename: "monogram-" + slug + ".png", title: document.title, text: presetUrl(), surface: "printables", itemType: "printable" });
+          ns.shareImageBlob(blob, { filename: base + ".png", title: document.title, text: presetUrl(), surface: "printables", itemType: "printable" });
         }
       }, "image/png");
     });
@@ -417,7 +431,7 @@
   }
 
   function savePdf() {
-    withCanvas(function (canvas, slug) {
+    withCanvas(function (canvas, base) {
       loadPdfModule().then(function (P) {
         if (!P || !P.supported()) { printMonogram(); return; }
         /* The page the visitor chose, not a hardcoded US Letter. The margin
@@ -426,7 +440,7 @@
         const paper = PP ? PP.paperFull() : { w: 8.5, h: 11 };
         const m = PP ? PP.marginIn() : 0.5;
         return P.fromCanvases([canvas], { paperIn: paper, marginIn: { x: Math.max(0.75, m), y: Math.max(1.0, m) }, title: document.title })
-          .then(function (blob) { P.download(blob, "monogram-" + slug + ".pdf"); trackPrintable("download_pdf", "monogram"); });
+          .then(function (blob) { P.download(blob, base + ".pdf"); trackPrintable("download_pdf", "monogram"); });
       }).catch(function () { printMonogram(); });
     });
   }
@@ -642,14 +656,101 @@
 
   /* ---------- inputs ---------- */
 
+  /* Three one-letter boxes that behave as one field. Each box arrives
+     prefilled (J S L) with maxlength=1, and a full maxlength box ignores a
+     keystroke: tapping S and typing Q left S, and "ERM" typed into the first
+     box gave E S L. So a box selects its letter on focus (a keystroke replaces
+     it), a typed letter moves on to the next box, Backspace in an empty box
+     goes back one, and a paste of several letters fills the boxes in order
+     from the one pasted into. */
+  const BOX_IDS = ["mono-left", "mono-center", "mono-right"];
+  const boxes = () => BOX_IDS.map(byId);
+  function setBox(box, ch) {
+    box.value = ch ? ch.toUpperCase() : "";
+  }
+  function focusBox(i) {
+    const box = boxes()[i];
+    if (box) { box.focus(); box.select(); }
+  }
+  // Fill from box `from` onward with `chars`; returns the index after the last box filled.
+  function fillFrom(from, chars) {
+    const list = boxes();
+    let i = from;
+    chars.forEach(function (ch) {
+      if (i < list.length && list[i]) { setBox(list[i], ch); i++; }
+    });
+    return i;
+  }
+  function boxChanged() {
+    schedule();
+    syncActions();
+  }
   function wireInput(id) {
     const el = byId(id);
     if (!el) return;
-    el.addEventListener("input", function () {
-      const up = el.value.toUpperCase();
-      if (el.value !== up) el.value = up;
-      schedule();
+    const index = BOX_IDS.indexOf(id);
+    /* A box takes one letter, but it must accept the keystroke that replaces
+       it; the value is cut back to one letter below. */
+    el.removeAttribute("maxlength");
+    let pointerFocus = false;
+    el.addEventListener("pointerdown", function () { pointerFocus = document.activeElement !== el; });
+    el.addEventListener("focus", function () { el.select(); });
+    // A click that focused the box must not collapse the selection it just made.
+    el.addEventListener("mouseup", function (e) { if (pointerFocus) { e.preventDefault(); pointerFocus = false; } });
+    el.addEventListener("keydown", function (e) {
+      if (e.key === "Backspace" && !el.value && index > 0) { e.preventDefault(); focusBox(index - 1); }
     });
+    el.addEventListener("paste", function (e) {
+      const text = e.clipboardData ? e.clipboardData.getData("text") : "";
+      const chars = Array.from(String(text)).filter(function (c) { return /[\p{L}\p{N}]/u.test(c); });
+      if (!chars.length) return;
+      e.preventDefault();
+      const next = fillFrom(index, chars.slice(0, BOX_IDS.length - index));
+      focusBox(Math.min(next, BOX_IDS.length - 1));
+      boxChanged();
+    });
+    el.addEventListener("input", function (e) {
+      const typed = e.data ? Array.from(e.data) : [];
+      const all = Array.from(el.value);
+      if (typed.length > 1) {
+        // A keyboard that inserts a run at once (autocomplete, IME): spread it.
+        const next = fillFrom(index, typed.slice(0, BOX_IDS.length - index));
+        focusBox(Math.min(next, BOX_IDS.length - 1));
+      } else if (all.length) {
+        // The letter just typed wins over the one already in the box.
+        setBox(el, typed.length ? typed[0] : all[all.length - 1]);
+        if (typed.length && index < BOX_IDS.length - 1) focusBox(index + 1);
+      }
+      boxChanged();
+    });
+  }
+
+  /* All three boxes empty is a blank page, so the downloads wait for a
+     letter. The reason is the page's own "Type initials" string, shown only
+     where the page supplies it or the page is English: an English sentence
+     never lands on a translated page. */
+  let emptyNote = null;
+  function syncActions() {
+    const v = vals();
+    const empty = !v.l && !v.c && !v.r;
+    ["mono-print", "mono-png"].forEach(function (id) {
+      const b = byId(id);
+      if (!b) return;
+      b.disabled = empty;
+      if (emptyNote && empty) b.setAttribute("aria-describedby", emptyNote.id);
+      else b.removeAttribute("aria-describedby");
+    });
+    if (emptyNote) emptyNote.hidden = !empty;
+  }
+  function mountEmptyNote(actionRow) {
+    const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
+    if (!actionRow || (CFG.typeInitials == null && lang !== "en")) return;
+    emptyNote = document.createElement("p");
+    emptyNote.className = "pt-field-note";
+    emptyNote.id = "mono-empty-note";
+    emptyNote.textContent = T.typeInitials;
+    emptyNote.hidden = true;
+    actionRow.insertAdjacentElement("afterend", emptyNote);
   }
 
   /* ---------- init ---------- */
@@ -744,8 +845,10 @@
       shareRow.insertAdjacentElement("afterend", memory.node);
     }
 
+    mountEmptyNote(actionRow);
     applyPreset();
     render();
+    syncActions();
     // Re-render once Playfair loads so measured positions are exact.
     whenFontReady(render);
     // The name kit row. On load: the English list is read

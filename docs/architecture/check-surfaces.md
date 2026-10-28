@@ -20,6 +20,8 @@ open in a browser:
 | `js/share/shareSave.test.html` | the DOM half, against a copy of the real tile markup |
 | `js/printables/{qr,stencil,wordSearch,wordPuzzles}.test.js` | the printables engines |
 | `js/vertical/verticalLayouts.test.html` | vertical layout |
+| `js/skintone/skinTone.test.js` | the skin-tone picker's rule (sliced from `symbol-explorer.js`) against the toned sequences Unicode's emoji-test.txt lists for every tile in an opted-in section (`js/skintone/skinToneExpected.json`, regenerated with `npm run build:skin-tone-fixture` after any new opt-in); families, combos and toned tiles are never touched; every opted-in locale carries the picker strings |
+| `scripts/test-unicode-reference-sets.py` | the complete Unicode sets on the braille, box-drawing, playing-card, dice/domino and number library pages and their locale siblings: every code point, keycap form (base + U+FE0F + U+20E3), order and label re-derived from the code point (dot bits, UCD names), label-in-name aria, locale wording, and the sets excluded because Android's system symbol font has no glyph for them (tarot trumps U+1F0E0..U+1F0F5, red joker U+1F0BF); `--self-test` mutates pages and fails unless each mutation is caught by its own check |
 
 `counter.test.html` runs against a deliberately **non-English** I18N block, so it also
 asserts that a translated page renders translated fix-bar buttons instead of falling
