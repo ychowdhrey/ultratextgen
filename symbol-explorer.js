@@ -219,6 +219,13 @@
       lookNote: "Certaines applis l’affichent quand même en couleur.",
       linkCopied: "Lien copié",
       failed: "✗ Échec",
+      skinTone: "Couleur de peau",
+      toneDefault: "Par défaut (jaune)",
+      toneLight: "Claire",
+      toneMediumLight: "Moyennement claire",
+      toneMedium: "Intermédiaire",
+      toneMediumDark: "Moyennement foncée",
+      toneDark: "Foncée",
       formats: { inline: "En ligne", vertical: "Verticale", comma: "Virgules", space: "Espaces", bullet: "Liste" }
     },
     nl: {

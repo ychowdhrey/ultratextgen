@@ -30,7 +30,7 @@
       "intro": "Znak matematyczny oraz dwuznakowy zamiennik, którego używa większość języków programowania, ponieważ samo ≤ nigdy nie znalazło się w ASCII.",
       "symbols": [
         { "char": "≤", "label": "Mniejsze lub Równe (Matematyka)" },
-        { "char": "<=", "label": "Mniejsze lub Równe (Kod: C, Python, JavaScript, Java, SQL)" }
+        { "char": "<=", "label": "Mniejsze lub Równe (Kod: C, Python, JavaScript, Java, SQL; formuły w Excelu i Arkuszach Google)" }
       ]
     },
     {
@@ -39,7 +39,7 @@
       "h2": "Symbole Często Mylone z ≤",
       "intro": "Wszystkie oznaczają w przybliżeniu to samo, ale to osobne znaki Unicode z różnych tradycji składu.",
       "symbols": [
-        { "char": "≦", "label": "Mniejsze Nad Równe (U+2266)" },
+        { "char": "≦", "label": "Mniejsze Nad Równe (U+2266): forma, której uczy się w japońskich szkołach" },
         { "char": "⩽", "label": "Mniejsze lub Ukośnie Równe (U+2A7D): forma preferowana przez ISO 31-11" },
         { "char": "≲", "label": "Mniejsze lub Równoważne (U+2272)" },
         { "char": "≪", "label": "Znacznie Mniejsze Niż (U+226A): inna relacja, nie wariant ≤" }

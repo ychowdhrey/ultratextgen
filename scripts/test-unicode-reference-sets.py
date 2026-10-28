@@ -30,7 +30,9 @@ and their locale siblings carry the same sections:
                                            (a code point a page already shows in an
                                            older section is not repeated)
   * japanese-symbols         (en + 9 locales): the hiragana and katakana gojūon
-                                           charts, dakuten/handakuten and small kana
+                                           charts, dakuten/handakuten and small kana, plus
+                                           46 circled/parenthesized ideographs (U+3200-32FF):
+                                           document marks, company marks, weekdays
   * unit-measurement-symbols (en + 3 locales): 44 CJK squared units
   * music-symbols            (en + 16 locales): the 79 Musical Symbols (U+1D100..U+1D1FF)
                                            the original sections left out, in four
@@ -281,6 +283,7 @@ def emo(seqs):
     return [(s, None) for s in seqs]
 
 
+SPORT_PERSONS = '\U0001F3CC\U0001F3C4\U0001F6A3\U0001F3CA\u26F9\U0001F3CB\U0001F6B4\U0001F6B5\U0001F938\U0001F93C\U0001F93D\U0001F93E\U0001F939'
 GESTURE_PERSONS = '\U0001F647\U0001F481\U0001F926\U0001F937\U0001F64B\U0001F646\U0001F645'  # bowing, tipping hand, facepalm, shrug, raising hand, OK, NO
 # Tiles a page must carry somewhere (added inside existing sections, whose other tiles are curated).
 INCLUDES = {
@@ -288,6 +291,10 @@ INCLUDES = {
                        for x in by_role(o)],
     'gestures': lambda: [x for b in GESTURE_PERSONS for x in by_gender(b)] + ['\U0001FAC6'],
     'hands': lambda: ['\U0001FAF7', '\U0001FAF8', '\U0001F933'],
+    # emoji-test.txt person-sport: every person with a man and a woman form (golfing, surfing, rowing boat,
+    # swimming, bouncing ball, lifting weights, biking, mountain biking, cartwheeling, wrestling, water polo,
+    # handball, juggling), each placed next to its neutral form in the page's existing sections.
+    'sports': lambda: [x for b in SPORT_PERSONS for x in by_gender(b)],
 }
 
 
@@ -445,6 +452,36 @@ ISO_KEY_WORD = {0x2324: 'Enter', 0x2327: 'Clear', 0x2380: 'Insert', 0x2381: 'Con
 CHECKERS_SHOGI = [0x26C0, 0x26C1, 0x26C2, 0x26C3, 0x2616, 0x2617, 0x26C9, 0x26CA]
 
 
+# Enclosed CJK Letters and Months (U+3200-32FF): the circled and parenthesized ideographs Japanese
+# documents, company names and calendars use. Picked by UCD name; Korean enclosures, circled numbers,
+# circled katakana and the month/hour forms stay out, and ㊗ ㊙ were already on the pages.
+def enclosed(form, *names):
+    return [unicodedata.lookup(f'{form} IDEOGRAPH {n}') for n in names]
+
+
+CIRCLED_DOCS = enclosed('CIRCLED', 'PRINT', 'ATTENTION', 'CORRECT', 'COPY', 'SPECIAL', 'REST', 'EXCELLENT', 'SUITABLE',
+                        'MALE', 'FEMALE', 'HIGH', 'CENTRE', 'LOW', 'LEFT', 'RIGHT', 'MEDICINE', 'RELIGION', 'STUDY',
+                        'SUPERVISE', 'ENTERPRISE', 'ALLIANCE', 'NIGHT')
+# ㊖ (財団法人) and ㊮ (合資会社) are the circled forms of the company types ㈶ and ㈾, so each sits beside its pair.
+CIRCLED_COMPANY = [enclosed(f, n)[0] for f, n in (('PARENTHESIZED', 'STOCK'), ('CIRCLED', 'STOCK'), ('PARENTHESIZED', 'HAVE'),
+                   ('CIRCLED', 'HAVE'), ('PARENTHESIZED', 'SOCIETY'), ('PARENTHESIZED', 'FINANCIAL'),
+                   ('CIRCLED', 'FINANCIAL'), ('PARENTHESIZED', 'RESOURCE'), ('CIRCLED', 'RESOURCE'),
+                   ('PARENTHESIZED', 'REPRESENT'))]
+WEEKDAYS = ('MOON', 'FIRE', 'WATER', 'WOOD', 'METAL', 'EARTH', 'SUN')
+CIRCLED_WEEK = enclosed('CIRCLED', *WEEKDAYS) + enclosed('PARENTHESIZED', *WEEKDAYS)
+
+
+def enclosed_ideograph(ch):
+    """The ideograph a U+3200-32FF character encloses, from its <circle> or parenthesized <compat> decomposition."""
+    d = unicodedata.decomposition(ch).split()
+    if not 0x3200 <= ord(ch) <= 0x32FF or not d or d[0] not in ('<circle>', '<compat>'):
+        return None
+    inner = [chr(int(h, 16)) for h in d[1:] if h not in ('0028', '0029')]
+    if len(inner) != 1 or not unicodedata.name(inner[0], '').startswith('CJK UNIFIED IDEOGRAPH'):
+        return None
+    return inner[0]
+
+
 # label kinds: 'neutral' (must equal EN), 'worded' (EN checked against UCD, locales must differ from EN)
 CLUSTERS = {
     'braille': {
@@ -512,6 +549,10 @@ CLUSTERS = {
             'frowning-pouting-deaf': (lambda lc: emo(by_gender('\U0001F64D') + by_gender('\U0001F64E') + by_gender('\U0001F9CF')), 'emoji'),
         },
     },
+    'sports': {
+        'pages': {'en': 'library/sports-emojis', 'es': 'es/library/emojis-de-deportes', 'fr': 'fr/library/emojis-sport'},
+        'sections': {},
+    },
     'hands': {
         'pages': {'en': 'library/hand-symbols', 'de': 'de/library/hand-symbole', 'ru': 'ru/library/simvoly-ruk',
                   'es': 'es/library/simbolos-de-manos', 'ja': 'ja/library/te-emoji', 'ko': 'ko/library/son-giho'},
@@ -527,6 +568,17 @@ CLUSTERS = {
             'hiragana-dakuten-small-kana': (lambda lc: kana_extras('HIRAGANA'), 'kana'),
             'katakana-gojuon-chart': (lambda lc: kana_chart('KATAKANA'), 'kana'),
             'katakana-dakuten-small-kana': (lambda lc: kana_extras('KATAKANA'), 'kana'),
+        },
+    },
+    'circled': {
+        'pages': {'en': 'library/japanese-symbols', 'es': 'es/library/simbolos-japoneses', 'id': 'id/library/simbol-jepang',
+                  'ja': 'ja/library/japanese-symbols', 'ko': 'ko/library/ilboneo-giho', 'pt': 'pt/library/simbolos-japoneses',
+                  'ar': 'ar/library/japanese-symbols', 'tr': 'tr/library/japon-alfabesi', 'de': 'de/library/japanische-symbole',
+                  'sv': 'sv/library/japanska-tecken'},
+        'sections': {
+            'circled-ideographs-documents': (lambda lc: [(c, enclosed_ideograph(c)) for c in CIRCLED_DOCS], 'circled'),
+            'company-organization-marks': (lambda lc: [(c, enclosed_ideograph(c)) for c in CIRCLED_COMPANY], 'circled'),
+            'weekday-circles': (lambda lc: [(c, enclosed_ideograph(c)) for c in CIRCLED_WEEK], 'circled'),
         },
     },
     'units': {
@@ -784,6 +836,11 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors, page_text=No
                     errors.append(f'{tag}: small kana label {label!r} does not carry its romaji {exp_label[1:]!r}')
             elif label != exp_label:
                 errors.append(f'{tag}: label {label!r} but the Hepburn reading is {exp_label!r}')
+        if kind == 'circled':
+            if not exp_label:
+                errors.append(f'{tag}: not a circled or parenthesized ideograph from U+3200-32FF')
+            elif exp_label not in label:
+                errors.append(f'{tag}: label {label!r} does not carry the enclosed ideograph {exp_label!r}')
         if kind == 'unit':
             if not exp_label:
                 errors.append(f'{tag}: not a squared unit (no <square> decomposition)')
@@ -827,7 +884,7 @@ def check_tiles(where, tiles, expected, kind, lc, en_tiles, errors, page_text=No
             en_label = dict((t[0], t[2]) for t in en_tiles).get(sym)
             if en_label is not None and label == en_label:
                 errors.append(f'{tag}: label is the English one ({label!r}); a {lc} page needs its own wording')
-        if en_tiles is not None and (kind in ('box', 'card', 'roman', 'arrow', 'emoji', 'greek', 'unit', 'music', 'alchemy', 'isokey', 'ucdname')
+        if en_tiles is not None and (kind in ('box', 'card', 'roman', 'arrow', 'emoji', 'greek', 'unit', 'music', 'alchemy', 'isokey', 'ucdname', 'circled')
                                      or (kind == 'kana' and exp_label and exp_label.startswith('~'))):
             en_label = dict((t[0], t[2]) for t in en_tiles).get(sym)
             if en_label is not None and label == en_label:
@@ -913,6 +970,9 @@ def self_test():
     mutations['family tile dropped'] = (ppath, re.sub(r'\s*<div class="flag-row">\s*<button[^>]*data-symbol="👩‍👧‍👧"[^<]*</button>\s*<span[^<]*</span>\s*</div>', '', pgood, count=1), 'set/order differs')
     mutations['toned tile'] = (ppath, pgood.replace('data-symbol="👨‍✈️"', 'data-symbol="👨🏽‍✈️"', 1), 'skin-tone modifier')
     mutations['inserted tile missing'] = (ppath, pgood.replace('data-symbol="👩‍🎓"', 'data-symbol="🎓"', 1), "missing the tile")
+    spath = CLUSTERS['sports']['pages']['fr']
+    sgood = open(os.path.join(ROOT, spath, 'index.html'), encoding='utf-8').read()
+    mutations['sports gendered tile dropped'] = (spath, re.sub(r'\s*<div class="flag-row">\s*<button[^>]*data-symbol="🏄‍♀️"[^<]*</button>\s*<span[^<]*</span>\s*</div>', '', sgood, count=1), "missing the tile '🏄\\u200d♀")
     gpath, gdpath = CLUSTERS['greek']['pages']['en'], CLUSTERS['greek']['pages']['de']
     ggood = open(os.path.join(ROOT, gpath, 'index.html'), encoding='utf-8').read()
     gdgood = open(os.path.join(ROOT, gdpath, 'index.html'), encoding='utf-8').read()
@@ -923,6 +983,8 @@ def self_test():
                                               .replace('aria-label="Kopieren Großes Alpha mit Tonos"', 'aria-label="Kopieren Capital Alpha with Tonos"', 1), 'is the English one')
     kpath = CLUSTERS['kana']['pages']['de']
     kgood = open(os.path.join(ROOT, kpath, 'index.html'), encoding='utf-8').read()
+    jpath = CLUSTERS['circled']['pages']['ko']
+    jgood = open(os.path.join(ROOT, jpath, 'index.html'), encoding='utf-8').read()
     upath = CLUSTERS['units']['pages']['es']
     ugood = open(os.path.join(ROOT, upath, 'index.html'), encoding='utf-8').read()
     mutations['wrong romaji'] = (kpath, kgood.replace('aria-label="Kopieren Hiragana shi">し</button>\n      <span class="flag-label">shi</span>',
@@ -931,6 +993,11 @@ def self_test():
                                                                   'aria-label="Kopieren Katakana small tsu">ッ</button>\n      <span class="flag-label">small tsu</span>', 1), 'is the English one')
     mutations['unit label without unit'] = (upath, ugood.replace('<span class="flag-label">kW (kilovatio)</span>', '<span class="flag-label">kilovatio</span>', 1)
                                             .replace('aria-label="Copiar kW (kilovatio)"', 'aria-label="Copiar kilovatio"', 1), 'names neither the unit')
+    mutations['circled label without its kanji'] = (jpath, jgood.replace('<span class="flag-label">주식회사(株)</span>', '<span class="flag-label">주식회사</span>', 1)
+                                                    .replace('aria-label="주식회사(株) 복사"', 'aria-label="주식회사 복사"', 1), 'enclosed ideograph')
+    mutations['English circled label on ko'] = (jpath, jgood.replace('<span class="flag-label">월요일(月)</span>', '<span class="flag-label">Monday (月)</span>', 1)
+                                                .replace('aria-label="월요일(月) 복사"', 'aria-label="Monday (月) 복사"', 1), 'is the English one')
+    mutations['circled Korean letter'] = (jpath, jgood.replace('data-symbol="㊞"', 'data-symbol="㉠"', 1).replace('>㊞<', '>㉠<', 1), 'set/order differs')
     mutations['katakana-word square'] = (upath, ugood.replace('data-symbol="㏖"', 'data-symbol="㌔"', 1).replace('>㏖<', '>㌔<', 1), 'set/order differs')
     mpath_ = CLUSTERS['music']['pages']['de']
     mgood = open(os.path.join(ROOT, mpath_, 'index.html'), encoding='utf-8').read()
@@ -972,11 +1039,11 @@ def self_test():
         else:
             print(f'  caught  {name}: {hit[0][:110]}')
     for name, (mpath, text, expect) in mutations.items():
-        orig = {path: good, cpath: cgood, npath: ngood, ppath: pgood, gpath: ggood, gdpath: gdgood, kpath: kgood, upath: ugood, mpath_: mgood, apath: agood, kcpath: kcgood}[mpath]
+        orig = {path: good, cpath: cgood, npath: ngood, ppath: pgood, gpath: ggood, gdpath: gdgood, kpath: kgood, jpath: jgood, upath: ugood, mpath_: mgood, apath: agood, kcpath: kcgood, spath: sgood}[mpath]
         if text == orig:
             failed.append(f'{name}: the mutation did not apply (fixture drifted)')
             continue
-        only = {path: 'braille', cpath: 'cards', npath: 'numbers', ppath: 'people', gpath: 'greek', gdpath: 'greek', kpath: 'kana', upath: 'units', mpath_: 'music', apath: 'alchemy', kcpath: 'checkers'}[mpath]
+        only = {path: 'braille', cpath: 'cards', npath: 'numbers', ppath: 'people', gpath: 'greek', gdpath: 'greek', kpath: 'kana', jpath: 'circled', upath: 'units', mpath_: 'music', apath: 'alchemy', kcpath: 'checkers', spath: 'sports'}[mpath]
         errs, _, _ = run(lambda p, mp=mpath, t=text: t if p == mp else open(os.path.join(ROOT, p, 'index.html'), encoding='utf-8').read(), only)
         hit = [e for e in errs if expect in e]
         if not hit:
