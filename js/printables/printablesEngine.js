@@ -132,14 +132,17 @@
       dotLadderTitle: "Practice ladder",
       dotLadderText: "Start easy and add dots as it gets comfortable. Mastered Expert? Turn the numbers off, then try drawing it freehand.",
       pdfHint: "Tip: Print → “Save as PDF” downloads this sheet as a PDF.",
-      /* Word search maker. English only for now: no locale build of this page
-         exists, so nothing can render these in the wrong language. When one
-         ships, harvest each string per docs/em-dash-policy.md's sibling rule
-         and attest it with npm run audit:locale-attestation. */
+      /* Word search maker. Seven locales ship this page besides English, each
+         with its own block. The merge with English (T, below) is shallow, so a locale
+         block must carry every key the page reads: es lacked overCap, and a
+         Spanish list over the cap threw instead of saying what was left out.
+         A new string is harvested per docs/em-dash-policy.md's sibling rule
+         and attested with npm run audit:locale-attestation. */
       wordSearch: {
         heading: "Word Search",
         findAll: "Find all",
         wordsWord: "words",
+        findOne: "Find the word",
         answerKey: "Answer key",
         forWhom: "for",
         tooLong: "Too long for the grid:",
@@ -150,11 +153,11 @@
         versions: "different grids, one per name",
         oneGrid: "One grid"
       },
-      /* Crossword and word scramble. English only, for the same reason and
-         under the same rule as wordSearch above: no locale build of either
-         page exists, so nothing can render these in the wrong language. When
-         one ships, harvest each string per docs/em-dash-policy.md's sibling
-         rule and attest it with npm run audit:locale-attestation. */
+      /* Crossword and word scramble, under the same rule as wordSearch
+         above: a locale that ships the page carries the whole block. The
+         scramble page exists in English and es (the es block was added on
+         2026-10-27; until then that page printed this English block); nl and
+         tr carry a block with no page yet. */
       crossword: {
         heading: "Crossword",
         across: "Across",
@@ -165,6 +168,7 @@
         wordBank: "Word bank",
         noFit: "No room in the grid for:",
         needWords: "Type a few words that share some letters.",
+        needCross: "Add at least two words that share a letter to build a crossword.",
         gridOf: "Crossword grid",
         cellsBy: "squares by",
         versions: "different layouts, one per name",
@@ -399,11 +403,28 @@
         answerKey: "Soluciones",
         forWhom: "para",
         tooLong: "Demasiado larga para la cuadrícula:",
+        overCap: "Solo se usan las primeras {n} palabras. Quedan fuera:",
         needWords: "Escribe algunas palabras para crear la sopa de letras.",
         gridOf: "Cuadrícula de sopa de letras",
         lettersBy: "letras por",
         versions: "cuadrículas distintas, una por nombre",
         oneGrid: "Una cuadrícula"
+      },
+      /* Word scramble: es/imprimibles/palabras-desordenadas exists, so the
+         English block above was printing on it. Each string is built from
+         words the es pages already publish (npm run audit:locale-attestation:
+         attested); the level names are that page's own. */
+      scramble: {
+        heading: "Palabras desordenadas",
+        unscramble: "Ordena las letras de cada palabra.",
+        answerKey: "Soluciones",
+        forWhom: "para",
+        startsWith: "empieza por",
+        noScramble: "Demasiado corta para desordenar:",
+        needWords: "Escribe algunas palabras para desordenarlas.",
+        versions: "fichas distintas, una por nombre",
+        oneSheet: "Una ficha",
+        easy: "Fácil", medium: "Medio", hard: "Difícil"
       },
       trace: {
         solid:    { label: "Modelo sólido", hint: "Letras oscuras y llenas — traza justo encima" },
@@ -744,6 +765,7 @@
         heading: "Suchsel",
         findAll: "Finde alle",
         wordsWord: "Wörter",
+        findOne: "Finde das Wort",
         answerKey: "Lösung",
         forWhom: "für",
         tooLong: "Zu lang für das Gitter:",
@@ -1155,7 +1177,11 @@
       nameStyleLabel: "Stil", nameFillLabel: "Dolgu", nameStrokeLabel: "Kontur",
       nameSolidLabel: "Şimdi boya (tam dolgu)",
       pngTransparent: "PNG (şeffaf)",
-      classSet: "Sınıf seti: her isim için bir sayfa", sheets: "sayfa",
+      /* `sheets` counts one child's worksheet and `pageCount` a side of
+         paper; both were "sayfa", so a class of three read "3 sayfa · 3
+         sayfa". "çalışma sayfası" is the drill-sheet term above, the one the
+         tr pages print, and the word sheetsPerPage already abbreviates. */
+      classSet: "Sınıf seti: her isim için bir sayfa", sheets: "çalışma sayfası",
       classSetPngHint: "PNG yalnızca şu anki ismi indirir; setin tamamı için PDF olarak kaydet'i kullan.",
       sheetsPerPage: "Sayfa başına çalışma",
       bannerInstr: "Her bayrağı kesikli çizgisinden kes, her noktaya bir delik aç, sonra ipi ya da kurdeleyi sırayla (1, 2, 3…) geçir; kelime ortaya çıksın.",
@@ -2020,6 +2046,7 @@
     return { base: wordBaselineY(font, fontSize, anchorY), band: band, fontPx: fontSize };
   }
 
+  const FIT_CLIP_TOL = 6;   // units of overflow below which fitIfClipped leaves the box alone
   function wordOutlineGeom(word, opts) {
     const o = opts || {};
     const font = o.font || FONT;
@@ -2105,11 +2132,25 @@
       const base = gRul ? gRul.base
         : (im.emAscent != null ? WORD_OUTLINE_ANCHOR_Y + (im.emAscent - im.emDescent) / 2 : null);
       if (base != null) {
-        h = Math.max(h, Math.ceil(base + Math.max(im.bottom, fit.bottom) + wordStroke + 8));
+        const needBottom = base + Math.max(im.bottom, fit.bottom) + wordStroke;
+        /* o.fitIfClipped: grow only when the INK really overflows the box the row
+           will have, by more than FIT_CLIP_TOL units. Neither the 8-unit safety
+           margin below nor a ruling line drawn outside the box is a reason to
+           resize a face that fits: Quicksand's descenders end within 1-4 units of
+           200 (stroke width and rounding, nothing visible is cut) and the margin
+           alone would shrink every print name page's letters by about 5%. A cut
+           script glyph is 13-78 units over. "The box the row will have" matters on
+           a physical ruling (the French Seyes row): the page hands it a box far
+           taller than 200 (o.rowVH), centred on the drawing, so ink that is past
+           200 is still inside it and nothing is cut. */
+        const boxH = o.rowVH ? Math.max(h, o.rowVH) : h;
+        const boxTop = -(boxH - h) / 2, boxBottom = boxTop + boxH;
+        if (!o.fitIfClipped || needBottom > boxBottom + FIT_CLIP_TOL) h = Math.max(h, Math.ceil(needBottom + 8));
         if (o.fitTop) {
           const inkTop = base + Math.min(im.top, fit.top) - wordStroke - 8;
           const ruleTop = gRul ? gRul.base - gRul.band * Math.max.apply(null, ruling().lines.map((l) => l.at)) - 4 : 0;
-          y0 = Math.min(0, Math.floor(Math.min(inkTop, ruleTop)));
+          const needTop = base + Math.min(im.top, fit.top) - wordStroke;   // ink only, not the ruling
+          if (!o.fitIfClipped || needTop < boxTop - FIT_CLIP_TOL) y0 = Math.min(0, Math.floor(Math.min(inkTop, ruleTop)));
         }
       }
     }
@@ -2584,6 +2625,7 @@
        would be a control with no visible consequence, which is the exact
        report this whole panel was rebuilt for. */
     if (el.designPreview && typeof renderDesignPreview === "function") renderDesignPreview();
+    if (el.bannerMeta && typeof syncBannerMeta === "function") syncBannerMeta();
     // No isConnected guard: paperPreview() paints once while the holder is
     // still detached (selectChar appends it afterwards), and an isConnected
     // check there silently skipped that first paint — the sheet took the
@@ -3378,6 +3420,29 @@
       localStorage.removeItem(ROSTER_KEY_LEGACY);
     } catch (err) { /* optional */ }
   }
+  /* A WORD list is not a class. The handwriting generator's spelling list
+     (data-roster-kind="words") shared ROSTER_KEY with the name tools, so a
+     remembered class filled it on load and "cat" printed as one sheet per
+     child (three names, three pages), and a spelling list typed there came
+     back as "names" on name-tracing. A word list keeps its own memory, per
+     page, cleared by emptying its box. A curated-word page (CFG.fixedWords)
+     keeps none; it used to write its list into the class key on every print. */
+  const WORDLIST_KEY = "utg_printables_wordlist:" + window.location.pathname;
+  function rosterIsWordList(mount) {
+    const details = mount && mount.closest ? mount.closest("details.pt-roster-field") : null;
+    return !!(details && details.dataset.rosterKind === "words");
+  }
+  function readRosterFor(mount) {
+    if (!rosterIsWordList(mount)) return readRoster();
+    try { return localStorage.getItem(WORDLIST_KEY); } catch (err) { return null; }
+  }
+  function writeRosterFor(mount, value) {
+    if (!rosterIsWordList(mount)) { writeRoster(value); return; }
+    try {
+      if (value && value.trim()) localStorage.setItem(WORDLIST_KEY, value);
+      else localStorage.removeItem(WORDLIST_KEY);
+    } catch (err) { /* optional */ }
+  }
   /* Sheet setup (paper, orientation, margins, ink saver, render scale) is
      owned by js/printables/printPrefs.js, so this engine, monogramEngine and
      crossStitchEngine cannot disagree about what page a sheet is written on.
@@ -3649,7 +3714,7 @@
      module through this rather than through searchBuild(). The fallback keeps a
      share link working (minus its word list) if the module has not arrived. */
   function WS_NS() {
-    const ns = window.UltraTextGen && window.UltraTextGen.wordSearch;
+    const ns = window.UltraTextGen && window.UltraTextGen.wordList && window.UltraTextGen.wordSearch;
     return ns || { normalizeWords: () => [] };
   }
   function presetParams() {
@@ -3756,7 +3821,7 @@
     if (!roster && rosterEl && !rosterEl.value.trim() && !fixedWordSet()) {
       // Roster memory: a teacher's class list stays on the device between
       // visits (this device only, never sent anywhere).
-      const remembered = readRoster(); if (remembered) rosterEl.value = remembered;
+      const remembered = readRosterFor(rosterEl); if (remembered) rosterEl.value = remembered;
     }
   }
   // Phase 2 (after the sections initialise): apply state that has setters.
@@ -3826,7 +3891,7 @@
       PP.rememberRecent({ href: presetUrl(), label: label, page: (document.title || "").split("|")[0].trim(), sheet: sheet });
     }
     const roster = primaryRoster();
-    if (roster) writeRoster(roster.value);
+    if (roster && !fixedWordSet()) writeRosterFor(roster, roster.value);
     renderRecent();
   }
   let recentMount = null;
@@ -4128,7 +4193,7 @@
     const roster = primaryRoster();
     if (roster && !fixedWordSet()) {
       let t2 = null;
-      roster.addEventListener("input", () => { clearTimeout(t2); t2 = setTimeout(() => writeRoster(roster.value), 800); });
+      roster.addEventListener("input", () => { clearTimeout(t2); t2 = setTimeout(() => writeRosterFor(roster, roster.value), 800); });
     }
   }
 
@@ -5176,6 +5241,20 @@
      Section: picker strip
      --------------------------------------------------------------- */
 
+  /* A tap on a strip chip only recoloured it: on a phone the letter it opened
+     sits far below the strip, so the tap looked like it did nothing. After a
+     tap (never on load) the panel is scrolled up under the header when its
+     top is in the lower 40% of the screen, instantly under reduced motion.
+     The frozen block-letters page keeps its behaviour (BATCH_FROZEN). */
+  function revealPanel() {
+    if (BATCH_FROZEN || !el.panel) return;
+    const top = el.panel.getBoundingClientRect().top;
+    if (top <= window.innerHeight * 0.6) return;
+    const headerH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--utg-header-h")) || 0;
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: Math.max(0, window.scrollY + top - headerH - 8), behavior: reduce ? "auto" : "smooth" });
+  }
+
   function buildStrip() {
     if (!el.strip) return;
     const make = (ch) => {
@@ -5187,7 +5266,11 @@
       b.setAttribute("aria-selected", "false");
       b.setAttribute("aria-label", cap(NOUN) + " " + charLabel(ch));
       b.textContent = ch;
-      b.addEventListener("click", () => { selectChar(ch); trackEngage("letter_pick", charKind(ch)); });
+      b.addEventListener("click", (e) => {
+        selectChar(ch);
+        trackEngage("letter_pick", charKind(ch));
+        if (e.isTrusted) revealPanel();
+      });
       return b;
     };
     const letterRow = document.createElement("div");
@@ -5337,10 +5420,13 @@
      print at 2.7pt, which nobody can follow. */
   const SET_SIZE_KEYS = RENDER === "dots" ? ["full", "medium"] : ["full", "medium", "small"];
   /* Vowels in the page's own language, kept to the characters the page
-     prints. A chip labelled AEIOU on a Polish page would miss Ą, Ę, Ó and Y. */
+     prints. A chip labelled AEIOU on a Polish page would miss Ą, Ę, Ó and Y.
+     Turkish has eight, two of them the dotted/dotless I pair, so its letters
+     are matched through CASE_LOCALE: an English uppercase turns "i" into "I"
+     and would put the wrong one of the pair on the sheet. */
   const SET_VOWELS = {
     en: "AEIOU", es: "AEIOU", pt: "AEIOU", it: "AEIOU", id: "AEIOU", nl: "AEIOU",
-    fr: "AEIOUY", de: "AEIOUÄÖÜ", pl: "AĄEĘIOÓUY"
+    fr: "AEIOUY", de: "AEIOUÄÖÜ", pl: "AĄEĘIOÓUY", tr: "AEIİOÖUÜ"
   };
   // What a set page spends on things that are not letter, in inches,
   // measured on the print surface (US Letter, normal margins): title + credit
@@ -5369,9 +5455,10 @@
       opts.push({ key: "num", label: digits[0] + "–" + digits[digits.length - 1], chars: digits });
     }
     const vowelSet = (SET_VOWELS[LANG] || SET_VOWELS.en).split("");
-    const vowels = CHARS.filter((c) => vowelSet.indexOf(c.toUpperCase()) !== -1);
+    const up = (c) => c.toLocaleUpperCase(CASE_LOCALE);
+    const vowels = CHARS.filter((c) => vowelSet.indexOf(up(c)) !== -1);
     if (vowels.length >= 2 && vowels.length < letters.length) {
-      opts.push({ key: "vow", label: vowels.map((c) => c.toUpperCase()).join(""), chars: vowels });
+      opts.push({ key: "vow", label: vowels.map(up).join(""), chars: vowels });
     }
     opts.push({ key: "pick", label: T.set.pick + "…", chars: null });
     setOptsCache = opts;
@@ -7373,10 +7460,21 @@
        sheet takes both, blank rows included, so the ruling lines up down the
        page. */
     const routedSheet = !!cursiveRouteFor(name);
+    /* Every name row fits its box to the name's own ink, routed or not (R-023,
+       2026-10-24). Until then only a routed sheet did, so the other cursive and
+       calligraphy name pages cut off the bottom of the glyph -- a cedilla, a
+       descender, an ogonek -- and the top of a capital's accent, in the preview and
+       in the PDF (the PNG draws on its own canvas and was never affected). An
+       unrouted page asks for fitIfClipped, so the box grows only when the ink
+       really overflows it and a face that already fits keeps its viewBox. A page with name styles composes its own
+       rows through nameRenderOpts() and stays as it was, blank rows included, so
+       the ruling still lines up down the sheet. */
+    const fitName = routedSheet || !NAME_STYLES;
+    const fitUnrouted = !routedSheet;
     if (kind === "blank") {
       if (RULED_ROWS) {
         const o = { blank: true, guides: true };
-        if (routedSheet) { o.fitInk = name; o.fitTop = true; }
+        if (fitName && (routedSheet || fitUnrouted)) { o.fitInk = name; o.fitTop = true; if (!routedSheet) o.fitIfClipped = true; }
         row.appendChild(wordOutlineSVG(name, o));
         stashPracticeRow(row, name, o);
       }
@@ -7399,9 +7497,12 @@
         solid: kind === "model", guides: RULED_ROWS, overlay: strokeOverlayOn()
       };
       if (RULED_ROWS) o.practice = practiceStyle;
-      if (routedSheet) {
+      if (fitName && (routedSheet || fitUnrouted)) {
         o.fitInk = name;
         o.fitTop = true;
+        if (!routedSheet) o.fitIfClipped = true;   // routed sheets keep their always-fit behaviour (R-023)
+      }
+      if (routedSheet) {
         if (kind === "trace" || kind === "start") {
           o.route = { mode: kind, level: level || ROUTE_TRACE_LEVELS[0] };
           o.overlay = false;   // the route's own start marks are the overlay
@@ -8909,7 +9010,34 @@
     $$(".pt-choice", box).forEach((b) => {
       b.addEventListener("click", () => setRosterAudience(mount, b.dataset.value));
     });
-    setRosterAudience(mount, mount.value.trim() ? "class" : "one", { quiet: true });
+    /* A list that arrives in a ?roster= link opens on "Whole class": the
+       sender meant the class. A list this device remembered from an earlier
+       visit opens on "One sheet" and waits behind "Whole class", which says
+       how many names are saved: restoring it on "Whole class" made an
+       untouched Download print last week's class under the name on screen
+       (name-tracing: preview "Emma", PDF five pages). Nothing has been typed
+       yet when this runs, so a filled box with no ?roster= is the memory.
+       The frozen block-letters page keeps its behaviour (BATCH_FROZEN). */
+    const filled = !!mount.value.trim();
+    const remembered = filled && !presetGet("roster") && !BATCH_FROZEN;
+    setRosterAudience(mount, filled && !remembered ? "class" : "one", { quiet: true });
+    if (remembered) markSavedRoster(mount, box);
+  }
+  /* "3 saved names" under "Whole class", in the languages that have the
+     string; elsewhere the switch says nothing extra, as before. It goes with
+     the first edit of the list or with "Clear names". */
+  const AUDIENCE_SAVED_I18N = { en: (n) => n === 1 ? "1 saved name" : n + " saved names" };
+  function markSavedRoster(mount, box) {
+    const fmt = AUDIENCE_SAVED_I18N[LANG];
+    const btn = box && $$(".pt-choice", box).find((b) => b.dataset.value === "class");
+    if (!fmt || !btn) return;
+    const n = mount.value.split(/\r?\n/).filter((s) => s.trim()).length;
+    const note = document.createElement("small");
+    note.className = "pt-choice-saved";
+    note.textContent = fmt(n);
+    btn.appendChild(note);
+    const drop = () => { note.remove(); mount.removeEventListener("input", drop); };
+    mount.addEventListener("input", drop);
   }
   /* "Clear names": the roster is remembered on this device between visits
      (readRoster/writeRoster), and until now the only way to forget a class on
@@ -8934,6 +9062,11 @@
     btn.addEventListener("click", () => {
       mount.value = "";
       writeRoster("");
+      /* The class also sits in "Your recent sheets": each entry is a link
+         that carries roster=Emma|Noah|Ava. Clearing the box and leaving
+         those would forget the list in one place and keep it in another. */
+      if (PP && PP.scrubRecent) PP.scrubRecent(["roster"]);
+      renderRecent();
       mount.dispatchEvent(new Event("input", { bubbles: true }));
       setRosterAudience(mount, "one", { quiet: true });
       sync();
@@ -9828,7 +9961,10 @@
   // author used one; otherwise the Step-1 word is substituted, which is the
   // case a placeholder-follower actually lands in.
   function headingForName(heading, name) {
-    if (!heading || !name) return heading;
+    if (!heading) return heading;
+    // A single sheet has no roster name, but the token still means the name
+    // on the sheet: the Step-1 word. It used to print "{name}" itself.
+    if (!name) return heading.indexOf(DESIGN_NAME_TOKEN) !== -1 ? heading.split(DESIGN_NAME_TOKEN).join(designText()) : heading;
     if (heading.indexOf(DESIGN_NAME_TOKEN) !== -1) return heading.split(DESIGN_NAME_TOKEN).join(name);
     const word = designText();
     if (!word) return heading;
@@ -11142,9 +11278,30 @@
   // is the class-set print path (one roster name per sheet — always a single
   // line); interactive use reads the input fields, including the optional
   // second line.
+  /* The lines one child's sheet carries. A class set used to print the
+     roster name INSTEAD of the typed design, so "Happy Birthday / Emma" with
+     a class of three printed three sheets reading only "Noah", "Ava", "Liam":
+     one of the two typed lines was dropped from every sheet. The name now
+     takes ONE line and the other stays: the line that holds the {name}
+     token, else the line that already is a name (a roster entry or the demo
+     name), else the first line, which is the field's "word or name" line. */
+  function designLinesFor(name) {
+    const child = String(name).slice(0, DESIGN_MAX);
+    const typed = designLines();
+    if (typed.length < 2) return [child];
+    if (typed.some((l) => l.indexOf(DESIGN_NAME_TOKEN) !== -1)) {
+      return typed.map((l) => l.split(DESIGN_NAME_TOKEN).join(child));
+    }
+    const known = rosterNames(el.designRoster).concat([DESIGN_DEMO]).map((n) => String(n).toLowerCase());
+    let at = typed.findIndex((l) => known.indexOf(l.toLowerCase()) !== -1);
+    if (at === -1) at = 0;
+    return typed.map((l, i) => (i === at ? child : l));
+  }
+
   function designSheetSVG(textOverride) {
-    const text = textOverride != null ? String(textOverride).slice(0, DESIGN_MAX) : designText();
-    const line2 = textOverride != null ? "" : designLine2();
+    const classLines = textOverride != null ? designLinesFor(textOverride) : null;
+    const text = classLines ? classLines[0] : designText();
+    const line2 = classLines ? (classLines[1] || "") : designLine2();
     let lines = line2 ? [text, line2] : [text];
     let wrapped = false;
     const heading = headingForName(designHeadingText(), textOverride != null ? String(textOverride) : null);
@@ -11447,7 +11604,9 @@
       ctx.strokeStyle = "#e2e6ee"; ctx.lineWidth = 3;
       roundRectPath(ctx, 18, 18, W - 36, H - 36, 26); ctx.stroke();
 
-      const text = designText(), line2 = designLine2(), heading = designHeadingText();
+      // The same heading the preview and the PDF carry: {name} becomes the
+      // Step-1 name here too (it printed literally in the PNG).
+      const text = designText(), line2 = designLine2(), heading = headingForName(designHeadingText(), null);
       let lines = line2 ? [text, line2] : [text];
     let wrapped = false;
       const borderSym = designBorderSym();
@@ -11863,10 +12022,25 @@
     const pages = bannerPages(cards);
     el.bannerPreview.innerHTML = "";
     el.bannerPreview.appendChild(bannerPagesNode(phrase));
-    if (el.bannerMeta) {
-      el.bannerMeta.textContent = total + " " + plural(total, T.flagCount) + " · " +
-        pages.length + " " + plural(pages.length, T.pageCount) + " · " + T.usLetter;
-    }
+    syncBannerMeta(total, pages.length);
+  }
+  /* The line under the banner names the paper the PDF is written on. It
+     printed T.usLetter, a constant, so after choosing A4 or landscape it still
+     read "US Letter", in English on the Polish page. It now names the live
+     paper and orientation the way the letter-set summary does, from strings
+     the print panel already ships in every language, and the panel repaints it. */
+  let bannerCounts = null;
+  function syncBannerMeta(total, pageCount) {
+    if (!el.bannerMeta) return;
+    if (total != null) bannerCounts = { total: total, pages: pageCount };
+    if (!bannerCounts) return;
+    const paper = PP && PP.paperLabel ? PP.paperLabel() : T.usLetter;
+    const orient = printPrefs.orient === "landscape" ? PO.landscape : PO.portrait;
+    el.bannerMeta.textContent = [
+      bannerCounts.total + " " + plural(bannerCounts.total, T.flagCount),
+      bannerCounts.pages + " " + plural(bannerCounts.pages, T.pageCount),
+      paper, orient
+    ].filter(Boolean).join(" · ");
   }
 
   function printBanner() {
@@ -12267,20 +12441,36 @@
 
   let wsWarned = false;
   function wordSearchModule() {
-    const ns = window.UltraTextGen && window.UltraTextGen.wordSearch;
+    const ns = window.UltraTextGen && window.UltraTextGen.wordList && window.UltraTextGen.wordSearch;
     if (!ns && !wsWarned) {
       wsWarned = true;
       console.warn("[printables] js/printables/wordSearch.js has not loaded; the grid cannot be built.");
     }
     return ns || null;
   }
+  /* The three word-list tools read a paste through one parser,
+     js/printables/wordList.js, which each builder calls at run time. It is
+     inserted ahead of the builder with async off: dynamically inserted
+     scripts with async = false run in insertion order, so the parser is
+     always there before the first build, without a second round trip. */
+  function loadWordListParser() {
+    if (window.UltraTextGen && window.UltraTextGen.wordList) return;
+    if (document.querySelector("script[data-pt-wordlist]")) return;
+    const sc = document.createElement("script");
+    sc.src = "/js/printables/wordList.js";
+    sc.async = false;
+    sc.setAttribute("data-pt-wordlist", "");
+    sc.onerror = () => console.warn("[printables] js/printables/wordList.js failed to load.");
+    document.head.appendChild(sc);
+  }
   function loadWordSearchModule() {
     if (!el.searchInput || !el.searchPreview) return;
     if (window.UltraTextGen && window.UltraTextGen.wordSearch) return;
     if (document.querySelector("script[data-pt-wordsearch]")) return;
+    loadWordListParser();
     const sc = document.createElement("script");
     sc.src = "/js/printables/wordSearch.js";
-    sc.async = true;
+    sc.async = false;
     sc.setAttribute("data-pt-wordsearch", "");
     sc.onload = () => { renderSearchPreview(); };
     sc.onerror = () => console.warn("[printables] js/printables/wordSearch.js failed to load.");
@@ -12368,8 +12558,13 @@
     note.className = "pt-search-note";
     /* Polish counts with case endings ("12 słów", "3 słowa"), so its strings
        put the number last ("Do znalezienia: 12") and leave wordsWord and colon
-       empty; an empty colon must stay empty, hence != null, not ||. */
-    note.textContent = (T.wordSearch.findAll + " " + placed + " " + T.wordSearch.wordsWord).trim()
+       empty; an empty colon must stay empty, hence != null, not ||.
+       One placed word printed "Find all 1 words:", so a locale with a
+       singular sentence (findOne) uses it, without the count, at one. */
+    const findText = placed === 1 && T.wordSearch.findOne
+      ? T.wordSearch.findOne
+      : T.wordSearch.findAll + " " + placed + " " + T.wordSearch.wordsWord;
+    note.textContent = findText.trim()
       + (T.wordSearch.colon != null ? T.wordSearch.colon : ":");
     sheet.appendChild(note);
 
@@ -12548,7 +12743,7 @@
 
   let wpWarned = false;
   function puzzleNs(name) {
-    const ns = window.UltraTextGen && window.UltraTextGen[name];
+    const ns = window.UltraTextGen && window.UltraTextGen.wordList && window.UltraTextGen[name];
     if (!ns && !wpWarned) {
       wpWarned = true;
       console.warn("[printables] js/printables/wordPuzzles.js has not loaded; the puzzle cannot be built.");
@@ -12559,9 +12754,10 @@
     if (!(el.cwInput && el.cwPreview) && !(el.scInput && el.scPreview)) return;
     if (window.UltraTextGen && window.UltraTextGen.crossword) return;
     if (document.querySelector("script[data-pt-wordpuzzles]")) return;
+    loadWordListParser();
     const sc = document.createElement("script");
     sc.src = "/js/printables/wordPuzzles.js";
-    sc.async = true;
+    sc.async = false;
     sc.setAttribute("data-pt-wordpuzzles", "");
     sc.onload = () => { renderCwPreview(); renderScPreview(); };
     sc.onerror = () => console.warn("[printables] js/printables/wordPuzzles.js failed to load.");
@@ -12736,6 +12932,7 @@
     if (built && built.entries.length) {
       const names = rosterNames(el.cwRoster);
       bits.push(names.length >= 2 ? names.length + " " + T.crossword.versions : T.crossword.oneGrid);
+      if (!cwBuildable(built)) bits.push(cwBlockedReason());
       if (built.unplaced.length) {
         bits.push(T.crossword.noFit + " " + built.unplaced.map((w) => w.display).join(", "));
       }
@@ -12745,16 +12942,47 @@
     el.cwMeta.textContent = bits.join(" · ");
   }
 
+  /* One entry is a strip, not a crossword: a list whose words share no
+     letter places its longest word and nothing crosses it, and that exported
+     as a single row of squares with one clue. Download stays off until a
+     second word crosses, and the meta line says why. The English reason is
+     its own string; a locale block without one gives its own needWords
+     ("type a few words that share some letters"), which is the same reason in
+     that page's language, so no locale page shows English. */
+  function cwBuildable(built) {
+    return !!(built && built.entries.length >= 2);
+  }
+  function cwBlockedReason() {
+    return T.crossword.needCross || T.crossword.needWords;
+  }
+  function syncCwActions(built) {
+    const off = !cwBuildable(built);
+    [el.cwPrint, el.cwPng].forEach((b) => {
+      if (!b) return;
+      b.disabled = off;
+      b.setAttribute("aria-disabled", off ? "true" : "false");
+      if (off) {
+        b.title = cwBlockedReason();
+        if (el.cwMeta) b.setAttribute("aria-describedby", el.cwMeta.id);
+      } else {
+        b.removeAttribute("title");
+        b.removeAttribute("aria-describedby");
+      }
+    });
+  }
+
   function renderCwPreview() {
     if (!el.cwPreview) return;
     const built = cwBuild(null);
     el.cwPreview.innerHTML = "";
     if (built && built.entries.length) el.cwPreview.appendChild(cwSheetNode(null, false));
     renderCwMeta(built);
+    syncCwActions(built);
     updateSheetCost();
   }
 
   function printCrossword() {
+    if (!cwBuildable(cwBuild(null))) { pngMode = false; renderCwPreview(); return; }
     const holder = document.createElement("div");
     holder.className = "pt-search-print-holder";
     const answer = cwAnswerOn();

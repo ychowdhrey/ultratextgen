@@ -93,7 +93,10 @@
         { "char": "🧼", "label": "Soap" },
         { "char": "🪥", "label": "Toothbrush" },
         { "char": "🧴", "label": "Lotion Bottle" },
-        { "char": "📦", "label": "Package" }
+        { "char": "📦", "label": "Package" },
+        { "char": "🪪", "label": "Identification Card" },
+        { "char": "🪧", "label": "Placard" },
+        { "char": "🚬", "label": "Cigarette" }
       ]
     },
     {

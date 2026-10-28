@@ -48,7 +48,11 @@
           "char": "(´｡• ᵕ •｡`) ♡",
           "label": "Content Love"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/library/heart-kaomoji/",
+        "text": "See every heart kaomoji"
+      }
     },
     {
       "id": "blowing-kisses",
@@ -104,7 +108,11 @@
           "char": "⊂(´• ω •`⊂)",
           "label": "Reaching Hug"
         }
-      ]
+      ],
+      "more_link": {
+        "href": "/library/hug-kaomoji/",
+        "text": "See every hug kaomoji"
+      }
     },
     {
       "id": "in-love-blushing",

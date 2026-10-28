@@ -261,6 +261,53 @@ function assertShape(row, label) {
   eq(dataLayer[0].share_method, 'link_copy', 'and as link_copy, not native');
 }
 
+/* ---- clipboard fallback: fallback "text" copies the items -------------- */
+
+{
+  // A saved shortlist of several symbols has no link that carries the items.
+  // Copying the page URL handed the recipient a page instead of the list.
+  let copied = null;
+  const { UTG, dataLayer } = load({ writeText: async (t) => { copied = t; } });
+  const out = await UTG.shareCreation({
+    output: '★ ♥', url: 'https://ultratextgen.com/ko/library/x/',
+    surface: 'library_saved', itemType: 'collection', fallback: 'text'
+  });
+  eq(out, 'copied', 'fallback "text" still resolves "copied"');
+  eq(copied, '★ ♥', 'and copies the items, not the URL');
+  eq(dataLayer.length, 1, 'one row');
+  assertShape(dataLayer[0], 'text fallback');
+  eq(dataLayer[0].share_method, 'link_copy', 'the method is the existing clipboard copy');
+  eq(dataLayer[0].share_destination, 'clipboard', 'the destination is the clipboard, nothing invented');
+  eq(dataLayer[0].share_format, 'text', 'share_format says what left the page: text, not a link');
+}
+
+{
+  // The native sheet is unchanged: it already carries the items as text.
+  let shared = null;
+  const { UTG } = load({ share: async (p) => { shared = p; } });
+  await UTG.shareCreation({ output: '★ ♥', url: 'https://ultratextgen.com/x/', fallback: 'text' });
+  eq(shared && shared.text, '★ ♥', 'native share still sends the items as text');
+}
+
+{
+  // Without the option, nothing about the link path changes.
+  let copied = null;
+  const { UTG, dataLayer } = load({ writeText: async (t) => { copied = t; } });
+  await UTG.shareCreation({ output: '★', url: 'https://ultratextgen.com/x/?symbol=%E2%98%85' });
+  eq(copied, 'https://ultratextgen.com/x/?symbol=%E2%98%85', 'the default fallback still copies the link');
+  eq(dataLayer[0].share_format, 'link', 'and records a link');
+}
+
+{
+  const { UTG } = load({});
+  const withText = UTG.buildShareButton({ text: '★ ♥', fallback: 'text', linkCopied: '복사됨!', failedLabel: '✗ 실패' });
+  eq(withText.dataset.shareFallback, 'text', 'buildShareButton stamps fallback "text" for the delegated handler');
+  eq(withText.dataset.shareCopied, '복사됨!', 'and the host-supplied copied label');
+  eq(withText.dataset.shareFailed, '✗ 실패', 'and the host-supplied failed label');
+  const plain = UTG.buildShareButton({ text: '★' });
+  eq(plain.dataset.shareFallback, undefined, 'a button without the option copies the link as before');
+}
+
 /* ---- locale ------------------------------------------------------------ */
 
 {

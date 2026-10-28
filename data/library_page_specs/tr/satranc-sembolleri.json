@@ -246,6 +246,46 @@
       ]
     },
     {
+      "id": "checkers-shogi-pieces",
+      "label": "Dama ve shogi",
+      "h2": "Dama ve Shogi Taşları",
+      "intro": "Dama oyununun beyaz ve siyah taşları, düz taş ve dama olarak, ayrıca dört biçimiyle shogi taşı. Shogi parti kayıtlarında ☗ ilk oyuncuyu (sente), ☖ ikinci oyuncuyu (gote) gösterir.",
+      "symbols": [
+        {
+          "char": "⛀",
+          "label": "Beyaz dama taşı"
+        },
+        {
+          "char": "⛁",
+          "label": "Beyaz dama (kral)"
+        },
+        {
+          "char": "⛂",
+          "label": "Siyah dama taşı"
+        },
+        {
+          "char": "⛃",
+          "label": "Siyah dama (kral)"
+        },
+        {
+          "char": "☖",
+          "label": "Beyaz shogi taşı"
+        },
+        {
+          "char": "☗",
+          "label": "Siyah shogi taşı"
+        },
+        {
+          "char": "⛉",
+          "label": "Ters beyaz shogi taşı"
+        },
+        {
+          "char": "⛊",
+          "label": "Ters siyah shogi taşı"
+        }
+      ]
+    },
+    {
       "id": "notation-symbols",
       "label": "Notasyon",
       "h2": "Notasyon ve Değerlendirme Sembolleri",

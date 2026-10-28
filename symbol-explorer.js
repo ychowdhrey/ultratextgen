@@ -58,6 +58,13 @@
       lookPlain: "Copy plain version",
       lookEmoji: "Copy emoji version",
       lookNote: "Some apps show it in colour anyway.",
+      skinTone: "Skin tone",
+      toneDefault: "Default (yellow)",
+      toneLight: "Light",
+      toneMediumLight: "Medium-light",
+      toneMedium: "Medium",
+      toneMediumDark: "Medium-dark",
+      toneDark: "Dark",
       formats: { inline: "Inline", vertical: "Vertical", comma: "Comma", space: "Space", bullet: "Bullet" }
     },
     vi: {
@@ -118,6 +125,13 @@
       lookNote: "Algunas apps lo muestran en color de todos modos.",
       linkCopied: "Enlace copiado",
       failed: "✗ Falló",
+      skinTone: "Tono de piel",
+      toneDefault: "Predeterminado (amarillo)",
+      toneLight: "Claro",
+      toneMediumLight: "Claro medio",
+      toneMedium: "Medio",
+      toneMediumDark: "Oscuro medio",
+      toneDark: "Oscuro",
       formats: { inline: "En línea", vertical: "En vertical", comma: "Coma", space: "Espacio", bullet: "Viñeta" }
     },
     de: {
@@ -138,6 +152,13 @@
       lookNote: "Manche Apps zeigen das Symbol trotzdem farbig.",
       linkCopied: "Link kopiert",
       failed: "✗ Fehlgeschlagen",
+      skinTone: "Hautfarbe",
+      toneDefault: "Standard (gelb)",
+      toneLight: "Hell",
+      toneMediumLight: "Mittelhell",
+      toneMedium: "Mittel",
+      toneMediumDark: "Mitteldunkel",
+      toneDark: "Dunkel",
       formats: { inline: "Nebeneinander", vertical: "Vertikal", comma: "Komma", space: "Leerzeichen", bullet: "Aufzählung" }
     },
     id: {
@@ -218,6 +239,13 @@
       lookNote: "Sommige apps tonen het symbool toch in kleur.",
       linkCopied: "Link gekopieerd",
       failed: "✗ Mislukt",
+      skinTone: "Huidskleur",
+      toneDefault: "Standaard (geel)",
+      toneLight: "Licht",
+      toneMediumLight: "Middellicht",
+      toneMedium: "Middel",
+      toneMediumDark: "Middeldonker",
+      toneDark: "Donker",
       formats: { inline: "Op één regel", vertical: "Verticaal", comma: "Komma's", space: "Spaties", bullet: "Lijst" }
     },
     it: {
@@ -318,6 +346,13 @@
       lookNote: "일부 앱에서는 그래도 컬러로 표시됩니다.",
       linkCopied: "링크 복사됨",
       failed: "✗ 실패",
+      skinTone: "피부색",
+      toneDefault: "기본 (노란색)",
+      toneLight: "밝은 피부",
+      toneMediumLight: "약간 밝은 피부",
+      toneMedium: "중간 피부",
+      toneMediumDark: "약간 어두운 피부",
+      toneDark: "어두운 피부",
       formats: { inline: "한 줄로", vertical: "세로로", comma: "쉼표로", space: "공백으로", bullet: "불릿으로" }
     },
     ar: {
@@ -358,6 +393,13 @@
       lookNote: "Noen apper viser symbolet i farger likevel.",
       linkCopied: "Lenke kopiert",
       failed: "✗ Mislyktes",
+      skinTone: "Hudfarge",
+      toneDefault: "Standard (gul)",
+      toneLight: "Lys",
+      toneMediumLight: "Middels lys",
+      toneMedium: "Middels",
+      toneMediumDark: "Middels mørk",
+      toneDark: "Mørk",
       formats: { inline: "På linje", vertical: "Vertikalt", comma: "Komma", space: "Mellomrom", bullet: "Punktliste" }
     },
     ja: {
@@ -378,6 +420,13 @@
       lookNote: "アプリによってはカラーで表示されます。",
       linkCopied: "リンクをコピーしました",
       failed: "✗ 失敗しました",
+      skinTone: "肌の色",
+      toneDefault: "標準（黄色）",
+      toneLight: "薄い",
+      toneMediumLight: "やや薄い",
+      toneMedium: "中間",
+      toneMediumDark: "やや濃い",
+      toneDark: "濃い",
       formats: { inline: "1行", vertical: "縦並び", comma: "カンマ区切り", space: "スペース区切り", bullet: "箇条書き" }
     },
     ru: {
@@ -398,6 +447,13 @@
       lookNote: "Некоторые приложения всё равно показывают его в цвете.",
       linkCopied: "Ссылка скопирована",
       failed: "✗ Ошибка",
+      skinTone: "Тон кожи",
+      toneDefault: "Стандартный (жёлтый)",
+      toneLight: "Светлый",
+      toneMediumLight: "Средне-светлый",
+      toneMedium: "Средний",
+      toneMediumDark: "Средне-тёмный",
+      toneDark: "Тёмный",
       formats: { inline: "В строку", vertical: "Столбиком", comma: "Через запятую", space: "Через пробел", bullet: "Список" }
     },
     da: {
@@ -1348,7 +1404,14 @@
     clearAll: "savedStyles.clearAll",
     copyLabel: "copyButtons.copy",
     selectImage: "imageSelection.selectImage",
-    viewSelection: "imageSelection.viewSelection"
+    viewSelection: "imageSelection.viewSelection",
+    skinTone: "skinTone.label",
+    toneDefault: "skinTone.default",
+    toneLight: "skinTone.light",
+    toneMediumLight: "skinTone.mediumLight",
+    toneMedium: "skinTone.medium",
+    toneMediumDark: "skinTone.mediumDark",
+    toneDark: "skinTone.dark"
   };
 
   const STAR_OUTLINE = "☆";
@@ -1431,12 +1494,14 @@
     const symbol = btn.getAttribute("data-symbol");
     const row = btn.closest(".flag-row");
     const tile = row ? row.querySelector(".symbol-tile") : null;
-    const nowSaved = UTGX.saved.toggle({
+    // The press means what the star showed, never a flip of the store: a star
+    // painted before another tab's save arrived still reads "Save".
+    const nowSaved = UTGX.saved.set({
       type: "symbol",
       value: symbol,
       label: tile ? rowLabel(tile) : symbol,
       href: window.location.pathname
-    });
+    }, btn.getAttribute("aria-pressed") !== "true");
     if (nowSaved === null) return;
     paintSaveBtn(btn, nowSaved);
   });
@@ -1540,12 +1605,21 @@
         // This is also what makes ?symbol= a link anything actually produces
         // rather than a reader with no writer.
         url: items.length === 1 ? symbolShareUrl(items[0].value) : pageUrl(),
+        // Without a native share sheet (most desktops) Share copies instead.
+        // For one item the deep link carries it. For a set no link does: the
+        // page URL handed the recipient a page, not the shortlist. So a set
+        // copies its items, and says "Copied!" rather than "Link copied".
+        fallback: items.length > 1 ? "text" : undefined,
         surface: "library_saved",
         itemType: "collection",
         // These pages carry no window.UTG_I18N, so the share core's own
         // lookup would fall back to English under localized prose. Hand it
         // this file's table instead.
         label: t("share", "Share"),
+        linkCopied: items.length > 1
+          ? (STR.copiedBtn || " Copied!").trim()
+          : t("linkCopied", "Link copied"),
+        failedLabel: t("failed", "✗ Failed"),
         imageTitle: t("shareImage", "Share as an image")
       }));
     }
@@ -1770,8 +1844,117 @@
 
   /* ---- boot --------------------------------------------------------- */
 
+  /* ============================
+     SKIN TONE  (added 2026-10-24)
+
+     A page opts a section in with data-skin-tone. One control, placed above
+     the first opted-in section, re-renders every eligible tile in every
+     opted-in section with the chosen Fitzpatrick modifier, so the copy, the
+     Save star, the image selection and copy_item all carry the toned
+     sequence. The static HTML keeps the default yellow, so crawlers and
+     no-JS readers see the base set.
+
+     Eligible means one grapheme, exactly one Emoji_Modifier_Base and no tone
+     yet. Families, couples and multi-emoji combos are never touched: a family
+     with one tone is not a standard sequence, and a tone pasted into the
+     middle of a combo is not what anyone picked. Which toned forms are
+     standard is tested against Unicode's emoji-test.txt
+     (js/skintone/skinTone.test.js), never assumed.
+     ============================ */
+  /* @skin-tone:begin */
+  const SKIN_TONES = ["", "\u{1F3FB}", "\u{1F3FC}", "\u{1F3FD}", "\u{1F3FE}", "\u{1F3FF}"];
+  const TONE_MOD = /[\u{1F3FB}-\u{1F3FF}]/u;
+  const TONE_BASE = /\p{Emoji_Modifier_Base}/u;
+  function graphemeCount(s) {
+    if (typeof Intl === "undefined" || !Intl.Segmenter) return -1;
+    return Array.from(new Intl.Segmenter("en", { granularity: "grapheme" }).segment(s)).length;
+  }
+  function toneable(symbol) {
+    if (!symbol || TONE_MOD.test(symbol)) return false;
+    if (graphemeCount(symbol) !== 1) return false;
+    return Array.from(symbol).filter(function (c) { return TONE_BASE.test(c); }).length === 1;
+  }
+  function applyTone(symbol, modifier) {
+    if (!modifier) return symbol;
+    const cps = Array.from(symbol);
+    const out = [];
+    for (let i = 0; i < cps.length; i++) {
+      out.push(cps[i]);
+      if (TONE_BASE.test(cps[i])) {
+        out.push(modifier);
+        if (cps[i + 1] === "\uFE0F") i++; // a toned base takes no emoji selector
+      }
+    }
+    return out.join("");
+  }
+  /* @skin-tone:end */
+  ns.skinTone = { toneable: toneable, applyTone: applyTone, TONES: SKIN_TONES };
+
+  const TONE_KEY = "utg_skin_tone";
+  const TONE_NAMES = ["toneDefault", "toneLight", "toneMediumLight", "toneMedium", "toneMediumDark", "toneDark"];
+  const TONE_FALLBACK = ["Default (yellow)", "Light", "Medium-light", "Medium", "Medium-dark", "Dark"];
+  function storedTone() {
+    try {
+      const v = parseInt(localStorage.getItem(TONE_KEY), 10);
+      return v >= 0 && v < SKIN_TONES.length ? v : 0;
+    } catch (e) { return 0; }
+  }
+  function tonedTiles() {
+    const out = [];
+    document.querySelectorAll("section[data-skin-tone] .flag-row .symbol-tile").forEach(function (tile) {
+      const base = tile.getAttribute("data-tone-base") || tile.getAttribute("data-symbol");
+      if (tile.hasAttribute("data-tone-base") || toneable(base)) out.push(tile);
+    });
+    return out;
+  }
+  function setTone(index) {
+    tonedTiles().forEach(function (tile) {
+      if (!tile.hasAttribute("data-tone-base")) tile.setAttribute("data-tone-base", tile.getAttribute("data-symbol"));
+      const toned = applyTone(tile.getAttribute("data-tone-base"), SKIN_TONES[index]);
+      tile.setAttribute("data-symbol", toned);
+      tile.textContent = toned;
+      const star = tile.closest(".flag-row").querySelector(".symbol-save-btn");
+      if (star) {
+        star.setAttribute("data-symbol", toned);
+        paintSaveBtn(star, isSavedSymbol(toned));
+      }
+    });
+    document.querySelectorAll(".skin-tone-picker button").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(+b.getAttribute("data-tone") === index));
+    });
+  }
+  function initSkinTone() {
+    const first = document.querySelector("section[data-skin-tone]");
+    if (!first || document.querySelector(".skin-tone-picker") || !tonedTiles().length) return;
+    const group = document.createElement("div");
+    group.className = "skin-tone-picker";
+    group.setAttribute("role", "group");
+    group.setAttribute("aria-label", t("skinTone", "Skin tone"));
+    const title = document.createElement("span");
+    title.className = "skin-tone-picker-label";
+    title.textContent = t("skinTone", "Skin tone");
+    group.appendChild(title);
+    SKIN_TONES.forEach(function (mod, i) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.setAttribute("data-tone", String(i));
+      b.setAttribute("aria-label", t(TONE_NAMES[i], TONE_FALLBACK[i]));
+      b.title = t(TONE_NAMES[i], TONE_FALLBACK[i]);
+      b.textContent = "\u270B" + (mod || "\uFE0F");
+      b.addEventListener("click", function () {
+        try { localStorage.setItem(TONE_KEY, String(i)); } catch (e) { /* private mode: this page only */ }
+        setTone(i);
+      });
+      group.appendChild(b);
+    });
+    const rows = first.querySelector(".flag-rows");
+    first.insertBefore(group, rows || null);
+    setTone(storedTone());
+  }
+
   function initSaveShare() {
     decorateTiles();
+    initSkinTone();
     decorateSections();
     renderSavedStrip();
     revealSharedSymbol();

@@ -355,6 +355,10 @@ def _kaomoji_mood_href():
     c = card_for("library/angry-kaomoji/index.html")
     assert c["href"] == "/kaomoji-generator/?mood=angry", c["href"]
     assert card_for("library/bear-kaomoji/index.html")["href"] == "/kaomoji-generator/"
+    assert card_for("library/excited-kaomoji/index.html")["href"] == "/kaomoji-generator/?mood=happy"
+    assert card_for("library/hug-kaomoji/index.html")["href"] == "/kaomoji-generator/?mood=love"
+    # The angry mood carries no ε mouth, so a pout page would open on parts that cannot build it.
+    assert card_for("library/pout-kaomoji/index.html")["href"] == "/kaomoji-generator/"
     assert card_for("es/library/angry-kaomoji/index.html") is None
 
 

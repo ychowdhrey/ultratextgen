@@ -1813,6 +1813,19 @@
       "verdict": "gate-pass",
       "evidence": "USER DECISION, 2026-10-07: the owner selected this page for implementation from a Semrush Korea (Google KR) export dated 2026-10-07 and asked for it to be built as an execution request, with the override recorded narrowly at page level. Scope: exactly one page, ko/gatakana-pyo/ (EN parent /katakana-chart/); no other locale and no other unclassified top-level path is authorized by this entry, because the pattern is this one file. Keyword volume (owner-supplied export, Google KR estimates): 가타카나 표 9,900/mo KD 17; 가타카나 40,500/mo KD 38; 가타카나 쓰기 50/mo KD 15. The instrument field carries the chart-term figure only; the broad term is not added to it because the two intents overlap, and the writing term supports the on-page practice sheet rather than a separate page. Competitor footprint: Naver autocomplete's first suggestion for 히라가나 is 히라가나표, and the Naver web block for it shows dedicated chart tools (2026-10-03 pull recorded with the Korean expansion study); the existing ko/library/ilboneo-giho page serves decorative kana copying, a different job, and stays the owner of that one. EN GSC impressions from Korean-language queries were not pulled, so that instrument is null, not zero. Re-check: 2026-11-18, GSC and Naver Search Advisor page-level impressions for the new page; under 30 impressions in 6 weeks is reported as thin, a finding only.",
       "recordedBy": "claude-session-01H2xhKwJTcpMiecSzKc5fyi-user-authorized"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "ja",
+      "checkedDate": "2026-10-27",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 14800,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "USER DECISION, 2026-10-27: the owner approved building this page after seeing the demand evidence, and when the gate flagged the registry's skip-script-incompatible default for printables/* x ja, chose to override it for this one page only. Scope: exactly one page, ja/purinto/onamae-seal/ (EN parent /printables/name-labels/). The gate matches on the pattern, so this entry is keyed printables/*, but it authorizes no other ja printables page: each needs its own discussed entry. Why the default does not apply here: the default exists because most printables transform Latin letterforms; name labels print the typed name as text, and the page draws it in Klee One (the face every ja/purinto sheet already prints in), loaded per character by the label engine and checked in headless Chromium with a ja-JP locale (kanji render, A4 default, PDF downloads). Keyword volume: お名前シール 14,800/mo JP (Semrush, measured 2026-10-10, fresh). Competitor footprint not pulled for this entry (null, not false); EN GSC impressions from Japanese-language queries not pulled (null, not zero). Re-check: 2026-11-24, GSC page-level impressions for お名前シール on the new page; zero impressions is an indexing question first, not a demand verdict.",
+      "recordedBy": "claude-session-011zoJFzK7tVprLEbkm49ZQx-user-authorized"
     }
   ]
 }

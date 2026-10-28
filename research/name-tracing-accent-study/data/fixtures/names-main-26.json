@@ -1,0 +1,175 @@
+{
+  "study_id": "name-tracing-accent-study",
+  "fixture_version": "1.0",
+  "generated": "2026-10-24",
+  "classification": "synthetic test strings, not user data",
+  "surfaces": [
+    {
+      "id": "en_name",
+      "url": "/printables/name-tracing/",
+      "lang": "en"
+    },
+    {
+      "id": "en_cursive",
+      "url": "/printables/cursive-name/",
+      "lang": "en"
+    },
+    {
+      "id": "fr_name",
+      "url": "/fr/imprimables/prenom-a-tracer/",
+      "lang": "fr"
+    },
+    {
+      "id": "es_name",
+      "url": "/es/imprimibles/nombre-para-trazar/",
+      "lang": "es"
+    },
+    {
+      "id": "de_name",
+      "url": "/de/zum-ausdrucken/namen-schreiben/",
+      "lang": "de"
+    },
+    {
+      "id": "pl_name",
+      "url": "/pl/do-druku/pisanie-imienia/",
+      "lang": "pl"
+    },
+    {
+      "id": "tr_name",
+      "url": "/tr/yazdirilabilir/isim-yazma-calismasi/",
+      "lang": "tr"
+    }
+  ],
+  "cases": [
+    {
+      "id": "control-short",
+      "text": "Emma",
+      "class": "latin-control"
+    },
+    {
+      "id": "control-single",
+      "text": "A",
+      "class": "single-letter-control"
+    },
+    {
+      "id": "control-long",
+      "text": "Christopher",
+      "class": "long-control"
+    },
+    {
+      "id": "fr-acute",
+      "text": "Émilie",
+      "class": "precomposed-accent"
+    },
+    {
+      "id": "fr-diaeresis",
+      "text": "Maëlle",
+      "class": "precomposed-accent"
+    },
+    {
+      "id": "fr-mixed",
+      "text": "Anaïs",
+      "class": "precomposed-accent"
+    },
+    {
+      "id": "fr-nfd",
+      "text": "Émilie",
+      "class": "decomposed-accent"
+    },
+    {
+      "id": "fr-case",
+      "text": "É",
+      "class": "single-accented-letter"
+    },
+    {
+      "id": "es-tilde",
+      "text": "Iñaki",
+      "class": "precomposed-accent"
+    },
+    {
+      "id": "es-acute",
+      "text": "Sofía",
+      "class": "precomposed-accent"
+    },
+    {
+      "id": "es-capital",
+      "text": "Álvaro",
+      "class": "precomposed-accent"
+    },
+    {
+      "id": "pt-tilde",
+      "text": "João",
+      "class": "precomposed-accent"
+    },
+    {
+      "id": "pt-circumflex",
+      "text": "Inês",
+      "class": "precomposed-accent"
+    },
+    {
+      "id": "de-umlaut",
+      "text": "Jörg",
+      "class": "precomposed-accent"
+    },
+    {
+      "id": "de-umlaut-long",
+      "text": "Müller",
+      "class": "precomposed-accent"
+    },
+    {
+      "id": "pl-stroke",
+      "text": "Łucja",
+      "class": "script-specific"
+    },
+    {
+      "id": "pl-diacritics",
+      "text": "Małgorzata",
+      "class": "script-specific"
+    },
+    {
+      "id": "pl-dot",
+      "text": "Żaneta",
+      "class": "script-specific"
+    },
+    {
+      "id": "tr-dot",
+      "text": "İpek",
+      "class": "script-specific"
+    },
+    {
+      "id": "tr-breve",
+      "text": "Çağla",
+      "class": "script-specific"
+    },
+    {
+      "id": "tr-cedilla",
+      "text": "Şule",
+      "class": "script-specific"
+    },
+    {
+      "id": "vi-tone",
+      "text": "Nguyễn",
+      "class": "stacked-diacritics"
+    },
+    {
+      "id": "vi-tone-2",
+      "text": "Thảo",
+      "class": "stacked-diacritics"
+    },
+    {
+      "id": "vi-tone-3",
+      "text": "Huyền",
+      "class": "stacked-diacritics"
+    },
+    {
+      "id": "stress-cap",
+      "text": "ÉÉÉÉÉ",
+      "class": "repeated-accent"
+    },
+    {
+      "id": "stress-long",
+      "text": "María-José Fernándéz",
+      "class": "long-name-punctuation"
+    }
+  ]
+}

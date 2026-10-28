@@ -19,6 +19,9 @@
 const fs = require("fs");
 const path = require("path");
 global.window = {};
+// The paste reader is shared with the crossword and scramble; the page loads it first.
+const LIST_SRC = fs.readFileSync(path.join(__dirname, "wordList.js"), "utf8");
+new Function(LIST_SRC)();
 new Function(fs.readFileSync(path.join(__dirname, "wordSearch.js"), "utf8"))();
 const WS = global.window.UltraTextGen.wordSearch;
 
@@ -321,6 +324,7 @@ const SPELLING = ["because", "friend", "people", "school", "water", "there",
   try {
     Intl.Segmenter = undefined;
     global.window.UltraTextGen = {};
+    new Function(LIST_SRC)();
     new Function(fs.readFileSync(path.join(__dirname, "wordSearch.js"), "utf8"))();
     const bare = global.window.UltraTextGen.wordSearch;
     eq(bare.normalizeWords(["किताब"])[0].letters.join("|"), "कि|ता|ब", "fallback: Hindi still three cells");
@@ -346,6 +350,30 @@ const SPELLING = ["because", "friend", "people", "school", "water", "there",
   eq(keys("Fruits: pear, plum, fig"), "PEAR PLUM FIG", "a heading before a short list is dropped");
   eq(keys("3.14\n2024"), "314 2024", "a number that is the entry stays");
   eq(keys("cat, dog; bird"), "CAT DOG BIRD", "plain separators unchanged");
+}
+
+/* ---------------------------------------------------------------
+   11. Every paste shape a teacher brings, through the shared reader
+   (js/printables/wordList.js). A two-column spreadsheet row used to be one
+   entry, "cat a small pet", hidden in the grid as CATASMALLPET.
+   --------------------------------------------------------------- */
+{
+  const keys = (x) => WS.normalizeWords(x).map((w) => w.key).join(" ");
+  const disp = (x) => WS.normalizeWords(x).map((w) => w.display).join("|");
+  eq(keys("cat, apple, tiger"), "CAT APPLE TIGER", "comma list: three words");
+  eq(keys("cat\ta small pet\napple\tred fruit\ntiger\tbig striped cat"), "CAT APPLE TIGER",
+    "2-column tab table: the first column is the word");
+  eq(disp("cat\ta small pet"), "cat", "tab table: the clue column is not shown as the word");
+  eq(keys("1\tcat\tpet\n2\tdog\tpet"), "CAT DOG", "tab table with a row-number column");
+  eq(keys("1. cat\n2) apple\n10. tiger"), "CAT APPLE TIGER", "numbered list");
+  eq(keys("- cat\n\u2022 apple\n* tiger"), "CAT APPLE TIGER", "bulleted list");
+  eq(keys("\u2022\tcat\ta small pet"), "CAT", "a bullet before a tab row");
+  eq(keys("cat\r\napple\r\ntiger"), "CAT APPLE TIGER", "Windows line endings");
+  eq(keys("ねこ\u3001いぬ\u3001とり"), "ねこ いぬ とり", "a Japanese list split on the ideographic comma");
+  eq(disp("niño, año, pingüino"), "niño|año|pingüino", "accents survive the split");
+  eq(WS.normalizeWords("niño, año\tclue", "es").map((w) => w.key).join(" "), "NIÑO AÑO",
+    "Spanish fold keeps Ñ through the shared reader");
+  eq(WS.normalizeWords("किताब, पानी")[0].letters.join("|"), "कि|ता|ब", "Hindi vowel signs survive a comma list");
 }
 
 console.log("\nwordSearch.js — " + pass + " passed, " + fail + " failed");

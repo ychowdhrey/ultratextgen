@@ -5,16 +5,18 @@
  *   window.UTG_KANA = { set: "hiragana"|"katakana", name, pngPrefix, url }
  * and includes the matching data file (js/kana/<set>Data.js), which registers
  * window.UltraKanaData[set]. Everything is client-side: an on-screen grid, a
- * print sheet (window.print() into a hidden surface), and a Canvas-rendered
- * PNG. No font binaries are bundled — kana use the visitor's system Japanese
- * font stack.
+ * print sheet (window.print() into a hidden surface), a PDF written in the
+ * browser from that same sheet, and a Canvas-rendered PNG. No font binaries
+ * are bundled: kana use the visitor's system Japanese font stack.
  *
  * Controls (authored as crawlable HTML, wired here):
  *   #kana-romaji-toggle   show / hide romaji  (hidden = self-quiz mode)
  *   #kana-reading-toggle  show / hide the locale reading line (optional)
  *   #kana-sec-dakuten     include the voiced section
  *   #kana-sec-yoon        include the combinations section
- *   #kana-print / #kana-png   export the visible chart
+ *   #kana-pdf / #kana-print / #kana-png   export the visible chart; a page
+ *                         without #kana-pdf (no label in its language yet)
+ *                         simply has no PDF control
  *   #kana-practice        print a write-in practice sheet (optional)
  * Mounts: #kana-chart (grids), #kana-print-root (print surface), #kana-toast.
  *
@@ -96,6 +98,7 @@
     dakuten: $("#kana-sec-dakuten"),
     yoon: $("#kana-sec-yoon"),
     print: $("#kana-print"),
+    pdf: $("#kana-pdf"),
     png: $("#kana-png"),
     printRoot: $("#kana-print-root"),
     toast: $("#kana-toast")
@@ -237,15 +240,14 @@
      Print
      -------------------------------------------------------------- */
 
-  function printChart() {
-    if (!el.printRoot) { window.print(); return; }
-    el.printRoot.innerHTML = "";
+  // The chart as it goes on paper: title, the visible sections, credit line.
+  // One builder for the print dialog and the PDF, so the two cannot drift.
+  function chartSheet() {
     const wrap = document.createElement("div");
     wrap.className = "kana-print-wrap";
     const title = document.createElement("h1");
     title.className = "kana-print-title";
-    const anyReading = state.romaji || (READINGS && state.reading);
-    title.textContent = NAME + (anyReading ? "" : TEXT.blankSuffix);
+    title.textContent = NAME + (anyReading() ? "" : TEXT.blankSuffix);
     wrap.appendChild(title);
     visibleSections().forEach((section) => {
       wrap.appendChild(buildSection(section, { interactive: false, showRomaji: state.romaji, showReading: state.reading }));
@@ -254,7 +256,17 @@
     cred.className = "kana-print-cred";
     cred.textContent = URL_LINE;
     wrap.appendChild(cred);
-    el.printRoot.appendChild(wrap);
+    return wrap;
+  }
+
+  function anyReading() {
+    return !!(state.romaji || (READINGS && state.reading));
+  }
+
+  function printChart() {
+    if (!el.printRoot) { window.print(); return; }
+    el.printRoot.innerHTML = "";
+    el.printRoot.appendChild(chartSheet());
     sendToPrinter();
   }
 
@@ -347,6 +359,144 @@
     wrap.appendChild(cred);
     el.printRoot.appendChild(wrap);
     sendToPrinter();
+  }
+
+  /* --------------------------------------------------------------
+     PDF export. The file is written in the browser by the shared
+     printables writer (js/printables/printablePdf.js), loaded on first
+     use, from the same sheet the print dialog gets. Paper, margins and
+     resolution come from printPrefs.js, the one owner of sheet setup, so
+     a visitor gets the paper their region uses (A4 or US Letter) or the
+     one they chose on another printables page. The print dialog is the
+     fallback when the browser cannot write the file (Safari taints the
+     canvas) or a module fails to load.
+     -------------------------------------------------------------- */
+
+  const loaders = {};
+  function loadModule(src, get) {
+    const ready = get();
+    if (ready) return Promise.resolve(ready);
+    if (!loaders[src]) {
+      loaders[src] = new Promise((resolve, reject) => {
+        const sc = document.createElement("script");
+        sc.src = src;
+        sc.async = true;
+        sc.onload = () => resolve(get());
+        sc.onerror = () => { delete loaders[src]; reject(new Error(src + " failed to load")); };
+        document.head.appendChild(sc);
+      });
+    }
+    return loaders[src];
+  }
+  const ns = () => window.UltraTextGen || {};
+
+  // Pack the sheet's blocks into page units no taller than the page box,
+  // measured in the rendering state (the surface is display:none outside
+  // it). A section moves whole to the next page rather than splitting its
+  // grid; the title stays with the first section and the credit line with
+  // the last, so no page carries a heading or a URL on its own.
+  function packPages(sheet, pageH) {
+    const blocks = Array.from(sheet.children);
+    const pages = [];
+    const fits = (pg) => Math.ceil(pg.getBoundingClientRect().height) <= pageH;
+    const newPage = () => {
+      const pg = document.createElement("div");
+      pg.className = "kana-print-wrap kana-pdf-page";
+      el.printRoot.appendChild(pg);
+      pages.push(pg);
+      return pg;
+    };
+    sheet.remove();
+    let page = newPage();
+    blocks.forEach((block) => {
+      const isCred = block.classList.contains("kana-print-cred");
+      page.appendChild(block);
+      if (fits(page)) return;
+      const kept = Array.from(page.children).filter((n) => n !== block);
+      const onlyTitle = kept.every((n) => n.classList.contains("kana-print-title"));
+      if (!kept.length || onlyTitle) return; // too tall for any page: renderPages cuts it
+      if (isCred) {
+        // Take the last section along so the credit does not print alone.
+        const prev = kept[kept.length - 1];
+        const rest = kept.slice(0, -1);
+        if (!rest.length || rest.every((n) => n.classList.contains("kana-print-title"))) return;
+        page = newPage();
+        page.appendChild(prev);
+        page.appendChild(block);
+        return;
+      }
+      page = newPage();
+      page.appendChild(block);
+    });
+    return pages;
+  }
+
+  function creditHref() {
+    const canon = document.querySelector('link[rel="canonical"]');
+    const href = canon && canon.getAttribute("href");
+    return href || ("https://" + URL_LINE.replace(/^https?:\/\//, ""));
+  }
+
+  async function writePdf() {
+    let P = null;
+    let PP = null;
+    try {
+      P = await loadModule("/js/printables/printablePdf.js", () => ns().pdf);
+      PP = await loadModule("/js/printables/printPrefs.js", () => ns().printPrefs).catch(() => null);
+    } catch (err) { return false; }
+    if (!P || !P.supported() || !el.printRoot) return false;
+    const paper = PP ? PP.paperFull() : { w: 8.5, h: 11 };
+    const margin = PP ? PP.marginIn() : 0.5;
+    const scale = PP ? PP.scale() : 3;
+    const widthPx = Math.round((paper.w - 2 * margin) * 96);
+    const pageH = Math.round((paper.h - 2 * margin) * 96);
+    el.printRoot.innerHTML = "";
+    el.printRoot.style.width = widthPx + "px";
+    document.body.classList.add("kana-pdf-rendering");
+    const canvases = [];
+    const links = [];
+    try {
+      const sheet = chartSheet();
+      el.printRoot.appendChild(sheet);
+      const units = packPages(sheet, pageH);
+      for (const unit of units) {
+        const out = await P.renderPages(unit, { widthPx: widthPx, pageHeightPx: pageH, scale: scale });
+        const cred = unit.querySelector(".kana-print-cred");
+        out.forEach((canvas) => {
+          const rect = cred && P.rectOnCanvas ? P.rectOnCanvas(canvas, cred) : null;
+          if (rect) links.push({ page: canvases.length, rect: rect, url: creditHref() });
+          canvases.push(canvas);
+        });
+      }
+    } catch (err) {
+      canvases.length = 0;
+    } finally {
+      document.body.classList.remove("kana-pdf-rendering");
+      el.printRoot.style.width = "";
+      el.printRoot.innerHTML = "";
+    }
+    if (!canvases.length) return false;
+    try {
+      const blob = await P.fromCanvases(canvases, {
+        paperIn: paper,
+        marginIn: { x: margin, y: margin },
+        title: document.title,
+        links: links
+      });
+      P.download(blob, PNG_PREFIX + (anyReading() ? "" : "-blank") + ".pdf");
+    } catch (err) { return false; }
+    return true;
+  }
+
+  let pdfBusy = false;
+  function downloadPDF() {
+    if (pdfBusy) return;
+    pdfBusy = true;
+    if (el.pdf) el.pdf.setAttribute("aria-busy", "true");
+    writePdf().then((ok) => { if (!ok) printChart(); }, () => printChart()).then(() => {
+      pdfBusy = false;
+      if (el.pdf) el.pdf.removeAttribute("aria-busy");
+    });
   }
 
   /* --------------------------------------------------------------
@@ -486,6 +636,7 @@
       el.yoon.addEventListener("change", () => { state.yoon = el.yoon.checked; renderChart(); });
     }
     if (el.print) el.print.addEventListener("click", printChart);
+    if (el.pdf) el.pdf.addEventListener("click", downloadPDF);
     if (el.png) el.png.addEventListener("click", chartPNG);
     if (el.practice) el.practice.addEventListener("click", printPractice);
     renderChart();

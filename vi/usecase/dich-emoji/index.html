@@ -105,7 +105,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Làm sao để dịch văn bản thành emoji?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nhập văn bản của bạn vào ô. Ở chế độ „Văn bản kèm emoji“, văn bản của bạn được giữ nguyên và một emoji xuất hiện sau mỗi từ được nhận diện. Ở chế độ „Dịch sang emoji“, mỗi từ được nhận diện được thay trực tiếp bằng emoji của nó. Việc chuyển đổi diễn ra trực tiếp, không cần nhấn nút."
+        "text": "Nhập văn bản của bạn vào ô. Ở chế độ “Thêm emoji”, văn bản của bạn được giữ nguyên và một emoji xuất hiện sau mỗi từ được nhận diện. Ở chế độ “Thay thế”, mỗi từ được nhận diện được thay trực tiếp bằng emoji của nó. Việc chuyển đổi diễn ra trực tiếp, không cần nhấn nút."
       }
     },
     {
@@ -113,7 +113,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Làm sao để giải mã emoji trở lại thành văn bản?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Chuyển sang chế độ „Emoji → Văn bản“ và dán các emoji vào. Trình dịch đọc từng emoji và xuất ra từ tiếng Việt gần nghĩa nhất — ví dụ 😴🍕🎬 trở thành „ngủ pizza phim“."
+        "text": "Chuyển sang chế độ “Emoji → Văn bản” và dán các emoji vào. Trình dịch đọc từng emoji và xuất ra từ tiếng Việt gần nghĩa nhất — ví dụ 😴🍕🎬 trở thành “ngủ pizza phim”."
       }
     },
     {
@@ -129,7 +129,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Sao dạo này nhiều người dùng công cụ giải mã emoji để đọc tin nhắn của người yêu?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Đây là một trào lưu khá viral trên mạng xã hội Việt Nam — khi ai đó nhắn nguyên một chuỗi emoji khó hiểu, người nhận dán chuỗi đó vào chế độ Emoji → Văn bản để đọc ra nghĩa gần nhất, có khi chỉ để giải trí, có khi để soi xem đối phương đang nhắn gì với „trà xanh“. Công cụ chỉ dịch nghĩa từng emoji theo Unicode chuẩn, không đọc được ý định thật của người nhắn, nên cứ xem kết quả như một gợi ý vui, đừng suy diễn quá."
+        "text": "Đây là một trào lưu khá viral trên mạng xã hội Việt Nam — khi ai đó nhắn nguyên một chuỗi emoji khó hiểu, người nhận dán chuỗi đó vào chế độ Emoji → Văn bản để đọc ra nghĩa gần nhất, có khi chỉ để giải trí, có khi để soi xem đối phương đang nhắn gì với “trà xanh”. Công cụ chỉ dịch nghĩa từng emoji theo Unicode chuẩn, không đọc được ý định thật của người nhắn, nên cứ xem kết quả như một gợi ý vui, đừng suy diễn quá."
       }
     },
     {
@@ -215,7 +215,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <p class="mode-hint" id="modeHint"></p>
 
         <div class="input-wrapper">
-          <textarea class="main-input" id="mainInput" placeholder="Nhập câu của bạn vào đây…" maxlength="500"></textarea>
+          <textarea class="main-input" id="mainInput" aria-label="Nhập câu của bạn vào đây…" placeholder="Nhập câu của bạn vào đây…" maxlength="500"></textarea>
           <span class="char-count"><span id="charCount">0</span>/500</span>
         </div>
 
@@ -259,18 +259,18 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <!-- Examples & sub-intents -->
     <section class="tte-examples">
       <h2>Ví dụ về câu emoji</h2>
-      <p class="tte-lead">Chưa biết bắt đầu từ đâu? Nhấn vào một ví dụ để nạp nó lên trình dịch phía trên — nó chạy ngay ở chế độ „Thêm emoji“.</p>
+      <p class="tte-lead">Chưa biết bắt đầu từ đâu? Nhấn vào một ví dụ để nạp nó lên trình dịch phía trên — nó chạy ngay ở chế độ “Thêm emoji”.</p>
       <div class="example-grid" id="exampleGrid">
         <button class="example-card" type="button" data-example="Tôi yêu pizza và biển" data-mode="emojify">
-          <span class="example-in">„Tôi yêu pizza và biển“</span>
+          <span class="example-in">“Tôi yêu pizza và biển”</span>
           <span class="example-out">Tôi yêu ❤️ pizza 🍕 và biển 🌊</span>
         </button>
         <button class="example-card" type="button" data-example="Nhạc và nhảy dưới trăng" data-mode="emojify">
-          <span class="example-in">„Nhạc và nhảy dưới trăng“</span>
+          <span class="example-in">“Nhạc và nhảy dưới trăng”</span>
           <span class="example-out">Nhạc 🎵 và nhảy 💃 dưới trăng 🌙</span>
         </button>
         <button class="example-card" type="button" data-example="Cún mèo và hoa" data-mode="emojify">
-          <span class="example-in">„Cún mèo và hoa“</span>
+          <span class="example-in">“Cún mèo và hoa”</span>
           <span class="example-out">Cún 🐶 mèo 🐱 và hoa 🌸</span>
         </button>
         <button class="example-card" type="button" data-example="😴🍕🎬" data-mode="decode">
@@ -280,7 +280,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </div>
 
       <h2>Chiều ngược lại: Emoji thành văn bản</h2>
-      <p class="tte-lead">Bạn có một chuỗi emoji mà không đọc được? Dán nó ở chế độ <strong>↩️ Emoji → Văn bản</strong> để giải mã trở lại thành từ tiếng Việt. Ví dụ <span class="tte-inline">❤️🍕🌙</span> trở thành <strong>„yêu pizza trăng“</strong>. <a class="tte-linkbtn" href="/vi/usecase/dich-emoji/?mode=decode&amp;q=%E2%9D%A4%EF%B8%8F%F0%9F%8D%95%F0%9F%8C%99" data-example="❤️🍕🌙" data-mode="decode">Thử ngay →</a></p>
+      <p class="tte-lead">Bạn có một chuỗi emoji mà không đọc được? Dán nó ở chế độ <strong>↩️ Emoji → Văn bản</strong> để giải mã trở lại thành từ tiếng Việt. Ví dụ <span class="tte-inline">❤️🍕🌙</span> trở thành <strong>“yêu pizza trăng”</strong>. <a class="tte-linkbtn" href="/vi/usecase/dich-emoji/?mode=decode&amp;q=%E2%9D%A4%EF%B8%8F%F0%9F%8D%95%F0%9F%8C%99" data-example="❤️🍕🌙" data-mode="decode">Thử ngay →</a></p>
 
       <h2>Tên của bạn bằng chữ cái emoji</h2>
       <p class="tte-lead">Bạn muốn một cái tên bằng <strong>chữ cái emoji</strong> cho tiểu sử, gamertag hay Discord? Chuyển sang chế độ <strong>🔤 Chữ cái</strong> và nhập một cái tên. <strong>SAM</strong> trở thành <span class="tte-inline">🇸 🇦 🇲</span>. <a class="tte-linkbtn" href="/vi/usecase/dich-emoji/?mode=letters&amp;q=SAM" data-example="SAM" data-mode="letters">Thử ngay →</a></p>
@@ -307,7 +307,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </svg>
   </button>
   <div class="faq-answer">
-    Nhập văn bản của bạn vào ô. Ở chế độ <strong>„Thêm emoji“</strong>, văn bản của bạn được giữ nguyên và một emoji xuất hiện sau mỗi từ được nhận diện. Ở chế độ <strong>„Thay thế“</strong>, mỗi từ được nhận diện được thay trực tiếp bằng emoji của nó. Việc chuyển đổi diễn ra trực tiếp, không cần nhấn nút.
+    Nhập văn bản của bạn vào ô. Ở chế độ <strong>“Thêm emoji”</strong>, văn bản của bạn được giữ nguyên và một emoji xuất hiện sau mỗi từ được nhận diện. Ở chế độ <strong>“Thay thế”</strong>, mỗi từ được nhận diện được thay trực tiếp bằng emoji của nó. Việc chuyển đổi diễn ra trực tiếp, không cần nhấn nút.
   </div>
 </div>
 
@@ -319,7 +319,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </svg>
   </button>
   <div class="faq-answer">
-    Chuyển sang chế độ <strong>„Emoji → Văn bản“</strong> và dán các emoji vào. Trình dịch đọc từng emoji và xuất ra từ tiếng Việt gần nghĩa nhất — ví dụ <strong>😴🍕🎬</strong> trở thành <strong>„ngủ pizza phim“</strong>.
+    Chuyển sang chế độ <strong>“Emoji → Văn bản”</strong> và dán các emoji vào. Trình dịch đọc từng emoji và xuất ra từ tiếng Việt gần nghĩa nhất — ví dụ <strong>😴🍕🎬</strong> trở thành <strong>“ngủ pizza phim”</strong>.
   </div>
 </div>
 
@@ -343,7 +343,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </svg>
   </button>
   <div class="faq-answer">
-    Đây là một trào lưu khá viral trên mạng xã hội Việt Nam — khi ai đó nhắn nguyên một chuỗi emoji khó hiểu, người nhận dán chuỗi đó vào chế độ <strong>„Emoji → Văn bản“</strong> để đọc ra nghĩa gần nhất, có khi chỉ để giải trí, có khi để soi xem đối phương đang nhắn gì với „trà xanh“. Công cụ chỉ dịch nghĩa từng emoji theo Unicode chuẩn, không đọc được ý định thật của người nhắn, nên cứ xem kết quả như một gợi ý vui, đừng suy diễn quá.
+    Đây là một trào lưu khá viral trên mạng xã hội Việt Nam — khi ai đó nhắn nguyên một chuỗi emoji khó hiểu, người nhận dán chuỗi đó vào chế độ <strong>“Emoji → Văn bản”</strong> để đọc ra nghĩa gần nhất, có khi chỉ để giải trí, có khi để soi xem đối phương đang nhắn gì với “trà xanh”. Công cụ chỉ dịch nghĩa từng emoji theo Unicode chuẩn, không đọc được ý định thật của người nhắn, nên cứ xem kết quả như một gợi ý vui, đừng suy diễn quá.
   </div>
 </div>
 
