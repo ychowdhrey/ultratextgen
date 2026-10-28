@@ -47,7 +47,7 @@
         },
         {
           "char": "<=",
-          "label": "Inférieur ou Égal (Code: C, Python, JavaScript, Java, SQL)"
+          "label": "Inférieur ou Égal (Code: C, Python, JavaScript, Java, SQL; formules Excel et Google Sheets)"
         }
       ]
     },
@@ -59,7 +59,7 @@
       "symbols": [
         {
           "char": "≦",
-          "label": "Inférieur au-Dessus d'Égal (U+2266)"
+          "label": "Inférieur au-Dessus d'Égal (U+2266): la forme enseignée dans les écoles japonaises"
         },
         {
           "char": "⩽",
