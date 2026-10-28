@@ -116,6 +116,28 @@
       closeUp: "Uma etiqueta, de perto",
       listCount: "{n} na lista"
     },
+    ja: {
+      labels: "枚", label: "枚", page: "ページ", pages: "ページ",
+      howMany: "枚数", perNameCount: "1人あたりの枚数", perLineCount: "1行あたりの枚数", tooLong: "このサイズでは文字がとても小さくなります。短くするか、大きいサイズを選んでください。",
+      empty: "名前を入力するとラベルが表示されます。",
+      testTitle: "位置合わせテスト：普通紙に印刷してラベルシートに重ね、光に透かして確認してください。",
+      cutHint: "グレーの線で切ってください",
+      stockNote: "「実際のサイズ」か「100%」を選んで印刷してください。「ページに合わせる」で印刷すると、すべてのラベルの位置がずれます。",
+      fileName: "onamae-seal",
+      testFile: "label-ichiawase-test",
+      needName: "印刷する名前を入力してください。", needList: "リストを1行に1つずつ入力してください。",
+      example: "見本", exampleEdit: "\u270e 名前を入力", exampleSummary: "見本",
+      editName: "\u270e 名前を編集", editList: "\u270e リストを編集",
+      pageOf: "{n} / {t} ページ", prevPage: "前のページ", nextPage: "次のページ",
+      keptSize: "{what}のままにしました。{preset}にはふつう{want}を使います。", useIt: "それにする",
+      fromList: "下のリストから入ります。", typeOne: "1つだけ入力する",
+      dateHere: "この行に毎日の日付が入ります。",
+      restored: "前回のラベルを復元しました：{what}。", startFresh: "最初から作る",
+      datesResult: "{n}枚：{first}から{last}まで、1日{per}枚", datesResultOne: "{first}の{n}枚",
+      maxLen: "1行は40文字までです。",
+      closeUp: "ラベル1枚の拡大",
+      listCount: "リストに{n}件"
+    },
     id: {
       labels: "label", label: "label", page: "halaman", pages: "halaman",
       howMany: "Jumlah label", perNameCount: "Label per nama", perLineCount: "Label per baris", tooLong: "Ada tulisan yang sangat kecil di ukuran label ini. Coba baris yang lebih pendek atau label yang lebih besar.",
@@ -186,6 +208,10 @@
     bold:    { family: "Baloo 2", weight: 700, detail: 500 },
     hand:    { family: "Comic Neue", weight: 700, detail: 700 }
   };
+  /* A page whose script these Latin faces do not cover names its own (the
+     Japanese page: Klee One, and the reader's system gothic). `chunked` marks
+     a family split into unicode-range files: see glyphsFor. */
+  Object.assign(FONTS, CFG.fonts || {});
 
   /* Presets: what changes when the visitor says what the labels are for. The
      page's own config supplies the visible words (lines, placeholders); the
@@ -749,6 +775,7 @@
     // code as the PDF, so what is seen is what prints.
     const cw = Math.max(240, Math.min(720, box.clientWidth || 480));
     const ppi = cw / g.paper.w * (window.devicePixelRatio || 1);
+    glyphsFor(labels);
     const canvas = drawPage(g, labels, state.page, ppi, { preview: true, showStock: g.stock });
     canvas.className = "lb-preview-canvas" + (labels.example ? " is-example" : "");
     canvas.setAttribute("role", "img");
@@ -847,14 +874,39 @@
     return pdfPromise;
   }
 
-  function fontsReady() {
+  function fontsReady(text) {
     const f = FONTS[state.font] || FONTS.rounded;
     if (!document.fonts || !document.fonts.load) return Promise.resolve();
+    // a chunked family loads only the files covering the text it is asked
+    // for, so the labels' own text is passed; for the others it is ignored
+    const t = f.chunked && text ? text : undefined;
     return Promise.all([
-      document.fonts.load(f.weight + " 40px '" + f.family + "'"),
-      document.fonts.load(f.detail + " 40px '" + f.family + "'"),
+      document.fonts.load(f.weight + " 40px '" + f.family + "'", t),
+      document.fonts.load(f.detail + " 40px '" + f.family + "'", t),
       document.fonts.load("500 20px 'Plus Jakarta Sans'")
     ]).catch(() => {});
+  }
+
+  function textOf(labels) {
+    return labels.map((l) => (l.name || "") + (l.line2 || "") + (l.line3 || "")).join("");
+  }
+
+  /* A family split into unicode-range files (Klee One on the Japanese page)
+     downloads only the files a string needs, and canvas text never asks:
+     drawn before they arrive, a name falls back to another face in the
+     preview. So ask for the text on the labels, once per text, and redraw
+     when files arrive. */
+  const asked = {};
+  function glyphsFor(labels) {
+    const f = FONTS[state.font] || FONTS.rounded;
+    if (!f.chunked || !document.fonts || !document.fonts.load) return;
+    const text = textOf(labels);
+    const key = state.font + "|" + text;
+    if (!text || asked[key]) return;
+    asked[key] = true;
+    fontsReady(text).then((res) => {
+      if (res && res.some((faces) => faces && faces.length)) schedule();
+    });
   }
 
   function track(action, extra) {
@@ -901,7 +953,7 @@
     if (!test && !labels.length) return;
     const n = test ? 1 : pageCount(g, labels.length);
     const ppi = 96 * (PP && PP.scale ? PP.scale() : 2);
-    return Promise.all([loadPdf(), fontsReady()]).then((res) => {
+    return Promise.all([loadPdf(), fontsReady(textOf(labels))]).then((res) => {
       const P = res[0];
       if (!P || !P.supported()) throw new Error("pdf unsupported");
       const canvases = [];
