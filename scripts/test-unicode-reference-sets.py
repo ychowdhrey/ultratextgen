@@ -283,6 +283,7 @@ def emo(seqs):
     return [(s, None) for s in seqs]
 
 
+SPORT_PERSONS = '\U0001F3CC\U0001F3C4\U0001F6A3\U0001F3CA\u26F9\U0001F3CB\U0001F6B4\U0001F6B5\U0001F938\U0001F93C\U0001F93D\U0001F93E\U0001F939'
 GESTURE_PERSONS = '\U0001F647\U0001F481\U0001F926\U0001F937\U0001F64B\U0001F646\U0001F645'  # bowing, tipping hand, facepalm, shrug, raising hand, OK, NO
 # Tiles a page must carry somewhere (added inside existing sections, whose other tiles are curated).
 INCLUDES = {
@@ -290,6 +291,10 @@ INCLUDES = {
                        for x in by_role(o)],
     'gestures': lambda: [x for b in GESTURE_PERSONS for x in by_gender(b)] + ['\U0001FAC6'],
     'hands': lambda: ['\U0001FAF7', '\U0001FAF8', '\U0001F933'],
+    # emoji-test.txt person-sport: every person with a man and a woman form (golfing, surfing, rowing boat,
+    # swimming, bouncing ball, lifting weights, biking, mountain biking, cartwheeling, wrestling, water polo,
+    # handball, juggling), each placed next to its neutral form in the page's existing sections.
+    'sports': lambda: [x for b in SPORT_PERSONS for x in by_gender(b)],
 }
 
 
@@ -541,6 +546,10 @@ CLUSTERS = {
         'sections': {
             'frowning-pouting-deaf': (lambda lc: emo(by_gender('\U0001F64D') + by_gender('\U0001F64E') + by_gender('\U0001F9CF')), 'emoji'),
         },
+    },
+    'sports': {
+        'pages': {'en': 'library/sports-emojis', 'es': 'es/library/emojis-de-deportes', 'fr': 'fr/library/emojis-sport'},
+        'sections': {},
     },
     'hands': {
         'pages': {'en': 'library/hand-symbols', 'de': 'de/library/hand-symbole', 'ru': 'ru/library/simvoly-ruk',
@@ -959,6 +968,9 @@ def self_test():
     mutations['family tile dropped'] = (ppath, re.sub(r'\s*<div class="flag-row">\s*<button[^>]*data-symbol="👩‍👧‍👧"[^<]*</button>\s*<span[^<]*</span>\s*</div>', '', pgood, count=1), 'set/order differs')
     mutations['toned tile'] = (ppath, pgood.replace('data-symbol="👨‍✈️"', 'data-symbol="👨🏽‍✈️"', 1), 'skin-tone modifier')
     mutations['inserted tile missing'] = (ppath, pgood.replace('data-symbol="👩‍🎓"', 'data-symbol="🎓"', 1), "missing the tile")
+    spath = CLUSTERS['sports']['pages']['fr']
+    sgood = open(os.path.join(ROOT, spath, 'index.html'), encoding='utf-8').read()
+    mutations['sports gendered tile dropped'] = (spath, re.sub(r'\s*<div class="flag-row">\s*<button[^>]*data-symbol="🏄‍♀️"[^<]*</button>\s*<span[^<]*</span>\s*</div>', '', sgood, count=1), "missing the tile '🏄\\u200d♀")
     gpath, gdpath = CLUSTERS['greek']['pages']['en'], CLUSTERS['greek']['pages']['de']
     ggood = open(os.path.join(ROOT, gpath, 'index.html'), encoding='utf-8').read()
     gdgood = open(os.path.join(ROOT, gdpath, 'index.html'), encoding='utf-8').read()
@@ -1025,11 +1037,11 @@ def self_test():
         else:
             print(f'  caught  {name}: {hit[0][:110]}')
     for name, (mpath, text, expect) in mutations.items():
-        orig = {path: good, cpath: cgood, npath: ngood, ppath: pgood, gpath: ggood, gdpath: gdgood, kpath: kgood, jpath: jgood, upath: ugood, mpath_: mgood, apath: agood, kcpath: kcgood}[mpath]
+        orig = {path: good, cpath: cgood, npath: ngood, ppath: pgood, gpath: ggood, gdpath: gdgood, kpath: kgood, jpath: jgood, upath: ugood, mpath_: mgood, apath: agood, kcpath: kcgood, spath: sgood}[mpath]
         if text == orig:
             failed.append(f'{name}: the mutation did not apply (fixture drifted)')
             continue
-        only = {path: 'braille', cpath: 'cards', npath: 'numbers', ppath: 'people', gpath: 'greek', gdpath: 'greek', kpath: 'kana', jpath: 'circled', upath: 'units', mpath_: 'music', apath: 'alchemy', kcpath: 'checkers'}[mpath]
+        only = {path: 'braille', cpath: 'cards', npath: 'numbers', ppath: 'people', gpath: 'greek', gdpath: 'greek', kpath: 'kana', jpath: 'circled', upath: 'units', mpath_: 'music', apath: 'alchemy', kcpath: 'checkers', spath: 'sports'}[mpath]
         errs, _, _ = run(lambda p, mp=mpath, t=text: t if p == mp else open(os.path.join(ROOT, p, 'index.html'), encoding='utf-8').read(), only)
         hit = [e for e in errs if expect in e]
         if not hit:
