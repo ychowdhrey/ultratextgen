@@ -901,6 +901,214 @@
    ]
   },
   {
+   "id": "circled-ideographs-documents",
+   "label": "Inringade kanji",
+   "h2": "Inringade tecken för dokument och blanketter",
+   "intro": "Enskilda kanji i en cirkel som japanska blanketter, prislappar och anslag använder som korta markeringar: ㊞ visar var stämpeln ska sitta, ㊟ pekar ut en anmärkning, ㊕ markerar ett specialpris och ㊤ ㊥ ㊦ rangordnar nivåerna övre, mellersta och nedre.",
+   "symbols": [
+    {
+     "char": "㊞",
+     "label": "Stämpel (印)"
+    },
+    {
+     "char": "㊟",
+     "label": "Observera (注)"
+    },
+    {
+     "char": "㊣",
+     "label": "Rätt (正)"
+    },
+    {
+     "char": "㊢",
+     "label": "Kopia (写)"
+    },
+    {
+     "char": "㊕",
+     "label": "Särskilt pris (特)"
+    },
+    {
+     "char": "㊡",
+     "label": "Ledig dag (休)"
+    },
+    {
+     "char": "㊝",
+     "label": "Utmärkt (優)"
+    },
+    {
+     "char": "㊜",
+     "label": "Lämplig (適)"
+    },
+    {
+     "char": "㊚",
+     "label": "Manlig (男)"
+    },
+    {
+     "char": "㊛",
+     "label": "Kvinnlig (女)"
+    },
+    {
+     "char": "㊤",
+     "label": "Övre (上)"
+    },
+    {
+     "char": "㊥",
+     "label": "Mitten (中)"
+    },
+    {
+     "char": "㊦",
+     "label": "Nedre (下)"
+    },
+    {
+     "char": "㊧",
+     "label": "Vänster (左)"
+    },
+    {
+     "char": "㊨",
+     "label": "Höger (右)"
+    },
+    {
+     "char": "㊩",
+     "label": "Medicin (医)"
+    },
+    {
+     "char": "㊪",
+     "label": "Religion (宗)"
+    },
+    {
+     "char": "㊫",
+     "label": "Skola (学)"
+    },
+    {
+     "char": "㊬",
+     "label": "Tillsyn (監)"
+    },
+    {
+     "char": "㊭",
+     "label": "Företag (企)"
+    },
+    {
+     "char": "㊮",
+     "label": "Resurser (資)"
+    },
+    {
+     "char": "㊯",
+     "label": "Samarbete (協)"
+    },
+    {
+     "char": "㊖",
+     "label": "Ekonomi (財)"
+    },
+    {
+     "char": "㊰",
+     "label": "Natt (夜)"
+    }
+   ]
+  },
+  {
+   "id": "company-organization-marks",
+   "label": "Företagstecken",
+   "h2": "Tecken för företag och organisationer",
+   "intro": "Japanska företagsnamn, visitkort och fakturor förkortar bolagsformen till ett enda inneslutet kanji: ㈱ för 株式会社 (aktiebolag), ㈲ för 有限会社 (bolag med begränsat ansvar) och ㈹ bredvid företagets växelnummer.",
+   "symbols": [
+    {
+     "char": "㈱",
+     "label": "Aktiebolag (株)"
+    },
+    {
+     "char": "㊑",
+     "label": "Aktiebolag, inringat (株)"
+    },
+    {
+     "char": "㈲",
+     "label": "Bolag med begränsat ansvar (有)"
+    },
+    {
+     "char": "㊒",
+     "label": "Bolag med begränsat ansvar, inringat (有)"
+    },
+    {
+     "char": "㈳",
+     "label": "Förening (社)"
+    },
+    {
+     "char": "㈶",
+     "label": "Stiftelse (財)"
+    },
+    {
+     "char": "㈾",
+     "label": "Kommanditbolag (資)"
+    },
+    {
+     "char": "㈹",
+     "label": "Växelnummer (代)"
+    }
+   ]
+  },
+  {
+   "id": "weekday-circles",
+   "label": "Veckodagar",
+   "h2": "Veckodagar i cirkel och inom parentes",
+   "intro": "Japanska kalendrar, scheman och datum skriver veckodagen som ett kanji i en cirkel eller inom parentes, till exempel 10月28日㈬ för onsdag 28 oktober.",
+   "symbols": [
+    {
+     "char": "㊊",
+     "label": "Måndag (月)"
+    },
+    {
+     "char": "㊋",
+     "label": "Tisdag (火)"
+    },
+    {
+     "char": "㊌",
+     "label": "Onsdag (水)"
+    },
+    {
+     "char": "㊍",
+     "label": "Torsdag (木)"
+    },
+    {
+     "char": "㊎",
+     "label": "Fredag (金)"
+    },
+    {
+     "char": "㊏",
+     "label": "Lördag (土)"
+    },
+    {
+     "char": "㊐",
+     "label": "Söndag (日)"
+    },
+    {
+     "char": "㈪",
+     "label": "Måndag inom parentes (月)"
+    },
+    {
+     "char": "㈫",
+     "label": "Tisdag inom parentes (火)"
+    },
+    {
+     "char": "㈬",
+     "label": "Onsdag inom parentes (水)"
+    },
+    {
+     "char": "㈭",
+     "label": "Torsdag inom parentes (木)"
+    },
+    {
+     "char": "㈮",
+     "label": "Fredag inom parentes (金)"
+    },
+    {
+     "char": "㈯",
+     "label": "Lördag inom parentes (土)"
+    },
+    {
+     "char": "㈰",
+     "label": "Söndag inom parentes (日)"
+    }
+   ]
+  },
+  {
    "id": "japanese-punctuation",
    "label": "Japanska skiljetecken och specialtecken",
    "h2": "Japanska skiljetecken och specialtecken",

@@ -901,6 +901,214 @@
       ]
     },
     {
+      "id": "circled-ideographs-documents",
+      "label": "Eingekreiste Kanji",
+      "h2": "Eingekreiste Zeichen für Dokumente und Formulare",
+      "intro": "Einzelne Kanji im Kreis, die japanische Formulare, Preisschilder und Aushänge als kurze Markierungen nutzen: ㊞ zeigt, wo der Stempel hinkommt, ㊟ weist auf eine Anmerkung hin, ㊕ kennzeichnet einen Sonderpreis, und ㊤ ㊥ ㊦ ordnen die Stufen oben, Mitte und unten.",
+      "symbols": [
+        {
+          "char": "㊞",
+          "label": "Stempel (印)"
+        },
+        {
+          "char": "㊟",
+          "label": "Achtung (注)"
+        },
+        {
+          "char": "㊣",
+          "label": "Richtig (正)"
+        },
+        {
+          "char": "㊢",
+          "label": "Kopie (写)"
+        },
+        {
+          "char": "㊕",
+          "label": "Sonderpreis (特)"
+        },
+        {
+          "char": "㊡",
+          "label": "Ruhetag (休)"
+        },
+        {
+          "char": "㊝",
+          "label": "Ausgezeichnet (優)"
+        },
+        {
+          "char": "㊜",
+          "label": "Geeignet (適)"
+        },
+        {
+          "char": "㊚",
+          "label": "Männlich (男)"
+        },
+        {
+          "char": "㊛",
+          "label": "Weiblich (女)"
+        },
+        {
+          "char": "㊤",
+          "label": "Oben (上)"
+        },
+        {
+          "char": "㊥",
+          "label": "Mitte (中)"
+        },
+        {
+          "char": "㊦",
+          "label": "Unten (下)"
+        },
+        {
+          "char": "㊧",
+          "label": "Links (左)"
+        },
+        {
+          "char": "㊨",
+          "label": "Rechts (右)"
+        },
+        {
+          "char": "㊩",
+          "label": "Medizin (医)"
+        },
+        {
+          "char": "㊪",
+          "label": "Religion (宗)"
+        },
+        {
+          "char": "㊫",
+          "label": "Schule (学)"
+        },
+        {
+          "char": "㊬",
+          "label": "Aufsicht (監)"
+        },
+        {
+          "char": "㊭",
+          "label": "Unternehmen (企)"
+        },
+        {
+          "char": "㊮",
+          "label": "Kapital (資)"
+        },
+        {
+          "char": "㊯",
+          "label": "Kooperation (協)"
+        },
+        {
+          "char": "㊖",
+          "label": "Finanzen (財)"
+        },
+        {
+          "char": "㊰",
+          "label": "Nacht (夜)"
+        }
+      ]
+    },
+    {
+      "id": "company-organization-marks",
+      "label": "Firmenzeichen",
+      "h2": "Zeichen für Firmen und Organisationen",
+      "intro": "Japanische Firmennamen, Visitenkarten und Rechnungen kürzen die Rechtsform mit einem einzigen umschlossenen Kanji ab: ㈱ für 株式会社 (Aktiengesellschaft), ㈲ für 有限会社 (GmbH) und ㈹ neben der Hauptnummer einer Firma.",
+      "symbols": [
+        {
+          "char": "㈱",
+          "label": "Aktiengesellschaft (株)"
+        },
+        {
+          "char": "㊑",
+          "label": "Aktiengesellschaft, eingekreist (株)"
+        },
+        {
+          "char": "㈲",
+          "label": "GmbH (有)"
+        },
+        {
+          "char": "㊒",
+          "label": "GmbH, eingekreist (有)"
+        },
+        {
+          "char": "㈳",
+          "label": "Eingetragener Verein (社)"
+        },
+        {
+          "char": "㈶",
+          "label": "Stiftung (財)"
+        },
+        {
+          "char": "㈾",
+          "label": "Kommanditgesellschaft (資)"
+        },
+        {
+          "char": "㈹",
+          "label": "Zentrale (代)"
+        }
+      ]
+    },
+    {
+      "id": "weekday-circles",
+      "label": "Wochentage",
+      "h2": "Wochentage im Kreis und in Klammern",
+      "intro": "Japanische Kalender, Terminpläne und Datumsangaben schreiben den Wochentag als ein Kanji im Kreis oder in Klammern, etwa 10月28日㈬ für Mittwoch, 28. Oktober.",
+      "symbols": [
+        {
+          "char": "㊊",
+          "label": "Montag (月)"
+        },
+        {
+          "char": "㊋",
+          "label": "Dienstag (火)"
+        },
+        {
+          "char": "㊌",
+          "label": "Mittwoch (水)"
+        },
+        {
+          "char": "㊍",
+          "label": "Donnerstag (木)"
+        },
+        {
+          "char": "㊎",
+          "label": "Freitag (金)"
+        },
+        {
+          "char": "㊏",
+          "label": "Samstag (土)"
+        },
+        {
+          "char": "㊐",
+          "label": "Sonntag (日)"
+        },
+        {
+          "char": "㈪",
+          "label": "Montag in Klammern (月)"
+        },
+        {
+          "char": "㈫",
+          "label": "Dienstag in Klammern (火)"
+        },
+        {
+          "char": "㈬",
+          "label": "Mittwoch in Klammern (水)"
+        },
+        {
+          "char": "㈭",
+          "label": "Donnerstag in Klammern (木)"
+        },
+        {
+          "char": "㈮",
+          "label": "Freitag in Klammern (金)"
+        },
+        {
+          "char": "㈯",
+          "label": "Samstag in Klammern (土)"
+        },
+        {
+          "char": "㈰",
+          "label": "Sonntag in Klammern (日)"
+        }
+      ]
+    },
+    {
       "id": "japanese-punctuation",
       "label": "Satzzeichen",
       "h2": "Japanische Satzzeichen & Sonderzeichen",

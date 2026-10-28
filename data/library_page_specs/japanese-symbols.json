@@ -267,6 +267,76 @@
       ]
     },
     {
+      "id": "circled-ideographs-documents",
+      "label": "Circled Kanji Marks",
+      "h2": "Circled Marks for Documents and Forms",
+      "intro": "Single kanji in a circle that Japanese forms, price tags and notices use as short marks: ㊞ shows where the seal goes, ㊟ flags a note, ㊕ marks a special price, and ㊤ ㊥ ㊦ rank top, middle and bottom grades.",
+      "symbols": [
+        { "char": "㊞", "label": "Seal (印)" },
+        { "char": "㊟", "label": "Attention (注)" },
+        { "char": "㊣", "label": "Correct (正)" },
+        { "char": "㊢", "label": "Copy (写)" },
+        { "char": "㊕", "label": "Special (特)" },
+        { "char": "㊡", "label": "Day off (休)" },
+        { "char": "㊝", "label": "Excellent (優)" },
+        { "char": "㊜", "label": "Suitable (適)" },
+        { "char": "㊚", "label": "Male (男)" },
+        { "char": "㊛", "label": "Female (女)" },
+        { "char": "㊤", "label": "Upper (上)" },
+        { "char": "㊥", "label": "Middle (中)" },
+        { "char": "㊦", "label": "Lower (下)" },
+        { "char": "㊧", "label": "Left (左)" },
+        { "char": "㊨", "label": "Right (右)" },
+        { "char": "㊩", "label": "Medical (医)" },
+        { "char": "㊪", "label": "Religious (宗)" },
+        { "char": "㊫", "label": "School (学)" },
+        { "char": "㊬", "label": "Supervision (監)" },
+        { "char": "㊭", "label": "Enterprise (企)" },
+        { "char": "㊮", "label": "Resources (資)" },
+        { "char": "㊯", "label": "Cooperation (協)" },
+        { "char": "㊖", "label": "Finance (財)" },
+        { "char": "㊰", "label": "Night (夜)" }
+      ]
+    },
+    {
+      "id": "company-organization-marks",
+      "label": "Company Marks",
+      "h2": "Company and Organization Marks",
+      "intro": "Japanese company names, business cards and invoices shorten the legal form to one enclosed kanji: ㈱ for 株式会社 (stock company), ㈲ for 有限会社 (limited company), and ㈹ beside a company’s main phone number.",
+      "symbols": [
+        { "char": "㈱", "label": "Stock company (株)" },
+        { "char": "㊑", "label": "Stock company, circled (株)" },
+        { "char": "㈲", "label": "Limited company (有)" },
+        { "char": "㊒", "label": "Limited company, circled (有)" },
+        { "char": "㈳", "label": "Incorporated association (社)" },
+        { "char": "㈶", "label": "Incorporated foundation (財)" },
+        { "char": "㈾", "label": "Limited partnership (資)" },
+        { "char": "㈹", "label": "Main phone number (代)" }
+      ]
+    },
+    {
+      "id": "weekday-circles",
+      "label": "Weekday Marks",
+      "h2": "Weekday Circles and Parentheses",
+      "intro": "Japanese calendars, schedules and dates write the day of the week as one kanji in a circle or in parentheses, as in 10月28日㈬ for Wednesday, October 28.",
+      "symbols": [
+        { "char": "㊊", "label": "Monday (月)" },
+        { "char": "㊋", "label": "Tuesday (火)" },
+        { "char": "㊌", "label": "Wednesday (水)" },
+        { "char": "㊍", "label": "Thursday (木)" },
+        { "char": "㊎", "label": "Friday (金)" },
+        { "char": "㊏", "label": "Saturday (土)" },
+        { "char": "㊐", "label": "Sunday (日)" },
+        { "char": "㈪", "label": "Monday, in parentheses (月)" },
+        { "char": "㈫", "label": "Tuesday, in parentheses (火)" },
+        { "char": "㈬", "label": "Wednesday, in parentheses (水)" },
+        { "char": "㈭", "label": "Thursday, in parentheses (木)" },
+        { "char": "㈮", "label": "Friday, in parentheses (金)" },
+        { "char": "㈯", "label": "Saturday, in parentheses (土)" },
+        { "char": "㈰", "label": "Sunday, in parentheses (日)" }
+      ]
+    },
+    {
       "id": "japanese-punctuation",
       "label": "Punctuation",
       "h2": "Japanese Punctuation & Special Marks",
