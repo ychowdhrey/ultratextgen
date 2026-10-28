@@ -17,10 +17,10 @@
    tested without a browser (see wordPuzzles.test.js).
 
    ONE FILE, TWO PUZZLES, ON PURPOSE. Crossword and scramble need the same
-   seeded RNG and the same entry parsing, and the two pages must agree on what
-   "one word list" means: a list that yields ten crossword entries must yield
-   the same ten scrambles. Splitting them into two files would put that
-   agreement in two places.
+   seeded RNG, and the two pages must agree on what "one word list" means: a
+   list that yields ten crossword entries must yield the same ten scrambles.
+   The reading of the paste itself is js/printables/wordList.js, shared with
+   the word search for the same reason, so it is one parser for all three.
 
    KNOWN DUPLICATION, RECORDED RATHER THAN HIDDEN. hashSeed/rng/shuffle/
    upperOne here are byte-equivalent to wordSearch.js's own copies. They were
@@ -156,74 +156,34 @@
     return out;
   }
 
-  /* A pasted list arrives numbered, bulleted or bold ("1. **Apple** - a red
-     fruit"), the way a chat assistant writes one. The marks are not the word.
-     Same rules as entriesFromLine() in wordSearch.js: a dash separates only
-     with a space either side, and a colon or dash followed by a short list
-     ("Fruits: apple, pear, plum") is a heading over the items. */
-  const LIST_MARK_RE = /^\s*(?:[-*+\u2022\u2023\u2043\u25AA\u25AB\u25CF\u25CB\u25A0\u25A1\u25BA\u25B8\u2013\u2014\u00B7]+\s*|\(?\d{1,3}[.)\]](?=\s|\p{L})\s*|\d{1,3}\s+[-\u2013\u2014:]\s+)/u;
-  const TAIL_RE = /\s+[-\u2013\u2014]\s+|\s*[:=]\s*/u;
-  const EMPHASIS_RE = /^[*_`"]+|[*_`"]+$/g;
-
-  function unmark(text) {
-    return String(text).replace(LIST_MARK_RE, "").replace(EMPHASIS_RE, "").trim();
-  }
-
-  function isShortList(text) {
-    const items = String(text).split(/[,;]/).map((x) => x.trim()).filter(Boolean);
-    return items.length >= 2 && items.every((x) => x.split(/\s+/).length <= 2);
-  }
-
-  function entriesFromLine(line) {
-    const bare = unmark(line);
-    if (!bare) return [];
-    const m = TAIL_RE.exec(bare);
-    let body = bare;
-    if (m && m.index > 0) {
-      const tail = bare.slice(m.index + m[0].length);
-      body = isShortList(tail) ? tail : bare.slice(0, m.index);
-    }
-    return body.split(/[,;]+/).map(unmark).filter(Boolean);
-  }
-
-  /* A crossword needs clues, and a teacher types them on the same line as the
-     word. Split on the FIRST "=", ":" or spaced dash, so "capital = Paris is the
-     ___ of France" and "capital: the ___ of France" both work and a clue may
-     then contain anything, commas included. That is also why clue-bearing
-     input splits on newlines only: a comma is punctuation inside a clue, not a
-     separator between entries. A dash with a space either side ("Apple - a
-     red fruit") separates too, since that is how a pasted vocabulary list
-     writes it; leading numbering and bullets are dropped first. */
-  function splitEntry(line) {
-    const s = String(line).replace(LIST_MARK_RE, "");
-    const m = TAIL_RE.exec(s);
-    if (!m || m.index === 0) return { display: unmark(s), clue: "" };
-    return { display: unmark(s.slice(0, m.index)), clue: s.slice(m.index + m[0].length).trim() };
+  /* Reading the paste (numbering, bullets, tabs, commas, "word = clue") is
+     js/printables/wordList.js, shared with the word search so all three tools
+     read one list the same way. It must be loaded first; the engine loads it
+     before this file and the tests load it before requiring this one. */
+  function listParser() {
+    const p = ns.wordList;
+    if (!p) throw new Error("js/printables/wordList.js must load before wordPuzzles.js");
+    return p;
   }
 
   /* Accepts a textarea's value or an array. Keeps the entry's own spelling for
      the answer list and derives a separate letters-only form for the grid, so
      "ICE CREAM" is one eight-letter run and still reads as two words under it.
-     With `clues` off, commas and semicolons separate entries too, which is how
-     a scramble list is usually pasted. */
+     `clues` is the crossword's mode: a clue after "=", ":", a spaced dash or a
+     tab, and commas split only a line that has no clue. */
   function normalizeWords(input, clues, fold) {
-    const text = String(input == null ? "" : input);
-    const raw = Array.isArray(input)
-      ? input
-      : (clues ? text.split(/[\r\n]+/)
-        : text.split(/[\r\n]+/).reduce((all, line) => all.concat(entriesFromLine(line)), []));
+    const raw = listParser().parse(input, clues);
     const seen = Object.create(null);
     const out = [];
-    for (const entry of raw) {
-      const parsed = clues ? splitEntry(entry) : { display: String(entry).trim(), clue: "" };
-      const display = parsed.display.replace(/\s+/g, " ").trim();
+    for (const parsed of raw) {
+      const display = parsed.display;
       if (!display) continue;
       const letters = puzzleLetters(display, fold);
       if (!letters.length) continue;
       const key = letters.join("");
       if (seen[key]) continue;
       seen[key] = true;
-      out.push({ display: display, letters: letters, key: key, clue: parsed.clue });
+      out.push({ display: display, letters: letters, key: key, clue: clues ? parsed.clue : "" });
       if (out.length >= MAX_WORDS) break;
     }
     return out;
@@ -599,7 +559,6 @@
   ns.crossword = {
     build: buildCrossword,
     normalizeWords: function (input) { return normalizeWords(input, true); },
-    splitEntry: splitEntry,
     readRun: readRun,
     ACROSS: ACROSS,
     DOWN: DOWN,

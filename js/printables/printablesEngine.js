@@ -168,6 +168,7 @@
         wordBank: "Word bank",
         noFit: "No room in the grid for:",
         needWords: "Type a few words that share some letters.",
+        needCross: "Add at least two words that share a letter to build a crossword.",
         gridOf: "Crossword grid",
         cellsBy: "squares by",
         versions: "different layouts, one per name",
@@ -3713,7 +3714,7 @@
      module through this rather than through searchBuild(). The fallback keeps a
      share link working (minus its word list) if the module has not arrived. */
   function WS_NS() {
-    const ns = window.UltraTextGen && window.UltraTextGen.wordSearch;
+    const ns = window.UltraTextGen && window.UltraTextGen.wordList && window.UltraTextGen.wordSearch;
     return ns || { normalizeWords: () => [] };
   }
   function presetParams() {
@@ -12440,20 +12441,36 @@
 
   let wsWarned = false;
   function wordSearchModule() {
-    const ns = window.UltraTextGen && window.UltraTextGen.wordSearch;
+    const ns = window.UltraTextGen && window.UltraTextGen.wordList && window.UltraTextGen.wordSearch;
     if (!ns && !wsWarned) {
       wsWarned = true;
       console.warn("[printables] js/printables/wordSearch.js has not loaded; the grid cannot be built.");
     }
     return ns || null;
   }
+  /* The three word-list tools read a paste through one parser,
+     js/printables/wordList.js, which each builder calls at run time. It is
+     inserted ahead of the builder with async off: dynamically inserted
+     scripts with async = false run in insertion order, so the parser is
+     always there before the first build, without a second round trip. */
+  function loadWordListParser() {
+    if (window.UltraTextGen && window.UltraTextGen.wordList) return;
+    if (document.querySelector("script[data-pt-wordlist]")) return;
+    const sc = document.createElement("script");
+    sc.src = "/js/printables/wordList.js";
+    sc.async = false;
+    sc.setAttribute("data-pt-wordlist", "");
+    sc.onerror = () => console.warn("[printables] js/printables/wordList.js failed to load.");
+    document.head.appendChild(sc);
+  }
   function loadWordSearchModule() {
     if (!el.searchInput || !el.searchPreview) return;
     if (window.UltraTextGen && window.UltraTextGen.wordSearch) return;
     if (document.querySelector("script[data-pt-wordsearch]")) return;
+    loadWordListParser();
     const sc = document.createElement("script");
     sc.src = "/js/printables/wordSearch.js";
-    sc.async = true;
+    sc.async = false;
     sc.setAttribute("data-pt-wordsearch", "");
     sc.onload = () => { renderSearchPreview(); };
     sc.onerror = () => console.warn("[printables] js/printables/wordSearch.js failed to load.");
@@ -12726,7 +12743,7 @@
 
   let wpWarned = false;
   function puzzleNs(name) {
-    const ns = window.UltraTextGen && window.UltraTextGen[name];
+    const ns = window.UltraTextGen && window.UltraTextGen.wordList && window.UltraTextGen[name];
     if (!ns && !wpWarned) {
       wpWarned = true;
       console.warn("[printables] js/printables/wordPuzzles.js has not loaded; the puzzle cannot be built.");
@@ -12737,9 +12754,10 @@
     if (!(el.cwInput && el.cwPreview) && !(el.scInput && el.scPreview)) return;
     if (window.UltraTextGen && window.UltraTextGen.crossword) return;
     if (document.querySelector("script[data-pt-wordpuzzles]")) return;
+    loadWordListParser();
     const sc = document.createElement("script");
     sc.src = "/js/printables/wordPuzzles.js";
-    sc.async = true;
+    sc.async = false;
     sc.setAttribute("data-pt-wordpuzzles", "");
     sc.onload = () => { renderCwPreview(); renderScPreview(); };
     sc.onerror = () => console.warn("[printables] js/printables/wordPuzzles.js failed to load.");
@@ -12914,6 +12932,7 @@
     if (built && built.entries.length) {
       const names = rosterNames(el.cwRoster);
       bits.push(names.length >= 2 ? names.length + " " + T.crossword.versions : T.crossword.oneGrid);
+      if (!cwBuildable(built)) bits.push(cwBlockedReason());
       if (built.unplaced.length) {
         bits.push(T.crossword.noFit + " " + built.unplaced.map((w) => w.display).join(", "));
       }
@@ -12923,16 +12942,47 @@
     el.cwMeta.textContent = bits.join(" · ");
   }
 
+  /* One entry is a strip, not a crossword: a list whose words share no
+     letter places its longest word and nothing crosses it, and that exported
+     as a single row of squares with one clue. Download stays off until a
+     second word crosses, and the meta line says why. The English reason is
+     its own string; a locale block without one gives its own needWords
+     ("type a few words that share some letters"), which is the same reason in
+     that page's language, so no locale page shows English. */
+  function cwBuildable(built) {
+    return !!(built && built.entries.length >= 2);
+  }
+  function cwBlockedReason() {
+    return T.crossword.needCross || T.crossword.needWords;
+  }
+  function syncCwActions(built) {
+    const off = !cwBuildable(built);
+    [el.cwPrint, el.cwPng].forEach((b) => {
+      if (!b) return;
+      b.disabled = off;
+      b.setAttribute("aria-disabled", off ? "true" : "false");
+      if (off) {
+        b.title = cwBlockedReason();
+        if (el.cwMeta) b.setAttribute("aria-describedby", el.cwMeta.id);
+      } else {
+        b.removeAttribute("title");
+        b.removeAttribute("aria-describedby");
+      }
+    });
+  }
+
   function renderCwPreview() {
     if (!el.cwPreview) return;
     const built = cwBuild(null);
     el.cwPreview.innerHTML = "";
     if (built && built.entries.length) el.cwPreview.appendChild(cwSheetNode(null, false));
     renderCwMeta(built);
+    syncCwActions(built);
     updateSheetCost();
   }
 
   function printCrossword() {
+    if (!cwBuildable(cwBuild(null))) { pngMode = false; renderCwPreview(); return; }
     const holder = document.createElement("div");
     holder.className = "pt-search-print-holder";
     const answer = cwAnswerOn();

@@ -1283,6 +1283,58 @@ async function main() {
     await bl.ctx.close();
   }
 
+  // 23. A pasted word list means one thing in all three puzzle makers. On
+  // 2026-10-25 a live audit found "cat, apple, tiger" printed as ONE
+  // 13-letter crossword answer, a spreadsheet's word<TAB>clue rows merged
+  // into one entry ("cat a small pet") in the crossword, the word search and
+  // the scramble, and a list whose words share no letter downloaded as a
+  // one-row strip. The paste is read by js/printables/wordList.js, which
+  // loads on demand ahead of the puzzle modules, so a real page is the test.
+  console.log('\n/printables/crossword-maker/ + word-search-maker/ (pasted lists, the one-row strip)');
+  {
+    const { ctx, page, errors } = await open('/printables/crossword-maker/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      const cwRead = () => page.evaluate(() => ({
+        clues: [...document.querySelectorAll('#pt-cw-preview .pt-cw-clue-list li')].map((l) => l.textContent),
+        pdfOff: document.getElementById('pt-cw-print').disabled,
+        pngOff: document.getElementById('pt-cw-png').disabled,
+        meta: document.getElementById('pt-cw-meta').textContent
+      }));
+      await page.fill('#pt-cw-input', 'cat, apple, tiger');
+      await page.waitForTimeout(500);
+      const comma = await cwRead();
+      check('crossword: "cat, apple, tiger" builds 3 entries, none longer than 5', comma.clues.length === 3 && comma.clues.every((c) => /\((3|5)\)$/.test(c)), JSON.stringify(comma.clues));
+      await page.fill('#pt-cw-input', 'cat\ta small pet\napple\tred fruit\ntiger\tbig striped cat');
+      await page.waitForTimeout(500);
+      const tab = await cwRead();
+      check('crossword: word<TAB>clue rows keep their clues', tab.clues.length === 3 && tab.clues.some((c) => /^a small pet \(3\)$/.test(c)), JSON.stringify(tab.clues));
+      check('crossword: a real crossword can be downloaded', !tab.pdfOff && !tab.pngOff);
+      await page.fill('#pt-cw-input', 'dog\nfix');
+      await page.waitForTimeout(500);
+      const strip = await cwRead();
+      check('crossword: words that share no letter cannot download a one-row strip, and say why', strip.pdfOff && strip.pngOff && /share a letter/.test(strip.meta), JSON.stringify(strip));
+    } catch (e) {
+      check('crossword paste formats: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+  {
+    const { ctx, page, errors } = await open('/printables/word-search-maker/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.fill('#pt-search-input', 'cat\ta small pet\napple\tred fruit\ntiger\tbig striped cat');
+      await page.waitForTimeout(500);
+      const words = await page.evaluate(() => [...document.querySelectorAll('#pt-search-preview .pt-search-words li')].map((l) => l.textContent));
+      check('word search: word<TAB>clue rows hide the word column only', words.join('|') === 'cat|apple|tiger', words.join('|'));
+    } catch (e) {
+      check('word search paste formats: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // 23. Monogram initials. Each box is prefilled with maxlength=1, and a full
   // box dropped the keystroke: tapping S and typing Q left J S L, and "ERM"
   // typed into the first box gave E S L. All three boxes empty downloaded a
