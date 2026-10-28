@@ -1,0 +1,91 @@
+{
+ "study_id": "name-tracing-accent-study",
+ "fixture_version": "1.0-ext-below-marks",
+ "generated": "2026-10-24",
+ "classification": "synthetic test strings, not user data",
+ "surfaces": [
+  {
+   "id": "en_name",
+   "url": "/printables/name-tracing/",
+   "lang": "en"
+  },
+  {
+   "id": "en_cursive",
+   "url": "/printables/cursive-name/",
+   "lang": "en"
+  },
+  {
+   "id": "fr_name",
+   "url": "/fr/imprimables/prenom-a-tracer/",
+   "lang": "fr"
+  },
+  {
+   "id": "es_name",
+   "url": "/es/imprimibles/nombre-para-trazar/",
+   "lang": "es"
+  },
+  {
+   "id": "de_name",
+   "url": "/de/zum-ausdrucken/namen-schreiben/",
+   "lang": "de"
+  },
+  {
+   "id": "pl_name",
+   "url": "/pl/do-druku/pisanie-imienia/",
+   "lang": "pl"
+  },
+  {
+   "id": "tr_name",
+   "url": "/tr/yazdirilabilir/isim-yazma-calismasi/",
+   "lang": "tr"
+  }
+ ],
+ "cases": [
+  {
+   "id": "x-vi-dotbelow",
+   "text": "Hạnh",
+   "class": "below-mark"
+  },
+  {
+   "id": "x-vi-dotbelow-stack",
+   "text": "Nhật",
+   "class": "below-mark"
+  },
+  {
+   "id": "x-pl-ogonek",
+   "text": "Jędrek",
+   "class": "below-mark"
+  },
+  {
+   "id": "x-pl-ogonek2",
+   "text": "Małgosię",
+   "class": "below-mark"
+  },
+  {
+   "id": "x-tr-cedilla-breve",
+   "text": "Çiğdem",
+   "class": "below-mark"
+  },
+  {
+   "id": "x-pt-cedilla",
+   "text": "Conceição",
+   "class": "below-mark"
+  },
+  {
+   "id": "x-ro-comma",
+   "text": "Ștefan",
+   "class": "below-mark"
+  },
+  {
+   "id": "x-above-only",
+   "text": "Zoë",
+   "class": "above-only-control"
+  },
+  {
+   "id": "x-ascii-descender",
+   "text": "Gypsy",
+   "class": "descender-control"
+  }
+ ],
+ "note": "Preregistered 2026-10-24 BEFORE running: prediction = cursive clips below-baseline marks, print routes do not."
+}

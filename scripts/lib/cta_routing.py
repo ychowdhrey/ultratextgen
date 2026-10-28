@@ -189,6 +189,14 @@ KAOMOJI_GENERATOR_MOODS = {
     "angry-kaomoji": "angry",
     "blushing-kaomoji": "shy",
     "shocked-kaomoji": "surprised",
+    # Each of these is a narrower page of a mood the generator already has:
+    # excited faces are built from the happy mood's cheer/raise arms and star
+    # eyes, a kiss from the love mood's ³ mouth, a hug from its ⊂ ⊃ arms
+    # (part tags in kaomojiData.js). Pout is left on the bare link on purpose:
+    # its ε mouth is tagged love/shy, not angry, so ?mood=angry would hide it.
+    "excited-kaomoji": "happy",
+    "kiss-kaomoji": "love",
+    "hug-kaomoji": "love",
 }
 
 

@@ -287,6 +287,20 @@ pages, then 356 EN pages site-wide, then 12 more, plus a fourth variant where th
 self-reference existed but pointed at a subtly wrong URL. Check self-reference and
 `x-default` direction explicitly, not just cross-links between siblings.
 
+**A code sent to another language (added 2026-10-27).** `hr/`, `bs/` and `sr/`
+declared `hreflang="sr-ME"` and `hreflang="bs-ME"` → `/hr/` from the CEE cluster
+commit `f4506e5eb8` (2026-07-09). Serbian and Bosnian readers in Montenegro were
+offered the Croatian homepage, while every row of `audit-hreflang.js` read zero: the
+cluster was reciprocal, complete and self-referencing, just wrong. Two audits had
+flagged it as a probable copy-paste artifact; nothing gated on it. Fixed to
+`sr-ME` → `/sr/` and `bs-ME` → `/bs/`, the shape `ro-MD` → `/ro/` already had.
+`audit-hreflang.js` now compares each code's primary subtag with the target page's
+`<html lang>` (`nb`/`nn`/`no` and `fil`/`tl` count as one language; `x-default` is
+skipped). It fails the run and is never auto-fixed, because which page a language
+should get is a decision. Backlog after the fix: 0. Probes: the replayed regression
+exits 1 (6 rows), a `de-AT` → `/fr/` code exits 1, and `ro-MD` → `/ro/` plus an
+`nb` → `/no/` alias exit 0.
+
 **Mutual omission** is invisible to a reciprocity walk, which can only inspect edges
 that exist. Found 2026-07-26 by a spot-check: 5 of 8 members of
 `library/cross-x-symbols/` each missing 1–2 sibling entries, every gap mutual.
