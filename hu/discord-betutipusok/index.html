@@ -263,7 +263,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <button class="glyph-copy alpha-glyphs" type="button" data-text="ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘqʀsᴛᴜᴠᴡxʏᴢ" aria-label="Kiskapitális ábécé másolása">ᴀ ʙ ᴄ ᴅ ᴇ ꜰ ɢ ʜ ɪ ᴊ ᴋ ʟ ᴍ ɴ ᴏ ᴘ q ʀ s ᴛ ᴜ ᴠ ᴡ x ʏ ᴢ</button>
       </div>
     </div>
-    <p class="uname-note">Megjegyzés a magyar ékezetekről: ezek a Unicode betűtípusok az alap A–Z ábécét fedik le. A magyar ékezetes betűk (á, é, í, ó, ö, ő, ú, ü, ű) a legtöbb stílusban sima betűként maradnak a stilizált szó közepén: pl. „péter” eredménye p𝓮𝓽𝓮𝓻, az é ékezet nélkül. Ékezet nélküli becenévhez tökéletesen néz ki, hosszabb szöveghez a legbiztonságosabb a félkövér és a dőlt.</p>
+    <p class="uname-note">Megjegyzés a magyar ékezetekről: a Unicode betűtípusok az alap A–Z ábécéhez készültek, de a generátor az ékezetes betűt (á, é, í, ó, ö, ő, ú, ü, ű) szétbontja alapbetűre és ékezetre, az alapbetűt stilizálja, az ékezetet pedig visszailleszti, így a legtöbb stílusban az ékezet is megmarad: a „péter” például 𝗽𝗲́𝘁𝗲𝗿 lesz. Kivétel a fejjel lefelé fordított szöveg és néhány egyszerű stílus (pl. a buborék vagy a fullwidth), ahol az ékezetes betű sima marad. Hosszabb szöveghez a legbiztonságosabb a félkövér és a dőlt.</p>
     <p class="u-mt-15">El akarsz mélyülni egy stílusban? A teljes ábécét és minden vágás variációját megtalálod a <a href="/hu/">betűk másolására szolgáló főoldalon</a>, a csillagokat és a becenév-kereteket pedig a <a href="/library/aesthetic-symbols/">dekoratív szimbólumok</a> oldalán.</p>
   </section>
 
@@ -344,6 +344,18 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <a href="/library/invisible-character/" class="compare-card variant-muted u-no-underline">
         <h4>Láthatatlan Karakter</h4>
         <p>Üres szóköz a tiszta sorokhoz és üres nevekhez a Discordon.</p>
+      </a>
+      <a href="/hu/guide/discord-szovegformazas/" class="compare-card variant-muted u-no-underline">
+        <h4>Discord szövegformázás, kibogozva</h4>
+        <p>Miért működik a félkövér a Discord chatben, de nem a felhasználónévben: a Discord három szövegrendszere (Markdown, Unicode betűk, Nitro) és melyiket mikor.</p>
+      </a>
+      <a href="/hu/guide/hol-mukodnek-a-discord-fontok/" class="compare-card variant-muted u-no-underline">
+        <h4>Hol működnek a Discord betűtípusok</h4>
+        <p>Miért érvénytelen a Discord szerint a felhasználóneved, miért tűntek el a csatorna nagybetűi, és mely mezők fogadják a Unicode betűket: egy engedélymátrix.</p>
+      </a>
+      <a href="/hu/guide/biztonsagos-discord-becenev/" class="compare-card variant-muted u-no-underline">
+        <h4>Stilizáld a nevet a Discordon szűrés nélkül</h4>
+        <p>A stilizált Discord név még mindig elbukhat három csendes teszten: a tagok listáján, a @megemlítésen és a hamis identitás elleni szűrőn.</p>
       </a>
     </div>
   </section>

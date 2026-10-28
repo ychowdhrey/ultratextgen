@@ -65,6 +65,18 @@
         {
           "char": "🚩",
           "label": "Drapeau de Corner"
+        },
+        {
+          "char": "⛹️",
+          "label": "Personne qui Dribble"
+        },
+        {
+          "char": "⛹️‍♂️",
+          "label": "Homme qui Dribble"
+        },
+        {
+          "char": "⛹️‍♀️",
+          "label": "Femme qui Dribble"
         }
       ]
     },
@@ -109,6 +121,14 @@
         {
           "char": "🏌️",
           "label": "Personne au Golf"
+        },
+        {
+          "char": "🏌️‍♂️",
+          "label": "Homme au Golf"
+        },
+        {
+          "char": "🏌️‍♀️",
+          "label": "Femme au Golf"
         }
       ]
     },
@@ -123,16 +143,48 @@
           "label": "Personne qui Nage"
         },
         {
+          "char": "🏊‍♂️",
+          "label": "Homme qui Nage"
+        },
+        {
+          "char": "🏊‍♀️",
+          "label": "Femme qui Nage"
+        },
+        {
           "char": "🏄",
           "label": "Personne qui Surfe"
+        },
+        {
+          "char": "🏄‍♂️",
+          "label": "Homme qui Surfe"
+        },
+        {
+          "char": "🏄‍♀️",
+          "label": "Femme qui Surfe"
         },
         {
           "char": "🤽",
           "label": "Personne au Water-Polo"
         },
         {
+          "char": "🤽‍♂️",
+          "label": "Homme au Water-Polo"
+        },
+        {
+          "char": "🤽‍♀️",
+          "label": "Femme au Water-Polo"
+        },
+        {
           "char": "🚣",
           "label": "Personne qui Rame"
+        },
+        {
+          "char": "🚣‍♂️",
+          "label": "Homme qui Rame"
+        },
+        {
+          "char": "🚣‍♀️",
+          "label": "Femme qui Rame"
         },
         {
           "char": "🏂",
@@ -211,16 +263,60 @@
           "label": "Personne qui Soulève des Poids"
         },
         {
+          "char": "🏋️‍♂️",
+          "label": "Homme qui Soulève des Poids"
+        },
+        {
+          "char": "🏋️‍♀️",
+          "label": "Femme qui Soulève des Poids"
+        },
+        {
           "char": "🤸",
           "label": "Personne qui Fait la Roue"
+        },
+        {
+          "char": "🤹",
+          "label": "Personne qui Jongle"
+        },
+        {
+          "char": "🤹‍♂️",
+          "label": "Homme qui Jongle"
+        },
+        {
+          "char": "🤹‍♀️",
+          "label": "Femme qui Jongle"
+        },
+        {
+          "char": "🤸‍♂️",
+          "label": "Homme qui Fait la Roue"
+        },
+        {
+          "char": "🤸‍♀️",
+          "label": "Femme qui Fait la Roue"
         },
         {
           "char": "🤼",
           "label": "Personnes qui Luttent"
         },
         {
+          "char": "🤼‍♂️",
+          "label": "Hommes qui Luttent"
+        },
+        {
+          "char": "🤼‍♀️",
+          "label": "Femmes qui Luttent"
+        },
+        {
           "char": "🤾",
           "label": "Personne au Handball"
+        },
+        {
+          "char": "🤾‍♂️",
+          "label": "Homme au Handball"
+        },
+        {
+          "char": "🤾‍♀️",
+          "label": "Femme au Handball"
         },
         {
           "char": "🏃",
@@ -235,8 +331,24 @@
           "label": "Personne à Vélo"
         },
         {
+          "char": "🚴‍♂️",
+          "label": "Homme à Vélo"
+        },
+        {
+          "char": "🚴‍♀️",
+          "label": "Femme à Vélo"
+        },
+        {
           "char": "🚵",
           "label": "Personne en VTT"
+        },
+        {
+          "char": "🚵‍♂️",
+          "label": "Homme en VTT"
+        },
+        {
+          "char": "🚵‍♀️",
+          "label": "Femme en VTT"
         },
         {
           "char": "🤺",

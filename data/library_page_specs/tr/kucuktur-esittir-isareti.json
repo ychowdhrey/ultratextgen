@@ -25,7 +25,7 @@
         },
         {
           "char": "<=",
-          "label": "Less Than or Equal To (Kod: C, Python, JavaScript, Java, SQL)"
+          "label": "Less Than or Equal To (Kod: C, Python, JavaScript, Java, SQL; Excel ve Google E-Tablolar formülleri)"
         }
       ]
     },
@@ -37,7 +37,7 @@
       "symbols": [
         {
           "char": "≦",
-          "label": "Less-Than Over Equal To (U+2266)"
+          "label": "Less-Than Over Equal To (U+2266): Japon okullarında öğretilen biçim"
         },
         {
           "char": "⩽",
