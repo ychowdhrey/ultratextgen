@@ -948,15 +948,15 @@
     },
     {
      "char": "㊤",
-     "label": "Övre (上)"
+     "label": "Övre nivå (上)"
     },
     {
      "char": "㊥",
-     "label": "Mitten (中)"
+     "label": "Mellersta nivå (中)"
     },
     {
      "char": "㊦",
-     "label": "Nedre (下)"
+     "label": "Nedre nivå (下)"
     },
     {
      "char": "㊧",
@@ -987,16 +987,8 @@
      "label": "Företag (企)"
     },
     {
-     "char": "㊮",
-     "label": "Resurser (資)"
-    },
-    {
      "char": "㊯",
-     "label": "Samarbete (協)"
-    },
-    {
-     "char": "㊖",
-     "label": "Ekonomi (財)"
+     "label": "Kooperativ (協)"
     },
     {
      "char": "㊰",
@@ -1035,8 +1027,16 @@
      "label": "Stiftelse (財)"
     },
     {
+     "char": "㊖",
+     "label": "Stiftelse, inringat (財)"
+    },
+    {
      "char": "㈾",
      "label": "Kommanditbolag (資)"
+    },
+    {
+     "char": "㊮",
+     "label": "Kommanditbolag, inringat (資)"
     },
     {
      "char": "㈹",

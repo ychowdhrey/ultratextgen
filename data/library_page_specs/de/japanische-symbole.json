@@ -948,15 +948,15 @@
         },
         {
           "char": "㊤",
-          "label": "Oben (上)"
+          "label": "Oberste Stufe (上)"
         },
         {
           "char": "㊥",
-          "label": "Mitte (中)"
+          "label": "Mittlere Stufe (中)"
         },
         {
           "char": "㊦",
-          "label": "Unten (下)"
+          "label": "Unterste Stufe (下)"
         },
         {
           "char": "㊧",
@@ -987,16 +987,8 @@
           "label": "Unternehmen (企)"
         },
         {
-          "char": "㊮",
-          "label": "Kapital (資)"
-        },
-        {
           "char": "㊯",
-          "label": "Kooperation (協)"
-        },
-        {
-          "char": "㊖",
-          "label": "Finanzen (財)"
+          "label": "Genossenschaft (協)"
         },
         {
           "char": "㊰",
@@ -1035,8 +1027,16 @@
           "label": "Stiftung (財)"
         },
         {
+          "char": "㊖",
+          "label": "Stiftung, eingekreist (財)"
+        },
+        {
           "char": "㈾",
           "label": "Kommanditgesellschaft (資)"
+        },
+        {
+          "char": "㊮",
+          "label": "Kommanditgesellschaft, eingekreist (資)"
         },
         {
           "char": "㈹",

@@ -934,15 +934,15 @@
         },
         {
           "char": "㊤",
-          "label": "Em cima (上)"
+          "label": "Superior (上)"
         },
         {
           "char": "㊥",
-          "label": "Centro (中)"
+          "label": "Médio (中)"
         },
         {
           "char": "㊦",
-          "label": "Embaixo (下)"
+          "label": "Inferior (下)"
         },
         {
           "char": "㊧",
@@ -973,16 +973,8 @@
           "label": "Empresa (企)"
         },
         {
-          "char": "㊮",
-          "label": "Recursos (資)"
-        },
-        {
           "char": "㊯",
-          "label": "Cooperação (協)"
-        },
-        {
-          "char": "㊖",
-          "label": "Finanças (財)"
+          "label": "Cooperativa (協)"
         },
         {
           "char": "㊰",
@@ -1021,8 +1013,16 @@
           "label": "Fundação (財)"
         },
         {
+          "char": "㊖",
+          "label": "Fundação em círculo (財)"
+        },
+        {
           "char": "㈾",
           "label": "Sociedade em comandita (資)"
+        },
+        {
+          "char": "㊮",
+          "label": "Sociedade em comandita em círculo (資)"
         },
         {
           "char": "㈹",

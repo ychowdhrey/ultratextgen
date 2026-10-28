@@ -282,9 +282,9 @@
         { "char": "㊜", "label": "Suitable (適)" },
         { "char": "㊚", "label": "Male (男)" },
         { "char": "㊛", "label": "Female (女)" },
-        { "char": "㊤", "label": "Upper (上)" },
-        { "char": "㊥", "label": "Middle (中)" },
-        { "char": "㊦", "label": "Lower (下)" },
+        { "char": "㊤", "label": "Top grade (上)" },
+        { "char": "㊥", "label": "Middle grade (中)" },
+        { "char": "㊦", "label": "Bottom grade (下)" },
         { "char": "㊧", "label": "Left (左)" },
         { "char": "㊨", "label": "Right (右)" },
         { "char": "㊩", "label": "Medical (医)" },
@@ -292,9 +292,7 @@
         { "char": "㊫", "label": "School (学)" },
         { "char": "㊬", "label": "Supervision (監)" },
         { "char": "㊭", "label": "Enterprise (企)" },
-        { "char": "㊮", "label": "Resources (資)" },
-        { "char": "㊯", "label": "Cooperation (協)" },
-        { "char": "㊖", "label": "Finance (財)" },
+        { "char": "㊯", "label": "Cooperative (協)" },
         { "char": "㊰", "label": "Night (夜)" }
       ]
     },
@@ -310,7 +308,9 @@
         { "char": "㊒", "label": "Limited company, circled (有)" },
         { "char": "㈳", "label": "Incorporated association (社)" },
         { "char": "㈶", "label": "Incorporated foundation (財)" },
+        { "char": "㊖", "label": "Incorporated foundation, circled (財)" },
         { "char": "㈾", "label": "Limited partnership (資)" },
+        { "char": "㊮", "label": "Limited partnership, circled (資)" },
         { "char": "㈹", "label": "Main phone number (代)" }
       ]
     },

@@ -461,10 +461,12 @@ def enclosed(form, *names):
 
 CIRCLED_DOCS = enclosed('CIRCLED', 'PRINT', 'ATTENTION', 'CORRECT', 'COPY', 'SPECIAL', 'REST', 'EXCELLENT', 'SUITABLE',
                         'MALE', 'FEMALE', 'HIGH', 'CENTRE', 'LOW', 'LEFT', 'RIGHT', 'MEDICINE', 'RELIGION', 'STUDY',
-                        'SUPERVISE', 'ENTERPRISE', 'RESOURCE', 'ALLIANCE', 'FINANCIAL', 'NIGHT')
+                        'SUPERVISE', 'ENTERPRISE', 'ALLIANCE', 'NIGHT')
+# ㊖ (財団法人) and ㊮ (合資会社) are the circled forms of the company types ㈶ and ㈾, so each sits beside its pair.
 CIRCLED_COMPANY = [enclosed(f, n)[0] for f, n in (('PARENTHESIZED', 'STOCK'), ('CIRCLED', 'STOCK'), ('PARENTHESIZED', 'HAVE'),
                    ('CIRCLED', 'HAVE'), ('PARENTHESIZED', 'SOCIETY'), ('PARENTHESIZED', 'FINANCIAL'),
-                   ('PARENTHESIZED', 'RESOURCE'), ('PARENTHESIZED', 'REPRESENT'))]
+                   ('CIRCLED', 'FINANCIAL'), ('PARENTHESIZED', 'RESOURCE'), ('CIRCLED', 'RESOURCE'),
+                   ('PARENTHESIZED', 'REPRESENT'))]
 WEEKDAYS = ('MOON', 'FIRE', 'WATER', 'WOOD', 'METAL', 'EARTH', 'SUN')
 CIRCLED_WEEK = enclosed('CIRCLED', *WEEKDAYS) + enclosed('PARENTHESIZED', *WEEKDAYS)
 
