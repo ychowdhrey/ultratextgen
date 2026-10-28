@@ -56,8 +56,10 @@ carries, verified 2026-08-26:
   * mood filtering, outline/eyes/mouth, optional cheeks/arms and the
     automatically-matched left/right sides are what `kaomoji-generator/` says it
     does, in its own "Build it part by part" section.
-  * Instagram 150 / TikTok 80 / X 160 and "88 Unicode fonts" are on
-    `usecase/bio-font/` itself.
+  * Instagram 150 / TikTok 80 / X 160 are on `usecase/bio-font/` itself. The
+    font families named (bold, cursive, gothic, bubble) are that page's own
+    STYLE_MAP tabs. It used to say "88 Unicode fonts"; the tool offers 13
+    (measured 2026-10-28), so the card names the families, not a count.
 
 No em dash appears in any of it. The em dash rule in
 `docs/editorial-footprint-risk.md` is forward-only: existing ones are left
@@ -119,8 +121,8 @@ DESTINATIONS = {
         "h3": "Fit the combo into a bio that has a limit",
         "cta": (
             "The UltraTextGen bio generator counts your text against Instagram's 150 "
-            "characters, TikTok's 80 and X's 160 while you type, with 88 Unicode "
-            "fonts and dividers to set it in."
+            "characters, TikTok's 80 and X's 160 while you type, with bold, cursive, "
+            "gothic and bubble Unicode fonts and dividers to set it in."
         ),
         "button": "Open the bio font generator →",
     },
