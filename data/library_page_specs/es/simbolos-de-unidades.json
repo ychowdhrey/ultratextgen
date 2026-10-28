@@ -111,6 +111,190 @@
       ]
     },
     {
+      "id": "cjk-squared-units",
+      "label": "Unidades CJK",
+      "h2": "Más unidades en cuadrado CJK: área, volumen, potencia y datos",
+      "intro": "Unidades métricas de un solo carácter del bloque de compatibilidad CJK, las que usan los textos en japonés, coreano y chino en fichas técnicas, etiquetas de nutrición y manuales: ㎖ para mililitros, ㎉ para kilocalorías, ㎾ para kilovatios. Cada una se copia como un solo carácter, del ancho de un carácter CJK.",
+      "symbols": [
+        {
+          "char": "㎟",
+          "label": "mm² (milímetro cuadrado)"
+        },
+        {
+          "char": "㎠",
+          "label": "cm² (centímetro cuadrado)"
+        },
+        {
+          "char": "㎢",
+          "label": "km² (kilómetro cuadrado)"
+        },
+        {
+          "char": "㏊",
+          "label": "ha (hectárea)"
+        },
+        {
+          "char": "㎣",
+          "label": "mm³ (milímetro cúbico)"
+        },
+        {
+          "char": "㎤",
+          "label": "cm³ (centímetro cúbico)"
+        },
+        {
+          "char": "㎦",
+          "label": "km³ (kilómetro cúbico)"
+        },
+        {
+          "char": "㎚",
+          "label": "nm (nanómetro)"
+        },
+        {
+          "char": "㎛",
+          "label": "μm (micrómetro)"
+        },
+        {
+          "char": "㎍",
+          "label": "μg (microgramo)"
+        },
+        {
+          "char": "㎎",
+          "label": "mg (miligramo)"
+        },
+        {
+          "char": "㎕",
+          "label": "μl (microlitro)"
+        },
+        {
+          "char": "㎖",
+          "label": "ml (mililitro)"
+        },
+        {
+          "char": "㎗",
+          "label": "dl (decilitro)"
+        },
+        {
+          "char": "㎘",
+          "label": "kl (kilolitro)"
+        },
+        {
+          "char": "㎅",
+          "label": "KB (kilobyte)"
+        },
+        {
+          "char": "㎆",
+          "label": "MB (megabyte)"
+        },
+        {
+          "char": "㎇",
+          "label": "GB (gigabyte)"
+        },
+        {
+          "char": "㎐",
+          "label": "Hz (hercio)"
+        },
+        {
+          "char": "㎑",
+          "label": "kHz (kilohercio)"
+        },
+        {
+          "char": "㎔",
+          "label": "THz (terahercio)"
+        },
+        {
+          "char": "㎃",
+          "label": "mA (miliamperio)"
+        },
+        {
+          "char": "㎷",
+          "label": "mV (milivoltio)"
+        },
+        {
+          "char": "㎸",
+          "label": "kV (kilovoltio)"
+        },
+        {
+          "char": "㏀",
+          "label": "kΩ (kiloohmio)"
+        },
+        {
+          "char": "㏁",
+          "label": "MΩ (megaohmio)"
+        },
+        {
+          "char": "㎽",
+          "label": "mW (milivatio)"
+        },
+        {
+          "char": "㎾",
+          "label": "kW (kilovatio)"
+        },
+        {
+          "char": "㎿",
+          "label": "MW (megavatio)"
+        },
+        {
+          "char": "㎈",
+          "label": "cal (caloría)"
+        },
+        {
+          "char": "㎉",
+          "label": "kcal (kilocaloría)"
+        },
+        {
+          "char": "㎩",
+          "label": "Pa (pascal)"
+        },
+        {
+          "char": "㍱",
+          "label": "hPa (hectopascal)"
+        },
+        {
+          "char": "㎪",
+          "label": "kPa (kilopascal)"
+        },
+        {
+          "char": "㎫",
+          "label": "MPa (megapascal)"
+        },
+        {
+          "char": "㎧",
+          "label": "m/s (metro por segundo)"
+        },
+        {
+          "char": "㎨",
+          "label": "m/s² (metro por segundo al cuadrado)"
+        },
+        {
+          "char": "㎰",
+          "label": "ps (picosegundo)"
+        },
+        {
+          "char": "㎱",
+          "label": "ns (nanosegundo)"
+        },
+        {
+          "char": "㎲",
+          "label": "μs (microsegundo)"
+        },
+        {
+          "char": "㎳",
+          "label": "ms (milisegundo)"
+        },
+        {
+          "char": "㏈",
+          "label": "dB (decibelio)"
+        },
+        {
+          "char": "㏖",
+          "label": "mol (cantidad de sustancia)"
+        },
+        {
+          "char": "㏗",
+          "label": "pH (acidez)"
+        }
+      ]
+    },
+    {
       "id": "temperature-ratio-marks",
       "label": "Temperatura y proporción",
       "h2": "Marcas de temperatura y proporción",

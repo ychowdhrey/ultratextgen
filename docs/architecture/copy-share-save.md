@@ -25,7 +25,7 @@ other specialized generators actually do.
 | module | owns |
 |---|---|
 | `js/share/share-core.js` | `buildShareUrl`, `shareCreation`, `shareCreationAsImage`, `renderCreationImage`, the button factories, the `?style=` reader, both delegated click handlers. Lifted **verbatim** out of `script.js`; it is now the only definition. Dependency-free. |
-| `js/saved/saved-items.js` | the typed store `{type, value, label, href, t}` with `type` in `style \| symbol \| collection`, identity on `(type, value)` — so one glyph saved under two locale labels is one record. `UltraTextGen.saved.{all,has,count,toggle,clear}`, fires `utg:savedchange`. |
+| `js/saved/saved-items.js` | the typed store `{type, value, label, href, t}` with `type` in `style \| symbol \| collection`, identity on `(type, value)` — so one glyph saved under two locale labels is one record. `UltraTextGen.saved.{all,has,count,toggle,set,clear}`, fires `utg:savedchange` (and re-emits another tab's `storage` event as one). A control calls `set(rec, on)` with the state it showed; see *A press is an intent* below. |
 | `symbol-explorer.js` | a Save star per tile, Share + "Select and share image" per section (see *Image content comes from deliberate selection* below; until 2026-10-01 this was a whole-section image button), the saved-symbols strip, the incoming `?symbol=` deep link — attached **at runtime** to markup the generators already emit. |
 
 **Nothing here edits a page's content**, and that was a design constraint rather than
@@ -211,6 +211,31 @@ API **mocked** (success, cancel, error; `?noshare` for a browser without file
 sharing). Mocked checks prove what the page does with each answer, not that any
 real share sheet or app received the file.
 
+## A press is an intent, not a flip (2026-10-27)
+
+`toggle()` flips whatever the store holds. The generator (`script.js`) repainted
+its stars only after its own clicks and never listened to `utg:savedchange`, so a
+style saved in another tab still read "Save" there, and pressing it **removed**
+the style. `script.js` now repaints every `.save-btn` in place and re-renders its
+saved section on `utg:savedchange`, and its click calls `UTG.saved.set(rec, want)`
+with the opposite of the control's `aria-pressed`. `set()` is a no-op (no write,
+no `save_style` row, no event) when the store already matches, which covers the
+window before another tab's `storage` event arrives. `test:saved-items` and
+`check:runtime-smoke` (case 24) assert both halves.
+
+## The cap evicts by type (2026-10-27)
+
+The store is one list with one cap of 200 records across every type. Trimming the
+list's tail on save evicted the oldest record of **any** type, so a visitor who
+saved 200 symbols silently lost a font style saved earlier. A save of type T now
+evicts the oldest record of type T (smallest saved-at time); only when T has
+nothing older to give, because other types fill the store, does the oldest record
+overall go. The write no longer slices by position either. What was evicted is
+reported, never silent: `utg:savedchange` carries `detail.evicted` (a list of
+`{type, value, label}`, empty when nothing went) and `UTG.saved.lastEvicted()`
+returns the same, so a host can tell the visitor. No host shows it yet; that needs
+a localized string. `test:saved-items` asserts it.
+
 ## Migration off `utg_saved_styles`
 
 The old flat array is read and folded in as `type: "style"` records, **and kept in
@@ -236,6 +261,17 @@ and an honest `null` for a pin, whose format Pinterest decides. `shareImageBlob`
 reads it from the blob's MIME type unless the caller states one. It is pushed on
 every row, never omitted, because GTM's data layer keeps a key's last value and a
 missing key would inherit the previous row's format.
+
+**`text` (added 2026-10-27).** The saved-symbols strip shares a set of two or
+more items. No link carries a set, so without a native share sheet its Share
+used to copy the page URL, and the recipient got a page instead of the shortlist.
+It now passes `fallback: "text"` to `buildShareButton`, `shareCreation` copies the
+items, and the row is the existing clipboard copy (`link_copy` / `clipboard`)
+with `share_format: "text"`, because text is what left the page. One saved item
+still copies its `?symbol=` deep link. The strip also passes its localized
+confirmation (the explorer table's `copiedBtn` for a set, `linkCopied` for one
+item) and `failed` label, as the section Share does. `test:share-core` and
+`check:runtime-smoke` (case 23) assert it.
 
 ### `share_destination`, and the rule that a row fires on success
 

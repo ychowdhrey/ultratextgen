@@ -457,6 +457,174 @@
       ]
     },
     {
+      "id": "roman-numerals-extended",
+      "label": "Römische Zahlen",
+      "h2": "Weitere römische Zahlen: L, C, D, M und Kleinbuchstaben",
+      "intro": "Die Großbuchstaben oben enden bei XII. Hier kommen L (50), C (100), D (500) und M (1000) dazu, die Kleinbuchstaben ⅰ bis ⅿ für nummerierte Listen und Vorwortseiten und die alten Formen von 1000 bis 100.000. Jede Kachel ist ein einzelnes Zeichen, deshalb bricht eine Zahl wie ⅻ beim Zeilenumbruch nicht auseinander.",
+      "symbols": [
+        {
+          "char": "Ⅼ",
+          "label": "Römische Zahl L"
+        },
+        {
+          "char": "Ⅽ",
+          "label": "Römische Zahl C"
+        },
+        {
+          "char": "Ⅾ",
+          "label": "Römische Zahl D"
+        },
+        {
+          "char": "Ⅿ",
+          "label": "Römische Zahl M"
+        },
+        {
+          "char": "ⅰ",
+          "label": "Kleine römische Zahl i"
+        },
+        {
+          "char": "ⅱ",
+          "label": "Kleine römische Zahl ii"
+        },
+        {
+          "char": "ⅲ",
+          "label": "Kleine römische Zahl iii"
+        },
+        {
+          "char": "ⅳ",
+          "label": "Kleine römische Zahl iv"
+        },
+        {
+          "char": "ⅴ",
+          "label": "Kleine römische Zahl v"
+        },
+        {
+          "char": "ⅵ",
+          "label": "Kleine römische Zahl vi"
+        },
+        {
+          "char": "ⅶ",
+          "label": "Kleine römische Zahl vii"
+        },
+        {
+          "char": "ⅷ",
+          "label": "Kleine römische Zahl viii"
+        },
+        {
+          "char": "ⅸ",
+          "label": "Kleine römische Zahl ix"
+        },
+        {
+          "char": "ⅹ",
+          "label": "Kleine römische Zahl x"
+        },
+        {
+          "char": "ⅺ",
+          "label": "Kleine römische Zahl xi"
+        },
+        {
+          "char": "ⅻ",
+          "label": "Kleine römische Zahl xii"
+        },
+        {
+          "char": "ⅼ",
+          "label": "Kleine römische Zahl l"
+        },
+        {
+          "char": "ⅽ",
+          "label": "Kleine römische Zahl c"
+        },
+        {
+          "char": "ⅾ",
+          "label": "Kleine römische Zahl d"
+        },
+        {
+          "char": "ⅿ",
+          "label": "Kleine römische Zahl m"
+        },
+        {
+          "char": "ↀ",
+          "label": "Römische Zahl 1000, alte Form"
+        },
+        {
+          "char": "ↁ",
+          "label": "Römische Zahl 5000"
+        },
+        {
+          "char": "ↂ",
+          "label": "Römische Zahl 10000"
+        },
+        {
+          "char": "ↇ",
+          "label": "Römische Zahl 50000"
+        },
+        {
+          "char": "ↈ",
+          "label": "Römische Zahl 100000"
+        }
+      ]
+    },
+    {
+      "id": "keycap-number-emoji",
+      "label": "Tasten-Emoji",
+      "h2": "Zahlen-Emojis in Tastenform: 0️⃣ bis 🔟, #️⃣ und *️⃣",
+      "intro": "Tasten-Emoji für nummerierte Listen, Umfragen und Schritte. Eine Zifferntaste besteht aus drei Codepunkten: der Ziffer, dem Emoji-Selektor U+FE0F und dem kombinierenden Tastenrahmen U+20E3. Deshalb wird eine normale Ziffer nie von allein zum Emoji. 🔟 ist ein einzelnes Emoji.",
+      "symbols": [
+        {
+          "char": "0️⃣",
+          "label": "0"
+        },
+        {
+          "char": "1️⃣",
+          "label": "1"
+        },
+        {
+          "char": "2️⃣",
+          "label": "2"
+        },
+        {
+          "char": "3️⃣",
+          "label": "3"
+        },
+        {
+          "char": "4️⃣",
+          "label": "4"
+        },
+        {
+          "char": "5️⃣",
+          "label": "5"
+        },
+        {
+          "char": "6️⃣",
+          "label": "6"
+        },
+        {
+          "char": "7️⃣",
+          "label": "7"
+        },
+        {
+          "char": "8️⃣",
+          "label": "8"
+        },
+        {
+          "char": "9️⃣",
+          "label": "9"
+        },
+        {
+          "char": "🔟",
+          "label": "10"
+        },
+        {
+          "char": "#️⃣",
+          "label": "#"
+        },
+        {
+          "char": "*️⃣",
+          "label": "*"
+        }
+      ]
+    },
+    {
       "id": "s6",
       "label": "Zahlen in Klammern",
       "h2": "Zahlen in Klammern",

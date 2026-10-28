@@ -246,6 +246,46 @@
       ]
     },
     {
+      "id": "checkers-shogi-pieces",
+      "label": "Dammen en shogi",
+      "h2": "Damschijven en shogistukken",
+      "intro": "De schijven van het damspel in wit en zwart, als gewone schijf en als dam, en het shogistuk in vier vormen. In de notatie van shogipartijen staat ☗ voor de eerste speler (sente) en ☖ voor de tweede (gote).",
+      "symbols": [
+        {
+          "char": "⛀",
+          "label": "Witte damschijf"
+        },
+        {
+          "char": "⛁",
+          "label": "Witte dam"
+        },
+        {
+          "char": "⛂",
+          "label": "Zwarte damschijf"
+        },
+        {
+          "char": "⛃",
+          "label": "Zwarte dam"
+        },
+        {
+          "char": "☖",
+          "label": "Wit shogistuk"
+        },
+        {
+          "char": "☗",
+          "label": "Zwart shogistuk"
+        },
+        {
+          "char": "⛉",
+          "label": "Omgedraaid wit shogistuk"
+        },
+        {
+          "char": "⛊",
+          "label": "Omgedraaid zwart shogistuk"
+        }
+      ]
+    },
+    {
       "id": "notation-symbols",
       "label": "Notatie",
       "h2": "Notatie- en Annotatietekens",

@@ -115,6 +115,78 @@
           "label": "Impression Écran"
         }
       ]
+    },
+    {
+      "id": "iso-function-key-symbols",
+      "label": "Touches ISO",
+      "h2": "Symboles ISO des touches de fonction",
+      "intro": "Les symboles de touches de la norme internationale ISO/IEC 9995-7, imprimés sur certains claviers de PC, de terminaux et sous Linux à la place des mots : Alt, Compose, Inser, Pause, Annuler et les touches de page. Sur Mac, ⌤ et ⌧ désignent les touches Entrée et Effacer du pavé numérique.",
+      "symbols": [
+        {
+          "char": "⌤",
+          "label": "Touche Entrée (Pointe de Flèche entre Deux Barres)"
+        },
+        {
+          "char": "⌧",
+          "label": "Touche Effacer (X dans un Rectangle)"
+        },
+        {
+          "char": "⎀",
+          "label": "Touche Inser (Symbole d’Insertion)"
+        },
+        {
+          "char": "⎁",
+          "label": "Touche Soulignement Continu"
+        },
+        {
+          "char": "⎂",
+          "label": "Touche Soulignement Discontinu"
+        },
+        {
+          "char": "⎃",
+          "label": "Touche Mise en Relief"
+        },
+        {
+          "char": "⎄",
+          "label": "Touche Compose (Symbole de Composition)"
+        },
+        {
+          "char": "⎆",
+          "label": "Touche Entrée (Symbole ISO)"
+        },
+        {
+          "char": "⎇",
+          "label": "Touche Alt (Symbole de Touche Alternative)"
+        },
+        {
+          "char": "⎉",
+          "label": "Touche Pause (Barre Horizontale Cerclée à Encoche)"
+        },
+        {
+          "char": "⎊",
+          "label": "Touche Interruption (Triangle Cerclé vers le Bas)"
+        },
+        {
+          "char": "⎌",
+          "label": "Touche Annuler"
+        },
+        {
+          "char": "⎖",
+          "label": "Touche Séparateur Décimal"
+        },
+        {
+          "char": "⎗",
+          "label": "Touche Page Précédente (Page Haut)"
+        },
+        {
+          "char": "⎘",
+          "label": "Touche Page Suivante (Page Bas)"
+        },
+        {
+          "char": "⎚",
+          "label": "Touche Effacer l’Écran"
+        }
+      ]
     }
   ],
   "faq_h2": "Questions Fréquentes sur les Symboles du Clavier",

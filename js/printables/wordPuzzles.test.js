@@ -22,6 +22,8 @@
 const fs = require("fs");
 const path = require("path");
 global.window = {};
+// The paste reader is shared with the word search; the page loads it first.
+new Function(fs.readFileSync(path.join(__dirname, "wordList.js"), "utf8"))();
 new Function(fs.readFileSync(path.join(__dirname, "wordPuzzles.js"), "utf8"))();
 const CW = global.window.UltraTextGen.crossword;
 const SC = global.window.UltraTextGen.wordScramble;
@@ -419,6 +421,43 @@ const CLUED = [
     "crossword: a pasted definition becomes the clue");
   eq(CW.normalizeWords("capital = The city a country governs from")[0].clue, "The city a country governs from",
     "crossword: = still separates the clue");
+}
+
+/* ===============================================================
+   PASTE FORMATS
+   One reader for all three tools (js/printables/wordList.js). Before it, a
+   crossword read "cat, apple, tiger" as ONE answer, CATAPPLETIGER, and a
+   spreadsheet row "cat<TAB>a small pet" as one answer with no clue, in the
+   crossword and the scramble alike.
+   =============================================================== */
+{
+  const cw = (x) => CW.normalizeWords(x).map((w) => w.display + "=" + w.clue).join("|");
+  const sc = (x) => SC.normalizeWords(x).map((w) => w.key).join(" ");
+  eq(cw("cat, apple, tiger"), "cat=|apple=|tiger=", "crossword: a comma list is three entries");
+  eq(cw("cat; apple; tiger"), "cat=|apple=|tiger=", "crossword: a semicolon list is three entries");
+  const built = CW.build({ input: "cat, apple, tiger", seed: "x" });
+  eq(built.words.length, 3, "crossword: the comma list builds from three words");
+  ok(built.words.every((w) => w.letters.length <= 5), "crossword: no answer longer than its word");
+  eq(cw("cat\ta small pet\napple\tred fruit\ntiger\tbig striped cat"),
+    "cat=a small pet|apple=red fruit|tiger=big striped cat", "crossword: a 2-column tab table is word and clue");
+  eq(cw("1\tcat\ta small pet\n2\tdog\ta pet that barks"), "cat=a small pet|dog=a pet that barks",
+    "crossword: a row-number column is skipped");
+  eq(cw("cat\tnoun\ta small pet"), "cat=noun; a small pet", "crossword: extra columns join into the clue");
+  eq(cw("cat=a small pet\napple: red fruit\ntiger - big striped cat"),
+    "cat=a small pet|apple=red fruit|tiger=big striped cat", "crossword: =, : and a spaced dash all separate the clue");
+  eq(cw("capital = Paris, Rome and Madrid are one"), "capital=Paris, Rome and Madrid are one",
+    "crossword: a comma inside a clue is not a separator");
+  eq(cw("1. cat = a small pet\n2) apple = red fruit"), "cat=a small pet|apple=red fruit", "crossword: numbered list");
+  eq(cw("- cat\n\u2022 apple\n* tiger"), "cat=|apple=|tiger=", "crossword: bulleted list");
+  eq(cw("ice-cream = a cold treat"), "ice-cream=a cold treat", "crossword: an unspaced hyphen is part of the word");
+  eq(cw("niño = a child\naño, pingüino"), "niño=a child|año=|pingüino=", "crossword: accents survive both shapes");
+  eq(CW.normalizeWords(["capital = The city a country governs from"])[0].clue, "The city a country governs from",
+    "crossword: an array item still carries its clue");
+  eq(sc("cat, apple, tiger"), "CAT APPLE TIGER", "scramble: comma list");
+  eq(sc("cat\ta small pet\napple\tred fruit"), "CAT APPLE", "scramble: tab table takes the word column");
+  eq(sc("1. cat\n2) apple\n- tiger"), "CAT APPLE TIGER", "scramble: numbered and bulleted list");
+  const same = "cat\ta small pet\napple, tiger\n1. pear = a fruit";
+  eq(CW.normalizeWords(same).map((w) => w.key).join(" "), sc(same), "crossword and scramble read one list the same way");
 }
 
 console.log("\nwordPuzzles.test.js — " + pass + " passed, " + fail + " failed");

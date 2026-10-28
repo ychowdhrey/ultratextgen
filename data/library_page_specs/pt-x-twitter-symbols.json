@@ -183,12 +183,12 @@
           "label": "Caixa Marcada"
         },
         {
-          "char": "✗",
-          "label": "X de Cédula"
+          "char": "☒",
+          "label": "Caixa com X"
         },
         {
-          "char": "✘",
-          "label": "X de Cédula Pesado"
+          "char": "❌",
+          "label": "X Vermelho"
         }
       ]
     },

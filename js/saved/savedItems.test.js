@@ -183,6 +183,61 @@ function loadTwoTabs(seed) {
   eq(api.all()[0].value, 's209', 'and keeps the newest');
 }
 
+/* ---- the cap evicts by type -------------------------------------------- */
+
+/** A full store as the module writes it: newest first, the style saved
+ *  before every symbol, so it sits at the END of the list. */
+function fullStore(symbols, withStyle) {
+  const list = [];
+  for (let i = symbols - 1; i >= 0; i--) list.push({ type: 'symbol', value: 's' + i, label: 's' + i, href: '', t: 10 + i });
+  if (withStyle) list.push({ type: 'style', value: 'Bold', label: 'Bold', href: '', t: 1 });
+  return list;
+}
+
+{
+  // One shared list, one cap. Trimming the tail evicted the oldest record of
+  // ANY type, so a symbol filling the store deleted a font style saved earlier.
+  const { api, events } = load({ utg_saved_items: JSON.stringify(fullStore(199, true)) });
+  eq(api.count(), 200, 'the store starts full: 1 style + 199 symbols');
+  api.toggle({ type: 'symbol', value: 'one-more', label: 'one-more' });
+  eq(api.count(), 200, 'one more symbol takes the store over the cap and back to 200');
+  eq(api.has('style', 'Bold'), true, 'the style saved earlier survives a symbol filling the store');
+  eq(api.has('symbol', 's0'), false, 'the oldest symbol goes instead');
+  eq(api.lastEvicted(), [{ type: 'symbol', value: 's0', label: 's0' }], 'lastEvicted() names what was pushed out');
+  eq(events[events.length - 1].detail.evicted, [{ type: 'symbol', value: 's0', label: 's0' }],
+    'and utg:savedchange carries it, so a host could say so');
+}
+
+{
+  // 200 symbols and one style saved earlier, then a 201st symbol.
+  const { api, storage } = load({ utg_saved_items: JSON.stringify(fullStore(200, true)) });
+  api.set({ type: 'symbol', value: 's200', label: 's200' }, true);
+  ok(api.has('style', 'Bold'), 'a 201st symbol never evicts the saved style');
+  eq(api.has('symbol', 's0'), false, 'the oldest symbol is evicted');
+  ok(api.has('symbol', 's200') && api.has('symbol', 's2'), 'the new symbol and the newer ones stay');
+  eq(api.count(), 200, 'and the store is back at the cap');
+  const stored = JSON.parse(storage.getItem('utg_saved_items'));
+  ok(stored.some((r) => r.type === 'style' && r.value === 'Bold'), 'the stored list still holds the style');
+  eq(JSON.parse(storage.getItem('utg_saved_styles')), ['Bold'], 'and the legacy style key keeps it too');
+}
+
+{
+  // Fallback: a type with nothing else to give evicts the oldest record overall.
+  const { api } = load({ utg_saved_items: JSON.stringify(fullStore(200, false)) });
+  api.toggle({ type: 'style', value: 'Bold', label: 'Bold' });
+  eq(api.count(), 200, 'the first style into a full store keeps it at the cap');
+  ok(api.has('style', 'Bold'), 'the new style is saved');
+  eq(api.lastEvicted(), [{ type: 'symbol', value: 's0', label: 's0' }],
+    'with no older style to give, the oldest record overall goes');
+}
+
+{
+  const { api, events } = load();
+  api.toggle({ type: 'symbol', value: '★', label: '★' });
+  eq(api.lastEvicted(), [], 'a save under the cap evicts nothing');
+  eq(events[events.length - 1].detail.evicted, [], 'and the event says so');
+}
+
 /* ---- the store cannot be mutated through what it hands out ------------- */
 
 {
@@ -336,6 +391,40 @@ function loadTwoTabs(seed) {
   eq(b.events.length, before + 1, 'and announces the change so stars and the strip re-render');
   b.fire('storage', { key: 'some_other_key' });
   eq(b.events.length, before + 1, 'unrelated storage keys are ignored');
+}
+
+/* ---- set(): a press carries its intent, not a flip --------------------- */
+
+{
+  const { api, dataLayer, events } = load();
+  eq(api.set({ type: 'style', value: 'Bold', label: 'Bold' }, true), true, 'set(rec, true) saves an absent record');
+  eq(api.has('style', 'Bold'), true, 'and it is stored');
+  const rows = dataLayer.length;
+  const evs = events.length;
+  eq(api.set({ type: 'style', value: 'Bold', label: 'Bold' }, true), true, 'set(rec, true) on a saved record keeps it saved');
+  eq(api.has('style', 'Bold'), true, 'rather than removing it the way toggle() would');
+  eq(dataLayer.length, rows, 'a no-op set records no save_style row');
+  eq(events.length, evs, 'and announces no change');
+  eq(api.set({ type: 'style', value: 'Bold' }, false), false, 'set(rec, false) removes a saved record');
+  eq(api.has('style', 'Bold'), false, 'and it is gone');
+  eq(api.set({ type: 'style', value: 'Bold' }, false), false, 'set(rec, false) on an absent record is a no-op');
+  eq(dataLayer.map((e) => e.event), ['save_style', 'unsave_style'], 'only the two real changes fired events');
+  eq(api.set({ type: 'font', value: 'x' }, true), null, 'set() rejects a malformed record like toggle()');
+}
+
+{
+  // The defect set() exists for. Tab B painted its star while the store was
+  // empty; tab A then saved the style. B's visitor sees "Save" and presses it.
+  // toggle() re-read the store, found the style, and REMOVED it. set(…, true)
+  // re-reads the same store and leaves it saved.
+  const { a, b } = loadTwoTabs();
+  a.api.toggle({ type: 'style', value: 'Ultra Bold', label: 'Ultra Bold' });
+  eq(b.api.has('style', 'Ultra Bold'), false, 'the stale tab still believes the style is unsaved');
+  eq(b.api.set({ type: 'style', value: 'Ultra Bold', label: 'Ultra Bold' }, true), true,
+    'pressing a stale "Save" in the other tab keeps the item saved');
+  eq(JSON.parse(a.storage.getItem('utg_saved_items')).map((r) => r.value), ['Ultra Bold'],
+    'the stored list still holds it, once');
+  eq(b.api.has('style', 'Ultra Bold'), true, 'and the stale tab now knows it is saved');
 }
 
 /* ---- report ------------------------------------------------------------ */

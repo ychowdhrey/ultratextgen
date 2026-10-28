@@ -29,7 +29,7 @@
       "symbols": [
         { "char": "🟨", "label": "Tarjeta amarilla (cuadrado amarillo)" },
         { "char": "🟥", "label": "Tarjeta roja (cuadrado rojo)" },
-        { "char": "🟧", "label": "Cuadrado naranja (segunda amarilla)" },
+        { "char": "🟧", "label": "Cuadrado naranja" },
         { "char": "⬛", "label": "Cuadrado negro" },
         { "char": "⬜", "label": "Cuadrado blanco" },
         { "char": "🎴", "label": "Cartas de flores" }
