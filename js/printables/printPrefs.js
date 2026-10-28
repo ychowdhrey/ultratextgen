@@ -401,6 +401,30 @@
     });
     try { localStorage.setItem(RECENT_KEY, JSON.stringify(list.slice(0, RECENT_MAX))); } catch (err) { /* optional */ }
   }
+  /* Remove query parameters from every remembered link, e.g. ["roster"]
+     when a visitor clears a class list: the links keep working, and the
+     names no longer sit in storage. Two links that become the same are kept
+     once, the newer first. */
+  function scrubRecent(params) {
+    const seen = {};
+    const list = readRecent().map(function (r) {
+      if (!r || !r.href) return r;
+      try {
+        const u = new URL(r.href, window.location.href);
+        params.forEach(function (k) { u.searchParams.delete(k); });
+        const href = /^[a-z][a-z0-9+.-]*:/i.test(r.href) ? u.href : u.pathname + u.search + u.hash;
+        return Object.assign({}, r, { href: href });
+      } catch (err) { return r; }
+    }).filter(function (r) {
+      if (!r || !r.href || seen[r.href]) return false;
+      seen[r.href] = true;
+      return true;
+    });
+    try {
+      if (list.length) localStorage.setItem(RECENT_KEY, JSON.stringify(list));
+      else localStorage.removeItem(RECENT_KEY);
+    } catch (err) { /* optional */ }
+  }
   function stripInto(mount, title, rows, clearText, onClear) {
     mount.innerHTML = "";
     if (!rows.length) { mount.hidden = true; return; }
@@ -983,6 +1007,7 @@
     stateSummary: stateSummary,
     readRecent: readRecent,
     rememberRecent: rememberRecent,
+    scrubRecent: scrubRecent,
     renderRecentInto: renderRecentInto,
     renderSavedInto: renderSavedInto,
     buildMemoryStrips: buildMemoryStrips,

@@ -768,6 +768,8 @@ async function main() {
     await page.reload({ waitUntil: 'load' });
     await page.waitForTimeout(700);
     const clearBtn = page.locator('.pt-roster-clear');
+    // A remembered list waits behind "Whole class" (case 25).
+    await page.click('.pt-audience-field .pt-choice[data-value="class"]');
     check('the saved list is back in the box and Clear names shows', (await page.inputValue('#pt-name-roster')).includes('Noah') && await clearBtn.isVisible());
     await clearBtn.click();
     check('Clear names empties the box', (await page.inputValue('#pt-name-roster')) === '');
@@ -1238,6 +1240,47 @@ async function main() {
     }
     check('no page errors', !errors.length, errors.join(' | '));
     await ctx.close();
+  }
+
+  // 25. A remembered class never prints in place of the name on screen, and
+  // Clear names forgets it everywhere it is stored. A remembered class reopened
+  // on "Whole class", so an untouched Download printed last week's class; and
+  // each "Your recent sheets" link carried roster=<every name>, which Clear
+  // names left behind. Both found by a live audit on 2026-10-25.
+  console.log('\n/printables/name-tracing/ (a saved class waits behind Whole class; Clear names scrubs recents)');
+  {
+    const { ctx, page, errors } = await open('/printables/name-tracing/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+    await page.click('.pt-audience-field .pt-choice[data-value="class"]');
+    await page.fill('#pt-name-roster', 'Zoe\nJose\nAva');
+    await page.waitForTimeout(1100);
+    await page.evaluate(() => window.UltraTextGen.printPrefs.rememberRecent({ href: location.origin + '/printables/name-tracing/?name=Zoe&roster=Zoe%7CJose%7CAva', label: 'Zoe', page: 'Name tracing', sheet: 'name' }));
+    await page.reload({ waitUntil: 'load' });
+    await page.waitForTimeout(700);
+    const aud = await page.evaluate(() => document.getElementById('pt-name-roster').dataset.ptAudience);
+    const cost = await page.evaluate(() => { const c = document.querySelector('.pt-sheet-cost'); return c ? c.textContent : ''; });
+    check('a remembered class opens on One sheet: one sheet, not three', aud === 'one' && !/^3 sheets/.test(cost), aud + ' / ' + cost);
+    check('Whole class says how many names are saved', /3 saved names/.test(await page.textContent('.pt-audience-field .pt-choice[data-value="class"]')));
+    await page.click('.pt-audience-field .pt-choice[data-value="class"]');
+    check('Whole class brings the saved list back', (await page.inputValue('#pt-name-roster')).includes('Jose'));
+    await page.click('.pt-roster-clear');
+    const recent = await page.evaluate(() => localStorage.getItem('utg_printables_recent') || '');
+    check('Clear names removes the class from the recent-sheet links', recent.includes('name-tracing') && !/roster=|Jose/.test(recent), recent);
+    await page.goto(BASE + '/printables/name-tracing/?roster=Mia%7CLeo', { waitUntil: 'load' });
+    await page.waitForTimeout(700);
+    check('a ?roster= link still opens on Whole class', (await page.evaluate(() => document.getElementById('pt-name-roster').dataset.ptAudience)) === 'class');
+    } catch (e) {
+      check('saved class: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+    const bl = await open('/printables/block-letters/', 'desktop');
+    await bl.page.evaluate(() => localStorage.setItem('utg_printables_roster', 'Emma\nNoah'));
+    await bl.page.reload({ waitUntil: 'load' });
+    await bl.page.waitForTimeout(700);
+    check('block-letters keeps its previous behaviour (remembered class opens on Whole class)', (await bl.page.evaluate(() => { const r = document.getElementById('pt-name-roster'); return r && r.dataset.ptAudience; })) === 'class');
+    await bl.ctx.close();
   }
 
   // 23. A pasted word list means one thing in all three puzzle makers. On

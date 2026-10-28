@@ -8991,7 +8991,34 @@
     $$(".pt-choice", box).forEach((b) => {
       b.addEventListener("click", () => setRosterAudience(mount, b.dataset.value));
     });
-    setRosterAudience(mount, mount.value.trim() ? "class" : "one", { quiet: true });
+    /* A list that arrives in a ?roster= link opens on "Whole class": the
+       sender meant the class. A list this device remembered from an earlier
+       visit opens on "One sheet" and waits behind "Whole class", which says
+       how many names are saved: restoring it on "Whole class" made an
+       untouched Download print last week's class under the name on screen
+       (name-tracing: preview "Emma", PDF five pages). Nothing has been typed
+       yet when this runs, so a filled box with no ?roster= is the memory.
+       The frozen block-letters page keeps its behaviour (BATCH_FROZEN). */
+    const filled = !!mount.value.trim();
+    const remembered = filled && !presetGet("roster") && !BATCH_FROZEN;
+    setRosterAudience(mount, filled && !remembered ? "class" : "one", { quiet: true });
+    if (remembered) markSavedRoster(mount, box);
+  }
+  /* "3 saved names" under "Whole class", in the languages that have the
+     string; elsewhere the switch says nothing extra, as before. It goes with
+     the first edit of the list or with "Clear names". */
+  const AUDIENCE_SAVED_I18N = { en: (n) => n === 1 ? "1 saved name" : n + " saved names" };
+  function markSavedRoster(mount, box) {
+    const fmt = AUDIENCE_SAVED_I18N[LANG];
+    const btn = box && $$(".pt-choice", box).find((b) => b.dataset.value === "class");
+    if (!fmt || !btn) return;
+    const n = mount.value.split(/\r?\n/).filter((s) => s.trim()).length;
+    const note = document.createElement("small");
+    note.className = "pt-choice-saved";
+    note.textContent = fmt(n);
+    btn.appendChild(note);
+    const drop = () => { note.remove(); mount.removeEventListener("input", drop); };
+    mount.addEventListener("input", drop);
   }
   /* "Clear names": the roster is remembered on this device between visits
      (readRoster/writeRoster), and until now the only way to forget a class on
@@ -9016,6 +9043,11 @@
     btn.addEventListener("click", () => {
       mount.value = "";
       writeRoster("");
+      /* The class also sits in "Your recent sheets": each entry is a link
+         that carries roster=Emma|Noah|Ava. Clearing the box and leaving
+         those would forget the list in one place and keep it in another. */
+      if (PP && PP.scrubRecent) PP.scrubRecent(["roster"]);
+      renderRecent();
       mount.dispatchEvent(new Event("input", { bubbles: true }));
       setRosterAudience(mount, "one", { quiet: true });
       sync();
