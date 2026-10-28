@@ -6,7 +6,7 @@
   "breadcrumb": "Mobile Legends Name Symbols",
   "hero_h1": "Mobile Legends Name Symbols",
   "hero_tagline": "Superscript rank letters, epic kanji, flourishes, and ready-made MLBB nick decorations. Click any symbol to copy it instantly.",
-  "intro": "Looking for nama ML keren? Mobile Legends nick style has its own signature moves: tiny superscript letters that spell ᴳᵒᵈ or ᴹᴸ before a name, a single kanji like 狼 or 月 for mystery, and the ︻デ═一 sniper tag that every squad has seen in the loading screen. MLBB's name change card accepts these Unicode characters, so they show up in lobbies, rank boards, and squad pages. Copy individual Mobile Legends name symbols below, or take a finished nick decoration and drop your own name in.",
+  "intro": "Looking for nama ML keren, or a copy-paste IGN (in-game name) for ML? Mobile Legends nick style has its own signature moves: tiny superscript letters that spell ᴳᵒᵈ or ᴹᴸ before a name, a single kanji like 狼 or 月 for mystery, and the ︻デ═一 sniper tag that every squad has seen in the loading screen. MLBB validates every name you enter, and decorative symbols are sometimes refused, so paste your nick into the rename box and check that it saves before you spend a name change card. Characters that do get through show up in lobbies, rank boards, and squad pages. Copy individual Mobile Legends name symbols below, or take a finished nick decoration and drop your own name in.",
   "date_published": "2026-06-12",
   "date_modified": "2026-06-12",
   "copy_pattern": "collection",
@@ -167,7 +167,7 @@
       "id": "nick-brackets",
       "label": "Nick Brackets",
       "h2": "Bracket Frames for Squad Names",
-      "intro": "Mathematical and ornament brackets that read cleanly around five-character squad tags.",
+      "intro": "Mathematical and ornament brackets that read cleanly around a short squad name or tag.",
       "symbols": [
         {
           "char": "〔",
