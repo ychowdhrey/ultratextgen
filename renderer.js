@@ -590,6 +590,215 @@ function renderMap(text, style) {
   }
 
   /* -----------------------------
+     LOCALE CASE POLICY (opt-in per page)
+     Title, Capitalized and Sentence case above were written for English: one
+     English small-word list, English surname fixes. On a German page
+     "der hund und die katze" became "Der Hund Und Die Katze".
+
+     A page opts in with <html lang="xx" data-case-policy="locale">. Without
+     that attribute every procedure runs the code above, unchanged, so a page
+     that has not been cleared (a protected revenue page, the homepages that
+     list every style) renders exactly what it rendered before. A page whose
+     language has no entry here also stays on the code above: an unverified
+     language keeps its old output rather than getting an invented rule.
+
+     Each entry is a language's minor words: the words Title Case leaves
+     lowercase unless they open the text. They are closed word classes
+     (articles, coordinating conjunctions, short prepositions), and each list
+     names the rule it comes from:
+       en  the list above (Chicago-style title case), unchanged
+       tr  TDK / Dil Derneği: in a title, "ve, de, ile, ki, ya, ya da" and the
+           question particle "mi" stay lowercase (da, veya, mı/mu/mü are the
+           same words in their other written forms)
+       id  PUEBI (Permendikbud 50/2015): every word of a title is capitalised
+           "kecuali kata tugas, seperti di, ke, dari, dan, yang, dan untuk";
+           only the enumerated six are used
+       es  RAE Ortografía 2010: names of periodicals and collections
+           capitalise nouns and adjectives ("El Barco de Vapor")
+       pt  Acordo Ortográfico 1990, Base XIX: words after the first in a title
+           may be capitalised, function words stay lowercase ("Menino de Engenho")
+       pl  PWN: in institution names every word is capitalised except
+           conjunctions and prepositions
+       de, fr, it, nl  no native title-case convention (headings capitalise the
+           first word only, German also nouns). Title Case keeps the meaning
+           every case-converter page gives it, "articles, conjunctions and
+           short prepositions stay lowercase", applied to that language's own
+           articles, conjunctions and prepositions.
+     capLast: the last word is capitalised even when minor (English rule).
+     TDK and PUEBI exempt only the first word, so tr and id keep it lowercase.
+
+     The page language is a guess about the text, not a fact: people paste
+     English into a German page. So Title Case counts the minor words that
+     belong to only one of the two lists and uses English rules when English
+     has more of them, the page language's when it has more, and both lists
+     on a tie. "i" is not counted: it is English, Polish and Italian.
+
+     Uncased scripts (ko, ja, zh) have nothing to convert; Latin text typed
+     on those pages is read as English, which is what the pages say it is.
+
+     Policy-only fixes, all from Unicode case data: a letter outside the BMP
+     is capitalised as one character (the old code split its surrogate pair),
+     the Latin digraph letters take their titlecase form (ǆ -> ǅ), and Dutch
+     capitalises IJ as one letter (ijs -> IJs). French and Italian elided
+     articles (l', d', dell', ...) are split so the word after them is
+     capitalised: "la communauté de l'anneau" -> "La Communauté de l'Anneau".
+     English surname fixes (McDavid, O'Brien) and the pronoun "i" run only
+     when the text reads as English.
+     ----------------------------- */
+  function caseWordSet(words) {
+    return new Set(words.split(' '));
+  }
+
+  const CASE_POLICIES = {
+    en: { minor: CASE_SMALL_WORDS, capLast: true, english: true },
+    de: { minor: caseWordSet('der die das den dem des ein eine einer eines einem einen ' +
+      'und oder aber sondern denn als wie an am auf aus bei beim im in mit nach von vom ' +
+      'vor zu zum zur für um über unter durch gegen ohne bis'), capLast: true },
+    es: { minor: caseWordSet('el la los las lo un una unos unas y e o u ni pero que ' +
+      'a al de del en con por para sin sobre entre hasta desde hacia'), capLast: true },
+    fr: { minor: caseWordSet('le la les un une des du de au aux et ou ni mais ' +
+      'à en dans par pour sur sous sans avec chez entre vers'), capLast: true,
+      elision: caseWordSet('l d') },
+    it: { minor: caseWordSet('il lo la i gli le un uno una e ed o od ma né ' +
+      'di del dello della dei degli delle a ad al allo alla ai agli alle ' +
+      'da dal dallo dalla dai dagli dalle in nel nello nella nei negli nelle ' +
+      'con col su sul sullo sulla sui sugli sulle per tra fra'), capLast: true,
+      elision: caseWordSet('l d un dell all dall nell sull') },
+    nl: { minor: caseWordSet('de het een en of maar van in op met voor naar aan bij ' +
+      'uit om tot te door over onder'), capLast: true, ij: true },
+    pl: { minor: caseWordSet('i a o u w we z ze na do od po za ku pod nad przy przez ' +
+      'dla bez oraz lub albo czy ale lecz'), capLast: true },
+    pt: { minor: caseWordSet('o a os as um uma uns umas e ou nem mas de do da dos das ' +
+      'em no na nos nas num numa por pelo pela pelos pelas para com sem sobre entre ' +
+      'até ao aos à às'), capLast: true },
+    tr: { minor: caseWordSet('ve de da ile ki ya veya mi mı mu mü'), capLast: false },
+    id: { minor: caseWordSet('di ke dari dan yang untuk'), capLast: false },
+    ja: { uncased: true },
+    ko: { uncased: true },
+    zh: { uncased: true },
+    'zh-tw': { uncased: true },
+  };
+
+  // The policy for this page, or null for the unchanged code above.
+  function casePolicy() {
+    if (typeof document === 'undefined' || !document.documentElement ||
+        typeof document.documentElement.getAttribute !== 'function') return null;
+    if (document.documentElement.getAttribute('data-case-policy') !== 'locale') return null;
+    const lang = String(caseLocale() || '').toLowerCase();
+    return CASE_POLICIES[lang] || CASE_POLICIES[lang.split('-')[0]] || null;
+  }
+
+  function caseMinorKey(token) {
+    return caseLower(token.replace(/[^\p{L}]/gu, ''));
+  }
+
+  // Which rules a text gets on this page: English, the page language's, or
+  // both (see "The page language is a guess" above).
+  function caseTextRules(text, pol) {
+    const en = CASE_POLICIES.en;
+    if (pol.english || pol.uncased) return en;
+    let enScore = 0;
+    let locScore = 0;
+    for (const w of text.split(/\s+/)) {
+      const k = caseMinorKey(w);
+      if (!k || k === 'i') continue;
+      const inEn = en.minor.has(k);
+      const inLoc = pol.minor.has(k);
+      if (inEn && !inLoc) enScore++;
+      else if (inLoc && !inEn) locScore++;
+    }
+    if (enScore > locScore) return en;
+    if (locScore > enScore) return pol;
+    return { minor: new Set([...en.minor, ...pol.minor]), capLast: true,
+      elision: pol.elision, ij: pol.ij, english: false };
+  }
+
+  const CASE_DIGRAPH_TITLE = {
+    'Ǆ': 'ǅ', 'ǅ': 'ǅ', 'ǆ': 'ǅ', 'Ǉ': 'ǈ', 'ǈ': 'ǈ', 'ǉ': 'ǈ',
+    'Ǌ': 'ǋ', 'ǋ': 'ǋ', 'ǌ': 'ǋ', 'Ǳ': 'ǲ', 'ǲ': 'ǲ', 'ǳ': 'ǲ'
+  };
+
+  function casePolicyCapFirst(token, pol) {
+    const m = token.match(/\p{L}/u);
+    if (!m) return token;
+    const idx = m.index;
+    if (pol.ij && /^i[jJ]/.test(token.slice(idx, idx + 2))) {
+      return token.slice(0, idx) + 'IJ' + token.slice(idx + 2);
+    }
+    const ch = m[0];
+    const up = CASE_DIGRAPH_TITLE[ch] || caseUpper(ch);
+    return token.slice(0, idx) + up + token.slice(idx + ch.length);
+  }
+
+  function casePolicyCapWord(token, rules, pol) {
+    if (caseHasIntentionalCasing(token)) return token;
+    const capPol = { ij: pol.ij || rules.ij };
+    return token.split('-').map(seg => {
+      const out = casePolicyCapFirst(caseLower(seg), capPol);
+      return rules.english ? caseSurnameFix(out) : out;
+    }).join('-');
+  }
+
+  // "l'anneau" -> ['', 'l', "'", 'anneau'] when l is an elided article here.
+  function caseSplitElision(token, rules) {
+    if (!rules.elision) return null;
+    const m = token.match(/^([^\p{L}]*)(\p{L}+)(['’])(\p{L}.*)$/u);
+    if (!m || !rules.elision.has(caseLower(m[2]))) return null;
+    return m.slice(1);
+  }
+
+  function casePolicyWords(text, pol, wordFn) {
+    const src = caseUnshout(text);
+    const rules = caseTextRules(src, pol);
+    const words = src.split(/(\s+)/);
+    const idxs = words.map((w, i) => (w.trim() ? i : -1)).filter(i => i >= 0);
+    const ctx = { rules, first: idxs[0], last: idxs[idxs.length - 1] };
+    return words.map((w, i) => (w.trim() ? wordFn(w, i, ctx) : w)).join('');
+  }
+
+  function casePolicyTitle(text, pol) {
+    return casePolicyWords(text, pol, (w, i, { rules, first, last }) => {
+      const el = caseSplitElision(w, rules);
+      if (el) {
+        const [lead, art, apos, rest] = el;
+        const head = i === first
+          ? casePolicyCapFirst(caseLower(lead + art), rules)
+          : lead + caseLower(art);
+        return head + apos + casePolicyCapWord(rest, rules, pol);
+      }
+      const edge = i === first || (rules.capLast && i === last);
+      if (!edge && rules.minor.has(caseMinorKey(w))) return caseLowerWord(w);
+      return casePolicyCapWord(w, rules, pol);
+    });
+  }
+
+  function casePolicyCapitalized(text, pol) {
+    return casePolicyWords(text, pol, (w, i, { rules }) => {
+      const el = caseSplitElision(w, rules);
+      if (el) {
+        const [lead, art, apos, rest] = el;
+        return casePolicyCapFirst(caseLower(lead + art), rules) + apos +
+          casePolicyCapWord(rest, rules, pol);
+      }
+      return casePolicyCapWord(w, rules, pol);
+    });
+  }
+
+  function casePolicySentence(text, pol) {
+    let capNext = true;
+    return casePolicyWords(text, pol, (w, i, { rules }) => {
+      let out = caseLowerWord(w);
+      if (capNext && !caseHasIntentionalCasing(w)) {
+        out = casePolicyCapFirst(out, rules);
+        if (rules.english) out = caseSurnameFix(out);
+      }
+      if (rules.english && /^i(['’](m|ve|ll|d))?$/i.test(out)) out = 'I' + out.slice(1);
+      capNext = /[.!?]['")\]]*$/.test(w);
+      return out;
+    });
+  }
+
+  /* -----------------------------
      PROCEDURES
      ----------------------------- */
   const procedures = {
@@ -722,8 +931,11 @@ function renderMap(text, style) {
     'case-lower': text => caseLower(text),
 
     // First letter of every word capitalized, no small-word exceptions.
-    'case-capitalized': text =>
-      caseUnshout(text).split(/(\s+)/).map(w => (w.trim() ? caseCapWord(w) : w)).join(''),
+    'case-capitalized': text => {
+      const pol = casePolicy();
+      if (pol) return casePolicyCapitalized(text, pol);
+      return caseUnshout(text).split(/(\s+)/).map(w => (w.trim() ? caseCapWord(w) : w)).join('');
+    },
 
     // Title Case: capitalizes major words, lowercases short articles/
     // conjunctions/prepositions (unless first/last word), preserves acronyms
@@ -731,6 +943,8 @@ function renderMap(text, style) {
     // that also has lowercase letters. Text with no lowercase at all is
     // Caps-Lock text and is lower-cased first (see caseIsShouting).
     'case-title': text => {
+      const pol = casePolicy();
+      if (pol) return casePolicyTitle(text, pol);
       const words = caseUnshout(text).split(/(\s+)/);
       const wordIdxs = words.map((w, i) => (w.trim() ? i : -1)).filter(i => i >= 0);
       const first = wordIdxs[0];
@@ -749,6 +963,8 @@ function renderMap(text, style) {
     // rest lowercase (except acronyms/intentional caps), and fixes the
     // standalone pronoun "i" / "i'm" / "i've" / "i'll" / "i'd".
     'case-sentence': text => {
+      const pol = casePolicy();
+      if (pol) return casePolicySentence(text, pol);
       let capNext = true;
       return caseUnshout(text).split(/(\s+)/).map(w => {
         if (!w.trim()) return w;
@@ -891,7 +1107,9 @@ function renderRedact(text, style) {
      EXPOSE GLOBAL
      ----------------------------- */
   window.UltraTextGenRender = {
-    renderAny
+    renderAny,
+    // Languages with a verified case policy (read by check-case-policy.js).
+    casePolicyLanguages: Object.keys(CASE_POLICIES)
   };
 
 })();

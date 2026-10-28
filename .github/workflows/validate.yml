@@ -327,6 +327,32 @@ jobs:
         continue-on-error: true
         run: npm run check:runtime-smoke | tee runtime-smoke.log
 
+      # Locale case policy (renderer.js, LOCALE CASE POLICY). Gating, no
+      # backlog. The unit tests prove a page without data-case-policy renders
+      # byte-identical case output to the pre-policy renderer in every page
+      # language (fixture digests), that the opt-in changes no other style, and
+      # the per-language Title/Capitalized/Sentence expectations. The new-page
+      # test builds a page through build_category_locale_pages.py and proves it
+      # inherits the policy. The gate fails a case-converter page added on this
+      # branch without data-case-policy, or one opting in for a language with
+      # no verified policy. The browser check compares every case-converter
+      # page's copy buttons in Chromium with the Node result (locale data can
+      # differ between runtimes); it exits 2 (UNKNOWN) without a browser.
+      - name: Run case policy tests
+        id: case_policy_tests
+        continue-on-error: true
+        run: (npm run test:case-policy && npm run test:case-policy-newpage) | tee case-policy-tests.log
+
+      - name: Run case policy check
+        id: case_policy
+        continue-on-error: true
+        run: npm run check:case-policy -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee case-policy.log
+
+      - name: Run case policy browser check
+        id: case_policy_browser
+        continue-on-error: true
+        run: npm run test:case-policy-browser | tee case-policy-browser.log
+
       # Gating, no backlog: the Japanese worksheet pages under /ja/purinto/,
       # rendered. Each page's real PDF button must give the pages it promised,
       # at A4, placed 1:1 (a 22mm masu is 22mm on paper); the print path must
@@ -1360,6 +1386,11 @@ jobs:
             cat skin-tone-tests.log
             echo '```'
             echo ""
+            echo "### Case policy tests — \`${{ steps.case_policy_tests.outcome }}\` · gate — \`${{ steps.case_policy.outcome }}\` · browser — \`${{ steps.case_policy_browser.outcome }}\`"
+            echo '```'
+            cat case-policy-tests.log case-policy.log case-policy-browser.log
+            echo '```'
+            echo ""
             echo "### Numeric parity check — \`${{ steps.numeric_parity.outcome }}\`"
             echo '```'
             cat numeric-parity.log
@@ -1586,6 +1617,9 @@ jobs:
           steps.share_save_tags.outcome == 'failure' ||
           steps.playwright_install.outcome == 'failure' ||
           steps.runtime_smoke.outcome == 'failure' ||
+          steps.case_policy_tests.outcome == 'failure' ||
+          steps.case_policy.outcome == 'failure' ||
+          steps.case_policy_browser.outcome == 'failure' ||
           steps.glyph_metrics_tag.outcome == 'failure' ||
           steps.explorer_strings.outcome == 'failure' ||
           steps.saved_items_tests.outcome == 'failure' ||
