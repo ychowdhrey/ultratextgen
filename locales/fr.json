@@ -238,6 +238,15 @@
       "plain": "Copier la version simple",
       "emoji": "Copier la version emoji",
       "note": "Certaines applis l’affichent quand même en couleur."
+    },
+    "skinTone": {
+      "label": "Couleur de peau",
+      "default": "Par défaut (jaune)",
+      "light": "Claire",
+      "mediumLight": "Moyennement claire",
+      "medium": "Intermédiaire",
+      "mediumDark": "Moyennement foncée",
+      "dark": "Foncée"
     }
   },
   "useCases": {

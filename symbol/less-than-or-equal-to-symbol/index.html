@@ -159,7 +159,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {
       "@type": "Question",
       "name": "What's the difference between ≤, ≦, and ⩽?",
-      "acceptedAnswer": { "@type": "Answer", "text": "All three mean \"less than or equal to,\" but they're different Unicode characters from different traditions: ≤ (U+2264) is the everyday version used almost everywhere; ≦ (U+2266) stacks the equals sign in a double-line form seen in some older or East Asian texts; ⩽ (U+2A7D) uses a single slanted bar and is the form preferred by the ISO 31-11 mathematical standard. They render similarly in casual use but are not the same codepoint." }
+      "acceptedAnswer": { "@type": "Answer", "text": "All three mean \"less than or equal to,\" but they're different Unicode characters from different traditions: ≤ (U+2264) is the everyday version used almost everywhere; ≦ (U+2266) stacks a double-line equals sign under the < and is the form Japanese schools teach (Japan's JIS X 0213 character set counts ≤ and ≦ as one character); ⩽ (U+2A7D) uses a single slanted bar and is the form preferred by the ISO 31-11 mathematical standard. They render similarly in casual use but are not the same codepoint." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use ≤ in an Excel or Google Sheets formula?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Spreadsheet formulas compare with the two characters <=, as in =IF(A1<=5,\"yes\",\"no\"). A ≤ typed into a formula is text, not a comparison operator, so the formula does not test what it seems to. Keep ≤ for labels, headings and printed tables, and type <= inside the formula itself." }
     }
   ]
 }
@@ -243,8 +248,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <span class="flag-label">Less-Than or Equal To (Math)</span>
     </div>
     <div class="flag-row">
-      <button class="flag-emoji symbol-tile" data-symbol="&lt;=" aria-label="Copy Less Than or Equal To (Code: C, Python, JavaScript, Java, SQL)">&lt;=</button>
-      <span class="flag-label">Less Than or Equal To (Code: C, Python, JavaScript, Java, SQL)</span>
+      <button class="flag-emoji symbol-tile" data-symbol="&lt;=" aria-label="Copy Less Than or Equal To (Code: C, Python, JavaScript, Java, SQL; Excel and Google Sheets formulas)">&lt;=</button>
+      <span class="flag-label">Less Than or Equal To (Code: C, Python, JavaScript, Java, SQL; Excel and Google Sheets formulas)</span>
     </div>
   </div>
 </section>
@@ -257,8 +262,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <p class="u-secondary-tight">These all mean roughly the same thing but are distinct Unicode characters from different typesetting traditions.</p>
   <div class="flag-rows">
     <div class="flag-row">
-      <button class="flag-emoji symbol-tile" data-symbol="≦" aria-label="Copy Less-Than Over Equal To (U+2266)">≦</button>
-      <span class="flag-label">Less-Than Over Equal To (U+2266)</span>
+      <button class="flag-emoji symbol-tile" data-symbol="≦" aria-label="Copy Less-Than Over Equal To (U+2266): the form Japanese schools teach">≦</button>
+      <span class="flag-label">Less-Than Over Equal To (U+2266): the form Japanese schools teach</span>
     </div>
     <div class="flag-row">
       <button class="flag-emoji symbol-tile" data-symbol="⩽" aria-label="Copy Less-Than or Slanted Equal To (U+2A7D): the ISO 31-11 preferred form">⩽</button>
@@ -380,7 +385,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="faq-item">
     <button class="faq-question" type="button">What's the difference between ≤, ≦, and ⩽?</button>
     <div class="faq-answer">
-      <p>All three mean "less than or equal to," but they're different Unicode characters from different traditions: ≤ (U+2264) is the everyday version used almost everywhere; ≦ (U+2266) stacks the equals sign in a double-line form seen in some older or East Asian texts; ⩽ (U+2A7D) uses a single slanted bar and is the form preferred by the ISO 31-11 mathematical standard. They render similarly in casual use but are not the same codepoint.</p>
+      <p>All three mean "less than or equal to," but they're different Unicode characters from different traditions: ≤ (U+2264) is the everyday version used almost everywhere; ≦ (U+2266) stacks a double-line equals sign under the &lt; and is the form Japanese schools teach (Japan's JIS X 0213 character set counts ≤ and ≦ as one character); ⩽ (U+2A7D) uses a single slanted bar and is the form preferred by the ISO 31-11 mathematical standard. They render similarly in casual use but are not the same codepoint.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Can I use ≤ in an Excel or Google Sheets formula?</button>
+    <div class="faq-answer">
+      <p>No. Spreadsheet formulas compare with the two characters &lt;=, as in <code>=IF(A1&lt;=5,"yes","no")</code>. A ≤ typed into a formula is text, not a comparison operator, so the formula does not test what it seems to. Keep ≤ for labels, headings and printed tables, and type &lt;= inside the formula itself.</p>
     </div>
   </div>
 </section>

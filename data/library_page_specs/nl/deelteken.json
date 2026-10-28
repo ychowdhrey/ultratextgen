@@ -10,7 +10,7 @@
   "copy_pattern": "single",
   "slug": "deelteken",
   "title": "Deelteken: Kopieer en Plak ÷ (Obelus)",
-  "meta_description": "Wat het deelteken ÷ betekent, waar de obelus vandaan komt (1659) en hoe je het typt — plus de verwarrende buurtekens ∕ en ⁄. Klik om te kopiëren.",
+  "meta_description": "Wat het deelteken ÷ betekent, waar de obelus vandaan komt (1659) en hoe je het typt, plus de verwarrende buurtekens ∕ en ⁄. Klik om te kopiëren.",
   "canonical": "https://ultratextgen.com/nl/symbol/deelteken/",
   "breadcrumb": "Deelteken",
   "hero_h1": "Deelteken (÷)",
@@ -60,6 +60,14 @@
         {
           "char": "/",
           "label": "Gewone Schuine Streep (U+002F): de gewone toetsenbordslash"
+        },
+        {
+          "char": "∣",
+          "label": "Deelt (U+2223): een relatie, geen bewerking; 3 ∣ 12 lees je als \"3 deelt 12\""
+        },
+        {
+          "char": "|",
+          "label": "Verticale Streep (U+007C): de pipe-toets op het toetsenbord, in platte tekst vaak getypt in plaats van ∣"
         }
       ]
     },

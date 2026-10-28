@@ -88,6 +88,14 @@
     return null;
   }
 
+  /* Published Spring Festival dates, 2026-2032, checked against the
+     Chinese public-holiday calendar and travel-calendar listings on
+     2026-10-24. Past the last entry the ICU calculation takes over. */
+  const CHINESE_NEW_YEAR = [
+    "2026-02-17", "2027-02-06", "2028-01-26", "2029-02-13",
+    "2030-02-03", "2031-01-23", "2032-02-11",
+  ];
+
   const LUNAR = {
     // Eid al-Fitr: 1 Shawwal. Eid al-Adha: 10 Dhu al-Hijjah. Ramadan: 1 Ramadan.
     islamic: function (rule, from) {
@@ -95,7 +103,19 @@
     },
     // Chinese New Year is the 1st day of the 1st month.
     chinese: function (rule, from) {
-      return nextInCalendar("chinese", Number(rule.month || 1), Number(rule.day || 1), from);
+      const month = Number(rule.month || 1);
+      const day = Number(rule.day || 1);
+      if (month === 1 && day === 1) {
+        // ICU's astronomical Chinese calendar lands a day late for 2027 and
+        // 2030 (it reports 7 Feb 2027 and 2 Feb 2030; the published
+        // calendar has 6 Feb 2027 and 3 Feb 2030). For the years below the
+        // date is the officially published one, not a calculation.
+        for (let i = 0; i < CHINESE_NEW_YEAR.length; i++) {
+          const d = parseISO(CHINESE_NEW_YEAR[i]);
+          if (d && d >= from) return d;
+        }
+      }
+      return nextInCalendar("chinese", month, day, from);
     },
   };
 
