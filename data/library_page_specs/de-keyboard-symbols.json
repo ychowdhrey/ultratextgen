@@ -115,6 +115,78 @@
           "label": "Druck-Taste"
         }
       ]
+    },
+    {
+      "id": "iso-function-key-symbols",
+      "label": "ISO-Tasten",
+      "h2": "ISO-Symbole für Funktionstasten",
+      "intro": "Tastensymbole aus der internationalen Tastaturnorm ISO/IEC 9995-7. Manche PC-, Terminal- und Linux-Tastaturen tragen sie statt Wörtern: Alt, Compose, Einfügen, Pause, Rückgängig und die Seitentasten. Auf dem Mac stehen ⌤ und ⌧ für die Enter- und Clear-Taste des Ziffernblocks.",
+      "symbols": [
+        {
+          "char": "⌤",
+          "label": "Enter-Taste (Pfeilspitze zwischen zwei Balken)"
+        },
+        {
+          "char": "⌧",
+          "label": "Löschtaste Clear (X im Rechteck)"
+        },
+        {
+          "char": "⎀",
+          "label": "Einfügetaste (Einfügezeichen)"
+        },
+        {
+          "char": "⎁",
+          "label": "Taste für durchgehende Unterstreichung"
+        },
+        {
+          "char": "⎂",
+          "label": "Taste für unterbrochene Unterstreichung"
+        },
+        {
+          "char": "⎃",
+          "label": "Hervorhebungstaste"
+        },
+        {
+          "char": "⎄",
+          "label": "Compose-Taste (Zusammensetzungszeichen)"
+        },
+        {
+          "char": "⎆",
+          "label": "Eingabetaste (ISO-Zeichen)"
+        },
+        {
+          "char": "⎇",
+          "label": "Alt-Taste (Zeichen für Alternativtaste)"
+        },
+        {
+          "char": "⎉",
+          "label": "Pause-Taste (Kreis mit Querbalken und Kerbe)"
+        },
+        {
+          "char": "⎊",
+          "label": "Unterbrechungstaste (Kreis mit Dreieck nach unten)"
+        },
+        {
+          "char": "⎌",
+          "label": "Rückgängig-Taste"
+        },
+        {
+          "char": "⎖",
+          "label": "Dezimaltrennzeichen-Taste"
+        },
+        {
+          "char": "⎗",
+          "label": "Bild-auf-Taste (vorherige Seite)"
+        },
+        {
+          "char": "⎘",
+          "label": "Bild-ab-Taste (nächste Seite)"
+        },
+        {
+          "char": "⎚",
+          "label": "Bildschirm-löschen-Taste"
+        }
+      ]
     }
   ],
   "faq_h2": "Häufige Fragen zu Tastatur-Symbolen",

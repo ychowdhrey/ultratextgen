@@ -140,7 +140,16 @@
   <div class="editorial-block">
     <p>Ketik nama atau kalimat pendek, lalu bandingkan beberapa gaya kaligrafi sebelum memilih. Berguna untuk hiasan undangan, sampul buku, mahar, atau sekadar contoh bentuk huruf yang ingin ditiru dengan tangan.</p>
   </div>
-  <div id="pt-name-tool"></div>
+  <div class="pt-name-tool">
+    <div class="input-wrapper">
+      <input type="text" class="main-input pt-name-input" id="pt-name-input" placeholder="Ketik nama apa pun" maxlength="40" aria-label="Ketik nama atau kalimat pendek">
+    </div>
+    <div class="pt-name-preview" id="pt-name-preview" aria-live="polite"></div>
+    <div class="bubble-actions pt-name-actions">
+      <button type="button" class="bubble-btn bubble-btn-primary" id="pt-name-print">Unduh PDF</button>
+      <button type="button" class="bubble-btn" id="pt-name-png">Unduh PNG</button>
+    </div>
+  </div>
 </section>
 
 <div class="section-divider"></div>

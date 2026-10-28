@@ -1007,6 +1007,11 @@ def render_page(spec):
     next_date_html = ""
     if upcoming or is_lunar(occurrence):
         prefix = tr(language, gendered(spec, "next_date_prefix"), event_name=esc(event_name))
+        # The template is read back with getAttribute() and written with
+        # textContent (js/events/eventDates.js), so it holds plain text and is
+        # escaped once, here. Built from esc(event_name) it was escaped twice,
+        # and an "&" in the event name showed up on the page as "&amp;".
+        prefix_text = tr(language, gendered(spec, "next_date_prefix"), event_name=event_name)
         if upcoming:
             attr = f' data-event-dates="{esc_attr(json.dumps([d.isoformat() for d in upcoming]))}"'
             body = prefix + format_date(upcoming[0], language)
@@ -1017,7 +1022,7 @@ def render_page(spec):
             hidden = " hidden"
         next_date_html = (
             f'\n      <p class="event-next-date" id="eventNextDate"{attr}'
-            f' data-template="{esc_attr(prefix)}{{date}}"{hidden}>{body}</p>'
+            f' data-template="{esc_attr(prefix_text)}{{date}}"{hidden}>{body}</p>'
         )
 
     # "<Event> in <script>" — its own section, because "eid mubarak in arabic"

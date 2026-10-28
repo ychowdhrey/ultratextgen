@@ -15,26 +15,46 @@
  * recent sheets), shared printablePdf.js, shared header.js credit and
  * printable_output telemetry.
  *
+ * The journey (reordered 2026-10-25 after a live-browser audit): the name
+ * comes first and starts empty, the sheet answers it at once, and every
+ * later choice refines the sheet without undoing an earlier one.
+ *   - The example name lives in the preview only (greyed, badged), never in
+ *     the field. A field pre-filled with a sample read as a finished value,
+ *     and a remembered sample turned "click, type Ava" into "Maya LopezAva".
+ *   - "What is it for?" sets the label size and the example lines. It never
+ *     changes a size or a label sheet the visitor chose (it suggests
+ *     instead), and never retargets a list the visitor typed. A preset that
+ *     did both printed a week of dates as the child's name and moved an
+ *     Avery 5160 sheet's labels onto a 5163 grid.
+ *   - A list REPLACES the field it fills (the field is hidden and a note
+ *     takes its place); nothing is ever disabled.
+ *   - Dated daycare labels are their own setting, never text in the list.
+ *
  * Mount points (all optional except #lb-preview):
- *   #lb-what            .pt-choice-row  "What are you labeling?" presets
+ *   #lb-what            .pt-choice-row  "What is it for?" presets
  *   #lb-name            the name input
  *   #lb-line2 #lb-line3 the detail lines (class, date, subject, ...)
+ *   #lb-mode            .pt-choice-row  one / list
  *   #lb-list            textarea: one label set per line (names or subjects)
- *   #lb-list-target     select: what each list line replaces
- *   #lb-copies          select: labels per list entry
- *   #lb-stock           select: what the sheet is printed on
- *   #lb-size            select: label size (plain/sticker paper only)
+ *   #lb-list-target     select: what each list line fills
+ *   #lb-date-mode       .pt-choice-row  hand / print (dated labels)
+ *   #lb-copies          select: labels (per list entry)
+ *   #lb-on              .pt-choice-row  cut paper / label sheet
+ *   #lb-stock           select: which label sheet
+ *   #lb-size #lb-paper  selects: label size and paper (cut paper only)
  *   #lb-font            .pt-choice-row
  *   #lb-symbol          .pt-choice-row (optional picture)
  *   #lb-border          checkbox
  *   #lb-nudge-x/-y      alignment nudge in mm (label stock only)
  *   #lb-preview         the live preview (a canvas is put in it)
  *   #lb-summary         "30 labels · 1 page · Avery 5160" line
- *   #lb-warn            fit warnings (aria-live)
+ *   #lb-status          the polite live region (debounced summary + notes)
+ *   #lb-warn            fit warnings
  *   #lb-pdf #lb-test    Download PDF / alignment test page
+ *   #lb-sticky          the phone's sticky Download bar
  *
  * Nothing typed here ever reaches the dataLayer: the name and the list stay
- * in this tab and, when the visitor asks for it, in this device's
+ * in this tab and, once the visitor has typed something, in this device's
  * localStorage. Telemetry carries only the preset, the stock and the counts.
  */
 (function () {
@@ -54,26 +74,95 @@
   const I18N = {
     en: {
       labels: "labels", label: "label", page: "page", pages: "pages",
-      howMany: "How many", perNameCount: "Labels per name", perLineCount: "Labels per line", fromList: "Filled from your list", tooLong: "Some text is very small on this label size. Try a shorter line or a bigger label.",
+      howMany: "How many", perNameCount: "Labels per name", perLineCount: "Labels per line", tooLong: "Some text is very small on this label size. Try a shorter line or a bigger label.",
       empty: "Type a name to see your labels.",
       testTitle: "Alignment test: print on plain paper, hold it against your label sheet up to the light.",
       cutHint: "Cut along the grey lines",
       stockNote: "Print at 100% (Actual size). Fit to page moves every label.",
       fileName: "name-labels",
-      testFile: "label-alignment-test"
+      testFile: "label-alignment-test",
+      needName: "Type the name to print.", needList: "Type the list, one per line.",
+      example: "Example sheet", exampleEdit: "✎ Type your name", exampleSummary: "Example",
+      editName: "✎ Edit name", editList: "✎ Edit list",
+      pageOf: "Page {n} of {t}", prevPage: "Previous page", nextPage: "Next page",
+      keptSize: "Kept your {what}. {preset} usually uses {want}.", useIt: "Use it",
+      fromList: "Filled from your list below.", typeOne: "Type one instead",
+      dateHere: "Each day's date prints on this line.",
+      restored: "Your last labels are back: {what}.", startFresh: "Start fresh",
+      datesResult: "{n} labels: {first} to {last}, {per} a day", datesResultOne: "{n} labels for {first}",
+      maxLen: "40 characters is the most one line holds.",
+      closeUp: "One label, up close",
+      listCount: "{n} on your list"
+    },
+    pt: {
+      labels: "etiquetas", label: "etiqueta", page: "página", pages: "páginas",
+      howMany: "Quantas etiquetas", perNameCount: "Etiquetas por nome", perLineCount: "Etiquetas por linha", tooLong: "Algum texto ficou muito pequeno neste tamanho. Tente uma linha mais curta ou uma etiqueta maior.",
+      empty: "Digite um nome para ver as etiquetas.",
+      testTitle: "Teste de posição: imprima em papel comum, encoste na folha de etiquetas e olhe contra a luz.",
+      cutHint: "Recorte nas linhas cinza",
+      stockNote: "Imprima em 100% (tamanho real). Ajustar à página tira todas as etiquetas do lugar.",
+      fileName: "etiquetas-escolares",
+      testFile: "teste-posicao-etiquetas",
+      needName: "Digite o nome que vai na etiqueta.", needList: "Escreva a lista, um item por linha.",
+      example: "Folha de exemplo", exampleEdit: "\u270e Digite o seu nome", exampleSummary: "Exemplo",
+      editName: "\u270e Editar nome", editList: "\u270e Editar lista",
+      pageOf: "Página {n} de {t}", prevPage: "Página anterior", nextPage: "Próxima página",
+      keptSize: "Mantivemos {what}. {preset} costuma usar {want}.", useIt: "Usar",
+      fromList: "Preenchido pela lista abaixo.", typeOne: "Digitar um só",
+      dateHere: "A data de cada dia sai nesta linha.",
+      restored: "Suas últimas etiquetas voltaram: {what}.", startFresh: "Começar do zero",
+      datesResult: "{n} etiquetas: de {first} a {last}, {per} por dia", datesResultOne: "{n} etiquetas para {first}",
+      maxLen: "Cada linha cabe até 40 caracteres.",
+      closeUp: "Uma etiqueta, de perto",
+      listCount: "{n} na lista"
+    },
+    ja: {
+      labels: "枚", label: "枚", page: "ページ", pages: "ページ",
+      howMany: "枚数", perNameCount: "1人あたりの枚数", perLineCount: "1行あたりの枚数", tooLong: "このサイズでは文字がとても小さくなります。短くするか、大きいサイズを選んでください。",
+      empty: "名前を入力するとラベルが表示されます。",
+      testTitle: "位置合わせテスト：普通紙に印刷してラベルシートに重ね、光に透かして確認してください。",
+      cutHint: "グレーの線で切ってください",
+      stockNote: "「実際のサイズ」か「100%」を選んで印刷してください。「ページに合わせる」で印刷すると、すべてのラベルの位置がずれます。",
+      fileName: "onamae-seal",
+      testFile: "label-ichiawase-test",
+      needName: "印刷する名前を入力してください。", needList: "リストを1行に1つずつ入力してください。",
+      example: "見本", exampleEdit: "\u270e 名前を入力", exampleSummary: "見本",
+      editName: "\u270e 名前を編集", editList: "\u270e リストを編集",
+      pageOf: "{n} / {t} ページ", prevPage: "前のページ", nextPage: "次のページ",
+      keptSize: "{what}のままにしました。{preset}にはふつう{want}を使います。", useIt: "それにする",
+      fromList: "下のリストから入ります。", typeOne: "1つだけ入力する",
+      dateHere: "この行に毎日の日付が入ります。",
+      restored: "前回のラベルを復元しました：{what}。", startFresh: "最初から作る",
+      datesResult: "{n}枚：{first}から{last}まで、1日{per}枚", datesResultOne: "{first}の{n}枚",
+      maxLen: "1行は40文字までです。",
+      closeUp: "ラベル1枚の拡大",
+      listCount: "リストに{n}件"
     },
     id: {
       labels: "label", label: "label", page: "halaman", pages: "halaman",
-      howMany: "Jumlah label", perNameCount: "Label per nama", perLineCount: "Label per baris", fromList: "Diisi dari daftar", tooLong: "Ada tulisan yang sangat kecil di ukuran label ini. Coba baris yang lebih pendek atau label yang lebih besar.",
+      howMany: "Jumlah label", perNameCount: "Label per nama", perLineCount: "Label per baris", tooLong: "Ada tulisan yang sangat kecil di ukuran label ini. Coba baris yang lebih pendek atau label yang lebih besar.",
       empty: "Ketik nama untuk melihat labelnya.",
       testTitle: "Tes posisi: cetak di kertas biasa, tempelkan ke lembar label dan terawang ke arah cahaya.",
       cutHint: "Gunting di garis abu-abu",
       stockNote: "Cetak 100% (Actual size). Pilihan Fit to page menggeser semua label.",
       fileName: "label-nama",
-      testFile: "tes-posisi-label"
+      testFile: "tes-posisi-label",
+      needName: "Ketik nama yang mau dicetak.", needList: "Isi daftarnya, satu per baris.",
+      example: "Contoh lembar", exampleEdit: "✎ Ketik nama kamu", exampleSummary: "Contoh",
+      editName: "✎ Ubah nama", editList: "✎ Ubah daftar",
+      pageOf: "Halaman {n} dari {t}", prevPage: "Halaman sebelumnya", nextPage: "Halaman berikutnya",
+      keptSize: "{what} tetap dipakai. {preset} biasanya memakai {want}.", useIt: "Pakai itu",
+      fromList: "Diisi dari daftar di bawah.", typeOne: "Ketik satu saja",
+      dateHere: "Tanggal tiap hari dicetak di baris ini.",
+      restored: "Label terakhir kamu dimuat lagi: {what}.", startFresh: "Mulai baru",
+      datesResult: "{n} label: {first} sampai {last}, {per} per hari", datesResultOne: "{n} label untuk {first}",
+      maxLen: "Satu baris paling banyak 40 karakter.",
+      closeUp: "Satu label dari dekat",
+      listCount: "{n} di daftar"
     }
   };
   const T = Object.assign({}, I18N.en, I18N[LANG] || {}, CFG.strings || {});
+  const fill = (s, o) => String(s).replace(/\{(\w+)\}/g, (m, k) => (o[k] !== undefined ? o[k] : m));
 
   /* ---------------- sheets ----------------
      Label stock geometry, in inches. Each layout sums to its own sheet:
@@ -119,16 +208,23 @@
     bold:    { family: "Baloo 2", weight: 700, detail: 500 },
     hand:    { family: "Comic Neue", weight: 700, detail: 700 }
   };
+  /* A page whose script these Latin faces do not cover names its own (the
+     Japanese page: Klee One, and the reader's system gothic). `chunked` marks
+     a family split into unicode-range files: see glyphsFor. */
+  Object.assign(FONTS, CFG.fonts || {});
 
-  /* Presets: what changes when the visitor says what they are labeling. The
+  /* Presets: what changes when the visitor says what the labels are for. The
      page's own config supplies the visible words (lines, placeholders); the
-     engine owns the size, the copies and the list target. */
+     engine owns the size and the list target. A preset's size is a default,
+     not an order: once the visitor picks a size or a label sheet, a preset
+     only suggests (see applyPreset). */
   const PRESETS = Object.assign({
-    supplies: { size: "xs", line2: "", line3: "", list: "name" },
-    books:    { size: "s",  line2: "", line3: "", list: "name" },
-    bottles:  { size: "s",  line2: "", line3: "", list: "name" },
-    bins:     { size: "l",  line2: "", line3: "", list: "name" },
-    camp:     { size: "s",  line2: "", line3: "", list: "name" }
+    supplies: { size: "xs", list: "name" },
+    books:    { size: "s",  list: "name" },
+    bottles:  { size: "s",  list: "name" },
+    lunch:    { size: "s",  list: "name" },
+    bins:     { size: "l",  list: "name" },
+    camp:     { size: "s",  list: "name" }
   }, CFG.presets || {});
 
   /* ---------------- state ---------------- */
@@ -141,11 +237,17 @@
     border: false,
     sheet: "cut",          // "cut" (plain/sticker paper) or a STOCKS key
     size: "xs",
+    sizeChosen: false,     // the visitor picked the size; presets only suggest
     copies: "fill",        // "fill" or a number per list entry
+    mode: "one",           // "one" or "list"
     listTarget: "name",
+    dates: false,          // print a date per day (presets with a dates panel)
     nudgeX: 0, nudgeY: 0,  // mm, label stock only
-    nameStyle: "full"
+    nameStyle: "full",
+    page: 0                // the preview page
   };
+  let touched = false;      // nothing is remembered until the visitor acts
+  let nameSource = "typed"; // typed | restored | carried (telemetry, never text)
 
   function $(id) { return document.getElementById(id); }
 
@@ -180,19 +282,6 @@
              gapX: 0, gapY: 0, r: 0, stock: false, name: "" };
   }
 
-  /* The labels the sheet carries, in order. Each list entry's labels stay
-     together so a teacher hands one strip to one child. */
-  function readLines() {
-    const v = (id) => { const el = $(id); return el ? el.value.replace(/\s+/g, " ").trim() : ""; };
-    return { name: v("lb-name"), line2: v("lb-line2"), line3: v("lb-line3") };
-  }
-
-  function readList() {
-    const el = $("lb-list");
-    if (!el) return [];
-    return el.value.split(/\r?\n/).map((s) => s.replace(/\s+/g, " ").trim()).filter(Boolean).slice(0, 200);
-  }
-
   /* What the label shows of a name. Parents choose: a full name inside a
      bag, initials or a first name on the outside, a surname alone on things
      that pass between siblings. Applied to every name, typed or listed. */
@@ -209,29 +298,100 @@
     }
   }
 
-  function labelsFor(g) {
-    const base = readLines();
-    base.name = styleName(base.name);
-    const list = readList();
-    const per = g.cols * g.rows;
-    if (!list.length) {
-      if (!base.name && !base.line2 && !base.line3) return [];
-      const n = state.copies === "fill" ? per : Math.max(1, Number(state.copies) || 1);
-      return new Array(n).fill(base);
+  /* The labels the sheet carries, in order. Each list entry's labels stay
+     together so a teacher hands one strip to one child. */
+  function readLines() {
+    const v = (id) => { const el = $(id); return el ? el.value.replace(/\s+/g, " ").trim() : ""; };
+    return { name: v("lb-name"), line2: v("lb-line2"), line3: v("lb-line3") };
+  }
+
+  function readList() {
+    const el = $("lb-list");
+    if (!el || state.mode !== "list") return [];
+    return el.value.split(/\r?\n/).map((s) => s.replace(/\s+/g, " ").trim()).filter(Boolean).slice(0, 200);
+  }
+
+  function presetLines(key) {
+    return (CFG.presetLines && CFG.presetLines[key || state.preset]) || {};
+  }
+
+  // Dates are a setting of the presets that offer them, never list text.
+  function datesOn() { return !!(state.dates && presetLines().dates); }
+
+  /* One date per day from the dates panel: weekdays only for "5w"/"10w". */
+  function dateStrings() {
+    const start = $("lb-date-start"), daysSel = $("lb-date-days");
+    let d = start && start.value ? new Date(start.value + "T12:00:00") : new Date();
+    if (isNaN(d.getTime())) d = new Date();
+    const spec = (daysSel && daysSel.value) || "5w";
+    const n = parseInt(spec, 10) || 1;
+    const weekdays = /w$/.test(spec);
+    let fmt;
+    try {
+      fmt = new Intl.DateTimeFormat(CFG.dateLocale || LANG, { weekday: "short", month: "short", day: "numeric" });
+    } catch (e) { fmt = null; }
+    const out = [];
+    while (out.length < n) {
+      const day = d.getDay();
+      if (!weekdays || (day !== 0 && day !== 6)) out.push(fmt ? fmt.format(d) : d.toDateString());
+      d = new Date(d.getTime() + 864e5);
     }
+    return out;
+  }
+  function datesPerDay() {
+    const el = $("lb-date-per");
+    return Math.max(1, parseInt((el && el.value) || "1", 10) || 1);
+  }
+
+  /* What is missing before the sheet is the visitor's own: "name" (single
+     mode, or a list that fills another line), "list" (list mode, empty
+     list), or "" (nothing). While something is missing the preview shows the
+     example and Download asks for it instead of printing the example. */
+  function missing() {
+    const base = readLines();
+    if (state.mode === "list") {
+      if (!readList().length) return "list";
+      if (state.listTarget !== "name" && !base.name) return "name";
+      return "";
+    }
+    return base.name ? "" : "name";
+  }
+
+  function labelsFor(g) {
+    const per = g.cols * g.rows;
+    const base = readLines();
+    const lines = presetLines();
+    let list = readList();
+    let example = false;
+    const need = missing();
+    if (need) {
+      // The example: the page's sample name and each empty line's example.
+      example = true;
+      if (!base.name || (need === "list" && state.listTarget === "name")) base.name = CFG.sampleName || "";
+      ["line2", "line3"].forEach((k) => {
+        if (!base[k] && lines[k] && lines[k].example) base[k] = lines[k].example;
+      });
+      if (need === "list" && state.listTarget === "name") list = [];
+    }
+    base.name = styleName(base.name);
     const target = state.listTarget;
+    let entries = list.length
+      ? list.map((item) => Object.assign({}, base, { [target]: target === "name" ? styleName(item) : item }))
+      : [base];
+    if (!entries[0].name && !entries[0].line2 && !entries[0].line3) return [];
     let each;
-    if (state.copies === "fill") {
-      each = Math.max(1, Math.floor(per / list.length));
+    if (datesOn()) {
+      const days = dateStrings();
+      entries = [].concat.apply([], entries.map((e) => days.map((d) => Object.assign({}, e, { line2: d }))));
+      each = datesPerDay();
+    } else if (state.copies === "fill") {
+      each = Math.max(1, Math.floor(per / entries.length));
     } else {
       each = Math.max(1, Number(state.copies) || 1);
     }
     const out = [];
-    list.forEach((item) => {
-      const lab = Object.assign({}, base);
-      lab[target] = target === "name" ? styleName(item) : item;
-      for (let i = 0; i < each; i++) out.push(lab);
-    });
+    entries.forEach((lab) => { for (let i = 0; i < each; i++) out.push(lab); });
+    out.example = example;
     return out;
   }
 
@@ -491,6 +651,107 @@
     return fr(w) + " × " + fr(h) + " in";
   }
   function fmtSize(g) { return fmtWH(g.w, g.h); }
+  function sizeLabel(key) {
+    const z = SIZES[paperKey()][key];
+    const name = (CFG.sizeNames || {})[key] || key;
+    return z ? name + " " + fmtWH(z.w, z.h) : name;
+  }
+  /* A sheet's name as this page's own picker writes it ("Pimaco 6180 /
+     Avery 5160" on the Brazilian page), without its count; the engine's
+     Avery name is the fallback. */
+  function stockName(key) {
+    const opt = document.querySelector("#lb-stock option[value='" + key + "']");
+    const own = opt ? opt.textContent.replace(/\s*\([^)]*\)\s*$/, "").trim() : "";
+    return own || (STOCKS[key] ? STOCKS[key].name : key);
+  }
+  function stockLabel(key) {
+    const s = STOCKS[key];
+    return s ? stockName(key) + " (" + fmtWH(s.w, s.h) + ")" : key;
+  }
+  function presetName(key) {
+    const b = document.querySelector("#lb-what [data-value='" + key + "']");
+    return b ? b.textContent.trim() : key;
+  }
+
+  /* The polite live region carries the summary once typing pauses, rather
+     than the preview container re-announcing a replaced canvas on every
+     keystroke (8 announcements for an 8-letter name, measured 2026-10-25). */
+  let statusTimer = 0;
+  function announce(text) {
+    const el = $("lb-status");
+    if (!el) return;
+    clearTimeout(statusTimer);
+    statusTimer = setTimeout(() => { if (el.textContent !== text) el.textContent = text; }, 700);
+  }
+
+  function setNeed(text) {
+    const el = $("lb-need");
+    if (el) el.textContent = text || "";
+  }
+
+  /* A field the list (or the dates) fills is hidden, and a note takes its
+     place saying where its words come from, with a way back. A disabled
+     field explained only by its placeholder read as "this name cannot be
+     edited": the placeholder never showed behind the field's own value. */
+  function fieldNote(input) {
+    let note = input.parentNode.querySelector(".lb-from-list[data-for='" + input.id + "']");
+    if (!note) {
+      note = document.createElement("p");
+      note.className = "lb-from-list";
+      note.dataset.for = input.id;
+      const text = document.createElement("span");
+      note.appendChild(text);
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "lb-link-btn";
+      btn.textContent = T.typeOne;
+      btn.addEventListener("click", () => { touched = true; setMode("one", true); render(); input.focus(); });
+      note.appendChild(btn);
+      input.insertAdjacentElement("afterend", note);
+    }
+    return note;
+  }
+  function syncFields() {
+    const listed = state.mode === "list";
+    [["lb-name", "name"], ["lb-line2", "line2"], ["lb-line3", "line3"]].forEach((pair) => {
+      const el = $(pair[0]);
+      if (!el) return;
+      const fromList = listed && state.listTarget === pair[1];
+      const fromDates = pair[1] === "line2" && datesOn();
+      const hide = fromList || fromDates;
+      el.hidden = hide;
+      el.disabled = false;
+      const note = (hide || el.parentNode.querySelector(".lb-from-list[data-for='" + el.id + "']")) ? fieldNote(el) : null;
+      if (note) {
+        note.hidden = !hide;
+        note.firstChild.textContent = fromDates ? T.dateHere : T.fromList + " ";
+        note.lastChild.hidden = !fromList;
+      }
+    });
+    const helper = $("lb-name-help");
+    if (helper) helper.hidden = !!readLines().name || (listed && state.listTarget === "name");
+    const max = $("lb-name"), maxNote = $("lb-name-note");
+    if (max && maxNote) maxNote.hidden = max.value.length < (max.maxLength > 0 ? max.maxLength : 40);
+    const row3 = $("lb-line3-row");
+    if (row3) {
+      const v = readLines();
+      const lines = presetLines();
+      const need = v.line2 || v.line3 || (lines.line3 && lines.line3.value) || (listed && state.listTarget === "line3");
+      row3.hidden = !need;
+    }
+    const countLab = $("lb-copies-label");
+    const listN = readList().length;
+    if (countLab) countLab.textContent = !listN ? T.howMany : (state.listTarget === "name" ? T.perNameCount : T.perLineCount);
+    const copiesField = $("lb-copies-field");
+    if (copiesField) copiesField.hidden = datesOn();
+    const listCount = $("lb-list-count");
+    if (listCount) listCount.textContent = listN ? fill(T.listCount, { n: listN }) : "";
+    const target = $("lb-list-target");
+    if (target) {
+      const opt = target.querySelector("option[value='line2']");
+      if (opt) opt.disabled = datesOn();
+    }
+  }
 
   function render() {
     const g = geometry();
@@ -500,55 +761,101 @@
     const warn = $("lb-warn");
     if (!box) return;
     const pages = pageCount(g, labels.length);
-    if (sum) {
-      if (!labels.length) sum.textContent = T.empty;
-      else {
-        const n = labels.length;
-        const where = g.stock ? g.name : (paperKey() === "a4" ? "A4" : "US Letter");
-        sum.textContent = n + " " + (n === 1 ? T.label : T.labels) + " · " + fmtSize(g) +
-          " · " + pages + " " + (pages === 1 ? T.page : T.pages) + " · " + where;
-      }
+    state.page = Math.max(0, Math.min(state.page, pages - 1));
+    let text = T.empty;
+    if (labels.length) {
+      const n = labels.length;
+      const where = g.stock ? stockName(state.sheet) : (paperKey() === "a4" ? "A4" : "US Letter");
+      text = (labels.example ? T.exampleSummary + " · " : "") + n + " " + (n === 1 ? T.label : T.labels) + " · " + fmtSize(g) +
+        " · " + pages + " " + (pages === 1 ? T.page : T.pages) + " · " + where;
     }
-    // The preview is page 1 at screen resolution: the same drawing code as
-    // the PDF, so what is seen is what prints.
+    if (sum) sum.textContent = text;
+    announce(text);
+    // The preview is the chosen page at screen resolution: the same drawing
+    // code as the PDF, so what is seen is what prints.
     const cw = Math.max(240, Math.min(720, box.clientWidth || 480));
     const ppi = cw / g.paper.w * (window.devicePixelRatio || 1);
-    const canvas = drawPage(g, labels, 0, ppi, { preview: true, showStock: g.stock });
-    canvas.className = "lb-preview-canvas";
+    glyphsFor(labels);
+    const canvas = drawPage(g, labels, state.page, ppi, { preview: true, showStock: g.stock });
+    canvas.className = "lb-preview-canvas" + (labels.example ? " is-example" : "");
     canvas.setAttribute("role", "img");
-    canvas.setAttribute("aria-label", sum ? sum.textContent : "");
+    canvas.setAttribute("aria-label", text);
     const old = box.querySelector("canvas.lb-preview-canvas");
-    if (old) box.replaceChild(canvas, old); else box.appendChild(canvas);
+    if (old) box.replaceChild(canvas, old); else box.insertBefore(canvas, box.firstChild);
     const placeholder = box.querySelector(".pt-sheet-preview");
     if (placeholder) placeholder.remove();
-    if (warn) warn.textContent = canvas.labelSmall ? T.tooLong : "";
-    const pdfBtn = $("lb-pdf");
-    if (pdfBtn) pdfBtn.disabled = !labels.length;
-    // The third line appears once the second is in use (or the preset or
-    // the list needs it), so a first-time visitor sees one optional line.
-    const row3 = $("lb-line3-row");
-    if (row3) {
-      const v = readLines();
-      const lines = (CFG.presetLines && CFG.presetLines[state.preset]) || {};
-      const need = v.line2 || v.line3 || (lines.line3 && lines.line3.value) || state.listTarget === "line3";
-      row3.hidden = !need;
+    drawActual(g, labels);
+    const badge = $("lb-example-badge");
+    if (badge) badge.hidden = !labels.example;
+    const pill = $("lb-edit-pill");
+    if (pill) {
+      pill.hidden = !!labels.example;
+      pill.textContent = state.mode === "list" && state.listTarget === "name" ? T.editList : T.editName;
     }
-    const listed = readList().length > 0;
-    const countLab = $("lb-copies-label");
-    if (countLab) countLab.textContent = !listed ? T.howMany : (state.listTarget === "name" ? T.perNameCount : T.perLineCount);
-    // The field a list fills is read from the list, so typing in it would do
-    // nothing: say so on the field itself rather than let it look broken.
-    [["lb-name", "name"], ["lb-line2", "line2"], ["lb-line3", "line3"]].forEach((pair) => {
-      const el = $(pair[0]);
-      if (!el) return;
-      const filled = listed && state.listTarget === pair[1];
-      el.disabled = filled;
-      el.classList.toggle("is-from-list", filled);
-      if (filled) el.setAttribute("aria-description", T.fromList); else el.removeAttribute("aria-description");
-      if (filled && !el.dataset.ph) { el.dataset.ph = el.placeholder; el.placeholder = T.fromList; }
-      if (!filled && el.dataset.ph !== undefined) { el.placeholder = el.dataset.ph; delete el.dataset.ph; }
-    });
+    if (warn) warn.textContent = canvas.labelSmall && !labels.example ? T.tooLong : "";
+    if (!labels.example) setNeed("");
+    // Pages: every page can be seen, not only the first.
+    const pl = $("lb-page-label"), prev = $("lb-page-prev"), next = $("lb-page-next");
+    if (pl) pl.textContent = fill(T.pageOf, { n: state.page + 1, t: pages });
+    if (prev) { prev.hidden = pages < 2; prev.disabled = state.page === 0; }
+    if (next) { next.hidden = pages < 2; next.disabled = state.page >= pages - 1; }
+    // Dated labels: what the dates panel will print, in words.
+    const dr = $("lb-date-result");
+    if (dr) {
+      if (datesOn() && labels.length) {
+        const days = dateStrings();
+        dr.textContent = days.length > 1
+          ? fill(T.datesResult, { n: labels.length, first: days[0], last: days[days.length - 1], per: datesPerDay() })
+          : fill(T.datesResultOne, { n: labels.length, first: days[0] });
+      } else dr.textContent = "";
+    }
+    const st = $("lb-sticky-text");
+    if (st) {
+      const v = readLines();
+      st.textContent = labels.example ? text : (state.mode === "list" ? fill(T.listCount, { n: readList().length }) : v.name) + " · " + labels.length + " " + T.labels;
+    }
+    syncFields();
     persist();
+  }
+
+  /* The first labels at 96 CSS px to the inch, scaled down only when one
+     label is wider than the column. Not a claim of physical size: a CSS
+     inch is not an inch on a phone. It shows how the name reads on one
+     label, which the whole-page preview shrinks to a few millimetres. */
+  function drawActual(g, labels) {
+    const wrap = $("lb-actual");
+    if (!wrap) return;
+    const cap = $("lb-actual-cap");
+    wrap.hidden = !labels.length;
+    if (!labels.length) return;
+    const avail = Math.max(160, (wrap.clientWidth || 320) - 2);
+    const fit = Math.min(1, avail / (g.w * 96));
+    const n = Math.max(1, Math.min(3, labels.length, Math.floor(avail / (g.w * 96 * fit))));
+    const dpr = window.devicePixelRatio || 1;
+    const ppi = 96 * fit * dpr;
+    const canvas = document.createElement("canvas");
+    canvas.width = Math.round(n * g.w * ppi) + 2;
+    canvas.height = Math.round(g.h * ppi) + 2;
+    canvas.style.width = (canvas.width / dpr) + "px";
+    canvas.style.height = (canvas.height / dpr) + "px";
+    canvas.className = "lb-actual-canvas" + (labels.example ? " is-example" : "");
+    canvas.setAttribute("aria-hidden", "true");
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < n; i++) {
+      const x = 1 + i * g.w * ppi, w = g.w * ppi, h = g.h * ppi;
+      ctx.save();
+      ctx.strokeStyle = CUT;
+      ctx.lineWidth = Math.max(1, dpr);
+      ctx.setLineDash([4 * dpr, 3 * dpr]);
+      ctx.strokeRect(x, 1, w, h);
+      ctx.restore();
+      drawLabel(ctx, labels[i], x, 1, w, h, ppi);
+    }
+    const old = wrap.querySelector("canvas");
+    if (old) wrap.replaceChild(canvas, old); else wrap.appendChild(canvas);
+    if (cap) cap.textContent = T.closeUp;
   }
 
   /* ---------------- PDF ---------------- */
@@ -567,14 +874,39 @@
     return pdfPromise;
   }
 
-  function fontsReady() {
+  function fontsReady(text) {
     const f = FONTS[state.font] || FONTS.rounded;
     if (!document.fonts || !document.fonts.load) return Promise.resolve();
+    // a chunked family loads only the files covering the text it is asked
+    // for, so the labels' own text is passed; for the others it is ignored
+    const t = f.chunked && text ? text : undefined;
     return Promise.all([
-      document.fonts.load(f.weight + " 40px '" + f.family + "'"),
-      document.fonts.load(f.detail + " 40px '" + f.family + "'"),
+      document.fonts.load(f.weight + " 40px '" + f.family + "'", t),
+      document.fonts.load(f.detail + " 40px '" + f.family + "'", t),
       document.fonts.load("500 20px 'Plus Jakarta Sans'")
     ]).catch(() => {});
+  }
+
+  function textOf(labels) {
+    return labels.map((l) => (l.name || "") + (l.line2 || "") + (l.line3 || "")).join("");
+  }
+
+  /* A family split into unicode-range files (Klee One on the Japanese page)
+     downloads only the files a string needs, and canvas text never asks:
+     drawn before they arrive, a name falls back to another face in the
+     preview. So ask for the text on the labels, once per text, and redraw
+     when files arrive. */
+  const asked = {};
+  function glyphsFor(labels) {
+    const f = FONTS[state.font] || FONTS.rounded;
+    if (!f.chunked || !document.fonts || !document.fonts.load) return;
+    const text = textOf(labels);
+    const key = state.font + "|" + text;
+    if (!text || asked[key]) return;
+    asked[key] = true;
+    fontsReady(text).then((res) => {
+      if (res && res.some((faces) => faces && faces.length)) schedule();
+    });
   }
 
   function track(action, extra) {
@@ -591,7 +923,29 @@
   }
   engage.seen = {};
 
+  /* The editable thing behind the preview: the list when the list makes
+     the names (or is still empty), otherwise the name. */
+  function focusEditable() {
+    const need = missing();
+    const useList = state.mode === "list" && (need === "list" || (!need && state.listTarget === "name"));
+    const el = useList ? $("lb-list") : $("lb-name");
+    if (!el) return;
+    el.focus();
+    if (el.select) el.select();
+  }
+
   function makePdf(test) {
+    if (!test) {
+      // The example is never printed: ask for what is missing instead of
+      // disabling the button, which explained nothing.
+      const need = missing();
+      if (need) {
+        setNeed(need === "list" ? T.needList : T.needName);
+        focusEditable();
+        engage("download_blocked_empty", need);
+        return;
+      }
+    }
     const btn = test ? $("lb-test") : $("lb-pdf");
     if (btn) btn.setAttribute("aria-busy", "true");
     const g = geometry();
@@ -599,7 +953,7 @@
     if (!test && !labels.length) return;
     const n = test ? 1 : pageCount(g, labels.length);
     const ppi = 96 * (PP && PP.scale ? PP.scale() : 2);
-    return Promise.all([loadPdf(), fontsReady()]).then((res) => {
+    return Promise.all([loadPdf(), fontsReady(textOf(labels))]).then((res) => {
       const P = res[0];
       if (!P || !P.supported()) throw new Error("pdf unsupported");
       const canvases = [];
@@ -616,7 +970,8 @@
         } else {
           track("download_pdf", { printable_action: "pdf_saved", printable_sheet: "labels-" + state.preset, printable_pages: n,
             printable_stock: g.stock ? state.sheet : "cut-" + state.size, printable_count: labels.length,
-            printable_list: readList().length ? "list" : "single" });
+            printable_list: readList().length ? "list" : "single",
+            printable_name_source: state.mode === "list" && state.listTarget === "name" ? "list" : nameSource });
           remember();
         }
       });
@@ -665,28 +1020,63 @@
 
   /* ---------------- memory ----------------
      The form state is kept on this device only, so a teacher who comes back
-     next term finds the class list where she left it. Never sent anywhere. */
+     next term finds the class list where she left it. Never sent anywhere.
+     Nothing is kept until the visitor has typed or chosen something: the
+     page used to save its own untouched example on the first render, so the
+     next visit "restored" a sample nobody typed. */
 
   function persist() {
     try {
       const keep = $("lb-remember");
       if (keep && !keep.checked) { localStorage.removeItem(STORE); return; }
-      const data = Object.assign({}, state, readLines(), { list: ($("lb-list") || {}).value || "" });
+      if (!touched) return;
+      const data = Object.assign({}, state, readLines(), {
+        list: ($("lb-list") || {}).value || "",
+        listAuto: !!($("lb-list") && $("lb-list").dataset.auto === "1"),
+        dateDays: ($("lb-date-days") || {}).value || "",
+        datePer: ($("lb-date-per") || {}).value || ""
+      });
+      delete data.page;
       localStorage.setItem(STORE, JSON.stringify(data));
     } catch (e) { /* storage blocked: nothing to keep */ }
   }
 
+  /* Returns null (nothing kept) or { meaningful }: whether the visitor's own
+     words came back, which is when the restore line is shown. */
   function restore() {
     let data = null;
     try { data = JSON.parse(localStorage.getItem(STORE) || "null"); } catch (e) { data = null; }
-    if (!data || data.preset && !PRESETS[data.preset]) return false;
-    ["preset", "font", "symbol", "border", "sheet", "size", "copies", "listTarget", "nameStyle"].forEach((k) => {
+    if (!data || data.preset && !PRESETS[data.preset]) return null;
+    ["preset", "font", "symbol", "border", "sheet", "size", "sizeChosen", "copies", "listTarget", "nameStyle", "dates", "mode"].forEach((k) => {
       if (data[k] !== undefined) state[k] = data[k];
     });
     if (state.sheet !== "cut" && !STOCKS[state.sheet]) state.sheet = "cut";
-    const set = (id, v) => { const el = $(id); if (el && typeof v === "string") el.value = v; };
-    set("lb-name", data.name); set("lb-line2", data.line2); set("lb-line3", data.line3); set("lb-list", data.list);
-    return true;
+    // Older saves: the sample the page used to pre-fill was saved untouched.
+    // It is nobody's name, so it does not come back as one.
+    const legacy = CFG.legacyDefaults || {};
+    ["name", "line2", "line3"].forEach((k) => { if (legacy[k] && data[k] === legacy[k]) data[k] = ""; });
+    if (data.mode === undefined) state.mode = data.list && String(data.list).trim() ? "list" : "one";
+    const lines = presetLines(state.preset);
+    const set = (id, v, auto) => {
+      const el = $(id);
+      if (!el || typeof v !== "string") return;
+      el.value = v;
+      el.dataset.auto = auto ? "1" : "";
+    };
+    set("lb-name", data.name, false);
+    ["line2", "line3"].forEach((k) => {
+      const spec = lines[k] || {};
+      set("lb-" + k, data[k], !!(spec.value && data[k] === spec.value));
+    });
+    const listAuto = data.listAuto || (lines.list && data.list === lines.list);
+    set("lb-list", data.list, listAuto);
+    if (data.dateDays && $("lb-date-days")) $("lb-date-days").value = data.dateDays;
+    if (data.datePer && $("lb-date-per")) $("lb-date-per").value = data.datePer;
+    if (data.name) nameSource = "restored";
+    touched = true;
+    const meaningful = !!(data.name || (data.list && !listAuto) ||
+      ["line2", "line3"].some((k) => data[k] && !((lines[k] || {}).value === data[k])));
+    return { meaningful: meaningful };
   }
 
   function remember() {
@@ -704,6 +1094,7 @@
       const on = b.getAttribute("data-value") === value;
       b.classList.toggle("is-active", on);
       b.setAttribute("aria-checked", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
     });
   }
 
@@ -713,6 +1104,7 @@
     row.addEventListener("click", (e) => {
       const b = e.target.closest("[data-value]");
       if (!b || !row.contains(b)) return;
+      touched = true;
       onPick(b.getAttribute("data-value"));
     });
     // Arrow keys move within a radiogroup, as the role promises.
@@ -724,30 +1116,31 @@
       e.preventDefault();
       const next = items[(i + (e.key === "ArrowRight" || e.key === "ArrowDown" ? 1 : items.length - 1)) % items.length];
       next.focus();
+      touched = true;
       onPick(next.getAttribute("data-value"));
     });
   }
 
   function syncSheetControls() {
+    const cut = state.sheet === "cut";
+    setChoice("lb-on", cut ? "cut" : "stock");
     const stockSel = $("lb-stock");
-    if (stockSel) stockSel.value = state.sheet === "cut" ? "cut" : state.sheet;
+    if (stockSel && !cut) stockSel.value = state.sheet;
     const sizeSel = $("lb-size");
     if (sizeSel) {
       const pk = paperKey(), names = CFG.sizeNames || {};
       Array.from(sizeSel.options).forEach((opt) => {
         const z = SIZES[pk][opt.value];
-        if (z && names[opt.value]) opt.textContent = names[opt.value] + " \u00b7 " + fmtWH(z.w, z.h);
+        if (z && names[opt.value]) opt.textContent = names[opt.value] + " · " + fmtWH(z.w, z.h);
       });
       sizeSel.value = state.size;
     }
-    const sizeRow = $("lb-size-row");
-    if (sizeRow) sizeRow.hidden = state.sheet !== "cut";
-    const nudge = $("lb-nudge-row");
-    if (nudge) nudge.hidden = state.sheet === "cut";
-    const testBtn = $("lb-test");
-    if (testBtn) testBtn.hidden = state.sheet === "cut";
-    const note = $("lb-stock-note");
-    if (note) note.hidden = state.sheet === "cut";
+    const show = (id, on) => { const el = $(id); if (el) el.hidden = !on; };
+    show("lb-size-row", cut);
+    show("lb-stock-row", !cut);
+    show("lb-nudge-row", !cut);
+    show("lb-test", !cut);
+    show("lb-stock-note", !cut);
     const copies = $("lb-copies");
     if (copies) copies.value = String(state.copies);
     const target = $("lb-list-target");
@@ -759,55 +1152,70 @@
     setChoice("lb-what", state.preset);
     setChoice("lb-font", state.font);
     setChoice("lb-symbol", state.symbol);
+    setChoice("lb-mode", state.mode);
+    setChoice("lb-date-mode", state.dates ? "print" : "hand");
+    show("lb-list-box", state.mode === "list");
+    show("lb-date-opts", !!state.dates);
   }
 
-  /* A label for each day. Daycares ask for the date on every bottle, rim
-     and lid, every day, so parents re-write the same name on tape each
-     night. Here the dates become a list (one per day), each day's labels
-     print together, and the name is typed once. It reuses the list: the
-     dates fill the second line. */
-  function fillDates() {
-    const start = $("lb-date-start"), daysSel = $("lb-date-days"), perSel = $("lb-date-per"), list = $("lb-list");
-    if (!list) return;
-    let d = start && start.value ? new Date(start.value + "T12:00:00") : new Date();
-    if (isNaN(d.getTime())) d = new Date();
-    const spec = (daysSel && daysSel.value) || "5w";
-    const n = parseInt(spec, 10) || 1;
-    const weekdays = /w$/.test(spec);
-    let fmt;
-    try {
-      fmt = new Intl.DateTimeFormat(CFG.dateLocale || LANG, { weekday: "short", month: "short", day: "numeric" });
-    } catch (e) { fmt = null; }
-    const out = [];
-    while (out.length < n) {
-      const day = d.getDay();
-      if (!weekdays || (day !== 0 && day !== 6)) out.push(fmt ? fmt.format(d) : d.toDateString());
-      d = new Date(d.getTime() + 864e5);
-    }
-    list.value = out.join("\n");
-    list.dataset.auto = "";
-    state.listTarget = "line2";
-    state.copies = Math.max(1, parseInt((perSel && perSel.value) || "1", 10));
-    const det = list.closest("details");
-    if (det) det.open = true;
+  function setMode(mode, fromUser) {
+    state.mode = mode === "list" ? "list" : "one";
+    if (fromUser) engage("mode", state.mode);
     syncSheetControls();
-    engage("dates", spec + "x" + state.copies);
+    if (fromUser && state.mode === "list") { const l = $("lb-list"); if (l) l.focus(); }
     schedule();
   }
 
-  /* A preset sets the size, the list target and the detail-line placeholders;
-     it never overwrites what the visitor already typed in a line. */
+  /* A preset's suggestion, when the visitor already chose a size or a sheet
+     the preset would have changed. One line, one button; nothing changes
+     unless they press it. */
+  let suggestion = null;
+  function showSuggestion(text, apply) {
+    const box = $("lb-what-note");
+    suggestion = apply;
+    if (!box) return;
+    box.textContent = "";
+    box.hidden = !text;
+    if (!text) return;
+    box.appendChild(document.createTextNode(text + " "));
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "lb-link-btn";
+    btn.textContent = T.useIt;
+    btn.addEventListener("click", () => {
+      if (suggestion) suggestion();
+      showSuggestion("");
+      syncSheetControls();
+      schedule();
+    });
+    box.appendChild(btn);
+  }
+
+  /* A preset sets the size (unless the visitor chose one), the example lines
+     and, when the visitor has no list of their own, the list target. It
+     never changes a chosen size or label sheet, never overwrites a line or a
+     list the visitor typed, and never retargets their list. */
   function applyPreset(key, fromUser) {
     const p = PRESETS[key];
     if (!p) return;
     state.preset = key;
-    state.size = p.size;
-    state.listTarget = p.list || "name";
+    let note = "", apply = null;
     if (state.sheet !== "cut") {
       const want = SIZE_STOCK[STOCKS[state.sheet].paper][p.size];
-      if (want) state.sheet = want;
+      if (!state.sizeChosen) state.size = p.size;
+      if (fromUser && want && want !== state.sheet) {
+        note = fill(T.keptSize, { what: stockName(state.sheet), preset: presetName(key), want: stockLabel(want) });
+        apply = () => { state.sheet = want; };
+      }
+    } else if (!state.sizeChosen) {
+      state.size = p.size;
+    } else if (fromUser && state.size !== p.size) {
+      note = fill(T.keptSize, { what: sizeLabel(state.size), preset: presetName(key), want: sizeLabel(p.size) });
+      apply = () => { state.size = p.size; state.sizeChosen = false; };
     }
-    const lines = (CFG.presetLines && CFG.presetLines[key]) || {};
+    showSuggestion(note, apply);
+    if (note) engage("preset_kept", state.sheet !== "cut" ? "stock" : "size");
+    const lines = presetLines(key);
     [["lb-line2", "line2"], ["lb-line3", "line3"]].forEach((pair) => {
       const el = $(pair[0]);
       if (!el) return;
@@ -820,25 +1228,83 @@
       const lab = document.querySelector("label[for='" + pair[0] + "']");
       if (lab && spec.label) lab.textContent = spec.label;
     });
-    // The preset's example list follows the same rule as its example lines:
-    // replaced on a preset change unless the visitor has typed in it.
+    // The preset's example list follows the rule of its example lines: it
+    // comes and goes with the preset, unless the visitor typed their own.
     const listEl = $("lb-list");
-    if (listEl && fromUser && (!listEl.value || listEl.dataset.auto === "1")) {
-      listEl.value = lines.list || "";
-      listEl.dataset.auto = lines.list ? "1" : "";
+    const ownList = !!(listEl && listEl.value.trim() && listEl.dataset.auto !== "1");
+    if (listEl && !ownList) {
+      state.listTarget = p.list || "name";
+      if (fromUser || !listEl.value) {
+        listEl.value = lines.list || "";
+        listEl.dataset.auto = lines.list ? "1" : "";
+      }
+      if (lines.list) state.mode = "list";
+      else if (fromUser && state.mode === "list" && !listEl.value) state.mode = "one";
     }
     const listLab = document.querySelector("label[for='lb-list']");
-    if (listLab && lines.listLabel) listLab.textContent = lines.listLabel;
-    if (lines.listPlaceholder && $("lb-list")) $("lb-list").placeholder = lines.listPlaceholder;
+    if (listLab) {
+      if (!listLab.dataset.orig) listLab.dataset.orig = listLab.textContent;
+      listLab.textContent = lines.listLabel || listLab.dataset.orig;
+    }
+    if (listEl && lines.listPlaceholder) listEl.placeholder = lines.listPlaceholder;
     const hint = $("lb-what-hint");
     if (hint) hint.textContent = lines.hint || "";
     const dates = $("lb-dates");
-    if (dates) dates.hidden = !(lines.dates);
+    if (dates) dates.hidden = !lines.dates;
     syncSheetControls();
     if (fromUser) engage("preset", key);
   }
 
-  let restoredOnce = false;
+  function reset() {
+    try { localStorage.removeItem(STORE); } catch (e) { /* nothing kept */ }
+    ["lb-name", "lb-line2", "lb-line3", "lb-list"].forEach((id) => { const el = $(id); if (el) { el.value = ""; el.dataset.auto = ""; } });
+    state.symbol = ""; state.copies = "fill"; state.nudgeX = 0; state.nudgeY = 0; state.nameStyle = "full";
+    state.mode = "one"; state.dates = false; state.sizeChosen = false; state.page = 0;
+    ["lb-nudge-x", "lb-nudge-y"].forEach((id) => { const el = $(id); if (el) el.value = "0"; });
+    const notice = $("lb-restored");
+    if (notice) notice.hidden = true;
+    nameSource = "typed";
+    applyPreset(CFG.defaultPreset || "supplies", true);
+    touched = false;
+    engage("start_fresh", "1");
+    const nm = $("lb-name"); if (nm) nm.focus();
+    schedule();
+  }
+
+  function showRestored() {
+    const box = $("lb-restored");
+    if (!box) return;
+    const parts = [presetName(state.preset)];
+    parts.push(state.sheet !== "cut" ? stockName(state.sheet) : sizeLabel(state.size));
+    const n = readList().length;
+    if (n) parts.push(fill(T.listCount, { n: n }));
+    box.textContent = "";
+    box.appendChild(document.createTextNode(fill(T.restored, { what: parts.join(", ") }) + " "));
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "lb-link-btn";
+    btn.textContent = T.startFresh;
+    btn.addEventListener("click", reset);
+    box.appendChild(btn);
+    box.hidden = false;
+    engage("restore_shown", "1");
+  }
+
+  /* The phone's sticky Download bar: shown while the tool is on screen and
+     its own Download button is not. */
+  function mountSticky() {
+    const bar = $("lb-sticky"), pdf = $("lb-pdf"), tool = document.querySelector(".lb-tool");
+    if (!bar || !pdf || !tool || !("IntersectionObserver" in window)) return;
+    const mq = window.matchMedia ? window.matchMedia("(max-width: 900px)") : { matches: false };
+    let pdfVisible = true, toolVisible = false;
+    const sync = () => { bar.hidden = !(mq.matches && toolVisible && !pdfVisible); };
+    new IntersectionObserver((es) => { pdfVisible = es[0].isIntersecting; sync(); }).observe(pdf);
+    new IntersectionObserver((es) => { toolVisible = es[0].isIntersecting; sync(); }).observe(tool);
+    if (mq.addEventListener) mq.addEventListener("change", sync);
+    const btn = $("lb-sticky-pdf");
+    if (btn) btn.addEventListener("click", () => makePdf(false));
+  }
+
   function init() {
     if (!$("lb-preview")) return;
     /* Ctrl+P without Download PDF: hide the site chrome and say which button
@@ -851,7 +1317,6 @@
     }
     if (PP && PP.values) state.sheet = "cut";
     const restored = restore();
-    restoredOnce = restored;
     /* A name carried from another sheet (?name=, the name kit row) fills the
        name line, over whatever this device remembered: the link is the newer
        intent. Only the name line; the detail lines and the class list stay. */
@@ -860,13 +1325,15 @@
     if (carried && nameBox) {
       nameBox.value = carried.slice(0, nameBox.maxLength > 0 ? nameBox.maxLength : 40);
       nameBox.dataset.auto = "";
+      nameSource = "carried";
+      touched = true;
+      if (state.mode === "list" && state.listTarget === "name") state.mode = "one";
     }
     applyPreset(state.preset, false);
     if (!restored) {
-      const listEl = $("lb-list");
-      if (listEl && listEl.value) listEl.dataset.auto = "1";
-      // First visit: fill the default preset's example detail lines.
-      const lines = (CFG.presetLines && CFG.presetLines[state.preset]) || {};
+      // First visit: the default preset's working lines ("Date:" on a
+      // bottle label), never an example value.
+      const lines = presetLines();
       [["lb-line2", "line2"], ["lb-line3", "line3"]].forEach((pair) => {
         const el = $(pair[0]);
         const spec = lines[pair[1]] || {};
@@ -874,45 +1341,113 @@
       });
     }
     syncSheetControls();
+    if (restored && restored.meaningful && !carried) showRestored();
 
-    wireChoices("lb-what", (v) => { applyPreset(v, true); schedule(); });
+    // Preview: the badge and the edit pill, and a click anywhere on the
+    // sheet goes to the field that makes it.
+    const box = $("lb-preview");
+    if (!$("lb-example-badge")) {
+      const badge = document.createElement("button");
+      badge.type = "button";
+      badge.id = "lb-example-badge";
+      badge.className = "lb-example-badge";
+      badge.hidden = true;
+      const strong = document.createElement("strong");
+      strong.textContent = T.example;
+      const span = document.createElement("span");
+      span.textContent = T.exampleEdit;
+      badge.appendChild(strong); badge.appendChild(span);
+      box.appendChild(badge);
+      // One label up close, under the sheet: the whole page shrinks a
+      // 1.75in label to a few millimetres on a phone, which says nothing
+      // about whether the name will be readable.
+      const actual = document.createElement("div");
+      actual.id = "lb-actual";
+      actual.className = "lb-actual";
+      const head = document.createElement("div");
+      head.className = "lb-actual-head";
+      const cap = document.createElement("span");
+      cap.id = "lb-actual-cap";
+      cap.className = "lb-actual-cap";
+      head.appendChild(cap);
+      const pill = document.createElement("button");
+      pill.type = "button";
+      pill.id = "lb-edit-pill";
+      pill.className = "lb-link-btn lb-edit-pill";
+      pill.hidden = true;
+      head.appendChild(pill);
+      actual.appendChild(head);
+      // After Download PDF, so the button keeps its place above the fold.
+      const actions = box.parentNode.querySelector(".pt-preview-actions");
+      (actions || box).insertAdjacentElement("afterend", actual);
+      actual.addEventListener("click", (e) => {
+        if (e.target.closest("canvas, .lb-edit-pill")) { engage("preview_click", "1"); focusEditable(); }
+      });
+    }
+    box.addEventListener("click", (e) => {
+      if (e.target.closest("canvas, .lb-example-badge")) {
+        engage("preview_click", "1");
+        focusEditable();
+      }
+    });
+
+    wireChoices("lb-what", (v) => { applyPreset(v, true); state.page = 0; schedule(); });
     wireChoices("lb-font", (v) => { state.font = v; setChoice("lb-font", v); engage("font", v); fontsReady().then(schedule); schedule(); });
     wireChoices("lb-symbol", (v) => { state.symbol = v; setChoice("lb-symbol", v); engage("symbol", v ? "on" : "off"); schedule(); });
+    wireChoices("lb-mode", (v) => setMode(v, true));
+    wireChoices("lb-date-mode", (v) => { state.dates = v === "print"; engage("dates", v); syncSheetControls(); state.page = 0; schedule(); });
+    wireChoices("lb-on", (v) => {
+      if (v === "cut") state.sheet = "cut";
+      else if (state.sheet === "cut") state.sheet = SIZE_STOCK[paperKey()][state.size] || "avery-5160";
+      if (state.sheet !== "cut" && PP && PP.values) { PP.values.paper = STOCKS[state.sheet].paper; if (PP.save) PP.save(); }
+      showSuggestion("");
+      syncSheetControls();
+      engage("stock", state.sheet);
+      schedule();
+    });
 
     ["lb-name", "lb-line2", "lb-line3", "lb-list"].forEach((id) => {
       const el = $(id);
       if (!el) return;
-      el.addEventListener("input", () => { el.dataset.auto = ""; schedule(); });
+      el.addEventListener("input", () => {
+        el.dataset.auto = "";
+        touched = true;
+        if (id === "lb-name") nameSource = "typed";
+        schedule();
+      });
     });
-    const onSel = (id, fn) => { const el = $(id); if (el) el.addEventListener("change", () => { fn(el); schedule(); }); };
+    ["lb-date-start", "lb-date-days", "lb-date-per"].forEach((id) => {
+      const el = $(id);
+      if (el) el.addEventListener("change", () => { touched = true; schedule(); });
+    });
+    const onSel = (id, fn) => { const el = $(id); if (el) el.addEventListener("change", () => { touched = true; fn(el); schedule(); }); };
     onSel("lb-stock", (el) => {
-      state.sheet = el.value === "cut" ? "cut" : el.value;
-      if (state.sheet !== "cut" && PP && PP.values) {
+      if (!STOCKS[el.value]) return;
+      state.sheet = el.value;
+      if (PP && PP.values) {
         // Keep the region's paper in step with the stock that was picked.
         PP.values.paper = STOCKS[state.sheet].paper;
         if (PP.save) PP.save();
       }
+      showSuggestion("");
       syncSheetControls();
       engage("stock", state.sheet);
     });
-    onSel("lb-size", (el) => { state.size = el.value; engage("size", el.value); });
+    onSel("lb-size", (el) => { state.size = el.value; state.sizeChosen = true; showSuggestion(""); engage("size", el.value); });
     onSel("lb-copies", (el) => { state.copies = el.value === "fill" ? "fill" : Number(el.value); engage("copies", el.value); });
     onSel("lb-list-target", (el) => { state.listTarget = el.value; });
     onSel("lb-paper", (el) => {
       if (PP && PP.values) { PP.values.paper = el.value; if (PP.save) PP.save(); }
-      if (state.sheet !== "cut") state.sheet = SIZE_STOCK[el.value][state.size] || state.sheet;
       syncSheetControls();
     });
     const border = $("lb-border");
-    if (border) border.addEventListener("change", () => { state.border = border.checked; schedule(); });
+    if (border) border.addEventListener("change", () => { touched = true; state.border = border.checked; schedule(); });
     onSel("lb-name-style", (el) => { state.nameStyle = el.value; engage("name_style", el.value); });
     const ds = $("lb-date-start");
     if (ds && !ds.value) {
       const t = new Date();
       ds.value = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0");
     }
-    const df = $("lb-date-fill");
-    if (df) df.addEventListener("click", fillDates);
     ["lb-nudge-x", "lb-nudge-y"].forEach((id) => {
       const el = $(id);
       if (!el) return;
@@ -923,40 +1458,27 @@
       });
     });
     const keep = $("lb-remember");
-    if (keep) {
-      try { keep.checked = !!localStorage.getItem(STORE) || keep.checked; } catch (e) { /* no storage */ }
-      keep.addEventListener("change", persist);
-    }
+    if (keep) keep.addEventListener("change", () => { if (keep.checked) touched = true; persist(); });
     const paperSel = $("lb-paper");
     if (paperSel && PP && PP.values) paperSel.value = PP.values.paper === "a4" ? "a4" : "letter";
+
+    const step = (d) => { state.page += d; engage("page_step", "1"); schedule(); };
+    const prev = $("lb-page-prev"), next = $("lb-page-next");
+    if (prev) { prev.setAttribute("aria-label", T.prevPage); prev.addEventListener("click", () => step(-1)); }
+    if (next) { next.setAttribute("aria-label", T.nextPage); next.addEventListener("click", () => step(1)); }
 
     const pdf = $("lb-pdf");
     if (pdf) pdf.addEventListener("click", () => makePdf(false));
     const test = $("lb-test");
     if (test) test.addEventListener("click", () => makePdf(true));
-    const reset = $("lb-reset");
-    if (reset) reset.addEventListener("click", () => {
-      try { localStorage.removeItem(STORE); } catch (e) { /* nothing kept */ }
-      ["lb-name", "lb-line2", "lb-line3", "lb-list"].forEach((id) => { const el = $(id); if (el) el.value = ""; });
-      state.symbol = ""; state.copies = "fill"; state.nudgeX = 0; state.nudgeY = 0; state.nameStyle = "full";
-      ["lb-nudge-x", "lb-nudge-y"].forEach((id) => { const el = $(id); if (el) el.value = "0"; });
-      applyPreset(CFG.defaultPreset || "supplies", true);
-      const nm = $("lb-name"); if (nm) nm.focus();
-      schedule();
-    });
+    const resetBtn = $("lb-reset");
+    if (resetBtn) resetBtn.addEventListener("click", reset);
+    mountSticky();
 
     let t = 0;
     window.addEventListener("resize", () => { clearTimeout(t); t = setTimeout(schedule, 150); });
     fontsReady().then(schedule);
     schedule();
-
-    // The sample name is there to show the output; the first tap selects it
-    // so typing replaces it instead of appending to it.
-    const sample = $("lb-name");
-    if (sample && !restoredOnce) {
-      const once = () => { if (sample.value === sample.defaultValue) sample.select(); sample.removeEventListener("focus", once); };
-      sample.addEventListener("focus", once);
-    }
 
     // The name kit row. On load: the English list is
     // read from the footer, which footer.js renders.
@@ -964,9 +1486,8 @@
       const box = $("lb-name");
       if (!box || !PP || !PP.mountNameCarry) return;
       PP.mountNameCarry({
-        // The sample name shows what a label looks like; it is nobody's name,
-        // so it is not carried. A name typed here, restored or carried in is.
-        word: () => (box.value !== box.defaultValue || carried) ? box.value : "",
+        // An empty field carries nothing: the example is nobody's name.
+        word: () => box.value,
         watch: [box],
         // At the end of the tool's section, where the sheet engine puts it.
         place: (row) => {
@@ -987,10 +1508,11 @@
         UTG.trackPrintableEvent("printable_generate", { printable_sheet: "labels" });
       });
     }
+    UTG.labels.ready = true;
   }
 
   // Exposed for the geometry test and the scenario harness; not a public API.
-  UTG.labels = { STOCKS: STOCKS, SIZES: SIZES, PAPER: PAPER, geometry: geometry, labelsFor: labelsFor, state: state, drawPage: drawPage };
+  UTG.labels = { STOCKS: STOCKS, SIZES: SIZES, PAPER: PAPER, geometry: geometry, labelsFor: labelsFor, state: state, drawPage: drawPage, ready: false };
 
   if (document.readyState === "complete") init();
   else window.addEventListener("DOMContentLoaded", init);

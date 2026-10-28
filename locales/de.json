@@ -246,6 +246,15 @@
       "case-sentence": "Schreibt nur den Satzanfang groß und alles andere klein, auch Nomen.",
       "case-alternating": "Wechselt Groß- und Kleinbuchstaben ab, der Spott-Stil aus dem SpongeBob-Meme.",
       "case-toggle": "Kehrt die Schreibung jedes Buchstabens um: groß wird klein, klein wird groß."
+    },
+    "skinTone": {
+      "label": "Hautfarbe",
+      "default": "Standard (gelb)",
+      "light": "Hell",
+      "mediumLight": "Mittelhell",
+      "medium": "Mittel",
+      "mediumDark": "Mitteldunkel",
+      "dark": "Dunkel"
     }
   },
   "useCases": {

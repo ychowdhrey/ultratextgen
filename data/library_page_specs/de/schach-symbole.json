@@ -195,6 +195,46 @@
       ]
     },
     {
+      "id": "checkers-shogi-pieces",
+      "label": "Dame & Shogi",
+      "h2": "Spielsteine für Dame und Shogi",
+      "intro": "Die Steine des Damespiels in Weiß und Schwarz, jeweils als einfacher Stein und als Dame, dazu der Shogi-Stein in vier Formen. In Shogi-Partieaufzeichnungen steht ☗ für den Anziehenden (Sente) und ☖ für den Nachziehenden (Gote).",
+      "symbols": [
+        {
+          "char": "⛀",
+          "label": "Weißer Damestein"
+        },
+        {
+          "char": "⛁",
+          "label": "Weiße Dame (gekrönter Stein)"
+        },
+        {
+          "char": "⛂",
+          "label": "Schwarzer Damestein"
+        },
+        {
+          "char": "⛃",
+          "label": "Schwarze Dame (gekrönter Stein)"
+        },
+        {
+          "char": "☖",
+          "label": "Weißer Shogi-Stein"
+        },
+        {
+          "char": "☗",
+          "label": "Schwarzer Shogi-Stein"
+        },
+        {
+          "char": "⛉",
+          "label": "Gedrehter weißer Shogi-Stein"
+        },
+        {
+          "char": "⛊",
+          "label": "Gedrehter schwarzer Shogi-Stein"
+        }
+      ]
+    },
+    {
       "id": "notation-symbols",
       "label": "Notation & Kommentar",
       "h2": "Schach-Notation & Kommentar-Symbole",

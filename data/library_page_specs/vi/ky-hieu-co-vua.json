@@ -250,6 +250,46 @@
       ]
     },
     {
+      "id": "checkers-shogi-pieces",
+      "label": "Cờ đam và shogi",
+      "h2": "Quân cờ đam và shogi",
+      "intro": "Quân cờ đam màu trắng và đen, quân thường và quân vua, cùng quân shogi ở bốn dạng. Trong biên bản ván shogi, ☗ chỉ người đi trước (sente) và ☖ người đi sau (gote).",
+      "symbols": [
+        {
+          "char": "⛀",
+          "label": "Quân cờ đam trắng"
+        },
+        {
+          "char": "⛁",
+          "label": "Quân vua cờ đam trắng"
+        },
+        {
+          "char": "⛂",
+          "label": "Quân cờ đam đen"
+        },
+        {
+          "char": "⛃",
+          "label": "Quân vua cờ đam đen"
+        },
+        {
+          "char": "☖",
+          "label": "Quân shogi trắng"
+        },
+        {
+          "char": "☗",
+          "label": "Quân shogi đen"
+        },
+        {
+          "char": "⛉",
+          "label": "Quân shogi trắng quay ngược"
+        },
+        {
+          "char": "⛊",
+          "label": "Quân shogi đen quay ngược"
+        }
+      ]
+    },
+    {
       "id": "notation-symbols",
       "label": "Ghi biên bản",
       "h2": "Ký Hiệu Ghi Biên Bản và Nhận Xét",

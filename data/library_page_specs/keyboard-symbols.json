@@ -55,6 +55,30 @@
         { "char": "⎈", "label": "Control Key (Helm Symbol)" },
         { "char": "⎙", "label": "Print Screen Symbol" }
       ]
+    },
+    {
+      "id": "iso-function-key-symbols",
+      "label": "ISO Keys",
+      "h2": "ISO Function Key Symbols",
+      "intro": "Key symbols from the international keyboard standard ISO/IEC 9995-7, printed on some PC, terminal and Linux keyboards in place of words: Alt, Compose, Insert, Pause, Undo and the page keys. On a Mac, ⌤ and ⌧ stand for the Enter and Clear keys of the numeric keypad.",
+      "symbols": [
+        { "char": "⌤", "label": "Enter Key (Up Arrowhead Between Two Horizontal Bars)" },
+        { "char": "⌧", "label": "Clear Key (X in a Rectangle Box)" },
+        { "char": "⎀", "label": "Insert Key (Insertion Symbol)" },
+        { "char": "⎁", "label": "Continuous Underline Key" },
+        { "char": "⎂", "label": "Discontinuous Underline Key" },
+        { "char": "⎃", "label": "Emphasis Key" },
+        { "char": "⎄", "label": "Compose Key (Composition Symbol)" },
+        { "char": "⎆", "label": "Enter Key (ISO Enter Symbol)" },
+        { "char": "⎇", "label": "Alt Key (Alternative Key Symbol)" },
+        { "char": "⎉", "label": "Pause Key (Circled Horizontal Bar With Notch)" },
+        { "char": "⎊", "label": "Break / Interrupt Key (Circled Triangle Down)" },
+        { "char": "⎌", "label": "Undo Key" },
+        { "char": "⎖", "label": "Decimal Separator Key" },
+        { "char": "⎗", "label": "Previous Page Key (Page Up)" },
+        { "char": "⎘", "label": "Next Page Key (Page Down)" },
+        { "char": "⎚", "label": "Clear Screen Key" }
+      ]
     }
   ],
   "related": [

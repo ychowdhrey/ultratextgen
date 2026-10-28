@@ -246,6 +246,46 @@
       ]
     },
     {
+      "id": "checkers-shogi-pieces",
+      "label": "Dam dan shogi",
+      "h2": "Bidak dam dan shogi",
+      "intro": "Bidak permainan dam warna putih dan hitam, bidak biasa dan raja, serta bidak shogi dalam empat bentuk. Dalam catatan permainan shogi, ☗ menandai pemain pertama (sente) dan ☖ pemain kedua (gote).",
+      "symbols": [
+        {
+          "char": "⛀",
+          "label": "Bidak dam putih"
+        },
+        {
+          "char": "⛁",
+          "label": "Raja dam putih"
+        },
+        {
+          "char": "⛂",
+          "label": "Bidak dam hitam"
+        },
+        {
+          "char": "⛃",
+          "label": "Raja dam hitam"
+        },
+        {
+          "char": "☖",
+          "label": "Bidak shogi putih"
+        },
+        {
+          "char": "☗",
+          "label": "Bidak shogi hitam"
+        },
+        {
+          "char": "⛉",
+          "label": "Bidak shogi putih terbalik"
+        },
+        {
+          "char": "⛊",
+          "label": "Bidak shogi hitam terbalik"
+        }
+      ]
+    },
+    {
       "id": "notation-symbols",
       "label": "Notasi",
       "h2": "Simbol Notasi dan Anotasi",

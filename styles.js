@@ -1357,8 +1357,8 @@ const textStyles = {
   },
 
   'Ultra Cherokee': {
-    upper: 'ᎪᏴᏯᎠᎼᏅᏻᏋᏖᎻ᏶ᏮᏇᏑᏎᏲQᎱᏪᎲᏜᏙᏤXᎹᏓ',
-    lower: 'ᎪᏴᏯᎠᎼᏅᏻᏋᏖᎻ᏶ᏮᏇᏑᏎᏲqᎱᏪᎲᏜᏙᏤxᎹᏓ',
+    upper: 'ᎪᏴᏯᎠᎼᏅᏻᏋᏖᎻKᏮᏇᏑᏎᏲQᎱᏪᎲᏜᏙᏤXᎹᏓ',
+    lower: 'ᎪᏴᏯᎠᎼᏅᏻᏋᏖᎻkᏮᏇᏑᏎᏲqᎱᏪᎲᏜᏙᏤxᎹᏓ',
     nums: '0123456789',
     type: 'map',
     note: 'Cherokee syllabary lookalikes',

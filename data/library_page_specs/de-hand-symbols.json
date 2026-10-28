@@ -127,6 +127,14 @@
           "label": "Handfläche nach oben"
         },
         {
+          "char": "🫷",
+          "label": "Nach links drückende Hand"
+        },
+        {
+          "char": "🫸",
+          "label": "Nach rechts drückende Hand"
+        },
+        {
           "char": "👐",
           "label": "Offene Hände"
         },
@@ -205,6 +213,10 @@
         {
           "char": "✍",
           "label": "Schreibende Hand"
+        },
+        {
+          "char": "🤳",
+          "label": "Selfie machen"
         },
         {
           "char": "🤚",

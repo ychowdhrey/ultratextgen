@@ -60,8 +60,14 @@
   /* ---------- emoji ---------- */
   let EMOJI_RE = null;
   try {
+    // One element: a pictograph, its optional VS16, an optional skin tone, and an
+    // optional tag run (the England/Scotland/Wales flags). A sequence is elements
+    // joined by ZWJ, so a toned person inside a profession or a couple is still
+    // consumed whole. Flags (two regional indicators) and keycaps are their own
+    // shapes: none of their code points is Extended_Pictographic.
+    const EL = "\\p{Extended_Pictographic}\\uFE0F?\\p{Emoji_Modifier}?(?:[\\u{E0020}-\\u{E007E}]+\\u{E007F})?";
     EMOJI_RE = new RegExp(
-      "\\p{Extended_Pictographic}(\\uFE0F)?(\\u200D\\p{Extended_Pictographic}(\\uFE0F)?)*(\\p{Emoji_Modifier})?",
+      "[0-9#*]\\uFE0F?\\u20E3|\\p{Regional_Indicator}{2}|" + EL + "(?:\\u200D" + EL + ")*|\\p{Emoji_Modifier}",
       "gu"
     );
   } catch (e) {
