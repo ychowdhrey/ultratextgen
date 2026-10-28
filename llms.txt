@@ -4,7 +4,7 @@
 
 UltraTextGen is a free, no-sign-up text tool: Unicode font styles to copy and paste, a browsable symbol and emoji library, one reference page per individual symbol, printable lettering and handwriting sheets rendered in the browser, and explanatory guides and answers. Everything runs client-side.
 
-4880 indexable pages in 32 languages. This file is a navigation index, not a URL list: https://ultratextgen.com/sitemap.xml is the complete canonical URL list and stays the authority on what exists. Links below point to a narrower llms.txt index where one exists, and straight to a page where it does not.
+4884 indexable pages in 32 languages. This file is a navigation index, not a URL list: https://ultratextgen.com/sitemap.xml is the complete canonical URL list and stays the authority on what exists. Links below point to a narrower llms.txt index where one exists, and straight to a page where it does not.
 
 English pages are served from the site root, so this file is also the English index (https://ultratextgen.com/en/llms.txt redirects here). Every other language has its own index at https://ultratextgen.com/<code>/llms.txt.
 
@@ -61,14 +61,14 @@ The "Jobs across languages" section lists the site's main jobs. Each line is the
 - [hr](https://ultratextgen.com/hr/llms.txt): 13 pages. Upiši tekst, odaberi stil: podebljano, kurziv, gotica, balončasta ili s ukrasima.
 - [hu](https://ultratextgen.com/hu/llms.txt): 13 pages. Illeszd be a szöveged, és azonnal megjelenik többféle díszes betűtípusban: kézírás, gótikus, félkövér, buborék, esztétikus szimbólumokkal.
 - [id](https://ultratextgen.com/id/llms.txt): 274 pages. Ubah tulisan biasa jadi tulisan keren, font keren, huruf estetik, dan simbol aesthetic yang siap copy paste ke bio Instagram, caption…
-- [it](https://ultratextgen.com/it/llms.txt): 238 pages. Font belli, scritte aesthetic, caratteri particolari e simboli pronti da incollare nella bio Instagram, nei nickname, nelle caption TikTok…
-- [ja](https://ultratextgen.com/ja/llms.txt): 213 pages. 入力した文字を、太字・筆記体・ゴシック・バブル文字などのおしゃれなUnicodeフォントに一瞬で変換。インスタのプロフィール、TikTokのキャプション、Xの名前、ゲームIDにそのままコピペできます。
+- [it](https://ultratextgen.com/it/llms.txt): 239 pages. Font belli, scritte aesthetic, caratteri particolari e simboli pronti da incollare nella bio Instagram, nei nickname, nelle caption TikTok…
+- [ja](https://ultratextgen.com/ja/llms.txt): 214 pages. 入力した文字を、太字・筆記体・ゴシック・バブル文字などのおしゃれなUnicodeフォントに一瞬で変換。インスタのプロフィール、TikTokのキャプション、Xの名前、ゲームIDにそのままコピペできます。
 - [ko](https://ultratextgen.com/ko/llms.txt): 254 pages. 영문을 입력하면 굵은 글씨·필기체·고딕체 등 여러 유니코드 스타일로 바로 바꿔 줍니다.
 - [ms](https://ultratextgen.com/ms/llms.txt): 23 pages. Tukar tulisan biasa jadi tulisan hebat, font bergaya, huruf estetik, dan simbol aesthetic yang sedia salin tampal ke bio Instagram, caption…
 - [nl](https://ultratextgen.com/nl/llms.txt): 213 pages. Typ wat je wilt en kies een vibe: sierletters, vette tekst, aesthetic fonts, bubbel-letters, gotisch, omgekeerd en meer.
 - [no](https://ultratextgen.com/no/llms.txt): 23 pages. Skriv én gang og få 88 fine skrifttyper du kan kopiere og lime inn direkte: håndskrift, fet skrift, kursiv tekst, fine bokstaver…
 - [pl](https://ultratextgen.com/pl/llms.txt): 215 pages. Wpisz tekst, wybierz styl — pogrubione, kursywą, gotyk, bubble albo z ozdobnikami.
-- [pt](https://ultratextgen.com/pt/llms.txt): 236 pages. Cola seu texto e vê na hora em várias fontes bonitas — cursiva, gótica, bold, bubble, com símbolos aesthetic.
+- [pt](https://ultratextgen.com/pt/llms.txt): 237 pages. Cola seu texto e vê na hora em várias fontes bonitas — cursiva, gótica, bold, bubble, com símbolos aesthetic.
 - [ro](https://ultratextgen.com/ro/llms.txt): 13 pages. Scrie un text, alege un stil — îngroșat, cursiv, gotic, bubble sau cu ornamente.
 - [ru](https://ultratextgen.com/ru/llms.txt): 181 pages. Введите текст и мгновенно превратите его в красивые Unicode-шрифты: жирный, рукописный, курсив, пузырьковый.
 - [sk](https://ultratextgen.com/sk/llms.txt): 12 pages. Napíš text, vyber štýl: tučné, kurzíva, gotika, bublinkové alebo s ozdobami.
@@ -142,6 +142,7 @@ The "Jobs across languages" section lists the site's main jobs. Each line is the
 - [Emoji Name Drift: How Unicode’s Stable Names Diverge From the Words People Actually Use](https://ultratextgen.com/research/emoji-name-drift/): Every emoji has a formal Unicode name that never changes and a CLDR short name that can.
 - [Ink Saving by Worksheet Type: Which Print Treatments Keep a Worksheet Working](https://ultratextgen.com/research/ink-saving-by-worksheet-type/): We exported 54 real printable test cases, from name tracing sheets to word searches, under ink-saving treatments carried over from Study 1…
 - [What Kaomoji Are Made Of, and Where They Break in Basic Fonts and Markdown](https://ultratextgen.com/research/kaomoji-unicode-rendering-study/): A kaomoji looks like one picture, but it is a short string of characters, often borrowed from several writing systems.
+- [Do Name Tracing Worksheets Keep the Accents? We Tested Seven and Fixed the One That Cut Them](https://ultratextgen.com/research/name-tracing-accent-study/): A name worksheet is only useful if the child sees their own name whole.
 - [Printable Ink Efficiency: Measuring Coverage Reduction Across Common Worksheet Rendering Methods](https://ultratextgen.com/research/printable-ink-efficiency-study/): A controlled experiment on 108 computer-generated worksheet pages, 36 rendering methods and 36 unseen holdout pages.
 - [How Fast Do New Unicode Characters and Emoji Show Up? A Browser and Font Rendering Study](https://ultratextgen.com/research/unicode-rendering-support-study/): We drew every Unicode character from 8.0 to 18.0 and every emoji sequence in three browser engines, four font sets, 45 historical emoji…
 - [Zalgo Generator Benchmark 2026: Testing Creative Control Across 13 Tools](https://ultratextgen.com/research/zalgo-generator-benchmark/): We ran 13 Zalgo and corrupted-text generators through one procedure on September 29, 2026: the same ten inputs, the same fifteen creative…

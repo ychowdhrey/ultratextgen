@@ -170,39 +170,16 @@
     return out;
   }
 
-  /* A pasted list often arrives numbered, bulleted, or with a definition after
-     each word, the way a chat assistant or a vocabulary handout writes it:
-     "1. Apple - a red fruit", "• **Apple**: a red fruit". The word is the part
-     before the definition, so that is what goes in the grid and the word list.
-     A dash only counts as the separator with a space either side, so ice-cream
-     stays one entry. One exception: when what follows the colon or dash is
-     itself a list of short items ("Fruits: apple, pear, plum"), the part before
-     is a heading and the items are the words. */
-  const LIST_MARK_RE = /^\s*(?:[-*+\u2022\u2023\u2043\u25AA\u25AB\u25CF\u25CB\u25A0\u25A1\u25BA\u25B8\u2013\u2014\u00B7]+\s*|\(?\d{1,3}[.)\]](?=\s|\p{L})\s*|\d{1,3}\s+[-\u2013\u2014:]\s+)/u;
-  const TAIL_RE = /\s+[-\u2013\u2014]\s+|\s*[:=]\s*/u;
-  const EMPHASIS_RE = /^[*_`"]+|[*_`"]+$/g;
-
-  function unmark(text) {
-    return String(text).replace(LIST_MARK_RE, "").replace(EMPHASIS_RE, "").trim();
-  }
-
-  function splitHeadTail(line) {
-    const m = TAIL_RE.exec(line);
-    if (!m || m.index === 0) return { head: line, tail: "" };
-    return { head: line.slice(0, m.index), tail: line.slice(m.index + m[0].length) };
-  }
-
-  function isShortList(text) {
-    const items = String(text).split(/[,;]/).map((x) => x.trim()).filter(Boolean);
-    return items.length >= 2 && items.every((x) => x.split(/\s+/).length <= 2);
-  }
-
-  function entriesFromLine(line) {
-    const bare = unmark(line);
-    if (!bare) return [];
-    const parts = splitHeadTail(bare);
-    const body = !parts.tail ? bare : (isShortList(parts.tail) ? parts.tail : parts.head);
-    return body.split(/[,;]+/).map(unmark).filter(Boolean);
+  /* Reading the paste is js/printables/wordList.js, one parser shared with
+     the crossword and the word scramble: numbering and bullets dropped, a
+     definition after "=", ":" or a spaced dash dropped (so ice-cream stays one
+     entry), the first column of a tab-separated row, and commas or semicolons
+     splitting a list ("Fruits: apple, pear, plum" is a heading over three
+     words). It must be loaded first; the engine loads it before this file. */
+  function listParser() {
+    const p = ns.wordList;
+    if (!p) throw new Error("js/printables/wordList.js must load before wordSearch.js");
+    return p;
   }
 
   /* Accepts a textarea's value (one entry per line, commas also split) or an
@@ -214,13 +191,11 @@
      in silence (49 names used to print as "Find all 40 words"). */
   function normalizeWords(input, fold, limit) {
     const cap = limit == null ? MAX_WORDS : limit;
-    const raw = Array.isArray(input)
-      ? input
-      : String(input == null ? "" : input).split(/[\r\n]+/).reduce((all, line) => all.concat(entriesFromLine(line)), []);
+    const raw = listParser().parse(input, false);
     const seen = Object.create(null);
     const out = [];
     for (const entry of raw) {
-      const display = String(entry).replace(/\s+/g, " ").trim();
+      const display = entry.display;
       if (!display) continue;
       const letters = gridLetters(display, fold);
       if (!letters.length) continue;

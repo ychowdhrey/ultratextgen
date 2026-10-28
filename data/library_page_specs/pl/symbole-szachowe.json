@@ -246,6 +246,46 @@
       ]
     },
     {
+      "id": "checkers-shogi-pieces",
+      "label": "Warcaby i shogi",
+      "h2": "Pionki do warcabów i bierki shogi",
+      "intro": "Pionki warcabowe w kolorze białym i czarnym, zwykłe i jako damki, oraz bierka shogi w czterech wariantach. W zapisie partii shogi ☗ oznacza pierwszego gracza (sente), a ☖ drugiego (gote).",
+      "symbols": [
+        {
+          "char": "⛀",
+          "label": "Biały pionek warcabowy"
+        },
+        {
+          "char": "⛁",
+          "label": "Biała damka"
+        },
+        {
+          "char": "⛂",
+          "label": "Czarny pionek warcabowy"
+        },
+        {
+          "char": "⛃",
+          "label": "Czarna damka"
+        },
+        {
+          "char": "☖",
+          "label": "Biała bierka shogi"
+        },
+        {
+          "char": "☗",
+          "label": "Czarna bierka shogi"
+        },
+        {
+          "char": "⛉",
+          "label": "Odwrócona biała bierka shogi"
+        },
+        {
+          "char": "⛊",
+          "label": "Odwrócona czarna bierka shogi"
+        }
+      ]
+    },
+    {
       "id": "notation-symbols",
       "label": "Notacja",
       "h2": "Symbole Notacji i Komentarza",

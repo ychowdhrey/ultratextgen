@@ -238,6 +238,15 @@
       "plain": "テキスト版をコピー",
       "emoji": "絵文字版をコピー",
       "note": "アプリによってはカラーで表示されます。"
+    },
+    "skinTone": {
+      "label": "肌の色",
+      "default": "標準（黄色）",
+      "light": "薄い",
+      "mediumLight": "やや薄い",
+      "medium": "中間",
+      "mediumDark": "やや濃い",
+      "dark": "濃い"
     }
   },
   "useCases": {

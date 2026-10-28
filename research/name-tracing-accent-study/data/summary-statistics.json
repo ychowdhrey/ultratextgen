@@ -1,0 +1,67 @@
+{
+ "cells_per_run": 182,
+ "before_fix_flagged_run1_by_route": {
+  "en_cursive": 16
+ },
+ "before_fix_flagged_identical_in_3_runs": true,
+ "byte_identical_cells_of_182": 168,
+ "after_fix_flagged": 0,
+ "below_marks_before_flagged_by_run": {
+  "1": {
+   "en_cursive": 9
+  },
+  "2": {
+   "en_cursive": 9
+  }
+ },
+ "below_marks_after_flagged": 0,
+ "fault_injection_flagged_of_accented": [
+  161,
+  161
+ ],
+ "sweep_after_flagged_cleared_by_long_name_check": 25,
+ "sweep_before_cursive_flagged_not_long_name": 66,
+ "sweep_before_cursive_flagged_long_name": 11,
+ "sweep_before_flagged_by_route": {
+  "en_cursive": 77,
+  "en_name": 6,
+  "pl_name": 6,
+  "tr_name": 6
+ },
+ "sweep_before_cells": 540,
+ "sweep_after_flagged_by_route": {
+  "en_cursive": 7,
+  "en_name": 6,
+  "pl_name": 6,
+  "tr_name": 6
+ },
+ "sweep_after_cells": 540,
+ "probe_before_clipped_by_page": {
+  "en_cursive": 22,
+  "es_cursive": 18,
+  "fr_cursive": 16,
+  "it_cursive": 20,
+  "pt_cursive": 20,
+  "pl_cursive": 20,
+  "nl_cursive": 22,
+  "id_cursive": 20
+ },
+ "probe_before_clipped_cells": 158,
+ "probe_after_clipped_by_page": {},
+ "probe_after_clipped_cells": 0,
+ "probe_cells_per_phase": 490,
+ "viewbox_cells_compared": 580,
+ "viewbox_cells_changed": 73,
+ "viewbox_pages_changed": [
+  "/de/zum-ausdrucken/buchstaben-vorlagen/",
+  "/es/imprimibles/nombre-en-cursiva/",
+  "/fr/imprimables/alphabet-cursif/",
+  "/id/printables/tulisan-selamat-ulang-tahun/",
+  "/it/da-stampare/alfabeto-corsivo/",
+  "/nl/om-uit-te-printen/schrijfletters/",
+  "/pl/do-druku/alfabet-kursywny/",
+  "/printables/bubble-name/",
+  "/printables/cursive-name/",
+  "/pt/imprimiveis/alfabeto-cursivo/"
+ ]
+}

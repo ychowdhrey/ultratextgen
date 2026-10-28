@@ -768,6 +768,8 @@ async function main() {
     await page.reload({ waitUntil: 'load' });
     await page.waitForTimeout(700);
     const clearBtn = page.locator('.pt-roster-clear');
+    // A remembered list waits behind "Whole class" (case 25).
+    await page.click('.pt-audience-field .pt-choice[data-value="class"]');
     check('the saved list is back in the box and Clear names shows', (await page.inputValue('#pt-name-roster')).includes('Noah') && await clearBtn.isVisible());
     await clearBtn.click();
     check('Clear names empties the box', (await page.inputValue('#pt-name-roster')) === '');
@@ -910,6 +912,598 @@ async function main() {
     const contour = await page.locator('#pt-gen-preview .pt-trace-contour').count();
     const rows = await page.locator('#pt-gen-preview .pt-trace-route').count();
     check('"Straße ẞ" dotted rows draw no contour glyph', rows > 0 && contour === 0, `${contour} contour glyphs in ${rows} routed rows`);
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 22. Name labels: the example is never printed, and a preset never
+  // rewrites what the visitor chose. On 2026-10-25 a live audit found a week
+  // of dated bottle labels printed as the child's name after one preset
+  // click, a chosen Avery 5160 silently swapped for a 5163 grid, a name field
+  // disabled by a list nothing on screen showed, and a remembered sample that
+  // turned "type Ava" into "Maya LopezAva". Each is asserted here through the
+  // page's own controls; the PDF is read, not the DOM.
+  console.log('\n/printables/name-labels/ (example never prints; presets never undo a choice)');
+  {
+    const { ctx, page, errors } = await open('/printables/name-labels/', 'desktop');
+    // A control that is gone fails this case; it does not end the run as UNKNOWN.
+    page.setDefaultTimeout(5000);
+    try {
+    const first = () => page.evaluate(() => { const L = window.UltraTextGen.labels; const labs = L.labelsFor(L.geometry()); return { name: labs[0] && labs[0].name, line2: labs[0] && labs[0].line2, n: labs.length, example: !!labs.example }; });
+    check('first load: the name field is empty and the sheet is the example', (await page.inputValue('#lb-name')) === '' && (await first()).example);
+    check('first load: nothing is remembered', (await page.evaluate(() => localStorage.getItem('utg_label_sheet'))) === null);
+    let got = false;
+    page.once('download', () => { got = true; });
+    await page.click('#lb-pdf');
+    await page.waitForTimeout(600);
+    check('Download with no name asks for one and saves nothing', !got && (await page.evaluate(() => document.activeElement.id)) === 'lb-name');
+    await page.click('canvas.lb-preview-canvas');
+    await page.keyboard.type('Ava Chen');
+    await page.click('#lb-what [data-value=bottles]');
+    await page.click('#lb-date-mode [data-value=print]');
+    await page.waitForTimeout(300);
+    const dated = await first();
+    check('dated labels: name stays the name, the date fills line 2', dated.name === 'Ava Chen' && /\d/.test(dated.line2 || '') && dated.n === 15, JSON.stringify(dated));
+    await page.click('#lb-what [data-value=supplies]');
+    await page.waitForTimeout(300);
+    const after = await first();
+    check('a preset after dated labels keeps the name as the name', after.name === 'Ava Chen', JSON.stringify(after));
+    await page.click('#lb-on [data-value=stock]');
+    await page.selectOption('#lb-stock', 'avery-5160');
+    const stocks = [];
+    for (const p of ['bins', 'supplies', 'books']) {
+      await page.click('#lb-what [data-value=' + p + ']');
+      stocks.push(await page.inputValue('#lb-stock'));
+    }
+    check('a chosen Avery 5160 survives every preset', stocks.every((v) => v === 'avery-5160'), stocks.join(','));
+    await page.click('#lb-mode [data-value=list]');
+    await page.fill('#lb-list', 'Noah Kim\nAisha Rahman');
+    await page.waitForTimeout(300);
+    const fields = await page.evaluate(() => ['lb-name', 'lb-line2', 'lb-line3'].filter((id) => document.getElementById(id).disabled));
+    check('a list replaces the name field; no field is disabled', !fields.length && (await first()).name === 'Noah Kim', fields.join(','));
+    const [download] = await Promise.all([page.waitForEvent('download'), page.click('#lb-pdf')]);
+    const buf = fs.readFileSync(await download.path());
+    check('the list PDF is one Letter page set to print at actual size', pdfPages(buf) === 1 && /PrintScaling\s*\/None/.test(buf.toString('latin1')), `${pdfPages(buf)} pages`);
+    await page.reload({ waitUntil: 'load' });
+    await page.waitForTimeout(700);
+    check('a remembered list is visible on return', await page.evaluate(() => !document.getElementById('lb-list-box').hidden && /Noah Kim/.test(document.getElementById('lb-list').value)));
+    } catch (e) {
+      check('name labels: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 27. Locale strings that only a rendered sheet shows. Turkish has eight
+  // vowels and the vowel chip printed five (A E I O U, no İ Ö Ü). Its class
+  // set read "3 sayfa · 3 sayfa" because the sheet and the page were one word.
+  // A one-word word search read "Finde alle 1 Wörter". The PDF is counted and
+  // the line under the button is read as text.
+  console.log('\n/tr/yazdirilabilir/harf-boyama/ + /de/zum-ausdrucken/suchsel/ (locale counts and sets)');
+  {
+    const { ctx, page, errors } = await open('/tr/yazdirilabilir/harf-boyama/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      const chip = await page.evaluate(() => { const i = document.querySelector('input[name=pt-set-letters][value=vow]'); return i ? i.parentNode.textContent.trim() : null; });
+      check('tr vowel chip names all eight Turkish vowels', chip === 'AEIİOÖUÜ', chip);
+      await page.click('label:has(input[name=pt-set-letters][value=vow])');
+      await page.click('label:has(input[name=pt-set-size][value=full])');
+      const [d] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#pt-alphabet-print')]);
+      const n = pdfPages(fs.readFileSync(await d.path()));
+      check('tr vowels at full page size print 8 pages, one per vowel', n === 8, `${n} pages`);
+    } catch (e) {
+      check('tr vowel set: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+  {
+    const { ctx, page, errors } = await open('/tr/yazdirilabilir/isim-yazma-calismasi/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.evaluate(() => { const d = document.querySelector('details.pt-roster-field'); if (d) d.open = true; });
+      await page.click('.pt-audience-field [data-value=class]');
+      await page.fill('#pt-name-roster', 'Ali\nAyşe\nCan');
+      await page.waitForTimeout(300);
+      const cost = (await page.textContent('#pt-sheet-cost')).trim();
+      const counts = cost.split(' · ').filter((b) => /^\d/.test(b)).map((b) => b.replace(/^\d+\s*/, ''));
+      check('tr class set: the sheet count and the page count use different words', counts.length === 2 && counts[0] !== counts[1], cost);
+    } catch (e) {
+      check('tr class set: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+  {
+    const { ctx, page, errors } = await open('/de/zum-ausdrucken/suchsel/', 'desktop');
+    await page.fill('#pt-search-input', 'Apfel');
+    await page.waitForTimeout(600);
+    const note = await page.evaluate(() => { const n = document.querySelector('.pt-search-note'); return n ? n.textContent : null; });
+    check('de word search with one word does not say "alle 1 Wörter"', !!note && !/\b1 Wörter/.test(note), note);
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 28. A promised tool that never rendered. Both Indonesian letter pages say
+  // "type a name" and mounted an empty div the engine has no id for, so no
+  // field appeared. Typing must draw the name, and Download PDF must write
+  // that name's sheet.
+  for (const url of ['/id/printables/huruf-bubble/', '/id/printables/huruf-kaligrafi/']) {
+    console.log(`\n${url} (the name tool renders and downloads)`);
+    const { ctx, page, errors } = await open(url, 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.fill('#pt-name-input', 'Rizky');
+      await page.waitForTimeout(400);
+      const drawn = await page.locator('#pt-name-preview svg').count();
+      check('typing a name draws it in the preview', drawn > 0, `${drawn} svg`);
+      const [d] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#pt-name-print')]);
+      const buf = fs.readFileSync(await d.path());
+      check('Download PDF writes a PDF of that name', buf.slice(0, 4).toString() === '%PDF' && pdfPages(buf) >= 1 && /rizky/i.test(d.suggestedFilename()), d.suggestedFilename());
+    } catch (e) {
+      check('id name tool: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 29. A monogram with accented initials downloaded as "download", with no
+  // extension: the browser drops a non-ASCII filename. The initials fold to
+  // ASCII, so the file keeps its name and its type.
+  console.log('\n/printables/monogram-maker/ (accented initials keep the file name)');
+  {
+    const { ctx, page, errors } = await open('/printables/monogram-maker/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      for (const [id, v] of [['mono-left', 'Ä'], ['mono-center', 'Ö'], ['mono-right', 'Ü']]) await page.fill('#' + id, v);
+      await page.waitForTimeout(300);
+      const [pdf] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#mono-print')]);
+      check('ÄÖÜ downloads monogram-aou.pdf', pdf.suggestedFilename() === 'monogram-aou.pdf', pdf.suggestedFilename());
+      const [png] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#mono-png')]);
+      check('ÄÖÜ downloads monogram-aou.png', png.suggestedFilename() === 'monogram-aou.png', png.suggestedFilename());
+    } catch (e) {
+      check('monogram filename: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 23. Sharing a saved set shares the set. Without a native share sheet the
+  // strip's Share copied the PAGE URL for two or more saved symbols, so the
+  // recipient got a page instead of the shortlist, and it confirmed that in
+  // English ("Link copied") under Korean prose.
+  console.log('\n/ko/library/imotikon/ (saved strip Share without a share sheet)');
+  {
+    const { ctx, page, errors } = await open('/ko/library/imotikon/', 'desktop', () => {
+      try { delete Navigator.prototype.share; } catch (e) { /* already absent */ }
+      if (!localStorage.getItem('utg_saved_items')) {
+        localStorage.setItem('utg_saved_items', JSON.stringify([
+          { type: 'symbol', value: '★', label: '★', href: '', t: 2 },
+          { type: 'symbol', value: '♥', label: '♥', href: '', t: 1 }
+        ]));
+      }
+    });
+    page.setDefaultTimeout(5000);
+    try {
+      check('the page has no native share sheet', await page.evaluate(() => typeof navigator.share !== 'function'));
+      await sentinel(page);
+      const before = (await dl(page)).length;
+      const btn = page.locator('.symbol-saved-strip .share-result-btn').first();
+      await btn.scrollIntoViewIfNeeded();
+      await btn.click();
+      await page.waitForTimeout(300);
+      const copied = await clip(page);
+      check('strip Share with two saved items copies the items, not a URL', copied === '★ ♥', JSON.stringify(copied));
+      const label = (await btn.locator('.share-result-label').textContent()) || '';
+      check('strip Share confirms in the page language', /[가-힣]/.test(label) && !/Link copied|Copied|Failed/.test(label), label);
+      // Share rows are read by their share_method key: the event name is a
+      // literal only share-core.js may contain (test:share-core asserts it).
+      const rows = (await dl(page)).slice(before).filter((e) => e.share_method);
+      check('the strip copy records one clipboard share row, format text',
+        rows.length === 1 && rows[0].share_method === 'link_copy' && rows[0].share_destination === 'clipboard'
+          && rows[0].share_surface === 'library_saved' && rows[0].share_format === 'text', JSON.stringify(rows));
+    } catch (e) {
+      check('saved strip Share: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 24. The generator's Save follows the store, not the list it loaded with.
+  // script.js repainted its stars only after its own clicks, so a style saved
+  // in another tab still read "Save" here, and pressing it flipped the store:
+  // it REMOVED the style the visitor had just asked to keep.
+  console.log('\n/ (generator Save across tabs)');
+  {
+    const { ctx, page, errors } = await open('/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.fill('#mainInput', 'Luna');
+      await page.waitForTimeout(300);
+      const names = await page.evaluate(() => [...document.querySelectorAll('#resultsGrid .save-btn')].slice(0, 2).map((b) => b.dataset.style));
+      const [x, y] = names;
+      const star = (name) => page.evaluate((n) => {
+        const b = [...document.querySelectorAll('#resultsGrid .save-btn')].find((e) => e.dataset.style === n);
+        return b ? b.getAttribute('aria-pressed') : null;
+      }, name);
+      const stored = () => page.evaluate(() => JSON.parse(localStorage.getItem('utg_saved_items') || '[]').filter((r) => r.type === 'style').map((r) => r.value));
+      check('two unsaved styles to work with', !!x && !!y && (await star(x)) === 'false' && (await star(y)) === 'false', JSON.stringify(names));
+
+      // Another tab in the same browser saves x; this tab hears the storage event.
+      const other = await ctx.newPage();
+      await other.goto(BASE + '/', { waitUntil: 'load' });
+      await other.waitForTimeout(700);
+      await other.fill('#mainInput', 'Luna');
+      await other.waitForTimeout(300);
+      await other.locator(`#resultsGrid .save-btn[data-style="${x.replace(/"/g, '\\"')}"]`).first().click();
+      await other.waitForTimeout(400);
+      check('a save in another tab repaints this tab\'s star', (await star(x)) === 'true', await star(x));
+      check('and lists the style in this tab\'s saved section',
+        await page.evaluate((n) => [...document.querySelectorAll('#savedGrid .save-btn')].some((b) => b.dataset.style === n), x));
+      await other.close();
+
+      // The race the listener cannot close: storage changes before this tab
+      // hears about it (written here directly, so no event arrives). The star
+      // still reads "Save"; pressing it must keep y saved, not remove it.
+      await page.evaluate((n) => {
+        const list = JSON.parse(localStorage.getItem('utg_saved_items') || '[]');
+        list.unshift({ type: 'style', value: n, label: n, href: '', t: Date.now() });
+        localStorage.setItem('utg_saved_items', JSON.stringify(list));
+      }, y);
+      check('the stale star still reads Save before the press', (await star(y)) === 'false', await star(y));
+      await page.locator(`#resultsGrid .save-btn[data-style="${y.replace(/"/g, '\\"')}"]`).first().click();
+      await page.waitForTimeout(300);
+      check('pressing a stale Save keeps the style saved', (await stored()).includes(y), JSON.stringify(await stored()));
+      check('and the star now reads Saved', (await star(y)) === 'true', await star(y));
+      check('the other tab\'s save survives', (await stored()).includes(x), JSON.stringify(await stored()));
+    } catch (e) {
+      check('generator Save across tabs: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 25. The library star carries the same intent. A storage write this tab
+  // has not heard about yet leaves a star reading "Save"; pressing it must
+  // keep the symbol saved, where a flip of the store removed it.
+  console.log('\n/library/heart-symbols/ (stale Save star keeps the symbol)');
+  {
+    const { ctx, page, errors } = await open('/library/heart-symbols/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      const sym = await page.locator('.flag-row .symbol-save-btn').first().getAttribute('data-symbol');
+      const starState = () => page.evaluate((v) => {
+        const b = [...document.querySelectorAll('.symbol-save-btn')].find((e) => e.getAttribute('data-symbol') === v);
+        return b ? b.getAttribute('aria-pressed') : null;
+      }, sym);
+      await page.evaluate((v) => {
+        const list = JSON.parse(localStorage.getItem('utg_saved_items') || '[]');
+        list.unshift({ type: 'symbol', value: v, label: v, href: '', t: Date.now() });
+        localStorage.setItem('utg_saved_items', JSON.stringify(list));
+      }, sym);
+      check('the stale star still reads Save before the press', (await starState()) === 'false', await starState());
+      await page.locator('.flag-row .symbol-save-btn').first().click({ force: true });
+      await page.waitForTimeout(300);
+      const kept = await page.evaluate((v) => JSON.parse(localStorage.getItem('utg_saved_items') || '[]').some((r) => r.type === 'symbol' && r.value === v), sym);
+      check('pressing a stale library Save star keeps the symbol saved', kept, sym);
+      check('and the star now reads Saved', (await starState()) === 'true', await starState());
+    } catch (e) {
+      check('library stale star: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 26. Decoration chips are buttons. They were spans with a click handler,
+  // so Tab never reached them, Enter and Space did nothing, and a screen
+  // reader did not announce them as controls: without a mouse, nobody could
+  // add a decoration. Tab must land on a chip, and Enter and Space must
+  // change the results exactly as a click does. EN and a locale page.
+  for (const url of ['/', '/de/fette-schrift/']) {
+    console.log(`\n${url} (decoration chips work from the keyboard)`);
+    const { ctx, page, errors } = await open(url, 'desktop');
+    try {
+      await page.fill('#mainInput', 'Luna');
+      const chip = page.locator('#decorationGrid .decoration-item').first();
+      const deco = () => page.evaluate(() => {
+        const d = document.querySelector('#resultsGrid .style-decoration');
+        return d ? d.textContent : null;
+      });
+      const pressed = () => chip.getAttribute('aria-pressed');
+      check('the chips are buttons', (await chip.evaluate((e) => e.tagName)) === 'BUTTON' &&
+        (await page.locator('#decorationGrid .clear-decoration').evaluate((e) => e.tagName)) === 'BUTTON');
+      await chip.click();
+      await page.waitForTimeout(200);
+      const byClick = await deco();
+      await page.click('#decorationGrid .clear-decoration');
+      await page.waitForTimeout(200);
+      check('a click decorates the results and None clears them', !!byClick && (await deco()) === null, String(byClick));
+      await page.locator('.decoration-tab').last().focus();
+      let reached = false;
+      for (let i = 0; i < 12 && !reached; i++) {
+        await page.keyboard.press('Tab');
+        reached = await page.evaluate(() => !!document.activeElement && document.activeElement.matches('#decorationGrid .decoration-item'));
+      }
+      check('Tab reaches a decoration chip', reached);
+      await chip.focus();
+      await page.keyboard.press('Enter');
+      await page.waitForTimeout(200);
+      check('Enter decorates the results the way a click does', !!byClick && (await deco()) === byClick && (await pressed()) === 'true', `${await deco()} / aria-pressed=${await pressed()}`);
+      await page.keyboard.press('Space');
+      await page.waitForTimeout(200);
+      check('Space on the selected chip clears it', (await deco()) === null && (await pressed()) === 'false', `${await deco()} / aria-pressed=${await pressed()}`);
+      await page.keyboard.press('Space');
+      await page.waitForTimeout(200);
+      check('Space selects it again', (await deco()) === byClick && (await pressed()) === 'true', `${await deco()} / aria-pressed=${await pressed()}`);
+    } catch (e) {
+      check('decoration chips: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 25. A remembered class never prints in place of the name on screen, and
+  // Clear names forgets it everywhere it is stored. A remembered class reopened
+  // on "Whole class", so an untouched Download printed last week's class; and
+  // each "Your recent sheets" link carried roster=<every name>, which Clear
+  // names left behind. Both found by a live audit on 2026-10-25.
+  console.log('\n/printables/name-tracing/ (a saved class waits behind Whole class; Clear names scrubs recents)');
+  {
+    const { ctx, page, errors } = await open('/printables/name-tracing/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+    await page.click('.pt-audience-field .pt-choice[data-value="class"]');
+    await page.fill('#pt-name-roster', 'Zoe\nJose\nAva');
+    await page.waitForTimeout(1100);
+    await page.evaluate(() => window.UltraTextGen.printPrefs.rememberRecent({ href: location.origin + '/printables/name-tracing/?name=Zoe&roster=Zoe%7CJose%7CAva', label: 'Zoe', page: 'Name tracing', sheet: 'name' }));
+    await page.reload({ waitUntil: 'load' });
+    await page.waitForTimeout(700);
+    const aud = await page.evaluate(() => document.getElementById('pt-name-roster').dataset.ptAudience);
+    const cost = await page.evaluate(() => { const c = document.querySelector('.pt-sheet-cost'); return c ? c.textContent : ''; });
+    check('a remembered class opens on One sheet: one sheet, not three', aud === 'one' && !/^3 sheets/.test(cost), aud + ' / ' + cost);
+    check('Whole class says how many names are saved', /3 saved names/.test(await page.textContent('.pt-audience-field .pt-choice[data-value="class"]')));
+    await page.click('.pt-audience-field .pt-choice[data-value="class"]');
+    check('Whole class brings the saved list back', (await page.inputValue('#pt-name-roster')).includes('Jose'));
+    await page.click('.pt-roster-clear');
+    const recent = await page.evaluate(() => localStorage.getItem('utg_printables_recent') || '');
+    check('Clear names removes the class from the recent-sheet links', recent.includes('name-tracing') && !/roster=|Jose/.test(recent), recent);
+    await page.goto(BASE + '/printables/name-tracing/?roster=Mia%7CLeo', { waitUntil: 'load' });
+    await page.waitForTimeout(700);
+    check('a ?roster= link still opens on Whole class', (await page.evaluate(() => document.getElementById('pt-name-roster').dataset.ptAudience)) === 'class');
+    } catch (e) {
+      check('saved class: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+    const bl = await open('/printables/block-letters/', 'desktop');
+    await bl.page.evaluate(() => localStorage.setItem('utg_printables_roster', 'Emma\nNoah'));
+    await bl.page.reload({ waitUntil: 'load' });
+    await bl.page.waitForTimeout(700);
+    check('block-letters keeps its previous behaviour (remembered class opens on Whole class)', (await bl.page.evaluate(() => { const r = document.getElementById('pt-name-roster'); return r && r.dataset.ptAudience; })) === 'class');
+    await bl.ctx.close();
+  }
+
+  // 23. A pasted word list means one thing in all three puzzle makers. On
+  // 2026-10-25 a live audit found "cat, apple, tiger" printed as ONE
+  // 13-letter crossword answer, a spreadsheet's word<TAB>clue rows merged
+  // into one entry ("cat a small pet") in the crossword, the word search and
+  // the scramble, and a list whose words share no letter downloaded as a
+  // one-row strip. The paste is read by js/printables/wordList.js, which
+  // loads on demand ahead of the puzzle modules, so a real page is the test.
+  console.log('\n/printables/crossword-maker/ + word-search-maker/ (pasted lists, the one-row strip)');
+  {
+    const { ctx, page, errors } = await open('/printables/crossword-maker/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      const cwRead = () => page.evaluate(() => ({
+        clues: [...document.querySelectorAll('#pt-cw-preview .pt-cw-clue-list li')].map((l) => l.textContent),
+        pdfOff: document.getElementById('pt-cw-print').disabled,
+        pngOff: document.getElementById('pt-cw-png').disabled,
+        meta: document.getElementById('pt-cw-meta').textContent
+      }));
+      await page.fill('#pt-cw-input', 'cat, apple, tiger');
+      await page.waitForTimeout(500);
+      const comma = await cwRead();
+      check('crossword: "cat, apple, tiger" builds 3 entries, none longer than 5', comma.clues.length === 3 && comma.clues.every((c) => /\((3|5)\)$/.test(c)), JSON.stringify(comma.clues));
+      await page.fill('#pt-cw-input', 'cat\ta small pet\napple\tred fruit\ntiger\tbig striped cat');
+      await page.waitForTimeout(500);
+      const tab = await cwRead();
+      check('crossword: word<TAB>clue rows keep their clues', tab.clues.length === 3 && tab.clues.some((c) => /^a small pet \(3\)$/.test(c)), JSON.stringify(tab.clues));
+      check('crossword: a real crossword can be downloaded', !tab.pdfOff && !tab.pngOff);
+      await page.fill('#pt-cw-input', 'dog\nfix');
+      await page.waitForTimeout(500);
+      const strip = await cwRead();
+      check('crossword: words that share no letter cannot download a one-row strip, and say why', strip.pdfOff && strip.pngOff && /share a letter/.test(strip.meta), JSON.stringify(strip));
+    } catch (e) {
+      check('crossword paste formats: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+  {
+    const { ctx, page, errors } = await open('/printables/word-search-maker/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.fill('#pt-search-input', 'cat\ta small pet\napple\tred fruit\ntiger\tbig striped cat');
+      await page.waitForTimeout(500);
+      const words = await page.evaluate(() => [...document.querySelectorAll('#pt-search-preview .pt-search-words li')].map((l) => l.textContent));
+      check('word search: word<TAB>clue rows hide the word column only', words.join('|') === 'cat|apple|tiger', words.join('|'));
+    } catch (e) {
+      check('word search paste formats: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 23. Monogram initials. Each box is prefilled with maxlength=1, and a full
+  // box dropped the keystroke: tapping S and typing Q left J S L, and "ERM"
+  // typed into the first box gave E S L. All three boxes empty downloaded a
+  // blank page. Driven through the boxes themselves, on a phone; the PDF's
+  // file name carries the initials the export drew.
+  for (const [url, device, reason] of [['/printables/monogram-maker/', 'mobile', 'Type initials'], ['/pl/do-druku/monogram/', 'desktop', 'Wpisz inicjały']]) {
+    console.log(`\n${url} (monogram initials overtype, advance, paste; empty waits)`);
+    const { ctx, page, errors } = await open(url, device);
+    page.setDefaultTimeout(5000);
+    try {
+      const boxes = () => page.evaluate(() => ['mono-left', 'mono-center', 'mono-right'].map((i) => document.getElementById(i).value).join(''));
+      const tap = (sel) => (device === 'mobile' ? page.tap(sel) : page.click(sel));
+      const first = await boxes();
+      await tap('#mono-center');
+      await page.keyboard.type('Q');
+      const q = await boxes();
+      check('tap the middle box and type Q: only the middle letter changes', q === first[0] + 'Q' + first[2], `${first} -> ${q}`);
+      await tap('#mono-left');
+      await page.keyboard.type('erm');
+      check('"erm" typed into the first box fills all three, uppercased', (await boxes()) === 'ERM', await boxes());
+      await page.evaluate(() => {
+        const dt = new DataTransfer(); dt.setData('text/plain', 'a.b c');
+        document.getElementById('mono-left').dispatchEvent(new ClipboardEvent('paste', { clipboardData: dt, bubbles: true, cancelable: true }));
+      });
+      check('a paste of "a.b c" fills the boxes in order', (await boxes()) === 'ABC', await boxes());
+      await page.waitForTimeout(300);
+      const [d] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#mono-print')]);
+      const buf = fs.readFileSync(await d.path());
+      check('the PDF is written for the typed initials', buf.slice(0, 4).toString() === '%PDF' && d.suggestedFilename() === 'monogram-abc.pdf', d.suggestedFilename());
+      for (const id of ['mono-left', 'mono-center', 'mono-right']) await page.fill('#' + id, '');
+      await page.waitForTimeout(300);
+      const empty = await page.evaluate(() => {
+        const n = document.getElementById('mono-empty-note');
+        return { pdf: document.getElementById('mono-print').disabled, png: document.getElementById('mono-png').disabled, note: n && !n.hidden ? n.textContent : '' };
+      });
+      check('all boxes empty: Download PDF and PNG wait, with the page\'s own reason', empty.pdf && empty.png && empty.note === reason, JSON.stringify(empty));
+      await tap('#mono-right');
+      await page.keyboard.type('k');
+      await page.waitForTimeout(200);
+      check('a letter typed back in re-enables the downloads', await page.evaluate(() => !document.getElementById('mono-print').disabled && document.getElementById('mono-empty-note').hidden));
+    } catch (e) {
+      check('monogram: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // Captures what each PDF export hands the PDF writer: the text of every SVG
+  // on the print surface, page unit by page unit, read from the root
+  // renderPages() is given.
+  const sheetTextCapture = `(function () {
+    const UTG = (window.UltraTextGen = window.UltraTextGen || {});
+    let real;
+    Object.defineProperty(UTG, 'pdf', { configurable: true, get() { return real; }, set(v) {
+      real = v && Object.assign({}, v, { renderPages: async function (root, o) {
+        window.__ptPages = Array.from(root.querySelectorAll('.pt-sheet-page, .pt-banner-page')).map((p) => Array.from(p.querySelectorAll('svg text')).map((t) => t.textContent.trim()).filter(Boolean));
+        window.__ptText = Array.from(root.querySelectorAll('svg text')).map((t) => t.textContent.trim()).filter(Boolean);
+        return v.renderPages(root, o);
+      } });
+    } });
+  })();`;
+
+  // 24. Sight words. The "friend" chip set the word picker to a value it has no
+  // option for, so the picker selected nothing and the sheet printed "said".
+  // Every chip is checked against the picker, and the last chip's PDF is read.
+  console.log('\n/printables/sight-word-tracing/ (every chip prints its own word)');
+  {
+    const { ctx, page, errors } = await open('/printables/sight-word-tracing/', 'desktop', sheetTextCapture);
+    page.setDefaultTimeout(5000);
+    try {
+      const chips = await page.$$eval('.quickfill [data-fill]', (bs) => bs.map((b) => [b.dataset.fill, b.textContent.trim()]));
+      const off = [];
+      for (const [w, label] of chips) {
+        await page.click(`.quickfill [data-fill="${w}"]`);
+        const v = await page.inputValue('#pt-gen-input');
+        if (v !== w || label !== w) off.push(`${label} -> ${v || '(nothing)'}`);
+      }
+      check(`all ${chips.length} chips select their own word in the picker`, chips.length > 0 && !off.length, off.join(', '));
+      const last = chips[chips.length - 1][0];
+      await page.click(`.quickfill [data-fill="${last}"]`);
+      await page.waitForTimeout(400);
+      await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#pt-gen-print')]);
+      const text = await page.evaluate(() => window.__ptText || []);
+      check(`the "${last}" chip's PDF traces "${last}", not "said"`, text.includes(last) && !text.includes('said'), JSON.stringify(text.slice(0, 4)));
+    } catch (e) {
+      check('sight words: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 25. Coloring page maker, Whole class, two typed lines. Each child's sheet
+  // printed the roster name instead of the design, so one of the two lines
+  // was dropped from every sheet. The PDF's pages are read.
+  console.log('\n/printables/coloring-page-maker/ (a class set keeps both lines)');
+  {
+    const { ctx, page, errors } = await open('/printables/coloring-page-maker/', 'desktop', sheetTextCapture);
+    page.setDefaultTimeout(5000);
+    try {
+      await page.fill('#pt-design-input', 'Happy Birthday\nEmma');
+      await page.click('#pt-design-audience [data-value=class]');
+      await page.fill('#pt-design-roster', 'Noah\nAva\nLiam');
+      await page.waitForTimeout(400);
+      const [d] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#pt-design-print')]);
+      const buf = fs.readFileSync(await d.path());
+      const pages = await page.evaluate(() => window.__ptPages || []);
+      const want = ['Noah', 'Ava', 'Liam'].map((n) => ['Happy Birthday', n]);
+      const ok = pages.length === 3 && want.every((w, i) => w.every((s) => (pages[i] || []).includes(s)));
+      check('3 children, 3 pages, each with "Happy Birthday" and that child\'s name', ok && pdfPages(buf) === 3, `${pdfPages(buf)} PDF pages; ${JSON.stringify(pages)}`);
+    } catch (e) {
+      check('coloring class set: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 26. Banner maker size line. It ended in a constant "US Letter" whatever
+  // paper was chosen, in English on the Polish page. The line is compared
+  // with the PDF's own MediaBox and page count.
+  for (const [url, a4, land, letter] of [['/printables/banner-maker/', 'A4', 'Landscape', 'US Letter'], ['/pl/do-druku/banery-z-literami/', 'A4', 'Pozioma', 'US Letter']]) {
+    console.log(`\n${url} (the size line names the PDF's paper)`);
+    const { ctx, page, errors } = await open(url, 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.fill('#pt-banner-input', 'HAPPY BIRTHDAY');
+      const sum = await page.$('#pt-print-settings summary');
+      if (sum) await sum.click();
+      await page.click('#pt-print-settings button:text-is("A4")');
+      await page.click(`#pt-print-settings button:text-is("${land}")`);
+      await page.waitForTimeout(400);
+      const line = await page.textContent('#pt-banner-meta');
+      const [d] = await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#pt-banner-print')]);
+      const buf = fs.readFileSync(await d.path());
+      const box = (buf.toString('latin1').match(/MediaBox \[0 0 ([\d.]+) ([\d.]+)\]/) || []).slice(1).map(Number);
+      check(`A4 + ${land}: the line names them and not ${letter}`, line.includes(a4) && line.includes(land) && !line.includes(letter), line);
+      check('the PDF is A4 landscape (842 x 595 pt)', Math.round(box[0]) === 842 && Math.round(box[1]) === 595, box.join(' x '));
+      check('the line\'s page count is the PDF\'s', (line.match(/\d+/g) || [])[1] == pdfPages(buf), `${line} vs ${pdfPages(buf)} pages`);
+    } catch (e) {
+      check('banner size line: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 27. A letter chip tap on a phone. The tap only recoloured the chip; the
+  // letter it opened sat below the fold. Now the panel comes up under the
+  // header, at once under reduced motion. block-letters is revenue-frozen and
+  // must not move.
+  for (const [url, moves, reduce] of [['/printables/bubble-letters/', true, false], ['/es/imprimibles/letras-burbuja/', true, true], ['/printables/block-letters/', false, false]]) {
+    console.log(`\n${url} (390x844: a chip tap ${moves ? 'scrolls the letter into view' : 'does not scroll, frozen page'})`);
+    const { ctx, page, errors } = await open(url, 'mobile');
+    page.setDefaultTimeout(5000);
+    try {
+      if (reduce) await page.emulateMedia({ reducedMotion: 'reduce' });
+      await page.evaluate(() => { const s = document.getElementById('pt-strip'); window.scrollTo(0, s.getBoundingClientRect().top + window.scrollY - 200); });
+      await page.waitForTimeout(400);
+      const before = await page.evaluate(() => ({ y: Math.round(window.scrollY), top: Math.round(document.getElementById('pt-panel').getBoundingClientRect().top) }));
+      await page.tap('#pt-strip .pt-chip[data-char="M"]');
+      await page.waitForTimeout(reduce ? 80 : 1200);
+      const after = await page.evaluate(() => ({ y: Math.round(window.scrollY), top: Math.round(document.getElementById('pt-panel').getBoundingClientRect().top), on: document.querySelector('#pt-strip .pt-chip.is-active').dataset.char }));
+      check('the tapped chip is selected', after.on === 'M', after.on);
+      if (moves) {
+        check(`the panel starts below 60% of the screen and ends in the top quarter${reduce ? ', at once under reduced motion' : ''}`, before.top > 844 * 0.6 && after.top >= 0 && after.top < 844 * 0.25, `${before.top}px -> ${after.top}px`);
+      } else {
+        check('the page does not scroll', after.y === before.y, `${before.y} -> ${after.y}`);
+      }
+    } catch (e) {
+      check('chip tap: every step ran', false, e.message.split('\n')[0]);
+    }
     check('no page errors', !errors.length, errors.join(' | '));
     await ctx.close();
   }

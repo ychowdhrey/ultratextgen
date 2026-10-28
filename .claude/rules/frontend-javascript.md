@@ -70,6 +70,11 @@ Some surfaces in `script.js` are opt-in per page via a `window.UTG_*` flag
 concluding a string in a shared module is live on a page** — the count that matters
 is the number of pages that declare the flag, not the number that load the module.
 
+`symbol-explorer.js` has one: `data-skin-tone` on a library `<section>` turns on the
+skin-tone picker for that section's tiles. After opting a section in, run
+`npm run build:skin-tone-fixture`; `npm run test:skin-tone` fails on a tile the fixture
+has not seen, and on a locale with no `ui.skinTone` strings.
+
 ## Sliced engines: one owner, never a second copy
 
 Several build-time and test tools **slice a block out of the shipped widget and

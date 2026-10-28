@@ -49,6 +49,9 @@ Four distinct mesh failure modes exist, and each needs its own pass: pairwise
 non-reciprocity, **mutual** omission (no edge in either direction, so nothing for a
 reciprocity walk to catch), a **cross-cluster** edge (perfectly reciprocal and
 still wrong — two EN parents claiming one translation), and a missing `x-default`.
+A fifth is also reciprocal and wrong: a **code sent to another language's page**
+(`sr-ME` → `/hr/` until 2026-10-27). A regional alias names its own language's page
+(`ro-MD` → `/ro/`); `check:hreflang` fails on a mismatch and never auto-fixes it.
 
 **Never hand-edit hreflang tags or a locale page's internal links** to route around
 a gap. Run `npm run sync:locale-mesh -- --fix`, scoped with `--files` to the pages

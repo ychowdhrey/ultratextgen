@@ -457,6 +457,174 @@
       ]
     },
     {
+      "id": "roman-numerals-extended",
+      "label": "Số La Mã",
+      "h2": "Thêm số La Mã: L, C, D, M và chữ thường",
+      "intro": "Phần chữ hoa ở trên dừng ở XII. Ở đây có L (50), C (100), D (500), M (1000), bộ chữ thường từ ⅰ đến ⅿ dùng để đánh số danh sách và trang lời nói đầu, cùng các dạng cổ từ 1000 đến 100000. Mỗi ô là một ký tự nên số như ⅻ không bị tách khi xuống dòng.",
+      "symbols": [
+        {
+          "char": "Ⅼ",
+          "label": "Số La Mã L"
+        },
+        {
+          "char": "Ⅽ",
+          "label": "Số La Mã C"
+        },
+        {
+          "char": "Ⅾ",
+          "label": "Số La Mã D"
+        },
+        {
+          "char": "Ⅿ",
+          "label": "Số La Mã M"
+        },
+        {
+          "char": "ⅰ",
+          "label": "Số La Mã viết thường i"
+        },
+        {
+          "char": "ⅱ",
+          "label": "Số La Mã viết thường ii"
+        },
+        {
+          "char": "ⅲ",
+          "label": "Số La Mã viết thường iii"
+        },
+        {
+          "char": "ⅳ",
+          "label": "Số La Mã viết thường iv"
+        },
+        {
+          "char": "ⅴ",
+          "label": "Số La Mã viết thường v"
+        },
+        {
+          "char": "ⅵ",
+          "label": "Số La Mã viết thường vi"
+        },
+        {
+          "char": "ⅶ",
+          "label": "Số La Mã viết thường vii"
+        },
+        {
+          "char": "ⅷ",
+          "label": "Số La Mã viết thường viii"
+        },
+        {
+          "char": "ⅸ",
+          "label": "Số La Mã viết thường ix"
+        },
+        {
+          "char": "ⅹ",
+          "label": "Số La Mã viết thường x"
+        },
+        {
+          "char": "ⅺ",
+          "label": "Số La Mã viết thường xi"
+        },
+        {
+          "char": "ⅻ",
+          "label": "Số La Mã viết thường xii"
+        },
+        {
+          "char": "ⅼ",
+          "label": "Số La Mã viết thường l"
+        },
+        {
+          "char": "ⅽ",
+          "label": "Số La Mã viết thường c"
+        },
+        {
+          "char": "ⅾ",
+          "label": "Số La Mã viết thường d"
+        },
+        {
+          "char": "ⅿ",
+          "label": "Số La Mã viết thường m"
+        },
+        {
+          "char": "ↀ",
+          "label": "Số La Mã 1000, dạng cổ"
+        },
+        {
+          "char": "ↁ",
+          "label": "Số La Mã 5000"
+        },
+        {
+          "char": "ↂ",
+          "label": "Số La Mã 10000"
+        },
+        {
+          "char": "ↇ",
+          "label": "Số La Mã 50000"
+        },
+        {
+          "char": "ↈ",
+          "label": "Số La Mã 100000"
+        }
+      ]
+    },
+    {
+      "id": "keycap-number-emoji",
+      "label": "Emoji phím số",
+      "h2": "Emoji phím số: từ 0️⃣ đến 🔟, #️⃣ và *️⃣",
+      "intro": "Emoji phím dùng cho danh sách đánh số, bình chọn và các bước. Mỗi phím số gồm ba điểm mã: chữ số, bộ chọn emoji U+FE0F và dấu phím kết hợp U+20E3, vì vậy chỉ gõ chữ số thì không thành emoji. 🔟 là một emoji duy nhất.",
+      "symbols": [
+        {
+          "char": "0️⃣",
+          "label": "0"
+        },
+        {
+          "char": "1️⃣",
+          "label": "1"
+        },
+        {
+          "char": "2️⃣",
+          "label": "2"
+        },
+        {
+          "char": "3️⃣",
+          "label": "3"
+        },
+        {
+          "char": "4️⃣",
+          "label": "4"
+        },
+        {
+          "char": "5️⃣",
+          "label": "5"
+        },
+        {
+          "char": "6️⃣",
+          "label": "6"
+        },
+        {
+          "char": "7️⃣",
+          "label": "7"
+        },
+        {
+          "char": "8️⃣",
+          "label": "8"
+        },
+        {
+          "char": "9️⃣",
+          "label": "9"
+        },
+        {
+          "char": "🔟",
+          "label": "10"
+        },
+        {
+          "char": "#️⃣",
+          "label": "#"
+        },
+        {
+          "char": "*️⃣",
+          "label": "*"
+        }
+      ]
+    },
+    {
       "id": "s6",
       "label": "Số trong ngoặc đơn",
       "h2": "Số trong ngoặc đơn",

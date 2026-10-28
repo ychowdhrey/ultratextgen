@@ -115,6 +115,78 @@
           "label": "Stampa Schermo"
         }
       ]
+    },
+    {
+      "id": "iso-function-key-symbols",
+      "label": "Tasti ISO",
+      "h2": "Simboli ISO dei tasti funzione",
+      "intro": "Simboli dei tasti dello standard internazionale ISO/IEC 9995-7, stampati su alcune tastiere per PC, terminali e Linux al posto delle parole: Alt, Componi, Ins, Pausa, Annulla e i tasti pagina. Sul Mac, ⌤ e ⌧ indicano i tasti Invio e Clear del tastierino numerico.",
+      "symbols": [
+        {
+          "char": "⌤",
+          "label": "Tasto Invio (punta di freccia tra due barre)"
+        },
+        {
+          "char": "⌧",
+          "label": "Tasto Cancella (X in un rettangolo)"
+        },
+        {
+          "char": "⎀",
+          "label": "Tasto Ins (simbolo di inserimento)"
+        },
+        {
+          "char": "⎁",
+          "label": "Tasto sottolineatura continua"
+        },
+        {
+          "char": "⎂",
+          "label": "Tasto sottolineatura discontinua"
+        },
+        {
+          "char": "⎃",
+          "label": "Tasto enfasi"
+        },
+        {
+          "char": "⎄",
+          "label": "Tasto Componi (simbolo di composizione)"
+        },
+        {
+          "char": "⎆",
+          "label": "Tasto Invio (simbolo ISO)"
+        },
+        {
+          "char": "⎇",
+          "label": "Tasto Alt (simbolo del tasto alternativo)"
+        },
+        {
+          "char": "⎉",
+          "label": "Tasto Pausa (barra orizzontale cerchiata con tacca)"
+        },
+        {
+          "char": "⎊",
+          "label": "Tasto Interrompi (triangolo cerchiato verso il basso)"
+        },
+        {
+          "char": "⎌",
+          "label": "Tasto Annulla"
+        },
+        {
+          "char": "⎖",
+          "label": "Tasto separatore decimale"
+        },
+        {
+          "char": "⎗",
+          "label": "Tasto Pagina precedente (Pag su)"
+        },
+        {
+          "char": "⎘",
+          "label": "Tasto Pagina successiva (Pag giù)"
+        },
+        {
+          "char": "⎚",
+          "label": "Tasto Cancella schermo"
+        }
+      ]
     }
   ],
   "faq_h2": "Domande Frequenti sui Simboli della Tastiera",

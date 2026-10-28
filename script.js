@@ -541,26 +541,64 @@ const decorations = window.UTG_DECORATIONS
     return !!UTG.saved && UTG.saved.has("style", name);
   }
 
-  function toggleSaved(name) {
+  // `want` is the state the visitor asked for: the opposite of what the
+  // pressed control SHOWED. Never a flip of the store. A star painted before
+  // another tab (or another surface on this page) saved the same style reads
+  // "Save"; flipping the store from there removed the style the visitor had
+  // just asked to keep. UTG.saved.set() is a no-op when storage already
+  // matches, and the repaint below corrects the stale control either way.
+  function setSaved(name, want) {
     // The registry guard stays: this page's unit of content is a style, and
     // only a real one may be saved from here. The store itself accepts other
     // types (a symbol, a collection) from the pages that own them.
     if (!name || !stylesRegistry[name] || !UTG.saved) return;
-    // Both grids are rebuilt below, which destroys the focused Save button and
-    // drops a keyboard user to <body>; put focus on its replacement. Compared
-    // by dataset, never by a selector built from the style name.
+    // The saved grid is rebuilt below, which destroys the focused Save button
+    // and drops a keyboard user to <body>; put focus on its replacement.
+    // Compared by dataset, never by a selector built from the style name.
     const focused = document.activeElement && document.activeElement.closest
       ? document.activeElement.closest(".save-btn") : null;
     const inSaved = !!(focused && focused.closest("#savedGrid"));
-    UTG.saved.toggle({ type: "style", value: name, label: name });
-    renderSavedStyles();
-    renderResults();
+    const paintsBefore = savedUiPaints;
+    UTG.saved.set({ type: "style", value: name, label: name }, want);
+    // A real change announces utg:savedchange, whose listener repaints. A
+    // no-op (the store already matched) announces nothing, and the control
+    // that was pressed is exactly the one that was stale.
+    if (savedUiPaints === paintsBefore) syncSavedUi();
     if (focused) {
       const again = Array.prototype.filter.call(document.querySelectorAll(".save-btn"), (b) => b.dataset.style === name);
       const next = again.find((b) => !!b.closest("#savedGrid") === inSaved) || again[0];
       if (next) next.focus({ preventScroll: true });
     }
   }
+
+  // Paint every Save control from the store, in place. The results grid is
+  // not rebuilt for this: a rebuild costs every card and drops focus, and a
+  // star is the only part of a card that depends on the saved state.
+  function repaintSaveButtons() {
+    $$(".save-btn").forEach((btn) => {
+      const saved = isSaved(btn.dataset.style || "");
+      btn.classList.toggle("is-saved", saved);
+      btn.setAttribute("aria-pressed", String(saved));
+      btn.title = saved ? STR.unsaveTitle : STR.saveTitle;
+      const icon = $(".save-icon", btn);
+      if (icon) icon.textContent = saved ? "★" : "☆";
+      const label = $(".save-label", btn);
+      if (label) label.textContent = saved ? STR.saved : STR.save;
+    });
+  }
+
+  let savedUiPaints = 0;
+  function syncSavedUi() {
+    savedUiPaints += 1;
+    renderSavedStyles();
+    repaintSaveButtons();
+  }
+
+  // The store announces every change, including one made in another tab
+  // (saved-items.js re-emits the storage event as utg:savedchange) or by
+  // another surface on this page. Before this listener the generator only
+  // repainted after its own clicks, so its stars went stale.
+  document.addEventListener("utg:savedchange", syncSavedUi);
 
   // Grapheme splitter (native) keeps a base char and its combining marks
   // together, so interleave never slices an accent off its letter.
@@ -1327,12 +1365,21 @@ const decorations = window.UTG_DECORATIONS
     const grid = el.decorationGrid;
     grid.innerHTML = "";
 
-    const clearBtn = document.createElement("span");
+    // Real <button>s, not spans: a span with a click handler cannot be
+    // reached with Tab or pressed with Enter/Space, and a screen reader does
+    // not announce it as a control. Each chip is a toggle (pressing the
+    // selected one clears it), so it carries aria-pressed; "None" is a plain
+    // action. The CSS reset on these classes keeps the span look.
+    const clearBtn = document.createElement("button");
+    clearBtn.type = "button";
     clearBtn.className = "clear-decoration";
     clearBtn.textContent = "✕ " + uiText("decorationsNone", "None");
     clearBtn.addEventListener("click", () => {
       selectedDecoration = null;
-      $$(".decoration-item").forEach((i) => i.classList.remove("selected"));
+      $$(".decoration-item").forEach((i) => {
+        i.classList.remove("selected");
+        i.setAttribute("aria-pressed", "false");
+      });
       renderResults();
       notifyFlairChange();
     });
@@ -1340,22 +1387,27 @@ const decorations = window.UTG_DECORATIONS
 
     const list = decorations[currentDecoTab] || [];
     list.forEach((deco) => {
-      const item = document.createElement("span");
+      const item = document.createElement("button");
+      item.type = "button";
       item.className = "decoration-item";
-      if (selectedDecoration && selectedDecoration.text === deco.text) {
-        item.classList.add("selected");
-      }
+      const isSelected = !!(selectedDecoration && selectedDecoration.text === deco.text);
+      if (isSelected) item.classList.add("selected");
+      item.setAttribute("aria-pressed", String(isSelected));
       item.textContent = deco.text;
       item.addEventListener("click", () => {
         const isSame = selectedDecoration && selectedDecoration.text === deco.text;
 
-        $$(".decoration-item").forEach((i) => i.classList.remove("selected"));
+        $$(".decoration-item").forEach((i) => {
+          i.classList.remove("selected");
+          i.setAttribute("aria-pressed", "false");
+        });
 
         if (isSame) {
           selectedDecoration = null;
         } else {
           selectedDecoration = deco;
           item.classList.add("selected");
+          item.setAttribute("aria-pressed", "true");
         }
         renderResults();
         notifyFlairChange();
@@ -1649,7 +1701,7 @@ const decorations = window.UTG_DECORATIONS
     // Drop any saved names that no longer exist in the registry.
     if (valid.length !== names.length && UTG.saved) {
       names.forEach((name) => {
-        if (!stylesRegistry[name]) UTG.saved.toggle({ type: "style", value: name, label: name });
+        if (!stylesRegistry[name]) UTG.saved.set({ type: "style", value: name, label: name }, false);
       });
     }
 
@@ -2261,7 +2313,8 @@ document.addEventListener("click", (e) => {
   if (!btn) return;
   const name = btn.dataset.style || "";
   if (!name) return;
-  toggleSaved(name);
+  // The press means what the control showed: "Save" saves, "Saved" removes.
+  setSaved(name, btn.getAttribute("aria-pressed") !== "true");
 });
 
 document.addEventListener("click", (e) => {

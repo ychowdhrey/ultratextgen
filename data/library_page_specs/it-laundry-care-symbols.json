@@ -1,0 +1,269 @@
+{
+ "slug": "simboli-lavaggio",
+ "lang": "it",
+ "title": "Simboli lavaggio: significato di tutti i simboli delle etichette",
+ "meta_description": "Simboli lavaggio spiegati: lavaggio, candeggio, asciugatura, stiratura e lavaggio professionale, cosa vuol dire la croce, più caratteri Unicode da copiare.",
+ "breadcrumb": "Simboli lavaggio",
+ "hero_h1": "Simboli lavaggio e il loro significato",
+ "hero_tagline": "Lavaggio, candeggio, asciugatura e stiratura, spiegati a parole.",
+ "intro": "Ogni etichetta di manutenzione usa le stesse cinque famiglie di simboli: la vaschetta per il lavaggio, il triangolo per il candeggio, il quadrato per l'asciugatura, il ferro da stiro e il cerchio per il lavaggio professionale. Una croce sopra un simbolo vuol dire sempre \"non farlo\". Questa pagina spiega il sistema e raccoglie i caratteri Unicode con cui scrivere le istruzioni di lavaggio in un testo: un avviso in lavanderia, una lista di consegna, la scheda di un prodotto in un negozio online.",
+ "sections": [
+  {
+   "id": "lavaggio",
+   "label": "Lavaggio",
+   "h2": "Lavaggio e acqua",
+   "intro": "La vaschetta indica il lavaggio; il numero dentro è la temperatura massima, le linee sotto indicano un ciclo più delicato.",
+   "symbols": [
+    {
+     "char": "🧺",
+     "label": "Cesto della biancheria"
+    },
+    {
+     "char": "🧼",
+     "label": "Sapone"
+    },
+    {
+     "char": "🧴",
+     "label": "Flacone di detersivo"
+    },
+    {
+     "char": "💧",
+     "label": "Goccia d'acqua"
+    },
+    {
+     "char": "🚿",
+     "label": "Doccia"
+    },
+    {
+     "char": "🛁",
+     "label": "Vasca da bagno"
+    },
+    {
+     "char": "♨",
+     "label": "Sorgente calda (lavaggio a caldo)"
+    },
+    {
+     "char": "🌊",
+     "label": "Onda"
+    }
+   ]
+  },
+  {
+   "id": "candeggio",
+   "label": "Candeggio",
+   "h2": "Candeggio",
+   "intro": "Il simbolo del candeggio è un triangolo. Vuoto vuol dire candeggio consentito, barrato vuol dire non candeggiare.",
+   "symbols": [
+    {
+     "char": "△",
+     "label": "Triangolo bianco (candeggio consentito)"
+    },
+    {
+     "char": "▲",
+     "label": "Triangolo nero"
+    },
+    {
+     "char": "⚠",
+     "label": "Segnale di avvertimento"
+    },
+    {
+     "char": "🧪",
+     "label": "Provetta (prodotto chimico)"
+    },
+    {
+     "char": "☣",
+     "label": "Rischio biologico"
+    },
+    {
+     "char": "🚫",
+     "label": "Divieto (non candeggiare)"
+    }
+   ]
+  },
+  {
+   "id": "asciugatura",
+   "label": "Asciugatura",
+   "h2": "Asciugatura e asciugatrice",
+   "intro": "Il cerchio dentro il quadrato indica l'asciugatrice, i punti dentro la temperatura. Il sole e il quadrato semplice indicano l'asciugatura all'aria.",
+   "symbols": [
+    {
+     "char": "☀",
+     "label": "Sole (asciugatura all'aria)"
+    },
+    {
+     "char": "🌞",
+     "label": "Sole con volto"
+    },
+    {
+     "char": "◯",
+     "label": "Cerchio grande (asciugatrice)"
+    },
+    {
+     "char": "□",
+     "label": "Quadrato bianco (asciugare in piano)"
+    },
+    {
+     "char": "💨",
+     "label": "Soffio d'aria (asciugare all'aria)"
+    },
+    {
+     "char": "🧷",
+     "label": "Spilla da balia (molletta)"
+    },
+    {
+     "char": "🌡",
+     "label": "Termometro (temperatura dell'asciugatrice)"
+    }
+   ]
+  },
+  {
+   "id": "stiratura",
+   "label": "Stiratura",
+   "h2": "Stiratura e calore",
+   "intro": "Uno, due o tre punti nel ferro da stiro indicano temperatura bassa, media e alta. Questi caratteri a punti riproducono la stessa scala.",
+   "symbols": [
+    {
+     "char": "🔥",
+     "label": "Fuoco (calore alto)"
+    },
+    {
+     "char": "♨",
+     "label": "Sorgente calda (vapore)"
+    },
+    {
+     "char": "•",
+     "label": "Un punto (bassa, fino a 120 °C)"
+    },
+    {
+     "char": "‥",
+     "label": "Due punti (media, fino a 160 °C)"
+    },
+    {
+     "char": "…",
+     "label": "Tre punti (alta, fino a 210 °C)"
+    },
+    {
+     "char": "♻",
+     "label": "Riciclo (programma eco)"
+    }
+   ]
+  },
+  {
+   "id": "divieti",
+   "label": "Barrati",
+   "h2": "Simboli barrati: \"non farlo\"",
+   "intro": "Una croce su un simbolo di manutenzione vieta quel trattamento. Insieme ai simboli sopra permette di scrivere \"non lavare\", \"non candeggiare\", \"non asciugare in asciugatrice\" e \"non stirare\".",
+   "symbols": [
+    {
+     "char": "🚫",
+     "label": "Segnale di divieto"
+    },
+    {
+     "char": "⛔",
+     "label": "Divieto di accesso"
+    },
+    {
+     "char": "❌",
+     "label": "Croce"
+    },
+    {
+     "char": "✗",
+     "label": "Croce (sottile)"
+    },
+    {
+     "char": "✘",
+     "label": "Croce (spessa)"
+    },
+    {
+     "char": "⊘",
+     "label": "Cerchio barrato"
+    }
+   ]
+  }
+ ],
+ "faq_h2": "Domande frequenti sui simboli lavaggio",
+ "faq": [
+  {
+   "q": "Cosa vuol dire il simbolo dell'asciugatrice con un punto?",
+   "a": "Un quadrato con un cerchio dentro e un punto nel cerchio vuol dire: asciugatrice consentita, ma a bassa temperatura. Due punti indicano la temperatura normale; il quadrato con il cerchio barrato vuol dire che il capo non va in asciugatrice."
+  },
+  {
+   "q": "Cosa indica il numero dentro la vaschetta?",
+   "a": "La temperatura massima di lavaggio in gradi Celsius: 30, 40, 60 o 95. Una linea sotto la vaschetta indica un ciclo delicato, due linee un ciclo molto delicato, una mano dentro il lavaggio a mano."
+  },
+  {
+   "q": "Come capisco che un capo non si può lavare?",
+   "a": "Dalla vaschetta barrata. Una croce su un simbolo di manutenzione vuol dire sempre \"non farlo\", e vale allo stesso modo per tutte e cinque le famiglie di simboli."
+  },
+  {
+   "q": "Cosa vuol dire il cerchio senza quadrato?",
+   "a": "Il cerchio semplice riguarda il lavaggio professionale in tintoria, non l'asciugatrice. La lettera dentro (P, F o W) dice alla tintoria quale procedimento è ammesso; per l'uso in casa conta soprattutto se il cerchio è barrato."
+  },
+  {
+   "q": "I caratteri di questa pagina sono i veri simboli di lavaggio?",
+   "a": "No, ed è una differenza importante. I simboli di manutenzione normalizzati di GINETEX sono pittogrammi e non esistono in Unicode. Quelli qui sono i caratteri Unicode più vicini, utili per scrivere un'istruzione di lavaggio in un testo normale: vanno bene per avvisi e descrizioni, non sostituiscono un'etichetta stampata."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Cinque simboli, un solo sistema",
+   "body": "Le etichette sembrano confuse, ma seguono una logica breve: cinque simboli base, sempre nello stesso ordine: vaschetta, triangolo, quadrato, ferro da stiro, cerchio. Quello che precisa un simbolo sta dentro (un numero, un punto, una lettera) o sotto (una linea per delicato, due per molto delicato). Una volta capita questa grammatica non serve imparare a memoria nessuna etichetta: il simbolo nomina il trattamento, il contenuto ne indica il limite, la croce lo vieta."
+  },
+  {
+   "h2": "Perché questi simboli non sono in Unicode",
+   "body": "I simboli di manutenzione normalizzati appartengono a GINETEX e sono protetti come marchi figurativi. Non sono in Unicode, quindi non esiste un carattere per \"vaschetta 40 gradi\" da copiare in un messaggio. Per un testo resta la strada dei caratteri qui sopra: una goccia d'acqua e una temperatura dicono la stessa cosa dell'etichetta, solo in forma di testo."
+  }
+ ],
+ "related": [
+  {
+   "href": "/it/library/simboli-pericolo/",
+   "title": "Simboli di pericolo",
+   "desc": "Segnali di rischio, pittogrammi di pericolo e divieti da copiare."
+  },
+  {
+   "href": "/it/library/simboli-geometrici/",
+   "title": "Simboli geometrici",
+   "desc": "Cerchi, quadrati, triangoli e rombi in tutte le varianti."
+  },
+  {
+   "href": "/it/library/simbolo-spunta/",
+   "title": "Simbolo spunta",
+   "desc": "Spunte, croci e segni di divieto per liste e tabelle."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/it/library/simboli-lavaggio/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/laundry-care-symbols/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/waschsymbole/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/simbolos-de-lavado/"
+  },
+  {
+   "lang": "it",
+   "href": "https://ultratextgen.com/it/library/simboli-lavaggio/"
+  },
+  {
+   "lang": "ko",
+   "href": "https://ultratextgen.com/ko/library/setak-giho/"
+  },
+  {
+   "lang": "nl",
+   "href": "https://ultratextgen.com/nl/library/wassymbolen/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/laundry-care-symbols/"
+  }
+ ],
+ "page_type": "library",
+ "copy_pattern": "single",
+ "date_published": "2026-10-27",
+ "date_modified": "2026-10-27"
+}
