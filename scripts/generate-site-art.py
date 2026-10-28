@@ -4210,7 +4210,7 @@ def main():
     cairosvg.svg2png(
         bytestring=og_png_svg(
             HOME_CARD, "Fancy Text Generator",
-            "60+ Unicode fonts to copy and paste anywhere",
+            "90+ Unicode fonts to copy and paste anywhere",
             m_brand, K_SITE).encode(),
         write_to=os.path.join(OG, f"{HOME_CARD}.png"),
         output_width=1200, output_height=630)

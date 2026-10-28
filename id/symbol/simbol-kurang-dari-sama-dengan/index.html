@@ -159,7 +159,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {
       "@type": "Question",
       "name": "Apa beda ≤, ≦, dan ⩽?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Ketiganya sama-sama berarti \"kurang dari atau sama dengan,\" tapi merupakan karakter Unicode yang berbeda dari tradisi berbeda: ≤ (U+2264) adalah versi yang paling umum dipakai sehari-hari; ≦ (U+2266) menumpuk tanda sama dengan dalam bentuk garis ganda yang sering muncul di teks lama atau teks Asia Timur; ⩽ (U+2A7D) memakai satu garis miring dan merupakan bentuk yang direkomendasikan standar ISO 31-11. Ketiganya tampil hampir mirip dalam pemakaian sehari-hari, tapi bukan kode yang sama." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Ketiganya sama-sama berarti \"kurang dari atau sama dengan,\" tapi merupakan karakter Unicode yang berbeda dari tradisi berbeda: ≤ (U+2264) adalah versi yang paling umum dipakai sehari-hari; ≦ (U+2266) menumpuk tanda sama dengan bergaris ganda di bawah < dan merupakan bentuk yang diajarkan di sekolah Jepang (set karakter Jepang JIS X 0213 menghitung ≤ dan ≦ sebagai satu karakter); ⩽ (U+2A7D) memakai satu garis miring dan merupakan bentuk yang direkomendasikan standar ISO 31-11. Ketiganya tampil hampir mirip dalam pemakaian sehari-hari, tapi bukan kode yang sama." }
+    },
+    {
+      "@type": "Question",
+      "name": "Bisakah saya memakai ≤ di rumus Excel atau Google Sheets?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tidak. Rumus spreadsheet membandingkan nilai dengan dua karakter <=, seperti pada =IF(A1<=5,\"yes\",\"no\"). Tanda ≤ yang diketik di dalam rumus dianggap teks, bukan operator perbandingan, jadi rumus tidak menguji apa yang tampaknya diuji. Pakai ≤ untuk label, judul, dan tabel cetak, lalu ketik <= di dalam rumusnya sendiri." }
     }
   ]
 }
@@ -243,8 +248,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <span class="flag-label">Kurang Dari Sama Dengan (Matematika)</span>
     </div>
     <div class="flag-row">
-      <button class="flag-emoji symbol-tile" data-symbol="&lt;=" aria-label="Salin Kurang Dari Sama Dengan (Kode: C, Python, JavaScript, Java, SQL)">&lt;=</button>
-      <span class="flag-label">Kurang Dari Sama Dengan (Kode: C, Python, JavaScript, Java, SQL)</span>
+      <button class="flag-emoji symbol-tile" data-symbol="&lt;=" aria-label="Salin Kurang Dari Sama Dengan (Kode: C, Python, JavaScript, Java, SQL; rumus Excel dan Google Sheets)">&lt;=</button>
+      <span class="flag-label">Kurang Dari Sama Dengan (Kode: C, Python, JavaScript, Java, SQL; rumus Excel dan Google Sheets)</span>
     </div>
   </div>
 </section>
@@ -257,8 +262,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <p class="u-secondary-tight">Artinya kurang lebih sama, tapi ini adalah karakter Unicode yang berbeda dari tradisi penulisan yang berbeda.</p>
   <div class="flag-rows">
     <div class="flag-row">
-      <button class="flag-emoji symbol-tile" data-symbol="≦" aria-label="Salin Kurang Dari di Atas Sama Dengan (U+2266)">≦</button>
-      <span class="flag-label">Kurang Dari di Atas Sama Dengan (U+2266)</span>
+      <button class="flag-emoji symbol-tile" data-symbol="≦" aria-label="Salin Kurang Dari di Atas Sama Dengan (U+2266): bentuk yang diajarkan di sekolah Jepang">≦</button>
+      <span class="flag-label">Kurang Dari di Atas Sama Dengan (U+2266): bentuk yang diajarkan di sekolah Jepang</span>
     </div>
     <div class="flag-row">
       <button class="flag-emoji symbol-tile" data-symbol="⩽" aria-label="Salin Kurang Dari atau Sama Dengan Miring (U+2A7D): bentuk yang disarankan standar ISO 31-11">⩽</button>
@@ -388,7 +393,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="faq-item">
     <button class="faq-question" type="button">Apa beda ≤, ≦, dan ⩽?</button>
     <div class="faq-answer">
-      <p>Ketiganya sama-sama berarti "kurang dari atau sama dengan," tapi merupakan karakter Unicode yang berbeda dari tradisi berbeda: ≤ (U+2264) adalah versi yang paling umum dipakai sehari-hari; ≦ (U+2266) menumpuk tanda sama dengan dalam bentuk garis ganda yang sering muncul di teks lama atau teks Asia Timur; ⩽ (U+2A7D) memakai satu garis miring dan merupakan bentuk yang direkomendasikan standar ISO 31-11. Ketiganya tampil hampir mirip dalam pemakaian sehari-hari, tapi bukan kode yang sama.</p>
+      <p>Ketiganya sama-sama berarti "kurang dari atau sama dengan," tapi merupakan karakter Unicode yang berbeda dari tradisi berbeda: ≤ (U+2264) adalah versi yang paling umum dipakai sehari-hari; ≦ (U+2266) menumpuk tanda sama dengan bergaris ganda di bawah &lt; dan merupakan bentuk yang diajarkan di sekolah Jepang (set karakter Jepang JIS X 0213 menghitung ≤ dan ≦ sebagai satu karakter); ⩽ (U+2A7D) memakai satu garis miring dan merupakan bentuk yang direkomendasikan standar ISO 31-11. Ketiganya tampil hampir mirip dalam pemakaian sehari-hari, tapi bukan kode yang sama.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Bisakah saya memakai ≤ di rumus Excel atau Google Sheets?</button>
+    <div class="faq-answer">
+      <p>Tidak. Rumus spreadsheet membandingkan nilai dengan dua karakter &lt;=, seperti pada <code>=IF(A1&lt;=5,"yes","no")</code>. Tanda ≤ yang diketik di dalam rumus dianggap teks, bukan operator perbandingan, jadi rumus tidak menguji apa yang tampaknya diuji. Pakai ≤ untuk label, judul, dan tabel cetak, lalu ketik &lt;= di dalam rumusnya sendiri.</p>
     </div>
   </div>
 </section>

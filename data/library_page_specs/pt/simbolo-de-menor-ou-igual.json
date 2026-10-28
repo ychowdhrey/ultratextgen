@@ -43,7 +43,7 @@
         },
         {
           "char": "<=",
-          "label": "Menor ou Igual a (Código: C, Python, JavaScript, Java, SQL)"
+          "label": "Menor ou Igual a (Código: C, Python, JavaScript, Java, SQL; fórmulas do Excel e do Planilhas Google)"
         }
       ]
     },
@@ -55,7 +55,7 @@
       "symbols": [
         {
           "char": "≦",
-          "label": "Menor-Que Sobre Igual (U+2266)"
+          "label": "Menor-Que Sobre Igual (U+2266): a forma ensinada nas escolas japonesas"
         },
         {
           "char": "⩽",
