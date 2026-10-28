@@ -2625,6 +2625,7 @@
        would be a control with no visible consequence, which is the exact
        report this whole panel was rebuilt for. */
     if (el.designPreview && typeof renderDesignPreview === "function") renderDesignPreview();
+    if (el.bannerMeta && typeof syncBannerMeta === "function") syncBannerMeta();
     // No isConnected guard: paperPreview() paints once while the holder is
     // still detached (selectChar appends it afterwards), and an isConnected
     // check there silently skipped that first paint — the sheet took the
@@ -5240,6 +5241,20 @@
      Section: picker strip
      --------------------------------------------------------------- */
 
+  /* A tap on a strip chip only recoloured it: on a phone the letter it opened
+     sits far below the strip, so the tap looked like it did nothing. After a
+     tap (never on load) the panel is scrolled up under the header when its
+     top is in the lower 40% of the screen, instantly under reduced motion.
+     The frozen block-letters page keeps its behaviour (BATCH_FROZEN). */
+  function revealPanel() {
+    if (BATCH_FROZEN || !el.panel) return;
+    const top = el.panel.getBoundingClientRect().top;
+    if (top <= window.innerHeight * 0.6) return;
+    const headerH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--utg-header-h")) || 0;
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: Math.max(0, window.scrollY + top - headerH - 8), behavior: reduce ? "auto" : "smooth" });
+  }
+
   function buildStrip() {
     if (!el.strip) return;
     const make = (ch) => {
@@ -5251,7 +5266,11 @@
       b.setAttribute("aria-selected", "false");
       b.setAttribute("aria-label", cap(NOUN) + " " + charLabel(ch));
       b.textContent = ch;
-      b.addEventListener("click", () => { selectChar(ch); trackEngage("letter_pick", charKind(ch)); });
+      b.addEventListener("click", (e) => {
+        selectChar(ch);
+        trackEngage("letter_pick", charKind(ch));
+        if (e.isTrusted) revealPanel();
+      });
       return b;
     };
     const letterRow = document.createElement("div");
@@ -11259,9 +11278,30 @@
   // is the class-set print path (one roster name per sheet — always a single
   // line); interactive use reads the input fields, including the optional
   // second line.
+  /* The lines one child's sheet carries. A class set used to print the
+     roster name INSTEAD of the typed design, so "Happy Birthday / Emma" with
+     a class of three printed three sheets reading only "Noah", "Ava", "Liam":
+     one of the two typed lines was dropped from every sheet. The name now
+     takes ONE line and the other stays: the line that holds the {name}
+     token, else the line that already is a name (a roster entry or the demo
+     name), else the first line, which is the field's "word or name" line. */
+  function designLinesFor(name) {
+    const child = String(name).slice(0, DESIGN_MAX);
+    const typed = designLines();
+    if (typed.length < 2) return [child];
+    if (typed.some((l) => l.indexOf(DESIGN_NAME_TOKEN) !== -1)) {
+      return typed.map((l) => l.split(DESIGN_NAME_TOKEN).join(child));
+    }
+    const known = rosterNames(el.designRoster).concat([DESIGN_DEMO]).map((n) => String(n).toLowerCase());
+    let at = typed.findIndex((l) => known.indexOf(l.toLowerCase()) !== -1);
+    if (at === -1) at = 0;
+    return typed.map((l, i) => (i === at ? child : l));
+  }
+
   function designSheetSVG(textOverride) {
-    const text = textOverride != null ? String(textOverride).slice(0, DESIGN_MAX) : designText();
-    const line2 = textOverride != null ? "" : designLine2();
+    const classLines = textOverride != null ? designLinesFor(textOverride) : null;
+    const text = classLines ? classLines[0] : designText();
+    const line2 = classLines ? (classLines[1] || "") : designLine2();
     let lines = line2 ? [text, line2] : [text];
     let wrapped = false;
     const heading = headingForName(designHeadingText(), textOverride != null ? String(textOverride) : null);
@@ -11982,10 +12022,25 @@
     const pages = bannerPages(cards);
     el.bannerPreview.innerHTML = "";
     el.bannerPreview.appendChild(bannerPagesNode(phrase));
-    if (el.bannerMeta) {
-      el.bannerMeta.textContent = total + " " + plural(total, T.flagCount) + " · " +
-        pages.length + " " + plural(pages.length, T.pageCount) + " · " + T.usLetter;
-    }
+    syncBannerMeta(total, pages.length);
+  }
+  /* The line under the banner names the paper the PDF is written on. It
+     printed T.usLetter, a constant, so after choosing A4 or landscape it still
+     read "US Letter", in English on the Polish page. It now names the live
+     paper and orientation the way the letter-set summary does, from strings
+     the print panel already ships in every language, and the panel repaints it. */
+  let bannerCounts = null;
+  function syncBannerMeta(total, pageCount) {
+    if (!el.bannerMeta) return;
+    if (total != null) bannerCounts = { total: total, pages: pageCount };
+    if (!bannerCounts) return;
+    const paper = PP && PP.paperLabel ? PP.paperLabel() : T.usLetter;
+    const orient = printPrefs.orient === "landscape" ? PO.landscape : PO.portrait;
+    el.bannerMeta.textContent = [
+      bannerCounts.total + " " + plural(bannerCounts.total, T.flagCount),
+      bannerCounts.pages + " " + plural(bannerCounts.pages, T.pageCount),
+      paper, orient
+    ].filter(Boolean).join(" · ");
   }
 
   function printBanner() {
