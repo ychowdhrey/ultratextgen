@@ -1192,6 +1192,54 @@ async function main() {
     await ctx.close();
   }
 
+  // 26. Decoration chips are buttons. They were spans with a click handler,
+  // so Tab never reached them, Enter and Space did nothing, and a screen
+  // reader did not announce them as controls: without a mouse, nobody could
+  // add a decoration. Tab must land on a chip, and Enter and Space must
+  // change the results exactly as a click does. EN and a locale page.
+  for (const url of ['/', '/de/fette-schrift/']) {
+    console.log(`\n${url} (decoration chips work from the keyboard)`);
+    const { ctx, page, errors } = await open(url, 'desktop');
+    try {
+      await page.fill('#mainInput', 'Luna');
+      const chip = page.locator('#decorationGrid .decoration-item').first();
+      const deco = () => page.evaluate(() => {
+        const d = document.querySelector('#resultsGrid .style-decoration');
+        return d ? d.textContent : null;
+      });
+      const pressed = () => chip.getAttribute('aria-pressed');
+      check('the chips are buttons', (await chip.evaluate((e) => e.tagName)) === 'BUTTON' &&
+        (await page.locator('#decorationGrid .clear-decoration').evaluate((e) => e.tagName)) === 'BUTTON');
+      await chip.click();
+      await page.waitForTimeout(200);
+      const byClick = await deco();
+      await page.click('#decorationGrid .clear-decoration');
+      await page.waitForTimeout(200);
+      check('a click decorates the results and None clears them', !!byClick && (await deco()) === null, String(byClick));
+      await page.locator('.decoration-tab').last().focus();
+      let reached = false;
+      for (let i = 0; i < 12 && !reached; i++) {
+        await page.keyboard.press('Tab');
+        reached = await page.evaluate(() => !!document.activeElement && document.activeElement.matches('#decorationGrid .decoration-item'));
+      }
+      check('Tab reaches a decoration chip', reached);
+      await chip.focus();
+      await page.keyboard.press('Enter');
+      await page.waitForTimeout(200);
+      check('Enter decorates the results the way a click does', !!byClick && (await deco()) === byClick && (await pressed()) === 'true', `${await deco()} / aria-pressed=${await pressed()}`);
+      await page.keyboard.press('Space');
+      await page.waitForTimeout(200);
+      check('Space on the selected chip clears it', (await deco()) === null && (await pressed()) === 'false', `${await deco()} / aria-pressed=${await pressed()}`);
+      await page.keyboard.press('Space');
+      await page.waitForTimeout(200);
+      check('Space selects it again', (await deco()) === byClick && (await pressed()) === 'true', `${await deco()} / aria-pressed=${await pressed()}`);
+    } catch (e) {
+      check('decoration chips: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
   // 23. Monogram initials. Each box is prefilled with maxlength=1, and a full
   // box dropped the keystroke: tapping S and typing Q left J S L, and "ERM"
   // typed into the first box gave E S L. All three boxes empty downloaded a
