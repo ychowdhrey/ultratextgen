@@ -87,6 +87,18 @@
         {
           "char": "🚩",
           "label": "Banderín de Córner"
+        },
+        {
+          "char": "⛹️",
+          "label": "Persona Rebotando un Balón"
+        },
+        {
+          "char": "⛹️‍♂️",
+          "label": "Hombre Rebotando un Balón"
+        },
+        {
+          "char": "⛹️‍♀️",
+          "label": "Mujer Rebotando un Balón"
         }
       ]
     },
@@ -131,6 +143,14 @@
         {
           "char": "🏌️",
           "label": "Persona Jugando Golf"
+        },
+        {
+          "char": "🏌️‍♂️",
+          "label": "Hombre Jugando Golf"
+        },
+        {
+          "char": "🏌️‍♀️",
+          "label": "Mujer Jugando Golf"
         }
       ]
     },
@@ -145,16 +165,48 @@
           "label": "Persona Nadando"
         },
         {
+          "char": "🏊‍♂️",
+          "label": "Hombre Nadando"
+        },
+        {
+          "char": "🏊‍♀️",
+          "label": "Mujer Nadando"
+        },
+        {
           "char": "🏄",
           "label": "Persona Surfeando"
+        },
+        {
+          "char": "🏄‍♂️",
+          "label": "Hombre Surfeando"
+        },
+        {
+          "char": "🏄‍♀️",
+          "label": "Mujer Surfeando"
         },
         {
           "char": "🤽",
           "label": "Persona Jugando Waterpolo"
         },
         {
+          "char": "🤽‍♂️",
+          "label": "Hombre Jugando Waterpolo"
+        },
+        {
+          "char": "🤽‍♀️",
+          "label": "Mujer Jugando Waterpolo"
+        },
+        {
           "char": "🚣",
           "label": "Persona Remando"
+        },
+        {
+          "char": "🚣‍♂️",
+          "label": "Hombre Remando"
+        },
+        {
+          "char": "🚣‍♀️",
+          "label": "Mujer Remando"
         },
         {
           "char": "🏂",
@@ -232,16 +284,60 @@
           "label": "Persona Levantando Pesas"
         },
         {
+          "char": "🏋️‍♂️",
+          "label": "Hombre Levantando Pesas"
+        },
+        {
+          "char": "🏋️‍♀️",
+          "label": "Mujer Levantando Pesas"
+        },
+        {
           "char": "🤸",
-          "label": "Persona Haciendo Volteretas"
+          "label": "Persona Haciendo la Rueda"
+        },
+        {
+          "char": "🤹",
+          "label": "Persona Haciendo Malabares"
+        },
+        {
+          "char": "🤹‍♂️",
+          "label": "Hombre Haciendo Malabares"
+        },
+        {
+          "char": "🤹‍♀️",
+          "label": "Mujer Haciendo Malabares"
+        },
+        {
+          "char": "🤸‍♂️",
+          "label": "Hombre Haciendo la Rueda"
+        },
+        {
+          "char": "🤸‍♀️",
+          "label": "Mujer Haciendo la Rueda"
         },
         {
           "char": "🤼",
           "label": "Personas Luchando"
         },
         {
+          "char": "🤼‍♂️",
+          "label": "Hombres Luchando"
+        },
+        {
+          "char": "🤼‍♀️",
+          "label": "Mujeres Luchando"
+        },
+        {
           "char": "🤾",
-          "label": "Persona Jugando Balonmano"
+          "label": "Persona Jugando Handball"
+        },
+        {
+          "char": "🤾‍♂️",
+          "label": "Hombre Jugando Handball"
+        },
+        {
+          "char": "🤾‍♀️",
+          "label": "Mujer Jugando Handball"
         },
         {
           "char": "🏃",
@@ -256,8 +352,24 @@
           "label": "Persona en Bicicleta"
         },
         {
+          "char": "🚴‍♂️",
+          "label": "Hombre en Bicicleta"
+        },
+        {
+          "char": "🚴‍♀️",
+          "label": "Mujer en Bicicleta"
+        },
+        {
           "char": "🚵",
           "label": "Persona en Bicicleta de Montaña"
+        },
+        {
+          "char": "🚵‍♂️",
+          "label": "Hombre en Bicicleta de Montaña"
+        },
+        {
+          "char": "🚵‍♀️",
+          "label": "Mujer en Bicicleta de Montaña"
         },
         {
           "char": "🤺",

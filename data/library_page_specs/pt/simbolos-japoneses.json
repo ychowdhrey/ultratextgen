@@ -887,6 +887,214 @@
       ]
     },
     {
+      "id": "circled-ideographs-documents",
+      "label": "Kanji em círculo",
+      "h2": "Marcas em círculo para documentos e formulários",
+      "intro": "Kanji isolados dentro de um círculo que formulários, etiquetas de preço e avisos japoneses usam como marcas curtas: ㊞ indica onde vai o carimbo, ㊟ destaca uma observação, ㊕ marca um preço especial e ㊤ ㊥ ㊦ classificam os graus alto, médio e baixo.",
+      "symbols": [
+        {
+          "char": "㊞",
+          "label": "Carimbo (印)"
+        },
+        {
+          "char": "㊟",
+          "label": "Atenção (注)"
+        },
+        {
+          "char": "㊣",
+          "label": "Correto (正)"
+        },
+        {
+          "char": "㊢",
+          "label": "Cópia (写)"
+        },
+        {
+          "char": "㊕",
+          "label": "Especial (特)"
+        },
+        {
+          "char": "㊡",
+          "label": "Dia de folga (休)"
+        },
+        {
+          "char": "㊝",
+          "label": "Excelente (優)"
+        },
+        {
+          "char": "㊜",
+          "label": "Adequado (適)"
+        },
+        {
+          "char": "㊚",
+          "label": "Masculino (男)"
+        },
+        {
+          "char": "㊛",
+          "label": "Feminino (女)"
+        },
+        {
+          "char": "㊤",
+          "label": "Superior (上)"
+        },
+        {
+          "char": "㊥",
+          "label": "Médio (中)"
+        },
+        {
+          "char": "㊦",
+          "label": "Inferior (下)"
+        },
+        {
+          "char": "㊧",
+          "label": "Esquerda (左)"
+        },
+        {
+          "char": "㊨",
+          "label": "Direita (右)"
+        },
+        {
+          "char": "㊩",
+          "label": "Medicina (医)"
+        },
+        {
+          "char": "㊪",
+          "label": "Religião (宗)"
+        },
+        {
+          "char": "㊫",
+          "label": "Escola (学)"
+        },
+        {
+          "char": "㊬",
+          "label": "Supervisão (監)"
+        },
+        {
+          "char": "㊭",
+          "label": "Empresa (企)"
+        },
+        {
+          "char": "㊯",
+          "label": "Cooperativa (協)"
+        },
+        {
+          "char": "㊰",
+          "label": "Noite (夜)"
+        }
+      ]
+    },
+    {
+      "id": "company-organization-marks",
+      "label": "Marcas de empresa",
+      "h2": "Marcas de empresas e organizações",
+      "intro": "No Japão, nomes de empresas, cartões de visita e notas fiscais abreviam a forma jurídica com um único kanji fechado: ㈱ para 株式会社 (sociedade anônima), ㈲ para 有限会社 (sociedade limitada) e ㈹ ao lado do telefone principal da empresa.",
+      "symbols": [
+        {
+          "char": "㈱",
+          "label": "Sociedade anônima (株)"
+        },
+        {
+          "char": "㊑",
+          "label": "Sociedade anônima em círculo (株)"
+        },
+        {
+          "char": "㈲",
+          "label": "Sociedade limitada (有)"
+        },
+        {
+          "char": "㊒",
+          "label": "Sociedade limitada em círculo (有)"
+        },
+        {
+          "char": "㈳",
+          "label": "Associação (社)"
+        },
+        {
+          "char": "㈶",
+          "label": "Fundação (財)"
+        },
+        {
+          "char": "㊖",
+          "label": "Fundação em círculo (財)"
+        },
+        {
+          "char": "㈾",
+          "label": "Sociedade em comandita (資)"
+        },
+        {
+          "char": "㊮",
+          "label": "Sociedade em comandita em círculo (資)"
+        },
+        {
+          "char": "㈹",
+          "label": "Telefone principal (代)"
+        }
+      ]
+    },
+    {
+      "id": "weekday-circles",
+      "label": "Dias da semana",
+      "h2": "Dias da semana em círculo e entre parênteses",
+      "intro": "Calendários, agendas e datas em japonês escrevem o dia da semana como um kanji dentro de um círculo ou entre parênteses, como em 10月28日㈬ (quarta-feira, 28 de outubro).",
+      "symbols": [
+        {
+          "char": "㊊",
+          "label": "Segunda-feira (月)"
+        },
+        {
+          "char": "㊋",
+          "label": "Terça-feira (火)"
+        },
+        {
+          "char": "㊌",
+          "label": "Quarta-feira (水)"
+        },
+        {
+          "char": "㊍",
+          "label": "Quinta-feira (木)"
+        },
+        {
+          "char": "㊎",
+          "label": "Sexta-feira (金)"
+        },
+        {
+          "char": "㊏",
+          "label": "Sábado (土)"
+        },
+        {
+          "char": "㊐",
+          "label": "Domingo (日)"
+        },
+        {
+          "char": "㈪",
+          "label": "Segunda-feira entre parênteses (月)"
+        },
+        {
+          "char": "㈫",
+          "label": "Terça-feira entre parênteses (火)"
+        },
+        {
+          "char": "㈬",
+          "label": "Quarta-feira entre parênteses (水)"
+        },
+        {
+          "char": "㈭",
+          "label": "Quinta-feira entre parênteses (木)"
+        },
+        {
+          "char": "㈮",
+          "label": "Sexta-feira entre parênteses (金)"
+        },
+        {
+          "char": "㈯",
+          "label": "Sábado entre parênteses (土)"
+        },
+        {
+          "char": "㈰",
+          "label": "Domingo entre parênteses (日)"
+        }
+      ]
+    },
+    {
       "id": "japanese-punctuation",
       "label": "Pontuação",
       "h2": "Pontuação e Marcas Especiais Japonesas",
