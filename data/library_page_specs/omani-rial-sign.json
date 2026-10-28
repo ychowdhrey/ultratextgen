@@ -17,7 +17,7 @@
       "id": "omani-rial-sign",
       "label": "Omani Rial Sign",
       "h2": "Omani Rial Sign",
-      "intro": "The final character itself, copyable today by codepoint, even though no system font renders it natively yet.",
+      "intro": "The final character itself, copyable today by codepoint, even though no system font renders it natively yet. If you see an empty box, your device has no font for U+20C4 yet: the character still pastes correctly and shows once the reader's device has a font for it. Until then, write OMR, or the Arabic abbreviation ر.ع.",
       "symbols": [
         {
           "char": "⃄",
