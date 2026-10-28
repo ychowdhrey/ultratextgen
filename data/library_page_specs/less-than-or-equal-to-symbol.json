@@ -38,7 +38,7 @@
         },
         {
           "char": "<=",
-          "label": "Less Than or Equal To (Code: C, Python, JavaScript, Java, SQL)"
+          "label": "Less Than or Equal To (Code: C, Python, JavaScript, Java, SQL; Excel and Google Sheets formulas)"
         }
       ]
     },
@@ -50,7 +50,7 @@
       "symbols": [
         {
           "char": "≦",
-          "label": "Less-Than Over Equal To (U+2266)"
+          "label": "Less-Than Over Equal To (U+2266): the form Japanese schools teach"
         },
         {
           "char": "⩽",

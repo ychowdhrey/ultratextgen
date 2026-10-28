@@ -43,7 +43,7 @@
         },
         {
           "char": "<=",
-          "label": "Nhỏ Hơn Hoặc Bằng (Mã Nguồn: C, Python, JavaScript, Java, SQL)"
+          "label": "Nhỏ Hơn Hoặc Bằng (Mã Nguồn: C, Python, JavaScript, Java, SQL; công thức Excel và Google Sheets)"
         }
       ]
     },
@@ -55,7 +55,7 @@
       "symbols": [
         {
           "char": "≦",
-          "label": "Nhỏ Hơn Trên Bằng (U+2266)"
+          "label": "Nhỏ Hơn Trên Bằng (U+2266): dạng được dạy ở trường học Nhật Bản"
         },
         {
           "char": "⩽",

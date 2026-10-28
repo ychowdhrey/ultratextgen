@@ -43,7 +43,7 @@
         },
         {
           "char": "<=",
-          "label": "Kleiner-gleich (Code: C, Python, JavaScript, Java, SQL)"
+          "label": "Kleiner-gleich (Code: C, Python, JavaScript, Java, SQL; Formeln in Excel und Google Sheets)"
         }
       ]
     },
@@ -55,7 +55,7 @@
       "symbols": [
         {
           "char": "≦",
-          "label": "Kleiner-als über Gleichzeichen (U+2266)"
+          "label": "Kleiner-als über Gleichzeichen (U+2266): die Form, die an japanischen Schulen gelehrt wird"
         },
         {
           "char": "⩽",

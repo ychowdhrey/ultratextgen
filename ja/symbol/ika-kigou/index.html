@@ -149,7 +149,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {
       "@type": "Question",
       "name": "≤、≦、⩽ の違いは何ですか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "3つともおおむね「以下」を意味しますが、異なる組版の伝統に由来する別々のUnicode文字です。≤（U+2264）はほぼどこでも使われる日常的な形。≦（U+2266）は等号を二重線にした形で、一部の古い文献や東アジアの文献で見られます。⩽（U+2A7D）は単一の斜め線を使う形で、ISO 31-11数学規格が推奨する形です。カジュアルな用途では似て見えますが、同じコードポイントではありません。" }
+      "acceptedAnswer": { "@type": "Answer", "text": "3つともおおむね「以下」を意味しますが、異なる組版の伝統に由来する別々のUnicode文字です。≤（U+2264）はほぼどこでも使われる日常的な形。≦（U+2266）は < の下に二重線の等号を重ねた形で、日本の学校で教える形です（日本の文字集合 JIS X 0213 は ≤ と ≦ を同じ1文字として扱います）。⩽（U+2A7D）は単一の斜め線を使う形で、ISO 31-11数学規格が推奨する形です。カジュアルな用途では似て見えますが、同じコードポイントではありません。" }
+    },
+    {
+      "@type": "Question",
+      "name": "ExcelやGoogleスプレッドシートの数式で ≤ は使えますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "使えません。スプレッドシートの数式では、=IF(A1<=5,\"yes\",\"no\") のように2文字の <= で比較します。数式に入力した ≤ は比較演算子ではなく文字として扱われるため、数式は見た目どおりの判定をしません。≤ はラベルや見出し、印刷する表に使い、数式の中では <= と入力してください。" }
     }
   ]
 }
@@ -238,8 +243,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <span class="flag-label">以下記号（数学）</span>
     </div>
     <div class="flag-row">
-      <button class="flag-emoji symbol-tile" data-symbol="&lt;=" aria-label="以下をコピー（コード — C、Python、JavaScript、Java、SQL）"><=</button>
-      <span class="flag-label">以下（コード — C、Python、JavaScript、Java、SQL）</span>
+      <button class="flag-emoji symbol-tile" data-symbol="&lt;=" aria-label="以下をコピー（コード：C、Python、JavaScript、Java、SQL、およびExcelとGoogleスプレッドシートの数式）"><=</button>
+      <span class="flag-label">以下（コード：C、Python、JavaScript、Java、SQL、およびExcelとGoogleスプレッドシートの数式）</span>
     </div>
   </div>
 </section>
@@ -252,8 +257,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <p class="u-secondary-tight">どれもおおむね同じ意味ですが、それぞれ異なる組版の伝統に由来する別のUnicode文字です。</p>
   <div class="flag-rows">
     <div class="flag-row">
-      <button class="flag-emoji symbol-tile" data-symbol="≦" aria-label="二重線の以下記号をコピー（U+2266）">≦</button>
-      <span class="flag-label">二重線の以下記号（U+2266）</span>
+      <button class="flag-emoji symbol-tile" data-symbol="≦" aria-label="二重線の以下記号をコピー（U+2266）：日本の学校で教える形">≦</button>
+      <span class="flag-label">二重線の以下記号（U+2266）：日本の学校で教える形</span>
     </div>
     <div class="flag-row">
       <button class="flag-emoji symbol-tile" data-symbol="⩽" aria-label="斜め線の以下記号をコピー（U+2A7D）— ISO 31-11規格が推奨する形">⩽</button>
@@ -335,7 +340,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="faq-item">
     <button class="faq-question" type="button">≤、≦、⩽ の違いは何ですか？</button>
     <div class="faq-answer">
-      <p>3つともおおむね「以下」を意味しますが、異なる組版の伝統に由来する別々のUnicode文字です。≤（U+2264）はほぼどこでも使われる日常的な形。≦（U+2266）は等号を二重線にした形で、一部の古い文献や東アジアの文献で見られます。⩽（U+2A7D）は単一の斜め線を使う形で、ISO 31-11数学規格が推奨する形です。カジュアルな用途では似て見えますが、同じコードポイントではありません。</p>
+      <p>3つともおおむね「以下」を意味しますが、異なる組版の伝統に由来する別々のUnicode文字です。≤（U+2264）はほぼどこでも使われる日常的な形。≦（U+2266）は &lt; の下に二重線の等号を重ねた形で、日本の学校で教える形です（日本の文字集合 JIS X 0213 は ≤ と ≦ を同じ1文字として扱います）。⩽（U+2A7D）は単一の斜め線を使う形で、ISO 31-11数学規格が推奨する形です。カジュアルな用途では似て見えますが、同じコードポイントではありません。</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">ExcelやGoogleスプレッドシートの数式で ≤ は使えますか？</button>
+    <div class="faq-answer">
+      <p>使えません。スプレッドシートの数式では、<code>=IF(A1&lt;=5,"yes","no")</code> のように2文字の &lt;= で比較します。数式に入力した ≤ は比較演算子ではなく文字として扱われるため、数式は見た目どおりの判定をしません。≤ はラベルや見出し、印刷する表に使い、数式の中では &lt;= と入力してください。</p>
     </div>
   </div>
 </section>
