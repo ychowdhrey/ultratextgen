@@ -3818,6 +3818,7 @@
     if (words && wordsEl) {
       wordsEl.value = String(words).split("|").map((x) => x.trim()).filter(Boolean).join("\n");
     }
+    restoreWordList();
     const wslevel = presetGet("wslevel");
     if (wslevel && ["easy", "medium", "hard"].indexOf(wslevel) !== -1) searchState.level = wslevel;
     const heading = presetGet("heading"); const headingEl = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading, el.cwHeading, el.scHeading, el.spHeading]);
@@ -3905,6 +3906,7 @@
     }
     const roster = primaryRoster();
     if (roster && !fixedWordSet()) writeRosterFor(roster, roster.value);
+    rememberWordList();
     renderRecent();
   }
   let recentMount = null;
@@ -6920,6 +6922,119 @@
     $$(".pt-carry-link", row).forEach((a) => {
       a.href = a.dataset.carry + (word ? "?name=" + encodeURIComponent(word) : "");
     });
+  }
+
+  /* "Same list, another activity" -- the word-list half of the carry row.
+
+     A teacher types this week's list into the spelling generator, and its own
+     copy sends them to the word search for "the same list as a puzzle"; the
+     word search opened empty, so the list was typed again on every tool. All
+     four word tools and the handwriting generator already read a list from
+     their URL (?words= fills the list box, ?roster= the handwriting Word
+     list), so this row only writes those links.
+
+     Each link is serialised by wordList.toCarry(), the parser the receiving
+     tool reads with: "word = clue" travels intact to the crossword and as the
+     bare word everywhere else, and spelling's fr[ie]nd brackets travel only
+     to spelling. What travels is the WORD list. A class
+     list never goes into a link: children's names stay on this device.
+
+     English pages only: the labels are written here, because the footer does
+     not list these tools, and a locale gets the row when its labels exist. */
+  const WORD_CARRY_EN = [
+    { href: "/printables/spelling-worksheet-generator/", label: "Spelling worksheets", kind: "spelling" },
+    { href: "/printables/word-search-maker/", label: "Word search", kind: "words" },
+    { href: "/printables/word-scramble-maker/", label: "Word scramble", kind: "words" },
+    { href: "/printables/crossword-maker/", label: "Crossword", kind: "clues" },
+    { href: "/printables/handwriting-worksheet-generator/", label: "Handwriting worksheets", kind: "roster" }
+  ];
+  const WORD_CARRY_LABEL = { en: "Same list, another activity:" };
+  function wordListBox() {
+    return firstEl([el.spInput, el.searchInput, el.scInput, el.cwInput]);
+  }
+  /* The href for one destination, or the bare page when the box is empty (a
+     demo list never travels). */
+  function wordCarryHref(dest, box) {
+    const P = window.UltraTextGen && window.UltraTextGen.wordList;
+    if (!box.value.trim() || !P || !P.carryFor) return dest.href;
+    // The crossword gets the paste as the crossword reads it, clues and all,
+    // whichever tool it was typed on; every other tool gets the bare words.
+    const list = P.carryFor(box.value, dest.kind === "roster" ? "words" : dest.kind);
+    if (!list.length) return dest.href;
+    const key = dest.kind === "roster" ? "roster" : "words";
+    return dest.href + "?" + key + "=" + encodeURIComponent(list.slice(0, ROSTER_CAP).join("|"));
+  }
+  function mountWordCarry() {
+    const label = WORD_CARRY_LABEL[LANG];
+    const box = wordListBox();
+    if (!label || !box || $("#pt-word-carry-row")) return null;
+    const here = window.location.pathname.replace(/\/?$/, "/");
+    if (!WORD_CARRY_EN.some((d) => d.href === here)) return null;
+    const row = document.createElement("div");
+    row.id = "pt-word-carry-row";
+    row.className = "pt-carry-row";
+    const lab = document.createElement("span");
+    lab.className = "pt-carry-label";
+    lab.textContent = label;
+    row.appendChild(lab);
+    const links = WORD_CARRY_EN.filter((d) => d.href !== here).map((d) => {
+      const a = document.createElement("a");
+      a.className = "pt-carry-link";
+      a.href = d.href;
+      a.textContent = d.label;
+      a.dataset.carry = d.href;
+      row.appendChild(a);
+      return { a: a, dest: d };
+    });
+    const update = () => links.forEach((x) => { x.a.href = wordCarryHref(x.dest, box); });
+    /* Under the preview and its Download PDF button, not under the list box:
+       the moment a list is wanted as another activity is after this one is
+       printed, and the list box sits on the first screen of a phone, where a
+       row of five links would push the sheet choices down. */
+    const studio = box.closest(".pt-studio");
+    const preview = studio && studio.querySelector(".pt-studio-preview");
+    if (preview) preview.appendChild(row);
+    else (box.closest(".pt-field") || box.parentElement).insertAdjacentElement("afterend", row);
+    update();
+    let timer = null;
+    box.addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(update, 160); });
+    /* The parser is fetched at init, so a list that arrived filled (a link, or
+       this device's memory) is serialised once it lands, and again on the way
+       out so a link is never a keystroke behind the box. */
+    if (document.readyState !== "complete") window.addEventListener("load", update, { once: true });
+    row.addEventListener("pointerdown", update);
+    row.addEventListener("focusin", update);
+    return row;
+  }
+
+  /* The four word tools remember their list per page, the way the
+     handwriting generator's Word list already does (WORDLIST_KEY): a teacher
+     returning on Wednesday finds Monday's list, and emptying the box forgets
+     it. A link's ?words= wins over the memory, and the memory is written only
+     from typing or a download, so a carried list is not saved until it is
+     used. The curated-word pages (CFG.fixedWords) have no free list box. */
+  function wordListMemoryOn() { return !!wordListBox() && !fixedWordSet(); }
+  function rememberWordList() {
+    const box = wordListBox();
+    if (!box || !wordListMemoryOn()) return;
+    try {
+      if (box.value.trim()) localStorage.setItem(WORDLIST_KEY, box.value);
+      else localStorage.removeItem(WORDLIST_KEY);
+    } catch (err) { /* private mode: no list memory, which is not an error */ }
+  }
+  function restoreWordList() {
+    const box = wordListBox();
+    if (!box || !wordListMemoryOn() || box.value.trim() || presetGet("words")) return;
+    try {
+      const v = localStorage.getItem(WORDLIST_KEY);
+      if (v) box.value = v;
+    } catch (err) { /* optional */ }
+  }
+  function wireWordListMemory() {
+    const box = wordListBox();
+    if (!box || !wordListMemoryOn()) return;
+    let timer = null;
+    box.addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(rememberWordList, 800); });
   }
 
   function mountNameCase() {
@@ -13866,6 +13981,8 @@
     buildCrosswordSurface();
     buildScrambleSurface();
     buildSpellingSurface();
+    mountWordCarry();
+    wireWordListMemory();
     mountMore();
     wireMoreRepaint();
     if (moreRefs.letters && moreRefs.letters.check) moreRefs.letters.check.addEventListener("change", updateBatch);
