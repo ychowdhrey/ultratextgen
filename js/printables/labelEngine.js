@@ -29,6 +29,12 @@
  *   - A list REPLACES the field it fills (the field is hidden and a note
  *     takes its place); nothing is ever disabled.
  *   - Dated daycare labels are their own setting, never text in the list.
+ *   - The desk plate ("plate" preset, layout "fold") is not a label: two
+ *     strips per sheet, each folded along its centre so it stands on a
+ *     desk with the name upright on both faces. It prints on the page's
+ *     paper only (no label sheet, no size, no detail lines, no picture),
+ *     and only on a page whose #lb-what carries its chip: a page without
+ *     the chip never shows it, nor restores it from this device.
  *
  * Mount points (all optional except #lb-preview):
  *   #lb-what            .pt-choice-row  "What is it for?" presets
@@ -92,7 +98,12 @@
       datesResult: "{n} labels: {first} to {last}, {per} a day", datesResultOne: "{n} labels for {first}",
       maxLen: "40 characters is the most one line holds.",
       closeUp: "One label, up close",
-      listCount: "{n} on your list"
+      listCount: "{n} on your list",
+      plate: "desk plate", plates: "desk plates",
+      plateHint: "Cut on the short dashes, fold on the long dashes",
+      plateSmall: "The name prints small on this plate. Try a shorter name, or show the first name only.",
+      plateCloseUp: "The front of one plate",
+      platesPerName: "Plates per name"
     },
     pt: {
       labels: "etiquetas", label: "etiqueta", page: "página", pages: "páginas",
@@ -224,8 +235,19 @@
     bottles:  { size: "s",  list: "name" },
     lunch:    { size: "s",  list: "name" },
     bins:     { size: "l",  list: "name" },
-    camp:     { size: "s",  list: "name" }
+    camp:     { size: "s",  list: "name" },
+    // Not a label size: a fold template on the page's paper (plateGeometry).
+    plate:    { list: "name", layout: "fold" }
   }, CFG.presets || {});
+
+  /* A fold layout is offered only where the page shows its chip: the chip's
+     words exist in that page's language or the page does not carry it. */
+  function presetOffered(key) {
+    const p = PRESETS[key];
+    if (!p) return false;
+    if (p.layout !== "fold") return true;
+    return !!document.querySelector("#lb-what [data-value='" + key + "']");
+  }
 
   /* ---------------- state ---------------- */
 
@@ -251,8 +273,12 @@
 
   function $(id) { return document.getElementById(id); }
 
+  function plateOn() { const p = PRESETS[state.preset]; return !!(p && p.layout === "fold"); }
+  // A desk plate carries the name only, so a list always fills the name.
+  function listTarget() { return plateOn() ? "name" : state.listTarget; }
+
   function paperKey() {
-    if (state.sheet !== "cut") return STOCKS[state.sheet].paper;
+    if (state.sheet !== "cut" && !plateOn()) return STOCKS[state.sheet].paper;
     const p = PP && PP.values ? PP.values.paper : (CFG.paper || "letter");
     return p === "a4" ? "a4" : "letter";
   }
@@ -265,9 +291,34 @@
      foot holds the credit line. */
   const CUT_MARGIN = 0.25, CUT_FOOT = 0.3;
 
+  /* The desk plate: PLATES_PER_SHEET strips stacked edge to edge inside the
+     cut margins and above the credit band, each the paper's width minus the
+     margins. One straight cut separates them, as with cut labels. Letter:
+     8 x 5.1in plates (2.55in faces); A4: 197.3 x 138.3mm (69.2mm faces). */
+  const PLATES_PER_SHEET = 2;
+  function plateGeometry(paper) {
+    return { paper: paper, w: paper.w - 2 * CUT_MARGIN, h: (paper.h - 2 * CUT_MARGIN - CUT_FOOT) / PLATES_PER_SHEET,
+             cols: 1, rows: PLATES_PER_SHEET, left: CUT_MARGIN, top: CUT_MARGIN,
+             gapX: 0, gapY: 0, r: 0, stock: false, fold: true, name: "" };
+  }
+
+  /* One plate's two faces, in the units it is given. The fold is the plate's
+     centre line. The front (bottom) face reads upright; the back (top) face
+     is the same box turned 180 degrees about its own centre, so once folded
+     the name reads upright from the other side too, at the same size. */
+  function plateFaces(x, y, w, h) {
+    const half = h / 2;
+    return {
+      foldY: y + half,
+      back: { x: x, y: y, w: w, h: half, rotate: 180 },
+      front: { x: x, y: y + half, w: w, h: half, rotate: 0 }
+    };
+  }
+
   function geometry() {
     const pk = paperKey();
     const paper = PAPER[pk];
+    if (plateOn()) return plateGeometry(paper);
     if (state.sheet !== "cut") {
       const s = STOCKS[state.sheet];
       return { paper: paper, w: s.w, h: s.h, cols: s.cols, rows: s.rows, left: s.left, top: s.top,
@@ -316,7 +367,7 @@
   }
 
   // Dates are a setting of the presets that offer them, never list text.
-  function datesOn() { return !!(state.dates && presetLines().dates); }
+  function datesOn() { return !!(state.dates && presetLines().dates && !plateOn()); }
 
   /* One date per day from the dates panel: weekdays only for "5w"/"10w". */
   function dateStrings() {
@@ -351,7 +402,7 @@
     const base = readLines();
     if (state.mode === "list") {
       if (!readList().length) return "list";
-      if (state.listTarget !== "name" && !base.name) return "name";
+      if (listTarget() !== "name" && !base.name) return "name";
       return "";
     }
     return base.name ? "" : "name";
@@ -364,17 +415,20 @@
     let list = readList();
     let example = false;
     const need = missing();
+    const plate = plateOn();
+    const target = listTarget();
     if (need) {
       // The example: the page's sample name and each empty line's example.
       example = true;
-      if (!base.name || (need === "list" && state.listTarget === "name")) base.name = CFG.sampleName || "";
+      if (!base.name || (need === "list" && target === "name")) base.name = CFG.sampleName || "";
       ["line2", "line3"].forEach((k) => {
         if (!base[k] && lines[k] && lines[k].example) base[k] = lines[k].example;
       });
-      if (need === "list" && state.listTarget === "name") list = [];
+      if (need === "list" && target === "name") list = [];
     }
+    // A desk plate is the name only, whatever the detail fields still hold.
+    if (plate) { base.line2 = ""; base.line3 = ""; }
     base.name = styleName(base.name);
-    const target = state.listTarget;
     let entries = list.length
       ? list.map((item) => Object.assign({}, base, { [target]: target === "name" ? styleName(item) : item }))
       : [base];
@@ -385,7 +439,8 @@
       entries = [].concat.apply([], entries.map((e) => days.map((d) => Object.assign({}, e, { line2: d }))));
       each = datesPerDay();
     } else if (state.copies === "fill") {
-      each = Math.max(1, Math.floor(per / entries.length));
+      // A class list makes one plate per name; one name fills the sheet.
+      each = plate && list.length ? 1 : Math.max(1, Math.floor(per / entries.length));
     } else {
       each = Math.max(1, Number(state.copies) || 1);
     }
@@ -408,6 +463,7 @@
   function isWriteIn(s) { return /[:：]\s*$/.test(s); }
 
   function drawLabel(ctx, lab, x, y, w, h, ppi, opt) {
+    const o = opt || {};
     const f = FONTS[state.font] || FONTS.rounded;
     // Clear the border (inset 6% of the short side) plus a margin a printer
     // that is off by a millimetre cannot push the text across.
@@ -420,7 +476,7 @@
     let small = false;
 
     // Optional picture on the left, square, for children who cannot read yet.
-    if (state.symbol && w / h >= 1.6) {
+    if (state.symbol && !o.plate && w / h >= 1.6) {
       const sz = Math.min(bh, bw * 0.3);
       ctx.save();
       ctx.font = (sz * 0.86).toFixed(1) + "px 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif";
@@ -482,8 +538,9 @@
       if (wid * detailSize > bw) detailSize = bw / wid;
     });
     if (nameLines.length && detailSize > nameSize * 0.9) detailSize = nameSize * 0.9;
-    // 6pt is the smallest size a label is read at; below it, say so.
-    const minPx = 6 / 72 * ppi;
+    // 6pt is the smallest size a label is read at; below it, say so. A desk
+    // plate is read from across a classroom, so it names its own floor.
+    const minPx = (o.minPt || 6) / 72 * ppi;
     if ((nameLines.length && nameSize < minPx) || (k && detailSize < minPx * 0.9)) small = true;
 
     const blockH = nameLines.length * nameSize * LEAD + k * detailSize * LEAD;
@@ -533,6 +590,43 @@
     ctx.closePath();
   }
 
+  // Inset so the border survives a printer that is off by a millimetre.
+  function drawBorder(ctx, x, y, w, h, ppi) {
+    const ins = Math.min(w, h) * 0.06;
+    ctx.save();
+    ctx.strokeStyle = INK;
+    ctx.globalAlpha *= 0.55;
+    ctx.lineWidth = Math.max(1, ppi * 0.012);
+    roundRect(ctx, x + ins, y + ins, w - 2 * ins, h - 2 * ins, Math.min(w, h) * 0.18);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  /* A desk plate's name is read from a few metres away: below 36pt the
+     plate says so (the same warning line the labels use). */
+  const PLATE_OPT = { plate: true, minPt: 36 };
+
+  /* Both faces of one plate, each drawn by drawLabel into a box of the same
+     size; the back face is that drawing turned 180 degrees about its box's
+     centre. Returns whether the name came out under the plate's floor. */
+  function drawPlate(ctx, lab, x, y, w, h, ppi) {
+    const f = plateFaces(x, y, w, h);
+    let small = false;
+    [f.front, f.back].forEach((face) => {
+      ctx.save();
+      if (face.rotate) {
+        const cx = face.x + face.w / 2, cy = face.y + face.h / 2;
+        ctx.translate(cx, cy);
+        ctx.rotate(Math.PI);
+        ctx.translate(-cx, -cy);
+      }
+      if (state.border) drawBorder(ctx, face.x, face.y, face.w, face.h, ppi);
+      if (drawLabel(ctx, lab, face.x, face.y, face.w, face.h, ppi, PLATE_OPT).small) small = true;
+      ctx.restore();
+    });
+    return small;
+  }
+
   function siteCredit() {
     if (UTG.printableCredit) return UTG.printableCredit();
     return "ultratextgen.com" + String(location.pathname || "/").replace(/\/$/, "");
@@ -573,6 +667,19 @@
         ctx.beginPath(); ctx.moveTo(xx, y0); ctx.lineTo(xx, Math.min(y1, (g.top + rowsUsed * g.h) * ppi)); ctx.stroke();
       }
       ctx.restore();
+      // A desk plate's fold: longer dashes than the cut, along each used
+      // plate's centre line.
+      if (g.fold) {
+        ctx.save();
+        ctx.strokeStyle = CUT;
+        ctx.lineWidth = Math.max(1, ppi * 0.008);
+        ctx.setLineDash([ppi * 0.16, ppi * 0.08]);
+        for (let r = 0; r < Math.ceil(used / g.cols); r++) {
+          const yy = Math.round(plateFaces(0, g.top + r * g.h, g.w, g.h).foldY * ppi) + 0.5;
+          ctx.beginPath(); ctx.moveTo(x0, yy); ctx.lineTo(x1, yy); ctx.stroke();
+        }
+        ctx.restore();
+      }
     }
 
     for (let i = 0; i < per; i++) {
@@ -601,17 +708,11 @@
         ctx.restore();
         continue;
       }
-      if (state.border) {
-        // Inset so the border survives a printer that is off by a millimetre.
-        const ins = Math.min(w, h) * 0.06;
-        ctx.save();
-        ctx.strokeStyle = INK;
-        ctx.globalAlpha *= 0.55;
-        ctx.lineWidth = Math.max(1, ppi * 0.012);
-        roundRect(ctx, x + ins, y + ins, w - 2 * ins, h - 2 * ins, Math.min(w, h) * 0.18);
-        ctx.stroke();
-        ctx.restore();
+      if (g.fold) {
+        if (drawPlate(ctx, lab, x, y, w, h, ppi)) small = true;
+        continue;
       }
+      if (state.border) drawBorder(ctx, x, y, w, h, ppi);
       const res = drawLabel(ctx, lab, x, y, w, h, ppi, o);
       if (res.small) small = true;
     }
@@ -627,6 +728,7 @@
       const footY = g.stock ? (g.paper.h - Math.min(0.2, g.top * 0.45)) * ppi : (g.paper.h - CUT_MARGIN + 0.05) * ppi;
       let note = siteCredit();
       if (o.test) note = T.testTitle;
+      else if (g.fold) note = T.plateHint + "  ·  " + note;
       else if (!g.stock) note = T.cutHint + "  ·  " + note;
       ctx.fillText(note, W / 2, footY);
       ctx.restore();
@@ -716,7 +818,7 @@
     [["lb-name", "name"], ["lb-line2", "line2"], ["lb-line3", "line3"]].forEach((pair) => {
       const el = $(pair[0]);
       if (!el) return;
-      const fromList = listed && state.listTarget === pair[1];
+      const fromList = listed && listTarget() === pair[1];
       const fromDates = pair[1] === "line2" && datesOn();
       const hide = fromList || fromDates;
       el.hidden = hide;
@@ -729,19 +831,19 @@
       }
     });
     const helper = $("lb-name-help");
-    if (helper) helper.hidden = !!readLines().name || (listed && state.listTarget === "name");
+    if (helper) helper.hidden = !!readLines().name || (listed && listTarget() === "name");
     const max = $("lb-name"), maxNote = $("lb-name-note");
     if (max && maxNote) maxNote.hidden = max.value.length < (max.maxLength > 0 ? max.maxLength : 40);
     const row3 = $("lb-line3-row");
     if (row3) {
       const v = readLines();
       const lines = presetLines();
-      const need = v.line2 || v.line3 || (lines.line3 && lines.line3.value) || (listed && state.listTarget === "line3");
+      const need = v.line2 || v.line3 || (lines.line3 && lines.line3.value) || (listed && listTarget() === "line3");
       row3.hidden = !need;
     }
     const countLab = $("lb-copies-label");
     const listN = readList().length;
-    if (countLab) countLab.textContent = !listN ? T.howMany : (state.listTarget === "name" ? T.perNameCount : T.perLineCount);
+    if (countLab) countLab.textContent = !listN ? T.howMany : (plateOn() ? T.platesPerName : listTarget() === "name" ? T.perNameCount : T.perLineCount);
     const copiesField = $("lb-copies-field");
     if (copiesField) copiesField.hidden = datesOn();
     const listCount = $("lb-list-count");
@@ -766,7 +868,8 @@
     if (labels.length) {
       const n = labels.length;
       const where = g.stock ? stockName(state.sheet) : (paperKey() === "a4" ? "A4" : "US Letter");
-      text = (labels.example ? T.exampleSummary + " · " : "") + n + " " + (n === 1 ? T.label : T.labels) + " · " + fmtSize(g) +
+      const unit = g.fold ? (n === 1 ? T.plate : T.plates) : (n === 1 ? T.label : T.labels);
+      text = (labels.example ? T.exampleSummary + " · " : "") + n + " " + unit + " · " + fmtSize(g) +
         " · " + pages + " " + (pages === 1 ? T.page : T.pages) + " · " + where;
     }
     if (sum) sum.textContent = text;
@@ -790,9 +893,9 @@
     const pill = $("lb-edit-pill");
     if (pill) {
       pill.hidden = !!labels.example;
-      pill.textContent = state.mode === "list" && state.listTarget === "name" ? T.editList : T.editName;
+      pill.textContent = state.mode === "list" && listTarget() === "name" ? T.editList : T.editName;
     }
-    if (warn) warn.textContent = canvas.labelSmall && !labels.example ? T.tooLong : "";
+    if (warn) warn.textContent = canvas.labelSmall && !labels.example ? (g.fold ? T.plateSmall : T.tooLong) : "";
     if (!labels.example) setNeed("");
     // Pages: every page can be seen, not only the first.
     const pl = $("lb-page-label"), prev = $("lb-page-prev"), next = $("lb-page-next");
@@ -812,7 +915,7 @@
     const st = $("lb-sticky-text");
     if (st) {
       const v = readLines();
-      st.textContent = labels.example ? text : (state.mode === "list" ? fill(T.listCount, { n: readList().length }) : v.name) + " · " + labels.length + " " + T.labels;
+      st.textContent = labels.example ? text : (state.mode === "list" ? fill(T.listCount, { n: readList().length }) : v.name) + " · " + labels.length + " " + (g.fold ? T.plates : T.labels);
     }
     syncFields();
     persist();
@@ -829,13 +932,15 @@
     wrap.hidden = !labels.length;
     if (!labels.length) return;
     const avail = Math.max(160, (wrap.clientWidth || 320) - 2);
-    const fit = Math.min(1, avail / (g.w * 96));
-    const n = Math.max(1, Math.min(3, labels.length, Math.floor(avail / (g.w * 96 * fit))));
+    // A desk plate shows its front face, the half that reads upright.
+    const face = g.fold ? { w: g.w, h: g.h / 2 } : g;
+    const fit = Math.min(1, avail / (face.w * 96));
+    const n = g.fold ? 1 : Math.max(1, Math.min(3, labels.length, Math.floor(avail / (g.w * 96 * fit))));
     const dpr = window.devicePixelRatio || 1;
     const ppi = 96 * fit * dpr;
     const canvas = document.createElement("canvas");
-    canvas.width = Math.round(n * g.w * ppi) + 2;
-    canvas.height = Math.round(g.h * ppi) + 2;
+    canvas.width = Math.round(n * face.w * ppi) + 2;
+    canvas.height = Math.round(face.h * ppi) + 2;
     canvas.style.width = (canvas.width / dpr) + "px";
     canvas.style.height = (canvas.height / dpr) + "px";
     canvas.className = "lb-actual-canvas" + (labels.example ? " is-example" : "");
@@ -844,18 +949,18 @@
     ctx.fillStyle = "#ffffff";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     for (let i = 0; i < n; i++) {
-      const x = 1 + i * g.w * ppi, w = g.w * ppi, h = g.h * ppi;
+      const x = 1 + i * face.w * ppi, w = face.w * ppi, h = face.h * ppi;
       ctx.save();
       ctx.strokeStyle = CUT;
       ctx.lineWidth = Math.max(1, dpr);
       ctx.setLineDash([4 * dpr, 3 * dpr]);
       ctx.strokeRect(x, 1, w, h);
       ctx.restore();
-      drawLabel(ctx, labels[i], x, 1, w, h, ppi);
+      drawLabel(ctx, labels[i], x, 1, w, h, ppi, g.fold ? PLATE_OPT : undefined);
     }
     const old = wrap.querySelector("canvas");
     if (old) wrap.replaceChild(canvas, old); else wrap.appendChild(canvas);
-    if (cap) cap.textContent = T.closeUp;
+    if (cap) cap.textContent = g.fold ? T.plateCloseUp : T.closeUp;
   }
 
   /* ---------------- PDF ---------------- */
@@ -927,7 +1032,7 @@
      the names (or is still empty), otherwise the name. */
   function focusEditable() {
     const need = missing();
-    const useList = state.mode === "list" && (need === "list" || (!need && state.listTarget === "name"));
+    const useList = state.mode === "list" && (need === "list" || (!need && listTarget() === "name"));
     const el = useList ? $("lb-list") : $("lb-name");
     if (!el) return;
     el.focus();
@@ -964,14 +1069,14 @@
         title: document.title,
         printScaling: "none"
       }).then((blob) => {
-        P.download(blob, (test ? T.testFile : T.fileName) + "-" + (g.stock ? state.sheet : paperKey() + "-" + state.size) + ".pdf");
+        P.download(blob, (test ? T.testFile : T.fileName) + "-" + (g.stock ? state.sheet : paperKey() + "-" + (g.fold ? "desk-plate" : state.size)) + ".pdf");
         if (test) {
           track("download_pdf_test");
         } else {
           track("download_pdf", { printable_action: "pdf_saved", printable_sheet: "labels-" + state.preset, printable_pages: n,
-            printable_stock: g.stock ? state.sheet : "cut-" + state.size, printable_count: labels.length,
+            printable_stock: g.stock ? state.sheet : g.fold ? "fold-plate" : "cut-" + state.size, printable_count: labels.length,
             printable_list: readList().length ? "list" : "single",
-            printable_name_source: state.mode === "list" && state.listTarget === "name" ? "list" : nameSource });
+            printable_name_source: state.mode === "list" && listTarget() === "name" ? "list" : nameSource });
           remember();
         }
       });
@@ -1051,6 +1156,7 @@
       if (data[k] !== undefined) state[k] = data[k];
     });
     if (state.sheet !== "cut" && !STOCKS[state.sheet]) state.sheet = "cut";
+    if (!presetOffered(state.preset)) state.preset = CFG.defaultPreset || "supplies";
     // Older saves: the sample the page used to pre-fill was saved untouched.
     // It is nobody's name, so it does not come back as one.
     const legacy = CFG.legacyDefaults || {};
@@ -1136,11 +1242,23 @@
       sizeSel.value = state.size;
     }
     const show = (id, on) => { const el = $(id); if (el) el.hidden = !on; };
-    show("lb-size-row", cut);
-    show("lb-stock-row", !cut);
-    show("lb-nudge-row", !cut);
-    show("lb-test", !cut);
-    show("lb-stock-note", !cut);
+    /* A desk plate prints on the page's paper, at its one size, with the
+       name only: the label-sheet, size, detail-line and picture controls
+       step aside (and come back with any other preset). */
+    const plate = plateOn();
+    const paperOnly = cut || plate;
+    show("lb-size-row", paperOnly);
+    show("lb-stock-row", !paperOnly);
+    show("lb-nudge-row", !paperOnly);
+    show("lb-test", !paperOnly);
+    show("lb-stock-note", !paperOnly);
+    show("lb-on", !plate);
+    show("lb-on-label", !plate);
+    const showBox = (id, sel, on) => { const el = $(id); const box = el && el.closest(sel); if (box) box.hidden = !on; };
+    showBox("lb-size", ".pt-opt", !plate);
+    showBox("lb-list-target", ".pt-opt", !plate);
+    showBox("lb-line2", ".pt-field", !plate);
+    showBox("lb-symbol", ".pt-field", !plate);
     const copies = $("lb-copies");
     if (copies) copies.value = String(state.copies);
     const target = $("lb-list-target");
@@ -1197,10 +1315,13 @@
      list the visitor typed, and never retargets their list. */
   function applyPreset(key, fromUser) {
     const p = PRESETS[key];
-    if (!p) return;
+    if (!p || !presetOffered(key)) return;
     state.preset = key;
     let note = "", apply = null;
-    if (state.sheet !== "cut") {
+    if (p.layout === "fold") {
+      // One size on the page's paper: a chosen size or sheet stays chosen
+      // for the labels and returns with the next label preset.
+    } else if (state.sheet !== "cut") {
       const want = SIZE_STOCK[STOCKS[state.sheet].paper][p.size];
       if (!state.sizeChosen) state.size = p.size;
       if (fromUser && want && want !== state.sheet) {
@@ -1275,7 +1396,7 @@
     const box = $("lb-restored");
     if (!box) return;
     const parts = [presetName(state.preset)];
-    parts.push(state.sheet !== "cut" ? stockName(state.sheet) : sizeLabel(state.size));
+    parts.push(plateOn() ? (paperKey() === "a4" ? "A4" : "US Letter") : state.sheet !== "cut" ? stockName(state.sheet) : sizeLabel(state.size));
     const n = readList().length;
     if (n) parts.push(fill(T.listCount, { n: n }));
     box.textContent = "";
@@ -1327,7 +1448,7 @@
       nameBox.dataset.auto = "";
       nameSource = "carried";
       touched = true;
-      if (state.mode === "list" && state.listTarget === "name") state.mode = "one";
+      if (state.mode === "list" && listTarget() === "name") state.mode = "one";
     }
     applyPreset(state.preset, false);
     if (!restored) {
@@ -1512,7 +1633,8 @@
   }
 
   // Exposed for the geometry test and the scenario harness; not a public API.
-  UTG.labels = { STOCKS: STOCKS, SIZES: SIZES, PAPER: PAPER, geometry: geometry, labelsFor: labelsFor, state: state, drawPage: drawPage, ready: false };
+  UTG.labels = { STOCKS: STOCKS, SIZES: SIZES, PAPER: PAPER, PRESETS: PRESETS, geometry: geometry, labelsFor: labelsFor,
+                 plateFaces: plateFaces, presetOffered: presetOffered, state: state, drawPage: drawPage, ready: false };
 
   if (document.readyState === "complete") init();
   else window.addEventListener("DOMContentLoaded", init);

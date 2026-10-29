@@ -14496,6 +14496,8 @@ body.dark-mode .lb-tool .bubble-btn-primary { color: var(--lb-paper-ink); }
 .lb-count { flex-wrap: wrap; }
 .lb-name-style { margin-top: 0.55rem; }
 .lb-dates[hidden] { display: none; }
+/* Controls a desk plate does not use (labelEngine.js syncSheetControls). */
+.lb-tool .pt-field[hidden], .lb-tool .pt-opt[hidden], .lb-tool .pt-choice-row[hidden], .lb-tool .pt-field-label[hidden] { display: none; }
 .lb-sticky[hidden] { display: none; }
 /* On a phone the name comes first, the sheet and its Download right under
    it, then the choices that refine it. Measured before (390x844): the name
