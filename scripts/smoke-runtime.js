@@ -1261,7 +1261,8 @@ async function main() {
     const aud = await page.evaluate(() => document.getElementById('pt-name-roster').dataset.ptAudience);
     const cost = await page.evaluate(() => { const c = document.querySelector('.pt-sheet-cost'); return c ? c.textContent : ''; });
     check('a remembered class opens on One sheet: one sheet, not three', aud === 'one' && !/^3 sheets/.test(cost), aud + ' / ' + cost);
-    check('Whole class says how many names are saved', /3 saved names/.test(await page.textContent('.pt-audience-field .pt-choice[data-value="class"]')));
+    // The switch says it in a sentence under the choices, naming Whole class.
+    check('Whole class says how many names are saved', /saved on this device \(3 names\)\. Choose Whole class/.test(await page.textContent('.pt-audience-field')));
     await page.click('.pt-audience-field .pt-choice[data-value="class"]');
     check('Whole class brings the saved list back', (await page.inputValue('#pt-name-roster')).includes('Jose'));
     await page.click('.pt-roster-clear');

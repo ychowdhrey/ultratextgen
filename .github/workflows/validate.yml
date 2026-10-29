@@ -632,6 +632,16 @@ jobs:
         continue-on-error: true
         run: npm run test:word-puzzles | tee word-puzzles-tests.log
 
+      # The spelling generator reads a paste through the same wordList.js
+      # parser as the three puzzles. One paste used to be different words on
+      # different tools, and words past the 20-word cap were dropped with
+      # nothing naming them. Pure parsing, no browser, nothing standing red,
+      # so it gates.
+      - name: Run spelling word-list tests
+        id: spelling_tests
+        continue-on-error: true
+        run: npm run test:spelling | tee spelling-tests.log
+
       # The geometry a printed sheet must satisfy — no two page regions sharing
       # space, no child escaping a box that does not clip it, nothing past the
       # paper's width — asserted against MEASURED recordings of the word-search
@@ -1364,6 +1374,7 @@ jobs:
             echo "### Glyph centreline tests — \`${{ steps.centreline_tests.outcome }}\`"
             echo "### Word search grid tests — \`${{ steps.word_search_tests.outcome }}\`"
             echo "### Crossword + word scramble tests — \`${{ steps.word_puzzles_tests.outcome }}\`"
+            echo "### Spelling word-list tests — \`${{ steps.spelling_tests.outcome }}\`"
             echo "### Printable render invariant tests — \`${{ steps.render_invariants_tests.outcome }}\`"
             echo "### Practice-style row composer tests — \`${{ steps.practice_row_tests.outcome }}\`"
             echo "### Fitted page fit — \`${{ steps.fitted_page_fit.outcome }}\`"
@@ -1659,6 +1670,7 @@ jobs:
           steps.centreline_tests.outcome == 'failure' ||
           steps.word_search_tests.outcome == 'failure' ||
           steps.word_puzzles_tests.outcome == 'failure' ||
+          steps.spelling_tests.outcome == 'failure' ||
           steps.numeric_parity.outcome == 'failure' ||
           steps.updates_verification.outcome == 'failure' ||
           steps.external_refs.outcome == 'failure' ||

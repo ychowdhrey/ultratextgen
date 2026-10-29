@@ -460,5 +460,24 @@ const CLUED = [
   eq(CW.normalizeWords(same).map((w) => w.key).join(" "), sc(same), "crossword and scramble read one list the same way");
 }
 
+/* A shared or Recent link carries the list as ?words=a|b|c. It used to be
+   built with a comma split, so "apple = a red, crunchy fruit" came back as
+   the answer APPLE with the clue "a red" plus a new answer CRUNCHYFRUIT with
+   no clue. The link is now written by the parser that reads it. */
+{
+  const WL = global.window.UltraTextGen.wordList;
+  const trip = (text, clues) => WL.fromParam(WL.toCarry(text, clues).join("|"));
+  const cwOf = (t) => CW.normalizeWords(t).map((w) => w.key + "=" + w.clue).join("|");
+  const sc = (t) => SC.normalizeWords(t).map((w) => w.key).join(" ");
+  const list = "Apple = a red, crunchy fruit\nBanana = long, yellow\nGrape = grows on a vine";
+  eq(cwOf(trip(list, true)), cwOf(list), "crossword: a clue's comma survives the share link");
+  eq(cwOf(trip(list, true)), "APPLE=a red, crunchy fruit|BANANA=long, yellow|GRAPE=grows on a vine", "crossword: the shared list is the typed list");
+  eq(cwOf(trip("cat\ta small, furry pet\ndog\tbarks", true)), "CAT=a small, furry pet|DOG=barks", "crossword: a tab table survives as word = clue");
+  eq(cwOf(trip("pipe = a | b", true)), "PIPE=a / b", "crossword: a bar inside a clue cannot split the entry");
+  eq(sc(trip(list, false)), "APPLE BANANA GRAPE", "scramble: the same list carried without clues is the bare words");
+  eq(sc(trip("cat, dog\nbird", false)), "CAT DOG BIRD", "scramble: a comma list round-trips");
+  eq(trip("", true), "", "an empty box carries nothing");
+}
+
 console.log("\nwordPuzzles.test.js — " + pass + " passed, " + fail + " failed");
 process.exit(fail ? 1 : 0);

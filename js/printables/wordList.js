@@ -26,11 +26,12 @@
    * A CLUE SEPARATOR is the first "=", ":" or dash with a space either side
      ("Apple - a red fruit"), so "ice-cream" stays one word. With clues on
      (the crossword) everything after it is the clue and may hold commas.
-   * COMMAS AND SEMICOLONS SPLIT A LINE THAT HOLDS A LIST. With clues on, only
-     a line with no clue separator is split, because a comma inside a clue is
-     punctuation. With clues off, a definition after the separator is dropped,
-     unless what follows it is itself a short list ("Fruits: pear, plum"),
-     in which case the part before it was a heading.
+   * COMMAS, SEMICOLONS AND "|" SPLIT A LINE THAT HOLDS A LIST. With clues
+     on, only a line with no clue separator is split, because a comma inside a
+     clue is punctuation. With clues off, a definition after the separator is
+     dropped, unless the separator is a colon and what follows it is itself a
+     short list ("Fruits: pear, plum"), in which case the part before it was a
+     heading. "Apple = a red, crunchy fruit" is always the word Apple.
 
    Every tool therefore agrees on what one list is: a list that yields ten
    crossword entries yields the same ten words in the search and the
@@ -44,7 +45,8 @@
   const LIST_MARK_RE = /^\s*(?:[-*+\u2022\u2023\u2043\u25AA\u25AB\u25CF\u25CB\u25A0\u25A1\u25BA\u25B8\u2013\u2014\u00B7]+\s*|\(?\d{1,3}[.)\]](?=\s|\p{L})\s*|\d{1,3}\s+[-\u2013\u2014:]\s+)/u;
   const TAIL_RE = /\s+[-\u2013\u2014]\s+|\s*[:=]\s*/u;
   const EMPHASIS_RE = /^[*_`"]+|[*_`"]+$/g;
-  const LIST_SEP_RE = /[,;\uFF0C\uFF1B\u3001\u060C]+/;
+  const LIST_SEP_RE = /[,;|\uFF0C\uFF1B\u3001\u060C]+/;
+  const ARTICLE_RE = /^(?:a|an|the)\s/i;
   const ROW_NUMBER_RE = /^\(?\d{1,3}[.)\]]?$/;
 
   function unmark(text) {
@@ -55,16 +57,22 @@
     return String(text).split(LIST_SEP_RE).map(unmark).filter(Boolean);
   }
 
-  function isShortList(text) {
+  /* "Fruits: pear, plum" is a heading over a list; "Apple = a red, crunchy
+     fruit" is a word and its definition. Only a colon introduces a heading:
+     "=" and a spaced dash are how a word is defined, and a definition's commas
+     are punctuation. Even after a colon, a tail that opens with an article
+     ("Apple: a red, crunchy fruit") is a description, not a list. */
+  function isShortList(text, sep) {
+    if (sep && !/:/.test(sep)) return false;
     const items = String(text).split(LIST_SEP_RE).map((x) => x.trim()).filter(Boolean);
-    return items.length >= 2 && items.every((x) => x.split(/\s+/).length <= 2);
+    return items.length >= 2 && !ARTICLE_RE.test(items[0]) && items.every((x) => x.split(/\s+/).length <= 2);
   }
 
   // { head, tail } around the first clue separator, or null when there is none.
   function splitAtClue(text) {
     const m = TAIL_RE.exec(text);
     if (!m || m.index === 0) return null;
-    return { head: text.slice(0, m.index), tail: text.slice(m.index + m[0].length) };
+    return { head: text.slice(0, m.index), tail: text.slice(m.index + m[0].length), sep: m[0] };
   }
 
   // A table row: [word cell, clue cells...], with a bare row number dropped.
@@ -101,7 +109,7 @@
     const bare = unmark(s);
     if (!bare) return [];
     const p = splitAtClue(bare);
-    const body = !p ? bare : (isShortList(p.tail) ? p.tail : p.head);
+    const body = !p ? bare : (isShortList(p.tail, p.sep) ? p.tail : p.head);
     return splitList(body).map((w) => ({ display: w, clue: "" }));
   }
 
@@ -135,8 +143,59 @@
     return out;
   }
 
+  /* The spelling generator's reading of the same paste: parse() first, so a
+     list is the same words here as on the puzzles, then the two rules that
+     are spelling's own. A teacher marks the tricky part in brackets,
+     fr[ie]nd, and that span is kept. An entry must be one word of letters
+     (apostrophes and hyphens allowed, up to `maxLetters`), because every
+     sheet sets it as one traced word; anything else is reported in
+     `skipped`. Past `cap` words an entry is reported in `over`, never
+     dropped in silence. Duplicates, by lowercase spelling, are dropped. */
+  const SPELLING_BRACKET_RE = /^([\p{L}'-]*)\[([\p{L}'-]+)\]([\p{L}'-]*)$/u;
+  function spellingList(input, cap, maxLetters) {
+    const limit = cap == null ? Infinity : cap;
+    const longest = maxLetters || 20;
+    const wordRe = new RegExp("^[\\p{L}'-]{1," + longest + "}$", "u");
+    const words = [];
+    const skipped = [];
+    const over = [];
+    const seen = new Set();
+    parse(input, false).forEach((e) => {
+      const entry = e.display;
+      const m = entry.match(SPELLING_BRACKET_RE);
+      const word = m ? m[1] + m[2] + m[3] : entry;
+      if (!wordRe.test(word)) { skipped.push(entry); return; }
+      const key = word.toLowerCase();
+      if (seen.has(key)) return;
+      seen.add(key);
+      if (words.length >= limit) { over.push(word); return; }
+      words.push({ word: word, typed: entry, tricky: m ? [m[1].length, m[1].length + m[2].length] : null });
+    });
+    return { words: words, skipped: skipped, over: over };
+  }
+
+  /* A list as it travels in a link (?words=a|b|c): one item per entry, read
+     by the same parse() the receiving tool uses, so a clue's comma is never
+     taken for a list break. With `clues` an entry keeps "word = clue" (the
+     crossword); without, it is the bare word, which is what every other tool
+     prints. A "|" inside an entry would split it on the way back, so it is
+     written as "/". fromParam() is the read side: one entry per line, which
+     parse() reads back as the same list. */
+  function toCarry(input, clues) {
+    const bar = (x) => String(x).replace(/\|/g, "/").trim();
+    return parse(input, !!clues)
+      .map((e) => bar(clues && e.clue ? e.display + " = " + e.clue : e.display))
+      .filter(Boolean);
+  }
+  function fromParam(value) {
+    return String(value == null ? "" : value).split("|").map((x) => x.trim()).filter(Boolean).join("\n");
+  }
+
   ns.wordList = {
     parse: parse,
-    unmark: unmark
+    unmark: unmark,
+    spelling: spellingList,
+    toCarry: toCarry,
+    fromParam: fromParam
   };
 })();

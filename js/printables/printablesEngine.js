@@ -201,7 +201,8 @@
         needSheet: "Pick at least one sheet.",
         words: "words", sheets: "sheets", pages: "pages", page: "page",
         perChild: "for each child",
-        tooLong: "Left out (letters only, up to 20):"
+        tooLong: "Left out (letters only, up to 20):",
+        overCap: "Only the first {n} words are used. Left out:"
       },
       printOpts: { settings: "PDF settings", paper: "Paper", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Download PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
       printBook: "Save as a book: one page per letter",
@@ -3717,6 +3718,18 @@
     const ns = window.UltraTextGen && window.UltraTextGen.wordList && window.UltraTextGen.wordSearch;
     return ns || { normalizeWords: () => [] };
   }
+  /* The tool's word list as a link carries it, serialised by the parser the
+     tool reads it with (wordList.toCarry): the crossword keeps "word = clue",
+     spelling keeps its fr[ie]nd brackets, the others keep the word. Empty
+     when the box is empty, so a demo list never travels. Without the parser
+     (it has not arrived) a line is an entry, which still keeps every clue. */
+  function carriedWordList() {
+    const P = window.UltraTextGen && window.UltraTextGen.wordList;
+    const box = firstEl([el.cwInput, el.scInput, el.spInput, el.searchInput].filter((x) => x && x.value.trim()));
+    if (!box) return [];
+    if (!P || !P.toCarry) return box.value.split(/\r?\n/).map((x) => x.replace(/\|/g, "/").trim()).filter(Boolean);
+    return P.toCarry(box.value, box === el.cwInput);
+  }
   function presetParams() {
     const p = {};
     const input = primaryInput();
@@ -3750,13 +3763,13 @@
     /* Crossword and scramble carry their word list too. Only the word-search
        branch above existed, so a shared crossword or scramble link reopened an
        EMPTY tool -- and the share row those two pages were missing until
-       2026-09-22 is what made that invisible. Their lists are taken verbatim
-       rather than through normalizeWords(): that helper is the word-search
-       module's own grid-placement normaliser, and neither of these builds a
-       grid the same way. */
-    const puzzleWords = firstEl([el.cwInput, el.scInput, el.spInput]);
-    if (!p.words && puzzleWords && puzzleWords.value.trim()) {
-      p.words = puzzleWords.value.split(/[\n,]+/).map((w) => w.trim()).filter(Boolean).join("|");
+       2026-09-22 is what made that invisible. Each list is serialised by the
+       parser its own tool reads it with (carriedWordList), never by a comma
+       split: "apple = a red, crunchy fruit" came back from a crossword link as
+       two answers, the second CRUNCHYFRUIT with no clue. */
+    if (!p.words) {
+      const list = carriedWordList();
+      if (list.length) p.words = list.join("|");
     }
     if (el.strip && activeChar && !CFG.initialChar) p.ch = activeChar;
     /* Paper travels, but only as a suggestion -- see the read side, which
@@ -6638,6 +6651,8 @@
     // the number every teacher was already paying, and it is what makes the
     // N chips above legible without a sentence.
     let pages = n > 1 ? Math.ceil(n / (nUp > 1 ? nUp : 1)) : 0;
+    const job = listJobPages(n);
+    if (job != null) pages = job;
     if (BATCH_FROZEN && el.sizeControl && alphaSizeKey !== "full") {
       const preset = SIZE_PRESETS.filter((x) => x.key === alphaSizeKey)[0];
       if (preset && preset.heightIn) {
@@ -6652,6 +6667,25 @@
     // together — the control does nothing until a roster holds two names.
     const field = $(".pt-nup-field");
     if (field) field.hidden = n < 2;
+  }
+  /* The word-list tools print more than one page per child, and the line
+     counted one: a 3-name spelling class set read "3 sheets · 3 pages" over a
+     12-page PDF. These count the pages the print functions below emit, in
+     the same order: spelling chunks every child's whole plan through
+     appendSheetPages(), and the puzzles add one key page per sheet. null on
+     any other page, which keeps the roster count above. */
+  function listJobPages(n) {
+    const per = nUp > 1 ? nUp : 1;
+    const sets = n >= 2 ? n : 1;
+    if (el.spInput && el.spPreview) {
+      const parsed = spParse();
+      const plan = parsed.words.length ? spPlan(parsed.words) : [];
+      return Math.ceil(sets * plan.length / per);
+    }
+    const answer = el.searchInput ? searchAnswerOn() : (el.cwInput ? cwAnswerOn() : (el.scInput ? scAnswerOn() : null));
+    if (answer == null) return null;
+    const sheets = n >= 2 ? Math.ceil(n / per) : 1;
+    return answer ? sheets * 2 : sheets;
   }
   /* PR-33 -- "give students fewer items per page or line" is a named
      accommodation (Understood.org states it twice), and the row count was the
@@ -9023,19 +9057,26 @@
     setRosterAudience(mount, filled && !remembered ? "class" : "one", { quiet: true });
     if (remembered) markSavedRoster(mount, box);
   }
-  /* "3 saved names" under "Whole class", in the languages that have the
-     string; elsewhere the switch says nothing extra, as before. It goes with
-     the first edit of the list or with "Clear names". */
-  const AUDIENCE_SAVED_I18N = { en: (n) => n === 1 ? "1 saved name" : n + " saved names" };
+  /* A remembered class waits behind "Whole class" rather than reopening on
+     it (see mountAudience). It used to say so only as "3 saved names" in
+     small type inside the chip, which read as the class set being off: the
+     visitor saw "One sheet" lit and no sign their list was still there. So
+     the switch says it in a sentence under the choices, naming the choice
+     that uses it, in the languages that have the string; elsewhere it says
+     nothing extra, as before. It goes with the first edit of the list, with
+     "Clear names", or once "Whole class" is chosen. */
+  const AUDIENCE_SAVED_I18N = {
+    en: (n) => "Your class list is saved on this device (" + (n === 1 ? "1 name" : n + " names") + "). Choose Whole class to use it."
+  };
   function markSavedRoster(mount, box) {
     const fmt = AUDIENCE_SAVED_I18N[LANG];
-    const btn = box && $$(".pt-choice", box).find((b) => b.dataset.value === "class");
-    if (!fmt || !btn) return;
+    const row = box && box.querySelector(".pt-choice-row");
+    if (!fmt || !row) return;
     const n = mount.value.split(/\r?\n/).filter((s) => s.trim()).length;
-    const note = document.createElement("small");
-    note.className = "pt-choice-saved";
+    const note = document.createElement("p");
+    note.className = "pt-roster-hint pt-audience-saved";
     note.textContent = fmt(n);
-    btn.appendChild(note);
+    row.insertAdjacentElement("afterend", note);
     const drop = () => { note.remove(); mount.removeEventListener("input", drop); };
     mount.addEventListener("input", drop);
   }
@@ -12453,13 +12494,14 @@
      inserted ahead of the builder with async off: dynamically inserted
      scripts with async = false run in insertion order, so the parser is
      always there before the first build, without a second round trip. */
-  function loadWordListParser() {
+  function loadWordListParser(onload) {
     if (window.UltraTextGen && window.UltraTextGen.wordList) return;
     if (document.querySelector("script[data-pt-wordlist]")) return;
     const sc = document.createElement("script");
     sc.src = "/js/printables/wordList.js";
     sc.async = false;
     sc.setAttribute("data-pt-wordlist", "");
+    if (onload) sc.onload = onload;
     sc.onerror = () => console.warn("[printables] js/printables/wordList.js failed to load.");
     document.head.appendChild(sc);
   }
@@ -13232,21 +13274,23 @@
     return a;
   }
 
+  /* The paste is read by js/printables/wordList.js, the parser the word
+     search, the scramble and the crossword already share, so one list is the
+     same words on all four tools: "1. Apple - a fruit" and a spreadsheet row
+     "Banana<TAB>yellow fruit" were 0 words here and 2 on the word search.
+     wordList.spelling() adds spelling's own two rules on top (the fr[ie]nd
+     brackets and one word per entry) and names the words past
+     SP_MAX_WORDS instead of dropping them: 25 typed used to read "20 words"
+     with nothing saying which five were gone. The parser is fetched at init
+     and the preview paints when it arrives (loadWordListParser). */
+  function spListNs() {
+    const p = window.UltraTextGen && window.UltraTextGen.wordList;
+    return p && p.spelling ? p : null;
+  }
   function spParse() {
     const raw = el.spInput && el.spInput.value.trim() ? el.spInput.value : SP_DEMO;
-    const words = [];
-    const skipped = [];
-    const seen = new Set();
-    raw.split(/[\r\n,;]+/).map((s) => s.trim()).filter(Boolean).forEach((entry) => {
-      const m = entry.match(/^([\p{L}'-]*)\[([\p{L}'-]+)\]([\p{L}'-]*)$/u);
-      const word = m ? m[1] + m[2] + m[3] : entry;
-      if (!/^[\p{L}'-]{1,20}$/u.test(word)) { skipped.push(entry); return; }
-      const key = word.toLowerCase();
-      if (seen.has(key) || words.length >= SP_MAX_WORDS) return;
-      seen.add(key);
-      words.push({ word: word, tricky: m ? [m[1].length, m[1].length + m[2].length] : null });
-    });
-    return { words: words, skipped: skipped };
+    const p = spListNs();
+    return p ? p.spelling(raw, SP_MAX_WORDS, 20) : { words: [], skipped: [], over: [] };
   }
   function spTricky(w) {
     if (w.tricky) return w.tricky;
@@ -13601,11 +13645,12 @@
       bits.push(plan.length + " " + (plan.length === 1 ? L.page : L.pages) + (names.length >= 2 ? " " + L.perChild : ""));
       if (names.length >= 2) bits.push(names.length + " " + T.scramble.versions);
     }
+    if (parsed.over.length) bits.push(L.overCap.replace("{n}", String(SP_MAX_WORDS)) + " " + parsed.over.join(", "));
     if (parsed.skipped.length) bits.push(L.tooLong + " " + parsed.skipped.join(", "));
     el.spMeta.textContent = bits.join(" · ");
   }
   function renderSpPreview() {
-    if (!el.spPreview) return;
+    if (!el.spPreview || !spListNs()) return;
     const parsed = spParse();
     const plan = parsed.words.length ? spPlan(parsed.words) : [];
     renderSpTabs(plan);
@@ -13735,6 +13780,7 @@
     loadQrModule();
     loadWordSearchModule();
     loadWordPuzzlesModule();
+    if (el.spInput && el.spPreview) loadWordListParser(() => renderSpPreview());
     /* OUT-06 -- publish the page's own face to the glyph surfaces.
 
        CFG.font reached the SVG paths and the canvas export, and NEVER reached
