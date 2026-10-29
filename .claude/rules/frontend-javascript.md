@@ -66,9 +66,15 @@ measurement: `.claude/rules/ads-and-monetization.md`.
 
 Some surfaces in `script.js` are opt-in per page via a `window.UTG_*` flag
 (`UTG_FORMAT_MARKS`, `UTG_SHOW_PLATFORMS`, `UTG_PRINTABLE`, `UTG_DECORATIONS`,
-`UTG_LIBRARY_HUB`, `data-cascade`, `data-extreme`). **Check the opt-in before
+`UTG_LIBRARY_HUB`, `data-cascade`, `data-extreme`, `data-case-policy`). **Check the opt-in before
 concluding a string in a shared module is live on a page** — the count that matters
 is the number of pages that declare the flag, not the number that load the module.
+
+`renderer.js` has one: `data-case-policy="locale"` on `<html>` gives a
+case-converter page its language's Title/Capitalized/Sentence case rules; without
+it the old English-list behaviour runs unchanged, which is what keeps protected
+pages byte-identical. New case-converter pages must declare it
+(`npm run check:case-policy`). Reasoning: `docs/decisions/locale-case-policy.md`.
 
 `symbol-explorer.js` has one: `data-skin-tone` on a library `<section>` turns on the
 skin-tone picker for that section's tiles. After opting a section in, run

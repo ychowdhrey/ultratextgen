@@ -30,6 +30,10 @@
  *     letters with no second letter (ł đ ø) still fold to their base letter.
  *   - The superscript and subscript styles raise or lower + - = ( ) with the
  *     digits (Ca2+ is ᶜᵃ²⁺), and no other style's signs change.
+ *
+ * This file pins the default path: a page without data-case-policy. The
+ * per-language rules a page gets with <html data-case-policy="locale"> are
+ * tested in scripts/lib/case-policy.test.js.
  */
 
 const assert = require('assert');
