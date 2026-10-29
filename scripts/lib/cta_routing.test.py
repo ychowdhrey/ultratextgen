@@ -214,7 +214,14 @@ def _copy_states_a_checkable_fact():
     assert "150" in DESTINATIONS["character-counter"]["cta"], "Instagram bio limit"
     assert "80" in DESTINATIONS["character-counter"]["cta"], "TikTok bio limit"
     assert "160" in DESTINATIONS["bio-font"]["cta"], "X bio limit"
-    assert "88" in DESTINATIONS["bio-font"]["cta"], "bio-font's own font count"
+    # The card used to promise "88 Unicode fonts"; the generator it links to
+    # offers 13. Every font family the card names must be a tab on that page.
+    import re as _re
+    page = (HERE.parent.parent / "usecase" / "bio-font" / "index.html").read_text(encoding="utf-8")
+    tabs = set(_re.findall(r'^\s*"(\w+)":\s*\[', page.split("window.STYLE_MAP", 1)[1].split("};", 1)[0], _re.M))
+    named = {"bold", "cursive", "gothic", "bubble"} & set(_re.findall(r"\w+", DESTINATIONS["bio-font"]["cta"]))
+    assert named and named <= tabs, f"card names {sorted(named)}, bio-font tabs are {sorted(tabs)}"
+    assert not _re.search(r"\d+ Unicode fonts", DESTINATIONS["bio-font"]["cta"]), "no font count on the card"
 
 
 def _keeps_the_protected_brand_term():
