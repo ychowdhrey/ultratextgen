@@ -529,6 +529,15 @@ def art_slug(page_slug):
     return page_slug.replace("/", "-")
 
 
+def html_case_policy(batch):
+    """The <html> attribute that gives a case-converter page its language's case
+    rules (renderer.js, LOCALE CASE POLICY). Every new case-converter page gets
+    it; `npm run check:case-policy` fails a new page without it, and fails it
+    again if the language has no verified policy yet, so that gap is decided
+    rather than inherited."""
+    return ' data-case-policy="locale"' if batch["family"] == "case-converter" else ""
+
+
 def build(code, spec, all_codes, batch, specs):
     parent = batch["parent"]
     siblings = batch["siblings"]
@@ -593,7 +602,7 @@ def build(code, spec, all_codes, batch, specs):
 
     alt_json = ",\n".join(f'    {jstr(n)}' for n in spec["alt_names"])
 
-    return f"""<!DOCTYPE html><html lang="{lang}"><head>
+    return f"""<!DOCTYPE html><html lang="{lang}"{html_case_policy(batch)}><head>
 {HEAD_SCRIPTS}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
