@@ -106,6 +106,34 @@ console.log("\nrecorded — the same page after carrying `columns` into the expo
   ok("and so is the clone", cloneV.length === 0, JSON.stringify(cloneV.slice(0, 3)));
 }
 
+/* The spelling packet's word search page: the puzzle maker's own grid and
+   word list inside a spelling PDF, at the largest list spelling takes (20
+   words, an 18x18 grid), recorded on US Letter and A4 at the moment the PDF
+   writer rasterises it. A packet is many explicit page units, and the writer
+   never cuts inside one, so "the grid never splits across pages" is the claim
+   that the whole grid and its word list sit inside the ONE page unit, clean.
+   Like the sheet above, its content is taller than the page box (fit 0.89 on
+   Letter, 0.95 on A4: the writer scales the page down, the letters measured
+   28px tall at 192 ppi); that is recorded, not asserted, for the reason
+   given below. */
+console.log("\nrecorded — the spelling packet's word search page, Letter and A4");
+["letter", "a4"].forEach((paper) => {
+  const rec = FIX.spellingPacket[paper];
+  const page = rec.page;
+  const v = RI.check(page, { width: rec.widthPx });
+  ok(paper + ": the packet's word search page is clean", v.length === 0, JSON.stringify(v.slice(0, 3)));
+  const find = (n, cls) => n.id.indexOf(cls) !== -1 ? n : n.children.map((c) => find(c, cls)).filter(Boolean)[0];
+  const grid = find(page, "pt-search-grid");
+  const words = find(page, "pt-search-words");
+  const inside = (n) => n && n.box.y >= page.box.y - RI.EDGE_TOL && n.box.y + n.box.h <= page.box.y + page.box.h + RI.EDGE_TOL;
+  ok(paper + ": the whole grid is inside one page unit", inside(grid), grid && JSON.stringify(grid.box));
+  ok(paper + ": and so is its word list", inside(words), words && JSON.stringify(words.box));
+  const cells = grid ? grid.children.filter((c) => c.id.indexOf("pt-search-cell") !== -1).length : 0;
+  ok(paper + ": every cell of the 18x18 grid was recorded", cells === 324, "cells=" + cells);
+  const fit = RI.fitScale(page.box.h, rec.pageHeightPx);
+  ok(paper + ": the page is scaled, never cut (fit " + fit.toFixed(3) + ")", fit > 0.8 && fit <= 1);
+});
+
 /* Deliberately NOT asserted here: that the recorded sheet fits a US Letter
    page. It does not — 994.4px against a 960px content box — because its
    CONTENT exceeds the page rather than its height budget being wrong, which is

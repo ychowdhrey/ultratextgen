@@ -195,7 +195,12 @@
         missing: { title: "Missing Letters", note: "Fill in the missing letters. Then write the whole word on the line." },
         abc: { title: "ABC Order", note: "Write the words in ABC order.", fold: "Fold the list away. Write three of the words from memory." },
         shapes: { title: "Word Shapes", note: "Write each word in the boxes that match its shape." },
-        answers: { title: "Answers", missing: "Missing letters", abc: "ABC order", shapes: "Word shapes" },
+        search: { title: "Word Search", note: "Find each spelling word in the grid. Words go across, down and diagonally.", pick: "Word search (puzzle)" },
+        scramble: { title: "Word Scramble", note: "Unscramble the letters to spell each word. Write it on the line.", pick: "Word scramble (puzzle)" },
+        searchKey: { title: "Word Search Answers" },
+        answers: { title: "Answers", missing: "Missing letters", abc: "ABC order", shapes: "Word shapes", scramble: "Word scramble" },
+        newVersion: "New puzzle version",
+        pageOf: "Page {i} of {n}",
         bank: "Word bank",
         needWords: "Type a few words to build the sheets.",
         needSheet: "Pick at least one sheet.",
@@ -4877,7 +4882,8 @@
     // Size the sheet to the paper the visitor chose, then sign it. Both have
     // to happen before anything measures or rasterises the surface.
     applySheetMetrics(el.printRoot);
-    attachCredit(wrap);
+    const creditedPages = attachCredit(wrap);
+    if (bodyNode.dataset && bodyNode.dataset.ptPageNumbers) numberCreditPages(creditedPages);
     el.printRoot.appendChild(wrap);
     layoutPracticeRows(wrap);
 
@@ -13353,7 +13359,15 @@
 
   const SP_DEMO = CFG.spellingDemo
     || "friend\nbecause\nanswer\nlaugh\nwould\npeople\nthought\nbefore\nlittle\nfavorite";
-  const SP_SHEETS = ["trace", "lcwc", "missing", "abc", "shapes"];
+  const SP_SHEETS = ["trace", "lcwc", "missing", "abc", "shapes", "search", "scramble"];
+  /* The two puzzles a spelling packet borrows from the puzzle makers. Their
+     builders (wordSearch.js, wordPuzzles.js) are fetched only once one is
+     picked, so a packet without puzzles costs nothing it did not before. */
+  const SP_PUZZLES = ["search", "scramble"];
+  /* "New puzzle version" bumps this, and only the puzzles read it: every
+     other sheet stays the reprint it always was. 0 is the sheet a child's
+     name (or the list itself) has always given. */
+  let spVersion = 0;
   const SP_MAX_WORDS = 20;
   const SP_TRACE_LEVEL = { dotted: 2, faded: 5, copy: 1 };
   const SP_ROWS = { large: 5, medium: 7, small: 9 };
@@ -13675,6 +13689,45 @@
     if (moreFooterOn("word", true)) sheet.appendChild(footerRow("pt-search-footer-row"));
     return sheet;
   }
+  /* The packet's word search and scramble: the puzzle makers' own builders
+     and their own grid and list nodes, fed the packet's words. Seeded by the
+     child's name, as on the puzzle makers, so every child in a class set gets
+     a different grid and a reprint is the same one; with no name the list
+     itself is the seed. "New puzzle version" adds spVersion to the seed. */
+  function spPuzzleSeed(words, seedName, kind) {
+    const base = seedName || words.map((w) => w.word).join("|");
+    return base + "|sp-" + kind + (spVersion ? "|v" + spVersion : "");
+  }
+  function spSearchBuilt(words, seedName) {
+    const ns = window.UltraTextGen && window.UltraTextGen.wordSearch;
+    if (!ns) return null;
+    return ns.build({ words: words.map((w) => w.word), level: "medium", seed: spPuzzleSeed(words, seedName, "search"), fold: FOLD_GRID });
+  }
+  function spScrambleBuilt(words, seedName) {
+    const ns = window.UltraTextGen && window.UltraTextGen.wordScramble;
+    if (!ns) return null;
+    return ns.build({ words: words.map((w) => w.word), level: "medium", seed: spPuzzleSeed(words, seedName, "scramble") });
+  }
+  function spSearchSheet(words, seedName, showAnswer) {
+    const sheet = spPuzzleSheet(showAnswer ? "searchKey" : "search", seedName);
+    const built = spSearchBuilt(words, seedName);
+    spHead(sheet, showAnswer ? "searchKey" : "search", seedName, showAnswer ? "" : T.spelling.search.note);
+    if (!built) return sheet;
+    sheet.appendChild(searchGridNode(built, showAnswer));
+    sheet.appendChild(searchWordListNode(built));
+    if (!showAnswer && moreFooterOn("word", true)) sheet.appendChild(footerRow("pt-search-footer-row"));
+    return sheet;
+  }
+  function spScrambleSheet(words, seedName) {
+    const sheet = spPuzzleSheet("scramble", seedName);
+    spHead(sheet, "scramble", seedName, T.spelling.scramble.note);
+    const built = spScrambleBuilt(words, seedName);
+    if (!built) return sheet;
+    sheet.appendChild(scListNode(built, false));
+    if (moreFooterOn("word", true)) sheet.appendChild(footerRow("pt-search-footer-row"));
+    return sheet;
+  }
+
   // One answer page per child, matching that child's own order.
   function spAnswerSheet(words, seedName, keys) {
     const L = T.spelling.answers;
@@ -13683,8 +13736,15 @@
     const cols = document.createElement("div");
     cols.className = "pt-sp-answer-cols";
     keys.forEach((k) => {
-      const list = k === "abc" ? spSorted(words)
-        : spShuffle(words, seedName + (k === "missing" ? "|missing|" + spState.blank : "|shapes"));
+      let list;
+      if (k === "scramble") {
+        // The scramble keeps the list's order; its key is that order, unscrambled.
+        const built = spScrambleBuilt(words, seedName);
+        list = built ? built.words.map((w) => ({ word: w.display })) : [];
+      } else {
+        list = k === "abc" ? spSorted(words)
+          : spShuffle(words, seedName + (k === "missing" ? "|missing|" + spState.blank : "|shapes"));
+      }
       const col = document.createElement("div");
       const t = document.createElement("h4");
       t.className = "pt-cw-clues-title";
@@ -13715,8 +13775,10 @@
         out.push({ key: k, words: words });
       }
     });
-    const keys = spSelected().filter((k) => k === "missing" || k === "abc" || k === "shapes");
+    const keys = spSelected().filter((k) => k === "missing" || k === "abc" || k === "shapes" || k === "scramble");
     if (spAnswerOn() && keys.length) out.push({ key: "answers", words: words, keys: keys });
+    // A word search is answered by its grid, so its key is a page of its own.
+    if (spAnswerOn() && spSelected().indexOf("search") !== -1) out.push({ key: "searchKey", words: words });
     return out;
   }
   function spNode(item, seedName) {
@@ -13727,6 +13789,9 @@
       case "missing": return spMissingSheet(item.words, seed);
       case "abc": return spAbcSheet(item.words, seed);
       case "shapes": return spShapesSheet(item.words, seed);
+      case "search": return spSearchSheet(item.words, seed, false);
+      case "searchKey": return spSearchSheet(item.words, seed, true);
+      case "scramble": return spScrambleSheet(item.words, seed);
       default: return spAnswerSheet(item.words, seed, item.keys || []);
     }
   }
@@ -13780,6 +13845,9 @@
     const parsed = spParse();
     const plan = parsed.words.length ? spPlan(parsed.words) : [];
     if (!plan.length) return;
+    // A puzzle picked a moment ago may still be fetching its builder; print
+    // once it is here rather than print an empty puzzle page.
+    if (!spPuzzlesReady()) { loadSpPuzzles(printSpelling); return; }
     const holder = document.createElement("div");
     holder.className = "pt-search-print-holder pt-sp-print-holder";
     const names = rosterNames(el.spRoster);
@@ -13787,7 +13855,56 @@
     (names.length >= 2 ? names : [null]).forEach((n) => plan.forEach((it) => items.push({ it: it, name: n })));
     if (names.length >= 2) holder.classList.add("pt-class-set");
     appendSheetPages(holder, items, (x) => spNode(x.it, x.name));
+    holder.dataset.ptPageNumbers = "1";
     printWrap("", holder, "spelling_worksheet");
+  }
+  function spPuzzlesWanted() { return spSelected().some((k) => SP_PUZZLES.indexOf(k) !== -1); }
+  function spPuzzlesReady() {
+    const U = window.UltraTextGen || {};
+    return !spPuzzlesWanted() || !!(U.wordSearch && U.wordScramble);
+  }
+  /* Both builders, behind the list parser the page already fetched, with
+     async off so they run in insertion order. `then` runs once both are in. */
+  const spPuzzleWaiters = [];
+  function loadSpPuzzles(then) {
+    if (then) spPuzzleWaiters.push(then);
+    const U = window.UltraTextGen || {};
+    const done = () => {
+      const V = window.UltraTextGen || {};
+      if (!(V.wordSearch && V.wordScramble)) return;
+      spPuzzleWaiters.splice(0).forEach((fn) => fn());
+    };
+    if (U.wordSearch && U.wordScramble) { done(); return; }
+    loadWordListParser();
+    [["wordSearch", "/js/printables/wordSearch.js", "data-pt-wordsearch"],
+     ["wordScramble", "/js/printables/wordPuzzles.js", "data-pt-wordpuzzles"]].forEach((m) => {
+      if (U[m[0]]) return;
+      let sc = document.querySelector("script[" + m[2] + "]");
+      if (!sc) {
+        sc = document.createElement("script");
+        sc.src = m[1];
+        sc.async = false;
+        sc.setAttribute(m[2], "");
+        sc.onerror = () => console.warn("[printables] " + m[1] + " failed to load.");
+        document.head.appendChild(sc);
+      }
+      sc.addEventListener("load", done);
+    });
+  }
+  /* "Page 2 of 6" in each page's credit line, for the packets that run to
+     several pages: a class set of 25 is a 100-page stack, and a page that
+     drops out of it said nothing about where it went. In the credit line
+     rather than above it, so no sheet loses a millimetre of its own height. */
+  function numberCreditPages(pages) {
+    if (pages.length < 2) return;
+    pages.forEach((page, i) => {
+      const credit = page.querySelector(":scope > .pt-credit");
+      if (!credit) return;
+      const n = document.createElement("span");
+      n.className = "pt-credit-page";
+      n.textContent = "\u00b7 " + T.spelling.pageOf.replace("{i}", String(i + 1)).replace("{n}", String(pages.length));
+      credit.appendChild(n);
+    });
   }
 
   function wireSpChoices(group, key, attr) {
@@ -13807,9 +13924,38 @@
     }));
     paint();
   }
+  /* The two puzzle sheets join the picker at runtime, in the markup the page
+     already authors for its five, so the page's copy is untouched; they start
+     off, so the default packet is the one it always was. */
+  function addSpPuzzleChoices(group) {
+    SP_PUZZLES.forEach((k) => {
+      if (group.querySelector('.pt-choice[data-sheet="' + k + '"]')) return;
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pt-choice";
+      b.dataset.sheet = k;
+      b.setAttribute("aria-pressed", "false");
+      b.textContent = T.spelling[k].pick;
+      group.appendChild(b);
+    });
+    if ($("#pt-sp-reseed")) return;
+    const again = document.createElement("button");
+    again.type = "button";
+    again.id = "pt-sp-reseed";
+    again.className = "pt-choice pt-choice-sm";
+    again.textContent = T.spelling.newVersion;
+    again.hidden = true;
+    again.addEventListener("click", () => { spVersion++; renderSpPreview(); });
+    group.insertAdjacentElement("afterend", again);
+  }
+  function syncSpReseed() {
+    const b = $("#pt-sp-reseed");
+    if (b) b.hidden = !spPuzzlesWanted();
+  }
   function wireSpSheets() {
     const group = el.spSheets;
     if (!group) return;
+    addSpPuzzleChoices(group);
     const buttons = $$(".pt-choice", group);
     const paint = () => buttons.forEach((b) => {
       const on = spState.sheets.indexOf(b.dataset.sheet) !== -1;
@@ -13823,9 +13969,12 @@
       if (i === -1) { spState.sheets.push(k); spState.tab = k; }
       else spState.sheets.splice(i, 1);
       paint();
+      syncSpReseed();
+      if (!spPuzzlesReady()) loadSpPuzzles(renderSpPreview);
       renderSpPreview();
     }));
     paint();
+    syncSpReseed();
   }
 
   function buildSpellingSurface() {
