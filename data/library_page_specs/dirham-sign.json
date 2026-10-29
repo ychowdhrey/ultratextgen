@@ -17,7 +17,7 @@
       "id": "dirham-sign",
       "label": "Dirham Sign",
       "h2": "Dirham Sign",
-      "intro": "The final character itself: copyable today by codepoint, even though no system font renders it natively yet.",
+      "intro": "The final character itself: copyable today by codepoint, even though no system font renders it natively yet. If you see an empty box, your device has no font for U+20C3 yet: the character still pastes correctly and shows once the reader's device has a font for it. Until then, write AED, or the Arabic abbreviation د.إ.",
       "symbols": [
         {
           "char": "⃃",
