@@ -264,6 +264,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
             <p class="pt-level-readout">Building at <strong id="pt-gen-level">Level 2 · Bold dotted</strong>: <span id="pt-gen-hint">thick, closely-spaced dots to join</span>.</p>
           </div>
 
+          <div class="pt-field">
+            <span class="pt-field-label">Handwriting style <span class="pt-field-opt">(print or joined cursive)</span></span>
+            <div class="pt-segment" id="pt-gen-script" role="group" aria-label="Handwriting style">
+              <button type="button" class="pt-gen-preset pt-gen-script-opt" data-script="print" aria-pressed="false">Print <small>separate letters</small></button>
+              <button type="button" class="pt-gen-preset pt-gen-script-opt" data-script="cursive" aria-pressed="false">Cursive <small>joined letters</small></button>
+            </div>
+            <p class="pt-level-readout"><span id="pt-gen-script-hint">Manuscript print: separate letters, the style children usually learn to write first.</span></p>
+          </div>
+
           <div class="pt-field pt-field-inline">
             <span class="pt-opt">
               <label for="pt-gen-case">Letters</label>
@@ -431,12 +440,30 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       pngPrefix: "handwriting",
       font: "Quicksand, 'Plus Jakarta Sans', sans-serif",
       charset: "alnum",
-      genDemo: "The cat sat"
+      genDemo: "The cat sat",
+      scriptParamOptional: true,
+      scriptOptions: [
+        {
+          key: "print",
+          label: "Print",
+          font: "Quicksand, 'Plus Jakarta Sans', sans-serif",
+          hint: "Manuscript print: separate letters, the style children usually learn to write first."
+        },
+        {
+          key: "cursive",
+          joined: true,
+          fontWeight: 400,
+          label: "Cursive",
+          font: "'Playwrite US Trad', 'Segoe Script', cursive",
+          hint: "Joined cursive in a traditional US school style: every letter connects to the next, and the trace rows follow the joins. Stroke direction arrows show print strokes, so they switch off for cursive."
+        }
+      ]
     };
   </script>
   <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
   <script src="/js/printables/strokeDirectionData.js" defer></script>
+  <script src="/js/printables/centreline.js" defer></script>
   <script src="/js/printables/printPrefs.js"></script>
   <script src="/js/share/share-core.js" defer></script>
   <script src="/js/saved/saved-items.js" defer></script>

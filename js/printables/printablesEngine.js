@@ -2748,7 +2748,7 @@
   let strokeOverlayUid = 0;
   let strokeMeasureCtx = null;
 
-  function strokeOverlayOn() { return !!(el.strokeToggle && el.strokeToggle.checked); }
+  function strokeOverlayOn() { return !!(el.strokeToggle && el.strokeToggle.checked && !el.strokeToggle.disabled); }
 
   function strokeDataFor(ch) {
     const table = window.UTG_STROKE_DIRECTION_DATA;
@@ -3748,7 +3748,11 @@
     if (rows && rows.value) p.rows = rows.value;
     if (el.genCase && el.genCase.value && el.genCase.value !== "as-typed") p.case = el.genCase.value;
     if (typeof nameStyleKey !== "undefined" && nameStyleKey) p.style = nameStyleKey;
-    if (typeof genScriptKey !== "undefined" && genScriptKey) p.script = genScriptKey;
+    /* CFG.scriptParamOptional: the first option is the page's own default,
+       so a link to it carries no script and reads exactly as it did before
+       the picker existed. Pages without the flag always name the script. */
+    if (typeof genScriptKey !== "undefined" && genScriptKey &&
+        !(CFG.scriptParamOptional === true && SCRIPT_OPTIONS && genScriptKey === SCRIPT_OPTIONS[0].key)) p.script = genScriptKey;
     if (CHAR_STYLES && charStyleKey) p.cstyle = charStyleKey;
     if (nameCase !== "as-typed") p.ncase = nameCase;
     if (nUp > 1) p.nup = String(nUp);
@@ -8345,6 +8349,20 @@
     return routed;
   }
 
+  /* The same centreline at another scale: traced in row units (the size the
+     raster and the cache are built for) and mapped onto a canvas whose type
+     is k times larger and whose baseline sits at baseY. The PNG export sets
+     the word much larger than a row, and tracing it there would clip it to
+     the row-height raster. */
+  function scaledCentrelinePaths(word, k, baseY, totalW) {
+    const P = glyphCentrelinePaths(word, TRACE_FONT_SIZE, 0, TRACE_BASE, totalW / k);
+    if (!P) return null;
+    const out = P.map((d) => String(d).replace(/(-?\d*\.?\d+),(-?\d*\.?\d+)/g,
+      (m, x, y) => (+(x * k).toFixed(2)) + "," + (+((y - TRACE_BASE) * k + baseY).toFixed(2))));
+    out.contour = [];
+    return out;
+  }
+
   /* Diacritics as centreline strokes, in the unit box of the space the mark
      occupies (x 0..1 left to right, y 0..1 top to bottom). Dots are short
      segments, the same device the route table uses for the tittle of i/j. */
@@ -8971,7 +8989,15 @@
     const opt = SCRIPT_OPTIONS.find((o) => o.key === key) || SCRIPT_OPTIONS[0];
     genScriptKey = opt.key;
     FONT = opt.font;
-    if (opt.fontWeight != null) FONT_WEIGHT = opt.fontWeight;
+    /* The option's own weight, or the page's when it names none. Only setting
+       it when an option names one left a single-weight cursive's 400 on the
+       print face after switching back, so Print came back thinner than it
+       loaded. */
+    FONT_WEIGHT = styleWeight(opt);
+    /* The stroke-direction arrows are the print route; a joined script never
+       draws them (traceWordSVG skips the overlay), so the checkbox says so by
+       being unavailable rather than doing nothing. */
+    if (el.strokeToggle) el.strokeToggle.disabled = !!opt.joined;
     if (el.genScript) {
       $$(".pt-gen-script-opt", el.genScript).forEach((b) => {
         const on = b.dataset.script === genScriptKey;
@@ -9810,8 +9836,14 @@
              without this file owning a second path parser. Falling back to
              strokeText keeps the old contour rendering for a word the route
              cannot cover, exactly as the preview does. */
+          /* A joined script traces its own centreline here too, as the sheet
+             row does. The print route under a cursive word put separate
+             print letters in the PNG while the preview and the PDF were
+             joined. When the centreline cannot run, the contour below is the
+             fallback, never the print route. */
           routedPng = (spec.fill === "none" && spec.routeSw && typeof Path2D !== "undefined")
-            ? traceRoutePaths(word, fontSize, 0, base, wordBoxW)
+            ? (joinedScriptOn() ? scaledCentrelinePaths(word, scale, base, wordBoxW)
+                                : traceRoutePaths(word, fontSize, 0, base, wordBoxW))
             : null;
           ctx.strokeStyle = spec.stroke;
           ctx.lineCap = spec.cap || "round";
@@ -9822,8 +9854,19 @@
             const rd = dashOf(spec.routeDash);
             // Same survivors as the preview row, in canvas units.
             const dots = routeDotDashes(routedPng, spec.routeDash, spec.routeSw, scale);
+            const joinedMarks = joinedScriptOn();
             routedPng.forEach((d, k) => {
               if (dots && !dots[k]) return;
+              // A centreline mark (the dot of an i) prints as one round dot,
+              // as it does on the sheet row; a dash pattern can miss it.
+              if (joinedMarks && markPath(d, spec.routeSw * scale)) {
+                const cap = ctx.lineCap;
+                ctx.setLineDash([]);
+                ctx.lineCap = "round";
+                ctx.stroke(new Path2D(d));
+                ctx.lineCap = cap;
+                return;
+              }
               ctx.setLineDash(dots ? dots[k].dash : (rd.length ? rd : []));
               ctx.lineDashOffset = dots ? dots[k].offset : 0;
               ctx.stroke(new Path2D(d));
