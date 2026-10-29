@@ -376,5 +376,29 @@ const SPELLING = ["because", "friend", "people", "school", "water", "there",
   eq(WS.normalizeWords("किताब, पानी")[0].letters.join("|"), "कि|ता|ब", "Hindi vowel signs survive a comma list");
 }
 
+/* The spelling packet builds its word search from the packet's own words
+   (an array, already one entry each), seeded "<child>|sp-search" and, after
+   "New puzzle version", "<child>|sp-search|v<n>". Inside a class-set plan the
+   same three claims hold as on the puzzle maker: two children differ, a
+   reprint is the same grid, and every word can be read back out of it. */
+{
+  const words = ["friend", "because", "answer", "laugh", "would"];
+  const grid = (seed) => WS.build({ words: words, level: "medium", seed: seed });
+  const text = (b) => b.grid.map((r) => r.join("")).join("/");
+  const ava = grid("Ava|sp-search"), ben = grid("Ben|sp-search");
+  ok(text(ava) !== text(ben), "packet: two children in a class set get different grids");
+  eq(text(grid("Ava|sp-search")), text(ava), "packet: a reprint of one child's packet is the same grid");
+  ok(text(grid("Ava|sp-search|v1")) !== text(ava), "packet: New puzzle version gives a different grid");
+  eq(text(grid("Ava|sp-search|v1")), text(grid("Ava|sp-search|v1")), "packet: and that version reprints the same");
+  [ava, ben].forEach((b, i) => {
+    eq(b.words.filter((w) => w.placed).length, words.length, "packet: grid " + i + " places every spelling word");
+    ok(b.words.every((w) => !w.placed || WS.findWord(b.grid, w.letters).length > 0), "packet: grid " + i + " reads every word back out");
+  });
+  const twenty = ["friend", "because", "answer", "laugh", "would", "people", "thought", "before", "little", "favorite",
+    "school", "picture", "important", "different", "beautiful", "question", "weather", "tomorrow", "surprise", "library"];
+  const big = WS.build({ words: twenty, level: "medium", seed: "Ava|sp-search" });
+  eq(big.unplaced.length, 0, "packet: a full 20-word spelling list fits its grid");
+}
+
 console.log("\nwordSearch.js — " + pass + " passed, " + fail + " failed");
 process.exit(fail ? 1 : 0);

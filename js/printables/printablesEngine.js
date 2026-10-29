@@ -195,7 +195,12 @@
         missing: { title: "Missing Letters", note: "Fill in the missing letters. Then write the whole word on the line." },
         abc: { title: "ABC Order", note: "Write the words in ABC order.", fold: "Fold the list away. Write three of the words from memory." },
         shapes: { title: "Word Shapes", note: "Write each word in the boxes that match its shape." },
-        answers: { title: "Answers", missing: "Missing letters", abc: "ABC order", shapes: "Word shapes" },
+        search: { title: "Word Search", note: "Find each spelling word in the grid. Words go across, down and diagonally.", pick: "Word search (puzzle)" },
+        scramble: { title: "Word Scramble", note: "Unscramble the letters to spell each word. Write it on the line.", pick: "Word scramble (puzzle)" },
+        searchKey: { title: "Word Search Answers" },
+        answers: { title: "Answers", missing: "Missing letters", abc: "ABC order", shapes: "Word shapes", scramble: "Word scramble" },
+        newVersion: "New puzzle version",
+        pageOf: "Page {i} of {n}",
         bank: "Word bank",
         needWords: "Type a few words to build the sheets.",
         needSheet: "Pick at least one sheet.",
@@ -3818,6 +3823,7 @@
     if (words && wordsEl) {
       wordsEl.value = String(words).split("|").map((x) => x.trim()).filter(Boolean).join("\n");
     }
+    restoreWordList();
     const wslevel = presetGet("wslevel");
     if (wslevel && ["easy", "medium", "hard"].indexOf(wslevel) !== -1) searchState.level = wslevel;
     const heading = presetGet("heading"); const headingEl = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading, el.cwHeading, el.scHeading, el.spHeading]);
@@ -3905,6 +3911,7 @@
     }
     const roster = primaryRoster();
     if (roster && !fixedWordSet()) writeRosterFor(roster, roster.value);
+    rememberWordList();
     renderRecent();
   }
   let recentMount = null;
@@ -4875,7 +4882,8 @@
     // Size the sheet to the paper the visitor chose, then sign it. Both have
     // to happen before anything measures or rasterises the surface.
     applySheetMetrics(el.printRoot);
-    attachCredit(wrap);
+    const creditedPages = attachCredit(wrap);
+    if (bodyNode.dataset && bodyNode.dataset.ptPageNumbers) numberCreditPages(creditedPages);
     el.printRoot.appendChild(wrap);
     layoutPracticeRows(wrap);
 
@@ -6920,6 +6928,119 @@
     $$(".pt-carry-link", row).forEach((a) => {
       a.href = a.dataset.carry + (word ? "?name=" + encodeURIComponent(word) : "");
     });
+  }
+
+  /* "Same list, another activity" -- the word-list half of the carry row.
+
+     A teacher types this week's list into the spelling generator, and its own
+     copy sends them to the word search for "the same list as a puzzle"; the
+     word search opened empty, so the list was typed again on every tool. All
+     four word tools and the handwriting generator already read a list from
+     their URL (?words= fills the list box, ?roster= the handwriting Word
+     list), so this row only writes those links.
+
+     Each link is serialised by wordList.toCarry(), the parser the receiving
+     tool reads with: "word = clue" travels intact to the crossword and as the
+     bare word everywhere else, and spelling's fr[ie]nd brackets travel only
+     to spelling. What travels is the WORD list. A class
+     list never goes into a link: children's names stay on this device.
+
+     English pages only: the labels are written here, because the footer does
+     not list these tools, and a locale gets the row when its labels exist. */
+  const WORD_CARRY_EN = [
+    { href: "/printables/spelling-worksheet-generator/", label: "Spelling worksheets", kind: "spelling" },
+    { href: "/printables/word-search-maker/", label: "Word search", kind: "words" },
+    { href: "/printables/word-scramble-maker/", label: "Word scramble", kind: "words" },
+    { href: "/printables/crossword-maker/", label: "Crossword", kind: "clues" },
+    { href: "/printables/handwriting-worksheet-generator/", label: "Handwriting worksheets", kind: "roster" }
+  ];
+  const WORD_CARRY_LABEL = { en: "Same list, another activity:" };
+  function wordListBox() {
+    return firstEl([el.spInput, el.searchInput, el.scInput, el.cwInput]);
+  }
+  /* The href for one destination, or the bare page when the box is empty (a
+     demo list never travels). */
+  function wordCarryHref(dest, box) {
+    const P = window.UltraTextGen && window.UltraTextGen.wordList;
+    if (!box.value.trim() || !P || !P.carryFor) return dest.href;
+    // The crossword gets the paste as the crossword reads it, clues and all,
+    // whichever tool it was typed on; every other tool gets the bare words.
+    const list = P.carryFor(box.value, dest.kind === "roster" ? "words" : dest.kind);
+    if (!list.length) return dest.href;
+    const key = dest.kind === "roster" ? "roster" : "words";
+    return dest.href + "?" + key + "=" + encodeURIComponent(list.slice(0, ROSTER_CAP).join("|"));
+  }
+  function mountWordCarry() {
+    const label = WORD_CARRY_LABEL[LANG];
+    const box = wordListBox();
+    if (!label || !box || $("#pt-word-carry-row")) return null;
+    const here = window.location.pathname.replace(/\/?$/, "/");
+    if (!WORD_CARRY_EN.some((d) => d.href === here)) return null;
+    const row = document.createElement("div");
+    row.id = "pt-word-carry-row";
+    row.className = "pt-carry-row";
+    const lab = document.createElement("span");
+    lab.className = "pt-carry-label";
+    lab.textContent = label;
+    row.appendChild(lab);
+    const links = WORD_CARRY_EN.filter((d) => d.href !== here).map((d) => {
+      const a = document.createElement("a");
+      a.className = "pt-carry-link";
+      a.href = d.href;
+      a.textContent = d.label;
+      a.dataset.carry = d.href;
+      row.appendChild(a);
+      return { a: a, dest: d };
+    });
+    const update = () => links.forEach((x) => { x.a.href = wordCarryHref(x.dest, box); });
+    /* Under the preview and its Download PDF button, not under the list box:
+       the moment a list is wanted as another activity is after this one is
+       printed, and the list box sits on the first screen of a phone, where a
+       row of five links would push the sheet choices down. */
+    const studio = box.closest(".pt-studio");
+    const preview = studio && studio.querySelector(".pt-studio-preview");
+    if (preview) preview.appendChild(row);
+    else (box.closest(".pt-field") || box.parentElement).insertAdjacentElement("afterend", row);
+    update();
+    let timer = null;
+    box.addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(update, 160); });
+    /* The parser is fetched at init, so a list that arrived filled (a link, or
+       this device's memory) is serialised once it lands, and again on the way
+       out so a link is never a keystroke behind the box. */
+    if (document.readyState !== "complete") window.addEventListener("load", update, { once: true });
+    row.addEventListener("pointerdown", update);
+    row.addEventListener("focusin", update);
+    return row;
+  }
+
+  /* The four word tools remember their list per page, the way the
+     handwriting generator's Word list already does (WORDLIST_KEY): a teacher
+     returning on Wednesday finds Monday's list, and emptying the box forgets
+     it. A link's ?words= wins over the memory, and the memory is written only
+     from typing or a download, so a carried list is not saved until it is
+     used. The curated-word pages (CFG.fixedWords) have no free list box. */
+  function wordListMemoryOn() { return !!wordListBox() && !fixedWordSet(); }
+  function rememberWordList() {
+    const box = wordListBox();
+    if (!box || !wordListMemoryOn()) return;
+    try {
+      if (box.value.trim()) localStorage.setItem(WORDLIST_KEY, box.value);
+      else localStorage.removeItem(WORDLIST_KEY);
+    } catch (err) { /* private mode: no list memory, which is not an error */ }
+  }
+  function restoreWordList() {
+    const box = wordListBox();
+    if (!box || !wordListMemoryOn() || box.value.trim() || presetGet("words")) return;
+    try {
+      const v = localStorage.getItem(WORDLIST_KEY);
+      if (v) box.value = v;
+    } catch (err) { /* optional */ }
+  }
+  function wireWordListMemory() {
+    const box = wordListBox();
+    if (!box || !wordListMemoryOn()) return;
+    let timer = null;
+    box.addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(rememberWordList, 800); });
   }
 
   function mountNameCase() {
@@ -13238,7 +13359,15 @@
 
   const SP_DEMO = CFG.spellingDemo
     || "friend\nbecause\nanswer\nlaugh\nwould\npeople\nthought\nbefore\nlittle\nfavorite";
-  const SP_SHEETS = ["trace", "lcwc", "missing", "abc", "shapes"];
+  const SP_SHEETS = ["trace", "lcwc", "missing", "abc", "shapes", "search", "scramble"];
+  /* The two puzzles a spelling packet borrows from the puzzle makers. Their
+     builders (wordSearch.js, wordPuzzles.js) are fetched only once one is
+     picked, so a packet without puzzles costs nothing it did not before. */
+  const SP_PUZZLES = ["search", "scramble"];
+  /* "New puzzle version" bumps this, and only the puzzles read it: every
+     other sheet stays the reprint it always was. 0 is the sheet a child's
+     name (or the list itself) has always given. */
+  let spVersion = 0;
   const SP_MAX_WORDS = 20;
   const SP_TRACE_LEVEL = { dotted: 2, faded: 5, copy: 1 };
   const SP_ROWS = { large: 5, medium: 7, small: 9 };
@@ -13560,6 +13689,45 @@
     if (moreFooterOn("word", true)) sheet.appendChild(footerRow("pt-search-footer-row"));
     return sheet;
   }
+  /* The packet's word search and scramble: the puzzle makers' own builders
+     and their own grid and list nodes, fed the packet's words. Seeded by the
+     child's name, as on the puzzle makers, so every child in a class set gets
+     a different grid and a reprint is the same one; with no name the list
+     itself is the seed. "New puzzle version" adds spVersion to the seed. */
+  function spPuzzleSeed(words, seedName, kind) {
+    const base = seedName || words.map((w) => w.word).join("|");
+    return base + "|sp-" + kind + (spVersion ? "|v" + spVersion : "");
+  }
+  function spSearchBuilt(words, seedName) {
+    const ns = window.UltraTextGen && window.UltraTextGen.wordSearch;
+    if (!ns) return null;
+    return ns.build({ words: words.map((w) => w.word), level: "medium", seed: spPuzzleSeed(words, seedName, "search"), fold: FOLD_GRID });
+  }
+  function spScrambleBuilt(words, seedName) {
+    const ns = window.UltraTextGen && window.UltraTextGen.wordScramble;
+    if (!ns) return null;
+    return ns.build({ words: words.map((w) => w.word), level: "medium", seed: spPuzzleSeed(words, seedName, "scramble") });
+  }
+  function spSearchSheet(words, seedName, showAnswer) {
+    const sheet = spPuzzleSheet(showAnswer ? "searchKey" : "search", seedName);
+    const built = spSearchBuilt(words, seedName);
+    spHead(sheet, showAnswer ? "searchKey" : "search", seedName, showAnswer ? "" : T.spelling.search.note);
+    if (!built) return sheet;
+    sheet.appendChild(searchGridNode(built, showAnswer));
+    sheet.appendChild(searchWordListNode(built));
+    if (!showAnswer && moreFooterOn("word", true)) sheet.appendChild(footerRow("pt-search-footer-row"));
+    return sheet;
+  }
+  function spScrambleSheet(words, seedName) {
+    const sheet = spPuzzleSheet("scramble", seedName);
+    spHead(sheet, "scramble", seedName, T.spelling.scramble.note);
+    const built = spScrambleBuilt(words, seedName);
+    if (!built) return sheet;
+    sheet.appendChild(scListNode(built, false));
+    if (moreFooterOn("word", true)) sheet.appendChild(footerRow("pt-search-footer-row"));
+    return sheet;
+  }
+
   // One answer page per child, matching that child's own order.
   function spAnswerSheet(words, seedName, keys) {
     const L = T.spelling.answers;
@@ -13568,8 +13736,15 @@
     const cols = document.createElement("div");
     cols.className = "pt-sp-answer-cols";
     keys.forEach((k) => {
-      const list = k === "abc" ? spSorted(words)
-        : spShuffle(words, seedName + (k === "missing" ? "|missing|" + spState.blank : "|shapes"));
+      let list;
+      if (k === "scramble") {
+        // The scramble keeps the list's order; its key is that order, unscrambled.
+        const built = spScrambleBuilt(words, seedName);
+        list = built ? built.words.map((w) => ({ word: w.display })) : [];
+      } else {
+        list = k === "abc" ? spSorted(words)
+          : spShuffle(words, seedName + (k === "missing" ? "|missing|" + spState.blank : "|shapes"));
+      }
       const col = document.createElement("div");
       const t = document.createElement("h4");
       t.className = "pt-cw-clues-title";
@@ -13600,8 +13775,10 @@
         out.push({ key: k, words: words });
       }
     });
-    const keys = spSelected().filter((k) => k === "missing" || k === "abc" || k === "shapes");
+    const keys = spSelected().filter((k) => k === "missing" || k === "abc" || k === "shapes" || k === "scramble");
     if (spAnswerOn() && keys.length) out.push({ key: "answers", words: words, keys: keys });
+    // A word search is answered by its grid, so its key is a page of its own.
+    if (spAnswerOn() && spSelected().indexOf("search") !== -1) out.push({ key: "searchKey", words: words });
     return out;
   }
   function spNode(item, seedName) {
@@ -13612,6 +13789,9 @@
       case "missing": return spMissingSheet(item.words, seed);
       case "abc": return spAbcSheet(item.words, seed);
       case "shapes": return spShapesSheet(item.words, seed);
+      case "search": return spSearchSheet(item.words, seed, false);
+      case "searchKey": return spSearchSheet(item.words, seed, true);
+      case "scramble": return spScrambleSheet(item.words, seed);
       default: return spAnswerSheet(item.words, seed, item.keys || []);
     }
   }
@@ -13665,6 +13845,9 @@
     const parsed = spParse();
     const plan = parsed.words.length ? spPlan(parsed.words) : [];
     if (!plan.length) return;
+    // A puzzle picked a moment ago may still be fetching its builder; print
+    // once it is here rather than print an empty puzzle page.
+    if (!spPuzzlesReady()) { loadSpPuzzles(printSpelling); return; }
     const holder = document.createElement("div");
     holder.className = "pt-search-print-holder pt-sp-print-holder";
     const names = rosterNames(el.spRoster);
@@ -13672,7 +13855,56 @@
     (names.length >= 2 ? names : [null]).forEach((n) => plan.forEach((it) => items.push({ it: it, name: n })));
     if (names.length >= 2) holder.classList.add("pt-class-set");
     appendSheetPages(holder, items, (x) => spNode(x.it, x.name));
+    holder.dataset.ptPageNumbers = "1";
     printWrap("", holder, "spelling_worksheet");
+  }
+  function spPuzzlesWanted() { return spSelected().some((k) => SP_PUZZLES.indexOf(k) !== -1); }
+  function spPuzzlesReady() {
+    const U = window.UltraTextGen || {};
+    return !spPuzzlesWanted() || !!(U.wordSearch && U.wordScramble);
+  }
+  /* Both builders, behind the list parser the page already fetched, with
+     async off so they run in insertion order. `then` runs once both are in. */
+  const spPuzzleWaiters = [];
+  function loadSpPuzzles(then) {
+    if (then) spPuzzleWaiters.push(then);
+    const U = window.UltraTextGen || {};
+    const done = () => {
+      const V = window.UltraTextGen || {};
+      if (!(V.wordSearch && V.wordScramble)) return;
+      spPuzzleWaiters.splice(0).forEach((fn) => fn());
+    };
+    if (U.wordSearch && U.wordScramble) { done(); return; }
+    loadWordListParser();
+    [["wordSearch", "/js/printables/wordSearch.js", "data-pt-wordsearch"],
+     ["wordScramble", "/js/printables/wordPuzzles.js", "data-pt-wordpuzzles"]].forEach((m) => {
+      if (U[m[0]]) return;
+      let sc = document.querySelector("script[" + m[2] + "]");
+      if (!sc) {
+        sc = document.createElement("script");
+        sc.src = m[1];
+        sc.async = false;
+        sc.setAttribute(m[2], "");
+        sc.onerror = () => console.warn("[printables] " + m[1] + " failed to load.");
+        document.head.appendChild(sc);
+      }
+      sc.addEventListener("load", done);
+    });
+  }
+  /* "Page 2 of 6" in each page's credit line, for the packets that run to
+     several pages: a class set of 25 is a 100-page stack, and a page that
+     drops out of it said nothing about where it went. In the credit line
+     rather than above it, so no sheet loses a millimetre of its own height. */
+  function numberCreditPages(pages) {
+    if (pages.length < 2) return;
+    pages.forEach((page, i) => {
+      const credit = page.querySelector(":scope > .pt-credit");
+      if (!credit) return;
+      const n = document.createElement("span");
+      n.className = "pt-credit-page";
+      n.textContent = "\u00b7 " + T.spelling.pageOf.replace("{i}", String(i + 1)).replace("{n}", String(pages.length));
+      credit.appendChild(n);
+    });
   }
 
   function wireSpChoices(group, key, attr) {
@@ -13692,9 +13924,38 @@
     }));
     paint();
   }
+  /* The two puzzle sheets join the picker at runtime, in the markup the page
+     already authors for its five, so the page's copy is untouched; they start
+     off, so the default packet is the one it always was. */
+  function addSpPuzzleChoices(group) {
+    SP_PUZZLES.forEach((k) => {
+      if (group.querySelector('.pt-choice[data-sheet="' + k + '"]')) return;
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pt-choice";
+      b.dataset.sheet = k;
+      b.setAttribute("aria-pressed", "false");
+      b.textContent = T.spelling[k].pick;
+      group.appendChild(b);
+    });
+    if ($("#pt-sp-reseed")) return;
+    const again = document.createElement("button");
+    again.type = "button";
+    again.id = "pt-sp-reseed";
+    again.className = "pt-choice pt-choice-sm";
+    again.textContent = T.spelling.newVersion;
+    again.hidden = true;
+    again.addEventListener("click", () => { spVersion++; renderSpPreview(); });
+    group.insertAdjacentElement("afterend", again);
+  }
+  function syncSpReseed() {
+    const b = $("#pt-sp-reseed");
+    if (b) b.hidden = !spPuzzlesWanted();
+  }
   function wireSpSheets() {
     const group = el.spSheets;
     if (!group) return;
+    addSpPuzzleChoices(group);
     const buttons = $$(".pt-choice", group);
     const paint = () => buttons.forEach((b) => {
       const on = spState.sheets.indexOf(b.dataset.sheet) !== -1;
@@ -13708,9 +13969,12 @@
       if (i === -1) { spState.sheets.push(k); spState.tab = k; }
       else spState.sheets.splice(i, 1);
       paint();
+      syncSpReseed();
+      if (!spPuzzlesReady()) loadSpPuzzles(renderSpPreview);
       renderSpPreview();
     }));
     paint();
+    syncSpReseed();
   }
 
   function buildSpellingSurface() {
@@ -13866,6 +14130,8 @@
     buildCrosswordSurface();
     buildScrambleSurface();
     buildSpellingSurface();
+    mountWordCarry();
+    wireWordListMemory();
     mountMore();
     wireMoreRepaint();
     if (moreRefs.letters && moreRefs.letters.check) moreRefs.letters.check.addEventListener("change", updateBatch);

@@ -187,6 +187,16 @@
       .map((e) => bar(clues && e.clue ? e.display + " = " + e.clue : e.display))
       .filter(Boolean);
   }
+  /* The list a link carries to ANOTHER tool, by what that tool is:
+     "clues" (the crossword) gets the paste as the crossword reads it, clues
+     and all; "spelling" keeps the fr[ie]nd brackets that mark a tricky part;
+     "words" (the word search, the scramble, the handwriting Word list) gets
+     the bare words, brackets removed, since only spelling reads them. */
+  function carryFor(input, kind) {
+    const list = toCarry(input, kind === "clues");
+    if (kind === "spelling") return list;
+    return list.map((x) => x.replace(/[[\]]/g, "").trim()).filter(Boolean);
+  }
   function fromParam(value) {
     return String(value == null ? "" : value).split("|").map((x) => x.trim()).filter(Boolean).join("\n");
   }
@@ -196,6 +206,7 @@
     unmark: unmark,
     spelling: spellingList,
     toCarry: toCarry,
+    carryFor: carryFor,
     fromParam: fromParam
   };
 })();

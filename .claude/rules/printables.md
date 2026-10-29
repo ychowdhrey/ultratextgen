@@ -99,7 +99,12 @@ option looks and behaves the same wherever it appears:
   the frozen `block-letters` page (`BATCH_FROZEN`). That key holds **class lists only**: a word list
   (`data-roster-kind="words"`) is remembered per page under `utg_printables_wordlist:<path>` and
   cleared by emptying its box, and a `CFG.fixedWords` page remembers nothing. Sharing one key filled
-  the handwriting generator's spelling list with a remembered class.
+  the handwriting generator's spelling list with a remembered class. The four word tools' list boxes
+  (spelling, word search, scramble, crossword) use the same per-page key.
+- **A word list travels between tools; a class list never does.** The "Same list, another
+  activity" row (`mountWordCarry()`) links the four word tools and the handwriting generator with
+  `?words=` / `?roster=`, serialised by `wordList.carryFor()`, the parser the destination reads
+  with, so a clue's comma reaches the crossword intact. Children's names stay in localStorage.
 - **Title and name/date line** live in one "More" section per tool, built by
   `mountMore()` in two scopes, `letters` and `word`. Read them through
   `moreTitle()` / `moreFooterOn()`, never from an element id. The name/date default

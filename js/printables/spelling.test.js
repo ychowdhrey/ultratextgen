@@ -82,5 +82,29 @@ Object.keys(PASTES).forEach((k) => {
 });
 eq(WL.fromParam(WL.toCarry("fr[ie]nd\nbec[au]se", false).join("|")), "fr[ie]nd\nbec[au]se", "brackets survive the round trip");
 
+/* "Same list, another activity": a list typed on one tool reaches the next
+   as that tool reads it. carryFor() writes the link; fromParam() is what the
+   receiving page puts in its box. Every paste must be the same five words on
+   every destination, the crossword must keep a clue's comma, and only
+   spelling may receive the fr[ie]nd brackets. */
+{
+  const via = (t, kind) => WL.fromParam(WL.carryFor(t, kind).join("|"));
+  Object.keys(PASTES).forEach((k) => {
+    const t = PASTES[k];
+    eq(spWords(via(t, "spelling")), FIVE, "carry " + k + " -> spelling");
+    eq(lower(WS.normalizeWords(via(t, "words"))), FIVE, "carry " + k + " -> word search");
+    eq(lower(SC.normalizeWords(via(t, "words"))), FIVE, "carry " + k + " -> scramble");
+    eq(lower(CW.normalizeWords(via(t, "clues"))), FIVE, "carry " + k + " -> crossword");
+    eq(via(t, "words").split("\n").join(" ").toLowerCase(), FIVE, "carry " + k + " -> handwriting Word list, one word a line");
+  });
+  const clued = CW.normalizeWords(via(PASTES.clue, "clues")).map((w) => w.clue).join(" | ");
+  eq(clued, "a red, crunchy fruit | long, yellow | citrus | sweet | grows on a vine", "a clue's comma reaches the crossword");
+  eq(CW.normalizeWords(via(PASTES.tab, "clues"))[0].clue, "a red fruit", "a tab table's clue reaches the crossword");
+  eq(via("fr[ie]nd\nbec[au]se", "spelling"), "fr[ie]nd\nbec[au]se", "spelling receives the brackets");
+  eq(via("fr[ie]nd\nbec[au]se", "words"), "friend\nbecause", "the puzzles and handwriting receive the bare word");
+  eq(via("fr[ie]nd = a pal", "clues"), "friend = a pal", "the crossword receives the bare word with its clue");
+  eq(WL.carryFor("", "words").length, 0, "an empty box carries nothing");
+}
+
 console.log("\nspelling.test.js — " + pass + " passed, " + fail + " failed");
 process.exit(fail ? 1 : 0);
