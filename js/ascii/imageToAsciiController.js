@@ -211,6 +211,88 @@
     trackDownload("txt");
   }
 
+  /* Save as PNG: the converted text drawn onto a canvas in a monospace font
+     and saved from a Blob. Client-side only; nothing is uploaded. The pair
+     is fixed and high contrast, matching the preview (dark ink on white, or
+     light ink on the dark chat colour once Invert is on), so the file reads
+     the same on any page theme. */
+  const PNG_PAD = 16;
+  const PNG_FONT_PX = 14;
+  const PNG_LINE = 1.2;
+  const PNG_FAMILY = '"Space Mono", ui-monospace, "Courier New", monospace';
+
+  function pngLayout(lines, scale, measure) {
+    const size = PNG_FONT_PX * scale;
+    const lineH = Math.round(size * PNG_LINE);
+    const pad = PNG_PAD * scale;
+    let widest = 0;
+    lines.forEach(function (line) {
+      const w = measure(line);
+      if (w > widest) widest = w;
+    });
+    return {
+      size: size,
+      lineH: lineH,
+      pad: pad,
+      width: Math.ceil(widest) + pad * 2,
+      height: lineH * lines.length + pad * 2
+    };
+  }
+
+  async function savePng() {
+    if (!lastArt) return;
+    const scale = Number(el.pngScale && el.pngScale.value) === 1 ? 1 : 2;
+    const inverted = el.invert.checked;
+    const lines = lastArt.split("\n");
+    try {
+      if (document.fonts && document.fonts.load) {
+        await document.fonts.load(PNG_FONT_PX * scale + 'px "Space Mono"');
+      }
+    } catch (err) { /* the fallback monospace stack still draws */ }
+
+    const probe = document.createElement("canvas").getContext("2d");
+    probe.font = PNG_FONT_PX * scale + "px " + PNG_FAMILY;
+    const layout = pngLayout(lines, scale, function (line) { return probe.measureText(line).width; });
+    /* Browsers refuse canvases past about 16,000 px on a side; say so
+       instead of saving a blank file. */
+    if (layout.width > 16000 || layout.height > 16000) {
+      setStatus("This picture is too large to save as a PNG. Lower the width and try again.");
+      return;
+    }
+
+    const canvas = document.createElement("canvas");
+    canvas.width = layout.width;
+    canvas.height = layout.height;
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = inverted ? "#1e1f22" : "#ffffff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = inverted ? "#f2f3f5" : "#111111";
+    ctx.font = layout.size + "px " + PNG_FAMILY;
+    ctx.textBaseline = "top";
+    lines.forEach(function (line, i) {
+      ctx.fillText(line, layout.pad, layout.pad + i * layout.lineH);
+    });
+
+    canvas.toBlob(function (blob) {
+      if (!blob) {
+        setStatus("This browser could not make a PNG. Download .txt instead.");
+        return;
+      }
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      const base = (sourceName || "sample").replace(/\.[^.]+$/, "").replace(/[^\w-]+/g, "-") || "image";
+      a.href = url;
+      a.download = base + "-ascii.png";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+      flash(el.png);
+      trackDownload("png");
+      setStatus("Saved " + a.download + " (" + canvas.width + " × " + canvas.height + " px).");
+    }, "image/png");
+  }
+
   /* Largest width at or below the current one whose code block fits in one
      Discord message. Output length grows with width, so a binary search. */
   function fitDiscord() {
@@ -305,6 +387,8 @@
     el.copyReddit = $("#i2aCopyReddit");
     el.wrap = el.output ? el.output.parentElement : null;
     el.download = $("#i2aDownload");
+    el.png = $("#i2aPng");
+    el.pngScale = $("#i2aPngScale");
     if (!el.output || !el.width || !el.charset) return;
 
     el.file.addEventListener("change", function () {
@@ -332,6 +416,7 @@
       copy(redditBlock(lastArt), el.copyReddit, "ASCII art for Reddit", "image_to_ascii_reddit");
     });
     el.download.addEventListener("click", download);
+    if (el.png) el.png.addEventListener("click", savePng);
 
     bindDrop();
     bindPaste();
