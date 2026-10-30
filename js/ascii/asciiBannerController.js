@@ -95,7 +95,7 @@
     if (!lastArt) return;
     var ns = window.UltraTextGen;
     if (ns && typeof ns.copyText === "function") {
-      ns.copyText(lastArt, btn, "ASCII art");
+      ns.copyText(lastArt, btn, "ASCII art", "ascii_banner");
     } else if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(lastArt);
     }

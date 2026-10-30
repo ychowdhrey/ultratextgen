@@ -5,8 +5,9 @@
    size the engine asks for, and renders the text into a monospace <pre>.
 
    The picture is decoded and read in this tab only. Nothing is uploaded, and
-   the copy event sends no part of the result (method "image_to_ascii" is not
-   in header.js's CATALOGUE_COPY_METHODS, so copy_item stays undefined).
+   the copy events send no part of the result (methods image_to_ascii_plain,
+   _discord and _reddit are not in header.js's CATALOGUE_COPY_METHODS, so
+   copy_item stays undefined).
 
    Requires (loaded before this): imageToAscii.js, and symbol-explorer.js for
    the shared copy/toast helper (falls back to the Clipboard API alone).
@@ -185,15 +186,28 @@
     }, 1500);
   }
 
-  function copy(text, btn, label) {
+  /* One method per button, so a Discord copy and a Reddit copy can be told
+     apart from a plain one. None is a catalogue method in header.js, so
+     copy_item stays undefined and the picture's text never reaches the
+     dataLayer. */
+  function copy(text, btn, label, method) {
     if (!text) return;
     const ns = window.UltraTextGen;
     if (ns && typeof ns.copyText === "function") {
-      ns.copyText(text, btn, label, "image_to_ascii");
+      ns.copyText(text, btn, label, method);
     } else if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text);
     }
     flash(btn);
+  }
+
+  /* The save is recorded by surface and format only: no text, no file name
+     (the name can be the visitor's own picture). */
+  function trackDownload(format) {
+    const ns = window.UltraTextGen;
+    if (ns && typeof ns.trackOutputDownload === "function") {
+      ns.trackOutputDownload("image_to_ascii", format);
+    }
   }
 
   function download() {
@@ -209,6 +223,7 @@
     a.remove();
     window.setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
     flash(el.download);
+    trackDownload("txt");
   }
 
   /* Largest width at or below the current one whose code block fits in one
@@ -324,12 +339,12 @@
       queueRender();
     });
     el.fit.addEventListener("click", fitDiscord);
-    el.copy.addEventListener("click", function () { copy(lastArt, el.copy, "ASCII art"); });
+    el.copy.addEventListener("click", function () { copy(lastArt, el.copy, "ASCII art", "image_to_ascii_plain"); });
     el.copyBlock.addEventListener("click", function () {
-      copy(FENCE_OPEN + lastArt + FENCE_CLOSE, el.copyBlock, "ASCII art code block");
+      copy(FENCE_OPEN + lastArt + FENCE_CLOSE, el.copyBlock, "ASCII art code block", "image_to_ascii_discord");
     });
     el.copyReddit.addEventListener("click", function () {
-      copy(redditBlock(lastArt), el.copyReddit, "ASCII art for Reddit");
+      copy(redditBlock(lastArt), el.copyReddit, "ASCII art for Reddit", "image_to_ascii_reddit");
     });
     el.download.addEventListener("click", download);
 

@@ -264,6 +264,54 @@ t('the kaomoji generator, link and decoder and the tag studio copies keep typed 
   eq(link.copy_item, undefined, 'the link copy must not push the page URL as copy_item');
 });
 
+// The ASCII tools copy text the visitor typed or derived from their own
+// picture. Each surface (and each destination variant) names its own method,
+// none of them is catalogue content, and the download event carries a fixed
+// surface and format only.
+t('the ASCII banner, converter and image-to-ASCII copies keep typed text out of the payload', () => {
+  const typed = 'my private banner 123';
+  const methods = ['ascii_banner', 'ascii_banner_discord', 'ascii_banner_reddit', 'ascii_converter',
+    'image_to_ascii_plain', 'image_to_ascii_discord', 'image_to_ascii_reddit'];
+  for (const m of methods) {
+    const p = CI.copyPayload(m, typed);
+    eq(p.copy_method, m, m + ' is reported as itself, not symbol_tile');
+    eq('copy_item' in p, true, m + ' keeps the key so GTM clears the last value');
+    eq(p.copy_item, undefined, m + ' must not carry the typed text');
+    eq(p.copy_item_group, 'Basic Latin', m + ' still sends the group');
+    if (JSON.stringify(p).includes('private')) throw new Error(m + ' leaked the typed text into the payload');
+  }
+});
+t('every ASCII-tool copy call site passes an explicit non-catalogue method', () => {
+  const calls = {
+    'js/ascii/asciiBannerController.js': ['ascii_banner'],
+    'js/ascii/asciiConverterController.js': ['ascii_converter'],
+    'js/ascii/asciiConverterControllerEs.js': ['ascii_converter'],
+    'js/ascii/imageToAsciiController.js': ['image_to_ascii_plain', 'image_to_ascii_discord', 'image_to_ascii_reddit']
+  };
+  for (const [file, wanted] of Object.entries(calls)) {
+    const src = fs.readFileSync(path.join(__dirname, file), 'utf8');
+    for (const m of wanted) {
+      if (!src.includes('"' + m + '"')) throw new Error(file + ' does not pass method ' + m);
+      eq(CI.copyPayload(m, 'x').copy_item, undefined, m + ' must not be a catalogue method');
+    }
+    // A copyText call without a 4th argument inherits symbol_tile.
+    const bare = src.match(/copyText\(([^()]|\([^()]*\))*\)/g) || [];
+    for (const c of bare) {
+      if (/\bfunction\b/.test(c)) continue;
+      const args = c.slice(9, -1).split(',').length;
+      if (args < 4) throw new Error(file + ' calls ' + c + ' without a method (defaults to symbol_tile)');
+    }
+  }
+});
+t('output_download carries a fixed surface and format, never text', () => {
+  const p = CI.downloadPayload('image_to_ascii', 'txt');
+  eq(p.event, 'output_download', 'event');
+  eq(p.download_surface, 'image_to_ascii', 'surface');
+  eq(p.download_format, 'txt', 'format');
+  eq(Object.keys(p).sort().join(','), 'download_format,download_surface,event', 'every key present, nothing else');
+  eq(CI.downloadPayload().download_surface, undefined, 'a missing surface clears the key');
+});
+
 // ── copy_look: which look of a two-look symbol left the page ────────────
 t('copy_look is always a key, cleared unless the caller sets it', () => {
   const p = CI.copyPayload('symbol_tile', '★');

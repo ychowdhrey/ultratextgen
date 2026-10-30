@@ -370,6 +370,20 @@ the group only. `symbol_tile` counts on the kaomoji generator and decoder pages
 before this date include their generator copies, so read any series across
 2026-10-09 as a definition change.
 
+**ASCII tools name their own method (2026-10-30).** The banner generator's Copy used
+the `symbol_tile` default, so a `copy_text` row from `/ascii-art-generator/` and from
+the ASCII converter carried the first 60 characters of what the visitor typed as
+`copy_item`. They now pass `ascii_banner` and `ascii_converter`; the image converter's
+three buttons pass `image_to_ascii_plain`, `image_to_ascii_discord` and
+`image_to_ascii_reddit` (it sent one `image_to_ascii` for all three before), and the
+banner's Discord and Reddit copies use `ascii_banner_discord` and
+`ascii_banner_reddit`. None is catalogue content. `header.test.js` asserts the
+payload and fails when a call site in `js/ascii/` calls `copyText` without a method.
+Saving a file from these tools fires one `output_download` row (`trackOutputDownload`
+in `header.js`) with `download_surface` and `download_format` only. Counts of
+`symbol_tile` on these pages before this date include their copies; read any series
+across 2026-10-30 as a definition change.
+
 **Four new events.** Each has one writer, every key is pushed on every row
 (`undefined` clears a key GTM would otherwise carry over), and no parameter is typed
 text except the search term, which follows the existing `site_search` policy
