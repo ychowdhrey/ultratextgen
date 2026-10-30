@@ -283,7 +283,7 @@ t('the ASCII banner, converter and image-to-ASCII copies keep typed text out of 
 });
 t('every ASCII-tool copy call site passes an explicit non-catalogue method', () => {
   const calls = {
-    'js/ascii/asciiBannerController.js': ['ascii_banner'],
+    'js/ascii/asciiBannerController.js': ['ascii_banner', 'ascii_banner_discord', 'ascii_banner_reddit'],
     'js/ascii/asciiConverterController.js': ['ascii_converter'],
     'js/ascii/asciiConverterControllerEs.js': ['ascii_converter'],
     'js/ascii/imageToAsciiController.js': ['image_to_ascii_plain', 'image_to_ascii_discord', 'image_to_ascii_reddit']

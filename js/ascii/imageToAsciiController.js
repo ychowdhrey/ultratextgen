@@ -9,7 +9,7 @@
    _discord and _reddit are not in header.js's CATALOGUE_COPY_METHODS, so
    copy_item stays undefined).
 
-   Requires (loaded before this): imageToAscii.js, and symbol-explorer.js for
+   Requires (loaded before this): imageToAscii.js, asciiShare.js, and symbol-explorer.js for
    the shared copy/toast helper (falls back to the Clipboard API alone).
    ========================================================================== */
 
@@ -17,13 +17,12 @@
   "use strict";
 
   const Engine = window.UTG_IMAGE_TO_ASCII;
-  if (!Engine) return;
+  const Share = window.UTG_ASCII_SHARE;
+  if (!Engine || !Share) return;
 
-  /* Discord's per-message limit for an account without Nitro; the same
-     figure js/counter/counterRules.js uses for "discord-message". */
-  const DISCORD_LIMIT = 2000;
-  const FENCE_OPEN = "```\n";
-  const FENCE_CLOSE = "\n```";
+  const DISCORD_LIMIT = Share.DISCORD_LIMIT;
+  const fencedLength = Share.fencedLength;
+  const redditBlock = Share.redditBlock;
   const MIN_WIDTH = 20;
   const SAMPLE_W = 480;
   const SAMPLE_H = 330;
@@ -71,16 +70,6 @@
     return Engine.convert(data, size.pw, size.ph, s);
   }
 
-  /* Four leading spaces make a code block on both new and old Reddit;
-     a fenced block only renders on the new site. */
-  function redditBlock(text) {
-    return text.split("\n").map(function (line) { return "    " + line; }).join("\n");
-  }
-
-  function fencedLength(text) {
-    return FENCE_OPEN.length + text.length + FENCE_CLOSE.length;
-  }
-
   function render() {
     renderQueued = false;
     lastArt = renderWith(Number(el.width.value) || 80);
@@ -91,16 +80,12 @@
 
     const lines = lastArt ? lastArt.split("\n").length : 0;
     const chars = lastArt.length;
-    const fenced = fencedLength(lastArt);
     el.stats.textContent = chars.toLocaleString("en-US") + " characters, " +
       lines + " lines";
 
-    const fits = fenced <= DISCORD_LIMIT;
-    el.discord.textContent = fits
-      ? "Fits in one Discord message as a code block (" +
-        fenced.toLocaleString("en-US") + " of 2,000 characters)."
-      : "Too long for one Discord message: " + fenced.toLocaleString("en-US") +
-        " of 2,000 characters as a code block.";
+    const fit = Share.discordFit(lastArt);
+    const fits = fit.fits;
+    el.discord.textContent = fit.message;
     el.discord.classList.toggle("is-over", !fits);
     el.fit.hidden = fits;
   }
@@ -341,7 +326,7 @@
     el.fit.addEventListener("click", fitDiscord);
     el.copy.addEventListener("click", function () { copy(lastArt, el.copy, "ASCII art", "image_to_ascii_plain"); });
     el.copyBlock.addEventListener("click", function () {
-      copy(FENCE_OPEN + lastArt + FENCE_CLOSE, el.copyBlock, "ASCII art code block", "image_to_ascii_discord");
+      copy(Share.discordBlock(lastArt), el.copyBlock, "ASCII art code block", "image_to_ascii_discord");
     });
     el.copyReddit.addEventListener("click", function () {
       copy(redditBlock(lastArt), el.copyReddit, "ASCII art for Reddit", "image_to_ascii_reddit");

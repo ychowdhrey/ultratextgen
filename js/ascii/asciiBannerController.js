@@ -6,7 +6,7 @@
    symbol-explorer.js (UltraTextGen.copyText) rather than reinventing clipboard
    handling — same as asciiConverterController.js.
 
-   Requires (loaded before this): asciiBannerFonts.js, and symbol-explorer.js
+   Requires (loaded before this): asciiBannerFonts.js, asciiShare.js, and symbol-explorer.js
    for the shared copy/toast helper (falls back to the Clipboard API alone if
    it isn't present).
    ========================================================================== */
@@ -92,7 +92,14 @@
 
   function setCopyState(canCopy, reason) {
     blankReason = canCopy ? "" : reason;
-    if (el.copyBtn) el.copyBtn.setAttribute("aria-disabled", canCopy ? "false" : "true");
+    [el.copyBtn, el.copyDiscord, el.copyReddit].forEach(function (b) {
+      if (b) b.setAttribute("aria-disabled", canCopy ? "false" : "true");
+    });
+    if (el.discord) {
+      const share = window.UTG_ASCII_SHARE;
+      el.discord.textContent = canCopy && share ? share.discordFit(lastArt).message : "";
+      el.discord.hidden = !el.discord.textContent;
+    }
   }
 
   function renderArt() {
@@ -195,16 +202,19 @@
     el.meta.classList.remove("is-wide");
   }
 
-  function copyArt(btn) {
+  /* `build` turns the art into the pasted text, called at click time so a
+     variant is never built from a stale copy. */
+  function copyArt(btn, build, label, method) {
     if (!lastArt) {
       refuseCopy();
       return;
     }
-    let ns = window.UltraTextGen;
+    const text = build(lastArt);
+    const ns = window.UltraTextGen;
     if (ns && typeof ns.copyText === "function") {
-      ns.copyText(lastArt, btn, "ASCII art", "ascii_banner");
+      ns.copyText(text, btn, label, method);
     } else if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(lastArt);
+      navigator.clipboard.writeText(text);
     }
     flash(btn);
   }
@@ -228,13 +238,31 @@
     el.empty = $("#asciiBannerEmpty");
     el.notice = $("#asciiBannerNotice");
     el.copyBtn = $("#asciiBannerCopy");
+    el.copyDiscord = $("#asciiBannerCopyDiscord");
+    el.copyReddit = $("#asciiBannerCopyReddit");
+    el.discord = $("#asciiBannerDiscord");
     el.smaller = $("#asciiBannerSmaller");
     el.larger = $("#asciiBannerLarger");
 
     buildPicker();
 
     if (el.input) el.input.addEventListener("input", renderArt);
-    if (el.copyBtn) el.copyBtn.addEventListener("click", function () { copyArt(el.copyBtn); });
+    const share = window.UTG_ASCII_SHARE;
+    if (el.copyBtn) {
+      el.copyBtn.addEventListener("click", function () {
+        copyArt(el.copyBtn, function (art) { return art; }, "ASCII art", "ascii_banner");
+      });
+    }
+    if (el.copyDiscord && share) {
+      el.copyDiscord.addEventListener("click", function () {
+        copyArt(el.copyDiscord, share.discordBlock, "ASCII art code block", "ascii_banner_discord");
+      });
+    }
+    if (el.copyReddit && share) {
+      el.copyReddit.addEventListener("click", function () {
+        copyArt(el.copyReddit, share.redditBlock, "ASCII art for Reddit", "ascii_banner_reddit");
+      });
+    }
     if (el.smaller) el.smaller.addEventListener("click", function () { step(1); });
     if (el.larger) el.larger.addEventListener("click", function () { step(-1); });
     window.addEventListener("resize", function () { autoFit(); updateMeta(); });
