@@ -143,7 +143,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <h1 class="hero-headline">ASCII Converter</h1>
-  <p class="hero-sub">Convert text to decimal, hex, binary, and octal ASCII codes as you type, or paste codes to decode them back into text.</p>
+  <p class="hero-sub ascii-hero-sub">Convert text to decimal, hex, binary, and octal ASCII codes as you type, or paste codes to decode them back into text.</p>
 </div></div></section>
 <figure class="page-hero-figure" data-uthero aria-hidden="true">
   <img src="/assets/hero/ascii-converter.svg" width="1200" height="340"
@@ -172,34 +172,34 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
       <div class="ascii-output-row">
         <div class="ascii-output-head">
-          <label for="asciiDecimalOut">Decimal</label>
+          <span class="ascii-output-label" id="asciiDecimalOutLabel">Decimal</span>
           <button class="copy-btn ascii-copy-btn" type="button" data-copy-target="asciiDecimalOut" data-label="decimal codes">Copy</button>
         </div>
-        <div class="ascii-output" id="asciiDecimalOut" aria-live="polite"></div>
+        <div class="ascii-output" id="asciiDecimalOut" role="group" aria-labelledby="asciiDecimalOutLabel" aria-live="polite"></div>
       </div>
 
       <div class="ascii-output-row">
         <div class="ascii-output-head">
-          <label for="asciiHexOut">Hexadecimal</label>
+          <span class="ascii-output-label" id="asciiHexOutLabel">Hexadecimal</span>
           <button class="copy-btn ascii-copy-btn" type="button" data-copy-target="asciiHexOut" data-label="hex codes">Copy</button>
         </div>
-        <div class="ascii-output" id="asciiHexOut" aria-live="polite"></div>
+        <div class="ascii-output" id="asciiHexOut" role="group" aria-labelledby="asciiHexOutLabel" aria-live="polite"></div>
       </div>
 
       <div class="ascii-output-row">
         <div class="ascii-output-head">
-          <label for="asciiBinaryOut">Binary</label>
+          <span class="ascii-output-label" id="asciiBinaryOutLabel">Binary</span>
           <button class="copy-btn ascii-copy-btn" type="button" data-copy-target="asciiBinaryOut" data-label="binary codes">Copy</button>
         </div>
-        <div class="ascii-output" id="asciiBinaryOut" aria-live="polite"></div>
+        <div class="ascii-output" id="asciiBinaryOut" role="group" aria-labelledby="asciiBinaryOutLabel" aria-live="polite"></div>
       </div>
 
       <div class="ascii-output-row">
         <div class="ascii-output-head">
-          <label for="asciiOctalOut">Octal</label>
+          <span class="ascii-output-label" id="asciiOctalOutLabel">Octal</span>
           <button class="copy-btn ascii-copy-btn" type="button" data-copy-target="asciiOctalOut" data-label="octal codes">Copy</button>
         </div>
-        <div class="ascii-output" id="asciiOctalOut" aria-live="polite"></div>
+        <div class="ascii-output" id="asciiOctalOut" role="group" aria-labelledby="asciiOctalOutLabel" aria-live="polite"></div>
       </div>
     </section>
 
@@ -225,10 +225,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
       <div class="ascii-output-row">
         <div class="ascii-output-head">
-          <label for="asciiDecodedOut">Decoded text</label>
+          <span class="ascii-output-label" id="asciiDecodedOutLabel">Decoded text</span>
           <button class="copy-btn ascii-copy-btn" type="button" data-copy-target="asciiDecodedOut" data-label="decoded text">Copy</button>
         </div>
-        <div class="ascii-output ascii-output-text" id="asciiDecodedOut" aria-live="polite"></div>
+        <div class="ascii-output ascii-output-text" id="asciiDecodedOut" role="group" aria-labelledby="asciiDecodedOutLabel" aria-live="polite"></div>
       </div>
     </section>
   </div>
