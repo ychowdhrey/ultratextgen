@@ -9774,21 +9774,21 @@ body.is-printing #pt-print-root .pt-sp-answer-cols { max-width: 6.4in; }
   margin-bottom: 8px;
 }
 .ascii-font-picker {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 .ascii-font-tab {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  text-align: left;
-  padding: 12px 14px;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 16px;
   border: 1px solid var(--border-light);
   border-radius: 10px;
   background: var(--bg-white);
   color: var(--text-primary);
   font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 700;
   cursor: pointer;
   transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
@@ -9800,31 +9800,61 @@ body.is-printing #pt-print-root .pt-sp-answer-cols { max-width: 6.4in; }
   box-shadow: 0 0 0 1px var(--accent-purple);
   background: var(--bg-base);
 }
-.ascii-font-tab-name {
-  font-size: 0.9375rem;
-  font-weight: 700;
+/* On a phone the six font choices collapse into one select so the result
+   sits directly under the input instead of below six stacked buttons. */
+.ascii-font-select {
+  display: none;
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0 12px;
 }
-.ascii-font-tab-desc {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  line-height: 1.4;
+@media (max-width: 640px) {
+  .ascii-font-picker { display: none; }
+  .ascii-font-select { display: block; }
 }
 .ascii-art-output-head {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 4px 12px;
   margin-bottom: 6px;
 }
-/* Same override as .ascii-output-head .copy-btn above - keep this button
-   content-sized instead of inheriting the unscoped mobile full-width rule. */
-.ascii-art-output-head .copy-btn {
-  width: auto;
-}
-.ascii-art-output-head label {
+.ascii-art-output-label {
   font-size: 0.8125rem;
   font-weight: 600;
   color: var(--text-secondary);
+}
+.ascii-art-meta {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+.ascii-art-meta.is-wide {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.ascii-art-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+/* Same override as .ascii-output-head .copy-btn above - keep these buttons
+   content-sized instead of inheriting the unscoped mobile full-width rule. */
+.ascii-art-actions .copy-btn {
+  width: auto;
+  min-height: 44px;
+  min-width: 44px;
+}
+.ascii-art-actions .copy-btn[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
 }
 .ascii-art-output-wrap {
   position: relative;
