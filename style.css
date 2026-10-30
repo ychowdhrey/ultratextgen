@@ -9901,6 +9901,43 @@ body.is-printing #pt-print-root .pt-sp-answer-cols { max-width: 6.4in; }
   margin: 8px 2px 0;
 }
 
+/* The job path: three owners of the three ASCII jobs, each named in the
+   words a visitor would use, current page marked. Pill look follows
+   .format-chip; every target is 44px tall. Used on the ASCII generator, the
+   image converter and the text-art hub. */
+.job-path {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 0;
+}
+.job-path-item {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 50px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.job-path-item:hover {
+  border-color: var(--accent-purple);
+}
+.job-path-item[aria-current="page"] {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: white;
+}
+@media (max-width: 640px) {
+  .job-path { flex-direction: column; }
+  .job-path-item { justify-content: center; }
+}
+
 /* ==========================================================================
    IMAGE TO ASCII  (/image-to-ascii/)
    Picture -> ASCII text via Canvas (js/ascii/imageToAscii*.js). The preview
