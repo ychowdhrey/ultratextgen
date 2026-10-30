@@ -159,9 +159,10 @@ def validate_spec(spec):
         raise SpecError(f"missing required field(s): {', '.join(missing)}")
 
     pattern = spec["copy_pattern"]
-    if pattern not in ("single", "collection", "art"):
+    if pattern not in ("single", "collection", "art", "mixed"):
         raise SpecError(
-            f"copy_pattern must be 'single', 'collection' or 'art', got {pattern!r}"
+            "copy_pattern must be 'single', 'collection', 'art' or 'mixed', "
+            f"got {pattern!r}"
         )
 
     sections = spec["sections"]
@@ -197,13 +198,22 @@ def validate_spec(spec):
             )
 
     for i, sec in enumerate(sections):
-        items_key = "art" if pattern == "art" else "symbols"
+        # "mixed": each section says which it is, by carrying `art` (finished
+        # multi-line pieces) or `symbols` (a tile grid), and they render in
+        # list order, so a page can lead with its finished pieces.
+        if pattern == "mixed":
+            if "art" in sec and "symbols" in sec:
+                raise SpecError(f"sections[{i}] has both 'art' and 'symbols'")
+            section_is_art = "art" in sec
+        else:
+            section_is_art = pattern == "art"
+        items_key = "art" if section_is_art else "symbols"
         for key in ("id", "h2", items_key):
             if key not in sec:
                 raise SpecError(f"sections[{i}] missing '{key}'")
         if not isinstance(sec[items_key], list) or not sec[items_key]:
             raise SpecError(f"sections[{i}].{items_key} must be a non-empty list")
-        if pattern == "art":
+        if section_is_art:
             for j, piece in enumerate(sec["art"]):
                 for key in ("label", "art"):
                     if key not in piece or piece[key] in (None, ""):
@@ -654,12 +664,17 @@ def render_collection_section(spec):
     )
 
 
+def job_path_position(job_path):
+    return (job_path or {}).get("position", "after_intro")
+
+
 def render_job_path(job_path, canonical):
     """The job path: one link per job, each to the page that owns it, the
     current page marked. Static HTML, so crawlers that run no script see it.
     Optional spec key `job_path`: {"label": "<aria-label>", "items":
     [{"href": "/x/", "label": "..."}]}; a spec without it renders exactly as
-    before."""
+    before. `position: "after_first_section"` places it under the first
+    section instead of under the intro (see `job_path_position`)."""
     if not job_path:
         return ""
     here = urlparse(canonical).path
@@ -934,7 +949,14 @@ def render_page(spec):
         ld_faq_html = f'\n\n<script type="application/ld+json">\n{ld_faq}\n</script>'
 
     # Section bodies
-    if spec["copy_pattern"] == "art":
+    if spec["copy_pattern"] == "mixed":
+        art_aria = spec.get("copy_aria_template") or ui.get("copyArt")
+        symbol_aria = spec.get("copy_aria_template") or ui.get("copyAria")
+        section_blocks = [
+            render_art_section(s, copy_label, art_aria) if "art" in s
+            else render_symbol_section(s, copy_label, symbol_aria)
+            for s in spec["sections"]]
+    elif spec["copy_pattern"] == "art":
         art_aria = spec.get("copy_aria_template") or ui.get("copyArt")
         section_blocks = [render_art_section(s, copy_label, art_aria)
                           for s in spec["sections"]]
@@ -944,6 +966,10 @@ def render_page(spec):
                           for s in spec["sections"]]
     if spec["copy_pattern"] == "collection":
         section_blocks.append(render_collection_section(spec))
+    job_path_html = render_job_path(spec.get("job_path"), canonical)
+    if job_path_html and job_path_position(spec.get("job_path")) == "after_first_section":
+        section_blocks.insert(1, job_path_html.rstrip("\n"))
+        job_path_html = ""
     body_sections = "\n\n<div class=\"section-divider\"></div>\n\n".join(section_blocks)
 
     related_html = render_related(spec["related"])
@@ -1018,7 +1044,7 @@ def render_page(spec):
     <p>{esc_prose(spec["intro"])}</p>
   </div>
 </section>
-{render_job_path(spec.get("job_path"), canonical)}
+{job_path_html}
 <div class="section-divider"></div>
 
 {body_sections}{editorial_html}{sources_html}{faq_html}

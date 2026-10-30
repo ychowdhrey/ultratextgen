@@ -5,8 +5,8 @@
   "canonical": "https://ultratextgen.com/library/text-art/",
   "breadcrumb": "Text Art",
   "hero_h1": "Text Art",
-  "hero_tagline": "Finished ASCII and Unicode art pieces plus every box-drawing, block, and braille character you need to make your own. Click to copy instantly.",
-  "intro": "Text art (also called ASCII art) is artwork drawn entirely with characters: box-drawing lines, shaded blocks, braille dots, and plain keyboard symbols. It works anywhere text does: Discord chats, game lobbies, X posts, YouTube comments, and plain-text bios. This page collects small, ready-to-paste text art pieces you can copy in one click, plus the individual building-block characters if you want to draw something original.",
+  "hero_tagline": "Copy a finished ASCII or Unicode art piece in one click.",
+  "intro": "Below the pieces are the box-drawing, block and braille characters to draw your own.",
   "job_path": {
     "label": "ASCII art, by what you want to do",
     "items": [
@@ -22,12 +22,45 @@
         "href": "/library/text-art/",
         "label": "Ready-made art to copy"
       }
-    ]
+    ],
+    "position": "after_first_section"
   },
   "date_published": "2026-06-12",
   "date_modified": "2026-06-12",
-  "copy_pattern": "collection",
+  "copy_pattern": "mixed",
   "sections": [
+    {
+      "id": "art-pieces",
+      "label": "Art Pieces",
+      "h2": "Ready-Made Text Art Pieces",
+      "intro": "Copy a complete multi-line piece in one click. It keeps its line breaks, so the lines stay aligned.",
+      "art": [
+        {
+          "label": "ASCII Cat",
+          "art": "  /\\_/\\\n ( o.o )\n (  v  )\n  |   |\n (__|__)"
+        },
+        {
+          "label": "Braille Heart",
+          "art": "⠀⣠⣶⣶⣄⠀⣠⣶⣶⣄\n⣸⣿⣿⣿⣿⣶⣿⣿⣿⣿⣇\n⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿\n⠈⢿⣿⣿⣿⣿⣿⣿⣿⡿⠁\n⠀⠀⠙⢿⣿⣿⣿⡿⠋⠀\n⠀⠀⠀⠀⠙⠿⠋⠀⠀"
+        },
+        {
+          "label": "Diamond Stack",
+          "art": "  ◇\n ◇◆◇\n◇◆◆◆◇\n ◇◆◇\n  ◇"
+        },
+        {
+          "label": "Star Frame",
+          "art": "✦─────────────✦\n│             │\n│  your text  │\n│             │\n✦─────────────✦"
+        },
+        {
+          "label": "Kaomoji Classics",
+          "art": "¯\\_(ツ)_/¯\n(╯°□°）╯︵ ┻━┻\n( ͡° ͜ʖ ͡°)\n(ノ◕ヮ◕)ノ*:・゚✧\n(◕‿◕)\nʕ•ᴥ•ʔ"
+        },
+        {
+          "label": "Mountain Range",
+          "art": "     ▲\n    ▲▲▲\n  ▲ ▲▲▲▲▲\n ▲▲▲▲▲▲▲▲▲\n▲▲▲▲▲▲▲▲▲▲▲"
+        }
+      ]
+    },
     {
       "id": "box-drawing-basics",
       "label": "Lines",
@@ -281,81 +314,13 @@
       ]
     }
   ],
-  "collection_section": {
-    "id": "art-pieces",
-    "label": "Art Pieces",
-    "h2": "Ready-Made Text Art Pieces",
-    "intro": "Copy a complete multi-line text art piece in one click. Keep the vertical format so the lines stay aligned."
-  },
-  "collection_container_id": "textArtContainer",
-  "collections": [
+  "editorial_sections": [
     {
-      "name": "ASCII Cat",
-      "flags": [
-        "⠀⠀/\\_/\\",
-        "⠀( o.o )",
-        "⠀(⠀⠀v⠀⠀)",
-        "⠀⠀|⠀⠀⠀|",
-        "⠀(__|__)"
-      ],
-      "defaultFormat": "vertical"
-    },
-    {
-      "name": "Braille Heart",
-      "flags": [
-        "⠀⣠⣶⣶⣄⠀⣠⣶⣶⣄",
-        "⣸⣿⣿⣿⣿⣶⣿⣿⣿⣿⣇",
-        "⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿",
-        "⠈⢿⣿⣿⣿⣿⣿⣿⣿⡿⠁",
-        "⠀⠀⠙⢿⣿⣿⣿⡿⠋⠀",
-        "⠀⠀⠀⠀⠙⠿⠋⠀⠀"
-      ],
-      "defaultFormat": "vertical"
-    },
-    {
-      "name": "Diamond Stack",
-      "flags": [
-        "⠀⠀◇",
-        "⠀◇◆◇",
-        "◇◆◆◆◇",
-        "⠀◇◆◇",
-        "⠀⠀◇"
-      ],
-      "defaultFormat": "vertical"
-    },
-    {
-      "name": "Star Frame",
-      "flags": [
-        "✦─────────────✦",
-        "│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│",
-        "│⠀⠀your text⠀⠀│",
-        "│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│",
-        "✦─────────────✦"
-      ],
-      "defaultFormat": "vertical"
-    },
-    {
-      "name": "Kaomoji Classics",
-      "flags": [
-        "¯\\_(ツ)_/¯",
-        "(╯°□°）╯︵ ┻━┻",
-        "( ͡° ͜ʖ ͡°)",
-        "(ノ◕ヮ◕)ノ*:・゚✧",
-        "(◕‿◕)",
-        "ʕ•ᴥ•ʔ"
-      ],
-      "defaultFormat": "vertical"
-    },
-    {
-      "name": "Mountain Range",
-      "flags": [
-        "⠀⠀⠀⠀⠀▲",
-        "⠀⠀⠀⠀▲▲▲",
-        "⠀⠀▲⠀▲▲▲▲▲",
-        "⠀▲▲▲▲▲▲▲▲▲",
-        "▲▲▲▲▲▲▲▲▲▲▲"
-      ],
-      "defaultFormat": "vertical"
+      "id": "what-is-text-art",
+      "h2": "What is text art?",
+      "paragraphs": [
+        "Text art (also called ASCII art) is artwork drawn entirely with characters: box-drawing lines, shaded blocks, braille dots, and plain keyboard symbols. It works anywhere text does: Discord chats, game lobbies, X posts, YouTube comments, and plain-text bios. This page collects small, ready-to-paste text art pieces you can copy in one click, plus the individual building-block characters if you want to draw something original."
+      ]
     }
   ],
   "related": [
