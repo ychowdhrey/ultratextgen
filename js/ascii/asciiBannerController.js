@@ -21,6 +21,12 @@
      banner is drawn on this page; the copied text never changes. */
   const SIZES = [14, 12, 10, 8];
 
+  /* Up to four lines of up to 40 characters each: forty is the per-line cap
+     the single-line box always had. A banner this long can pass Discord's
+     message limit; the Discord length line under the buttons says so. */
+  const MAX_LINES = 4;
+  const MAX_LINE_CHARS = 40;
+
   let el = {};
   let currentFont = Banner.fonts.length ? Banner.fonts[0].key : "standard";
   let sizeIndex = 0;
@@ -102,10 +108,56 @@
     }
   }
 
+  /* Keep the box inside its limits however text arrives (typing, paste,
+     drop): at most MAX_LINES lines of MAX_LINE_CHARS code points. */
+  function clampInput() {
+    if (!el.input) return;
+    const before = el.input.value;
+    const lines = before.replace(/\r\n?/g, "\n").split("\n").slice(0, MAX_LINES).map(function (line) {
+      return Array.from(line).slice(0, MAX_LINE_CHARS).join("");
+    });
+    const after = lines.join("\n");
+    if (after !== before) {
+      const caret = Math.min(el.input.selectionStart, after.length);
+      el.input.value = after;
+      el.input.setSelectionRange(caret, caret);
+    }
+  }
+
+  /* One row for one line, growing a row per line up to the limit, so a
+     single word does not spend a second row of the first screen. */
+  function growInput() {
+    if (!el.input) return;
+    el.input.rows = Math.min(MAX_LINES, Math.max(1, el.input.value.split("\n").length));
+  }
+
+  function updateCount() {
+    if (!el.count || !el.input) return;
+    const value = el.input.value;
+    const caret = el.input.selectionStart == null ? value.length : el.input.selectionStart;
+    const before = value.slice(0, caret).split("\n");
+    const lineIndex = before.length - 1;
+    const line = value.split("\n")[lineIndex] || "";
+    el.count.textContent = Array.from(line).length + " of " + MAX_LINE_CHARS +
+      " characters, line " + (lineIndex + 1) + " of " + MAX_LINES;
+  }
+
+  /* Each non-empty line is drawn on its own, with one blank row between. */
+  function renderLines(raw) {
+    const blocks = [];
+    raw.split("\n").forEach(function (line) {
+      if (line.trim()) blocks.push(Banner.render(line, currentFont));
+    });
+    return blocks.join("\n\n");
+  }
+
   function renderArt() {
-    let raw = el.input ? el.input.value : "";
-    let art = raw.trim() ? Banner.render(raw, currentFont) : "";
-    let blank = !!raw.trim() && !art.trim();
+    clampInput();
+    growInput();
+    updateCount();
+    const raw = el.input ? el.input.value : "";
+    const art = raw.trim() ? renderLines(raw) : "";
+    const blank = !!raw.trim() && !art.trim();
     lastArt = blank ? "" : art;
 
     if (el.output) {
@@ -229,6 +281,7 @@
 
   ready(function () {
     el.input = $("#asciiBannerInput");
+    el.count = $("#asciiBannerCount");
     el.picker = $("#asciiFontPicker");
     el.select = $("#asciiFontSelect");
     el.fontNote = $("#asciiFontNote");
@@ -246,7 +299,18 @@
 
     buildPicker();
 
-    if (el.input) el.input.addEventListener("input", renderArt);
+    if (el.input) {
+      el.input.addEventListener("input", renderArt);
+      /* The caret moves without the text changing, and the count follows it. */
+      ["keyup", "click", "focus"].forEach(function (type) {
+        el.input.addEventListener(type, updateCount);
+      });
+      /* A fifth line is refused at the key, so Enter never silently eats the
+         text the visitor just typed. */
+      el.input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" && el.input.value.split("\n").length >= MAX_LINES) e.preventDefault();
+      });
+    }
     const share = window.UTG_ASCII_SHARE;
     if (el.copyBtn) {
       el.copyBtn.addEventListener("click", function () {

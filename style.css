@@ -9765,6 +9765,23 @@ body.is-printing #pt-print-root .pt-sp-answer-cols { max-width: 6.4in; }
   font-size: 1rem;
   padding: 10px 12px;
 }
+.ascii-art-field textarea {
+  width: 100%;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.4;
+  padding: 10px 12px;
+  resize: none;
+}
+.ascii-art-count {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
 .ascii-font-picker-label {
   font-size: 0.75rem;
   font-weight: 600;
@@ -9817,6 +9834,10 @@ body.is-printing #pt-print-root .pt-sp-answer-cols { max-width: 6.4in; }
 @media (max-width: 640px) {
   .ascii-font-picker { display: none; }
   .ascii-font-select { display: block; }
+  /* The select shows the font's name; its one-line description is kept for
+     the desktop chips, so the result stays on the first screen. */
+  .ascii-font-select + #asciiFontNote { display: none; }
+  .ascii-art-tool { gap: 12px; }
 }
 .ascii-art-output-head {
   display: flex;
