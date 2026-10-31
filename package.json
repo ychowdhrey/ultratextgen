@@ -85,6 +85,7 @@
     "build:skin-tone-fixture": "python3 scripts/build-skin-tone-fixture.py",
     "test:unicode-reference-sets": "python3 scripts/test-unicode-reference-sets.py && python3 scripts/test-unicode-reference-sets.py --self-test",
     "test:name-reports": "node scripts/name-reports.test.mjs",
+    "test:spaced-native-runs": "node scripts/lib/spaced-native-runs.test.js",
     "test:zalgo-engine": "node usecase/zalgo-text/zalgo-text.test.js",
     "test:romanize": "node js/romanize/korean-romanize.test.js",
     "test:qr": "node js/printables/qr.test.js",
