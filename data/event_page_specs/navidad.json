@@ -284,9 +284,9 @@
   "companion_answer_slug": "que-escribir-en-una-tarjeta-de-navidad",
   "related": [
     {
-      "href": "/library/christmas-symbols/",
+      "href": "/es/library/simbolos-de-navidad/",
       "title": "Símbolos de Navidad",
-      "desc": "Una biblioteca más amplia de símbolos y combinaciones de emoji navideños en Unicode (en inglés)."
+      "desc": "Una biblioteca más amplia de símbolos y combinaciones de emoji navideños."
     },
     {
       "href": "/es/letra-cursiva/",
@@ -420,10 +420,10 @@
     "handoffs": [
       {
         "id": "word_search",
-        "target": "word_search",
+        "target": "word_search_es",
         "icon": "🔎",
         "title": "Sopa de letras de Navidad",
-        "desc": "Una sopa de letras para imprimir con 12 palabras navideñas (la herramienta está en inglés).",
+        "desc": "Una sopa de letras para imprimir con 12 palabras navideñas.",
         "text": "fixed",
         "params": {
           "words": [
@@ -495,7 +495,7 @@
       "never_targets": [
         {
           "query": "emojis navidad",
-          "owner": "/library/christmas-symbols/"
+          "owner": "/es/library/simbolos-de-navidad/"
         },
         {
           "query": "que escribir en una tarjeta de navidad",

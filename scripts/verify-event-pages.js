@@ -140,6 +140,29 @@ async function checkPage(browser, base, page) {
   const inputHandoffs = ((page.spec.experience || {}).handoffs || []).filter((h) => h.text === 'input');
   if (inputHandoffs.length && !after.handoffs.some((h) => /Zo%C3%AB/.test(h))) fails.push('live: no hand-off carries the typed text');
 
+  // Every hand-off opens its target with the data it sends already in a field.
+  facts.prefilled = 0;
+  for (const href of after.handoffs) {
+    const url = new URL(href, base);
+    const expected = [...url.searchParams.entries()]
+      .filter(([k]) => ['q', 'text', 'name', 'words', 'heading'].includes(k))
+      .map(([k, v]) => (k === 'words' ? v.split('|')[0] : v));
+    if (!expected.length) continue;
+    const tp = await ctx.newPage();
+    await tp.route(/googletagmanager|googlesyndication|fundingchoices|doubleclick|fonts\.g/, (r) => r.abort());
+    try {
+      await tp.goto(url.href, { waitUntil: 'load' });
+      await tp.waitForTimeout(500);
+      const values = await tp.evaluate(() => [...document.querySelectorAll('input, textarea')].map((e) => e.value));
+      const missing = expected.filter((v) => !values.some((val) => val.includes(v)));
+      if (missing.length) fails.push(`hand-off: ${url.pathname} opened without "${missing[0]}"`);
+      else facts.prefilled += 1;
+    } catch (e) {
+      fails.push(`hand-off: ${url.pathname} failed to load`);
+    }
+    await tp.close();
+  }
+
   if (await p.$('#eventPartnerInput')) {
     await p.click('#eventPartnerWrap summary');
     await p.fill('#eventPartnerInput', PARTNER);
@@ -211,7 +234,7 @@ async function checkPage(browser, base, page) {
   for (const page of pages) {
     const r = await checkPage(browser, base, page);
     results.push(r);
-    console.log(`${r.pass ? 'PASS' : 'FAIL'}  ${r.url}  first output ${r.facts.firstOutputPx}px, designs ${r.facts.designs}, fonts ${r.facts.fonts}, hand-offs ${r.facts.handoffs}` +
+    console.log(`${r.pass ? 'PASS' : 'FAIL'}  ${r.url}  first output ${r.facts.firstOutputPx}px, designs ${r.facts.designs}, fonts ${r.facts.fonts}, hand-offs ${r.facts.handoffs} (${r.facts.prefilled} prefilled)` +
       (r.facts.coupleLine ? `, couple "${r.facts.coupleLine}"` : '') + (r.fails.length ? '\n      - ' + r.fails.join('\n      - ') : ''));
   }
   await browser.close();

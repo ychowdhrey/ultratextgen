@@ -382,6 +382,26 @@
       "fixed_params": [],
       "max_len": 500,
       "verified": "loads /usecase/zalgo-text/zalgo-text.js, which reads ?text="
+    },
+    "word_search_es": {
+      "path": "/es/imprimibles/sopa-de-letras/",
+      "kind": "activity",
+      "text_param": null,
+      "fixed_params": [
+        "words",
+        "heading",
+        "wslevel"
+      ],
+      "max_items": 40,
+      "verified": "same printables engine as word-search-maker; ?words=&heading= checked by scripts/verify-event-pages.js"
+    },
+    "cursive_name_es": {
+      "path": "/es/imprimibles/nombre-en-cursiva/",
+      "kind": "cursive",
+      "text_param": "name",
+      "fixed_params": [],
+      "max_len": 40,
+      "verified": "same printables engine as cursive-name; ?name= checked by scripts/verify-event-pages.js"
     }
   }
 }

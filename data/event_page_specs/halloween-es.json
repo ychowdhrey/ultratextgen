@@ -231,7 +231,7 @@
   "companion_answer_slug": "que-escribir-en-halloween",
   "related": [
     {
-      "href": "/library/halloween-symbols/",
+      "href": "/es/library/simbolos-halloween/",
       "title": "Símbolos de Halloween",
       "desc": "Una biblioteca más amplia de símbolos y combinaciones de emoji de Halloween en Unicode."
     },
@@ -241,7 +241,7 @@
       "desc": "Pentagramas, lunas y caracteres ocultos para una estética más oscura."
     },
     {
-      "href": "/library/skull-ascii-art/",
+      "href": "/es/library/arte-ascii-calavera/",
       "title": "Arte ASCII de Calaveras",
       "desc": "Más piezas de arte ASCII de calaveras originales para copiar y pegar."
     },
@@ -377,10 +377,10 @@
       },
       {
         "id": "word_search",
-        "target": "word_search",
+        "target": "word_search_es",
         "icon": "🔎",
         "title": "Sopa de letras de Halloween",
-        "desc": "Una sopa de letras para imprimir con 12 palabras (la herramienta está en inglés).",
+        "desc": "Una sopa de letras para imprimir con 12 palabras.",
         "text": "fixed",
         "params": {
           "words": [
@@ -427,7 +427,7 @@
       "never_targets": [
         {
           "query": "simbolos de halloween",
-          "owner": "/library/halloween-symbols/"
+          "owner": "/es/library/simbolos-halloween/"
         }
       ]
     },

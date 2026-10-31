@@ -400,10 +400,10 @@
       },
       {
         "id": "cursive_name",
-        "target": "cursive_name",
+        "target": "cursive_name_es",
         "icon": "✍",
         "title": "Tu nombre en cursiva",
-        "desc": "Una hoja para repasar en cursiva con el nombre que escribiste (en inglés).",
+        "desc": "Una hoja para repasar en cursiva con el nombre que escribiste.",
         "text": "input"
       },
       {
