@@ -243,6 +243,9 @@ EN_ALT = {
     "letter-tracing": {
         "landing": "Letter tracing worksheet sample: {demo} as a solid model above dotted rows to trace on ruled handwriting lines",
     },
+    "number-tracing": {
+        "landing": "Number tracing worksheet sample: {demo} as a solid model above dotted rows to trace on ruled handwriting lines",
+    },
     "name-tracing": {
         "landing": "Name tracing worksheet sample for {demo}: a solid model above outlined rows to trace, then blank ruled lines",
     },

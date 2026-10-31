@@ -1249,8 +1249,10 @@
      init aborted looks exactly like a page that never had those features.
      The merge is shallow on purpose -- each locale's own plural `forms`
      objects are complete units and must not be merged key-by-key with
-     English's. */
-  const T = Object.assign({}, I18N.en, I18N[LANG] || {});
+     English's. CFG.text, merged last, lets one page rename what its sheets
+     are made of (the numbers-only page says "numbers 0 to 9", not
+     "alphabet"); a page that does not set it gets exactly the table above. */
+  const T = Object.assign({}, I18N.en, I18N[LANG] || {}, CFG.text || {});
 
   // Locale-aware pluralizer for the small count labels below (banner flags/
   // pages, handwriting model/trace/blank rows). English deliberately keeps
@@ -5306,7 +5308,10 @@
     // portion is exactly LETTERS, so this filter reproduces the prior output
     // byte-for-byte; digits (alnum charset) still come from the row below.
     CHARS.filter((ch) => !/[0-9]/.test(ch)).forEach((ch) => letterRow.appendChild(make(ch)));
-    el.strip.appendChild(letterRow);
+    // A numbers-only page (CFG.chars is 0-9) has no letters: skip the empty row
+    // rather than leave a blank band above the digits. Every letter page still
+    // appends its row exactly as before.
+    if (letterRow.childNodes.length) el.strip.appendChild(letterRow);
     if (CFG.charset === "alnum") {
       const digitRow = document.createElement("div");
       digitRow.className = "bubble-strip-row bubble-strip-digits";
