@@ -400,5 +400,84 @@ const SPELLING = ["because", "friend", "people", "school", "water", "there",
   eq(big.unplaced.length, 0, "packet: a full 20-word spelling list fits its grid");
 }
 
+
+/* ---------------------------------------------------------------
+   Retry before reporting, repeats removed, paste reported (2026-10-31)
+   --------------------------------------------------------------- */
+function ownCells(p) {
+  const out = [];
+  for (let i = 0; i < p.letters.length; i++) out.push((p.row + p.dr * i) + "," + (p.col + p.dc * i));
+  return out.sort().join(";");
+}
+{
+  // The list that left three words out at medium in a single pass.
+  const animals = ["elephant", "giraffe", "kangaroo", "crocodile", "butterfly", "dolphin", "penguin", "octopus", "squirrel", "hamster"];
+  const many = Array.from({ length: 40 }, (_, i) => animals[i % 10] + String.fromCharCode(97 + Math.floor(i / 10)) + "xyz".slice(0, i % 3));
+  for (const lv of ["easy", "medium", "hard"]) {
+    const r = WS.build({ words: many.join("\n"), level: lv, seed: "s" });
+    eq(r.unplaced.length, 0, "dense 40-word list places every word at " + lv);
+    for (const p of r.placed) {
+      ok(WS.findWord(r.grid, p.letters).some((h) => h.row === p.row && h.col === p.col && h.dir === p.dir),
+        "recorded placement really spells " + p.display + " at " + lv);
+    }
+  }
+}
+{
+  // A word that cannot fit is still reported, and the retry never exceeds the ceiling.
+  const r = WS.build({ words: "pneumonoultramicroscopicsilicovolcanoconiosis\ncat", seed: "x" });
+  eq(r.size, WS.MAX_SIZE, "an over-long word does not push the grid past MAX_SIZE");
+  eq(r.unplaced.length, 1, "the over-long word is reported unplaced");
+  eq(r.unplaced[0].display, "pneumonoultramicroscopicsilicovolcanoconiosis", "and it is named");
+}
+{
+  // maxSize is a hard ceiling (large print), and a word longer than it is reported.
+  const r = WS.build({ words: "because\nfriend\npeople\nschool\nwater\nthere\nwhich\nwould\ncould\nabout\ntheir\nother\nbeautiful", maxSize: 12, seed: "lp" });
+  ok(r.size <= 12, "maxSize 12 keeps the grid at or under 12 (got " + r.size + ")");
+  eq(r.unplaced.length, 0, "a 13-word list still fits a 12x12 large-print grid");
+  const tooLong = WS.build({ words: "extraordinary\ncat", maxSize: 12, seed: "lp" });
+  eq(tooLong.unplaced.map((w) => w.display).join(), "extraordinary", "a 13-letter word is reported under a 12 ceiling");
+}
+{
+  // First pass is the seed as given: a grid that already placed everything is unchanged in its placements.
+  const a = WS.build({ words: SPELLING, seed: "Emma", level: "hard" });
+  const b = WS.build({ words: SPELLING, seed: "Emma", level: "hard" });
+  eq(gridText(a.grid), gridText(b.grid), "same seed, same grid after the retry and repeat passes");
+}
+{
+  // No listed word appears twice because of the filler.
+  const short = ["cat", "dog", "sun", "hat", "pen", "cup", "bus", "map", "egg", "box", "toy", "run"];
+  let fillerRepeats = 0, grids = 0;
+  for (const lv of ["easy", "hard"]) {
+    for (let s = 0; s < 60; s++) {
+      const r = WS.build({ words: short, level: lv, seed: "k" + s });
+      grids++;
+      for (const p of r.placed) {
+        const mine = ownCells(p);
+        for (const occ of WS.occurrences(r.grid, p.letters)) {
+          const key = occ.cells.slice().sort().join(";");
+          if (key === mine) continue;
+          const allAnswer = occ.cells.every((c) => { const rc = c.split(","); return r.solution[+rc[0]][+rc[1]]; });
+          if (!allAnswer) fillerRepeats++;
+        }
+      }
+    }
+  }
+  eq(fillerRepeats, 0, "filler never spells a listed word a second time (" + grids + " grids)");
+}
+{
+  // A repeat built only from other words' letters is reported, not hidden.
+  const r = WS.build({ words: "cat\ncatalog\nlog\nat", seed: "x" });
+  ok(r.ambiguous.some((w) => w.display === "at"), "AT inside CAT is reported as ambiguous");
+  // A palindrome read both ways is one word, not two.
+  const p = WS.build({ words: "level\nradar\ngarden\nflower", level: "hard", seed: "pal" });
+  ok(!p.ambiguous.some((w) => w.display === "level"), "a palindrome is not reported as a repeat of itself");
+}
+{
+  const info = WS.inspectList("water\nWATER\n!!!\na\nfriend", false);
+  eq(info.duplicates.join(), "WATER", "a repeated entry is reported as a duplicate");
+  eq(info.noLetters.join(), "!!!", "an entry with no letters is reported");
+  eq(info.oneLetter.join(), "a", "a one-letter entry is reported");
+}
+
 console.log("\nwordSearch.js — " + pass + " passed, " + fail + " failed");
 process.exit(fail ? 1 : 0);
