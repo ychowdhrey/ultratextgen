@@ -12029,6 +12029,19 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   color: var(--accent-purple);
 }
 
+/* A lunar date is filled in by eventDates.js after load. Hold its line's
+   height while it is empty, so the input and the designs below do not jump
+   when it appears (CLS). */
+.event-next-date[hidden] {
+  display: block;
+  visibility: hidden;
+  min-height: 1.35em;
+}
+
+@media (max-width: 480px) {
+  .event-next-date[hidden] { min-height: 2.7em; }
+}
+
 /* Native-script copy tiles on event pages ("<Event> in Arabic/Hindi/Chinese").
    Wider than a normal .glyph-copy tile because the payload is a phrase, not a
    single glyph, and it carries its romanization underneath. */
