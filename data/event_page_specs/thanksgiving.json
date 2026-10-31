@@ -2,22 +2,20 @@
   "slug": "thanksgiving",
   "event_name": "Thanksgiving",
   "aliases": [],
-
   "title": "Thanksgiving Fonts, Emoji & Symbol Generator | UltraTextGen",
   "meta_description": "Style a Thanksgiving message live, copy turkey, pie, and autumn-leaf emoji, cozy kaomoji, curated ASCII art, and ready-made gratitude phrases and captions.",
-
   "hero_h1": "Thanksgiving Text & Symbol Generator",
-  "hero_tagline": "Type a name or gratitude message and style it in bold, serif, and script fonts, then copy turkey, pie, and autumn-leaf emoji, kaomoji, and ASCII art — or tap a ready-made Thanksgiving phrase to style it instantly.",
-
-  "intro": "Thanksgiving is the harvest-table holiday — turkey, pie, and a season of gratitude captured in a caption or a place-card. This page gathers everything for styling that post or card: curated bold, serif, and script fonts you can preview on your own text, the turkey, pie, and autumn-leaf emoji people actually paste, cozy kaomoji for a family group chat, a few original ASCII art pieces, and a phrase bank of Thanksgiving lines — from a classic \"Happy Thanksgiving\" to \"Give Thanks\" — that style instantly when you tap them.",
-
+  "hero_tagline": "Type a name or gratitude message and style it in bold, serif, and script fonts, then copy turkey, pie, and autumn-leaf emoji, kaomoji, and ASCII art, or tap a ready-made Thanksgiving phrase to style it instantly.",
+  "intro": "Thanksgiving is the harvest-table holiday: turkey, pie, and a season of gratitude captured in a caption or a place-card. This page gathers everything for styling that post or card: curated bold, serif, and script fonts you can preview on your own text, the turkey, pie, and autumn-leaf emoji people actually paste, cozy kaomoji for a family group chat, a few original ASCII art pieces, and a phrase bank of Thanksgiving lines, from a classic \"Happy Thanksgiving\" to \"Give Thanks\", that style instantly when you tap them.",
   "date_window": "on the fourth Thursday of November in the United States (Canada celebrates Thanksgiving on the second Monday of October)",
-
   "sample_phrase": "Happy Thanksgiving",
-
   "canonical": "https://ultratextgen.com/events/thanksgiving/",
-
-  "occurrence": {"type": "nth_weekday", "month": 11, "weekday": "thursday", "n": 4},
+  "occurrence": {
+    "type": "nth_weekday",
+    "month": 11,
+    "weekday": "thursday",
+    "n": 4
+  },
   "fonts": {
     "curated_keys": [
       "Ultra Bold Serif",
@@ -32,25 +30,48 @@
       "Ultra Script"
     ]
   },
-
   "emoji_symbol_collections": [
     {
       "name": "Thanksgiving Emoji",
       "presentation_class": "emoji",
       "copy_pattern": "collection",
-      "flags": ["🦃", "🥧", "🌽", "🍂", "🍁", "🙏", "🍽️", "🌰", "🧡", "🕯️"],
+      "flags": [
+        "🦃",
+        "🥧",
+        "🌽",
+        "🍂",
+        "🍁",
+        "🙏",
+        "🍽️",
+        "🌰",
+        "🧡",
+        "🕯️"
+      ],
       "defaultFormat": "inline"
     }
   ],
-
   "kaomoji": [
-    { "text": "٩(◕‿◕)۶", "label": "Grateful Hooray" },
-    { "text": "(づ｡◕‿‿◕｡)づ", "label": "Warm Family Hug" },
-    { "text": "ヽ(•‿•)ノ", "label": "Grateful Cheer" },
-    { "text": "(っ◔◡◔)っ", "label": "Cozy Hug" },
-    { "text": "＼(^o^)／", "label": "Big Family Gathering" }
+    {
+      "text": "٩(◕‿◕)۶",
+      "label": "Grateful Hooray"
+    },
+    {
+      "text": "(づ｡◕‿‿◕｡)づ",
+      "label": "Warm Family Hug"
+    },
+    {
+      "text": "ヽ(•‿•)ノ",
+      "label": "Grateful Cheer"
+    },
+    {
+      "text": "(っ◔◡◔)っ",
+      "label": "Cozy Hug"
+    },
+    {
+      "text": "＼(^o^)／",
+      "label": "Big Family Gathering"
+    }
   ],
-
   "ascii_art": {
     "items": [
       {
@@ -75,7 +96,6 @@
       }
     ]
   },
-
   "phrase_bank": [
     {
       "text": "Happy Thanksgiving",
@@ -103,7 +123,7 @@
       "translation": "Plain reply."
     },
     {
-      "text": "Thank you — enjoy your day with the family",
+      "text": "Thank you, enjoy your day with the family",
       "group": "Replies",
       "translation": "Warmer reply that returns the wish."
     },
@@ -128,7 +148,7 @@
       "translation": "For parents or grandparents."
     },
     {
-      "text": "Happy Thanksgiving — save me the leftovers",
+      "text": "Happy Thanksgiving, save me the leftovers",
       "group": "For family",
       "translation": "Light family message."
     },
@@ -158,7 +178,7 @@
       "translation": "Safe for clients and colleagues."
     },
     {
-      "text": "Grateful for your work this year — Happy Thanksgiving",
+      "text": "Grateful for your work this year. Happy Thanksgiving",
       "group": "Formal & work",
       "translation": "For a team message."
     },
@@ -198,7 +218,6 @@
       "translation": "Short and current."
     }
   ],
-
   "related": [
     {
       "href": "/library/thanksgiving-symbols/",
@@ -225,5 +244,189 @@
       "title": "ASCII Art Generator",
       "desc": "Type any word or name and turn it into big block-letter ASCII art live."
     }
-  ]
+  ],
+  "experience": {
+    "model": "curated",
+    "category": "festive",
+    "primary_job": "Grab Thanksgiving emoji and a styled line for a caption or the family chat.",
+    "secondary_jobs": [
+      "Print a Thanksgiving word search"
+    ],
+    "hero": "compositions",
+    "sample_text": "Happy Thanksgiving",
+    "inputs": [
+      "text"
+    ],
+    "phrase_display": "chips",
+    "date_scope": "US",
+    "sections": [
+      "compositions",
+      "fonts",
+      "symbols",
+      "kaomoji",
+      "handoffs",
+      "phrases",
+      "ascii",
+      "intro",
+      "related",
+      "nav",
+      "faq"
+    ],
+    "compositions": {
+      "theme": {
+        "key": "thanksgiving",
+        "label": "Thanksgiving",
+        "icon": "🦃",
+        "pairs": [
+          [
+            "🦃",
+            "🦃"
+          ],
+          [
+            "🍂",
+            "🍂"
+          ],
+          [
+            "🥧",
+            "🥧"
+          ],
+          [
+            "🍁",
+            "🍁"
+          ]
+        ],
+        "charms": [
+          "🦃",
+          "🍂",
+          "🍁",
+          "🥧",
+          "🌽"
+        ],
+        "sprinkles": [
+          "🍂",
+          "🍁"
+        ],
+        "lines": [
+          "🍂 ⋆ 🦃 ⋆ 🍂 ⋆ 🦃 ⋆ 🍂",
+          "🍁 ─── 🥧 ─── 🍁"
+        ]
+      },
+      "cards": [
+        {
+          "id": "frame",
+          "recipe": "classic",
+          "style": "Ultra Bold Serif",
+          "label": "Harvest frame"
+        },
+        {
+          "id": "sprinkle",
+          "recipe": "interleave",
+          "style": null,
+          "label": "Falling leaves"
+        }
+      ],
+      "intensity": {
+        "default": 2,
+        "control": false,
+        "labels": [
+          "Simple",
+          "Festive",
+          "Extra"
+        ]
+      }
+    },
+    "handoffs": [
+      {
+        "id": "word_search",
+        "target": "word_search",
+        "icon": "🔎",
+        "title": "Thanksgiving word search",
+        "desc": "A printable word search with 12 Thanksgiving words.",
+        "text": "fixed",
+        "params": {
+          "words": [
+            "Turkey",
+            "Pumpkin",
+            "Pie",
+            "Harvest",
+            "Family",
+            "Thankful",
+            "Autumn",
+            "Corn",
+            "Feast",
+            "Gravy",
+            "Leaves",
+            "Cranberry"
+          ],
+          "heading": "Thanksgiving Word Search",
+          "wslevel": "easy"
+        }
+      }
+    ],
+    "related_occasions": [
+      "christmas",
+      "halloween",
+      "new-year"
+    ],
+    "analytics_label": "thanksgiving",
+    "seo": {
+      "owns": [
+        "thanksgiving font",
+        "thanksgiving text"
+      ],
+      "never_targets": [
+        {
+          "query": "thanksgiving emojis",
+          "owner": "/library/thanksgiving-symbols/"
+        }
+      ]
+    },
+    "capabilities": {
+      "styled_fonts": true,
+      "compositions": true,
+      "occasion_symbols": true,
+      "emoji_kaomoji": true,
+      "ascii_art": true,
+      "native_greetings": {
+        "enabled": false,
+        "reason": "No native-script greeting for this occasion: the page's language is the occasion's language."
+      },
+      "seed_phrases": true,
+      "multi_input": {
+        "enabled": false,
+        "reason": "Single-recipient occasion; a second name adds nothing to the job."
+      },
+      "intensity": {
+        "enabled": false,
+        "reason": "Curated page: two fixed compositions, no controls (blueprint model C)."
+      },
+      "generator_handoffs": {
+        "enabled": false,
+        "reason": "No generator owns a next step for this page's job."
+      },
+      "text_effects": {
+        "enabled": false,
+        "reason": "Creepy/zalgo text has no job on this occasion; it is Halloween's."
+      },
+      "printable_handoffs": true,
+      "classroom_activities": true,
+      "cursive_outputs": {
+        "enabled": false,
+        "reason": "No cursive sheet fits this occasion's job."
+      },
+      "coloring_banner": {
+        "enabled": false,
+        "reason": "No coloring page or banner fits this occasion's job."
+      },
+      "copy_share": true,
+      "related_library": true,
+      "related_answers": {
+        "enabled": false,
+        "reason": "No answers/ companion exists for this occasion."
+      },
+      "occasion_navigation": true,
+      "seo_ownership": true
+    },
+    "theme_tone": "harvest"
+  }
 }

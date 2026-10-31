@@ -1,382 +1,222 @@
 /* ==========================================================================
    UltraTextGen — eventPageController.js
-   ONE shared controller for every /events/<slug>/ page (Chinese New Year,
-   Eid, Christmas, New Year, Valentine's Day, and any future calendar-event
-   page). Mirrors the tattoo "mode takeover" pattern exactly:
+   ONE shared controller for every /events/<slug>/ page. What a page shows is
+   decided by its spec (data/event_page_specs/<occasion>.json) and the
+   capability registry (data/event_capabilities.json); this file only makes
+   the sections the generator wrote come alive. There is no per-occasion code
+   here and there must never be: an occasion that needs something new gets it
+   as a shared behaviour switched on by spec data.
 
-     - A page sets `window.UTG_EVENT_MODE = true` inline BEFORE script.js
-       loads. script.js checks that flag at its render guard points
-       (renderDecorations / ensureScopeControl / ensureFormatControl /
-       renderSavedStyles / renderResults) and no-ops, so it never fights
-       this controller for the shared #mainInput / results area.
-     - This file loads AFTER script.js (deferred), so it runs after
-       script.js's own init() has already wired #mainInput's base listeners
-       (char count, ?q= URL sync, Enter-to-copy) — those keep working
-       for free; only the *rendering* is taken over.
+   Mode takeover, as before: a page sets `window.UTG_EVENT_MODE = true` inline
+   BEFORE script.js loads, so script.js's own renderers no-op and leave
+   #mainInput and the result grids to this controller. script.js still wires
+   the input's base listeners (char count, ?q= sync, generate_text) and the
+   delegated .copy-btn / .glyph-copy copy handlers; symbol-explorer.js still
+   owns .art-piece-copy and the collection grids.
 
-   Unlike tattooData.js (one shared mutable data file for every tattoo
-   mode), each event page defines its OWN small inline
-   `window.UTG_EVENT_DATA = {...}` script block before this controller
-   loads — the same per-page inline-config precedent as `window.tattooI18n`
-   / `window.verticalI18n`. That way multiple future event-content agents
-   never need to edit one shared data file concurrently; they only ever
-   touch their own page's inline block (best authored via
-   scripts/generate_event_page_from_spec.py).
+   Static first. Every section's default output is already in the HTML
+   (scripts/lib/event-prerender.js renders it at build time from the same
+   js/events/eventCompose.js this file uses), so this controller HYDRATES:
+   it attaches behaviour to the markup that is there and re-renders only the
+   two input-driven grids (compositions, fonts) when the visitor types.
 
-   window.UTG_EVENT_DATA shape (see data/event_page_specs/_TEMPLATE.example.json
-   for the authoring-time JSON spec this is generated from):
+   window.UTG_EVENT_DATA (built by scripts/generate_event_page_from_spec.py):
+     slug, language, eventName, samplePhrase, analyticsLabel,
+     fonts: { curatedKeys }, emojiCollections: { containerId, groups },
+     kaomoji, asciiArt, phraseBank, phraseDisplay, inputs,
+     compositions?: { theme, cards, intensity: {default, control, labels}, couple? },
+     handoffs?: [{ id, target, title, desc, text, params, ..., targetDef }],
+     ui: { copyButton, copyAriaPrefix, shareLabel, linkCopied, styleWords, ... }
 
-     {
-       slug, eventName, aliases: [string],
-       fonts: { curatedKeys: [string] },            // keys into window.textStyles
-       emojiCollections: {
-         containerId: "eventEmojiGrids",             // defaults to that id
-         groups: [{ name, flags: [string], defaultFormat }]
-       },
-       kaomoji:  [{ text, label }],
-       asciiArt: [{ art, label }],
-       phraseBank: [{ text, nativeScript, romanization, translation }],
-       ui: {                                         // OPTIONAL, non-English pages only
-         showingSample, copyButton, copyAriaPrefix, asciiArtDefaultLabel
-       }
-     }
+   Privacy: the visitor's text and the second name never enter analytics.
+   Composition copies send copy_method "event_composition" with
+   copy_item_group "<occasion>:<recipe>:<intensity>" (header.js trackCopy
+   drops copy_item for every non-catalogue method); hand-off clicks send the
+   destination PATH only (header.js, data-cta-path-only).
 
-   `ui` overrides this controller's own small set of hardcoded English
-   strings (the "Showing "<sample>"..." helper line, the "Copy" button
-   label, and the "Copy " aria-label prefix) -- the same optional
-   inline-config-override precedent as `window.tattooI18n` / `window.verticalI18n`
-   (see js/tattoo/tattooPageController.js, js/vertical/verticalPageController.js).
-   Everything else user-facing on an event page is generated per-page,
-   already-translated static HTML by scripts/generate_event_page_from_spec.py
-   (see its STRINGS dict) and needs no override here. Missing `ui` keys fall
-   back to the built-in English defaults below.
-
-   DOM contract a generated page must provide (see
-   scripts/generate_event_page_from_spec.py):
-     #mainInput          shared textarea driving every live section
-     #eventFontsGrid     .results-grid — fonts section (this file renders)
-     #eventEmojiGrids    container for UltraTextGen.buildGrids(...)
-     #eventKaomojiGrid   .glyph-grid — kaomoji tiles
-     #eventAsciiGrid     .art-piece-grid — curated ASCII art cards
-     #eventPhraseGrid    .compare-grid — click-to-style phrase bank cards
-
-   Requires (loaded before this): styles.js, renderer.js, script.js,
-   symbol-explorer.js (for UltraTextGen.buildGrids / copyText — may load
-   either just before or just after this file; both are read lazily, not
-   at parse time).
+   Requires (all deferred, in this order on the page): styles.js, renderer.js,
+   share-core.js, script.js, decoratorEngine.js, eventCompose.js, this file,
+   eventDates.js, symbol-explorer.js.
    ========================================================================== */
 
 (function () {
   "use strict";
 
   const Render = window.UltraTextGenRender;
-  const UTG = window.UltraTextGen || {};
-  const stylesRegistry = window.textStyles || {};
+  const Compose = window.UTGEventCompose;
   const DATA = window.UTG_EVENT_DATA;
-  if (!Render || !DATA) return;
+  if (!Render || !Compose || !DATA) return;
 
-  const SAMPLE_TEXT = DATA.samplePhrase || DATA.eventName || "your text";
-  let renderTimer = null;
-
-  /* A page in a non-English language defines window.UTG_EVENT_DATA.ui with
-     translated overrides for this controller's own small set of hardcoded
-     English strings (same optional-override precedent as window.tattooI18n /
-     window.verticalI18n). Missing keys fall back to the English default. */
+  const stylesRegistry = window.textStyles || {};
   const UI = DATA.ui || {};
+  const SAMPLE = DATA.samplePhrase || DATA.eventName || "";
+  const COMP = DATA.compositions || null;
+  const HANDOFFS = DATA.handoffs || [];
+
+  let renderTimer = null;
+  let seed = 1;
+  let intensity = COMP ? COMP.intensity.default : 2;
+  let multiLineNoted = false;
+
   function t(key, fallback) {
     return UI[key] != null ? UI[key] : fallback;
   }
-
-  /* ---- Helpers (same tiny DOM helpers as tattooPageController.js) ---- */
   function $(sel, root) { return (root || document).querySelector(sel); }
+  function $$(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+  function utg() { return window.UltraTextGen || {}; }
 
-  function el(tag, className, text) {
-    const node = document.createElement(tag);
-    if (className) node.className = className;
-    if (text != null) node.textContent = text;
-    return node;
+  function typedText() {
+    const input = $("#mainInput");
+    return input ? input.value.trim() : "";
   }
-
-  function styleFor(key) {
-    return key ? stylesRegistry[key] : null;
-  }
-
-  function applyStyle(text, key) {
-    const style = styleFor(key);
-    if (!style) return text;
-    try { return Render.renderAny(text, style); } catch (e) { return text; }
-  }
-
-  /* --------------------------------------------------------------------------
-     1. Fonts section — curated style keys rendered live against #mainInput.
-     Same .style-card / .copy-btn contract the core generator and the tattoo
-     page use, so script.js's document-level copy handler does copy + toast
-     + GTM automatically — no new copy JS needed here.
-     -------------------------------------------------------------------------- */
-  function buildFontCard(label, text, styleKey, isSample) {
-    const card = el("div", "style-card");
-
-    const info = el("div", "style-info");
-    info.appendChild(el("p", "style-name", label));
-    const preview = el("p", "style-preview" + (isSample ? " is-sample" : ""), text);
-    info.appendChild(preview);
-    card.appendChild(info);
-
-    const actions = el("div", "style-actions");
-    const btn = el("button", "copy-btn", t("copyButton", "Copy"));
-    btn.type = "button";
-    btn.dataset.text = text;
-    btn.dataset.style = styleKey;
-    if (UTG.decorateCopyButton) UTG.decorateCopyButton(btn);
-    actions.appendChild(btn);
-    card.appendChild(actions);
-
-    // Same share pair as the core generator's cards: these ARE registry
-    // styles, so the plain ?q=&style= link restores the exact card here.
-    const style = styleFor(styleKey);
-    const shareId = (style && style.slug) || "";
-    if (shareId && UTG.buildShareActions) {
-      card.appendChild(UTG.buildShareActions({
-        styleId: shareId,
-        name: label,
-        text: text,
-        disabled: isSample
-      }));
-    }
-    if (UTG.markSharedCard) UTG.markSharedCard(card, shareId);
-
-    return card;
+  function partnerText() {
+    const input = $("#eventPartnerInput");
+    return input ? input.value.trim() : "";
   }
 
   /* Rebuild a results grid without destroying the Auto Ads units placed inside
-     it (see clearGridKeepingAds in script.js). Falls back to a plain clear
-     where script.js is not loaded. */
+     it (script.js clearGridKeepingAds). Falls back to a plain clear only where
+     script.js is not loaded. */
   function rebuildGrid(grid, build) {
-    var U = window.UltraTextGen;
-    if (U && U.rebuildGridKeepingAds) U.rebuildGridKeepingAds(grid, build);
+    const U = utg();
+    if (U.rebuildGridKeepingAds) U.rebuildGridKeepingAds(grid, build);
     else { grid.innerHTML = ""; build(); }
   }
 
+  function appendHTML(grid, html) {
+    const tpl = document.createElement("template");
+    tpl.innerHTML = html;
+    grid.appendChild(tpl.content);
+  }
+
+  function updateHint(id, raw) {
+    const hint = document.getElementById(id);
+    if (hint) hint.hidden = !!raw;
+  }
+
+  function pageShareUrl(text) {
+    return window.location.origin + window.location.pathname +
+      (text ? "?q=" + encodeURIComponent(text) : "");
+  }
+
+  /* --------------------------------------------------------------------------
+     Compositions
+     -------------------------------------------------------------------------- */
+  function renderCompositions() {
+    const grid = $("#eventCompGrid");
+    if (!grid || !COMP || !window.UTGDecoratorEngine) return;
+    const raw = typedText();
+    const text = raw || SAMPLE;
+    updateHint("eventCompHint", raw);
+    const cards = Compose.compose(COMP, text, partnerText(), intensity, seed, {
+      renderAny: Render.renderAny,
+      styles: stylesRegistry,
+      engine: window.UTGDecoratorEngine
+    });
+    rebuildGrid(grid, function () {
+      cards.forEach(function (card) {
+        appendHTML(grid, Compose.html.compositionCard(card, UI));
+        const node = grid.lastElementChild;
+        const actions = node && node.querySelector(".event-comp-actions");
+        const U = utg();
+        if (actions && U.buildShareActions) {
+          actions.appendChild(U.buildShareActions({
+            name: card.label,
+            text: card.text,
+            url: pageShareUrl(raw),
+            surface: "event_composition",
+            itemType: "composition",
+            label: t("shareLabel", "Share"),
+            linkCopied: t("linkCopied", "Link copied")
+          }));
+        }
+      });
+    });
+  }
+
+  function onCompositionCopy(btn) {
+    const text = btn.getAttribute("data-text") || "";
+    if (!text) return;
+    const recipe = btn.getAttribute("data-recipe") || "";
+    const extra = {
+      copy_item_group: (DATA.analyticsLabel || DATA.slug) + ":" + recipe + ":" + intensity,
+      copy_has_pair: !!partnerText()
+    };
+    const label = (btn.closest(".event-comp-card") || btn).querySelector(".event-comp-label");
+    const U = utg();
+    if (U.copyText) {
+      U.copyText(text, btn, label ? label.textContent : t("copiedToast", "Copied"), "event_composition", { extra: extra });
+    } else if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(function () {
+        if (U.trackCopy) U.trackCopy("event_composition", text, extra);
+      });
+    }
+    if (text.indexOf("\n") !== -1 && !multiLineNoted && U.showToast) {
+      multiLineNoted = true;
+      setTimeout(function () { U.showToast(t("multiLineNote", "Copied. Some apps join the lines of a banner in a bio.")); }, 900);
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     Fonts. Same .style-card / .copy-btn contract as the core generator, so
+     script.js's document-level copy handler does copy + toast + copy_text.
+     -------------------------------------------------------------------------- */
   function renderFonts() {
     const grid = $("#eventFontsGrid");
     if (!grid) return;
-    rebuildGrid(grid, function () { buildFonts(grid); });
-  }
-
-  function buildFonts(grid) {
-    const input = $("#mainInput");
-    const raw = input ? input.value.trim() : "";
-    const text = raw || SAMPLE_TEXT;
-
-    if (!raw) {
-      const showingSample = t("showingSample",
-        "Showing “{sample}” — type your own name, wish, or greeting above.");
-      grid.appendChild(el("p", "u-secondary-tight",
-        showingSample.replace("{sample}", SAMPLE_TEXT)));
-    }
-
+    const raw = typedText();
+    const text = raw || SAMPLE;
+    updateHint("eventFontsHint", raw);
     const keys = (DATA.fonts && DATA.fonts.curatedKeys) || [];
-    keys.forEach(function (key) {
-      if (!styleFor(key)) return; // silently skip a key that doesn't exist in styles.js
-      grid.appendChild(buildFontCard(key, applyStyle(text, key), key, !raw));
+    rebuildGrid(grid, function () {
+      keys.forEach(function (key) {
+        const style = stylesRegistry[key];
+        if (!style) return;
+        let out = text;
+        try { out = Render.renderAny(text, style); } catch (e) { out = text; }
+        const label = Compose.styleLabel(key, UI.styleWords);
+        appendHTML(grid, Compose.html.fontCard(label, out, key, UI));
+        const card = grid.lastElementChild;
+        const U = utg();
+        const btn = card && card.querySelector(".copy-btn");
+        if (btn && U.decorateCopyButton) U.decorateCopyButton(btn);
+        const shareId = style.slug || "";
+        if (card && shareId && U.buildShareActions) {
+          card.appendChild(U.buildShareActions({
+            styleId: shareId,
+            name: label,
+            text: out,
+            disabled: !raw
+          }));
+        }
+        if (card && U.markSharedCard) U.markSharedCard(card, shareId);
+      });
     });
-
-    if (UTG.revealSharedCard) UTG.revealSharedCard(grid);
+    const U = utg();
+    if (U.revealSharedCard) U.revealSharedCard(grid);
   }
 
   /* --------------------------------------------------------------------------
-     2. Emoji / symbol collection section — the existing, shared
-     UltraTextGen.buildGrids(containerId, GROUPS) helper (same one the
-     /library/ "collection" pages use) does the rendering, format-switching,
-     and whole-set copy. Nothing new to build here.
+     Hand-offs: the href follows the input, so the link the visitor opens (or
+     long-presses) carries their text. The static href carries fixed data only.
      -------------------------------------------------------------------------- */
-  function renderEmojiCollections() {
-    const cfg = DATA.emojiCollections;
-    if (!cfg || !cfg.groups || !cfg.groups.length) return;
-    const containerId = cfg.containerId || "eventEmojiGrids";
-    if (!$("#" + containerId)) return;
-
-    /* buildGrids lives in symbol-explorer.js, which every generated event
-       page loads AFTER this file — both deferred, so it executes later, and
-       init() runs during this script's own deferred execution (readyState is
-       already "interactive", so the DOMContentLoaded branch below is not
-       taken). At this moment the helper does not exist yet.
-
-       This used to `return` here, which silently left the section as a
-       heading and a "Tap any character to copy it" line above an empty div
-       on every event page. Nothing surfaced it: the guard is indistinguishable
-       from "this page has no emoji configured". Retry on `load`, by which
-       point every deferred script has run. */
-    const ns = window.UltraTextGen;
-    if (ns && typeof ns.buildGrids === "function") {
-      ns.buildGrids(containerId, cfg.groups);
-      return;
-    }
-    window.addEventListener("load", function () {
-      const late = window.UltraTextGen;
-      if (late && typeof late.buildGrids === "function") {
-        late.buildGrids(containerId, cfg.groups);
-      }
-    }, { once: true });
-  }
-
-  /* --------------------------------------------------------------------------
-     3. Kaomoji section — .glyph-copy tiles in the existing generic
-     .glyph-grid wrapper. Each tile's data-text is the whole fused kaomoji
-     string (one click = one paste) — script.js's document-level
-     .glyph-copy click handler already does copy + toast + GTM.
-     -------------------------------------------------------------------------- */
-  function renderKaomoji() {
-    const grid = $("#eventKaomojiGrid");
-    if (!grid) return;
-    grid.innerHTML = "";
-
-    (DATA.kaomoji || []).forEach(function (item) {
-      if (!item || !item.text) return;
-      const tile = el("button", "glyph-copy");
-      tile.type = "button";
-      tile.dataset.text = item.text;
-      tile.textContent = item.text;
-      if (item.label) tile.setAttribute("aria-label", t("copyAriaPrefix", "Copy ") + item.label);
-      grid.appendChild(tile);
+  function updateHandoffs() {
+    if (!HANDOFFS.length) return;
+    const raw = typedText();
+    const pair = partnerText();
+    HANDOFFS.forEach(function (h) {
+      const link = document.querySelector('.event-handoff[data-handoff="' + h.id + '"]');
+      if (link) link.setAttribute("href", Compose.handoffHref(h, h.targetDef, raw, pair));
     });
   }
 
   /* --------------------------------------------------------------------------
-     4. ASCII art section — curated static pieces, built from data at
-     runtime with the SAME art-piece-card component/copy mechanism as
-     library/heart-ascii-art/index.html: a whitespace-preserving monospace
-     <pre> plus a per-piece Copy button wired through
-     the delegated .art-piece-copy handler in symbol-explorer.js, not the
-     .copy-btn contract.
-     -------------------------------------------------------------------------- */
-  function renderAsciiArt() {
-    const grid = $("#eventAsciiGrid");
-    if (!grid) return;
-    grid.innerHTML = "";
-
-    (DATA.asciiArt || []).forEach(function (piece) {
-      if (!piece || !piece.art) return;
-      const card = el("div", "art-piece-card");
-
-      const head = el("div", "art-piece-head");
-      head.appendChild(el("span", "art-piece-label", piece.label || t("asciiArtDefaultLabel", "ASCII Art")));
-      const copyBtn = el("button", "art-piece-copy", t("copyButton", "Copy"));
-      copyBtn.type = "button";
-      copyBtn.dataset.label = piece.label || t("asciiArtDefaultLabel", "ASCII art");
-      copyBtn.setAttribute("aria-label", t("copyAriaPrefix", "Copy ") + (piece.label || t("asciiArtDefaultLabel", "ASCII art")));
-      head.appendChild(copyBtn);
-      card.appendChild(head);
-
-      const body = el("div", "art-piece-body");
-      const pre = el("pre", "art-piece-pre", piece.art);
-      body.appendChild(pre);
-      card.appendChild(body);
-
-      // No listener of its own: symbol-explorer.js delegates .art-piece-copy
-      // at the document. A second, direct one made every click copy twice
-      // and record two copy_text rows (symbol_tile and ascii_art).
-
-      grid.appendChild(card);
-    });
-  }
-
-  /* --------------------------------------------------------------------------
-     5. Phrase bank — click a card (native script / romanization /
-     translation) and it sets #mainInput's value + fires a real "input"
-     event, which re-triggers the live render across the fonts section
-     (and keeps script.js's own char-count / URL-sync listeners in sync).
-     `phrase.text` is the Latin-alphabet form used for font styling —
-     styles.js only maps A-Z/a-z/0-9, so native-script characters (e.g. 恭喜發財)
-     pass through the Unicode font maps unchanged.
-     -------------------------------------------------------------------------- */
-  function sameText(a, b) {
-    if (!a || !b) return false;
-    return a.trim().toLowerCase() === b.trim().toLowerCase();
-  }
-
-  function buildPhraseCard(phrase) {
-    const card = el("button", "compare-card event-phrase-card");
-    card.type = "button";
-
-    // The headline is the native script where there is one, otherwise the
-    // phrase itself. Without this, an English-only phrase (no nativeScript)
-    // rendered no <h4> at all and led with whatever was in `romanization` —
-    // which for those entries just repeats `text`.
-    card.appendChild(el("h4", null, phrase.nativeScript || phrase.text));
-
-    // Only show romanization/translation when they add information. Several
-    // specs carry English-only phrases whose `romanization` duplicates `text`
-    // verbatim and whose `translation` is editorial commentary about the
-    // phrase; echoing the same words three times made the bank look padded.
-    const head = phrase.nativeScript || phrase.text;
-    if (phrase.romanization && !sameText(phrase.romanization, head) && !sameText(phrase.romanization, phrase.text)) {
-      card.appendChild(el("p", null, phrase.romanization));
-    }
-    if (phrase.translation && !sameText(phrase.translation, head) && !sameText(phrase.translation, phrase.text)) {
-      card.appendChild(el("p", "u-secondary-tight", phrase.translation));
-    }
-
-    card.addEventListener("click", function () {
-      const input = $("#mainInput");
-      if (!input) return;
-      input.value = phrase.text;
-      input.dispatchEvent(new Event("input", { bubbles: true }));
-      input.scrollIntoView({ block: "center", behavior: "smooth" });
-    });
-
-    return card;
-  }
-
-  /* Phrases may carry an optional `group` ("Classic", "For family", "Short for
-     a caption", ...). When any do, the bank renders one labelled subsection per
-     group in first-seen order, so a long bank is scannable by the job the
-     reader actually has. With no `group` anywhere it renders exactly as before,
-     one flat grid. */
-  function renderPhraseBank() {
-    const grid = $("#eventPhraseGrid");
-    if (!grid) return;
-    grid.innerHTML = "";
-
-    const phrases = (DATA.phraseBank || []).filter(function (p) {
-      return p && p.text;
-    });
-    if (!phrases.length) return;
-
-    const grouped = phrases.some(function (p) { return p.group; });
-    if (!grouped) {
-      phrases.forEach(function (phrase) { grid.appendChild(buildPhraseCard(phrase)); });
-      return;
-    }
-
-    const order = [];
-    const buckets = new Map();
-    const fallback = t("phraseGroupOther", "More");
-    phrases.forEach(function (phrase) {
-      const key = phrase.group || fallback;
-      if (!buckets.has(key)) { buckets.set(key, []); order.push(key); }
-      buckets.get(key).push(phrase);
-    });
-
-    // The container is a .compare-grid, so a group is emitted as a heading plus
-    // its own nested grid, wrapped in a full-width block that opts out of the
-    // parent grid's columns.
-    order.forEach(function (key) {
-      const wrap = el("div", "event-phrase-group");
-      wrap.appendChild(el("h3", "event-phrase-group-title", key));
-      const inner = el("div", "compare-grid");
-      buckets.get(key).forEach(function (phrase) { inner.appendChild(buildPhraseCard(phrase)); });
-      wrap.appendChild(inner);
-      grid.appendChild(wrap);
-    });
-  }
-
-  /* --------------------------------------------------------------------------
-     Master render — only the input-driven fonts section needs to re-run on
-     every keystroke; the other four sections are static per page load.
+     Live render
      -------------------------------------------------------------------------- */
   function renderLive() {
+    renderCompositions();
     renderFonts();
+    updateHandoffs();
   }
 
   function triggerRender() {
@@ -385,46 +225,36 @@
   }
 
   /* --------------------------------------------------------------------------
-     6. Native-script section — one copy tile per phrase that has one. This is
-     a different job from the wishes bank above it: there the card *styles* the
-     Latin phrase in the input, here a tap copies the native-script string
-     itself, which is what "eid mubarak in arabic" is actually asking for.
-     Same .glyph-copy contract, so script.js's delegated handler does the copy.
+     Phrase bank: a tap puts the line in the box and brings the first output
+     into view (it used to scroll back to the input, away from the result).
      -------------------------------------------------------------------------- */
-  function renderNativeScript() {
-    const grid = $("#eventNativeGrid");
-    if (!grid) return;
-    grid.innerHTML = "";
-
-    const seen = new Set();
-    (DATA.phraseBank || []).forEach(function (phrase) {
-      if (!phrase || !phrase.nativeScript) return;
-      if (seen.has(phrase.nativeScript)) return; // banks repeat a form for captions
-      seen.add(phrase.nativeScript);
-
-      const tile = el("button", "glyph-copy event-native-tile");
-      tile.type = "button";
-      tile.dataset.text = phrase.nativeScript;
-      tile.appendChild(el("span", "event-native-script", phrase.nativeScript));
-      if (phrase.romanization) {
-        tile.appendChild(el("span", "event-native-roman", phrase.romanization));
-      }
-      tile.setAttribute("aria-label", t("copyAriaPrefix", "Copy ") + phrase.nativeScript);
-      grid.appendChild(tile);
-    });
-  }
-
-  function renderStatic() {
-    renderNativeScript();
-    renderEmojiCollections();
-    renderKaomoji();
-    renderAsciiArt();
-    renderPhraseBank();
+  function onPhrase(btn) {
+    const input = $("#mainInput");
+    if (!input) return;
+    input.value = btn.getAttribute("data-phrase") || "";
+    input.dispatchEvent(new Event("input", { bubbles: true }));
+    const target = $("#eventCompSection") || $("#eventFontsSection");
+    if (target) target.scrollIntoView({ block: "start", behavior: "smooth" });
   }
 
   /* --------------------------------------------------------------------------
-     Init
+     Collection grids: the markup is static; buildGrids sees it and only binds
+     the format tabs and Copy collection buttons. symbol-explorer.js loads
+     after this file, so it may not exist yet; retry on load.
      -------------------------------------------------------------------------- */
+  function bindCollections() {
+    const cfg = DATA.emojiCollections;
+    if (!cfg || !cfg.groups || !cfg.groups.length) return;
+    const id = cfg.containerId || "eventEmojiGrids";
+    if (!document.getElementById(id)) return;
+    const ns = utg();
+    if (typeof ns.buildGrids === "function") { ns.buildGrids(id, cfg.groups); return; }
+    window.addEventListener("load", function () {
+      const late = utg();
+      if (typeof late.buildGrids === "function") late.buildGrids(id, cfg.groups);
+    }, { once: true });
+  }
+
   function readUrlState() {
     try {
       const params = new URLSearchParams(window.location.search);
@@ -435,17 +265,38 @@
   }
 
   function init() {
-    if (!$("#eventFontsGrid")) return; // not an event page after all
-
+    if (!$("#eventFontsGrid") && !$("#eventCompGrid")) return;
     readUrlState();
 
     const input = $("#mainInput");
     if (input) input.addEventListener("input", triggerRender);
+    const partner = $("#eventPartnerInput");
+    if (partner) partner.addEventListener("input", triggerRender);
 
-    renderFonts();
-    renderStatic();
+    $$('input[name="eventIntensity"]').forEach(function (radio) {
+      radio.addEventListener("change", function () {
+        intensity = parseInt(radio.value, 10) || 2;
+        renderCompositions();
+      });
+    });
+    const shuffle = $("#eventShuffle");
+    if (shuffle) shuffle.addEventListener("click", function () { seed += 1; renderCompositions(); });
+
+    document.addEventListener("click", function (e) {
+      const target = e.target;
+      if (!target || !target.closest) return;
+      const copy = target.closest(".event-comp-copy");
+      if (copy) { onCompositionCopy(copy); return; }
+      const phrase = target.closest("[data-phrase]");
+      if (phrase && phrase.closest("#eventPhraseGrid")) onPhrase(phrase);
+    });
+
+    renderLive();
+    bindCollections();
   }
 
+  /* Deferred scripts run before DOMContentLoaded, but the modules after this
+     one (symbol-explorer.js) have not run yet; init does not depend on them. */
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
   } else {

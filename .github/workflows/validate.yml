@@ -449,6 +449,26 @@ jobs:
         continue-on-error: true
         run: npm run test:share-core | tee share-core-tests.log
 
+      # The occasion capability matrix and the 20 event pages must agree: every
+      # capability declared per page, enabled ones backed by data and a
+      # rendered section, disabled ones rendering nothing, every hand-off
+      # pointing at a page that reads the parameters it sends, no two curated
+      # styles alike on a Latin name, no couple line doubling its joiner, the
+      # static payload present, and docs/events-capability-matrix.md current.
+      # Gating, whole-tree, no backlog: all 20 pages pass, and the matrix and
+      # the pages drift when a spec, the registry or the generator changes.
+      - name: Run event capability check
+        id: event_capabilities
+        continue-on-error: true
+        run: npm run check:event-capabilities | tee event-capabilities.log
+
+      # The spaced Elegant scripts must not space apart a run of a script the
+      # style does not map (Arabic lost its joining on the Eid page).
+      - name: Run spaced-style native-run tests
+        id: spaced_native_runs
+        continue-on-error: true
+        run: npm run test:spaced-native-runs | tee spaced-native-runs.log
+
       # The selection behind "Select and share image" on library pages,
       # headless. Gating, no backlog: these rules decide what ends up in the
       # picture (order kept, a repeat is one item, a set past the limit adds
@@ -1238,11 +1258,13 @@ jobs:
             echo "### Saved-items store tests — \`${{ steps.saved_items_tests.outcome }}\`"
             echo "### share-core analytics tests — \`${{ steps.share_core_tests.outcome }}\`"
             echo "### image-selection tests — \`${{ steps.image_selection_tests.outcome }}\`"
+            echo "### Event capability check — \`${{ steps.event_capabilities.outcome }}\`"
+            echo "### Spaced-style native-run tests — \`${{ steps.spaced_native_runs.outcome }}\`"
             echo "### game-rules outcome reporter tests — \`${{ steps.game_rules_tests.outcome }}\`"
             echo "### name-report board tests — \`${{ steps.name_reports_tests.outcome }}\`"
             echo "### IndexNow submission-policy tests — \`${{ steps.indexnow_tests.outcome }}\`"
             echo '```'
-            cat printables-surface-wiring.log print-export-properties.log fitted-page-fit.log render-invariants-tests.log practice-row-tests.log share-save-tags.log runtime-smoke.log explorer-strings.log saved-items-tests.log indexnow-tests.log share-core-tests.log image-selection-tests.log game-rules-tests.log name-reports-tests.log
+            cat printables-surface-wiring.log print-export-properties.log fitted-page-fit.log render-invariants-tests.log practice-row-tests.log share-save-tags.log runtime-smoke.log explorer-strings.log saved-items-tests.log indexnow-tests.log share-core-tests.log image-selection-tests.log event-capabilities.log spaced-native-runs.log game-rules-tests.log name-reports-tests.log
             echo '```'
             echo ""
             echo "### Funding Choices tag check — \`${{ steps.funding_choices.outcome }}\`"
@@ -1636,6 +1658,8 @@ jobs:
           steps.saved_items_tests.outcome == 'failure' ||
           steps.share_core_tests.outcome == 'failure' ||
           steps.image_selection_tests.outcome == 'failure' ||
+          steps.event_capabilities.outcome == 'failure' ||
+          steps.spaced_native_runs.outcome == 'failure' ||
           steps.game_rules_tests.outcome == 'failure' ||
           steps.name_reports_tests.outcome == 'failure' ||
           steps.indexnow_tests.outcome == 'failure' ||

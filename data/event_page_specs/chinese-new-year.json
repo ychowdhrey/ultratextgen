@@ -10,9 +10,9 @@
   "meta_description": "Style a Chinese New Year greeting live, copy lantern and firework emoji, kaomoji and ASCII art, and ready-made phrases with native script.",
   "hero_h1": "Chinese New Year Text & Symbol Generator",
   "hero_tagline": "Type a name or wish and style it in curated festive fonts, then copy lanterns, luck characters, kaomoji, and ASCII art, or tap a ready-made greeting to style it instantly.",
-  "intro": "Chinese New Year (Lunar New Year) is the biggest gifting-and-greeting occasion on the lunar calendar — red envelopes, reunion dinners, lion dances, and messages wishing family and friends luck, health, and prosperity for the year ahead. This page gathers everything for styling that greeting: curated fonts you can preview on your own text, the lanterns-and-firecrackers emoji people actually paste, the luck characters seen on doorways and banners, kaomoji for a celebratory chat message, a handful of original ASCII art pieces, and a phrase bank of real greetings — native script, romanization, and translation — that restyle instantly when you tap them.",
-  "date_window": "on a different date each year, between late January and mid-February, set by the lunar calendar — a movable window of about 29 days",
-  "sample_phrase": "Xin Nian Kuai Le",
+  "intro": "Chinese New Year (Lunar New Year) is the biggest gifting-and-greeting occasion on the lunar calendar: red envelopes, reunion dinners, lion dances, and messages wishing family and friends luck, health, and prosperity for the year ahead. This page gathers everything for styling that greeting: curated fonts you can preview on your own text, the lanterns-and-firecrackers emoji people actually paste, the luck characters seen on doorways and banners, kaomoji for a celebratory chat message, a handful of original ASCII art pieces, and a phrase bank of real greetings: native script, romanization, and translation: that restyle instantly when you tap them.",
+  "date_window": "on a different date each year, between late January and mid-February, set by the lunar calendar: a movable window of about 29 days",
+  "sample_phrase": "Gong Xi Fa Cai",
   "canonical": "https://ultratextgen.com/events/chinese-new-year/",
   "native_section_heading": "Chinese New Year Greetings in Chinese Characters",
   "native_script_language": "Chinese",
@@ -136,7 +136,7 @@
       "group": "Classic greetings",
       "native_script": "恭喜发财",
       "romanization": "Gōngxǐ fācái",
-      "translation": "Wishing you prosperity — the most recognised CNY greeting.",
+      "translation": "Wishing you prosperity: the most recognised CNY greeting.",
       "needs_native_speaker_review": true
     },
     {
@@ -144,7 +144,7 @@
       "group": "Classic greetings",
       "native_script": "新年快乐",
       "romanization": "Xīnnián kuàilè",
-      "translation": "Happy New Year — the direct, all-purpose greeting.",
+      "translation": "Happy New Year: the direct, all-purpose greeting.",
       "needs_native_speaker_review": true
     },
     {
@@ -168,7 +168,7 @@
       "group": "Classic greetings",
       "native_script": "年年有余",
       "romanization": "Niánnián yǒuyú",
-      "translation": "May you have abundance every year — the greeting behind the fish dish.",
+      "translation": "May you have abundance every year: the greeting behind the fish dish.",
       "needs_native_speaker_review": true
     },
     {
@@ -181,7 +181,7 @@
       "group": "Replies",
       "native_script": "同喜同喜",
       "romanization": "Tóngxǐ tóngxǐ",
-      "translation": "The same to you — the classic reply to Gong Xi Fa Cai.",
+      "translation": "The same to you: the classic reply to Gong Xi Fa Cai.",
       "needs_native_speaker_review": true
     },
     {
@@ -189,7 +189,7 @@
       "group": "Replies",
       "native_script": "你也一样",
       "romanization": "Nǐ yě yīyàng",
-      "translation": "You too — a simple, casual reply.",
+      "translation": "You too: a simple, casual reply.",
       "needs_native_speaker_review": true
     },
     {
@@ -202,7 +202,7 @@
       "group": "For family",
       "native_script": "身体健康",
       "romanization": "Shēntǐ jiànkāng",
-      "translation": "Wishing you good health — the standard wish for elders.",
+      "translation": "Wishing you good health: the standard wish for elders.",
       "needs_native_speaker_review": true
     },
     {
@@ -220,11 +220,11 @@
       "group": "For family",
       "native_script": "学业进步",
       "romanization": "Xuéyè jìnbù",
-      "translation": "Progress in your studies — said to students and children.",
+      "translation": "Progress in your studies: said to students and children.",
       "needs_native_speaker_review": true
     },
     {
-      "text": "Missing the reunion dinner this year — Happy New Year",
+      "text": "Missing the reunion dinner this year. Happy New Year",
       "group": "For family",
       "translation": "For family you can't travel to."
     },
@@ -234,11 +234,11 @@
       "translation": "Playful nod to hongbao."
     },
     {
-      "text": "Gong Xi Fa Cai — hongbao na lai",
+      "text": "Gong Xi Fa Cai, hongbao na lai",
       "group": "For friends",
       "native_script": "恭喜发财，红包拿来",
       "romanization": "Gōngxǐ fācái, hóngbāo ná lái",
-      "translation": "Wishing you prosperity, now hand over the red packet — the classic joke version.",
+      "translation": "Wishing you prosperity, now hand over the red packet: the classic joke version.",
       "needs_native_speaker_review": true
     },
     {
@@ -256,7 +256,7 @@
       "group": "Formal & work",
       "native_script": "生意兴隆",
       "romanization": "Shēngyì xīnglóng",
-      "translation": "May your business flourish — the standard wish to a business owner.",
+      "translation": "May your business flourish: the standard wish to a business owner.",
       "needs_native_speaker_review": true
     },
     {
@@ -264,7 +264,7 @@
       "group": "Formal & work",
       "native_script": "步步高升",
       "romanization": "Bùbù gāoshēng",
-      "translation": "May you rise step by step — a career wish for colleagues.",
+      "translation": "May you rise step by step: a career wish for colleagues.",
       "needs_native_speaker_review": true
     },
     {
@@ -287,7 +287,7 @@
       "group": "Short for a caption",
       "native_script": "新年快乐",
       "romanization": "Xīnnián kuàilè",
-      "translation": "Native-script caption — pastes anywhere.",
+      "translation": "Native-script caption: pastes anywhere.",
       "needs_native_speaker_review": true
     },
     {
@@ -329,5 +329,200 @@
     "en": "https://ultratextgen.com/events/chinese-new-year/",
     "id": "https://ultratextgen.com/id/events/imlek/",
     "x_default": "en"
+  },
+  "experience": {
+    "model": "hybrid",
+    "category": "cultural",
+    "primary_job": "Copy the right greeting in Chinese characters, plus a festive styled line in Latin letters.",
+    "secondary_jobs": [
+      "Decorate a name or the year with red-and-gold symbols",
+      "Copy Chinese New Year symbols"
+    ],
+    "hero": "native",
+    "sample_text": "Gong Xi Fa Cai",
+    "inputs": [
+      "text"
+    ],
+    "phrase_display": "chips",
+    "sections": [
+      "native",
+      "compositions",
+      "fonts",
+      "symbols",
+      "phrases",
+      "kaomoji",
+      "handoffs",
+      "ascii",
+      "intro",
+      "related",
+      "nav",
+      "faq"
+    ],
+    "compositions": {
+      "theme": {
+        "key": "lunar-new-year",
+        "label": "Lunar New Year",
+        "icon": "🧧",
+        "pairs": [
+          [
+            "🧧",
+            "🧧"
+          ],
+          [
+            "🏮",
+            "🏮"
+          ],
+          [
+            "🧨",
+            "🧨"
+          ],
+          [
+            "福",
+            "福"
+          ],
+          [
+            "✦",
+            "✦"
+          ]
+        ],
+        "charms": [
+          "🧧",
+          "🏮",
+          "🧨",
+          "🐉",
+          "✨",
+          "🍊",
+          "🐐"
+        ],
+        "sprinkles": [
+          "✨",
+          "🧧"
+        ],
+        "lines": [
+          "🏮 ⋆ 🧧 ⋆ 🏮 ⋆ 🧧 ⋆ 🏮",
+          "🧨 ─── 福 ─── 🧨"
+        ]
+      },
+      "cards": [
+        {
+          "id": "frame",
+          "recipe": "classic",
+          "style": "Ultra Bold",
+          "label": "Red packet frame"
+        },
+        {
+          "id": "stack",
+          "recipe": "stacked",
+          "style": null,
+          "label": "Lantern stack"
+        },
+        {
+          "id": "banner",
+          "recipe": "banner",
+          "style": "Ultra Bold Serif",
+          "label": "Banner"
+        },
+        {
+          "id": "sprinkle",
+          "recipe": "interleave",
+          "style": null,
+          "label": "Firecracker caption"
+        }
+      ],
+      "intensity": {
+        "default": 2,
+        "control": true,
+        "labels": [
+          "Simple",
+          "Festive",
+          "Extra"
+        ]
+      }
+    },
+    "handoffs": [
+      {
+        "id": "more_designs",
+        "target": "text_decorator",
+        "icon": "✦",
+        "title": "More designs",
+        "desc": "More frames for the same text in the text decorator.",
+        "text": "input",
+        "params": {
+          "dsym": "🧧"
+        }
+      },
+      {
+        "id": "all_fonts",
+        "target": "general_generator",
+        "icon": "Aa",
+        "title": "All fonts",
+        "desc": "Every style on the main generator, with your text in it.",
+        "text": "input"
+      }
+    ],
+    "related_occasions": [
+      "new-year",
+      "diwali",
+      "eid-mubarak"
+    ],
+    "analytics_label": "lunar-new-year",
+    "seo": {
+      "owns": [
+        "chinese new year symbols",
+        "chinese new year font",
+        "gong xi fa cai text"
+      ],
+      "never_targets": [
+        {
+          "query": "chinese symbols",
+          "owner": "/library/chinese-symbols/"
+        },
+        {
+          "query": "chinese new year greetings",
+          "owner": "/answers/cny-greetings-what-to-say/"
+        }
+      ]
+    },
+    "capabilities": {
+      "styled_fonts": true,
+      "compositions": true,
+      "occasion_symbols": true,
+      "emoji_kaomoji": true,
+      "ascii_art": true,
+      "native_greetings": true,
+      "seed_phrases": true,
+      "multi_input": {
+        "enabled": false,
+        "reason": "Single-recipient occasion; a second name adds nothing to the job."
+      },
+      "intensity": true,
+      "generator_handoffs": true,
+      "text_effects": {
+        "enabled": false,
+        "reason": "Creepy/zalgo text has no job on this occasion; it is Halloween's."
+      },
+      "printable_handoffs": {
+        "enabled": false,
+        "reason": "No printable maker serves this occasion's job yet."
+      },
+      "classroom_activities": {
+        "enabled": false,
+        "reason": "No word list or classroom job for this occasion."
+      },
+      "cursive_outputs": {
+        "enabled": false,
+        "reason": "No cursive sheet fits this occasion's job."
+      },
+      "coloring_banner": {
+        "enabled": false,
+        "reason": "No coloring page or banner fits this occasion's job."
+      },
+      "copy_share": true,
+      "related_library": true,
+      "related_answers": true,
+      "occasion_navigation": true,
+      "seo_ownership": true
+    },
+    "theme_tone": "lacquer"
   }
 }

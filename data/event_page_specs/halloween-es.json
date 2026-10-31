@@ -2,64 +2,88 @@
   "slug": "halloween",
   "language": "es",
   "event_name": "Halloween",
-  "aliases": ["Noche de Brujas"],
-
+  "aliases": [
+    "Noche de Brujas"
+  ],
   "hub_card_title": "Generador de Texto y Símbolos de Halloween",
   "hub_card_desc": "Dale estilo a tu mensaje de Halloween y copia fuentes, emojis, kaomoji y frases listas para usar.",
   "title": "Fuentes, Emojis y Símbolos de Halloween | UltraTextGen",
   "meta_description": "Dale estilo a tu mensaje de Halloween, copia emojis de calabaza, fantasma y murciélago, kaomoji espeluznantes, arte ASCII y frases como Truco o Trato.",
-
   "hero_h1": "Generador de Texto y Símbolos de Halloween",
   "hero_tagline": "Escribe un nombre o un deseo espeluznante y dale estilo con fuentes góticas, cursivas y divertidas; luego copia emojis de calabaza, fantasma y murciélago, kaomoji y arte ASCII — o toca una frase de Halloween ya lista para transformarla al instante.",
-
   "intro": "Halloween — o la Noche de Brujas, como se le conoce en buena parte de Latinoamérica — es la gran fiesta de disfraces y frases ingeniosas del otoño: calabazas, disfraces y publicaciones pensadas para sonar espeluznantes, divertidas o ambas cosas a la vez. Esta página reúne todo lo necesario para darle estilo a esa publicación o tarjeta: fuentes góticas y divertidas que puedes previsualizar con tu propio texto, los emojis de calabaza, fantasma y murciélago que la gente realmente usa, kaomoji para un mensaje de chat con un toque tenebroso, algunas piezas de arte ASCII originales hechas a mano, y un banco de frases de Halloween — desde el clásico \"Feliz Halloween\" hasta \"Truco o Trato\" — que se transforman al instante en cuanto las tocas.",
-
   "date_window": "cada año el 31 de octubre",
-
   "sample_phrase": "Feliz Halloween",
-
   "canonical": "https://ultratextgen.com/es/events/halloween/",
-
   "hreflang": {
     "en": "https://ultratextgen.com/events/halloween/",
     "es": "https://ultratextgen.com/es/events/halloween/",
     "x_default": "en"
   },
-
-  "occurrence": {"type": "fixed", "month": 10, "day": 31},
+  "occurrence": {
+    "type": "fixed",
+    "month": 10,
+    "day": 31
+  },
   "fonts": {
     "curated_keys": [
       "Ultra Gothic",
       "Ultra Gothic Bold",
       "Ultra Gothic Occult",
       "Ultra Gothic Cross",
-      "Ultra Gothic Script",
-      "Ultra Aesthetic Gothic",
+      "Ultra Gothic Strikethrough",
+      "Ultra Typewriter Document",
       "Ultra Script Bold",
       "Ultra Bold",
       "Ultra Bubble",
       "Ultra Small Caps"
     ]
   },
-
   "emoji_symbol_collections": [
     {
       "name": "Emojis de Halloween",
       "presentation_class": "emoji",
       "copy_pattern": "collection",
-      "flags": ["🎃", "👻", "🦇", "🕷️", "🕸️", "💀", "☠️", "🧙‍♀️", "🧛", "🐈‍⬛", "🍬", "🌙", "⚰️"],
+      "flags": [
+        "🎃",
+        "👻",
+        "🦇",
+        "🕷️",
+        "🕸️",
+        "💀",
+        "☠️",
+        "🧙‍♀️",
+        "🧛",
+        "🐈‍⬛",
+        "🍬",
+        "🌙",
+        "⚰️"
+      ],
       "defaultFormat": "inline"
     }
   ],
-
   "kaomoji": [
-    { "text": "(((( ;°Д°))))", "label": "Temblando de Miedo" },
-    { "text": "Σ(ﾟдﾟ;)", "label": "Grito de Susto" },
-    { "text": "ヽ(゜Q。)ノ", "label": "Fantasma Errante" },
-    { "text": "눈_눈", "label": "Mirada Espeluznante" },
-    { "text": "(¬‿¬)", "label": "Sonrisa Traviesa" }
+    {
+      "text": "(((( ;°Д°))))",
+      "label": "Temblando de Miedo"
+    },
+    {
+      "text": "Σ(ﾟдﾟ;)",
+      "label": "Grito de Susto"
+    },
+    {
+      "text": "ヽ(゜Q。)ノ",
+      "label": "Fantasma Errante"
+    },
+    {
+      "text": "눈_눈",
+      "label": "Mirada Espeluznante"
+    },
+    {
+      "text": "(¬‿¬)",
+      "label": "Sonrisa Traviesa"
+    }
   ],
-
   "ascii_art": {
     "items": [
       {
@@ -92,7 +116,6 @@
       }
     ]
   },
-
   "phrase_bank": [
     {
       "text": "Feliz Halloween",
@@ -205,12 +228,10 @@
       "translation": "Para una foto con dulces."
     }
   ],
-
   "companion_answer_slug": "que-escribir-en-halloween",
-
   "related": [
     {
-      "href": "/library/halloween-symbols/",
+      "href": "/es/library/simbolos-halloween/",
       "title": "Símbolos de Halloween",
       "desc": "Una biblioteca más amplia de símbolos y combinaciones de emoji de Halloween en Unicode."
     },
@@ -220,7 +241,7 @@
       "desc": "Pentagramas, lunas y caracteres ocultos para una estética más oscura."
     },
     {
-      "href": "/library/skull-ascii-art/",
+      "href": "/es/library/arte-ascii-calavera/",
       "title": "Arte ASCII de Calaveras",
       "desc": "Más piezas de arte ASCII de calaveras originales para copiar y pegar."
     },
@@ -234,5 +255,217 @@
       "title": "Generador de Arte ASCII",
       "desc": "Escribe cualquier palabra o nombre y conviértelo en arte ASCII de letras en bloque en vivo."
     }
-  ]
+  ],
+  "experience": {
+    "model": "hybrid",
+    "category": "festive",
+    "primary_job": "Hacer que un nombre o un texto se vea terrorífico.",
+    "secondary_jobs": [
+      "Volverlo texto zalgo",
+      "Imprimir una sopa de letras o una página para colorear",
+      "Copiar símbolos y kaomoji de Halloween"
+    ],
+    "hero": "compositions",
+    "sample_text": "Feliz Halloween",
+    "inputs": [
+      "text"
+    ],
+    "phrase_display": "chips",
+    "sections": [
+      "compositions",
+      "fonts",
+      "handoffs",
+      "symbols",
+      "kaomoji",
+      "phrases",
+      "ascii",
+      "intro",
+      "related",
+      "nav",
+      "faq"
+    ],
+    "compositions": {
+      "theme": {
+        "key": "halloween",
+        "label": "Halloween",
+        "icon": "🎃",
+        "pairs": [
+          [
+            "🎃",
+            "🎃"
+          ],
+          [
+            "🦇",
+            "🦇"
+          ],
+          [
+            "🕸",
+            "🕸"
+          ],
+          [
+            "👻",
+            "👻"
+          ],
+          [
+            "†",
+            "†"
+          ]
+        ],
+        "charms": [
+          "🎃",
+          "🦇",
+          "🕸",
+          "👻",
+          "💀",
+          "🕯"
+        ],
+        "sprinkles": [
+          "🦇",
+          "🕸",
+          "🎃"
+        ],
+        "lines": [
+          "🦇 ⋆ 🎃 ⋆ 🦇 ⋆ 🎃 ⋆ 🦇",
+          "🕸 ─── 💀 ─── 🕸"
+        ]
+      },
+      "cards": [
+        {
+          "id": "frame",
+          "recipe": "classic",
+          "style": "Ultra Gothic",
+          "label": "Marco de calabazas"
+        },
+        {
+          "id": "stack",
+          "recipe": "stacked",
+          "style": null,
+          "label": "Pila terrorífica"
+        },
+        {
+          "id": "banner",
+          "recipe": "banner",
+          "style": "Ultra Gothic Bold",
+          "label": "Pancarta"
+        },
+        {
+          "id": "sprinkle",
+          "recipe": "interleave",
+          "style": null,
+          "label": "Murciélagos"
+        }
+      ],
+      "intensity": {
+        "default": 2,
+        "control": true,
+        "labels": [
+          "Sencillo",
+          "Terrorífico",
+          "Extra"
+        ]
+      }
+    },
+    "handoffs": [
+      {
+        "id": "creepy",
+        "target": "zalgo_es",
+        "icon": "👁",
+        "title": "Hazlo terrorífico",
+        "desc": "Tu texto en zalgo, con efecto cascada y modo extremo.",
+        "text": "input",
+        "fallback_text": "Feliz Halloween"
+      },
+      {
+        "id": "word_search",
+        "target": "word_search_es",
+        "icon": "🔎",
+        "title": "Sopa de letras de Halloween",
+        "desc": "Una sopa de letras para imprimir con 12 palabras.",
+        "text": "fixed",
+        "params": {
+          "words": [
+            "Calabaza",
+            "Fantasma",
+            "Bruja",
+            "Murciélago",
+            "Araña",
+            "Dulces",
+            "Disfraz",
+            "Esqueleto",
+            "Zombi",
+            "Escoba",
+            "Luna",
+            "Caldero"
+          ],
+          "heading": "Sopa de letras de Halloween",
+          "wslevel": "easy"
+        }
+      },
+      {
+        "id": "coloring",
+        "target": "coloring_page",
+        "icon": "🖍",
+        "title": "Página para colorear de Halloween",
+        "desc": "Una página para imprimir y colorear con tu texto.",
+        "text": "input",
+        "fallback_text": "Feliz Halloween",
+        "params": {
+          "heading": "Feliz Halloween"
+        }
+      }
+    ],
+    "related_occasions": [
+      "navidad",
+      "san-valentin"
+    ],
+    "analytics_label": "halloween-es",
+    "seo": {
+      "owns": [
+        "letras de halloween para copiar y pegar",
+        "texto halloween"
+      ],
+      "never_targets": [
+        {
+          "query": "simbolos de halloween",
+          "owner": "/es/library/simbolos-halloween/"
+        }
+      ]
+    },
+    "capabilities": {
+      "styled_fonts": true,
+      "compositions": true,
+      "occasion_symbols": true,
+      "emoji_kaomoji": true,
+      "ascii_art": true,
+      "native_greetings": {
+        "enabled": false,
+        "reason": "No native-script greeting for this occasion: the page's language is the occasion's language."
+      },
+      "seed_phrases": true,
+      "multi_input": {
+        "enabled": false,
+        "reason": "Single-recipient occasion; a second name adds nothing to the job."
+      },
+      "intensity": true,
+      "generator_handoffs": {
+        "enabled": false,
+        "reason": "No generator owns a next step for this page's job."
+      },
+      "text_effects": true,
+      "printable_handoffs": true,
+      "classroom_activities": true,
+      "cursive_outputs": {
+        "enabled": false,
+        "reason": "No cursive sheet fits this occasion's job."
+      },
+      "coloring_banner": true,
+      "copy_share": true,
+      "related_library": true,
+      "related_answers": true,
+      "occasion_navigation": true,
+      "seo_ownership": true
+    },
+    "theme_tone": "ember",
+    "nav_label": "Noche de Brujas"
+  }
 }

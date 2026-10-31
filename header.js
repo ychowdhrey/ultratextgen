@@ -743,7 +743,10 @@
   // Delegated on document, so it also covers a card injected after load, and
   // capture:false + no preventDefault, so navigation is never delayed or
   // blocked by this. GTM's own tag then decides what to do with the event.
-  var CTA_SELECTOR = ".cta-btn, .cta-card a[href]";
+  // .event-handoff: an event page's hand-off card (js/events/eventCompose.js),
+  // a link into a printable maker or a text tool prefilled with the visitor's
+  // text. It carries data-cta-path-only, so only the path is recorded.
+  var CTA_SELECTOR = ".cta-btn, .cta-card a[href], a.event-handoff[href]";
 
   var PILLARS = ["library", "symbol", "category", "usecase", "guide",
                  "answers", "events", "printables", "updates"];
@@ -1457,12 +1460,15 @@
       var link = evt.target && evt.target.closest && evt.target.closest(CTA_SELECTOR);
       if (!link || !link.getAttribute("href")) return;
       var href = link.getAttribute("href");
+      // A link that carries the visitor's text in its query string records
+      // the destination path only: visitors type names.
+      if (link.hasAttribute("data-cta-path-only")) href = href.split(/[?#]/)[0];
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         event: "cta_click",
         cta_href: href,
         cta_destination_type: ctaDestinationType(href),
-        cta_text: (link.textContent || "").trim().slice(0, 80),
+        cta_text: ((link.querySelector(".event-handoff-title") || link).textContent || "").trim().slice(0, 80),
         cta_source_family: ctaSourceFamily(),
         cta_source_locale: detectLocale(),
         cta_source_path: window.location.pathname

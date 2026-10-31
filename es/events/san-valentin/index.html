@@ -64,7 +64,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/png">
-  <meta property="og:image:alt" content="Generador de Fuentes, Kaomoji y Mensajes para San Valentín | UltraTextGen">
+  <meta property="og:image:alt" content="Generador de Fuentes, Kaomoji y Mensajes para San Valentín">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Generador de Fuentes, Kaomoji y Mensajes para San Valentín">
   <meta name="twitter:description" content="Estiliza tu mensaje de San Valentín en vivo y copia corazones, rosas y besos en emoji, kaomoji, arte ASCII original y frases listas como Feliz San Valentín.">
@@ -94,11 +94,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   "operatingSystem": "Any",
   "description": "Escribe un nombre o mensaje y transfórmalo en fuentes cursivas elegantes; luego copia corazones, rosas, besos, kaomoji y arte ASCII, o toca una frase lista para estilizarla al instante.",
   "featureList": [
+    "Diseños de texto de San Valentín: marcos, pilas de adornos, banners y frases salpicadas alrededor de tu texto",
     "Estilos de fuente de San Valentín en vivo para cualquier texto que escribas",
     "Colección seleccionada de emojis y símbolos de San Valentín",
     "Kaomoji de San Valentín",
     "Arte ASCII seleccionado de San Valentín",
-    "Banco de frases de San Valentín con estilo al toque (escritura nativa, romanización, traducción)"
+    "Banco de frases de San Valentín con estilo al toque (escritura nativa, romanización, traducción)",
+    "Accesos a herramientas para imprimir y de texto, con tu texto ya escrito"
   ],
   "offers": {
     "@type": "Offer",
@@ -136,7 +138,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "¿Cómo uso el generador de San Valentín?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Escribe un nombre, deseo o saludo en el cuadro de arriba. Cada estilo de fuente de San Valentín se actualiza en vivo debajo — toca Copiar en cualquier tarjeta. Más abajo, toca cualquier emoji, símbolo, kaomoji o arte ASCII para copiarlo por separado, o toca una tarjeta del banco de frases para colocarla en el cuadro y verla transformada al instante."
+        "text": "Escribe un nombre o una frase corta en el cuadro de arriba. Los diseños y estilos de fuente de San Valentín se actualizan mientras escribes: toca Copiar en cualquier tarjeta, o compártela como enlace o imagen. Toca un símbolo, kaomoji o arte ASCII para copiarlo solo, o toca una frase lista para ponerla en el cuadro. Las tarjetas de “Imprímelo o llévalo más lejos” abren la herramienta correspondiente con tu texto ya escrito."
       }
     },
     {
@@ -195,7 +197,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="event-next-date" id="eventNextDate" data-event-dates="[&quot;2027-02-14&quot;, &quot;2028-02-14&quot;, &quot;2029-02-14&quot;, &quot;2030-02-14&quot;, &quot;2031-02-14&quot;, &quot;2032-02-14&quot;]" data-template="Próximo San Valentín: {date}">Próximo San Valentín: domingo, 14 de febrero de 2027</p>
       <p class="u-secondary-tight">También conocido como: Día de los Enamorados, Día del Amor y la Amistad</p>
       <div class="input-wrapper" id="eventTextWrap">
-        <textarea class="main-input" id="mainInput" placeholder="Escribe un nombre, deseo o saludo..." maxlength="500"></textarea>
+        <label class="sr-only" for="mainInput">Tu nombre o mensaje</label>
+        <textarea class="main-input" id="mainInput" placeholder="Escribe un nombre o un mensaje corto..." maxlength="500"></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
       </div>
 
@@ -205,6 +208,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <span class="accent-notice-text">Tu texto lleva tildes. Negrita, cursiva, gótica y casi todos los demás estilos conservan ahora <b>á</b>, <b>é</b> y <b>ñ</b> con su tilde. La excepción es el texto al revés: ahí las letras con tilde pasan sin voltearse y quedan derechas. <a href="/guide/fancy-fonts-and-accents/">Qué estilos conservan las tildes →</a></span>
         <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Cerrar">✕</button>
       </div>
+        <details class="event-partner" id="eventPartnerWrap"><summary>+ Añadir un segundo nombre</summary><label class="event-partner-label" for="eventPartnerInput">Segundo nombre (tu pareja, un amigo)</label><input type="text" class="event-partner-input" id="eventPartnerInput" maxlength="60" autocomplete="off" placeholder="Su nombre"></details>
     </div>
   </div>
 </section>
@@ -213,23 +217,19 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
        fetchpriority="high" alt="">
 </figure>
 
-<main class="container">
-  <section class="editorial-section">
-    <div class="editorial-block">
-      <p>San Valentín es la fecha romántica más importante del año: tarjetas, mensajes y publicaciones que giran en torno a corazones, rosas y un puñado de frases que todos usamos tarde o temprano (Feliz San Valentín, Te quiero, Eres mi persona favorita). Esta página reúne todo lo necesario para darle estilo a ese mensaje: fuentes cursivas y elegantes que puedes previsualizar con tu propio texto, los emojis de corazones y rosas que la gente realmente comparte, kaomoji para un mensaje coqueto, algunas piezas de arte ASCII originales hechas a mano, y un banco de frases listas que se transforman al instante con solo tocarlas.</p>
-    </div>
-    <div class="block-example">
-      <strong>San Valentín:</strong> cada año el 14 de febrero
-    </div>
-  </section>
+<main class="container event-page" data-occasion="san-valentin" data-event-theme="rose">
 
-  <div class="section-divider"></div>
+  <section class="editorial-section event-comp-section" id="eventCompSection" aria-labelledby="eventCompHeading">
+    <span class="article-section-label">Diseños</span>
+    <h2 id="eventCompHeading">Diseños de texto de San Valentín</h2>
 
-  <section class="editorial-section" id="eventPhraseSection">
-    <span class="article-section-label">Mensajes y Felicitaciones</span>
-    <h2>Mensajes y Felicitaciones de San Valentín</h2>
-    <p class="editorial-intro">Toca cualquier mensaje para colocarlo en el cuadro de arriba — cada fuente de abajo lo transforma al instante, listo para copiar.</p>
-    <div class="compare-grid" id="eventPhraseGrid"></div>
+    <div class="event-comp-controls"><fieldset class="event-intensity"><legend class="event-intensity-legend">Decoración</legend><label class="event-intensity-option"><input type="radio" name="eventIntensity" value="1"><span>Sencillo</span></label><label class="event-intensity-option"><input type="radio" name="eventIntensity" value="2" checked><span>Dulce</span></label><label class="event-intensity-option"><input type="radio" name="eventIntensity" value="3"><span>Extra</span></label></fieldset><button type="button" class="event-shuffle" id="eventShuffle">Otro diseño</button></div>
+    <p class="event-hint" id="eventCompHint" data-sample-template="Mostrando “{sample}”. Escribe en el cuadro de arriba y cada diseño se actualiza.">Mostrando “Lucía”. Escribe en el cuadro de arriba y cada diseño se actualiza.</p>
+    <div class="event-comp-grid" id="eventCompGrid" aria-live="polite"><!-- BEGIN prerendered event payload: generated by scripts/generate_event_page_from_spec.py, do not edit --><div class="event-comp-card" data-recipe="classic"><p class="event-comp-label">Marco de corazones</p><p class="event-comp-text" dir="auto">⋆♡⋆ ℒ𝓊𝒸𝒾́𝒶 ⋆♡⋆</p><div class="event-comp-actions"><button type="button" class="event-comp-copy" data-card="frame" data-recipe="classic" data-text="⋆♡⋆ ℒ𝓊𝒸𝒾́𝒶 ⋆♡⋆" aria-label="Copiar Marco de corazones">Copiar</button></div></div><div class="event-comp-card" data-recipe="stacked"><p class="event-comp-label">Pila de corazones</p><p class="event-comp-text" dir="auto">💕💘♡ Lucía ♡💘💕</p><div class="event-comp-actions"><button type="button" class="event-comp-copy" data-card="stack" data-recipe="stacked" data-text="💕💘♡ Lucía ♡💘💕" aria-label="Copiar Pila de corazones">Copiar</button></div></div><div class="event-comp-card" data-recipe="banner"><p class="event-comp-label">Pancarta</p><p class="event-comp-text" dir="auto">♡ ⋆ ♡ ⋆ ♡ ⋆ ♡ ⋆ ♡
+𝓛𝓾𝓬𝓲́𝓪
+♡ ⋆ ♡ ⋆ ♡ ⋆ ♡ ⋆ ♡</p><div class="event-comp-actions"><button type="button" class="event-comp-copy" data-card="banner" data-recipe="banner" data-text="♡ ⋆ ♡ ⋆ ♡ ⋆ ♡ ⋆ ♡
+𝓛𝓾𝓬𝓲́𝓪
+♡ ⋆ ♡ ⋆ ♡ ⋆ ♡ ⋆ ♡" aria-label="Copiar Pancarta">Copiar</button></div></div><div class="event-comp-card" data-recipe="interleave"><p class="event-comp-label">Corazones salpicados</p><p class="event-comp-text" dir="auto">♡ L ♡ u ♡ c ♡ í ♡ a ♡</p><div class="event-comp-actions"><button type="button" class="event-comp-copy" data-card="sprinkle" data-recipe="interleave" data-text="♡ L ♡ u ♡ c ♡ í ♡ a ♡" aria-label="Copiar Corazones salpicados">Copiar</button></div></div><!-- END prerendered event payload --></div>
   </section>
 
   <div class="section-divider"></div>
@@ -237,8 +237,18 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <section class="editorial-section" id="eventFontsSection">
     <span class="article-section-label">Fuentes</span>
     <h2>Fuentes de San Valentín</h2>
-    <p class="editorial-intro">Escribe tu texto arriba y cada estilo de abajo se actualiza en vivo. Toca Copiar en el que más te guste.</p>
-    <div class="results-grid" id="eventFontsGrid"></div>
+    <p class="editorial-intro">Cada estilo de abajo muestra tu texto. Toca Copiar en el que más te guste.</p>
+    <p class="event-hint" id="eventFontsHint" data-sample-template="Mostrando “{sample}”. Escribe tu propio texto arriba para cambiar cada tarjeta.">Mostrando “Lucía”. Escribe tu propio texto arriba para cambiar cada tarjeta.</p>
+    <div class="results-grid" id="eventFontsGrid"><!-- BEGIN prerendered event payload: generated by scripts/generate_event_page_from_spec.py, do not edit --><div class="style-card"><div class="style-info"><p class="style-name">Caligráfica</p><p class="style-preview">ℒ𝓊𝒸𝒾́𝒶</p></div><div class="style-actions"><button class="copy-btn" type="button" data-text="ℒ𝓊𝒸𝒾́𝒶" data-style="Ultra Script">Copiar</button></div></div><div class="style-card"><div class="style-info"><p class="style-name">Caligráfica Negrita</p><p class="style-preview">𝓛𝓾𝓬𝓲́𝓪</p></div><div class="style-actions"><button class="copy-btn" type="button" data-text="𝓛𝓾𝓬𝓲́𝓪" data-style="Ultra Script Bold">Copiar</button></div></div><div class="style-card"><div class="style-info"><p class="style-name">Caligráfica Elegante</p><p class="style-preview">ℒ 𝓊 𝒸 𝒾́ 𝒶</p></div><div class="style-actions"><button class="copy-btn" type="button" data-text="ℒ 𝓊 𝒸 𝒾́ 𝒶" data-style="Ultra Script Elegant">Copiar</button></div></div><div class="style-card"><div class="style-info"><p class="style-name">Caligráfica Brillante</p><p class="style-preview">⋆˚꒰ ℒ𝓊𝒸𝒾́𝒶 ꒱˚⋆</p></div><div class="style-actions"><button class="copy-btn" type="button" data-text="⋆˚꒰ ℒ𝓊𝒸𝒾́𝒶 ꒱˚⋆" data-style="Ultra Script Sparkle">Copiar</button></div></div><div class="style-card"><div class="style-info"><p class="style-name">Negrita Cursiva Serif</p><p class="style-preview">𝑳𝒖𝒄𝒊́𝒂</p></div><div class="style-actions"><button class="copy-btn" type="button" data-text="𝑳𝒖𝒄𝒊́𝒂" data-style="Ultra Bold Italic Serif">Copiar</button></div></div><div class="style-card"><div class="style-info"><p class="style-name">Linda Burbuja</p><p class="style-preview">Ⓛⓤⓒíⓐ</p></div><div class="style-actions"><button class="copy-btn" type="button" data-text="Ⓛⓤⓒíⓐ" data-style="Ultra Cute Bubble">Copiar</button></div></div><div class="style-card"><div class="style-info"><p class="style-name">Versalitas</p><p class="style-preview">ʟᴜᴄɪ́ᴀ</p></div><div class="style-actions"><button class="copy-btn" type="button" data-text="ʟᴜᴄɪ́ᴀ" data-style="Ultra Small Caps">Copiar</button></div></div><div class="style-card"><div class="style-info"><p class="style-name">Doble trazo</p><p class="style-preview">𝕃𝕦𝕔𝕚́𝕒</p></div><div class="style-actions"><button class="copy-btn" type="button" data-text="𝕃𝕦𝕔𝕚́𝕒" data-style="Ultra Double-Struck">Copiar</button></div></div><!-- END prerendered event payload --></div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="eventPhraseSection">
+    <span class="article-section-label">Empieza con una frase</span>
+    <h2>Empieza con una frase de San Valentín</h2>
+    <p class="editorial-intro">Toca una frase para ponerla en el cuadro de arriba. Los diseños y las fuentes la transforman al instante.</p>
+    <div id="eventPhraseGrid"><!-- BEGIN prerendered event payload: generated by scripts/generate_event_page_from_spec.py, do not edit --><div class="event-phrase-group"><h3 class="event-phrase-group-title">Saludos clásicos</h3><div class="event-chip-row"><button type="button" class="event-chip" data-phrase="Feliz San Valentín">Feliz San Valentín</button><button type="button" class="event-chip" data-phrase="Feliz Día de los Enamorados">Feliz Día de los Enamorados</button><button type="button" class="event-chip" data-phrase="Te quiero">Te quiero</button><button type="button" class="event-chip" data-phrase="Te amo">Te amo</button><button type="button" class="event-chip" data-phrase="¿Quieres ser mi San Valentín?">¿Quieres ser mi San Valentín?</button></div></div><div class="event-phrase-group"><h3 class="event-phrase-group-title">Respuestas</h3><div class="event-chip-row"><button type="button" class="event-chip" data-phrase="Feliz San Valentín para ti también">Feliz San Valentín para ti también</button><button type="button" class="event-chip" data-phrase="Yo te quiero más">Yo te quiero más</button></div></div><div class="event-phrase-group"><h3 class="event-phrase-group-title">Para tu pareja</h3><div class="event-chip-row"><button type="button" class="event-chip" data-phrase="Eres mi persona favorita">Eres mi persona favorita</button><button type="button" class="event-chip" data-phrase="Te sigo eligiendo">Te sigo eligiendo</button><button type="button" class="event-chip" data-phrase="Contigo hasta lo ordinario es bonito">Contigo hasta lo ordinario es bonito</button><button type="button" class="event-chip" data-phrase="Gracias por ser mi calma">Gracias por ser mi calma</button><button type="button" class="event-chip" data-phrase="Brindo por nosotros">Brindo por nosotros</button></div></div><div class="event-phrase-group"><h3 class="event-phrase-group-title">Para amigos</h3><div class="event-chip-row"><button type="button" class="event-chip" data-phrase="Feliz San Valentín a mis amigas">Feliz San Valentín a mis amigas</button><button type="button" class="event-chip" data-phrase="Te quiero, platónica pero intensamente">Te quiero, platónica pero intensamente</button><button type="button" class="event-chip" data-phrase="Eres la amistad que volvería a elegir">Eres la amistad que volvería a elegir</button></div></div><div class="event-phrase-group"><h3 class="event-phrase-group-title">Para la familia</h3><div class="event-chip-row"><button type="button" class="event-chip" data-phrase="Feliz San Valentín, mi amor">Feliz San Valentín, mi amor</button><button type="button" class="event-chip" data-phrase="Te quiero siempre">Te quiero siempre</button><button type="button" class="event-chip" data-phrase="Eres muy querido">Eres muy querido</button></div></div><div class="event-phrase-group"><h3 class="event-phrase-group-title">Frases cortas</h3><div class="event-chip-row"><button type="button" class="event-chip" data-phrase="Feliz San Valentín">Feliz San Valentín</button><button type="button" class="event-chip" data-phrase="Mi San Valentín">Mi San Valentín</button><button type="button" class="event-chip" data-phrase="Ocupada, obviamente">Ocupada, obviamente</button><button type="button" class="event-chip" data-phrase="Quererse a uno mismo también cuenta">Quererse a uno mismo también cuenta</button><button type="button" class="event-chip" data-phrase="Puro corazón">Puro corazón</button></div></div><!-- END prerendered event payload --></div>
   </section>
 
   <div class="section-divider"></div>
@@ -246,8 +256,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <section class="editorial-section" id="eventEmojiSection">
     <span class="article-section-label">Emojis y Símbolos</span>
     <h2>Corazones y Rosas para tu Mensaje</h2>
-    <p class="editorial-intro">Toca cualquier carácter para copiarlo, o copia todo un conjunto en el formato que prefieras.</p>
-    <div id="eventEmojiGrids"></div>
+    <p class="editorial-intro">Toca un símbolo para copiarlo solo, o copia un conjunto entero en el formato que quieras.</p>
+    <div class="glyph-grid event-symbol-tiles" id="eventSymbolTiles"><!-- BEGIN prerendered event payload: generated by scripts/generate_event_page_from_spec.py, do not edit --><button type="button" class="glyph-copy" data-text="❤️">❤️</button><button type="button" class="glyph-copy" data-text="🧡">🧡</button><button type="button" class="glyph-copy" data-text="💛">💛</button><button type="button" class="glyph-copy" data-text="💚">💚</button><button type="button" class="glyph-copy" data-text="💙">💙</button><button type="button" class="glyph-copy" data-text="💜">💜</button><button type="button" class="glyph-copy" data-text="🖤">🖤</button><button type="button" class="glyph-copy" data-text="🤍">🤍</button><button type="button" class="glyph-copy" data-text="💕">💕</button><button type="button" class="glyph-copy" data-text="💗">💗</button><button type="button" class="glyph-copy" data-text="💖">💖</button><button type="button" class="glyph-copy" data-text="💘">💘</button><button type="button" class="glyph-copy" data-text="🌹">🌹</button><button type="button" class="glyph-copy" data-text="💌">💌</button><button type="button" class="glyph-copy" data-text="💋">💋</button><!-- END prerendered event payload --></div>
+    <div id="eventEmojiGrids"><!-- BEGIN prerendered event payload: generated by scripts/generate_event_page_from_spec.py, do not edit --><div class="mood-explainer flag-grid-section"><h3>Corazones, Rosas y Besos</h3><div class="flag-grid-display">❤️ 🧡 💛 💚 💙 💜 🖤 🤍 💕 💗 💖 💘 🌹 💌 💋</div><div class="format-selector"><div class="format-selector-label">Formato de copia</div><div class="format-tabs"><button class="format-tab active" data-format="inline" data-group="0">En línea</button><button class="format-tab" data-format="vertical" data-group="0">En vertical</button><button class="format-tab" data-format="comma" data-group="0">Coma</button><button class="format-tab" data-format="space" data-group="0">Espacio</button><button class="format-tab" data-format="bullet" data-group="0">Viñeta</button></div></div><div class="format-preview" id="preview-0">❤️ 🧡 💛 💚 💙 💜 🖤 🤍 💕 💗 💖 💘 🌹 💌 💋</div><button class="copy-collection-btn" id="copyBtn-0" data-group="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar colección</button></div><!-- END prerendered event payload --></div>
     <p class="u-secondary-tight u-mt-15">¿Buscas la colección completa? Mira los <a href="/es/simbolos-de-corazon/">símbolos de corazón</a>: corazones Unicode, emojis de colores y adornos para copiar y pegar.</p>
   </section>
 
@@ -257,7 +268,16 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <span class="article-section-label">Kaomoji</span>
     <h2>Kaomoji de San Valentín</h2>
     <p class="editorial-intro">Cada ficha es un kaomoji completo — toca para copiar la cadena entera en un clic.</p>
-    <div class="glyph-grid" id="eventKaomojiGrid"></div>
+    <div class="glyph-grid" id="eventKaomojiGrid"><!-- BEGIN prerendered event payload: generated by scripts/generate_event_page_from_spec.py, do not edit --><button type="button" class="glyph-copy" data-text="(｡♥‿♥｡)" aria-label="Copiar Ojos de Corazón">(｡♥‿♥｡)</button><button type="button" class="glyph-copy" data-text="(♡˃͈ ᵕ ˂͈♡)" aria-label="Copiar Enamorado Sonrojado">(♡˃͈ ᵕ ˂͈♡)</button><button type="button" class="glyph-copy" data-text="♡＾▽＾♡" aria-label="Copiar Amor Alegre">♡＾▽＾♡</button><button type="button" class="glyph-copy" data-text="(´ ω `♡)" aria-label="Copiar Sonrisa Dulce">(´ ω `♡)</button><button type="button" class="glyph-copy" data-text="(´♡‿♡`)" aria-label="Copiar Adoración">(´♡‿♡`)</button><button type="button" class="glyph-copy" data-text="( ˘ ³˘)♥" aria-label="Copiar Beso">( ˘ ³˘)♥</button><button type="button" class="glyph-copy" data-text="(づ ◕‿◕ )づ" aria-label="Copiar Abrazo Cálido">(づ ◕‿◕ )づ</button><!-- END prerendered event payload --></div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="eventHandoffSection">
+    <span class="article-section-label">Conviértelo en algo</span>
+    <h2>Imprímelo o llévalo más lejos</h2>
+    <p class="editorial-intro">Cada tarjeta abre la herramienta que hace lo siguiente, con tu texto ya escrito.</p>
+    <div class="event-handoff-grid" id="eventHandoffGrid"><!-- BEGIN prerendered event payload: generated by scripts/generate_event_page_from_spec.py, do not edit --><a class="event-handoff" href="/category/text-decorator/?vibe=hearts" data-handoff="more_designs" data-cta-path-only><span class="event-handoff-icon" aria-hidden="true">✦</span><span class="event-handoff-body"><span class="event-handoff-title">Más diseños de corazones</span><span class="event-handoff-desc">Muchos más marcos de corazones para el mismo texto en el decorador de texto (en inglés).</span></span></a><a class="event-handoff" href="/es/imprimibles/nombre-en-cursiva/" data-handoff="cursive_name" data-cta-path-only><span class="event-handoff-icon" aria-hidden="true">✍</span><span class="event-handoff-body"><span class="event-handoff-title">Tu nombre en cursiva</span><span class="event-handoff-desc">Una hoja para repasar en cursiva con el nombre que escribiste.</span></span></a><a class="event-handoff" href="/printables/coloring-page-maker/?name=Feliz%20San%20Valent%C3%ADn&amp;heading=Feliz%20San%20Valent%C3%ADn" data-handoff="coloring" data-cta-path-only><span class="event-handoff-icon" aria-hidden="true">🖍</span><span class="event-handoff-body"><span class="event-handoff-title">Página para colorear de San Valentín</span><span class="event-handoff-desc">Una página para imprimir y colorear con tu texto (la herramienta está en inglés).</span></span></a><a class="event-handoff" href="/es/" data-handoff="all_fonts" data-cta-path-only><span class="event-handoff-icon" aria-hidden="true">Aa</span><span class="event-handoff-body"><span class="event-handoff-title">Todas las fuentes</span><span class="event-handoff-desc">Todos los estilos del generador principal, con tu texto.</span></span></a><!-- END prerendered event payload --></div>
   </section>
 
   <div class="section-divider"></div>
@@ -266,17 +286,56 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <span class="article-section-label">Arte ASCII</span>
     <h2>Arte ASCII de San Valentín</h2>
     <p class="editorial-intro">Piezas de varias líneas seleccionadas — toca Copiar para llevarte una con sus saltos de línea y espaciado intactos.</p>
-    <div class="art-piece-grid" id="eventAsciiGrid"></div>
+    <div class="art-piece-grid" id="eventAsciiGrid"><!-- BEGIN prerendered event payload: generated by scripts/generate_event_page_from_spec.py, do not edit --><div class="art-piece-card"><div class="art-piece-head"><span class="art-piece-label">Corazón</span><button type="button" class="art-piece-copy" data-label="Corazón" aria-label="Copiar Corazón">Copiar</button></div><div class="art-piece-body"><pre class="art-piece-pre"> __    __
+/  \  /  \
+\   \/   /
+ \      /
+  \    /
+   \  /
+    \/</pre></div></div><div class="art-piece-card"><div class="art-piece-head"><span class="art-piece-label">Dos Corazones</span><button type="button" class="art-piece-copy" data-label="Dos Corazones" aria-label="Copiar Dos Corazones">Copiar</button></div><div class="art-piece-body"><pre class="art-piece-pre"> __  __     __  __
+/  \/  \   /  \/  \
+\      /   \      /
+ \    /     \    /
+  \  /       \  /
+   \/         \/</pre></div></div><div class="art-piece-card"><div class="art-piece-head"><span class="art-piece-label">Rosa</span><button type="button" class="art-piece-copy" data-label="Rosa" aria-label="Copiar Rosa">Copiar</button></div><div class="art-piece-body"><pre class="art-piece-pre">     @
+    /=\
+   |   |
+     |
+   --+--
+     |
+    /  \</pre></div></div><div class="art-piece-card"><div class="art-piece-head"><span class="art-piece-label">Flecha de Cupido</span><button type="button" class="art-piece-copy" data-label="Flecha de Cupido" aria-label="Copiar Flecha de Cupido">Copiar</button></div><div class="art-piece-body"><pre class="art-piece-pre">        __    __
+       /  \  /  \
+======&gt;\   \/   /======&gt;
+        \      /
+         \    /
+          \  /
+           \/</pre></div></div><div class="art-piece-card"><div class="art-piece-head"><span class="art-piece-label">Carta de Amor</span><button type="button" class="art-piece-copy" data-label="Carta de Amor" aria-label="Copiar Carta de Amor">Copiar</button></div><div class="art-piece-body"><pre class="art-piece-pre"> _________________
+|\               /|
+| \             / |
+|  \    &lt;3     /  |
+|   \         /   |
+|    \       /    |
+|     \     /     |
+|______\___/______|</pre></div></div><div class="art-piece-card"><div class="art-piece-head"><span class="art-piece-label">Marca de Beso</span><button type="button" class="art-piece-copy" data-label="Marca de Beso" aria-label="Copiar Marca de Beso">Copiar</button></div><div class="art-piece-body"><pre class="art-piece-pre">  ,-"".,-"".
+ ( .. )( .. )
+  `-..-'`-..-'
+     `.__.'</pre></div></div><!-- END prerendered event payload --></div>
     <p class="u-secondary-tight u-mt-15">¿Quieres escribir tu propio nombre o mensaje en un banner de letras en bloque en vivo? Prueba el <a href="/ascii-art-generator/">Generador de Arte ASCII</a>.</p>
   </section>
 
   <div class="section-divider"></div>
 
-  <div class="cta-card">
-    <h3>Transforma texto con fuentes Unicode</h3>
-    <p>Usa UltraTextGen para convertir texto plano en negrita, cursiva y más de 100 estilos de fuente Unicode — gratis e instantáneo.</p>
-    <a href="https://ultratextgen.com/es/" class="cta-btn">Abrir UltraTextGen →</a>
-  </div>
+  <section class="editorial-section" id="eventAboutSection">
+    <span class="article-section-label">Sobre esta fecha</span>
+    <div class="editorial-block">
+      <p>San Valentín es la fecha romántica más importante del año: tarjetas, mensajes y publicaciones que giran en torno a corazones, rosas y un puñado de frases que todos usamos tarde o temprano (Feliz San Valentín, Te quiero, Eres mi persona favorita). Esta página reúne todo lo necesario para darle estilo a ese mensaje: fuentes cursivas y elegantes que puedes previsualizar con tu propio texto, los emojis de corazones y rosas que la gente realmente comparte, kaomoji para un mensaje coqueto, algunas piezas de arte ASCII originales hechas a mano, y un banco de frases listas que se transforman al instante con solo tocarlas.</p>
+    </div>
+    <div class="block-example">
+      <strong>San Valentín:</strong> cada año el 14 de febrero
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
 
   <section class="editorial-section">
     <span class="article-section-label">Recursos Relacionados</span>
@@ -307,6 +366,16 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </a>
     </div>
   </section>
+
+  <nav class="editorial-section event-nav" aria-label="Más ocasiones">
+    <span class="article-section-label">Más ocasiones</span>
+    <div class="event-nav-row">
+      <a class="event-nav-link" href="/es/events/navidad/"><span aria-hidden="true">🎄</span> Navidad</a>
+      <a class="event-nav-link" href="/es/events/halloween/"><span aria-hidden="true">🎃</span> Noche de Brujas</a>
+    </div>
+  </nav>
+
+  <section class="editorial-section event-faq" id="eventFaqSection">
     <h2 class="faq-category">Preguntas sobre San Valentín</h2>
     <div class="faq-item">
       <button class="faq-question" type="button">¿Qué es el generador de texto y símbolos de San Valentín?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
@@ -318,21 +387,23 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </div>
     <div class="faq-item">
       <button class="faq-question" type="button">¿Cómo uso el generador de San Valentín?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-      <div class="faq-answer">Escribe un nombre, deseo o saludo en el cuadro de arriba. Cada estilo de fuente de San Valentín se actualiza en vivo debajo — toca Copiar en cualquier tarjeta. Más abajo, toca cualquier emoji, símbolo, kaomoji o arte ASCII para copiarlo por separado, o toca una tarjeta del banco de frases para colocarla en el cuadro y verla transformada al instante.</div>
+      <div class="faq-answer">Escribe un nombre o una frase corta en el cuadro de arriba. Los diseños y estilos de fuente de San Valentín se actualizan mientras escribes: toca Copiar en cualquier tarjeta, o compártela como enlace o imagen. Toca un símbolo, kaomoji o arte ASCII para copiarlo solo, o toca una frase lista para ponerla en el cuadro. Las tarjetas de “Imprímelo o llévalo más lejos” abren la herramienta correspondiente con tu texto ya escrito.</div>
     </div>
     <div class="faq-item">
       <button class="faq-question" type="button">¿Dónde encuentro más frases de San Valentín y qué escribir?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
       <div class="faq-answer">Consulta <a href="https://ultratextgen.com/es/answers/que-escribir-en-una-tarjeta-de-san-valentin/">nuestra respuesta completa</a> para más saludos, traducciones e ideas de mensajes.</div>
     </div>
+  </section>
+
 </main>
 
 <footer class="footer">
-    <div class="footer-inner">
+  <div class="footer-inner">
 <!-- BEGIN static footer — generated by scripts/build-static-footer.js from footer.js. Do not edit by hand — run `npm run build:static-footer`. -->
 <div class="footer-columns"><div class="footer-col"><span class="footer-col-title">Explorar</span><a href="/es/" class="footer-link">Inicio</a><a href="/es/guide/" class="footer-link">Guías</a><a href="/es/answers/" class="footer-link">Respuestas</a><a href="/es/usecase/" class="footer-link">Usos</a><a href="/es/category/" class="footer-link">Categorías</a><a href="/es/library/" class="footer-link">Biblioteca</a><a href="/es/imprimibles/" class="footer-link">Imprimibles</a><a href="/events/" class="footer-link">Eventos</a></div><div class="footer-col"><span class="footer-col-title">Herramientas Populares</span><a href="/es/usecase/letras-para-bio/" class="footer-link">Letras para Bio</a><a href="/es/usecase/letras-para-tatuajes/" class="footer-link">Letras para Tatuajes</a><a href="/es/usecase/traductor-de-emojis/" class="footer-link">Traductor de Emojis</a><a href="/es/usecase/vertical-text/" class="footer-link">Texto Vertical</a></div><div class="footer-col"><span class="footer-col-title">Categorías Populares</span><a href="/es/letras-negritas/" class="footer-link">Letras Negritas</a><a href="/es/letra-cursiva/" class="footer-link">Letra Cursiva</a><a href="/es/letras-goticas/" class="footer-link">Letras Góticas</a><a href="/es/texto-pequeno/" class="footer-link">Texto Pequeño</a><a href="/es/letra-tachada/" class="footer-link">Letra Tachada</a></div><div class="footer-col"><span class="footer-col-title">Empresa</span><a href="/about/" class="footer-link">Sobre Nosotros</a><a href="/privacy/" class="footer-link">Política de Privacidad</a><a href="/terms/" class="footer-link">Términos de Servicio</a><a href="/contact/" class="footer-link">Contacto</a></div></div><div class="footer-social-links"><a href="https://www.youtube.com/@UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.facebook.com/profile.php?id=61588587387596" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.linkedin.com/company/71290348/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a></div><div class="footer-bottom">© 2026 UltraTextGen. Letras bonitas que funcionan en todas partes.</div>
 <!-- END static footer -->
 </div>
-  </footer>
+</footer>
 
 <!-- TOAST -->
 <div class="copy-toast" id="copyToast">¡Copiado!</div>
@@ -341,24 +412,24 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script>window.UTG_EVENT_MODE = true;</script>
 <script>window.UTG_EVENT_DATA = {
   "slug": "san-valentin",
+  "language": "es",
   "eventName": "San Valentín",
   "aliases": [
     "Día de los Enamorados",
     "Día del Amor y la Amistad"
   ],
-  "samplePhrase": "Feliz San Valentín",
+  "samplePhrase": "Lucía",
+  "analyticsLabel": "san-valentin",
   "fonts": {
     "curatedKeys": [
       "Ultra Script",
       "Ultra Script Bold",
       "Ultra Script Elegant",
-      "Ultra Script Bold Elegant",
       "Ultra Script Sparkle",
-      "Ultra Cute Script",
-      "Ultra Italic Serif",
       "Ultra Bold Italic Serif",
+      "Ultra Cute Bubble",
       "Ultra Small Caps",
-      "Ultra Cute Bubble"
+      "Ultra Double-Struck"
     ]
   },
   "emojiCollections": {
@@ -560,21 +631,199 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "group": "Frases cortas"
     }
   ],
+  "phraseDisplay": "chips",
+  "inputs": [
+    "text",
+    "partner"
+  ],
+  "compositions": {
+    "theme": {
+      "key": "valentines",
+      "label": "Valentine's",
+      "icon": "💘",
+      "pairs": [
+        [
+          "♡",
+          "♡"
+        ],
+        [
+          "❥",
+          "❥"
+        ],
+        [
+          "💕",
+          "💕"
+        ],
+        [
+          "⋆♡⋆",
+          "⋆♡⋆"
+        ],
+        [
+          "꒰",
+          "꒱♡"
+        ]
+      ],
+      "charms": [
+        "♡",
+        "💕",
+        "❥",
+        "💘",
+        "✿"
+      ],
+      "sprinkles": [
+        "♡",
+        "✧"
+      ],
+      "lines": [
+        "♡ ⋆ ♡ ⋆ ♡ ⋆ ♡ ⋆ ♡",
+        "💕 ─── 💕 ─── 💕"
+      ]
+    },
+    "cards": [
+      {
+        "id": "frame",
+        "recipe": "classic",
+        "style": "Ultra Script",
+        "label": "Marco de corazones"
+      },
+      {
+        "id": "stack",
+        "recipe": "stacked",
+        "style": null,
+        "label": "Pila de corazones"
+      },
+      {
+        "id": "banner",
+        "recipe": "banner",
+        "style": "Ultra Script Bold",
+        "label": "Pancarta"
+      },
+      {
+        "id": "sprinkle",
+        "recipe": "interleave",
+        "style": null,
+        "label": "Corazones salpicados"
+      }
+    ],
+    "intensity": {
+      "default": 2,
+      "control": true,
+      "labels": [
+        "Sencillo",
+        "Dulce",
+        "Extra"
+      ]
+    },
+    "couple": {
+      "joiner": "♡",
+      "label": "Línea de pareja",
+      "style": "Ultra Script"
+    }
+  },
+  "handoffs": [
+    {
+      "id": "more_designs",
+      "target": "text_decorator",
+      "icon": "✦",
+      "title": "Más diseños de corazones",
+      "desc": "Muchos más marcos de corazones para el mismo texto en el decorador de texto (en inglés).",
+      "text": "input",
+      "params": {
+        "vibe": "hearts"
+      },
+      "pair_template": "{text} ♡ {partner}",
+      "targetDef": {
+        "path": "/category/text-decorator/",
+        "text_param": "q",
+        "kind": "generator"
+      }
+    },
+    {
+      "id": "cursive_name",
+      "target": "cursive_name_es",
+      "icon": "✍",
+      "title": "Tu nombre en cursiva",
+      "desc": "Una hoja para repasar en cursiva con el nombre que escribiste.",
+      "text": "input",
+      "targetDef": {
+        "path": "/es/imprimibles/nombre-en-cursiva/",
+        "text_param": "name",
+        "max_len": 40,
+        "kind": "cursive"
+      }
+    },
+    {
+      "id": "coloring",
+      "target": "coloring_page",
+      "icon": "🖍",
+      "title": "Página para colorear de San Valentín",
+      "desc": "Una página para imprimir y colorear con tu texto (la herramienta está en inglés).",
+      "text": "input",
+      "fallback_text": "Feliz San Valentín",
+      "params": {
+        "heading": "Feliz San Valentín"
+      },
+      "targetDef": {
+        "path": "/printables/coloring-page-maker/",
+        "text_param": "name",
+        "kind": "coloring"
+      }
+    },
+    {
+      "id": "all_fonts",
+      "target": "general_generator_es",
+      "icon": "Aa",
+      "title": "Todas las fuentes",
+      "desc": "Todos los estilos del generador principal, con tu texto.",
+      "text": "input",
+      "targetDef": {
+        "path": "/es/",
+        "text_param": "q",
+        "kind": "generator"
+      }
+    }
+  ],
   "ui": {
-    "showingSample": "Mostrando “{sample}” — escribe tu propio nombre, deseo o saludo arriba.",
     "copyButton": "Copiar",
     "copyAriaPrefix": "Copiar ",
     "asciiArtDefaultLabel": "Arte ASCII",
-    "phraseGroupOther": "Más"
+    "phraseGroupOther": "Más",
+    "shareLabel": "Compartir",
+    "linkCopied": "Enlace copiado",
+    "copiedToast": "Copiado",
+    "multiLineNote": "Copiado. Algunas apps juntan las líneas de un banner cuando va en una biografía.",
+    "styleWords": {
+      "Bold": "Negrita",
+      "Serif": "Serif",
+      "Italic": "Cursiva",
+      "Script": "Caligráfica",
+      "Elegant": "Elegante",
+      "Sparkle": "Brillante",
+      "Cute": "Linda",
+      "Bubble": "Burbuja",
+      "Filled": "Rellena",
+      "Small": "Versalitas",
+      "Caps": "",
+      "Double-Struck": "Doble trazo",
+      "Gothic": "Gótica",
+      "Occult": "Oculta",
+      "Cross": "Cruz",
+      "Strikethrough": "Tachada",
+      "Typewriter": "Máquina de escribir",
+      "Document": ""
+    }
   }
-};</script>
+};
+window.UTG_DECORATOR_THEMES = window.UTG_EVENT_DATA.compositions ? [window.UTG_EVENT_DATA.compositions.theme] : [];</script>
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
 <script src="/js/share/share-core.js" defer></script>
 <script src="/js/saved/saved-items.js" defer></script>
 <script src="/script.js" defer></script>
-<script src="/i18n.js" defer></script>
 <script src="/accent-notice.js" defer></script>
+<script src="/i18n.js" defer></script>
+<script src="/js/decorator/decoratorEngine.js" defer></script>
+<script src="/js/events/eventCompose.js" defer></script>
 <script src="/js/events/eventPageController.js" defer></script>
 <script src="/js/events/eventDates.js" defer></script>
 <script src="/symbol-explorer.js" defer></script>
