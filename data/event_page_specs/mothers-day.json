@@ -8,7 +8,7 @@
   "hero_tagline": "Type a name or message and style it in warm, elegant fonts, then copy bouquet, tulip, and heart emoji, or tap a ready-made phrase to style it instantly. Note: the date below is the US date: Mother's Day falls on a different day in many countries.",
   "hub_card_desc": "Type a name or message and style it in warm, elegant fonts, then copy bouquet, tulip, and heart emoji, or tap a ready-made phrase to style it instantly. Note: the date above is the US date: Mother's Day falls on a different day in many countries.",
   "intro": "Mother's Day is a gratitude-and-gifting occasion built around a small set of warm, simple lines: a card, a text, a gift tag. This page gathers what people actually reach for: a handful of warm, elegant fonts you can preview on your own text, the bouquet and heart emoji people paste into a message, a few original ASCII art pieces, and a short phrase bank (Happy Mother's Day, Love You Mom, World's Best Mom, and more) that styles instantly when you tap it.",
-  "date_window": "the 2nd Sunday of May in the US and many other countries — but the date varies significantly abroad, so check your own country's date first (e.g. the UK and Ireland celebrate Mothering Sunday in March instead)",
+  "date_window": "the 2nd Sunday of May in the US and many other countries. But the date varies significantly abroad, so check your own country's date first (e.g. the UK and Ireland celebrate Mothering Sunday in March instead)",
   "sample_phrase": "Happy Mother's Day, Mom",
   "canonical": "https://ultratextgen.com/events/mothers-day/",
   "occurrence": {
@@ -99,7 +99,7 @@
     {
       "text": "Happy Mother's Day, Mum",
       "group": "Classic greetings",
-      "translation": "Swap Mum for Mom, Ma, Amma — whatever you call her."
+      "translation": "Swap Mum for Mom, Ma, Amma: whatever you call her."
     },
     {
       "text": "Wishing you a wonderful Mother's Day",
@@ -117,7 +117,7 @@
       "translation": "Plain reply between mothers."
     },
     {
-      "text": "Thank you — that means a lot",
+      "text": "Thank you, that means a lot",
       "group": "Replies",
       "translation": "Sincere reply to a Mother's Day wish."
     },
@@ -142,7 +142,7 @@
       "translation": "Quietly affectionate."
     },
     {
-      "text": "I don't say it enough — thank you",
+      "text": "I don't say it enough, thank you",
       "group": "For your mother",
       "translation": "For people who find this hard to write."
     },

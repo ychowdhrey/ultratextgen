@@ -10,7 +10,7 @@
   "hero_h1": "New Year's Eve Text & Symbol Generator",
   "hero_tagline": "Type a name or wish and style it in celebratory fonts, then copy fireworks, countdown clocks, kaomoji, and ASCII art, or tap a ready-made Happy New Year phrase to style it instantly.",
   "intro": "New Year's Eve and New Year's Day are the biggest secular turn of the calendar: the countdown to midnight, fireworks, champagne toasts, and messages wishing everyone a fresh start for the year ahead. This page gathers everything for styling that message: curated fonts you can preview on your own text, the fireworks-and-clock emoji people actually paste, kaomoji for a celebratory chat message, a few original ASCII art pieces, and a phrase bank of ready-made greetings that style instantly when you tap them.",
-  "date_window": "the night of Dec 31 into Jan 1 — the same Gregorian-calendar date every year, worldwide",
+  "date_window": "the night of Dec 31 into Jan 1, the same Gregorian-calendar date every year, worldwide",
   "sample_phrase": "Happy New Year 2027",
   "canonical": "https://ultratextgen.com/events/new-year/",
   "occurrence": {
@@ -127,7 +127,7 @@
     {
       "text": "Happy New Year 2027",
       "group": "Classic greetings",
-      "translation": "Swap the year to match — the generator restyles it either way."
+      "translation": "Swap the year to match: the generator restyles it either way."
     },
     {
       "text": "Wishing you a happy and healthy new year",
@@ -150,7 +150,7 @@
       "translation": "Plain reply."
     },
     {
-      "text": "Thank you — wishing you an even better year",
+      "text": "Thank you, wishing you an even better year",
       "group": "Replies",
       "translation": "Warmer reply that returns the wish."
     },
@@ -180,7 +180,7 @@
       "translation": "Light, funny group-chat line."
     },
     {
-      "text": "New year, same us — and that's the point",
+      "text": "New year, same us, and that's the point",
       "group": "For friends",
       "translation": "Warm, informal message for close friends."
     },
@@ -205,7 +205,7 @@
       "translation": "The standard business card line."
     },
     {
-      "text": "Thank you for your partnership this year — Happy New Year",
+      "text": "Thank you for your partnership this year. Happy New Year",
       "group": "Formal & work",
       "translation": "For clients."
     },

@@ -7,7 +7,7 @@
   "hero_h1": "Father's Day Text & Symbol Generator",
   "hero_tagline": "Type a name or message and style it in bold, rugged fonts, then copy necktie, tool, and heart emoji, kaomoji, and ASCII art, or tap a ready-made line to style it instantly.",
   "intro": "Father's Day is a lower-key occasion than the big lunar and gifting holidays: it's mostly a card, a text, or a caption, so this page stays focused instead of padded: a handful of bold, rugged font styles you can preview on your own text, the necktie, tool, and heart emoji people actually paste, a couple of warm kaomoji, a few original ASCII art pieces, and a short phrase bank of lines that style instantly when you tap them. Note: in the US, Father's Day falls on the third Sunday of June, but the date varies significantly by country, so check a local calendar before sending anything time-sensitive.",
-  "date_window": "the third Sunday of June in the US — the date varies by country, so check a local calendar",
+  "date_window": "the third Sunday of June in the US. The date varies by country",
   "sample_phrase": "Happy Father's Day, Dad",
   "canonical": "https://ultratextgen.com/events/fathers-day/",
   "occurrence": {
@@ -94,7 +94,7 @@
     {
       "text": "Happy Father's Day, Dad",
       "group": "Classic greetings",
-      "translation": "Swap Dad for Papa, Baba, Abba — whatever you call him."
+      "translation": "Swap Dad for Papa, Baba, Abba: whatever you call him."
     },
     {
       "text": "Wishing you a great Father's Day",
@@ -112,7 +112,7 @@
       "translation": "Plain reply between fathers."
     },
     {
-      "text": "Thanks — appreciate it",
+      "text": "Thanks, appreciate it",
       "group": "Replies",
       "translation": "Understated reply."
     },

@@ -10,8 +10,8 @@
   "meta_description": "Style a Chinese New Year greeting live, copy lantern and firework emoji, kaomoji and ASCII art, and ready-made phrases with native script.",
   "hero_h1": "Chinese New Year Text & Symbol Generator",
   "hero_tagline": "Type a name or wish and style it in curated festive fonts, then copy lanterns, luck characters, kaomoji, and ASCII art, or tap a ready-made greeting to style it instantly.",
-  "intro": "Chinese New Year (Lunar New Year) is the biggest gifting-and-greeting occasion on the lunar calendar — red envelopes, reunion dinners, lion dances, and messages wishing family and friends luck, health, and prosperity for the year ahead. This page gathers everything for styling that greeting: curated fonts you can preview on your own text, the lanterns-and-firecrackers emoji people actually paste, the luck characters seen on doorways and banners, kaomoji for a celebratory chat message, a handful of original ASCII art pieces, and a phrase bank of real greetings — native script, romanization, and translation — that restyle instantly when you tap them.",
-  "date_window": "on a different date each year, between late January and mid-February, set by the lunar calendar — a movable window of about 29 days",
+  "intro": "Chinese New Year (Lunar New Year) is the biggest gifting-and-greeting occasion on the lunar calendar: red envelopes, reunion dinners, lion dances, and messages wishing family and friends luck, health, and prosperity for the year ahead. This page gathers everything for styling that greeting: curated fonts you can preview on your own text, the lanterns-and-firecrackers emoji people actually paste, the luck characters seen on doorways and banners, kaomoji for a celebratory chat message, a handful of original ASCII art pieces, and a phrase bank of real greetings: native script, romanization, and translation: that restyle instantly when you tap them.",
+  "date_window": "on a different date each year, between late January and mid-February, set by the lunar calendar: a movable window of about 29 days",
   "sample_phrase": "Gong Xi Fa Cai",
   "canonical": "https://ultratextgen.com/events/chinese-new-year/",
   "native_section_heading": "Chinese New Year Greetings in Chinese Characters",
@@ -136,7 +136,7 @@
       "group": "Classic greetings",
       "native_script": "恭喜发财",
       "romanization": "Gōngxǐ fācái",
-      "translation": "Wishing you prosperity — the most recognised CNY greeting.",
+      "translation": "Wishing you prosperity: the most recognised CNY greeting.",
       "needs_native_speaker_review": true
     },
     {
@@ -144,7 +144,7 @@
       "group": "Classic greetings",
       "native_script": "新年快乐",
       "romanization": "Xīnnián kuàilè",
-      "translation": "Happy New Year — the direct, all-purpose greeting.",
+      "translation": "Happy New Year: the direct, all-purpose greeting.",
       "needs_native_speaker_review": true
     },
     {
@@ -168,7 +168,7 @@
       "group": "Classic greetings",
       "native_script": "年年有余",
       "romanization": "Niánnián yǒuyú",
-      "translation": "May you have abundance every year — the greeting behind the fish dish.",
+      "translation": "May you have abundance every year: the greeting behind the fish dish.",
       "needs_native_speaker_review": true
     },
     {
@@ -181,7 +181,7 @@
       "group": "Replies",
       "native_script": "同喜同喜",
       "romanization": "Tóngxǐ tóngxǐ",
-      "translation": "The same to you — the classic reply to Gong Xi Fa Cai.",
+      "translation": "The same to you: the classic reply to Gong Xi Fa Cai.",
       "needs_native_speaker_review": true
     },
     {
@@ -189,7 +189,7 @@
       "group": "Replies",
       "native_script": "你也一样",
       "romanization": "Nǐ yě yīyàng",
-      "translation": "You too — a simple, casual reply.",
+      "translation": "You too: a simple, casual reply.",
       "needs_native_speaker_review": true
     },
     {
@@ -202,7 +202,7 @@
       "group": "For family",
       "native_script": "身体健康",
       "romanization": "Shēntǐ jiànkāng",
-      "translation": "Wishing you good health — the standard wish for elders.",
+      "translation": "Wishing you good health: the standard wish for elders.",
       "needs_native_speaker_review": true
     },
     {
@@ -220,11 +220,11 @@
       "group": "For family",
       "native_script": "学业进步",
       "romanization": "Xuéyè jìnbù",
-      "translation": "Progress in your studies — said to students and children.",
+      "translation": "Progress in your studies: said to students and children.",
       "needs_native_speaker_review": true
     },
     {
-      "text": "Missing the reunion dinner this year — Happy New Year",
+      "text": "Missing the reunion dinner this year. Happy New Year",
       "group": "For family",
       "translation": "For family you can't travel to."
     },
@@ -234,11 +234,11 @@
       "translation": "Playful nod to hongbao."
     },
     {
-      "text": "Gong Xi Fa Cai — hongbao na lai",
+      "text": "Gong Xi Fa Cai, hongbao na lai",
       "group": "For friends",
       "native_script": "恭喜发财，红包拿来",
       "romanization": "Gōngxǐ fācái, hóngbāo ná lái",
-      "translation": "Wishing you prosperity, now hand over the red packet — the classic joke version.",
+      "translation": "Wishing you prosperity, now hand over the red packet: the classic joke version.",
       "needs_native_speaker_review": true
     },
     {
@@ -256,7 +256,7 @@
       "group": "Formal & work",
       "native_script": "生意兴隆",
       "romanization": "Shēngyì xīnglóng",
-      "translation": "May your business flourish — the standard wish to a business owner.",
+      "translation": "May your business flourish: the standard wish to a business owner.",
       "needs_native_speaker_review": true
     },
     {
@@ -264,7 +264,7 @@
       "group": "Formal & work",
       "native_script": "步步高升",
       "romanization": "Bùbù gāoshēng",
-      "translation": "May you rise step by step — a career wish for colleagues.",
+      "translation": "May you rise step by step: a career wish for colleagues.",
       "needs_native_speaker_review": true
     },
     {
@@ -287,7 +287,7 @@
       "group": "Short for a caption",
       "native_script": "新年快乐",
       "romanization": "Xīnnián kuàilè",
-      "translation": "Native-script caption — pastes anywhere.",
+      "translation": "Native-script caption: pastes anywhere.",
       "needs_native_speaker_review": true
     },
     {

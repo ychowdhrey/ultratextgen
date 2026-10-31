@@ -9,7 +9,7 @@
   "meta_description": "Style a Diwali greeting live, copy diya and firework emoji, kaomoji and ASCII art, and use ready-made phrases with native script and translation.",
   "hero_h1": "Diwali Text & Symbol Generator",
   "hero_tagline": "Type a name or wish and style it in curated festive fonts, then copy diyas, fireworks, sparklers, and kaomoji, or tap a ready-made greeting to style it instantly.",
-  "intro": "Diwali (Deepavali), the Festival of Lights, is one of the biggest gifting-and-greeting occasions of the year — rows of diyas on doorsteps, fireworks overhead, rangoli patterns underfoot, and messages wishing family and friends light, prosperity, and joy for the year ahead. This page gathers everything for styling that greeting: curated fonts you can preview on your own text, the diya-and-firework emoji people actually paste, sparkly kaomoji for a celebratory chat message, a handful of original ASCII art pieces, and a phrase bank of real greetings — native script, romanization, and translation — that restyle instantly when you tap them.",
+  "intro": "Diwali (Deepavali), the Festival of Lights, is one of the biggest gifting-and-greeting occasions of the year: rows of diyas on doorsteps, fireworks overhead, rangoli patterns underfoot, and messages wishing family and friends light, prosperity, and joy for the year ahead. This page gathers everything for styling that greeting: curated fonts you can preview on your own text, the diya-and-firework emoji people actually paste, sparkly kaomoji for a celebratory chat message, a handful of original ASCII art pieces, and a phrase bank of real greetings: native script, romanization, and translation: that restyle instantly when you tap them.",
   "date_window": "on a different date each year, in October or November, set by the Hindu lunar calendar",
   "sample_phrase": "Happy Diwali, Priya",
   "canonical": "https://ultratextgen.com/events/diwali/",
@@ -135,7 +135,7 @@
       "group": "Classic greetings",
       "native_script": "शुभ दीपावली",
       "romanization": "Śubh Dīpāvalī",
-      "translation": "Auspicious Deepavali — the most common Hindi greeting.",
+      "translation": "Auspicious Deepavali: the most common Hindi greeting.",
       "needs_native_speaker_review": true
     },
     {
@@ -143,7 +143,7 @@
       "group": "Classic greetings",
       "native_script": "दिवाली की हार्दिक शुभकामनाएं",
       "romanization": "Dīvālī kī hārdik śubhkāmnāyeṁ",
-      "translation": "Heartfelt Diwali wishes — warm and widely used.",
+      "translation": "Heartfelt Diwali wishes: warm and widely used.",
       "needs_native_speaker_review": true
     },
     {
@@ -151,7 +151,7 @@
       "group": "Classic greetings",
       "native_script": "शुभ दिवाली",
       "romanization": "Śubh Dīvālī",
-      "translation": "Auspicious Diwali — the short, everyday form.",
+      "translation": "Auspicious Diwali: the short, everyday form.",
       "needs_native_speaker_review": true
     },
     {
@@ -164,11 +164,11 @@
       "group": "Replies",
       "native_script": "आपको भी दिवाली की शुभकामनाएं",
       "romanization": "Āpko bhī Dīvālī kī śubhkāmnāyeṁ",
-      "translation": "Diwali wishes to you too — the natural reply.",
+      "translation": "Diwali wishes to you too: the natural reply.",
       "needs_native_speaker_review": true
     },
     {
-      "text": "Same to you — Happy Diwali!",
+      "text": "Same to you. Happy Diwali!",
       "group": "Replies",
       "translation": "Plain English reply."
     },
@@ -193,7 +193,7 @@
       "translation": "For the immediate family group chat."
     },
     {
-      "text": "Missing home this Diwali — Happy Diwali to all of you",
+      "text": "Missing home this Diwali. Happy Diwali to all of you",
       "group": "For family",
       "translation": "For family you can't be with."
     },
@@ -213,7 +213,7 @@
       "translation": "Playful, food-first message."
     },
     {
-      "text": "Happy Diwali — go easy on the patakhe",
+      "text": "Happy Diwali, go easy on the patakhe",
       "group": "For friends",
       "translation": "Light, teasing message about fireworks."
     },
@@ -267,7 +267,7 @@
       "group": "Short for a caption",
       "native_script": "शुभ दीपावली",
       "romanization": "Śubh Dīpāvalī",
-      "translation": "Native-script caption — pastes anywhere.",
+      "translation": "Native-script caption: pastes anywhere.",
       "needs_native_speaker_review": true
     }
   ],

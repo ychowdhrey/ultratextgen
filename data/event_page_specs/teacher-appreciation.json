@@ -12,7 +12,7 @@
   "hero_tagline": "Type a teacher's name or a thank-you message and style it in warm, elegant fonts, then copy apple, pencil, and star emoji, or tap a ready-made line to style it instantly. Note: the date below is the US date: most other countries mark a teachers' day of their own on a different day.",
   "hub_card_desc": "Type a teacher's name or a thank-you message and style it in warm, elegant fonts, then copy apple, pencil, and star emoji, or tap a ready-made line to style it instantly. Note: the date above is the US date: most other countries mark a teachers' day of their own on a different day.",
   "intro": "Teacher Appreciation Week is a thank-you occasion built around a small set of short, sincere lines: a card, a gift tag, a note in a lunchbox, a class group message. This page gathers what people actually reach for: warm, legible fonts you can preview on your own text, the apple, pencil, book and star emoji people paste around a teacher's name, a few original ASCII art pieces, and a phrase bank grouped by who is writing: a student, a parent, or a whole class. The lines that land are the specific ones, so the bank is built to be finished rather than copied: most entries leave room for a name, a subject, or the one thing that actually happened this year.",
-  "date_window": "Monday to Friday of the first full week of May in the US, with National Teacher Day on the Tuesday of that week — but this is a US date. World Teachers' Day is 5 October, Malaysia marks Hari Guru on 16 May, and Indonesia marks Hari Guru Nasional on 25 November, so check your own country's date first",
+  "date_window": "Monday to Friday of the first full week of May in the US, with National Teacher Day on the Tuesday of that week. But this is a US date. World Teachers' Day is 5 October, Malaysia marks Hari Guru on 16 May, and Indonesia marks Hari Guru Nasional on 25 November, so check your own country's date first",
   "sample_phrase": "Thank You, Ms Lee",
   "canonical": "https://ultratextgen.com/events/teacher-appreciation/",
   "occurrence": {
@@ -157,7 +157,7 @@
     {
       "text": "I actually like reading now",
       "group": "From a student",
-      "translation": "Swap in the subject that changed — this is the shape that lands."
+      "translation": "Swap in the subject that changed: this is the shape that lands."
     },
     {
       "text": "Thanks for never giving up on me",

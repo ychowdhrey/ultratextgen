@@ -11,7 +11,7 @@
   "hero_h1": "Eid Mubarak Text & Symbol Generator",
   "hero_tagline": "Type a name or wish and style it in curated fonts, then copy crescent moons, mosque and prayer emoji, kaomoji, and ASCII art, or tap a ready-made greeting to style it instantly.",
   "intro": "Eid Mubarak marks two of the biggest greeting-and-gifting occasions on the Islamic lunar calendar: Eid al-Fitr, celebrated at the end of Ramadan, and Eid al-Adha, marked during the Hajj season a couple of months later. Both are celebrated with prayer, family gatherings, sweets, and messages wishing loved ones a blessed holiday. This page gathers everything for styling that greeting: curated fonts you can preview on your own text, the crescent moon and mosque emoji people actually paste, kaomoji for a joyful chat message, a few original ASCII art pieces, and a phrase bank of real greetings (native script, romanization, and translation) that style instantly when you tap them.",
-  "date_window": "twice a year, set by the lunar Islamic (Hijri) calendar — Eid al-Fitr after Ramadan, and Eid al-Adha around two months later",
+  "date_window": "twice a year, set by the lunar Islamic (Hijri) calendar: Eid al-Fitr after Ramadan, and Eid al-Adha around two months later",
   "sample_phrase": "Eid Mubarak, Amina",
   "canonical": "https://ultratextgen.com/events/eid-mubarak/",
   "native_script_language": "Arabic",
@@ -122,7 +122,7 @@
       "group": "Classic greetings",
       "native_script": "عيد مبارك",
       "romanization": "ʿĪd Mubārak",
-      "translation": "Blessed Eid — the standard greeting, used for both Eid al-Fitr and Eid al-Adha.",
+      "translation": "Blessed Eid: the standard greeting, used for both Eid al-Fitr and Eid al-Adha.",
       "needs_native_speaker_review": true
     },
     {
@@ -130,7 +130,7 @@
       "group": "Classic greetings",
       "native_script": "عيد سعيد",
       "romanization": "ʿĪd Saʿīd",
-      "translation": "Happy Eid — slightly warmer and less formal than Eid Mubarak.",
+      "translation": "Happy Eid: slightly warmer and less formal than Eid Mubarak.",
       "needs_native_speaker_review": true
     },
     {
@@ -138,7 +138,7 @@
       "group": "Classic greetings",
       "native_script": "كل عام وأنتم بخير",
       "romanization": "Kull ʿām wa antum bi-khayr",
-      "translation": "May you be well every year — said at Eid and other yearly occasions.",
+      "translation": "May you be well every year: said at Eid and other yearly occasions.",
       "needs_native_speaker_review": true
     },
     {
@@ -160,14 +160,14 @@
     {
       "text": "Happy Eid",
       "group": "Classic greetings",
-      "translation": "The simplest English version — safe for any recipient."
+      "translation": "The simplest English version: safe for any recipient."
     },
     {
       "text": "Taqabbal Allahu minna wa minkum",
       "group": "Replies",
       "native_script": "تقبل الله منا ومنكم",
       "romanization": "Taqabbal Allāhu minnā wa minkum",
-      "translation": "May Allah accept from us and from you — the traditional reply to an Eid greeting.",
+      "translation": "May Allah accept from us and from you: the traditional reply to an Eid greeting.",
       "needs_native_speaker_review": true
     },
     {
@@ -175,7 +175,7 @@
       "group": "Replies",
       "native_script": "وأنتم بخير",
       "romanization": "Wa antum bi-khayr",
-      "translation": "And you too, be well — the natural reply to Kul aam wa antum bikhair.",
+      "translation": "And you too, be well: the natural reply to Kul aam wa antum bikhair.",
       "needs_native_speaker_review": true
     },
     {
@@ -191,7 +191,7 @@
     {
       "text": "Eid Mubarak to you and your family",
       "group": "For family",
-      "translation": "Includes the whole household — the most common card wording."
+      "translation": "Includes the whole household: the most common card wording."
     },
     {
       "text": "May this Eid bring peace and happiness to your home",
@@ -209,7 +209,7 @@
       "translation": "Swap in your own words for parents."
     },
     {
-      "text": "Missing you this Eid — Eid Mubarak",
+      "text": "Missing you this Eid. Eid Mubarak",
       "group": "For family",
       "translation": "For family abroad or away."
     },
@@ -219,7 +219,7 @@
       "translation": "Light, informal, good for a group chat."
     },
     {
-      "text": "Eid Mubarak — save me some sheer khurma",
+      "text": "Eid Mubarak, save me some sheer khurma",
       "group": "For friends",
       "translation": "Playful, food-first message between friends."
     },
@@ -239,7 +239,7 @@
       "translation": "Safe for colleagues, clients, and managers."
     },
     {
-      "text": "Eid Mubarak — wishing you peace, health, and prosperity",
+      "text": "Eid Mubarak, wishing you peace, health, and prosperity",
       "group": "Formal & work",
       "translation": "Formal card or email wording."
     },

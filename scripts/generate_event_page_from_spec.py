@@ -969,7 +969,7 @@ def render_sections(spec, caps, payload, event_data, faq_html):
             emoji = ((other.get("experience") or {}).get("compositions") or {}).get("theme", {}).get("icon", "")
             links.append(
                 f'      <a class="event-nav-link" href="{esc_attr(page_path(other))}">'
-                f'<span aria-hidden="true">{esc(emoji)}</span> {esc(other["event_name"])}</a>'
+                f'<span aria-hidden="true">{esc(emoji)}</span> {esc((other.get("experience") or {}).get("nav_label") or other["event_name"])}</a>'
             )
         hub = events_hub_href(language)
         if hub:

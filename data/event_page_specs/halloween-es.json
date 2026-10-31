@@ -346,7 +346,7 @@
           "id": "banner",
           "recipe": "banner",
           "style": "Ultra Gothic Bold",
-          "label": "Banner"
+          "label": "Pancarta"
         },
         {
           "id": "sprinkle",
@@ -465,6 +465,7 @@
       "occasion_navigation": true,
       "seo_ownership": true
     },
-    "theme_tone": "ember"
+    "theme_tone": "ember",
+    "nav_label": "Noche de Brujas"
   }
 }
