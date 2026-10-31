@@ -2,55 +2,74 @@
   "slug": "easter",
   "event_name": "Easter",
   "aliases": [],
-
   "title": "Easter Fonts, Emoji & Symbol Generator | UltraTextGen",
   "meta_description": "Style an Easter greeting live, copy bunny, egg, and chick emoji, cute kaomoji, curated ASCII art, and ready-made spring phrases and captions.",
-
   "hero_h1": "Easter Text & Symbol Generator",
-  "hero_tagline": "Type a name or spring wish and style it in cute, script, and elegant fonts, then copy bunny, egg, and chick emoji, kaomoji, and ASCII art — or tap a ready-made Easter phrase to style it instantly.",
-
-  "intro": "Easter mixes two springs into one weekend — the egg-hunt side with bunnies, chicks, and chocolate, and the church side with crosses and \"He Is Risen\" cards. This page gathers everything for styling that post or card: curated cute and elegant fonts you can preview on your own text, the bunny, egg, and chick emoji people actually paste, bunny kaomoji for a chat message, a few original ASCII art pieces, and a phrase bank of Easter lines — from a classic \"Happy Easter\" to \"He Is Risen\" — that style instantly when you tap them.",
-
+  "hero_tagline": "Type a name or spring wish and style it in cute, script, and elegant fonts, then copy bunny, egg, and chick emoji, kaomoji, and ASCII art, or tap a ready-made Easter phrase to style it instantly.",
+  "intro": "Easter mixes two springs into one weekend: the egg-hunt side with bunnies, chicks, and chocolate, and the church side with crosses and \"He Is Risen\" cards. This page gathers everything for styling that post or card: curated cute and elegant fonts you can preview on your own text, the bunny, egg, and chick emoji people actually paste, bunny kaomoji for a chat message, a few original ASCII art pieces, and a phrase bank of Easter lines, from a classic \"Happy Easter\" to \"He Is Risen\", that style instantly when you tap them.",
   "date_window": "on a Sunday between March 22 and April 25 each year (the exact date shifts with the lunar calendar)",
-
   "sample_phrase": "Happy Easter",
-
   "canonical": "https://ultratextgen.com/events/easter/",
-
-  "occurrence": {"type": "easter"},
+  "occurrence": {
+    "type": "easter"
+  },
   "fonts": {
     "curated_keys": [
-      "Ultra Cute Script",
       "Ultra Cute Bubble",
       "Ultra Script Sparkle",
       "Ultra Script Elegant",
       "Ultra Script Bold Elegant",
-      "Ultra Bubble",
       "Ultra Bubble Filled",
       "Ultra Italic Serif",
       "Ultra Small Caps",
-      "Ultra Script"
+      "Ultra Script",
+      "Ultra Script Bold"
     ]
   },
-
   "emoji_symbol_collections": [
     {
       "name": "Easter Emoji",
       "presentation_class": "emoji",
       "copy_pattern": "collection",
-      "flags": ["🐰", "🐇", "🥚", "🐣", "🐤", "🧺", "🍫", "🌷", "🌸", "✝️", "🕊", "🌈"],
+      "flags": [
+        "🐰",
+        "🐇",
+        "🥚",
+        "🐣",
+        "🐤",
+        "🧺",
+        "🍫",
+        "🌷",
+        "🌸",
+        "✝️",
+        "🕊",
+        "🌈"
+      ],
       "defaultFormat": "inline"
     }
   ],
-
   "kaomoji": [
-    { "text": "(•ㅅ•)", "label": "Little Bunny" },
-    { "text": "／(^ ᆺ ^)＼", "label": "Floppy Ears" },
-    { "text": "٩(•ㅅ•)۶", "label": "Cheering Bunny" },
-    { "text": "(ᐢ ˃ ˕ ˂ ᐢ)", "label": "Delighted Bunny" },
-    { "text": "(•ㅅ•)♡", "label": "Loving Bunny" }
+    {
+      "text": "(•ㅅ•)",
+      "label": "Little Bunny"
+    },
+    {
+      "text": "／(^ ᆺ ^)＼",
+      "label": "Floppy Ears"
+    },
+    {
+      "text": "٩(•ㅅ•)۶",
+      "label": "Cheering Bunny"
+    },
+    {
+      "text": "(ᐢ ˃ ˕ ˂ ᐢ)",
+      "label": "Delighted Bunny"
+    },
+    {
+      "text": "(•ㅅ•)♡",
+      "label": "Loving Bunny"
+    }
   ],
-
   "ascii_art": {
     "items": [
       {
@@ -79,7 +98,6 @@
       }
     ]
   },
-
   "phrase_bank": [
     {
       "text": "Happy Easter",
@@ -197,7 +215,6 @@
       "translation": "Three words, works anywhere."
     }
   ],
-
   "related": [
     {
       "href": "/library/easter-symbols/",
@@ -224,5 +241,180 @@
       "title": "ASCII Art Generator",
       "desc": "Type any word or name and turn it into big block-letter ASCII art live."
     }
-  ]
+  ],
+  "experience": {
+    "model": "curated",
+    "category": "festive",
+    "primary_job": "Grab Easter emoji and a cute styled line for a caption or card.",
+    "secondary_jobs": [
+      "Copy bunny kaomoji"
+    ],
+    "hero": "compositions",
+    "sample_text": "Happy Easter",
+    "inputs": [
+      "text"
+    ],
+    "phrase_display": "chips",
+    "sections": [
+      "compositions",
+      "fonts",
+      "symbols",
+      "kaomoji",
+      "phrases",
+      "handoffs",
+      "ascii",
+      "intro",
+      "related",
+      "nav",
+      "faq"
+    ],
+    "compositions": {
+      "theme": {
+        "key": "easter",
+        "label": "Easter",
+        "icon": "🐰",
+        "pairs": [
+          [
+            "🐰",
+            "🐰"
+          ],
+          [
+            "🌷",
+            "🌷"
+          ],
+          [
+            "🥚",
+            "🥚"
+          ],
+          [
+            "🐣",
+            "🐣"
+          ],
+          [
+            "✿",
+            "✿"
+          ]
+        ],
+        "charms": [
+          "🐰",
+          "🥚",
+          "🐣",
+          "🌷",
+          "🌸"
+        ],
+        "sprinkles": [
+          "🌸",
+          "🥚"
+        ],
+        "lines": [
+          "🌷 ⋆ 🐰 ⋆ 🌷 ⋆ 🐰 ⋆ 🌷",
+          "🥚 ─── 🐣 ─── 🥚"
+        ]
+      },
+      "cards": [
+        {
+          "id": "frame",
+          "recipe": "classic",
+          "style": "Ultra Script",
+          "label": "Bunny frame"
+        },
+        {
+          "id": "sprinkle",
+          "recipe": "interleave",
+          "style": null,
+          "label": "Spring caption"
+        }
+      ],
+      "intensity": {
+        "default": 2,
+        "control": false,
+        "labels": [
+          "Simple",
+          "Festive",
+          "Extra"
+        ]
+      }
+    },
+    "handoffs": [
+      {
+        "id": "more_designs",
+        "target": "text_decorator",
+        "icon": "✦",
+        "title": "More flower designs",
+        "desc": "Flower frames for the same text in the text decorator.",
+        "text": "input",
+        "params": {
+          "vibe": "flowers"
+        }
+      }
+    ],
+    "related_occasions": [
+      "mothers-day",
+      "st-patricks-day",
+      "valentines-day"
+    ],
+    "analytics_label": "easter",
+    "seo": {
+      "owns": [
+        "easter font",
+        "text easter"
+      ],
+      "never_targets": [
+        {
+          "query": "easter emojis",
+          "owner": "/library/easter-symbols/"
+        }
+      ]
+    },
+    "capabilities": {
+      "styled_fonts": true,
+      "compositions": true,
+      "occasion_symbols": true,
+      "emoji_kaomoji": true,
+      "ascii_art": true,
+      "native_greetings": {
+        "enabled": false,
+        "reason": "No native-script greeting for this occasion: the page's language is the occasion's language."
+      },
+      "seed_phrases": true,
+      "multi_input": {
+        "enabled": false,
+        "reason": "Single-recipient occasion; a second name adds nothing to the job."
+      },
+      "intensity": {
+        "enabled": false,
+        "reason": "Curated page: two fixed compositions, no controls (blueprint model C)."
+      },
+      "generator_handoffs": true,
+      "text_effects": {
+        "enabled": false,
+        "reason": "Creepy/zalgo text has no job on this occasion; it is Halloween's."
+      },
+      "printable_handoffs": {
+        "enabled": false,
+        "reason": "No printable maker serves this occasion's job yet."
+      },
+      "classroom_activities": {
+        "enabled": false,
+        "reason": "No word list or classroom job for this occasion."
+      },
+      "cursive_outputs": {
+        "enabled": false,
+        "reason": "No cursive sheet fits this occasion's job."
+      },
+      "coloring_banner": {
+        "enabled": false,
+        "reason": "No coloring page or banner fits this occasion's job."
+      },
+      "copy_share": true,
+      "related_library": true,
+      "related_answers": {
+        "enabled": false,
+        "reason": "No answers/ companion exists for this occasion."
+      },
+      "occasion_navigation": true,
+      "seo_ownership": true
+    },
+    "theme_tone": "spring"
+  }
 }

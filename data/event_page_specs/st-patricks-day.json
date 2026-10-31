@@ -9,8 +9,8 @@
   "title": "St Patrick's Day Fonts, Symbols & Irish Sayings | UltraTextGen",
   "meta_description": "Style a St Patrick's Day message live, copy shamrock, clover and rainbow emoji, Celtic symbols and ASCII art, and ready-made Irish blessings.",
   "hero_h1": "St Patrick's Day Text & Symbol Generator",
-  "hero_tagline": "Type a name or toast and style it in Celtic, gothic, and bold fonts, then copy shamrock, clover, and rainbow emoji, kaomoji, and ASCII art — or tap a ready-made Irish blessing to style it instantly.",
-  "intro": "St Patrick's Day runs on a small, well-worn set of words: a blessing, a toast, and a joke about being pinched for not wearing green. This page gathers everything for styling them: curated Celtic-leaning and bold fonts you can preview on your own text, the shamrock, clover, and rainbow emoji people actually paste, Celtic knot and cross symbols, kaomoji, a few original ASCII art pieces, and a bank of Irish blessings, toasts, and captions — from the full \"May the road rise up to meet you\" to a two-word story caption.",
+  "hero_tagline": "Type a name or toast and style it in Celtic, gothic, and bold fonts, then copy shamrock, clover, and rainbow emoji, kaomoji, and ASCII art, or tap a ready-made Irish blessing to style it instantly.",
+  "intro": "St Patrick's Day runs on a small, well-worn set of words: a blessing, a toast, and a joke about being pinched for not wearing green. This page gathers everything for styling them: curated Celtic-leaning and bold fonts you can preview on your own text, the shamrock, clover, and rainbow emoji people actually paste, Celtic knot and cross symbols, kaomoji, a few original ASCII art pieces, and a bank of Irish blessings, toasts, and captions, from the full \"May the road rise up to meet you\" to a two-word story caption.",
   "date_window": "March 17 every year",
   "hub_card_desc": "Style a St Patrick's Day toast live, then copy matching fonts, symbols, kaomoji, and ready-made blessings.",
   "sample_phrase": "Happy St Patrick's Day",
@@ -30,7 +30,7 @@
       "Ultra Small Caps",
       "Ultra Double-Struck",
       "Ultra Bold",
-      "Ultra Gothic Script",
+      "Ultra Gothic Underline",
       "Ultra Squared"
     ],
     "min_count": 8
@@ -292,5 +292,162 @@
       "title": "ASCII Art Generator",
       "desc": "Turn any word or name into a live block-letter banner."
     }
-  ]
+  ],
+  "experience": {
+    "model": "curated",
+    "category": "cultural",
+    "primary_job": "Grab a shamrock-framed styled line and St Patrick's Day emoji.",
+    "secondary_jobs": [],
+    "hero": "compositions",
+    "sample_text": "Happy St Patrick's Day",
+    "inputs": [
+      "text"
+    ],
+    "phrase_display": "chips",
+    "sections": [
+      "compositions",
+      "fonts",
+      "symbols",
+      "kaomoji",
+      "phrases",
+      "ascii",
+      "intro",
+      "related",
+      "nav",
+      "faq"
+    ],
+    "compositions": {
+      "theme": {
+        "key": "st-patricks-day",
+        "label": "St Patrick's Day",
+        "icon": "🍀",
+        "pairs": [
+          [
+            "☘",
+            "☘"
+          ],
+          [
+            "🍀",
+            "🍀"
+          ],
+          [
+            "🌈",
+            "🌈"
+          ],
+          [
+            "✦",
+            "✦"
+          ]
+        ],
+        "charms": [
+          "☘",
+          "🍀",
+          "🌈",
+          "💚"
+        ],
+        "sprinkles": [
+          "☘",
+          "🍀"
+        ],
+        "lines": [
+          "☘ ⋆ 🍀 ⋆ ☘ ⋆ 🍀 ⋆ ☘",
+          "🌈 ─── 🍀 ─── 🌈"
+        ]
+      },
+      "cards": [
+        {
+          "id": "frame",
+          "recipe": "classic",
+          "style": "Ultra Gothic Bold",
+          "label": "Shamrock frame"
+        },
+        {
+          "id": "sprinkle",
+          "recipe": "interleave",
+          "style": null,
+          "label": "Clover caption"
+        }
+      ],
+      "intensity": {
+        "default": 2,
+        "control": false,
+        "labels": [
+          "Simple",
+          "Festive",
+          "Extra"
+        ]
+      }
+    },
+    "handoffs": [],
+    "related_occasions": [
+      "easter",
+      "valentines-day",
+      "july-4th"
+    ],
+    "analytics_label": "st-patricks-day",
+    "seo": {
+      "owns": [
+        "st patricks day font"
+      ],
+      "never_targets": [
+        {
+          "query": "st patricks day",
+          "owner": "calendar demand UTG does not serve"
+        }
+      ]
+    },
+    "capabilities": {
+      "styled_fonts": true,
+      "compositions": true,
+      "occasion_symbols": true,
+      "emoji_kaomoji": true,
+      "ascii_art": true,
+      "native_greetings": {
+        "enabled": false,
+        "reason": "No native-script greeting for this occasion: the page's language is the occasion's language."
+      },
+      "seed_phrases": true,
+      "multi_input": {
+        "enabled": false,
+        "reason": "Single-recipient occasion; a second name adds nothing to the job."
+      },
+      "intensity": {
+        "enabled": false,
+        "reason": "Curated page: two fixed compositions, no controls (blueprint model C)."
+      },
+      "generator_handoffs": {
+        "enabled": false,
+        "reason": "No generator owns a next step for this page's job."
+      },
+      "text_effects": {
+        "enabled": false,
+        "reason": "Creepy/zalgo text has no job on this occasion; it is Halloween's."
+      },
+      "printable_handoffs": {
+        "enabled": false,
+        "reason": "No printable maker serves this occasion's job yet."
+      },
+      "classroom_activities": {
+        "enabled": false,
+        "reason": "No word list or classroom job for this occasion."
+      },
+      "cursive_outputs": {
+        "enabled": false,
+        "reason": "No cursive sheet fits this occasion's job."
+      },
+      "coloring_banner": {
+        "enabled": false,
+        "reason": "No coloring page or banner fits this occasion's job."
+      },
+      "copy_share": true,
+      "related_library": true,
+      "related_answers": {
+        "enabled": false,
+        "reason": "No answers/ companion exists for this occasion."
+      },
+      "occasion_navigation": true,
+      "seo_ownership": true
+    },
+    "theme_tone": "pine"
+  }
 }

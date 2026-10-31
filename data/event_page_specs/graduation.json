@@ -9,8 +9,8 @@
   "title": "Graduation Fonts, Symbols & Congratulations Messages | UltraTextGen",
   "meta_description": "Style a graduation caption live, copy cap, scroll and star emoji, kaomoji and ASCII art, and use ready-made congratulations messages for cards.",
   "hero_h1": "Graduation Text & Symbol Generator",
-  "hero_tagline": "Type a name or class year and style it in elegant script and bold fonts, then copy graduation cap, scroll, and star emoji, kaomoji, and ASCII art — or tap a ready-made congratulations message to style it instantly.",
-  "intro": "Graduation is the one occasion here that isn't a date on a calendar — it happens when it happens, and the words have to carry a name, a year, and a degree. That shapes what this page is for: styling \"Class of 2027\", a full name for an announcement, or a congratulations message for a card. It gathers curated script and bold fonts you can preview on your own text, the cap, scroll, and star emoji people actually paste, kaomoji, a few original ASCII art pieces, and a bank of congratulations messages — for your own child, a friend, a student, or a colleague.",
+  "hero_tagline": "Type a name or class year and style it in elegant script and bold fonts, then copy graduation cap, scroll, and star emoji, kaomoji, and ASCII art, or tap a ready-made congratulations message to style it instantly.",
+  "intro": "Graduation is the one occasion here that isn't a date on a calendar: it happens when it happens, and the words have to carry a name, a year, and a degree. That shapes what this page is for: styling \"Class of 2027\", a full name for an announcement, or a congratulations message for a card. It gathers curated script and bold fonts you can preview on your own text, the cap, scroll, and star emoji people actually paste, kaomoji, a few original ASCII art pieces, and a bank of congratulations messages: for your own child, a friend, a student, or a colleague.",
   "date_window": "in spring and early summer in most countries, though ceremonies run year-round",
   "hub_card_desc": "Style a graduation caption or name live, then copy matching fonts, emoji, kaomoji, and ready-made congratulations.",
   "sample_phrase": "Class of 2027",
@@ -279,5 +279,192 @@
       "title": "Stylish Name Generator",
       "desc": "Style any name in dozens of Unicode fonts."
     }
-  ]
+  ],
+  "experience": {
+    "model": "hybrid",
+    "category": "school",
+    "primary_job": "Style \"Class of 2027\" and the graduate's name for a caption or banner.",
+    "secondary_jobs": [
+      "Print a congratulations banner",
+      "Copy graduation symbols"
+    ],
+    "hero": "compositions",
+    "sample_text": "Class of 2027",
+    "inputs": [
+      "text"
+    ],
+    "phrase_display": "chips",
+    "sections": [
+      "compositions",
+      "handoffs",
+      "fonts",
+      "symbols",
+      "phrases",
+      "kaomoji",
+      "ascii",
+      "intro",
+      "related",
+      "nav",
+      "faq"
+    ],
+    "compositions": {
+      "theme": {
+        "key": "graduation",
+        "label": "Graduation",
+        "icon": "🎓",
+        "pairs": [
+          [
+            "🎓",
+            "🎓"
+          ],
+          [
+            "✨",
+            "✨"
+          ],
+          [
+            "🎉",
+            "🎉"
+          ],
+          [
+            "★",
+            "★"
+          ]
+        ],
+        "charms": [
+          "🎓",
+          "🎉",
+          "✨",
+          "📜",
+          "🏆"
+        ],
+        "sprinkles": [
+          "✨",
+          "🎓"
+        ],
+        "lines": [
+          "🎓 ⋆ ✨ ⋆ 🎓 ⋆ ✨ ⋆ 🎓",
+          "🎉 ─── 🎓 ─── 🎉"
+        ]
+      },
+      "cards": [
+        {
+          "id": "frame",
+          "recipe": "classic",
+          "style": "Ultra Script Bold",
+          "label": "Cap frame"
+        },
+        {
+          "id": "stack",
+          "recipe": "stacked",
+          "style": null,
+          "label": "Celebration stack"
+        },
+        {
+          "id": "banner",
+          "recipe": "banner",
+          "style": "Ultra Bold Serif",
+          "label": "Banner"
+        },
+        {
+          "id": "sprinkle",
+          "recipe": "interleave",
+          "style": null,
+          "label": "Confetti caption"
+        }
+      ],
+      "intensity": {
+        "default": 2,
+        "control": true,
+        "labels": [
+          "Simple",
+          "Festive",
+          "Extra"
+        ]
+      }
+    },
+    "handoffs": [
+      {
+        "id": "banner",
+        "target": "banner",
+        "icon": "🎏",
+        "title": "Congratulations banner",
+        "desc": "Printable pennant letters with the graduate's name.",
+        "text": "input",
+        "text_template": "CONGRATS {text}",
+        "upper": true,
+        "fallback_text": "CONGRATS GRAD"
+      },
+      {
+        "id": "cursive_name",
+        "target": "cursive_name",
+        "icon": "✍",
+        "title": "The name in cursive",
+        "desc": "A printable cursive sheet with the name you typed.",
+        "text": "input"
+      },
+      {
+        "id": "more_designs",
+        "target": "text_decorator",
+        "icon": "✦",
+        "title": "More designs",
+        "desc": "More frames for the same text in the text decorator.",
+        "text": "input",
+        "params": {
+          "dsym": "🎓"
+        }
+      }
+    ],
+    "related_occasions": [
+      "teacher-appreciation",
+      "fathers-day",
+      "mothers-day"
+    ],
+    "analytics_label": "graduation",
+    "seo": {
+      "owns": [
+        "graduation font copy and paste",
+        "graduation text",
+        "graduation symbols"
+      ],
+      "never_targets": []
+    },
+    "capabilities": {
+      "styled_fonts": true,
+      "compositions": true,
+      "occasion_symbols": true,
+      "emoji_kaomoji": true,
+      "ascii_art": true,
+      "native_greetings": {
+        "enabled": false,
+        "reason": "No native-script greeting for this occasion: the page's language is the occasion's language."
+      },
+      "seed_phrases": true,
+      "multi_input": {
+        "enabled": false,
+        "reason": "Single-recipient occasion; a second name adds nothing to the job."
+      },
+      "intensity": true,
+      "generator_handoffs": true,
+      "text_effects": {
+        "enabled": false,
+        "reason": "Creepy/zalgo text has no job on this occasion; it is Halloween's."
+      },
+      "printable_handoffs": true,
+      "classroom_activities": {
+        "enabled": false,
+        "reason": "No word list or classroom job for this occasion."
+      },
+      "cursive_outputs": true,
+      "coloring_banner": true,
+      "copy_share": true,
+      "related_library": true,
+      "related_answers": {
+        "enabled": false,
+        "reason": "No answers/ companion exists for this occasion."
+      },
+      "occasion_navigation": true,
+      "seo_ownership": true
+    },
+    "theme_tone": "sky"
+  }
 }

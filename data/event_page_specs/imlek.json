@@ -131,60 +131,114 @@
   },
   "phrase_bank": [
     {
-      "text": "Selamat Tahun Baru Imlek",
-      "native_script": "Selamat Tahun Baru Imlek",
-      "romanization": "Selamat Tahun Baru Imlek",
-      "translation": "Ucapan paling umum dan aman — cocok untuk kartu, pesan, atau status apa pun.",
-      "needs_native_speaker_review": true
-    },
-    {
       "text": "Gong Xi Fa Cai",
       "native_script": "恭喜发财",
       "romanization": "Gong Xi Fa Cai",
-      "translation": "Ucapan Imlek paling ikonik di Indonesia — doa semoga makin sejahtera dan banyak rezeki.",
+      "translation": "Ucapan Imlek paling ikonik di Indonesia: doa semoga makin sejahtera dan banyak rezeki.",
+      "group": "Ucapan klasik",
       "needs_native_speaker_review": true
     },
     {
       "text": "Xin Nian Kuai Le",
       "native_script": "新年快乐",
       "romanization": "Xin Nian Kuai Le",
-      "translation": "\"Selamat Tahun Baru\" dalam bahasa Mandarin, juga sering dipakai saat perayaan Imlek.",
+      "translation": "\"Selamat Tahun Baru\" dalam bahasa Mandarin, juga sering dipakai saat Imlek.",
+      "group": "Ucapan klasik",
       "needs_native_speaker_review": true
+    },
+    {
+      "text": "Gong Hey Fat Choy",
+      "native_script": "恭喜發財",
+      "romanization": "Gong Hey Fat Choy",
+      "translation": "Pelafalan Kanton dari Gong Xi Fa Cai, dalam aksara tradisional.",
+      "group": "Ucapan klasik",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Wan Shi Ru Yi",
+      "native_script": "万事如意",
+      "romanization": "Wan Shi Ru Yi",
+      "translation": "Semoga semua urusan berjalan sesuai harapan.",
+      "group": "Ucapan klasik",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Nian Nian You Yu",
+      "native_script": "年年有余",
+      "romanization": "Nian Nian You Yu",
+      "translation": "Semoga berlimpah setiap tahun, doa di balik hidangan ikan.",
+      "group": "Ucapan klasik",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Shen Ti Jian Kang",
+      "native_script": "身体健康",
+      "romanization": "Shen Ti Jian Kang",
+      "translation": "Semoga sehat selalu, ucapan baku untuk orang tua.",
+      "group": "Untuk keluarga",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Xue Ye Jin Bu",
+      "native_script": "学业进步",
+      "romanization": "Xue Ye Jin Bu",
+      "translation": "Semoga makin maju belajarnya, untuk pelajar dan anak-anak.",
+      "group": "Untuk keluarga",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Sheng Yi Xing Long",
+      "native_script": "生意兴隆",
+      "romanization": "Sheng Yi Xing Long",
+      "translation": "Semoga usahanya makin laris, untuk pemilik usaha.",
+      "group": "Untuk kerja & usaha",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Bu Bu Gao Sheng",
+      "native_script": "步步高升",
+      "romanization": "Bu Bu Gao Sheng",
+      "translation": "Semoga kariernya terus naik, untuk rekan kerja.",
+      "group": "Untuk kerja & usaha",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Tong Xi Tong Xi",
+      "native_script": "同喜同喜",
+      "romanization": "Tong Xi Tong Xi",
+      "translation": "Sama-sama, balasan klasik untuk Gong Xi Fa Cai.",
+      "group": "Balasan",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Selamat Tahun Baru Imlek",
+      "translation": "Ucapan paling umum dan aman, cocok untuk kartu, pesan, atau status apa pun.",
+      "group": "Dalam bahasa Indonesia"
     },
     {
       "text": "Semoga Hoki Selalu Menyertaimu",
-      "native_script": "Semoga Hoki Selalu Menyertaimu",
-      "romanization": "Semoga Hoki Selalu Menyertaimu",
-      "translation": "\"Hoki\" berarti keberuntungan — ucapan santai buat teman dan orang terdekat.",
-      "needs_native_speaker_review": true
+      "translation": "\"Hoki\" berarti keberuntungan, ucapan santai buat teman dan orang terdekat.",
+      "group": "Dalam bahasa Indonesia"
     },
     {
       "text": "Semoga Rezeki Melimpah di Tahun Baru Ini",
-      "native_script": "Semoga Rezeki Melimpah di Tahun Baru Ini",
-      "romanization": "Semoga Rezeki Melimpah di Tahun Baru Ini",
       "translation": "Doa klasik untuk kelancaran rezeki sepanjang tahun yang baru.",
-      "needs_native_speaker_review": true
+      "group": "Dalam bahasa Indonesia"
     },
     {
       "text": "Sehat dan Bahagia Selalu",
-      "native_script": "Sehat dan Bahagia Selalu",
-      "romanization": "Sehat dan Bahagia Selalu",
-      "translation": "Ucapan hangat untuk orang tua dan keluarga — menekankan kesehatan.",
-      "needs_native_speaker_review": true
+      "translation": "Ucapan hangat untuk orang tua dan keluarga, menekankan kesehatan.",
+      "group": "Dalam bahasa Indonesia"
     },
     {
       "text": "Semoga Sukses dan Panjang Umur",
-      "native_script": "Semoga Sukses dan Panjang Umur",
-      "romanization": "Semoga Sukses dan Panjang Umur",
       "translation": "Pas untuk menghormati yang lebih tua saat berkunjung dan bersalaman.",
-      "needs_native_speaker_review": true
+      "group": "Dalam bahasa Indonesia"
     },
     {
       "text": "Semoga Tahun Baru Ini Penuh Berkah",
-      "native_script": "Semoga Tahun Baru Ini Penuh Berkah",
-      "romanization": "Semoga Tahun Baru Ini Penuh Berkah",
       "translation": "Penutup yang manis untuk kartu ucapan atau pesan panjang.",
-      "needs_native_speaker_review": true
+      "group": "Dalam bahasa Indonesia"
     }
   ],
   "companion_answer_slug": "kata-kata-ucapan-imlek",
@@ -217,5 +271,185 @@
     "calendar_name": "penanggalan lunisolar Tionghoa"
   },
   "hub_card_title": "Generator Teks & Simbol Imlek",
-  "hub_card_desc": "Percantik ucapan Imlek-mu, lalu salin emoji lampion dan angpau, kaomoji, dan frasa siap pakai."
+  "hub_card_desc": "Percantik ucapan Imlek-mu, lalu salin emoji lampion dan angpau, kaomoji, dan frasa siap pakai.",
+  "experience": {
+    "model": "hybrid",
+    "category": "cultural",
+    "primary_job": "Menyalin ucapan Imlek dalam aksara Mandarin yang benar, plus baris bergaya untuk status atau caption.",
+    "secondary_jobs": [
+      "Menghias nama dengan simbol merah dan emas",
+      "Menyalin simbol dan kaomoji Imlek"
+    ],
+    "hero": "native",
+    "sample_text": "Gong Xi Fa Cai",
+    "inputs": [
+      "text"
+    ],
+    "phrase_display": "chips",
+    "sections": [
+      "native",
+      "compositions",
+      "fonts",
+      "symbols",
+      "phrases",
+      "kaomoji",
+      "handoffs",
+      "ascii",
+      "intro",
+      "related",
+      "nav",
+      "faq"
+    ],
+    "compositions": {
+      "theme": {
+        "key": "lunar-new-year",
+        "label": "Lunar New Year",
+        "icon": "🧧",
+        "pairs": [
+          [
+            "🧧",
+            "🧧"
+          ],
+          [
+            "🏮",
+            "🏮"
+          ],
+          [
+            "🧨",
+            "🧨"
+          ],
+          [
+            "福",
+            "福"
+          ],
+          [
+            "✦",
+            "✦"
+          ]
+        ],
+        "charms": [
+          "🧧",
+          "🏮",
+          "🧨",
+          "🐉",
+          "✨",
+          "🍊",
+          "🐐"
+        ],
+        "sprinkles": [
+          "✨",
+          "🧧"
+        ],
+        "lines": [
+          "🏮 ⋆ 🧧 ⋆ 🏮 ⋆ 🧧 ⋆ 🏮",
+          "🧨 ─── 福 ─── 🧨"
+        ]
+      },
+      "cards": [
+        {
+          "id": "frame",
+          "recipe": "classic",
+          "style": "Ultra Bold",
+          "label": "Bingkai angpao"
+        },
+        {
+          "id": "stack",
+          "recipe": "stacked",
+          "style": null,
+          "label": "Tumpukan lampion"
+        },
+        {
+          "id": "banner",
+          "recipe": "banner",
+          "style": "Ultra Bold Serif",
+          "label": "Banner"
+        },
+        {
+          "id": "sprinkle",
+          "recipe": "interleave",
+          "style": null,
+          "label": "Caption petasan"
+        }
+      ],
+      "intensity": {
+        "default": 2,
+        "control": true,
+        "labels": [
+          "Simpel",
+          "Meriah",
+          "Ekstra"
+        ]
+      }
+    },
+    "handoffs": [
+      {
+        "id": "all_fonts",
+        "target": "general_generator_id",
+        "icon": "Aa",
+        "title": "Semua font",
+        "desc": "Semua gaya di generator utama, dengan teksmu.",
+        "text": "input"
+      }
+    ],
+    "related_occasions": [
+      "chinese-new-year"
+    ],
+    "analytics_label": "imlek",
+    "seo": {
+      "owns": [
+        "tulisan imlek",
+        "font imlek",
+        "gong xi fa cai tulisan"
+      ],
+      "never_targets": [
+        {
+          "query": "kata-kata ucapan imlek",
+          "owner": "/id/answers/kata-kata-ucapan-imlek/"
+        }
+      ]
+    },
+    "capabilities": {
+      "styled_fonts": true,
+      "compositions": true,
+      "occasion_symbols": true,
+      "emoji_kaomoji": true,
+      "ascii_art": true,
+      "native_greetings": true,
+      "seed_phrases": true,
+      "multi_input": {
+        "enabled": false,
+        "reason": "Single-recipient occasion; a second name adds nothing to the job."
+      },
+      "intensity": true,
+      "generator_handoffs": true,
+      "text_effects": {
+        "enabled": false,
+        "reason": "Creepy/zalgo text has no job on this occasion; it is Halloween's."
+      },
+      "printable_handoffs": {
+        "enabled": false,
+        "reason": "No printable maker serves this occasion's job yet."
+      },
+      "classroom_activities": {
+        "enabled": false,
+        "reason": "No word list or classroom job for this occasion."
+      },
+      "cursive_outputs": {
+        "enabled": false,
+        "reason": "No cursive sheet fits this occasion's job."
+      },
+      "coloring_banner": {
+        "enabled": false,
+        "reason": "No coloring page or banner fits this occasion's job."
+      },
+      "copy_share": true,
+      "related_library": true,
+      "related_answers": true,
+      "occasion_navigation": true,
+      "seo_ownership": true
+    },
+    "theme_tone": "lacquer"
+  },
+  "native_script_language": "aksara Mandarin",
+  "native_section_heading": "Ucapan Imlek dalam aksara Mandarin"
 }

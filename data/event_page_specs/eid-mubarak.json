@@ -1,24 +1,26 @@
 {
   "slug": "eid-mubarak",
   "event_name": "Eid Mubarak",
-  "aliases": ["Eid al-Fitr", "Eid al-Adha", "Eid Mubarak"],
-
+  "aliases": [
+    "Eid al-Fitr",
+    "Eid al-Adha",
+    "Eid Mubarak"
+  ],
   "title": "Eid Mubarak Fonts, Symbols & Kaomoji Generator | UltraTextGen",
   "meta_description": "Style an Eid Mubarak greeting live, copy crescent moon and mosque emoji, kaomoji and ASCII art, and ready-made phrases with romanization.",
-
   "hero_h1": "Eid Mubarak Text & Symbol Generator",
   "hero_tagline": "Type a name or wish and style it in curated fonts, then copy crescent moons, mosque and prayer emoji, kaomoji, and ASCII art, or tap a ready-made greeting to style it instantly.",
-
-  "intro": "Eid Mubarak marks two of the biggest greeting-and-gifting occasions on the Islamic lunar calendar: Eid al-Fitr, celebrated at the end of Ramadan, and Eid al-Adha, marked during the Hajj season a couple of months later. Both are celebrated with prayer, family gatherings, sweets, and messages wishing loved ones a blessed holiday. This page gathers everything for styling that greeting: curated fonts you can preview on your own text, the crescent moon and mosque emoji people actually paste, kaomoji for a joyful chat message, a few original ASCII art pieces, and a phrase bank of real greetings — native script, romanization, and translation — that style instantly when you tap them.",
-
+  "intro": "Eid Mubarak marks two of the biggest greeting-and-gifting occasions on the Islamic lunar calendar: Eid al-Fitr, celebrated at the end of Ramadan, and Eid al-Adha, marked during the Hajj season a couple of months later. Both are celebrated with prayer, family gatherings, sweets, and messages wishing loved ones a blessed holiday. This page gathers everything for styling that greeting: curated fonts you can preview on your own text, the crescent moon and mosque emoji people actually paste, kaomoji for a joyful chat message, a few original ASCII art pieces, and a phrase bank of real greetings (native script, romanization, and translation) that style instantly when you tap them.",
   "date_window": "twice a year, set by the lunar Islamic (Hijri) calendar — Eid al-Fitr after Ramadan, and Eid al-Adha around two months later",
-
-  "sample_phrase": "Eid Mubarak",
-
+  "sample_phrase": "Eid Mubarak, Amina",
   "canonical": "https://ultratextgen.com/events/eid-mubarak/",
-
   "native_script_language": "Arabic",
-  "occurrence": {"type": "islamic", "month": 10, "day": 1, "calendar_name": "the Hijri (Islamic lunar) calendar"},
+  "occurrence": {
+    "type": "islamic",
+    "month": 10,
+    "day": 1,
+    "calendar_name": "the Hijri (Islamic lunar) calendar"
+  },
   "fonts": {
     "curated_keys": [
       "Ultra Script",
@@ -26,33 +28,62 @@
       "Ultra Script Elegant",
       "Ultra Script Bold Elegant",
       "Ultra Script Sparkle",
-      "Ultra Cute Script",
+      "Ultra Bold Serif",
       "Ultra Bold Italic Serif",
       "Ultra Italic Serif",
       "Ultra Small Caps",
       "Ultra Bubble"
     ]
   },
-
   "emoji_symbol_collections": [
     {
       "name": "Eid Emoji & Symbols",
       "presentation_class": "emoji",
       "copy_pattern": "collection",
-      "flags": ["🌙", "🕌", "🤲", "🙏", "✨", "🎉", "🎊", "⭐", "🌟", "🕋", "🍬", "🎁", "💚"],
+      "flags": [
+        "🌙",
+        "🕌",
+        "🤲",
+        "🙏",
+        "✨",
+        "🎉",
+        "🎊",
+        "⭐",
+        "🌟",
+        "🕋",
+        "🍬",
+        "🎁",
+        "💚"
+      ],
       "defaultFormat": "inline"
     }
   ],
-
   "kaomoji": [
-    { "text": "(๑˃̵ᴗ˂̵)ﻭ", "label": "Joyful Cheer" },
-    { "text": "ヽ(´▽`)/", "label": "Warm Wave" },
-    { "text": "(⌒▽⌒)☆", "label": "Sparkling Joy" },
-    { "text": "(◕‿◕)✿", "label": "Happy Blossom" },
-    { "text": "☆⌒(≧▽°)", "label": "Bright Cheer" },
-    { "text": "(づ￣ ³￣)づ", "label": "Warm Hug" }
+    {
+      "text": "(๑˃̵ᴗ˂̵)ﻭ",
+      "label": "Joyful Cheer"
+    },
+    {
+      "text": "ヽ(´▽`)/",
+      "label": "Warm Wave"
+    },
+    {
+      "text": "(⌒▽⌒)☆",
+      "label": "Sparkling Joy"
+    },
+    {
+      "text": "(◕‿◕)✿",
+      "label": "Happy Blossom"
+    },
+    {
+      "text": "☆⌒(≧▽°)",
+      "label": "Bright Cheer"
+    },
+    {
+      "text": "(づ￣ ³￣)づ",
+      "label": "Warm Hug"
+    }
   ],
-
   "ascii_art": {
     "items": [
       {
@@ -85,7 +116,6 @@
       }
     ]
   },
-
   "phrase_bank": [
     {
       "text": "Eid Mubarak",
@@ -249,9 +279,7 @@
       "translation": "Short caption for a group photo."
     }
   ],
-
   "companion_answer_slug": "eid-mubarak-meaning-and-reply",
-
   "phrase_cta": "Not sure what \"Eid Mubarak\" means or how to reply to it? Read <a href=\"{href}\">Eid Mubarak: meaning and how to reply</a>.",
   "related": [
     {
@@ -274,5 +302,200 @@
       "title": "Sparkle Symbols",
       "desc": "Sparkle emoji and symbols to add a little shimmer to any greeting."
     }
-  ]
+  ],
+  "experience": {
+    "model": "functional",
+    "category": "cultural",
+    "primary_job": "Put \"Eid Mubarak\" and a name in a nice style, ready to copy.",
+    "secondary_jobs": [
+      "Copy the Arabic greeting, correct and whole",
+      "Find the meaning and the reply (the companion answer)"
+    ],
+    "hero": "compositions",
+    "sample_text": "Eid Mubarak, Amina",
+    "inputs": [
+      "text"
+    ],
+    "phrase_display": "chips",
+    "script_note": true,
+    "sections": [
+      "compositions",
+      "native",
+      "fonts",
+      "symbols",
+      "phrases",
+      "kaomoji",
+      "handoffs",
+      "ascii",
+      "intro",
+      "related",
+      "nav",
+      "faq"
+    ],
+    "compositions": {
+      "theme": {
+        "key": "eid",
+        "label": "Eid",
+        "icon": "🌙",
+        "pairs": [
+          [
+            "☪",
+            "☪"
+          ],
+          [
+            "🌙",
+            "✨"
+          ],
+          [
+            "⋆",
+            "⋆"
+          ],
+          [
+            "✦",
+            "✦"
+          ],
+          [
+            "🕌",
+            "🕌"
+          ]
+        ],
+        "charms": [
+          "🌙",
+          "✨",
+          "⋆",
+          "☪",
+          "🕌",
+          "⭐"
+        ],
+        "sprinkles": [
+          "✨",
+          "⋆",
+          "🌙"
+        ],
+        "lines": [
+          "🌙 ⋆ ✨ ⋆ 🌙 ⋆ ✨ ⋆ 🌙",
+          "☪ ─── ✦ ─── ☪"
+        ]
+      },
+      "cards": [
+        {
+          "id": "frame",
+          "recipe": "classic",
+          "style": "Ultra Script Bold",
+          "label": "Crescent frame"
+        },
+        {
+          "id": "stack",
+          "recipe": "stacked",
+          "style": null,
+          "label": "Star stack"
+        },
+        {
+          "id": "banner",
+          "recipe": "banner",
+          "style": "Ultra Bold Serif",
+          "label": "Banner"
+        },
+        {
+          "id": "sprinkle",
+          "recipe": "interleave",
+          "style": null,
+          "label": "Starlit caption"
+        }
+      ],
+      "intensity": {
+        "default": 2,
+        "control": true,
+        "labels": [
+          "Simple",
+          "Festive",
+          "Extra"
+        ]
+      }
+    },
+    "handoffs": [
+      {
+        "id": "more_designs",
+        "target": "text_decorator",
+        "icon": "✦",
+        "title": "More celestial designs",
+        "desc": "Moon and star frames for the same text in the text decorator.",
+        "text": "input",
+        "params": {
+          "vibe": "celestial"
+        }
+      },
+      {
+        "id": "all_fonts",
+        "target": "general_generator",
+        "icon": "Aa",
+        "title": "All fonts",
+        "desc": "Every style on the main generator, with your text in it.",
+        "text": "input"
+      }
+    ],
+    "related_occasions": [
+      "ramadan",
+      "diwali",
+      "chinese-new-year"
+    ],
+    "analytics_label": "eid",
+    "seo": {
+      "owns": [
+        "eid mubarak font style",
+        "eid mubarak name style text copy and paste"
+      ],
+      "never_targets": [
+        {
+          "query": "eid mubarak meaning",
+          "owner": "/answers/eid-mubarak-meaning-and-reply/"
+        },
+        {
+          "query": "islamic symbols",
+          "owner": "/library/islamic-symbols/"
+        }
+      ]
+    },
+    "capabilities": {
+      "styled_fonts": true,
+      "compositions": true,
+      "occasion_symbols": true,
+      "emoji_kaomoji": true,
+      "ascii_art": true,
+      "native_greetings": true,
+      "seed_phrases": true,
+      "multi_input": {
+        "enabled": false,
+        "reason": "Single-recipient occasion; a second name adds nothing to the job."
+      },
+      "intensity": true,
+      "generator_handoffs": true,
+      "text_effects": {
+        "enabled": false,
+        "reason": "Creepy/zalgo text has no job on this occasion; it is Halloween's."
+      },
+      "printable_handoffs": {
+        "enabled": false,
+        "reason": "No printable maker serves this occasion's job yet."
+      },
+      "classroom_activities": {
+        "enabled": false,
+        "reason": "No word list or classroom job for this occasion."
+      },
+      "cursive_outputs": {
+        "enabled": false,
+        "reason": "No cursive sheet fits this occasion's job."
+      },
+      "coloring_banner": {
+        "enabled": false,
+        "reason": "No coloring page or banner fits this occasion's job."
+      },
+      "copy_share": true,
+      "related_library": true,
+      "related_answers": true,
+      "occasion_navigation": true,
+      "seo_ownership": true
+    },
+    "theme_tone": "teal"
+  }
 }

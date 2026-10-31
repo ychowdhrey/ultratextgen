@@ -1,0 +1,387 @@
+{
+  "_about": "The occasion capability registry. Every /events/ page declares, in its spec's `experience.capabilities`, each capability below as enabled (true) or disabled with a reason. The generator renders a section only for an enabled capability; scripts/check-event-capabilities.js fails when an enabled capability has no data or implementation, when a disabled one still has data that would render, or when a hand-off names a target or parameter this file does not define. docs/events-capability-matrix.md is generated from the specs and this file.",
+  "version": 1,
+  "capabilities": [
+    {
+      "id": "styled_fonts",
+      "label": "Styled fonts and text",
+      "implementation": "section:fonts",
+      "requires": [
+        "fonts.curated_keys"
+      ],
+      "head_term_owner": "events (occasion font queries); the general generator keeps generic font queries"
+    },
+    {
+      "id": "compositions",
+      "label": "Decorative frames and compositions",
+      "implementation": "section:compositions",
+      "requires": [
+        "experience.compositions"
+      ],
+      "head_term_owner": "events"
+    },
+    {
+      "id": "occasion_symbols",
+      "label": "Occasion-specific symbols",
+      "implementation": "section:symbols",
+      "requires": [
+        "emoji_symbol_collections"
+      ],
+      "head_term_owner": "library/ (the occasion's symbol page)"
+    },
+    {
+      "id": "emoji_kaomoji",
+      "label": "Emoji and kaomoji",
+      "implementation": "section:kaomoji",
+      "requires": [
+        "kaomoji"
+      ],
+      "head_term_owner": "library/ (kaomoji pages)"
+    },
+    {
+      "id": "ascii_art",
+      "label": "ASCII art",
+      "implementation": "section:ascii",
+      "requires": [
+        "ascii_art.items"
+      ],
+      "head_term_owner": "library/ (ASCII art pages)"
+    },
+    {
+      "id": "native_greetings",
+      "label": "Native-language greetings",
+      "implementation": "section:native",
+      "requires": [
+        "native_script_language",
+        "phrase_bank[].native_script"
+      ],
+      "head_term_owner": "events, with answers/ for meaning and replies"
+    },
+    {
+      "id": "seed_phrases",
+      "label": "Seed phrases",
+      "implementation": "section:phrases",
+      "requires": [
+        "phrase_bank"
+      ],
+      "head_term_owner": "answers/ owns wording; events keeps phrases as input to style"
+    },
+    {
+      "id": "multi_input",
+      "label": "Multi-input compositions (second name)",
+      "implementation": "input:partner",
+      "requires": [
+        "experience.compositions.couple",
+        "experience.inputs contains partner"
+      ],
+      "head_term_owner": "events"
+    },
+    {
+      "id": "intensity",
+      "label": "Intensity controls",
+      "implementation": "control:intensity",
+      "requires": [
+        "experience.compositions.intensity.control"
+      ],
+      "head_term_owner": "events"
+    },
+    {
+      "id": "generator_handoffs",
+      "label": "Contextual generator hand-offs",
+      "implementation": "section:handoffs (kind generator)",
+      "requires": [
+        "experience.handoffs[kind=generator]"
+      ],
+      "head_term_owner": "the target generator"
+    },
+    {
+      "id": "text_effects",
+      "label": "Zalgo and other text effects",
+      "implementation": "section:handoffs (kind effect)",
+      "requires": [
+        "experience.handoffs[kind=effect]"
+      ],
+      "head_term_owner": "usecase/zalgo-text"
+    },
+    {
+      "id": "printable_handoffs",
+      "label": "Personalised printable hand-offs",
+      "implementation": "section:handoffs (any printable kind)",
+      "requires": [
+        "experience.handoffs[kind in printable kinds]"
+      ],
+      "head_term_owner": "printables/"
+    },
+    {
+      "id": "classroom_activities",
+      "label": "Word searches and classroom activities",
+      "implementation": "section:handoffs (kind activity)",
+      "requires": [
+        "experience.handoffs[kind=activity]"
+      ],
+      "head_term_owner": "printables/ makers"
+    },
+    {
+      "id": "cursive_outputs",
+      "label": "Cursive writing outputs",
+      "implementation": "section:handoffs (kind cursive)",
+      "requires": [
+        "experience.handoffs[kind=cursive]"
+      ],
+      "head_term_owner": "printables/ cursive sheets"
+    },
+    {
+      "id": "coloring_banner",
+      "label": "Coloring and banner outputs",
+      "implementation": "section:handoffs (kind coloring or banner)",
+      "requires": [
+        "experience.handoffs[kind in coloring, banner]"
+      ],
+      "head_term_owner": "printables/ makers"
+    },
+    {
+      "id": "copy_share",
+      "label": "Copy and sharing",
+      "implementation": "component:copy + share-core",
+      "requires": [],
+      "head_term_owner": "n/a"
+    },
+    {
+      "id": "related_library",
+      "label": "Related Library content",
+      "implementation": "section:related (library/ links)",
+      "requires": [
+        "related[] under /library/"
+      ],
+      "head_term_owner": "library/"
+    },
+    {
+      "id": "related_answers",
+      "label": "Related Answers content",
+      "implementation": "section:related (companion answer)",
+      "requires": [
+        "companion_answer_slug"
+      ],
+      "head_term_owner": "answers/"
+    },
+    {
+      "id": "occasion_navigation",
+      "label": "Occasion navigation and discovery",
+      "implementation": "section:nav + hub",
+      "requires": [
+        "experience.related_occasions"
+      ],
+      "head_term_owner": "events/ hub"
+    },
+    {
+      "id": "seo_ownership",
+      "label": "SEO ownership and canonical intent",
+      "implementation": "spec:experience.seo",
+      "requires": [
+        "experience.seo.owns",
+        "experience.seo.never_targets"
+      ],
+      "head_term_owner": "n/a"
+    }
+  ],
+  "sections": [
+    "compositions",
+    "native",
+    "fonts",
+    "phrases",
+    "handoffs",
+    "symbols",
+    "kaomoji",
+    "ascii",
+    "intro",
+    "related",
+    "nav",
+    "faq"
+  ],
+  "section_capability": {
+    "compositions": "compositions",
+    "native": "native_greetings",
+    "fonts": "styled_fonts",
+    "phrases": "seed_phrases",
+    "handoffs": null,
+    "symbols": "occasion_symbols",
+    "kaomoji": "emoji_kaomoji",
+    "ascii": "ascii_art",
+    "intro": null,
+    "related": null,
+    "nav": "occasion_navigation",
+    "faq": null
+  },
+  "handoff_kinds": {
+    "generator": "generator_handoffs",
+    "effect": "text_effects",
+    "activity": "classroom_activities",
+    "cursive": "cursive_outputs",
+    "coloring": "coloring_banner",
+    "banner": "coloring_banner",
+    "printable": "printable_handoffs"
+  },
+  "printable_kinds": [
+    "activity",
+    "cursive",
+    "coloring",
+    "banner",
+    "printable"
+  ],
+  "handoff_targets": {
+    "general_generator": {
+      "path": "/",
+      "kind": "generator",
+      "text_param": "q",
+      "fixed_params": [],
+      "verified": "?q= prefills #mainInput"
+    },
+    "text_decorator": {
+      "path": "/category/text-decorator/",
+      "kind": "generator",
+      "text_param": "q",
+      "fixed_params": [
+        "vibe",
+        "dsym",
+        "dfont"
+      ],
+      "verified": "?q= prefills; vibe must be a decoratorData.js theme key"
+    },
+    "cursive_fonts": {
+      "path": "/category/cursive-fonts/",
+      "kind": "generator",
+      "text_param": "q",
+      "fixed_params": [],
+      "verified": "?q= prefills"
+    },
+    "gothic_fonts": {
+      "path": "/category/gothic-fonts/",
+      "kind": "generator",
+      "text_param": "q",
+      "fixed_params": [],
+      "verified": "?q= prefills"
+    },
+    "zalgo": {
+      "path": "/usecase/zalgo-text/",
+      "kind": "effect",
+      "text_param": "text",
+      "fixed_params": [],
+      "max_len": 500,
+      "verified": "?text= prefills (zalgo-text.js); ?q= is ignored"
+    },
+    "word_search": {
+      "path": "/printables/word-search-maker/",
+      "kind": "activity",
+      "text_param": null,
+      "fixed_params": [
+        "words",
+        "heading",
+        "wslevel"
+      ],
+      "max_items": 40,
+      "verified": "?words=A|B&heading= prefills"
+    },
+    "word_scramble": {
+      "path": "/printables/word-scramble-maker/",
+      "kind": "activity",
+      "text_param": null,
+      "fixed_params": [
+        "words",
+        "heading"
+      ],
+      "max_items": 40,
+      "verified": "?words=&heading= prefills"
+    },
+    "coloring_page": {
+      "path": "/printables/coloring-page-maker/",
+      "kind": "coloring",
+      "text_param": "name",
+      "fixed_params": [
+        "heading"
+      ],
+      "verified": "?name= and ?heading= prefill"
+    },
+    "banner": {
+      "path": "/printables/banner-maker/",
+      "kind": "banner",
+      "text_param": "text",
+      "fixed_params": [],
+      "max_len": 40,
+      "verified": "?text= prefills; input maxlength 40"
+    },
+    "cursive_name": {
+      "path": "/printables/cursive-name/",
+      "kind": "cursive",
+      "text_param": "name",
+      "fixed_params": [],
+      "max_len": 40,
+      "verified": "?name= prefills"
+    },
+    "bubble_name": {
+      "path": "/printables/bubble-name/",
+      "kind": "printable",
+      "text_param": "name",
+      "fixed_params": [],
+      "max_len": 40,
+      "verified": "?name= prefills"
+    },
+    "name_labels": {
+      "path": "/printables/name-labels/",
+      "kind": "printable",
+      "text_param": "name",
+      "fixed_params": [],
+      "max_len": 40,
+      "verified": "?name= prefills; the label preset is not settable by URL"
+    },
+    "love_in_cursive": {
+      "path": "/printables/love-in-cursive/",
+      "kind": "cursive",
+      "text_param": null,
+      "fixed_params": [],
+      "verified": "fixed phrase sheet; a ?name= redirects to cursive-name"
+    },
+    "mom_in_cursive": {
+      "path": "/printables/mom-in-cursive/",
+      "kind": "cursive",
+      "text_param": null,
+      "fixed_params": [],
+      "verified": "fixed phrase sheet"
+    },
+    "dad_in_cursive": {
+      "path": "/printables/dad-in-cursive/",
+      "kind": "cursive",
+      "text_param": null,
+      "fixed_params": [],
+      "verified": "fixed phrase sheet"
+    },
+    "family_in_cursive": {
+      "path": "/printables/family-in-cursive/",
+      "kind": "cursive",
+      "text_param": null,
+      "fixed_params": [],
+      "verified": "fixed phrase sheet"
+    },
+    "general_generator_es": {
+      "path": "/es/",
+      "kind": "generator",
+      "text_param": "q",
+      "fixed_params": [],
+      "verified": "?q= prefills #mainInput (same script.js as /)"
+    },
+    "general_generator_id": {
+      "path": "/id/",
+      "kind": "generator",
+      "text_param": "q",
+      "fixed_params": [],
+      "verified": "?q= prefills #mainInput (same script.js as /)"
+    },
+    "zalgo_es": {
+      "path": "/es/usecase/zalgo-text/",
+      "kind": "effect",
+      "text_param": "text",
+      "fixed_params": [],
+      "max_len": 500,
+      "verified": "loads /usecase/zalgo-text/zalgo-text.js, which reads ?text="
+    }
+  }
+}

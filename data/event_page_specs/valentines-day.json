@@ -1,8 +1,10 @@
 {
   "slug": "valentines-day",
   "event_name": "Valentine's Day",
-  "aliases": ["Valentine", "Galentine's Day"],
-
+  "aliases": [
+    "Valentine",
+    "Galentine's Day"
+  ],
   "hreflang": {
     "en": "https://ultratextgen.com/events/valentines-day/",
     "es": "https://ultratextgen.com/es/events/san-valentin/",
@@ -10,57 +12,86 @@
   },
   "title": "Valentine's Day Fonts, Kaomoji & Message Generator | UltraTextGen",
   "meta_description": "Style a Valentine's Day message live, copy heart, rose and kiss-mark emoji, kaomoji and ASCII art, or tap a phrase like Be My Valentine.",
-
   "hero_h1": "Valentine's Day Text & Symbol Generator",
-  "hero_tagline": "Type a name or message and style it in elegant cursive fonts, then copy hearts, roses, kiss marks, kaomoji, and ASCII art — or tap a ready-made line to style it instantly.",
-
-  "intro": "Valentine's Day is the biggest romantic-greeting occasion of the year — cards, texts, and captions built around hearts, roses, and a handful of lines everyone reaches for (Be My Valentine, Happy Valentine's Day, You Have My Heart). This page gathers everything for styling that message: elegant cursive and script fonts you can preview on your own text, the heart and rose emoji people actually paste, kaomoji for a flirty chat message, a few original hand-drawn ASCII art pieces, and a phrase bank of ready-made lines that style instantly when you tap them.",
-
+  "hero_tagline": "Type a name or message and style it in elegant cursive fonts, then copy hearts, roses, kiss marks, kaomoji, and ASCII art, or tap a ready-made line to style it instantly.",
+  "intro": "Valentine's Day is the biggest romantic-greeting occasion of the year: cards, texts, and captions built around hearts, roses, and a handful of lines everyone reaches for (Be My Valentine, Happy Valentine's Day, You Have My Heart). This page gathers everything for styling that message: elegant cursive and script fonts you can preview on your own text, the heart and rose emoji people actually paste, kaomoji for a flirty chat message, a few original hand-drawn ASCII art pieces, and a phrase bank of ready-made lines that style instantly when you tap them.",
   "date_window": "every year on February 14th",
-
-  "sample_phrase": "Happy Valentine's Day",
-
+  "sample_phrase": "Maya",
   "canonical": "https://ultratextgen.com/events/valentines-day/",
-
-  "occurrence": {"type": "fixed", "month": 2, "day": 14},
+  "occurrence": {
+    "type": "fixed",
+    "month": 2,
+    "day": 14
+  },
   "fonts": {
     "curated_keys": [
       "Ultra Script",
       "Ultra Script Bold",
       "Ultra Script Elegant",
-      "Ultra Script Bold Elegant",
       "Ultra Script Sparkle",
-      "Ultra Cute Script",
-      "Ultra Italic Serif",
       "Ultra Bold Italic Serif",
+      "Ultra Cute Bubble",
       "Ultra Small Caps",
-      "Ultra Cute Bubble"
+      "Ultra Double-Struck"
     ]
   },
-
   "emoji_section_heading": "Hearts &amp; Roses to Add to Your Message",
-  "emoji_section_cta": "For the full heart symbol collection — Unicode hearts, colored heart emoji, and heart decorations — see <a href=\"/library/heart-symbols/\">Heart Symbols</a>.",
-
+  "emoji_section_cta": "For the full heart symbol collection (Unicode hearts, colored heart emoji, and heart decorations) see <a href=\"/library/heart-symbols/\">Heart Symbols</a>.",
   "emoji_symbol_collections": [
     {
       "name": "Hearts, Roses & Kisses",
       "presentation_class": "emoji",
       "copy_pattern": "collection",
-      "flags": ["❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💕", "💗", "💖", "💘", "🌹", "💌", "💋"],
+      "flags": [
+        "❤️",
+        "🧡",
+        "💛",
+        "💚",
+        "💙",
+        "💜",
+        "🖤",
+        "🤍",
+        "💕",
+        "💗",
+        "💖",
+        "💘",
+        "🌹",
+        "💌",
+        "💋"
+      ],
       "defaultFormat": "inline"
     }
   ],
-
   "kaomoji": [
-    { "text": "(｡♥‿♥｡)", "label": "Heart Eyes" },
-    { "text": "(♡˃͈ ᵕ ˂͈♡)", "label": "Blushing Love" },
-    { "text": "♡＾▽＾♡", "label": "Cheerful Love" },
-    { "text": "(´ ω `♡)", "label": "Sweet Smile" },
-    { "text": "(´♡‿♡`)", "label": "Adoring" },
-    { "text": "( ˘ ³˘)♥", "label": "Kiss" },
-    { "text": "(づ ◕‿◕ )づ", "label": "Warm Hug" }
+    {
+      "text": "(｡♥‿♥｡)",
+      "label": "Heart Eyes"
+    },
+    {
+      "text": "(♡˃͈ ᵕ ˂͈♡)",
+      "label": "Blushing Love"
+    },
+    {
+      "text": "♡＾▽＾♡",
+      "label": "Cheerful Love"
+    },
+    {
+      "text": "(´ ω `♡)",
+      "label": "Sweet Smile"
+    },
+    {
+      "text": "(´♡‿♡`)",
+      "label": "Adoring"
+    },
+    {
+      "text": "( ˘ ³˘)♥",
+      "label": "Kiss"
+    },
+    {
+      "text": "(づ ◕‿◕ )づ",
+      "label": "Warm Hug"
+    }
   ],
-
   "ascii_art": {
     "items": [
       {
@@ -89,7 +120,6 @@
       }
     ]
   },
-
   "phrase_bank": [
     {
       "text": "Happy Valentine's Day",
@@ -222,9 +252,7 @@
       "translation": "Short and sweet."
     }
   ],
-
   "companion_answer_slug": "valentines-day-messages-what-to-write",
-
   "related": [
     {
       "href": "/library/heart-symbols/",
@@ -234,7 +262,7 @@
     {
       "href": "/library/love-kaomoji/",
       "title": "Love & Heart Kaomoji",
-      "desc": "A deeper library of love and heart kaomoji — Japanese text faces for affection, kisses, hugs, and crushes."
+      "desc": "A deeper library of love and heart kaomoji: Japanese text faces for affection, kisses, hugs, and crushes."
     },
     {
       "href": "/library/heart-ascii-art/",
@@ -251,5 +279,224 @@
       "title": "Kiss Kaomoji",
       "desc": "Kissing text faces for a flirty text or Valentine's message."
     }
-  ]
+  ],
+  "experience": {
+    "model": "functional",
+    "category": "family",
+    "primary_job": "Make my name, my partner's name or a short love line look romantic and copy it into a message, caption or bio.",
+    "secondary_jobs": [
+      "Grab heart symbols and love kaomoji",
+      "Turn the names into something printable",
+      "Find words (the companion answer)"
+    ],
+    "hero": "compositions",
+    "sample_text": "Maya",
+    "inputs": [
+      "text",
+      "partner"
+    ],
+    "phrase_display": "chips",
+    "sections": [
+      "compositions",
+      "fonts",
+      "phrases",
+      "symbols",
+      "kaomoji",
+      "handoffs",
+      "ascii",
+      "intro",
+      "related",
+      "nav",
+      "faq"
+    ],
+    "compositions": {
+      "theme": {
+        "key": "valentines",
+        "label": "Valentine's",
+        "icon": "💘",
+        "pairs": [
+          [
+            "♡",
+            "♡"
+          ],
+          [
+            "❥",
+            "❥"
+          ],
+          [
+            "💕",
+            "💕"
+          ],
+          [
+            "⋆♡⋆",
+            "⋆♡⋆"
+          ],
+          [
+            "꒰",
+            "꒱♡"
+          ]
+        ],
+        "charms": [
+          "♡",
+          "💕",
+          "❥",
+          "💘",
+          "✿"
+        ],
+        "sprinkles": [
+          "♡",
+          "✧"
+        ],
+        "lines": [
+          "♡ ⋆ ♡ ⋆ ♡ ⋆ ♡ ⋆ ♡",
+          "💕 ─── 💕 ─── 💕"
+        ]
+      },
+      "cards": [
+        {
+          "id": "frame",
+          "recipe": "classic",
+          "style": "Ultra Script",
+          "label": "Heart frame"
+        },
+        {
+          "id": "stack",
+          "recipe": "stacked",
+          "style": null,
+          "label": "Heart stack"
+        },
+        {
+          "id": "banner",
+          "recipe": "banner",
+          "style": "Ultra Script Bold",
+          "label": "Banner"
+        },
+        {
+          "id": "sprinkle",
+          "recipe": "interleave",
+          "style": null,
+          "label": "Sprinkled hearts"
+        }
+      ],
+      "intensity": {
+        "default": 2,
+        "control": true,
+        "labels": [
+          "Simple",
+          "Sweet",
+          "Extra"
+        ]
+      },
+      "couple": {
+        "joiner": "♡",
+        "label": "Couple line",
+        "style": "Ultra Script"
+      }
+    },
+    "handoffs": [
+      {
+        "id": "more_designs",
+        "target": "text_decorator",
+        "icon": "✦",
+        "title": "More heart designs",
+        "desc": "Dozens more heart frames for the same text in the text decorator.",
+        "text": "input",
+        "params": {
+          "vibe": "hearts"
+        },
+        "pair_template": "{text} ♡ {partner}"
+      },
+      {
+        "id": "cursive_name",
+        "target": "cursive_name",
+        "icon": "✍",
+        "title": "Your name in cursive",
+        "desc": "A printable cursive tracing sheet with the name you typed.",
+        "text": "input"
+      },
+      {
+        "id": "coloring",
+        "target": "coloring_page",
+        "icon": "🖍",
+        "title": "Valentine's coloring page",
+        "desc": "A printable coloring page with your text and a Valentine's heading.",
+        "text": "input",
+        "fallback_text": "Happy Valentine's Day",
+        "params": {
+          "heading": "Happy Valentine's Day"
+        }
+      },
+      {
+        "id": "love_cursive",
+        "target": "love_in_cursive",
+        "icon": "♡",
+        "title": "\"Love\" in cursive",
+        "desc": "A ready-made sheet for tracing the word love.",
+        "text": "fixed"
+      },
+      {
+        "id": "all_fonts",
+        "target": "general_generator",
+        "icon": "Aa",
+        "title": "All fonts",
+        "desc": "Every style on the main generator, with your text in it.",
+        "text": "input"
+      }
+    ],
+    "related_occasions": [
+      "mothers-day",
+      "fathers-day",
+      "new-year"
+    ],
+    "analytics_label": "valentines",
+    "seo": {
+      "owns": [
+        "valentines day font",
+        "valentine text",
+        "valentines font generator"
+      ],
+      "never_targets": [
+        {
+          "query": "heart symbols",
+          "owner": "/library/heart-symbols/"
+        },
+        {
+          "query": "valentines day messages",
+          "owner": "/answers/valentines-day-messages-what-to-write/"
+        }
+      ]
+    },
+    "capabilities": {
+      "styled_fonts": true,
+      "compositions": true,
+      "occasion_symbols": true,
+      "emoji_kaomoji": true,
+      "ascii_art": true,
+      "native_greetings": {
+        "enabled": false,
+        "reason": "No native-script greeting for this occasion: the page's language is the occasion's language."
+      },
+      "seed_phrases": true,
+      "multi_input": true,
+      "intensity": true,
+      "generator_handoffs": true,
+      "text_effects": {
+        "enabled": false,
+        "reason": "Creepy/zalgo text has no job on this occasion; it is Halloween's."
+      },
+      "printable_handoffs": true,
+      "classroom_activities": {
+        "enabled": false,
+        "reason": "No word list or classroom job for this occasion."
+      },
+      "cursive_outputs": true,
+      "coloring_banner": true,
+      "copy_share": true,
+      "related_library": true,
+      "related_answers": true,
+      "occasion_navigation": true,
+      "seo_ownership": true
+    },
+    "theme_tone": "rose"
+  }
 }

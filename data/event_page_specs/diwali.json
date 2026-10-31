@@ -1,22 +1,18 @@
 {
   "slug": "diwali",
   "event_name": "Diwali",
-  "aliases": ["Deepavali", "Festival of Lights"],
-
+  "aliases": [
+    "Deepavali",
+    "Festival of Lights"
+  ],
   "title": "Diwali Fonts, Symbols & Kaomoji Generator | UltraTextGen",
   "meta_description": "Style a Diwali greeting live, copy diya and firework emoji, kaomoji and ASCII art, and use ready-made phrases with native script and translation.",
-
   "hero_h1": "Diwali Text & Symbol Generator",
   "hero_tagline": "Type a name or wish and style it in curated festive fonts, then copy diyas, fireworks, sparklers, and kaomoji, or tap a ready-made greeting to style it instantly.",
-
   "intro": "Diwali (Deepavali), the Festival of Lights, is one of the biggest gifting-and-greeting occasions of the year — rows of diyas on doorsteps, fireworks overhead, rangoli patterns underfoot, and messages wishing family and friends light, prosperity, and joy for the year ahead. This page gathers everything for styling that greeting: curated fonts you can preview on your own text, the diya-and-firework emoji people actually paste, sparkly kaomoji for a celebratory chat message, a handful of original ASCII art pieces, and a phrase bank of real greetings — native script, romanization, and translation — that restyle instantly when you tap them.",
-
   "date_window": "on a different date each year, in October or November, set by the Hindu lunar calendar",
-
-  "sample_phrase": "Happy Diwali",
-
+  "sample_phrase": "Happy Diwali, Priya",
   "canonical": "https://ultratextgen.com/events/diwali/",
-
   "native_script_language": "Hindi",
   "occurrence": {
     "type": "table",
@@ -47,26 +43,55 @@
       "Ultra Fullwidth"
     ]
   },
-
   "emoji_symbol_collections": [
     {
       "name": "Diwali Emoji",
       "presentation_class": "emoji",
       "copy_pattern": "collection",
-      "flags": ["🪔", "🎆", "🎇", "🧨", "✨", "🌟", "🙏", "🕉", "🪷", "🌺", "🍬", "🎊", "🛕"],
+      "flags": [
+        "🪔",
+        "🎆",
+        "🎇",
+        "🧨",
+        "✨",
+        "🌟",
+        "🙏",
+        "🕉",
+        "🪷",
+        "🌺",
+        "🍬",
+        "🎊",
+        "🛕"
+      ],
       "defaultFormat": "inline"
     }
   ],
-
   "kaomoji": [
-    { "text": "(★ω★)", "label": "Starry Eyes" },
-    { "text": "(✧ω✧)", "label": "Sparkly Eyes" },
-    { "text": "٩(✧ω✧)۶", "label": "Cheering Sparkle" },
-    { "text": "(☆▽☆)", "label": "Bright Excitement" },
-    { "text": "(∩^o^)⊃━☆ﾟ.*", "label": "Sparkler Toss" },
-    { "text": "\\(^o^)/", "label": "Joyful Celebration" }
+    {
+      "text": "(★ω★)",
+      "label": "Starry Eyes"
+    },
+    {
+      "text": "(✧ω✧)",
+      "label": "Sparkly Eyes"
+    },
+    {
+      "text": "٩(✧ω✧)۶",
+      "label": "Cheering Sparkle"
+    },
+    {
+      "text": "(☆▽☆)",
+      "label": "Bright Excitement"
+    },
+    {
+      "text": "(∩^o^)⊃━☆ﾟ.*",
+      "label": "Sparkler Toss"
+    },
+    {
+      "text": "\\(^o^)/",
+      "label": "Joyful Celebration"
+    }
   ],
-
   "ascii_art": {
     "items": [
       {
@@ -99,7 +124,6 @@
       }
     ]
   },
-
   "phrase_bank": [
     {
       "text": "Happy Diwali",
@@ -247,9 +271,7 @@
       "needs_native_speaker_review": true
     }
   ],
-
   "companion_answer_slug": "diwali-wishes-what-to-say",
-
   "phrase_cta": "Not sure which greeting fits? Read <a href=\"{href}\">what to say for Diwali</a> for the full breakdown of native script, romanization, and meaning.",
   "related": [
     {
@@ -277,5 +299,198 @@
       "title": "Sparkle Kaomoji",
       "desc": "More sparkly, glittery kaomoji faces for festive chat messages."
     }
-  ]
+  ],
+  "experience": {
+    "model": "functional",
+    "category": "cultural",
+    "primary_job": "Style \"Happy Diwali\" with a name for a status or caption.",
+    "secondary_jobs": [
+      "Copy the greeting in Hindi",
+      "Copy diya and rangoli emoji"
+    ],
+    "hero": "compositions",
+    "sample_text": "Happy Diwali, Priya",
+    "inputs": [
+      "text"
+    ],
+    "phrase_display": "chips",
+    "sections": [
+      "compositions",
+      "fonts",
+      "native",
+      "symbols",
+      "phrases",
+      "kaomoji",
+      "handoffs",
+      "ascii",
+      "intro",
+      "related",
+      "nav",
+      "faq"
+    ],
+    "compositions": {
+      "theme": {
+        "key": "diwali",
+        "label": "Diwali",
+        "icon": "🪔",
+        "pairs": [
+          [
+            "🪔",
+            "🪔"
+          ],
+          [
+            "✨",
+            "✨"
+          ],
+          [
+            "🎆",
+            "🎆"
+          ],
+          [
+            "✦",
+            "✦"
+          ],
+          [
+            "❀",
+            "❀"
+          ]
+        ],
+        "charms": [
+          "🪔",
+          "✨",
+          "🎆",
+          "🌸",
+          "💫"
+        ],
+        "sprinkles": [
+          "✨",
+          "🪔"
+        ],
+        "lines": [
+          "🪔 ⋆ ✨ ⋆ 🪔 ⋆ ✨ ⋆ 🪔",
+          "✨ ─── 🪔 ─── ✨"
+        ]
+      },
+      "cards": [
+        {
+          "id": "frame",
+          "recipe": "classic",
+          "style": "Ultra Script",
+          "label": "Diya frame"
+        },
+        {
+          "id": "stack",
+          "recipe": "stacked",
+          "style": null,
+          "label": "Sparkle stack"
+        },
+        {
+          "id": "banner",
+          "recipe": "banner",
+          "style": "Ultra Bold Serif",
+          "label": "Banner"
+        },
+        {
+          "id": "sprinkle",
+          "recipe": "interleave",
+          "style": null,
+          "label": "Sparkle caption"
+        }
+      ],
+      "intensity": {
+        "default": 2,
+        "control": true,
+        "labels": [
+          "Simple",
+          "Festive",
+          "Extra"
+        ]
+      }
+    },
+    "handoffs": [
+      {
+        "id": "more_designs",
+        "target": "text_decorator",
+        "icon": "✦",
+        "title": "More sparkle designs",
+        "desc": "Sparkle frames for the same text in the text decorator.",
+        "text": "input",
+        "params": {
+          "vibe": "sparkle"
+        }
+      },
+      {
+        "id": "all_fonts",
+        "target": "general_generator",
+        "icon": "Aa",
+        "title": "All fonts",
+        "desc": "Every style on the main generator, with your text in it.",
+        "text": "input"
+      }
+    ],
+    "related_occasions": [
+      "eid-mubarak",
+      "chinese-new-year",
+      "christmas"
+    ],
+    "analytics_label": "diwali",
+    "seo": {
+      "owns": [
+        "diwali fonts",
+        "happy diwali font",
+        "deepavali font"
+      ],
+      "never_targets": [
+        {
+          "query": "diwali emoji",
+          "owner": "/library/diwali-symbols/"
+        },
+        {
+          "query": "diwali wishes",
+          "owner": "/answers/diwali-wishes-what-to-say/"
+        }
+      ]
+    },
+    "capabilities": {
+      "styled_fonts": true,
+      "compositions": true,
+      "occasion_symbols": true,
+      "emoji_kaomoji": true,
+      "ascii_art": true,
+      "native_greetings": true,
+      "seed_phrases": true,
+      "multi_input": {
+        "enabled": false,
+        "reason": "Single-recipient occasion; a second name adds nothing to the job."
+      },
+      "intensity": true,
+      "generator_handoffs": true,
+      "text_effects": {
+        "enabled": false,
+        "reason": "Creepy/zalgo text has no job on this occasion; it is Halloween's."
+      },
+      "printable_handoffs": {
+        "enabled": false,
+        "reason": "No printable maker serves this occasion's job yet."
+      },
+      "classroom_activities": {
+        "enabled": false,
+        "reason": "No word list or classroom job for this occasion."
+      },
+      "cursive_outputs": {
+        "enabled": false,
+        "reason": "No cursive sheet fits this occasion's job."
+      },
+      "coloring_banner": {
+        "enabled": false,
+        "reason": "No coloring page or banner fits this occasion's job."
+      },
+      "copy_share": true,
+      "related_library": true,
+      "related_answers": true,
+      "occasion_navigation": true,
+      "seo_ownership": true
+    },
+    "theme_tone": "gold"
+  }
 }
