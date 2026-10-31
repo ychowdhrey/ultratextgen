@@ -57,6 +57,42 @@
       "reason": "Owner decision 2026-10-05, extending the 2026-09-22 decision (every locale carries the same two tracing pages English carries) to nl. This is the SAME pair English already runs (printables/name-tracing <-> printables/letter-tracing), reaching nl because the nl letter-tracing page now exists. The two pages do not compete for one query: 'naam leren schrijven' and 'letters overtrekken' are different searches, the pages target them separately, and each links to the other with a one-line pointer (Rule 3 is applied, not skipped). The letter page practises letters only (genLetters: true, no class roster), so the name job stays on the name page. The signature collides only because Dutch uses one word for tracing on both sheets -- 'overtrekken' -- the same property of the language that made de, es and fr collide. The gate flagged the pair on this branch and the owner was asked before this entry was written.",
       "decided": "2026-10-05",
       "owner": "dhlemalaysia@gmail.com"
+    },
+    {
+      "pages": [
+        "printables/letter-tracing",
+        "printables/number-tracing"
+      ],
+      "reason": "Owner decision 2026-10-31: /printables/number-tracing/ is a separate page for number tracing queries ('number tracing worksheets' 4,400/mo, 'tracing numbers' 2,900/mo, US) and reuses the same tracing engine as the other EN tracing pages, so it shares their signature (en, noun 'tracing', outline, Quicksand). The pages answer different searches: number-tracing prints only 0 to 9 (CFG.chars) and ready number sets; letter-tracing prints letters and points to number-tracing from its number answer (Rule 3 applied); name-tracing prints a child's name; sight-word-tracing prints Dolch and Fry words; the handwriting worksheet generator prints words and sentences. The gate flagged these four pairs on this branch and the owner approved the entries before they were written.",
+      "decided": "2026-10-31",
+      "owner": "dhlemalaysia@gmail.com"
+    },
+    {
+      "pages": [
+        "printables/name-tracing",
+        "printables/number-tracing"
+      ],
+      "reason": "Owner decision 2026-10-31: /printables/number-tracing/ is a separate page for number tracing queries ('number tracing worksheets' 4,400/mo, 'tracing numbers' 2,900/mo, US) and reuses the same tracing engine as the other EN tracing pages, so it shares their signature (en, noun 'tracing', outline, Quicksand). The pages answer different searches: number-tracing prints only 0 to 9 (CFG.chars) and ready number sets; letter-tracing prints letters and points to number-tracing from its number answer (Rule 3 applied); name-tracing prints a child's name; sight-word-tracing prints Dolch and Fry words; the handwriting worksheet generator prints words and sentences. The gate flagged these four pairs on this branch and the owner approved the entries before they were written.",
+      "decided": "2026-10-31",
+      "owner": "dhlemalaysia@gmail.com"
+    },
+    {
+      "pages": [
+        "printables/number-tracing",
+        "printables/sight-word-tracing"
+      ],
+      "reason": "Owner decision 2026-10-31: /printables/number-tracing/ is a separate page for number tracing queries ('number tracing worksheets' 4,400/mo, 'tracing numbers' 2,900/mo, US) and reuses the same tracing engine as the other EN tracing pages, so it shares their signature (en, noun 'tracing', outline, Quicksand). The pages answer different searches: number-tracing prints only 0 to 9 (CFG.chars) and ready number sets; letter-tracing prints letters and points to number-tracing from its number answer (Rule 3 applied); name-tracing prints a child's name; sight-word-tracing prints Dolch and Fry words; the handwriting worksheet generator prints words and sentences. The gate flagged these four pairs on this branch and the owner approved the entries before they were written.",
+      "decided": "2026-10-31",
+      "owner": "dhlemalaysia@gmail.com"
+    },
+    {
+      "pages": [
+        "printables/handwriting-worksheet-generator",
+        "printables/number-tracing"
+      ],
+      "reason": "Owner decision 2026-10-31: /printables/number-tracing/ is a separate page for number tracing queries ('number tracing worksheets' 4,400/mo, 'tracing numbers' 2,900/mo, US) and reuses the same tracing engine as the other EN tracing pages, so it shares their signature (en, noun 'tracing', outline, Quicksand). The pages answer different searches: number-tracing prints only 0 to 9 (CFG.chars) and ready number sets; letter-tracing prints letters and points to number-tracing from its number answer (Rule 3 applied); name-tracing prints a child's name; sight-word-tracing prints Dolch and Fry words; the handwriting worksheet generator prints words and sentences. The gate flagged these four pairs on this branch and the owner approved the entries before they were written.",
+      "decided": "2026-10-31",
+      "owner": "dhlemalaysia@gmail.com"
     }
   ]
 }
