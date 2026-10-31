@@ -48,6 +48,16 @@
     return Array.from(str);
   }
 
+  function stripJoiner(str, joiner, side) {
+    let out = str;
+    for (;;) {
+      const trimmed = side === "end" ? out.replace(/\s+$/, "") : out.replace(/^\s+/, "");
+      if (side === "end" && trimmed.endsWith(joiner)) out = trimmed.slice(0, -joiner.length);
+      else if (side === "start" && trimmed.startsWith(joiner)) out = trimmed.slice(joiner.length);
+      else return trimmed;
+    }
+  }
+
   function styled(text, key, deps) {
     if (!key || !text) return text;
     const style = deps.styles && deps.styles[key];
@@ -66,10 +76,16 @@
      typing never reshuffles and "Another one" (seed + 1) always changes them. */
   function compose(cfg, text, partner, intensity, seed, deps) {
     if (!cfg || !cfg.cards || !deps || !deps.engine) return [];
-    const raw = String(text || "").trim();
+    let raw = String(text || "").trim();
     if (!raw) return [];
-    const pair = String(partner || "").trim();
+    let pair = String(partner || "").trim();
     const couple = pair && cfg.couple ? cfg.couple : null;
+    // A visitor who already typed the joiner ("Maya ♡") would otherwise get
+    // it twice at the join ("Maya ♡ ♡ Sam"). Strip it from the inner ends.
+    if (couple) {
+      raw = stripJoiner(raw, couple.joiner, "end") || raw;
+      pair = stripJoiner(pair, couple.joiner, "start") || pair;
+    }
     const level = Math.min(3, Math.max(1, intensity | 0 || 2));
     const out = [];
 
