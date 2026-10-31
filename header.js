@@ -1075,6 +1075,8 @@
     saved_collection: 1,
     glyph: 1,
     ascii_art: 1
+    // NOT here, on purpose: ascii_banner*, ascii_converter*, image_to_ascii*.
+    // Those copy text the visitor typed or a picture they loaded.
   };
 
   // The copy_text payload, kept pure so a test can assert what leaves the
@@ -1111,6 +1113,25 @@
     var payload = copyPayload(method, text, extra);
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push(payload);
+  }
+
+  // A file saved from a text tool (a .txt of ASCII art, a PNG of it). One
+  // writer, every key always pushed so GTM never carries the last value over.
+  // `surface` and `format` are fixed vocabulary chosen by the call site
+  // ("image_to_ascii", "txt" / "png"); the saved text, its length and the
+  // file name never reach the payload, because visitors type names and load
+  // their own pictures.
+  function downloadPayload(surface, format) {
+    return {
+      event: "output_download",
+      download_surface: surface || undefined,
+      download_format: format || undefined
+    };
+  }
+
+  function trackOutputDownload(surface, format) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(downloadPayload(surface, format));
   }
 
   /* @copy-identity:end */
@@ -1424,6 +1445,7 @@
   ns.restorePrint = restorePrint;
   ns.copyIdentity = copyIdentity;
   ns.trackCopy = trackCopy;
+  ns.trackOutputDownload = trackOutputDownload;
   ns.trackPrintable = trackPrintable;
   ns.trackPrintableEvent = trackPrintableEvent;
   ns.printableCredit = printableCredit;

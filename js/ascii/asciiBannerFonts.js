@@ -239,7 +239,7 @@
   };
 
   var FONTS = [
-    { key: "standard", name: "Standard", description: "Real ASCII line art — pastes cleanly everywhere" },
+    { key: "standard", name: "Standard", description: "Real ASCII line art, pastes cleanly everywhere" },
     { key: "block", name: "Block", description: "Solid full-block capitals" },
     { key: "slant", name: "Slant", description: "Leaning italic block letters" },
     { key: "shadow", name: "Shadow", description: "3D letters with a drop shadow" },

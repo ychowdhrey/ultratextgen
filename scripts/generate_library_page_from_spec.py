@@ -38,6 +38,7 @@ import re
 import subprocess
 import sys
 from pathlib import Path
+from urllib.parse import urlparse
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 REPO = SCRIPT_DIR.parent
@@ -653,6 +654,26 @@ def render_collection_section(spec):
     )
 
 
+def render_job_path(job_path, canonical):
+    """The job path: one link per job, each to the page that owns it, the
+    current page marked. Static HTML, so crawlers that run no script see it.
+    Optional spec key `job_path`: {"label": "<aria-label>", "items":
+    [{"href": "/x/", "label": "..."}]}; a spec without it renders exactly as
+    before."""
+    if not job_path:
+        return ""
+    here = urlparse(canonical).path
+    links = []
+    for item in job_path["items"]:
+        current = ' aria-current="page"' if item["href"] == here else ""
+        links.append(
+            f'  <a class="job-path-item" href="{esc_attr(item["href"])}"{current}>'
+            f'{esc(item["label"])}</a>'
+        )
+    return (f'<nav class="job-path" aria-label="{esc_attr(job_path["label"])}">\n'
+            + "\n".join(links) + "\n</nav>\n")
+
+
 def render_related(related):
     cards = []
     for rel in related:
@@ -997,7 +1018,7 @@ def render_page(spec):
     <p>{esc_prose(spec["intro"])}</p>
   </div>
 </section>
-
+{render_job_path(spec.get("job_path"), canonical)}
 <div class="section-divider"></div>
 
 {body_sections}{editorial_html}{sources_html}{faq_html}

@@ -100,7 +100,7 @@
 
     var ns = window.UltraTextGen;
     if (ns && typeof ns.copyText === "function") {
-      ns.copyText(text, btn, label);
+      ns.copyText(text, btn, label, "ascii_converter");
     } else if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text);
     }

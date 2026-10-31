@@ -5,10 +5,11 @@
    size the engine asks for, and renders the text into a monospace <pre>.
 
    The picture is decoded and read in this tab only. Nothing is uploaded, and
-   the copy event sends no part of the result (method "image_to_ascii" is not
-   in header.js's CATALOGUE_COPY_METHODS, so copy_item stays undefined).
+   the copy events send no part of the result (methods image_to_ascii_plain,
+   _discord and _reddit are not in header.js's CATALOGUE_COPY_METHODS, so
+   copy_item stays undefined).
 
-   Requires (loaded before this): imageToAscii.js, and symbol-explorer.js for
+   Requires (loaded before this): imageToAscii.js, asciiShare.js, and symbol-explorer.js for
    the shared copy/toast helper (falls back to the Clipboard API alone).
    ========================================================================== */
 
@@ -16,13 +17,12 @@
   "use strict";
 
   const Engine = window.UTG_IMAGE_TO_ASCII;
-  if (!Engine) return;
+  const Share = window.UTG_ASCII_SHARE;
+  if (!Engine || !Share) return;
 
-  /* Discord's per-message limit for an account without Nitro; the same
-     figure js/counter/counterRules.js uses for "discord-message". */
-  const DISCORD_LIMIT = 2000;
-  const FENCE_OPEN = "```\n";
-  const FENCE_CLOSE = "\n```";
+  const DISCORD_LIMIT = Share.DISCORD_LIMIT;
+  const fencedLength = Share.fencedLength;
+  const redditBlock = Share.redditBlock;
   const MIN_WIDTH = 20;
   const SAMPLE_W = 480;
   const SAMPLE_H = 330;
@@ -70,16 +70,6 @@
     return Engine.convert(data, size.pw, size.ph, s);
   }
 
-  /* Four leading spaces make a code block on both new and old Reddit;
-     a fenced block only renders on the new site. */
-  function redditBlock(text) {
-    return text.split("\n").map(function (line) { return "    " + line; }).join("\n");
-  }
-
-  function fencedLength(text) {
-    return FENCE_OPEN.length + text.length + FENCE_CLOSE.length;
-  }
-
   function render() {
     renderQueued = false;
     lastArt = renderWith(Number(el.width.value) || 80);
@@ -90,16 +80,12 @@
 
     const lines = lastArt ? lastArt.split("\n").length : 0;
     const chars = lastArt.length;
-    const fenced = fencedLength(lastArt);
     el.stats.textContent = chars.toLocaleString("en-US") + " characters, " +
       lines + " lines";
 
-    const fits = fenced <= DISCORD_LIMIT;
-    el.discord.textContent = fits
-      ? "Fits in one Discord message as a code block (" +
-        fenced.toLocaleString("en-US") + " of 2,000 characters)."
-      : "Too long for one Discord message: " + fenced.toLocaleString("en-US") +
-        " of 2,000 characters as a code block.";
+    const fit = Share.discordFit(lastArt);
+    const fits = fit.fits;
+    el.discord.textContent = fit.message;
     el.discord.classList.toggle("is-over", !fits);
     el.fit.hidden = fits;
   }
@@ -185,15 +171,28 @@
     }, 1500);
   }
 
-  function copy(text, btn, label) {
+  /* One method per button, so a Discord copy and a Reddit copy can be told
+     apart from a plain one. None is a catalogue method in header.js, so
+     copy_item stays undefined and the picture's text never reaches the
+     dataLayer. */
+  function copy(text, btn, label, method) {
     if (!text) return;
     const ns = window.UltraTextGen;
     if (ns && typeof ns.copyText === "function") {
-      ns.copyText(text, btn, label, "image_to_ascii");
+      ns.copyText(text, btn, label, method);
     } else if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text);
     }
     flash(btn);
+  }
+
+  /* The save is recorded by surface and format only: no text, no file name
+     (the name can be the visitor's own picture). */
+  function trackDownload(format) {
+    const ns = window.UltraTextGen;
+    if (ns && typeof ns.trackOutputDownload === "function") {
+      ns.trackOutputDownload("image_to_ascii", format);
+    }
   }
 
   function download() {
@@ -209,6 +208,89 @@
     a.remove();
     window.setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
     flash(el.download);
+    trackDownload("txt");
+  }
+
+  /* Save as PNG: the converted text drawn onto a canvas in a monospace font
+     and saved from a Blob. Client-side only; nothing is uploaded. The pair
+     is fixed and high contrast, matching the preview (dark ink on white, or
+     light ink on the dark chat colour once Invert is on), so the file reads
+     the same on any page theme. */
+  const PNG_PAD = 16;
+  const PNG_FONT_PX = 14;
+  const PNG_LINE = 1.2;
+  const PNG_FAMILY = '"Space Mono", ui-monospace, "Courier New", monospace';
+
+  function pngLayout(lines, scale, measure) {
+    const size = PNG_FONT_PX * scale;
+    const lineH = Math.round(size * PNG_LINE);
+    const pad = PNG_PAD * scale;
+    let widest = 0;
+    lines.forEach(function (line) {
+      const w = measure(line);
+      if (w > widest) widest = w;
+    });
+    return {
+      size: size,
+      lineH: lineH,
+      pad: pad,
+      width: Math.ceil(widest) + pad * 2,
+      height: lineH * lines.length + pad * 2
+    };
+  }
+
+  async function savePng() {
+    if (!lastArt) return;
+    const scale = Number(el.pngScale && el.pngScale.value) === 1 ? 1 : 2;
+    const inverted = el.invert.checked;
+    const lines = lastArt.split("\n");
+    try {
+      if (document.fonts && document.fonts.load) {
+        await document.fonts.load(PNG_FONT_PX * scale + 'px "Space Mono"');
+      }
+    } catch (err) { /* the fallback monospace stack still draws */ }
+
+    const probe = document.createElement("canvas").getContext("2d");
+    probe.font = PNG_FONT_PX * scale + "px " + PNG_FAMILY;
+    const layout = pngLayout(lines, scale, function (line) { return probe.measureText(line).width; });
+    /* Browsers refuse canvases past about 16,000 px on a side; say so
+       instead of saving a blank file. */
+    if (layout.width > 16000 || layout.height > 16000) {
+      setStatus("This picture is too large to save as a PNG. Lower the width and try again.");
+      return;
+    }
+
+    const canvas = document.createElement("canvas");
+    canvas.width = layout.width;
+    canvas.height = layout.height;
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = inverted ? "#1e1f22" : "#ffffff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = inverted ? "#f2f3f5" : "#111111";
+    ctx.font = layout.size + "px " + PNG_FAMILY;
+    ctx.textBaseline = "top";
+    lines.forEach(function (line, i) {
+      ctx.fillText(line, layout.pad, layout.pad + i * layout.lineH);
+    });
+
+    canvas.toBlob(function (blob) {
+      if (!blob) {
+        setStatus("This browser could not make a PNG. Download .txt instead.");
+        return;
+      }
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      const base = (sourceName || "sample").replace(/\.[^.]+$/, "").replace(/[^\w-]+/g, "-") || "image";
+      a.href = url;
+      a.download = base + "-ascii.png";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+      flash(el.png);
+      trackDownload("png");
+      setStatus("Saved " + a.download + " (" + canvas.width + " × " + canvas.height + " px).");
+    }, "image/png");
   }
 
   /* Largest width at or below the current one whose code block fits in one
@@ -305,6 +387,8 @@
     el.copyReddit = $("#i2aCopyReddit");
     el.wrap = el.output ? el.output.parentElement : null;
     el.download = $("#i2aDownload");
+    el.png = $("#i2aPng");
+    el.pngScale = $("#i2aPngScale");
     if (!el.output || !el.width || !el.charset) return;
 
     el.file.addEventListener("change", function () {
@@ -324,14 +408,15 @@
       queueRender();
     });
     el.fit.addEventListener("click", fitDiscord);
-    el.copy.addEventListener("click", function () { copy(lastArt, el.copy, "ASCII art"); });
+    el.copy.addEventListener("click", function () { copy(lastArt, el.copy, "ASCII art", "image_to_ascii_plain"); });
     el.copyBlock.addEventListener("click", function () {
-      copy(FENCE_OPEN + lastArt + FENCE_CLOSE, el.copyBlock, "ASCII art code block");
+      copy(Share.discordBlock(lastArt), el.copyBlock, "ASCII art code block", "image_to_ascii_discord");
     });
     el.copyReddit.addEventListener("click", function () {
-      copy(redditBlock(lastArt), el.copyReddit, "ASCII art for Reddit");
+      copy(redditBlock(lastArt), el.copyReddit, "ASCII art for Reddit", "image_to_ascii_reddit");
     });
     el.download.addEventListener("click", download);
+    if (el.png) el.png.addEventListener("click", savePng);
 
     bindDrop();
     bindPaste();

@@ -136,7 +136,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <h1 class="hero-headline">Image to ASCII Art Converter</h1>
-  <p class="hero-sub">Drop in a photo or picture and get it back as ASCII art: plain text you can copy, paste or save as a .txt file.</p>
+  <p class="hero-sub ascii-hero-sub">Drop in a photo or picture and get it back as ASCII art: plain text you can copy, paste or save as a .txt file.</p>
 </div></div></section>
 <figure class="page-hero-figure" data-uthero aria-hidden="true">
   <img src="/assets/hero/image-to-ascii.svg" width="1200" height="340"
@@ -217,11 +217,24 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <button class="copy-btn" type="button" id="i2aCopyBlock">Copy for Discord</button>
         <button class="copy-btn" type="button" id="i2aCopyReddit">Copy for Reddit</button>
         <button class="copy-btn" type="button" id="i2aDownload">Download .txt</button>
+        <button class="copy-btn" type="button" id="i2aPng">Save as PNG</button>
+        <label class="i2a-png-scale" for="i2aPngScale">PNG size
+          <select id="i2aPngScale">
+            <option value="1">1x</option>
+            <option value="2" selected>2x</option>
+          </select>
+        </label>
         <button class="copy-btn i2a-fit" type="button" id="i2aFit" hidden>Fit to one Discord message</button>
       </div>
       <p class="i2a-paste-note">Multi-line ASCII art only keeps its shape in a monospace font. In a normal chat message or caption the columns drift, so it needs a code block: Copy for Discord and Copy for Reddit add one for you.</p>
     </div>
   </div>
+
+  <nav class="job-path" aria-label="ASCII art, by what you want to do">
+    <a class="job-path-item" href="/ascii-art-generator/">Big letters from a word</a>
+    <a class="job-path-item" href="/image-to-ascii/" aria-current="page">ASCII art from a photo</a>
+    <a class="job-path-item" href="/library/text-art/">Ready-made art to copy</a>
+  </nav>
 
   <div class="section-divider"></div>
 
@@ -255,7 +268,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <li><strong>Set the width.</strong> The slider sets characters per line. The height follows the picture's proportions, corrected for characters being about twice as tall as they are wide.</li>
       <li><strong>Pick a character set.</strong> Standard and Detailed use only keyboard characters. Blocks and Braille dots use Unicode characters for bolder shading and finer detail.</li>
       <li><strong>Tune the look.</strong> Brightness and contrast pull detail out of the shadows and highlights. Invert flips the shading for light text on a dark background.</li>
-      <li><strong>Copy or save.</strong> Copy takes the plain text, the Discord and Reddit buttons wrap it in a code block, and Download .txt saves a file.</li>
+      <li><strong>Copy or save.</strong> Copy takes the plain text, the Discord and Reddit buttons wrap it in a code block, Download .txt saves a text file, and Save as PNG saves a picture of the art.</li>
     </ol>
   </section>
 
@@ -340,6 +353,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/js/saved/saved-items.js" defer></script>
 <script src="/symbol-explorer.js" defer></script>
 <script src="/js/ascii/imageToAscii.js" defer></script>
+<script src="/js/ascii/asciiShare.js" defer></script>
 <script src="/js/ascii/imageToAsciiController.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>

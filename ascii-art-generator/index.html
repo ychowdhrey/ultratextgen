@@ -138,46 +138,64 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <h1 class="hero-headline">ASCII Art Generator</h1>
-  <p class="hero-sub">Type a word and turn it into big block-letter ASCII art as you type, switch between font styles and copy the whole banner in one click.</p>
+  <p class="hero-sub ascii-hero-sub">Type a word and get it back as big block letters, drawn as you type. Pick a font, then copy the banner.</p>
 </div></div></section>
-<figure class="page-hero-figure" data-uthero aria-hidden="true">
-  <img src="/assets/hero/ascii-art-generator.svg" width="1200" height="340"
-       fetchpriority="high" alt="">
-</figure>
-
 
 <main class="container">
-  <section class="editorial-section">
+  <div class="ascii-art-tool">
+    <div class="ascii-art-field">
+      <label for="asciiBannerInput">Your text</label>
+      <textarea id="asciiBannerInput" rows="1" autocomplete="off" spellcheck="false" placeholder="Type a word…" aria-describedby="asciiBannerCount">HELLO</textarea>
+      <p class="ascii-art-count" id="asciiBannerCount">5 of 40 characters, line 1 of 4</p>
+    </div>
+
+    <div>
+      <div class="ascii-font-picker-label" id="asciiFontLabel">Font style</div>
+      <div class="ascii-font-picker" id="asciiFontPicker" role="group" aria-labelledby="asciiFontLabel"></div>
+      <select class="ascii-font-select" id="asciiFontSelect" aria-labelledby="asciiFontLabel"></select>
+      <p class="ascii-art-empty" id="asciiFontNote"></p>
+    </div>
+
+    <div>
+      <div class="ascii-art-output-head">
+        <span class="ascii-art-output-label" id="asciiBannerOutLabel">ASCII art</span>
+        <span class="ascii-art-meta" id="asciiBannerMeta" role="status" aria-live="polite"></span>
+      </div>
+      <div class="ascii-art-output-wrap" id="asciiBannerWrap">
+        <pre class="ascii-art-output" id="asciiBannerOutput" role="region" aria-labelledby="asciiBannerOutLabel" tabindex="0"></pre>
+      </div>
+      <div class="ascii-art-actions">
+        <button class="copy-btn" type="button" id="asciiBannerCopy">Copy</button>
+        <button class="copy-btn" type="button" id="asciiBannerCopyDiscord">Copy for Discord</button>
+        <button class="copy-btn" type="button" id="asciiBannerCopyReddit">Copy for Reddit</button>
+        <button class="copy-btn ascii-art-secondary" type="button" id="asciiBannerSmaller" aria-label="Smaller preview text">Smaller</button>
+        <button class="copy-btn ascii-art-secondary" type="button" id="asciiBannerLarger" aria-label="Larger preview text">Larger</button>
+      </div>
+      <p class="ascii-art-empty" id="asciiBannerDiscord"></p>
+      <p class="ascii-art-empty" id="asciiBannerEmpty" hidden>Type something above to generate your ASCII art.</p>
+      <p class="ascii-art-empty" id="asciiBannerNotice" role="status" hidden></p>
+    </div>
+  </div>
+
+  <nav class="job-path" aria-label="ASCII art, by what you want to do">
+    <a class="job-path-item" href="/ascii-art-generator/" aria-current="page">Big letters from a word</a>
+    <a class="job-path-item" href="/image-to-ascii/">ASCII art from a photo</a>
+    <a class="job-path-item" href="/library/text-art/">Ready-made art to copy</a>
+  </nav>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="how-it-works">
+    <h2>How it works</h2>
     <div class="editorial-block">
       <p>This tool turns plain text into large, multi-line block-letter ASCII art (the FIGlet-style "banner" lettering you see in terminals, code comments, and README files) entirely in your browser. Type a word or short name and it renders instantly, letter by letter, with no submit button and no page reload. Switch between font styles to change the whole look, then copy the finished banner and paste it wherever a fixed-width (monospace) font is used. Not all "ASCII art" is equal, though: the default Standard font draws each letter as line art out of nothing but genuine keyboard punctuation (slashes, pipes, underscores) so it pastes cleanly absolutely everywhere, while the heavier Block, Slant, Shadow, and Mini styles use Unicode block characters (█ ░) that some terminals, old forums, and code comments don't render (see <a href="/answers/what-is-ascii/">what ASCII actually is</a> for the ASCII-vs-Unicode distinction). For a static reference of every character code behind the art, see the <a href="/library/ascii-table/">ASCII table</a>, and to convert text to raw ASCII code numbers use the <a href="/ascii-converter/">ASCII converter</a>. To turn a photo or picture into ASCII art instead of a word, use the <a href="/image-to-ascii/">image to ASCII converter</a>.</p>
     </div>
   </section>
 
-  <div class="section-divider"></div>
-
-  <div class="ascii-art-tool">
-    <div class="ascii-art-field">
-      <label for="asciiBannerInput">Your text</label>
-      <input id="asciiBannerInput" type="text" maxlength="40" autocomplete="off" spellcheck="false" placeholder="Type a word…" value="HELLO">
-    </div>
-
-    <div>
-      <div class="ascii-font-picker-label">Font style</div>
-      <div class="ascii-font-picker" id="asciiFontPicker" role="group" aria-label="ASCII art font style"></div>
-    </div>
-
-    <div>
-      <div class="ascii-art-output-head">
-        <label for="asciiBannerOutput">ASCII art</label>
-        <button class="copy-btn" type="button" id="asciiBannerCopy">Copy</button>
-      </div>
-      <div class="ascii-art-output-wrap">
-        <pre class="ascii-art-output" id="asciiBannerOutput" aria-live="polite"></pre>
-      </div>
-      <p class="ascii-art-empty" id="asciiBannerEmpty" hidden>Type something above to generate your ASCII art.</p>
-      <p class="ascii-art-empty" id="asciiBannerNotice" role="status" hidden></p>
-    </div>
-  </div>
+  <figure class="page-hero-figure" data-uthero aria-hidden="true">
+    <img src="/assets/hero/ascii-art-generator.svg" width="1200" height="340"
+         loading="lazy" alt="">
+  </figure>
 
   <div class="section-divider"></div>
 
@@ -262,6 +280,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/js/saved/saved-items.js" defer></script>
 <script src="/symbol-explorer.js" defer></script>
 <script src="/js/ascii/asciiBannerFonts.js" defer></script>
+<script src="/js/ascii/asciiShare.js" defer></script>
 <script src="/js/ascii/asciiBannerController.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>
