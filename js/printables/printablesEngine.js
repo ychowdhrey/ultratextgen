@@ -12884,6 +12884,9 @@
     const answer = searchAnswerOn();
     const entries = rosterEntries(el.searchRoster, PUZZLE_LEVELS.length);
     if (entries.length >= 2) {
+      // A count bucket only, never a name: class-set use is otherwise
+      // indistinguishable from a single sheet in printable_output.
+      trackEngage("ws_classset", entries.length <= 10 ? "2-10" : entries.length <= 30 ? "11-30" : "31-60");
       holder.classList.add("pt-class-set");
       /* Each child's puzzle, then — when asked for — every answer key after
          them. The keys are grouped at the end rather than interleaved because
