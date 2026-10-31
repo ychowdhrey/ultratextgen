@@ -881,6 +881,48 @@ here so they aren't lost. Update as they're closed or new ones appear.
     set came from the REST merged-PR search (15 merged since 2026-10-17) and
     per-PR file lists from `origin/main` merge commits; the digest was not
     regenerated.
+28. **Review of 2026-10-31 (PRs #1086-#1160, 73 merged since 10-24): no new
+    lane; three cross-cutting mechanisms are missing from the operational-tracks
+    table, and the classifier gaps are unchanged.**
+    - **Locale-aware case policy** (#1146, plus the 7-page rollout #1147):
+      `check-case-policy.js` and `check-case-policy-browser.js` with a shared
+      harness under `scripts/lib/case-policy-*`, a legacy-digest fixture built
+      by `build-case-legacy-snapshot.js`, and the recorded decision
+      `docs/decisions/locale-case-policy.md`. Both checks are in the generated
+      gate inventory; the operational-tracks table has no row naming the lane
+      or the decision.
+    - **Copy-tile Unicode well-formedness** (#1097): `audit-tile-unicode.py`,
+      `test-tile-unicode.py` and `scripts/lib/tile_unicode.py` audit every copy
+      tile for well-formed, assigned code points and entity-encode NFC-fragile
+      ones. #1089 and #1100 fixed unassigned code points found by hand, which is
+      the failure this audit exists for. Related to `check-tile-codepoints.py`
+      (CI step already present) but a different check; no row distinguishes them.
+    - **Generated Unicode reference data** (#1098, #1101, #1103):
+      `data/emoji_sequences.json` (from `build-emoji-sequences.py`), the
+      skin-tone fixture (`build-skin-tone-fixture.py`,
+      `js/skintone/skinToneExpected.json`) and `test-unicode-reference-sets.py`
+      back the opt-in skin-tone picker and the complete-set library pages. The
+      two builders are generators, so they belong in
+      `.claude/rules/generated-artifacts.md`, where neither is listed.
+    - **Printables name-labels journey** (#1107, #1108, #1116, #1156, #1159,
+      #1121): a name-first flow, a fold-over desk plate, a remembered class and
+      a shared word list (`js/printables/wordList.js`) carried between
+      activities (#1158, #1159). All of it sits in the existing Printables
+      lane and `js/printables/`; no map change beyond this note.
+    - **Placed, no map change:** the Wave 0 / Unicode-depth content passes
+      (#1099, #1103), the locale accuracy passes (#1122, #1126, #1127, #1134,
+      #1135, #1138, #1141, #1142), contextual-link rollouts (#1143-#1145, #1154),
+      and Research Study 8 (#1102).
+    - **Open classifier gaps, unchanged:** root `llms.txt` (gap #24),
+      `.claude/rules/` and `reportcard.md` (gap #25) and root
+      `renderer.case.test.js` (gaps #18 and #26). 13 of 73 PRs carry at least
+      one unclassified path; the unclassified paths are only these, so the
+      `LANE_RULES` additions named in #24, #25 and #26 would clear the signal.
+      Still unmade, per this review's small, additive mandate.
+    Input note: `gh` is not installed; the PR set came from `origin/main`
+    first-parent merge commits (73 since 2026-10-24) with per-PR files from
+    `git diff <merge>^1 <merge>`, fed to `weekly_pr_digest.py` on stdin. The
+    window overlaps the 10-24 review by a few days.
 
 ---
 
