@@ -158,7 +158,8 @@
         ambiguous: "Also appears inside another word:",
         layout: "Layout {n}",
         sizeIs: "{n} × {n} grid",
-        largeHint: "Large print keeps the grid to 12 squares across; turn it off for longer words."
+        largeHint: "Large print keeps the grid to 12 squares across; turn it off for longer words.",
+        maxLetters: "The longest word a grid can hold is {n} letters; try splitting a phrase into words."
       },
       /* Crossword and word scramble, under the same rule as wordSearch
          above: a locale that ships the page carries the whole block. The
@@ -12847,6 +12848,9 @@
         trackEngage("ws_unplaced", searchState.large ? "large" : "standard");
         if (searchState.large && T.wordSearch.largeHint && built.unplaced.some((w) => w.letters.length > built.size)) {
           bits.push(T.wordSearch.largeHint);
+        } else if (!searchState.large && T.wordSearch.maxLetters && built.unplaced.some((w) => w.letters.length > built.size)) {
+          // Say what would fit, not only what did not (the fix, not just the fault).
+          bits.push(T.wordSearch.maxLetters.replace("{n}", String(ns ? ns.MAX_SIZE : built.size)));
         }
       }
       /* What the paste turned into, reported where this locale has the words
