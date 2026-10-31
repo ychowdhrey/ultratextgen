@@ -151,7 +151,15 @@
         gridOf: "Word search grid",
         lettersBy: "letters by",
         versions: "different grids, one per name",
-        oneGrid: "One grid"
+        oneGrid: "One grid",
+        duplicates: "Listed once (repeated):",
+        noLetters: "Skipped (no letters):",
+        oneLetter: "One letter, so it appears all over the grid:",
+        ambiguous: "Also appears inside another word:",
+        layout: "Layout {n}",
+        sizeIs: "{n} × {n} grid",
+        largeHint: "Large print keeps the grid to 12 squares across; turn it off for longer words.",
+        maxLetters: "The longest word a grid can hold is {n} letters; try splitting a phrase into words."
       },
       /* Crossword and word scramble, under the same rule as wordSearch
          above: a locale that ships the page carries the whole block. The
@@ -1514,6 +1522,9 @@
     searchPrint: $("#pt-search-print"),
     searchPng: $("#pt-search-png"),
     searchLadder: $("#pt-search-ladder"),
+    searchSize: $("#pt-search-size"),
+    searchLarge: $("#pt-search-large"),
+    searchShuffle: $("#pt-search-shuffle"),
     cwInput: $("#pt-cw-input"),
     cwRoster: $("#pt-cw-roster"),
     cwHeading: $("#pt-cw-heading"),
@@ -3770,7 +3781,17 @@
     if (el.searchInput && el.searchInput.value.trim()) {
       p.words = WS_NS().normalizeWords(el.searchInput.value).map((w) => w.display).join("|");
       if (searchState.level !== "medium") p.wslevel = searchState.level;
+      if (searchState.size) p.wssize = String(searchState.size);
+      if (searchState.large) p.wslarge = "1";
+      if (searchState.variant) p.wsv = String(searchState.variant);
     }
+    /* A word-search link never carries the class list (2026-10-31). Visitors
+       asked whether their puzzles would become public, and a roster in a URL
+       is children's names in every log and analytics row the link passes
+       through. The roster stays on this device (it is remembered there); the
+       link carries the words and the settings, which is what reproduces the
+       puzzle. Old links that do carry ?roster= still open as before. */
+    if (el.searchRoster && roster === el.searchRoster) delete p.roster;
     /* Crossword and scramble carry their word list too. Only the word-search
        branch above existed, so a shared crossword or scramble link reopened an
        EMPTY tool -- and the share row those two pages were missing until
@@ -3832,6 +3853,11 @@
     restoreWordList();
     const wslevel = presetGet("wslevel");
     if (wslevel && ["easy", "medium", "hard"].indexOf(wslevel) !== -1) searchState.level = wslevel;
+    const wssize = parseInt(presetGet("wssize"), 10);
+    if (wssize >= 8 && wssize <= 22) searchState.size = wssize;
+    if (presetGet("wslarge") === "1") searchState.large = true;
+    const wsv = parseInt(presetGet("wsv"), 10);
+    if (wsv > 0 && wsv < 10000) searchState.variant = wsv;
     const heading = presetGet("heading"); const headingEl = firstEl([el.designHeading, el.puzzleHeading, el.searchHeading, el.cwHeading, el.scHeading, el.spHeading]);
     if (heading && headingEl) headingEl.value = String(heading).slice(0, 60);
     /* A link's paper seeds a visitor who has never chosen, and never
@@ -12635,7 +12661,13 @@
 
   const SEARCH_DEMO = CFG.searchDemo
     || "because\nfriend\npeople\nschool\nwater\nthere\nwhich\nwould\ncould\nabout";
-  const searchState = { level: "medium" };
+  /* size 0 is "fit the list" (gridSize()); large caps the grid so the
+     letters print big, and is kept separate from difficulty so a hard puzzle
+     can also be a readable one. variant is "New layout": 0 is the grid this
+     page has always produced, so every reprint from before it existed still
+     matches, and any other number reproduces from a link. */
+  const searchState = { level: "medium", size: 0, large: false, variant: 0 };
+  const LARGE_PRINT_MAX = 12;
 
   /* The puzzle tools present three rungs, where the tracing family presents
      five. Both read the same trailing-number roster syntax, so the number a
@@ -12706,7 +12738,14 @@
     const ns = wordSearchModule();
     if (!ns) return null;
     const text = searchWordsText();
-    return ns.build({ words: text, level: level || searchState.level, seed: seed || text, fold: FOLD_GRID });
+    const base = seed || text;
+    return ns.build({
+      words: text, level: level || searchState.level,
+      seed: searchState.variant ? base + "#" + searchState.variant : base,
+      size: searchState.size || undefined,
+      maxSize: searchState.large ? LARGE_PRINT_MAX : undefined,
+      fold: FOLD_GRID
+    });
   }
 
   function searchGridNode(built, showAnswer) {
@@ -12750,7 +12789,7 @@
   function searchSheetNode(seedName, showAnswer, level) {
     const built = searchBuild(seedName, level);
     const sheet = document.createElement("div");
-    sheet.className = "pt-search-sheet";
+    sheet.className = "pt-search-sheet" + (searchState.large ? " is-large" : "");
     if (!built) return sheet;
 
     const h = document.createElement("h3");
@@ -12811,7 +12850,28 @@
       }
       if (built.unplaced.length) {
         bits.push(T.wordSearch.tooLong + " " + built.unplaced.map((w) => w.display).join(", "));
+        trackEngage("ws_unplaced", searchState.large ? "large" : "standard");
+        if (searchState.large && T.wordSearch.largeHint && built.unplaced.some((w) => w.letters.length > built.size)) {
+          bits.push(T.wordSearch.largeHint);
+        } else if (!searchState.large && T.wordSearch.maxLetters && built.unplaced.some((w) => w.letters.length > built.size)) {
+          // Say what would fit, not only what did not (the fix, not just the fault).
+          bits.push(T.wordSearch.maxLetters.replace("{n}", String(ns ? ns.MAX_SIZE : built.size)));
+        }
       }
+      /* What the paste turned into, reported where this locale has the words
+         for it (English today). A locale without the strings keeps the
+         behaviour it had: nothing about the grid depends on these lines. */
+      const W = T.wordSearch;
+      if (el.searchInput && el.searchInput.value.trim() && ns && ns.inspectList) {
+        const info = ns.inspectList(el.searchInput.value, FOLD_GRID);
+        if (W.duplicates && info.duplicates.length) bits.push(W.duplicates + " " + info.duplicates.join(", "));
+        if (W.noLetters && info.noLetters.length) bits.push(W.noLetters + " " + info.noLetters.join(", "));
+        if (W.oneLetter && info.oneLetter.length) bits.push(W.oneLetter + " " + info.oneLetter.join(", "));
+        const amb = (built.ambiguous || []).filter((w) => info.oneLetter.indexOf(w.display) === -1);
+        if (W.ambiguous && amb.length) bits.push(W.ambiguous + " " + amb.map((w) => w.display).join(", "));
+      }
+      if (W.layout && searchState.variant) bits.push(W.layout.replace("{n}", String(searchState.variant + 1)));
+      if (W.sizeIs) bits.push(W.sizeIs.replace(/\{n\}/g, String(built.size)));
     } else {
       bits.push(T.wordSearch.needWords);
     }
@@ -12833,6 +12893,9 @@
     const answer = searchAnswerOn();
     const entries = rosterEntries(el.searchRoster, PUZZLE_LEVELS.length);
     if (entries.length >= 2) {
+      // A count bucket only, never a name: class-set use is otherwise
+      // indistinguishable from a single sheet in printable_output.
+      trackEngage("ws_classset", entries.length <= 10 ? "2-10" : entries.length <= 30 ? "11-30" : "31-60");
       holder.classList.add("pt-class-set");
       /* Each child's puzzle, then — when asked for — every answer key after
          them. The keys are grouped at the end rather than interleaved because
@@ -12898,10 +12961,39 @@
     buttons.forEach((b) => b.addEventListener("click", () => {
       if (!b.dataset.level) return;
       searchState.level = b.dataset.level;
+      trackEngage("ws_level", searchState.level);
       paint();
       renderSearchPreview();
     }));
     paint();
+  }
+
+  /* Grid size, large print and New layout exist on the English page only;
+     every other locale mounts without them and builds exactly as before. */
+  function wireSearchOptions() {
+    if (el.searchSize) {
+      el.searchSize.value = String(searchState.size || 0);
+      el.searchSize.addEventListener("change", () => {
+        searchState.size = parseInt(el.searchSize.value, 10) || 0;
+        trackEngage("ws_size", searchState.size || "auto");
+        renderSearchPreview();
+      });
+    }
+    if (el.searchLarge) {
+      el.searchLarge.checked = !!searchState.large;
+      el.searchLarge.addEventListener("change", () => {
+        searchState.large = !!el.searchLarge.checked;
+        trackEngage("ws_large", searchState.large ? "on" : "off");
+        renderSearchPreview();
+      });
+    }
+    if (el.searchShuffle) {
+      el.searchShuffle.addEventListener("click", () => {
+        searchState.variant += 1;
+        trackEngage("ws_layout", "new");
+        renderSearchPreview();
+      });
+    }
   }
 
   function buildSearch() {
@@ -12916,6 +13008,7 @@
     }
     if (el.searchAnswer) el.searchAnswer.addEventListener("change", renderSearchPreview);
     wireSearchLevel();
+    wireSearchOptions();
     if (el.searchPrint) el.searchPrint.addEventListener("click", printSearch);
     if (el.searchLadder) el.searchLadder.addEventListener("click", printSearchLadder);
     // The PNG comes from the same DOM the print does (pngFromWrap), so there is
