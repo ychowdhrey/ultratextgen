@@ -3150,6 +3150,7 @@ PAGES.update({
 "printables-word-scramble-maker": ("Word Scramble Maker", "One spelling list, a different scramble per child", m_scramble, K_PRINT),
 "printables-spelling-worksheet-generator": ("Spelling Worksheet Generator", "One spelling list, five practice sheets, one PDF", P(m_trace_rows, sample="friend"), K_PRINT),
 "printables-letter-tracing": ("Letter Tracing Worksheets", "Every letter A to Z and number 0 to 9, at seven difficulty levels", P(m_trace_rows, sample="Aa"), K_PRINT),
+"printables-number-tracing": ("Number Tracing Worksheets", "0 to 9 and 1 to 20, with start dots and stroke arrows", P(m_trace_rows, sample="123"), K_PRINT),
 "printables-name-tracing": ("Name Tracing Worksheets", "Model row, faded trace rows and blank practice lines", P(m_trace_rows, sample="Emma"), K_PRINT),
 "printables-sight-word-tracing": ("Sight Word Tracing Worksheets", "Dolch sight words to trace at adjustable difficulty", P(m_trace_rows, sample="said"), K_PRINT),
 
