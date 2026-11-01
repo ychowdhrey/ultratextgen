@@ -118,28 +118,54 @@ for (const [label, g, a] of [['merge base', r.gBase, r.aBase], ['this branch', r
 const htmlChanged = [...changedFiles].filter((f) => f.endsWith('.html')).length;
 console.log(`  ${fmt(htmlChanged)} .html file(s) differ from the merge base\n`);
 
-function describe(f) {
+const WHAT = { added: 'added or made indexable here', changed: 'visibly changed here', lost: 'reachable at the merge base, not here' };
+
+/**
+ * One block per island, not per page: a 9-page locale stranded by one removed
+ * link is one defect with one fix, and printing it nine times buries that.
+ */
+function describeGroup(group) {
   const lines = [];
-  const what = { added: 'added or made indexable by this branch', changed: 'visibly changed by this branch', lost: 'reachable at the merge base, not on this branch' };
-  lines.push(`  ✗ ${f.url}   (${f.changes.map((c) => what[c]).join('; ')})`);
-  lines.push(`      file: ${f.file}`);
-  if (f.kind === 'orphan') lines.push('      no page links to it at all');
-  else lines.push(`      linked only from page(s) / does not reach: ${f.donors.slice(0, 6).join(', ')}${f.donors.length > 6 ? ', …' : ''}`);
-  if (f.component.length > 1) lines.push(`      island of ${f.component.length}: ${f.component.join(', ')}`);
-  if (f.broke) {
-    lines.push(`      the merge base reached it via ${f.baseRoute.join(' → ')}`);
+  const members = group.component;
+  const failing = new Map(group.items.map((f) => [f.url, f]));
+  const head = members.length === 1
+    ? (group.items[0].kind === 'orphan' ? 'orphan: no page links to it' : 'unreachable page')
+    : `island of ${members.length}: these pages link each other, and no page / reaches links any of them`;
+  lines.push(`  ✗ ${head}`);
+  for (const u of members) {
+    const f = failing.get(u);
+    lines.push(`      ${f ? '✗' : '·'} ${u}${f ? `   (${f.changes.map((c) => WHAT[c]).join('; ')})` : '   (already unreachable; not counted)'}`);
+  }
+  // One line per distinct broken hop, shown on the shortest route through it
+  // (the island's entry point), not on whichever member happened to sort last.
+  const broken = [];
+  const seenWhy = new Set();
+  for (const f of group.items.filter((x) => x.broke).sort((a, b) => a.baseRoute.length - b.baseRoute.length)) {
+    if (seenWhy.has(f.broke.why)) continue;
+    seenWhy.add(f.broke.why);
+    broken.push(f);
+  }
+  for (const f of broken) {
+    lines.push(`      the merge base reached ${f.url} via ${f.baseRoute.join(' → ')}`);
     lines.push(`      broken here: ${f.broke.why}`);
   }
-  const fix = f.suggest.length
-    ? `link it from a page / reaches, e.g. ${f.suggest.join(' or ')} (nearest reachable ancestors)`
-    : 'link it from a page / reaches (no reachable ancestor in its URL path)';
-  lines.push(`      fix: ${fix}; one link into an island reaches all of it.`);
+  const suggest = [...new Set(group.items.flatMap((f) => f.suggest))].slice(0, 3);
+  const fix = suggest.length
+    ? `one link from a page / reaches, e.g. ${suggest.join(' or ')} (nearest reachable ancestors)`
+    : 'one link from any page / reaches (no reachable ancestor in its URL path)';
+  lines.push(`      fix: ${fix}${members.length > 1 ? '; one link into the island reaches all of it' : ''}.`);
   return lines.join('\n');
 }
 
 if (r.failures.length) {
-  console.log(`ERRORS — ${r.failures.length} page(s) this branch leaves unreachable from /:\n`);
-  for (const f of r.failures) console.log(describe(f) + '\n');
+  const groups = new Map();
+  for (const f of r.failures) {
+    const key = f.component.join(' ');
+    if (!groups.has(key)) groups.set(key, { component: f.component, items: [] });
+    groups.get(key).items.push(f);
+  }
+  console.log(`ERRORS — ${r.failures.length} page(s) in ${groups.size} group(s) this branch leaves unreachable from /:\n`);
+  for (const g of groups.values()) console.log(describeGroup(g) + '\n');
   console.log('A link counts from anywhere a crawler parses: body, header, footer, breadcrumb or language switcher.');
   console.log('Hreflang tags, sitemap.xml and llms.txt do not. The deliberate non-links stay withheld:');
   for (const d of G.DELIBERATE_NON_LINKS) console.log(`  - ${d.why}`);
