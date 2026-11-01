@@ -114,6 +114,11 @@ option looks and behaves the same wherever it appears:
 - **Save all levels** wherever the sheet has levels.
 - **A control's label exists in every language the page ships, or the control is
   not mounted there.** Never show an English label on a locale page.
+  `npm run check:printables-i18n-parity` reads every per-language table in
+  `js/printables/*.js` and fails on a key `en` has that a language whose pages
+  mount the control lacks (delta against the merge base; standing gaps are
+  reported). A key every caller tests for first (`X.key && …`) is optional and
+  only reported. Never fill a row with the English string to pass it.
 - **Recent and saved sheets** on every surface, from `printPrefs.js`, which all three
   engines load. Do not keep a second reader of `utg_printables_recent`.
 

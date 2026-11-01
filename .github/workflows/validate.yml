@@ -381,6 +381,25 @@ jobs:
         continue-on-error: true
         run: npm run check:printables-surface-wiring | tee printables-surface-wiring.log
 
+      # The printables modules keep their own per-language label tables and
+      # mostly read them merged over English, so a key one language's row
+      # forgets is not an error: that language's page just shows the English
+      # string. Delta-scoped: a gap fails only if it is new since the merge base
+      # (a key added to en without the languages whose pages mount the control,
+      # or a language newly mounting an incomplete row). Standing gaps are
+      # reported, never silenced. It exits 2 rather than 0 when a table cannot
+      # be read, a page language is unknown to the registry, or a mount rule no
+      # longer resolves.
+      - name: Run printables translation key parity check
+        id: printables_i18n_parity
+        continue-on-error: true
+        run: npm run check:printables-i18n-parity -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee printables-i18n-parity.log
+
+      - name: Run printables translation key parity tests
+        id: printables_i18n_parity_tests
+        continue-on-error: true
+        run: npm run test:printables-i18n-parity | tee printables-i18n-parity-tests.log
+
       # The PDF/PNG export clones the print surface and inlines an ALLOW-LIST of
       # computed properties onto the clone, with width and height pinned from
       # the original layout. A property the sheet's CSS uses and the list does
@@ -1250,6 +1269,7 @@ jobs:
             echo ""
             echo "### Funding Choices tag check — \`${{ steps.funding_choices.outcome }}\`"
             echo "### Printables surface wiring check — \`${{ steps.printables_surface_wiring.outcome }}\`"
+            echo "### Printables translation key parity check — \`${{ steps.printables_i18n_parity.outcome }}\` (tests: \`${{ steps.printables_i18n_parity_tests.outcome }}\`)"
             echo "### Print export property check — \`${{ steps.print_export_properties.outcome }}\`"
             echo "### Share/Save module tag check — \`${{ steps.share_save_tags.outcome }}\`"
             echo "### Runtime smoke check (real browser) — \`${{ steps.runtime_smoke.outcome }}\` (Chromium install: \`${{ steps.playwright_install.outcome }}\`)"
@@ -1264,7 +1284,7 @@ jobs:
             echo "### name-report board tests — \`${{ steps.name_reports_tests.outcome }}\`"
             echo "### IndexNow submission-policy tests — \`${{ steps.indexnow_tests.outcome }}\`"
             echo '```'
-            cat printables-surface-wiring.log print-export-properties.log fitted-page-fit.log render-invariants-tests.log practice-row-tests.log share-save-tags.log runtime-smoke.log explorer-strings.log saved-items-tests.log indexnow-tests.log share-core-tests.log image-selection-tests.log event-capabilities.log spaced-native-runs.log game-rules-tests.log name-reports-tests.log
+            cat printables-surface-wiring.log printables-i18n-parity.log printables-i18n-parity-tests.log print-export-properties.log fitted-page-fit.log render-invariants-tests.log practice-row-tests.log share-save-tags.log runtime-smoke.log explorer-strings.log saved-items-tests.log indexnow-tests.log share-core-tests.log image-selection-tests.log event-capabilities.log spaced-native-runs.log game-rules-tests.log name-reports-tests.log
             echo '```'
             echo ""
             echo "### Funding Choices tag check — \`${{ steps.funding_choices.outcome }}\`"
@@ -1643,6 +1663,8 @@ jobs:
           steps.library.outcome == 'failure' ||
           steps.funding_choices.outcome == 'failure' ||
           steps.printables_surface_wiring.outcome == 'failure' ||
+          steps.printables_i18n_parity.outcome == 'failure' ||
+          steps.printables_i18n_parity_tests.outcome == 'failure' ||
           steps.print_export_properties.outcome == 'failure' ||
           steps.fitted_page_fit.outcome == 'failure' ||
           steps.render_invariants_tests.outcome == 'failure' ||
