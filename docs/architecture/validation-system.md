@@ -187,3 +187,32 @@ pages, every one a legitimate mention of another character or a paired tile such
 broken inputs each returned 1 through `run-ci-gates.py --only symbol_pages`, a clean tree returned 0. Detector lesson: the
 first FAQ check keyed on `id="faq"` and undercounted 263 pages as 79; a blind read of 38 pages found it.
 
+
+## Printables translation key parity (`check:printables-i18n-parity`)
+
+The printables modules carry their own per-language UI tables (the engine's
+`I18N` block read as `T.*`, `OPTIONS_I18N`, `AUDIENCE_I18N`, and in
+`printPrefs.js` `CONTRAST_I18N`, `PANEL_I18N`, `SHARE_I18N` and others; 18
+tables in 4 modules on 2026-11-01). Most are read as
+`Object.assign({}, TABLE.en, TABLE[lang])`, so a key a language's row forgets
+neither throws nor looks wrong in review: that page shows the English string.
+No other gate read these tables.
+
+`scripts/lib/printables-i18n.js` is the one definition. It sweeps every
+`const NAME = { … }` literal, evaluates it in an empty VM context, and treats
+an object keyed by `en` plus a registry language as a table. It classifies how
+the module reads a missing row (`fallback` to English, or `gated`: no row means
+the control is not mounted), compares key paths against `en` with plural-form
+objects as one unit, and narrows a key to the pages that actually mount it:
+the module's script tag first, then a short list of mount rules (the word
+search keys need `#pt-search-input`, resolved through the engine's own `el`
+map; the label maker's desk-plate keys need its chip). A rule that no longer
+resolves is UNKNOWN (exit 2), as is a literal that cannot be evaluated alone.
+
+Each gap carries its effect: `english`, `undefined`, or `optional` (every
+caller tests for the key first, e.g. `if (W.sizeIs)`), and only the first two
+gate. Backlog when it landed, after four `usLetter` gaps (es, fr, it, pt) were
+closed with each language's own `printOpts.letter` string: one `english` gap,
+the Japanese label page's print-only note (`PRINT_NOTE_I18N` has no `ja` row;
+no attested Japanese string exists in the repo), and 69 `optional` word-search
+and crossword hints in seven languages. Hence a delta gate.

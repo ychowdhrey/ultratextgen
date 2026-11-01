@@ -49,9 +49,13 @@ preserved. Everything past the dynamic cap is dropped **in silence**.
   (`LANG_REDIRECTS`), which can read `url.searchParams`.
 - Permitted statuses are 200/301/302/303/307/308. A `404` status is rejected, and
   an absolute `from` is rejected ("Only relative URLs are allowed").
+- **A retirement covers both trailing-slash spellings.** A source matches exactly,
+  slash included, and Pages adds its own `/x` → `/x/` 308 only while `x/index.html`
+  exists. A retired directory with one rule therefore 404s on its other spelling
+  (70 such URLs were live on 2026-11-01). Write the pair side by side.
 - When Functions are active on a route, the Function runs **before** `_redirects`.
 
-`npm run check:redirects` gates all of this whole-file (deliberately not
+`npm run check:redirects` gates all of this whole-file, the twin rule included (deliberately not
 diff-scoped — the damage a splat does is to rules *elsewhere* that the PR never
 touches). Cloudflare's own parser is the ground truth for any change:
 `npx wrangler pages dev . --port 8788` prints the live rule count and names the

@@ -11898,6 +11898,15 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   border-color: var(--accent-purple);
   background: var(--bg-white);
 }
+/* Ready word lists on the four word tools: one tap fills the list box. */
+.pt-wordlist-presets > summary { cursor: pointer; }
+.pt-wordlist-group { margin-top: 0.6rem; }
+.pt-wordlist-group-label {
+  margin: 0 0 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
 /* Difficulty-ladder pack button when it sits inside a control field
    (preview-action instances inherit .pt-preview-actions sizing). */
 .pt-ladder-btn {
@@ -13140,6 +13149,9 @@ img.pt-sheet-preview {
   text-decoration: none;
 }
 .pt-recent-list a:hover { border-color: var(--accent-purple); color: var(--accent-purple); }
+/* A chip names what the sheet holds; the page it came from sits under it. */
+.pt-recent-list .pt-recent-label { display: block; font-weight: 600; max-width: 14rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pt-recent-list .pt-recent-page { display: block; font-size: 0.68rem; color: var(--text-muted); max-width: 14rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 /* Ink saver: lighter outlines on every printed surface, chosen in the
    settings panel and applied as a body class by printWrap(). Outlines
@@ -13860,6 +13872,12 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
   min-width: 2.75rem;
   padding: 0.4rem 0.7rem;
 }
+/* Shown before a list exists, switched off until it has two lines. */
+.pt-nup-row .pt-choice:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.pt-nup-hint { margin: 0.3rem 0 0; }
 
 @media print { .pt-nup-field { display: none; } }
 
@@ -15322,3 +15340,31 @@ body.dark-mode .lb-tool .bubble-btn-primary { color: var(--lb-paper-ink); }
   .wf-table th,
   .wf-table td { display: block; border: 0; padding: 2px 12px; }
 }
+
+/* Ready-made picks: a row of one-click sheets above a page's generator
+   (number tracing). Three tiles on a wide screen, stacked on a phone. */
+.pt-picks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.9rem;
+}
+.pt-pick {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+}
+.pt-pick-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.pt-pick-hint {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.pt-pick .bubble-btn { margin-top: 0.4rem; align-self: flex-start; }

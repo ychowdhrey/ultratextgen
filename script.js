@@ -123,6 +123,7 @@
   // never a crash.
   const ICONS = {
     get share() { return (UTG.icons && UTG.icons.share) || ""; },
+    get link()  { return (UTG.icons && UTG.icons.link)  || ""; },
     get copy()  { return (UTG.icons && UTG.icons.copy)  || ""; },
     get image() { return (UTG.icons && UTG.icons.image) || ""; }
   };
@@ -1015,9 +1016,27 @@ const decorations = window.UTG_DECORATIONS
     // Result-level sharing: every card carries its own Share, bound to this
     // exact creation (input + this style) via the style's stable registry
     // slug — never a generic page link. Disabled alongside Copy on demo cards.
-    const shareLabel = uiText("shareResult.label", "Share");
-    const shareTitle = uiText("shareResult.title", "Share this result — the link opens with your text in this style");
-    const shareAria = uiText("shareResult.ariaLabel", "Share {style} result").replace("{style}", name);
+    // What each button does on this browser, in the page language: Share
+    // through the OS sheet, or Copy link / Download image where there is no
+    // sheet or no file sharing. share-core.js owns the rule (2026-11-01).
+    const shareText = UTG.shareButtonText
+      ? UTG.shareButtonText({ name })
+      : {
+        action: "share",
+        label: uiText("shareResult.label", "Share"),
+        title: uiText("shareResult.title", "Share this result — the link opens with your text in this style"),
+        aria: uiText("shareResult.ariaLabel", "Share {style} result").replace("{style}", name)
+      };
+    const shareLabel = shareText.label;
+    const shareTitle = shareText.title;
+    const shareAria = shareText.aria;
+    const imageText = UTG.shareImageButtonText
+      ? UTG.shareImageButtonText({ name })
+      : {
+        action: "image",
+        title: uiText("shareResult.imageTitle", "Share as an image"),
+        aria: uiText("shareResult.imageAriaLabel", "Share {style} result as an image").replace("{style}", name)
+      };
     const shareId = (style && style.slug) || "";
 
     // A style's note is its English one unless the locale file carries
@@ -1043,10 +1062,10 @@ const decorations = window.UTG_DECORATIONS
           <button class="save-btn ${saved ? "is-saved" : ""}" data-style="${safeName}" type="button" aria-pressed="${saved}" title="${saved ? STR.unsaveTitle : STR.saveTitle}"><span class="save-icon" aria-hidden="true">${saved ? "★" : "☆"}</span><span class="save-label">${saved ? STR.saved : STR.save}</span></button>
         </div>
         <div class="result-share-row">
-          <button class="share-result-btn" data-style="${safeName}" data-share-id="${safeAttr(shareId)}" type="button" ${!fullText ? "disabled" : ""} title="${safeAttr(shareTitle)}" aria-label="${safeAttr(shareAria)}">
-            ${ICONS.share}<span class="share-result-label">${escapeHtml(shareLabel)}</span>
+          <button class="share-result-btn" data-style="${safeName}" data-share-id="${safeAttr(shareId)}" data-share-name="${safeName}" data-share-surface="generator" data-share-action="${shareText.action}" type="button" ${!fullText ? "disabled" : ""} title="${safeAttr(shareTitle)}" aria-label="${safeAttr(shareAria)}">
+            ${shareText.action === "copy_link" ? ICONS.link : ICONS.share}<span class="share-result-label">${escapeHtml(shareLabel)}</span>
           </button>
-          <button class="share-image-btn" data-share-id="${safeAttr(shareId)}" data-share-name="${safeName}" type="button" ${!fullText ? "disabled" : ""} title="${safeAttr(uiText("shareResult.imageTitle", "Share as an image"))}" aria-label="${safeAttr(uiText("shareResult.imageAriaLabel", "Share {style} result as an image").replace("{style}", name))}">${ICONS.image}</button>
+          <button class="share-image-btn" data-share-id="${safeAttr(shareId)}" data-share-name="${safeName}" data-share-surface="generator" data-share-action="${imageText.action}" type="button" ${!fullText ? "disabled" : ""} title="${safeAttr(imageText.title)}" aria-label="${safeAttr(imageText.aria)}">${ICONS.image}</button>
         </div>
       </div>
     `;
@@ -2367,16 +2386,23 @@ document.addEventListener("copy", () => {
 
     // Share buttons built before the locale JSON arrived (static surfaces —
     // the zalgo page — never rebuild their cards, so relabel them in place).
-    $$(".share-result-btn").forEach((btn) => {
-      const label = $(".share-result-label", btn);
-      if (label && !btn.classList.contains("copied")) {
-        label.textContent = uiText("shareResult.label", "Share");
-      }
-      btn.title = uiText("shareResult.title", "Share this result — the link opens with your text in this style");
-    });
-    $$(".share-image-btn").forEach((btn) => {
-      btn.title = uiText("shareResult.imageTitle", "Share as an image");
-    });
+    // share-core.js owns the words (Share, or Copy link where there is no
+    // share sheet); the loops below are the pre-2026-11-01 fallback for a
+    // page still serving an older cached share-core.js.
+    if (UTG.relabelShareButtons) {
+      UTG.relabelShareButtons();
+    } else {
+      $$(".share-result-btn").forEach((btn) => {
+        const label = $(".share-result-label", btn);
+        if (label && !btn.classList.contains("copied")) {
+          label.textContent = uiText("shareResult.label", "Share");
+        }
+        btn.title = uiText("shareResult.title", "Share this result — the link opens with your text in this style");
+      });
+      $$(".share-image-btn").forEach((btn) => {
+        btn.title = uiText("shareResult.imageTitle", "Share as an image");
+      });
+    }
 
     const scopeControl = $("#scopeControl");
     if (scopeControl) {
@@ -2661,7 +2687,8 @@ function nudgeShareAfterCopy(card) {
   label.textContent = uiText("shareResult.afterCopy", "Share this style");
   setTimeout(() => {
     if (!label.isConnected || shareBtn.classList.contains("copied")) return;
-    label.textContent = uiText("shareResult.label", "Share");
+    // Back to what the button does here (Share, or Copy link), not to "Share".
+    label.textContent = UTG.idleShareLabel ? UTG.idleShareLabel(shareBtn) : uiText("shareResult.label", "Share");
   }, 2500);
 }
 

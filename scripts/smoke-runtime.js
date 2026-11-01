@@ -1556,6 +1556,296 @@ async function main() {
     await ctx.close();
   }
 
+  // 28. Ready word lists on the four word tools. A chip replaces the box and
+  // the tool updates as if the words were typed; typing turns the chip off.
+  for (const [url, box, chip, read] of [
+    ['/printables/word-search-maker/', '#pt-search-input', 'dolch-primer-1', () => [...document.querySelectorAll('#pt-search-preview .pt-search-words li')].length],
+    ['/printables/word-scramble-maker/', '#pt-sc-input', 'family-at', () => [...document.querySelectorAll('#pt-sc-preview .pt-sc-list li')].length],
+    ['/printables/spelling-worksheet-generator/', '#pt-sp-input', 'fry-100-2', () => parseInt(document.getElementById('pt-sp-meta').textContent, 10)],
+    ['/printables/crossword-maker/', '#pt-cw-input', 'days', () => [...document.querySelectorAll('#pt-cw-preview .pt-cw-bank li')].length]
+  ]) {
+    console.log(`\n${url} (a ready word list fills the box and the sheet)`);
+    const { ctx, page, errors } = await open(url, 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.click('.pt-wordlist-presets > summary');
+      const sel = `.pt-wordlist-presets .pt-gen-wordset[data-set="${chip}"]`;
+      const want = (await page.getAttribute(sel, 'data-words')).split('|');
+      await page.click(sel);
+      await page.waitForTimeout(500);
+      check(`the ${chip} chip replaces the box with its ${want.length} words`, (await page.inputValue(box)) === want.join('\n'));
+      const n = await page.evaluate(read);
+      check(`the sheet shows the ${want.length} words`, n === want.length, `${n}`);
+      check('the chip is lit', (await page.getAttribute(sel, 'aria-pressed')) === 'true');
+      await page.type(box, 'x');
+      check('typing in the box turns the chip off', (await page.getAttribute(sel, 'aria-pressed')) === 'false');
+    } catch (e) {
+      check('ready word lists: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+  {
+    const fr = await open('/fr/imprimables/mots-meles/', 'desktop');
+    check('the French word search carries no English ready lists', (await fr.page.locator('.pt-wordlist-presets').count()) === 0);
+    await fr.ctx.close();
+  }
+
+  // 29. Spelling class set: "Noah 3" prints Noah's Trace, write, remember page
+  // on the copy rung while the class keeps the picker's dotted rung.
+  console.log('\n/printables/spelling-worksheet-generator/ (a per-child rung in the class list)');
+  {
+    const notes = `(function () {
+      const UTG = (window.UltraTextGen = window.UltraTextGen || {});
+      let real;
+      Object.defineProperty(UTG, 'pdf', { configurable: true, get() { return real; }, set(v) {
+        real = v && Object.assign({}, v, { renderPages: async function (root, o) {
+          window.__ptNotes = Array.from(root.querySelectorAll('.pt-sp-trace')).map((sh) => [(sh.querySelector('.pt-search-heading-text') || {}).textContent || '', (sh.querySelector('.pt-search-note') || {}).textContent || '']);
+          return v.renderPages(root, o);
+        } });
+      } });
+    })();`;
+    const { ctx, page, errors } = await open('/printables/spelling-worksheet-generator/', 'desktop', notes);
+    page.setDefaultTimeout(5000);
+    try {
+      check('the class list placeholder shows the level syntax', /Noah 2/.test(await page.getAttribute('#pt-sp-roster', 'placeholder')));
+      await page.evaluate(() => { const d = document.querySelector('#pt-sp-roster').closest('details'); if (d) d.open = true; });
+      const sw = page.locator('.pt-audience-field .pt-choice[data-value="class"]');
+      if (await sw.count()) await sw.first().click();
+      await page.fill('#pt-sp-roster', 'Emma\nNoah 3');
+      await page.waitForTimeout(500);
+      await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#pt-sp-print')]);
+      const got = await page.evaluate(() => window.__ptNotes || []);
+      const emma = got.find((x) => /Emma/.test(x[0]));
+      const noah = got.find((x) => /Noah/.test(x[0]));
+      check('Emma traces (dotted); Noah, at level 3, copies', !!emma && !!noah && /^Trace each word/.test(emma[1]) && /^Read each word/.test(noah[1]) && !/Noah 3/.test(noah[0]), JSON.stringify(got));
+    } catch (e) {
+      check('spelling per-child rung: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 30. The N-per-sheet control is on the page before a list is typed: shown,
+  // switched off with a one-line hint, and on at two names. block-letters is
+  // frozen and keeps it hidden.
+  console.log('\n/printables/name-tracing/ (Sheets per page is visible before two names)');
+  {
+    const { ctx, page, errors } = await open('/printables/name-tracing/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      const state = () => page.evaluate(() => {
+        const f = document.querySelector('.pt-nup-field');
+        const h = f && f.querySelector('.pt-nup-hint');
+        return f && { shown: !f.hidden && f.offsetParent !== null, off: [...f.querySelectorAll('.pt-choice')].every((b) => b.disabled), hint: !!h && !h.hidden };
+      });
+      const before = await state();
+      check('before a list: shown, switched off, with its hint', before && before.shown && before.off && before.hint, JSON.stringify(before));
+      await page.click('.pt-audience-field .pt-choice[data-value="class"]');
+      await page.fill('#pt-name-roster', 'Mia\nLeo');
+      await page.waitForTimeout(400);
+      const after = await state();
+      check('at two names: switched on, hint gone', after && after.shown && !after.off && !after.hint, JSON.stringify(after));
+    } catch (e) {
+      check('N-up before a list: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+    const bl = await open('/printables/block-letters/', 'desktop');
+    check('block-letters keeps Sheets per page hidden until two names', await bl.page.evaluate(() => { const f = document.querySelector('.pt-nup-field'); return !f || f.hidden; }));
+    await bl.ctx.close();
+  }
+
+  // 31. Your recent sheets: one chip per sheet, separate, named by what the
+  // sheet holds. Entries ran together as one string ("Zoë JoséZoë José") and
+  // the word tools were all labelled with their page title.
+  console.log('\n/printables/word-search-maker/ (recent sheets: separate, de-duplicated, labelled by content)');
+  {
+    const { ctx, page, errors } = await open('/printables/word-search-maker/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.evaluate(() => localStorage.setItem('utg_printables_recent', JSON.stringify([
+        { href: location.origin + '/printables/name-tracing/?name=Zo%C3%AB', label: 'Zoë', page: 'Name Tracing Worksheets', sheet: 'name', t: 3 },
+        { href: '/printables/name-tracing/?name=Zo%C3%AB', label: 'Zoë', page: 'Name Tracing Worksheets', sheet: 'name', t: 2 },
+        { href: '/printables/name-tracing/?name=Jos%C3%A9', label: 'José', page: 'Name Tracing Worksheets', sheet: 'name', t: 1 }
+      ])));
+      await page.reload({ waitUntil: 'load' });
+      await page.waitForTimeout(700);
+      const chips = () => page.evaluate(() => [...document.querySelectorAll('.pt-recent:not(.pt-saved-strip) .pt-recent-list > li > a.pt-recent-link')].map((a) => [a.querySelector('.pt-recent-label').textContent, (a.querySelector('.pt-recent-page') || {}).textContent || '']));
+      const c1 = await chips();
+      check('one chip per sheet, each in its own list item', c1.length === 2 && c1[0][0] === 'Zoë' && c1[1][0] === 'José', JSON.stringify(c1));
+      check('the page is the chip\'s second line', c1.length && c1[0][1] === 'Name Tracing Worksheets', JSON.stringify(c1));
+      const gap = await page.evaluate(() => { const a = [...document.querySelectorAll('.pt-recent:not(.pt-saved-strip) .pt-recent-link')]; return a.length > 1 ? Math.round(a[1].getBoundingClientRect().left - a[0].getBoundingClientRect().right) : -1; });
+      check('chips are visibly apart', gap > 0, `${gap}px`);
+      await page.fill('#pt-search-input', 'because\nfriend\npeople\nschool');
+      await page.waitForTimeout(400);
+      await Promise.all([page.waitForEvent('download', { timeout: 30000 }), page.click('#pt-search-print')]);
+      await page.waitForTimeout(400);
+      const c2 = await chips();
+      check('a word search is remembered by its words, not the page title', c2.length && c2[0][0] === 'because, friend, people, …', JSON.stringify(c2[0]));
+    } catch (e) {
+      check('recent strip: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 32. Name labels, Classroom: the English chip opens the class list on
+  // 2.625 x 1in labels; a locale label page carries no such chip.
+  console.log('\n/printables/name-labels/ (the Classroom preset)');
+  {
+    const { ctx, page, errors } = await open('/printables/name-labels/', 'desktop');
+    page.setDefaultTimeout(5000);
+    try {
+      await page.click('#lb-what [data-value="classroom"]');
+      await page.waitForTimeout(300);
+      const st = await page.evaluate(() => ({ on: document.querySelector('#lb-what [data-value="classroom"]').getAttribute('aria-checked'), list: !document.getElementById('lb-list-box').hidden, size: window.UltraTextGen.labels.state.size, hint: document.getElementById('lb-what-hint').textContent, ph: document.getElementById('lb-line2').placeholder }));
+      check('Classroom is chosen, opens the list, picks 2.625 x 1in labels', st.on === 'true' && st.list && st.size === 's', JSON.stringify(st));
+      check('its hint and second line speak about the class and the room', /class list/.test(st.hint) && /room/i.test(st.ph), JSON.stringify(st));
+    } catch (e) {
+      check('classroom preset: every step ran', false, e.message.split('\n')[0]);
+    }
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+    for (const u of ['/pt/imprimiveis/etiquetas-escolares/', '/id/printables/label-nama/']) {
+      const o = await open(u, 'desktop');
+      check(`${u} carries no Classroom chip`, (await o.page.locator('#lb-what [data-value="classroom"]').count()) === 0);
+      await o.ctx.close();
+    }
+  }
+
+  // 33. Graffiti name: the sheet has three hollow trace rows, so the
+  // left-handed option is offered there.
+  console.log('\n/printables/graffiti-name/ (left-handed model)');
+  {
+    const { ctx, page, errors } = await open('/printables/graffiti-name/', 'desktop');
+    check('the left-handed option is on the page', await page.isVisible('#pt-lefty'));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+
+  // 34. Share buttons say what they do on this browser (2026-11-01). Headless
+  // Chromium has no navigator.share and cannot share files, so every primary
+  // share button is a Copy link and every image button a Download, and each
+  // says so up front; the share row is stamped with its own surface, never
+  // the generator's. A Korean library page keeps its translated Share label
+  // (no Korean "Copy link" exists) rather than showing the English word.
+  console.log('\nshare buttons: label follows the action, surface names the lane');
+  {
+    const hasShare = async (page) => page.evaluate(() => typeof navigator.share === 'function');
+    const { ctx, page, errors } = await open('/', 'desktop');
+    await page.fill('#mainInput', 'Luna');
+    await page.waitForTimeout(400);
+    const btn = page.locator('#resultsGrid .share-result-btn:not([disabled])').first();
+    const img = page.locator('#resultsGrid .share-image-btn:not([disabled])').first();
+    const noSheet = !(await hasShare(page));
+    check('generator: the share button carries its surface', (await btn.getAttribute('data-share-surface')) === 'generator');
+    check('generator: without a share sheet the button says Copy link', !noSheet || (await btn.locator('.share-result-label').textContent()) === 'Copy link', await btn.locator('.share-result-label').textContent());
+    check('generator: and its accessible name says so too', !noSheet || /^Copy link: /.test(await btn.getAttribute('aria-label') || ''), await btn.getAttribute('aria-label'));
+    check('generator: the image button says Download where it cannot share a file', !noSheet || (await img.getAttribute('title')) === 'Download image', await img.getAttribute('title'));
+    await sentinel(page);
+    const n0 = (await dl(page)).length;
+    await btn.click();
+    await page.waitForTimeout(300);
+    // A share row is the one with share_method: share-core.js is the only
+    // writer of the event, and test:share-core keeps its name out of every
+    // other file, this one included.
+    const shareRows = (events) => events.filter((e) => e.share_method);
+    const rows = shareRows((await dl(page)).slice(n0));
+    check('generator: the press records one row with surface generator', rows.length === 1 && rows[0].share_surface === 'generator', JSON.stringify(rows));
+    check('generator: the copied link carries the text and the style', noSheet ? /[?&]q=Luna/.test(await clip(page)) && /[?&]style=/.test(await clip(page)) : true, await clip(page));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+
+    const lib = await open('/library/heart-symbols/', 'desktop');
+    const sec = lib.page.locator('.symbol-section-actions .share-result-btn').first();
+    await sec.scrollIntoViewIfNeeded();
+    check('library: the section share says Copy link without a share sheet', (await hasShare(lib.page)) || (await sec.locator('.share-result-label').textContent()) === 'Copy link', await sec.locator('.share-result-label').textContent());
+    check('library: and names the library lane', (await sec.getAttribute('data-share-surface')) === 'library_section', await sec.getAttribute('data-share-surface'));
+    check('library: no page errors', !lib.errors.length, lib.errors.join(' | '));
+    await lib.ctx.close();
+
+    const sym = await open('/symbol/quotation-mark/', 'desktop');
+    const symBtn = sym.page.locator('.symbol-section-actions .share-result-btn').first();
+    check('symbol: a symbol page names the symbol lane, not the library', (await symBtn.count()) === 0 || (await symBtn.getAttribute('data-share-surface')) === 'symbol_section', await symBtn.getAttribute('data-share-surface'));
+    check('symbol: no page errors', !sym.errors.length, sym.errors.join(' | '));
+    await sym.ctx.close();
+
+    const ko = await open('/ko/library/imotikon/', 'desktop');
+    const koBtn = ko.page.locator('.symbol-section-actions .share-result-btn').first();
+    await koBtn.scrollIntoViewIfNeeded();
+    const koLabel = await koBtn.locator('.share-result-label').textContent();
+    check('korean library: the label is never the English Copy link', koLabel !== 'Copy link' && koLabel !== 'Share', koLabel);
+    check('korean library: the link icon still says what the press copies', (await hasShare(ko.page)) || /M13\.828 10\.172/.test(await koBtn.innerHTML()));
+    await ko.ctx.close();
+
+    const de = await open('/de/library/herz-symbole/', 'desktop');
+    const deBtn = de.page.locator('.symbol-section-actions .share-result-btn').first();
+    if (await deBtn.count()) {
+      await deBtn.scrollIntoViewIfNeeded();
+      check('german library: the label is the harvested German Copy link', (await hasShare(de.page)) || (await deBtn.locator('.share-result-label').textContent()) === 'Link kopieren', await deBtn.locator('.share-result-label').textContent());
+    }
+    await de.ctx.close();
+
+    const z = await open('/usecase/zalgo-text/', 'desktop');
+    await z.page.waitForTimeout(400);
+    const zBtn = z.page.locator('#zalgoShareRow .share-result-btn');
+    check('zalgo: the link share names the zalgo surface', (await zBtn.getAttribute('data-share-surface')) === 'zalgo', await zBtn.getAttribute('data-share-surface'));
+    check('zalgo: no page errors', !z.errors.length, z.errors.join(' | '));
+    await z.ctx.close();
+  }
+
+  // 35. Upside-down text: the generator that had Copy and no Share. The share
+  // pair sits beside Copy, the link it shares is the page's live state (text,
+  // mode, wrap), the recipient opens the exact same result, and Copy records a
+  // copy row without the typed text.
+  console.log('\n/category/upside-down-text/ (share pair, exact-state link, copy row)');
+  {
+    const { ctx, page, errors } = await open('/category/upside-down-text/', 'desktop');
+    const row = page.locator('#udShareRow');
+    check('the share pair is on the output', (await row.count()) === 1);
+    check('before typing both buttons are disabled', (await row.locator('button:disabled').count()) === 2);
+    await page.fill('#mainInput', 'hello world');
+    await page.click('.pill[data-group="mode"][data-value="mirror"]');
+    await page.click('.pill[data-group="wrap"][data-value="stars"]');
+    await page.waitForTimeout(400);
+    const out = await page.locator('#udOutputBody').innerText();
+    const share = row.locator('.share-result-btn');
+    check('typing enables the share buttons', (await row.locator('button:disabled').count()) === 0);
+    check('the share button carries the exact output', (await share.getAttribute('data-share-text')) === out, await share.getAttribute('data-share-text'));
+    const url = await share.getAttribute('data-share-url');
+    check('the share link carries text, mode and wrap', /q=hello\+world/.test(url) && /mode=mirror/.test(url) && /wrap=stars/.test(url), url);
+    check('the share button names its surface', (await share.getAttribute('data-share-surface')) === 'upside_down');
+    check('its accessible name carries the mode', /Mirror/.test(await share.getAttribute('aria-label') || ''), await share.getAttribute('aria-label'));
+    await sentinel(page);
+    let n0 = (await dl(page)).length;
+    await share.click();
+    await page.waitForTimeout(300);
+    const shareRows = (await dl(page)).slice(n0).filter((e) => e.share_method);
+    const noSheet = !(await page.evaluate(() => typeof navigator.share === 'function'));
+    check('pressing Share records one row on the upside_down surface', shareRows.length === 1 && shareRows[0].share_surface === 'upside_down' && shareRows[0].share_item_type === 'style', JSON.stringify(shareRows));
+    const copiedLink = await clip(page);
+    check('without a share sheet the link is on the clipboard', !noSheet || copiedLink === url, copiedLink);
+    await sentinel(page);
+    n0 = (await dl(page)).length;
+    await page.click('#udCopyBtn');
+    await page.waitForTimeout(300);
+    const copyRows = (await dl(page)).slice(n0).filter((e) => e.event === 'copy_text');
+    check('Copy puts the flipped text on the clipboard', (await clip(page)) === out);
+    check('Copy records one copy row, named, without the typed text', copyRows.length === 1 && copyRows[0].copy_method === 'upside_down' && copyRows[0].copy_item === undefined, JSON.stringify(copyRows));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+
+    // The recipient: the shared link reproduces the creation exactly.
+    const r = await open(url.replace(/^https?:\/\/[^/]+/, ''), 'mobile');
+    await r.page.waitForTimeout(400);
+    check('the recipient sees the identical result', (await r.page.locator('#udOutputBody').innerText()) === out, await r.page.locator('#udOutputBody').innerText());
+    check('with the same mode and wrap selected', (await r.page.locator('.pill.active[data-value="mirror"]').count()) === 1 && (await r.page.locator('.pill.active[data-value="stars"]').count()) === 1);
+    check('and can change it: the share buttons are live', (await r.page.locator('#udShareRow button:disabled').count()) === 0);
+    check('recipient: no page errors', !r.errors.length, r.errors.join(' | '));
+    await r.ctx.close();
+  }
+
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
   await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });

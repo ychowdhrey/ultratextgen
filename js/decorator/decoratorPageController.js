@@ -431,7 +431,10 @@
         styleId: shareId,
         name: nameLine.textContent,
         text: result.text,
-        params: shareParams
+        params: shareParams,
+        /* Named so the share event can tell this lane from the main generator; an
+           unstamped button reads "unstamped" since 2026-11-01. */
+        surface: "decorator"
       }));
     }
     if (UTG.markSharedCard) UTG.markSharedCard(card, shareId);
