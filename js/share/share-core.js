@@ -872,6 +872,9 @@
     const mk = (icon, text, onClick, title) => {
       const b = document.createElement("button");
       b.type = "button"; b.className = cls;
+      // This button has its own listener. A host may use share-result-btn
+      // for styling; the generic delegated handler must not run as well.
+      b.dataset.shareOwnHandler = "1";
       b.innerHTML = icon + '<span class="pt-share-label"></span>';
       b.querySelector(".pt-share-label").textContent = text;
       if (title) b.title = title;
@@ -912,6 +915,7 @@
     if (o.pinMedia) {
       const pin = document.createElement("a");
       pin.className = cls + " pt-pin-btn";
+      pin.dataset.shareOwnHandler = "1";
       pin.innerHTML = PINTEREST_ICON_SVG + '<span class="pt-share-label"></span>';
       pin.querySelector(".pt-share-label").textContent = L.pinterest || "Save to Pinterest";
       pin.href = "https://www.pinterest.com/";
@@ -956,6 +960,9 @@
     (o.platforms || []).filter((p) => PLATFORM_SHARE_URLS[p]).forEach((p) => {
       const a = document.createElement("a");
       a.className = o.buttonClass || "share-result-btn";
+      // Platform links are handled here, not by the generator's delegated
+      // .share-result-btn listener; otherwise one click opens two share paths.
+      a.dataset.shareOwnHandler = "1";
       a.textContent = L[p] || (p === "vk" ? "Share on VK" : "Share on Telegram");
       a.href = PLATFORM_SHARE_URLS[p](urlOf(), titleOf());
       a.target = "_blank"; a.rel = "noopener";
@@ -1045,7 +1052,9 @@
   };
 document.addEventListener("click", async (e) => {
   const btn = e.target.closest ? e.target.closest(".share-result-btn") : null;
-  if (!btn || btn.disabled) return;
+  // A platform link (and an explicitly wired share-row button) can reuse the
+  // class for styling. Its own listener already owns the action and telemetry.
+  if (!btn || btn.disabled || btn.dataset.shareOwnHandler === "1") return;
 
   // Generic across every generator on the site: the creation state is read
   // from the card itself (its own .copy-btn already holds the exact text the
@@ -1169,6 +1178,8 @@ document.addEventListener("click", async (e) => {
   // i18n.js's locale fetch resolves after the buttons were already built.
   function relabel() {
     document.querySelectorAll(".share-result-btn").forEach((btn) => {
+      // Don't relabel dedicated platform links/buttons with generator text.
+      if (btn.dataset.shareOwnHandler === "1") return;
       // A button whose host supplied its own label owns it; re-reading
       // window.UTG_I18N here would overwrite a correct translation with the
       // English fallback on exactly the pages that have no UTG_I18N.
