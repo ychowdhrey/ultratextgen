@@ -1677,6 +1677,128 @@ async function main() {
     await ctx.close();
   }
 
+  // 34. Share buttons say what they do on this browser (2026-11-01). Headless
+  // Chromium has no navigator.share and cannot share files, so every primary
+  // share button is a Copy link and every image button a Download, and each
+  // says so up front; the share row is stamped with its own surface, never
+  // the generator's. A Korean library page keeps its translated Share label
+  // (no Korean "Copy link" exists) rather than showing the English word.
+  console.log('\nshare buttons: label follows the action, surface names the lane');
+  {
+    const hasShare = async (page) => page.evaluate(() => typeof navigator.share === 'function');
+    const { ctx, page, errors } = await open('/', 'desktop');
+    await page.fill('#mainInput', 'Luna');
+    await page.waitForTimeout(400);
+    const btn = page.locator('#resultsGrid .share-result-btn:not([disabled])').first();
+    const img = page.locator('#resultsGrid .share-image-btn:not([disabled])').first();
+    const noSheet = !(await hasShare(page));
+    check('generator: the share button carries its surface', (await btn.getAttribute('data-share-surface')) === 'generator');
+    check('generator: without a share sheet the button says Copy link', !noSheet || (await btn.locator('.share-result-label').textContent()) === 'Copy link', await btn.locator('.share-result-label').textContent());
+    check('generator: and its accessible name says so too', !noSheet || /^Copy link: /.test(await btn.getAttribute('aria-label') || ''), await btn.getAttribute('aria-label'));
+    check('generator: the image button says Download where it cannot share a file', !noSheet || (await img.getAttribute('title')) === 'Download image', await img.getAttribute('title'));
+    await sentinel(page);
+    const n0 = (await dl(page)).length;
+    await btn.click();
+    await page.waitForTimeout(300);
+    // A share row is the one with share_method: share-core.js is the only
+    // writer of the event, and test:share-core keeps its name out of every
+    // other file, this one included.
+    const shareRows = (events) => events.filter((e) => e.share_method);
+    const rows = shareRows((await dl(page)).slice(n0));
+    check('generator: the press records one row with surface generator', rows.length === 1 && rows[0].share_surface === 'generator', JSON.stringify(rows));
+    check('generator: the copied link carries the text and the style', noSheet ? /[?&]q=Luna/.test(await clip(page)) && /[?&]style=/.test(await clip(page)) : true, await clip(page));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+
+    const lib = await open('/library/heart-symbols/', 'desktop');
+    const sec = lib.page.locator('.symbol-section-actions .share-result-btn').first();
+    await sec.scrollIntoViewIfNeeded();
+    check('library: the section share says Copy link without a share sheet', (await hasShare(lib.page)) || (await sec.locator('.share-result-label').textContent()) === 'Copy link', await sec.locator('.share-result-label').textContent());
+    check('library: and names the library lane', (await sec.getAttribute('data-share-surface')) === 'library_section', await sec.getAttribute('data-share-surface'));
+    check('library: no page errors', !lib.errors.length, lib.errors.join(' | '));
+    await lib.ctx.close();
+
+    const sym = await open('/symbol/quotation-mark/', 'desktop');
+    const symBtn = sym.page.locator('.symbol-section-actions .share-result-btn').first();
+    check('symbol: a symbol page names the symbol lane, not the library', (await symBtn.count()) === 0 || (await symBtn.getAttribute('data-share-surface')) === 'symbol_section', await symBtn.getAttribute('data-share-surface'));
+    check('symbol: no page errors', !sym.errors.length, sym.errors.join(' | '));
+    await sym.ctx.close();
+
+    const ko = await open('/ko/library/imotikon/', 'desktop');
+    const koBtn = ko.page.locator('.symbol-section-actions .share-result-btn').first();
+    await koBtn.scrollIntoViewIfNeeded();
+    const koLabel = await koBtn.locator('.share-result-label').textContent();
+    check('korean library: the label is never the English Copy link', koLabel !== 'Copy link' && koLabel !== 'Share', koLabel);
+    check('korean library: the link icon still says what the press copies', (await hasShare(ko.page)) || /M13\.828 10\.172/.test(await koBtn.innerHTML()));
+    await ko.ctx.close();
+
+    const de = await open('/de/library/herz-symbole/', 'desktop');
+    const deBtn = de.page.locator('.symbol-section-actions .share-result-btn').first();
+    if (await deBtn.count()) {
+      await deBtn.scrollIntoViewIfNeeded();
+      check('german library: the label is the harvested German Copy link', (await hasShare(de.page)) || (await deBtn.locator('.share-result-label').textContent()) === 'Link kopieren', await deBtn.locator('.share-result-label').textContent());
+    }
+    await de.ctx.close();
+
+    const z = await open('/usecase/zalgo-text/', 'desktop');
+    await z.page.waitForTimeout(400);
+    const zBtn = z.page.locator('#zalgoShareRow .share-result-btn');
+    check('zalgo: the link share names the zalgo surface', (await zBtn.getAttribute('data-share-surface')) === 'zalgo', await zBtn.getAttribute('data-share-surface'));
+    check('zalgo: no page errors', !z.errors.length, z.errors.join(' | '));
+    await z.ctx.close();
+  }
+
+  // 35. Upside-down text: the generator that had Copy and no Share. The share
+  // pair sits beside Copy, the link it shares is the page's live state (text,
+  // mode, wrap), the recipient opens the exact same result, and Copy records a
+  // copy row without the typed text.
+  console.log('\n/category/upside-down-text/ (share pair, exact-state link, copy row)');
+  {
+    const { ctx, page, errors } = await open('/category/upside-down-text/', 'desktop');
+    const row = page.locator('#udShareRow');
+    check('the share pair is on the output', (await row.count()) === 1);
+    check('before typing both buttons are disabled', (await row.locator('button:disabled').count()) === 2);
+    await page.fill('#mainInput', 'hello world');
+    await page.click('.pill[data-group="mode"][data-value="mirror"]');
+    await page.click('.pill[data-group="wrap"][data-value="stars"]');
+    await page.waitForTimeout(400);
+    const out = await page.locator('#udOutputBody').innerText();
+    const share = row.locator('.share-result-btn');
+    check('typing enables the share buttons', (await row.locator('button:disabled').count()) === 0);
+    check('the share button carries the exact output', (await share.getAttribute('data-share-text')) === out, await share.getAttribute('data-share-text'));
+    const url = await share.getAttribute('data-share-url');
+    check('the share link carries text, mode and wrap', /q=hello\+world/.test(url) && /mode=mirror/.test(url) && /wrap=stars/.test(url), url);
+    check('the share button names its surface', (await share.getAttribute('data-share-surface')) === 'upside_down');
+    check('its accessible name carries the mode', /Mirror/.test(await share.getAttribute('aria-label') || ''), await share.getAttribute('aria-label'));
+    await sentinel(page);
+    let n0 = (await dl(page)).length;
+    await share.click();
+    await page.waitForTimeout(300);
+    const shareRows = (await dl(page)).slice(n0).filter((e) => e.share_method);
+    const noSheet = !(await page.evaluate(() => typeof navigator.share === 'function'));
+    check('pressing Share records one row on the upside_down surface', shareRows.length === 1 && shareRows[0].share_surface === 'upside_down' && shareRows[0].share_item_type === 'style', JSON.stringify(shareRows));
+    const copiedLink = await clip(page);
+    check('without a share sheet the link is on the clipboard', !noSheet || copiedLink === url, copiedLink);
+    await sentinel(page);
+    n0 = (await dl(page)).length;
+    await page.click('#udCopyBtn');
+    await page.waitForTimeout(300);
+    const copyRows = (await dl(page)).slice(n0).filter((e) => e.event === 'copy_text');
+    check('Copy puts the flipped text on the clipboard', (await clip(page)) === out);
+    check('Copy records one copy row, named, without the typed text', copyRows.length === 1 && copyRows[0].copy_method === 'upside_down' && copyRows[0].copy_item === undefined, JSON.stringify(copyRows));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+
+    // The recipient: the shared link reproduces the creation exactly.
+    const r = await open(url.replace(/^https?:\/\/[^/]+/, ''), 'mobile');
+    await r.page.waitForTimeout(400);
+    check('the recipient sees the identical result', (await r.page.locator('#udOutputBody').innerText()) === out, await r.page.locator('#udOutputBody').innerText());
+    check('with the same mode and wrap selected', (await r.page.locator('.pill.active[data-value="mirror"]').count()) === 1 && (await r.page.locator('.pill.active[data-value="stars"]').count()) === 1);
+    check('and can change it: the share buttons are live', (await r.page.locator('#udShareRow button:disabled').count()) === 0);
+    check('recipient: no page errors', !r.errors.length, r.errors.join(' | '));
+    await r.ctx.close();
+  }
+
   // Reversible interactions are only tested once they have come back: every
   // case runs A->B->A->B and reads the state after each press.
   await require('./lib/interaction-round-trips').runInteractionRoundTrips({ open, check, dl });

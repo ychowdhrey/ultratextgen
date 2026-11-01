@@ -2016,7 +2016,7 @@
     // Main output: the pair rides under the output panel.
     const outputSection = document.querySelector('#zalgoOutputSection .output-section');
     if (outputSection && !$('#zalgoShareRow')) {
-      const row = UTG.buildShareActions({ styleId: 'zalgo', name: 'Zalgo', disabled: !state.output });
+      const row = UTG.buildShareActions({ styleId: 'zalgo', name: 'Zalgo', disabled: !state.output, surface: 'zalgo' });
       row.id = 'zalgoShareRow';
       row.classList.add('zalgo-share-row');
       outputSection.appendChild(row);
@@ -2027,17 +2027,17 @@
     VARIANTS.forEach(v => {
       const varRow = document.querySelector('.variant-row[data-variant="' + v.id + '"]');
       if (!varRow || varRow.querySelector('.result-share-row')) return;
-      const pair = UTG.buildShareActions({ styleId: 'zalgo-' + v.id, name: i18n[v.labelKey] || v.id, disabled: true });
+      const pair = UTG.buildShareActions({ styleId: 'zalgo-' + v.id, name: i18n[v.labelKey] || v.id, disabled: true, surface: 'zalgo' });
       pair.setAttribute('data-variant-share', v.id);
       varRow.appendChild(pair);
     });
-    // Stamped after both loops, so the variant rows' buttons exist.
-    // The PNG card is the comparator register #128 reads the GIF against,
-    // so it names this page as its surface. Only the image button: the link
-    // share keeps "generator" so its own series (#112) stays continuous.
-    document.querySelectorAll('#zalgoOutputSection .share-image-btn, #variantRows .share-image-btn').forEach(b => {
-      b.dataset.shareSurface = 'zalgo';
-    });
+    // Every button on this page names it as its surface (passed to
+    // buildShareActions above). Until 2026-11-01 only the image button did,
+    // and the link share read "generator" to keep #112's series continuous;
+    // share_surface changed definition for every lane that day (register
+    // #112), so the link share says zalgo too. #128's comparator is unchanged:
+    // it reads the PNG card by share_method image / image_download and
+    // share_item_type style, which the link rows (native / link_copy) are not.
 
     syncShareState();
 

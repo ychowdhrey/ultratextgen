@@ -188,7 +188,16 @@
       locale: pageLocale(),
       share_method: method,
       share_destination: destination || DESTINATION_FOR_METHOD[method] || null,
-      share_surface: (c && c.surface) || "generator",
+      /* "unstamped" since 2026-11-01. The fallback used to read "generator",
+         so every caller that forgot to stamp its surface was counted as the
+         main generator: on 2026-10-09 that was 47.7% of all attributable
+         rows, and the cursive, decorator, vertical, scroll, repeat, tattoo
+         and event-font controllers were all inside it. A default that reads
+         as data hides exactly the gap it fills. Each caller now names its
+         surface; a row that says "unstamped" is a caller to fix, not a lane.
+         Read share_surface across 2026-11-01 as a definition change
+         (register #112). */
+      share_surface: (c && c.surface) || "unstamped",
       share_item_type: (c && c.itemType) || "style",
       share_format: (c && c.format) || FORMAT_FOR_METHOD[method] || null
     });
@@ -216,6 +225,109 @@
     } catch (err) { canShareFilesCache = false; }
     return canShareFilesCache;
   };
+
+  /* ---- What the primary share button does on THIS browser (2026-11-01) --
+     Without navigator.share the button copies the link, and until now it
+     still said "Share", with "Link copied" appearing only after the press.
+     The printables row has said "Copy link" up front since 2026-09-13; every
+     other share button now does the same, when the page has that string in
+     its own language. Hosts that own their strings (library and symbol pages)
+     pass `copyLink`; pages with i18n.js read shareResult.copyLink; English
+     pages use the English. Where none of those exists the translated "Share"
+     label stays, because a word in the wrong language is worse than a
+     generic verb, and the link icon still shows what the button copies. */
+  function hasNativeShare() {
+    return typeof navigator !== "undefined" && typeof navigator.share === "function";
+  }
+  UTG.hasNativeShare = hasNativeShare;
+
+  // A string the page can show in its own language, or null. With a locale
+  // table present the key has to be in it; with none, only an English page
+  // may use the English.
+  function localizedOrNull(path, english) {
+    const i18n = window.UTG_I18N;
+    if (i18n && i18n.ui) {
+      const val = path.split(".").reduce((acc, key) => (acc != null ? acc[key] : undefined), i18n.ui);
+      return val != null && val !== "" ? String(val) : null;
+    }
+    return pageLocale() === "en" ? english : null;
+  }
+
+  //   shareButtonText({ label, copyLink, name })
+  //   -> { action: "share" | "copy_link", label, title, aria }
+  // `label` is a host-owned visible label (pages without i18n.js); `copyLink`
+  // is the host's own "Copy link"; `name` is the result's name for the
+  // accessible name. Pure, so script.js's card template and node can use it.
+  UTG.shareButtonText = function (opts) {
+    const o = opts || {};
+    // A caller-supplied label means the page translates its own buttons and
+    // has no i18n.js strings: build the name and tooltip from the label the
+    // visitor actually sees (WCAG 2.5.3, label in name).
+    const hosted = !!(o.label && !(window.UTG_I18N && window.UTG_I18N.ui));
+    const withName = (s) => String(s) + (o.name ? ": " + o.name : "");
+    const asShare = {
+      action: "share",
+      label: o.label || uiText("shareResult.label", "Share"),
+      title: hosted ? String(o.label) : uiText("shareResult.title", "Share this result — the link opens with your text in this style"),
+      aria: hosted ? withName(o.label) : uiText("shareResult.ariaLabel", "Share {style} result").replace("{style}", o.name || "")
+    };
+    if (hasNativeShare()) return asShare;
+    const copyLink = o.copyLink || (o.label ? null : localizedOrNull("shareResult.copyLink", "Copy link"));
+    if (!copyLink) return Object.assign({}, asShare, { action: "copy_link" });
+    const sentence = (o.copyLink || hosted) ? null
+      : localizedOrNull("shareResult.copyLinkTitle", "Copy a link to this result. It opens with your text in this style.");
+    return {
+      action: "copy_link",
+      label: copyLink,
+      title: sentence || copyLink,
+      aria: withName(copyLink)
+    };
+  };
+
+  // The label a share button rests at between presses: what it will do, in
+  // the page language, read from what the builder stamped on it.
+  function idleShareLabel(btn) {
+    const d = (btn && btn.dataset) || {};
+    return UTG.shareButtonText({ label: d.shareLabel, copyLink: d.shareCopyLink, name: d.shareName }).label;
+  }
+  UTG.idleShareLabel = idleShareLabel;
+
+  //   shareImageButtonText({ name, imageTitle, downloadTitle })
+  //   -> { action: "image" | "image_download", title, aria }
+  // Where this browser cannot hand a file to the share sheet the button saves
+  // a PNG, and says Download, as the printables rows and the library selection
+  // already do, instead of promising a share and then saving a file.
+  UTG.shareImageButtonText = function (opts) {
+    const o = opts || {};
+    const name = o.name || "";
+    const withName = (s) => String(s) + (name ? ": " + name : "");
+    if (UTG.canShareFiles()) {
+      return {
+        action: "image",
+        title: o.imageTitle || uiText("shareResult.imageTitle", "Share as an image"),
+        aria: o.imageTitle ? withName(o.imageTitle)
+          : uiText("shareResult.imageAriaLabel", "Share {style} result as an image").replace("{style}", name)
+      };
+    }
+    const download = o.downloadTitle || (o.imageTitle ? null : localizedOrNull("imageSelection.downloadImage", "Download image"));
+    if (!download) {
+      return {
+        action: "image_download",
+        title: o.imageTitle || uiText("shareResult.imageTitle", "Share as an image"),
+        aria: o.imageTitle ? withName(o.imageTitle)
+          : uiText("shareResult.imageAriaLabel", "Share {style} result as an image").replace("{style}", name)
+      };
+    }
+    return { action: "image_download", title: download, aria: withName(download) };
+  };
+
+  function paintImageButtonText(btn) {
+    const d = btn.dataset || {};
+    const tx = UTG.shareImageButtonText({ name: d.shareName, imageTitle: d.shareImageTitle, downloadTitle: d.shareDownloadTitle });
+    btn.dataset.shareAction = tx.action;
+    btn.title = tx.title;
+    btn.setAttribute("aria-label", tx.aria);
+  }
 
   // creation: { input, output, styleId, title, url?, fallback? } — url wins
   // when given. Resolves to "native" | "aborted" | "copied" | "failed" so the
@@ -307,6 +419,10 @@
     // get an English "Share" sitting under localized prose, which is the exact
     // defect i18n.js's own comment records for the shadow locales.
     if (o.label) btn.dataset.shareLabel = String(o.label);
+    // And the host's own "Copy link", shown instead of its Share label where
+    // this browser has no share sheet (see shareButtonText).
+    if (o.copyLink) btn.dataset.shareCopyLink = String(o.copyLink);
+    if (o.name) btn.dataset.shareName = String(o.name);
     // The same for what the button says after it copies the link (no native
     // share sheet) or fails to: without these a Korean library page confirmed
     // the copy in English.
@@ -324,23 +440,21 @@
       }
     }
     if (o.disabled) btn.disabled = true;
-    /* A caller-supplied label means the page translates its own buttons and
-       has no i18n.js strings: the English sentence below would then be read
-       out under a localized visible label ("Share 기쁘고 … result" beside
-       "공유"), failing label-in-name. Build the name and tooltip from the
-       label the visitor actually sees instead. */
-    const ownLabel = o.label && !(window.UTG_I18N && window.UTG_I18N.ui);
-    btn.title = ownLabel
-      ? String(o.label)
-      : uiText("shareResult.title", "Share this result — the link opens with your text in this style");
-    btn.setAttribute("aria-label", ownLabel
-      ? String(o.label) + (o.name ? ": " + o.name : "")
-      : uiText("shareResult.ariaLabel", "Share {style} result").replace("{style}", o.name || ""));
+    // Label, tooltip and accessible name follow what the press will do on
+    // this browser (shareButtonText above): a Share that opens the OS sheet,
+    // or a Copy link. A caller-supplied label is the visible label the
+    // accessible name is built from, never the English fallback sentence.
+    const tx = UTG.shareButtonText({ label: o.label, copyLink: o.copyLink, name: o.name });
+    btn.dataset.shareAction = tx.action;
+    btn.title = tx.title;
+    btn.setAttribute("aria-label", tx.aria);
     // `icon: "link"` changes the picture only, never the action: the button
-    // still runs shareCreation (native sheet, else copy the link).
-    btn.innerHTML = (o.icon === "link" ? LINK_ICON_SVG : SHARE_ICON_SVG) + '<span class="share-result-label"></span>';
+    // still runs shareCreation (native sheet, else copy the link). A browser
+    // with no share sheet gets the link icon whatever the caller asked, since
+    // a link is what the press copies.
+    btn.innerHTML = ((o.icon === "link" || tx.action === "copy_link") ? LINK_ICON_SVG : SHARE_ICON_SVG) + '<span class="share-result-label"></span>';
     const label = $(".share-result-label", btn);
-    if (label) label.textContent = o.label || uiText("shareResult.label", "Share");
+    if (label) label.textContent = tx.label;
     if (o.title) btn.title = o.title;
     return btn;
   };
@@ -736,11 +850,11 @@
       try { btn.dataset.shareParams = JSON.stringify(o.params); } catch (err) { /* share works without extras */ }
     }
     if (o.disabled) btn.disabled = true;
-    btn.title = o.imageTitle || uiText("shareResult.imageTitle", "Share as an image");
-    btn.setAttribute("aria-label",
-      o.imageTitle
-        ? o.imageTitle + (o.name ? ": " + o.name : "")
-        : uiText("shareResult.imageAriaLabel", "Share {style} result as an image").replace("{style}", o.name || ""));
+    // The host's own titles travel on the button so relabel() can repaint
+    // them; the text itself follows whether this browser can share a file.
+    if (o.imageTitle) btn.dataset.shareImageTitle = String(o.imageTitle);
+    if (o.downloadTitle) btn.dataset.shareDownloadTitle = String(o.downloadTitle);
+    paintImageButtonText(btn);
     btn.innerHTML = IMAGE_ICON_SVG;
     return btn;
   };
@@ -842,7 +956,7 @@
   UTG.buildShareRow = function (opts) {
     const o = opts || {};
     const L = o.labels || {};
-    const surface = o.surface || "generator";
+    const surface = o.surface || "unstamped";
     const itemType = o.itemType || "style";
     const urlOf = () => (typeof o.url === "function" ? o.url() : (o.url || window.location.href));
     const titleOf = () => (typeof o.title === "function" ? o.title() : (o.title || document.title));
@@ -1087,14 +1201,14 @@ document.addEventListener("click", async (e) => {
     if (label) label.textContent = btn.dataset.shareCopied || uiText("shareResult.linkCopied", "Link copied");
     setTimeout(() => {
       btn.classList.remove("copied");
-      if (label && label.isConnected) label.textContent = btn.dataset.shareLabel || uiText("shareResult.label", "Share");
+      if (label && label.isConnected) label.textContent = idleShareLabel(btn);
     }, 1500);
   } else if (outcome === "failed") {
     btn.classList.add("share-error");
     if (label) label.textContent = btn.dataset.shareFailed || uiText("copyButtons.failed", "✗ Failed");
     setTimeout(() => {
       btn.classList.remove("share-error");
-      if (label && label.isConnected) label.textContent = btn.dataset.shareLabel || uiText("shareResult.label", "Share");
+      if (label && label.isConnected) label.textContent = idleShareLabel(btn);
     }, 1500);
   }
 });
@@ -1160,9 +1274,10 @@ document.addEventListener("click", async (e) => {
   // With the same buttons now on library, symbol and generator pages, the
   // method alone cannot answer "which surface did sharing actually work on",
   // which is the whole question this rollout exists to settle. Callers stamp
-  // data-share-surface on the button; the handlers below forward it.
+  // data-share-surface on the button; the handlers below forward it. A button
+  // nobody stamped reads "unstamped", never a real lane (see pushShare).
   function surfaceOf(btn) {
-    return (btn && btn.dataset.shareSurface) || "generator";
+    return (btn && btn.dataset.shareSurface) || "unstamped";
   }
 
   // Indent-preserving re-read of every label this module injected, for when
@@ -1173,17 +1288,18 @@ document.addEventListener("click", async (e) => {
       // window.UTG_I18N here would overwrite a correct translation with the
       // English fallback on exactly the pages that have no UTG_I18N.
       if (btn.dataset.shareLabel) return;
+      const tx = UTG.shareButtonText({ name: btn.dataset.shareName });
+      btn.dataset.shareAction = tx.action;
       const label = $(".share-result-label", btn);
       if (label && !btn.classList.contains("copied") && !btn.classList.contains("share-error")) {
-        label.textContent = uiText("shareResult.label", "Share");
+        label.textContent = tx.label;
       }
-      btn.title = uiText("shareResult.title", "Share this result — the link opens with your text in this style");
+      btn.title = tx.title;
+      if (btn.dataset.shareName) btn.setAttribute("aria-label", tx.aria);
     });
     document.querySelectorAll(".share-image-btn").forEach((btn) => {
       if (btn.dataset.shareLabel) return; // host owns this button's strings
-      if (!btn.classList.contains("copied")) {
-        btn.title = uiText("shareResult.imageTitle", "Share as an image");
-      }
+      if (!btn.classList.contains("copied")) paintImageButtonText(btn);
     });
   }
   UTG.relabelShareButtons = relabel;
