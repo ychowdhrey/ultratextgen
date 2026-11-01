@@ -788,6 +788,75 @@ async function main() {
     await fr.ctx.close();
   }
 
+  // 17b. A share link never carries the class list unless the visitor ticks
+  // the box that says so. Children's names in a URL reach every log and chat
+  // preview the link passes through; the pages say names stay on the device.
+  console.log('\n/printables/name-tracing/ (Copy link after a class list carries no names)');
+  {
+    const { ctx, page, errors } = await open('/printables/name-tracing/', 'desktop');
+    await page.click('.pt-audience-field .pt-choice[data-value="class"]');
+    await page.fill('#pt-name-roster', 'Emma\nNoah\nAva');
+    await page.fill('#pt-name-input', 'Emma');
+    await page.waitForTimeout(300);
+    const copyLink = page.locator('.pt-share-row .bubble-btn').first();
+    await sentinel(page);
+    await copyLink.click();
+    await page.waitForTimeout(300);
+    const plain = await clip(page);
+    check('Copy link copied a link to this page', plain.includes('/printables/name-tracing/'), plain);
+    check('the copied link carries no roster', !/[?&]roster=/.test(plain), plain);
+    check('the copied link keeps the typed name', /[?&]name=Emma/.test(plain), plain);
+    const tick = page.locator('.pt-share-roster input');
+    check('the include-names tick is shown, and off', (await tick.isVisible()) && !(await tick.isChecked()));
+    await tick.check();
+    await sentinel(page);
+    await copyLink.click();
+    await page.waitForTimeout(300);
+    const opted = await clip(page);
+    check('ticking it puts the class in the link', /[?&]roster=Emma%7CNoah%7CAva/.test(opted), opted);
+    const recentHrefs = await page.evaluate(() => (localStorage.getItem('utg_printables_recent') || ''));
+    check('the recent strip never stores the class', !/roster=/.test(recentHrefs), recentHrefs.slice(0, 200));
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+    const fr = await open('/fr/imprimables/modeles-d-ecriture/', 'desktop');
+    check('a French sheet gets no English include-names tick', (await fr.page.locator('.pt-share-roster').count()) === 0);
+    await fr.ctx.close();
+  }
+
+  // 17c. A list that arrives in the link is the sheet: the handwriting
+  // generator previewed its demo above a carried five-word list, and files were
+  // named after nothing ("handwriting-generator-sheet.pdf") or after the slug
+  // twice ("spelling-spelling-worksheet.pdf"). And one row of tab-separated
+  // words is five words, not "1 words".
+  console.log('\nhandwriting + spelling generators (carried list preview, file names, tab row)');
+  {
+    const { ctx, page, errors } = await open('/printables/handwriting-worksheet-generator/?roster=Apple%7CBanana%7COrange%7CMango%7CGrape', 'desktop');
+    await page.waitForTimeout(500);
+    const prev = await page.locator('#pt-gen-preview').innerText();
+    check('the preview shows the carried list\'s first word, not the demo', /Apple/.test(prev) && !/The cat sat/.test(prev), prev.slice(0, 120));
+    const [d1] = await Promise.all([page.waitForEvent('download'), page.click('#pt-gen-print')]);
+    check('the list PDF is named after the list', d1.suggestedFilename() === 'handwriting-apple-banana-plus-3.pdf', d1.suggestedFilename());
+    check('no page errors', !errors.length, errors.join(' | '));
+    await ctx.close();
+    const sp = await open('/printables/spelling-worksheet-generator/', 'desktop');
+    await sp.page.fill('#pt-sp-input', 'Apple\tBanana\tOrange\tMango\tGrape');
+    await sp.page.waitForTimeout(400);
+    const meta = await sp.page.locator('#pt-sp-meta').innerText();
+    check('a tab-separated row reads as 5 words', /^5 words/.test(meta), meta);
+    await sp.page.fill('#pt-sp-input', 'friend');
+    await sp.page.waitForTimeout(400);
+    const one = await sp.page.locator('#pt-sp-meta').innerText();
+    check('one word reads "1 word", not "1 words"', /^1 word\b/.test(one) && !/1 words/.test(one), one);
+    await sp.page.fill('#pt-sp-input', 'friend\nword1\nsupercalifragilisticexpialidocious');
+    await sp.page.waitForTimeout(400);
+    const why = await sp.page.locator('#pt-sp-meta').innerText();
+    check('digits and length are reported as two reasons', /no digits[^·]*word1/.test(why) && /longer than 20 letters\): supercal/.test(why), why);
+    const [d2] = await Promise.all([sp.page.waitForEvent('download'), sp.page.click('#pt-sp-print')]);
+    check('the spelling PDF has no doubled slug', !/spelling-spelling/.test(d2.suggestedFilename()) && d2.suggestedFilename() === 'spelling-friend.pdf', d2.suggestedFilename());
+    check('spelling: no page errors', !sp.errors.length, sp.errors.join(' | '));
+    await sp.ctx.close();
+  }
+
   // 18. Storage blocked. Reading window.localStorage throws a SecurityError
   // when the browser blocks site data; header.js read it unguarded, so the
   // throw ended its init and the dark-mode toggle, compact header and site

@@ -77,8 +77,14 @@
      language: es covers both Spain (A4) and Mexico (Carta), and a Mexican
      parent on /es/imprimibles/ wants Letter. navigator.languages is ordered
      by the visitor's own preference, so the first entry carrying a region
-     subtag wins. A language with no region tells us nothing about paper and
-     is skipped rather than guessed at. */
+     subtag wins. A language with no region is skipped rather than guessed
+     at, with one exception: a bare A4 language in FIRST place (see
+     A4_FIRST_LANGS below), where the region the loop would find belongs to
+     a fallback language the visitor ranked lower. */
+  /* Bare language tags whose readers print on A4 in every market this site
+     serves in that language. English is absent on purpose (US Letter is the
+     larger English printing audience), and so is any tag with a region. */
+  const A4_FIRST_LANGS = new Set(["de", "pl", "tr", "fr", "es", "it", "nl", "id", "pt", "ja"]);
   function defaultPaper() {
     let tags = [];
     try {
@@ -86,6 +92,15 @@
         ? navigator.languages.slice()
         : (navigator.language ? [navigator.language] : []);
     } catch (err) { tags = []; }
+    /* The FIRST preferred language decides when it is a bare A4 language.
+       A German reader whose browser lists ["de", "en-US", "en"] (the usual
+       shape when English was added as a fallback) was handed US Letter,
+       because the loop below takes the first region subtag it finds and the
+       only one in that list is the fallback's "US". The reader asked for
+       German first; German paper is A4. A first tag that carries its own
+       region ("es-MX", "en-US") still goes to the region rule. */
+    const first = String(tags[0] || "").toLowerCase();
+    if (A4_FIRST_LANGS.has(first)) return "a4";
     for (const tag of tags) {
       const parts = String(tag || "").split("-");
       for (let i = 1; i < parts.length; i++) {

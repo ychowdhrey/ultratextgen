@@ -212,9 +212,11 @@
         bank: "Word bank",
         needWords: "Type a few words to build the sheets.",
         needSheet: "Pick at least one sheet.",
-        words: "words", sheets: "sheets", pages: "pages", page: "page",
+        words: "words", word: "word", sheets: "sheets", pages: "pages", page: "page",
         perChild: "for each child",
         tooLong: "Left out (letters only, up to 20):",
+        notLetters: "Left out (one word of letters only, no digits, spaces or symbols):",
+        overLength: "Left out (longer than 20 letters):",
         overCap: "Only the first {n} words are used. Left out:"
       },
       printOpts: { settings: "PDF settings", paper: "Paper", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Download PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
@@ -3748,13 +3750,26 @@
     if (!P || !P.toCarry) return box.value.split(/\r?\n/).map((x) => x.replace(/\|/g, "/").trim()).filter(Boolean);
     return P.toCarry(box.value, box === el.cwInput);
   }
-  function presetParams() {
+  /* A link never carries a class list unless the visitor asks for it.
+     The pages say names never leave the device, and a ?roster= link is
+     children's names in every log, chat preview and analytics row it passes
+     through. The word-search branch below was the first to stop (2026-10-31);
+     this extends it to every tool. What still travels: one typed name (the
+     "same name, another sheet" carry), a word list (a roster box marked
+     data-roster-kind="words" is spelling words, not people), and the
+     settings. The share row offers an explicit, off-by-default tick for the
+     teacher who means to send a colleague the class (shareRosterOptIn); the
+     recent strip and Share-as-image never carry it. Old links that do carry
+     ?roster= still open the class as before. */
+  let shareRosterOptIn = false;
+  function presetParams(opts) {
     const p = {};
     const input = primaryInput();
     if (input && input.value.trim()) p.name = input.value.trim();
     const roster = primaryRoster();
     const rosterList = roster ? rosterNames(roster) : [];
-    if (rosterList.length) p.roster = rosterList.join("|");
+    const rosterIsWords = !!roster && rosterIsWordList(roster);
+    if (rosterList.length && (rosterIsWords || (opts && opts.includeRoster))) p.roster = rosterList.join("|");
     if (el.genSlider || el.genLevels) p.level = genLevel();
     if (genWordSet && genWordSet.key) p.wset = genWordSet.key;
     const rows = firstEl([el.nameRows, el.genRows]);
@@ -3812,9 +3827,9 @@
     if (printPrefs.orient !== "portrait") p.orient = printPrefs.orient;
     return p;
   }
-  function presetUrl() {
+  function presetUrl(opts) {
     const params = new URLSearchParams();
-    const p = presetParams();
+    const p = presetParams(opts);
     Object.keys(p).forEach((k) => { if (p[k] !== "" && p[k] != null) params.set(k, String(p[k])); });
     const qs = params.toString();
     return window.location.origin + window.location.pathname + (qs ? "?" + qs : "");
@@ -4103,7 +4118,7 @@
     if (UTGns && UTGns.buildShareRow) {
       shareWrap.appendChild(UTGns.buildShareRow({
         className: "pt-share-row",
-        url: presetUrl,
+        url: () => presetUrl({ includeRoster: shareRosterOptIn }),
         surface: "printables",
         itemType: "printable",
         labels: { share: PO.share, shareImage: PO.shareImage, copyLink: PO.copyLink, linkCopied: PO.linkCopied, pinterest: PO.pinterest },
@@ -4124,6 +4139,8 @@
       // to a page that never had one. Say so (2026-09-13).
       console.warn("[printables] share-core.js has not loaded; the share row is not rendered. Check that /js/share/share-core.js is tagged before this engine.");
     }
+
+    mountShareRosterOptIn(shareWrap);
 
     savedMount = document.createElement("div");
     savedMount.className = "pt-recent pt-saved-strip";
@@ -4636,12 +4653,54 @@
      (1), (2). They lead with their kind; the name, when there is one, is
      the suffix it personalises them with. */
   const LETTER_SHEETS = { character: 1, alphabet_sheet: 1, alphabet_tiled: 1, alphabet_book: 1, practice_sheet: 1 };
-  function pdfFilename(sheet) {
+  /* The file is named after what it holds. Three cases used to come out
+     wrong: a class set took the one typed name ("tracing-zoe-jose.pdf" for
+     five children); a word list took nothing ("handwriting-generator-sheet.pdf"
+     for five spelling words, "spelling-spelling-worksheet.pdf" with the slug
+     twice); and the kind repeated the prefix whenever the sheet id began with
+     it. Only the file name changes; nothing in the PDF does. */
+  function listFileStem(words) {
+    const clean = words.map((w) => slugify(String(w).replace(/[=:].*$/, "").trim())).filter(Boolean);
+    if (!clean.length) return "";
+    const head = clean.slice(0, 2).join("-");
+    return clean.length > 2 ? head + "-plus-" + (clean.length - 2) : head;
+  }
+  function filenameKind(sheet) {
+    let kind = (sheet || "sheet").replace(/_/g, "-");
+    if (kind === PNG_PREFIX) return "";
+    if (kind.indexOf(PNG_PREFIX + "-") === 0) kind = kind.slice(PNG_PREFIX.length + 1);
+    return kind;
+  }
+  function pdfFilenameFrozen(sheet) {
     const input = primaryInput();
     const base = input && input.value.trim() ? slugify(input.value.trim()) : "";
     const kind = (sheet || "sheet").replace(/_/g, "-");
     if (sheet && LETTER_SHEETS[sheet]) return PNG_PREFIX + "-" + kind + (base ? "-" + base : "") + ".pdf";
     return PNG_PREFIX + "-" + (base || kind) + ".pdf";
+  }
+  function pdfFilename(sheet) {
+    // The frozen block-letters page keeps every output exactly as it was.
+    if (BATCH_FROZEN) return pdfFilenameFrozen(sheet);
+    const join = (parts) => parts.filter(Boolean).join("-") + ".pdf";
+    const kind = filenameKind(sheet);
+    const roster = primaryRoster();
+    const rosterWords = !!roster && rosterIsWordList(roster);
+    const entries = roster ? rosterNames(roster) : [];
+    // A class set: one sheet per child.
+    if (roster && !rosterWords && entries.length >= 2) return join([PNG_PREFIX, kind, "class-of-" + entries.length]);
+    // A word list: the handwriting generator's list, or a word tool's box.
+    const listBox = firstEl([el.spInput, el.searchInput, el.cwInput, el.scInput].filter((x) => x && x.value.trim()));
+    // Spelling names the file from the words it prints, not the entries it
+    // reported as left out.
+    const words = rosterWords && entries.length ? entries
+      : (listBox === el.spInput && spListNs() ? spParse().words.map((w) => w.word)
+        : (listBox ? carriedWordList() : []));
+    const listStem = words.length ? listFileStem(words) : "";
+    if (listStem && !(LETTER_SHEETS[sheet])) return join([PNG_PREFIX, listStem]);
+    const input = primaryInput();
+    const base = input && input.value.trim() ? slugify(input.value.trim()) : "";
+    if (sheet && LETTER_SHEETS[sheet]) return join([PNG_PREFIX, kind, base]);
+    return join([PNG_PREFIX, base || kind]);
   }
   // Rasterise the mounted print surface and write the PDF. Resolves true on
   // success; false means "use the print dialog instead" (module missing,
@@ -8898,7 +8957,13 @@
   }
   function genValue() {
     const raw = el.genInput ? el.genInput.value : "";
-    const v = (raw && raw.trim()) ? raw.trim().slice(0, GEN_MAX_CHARS) : GEN_DEMO;
+    /* An empty box with a list in use (a carried ?roster= list, a remembered
+       word list, or a class) shows the list's first entry, not the demo: the
+       preview is the first page of the file. It showed "The cat sat" above a
+       five-word list, and a one-entry list printed the demo. */
+    const listFirst = (!raw || !raw.trim()) && el.genRoster ? (rosterEntries(el.genRoster)[0] || null) : null;
+    const v = (raw && raw.trim()) ? raw.trim().slice(0, GEN_MAX_CHARS)
+      : (listFirst ? String(listFirst.name).slice(0, GEN_MAX_CHARS) : GEN_DEMO);
     /* A letter-row page splits the text into single letters first, so title
        case read every letter as a word and printed "Emma" as E M M A, and
        Dutch "ijsje" as I J S J E. On those pages title case now runs on the
@@ -9269,6 +9334,29 @@
      file's own rule is that a control is mounted in a language only when its
      label exists there. /printables/block-letters/ is left alone (BATCH_FROZEN,
      above) for the same reason mountAudience leaves its control alone. */
+  /* The one way a class list reaches a share link: a tick under the share
+     row, off on every load, that says what it does. Only where a class list
+     exists (a word-list box is not one, and the word search keeps its own
+     never-carry rule), and only in English until the label is translated:
+     a control's label exists in every language the page ships, or the
+     control is not mounted there. */
+  function mountShareRosterOptIn(host) {
+    const roster = primaryRoster();
+    if (LANG !== "en" || BATCH_FROZEN || !host || !roster) return;
+    if (rosterIsWordList(roster) || roster === el.searchRoster) return;
+    const wrap = document.createElement("label");
+    wrap.className = "pt-share-roster";
+    const box = document.createElement("input");
+    box.type = "checkbox";
+    box.checked = false;
+    box.addEventListener("change", () => { shareRosterOptIn = box.checked; });
+    wrap.appendChild(box);
+    wrap.appendChild(document.createTextNode(" Include the class names in the link (anyone with the link sees them)"));
+    const sync = () => { wrap.hidden = rosterNames(roster).length === 0; if (wrap.hidden) { box.checked = false; shareRosterOptIn = false; } };
+    roster.addEventListener("input", sync);
+    host.appendChild(wrap);
+    sync();
+  }
   function mountRosterClear(mount, fields) {
     if (LANG !== "en" || BATCH_FROZEN || !mount || !fields) return;
     const btn = document.createElement("button");
@@ -13962,12 +14050,24 @@
     else if (!plan.length) bits.push(L.needSheet);
     else {
       const names = rosterNames(el.spRoster);
-      bits.push(parsed.words.length + " " + L.words);
+      bits.push(parsed.words.length + " " + (parsed.words.length === 1 && L.word ? L.word : L.words));
       bits.push(plan.length + " " + (plan.length === 1 ? L.page : L.pages) + (names.length >= 2 ? " " + L.perChild : ""));
       if (names.length >= 2) bits.push(names.length + " " + T.scramble.versions);
     }
     if (parsed.over.length) bits.push(L.overCap.replace("{n}", String(SP_MAX_WORDS)) + " " + parsed.over.join(", "));
-    if (parsed.skipped.length) bits.push(L.tooLong + " " + parsed.skipped.join(", "));
+    /* Two reasons, said apart. "word1 ... word22" were all reported under
+       one label that named both rules, so a teacher could not tell that the
+       digits, not the length, were the problem. A locale without the two
+       split strings keeps the combined one. */
+    if (parsed.skipped.length) {
+      if (L.notLetters && L.overLength) {
+        const isLetters = /^[\p{L}\[\]'-]+$/u;
+        const symbols = parsed.skipped.filter((w) => !isLetters.test(w));
+        const long = parsed.skipped.filter((w) => isLetters.test(w));
+        if (symbols.length) bits.push(L.notLetters + " " + symbols.join(", "));
+        if (long.length) bits.push(L.overLength + " " + long.join(", "));
+      } else bits.push(L.tooLong + " " + parsed.skipped.join(", "));
+    }
     el.spMeta.textContent = bits.join(" · ");
   }
   function renderSpPreview() {

@@ -13032,6 +13032,18 @@ img.pt-sheet-preview {
    should not out-weigh "Print this letter". Before 2026-09-13 this was four
    full-width equal-weight buttons ABOVE the sheet, which inverted that. */
 .pt-share-tools { margin: 0.9rem 0 0; }
+.pt-share-roster {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  margin-top: 0.4rem;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.pt-share-roster input { width: 1.25rem; height: 1.25rem; flex: 0 0 auto; margin: 0; }
+.pt-share-roster[hidden] { display: none; }
 .pt-share-row {
   display: flex;
   flex-wrap: wrap;

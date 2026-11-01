@@ -129,9 +129,26 @@
     return parts ? [{ display: unmark(parts.head), clue: parts.tail }] : [{ display: unmark(s), clue: "" }];
   }
 
+  /* One pasted row of single words separated by tabs -- a spreadsheet row
+     copied sideways, "Apple<TAB>Banana<TAB>Orange<TAB>Mango<TAB>Grape" -- is a
+     list, not a word followed by its definition. Read as a table it kept the
+     first cell and dropped the other four in silence ("1 words"). Only when
+     the whole paste is that one row, every cell is one token, there are at
+     least three cells after a row number, and nothing marks a clue (= or :):
+     a two-cell row or a multi-row paste is still a word/definition table. */
+  function singleTabRow(input) {
+    const lines = String(input).split(/\r\n|[\r\n\u2028\u2029]/).filter((l) => l.trim());
+    if (lines.length !== 1 || lines[0].indexOf("\t") === -1 || /[=:]/.test(lines[0])) return null;
+    const cells = tableCells(lines[0].replace(LIST_MARK_RE, ""));
+    if (cells.length < 3 || cells.some((c) => /\s/.test(c))) return null;
+    return cells;
+  }
+
   function parse(input, clues) {
     const out = [];
-    const groups = Array.isArray(input)
+    const row = (!clues && !Array.isArray(input) && input != null) ? singleTabRow(input) : null;
+    const groups = row ? row.map((cell) => entriesFromLine(cell, false))
+      : Array.isArray(input)
       ? input.map((item) => arrayEntry(item, !!clues))
       : String(input == null ? "" : input).split(/\r\n|[\r\n\u2028\u2029]/).map((line) => entriesFromLine(line, !!clues));
     for (const group of groups) {
