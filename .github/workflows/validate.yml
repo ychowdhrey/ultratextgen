@@ -940,6 +940,32 @@ jobs:
         continue-on-error: true
         run: npm run audit:library-link-mirror | tee library-link-mirror-audit.log
 
+      # Link reachability: the DIFF-SCOPED gate for ISLANDS, indexable pages no
+      # chain of static <a href> links from / reaches (header, footer,
+      # breadcrumbs and language switchers count; hreflang, sitemap.xml and
+      # llms.txt do not). The other inbound-link gates here are lane-scoped and
+      # ask "does anything link to this page?", which an island passes: on
+      # 2026-11-01, 23 indexable sitemap pages (all of /hi/ and /uk/, four ko
+      # tools, de/nickname-generator, six Unicode 18 updates) were unreachable
+      # from / with every gate green, because each linked another. Delta, since
+      # some islands stand on main deliberately: a page fails only when this
+      # branch adds it, visibly changes it, or strands it (reachable at the
+      # merge base, not here). Pre-existing islands are printed every run.
+      # Definitions live once, in scripts/lib/link-graph.js; the whole-site
+      # list is `npm run audit:link-reachability`.
+      - name: Run link reachability check
+        id: link_reachability
+        continue-on-error: true
+        run: npm run check:link-reachability -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee link-reachability.log
+
+      # The rules that gate above applies (Cloudflare Pages URL resolution,
+      # what counts as a link, orphan vs island, the delta) on in-memory trees.
+      # No git, no backlog, so a failure is always a real regression.
+      - name: Run link-graph tests
+        id: link_graph_tests
+        continue-on-error: true
+        run: npm run test:link-graph | tee link-graph-tests.log
+
       # Editorial Footprint Risk — SHADOW MODE, and deliberately not in the
       # gating list below. It reports what it WOULD fail on and exits 0.
       #
@@ -1529,6 +1555,16 @@ jobs:
             cat library-link-mirror-audit.log
             echo '```'
             echo ""
+            echo "### Link reachability check — \`${{ steps.link_reachability.outcome }}\`"
+            echo '```'
+            cat link-reachability.log
+            echo '```'
+            echo ""
+            echo "### Link-graph tests — \`${{ steps.link_graph_tests.outcome }}\`"
+            echo '```'
+            cat link-graph-tests.log
+            echo '```'
+            echo ""
             echo "### Editorial footprint check (shadow mode; em dash policy enforced per locale) — \`${{ steps.editorial_footprint.outcome }}\`"
             echo '```'
             cat editorial-footprint.log
@@ -1732,6 +1768,8 @@ jobs:
           steps.locale_library_directory.outcome == 'failure' ||
           steps.library_hub_coverage.outcome == 'failure' ||
           steps.library_link_mirror.outcome == 'failure' ||
+          steps.link_reachability.outcome == 'failure' ||
+          steps.link_graph_tests.outcome == 'failure' ||
           steps.editorial_footprint.outcome == 'failure' ||
           steps.editorial_footprint_tests.outcome == 'failure' ||
           steps.efr_gate.outcome == 'failure' ||

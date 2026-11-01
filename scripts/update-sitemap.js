@@ -496,4 +496,10 @@ if (require.main === module) {
   });
 }
 
-module.exports = { generateSitemap, getContentImages, getContentImageEntries, getPageImages, buildUrlBlock, announceToIndexNow };
+// EXCLUDED_FOLDERS, NOINDEX_RE, pathToUrl and findIndexFiles are exported so
+// the link-reachability gate (scripts/lib/link-graph.js) reads "which files
+// are pages we want indexed" from this file instead of keeping a second copy.
+module.exports = {
+  generateSitemap, getContentImages, getContentImageEntries, getPageImages, buildUrlBlock, announceToIndexNow,
+  EXCLUDED_FOLDERS, NOINDEX_RE, pathToUrl, findIndexFiles,
+};
