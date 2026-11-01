@@ -98,6 +98,7 @@ function makeEl(tag) {
 function load(opts) {
   const o = opts || {};
   const dataLayer = [];
+  const documentListeners = {};
   const navigator = {
     clipboard: { writeText: o.writeText || (async () => {}) }
   };
@@ -112,7 +113,9 @@ function load(opts) {
     getElementById: () => null,
     querySelector: () => null,
     querySelectorAll: () => [],
-    addEventListener() {},
+    addEventListener(type, fn) {
+      (documentListeners[type] = documentListeners[type] || []).push(fn);
+    },
     dispatchEvent() { return true; }
   };
 
@@ -139,7 +142,21 @@ function load(opts) {
   sandbox.globalThis = sandbox;
   vm.createContext(sandbox);
   vm.runInContext(SRC, sandbox);
-  return { UTG: win.UltraTextGen, dataLayer, document };
+  // The older button tests call element.click(), which executes only its own
+  // handlers. Real clicks also bubble to document. Exercise that second path
+  // so a self-handled platform link cannot accidentally trigger a generator
+  // share and inflate analytics.
+  async function dispatchClick(target) {
+    const originalClosest = target.closest;
+    target.closest = (selector) => selector === '.share-result-btn' &&
+      String(target.className).split(' ').includes('share-result-btn') ? target : null;
+    try {
+      await Promise.all((documentListeners.click || []).map((fn) => fn({ target })));
+    } finally {
+      target.closest = originalClosest;
+    }
+  }
+  return { UTG: win.UltraTextGen, dataLayer, document, dispatchClick };
 }
 
 /** An AbortError of the shape a browser throws when the sheet is dismissed. */
@@ -754,6 +771,75 @@ function rowButtons(UTG, opts) {
   eq(UTG.buildPlatformShareRow({ platforms: ['telegram', 'nonsense'] }).children.length, 1,
     'an unknown platform is ignored, never rendered');
   eq(UTG.buildPlatformShareRow({}).children.length, 0, 'no platforms, no links');
+}
+
+/* ---- real click bubbling: one handler owns each share ------------------ */
+/* Dedicated platform links and share rows can carry the generator's CSS
+   class. Clicking them must not ALSO run the document-level generator handler.
+   This test runs both the element listener and the delegated document path;
+   prior tests only ran the element listener and missed the duplicate. */
+
+{
+  let nativeCalls = 0;
+  const { UTG, dataLayer, document, dispatchClick } = load({
+    share: async () => { nativeCalls++; }
+  });
+  const row = UTG.buildPlatformShareRow({ platforms: ['telegram', 'vk'] });
+  const [telegram, vk] = row.children;
+  await telegram.click();
+  await dispatchClick(telegram);
+  eq(dataLayer.length, 1, 'Telegram click + bubble produces only one event');
+  eq(dataLayer[0].share_method, 'telegram', 'Telegram method stays explicit');
+  eq(nativeCalls, 0, 'Telegram click does not open a second native share sheet');
+  await vk.click();
+  await dispatchClick(vk);
+  eq(dataLayer.length, 2, 'VK click + bubble adds only its own event');
+  eq(dataLayer[1].share_method, 'vk', 'VK method stays explicit');
+  eq(nativeCalls, 0, 'VK click does not open a second native share sheet');
+  telegram.title = 'Telegram share target';
+  document.querySelectorAll = (selector) => selector === '.share-result-btn' ? [telegram] : [];
+  UTG.relabelShareButtons();
+  eq(telegram.title, 'Telegram share target', 'locale relabel skips owned platform links');
+}
+
+{
+  let clipboardWrites = 0;
+  const { UTG, dataLayer, dispatchClick } = load({
+    writeText: async () => { clipboardWrites++; }
+  });
+  // The standard share row uses bubble-btn, but hosts can supply the same
+  // class as generator buttons. It still needs exactly one action.
+  const custom = rowButtons(UTG, { buttonClass: 'share-result-btn' })[0];
+  await custom.click();
+  await dispatchClick(custom);
+  eq(clipboardWrites, 1, 'custom-class share row writes to clipboard once');
+  eq(dataLayer.length, 1, 'custom-class share row records one success');
+  eq(dataLayer[0].share_surface, 'printables', 'share-row event keeps its surface');
+}
+
+{
+  const { UTG, dataLayer, dispatchClick } = load({});
+  const normal = UTG.buildShareButton({ styleId: 'bold', text: '𝗵𝗶' });
+  await dispatchClick(normal);
+  eq(dataLayer.length, 1, 'ordinary generator share still uses delegated handler');
+  eq(dataLayer[0].share_method, 'link_copy', 'ordinary generator share keeps method');
+}
+
+{
+  let nativeCalls = 0;
+  const { UTG, dataLayer, dispatchClick } = load({
+    share: async () => { nativeCalls++; }
+  });
+  const pin = rowButtons(UTG, {
+    buttonClass: 'share-result-btn',
+    pinMedia: () => 'https://example.test/example.png'
+  }).find((button) => button._label() === 'Save to Pinterest');
+  ok(pin, 'Pinterest link is present in a custom share class');
+  await pin.click();
+  await dispatchClick(pin);
+  eq(dataLayer.length, 1, 'Pinterest click + bubble records only one intent');
+  eq(dataLayer[0].share_method, 'pinterest', 'Pinterest intent method stays explicit');
+  eq(nativeCalls, 0, 'Pinterest click does not open a native share sheet');
 }
 
 /* ---- the single-writer invariant --------------------------------------- */
