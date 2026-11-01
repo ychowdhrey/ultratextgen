@@ -4,7 +4,7 @@
 
   <url>
     <loc>https://ultratextgen.com/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -2486,7 +2486,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ascii-art-generator/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -2496,7 +2496,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ascii-converter/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -17844,7 +17844,7 @@
 
   <url>
     <loc>https://ultratextgen.com/image-to-ascii/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -33994,7 +33994,7 @@
 
   <url>
     <loc>https://ultratextgen.com/printables/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -37012,7 +37012,7 @@
 
   <url>
     <loc>https://ultratextgen.com/printables/letter-tracing/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -37105,6 +37105,20 @@
     </image:image>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/printables-name-tracing.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/printables/number-tracing/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/printables-previews/printables-number-tracing.png</image:loc>
+      <image:title>Number tracing worksheet sample: 1 2 3 as a solid model above dotted rows to trace on ruled handwriting lines</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/printables-number-tracing.png</image:loc>
     </image:image>
   </url>
 
