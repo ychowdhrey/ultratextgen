@@ -260,7 +260,10 @@
         name: name,
         input: (($("#repeatPhraseInput") || {}).value || ""),
         params: shareParams(),
-        disabled: !text
+        disabled: !text,
+        // Named so the share event can tell this lane from the main generator; an
+        // unstamped button reads "unstamped" since 2026-11-01.
+        surface: "repeat"
       }));
     }
 
