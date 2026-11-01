@@ -129,6 +129,14 @@ the ninth its own text said the next recurrence should be a generator rather tha
 another hand-edit. It reuses `run-ci-gates.py`'s own `load_gates()`, so the inventory,
 the local runner and CI can never disagree about what gates.
 
+*(2026-11-01)* The inventory used to be one sentence inside a table cell with a
+total ("blocking gates (95)"). Every PR that added a gate rewrote that same line,
+so each merge left every other open gate-adding PR conflicted on `docs/README.md`
+or red on this check, and fixing one re-broke the next (five open PRs at once).
+It is now its own `### Gate inventory` section, one gate per line, with no total:
+PRs adding different gates edit different lines and git merges them unaided
+(checked with two throwaway branches). The check is still blocking.
+
 ## If a defect keeps recurring despite a green gate
 
 Check whether the job is a **required status check** in branch protection for the
