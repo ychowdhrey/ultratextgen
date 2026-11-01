@@ -426,6 +426,13 @@ function homepageOf(url) {
   return lc ? `/${lc}/` : '/';
 }
 
+/** The lane a URL sits in, after its locale prefix: '/de/answers/x/' -> 'answers'. */
+function laneOf(url) {
+  const parts = url.split('/').filter(Boolean);
+  const rest = localeOf(url) ? parts.slice(1) : parts;
+  return rest[0] || '';
+}
+
 /**
  * The two links this site withholds on purpose. A hint never proposes them.
  * `donor` tests the would-be linking page, `target` the unreachable one.
@@ -435,13 +442,13 @@ const DELIBERATE_NON_LINKS = [
     id: 'answers-from-homepage',
     why: '`answers/` is deliberately not linked from any homepage (docs/decisions/content-lanes.md)',
     donor: (url) => url === homepageOf(url),
-    target: (url) => /^\/(?:[a-z]{2}(?:-[a-z]{2})?\/)?answers\//.test(url),
+    target: (url) => laneOf(url) === 'answers',
   },
   {
     id: 'symbol-in-nav',
     why: '`symbol/` deliberately has no nav entry; its discovery is search- and pin-driven',
     donor: () => false, // the nav is header.js, never a page donor; the hint never names it
-    target: (url) => /^\/(?:[a-z]{2}(?:-[a-z]{2})?\/)?symbol\//.test(url),
+    target: (url) => laneOf(url) === 'symbol',
   },
 ];
 

@@ -149,6 +149,9 @@ const site = {
   eq('an answers/ spoke is offered its hub, never a homepage', G.suggestDonors('/de/answers/frage/', g, a.parent), ['/de/answers/']);
   eq('isWithheld: locale homepage -> answers/', G.isWithheld('/de/', '/de/answers/'), true);
   eq('isWithheld: EN homepage -> answers/', G.isWithheld('/', '/answers/'), true);
+  eq('isWithheld: a five-character locale homepage -> its answers/', G.isWithheld('/zh-tw/', '/zh-tw/answers/x/'), true);
+  eq('isWithheld: a slug merely starting with answers is not the lane', G.isWithheld('/', '/library/answers-faq/'), false);
+  eq('isWithheld: a non-locale prefix is not a homepage', G.isWithheld('/xx/', '/xx/answers/'), false);
   eq('isWithheld: a library page -> answers/ is a normal link', G.isWithheld('/library/', '/answers/'), false);
   eq('a symbol/ page may take a homepage link (only the nav is withheld)', G.isWithheld('/de/', '/de/symbol/'), false);
 }
