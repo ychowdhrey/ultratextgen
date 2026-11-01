@@ -636,6 +636,15 @@ jobs:
         continue-on-error: true
         run: npm run test:stencil | tee stencil-tests.log
 
+      # Gating. The actual-size check bar is the one mark on a millimetre-ruled
+      # sheet (Seyes) and on the tiled wall letters that shows a printer scaled
+      # the page. Its length is arithmetic, and a wrong bar tells a teacher the
+      # opposite of the truth, so its geometry is held here.
+      - name: Run calibration bar geometry tests
+        id: calibration_bar_tests
+        continue-on-error: true
+        run: npm run test:calibration-bar | tee calibration-bar-tests.log
+
       # Gating. The centreline is the route a child traces on a joined-script
       # sheet, and every way it fails is something a child would follow: a
       # stroke returned as two parallel edges, a join returned broken (the
@@ -1413,6 +1422,7 @@ jobs:
             echo "### Label sheet geometry tests — \`${{ steps.label_geometry_tests.outcome }}\`"
             echo "### Korean kana reading tests — \`${{ steps.kana_readings_tests.outcome }}\`"
             echo "### Stencil bridge tests — \`${{ steps.stencil_tests.outcome }}\`"
+            echo "### Calibration bar geometry tests — \`${{ steps.calibration_bar_tests.outcome }}\`"
             echo "### Glyph centreline tests — \`${{ steps.centreline_tests.outcome }}\`"
             echo "### Word search grid tests — \`${{ steps.word_search_tests.outcome }}\`"
             echo "### Crossword + word scramble tests — \`${{ steps.word_puzzles_tests.outcome }}\`"
@@ -1713,6 +1723,7 @@ jobs:
           steps.label_geometry_tests.outcome == 'failure' ||
           steps.kana_readings_tests.outcome == 'failure' ||
           steps.stencil_tests.outcome == 'failure' ||
+          steps.calibration_bar_tests.outcome == 'failure' ||
           steps.centreline_tests.outcome == 'failure' ||
           steps.word_search_tests.outcome == 'failure' ||
           steps.word_puzzles_tests.outcome == 'failure' ||

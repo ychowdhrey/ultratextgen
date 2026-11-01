@@ -8063,6 +8063,21 @@ body.is-printing.ja-printing { margin: 0 !important; padding: 0 !important; }
   text-decoration: none;
   word-break: break-all;
 }
+/* The actual-size check bar on a millimetre-ruled sheet (calibrationNode in
+   printablesEngine.js). Its length is the SVG's own width attribute, 2 cm;
+   nothing here may stretch or shrink it, hence flex: none. It is shorter than
+   the QR beside it, so the credit band keeps its height. */
+.pt-credit-cal {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.08in;
+  flex: 0 0 auto;
+  margin-right: 0.15in;
+}
+.pt-credit-cal-bar {
+  display: block;
+  flex: 0 0 auto;
+}
 
 /* Alphabet "book" print — one character per printed sheet, in order
    (printAlphabetBook in printablesEngine.js). */

@@ -14,7 +14,8 @@
  * onto a canvas at the paper's exact size and hands the pages to
  * printablePdf.js with a zero margin and printScaling "none", so one inch in
  * the drawing is one inch on the paper. Same pattern as labelEngine.js.
- * Shared, read only: printPrefs.js (paper default, ink saver, recent sheets),
+ * Shared, read only: printPrefs.js (paper default, ink saver, recent sheets,
+ * the actual-size check bar's geometry),
  * printablePdf.js (the PDF writer), stencil.js (bridge placement), header.js
  * (credit line and printable_output telemetry). Nothing in them is changed.
  *
@@ -453,14 +454,15 @@
     }
 
     // A check bar of known length: the visitor can tell at once whether the
-    // printer scaled the page.
+    // printer scaled the page. The geometry is printPrefs.calibrationBar,
+    // shared with the millimetre-ruled sheets; printPrefs.js loads first.
     const metric = state.unit === "cm";
-    const barLen = metric ? 2 / 2.54 : 1;
     const barY = ph - 0.2;
-    ctx.fillRect(left, barY - 0.05, barLen, 0.05);
-    ctx.fillRect(left, barY - 0.1, 0.012, 0.1);
-    ctx.fillRect(left + barLen - 0.012, barY - 0.1, 0.012, 0.1);
-    text((metric ? "This bar is 2 cm long." : "This bar is 1 inch long.") + " Shorter? Print at 100% (Actual size).", left + barLen + 0.1, barY, 0.09, "left", 600);
+    if (PP && PP.calibrationBar) {
+      const bar = PP.calibrationBar(metric ? "cm" : "in");
+      bar.rects(left, barY).forEach((q) => ctx.fillRect(q[0], q[1], q[2], q[3]));
+      text((metric ? "This bar is 2 cm long." : "This bar is 1 inch long.") + " Shorter? Print at 100% (Actual size).", left + bar.lengthIn + 0.1, barY, 0.09, "left", 600);
+    }
     const credit = siteCredit();
     ctx.fillStyle = FAINT;
     text(credit, right, barY, 0.09, "right", 600);

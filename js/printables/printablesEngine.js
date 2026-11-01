@@ -3698,9 +3698,61 @@
     page.appendChild(node);
     return markFittedPage(page, node);
   }
+  /* An actual-size check bar, on the sheets whose ruling is a size in
+     millimetres (Seyes: physicalBandMm). A printer's "fit to page" shrinks the
+     8 mm ruling without saying so, and nothing on the sheet could show it; a
+     bar of stated length that measures short does. The geometry is
+     printPrefs.calibrationBar, the same bar the tiled wall letters print.
+
+     Only a fitted page unit whose rows are laid out at the standard's scale
+     carries it: a generator trace row (not the spelling row, which keeps its
+     own viewBox) or a ruled name row. It sits in the credit row, beside the
+     0.95in QR and shorter than it, so the credit band keeps its height and the
+     fitted column does not lose a millimetre to it. The label is a numeral and
+     a unit ("2 cm"), the same in every language: no translated sentence for
+     "print at actual size" is attested on this site. */
+  function wantsCalibration(page) {
+    return !!(physicalBandMm() > 0 && PP && PP.calibrationBar &&
+      page.classList.contains("is-fitted") &&
+      page.querySelector(".pt-gen-row:not(.pt-sp-row), .pt-name-row"));
+  }
+  function calibrationNode() {
+    const bar = PP.calibrationBar("cm");
+    const node = document.createElement("span");
+    node.className = "pt-credit-cal";
+    const svg = document.createElementNS(SVGNS, "svg");
+    svg.setAttribute("class", "pt-credit-cal-bar");
+    svg.setAttribute("viewBox", "0 0 " + bar.lengthIn + " " + bar.heightIn);
+    svg.setAttribute("width", bar.lengthIn + "in");
+    svg.setAttribute("height", bar.heightIn + "in");
+    svg.setAttribute("aria-hidden", "true");
+    svg.setAttribute("focusable", "false");
+    bar.rects(0, bar.heightIn).forEach((q) => {
+      const r = document.createElementNS(SVGNS, "rect");
+      r.setAttribute("x", String(q[0]));
+      r.setAttribute("y", String(q[1]));
+      r.setAttribute("width", String(q[2]));
+      r.setAttribute("height", String(q[3]));
+      r.setAttribute("fill", "currentColor");
+      svg.appendChild(r);
+    });
+    node.appendChild(svg);
+    const t = document.createElement("span");
+    t.className = "pt-credit-cal-text";
+    t.textContent = bar.label;
+    node.appendChild(t);
+    return node;
+  }
   function attachCredit(wrap) {
     const pages = $$(PT_PAGE_UNITS, wrap).filter((p) => !p.parentElement.closest(PT_PAGE_UNITS));
-    if (pages.length) { pages.forEach((p) => p.appendChild(creditNode())); return pages; }
+    if (pages.length) {
+      pages.forEach((p) => {
+        const credit = creditNode();
+        if (wantsCalibration(p)) credit.insertBefore(calibrationNode(), credit.firstChild);
+        p.appendChild(credit);
+      });
+      return pages;
+    }
     wrap.appendChild(creditNode());
     return [];
   }
