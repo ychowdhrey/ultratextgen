@@ -171,6 +171,13 @@ option looks and behaves the same wherever it appears:
   `physicalBandMm` (standard, Lineatur) takes none of these paths. The single-letter
   figure is not a practice row and is not laid out this way. `npm run
   check:runtime-smoke` reads the exported bitmap and fails above 2.15 mm / 8.3 mm.
+- **A physical ruling prints its own scale check.** A page unit whose rows are laid out at
+  the standard's scale carries a 2 cm actual-size bar in its credit row
+  (`calibrationNode()`), so "fit to page" is visible on the paper. The geometry has one
+  owner, `printPrefs.calibrationBar()`, which the tiled wall letters draw from too; never
+  draw a second bar. It is labelled with a numeral and a unit only, because no translated
+  "print at actual size" sentence exists. `npm run test:calibration-bar` holds the
+  geometry; the smoke check measures the bar in the bitmap (20 mm ± 0.3).
 - **Composition is `practiceCompose()`, and there is one of it.** Model placement for
   all four practice styles is that function, in row units, driven by measured ink —
   never by a character count, because `WWW` and `iii` are three characters and two
