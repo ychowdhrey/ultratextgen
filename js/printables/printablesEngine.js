@@ -3935,9 +3935,20 @@
   // it without retyping. The list and both strips are printPrefs.js's since
   // 2026-09-25, so the monogram and cross-stitch tools read the same record;
   // this engine passes its own strings, exactly as it did.
+  /* The word tools have no name box, so their recent chip read the page
+     title, and three spelling lists were three identical "Spelling Worksheet
+     Generator" chips. The chip names the list instead: its first words, the
+     answer side of a "word = clue" line, as the tool reads it. */
+  function wordListLabel() {
+    const box = firstEl([el.cwInput, el.scInput, el.spInput, el.searchInput].filter((x) => x && x.value.trim()));
+    if (!box) return "";
+    const words = box.value.split(/[\r\n,;|]+/).map((x) => x.split(/\s*[=:\t]\s*|\s+[-\u2013]\s+/)[0].replace(/^\s*(?:\d{1,3}[.)]|[-*\u2022])\s*/, "").trim()).filter(Boolean);
+    if (!words.length) return "";
+    return words.slice(0, 3).join(", ") + (words.length > 3 ? ", \u2026" : "");
+  }
   function rememberSheet(sheet) {
     const input = primaryInput();
-    const label = (input && input.value.trim()) || (el.strip ? charLabel(activeChar) : "") || document.title.split("|")[0].trim();
+    const label = (input && input.value.trim()) || wordListLabel() || (el.strip ? charLabel(activeChar) : "") || document.title.split("|")[0].trim();
     if (PP && PP.rememberRecent) {
       PP.rememberRecent({ href: presetUrl(), label: label, page: (document.title || "").split("|")[0].trim(), sheet: sheet });
     }
@@ -6706,10 +6717,26 @@
     const text = sheetCostText(n, pages);
     host.textContent = text;
     host.hidden = !text;
-    // The chips, their label and the line beneath them appear and disappear
-    // together — the control does nothing until a roster holds two names.
+    syncNUpField(n);
+  }
+  /* The chips stay on the page from the start, so a visitor sees that a class
+     set can share paper before typing a list, and are switched off until the
+     list holds two entries, which is when N-per-sheet changes anything. The
+     one-line hint is English only (NUP_HINT); every other language shows the
+     label and the switched-off chips, both already in its own words. */
+  const NUP_HINT = { en: "Works once the list has two or more lines." };
+  function syncNUpField(n) {
     const field = $(".pt-nup-field");
-    if (field) field.hidden = n < 2;
+    if (!field) return;
+    const off = n < 2;
+    // The frozen block-letters page keeps the old rule: hidden below two.
+    if (BATCH_FROZEN) { field.hidden = off; return; }
+    $$(".pt-nup-row .pt-choice", field).forEach((b) => { b.disabled = off; });
+    const row = $(".pt-nup-row", field);
+    if (row) row.setAttribute("aria-disabled", off ? "true" : "false");
+    field.classList.toggle("is-off", off);
+    const hint = $(".pt-nup-hint", field);
+    if (hint) hint.hidden = !off;
   }
   /* The word-list tools print more than one page per child, and the line
      counted one: a 3-name spelling class set read "3 sheets · 3 pages" over a
@@ -6825,7 +6852,12 @@
      their entire explanation only appears at two names or more — nothing
      under them either. The chips followed the same rule as the line they are
      explained by: hidden until the roster holds enough names for N-per-sheet
-     to change anything. updateSheetCost() owns both. */
+     to change anything. updateSheetCost() owns both.
+
+     Revised 2026-11-01: hidden meant a visitor never learned the control
+     existed until a list was typed. The field now shows from the start with
+     its chips switched off below two entries (syncNUpField), so what the
+     chips DO is unchanged; only their visibility moved. */
   function mountNUp() {
     if ($("#pt-nup-row") || !primaryRoster()) return;
     const host = $("#pt-sheet-cost");
@@ -6873,8 +6905,16 @@
       row.appendChild(b);
     });
     field.appendChild(row);
-    field.hidden = true;
+    if (NUP_HINT[LANG] && !BATCH_FROZEN) {
+      const hint = document.createElement("p");
+      hint.className = "pt-nup-hint pt-field-hint";
+      hint.id = "pt-nup-hint";
+      hint.textContent = NUP_HINT[LANG];
+      field.appendChild(hint);
+      row.setAttribute("aria-describedby", hint.id);
+    }
     host.insertAdjacentElement("beforebegin", field);
+    syncNUpField(0);
   }
 
   function mountSheetCost() {
@@ -7347,7 +7387,11 @@
   function mountLeftHanded() {
     if (!OL) return;
     const rows = el.nameRows || el.genRows;
-    if (!rows || $("#pt-lefty")) return;
+    /* CFG.leftHanded: a name page whose sheet has trace rows but no rows
+       select (graffiti-name prints a model, three hollow trace rows and two
+       blank rows). The option goes under the page's own name designer. */
+    const anchor = rows || (CFG.leftHanded === true && el.namePrint ? $(".pt-name-designer") : null);
+    if (!anchor || $("#pt-lefty")) return;
     const wrap = document.createElement("label");
     wrap.className = "pt-lefty-field";
     const box = document.createElement("input");
@@ -7360,7 +7404,7 @@
     });
     wrap.appendChild(box);
     wrap.appendChild(document.createTextNode(" " + OL.lefty));
-    const host = rows.closest(".pt-field, .pt-opt, .pt-name-rows-field") || rows.parentElement;
+    const host = rows ? (rows.closest(".pt-field, .pt-opt, .pt-name-rows-field") || rows.parentElement) : anchor;
     host.insertAdjacentElement("afterend", wrap);
   }
   /* PR-31 -- letter spacing as a control.
@@ -7702,7 +7746,9 @@
       stashPracticeRow(row, name, o);
     }
     if (leftHanded && kind === "trace" && !(RENDER === "glyph" && !TRACEABLE)) {
-      row.appendChild(leftyModel(wordOutlineSVG(name, { solid: true })));
+      // The model in the sheet's own letterform: a styled page's model row is
+      // drawn through nameRenderOpts(), so its lefty copy is too.
+      row.appendChild(leftyModel(wordOutlineSVG(name, NAME_STYLES ? nameRenderOpts("model") : { solid: true })));
     }
     return row;
   }
@@ -9553,6 +9599,38 @@
         if (field) field.open = true;
         if (onFill) onFill();
       });
+    });
+  }
+
+  /* Ready word lists on the four word tools (word search, scramble, crossword,
+     spelling). Page-authored like the roster presets above, so the lists are
+     in the HTML a crawler reads and a page without the markup (every locale
+     mirror) mounts nothing. A chip REPLACES the box and then fires the box's
+     own input event, so the tool updates, remembers and counts exactly as it
+     does for typed words; no second update path. The chip stays lit until
+     the box is edited by hand. Each page's lists are chunked to that tool's
+     own cap in its markup, so a chip never fills past what the tool reads. */
+  function wireWordListPresets() {
+    $$(".pt-wordlist-presets[data-list-for]").forEach((wrap) => {
+      const box = document.getElementById(wrap.dataset.listFor);
+      if (!box) return;
+      const chips = $$(".pt-gen-wordset", wrap);
+      let filling = false;
+      const light = (on) => chips.forEach((c) => {
+        const lit = c === on;
+        c.classList.toggle("is-active", lit);
+        c.setAttribute("aria-pressed", lit ? "true" : "false");
+      });
+      chips.forEach((b) => b.addEventListener("click", () => {
+        const words = String(b.dataset.words || "").split("|").map((s) => s.trim()).filter(Boolean);
+        if (!words.length) return;
+        box.value = words.join("\n");
+        filling = true;
+        box.dispatchEvent(new Event("input", { bubbles: true }));
+        filling = false;
+        light(b);
+      }));
+      box.addEventListener("input", () => { if (!filling) light(null); });
     });
   }
 
@@ -13511,6 +13589,13 @@
   let spVersion = 0;
   const SP_MAX_WORDS = 20;
   const SP_TRACE_LEVEL = { dotted: 2, faded: 5, copy: 1 };
+  /* The page's own ladder, in the order its hint gives it: "step down from
+     dotted to faded to copying as the letters get steadier". A class-set line
+     "Noah 3" reads its number against these three rungs (rosterEntries), so
+     Noah's Trace, write, remember page is the copy rung while the class keeps
+     the one the picker shows. Only that sheet has a rung; every other page of
+     the packet is the same for every child. */
+  const SP_TRACE_RUNGS = ["dotted", "faded", "copy"];
   const SP_ROWS = { large: 5, medium: 7, small: 9 };
   const spState = { sheets: ["trace", "lcwc", "missing"], trace: "dotted", size: "medium", blank: "tricky", tab: "trace" };
   /* The spelling patterns a child usually gets wrong, longest first so
@@ -13665,9 +13750,9 @@
     const fold = Math.round(widest + 40);
     return { fold: fold, width: Math.round(fold / 0.5) };
   }
-  function spTraceSheet(words, seedName, part, parts, allWords) {
+  function spTraceSheet(words, seedName, part, parts, allWords, traceKey) {
     const L = T.spelling.trace;
-    const level = SP_TRACE_LEVEL[spState.trace] || 2;
+    const level = SP_TRACE_LEVEL[traceKey || spState.trace] || 2;
     const geo = spTraceGeometry(allWords || words, level);
     const sheet = document.createElement("div");
     sheet.className = "pt-gen-sheet pt-sp-trace";
@@ -13922,10 +14007,10 @@
     if (spAnswerOn() && spSelected().indexOf("search") !== -1) out.push({ key: "searchKey", words: words });
     return out;
   }
-  function spNode(item, seedName) {
+  function spNode(item, seedName, traceKey) {
     const seed = seedName || "";
     switch (item.key) {
-      case "trace": return spTraceSheet(item.words, seed, item.part, item.parts, item.all);
+      case "trace": return spTraceSheet(item.words, seed, item.part, item.parts, item.all, traceKey);
       case "lcwc": return spLcwcSheet(item.words, seed);
       case "missing": return spMissingSheet(item.words, seed);
       case "abc": return spAbcSheet(item.words, seed);
@@ -13991,11 +14076,13 @@
     if (!spPuzzlesReady()) { loadSpPuzzles(printSpelling); return; }
     const holder = document.createElement("div");
     holder.className = "pt-search-print-holder pt-sp-print-holder";
-    const names = rosterNames(el.spRoster);
+    const entries = rosterEntries(el.spRoster, SP_TRACE_RUNGS.length);
     const items = [];
-    (names.length >= 2 ? names : [null]).forEach((n) => plan.forEach((it) => items.push({ it: it, name: n })));
-    if (names.length >= 2) holder.classList.add("pt-class-set");
-    appendSheetPages(holder, items, (x) => spNode(x.it, x.name));
+    (entries.length >= 2 ? entries : [null]).forEach((e) => plan.forEach((it) => items.push({
+      it: it, name: e ? e.name : null, trace: e && e.level ? SP_TRACE_RUNGS[e.level - 1] : null
+    })));
+    if (entries.length >= 2) holder.classList.add("pt-class-set");
+    appendSheetPages(holder, items, (x) => spNode(x.it, x.name, x.trace));
     holder.dataset.ptPageNumbers = "1";
     printWrap("", holder, "spelling_worksheet");
   }
@@ -14124,7 +14211,10 @@
     const schedule = () => { if (timer) clearTimeout(timer); timer = setTimeout(renderSpPreview, 160); };
     el.spInput.addEventListener("input", schedule);
     if (el.spHeading) el.spHeading.addEventListener("input", schedule);
-    if (el.spRoster) el.spRoster.addEventListener("input", schedule);
+    if (el.spRoster) {
+      annotateRosterPlaceholder(el.spRoster, SP_TRACE_RUNGS.length);
+      el.spRoster.addEventListener("input", schedule);
+    }
     if (el.spBank) el.spBank.addEventListener("change", renderSpPreview);
     if (el.spAnswer) el.spAnswer.addEventListener("change", renderSpPreview);
     wireSpSheets();
@@ -14271,6 +14361,7 @@
     buildCrosswordSurface();
     buildScrambleSurface();
     buildSpellingSurface();
+    wireWordListPresets();
     mountWordCarry();
     wireWordListMemory();
     mountMore();
