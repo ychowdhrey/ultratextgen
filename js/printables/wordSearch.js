@@ -305,26 +305,33 @@
      `solution` is a same-shape boolean grid marking the cells a word occupies,
      so one grid renders both the puzzle and the answer key and the two cannot
      disagree. */
-  function build(opts) {
-    const o = opts || {};
-    const words = Array.isArray(o.words) && o.words.length && o.words[0] && o.words[0].letters
-      ? o.words
-      : normalizeWords(o.words, o.fold || false);
-    const level = LEVELS[o.level] ? o.level : "medium";
-    const dirNames = Array.isArray(o.directions) && o.directions.length
-      ? o.directions.filter((d) => DIRS[d])
-      : LEVELS[level];
-    const size = gridSize(words, o.size);
-    const grid = blankGrid(size);
-    const next = rng(o.seed == null ? "utg" : o.seed);
+  /* Distinct occurrences of a word: two hits on the same cells are one (a
+     palindrome read both ways in a hard grid is still one word to circle). */
+  function occurrences(grid, letters) {
+    const hits = findWord(grid, letters);
+    const seen = Object.create(null);
+    const out = [];
+    for (const h of hits) {
+      const cells = [];
+      for (let i = 0; i < letters.length; i++) cells.push((h.row + h.dr * i) + "," + (h.col + h.dc * i));
+      const key = cells.slice().sort().join(";");
+      if (seen[key]) continue;
+      seen[key] = true;
+      out.push({ hit: h, cells: cells });
+    }
+    return out;
+  }
 
+  /* One placement pass at a fixed size and seed. Returns the grid before any
+     filler goes in, so build() can compare passes and fill only the winner. */
+  function placeAll(words, dirNames, size, next) {
+    const grid = blankGrid(size);
     // Longest first: a long word has the fewest legal homes, so placing it
     // while the grid is empty is the difference between a full puzzle and one
     // that drops its hardest word.
     const order = words.slice().sort((a, b) => b.letters.length - a.letters.length);
     const placed = [];
     const unplaced = [];
-
     for (const w of order) {
       if (w.letters.length > size) { unplaced.push(w); continue; }
       const candidates = [];
@@ -349,6 +356,71 @@
         row: best.row, col: best.col, dir: best.dir, dr: best.dr, dc: best.dc
       });
     }
+    return { grid: grid, placed: placed, unplaced: unplaced, next: next };
+  }
+
+  /* Build a grid.
+
+     Options: words (string or array), size, maxSize (a lower ceiling than
+     MAX_SIZE, e.g. for large print), level ("easy"|"medium"|"hard") or an
+     explicit directions array, seed (any text — a child's name), and
+     fill:false to leave the gaps empty.
+
+     Returns { size, grid, solution, words, placed, unplaced, ambiguous, level,
+     seed } — `solution` is a same-shape boolean grid marking the cells a word
+     occupies, so one grid renders both the puzzle and the answer key and the
+     two cannot disagree.
+
+     A WORD THAT COULD FIT IS NEVER LEFT OUT FOR WANT OF A SECOND TRY. The
+     first pass uses the seed exactly as given, so every grid that placed all
+     its words before this retry existed is unchanged and a reprinted sheet
+     still matches. Only when a pass leaves out a word that is not longer than
+     the grid does the builder try again: three more seeds derived from the
+     same seed (so the result is still reproducible), then one size up, until
+     the ceiling. A 40-word list at medium left three words out on 2026-10-31;
+     the same list placed all forty at easy and hard, so the words fitted and
+     the single pass was the problem.
+
+     THE FILLER MAY NOT SPELL A WORD AGAIN. Random fill spelled one of the
+     listed words a second time in 206 of 300 grids of twelve three-letter
+     words (measured 2026-10-31): the answer key circled one copy and a child
+     circling the other was marked wrong. After the fill, any listed word
+     found more than once has the filler cells of its extra copies re-drawn,
+     until no word repeats or 60 passes have run. A repeat made only of other
+     words' letters (AT inside CAT) cannot be removed by the filler and is
+     returned in `ambiguous` so the page can say so. */
+  function build(opts) {
+    const o = opts || {};
+    const words = Array.isArray(o.words) && o.words.length && o.words[0] && o.words[0].letters
+      ? o.words
+      : normalizeWords(o.words, o.fold || false);
+    const level = LEVELS[o.level] ? o.level : "medium";
+    const dirNames = Array.isArray(o.directions) && o.directions.length
+      ? o.directions.filter((d) => DIRS[d])
+      : LEVELS[level];
+    const ceiling = Math.max(MIN_SIZE, Math.min(MAX_SIZE, o.maxSize ? Math.round(o.maxSize) : MAX_SIZE));
+    let size = Math.min(gridSize(words, o.size), ceiling);
+    const seedText = o.seed == null ? "utg" : String(o.seed);
+
+    const fitsSize = (n) => (pass) => pass.unplaced.filter((w) => w.letters.length <= n).length;
+    let best = null, bestSize = size, bestMissing = Infinity;
+    let attempt = 0;
+    for (;;) {
+      const missing = fitsSize(size);
+      for (let k = 0; k < 4; k++, attempt++) {
+        const pass = placeAll(words, dirNames, size, rng(attempt === 0 ? seedText : seedText + "\u0001" + attempt));
+        const m = missing(pass);
+        if (m < bestMissing) { best = pass; bestSize = size; bestMissing = m; }
+        if (m === 0) break;
+      }
+      if (bestMissing === 0 || size >= ceiling) break;
+      size++;
+    }
+    size = bestSize;
+    const grid = best.grid;
+    const placed = best.placed;
+    const unplaced = best.unplaced;
+    const next = best.next;
 
     // Mark the answer cells before the gaps are filled — after the fill there
     // is no way to tell a word's letter from a coincidence.
@@ -359,21 +431,48 @@
       }
     }
 
+    const ambiguous = [];
     if (o.fill !== false) {
       const pool = fillAlphabet(words);
+      const draw = () => pool[Math.floor(next() * pool.length)];
       for (let r = 0; r < size; r++) {
         for (let c = 0; c < size; c++) {
-          if (grid[r][c] === EMPTY) grid[r][c] = pool[Math.floor(next() * pool.length)];
+          if (grid[r][c] === EMPTY) grid[r][c] = draw();
         }
+      }
+      for (let passNo = 0; passNo < 60; passNo++) {
+        let changed = false;
+        for (const p of placed) {
+          const own = [];
+          for (let i = 0; i < p.letters.length; i++) own.push((p.row + p.dr * i) + "," + (p.col + p.dc * i));
+          const ownKey = own.slice().sort().join(";");
+          for (const occ of occurrences(grid, p.letters)) {
+            if (occ.cells.slice().sort().join(";") === ownKey) continue;
+            for (const cell of occ.cells) {
+              const rc = cell.split(",");
+              const r = +rc[0], c = +rc[1];
+              if (!solution[r][c]) { grid[r][c] = draw(); changed = true; }
+            }
+          }
+        }
+        if (!changed) break;
+      }
+      for (const p of placed) {
+        if (occurrences(grid, p.letters).length > 1) ambiguous.push({ display: p.display, letters: p.letters, key: p.key });
       }
     }
 
     /* Verify, do not trust. Anything the finished grid does not actually
-       contain moves to `unplaced`, so the clue list and the grid can never
-       disagree about what is in there. */
+       contain AT ITS RECORDED PLACE moves to `unplaced`, so the clue list, the
+       answer key and the grid can never disagree about what is in there. */
     const verified = [];
     for (const p of placed) {
-      if (findWord(grid, p.letters).length) verified.push(p);
+      let ok = true;
+      for (let i = 0; i < p.letters.length; i++) {
+        const r = p.row + p.dr * i, c = p.col + p.dc * i;
+        if (r < 0 || c < 0 || r >= size || c >= size || grid[r][c] !== p.letters[i]) { ok = false; break; }
+      }
+      if (ok) verified.push(p);
       else unplaced.push({ display: p.display, letters: p.letters, key: p.key });
     }
 
@@ -394,13 +493,38 @@
 
     return {
       size: size, grid: grid, solution: solution,
-      words: inOrder, placed: verified, unplaced: unplaced,
+      words: inOrder, placed: verified, unplaced: unplaced, ambiguous: ambiguous,
       level: level, directions: dirNames.slice(), seed: o.seed == null ? "" : String(o.seed)
     };
   }
 
+  /* What the paste turned into, for the page to report instead of leaving a
+     visitor to work out why the list under the grid is shorter than theirs:
+     entries that repeat another (WATER after water), entries with no letters
+     at all (a line of punctuation), and one-letter entries, which a grid
+     cannot hide (a lone A is in every row). Reporting only: normalizeWords is
+     what the builder reads. */
+  function inspectList(input, fold) {
+    const raw = listParser().parse(input, false);
+    const seen = Object.create(null);
+    const duplicates = [], noLetters = [], oneLetter = [];
+    for (const entry of raw) {
+      const display = entry.display;
+      if (!display) continue;
+      const letters = gridLetters(display, fold);
+      if (!letters.length) { noLetters.push(display); continue; }
+      const key = letters.join("");
+      if (seen[key]) { duplicates.push(display); continue; }
+      seen[key] = true;
+      if (letters.length === 1) oneLetter.push(display);
+    }
+    return { duplicates: duplicates, noLetters: noLetters, oneLetter: oneLetter };
+  }
+
   ns.wordSearch = {
     build: build,
+    inspectList: inspectList,
+    occurrences: occurrences,
     findWord: findWord,
     normalizeWords: normalizeWords,
     gridSize: gridSize,

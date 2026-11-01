@@ -8748,6 +8748,20 @@ body.dark-mode .pt-paper { background: #fff; border-color: var(--border-light); 
   .pt-paper { max-height: none; }
   .pt-studio-preview .pt-design-sheet-svg { max-height: none; }
 }
+/* Word search maker on a phone: the visitor's words first, then the grid
+   they make, then the options that refine it. With the preview hoisted above
+   everything (the rule above), the word box sat 1,990px down a 390x844
+   screen (measured 2026-10-31), under a demo grid built from words that are
+   not theirs. Same dissolve as the label maker (.lb-tool, below): the
+   controls column becomes display: contents so the preview can sit between
+   its fields. Desktop keeps the two columns. */
+@media (max-width: 900px) {
+  .ws-studio .pt-studio-controls { display: contents; }
+  .ws-studio .pt-studio-controls > * { order: 3; }
+  .ws-studio .pt-studio-controls > .ws-words-field { order: 1; }
+  .ws-studio .ws-words-field .pt-search-input { min-height: 7.5rem; }
+  .ws-studio .pt-studio-preview { order: 2; }
+}
 @media (max-width: 420px) {
   .pt-segment .pt-gen-preset { flex-basis: calc(50% - 0.2rem); }
   .pt-level-sample-slot { display: none; }
@@ -8987,6 +9001,13 @@ body.dark-mode .pt-banner-index { color: var(--text-secondary); }
 .pt-search-meta { margin: 0.5rem 0 0; font-size: 0.85rem; color: var(--text-muted); }
 .pt-search-print-holder { text-align: center; }
 .pt-search-print-holder .pt-search-sheet { max-width: 900px; margin: 0 auto; }
+/* Large print: readability, not difficulty. The engine caps the grid at 12
+   columns, which is what makes the letters big (type size divides by the
+   column count); this makes them bold and brings the word list up to match,
+   in two columns so long words do not wrap. */
+.pt-search-sheet.is-large .pt-search-cell { font-weight: 800; }
+.pt-search-sheet.is-large .pt-search-words { columns: 2 10rem; font-size: 1.2rem; font-weight: 700; }
+.pt-search-sheet.is-large .pt-search-note { font-size: 1.05rem; }
 
 /* Crossword and word scramble sheets.
    Same ink-on-paper palette and the same literal colours as the word search
@@ -12811,6 +12832,8 @@ body.is-printing #pt-print-root .pt-search-cell {
 }
 body.pt-pdf-rendering .pt-search-words,
 body.is-printing #pt-print-root .pt-search-words { max-width: 6.4in; }
+body.pt-pdf-rendering .pt-search-sheet.is-large .pt-search-words,
+body.is-printing #pt-print-root .pt-search-sheet.is-large .pt-search-words { font-size: 18pt; }
 /* On paper both puzzles get the full content width rather than the screen
    cap, and the crossword's type divides by the same column count the grid
    does, so a 9-wide and a 24-wide grid both fill the sheet. */
