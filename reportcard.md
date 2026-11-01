@@ -8,7 +8,105 @@ Newest entries come first. Numbers are only given where we could count them.
 
 ---
 
+## November 2026
+
+### 1 November 2026
+
+The word search maker places more of a teacher's words, stops repeating them by accident, and prints in large type on request.
+
+Before, a puzzle could leave out a word that would have fitted, and the random filler letters could spell a listed word a second time, so a child found two answers where the key showed one. The maker now tries again before dropping a word, and when a word still cannot fit it says how long the longest word the grid can hold is. In a test of 300 grids built from short words, 206 had a repeated word in the filler before and none do now. Teachers can also choose the grid size, switch on Large print for bigger, bolder letters and a larger word list, and try a new layout. A shared word search link no longer carries the class list, so a teacher can share a puzzle without sharing children's names.
+
+### 1 November 2026
+
+All 20 event pages, such as Christmas, Ramadan and Mother's Day, now offer ready made designs, a couple line and links to the right tool, and the events hub is easier to browse.
+
+People making a greeting, a caption or a name for an occasion can pick a design, make it stronger or softer, ask for another one, and add a second name for a couple. Each page links on to the printable or text tool that fits the occasion, with the typed words carried across. On phones the result now appears before the extra options. The events hub can now be browsed by date, by kind of occasion and by what you want to make, and it now links the Spanish and Indonesian event pages, which it did not link before. On the Chinese New Year, Eid and Ramadan pages, the input and designs no longer jump down about 46 pixels when the date appears.
+
+### 1 November 2026
+
+Arabic, Hindi, Chinese and Thai text now stays whole in the two spaced Elegant text styles.
+
+Before, these styles put a space after every character, so Arabic typed on the Eid and Ramadan pages came out as separate letters instead of joined writing. Words in Arabic, Devanagari, Han and Thai now keep their letters together, while Latin text is spaced as before. Anyone writing a greeting or a name in these languages gets text that reads correctly. Output for ordinary Latin text was checked to be unchanged across all 114 text styles.
+
 ## October 2026
+
+### 31 October 2026
+
+The number tracing worksheets page is a new printable for learning to write the numbers 0 to 9.
+
+Parents and teachers can print one number per page with numbered start dots and arrows showing how to form it, all ten numbers on one ruled or outline sheet, or ready sets for 1 to 10 and 11 to 20 with one number per row. Before, number practice sat inside the letter tracing page, which parents looking for numbers could easily miss.
+
+### 31 October 2026
+
+The ASCII art generator and the image to ASCII converter are easier to use, and the banner can now be shared directly.
+
+On the ASCII art generator, the text box used to sit about 1,000 pixels down on a computer and about 1,400 pixels down on a phone, below an introduction and a long paragraph. It now comes right after a two sentence introduction. The banner can hold up to four lines, shows its width, and offers Smaller and Larger buttons. It also has Copy for Discord and Copy for Reddit buttons, so a banner pastes as a code block that keeps its shape. An empty banner now says so instead of copying nothing. The image to ASCII converter can now save its result as a PNG picture at normal or double size. Screen reader labels, text contrast and button size were also improved on the three ASCII tool pages.
+
+### 29 October 2026
+
+The spelling worksheet generator can now add a word search and a word scramble to the weekly packet, and every word tool remembers the list.
+
+Teachers who typed a spelling list used to open the word search empty and type it again, then do the same for the scramble and crossword. On the English pages, a "Same list, another activity" row now carries the list to the other word tools and the handwriting generator, and each tool remembers its list for next time. In a class set, each child's puzzle is built from their name, so three children get three different grids. Page numbers such as "Page 2 of 6" now print on multi page spelling sheets. Words left out past the 20 word limit are now named instead of dropped silently, and a numbered or spreadsheet style list reads the same on spelling as on the puzzles.
+
+### 29 October 2026
+
+The handwriting worksheet generator now offers a Cursive choice beside Print.
+
+Teachers and parents can turn this week's words or a sentence into joined cursive tracing, where each letter follows the connected line of the whole word. Print stays the default, so existing sheets look the same. The stroke direction arrows are switched off for cursive, as the print arrows would not match the joined letters.
+
+### 29 October 2026
+
+The name labels page now prints a fold-over desk name plate.
+
+Teachers can choose the Desk name plate preset and print two plates per page on US Letter or A4. Each plate has a dashed fold line, with the name upright on the front and turned upside down on the back, so the folded plate reads the right way up from both sides. A list of names prints one plate for each name. A warning appears if a long name would print too small.
+
+### 28 October 2026
+
+Title Case on the case converter now follows each language's own rules on seven pages.
+
+Before, every page used the English list of small words, so a German-style phrase came out with its small words capitalised. Title Case now keeps each language's own articles, conjunctions and prepositions in lowercase on the Spanish, Indonesian, Italian, Polish, Portuguese, Turkish and Traditional Chinese pages. For example, Polish "kot i pies na dachu" becomes "Kot i Pies na Dachu", Spanish "el señor de los anillos" becomes "El Señor de los Anillos", and Turkish "suç ve ceza" becomes "Suç ve Ceza". English text on those pages still follows English rules, and the Italian and Chinese pages now capitalise the English pronoun I, as their FAQ already said.
+
+### 28 October 2026
+
+The Chinese New Year page now shows the right date for 2027 and 2030.
+
+Before, the "next date" line was a day late in two of the next seven years: it showed Sunday 7 February 2027 instead of Saturday 6 February, and 2 February 2030 instead of 3 February. The page now carries the published Spring Festival dates for 2026 to 2032, so anyone planning a greeting or a celebration sees the correct day.
+
+### 28 October 2026
+
+The sports emoji pages now include 28 man and woman athlete emoji.
+
+People looking for a woman cyclist, a man swimmer or a woman golfer used to find only the gender neutral emoji. The English, Spanish and French sports emoji pages now list the man and woman version of each person sport emoji next to it, and the ball, racket and stick, and water and winter sections let people choose a skin tone once for every matching emoji.
+
+### 28 October 2026
+
+192 missing links between related symbol collections were added on 137 pages in other languages.
+
+Readers on translated library pages used to find that a collection linked to a related one in English but not in their language, even when the related page existed. Each new link points to a page in the same language. The number of pages still missing such links across the site fell from 368 to 176.
+
+### 28 October 2026
+
+Wrong claims about fonts, usernames and printing were corrected on more than 150 pages.
+
+The emoji combo pages said the bio generator offers 88 Unicode fonts, when it offers 13. 87 of those 96 pages now name the families it really offers: bold, cursive, gothic and bubble. Danish, Finnish, Norwegian and Thai pages with the same stale count were updated, and the English homepage social card now says 90+ fonts, as the page does. Fourteen library collection pages no longer say symbols work in Instagram, TikTok, Discord or X usernames, because usernames accept only letters, numbers, periods and underscores while display names take the symbols. The 26 block letter pages and 26 calligraphy letter pages now describe what the page really does: a downloaded block letter is one US Letter page, and the Print size control gives 4 or 16 to a page. Translation fixes also corrected wrong symbol names, inconsistent formal and informal address, Brazilian Portuguese pages that mixed in European wording, and accents missing from Italian page text.
+
+### 27 October 2026
+
+Several printable tools were repaired in Indonesian, Spanish, Turkish, German and English.
+
+The Indonesian bubble letter and calligraphy pages promised a name field but showed no tool at all. The field, live preview and PDF and PNG download buttons now appear. The Spanish word scramble printed its title and instructions in English and showed English sample words, and the Spanish word search threw an error with more than 40 words and never listed the missing ones. Both now work in Spanish, and the scramble page states its real limit of 30 words. The Turkish vowel chip printed only five vowels and left out İ, Ö and Ü. It now prints all eight, so the vowel PDF is eight pages instead of five. A word search with one word no longer says "Find all 1 words". Monogram downloads with accented initials such as ÄÖÜ now save as a proper PDF or PNG file instead of a file named "download" with no ending.
+
+### 27 October 2026
+
+The hiragana and katakana charts now have a Download PDF button.
+
+Learners could previously print the chart or save a picture, even though the page described a PDF. The button now saves the chart as an A4 or US Letter file, chosen by region or by the paper size the visitor picked before, for printing or study away from the screen. Chart pages in languages without a label for it do not show the button.
+
+### 27 October 2026
+
+Japanese name stickers and Italian laundry care symbols are new pages in their own languages, and Brazilian Portuguese school labels are back.
+
+The Japanese お名前シール page makes name labels for nursery and kindergarten items such as crayons, cups, lunch boxes and notebooks, with hiragana example names and Japanese fonts for kana and kanji. Names follow Japanese order, family name first, and the page says plainly that paper labels do not suit washable fabric. The Italian "simboli lavaggio" page explains washing, bleaching, drying and dry cleaning symbols in everyday Italian. The Brazilian Portuguese school labels page was missing from the site between 7 and 25 October because of a publishing mistake, and is available again, built on the improved name labels page.
 
 ### 24 October 2026
 
