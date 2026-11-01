@@ -216,3 +216,56 @@ closed with each language's own `printOpts.letter` string: one `english` gap,
 the Japanese label page's print-only note (`PRINT_NOTE_I18N` has no `ja` row;
 no attested Japanese string exists in the repo), and 69 `optional` word-search
 and crossword hints in seven languages. Hence a delta gate.
+
+
+## Link reachability (`check:link-reachability`)
+
+Added 2026-11-01. A static link-graph walk from `/` that morning found 23
+indexable sitemap pages no chain of links reached: the 9 `/hi/` pages, the 3
+`/uk/` pages, four ko tool pages, `/de/nickname-generator/` and six pl/sv/zh-tw
+Unicode 18 updates. Every gate was green. The inbound-link checks that existed
+are lane-scoped (`validate_library_pages.py` for symbol spokes,
+`check:library-hub-coverage` for hubs) and ask "does anything link this page?",
+which an **island** passes: `/ko/araecheomja-byeonhwan/` and
+`/ko/wicheomja-byeonhwan/` link each other and nothing reachable links either.
+Reachability from `/` subsumes the zero-inbound orphan, so one rule covers both.
+
+`scripts/lib/link-graph.js` is the one definition. A link is a static
+`<a href>`, header, footer, breadcrumb and language switcher included;
+hreflang, `sitemap.xml`, `llms.txt`, and anything in a script, style, template
+or comment are not, and a `nofollow` page donates nothing. Static HTML is the
+measure because the site has no runtime language menu and `header.js`'s
+injected nav reaches no page the static graph misses. Each href is followed
+through a model of Cloudflare Pages: `_redirects` first (parsed by
+`redirects-parse.js`, static sources exact and slash-sensitive, splats in order,
+applied even where a file exists), then `X/index.html` at `/X/` with `/X` and
+`/X/index.html` 308ing there. The page set is the sitemap's own
+(`update-sitemap.js` exports its `EXCLUDED_FOLDERS` and `NOINDEX_RE`); the audit
+cross-checks it against `sitemap.xml` and matched it exactly (4,885).
+
+It reproduced the 23 on the tree before #1174 and found **12** on `main` after
+it, in 7 groups. Some stand deliberately, so the gate is a **delta**: a page
+fails when the branch adds it (or removes its `noindex`), changes it visibly
+(`content-significance.js`'s definition, so a static-footer rebuild or a
+punctuation sweep never drags the backlog into an unrelated PR), or strands it
+(reachable at the merge base, not on the branch). Pre-existing islands print on
+every run. For a stranded page it names the merge base's route and the first
+hop the branch removed. `data/link_reachability_exceptions.json` ships empty.
+
+Proof it gates, each a worktree off the gate commit against `origin/main`:
+
+| probe | shape | exit |
+|---|---|---|
+| revert `03ca80c5c` (HI in the tr/ja/zh-tw switchers) | a whole locale stranded by removed links; "broken here: /tr/ no longer links /hi/" | 1 (9 pages, one group) |
+| revert `5b71b1107` (sv dirham update link) | a two-page `updates/` island cut off five hops down | 1 (2 pages) |
+| two new ko pages that link only each other | an island added in one PR | 1 |
+| visible `<h1>` edit to `/uk/nevydymyi-tekst/` | editing a page already in an island | 1 |
+| two new pages linked from `/ko/` through a `_redirects` rule and a slashless href | negative control, and the redirect model | 0 |
+| static-footer-only edit to `/uk/` | negative control: chrome is not a change | 0 |
+| the `<h1>` probe with a ledger entry | ledger path | 1 → 0 |
+| unparseable ledger; unresolvable base | UNKNOWN | 2 |
+
+`run-ci-gates.py --only link_reachability` returned 1 on the HI and new-island
+probes and 0 on the negative control and the clean branch. Three mutations of
+the library (slash-insensitive rule matching, links inside `<script>` counted,
+`noindex` pages counted as targets) each turned `test:link-graph` red.
